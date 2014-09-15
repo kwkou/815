@@ -131,6 +131,7 @@
 
 	Only use ASCII characters in executable names.
 
+<!--
 ## 7/28/2014 版本发行说明
 
 -   **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。
@@ -541,3 +542,4 @@ SQL Server JDBC 驱动程序由 HDInsight 在内部使用，不用于外部操�
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
+-->
