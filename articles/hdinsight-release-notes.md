@@ -28,7 +28,7 @@
 
 	* 只能使用 ASCII 字符配置 HBase 日志目录。
 
-	The following property in hbase-site.xml under C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\conf can only support ASCII characters for < Hbase Log folder >.
+	C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\conf 下 hbase-site.xml 中的下列属性只能对 < Hbase Log folder > 支持 ASCII 字符。
 
 		< property >
 		
@@ -39,24 +39,24 @@
 		< /property > 
 		 
 
-     The “set HBASE_LOG_DIR” command in hbase.cmd, which overrides the logs folder, also supports only unicode characters.
+	hbase.cmd 中的  “set HBASE_LOG_DIR” 命令（该命令将重写日志文件夹）也仅支持 unicode 字符。
 
-	* Oozie log folder and file name can only support ASCII characters
+	* Oozie 日志文件夹和文件名只能支持 ASCII 字符
 
-	In the following property, *< Oozie Log folder >* and *< Oozie Log filename >* can only support ASCII characters.
+	在下列属性中，< Oozie Log folder > 和 < Oozie Log filename > 只能支持 ASCII 字符。
 
 		log4j.appender.oozie.File=${oozie.log.dir}/< Oozie Log folder >/< Oozie Log filenam >
 
 
-	* Hive's log folder and file name can only support ASCII characters
+	* Hive 的日志文件夹和文件名只能支持ASCII 字符
 
-	In the following conf\hive-log4j.properties, *< Hive Log folder >* and *< Hive Log filename >* can only support ASCII characters.
+	在下列 conf\hive-log4j.properties 中，< Hive Log folder > 和 < Hive Log filename > 只能支持 ASCII 字符。
 
 		log4j.appender.DRFA.File=${hive.log.dir}/*< Hive Log folder >*/*< Hive Log filename >*${hive.log.file}
 
-    * Oozie action names can only support ASCII characters and match the regular expression pattern '([a-zA-Z_]([\-_a-zA-Z0-9])*) {1,39}'
+	* Oozie 操作名称只能支持 ASCII 字符并匹配正则表达式模式 '(a-zA-Z_*) {1,39}'
 
-	For instance, in the map reduce workflow – the action name can only support ASCII characters.
+	例如，在 Map Reduce 工作流中，操作名称只能支持 ASCII 字符。
 
 		< workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf" >
 
@@ -64,7 +64,7 @@
 
 		< action name="< mr-actionname >">
 
-	If a Unicode character is used in action name, you will see the following error
+	如果操作名称中使用了 Unicode 字符，你将看到以下错误
 
 		Error: E0701 : E0701: XML schema error, cvc-pattern-valid: Value ‘< unicode action name >' is not facet-valid with respect to pattern ' ([a-zA-Z_\]([\\-_a-zA-Z0-9])*) {1,39} ' for type 'IDENTIFIER'.'.
 
@@ -74,9 +74,9 @@
 
   在下面这些例外情况下，即使使用了百分比编码方案，Unicode 字符也可能不会起到原有的作用：
 
-	* Unicode character is part of an execute parameter
+	* Unicode 字符是 execute 参数的一部分
 
-	Example command:
+	示例命令：
 
 		curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
 
@@ -88,11 +88,11 @@
 
 		-s https://\<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
 
-	After URL encoding: -d execute="SELECT * FROM table1 WHERE content LIKE '%%E6%AD%A5%E8%A1%8C%';" The ‘%’ symbol causes an issue. Templeton throws Error 500 !hex:5c
+	在 URL 编码之后：-d execute="SELECT * FROM table1 WHERE content LIKE '%%E6%AD%A5%E8%A1%8C%';" ‘%’ 符号导致出现问题。Templeton 引发错误 500 !hex:5c
 
-    **Workaround:**
+    **解决方法：**
 
-    Save query in a script file and execute the script file. The workaround command will be:
+    将查询保存在脚本文件中并执行该脚本文件。该解决方法的命令将是：
 
         curl -i -u <hdinsightClusteruser>:<HDInsightClusterPassword>
         -d user.name=hdinsightuser
@@ -100,9 +100,9 @@
         -d file=/testfolder/hivetest/HiveLike.hql
         -s https://<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
 
-	* Name of mapper and reducer executable contains Unicode characters.
+	* 映射器和简化器可执行文件的名称包含 Unicode 字符。
 
-	Example Command:
+	示例命令：
 
 		curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
 
@@ -123,14 +123,15 @@
 		-s http://headnodehost:30111/templeton/v1/mapreduce/streaming/
 
 
-	This fails with the following exception:
+	这将失败，出现以下异常：
 
 		Caused by: java.io.IOException: Cannot run program "我的映射任务.exe": CreateProcess error=2, The system cannot find the file specified
 
-	**Workaround:**
+	**解决方法：**
 
-	Only use ASCII characters in executable names.
+	仅在可执行文件名称中使用 ASCII 字符。
 
+<!--
 ## 7/28/2014 版本发行说明
 
 -   **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。
@@ -533,6 +534,7 @@ SQL Server JDBC 驱动程序由 HDInsight 在内部使用，不用于外部操�
 -   HDInsight 群集版本 2.1 使用基于 [Hortonworks 数据平台 1.3][hdp-1-3-0] 的 Hadoop 分发。
 
 -   HDInsight 群集版本 1.6 使用基于 [Hortonworks 数据平台 1.1][hdp-1-1-0] 的 Hadoop 分发。
+-->
 
 [hdp-2-1-1]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.1/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.1.html
 
