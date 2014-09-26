@@ -15,7 +15,7 @@ Azure HDInsight 现在通过 HDInsight 群集版本 3.0 支持 Hadoop 2.2，并�
 -   **Pig、Sqoop、Qozie、Ambari**：对 HDInsight 群集版本 3.0 (HDP 2.0/Hadoop 2.2) 进行组件版本升级，以提供 HDInsight 群集版本 2.1 (HDP 1.3/Hadoop 1.2) 的奇偶校验。有关具体细节，请参阅下面的版本表。请注意，不包括 HBase、Mahout、Flume。
 
 **部署**
-在 Hadoop 2.2 上创建 HDInsight 3.0 群集由 Azure 门户、HDInsight SDK 和 Azure PowerShell 提供支持。请注意，默认情况下在 Hadoop 1.2 上创建 HDInsight 2.1 群集，因此用户必须指定 HDInsight 3.0 群集版本才能创建 Hadoop 2.2 群集。
+在 Hadoop 2.2 上创建 HDInsight 3.0 群集由 Azure 门户、HDInsight SDK 和 Azure PowerShell 提供支持。
 
 **全球可用性**
 随着在 Hadoop 2.2 上发布 Azure HDInsight，Microsoft 已使 HDInsight 在所有主要 Azure 地区（大中华除外）可用。具体来说，欧洲西部和东南亚数据中心已联机。这使客户能够在距离近且可能位于具有类似合规要求的区域的数据中心内找到群集。
@@ -28,17 +28,16 @@ HDInsight 3.0 群集只支持“wasb://”语法。较早的“asv://”语法�
 HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选项设置 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与每个 HDInsight 群集版本关联的组件版本。请注意，[Azure HDInsight][] 使用的默认群集版本当前是 2.1（基于 HDP 1.3）。
 
 <table border="1">
-<tr><th>组件</th><th>版本 3.0</th><th>版本 2.1（默认）</th><th>版本 1.6</th></tr>
-<tr><td>Hortonworks 数据平台 (HDP)</td><td>2.2.</td><td>1.3</td><td>1.1</td></tr>
-<tr><td>Apache Hadoop</td><td>2.2.0</td><td>1.2.0</td><td>1.0.3</td></tr>
-<tr><td>Apache Hive</td><td>0.12.0</td><td>0.11.0</td><td>0.9.0</td></tr>
-<tr><td>Apache Pig</td><td>0.12.0</td><td>0.11.0</td><td>0.9.3</td></tr>
-<tr><td>Apache Sqoop</td><td>1.4.4</td><td>1.4.3</td><td>1.4.2</td></tr>
-<tr><td>Apache Oozie</td><td>4.0.0</td><td>3.2.2</td><td>3.2.0</td></tr>
-<tr><td>Apache HCatalog</td><td>已与 Hive 合并</td><td>已与 Hive 合并</td><td>0.4.1</td></tr>
-<tr><td>Apache Templeton</td><td>已与 Hive 合并</td><td>已与 Hive 合并</td><td>0.1.4</td></tr>
-<tr><td>Ambari</td><td>1.4.1</td><td>API 1.0 版</td><td>无版本
-</td></tr>
+<tr><th>组件</th><th>版本 3.0</th></tr>
+<tr><td>Hortonworks 数据平台 (HDP)</td><td>2.2.</td></tr>
+<tr><td>Apache Hadoop</td><td>2.2.0</td></tr>
+<tr><td>Apache Hive</td><td>0.12.0</td></tr>
+<tr><td>Apache Pig</td><td>0.12.0</td></tr>
+<tr><td>Apache Sqoop</td><td>1.4.4</td></tr>
+<tr><td>Apache Oozie</td><td>4.0.0</td></tr>
+<tr><td>Apache HCatalog</td><td>已与 Hive 合并</td></tr>
+<tr><td>Apache Templeton</td><td>已与 Hive 合并</td></tr>
+<tr><td>Ambari</td><td>1.4.1</td></tr>
 </table>
 
 ### 设置 HDInsight 群集时选择一个版本
@@ -56,8 +55,6 @@ HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选�
 <table border="1">
 <tr><th>HDInsight 版本</th><th>HDP 版本</a><th>高可用性</th></th><th>发布日期</th><th>支持到期日期</th><th>弃用日期</th></tr>
 <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>是</td><td>02/11/2014</td><td>08/11/2014</td><td></td></tr>
-<tr><td>HDI 2.1</td><td>HDP 1.3</td><td>是</td><td>10/28/2013</td><td>05/12/2014</td><td>05/01/2015</td></tr>
-<tr><td>HDI 1.6</td><td>HDP 1.1</td><td>否</td><td>10/28/2013</td><td>04/28/2014</td><td>05/01/2014</td></tr>
 </table>
 
 ### HDInsight 群集版本的服务级别协议 (SLA)
@@ -69,7 +66,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 **弃用日期**是在该日期后，不能在 HDInsight 上创建此群集版本的日期。
 
-> [WACOM.NOTE] HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4][]上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
+> [WACOM.NOTE] HDInsight 3.0 群集运行在 Azure 来宾 OS [系列 4][]上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
 
 ### 有关版本控制的其他说明和信息
 
@@ -77,23 +74,25 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 -   HDInsight 服务使用的端口已更改。以前所用的端口号在 Windows OS 临时端口范围内。端口是从预定义的临时范围自动分配的，该范围适用于基于 Internet 协议的短期通信。新的一组允许的 HDP 服务端口号现已在此范围外，目的是避免遇到头节点上运行的服务所使用的端口时出现冲突。新端口号不会导致任何重大更改。现在使用的端口号如下所示：
 
+<!---
 **HDP1.1**
-
 <table border="1"><br /><tr><th>名称</th><th>值</th></tr><br /><tr><td>dfs.http.address</td><td>namenodehost:30070</td></tr><br /><tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr><br /><tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr><br /><tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr><br /><tr><td>dfs.secondary.http.address</td><td>0.0.0.0:30090</td></tr><br /><tr><td>mapred.job.tracker.http.address</td><td>jobtrackerhost:30030</td></tr><br /><tr><td>mapred.task.tracker.http.address</td><td>0.0.0.0:30060</td></tr><br /><tr><td>mapreduce.history.server.http.address</td><td>0.0.0.0:31111</td></tr><br /><tr><td>templeton.port</td><td>30111</td></tr><br /></table></p>
-<p><strong>HDP2.0 和 2.1</strong><br /><table border="1"><br /><tr><th>名称</th><th>值</th></tr><br /><tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr><br /><tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr><br /><tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr><br /><tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr><br /><tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr><br /><tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr><br /><tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr><br /><tr><td>templeton.port</td><td>30111</td></tr><br /></table></p>
-
+<strong>HDP2.0 和 2.1</strong>
+<table border="1"><br /><tr><th>名称</th><th>值</th></tr><br /><tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr><br /><tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr><br /><tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr><br /><tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr><br /><tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr><br /><tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr><br /><tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr><br /><tr><td>templeton.port</td><td>30111</td></tr><br /></table>
+--->
 -   HDInsight 群集版本 3.0 使用基于 [Hortonworks 数据平台 2.0][] 的 Hadoop 分发。
 
+<!---
 -   HDInsight 群集版本 2.1 使用基于 [Hortonworks 数据平台 1.3][] 的 Hadoop 分发。这是在使用 Azure HDInsight 门户时创建的默认 Hadoop 群集。
 
 -   HDInsight 群集版本 1.6 使用基于 [Hortonworks 数据平台 1.1][] 的 Hadoop 分发。
-
+--->
 -   与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。确定可用组件并验证正在使用哪些群集版本的一种方法是使用 Ambari REST API。GetComponentInformation 命令可用于检索有关服务组件的信息。有关详细信息，请参阅 [Ambari 文档][]。获取此信息的另一个方法是使用远程桌面登录到群集并直接检查“C:\\apps\\dist”目录的内容。
 
   [Azure HDInsight]: http://go.microsoft.com/fwlink/?LinkID=285601
   [HDI.Versioning.VersionScreen]: ./media/hdinsight-component-versioning/hdi-versioning-version-screen.png
   [系列 4]: http://msdn.microsoft.com/zh-cn/library/azure/ee924680.aspx#explanation
-  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /en-us/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
   [Hortonworks 数据平台 2.0]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.8.0/bk_releasenotes_hdp_2.0/content/ch_relnotes-hdp2.0.8.0.html
   [Hortonworks 数据平台 1.3]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
   [Hortonworks 数据平台 1.1]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
