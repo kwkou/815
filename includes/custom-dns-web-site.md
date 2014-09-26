@@ -297,15 +297,15 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
   [IETF 域名 - 实现和规范]: http://tools.ietf.org/html/rfc1035
   [定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [管理门户]: http://manage.windowsazure.cn
-  []: ./media/custom-dns-web-site/dncmntask-cname-1.png
-  [1]: ./media/custom-dns-web-site/dncmntask-cname-2.png
-  [2]: ./media/custom-dns-web-site/dncmntask-cname-3.png
+  [1]: ./media/custom-dns-web-site/dncmntask-cname-1.png
+  [2]: ./media/custom-dns-web-site/dncmntask-cname-2.png
+  [3]: ./media/custom-dns-web-site/dncmntask-cname-3.png
   [使用“快速创建”创建 Traffic Manager 配置文件]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn339012.aspx
   [添加或删除终结点]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh744839.aspx
   [Azure Powershell]: http://www.windowsazure.com/en-us/manage/install-and-configure-windows-powershell/
   [Azure 跨平台命令行界面]: http://www.windowsazure.com/en-us/manage/install-and-configure-cli/
-  [3]: ./media/custom-dns-web-site/dncmntask-cname-6.png
-  [4]: ./media/custom-dns-web-site/dncmntask-cname-7.png
+  [4]: ./media/custom-dns-web-site/dncmntask-cname-6.png
+  [5]: ./media/custom-dns-web-site/dncmntask-cname-7.png
   [如何管理网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-manage-websites/
   [为网站配置 SSL 证书]: http://www.windowsazure.com/en-us/develop/net/common-tasks/enable-ssl-web-site/
 
