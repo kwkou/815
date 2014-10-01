@@ -15,7 +15,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 在开始阅读本教程前，你必须具有：
 
 -   Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][]、[免费试用][]。
--   运行 Windows 8.1、Windows 8.8、Windows 7、Windows Server 2012 或 Windows Server 2008 R2 的计算机。此计算机将用于提交 MapReduce 作业。
+-   运行 Windows 8.1、Windows 8、Windows 7、Windows Server 2012 或 Windows Server 2008 R2 的计算机。此计算机将用于提交 MapReduce 作业。
 -   Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus。
 
 **估计完成时间：**30 分钟
