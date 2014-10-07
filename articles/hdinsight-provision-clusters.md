@@ -43,7 +43,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 	<tr><td>数据节点</td>
 	<td>指定群集中节点的数量。默认值为 4。</td></tr>
 	<tr><td>HDInsight 版本</td>
-	<td>选择版本。默认值为运行 Hadoop 1.2 群集的 2.0 版。3.0 版使用 Hadoop 2.2 群集。有关详细信息，请参阅 <a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/">Azure HDInsight 包含哪个版本的 Hadoop？</a>。</td></tr>
+	<td>3.0 版使用 Hadoop 2.2 群集。有关详细信息，请参阅 <a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/">Azure HDInsight 包含哪个版本的 Hadoop？</a>。</td></tr>
 	<tr><td>区域</td>
 	<td>指定在其中安装群集的数据中心。该位置必须与用作默认文件系统的 Azure Blob 存储所在位置相同。目前你可以选择 *中国北部* 或 *中国东部*。</td>
 	    </tr>
@@ -70,10 +70,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 	<td>指定 SQL 数据库用户密码。</td></tr>
 	</table>
 
-    对于版本 2.0 HDInsight 群集，这里提供的凭据只能访问该群集上的服务。创建该群集后，可以打开远程桌面。
-
-    ![HDI.CustomProvision.Page2][]
-
+    
 6.  单击页面右下角的向右箭头。
 7.  从“存储帐户”页上，键入或选择以下值：
 
@@ -127,7 +124,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 -   在 Azure PowerShell 控制台窗口中运行以下命令：
 
         $storageAccountName = "<StorageAcccountName>"
-        $location = "<MicrosoftDataCenter>"     # 例如，“China East”
+        $location = "<MicrosoftDataCenter>"     # 例如，"China East"
 
         # 创建 Azure 存储帐户
         New-AzureStorageAccount -StorageAccountName $storageAccountName -Location $location
@@ -497,7 +494,7 @@ HDInsight .NET SDK 提供了一组 .NET 客户端库，使你能够在 .NET 中�
   [HDI.CustomProvision.Page2]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page2.png
   [HDI.CustomProvision.Page3]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page3.png
   [HDI.CustomProvision.Page4]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page4.png
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [使用 PowerShell 管理 HDInsight]: /en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [HDI.CLI.Provision]: ./media/hdinsight-provision-clusters/HDI.ps.provision.png
