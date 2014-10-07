@@ -28,7 +28,7 @@ Azure HDInsight 在 Azure Blob 存储之上提供了一个功能完备的 Hadoop
 -   [使用 Hadoop 命令行将数据上传到 Blob 存储空间][]
 -   [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储][]
 
-## 使用 AzCopy 将数据上载到 Blob 存储
+##<a id="azcopy"></a>使用 AzCopy 将数据上载到 Blob 存储
 
 AzCopy 是一个命令行实用程序，用于简化将数据传入和传出 Azure 存储帐户的任务。你可以将它用作独立的工具，也可以将此实用程序融入到现有应用程序中。[下载 AzCopy][]。
 
@@ -38,7 +38,7 @@ AzCopy 语法为：
 
 有关详细信息，请参阅 [AzCopy - 上载/下载 Azure Blob 的文件][AzCopy]
 
-## 使用 Azure PowerShell 将数据上载到 Blob 存储
+##<a id="powershell"></a>使用 Azure PowerShell 将数据上载到 Blob 存储
 
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。你可以使用 Azure PowerShell 将数据上载到 Blob 存储，以便 MapReduce 作业可以处理数据。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell][]。
 
@@ -73,9 +73,9 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 -   在有空文件夹的情况下，它们充当文件夹存在的标记。Blob 存储足够聪明，可以了解如果存在名为 foo/bar 的 blob，就存在一个名为 foo 的文件夹。但如果你希望具有一个名为 foo 的空文件夹，则指明这一点的唯一方法是放入这个特殊的 0 字节文件。
 -   它们具有 Hadoop 文件系统所需的一些特别的元数据，最明显的是文件夹的权限和所有者。
 
-## 使用 Azure 存储资源管理器将数据上载到 Blob 存储
+##<a id="storageexplorer"></a>使用 Azure 存储资源管理器将数据上载到 Blob 存储
 
-*Azure 存储资源管理器*是用于在 Azure 存储空间中检查和更改数据的有用工具。它是免费工具，可从 [][]<http://azurestorageexplorer.codeplex.com/>下载。
+*Azure 存储资源管理器*是用于在 Azure 存储空间中检查和更改数据的有用工具。它是免费工具，可从 [Azure 存储空间资源管理器][]下载。
 
 使用该工具之前，你必须知道你的 Azure 存储帐户名和帐户密钥。有关如何获取此信息的说明，请参见[管理存储帐户][]中的“如何：查看、复制和重新生成存储访问密钥”一节。
 
@@ -96,7 +96,7 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 6.  在“Blob” 下，单击“上载” 。
 7.  指定要上载的文件，然后单击“打开” 。
 
-## 使用 Hadoop 命令行将数据上载到 Blob 存储
+##<a id="commandline"></a>使用 Hadoop 命令行将数据上载到 Blob 存储
 
 若要使用 Hadoop 命令行，你必须先使用远程桌面连接到群集。
 
@@ -128,7 +128,7 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 
         hadoop dfs -lsr /example/data
 
-## 使用 Sqoop 将数据从 SQL Database/SQL Server 导入到 HDFS
+##<a id="sqoop"></a>使用 Sqoop 将数据从 SQL Database/SQL Server 导入到 HDFS
 
 Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL、MySQL 或 Oracle）中导入 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后再将数据导回到 RDBMS。有关详细信息，请参阅 [Sqoop 用户指南][]。
 
