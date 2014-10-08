@@ -8,7 +8,7 @@ Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用
 
 在开始阅读本教程前，你必须具有：
 
--   HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/en-us/manage/services/hdinsight/provision-hdinsight-clusters/)。
+-   HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](../hdinsight-provision-clusters/)。
 
 -   已安装并已配置 Azure PowerShell 的工作站。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
@@ -21,7 +21,7 @@ Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用
 3.  [字数统计 MapReduce 程序的 Java 代码](#java-code)
 4.  [后续步骤](#next-steps)
 
-## 了解方案
+##<a id="scenario"></a>了解方案
 
 下图解释了 MapReduce 怎样用于字数统计方案：
 
@@ -35,11 +35,11 @@ MapReduce 作业的输出结果是一组键值对。键是一个用于指定单�
 
 运行 MapReduce 作业要求以下元素：
 
--   MapReduce 程序。在本教程中，你将使用 HDInsight 群集附带的字数统计示例，因此，你无需编写自己的 MapReduce 程序。该示例位于 */example/jars/hadoop-examples.jar*。版本 3.0 的 HDInsight 群集上的文件名为 *hadoop-mapreduce-examples.jar*。有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-MapReduce]。
+-   MapReduce 程序。在本教程中，你将使用 HDInsight 群集附带的字数统计示例，因此，你无需编写自己的 MapReduce 程序。该示例位于 */example/jars/hadoop-mapreduce.jar*。版本 3.0 的 HDInsight 群集上的文件名为 *hadoop-mapreduce-examples.jar*。有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-MapReduce]。
 -   一个输入文件。你将使用 */example/data/gutenberg/davinci.txt* 作为输入文件。有关上传文件的信息，请参见[将数据上传到 HDInsight][hdinsight-upload-data]。
 -   输出文件文件夹。你将使用 */example/data/WordCountOutput* 作为输出文件文件夹。如果该文件夹不存在，系统将会创建。如果该文件夹存在，MapReduce 作业将会失败。如果你想第二次运行 MapReduce 作业，一定要删除该输出文件夹或指定另一输出文件夹。
 
-## 使用 Azure PowerShell 运行示例
+##<a id="run-sample"></a>使用 Azure PowerShell 运行示例
 
 1.  打开 **Azure PowerShell**。有关打开 Azure PowerShell 控制台窗口的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
@@ -55,11 +55,11 @@ MapReduce 作业的输出结果是一组键值对。键是一个用于指定单�
 4.  运行以下命令创建 MapReduce 作业定义：
 
         # 定义 MapReduce 作业
-        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-examples.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput" 
+        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput" 
 
-    > [WACN.NOTE] *hadoop-examples.jar* 随版本 2.1 HDInsight 群集提供。该文件在版本 3.0 HDInsight 群集上已被重命名为 *hadoop-mapreduce.jar*。
+    > [WACN.NOTE] *hadoop-mapreduce.jar* 随版本 2.1 HDInsight 群集提供。该文件在版本 3.0 HDInsight 群集上已被重命名为 *hadoop-mapreduce.jar*。
 
-    hadoop-examples.jar 文件随 HDInsight 群集分发提供。此 MapReduce 作业有两个参数。第一个参数是源文件名，第二个参数是输出文件路径。源文件随 HDInsight 群集分发提供，输出文件路径将会在运行时创建。
+    hadoop-mapreduce.jar 文件随 HDInsight 群集分发提供。此 MapReduce 作业有两个参数。第一个参数是源文件名，第二个参数是输出文件路径。源文件随 HDInsight 群集分发提供，输出文件路径将会在运行时创建。
 
 5.  运行以下命令来提交 MapReduce 作业：
 
@@ -122,7 +122,7 @@ MapReduce 作业的输出结果是一组键值对。键是一个用于指定单�
 
 请注意，MapReduce 作业的输出文件是不可变的。所以，如果你重新运行此示例，将需要更改输出文件的名称。
 
-## 字数统计 MapReduce 程序的 Java 代码
+##<a id="java-code"></a>字数统计 MapReduce 程序的 Java 代码
 
 下面是字数统计 Java MapReduce 程序的源代码：
 
@@ -196,7 +196,7 @@ MapReduce 作业的输出结果是一组键值对。键是一个用于指定单�
       }
     }
 
-## 后续步骤
+##<a id="next-steps"></a>后续步骤
 
 虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。利用其他语言（如 Pig 和 Hive），可以更轻松地处理存储在 HDInsight 中的数据。若要了解更多信息，请参阅下列文章：
 
@@ -207,15 +207,15 @@ MapReduce 作业的输出结果是一组键值对。键是一个用于指定单�
 -   [Pig 与 HDInsight 配合使用][hdinsight-pig]
 -   [运行 HDInsight 示例][hdinsight-samples]
 
-[hdinsight-upload-data]: /en-us/documentation/articles/hdinsight-upload-data/
+[hdinsight-upload-data]: ../hdinsight-upload-data/
 
-[hdinsight-getting-started]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-[hdinsight-develop-mapreduce]: /en-us/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-develop-streaming]: /en-us/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-hive]: /en-us/documentation/articles/hdinsight-use-hive/
-[hdinsight-pig]: /en-us/documentation/articles/hdinsight-use-pig/
-[hdinsight-samples]: /en-us/documentation/articles/hdinsight-run-samples/
+[hdinsight-getting-started]: ../hdinsight-get-started/
+[hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-hive]: ../hdinsight-use-hive/
+[hdinsight-pig]: ../hdinsight-use-pig/
+[hdinsight-samples]: ../hdinsight-run-samples/
 
-[powershell-install-configure]: /en-us/manage/install-and-configure-windows-powershell/
+[powershell-install-configure]: ../install-configure-powershell/
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-get-started/HDI.WordCountDiagram.gif

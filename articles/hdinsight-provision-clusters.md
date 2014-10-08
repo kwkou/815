@@ -18,7 +18,7 @@
 -   [使用 HDInsight .NET SDK][]
 -   [后续步骤][]
 
-## 使用 Azure 管理门户
+##<a id="portal"></a>使用 Azure 管理门户
 
 HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 HDInsight 群集前，要先具有位于同一数据中心的 Azure 存储帐户。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户][]。
 
@@ -107,7 +107,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 
 > [WACOM.NOTE] 一旦为 HDInsight 群集选择了 Azure 存储帐户，就不能再删除该帐户，也不能将它更改为另一帐户。
 
-## 使用 Azure PowerShell
+##<a id="powershell"></a>使用 Azure PowerShell
 
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站运行 HDInsight Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][]。有关将 PowerShell 用于 HDInsight 的更多信息，请参见[使用 PowerShell 管理 HDInsight][]。有关 HDInsight PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考][]。
 
@@ -224,7 +224,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
         Get-AzureHDInsightCluster -Name <ClusterName>
 
-## 使用跨平台命令行
+##<a id="cli"></a>使用跨平台命令行
 
 设置 HDInsight 群集的另一方法是使用跨平台命令行界面。该命令行工具是在 Node.js 中实现的。可以在支持 Node.js 的任意平台（包括 Windows、Mac 和 Linux）上使用它。该命令行工具是开源的。在 GitHub 中管理源代码（网址为 <https://github.com/WindowsAzure/azure-sdk-tools-xplat>）。有关如何使用命令行界面的一般指南，请参阅[如何使用针对 Mac 和 Linux 的 Azure 命令行工具][]。有关完整的参考文档，请参阅[针对 Mac 和 Linux 的 Azure 命令行工具][]。本文只涉及从 Windows 使用命令行界面。
 
@@ -361,7 +361,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
         azure hdinsight cluster delete <ClusterName>
 
-## 使用 HDInsight .NET SDK
+##<a id="sdk"></a>使用 HDInsight .NET SDK
 
 HDInsight .NET SDK 提供了一组 .NET 客户端库，使你能够在 .NET 中更轻松地使用 HDInsight。
 
@@ -469,7 +469,7 @@ HDInsight .NET SDK 提供了一组 .NET 客户端库，使你能够在 .NET 中�
 
 该应用程序在 Visual Studio 中打开时，按 **F5** 键以运行该应用程序。控制台窗口应打开并显示应用程序的状态。设置一个 HDInsight 群集可能需要几分钟时间。
 
-## 后续步骤
+##<a id="nextsteps"></a>后续步骤
 
 在本文中，你已经学习了几种设置 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
@@ -478,33 +478,33 @@ HDInsight .NET SDK 提供了一组 .NET 客户端库，使你能够在 .NET 中�
 -   [以编程方式提交 Hadoop 作业][]
 -   [Azure HDInsight SDK 文档][]
 
-  [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
-  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [购买选项]: http://www.windowsazure.cn/pricing/overview/
+  [免费试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [使用 Azure 管理门户]: #portal
   [使用 Azure PowerShell]: #powershell
   [使用跨平台命令行]: #cli
   [使用 HDInsight .NET SDK]: #sdk
   [后续步骤]: #nextsteps
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/howto-blob-store/
-  [如何创建存储帐户]: /en-us/manage/services/storage/how-to-create-a-storage-account/
-  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ./hdinsight-use-blob-storage/
+  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
+  [Azure HDInsight 入门]: ./hdinsight-get-started/
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [Azure HDInsight 包含哪个版本的 Hadoop？]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/
+  [Azure HDInsight 包含哪个版本的 Hadoop？]: ./hdinsight-component-versioning/
   [HDI.CustomProvision.Page1]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page1.png
   [HDI.CustomProvision.Page2]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page2.png
   [HDI.CustomProvision.Page3]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page3.png
   [HDI.CustomProvision.Page4]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page4.png
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
-  [使用 PowerShell 管理 HDInsight]: /en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/
+  [使用 PowerShell 管理 HDInsight]: ./hdinsight-administer-use-powershell/
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [HDI.CLI.Provision]: ./media/hdinsight-provision-clusters/HDI.ps.provision.png
-  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
-  [针对 Mac 和 Linux 的 Azure 命令行工具]: /en-us/manage/linux/other-resources/command-line-tools/
+  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/develop/nodejs/how-to-guides/command-line-tools/
+  [针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/manage/linux/other-resources/command-line-tools/
   [HDI.CLIAccountDownloadImport]: ./media/hdinsight-provision-clusters/HDI.CLIAccountDownloadImport.png
-  [如何管理存储帐户]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
+  [如何管理存储帐户]: /zh-cn/manage/services/storage/how-to-manage-a-storage-account/
   [HDI.CLIClusterCreation]: ./media/hdinsight-provision-clusters/HDI.CLIClusterCreation.png
   [HDI.CLIClusterCreationConfig]: ./media/hdinsight-provision-clusters/HDI.CLIClusterCreationConfig.png
   [HDI.CLIListCluster]: ./media/hdinsight-provision-clusters/HDI.CLIListClusters.png "列出并显示群集"
   [NuGet]: http://nuget.codeplex.com/wikipage?title=Getting%20Started
-  [以编程方式提交 Hadoop 作业]: /en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
+  [以编程方式提交 Hadoop 作业]: ./hdinsight-submit-hadoop-jobs-programmatically/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

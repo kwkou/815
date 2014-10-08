@@ -19,7 +19,7 @@
 -   [使用 PowerShell 运行 Hive 查询][]
 -   [后续步骤][]
 
-## Hive 用例
+##<a id="usage"></a>Hive 用例
 
 数据库比较适合需要管理可能有低延迟查询的较小数据集的情况。但对于包含以 TB 为单位的数据的大型数据集而言，传统的 SQL 数据库并不是理想的解决方案。数据库管理员习惯上调规模来处理这些较大的数据集，这样就会随着数据库负载增加和性能下降而采购更大型的硬件。
 
@@ -35,7 +35,7 @@ Hive 最适合批处理大量不可变数据（例如 Web 日志）。但它不�
 
 所以，日志文件就是大数据的典型范例。HDInsight 提供了 Hive 数据仓库系统，该系统有助于简化数据摘要、即席查询，以及对 Azure Blob 存储这样的 Hadoop 兼容文件系统中存储的这些大数据集进行分析。
 
-## 将数据文件上载到 Blob 存储
+##<a id="uploaddata"></a>将数据文件上载到 Blob 存储
 
 HDInsight 使用 Azure Blob 存储容器作为默认文件系统。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
@@ -60,7 +60,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。有关详细�
 
 若要生成你自己的 log4j 文件，请使用 [Apache Log4j][] 日志记录实用程序。有关将数据上载到 Azure Blob 存储的信息，请参阅[将数据上载到 HDInsight][]。
 
-## 使用 PowerShell 运行 Hive 查询
+##<a id="runhivequeries"></a>使用 PowerShell 运行 Hive 查询
 
 在上一节中，你将一个名为 sample.log 的 log4j 文件上载到了默认文件系统容器中。在本节中，你将运行 HiveQL 来创建一个 hive 表，将数据载入到该 hive 表，然后查询这些数据来了解错误日志的数量。
 
@@ -169,7 +169,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。有关详细�
 
     有关 Here-Strings 的详细信息，请参阅[使用 Windows PowerShell Here-Strings][]。
 
-## 后续步骤
+##<a id="nextsteps"></a>后续步骤
 
 Hive 可以简化使用类似 SQL 的查询语言进行数据查询的步骤，而随 HDInsight 提供的其他组件也提供了数据移动和转换这样的补充功能。若要了解更多信息，请参阅下列文章：
 
@@ -182,21 +182,21 @@ Hive 可以简化使用类似 SQL 的查询语言进行数据查询的步骤，�
 -   [Azure HDInsight SDK 文档][]
 
   [Apache Hive]: http://hive.apache.org/
-  [HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+  [HDInsight 入门]: ./hdinsight-get-started/
+  [设置 HDInsight 群集]: ./hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: ./install-configure-powershell/
   [Hive 用例]: #usage
   [将数据文件上载到 Azure Blob 存储]: #uploaddata
   [使用 PowerShell 运行 Hive 查询]: #runhivequeries
   [后续步骤]: #nextsteps
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/howto-blob-store
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ./hdinsight-use-blob-storage/
   [Apache Log4j]: http://en.wikipedia.org/wiki/Log4j
-  [将数据上载到 HDInsight]: /en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/
+  [将数据上载到 HDInsight]: ./hdinsight-upload-data/
   [HDI.HIVE.PowerShell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
   [PowerShell Invoke-Hive 输出结果]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-  [使用 Windows PowerShell Here-Strings]: http://technet.microsoft.com/en-us/library/ee692792.aspx
-  [使用 HDInsight 分析航班延误数据]: /en-us/documentation/articles/hdinsight-analyze-flight-delay-data/
-  [将 Oozie 与 HDInsight 配合使用]: /en-us/documentation/articles/hdinsight-use-oozie/
-  [以编程方式提交 Hadoop 作业]: /en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
-  [Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
+  [使用 Windows PowerShell Here-Strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
+  [使用 HDInsight 分析航班延误数据]: ./hdinsight-analyze-flight-delay-data/
+  [将 Oozie 与 HDInsight 配合使用]: ./hdinsight-use-oozie/
+  [以编程方式提交 Hadoop 作业]: ./hdinsight-submit-hadoop-jobs-programmatically/
+  [Pig 与 HDInsight 配合使用]: ./hdinsight-use-pig/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

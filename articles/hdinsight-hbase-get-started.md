@@ -25,7 +25,7 @@ HBase 是一种低延迟的 NoSQL 数据库，可用于对大数据进行联机�
 <!--[Member Offers][azure-member-offers]-->
 
 - 一个 Azure 存储帐户。有关说明，请参阅[如何创建存储帐户][azure-create-storageaccount]。
--  isual Studio 的副本。
+-  Visual Studio 的副本。
 
 **估计完成时间：**30 分钟
 
@@ -150,7 +150,7 @@ Marlin 是位于 REST API 顶部的一个精简层，它可以使用 ProtoBuf（
 
 5. 使用群集凭据创建 Marlin 的新实例并检索群集版本：
 
-        var credentials = ClusterCredentials.Create("https://yourclustername.hdinsightservices.cn/", "user", "password");
+        var credentials = ClusterCredentials.Create("https://yourclustername.azurehdinsight.cn/", "user", "password");
             var marlin = new Marlin(credentials);
         // retrieve the version as a test
         var version = marlin.GetVersion();
@@ -196,15 +196,15 @@ Marlin 是位于 REST API 顶部的一个精简层，它可以使用 ProtoBuf（
 
 在本教程中，你已了解如何设置 HBase 表、如何创建表，以及如何从 HBase shell 查看这些表中的数据。你还了解了如何使用 Hive 来查询 HBase 表中的数据，以及如何使用 HBase C\# API 创建一个 HBase 表并从该表中检索数据。
 
-[hdinsight-versions]: ../hdinsight-component-versioning/
+[hdinsight-versions]: ./hdinsight-component-versioning/
 
-[hdinsight-get-started-30]: ../hdinsight-get-started-30/
+[hdinsight-get-started-30]: ./hdinsight-get-started-30/
 
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
+[hdinsight-admin-powershell]: ./hdinsight-administer-use-powershell/
 
-[hdinsight-use-hive]: ../hdinsight-use-hive/
+[hdinsight-use-hive]: ./hdinsight-use-hive/
 
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-storage]: ./hdinsight-use-blob-storage/
 
 
 
@@ -216,13 +216,13 @@ Marlin 是位于 REST API 顶部的一个精简层，它可以使用 ProtoBuf（
 
 [azure-free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: http://www.windowsazure.cn/manage/services/storage/how-to-create-a-storage-account/ 
+[azure-create-storageaccount]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/ 
 
 [apache-hadoop]: http://hadoop.apache.org/
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ../install-configure-powershell/
-[powershell-open]: ../install-configure-powershell/#Install
+[powershell-install-configure]: ./install-configure-powershell/
+[powershell-open]: ./install-configure-powershell/#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png

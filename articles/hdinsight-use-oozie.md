@@ -48,7 +48,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 
 > [WACOM.NOTE] 有关 HDInsight 群集上支持的 Oozie 版本，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]。
 
-> [WACOM.NOTE] 本教程适用于 HDInsight 群集版本 2.1 和 3.0。本文尚未在 HDInsight Emulator 上测试过。
+> [WACOM.NOTE] 本教程适用于 HDInsight 群集版本 3.0。本文尚未在 HDInsight Emulator 上测试过。
 
 
 ##<a id="prerequisites"></a>先决条件
@@ -181,7 +181,7 @@ Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。�
 
 	<table border = "1">
 	<tr><th>工作流变量</th><th>说明</th></tr>
-	<tr><td>${jobTracker}</td><td>指定 hadoop 作业跟踪器的 URL。在 HDInsight 群集版本 2.0 和 3.0 上使用 <strong>jobtrackerhost:9010</strong>。</td></tr>
+	<tr><td>${jobTracker}</td><td>指定 hadoop 作业跟踪器的 URL。在 HDInsight 群集版本 3.0 上使用 <strong>jobtrackerhost:9010</strong>。</td></tr>
 	<tr><td>${nameNode}</td><td>指定 hadoop namenode 的 URL。使用默认文件系统 WASB 地址。例如，<i>wasb://&lt;containerName&gt;@&lt;storageAccountName&gt;.blob.core.chinacloudapi.cn</i>。</td></tr>
 	<tr><td>${queueName}</td><td>指定要将作业提交到的 queuename。使用<strong>默认值</strong>。</td></tr>
 	</table>
@@ -200,7 +200,7 @@ Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。�
 	<tr><td>${hiveOutputFolder}</td><td>Hive INSERT OVERWRITE 语句的输出文件夹。这是用于 Sqoop Export export-dir 的同一个文件夹。</td></tr>
 	</table>
 
-	有关 Oozie 工作流以及使用工作流操作的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（用于 HDInsight 群集版本 3.0）或 [Apache Oozie 3.3.2 文档][apache-oozie-332]（用于 HDInsight 群集版本 2.1）。
+	有关 Oozie 工作流以及使用工作流操作的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（用于 HDInsight 群集版本 3.0）。
 
 2. 将该文件另存为 **C:\Tutorials\UseOozie\workflow.xml**，采用 ANSI(ASCII) 编码（如果你的文本编辑器不提供该选项，请使用记事本）。
 	
@@ -342,7 +342,7 @@ WASB 语法是：
 ## <a id="run"></a>运行 Oozie 项目
 
 Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你可以使用
-Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服务 API 是 HTTP REST JSON API。有关 Oozie Web 服务 API 的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（用于 HDInsight 群集版本 3.0）或 [Apache Oozie 3.3.2 文档][apache-oozie-332]（用于 HDInsight 群集版本 2.1）。
+Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服务 API 是 HTTP REST JSON API。有关 Oozie Web 服务 API 的详细信息，请参阅 [Apache Oozie 4.0 文档][apache-oozie-400]（用于 HDInsight 群集版本 3.0）。
 
 **提交 Oozie 作业**
 
@@ -506,13 +506,11 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 	
 	    Write-Host "$(Get-Date -format 'G'): $oozieJobId is in $JobStatus state!" -ForegroundColor Green
 
-7. 如果你的 HDinsight 群集是 2.1 版的，请将“https://$clusterName.hdinsightservices.cn:443/oozie/v2/”替换为“https://$clusterName.hdinsightservices.cn:443/oozie/v1/”。HDInsight 群集版本 2.1 不支持 Web 服务的版本 2。
-
-8. 单击**运行脚本** 或按 **F5** 键以运行该脚本。输出结果将会类似于：
+7. 单击**运行脚本** 或按 **F5** 键以运行该脚本。输出结果将会类似于：
 
 	![教程运行工作流输出][img-runworkflow-output]
 
-9. 连接到 SQL Database 以查看导出的数据。
+8. 连接到 SQL Database 以查看导出的数据。
 
 **检查作业错误日志**
 
@@ -574,38 +572,38 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 
 
-[hdinsight-oozie-coordinator-time]: ../hdinsight-use-oozie-coordinator-time/
-[hdinsight-versions]:  /en-us/documentation/articles/hdinsight-component-versioning/
-[hdinsight-storage]: /en-us/documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started]: /en-us/documentation/articles/hdinsight-get-started/
-[hdinsight-admin-portal]: /en-us/documentation/articles/hdinsight-administer-use-management-portal/
+[hdinsight-oozie-coordinator-time]: ./hdinsight-use-oozie-coordinator-time/
+[hdinsight-versions]: ./hdinsight-component-versioning/
+[hdinsight-storage]: ./hdinsight-use-blob-storage/
+[hdinsight-get-started]: ./hdinsight-get-started/
+[hdinsight-admin-portal]: ./hdinsight-administer-use-management-portal/
 
 
-[hdinsight-sqoop]: ../hdinsight-use-sqoop/
-[hdinsight-provision]: /en-us/documentation/articles/hdinsight-provision-clusters/
+[hdinsight-sqoop]: ./hdinsight-use-sqoop/
+[hdinsight-provision]: ./hdinsight-provision-clusters/
 
-[hdinsight-admin-powershell]: /en-us/documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-admin-powershell]: ./hdinsight-administer-use-powershell/
 
-[hdinsight-upload-data]: /en-us/documentation/articles/hdinsight-upload-data/
+[hdinsight-upload-data]: ./hdinsight-upload-data/
 
-[hdinsight-mapreduce]: /en-us/documentation/articles/hdinsight-use-mapreduce/
-[hdinsight-hive]: /en-us/documentation/articles/hdinsight-use-hive/
+[hdinsight-mapreduce]: ./hdinsight-use-mapreduce/
+[hdinsight-hive]: ./hdinsight-use-hive/
 
-[hdinsight-pig]: /en-us/documentation/articles/hdinsight-use-pig/
+[hdinsight-pig]: ./hdinsight-use-pig/
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
-[hdinsight-storage]: /en-us/documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-storage]: ./hdinsight-use-blob-storage/
 
-[hdinsight-emulator]: /en-us/documentation/articles/hdinsight-get-started-emulator/
+[hdinsight-emulator]: ./hdinsight-get-started-emulator/
 
-[hdinsight-develop-streaming]: /en-us/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: /en-us/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-develop-streaming]: ./hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: ./hdinsight-develop-deploy-java-mapreduce/
 
-[sqldatabase-create-configue]: ../sql-database-create-configure/
-[sqldatabase-get-started]: ../sql-database-get-started/
+[sqldatabase-create-configue]: ./sql-database-create-configure/
+[sqldatabase-get-started]: ./sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /en-us/manage/services/storage/how-to-create-a-storage-account/ 
+[azure-create-storageaccount]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/ 
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -613,7 +611,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 [powershell-download]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
-[powershell-install-configure]: /en-us/manage/install-and-configure-windows-powershell/
+[powershell-install-configure]: ./install-configure-powershell/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 

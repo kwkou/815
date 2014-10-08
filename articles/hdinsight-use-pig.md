@@ -15,7 +15,7 @@
 -   [使用 HDInsight .NET SDK 提交 Pig 作业][]
 -   [后续步骤][]
 
-## Pig 用例
+##<a id="usage"></a>Pig 用例
 
 数据库对于小数据集和低延迟查询非常有用。但对于大型数据和大型数据集（以 TB 为单位）而言，传统的 SQL 数据库并不是理想的解决方案。随着数据库负载增加和性能下降，数据库管理员以前往往需要采购更大的硬件。
 
@@ -41,7 +41,7 @@
 
 有关 Pig Latin 的详细信息，请参阅 [Pig Latin 参考手册 1][] 和 [Pig Latin 参考手册 2][]。
 
-## 先决条件
+##<a id="prerequisites"></a>先决条件
 
 在开始阅读本文前，请注意以下要求：
 
@@ -69,7 +69,7 @@ WASB 语法是：
 
 存储在默认文件系统容器中的文件可以使用以下任一 URI 从 HDInsight 进行访问（以 sample.log 为例。此文件是本教程中使用的数据文件）：
 
-    wasb://mycontainer@mystorageaccount.blob.core.windows.net/example/data/sample.log
+    wasb://mycontainer@mystorageaccount.blob.core.chinacloudapi.cn/example/data/sample.log
     wasb:///example/data/sample.log
     /example/data/sample.log
 
@@ -79,7 +79,7 @@ WASB 语法是：
 
 在本文中，你将使用一个 log4j 示例文件，它是 *\\example\\data\\sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][]。
 
-## 了解 Pig Latin
+##<a id="understand"></a>了解 Pig Latin
 
 在本课中，你将检查一些 Pig Latin 语句以及运行这些语句后的结果。在下一课中，你将运行 PowerShell 来执行 Pig 语句。
 
@@ -174,7 +174,7 @@ WASB 语法是：
         (ERROR,181)
         (FATAL,37)
 
-## 使用 PowerShell 提交 Pig 作业
+##<a id="powershell"></a>使用 PowerShell 提交 Pig 作业
 
 本节提供有关使用 PowerShell cmdlet 的说明。在学习本节之前，必须先设置本地环境并配置到 Azure 的连接。有关详细信息，请参阅 [Azure HDInsight 入门][]和[使用 PowerShell 管理 HDInsight][]。
 
@@ -240,7 +240,7 @@ WASB 语法是：
 
     Pig 作业计算不同日志类型的频率。
 
-## 使用 HDInsight .NET SDK 提交 Pig 作业
+##<a id="sdk"></a>使用 HDInsight .NET SDK 提交 Pig 作业
 
 下面是使用 HDInsight .NET SDK 提交 Pig 作业的示例。有关创建 C\# 应用程序以提交 Hadoop 作业的说明，请参阅[以编程方式提交 Hadoop 作业][]。
 
@@ -335,7 +335,7 @@ WASB 语法是：
         }
     }
 
-## 后续步骤
+##<a id="nextsteps"></a>后续步骤
 
 虽然利用 Pig 可以执行数据分析，但你也可能会想试试随 HDInsight 提供的其他语言。Hive 提供了一种类似 SQL 的查询语言，你可使用该语言轻松对存储在 HDInsight 中的数据执行查询，而用 Java 编写的 MapReduce 作业允许你执行复杂数据分析。有关详细信息，请参阅以下内容：
 

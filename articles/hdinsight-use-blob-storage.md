@@ -22,7 +22,7 @@ Azure HDInsight 支持使用 Hadoop 分布式文件系统 (HDFS) 和 Azure Blob 
 -   [使用 PowerShell 访问 Blob][]
 -   [后续步骤][]
 
-## HDInsight 存储体系结构
+##<a id="architecture"></a>HDInsight 存储体系结构
 
 下图提供了 HDInsight 存储空间体系结构的抽象视图：
 
@@ -54,7 +54,7 @@ Hadoop 支持默认文件系统的概念。默认文件系统意指默认方案�
 
 Blob 存储容器将数据存储为键值对，没有目录层次结构。不过，可在键名称中使用“/”字符，使其看起来像存储在目录结构中的文件。例如，Blob 的键可以是 *input/log1.txt*。不存在实际的 *input* 目录，但由于键名称中包含“/”字符，因此使其看起来像一个文件路径。
 
-## Azure Blob 存储的优点
+##<a id="benefits"></a>Azure Blob 存储的优点
 
 通过在 Azure 数据中心的存储帐户资源附近设置计算群集，使计算节点能够通过高速网络非常高效地访问 Blob 存储中的数据，从而减少了不并置计算和存储所产生的隐含性能成本。
 
@@ -68,7 +68,8 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 
 某些 MapReduce 作业和包可能会产生中间结果，你并不想在 Blob 存储容器中存储这些结果。在此情况下，你仍可以选择将数据存储在本地 HDFS 中。实际上，HDInsight 在 Hive 作业和其他过程中会为其中某些中间结果使用 DFS。
 
-## 为 Blob 存储准备容器
+##<a id="preparingblobstorage
+"></a>为 Blob 存储准备容器
 
 若要使用 blob，必须先创建 [Azure 存储帐户][]。创建过程中，你要指定 Azure 数据中心，它将存储你使用此帐户创建的对象。群集和存储帐户都必须承载于同一数据中心（Hive 元存储 SQL 数据库和 Oozie 元存储 SQL 数据库也必须位于同一数据中心）。无论所创建的每个 blob 位于何处，它都属于存储帐户中的某个容器。此容器可以是在 HDInsight 外部创建的现有的 Blob 存储容器，也可以是为 HDInsight 群集创建的容器。
 
@@ -109,7 +110,7 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
     # 创建 Blob 存储容器
     New-AzureStorageContainer -Name $containerName -Context $destContext 
 
-## 确定 Blob 存储中文件的地址
+##<a id="addressing"></a>确定 Blob 存储中文件的地址
 
 用于访问 Blob 存储中的文件的 URI 方案为：
 
@@ -136,7 +137,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 
     example/jars/hadoop-mapreduce-examples.jar
 
-## 使用 PowerShell 访问 Blob
+##<a id="powershell"></a>使用 PowerShell 访问 Blob
 
 有关在你的工作站上安装和配置 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell][Azure PowerShell]。你可以使用 Azure PowerShell 控制台窗口或 PowerShell\_ISE 来运行 PowerShell cmdlet。
 
@@ -235,7 +236,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 
     Invoke-Hive -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.chinacloudapi.cn/;"
 
-## 后续步骤
+##<a id="nextsteps"></a>后续步骤
 
 在本文中，你学习了如何将 Blob 存储与 HDInsight 配合使用，并已了解 Blob 存储是 HDInsight 的一个基本组件。这样，你就可以使用 Azure Blob 存储来生成可伸缩的长期存档数据获取解决方案，并使用 HDInsight 来解锁所存储数据内的信息。
 
@@ -246,8 +247,8 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 -   [Hive 与 HDInsight 配合使用][]
 -   [Pig 与 HDInsight 配合使用][]
 
-  [HDInsight 入门]: ../hdinsight-get-started/
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [HDInsight 入门]: ./hdinsight-get-started/
+  [设置 HDInsight 群集]: ./hdinsight-provision-clusters/
   [HDInsight 存储空间体系结构]: #architecture
   [Azure Blob 存储的优点]: #benefits
   [为 Blob 存储空间准备容器]: #preparingblobstorage
@@ -258,11 +259,11 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
   [限制对容器和 Blob 的访问]: http://msdn.microsoft.com/zh-cn/library/azure/dd179354.aspx
   [将 HDInsight 群集与备用存储帐户和元存储配合使用]: http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
   [Blob 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-  [Azure 存储帐户]: ../storage-create-storage-account/
+  [Azure 存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
   [HDI.QuickCreate]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
   [HDI.CustomCreateStorageAccount]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png
-  [Azure PowerShell]: ../install-configure-powershell/
+  [Azure PowerShell]: ./install-configure-powershell/
   [Blob.PowerShell.cmdlets]: ./media/hdinsight-use-blob-storage/HDI.PowerShell.BlobCommands.png
-  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
-  [Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
-  [Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/
+  [将数据上载到 HDInsight]: ./hdinsight-upload-data/
+  [Hive 与 HDInsight 配合使用]: ./hdinsight-use-hive/
+  [Pig 与 HDInsight 配合使用]: ./hdinsight-use-pig/

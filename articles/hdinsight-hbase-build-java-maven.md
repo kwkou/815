@@ -564,10 +564,10 @@
   [Apache HBase]: http://hbase.apache.org/
   [Maven]: http://maven.apache.org/
   [Java 平台 JDK]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-  [一个包含 HBase 的 Azure HDInsight 群集]: /en-us/documentation/articles/hdinsight-hbase-get-started/#create-hbase-cluster
+  [一个包含 HBase 的 Azure HDInsight 群集]: ./hdinsight-hbase-get-started/#create-hbase-cluster
   [POM]: http://maven.apache.org/guides/introduction/introduction-to-the-pom.html
   [Maven 存储库搜索]: http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar
   [maven-shade-plugin]: http://maven.apache.org/plugins/maven-shade-plugin/
-  [使用远程桌面连接到 HDInsight 群集]: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-administer-use-management-portal/#rdp
-  [在 HDInsight 中上载 Hadoop 作业的数据]: /en-us/documentation/articles/hdinsight-upload-data/
-  [Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+  [使用远程桌面连接到 HDInsight 群集]: ./hdinsight-administer-use-management-portal/#rdp
+  [在 HDInsight 中上载 Hadoop 作业的数据]: ./hdinsight-upload-data/
+  [Azure PowerShell]: ./install-configure-powershell/

@@ -44,17 +44,17 @@ HDInsight 随附了以下示例。
 -   [Azure HDInsight SDK 文档][]
 -   [调试 HDInsight：错误消息][]
 
-  [以编程方式提交 Hadoop 作业]: /en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
-  [Azure HDInsight 简介]: /en-us/manage/services/hdinsight/introduction-hdinsight/
+  [以编程方式提交 Hadoop 作业]: ./hdinsight-submit-hadoop-jobs-programmatically/
+  [Azure HDInsight 简介]: ./hdinsight-introduction/
   [免费试用 Azure]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
-  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
-  [**Pi Estimator 示例**]: /en-us/manage/services/hdinsight/howto-run-samples/sample-pi-estimator/
-  [**WordCount 示例**]: /en-us/manage/services/hdinsight/howto-run-samples/sample-wordcount/
-  [**10-GB Graysort 示例**]: /en-us/manage/services/hdinsight/howto-run-samples/sample-10gb-graysort/
-  [**C\# 流式处理示例**]: /en-us/manage/services/hdinsight/howto-run-samples/sample-csharp-streaming/
-  [Azure HDInsigth 服务入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-  [Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
-  [Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
+  [设置 HDInsight 群集]: ./hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: ./install-configure-powershell/
+  [**Pi Estimator 示例**]: ./hdinsight-sample-pi-estimator/
+  [**WordCount 示例**]: ./hdinsight-sample-wordcount/
+  [**10-GB Graysort 示例**]: ./hdinsight-sample-10gb-graysort/
+  [**C\# 流式处理示例**]: ./hdinsight-sample-csharp-streaming/
+  [Azure HDInsigth 服务入门]: ./hdinsight-get-started/
+  [Pig 与 HDInsight 配合使用]: ./hdinsight-use-pig/
+  [Hive 与 HDInsight 配合使用]: ./hdinsight-use-hive/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
-  [调试 HDInsight：错误消息]: /en-us/manage/services/hdinsight/debug-error-messages/
+  [调试 HDInsight：错误消息]: ./hdinsight-debug-jobs/

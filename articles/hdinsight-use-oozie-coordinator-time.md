@@ -11,12 +11,12 @@
 
 ## 本文内容
 
-0. [什么是 Oozie](#whatisoozie)
-1. [先决条件](#prerequisites)
-2. [定义 Oozie 工作流文件](#defineworkflow)
-2. [部署 Oozie 项目并准备教程](#deploy)
-3. [运行工作流](#run)
-4. [后续步骤](#nextsteps)
+1. [什么是 Oozie](#whatisoozie)
+2. [先决条件](#prerequisites)
+3. [定义 Oozie 工作流文件](#defineworkflow)
+4. [部署 Oozie 项目并准备教程](#deploy)
+5. [运行工作流](#run)
+6. [后续步骤](#nextsteps)
 
 ##<a id="whatisoozie"></a>什么是 Oozie
 
@@ -544,7 +544,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		function checkOozieServerStatus()
 		{
 		    Write-Host "Checking Oozie server status..." -ForegroundColor Green
-		    $clusterUriStatus = "https://$clusterName.hdinsightservices.cn:443/oozie/v2/admin/status"
+		    $clusterUriStatus = "https://$clusterName.azurehdinsight.cn:443/oozie/v2/admin/status"
 		    $response = Invoke-RestMethod -Method Get -Uri $clusterUriStatus -Credential $creds -OutVariable $OozieServerStatus 
 		    
 		    $jsonResponse = ConvertFrom-Json (ConvertTo-Json -InputObject $response)
@@ -565,7 +565,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		    # 创建 Oozie 作业
 		    Write-Host "Sending the following Payload to the cluster:" -ForegroundColor Green
 		    Write-Host "`n--------`n$OoziePayload`n--------"
-		    $clusterUriCreateJob = "https://$clusterName.hdinsightservices.cn:443/oozie/v2/jobs"
+		    $clusterUriCreateJob = "https://$clusterName.azurehdinsight.cn:443/oozie/v2/jobs"
 		    $response = Invoke-RestMethod -Method Post -Uri $clusterUriCreateJob -Credential $creds -Body $OoziePayload -ContentType "application/xml" -OutVariable $OozieJobName -debug -Verbose
 		
 		    $jsonResponse = ConvertFrom-Json (ConvertTo-Json -InputObject $response)
@@ -586,7 +586,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		    Start-Sleep -Seconds $waitTimeBetweenOozieJobStatusCheck
 		
 		    Write-Host "Getting job status and waiting for the job to complete..." -ForegroundColor Green
-		    $clusterUriGetJobStatus = "https://$clusterName.hdinsightservices.cn:443/oozie/v2/job/" + $oozieJobId + "?show=info"
+		    $clusterUriGetJobStatus = "https://$clusterName.azurehdinsight.cn:443/oozie/v2/job/" + $oozieJobId + "?show=info"
 		    $response = Invoke-RestMethod -Method Get -Uri $clusterUriGetJobStatus -Credential $creds 
 		    $jsonResponse = ConvertFrom-Json (ConvertTo-Json -InputObject $response)
 		    $JobStatus = $jsonResponse[0].("status")
@@ -613,7 +613,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		function listOozieJobs()
 		{
 		    Write-Host "Listing Oozie jobs..." -ForegroundColor Green
-		    $clusterUriStatus = "https://$clusterName.hdinsightservices.cn:443/oozie/v2/jobs"
+		    $clusterUriStatus = "https://$clusterName.azurehdinsight.cn:443/oozie/v2/jobs"
 		    $response = Invoke-RestMethod -Method Get -Uri $clusterUriStatus -Credential $creds 
 		    
 		    write-host "Job ID                                   App Name        Status      Started                         Ended"
@@ -627,7 +627,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		function ShowOozieJobLog($oozieJobId)
 		{
 		    Write-Host "Showing Oozie job info..." -ForegroundColor Green
-		    $clusterUriStatus = "https://$clusterName.hdinsightservices.cn:443/oozie/v2/job/$oozieJobId" + "?show=log"
+		    $clusterUriStatus = "https://$clusterName.azurehdinsight.cn:443/oozie/v2/job/$oozieJobId" + "?show=log"
 		    $response = Invoke-RestMethod -Method Get -Uri $clusterUriStatus -Credential $creds 
 		    write-host $response
 		}
@@ -635,7 +635,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		function killOozieJob($oozieJobId)
 		{
 		    Write-Host "Killing the Oozie job $oozieJobId..." -ForegroundColor Green
-		    $clusterUriStartJob = "https://$clusterName.hdinsightservices.cn:443/oozie/v2/job/" + $oozieJobId + "?action=kill" #Valid values for the 'action' parameter are 'start', 'suspend', 'resume', 'kill', 'dryrun', 'rerun', and 'change'.
+		    $clusterUriStartJob = "https://$clusterName.azurehdinsight.cn:443/oozie/v2/job/" + $oozieJobId + "?action=kill" #Valid values for the 'action' parameter are 'start', 'suspend', 'resume', 'kill', 'dryrun', 'rerun', and 'change'.
 		    $response = Invoke-RestMethod -Method Put -Uri $clusterUriStartJob -Credential $creds | Format-Table -HideTableHeaders -debug
 		}
   
@@ -716,38 +716,38 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 
 
-[hdinsight-versions]:  /en-us/documentation/articles/hdinsight-component-versioning/
-[hdinsight-storage]: /en-us/documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started]: /en-us/documentation/articles/hdinsight-get-started/
-[hdinsight-admin-portal]: /en-us/documentation/articles/hdinsight-administer-use-management-portal/
+[hdinsight-versions]:  ./hdinsight-component-versioning/
+[hdinsight-storage]: ./hdinsight-use-blob-storage/
+[hdinsight-get-started]: ./hdinsight-get-started/
+[hdinsight-admin-portal]: ./hdinsight-administer-use-management-portal/
 
 
-[hdinsight-sqoop]: ../hdinsight-use-sqoop/
-[hdinsight-provision]: /en-us/documentation/articles/hdinsight-provision-clusters/
+[hdinsight-sqoop]: ./hdinsight-use-sqoop/
+[hdinsight-provision]: ./hdinsight-provision-clusters/
 
-[hdinsight-admin-powershell]: /en-us/documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-admin-powershell]: ./hdinsight-administer-use-powershell/
 
-[hdinsight-upload-data]: /en-us/documentation/articles/hdinsight-upload-data/
+[hdinsight-upload-data]: ./hdinsight-upload-data/
 
-[hdinsight-mapreduce]: /en-us/documentation/articles/hdinsight-use-mapreduce/
-[hdinsight-hive]: /en-us/documentation/articles/hdinsight-use-hive/
+[hdinsight-mapreduce]: ./hdinsight-use-mapreduce/
+[hdinsight-hive]: ./hdinsight-use-hive/
 
-[hdinsight-pig]: /en-us/documentation/articles/hdinsight-use-pig/
+[hdinsight-pig]: ./hdinsight-use-pig/
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
-[hdinsight-storage]: /en-us/documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-storage]: ./hdinsight-use-blob-storage/
 
-[hdinsight-emulator]: /en-us/documentation/articles/hdinsight-get-started-emulator/
+[hdinsight-emulator]: ./hdinsight-get-started-emulator/
 
-[hdinsight-develop-streaming]: /en-us/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: /en-us/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-develop-streaming]: ./hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: ./hdinsight-develop-deploy-java-mapreduce/
 [hdinsight-oozie]: ../hdinsight-use-oozie/
 
 [sqldatabase-create-configue]: ../sql-database-create-configure/
 [sqldatabase-get-started]: ../sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /en-us/manage/services/storage/how-to-create-a-storage-account/ 
+[azure-create-storageaccount]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/ 
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -755,7 +755,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 [powershell-download]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
-[powershell-install-configure]: /en-us/manage/install-and-configure-windows-powershell/
+[powershell-install-configure]: ./install-configure-powershell/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
