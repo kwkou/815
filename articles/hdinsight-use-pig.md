@@ -355,13 +355,13 @@ WASB 语法是：
   [HDI.PIG.Data.Transformation]: ./media/hdinsight-use-pig/HDI.DataTransformation.gif
   [Pig Latin 参考手册 1]: http://pig.apache.org/docs/r0.7.0/piglatin_ref1.html
   [Pig Latin 参考手册 2]: http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html
-  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/howto-blob-store/
-  [将数据上载到 HDInsight]: /en-us/manage/services/hdinsight/howto-upload-data-to-hdinsight/
-  [使用 PowerShell 管理 HDInsight]: /en-use/manage/services/hdinsight/administer-hdinsight-using-powershell/
-  [在 Windows 8 和 Windows 上启动 Windows PowerShell]: http://technet.microsoft.com/en-us/library/hh847889.aspx
+  [Azure HDInsight 入门]: ../hdinsight-get-started/
+  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
+  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [在 Windows 8 和 Windows 上启动 Windows PowerShell]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
   [HDI.Pig.PowerShell]: ./media/hdinsight-use-pig/hdi.pig.powershell.png
   [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/#mapreduce-sdk
-  [Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
+  [Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/

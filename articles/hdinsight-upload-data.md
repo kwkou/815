@@ -178,7 +178,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 -   [Hive 与 HDInsight 配合使用][]
 -   [Pig 与 HDInsight 配合使用][]
 
-  [将 Azure Blob 存储与 HDInsight 配合使用]: ./hdinsight-use-blob-storage/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: .。/hdinsight-use-blob-storage/
   [AzCopy]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx
   [Azure PowerShell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
   [Azure .NET 存储客户端库]: /en-us/develop/net/how-to-guides/blob-storage/
@@ -187,24 +187,23 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [CloudXplorer]: http://clumsyleaf.com/products/cloudxplorer
   [Azure 资源管理器]: http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx
   [Azure 资源管理器专业版]: http://www.cloudberrylab.com/microsoft-azure-explorer-pro.aspx
-  [Azure HDInsight 入门]: ./hdinsight-get-started/
-  [设置 HDInsight 群集]: ./hdinsight-provision-clusters/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/
+  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
   [使用 AzCopy 将数据上传到 Blob 存储空间]: #azcopy
   [使用 Azure PowerShell 将数据上载到 Blob 存储]: #powershell
   [使用 Azure 存储空间资源管理器将数据上传到 Blob 存储空间]: #storageexplorer
   [使用 Hadoop 命令行将数据上传到 Blob 存储空间]: #commandline
   [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储]: #sqoop
   [下载 AzCopy]: http://aka.ms/WaCopy
-  [安装和配置 Azure PowerShell]: ./install-configure-powershell/
-  []: http://azurestorageexplorer.codeplex.com/ "Azure 存储资源管理器"
-  [管理存储帐户]: ./storage-manage-storage-account/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [管理存储帐户]: ../storage-manage-storage-account/
   [HDI.AzureStorageExplorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
   [HDI.ASEAddAccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
   [HDI.ASEBlob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
   [管理门户]: https://manage.windowsazure.cn
   [Sqoop 用户指南]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
   [创建和配置 SQL Database]: /zh-cn/manage/services/sql-databases/getting-started-w-sql-databases/
-  [将 Sqoop 与 HDInsight 配合使用]: ./hdinsight-use-sqoop/
-  [以编程方式提交 Hadoop 作业]: ./hdinsight-submit-hadoop-jobs-programmatically/
-  [Hive 与 HDInsight 配合使用]: ./hdinsight-use-hive/
-  [Pig 与 HDInsight 配合使用]: ./hdinsight-use-pig
+  [将 Sqoop 与 HDInsight 配合使用]: ../hdinsight-use-sqoop/
+  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
+  [Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
+  [Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig

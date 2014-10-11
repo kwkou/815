@@ -485,17 +485,17 @@ HDInsight .NET SDK 提供了一组 .NET 客户端库，使你能够在 .NET 中�
   [使用跨平台命令行]: #cli
   [使用 HDInsight .NET SDK]: #sdk
   [后续步骤]: #nextsteps
-  [将 Azure Blob 存储与 HDInsight 配合使用]: ./hdinsight-use-blob-storage/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
   [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
-  [Azure HDInsight 入门]: ./hdinsight-get-started/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [Azure HDInsight 包含哪个版本的 Hadoop？]: ./hdinsight-component-versioning/
+  [Azure HDInsight 包含哪个版本的 Hadoop？]: ../hdinsight-component-versioning/
   [HDI.CustomProvision.Page1]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page1.png
   [HDI.CustomProvision.Page2]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page2.png
   [HDI.CustomProvision.Page3]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page3.png
   [HDI.CustomProvision.Page4]: ./media/hdinsight-provision-clusters/HDI.CustomProvision.Page4.png
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
-  [使用 PowerShell 管理 HDInsight]: ./hdinsight-administer-use-powershell/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [HDI.CLI.Provision]: ./media/hdinsight-provision-clusters/HDI.ps.provision.png
   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/develop/nodejs/how-to-guides/command-line-tools/
@@ -506,5 +506,5 @@ HDInsight .NET SDK 提供了一组 .NET 客户端库，使你能够在 .NET 中�
   [HDI.CLIClusterCreationConfig]: ./media/hdinsight-provision-clusters/HDI.CLIClusterCreationConfig.png
   [HDI.CLIListCluster]: ./media/hdinsight-provision-clusters/HDI.CLIListClusters.png "列出并显示群集"
   [NuGet]: http://nuget.codeplex.com/wikipage?title=Getting%20Started
-  [以编程方式提交 Hadoop 作业]: ./hdinsight-submit-hadoop-jobs-programmatically/
+  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

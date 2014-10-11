@@ -572,35 +572,35 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 
 
-[hdinsight-oozie-coordinator-time]: ./hdinsight-use-oozie-coordinator-time/
-[hdinsight-versions]: ./hdinsight-component-versioning/
-[hdinsight-storage]: ./hdinsight-use-blob-storage/
-[hdinsight-get-started]: ./hdinsight-get-started/
-[hdinsight-admin-portal]: ./hdinsight-administer-use-management-portal/
+[hdinsight-oozie-coordinator-time]: ../hdinsight-use-oozie-coordinator-time/
+[hdinsight-versions]: ../hdinsight-component-versioning/
+[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-get-started]: ../hdinsight-get-started/
+[hdinsight-admin-portal]: ../hdinsight-administer-use-management-portal/
 
 
-[hdinsight-sqoop]: ./hdinsight-use-sqoop/
-[hdinsight-provision]: ./hdinsight-provision-clusters/
+[hdinsight-sqoop]: ../hdinsight-use-sqoop/
+[hdinsight-provision]: ../hdinsight-provision-clusters/
 
-[hdinsight-admin-powershell]: ./hdinsight-administer-use-powershell/
+[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
 
-[hdinsight-upload-data]: ./hdinsight-upload-data/
+[hdinsight-upload-data]: ../hdinsight-upload-data/
 
-[hdinsight-mapreduce]: ./hdinsight-use-mapreduce/
-[hdinsight-hive]: ./hdinsight-use-hive/
+[hdinsight-mapreduce]: ../hdinsight-use-mapreduce/
+[hdinsight-hive]: ../hdinsight-use-hive/
 
-[hdinsight-pig]: ./hdinsight-use-pig/
+[hdinsight-pig]: ../hdinsight-use-pig/
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
-[hdinsight-storage]: ./hdinsight-use-blob-storage/
+[hdinsight-storage]: ../hdinsight-use-blob-storage/
 
-[hdinsight-emulator]: ./hdinsight-get-started-emulator/
+[hdinsight-emulator]: ../hdinsight-get-started-emulator/
 
-[hdinsight-develop-streaming]: ./hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: ./hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
 
-[sqldatabase-create-configue]: ./sql-database-create-configure/
-[sqldatabase-get-started]: ./sql-database-get-started/
+[sqldatabase-create-configue]: /zh-cn/manage/services/sql-databases/how-to-configure-a-sqldb/
+[sqldatabase-get-started]: /zh-cn/manage/services/sql-databases/sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/ 
@@ -611,7 +611,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 [powershell-download]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
-[powershell-install-configure]: ./install-configure-powershell/
+[powershell-install-configure]: ../install-configure-powershell/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 

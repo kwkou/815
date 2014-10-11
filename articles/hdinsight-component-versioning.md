@@ -25,7 +25,7 @@ HDInsight 3.0 群集只支持“wasb://”语法。较早的“asv://”语法�
 
 ## HDInsight 版本
 
-HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选项设置 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与每个 HDInsight 群集版本关联的组件版本。请注意，[Azure HDInsight][] 使用的默认群集版本当前是 2.1（基于 HDP 1.3）。
+HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选项设置 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与每个 HDInsight 群集版本关联的组件版本。请注意，[Azure HDInsight][] 使用的默认群集版本当前是 3.0（基于 HDP 2.2）。
 
 <table border="1">
 <tr><th>组件</th><th>版本 3.0</th></tr>
@@ -44,13 +44,16 @@ HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选�
 
 通过 HDInsight PowerShell Cmdlet 或 HDInsight .NET SDK 创建群集时，你可以使用“Version”参数选择 HDInsight Hadoop 群集的版本。
 
-如果你使用“快速创建” 选项，则在默认情况下将得到 HDInsight Hadoop 群集的 2.1 版本。如果在 Azure 门户中使用“自定义创建” 选项，可以从“群集详细信息” 页上的“HDInsight 版本” 下拉列表中选择要部署的群集版本。3.0 版的 HDInsight Hadoop 群集只在“自定义创建” 向导中作为选项提供。
+如果你使用“快速创建” 选项，则在默认情况下将得到 HDInsight Hadoop 群集的 3.0 版本。
+<!---
+如果在 Azure 门户中使用“自定义创建” 选项，可以从“群集详细信息” 页上的“HDInsight 版本” 下拉列表中选择要部署的群集版本。3.0 版的 HDInsight Hadoop 群集只在“自定义创建” 向导中作为选项提供。
+--->
 
 ![HDI.Versioning.VersionScreen][]
 
 ## 支持的版本
 
-下表列出当前可用的 HDInsight 版本以及它们使用的相应 Hortonworks 数据平台 (HDP) 版本和发布日期。如果知道，还提供它们的弃用日期。默认情况下，会针对 HDInsight 2.1 和 3.0 群集部署具有两个头节点的高度可用群集。它们不适用于 HDInsight 1.6 群集。
+下表列出当前可用的 HDInsight 版本以及它们使用的相应 Hortonworks 数据平台 (HDP) 版本和发布日期。如果知道，还提供它们的弃用日期。默认情况下，会针对 HDInsight 3.0 群集部署具有两个头节点的高度可用群集。
 
 <table border="1">
 <tr><th>HDInsight 版本</th><th>HDP 版本</a><th>高可用性</th></th><th>发布日期</th><th>支持到期日期</th><th>弃用日期</th></tr>
@@ -89,7 +92,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 --->
 -   与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。确定可用组件并验证正在使用哪些群集版本的一种方法是使用 Ambari REST API。GetComponentInformation 命令可用于检索有关服务组件的信息。有关详细信息，请参阅 [Ambari 文档][]。获取此信息的另一个方法是使用远程桌面登录到群集并直接检查“C:\\apps\\dist”目录的内容。
 
-  [Azure HDInsight]: http://go.microsoft.com/fwlink/?LinkID=285601
+  [Azure HDInsight]: http://www.windowsazure.cn/zh-cn/manage/services/hdinsight/
   [HDI.Versioning.VersionScreen]: ./media/hdinsight-component-versioning/hdi-versioning-version-screen.png
   [系列 4]: http://msdn.microsoft.com/zh-cn/library/azure/ee924680.aspx#explanation
   [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver

@@ -21,7 +21,7 @@ Hive 提供了通过类似 SQL 的脚本语言（称作 *[HiveQL][]*）运行 Ma
 -   [将输出导出到 Azure SQL Database][]
 -   [后续步骤][]
 
-## 准备教程
+## <a id="prepare"></a>准备教程
 
 本教程将对你的工作站使用来自[美国研究与技术创新管理部门 - 运输统计局][] (RITA) 的航班准时表现数据。你将执行以下操作：
 
@@ -286,7 +286,7 @@ WASB 语法为：
 
         $conn.close()
 
-## 创建并上载 HiveQL 脚本
+## <a id="createscript"></a>创建并上载 HiveQL 脚本
 
 使用 Azure PowerShell，你可以一次运行多个 HiveQL 语句，或者将 HiveQL 语句打包到一个脚本文件中。在本教程中，你将创建 HiveQL 脚本。必须将脚本文件上载到 WASB。在下一节中，你将使用 Azure PowerShell 运行脚本文件。
 
@@ -437,7 +437,7 @@ HiveQL 脚本将执行以下操作：
         ----                              --------   ------                            -----------                       ------------                      ------------
         tutorials/flightdelays/flightd...BlockBlob  1938                              application/octet-stream          2/12/2014 9:57:28 PM +00:00
 
-## 执行 HiveQL 脚本
+## <a id="executehqlscript"></a>执行 HiveQL 脚本
 
 有几个 Azure PowerShell cmdlet 可用于运行 Hive。本教程使用的是 Invoke-Hive。有关其他方法，请参阅[将 Hive 与 HDInsight 配合使用][]。使用 Invoke-Hive，可以运行 HiveQL 语句或 HiveQL 脚本。你将使用已创建并已上载到 Azure Blob 存储的 HiveQL 脚本。
 
@@ -521,7 +521,7 @@ HiveQL 脚本将执行以下操作：
 
     在每个城市和延迟时间之间有一个分隔符，该分隔符在 PowerShell 输出窗口中不可见。该分隔符是“\\001”。当你运行 Sqoop 导出时，将使用此分隔符。
 
-## 将 Hive 作业输出导出到 Azure SQL Database
+## <a id="exportdata"></a>将 Hive 作业输出导出到 Azure SQL Database
 
 最后的步骤是运行 Sqoop 导出，将数据导出到 SQL Database。在本教程的前面部分，你已创建 SQL Database 和 AvgDelays 表。
 
@@ -597,7 +597,7 @@ HiveQL 脚本将执行以下操作：
 
     ![HDI.FlightDelays.AvgDelays.Dataset][]
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 现在你已了解如何执行以下操作：将文件上载到 Blob 存储、使用 Blob 存储中的数据填充 Hive 表、运行 Hive 查询以及使用 Sqoop 将数据从 HDFS 导出到 Azure SQL Database。若要了解更多信息，请参阅下列文章：
 

@@ -21,13 +21,13 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 3.  [将数据从 HDInsight 群集导入到 Excel 中][]
 4.  [后续步骤][]
 
-## 安装 Microsoft Hive ODBC 驱动程序
+## <a id="InstallHiveODBCDriver"></a>安装 Microsoft Hive ODBC 驱动程序
 
 从[下载中心][]下载并安装 Microsoft Hive ODBC 驱动程序。
 
 此驱动程序可以安装在 32 位或 64 位版本的 Windows 7、Windows 8、Windows Server 2008 R2 和 Windows Server 2012 上，并将允许连接到 Azure HDInsight（1.6 及更高版本）和 Azure HDInsight Emulator（1.0.0.0 及更高版本）。你应安装与你将在其中使用 ODBC 驱动程序的应用程序版本匹配的版本。在本教程中，将通过 Office Excel 使用此驱动程序。
 
-## 创建 Hive ODBC 数据源
+## <a id="CreateHiveODBCDataSource"></a>创建 Hive ODBC 数据源
 
 下列步骤演示如何创建 Hive ODBC 数据源。
 
@@ -68,7 +68,7 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 7.  单击“确定” 以关闭“测试”对话框。现在，新的数据源应该在“ODBC 数据源管理器” 中列出。
 8.  单击“确定” 以退出向导。
 
-## 将 HDInsight 群集中的数据导入到 Excel 中
+## <a id="ImportData"></a>将 HDInsight 群集中的数据导入到 Excel 中
 
 下列步骤介绍如何使用在上述步骤中创建的 ODBC 数据源将数据从 Hive 表中导入到 Excel 工作簿。
 
@@ -93,7 +93,7 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 13. 单击“确定” 以关闭“导入数据” 对话框。
 14. 重新输入密码，然后单击“确定” 。需要几秒钟时间才能将数据导入到 Excel 中。
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本文中，你已了解如何使用 Microsoft Hive ODBC 驱动程序将来自 HDInsight 服务的数据检索到 Excel 中。同样地，你也可以将来自 HDInsight 服务的数据检索到 SQL Database 中。也可以将数据上载到 HDInsight 服务中。若要了解更多信息，请参阅以下文章：
 
@@ -101,8 +101,8 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 -   [将数据上载到 HDInsight][]
 -   [将 Sqoop 与 HDInsight 配合使用][]
 
-  [利用 Power Query 将 Excel 连接到 HDInsight]: /en-us/documentation/articles/hdinsight-connect-excel-power-query/
-  [Azure HDInsight 入门]: /en-us/documentation/articles/hdinsight-get-started/
+  [利用 Power Query 将 Excel 连接到 HDInsight]: ../hdinsight-connect-excel-power-query/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/
   [安装 Microsoft Hive ODBC 驱动程序]: #InstallHiveODBCDriver
   [创建 Hive ODBC 数据源]: #CreateHiveODBCDataSource
   [将数据从 HDInsight 群集导入到 Excel 中]: #ImportData
@@ -111,8 +111,8 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
   [ODBC 数据源管理器]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.DataSourceAdmin1.png
   [高级选项]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.HiveOdbc.DataSource.AdvancedOptions1.png
   [打开数据连接向导]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.Excel.DataConnection1.png
-  [将 Hive 与 HDInsight 配合使用]: /en-us/documentation/articles/hdinsight-use-hive/
+  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
   [连接属性]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveODBC.Excel.ConnectionProperties1.png
-  [使用 HDInsight 分析航班延误数据]: /en-us/documentation/articles/hdinsight-analyze-flight-delay-data/
-  [将数据上载到 HDInsight]: /en-us/documentation/articles/hdinsight-upload-data/
+  [使用 HDInsight 分析航班延误数据]: ../hdinsight-analyze-flight-delay-data/
+  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
   [将 Sqoop 与 HDInsight 配合使用]: ../hdinsight-use-sqoop/

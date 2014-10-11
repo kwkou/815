@@ -392,11 +392,11 @@ Mahout 作业不会清理处理期间创建的临时文件。此外，这些作�
 若要运行使用这些类的作业，请连接到 HDInsight 群集，然后使用 Hadoop 命令行运行这些作业。有关示例，请参阅[使用 Hadoop 命令行为数据分类](#classify)。
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
+[aps]: ../install-configure-powershell/
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-get-started/
-[upload]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-upload-data/
+[getstarted]: ../hdinsight-get-started/
+[upload]: ../hdinsight-upload-data/
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/

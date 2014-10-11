@@ -30,7 +30,7 @@ HDInsight Emulator 提供了针对 Azure HDInsight 的本地开发环境。如�
 -   [运行 HDInsight PowerShell][]
 -   [后续步骤][]
 
-## 安装 HDInsight Emulator
+## <a id="install"></a>安装 HDInsight Emulator
 
 Microsoft HDInsight Emulator 可通过 Microsoft Web 平台安装程序进行安装。
 
@@ -66,7 +66,7 @@ Microsoft HDInsight Emulator 可通过 Microsoft Web 平台安装程序进行安
 
     有关安装和运行 HDInsight Server 的已知问题，请参阅 [HDInsight Emulator 发行说明][]。安装日志位于 **C:\\HadoopFeaturePackSetup\\HadoopFeaturePackSetupTools\\gettingStarted.winpkg.install.log**。
 
-## 运行单词计数 MapReduce 作业
+## <a id="runwordcount"></a>运行单词计数 MapReduce 作业
 
 现在你已在工作站上配置了 HDInsight Emulator。你可以运行 MapReduce 作业以便测试安装。你将首先将某些文本文件上载到 HDFS，然后运行单词计数 MapReduce 作业以便计算该单词在这些文件中出现的频率。
 
@@ -131,7 +131,7 @@ jar 命令的语法是：
         windows+java6.  1
         windows.        3
 
-## 运行入门示例
+## <a id="rungetstartedsamples"></a>运行入门示例
 
 HDInsight Emulator 安装提供了一些示例，以便新用户能够快速地在 Windows 上开始学习基于 Apache Hadoop 的服务。这些示例涉及在处理大型数据集时通常需要的一些任务。通过执行这些示例，你可以熟悉与 MapReduce 编程模型及其生态系统相关联的概念。
 
@@ -398,7 +398,7 @@ Pig 处理使用称作 *Pig Latin* 的数据流语言。Pig Latin 抽象提供�
 
         powershell -F buildsamples.ps1
 
-## 连接到 Azure Blob 存储
+## <a id="blobstorage"></a>连接到 Azure Blob 存储
 
 Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][将 Azure Blob 存储用于 HDInsight]。
 
@@ -531,7 +531,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信�
 
         hadoop fs -ls hdfs://localhost:8020/
 
-## 运行 HDInsight PowerShell
+## <a id="powershell"></a>运行 HDInsight PowerShell
 
 HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包括：
 
@@ -556,7 +556,7 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
 
 有关提交 Hadoop 作业的详细信息，请参阅[以编程方式提交 Hadoop 作业][]。有关 HDInsight PowerShell cmdlet 的详细信息，请参阅 [HDInsight cmdlet 参考][]。
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本教程中，你安装了 HDInsight Emulator，并且运行了一些 Hadoop 作业。若要了解更多信息，请参阅下列文章：
 
@@ -566,7 +566,7 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
 -   [HDInsight Emulator 发行说明][]
 -   [用于讨论 HDInsight 的 MSDN 论坛][]
 
-  [Azure HDInsight 包含哪个版本的 Hadoop？]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/ "HDInsight 组件和版本"
+  [Azure HDInsight 包含哪个版本的 Hadoop？]: ../hdinsight-component-versioning/ 
   [开始使用 Azure HDInsight]: ../hdinsight-get-started/
   [安装和配置 Azure PowerShell]: ../install-configure-powershell/
   [安装 HDInsight Emulator]: #install

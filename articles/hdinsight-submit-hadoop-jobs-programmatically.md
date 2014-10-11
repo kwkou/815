@@ -21,7 +21,7 @@
 -   [使用 HDInsight .NET SDK 提交 Hive 作业][]
 -   [后续步骤][]
 
-## 使用 PowerShell 提交 MapReduce 作业
+## <a id="mapreduce-powershell"></a>使用 PowerShell 提交 MapReduce 作业
 
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关将 PowerShell 用于 HDInsight 的更多信息，请参见[使用 PowerShell 管理 HDInsight][]。
 
@@ -104,7 +104,7 @@ Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用
 
 > [WACON.NOTE] 如果你在记事本中打开 ./example/data/WordCountOutput/part-r-00000（MapReduce 作业的多行输出），将会注意到断行未正确呈现。这是正常情况。
 
-## 使用 PowerShell 提交 Hive 作业
+## <a id="hive-powershell"></a>使用 PowerShell 提交 Hive 作业
 
 Apache [Hive][] 提供了通过类似 SQL 的脚本语言（称作 *HiveQL*）运行 MapReduce 作业的方法，此方法可用于对大量数据进行汇总、查询和分析。
 
@@ -135,11 +135,11 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 
 有关 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用][]。
 
-## 使用 PowerShell 提交 Sqoop 作业
+## <a id="sqoop-powershell"></a>使用 PowerShell 提交 Sqoop 作业
 
 请参阅[将 Sqoop 与 HDInsight 配合使用][]。
 
-## 使用 HDInsight .NET SDK 提交 MapReduce 作业
+## <a id="mapreduce-sdk"></a>使用 HDInsight .NET SDK 提交 MapReduce 作业
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。HDInsight 群集附带一个 jar 文件，位于 *\\example\\jars\\hadoop-examples.jar*，它包含几个 MapReduce 示例。一个示例是计算源文件中的单词频率。在本课中，你将了解如何创建 .NET 应用程序来运行单词计数示例。有关开发和运行 MapReduce 作业的详细信息，请参阅[将 MapReduce 与 HDInsight 配合使用][]。
 
@@ -287,7 +287,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 该应用程序在 Visual Studio 中打开时，按 **F5** 键以运行该应用程序。控制台窗口应该会打开并显示该应用程序的状态和应用程序输出结果。
 
-## 使用 HDInsight .NET SDK 提交 Hadoop 流作业
+## <a id="streaming-sdk"></a>使用 HDInsight .NET SDK 提交 Hadoop 流作业
 
 HDInsight 群集提供了一个用 C\# 开发的字数统计 Hadoop 流程序。映射器程序为 */example/apps/cat.exe*，化简程序为 */example/apps/wc.exe*。在本课中，你将学习如何创建 .NET 应用程序以运行字数统计示例。
 
@@ -386,7 +386,7 @@ HDInsight 群集提供了一个用 C\# 开发的字数统计 Hadoop 流程序。
         }
     }
 
-## 使用 HDInsight .NET SDK 提交 Hive 作业
+## <a id="hive-sdk"></a>使用 HDInsight .NET SDK 提交 Hive 作业
 
 HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在本课中，你将创建一个 .NET 应用程序来运行 Hive 作业，以列出在 HDInsight 群集上创建的 Hive 表。有关使用 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用][]。
 
@@ -520,7 +520,7 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 
     hivesampletable
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本文中，你已经学习了几种设置 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
@@ -531,9 +531,9 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 -   [Hive 与 HDInsight 配合使用][将 Hive 与 HDInsight 配合使用]
 -   [Pig 与 HDInsight 配合使用][]
 
-  [HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+  [HDInsight 入门]: ../hdinsight-get-started/
+  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
   [使用 PowerShell 提交 MapReduce 作业]: #mapreduce-powershell
   [使用 PowerShell 提交 Hive 作业]: #hive-powershell
   [使用 PowerShell 提交 Sqoop 作业]: #sqoop-powershell
@@ -541,17 +541,17 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
   [使用 HDInsight .NET SDK 提交 Hadoop 流 MapReduce 作业]: #streaming-sdk
   [使用 HDInsight .NET SDK 提交 Hive 作业]: #hive-sdk
   [后续步骤]: #nextsteps
-  [使用 PowerShell 管理 HDInsight]: /en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/
-  [将 MapReduce 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-mapreduce-with-hdinsight/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/howto-blob-store/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [将 MapReduce 与 HDInsight 配合使用]: ../hdinsight-use-mapreduce/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
   [HDI.GettingStarted.RunMRJob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
   [HDI.GettingStarted.MRJobOutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
   [Hive]: http://hive.apache.org/
-  [将 Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
+  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
   [将 Sqoop 与 HDInsight 配合使用]: ../hdinsight-use-sqoop/
   [NuGet]: http://nuget.codeplex.com/wikipage?title=Getting%20Started
   [Azure 管理门户]: http://manage.windowsazure.cn/
   [创建并上载 Azure 管理证书]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
   [为 HDInsight 开发 C\# Hadoop 流程序]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
   [HDInsight Cmdlet 参考文档]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
-  [Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
+  [Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/

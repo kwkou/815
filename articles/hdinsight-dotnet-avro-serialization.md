@@ -62,7 +62,7 @@ Microsoft Avro Library 设计为可处理任何流。在这些示例中，为保
 -   [**使用对象容器文件通过通用记录进行序列化**][]：JSON 架构显式地与数据一起序列化，并使用 Avro 容器文件进行共享。
 -   [**使用对象容器文件通过自定义压缩编解码器进行序列化**][]：JSON 架构与数据一起序列化，并使用 Avro 容器文件（包含 deflate 数据压缩编解码器的自定义 .NET 实现）进行共享。
 
-## 通过反射进行序列化
+## <a id="Scenario1"></a>通过反射进行序列化
 
 Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer**][] 以标识要序列化的字段。
 
@@ -186,7 +186,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-## 通过通用记录进行序列化
+## <a id="Scenario2"></a>通过通用记录进行序列化
 
 当数据无法使用具有数据协定的 .NET 类表示而导致不能使用反射时，可以在通用记录中显式指定 JSON 架构。此方法通常比使用反射和用于特定 C\# 类的序列化程序速度慢。在这种情况下，数据架构也可能是动态的，因为在编译之前它是未知的。以逗号分隔值 (CSV) 文件表示的数据（在运行时转换为 Avro 格式之前，其架构一直是未知的）是这种动态方案的一个示例。
 
@@ -308,7 +308,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-## 使用对象容器文件进行序列化与使用反射进行序列化
+## <a id="Scenario3"></a>使用对象容器文件进行序列化与使用反射进行序列化
 
 此示例类似于[第一个示例][**通过反射进行序列化**]中的方案，都是使用反射隐式地指定架构，不同的是，此处未假定对架构进行反序列化的读取器知道架构。要序列化的 **SensorData** 对象及其隐式指定的架构存储在由 [**AvroContainer**][] 类表示的对象容器文件中。
 
@@ -547,7 +547,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-## 使用对象容器文件进行序列化与使用通用记录进行序列化
+## <a id="Scenario4"></a>使用对象容器文件进行序列化与使用通用记录进行序列化
 
 此示例类似于[第二个示例][**通过通用记录进行序列化**]中的方案，都是使用 JSON 显式指定架构，不同的是，此处未假定对架构进行反序列化的读取器知道架构。
 
@@ -806,7 +806,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
     // ----------------------------------------
     // Press any key to exit.
 
-## 使用对象容器文件通过自定义压缩编解码器进行序列化
+## <a id="Scenario5"></a>使用对象容器文件通过自定义压缩编解码器进行序列化
 
 下面的示例演示如何将自定义压缩编解码器用于 Avro 对象容器文件。[Avro 规范][]允许使用可选的压缩编解码器（除了 **Null** 和 **Deflate** 默认压缩编解码器外）。此示例未完全实现类似 Snappy（在 [Avro 规范][4]中作为支持的可选编解码器提及）的新编解码器。它演示如何使用 [**Deflate**][3] 编解码器的 .NET Framework 4.5 实现，后者基于 [zlib][] 压缩库提供比默认的 .NET Framework 4.0 版本更好的压缩算法。
 
@@ -1302,7 +1302,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
 
   [JSON]: http://www.json.org
   [Apache Avro 规范]: http://avro.apache.org/docs/current/spec.html
-  [**AvroRecord**]: http://msdn.microsoft.com/en-us/library/microsoft.hadoop.avro.avrorecord.aspx
+  [**AvroRecord**]: http://msdn.microsoft.com/zh-cn/library/microsoft.hadoop.avro.avrorecord.aspx
   [Microsoft .NET Framework v4.0]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17851
   [Newtonsoft Json.NET]: http://james.newtonking.com/json
   [Azure 代码示例]: http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923

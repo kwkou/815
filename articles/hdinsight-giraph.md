@@ -205,22 +205,20 @@ Giraph 作业在运行时将创建指定的输出目录。如果该目录已存�
   [Maven]: http://maven.apache.org/
   [Giraph 存储库]: https://github.com/apache/giraph
   [GIRAPH-930]: https://issues.apache.org/jira/browse/GIRAPH-930
-  [Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
+  [Azure PowerShell]: ../install-configure-powershell/
   [HDInsight-Tools]: https://github.com/Blackmist/hdinsight-tools
-  [在 HDInsight 中上载 Hadoop 作业的数据]: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-upload-data/
+  [在 HDInsight 中上载 Hadoop 作业的数据]: ../hdinsight-upload-data/
   [Pregel]: http://people.apache.org/~edwardyoon/documents/pregel.pdf
   [release-1.1 分库]: https://github.com/apache/giraph/tree/release-1.1
   [定向图形]: http://en.wikipedia.org/wiki/Directed_graph
-  [tiny\_graph.txt 中的对象绘制为圆圈，线条表示对象之间的不同距离]: .\media\hdinsight-giraph\giraph-graph.png
-  [将对象绘制为圆圈，并绘制对象之间的最短路径]: .\media\hdinsight-giraph\giraph-graph-out.png
+  [tiny\_graph.txt 中的对象绘制为圆圈，线条表示对象之间的不同距离]: ./media/hdinsight-giraph/giraph-graph.png
+  [将对象绘制为圆圈，并绘制对象之间的最短路径]: ./media/hdinsight-giraph/giraph-graph-out.png
   [Azure 管理门户]: https://manage.windowsazure.com
-  [HDInsight 群集版本中的新增功能]: http://azure.microsoft.com/en-us/documentation/articles/hdinsight-component-versioning/
+  [HDInsight 群集版本中的新增功能]: ../hdinsight-component-versioning/
   [Hadoop 命令行]: #cmd
-  [Pig]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-use-pig/
-  [Hive]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-use-hive/
+  [Pig]: ../hdinsight-use-pig/
+  [Hive]: ../hdinsight-use-hive/
 
   [giraph]: http://giraph.apache.org
 [tools]: https://github.com/Blackmist/hdinsight-tools
-[aps]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
-[pig]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-use-pig/
-[hive]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-use-hive/
+[aps]: ../install-configure-powershell/

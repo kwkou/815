@@ -23,7 +23,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 -   [将数据上载到 Blob 存储][]
 -   [从 Blob 存储下载 MapReduce 输出数据][]
 
-## 设置 HDInsight 群集
+## <a id="provision"></a>设置 HDInsight 群集
 
 HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先拥有 Azure 存储帐户和存储容器，然后才能创建 HDInsight 群集。
 
@@ -39,11 +39,8 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 > [WACOM.NOTE] 存储帐户必须与 HDInsight 群集位于同一数据中心。目前，只能在以下数据中心内设置 HDInsight 群集：
 
-> -   亚洲东南部
-> -   欧洲北部
-> -   欧洲西部
-> -   美国东部
-> -   美国西部
+> -   中国东部
+> -   中国北部
 
 有关使用管理门户创建 Azure 存储帐户的信息，请参阅[如何创建存储帐户][]。
 
@@ -92,7 +89,7 @@ PowerShell 不能在 HDInsight 设置过程中创建 Blob 容器。你可以使�
 
 ![HDI.PS.Provision][]
 
-## 列出并显示群集详细信息
+## <a id="listshow"></a>列出并显示群集详细信息
 
 使用以下命令来列出和显示群集详细信息：
 
@@ -104,13 +101,13 @@ PowerShell 不能在 HDInsight 设置过程中创建 Blob 容器。你可以使�
 
     Get-AzureHDInsightCluster -Name <ClusterName> 
 
-## 删除群集
+## <a id="delete"></a>删除群集
 
 使用以下命令来删除群集：
 
     Remove-AzureHDInsightCluster -Name <ClusterName> 
 
-## 授予/撤消 HTTP 服务访问权限
+## <a id="httpservices"></a>授予/撤消 HTTP 服务访问权限
 
 HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样式的终结点）：
 
@@ -130,7 +127,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 也可以使用 Windows Azure 管理门户完成此操作。请参阅[使用管理门户管理 HDInsight][]。
 
-## 提交 MapReduce 作业
+## <a id="mapreduce"></a>提交 MapReduce 作业
 
 HDInsight 群集分发附带一些 MapReduce 示例。其中一个示例是计算源文件中的单词频率。
 
@@ -170,7 +167,7 @@ storage]。
 
 有关开发和运行 MapReduce 作业的详细信息，请参阅[将 MapReduce 与 HDInsight 配合使用][]。
 
-## 提交 Hive 作业
+## <a id="hive"></a>提交 Hive 作业
 
 HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可以使用 HiveQL“show tables;”列出群集上的 Hive 表。
 
@@ -195,11 +192,11 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 
 有关使用 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用][]。
 
-## 将数据上载到 Blob 存储
+## <a id="upload"></a>将数据上载到 Blob 存储
 
 请参阅[将数据上载到 HDInsight][]。
 
-## 从 Blob 存储下载 MapReduce 输出
+## <a id="download"></a>从 Blob 存储下载 MapReduce 输出
 
 请参阅本文中的[提交 MapReduce 作业][]一节。
 
@@ -216,7 +213,7 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [免费试用]: https://www.windowsazure.cn/zh-cn/pricing/free-trial/
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
   [设置群集]: #provision
   [列出并显示群集]: #listshow
   [删除群集]: #delete
@@ -225,14 +222,14 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
   [提交 Hive 作业]: #hive
   [将数据上载到 Blob 存储]: #upload
   [从 Blob 存储下载 MapReduce 输出数据]: #download
-  [如何创建存储帐户]: /en-us/manage/services/storage/how-to-create-a-storage-account/
-  [如何管理存储帐户]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
+  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
+  [如何管理存储帐户]: /zh-cn/manage/services/storage/how-to-manage-a-storage-account/
   [HDI.PS.Provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
-  [使用管理门户管理 HDInsight]: /en-us/documentation/articles/hdinsight-administer-use-management-portal/
-  [将 MapReduce 与 HDInsight 配合使用]: /en-us/documentation/articles/hdinsight-use-mapreduce/
-  [将 Hive 与 HDInsight 配合使用]: /en-us/documentation/articles/hdinsight-use-hive/
-  [将数据上载到 HDInsight]: /en-us/documentation/articles/hdinsight-upload-data/
-  [使用命令行接口管理 HDInsight]: /en-us/documentation/articles/hdinsight-administer-use-command-line/
-  [配置 HDInsight 群集]: /en-us/documentation/articles/hdinsight-provision-clusters/
-  [以编程方式提交 Hadoop 作业]: /en-us/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-  [Azure HDInsight 入门]: /en-us/documentation/articles/hdinsight-get-started/
+  [使用管理门户管理 HDInsight]: ../hdinsight-administer-use-management-portal/
+  [将 MapReduce 与 HDInsight 配合使用]: ../hdinsight-use-mapreduce/
+  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
+  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
+  [使用命令行接口管理 HDInsight]: ../hdinsight-administer-use-command-line/
+  [配置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/

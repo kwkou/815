@@ -14,13 +14,13 @@
 -   [Ambari 监视 API][]
 -   [后续步骤][]
 
-## 什么是 Ambari？
+## <a id="whatisambari"></a>什么是 Ambari？
 
 [Apache Ambari][] 用于设置、管理和监视 Apache Hadoop 群集。它包括一系列直观的操作员工具和一组隐藏 Hadoop 复杂性的可靠 API，可简化群集操作。有关这些 API 的详细信息，请参阅 [Ambari API 参考][]。
 
 HDInsight 目前只支持 Ambari 监视功能。HDInsight 群集版本 2.1 和 3.0 支持 Ambari API 1.0 版。本文只涉及在 HDInsight 群集版本 2.1 上运行 Ambari API。
 
-## 必备条件
+## <a id="prerequisites"></a>必备条件
 
 在开始阅读本教程前，你必须具有：
 
@@ -41,7 +41,7 @@ HDInsight 目前只支持 Ambari 监视功能。HDInsight 群集版本 2.1 和 3
 
     > [WACOM.NOTE] 将值填入表。这将有助于学习本教程。
 
-## 启动
+## <a id="jumpstart"></a>启动
 
 使用 Ambari 来监视 HDInsight 群集有几种方法。
 
@@ -90,7 +90,7 @@ HDInsight 目前只支持 Ambari 监视功能。HDInsight 群集版本 2.1 和 3
     "Hosts":{"cluster_name":"hdi0211v2.hdinsightservice.cn",
     "host_name":"workernode0"}}]}
 
-## Ambari 监视 API
+## <a id="monitor"></a>Ambari 监视 API
 
 下表列出了一些最常用的 Ambari 监视 API 调用。有关该 API 的详细信息，请参阅 [Ambari API 参考][]。
 
@@ -115,7 +115,7 @@ HDInsight 目前只支持 Ambari 监视功能。HDInsight 群集版本 2.1 和 3
 </td><td>配置类型：core-site, hdfs-site, mapred-site, hive-site</td></tr>
 </table>
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 现在你已经学习了如何使用 Ambari 监视 API 调用。若要了解更多信息，请参阅以下文章：
 
@@ -142,4 +142,4 @@ HDInsight 目前只支持 Ambari 监视功能。HDInsight 群集版本 2.1 和 3
   [使用管理门户管理 HDInsight 群集]: ../hdinsight-administer-use-management-portal/
   [使用 Azure PowerShell 管理 HDInsight 群集]: ../hdinsight-administer-use-powershell/
   [使用命令行接口管理 HDInsight 群集]: ../hdinsight-administer-use-command-line/
-  [HDInsight 文档]: /en-us/documentation/services/hdinsight/
+  [HDInsight 文档]: /zh-cn/documentation/services/hdinsight/

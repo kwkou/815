@@ -24,7 +24,7 @@
 -   [打开 Hadoop 命令控制台][]
 -   [后续步骤][]
 
-## 设置 HDInsight 群集
+## <a id="create"></a>设置 HDInsight 群集
 
 有几种方法可创建 HDInsight 群集，本文只介绍如何使用 Azure 管理门户上的“快速创建”选项。有关其他选项，请参阅[设置 HDInsight 群集][]。
 
@@ -59,7 +59,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 
 
     ![HDI.ClusterLanding][]
 
-## 自定义 HDInsight 群集
+## <a id="customize"></a>自定义 HDInsight 群集
 
 HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件的列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？][]。可使用以下选项之一进行 HDInsight 自定义：
 
@@ -72,7 +72,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
 不支持使用远程桌面连接在群集上安装自定义软件。你应该避免在头节点的驱动器上存储任何文件，因为如果你需要重新创建群集，这些文件会丢失。建议你在 Azure Blob 存储中存储文件。Blob 存储是持久性的。
 
-## 更改 HDInsight 群集用户名和密码
+## <a id="password"></a>更改 HDInsight 群集用户名和密码
 
 HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在设置过程中创建的。你还可以创建通过 RDP 访问群集的 RDP 用户帐户。请参阅[启用远程桌面][]。
 
@@ -88,7 +88,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 8.  输入**用户名**和**新密码**。这些将是群集的新用户名和密码。
 9.  单击“保存” 。
 
-## 使用 RDP 连接到 HDInsight 群集
+## <a id="rdp"></a>使用 RDP 连接到 HDInsight 群集
 
 通过你在创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。远程桌面访问默认情况下处于关闭状态，因此，使用它来直接访问群集时，要求一些其他的创建后配置。
 
@@ -115,7 +115,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 4.  在页面顶部，单击“配置” 。
 5.  单击“连接” ，然后按照说明进行操作。
 
-## 授予/撤消 HTTP 服务访问权限
+## <a id="httpservice"></a>授予/撤消 HTTP 服务访问权限
 
 HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样式的终结点）：
 
@@ -146,7 +146,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 请参阅[使用 PowerShell 管理 HDInsight][]。
 
-## 打开 Hadoop 命令行
+## <a id="hadoopcmd"></a>打开 Hadoop 命令行
 
 若要使用远程桌面连接到群集并使用 Hadoop 命令行，首先必须对群集启用远程桌面访问，如上一部分中所述。
 
@@ -174,7 +174,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
     cd %sqoop_home%   
     cd %hcatalog_home%
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本文中，你学习了如何使用 Azure 管理门户创建 HDInsight 群集以及如何打开 Hadoop 命令行工具。若要了解更多信息，请参阅下列文章：
 
@@ -185,8 +185,8 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 -   [Azure HDInsight 入门][]
 -   [Azure HDInsight 包含哪个版本的 Hadoop？][]
 
-  [使用 PowerShell 管理 HDInsight]: /en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/
-  [使用跨平台命令行界面管理 HDInsight]: /en-us/manage/services/hdinsight/administer-hdinsight-using-command-line-interface/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [使用跨平台命令行界面管理 HDInsight]: ../hdinsight-administer-use-command-line/
   [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [免费试用]: https://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [配置 HDInsight 群集]: #create
@@ -196,17 +196,17 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
   [授予/撤消 HTTP 服务访问权限]: #httpservice
   [打开 Hadoop 命令控制台]: #hadoopcmd
   [后续步骤]: #nextsteps
-  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/howto-blob-store/
-  [如何创建存储帐户]: /en-us/manage/services/storage/how-to-create-a-storage-account/
+  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
+  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [HDI.QuickCreate]: ./media/hdinsight-administer-use-management-portal/HDI.QuickCreateCluster.png
   [HDI.ClusterLanding]: ./media/hdinsight-administer-use-management-portal/HDI.ClusterLanding.PNG "群集登录页"
-  [Azure HDInsight 包含哪个版本的 Hadoop？]: /en-us/manage/services/hdinsight/versioning-in-hdinsight/
-  [以编程方式提交 Hadoop 作业]: /en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
+  [Azure HDInsight 包含哪个版本的 Hadoop？]: ../hdinsight-component-versioning/
+  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
   [Microsoft 技术支持]: http://www.windowsazure.cn/zh-cn/support/contact/
   [启用远程桌面]: #enablerdp
   [HDI.CreateRDPUser]: ./media/hdinsight-administer-use-management-portal/HDI.CreateRDPUser.png
   [HDI.HadoopCommandLine]: ./media/hdinsight-administer-use-management-portal/HDI.HadoopCommandLine.PNG "Hadoop 命令行"
   [Hadoop 命令参考（可能为英文页面）]: http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html
-  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/

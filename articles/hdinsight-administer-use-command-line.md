@@ -24,7 +24,7 @@
 -   [删除群集][]
 -   [后续步骤][]
 
-## 安装
+## <a id="installation"></a>安装
 
 可以使用 Node.js 包管理器 (NPM)** 或 Windows 安装程序安装该命令行界面。
 
@@ -55,7 +55,7 @@
 1.  浏览到 **<http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools>**。
 2.  向下滚动到“命令行工具” 部分，然后单击“跨平台命令行界面” ，按 Web 平台安装程序向导的要求操作。
 
-## 下载和导入 Azure 帐户 publishsettings
+## <a id="importsettings"></a>下载和导入 Azure 帐户 publishsettings
 
 在使用命令行界面前，你必须配置工作站和 Azure 之间的连接。命令行界面使用你的 Azure 订阅信息连接到你的帐户。可从 Azure 的 publishsettings 文件中获取此信息。然后，可以导入 publishsettings 文件作为永久性本地配置设置，命令行界面会将此设置用于后续操作。你只需导入你的 publishsettings 一次。
 
@@ -80,7 +80,7 @@
 
     在上一屏幕快照中，publishsettings 文件已保存到工作站上的 C:\\HDInsight 文件夹。
 
-## 设置 HDInsight 群集
+## <a id="provision"></a>设置 HDInsight 群集
 
 HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先拥有 Azure 存储帐户，然后才能创建 HDInsight 群集。
 
@@ -90,11 +90,9 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 > [WACOM.NOTE] 存储帐户必须共置于同一数据中心。目前，只能在以下数据中心内设置 HDInsight 群集：
 
-> -   亚洲东南部
-> -   欧洲北部
-> -   欧洲西部
-> -   美国东部
-> -   美国西部
+> -   中国东部
+> -   中国北部
+
 
 有关使用 Azure 管理门户创建 Azure 存储帐户的信息，请参阅[如何创建存储帐户][]。
 
@@ -120,7 +118,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 ![HDI.CLIClusterCreation][]
 
-## 使用配置文件设置 HDInsight 群集
+## <a id="provisionconfigfile"></a>使用配置文件设置 HDInsight 群集
 
 通常，你设置一个 HDInsight 群集，对其运行作业，然后删除该群集以降低成本。在命令行界面上，你可以选择将配置保存到文件，以便在每次设置群集时重用这些配置。
 
@@ -142,7 +140,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 ![HDI.CLIClusterCreationConfig][]
 
-## 列出并显示群集详细信息
+## <a id="listshow"></a>列出并显示群集详细信息
 
 使用以下命令来列出和显示群集详细信息：
 
@@ -151,13 +149,13 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 ![HDI.CLIListCluster][]
 
-## 删除群集
+## <a id="delete"></a>删除群集
 
 使用以下命令来删除群集：
 
     azure hdinsight cluster delete <ClusterName>
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本文中，你已了解如何执行不同的 HDInsight 群集管理任务。若要了解更多信息，请参阅下列文章：
 
@@ -167,8 +165,8 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 -   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具][]
 -   [针对 Mac 和 Linux 的 Azure 命令行工具][]
 
-  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
-  [针对 Mac 和 Linux 的 Azure 命令行工具]: /en-us/manage/linux/other-resources/command-line-tools/
+  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/develop/nodejs/how-to-guides/command-line-tools/
+  [针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/manage/linux/other-resources/command-line-tools/
   [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [安装]: #installation
@@ -179,11 +177,11 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
   [删除群集]: #delete
   [后续步骤]: #nextsteps
   [HDI.CLIAccountDownloadImport]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
-  [如何创建存储帐户]: /en-us/manage/services/storage/how-to-create-a-storage-account/
-  [如何管理存储帐户]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
+  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
+  [如何管理存储帐户]: /zh-cn/manage/services/storage/how-to-manage-a-storage-account/
   [HDI.CLIClusterCreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
   [HDI.CLIClusterCreationConfig]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
   [HDI.CLIListCluster]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "列出并显示群集"
-  [使用管理门户管理 HDInsight]: /en-us/manage/services/hdinsight/howto-administer-hdinsight/
-  [使用 PowerShell 管理 HDInsight]: /en-us/manage/services/hdinsight/administer-hdinsight-using-powershell/
-  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
+  [使用管理门户管理 HDInsight]: ../hdinsight-administer-use-management-portal/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/

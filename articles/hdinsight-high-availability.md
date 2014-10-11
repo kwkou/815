@@ -60,8 +60,8 @@ SDK 的情形是类似的。使用 SDK 创建和设置群集的内容记录在[�
 
   []: http://i.imgur.com/jrUmrH4.png
   [ZooKeeper]: http://zookeeper.apache.org/
-  [使用 RDP 连接到 HDInsight 群集]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp
+  [使用 RDP 连接到 HDInsight 群集]: ../hdinsight-administer-use-management-portal/#rdp
   [1]: http://i.imgur.com/MYTkCHW.png
   [2]: http://i.imgur.com/eL6jzgB.png
-  [使用 PowerShell 管理 HDInsight]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-administer-use-powershell/
-  [使用 HDInsight .NET SDK]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-provision-clusters/#sdk
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [使用 HDInsight .NET SDK]: ../hdinsight-provision-clusters/#sdk

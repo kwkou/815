@@ -28,13 +28,9 @@
 	C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\conf 下 hbase-site.xml 中的下列属性只能对 < Hbase Log folder > 支持 ASCII 字符。
 
 		< property >
-		
 		< name >hbase.log.dir< /name >
-		
 		< value >C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\<Hbase Log folder>< /value >
-		
 		< /property > 
-		 
 
 	hbase.cmd 中的  “set HBASE_LOG_DIR” 命令（该命令将重写日志文件夹）也仅支持 unicode 字符。
 
@@ -56,9 +52,7 @@
 	例如，在 Map Reduce 工作流中，操作名称只能支持 ASCII 字符。
 
 		< workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf" >
-
 		< start to="< mr-actionname >"/ >
-
 		< action name="< mr-actionname >">
 
 	如果操作名称中使用了 Unicode 字符，你将看到以下错误
@@ -76,13 +70,9 @@
 	示例命令：
 
 		curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
-
 		-d user.name=\<hdinsightClusteruser>
-
 		-d statusdir="/testfolder/HiveLikeOutput"
-
 		-d execute="SELECT * FROM <table1> WHERE content LIKE '%步行%';"
-
 		-s https://\<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
 
 	在 URL 编码之后：-d execute="SELECT * FROM table1 WHERE content LIKE '%%E6%AD%A5%E8%A1%8C%';" ‘%’ 符号导致出现问题。Templeton 引发错误 500 !hex:5c
@@ -102,23 +92,14 @@
 	示例命令：
 
 		curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
-
 		-d user.name=\<hdinsightClusteruser>
-
 		-d input=/testfolder/MapReduce/wordcountStr/input
-
 		-d output=/testfolder/MapReduce/wordcountOutputs/UniStrUniDataoutput
-
 		-d mapper=cat%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87cat.exe 
-
 		-d reducer=wc%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87wc.exe 
-
 		-d files=/testfolder/MapReduce/wordcountStr/cat%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87cat.exe,/testfolder/MapReduce/wordcountStr/wc%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87wc.exe
-
 		-d statusdir=/testfolder/MapReduce/MRFullUniStrUniDatastatus 
-
 		-s http://headnodehost:30111/templeton/v1/mapreduce/streaming/
-
 
 	这将失败，出现以下异常：
 

@@ -6,7 +6,9 @@ HDInsight 使 [Apache Hadoop][] 可在云中作为服务使用，并使 MapReduc
 
 在本教程中，你将使用 Azure 管理门户对 HDInsight 群集进行设置，使用 PowerShell 提交一个对文本文件中的单词进行计数的 Hadoop MapReduce 作业，然后将该 MapReduce 作业的输出数据导入到 Excel 中进行检查。
 
+<!---
 > [WACOM.NOTE] 本教程介绍如何在 HDInsight 上使用 Hadoop 1.2 群集。有关在 HDInsight 上使用 Hadoop 2.2 群集的教程，请参阅[将 Hadoop 2.2 群集与 HDInsight 配合使用入门][]。有关版本信息，请参阅 [HDInsight 提供的群集版本有哪些新功能？][]
+--->
 
 Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HDInsight 开发者预览版*），与 Azure HDInsight 的通用版本结合使用。该产品针对开发人员方案并因此仅支持单节点部署。有关如何使用 HDInsight Emulator 的信息，请参阅 [HDInsight Emulator 入门][]。
 
@@ -28,7 +30,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 -   [连接到 Microsoft 商业智能工具][]
 -   [后续步骤][]
 
-## 为运行 PowerShell 设置本地环境
+## <a id="setup"></a>为运行 PowerShell 设置本地环境
 
 有多种方法可将 MapReduce 作业提交到 HDInsight。在本教程中，你将使用 Azure PowerShell。若要安装 Azure PowerShell，请运行 [Microsoft Web 平台安装程序][]。出现提示时，依次单击“运行” 、“安装” ，然后按照说明进行操作。有关详细信息，请参阅[安装和配置 Azure PowerShell][]。
 
@@ -47,7 +49,7 @@ PowerShell cmdlet 需要使用你的订阅信息来管理你的服务。
 
 > [WACOM.NOTE] 若要在将 Azure AD 方法与 Add-AzureAccount cmdlet 配合使用后返回到证书方法，请运行 Remove-AzureAccount cmdlet。
 
-## 设置 HDInsight 群集
+## <a id="provision"></a>设置 HDInsight 群集
 
 HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
@@ -104,20 +106,23 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 	</table>
 
     记下群集名称。本教程后面的步骤中将会用到它。
+    
 
-    > [WACOM.NOTE] 快速创建方法将创建 HDInsight 2.1 版群集。若要创建 1.6 或 3.0 版群集，请使用管理门户中的自定义创建方法，或使用 Azure PowerShell。
+
+    > [WACOM.NOTE] 快速创建方法将创建 HDInsight 3.0 版群集。
+
 
 5.  单击右下角的“创建 HDInsight 群集” 。完成设置过程后，状态列将显示“正在运行” 。
 
 有关使用“自定义创建” 选项的信息，请参阅[设置 HDInsight 群集][1]。
 
-## 运行 WordCount MapReduce 作业
+## <a id="sample"></a>运行 WordCount MapReduce 作业
 
 现在你已设置了一个 HDInsight 群集。下一步是运行一个 MapReduce 作业，以便对文本文件中单词出现的次数进行计数。
 
 运行 MapReduce 作业要求以下元素：
 
--   MapReduce 程序。在本教程中，你将使用 HDInsight 群集附带的 WordCount 示例，因此，你无需编写自己的 MapReduce 程序。该示例位于 */example/jars/hadoop-examples.jar*。有关编写你自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序][]和[为 HDInsight 开发 C\# Hadoop 流程序][]。
+-   MapReduce 程序。在本教程中，你将使用 HDInsight 群集附带的 WordCount 示例，因此，你无需编写自己的 MapReduce 程序。该示例位于 */example/jars/hadoop-mapreduce.jar*。有关编写你自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序][]和[为 HDInsight 开发 C\# Hadoop 流程序][]。
 
     > [WACOM.NOTE] 在 HDInsight 3.0 版群集中，jar 文件名是 */example/jars/hadoop-mapreduce-examples.jar*。
 
@@ -134,11 +139,11 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 
 由于 HDInsight 使用 Blob 存储容器作为默认文件系统，因此你可以使用相对或绝对路径引用默认文件系统中的文件和目录。
 
-例如，若要访问 hadoop-examples.jar，你可以使用以下选项之一：
+例如，若要访问 hadoop-mapreduce.jar，你可以使用以下选项之一：
 
-    ● wasb://<containername>@<storageaccountname>.blob.core.chinacloudapi.cn/example/jars/hadoop-examples.jar
-    ● wasb:///example/jars/hadoop-examples.jar
-    ● /example/jars/hadoop-examples.jar
+    ● wasb://<containername>@<storageaccountname>.blob.core.chinacloudapi.cn/example/jars/hadoop-mapreduce.jar
+    ● wasb:///example/jars/hadoop-mapreduce.jar
+    ● /example/jars/hadoop-mapreduce.jar
                 
 
 有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
@@ -163,8 +168,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 4.  设置以下脚本中的第一个变量，并运行该脚本：
 
         $clusterName = "<HDInsightClusterName>"
-
-        $jarFile = "wasb:///example/jars/hadoop-examples.jar"
+        $jarFile = "wasb:///example/jars/hadoop-mapreduce.jar"
         $className = "wordcount"
         $statusFolder = "wasb:///tutorials/getstarted/wordCountStatus"
         $inputFolder = "wasb:///example/data/gutenberg/davinci.txt"
@@ -208,7 +212,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 5.  运行以下命令创建 MapReduce 作业定义：
 
         # 定义 MapReduce 作业
-        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-examples.jar" -ClassName "wordcount" -StatusFolder $statusFolder -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///tutorials/getstarted/WordCountOutput"
+        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce.jar" -ClassName "wordcount" -StatusFolder $statusFolder -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///tutorials/getstarted/WordCountOutput"
 
     作业定义使用了你在上一步中定义的变量。
 
@@ -250,7 +254,6 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 
         $storageAccountName = "<StorageAccountName>"   
         $containerName = "<ContainerName>"      
-
         $blobName = "tutorials/getstarted/WordCountOutput/part-r-00000"   
 
     Azure 存储帐户是你在本教程前面部分创建的帐户。存储帐户用于承载作为默认 HDInsight 群集文件系统的 Blob 容器。Blob 存储容器通常与 HDInsight 群集共享相同的名称，除非你在设置群集时指定其他名称。
@@ -282,10 +285,9 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 
 输出文件夹不能是现有文件夹。否则，MapReduce 作业将失败。如果要再次运行 MapReduce 作业，则必须删除输出文件夹和输出文件。下面是用于执行此作业的 PowerShell 脚本：
 
-        # 设置变量
+    # 设置变量
     $storageAccountName = "<StorageAccountName>"   
     $containerName = "<ContainerName>"      
-
     $blobName = "tutorials/getstarted/WordCountOutput/part-r-00000" 
     $blobFolderName = "tutorials/getstarted/WordCountOutput" 
         
@@ -297,7 +299,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
     Remove-AzureStorageBlob -Container $ContainerName -Blob $blobName -Context $storageContext -Force
     Remove-AzureStorageBlob -Container $ContainerName -Blob $blobFolderName -Context $storageContext -Force
 
-## 连接到 Microsoft 商业智能工具
+## <a id="powerquery"></a>连接到 Microsoft 商业智能工具
 
 可以使用用于 Excel 的 Power Query 外接程序将 HDInsight 的输出导出到 Excel 中，在 Excel 中可以使用 Microsoft 商业智能 (BI) 工具进一步处理或显示结果。
 
@@ -330,7 +332,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 
 10. 单击左上角的“应用并关闭” 。然后，该查询将单词计数 MapReduce 作业输出导入到 Excel 中。
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 在本教程中，你已了解了如何使用 HDInsight 设置群集、如何对其运行 MapReduce 作业，以及如何将结果导入到 Excel 中，在 Excel 中，可以使用 BI 工具进一步处理结果以及以图形方式显示结果。若要了解更多信息，请参阅下列文章：
 
@@ -347,9 +349,9 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
 -   [为 HDInsight 开发 Java MapReduce 程序][]
 
   [Apache Hadoop]: http://hadoop.apache.org/
-  [将 Hadoop 2.2 群集与 HDInsight 配合使用入门]: ../hdinsight-get-started-30/
-  [HDInsight 提供的群集版本有哪些新功能？]: ../hdinsight-component-versioning/
-  [HDInsight Emulator 入门]: ../hdinsight-get-started-emulator/
+  [将 Hadoop 2.2 群集与 HDInsight 配合使用入门]: /zh-cn/documentation/articles/hdinsight-get-started-30/
+  [HDInsight 提供的群集版本有哪些新功能？]: /zh-cn/documentation/articles/hdinsight-component-versioning/
+  [HDInsight Emulator 入门]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
   [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [免费试用]: https://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [为运行的 PowerShell 设置本地环境]: #setup
@@ -358,18 +360,18 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
   [连接到 Microsoft 商业智能工具]: #powerquery
   [后续步骤]: #nextsteps
   [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
-  [如何：安装 Azure PowerShell]: ../install-configure-powershell/#Install
-  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
-  [1]: ../hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [如何：安装 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/#Install
+  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+  [1]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [HDI.StorageAccount.QuickCreate]: ./media/hdinsight-get-started/HDI.StorageAccount.QuickCreate.png
-  [如何创建存储帐户]: ../storage-create-storage-account/
+  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
   [HDI.ClusterStatus]: ./media/hdinsight-get-started/HDI.ClusterStatus.png
   [HDI.QuickCreateCluster]: ./media/hdinsight-get-started/HDI.QuickCreateCluster.png
-  [为 HDInsight 开发 Java MapReduce 程序]: ../hdinsight-develop-deploy-java-mapreduce/
-  [为 HDInsight 开发 C\# Hadoop 流程序]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
-  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
+  [为 HDInsight 开发 Java MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+  [为 HDInsight 开发 C\# Hadoop 流程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
   [管理门户]: https://manage.windowsazure.cn
   [HDI.GettingStarted.RunMRJob]: ./media/hdinsight-get-started/HDI.GettingStarted.RunMRJob.png
   [HDI.GettingStarted.MRJobOutput]: ./media/hdinsight-get-started/HDI.GettingStarted.MRJobOutput.png
@@ -377,8 +379,8 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 WASBS 的 SSL
   [HDI.GettingStarted.PowerQuery.ImportData]: ./media/hdinsight-get-started/HDI.GettingStarted.PowerQuery.ImportData.png
   [HDI.GettingStarted.PowerQuery.ImportData2]: ./media/hdinsight-get-started/HDI.GettingStarted.PowerQuery.ImportData2.png
   [HDI.GettingStarted.PowerQuery.ImportData3]: ./media/hdinsight-get-started/HDI.GettingStarted.PowerQuery.ImportData3.png
-  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
-  [将 MapReduce 与 HDInsight 配合使用]: ../hdinsight-use-mapreduce
-  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
-  [将 Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/
-  [将 Oozie 与 HDInsight 配合使用]: ../hdinsight-use-oozie/
+  [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+  [将 MapReduce 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-mapreduce
+  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
+  [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/

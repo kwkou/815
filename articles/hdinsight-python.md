@@ -133,7 +133,7 @@ HDInsight 还包含 Jython，它是使用 Java 编写的 Python 实现。Pig 无
 
 ## <a name="running"></a>运行示例
 
-下面的步骤使用了 Windows Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前参阅[如何安装和配置 Azure PowerShell](http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/)。
+下面的步骤使用了 Windows Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前参阅[如何安装和配置 Azure PowerShell](http://www.windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/)。
 
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。
 
@@ -154,11 +154,11 @@ HDInsight 还包含 Jython，它是使用 Java 编写的 Python 实现。Pig 无
 
     此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上载到容器的根目录。
 
-    > [WACOM.NOTE] [在 HDInsight 中上载 Hadoop 作业的数据](/en-us/documentation/articles/hdinsight-upload-data/)文档中介绍了上载脚本的其他方法。
+    > [WACOM.NOTE] [在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data/)文档中介绍了上载脚本的其他方法。
 
 ### 使用 Hive 仪表板（仅提供 Hive 示例）
 
-1. 上载文件后，请打开一个浏览器并导航到 <https://YourClusterName.hdinsightservices.cn/>。当系统提示输入凭据时，请输入群集的管理员用户名和密码。
+1. 上载文件后，请打开一个浏览器并导航到 <https://YourClusterName.azurehdinsight.cn/>。当系统提示输入凭据时，请输入群集的管理员用户名和密码。
 
     > [WACOM.NOTE] 也可以在 Azure 管理门户中使用 HDInsight“仪表板”底部的“管理群集”链接来启动 Hive 仪表板。
 

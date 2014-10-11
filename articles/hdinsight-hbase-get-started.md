@@ -196,15 +196,15 @@ Marlin 是位于 REST API 顶部的一个精简层，它可以使用 ProtoBuf（
 
 在本教程中，你已了解如何设置 HBase 表、如何创建表，以及如何从 HBase shell 查看这些表中的数据。你还了解了如何使用 Hive 来查询 HBase 表中的数据，以及如何使用 HBase C\# API 创建一个 HBase 表并从该表中检索数据。
 
-[hdinsight-versions]: ./hdinsight-component-versioning/
+[hdinsight-versions]: /zh-cn/documentation/articles/hdinsight-component-versioning/
 
-[hdinsight-get-started-30]: ./hdinsight-get-started-30/
+[hdinsight-get-started-30]: /zh-cn/documentation/articles/hdinsight-get-started-30/
 
-[hdinsight-admin-powershell]: ./hdinsight-administer-use-powershell/
+[hdinsight-admin-powershell]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
 
-[hdinsight-use-hive]: ./hdinsight-use-hive/
+[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
 
-[hdinsight-storage]: ./hdinsight-use-blob-storage/
+[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
 
 
 
@@ -221,8 +221,8 @@ Marlin 是位于 REST API 顶部的一个精简层，它可以使用 ProtoBuf（
 [apache-hadoop]: http://hadoop.apache.org/
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ./install-configure-powershell/
-[powershell-open]: ./install-configure-powershell/#Install
+[powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
+[powershell-open]: /zh-cn/documentation/articles/install-configure-powershell/#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png

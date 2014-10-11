@@ -17,7 +17,7 @@
 -   [使用 PowerShell 来运行 Sqoop 导入][]
 -   [后续步骤][]
 
-## 什么是 Sqoop？
+## <a id="whatissqoop"></a>什么是 Sqoop？
 
 虽然自然而然地选用 Hadoop 处理如日志和文件等非结构化和半结构化的数据，但可能还需要处理存储在关系数据库中的结构化数据。
 
@@ -25,7 +25,7 @@
 
 有关 HDInsight 群集上支持的 Sqoop 版本，请参阅 [HDInsight 提供的群集版本有哪些新功能？][]。
 
-## 先决条件
+## <a id="prerequisites"></a>先决条件
 
 在开始阅读本教程前，你必须具有：
 
@@ -54,7 +54,7 @@
 
 > [WACOM.NOTE] 将值填入表。这将有助于学习本教程。
 
-## 了解方案
+## <a id="scenario"></a>了解方案
 
 HDInsight 群集带有某些示例数据。你将会使用以下两个：
 
@@ -109,7 +109,7 @@ WASB 语法是：
 
     example/data/sample.log
 
-## 准备教程
+## <a id="prepare"></a>准备教程
 
 你将创建本教程后面 Sqoop 导出要使用的两个 SQL 数据库表。你还将需要先预处理 sample.log 文件，然后 Sqoop 才能处理它。
 
@@ -272,7 +272,7 @@ WASB 语法是：
 5.  单击“运行脚本” 或按 **F5** 键以运行该脚本。
 6.  若要检查修改后的数据文件，可以使用 Azure 管理门户，或 Azure 存储资源管理器工具，或 Azure PowerShell。[HDInsight 入门][开始使用 HDInsight]中有一个关于使用 PowerShell 下载文件并显示文件内容的代码示例。
 
-## 使用 PowerShell 来运行 Sqoop 导出
+## <a id="export"></a>使用 PowerShell 来运行 Sqoop 导出
 
 在本节中，你将使用 Azure PowerShell 来运行 Sqoop 导出命令，以将一个 Hive 表和一个数据文件都导出到 Azure SQL 数据库。下一节会提供一个 HDInsight .NET 示例。
 
@@ -371,7 +371,7 @@ WASB 语法是：
 5.  单击“运行脚本” 或按 **F5** 键以运行该脚本。
 6.  使用 [Azure 管理门户][]检查导出的数据。
 
-## 使用 HDInsight .NET SDK 来运行 Sqoop 导出
+## <a id="export-sdk"></a>使用 HDInsight .NET SDK 来运行 Sqoop 导出
 
 下面是一个使用 HDInsight .NET SDK 运行 Sqoop 导出的 C\# 示例。有关使用 HDInsight .NET SDK 的常规信息，请参阅[以编程方式提交 Hadoop 作业][]。
 
@@ -459,7 +459,7 @@ WASB 语法是：
 
 脚本文件必须位于 WASB。
 
-## 使用 PowerShell 来运行 Sqoop 导入
+## <a id="import"></a>使用 PowerShell 来运行 Sqoop 导入
 
 在本节中，你要将 log4j 日志（已导出到 SQL Database）导回到 HDInsight 中。
 
@@ -507,7 +507,7 @@ WASB 语法是：
 5.  单击“运行脚本” 或按 **F5** 键以运行该脚本。
 6.  若要检查修改后的数据文件，可以使用 Azure 管理门户，或 Azure 存储资源管理器工具，或 Azure PowerShell。[HDInsight 入门][开始使用 HDInsight]中有一个关于使用 PowerShell 下载文件并显示文件内容的代码示例。
 
-## 后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
 
@@ -529,8 +529,8 @@ WASB 语法是：
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
   [开始使用 HDInsight]: ../hdinsight-get-started/
   [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
-  [使用 Azure SQL 数据库入门]: ../sql-database-get-started/
-  [创建和配置 SQL Database]: ../sql-database-create-configure/
+  [使用 Azure SQL 数据库入门]: /zh-cn/manage/services/sql-databases/getting-started-w-sql-databases/
+  [创建和配置 SQL Database]: /zh-cn/manage/services/sql-databases/how-to-configure-a-sqldb/
   [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
   [在 Windows 8 和 Windows 上启动 Windows PowerShell]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn/

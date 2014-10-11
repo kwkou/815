@@ -47,7 +47,7 @@ Microsoft Power Query for Excel 可用于将数据从 Azure HDInsight 或任何 
 
 -   [HDInsight 的资源][]：此部分指明可从何处查找相关资源以了解其他信息。
 
-## Azure 上的 Hadoop 生态系统
+## <a id="Ecosystem"></a>Azure 上的 Hadoop 生态系统
 
 ### 介绍
 
@@ -87,7 +87,7 @@ Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hado
 
 -   有关 Reporting Services 的信息，请参阅 [SQL Server 2012 Reporting][]。
 
-## 适用于 HDInsight 的大型数据方案
+## <a id="Scenarios"></a>适用于 HDInsight 的大型数据方案
 
 提供 HDInsight 使用案例的一种典型情形是：以批处理的方式，对 Azure 节点上存储的整个非结构化数据集（不需要频繁更新）进行即席分析。
 
@@ -95,7 +95,7 @@ Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hado
 
 HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存档的数据，这些数据在写入后不需要进行频繁更新，并且通常会读取这些数据来进行完整分析。此方案对更适合由 RDBMS 处理的数据加以补充，RDBMS 要求数据容量较小（GB 而非 PB），并且必须持续更新它，或查询它以获得完整数据集内的特定数据点。RDBMS 最适用于根据固定架构组织和存储的结构化数据。MapReduce 可以很好地处理没有预定义架构的非结构化数据，因为它能够在那些数据被处理时对它们进行转译。
 
-## 后续步骤：HDInsight 的资源
+## <a id="Resources"></a>后续步骤：HDInsight 的资源
 
 **Microsoft：HDInsight**
 
@@ -147,22 +147,22 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
   [Apache Sqoop]: http://sqoop.apache.org/
   [JSON]: http://www.json.org
   [Apache Avro 规范]: http://avro.apache.org/docs/current/spec.html
-  [使用 Microsoft Avro Library 序列化数据]: http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-dotnet-avro-serialization/
+  [使用 Microsoft Avro Library 序列化数据]: /zh-cn/documentation/articles/hdinsight-dotnet-avro-serialization/
   [Microsoft 下载中心]: http://go.microsoft.com/fwlink/?LinkID=286689
   [下载网站]: http://go.microsoft.com/fwlink/?LinkID=286698
   [SQL Server 2012 Analysis Services]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/analysis.aspx#fbid=9ZH5wGSDgf0
   [SQL Server 2012 Reporting]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/dashboards-reports.aspx#fbid=9ZH5wGSDgf0
   [HDInsight 文档]: http://azure.microsoft.com/zh-cn/documentation/services/hdinsight/
-  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-  [运行 HDInsight 示例]: /en-us/manage/services/hdinsight/howto-run-samples/
+  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [运行 HDInsight 示例]: /zh-cn/documentation/articles/hdinsight-run-samples/
   [大数据和 Azure]: http://azure.microsoft.com/zh-cn/solutions/big-data/
   [Azure HDInsight SDK]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
   [Azure 主页]: https://www.windowsazure.cn
   [Azure SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx
   [SQL Database 的管理门户]: http://msdn.microsoft.com/zh-cn/library/azure/gg442309.aspx
   [Adventure Works for SQL Database]: http://msftdbprodsamples.codeplex.com/releases/view/37304
-  [利用 Power Query 将 Excel 连接到 HDInsight]: /en-us/manage/services/hdinsight/connect-excel-with-power-query/
-  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /en-us/manage/services/hdinsight/connect-excel-with-hive-ODBC/
+  [利用 Power Query 将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-power-query/
+  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC/
   [Microsoft BI PowerPivot]: http://office.microsoft.com/zh-cn/excel/HA101959985.aspx
   [Apache Hadoop]: http://hadoop.apache.org/
   [HDFS]: http://hadoop.apache.org/docs/r0.18.1/hdfs_design.html
