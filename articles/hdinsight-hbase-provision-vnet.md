@@ -184,21 +184,21 @@
   [后续步骤]: #nextsteps
   [购买选项]: http://www.windowsazure.cn/pricing/overview/
   [免费试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
-  [安装和配置 Azure PowerShell]: ./install-configure-powershell
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn
   []: http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx
-  [将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用]: ./hdinsight-use-blob-storage/
+  [将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用]: ../hdinsight-use-blob-storage/
   [群集名称和版本字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png
   [节点数和区域字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard2.png
   [管理员名称和密码字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard3.png
   [存储帐户选择]: ./media/hdinsight-hbase-provision-vnet/hbasewizard4.png
-  [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用]: ./hdinsight-hbase-get-started/
+  [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用]: ../hdinsight-hbase-get-started/
   [创建运行 Windows Server 的虚拟机]: ./virtual-machines-windows-tutorial/
-  [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集]: ./hdinsight-administer-use-management-portal/#rdp
+  [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集]: ../hdinsight-administer-use-management-portal/#rdp
   [hdinsight.hbase.dns.surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
   [hdinsight.hbase.primary.dns.suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
-  [HDInsight 入门]: ./hdinsight-get-started/
-  [在 HDInsight 中设置 Hadoop 群集]: ./hdinsight-provision-clusters/
-  [在 HDInsight 中使用 HBase 分析 Twitter 传感器数据]: ./hdinsight-hbase-twitter-sentiment/
+  [HDInsight 入门]: ../hdinsight-get-started/
+  [在 HDInsight 中设置 Hadoop 群集]: ../hdinsight-provision-clusters/
+  [在 HDInsight 中使用 HBase 分析 Twitter 传感器数据]: ../hdinsight-hbase-twitter-sentiment/
   [虚拟网络概述]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
