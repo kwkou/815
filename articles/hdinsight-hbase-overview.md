@@ -58,11 +58,11 @@ Hase 可用于捕获从各个来源中逐步收集的数据。这包括社交分
 <!---
 [Bigtable：针对结构化数据的分布式存储系统][]
 --->
-  [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用]: ./hdinsight-hbase-get-started/
+  [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用]: ../hdinsight-hbase-get-started/
   [Phoenix]: http://phoenix.apache.org/
-  [在 Azure 虚拟网络上设置 HDInsight 群集]: ./hdinsight-hbase-provision-vnet/
-  [在 HDInsight 中使用 HBase 分析 Twitter 传感器数据]: ./hdinsight-hbase-analyze-twitter-sentiment/
-  [借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序]: ./hdinsight-hbase-build-java-maven/
+  [在 Azure 虚拟网络上设置 HDInsight 群集]: ../hdinsight-hbase-provision-vnet/
+  [在 HDInsight 中使用 HBase 分析 Twitter 传感器数据]: ../hdinsight-hbase-analyze-twitter-sentiment/
+  [借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序]: ../hdinsight-hbase-build-java-maven/
   [C# HBase SDK]: https://github.com/hdinsight/hbase-sdk-for-net
   [Apache HBase]: https://hbase.apache.org/
   [Bigtable：针对结构化数据的分布式存储系统]: http://research.google.com/archive/bigtable.html
