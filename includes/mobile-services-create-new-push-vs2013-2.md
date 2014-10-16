@@ -1,46 +1,48 @@
-1. In the insert.js file for the **channels** table, locate the following lines of code, comment them out or remove them from the file, then save your changes.
+1.  在 "channels" 表的 insert.js 文件中，找到以下代码行，注释掉它们或将它们从文件中删除，然后保存所做的更改。
 
-		sendNotifications(item.channelUri);
+        sendNotifications(item.channelUri);
 
-		function sendNotifications(uri) {
-		    console.log("Uri: ", uri);
-		    push.wns.sendToastText01(uri, {
-		        text1: "Sample toast from sample insert"
-		    }, {
-		        success: function (pushResponse) {
-		            console.log("Sent push:", pushResponse);
-		        }
-		    });
-		}
-		
-	When you save changes to the insert.js file, a new version of the script is uploaded to your mobile service.
+        function sendNotifications(uri) {
+        console.log("Uri:", uri);
+        push.wns.sendToastText01(uri, {
+        text1:"Sample toast from sample insert"
+            }, {
+        success:function (pushResponse) {
+        console.log("Sent push:", pushResponse);
+                }
+            });
+        }
 
-2. In Server Explorer, expand the TodoItem table, open the insert.js file and replace the current insert function with the following code, then save your changes: 
+    当你保存对 insert.js 文件的更改时，新版本的脚本将会上载到你的移动服务。
 
-		function insert(item, user, request) {
-			request.execute({
-				success: function() {
-					request.respond();
-					sendNotifications();
-				}
-			});
-		
-			function sendNotifications() {
-				var channelsTable = tables.getTable('channels');
-				channelsTable.read({
-					success: function(devices) {
-						devices.forEach(function(device) {
-							push.wns.sendToastText04(device.channelUri, {
-								text1: item.text
-							}, {
-								success: function(pushResponse) {
-									console.log("Sent push:", pushResponse);
-								}
-							});
-						});
-					}
-				});
-			}
-		}
-		
-	Now, when you insert a new TodoItem, a push notification is sent to all registered devices.
+2.  在“服务器资源管理器”中，展开 TodoItem 表，打开 insert.js 文件，并将当前的 insert 函数替换为以下代码，然后保存所做的更改：
+
+        function insert(item, user, request) {
+        request.execute({
+        success:function() {
+        request.respond();
+        sendNotifications();
+                }
+            });
+
+        function sendNotifications() {
+        var channelsTable = tables.getTable('channels');
+        channelsTable.read({
+        success:function(devices) {
+        devices.forEach(function(device) {
+        push.wns.sendToastText04(device.channelUri, {
+        text1:item.text
+                            }, {
+        success:function(pushResponse) {
+        console.log("Sent push:", pushResponse);
+                                }
+                            });
+                        });
+                    }
+                });
+            }
+        }
+
+    现在，当你插入新的 TodoItem 时，将有一个推送通知发送到所有已注册设备。
+
+

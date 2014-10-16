@@ -1,44 +1,45 @@
-
-1. Open the project file mainpage.xaml.cs and add the following using statement:
+1.  打开项目文件 mainpage.xaml.cs 并添加以下 using 语句：
 
         using Windows.UI.Popups;
 
-6. Add the following code snippet to the MainPage class:
-	
+2.  将以下代码段添加到 MainPage 类：
+
         private MobileServiceUser user;
         private async System.Threading.Tasks.Task AuthenticateAsync()
         {
-            while (user == null)
+        while (user == null)
             {
-                string message;
-                try
+        string message;
+        try
                 {
-                    user = await App.MobileService
-                        .LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-                    message = 
-                        string.Format("You are now logged in - {0}", user.UserId);
+        user = await App.MobileService
+        .LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+        message = 
+        string.Format("You are now logged in - {0}", user.UserId);
                 }
-                catch (InvalidOperationException)
+        catch (InvalidOperationException)
                 {
-                    message = "You must log in. Login Required";
+        message = "You must log in. Login Required";
                 }
-                        
-                var dialog = new MessageDialog(message);
-                dialog.Commands.Add(new UICommand("OK"));
-                await dialog.ShowAsync();
+
+        var dialog = new MessageDialog(message);
+        dialog.Commands.Add(new UICommand("OK"));
+        await dialog.ShowAsync();
             }
         }
 
-    This creates a member variable for storing the current user and a method to handle the authentication process. The user is authenticated by using a Facebook login. If you are using an identity provider other than Facebook, change the value of **MobileServiceAuthenticationProvider** above to the value for your provider.
+    这样可以创建用于存储当前用户的成员变量，以及用于处理身份验证过程的方法。将使用 Facebook 登录对用户进行身份验证。如果使用的标识提供者不是 Facebook，请将上述 "MobileServiceAuthenticationProvider" 的值更改为提供者的值。
 
-8. Replace the existing **OnNavigatedTo** method override with the following method that calls the new **Authenticate** method:
+3.  将现有的 "OnNavigatedTo" 方法覆盖替换为以下方法，以便调用新的 "Authenticate" 方法：
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            await AuthenticateAsync();
-            RefreshTodoItems();
+        await AuthenticateAsync();
+        RefreshTodoItems();
         }
-		
-9. Press the F5 key to run the app and sign into the app with your chosen identity provider. 
 
-   	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+4.  按 F5 键运行应用程序，并使用你选择的标识提供者登录应用程序。
+
+    当你成功登录时，应用程序应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
+
+

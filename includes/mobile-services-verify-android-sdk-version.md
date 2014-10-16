@@ -1,20 +1,21 @@
-Because of ongoing development, the Android SDK version installed in Eclipse might not match the version in the code. The Android SDK referenced in this tutorial is version 19, the latest at the time of writing. The version number may increase as new releases of the SDK appear, and we recomend using the latest version available.
+由于 Android SDK 的持续开发，安装在 Eclipse 中的 Android SDK 版本可能与你的代码中的版本不匹配。本教程中引用的 Android SDK 是版本 19，也是撰写本教程时的最新版本。随着 SDK 的新版本问世，版本号也会随之增加，我们建议使用最新版本。
 
-Two symptoms of version mismatch are:
+版本不匹配的两个症状是：
 
-1. Look in the Eclipse Console in the bottom pane. You may see error messages of the form "**Unable to resolve target 'android-n'**".
+1.  查看底部窗格中的 Eclipse 控制台。你可能看到以下形式的错误消息：“"无法解析目标‘android-n’"”。
 
-2. Standard Android objects in code that should resolve based on `import` statements may be generating error messages.
+2.  应该基于 `import` 语句解析的代码中的标准 Android 对象可能产生错误消息。
 
-If either of these appear, the version of the Android SDK installed in Eclipse might not match the SDK target of the downloaded project.  To verify the version, make the following changes:
+如果出现上述任何一种情况，则说明在 Eclipse 中安装的 Android SDK 版本与所下载项目的 SDK 目标可能不匹配。若要验证版本，请进行以下更改：
+
+1.  在 Eclipse 中，单击“窗口”，然后单击“Android SDK 管理器”。 如果你尚未安装最新版本的 SDK 平台，请单击安装。记下版本号。
+
+2.  打开项目文件 "AndroidManifest.xml"。确认在 "uses-sdk" 元素中，"targetSdkVersion" 设置为安装的最新版本。"uses-sdk" 标记可能如下所示：
+
+            <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+3.  在 Eclipse 包资源管理器中，右键单击项目节点，选择“属性” ，并在左栏中选择“Android”。 确认“项目生成目标”设置为 与 "targetSdkVersion" 相同的 SDK 版本。
 
 
-1. In Eclipse, click **Window**, then click **Android SDK Manager**. If you have not installed the latest version of the SDK Platform, then click to install it. Make a note of the version number.
-
-2. Open the project file **AndroidManifest.xml**. Ensure that in the **uses-sdk** element, the **targetSdkVersion** is set to the latest version installed. The **uses-sdk** tag might look like this:
- 
-	 	    <uses-sdk
-	 	        android:minSdkVersion="8"
-	 	        android:targetSdkVersion="19" />
-	
-3. In the Eclipse Package Explorer right-click the project node, choose **Properties**, and in the left column choose **Android**. Ensure that the **Project Build Target** is set to the same SDK version as the **targetSdkVersion**.

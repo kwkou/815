@@ -1,20 +1,21 @@
+利用你下载的移动服务项目，你可以直接在本地计算机或虚拟机上运行新移动服务。这让你能够在将服务代码发布到 Azure 之前，轻松地对其进行调试。
 
-The mobile service project that you download lets you to run your new mobile service right on your local computer or virtual machine. This makes it easy to debug your service code before you even publish it to Azure.
+在本节中，你将针对本地运行的移动服务，测试你的新应用程序。
 
-In this section, you will test your new app against the mobile service running locally.
+1.  浏览到你保存压缩项目文件的位置，在计算机上展开文件，并在 Visual Studio 中打开解决方案文件。
 
-1. Browse to the location where you saved the compressed project files, expand the files on your computer, and open the solution file in Visual Studio.
+2.  按 "F5" 键可重新生成项目，并在本地启动移动服务。
 
-2. Press the **F5** key to rebuild the project and start the mobile service locally.
+    ![][0]
 
-	![](./media/mobile-services-dotnet-backend-test-local-service-dotnet/mobile-service-startup.png)
+    移动服务成功启动之后，将显示一个网页。
 
-	A web page is displayed after the mobile service starts successfully.
+3.  在 Visual Studio 中的解决方案资源管理器中，右键单击你的客户端应用程序项目，并单击“设为启动项目”，然后按 "F5" 键以重新生成项目并启动应用程序。
 
-3. In Solution Explorer in Visual Studio, right-click your client app project and click **Set as StartUp Project** and then press the **F5** key to rebuild the project and start the app.
+    这样可以启动应用程序，它将连接到本地移动服务实例。
 
-	This starts the app, which connects to the local mobile service instance.	
+4.  在应用程序中的“插入 TodoItem”中键入有意义的文本（例如 *Complete the tutorial*），然后 单击“保存” 。
 
-4. In the app, type meaningful text, such as _Complete the tutorial_, in **Insert a TodoItem**, and then click **Save**.
+    这样可向本地移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在应用程序的第二列中。
 
-	This sends a POST request to the local mobile service. Data from the request is inserted into the TodoItem table. Items stored in the table are returned by the mobile service, and the data is displayed in the second column in the app.
+  [0]: ./media/mobile-services-dotnet-backend-test-local-service-dotnet/mobile-service-startup.png

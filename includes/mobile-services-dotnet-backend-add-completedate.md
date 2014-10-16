@@ -1,41 +1,43 @@
-In this section we will modify the model of our database by adding a new timestamp field named **CompleteDate**. This field will record the last time the todo item was completed. Entity Framework will update the database based on our model change using a default database initializer class derived from [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621). 
+在本节中，我们将通过添加一个名为 "CompleteDate" 的新时间戳字段，修改数据库的模型。此字段将记录上一次完成 Todo 项的时间。Entity Framework 将使用派生自 [DropCreateDatabaseIfModelChanges][] 的默认数据库初始值设定项类，基于我们的数据库模型更改来更新数据库。
 
-1. In Solution Explorer for Visual Studio, expand the **App_Start** folder in the todolist service project. Open the WebApiConfig.cs file.
+1.  在 Visual Studio 的解决方案资源管理器中，展开 todolist 服务项目中的 "App\_Start" 文件夹。打开 WebApiConfig.cs 文件。
 
-2. In the WebApiConfig.cs file, notice that your default database initializer class is derived from the `DropCreateDatabaseIfModelChanges` class. This means any change to the model will result in the table being dropped and recreated to accommodate the new model. So the data in the table will be lost and the table will be re-seeded. Modify the Seed method of the database initializer so that the seed data is as follows as save the WebApiConfig.cs file.
+2.  请注意，在 WebApiConfig.cs 文件中，默认数据库初始值设定项类是从 `DropCreateDatabaseIfModelChanges` 类派生的。这意味着，对该模型的任何更改将导致表被删除并重新创建，以适应新模型。因此表中的数据将丢失，并且表将重新植入。修改数据库初始值设定项的 Seed 方法，使得种子数据如下所示，然后保存 WebApiConfig.cs 文件。
 
-    >[WACOM.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database whenever it detects a data model change in the Code First model definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. For more information, see [How to Use Code First Migrations to Update the Data Model](/en-us/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
+    > [WACOM.NOTE] 使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。有关详细信息，请参阅[如何使用代码优先迁移更新数据模型][]。
 
         List<TodoItem> todoItems = new List<TodoItem>
         {
-          new TodoItem { Id = "1", Text = "First seed item", Complete = false },
-          new TodoItem { Id = "2", Text = "Second seed item", Complete = false },
+        new TodoItem { Id = "1", Text = "First seed item", Complete = false },
+        new TodoItem { Id = "2", Text = "Second seed item", Complete = false },
         };
-     
 
-3. In Solution Explorer for Visual Studio, expand the **DataObjects** folder in the todolist service project. Open the TodoItem.cs file and update the TodoItem class to include the CompleteDate field as follows. Then save the TodoItem.cs file.
+3.  在 Visual Studio 的解决方案资源管理器中，展开 todolist 服务项目中的 "DataObjects" 文件夹。打开 TodoItem.cs 文件并更新 TodoItem 类以包括 CompleteDate 字段，如下所示。然后保存 TodoItem.cs 文件。
 
-        public class TodoItem : EntityData
+        public class TodoItem :EntityData
         {
-          public string Text { get; set; }
-          public bool Complete { get; set; }
-          public System.DateTime? CompleteDate { get; set; }
+        public string Text { get; set; }
+        public bool Complete { get; set; }
+        public System.DateTime?CompleteDate { get; set; }
         }
 
-4. In Solution Explorer for Visual Studio, expand the **Controllers** folder in the todolist service project. Open the TodoItemController.cs file and update the `PatchTodoItem` method so that it will set the **CompleteDate** when the **Complete** property is changing from false to true. Then save the TodoItemController.cs file.
+4.  在 Visual Studio 的解决方案资源管理器中，展开 todolist 服务项目中的 "Controllers" 文件夹。打开 TodoItemController.cs 文件并更新 `PatchTodoItem` 方法，这样当 "Complete" 属性从 false 更改为 true 时，该方法将会设置 "CompleteDate"。然后保存 TodoItemController.cs 文件。
 
         public Task<TodoItem> PatchTodoItem(string id, Delta<TodoItem> patch)
         {
-            // If complete is being set to true and was false, set CompleteDate
-            if ((patch.GetEntity().Complete == true) &&
-                (GetTodoItem(id).Queryable.Single().Complete == false))
+        // If complete is being set to true and was false, set CompleteDate
+        if ((patch.GetEntity().Complete == true) &&
+
+        (GetTodoItem(id).Queryable.Single().Complete == false))
             {
-                patch.TrySetPropertyValue("CompleteDate", System.DateTime.Now);
+        patch.TrySetPropertyValue("CompleteDate", System.DateTime.Now);
             }
-            return UpdateAsync(id, patch);
+        return UpdateAsync(id, patch);
         }
 
+5.  重新生成 todolist .NET 后端服务项目，并确认没有生成错误。
 
-5. Rebuild the todolist .NET backend service project and verify that you have no build errors. 
+接下来，你将更新客户端应用程序，以显示新的 "CompleteDate" 数据。
 
-Next, you will update the client app to display the new **CompleteDate** data.
+  [DropCreateDatabaseIfModelChanges]: http://go.microsoft.com/fwlink/?LinkId=394621
+  [如何使用代码优先迁移更新数据模型]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations

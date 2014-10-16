@@ -1,15 +1,23 @@
-1. In Package Explorer, expand **GetStartedWithData**, **src**, and **.com.example.GetStartedWithData**, then examine the ToDoActivity.java file.
+1.  在“包资源管理器”中，展开 "GetStartedWithData"、"src" 和 ".com.example.GetStartedWithData"，然后检查 ToDoActivity.java 文件。
 
-   	![](./media/download-android-sample-code/mobile-eclipse-project.png)
+    ![][0]
 
-   	Notice that there are `//TODO` comments that specify the steps you must take to make this app work with your mobile service.
+    注意，有一些 `//TODO` 注释指定了将此应用程序用于你的移动服务时必须执行的步骤。
 
-2. From the **Run** menu, click **Run** and then click **Android Application** to start the project.
+2.  在“运行” 菜单中，单击“运行” ，然后单击“Android 应用程序”以启动项目。 
 
-	<div class="dev-callout"><strong>Note</strong> <p>You can run this project using an Android phone, or using the Android emulator. Running with an Android phone  requires you to download a phone-specific USB driver.</p> <p>To run the project in the Android emulator, you must define a least one Android Virtual Device (AVD). Use the AVD Manager to create and manage these devices.</p></div>
+	<div class="dev-callout">说明</b>
 
-3. In the app, type meaningful text, such as _Complete the tutorial_, and then click **Add**.
+    <p>你可以使用 Android 手机或 Android 模拟器运行此项目。使用 Android 手机运行会要求你下载手机特定的 USB 驱动程序。</p>
+	</div>
 
-   	![](./media/download-android-sample-code/mobile-quickstart-startup-android.png)
+    若要在 Android 模拟器中运行该项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。
 
-   	Notice that the saved text is stored in an in-memory collection and displayed in the list below.
+3.  在应用程序中键入有意义的文本（例如 *Complete the tutorial*），然后单击“添加” 。
+
+    ![][1]
+
+    请注意，保存的文本将存储在内存中的集合中，并显示在下面的列表中。
+
+  [0]: ./media/download-android-sample-code/mobile-eclipse-project.png
+  [1]: ./media/download-android-sample-code/mobile-quickstart-startup-android.png

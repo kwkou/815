@@ -1,19 +1,20 @@
+在你能够在新移动服务中存储数据之前，必须在服务中创建新的存储表。以下步骤显示如何使用 Visual Studio 2013 在移动服务中创建新表。然后再更新应用程序，以便使用移动服务将项存储在 Azure 中，而不是存储在本地集合中。
 
+1.  在“服务器资源管理器”中，展开“Azure 移动服务” ，右键单击你的移动服务，单击“创建表” ，然后在“表名”中键入 `TodoItem`。 
 
-Before you can store data in your new mobile service, you must create a new storage table in the service. These steps show how to use Visual Studio 2013 to create a new table in the mobile service. Then you update the app to use Mobile Services to store items in Azure instead of in the local collection.
+    ![在 VS 2013 中创建表][]
 
+2.  展开“高级”， 确认表操作权限默认为“具有应用程序密钥的任何人” ，然后单击“创建” 。
 
-1. In Server Explorer, expand **Azure Mobile Services**, right-click your mobile service, click **Create Table**, then type `TodoItem` in **Table Name**.
+    ![“在 VS 2013 中创建表”第 2 部分][]
 
-	![create table in VS 2013](./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013.png)
+    这样可在服务器上创建 TodoItem 表，具有应用程序密钥的任何人都可以访问和更改该表中的数据，而无需首先进行身份验证。
 
-2. Expand **Advanced**, verify that the table operation permissions default to **Anybody with the Application Key**, then click **Create**. 
+	<div class="dev-callout"><b>说明</b>
 
-	![create table in VS 2013 part 2](./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013-2.png)
+    <p>应用程序密钥随应用程序一同分发。由于此密钥没有安全分发，因此不能视为安全令牌。若要保护对移动服务数据的访问，你必须在用户访问数据之前对用户进行身份验证。有关详细信息，请参阅<a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj193161.aspx">权限</a>。</p>
+	</div>
 
-	This creates the TodoItem table on the server, where anyone that has the application key can access and change data in the table without having to first be authenticated. 
-
-	<div class="dev-callout"><strong>Note</strong><p>The application key is distributed with the application. Because this key is not securely distributed, it cannot be considered a security token. To secure access to your mobile service data, you must instead authenticate users before accessing. For more information, see <a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj193161.aspx">Permissions</a>.</p></div>
-
-
-
+  [在 VS 2013 中创建表]: ./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013.png
+  [“在 VS 2013 中创建表”第 2 部分]: ./media/mobile-services-create-new-table-vs2013/mobile-create-table-vs2013-2.png
+  [权限]: http://msdn.microsoft.com/en-us/library/windowsazure/jj193161.aspx

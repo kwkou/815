@@ -1,51 +1,51 @@
+1.  在 Visual Studio 的解决方案资源管理器中，右键单击移动服务项目的 Controllers 文件夹，展开“添加”，然后单击“新基架项” 。
 
+    这样将显示“添加基架”对话框。
 
-1. In Visual Studio Solution Explorer, right-click the Controllers folder for the mobile service project, expand **Add**, then click **New Scaffolded Item**.
+2.  展开“Azure 移动服务” 并单击“Azure 移动服务自定义控制器” ，然后单击“添加”， 提供 `CompleteAllController` 的“控制器名称” ，然后再次单击“添加”。 
 
-	This displays the Add Scaffold dialog.
+    ![][0]
 
-2. Expand **Azure Mobile Services** and click **Azure Mobile Services Custom Controller**, then click **Add**, supply a **Controller name** of `CompleteAllController`, then click **Add** again.
+    这样将创建新的名为 "CompleteAllController" 的空控制器类。
 
-	![](./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png)
+> [WACOM.NOTE] 如果你的对话框没有移动服务特定的基架，请创建新的“Web API 控制器 - 空” 。在这个新控制器类中，添加公共 "Services" 属性，它将返回 "ApiServices" 类型。此属性用于从控制器内部访问服务器特定的设置。
 
-	This creates a new empty controller class named **CompleteAllController**.
+1.  在新的 CompleteAllController.cs 项目文件中，添加以下 "using" 语句：
 
->[WACOM.NOTE]If your dialog doesn't have Mobile Services-specific scaffolds, instead create a new **Web API Controller - Empty**. In this new controller class, add a public **Services** property, which returns the **ApiServices** type. This property is used to access server-specific settings from inside your controller.
+        using System.Threading.Tasks;
+        using todolistService.Models;
 
-3. In the new CompleteAllController.cs project file, add the following **using** statements:
+    在以上代码中，请将 `todolistService` 替换为你的移动服务项目的命名空间，它应该是在移动服务名称后追加 `Service`。
 
-		using System.Threading.Tasks;
-		using todolistService.Models;
+2.  将以下代码添加到新控制器：
 
-	In the above code, replace `todolistService` with the namespace of your mobile service project, which should be the mobile service name appended with `Service`. 
-
-4. Add the following code to the new controller:
-
-	    // POST api/completeall        
+        // POST api/completeall        
         public Task<int> Post()
         {
-            using (todolistContext context = new todolistContext())
+        using (todolistContext context = new todolistContext())
             {
-                // Get the database from the context.
-                var database = context.Database;
+        // Get the database from the context.
+        var database = context.Database;
 
-                // Create a SQL statement that sets all uncompleted items
-                // to complete and execute the statement asynchronously.
-                var sql = @"UPDATE TodoItems SET Complete = 1 " +
-                            @"WHERE Complete = 0; SELECT @@ROWCOUNT as count";
-                var result = database.ExecuteSqlCommandAsync(sql);
+        // Create a SQL statement that sets all uncompleted items
+        // to complete and execute the statement asynchronously.
+        var sql = @"UPDATE TodoItems SET Complete = 1 " +
+        @"WHERE Complete = 0; SELECT @@ROWCOUNT as count";
+        var result = database.ExecuteSqlCommandAsync(sql);
 
-                // Log the result.
-                Services.Log.Info(string.Format("{0} items set to 'complete'.", 
-                    result.ToString()));
-                
-                return result;
+        // Log the result.
+        Services.Log.Info(string.Format("{0} items set to 'complete'.", 
+        result.ToString()));
+
+        return result;
             }
         }
 
-	In the above code, replace `todolistContext` with the name of the DbContext for your data model, which should be the mobile service name appended with `Context`. This code uses the [Database Class](http://msdn.microsoft.com/en-us/library/system.data.entity.database.aspx) to access the **TodoItems** table directly to set the completed flag on all items. This method supports a POST request, and the number of changed rows is returned to the client as an integer value.
+    在以上代码中，将 `todolistContext` 替换为你的数据模型的 DbContext 名称，它应该是在移动服务名称后追加 `Context`。这段代码使用[数据库类][]来直接访问 "TodoItems" 表，在所有项上设置 completed 标志。此方法支持 POST 请求，已更改行的数量将以整数值形式返回至客户端。
 
-	> [WACOM.NOTE] Default permissions are set, which means that any user of the app can call the custom API. However, the application key is not distributed or stored securely and cannot be considered a secure credential. Because of this, you should consider restricting access to only authenticated users on operations that modify data or affect the mobile service. 
+    > [WACOM.NOTE] 设置了默认权限，这意味着应用程序的任何用户都能够调用自定义 API。但是，应用程序密钥无法安全地分发或存储，不能视为安全的凭据。出于这一原因，你应该考虑将访问权限仅限于经过身份验证的用户，仅允许这些用户执行修改数据或影响移动服务的操作。
 
-Next, you will modify the quickstart app to add a new button and code that asynchronously calls the new custom API.
+接下来，你将修改快速启动应用程序，以添加新按钮和用于异步调用新的自定义 API 的代码。
 
+  [0]: ./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png
+  [数据库类]: http://msdn.microsoft.com/en-us/library/system.data.entity.database.aspx

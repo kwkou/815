@@ -1,166 +1,191 @@
-# Create a Virtual Machine Running Windows Server #
+# 创建运行 Windows Server 的虚拟机
 
-This tutorial will show you how quick and easy it is to create a virtual machine running Windows Server in the cloud using Windows Azure. We will use the Image Gallery in the Windows Azure Management Portal, which contains a variety of images including Windows-based operating systems, Linux-based operating systems, application images, and more. You do not need prior experience with Windows Azure to use this tutorial. 
+本教程将向你演示使用 Windows Azure 在云中创建运行 Windows Server 的虚拟机的快速简单方法。我们将使用 Windows Azure 管理门户中的映像库，它包含各种不同映像，例如基于 Windows 的操作系统、基于 Linux 的操作系统、应用程序映像等。你无需具备 Windows Azure 使用经验即可使用本教程。
 
-You will learn:
+你将了解到以下内容：
 
-- [How to create the virtual machine](#createvirtualmachine)
-- [How to log on to the virtual machine after you create it](#logon)
-- [How to attach a data disk to the new virtual machine](#attachdisk)
+-   [如何创建虚拟机][如何创建虚拟机]
+-   [虚拟机创建后如何进行登录][虚拟机创建后如何进行登录]
+-   [如何将数据磁盘附加到新的虚拟机][如何将数据磁盘附加到新的虚拟机]
 
-If you'd like to know more, see [Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkID=271224).
+如果你希望了解更多信息，请参阅[虚拟机][虚拟机]。
 
+## <span id="createvirtualmachine"></span> </a>如何创建虚拟机
 
-##<a id="createvirtualmachine"> </a>How to create the virtual machine##
+本部分演示如何使用 Windows Azure 管理门户中的“从库中”方法创建自定义虚拟机。此方法提供比“快速创建”方法更多的选项，在你创建虚拟机时对其进行配置。
 
-This section will show you how to use the **From Gallery** method in the Management Portal to create a custom virtual machine. This method provides more options than the **Quick Create** method does for configuring the virtual machine when you create it.
+1.  登录到 Windows Azure [管理门户][管理门户]。如果你还没有订阅，请查看[免费试用版][免费试用版]。
 
+2.  在屏幕底部的命令栏上，单击“新建”。
 
-1. Sign in to the Windows Azure [Management Portal](http://manage.windowsazure.cn). Check out the [Free Trial](http://www.windowsazure.cn/zh-cn/pricing/free-trial/) offer if you do not have a subscription yet.
+    ![从命令栏中选择“新建”][从命令栏中选择“新建”]
 
-2. On the command bar at the bottom of the screen, click **New**.
+3.  在“计算”下，单击“虚拟机”，然后单击“从库中”。
 
-	![Select New from the Command Bar](./media/CreateVirtualMachineWindowsTutorial/commandbarnew.png)
+    ![在命令栏中导航到“从库中”][在命令栏中导航到“从库中”]
 
-3. Under **Compute**, click **Virtual Machine**, and then click **From Gallery**.
+4.  在第一个配置屏幕中，你可从映像库的某个列表中，为你的虚拟机“选择映像”。（可用映像可能各不相同，具体取决于你使用的订阅。）在本教程中，我们将选择“Windows Server 2012 R2 Datacenter”。单击箭头以继续。
 
-	![Navigate to From Gallery in the Command Bar](./media/CreateVirtualMachineWindowsTutorial/fromgallery.png)
-	
-4. The first configuration screen lets you **Choose an Image** for your virtual machine from one of the lists in the Image Gallery. (The available images may differ depending on the subscription you're using.) For this tutorial, we will select **Windows Server 2012 R2 Datacenter**. Click the arrow to continue.
+    ![选择映像][选择映像]
 
-	![Choose an image](./media/CreateVirtualMachineWindowsTutorial/chooseimage.png)
+5.  在第二个配置屏幕中，你可以指定虚拟机本身的属性。在本教程中，请按下图所示填写字段。在本屏幕中填写完毕之后，请单击箭头继续。
 
-5. The second configuration screen lets you specify **attributes of the virtual machine** itself. For this tutorial, fill in the fields as shown in the image below. Once this screen is complete, click the arrow to continue.
+    ![配置虚拟机的属性][配置虚拟机的属性]
 
-	![Configure the properties of the virtual machine](./media/CreateVirtualMachineWindowsTutorial/vmconfiguration.png)
+    > [WACOM.NOTE]“新用户名”指将用于管理服务器的管理帐户。你需要为此帐户创建你自己的唯一密码。
 
-	>[WACN.NOTE]**New User Name** refers to the administrative account that will be used to manage the server. You will need to create your own unique password for this account.
+6.  在第三个配置屏幕中，你可为连接到虚拟机的资源（例如云服务和存储帐户）指定属性。在本教程中，请按下图所示填写字段。在本屏幕中填写完毕之后，请单击箭头继续。
 
-6. The third configuration screen lets you specify attributes for **resources connected to the virtual machine** such as the cloud service and the storage account. For this tutorial, fill in the fields as shown in the image below. Once this screen is complete, click the arrow to continue. 
+    ![配置虚拟机的连接资源][配置虚拟机的连接资源]
 
-	![Configure the connected resources of the virtual machine](./media/CreateVirtualMachineWindowsTutorial/resourceconfiguration.png)
+    请注意，云服务 DNS 名称是全局 DNS 名称，是用于联系虚拟机的 URI 的一部分。由于云服务名称必须是全局唯一的，因此你必须创建自己的云服务名称。在本教程中，我们将使用 MyTestService 作为服务名称。对于使用[多个虚拟机][多个虚拟机]的更复杂方案而言，云服务非常重要。
 
-	Note that the **Cloud Service DNS Name** is the global DNS name that becomes part of the URI that is used to contact the virtual machine. You will need to create your own cloud service name since cloud service names must be globally unique. We will use MyTestService in this tutorial. Cloud services are important for more complex scenarios using [multiple virtual machines](http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-connect-virtual-machine/).
- 
-	For **Region/Affinity Group/Virtual Network**, we will use East US, but you can use a region that is more appropriate to your location. You can also choose to specify a virtual network instead.
- 
-	>[WACN.NOTE]If you want a virtual machine to use a virtual network, you must specify the virtual network when you create the virtual machine. For more information, see [Azure Virtual Network Overview](http://go.microsoft.com/fwlink/p/?LinkID=294063).
+    对于“区域/地缘组/虚拟网络”，我们将使用“美国东部”，但你可以使用更适合你所在位置的区域。你也可以选择指定一个虚拟网络。
 
-7. The fourth configuration screen lets you configure the **VM Agent and endpoints**. For this tutorial, do not make any changes to this screen. Click the check mark to create the virtual machine.
+    > [WACOM.NOTE]如果你希望虚拟机使用虚拟网络，则必须在创建虚拟机时指定虚拟网络。有关详细信息，请参阅 [Azure 虚拟网络概述][Azure 虚拟网络概述]。
 
+7.  在第四个配置屏幕中，你可以配置 VM 代理和终结点。在本教程中，不要在此屏幕上进行任何更改。单击复选标记可创建虚拟机。
 
-	![Configure VM Agent and the endpoints of the virtual machine](./media/CreateVirtualMachineWindowsTutorial/endpointconfiguration.png)
+    ![配置虚拟机的 VM 代理和终结点][配置虚拟机的 VM 代理和终结点]
 
-	>[WACN.NOTE] The VM agent provides the environment for you to install extensions that can help you interact with the virtual machine. For details, see [Using Extensions](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx). For details about configuring endpoints, see [How to Set Up Endpoints to a Virtual Machine](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/).
-    
-8. After the virtual machine is created, the Management Portal lists the new virtual machine under **Virtual Machines**. The corresponding cloud service and storage account are also created under their respective sections. Both the virtual machine and cloud service are started automatically and will show **Running** as their status once the creation is complete. 
+    > [WACOM.NOTE] VM 代理为你提供安装扩展的环境，可帮助你与虚拟机交互。有关详细信息，请参见[使用扩展][使用扩展]。有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点][如何设置虚拟机的终结点]。
 
-	![Configure VM Agent and the endpoints of the virtual machine](./media/CreateVirtualMachineWindowsTutorial/vmcreated.png)
+8.  创建虚拟机之后，管理门户将在“虚拟机”下列出新虚拟机。相应的云服务和存储帐户也在相应部分创建。创建完成之后，虚拟机和云服务都会自动启动，其状态将显示为“正在运行”。
 
-## <a id="logon"> </a>How to log on to the virtual machine after you create it ##
+    ![配置虚拟机的 VM 代理和终结点][1]
 
-This section will show you how to log on to the virtual machine that you created to manage both its settings and the applications that are running on it.
+## <span id="logon"></span> </a>虚拟机创建后如何进行登录
 
-1. Sign in to the Azure [Management Portal](http://manage.windowsazure.cn).
+本部分将演示如何登录到你创建的虚拟机以管理其设置和在其上运行的应用程序。
 
-2. Click **Virtual Machines**, and then select the **MyTestVM** virtual machine.
+1.  登录到 Azure [管理门户][管理门户]。
 
-	![Select MyTestVM](./media/CreateVirtualMachineWindowsTutorial/selectvm.png)
+2.  单击“虚拟机”，然后选择 **MyTestVM** 虚拟机。
 
-3. On the command bar, click **Connect**.
+    ![选择 MyTestVM][选择 MyTestVM]
 
-	![Connect to MyTestVM](./media/CreateVirtualMachineWindowsTutorial/commandbarconnect.png)
-	
-4. Click **Open** to use the remote desktop protocol file that was automatically created for the virtual machine.
+3.  在命令栏中，单击“连接”。
 
-	![Open the rdp file](./media/CreateVirtualMachineWindowsTutorial/openrdp.png)
-	
-5. Click **Connect**.
+    ![连接到 MyTestVM][连接到 MyTestVM]
 
-	![Continue with connecting](./media/CreateVirtualMachineWindowsTutorial/connectrdc.png)
+4.  单击“打开”以使用为虚拟机自动创建的远程桌面协议文件。
 
-6. In the password box, type the user name and password that you specified when you created the virtual machine, and then click **OK**.
+    ![打开 rdp 文件][打开 rdp 文件]
 
-7. Click **Yes** to verify the identity of the virtual machine.
+5.  单击“连接”。
 
-	![Verify the identity of the machine](./media/CreateVirtualMachineWindowsTutorial/certificate.png)
+    ![继续连接][继续连接]
 
-	You can now work with the virtual machine just like you would a server in your office.
+6.  在密码框中，键入创建虚拟机时指定的用户名和密码，然后单击“确定”。
 
-## <a id="attachdisk"> </a>How to attach a data disk to the new virtual machine ##
+7.  单击“是”以验证虚拟机的标识。
 
-This section will show you how to attach an empty data disk to the virtual machine. See the [Attach a Data Disk Tutorial] (http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/) for more information on attaching empty disks as well as how to attach existing disks.
+    ![验证计算机的标识][验证计算机的标识]
 
-1. Sign in to the Azure [Management Portal](http://manage.windowsazure.cn).
+    你现在可以像使用你办公室中的服务器一样使用虚拟机。
 
-2. Click **Virtual Machines**, and then select the **MyTestVM** virtual machine.
+## <span id="attachdisk"></span> </a>如何将数据磁盘附加到新的虚拟机
 
-	![Select MyTestVM](./media/CreateVirtualMachineWindowsTutorial/selectvm.png)
-	
-3. You may be taken to the Quick Start page first. If so, select **Dashboard** from the top.
+本部分将演示如何将空数据磁盘附加到虚拟机。有关如何附加空磁盘以及如何附加现有磁盘的详细信息，请参阅 [附加数据磁盘教程] (<http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/>)。
 
-	![Select Dashboard](./media/CreateVirtualMachineWindowsTutorial/dashboard.png)
+1.  登录到 Azure [管理门户][管理门户]。
 
-4. On the command bar, click **Attach**, and then click **Attach Empty Disk** when it pops up.
+2.  单击“虚拟机”，然后选择 **MyTestVM** 虚拟机。
 
-	![Select Attach from the command bar](./media/CreateVirtualMachineWindowsTutorial/commandbarattach.png)	
+    ![选择 MyTestVM][选择 MyTestVM]
 
-5. The **Virtual Machine Name**, **Storage Location**, **File Name**, and **Host Cache Preference** are already defined for you. All you have to do is enter the size that you want for the disk. Type **5** in the **Size** field. Then click the check mark to attach the empty disk to the virtual machine.
+3.  你可能首先进入“快速启动”页。如果这样，请从顶部选择“仪表板”。
 
-	![Specify the size of the empty disk](./media/CreateVirtualMachineWindowsTutorial/emptydisksize.png)	
-	
-	>[WACN.NOTE] All disks are created from a VHD file in Windows Azure storage. Under **File Name**, you can provide the name for the VHD file that is added to storage, but Azure generates the name of the disk automatically.
+    ![选择“仪表板”][选择“仪表板”]
 
-6. Return to the dashboard to verify that the empty data disk was successfully attached to the virtual machine. It will be listed as a second disk in the **Disks** list along with the OS Disk.
+4.  在命令栏上，单击“附加”，然后在弹出窗口时单击“附加空磁盘”。
 
-	![Attach empty disk](./media/CreateVirtualMachineWindowsTutorial/disklistwithdatadisk.png)
+    ![从命令栏选择“附加”][从命令栏选择“附加”]
 
-	After you attach the data disk to the virtual machine, the disk is offline and not initialized. Before you can use it to store data, you'll need to log on to the virtual machine and initialize the disk.
+5.  其中已经为你定义好了“虚拟机名称”、“存储位置”、“文件名”和“主机缓存首选项”。你只需要输入所需的磁盘大小。在“大小”字段中键入 **5**。然后单击复选标记，以便将空磁盘附加到虚拟机。
 
-7. Connect to the virtual machine by using the steps in the previous section, [How to log on to the virtual machine after you create it] (#logon).
+    ![指定空磁盘的大小][指定空磁盘的大小]
 
-8. After you log on to the virtual machine, open **Server Manager**. In the left pane, select **File and Storage Services**.
+    > [WACOM.NOTE] 所有磁盘都是从 Windows Azure 存储空间中的 VHD 文件创建的。在“文件名”下，你可以为添加到存储的 VHD 文件提供名称，但是 Azure 会自动生成磁盘名称。
 
-	![Expand File and Storage Services in Server Manager](./media/CreateVirtualMachineWindowsTutorial/fileandstorageservices.png)
+6.  返回仪表板以验证空数据磁盘是否已成功附加到虚拟机。该磁盘将在“磁盘”列表中，作为第二个磁盘与操作系统磁盘一同列出。
 
-9. Select **Disks** from the expanded menu.
+    ![附加空磁盘][附加空磁盘]
 
-	![Expand File and Storage Services in Server Manager](./media/CreateVirtualMachineWindowsTutorial/selectdisks.png)	
-	
-10. In the **Disks** section, there are three disks in the list: disk 0, disk 1, and disk 2. Disk 0 is the OS disk, disk 1 is a temporary resource disk (which should not be used for data storage), and disk 2 is the data disk you have attached to the virtual machine. Note that the data disk has a capacity of 5 GB as specified earlier. Right-click disk 2 and then select **Initialize**.
+    在你将数据磁盘附加到虚拟机后，该磁盘会处于脱机和未初始化状态。你需要先登录虚拟机并初始化磁盘，然后才能使用它存储数据。
 
-	![Start initialization](./media/CreateVirtualMachineWindowsTutorial/initializedisk.png)
+7.  使用在上一节[创建虚拟机后如何登录][虚拟机创建后如何进行登录] (\#logon) 中列出的步骤连接到虚拟机。
 
-11. Click **Yes** to start the initialization process.
+8.  在你登录虚拟机后，打开“服务器管理器”。在左窗格中，选择“文件和存储服务”。
 
-	![Continue initialization](./media/CreateVirtualMachineWindowsTutorial/yesinitialize.png)
+    ![在服务器管理器中展开“文件和存储服务”][在服务器管理器中展开“文件和存储服务”]
 
-12. Right-click disk 2 again and select **New Volume**. 
+9.  从展开的菜单中选择“磁盘”。
 
-	![Create the volume](./media/CreateVirtualMachineWindowsTutorial/initializediskvolume.png)
+    ![在服务器管理器中展开“文件和存储服务”][2]
 
-13. Complete the wizard using the default values provided. Once the wizard is finished, a new volume will be listed in the **Volumes** section. 
+10. 在“磁盘”部分中，列表中有三个磁盘：磁盘 0、磁盘 1 和磁盘 2。磁盘 0 是操作系统磁盘，磁盘 1 是临时资源磁盘（不应用于数据存储），磁盘 2 是已附加到虚拟机的数据磁盘。请注意，数据磁盘的容量是以前指定的 5 GB。右键单击磁盘 2，然后选择“初始化”。
 
-	![Create the volume](./media/CreateVirtualMachineWindowsTutorial/newvolumecreated.png)
+    ![开始初始化][开始初始化]
 
-	The disk is now online and ready to use with a new drive letter. 
-	
-##Next Steps 
+11. 单击“是”开始初始化过程。
 
-To learn more about configuring Windows virtual machines on Azure, see the following articles:
+    ![继续初始化][继续初始化]
 
-[How to Connect Virtual Machines in a Cloud Service](http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-connect-virtual-machine/)
+12. 再次右键单击磁盘 2，然后选择“新建卷”。
 
-[How to Create and Upload your own Virtual Hard Disk containing the Windows Server Operating System](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/)
+    ![创建卷][创建卷]
 
-[Attach Data Disks to a Virtual Machine](http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/)
+13. 使用提供的默认值完成向导操作。向导操作完成之后，将在“卷”部分列出一个新卷。
 
-[Manage the Availability of Virtual Machines](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-manage-availability/)
+    ![创建卷][3]
 
-[About virtual machines in Azure]: #virtualmachine
-[How to create the virtual machine]: #custommachine
-[How to log on to the virtual machine after you create it]: #logon
-[How to attach a data disk to the new virtual machine]: #attachdisk
-[How to set up communication with the virtual machine]: #endpoints
+    磁盘现在处于联机状态且可以使用新的驱动器号。
 
+## 后续步骤
 
+若要了解有关 Azure 上 Windows 虚拟机的详细信息，请参阅以下文章：
+
+[如何连接云服务中的虚拟机][多个虚拟机]
+
+[如何创建和上载你自己的包含 Windows Server 操作系统的虚拟硬盘][如何创建和上载你自己的包含 Windows Server 操作系统的虚拟硬盘]
+
+[将数据磁盘附加到虚拟机][将数据磁盘附加到虚拟机]
+
+[管理虚拟机的可用性][管理虚拟机的可用性]
+
+  [如何创建虚拟机]: #createvirtualmachine
+  [虚拟机创建后如何进行登录]: #logon
+  [如何将数据磁盘附加到新的虚拟机]: #attachdisk
+  [虚拟机]: http://go.microsoft.com/fwlink/p/?LinkID=271224
+  [管理门户]: http://manage.windowsazure.cn
+  [免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [从命令栏中选择“新建”]: ./media/CreateVirtualMachineWindowsTutorial/commandbarnew.png
+  [在命令栏中导航到“从库中”]: ./media/CreateVirtualMachineWindowsTutorial/fromgallery.png
+  [选择映像]: ./media/CreateVirtualMachineWindowsTutorial/chooseimage.png
+  [配置虚拟机的属性]: ./media/CreateVirtualMachineWindowsTutorial/vmconfiguration.png
+  [配置虚拟机的连接资源]: ./media/CreateVirtualMachineWindowsTutorial/resourceconfiguration.png
+  [多个虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-connect-virtual-machine/
+  [Azure 虚拟网络概述]: http://go.microsoft.com/fwlink/p/?LinkID=294063
+  [配置虚拟机的 VM 代理和终结点]: ./media/CreateVirtualMachineWindowsTutorial/endpointconfiguration.png
+  [使用扩展]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
+  [如何设置虚拟机的终结点]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/
+  [1]: ./media/CreateVirtualMachineWindowsTutorial/vmcreated.png
+  [选择 MyTestVM]: ./media/CreateVirtualMachineWindowsTutorial/selectvm.png
+  [连接到 MyTestVM]: ./media/CreateVirtualMachineWindowsTutorial/commandbarconnect.png
+  [打开 rdp 文件]: ./media/CreateVirtualMachineWindowsTutorial/openrdp.png
+  [继续连接]: ./media/CreateVirtualMachineWindowsTutorial/connectrdc.png
+  [验证计算机的标识]: ./media/CreateVirtualMachineWindowsTutorial/certificate.png
+  [选择“仪表板”]: ./media/CreateVirtualMachineWindowsTutorial/dashboard.png
+  [从命令栏选择“附加”]: ./media/CreateVirtualMachineWindowsTutorial/commandbarattach.png
+  [指定空磁盘的大小]: ./media/CreateVirtualMachineWindowsTutorial/emptydisksize.png
+  [附加空磁盘]: ./media/CreateVirtualMachineWindowsTutorial/disklistwithdatadisk.png
+  [在服务器管理器中展开“文件和存储服务”]: ./media/CreateVirtualMachineWindowsTutorial/fileandstorageservices.png
+  [2]: ./media/CreateVirtualMachineWindowsTutorial/selectdisks.png
+  [开始初始化]: ./media/CreateVirtualMachineWindowsTutorial/initializedisk.png
+  [继续初始化]: ./media/CreateVirtualMachineWindowsTutorial/yesinitialize.png
+  [创建卷]: ./media/CreateVirtualMachineWindowsTutorial/initializediskvolume.png
+  [3]: ./media/CreateVirtualMachineWindowsTutorial/newvolumecreated.png
+  [如何创建和上载你自己的包含 Windows Server 操作系统的虚拟硬盘]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
+  [将数据磁盘附加到虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/
+  [管理虚拟机的可用性]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-manage-availability/

@@ -1,101 +1,107 @@
-#Azure Service Bus
+# Azure Service Bus
 
-Whether software runs in the cloud or on premises, it often needs to interact with other software. To provide a broadly useful way to do this, Azure offers Service Bus. This article takes a look at this technology, describing what it is and why you might want to use it.
+无论软件在云中还是在本地运行，该软件通常都需要与其他软件进行交互。为了提供执行此操作的常用方法，Azure 提供了 Service Bus。本文介绍了此技术，描述该技术的概念以及你可能需要使用该技术的原因。
 
-##Table of Contents      
-- [Service Bus Fundamentals](#fundamentals)
-- [Queues](#queues)
-- [Topics](#topics)
-- [Relays](#relays)
+## 目录
 
+-   [Service Bus 基础][Service Bus 基础]
+-   [队列][队列]
+-   [主题][主题]
+-   [中继][中继]
 
-## <a name="fundamentals"></a>Service Bus Fundamentals
-Different situations call for different styles of communication. Sometimes, letting applications send and receive messages through a simple queue is the best solution. In other situations, an ordinary queue isn't enough; a queue with a publish-and-subscribe mechanism is better. And in some cases, all that's really needed is a connection between applications-queues aren't required. Service Bus provides all three options, letting your applications interact in several different ways.
+## <a name="fundamentals"></a>Service Bus 基础
 
-Service Bus is a multi-tenant cloud service, which means that the service is shared by multiple users. Each user, such as an application developer, creates a *namespace*, then defines the communication mechanisms she needs within that namespace. [Figure 1](#Fig1) shows how this looks.
+不同的情况要求不同的通信方式。有时，让应用程序通过简单的队列发送和接收消息是最佳解决方案。在其他情况下，普通队列还不够；具有发布和订阅机制的队列会更好。而在某些情况下，实际需要的是在应用程序之间建立连接，无需使用队列。Service Bus 提供以上所有三种方式，以便让你的应用程序能够通过多种不同方式进行交互。
 
-<a name="Fig1"></a>![Diagram of Azure Service Bus][svc-bus]
- 
-**Figure 1: Service Bus provides a multi-tenant service for connecting applications through the cloud.**
+Service Bus 是一种多租户云服务，这意味着该服务可由多个用户共享。每个用户（如应用程序开发人员）创建一个*命名空间*，然后定义他/她在该命名空间内需要的通信机制。[图 1][图 1] 解释这种情况。
 
-Within a namespace, you can use one or more instances of three different communication mechanisms, each of which connects applications in a different way. The choices are:
+<a name="Fig1"></a>![Azure Service Bus 图表][Azure Service Bus 图表]
 
-- *Queues*, which allow one-directional communication. Each queue acts as an intermediary (sometimes called a *broker*) that stores sent messages until they are received.
-- *Topics*, which provide one-directional communication using *subscriptions*. Like a queue, a topic acts as a broker, but it allows each subscription to see only messages that match specific criteria.
-- *Relays*, which provide bi-directional communication. Unlike queues and topics, a relay doesn't store in-flight messages-it's not a broker. Instead, it just passes them on to the destination application.
+**图 1：Service Bus 为通过云连接应用程序提供多租户服务。**
 
-When you create a queue, topic, or relay, you give it a name. Combined with whatever you called your namespace, this name creates a unique identifier for the object. Applications can provide this name to Service Bus, then use that queue, topic, or relay to communicate with one another. 
+在命名空间内，你可以使用三种不同通信机制的一个或多个实例，每种机制使用不同方式连接应用程序。选项有：
 
-To use any of these objects, Windows applications can use Windows Communication Foundation (WCF). For queues and topics, Windows applications can also use a Service Bus-defined Messaging API. Queues and topics can be accessed via HTTP as well, and to make them easier to use from non-Windows applications, Microsoft provides SDKs for Java, Node.js, and other languages.
+-   “队列”，允许单向通信。每个队列均充当一个中介（有时称为*代理*），可存储发送的消息，直到它们被接收为止。
+-   “主题”，使用“订阅”提供单向通信。主题与队列一样可充当代理，但主题仅允许每个订阅查看符合特定条件的消息。
+-   “中继”，提供双向通信。与队列和主题不同，中继不存储传送中的消息，它不是代理。相反，中继只是将消息传送到目标应用程序。
 
-It's important to understand that even though Service Bus itself runs in the cloud (that is, in Microsoft's Azure datacenters), applications that use it can run anywhere. You can use Service Bus to connect applications running on Azure, for example, or applications running inside your own datacenter. You can also use it to connect an application running on Azure or another cloud platform with an on-premises application or with tablets and phones. It's even possible to connect household appliances, sensors, and other devices to a central application or to one other. Service Bus is a generic communication mechanism in the cloud that's accessible from pretty much anywhere. How you use it depends on what your applications need to do.
+当你创建队列、主题或中继时，请对其进行命名。结合你对命名空间的任何命名，此名称可创建对象的唯一标识符。应用程序可将此名称提供给 Service Bus，然后使用队列、主题或中继相互通信。
 
+若要使用任意这些对象，Windows 应用程序可使用 Windows Communication Foundation (WCF)。对于队列和主题，Windows 应用程序还可使用 Service Bus 定义的消息传送 API。也可通过 HTTP 访问队列和主题，并且为了更轻松地通过非 Windows 应用程序使用它们，Microsoft 提供了 Java、Node.js 和其他语言的 SDK。
 
-## <a name="queues"></a>Queues
+即使 Service Bus 本身在云（即 Microsoft 的 Azure 数据中心）中运行，使用它的应用程序也能随处运行，了解这一点很重要。你可以使用 Service Bus 连接在 Azure 上运行的应用程序或在你自己的数据中心内运行的应用程序。你也可以使用 Service Bus 通过本地应用程序或通过平板电脑和手机来连接在 Azure 或其他云平台上运行的应用程序。甚至可以将家用电器、传感器和其他设备连接到中央应用程序或其他应用程序。Service Bus 是云中的通用通信机制，几乎可从任何位置对其进行访问。使用 Service Bus 的方式取决于应用程序需要执行的操作。
 
-Suppose you decide to connect two applications using a Service Bus queue. [Figure 2](#Fig2) illustrates this situation.
+## <a name="queues"></a>队列
 
-<a name="Fig2"></a>![Diagram of Service Bus Queues][queues]
- 
-**Figure 2: Service Bus queues provide one-way asynchronous queuing.**
+假设你决定使用 Service Bus 队列连接两个应用程序。[图 2][图 2] 说明了此情况。
 
-The process is simple: A sender sends a message to a Service Bus queue, and a receiver picks up that message at some later time. A queue can have just a single receiver, as [Figure 2](#Fig2) shows, or multiple applications can read from the same queue. In the latter situation, each message is typically read by just one receiver-queues don't provide a multi-cast service.
+<a name="Fig2"></a>![Service Bus 队列图表][Service Bus 队列图表]
 
-Each message has two parts: a set of properties, each a key/value pair, and a binary message body. How they're used depends on what an application is trying to do. For example, an application sending a message about a recent sale might include the properties *Seller="Ava"* and *Amount=10000*. The message body might contain a scanned image of the sale's signed contract or, if there isn't one, just remain empty.
+**图 2：Service Bus 队列提供单向异步排队方法。**
 
-A receiver can read a message from a Service Bus queue in two different ways. The first option, called ReceiveAndDelete, removes a message from the queue and immediately deletes it. This is simple, but if the receiver crashes before it finishes processing the message, the message will be lost. Because it's been removed from the queue, no other receiver can access it. 
+过程很简单：发送方将消息发送至 Service Bus 队列，接收方在随后的某个时间内接收该消息。一个队列只能有一位接收方，如[图 2][图 2] 所示，或者多个应用程序可从同一队列中读取消息。在后一种情况下，每条消息通常仅由一位接收方读取，队列不提供多播服务。
 
-The second option, PeekLock, is meant to help with this problem. Like ReceiveAndDelete, a PeekLock read removes a message from the queue. It doesn't delete the message, however. Instead, it locks the message, making it invisible to other receivers, then waits for one of three events:
+每条消息由两部分组成：每个键/值对一组属性和二进制消息正文。使用的方式取决于应用程序尝试执行的操作。例如，发送近期销售消息的应用程序可能包含属性 *Seller="Ava"* 和 *Amount=10000*。消息正文可能包含已签署的销售合同的扫描图像，如果不包含该合同，则需留空。
 
-- If the receiver processes the message successfully, it calls Complete, and the queue deletes the message. 
-- If the receiver decides that it can't process the message successfully, it calls Abandon. The queue then removes the lock from the message and makes it available to other receivers.
-- If the receiver calls neither of these within a configurable period of time (by default, 60 seconds), the queue assumes the receiver has failed. In this case, it behaves as if the receiver had called Abandon, making the message available to other receivers.
+接收方可采用两种不同方式从 Service Bus 队列中读取消息。第一种方式称作 ReceiveAndDelete，即，从队列中移除消息并立即将其删除。此操作很简单，但如果接收者在完成处理消息之前崩溃，则该消息将丢失。因为消息已从队列中移除，所以接收方无法访问该消息。
 
-Notice what can happen here: The same message might be delivered twice, perhaps to two different receivers. Applications using Service Bus queues must be prepared for this. To make duplicate detection easier, each message has a unique MessageID property that by default stays the same no matter how many times the message is read from a queue. 
+第二种方式 PeekLock 旨在帮助解决这个问题。与 ReceiveAndDelete 一样，PeekLock 可从队列中移除消息。不过，它不会删除该消息。相反，它会锁定该消息，使其对其他接收方不可见，然后等待以下三个事件之一：
 
-Queues are useful in quite a few situations. They let applications communicate even when both aren't running at the same time, something that's especially handy with batch and mobile applications. A queue with multiple receivers also provides automatic load balancing, since sent messages are spread across these receivers.
+-   如果接收方成功处理了该消息，将调用“完成”，并且队列将删除该消息。
+-   如果接收方判定它无法成功处理该消息，将调用“放弃”。队列即会解除对该消息的锁定，使其可供其他接收方使用。
+-   如果接收方在可配置时间段（默认为 60 秒）内没有调用这两个命令，队列将假定接收方失败。在这种情况下，队列的行为就像接收方已调用“放弃”一样，即，使消息可供其他接收方使用。
 
+请注意，可能发生的情况：同一条消息可能被发送两次，即，或许将其发送给两个不同的接收方。使用 Service Bus 队列的应用程序必须为此做好准备。为了更轻松地进行重复检测，每条消息都拥有一个唯一的 MessageID 属性，无论从队列中读取消息多少次，该属性默认情况下始终保持不变。
 
-## <a name="topics"></a>Topics
+队列在很多情况下都非常有用。即使两个应用程序没有同时运行，队列也可使这两个应用程序之间相互通信，这对于批处理和移动应用程序尤为方便。当所发送的消息传播给多个接收方时，具有这些接收方的队列还提供自动负载平衡。
 
-Useful as they are, queues aren't always the right solution. Sometimes, Service Bus topics are better. [Figure 3](#Fig3) illustrates this idea.
+## <a name="topics"></a>主题
 
-<a name="Fig3"></a>![Diagram of Service Bus Topics and Subscriptions][topics-subs]
- 
-**Figure 3: Based on the filter a subscribing application specifies, it can receive some or all of the messages sent to a Service Bus topic.**
+队列虽然在一些情况下有用，但并非总是正确的解决方案。有时，Service Bus 主题更好。[图 3][图 3] 说明了这一点。
 
-A topic is similar in many ways to a queue. Senders submit messages to a topic in the same way that they submit messages to a queue, and those messages look the same as with queues. The big difference is that topics let each receiving application create its own subscription by defining a *filter*. A subscriber will then see only the messages that match that filter. For example, [Figure 3](#Fig3) shows a sender and a topic with three subscribers, each with its own filter:
+<a name="Fig3"></a>![Service Bus 主题和订阅图表][Service Bus 主题和订阅图表]
 
-- Subscriber 1 receives only messages that contain the property *Seller="Ava"*.
-- Subscriber 2 receives messages that contain the property *Seller="Ruby"* and/or contain an *Amount* property whose value is greater than 100,000. Perhaps Ruby is the sales manager, and so she wants to see both her own sales and all big sales regardless of who makes them.
-- Subscriber 3 has set its filter to *True*, which means that it receives all messages. This application might be responsible for maintaining an audit trail, for example, and so it needs to see everything.
+**图 3：根据订阅应用程序指定的筛选器，它可接收发送至 Service Bus 主题的部分或全部消息。**
 
-As with queues, subscribers to a topic can read messages using either ReceiveAndDelete or PeekLock. Unlike queues, however, a single message sent to a topic can be received by multiple subscribers. This approach, commonly called *publish and subscribe*, is useful whenever multiple applications might be interested in the same messages. By defining the right filter, each subscriber can tap into just the part of the message stream that it needs to see.
+主题在很多方面与队列类似。发送方将消息提交至主题的方式与将消息提交至队列的方式相同，这些消息与使用队列的消息看起来一样。最大的区别是主题让每个接收应用程序通过定义*筛选器* 创建其自己的订阅。然后，订户将只能看到与该筛选器匹配的消息。例如，[图 3][图 3] 显示一个发送方以及一个具有三个订户的主题，每个订户都拥有自己的筛选器：
 
+-   订户 1 仅接收包含 *Seller="Ava"* 属性的消息。
+-   订户 2 接收包含 *Seller="Ruby"* 属性和/或值大于 100,000 的 *Amount* 属性的消息。Ruby 或许是销售经理，因此她希望查看她自己的销售以及其他人做的所有大单销售。
+-   订户 3 将其筛选器设置为 *True*，这意味着它将接收所有消息。例如，此应用程序可能负责维护和审核记录，因此它需要查看全部内容。
 
-## <a name="relays"></a>Relays
+与队列一样，某主题的订户可使用 ReceiveAndDelete 或 PeekLock 读取消息。不过与队列不同的是，发送至主题的单个消息可由多个订户接收。此方法通常称作*发布和订阅*，在当多个应用程序对相同消息感兴趣时非常有用。通过定义适当的筛选器，每位订户可以只访问需要查看的消息流部分。
 
-Both queues and topics provide one-way asynchronous communication through a broker. Traffic flows in just one direction, and there's no direct connection between senders and receivers. But what if you don't want this? Suppose your applications need to both send and receive, or perhaps you want a direct link between them"you don't need a place to store messages in between. To address problems like this, Service Bus provides relays, as [Figure 4](#Fig4) shows.
+## <a name="relays"></a>中继
 
-<a name="Fig4"></a>![Diagram of Service Bus Relay][relay]
- 
-**Figure 4: Service Bus relay provides synchronous, two-way communication between applications.**
+队列和主题均通过代理提供单向异步通信。流量只按一个方向流动，发送方和接收方之间没有直接连接。但如果你不希望这样，该怎么办？假设你的应用程序需要同时发送和接收消息，或者可能你希望应用程序之间进行直接链接，而不需要在某个位置存储两者之间的消息。为解决此类问题，Service Bus 提供了中继，如[图 4][图 4] 所示。
 
-The obvious question to ask about relays is this: Why would I use one? Even if I don't need queues, why make applications communicate via a cloud service rather than just interact directly? The answer is that talking directly can be harder than you might think.
+<a name="Fig4"></a>![Service Bus 中继图表][Service Bus 中继图表]
 
-Suppose you want to connect two on-premises applications, both running inside corporate datacenters. Each of these applications sits behind a firewall, and each datacenter probably uses network address translation (NAT). The firewall blocks incoming data on all but a few ports, and NAT implies that the machine each application is running on probably doesn't have a fixed IP address. Without some extra help, connecting these applications over the public Internet is problematic.
+**图 4：Service Bus 中继提供应用程序之间的同步双向通信。**
 
-A Service Bus relay provides this help. To communicate bi-directionally through a relay, each application establishes an outbound TCP connection with Service Bus, then keeps it open. All communication between the two applications will travel over these connections. Because each connection was established from inside the datacenter, the firewall will allow incoming traffic to each application"data sent through the relay"without opening new ports. This approach also gets around the NAT problem, because each application has a consistent endpoint throughout the communication. By exchanging data through the relay, the applications can avoid the problems that would otherwise make communication difficult. 
+关于中继明显要问的问题是：为何我要使用中继？即使我不需要队列，那么为什么要通过云服务进行应用程序通信，而非直接交互？答案是直接对话比你想象的更困难。
 
-To use Service Bus relays, applications rely on Windows Communication Foundation (WCF). Service Bus provides WCF bindings that make it straightforward for Windows applications to interact via relays. Applications that already use WCF can typically just specify one of these bindings, then talk to each other through a relay. Unlike queues and topics, however, using relays from non-Windows applications, while possible, requires some programming effort; no standard libraries are provided.
+假设你希望连接两个本地应用程序，这两个应用程序均在企业数据中心运行。每个应用程序都位于防火墙之后，并且每个数据中心很可能使用网络地址转换 (NAT)。防火墙阻止几乎所有端口上的传入数据，并且 NAT 意味着运行每个应用程序的计算机很可能没有固定 IP 地址。如果不借助一些额外的帮助，那么通过公共 Internet 连接这些应用程序会产生问题。
 
-Unlike queues and topics, applications don't explicitly create relays. Instead, when an application that wishes to receive messages establishes a TCP connection with Service Bus, a relay is created automatically. When the connection is dropped, the relay is deleted. To let an application find the relay created by a specific listener, Service Bus provides a registry that allows locating a specific relay by name.
+Service Bus 中继可提供此方面的帮助。若要通过中继进行双向通信，每个应用程序需使用 Service Bus 建立出站 TCP 连接，然后一直保持打开状态。将通过这些连接传输两个应用程序之间的全部通信。由于每个连接均从数据中心内部建立，因此，防火墙将允许到每个应用程序的传入流量（即通过中继发送的数据），而无需打开新端口。此方法还能解决 NAT 问题，因为每个应用程序在整个通信中的终结点是一致的。通过中继交换数据，应用程序可以避免导致通信困难的问题。
 
-Relays are the right solution when you need direct communication. Think about an airline reservation system running in an on-premises datacenter, for example, that must be accessed from check-in kiosks, mobile devices, and other computers. Applications running on all of these systems could rely on Service Bus relays in the cloud to communicate, wherever they might be running.
+为使用 Service Bus 中继，应用程序依赖 Windows Communication Foundation (WCF)。Service Bus 提供 WCF 绑定，可使 Windows 应用程序通过中继进行交互变得更加简单。已使用 WCF 的应用程序通常只需指定其中一个绑定，即可通过中继进行交互。不过与队列和主题不同，从非 Windows 应用程序使用中继（如有可能）需要一些编程工作；没有标准库提供。
 
-Connecting applications has always been part of building complete solutions, and it's hard to see this problem ever going away. By providing cloud-based technologies for doing this through queues, topics, and relays, Service Bus aims at making this essential function easier and more broadly available.
+与队列和主题不同，应用程序不会显式创建中继。相反，当希望接收消息的应用程序与 Service Bus 建立 TCP 连接时，会自动创建中继。当该连接中断时，将删除该中继。为了让应用程序能够找到由特定侦听程序创建的中继，Service Bus 提供了允许按名称定位特定中继的注册表。
 
-[svc-bus]: ./media/hybrid-solutions/SvcBus_01_architecture.png
-[queues]: ./media/hybrid-solutions/SvcBus_02_queues.png
-[topics-subs]: ./media/hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
-[relay]: ./media/hybrid-solutions/SvcBus_04_relay.png
+当你需要直接通信时，中继是正确的解决方案。例如，在本地数据中心运行的航空订票系统，可从值机柜台、移动设备和其他计算机上访问该系统。在所有这些系统上运行的应用程序都可能依赖云中的 Service Bus 中继进行通信，无论它们在哪里运行。
+
+连接应用程序始终属于构建完整解决方案的一部分，很难看到此问题永远消失。通过提供可实现此目的的基于云的技术（即队列、主题和中继），Service Bus 旨在让此基本功能更加简单且使用范围更加广泛。
+
+  [Service Bus 基础]: #fundamentals
+  [队列]: #queues
+  [主题]: #topics
+  [中继]: #relays
+  [图 1]: #Fig1
+  [Azure Service Bus 图表]: ./media/hybrid-solutions/SvcBus_01_architecture.png
+  [图 2]: #Fig2
+  [Service Bus 队列图表]: ./media/hybrid-solutions/SvcBus_02_queues.png
+  [图 3]: #Fig3
+  [Service Bus 主题和订阅图表]: ./media/hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
+  [图 4]: #Fig4
+  [Service Bus 中继图表]: ./media/hybrid-solutions/SvcBus_04_relay.png

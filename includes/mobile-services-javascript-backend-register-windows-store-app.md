@@ -1,73 +1,79 @@
+1.  如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用程序的[“提交应用程序”页][]，用 Microsoft 帐户登录，然后单击“应用程序名称” 。
 
+    ![][0]
 
-1. If you have not already registered your app, navigate to the [Submit an app page] at the Dev Center for Windows Store apps, log on with your Microsoft account, and then click **App name**.
+2.  在“应用程序名称” 中为应用程序键入一个名称，单击“保留应用程序名称” ，然后单击“保存”。 
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-submit-win8-app.png)
+    ![][1]
 
-2. Type a name for your app in **App name**, click **Reserve app name**, and then click **Save**.
+    此操作为应用程序创建一个新的 Windows 应用商店注册。
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-name.png)
+3.  在 Visual Studio 2012 Express for Windows 8 中，打开你在完成教程[移动服务入门][]时创建的项目。
 
-   	This creates a new Windows Store registration for your app.
+4.  在解决方案资源管理器中，右键单击项目，单击“应用商店” ，然后单击“将应用程序与应用商店关联...” 。
 
-3. In Visual Studio 2012 Express for Windows 8, open the project that you created when you completed the tutorial [Get started with Mobile Services].
+    ![][2]
 
-4. In solution explorer, right-click the project, click **Store**, and then click **Associate App with the Store...**. 
+    此时将显示“将应用程序与 Windows 应用商店关联” 向导。
 
-  	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-store-association.png)
+5.  在该向导中，单击“登录” ，然后用你的 Microsoft 帐户登录。
 
-   	This displays the **Associate Your App with the Windows Store** Wizard.
+6.  选择在第 2 步中注册的应用程序，单击“下一步” ，然后单击“关联” 。
 
-5. In the wizard, click **Sign in** and then login with your Microsoft account.
+    ![][3]
 
-6. Select the app that you registered in step 2, click **Next**, and then click **Associate**.
+    这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-select-app-name.png)
+7.  回到新应用程序的“Windows 开发人员中心”页，单击“服务” 。
 
-   	This adds the required Windows Store registration information to the application manifest.    
+    ![][4]
 
-7. Back in the Windows Dev Center page for your new app, click **Services**. 
+8.  在“服务”页中，单击“Azure 移动服务”下的“Live 服务站点”。 
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit-app.png) 
+    ![][5]
 
-8. In the Services page, click **Live Services site** under **Azure Mobile Services**.
+9.  单击“正在对你的服务进行身份验证” ，然后记下“客户端密钥”和“程序包安全标识符(SID)”的值。 
 
-	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit2-app.png)
+    ![][6]
 
-9. Click **Authenticating your service** and make a note of the values of **Client secret** and **Package security identifier (SID)**. 
+    <div class="dev-callout"><b>安全说明</b>
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-push-auth.png)
+    <p>客户端密钥和程序包 SID 是重要的安全凭据。请勿与任何人分享这些密钥或将密钥随应用程序分发。</p>
+	</div>
 
-    <div class="dev-callout"><b>Security Note</b>
-	<p>The client secret and package SID are important security credentials. Do not share these secrets with anyone or distribute them with your app.</p>
-    </div> 
+10. 登录到 [Azure 管理门户][]，单击“移动服务” ，然后单击你的应用程序。
 
-10. Log on to the [Azure Management Portal], click **Mobile Services**, and then click your app.
+    ![][7]
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-selection.png)
+11. 单击“推送”选项卡，再 单击“启用增强的推送” ，然后单击“是” 以接受配置更改。
 
-11. Click the **Push** tab, click **Enable enhanced push**, and click **Yes** to accept the configuration change.
+    ![][8]
 
+    这样可以更新你的移动服务的配置，以使用通知中心提供的增强的推送功能。对于你的付费移动服务，有些通知中心使用是免费的。有关详细信息，请参阅[移动服务定价详细信息][]。
 
-	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-enable-enhanced-push.png)
+    <div class="dev-callout"><b>重要说明</b>
 
-	This updates the configuration of your mobile service to use the enhanced push notification functionality provided by Notification Hubs. Some Notification Hubs usage is free with your paid mobile service. For more information, see [Mobile Services Pricing Details](http://go.microsoft.com/fwlink/p/?LinkID=311786).
+    <p>此操作可重置你的推送凭据，并更改脚本中的推送方法行为。这些更改无法恢复。不要使用此方法向生产移动服务添加通知中心。有关如何在生产移动服务中启用增强的推送通知的指导，请参阅<a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">本指南</a>。</p>
+	</div>
 
-    <div class="dev-callout"><b>Important</b>
-	<p>This operation resets your push credentials and changes the behavior of the push methods in your scripts. These changes cannot be reverted. Do not use this method to add a notification hub to a production mobile service. For guidance on how to enable enhanced push notifications in a production mobile service, see <a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">this guidance</a>.</p>
-    </div>
+12. 输入在步骤 4 中从 WNS 获取的“客户端密钥” 和 “程序包 SID”值，然后单击“保存”。 
 
-12. Enter the **Client secret** and **Package SID** values obtained from WNS in Step 4, and then click **Save**.
+    ![][9]
 
-   	![](./media/mobile-services-javascript-backend-register-windows-store-app/mobile-push-tab.png)
+    > [WACOM.NOTE] 如果你在门户中的“推送”选项卡上 为增强的推送通知设置了 WNS 凭据，则这些凭据与通知中心共享，用于配置应用程序的通知中心。
 
-	>[WACOM.NOTE]When you set your WNS credentials for enhanced push notifications in the **Push** tab in the portal, they are shared with Notification Hubs to configure the notification hub with your app.
-
-<!-- Anchors. -->
-
-
-
-<!-- URLs. -->
-[Get started with Mobile Services]: /en-us/documentation/articles/mobile-services-windows-store-get-started/
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Azure Management Portal]: https://manage.windowsazure.cn/
+  [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+  [0]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-submit-win8-app.png
+  [1]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-name.png
+  [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started/
+  [2]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-store-association.png
+  [3]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-select-app-name.png
+  [4]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit-app.png
+  [5]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-edit2-app.png
+  [6]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-win8-app-push-auth.png
+  [Azure 管理门户]: https://manage.windowsazure.cn/
+  [7]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-services-selection.png
+  [8]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-enable-enhanced-push.png
+  [移动服务定价详细信息]: http://go.microsoft.com/fwlink/p/?LinkID=311786
+  [本指南]: http://go.microsoft.com/fwlink/p/?LinkId=391951
+  [9]: ./media/mobile-services-javascript-backend-register-windows-store-app/mobile-push-tab.png

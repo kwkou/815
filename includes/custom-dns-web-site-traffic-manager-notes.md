@@ -1,1 +1,3 @@
-If you do not already have a Traffic Manager profile, use the information in [Create a Traffic Manager profile using Quick Create](http://msdn.microsoft.com/en-us/library/windowsazure/dn339012.aspx) to create one. Note the **.trafficmanager.net** domain name associated with your Traffic Manager profile, as this will be used later by later steps in this document.
+如果还没有 Traffic Manager 配置文件，请根据[使用“快速创建”创建 Traffic Manager 配置文件][使用“快速创建”创建 Traffic Manager 配置文件]中的信息创建一个。记下与你的 Traffic Manager 配置文件关联的 **.trafficmanager.net** 域名，因为该域名将在本文档的后续步骤中使用。
+
+  [使用“快速创建”创建 Traffic Manager 配置文件]: http://msdn.microsoft.com/en-us/library/windowsazure/dn339012.aspx

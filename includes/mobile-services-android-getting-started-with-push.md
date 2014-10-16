@@ -1,115 +1,113 @@
-1. Open the file `AndroidManifest.xml`. In the code in the next two steps, replace _`**my_app_package**`_ with the name of the app package for your project, which is the value of the `package` attribute of the `manifest` tag. 
+1.  打开文件 `AndroidManifest.xml`。在随后两个步骤中，请将代码中的 *`"my_app_package"`* 替换为你的项目的应用程序包名称，即 `manifest` 标签的 `package` 属性的值。
 
-2. Add the following new permissions after the existing `uses-permission` element:
+2.  在现有 `uses-permission` 元素之后添加以下新权限：
 
-        <permission android:name="**my_app_package**.permission.C2D_MESSAGE" 
-            android:protectionLevel="signature" />
-        <uses-permission android:name="**my_app_package**.permission.C2D_MESSAGE" /> 
+        <permission android:name=""my_app_package".permission.C2D_MESSAGE" 
+        android:protectionLevel="signature" />
+        <uses-permission android:name=""my_app_package".permission.C2D_MESSAGE" /> 
         <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
         <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-3. Add the following code after the `application` opening tag: 
+3.  在 `application` 开始标记之后添加以下代码：
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
-            						 	android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="**my_app_package**" />
-            </intent-filter>
+        android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name=""my_app_package"" />
+        </intent-filter>
         </receiver>
 
+4.  下载和解压缩 [移动服务 Android SDK]，打开 "notifications" 文件夹，将 "notifications-1.0.1.jar" 文件复制到 Eclipse 项目的 *libs* 文件夹，并刷新 *libs* 文件夹。
 
-4. Download and unzip the [Mobile Services Android SDK], open the **notifications** folder, copy the **notifications-1.0.1.jar** file to the *libs* folder of your Eclipse project, and refresh the *libs* folder.
+    <div class="dev-callout"><b>说明</b>
 
-    <div class="dev-callout"><b>Note</b>
-	<p>The numbers at the end of the file name may change in subsequent SDK releases.</p>
-    </div>
+    <p>在后续的 SDK 版本中，文件名末尾的数字可能更改。</p>
+	</div>
 
-5.  Open the file *ToDoItemActivity.java*, and add the following import statement:
+5.  打开文件 *ToDoItemActivity.java*，并添加以下 import 语句：
 
-		import com.microsoft.windowsazure.notifications.NotificationsManager;
+        import com.microsoft.windowsazure.notifications.NotificationsManager;
 
-6. Add the following private variable to the class, where _`<PROJECT_NUMBER>`_ is the Project Number assigned by Google to your app in the preceding procedure:
+6.  将以下私有变量添加到类，其中 *`<PROJECT_NUMBER>`* 是 Google 在前一个过程中为你的应用程序分配的项目编号：
 
-		public static final String SENDER_ID = "<PROJECT_NUMBER>";
+        public static final String SENDER_ID = "<PROJECT_NUMBER>";
 
-7. In the **onCreate** method, before the MobileServiceClient is instantiated, add this code which registers the Notification Handler for the device:
+7.  在 "onCreate" 方法中，在 MobileServiceClient 实例化之前，添加以下代码以注册设备的通知处理程序：
 
-		NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
+        NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
 
-	Later we define the MyHandler.class referenced in this code.
-	
+    随后，我们要定义在这段代码中引用的 MyHandler.class。
 
-8. In the Package Explorer, right-click the package (under the `src` node), click **New**, click **Class**.
+8.  在“包资源管理器”中，右键单击包（在 `src` 节点下），单击“新建” ，再单击“类” 。
 
-9. In **Name** type `MyHandler`, in **Superclass** type `com.microsoft.windowsazure.notifications.NotificationsHandler`, then click **Finish**
+9.  在“名称”中， 键入 `MyHandler`，在“超类”中 ，键入 `com.microsoft.windowsazure.notifications.NotificationsHandler`，然后单击“完成” 
 
-	![](./media/mobile-services-android-get-started-push/mobile-services-android-create-class.png)
+    ![][0]
 
-	This creates the new MyHandler class.
+    这样可创建新的 MyHandler 类。
 
-10. Add the following import statements:
+10. 添加以下 import 语句：
 
-		import android.content.Context;
-		import android.content.Context;
-		import android.content.Intent;
+        import android.content.Context;
+        import android.content.Context;
+        import android.content.Intent;
 
-		import com.microsoft.windowsazure.mobileservices.RegistrationCallback;
-		
-11. Next add this code to the class:
+        import com.microsoft.windowsazure.mobileservices.RegistrationCallback;
 
-		public static final int NOTIFICATION_ID = 1;
-		private NotificationManager mNotificationManager;
-		NotificationCompat.Builder builder;
-		Context ctx;
+11. 接下来，将这段代码添加到类：
 
+        public static final int NOTIFICATION_ID = 1;
+        private NotificationManager mNotificationManager;
+        NotificationCompat.Builder builder;
+        Context ctx;
 
-12. Add the following code to override the **onRegistered** method: which registers your device with the mobile service Notification Hub.
+12. 添加以下代码以覆盖 "onRegistered" 方法：它向移动服务通知中心注册你的设备。
 
-		@Override
-		public void onRegistered(Context context, String gcmRegistrationId) {
-			super.onRegistered(context, gcmRegistrationId);
-			
-			ToDoActivity.mClient.getPush().register(gcmRegistrationId, null, new RegistrationCallback() {
-	            @Override
-	            public void onRegister(Registration registration, Exception exception) {
-	                  if (exception != null) {
-	                        // handle error
-	                  }
-	            }
-	      	});
-		}
+        @Override
+        public void onRegistered(Context context, String gcmRegistrationId) {
+        super.onRegistered(context, gcmRegistrationId);
 
+        ToDoActivity.mClient.getPush().register(gcmRegistrationId, null, new RegistrationCallback() {
+        @Override
+        public void onRegister(Registration registration, Exception exception) {
+        if (exception != null) {
+        // handle error
+                      }
+                }
+            });
+        }
 
-13. Add the following code to override the **onReceive** method, which causes the notification to display when it is received.
+13. 添加以下代码以覆盖 "onReceive" 方法，这样可在收到通知时显示通知。
 
-		@Override
-		public void onReceive(Context context, Bundle bundle) {
-		    ctx = context;
-		    String nhMessage = bundle.getString("message");
-	
-		    sendNotification(nhMessage);
-		}
-	
-		private void sendNotification(String msg) {
-			mNotificationManager = (NotificationManager)
-		              ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-	
-		    PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
-		          new Intent(ctx, ToDoActivity.class), 0);
-	
-		    NotificationCompat.Builder mBuilder =
-		          new NotificationCompat.Builder(ctx)
-		          .setSmallIcon(R.drawable.ic_launcher)
-		          .setContentTitle("Notification Hub Demo")
-		          .setStyle(new NotificationCompat.BigTextStyle()
-		                     .bigText(msg))
-		          .setContentText(msg);
-	
-		     mBuilder.setContentIntent(contentIntent);
-		     mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-		}
+        @Override
+        public void onReceive(Context context, Bundle bundle) {
+        ctx = context;
+        String nhMessage = bundle.getString("message");
 
+        sendNotification(nhMessage);
+        }
 
-Your app is now updated to support push notifications.
+        private void sendNotification(String msg) {
+        mNotificationManager = (NotificationManager)
+        ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
+        new Intent(ctx, ToDoActivity.class), 0);
+
+        NotificationCompat.Builder mBuilder =
+        new NotificationCompat.Builder(ctx)
+        .setSmallIcon(R.drawable.ic_launcher)
+        .setContentTitle("Notification Hub Demo")
+        .setStyle(new NotificationCompat.BigTextStyle()
+        .bigText(msg))
+        .setContentText(msg);
+
+        mBuilder.setContentIntent(contentIntent);
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+        }
+
+你的应用程序现已更新，可支持推送通知。
+
+  [0]: ./media/mobile-services-android-get-started-push/mobile-services-android-create-class.png

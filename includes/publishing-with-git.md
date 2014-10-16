@@ -1,296 +1,298 @@
-# Publishing from Source Control to Azure Web Sites
+# 从源代码管理发布到 Azure 网站
 
-Azure Web Sites supports continuous deployment from source code control and repository tools like BitBucket, CodePlex, Dropbox, Git, GitHub, Mercurial, and TFS. You can use these tools to maintain the content and code for your web site, and then quickly and easily push changes to your site when you want.
+Azure 网站支持从源代码管理和存储库工具（例如，BitBucket、CodePlex、Dropbox、Git、GitHub、Mercurial 和 TFS）进行连续部署。可以使用这些工具维护你网站的内容和代码，然后在需要时快速轻松地将更改推送到你的网站。
 
-In this article, you will learn how to use Git to publish directly from your local computer to an Azure Web Site (in Azure, this method of publishing is called **Local Git**). You will also learn how to enable continuous deployment from repository web sites like BitBucket, CodePlex, DropBox, GitHub, or Mercurial. For information about using TFS for continuous deployment, see [Continuous delivery to Azure using Visual Studio Online].
+在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Azure 网站（在 Azure 中，此发布方法称作“本地 Git”）。你还将了解如何启用从存储库网站（例如，BitBucket、CodePlex、DropBox、GitHub 或 Mercurial）进行的连续部署。有关使用 TFS 进行连续部署的信息，请参阅[使用 Visual Studio Online 向 Azure 持续传送项目][使用 Visual Studio Online 向 Azure 持续传送项目]。
 
-> [WACOM.NOTE] Many of the Git commands described in this article are performed automatically when creating a Web Site using the <a href="/en-us/develop/nodejs/how-to-guides/command-line-tools/">Azure Command-Line Tools for Mac and Linux</a>.
+> [chinacloudsites.cn] 在使用[针对 Mac 和 Linux 的 Azure 命令行工具][针对 Mac 和 Linux 的 Azure 命令行工具]创建网站时，将自动执行本文中所述的许多 Git 命令。
 
-The task includes the following steps:
+此任务包括下列步骤：
 
-* [Install Git](#Step1)
-* [Create a local repository](#Step2)
-* [Add a web page](#Step3)
-* [Enable the web site repository](#Step4)
-* [Deploy your project](#Step5)
-	* [Pushing local files to Azure (Local Git)](#Step6)
-	* [Deploy files from a repository web site like BitBucket, CodePlex, Dropbox, GitHub, or  Mercurial](#Step7)
-* [Troubleshooting](#Step8)
+-   [安装 Git][安装 Git]
+-   [创建本地存储库][创建本地存储库]
+-   [添加网页][添加网页]
+-   [启用网站存储库][启用网站存储库]
+-   [部署项目][部署项目]
 
-<h2><a id="Step2"></a>Installing Git</h2>
+    -   [将本地文件推送到 Azure（本地 Git）][将本地文件推送到 Azure（本地 Git）]
+    -   [从存储库网站（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件][从存储库网站（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件]
+-   [故障排除][故障排除]
 
-The steps required to install Git vary between operating systems. See [Installing Git] for operating system specific distributions and installation guidance.
+## <span id="Step2"></span></a>安装 Git
 
-> [WACOM.NOTE] On some operating systems, both a command-line and GUI version of Git will are available. The instructions provided in this article use the command-line version.
+安装 Git 需要执行的步骤根据操作系统的不同而异。有关操作系统特定的分发包和安装指导，请参阅[安装 Git][1]。
 
-<h2><a id="Step2"></a>Create a local repository</h2>
+> [WACOM.NOTE] 在某些操作系统上，命令行和 GUI 版本的 Git 都可用。本文中提供的说明使用命令行版本。
 
-Perform the following tasks to create a new Git repository.
+## <span id="Step2"></span></a>创建本地存储库
 
-1. Create a directory named MyGitRepository to contain your Git repository and web site files.
+执行下列任务可创建新的 Git 存储库。
 
-2. Open a command-line, such as **GitBash** (Windows) or **Bash** (Unix Shell). On OS X systems you can access the command-line through the **Terminal** application.
+1.  创建名为 MyGitRepository 的目录，用于保存 Git 存储库和网站文件。
 
-3. From the command line, change to the MyGitRepository directory.
+2.  打开一个命令行，例如 **GitBash** (Windows) 或 **Bash** (Unix Shell)。在 OS X 系统上，可以通过 **Terminal** 应用程序访问命令行。
 
-		cd MyGitRepository
+3.  在命令行中，切换到 MyGitRepository 目录。
 
-4. Use the following command to initialize a new Git repository:
+        cd MyGitRepository
 
-		git init
+4.  使用以下命令可初始化新的 Git 存储库：
 
-	This should return a message such as **Initialized empty Git repository in [path]**.
+        git init
 
-<h2><a id="Step3"></a>Add a web page</h2>
+    这将返回一条消息，例如“已在 [路径] 中初始化空 Git 存储库”。
 
-Azure Web Sites support applications created in a variety of programming languages. For this example, you will use a static .html file. For information on publishing web sites in other programming languages to Azure, see the [Azure Developer Center].
+## <span id="Step3"></span></a>添加网页
 
-1. Using a text editor, create a new file named **index.html** in the root of the Git repository (the MyGitRepository directory that you created earlier).
+Azure 网站支持用各种编程语言创建的应用程序。对于此示例，你将使用静态 .html 文件。有关将用其他编程语言创建的网站发布到 Azure 的信息，请参阅 [Azure 开发人员中心][Azure 开发人员中心]。
 
-2. Add the following text as the contents for the index.html file and save it.
+1.  通过使用文本编辑器，在 Git 存储库的根目录下（你先前创建的 MyGitRepository 目录）创建一个名为 **index.html** 的新文件。
 
-		Hello Git!
+2.  添加以下文本作为 index.html 文件的内容并保存该文件。
 
-3. From the command-line, verify that you are in the root of your Git repository. Then use the following command to add the **index.html** file to the repository:
+        Hello Git!
 
-		git add index.html 
+3.  在命令行中，验证当前位置是否在 Git 存储库的根目录下。然后使用以下命令，将 **index.html** 文件添加到存储库：
 
-	> [WACOM.NOTE] You can find help for any git command by typing -help or --help after the command. For example, for parameter options for the add command, type ‘git add -help’ for command-line help or ‘git add --help' for more detailed help.
+        git add index.html 
 
-4. Next, commit the changes to the repository by using the following command:
+    > [WACOM.NOTE] 你可通过在命令后键入 -help 或 --help，查找有关任何 git 命令的帮助。例如，若要了解 add 命令的参数选项，请键入“git add -help”以获取命令行帮助，或键入“git add --help”以获取更加详细的帮助。
 
-		git commit -m "Adding index.html to the repository"
+4.  接下来，使用以下命令将更改提交到存储库：
 
-	You should see output similar to the following:
+        git commit -m "Adding index.html to the repository"
 
-		[master (root-commit) 369a79c] Adding index.html to the repository
-		 1 file changed, 1 insertion(+)
-		 create mode 100644 index.html
+    你将看到与下面类似的输出：
 
-<h2><a id="Step4"></a>Enable the web site repository</h2>
+        [master (root-commit) 369a79c] Adding index.html to the repository
+         1 file changed, 1 insertion(+)
+         create mode 100644 index.html
 
-Perform the following steps to enable a Git repository for your web site by using the Azure portal:
+## <span id="Step4"></span></a>启用网站存储库
 
-1. Login to the [Azure portal].
+执行以下步骤可使用 Azure 门户为你的网站启用 Git 存储库：
 
-2. On the left of the page, select **Web Sites**, and then select the web site for which you want to enable a repository.
+1.  登录到 [Azure 门户][Azure 门户]。
 
-	![An image displaying a selected web site][portal-select-website]
+2.  在页面的左侧，选择“网站”，然后选择要为其启用存储库的网站。
 
-3. Select the **DASHBOARD** tab.
+    ![显示选定网站的图像][显示选定网站的图像]
 
-4. In the **quick glance** section, select **Set up deployment from source control**.  The following **SET UP DEPLOYMENT** dialog appears.
+3.  选择“仪表板”选项卡。
 
-	![git-WhereIsYourSourceCode][git-WhereIsYourSourceCode]
+4.  在“速览”部分中，选择“从源代码管理设置部署”。此时将显示以下“设置部署”对话框。
 
-4. Choose **Local Git**, and then click the **Next** arrow.
+    ![git-WhereIsYourSourceCode][git-WhereIsYourSourceCode]
 
-	
-5. After a short delay, you should be presented with a message that your repository is ready. 
+5.  选择“本地 Git”，然后单击“下一页”箭头。
 
-	![git-instructions][git-instructions]
+6.  一小段延迟后，将显示一条指明存储库已就绪的消息。
 
-<h2><a id="Step5"></a>Deploy your project</h2>
+    ![git 说明][git 说明]
 
-<h3><a id="Step6"></a>Pushing local files to Azure (Local Git)</h3>
+## <span id="Step5"></span></a>部署项目
 
-At this point, the portal displays instructions for initializing a local repository and adding files. You have already done this in the previous steps in this topic. However, if you have not set up your deployment credentials, you must follow step 3 in the instructions. This directs you follow a link labeled **Reset your deployment credentials**.
+### <span id="Step6"></span></a>将本地文件推送到 Azure（本地 Git）
 
-Use the following steps to publish your web site to Azure using Local Git:
+此时，门户显示有关初始化本地存储库和添加文件的说明。你已经在本主题的前几个步骤中执行了这些操作。但是，如果你尚未设置部署凭据，则必须按照说明中的步骤 3 操作。你将进入标记为“重置部署凭据”的链接。
 
-1. Using the command-line, verify that you are in the root of your local Git repository that contains the previously created index.html file.
+按照以下步骤，使用本地 Git 将你的网站发布到 Azure：
 
-2. Copy git remote add command listed in step 3 of the instructions returned by the portal. It will look similar to the following command:
+1.  使用命令行，确认当前位置是包含以前创建的 index.html 文件的本地 Git 存储库的根目录。
 
-		git remote add azure https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
+2.  复制门户所返回说明的步骤 3 中列出的 git remote add 命令。该命令将类似于以下命令：
 
-    > [WACOM.NOTE] The **remote** command adds a named reference to a remote repository. In this example, it creates a reference named 'azure' for your Azure Web Site repository.
+        git remote add azure https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 
-1. Use the following from the command-line to push the current repository contents from the local repository to the 'azure' remote:
+    > [WACOM.NOTE] **remote** 命令可将命名引用添加到远程存储库。在本例中，它为 Azure 网站存储库创建名为“azure”的引用。
 
-		git push azure master
+3.  从命令行中使用以下命令可将当前存储库内容从本地存储库推送到“azure”远程网站：
 
-	You will be prompted for the password you created earlier when you reset your deployment credentials in the portal. Enter the password (note that Gitbash does not echo asterisks to the console as you type your password). You should see output similar to the following:
+        git push azure master
 
-		Counting objects: 6, done.
-		Compressing objects: 100% (2/2), done.
-		Writing objects: 100% (6/6), 486 bytes, done.
-		Total 6 (delta 0), reused 0 (delta 0)
-		remote: New deployment received.
-		remote: Updating branch 'master'.
-		remote: Preparing deployment for commit id '369a79c929'.
-		remote: Preparing files for deployment.
-		remote: Deployment successful.
-		To https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
-		* [new branch]		master -> master
+    当你在门户中重置部署凭据时，系统将提示你输入以前创建的密码。输入该密码（请注意，在键入密码时，Gitbash 不会将星号回显到控制台）。你将看到与下面类似的输出：
 
-	> [WACOM.NOTE] The repository created for your Azure web site expects push requests to target the <strong>master</strong> branch of its repository, which will then be used as the content of the web site.
+        Counting objects: 6, done.
+        Compressing objects: 100% (2/2), done.
+        Writing objects: 100% (6/6), 486 bytes, done.
+        Total 6 (delta 0), reused 0 (delta 0)
+        remote: New deployment received.
+        remote: Updating branch 'master'.
+        remote: Preparing deployment for commit id '369a79c929'.
+        remote: Preparing files for deployment.
+        remote: Deployment successful.
+        To https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
+        * [new branch]      master -> master
 
-2. In the portal, click the **BROWSE** link at the bottom of the portal to verify that the **index.html** has been deployed. A page containing 'Hello Git!' will appear.
+    > [WACOM.NOTE] 为 Azure 网站创建的存储库应推送请求以便面向其存储库的 **master** 分支，后者将用作该网站的内容。
 
-	![A webpage containing 'Hello Git!'][hello-git]
+4.  在门户中，单击底部的“浏览”链接以验证是否已部署 **index.html**。这将显示一个包含“Hello Git!”的页面。
 
-3. Using a text editor, change the **index.html** file so that it contains 'Yay!', and then save the file.
+    ![包含“Hello Git!”的网页][包含“Hello Git!”的网页]
 
-4. Use the following commands from the command-line to **add** and **commit** the changes, and then **push** the changes to the remote repository:
+5.  通过使用文本编辑器，更改 **index.html** 文件以使其包含“Yay!”，然后保存该文件。
 
-		git add index.html
-		git commit -m "Celebration"
-		git push azure master
+6.  从命令行使用以下命令可添加和提交更改，然后将更改推送到远程存储库：
 
-	Once the **push** command has completed, refresh the browser (you may have to press Ctrl+F5 for the browser to properly refresh) and note that the content of the page now reflects the latest commit change.
+        git add index.html
+        git commit -m "Celebration"
+        git push azure master
 
-	![A webpage containing 'Yay!'][yay]
+    完成 **push** 命令后，请刷新浏览器（你可能必须按 Ctrl+F5 才能正确刷新浏览器），你会发现该页面的内容此时将反映最新提交的更改。
 
-<h3><a id="Step7"></a>Deploy files from a repository web site like BitBucket, CodePlex, Dropbox, GitHub, or Mercurial</h3>
+    ![包含“Yay!”的网页][包含“Yay!”的网页]
 
-Pushing local files to Azure by using Local Git allows you to manually push updates from a local project to your Azure Web Site, while deploying from BitBucket, CodePlex, Dropbox, GitHub, or  Mercurial results in a continuous deployment process where Azure will pull in the most recent updates from your project.
+### <span id="Step7"></span></a>从存储库网站（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件
 
-While both methods result in your project being deployed to an Azure Web Site, continuous deployment is useful when you have multiple people working on a project and want to ensure that the latest version is always published regardless of who made the most recent update. Continuous deployment is also useful if you are using one of the above mentioned tools as the central repository for your application.
+通过使用“本地 Git”将本地文件推送到 Azure，可以手动将更新从本地项目推送到你的 Azure 网站，而从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 进行部署会生成一个连续部署过程，在此过程中，Azure 会从项目中拉入最新的更新。
 
-Deploying files from either GitHub, CodePlex, or BitBucket requires that you have published your local project to one of these services. For more information on publishing your project to these services, see [Create a Repo (GitHub)], [Using Git with CodePlex], [Create a Repo (BitBucket)], [Using Dropbox to Share Git Repositories], or [Quick Start - Mercurial].
+这两种方法都会将项目部署到 Azure 网站，如果你有多个人员在处理同一个项目并希望确保始终发布最新版本（不管是谁执行了最新更新），则连续部署会很有用。此外，如果你将上述工具之一用作应用程序的中央存储库，则连续部署也很有用。
 
-1. First put your web site files into the selected repository that will be used for continuous deployment.
+从 GitHub、CodePlex 或 BitBucket 部署文件需要你已将本地项目发布到这些服务之一。有关将项目发布到这些服务的更多信息，请参阅[创建存储库 (GitHub)][创建存储库 (GitHub)]、[使用 Git 和 CodePlex][使用 Git 和 CodePlex]、[创建存储库 (BitBucket)][创建存储库 (BitBucket)]、[使用 Dropbox 共享 Git 存储库][使用 Dropbox 共享 Git 存储库]或[快速入门 - Mercurial][快速入门 - Mercurial]。
 
-2. In the Azure Portal for your web site,  go to the **DASHBOARD** tab. In the **quick glance** section, select **Set up deployment from source control**.  The **Set Up Deployment dialog** appears that asks **Where is your source code?**. 
+1.  首先，将你的网站文件放到将用于连续部署的选定存储库中。
 
-2. Choose the source control method that you want to use for continuous deployment.
-	
-3. When prompted, enter your credentials for the service you selected.
+2.  在网站的 Azure 门户中，转到“仪表板”选项卡。在“速览”部分中，选择“从源代码管理设置部署”。这将显示“设置部署”对话框，该对话框会询问“你的源代码在哪里?”。
 
-4. After you have authorized Azure to access your account, you will be prompted with a list of repositories. 
+3.  选择要用于连续部署的源代码管理方法。
 
-	![git-ChooseARepositoryToDeploy][git-ChooseARepositoryToDeploy]
-  
-5. Select the repository that you want to associate with your Azure Web Site. Click the checkmark to continue.
+4.  在系统提示时，为选定服务输入凭据。
 
-	> [WACOM.NOTE] When enabling continuous deployment with GitHub or BitBucket, both public and private projects will be displayed.
+5.  在授权 Azure 访问你的帐户后，系统将提示你提供存储库列表。
 
-6. Azure creates an association with the selected repository, and pulls in the files from the master branch. After this process completes, the **deployment history** on the **Deployments** page will show an **Active Deployment** message like the following:
+    ![git-ChooseARepositoryToDeploy][git-ChooseARepositoryToDeploy]
 
-	![git-githubdeployed][git-githubdeployed]
+6.  选择要与 Azure 网站关联的存储库。单击复选标记以继续。
 
-7. At this point your project has been deployed from your repository of choice to your Azure web site. To verify that the site is active, click the **Browse** link at the bottom of the portal. The browser should navigate to the web site.
+    > [WACOM.NOTE] 在使用 GitHub 或 BitBucket 启用连续部署时，将显示公用项目和专用项目。
 
-8. To verify that continuous deployment is occurring, make a change to your project and then push the update to the repository you have associated with this web site. Your web site should update to reflect the changes shortly after the push to the repository completes. You can verify that it has pulled in the update on the **Deployments** page of your Web Site.
+7.  Azure 创建与所选存储库的关联，并从 master 分支拉入文件。在此过程完成后，“部署”页面上的“部署历史记录”将显示与下面类似的“活动部署”消息：
 
-	![git-GitHubDeployed-Updated][git-GitHubDeployed-Updated]
+    ![git-githubdeployed][git-githubdeployed]
 
+8.  此时，已将你的项目从所选存储库部署到 Azure 网站。若要验证该网站是否处于活动状态，请单击门户底部的“浏览”链接。浏览器将导航到该网站。
 
-<h4>How continuous deployment works</h4>
-Continuous deployment works by providing the **DEPLOYMENT TRIGGER URL** found in the **deployments** section of your site's **Configure** tab.
+9.  若要验证连续部署是否正在进行，请更改你的项目，然后将所做的更新推送到已与此网站关联的存储库。推送到存储库后，你的网站很快将更新以反映更改。可以在网站的“部署”页面上验证是否已拉入更新。
+
+    ![git-GitHubDeployed-Updated][git-GitHubDeployed-Updated]
+
+#### 连续部署的工作方式
+
+连续部署通过提供在网站的“配置”选项卡的“部署”部分中找到的“部署触发器 URL”来工作。
 
 ![git-DeploymentTrigger][git-DeploymentTrigger]
 
-When updates are made to your repository, a POST request is sent to this URL, which notifies your Azure Web Site that the repository has been updated. At this point it retrieves the update and deploys it to your web site.
+在对存储库进行更新时，会将 POST 请求发送到此 URL，这将告知你的 Azure 网站已更新存储库。此时，将检索更新并将其部署到你的网站。
 
-<h4>Specifying the branch to use</h4>
+#### 指定要使用的分支
 
-When you enable continuous deployment, it will default to the **master** branch of the repository. If you want to use a different branch, perform the following steps:
+启用连续部署时，将默认为存储库的 **master** 分支。若要使用其他分支，请执行下列步骤：
 
-1. In the portal, select your web site and then select **CONFIGURE**.
+1.  在门户中，选择你的网站，然后选择“配置”。
 
-2. In the **deployments** section of the page, enter the branch you wish to use in the **BRANCH TO DEPLOY** field, and then hit enter. Finally, click **SAVE**.
+2.  在此页面的“部署”部分，在“要部署的分支”字段中输入要使用的分支，然后按 Enter。最后，单击“保存”。
 
-	Azure should immediately begin updating based on changes to the new branch.
+    Azure 将立即开始基于对新分支所做的更改进行更新。
 
-<h4>Disabling continuous deployment</h4>
+#### 禁用连续部署
 
-Continuous deployment can be disabled from the Azure **Dashboard**. Under the **quick glance** section, choose the option to disconnect from the repository that you are using:
+可从 Azure“仪表板”禁用连续部署。在“速览”一节下，选择用于断开与所使用存储库的连接的选项：
 
-![git-DisconnectFromGitHub][git-DisconnectFromGitHub]	
+![git-DisconnectFromGitHub][git-DisconnectFromGitHub]
 
-After answering **Yes** to the confirmation message, you can return to **quick glance** and click **Set up deployment from source control** if you would like to set up publishing from another source.
+在显示确认消息时回答“是”后，若要从其他源设置发布，你可以返回到“速览”并单击“从源代码管理设置部署”。
 
-<h2><a id="Step8"></a>Troubleshooting</h2>
+## <span id="Step8"></span></a>故障排除
 
-The following are errors or problems commonly encountered when using Git to publish to an Azure web site:
+以下是使用 Git 发布到 Azure 网站时遇到的常见错误或问题：
 
-****
+------------------------------------------------------------------------
 
-**Symptom**: Unable to access '[siteURL]': Failed to connect to [scmAddress]
+**症状**：无法访问“[siteURL]”：无法连接到 [scmAddress]
 
-**Cause**: This error can occur if the web site is not up and running.
+**原因**：如果网站没有正常启动并运行，则可能发生此错误。
 
-**Resolution**: Start the web site in the Azure portal. Git deployment will not work unless the web site is running. 
+**解决方法**：在 Azure 门户中启动网站。在网站运行之前，Git 部署无法进行。
 
+------------------------------------------------------------------------
 
-****
+**症状**：无法解析主机“主机名”
 
-**Symptom**: Couldn't resolve host 'hostname'
+**原因**：如果创建“azure”远程网站时输入的地址信息不正确，则会发生该错误。
 
-**Cause**: This error can occur if the address information entered when creating the 'azure' remote was incorrect.
+**解决方法**：使用 `git remote -v` 命令列出所有远程网站以及关联的 URL。确认“azure”远程网站的 URL 正确。如果需要，请删除此远程网站并使用正确的 URL 重新创建它。
 
-**Resolution**: Use the `git remote -v` command to list all remotes, along with the associated URL. Verify that the URL for the 'azure' remote is correct. If needed, remove and recreate this remote using the correct URL.
+------------------------------------------------------------------------
 
-****
+**症状**：无通用引用且未指定任何引用；不采取任何措施。或许你应指定一个分支，例如“master”。
 
-**Symptom**: No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.
+**原因**：如果你在执行 Git 推送操作时未指定分支且未设置 Git 使用的 push.default 值，则会发生该错误。
 
-**Cause**: This error can occur if you do not specify a branch when performing a git push operation, and have not set the push.default value used by Git.
+**解决方法**：请再次执行推送操作，并指定 master 分支。例如：
 
-**Resolution**: Perform the push operation again, specifying the master branch. For example:
+    git push azure master
 
-	git push azure master
+------------------------------------------------------------------------
 
-****
+**症状**：src refspec [分支名] 不匹配任何内容。
 
-**Symptom**: src refspec [branchname] does not match any.
+**原因**：如果你尝试推送到“azure”远程网站上 master 分支之外的分支，则会发生该错误。
 
-**Cause**: This error can occur if you attempt to push to a branch other than master on the 'azure' remote.
+**解决方法**：请再次执行推送操作，并指定 master 分支。例如：
 
-**Resolution**: Perform the push operation again, specifying the master branch. For example:
+    git push azure master
 
-	git push azure master
+------------------------------------------------------------------------
 
-****
+**症状**：错误 - 已将更改提交到远程存储库，但未更新你的网站。
 
-**Symptom**: Error - Changes commited to remote repository but your web site not updated.
+**原因**：如果你部署的是 Node.js 应用程序，其中包含用于指定其他必需模块的 package.json 文件，则会发生该错误。
 
-**Cause**: This error can occur if you are deploying a Node.js application containing a package.json file that specifies additional required modules.
+**解决方法**：应在发生此错误前记录包含“npm ERR!”的其他消息，并可提供有关失败的其他上下文。以下是该错误的已知原因和相应的“npm ERR!”消息：
 
-**Resolution**: Additional messages containing 'npm ERR!' should be logged prior to this error, and can provide additional context on the failure. The following are known causes of this error and the corresponding 'npm ERR!' message:
+-   **package.json 文件的格式不正确**：npm ERR!无法读取依赖项。
 
-* **Malformed package.json file**: npm ERR! Couldn't read dependencies.
+-   **不具有 Windows 的二进制分发的本机模块**：
 
-* **Native module that does not have a binary distribution for Windows**:
+    -   npm ERR!\`cmd "/c" "node-gyp rebuild"\` 失败，1
 
-	* npm ERR! \`cmd "/c" "node-gyp rebuild"\` failed with 1
+        或者
 
-		OR
+    -   npm ERR![<modulename@version>] 预安装：\`make || gmake\`
 
-	* npm ERR! [modulename@version] preinstall: \`make || gmake\`
+## 其他资源
 
+-   [如何使用 PowerShell for Azure][如何使用 PowerShell for Azure]
+-   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具][针对 Mac 和 Linux 的 Azure 命令行工具]
+-   [Git 文档][Git 文档]
 
-## Additional Resources
-
-* [How to use PowerShell for Azure]
-* [How to use the Azure Command-Line Tools for Mac and Linux]
-* [Git Documentation]
-
-[Azure Developer Center]: http://www.windowsazure.com/en-us/develop/overview/
-[Azure portal]: http://manage.windowsazure.com
-[Git website]: http://git-scm.com
-[Installing Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[How to use PowerShell for Azure]: http://www.windowsazure.com/en-us/develop/nodejs/how-to-guides/powershell-cmdlets/
-[How to use the Azure Command-Line Tools for Mac and Linux]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
-[Git Documentation]: http://git-scm.com/documentation
-
-[portal-select-website]: ./media/publishing-with-git/git-select-website.png
-[git-WhereIsYourSourceCode]: ./media/publishing-with-git/git-WhereIsYourSourceCode.png
-[git-instructions]: ./media/publishing-with-git/git-instructions.png
-[portal-deployment-credentials]: ./media/publishing-with-git/git-deployment-credentials.png
-
-[git-ChooseARepositoryToDeploy]: ./media/publishing-with-git/git-ChooseARepositoryToDeploy.png
-[hello-git]: ./media/publishing-with-git/git-hello-git.png
-[yay]: ./media/publishing-with-git/git-yay.png
-[git-githubdeployed]: ./media/publishing-with-git/git-GitHubDeployed.png
-[git-GitHubDeployed-Updated]: ./media/publishing-with-git/git-GitHubDeployed-Updated.png
-[git-DisconnectFromGitHub]: ./media/publishing-with-git/git-DisconnectFromGitHub.png
-[git-DeploymentTrigger]: ./media/publishing-with-git/git-DeploymentTrigger.png
-[Create a Repo (GitHub)]: https://help.github.com/articles/create-a-repo
-[Using Git with CodePlex]: http://codeplex.codeplex.com/wikipage?title=Using%20Git%20with%20CodePlex&referringTitle=Source%20control%20clients&ProjectName=codeplex
-[Create a Repo (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
-[Quick Start - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
-[Using Dropbox to Share Git Repositories]: https://gist.github.com/trey/2722927
-[Continuous delivery to Azure using Visual Studio Online]: http://www.windowsazure.com/en-us/develop/net/common-tasks/publishing-with-tfs/
+  [使用 Visual Studio Online 向 Azure 持续传送项目]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso/
+  [针对 Mac 和 Linux 的 Azure 命令行工具]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
+  [安装 Git]: #Step1
+  [创建本地存储库]: #Step2
+  [添加网页]: #Step3
+  [启用网站存储库]: #Step4
+  [部署项目]: #Step5
+  [将本地文件推送到 Azure（本地 Git）]: #Step6
+  [从存储库网站（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件]: #Step7
+  [故障排除]: #Step8
+  [1]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+  [Azure 开发人员中心]: http://www.windowsazure.cn/zh-cn/documentation/
+  [Azure 门户]: http://manage.windowsazure.cn
+  [显示选定网站的图像]: ./media/publishing-with-git/git-select-website.png
+  [git-WhereIsYourSourceCode]: ./media/publishing-with-git/git-WhereIsYourSourceCode.png
+  [git 说明]: ./media/publishing-with-git/git-instructions.png
+  [包含“Hello Git!”的网页]: ./media/publishing-with-git/git-hello-git.png
+  [包含“Yay!”的网页]: ./media/publishing-with-git/git-yay.png
+  [创建存储库 (GitHub)]: https://help.github.com/articles/create-a-repo
+  [使用 Git 和 CodePlex]: http://codeplex.codeplex.com/wikipage?title=Using%20Git%20with%20CodePlex&referringTitle=Source%20control%20clients&ProjectName=codeplex
+  [创建存储库 (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
+  [使用 Dropbox 共享 Git 存储库]: https://gist.github.com/trey/2722927
+  [快速入门 - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
+  [git-ChooseARepositoryToDeploy]: ./media/publishing-with-git/git-ChooseARepositoryToDeploy.png
+  [git-githubdeployed]: ./media/publishing-with-git/git-GitHubDeployed.png
+  [git-GitHubDeployed-Updated]: ./media/publishing-with-git/git-GitHubDeployed-Updated.png
+  [git-DeploymentTrigger]: ./media/publishing-with-git/git-DeploymentTrigger.png
+  [git-DisconnectFromGitHub]: ./media/publishing-with-git/git-DisconnectFromGitHub.png
+  [如何使用 PowerShell for Azure]: http://www.windowsazure.cn/zh-cn/develop/nodejs/how-to-guides/powershell-cmdlets/
+  [Git 文档]: http://git-scm.com/documentation

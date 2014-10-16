@@ -1,36 +1,41 @@
+接下来，你将创建一个新移动服务以替换数据存储的内存中列表。按照下列步骤操作以创建新的移动服务。
 
+1.  登录到 [Azure 管理门户][]。
+2.  在导航窗格的底部，单击“+新建” 。
 
-Next, you will create a new mobile service to replace the in-memory list for data storage. Follow these steps to create a new mobile service.
+    ![plus-new][]
 
-1. Log into the [Azure Management Portal](https://manage.windowsazure.cn/). 
-2.	At the bottom of the navigation pane, click **+NEW**.
+3.  展开“计算”和“移动服务” ，然后单击“创建”。 
 
-	![plus-new](./media/mobile-services-create-new-service-data/plus-new.png)
+    ![mobile-create][]
 
-3.	Expand **Compute** and **Mobile Service**, then click **Create**.
+    此时将显示“新建移动服务” 对话框。
 
-	![mobile-create](./media/mobile-services-create-new-service-data/mobile-create.png)
+4.  在“创建移动服务” 页上，选择“创建免费的 20 MB SQL Database” ，然后在“URL” 文本框中键入新移动服务的子域名称，并等待名称验证。名称验证完成后，单击右箭头按钮，转到下一页。
 
-    This displays the **New Mobile Service** dialog.
+    ![mobile-create-page1][]
 
-4.	In the **Create a mobile service** page, select **Create a free 20 MB SQL Database**, then type a subdomain name for the new mobile service in the **URL** textbox and wait for name verification. Once name verification completes, click the right arrow button to go to the next page.	
+    此时将显示“指定数据库设置”页。 
 
-	![mobile-create-page1](./media/mobile-services-create-new-service-data/mobile-create-page1.png)
+    <div class="dev-callout"><b>说明</b>
 
-    This displays the **Specify database settings** page.
-
-    <div class="dev-callout"> 
-	<b>Note</b> 
-	<p>As part of this tutorial, you create a new SQL Database instance and server. You can reuse this new database and administer it as you would any other SQL Database instance. If you already have a database in the same region as the new mobile service, you can instead choose <strong>Use existing Database</strong> and then select that database. The use of a database in a different region is not recommended because of additional bandwidth costs and higher latencies.</p></div>	
-
-5.	In **Name**, type the name of the new database, then type **Login name**, which is the administrator login name for the new SQL Database server, type and confirm the password, and click the check button to complete the process.
-
-	![mobile-create-page2](./media/mobile-services-create-new-service-data/mobile-create-page2.png)
-
-    <div class="dev-callout"> 
-	<b>Note</b> 
-	<p>When the password that you supply does not meet the minimum requirements or when there is a mismatch, a warning is displayed. <br/>We recommend that you make a note of the administrator login name and password that you specify; you will need this information to reuse the SQL Database instance or the server in the future.</p> 
+    <p>在本教程中，你将创建新的 SQL Database 实例和服务器。你可以重用此新数据库，并对其进行管理，如同任何其他 SQL Database 实例一样。如果你在新移动服务的同一区域已经有了数据库，则可选择“使用现有数据库”，然后再选择该数据库。 由于额外的带宽成本和更高的延迟，不建议使用位于不同区域的数据库。</p>
 	</div>
 
-You have now created a new mobile service that can be used by your mobile apps. Next, you will add a new table in which to store app data. This table will be used by the app in place of the in-memory collection.
+5.  在“名称”中 ，键入新数据库的名称，然后键入“登录名”， 也就是新的 SQL Database 服务器的管理员登录名，键入并确认密码，然后单击勾选按钮完成该过程。
 
+    ![mobile-create-page2][]
+
+    <div class="dev-callout"><b>说明</b>
+
+    <p>如果你提供的密码不符合最低要求或不匹配，将显示警告。
+    我们建议你记下自己指定的管理员登录名和密码；今后你将需要使用这些信息来重用 SQL Database 实例或服务器。</p>
+	</div>
+
+你现在已经创建了你的移动应用程序可以使用的新移动服务。接下来，你将添加一个在其中存储应用程序数据的新表。应用程序将使用此表，取代内存中集合。
+
+  [Azure 管理门户]: https://manage.windowsazure.cn/
+  [plus-new]: ./media/mobile-services-create-new-service-data/plus-new.png
+  [mobile-create]: ./media/mobile-services-create-new-service-data/mobile-create.png
+  [mobile-create-page1]: ./media/mobile-services-create-new-service-data/mobile-create-page1.png
+  [mobile-create-page2]: ./media/mobile-services-create-new-service-data/mobile-create-page2.png

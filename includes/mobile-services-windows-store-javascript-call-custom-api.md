@@ -1,63 +1,66 @@
+<a name="update-app"></a>
+## 更新应用程序以调用自定义 API
 
-##<a name="update-app"></a>Update the app to call the custom API
+1.  在 Visual Studio 中，打开你的快速启动项目中的 default.html 文件，找到名为 `buttonRefresh` 的 "button" 元素，然后在后面添加以下新元素：
 
-1. In Visual Studio, open the default.html file in your quickstart project, locate the **button** element named `buttonRefresh`, and add the following new element right after it: 
+        <button id="buttonCompleteAll" style="margin-left:5px">Complete All</button>
 
-		<button id="buttonCompleteAll" style="margin-left: 5px">Complete All</button>
+    这样可将新按钮添加到页。
 
-	This adds a new button to the page. 
+2.  打开 `js` 项目文件夹中的 default.js 代码文件，找到 "refreshTodoItems" 函数，并确认该函数包含以下代码：
 
-2. Open the default.js code file in the `js` project folder, locate the **refreshTodoItems** function and make sure that this function contains the following code:
+        todoTable.where({ complete:false })
+        .read()
+        .done(function (results) {
+        todoItems = new WinJS.Binding.List(results);
+        listItems.winControl.itemDataSource = todoItems.dataSource;
+           });            
 
-	    todoTable.where({ complete: false })
-	       .read()
-	       .done(function (results) {
-	           todoItems = new WinJS.Binding.List(results);
-	           listItems.winControl.itemDataSource = todoItems.dataSource;
-	       });            
+    这样可以筛选项，使得查询不返回已完成的项。
 
-	This filters the items so that completed items are not returned by the query.
+3.  在 "refreshTodoItems" 函数后，添加以下代码：
 
-3. After the **refreshTodoItems** function, add the following code:
+        var completeAllTodoItems = function () {
+        var okCommand = new Windows.UI.Popups.UICommand("OK");
 
-		var completeAllTodoItems = function () {
-		    var okCommand = new Windows.UI.Popups.UICommand("OK");
-		
-		    // Asynchronously call the custom API using the POST method. 
-		    mobileService.invokeApi("completeall", {
-		        body: null,
-		        method: "post"
-		    }).done(function (results) {
-		        var message = results.result.count + " item(s) marked as complete.";
-		        var dialog = new Windows.UI.Popups.MessageDialog(message);
-		        dialog.commands.append(okCommand);
-		        dialog.showAsync().done(function () {
-		            refreshTodoItems();
-		        });
-		    }, function (error) {
-		        var dialog = new Windows.UI.Popups
-		            .MessageDialog(error.message);
-		        dialog.commands.append(okCommand);
-		        dialog.showAsync().done();
-		    });
-		};
+        // Asynchronously call the custom API using the POST method. 
+        mobileService.invokeApi("completeall", {
+        body:null,
+        method:"post"
+        }).done(function (results) {
+        var message = results.result.count + " item(s) marked as complete.";
+        var dialog = new Windows.UI.Popups.MessageDialog(message);
+        dialog.commands.append(okCommand);
+        dialog.showAsync().done(function () {
+        refreshTodoItems();
+                });
+        }, function (error) {
+        var dialog = new Windows.UI.Popups
+        .MessageDialog(error.message);
+        dialog.commands.append(okCommand);
+        dialog.showAsync().done();
+            });
+        };
 
         buttonCompleteAll.addEventListener("click", function () {
-            completeAllTodoItems();
+        completeAllTodoItems();
         });
 
-	This method handles the **Click** event for the new button. The **InvokeApiAsync** method is called on the client, which sends a POST request to the new custom API. The result returned by the custom API is displayed in a message dialog, as are any errors.
+    此方法可处理新按钮的 "Click" 事件。"InvokeApiAsync" 方法在客户端上调用，该客户端向新的自定义 API 发送 POST 请求。与任何错误相同，自定义 API 返回的结果也显示在消息对话框中。
 
-## <a name="test-app"></a>Test the app
+<a name="test-app"></a>
+## 测试应用程序
 
-1. In Visual Studio, press the **F5** key to rebuild the project and start the app.
+1.  在 Visual Studio 中，按 "F5" 键以重新生成项目并启动应用程序。
 
-2. In the app, type some text in **Insert a TodoItem**, then click **Save**.
+2.  在应用程序的“插入 TodoItem”中键入一些文本 ，然后单击“保存” 。
 
-3. Repeat the previous step until you have added several todo items to the list.
+3.  重复上述步骤，直至你将多个 ToDo 项添加到列表。
 
-4. Click the **Complete All** button.
+4.  单击“Complete All”（完成全部） 按钮。
 
-  	![](./media/mobile-services-windows-store-javascript-call-custom-api/mobile-custom-api-windows-store-completed.png)
+    ![][0]
 
-	A message dialog is displayed that indicates the number of items marked complete and the filtered query is executed again, which clears all items from the list.
+    此时会显示一个消息框，指示标记为完成的多个项，并再次执行筛选查询，将所有项从列表中清除。
+
+  [0]: ./media/mobile-services-windows-store-javascript-call-custom-api/mobile-custom-api-windows-store-completed.png

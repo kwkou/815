@@ -1,24 +1,26 @@
-Now that the app has been updated to use Mobile Services for back end storage, you can test it against Mobile Services, using either the Android emulator or an Android phone.
+更新应用程序以使用移动服务作为后端存储后，便可以使用 Android 模拟器或 Android 手机针对移动服务测试该应用程序。
 
-1. From the **Run** menu, click **Run** to start the project.
+1.  在“运行”菜单中，单击“运行”以启动项目。
 
-	This executes your app, built with the Android SDK, that uses the client library to send a query that returns items from your mobile service.
+    这将执行使用 Android SDK 构建的应用程序，该应用程序使用客户端库发送一个查询，该查询从你的移动服务返回项目。
 
-5. As before, type meaningful text, then click **Add**.
+2.  和前面一样，输入有意义的文本，然后单击“添加”。
 
-   	This sends a new item as an insert to the mobile service.
+    此时会将一个新项作为 insert 发送到移动服务。
 
-    You can restart the app to see that the changes were persisted to the database in Azure. You can also examine the database using the Azure Management portal:  the next two steps do this to view the changes in your database.
+    你可以重新启动应用程序，以查看更改是否已持久保存在 Azure 中的数据库内。你也可以使用 Azure 管理门户检查数据库：后面的两个步骤将会执行此操作以查看数据库中的更改。
 
+3.  在 Azure 管理门户中，单击与你的移动服务关联的数据库对应的“管理”。
 
-4. In the Azure Management Portal, click manage for the database associated with your mobile service.
+    ![][]
 
-    ![](./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png)
-
-5. In the Management portal execute a query to view the changes made by the Windows Store app. Your query will be similar to the following query but use your database name instead of `todolist`.
+4.  在管理门户中，执行一个查询以查看 Windows 应用商店应用程序所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 `todolist`.
 
         SELECT * FROM [todolist].[todoitems]
 
-    ![](./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/sql-azure-query.png)
+    ![][1]
 
-This concludes the **Get started with data** tutorial for Android.
+针对 Android 的**数据处理入门**教程到此结束。
+
+  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png
+  [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/sql-azure-query.png

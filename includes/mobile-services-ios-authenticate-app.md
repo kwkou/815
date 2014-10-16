@@ -1,28 +1,29 @@
-
-
-1. Open the project file QSTodoListViewController.m and in the **viewDidLoad** method, remove the following code that reloads the data into the table:
+1.  打开项目文件 QSTodoListViewController.m，并在 "viewDidLoad" 方法中，删除用于将数据重新上载到表的以下代码：
 
         [self refresh];
 
-2.	Just after the **viewDidLoad** method, add the following code:  
+2.  在 "viewDidLoad" 方法后，添加以下代码：
 
         - (void)viewDidAppear:(BOOL)animated
         {
-            MSClient *client = self.todoService.client;
-            
-            if (client.currentUser != nil) {
-                return;
+        MSClient *client = self.todoService.client;
+
+        if (client.currentUser != nil) {
+        return;
             }
-            
-            [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
-                [self refresh];
+
+        [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
+        [self refresh];
             }];
         }
 
-    <div class="dev-callout"><b>Note</b>
-	<p>If you are using an identity provider other than Facebook, change the value passed to <strong>loginWithProvider</strong> above to one of the following: <em>microsoftaccount</em>, <em>facebook</em>, <em>twitter</em>, <em>google</em>, or <em>windowsazureactivedirectory</em>.</p>
-    </div>
-		
-3. Press the **Run** button to build the project, start the app in the iPhone emulator, then log-on with your chosen identity provider.
+    <div class="dev-callout"><b>说明</b>
 
-   	When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+    <p>如果使用的标识提供者不是 Facebook，请将传递给上述 <b>loginWithProvider</b> 的值更改为下列其中一项：<em>microsoftaccount</em>、<em>facebook</em>、<em>twitter</em>、<em>google</em> 或 <em>windowsazureactivedirectory</em>。</p>
+	</div>
+
+3.  按“运行”按钮 以生成项目，在 iPhone 模拟器中启动应用程序，然后使用你选择的标识提供者登录。
+
+    当你成功登录时，应用程序应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
+
+
