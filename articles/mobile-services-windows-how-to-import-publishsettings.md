@@ -6,23 +6,21 @@
 
 1.  在 Visual Studio 2013 中，打开解决方案资源管理器，右键单击项目，单击“添加”，然后单击“连接的服务...” 。
 
-    ![添加连接的服务][]
+    ![添加连接的服务](./media/mobile-services-create-new-service-vs2013/mobile-add-connected-service.png)
 
 2.  在“服务管理器”对话框中，单击“创建服务...” ，然后从“创建移动服务”对话框的“订阅”中选择“\<导入...\>”。 
 
-    ![从 VS 2013 创建新移动服务][]
+    ![从 VS 2013 创建新移动服务](./media/mobile-services-create-new-service-vs2013/mobile-create-service-from-vs2013.png)
 
 3.  在“导入 Azure 订阅”中，单击“下载订阅文件” ，登录到你的 Azure 帐户（如果需要），当浏览器请求保存文件时，单击“保存”。 
 
-    ![在 VS 中下载订阅文件][]
+    ![在 VS 中下载订阅文件](./media/mobile-services-create-new-service-vs2013/mobile-import-azure-subscription.png)
 
-    "说明"
-
-    登录窗口显示在浏览器中，可能位于 Visual Studio 窗口后面。请记住，应记下你保存下载的 .publishsettings 文件的位置。如果你的项目已连接到 Azure 订阅，可以跳过此步骤。
+    <div class="dev-callout"><strong>说明</strong> <p>登录窗口显示在浏览器中，可能位于 Visual Studio 窗口后面。请记住，应记下你保存下载的 .publishsettings 文件的位置。如果你的项目已连接到 Azure 订阅，可以跳过此步骤。</p></div>
 
 4.  单击“浏览” ，导航到你保存 .publishsettings 文件的位置，选择该文件，然后单击“打开”， 再单击“导入” 。
 
-    ![在 VS 中导入订阅][]
+    ![在 VS 中导入订阅](./media/mobile-services-create-new-service-vs2013/mobile-import-azure-subscription-2.png)
 
     Visual Studio 导入连接到你的 Azure 订阅所需的数据。当你的订阅已经具有一个或多个现有移动服务时，则会显示服务名称。
 

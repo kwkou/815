@@ -46,7 +46,7 @@
 
   [facebook.com]: http://go.microsoft.com/fwlink/p/?LinkId=268285
   [Facebook 开发人员]: http://go.microsoft.com/fwlink/p/?LinkId=268286
-  []: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-developer-register.png
+  [0]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-developer-register.png
   [1]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-add-app.png
   [2]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-new-app-dialog.png
   [3]: ./media/mobile-services-how-to-register-facebook-authentication/mobile-services-facebook-configure-app.png

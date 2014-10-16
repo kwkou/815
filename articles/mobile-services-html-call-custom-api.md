@@ -17,7 +17,7 @@
 <a name="define-custom-api"></a>
 ## 定义自定义 API
 
-[WACOM.INCLUDE [mobile-services-create-custom-api][]]
+[WACOM.INCLUDE [mobile-services-create-custom-api](../includes/mobile-services-create-custom-api.md)]
 
 <a name="update-app"></a>
 ## 更新应用程序更新应用程序以调用自定义 API

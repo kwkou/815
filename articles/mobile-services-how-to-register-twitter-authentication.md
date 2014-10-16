@@ -42,7 +42,7 @@
 
   [twitter.com]: http://go.microsoft.com/fwlink/p/?LinkID=268287
   [Twitter 开发人员]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-  []: ./media/mobile-services-how-to-register-twitter-authentication/mobile-services-twitter-developers.png
+  [0]: ./media/mobile-services-how-to-register-twitter-authentication/mobile-services-twitter-developers.png
   [1]: ./media/mobile-services-how-to-register-twitter-authentication/mobile-services-twitter-register-app1.png
   [2]: ./media/mobile-services-how-to-register-twitter-authentication/mobile-services-twitter-register-app2.png
   [3]: ./media/mobile-services-how-to-register-twitter-authentication/mobile-services-twitter-app-details.png

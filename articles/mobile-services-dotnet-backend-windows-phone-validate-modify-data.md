@@ -3,7 +3,7 @@
 # 使用 .Net 后端在移动服务中验证和修改数据
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/" title="Windows Store C#">Windows 应用商店 C\#</a>
+<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/" title="Windows Store C#">Windows 应用商店 C#</a>
 <a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-validate-modify-data/" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 <a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/" title="Windows Phone" class="current">Windows Phone</a>
 <a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a>
@@ -16,6 +16,7 @@
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/" title=".NET backend" class="current">.NET 后端]</a> | 
 	<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-wp8"  title="JavaScript backend">JavaScript 后端</a>
 </div>
+
 
 本主题说明如何在 .Net 后端 Azure 移动服务中使用代码来验证和修改数据。.Net 后端服务是使用 Web API 框架生成的 HTTP 服务。如果你熟悉通过 Web API 框架定义的 `ApiController` 类的话，就会发现移动服务提供的 `TableController` 类非常直观。`TableController` 派生自 `ApiController` 类，它提供与数据库表进行连接的附加功能。你可以使用它对插入和更新的数据执行操作，包括本教程中演示的验证和数据修改。
 
@@ -32,7 +33,7 @@
 <a name="string-length-validation"></a>
 ## 添加验证
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
 
 <a name="update-client-validation"></a>
 ## 更新客户端
@@ -78,7 +79,7 @@
 
 2.  为新的 todo 项输入长度超过 10 个字符的文本，然后单击“保存” 。
 
-    ![][]
+    ![][0]
 
 3.  此时将出现一个类似于下面的消息对话框，以响应无效文本。
 
@@ -87,7 +88,7 @@
 <a name="add-timestamp"></a>
 ## 为 CompleteDate 添加时间戳字段
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
 
 <a name="update-client-timestamp"></a>
 ## 更新客户端以显示 CompleteDate
@@ -188,7 +189,7 @@
   [入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/
   [mobile-services-dotnet-backend-add-validation]: ../includes/mobile-services-dotnet-backend-add-validation.md
-  []: ./media/mobile-services-dotnet-backend-windows-phone-validate-modify-data/mobile-services-invalid-text-length.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-phone-validate-modify-data/mobile-services-invalid-text-length.png
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-validate-modify-data/mobile-services-invalid-text-length-exception-dialog.png
   [mobile-services-dotnet-backend-add-completedate]: ../includes/mobile-services-dotnet-backend-add-completedate.md
   [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-dotnet

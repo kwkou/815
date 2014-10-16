@@ -172,7 +172,7 @@
   [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data
   [Windows 应用商店应用程序]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
-  []: ./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
+  [0]: ./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
   [1]: ./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-insert-script-push2.png
   [2]: ./media/mobile-services-javascript-backend-windows-phone-get-started-push/mobile-push-tab.png
   [设置已经过身份验证的 Web 服务以便为 Windows Phone 发送推送通知]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx

@@ -40,7 +40,7 @@
 
   [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
   [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
-  []: ./media/mobile-services-how-to-register-google-authentication/mobile-services-google-developers.png
+  [0]: ./media/mobile-services-how-to-register-google-authentication/mobile-services-google-developers.png
   [1]: ./media/mobile-services-how-to-register-google-authentication/mobile-services-google-create-client.png
   [2]: ./media/mobile-services-how-to-register-google-authentication/mobile-services-google-create-client2.png
   [3]: ./media/mobile-services-how-to-register-google-authentication/mobile-services-google-create-client3.png

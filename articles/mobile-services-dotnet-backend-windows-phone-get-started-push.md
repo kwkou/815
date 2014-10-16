@@ -173,7 +173,7 @@
   [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
   [Windows 应用商店应用程序]: mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
-  []: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
   [mobile-services-dotnet-backend-update-server-push]: ../includes/mobile-services-dotnet-backend-update-server-push.md
   [Windows Azure 管理门户]: %20https://manage.windowsazure.cn/
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-push-tab.png

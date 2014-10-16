@@ -178,7 +178,7 @@
   [用于 Windows 和 Windows Phone 的 Live SDK]: http://go.microsoft.com/fwlink/p/?LinkId=262253
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-wp8
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-windows-phone-single-sign-on/mobile-services-selection.png
+  [0]: ./media/mobile-services-windows-phone-single-sign-on/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-phone-single-sign-on/mobile-service-uri.png
   [我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
   [2]: ./media/mobile-services-windows-phone-single-sign-on/mobile-services-live-connect-add-app.png

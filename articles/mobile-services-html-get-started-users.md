@@ -171,7 +171,7 @@
   [向应用程序添加身份验证]: #add-authentication
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-html
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-html-get-started-users/mobile-services-selection.png
+  [0]: ./media/mobile-services-html-get-started-users/mobile-services-selection.png
   [1]: ./media/mobile-services-html-get-started-users/mobile-service-uri.png
   [Microsoft 帐户]: /zh-cn/develop/mobile/how-to-guides/register-for-microsoft-authentication/
   [Facebook 登录]: /zh-cn/develop/mobile/how-to-guides/register-for-facebook-authentication/

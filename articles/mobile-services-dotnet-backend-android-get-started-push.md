@@ -185,7 +185,7 @@
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
   [启用 GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
-  []: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
   [1]: ./media/mobile-services-android-get-started-push/mobile-push-tab-android.png
   [mobile-services-download-service-locally]: ../includes/mobile-services-download-service-locally.md
   [mobile-services-dotnet-backend-test-local-service]: ../includes/mobile-services-dotnet-backend-test-local-service.md

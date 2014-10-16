@@ -105,7 +105,7 @@
   [观看教程]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Authenticate-and-Authorize-users-with-Server-Scripts-in-Windows-Azure-Mobile-Servi
   [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-windows-store-dotnet-authorize-users-in-scripts/mobile-services-selection.png
+  [0]: ./media/mobile-services-windows-store-dotnet-authorize-users-in-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-store-dotnet-authorize-users-in-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-windows-store-dotnet-authorize-users-in-scripts/mobile-insert-script-users.png
   [3]: ./media/mobile-services-windows-store-dotnet-authorize-users-in-scripts/mobile-quickstart-startup.png

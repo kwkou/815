@@ -4,7 +4,7 @@
 # 移动服务中的推送通知入门
 
 <div class="dev-center-tutorial-selector sublanding">
-	<a href="/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows 应用商店 C\#</a>
+	<a href="/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows 应用商店 C#</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a>
@@ -36,7 +36,7 @@
 <a id="register"></a>
 ## 启用 Google Cloud Messaging
 
-[WACOM.INCLUDE [启用 GCM][]]
+[WACOM.INCLUDE [启用 GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
 接下来，你将使用此 API 密钥值，让移动服务向 GCM 进行身份验证并代表你的应用程序发送推送通知。
 
@@ -45,7 +45,7 @@
 
 1.  登录到 [Windows Azure 管理门户][]，单击“移动服务”，然后单击你的应用程序 。
 
-    ![][]
+    ![][0]
 
 2.  单击“推送”选项卡，再 单击“启用增强的推送” ，然后单击“是” 以接受配置更改。
 
@@ -74,7 +74,7 @@
 
 ### 验证 Android SDK 版本
 
-[WACOM.INCLUDE [验证 SDK][]]
+[WACOM.INCLUDE [验证 SDK](../includes/mobile-services-verify-android-sdk-version.md)]
 
 下一步就是安装 Google Play Services。Google Cloud Messaging 对开发和测试提出了一些最低的 API 级别要求，清单中的 "minSdkVersion" 属性必须符合这些要求。
 
@@ -82,11 +82,11 @@
 
 ### 将 Google Play Services 添加到项目
 
-[WACOM.INCLUDE [添加 Play Services][]]
+[WACOM.INCLUDE [添加 Play Services](../includes/mobile-services-add-Google-play-services.md)]
 
 ### 添加代码
 
-[WACOM.INCLUDE [mobile-services-android-getting-started-with-push][]]
+[WACOM.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 <a id="update-scripts"></a>
 ## 在管理门户中更新已注册的插入脚本
@@ -217,7 +217,7 @@
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-android-get-started-data/
   [启用 GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Windows Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
   [1]: ./media/mobile-services-android-get-started-push/mobile-enable-enhanced-push.png
   [移动服务定价详细信息]: http://go.microsoft.com/fwlink/p/?LinkID=311786
   [本指南]: http://go.microsoft.com/fwlink/p/?LinkId=391951

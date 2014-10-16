@@ -129,7 +129,7 @@
   [更新客户端以支持验证]: #update-client-validation
   [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-ios
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-ios-validate-modify-data-server-scripts/mobile-services-selection.png
+  [0]: ./media/mobile-services-ios-validate-modify-data-server-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-ios-validate-modify-data-server-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-ios-validate-modify-data-server-scripts/mobile-insert-script-users.png
   [3]: ./media/mobile-services-ios-validate-modify-data-server-scripts/mobile-quickstart-data-error-ios.png

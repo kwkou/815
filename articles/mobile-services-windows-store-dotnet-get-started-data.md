@@ -2,7 +2,7 @@
 
 # 移动服务中的数据处理入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#" class="current">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
 
 <div class="dev-center-tutorial-subselector">
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title=".NET backend">.NET 后端</a> | 
@@ -35,7 +35,7 @@
 
 1.  从[开发人员代码示例站点][GetStartedWithMobileServices 应用程序]下载 GetStartedWithMobileServices 示例应用程序的 C\# 版本。
 
-    ![][]
+    ![][0]
 
 2.  在 Visual Studio 2013 中打开下载的项目，然后检查 MainPage.xaml.cs 文件。
 
@@ -52,7 +52,7 @@
 <a name="create-service"></a>
 ## 创建移动服务从 Visual Studio 新建移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service-vs2013][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
 
 <ol start="7"><li><p>在解决方案资源管理器中，打开 App.xaml.cs 代码文件，请注意已添加到 \*\*App\*\* 类的新静态字段，它如以下示例所示：
 
@@ -70,7 +70,7 @@
 <a name="add-table"></a>
 ## 添加新表将新表添加到移动服务并更新应用程序
 
-[WACOM.INCLUDE [mobile-services-create-new-table-vs2013][]]
+[WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
 1.  在 MainPage.xaml.cs 文件中，添加或取消注释以下 using 语句：
 
@@ -203,7 +203,7 @@
   [针对移动服务测试应用程序]: #test-app
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28
   [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=328660
-  []: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-data-sample-download-dotnet-vs12.png
+  [0]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-data-sample-download-dotnet-vs12.png
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2013/mobile-quickstart-startup.png
   [mobile-services-create-new-service-vs2013]: ../includes/mobile-services-create-new-service-vs2013.md
   [MobileServiceClient 类]: http://go.microsoft.com/fwlink/p/?LinkId=302030

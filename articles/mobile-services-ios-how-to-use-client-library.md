@@ -27,7 +27,7 @@
 -   [如何：对用户进行身份验证][]
 -   [如何：处理错误][]
 
-[WACOM.INCLUDE [mobile-services-concepts][]]
+[WACOM.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 <a name="Setup"></a>
 ## 安装与先决条件

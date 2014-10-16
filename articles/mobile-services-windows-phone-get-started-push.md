@@ -2,7 +2,7 @@
 
 # 移动服务中的推送通知入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#" >Windows 应用商店 C\#</a><a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone" class="current">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#" >Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-push" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone" class="current">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a></div>
 
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push/" title=".NET backend">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-push/"  title="JavaScript backend" class="current">JavaScript 后端</a>
 </div>
@@ -28,7 +28,7 @@
 <a name="create-table"></a>
 ## 创建新表
 
-[WACOM.INCLUDE [mobile-services-create-new-push-table][]]
+[WACOM.INCLUDE [mobile-services-create-new-push-table](../includes/mobile-services-create-new-push-table.md)]
 
 <a name="add-push"></a>
 ## 添加推送通知向应用程序添加推送通知
@@ -84,14 +84,14 @@
 
 5.  在解决方案资源管理器中，展开“属性” ，打开 WMAppManifest.xml 文件，单击“功能” 选项卡并确保选中 "ID\_"CAP"*PUSH*NOTIFICATION" 功能。
 
-    ![][]
+    ![][0]
 
     这样可确保你的应用程序可收到推送通知。
 
 <a name="update-scripts"></a>
 ## 更新插入脚本在管理门户中更新注册的插入脚本
 
-[WACOM.INCLUDE [mobile-services-update-registrations-script][]]
+[WACOM.INCLUDE [mobile-services-update-registrations-script](../includes/mobile-services-update-registrations-script.md)]
 
 1.  单击“TodoItem” ，再单击“脚本”并选择“插入”。 
 
@@ -202,7 +202,7 @@
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-wp8
   [通知中心入门]: /zh-cn/manage/services/notification-hubs/getting-started-windows-dotnet/
   [mobile-services-create-new-push-table]: ../includes/mobile-services-create-new-push-table.md
-  []: ./media/mobile-services-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
+  [0]: ./media/mobile-services-windows-phone-get-started-push/mobile-app-enable-push-wp8.png
   [mobile-services-update-registrations-script]: ../includes/mobile-services-update-registrations-script.md
   [1]: ./media/mobile-services-windows-phone-get-started-push/mobile-insert-script-push2.png
   [2]: ./media/mobile-services-windows-phone-get-started-push/mobile-quickstart-push1-wp8.png

@@ -24,7 +24,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 <a name="sign-up"></a>
 ## 创建新的 Pusher 帐户
 
-[WACOM.INCLUDE [pusher-sign-up][]]
+[WACOM.INCLUDE [pusher-sign-up](../includes/pusher-sign-up.md)]
 
 <a name="update-app"></a>
 ## 更新应用程序
@@ -43,7 +43,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 4.  选中“将项复制到目标组的文件夹中” ，然后单击“完成” 。
 
-    ![][]
+    ![][0]
 
 这就会将 libPusher 文件复制到你的项目中。
 
@@ -395,7 +395,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
   [pusher-sign-up]: ../includes/pusher-sign-up.md
   [libPusher]: http://go.microsoft.com/fwlink/p?LinkId=276999
   [此处]: http://go.microsoft.com/fwlink/p/?LinkId=276998
-  []: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-files-to-group.png
+  [0]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-files-to-group.png
   [1]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-build-phase.png
   [2]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-linker-flag.png
   [Azure 管理门户]: https://manage.windowsazure.cn/

@@ -31,7 +31,7 @@
 -   [如何：使用跨域资源共享][]
 -   [后续步骤][]
 
-[WACOM.INCLUDE [mobile-services-concepts][]]
+[WACOM.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 <a name="create-client"></a>
 ## 创建移动服务客户端如何：创建移动服务客户端

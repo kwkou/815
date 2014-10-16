@@ -315,7 +315,7 @@
   [针对移动服务测试应用程序]: #test-app
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F
   [GetStartedWithData 应用程序]: http://go.microsoft.com/fwlink/?LinkID=286345
-  []: ./media/mobile-services-html-get-started-data/mobile-quickstart-startup-html.png
+  [0]: ./media/mobile-services-html-get-started-data/mobile-quickstart-startup-html.png
   [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [1]: ./media/mobile-services-html-get-started-data/mobile-data-tab-empty.png
   [2]: ./media/mobile-services-html-get-started-data/mobile-create-todoitem-table.png

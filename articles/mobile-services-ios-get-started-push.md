@@ -357,7 +357,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-ios
   [Apple 推送通知服务]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-  []: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step5.png
+  [0]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step5.png
   [1]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step6.png
   [2]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step7.png
   [iOS 设置门户]: http://go.microsoft.com/fwlink/p/?LinkId=272456

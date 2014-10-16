@@ -163,7 +163,7 @@
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
   [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-dotnet-get-started-users/mobile-services-selection.png
+  [0]: ./media/mobile-services-dotnet-get-started-users/mobile-services-selection.png
   [1]: ./media/mobile-services-dotnet-get-started-users/mobile-service-uri.png
   [Microsoft 帐户]: /zh-cn/develop/mobile/how-to-guides/register-for-microsoft-authentication/
   [Facebook 登录]: /zh-cn/develop/mobile/how-to-guides/register-for-facebook-authentication/

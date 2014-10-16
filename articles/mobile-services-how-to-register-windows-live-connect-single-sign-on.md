@@ -57,7 +57,7 @@
 
   [注册 Windows 应用商店应用程序以使用 Microsoft 帐户登录]: /zh-cn/develop/mobile/how-to-guides/register-for-microsoft-authentication
   [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-  []: ./media/mobile-services-how-to-register-windows-live-connect-single-sign-on/mobile-services-submit-win8-app.png
+  [0]: ./media/mobile-services-how-to-register-windows-live-connect-single-sign-on/mobile-services-submit-win8-app.png
   [1]: ./media/mobile-services-how-to-register-windows-live-connect-single-sign-on/mobile-services-win8-app-name.png
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
   [2]: ./media/mobile-services-how-to-register-windows-live-connect-single-sign-on/mobile-services-store-association.png

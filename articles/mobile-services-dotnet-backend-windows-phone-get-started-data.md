@@ -2,7 +2,7 @@
 
 # 移动服务中的数据处理入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/" title="Windows Phone" class="current">Windows Phone</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/" title="Windows Phone" class="current">Windows Phone</a></div>
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/" title=".NET backend" class="current">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/"  title="JavaScript backend">JavaScript 后端</a></div>
 
 本主题说明如何使用 Azure 移动服务作为 Windows Phone 8 应用程序的后端数据源。在本教程中，你将要为某个应用程序（该应用程序在内存中存储数据）下载一个 Visual Studio 2012 项目，创建一个新的移动服务，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。
@@ -30,7 +30,7 @@
 
 1.  从[开发人员代码示例站点][GetStartedWithMobileServices 应用程序]下载 GetStartedWithMobileServices 示例应用程序的 C\# 版本。
 
-    ![][]
+    ![][0]
 
     > [WACOM.NOTE]若要创建 Windows Phone Silverlght 8.1 应用程序，只需在下载的 Windows Phone Silverlight 8 应用程序项目中将目标操作系统更改为 Windows Phone 8.1。若要创建 Windows Phone 应用商店应用程序，请下载 GetStartedWithData 示例应用程序项目的 [Windows Phone 应用商店应用程序版本][]。
 
@@ -55,7 +55,7 @@
 <a name="create-service"></a>
 ## 创建新的移动服务创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 <a name="download-the-service-locally"></a>
 ## 在本地下载服务下载移动服务项目并将其添加到解决方案
@@ -186,7 +186,7 @@
 
 #### 配置 IIS Express 以允许建立远程连接
 
-[WACOM.INCLUDE [mobile-services-how-to-configure-iis-express][]]
+[WACOM.INCLUDE [mobile-services-how-to-configure-iis-express](../includes/mobile-services-how-to-configure-iis-express.md)]
 
 #### 针对 IIS Express 中的移动服务测试应用程序
 
@@ -223,7 +223,7 @@
 <a name="publish-mobile-service"></a>
 ## 将移动服务发布到 Azure将移动服务发布到 Azure
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 <a name="test-azure-hosted"></a>
 ## 测试 Azure 上的移动服务测试已发布到 Azure 的移动服务
@@ -299,7 +299,7 @@
   [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
   [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?linkid=271146
-  []: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/mobile-data-sample-download-wp8-vs12.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/mobile-data-sample-download-wp8-vs12.png
   [Windows Phone 应用商店应用程序版本]: http://go.microsoft.com/fwlink/p/?LinkId=397372
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/vs-deployment-target.png
   [2]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/app-view.png

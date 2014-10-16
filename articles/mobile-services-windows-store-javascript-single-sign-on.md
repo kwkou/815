@@ -215,7 +215,7 @@
   [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
   [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-  []: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-submit-win8-app.png
+  [0]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-submit-win8-app.png
   [1]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-win8-app-name.png
   [2]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-store-association.png
   [3]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-select-app-name.png

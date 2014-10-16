@@ -1,10 +1,9 @@
 <properties linkid="develop-mobile-tutorials-get-started" pageTitle="Get Started with Mobile Services for Windows Store apps | Mobile Dev Center" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Windows Store development in C#, VB, or JavaScript. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<a name="getting-started"> </a>
-# 移动服务入门
+# <a name="getting-started"> </a>移动服务入门
 
 <div class="dev-center-tutorial-selector sublanding">
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started" title="Windows Store C#" class="current">Windows 应用商店 C\#</a>
+	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started" title="Windows Phone">Windows Phone</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started" title="iOS">iOS</a>
@@ -25,7 +24,7 @@
 
 以下是完成的应用程序的屏幕快照：
 
-![][]
+![][0]
 
 只有在完成本教程后，才可以学习有关 Windows 应用商店应用程序的所有其他移动服务教程。
 
@@ -62,13 +61,13 @@
 
 ## 针对本地移动服务测试应用程序
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-dotnet][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-dotnet](../includes/mobile-services-dotnet-backend-test-local-service-dotnet.md)]
 
 > [WACOM.NOTE] 你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 MainPage.xaml.cs 文件中。
 
 ## 发布移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 <ol start="4">
 <li><p>在 Windows 应用商店应用程序项目中，打开 App.xaml.cs 文件，找到创建 [MobileServiceClient][] 实例的代码，注释掉使用 *localhost* 创建此客户端的代码，然后取消注释使用如下所示远程移动服务 URL 创建客户端的代码：<p>
@@ -111,7 +110,7 @@
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started/ "JavaScript 后端"
   [JavaScript 后端版本]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started
   [快速入门：添加移动服务（.NET 后端）]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started/mobile-quickstart-completed.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started/mobile-quickstart-completed.png
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-get-started%2F
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
   [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md

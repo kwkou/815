@@ -116,7 +116,7 @@
   [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-data
   [mobile-services-javascript-backend-register-windows-store-app]: ../includes/mobile-services-javascript-backend-register-windows-store-app.md
-  []: ./media/mobile-services-windows-store-javascript-get-started-push-vs2012/mobile-app-enable-toast-win8.png
+  [0]: ./media/mobile-services-windows-store-javascript-get-started-push-vs2012/mobile-app-enable-toast-win8.png
   [mobile-services-javascript-update-script-notification-hubs]: ../includes/mobile-services-javascript-update-script-notification-hubs.md
   [1]: ./media/mobile-services-windows-store-javascript-get-started-push/mobile-quickstart-push1.png
   [2]: ./media/mobile-services-windows-store-javascript-get-started-push/mobile-quickstart-push2.png

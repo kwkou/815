@@ -1,15 +1,13 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-js" urlDisplayName="Get Started with Data" pageTitle="Get started with data (JavaScript) - Mobile Services" metaKeywords="" description="Learn how to get started using data with Azure Mobile Services." metaCanonical="https://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/" disqusComments="1" umbracoNaviHide="1" title="Get started with data in Mobile Services using Visual Studio 2012" documentationCenter="Mobile" authors="" />
-
 # 使用 Visual Studio 2012 的移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js-vs2012" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js-vs2012" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
 </div>
 
 此主题说明如何通过 Azure 移动服务来利用 Windows 应用商店应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 
 <div class="dev-callout"><b>说明</b>
-
 <p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加移动服务功能。使用 Visual Studio 2013 包含的新功能，可以轻松将你的 Windows 应用商店应用程序连接到移动服务。有关详细信息，请参阅<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js/">移动服务中的数据处理入门</a>。</p>
 </div>
 
@@ -21,19 +19,15 @@
 4.  [更新应用程序以使用移动服务][]
 5.  [针对移动服务测试应用程序][]
 
-<div class="dev-callout"><b>说明</b>
+<div class="dev-callout"><strong>说明</strong><p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-js%2F" target="_blank">Azure 免费试用</a。</p></div>
 
-<p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-js%2F" target="_blank">Azure 免费试用</a。</p>
-</div>
-
-<a name="download-app"></a>
-## 下载项目下载 GetStartedWithData 项目
+## <a name="download-app"> </a>下载项目下载 GetStartedWithData 项目
 
 本教程是在 [GetStartedWithData 应用程序][]（一个 Windows 应用商店应用程序）的基础上制作的。此应用程序的 UI 与移动服务快速入门中生成的应用程序相同，不过，前者的一些新增项本地存储在内存中。
 
 1.  从[开发人员代码示例站点][GetStartedWithData 应用程序]下载 GetStartedWithData 示例应用程序的 JavaScript 版本。
 
-    ![][]
+    ![][10]
 
 2.  在 Visual Studio 2012 Express for Windows 8 中打开下载的项目，然后展开 "js" 文件夹并检查 default.js 文件。
 
@@ -47,18 +41,15 @@
 
     可以看到，保存的文本已显示在“查询和更新数据”下的第二列中 。
 
-<a name="create-service"></a>
-## 创建移动服务在管理门户中创建新的移动服务
+## <a name="create-service"> </a>创建移动服务在管理门户中创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
-<a name="add-table"></a>
-## 添加新表将新表添加到移动服务
+## <a name="add-table"> </a>添加新表将新表添加到移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data-2][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
 
-<a name="update-app"></a>
-## 更新应用程序更新应用程序以使用移动服务进行数据访问
+## <a name="update-app"> </a>更新应用程序更新应用程序以使用移动服务进行数据访问
 
 将移动服务准备就绪后，你可以更新应用程序，以便在移动服务而不是本地集合中存储项。
 
@@ -132,8 +123,7 @@
 
 更新应用程序以使用移动服务作为后端存储后，便可以针对移动服务测试该应用程序。
 
-<a name="test-app"></a>
-## 测试应用程序针对新的移动服务测试应用程序
+## <a name="test-app"> </a>测试应用程序针对新的移动服务测试应用程序
 
 1.  在 Visual Studio 中，按 F5 键运行应用程序。
 
@@ -171,8 +161,7 @@
 
 "数据处理入门"教程到此结束。
 
-<a name="next-steps"> </a>
-## 后续步骤
+## <a name="next-steps"> </a>后续步骤
 
 本教程演示了有关如何使 Windows 应用商店应用程序处理移动服务中的数据的基础知识。接下来，建议你完成下列教程之一，这些教程是基于本教程中创建的 GetStartedWithData 应用程序制作的：
 
@@ -206,7 +195,7 @@
   [针对移动服务测试应用程序]: #test-app
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-js%2F
   [GetStartedWithData 应用程序]: http://go.microsoft.com/fwlink/?LinkId=262308
-  []: ./media/mobile-services-windows-store-javascript-get-started-data-vs2012/mobile-data-sample-download-js.png
+  [10]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2012/mobile-data-sample-download-js.png
   [1]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2012/mobile-quickstart-startup.png
   [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [mobile-services-create-new-service-data-2]: ../includes/mobile-services-create-new-service-data-2.md

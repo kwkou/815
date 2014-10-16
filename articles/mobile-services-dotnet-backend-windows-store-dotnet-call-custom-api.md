@@ -2,7 +2,7 @@
 
 # 从客户端调用自定义 API
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api" title="Windows Store C#" class="current">Windows 应用商店 C\#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-call-custom-api" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-call-custom-api" title="Windows Phone">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api" title="Android">Android</a>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api" title="Windows Store C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-call-custom-api" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-call-custom-api" title="Windows Phone">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api" title="Android">Android</a>
 </div>
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api" title=".NET backend" class="current">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api"  title="JavaScript backend">JavaScript 后端</a></div>
 
@@ -18,12 +18,11 @@
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门][]或[数据处理入门][]。本教程使用 Visual Studio 2012 Express for Windows 8。
 
-<a name="define-custom-api"></a>
-## 定义自定义 API
+## <a name="define-custom-api"></a>定义自定义 API
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-custom-api][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-custom-api](../includes/mobile-services-dotnet-backend-create-custom-api.md)]
 
-[WACOM.INCLUDE [mobile-services-windows-store-dotnet-call-custom-api][]]
+[WACOM.INCLUDE [mobile-services-windows-store-dotnet-call-custom-api](../includes/mobile-services-windows-store-dotnet-call-custom-api.md)]
 
 ## 后续步骤
 

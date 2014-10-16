@@ -1,8 +1,7 @@
 <properties pageTitle="Use Mobile Services to upload images to blob storage (Windows Store) | Mobile Services" metaKeywords="" description="Learn how to use Mobile Services to upload images to Azure Blob Storage." metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="glenga" writer="glenga" services="mobile-services" />
 
 # 使用移动服务将图像上载到 Azure 存储空间
-
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title="Windows Store C#" class="current">Windows 应用商店 C\#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage" title="Windows Phone">Windows Phone</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title="Windows Store C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage" title="Windows Phone">Windows Phone</a></div>
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage" title=".NET backend" class="current">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-upload-data-blob-storage"  title="JavaScript backend">JavaScript 后端</a></div>
 
 本主题说明如何借助 Azure 移动服务，使应用程序能够在 Azure 存储空间中上载和存储用户生成的图像。移动服务使用 SQL Database 存储数据。但是，将二进制大型对象 (BLOB) 数据存储在 Azure Blob 存储服务中可以提高效率。
@@ -26,7 +25,7 @@
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门][]。
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
 <a name="install-storage-client"></a>
 ## 安装 Windows 应用商店应用程序的存储客户端
@@ -37,13 +36,13 @@
 
 2.  在左窗格中，选择“联机” 类别，选择“包括预发行版”，搜索 "WindowsAzure.Storage-Preview"，在“Azure 存储空间” 程序包上单击“安装” ，然后接受许可协议。
 
-    ![][]
+    ![][2]
 
     随即会将 Azure 存储服务的客户端库添加到项目。
 
 接下来，你要更新快速入门应用程序以捕获和上载图像。
 
-[WACOM.INCLUDE [mobile-services-windows-store-dotnet-upload-to-blob-storage][]]
+[WACOM.INCLUDE [mobile-services-windows-store-dotnet-upload-to-blob-storage](../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md)]
 
   [Windows 应用商店 C\#]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage "Windows 应用商店 C#"
   [Windows Phone]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage "Windows Phone"
@@ -58,5 +57,5 @@
   [Azure 存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started
   [mobile-services-dotnet-backend-configure-blob-storage]: ../includes/mobile-services-configure-blob-storage.md
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
+  [2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/mobile-add-storage-nuget-package-dotnet.png
   [mobile-services-windows-store-dotnet-upload-to-blob-storage]: ../includes/mobile-services-windows-store-dotnet-upload-to-blob-storage.md

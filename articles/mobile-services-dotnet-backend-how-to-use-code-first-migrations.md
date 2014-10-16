@@ -136,7 +136,7 @@ Code First 迁移使用快照方法来生成代码，执行这些代码会对数
   [DbContext]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext(v=vs.113).aspx
   [迁移]: #migrations
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/navagate-to-sql-database.png
+  [0]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/navagate-to-sql-database.png
   [1]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/manage-sql-database.png
   [2]: ./media/mobile-services-dotnet-backend-how-to-use-code-first-migrations/sql-database-drop-tables.png
   [在迁移中设定数据种子]: #seeding

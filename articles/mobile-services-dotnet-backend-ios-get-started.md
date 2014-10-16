@@ -1,7 +1,6 @@
 <properties pageTitle="Get Started with Azure Mobile Services for iOS apps" metaKeywords="Azure iOS application, mobile service iOS, getting started Azure iOS" description="Follow this tutorial to get started using Azure Mobile Services for iOS development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<a name="getting-started"> </a>
-# 移动服务入门
+# <a name="getting-started"> </a>移动服务入门
 
 <div class="dev-center-tutorial-selector sublanding">
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started" title="Windows Store C#">Windows 应用商店 C\#</a>
@@ -25,19 +24,17 @@
 
 以下是完成的应用程序的屏幕快照：
 
-![][]
+![][0]
 
 完成本教程需要安装 XCode 4.5 和 iOS 5.0 或更高版本。
 
-<div class="dev-callout"><b>说明</b>
-
+<div class="dev-callout"><strong>说明</strong>
 <p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F" target="_blank">Azure 免费试用</a>。</p>
 </div>
 
-<a name="create-new-service"> </a>
-## 创建新的移动服务
+## <a name="create-new-service"> </a>创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## 将移动服务下载到本地计算机
 
@@ -45,23 +42,23 @@
 
 1.  单击刚刚创建的移动服务，在快速入门选项卡中单击“选择平台”下的“iOS”，然后展开“创建新的 iOS 应用程序” 。
 
-    ![][1]
+	![][1]
 
 2.  如果你尚未安装 Visual Studio，请下载和安装 Visual Studio Professional 2013 或更高版本。
 
 3.  在“下载你的服务并将其发布到云”下面单击“下载” 。
 
-    这样可以下载实现你的移动服务的 Visual Studio 项目。将压缩的项目文件保存到本地计算机上，并记下你保存它的位置。
+	这样可以下载实现你的移动服务的 Visual Studio 项目。将压缩的项目文件保存到本地计算机上，并记下你保存它的位置。
 
 4.  另外，请下载发布配置文件，将下载的文件保存到本地计算机，然后记下保存位置。
 
 ## 测试移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
 
 ## 发布移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ## 创建新的 iOS 应用程序
 
@@ -75,11 +72,11 @@
 
 4.  在“下载并运行应用程序”下面单击“下载” 。
 
-    随即将会下载已连接到移动服务的示例*待办事项列表*应用程序的项目，以及移动服务 iOS SDK。将压缩的项目文件保存到本地计算机上，并记下你保存它的位置。
+  	随即将会下载已连接到移动服务的示例*待办事项列表*应用程序的项目，以及移动服务 iOS SDK。将压缩的项目文件保存到本地计算机上，并记下你保存它的位置。
 
 ## 运行新的 iOS 应用程序
 
-[WACOM.INCLUDE [mobile-services-ios-run-app][]]
+[WACOM.INCLUDE [mobile-services-ios-run-app](../includes/mobile-services-ios-run-app.md)]
 
 本主题说明了如何针对 Azure 中运行的移动服务运行新的客户端应用程序。在对本地计算机上运行的移动服务测试 iOS 应用程序之前，必须配置 Web 服务器和防火墙，以允许从 iOS 开发计算机进行访问。有关详细信息，请参阅[配置本地 Web 服务器以允许连接到本地移动服务][]。
 
@@ -91,7 +88,7 @@
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started/ ".NET 后端"
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-ios-get-started/ "JavaScript 后端"
   [JavaScript 后端版本]: /zh-cn/documentation/articles/mobile-services-ios-get-started
-  []: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-quickstart-completed-ios.png
+  [0]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-quickstart-completed-ios.png
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
   [1]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-quickstart-steps-vs.png

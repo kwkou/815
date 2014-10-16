@@ -141,7 +141,7 @@
   [更新应用程序以启用定期通知]: #update-app
   [测试应用程序]: #test-app
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-services-selection.png
+  [0]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-create.png
   [2]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-create-dialog.png
   [3]: ./media/mobile-services-windows-store-dotnet-create-pull-notifications/mobile-custom-api-select.png

@@ -46,7 +46,7 @@
     -   [自定义序列化][]
 -   [后续步骤][]
 
-[WACOM.INCLUDE [mobile-services-concepts][]]
+[WACOM.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
 <a name="setup"></a>
 ## 安装安装与先决条件

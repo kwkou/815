@@ -21,7 +21,7 @@
 <a name="get-oauth-credentials"></a>
 ## 注册以获取 Twitter v1.1 API 访问权限并存储凭据
 
-[WACOM.INCLUDE [mobile-services-register-twitter-access][]]
+[WACOM.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
 <a name="create-table"></a>
 ## 创建新的 Updates 表
@@ -30,7 +30,7 @@
 
 1.  在管理门户中，单击移动服务的“数据”选项卡，然后单击“+创建” 。
 
-    ![][]
+    ![][0]
 
     此时将显示“创建新表” 对话框。
 
@@ -168,7 +168,7 @@
   [创建新的 Updates 表]: #create-table
   [创建新的计划作业]: #add-job
   [mobile-services-register-twitter-access]: ../includes/mobile-services-register-twitter-access.md
-  []: ./media/mobile-services-schedule-recurring-tasks/mobile-data-tab-empty-cli.png
+  [0]: ./media/mobile-services-schedule-recurring-tasks/mobile-data-tab-empty-cli.png
   [1]: ./media/mobile-services-schedule-recurring-tasks/mobile-create-updates-table.png
   [2]: ./media/mobile-services-schedule-recurring-tasks/mobile-schedule-new-job-cli.png
   [3]: ./media/mobile-services-schedule-recurring-tasks/mobile-create-job-dialog.png

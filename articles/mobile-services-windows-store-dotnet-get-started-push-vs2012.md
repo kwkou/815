@@ -3,7 +3,7 @@
 # 使用 Visual Studio 2012 的移动服务中的推送通知入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012" title="Windows Store C#" class="current">Windows 应用商店 C\#</a>
+	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
 	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-js-vs2012" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-wp8" title="Windows Phone">Windows Phone</a>
 	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-ios" title="iOS">iOS</a>
@@ -16,8 +16,7 @@
 在本教程中，你将向快速入门项目添加使用 Windows 推送通知服务 (WNS) 的推送通知功能。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
 <div class="dev-callout"><b>说明</b>
-
-<p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加推送通知功能。使用 Visual Studio 2013 包含的新功能，可以轻松地在使用移动服务的 Windows 应用商店应用程序中设置推送通知。有关 Visual Studio 2013 版本的信息，请参阅<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet">推送通知入门</a>。</p>
+	<p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加推送通知功能。使用 Visual Studio 2013 包含的新功能，可以轻松地在使用移动服务的 Windows 应用商店应用程序中设置推送通知。有关 Visual Studio 2013 版本的信息，请参阅<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet">推送通知入门</a>。</p>
 </div>
 
 本教程将指导你完成启用推送通知的以下基本步骤：
@@ -40,14 +39,14 @@
 
 若要从移动服务将推送通知发送到 Windows 应用商店应用程序，必须将你的应用程序提交到 Windows 应用商店。然后必须将移动服务配置为与 WNS 集成。
 
-[WACOM.INCLUDE [mobile-services-register-windows-store-app][]]
+[WACOM.INCLUDE [mobile-services-register-windows-store-app](../includes/mobile-services-register-windows-store-app.md)]
 
 现在，你的移动服务和应用程序都已配置为使用 WNS。接下来，你将创建一个新表来存储注册信息。
 
 <a name="create-table"></a>
 ## 创建新表
 
-[WACOM.INCLUDE [mobile-services-create-new-push-table][]]
+[WACOM.INCLUDE [mobile-services-create-new-push-table](../includes/mobile-services-create-new-push-table.md)]
 
 <a name="add-push"></a>
 ## 添加推送通知向应用程序添加推送通知
@@ -90,14 +89,14 @@
 
 1.  打开 Package.appxmanifest 文件，并确保“应用程序 UI”选项卡上的“支持 Toast 通知”已设置为“是” 。
 
-    ![][]
+    ![][0]
 
     这可以确保你的应用程序能够引发 toast 通知。
 
 <a name="update-scripts"></a>
 ## 更新插入脚本在管理门户中更新注册的插入脚本
 
-[WACOM.INCLUDE [mobile-services-update-registrations-script][]]
+[WACOM.INCLUDE [mobile-services-update-registrations-script](../includes/mobile-services-update-registrations-script.md)]
 
 1.  单击“TodoItem” ，再单击“脚本”并选择“插入”。 
 
@@ -196,7 +195,7 @@
   [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet
   [mobile-services-register-windows-store-app]: ../includes/mobile-services-register-windows-store-app.md
   [mobile-services-create-new-push-table]: ../includes/mobile-services-create-new-push-table.md
-  []: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-app-enable-toast-win8.png
+  [0]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-app-enable-toast-win8.png
   [mobile-services-update-registrations-script]: ../includes/mobile-services-update-registrations-script.md
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-insert-script-push2.png
   [2]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-quickstart-push1.png

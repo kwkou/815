@@ -3,7 +3,7 @@
 # 移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS" class="current">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>  
+	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS" class="current">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>  
 </div>	
 
 本主题说明如何通过 Azure 移动服务来利用 iOS 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
@@ -43,19 +43,19 @@
 
 4.  在应用程序中的文本框内键入一些文本，然后单击“+”按钮 。
 
-    ![][]
+    ![][0]
 
     可以看到，保存的文本已显示在下面的列表中。
 
 <a name="create-service"></a>
 ## 创建移动服务在管理门户中创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-data](../includes/mobile-services-create-new-service-data.md)]
 
 <a name="add-table"></a>
 ## 添加新表将新表添加到移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service-data-2][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-data-2](../includes/mobile-services-create-new-service-data-2.md)]
 
 <a name="update-app"></a>
 ## 更新应用程序更新应用程序以使用移动服务进行数据访问
@@ -233,7 +233,7 @@
   [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F
   [GetStartedWithData 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=268622
-  []: ./media/mobile-services-ios-get-started-data/mobile-quickstart-startup-ios.png
+  [0]: ./media/mobile-services-ios-get-started-data/mobile-quickstart-startup-ios.png
   [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md
   [mobile-services-create-new-service-data-2]: ../includes/mobile-services-create-new-service-data-2.md
   [1]: ./media/mobile-services-ios-get-started-data/mobile-dashboard-tab.png

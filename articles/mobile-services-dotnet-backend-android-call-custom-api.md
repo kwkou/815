@@ -21,9 +21,9 @@
 <a name="define-custom-api"></a>
 ## 定义自定义 API
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-custom-api][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-custom-api](../includes/mobile-services-dotnet-backend-create-custom-api.md)]
 
-[WACOM.INCLUDE [mobile-services-android-call-custom-api][]]
+[WACOM.INCLUDE [mobile-services-android-call-custom-api](../includes/mobile-services-android-call-custom-api.md)]
 
 ## 后续步骤
 
@@ -35,7 +35,7 @@
 -   [在源代码管理中存储服务器脚本][]
     了解如何使用源代码管理功能来更方便、更安全地开发和发布自定义 API 脚本代码。
 
-  [Windows 应用商店 C\#]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-call-custom-api "Windows 应用商店 JavaScript"
   [Windows Phone]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-call-custom-api "Windows Phone"
   [iOS]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api "iOS"

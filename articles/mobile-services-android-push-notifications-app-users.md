@@ -246,7 +246,7 @@
   [更新服务器脚本]: #update-scripts
   [验证推送通知行为]: #test-app
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-android-push-notifications-app-users/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-push-notifications-app-users/mobile-services-selection.png
   [1]: ./media/mobile-services-android-push-notifications-app-users/mobile-create-table.png
   [2]: ./media/mobile-services-android-push-notifications-app-users/mobile-create-registration-table.png
   [3]: ./media/mobile-services-android-push-notifications-app-users/mobile-create-registration-class.png

@@ -48,7 +48,7 @@
 
   [使用 Active Directory 身份验证库单一登录对应用程序进行身份验证]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-selection.png
+  [0]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-selection.png
   [1]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-identity-tab.png
   [2]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-copy-app-url-waad-auth.png
   [3]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-select-ad-waad-auth.png

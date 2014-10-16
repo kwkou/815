@@ -11,7 +11,7 @@
 
 本教程以前一教程[数据处理入门][]中的步骤和示例应用程序为基础。在开始学习本教程之前，最起码需要先完成数据处理系列中的第一篇教程，即[数据处理入门][]。
 
-[WACOM.INCLUDE [mobile-services-windows-dotnet-paging][]]
+[WACOM.INCLUDE [mobile-services-windows-dotnet-paging](../includes/mobile-services-windows-dotnet-paging.md)]
 
 <a name="next-steps"> </a>
 ## 后续步骤

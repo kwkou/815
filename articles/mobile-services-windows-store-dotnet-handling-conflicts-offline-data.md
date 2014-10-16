@@ -197,7 +197,7 @@
   [更新 JavaScript 移动服务的数据库]: #javascript-backend
   [针对移动服务测试应用程序]: #test-app
   [手动更新后端中的数据以制造冲突]: #handle-conflict
-  []: ./media/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
+  [0]: ./media/mobile-services-windows-store-dotnet-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
   [处理冲突代码示例]: http://go.microsoft.com/fwlink/?LinkId=394787
   [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
   [如何使用代码优先迁移更新数据模型]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations

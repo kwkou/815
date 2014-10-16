@@ -207,7 +207,7 @@
   [手动更新后端中的数据以制造冲突]: #handle-conflict
   [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
   [处理冲突代码示例]: http://go.microsoft.com/fwlink/?LinkId=398257
-  []: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
+  [0]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
   [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
   [如何使用代码优先迁移更新数据模型]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
   [Azure 管理门户]: https://manage.windowsazure.cn/

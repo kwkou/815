@@ -250,7 +250,7 @@
   [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28
   [用于 Windows Phone 的入门脱机示例]: http://go.microsoft.com/fwlink/?LinkId=397952
-  []: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
+  [0]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
   [1]: ./media/mobile-services-windows-phone-get-started-offline-data/vs-select-processor-architecture.png
   [2]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-sqlitestore-nuget.png
   [3]: ./media/mobile-services-windows-phone-get-started-offline-data/ui-screenshot.png

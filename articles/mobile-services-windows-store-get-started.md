@@ -119,7 +119,7 @@
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/ ".NET 后端"
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started/ "JavaScript 后端"
   [观看教程]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Introduction-to-Windows-Azure-Mobile-Services
-  []: ./media/mobile-services-windows-store-get-started/mobile-quickstart-completed.png
+  [0]: ./media/mobile-services-windows-store-get-started/mobile-quickstart-completed.png
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F
   [使用 Visual Studio 2012 的移动服务中的数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012/
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md

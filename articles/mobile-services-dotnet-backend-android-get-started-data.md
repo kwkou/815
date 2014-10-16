@@ -42,42 +42,42 @@
 <a name="create-service"></a>
 ## 创建新的移动服务创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 <a name="download-the-service"></a>
 ## 下载服务将服务下载到本地计算机
 
-[WACOM.INCLUDE [mobile-services-download-service-locally][]]
+[WACOM.INCLUDE [mobile-services-download-service-locally](../includes/mobile-services-download-service-locally.md)]
 
 <a name="test-the-service"></a>
 ## 测试服务测试移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
 
 <a name="publish-the-service"></a>
 ## 发布服务将移动服务发布到 Azure
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 <a name="download-app"></a>
 ## 下载项目下载 GetStartedWithData 项目
 
 ### 获取示例代码
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service][1]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/download-android-sample-code.md)]
 
 ### 验证 Android SDK 版本
 
-[WACOM.INCLUDE [mobile-services-verify-android-sdk-version][]]
+[WACOM.INCLUDE [mobile-services-verify-android-sdk-version](../includes/mobile-services-verify-android-sdk-version.md)]
 
 ### 检查并运行示例代码
 
-[WACOM.INCLUDE [mobile-services-android-run-sample-code][]]
+[WACOM.INCLUDE [mobile-services-android-run-sample-code](../includes/mobile-services-android-run-sample-code.md)]
 
 <a name="update-app"></a>
 ## 更新应用程序更新应用程序以使用移动服务进行数据访问
 
-[WACOM.INCLUDE [mobile-services-android-getting-started-with-data][]]
+[WACOM.INCLUDE [mobile-services-android-getting-started-with-data](../includes/mobile-services-android-getting-started-with-data.md)]
 
 <a name="test-app"></a>
 ## 测试应用程序针对发布的移动服务测试应用程序
@@ -96,7 +96,7 @@
 
 3.  在 Azure 管理门户中，单击与你的移动服务关联的数据库对应的“管理”。
 
-    ![][]
+    ![][0]
 
 4.  在管理门户中，执行一个查询以查看 Windows 应用商店应用程序所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 `todolist`。
 
@@ -145,7 +145,7 @@
   [mobile-services-verify-android-sdk-version]: ../includes/mobile-services-verify-android-sdk-version.md
   [mobile-services-android-run-sample-code]: ../includes/mobile-services-android-run-sample-code.md
   [mobile-services-android-getting-started-with-data]: ../includes/mobile-services-android-getting-started-with-data.md
-  []: ./media/mobile-services-dotnet-backend-android-get-started-data/manage-sql-azure-database.png
+  [0]: ./media/mobile-services-dotnet-backend-android-get-started-data/manage-sql-azure-database.png
   [2]: ./media/mobile-services-dotnet-backend-android-get-started-data/sql-azure-query.png
   [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
   [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android

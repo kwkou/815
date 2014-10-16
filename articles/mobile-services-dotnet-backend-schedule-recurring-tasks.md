@@ -26,7 +26,7 @@
 <a name="get-oauth-credentials"></a>
 ## 注册以获取 Twitter v1.1 API 访问权限并存储凭据
 
-[WACOM.INCLUDE [mobile-services-register-twitter-access][]]
+[WACOM.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
 <ol start="7">
 <li><p>在 Visual Studio 的解决方案资源管理器中，打开移动服务项目的 web.config 文件，找到 "MS\_TwitterConsumerKey" 和 "MS\_TwitterConsumerSecret" 应用程序设置，然后将这些密钥的值替换为你在门户中设置的 Twitter 使用者密钥值和使用者机密值。</p></li>
@@ -46,7 +46,7 @@
 
 2.  在左窗格中，选择“联机” 类别，搜索 `linq2twitter`，在 "linqtotwitter" 程序包上单击“安装” ，然后阅读并接受许可协议。
 
-    ![][]
+    ![][0]
 
     随后即会将 Linq to Twitter 库添加到你的移动服务项目。
 
@@ -287,7 +287,7 @@
   [发布服务并注册作业]: #register-job
   [LINQ to Twitter CodePlex 项目]: http://linqtotwitter.codeplex.com/
   [mobile-services-register-twitter-access]: ../includes/mobile-services-register-twitter-access.md
-  []: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-linq2twitter-nuget-package.png
+  [0]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-linq2twitter-nuget-package.png
   [1]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/add-component-model-reference.png
   [如何使用代码优先迁移更新数据模型]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations
   [2]: ./media/mobile-services-dotnet-backend-schedule-recurring-tasks/mobile-service-start-page.png

@@ -3,7 +3,7 @@
 # 移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
 </div>	
 
 
@@ -39,7 +39,7 @@
 
 1.  从[开发人员代码示例站点][GetStartedWithMobileServices 应用程序]下载 GetStartedWithData 示例应用程序的 JavaScript 版本。
 
-    ![][]
+    ![][0]
 
 2.  在 Visual Studio 2012 Express for Windows 8 中打开下载的项目，然后展开 "js" 文件夹并检查 default.js 文件。
 
@@ -56,7 +56,7 @@
 <a name="create-service"></a>
 ## 创建移动服务从 Visual Studio 新建移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service-vs2013][]]
+[WACOM.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
 
 <ol start="7">
 <li><p>在解决方案资源管理器中，展开 \*\*services\*\*、\*\*mobile services\*\*、\*\*\<your\_service\>\*\* 文件夹，打开 service.js 脚本文件，并留意新的全局变量，如以下示例所示：</p>
@@ -72,7 +72,7 @@
 <a name="add-table"></a>
 ## 添加新表将新表添加到移动服务并更新应用程序
 
-[WACOM.INCLUDE [mobile-services-create-new-table-vs2013][]]
+[WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
 1.  在 default.js 脚本文件中，注释用于定义现有项目集合的行，然后取消注释或添加以下代码行，并将 `<yourClient>;` 替换为在将项目连接到移动服务时添加到 service.js 文件中的变量：
 
@@ -199,7 +199,7 @@
   [针对移动服务测试应用程序]: #test-app
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-js%2F
   [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=328660
-  []: ./media/mobile-services-windows-store-javascript-get-started-data-vs2013/mobile-data-sample-download-js-vs12.png
+  [0]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2013/mobile-data-sample-download-js-vs12.png
   [1]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2013/mobile-quickstart-startup.png
   [mobile-services-create-new-service-vs2013]: ../includes/mobile-services-create-new-service-vs2013.md
   [mobile-services-create-new-table-vs2013]: ../includes/mobile-services-create-new-table-vs2013.md

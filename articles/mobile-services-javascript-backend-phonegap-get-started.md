@@ -23,7 +23,7 @@
 
 以下是完成的应用程序的屏幕快照：
 
-![][]
+![][0]
 
 <a name="additional-requirements"></a>
 ### 其他要求
@@ -40,7 +40,7 @@ PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以�
 <a name="create-new-service"> </a>
 ## 创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## 创建新应用程序创建新的 PhoneGap 应用程序
 
@@ -170,7 +170,7 @@ PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以�
   [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started "Xamarin.Android"
   [Sencha]: /zh-cn/documentation/articles/partner-sencha-mobile-services-get-started/ "Sencha"
   [PhoneGap]: /zh-cn/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap"
-  []: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-ios.png
+  [0]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-ios.png
   [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
   [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [Android 开发人员工具]: https://go.microsoft.com/fwLink/p/?LinkID=280125

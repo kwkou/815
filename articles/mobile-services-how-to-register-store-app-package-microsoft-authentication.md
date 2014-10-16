@@ -8,7 +8,7 @@ Azure 移动服务支持客户端驱动的和服务器驱动的身份验证方�
 
 > [WACOM.NOTE] 使用 Visual Studio 2013 可以轻松地将 Windows 应用商店应用程序包注册到移动服务。有关详细信息，请参阅[快速入门：为移动服务添加推送通知][]（位于 Windows 开发中心）。
 
-[WACOM.INCLUDE [mobile-services-register-windows-store-app][]]
+[WACOM.INCLUDE [mobile-services-register-windows-store-app](../includes/mobile-services-register-windows-store-app.md)]
 
 注册应用程序包后，在调用 [LoginAsync][] 方法时，请记得为 *useSingleSignOn* 提供 "true" 值。这样，你的用户在使用 Microsoft 帐户时可以获得更好的登录体验。
 

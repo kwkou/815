@@ -1,21 +1,17 @@
 <properties pageTitle="Get Started with Azure Mobile Services for Windows Phone apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Windows Phone development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<a name="getting-started"> </a>
-# 移动服务入门
+# <a name="getting-started"> </a>移动服务入门
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-windows-store-get-started" title="Windows Store">Windows Store</a><a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started" title="Windows Phone" class="current">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-ios-get-started" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-get-started" title="Android">Android</a><a href="/zh-cn/documentation/articles/mobile-services-html-get-started" title="HTML">HTML</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started" title="Xamarin.Android">Xamarin.Android</a><a href="/zh-cn/documentation/articles/partner-sencha-mobile-services-get-started/" title="Sencha">Sencha</a><a href="/zh-cn/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/" title="PhoneGap">PhoneGap</a></div>
 
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/" title=".NET backend">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started/"  title="JavaScript backend" class="current">JavaScript 后端</a></div>
 
+
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
-
 <p>本教程说明如何使用 Azure 移动服务向 Windows Phone 8 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。</p>
-
-
 <p>如果你更愿意观看视频，右侧的视频片段提供了与本教程相同的步骤。在视频中，Nick Harris 简要介绍了移动服务，并指导你完成创建第一个移动服务并从 Windows 应用商店应用程序连接到该服务的过程。</p>
 </div>
-
 <div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=290816" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-wp8-get-started-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=290816" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a> <span class="time">13:18</span></div>
 </div>
 
@@ -23,18 +19,15 @@
 
 以下是完成的应用程序的屏幕快照：
 
-![][]
+![][0]
 
-> [WACOM.NOTE] 若要完成本教程，你需要一个启用了 Azure 移动服务功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][]。若要创建新的 Windows Phone 8.1 应用程序，必须安装 Visual Studio 2013 Update 2 或更高版本。
+>[WACOM.NOTE] 若要完成本教程，你需要一个启用了 Azure 移动服务功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][]。若要创建新的 Windows Phone 8.1 应用程序，必须安装 Visual Studio 2013 Update 2 或更高版本。
 
-<a name="create-new-service"> </a>
-## 创建新的移动服务
+## <a name="create-new-service"> </a>创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service][]]
+[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
-## 
-
-## 创建新应用程序创建新的 Windows Phone 应用程序
+## <h2><span class="short-header">创建新应用程序创建新的 Windows Phone 应用程序</span></h2>
 
 创建移动服务后，你可以在管理门户中遵照一个简易的快速入门项目来创建新应用程序或修改现有应用程序，以连接到你的移动服务。
 
@@ -52,7 +45,7 @@
 
 3.  在本地计算机上下载并安装 [Visual Studio 2012 Express for Windows Phone][]（如果尚未这么做）。
 
-    > [WACOM.NOTE] 若要创建 Windows Phone 8.1 应用程序，必须已安装 Visual Studio 2013 Update 2。
+	>[WACOM.NOTE] 若要创建 Windows Phone 8.1 应用程序，必须已安装 Visual Studio 2013 Update 2。
 
 4.  单击“创建 TodoItem 表” 以创建用于存储应用程序数据的表。
 
@@ -86,8 +79,7 @@
 
     ![][5]
 
-<a name="next-steps"> </a>
-## 后续步骤
+## <a name="next-steps"> </a>后续步骤
 
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
@@ -113,7 +105,7 @@
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started/ "JavaScript 后端"
   [观看教程]: http://go.microsoft.com/fwlink/?LinkId=290816
   [.NET 后端版本]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
-  []: ./media/mobile-services-windows-phone-get-started/mobile-quickstart-completed-wp8.png
+  [0]: ./media/mobile-services-windows-phone-get-started/mobile-quickstart-completed-wp8.png
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A30A4DDE2&returnurl=http%3A%2F%2FFen-us%2Fdocumentation%2Farticles%2Fmobile-services-windows-phone-get-started%2F
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
   [1]: ./media/mobile-services-windows-phone-get-started/mobile-portal-quickstart-wp8.png

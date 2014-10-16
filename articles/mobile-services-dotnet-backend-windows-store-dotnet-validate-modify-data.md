@@ -3,7 +3,7 @@
 # 使用 .Net 后端在移动服务中验证和修改数据
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/" title="Windows Store C#" class="current">Windows 应用商店 C\#</a>
+<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
 <a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-validate-modify-data/" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 <a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-validate-modify-data/" title="Windows Phone">Windows Phone</a>
 <a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a>
@@ -32,7 +32,7 @@
 <a name="string-length-validation"></a>
 ## 添加验证
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-add-validation](../includes/mobile-services-dotnet-backend-add-validation.md)]
 
 <a name="update-client-validation"></a>
 ## 更新客户端
@@ -80,7 +80,7 @@
 
 2.  为新的 todo 项输入长度超过 10 个字符的文本，然后单击“保存” 。
 
-    ![][]
+    ![][0]
 
 3.  此时将出现一个类似于下面的消息对话框，以响应无效文本。
 
@@ -89,7 +89,7 @@
 <a name="add-timestamp"></a>
 ## 为 CompleteDate 添加时间戳字段
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate][]]
+[WACOM.INCLUDE [mobile-services-dotnet-backend-add-completedate](../includes/mobile-services-dotnet-backend-add-completedate.md)]
 
 <a name="update-client-timestamp"></a>
 ## 更新客户端以显示 CompleteDate
@@ -190,7 +190,7 @@
   [入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
   [mobile-services-dotnet-backend-add-validation]: ../includes/mobile-services-dotnet-backend-add-validation.md
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-invalid-text-length.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-invalid-text-length.png
   [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-invalid-text-length-exception-dialog.png
   [mobile-services-dotnet-backend-add-completedate]: ../includes/mobile-services-dotnet-backend-add-completedate.md
   [2]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data/mobile-services-rebuild-solution.png
