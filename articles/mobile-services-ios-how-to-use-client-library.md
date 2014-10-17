@@ -3,7 +3,7 @@
 # 如何使用适用于移动服务的 iOS 客户端库
 
 <div class="dev-center-tutorial-selector sublanding"> 
-  <a href="/zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/" title=".NET Framework">.NET Framework</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS" class="current">iOS</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-android-client-library/" title="Android">Android</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-xamarin-client-library/" title="Xamarin">Xamarin</a>
+  <a href="/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/" title=".NET Framework">.NET Framework</a><a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-ios-how-to-use-client-library/" title="iOS" class="current">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/" title="Xamarin">Xamarin</a>
 </div>
 
 本指南说明如何使用适用于 Azure 移动服务的 iOS 客户端执行常见任务。这些示例用 Objective-C 编写，需要安装[移动服务 SDK][]。本教程还需要安装 [iOS SDK][]。所述的任务包括：查询数据，插入、更新和删除数据，对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门][]。快速入门教程可帮助你配置帐户并创建第一个移动服务。
@@ -433,14 +433,14 @@
 
 有关执行验证和处理任何错误的示例，请参阅[使用服务器脚本在移动服务中验证和修改数据][]。在本主题中，服务器端验证是使用服务器脚本实现的。如果提交了无效的数据，则会返回错误响应，而此响应将由客户端处理。
 
-  [.NET Framework]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
-  [HTML/JavaScript]: /zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
-  [iOS]: /zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
-  [Android]: /zh-cn/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
-  [Xamarin]: /zh-cn/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
+  [.NET Framework]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/ ".NET Framework"
+  [HTML/JavaScript]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/ "HTML/JavaScript"
+  [iOS]: /zh-cn/documentation/articles/mobile-services-ios-how-to-use-client-library/ "iOS"
+  [Android]: /zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/ "Android"
+  [Xamarin]: /zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/ "Xamarin"
   [移动服务 SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
   [iOS SDK]: https://developer.apple.com/xcode
-  [移动服务快速入门]: /zh-cn/develop/mobile/tutorials/get-started-ios
+  [移动服务快速入门]: /zh-cn/documentation/articles/mobile-services-ios-get-started/
   [什么是移动服务]: #what-is
   [概念]: #concepts
   [安装与先决条件]: #Setup
@@ -458,14 +458,14 @@
   [mobile-services-concepts]: ../includes/mobile-services-concepts.md
   [创建表]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193162.aspx
   [在页中返回数据]: #paging
-  [如何：访问自定义参数]: /zh-cn/develop/mobile/how-to-guides/work-with-server-scripts#access-headers
+  [如何：访问自定义参数]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/#access-headers
   [NSDictionary 对象]: http://go.microsoft.com/fwlink/p/?LinkId=301965
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
   [用于管理移动服务表的 CLI]: http://www.windowsazure.com/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
   [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-ios
-  [使用脚本为用户授权]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-ios
+  [身份验证入门]: /zh-cn/documentation/articles/mobile-services-ios-get-started-users/
+  [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-ios-authorize-users-in-scripts/
   [权限]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193161.aspx
   [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
   [处理过期的令牌]: http://go.microsoft.com/fwlink/p/?LinkId=301955
-  [使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios
+  [使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-ios-validate-modify-data-server-scripts/
