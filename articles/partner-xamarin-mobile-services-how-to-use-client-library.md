@@ -3,8 +3,7 @@
 # 如何使用适用于 Azure 移动服务的 Xamarin 组件客户端
 
 <div class="dev-center-tutorial-selector sublanding"> 
-  <a href="/zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/" title=".NET Framework">.NET Framework</a>
-  	<a href="/zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-android-client-library/" title="Android">Android</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-xamarin-client-library/" title="Xamarin" class="current">Xamarin</a>
+  <a href="/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/" title=".NET Framework">.NET Framework</a><a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-ios-how-to-use-client-library/" title="iOS" class="current">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/" title="Xamarin">Xamarin</a>
 </div>
 
 本指南演示如何在用于 iOS 和 Android 的 Xamarin 应用程序中使用针对 Azure 移动服务的 Xamarin 组件客户端来执行常见任务。所述的任务包括：查询数据，插入、更新和删除数据，对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成“移动服务快速入门”教程 ([Xamarin.iOS][]/[Xamarin.Android][]) 以及“.NET 中的数据处理入门”教程 ([Xamarin.iOS][1]/[Xamarin.Android][2])。快速入门教程要求安装 [Xamarin][3]（即[移动服务 SDK][]），它可帮助你配置帐户并创建第一个移动服务。
