@@ -3,8 +3,8 @@
 # 使用通知中心向用户发送跨平台通知
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/en-us/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/" title="移动服务" class="current">移动服务</a>
-<a href="/en-us/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/" title="ASP.NET">ASP.NET</a>
+<a href="/zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/" title="移动服务" class="current">移动服务</a>
+<a href="/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/" title="ASP.NET">ASP.NET</a>
 </div>
 
 在上一教程[使用通知中心通知用户][使用通知中心通知用户]中，你了解了如何将通知推送到经过身份验证的特定用户所注册的所有设备。在该教程中，需要使用多个请求将通知发送到每个支持的客户端平台。通知中心支持模板，这允许你指定特定设备要如何接收通知。这简化了发送跨平台通知。本主题演示如何利用模板在单个请求中发送针对所有平台的平台未知通知。有关模板的更多详细信息，请参见 [Azure 通知中心概述][Azure 通知中心概述]。
@@ -110,8 +110,8 @@
 
 <!-- Anchors. -->  
 
-  [移动服务]: /en-us/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ "移动服务"
-  [ASP.NET]: /en-us/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ "ASP.NET"
+  [移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ "移动服务"
+  [ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ "ASP.NET"
   [使用通知中心通知用户]: /en-us/manage/services/notification-hubs/notify-users
   [Azure 通知中心概述]: http://go.microsoft.com/fwlink/p/?LinkId=317339
   [Azure 管理门户]: https://manage.windowsazure.cn/

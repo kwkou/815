@@ -3,7 +3,7 @@
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/en-us/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/" title="Windows 应用商店 C#" class="current">Windows 应用商店 C#</a><a href="/en-us/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/" title="iOS">iOS</a>
+<a href="/zh-cn/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/" title="Windows 应用商店 C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/" title="iOS">iOS</a>
 </div>
 
 本主题演示在 ASP.NET Web API 执行注册时如何请求向 Azure 通知中心注册推送通知。它是对教程[使用通知中心通知用户][使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户][使用通知中心通知用户]。
@@ -173,8 +173,8 @@
 
 <!-- URLs. -->
 
-  [Windows 应用商店 C\#]: /en-us/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/ "Windows 应用商店 C#"
-  [iOS]: /en-us/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/ "iOS"
+  [Windows 应用商店 C\#]: /zh-cn/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/ "Windows 应用商店 C#"
+  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/ "iOS"
   [使用通知中心通知用户]: /en-us/manage/services/notification-hubs/notify-users-aspnet
 
 <!-- Images. --> 

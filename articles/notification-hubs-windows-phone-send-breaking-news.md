@@ -3,7 +3,7 @@
 # 使用通知中心发送突发新闻
 
 <div class="dev-center-tutorial-selector sublanding"> 
-<a href="/en-us/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/en-us/documentation/articles/notification-hubs-windows-phone-send-breaking-news/" title="Windows Phone" class="current">Windows Phone</a><a href="/en-us/documentation/articles/notification-hubs-ios-send-breaking-news/" title="iOS">iOS</a>
+<a href="/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/notification-hubs-windows-phone-send-breaking-news/" title="Windows Phone" class="current">Windows Phone</a><a href="/zh-cn/documentation/articles/notification-hubs-ios-send-breaking-news/" title="iOS">iOS</a>
 </div>
 
 本主题演示如何使用 Azure 通知中心将突发新闻通知广播到 Windows Phone 应用程序。完成时，你可以注册感兴趣的突发新闻类别并仅接收这些类别的推送通知。此方案对于很多应用程序来说是常见模式，在其中必须将通知发送到以前声明过对它们感兴趣的一组用户，这样的应用程序有 RSS 阅读器、针对音乐迷的应用程序等。
@@ -222,9 +222,9 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 <!-- URLs.-->
 
 
-  [Windows 应用商店 C\#]: /en-us/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/ "Windows 应用商店 C#"
-  [Windows Phone]: /en-us/documentation/articles/notification-hubs-windows-phone-send-breaking-news/ "Windows Phone"
-  [iOS]: /en-us/documentation/articles/notification-hubs-ios-send-breaking-news/ "iOS"
+  [Windows 应用商店 C\#]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/ "Windows 应用商店 C#"
+  [Windows Phone]: /zh-cn/documentation/articles/notification-hubs-windows-phone-send-breaking-news/ "Windows Phone"
+  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-send-breaking-news/ "iOS"
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
   [向应用程序中添加类别选择]: #adding-categories
   [注册通知]: #register
