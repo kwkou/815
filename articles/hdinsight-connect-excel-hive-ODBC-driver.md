@@ -101,8 +101,8 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 -   [将数据上载到 HDInsight][]
 -   [将 Sqoop 与 HDInsight 配合使用][]
 
-  [利用 Power Query 将 Excel 连接到 HDInsight]: ../hdinsight-connect-excel-power-query/
-  [Azure HDInsight 入门]: ../hdinsight-get-started/
+  [利用 Power Query 将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-power-query/
+  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [安装 Microsoft Hive ODBC 驱动程序]: #InstallHiveODBCDriver
   [创建 Hive ODBC 数据源]: #CreateHiveODBCDataSource
   [将数据从 HDInsight 群集导入到 Excel 中]: #ImportData
@@ -111,8 +111,8 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
   [ODBC 数据源管理器]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.DataSourceAdmin1.png
   [高级选项]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.HiveOdbc.DataSource.AdvancedOptions1.png
   [打开数据连接向导]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.Excel.DataConnection1.png
-  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
+  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
   [连接属性]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveODBC.Excel.ConnectionProperties1.png
-  [使用 HDInsight 分析航班延误数据]: ../hdinsight-analyze-flight-delay-data/
-  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
-  [将 Sqoop 与 HDInsight 配合使用]: ../hdinsight-use-sqoop/
+  [使用 HDInsight 分析航班延误数据]: /zh-cn/documentation/articles/hdinsight-analyze-flight-delay-data/
+  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
+  [将 Sqoop 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
