@@ -208,11 +208,11 @@
   [注册通知]: #register
   [从后端发送通知]: #send
   [运行应用程序并生成通知]: #test-app
-  [通知中心入门]: /en-us/manage/services/notification-hubs/getting-started-windows-dotnet/
+  [通知中心入门]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
   [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
 
-  [使用通知中心广播本地化的突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-localized-dotnet/
-  [使用通知中心通知用户]: /en-us/manage/services/notification-hubs/notify-users
+  [使用通知中心广播本地化的突发新闻]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+  [使用通知中心通知用户]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 
 <!-- Images. -->
   []: ./media/notification-hubs-windows-store-dotnet-send-breaking-news/notification-hub-breakingnews-win1.png
