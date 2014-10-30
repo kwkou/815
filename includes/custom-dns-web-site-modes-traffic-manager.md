@@ -2,4 +2,4 @@
 
 有关网站模式的详细信息，包括如何更改网站模式，请参阅[如何缩放网站][如何缩放网站]。
 
-  [如何缩放网站]: http://www.windowsazure.com/en-us/documentation/articles/web-sites-scale/
+  [如何缩放网站]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-scale/
