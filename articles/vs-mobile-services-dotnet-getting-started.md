@@ -67,4 +67,4 @@ Azure 移动服务 NuGet 包已添加到您的项目。因此，下面的 .NET �
 
     await todoTable.DeleteAsync(item);
 
-  [身份验证入门]: http://azure.microsoft.com/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
+  [身份验证入门]: http://windowsazure.cn/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/

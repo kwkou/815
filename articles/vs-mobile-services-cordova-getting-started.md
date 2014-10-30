@@ -82,6 +82,6 @@
         items.splice(items.indexOf(todoItem), 1);
     });
 
-  [身份验证入门]: http://azure.microsoft.com/zh-cn/documentation/articles/mobile-services-html-get-started-users/
+  [身份验证入门]: http://windowsazure.cn/zh-cn/documentation/articles/mobile-services-html-get-started-users/
   [Promise]: ()
   [查询]: http://msdn.microsoft.com/library/azure/jj613353.aspx
