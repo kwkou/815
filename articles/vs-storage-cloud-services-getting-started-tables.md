@@ -2,7 +2,7 @@
 
 <tags ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="ghogen, kempb"></tags>
 
-[WACOM.INCLUDE [vs-storage-cloud-services-getting-started-intro][vs-storage-cloud-services-getting-started-intro]]
+[WACOM.INCLUDE [vs-storage-cloud-services-getting-started-intro](../includes/vs-storage-cloud-services-getting-started-intro.md)]
 
 ### Azure 存储入门
 
@@ -26,11 +26,11 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
       CloudConfigurationManager.GetSetting("<storageAccountName>_AzureStorageConnectionString"));
 
-[WACOM.INCLUDE [vs-storage-getting-started-tables-include][vs-storage-getting-started-tables-include]]
+[WACOM.INCLUDE [vs-storage-getting-started-tables-include](../includes/vs-storage-getting-started-tables-include.md)]
 
   [vs-storage-cloud-services-getting-started-intro]: ../includes/vs-storage-cloud-services-getting-started-intro.md
   [Blobs]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs "Blobs"
   [Queues]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-queues "Queues"
   [Tables]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-tables "Tables"
-  [如何通过 .NET 使用表存储]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "如何通过 .NET 使用表存储"
+  [如何通过 .NET 使用表存储]: http://windowsazure.cn/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "如何通过 .NET 使用表存储"
   [vs-storage-getting-started-tables-include]: ../includes/vs-storage-getting-started-tables-include.md

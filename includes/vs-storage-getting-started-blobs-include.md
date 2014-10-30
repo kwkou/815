@@ -90,5 +90,5 @@
     // Delete the blob.
     blockBlob.Delete();
 
-  [如何通过 .NET 使用 Blob 存储]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/#list-blob
-  [1]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/#download-blobs
+  [如何通过 .NET 使用 Blob 存储]: http://windowsazure.cn/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/#list-blob
+  [1]: http://windowsazure.cn/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/#download-blobs
