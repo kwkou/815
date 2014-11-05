@@ -64,6 +64,6 @@
 
 [详细了解 Azure Active Directory][详细了解 Azure Active Directory]
 
-  [入门]: /documentation/articles/vs-active-directory-dotnet-getting-started/
-  [发生了什么情况]: /documentation/articles/vs-active-directory-dotnet-what-happened/
-  [详细了解 Azure Active Directory]: http://azure.microsoft.com/services/active-directory/
+  [入门]: /zh-cn/documentation/articles/vs-active-directory-dotnet-getting-started/
+  [发生了什么情况]: /zh-cn/documentation/articles/vs-active-directory-dotnet-what-happened/
+  [详细了解 Azure Active Directory]: http://www.windowsazure.cn/manage/services/identity/

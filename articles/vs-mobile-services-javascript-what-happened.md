@@ -17,5 +17,5 @@ Windows Azure 移动服务库已通过 **MobileServices.js** 文件形式添加�
 
 在 `services\mobileServices\settings` 文件夹中，已生成具有 **MobileServiceClient** 的新 JavaScript (.js) 文件，其中包含选定的移动服务的应用程序 URL 和应用程序密钥。
 
-  [入门]: /documentation/articles/vs-mobile-services-javascript-getting-started/
-  [发生了什么情况]: /documentation/articles/vs-mobile-services-javascript-what-happened/
+  [入门]: /zh-cn/documentation/articles/vs-mobile-services-javascript-getting-started/
+  [发生了什么情况]: /zh-cn/documentation/articles/vs-mobile-services-javascript-what-happened/

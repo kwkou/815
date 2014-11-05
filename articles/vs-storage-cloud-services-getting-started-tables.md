@@ -32,9 +32,9 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 [WACOM.INCLUDE [vs-storage-getting-started-tables-include](../includes/vs-storage-getting-started-tables-include.md)]
 
-  [入门]: /documentation/articles/vs-storage-cloud-services-getting-started-tables/
-  [发生了什么情况]: /documentation/articles/vs-storage-cloud-services-what-happened/
-  [Blob]: /documentation/articles/vs-storage-cloud-services-getting-started-blobs/
-  [队列]: /documentation/articles/vs-storage-cloud-services-getting-started-queues/
-  [如何通过 .NET 使用表存储]: http://windowsazure.cn/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "如何通过 .NET 使用表存储"
+  [入门]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-tables/
+  [发生了什么情况]: /zh-cn/documentation/articles/vs-storage-cloud-services-what-happened/
+  [Blob]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/
+  [队列]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-queues/
+  [如何通过 .NET 使用表存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/#create-table "如何通过 .NET 使用表存储"
   [vs-storage-getting-started-tables-include]: ../includes/vs-storage-getting-started-tables-include.md

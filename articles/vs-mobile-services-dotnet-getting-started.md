@@ -70,7 +70,7 @@
 
 [详细了解移动服务][详细了解移动服务]
 
-  [入门]: /documentation/articles/vs-mobile-services-dotnet-getting-started/
-  [发生了什么情况]: /documentation/articles/vs-mobile-services-dotnet-what-happened/
-  [身份验证入门]: http://windowsazure.cn/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
-  [详细了解移动服务]: http://azure.microsoft.com/documentation/services/mobile-services/
+  [入门]: /zh-cn/documentation/articles/vs-mobile-services-dotnet-getting-started/
+  [发生了什么情况]: /zh-cn/documentation/articles/vs-mobile-services-dotnet-what-happened/
+  [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users/
+  [详细了解移动服务]: http://www.windowsazure.cn/manage/services/mobile-services/

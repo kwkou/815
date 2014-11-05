@@ -77,9 +77,9 @@
 
 [详细了解移动服务][详细了解移动服务]
 
-  [入门]: /documentation/articles/vs-mobile-services-javascript-getting-started/
-  [发生了什么情况]: /documentation/articles/vs-mobile-services-javascript-what-happened/
-  [查询对象]: http://msdn.microsoft.com/library/azure/jj613353.aspx
-  [splice]: http://msdn.microsoft.com/library/windows/apps/Hh700810.aspx
+  [入门]: /zh-cn/documentation/articles/vs-mobile-services-javascript-getting-started/
+  [发生了什么情况]: /zh-cn/documentation/articles/vs-mobile-services-javascript-what-happened/
+  [查询对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
+  [splice]: http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx
   [Promise]: 
-  [详细了解移动服务]: http://azure.microsoft.com/documentation/services/mobile-services/
+  [详细了解移动服务]: http://www.windowsazure.cn/manage/services/mobile-services/

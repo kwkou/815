@@ -56,4 +56,4 @@
 
 有关详细信息，请参阅 [Azure AD 的身份验证方案][Azure AD 的身份验证方案]。
 
-  [Azure AD 的身份验证方案]: http://msdn.microsoft.com/library/azure/dn499820.aspx
+  [Azure AD 的身份验证方案]: http://msdn.microsoft.com/zh-cn/library/azure/dn499820.aspx
