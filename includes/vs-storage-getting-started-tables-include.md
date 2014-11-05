@@ -142,5 +142,5 @@
 [详细了解 Azure Storage][详细了解 Azure Storage]
 另请参阅[使用服务器资源管理器浏览存储资源][使用服务器资源管理器浏览存储资源]。
 
-  [详细了解 Azure Storage]: http://azure.microsoft.com/documentation/services/storage/
+  [详细了解 Azure Storage]: http://www.windowsazure.cn/manage/services/storage/
   [使用服务器资源管理器浏览存储资源]: http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx
