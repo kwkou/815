@@ -1,25 +1,21 @@
-###### 创建队列
+##### 创建队列
 
 利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。本主题中的所有代码都使用存储在 Azure 应用程序的服务配置中的存储连接字符串。还可采用其他方法创建 **CloudStorageAccount** 对象。有关详细信息，请参见 [CloudStorageAccount][CloudStorageAccount] 文档。
-
-    // Get the storage account from its connection string.
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-      CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
     // Create the queue client.
     CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-使用 **queueClient** 对象获取对要使用的队列的引用。如果该队列不存在，您可以创建它。
+使用 **queueClient** 对象获取对要使用的队列的引用。该代码将尝试引用名为“myqueue”的队列。如果找不到该名称的队列，它将创建一个。
 
     // Get a reference to a queue named “myqueue”.
     CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
     // If the queue isn’t already there, then create it.
-    queue.CreateIfNotExist();
+    queue.CreateIfNotExists();
 
 **注意：**在接下来的部分中，将在代码的前面使用此代码块。
 
-###### 在队列中插入消息
+##### 在队列中插入消息
 
 若要将消息插入现有队列，请先创建一个新的 **CloudQueueMessage** 对象。紧接着，调用 AddMessage() 方法。可从字符串（UTF-8 格式）或字节数组创建 **CloudQueueMessage** 对象。以下代码将创建队列（如果队列不存在）并插入消息“Hello, World”。
 
@@ -27,7 +23,7 @@
     CloudQueueMessage message = new CloudQueueMessage("Hello, World");
     queue.AddMessage(message);
 
-###### 扫视下一条消息
+##### 扫视下一条消息
 
 通过调用 PeekMessage() 方法，可以查看队列前面的消息，而不必从队列中将其删除。
 
@@ -37,7 +33,7 @@
     // Display the message.
     Console.WriteLine(peekedMessage.AsString);
 
-###### 删除下一条消息
+##### 删除下一条消息
 
 您的代码分两步从队列中删除消息（取消对消息的排队）。
 
@@ -52,4 +48,9 @@
     // Process the message in less than 30 seconds, and then delete the message.
     queue.DeleteMessage(retrievedMessage);
 
-  [CloudStorageAccount]: http://msdn.microsoft.com/en-us/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx "CloudStorageAccount"
+[详细了解 Azure Storage][详细了解 Azure Storage]
+另请参阅[使用服务器资源管理器浏览存储资源][使用服务器资源管理器浏览存储资源]。
+
+  [CloudStorageAccount]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx "CloudStorageAccount"
+  [详细了解 Azure Storage]: http://azure.microsoft.com/documentation/services/storage/
+  [使用服务器资源管理器浏览存储资源]: http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx
