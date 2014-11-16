@@ -14,15 +14,15 @@
 
 为了创建虚拟机，你将需要注册 Azure 虚拟机预览版功能。如果你没有 Azure 帐户，也可以注册一个免费试用版帐户。
 
-[WACOM.INCLUDE [antares-iaas-signup-iaas][antares-iaas-signup-iaas]]
+[WACOM.INCLUDE [antares-iaas-signup-iaas](../includes/antares-iaas-signup-iaas.md)]
 
 ## 创建运行 OpenSUSE Linux 的虚拟机
 
-[WACOM.INCLUDE [create-and-configure-opensuse-vm-in-portal][create-and-configure-opensuse-vm-in-portal]]
+[WACOM.INCLUDE [create-and-configure-opensuse-vm-in-portal](../includes/create-and-configure-opensuse-vm-in-portal.md)]
 
 ## 在虚拟机上安装和运行 MySQL
 
-[WACOM.INCLUDE [install-and-run-mysql-on-opensuse-vm][install-and-run-mysql-on-opensuse-vm]]
+[WACOM.INCLUDE [install-and-run-mysql-on-opensuse-vm](../includes/install-and-run-mysql-on-opensuse-vm.md)]
 
 ## 摘要
 

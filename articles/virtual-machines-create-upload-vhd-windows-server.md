@@ -288,9 +288,9 @@ x64
 
   [启动 Sysprep]: ./media/virtual-machines-create-upload-vhd-windows-server/ImageWithDisks.png
   [管理磁盘和映像（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
-  [如何创建自定义虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-windows-tutorial/
+  [如何创建自定义虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-windows-tutorial/
   [Microsoft Azure 下载（可能为英文页面）]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
-  [此处]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
+  [此处]: http://windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/
   [Add-AzureVHD]: http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx
   [安装 Hyper-V 角色和配置虚拟机]: http://technet.microsoft.com/zh-cn/library/hh846766.aspx
   [Convert-VHD cmdlet]: http://technet.microsoft.com/zh-cn/library/hh848454.aspx
@@ -304,7 +304,7 @@ x64
   [2]: ./media/virtual-machines-create-upload-vhd-windows-server/sysprepgeneral.png
   [快速创建存储帐户]: ./media/virtual-machines-create-upload-vhd-windows-server/Storage-quick-create.png
   [输入存储帐户详细信息]: ./media/virtual-machines-create-upload-vhd-windows-server/Storage-create-account.png
-  [如何管理存储帐户]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-manage-storage-account/
+  [如何管理存储帐户]: http://windowsazure.cn/zh-cn/documentation/articles/storage-manage-storage-account/
   [已成功创建存储帐户]: ./media/virtual-machines-create-upload-vhd-windows-server/Storagenewaccount.png
   [存储帐户详细信息]: ./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_detail.png
   [3]: ./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_container.png
@@ -321,4 +321,4 @@ x64
   [PowerShell Add-AzureVMImage]: ./media/virtual-machines-create-upload-vhd-windows-server/add_azureimage_powershell.png
   [自定义映像]: ./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png
   [从自定义映像创建虚拟机]: ./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png
-  [在 Microsoft Azure 上设置 SQL Server 虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-provision-sql-server/
+  [在 Microsoft Azure 上设置 SQL Server 虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-provision-sql-server/

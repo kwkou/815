@@ -16,7 +16,7 @@
 
 ![运行 Apache Tomcat 的虚拟机][运行 Apache Tomcat 的虚拟机]
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## 创建虚拟机
 

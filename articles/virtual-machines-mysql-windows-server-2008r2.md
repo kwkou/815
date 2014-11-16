@@ -2,7 +2,7 @@
 
 # 在 Azure 中运行 Windows Server 2008 R2 的虚拟机上安装 MySQL
 
-[MySQL][MySQL] 是一种受欢迎的 SQL 开源数据库。使用 [Azure 管理门户][Azure 管理门户]，你可从映像库创建运行 Windows Server 2008 R2 的虚拟机。然后，你可以在虚拟机上安装和配置 MySQL 数据库。
+[MySQL](http://www.mysql.com) 是一种受欢迎的 SQL 开源数据库。使用 [Azure 管理门户][AzurePortal]，你可从映像库创建运行 Windows Server 2008 R2 的虚拟机。然后，你可以在虚拟机上安装和配置 MySQL 数据库。
 
 在本教程中，你将了解如何：
 
@@ -12,11 +12,11 @@
 
 ## 创建运行 Windows Server 2008 R2 的虚拟机
 
-[WACOM.INCLUDE [create-and-configure-windows-server-2008-vm-in-portal][create-and-configure-windows-server-2008-vm-in-portal]]
+[WACOM.INCLUDE [create-and-configure-windows-server-2008-vm-in-portal](../includes/create-and-configure-windows-server-2008-vm-in-portal.md)]
 
 ## 附加数据磁盘
 
-[WACOM.INCLUDE [attach-data-disk-windows-server-2008-vm-in-portal][attach-data-disk-windows-server-2008-vm-in-portal]]
+[WACOM.INCLUDE [attach-data-disk-windows-server-2008-vm-in-portal](../includes/attach-data-disk-windows-server-2008-vm-in-portal.md)]
 
 ## 在虚拟机上安装和运行 MySQL Community Server
 
@@ -24,13 +24,13 @@
 
 1.  使用远程桌面连接到该虚拟机后，从“开始”菜单打开 Internet Explorer。
 
-2.  选择右上角的“工具”按钮。在“Internet 选项”中，选择“安全”选项卡，然后选择“可信站点”图标，最后单击“站点”按钮。将 *<http://>\*.mysql.com* 添加到受信任站点列表中。
+2.  选择右上角的“工具”按钮。在“Internet 选项”中，选择“安全”选项卡，然后选择“可信站点”图标，最后单击“站点”按钮。将 *http://\*.mysql.com* 添加到受信任站点列表中。
 
-3.  转到[下载 MySQL 社区服务器][下载 MySQL 社区服务器]。
+3.  转到[下载 MySQL 社区服务器][MySQLDownloads]。
 
-4.  在“平台”下拉列表中选择 **Microsoft Windows**并单击“选择”。。
+4.  在“平台”下拉列表中选择 **Microsoft Windows**并单击“选择”。
 
-5.  找到“Windows（x86，64 位），MSI 安装程序”并单击“下载”。。
+5.  找到“Windows（x86，64 位），MSI 安装程序”并单击“下载”。
 
 6.  选择“不，谢谢，请开始我的下载！”（或者，注册一个帐户）。如果出现提示，请选择镜像站点以下载 MySQL 安装程序并将该安装程序保存到桌面。
 
@@ -38,67 +38,67 @@
 
 8.  单击“下一步”。
 
-    ![MySQL 设置][MySQL 设置]
+	![MySQL Setup][MySQLInstall1]
 
 9.  接受许可协议，然后单击**“下一步”**。
 
-    ![MySQL 设置][1]
+	![MySQL Setup][MySQLInstall2]
 
 10. 单击“典型”以安装常见功能。
 
-    ![MySQL 设置][2]
+	![MySQL Setup][MySQLInstall3]
 
 11. 单击**“安装”**。
 
-    ![MySQL 设置][3]
+	![MySQL Setup][MySQLInstall4]
 
 12. 启动 MySQL 配置向导并单击“下一步”。
 
-    ![配置 MySQL][配置 MySQL]
+	![Configure MySQL][MySQLConfig1]
 
 13. 选择“详细配置”，然后单击“下一步”。
 
-    ![配置 MySQL][4]
+	![Configure MySQL][MySQLConfig2]
 
 14. 如果你计划让 MySQL 与服务器上的其他应用程序一起运行，或选择最适合你需要的选项，请选择“服务器计算机”。单击“下一步”。
 
-    ![配置 MySQL][5]
+	![Configure MySQL][MySQLConfig3]
 
 15. 选择“多功能数据库”，或选择最适合你需要的选项。单击“下一步”。
 
-    ![配置 MySQL][6]
+	![Configure MySQL][MySQLConfig4]
 
 16. 选择在上述步骤中附加的数据驱动器。
 
-    ![配置 MySQL][7]
+	![Configure MySQL][MySQLConfig5]
 
 17. 选择“决策支持 (DSS)/OLAP”，或选择最适合你需要的选项。单击“下一步”。
 
-    ![配置 MySQL][8]
+	![Configure MySQL][MySQLConfig6]
 
 18. 选择“启用 TCP/IP 网络”和“为此端口添加防火墙例外”（这样将在 Windows 防火墙中创建名为“MySQL 服务器”的入站规则）。
 
-    ![配置 MySQL][9]
+	![Configure MySQL][MySQLConfig7]
 
 19. 如果你需要用多种不同语言存储文本，请选择“多语制的最佳支持”，或者选择最适合你需要的选项。单击“下一步”。
 
-    ![配置 MySQL][10]
+	![Configure MySQL][MySQLConfig8]
 
 20. 选择“安装为 Windows 服务”和“自动启动 MySQL 服务器”。另请选择“包括 Windows 路径中的 Bin 目录”。单击“下一步”。
 
-    ![配置 MySQL][11]
+	![Configure MySQL][MySQLConfig9]
 
 21. 输入根密码。不要选中“启用来自远程计算机的根访问”或“创建匿名帐户”。单击“下一步”。
 
-    ![配置 MySQL][12]
+	![Configure MySQL][MySQLConfig10]
 
 22. 单击**“执行”**并等待配置完成。
 
-    ![配置 MySQL][13]
+	![Configure MySQL][MySQLConfig11]
 
 23. 单击“完成”。
 
-    ![配置 MySQL][14]
+	![Configure MySQL][MySQLConfig12]
 
 24. 单击“开始”并选择“MySQL 5.x 命令行客户端”以启动该命令行客户端。
 
@@ -127,17 +127,17 @@
 
         quit
 
-30. 在安装 MySQL 后，你必须配置终结点才能远程访问 MySQL。登录到 [Azure 管理门户][Azure 管理门户]。在 Azure 门户中，依次单击“虚拟机”、你的新虚拟机的名称、“终结点”和“添加终结点”。
+30. 在安装 MySQL 后，你必须配置终结点才能远程访问 MySQL。登录到 [Azure 管理门户][AzurePortal]。在 Azure 门户中，依次单击“虚拟机”、你的新虚拟机的名称、“终结点”和“添加终结点”。
 
-    ![终结点][终结点]
+	![Endpoints][AddEndPoint]
 
 31. 选择“添加终结点”，然后单击箭头以继续。
 
-    ![终结点][15]
+	![Endpoints][AddEndPoint2]
 
 32. 添加一个名为“MySQL”的终结点，将其协议设置为“TCP”，并将“公用”和“专用”端口设置为“3306”。单击复选标记。这将允许对 MySQL 进行远程访问。
 
-    ![终结点][16]
+	![Endpoints][AddEndPoint3]
 
 33. 可以远程连接到在 Azure 中的虚拟机上运行的 MySQL。从运行 MySQL 的本地计算机上，运行以下命令以登录为你在上面步骤中创建的 **mysqluser** 用户：
 
@@ -149,30 +149,28 @@
 
 ## 摘要
 
-在本教程中，你学习了如何创建 Windows 2008 R2 虚拟机并远程连接到该虚拟机。你还了解了如何在虚拟机上安装和配置 MySQL 以及创建数据库和新的 MySQL 用户。有关 MySQL 的详细信息，请参阅 [MySQL 文档][MySQL 文档]。
+在本教程中，你学习了如何创建 Windows 2008 R2 虚拟机并远程连接到该虚拟机。你还了解了如何在虚拟机上安装和配置 MySQL 以及创建数据库和新的 MySQL 用户。有关 MySQL 的详细信息，请参阅 [MySQL 文档](http://dev.mysql.com/doc/)。
 
-  [MySQL]: http://www.mysql.com
-  [Azure 管理门户]: http://manage.windowsazure.cn
-  [create-and-configure-windows-server-2008-vm-in-portal]: ../includes/create-and-configure-windows-server-2008-vm-in-portal.md
-  [attach-data-disk-windows-server-2008-vm-in-portal]: ../includes/attach-data-disk-windows-server-2008-vm-in-portal.md
-  [下载 MySQL 社区服务器]: http://www.mysql.com/downloads/mysql/
-  [MySQL 设置]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall1.png
-  [1]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall2.png
-  [2]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall3.png
-  [3]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall4.png
-  [配置 MySQL]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig1.png
-  [4]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig2.png
-  [5]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig3.png
-  [6]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig4.png
-  [7]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig5.png
-  [8]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig6.png
-  [9]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig7.png
-  [10]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig8.png
-  [11]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig9.png
-  [12]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig10.png
-  [13]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig11.png
-  [14]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig12.png
-  [终结点]: ./media/virtual-machines-mysql-windows-server-2008r2/WinVMAddEndpointMySQL0.png
-  [15]: ./media/virtual-machines-mysql-windows-server-2008r2/WinVMAddEndpointMySQL1.png
-  [16]: ./media/virtual-machines-mysql-windows-server-2008r2/WinVMAddEndpointMySQL.png
-  [MySQL 文档]: http://dev.mysql.com/doc/
+[AzurePortal]: http://manage.windowsazure.cn
+[MySQLDownloads]: http://www.mysql.com/downloads/mysql/
+
+
+[MySQLInstall1]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall1.png
+[MySQLInstall2]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall2.png
+[MySQLInstall3]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall3.png
+[MySQLInstall4]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLInstall4.png
+[MySQLConfig1]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig1.png
+[MySQLConfig2]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig2.png
+[MySQLConfig3]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig3.png
+[MySQLConfig4]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig4.png
+[MySQLConfig5]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig5.png
+[MySQLConfig6]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig6.png
+[MySQLConfig7]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig7.png
+[MySQLConfig8]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig8.png
+[MySQLConfig9]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig9.png
+[MySQLConfig10]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig10.png
+[MySQLConfig11]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig11.png
+[MySQLConfig12]: ./media/virtual-machines-mysql-windows-server-2008r2/MySQLConfig12.png
+[AddEndPoint]: ./media/virtual-machines-mysql-windows-server-2008r2/WinVMAddEndpointMySQL0.png
+[AddEndPoint2]: ./media/virtual-machines-mysql-windows-server-2008r2/WinVMAddEndpointMySQL1.png
+[AddEndPoint3]: ./media/virtual-machines-mysql-windows-server-2008r2/WinVMAddEndpointMySQL.png

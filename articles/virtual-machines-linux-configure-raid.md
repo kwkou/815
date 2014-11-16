@@ -151,5 +151,5 @@
 
     请参阅你的分发的文档，了解如何正确编辑内核参数。例如，在许多分发（CentOS、Oracle Linux、SLES 11）中，可以手动将这些参数添加到“`/boot/grub/menu.lst`”文件。在 Ubuntu 上，此参数可添加到`GRUB_CMDLINE_LINUX_DEFAULT` 变量（在“/etc/default/grub”上）。
 
-  [附加磁盘]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/#attachempty
+  [附加磁盘]: http://windowsazure.cn/zh-cn/documentation/articles/storage-windows-attach-disk/#attachempty
   [Windows Azure 的虚拟机和云服务]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx

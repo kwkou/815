@@ -17,7 +17,7 @@
 
 本文档将演示如何使用 Linux 或 Windows 虚拟机 (VM) 在 Windows Azure 上部署 IPython Notebook。通过在 Azure 上使用 IPython Notebook，你可以轻松地为具有 Python 的所有功能及其许多库的可缩放计算资源提供可通过 Web 访问的接口。由于所有安装都是在云中进行的，因此用户可以访问这些资源，而无需进行除最新 Web 浏览器以外的任何其他本地配置。
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## 在 Azure 上创建并配置 VM
 
@@ -252,8 +252,8 @@ IPython Notebook 为交互访问 Azure 上的 Python 生态系统的功能提供
   [观看教程]: http://go.microsoft.com/fwlink/?LinkID=254535&clcid=0x409
   [屏幕快照]: ./media/virtual-machines-python-ipython-notebook/ipy-notebook-spectral.png
   [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
-  [此处]: /en-us/manage/linux/tutorials/virtual-machine-from-gallery/
-  [1]: /en-us/manage/windows/tutorials/virtual-machine-from-gallery/
+  [此处]: /zh-cn/manage/linux/tutorials/virtual-machine-from-gallery/
+  [1]: /zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/
   [2]: ./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-005.png
   [3]: ./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-006.png
   [NumPy]: http://www.numpy.org/ "NumPy"

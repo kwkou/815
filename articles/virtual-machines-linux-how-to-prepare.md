@@ -627,7 +627,7 @@ Azure Linux 代理需要安装 python-pyasn1 包。
   [输入存储帐户详细信息]: ./media/virtual-machines-linux-how-to-prepare/storage-create-account.png
   [已成功创建存储帐户]: ./media/virtual-machines-linux-how-to-prepare/Storagenewaccount.png
   [Azure Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
-  [合作伙伴认可的映像]: http://azure.microsoft.com/zh-cn/documentation/articles/linux-endorsed-distributions/
+  [合作伙伴认可的映像]: http://windowsazure.cn/zh-cn/documentation/articles/linux-endorsed-distributions/
   [此处]: http://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409
-  [Linux 代理指南]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
+  [Linux 代理指南]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
   [代理 GitHub 位置]: http://go.microsoft.com/fwlink/p/?LinkID=250998&clcid=0x409

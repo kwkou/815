@@ -2,7 +2,7 @@
 
 # Django Hello World Web 应用程序
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/develop/python/tutorials/web-app-with-django/" title="Windows" class="current">Windows</a><a href="/en-us/develop/python/tutorials/django-hello-world-(maclinux)/" title="MacLinux">Mac/Linux</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/python/tutorials/web-app-with-django/" title="Windows" class="current">Windows</a><a href="/zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/" title="MacLinux">Mac/Linux</a></div>
 
 本教程介绍如何在 Windows Azure 中使用 Windows Server 虚拟机托管基于 Django 的网站。本教程假定你之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
@@ -17,7 +17,7 @@
 
 ![显示 Azure 上的 hello world 页面的浏览器窗口][显示 Azure 上的 hello world 页面的浏览器窗口]
 
-[WACOM.INCLUDE [create-account-and-vms-note][create-account-and-vms-note]]
+[WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
 ## 创建并配置 Azure 虚拟机以托管 Django
 
@@ -30,7 +30,7 @@
     ![添加终结点][添加终结点]
 
  - 打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。
-    ![][]
+    ![][0]
 
 1.  使用 Windows *远程桌面* 远程登录到新创建的 Azure 虚拟机。
 
@@ -117,13 +117,13 @@
 
 在你完成本教程后，关闭并/或删除你新创建的 Azure 虚拟机以为其他教程释放资源并避免产生 Azure 使用费。
 
-  [Windows]: /en-us/develop/python/tutorials/web-app-with-django/ "Windows"
-  [Mac/Linux]: /en-us/develop/python/tutorials/django-hello-world-(maclinux)/ "MacLinux"
+  [Windows]: /zh-cn/develop/python/tutorials/web-app-with-django/ "Windows"
+  [Mac/Linux]: /zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/ "MacLinux"
   [显示 Azure 上的 hello world 页面的浏览器窗口]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-browser-azure.png
   [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
-  [此处]: /en-us/manage/windows/tutorials/virtual-machine-from-gallery/
+  [此处]: /zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/
   [添加终结点]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png
-  []: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-port80.png
+  [0]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-port80.png
   [安装指南]: ../python-how-to-install/
   [IIS config1]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis1.png
   [codeplex]: http://go.microsoft.com/fwlink/?LinkID=316392&clcid=0x409

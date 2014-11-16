@@ -591,10 +591,10 @@ readCustomer() 方法将访问 Azure 托管的群集，并显示执行 CQL 查�
   [复合部署图]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux1.png
   [虚拟机部署]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux2.png
   [有关创建群集的顺序图]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux4.png
-  [如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）]: http://azure.microsoft.com/zh-cn/documentation/articles/linux-use-ssh-key/
+  [如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/linux-use-ssh-key/
   [在 Azure 上为 Linux VM 部署生成 SSH 密钥对（可能为英文页面）]: http://blogs.msdn.com/b/hanuk/archive/2012/06/07/generating-ssh-key-pair-for-linux-vm-deployment-on-windows-azure.aspx
-  [创建运行 Linux 的虚拟机（可能为英文页面）]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-tutorial/
-  [如何捕获运行 Linux 的虚拟机的映像（可能为英文页面）]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-capture-image/
+  [创建运行 Linux 的虚拟机（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-tutorial/
+  [如何捕获运行 Linux 的虚拟机的映像（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-capture-image/
   []: http://wiki.apache.org/cassandra/MultinodeCluster
   [1]: http://wiki.apache.org/cassandra/GettingStarted
   [cassandra-client]: https://github.com/racker/node-cassandra-client

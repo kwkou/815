@@ -9,5 +9,5 @@
 有关在 Azure 虚拟机中使用 SQL Server 的最新、最全面的信息，请参阅库中的 [Azure 虚拟机中的 SQL Server][Azure 虚拟机中的 SQL Server]。
 
   [新位置]: http://msdn.microsoft.com/zh-cn/library/azure/dn133151.aspx
-  [在 Azure 上设置 SQL Server 虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-provision-sql-server/
+  [在 Azure 上设置 SQL Server 虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-provision-sql-server/
   [Azure 虚拟机中的 SQL Server]: http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx

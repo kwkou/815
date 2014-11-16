@@ -58,7 +58,7 @@
   [管理磁盘和映像]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
   [如何创建自定义虚拟机]: ../virtual-machines-create-custom/
   [如何将数据磁盘附加到虚拟机]: ../storage-windows-attach-disk/
-  [如何登录到运行 Windows Server 的虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/
+  [如何登录到运行 Windows Server 的虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/
   [如何使用 Sysprep：简介]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
   [运行 Sysprep]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png
   [管理门户]: http://manage.windowsazure.cn

@@ -365,8 +365,8 @@ Azure 虚拟机是作为云服务内的“角色”实现的。每个云服务�
   [后续步骤]: #next-steps
   [Azure 提供针对服务管理操作的 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn
-  [安装和配置 Azure 跨平台命令行界面]: http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/
+  [安装和配置 Azure 跨平台命令行界面]: http://windowsazure.cn/zh-cn/documentation/articles/xplat-cli/
   [Azure 的虚拟机和云服务大小]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx
-  [虚拟机]: http://azure.microsoft.com/zh-cn/documentation/services/virtual-machines/
+  [虚拟机]: http://windowsazure.cn/zh-cn/documentation/services/virtual-machines/
   [1]: http://msdn.microsoft.com/zh-cn/library/azure/jj156003.aspx
-  [在虚拟机上托管 Ruby on Rails 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/
+  [在虚拟机上托管 Ruby on Rails 应用程序]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/
