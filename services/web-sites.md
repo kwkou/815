@@ -10,7 +10,7 @@
 <h4>快速链接</h4>
 <p> </p>
 <ul class="wa-linkList">
-<!--li><a href="http://azure.microsoft.com/zh-cn/services/web-site/" title="" class="wa-arrowLink-light">服务概述</a></li-->
+<!--li><a href="http://www.windowsazure.cn/zh-cn/home/features/web-site/" title="" class="wa-arrowLink-light">服务概述</a></li-->
 <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-enterprise-offerings/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li-->
 <li><a href="http://www.windowsazure.cn/pricing/details/web-sites/" title="" class="wa-arrowLink-light">定价详细信息</a></li>
 </ul>
