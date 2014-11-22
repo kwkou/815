@@ -47,11 +47,119 @@
 		Add-AzureHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
 
 
-* zookeeper 角色的主机名已更改为 zookeeper。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 zookeepernode 主机名，则需更新这些组件，使其改用新名称。三个 zookeeper 节点的新名称为： 
-	* zookeeper0 
-	* zookeeper1 
-	* zookeeper2 
-* 已更新 HBase 版本支持矩阵。生产 HBase 工作负载仅支持版本 HDInsight 3.1（HBase 版本 0.98）。用于预览的版本 3.0 将不支持升级。在过渡期，客户仍可以创建 3.0 版本的群集。 
+* zookeeper 角色的主机名已更改为 zookeeper。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 zookeepernode 主机名，则需更新这些组件，使其改用新名称。三个 zookeeper 节点的新名称为：
+	* zookeeper0
+	* zookeeper1
+	* zookeeper2
+* 已更新 HBase 版本支持矩阵。生产 HBase 工作负载仅支持版本 HDInsight 3.1（HBase 版本 0.98）。用于预览的版本 3.0 将不支持升级。在过渡期，客户仍可以创建 3.0 版本的群集。
+
+* 日志目录和文件名仅支持 ASCII 字符
+
+  HBASE、OOZIE 和 Hive 的日志目录和文件名只能支持 ASCII 字符。
+
+	* 只能使用 ASCII 字符配置 HBase 日志目录。
+
+     C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\conf 下 hbase-site.xml 中的下列属性只能对 < Hbase Log folder > 支持 ASCII 字符。
+
+	>< property >
+	>
+	>< name >hbase.log.dir< /name >
+	>
+	>< value >C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\<Hbase Log folder>< /value >
+	>
+	>< /property > 
+	> 
+
+     hbase.cmd 中的  “set HBASE_LOG_DIR” 命令（该命令将重写日志文件夹）也仅支持 unicode 字符。
+
+	* Oozie 日志文件夹和文件名只能支持 ASCII 字符
+
+     在下列属性中，< Oozie Log folder > 和 < Oozie Log filename > 只能支持 ASCII 字符。
+> log4j.appender.oozie.File=${oozie.log.dir}/< Oozie Log folder >/< Oozie Log filenam >
+
+
+	* Hive 的日志文件夹和文件名只能支持ASCII 字符
+
+     在下列 conf\hive-log4j.properties 中，< Hive Log folder > 和 < Hive Log filename > 只能支持 ASCII 字符。
+>log4j.appender.DRFA.File=${hive.log.dir}/*< Hive Log folder >*/*< Hive Log filename >*${hive.log.file}
+
+	* Oozie 操作名称只能支持 ASCII 字符并匹配正则表达式模式 '(a-zA-Z_*) {1,39}'
+
+     例如，在 Map Reduce 工作流中，操作名称只能支持 ASCII 字符。
+
+     >< workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf" >
+
+     >< start to="< mr-actionname >"/ >
+
+     >< action name="< mr-actionname >">
+
+     如果操作名称中使用了 Unicode 字符，你将看到以下错误
+
+     Error: E0701 : E0701: XML schema error, cvc-pattern-valid: Value ‘< unicode action name >' is not facet-valid with respect to pattern ' ([a-zA-Z_\]([\\-_a-zA-Z0-9])*) {1,39} ' for type 'IDENTIFIER'.'.
+
+* 有关使用 Templeton 的建议
+
+  若要结合 Unicode 字符使用 Templeton，请使用百分比编码方案为 Unicode 字符编码 - <http://tools.ietf.org/html/rfc3986#page-12>。
+
+  在下面这些例外情况下，即使使用了百分比编码方案，Unicode 字符也可能不会起到原有的作用：
+
+	* Unicode 字符是 execute 参数的一部分
+
+     示例命令：
+
+	>curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
+
+	>-d user.name=\<hdinsightClusteruser>
+
+	>-d statusdir="/testfolder/HiveLikeOutput"
+
+	>-d execute="SELECT * FROM <table1> WHERE content LIKE '%步行%';"
+
+	>-s https://\<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
+
+	在 URL 编码之后：-d execute="SELECT * FROM table1 WHERE content LIKE '%%E6%AD%A5%E8%A1%8C%';" ‘%’ 符号导致出现问题。Templeton 引发错误 500 !hex:5c
+
+	**解决方法：**
+
+	将查询保存在脚本文件中并执行该脚本文件。该解决方法的命令将是：
+
+	    curl -i -u <hdinsightClusteruser>:<HDInsightClusterPassword>
+	    -d user.name=hdinsightuser
+	    -d statusdir="/testfolder/HiveLikeOutput"
+	    -d file=/testfolder/hivetest/HiveLike.hql
+	    -s https://<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
+
+	* 映射器和简化器可执行文件的名称包含 Unicode 字符。
+
+	示例命令：
+
+	>curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
+
+	>-d user.name=\<hdinsightClusteruser>
+
+	>-d input=/testfolder/MapReduce/wordcountStr/input
+
+	>-d output=/testfolder/MapReduce/wordcountOutputs/UniStrUniDataoutput
+
+	>-d mapper=cat%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87cat.exe 
+
+	>-d reducer=wc%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87wc.exe 
+
+	>-d files=/testfolder/MapReduce/wordcountStr/cat%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87cat.exe,
+	/testfolder/MapReduce/wordcountStr/wc%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87wc.exe
+
+	>-d statusdir=/testfolder/MapReduce/MRFullUniStrUniDatastatus 
+
+	>-s http://headnodehost:30111/templeton/v1/mapreduce/streaming/
+
+
+	这将失败，出现以下异常：
+
+	Caused by: java.io.IOException: Cannot run program "我的映射任务.exe": CreateProcess error=2, The system cannot find the file specified
+
+	**解决方法：**
+
+	仅在可执行文件名称中使用 ASCII 字符。
 
 ## 2014/8/15 ## 之前创建的群集的注意事项
 
@@ -61,13 +169,12 @@
 
 你可以期待，只要群集版本保持不变，SDK 和 PowerShell 就将可以继续与群集新更新配合使用。例如，群集版本 3.1 将始终与 SDK/PowerShell 当前版本 1.3.1.6 和 0.8.8 兼容。
 
+## 7/28/2014 版本发行说明
 
-## 2014/7/28 版本发行说明 ##
-
-* **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。 
-	* 亚洲东部 
-	* 美国中北部 
-	* 美国中南部。 
+* **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。
+	* 亚洲东部
+	* 美国中北部
+	* 美国中南部
 * 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改： 
 
@@ -90,9 +197,9 @@
 
 借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式网站，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，通过 PowerShell 和 Hive 群集仪表板等工具提供的体验，你随时都可以在 HDInsight 中完成这种分析。
 
-### Apache Mahout 现已预装在 HDInsight 3.1 ### 上
+### Apache Mahout 现已预装在 HDInsight 3.1 上
 
- [Mahout](http://hortonworks.com/hadoop/mahout/) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
+[Mahout](http://hortonworks.com/hadoop/mahout/) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
 
 		mahout org.apache.mahout.classifier.df.tools.Describe -p /user/hdp/glass.data -f /user/hdp/glass.info -d I 9 N L  
 
@@ -141,138 +248,224 @@ HDInsight 3.0 和 3.1 群集仅支持"wasb://"语法。较早的"asv://"语法�
 
  **HDInsight 3.0 and 3.1 (HDP 2.0 and 2.1)**
 <table border="1">
-<tr><th>Name</th><th>Value</th></tr>
-<tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr>
-<tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr>
-<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
-<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
-<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
-<tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr>
-<tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr>
-<tr><td>templeton.port</td><td>30111</td></tr>
-</table><br>
 
-### Dependencies 
+<tr>
+<th>
+名称
 
-The following dependencies were add in HDInsight 3.x (HDP2.x):
+</th>
+<th>
+值
 
-* guice-servlet
-* optiq-core
-* javax.inject
-* activation
-* jsr305
-* geronimo-jaspic_1.0_spec
-* jul-to-slf4j
-* java-xmlbuilder
-* ant
-* commons-compiler
-* jdo-api
-* commons-math3
-* paranamer
-* jaxb-impl
-* stringtemplate
-* eigenbase-xom
-* jersey-servlet
-* commons-exec
-* jaxb-api
-* jetty-all-server
-* janino
-* xercesImpl
-* optiq-avatica
-* jta
-* eigenbase-properties
-* groovy-all
-* hamcrest-core
-* mail
-* linq4j
-* jpam
-* jersey-client
-* aopalliance
-* geronimo-annotation_1.0_spec
-* ant-launcher
-* jersey-guice
-* xml-apis
-* stax-api
-* asm-commons
-* asm-tree
-* wadl
-* geronimo-jta_1.1_spec
-* guice
-* leveldbjni-all
-* velocity
-* jettison
-* snappy-java
-* jetty-all
-* commons-dbcp
+</th>
+</tr>
 
-The following dependencies no longer exist in HDInsight 3.x (HDP2.x):
+<tr>
+<td>
+dfs.namenode.http-address
 
-* jdeb
-* kfs
-* sqlline
-* ivy
-* aspectjrt
-* json
-* core
-* jdo2-api
-* avro-mapred
-* datanucleus-enhancer
-* jsp
-* commons-logging-api
-* commons-math
-* JavaEWAH
-* aspectjtools
-* javolution
-* hdfsproxy
-* hbase
-* snappy
+</td>
+<td>
+namenodehost:30070
 
-### Version changes 
+</td>
+</tr>
 
-The following version changes were made between HDInsight 2.x (HDP1.x) and HDInsight 3.x (HDP2.x):
+<tr>
+<td>
+dfs.namenode.https-address
 
-* metrics-core: ['2.1.2'] -> ['3.0.0']
-* derbynet: ['10.4.2.0'] -> ['10.10.1.1']
-* datanucleus: ['rdbms-3.0.8'] -> ['rdbms-3.2.9']
-* jasper-compiler: ['5.5.12'] -> ['5.5.23']
-* log4j: ['1.2.15', '1.2.16'] -> ['1.2.16', '1.2.17']
-* derbyclient: ['10.4.2.0'] -> ['10.10.1.1']
-* httpcore: ['4.2.4'] -> ['4.2.5']
-* hsqldb: ['1.8.0.10'] -> ['2.0.0']
-* jets3t: ['0.6.1'] -> ['0.9.0']
-* protobuf-java: ['2.4.1'] -> ['2.5.0']
-* derby: ['10.4.2.0'] -> ['10.10.1.1']
-* jasper: ['runtime-5.5.12'] -> ['runtime-5.5.23']
-* commons-daemon: ['1.0.1'] -> ['1.0.13']
-* datanucleus-core: ['3.0.9'] -> ['3.2.10']
-* datanucleus-api-jdo: ['3.0.7'] -> ['3.2.6']
-* zookeeper: ['3.4.5.1.3.9.0-01320'] -> ['3.4.5.2.1.3.0-1948']
-* bonecp: ['0.7.1.RELEASE'] -> ['0.8.0.RELEASE']
+</td>
+<td>
+headnodehost:30470
 
+</td>
+</tr>
 
-### Drivers
-The SQL Server JDBC Driver is used internally by HDInsight and is not used for external operations. If you wish to connect to HDInsight using ODBC, please use the Microsoft Hive ODBC driver. For more information on using Hive ODBC, [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][connect-excel-with-hive-ODBC].
+<tr>
+<td>
+dfs.datanode.address
 
+</td>
+<td>
+0.0.0.0:30010
 
-### Bug fixes ###
+</td>
+</tr>
 
-With this release, we have refreshed the following HDInsight  (Hortonworks Data Platform - HDP) versions with several bug fixes:
+<tr>
+<td>
+dfs.datanode.http.address
 
-* HDInsight 3.0 (HDP 2.0)
-* HDInsight 3.1 (HDP 2.1)
+</td>
+<td>
+0.0.0.0:30075
 
-## Hortonworks Release Notes ##
+</td>
+</tr>
 
-Release notes for the HDPs that are used by the versions of HDInsight cluster are available at the following locations.
+<tr>
+<td>
+dfs.datanode.ipc.address
 
-* HDInsight cluster version 3.1 uses an Hadoop distribution that is based on the [Hortonworks Data Platform 2.1][hdp-2-1-1].(This is the default Hadoop cluster created when using the Azure HDInsight portal.)
+</td>
+<td>
+0.0.0.0:30020
 
-* HDInsight cluster version 3.0 uses an Hadoop distribution that is based on the [Hortonworks Data Platform 2.0][hdp-2-0-8].
+</td>
+</tr>
 
+<tr>
+<td>
+dfs.namenode.secondary.http-address
 
+</td>
+<td>
+0.0.0.0:30090
 
+</td>
+</tr>
 
+<tr>
+<td>
+yarn.nodemanager.webapp.address
 
+</td>
+<td>
+0.0.0.0:30060
+
+</td>
+</tr>
+
+<tr>
+<td>
+templeton.port
+
+</td>
+<td>
+30111
+
+</td>
+</tr>
+
+</table>
+
+</p>
+### 依赖项
+
+在 HDInsight 3.x (HDP2.x) 中添加了以下依赖项：
+
+-   guice-servlet
+-   optiq-core
+-   javax.inject
+-   activation
+-   jsr305
+-   geronimo-jaspic\_1.0\_spec
+-   jul-to-slf4j
+-   java-xmlbuilder
+-   ant
+-   commons-compiler
+-   jdo-api
+-   commons-math3
+-   paranamer
+-   jaxb-impl
+-   stringtemplate
+-   eigenbase-xom
+-   jersey-servlet
+-   commons-exec
+-   jaxb-api
+-   jetty-all-server
+-   janino
+-   xercesImpl
+-   optiq-avatica
+-   jta
+-   eigenbase-properties
+-   groovy-all
+-   hamcrest-core
+-   mail
+-   linq4j
+-   jpam
+-   jersey-client
+-   aopalliance
+-   geronimo-annotation\_1.0\_spec
+-   ant-launcher
+-   jersey-guice
+-   xml-apis
+-   stax-api
+-   asm-commons
+-   asm-tree
+-   wadl
+-   geronimo-jta\_1.1\_spec
+-   guice
+-   leveldbjni-all
+-   velocity
+-   jettison
+-   snappy-java
+-   jetty-all
+-   commons-dbcp
+
+HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
+
+-   jdeb
+-   kfs
+-   sqlline
+-   ivy
+-   aspectjrt
+-   json
+-   core
+-   jdo2-api
+-   avro-mapred
+-   datanucleus-enhancer
+-   jsp
+-   commons-logging-api
+-   commons-math
+-   JavaEWAH
+-   aspectjtools
+-   javolution
+-   hdfsproxy
+-   hbase
+-   snappy
+
+### 版本更改
+
+在 HDInsight 2.x (HDP1.x) 与 HDInsight 3.x (HDP2.x) 之间发生了以下版本更改：
+
+-   metrics-core： ['2.1.2'] -\> ['3.0.0']
+-   derbynet： ['10.4.2.0'] -\> ['10.10.1.1']
+-   datanucleus：['rdbms-3.0.8'] -\> ['rdbms-3.2.9']
+-   jasper-compiler： ['5.5.12'] -\> ['5.5.23']
+-   log4j： ['1.2.15', '1.2.16'] -\> ['1.2.16', '1.2.17']
+-   derbyclient： ['10.4.2.0'] -\> ['10.10.1.1']
+-   httpcore： ['4.2.4'] -\> ['4.2.5']
+-   hsqldb： ['1.8.0.10'] -\> ['2.0.0']
+-   jets3t： ['0.6.1'] -\> ['0.9.0']
+-   protobuf-java： ['2.4.1'] -\> ['2.5.0']
+-   derby： ['10.4.2.0'] -\> ['10.10.1.1']
+-   jasper：['runtime-5.5.12'] -\> ['runtime-5.5.23']
+-   commons-daemon： ['1.0.1'] -\> ['1.0.13']
+-   datanucleus-core： ['3.0.9'] -\> ['3.2.10']
+-   datanucleus-api-jdo： ['3.0.7'] -\> ['3.2.6']
+-   zookeeper： ['3.4.5.1.3.9.0-01320'] -\> ['3.4.5.2.1.3.0-1948']
+-   bonecp：['0.7.1.RELEASE'] -\> ['0.8.0.RELEASE']
+
+### 驱动程序
+
+SQL Server JDBC 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用 ODBC 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关使用 Hive ODBC 的详细信息，请参阅 [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][connect-excel-with-hive-ODBC]。
+
+### Bug 修复
+
+随着此版本的发行，我们已完成了多项 Bug 修复，并刷新了以下 HDInsight（Hortonworks 数据平台 - HDP）版本：
+
+-   HDInsight 3.0 (HDP 2.0)
+-   HDInsight 3.1 (HDP 2.1)
+
+## Hortonworks 发行说明
+
+以下位置提供了 HDInsight 群集版本使用的 HDP 的发行说明。
+
+-   HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1][hdp-2-1-1] 的 Hadoop 分发版。（这是使用 Azure HDInsight 门户时创建的默认 Hadoop 群集。）
+
+-   HDInsight 群集版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8] 的 Hadoop 分发。
 
 [hdp-2-1-1]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.1/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.1.html
 
@@ -281,8 +474,3 @@ Release notes for the HDPs that are used by the versions of HDInsight cluster ar
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
-
-
-
-
-
