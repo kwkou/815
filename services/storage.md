@@ -325,9 +325,9 @@
 <p>就像桌面应用程序会安装一个典型的 SMB 共享一样，在 Azure 虚拟机或云服务中运行的应用程序可安装一个文件存储共享来访问文件数据。在本教程中了解使用文件存储的基础知识。</p>---> <!---<div class="horz-rule"></div>
 <h3 class="light-font">计划</h3>
 <h4><a href="/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/">使用表、队列和 Blob 创建 .NET 多层应用程序</a></h4>
-<p>创建使用表、队列和 Blob 的多层 ASP.NET MVC 4 Web 应用程序。将应用程序部署到 Azure 云服务。</p>
+<p>创建使用表、队列和 Blob 的多层 ASP.NET MVC 4 Web 应用程序。将应用程序部署到 Azure 云服务。</p>--->
 <h4><a href="/zh-cn/documentation/articles/azure-subscription-service-limits/">Azure 订阅和服务限制、配额和约束条件</a></h4>
-<p>了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。</p>--->
+<p>了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。</p>
 <div class="horz-rule"></div>
 <h3 class="light-font">开发</h3>
 <h4><a href="/zh-cn/documentation/articles/storage-use-store-apps/">如何在 Windows 应用商店应用程序中使用 Azure 存储</a></h4>
@@ -366,12 +366,10 @@
 <h4><a href="/zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/">使用表服务创建任务管理应用程序</a></h4>
 <p>创建允许创建、检索和完成任务的 Node.js 应用程序。使用表服务来存储和访问 Azure 上托管的应用程序中的数据。</p>
 
-<!--
 <div class="horz-rule"></div>
 <h3 class="light-font">计划</h3>
 <h4><a href="/zh-cn/documentation/articles/azure-subscription-service-limits/">Azure 订阅和服务限制、配额和约束条件</a></h4>
 <p>了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。</p>
--->
 
 <div class="horz-rule"></div>
 </div>
