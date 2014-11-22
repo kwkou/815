@@ -365,10 +365,14 @@
 <p>使用 Azure 队列服务创建队列、将消息插入队列中以及读取和处理消息。</p>
 <h4><a href="/zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/">使用表服务创建任务管理应用程序</a></h4>
 <p>创建允许创建、检索和完成任务的 Node.js 应用程序。使用表服务来存储和访问 Azure 上托管的应用程序中的数据。</p>
+
+<!--
 <div class="horz-rule"></div>
 <h3 class="light-font">计划</h3>
 <h4><a href="/zh-cn/documentation/articles/azure-subscription-service-limits/">Azure 订阅和服务限制、配额和约束条件</a></h4>
 <p>了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。</p>
+-->
+
 <div class="horz-rule"></div>
 </div>
 </div>
