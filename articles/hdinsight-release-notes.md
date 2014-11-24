@@ -1,4 +1,4 @@
-<properties title="HDInsight Release Notes" pageTitle="HDInsight 发行说明 | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
+<properties title="HDInsight Release Notes" pageTitle="HDInsight Release Notes | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -175,7 +175,7 @@
 	* 亚洲东部
 	* 美国中北部
 	* 美国中南部
-* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/)页。
+* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/en-us/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/en-us/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](http://azure.microsoft.com/en-us/documentation/articles/hdinsight-component-versioning/)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改： 
 
 <table border="1">
@@ -201,11 +201,11 @@
 
 [Mahout](http://hortonworks.com/hadoop/mahout/) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
 
-		mahout org.apache.mahout.classifier.df.tools.Describe -p /user/hdp/glass.data -f /user/hdp/glass.info -d I 9 N L  
+        mahout org.apache.mahout.classifier.df.tools.Describe -p /user/hdp/glass.data -f /user/hdp/glass.info -d I 9 N L  
 
-		mahout org.apache.mahout.classifier.df.BreimanExample -d /user/hdp/glass.data -ds /user/hdp/glass.info -i 10 -t 100
+        mahout org.apache.mahout.classifier.df.BreimanExample -d /user/hdp/glass.data -ds /user/hdp/glass.info -i 10 -t 100
 
-有关此过程的更完整说明，请参阅 Apache Mahout 网站上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。 
+有关此过程的更完整说明，请参阅 Apache Mahout 网站上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。
 
 
 ### Hive 查询可以在 HDinsight 3.1 ### 中使用 Tez
@@ -213,10 +213,10 @@
 Hive 0.13 现已在 HDInsight 3.1 中提供，并且能够使用 Tez 运行查询，这带来了极大的性能改善。 
 默认情况下，没有为 Hive 查询启用 Tez。若要使用 Tez，你必须选择启用它。可以通过运行以下代码段来启用 Tez：
 
-		set hive.execution.engine=tez;
-		select sc_status, count(*), histogram_numeric(sc_bytes,5) from website_logs_orc_local group by sc_status;
+        set hive.execution.engine=tez;
+        select sc_status, count(*), histogram_numeric(sc_bytes,5) from website_logs_orc_local group by sc_status;
 
-Hortonworks 发布了使用以标准基准版提供的 Tez 后，Hive 查询性能得到增强的每条明细。有关详细信息，请参阅[适用于 Enterprise Hadoop 的 Apache Hive 13 基准](http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop/)。 
+Hortonworks 发布了使用以标准基准版提供的 Tez 后，Hive 查询性能得到增强的每条明细。有关详细信息，请参阅[适用于 Enterprise Hadoop 的 Apache Hive 13 基准](http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop/)。
 
 有关将 Hive 与 Tez 结合使用的更多详细信息，请参阅 ["Tez 上的 Hive"Wiki 页](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)。
 

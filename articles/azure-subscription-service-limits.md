@@ -40,12 +40,12 @@
 <td align="left"><p>200</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>每个订阅的<a href="http://azure.microsoft.com/zh-cn/documentation/articles/storage-whatis-account/">存储帐户</a></p></td>
+<td align="left"><p>每个订阅的<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/storage-whatis-account/">存储帐户</a></p></td>
 <td align="left"><p>20</p></td>
 <td align="left"><p>50</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>每个订阅的<a href="http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-what-is/">云服务</a></p></td>
+<td align="left"><p>每个订阅的<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-what-is/">云服务</a></p></td>
 <td align="left"><p>20</p></td>
 <td align="left"><p>200</p></td>
 </tr>
@@ -93,7 +93,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-what-is/">每个部署的 web/辅助角色<sup>1</sup></a></p></td>
+<td align="left"><p><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-what-is/">每个部署的 web/辅助角色<sup>1</sup></a></p></td>
 <td align="left"><p>25</p></td>
 <td align="left"><p>25</p></td>
 </tr>
@@ -134,7 +134,7 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>每个云服务的<a href="http://azure.microsoft.com/zh-cn/documentation/services/virtual-machines/">虚拟机</a><sup>1</sup></p></td>
+<td align="left"><p>每个云服务的<a href="http://www.windowsazure.cn/zh-cn/documentation/services/virtual-machines/">虚拟机</a><sup>1</sup></p></td>
 <td align="left"><p>50</p></td>
 <td align="left"><p>50</p></td>
 </tr>
@@ -273,7 +273,7 @@
   [网络限制]: #networkinglimits
   [存储限制]: #storagelimits
   [SQL 数据库限制]: #sqldblimits
-  [客户支持]: http://azure.microsoft.com/zh-cn/support/faq/
+  [客户支持]: http://www.windowsazure.cn/support/faq/
   [虚拟网络网关]: http://msdn.microsoft.com/zh-cn/library/azure/jj156210.aspx
   [Azure 存储空间可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx
   [Azure SQL Database 服务层（版本）]: http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx
