@@ -1,16 +1,14 @@
 <div class="dev-center">
 <h1>HDInsight</h1>
-<!---
-<div class="hero">
+<!--div class="hero">
 <h1>使用 Apache Hadoop 的强大功能处理和分析大型数据并从中获取新的见解</h1>
 <div class="video" style="cursor: pointer; background-image: url('/media/itpro/services/videos/hdinsight-hero-270x180.png')!important;" onclick="document.location.href='http://go.microsoft.com/fwlink/p/?LinkId=286613'"><span class="icon">播放视频</span></div>
-</div>
---->
+</div-->
 <div class="dev-articles">
 <h2>版本说明</h2>
 <div class="article red"></div>
 <div class="article red">
-<h3><a href="/zh-cn/documentation/articles/hdinsight-release-notes/">版本说明 2014年8月21日</a></h3>
+<h3><a href="/zh-cn/documentation/articles/hdinsight-release-notes/">版本说明 2014年10月7日</a></h3>
 </div>
 <p> </p>
 </div>
