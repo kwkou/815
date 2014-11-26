@@ -10,7 +10,7 @@
 <h2>版本说明</h2>
 <div class="article red"></div>
 <div class="article red">
-<h3><a href="/zh-cn/documentation/articles/hdinsight-release-notes/">版本说明 2014年8月21日</a></h3>
+<h3><a href="/zh-cn/documentation/articles/hdinsight-release-notes/">版本说明 2014年10月7日</a></h3>
 </div>
 <p> </p>
 </div>
