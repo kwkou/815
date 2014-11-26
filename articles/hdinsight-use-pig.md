@@ -2,18 +2,18 @@
 
 # Pig 与 HDInsight 配合使用
 
-学习如何在 HDInsight 上运行 [Apache Pig][] 作业以分析 Apache log4j 日志文件。
+学习如何在 HDInsight 上运行 [Apache Pig][Apache Pig] 作业以分析 Apache log4j 日志文件。
 
 估计完成时间： 30 分钟
 
 ## 本文内容
 
--   [Pig 用例][]
--   [先决条件][]
--   [了解 Pig Latin][]
--   [使用 PowerShell 提交 Pig 作业][]
--   [使用 HDInsight .NET SDK 提交 Pig 作业][]
--   [后续步骤][]
+-   [Pig 用例][Pig 用例]
+-   [先决条件][先决条件]
+-   [了解 Pig Latin][了解 Pig Latin]
+-   [使用 PowerShell 提交 Pig 作业][使用 PowerShell 提交 Pig 作业]
+-   [使用 HDInsight .NET SDK 提交 Pig 作业][使用 HDInsight .NET SDK 提交 Pig 作业]
+-   [后续步骤][后续步骤]
 
 ##<a id="usage"></a>Pig 用例
 
@@ -33,32 +33,32 @@
 
 下面两幅图直观地显示了你在本文中要完成的任务。这些图显示了一个具有代表性的数据集示例，旨在阐释当你运行脚本中的所有 Pig 代码行时的数据流和数据转换。第一张图显示的是 log4j 文件示例：
 
-![整个文件示例][]
+![整个文件示例][整个文件示例]
 
 第二个图显示了数据转换：
 
-![HDI.PIG.Data.Transformation][]
+![HDI.PIG.Data.Transformation][HDI.PIG.Data.Transformation]
 
-有关 Pig Latin 的详细信息，请参阅 [Pig Latin 参考手册 1][] 和 [Pig Latin 参考手册 2][]。
+有关 Pig Latin 的详细信息，请参阅 [Pig Latin 参考手册 1][Pig Latin 参考手册 1] 和 [Pig Latin 参考手册 2][Pig Latin 参考手册 2]。
 
 ##<a id="prerequisites"></a>先决条件
 
 在开始阅读本文前，请注意以下要求：
 
--   一个 Azure HDInsight 群集。有关说明，请参阅 [Azure HDInsight 入门][]或[设置 HDInsight 群集][]。你将需要以下数据才能完成本教程：
+-   一个 Azure HDInsight 群集。有关说明，请参阅 [Azure HDInsight 入门][Azure HDInsight 入门]或[设置 HDInsight 群集][设置 HDInsight 群集]。你将需要以下数据才能完成本教程：
 
 	<table border = "1">
 	<tr><th>群集属性</th><th>PowerShell 变量名</th><th>值</th><th>说明</th></tr>
 	<tr><td>HDInsight 群集名称</td><td>$clusterName</td><td></td><td>要在其中运行本教程的 HDInsight 群集。</td></tr>
 	</table>
 
--   安装和配置 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell][]。
+-   安装和配置 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell][安装和配置 Azure PowerShell]。
 
 **了解 HDInsight 存储**
 
-HDInsight 将 Azure Blob 存储用于数据存储。它称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
+HDInsight 将 Azure Blob 存储用于数据存储。它称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][将 Azure Blob 存储与 HDInsight 配合使用]。
 
-设置 HDInsight 群集时，请将 Azure 存储帐户和该帐户上的特定 Blob 存储容器指定为默认文件系统，就像在 HDFS 中一样。除了此存储帐户外，在设置过程中，你还可以从同一 Azure 订阅或不同 Azure 订阅添加其他存储帐户。有关添加其他存储帐户的说明，请参阅[设置 HDInsight 群集][]。为了简化本教程中使用的 PowerShell 脚本，所有文件都存储在默认文件系统容器（位于 */tutorials/usepig*）中。默认情况下，此容器与 HDInsight 群集同名。
+设置 HDInsight 群集时，请将 Azure 存储帐户和该帐户上的特定 Blob 存储容器指定为默认文件系统，就像在 HDFS 中一样。除了此存储帐户外，在设置过程中，你还可以从同一 Azure 订阅或不同 Azure 订阅添加其他存储帐户。有关添加其他存储帐户的说明，请参阅[设置 HDInsight 群集][设置 HDInsight 群集]。为了简化本教程中使用的 PowerShell 脚本，所有文件都存储在默认文件系统容器（位于 */tutorials/usepig*）中。默认情况下，此容器与 HDInsight 群集同名。
 WASB 语法是：
 
     wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/<路径>/<文件名>
@@ -77,7 +77,7 @@ WASB 语法是：
 
     example/data/sample.log
 
-在本文中，你将使用一个 log4j 示例文件，它是 *\\example\\data\\sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][]。
+在本文中，你将使用一个 log4j 示例文件，它是 *\\example\\data\\sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][将数据上载到 HDInsight]。
 
 ##<a id="understand"></a>了解 Pig Latin
 
@@ -176,11 +176,11 @@ WASB 语法是：
 
 ##<a id="powershell"></a>使用 PowerShell 提交 Pig 作业
 
-本节提供有关使用 PowerShell cmdlet 的说明。在学习本节之前，必须先设置本地环境并配置到 Azure 的连接。有关详细信息，请参阅 [Azure HDInsight 入门][]和[使用 PowerShell 管理 HDInsight][]。
+本节提供有关使用 PowerShell cmdlet 的说明。在学习本节之前，必须先设置本地环境并配置到 Azure 的连接。有关详细信息，请参阅 [Azure HDInsight 入门][Azure HDInsight 入门]和[使用 PowerShell 管理 HDInsight][使用 PowerShell 管理 HDInsight]。
 
 **使用 PowerShell 运行 Pig Latin**
 
-1.  打开 Windows PowerShell ISE（在 Windows 8“开始”屏幕上，键入 **PowerShell\_ISE**，然后单击 **Windows PowerShell ISE**。请参阅[在 Windows 8 和 Windows 上启动 Windows PowerShell][]）。
+1.  打开 Windows PowerShell ISE（在 Windows 8“开始”屏幕上，键入 **PowerShell\_ISE**，然后单击 **Windows PowerShell ISE**。请参阅[在 Windows 8 和 Windows 上启动 Windows PowerShell][在 Windows 8 和 Windows 上启动 Windows PowerShell]）。
 2.  在底部窗格中，运行以下命令以连接到 Azure 订阅：
 
         Add-AzureAccount
@@ -236,13 +236,13 @@ WASB 语法是：
     > [WACOM.NOTE] Get-AzureHDInsightJobOut cmdlet 中有一个为缩短下面屏幕中的输出结果而加了批注。
 
 9.  按 **F5** 键以运行脚本：
-    ![HDI.Pig.PowerShell][]
+    ![HDI.Pig.PowerShell][HDI.Pig.PowerShell]
 
     Pig 作业计算不同日志类型的频率。
 
 ##<a id="sdk"></a>使用 HDInsight .NET SDK 提交 Pig 作业
 
-下面是使用 HDInsight .NET SDK 提交 Pig 作业的示例。有关创建 C\# 应用程序以提交 Hadoop 作业的说明，请参阅[以编程方式提交 Hadoop 作业][]。
+下面是使用 HDInsight .NET SDK 提交 Pig 作业的示例。有关创建 C\# 应用程序以提交 Hadoop 作业的说明，请参阅[以编程方式提交 Hadoop 作业][以编程方式提交 Hadoop 作业]。
 
     using System;
     using System.Collections.Generic;
@@ -339,10 +339,10 @@ WASB 语法是：
 
 虽然利用 Pig 可以执行数据分析，但你也可能会想试试随 HDInsight 提供的其他语言。Hive 提供了一种类似 SQL 的查询语言，你可使用该语言轻松对存储在 HDInsight 中的数据执行查询，而用 Java 编写的 MapReduce 作业允许你执行复杂数据分析。有关详细信息，请参阅以下内容：
 
--   [Azure HDInsight 入门][]
+-   [Azure HDInsight 入门][Azure HDInsight 入门]
 -   [将数据上传到 HDInsight][将数据上载到 HDInsight]
--   [以编程方式提交 Hadoop 作业][]
--   [Hive 与 HDInsight 配合使用][]
+-   [以编程方式提交 Hadoop 作业][以编程方式提交 Hadoop 作业]
+-   [Hive 与 HDInsight 配合使用][Hive 与 HDInsight 配合使用]
 
   [Apache Pig]: http://pig.apache.org/
   [Pig 用例]: #usage
