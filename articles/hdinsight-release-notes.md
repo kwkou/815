@@ -1,4 +1,4 @@
-<properties title="HDInsight Release Notes" pageTitle="HDInsight Release Notes | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
+<properties title="HDInsight Release Notes" pageTitle="HDInsight 发行说明 | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -30,13 +30,13 @@
 有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供一款工具，用于计算合适的内存设置。
 
 
-## HDinsight 3.1## 的 2014/9/12 版本发行说明
+## HDinsight 3.1 的 2014/9/12 版本发行说明
 
 * 本版本基于 Hortonworks 数据平台 (HDP) 2.1.5。有关本版本中修复的 Bug 列表，请参阅 Hortonworks 网站的[本版本中修复的 Bug](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.5/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.5-fixed.html) 页面。
 * 在 Pig 库文件夹中，文件"avro-mapred-1.7.4.jar"已改为 avro-mapred-1.7.4-hadoop2.jar。这些文件的内容包含一个小 Bug 的不间断修复。建议客户不要直接依赖 JAR 文件名称本身，以避免文件重命名时出现中断。
 
 
-## 2014/8/21 版本发行说明 ##
+## 2014/8/21 版本发行说明 
 
 * 我们正在添加以下新的 WebHCat 配置 (HIVE-7155)，该配置可将 Templeton 控制器作业的默认内存限制设置为 1GB（以前的默认值为 512MB）：
 	
@@ -47,121 +47,13 @@
 		Add-AzureHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
 
 
-* zookeeper 角色的主机名已更改为 zookeeper。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 zookeepernode 主机名，则需更新这些组件，使其改用新名称。三个 zookeeper 节点的新名称为：
-	* zookeeper0
-	* zookeeper1
-	* zookeeper2
-* 已更新 HBase 版本支持矩阵。生产 HBase 工作负载仅支持版本 HDInsight 3.1（HBase 版本 0.98）。用于预览的版本 3.0 将不支持升级。在过渡期，客户仍可以创建 3.0 版本的群集。
+* zookeeper 角色的主机名已更改为 zookeeper。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 zookeepernode 主机名，则需更新这些组件，使其改用新名称。三个 zookeeper 节点的新名称为： 
+	* zookeeper0 
+	* zookeeper1 
+	* zookeeper2 
+* 已更新 HBase 版本支持矩阵。生产 HBase 工作负载仅支持版本 HDInsight 3.1（HBase 版本 0.98）。用于预览的版本 3.0 将不支持升级。在过渡期，客户仍可以创建 3.0 版本的群集。 
 
-* 日志目录和文件名仅支持 ASCII 字符
-
-  HBASE、OOZIE 和 Hive 的日志目录和文件名只能支持 ASCII 字符。
-
-	* 只能使用 ASCII 字符配置 HBase 日志目录。
-
-     C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\conf 下 hbase-site.xml 中的下列属性只能对 < Hbase Log folder > 支持 ASCII 字符。
-
-	>< property >
-	>
-	>< name >hbase.log.dir< /name >
-	>
-	>< value >C:\apps\dist\hbase-0.96.0.2.0.9.0-1686-hadoop2\<Hbase Log folder>< /value >
-	>
-	>< /property > 
-	> 
-
-     hbase.cmd 中的  “set HBASE_LOG_DIR” 命令（该命令将重写日志文件夹）也仅支持 unicode 字符。
-
-	* Oozie 日志文件夹和文件名只能支持 ASCII 字符
-
-     在下列属性中，< Oozie Log folder > 和 < Oozie Log filename > 只能支持 ASCII 字符。
-> log4j.appender.oozie.File=${oozie.log.dir}/< Oozie Log folder >/< Oozie Log filenam >
-
-
-	* Hive 的日志文件夹和文件名只能支持ASCII 字符
-
-     在下列 conf\hive-log4j.properties 中，< Hive Log folder > 和 < Hive Log filename > 只能支持 ASCII 字符。
->log4j.appender.DRFA.File=${hive.log.dir}/*< Hive Log folder >*/*< Hive Log filename >*${hive.log.file}
-
-	* Oozie 操作名称只能支持 ASCII 字符并匹配正则表达式模式 '(a-zA-Z_*) {1,39}'
-
-     例如，在 Map Reduce 工作流中，操作名称只能支持 ASCII 字符。
-
-     >< workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf" >
-
-     >< start to="< mr-actionname >"/ >
-
-     >< action name="< mr-actionname >">
-
-     如果操作名称中使用了 Unicode 字符，你将看到以下错误
-
-     Error: E0701 : E0701: XML schema error, cvc-pattern-valid: Value ‘< unicode action name >' is not facet-valid with respect to pattern ' ([a-zA-Z_\]([\\-_a-zA-Z0-9])*) {1,39} ' for type 'IDENTIFIER'.'.
-
-* 有关使用 Templeton 的建议
-
-  若要结合 Unicode 字符使用 Templeton，请使用百分比编码方案为 Unicode 字符编码 - <http://tools.ietf.org/html/rfc3986#page-12>。
-
-  在下面这些例外情况下，即使使用了百分比编码方案，Unicode 字符也可能不会起到原有的作用：
-
-	* Unicode 字符是 execute 参数的一部分
-
-     示例命令：
-
-	>curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
-
-	>-d user.name=\<hdinsightClusteruser>
-
-	>-d statusdir="/testfolder/HiveLikeOutput"
-
-	>-d execute="SELECT * FROM <table1> WHERE content LIKE '%步行%';"
-
-	>-s https://\<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
-
-	在 URL 编码之后：-d execute="SELECT * FROM table1 WHERE content LIKE '%%E6%AD%A5%E8%A1%8C%';" ‘%’ 符号导致出现问题。Templeton 引发错误 500 !hex:5c
-
-	**解决方法：**
-
-	将查询保存在脚本文件中并执行该脚本文件。该解决方法的命令将是：
-
-	    curl -i -u <hdinsightClusteruser>:<HDInsightClusterPassword>
-	    -d user.name=hdinsightuser
-	    -d statusdir="/testfolder/HiveLikeOutput"
-	    -d file=/testfolder/hivetest/HiveLike.hql
-	    -s https://<HdinsightClusterName>.hdinsightservices.cn/templeton/v1/hive
-
-	* 映射器和简化器可执行文件的名称包含 Unicode 字符。
-
-	示例命令：
-
-	>curl -i -u \<hdinsightClusteruser>:\<HDInsightClusterPassword>
-
-	>-d user.name=\<hdinsightClusteruser>
-
-	>-d input=/testfolder/MapReduce/wordcountStr/input
-
-	>-d output=/testfolder/MapReduce/wordcountOutputs/UniStrUniDataoutput
-
-	>-d mapper=cat%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87cat.exe 
-
-	>-d reducer=wc%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87wc.exe 
-
-	>-d files=/testfolder/MapReduce/wordcountStr/cat%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87cat.exe,
-	/testfolder/MapReduce/wordcountStr/wc%E4%B6%B4%E3%84%A9%E9%BC%BE%E4%B8%84%E7%8B%9C%E3%80%87wc.exe
-
-	>-d statusdir=/testfolder/MapReduce/MRFullUniStrUniDatastatus 
-
-	>-s http://headnodehost:30111/templeton/v1/mapreduce/streaming/
-
-
-	这将失败，出现以下异常：
-
-	Caused by: java.io.IOException: Cannot run program "我的映射任务.exe": CreateProcess error=2, The system cannot find the file specified
-
-	**解决方法：**
-
-	仅在可执行文件名称中使用 ASCII 字符。
-
-## 2014/8/15 ## 之前创建的群集的注意事项
+## 2014/8/15 之前创建的群集的注意事项
 
 由于 SDK/PowerShell 和群集之间的版本不同，可能遇到 HDInsight PowerShell/SDK 错误，附带消息"群集 <clustername> 没有配置 HTTP 服务访问权限"（或者根据操作，遇到其他错误消息，如："无法连接群集"）。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。旧版本 SDK/PowerShell 无法正确解释此功能，导致提交作业操作失败。如果使用 SDK API 或 PowerShell cmdlet 提交作业（如 Use-AzureHDInsightCluster 或 Invoke-AzureHDInsightHiveJob），则那些操作可能失败，并附加一条上述错误消息。
 
@@ -169,13 +61,18 @@
 
 你可以期待，只要群集版本保持不变，SDK 和 PowerShell 就将可以继续与群集新更新配合使用。例如，群集版本 3.1 将始终与 SDK/PowerShell 当前版本 1.3.1.6 和 0.8.8 兼容。
 
-## 7/28/2014 版本发行说明
 
-* **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。
-	* 亚洲东部
-	* 美国中北部
-	* 美国中南部
-* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/en-us/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/en-us/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](http://azure.microsoft.com/en-us/documentation/articles/hdinsight-component-versioning/)页。
+## 2014/7/28 版本发行说明 
+
+* **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。 
+	* 亚洲东部 
+	* 美国中北部 
+	* 美国中南部。 
+
+<!--
+* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/)页。
+-->
+
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改： 
 
 <table border="1">
@@ -186,7 +83,7 @@
 
 </table><br>
 
-## 2014/6/24 版本发行说明 ##
+## 2014/6/24 版本发行说明 
 
 此版本为 HDInsight 服务提供了多项新的增强功能： 
 
@@ -197,26 +94,26 @@
 
 借助 HBase，你可以在 HDInsight 上生成各种实时工作负载 - 从用于处理大型数据集的交互式网站，到用于存储来自数百万个终结点的传感器数据与遥测数据的服务。你接下来要做的就是使用 Hadoop 作业分析这些工作负载中的数据，通过 PowerShell 和 Hive 群集仪表板等工具提供的体验，你随时都可以在 HDInsight 中完成这种分析。
 
-### Apache Mahout 现已预装在 HDInsight 3.1 上
+### Apache Mahout 现已预装在 HDInsight 3.1上
 
-[Mahout](http://hortonworks.com/hadoop/mahout/) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
+ [Mahout](http://hortonworks.com/hadoop/mahout/) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
 
-        mahout org.apache.mahout.classifier.df.tools.Describe -p /user/hdp/glass.data -f /user/hdp/glass.info -d I 9 N L  
+		mahout org.apache.mahout.classifier.df.tools.Describe -p /user/hdp/glass.data -f /user/hdp/glass.info -d I 9 N L  
 
-        mahout org.apache.mahout.classifier.df.BreimanExample -d /user/hdp/glass.data -ds /user/hdp/glass.info -i 10 -t 100
+		mahout org.apache.mahout.classifier.df.BreimanExample -d /user/hdp/glass.data -ds /user/hdp/glass.info -i 10 -t 100
 
-有关此过程的更完整说明，请参阅 Apache Mahout 网站上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。
+有关此过程的更完整说明，请参阅 Apache Mahout 网站上的 [Breiman 示例](https://mahout.apache.org/users/classification/breiman-example.html)文档。 
 
 
-### Hive 查询可以在 HDinsight 3.1 ### 中使用 Tez
+### Hive 查询可以在 HDinsight 3.1中使用 Tez
 
 Hive 0.13 现已在 HDInsight 3.1 中提供，并且能够使用 Tez 运行查询，这带来了极大的性能改善。 
 默认情况下，没有为 Hive 查询启用 Tez。若要使用 Tez，你必须选择启用它。可以通过运行以下代码段来启用 Tez：
 
-        set hive.execution.engine=tez;
-        select sc_status, count(*), histogram_numeric(sc_bytes,5) from website_logs_orc_local group by sc_status;
+		set hive.execution.engine=tez;
+		select sc_status, count(*), histogram_numeric(sc_bytes,5) from website_logs_orc_local group by sc_status;
 
-Hortonworks 发布了使用以标准基准版提供的 Tez 后，Hive 查询性能得到增强的每条明细。有关详细信息，请参阅[适用于 Enterprise Hadoop 的 Apache Hive 13 基准](http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop/)。
+Hortonworks 发布了使用以标准基准版提供的 Tez 后，Hive 查询性能得到增强的每条明细。有关详细信息，请参阅[适用于 Enterprise Hadoop 的 Apache Hive 13 基准](http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop/)。 
 
 有关将 Hive 与 Tez 结合使用的更多详细信息，请参阅 ["Tez 上的 Hive"Wiki 页](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)。
 
@@ -248,109 +145,17 @@ HDInsight 3.0 和 3.1 群集仅支持"wasb://"语法。较早的"asv://"语法�
 
  **HDInsight 3.0 and 3.1 (HDP 2.0 and 2.1)**
 <table border="1">
+<tr><th>Name</th><th>Value</th></tr>
+<tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr>
+<tr><td>dfs.namenode.https-address</td><td>headnodehost:30470</td></tr>
+<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
+<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
+<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
+<tr><td>dfs.namenode.secondary.http-address</td><td>0.0.0.0:30090</td></tr>
+<tr><td>yarn.nodemanager.webapp.address</td><td>0.0.0.0:30060</td></tr>
+<tr><td>templeton.port</td><td>30111</td></tr>
+</table><br>
 
-<tr>
-<th>
-名称
-
-</th>
-<th>
-值
-
-</th>
-</tr>
-
-<tr>
-<td>
-dfs.namenode.http-address
-
-</td>
-<td>
-namenodehost:30070
-
-</td>
-</tr>
-
-<tr>
-<td>
-dfs.namenode.https-address
-
-</td>
-<td>
-headnodehost:30470
-
-</td>
-</tr>
-
-<tr>
-<td>
-dfs.datanode.address
-
-</td>
-<td>
-0.0.0.0:30010
-
-</td>
-</tr>
-
-<tr>
-<td>
-dfs.datanode.http.address
-
-</td>
-<td>
-0.0.0.0:30075
-
-</td>
-</tr>
-
-<tr>
-<td>
-dfs.datanode.ipc.address
-
-</td>
-<td>
-0.0.0.0:30020
-
-</td>
-</tr>
-
-<tr>
-<td>
-dfs.namenode.secondary.http-address
-
-</td>
-<td>
-0.0.0.0:30090
-
-</td>
-</tr>
-
-<tr>
-<td>
-yarn.nodemanager.webapp.address
-
-</td>
-<td>
-0.0.0.0:30060
-
-</td>
-</tr>
-
-<tr>
-<td>
-templeton.port
-
-</td>
-<td>
-30111
-
-</td>
-</tr>
-
-</table>
-
-</p>
 ### 依赖项
 
 在 HDInsight 3.x (HDP2.x) 中添加了以下依赖项：
@@ -474,3 +279,7 @@ SQL Server JDBC 驱动程序由 HDInsight 在内部使用，不用于外部操�
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
+
+
+
+
