@@ -152,127 +152,121 @@ HDInsight 3.0 和 3.1 群集仅支持"wasb://"语法。较早的"asv://"语法�
 <tr><td>templeton.port</td><td>30111</td></tr>
 </table><br>
 
-### Dependencies 
+### 依赖项
 
-The following dependencies were add in HDInsight 3.x (HDP2.x):
+在 HDInsight 3.x (HDP2.x) 中添加了以下依赖项：
 
-* guice-servlet
-* optiq-core
-* javax.inject
-* activation
-* jsr305
-* geronimo-jaspic_1.0_spec
-* jul-to-slf4j
-* java-xmlbuilder
-* ant
-* commons-compiler
-* jdo-api
-* commons-math3
-* paranamer
-* jaxb-impl
-* stringtemplate
-* eigenbase-xom
-* jersey-servlet
-* commons-exec
-* jaxb-api
-* jetty-all-server
-* janino
-* xercesImpl
-* optiq-avatica
-* jta
-* eigenbase-properties
-* groovy-all
-* hamcrest-core
-* mail
-* linq4j
-* jpam
-* jersey-client
-* aopalliance
-* geronimo-annotation_1.0_spec
-* ant-launcher
-* jersey-guice
-* xml-apis
-* stax-api
-* asm-commons
-* asm-tree
-* wadl
-* geronimo-jta_1.1_spec
-* guice
-* leveldbjni-all
-* velocity
-* jettison
-* snappy-java
-* jetty-all
-* commons-dbcp
+-   guice-servlet
+-   optiq-core
+-   javax.inject
+-   activation
+-   jsr305
+-   geronimo-jaspic\_1.0\_spec
+-   jul-to-slf4j
+-   java-xmlbuilder
+-   ant
+-   commons-compiler
+-   jdo-api
+-   commons-math3
+-   paranamer
+-   jaxb-impl
+-   stringtemplate
+-   eigenbase-xom
+-   jersey-servlet
+-   commons-exec
+-   jaxb-api
+-   jetty-all-server
+-   janino
+-   xercesImpl
+-   optiq-avatica
+-   jta
+-   eigenbase-properties
+-   groovy-all
+-   hamcrest-core
+-   mail
+-   linq4j
+-   jpam
+-   jersey-client
+-   aopalliance
+-   geronimo-annotation\_1.0\_spec
+-   ant-launcher
+-   jersey-guice
+-   xml-apis
+-   stax-api
+-   asm-commons
+-   asm-tree
+-   wadl
+-   geronimo-jta\_1.1\_spec
+-   guice
+-   leveldbjni-all
+-   velocity
+-   jettison
+-   snappy-java
+-   jetty-all
+-   commons-dbcp
 
-The following dependencies no longer exist in HDInsight 3.x (HDP2.x):
+HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
-* jdeb
-* kfs
-* sqlline
-* ivy
-* aspectjrt
-* json
-* core
-* jdo2-api
-* avro-mapred
-* datanucleus-enhancer
-* jsp
-* commons-logging-api
-* commons-math
-* JavaEWAH
-* aspectjtools
-* javolution
-* hdfsproxy
-* hbase
-* snappy
+-   jdeb
+-   kfs
+-   sqlline
+-   ivy
+-   aspectjrt
+-   json
+-   core
+-   jdo2-api
+-   avro-mapred
+-   datanucleus-enhancer
+-   jsp
+-   commons-logging-api
+-   commons-math
+-   JavaEWAH
+-   aspectjtools
+-   javolution
+-   hdfsproxy
+-   hbase
+-   snappy
 
-### Version changes 
+### 版本更改
 
-The following version changes were made between HDInsight 2.x (HDP1.x) and HDInsight 3.x (HDP2.x):
+在 HDInsight 2.x (HDP1.x) 与 HDInsight 3.x (HDP2.x) 之间发生了以下版本更改：
 
-* metrics-core: ['2.1.2'] -> ['3.0.0']
-* derbynet: ['10.4.2.0'] -> ['10.10.1.1']
-* datanucleus: ['rdbms-3.0.8'] -> ['rdbms-3.2.9']
-* jasper-compiler: ['5.5.12'] -> ['5.5.23']
-* log4j: ['1.2.15', '1.2.16'] -> ['1.2.16', '1.2.17']
-* derbyclient: ['10.4.2.0'] -> ['10.10.1.1']
-* httpcore: ['4.2.4'] -> ['4.2.5']
-* hsqldb: ['1.8.0.10'] -> ['2.0.0']
-* jets3t: ['0.6.1'] -> ['0.9.0']
-* protobuf-java: ['2.4.1'] -> ['2.5.0']
-* derby: ['10.4.2.0'] -> ['10.10.1.1']
-* jasper: ['runtime-5.5.12'] -> ['runtime-5.5.23']
-* commons-daemon: ['1.0.1'] -> ['1.0.13']
-* datanucleus-core: ['3.0.9'] -> ['3.2.10']
-* datanucleus-api-jdo: ['3.0.7'] -> ['3.2.6']
-* zookeeper: ['3.4.5.1.3.9.0-01320'] -> ['3.4.5.2.1.3.0-1948']
-* bonecp: ['0.7.1.RELEASE'] -> ['0.8.0.RELEASE']
+-   metrics-core： ['2.1.2'] -\> ['3.0.0']
+-   derbynet： ['10.4.2.0'] -\> ['10.10.1.1']
+-   datanucleus：['rdbms-3.0.8'] -\> ['rdbms-3.2.9']
+-   jasper-compiler： ['5.5.12'] -\> ['5.5.23']
+-   log4j： ['1.2.15', '1.2.16'] -\> ['1.2.16', '1.2.17']
+-   derbyclient： ['10.4.2.0'] -\> ['10.10.1.1']
+-   httpcore： ['4.2.4'] -\> ['4.2.5']
+-   hsqldb： ['1.8.0.10'] -\> ['2.0.0']
+-   jets3t： ['0.6.1'] -\> ['0.9.0']
+-   protobuf-java： ['2.4.1'] -\> ['2.5.0']
+-   derby： ['10.4.2.0'] -\> ['10.10.1.1']
+-   jasper：['runtime-5.5.12'] -\> ['runtime-5.5.23']
+-   commons-daemon： ['1.0.1'] -\> ['1.0.13']
+-   datanucleus-core： ['3.0.9'] -\> ['3.2.10']
+-   datanucleus-api-jdo： ['3.0.7'] -\> ['3.2.6']
+-   zookeeper： ['3.4.5.1.3.9.0-01320'] -\> ['3.4.5.2.1.3.0-1948']
+-   bonecp：['0.7.1.RELEASE'] -\> ['0.8.0.RELEASE']
 
+### 驱动程序
 
-### Drivers
-The SQL Server JDBC Driver is used internally by HDInsight and is not used for external operations. If you wish to connect to HDInsight using ODBC, please use the Microsoft Hive ODBC driver. For more information on using Hive ODBC, [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][connect-excel-with-hive-ODBC].
+SQL Server JDBC 驱动程序由 HDInsight 在内部使用，不用于外部操作。如果你希望使用 ODBC 连接到 HDInsight，请使用 Microsoft Hive ODBC 驱动程序。有关使用 Hive ODBC 的详细信息，请参阅 [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][connect-excel-with-hive-ODBC]。
 
+### Bug 修复
 
-### Bug fixes ###
+随着此版本的发行，我们已完成了多项 Bug 修复，并刷新了以下 HDInsight（Hortonworks 数据平台 - HDP）版本：
 
-With this release, we have refreshed the following HDInsight  (Hortonworks Data Platform - HDP) versions with several bug fixes:
+-   HDInsight 3.0 (HDP 2.0)
+-   HDInsight 3.1 (HDP 2.1)
 
-* HDInsight 3.0 (HDP 2.0)
-* HDInsight 3.1 (HDP 2.1)
+## Hortonworks 发行说明
 
-## Hortonworks Release Notes ##
+以下位置提供了 HDInsight 群集版本使用的 HDP 的发行说明。
 
-Release notes for the HDPs that are used by the versions of HDInsight cluster are available at the following locations.
+-   HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1][hdp-2-1-1] 的 Hadoop 分发版。（这是使用 Azure HDInsight 门户时创建的默认 Hadoop 群集。）
 
-* HDInsight cluster version 3.1 uses an Hadoop distribution that is based on the [Hortonworks Data Platform 2.1][hdp-2-1-1].(This is the default Hadoop cluster created when using the Azure HDInsight portal.)
-
-* HDInsight cluster version 3.0 uses an Hadoop distribution that is based on the [Hortonworks Data Platform 2.0][hdp-2-0-8].
-
-
-
-
-
+-   HDInsight 群集版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8] 的 Hadoop 分发。
 
 [hdp-2-1-1]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.1/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.1.html
 
@@ -281,7 +275,6 @@ Release notes for the HDPs that are used by the versions of HDInsight cluster ar
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
 [hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
-
 
 
 
