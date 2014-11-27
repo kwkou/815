@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="开始在 HDInsight 中使用 Hadoop | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="nitinme" solutions="big-data" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="开始在 HDInsight 中使用 Hadoop | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="nitinme" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/14/2014" ms.author="nitinme" />
 
@@ -71,7 +71,7 @@ HDInsight 使用 Azure Blob 存储来存储数据。它称为 *WASB* 或 *Azure 
 
 3. 进入 **URL**、**位置**和**复制**，然后单击**创建存储帐户**。不支持地缘组。你将在存储列表中看到新的存储帐户。
 
-	>[WACOM.NOTE]  用于设置 HDInsight 群集的快速创建选项与我们在本教程中使用的一样，在设置群集时并不要求提供位置。相反，它默认将群集与存储帐户共同放在同一数据中心中。因此，确保在群集支持的位置中创建存储帐户，这些位置包括：**中国东部**、**中国北部**、**亚洲东部**、**亚洲东南部**、**欧洲北部**、**欧洲西部**、**美国东部**、**美国西部**、**美国中北部**和**美国中南部**。
+	>[WACOM.NOTE]  用于设置 HDInsight 群集的快速创建选项与我们在本教程中使用的一样，在设置群集时并不要求提供位置。相反，它默认将群集与存储帐户共同放在同一数据中心中。因此，确保在群集支持的位置中创建存储帐户，这些位置包括：**中国东部**、**中国北部**。
 
 4. 等待，直到新存储帐户的**状态**更改为**联机**。
 5. 从列表中选择新存储帐户，然后单击页面底部的**管理访问密钥**。

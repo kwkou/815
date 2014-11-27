@@ -63,19 +63,24 @@
 <p>如何使用网站创建对于内部业务使用十分安全的 Intranet 应用程序的技术概述。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
 <div data-show-less-more-member="true">
 <p>Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
+</li> 
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
 <div data-show-less-more-member="true">
 <p>查找有关常见 Azure 限制和默认设置的详细信息。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a>
+</li> 
+<!--
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a>
 <div data-show-less-more-member="true">
 <p>说明 Web 作业 SDK 是什么，查看一些常见场景，并展示你如何在代码中使用它。</p>
 </div>
-</li--></ul>
+</li>
+-->
+</ul>
 </div>
 </div>
 <div class="wa-content wa-content-4up wa-content-divided">
@@ -115,23 +120,30 @@
 <p>了解如何构建安全的 ASP.NET Web 表单应用程序，以便存储和访问 SQL 数据库中的数据<!--并使用户能够使用 Facebook、Yahoo 和 Google 凭据进行登录-->。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/" title="">使用成员资格、OAuth 和 SQL 数据库创建安全的 ASP.NET Web 表单应用</a>
+<!--
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/" title="">使用成员资格、OAuth 和 SQL 数据库创建安全的 ASP.NET Web 表单应用</a>
 <div data-show-less-more-member="true">
 <p>了解如何构建安全的 ASP.NET Web 表单应用程序，以便存储和访问 SQL 数据库中的数据, 并使用户能够使用 Facebook、Yahoo 和 Google 凭据进行登录。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/store-mongolab-web-sites-dotnet-store-data-mongodb/" title="">通过 MongoDB 在 Azure 上创建 C# ASP.NET 应用程序</a>
+</li>
+-->
+<!--
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/store-mongolab-web-sites-dotnet-store-data-mongodb/" title="">通过 MongoDB 在 Azure 上创建 C# ASP.NET 应用程序</a>
 <div data-show-less-more-member="true">
 <p>MongoDB 是面向常用文档的 NoSQL 解决方案。在本教程中，你将了解如何创建 C#“任务列表”型应用程序，以便在由 MongoLab 托管的 MongoDB 实例中存储数据。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/" title="">使用 ASP.NET Web API 和 SQL Database 创建具有良好移动性的 REST 服务</a>
+</li>
+-->
+<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/" title="">使用 ASP.NET Web API 和 SQL Database 创建具有良好移动性的 REST 服务</a>
 <div data-show-less-more-member="true">
 <p>ASP.NET Web API 是一个用于在 .NET Framework 之上构建 Web API 的框架。在本教程中，你将使用 Web API 创建提供存储在 SQL 数据库实例中的数据的 REST 服务。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/" title="">在 Azure 网站上开发 ASP.NET MVC 移动 Web 应用程序</a>
+</li-->
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/" title="">在 Azure 网站上开发 ASP.NET MVC 移动 Web 应用程序</a>
 <div data-show-less-more-member="true">
 <p>了解如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能的相关基础知识，然后将你的应用程序部署到 Azure 网站。</p>
 </div>
-</li-->
+</li>
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-session-state-caching/" title="">使用缓存服务存储 ASP.NET 会话状态</a>
 <div data-show-less-more-member="true">
 <p>了解如何使用 Azure 缓存服务在 Azure 上存储你的 ASP.NET 网站的会话状态。</p>
@@ -142,19 +154,26 @@
 <p>了解如何在 Azure 网站中使用 Azure 缓存服务来进行输出缓存。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sendgrid-dotnet-how-to-send-email/" title="">使用 SendGrid 发送电子邮件</a>
+<!--
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sendgrid-dotnet-how-to-send-email/" title="">使用 SendGrid 发送电子邮件</a>
 <div data-show-less-more-member="true">
 <p>SendGrid 提供了可靠的电子邮件传递服务、实时分析和灵活的 API，使用户能够轻松地将服务合并到他们的 Azure 应用程序中。了解如何在 Azure 上使用 SendGrid 以在你的应用中包含电子邮件功能。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application/" title="">在 Web 应用程序中使用 Azure CDN 提供的内容</a>
+</li>
+-->
+<!--
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application/" title="">在 Web 应用程序中使用 Azure CDN 提供的内容</a>
 <div data-show-less-more-member="true">
 <p>了解如何使用 Azure CDN 来扩大 Web 应用程序的影响力并改善其性能。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cdn-websites-with-cdn/" title="">将 Azure 网站与 Azure CDN 集成</a>
+</li>
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cdn-websites-with-cdn/" title="">将 Azure 网站与 Azure CDN 集成</a>
 <div data-show-less-more-member="true">
 <p>了解如何通过将网站与 Azure CDN 集成来提高其性能。</p>
 </div>
-</li--></ul>
+</li>
+-->
+</ul>
 </div>
 </div>
 <div class="wa-content wa-content-4up wa-content-divided">
@@ -209,15 +228,19 @@
 <p>了解如何使用 Git 直接从本地计算机发布到 Azure 网站。你还将了解如何启用从存储库网站（例如，BitBucket、CodePlex、DropBox、GitHub 或 Mercurial）进行的连续部署。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-deploy-webjobs/" title="">如何将 Azure Web 作业部署到 Azure 网站</a>
+<!--
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-deploy-webjobs/" title="">如何将 Azure Web 作业部署到 Azure 网站</a>
 <div data-show-less-more-member="true">
 <p>说明如何使用 Visual Studio 来将控制台应用程序项目作为 Azure Web 作业部署到 Azure 网站。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-migration-from-iis-server/" title="">使用 Migration Assistant 将你的 IIS 网站迁移到 Azure 网站</a>
+</li>
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-migration-from-iis-server/" title="">使用 Migration Assistant 将你的 IIS 网站迁移到 Azure 网站</a>
 <div data-show-less-more-member="true">
 <p>了解如何将在 IIS 6 或更高版本上运行的现有网站迁移到 Azure 网站。</p>
 </div>
-</li--></ul>
+</li>
+-->
+</ul>
 </div>
 </div>
 <div class="wa-content wa-content-4up wa-content-divided">

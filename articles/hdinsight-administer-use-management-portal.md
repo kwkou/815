@@ -30,13 +30,10 @@
 
 HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 Azure Blob 存储如何提供与 HDInsight 群集的无缝体验的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
-必须在设置 HDInsight 群集的同一数据中心内创建 Azure 存储帐户。当前可以在五个数据中心内设置 HDInsight 群集：
+必须在设置 HDInsight 群集的同一数据中心内创建 Azure 存储帐户。当前可以在两个数据中心内设置 HDInsight 群集：
 
--   亚洲东南部
--   欧洲北部
--   欧洲西部
--   美国东部
--   美国西部
+-   中国北部
+-   中国东部
 
 有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户][]。
 

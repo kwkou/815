@@ -285,10 +285,7 @@
 
 移动服务允许你使用以下标识提供者对用户进行身份验证：
 
--   Facebook
--   Google
 -   Microsoft 帐户
--   Twitter
 -   Azure Active Directory
 
 有关配置标识提供者的详细信息，请参阅[身份验证入门][]。
@@ -324,7 +321,7 @@
     [alert show];
     }]; 
 
-注意：如果使用的标识提供者不是适用于 Microsoft 帐户的提供者，请将传递给上述 login 方法的值更改为下列其中一项：`facebook`、`twitter`、`google` 或 `windowsazureactivedirectory`。
+注意：如果使用的标识提供者不是适用于 Microsoft 帐户的提供者，请将传递给上述 login 方法的值更改为下列项： `windowsazureactivedirectory`。
 
 你还可以使用以下代码自行获取并显示对 MSLoginController 的引用：
 
