@@ -11,7 +11,7 @@
 <p> </p>
 <ul class="wa-linkList">
 <li><a href="http://www.windowsazure.cn/zh-cn/home/features/web-site/" title="" class="wa-arrowLink-light">服务概述</a></li>
-<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-enterprise-offerings/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li-->
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-enterprise-offerings/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li>
 <li><a href="http://www.windowsazure.cn/pricing/details/web-sites/" title="" class="wa-arrowLink-light">定价详细信息</a></li>
 </ul>
 </div>
@@ -20,10 +20,10 @@
 <p> </p>
 <ul class="wa-iconList">
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/" title="">将一个 ASP.NET 应用部署到 Azure 网站</a></li>
-<!--li><a href="http://azure.microsoft.com/zh-cn/documentation/videos/intro-to-windows-azure-with-scott-hanselman/" title="">Scott Hanselman 对 Azure 网站的简介</a></li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a></li--></ul>
+<li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/videos/intro-to-windows-azure-with-scott-hanselman/" title="">Scott Hanselman 对 Azure 网站的简介</a></li> <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a></li></ul>
 </div>
 </div>
-<div class="wa-content wa-content-divided"><!--ul class="wa-tabs wa-tabsBlock" data-tab-panel="tab-panel" data-control="tabs">
+<div class="wa-content wa-content-divided"><ul style="display:none" class="wa-tabs wa-tabsBlock" data-tab-panel="tab-panel" data-control="tabs">
 <li><a title="" class="wa-tab active" data-id="1" data-slug="net">.NET</a></li>
 <li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="2" data-slug="java">Java</a></li>
 <li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="3" data-slug="node">Node.js</a></li>
@@ -31,7 +31,7 @@
 <li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="5" data-slug="python">Python</a></li>
 <li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-showLessMore wa-showMore active" data-control="showLessMore">More</a></li>
 <li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-showLessMore wa-showLess" data-control="showLessMore">Less</a></li>
-</ul-->
+</ul>
 <h2>教程和指南</h2>
 <p> </p>
 </div>
@@ -63,15 +63,17 @@
 <p>如何使用网站创建对于内部业务使用十分安全的 Intranet 应用程序的技术概述。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
-<div data-show-less-more-member="true">
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
+<div  style="display:none" data-show-less-more-member="true">
 <p>Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
-<div data-show-less-more-member="true">
-<p>查找有关常见 Azure 限制和默认设置的详细信息。</p>
+</li> 
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
+<div style="display:none" data-show-less-more-member="true">
+<p style="display:none">查找有关常见 Azure 限制和默认设置的详细信息。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a>
+</li> 
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a>
 <div data-show-less-more-member="true">
 <p>说明 Web 作业 SDK 是什么，查看一些常见场景，并展示你如何在代码中使用它。</p>
 </div>
@@ -90,11 +92,11 @@
 <p>了解如何只需几分钟即可从 Visual Studio 中创建 ASP.NET MVC 4 网站并进行部署。然后，了解通过 Azure 门户和 Visual Studio 提供的高级管理功能，通过这些功能可轻松监视你的应用程序、查看日志和缩放应用以使用保留资源。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-create-web-jobs/" title="">使用 Web 作业运行后台任务</a>
-<div data-show-less-more-member="true">
-<p>按照以下三种方式之一，在你的网站上使用 Web 作业运行自定义作业（可执行文件或脚本）：按需运行、连续运行或按计划运行。本文介绍了如何通过 Azure 门户管理 Web 作业。</p>
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-create-web-jobs/" title="">使用 Web 作业运行后台任务</a>
+<div  style="display:none"data-show-less-more-member="true">
+<p style="display:none">按照以下三种方式之一，在你的网站上使用 Web 作业运行自定义作业（可执行文件或脚本）：按需运行、连续运行或按计划运行。本文介绍了如何通过 Azure 门户管理 Web 作业。</p>
 </div>
-</li-->
+</li>
 <li><a href="http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs" title="">Azure Web 作业 SDK 入门</a>
 <div data-show-less-more-member="true">
 <p>Web 作业 SDK 是一种框架，可简化将后台处理添加到 Azure 网站的任务。本教程概述了 SDK 中的功能，并指导你完成创建和运行简单 Hello World 后台进程。</p>
@@ -112,7 +114,7 @@
 </li>
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="">使用成员资格、OAuth 和 SQL 数据库创建安全的 ASP.NET MVC 应用</a>
 <div data-show-less-more-member="true">
-<p>了解如何构建安全的 ASP.NET Web 表单应用程序，以便存储和访问 SQL 数据库中的数据<!--并使用户能够使用 Facebook、Yahoo 和 Google 凭据进行登录-->。</p>
+<p>了解如何构建安全的 ASP.NET Web 表单应用程序，以便存储和访问 SQL 数据库中的数据<span  style="display:none">并使用户能够使用 Facebook、Yahoo 和 Google 凭据进行登录</span>。</p>
 </div>
 </li>
 <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/" title="">使用成员资格、OAuth 和 SQL 数据库创建安全的 ASP.NET Web 表单应用</a>
@@ -133,7 +135,7 @@
 <div data-show-less-more-member="true">
 <p>了解如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能的相关基础知识，然后将你的应用程序部署到 Azure 网站。</p>
 </div>
-</li-->
+</li>
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-session-state-caching/" title="">使用缓存服务存储 ASP.NET 会话状态</a>
 <div data-show-less-more-member="true">
 <p>了解如何使用 Azure 缓存服务在 Azure 上存储你的 ASP.NET 网站的会话状态。</p>
@@ -153,7 +155,8 @@
 <div data-show-less-more-member="true">
 <p>了解如何使用 Azure CDN 来扩大 Web 应用程序的影响力并改善其性能。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cdn-websites-with-cdn/" title="">将 Azure 网站与 Azure CDN 集成</a>
+</li> 
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cdn-websites-with-cdn/" title="">将 Azure 网站与 Azure CDN 集成</a>
 <div data-show-less-more-member="true">
 <p>了解如何通过将网站与 Azure CDN 集成来提高其性能。</p>
 </div>
@@ -216,11 +219,13 @@
 <div data-show-less-more-member="true">
 <p>说明如何使用 Visual Studio 来将控制台应用程序项目作为 Azure Web 作业部署到 Azure 网站。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-migration-from-iis-server/" title="">使用 Migration Assistant 将你的 IIS 网站迁移到 Azure 网站</a>
+</li> 
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-migration-from-iis-server/" title="">使用 Migration Assistant 将你的 IIS 网站迁移到 Azure 网站</a>
 <div data-show-less-more-member="true">
 <p>了解如何将在 IIS 6 或更高版本上运行的现有网站迁移到 Azure 网站。</p>
 </div>
-</li></ul>
+</li>
+</ul>
 </div>
 </div>
 <div class="wa-content wa-content-4up wa-content-divided">
@@ -242,7 +247,8 @@
 <div data-show-less-more-member="true">
 <p>在 Azure 门户中使用一组页面或“选项卡”管理你的网站。介绍了每个网站管理页面。</p>
 </div>
-<ul class="wa-linkList"><!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-integrate-with-vnet/" title="">将 Azure 网站与 Azure 虚拟网络集成</a>
+<ul style="display:none" class="wa-linkList">
+<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-integrate-with-vnet/" title="">将 Azure 网站与 Azure 虚拟网络集成</a>
 <div data-show-less-more-member="true">
 <p>描述虚拟网络集成预览功能，并显示如何通过 Azure 网站设置该功能。</p>
 </div>
