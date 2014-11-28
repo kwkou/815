@@ -36,7 +36,11 @@
 <li class="li7"><span class="s5"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/virtual-machines-manage-availability/"><span class="s6">管理虚拟机的可用性</span></a></span><span class="s3"> 由于计划或非计划维护而重新启动 VM 时如何避免出现问题 - 这些有关可用性集的最佳实践可帮助您应对维护事件带来的影响。<br /> </span></li>
 <li class="li7"><span class="s5"><a href="http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx"><span class="s6">管理磁盘和映像</span></a></span><span class="s3"> 了解如何管理磁盘、虚拟硬盘 (VHD) 和 Azure 虚拟机中的映像。<br /> </span></li>
 <li class="li7"><span class="s5"><a href="http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx"><span class="s6">Windows PowerShell 中的 Azure cmdlet 入门</span></a></span><span class="s3"> 了解如何从命令行使用适用于 Windows PowerShell 的 Azure cmdlet 来管理基于 Windows 的虚拟机。<br /> </span></li>
+<<<<<<< HEAD
   <li style="display:none" class="li7"><span class="s5"><a href="http://azure.microsoft.com/zh-cn/documentation/scripts/"><span class="s6">针对 Azure 虚拟机运行脚本</span></a></span><span class="s3"> 使用 Azure 脚本中心的脚本来操作虚拟机。<br /> </span></li>
+=======
+<li style="display:none" class="li7"><span class="s5"><a href="http://azure.microsoft.com/zh-cn/documentation/scripts/"><span class="s6">针对 Azure 虚拟机运行脚本</span></a></span><span class="s3"> 使用 Azure 脚本中心的脚本来操作虚拟机。<br /> </span></li-->
+>>>>>>> origin/stage
 <li class="li7"><span class="s5"><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx"><span class="s6">Azure 虚拟机常见问题</span></a></span><span class="s3"> 这正是您所期待的内容：客户对 Azure VM 经常提出的问题列表！</span></li>
 </ul>
 <h2>面向开发人员</h2>
@@ -50,7 +54,11 @@
 <li class="li7"><span class="s5"><a href="http://msdn.microsoft.com/zh-cn/library/azure/ff683670.aspx"><span class="s6">在 Visual Studio 中调试云服务或虚拟机</span></a></span><span class="s3"> 了解如何使用针对虚拟机的远程调试功能和本机代码调试功能来远程诊断应用程序问题。<br /> </span></li>
 </ul>
 <h3>指南</h3>
+<<<<<<< HEAD
 <ul class="ul1"><li class="li7" style="display:none"><span class="s5"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/"><span class="s6">Azure 网站、云服务和虚拟机对比</span></a></span><span class="s3"> Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。<br /> </span></li>
+=======
+<ul class="ul1"><li style="display:none" class="li7"><span class="s5"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/"><span class="s6">Azure 网站、云服务和虚拟机对比</span></a></span><span class="s3"> Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。<br /> </span></li>
+>>>>>>> origin/stage
 <li class="li7"><span class="s5"><a href="http://justazure.com/automated-testing-in-microsoft-azure/"><span class="s6">使用 Azure 虚拟机进行自动测试</span></a></span><span class="s3"> Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行自动性能测试。<br /> </span></li>
 </ul>
 <h3>参考</h3>
