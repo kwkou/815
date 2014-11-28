@@ -9,8 +9,8 @@
 <ul class="wa-linkList"><!--
 <li><a href="http://azure.microsoft.com/zh-cn/services/backup/" title="" class="wa-arrowLink-light">服务概述</a></li>-->
 <li><a href="/zh-cn/solutions/storage-backup-recovery/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li>
-<!--
-<li><a href="http://azure.microsoft.com/zh-cn/pricing/details/backup/" title="" class="wa-arrowLink-light">备份定价详细信息：</a></li>--></ul>
+
+<li style="display:none"><a href="http://azure.microsoft.com/zh-cn/pricing/details/backup/" title="" class="wa-arrowLink-light">备份定价详细信息：</a></li></ul>
 </div>
 <div class="wa-spacer wa-spacer-asideLight wa-spacer-4down">
 <h4>特色</h4>
@@ -18,9 +18,9 @@
 <ul class="wa-iconList">
 <li><a href="/zh-cn/documentation/articles/backup-configure-vault/" title="">配置 Azure 备份以便快速轻松地备份 Windows Server</a></li>
 <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn168843.aspx" title="">使用备份保管库保护项目</a></li>
-<!--
-<li><a href="http://azure.microsoft.com/zh-cn/services/preview/" title="">启用备份服务</a></li>
---></ul>
+
+<li style="display:none"><a href="http://azure.microsoft.com/zh-cn/services/preview/" title="">启用备份服务</a></li>
+</ul>
 </div>
 </div>
 <div class="wa-content wa-content-divided">

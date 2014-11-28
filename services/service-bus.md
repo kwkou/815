@@ -1,12 +1,12 @@
 <div class="dev-center" style="margin-top: 25px;">
 <h1>Service Bus</h1>
-<!--<div class="hero">
+<div style="display:none" class="hero">
 <h1>提供针对基于云的服务和应用程序的安全和标识管理。</h1>
 <div style="cursor: pointer; background-image: url('/media/manage_generic.png')!important;" class="video" onclick="document.location.href='http://go.microsoft.com/fwlink/p/?LinkID=256437'"><span class="icon">播放视频</span></div>
 <div class="left-cont"><br />
 <h2>观看该视频以了解有关现在可使用的 Windows Azure Active Directory 功能的更多信息。</h2>
 <br /><br /><a href="https://manage.windowsazure.cn" class="site-arrowlink-dev">登录到管理门户<br /></a></div>
-</div>-->
+</div>
 <div class="dev-articles">
 <h2>操作说明</h2>
 <div class="article green">

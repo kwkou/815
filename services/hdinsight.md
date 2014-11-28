@@ -1,11 +1,11 @@
 <div class="dev-center">
 <h1>HDInsight</h1>
-<!---
-<div class="hero">
+
+<div style="display:none" class="hero">
 <h1>使用 Apache Hadoop 的强大功能处理和分析大型数据并从中获取新的见解</h1>
 <div class="video" style="cursor: pointer; background-image: url('/media/itpro/services/videos/hdinsight-hero-270x180.png')!important;" onclick="document.location.href='http://go.microsoft.com/fwlink/p/?LinkId=286613'"><span class="icon">播放视频</span></div>
 </div>
---->
+
 <div class="dev-articles">
 <h2>版本说明</h2>
 <div class="article red"></div>
@@ -20,12 +20,12 @@
 <h3><a href="/zh-cn/documentation/articles/hdinsight-component-versioning/">HDInsight 提供的 Hadoop 群集版本有哪些新增功能？</a></h3>
 <p class="p1">了解 HDInsight 中包含的 Hadoop 的组件和版本。 </p>
 </div>
-<!---
-<div class="article blue">
+
+<div style="display:none" class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-learn-map/">Learning map for HDInsight</a></h3>
 <p class="p1">This page provides a quick overview of the learning resources for Azure HDInsight. Use the diagram to guide you in the most effective learning path.</p>
 </div>
---->
+
 <div class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-get-started/">开始使用 HDInsight 中的 Hadoop</a></h3>
 <p class="p1">了解如何对大量非结构化数据集运行查询，并提取一些有用的信息。HDInsight 有 Hadoop 群集版本 2.2 和 2.4。 </p>
@@ -34,12 +34,12 @@
 <h3><a href="/zh-cn/documentation/articles/hdinsight-introduction/">HDInsight 中的 Hadoop 简介</a></h3>
 <p class="p1">大致了解 HDInsight 组件、常见术语和方案，并查看适用于 HDInsight、Apache Hadoop 和 Microsoft 商业智能的资源。</p>
 </div>
-<!---
-<div class="article blue">
+
+<div style="display:none" class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-hbase-overview/">HDInsight HBase 概述</a></h3>
 <p class="p1">了解 HBase，这是基于 Hadoop 构建的 NoSQL 数据库，并设计用于大量非结构化和半结构化数据。HDInsight 上的 HBase 群集配置为直接在 Azure Blob 存储中存储数据，在性能对成本方面可以降低延迟并增加弹性。</p>
 </div>
---->
+
 <div class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-hbase-get-started/">在 HDInsight 中将 HBase 与 Hadoop 配合使用入门</a></h3>
 <p class="p1">Apache HBase 是开源分布式大规模数据存储，可实现随机读写的低延迟。在本教程中，您将了解如何利用 HDInsight 创建和查询 HBase 表。 </p>
@@ -116,12 +116,12 @@
 <h3><a href="/zh-cn/manage/services/hdinsight/howto-hadoop-version/">指南：Windows Azure HDInsight 包含哪个版本的 Hadoop？</a></h3>
 <p>了解 HDInsight 中包含的 Hadoop 的组件和版本。</p>
 </div>
-<!---
-<div class="article blue">
+
+<div  style="display:none" class="article blue">
 <h3><a href="/zh-cn/manage/services/hdinsight/interactive-javascript-and-hive-consoles/">指南：HDInsight 交互式 JavaScript 和 Hive 控制台</a></h3>
 <p>HDInsight 附带了适用于 JavaScript 和 Hive 的交互式控制台，您可将其用作远程进入 Hadoop 群集的头节点的替代方法。了解如何使用控制台输入并计算表达式，然后立即查询并显示 MapReduce 作业的结果。</p>
 </div>
---->
+
 <div class="article blue">
 <h3><a href="/zh-cn/manage/services/hdinsight/howto-blob-store/">指南：Windows Azure Blob 存储和 HDInsight</a></h3>
 <p>了解 HDInsight 如何使用存储在 Windows Azure Blob 存储中的数据，以及何时在 HDFS 中存储数据和何时在 Windows Azure Blob 存储中存储数据。</p>
@@ -144,8 +144,8 @@
 <h3><a href="/zh-cn/documentation/articles/hdinsight-giraph/">使用 Hadoop 通过 Giraph 执行图形分析</a></h3>
 <p class="p1">了解如何通过 Apache Giraph 查找 HDInsight 上使用 Hadoop 的对象之间的最短路径。使用 Giraph，您可以深入了解各种关系，例如社交网络（也称为“社交图”）上好友之间的关系，或者 Internet 等大型网络上路由器之间的关系。 </p>
 </div>
-<!---
-<div class="article blue">
+
+<div style="display:none" class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-analyze-twitter-data/">使用 HDInsight 中的 Hadoop 分析 Twitter 数据</a></h3>
 <p class="p1">了解如何使用 Hive 分析 Twitter 数据以找到特定单词的使用频率。 </p>
 </div>
@@ -153,7 +153,7 @@
 <h3><a href="/zh-cn/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/">使用 HBase 分析实时 Twitter 观点</a></h3>
 <p class="p1">使用带地理位置标签的推文，了解如何在 HDInsight (Hadoop) 群集中使用 HBase 进行大数据实时观点分析。然后，在必应地图上绘制统计结果。 </p>
 </div>
---->
+
 <div class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-analyze-flight-delay-data/">使用 HDInsight 中的 Hadoop 分析航班延误数据</a></h3>
 <p class="p1">了解如何使用 Hive 计算各机场的航班平均延误时间，以及如何使用 Sqoop 将结果导入 SQL Database。 </p>
@@ -198,12 +198,12 @@
 <h3><a href="/zh-cn/documentation/articles/hdinsight-provision-clusters/">配置 HDInsight 中的 Hadoop 群集</a></h3>
 <p class="p1">了解如何使用 Azure 管理门户、PowerShell、命令行接口和 HDInsight .NET SDK 设置 HDInsight 群集。 </p>
 </div>
-<!---
-<div class="article blue">
+
+<div style="display:none" class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-hbase-provision-vnet/">配置 Azure Virtual Network 上的 HBase 群集</a></h3>
 <p class="p1">在 Azure Virtual Network 上的 HDInsight 中创建 HBase 群集。Virtual network 集成允许应用程序直接与 HBase 进行沟通，提高性能和安全性。 </p>
 </div>
---->
+
 <div class="article blue">
 <h3><a href="/zh-cn/documentation/articles/hdinsight-upload-data/">为 HDInsight 中的 Hadoop 作业上载数据</a></h3>
 <p class="p1">了解如何使用 Azure Storage Explorer、Azure PowerShell、Hadoop 命令行或 Sqoop 在 HDInsight 中上载和访问数据。 </p>

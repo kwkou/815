@@ -51,8 +51,8 @@
 </ul>
 </div>
 </div>
-<!---
-<div class="wa-content wa-content-divided wa-content-10up">
+
+<div class="wa-content wa-content-divided wa-content-10up" style="display:none">
 <div class="wa-spacer wa-spacer-2down">
 <h3>数据和同步</h3>
 <p> </p>
@@ -67,7 +67,7 @@
 </ul>
 </div>
 </div>
---->
+
 <div class="wa-content wa-content-divided wa-content-10up">
 <div class="wa-spacer wa-spacer-2down">
 <h3>用户</h3>
@@ -127,9 +127,9 @@
 <div class="wa-spacer wa-spacer-8down">
 <ul class="wa-linkList">
 <li data-dropdown-filter-set="filter-set-1" data-filter-value="windows-store-cs-javascript windows-store-js-javascript windows-phone-javascript ios-javascript android-javascript xamarin-ios-javascript xamarin-android-javascript html-javascript phonegap-javascript appcelerator-javascript windows-store-cs-net windows-store-js-net windows-phone-net ios-net android-net xamarin-ios-net xamarin-android-net sencha-javascript" data-control-hide="false"><a href="/zh-cn/documentation/articles/mobile-services-manage-command-line-interface/" title="">使用命令行工具自动实施移动服务</a></li>
-<!---
-<li data-dropdown-filter-set="filter-set-1" data-filter-value="windows-store-cs-javascript windows-store-js-javascript windows-phone-javascript ios-javascript android-javascript xamarin-ios-javascript xamarin-android-javascript html-javascript phonegap-javascript appcelerator-javascript windows-store-cs-net windows-store-js-net windows-phone-net ios-net android-net xamarin-ios-net xamarin-android-net sencha-javascript" data-control-hide="false"><a href="/zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services" title="">管理移动服务的命令</a></li>
----></ul>
+
+<li style="display:none" data-dropdown-filter-set="filter-set-1" data-filter-value="windows-store-cs-javascript windows-store-js-javascript windows-phone-javascript ios-javascript android-javascript xamarin-ios-javascript xamarin-android-javascript html-javascript phonegap-javascript appcelerator-javascript windows-store-cs-net windows-store-js-net windows-phone-net ios-net android-net xamarin-ios-net xamarin-android-net sencha-javascript" data-control-hide="false"><a href="/zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services" title="">管理移动服务的命令</a></li>
+</ul>
 </div>
 </div>
 <div class="wa-content wa-content-divided wa-content-10up">

@@ -13,14 +13,14 @@
 <h4>特色</h4>
 <ul class="wa-iconList">
 <li><a href="/zh-cn/documentation/articles/storage-introduction/"> Azure 存储简介</a></li>
-<!---<li><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/"> 通过文件存储创建 SMB 文件共享</a></li>--->
+  <li style="display:none"><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/"> 通过文件存储创建 SMB 文件共享</a></li>
 <li><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/"> 将文件存储在 Blob 存储中</a></li>
-<!---<li><a href="/zh-cn/documentation/articles/storage-monitoring-diagnosing-troubleshooting/"> 对存储进行监视、诊断和故障排除</a></li>---></ul>
+  <li style="display:none"><a href="/zh-cn/documentation/articles/storage-monitoring-diagnosing-troubleshooting/"> 对存储进行监视、诊断和故障排除</a></li></ul>
 </div>
 <div class="section s2 tutorials">
 <h2>教程和指南</h2>
-<!---
-<div class="selector-wrap">
+
+  <div style="display:none" class="selector-wrap">
 <div class="horizontal-option-selector tutorial-lang-selector">
 <ul class="wa-tabs wa-tabsBlock" data-tab-panel="tab-panel" data-control="tabs">
 <li><a class="wa-tab active" data-id="1" data-slug="net">.NET</a></li>
@@ -32,7 +32,7 @@
 </ul>
 <div class="paragraph-toggle"><span class="less selected">更少</span> <span class="more">更多</span></div>
 </div>
---->
+
 <p> </p>
 <h3 class="light-font">探究</h3>
 <div data-tab-panel-id="tab-panel" class="wa-tabs-container">
@@ -47,11 +47,12 @@
 <p>以编程方式使用 Azure 表服务创建表、建立分区、添加数据和查询数据。</p>
 <h4><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/">使用队列存储来可靠存储和访问消息</a></h4>
 <p>使用 Azure 队列服务创建队列、将消息插入队列中以及读取和处理消息。</p>
-<!---<h4><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/">通过文件存储在 Azure 中创建一个 SMB 文件</a></h4>
-<p>就像桌面应用程序会安装一个典型的 SMB 共享一样，在 Azure 虚拟机或云服务中运行的应用程序可安装一个文件存储共享来访问文件数据。在本教程中了解使用文件存储的基础知识。</p>---> <!---<div class="horz-rule"></div>
-<h3 class="light-font">计划</h3>
-<h4><a href="/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/">使用表、队列和 Blob 创建 .NET 多层应用程序</a></h4>
-<p>创建使用表、队列和 Blob 的多层 ASP.NET MVC 4 Web 应用程序。将应用程序部署到 Azure 云服务。</p>--->
+  <h4 style="display:none"><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/">通过文件存储在 Azure 中创建一个 SMB 文件</a></h4>
+<p>就像桌面应用程序会安装一个典型的 SMB 共享一样，在 Azure 虚拟机或云服务中运行的应用程序可安装一个文件存储共享来访问文件数据。在本教程中了解使用文件存储的基础知识。</p>
+  <div style="display:none" class="horz-rule"></div>
+  <h3 style="display:none" class="light-font">计划</h3>
+  <h4 style="display:none"><a href="/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/">使用表、队列和 Blob 创建 .NET 多层应用程序</a></h4>
+  <p style="display:none">创建使用表、队列和 Blob 的多层 ASP.NET MVC 4 Web 应用程序。将应用程序部署到 Azure 云服务。</p>
 <h4><a href="/zh-cn/documentation/articles/azure-subscription-service-limits/">Azure 订阅和服务限制、配额和约束条件</a></h4>
 <p>了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。</p>
 <div class="horz-rule"></div>
@@ -68,16 +69,16 @@
 <p>管理如何复制存储帐户，查看、复制和重新生成存储访问密钥以及删除存储帐户。</p>
 <h4><a href="/zh-cn/documentation/articles/storage-monitor-storage-account/">监视存储帐户</a></h4>
 <p>在管理门户中自定义对存储帐户的监视，并配置日志记录以进行深入的故障排除。</p>
-<!---<h4><a href="/zh-cn/documentation/articles/storage-monitoring-diagnosing-troubleshooting/">对 Azure 存储进行监视、诊断和故障排除</a></h4>
-<p>了解如何使用诸如存储分析、客户端日志记录之类的功能以及其他第三方工具来查明、诊断并解决您的解决方案中与 Azure 存储相关的问题。</p>
-<h4><a href="/zh-cn/documentation/articles/storage-use-azcopy/">AZCopy 实用程序入门</a></h4>
-<p>了解如何使用 AzCopy，AzCopy 是一个便捷的命令行实用程序，用于将操作上载、下载和复制到 Azure 存储中。</p>--->
+  <h4 style="display:none"><a href="/zh-cn/documentation/articles/storage-monitoring-diagnosing-troubleshooting/">对 Azure 存储进行监视、诊断和故障排除</a></h4>
+  <p style="display:none">了解如何使用诸如存储分析、客户端日志记录之类的功能以及其他第三方工具来查明、诊断并解决您的解决方案中与 Azure 存储相关的问题。</p>
+  <h4 style="display:none"><a href="/zh-cn/documentation/articles/storage-use-azcopy/">AZCopy 实用程序入门</a></h4>
+  <p style="display:none">了解如何使用 AzCopy，AzCopy 是一个便捷的命令行实用程序，用于将操作上载、下载和复制到 Azure 存储中。</p>
 <h4><a href="/zh-cn/documentation/articles/storage-custom-domain-name/">配置自定义域名</a></h4>
 <p>配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。</p>
-<!---
-<h4><a href="/zh-cn/documentation/articles/storage-import-export-service/">使用 Azure 导入/导出服务可将数据传输到 Blob 存储中</a></h4>
-<p>Azure 导入/导出服务可高效地将大量文件数据传输到 Azure Blob 存储中，以及从 Blob 存储传输到您的本地安装中。</p>
----></div>
+
+  <h4 style="display:none"><a href="/zh-cn/documentation/articles/storage-import-export-service/">使用 Azure 导入/导出服务可将数据传输到 Blob 存储中</a></h4>
+  <p style="display:none">Azure 导入/导出服务可高效地将大量文件数据传输到 Azure Blob 存储中，以及从 Blob 存储传输到您的本地安装中。</p>
+</div>
 <div class="article-group nodejs">
 <h4><a href="/zh-cn/documentation/articles/storage-introduction/">Azure 存储简介</a></h4>
 <p>详细了解 Azure 存储的优势。</p>
@@ -101,7 +102,7 @@
 </div>
 </div>
 </div>
-<!--div class="section s3 light-grey video-gallery">
+<div  style="display:none" class="section s3 light-grey video-gallery">
 <h2>视频</h2>
 <div class="video-wrapper"></div>
 <div class="video-blocks">
@@ -110,13 +111,13 @@
 <div class="vid-block vb3"><a href="http://channel9.msdn.com/Events/windowsazure/meet2012sf/Windows-Azure-Storage-Introduction/" class="fix-vid"> <span class="thumb"> <span class="triangle"> </span> <span class="play-btn"> </span> </span> <span class="desc">Introduction to Azure Storage</span> </a></div>
 <div class="vid-block vb4"><a href="http://channel9.msdn.com/Shows/Visual-Studio-Toolbox/New-Tools-for-Azure-Storage-and-Diagnostics/"> <span class="thumb"> <span class="triangle"> </span> <span class="play-btn"> </span> </span> <span class="desc">New tools for Azure Storage and diagnostics</span> </a></div>
 </div>
-<a href="/en-us/documentation/videos/index/?services=storage" class="wa-arrowLinkLarge-dark">View more 存储 videos</a></div-->
+<a href="/en-us/documentation/videos/index/?services=storage" class="wa-arrowLinkLarge-dark">View more 存储 videos</a></div>
 <div class="wa-content">
 <h2>寻找更多资源？</h2>
 <div class="wa-resourceBlockRow"><a href="http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=windowsazuredata" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a> <a href="http://msdn.microsoft.com/en-us/library/dd179355.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">参考</span>Azure 存储服务 REST API 参考</a> <a href="http://code.msdn.microsoft.com/windowsazure" class="wa-resourceBlock"><span class="wa-resourceBlock-header">示例</span>浏览可下载的示例应用程序</a> <a href="/zh-cn/downloads/?sdk=net" class="wa-resourceBlock"><span class="wa-resourceBlock-header">下载</span>下载用于配置 Azure 的脚本</a><a href="http://msdn.microsoft.com/zh-cn/library/gg433040.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">MSDN参考文档</span>从MSDN上获取有帮助的资源</a></div>
 </div>
-<!---
-<div class="wa-content">
+
+  <div style="display:none" class="wa-content">
 <div class="footer-map">
 <ul class="social">
 <li class="header">社会化</li>
@@ -282,4 +283,3 @@
 <div class="footer-copyright"><a href="http://www.microsoft.com" class="logo-microsoft">Microsoft</a> <span>© 2014 Microsoft</span></div>
 </div>
 </div>
---->

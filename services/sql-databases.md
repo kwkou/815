@@ -18,12 +18,12 @@
 <p> </p>
 <ul class="wa-iconList">
 <li><a href="http://www.windowsazure.cn/manage/services/sql-databases/getting-started-w-sql-databases/" title="">SQL Database 入门</a></li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-get-started/" title="">Elastic Scale 预览版入门</a></li-->
-<li><a href="http://msdn.microsoft.com/zh-cn/library/azure/fea26432-7462-48a0-b58d-a6e3e36da165" title="">了解服务层和版本</a></li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-auditing-get-started/" title="">SQL Database 审核入门</a></li--></ul>
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-elastic-scale-get-started/" title="">Elastic Scale 预览版入门</a></li>
+<li style="display:none"><a href="http://msdn.microsoft.com/zh-cn/library/azure/fea26432-7462-48a0-b58d-a6e3e36da165" title="">了解服务层和版本</a></li>
+<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-auditing-get-started/" title="">SQL Database 审核入门</a></li></ul>
 </div>
 </div>
-<div class="wa-content wa-content-divided"><!--<a href="http://azure.microsoft.com/zh-cn/documentation/services/sql-database/#" title="" class="wa-showLessMore wa-showMore active" data-control="showLessMore">More</a><a href="http://azure.microsoft.com/zh-cn/documentation/services/sql-database/#" title="" class="wa-showLessMore wa-showLess" data-control="showLessMore">Less</a>-->
+<div style="display:none" class="wa-content wa-content-divided"><a href="http://azure.microsoft.com/zh-cn/documentation/services/sql-database/#" title="" class="wa-showLessMore wa-showMore active" data-control="showLessMore">More</a><a href="http://azure.microsoft.com/zh-cn/documentation/services/sql-database/#" title="" class="wa-showLessMore wa-showLess" data-control="showLessMore">Less</a>>
 <h2>教程和指南</h2>
 <p> </p>
 </div>
@@ -33,21 +33,22 @@
 <p> </p>
 </div>
 <div class="wa-spacer wa-spacer-8down">
-<ul class="wa-linkList"><!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
+<ul class="wa-linkList">
+  <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
 <div data-show-less-more-member="true">
 <p>了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。</p>
 </div>
-</li-->
+</li>
 <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/hh778415.aspx" title="">教程和动手实验</a>
 <div data-show-less-more-member="true">
 <p>通过本系列的教程和动手实验来了解在云中使用 SQL Database 的基础知识。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/" title="">了解 Azure VM 中的 Azure SQL Database 和 SQL 服务器</a>
+    <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/" title="">了解 Azure VM 中的 Azure SQL Database 和 SQL 服务器</a>
 <div data-show-less-more-member="true">
 <p>Microsoft Azure 在承载基于 SQL 服务器的数据时，提供两个选项：Azure SQL 数据库和 Azure 虚拟机中的 SQL 服务器。找出每个选项怎样才能符合 Microsoft 数据平台上的整体情况，并获得帮助以确定哪种方法适合于您的业务需求。</p>
 </div>
-</li-->
+</li>
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-get-started-sql-data-sync/" title="">SQL 数据同步入门</a>
 <div data-show-less-more-member="true">
 <p>使用本教程，您将了解如何在 Azure 管理门户中使用 SQL 数据同步功能来同步数据库。</p>
@@ -113,15 +114,16 @@
 <p>在本教程中，您将使用管理门户创建逻辑服务器和配置防火墙。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-deploy/" title="">将数据库部署到 Azure</a>
+  <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-deploy/" title="">将数据库部署到 Azure</a>
 <div data-show-less-more-member="true">
 <p>本教程将帮助您使用 SQL Server Management Studio 2008 R2 或 2012 将本地 SQL Server 数据库移至 Azure。</p>
 </div>
-</li--> <!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-upgrade-new-service-tiers/" title="">将 SQL Database Web/业务数据库升级至新的服务层</a>
+</li>
+  <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-upgrade-new-service-tiers/" title="">将 SQL Database Web/业务数据库升级至新的服务层</a>
 <div data-show-less-more-member="true">
 <p>将 Azure SQL Database Web 或业务数据库升级到新的 Azure SQL Database 服务层/性能水平。</p>
 </div>
-</li--></ul>
+</li></ul>
 </div>
 </div>
 <div class="wa-content wa-content-divided wa-content-10up">
@@ -136,11 +138,11 @@
 <p>使用此文档示图作为进入 Azure SQL 数据库 Elastic Scale 预览版文章的指南。这些文章包括服务简介、迁移联合的指导、开发和管理教程等等。</p>
 </div>
 </li>
-<!--li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-auditing-get-started/" title="">SQL Database 审核入门</a>
+  <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-auditing-get-started/" title="">SQL Database 审核入门</a>
 <div data-show-less-more-member="true">
 <p>Azure SQL Database 审核跟踪数据库事件，并将事件写入您的 Azure 存储帐户中的审核日志内。使用审核有助于维护法规遵从性、理解数据库活动，以及了解差异和异常。</p>
 </div>
-</li-->
+</li>
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/sql-database-manage-azure-ssms/" title="">使用 SQL Server Management Studio 管理 SQL Database</a>
 <div data-show-less-more-member="true">
 <p>了解如何将登录名和用户添加到 SQL Database。</p>
