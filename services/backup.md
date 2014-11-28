@@ -6,8 +6,8 @@
 <p>使用备份服务保护数据和云。利用 Backup，您可以将备份移动到云中并实现其自动化。</p>
 <h4>快速链接</h4>
 <p> </p>
-<ul class="wa-linkList"><!--
-<li><a href="http://azure.microsoft.com/zh-cn/services/backup/" title="" class="wa-arrowLink-light">服务概述</a></li>-->
+<ul  style="display:none" class="wa-linkList">
+<li><a href="http://azure.microsoft.com/zh-cn/services/backup/" title="" class="wa-arrowLink-light">服务概述</a></li>
 <li><a href="/zh-cn/solutions/storage-backup-recovery/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li>
 
 <li style="display:none"><a href="http://azure.microsoft.com/zh-cn/pricing/details/backup/" title="" class="wa-arrowLink-light">备份定价详细信息：</a></li></ul>
@@ -64,5 +64,5 @@
 <div class="wa-content">
 <h2>寻找更多资源？</h2>
 <p> </p>
-<div class="wa-resourceBlockRow"><a href="http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=windowsazureonlinebackup" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn440572.aspx" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">库</span>有关备份的更多文档</a><a href="http://msdn.microsoft.com/zh-cn/library/azure/hh831765.aspx" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">脚本</span>浏览可下载的示例应用程序</a><!--<a href="http://azure.microsoft.com/zh-cn/services/preview/" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">启用预览功能</span>在您的帐户上启用这些服务</a>--></div>
+<div class="wa-resourceBlockRow"><a href="http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=windowsazureonlinebackup" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn440572.aspx" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">库</span>有关备份的更多文档</a><a href="http://msdn.microsoft.com/zh-cn/library/azure/hh831765.aspx" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">脚本</span>浏览可下载的示例应用程序</a><a style="display:none" href="http://azure.microsoft.com/zh-cn/services/preview/" title="" class="wa-resourceBlock"><span class="wa-resourceBlock-header">启用预览功能</span>在您的帐户上启用这些服务</a></div>
 </div>

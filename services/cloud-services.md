@@ -18,7 +18,7 @@
 </ul>
 </div>
 
-<div class="wa-content wa-content-divided"><!---<a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/#" title="" class="wa-showLessMore wa-showMore" data-control="showLessMore">More</a><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/#" title="" class="wa-showLessMore wa-showLess active" data-control="showLessMore">Less</a>--->
+<div class="wa-content wa-content-divided"><a style="display:none" href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/#" title="" class="wa-showLessMore wa-showMore" data-control="showLessMore">More</a><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/#" title="" class="wa-showLessMore wa-showLess active" data-control="showLessMore">Less</a>
 <h2>教程和指南</h2>
 </div>
 <div class="wa-content wa-content-4up wa-content-divided">
