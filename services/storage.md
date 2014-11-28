@@ -13,16 +13,16 @@
 <h4>特色</h4>
 <ul class="wa-iconList">
 <li><a href="/zh-cn/documentation/articles/storage-introduction/"> Azure 存储简介</a></li>
-<!---<li><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/"> 通过文件存储创建 SMB 文件共享</a></li>--->
+<li style="display:none"><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/"> 通过文件存储创建 SMB 文件共享</a></li>
 <li><a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/"> 将文件存储在 Blob 存储中</a></li>
-<!---<li><a href="/zh-cn/documentation/articles/storage-monitoring-diagnosing-troubleshooting/"> 对存储进行监视、诊断和故障排除</a></li>---></ul>
+<li style="display:none"><a href="/zh-cn/documentation/articles/storage-monitoring-diagnosing-troubleshooting/"> 对存储进行监视、诊断和故障排除</a></li></ul>
 </div>
 <div class="section s2 tutorials">
 <h2>教程和指南</h2>
 <!---
 <div class="selector-wrap">
 <div class="horizontal-option-selector tutorial-lang-selector">
-<ul class="wa-tabs wa-tabsBlock" data-tab-panel="tab-panel" data-control="tabs">
+<ul style="display:none" class="wa-tabs wa-tabsBlock" data-tab-panel="tab-panel" data-control="tabs">
 <li><a class="wa-tab active" data-id="1" data-slug="net">.NET</a></li>
 <li><a class="wa-tab" data-id="2" data-slug="node">Node.js</a></li>
 <li><a class="wa-tab" data-id="3" data-slug="java">Java</a></li>
@@ -30,9 +30,9 @@
 <li><a class="wa-tab" data-id="6" data-slug="ruby">Ruby</a></li>
 <li><a class="wa-tab" data-id="5" data-slug="python">Python</a></li>
 </ul>
+
 <div class="paragraph-toggle"><span class="less selected">更少</span> <span class="more">更多</span></div>
 </div>
---->
 <p> </p>
 <h3 class="light-font">探究</h3>
 <div data-tab-panel-id="tab-panel" class="wa-tabs-container">
