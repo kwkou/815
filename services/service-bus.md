@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Service-bus" urlDisplayName="Windows Azure Service Bus" pageTitle="Windows Azure 服务管理：Service Bus" metaKeywords="Service Bus" description="" metaCanonical="" services="Service Bus" documentationCenter="Services" title="Learn about flexible messaging in the cloud" authors="" solutions="" manager="" editor="" />
+
 <div class="dev-center" style="margin-top: 25px;">
 <h1>Service Bus</h1>
 <div style="display:none" class="hero">

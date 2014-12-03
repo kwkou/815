@@ -1,3 +1,5 @@
+<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="Windows Azure 服务管理：虚拟机" metaKeywords="Virtual Machine" description="" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="Provision, migrate, and manage your virtual machines" authors="" solutions="" manager="" editor="" />
+
 <h1>虚拟机</h1>
 <h2>设置、迁移和管理虚拟机</h2>
 <p class="p3"><span class="s1">使用虚拟机可在您需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获您自己的映像以便创建自定义虚拟机。</span></p>

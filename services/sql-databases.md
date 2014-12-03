@@ -1,3 +1,5 @@
+<properties linkid="dev-net-sql-database" urlDisplayName="Windows Azure SQL Database" pageTitle="Windows Azure 服务管理：SQL Database" metaKeywords="SQL Database" description="" metaCanonical="" services="SQL Database" documentationCenter="Services" title="Configure, monitor, and scale your SQL databases in Azure" authors="" solutions="" manager="" editor="" />
+
 <div class="wa-content wa-content-10up">
 <h1>SQL Database</h1>
 <p> </p>

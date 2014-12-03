@@ -131,7 +131,7 @@
 
     现在，虚拟机可以随时与 HBase 群集进行通信。要测试连接，请在虚拟机上运行 “ping headnode0”。
 
-## <a id="powershell"></a>使用 Azure PowerShell 设置 HBase 群集：\*\*
+## <a id="powershell"></a>使用 Azure PowerShell 设置 HBase 群集：
 
 1.  打开 PowerShell ISE。
 2.  将以下命令复制并粘贴到脚本窗格。
@@ -174,7 +174,6 @@
 -   [HDInsight 入门][]
 -   [在 HDInsight 中设置 Hadoop 群集][]
 -   [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用][]
--   [在 HDInsight 中使用 HBase 分析 Twitter 传感器数据][]
 -   [虚拟网络概述][]。
 
   [先决条件]: #prerequisites

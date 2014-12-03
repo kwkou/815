@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Cloud-Service" urlDisplayName="Windows Azure CDN" pageTitle="Windows Azure 服务管理：CDN" metaKeywords="CDN" description="" metaCanonical="" services="CDN" documentationCenter="Services" title="Move your content closer to your users" authors="" solutions="" manager="" editor="" />
+
 <div id="cdn-page" style="margin: 55px 0 30px 0;">
 <h1 id="使用-azure-cdn">使用 Azure CDN</h1>
 <p>Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容和动态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。</p>

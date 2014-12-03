@@ -1,3 +1,5 @@
+<properties linkid="dev-net-website" urlDisplayName="Windows Azure 网站" pageTitle="Windows Azure服务管理：网站" metaKeywords="Azure Website" description="" metaCanonical="" services="Website" documentationCenter="Services" title="Develop and deploy enterprise-grade web apps" authors="" solutions="" manager="" editor="Eric Chen" />
+
 <div style="margin-top: 40px;">
 <div class="dev-center">
 <div class="wa-content wa-content-10up">

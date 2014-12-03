@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Cloud-Service" urlDisplayName="Windows Azure Cloud Service" pageTitle="Windows Azure 服务管理：云服务" metaKeywords="Cloud Service" description="" metaCanonical="" services="Cloud Service" documentationCenter="Services" title="Configure, monitor, and scale your cloud services in Azure" authors="" solutions="" manager="" editor="" />
+
 <h1>云服务</h1>
 <div class="wa-spacer wa-spacer-6down">
 <h2>在 Azure 中配置、监视和缩放云服务</h2>

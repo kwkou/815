@@ -1,13 +1,13 @@
-<properties linkid="dev-net-backup" urlDisplayName="Backup" pageTitle="Windows Azure 备份" metaKeywords="Azure Backup" description="" metaCanonical="" services="Backup" documentationCenter="Services" title="Configure automated server backups" authors="" solutions="" manager="" editor="Eric Chen" />
+<properties linkid="dev-net-backup" urlDisplayName="Backup" pageTitle="Windows Azure服务管理：备份" metaKeywords="Azure Backup" description="" metaCanonical="" services="Backup" documentationCenter="Services" title="Configure automated server backups" authors="" solutions="" manager="" editor="" />
 
 <div class="wa-content wa-content-10up">
 <h1>备份</h1>
-<p> </p>
+<p></p>
 <div class="wa-spacer wa-spacer-6down">
 <h4>配置自动服务器备份</h4>
 <p>使用备份服务保护数据和云。利用 Backup，您可以将备份移动到云中并实现其自动化。</p>
 <h4>快速链接</h4>
-<p> </p>
+<p></p>
 <ul class="wa-linkList">
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/services/backup/" title="" class="wa-arrowLink-light">服务概述</a></li>
 <li><a href="/zh-cn/solutions/storage-backup-recovery/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li>

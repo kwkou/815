@@ -1,3 +1,5 @@
+<properties linkid="dev-net-HDInsight" urlDisplayName="Windows Azure HDInsight" pageTitle="Windows Azure 服务管理：HDInsight" metaKeywords="HDInsight" description="" metaCanonical="" services="HDInsight" documentationCenter="Services" title="Learn how to get insights from big data using Hadoop in the cloud" authors="" solutions="" manager="" editor="" />
+
 <div class="dev-center">
 <h1>HDInsight</h1>
 

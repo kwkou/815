@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Mobile-Service" urlDisplayName="Windows Azure Mobile Service" pageTitle="Windows Azure 服务管理：移动服务" metaKeywords="Mobile Service" description="" metaCanonical="" services="Mobile Service" documentationCenter="Services" title="Add a cloud backend to your app in minutes" authors="" solutions="" manager="" editor="" />
+
 <div class="wa-content wa-content-10up">
 <h1>移动服务<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase;" class="wa-previewTag">预览</sup></h1>
 <p> </p>

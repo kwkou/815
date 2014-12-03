@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Notification-Hubs" urlDisplayName="Windows Azure Notification Hubs" pageTitle="Windows Azure 服务管理：通知中心" metaKeywords="Notification Hubs" description="" metaCanonical="" services="Notification Hubs" documentationCenter="Services" title="Push notifications for consumer and enterprise apps—from any backend to any device platform" authors="" solutions="" manager="" editor="" />
+
 <div class="wa-content wa-content-10up">
 <h1>通知中心</h1>
 <p> </p>

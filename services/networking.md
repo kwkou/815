@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Networking" urlDisplayName="Windows Azure Networking" pageTitle="Windows Azure 服务管理：虚拟网络" metaKeywords="Networking" description="" metaCanonical="" services="Networking" documentationCenter="Services" title="Configure and monitor virtual networks in Azure" authors="" solutions="" manager="" editor="" />
+
 <div class="dev-center" style="margin-top: 25px;">
 <h1>联网</h1>
 <div style="display:none" class="hero">

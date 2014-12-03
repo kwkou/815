@@ -1,3 +1,5 @@
+<properties linkid="dev-net-storage" urlDisplayName="Windows Azure 存储" pageTitle="Windows Azure 服务管理：存储" metaKeywords="Azure Storage" description="" metaCanonical="" services="Storage" documentationCenter="Services" title="Configure, monitor, and scale your storage account in Azure" authors="" solutions="" manager="" editor="" />
+
 <h1>存储</h1>
 <div class="wa-spacer wa-spacer-6down">
 <h4>在 Windows Azure 中配置、监视和缩放存储帐户</h4>

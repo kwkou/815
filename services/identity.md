@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Active-Directory" urlDisplayName="Windows Azure Active Directory" pageTitle="Windows Azure 服务管理：Active Directory" metaKeywords="Active Directory" description="" metaCanonical="" services="Active Directory" documentationCenter="Services" title="Manage identity and access of services and applications" authors="" solutions="" manager="" editor="" />
+
 <div class="dev-center" style="margin-top: 25px;">
 <h1>Active Directory</h1>
 <div class="hero">
