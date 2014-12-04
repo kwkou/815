@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="HDInsight Administration" pageTitle="在 HDInsight 中设置 Hadoop 群集 | Azure" metaKeywords="hdinsight, 管理, hdinsight 管理 azure" description="Learn how to provision clusters for Azure HDInsight using the management portal, PowerShell, or the command line." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Provision Hadoop clusters in HDInsight" authors="jgao" />
+<properties urlDisplayName="HDInsight Administration" pageTitle="在 HDInsight 中设置 Hadoop 群集 | Azure" metaKeywords="hdinsight, 管理, hdinsight 管理 azure" description="Learn how to provision clusters for Azure HDInsight using the management portal, PowerShell, or the command line." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Provision Hadoop clusters in HDInsight" authors="jgao" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/25/2014" ms.author="jgao" />
 
@@ -61,11 +61,11 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 	利用站点到站点配置，你可以使用硬件 VPN 或路由和远程访问服务将多个资源从数据中心连接到 Azure 虚拟网络
 
-	![diagram of site-to-site configuration](.\media\hdinsight-provision-clusters\site-to-site.png)
+	![diagram of site-to-site configuration](./media/hdinsight-provision-clusters/site-to-site.png)
 
 	利用点到站点配置，你可以使用软件 VPN 将特定资源连接到 Azure 虚拟网络
 
-	![diagram of point-to-site configuration](.\media\hdinsight-provision-clusters\point-to-site.png)
+	![diagram of point-to-site configuration](./media/hdinsight-provision-clusters/point-to-site.png)
 
 有关虚拟网络特性、优势和功能的更多信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
 
@@ -600,32 +600,28 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 [hdinsight-hbase-custom-provision]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hbase-get-started/
 
-[hdinsight-get-started]: ../hdinsight-get-started/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
-[hadoop-hdinsight-intro]: ../hdinsight-hadoop-introduction/
-[hdinsight-submit-jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
+[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-admin-powershell]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+[hadoop-hdinsight-intro]: /zh-cn/documentation/articles/hdinsight-hadoop-introduction/
+[hdinsight-submit-jobs]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn479228.aspx
 
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /zh-cn/documentation/articles/storage-create-storage-account/ 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[azure-command-line-tools]: ../xplat-cli/
-[azure-command-line-tool]: ../command-line-tools/
-[azure-manage-storageaccount]: ../storage-manage-storage-account/
+[azure-command-line-tools]: /zh-cn/documentation/articles/xplat-cli/
+[azure-command-line-tool]: /zh-cn/documentation/articles/command-line-tools/
+[azure-manage-storageaccount]: /zh-cn/documentation/articles/storage-manage-storage-account/
 
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-
-<!--
-[azure-member-offers]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
--->
 
 [azure-free-trial]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial-full/
 [hdi-remote]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp
 
 
-[Powershell-install-configure]: ../install-configure-powershell/
+[Powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
 
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png
 [image-hdi-customcreatecluster-clusteruser]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.ClusterUser.png
