@@ -716,35 +716,35 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 
 
-[hdinsight-versions]:  ../hdinsight-component-versioning/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-[hdinsight-get-started]: ../hdinsight-get-started/
-[hdinsight-admin-portal]: ../hdinsight-administer-use-management-portal/
+[hdinsight-versions]:  /zh-cn/documentation/articles/hdinsight-component-versioning/
+[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
+[hdinsight-admin-portal]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/
 
 
-[hdinsight-sqoop]: ../hdinsight-use-sqoop/
-[hdinsight-provision]: ../hdinsight-provision-clusters/
+[hdinsight-sqoop]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
+[hdinsight-provision]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
 
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
+[hdinsight-admin-powershell]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
 
-[hdinsight-upload-data]: ../hdinsight-upload-data/
+[hdinsight-upload-data]: /zh-cn/documentation/articles/hdinsight-upload-data/
 
-[hdinsight-mapreduce]: ../hdinsight-use-mapreduce/
-[hdinsight-hive]: ../hdinsight-use-hive/
+[hdinsight-mapreduce]: /zh-cn/documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
 
-[hdinsight-pig]: ../hdinsight-use-pig/
+[hdinsight-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
 
-[hdinsight-emulator]: ../hdinsight-get-started-emulator/
+[hdinsight-emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
 
-[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-oozie]: ../hdinsight-use-oozie/
+[hdinsight-develop-streaming]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-oozie]: /zh-cn/documentation/articles/hdinsight-use-oozie/
 
-[sqldatabase-create-configue]: ../sql-database-create-configure/
-[sqldatabase-get-started]: ../sql-database-get-started/
+[sqldatabase-create-configue]: /zh-cn/documentation/articles/sql-database-create-configure/
+[sqldatabase-get-started]: /zh-cn/documentation/articles/sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/ 
@@ -755,7 +755,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 [powershell-download]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
-[powershell-install-configure]: ../install-configure-powershell/
+[powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
