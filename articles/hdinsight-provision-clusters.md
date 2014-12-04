@@ -598,7 +598,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 * [Azure HDInsight SDK 文档][hdinsight-sdk-documentation]
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
-[hdinsight-hbase-custom-provision]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hbase-get-started/
+[hdinsight-hbase-custom-provision]: /zh-cn/documentation/articles/hdinsight-hbase-get-started/
 
 [hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
 [hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
@@ -618,7 +618,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 
 [azure-free-trial]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial-full/
-[hdi-remote]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp
+[hdi-remote]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp
 
 
 [Powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
