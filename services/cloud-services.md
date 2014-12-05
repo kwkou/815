@@ -15,7 +15,7 @@
 <p>特色</p>
 <ul class="wa-iconList">
 <li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-dotnet-get-started/" title=""> Azure 云服务和 ASP.NET 入门 </a></li>
-<li><a href="http://www.youtube.com/watch?v=_mMHuUQz9Y0" title=""> 创建和管理云服务 </a></li>
+<li style="display:none"><a href="http://www.youtube.com/watch?v=_mMHuUQz9Y0" title=""> 创建和管理云服务 </a></li>
 <li><a href="http://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Walkthrough-of-the-Management-Portal-for-Windows-Azure-Cloud-Services/" title=""> 云服务管理门户 </a></li>
 </ul>
 </div>
