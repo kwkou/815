@@ -116,7 +116,17 @@
 <a href="/en-us/documentation/videos/index/?services=storage" class="wa-arrowLinkLarge-dark">View more 存储 videos</a></div>
 <div class="wa-content">
 <h2>寻找更多资源？</h2>
-<div class="wa-resourceBlockRow"><a href="https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a> <a href="http://msdn.microsoft.com/en-us/library/dd179355.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">参考</span>Azure 存储服务 REST API 参考</a> <a href="http://code.msdn.microsoft.com/windowsazure" class="wa-resourceBlock"><span class="wa-resourceBlock-header">示例</span>浏览可下载的示例应用程序</a> <a href="/zh-cn/downloads/?sdk=net" class="wa-resourceBlock"><span class="wa-resourceBlock-header">下载</span>下载用于配置 Azure 的脚本</a><a href="http://msdn.microsoft.com/zh-cn/library/gg433040.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">MSDN参考文档</span>从MSDN上获取有帮助的资源</a></div>
+<div class="wa-resourceBlockRow">
+<ul>
+   <li><a href="https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/dd179355.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">参考</span>Azure 存储服务 REST API 参考</a></li>
+<li><a href="http://code.msdn.microsoft.com/windowsazure" class="wa-resourceBlock"><span class="wa-resourceBlock-header">示例</span>浏览可下载的示例应用程序</a></li>
+<li><a href="/zh-cn/downloads/?sdk=net" class="wa-resourceBlock"><span class="wa-resourceBlock-header">下载</span>下载用于配置 Azure 的脚本</a></li>
+<li> <a href="http://msdn.microsoft.com/zh-cn/library/gg433040.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">MSDN参考文档</span>从MSDN上获取有帮助的资源</a></li>
+
+</ul>
+  
+</div>
 </div>
 
   <div style="display:none" class="wa-content">
@@ -129,21 +139,21 @@
 <ul>
 <li class="header"><a href="/zh-cn/">Microsoft Azure</a></li>
 <li><a href="/zh-cn/solutions/">功能</a></li>
-<li><a href="/zh-cn/services/">服务</a></li>
-<li><a href="/zh-cn/regions/">区域</a></li>
-<li><a href="/zh-cn/case-studies/">案例研究</a></li>
+<li><a href="/zh-cn/home/features/what-is-windows-azure/">服务</a></li>
+<li style="display:none"><a href="/zh-cn/regions/">区域</a></li>
+<li><a href="/partnerancasestudy/case-studies//">案例研究</a></li>
 <li><a href="/zh-cn/pricing/overview/">价格</a></li>
 <li><a href="/zh-cn/pricing/calculator/">计算器</a></li>
 <li><a href="/zh-cn/documentation/">文档</a></li>
 <li><a href="/zh-cn/downloads/?sdk=net">下载</a></li>
-<li><a href="/zh-cn/gallery/">库</a></li>
+  <li style="display:none"><a href="/zh-cn/gallery/">库</a></li>
 <li><a href="http://windowsazure.cn/zh-cn/">Microsoft Azure (中国)</a></li>
 </ul>
 <ul>
 <li class="header"><a href="http://go.microsoft.com/fwlink/?LinkId=394285">社区</a></li>
-<li><a href="/blog/">博客</a></li>
-<li><a href="/zh-cn/updates/">服务更新</a></li>
-<li><a href="/zh-cn/support/forums/">论坛</a></li>
+  <li style="display:none"><a href="/blog/">博客</a></li>
+<li><a href="/what-is-new/">服务更新</a></li>
+<li><a href="https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs">论坛</a></li>
 <li><a href="/zh-cn/community/events/">活动</a><br /><br /></li>
 <li class="header"><a href="/zh-cn/support/options/">支持</a></li>
 <li><a href="/zh-cn/support/forums/">论坛</a></li>
@@ -154,7 +164,7 @@
 <li class="header"><a href="https://account.windowsazure.cn">帐户</a></li>
 <li><a href="https://account.windowsazure.cn/subscriptions/">订阅</a></li>
 <li><a href="https://account.windowsazure.cn/profile/">配置文件</a></li>
-<li><a href="/zh-cn/services/preview/">预览功能</a></li>
+  <li style="display:none"><a href="/zh-cn/services/preview/">预览功能</a></li>
 <li><a href="https://manage.windowsazure.cn/">管理门户</a></li>
 <li class="header trust-center"><a href="/zh-cn/support/trust-center/">信任中心</a></li>
 <li><a href="/zh-cn/support/trust-center/security/">安全性</a></li>
