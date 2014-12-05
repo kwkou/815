@@ -116,17 +116,15 @@
 <a href="/en-us/documentation/videos/index/?services=storage" class="wa-arrowLinkLarge-dark">View more 存储 videos</a></div>
 <div class="wa-content">
 <h2>寻找更多资源？</h2>
-<div class="wa-resourceBlockRow"><a href="http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=windowsazuredata" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a> <a href="http://msdn.microsoft.com/en-us/library/dd179355.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">参考</span>Azure 存储服务 REST API 参考</a> <a href="http://code.msdn.microsoft.com/windowsazure" class="wa-resourceBlock"><span class="wa-resourceBlock-header">示例</span>浏览可下载的示例应用程序</a> <a href="/zh-cn/downloads/?sdk=net" class="wa-resourceBlock"><span class="wa-resourceBlock-header">下载</span>下载用于配置 Azure 的脚本</a><a href="http://msdn.microsoft.com/zh-cn/library/gg433040.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">MSDN参考文档</span>从MSDN上获取有帮助的资源</a></div>
+<div class="wa-resourceBlockRow"><a href="https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs" class="wa-resourceBlock"><span class="wa-resourceBlock-header">论坛</span>询问问题、分享见解和讨论平台</a> <a href="http://msdn.microsoft.com/en-us/library/dd179355.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">参考</span>Azure 存储服务 REST API 参考</a> <a href="http://code.msdn.microsoft.com/windowsazure" class="wa-resourceBlock"><span class="wa-resourceBlock-header">示例</span>浏览可下载的示例应用程序</a> <a href="/zh-cn/downloads/?sdk=net" class="wa-resourceBlock"><span class="wa-resourceBlock-header">下载</span>下载用于配置 Azure 的脚本</a><a href="http://msdn.microsoft.com/zh-cn/library/gg433040.aspx" class="wa-resourceBlock"><span class="wa-resourceBlock-header">MSDN参考文档</span>从MSDN上获取有帮助的资源</a></div>
 </div>
 
   <div style="display:none" class="wa-content">
 <div class="footer-map">
 <ul class="social">
 <li class="header">社会化</li>
-<li class="facebook"><a href="http://go.microsoft.com/fwlink/?LinkId=306390">Facebook</a></li>
-<li class="twitter"><a href="http://go.microsoft.com/fwlink/?LinkID=306391">Twitter</a></li>
-<li class="rss"><a href="http://azure.microsoft.com/blog/feed/">Rss</a></li>
-<li class="newsletter"><a href="http://go.microsoft.com/fwlink/?LinkId=306393">新闻稿</a></li>
+<li style="display:none" class="rss"><a href="http://azure.microsoft.com/blog/feed/">Rss</a></li>
+<li class="newsletter"><a href="/what-is-new/">新闻稿</a></li>
 </ul>
 <ul>
 <li class="header"><a href="/zh-cn/">Microsoft Azure</a></li>
@@ -149,139 +147,19 @@
 <li><a href="/zh-cn/community/events/">活动</a><br /><br /></li>
 <li class="header"><a href="/zh-cn/support/options/">支持</a></li>
 <li><a href="/zh-cn/support/forums/">论坛</a></li>
-<li><a href="http://status.azure.com">服务仪表板</a></li>
+<li style="display:none"><a href="http://status.azure.com">服务仪表板</a></li>
 <li><a href="/zh-cn/support/options/">支持</a></li>
 </ul>
 <ul>
-<li class="header"><a href="https://account.windowsazure.com">帐户</a></li>
-<li><a href="https://account.windowsazure.com/subscriptions/">订阅</a></li>
-<li><a href="https://account.windowsazure.com/profile/">配置文件</a></li>
+<li class="header"><a href="https://account.windowsazure.cn">帐户</a></li>
+<li><a href="https://account.windowsazure.cn/subscriptions/">订阅</a></li>
+<li><a href="https://account.windowsazure.cn/profile/">配置文件</a></li>
 <li><a href="/zh-cn/services/preview/">预览功能</a></li>
-<li><a href="https://manage.windowsazure.com/">管理门户</a></li>
+<li><a href="https://manage.windowsazure.cn/">管理门户</a></li>
 <li class="header trust-center"><a href="/zh-cn/support/trust-center/">信任中心</a></li>
 <li><a href="/zh-cn/support/trust-center/security/">安全性</a></li>
 <li><a href="/zh-cn/support/trust-center/privacy/">隐私</a></li>
 <li><a href="/zh-cn/support/trust-center/compliance/">合规</a></li>
 </ul>
-</div>
-<div class="footer-bottom">
-<ul>
-<li class="hello-note">来自西雅图的问候。</li>
-<li>
-<div class="languages-selector">
-<div class="locale-selector"><a class="current-locale">中文(简体) </a>
-<div class="locale-selection-panel site-flag site-flag-lang">
-<div class="content">
-<table border="0" cellspacing="0" class="all-locales" style="border-collapse: collapse;">
-<tbody>
-<tr>
-<td><a href="#" title="English" class="locale-link " data-loc="en-us">English</a></td>
-<td><a href="#" title="Čeština" class="locale-link " data-loc="cs-cz">Čeština</a></td>
-<td><a href="#" title="Dansk" class="locale-link " data-loc="da-dk">Dansk</a></td>
-<td><a href="#" title="Deutsch" class="locale-link " data-loc="de-de">Deutsch</a></td>
-</tr>
-<tr>
-<td><a href="#" title="English (India)" class="locale-link " data-loc="en-in">English (India)</a></td>
-<td><a href="#" title="English (UK)" class="locale-link " data-loc="en-gb">English (UK)</a></td>
-<td><a href="#" title="Español" class="locale-link " data-loc="es-es">Español</a></td>
-<td><a href="#" title="Finnish" class="locale-link " data-loc="fi-fi">Finnish</a></td>
-</tr>
-<tr>
-<td><a href="#" title="Français" class="locale-link " data-loc="fr-fr">Français</a></td>
-<td><a href="#" title="Greek" class="locale-link " data-loc="el-gr">Greek</a></td>
-<td><a href="#" title="Italiano" class="locale-link " data-loc="it-it">Italiano</a></td>
-<td><a href="#" title="Magyar" class="locale-link " data-loc="hu-hu">Magyar</a></td>
-</tr>
-<tr>
-<td><a href="#" title="Nederlands" class="locale-link " data-loc="nl-nl">Nederlands</a></td>
-<td><a href="#" title="Norwegian" class="locale-link " data-loc="nb-no">Norwegian</a></td>
-<td><a href="#" title="Polski" class="locale-link " data-loc="pl-pl">Polski</a></td>
-<td><a href="#" title="Português (BR)" class="locale-link " data-loc="pt-br">Português (BR)</a></td>
-</tr>
-<tr>
-<td><a href="#" title="Português (PT)" class="locale-link " data-loc="pt-pt">Português (PT)</a></td>
-<td><a href="#" title="Svenska" class="locale-link " data-loc="sv-se">Svenska</a></td>
-<td><a href="#" title="Romanian" class="locale-link " data-loc="ro-ro">Romanian</a></td>
-<td><a href="#" title="Türkçe" class="locale-link " data-loc="tr-tr">Türkçe</a></td>
-</tr>
-<tr>
-<td><a href="#" title="Ukrainian" class="locale-link " data-loc="uk-ua">Ukrainian</a></td>
-<td><a href="#" title="русский" class="locale-link " data-loc="ru-ru">русский</a></td>
-<td><a href="#" title="日本語" class="locale-link " data-loc="ja-jp">日本語</a></td>
-<td><a href="#" title="한국어" class="locale-link " data-loc="ko-kr">한국어</a></td>
-</tr>
-<tr>
-<td><a href="#" title="中文(简体)" class="locale-link selected" data-loc="zh-cn">中文(简体)</a></td>
-<td><a href="#" title="中文(繁體)" class="locale-link " data-loc="zh-tw">中文(繁體)</a></td>
-</tr>
-</tbody>
-</table>
-<div class="arrow"> </div>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<div class="currencies-selector">
-<div class="default-currency-selector"><a class="current-default-currency">USD </a>
-<div class="currency-selection-panel site-flag site-flag-lang">
-<div class="content">
-<table border="0" cellspacing="0" class="all-currencies" style="border-collapse: collapse;">
-<tbody>
-<tr>
-<td><a href="#" title="美元 ($)" class="default-currency-link selected" data-curr="USD">美元 ($)</a></td>
-<td><a href="#" title="加拿大元 ($)" class="default-currency-link " data-curr="CAD">加拿大元 ($)</a></td>
-<td><a href="#" title="英镑 (£)" class="default-currency-link " data-curr="GBP">英镑 (£)</a></td>
-<td><a href="#" title="丹麦克朗 (kr)" class="default-currency-link " data-curr="DKK">丹麦克朗 (kr)</a></td>
-</tr>
-<tr>
-<td><a href="#" title="欧元 (€)" class="default-currency-link " data-curr="EUR">欧元 (€)</a></td>
-<td><a href="#" title="挪威克朗 (kr)" class="default-currency-link " data-curr="NOK">挪威克朗 (kr)</a></td>
-<td><a href="#" title="瑞典克朗 (kr)" class="default-currency-link " data-curr="SEK">瑞典克朗 (kr)</a></td>
-<td><a href="#" title="瑞士法郎 (chf)" class="default-currency-link " data-curr="CHF">瑞士法郎 (chf)</a></td>
-</tr>
-<tr>
-<td><a href="#" title="日元 (¥)" class="default-currency-link " data-curr="JPY">日元 (¥)</a></td>
-<td><a href="#" title="澳大利亚元 ($)" class="default-currency-link " data-curr="AUD">澳大利亚元 ($)</a></td>
-<td><a href="#" title="新西兰元 ($)" class="default-currency-link " data-curr="NZD">新西兰元 ($)</a></td>
-<td><a href="#" title="韩元 (₩)" class="default-currency-link " data-curr="KRW">韩元 (₩)</a></td>
-</tr>
-<tr>
-<td><a href="#" title="俄罗斯卢布 (руб)" class="default-currency-link " data-curr="RUB">俄罗斯卢布 (руб)</a></td>
-<td><a href="#" title="南非兰特 (R)" class="default-currency-link " data-curr="ZAR">南非兰特 (R)</a></td>
-<td><a href="#" title="土耳其里拉 (TL)" class="default-currency-link " data-curr="TRY">土耳其里拉 (TL)</a></td>
-<td><a href="#" title="沙特里亚尔 (R)" class="default-currency-link " data-curr="SAR">沙特里亚尔 (R)</a></td>
-</tr>
-<tr>
-<td><a href="#" title="阿根廷比索 ($)" class="default-currency-link " data-curr="ARS">阿根廷比索 ($)</a></td>
-<td><a href="#" title="巴西雷亚尔 (R$)" class="default-currency-link " data-curr="BRL">巴西雷亚尔 (R$)</a></td>
-<td><a href="#" title="印度卢比 (₹)" class="default-currency-link " data-curr="INR">印度卢比 (₹)</a></td>
-<td><a href="#" title="港元 (HK$)" class="default-currency-link " data-curr="HKD">港元 (HK$)</a></td>
-</tr>
-<tr>
-<td><a href="#" title="墨西哥比索 (MXN$)" class="default-currency-link " data-curr="MXN">墨西哥比索 (MXN$)</a></td>
-<td><a href="#" title="马来西亚林吉特 ($)" class="default-currency-link " data-curr="MYR">马来西亚林吉特 ($)</a></td>
-<td><a href="#" title="印度尼西亚卢比 (Rp)" class="default-currency-link " data-curr="IDR">印度尼西亚卢比 (Rp)</a></td>
-<td><a href="#" title="台币 ($)" class="default-currency-link " data-curr="TWD">台币 ($)</a></td>
-</tr>
-</tbody>
-</table>
-<div class="arrow"> </div>
-</div>
-</div>
-</div>
-</div>
-</li>
-</ul>
-<ul class="legal">
-<li class="german-legal" style="display: none;"><a href="http://www.microsoft.com/germany/siteservices/impressum/copyright.mspx?CM=Foot">Nutzungsbedingungen</a></li>
-<li class="german-legal" style="display: none;"><a href="http://www.microsoft.com/germany/siteservices/impressum/default.mspx">Impressum</a></li>
-<li><a href="http://support.microsoft.com/contactus/?ws=mscom">与我们联系</a></li>
-<li><a href="http://go.microsoft.com/fwlink/p/?linkid=222682">商标</a></li>
-<li><a href="http://go.microsoft.com/fwlink/p/?linkid=131004">隐私和 Cookie</a></li>
-<li class="loc-hide"><a href="http://feedback.azure.com/">反馈</a></li>
-</ul>
-<div class="footer-copyright"><a href="http://www.microsoft.com" class="logo-microsoft">Microsoft</a> <span>© 2014 Microsoft</span></div>
 </div>
 </div>
