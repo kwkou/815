@@ -1,5 +1,5 @@
 <properties linkid="" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Haifeng Liu" />
-<div class="WordSection1">
+
 <p class="Figure"> </p>
 <div style="mso-element: para-border-div; border: none; border-bottom: solid windowtext 1.0pt; mso-border-bottom-alt: solid windowtext .5pt; padding: 0in 0in 6.0pt 0in;">
 <h1>中国 Windows Azure <span>应用程序开发人员说明</span></h1>
@@ -87,7 +87,7 @@
 <p style="margin-top: 2.0pt; margin-right: 0in; margin-bottom: 4.0pt; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l40 level1 lfo36;" class="MsoListParagraph"><span>·</span>应用服务 – CDN </p>
 <p style="margin-top: 2.0pt; margin-right: 0in; margin-bottom: 4.0pt; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l40 level1 lfo36;" class="MsoListParagraph"><span>·</span>应用服务 – 媒体服务 </p><p style="margin-top: 2.0pt; margin-right: 0in; margin-bottom: 4.0pt; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l40 level1 lfo36;" class="MsoListParagraph"><span><span><span><span><span>·</span>应用服务 – 通知中心</span></span></span></span></p>
 
-</span></span></span></span></p>
+
 <p style="margin-top: 2.0pt; margin-right: 0in; margin-bottom: 4.0pt; margin-left: 0in; line-height: normal;" class="MsoListParagraph"><span><img src="/media/devcenter/shared/Windows_Azure_Top_Level_MSDN_Only_v8_Mooncake.png" /></span></p>
 <div style="mso-element: para-border-div; border: none; border-bottom: solid windowtext 1.0pt; mso-border-bottom-alt: solid windowtext .5pt; padding: 0in 0in 6.0pt 0in;">
 <h1><span><a name="_Toc359582679"></a><span><span>中国</span>服务</span></span><span><span><span>当前未提供的功能</span></span></span></h1>
@@ -912,4 +912,4 @@
 </table>
 <p class="MsoNormal"> </p>
 <p class="MsoNormal"> </p>
-</div>
+
