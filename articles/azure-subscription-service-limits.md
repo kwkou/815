@@ -206,77 +206,46 @@
 <thead>
 <tr class="header">
 <th align="left">资源</th>
+<th align="left">默认限制</th>
 <th align="left">最大限制</th>
 </tr>
 </thead>
 <tbody>
-<tr class="even">
-<td align="left"><p>每个订阅存储账户数</p></td>
-<td align="left"><p>20（可以电话申请至50）</p></td>
-</tr>
 <tr class="odd">
-<td align="left"><p>每个存储帐户的最大存储空间</p></td>
-<td align="left"><p>200TB</p></td>
+<td align="left"><p>每个存储帐户的 TB<sup>2</sup></p></td>
+<td align="left"><p>200</p></td>
+<td align="left"><p>200</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>单个Blob文件，Table或者队列最大空间</p></td>
-<td align="left"><p>200TB</p></td>
+<td align="left"><p>持久性磁盘的最大 IOPS</p></td>
+<td align="left"><p>500</p></td>
+<td align="left"><p>500<sup>3</sup></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>每个账户Blob文件，共享文件，Table，队列，实体或消息最大数量</p></td>
-<td align="left"><p>只进行200TB容量的限制</p></td>
+<td align="left"><p>每个存储帐户的最大 IOPS</p></td>
+<td align="left"><p>20,000</p></td>
+<td align="left"><p>20,000</p></td>
 </tr>
-<tr class="even">
-<td align="left"><p>共享文件的最大尺寸</p></td>
-<td align="left"><p>N/A</p></td>
-</tr>
-
-<tr class="odd">
-<td align="left"><p>共享文件的最大数量</p></td>
-<td align="left"><p>N/A</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>8KB持久性磁盘的最大 IOPS(基本层)</p></td>
-<td align="left"><p>300<sup>2</sup></p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>8KB持久性磁盘的最大 IOPS(标准层)</p></td>
-<td align="left"><p>500<sup>2</sup></p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个账户(不含1KB文件)总请求指标</p></td>
-<td align="left"><p>最大20,000条实体或消息/秒</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>单个Blob最大吞吐量</p></td>
-<td align="left"><p>最大60MB/秒或500次请求/秒</p></td>
-</tr>
-
-<tr class="even">
-<td align="left"><p>单个队列最大吞吐量 (以1KB消息为例)</p></td>
-<td align="left"><p>最大2000条消息/秒</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>单个Target分区（以1KB实体为例） </p></td>
-<td align="left"><p>最大2000实体数/秒</p></td>
-</tr>
-
 <tr class="even">
 <td align="left"><p>每个存储帐户的最大入口</p></td>
-<td align="left"><p>5Gbps，如果 GRS<sup>3</sup> 启用，10G LRS</p></td>
+<td align="left"><p>5Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 10Gbps</p></td>
+<td align="left"><p>5Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 10Gbps</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>每个存储帐户的最大传出</p></td>
-<td align="left"><p>10Gbps，如果 GRS<sup>3</sup> 启用，15G LRS</p></td>
+<td align="left"><p>10Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 15Gbps</p></td>
+<td align="left"><p>10Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 15Gbps</p></td>
 </tr>
 </tbody>
 </table>
 
 <sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标][Azure 存储空间可伸缩性和性能目标]。
 
-<sup>2</sup>对于标准版的虚拟机，如果VHD文件超过66个，那避免都放在一个存储账户，否则会受到20000IOPS的（20,000/300）限制。如果是标准版的虚拟机则放在一个账户中的VHD文件不要超过40个，否则也会收到IOPS的限制（20,000/500）, 更多请参阅[虚拟机和 Azure 的云服务大小][虚拟机和 Azure 的云服务大小]。
+<sup>2</sup>对于页面 blob，只是使用中的页面会产生容量使用情况。例如，虚拟机具有 127 GB VHD 但操作系统只使用 30 GB，则仅为 VHD 中已使用的 30 GB 部分计费，而非整个 127 GB。
 
-<sup>3</sup>GRS-地域冗余存储帐户,LRS-本地冗余存储。注意：GRS同时也本地冗余。
+<sup>3</sup>不要将经常使用的 40 多个 VHD 放在一个帐户，以避免 20000 的 IOPS 限制。
+
+<sup>4</sup>地域冗余存储帐户
 
 ## <a name="sqldblimits"></a>SQL 数据库限制
 
