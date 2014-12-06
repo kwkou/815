@@ -10,18 +10,18 @@
 
 ## 目录
 
-[什么是队列存储？][]
- [概念][]
- [创建 Azure 存储帐户][]
- [如何：创建队列][]
- [如何：在队列中插入消息][]
- [如何：扫视下一条消息][]
- [如何：取消对下一条消息的排队][]
- [如何：更改已排队消息的内容][]
- [如何：用于对消息取消排队的其他方法][]
- [如何：获取队列长度][]
- [如何：删除队列][]
- [后续步骤][]
+-   [什么是队列存储？][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [如何：创建队列][]
+-   [如何：在队列中插入消息][]
+-   [如何：扫视下一条消息][]
+-   [如何：取消对下一条消息的排队][]
+-   [如何：更改已排队消息的内容][]
+-   [如何：用于对消息取消排队的其他方法][]
+-   [如何：获取队列长度][]
+-   [如何：删除队列][]
+-   [后续步骤][]
 
 [WACOM.INCLUDE [howto-queue-storage][]]
 
@@ -144,6 +144,6 @@
   [如何：删除队列]: #delete-queue
   [howto-queue-storage]: ../includes/howto-queue-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Python 安装指南]: ../python-how-to-install/
+  [Python 安装指南]: /zh-cn/documentation/articles/python-how-to-install/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

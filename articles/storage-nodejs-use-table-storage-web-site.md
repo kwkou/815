@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName="Web Site with Storage" pageTitle="Node.js web site with table storage | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="A tutorial that teaches you how to use the Azure Table service to store data from a Node application hosted on an Azure web site." metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName="Web Site with Storage" pageTitle="使用 Azure 表服务的 Node.js Web 应用程序 | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="A tutorial that teaches you how to use the Azure Table service to store data from a Node application hosted on an Azure web site." metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
 
 # 使用 Azure 表服务的 Node.js Web 应用程序
 
@@ -589,7 +589,7 @@
         info:Executing `git init`
         info:Creating default .gitignore file
         info:Creating a new web site
-        info:Created web site at  tabletasklist.azurewebsites.net
+        info:Created web site at  tabletasklist.chinacloudsites.cn
         info:Initializing repository
         info:Repository initialized
         info:Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
@@ -660,9 +660,11 @@
 
 ## 其他资源
 
-[适用于 Mac 和 Linux 的 Azure 命令行工具] [创建 Node.js 应用程序并将其部署到 Azure 网站]：/en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[使用 Git 发布到 Azure 网站][]：/en-us/documentation/articles/web-sites-publish-source-control/
-[Azure 开发人员中心]：/en-us/develop/nodejs/
+[适用于 Mac 和 Linux 的 Azure 命令行工具] []
+
+[使用 Git 发布到 Azure 网站][]
+
+[Azure 开发人员中心][]
 
   [Node]: http://nodejs.org
   [Git]: http://git-scm.com
@@ -678,15 +680,15 @@
   [Twitter Bootstrap]: https://github.com/twbs/bootstrap
   [1]: http://getbootstrap.com/
   [任务列表中新项的图像]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /en-us/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [antares-iaas-signup]: ../includes/antares-iaas-signup.md
-  [Azure 开发人员中心]: /en-us/develop/nodejs/
-  [适用于 Mac 和 Linux 的 Azure 命令行工具]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
+  [Azure 开发人员中心]: /zh-cn/develop/nodejs/
+  [适用于 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/develop/nodejs/how-to-guides/command-line-tools/
   [下载页面]: ./media/storage-nodejs-use-table-storage-web-site/azure-account-download-cli.png
   [Git remote]: http://git-scm.com/docs/git-remote
   [打开网站仪表板]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
   [配置链接]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
   [应用程序设置]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
   [保存应用程序设置]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
-  [使用 MongoDB 的 Node.js Web 应用程序]: /en-us/documentation/articles/web-sites-nodejs-store-data-mongodb/
-  [使用 Git 发布到 Azure 网站]: /en-us/documentation/articles/web-sites-publish-source-control/
+  [使用 MongoDB 的 Node.js Web 应用程序]: /zh-cn/documentation/articles/web-sites-nodejs-store-data-mongodb/
+  [使用 Git 发布到 Azure 网站]: /zh-cn/documentation/articles/web-sites-publish-source-control/

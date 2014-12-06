@@ -566,7 +566,7 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
 -   [HDInsight Emulator 发行说明][]
 -   [用于讨论 HDInsight 的 MSDN 论坛][]
 
-  [Azure HDInsight 包含哪个版本的 Hadoop？]: http://windowsazure.cn/zh-cn/documentation/articles/hdinsight-component-versioning/ "HDInsight 组件和版本"
+  [Azure HDInsight 包含哪个版本的 Hadoop？]: /zh-cn/documentation/articles/hdinsight-component-versioning/
   [开始使用 Azure HDInsight]: /zh-cn/documentation/articles/hdinsight-get-started/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [安装 HDInsight Emulator]: #install
@@ -579,7 +579,7 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
   [HDI.Emulator.Services]: ./media/hdinsight-get-started-emulator/HDI.Emulator.Services.png
   [HDInsight Emulator 发行说明]: /zh-cn/documentation/articles/hdinsight-emulator-release-notes/
   [Hadoop 命令参考（可能为英文页面）]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
-  [将 Azure Blob 存储用于 HDInsight]: /zh-cn/documentation/articles/howto-blob-store/
+  [将 Azure Blob 存储用于 HDInsight]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [IIS w3c 日志数据方案]: #scenarios
   [加载示例 w3c 日志数据]: #loaddata
   [运行 Java MapReduce 作业]: #javamapreduce
@@ -593,4 +593,4 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [为 HDInsight 开发 Java MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
   [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-  [用于讨论 HDInsight 的 MSDN 论坛]: http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=windowsazurezhchs&filter=alltypes&brandIgnore=True&sort=relevancedesc&filter=alltypes&searchTerm=hdinsight
+  [用于讨论 HDInsight 的 MSDN 论坛]: http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=windowsazurezhchs

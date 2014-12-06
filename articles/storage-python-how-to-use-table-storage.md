@@ -1,4 +1,4 @@
-<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="How to use table storage (Python) | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="如何从 Python 使用表存储服务 | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
 
 # 如何从 Python 使用表存储服务
 
@@ -10,19 +10,19 @@
 
 ## 目录
 
-[什么是表服务？][]
- [概念][]
- [创建 Azure 存储帐户][]
- [如何：创建表][]
- [如何：向表中添加实体][]
- [如何：更新实体][]
- [如何：更改实体组][]
- [如何：查询实体][]
- [如何：查询实体集][]
- [如何：查询实体属性子集][]
- [如何：删除实体][]
- [如何：删除表][]
- [后续步骤][]
+-   [什么是表服务？][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [如何：创建表][]
+-   [如何：向表中添加实体][]
+-   [如何：更新实体][]
+-   [如何：更改实体组][]
+-   [如何：查询实体][]
+-   [如何：查询实体集][]
+-   [如何：查询实体属性子集][]
+-   [如何：删除实体][]
+-   [如何：删除表][]
+-   [后续步骤][]
 
 [WACOM.INCLUDE [howto-table-storage][]]
 
@@ -175,6 +175,6 @@
   [如何：删除表]: #delete-table
   [howto-table-storage]: ../includes/howto-table-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [Python 安装指南]: ../python-how-to-install/
+  [Python 安装指南]: /zh-cn/documentation/articles/python-how-to-install/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [访问 Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

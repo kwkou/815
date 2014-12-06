@@ -524,17 +524,17 @@ WASB 语法是：
   [使用 PowerShell 来运行 Sqoop 导入]: #import
   [后续步骤]: #nextsteps
   [Sqoop]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
-  [HDInsight 提供的群集版本有哪些新功能？]: ../hdinsight-component-versioning/
-  [安装和配置 Azure PowerShell]: ../install-configure-powershell
+  [HDInsight 提供的群集版本有哪些新功能？]: /zh-cn/documentation/articles/hdinsight-component-versioning/
+  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
-  [开始使用 HDInsight]: ../hdinsight-get-started/
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
-  [使用 Azure SQL 数据库入门]: /zh-cn/manage/services/sql-databases/getting-started-w-sql-databases/
-  [创建和配置 SQL Database]: /zh-cn/manage/services/sql-databases/how-to-configure-a-sqldb/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
+  [开始使用 HDInsight]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
+  [使用 Azure SQL 数据库入门]: /zh-cn/documentation/articles/sql-database-get-started/
+  [创建和配置 SQL Database]: /zh-cn/documentation/articles/sql-database-create-configure/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [在 Windows 8 和 Windows 上启动 Windows PowerShell]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
-  [将 Oozie 与 HDInsight 配合使用]: ../hdinsight-use-oozie/
-  [使用 HDInsight 分析航班延误数据]: ../hdinsight-analyze-flight-delay-data/
-  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
+  [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+  [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/
+  [使用 HDInsight 分析航班延误数据]: /zh-cn/documentation/articles/hdinsight-analyze-flight-delay-data/
+  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/

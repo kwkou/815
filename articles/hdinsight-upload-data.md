@@ -187,8 +187,8 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [CloudXplorer]: http://clumsyleaf.com/products/cloudxplorer
   [Azure 资源管理器]: http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx
   [Azure 资源管理器专业版]: http://www.cloudberrylab.com/microsoft-azure-explorer-pro.aspx
-  [Azure HDInsight 入门]: ../hdinsight-get-started/
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [使用 AzCopy 将数据上传到 Blob 存储空间]: #azcopy
   [使用 Azure PowerShell 将数据上载到 Blob 存储]: #powershell
   [使用 Azure 存储空间资源管理器将数据上传到 Blob 存储空间]: #storageexplorer
@@ -196,13 +196,13 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储]: #sqoop
   [下载 AzCopy]: http://aka.ms/WaCopy
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
-  [管理存储帐户]: ../storage-manage-storage-account/
+  [管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
   [HDI.AzureStorageExplorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
   [HDI.ASEAddAccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
   [HDI.ASEBlob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
   [管理门户]: https://manage.windowsazure.cn
   [Sqoop 用户指南]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
-  [创建和配置 SQL Database]: /zh-cn/manage/services/sql-databases/getting-started-w-sql-databases/
+  [创建和配置 SQL Database]: /zh-cn/documentation/articles/sql-database-create-configure/
   [将 Sqoop 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
   [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
   [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/

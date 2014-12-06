@@ -575,7 +575,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 		    return $oozieJobId
 		}
 
-	> [WACCOM.NOTE] 在提交工作流作业时，你必须在创建作业后进行另一次 Web 服务调用以启动该作业。在这种情况下，该协调器作业会按时间触发。该作业将自动启动。
+	> [WACOM.NOTE] 在提交工作流作业时，你必须在创建作业后进行另一次 Web 服务调用以启动该作业。在这种情况下，该协调器作业会按时间触发。该作业将自动启动。
 
 6. 将以下内容追加到脚本。这部分检查 Oozie 作业状态：
 
@@ -707,7 +707,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 - [使用 PowerShell 管理 HDInsight][hdinsight-admin-powershell]
 - [将数据上传到 HDInsight][hdinsight-upload-data]
 - [将 Sqoop 与 HDInsight 配合使用][hdinsight-sqoop]
-- [Hive 与 HDInsight 配合使用][将 Hive 与 HDInsight 配合使用]
+- [Hive 与 HDInsight 配合使用][hdinsight-hive]
 - [Pig 与 HDInsight 配合使用][hdinsight-hive]
 - [为 HDInsight 开发 C# Hadoop 流作业][hdinsight-develop-streaming]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
@@ -747,7 +747,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 [sqldatabase-get-started]: /zh-cn/documentation/articles/sql-database-get-started/
 
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/ 
+[azure-create-storageaccount]: /zh-cn/documentation/articles/storage-create-storage-account/ 
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/

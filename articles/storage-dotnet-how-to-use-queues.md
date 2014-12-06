@@ -361,6 +361,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
   [概念]: #concepts
   [创建 Azure 存储帐户]: #create-account
   [设置 Azure 存储连接字符串]: #setup-connection-string
+  [如何：以编程方式访问队列存储]:#configure-access
   [如何：创建队列]: #create-queue
   [如何：在队列中插入消息]: #insert-message
   [如何：查看下一条消息]: #peek-message
@@ -377,7 +378,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
   [Blob8]: ./media/storage-dotnet-how-to-use-queues/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-queues/blob9.png
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
-  [.NET 开发人员中心]: http://azure.microsoft.com/zh-cn/develop/net/
+  [.NET 开发人员中心]: /zh-cn/develop/net/
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
@@ -385,6 +386,6 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
   [.NET 存储客户端库参考]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [表存储]: /en-us/documentation/articles/storage-dotnet-how-to-use-tables/
-  [Blob 存储]: /en-us/documentation/articles/storage-dotnet-how-to-use-blobs/
-  [SQL Database]: /en-us/documentation/articles/sql-database-dotnet-how-to-use/
+  [表存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/
+  [Blob 存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/
+  [SQL Database]: /zh-cn/documentation/articles/sql-database-dotnet-how-to-use/
