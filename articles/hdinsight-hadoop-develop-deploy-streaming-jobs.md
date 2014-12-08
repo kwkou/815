@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="Develop C# Hadoop streaming programs for HDInsight | Azure" metaKeywords="hdinsight hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="为 HDInsight 开发 C# Hadoop 流程序 | Azure" metaKeywords="hdinsight hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 为 HDInsight 开发 C\# Hadoop 流程序
 
@@ -401,7 +401,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
         $serviceNameToken = "<ServiceNameTokenString>"
         $storageAccountName_Data = "<TheDataStorageAccountName>"
         $containerName_Data = "<TheDataBlobStorageContainerName>"
-        $location = "East US"     ### 必须与数据存储帐户位置匹配
+        $location = "China East"     ### 必须与数据存储帐户位置匹配
         $clusterNodes = 1
 
         $clusterName = $serviceNameToken + "hdicluster"
@@ -413,7 +413,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
         $mrMapper = "WordCountMapper.exe"
         $mrReducer = "WordCountReducer.exe"
         $mrMapperFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Apps/WordCountMapper.exe"
-        $mrReducerFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.windows.net/WordCount/Apps/WordCountReducer.exe"
+        $mrReducerFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Apps/WordCountReducer.exe"
         $mrInput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Input/"
         $mrOutput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Output/"
         $mrStatusOutput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/MRStatusOutput/"

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="HDInsight Hadoop Version" pageTitle="HDInsight 的 Hadoop 群集版本有哪些新功能？| Azure" metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure" description="HDInsight supports multiple Hadoop cluster versions deployable at any time. See the Hadoop and HortonWorks Data Platform (HDP) distribution versions supported." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="What's new in the cluster versions provided by HDInsight?" authors="bradsev" />
+<properties urlDisplayName="HDInsight Hadoop Version" pageTitle="HDInsight 的 Hadoop 群集版本有哪些新功能？| Azure" metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure" description="HDInsight supports multiple Hadoop cluster versions deployable at any time. See the Hadoop and HortonWorks Data Platform (HDP) distribution versions supported." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="What's new in the cluster versions provided by HDInsight?" authors="bradsev" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -6,7 +6,7 @@
 # HDInsight 提供的 Hadoop 群集版本有哪些新功能？
 
 ## HDInsight 版本
-HDInsight 支持可随时部署的多个 Hadoop 群集版本。每个版本选项设置 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与每个 HDInsight 群集版本关联的组件版本。请注意，[Azure HDInsight](/zh-cn/manage/services/hdinsight) 使用的默认群集版本当前是 3.1（基于 HDP 2.1）。
+HDInsight 支持可随时部署的多个 Hadoop 群集版本。每个版本选项设置 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与每个 HDInsight 群集版本关联的组件版本。请注意，[Azure HDInsight](/zh-cn/documentation/services/hdinsight) 使用的默认群集版本当前是 3.1（基于 HDP 2.1）。
 
 
 <table border="1">
@@ -34,7 +34,7 @@ HDInsight 支持可随时部署的多个 Hadoop 群集版本。每个版本选�
 
 **发行说明**	
 
-请参阅 [HDInsight 发行说明](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-release-notes/)，了解 HDInsight 最新版本的更多发行说明。
+请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes/)，了解 HDInsight 最新版本的更多发行说明。
 
 ### 设置 HDInsight 群集时选择一个版本
 
@@ -47,7 +47,7 @@ Azure HDInsight 现在默认通过 HDInsight 群集版本 3.1（使用 Hortonwor
 
 - **HBase**：HBase 是一种低延迟的 NoSQL 数据库，可用于对大数据进行联机事务处理。HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配置为在 Azure Blob 存储中直接存储数据，这样就降低了延迟，使客户在性能与价格方面做出选择时拥有更大的弹性。客户可以生成用于处理大型数据集的交互式网站，生成用于存储数百万个终结点的传感器数据与遥测数据的服务，并通过 Hadoop 作业来分析这些数据。
 
-- **群集仪表板**：一款部署到 HDInsight 群集的新 Web 应用程序。用于运行 Hive 查询、检查作业日志以及浏览 Azure Blob 存储。用于访问 Web 应用程序的 URL 是 <*ClusterName*>.azurehdinsight.net。
+- **群集仪表板**：一款部署到 HDInsight 群集的新 Web 应用程序。用于运行 Hive 查询、检查作业日志以及浏览 Azure Blob 存储。用于访问 Web 应用程序的 URL 是 <*ClusterName*>.azurehdinsight.cn。
 
 - **Microsoft Avro Library**：此库针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 JSON 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。Apache Avro 序列化格式在 Azure HDInsight 中广泛使用，用于表示 Hadoop MapReduce 作业内的复杂数据结构。
 
@@ -69,7 +69,7 @@ Azure HDInsight 现在默认通过 HDInsight 群集版本 3.1（使用 Hortonwor
 ## 支持的版本
 下表列出当前可用的 HDInsight 版本以及它们使用的相应 Hortonworks 数据平台 (HDP) 版本和发布日期。如果知道，还提供其支持到期日期和弃用日期。请注意以下各项：
 
-* 默认情况下，会针对 HDInsight 3.0 和 3.1 群集部署具有两个头节点的高度可用群集。它们不适用于 HDInsight 1.6 群集。
+* 默认情况下，会针对 HDInsight 3.0 和 3.1 群集部署具有两个头节点的高度可用群集。
 * 某版本的支持到期后，它就不能通过 Azure 管理门户提供了。下表列出 Azure 管理门户上提供的版本。群集版本提供时将继续使用 PowerShell [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 命令中的"Version"参数和 .NET SDK，直到其弃用日期为止。 
 
 <table border="1">
@@ -79,7 +79,7 @@ Azure HDInsight 现在默认通过 HDInsight 群集版本 3.1（使用 Hortonwor
 </table><br>
 **非默认群集的部署**	
 
-在 Hadoop 2.4 上创建 HDInsight 3.1 群集由 Azure 门户、HDInsight SDK 和 Azure PowerShell 提供支持。请注意，默认情况下在 Hadoop 2.4 上创建 HDInsight 3.1 群集，因此用户必须使用门户中的**自定义创建**选项以指定需要创建的其他 HDInsight 群集版本。
+在 Hadoop 2.4 上创建 HDInsight 3.1 群集由 Azure 门户、HDInsight SDK 和 Azure PowerShell 提供支持。请注意，默认情况下在 Hadoop 2.4 上创建 HDInsight 3.1 群集。
 
 ### HDInsight 群集版本的服务级别协议 (SLA)
 
@@ -105,7 +105,7 @@ SLA 用"支持窗口"来定义。"支持窗口"是指 HDInsight 群集版本受 
 
 [wa-forums]: http://www.windowsazure.cn/zh-cn/support/contact/
 
-[connect-excel-with-hive-ODBC]: ../hdinsight-connect-excel-hive-ODBC-driver/
+[connect-excel-with-hive-ODBC]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
 
 [hdp-2-1-1]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.1/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.1.html
 

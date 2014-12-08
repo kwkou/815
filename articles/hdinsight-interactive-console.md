@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-work-with-the-interactive-console" urlDisplayName="Interactive Console" pageTitle="How to work with the interactive console in HDInsight | Azure" metaKeywords="" description="In this guide, you'll learn how to perform common tasks such as file upload, run jobs, and visualize data using the interactive console for HDInsight Service." metaCanonical="" services="hdinsight" documentationCenter="" title="HDInsight Interactive JavaScript and Hive Consoles" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-howto-work-with-the-interactive-console" urlDisplayName="Interactive Console" pageTitle="HDInsight 交互式 JavaScript 和 Hive 控制台 | Azure" metaKeywords="" description="In this guide, you'll learn how to perform common tasks such as file upload, run jobs, and visualize data using the interactive console for HDInsight Service." metaCanonical="" services="hdinsight" documentationCenter="" title="HDInsight Interactive JavaScript and Hive Consoles" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 # HDInsight 交互式 JavaScript 和 Hive 控制台
 
@@ -198,7 +198,7 @@ Pig 和 Hive 提供编译成 MapReduce 程序的更高级别的语言，这些�
 -   [将 Hive 与 HDInsight 配合使用][]
 -   [将 MapReduce 与 HDInsight 配合使用][]
 
-[hdi-hive-showdescribetable]:./media/hdinsight-interactive-console/HDI.Hive.ShowDescribeTable.PNG "Hive Table Confirmation")
+[hdi-hive-showdescribetable]:./media/hdinsight-interactive-console/HDI.Hive.ShowDescribeTable.PNG 
 
   [使用 JavaScript 控制台运行 MapReduce 作业]: #runjob
   [使用 JavaScript 控制台以图形形式显示结果]: #displayresults
@@ -211,6 +211,6 @@ Pig 和 Hive 提供编译成 MapReduce 程序的更高级别的语言，这些�
   [hdi-jsconsole-upload]: ./media/hdinsight-interactive-console/HDI.JsConsole.UploadJs.PNG
   [hdi-jsconsole-jscode]: ./media/hdinsight-interactive-console/HDI.JsConsole.JsCode.PNG
   [hdi-jsconsole-bargraph-top10words]: ./media/hdinsight-interactive-console/HDI.JsConsole.BarGraphTop10Words.PNG
-  [将 Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
-  [将 Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
-  [将 MapReduce 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-mapreduce-with-hdinsight/
+  [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
+  [将 MapReduce 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-mapreduce/

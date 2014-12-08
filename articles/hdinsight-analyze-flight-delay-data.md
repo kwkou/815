@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="Analyze flight delay data using HDInsight | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL Database using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL Database using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 使用 HDInsight 分析航班延误数据
 
@@ -610,22 +610,22 @@ HiveQL 脚本将执行以下操作：
 -   [为 HDInsight 开发 C\# Hadoop 流程序][]
 
   [HiveQL]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
-  [HDInsight 入门]: ../hdinsight-get-started/
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
-  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [准备教程]: #prepare
   [创建并上载 HiveQL 脚本]: #createscript
   [执行 HiveQL 脚本]: #executehqlscript
   [将输出导出到 Azure SQL Database]: #exportdata
   [后续步骤]: #nextsteps
   [美国研究与技术创新管理部门 - 运输统计局]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
-  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
   [TechNet Wiki]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
   [1]: #createScript
   [HDI.FlightDelays.AvgDelays.Dataset]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.AvgDelays.DataSet.png
-  [将 Oozie 与 HDInsight 配合使用]: ../hdinsight-use-oozie/
-  [将 Sqoop 与 HDInsight 配合使用]: ../hdinsight-use-sqoop/
-  [将 Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/
-  [为 HDInsight 开发 Java MapReduce 程序]: ../hdinsight-develop-deploy-java-mapreduce/
-  [为 HDInsight 开发 C\# Hadoop 流程序]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/
+  [将 Sqoop 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
+  [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [为 HDInsight 开发 Java MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+  [为 HDInsight 开发 C\# Hadoop 流程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/

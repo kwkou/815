@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-introduction-hdinsight" urlDisplayName="HDInsight Introduction" pageTitle="Introduction to Azure HDInsight | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Apache Hadoop clusters in the cloud, to provide a software framework to manage, analyze, and report on big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Introduction to Azure HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-introduction-hdinsight" urlDisplayName="HDInsight Introduction" pageTitle="Azure HDInsight 简介 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Apache Hadoop clusters in the cloud, to provide a software framework to manage, analyze, and report on big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Introduction to Azure HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 # Azure HDInsight 简介
 
@@ -152,7 +152,7 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
   [下载网站]: http://go.microsoft.com/fwlink/?LinkID=286698
   [SQL Server 2012 Analysis Services]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/analysis.aspx#fbid=9ZH5wGSDgf0
   [SQL Server 2012 Reporting]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/dashboards-reports.aspx#fbid=9ZH5wGSDgf0
-  [HDInsight 文档]: http://azure.microsoft.com/zh-cn/documentation/services/hdinsight/
+  [HDInsight 文档]: /zh-cn/documentation/services/hdinsight/
   [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [运行 HDInsight 示例]: /zh-cn/documentation/articles/hdinsight-run-samples/
   [大数据和 Azure]: http://azure.microsoft.com/zh-cn/solutions/big-data/

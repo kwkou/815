@@ -181,7 +181,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [AzCopy]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx
   [Azure PowerShell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
-  [Azure .NET 存储客户端库]: /zh-cn/develop/net/how-to-guides/blob-storage/
+  [Azure .NET 存储客户端库]: zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/
   [Azure 存储空间资源管理器]: http://azurestorageexplorer.codeplex.com/
   [Cloud Storage Studio 2]: http://www.cerebrata.com/Products/CloudStorageStudio/
   [CloudXplorer]: http://clumsyleaf.com/products/cloudxplorer

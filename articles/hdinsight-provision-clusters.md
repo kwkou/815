@@ -81,7 +81,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 HDInsight 群集前，要先具有位于同一数据中心的 Azure 存储帐户。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
 
 
-> [WACOM.NOTE] 目前，只有**亚洲东部**、**亚洲东南部**、**欧洲北部**、**欧洲西部**、**美国东部**、**美国西部**、**美国中北部**、**中国东部**、**中国北部**和**美国中南部**区域可以托管 HDInsight 群集。
+> [WACOM.NOTE] 目前，**中国东部**、**中国北部**区域可以托管 HDInsight 群集。
 
 **使用"自定义创建"选项创建 HDInsight 群集**
 
@@ -387,7 +387,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 		azure storage account create [options] <StorageAccountName>
 
-	出现指定位置的提示时，请选择 HDINsight 群集可以设置到的位置。该存储位置必须与 HDInsight 群集所在的位置相同。目前，只有**中国东部**、**中国北部**、**亚洲东部**、**亚洲东南部**、**欧洲北部**、**欧洲西部**、**美国东部**、**美国西部**、**美国中北部**和**美国中南部**区域可以托管 HDInsight 群集。  
+	出现指定位置的提示时，请选择 HDINsight 群集可以设置到的位置。该存储位置必须与 HDInsight 群集所在的位置相同。目前，**中国东部**、**中国北部**区域可以托管 HDInsight 群集。  
 
 有关使用 Azure 管理门户创建 Azure 存储帐户的信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
 
@@ -488,7 +488,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 
 **创建自签名证书**
 
-创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#cert)。 
+创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#cert)。 
 
 
 **创建 Visual Studio 控制台应用程序**
