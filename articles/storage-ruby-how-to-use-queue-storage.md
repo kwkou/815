@@ -176,10 +176,10 @@ azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
   [如何：删除队列]: #how-to-delete-a-queue
   [howto-queue-storage]: ../includes/howto-queue-storage.md
   [create-storage-account]: ../includes/create-storage-account.md
-  [在 Azure 上创建 Ruby 应用程序]: /zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/
+  [在 Azure 上创建 Ruby 应用程序]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby
-  [如何使用 Service Bus 队列]: /zh-cn/documentation/articles/service-bus-ruby-how-to-use-queues/
+  [如何使用 Service Bus 队列]: /en-us/develop/ruby/how-to-guides/service-bus-queues/
   [Azure 队列和 Azure Service Bus 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx

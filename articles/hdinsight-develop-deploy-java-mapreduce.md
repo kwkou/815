@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-develop-Java-MapReduce-programs-for-HDInsight" urlDisplayName="HDInsight Tutorials" pageTitle="为 HDInsight 开发 Java MapReduce 程序 | Azure" metaKeywords="hdinsight, hdinsight development, hadoop development, hdinsight deployment, development, deployment, tutorial, MapReduce, Java" description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight." services="hdinsight" title="Develop Java MapReduce programs for HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="jgao" />
+<properties linkid="manage-services-hdinsight-develop-Java-MapReduce-programs-for-HDInsight" urlDisplayName="HDInsight Tutorials" pageTitle="Develop Java MapReduce programs for HDInsight | Azure" metaKeywords="hdinsight, hdinsight development, hadoop development, hdinsight deployment, development, deployment, tutorial, MapReduce, Java" description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight." services="hdinsight" title="Develop Java MapReduce programs for HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="jgao" />
 
 # 为 HDInsight 开发 Java MapReduce 程序
 
@@ -488,10 +488,10 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 -   [利用 Power Query 将 Excel 连接到 HDInsight][]
 -   [使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight][使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]
 
-  [开始使用 HDInsight Emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
-  [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [开始使用 HDInsight Emulator]: ../hdinsight-get-started-emulator/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
+  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [使用 Java 开发单词计数 MapReduce 程序]: #develop
   [在模拟器中测试该程序]: #test
   [将数据文件及应用程序上载到 Azure Blob 存储]: #upload
@@ -499,17 +499,17 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
   [检索 MapReduce 结果]: #retrieve
   [后续步骤]: #nextsteps
   [HDI.EMulator.WordCount.Compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
-  [HDInsight Emulator 入门]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/#blobstorage
-  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
+  [HDInsight Emulator 入门]: ../hdinsight-get-started-emulator/#blobstorage
+  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
   [HDI.EMulator.WordCount.Run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
   [命名和引用容器、Blob 和元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx
   [在 Windows PowerShell 中使用密码、安全字符串和凭据]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
-  [利用 Power Query 将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-power-query/
-  [Sqoop]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
-  [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
-  [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
-  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
-  [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: ../hdinsight-connect-excel-hive-ODBC-driver/
+  [利用 Power Query 将 Excel 连接到 HDInsight]: ../hdinsight-connect-excel-power-query/
+  [Sqoop]: ../hdinsight-use-sqoop/
+  [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [Azure HDInsight 入门]: ../hdinsight-get-started/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
+  [将 Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/

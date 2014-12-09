@@ -1,4 +1,4 @@
-<properties title="Build an HBase application using Maven" pageTitle="借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序 | Azure" description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Azure HDInsight" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
+<properties title="Build an HBase application using Maven" pageTitle="Build an HBase application using Maven" description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Azure HDInsight" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="larryfr"></tags>
 
@@ -14,7 +14,7 @@
 
 -   [Maven](http://maven.apache.org/)
 
--   [一个包含 HBase 的 Azure HDInsight 群集](/zh-cn/documentation/articles/hdinsight-hbase-get-started/#create-hbase-cluster)
+-   [一个包含 HBase 的 Azure HDInsight 群集](/en-us/documentation/articles/hdinsight-hbase-get-started/#create-hbase-cluster)
 
 ## 创建项目
 
@@ -128,7 +128,7 @@
 
     此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-    > [WACOM.NOTE] 这是一个非常精简的 hbase-site.xml 文件，它只包含 HDInsight 群集的最少量设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用远程桌面连接到 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-\<版本号\>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
+    > [WACOM.NOTE] 这是一个非常精简的 hbase-site.xml 文件，它只包含 HDInsight 群集的最少量设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用远程桌面连接到 HDInsight 群集](http://azure.microsoft.com/en-us/documentation/articles/hdinsight-administer-use-management-portal/#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-\<版本号\>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
 
 5.  保存 **hbase-site.xml** 文件。
 
@@ -323,9 +323,9 @@
 
 ## 上载 JAR 并启动作业
 
-> [WACOM.NOTE] 可以根据[在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data/)中所述，通过许多方式将文件上载到 HDInsight 群集。下面的步骤使用了 [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
+> [WACOM.NOTE] 可以根据[在 HDInsight 中上载 Hadoop 作业的数据](/en-us/documentation/articles/hdinsight-upload-data/)中所述，通过许多方式将文件上载到 HDInsight 群集。下面的步骤使用了 [Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/)。
 
-1.  安装并配置 [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/) 后，请创建名为 **hbase-runner.psm1** 的新文件。在此文件中使用以下内容。
+1.  安装并配置 [Azure PowerShell](/en-us/documentation/articles/install-configure-powershell/) 后，请创建名为 **hbase-runner.psm1** 的新文件。在此文件中使用以下内容。
 
         <#
         .SYNOPSIS
@@ -456,7 +456,7 @@
             # Is the Azure module installed?
             if (-not(Get-Module -ListAvailable Azure))
             {
-                throw "Windows Azure PowerShell not found! For help, see http://www.windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/"
+                throw "Windows Azure PowerShell not found! For help, see http://www.windowsazure.com/zh-cn/documentation/articles/install-configure-powershell/"
             }
 
             # Is there an active Azure subscription?
@@ -564,10 +564,10 @@
   [Apache HBase]: http://hbase.apache.org/
   [Maven]: http://maven.apache.org/
   [Java 平台 JDK]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-  [一个包含 HBase 的 Azure HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-hbase-get-started/#create-hbase-cluster
+  [一个包含 HBase 的 Azure HDInsight 群集]: ../hdinsight-hbase-get-started/#create-hbase-cluster
   [POM]: http://maven.apache.org/guides/introduction/introduction-to-the-pom.html
   [Maven 存储库搜索]: http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar
   [maven-shade-plugin]: http://maven.apache.org/plugins/maven-shade-plugin/
-  [使用远程桌面连接到 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp
-  [在 HDInsight 中上载 Hadoop 作业的数据]: /zh-cn/documentation/articles/hdinsight-upload-data/
-  [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [使用远程桌面连接到 HDInsight 群集]: ../hdinsight-administer-use-management-portal/#rdp
+  [在 HDInsight 中上载 Hadoop 作业的数据]: ../hdinsight-upload-data/
+  [Azure PowerShell]: ../install-configure-powershell/

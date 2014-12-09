@@ -150,11 +150,7 @@
 
 ## <a name="next-steps"> </a>后续步骤
 
-在这个简单的示例中，你已将通知广播到所有 Windows Phone 8 设备。
-
-<!--为了针对特定客户，请参考教程[使用通知中心将通知推送到用户][使用通知中心将通知推送到用户]。-->
-
-如果要按兴趣细分用户组，可以阅读[使用通知中心发送突发新闻][使用通知中心发送突发新闻]。在[通知中心指南][通知中心指南]中了解通知中心的详细使用信息。
+在这个简单的示例中，你已将通知广播到所有 Windows Phone 8 设备。为了针对特定客户，请参考教程[使用通知中心将通知推送到用户][使用通知中心将通知推送到用户]。如果要按兴趣细分用户组，可以阅读[使用通知中心发送突发新闻][使用通知中心发送突发新闻]。在[通知中心指南][通知中心指南]中了解通知中心的详细使用信息。
 
 <!-- Anchors. -->  
 
@@ -171,13 +167,13 @@
   [Xamarin.iOS]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
   [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
   [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
-  [Azure 免费试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
   [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
   [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
-  [使用通知中心将通知推送到用户]: /zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-  [使用通知中心发送突发新闻]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [使用通知中心将通知推送到用户]: /en-us/manage/services/notification-hubs/notify-users-aspnet
+  [使用通知中心发送突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-dotnet
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 
 <!-- Images. -->

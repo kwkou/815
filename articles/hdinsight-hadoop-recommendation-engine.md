@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-recommendation-engine-using-mahout" urlDisplayName="Hadoop Recommendation Engine" pageTitle="使用 Apache Mahout 的简单推荐引擎 (.NET) | Azure" metaKeywords="Azure Apache Mahout, Azure recommendation example, Azure recommendation tutorial, Azure recommendation engine" description="A tutorial that teaches how to use the Apache Mahout recommendation engine with Azure to create song suggestions based on listening habits." disqusComments="1" umbracoNaviHide="1" title="Simple recommendation engine using Apache Mahout" authors="jgao" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-recommendation-engine-using-mahout" urlDisplayName="Hadoop Recommendation Engine" pageTitle="Hadoop recommendation engine (.NET) | Azure" metaKeywords="Azure Apache Mahout, Azure recommendation example, Azure recommendation tutorial, Azure recommendation engine" description="A tutorial that teaches how to use the Apache Mahout recommendation engine with Azure to create song suggestions based on listening habits." disqusComments="1" umbracoNaviHide="1" title="Simple recommendation engine using Apache Mahout" authors="jgao" manager="paulettm" editor="cgronlun" />
 
 # 使用 Apache Mahout 的简单推荐引擎
 
@@ -219,7 +219,7 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
   [检查数据并设置数据的格式]: #segment1
   [安装 Mahout]: #Segment2
   [运行 Mahout 作业]: #segment2
-  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
   [Echo Nest 偏好配置文件子集]: ./media/hdinsight-hadoop-recommendation-engine/the-echo-nest-taste-profile-subset.png
   [创建控制台应用程序]: ./media/hdinsight-hadoop-recommendation-engine/creating-a-console-application.png
   [设置命令行参数]: ./media/hdinsight-hadoop-recommendation-engine/setting-command-line-arguments.png

@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="为 HDInsight 开发 C# Hadoop 流程序 | Azure" metaKeywords="hdinsight hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="Develop C# Hadoop streaming programs for HDInsight | Azure" metaKeywords="hdinsight hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 为 HDInsight 开发 C\# Hadoop 流程序
 
@@ -401,7 +401,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
         $serviceNameToken = "<ServiceNameTokenString>"
         $storageAccountName_Data = "<TheDataStorageAccountName>"
         $containerName_Data = "<TheDataBlobStorageContainerName>"
-        $location = "China East"     ### 必须与数据存储帐户位置匹配
+        $location = "East US"     ### 必须与数据存储帐户位置匹配
         $clusterNodes = 1
 
         $clusterName = $serviceNameToken + "hdicluster"
@@ -413,7 +413,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
         $mrMapper = "WordCountMapper.exe"
         $mrReducer = "WordCountReducer.exe"
         $mrMapperFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Apps/WordCountMapper.exe"
-        $mrReducerFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Apps/WordCountReducer.exe"
+        $mrReducerFile = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.windows.net/WordCount/Apps/WordCountReducer.exe"
         $mrInput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Input/"
         $mrOutput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/Output/"
         $mrStatusOutput = "wasb://$containerName_Data@$storageAccountName_Data.blob.core.chinacloudapi.cn/WordCount/MRStatusOutput/"
@@ -520,25 +520,25 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 -   [将 Hive 与 HDInsight 配合使用][]
 -   [将 Pig 与 HDInsight 配合使用][]
 
-  [开始使用 HDInsight Emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
-  [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [开始使用 HDInsight Emulator]: ../hdinsight-get-started-emulator/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
+  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [使用 C\# 开发单词计数 Hadoop 流程序]: #develop
   [在模拟器中测试该程序]: #test
   [将数据和应用程序上载到 Azure Blob 存储]: #upload
   [在 Azure HDInsight 中运行 MapReduce 程序]: #run
   [检索 MapReduce 结果]: #retrieve
   [后续步骤]: #nextsteps
-  [HDInsight Emulator 入门]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/#blobstorage
-  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
+  [HDInsight Emulator 入门]: ../hdinsight-get-started-emulator/#blobstorage
+  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
   [在 Windows PowerShell 中使用密码、安全字符串和凭据]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-  [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
-  [利用 Power Query 将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-power-query/
-  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started-hdinsight/
-  [为 HDInsight 开发 Java MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
-  [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
-  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
-  [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
+  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: ../hdinsight-connect-excel-hive-ODBC-driver/
+  [利用 Power Query 将 Excel 连接到 HDInsight]: ../hdinsight-connect-excel-power-query/
+  [Azure HDInsight 入门]: ../hdinsight-get-started-hdinsight/
+  [为 HDInsight 开发 Java MapReduce 程序]: ../hdinsight-develop-deploy-java-mapreduce/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
+  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
+  [将 Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
+  [将 Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/

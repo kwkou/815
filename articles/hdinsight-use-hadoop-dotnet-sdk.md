@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-sdk" urlDisplayName="HDInsight SDK" pageTitle="将 Hadoop .NET SDK 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to get the HDInsight NuGet packages and use them from your .NET application." metaCanonical="" services="hdinsight" documentationCenter="" title="Use the Hadoop .NET SDK with HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-howto-sdk" urlDisplayName="HDInsight SDK" pageTitle="How to use the HDInsight .NET libraries | Azure" metaKeywords="" description="Learn how to get the HDInsight NuGet packages and use them from your .NET application." metaCanonical="" services="hdinsight" documentationCenter="" title="Use the Hadoop .NET SDK with HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 将 Hadoop .NET SDK 与 HDInsight 配合使用
 
@@ -100,7 +100,7 @@ Hadoop .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 Hadoop �
         var localFile = "C:/Tutorials/Actors.txt";
         var hadoopUser = [Hadoop user name]; // The HDInsight cluster user
         var hadoopUserPassword = [Hadoop user password]; // HDInsight 群集用户密码
-        var clusterURI = [HDInsight cluster URL]; //"https://HDInsightCluster Name.azurehdinsight.cn:563";
+        var clusterURI = [HDInsight cluster URL]; //"https://HDInsightCluster Name.azurehdinsight.net:563";
 
         var storageAdapter = new BlobStorageAdapter(asvAccount, asvKey, asvContainer, true);
         var HDFSClient = new WebHDFSClient(hadoopUser, storageAdapter);
@@ -186,14 +186,14 @@ LOAD DATA INPATH 操作是一个移动操作，它将 Actors.txt 数据移入由
   [运行应用程序]: #run
   [后续步骤]: #nextsteps
   [NuGet]: http://nuget.codeplex.com/wikipage?title=Getting%20Started
-  [Azure 订阅]: /pricing/1rmb-trial/
-  [Azure 存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
-  [如何管理存储空间帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
+  [Azure 订阅]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Azure 存储帐户]: http://www.windowsazure.cn/zh-cn/manage/services/storage/how-to-create-a-storage-account/
+  [如何管理存储空间帐户]: /en-us/manage/services/storage/how-to-manage-a-storage-account/
   [Actors.txt]: http://www.microsoft.com/en-us/download/details.aspx?id=37003
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/howto-blob-store/
   [HDI.HadoopSDKOutput]: ./media/hdinsight-use-hadoop-dotnet-sdk/HDI.HadoopSDKOutput.PNG "控制台应用程序"
   [Hive 入门]: https://cwiki.apache.org/confluence/display/Hive/GettingStarted#GettingStarted-DMLOperations
-  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
-  [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
-  [MapReduce 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-mapreduce/
-  [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
+  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
+  [Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
+  [MapReduce 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-mapreduce-with-hdinsight/
+  [Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/

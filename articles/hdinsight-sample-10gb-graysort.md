@@ -1,4 +1,4 @@
-<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="10GB GraySort 示例 | Azure "metaKeywords="hdinsight, hadoop, hdinsight 管理, hdinsight 管理 azure" description="Learn how to run a general purpose GraySort on Hadoop with HDInsight using Azure PowerShell." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The 10GB GraySort sample" authors="bradsev" />
+﻿<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="10GB GraySort 示例 | Azure "metaKeywords="hdinsight, hadoop, hdinsight 管理, hdinsight 管理 azure" description="Learn how to run a general purpose GraySort on Hadoop with HDInsight using Azure PowerShell." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The 10GB GraySort sample" authors="bradsev" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -24,9 +24,9 @@
 
 **先决条件**：	
 
-- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[免费试用 Azure](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/) 页。
+- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[免费试用 Azure](http://www.windowsazure.cn/zh-cn/pricing/free-trial/) 页。
 
-- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters/)。
+- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](../hdinsight-provision-clusters/)。
 
 - 您必须已经安装了 Azure PowerShell，并且已将其配置为可用于您的帐户。 有关如何进行此安装的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
@@ -415,18 +415,18 @@
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
 
 
-[Powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: ../install-configure-powershell/
 
-[hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
+[hdinsight-get-started]: ../hdinsight-get-started/
 
-[hdinsight-samples]: /zh-cn/documentation/articles/hdinsight-run-samples/
-[hdinsight-sample-10gb-graysort]: /zh-cn/documentation/articles/hdinsight-sample-10gb-graysort/
-[hdinsight-sample-csharp-streaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
-[hdinsight-sample-pi-estimator]: /zh-cn/documentation/articles/hdinsight-sample-pi-estimator/
-[hdinsight-sample-wordcount]: /zh-cn/documentation/articles/hdinsight-sample-wordcount/
+[hdinsight-samples]: ../hdinsight-run-samples/
+[hdinsight-sample-10gb-graysort]: ../hdinsight-sample-10gb-graysort/
+[hdinsight-sample-csharp-streaming]: ../hdinsight-sample-csharp-streaming/
+[hdinsight-sample-pi-estimator]: ../hdinsight-sample-pi-estimator/
+[hdinsight-sample-wordcount]: ../hdinsight-sample-wordcount/
 
-[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
-[hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
+[hdinsight-use-hive]: ../hdinsight-use-hive/
+[hdinsight-use-pig]: ../hdinsight-use-pig/
 
 
 

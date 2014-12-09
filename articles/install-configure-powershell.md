@@ -1,8 +1,8 @@
-<properties linkid="Install-Config-Windows-Azure-PowerShell" urlDisplayName="Windows Azure PowerShell" pageTitle="如何安装和配置 Windows Azure PowerShell" description="了解如何安装和配置 Windows Azure PowerShell。" umbracoNaviHide="0" disqusComments="1" writer="kathydav" editor="tysonn" manager="jeffreyg" documentationCenter="" services="" solutions="" authors="" title="如何安装和配置 Windows Azure PowerShell" />
+﻿<properties linkid="Install-Config-Windows-Azure-PowerShell" urlDisplayName="Windows Azure PowerShell" pageTitle="如何安装和配置 Windows Azure PowerShell" description="了解如何安装和配置 Windows Azure PowerShell。" umbracoNaviHide="0" disqusComments="1" writer="kathydav" editor="tysonn" manager="jeffreyg" documentationCenter="" services="" solutions="" authors="" title="如何安装和配置 Windows Azure PowerShell" />
 
 # 如何安装和配置 Windows Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/install-configure-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/zh-cn/documentation/articles/xplat-cli/" title="跨平台 CLI">跨平台 CLI</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/manage/install-and-configure-windows-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/zh-cn/manage/install-and-configure-cli/" title="跨平台 CLI">跨平台 CLI</a></div>
 
 您可以使用 Windows PowerShell 在 Windows Azure 中执行各种任务，要么在命令提示符下以交互方式执行，要么通过脚本自动执行。Windows Azure PowerShell 是一个通过 Windows PowerShell 提供用于管理 Windows Azure 的 cmdlet 的模块。您可以使用 cmdlet 创建、测试、部署和管理通过 Windows Azure 平台提供的解决方案和服务。在大多数情况下，您可以使用 cmdlet 执行与通过 Windows Azure 管理门户执行的相同任务。例如，您可以创建和配置云服务、虚拟机、虚拟网络和网站。
 
@@ -24,7 +24,7 @@
 
 Windows Azure 是基于订阅的平台。这意味着需要订阅才能使用平台。在大多数情况下，这还意味着 cmdlet 需要订阅信息以便执行与您的订阅有关的任务。（可以在没有此信息的情况下使用与存储相关的 cmdlet。）您通过配置计算机以便连接到您的订阅来提供此信息。在本文中的“如何连接到订阅”下提供了说明。
 
-> [WACOM.NOTE] 提供多种订阅选项。有关信息，请参见 [Windows Azure 入门](http://www.windowsazure.cn/pricing/overview/)。
+> [WACOM.NOTE] 提供多种订阅选项。有关信息，请参见 [Windows Azure 入门](http://go.microsoft.com/fwlink/p/?LinkId=320795)。
 
 当您安装此模块时，安装程序将检查系统是否具备必需的软件并安装所有依赖项，如 Windows PowerShell 和 .NET Framework 的正确版本。
 
@@ -32,7 +32,7 @@ Windows Azure 是基于订阅的平台。这意味着需要订阅才能使用平
 
 您可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?LinkId=320376)下载并安装 Windows Azure PowerShell 模块。系统提示后，单击“运行”。Microsoft Web 平台安装程序将加载，同时还加载可供安装的 Windows Azure PowerShell 模块。Web 平台安装程序将安装 Windows Azure PowerShell cmdlet 的所有依赖项。按照提示完成安装。
 
-有关可用于 Windows Azure 的命令行工具的更多信息，请参见[命令行工具]( http://www.windowsazure.cn/downloads/#cmd-line-tools)。
+有关可用于 Windows Azure 的命令行工具的更多信息，请参见[命令行工具]( http://go.microsoft.com/fwlink/?LinkId=320796)。
 
 安装此模块还会安装 Windows Azure PowerShell 的自定义控制台。您可以通过标准的 Windows PowerShell 控制台或 Windows Azure PowerShell 控制台运行 cmdlet。
 
@@ -45,7 +45,7 @@ Windows Azure 是基于订阅的平台。这意味着需要订阅才能使用平
 
 <h2><a id="Connect"></a>如何连接到订阅</h2>
 
-使用 Windows Azure 要求订阅。如果您不具有订阅，请参见 [Windows Azure 入门](/pricing/overview/)。
+使用 Windows Azure 要求订阅。如果您不具有订阅，请参见 [Windows Azure 入门](http://go.microsoft.com/fwlink/p/?LinkId=320795)。
 
 cmdlet 要求您的订阅信息，以便可以使用它来管理您的服务。截至该模块的 .0.7 版本，有两种提供此信息的方法。您可以下载和使用包含该信息的管理证书，或者可以使用您的 Microsoft 帐户或组织 ID 登录到 Windows Azure。在您登录时，Windows Azure Active Directory (Windows Azure AD) 将对凭据进行身份验证。
 
@@ -84,10 +84,10 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 删除使用 <b>Get-AzurePublishSettingsFile</b> 下载的
 发布配置文件。因为管理证书包含安全凭据，
 所以不应由未授权用户访问。如果您需要
-有关您的订阅的信息，可以从 <a href="http://manage.windowsazure.cn/">Windows Azure 管理门户</a>获得。</p>
+有关您的订阅的信息，可以从 <a href="http://manage.windowsazure.com/">Windows Azure 管理门户</a>或 <a href="http://go.microsoft.com/fwlink/p/?LinkId=324875">Microsoft Online Services 客户门户</a>获得。</p>
 </div>
 
-1. 使用您的 Windows Azure 帐户的凭据登录 [Windows Azure 管理门户](http://manage.windowsazure.cn)。
+1. 使用您的 Windows Azure 帐户的凭据登录 [Windows Azure 管理门户](http://manage.windowsazure.com)。
 
 2. 按[如何安装 Windows Azure PowerShell](#Install) 中所述，打开 Windows Azure PowerShell 控制台。
 
@@ -205,7 +205,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 要获得社区中的帮助信息，请尝试以下常见论坛：
 
-- [MSDN 上的 Windows Azure]( https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs)
+- [MSDN 上的 Windows Azure]( http://go.microsoft.com/fwlink/p/?LinkId=320212)
 - [堆栈溢出](http://go.microsoft.com/fwlink/?LinkId=320213)
 
 
@@ -215,13 +215,13 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 - 要提供有关这些 cmdlet 的反馈、报告问题或访问源代码，请参见 [Windows Azure PowerShell 代码存储库](https://github.com/WindowsAzure/azure-sdk-tools)。
 
-- 要了解有关 Windows PowerShell 命令行和脚本环境的信息，请参见 [TechNet 脚本中心](http://technet.microsoft.com/zh-cn/scriptcenter/powershell.aspx)。
+- 要了解有关 Windows PowerShell 命令行和脚本环境的信息，请参见 [TechNet 脚本中心](http://go.microsoft.com/fwlink/p/?LinkId=320211)。
 
-- 有关安装、学习、使用和自定义 Windows PowerShell 的信息，请参见[使用 Windows PowerShell 编写脚本](http://technet.microsoft.com/zh-cn/library/bb978526.aspx)。
+- 有关安装、学习、使用和自定义 Windows PowerShell 的信息，请参见[使用 Windows PowerShell 编写脚本](http://go.microsoft.com/fwlink/p/?LinkId=320210)。
 
-- 有关什么是脚本以及如何在 Windows PowerShell 中运行脚本的信息，请参见[运行脚本](http://technet.microsoft.com/zh-cn/library/bb978526.aspx)。本文包含有关如何创建脚本和将计算机配置为运行脚本的基本信息。
+- 有关什么是脚本以及如何在 Windows PowerShell 中运行脚本的信息，请参见[运行脚本](http://go.microsoft.com/fwlink/p/?LinkId=320627)。本文包含有关如何创建脚本和将计算机配置为运行脚本的基本信息。
 
-- 有关针对 Windows Azure AD 的 cmdlet 的信息，请参见[使用 Windows PowerShell 管理 Windows Azure AD](http://technet.microsoft.com/library/jj151815.aspx)。
+- 有关针对 Windows Azure AD 的 cmdlet 的信息，请参见[使用 Windows PowerShell 管理 Windows Azure AD](http://go.microsoft.com/fwlink/p/?LinkId=320628)。
 
 
 

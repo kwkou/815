@@ -1,4 +1,4 @@
-<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="Microsoft Azure 存储空间简介 | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="An overview of Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Microsoft Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="Introduction to Storage | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="An overview of Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Microsoft Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
 # Microsoft Azure 存储空间简介
 
@@ -40,10 +40,8 @@ Azure 存储服务包括 Blob 存储、表存储和队列存储。每个存储�
 
 你必须具有 Azure 订阅（这是允许你访问各种 Azure 服务的计划），然后才能创建存储帐户。通过单个订阅，你最多可以创建 20 个唯一的命名存储帐户。
 
-你可以从[免费试用版][]开始使用 Azure。一旦决定购买某个计划，你可以从各种[购买选项][]进行选择。
-<!--
-如果你是 [MSDN 订户][]，则可以获得免费的月度信用，你可以将其用于各种 Azure 服务，包括 Azure 存储空间。
--->
+你可以从[免费试用版][]开始使用 Azure。一旦决定购买某个计划，你可以从各种[购买选项][]进行选择。如果你是 [MSDN 订户][]，则可以获得免费的月度信用，你可以将其用于各种 Azure 服务，包括 Azure 存储空间。
+
 ## Blob 存储
 
 对于有大量非结构化数据要存储在云中的用户，Blob 存储提供了一种经济高效且可伸缩的解决方案。你可以使用 Blob 存储来存储如下内容：
@@ -114,14 +112,11 @@ Azure 存储空间通过一个 [REST API][] 来公开存储资源，任何可以
 -   [.NET][]
 -   [本机代码][]
 -   [Java][]
+-   [Node.js][]
 -   [PHP][]
+-   [Ruby][]
 -   [Python][]
 -   [PowerShell][]
-
-<!--
--   [Node.js][]
--   [Ruby][]
--->
 
 ## 后续步骤
 
@@ -167,41 +162,41 @@ Azure 存储空间通过一个 [REST API][] 来公开存储资源，任何可以
 -   [如何通过 Python 使用队列存储][]
 
   [Azure 存储资源]: ./media/storage-introduction/storage-concepts.png
-  [免费试用版]: /pricing/1rmb-trial/
-  [购买选项]: /pricing/overview/
-  [MSDN 订户]: /zh-cn/pricing/member-offers/msdn-benefits-details/
-  [Azure 导入/导出服务]: /zh-cn/documentation/articles/storage-import-export-service/
-  [共享访问签名]: /zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/
-  [Azure 存储 SLA]: /zh-cn/support/legal/sla/
-  [存储定价详细信息]: /pricing/details/storage/
-  [数据传输定价详细信息]: /pricing/details/data-transfer/
-  [Azure 存储空间定价计算器]: /pricing/calculator/
-  [REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179355.aspx
-  [.NET]: http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx
+  [免费试用版]: /en-us/pricing/free-trial/
+  [购买选项]: /en-us/pricing/purchase-options/
+  [MSDN 订户]: /en-us/pricing/member-offers/msdn-benefits-details/
+  [Azure 导入/导出服务]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-import-export-service/
+  [共享访问签名]: ../storage-dotnet-shared-access-signature-part-1/
+  [Azure 存储 SLA]: /en-us/support/legal/sla/
+  [存储定价详细信息]: /en-us/pricing/details/storage/
+  [数据传输定价详细信息]: /en-us/pricing/details/data-transfers/
+  [Azure 存储空间定价计算器]: /en-us/pricing/calculator/?scenario=data-management
+  [REST API]: http://msdn.microsoft.com/library/windowsazure/dd179355.aspx
+  [.NET]: http://msdn.microsoft.com/zh-cn/library/dn495001.aspx
   [本机代码]: http://msdn.microsoft.com/zh-cn/library/dn495438.aspx
-  [Java]: /zh-cn/develop/java/
+  [Java]: /en-us/develop/java/
   [Node.js]: ../storage/#node
-  [PHP]: /zh-cn/develop/php/
+  [PHP]: ../storage/#php
   [Ruby]: ../storage/#ruby
   [Python]: ../storage/#python
   [PowerShell]: http://msdn.microsoft.com/zh-cn/library/dn495240.aspx
-  [Azure 存储文档]: /zh-cn/documentation/services/storage/
+  [Azure 存储文档]: /en-us/documentation/services/storage/
   [Azure 存储空间可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx
-  [如何通过 .NET 使用 Blob 存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/
-  [如何通过 .NET 使用表存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/
-  [如何通过 .NET 使用队列存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/
-  [如何通过 Java 使用 Blob 存储]: /zh-cn/documentation/articles/storage-java-how-to-use-blob-storage/
-  [如何通过 Java 使用表存储]: /zh-cn/documentation/articles/storage-java-how-to-use-table-storage/
-  [如何通过 Java 使用队列存储]: /zh-cn/documentation/articles/storage-java-how-to-use-queue-storage/
-  [如何通过 Node.js 使用 Blob 存储]: /zh-cn/documentation/articles/storage-nodejs-how-to-use-blob-storage/
-  [如何通过 Node.js 使用表存储]: /zh-cn/documentation/articles/storage-nodejs-how-to-use-table-storage/
-  [如何通过 Node.js 使用队列存储]: /zh-cn/documentation/articles/storage-nodejs-how-to-use-queues/
-  [如何通过 PHP 使用 Blob 存储]: /zh-cn/documentation/articles/storage-php-how-to-use-blobs/
-  [如何通过 PHP 使用表存储]: /zh-cn/documentation/articles/storage-php-how-to-use-table-storage/
-  [如何通过 PHP 使用队列存储]: /zh-cn/documentation/articles/storage-php-how-to-use-queues/
-  [如何通过 Ruby 使用 Blob 存储]: /zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage/
-  [如何通过 Ruby 使用表存储]: /zh-cn/documentation/articles/storage-ruby-how-to-use-table-storage/
-  [如何通过 Ruby 使用队列存储]: /zh-cn/documentation/articles/storage-ruby-how-to-use-queue-storage/
-  [如何通过 Python 使用 Blob 存储]: /zh-cn/documentation/articles/storage-python-how-to-use-blob-storage/
-  [如何通过 Python 使用表存储]: /zh-cn/documentation/articles/storage-python-how-to-use-table-storage/
-  [如何通过 Python 使用队列存储]: /zh-cn/documentation/articles/storage-python-how-to-use-queue-storage/
+  [如何通过 .NET 使用 Blob 存储]: ../storage-dotnet-how-to-use-blobs/
+  [如何通过 .NET 使用表存储]: ../storage-dotnet-how-to-use-tables/
+  [如何通过 .NET 使用队列存储]: ../storage-dotnet-how-to-use-queues/
+  [如何通过 Java 使用 Blob 存储]: ../storage-java-how-to-use-blob-storage/
+  [如何通过 Java 使用表存储]: ../storage-java-how-to-use-table-storage/
+  [如何通过 Java 使用队列存储]: ../storage-java-how-to-use-queue-storage/
+  [如何通过 Node.js 使用 Blob 存储]: ../storage-nodejs-how-to-use-blob-storage/
+  [如何通过 Node.js 使用表存储]: ../storage-nodejs-how-to-use-table-storage/
+  [如何通过 Node.js 使用队列存储]: ../storage-nodejs-how-to-use-queues/
+  [如何通过 PHP 使用 Blob 存储]: ../storage-php-how-to-use-blobs/
+  [如何通过 PHP 使用表存储]: ../storage-php-how-to-use-table-storage/
+  [如何通过 PHP 使用队列存储]: ../storage-php-how-to-use-queues/
+  [如何通过 Ruby 使用 Blob 存储]: ../storage-ruby-how-to-use-blob-storage/
+  [如何通过 Ruby 使用表存储]: ../storage-ruby-how-to-use-table-storage/
+  [如何通过 Ruby 使用队列存储]: ../storage-ruby-how-to-use-queue-storage/
+  [如何通过 Python 使用 Blob 存储]: ../storage-python-how-to-use-blob-storage/
+  [如何通过 Python 使用表存储]: ../storage-python-how-to-use-table-storage/
+  [如何通过 Python 使用队列存储]: ../storage-python-how-to-use-queue-storage/

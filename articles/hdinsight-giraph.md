@@ -1,4 +1,4 @@
-<properties title="How to use Giraph with HDInsight" pageTitle="了解如何将 Apache Giraph 与 Azure HDInsight (Hadoop) 配合使用 | Azure" description="Learn how to use Apache Giraph to perform graph processing with Azure HDInsight" metaKeywords="Azure HDInsight Apache Giraph, hdinsight giraph, hdinsight graph, hadoop giraph, azure hadoop, hadoop graph" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
+<properties title="How to use Giraph with HDInsight" pageTitle="How to use Apache Giraph with Azure HDInsight" description="Learn how to use Apache Giraph to perform graph processing with Azure HDInsight" metaKeywords="Azure HDInsight Apache Giraph, hdinsight giraph, hdinsight graph, hadoop giraph, azure hadoop, hadoop graph" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/14/2014" ms.author="larryfr"></tags>
 
@@ -74,7 +74,7 @@ Giraph 未作为 HDInsight 群集的一部分提供，因此必须从源生成�
 
     完成该命令后，JAR 文件即已上载到 wasb:///example/jars/giraph.jar。
 
-    > [WACOM.NOTE] 有关可用于将文件上载到 HDInsight 的实用工具列表，请参阅[在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data/)。
+    > [WACOM.NOTE] 有关可用于将文件上载到 HDInsight 的实用工具列表，请参阅[在 HDInsight 中上载 Hadoop 作业的数据](http://azure.microsoft.com/en-us/documentation/articles/hdinsight-upload-data/)。
 
 ## <span id="run"></span></a>运行示例
 
@@ -94,7 +94,7 @@ SimpleShortestPathsComputation 演示了有关查找图形中对象之间最短�
 
     使用表示对象间距离的值（或权重）绘制图形后，上述数据可能与下面类似。
 
-    ![tiny\_graph.txt 中的对象绘制为圆圈，线条表示对象之间的不同距离](./media/hdinsight-giraph/giraph-graph.png)
+    ![tiny\_graph.txt 中的对象绘制为圆圈，线条表示对象之间的不同距离](.\media\hdinsight-giraph\giraph-graph.png)
 
 2.  使用 [Azure PowerShell][aps] 和 [HDInsight-Tools][tools] 将 **tiny\_graph.txt** 文件上载到 HDInsight 群集的主存储。
 
@@ -151,7 +151,7 @@ SimpleShortestPathComputation 示例硬编码为从对象 ID 1 开始查找与�
 
 在可视化此数据的情况下，你可以通过体验 ID 1 与所有其他对象之间的最短路径来验证结果。请注意，ID 1 与 ID 4 之间的最短路径为 5。这是从 <span style="color:orange">ID 1 到 ID 3</span>，然后再从 <span style="color:red">ID 3 到 ID 4</span> 的总距离。
 
-![将对象绘制为圆圈，并绘制对象之间的最短路径](./media/hdinsight-giraph/giraph-graph-out.png)
+![将对象绘制为圆圈，并绘制对象之间的最短路径](.\media\hdinsight-giraph\giraph-graph-out.png)
 
 ## <span id="tshoot"></span></a>故障排除
 
@@ -171,7 +171,7 @@ Giraph 作业在运行时将创建指定的输出目录。如果该目录已存�
 
 若要连接到 HDInsight 群集，请执行以下步骤：
 
-1.  使用 [Azure 管理门户](https://manage.windowsazure.cn)选择你的 HDInsight 群集，然后选择“配置”。
+1.  使用 [Azure 管理门户](https://manage.windowsazure.com)选择你的 HDInsight 群集，然后选择“配置”。
 
 2.  在页的底部，选择“启用远程”并提供用户名、密码和远程桌面连接的过期日期。
 
@@ -188,7 +188,7 @@ Giraph 作业在运行时将创建指定的输出目录。如果该目录已存�
 
 ### 旧版 HDInsight
 
-如果要在旧版 HDInsight 上使用 Giraph，则必须针对该版本支持的特定 Hadoop 版本编译 Giraph。请参阅 [HDInsight 群集版本中的新增功能](/zh-cn/documentation/articles/hdinsight-component-versioning/)，以确定与你的 HDInsight 版本对应的 Hadoop 版本。
+如果要在旧版 HDInsight 上使用 Giraph，则必须针对该版本支持的特定 Hadoop 版本编译 Giraph。请参阅 [HDInsight 群集版本中的新增功能](http://azure.microsoft.com/en-us/documentation/articles/hdinsight-component-versioning/)，以确定与你的 HDInsight 版本对应的 Hadoop 版本。
 
 此外，旧版 HDInsight 可能要求你从 Hadoop 命令行运行 Giraph 作业。如果在从 PowerShell 运行作业时收到错误，请尝试从 [Hadoop 命令行](#cmd)运行该作业。
 
@@ -205,20 +205,20 @@ Giraph 作业在运行时将创建指定的输出目录。如果该目录已存�
   [Maven]: http://maven.apache.org/
   [Giraph 存储库]: https://github.com/apache/giraph
   [GIRAPH-930]: https://issues.apache.org/jira/browse/GIRAPH-930
-  [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [Azure PowerShell]: ../install-configure-powershell/
   [HDInsight-Tools]: https://github.com/Blackmist/hdinsight-tools
-  [在 HDInsight 中上载 Hadoop 作业的数据]: /zh-cn/documentation/articles/hdinsight-upload-data/
+  [在 HDInsight 中上载 Hadoop 作业的数据]: ../hdinsight-upload-data/
   [Pregel]: http://people.apache.org/~edwardyoon/documents/pregel.pdf
   [release-1.1 分库]: https://github.com/apache/giraph/tree/release-1.1
   [定向图形]: http://en.wikipedia.org/wiki/Directed_graph
   [tiny\_graph.txt 中的对象绘制为圆圈，线条表示对象之间的不同距离]: ./media/hdinsight-giraph/giraph-graph.png
   [将对象绘制为圆圈，并绘制对象之间的最短路径]: ./media/hdinsight-giraph/giraph-graph-out.png
-  [Azure 管理门户]: https://manage.windowsazure.cn
-  [HDInsight 群集版本中的新增功能]: /zh-cn/documentation/articles/hdinsight-component-versioning/
+  [Azure 管理门户]: https://manage.windowsazure.com
+  [HDInsight 群集版本中的新增功能]: ../hdinsight-component-versioning/
   [Hadoop 命令行]: #cmd
-  [Pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
-  [Hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
+  [Pig]: ../hdinsight-use-pig/
+  [Hive]: ../hdinsight-use-hive/
 
   [giraph]: http://giraph.apache.org
 [tools]: https://github.com/Blackmist/hdinsight-tools
-[aps]: /zh-cn/documentation/articles/install-configure-powershell/
+[aps]: ../install-configure-powershell/

@@ -1,20 +1,20 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop-3.0" urlDisplayName="Get Started" pageTitle="开始在 HDInsight 中使用 Hadoop 2.4 | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop-3.0" urlDisplayName="Get Started" pageTitle="Get started using Hadoop in HDInsight | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao"></tags>
 
-# 开始在 HDInsight 中使用 Hadoop 2.4
+# 开始在 HDInsight（预览版）中使用 Hadoop 2.4
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/hdinsight-get-started" title="开始在 HDInsight 中使用 Hadoop 2.2">Hadoop 2.2</a>
-<a href="/zh-cn/documentation/articles/hdinsight-get-started-31" title="开始在 HDInsight 中使用 Hadoop 2.4" class="current">Hadoop 2.4</a>
-<a style="display:none"href="/zh-cn/documentation/articles/hdinsight-get-started-21" title="开始在 HDInsight 中使用 Hadoop 1.2">Hadoop 1.2</a>
+<a href="../hdinsight-get-started" title="开始在 HDInsight 中使用 Hadoop 2.2">Hadoop 2.2</a>
+<a href="../hdinsight-get-started-31" title="开始在 HDInsight 中使用 Hadoop 2.4" class="current">Hadoop 2.4</a>
+<a href="../hdinsight-get-started-21" title="开始在 HDInsight 中使用 Hadoop 1.2">Hadoop 1.2</a>
 </div>
 
 HDInsight 使 [Apache Hadoop][apache-hadoop] 可在云中作为服务使用，并使 MapReduce 软件框架可用于更简单、缩放性更高且经济实用的 Azure 环境。HDInsight 还提供了使用 Azure Blob 存储管理和存储数据的经济实用方法。
 
 在本教程中，你将使用 Azure 管理门户在 HDInsight 中设置一个 Hadoop 群集，使用 HDInsight 群集仪表板提交一个针对示例 Hive 表执行查询的 Hive 作业，然后将该 Hive 作业的输出数据导入到 Excel 中进行检查。
 
-> [WACOM.NOTE] 本教程介绍如何在 HDInsight 上使用 Hadoop 2.4 群集。有关其他受支持的版本，请单击页顶部的选择器。有关版本信息，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]
+> [WACOM.NOTE] 本教程介绍如何在 HDInsight（预览版）上使用 Hadoop 2.4 群集。有关其他受支持的版本，请单击页顶部的选择器。有关版本信息，请参阅 [HDInsight 提供的群集版本有哪些新功能？][hdinsight-versions]
 
 <!-- The live demo of this article:  <center><a href="https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS" target = "_blank">![HDI.getstarted.video][img-hdi-getstarted-video]</a></center> -->
 
@@ -29,7 +29,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 <!--  [Member Offers][azure-member-offers]  -->
 
 -   装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的计算机。
--   有关最新 HDInsight 版本的说明，请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes/)。
+-   有关最新 HDInsight 版本的说明，请参阅 [HDInsight 发行说明](http://azure.microsoft.com/en-us/documentation/articles/hdinsight-release-notes/)。
 
 **估计完成时间：**30 分钟
 
@@ -46,6 +46,11 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 设置 HDInsight 群集时，请将 Azure 存储帐户和该帐户上的特定 Blob 存储容器指定为默认文件系统，就像在 HDFS 中一样。该存储帐户必须与 HDInsight 计算资源位于同一数据中心。目前，只能在以下数据中心内设置 HDInsight 群集：
 
+-   亚洲东南部
+-   欧洲北部
+-   欧洲西部
+-   美国东部
+-   美国西部
 -   中国东部
 -   中国北部
 
@@ -122,7 +127,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
     顶部有多个选项卡。默认选项卡为“Hive 编辑器”，其他选项卡包括“作业”和“文件”。使用仪表板可以提交 Hive 查询、检查 Hadoop 作业日志，以及浏览 WASB 文件。
 
-> [WACOM.NOTE] 请注意，URL 为 *\<群集名称\>.azurehdinsight.cn*。如果不从管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
+> [WACOM.NOTE] 请注意，URL 为 *\<群集名称\>.hdinsightservices.cn*。如果不从管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
 
 **运行 Hive 查询**
 
@@ -163,7 +168,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 **下载 Microsoft Power Query for Excel**
 
--   从 [Microsoft 下载中心](http://www.microsoft.com/zh-cn/download/details.aspx?id=39379)下载 Microsoft Power Query for Excel 并安装它。
+-   从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=39379)下载 Microsoft Power Query for Excel 并安装它。
 
 **导入 HDInsight 数据**
 
@@ -199,20 +204,20 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 <!-- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ -->
 
-[hdinsight-versions]: /zh-cn/documentation/articles/hdinsight-component-versioning/
+[hdinsight-versions]: ../hdinsight-component-versioning/
 
-[hdinsight-get-started-30]: /zh-cn/documentation/articles/hdinsight-get-started-30/
-[hdinsight-provision]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
-[hdinsight-admin-powershell]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
-[hdinsight-upload-data]: /zh-cn/documentation/articles/hdinsight-upload-data/
-[hdinsight-use-mapreduce]: /zh-cn/documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
-[hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
-[hdinsight-use-oozie]: /zh-cn/documentation/articles/hdinsight-use-oozie/
-[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
-[hdinsight-develop-streaming]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-get-started-30]: ../hdinsight-get-started-30/
+[hdinsight-provision]: ../hdinsight-provision-clusters/
+[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
+[hdinsight-upload-data]: ../hdinsight-upload-data/
+[hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce
+[hdinsight-use-hive]: ../hdinsight-use-hive/
+[hdinsight-use-pig]: ../hdinsight-use-pig/
+[hdinsight-use-oozie]: ../hdinsight-use-oozie/
+[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-emulator]: ../hdinsight-get-started-emulator/
+[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
 
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 
@@ -222,13 +227,13 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 [azure-free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /zh-cn/documentation/articles/storage-create-storage-account/ 
+[azure-create-storageaccount]: ../storage-create-storage-account/ 
 
 [apache-hadoop]: http://hadoop.apache.org/
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
-[powershell-open]: /zh-cn/documentation/articles/install-configure-powershell/#Install
+[powershell-install-configure]: ../install-configure-powershell/
+[powershell-open]: ../install-configure-powershell/#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png

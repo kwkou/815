@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-sample-pi-estimator" urlDisplayName="HDInsight Samples" pageTitle="HDInsight Pi estimator 示例 | Azure" metaKeywords="hdinsight, hdinsight sample,  hadoop, mapreduce" description="Learn how to run an Hadoop MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight Pi estimator sample" authors="bradsev" />
+<properties linkid="manage-services-hdinsight-sample-pi-estimator" urlDisplayName="HDInsight Samples" pageTitle="The HDInsight Pi estimator sample | Azure" metaKeywords="hdinsight, hdinsight sample,  hadoop, mapreduce" description="Learn how to run an Hadoop MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight Pi estimator sample" authors="bradsev" />
 
 # HDInsight Pi estimator 示例
 
@@ -413,7 +413,7 @@
 
 在本教程中，你了解了如何在 HDInsight 上运行 MapReduce 作业，以及如何使用蒙特卡罗方法，这些方法需要且会生成可以由此服务管理的大型数据集。
 
-下面是用于在默认 HDInsight 2.1 群集上运行此示例的完整脚本。（在 HDInsight 3.0 群集上运行该示例只需更改 .jar 文件的名称：hadoop-examples.jar 为 hadoop-mapreduce-examples.jar。）
+下面是用于在默认 HDInsight 2.1 群集上运行此示例的完整脚本。（在 HDInsight 3.0 群集上运行该示例只需更改 .jar 文件的名称：hadoop-examples.jar becomes hadoop-mapreduce-examples.jar。）
 
     ### 提供 Windows Azure 订阅名称和 HDInsight 群集名称。 
     $subscriptionName = "<SubscriptionName>" 
@@ -446,18 +446,18 @@
 -   [Hive 与 HDInsight 配合使用][]
 -   [Azure HDInsight SDK 文档][]
 
-  [运行 HDInsight 示例]: /zh-cn/documentation/articles/hdinsight-run-samples/
-  [免费试用 Azure]: /pricing/1rmb-trial/
-  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [运行 HDInsight 示例]: /en-us/manage/services/hdinsight/howto-run-samples
+  [免费试用 Azure]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
+  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
   [使用 Azure PowerShell 运行示例]: #run-sample
   [Pi estimator MapReduce 程序的 Java 代码]: #java-code
   [摘要]: #summary
   [后续步骤]: #next-steps
-  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
-  [示例：10GB GraySort]: /zh-cn/documentation/articles/hdinsight-sample-10gb-graysort/
-  [示例：Wordcount]: /zh-cn/documentation/articles/hdinsight-sample-wordcount/
-  [示例：C\# Steaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
-  [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
-  [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
+  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
+  [示例：10GB GraySort]: /en-us/manage/services/hdinsight/howto-run-samples/sample-10gb-graysort/
+  [示例：Wordcount]: /en-us/manage/services/hdinsight/howto-run-samples/sample-wordcount/
+  [示例：C\# Steaming]: /en-us/manage/services/hdinsight/howto-run-samples/sample-csharp-streaming/
+  [Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
+  [Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

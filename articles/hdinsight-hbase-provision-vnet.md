@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-hbase-provision-on-vnet" urlDisplayName="Provision HBase clusters on Azure Virtual Network" pageTitle="在 Azure 虚拟网络上设置 HBase 群集 | Azure" metaKeywords="" description="Learn how to create HDInsight clusters on Azure Virtual Network." metaCanonical="" services="hdinsight" documentationCenter="" title="Provision HBase clusters on Azure Virtual Network" authors="jgao" solutions="big-data" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-hbase-provision-on-vnet" urlDisplayName="Provision HBase clusters on Azure Virtual Network" pageTitle="Provision HBase clusters on Azure Virtual Network | Azure" metaKeywords="" description="Learn how to create HDInsight clusters on Azure Virtual Network." metaCanonical="" services="hdinsight" documentationCenter="" title="Provision HBase clusters on Azure Virtual Network" authors="jgao" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="jgao"></tags>
 
@@ -181,20 +181,11 @@
   [使用 HBase Java RPC API 连接到虚拟网络中设置的 HBase 群集]: #connect
   [使用 PowerShell 设置 HBase 群集]: #powershell
   [后续步骤]: #nextsteps
-<<<<<<< HEAD
   [购买选项]: http://www.windowsazure.cn/pricing/overview/
   [免费试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn
-=======
-  [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell
-  [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
-  [Azure 管理门户]: https://manage.windowsazure.cn
-  []: http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx
->>>>>>> stage
   [将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [群集名称和版本字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png
   [节点数和区域字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard2.png

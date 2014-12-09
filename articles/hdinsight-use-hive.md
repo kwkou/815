@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-hive" urlDisplayName="Use Hive with HDInsight" pageTitle="Hive 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use Hive with HDInsight. You'll use a log file as input into an HDInsight table, and use HiveQL to query the data and report basic statistics." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hive with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-howto-hive" urlDisplayName="Use Hive with HDInsight" pageTitle="Use Hive with HDInsight | Azure" metaKeywords="" description="Learn how to use Hive with HDInsight. You'll use a log file as input into an HDInsight table, and use HiveQL to query the data and report basic statistics." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hive with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 # Hive 与 HDInsight 配合使用
 
@@ -182,21 +182,21 @@ Hive 可以简化使用类似 SQL 的查询语言进行数据查询的步骤，�
 -   [Azure HDInsight SDK 文档][]
 
   [Apache Hive]: http://hive.apache.org/
-  [HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
-  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [HDInsight 入门]: ../hdinsight-get-started/
+  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
   [Hive 用例]: #usage
   [将数据文件上载到 Azure Blob 存储]: #uploaddata
   [使用 PowerShell 运行 Hive 查询]: #runhivequeries
   [后续步骤]: #nextsteps
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
   [Apache Log4j]: http://en.wikipedia.org/wiki/Log4j
-  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
+  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
   [HDI.HIVE.PowerShell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
   [PowerShell Invoke-Hive 输出结果]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
   [使用 Windows PowerShell Here-Strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
-  [使用 HDInsight 分析航班延误数据]: /zh-cn/documentation/articles/hdinsight-analyze-flight-delay-data/
-  [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/
-  [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-  [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [使用 HDInsight 分析航班延误数据]: ../hdinsight-analyze-flight-delay-data/
+  [将 Oozie 与 HDInsight 配合使用]: ../hdinsight-use-oozie/
+  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
+  [Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

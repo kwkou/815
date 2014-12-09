@@ -1,5 +1,3 @@
-<properties linkid="dev-net-Virtual-Machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="Windows Azure 服务管理：虚拟机" metaKeywords="虚拟机" description="" metaCanonical="" services="虚拟机" documentationCenter="Services" title="Provision, migrate, and manage your virtual machines" authors="" solutions="" manager="" editor="" />
-
 <div class="template-sublanding-content-wrapper">
 <h1>虚拟机</h1>
 <div class="hero">
