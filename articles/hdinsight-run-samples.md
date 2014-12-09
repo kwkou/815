@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Run Hadoop Samples in HDInsight" pageTitle="在 HDInsight 中运行 Hadoop 示例 | Azure "metaKeywords="hdinsight, hdinsight 示例, hadoop, mapreduce" description="Get started using the Azure HDInsight service with the samples provided. Use PowerShell scripts that run MapReduce programs on data clusters." metaCanonical="" services="hdinsight" documentationCenter="" title="Run the Hadoop samples in HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Run Hadoop Samples in HDInsight" pageTitle="在 HDInsight 中运行 Hadoop 示例 | Azure" metaKeywords="hdinsight, hdinsight 示例, hadoop, mapreduce" description="Get started using the Azure HDInsight service with the samples provided. Use PowerShell scripts that run MapReduce programs on data clusters." metaCanonical="" services="hdinsight" documentationCenter="" title="Run the Hadoop samples in HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="bradsev" />
 
@@ -22,7 +22,7 @@ Web 上具有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 
 
 - 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[免费试用 Azure](http://www.windowsazure.cn/zh-cn/pricing/free-trial/) 页。
 
-- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](../hdinsight-provision-clusters/)。
+- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters/)。
 
 - 您必须已经安装了 Azure PowerShell，并且已将其配置为可用于您的帐户。 有关如何进行此安装的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
@@ -52,28 +52,28 @@ HDInsight 随附了以下示例。
 * [调试 HDInsight：错误消息][hdinsight-errors]
 
 
-[hdinsight-errors]: ../hdinsight-debug-jobs/
+[hdinsight-errors]: /zh-cn/documentation/articles/hdinsight-debug-jobs/
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
 
-[hdinsight-submit-jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-introduction]: ../hdinsight-hadoop-introduction/
+[hdinsight-submit-jobs]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-introduction]: /zh-cn/documentation/articles/hdinsight-hadoop-introduction/
 
 
 
-[Powershell-install-configure]: ../install-configure-powershell/
+[Powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
 
-[hdinsight-get-started]: ../hdinsight-get-started/
+[hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
 
-[hdinsight-samples]: ../hdinsight-run-samples/
-[hdinsight-sample-10gb-graysort]: ../hdinsight-sample-10gb-graysort/
-[hdinsight-sample-csharp-streaming]: ../hdinsight-sample-csharp-streaming/
-[hdinsight-sample-pi-estimator]: ../hdinsight-sample-pi-estimator/
-[hdinsight-sample-wordcount]: ../hdinsight-sample-wordcount/
+[hdinsight-samples]: /zh-cn/documentation/articles/hdinsight-run-samples/
+[hdinsight-sample-10gb-graysort]: /zh-cn/documentation/articles/hdinsight-sample-10gb-graysort/
+[hdinsight-sample-csharp-streaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
+[hdinsight-sample-pi-estimator]: /zh-cn/documentation/articles/hdinsight-sample-pi-estimator/
+[hdinsight-sample-wordcount]: /zh-cn/documentation/articles/hdinsight-sample-wordcount/
 
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
+[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
 
-[submit-jobs-programmatically]: ../hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-resources]: ../hdinsight-introduction/
+[submit-jobs-programmatically]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-resources]: /zh-cn/documentation/articles/hdinsight-introduction/
 

@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="Use Blob storage with HDInsight | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="将 Azure Blob 存储与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
 
 # 将 Azure Blob 存储与 HDInsight 配合使用
 
@@ -247,8 +247,8 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 -   [Hive 与 HDInsight 配合使用][]
 -   [Pig 与 HDInsight 配合使用][]
 
-  [HDInsight 入门]: ../hdinsight-get-started/
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [HDInsight 存储空间体系结构]: #architecture
   [Azure Blob 存储的优点]: #benefits
   [为 Blob 存储空间准备容器]: #preparingblobstorage
@@ -262,8 +262,8 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
   [Azure 存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
   [HDI.QuickCreate]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
   [HDI.CustomCreateStorageAccount]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png
-  [Azure PowerShell]: ../install-configure-powershell/
+  [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [Blob.PowerShell.cmdlets]: ./media/hdinsight-use-blob-storage/HDI.PowerShell.BlobCommands.png
-  [将数据上载到 HDInsight]: ../hdinsight-upload-data/
-  [Hive 与 HDInsight 配合使用]: ../hdinsight-use-hive/
-  [Pig 与 HDInsight 配合使用]: ../hdinsight-use-pig/
+  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
+  [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
+  [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/

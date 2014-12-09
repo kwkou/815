@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-sample-wordcount" urlDisplayName="HDInsight Samples" pageTitle="The HDInsight WordCount sample | Azure" metaKeywords="hdinsight, hdinsight sample, hadoop, mapreduce" description="Learn how to run a simple MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight WordCount sample" authors="bradsev" />
+<properties linkid="manage-services-hdinsight-sample-wordcount" urlDisplayName="HDInsight Samples" pageTitle="HDInsight WordCount 示例 | Azure" metaKeywords="hdinsight, hdinsight sample, hadoop, mapreduce" description="Learn how to run a simple MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight WordCount sample" authors="bradsev" />
 
 # HDInsight WordCount 示例
 
@@ -189,18 +189,18 @@ WordCount 脚本的输出应出现在 cmd 窗口中：
 -   [Hive 与 HDInsight 配合使用][]
 -   [Azure HDInsight SDK 文档][]
 
-  [免费试用 Azure]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
-  [Azure HDInsight 入门]: /en-us/manage/services/hdinsight/get-started-hdinsight/
-  [设置 HDInsight 群集]: /en-us/manage/services/hdinsight/provision-hdinsight-clusters/
-  [安装和配置 Azure PowerShell]: /en-us/documentation/articles/install-configure-powershell/
+  [免费试用 Azure]: /pricing/1rmb-trial/
+  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
+  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [使用 Azure PowerShell 运行示例]: #run-sample
   [WordCount MapReduce 程序的 Java 代码]: #java-code
   [摘要]: #summary
   [后续步骤]: #next-steps
   [HDI.Sample.WordCount.Output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png
-  [示例：10GB GraySort]: /en-us/manage/services/hdinsight/howto-run-samples/sample-10gb-graysort/
-  [示例：Pi Estimator]: /en-us/manage/services/hdinsight/howto-run-samples/sample-pi-estimator/
-  [示例：C\# Steaming]: /en-us/manage/services/hdinsight/howto-run-samples/sample-csharp-streaming/
-  [Pig 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-pig-with-hdinsight/
-  [Hive 与 HDInsight 配合使用]: /en-us/manage/services/hdinsight/using-hive-with-hdinsight/
+  [示例：10GB GraySort]: /zh-cn/documentation/articles/hdinsight-sample-10gb-graysort/
+  [示例：Pi Estimator]: /zh-cn/documentation/articles/hdinsight-sample-pi-estimator/
+  [示例：C\# Steaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
+  [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
+  [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

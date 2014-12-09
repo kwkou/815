@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-use-Ambari" urlDisplayName="Monitor HDInsight clusters using the Ambari API" pageTitle="Monitor HDInsight clusters using the Ambari API | Azure" metaKeywords="" description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Ambari’s intuitive operator tools and APIs hide the complexity of Hadoop." services="hdinsight" documentationCenter="" title="Monitor HDInsight clusters using the Ambari API" umbracoNaviHide="0" disqusComments="1" authors="jgao" editor="cgronlun" manager="paulettm" />
+<properties linkid="manage-services-hdinsight-use-Ambari" urlDisplayName="Monitor HDInsight clusters using the Ambari API" pageTitle="使用 Ambari API 监视 HDInsight 群集 | Azure" metaKeywords="" description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Ambari’s intuitive operator tools and APIs hide the complexity of Hadoop." services="hdinsight" documentationCenter="" title="Monitor HDInsight clusters using the Ambari API" umbracoNaviHide="0" disqusComments="1" authors="jgao" editor="cgronlun" manager="paulettm" />
 
 # 使用 Ambari API 监视 HDInsight 群集
 
@@ -132,14 +132,14 @@ HDInsight 目前只支持 Ambari 监视功能。HDInsight 群集版本 2.1 和 3
   [后续步骤]: #nextsteps
   [Apache Ambari]: http://ambari.apache.org/
   [Ambari API 参考]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
-  [安装和配置 Azure PowerShell]: ../install-configure-powershell/
+  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
   [Curl]: http://curl.haxx.se
   [此处]: http://curl.haxx.se/download.html
-  [开始使用 HDInsight]: ../hdinsight-get-started/
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
+  [开始使用 HDInsight]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [作业跟踪器输出]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
-  [使用管理门户管理 HDInsight 群集]: ../hdinsight-administer-use-management-portal/
-  [使用 Azure PowerShell 管理 HDInsight 群集]: ../hdinsight-administer-use-powershell/
-  [使用命令行接口管理 HDInsight 群集]: ../hdinsight-administer-use-command-line/
+  [使用管理门户管理 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/
+  [使用 Azure PowerShell 管理 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+  [使用命令行接口管理 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-administer-use-command-line/
   [HDInsight 文档]: /zh-cn/documentation/services/hdinsight/

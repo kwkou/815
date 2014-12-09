@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-administer-hdinsight" urlDisplayName="Administration" pageTitle="Administer HDInsight clusters with Management Portal | Azure" metaKeywords="" description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console." metaCanonical="" services="hdinsight" documentationCenter="" title="Administer HDInsight clusters using Management Portal" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-howto-administer-hdinsight" urlDisplayName="Administration" pageTitle="使用管理门户管理 HDInsight 群集 | Azure" metaKeywords="" description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console." metaCanonical="" services="hdinsight" documentationCenter="" title="Administer HDInsight clusters using Management Portal" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 使用管理门户管理 HDInsight 群集
 
@@ -34,6 +34,10 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 
 
 -   中国北部
 -   中国东部
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/stage
 
 有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户][]。
 
@@ -182,10 +186,10 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 -   [Azure HDInsight 入门][]
 -   [Azure HDInsight 包含哪个版本的 Hadoop？][]
 
-  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
-  [使用跨平台命令行界面管理 HDInsight]: ../hdinsight-administer-use-command-line/
-  [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
-  [免费试用]: https://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+  [使用跨平台命令行界面管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-command-line/
+  [购买选项]: /pricing/overview/
+  [免费试用]: /pricing/1rmb-trial/
   [配置 HDInsight 群集]: #create
   [自定义 HDInsight 群集]: #customize
   [更改 HDInsight 群集用户名和密码]: #password
@@ -193,17 +197,17 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
   [授予/撤消 HTTP 服务访问权限]: #httpservice
   [打开 Hadoop 命令控制台]: #hadoopcmd
   [后续步骤]: #nextsteps
-  [设置 HDInsight 群集]: ../hdinsight-provision-clusters/
-  [将 Azure Blob 存储与 HDInsight 配合使用]: ../hdinsight-use-blob-storage/
-  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
+  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
+  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [HDI.QuickCreate]: ./media/hdinsight-administer-use-management-portal/HDI.QuickCreateCluster.png
   [HDI.ClusterLanding]: ./media/hdinsight-administer-use-management-portal/HDI.ClusterLanding.PNG "群集登录页"
-  [Azure HDInsight 包含哪个版本的 Hadoop？]: ../hdinsight-component-versioning/
-  [以编程方式提交 Hadoop 作业]: ../hdinsight-submit-hadoop-jobs-programmatically/
+  [Azure HDInsight 包含哪个版本的 Hadoop？]: /zh-cn/documentation/articles/hdinsight-component-versioning/
+  [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
   [Microsoft 技术支持]: http://www.windowsazure.cn/zh-cn/support/contact/
   [启用远程桌面]: #enablerdp
   [HDI.CreateRDPUser]: ./media/hdinsight-administer-use-management-portal/HDI.CreateRDPUser.png
-  [HDI.HadoopCommandLine]: ./media/hdinsight-administer-use-management-portal/HDI.HadoopCommandLine.PNG "Hadoop 命令行"
+  [HDI.HadoopCommandLine]: ./media/hdinsight-administer-use-management-portal/HDI.HadoopCommandLine.PNG 
   [Hadoop 命令参考（可能为英文页面）]: http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html
-  [Azure HDInsight 入门]: ../hdinsight-get-started/
+  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/

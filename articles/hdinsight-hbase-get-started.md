@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-hbase-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="Get started using HBase with Hadoop in HDInsight | Azure" metaKeywords="" description="Get started using HBase with Hadoop in HDInsight. learn how to created HBase tables and query them with Hive." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using HBase with Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-hbase-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="在 HDInsight 中将 HBase 与 Hadoop 配合使用 | Azure" metaKeywords="" description="Get started using HBase with Hadoop in HDInsight. learn how to created HBase tables and query them with Hive." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using HBase with Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="bradsev"></tags>
 
@@ -205,5 +205,5 @@ HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量
   [2]: http://i.imgur.com/tMwXlj9.jpg
   [Marlin 的项目页]: https://github.com/thomasjungblut/marlin
   [3]: http://i.imgur.com/hUNoJDJ.jpg
-  [HDInsight HBase 概述]: ../hdinsight-hbase-overview/
-  [在 Azure 虚拟网络上设置 HBase 群集]: ../hdinsight-hbase-provision-vnet
+  [HDInsight HBase 概述]: /zh-cn/documentation/articles/hdinsight-hbase-overview/
+  [在 Azure 虚拟网络上设置 HBase 群集]: /zh-cn/documentation/articles/hdinsight-hbase-provision-vnet

@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="Administer HDInsight using using the Cross-Platform Command-Line Interface | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
+<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="使用跨平台命令行界面管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
 
 # 使用跨平台命令行界面管理 HDInsight
 
@@ -165,10 +165,10 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 -   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具][]
 -   [针对 Mac 和 Linux 的 Azure 命令行工具][]
 
-  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/develop/nodejs/how-to-guides/command-line-tools/
-  [针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/manage/linux/other-resources/command-line-tools/
-  [购买选项]: http://www.windowsazure.cn/zh-cn/pricing/overview/
-  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
+  [针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/command-line-tools/
+  [购买选项]: /pricing/overview/
+  [免费试用]: /pricing/1rmb-trial/
   [安装]: #installation
   [下载和导入 Azure 帐户 publishsettings]: #importsettings
   [设置群集]: #provision
@@ -177,11 +177,11 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
   [删除群集]: #delete
   [后续步骤]: #nextsteps
   [HDI.CLIAccountDownloadImport]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
-  [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
-  [如何管理存储帐户]: /zh-cn/manage/services/storage/how-to-manage-a-storage-account/
+  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
+  [如何管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
   [HDI.CLIClusterCreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
   [HDI.CLIClusterCreationConfig]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
-  [HDI.CLIListCluster]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "列出并显示群集"
-  [使用管理门户管理 HDInsight]: ../hdinsight-administer-use-management-portal/
-  [使用 PowerShell 管理 HDInsight]: ../hdinsight-administer-use-powershell/
-  [Azure HDInsight 入门]: ../hdinsight-get-started/
+  [HDI.CLIListCluster]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png 
+  [使用管理门户管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/
+  [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/

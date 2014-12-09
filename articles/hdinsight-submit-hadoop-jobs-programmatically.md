@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="HDInsight Administration" pageTitle="在 HDInsight 中提交 Hadoop 作业 | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hive, mapreduce, HDInsight .NET SDK, powershell, submit mapreduce jobs, submit hive jobs, development, hadoop, apache" description="Learn how to submit Hadoop jobs to Azure HDInsight Hadoop." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Submit  Hadoop jobs in HDInsight" authors="jgao" />
+<properties urlDisplayName="HDInsight Administration" pageTitle="在 HDInsight 中提交 Hadoop 作业 | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure, hive, mapreduce, HDInsight .NET SDK, powershell, submit mapreduce jobs, submit hive jobs, development, hadoop, apache" description="Learn how to submit Hadoop jobs to Azure HDInsight Hadoop." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Submit  Hadoop jobs in HDInsight" authors="jgao" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="jgao" />
 
@@ -108,142 +108,6 @@ Hadoop MapReduce 是一个用于编写处理大量数据的应用程序的软件
 
 
 > [WACOM.NOTE]如果您在记事本中打开 ./example/data/WordCountOutput/part-r-00000（这是来自 MapReduce 作业的多行输出），将会注意到断行未正确呈现。这是所期望的情况。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## <a id="hive-powershell"></a> 使用 PowerShell 提交 Hive 作业
 Apache [hdinsight-use-hive][apache-hive] 提供了通过类似 SQL 的脚本语言（称作 *HiveQL*）运行 MapReduce 作业的方法，此方法可用于对大量数据进行汇总、查询和分析。 
@@ -690,19 +554,19 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 [azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
 [azure-management-portal]: http://manage.windowsazure.cn/
 
-[hdinsight-use-sqoop]: ../hdinsight-use-sqoop/
-[hdinsight-provision]: ../hdinsight-provision-clusters/
-[hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce/
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
-[hdinsight-get-started]: ../hdinsight-get-started/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
-[hdinsight-develop-streaming-jobs]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-use-sqoop]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
+[hdinsight-provision]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
+[hdinsight-use-mapreduce]: /zh-cn/documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
+[hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
+[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-admin-powershell]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-develop-streaming-jobs]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
 
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
-[Powershell-install-configure]: ../install-configure-powershell/
+[Powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
 
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png 
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
