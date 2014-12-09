@@ -7,8 +7,8 @@
     <p>此处提供的文档和视频帮助你开始通过 HDInsight 在云中使用 Hadoop。按照教程可在几分钟内生成和运行 Hadoop 群集、处理大数据以及使用 Excel 分析结果。</p>
     <h4>快速链接</h4>
     <ul>
-      <!--li style="display:none"><a href="/zh-cn/services/hdinsight/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm="快速链接 | 服务概述" ms.title="" km.title="" ms.interactiontype="1" ms.index="0">服务概述</a></li-->
-      <!--li style="display:none"><a href="/zh-cn/solutions/big-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm="快速链接 | 可交付的解决方案" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">可交付的解决方案</a></li-->
+      <li style="display:none"><a href="/zh-cn/services/hdinsight/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm="快速链接 | 服务概述" ms.title="" km.title="" ms.interactiontype="1" ms.index="0">服务概述</a></li>
+      <li style="display:none"><a href="/zh-cn/solutions/big-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm="快速链接 | 可交付的解决方案" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">可交付的解决方案</a></li>
       <li><a href="/pricing/details/hdinsight/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm="快速链接 | 定价详细信息" ms.title="" km.title="" ms.interactiontype="1" ms.index="2">定价详细信息</a></li>
     </ul>
   </div>
@@ -16,13 +16,13 @@
     <h4>特色</h4>
     <ul>
       <li><a href="/zh-cn/documentation/articles/hdinsight-learn-map/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="icon list link" ms.cmpnm="从这里开始：遵循 HDInsight 学习路线图" ms.title="" km.title="" ms.interactiontype="1"> 从这里开始：遵循 HDInsight 学习路线图</a></li>
-      <!--li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="icon list link" ms.cmpnm="开始使用适用于 Visual Studio 的 HDInsight 工具" ms.title="" km.title="" ms.interactiontype="1"> 开始使用适用于 Visual Studio 的 HDInsight 工具</a></li-->
-      <!--li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="icon list link" ms.cmpnm="使用 HBase 分析实时 Twitter 观点" ms.title="" km.title="" ms.interactiontype="1"> 使用 HBase 分析实时 Twitter 观点</a></li-->
+      <li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="icon list link" ms.cmpnm="开始使用适用于 Visual Studio 的 HDInsight 工具" ms.title="" km.title="" ms.interactiontype="1"> 开始使用适用于 Visual Studio 的 HDInsight 工具</a></li>
+      <li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="icon list link" ms.cmpnm="使用 HBase 分析实时 Twitter 观点" ms.title="" km.title="" ms.interactiontype="1"> 使用 HBase 分析实时 Twitter 观点</a></li>
       <li><a href="/zh-cn/documentation/articles/hdinsight-storm-getting-started/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="icon list link" ms.cmpnm="Storm 上的单词计数拓扑入门" ms.title="" km.title="" ms.interactiontype="1"> Storm 上的单词计数拓扑入门</a></li>
     </ul>
   </div>
 </div>
-<div><!-- a href="http://azure.microsoft.com/zh-cn/documentation/services/hdinsight/#" data-control="showLessMore" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="More" ms.title="" km.title="" ms.interactiontype="1" style="display:none">More</a><a href="http://azure.microsoft.com/zh-cn/documentation/services/hdinsight/#" data-control="showLessMore" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="Less" ms.title="" km.title="" ms.interactiontype="1" style="display:none">Less</a -->
+<div>< a href="http://azure.microsoft.com/zh-cn/documentation/services/hdinsight/#" data-control="showLessMore" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="More" ms.title="" km.title="" ms.interactiontype="1" style="display:none">More</a><a href="http://azure.microsoft.com/zh-cn/documentation/services/hdinsight/#" data-control="showLessMore" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="Less" ms.title="" km.title="" ms.interactiontype="1" style="display:none">Less</a >
   <h2>教程和指南</h2>
 </div>
 <div>
@@ -90,36 +90,36 @@
           <p>了解每个 HDInsight 版本中的最新改进和升级。了解你可能需要对你的 HDInsight 配置和作业等进行的更改。</p>
         </div>
       </li>
-      <!--li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 开始使用适用于 Visual Studio 的 HDInsight 工具" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">开始使用适用于 Visual Studio 的 HDInsight 工具</a>
+      <li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 开始使用适用于 Visual Studio 的 HDInsight 工具" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">开始使用适用于 Visual Studio 的 HDInsight 工具</a>
         <div data-show-less-more-member="true">
           <p>了解如何安装适用于 Visual Studio 的 HDInsight 工具，以及如何使用它连接到 HDInsight，并运行 Hive 查询。</p>
         </div>
-      </li-->
+      </li>
       <li><a href="/zh-cn/documentation/articles/hdinsight-run-samples/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 运行 HDInsight 中的 Hadoop 示例" ms.title="" km.title="" ms.interactiontype="1" ms.index="2">运行 HDInsight 中的 Hadoop 示例</a>
         <div data-show-less-more-member="true">
           <p>包含的四个示例旨在让你快速开始使用并为你提供一个用于演练概念的可扩展测试平台。创建数据集，并观察数据大小对作业产生的影响。</p>
         </div>
       </li>
-      <!--li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-script-actions/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Script Action development with HDInsight" ms.title="" km.title="" ms.interactiontype="1" ms.index="3">Script Action development with HDInsight</a>
+      <li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-script-actions/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Script Action development with HDInsight" ms.title="" km.title="" ms.interactiontype="1" ms.index="3">Script Action development with HDInsight</a>
         <div data-show-less-more-member="true">
           <p>Use Script Actions to install additional software such as R and Spark or to change the configuration of applications running on an Hadoop cluster.</p>
         </div>
-      </li-->
-      <!--li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-customize-cluster/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Customize HDInsight clusters using Script Actions" ms.title="" km.title="" ms.interactiontype="1" ms.index="4">Customize HDInsight clusters using Script Actions</a>
+      </li>
+      <li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-customize-cluster/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Customize HDInsight clusters using Script Actions" ms.title="" km.title="" ms.interactiontype="1" ms.index="4">Customize HDInsight clusters using Script Actions</a>
         <div data-show-less-more-member="true">
           <p>Customize HDInsight clusters to install additional components using custom scripts.</p>
         </div>
-      </li-->
-      <!--li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-r-scripts/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Install and use R on HDInsight Hadoop clusters" ms.title="" km.title="" ms.interactiontype="1" ms.index="5">Install and use R on HDInsight Hadoop clusters</a>
+      </li>
+      <li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-r-scripts/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Install and use R on HDInsight Hadoop clusters" ms.title="" km.title="" ms.interactiontype="1" ms.index="5">Install and use R on HDInsight Hadoop clusters</a>
         <div data-show-less-more-member="true">
           <p>Data scientists and analysts can use R for big data processing on Hadoop clusters deployed in HDInsight.</p>
         </div>
-      </li-->
-      <!--li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-spark-install/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Install and use Spark on HDInsight clusters" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">Install and use Spark on HDInsight clusters</a>
+      </li>
+      <li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hadoop-spark-install/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Install and use Spark on HDInsight clusters" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">Install and use Spark on HDInsight clusters</a>
         <div data-show-less-more-member="true">
           <p>Use Script Actions to install Spark on HDInsight clusters.</p>
         </div>
-      </li-->
+      </li>
       <li><a href="/zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 开发适用于 HDInsight 中的 Hadoop 的 Java MapReduce 程序" ms.title="" km.title="" ms.interactiontype="1" ms.index="7">开发适用于 HDInsight 中的 Hadoop 的 Java MapReduce 程序</a>
         <div data-show-less-more-member="true">
           <p>通过本端到端方案了解如何在 HDInsight Emulator 上开发和测试单词计数 MapReduce 作业，然后在 HDInsight 上部署和运行该作业。</p>
@@ -204,16 +204,16 @@
           <p>了解如何生成一个在 HDInsight 中使用 Storm 集群来处理来自 Azure 事件中心的传感器数据的解决方案，然后将处理过的传感器数据作为近实时信息显示在一个基于 Web 的仪表板上。</p>
         </div>
       </li>
-      <!--li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hive-analyze-sensor-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 在 Hadoop 中使用 Hive 来分析历史传感器数据" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">在 Hadoop 中使用 Hive 来分析历史传感器数据</a>
+      <li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hive-analyze-sensor-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 在 Hadoop 中使用 Hive 来分析历史传感器数据" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">在 Hadoop 中使用 Hive 来分析历史传感器数据</a>
         <div data-show-less-more-member="true">
           <p>了解如何在 HDInsight (Hadoop) 上使用 Hive 来分析传感器数据，然后在 Microsoft Excel 中显示数据。在此示例中，您将使用 Hive 来处理由 HVAC 系统产生的历史数据，以观察哪些系统不能可靠地维持规定温度。</p>
         </div>
-      </li-->
-      <!-- li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hive-analyze-website-log/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 在 HDInsight 中使用 Hive 来分析网站日志" ms.title="" km.title="" ms.interactiontype="1" ms.index="2">在 HDInsight 中使用 Hive 来分析网站日志</a>
+      </li>
+      < li style="display:none"><a href="/zh-cn/documentation/articles/hdinsight-hive-analyze-website-log/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 在 HDInsight 中使用 Hive 来分析网站日志" ms.title="" km.title="" ms.interactiontype="1" ms.index="2">在 HDInsight 中使用 Hive 来分析网站日志</a>
         <div data-show-less-more-member="true">
           <p>了解如何在 HDInsight 中使用 HiveQL 分析网站日志，以了解一天中来自外部网站的访问频率，以及用户经历的网站错误的摘要。</p>
         </div>
-      </li -->
+      </li >
       <li><a href="/zh-cn/documentation/articles/hdinsight-mahout/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 Mahout 生成影片建议" ms.title="" km.title="" ms.interactiontype="1" ms.index="3">使用 Mahout 生成影片建议</a>
         <div data-show-less-more-member="true">
           <p>了解如何基于用户偏好使用 Mahout 推荐引擎来获取影片建议。Mahout 是 Apache Hadoop 的机器学习库，包含用于处理数据（例如筛选、分类和群集）的算法。</p>
@@ -224,16 +224,16 @@
           <p>了解如何通过 Apache Giraph 查找 HDInsight 上使用 Hadoop 的对象之间的最短路径。使用 Giraph，你可以深入了解各种关系，例如社交网络（也称为&ldquo;社交图&rdquo;）上好友之间的关系，或者 Internet 等大型网络上路由器之间的关系。</p>
         </div>
       </li>
-      <!-- li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-analyze-twitter-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 HDInsight 中的 Hadoop 分析 Twitter 数据" ms.title="" km.title="" ms.interactiontype="1" ms.index="5">使用 HDInsight 中的 Hadoop 分析 Twitter 数据</a>
+      < li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-analyze-twitter-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 HDInsight 中的 Hadoop 分析 Twitter 数据" ms.title="" km.title="" ms.interactiontype="1" ms.index="5">使用 HDInsight 中的 Hadoop 分析 Twitter 数据</a>
         <div data-show-less-more-member="true">
           <p>了解如何使用 Hive 分析 Twitter 数据以找到特定单词的使用频率。</p>
         </div>
-      </li -->
-      <!-- li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 HBase 分析实时 Twitter 观点" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">使用 HBase 分析实时 Twitter 观点</a>
+      </li >
+      < li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 HBase 分析实时 Twitter 观点" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">使用 HBase 分析实时 Twitter 观点</a>
         <div data-show-less-more-member="true">
           <p>使用带地理位置标签的推文，了解如何在 HDInsight (Hadoop) 群集中使用 HBase 进行大数据实时观点分析。然后，在必应地图上绘制统计结果。</p>
         </div>
-      </li -->
+      </li >
       <li><a href="/zh-cn/documentation/articles/hdinsight-analyze-flight-delay-data/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 HDInsight 中的 Hadoop 分析航班延误数据" ms.title="" km.title="" ms.interactiontype="1" ms.index="7">使用 HDInsight 中的 Hadoop 分析航班延误数据</a>
         <div data-show-less-more-member="true">
           <p>了解如何使用 Hive 计算各机场的航班平均延误时间，以及如何使用 Sqoop 将结果导入 SQL 数据库。</p>
@@ -288,11 +288,11 @@
           <p>了解如何定义工作流和协调器，以及如何基于时间触发 Hadoop 作业。</p>
         </div>
       </li>
-      <!-- li style="display:none"><a href="zh-cn/documentation/articles/hdinsight-hadoop-access-yarn-app-logs/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Access HDInsight application logs programmatically" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">Access HDInsight application logs programmatically</a>
+      < li style="display:none"><a href="zh-cn/documentation/articles/hdinsight-hadoop-access-yarn-app-logs/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Access HDInsight application logs programmatically" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">Access HDInsight application logs programmatically</a>
         <div data-show-less-more-member="true">
           <p>Learn how to programmatically enumerate the YARN applications that have completed on a Hadoop cluster and access the application logs.</p>
         </div>
-      </li -->
+      </li >
       <li><a href="/zh-cn/documentation/articles/hdinsight-provision-clusters/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 配置 HDInsight 中的 Hadoop 群集" ms.title="" km.title="" ms.interactiontype="1" ms.index="7">配置 HDInsight 中的 Hadoop 群集</a>
         <div data-show-less-more-member="true">
           <p>了解如何使用 Azure 管理门户、PowerShell、命令行接口和 HDInsight .NET SDK 设置 HDInsight 群集。</p>
