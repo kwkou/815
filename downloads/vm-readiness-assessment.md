@@ -1,4 +1,4 @@
-<properties linkid="downloads" urlDisplayName="Azure 虚拟机就绪评估" pageTitle="Windows Azure 服务管理：HDInsight" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="Services" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
+<properties linkid="vm-readiness-assessment" urlDisplayName="Azure 虚拟机就绪评估" pageTitle="Azure 虚拟机就绪评估" metaKeywords="Azure 虚拟机就绪评估" description="Azure 虚拟机就绪评估" metaCanonical="" services="downloads" documentationCenter="downloads" title="Azure 虚拟机就绪评估" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
 
 <div>
   <H2>放心地移到云上</H2>

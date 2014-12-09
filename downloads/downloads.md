@@ -1,4 +1,4 @@
-<properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Windows Azure 服务管理：HDInsight" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="Services" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
+<properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Windows Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
 <div>
   <h2>SDK</h2>
   <p>为所选平台下载并安装语言特定的 SDK 和工具。</p>
@@ -129,8 +129,8 @@
       <li><a href="http://azure.microsoft.com/zh-cn/downloads/vm-optimization-assessment/">虚拟机优化评估</a></li>
     </ul>
   </div>
-  <div>
-    <h3>Azure Websites Migration Assistant</h3>
+  <div style="display:none">
+    <h3>网站迁移助手</h3>
     <ul>
       <li><a href="http://go.microsoft.com/?linkid=9863189&amp;clcid=0x804">安装</a></li>
       <li><a href="http://azure.microsoft.com/zh-cn/downloads/migration-assistant/">文档</a></li>
