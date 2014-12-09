@@ -152,11 +152,6 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
   [下载网站]: http://go.microsoft.com/fwlink/?LinkID=286698
   [SQL Server 2012 Analysis Services]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/analysis.aspx#fbid=9ZH5wGSDgf0
   [SQL Server 2012 Reporting]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/dashboards-reports.aspx#fbid=9ZH5wGSDgf0
-<<<<<<< HEAD
-  [HDInsight 文档]: http://www.windowsazure.cn/zh-cn/documentation/services/hdinsight/
-=======
-  [HDInsight 文档]: /zh-cn/documentation/services/hdinsight/
->>>>>>> origin/stage
   [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [运行 HDInsight 示例]: /zh-cn/documentation/articles/hdinsight-run-samples/
   [大数据和 Azure]: http://www.windowsazure.cn/home/features/hdinsight/
