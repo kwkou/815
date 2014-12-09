@@ -66,8 +66,7 @@
 </div>
 </li>
 <li><a href="/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
-<div style="display:none" data-show-less-more-member="true">
-Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
+<div style="display:none" data-show-less-more-member="true"><p>Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。</p>
 </div>
 </li> 
 <li style="display:none"><a href="/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
