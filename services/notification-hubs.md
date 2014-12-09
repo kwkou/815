@@ -1,3 +1,5 @@
+<properties linkid="dev-net-Notification-Hubs" urlDisplayName="Windows Azure Notification Hubs" pageTitle="Windows Azure 服务管理：通知中心" metaKeywords="Notification Hubs" description="" metaCanonical="" services="Notification Hubs" documentationCenter="Services" title="Push notifications for consumer and enterprise apps—from any backend to any device platform" authors="" solutions="" manager="" editor="" />
+
 <div class="wa-content wa-content-10up">
 <h1>通知中心</h1>
 <p> </p>
@@ -5,8 +7,8 @@
 <h4>针对消费类和企业应用程序的推送通知 - 从任何后端发送至任何设备平台</h4>
 <p> </p>
 <p>使用通知中心可轻松地从本地或云中的任何后端平台发送跨平台的个性化推送通知。通过单次 API 调用，可通过任何设备锁定单个用户或包含数百万个用户的受众细分群体。</p>
-<!---
-<h4>快速链接</h4>
+
+<h4 style="display:none">快速链接</h4>
 <p> </p>
 <ul class="wa-linkList">
 <li><a href="http://azure.microsoft.com/zh-cn/services/notification-hubs/" title="" class="wa-arrowLink-light">服务概述</a></li>
@@ -22,7 +24,7 @@
 </div>
 </div>
 <div class="section s2 tutorials">
-<div class="paragraph-toggle"><span class="less selected">更少</span><span class="more">更多</span></div>--->
+<div class="paragraph-toggle"><span class="less selected">更少</span><span class="more">更多</span></div>
 <h2>教程和指南</h2>
 <p> </p>
 <div class="horz-rule"></div>
@@ -40,27 +42,27 @@
 <p> </p>
 <h4><a href="http://msdn.microsoft.com/zh-cn/library/jj891130.aspx" title="">通知中心功能指南</a></h4>
 <p> </p>
-<!---
-<h4><a href="/zh-cn/documentation/articles/notification-hubs-java-backend-how-to/" title="">从 Java 或 PHP 后端使用通知中心</a></h4>
+
+<h4 style="display:none"><a href="/zh-cn/documentation/articles/notification-hubs-java-backend-how-to/" title="">从 Java 或 PHP 后端使用通知中心</a></h4>
 <p> </p>
 <h4><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/" title="">向经过身份验证的用户发送通知（移动服务）</a></h4>
 <p> </p>
 <h4><a href="/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/" title="">向经过身份验证的用户发送通知 (ASP.NET)</a></h4>
-<p> </p>--->
+<p> </p>
 <h4><a href="/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/" title="">使用标记发送突发新闻</a></h4>
 <p> </p>
 <h4><a href="/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/" title="">使用模板对突发新闻进行本地化</a></h4>
 <p> </p>
-<!---
-<h4><a href="/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/" title="">使用模板向经过身份验证的用户发送跨平台通知</a></h4>
+
+<h4 style="display:none"><a href="/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/" title="">使用模板向经过身份验证的用户发送跨平台通知</a></h4>
 <p> </p>
 <h4><a href="/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push/" title="">通过经过身份验证的安全连接发送推送通知</a></h4>
-<p> </p>--->
+<p> </p>
 <h4><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn790626.aspx" title="">发送预定通知</a></h4>
 <p> </p>
-<!---
-<h4><a href="/zh-cn/documentation/videos/mobile-push-notifications-to-any-client-with-notification-hubs/" target="_blank" title="">//BUILD 2014 谈话：将推送通知传递到数以百万计的设备</a></h4>
-<p> </p>--->
+
+<h4 style="display:none"><a href="/zh-cn/documentation/videos/mobile-push-notifications-to-any-client-with-notification-hubs/" target="_blank" title="">//BUILD 2014 谈话：将推送通知传递到数以百万计的设备</a></h4>
+<p> </p>
 <h4><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn530746.aspx" title="">使用 REST 接口</a></h4>
 <p> </p>
 <h3 class="light-font">管理</h3>

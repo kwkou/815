@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-connect-excel-with-hive-ODBC" urlDisplayName="Connect Excel to HDInsight" pageTitle="Connect Excel to HDInsight with the Hive ODBC Driver | Azure" metaKeywords="" description="Learn how to set up and use the Microsoft Hive ODBC driver for Excel to query data in an HDInsight cluster." metaCanonical="" services="hdinsight" documentationCenter="" title="Connect Excel to HDInsight with the Microsoft Hive ODBC Driver" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-connect-excel-with-hive-ODBC" urlDisplayName="Connect Excel to HDInsight" pageTitle="使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight" metaKeywords="" description="Learn how to set up and use the Microsoft Hive ODBC driver for Excel to query data in an HDInsight cluster." metaCanonical="" services="hdinsight" documentationCenter="" title="Connect Excel to HDInsight with the Microsoft Hive ODBC Driver" authors="bradsev" solutions="" manager="paulettm" editor="Haifeng Liu" />
 
 # 使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight
 
@@ -44,7 +44,7 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 <table border="1">
 <tr><td><strong>属性</strong></td><td><strong>说明</strong></td></tr>
 <tr><td>数据源名称</td><td>为你的数据源提供名称</td></tr>
-<tr><td>Host</td><td>输入 <HDInsightClusterName>.hdinsightservice.cn. For example, myHDICluster.hdinsightservice.cn</td></tr>
+<tr><td>Host</td><td>输入 <HDInsightClusterName>.azurehdinsight.cn. For example, myHDICluster.azurehdinsight.cn</td></tr>
 <tr><td>Port</td><td>使用 <strong>443</strong>。（此端口已从 563 更改为 443。）</td></tr>
 <tr><td>数据库</td><td>使用&ldquo;默认&rdquo;<strong></strong>。</td></tr>
 <tr><td>Hive 服务器类型</td><td>选择&ldquo;Hive Server 2&rdquo;<strong></strong></td></tr>

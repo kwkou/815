@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Python with HDInsight" pageTitle="在 Azure HDInsight 中将 Python 与 Hive 和 Pig 配合使用" metaKeywords="" description="Learn how to use Python User Defined Functions (UDF) from Hive and Pig in Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Python with Hive and Pig in HDInsight" authors="larryfr" solutions="" manager="paulettm" editor="cgronlun" />
+<properties urlDisplayName="Python with HDInsight" pageTitle="在 Azure HDInsight 中将 Python 与 Hive 和 Pig 配合使用" metaKeywords="" description="Learn how to use Python User Defined Functions (UDF) from Hive and Pig in Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Python with Hive and Pig in HDInsight" authors="larryfr" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
 
@@ -11,8 +11,8 @@ Hive 和 Pig 非常适合用于处理 HDInsight 中的数据，但有时你需�
 ## 目录
 
 * [HDInsight 上的 Python](#python)
-*   [Hive 和 Python](#hivepython)
-*   [Pig 和 Python](#pigpython)
+* [Hive 和 Python](#hivepython)
+* [Pig 和 Python](#pigpython)
 * [运行示例](#running)
 * [故障排除](#troubleshooting)
 * [后续步骤](#next)
@@ -135,7 +135,7 @@ HDInsight 还包含 Jython，它是使用 Java 编写的 Python 实现。Pig 无
 
 ## <a name="running"></a>运行示例
 
-下面的步骤使用了 Windows Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前参阅[如何安装和配置 Azure PowerShell](http://www.windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/)。
+下面的步骤使用了 Windows Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
 
 
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。

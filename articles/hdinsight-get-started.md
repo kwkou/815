@@ -6,9 +6,9 @@
 # 开始在 HDInsight 中使用 Hadoop
 
 <!--div class="dev-center-tutorial-selector sublanding">
-<a href="../hdinsight-get-started" title="开始在 HDInsight 中使用 Hadoop 2.4" class="current">Hadoop 2.4</a>
-<a href="../hdinsight-get-started-30" title="Get started using Hadoop 2.2 in HDInsight">Hadoop 2.2</a>
-<!--a href="../hdinsight-get-started-21" title="Get started using Hadoop 1.2 in HDInsight">Hadoop 1.2</a>
+<a href="/zh-cn/documentation/articles/hdinsight-get-started" title="开始在 HDInsight 中使用 Hadoop 2.4" class="current">Hadoop 2.4</a>
+<a href="/zh-cn/documentation/articles/hdinsight-get-started-30" title="Get started using Hadoop 2.2 in HDInsight">Hadoop 2.2</a>
+<!--a href="/zh-cn/documentation/articles/hdinsight-get-started-21" title="Get started using Hadoop 1.2 in HDInsight">Hadoop 1.2</a>
 </div-->
 
 HDInsight 使 Apache Hadoop（一种 MapReduce 软件框架）可用于更简单、缩放性更高且更经济高效的 Azure 环境。HDInsight 还提供一种经济高效的方法使用 Azure Blob 存储来管理和存储数据。
@@ -83,7 +83,7 @@ HDInsight 使用 Azure Blob 存储来存储数据。它称为 *WASB* 或 *Azure 
 	
 ## <a name="provision"></a>设置 HDInsight 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在此部分中，设置基于 Hadoop 版本 2.4 的 HDInsight 群集版本 3.1。你还可以使用 Azure 门户、HDInsight PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-component-versioning/)页面。
+当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在此部分中，设置基于 Hadoop 版本 2.4 的 HDInsight 群集版本 3.1。你还可以使用 Azure 门户、HDInsight PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/zh-cn/documentation/articles/hdinsight-component-versioning/)页面。
 
 [WACOM.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
@@ -229,39 +229,39 @@ HDInsight 使用 Azure Blob 存储来存储数据。它称为 *WASB* 或 *Azure 
 - [为 HDInsight 开发 C# Hadoop 流程序][hdinsight-develop-streaming]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
-[hdinsight-versions]: ../hdinsight-component-versioning/
+[hdinsight-versions]: /zh-cn/documentation/articles/hdinsight-component-versioning/
 
-[hdinsight-get-started-30]: ../hdinsight-get-started-30/
-[hdinsight-provision]: ../hdinsight-provision-clusters/
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
-[hdinsight-use-oozie]: ../hdinsight-use-oozie/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-[hdinsight-emulator]: ../hdinsight-get-started-emulator/
-[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
-[hadoop-hdinsight-intro]: ../hdinsight-hadoop-introduction/
-[hdinsight-weblogs-sample]: ../hdinsight-hive-analyze-website-log/
-[hdinsight-sensor-data-sample]: ../hdinsight-hive-analyze-sensor-data/
+[hdinsight-get-started-30]: /zh-cn/documentation/articles/hdinsight-get-started-30/
+[hdinsight-provision]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
+[hdinsight-admin-powershell]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-upload-data]: /zh-cn/documentation/articles/hdinsight-upload-data/
+[hdinsight-use-mapreduce]: /zh-cn/documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
+[hdinsight-use-oozie]: /zh-cn/documentation/articles/hdinsight-use-oozie/
+[hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
+[hdinsight-develop-streaming]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hadoop-hdinsight-intro]: /zh-cn/documentation/articles/hdinsight-hadoop-introduction/
+[hdinsight-weblogs-sample]: /zh-cn/documentation/articles/hdinsight-hive-analyze-website-log/
+[hdinsight-sensor-data-sample]: /zh-cn/documentation/articles/hdinsight-hive-analyze-sensor-data/
 
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[azure-purchase-options]: /pricing/overview/
+[azure-free-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /zh-cn/documentation/articles/storage-create-storage-account/ 
 
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
 [apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
 [apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
-[hdinsight-hbase-custom-provision]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hbase-get-started/
+[hdinsight-hbase-custom-provision]: /zh-cn/documentation/articles/hdinsight-hbase-get-started/
 
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ../install-configure-powershell/
-[powershell-open]: ../install-configure-powershell/#Install
+[powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
+[powershell-open]: /zh-cn/documentation/articles/install-configure-powershell/#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png

@@ -1,4 +1,4 @@
-<properties title="Generate movie recommendations using Mahout" pageTitle="Generate movie recommendations using Mahout with Microsoft Azure HDInsight (Hadoop)" description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with HDInsight (Hadoop)" metaKeywords="Azure hdinsight mahout, Azure hdinsight machine learning, azure hadoop mahout, azure hadoop machine learning" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
+<properties title="Generate movie recommendations using Mahout" pageTitle="将 Apache Mahout 与 HDInsight (Hadoop) 配合使用以生成电影推荐" description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with HDInsight (Hadoop)" metaKeywords="Azure hdinsight mahout, Azure hdinsight machine learning, azure hadoop mahout, azure hadoop machine learning" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
 
@@ -335,13 +335,12 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ### <a name="install"></a>安装 Mahout
 
-Mahout 已安装在 HDInsight 3.1 群集上，你可以使用以下步骤手动将其安装在 3.0 或 2.1 群集上。
+Mahout 已安装在 HDInsight 3.1 群集上，你可以使用以下步骤手动将其安装在 3.0 群集上。
 
 1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。可以在 [Azure PowerShell][aps] 中使用以下命令找到群集版本：
 
         PS C:\> Get-AzureHDInsightCluster -Name YourClusterName | Select version
 
-- **对于 HDInsight 2.1**，可以下载包含 [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) 的 jar 文件。
 
 - **对于 HDInsight 3.0**，必须[从源生成 Mahout][build] 并指定 HDInsight 提供的 Hadoop 版本。安装生成页上列出的必备组件，下载源，然后使用以下命令创建 Mahout jar 文件。
 
@@ -392,11 +391,11 @@ Mahout 作业不会清理处理期间创建的临时文件。此外，这些作�
 若要运行使用这些类的作业，请连接到 HDInsight 群集，然后使用 Hadoop 命令行运行这些作业。有关示例，请参阅[使用 Hadoop 命令行为数据分类](#classify)。
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: ../install-configure-powershell/
+[aps]: /zh-cn/documentation/articles/install-configure-powershell/
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: ../hdinsight-get-started/
-[upload]: ../hdinsight-upload-data/
+[getstarted]: /zh-cn/documentation/articles/hdinsight-get-started/
+[upload]: /zh-cn/documentation/articles/hdinsight-upload-data/
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/
