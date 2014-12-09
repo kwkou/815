@@ -12,27 +12,27 @@
 <h4>快速链接</h4>
 <p> </p>
 <ul class="wa-linkList">
-<li><a href="http://www.windowsazure.cn/zh-cn/home/features/web-site/" title="" class="wa-arrowLink-light">服务概述</a></li>
-<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-enterprise-offerings/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li>
-<li><a href="http://www.windowsazure.cn/pricing/details/web-sites/" title="" class="wa-arrowLink-light">定价详细信息</a></li>
+<li><a href="/zh-cn/home/features/web-site/" title="" class="wa-arrowLink-light">服务概述</a></li>
+<li style="display:none"><a href="/zh-cn/documentation/articles/web-sites-enterprise-offerings/" title="" class="wa-arrowLink-light">可交付的解决方案</a></li>
+<li><a href="/pricing/details/web-sites/" title="" class="wa-arrowLink-light">定价详细信息</a></li>
 </ul>
 </div>
 <div class="wa-spacer wa-spacer-aside wa-spacer-asideLight wa-spacer-4down">
 <h4>特色</h4>
 <p> </p>
 <ul class="wa-iconList">
-<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/" title="">将一个 ASP.NET 应用部署到 Azure 网站</a></li>
-<li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/videos/intro-to-windows-azure-with-scott-hanselman/" title="">Scott Hanselman 对 Azure 网站的简介</a></li> <li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a></li></ul>
+<li><a href="/zh-cn/documentation/articles/web-sites-dotnet-get-started/" title="">将一个 ASP.NET 应用部署到 Azure 网站</a></li>
+<li style="display:none"><a href="http://azure.microsoft.com/zh-cn/documentation/videos/intro-to-windows-azure-with-scott-hanselman/" title="">Scott Hanselman 对 Azure 网站的简介</a></li> <li style="display:none"><a href="/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a></li></ul>
 </div>
 </div>
 <div class="wa-content wa-content-divided"><ul style="display:none" class="wa-tabs wa-tabsBlock" data-tab-panel="tab-panel" data-control="tabs">
 <li><a title="" class="wa-tab active" data-id="1" data-slug="net">.NET</a></li>
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="2" data-slug="java">Java</a></li>
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="3" data-slug="node">Node.js</a></li>
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="4" data-slug="php">PHP</a></li>
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="5" data-slug="python">Python</a></li>
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-showLessMore wa-showMore active" data-control="showLessMore">More</a></li>
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/#" title="" class="wa-showLessMore wa-showLess" data-control="showLessMore">Less</a></li>
+<li><a href="/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="2" data-slug="java">Java</a></li>
+<li><a href="/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="3" data-slug="node">Node.js</a></li>
+<li><a href="/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="4" data-slug="php">PHP</a></li>
+<li><a href="/zh-cn/manage/services/web-sites/#" title="" class="wa-tab" data-id="5" data-slug="python">Python</a></li>
+<li><a href="/zh-cn/manage/services/web-sites/#" title="" class="wa-showLessMore wa-showMore active" data-control="showLessMore">More</a></li>
+<li><a href="/zh-cn/manage/services/web-sites/#" title="" class="wa-showLessMore wa-showLess" data-control="showLessMore">Less</a></li>
 </ul>
 <h2>教程和指南</h2>
 <p> </p>
@@ -45,37 +45,37 @@
 </div>
 <div class="wa-spacer wa-spacer-3down">
 <ul class="wa-linkList">
-<li><a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/" title="">Azure 网站 是什么</a>
+<li><a href="/zh-cn/manage/services/web-sites/" title="">Azure 网站 是什么</a>
 <div data-show-less-more-member="true">
 <p>了解 Azure 网站的基础知识并浏览何时将使用这些网站的示例。</p>
 </div>
 </li>
-<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/" title="">使用网站打造全球网络影响力</a>
+<li><a href="/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/" title="">使用网站打造全球网络影响力</a>
 <div data-show-less-more-member="true">
 <p>如何在 Azure 上托管你的组织的 .COM 网站的技术概述。</p>
 </div>
 </li>
-<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/" title="">使用网站创建数字市场营销活动</a>
+<li><a href="/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/" title="">使用网站创建数字市场营销活动</a>
 <div data-show-less-more-member="true">
 <p>如何使用网站创建推动实现市场营销目标的短期站点的技术概述。</p>
 </div>
 </li>
-<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-business-application-solution-overview/" title="">在网站上创建安全业务应用程序</a>
+<li><a href="/zh-cn/documentation/articles/web-sites-business-application-solution-overview/" title="">在网站上创建安全业务应用程序</a>
 <div data-show-less-more-member="true">
 <p>如何使用网站创建对于内部业务使用十分安全的 Intranet 应用程序的技术概述。</p>
 </div>
 </li>
-<li><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
-<div  style="display:none" data-show-less-more-member="true">
-<p>Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。</p>
+<li><a href="/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/" title="">Azure 网站、云服务和 VM：何时使用何种计算模型？</a>
+<div style="display:none" data-show-less-more-member="true">
+Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
 </div>
 </li> 
-<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
+<li style="display:none"><a href="/zh-cn/documentation/articles/azure-subscription-service-limits/" title="">Azure 订阅和服务限制、配额和约束条件</a>
 <div style="display:none" data-show-less-more-member="true">
 <p style="display:none">查找有关常见 Azure 限制和默认设置的详细信息。</p>
 </div>
 </li> 
-<li style="display:none"><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a>
+<li style="display:none"><a href="/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" title="">Azure Web 作业 SDK 是什么？</a>
 <div data-show-less-more-member="true">
 <p>说明 Web 作业 SDK 是什么，查看一些常见场景，并展示你如何在代码中使用它。</p>
 </div>
