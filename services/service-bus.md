@@ -42,27 +42,27 @@
       <div>
         <ul>
           <li><a href="http://msdn.microsoft.com/zh-cn/library/ee732537.aspx" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 功能概述" ms.title="" km.title="" ms.interactiontype="1" ms.index="0">功能概述</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>了解 Service Bus 提供哪些功能，以及何时使用这些功能。</p>
             </div>
           </li>
           <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 事件中心" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">事件中心</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>超规模事件流采集，用于处理任何应用程序或设备工作负荷。</p>
             </div>
           </li>
           <li><a href="/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 队列" ms.title="" km.title="" ms.interactiontype="1" ms.index="2">队列</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>基于云的有保证的先入先出消息传送策略，支持一系列标准协议（REST、AMQP 和 WS*）以及用于将消息放入/拉出队列的 API。</p>
             </div>
           </li>
           <li><a href="/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 主题" ms.title="" km.title="" ms.interactiontype="1" ms.index="3">主题</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>支持扇出和扇入通信的发布/订阅消息服务。提供筛选器和高级路由功能。</p>
             </div>
           </li>
           <li><a href="/zh-cn/documentation/articles/cloud-services-dotnet-hybrid-app-using-service-bus-relay/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 中继" ms.title="" km.title="" ms.interactiontype="1" ms.index="4">中继</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>用于本地服务且安全、可靠的基于云的通信桥。</p>
             </div>
           </li>
@@ -76,37 +76,37 @@
       <div>
         <ul>
           <li><a href="/zh-cn/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Get started with Event Hubs" ms.title="" km.title="" ms.interactiontype="1" ms.index="0">事件中心入门</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p style="display:none">In this tutorial, you will learn how to ingest messages into an Event Hub using a console application in C#, and to retrieve them in parallel using the C# Event Processor Host library.</p>
             </div>
           </li>
           <li><a href="http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用事件中心的高分辨率遥测摄取应用程序" ms.title="" km.title="" ms.interactiontype="1" ms.index="1">使用事件中心的高分辨率遥测摄取应用程序</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>此示例演示事件中心的基本功能，如创建事件中心、将事件发送到事件中心、使用 EventProcessor 处理事件。</p>
             </div>
           </li>
           <li><a href="http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 Service Bus 队列的排队消息解决方案" ms.title="" km.title="" ms.interactiontype="1" ms.index="2">使用 Service Bus 队列的排队消息解决方案</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>构建一个前端 ASP.NET MVC Web 角色，该角色使用后端辅助角色来处理长时间运行的作业。您将了解如何创建和部署多角色解决方案，以及如何使用 Service Bus 队列和主题来实现角色间通信。</p>
             </div>
           </li>
           <li><a href="http://code.msdn.microsoft.com/windowsazure/Simple-Publish-Subscribe-d406eb03" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 一款使用 Service Bus 主题的发布/订阅应用程序" ms.title="" km.title="" ms.interactiontype="1" ms.index="3">一款使用 Service Bus 主题的发布/订阅应用程序</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>使用发布/订阅模式创建一个将消息发送到多个目标的应用程序</p>
             </div>
           </li>
           <li><a href="/zh-cn/documentation/articles/cloud-services-dotnet-hybrid-app-using-service-bus-relay/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用中继的混合云本地应用程序" ms.title="" km.title="" ms.interactiontype="1" ms.index="4">使用中继的混合云本地应用程序</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>在本教程中，您将使用 Ｗeb 角色创建一个调用防火墙后面的本地服务的网站。</p>
             </div>
           </li>
           <li><a href="/zh-cn/documentation/articles/service-bus-dotnet-advanced-message-queuing/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | 使用 AMQP 的跨平台消息应用程序" ms.title="" km.title="" ms.interactiontype="1" ms.index="5">使用 AMQP 的跨平台消息应用程序</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>此操作方法指南说明如何通过 .NET API 从 AMQP 1.0 使用 Service Bus 中转消息传递功能（队列和发布/订阅主题）。</p>
             </div>
           </li>
           <li style="display:none"><a href="/zh-cn/documentation/articles/websites-dotnet-webjobs-sdk/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link list link" ms.cmpnm=" | Simplify queue and topic programming by using the WebJobs SDK" ms.title="" km.title="" ms.interactiontype="1" ms.index="6">Simplify queue and topic programming by using the WebJobs SDK</a>
-            <div data-show-less-more-member="true">
+            <div>
               <p>WebJobs enables you to run a program or script in the same context as a website. WebJobs simplifies the task of writing code that runs as a WebJob, and works with Azure Storage queues, blobs, and tables, and Service Bus queues.</p>
             </div>
           </li>

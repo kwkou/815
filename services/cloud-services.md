@@ -31,14 +31,14 @@
 <ul class="wa-linkList">
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/what-is-a-cloud-service/" title="">什么是云服务？</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>当您在 Azure 中创建应用程序并运行它时，您的代码（以及配置代码的方式）被称为云服务。本主题包括有关云服务的基本概念。</p>
 </div>
 </li>
 
 <li style="display:none">
 <h4><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/fundamentals-application-models/" title="">Azure 执行模型</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>Azure 提供了三种可用于承载 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助您确定适用于您的应用程序的模型。</p>
 </div>
 </li>
@@ -53,7 +53,7 @@
 <ul class="wa-linkList">
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-create-and-deploy-a-cloud-service/" title="">创建云服务</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>使用“快速创建”创建新的云服务。完成此操作后，您可以在 Azure 中上载和部署云服务包。</p>
 </div>
 </li>
@@ -64,13 +64,13 @@
 
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-manage-a-cloud-service/#linkresources" title="">将资源链接到云服务</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>要揭示云服务对其他资源的依赖性，您可以将 Azure SQL Database 实例或存储帐户链接到云服务。</p>
 </div>
 </li>
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/storage-create-storage-account/" title="">创建存储帐户</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>要在 Azure 中存储 Blob、表和队列服务中的文件和数据，您必须在要存储数据的地理区域创建存储帐户。存储帐户可以容纳高达 100 TB 的 Blob、表和队列数据。</p>
 </div>
 </li>
@@ -84,13 +84,13 @@
 <ul>
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-how-to-create-deploy/" title="">部署云服务</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>创建云服务后，您可以使用 Azure 管理门户上载、测试和部署新的服务包。</p>
 </div>
 </li>
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-how-to-scale/" title="">缩放应用程序</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>可以通过添加或删除角色实例来缩放云服务。如果将 Azure SQL Database 实例链接到云服务，则还可以缩放数据库。</p>
 </div>
 </li>
@@ -104,35 +104,35 @@
 <ul class="wa-linkList">
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-configure-a-cloud-service/" title="">配置云服务</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>您可以在 Azure 管理门户中配置最常使用的云服务设置。或者，如果您希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。</p>
 </div>
 </li>
 
 <li style="display:none">
 <h4><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-how-to-manage/#updaterole" title="">更新云服务角色或部署</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>如果您需要为云服务更新应用程序中的代码，则将需要上载一些内容。本主题将指导您上载新的服务包和服务配置文件。</p>
 </div>
 </li>
 
 <li>
 <h4><a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-monitor-a-cloud-service/" title="">监视云服务</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>如果您需要为云服务更新应用程序中的代码，则将需要上载一些内容。本主题将指导您上载新的服务包和服务配置文件。</p>
 </div>
 </li>
 
 <li style="display:none">
 <h4><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-dotnet-diagnostics/" title="">在 Azure 中启用诊断</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>从 Azure 中运行的辅助角色、Web 角色或虚拟机收集诊断数据以排查问题。</p>
 </div>
 </li>
 
 <li>
 <h4><a href="http://download.microsoft.com/download/C/4/8/C48CAA93-537E-453B-A3EE-55AC0300BD95/WER-in-Azure_Aug2014.pdf" title="">在云服务中使用 Windows 错误报告</a></h4>
-<div data-show-less-more-member="true">
+<div>
 <p>了解如何在 Azure 云服务中配置 Windows 错误报告，以及如何使用 Windows 错误报告来收集 Azure 平台组件的故障排除信息。</p>
 </div>
 </li>
