@@ -1,15 +1,10 @@
-﻿<properties linkid="configure-hyper-v-recovery-vault" urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Azure 站点恢复入门：两个使用 InMage 的本地 VMWare 站点之间的保护metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery, VMWare, InMage" description="InMage in Azure Site Recovery handles the replication, failover and recovery between on-premises VMWare sites." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises to On-Premises VMWare Site Protection with InMage" editor="jimbe" manager="cfreeman" authors="raynew" />
-
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/19/2014" ms.author="raynew" />
-
+﻿<properties linkid="configure-hyper-v-recovery-vmare" urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Azure 站点恢复入门：两个使用 InMage 的本地 VMWare 站点之间的保护" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery, VMWare, InMage" description="InMage in Azure Site Recovery handles the replication, failover and recovery between on-premises VMWare sites." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises to On-Premises VMWare Site Protection with InMage" editor="haifeng" manager="cfreeman" authors="raynew" />
 
 # Azure 站点恢复入门：本地到本地 VMWare 站点保护
-
 
 <div class="dev-callout"> 
 
 <p>Azure 站点恢复中的 InMage 提供了本地 VMWare 站点之间的实时复制。InMage 包括在 Azure 站点恢复服务订阅中。</p>
-
 
 </div>
 
