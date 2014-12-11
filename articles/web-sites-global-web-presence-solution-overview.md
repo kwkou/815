@@ -14,7 +14,7 @@
 
 <div class="dev-callout">
 <strong>说明</strong>
-<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>和<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-business-application-solution-overview/">业务应用程序</a>中的其他指南。</p>
+<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>和<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-business-application-solution-overview/">业务应用程序</a>中的其他指南。</p>
 </div>
 
 ## <a name="createwebsite"></a>创建 Azure 网站
@@ -186,69 +186,69 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
 </tr>
 <tr>
 <td valign="middle"><strong>计划</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
+<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>创建</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/">Azure 网站和 ASP.NET 入门</a></td>
+<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/">Azure 网站和 ASP.NET 入门</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>部署</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a><br/>- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/">使用 Microsoft WebMatrix 开发和部署网站</a></td>
+<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a><br/>- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/">使用 Microsoft WebMatrix 开发和部署网站</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>自定义域</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></td>
+<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>SSL</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a></td>
+<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>监视</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-monitor/">如何监视网站</a></td>
+<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-monitor/">如何监视网站</a></td>
 </tr>
 </table>
 
 <!--   [drupal]:https://drupal.org/   [umbraco]:http://umbraco.com/  -->
 
-  [Azure 网站]: /zh-cn/documentation/services/web-sites/
-  [Azure 云服务]: /zh-cn/documentation/services/cloud-services/
-  [Azure 虚拟机]: /zh-cn/documentation/services/virtual-machines/
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [Azure 网站]: /en-us/documentation/services/web-sites/
+  [Azure 云服务]: /en-us/documentation/services/cloud-services/
+  [Azure 虚拟机]: /en-us/documentation/services/virtual-machines/
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /en-us/manage/services/web-sites/choose-web-app-service
   [创建 Azure 网站]: #createwebsite
   [部署网站]: #deploywebsite
   [添加自定义域]: #customdomain
   [使用 SSL 保护网站]: #ssl
   [监视网站]: #monitor
-  [数字市场营销活动]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/
-  [业务应用程序]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-business-application-solution-overview/
+  [数字市场营销活动]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/
+  [业务应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-business-application-solution-overview/
   [GlobalWebCreate]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Create.png
-  [Azure 网站和 ASP.NET 入门]: /zh-cn/documentation/articles/web-sites-dotnet-get-started
+  [Azure 网站和 ASP.NET 入门]: /en-us/documentation/articles/web-sites-dotnet-get-started
   [WebMatrix]: http://www.microsoft.com/web/webmatrix/
   [GlobalWebQuickGlance]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_QuickGlance.png
   [GlobalWebFTPSettings]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_FTPSettings.png
-  [从源代码管理发布到 Azure 网站]: /zh-cn/documentation/articles/web-sites-publish-source-control/
+  [从源代码管理发布到 Azure 网站]: /en-us/develop/net/common-tasks/publishing-with-git/
   [GlobalWebVSPublish]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_VS_Publish.png
   [GlobalWebWebMatrix]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_WebMatrix.png
-  [使用 Microsoft WebMatrix 开发和部署网站]: /zh-cn/documentation/articles/web-sites-dotnet-get-started/
-  [为 Azure 网站配置自定义域名]: /zh-cn/documentation/articles/web-sites-custom-domain-name/
-  [为 Azure 网站配置 SSL 证书]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [使用 Microsoft WebMatrix 开发和部署网站]: /en-us/develop/net/tutorials/get-started/
+  [为 Azure 网站配置自定义域名]: /en-us/develop/net/common-tasks/custom-dns-web-site/
+  [为 Azure 网站配置 SSL 证书]: /en-us/develop/net/common-tasks/enable-ssl-web-site/
   [OpenSSL 网站]: http://www.openssl.org/
   [GlobalWebUplodateCert]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Uplodate_Cert.png
   [GlobalWebSSLBindings]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_SSL_Bindings.png
   [针对 SNI SSL 的 Wikipedia 条目]: http://en.wikipedia.org/wiki/Server_Name_Indication
-  [网站定价详细信息]: http://www.windowsazure.cn/pricing/details/web-sites/
+  [网站定价详细信息]: /en-us/pricing/details/web-sites/#service-ssl
   [GlobalWebMonitor1]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor1.png
   [GlobalWebMonitor2]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor2.png
   [GlobalWebMonitor3]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor3.png
   [GlobalWebMonitor4]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor4.png
-  [1]: /zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/
-  [如何监视网站]: /zh-cn/documentation/articles/web-sites-monitor/
-  [2]: http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
-  [3]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/
-  [4]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-publish-source-control/
-  [5]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/
-  [6]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-custom-domain-name/
-  [7]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
-  [8]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-monitor/
+  [1]: /en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview
+  [如何监视网站]: /en-us/manage/services/web-sites/how-to-monitor-websites/
+  [2]: http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [3]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/
+  [4]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-publish-source-control/
+  [5]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/
+  [6]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-custom-domain-name/
+  [7]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [8]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-monitor/

@@ -1,6 +1,5 @@
-<properties pageTitle="事件中心入门" metaKeywords="Azure Service Bus, 事件中心, 事件中心入门" description="Follow this tutorial to get started using Azure Event Hubs sending events with C and receiving in C# using EventProcessorHost" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+<properties linkid="service-bus-event-hubs-c-ephcs-getstarted" pageTitle="事件中心入门" metaKeywords="Azure Service Bus, 事件中心, 事件中心入门" description="Follow this tutorial to get started using Azure Event Hubs sending events with C and receiving in C# using EventProcessorHost" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
 
-<tags ms.service="service-bus" ms.workload="core" ms.tgt_pltfrm="c" ms.devlang="csharp" ms.topic="hero-article" ms.date="10/27/2014" ms.author="elioda" />
 
 # <a name="getting-started"> </a>事件中心入门
 

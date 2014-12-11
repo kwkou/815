@@ -14,7 +14,7 @@
 
 <div class="dev-callout">
 <strong>说明</strong>
-<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/">全球网络影响力</a>和<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>中的其他指南。</p>
+<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="http://www.windowsazure.com/en-us/manage/services/web-sites/global-web-presence-solution-overview/">全球网络影响力</a>和<a href="http://www.windowsazure.com/en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview">数字市场营销活动</a>中的其他指南。</p>
 </div>
 
 ## <a name="benefits"></a>考虑利益
@@ -137,49 +137,49 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 </tr>
 <tr>
 <td valign="middle"><strong>计划</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
+<td valign="top">- <a href="http://www.windowsazure.com/en-us/manage/services/web-sites/choose-web-app-service">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>创建和部署</strong></td>
-<td valign="top">- <a href ="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/">将安全的 ASP.NET MVC 应用程序部署到 Azure</a></td>
+<td valign="top">- <a href ="http://www.windowsazure.com/en-us/develop/net/tutorials/get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="http://www.windowsazure.com/en-us/develop/net/tutorials/web-site-with-sql-database/">将安全的 ASP.NET MVC 应用程序部署到 Azure</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>身份验证</strong></td>
-<td valign="top">- <a href ="http://www.windowsazure.cn/zh-cn/documentation/articles/fundamentals-identity/">了解 Azure 标识选项</a><!--a href="http://www.windowsazure.cn/zh-cn/documentation/services/active-directory/">Azure Active Directory 服务</a--><br/>- <a href="http://technet.microsoft.com/zh-cn/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn151790.aspx">使用 Azure AD 将登录名添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
+<td valign="top">- <a href ="http://www.windowsazure.com/en-us/manage/windows/fundamentals/identity/">了解 Azure 标识选项</a><br/>- <a href="http://www.windowsazure.com/en-us/documentation/services/active-directory/">Azure Active Directory 服务</a><br/>- <a href="http://technet.microsoft.com/en-us/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn151790.aspx">使用 Azure AD 将登录名添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>Service Bus 中继</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-relay/">如何使用 Service Bus 中继服务</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx">Service Bus 中继消息传送教程</a></td>
+<td valign="top">- <a href="http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-relay/">如何使用 Service Bus 中继服务</a><br/>- <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee706736.aspx">Service Bus 中继消息传送教程</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>监视</strong></td>
-<td valign="top">- <a href ="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-monitor/">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a><br/>- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-monitor/#howtoconfigdiagnostics">如何：为网站配置诊断和下载日志</a><br/>- <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/">在 Visual Studio 中排除 Azure 网站的故障</a></td>
+<td valign="top">- <a href ="http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a><br/>- <a href="http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics">如何：为网站配置诊断和下载日志</a><br/>- <a href="http://www.windowsazure.com/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/">在 Visual Studio 中排除 Azure 网站的故障</a></td>
 </tr>
 </table>
 
   [Azure 网站]: /zh-cn/documentation/services/web-sites/
   [Azure 云服务]: /zh-cn/documentation/services/cloud-services/
   [Azure 虚拟机]: /zh-cn/documentation/services/virtual-machines/
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /zh-cn/manage/services/web-sites/choose-web-app-service
   [考虑利益]: #benefits
   [选择身份验证策略]: #authentication
   [创建支持身份验证的 Azure 网站]: #createintranetsite
   [使用 Service Bus 与本地资源进行集成]: #servicebusrelay
   [监视应用程序]: #monitor
-  [全球网络影响力]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/
-  [数字市场营销活动]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-digital-marketing-campaign-solution-overview
+  [全球网络影响力]: http://www.windowsazure.com/en-us/manage/services/web-sites/global-web-presence-solution-overview/
+  [数字市场营销活动]: http://www.windowsazure.com/en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview
   [Azure Active Directory 服务]: /zh-cn/documentation/services/active-directory/
-  [使用 Azure Active Directory]: /zh-cn/documentation/articles/fundamentals-identity/#ad
-  [在虚拟机中运行 Windows Server Active Directory]: /zh-cn/documentation/articles/fundamentals-identity/#adinvm
+  [使用 Azure Active Directory]: /zh-cn/manage/windows/fundamentals/identity/#ad
+  [在虚拟机中运行 Windows Server Active Directory]: /zh-cn/manage/windows/fundamentals/identity/#adinvm
   [在 Azure 虚拟机上部署 Windows Server Active Directory 的指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx
   [Azure 访问控制服务]: http://msdn.microsoft.com/library/windowsazure/hh147631.aspx
-  [使用 Azure Active Directory 访问控制]: /zh-cn/documentation/articles/fundamentals-identity/#ac
+  [使用 Azure Active Directory 访问控制]: /zh-cn/manage/windows/fundamentals/identity/#ac
   [Azure AD 租户是什么？]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
   [BusinessApplicationsAzureAD]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AzureAD.png
   [BusinessApplicationsADUsers]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AD_Users.png
   [使用 Azure AD 将登录名添加到 Web 应用程序中]: http://msdn.microsoft.com/library/windowsazure/dn151790.aspx
   [目录集成]: http://technet.microsoft.com/zh-cn/library/jj573653.aspx
-  [查看该信息]: /zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/
+  [查看该信息]: /zh-cn/manage/services/web-sites/global-web-presence-solution-overview/
   [BusinessApplicationsVSIntranetApp]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_IntranetApp.png
   [BusinessApplicationsVSProperties]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_Properties.png
   [针对 Visual Studio 的身份认证和访问工具]: #identityandaccessforvs
@@ -193,27 +193,27 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [BusinessApplicationsVSEnableAuth]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_EnableAuth.png
   [Azure 身份验证]: http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication
   [BusinessApplicationsDeploy]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Deploy.png
-  [Azure 信任中心]: http://www.windowsazure.cn/support/trust-center/
+  [Azure 信任中心]: /zh-cn/support/trust-center/
   [Azure Service Bus 中继服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860549.aspx
   [BusinessApplicationsServiceBusRelay]: ./media/web-sites-business-application-solution-overview/BusinessApplications_ServiceBusRelay.png
-  [如何使用 Service Bus 中继服务]: http://www.windowsazure.cn/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-relay/
+  [如何使用 Service Bus 中继服务]: /zh-cn/develop/net/how-to-guides/service-bus-relay/
   [Service Bus 中继消息传送教程]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
   [Enterprise Pizza - 使用 Service Bus 将网站连接到本地]: http://code.msdn.microsoft.com/windowsazure/Enterprise-Pizza-e2d8f2fa
-  [2]: /zh-cn/documentation/articles/web-sites-digital-marketing-campaign-solution-overview
+  [2]: /zh-cn/manage/services/web-sites/digital-marketing-campaign-solution-overview
   [New Relic]: http://newrelic.com/azure
   [BusinessApplicationsDiagnostics]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diagnostics.png
   [BusinessApplicationsDiagRetention]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diag_Retention.png
   [如何：为网站配置诊断和下载日志]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
-  [在 Visual Studio 中排除 Azure 网站的故障]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/
+  [在 Visual Studio 中排除 Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [3]: http://www.windowsazure.com/en-us/manage/services/web-sites/choose-web-app-service
   [将 ASP.NET Web 应用程序部署到 Azure 网站]: http://www.windowsazure.com/en-us/develop/net/tutorials/get-started/
-  [将安全的 ASP.NET MVC 应用程序部署到 Azure]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
-  [了解 Azure 标识选项]: http://www.windowsazure.cn/zh-cn/documentation/articles/fundamentals-identity/
-  [4]: http://www.windowsazure.cn/zh-cn/documentation/services/active-directory/
-  [什么是 Azure AD 租户？]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
+  [将安全的 ASP.NET MVC 应用程序部署到 Azure]: http://www.windowsazure.com/en-us/develop/net/tutorials/web-site-with-sql-database/
+  [了解 Azure 标识选项]: http://www.windowsazure.com/en-us/manage/windows/fundamentals/identity/
+  [4]: http://www.windowsazure.com/en-us/documentation/services/active-directory/
+  [什么是 Azure AD 租户？]: http://technet.microsoft.com/en-us/library/jj573650.aspx
   [5]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-relay/
-  [6]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
-  [如何监视网站]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-monitor/
+  [6]: http://msdn.microsoft.com/en-us/library/windowsazure/ee706736.aspx
+  [如何监视网站]: http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
   [7]: http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
   [8]: http://www.windowsazure.com/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/

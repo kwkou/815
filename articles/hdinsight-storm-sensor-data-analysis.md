@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-﻿<properties title="Analyzing sensor data with Storm and HDInsight" pageTitle="使用 Apache Storm 和 Microsoft Azure HDInsight (Hadoop) 分析传感器数据" description="Learn how to use  Apache Storm to process sensor data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
-=======
 <properties title="Analyzing sensor data with Storm and HDInsight" pageTitle="使用 Apache Storm 和 Microsoft Azure HDInsight (Hadoop) 分析传感器数据" description="Learn how to use  Apache Storm to process sensor data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
-<<<<<<< HEAD
->>>>>>> origin/stage
-=======
->>>>>>> stage
->>>>>>> parent of d3950b6... Revert "update file to master"
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/30/2014" ms.author="larryfr" />
 
@@ -20,15 +12,7 @@
 
 * Azure 订阅
 
-<<<<<<< HEAD
-* [Microsoft Azure SDK for .NET](http://www.windowsazure.cn/zh-cn/downloads/archive-net-downloads/) 的 Visual Studio
-=======
 * [Microsoft Azure SDK for .NET](http://www.windowsazure.cn/downloads/?sdk=net) 的 Visual Studio
-<<<<<<< HEAD
->>>>>>> origin/stage
-=======
->>>>>>> stage
->>>>>>> parent of d3950b6... Revert "update file to master"
 
 * [Java 和 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
@@ -908,15 +892,7 @@ Event Hub 用于从传感器中接收消息（事件）。 按照下列步骤创
 		  </property>
 		</configuration>
 
-<<<<<<< HEAD
-3.  在 **hbase-site.xml** 文件中，将 zooKeeper 条目的**后缀**值更换为您此前为 HBase 检索的 DNS 后缀。 例如，**zookeeper0.mycluster.b4.internal.cloudapp.net、zookeeper1.mycluster.b4.internal.cloudapp.net、zookeeper2.mycluster.b4.internal.cloudapp.net**。
-=======
 3.  在 **hbase-site.xml** 文件中，将 zooKeeper 条目的**后缀**值更换为您此前为 HBase 检索的 DNS 后缀。 例如，**zookeeper0.mycluster.b4.internal.chinacloudapp.cn、zookeeper1.mycluster.b4.internal.chinacloudapp.cn、zookeeper2.mycluster.b4.internal.chinacloudapp.cn**。
-<<<<<<< HEAD
->>>>>>> origin/stage
-=======
->>>>>>> stage
->>>>>>> parent of d3950b6... Revert "update file to master"
 
 3. 保存文件。
 
@@ -1344,15 +1320,7 @@ Bolt 执行拓扑中的主处理操作。 此拓扑有三个 Bolt，但其中一
 
 * 有关 Apache Storm 的更多信息，请参见 [https://storm.incubator.apache.org/](https://storm.incubator.apache.org/)
 
-<<<<<<< HEAD
-* 有关将 HBase 与 HDInsight 配合使用的更多信息，请参见[将 HBase 与 HDInsight 配合使用概述](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hbase-overview/)
-=======
 * 有关将 HBase 与 HDInsight 配合使用的更多信息，请参见[将 HBase 与 HDInsight 配合使用概述](/zh-cn/documentation/articles/hdinsight-hbase-overview/)
-<<<<<<< HEAD
->>>>>>> origin/stage
-=======
->>>>>>> stage
->>>>>>> parent of d3950b6... Revert "update file to master"
 
 * 有关 SignalR 的更多信息，请参见 [ASP.NET SignalR](http://signalr.net/)
 
