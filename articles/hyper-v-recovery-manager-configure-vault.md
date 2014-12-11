@@ -1,10 +1,6 @@
-﻿<properties urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Azure 站点恢复入门：使用 Hyper-V 复制的本地到本地 VMM 站点保护metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines between on-premises VMM sites." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery:  On-Premises to On-Premises VMM Site Protection with Hyper-V Replication" editor="jimbe" manager="johndaw" authors="raynew" />
-
-<tags ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/19/2014" ms.author="raynew" />
-
+﻿<properties urlDisplayName="hyper-v-recovery-manager-configure-vault" pageTitle="Azure 站点恢复入门：使用 Hyper-V 复制的本地到本地 VMM 站点保护" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines between on-premises VMM sites." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery:  On-Premises to On-Premises VMM Site Protection with Hyper-V Replication" editor="jimbe" manager="johndaw" authors="Haifeng Liu" />
 
 # Azure 站点恢复入门：使用 Hyper-V 复制的本地到本地 VMM 站点保护
-
 
 <div class="dev-callout"> 
 
@@ -15,7 +11,7 @@
 <UL>
 <LI>如需详细了解完整部署，请阅读<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">规划</a>和<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">部署</a>指南。</LI>
 <LI>要了解有关其他 Azure 站点恢复部署情形，请参阅 <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/hyper-v-recovery-manager-overview/">Azure 站点恢复概述</a>。</LI>
-<!--LI>在使用本教程过程中如果遇到问题，请查阅 wiki 文章 <a href="http://go.microsoft.com/fwlink/?LinkId=389879">Azure 站点恢复：常见错误情形和解决方案</a>，或在 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>上发布你的问题。</LI-->
+<LI style="display:none">在使用本教程过程中如果遇到问题，请查阅 wiki 文章 <a href="http://go.microsoft.com/fwlink/?LinkId=389879">Azure 站点恢复：常见错误情形和解决方案</a>，或在 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>上发布你的问题。</li>
 </UL>
 
 </div>
@@ -26,7 +22,7 @@
 <P>开始使用本教程之前，要确保一切准备工作就绪。</P>
 
 <UL>
-<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<!--Get subscription pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。--></LI>
+<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
 <LI><b>VMM 服务器</b>-你至少需要有一台在 System Center 2012 SP1 或 System Center 2012 R2 上运行的 VMM 服务器。</LI>
 <LI><b>VMM 云</b>-你应该至少在要保护的源 VMM 服务器上有一个云，在目标 VMM 服务器上也要有一个。如果你正在运行一台 VMM 服务器，那就会需要两个云。要保护的主云必须包含以下各项：<UL>
 	<LI>一个或多个 VMM 主机组</LI>
@@ -67,8 +63,7 @@
 4. 在<b>"名称"</b>中，输入一个友好名称以标识此保管库。
 
 5. 在<b>"区域"</b>中，为保管库选择地理区域。 
-<!--To check supported regions see Geographic Availability in <a href="http://go.microsoft.com/fwlink/?LinkId=389880">Azure 站点恢复定价详细信息</a>-->
-
+<div  style="display:none">Get subscription pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。</div>
 6. 单击<b>"创建保管库"</b>。 
 
 	![New Vault](./media/hyper-v-recovery-manager-configure-vault/SR_HvVault.png)
@@ -210,5 +205,5 @@
 <h2><a id="next"></a>后续步骤</h2>
 <UL>
 <LI>若要在完全的生产环境中规划和部署 Azure 站点恢复，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">Azure 站点恢复规划指南</a>和 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">Azure 站点恢复部署指南</a>。</LI>
-<!--LI>如有问题，请访问 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>。</LI-->
+<LI style="display:none">如有问题，请访问 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>。</LI>
 </UL>
