@@ -37,7 +37,7 @@
 <P>开始使用本教程之前，请确保做好了一切准备工作。</P>
 
 <UL>
-<LI><b>Azure 帐户</b> - 你需要一个 Azure 帐户。如果没有帐户，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。可在 <a href="http://www.windowsazure.cn/pricing/details/">Azure Site Recovery Manager 定价详细信息</a>中获取订阅定价信息。</LI>
+<LI><b>Azure 帐户</b> - 你需要一个 Azure 帐户。如果没有帐户，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。可在 <a href="http://www.windowsazure.cn/pricing/details/site-recovery/">Azure Site Recovery Manager 定价详细信息</a>中获取订阅定价信息。</LI>
 <LI>如果想要了解在执行 Azure Site Recovery 操作期间系统会收集、处理或传输哪些信息，请阅读 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn337349.aspx">隐私要求</a>。</LI>
 <LI><b>VMM 服务器</b> - 需要在每个本地站点中准备一台 VMM 服务器，该服务器部署为独立的物理或虚拟服务器，或部署为虚拟群集，在装有 <a href="http://support.microsoft.com/kb/3011473">VMM 更新汇总 5.0 预览版</a>的 System Center 2012 R2 上运行。</LI>
 <LI>需要在主站点和辅助站点上部署一个 Hyper-V 主机群集，该群集至少需要运行装有最新更新的 Windows Server 2012。</LI>

@@ -3,9 +3,9 @@
 #媒体服务<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase;" class="wa-previewTag">预览</sup>
 
 ####快速链接
--   [了解 SDK](/zh-cn/develop/media-services/developer-tools/)
+
 -   [在论坛上获取帮助](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=windowsazurezhchs)
--   [团队博客友情链接](http://www.rssmix.com/u/3677386/rss.xml)
+-   [团队博客友情链接](http://www.rssmix.com/u/3677386/)
 
 ##教程和资源
 

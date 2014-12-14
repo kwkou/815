@@ -8,7 +8,6 @@
 ####快速链接
 
 -   [服务概述](/home/features/caching/)
--   [可交付的解决方案](/zh-cn/solutions/media/)
 -   [定价详细信息](/pricing/details/cdn/)
       
 ####特色

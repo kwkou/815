@@ -128,10 +128,6 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 
 提供必要的指导，以帮助您使用 Microsoft Dynamics 生命周期服务中的云托管环境工具在 Azure 上部署 Microsoft Dynamics AX 2012 R3 环境。
 
-####[Dynamics NAV](http://msdn.microsoft.com/zh-cn/library/dn168977(v=nav.70\).aspx)
-
-用于帮助您在 Azure 虚拟机上部署 Microsoft Dynamics NAV 的指南、工具和 Windows PowerShell 脚本。
-
 ####[HPC Pack](http://msdn.microsoft.com/zh-cn/library/azure/dn518135.aspx)
 
 指导您在 Azure 虚拟机群集上部署 HPC Pack 以运行大型计算工作负载，例如本质并行的应用程序。

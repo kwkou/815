@@ -7,7 +7,7 @@
 
 将 SQL Database 用于业务应用程序、复杂的基于云的服务或混合解决方案。在 SQL 数据库之间或者在 SQL Server 的本地实例和 Azure SQL 数据库之间共享数据。
 
-####快速链接<
+####快速链接
 
 -   [服务概述](/home/features/sql-database/)
 -   [可交付的解决方案](/zh-cn/solutions/data-management/)

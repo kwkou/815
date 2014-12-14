@@ -34,7 +34,7 @@ Service Bus 是一个云消息平台。它位于您的应用程序组件之间�
 ####[使用事件中心的高分辨率遥测摄取应用程序](http://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097)
 此示例演示事件中心的基本功能，如创建事件中心、将事件发送到事件中心、使用 EventProcessor 处理事件。
 
-####[使用 Service Bus 队列的排队消息解决方案](http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/)
+####[使用 Service Bus 队列的排队消息解决方案](/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/)
 构建一个前端 ASP.NET MVC Web 角色，该角色使用后端辅助角色来处理长时间运行的作业。您将了解如何创建和部署多角色解决方案，以及如何使用 Service Bus 队列和主题来实现角色间通信。
 
 ####[一款使用 Service Bus 主题的发布/订阅应用程序](http://code.msdn.microsoft.com/windowsazure/Simple-Publish-Subscribe-d406eb03)

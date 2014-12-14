@@ -20,7 +20,7 @@
 
 ###计划
 
-####[Azure 网站 是什么](/zh-cn/manage/services/web-sites/)
+####[Azure 网站 是什么](/home/features/web-site/)
 
 了解 Azure 网站的基础知识并浏览何时将使用这些网站的示例。
 
@@ -53,10 +53,6 @@ Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云
 ####[使用 Web 作业运行后台任务](/zh-cn/documentation/articles/web-sites-create-web-jobs/)
 
 按照以下三种方式之一，在你的网站上使用 Web 作业运行自定义作业（可执行文件或脚本）：按需运行、连续运行或按计划运行。本文介绍了如何通过 Azure 门户管理 Web 作业。
-
-####[Azure Web 作业 SDK 入门](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)
-
-Web 作业 SDK 是一种框架，可简化将后台处理添加到 Azure 网站的任务。本教程概述了 SDK 中的功能，并指导你完成创建和运行简单 Hello World 后台进程。
 
 ####[使用 WebMatrix 创建和部署 ASP.NET 网站](zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/)
 
@@ -103,10 +99,6 @@ Windows PowerShell for Azure 提供用于通过 Windows PowerShell cmdlet 开发
 ####[使用跨平台命令行接口进行开发和部署](/zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_your_web_sites)
 
 跨平台 CLI 是用于部署和管理 Azure 服务的命令行工具。使用命令行工具创建和管理网站。
-
-####[Azure 网站管理 REST API 参考](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn166981.aspx)
-
-管理 API 提供了一组与 Azure 网站服务进行交互的 RESTful Web 服务来管理网站。参考文档提供有关如何通过 API 执行许多常见网站管理任务的详细信息。
 
 ###部署
 
@@ -160,7 +152,7 @@ New Relic 是以开发人员为主的工具，用于监视应用程序，并使�
 
 一旦你的网站启动并运行后，你就可以监视其它的性能了。根据显示的内容，你可以配置站点以输出诊断日志来帮助你解决性能问题。你也可以监视你特定使用率级别的配额。
 
-####[缩放网站](/zh-cn/manage/services/web-sites/how-to-scale-websites/)
+####[缩放网站](/zh-cn/documentation/articles/web-sites-scale/)
 
 监视数据可能会指示可通过缩放网站来解决性能问题。利用 Azure，你可以在“共享”模式中扩展你的网站，然后当更改为“标准”模式时，你可以更改虚拟机的大小和计数。
 

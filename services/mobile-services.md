@@ -87,7 +87,7 @@ Sencha |
 
 本主题演示如何使用 Azure 命令行工具来自动创建和管理移动服务。其中介绍如何安装工具以及如何执行常规任务（包括新建移动服务、创建表、注册表操作脚本、删除表和现有移动服务）。
 
-####[管理移动服务的命令](http://azure.microsoft.com/zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services)
+####[管理移动服务的命令](/zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services)
 
 查找移动服务命令以便为您的应用程序实现后端功能。
 
