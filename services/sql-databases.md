@@ -16,7 +16,6 @@
 ####特色
 
 -   [SQL Database 入门](/zh-cn/documentation/articles/sql-database-get-started/)
--   [Elastic Scale 预览版入门](/zh-cn/documentation/articles/sql-database-elastic-scale-get-started/)
 -   [了解服务层和版本](http://msdn.microsoft.com/zh-cn/library/azure/fea26432-7462-48a0-b58d-a6e3e36da165)
 -   [SQL Database 审核入门](/zh-cn/documentation/articles/sql-database-auditing-get-started/)
 
@@ -81,10 +80,6 @@ Azure SQL Database Elastic Scale（预览版）使数据级别的应用程序可
 ####[SQL 数据库 Elastic Scale 预览版的文档示图](/zh-cn/documentation/articles/sql-database-elastic-scale-documentation-map/)
 
 使用此文档示图作为进入 Azure SQL 数据库 Elastic Scale 预览版文章的指南。这些文章包括服务简介、迁移联合的指导、开发和管理教程等等。
-
-####[SQL Database 审核入门](/zh-cn/documentation/articles/sql-database-auditing-get-started/)
-
-Azure SQL Database 审核跟踪数据库事件，并将事件写入您的 Azure 存储帐户中的审核日志内。使用审核有助于维护法规遵从性、理解数据库活动，以及了解差异和异常。
 
 ####[使用 SQL Server Management Studio 管理 SQL Database](/zh-cn/documentation/articles/sql-database-manage-azure-ssms/)
 

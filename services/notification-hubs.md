@@ -66,10 +66,6 @@
 
 使用模板从某一移动服务或 ASP.NET 应用程序发送推送通知，而不会在您的后端中产生特定于平台的负载。
 
-####[通过经过身份验证的安全连接发送推送通知](/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push/)
-
-了解如何使用通知中心通过客户端设备与应用程序后端之间的安全连接发送敏感信息。
-
 ####[发送预定通知](http://msdn.microsoft.com/zh-cn/library/azure/dn790626.aspx)
 
 了解如何发送预定通知。

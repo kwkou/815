@@ -17,8 +17,6 @@
 -   [iOS 入门教程][iOS getstarted]
 -   [Windows Phone 入门教程][WP getstarted]
 -   [Windows应用商店 入门教程][Windows Store getstarted]
--   [Xamarin iOS 入门教程][Xamarin.iOS getstarted]
--   [Xamarin Android 入门教程][Xamarin.Android getstarted]
 -   [Android 入门教程][Android getstarted]
 -   [HTML 入门教程][HTML getstarted]
 -   [PhoneGap 入门教程][PhoneGap getstarted]
