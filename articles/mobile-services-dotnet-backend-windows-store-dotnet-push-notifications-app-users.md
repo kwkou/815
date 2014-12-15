@@ -1,6 +1,4 @@
-﻿<properties pageTitle="向经过身份验证的用户发送推送通知" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="Learn how to send push notifications to specific " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="" />
-
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/29/2014" ms.author="glenga" />
+<properties linkid="mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users" pageTitle="向经过身份验证的用户发送推送通知" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="Learn how to send push notifications to specific " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="Haifeng liu" />
 
 # 向经过身份验证的用户发送推送通知
 
@@ -38,20 +36,22 @@
 
 [WACOM.INCLUDE [mobile-services-windows-test-push-users](../includes/mobile-services-windows-test-push-users.md)] 
 
-<!---## <a name="next-steps"> </a>后续步骤
+<div style="display:none">
+## <a name="next-steps"> </a>后续步骤
 
-在下一篇教程[移动服务用户的服务端授权][使用脚本向用户授权]中，你将使用移动服务基于已经过身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。请在[移动服务 .NET 操作方法概念性参考]中了解有关如何将移动服务与 .NET 一起使用的详细信息-->
+在下一篇教程[移动服务用户的服务端授权][使用脚本向用户授权]中，你将使用移动服务基于已经过身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。请在[移动服务 .NET 操作方法概念性参考]中了解有关如何将移动服务与 .NET 一起使用的详细信息
+</div>
 
 <!-- Anchors. -->
-[更新服务以要求对注册进行身份验证]： #register
-[更新应用程序以要求在注册之前登录]： #update-app
-[测试应用程序]： #test
-[后续步骤]：#next-steps
+[更新服务以要求对注册进行身份验证]: #register
+[更新应用程序以要求在注册之前登录]: #update-app
+[测试应用程序]: #test
+[后续步骤]:#next-steps
 
 
 <!-- URLs. -->
-[身份验证入门]：/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/
-[推送通知入门]：/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
+[身份验证入门]:/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/
+[推送通知入门]:/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
 
-[Azure 管理门户]：https://manage.windowsazure.cn/
+[Azure 管理门户]:https://manage.windowsazure.cn/
 [移动服务 .NET 操作方法概念性参考]：/zh-cn/develop/mobile/how-to-guides/work-with-net-client-library
