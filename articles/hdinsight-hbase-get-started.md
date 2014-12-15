@@ -184,10 +184,10 @@ Marlin 是位于 REST API 顶部的一个精简层，它可以使用 ProtoBuf（
 
 ## <a name="next"></a>后续步骤
 
-[HDInsight HBase 概述][]：
+[HDInsight HBase 概述][]:
 HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 
-[在 Azure 虚拟网络上设置 HBase 群集][]：
+[在 Azure 虚拟网络上设置 HBase 群集][]:
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
 
 <!--- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ --->

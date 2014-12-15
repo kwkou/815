@@ -41,11 +41,11 @@ Microsoft Power Query for Excel 可用于将数据从 Azure HDInsight 或任何 
 
 本主题描述了 HDInsight 所支持的 Hadoop 生态系统、HDInsight 的主要使用方案以及其他资源的指南。本主题包含以下部分：
 
--   [HDInsight 上的 Hadoop 生态系统][]：HDInsight 提供了对 Pig、Hive 和 Sqoop 的实现，并通过 Power Query 或 Microsoft Hive ODBC 驱动程序支持与 Blob 存储/HDFS 和 MapReduce 框架集成的其他 BI 工具（如 Excel、SQL Server Analysis Services 和 Reporting Services）。此部分描述 Hadoop 生态系统中的这些程序将用于处理哪些作业。
+-   [HDInsight 上的 Hadoop 生态系统][]:HDInsight 提供了对 Pig、Hive 和 Sqoop 的实现，并通过 Power Query 或 Microsoft Hive ODBC 驱动程序支持与 Blob 存储/HDFS 和 MapReduce 框架集成的其他 BI 工具（如 Excel、SQL Server Analysis Services 和 Reporting Services）。此部分描述 Hadoop 生态系统中的这些程序将用于处理哪些作业。
 
--   [适用于 HDInsight 的大型数据方案][]：此部分解答了以下问题：HDInsight 对于哪些类型的作业而言是一种适用的技术？
+-   [适用于 HDInsight 的大型数据方案][]:此部分解答了以下问题：HDInsight 对于哪些类型的作业而言是一种适用的技术？
 
--   [HDInsight 的资源][]：此部分指明可从何处查找相关资源以了解其他信息。
+-   [HDInsight 的资源][]:此部分指明可从何处查找相关资源以了解其他信息。
 
 ## <a id="Ecosystem"></a>Azure 上的 Hadoop 生态系统
 
@@ -99,45 +99,45 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
 
 **Microsoft：HDInsight**
 
--   [HDInsight 文档][]：Azure HDInsight 的文档页，带有文章、视频及其他资源的链接。
+-   [HDInsight 文档][]:Azure HDInsight 的文档页，带有文章、视频及其他资源的链接。
 
--   [Azure HDInsight 入门][]：提供 HDInsight 快速入门知识的教程。
+-   [Azure HDInsight 入门][]:提供 HDInsight 快速入门知识的教程。
 
--   [运行 HDInsight 示例][]：有关如何运行 HDInsight 随附示例的教程。
+-   [运行 HDInsight 示例][]:有关如何运行 HDInsight 随附示例的教程。
 
--   [大数据和 Azure][]：探索你可以使用 Azure 生成什么内容的大数据方案。
+-   [大数据和 Azure][]:探索你可以使用 Azure 生成什么内容的大数据方案。
 
--   [Azure HDInsight SDK][]：HDinsight SDK 的参考文档。
+-   [Azure HDInsight SDK][]:HDinsight SDK 的参考文档。
 
 **Microsoft：Windows 和 SQL Database**
 
--   [Azure 主页][]：开始构建应用程序所需的方案、免费试用版注册、开发工具和文档。
+-   [Azure 主页][]:开始构建应用程序所需的方案、免费试用版注册、开发工具和文档。
 
--   [Azure SQL Database][]：有关 SQL Database 的 MSDN 文档。
+-   [Azure SQL Database][]:有关 SQL Database 的 MSDN 文档。
 
--   [SQL Database 的管理门户][]：一种轻量版易用型数据库管理工具，用于以云方式管理 SQL Database。
+-   [SQL Database 的管理门户][]:一种轻量版易用型数据库管理工具，用于以云方式管理 SQL Database。
 
--   [Adventure Works for SQL Database][]：SQL Database 示例数据库的下载页。
+-   [Adventure Works for SQL Database][]:SQL Database 示例数据库的下载页。
 
 **Microsoft：商业智能**
 
--   [利用 Power Query 将 Excel 连接到 HDInsight][]：了解如何使用 Microsoft Power Query for Excel，将 Excel 连接到存储 HDInsight 群集关联数据的 Azure 存储帐户。
+-   [利用 Power Query 将 Excel 连接到 HDInsight][]:了解如何使用 Microsoft Power Query for Excel，将 Excel 连接到存储 HDInsight 群集关联数据的 Azure 存储帐户。
 
--   [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][]：了解如何使用 Microsoft Hive ODBC 驱动程序从 Azure HDInsight 导入数据。
+-   [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][]:了解如何使用 Microsoft Hive ODBC 驱动程序从 Azure HDInsight 导入数据。
 
--   [Microsoft BI PowerPivot][]：下载并获取有关功能强大的数据混合 Web 应用程序和探索工具的信息。
+-   [Microsoft BI PowerPivot][]:下载并获取有关功能强大的数据混合 Web 应用程序和探索工具的信息。
 
--   [SQL Server 2012 Analysis Services][]：下载 SQL Server 2012 评估版，了解如何生成可带来能够付诸实施的见解的企业级综合分析解决方案。
+-   [SQL Server 2012 Analysis Services][]:下载 SQL Server 2012 评估版，了解如何生成可带来能够付诸实施的见解的企业级综合分析解决方案。
 
--   [SQL Server 2012 Reporting][]：下载 SQL Server 2012 评估版，了解如何创建支持企业间实时决策的可高度伸缩的全面解决方案。
+-   [SQL Server 2012 Reporting][]:下载 SQL Server 2012 评估版，了解如何创建支持企业间实时决策的可高度伸缩的全面解决方案。
 
 **Apache Hadoop**：
 
--   [Apache Hadoop][]：了解有关 Apache Hadoop 软件库的详细信息，这是一个框架，允许你跨计算机群集分布式处理大型数据集。
+-   [Apache Hadoop][]:了解有关 Apache Hadoop 软件库的详细信息，这是一个框架，允许你跨计算机群集分布式处理大型数据集。
 
--   [HDFS][]：了解有关 Hadoop 分布式文件系统 (HDFS) 的体系结构和设计，Hadoop 分布式文件系统 (HDFS) 是由 Hadoop 应用程序使用的主存储系统。
+-   [HDFS][]:了解有关 Hadoop 分布式文件系统 (HDFS) 的体系结构和设计，Hadoop 分布式文件系统 (HDFS) 是由 Hadoop 应用程序使用的主存储系统。
 
--   [MapReduce][]：了解有关编程框架的详情，此编程框架用于编写 Hadoop 应用程序，以便以并行方式快速处理大型计算节点群集上的大量数据。
+-   [MapReduce][]:了解有关编程框架的详情，此编程框架用于编写 Hadoop 应用程序，以便以并行方式快速处理大型计算节点群集上的大量数据。
 
   [HDInsight 上的 Hadoop 生态系统]: #Ecosystem
   [适用于 HDInsight 的大型数据方案]: #Scenarios

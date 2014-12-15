@@ -82,10 +82,10 @@
 
 以下是表操作的规范 main 函数签名：
 
--   [插入][]：`function insert (item, user, request) { ... }`
--   [更新][]：`function update (item, user, request) { ... }`
--   [删除][]：`function del (id, user, request) { ... }`
--   [读取][]：`function read (query, user, request) { ... }`
+-   [插入][]:`function insert (item, user, request) { ... }`
+-   [更新][]:`function update (item, user, request) { ... }`
+-   [删除][]:`function del (id, user, request) { ... }`
+-   [读取][]:`function read (query, user, request) { ... }`
 
 > [WACOM.NOTE]注册到删除操作的函数必须命名为 *del*，因为 delete 是 JavaScript 中的保留关键字。
 
@@ -615,7 +615,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 
         var todoItemsTable = tables.getTable('TodoItems');
 
-自定义 API 脚本可从提供的[请求对象][]的 "service" 属性访问[表对象][]。以下代码行将从请求中获取[表对象][]：
+自定义 API 脚本可从提供的[请求对象][]的 "service" 属性访问[表对象][]。以下代码行将从请求中获取[表对象][]:
 
         var todoItemsTable = request.service.tables.getTable('TodoItem');
 

@@ -27,7 +27,7 @@ Twilio 是一种电话 Web 服务 API，它使你能够使用现有 Web 语言�
 
 ## <span id="Pricing"></span></a>Twilio 定价和特别优惠
 
-[Twilio 定价][1]中提供了有关 Twilio 定价的信息。Azure 客户可享受[特别优惠][特别优惠]：免费获得 1000 条信息和 1000 分钟拨入通话时间。若要注册此优惠或了解更多信息，请访问 [][特别优惠]<http://ahoy.twilio.com/azure></a>。
+[Twilio 定价][1]中提供了有关 Twilio 定价的信息。Azure 客户可享受[特别优惠][特别优惠]:免费获得 1000 条信息和 1000 分钟拨入通话时间。若要注册此优惠或了解更多信息，请访问 [][特别优惠]<http://ahoy.twilio.com/azure></a>。
 
 ## <span id="Concepts"></span></a>概念
 
