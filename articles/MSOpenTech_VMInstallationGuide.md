@@ -7,7 +7,7 @@
 
 ###开源大数据类###
 1. [Cobar](../articles/MSOpenTech_CobarVM_Install.md)
-2. Druid
+2. [Druid](../articles/MSOpenTech_DruidVM_Install.md)
 3. mDrill
 4. otter
 5. Zeus
