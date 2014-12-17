@@ -189,7 +189,7 @@ Microsoft Azure 网站允许您使用以下三种方式之一在网站中运行�
 
 ### 使用 Microsoft Azure WebJobs SDK 提高效率
 
-Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure 网站中的任务。SDK 集成了 Microsoft Azure 存储空间，当项目添加到队列、Blob 或表中时，将触发程序中的函数。仪表板（现已集成到 Azure 门户中）为使用 SDK 编写的程序提供了丰富的监视和诊断功能。监视和诊断功能已内置到 SDK 中并且不需要您在程序中添加任何特殊代码。
+Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure 网站中的任务。SDK 集成了 Microsoft Azure 存储服务，当项目添加到队列、Blob 或表中时，将触发程序中的函数。仪表板（现已集成到 Azure 门户中）为使用 SDK 编写的程序提供了丰富的监视和诊断功能。监视和诊断功能已内置到 SDK 中并且不需要您在程序中添加任何特殊代码。
 
 有关详细信息，请参阅教程 [Microsoft Azure WebJobs SDK 入门][Microsoft Azure WebJobs SDK 入门]。本教程提供 WebJobs SDK 的功能概述，并指导您完成创建和运行简单的 Hello World 后台进程。
 

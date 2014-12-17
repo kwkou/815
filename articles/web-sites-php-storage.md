@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-storage" urlDisplayName="Web w/ Storage" pageTitle="PHP web site with table storage - Azure tutorial" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="This tutorial shows you how to create a PHP website and use the Azure Tables storage service in the back-end." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Web Site using Azure Storage" authors="" solutions="" manager="" editor="" />
 
-# 使用 Azure 存储空间创建 PHP 网站
+# 使用 Azure 存储服务创建 PHP 网站
 
 本教程演示如何创建 PHP 网站并在后端使用 Azure 表存储服务。本教程假定你已在计算机上安装 [PHP][PHP] 和 Web 服务器。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南后，你将拥有一个在 Azure 中运行的并访问表存储服务的 PHP 网站。
 

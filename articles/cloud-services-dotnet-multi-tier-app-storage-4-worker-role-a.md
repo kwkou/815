@@ -20,7 +20,7 @@
 -   [添加对 SCL 1.7 程序集的引用][添加对 SCL 1.7 程序集的引用]
 -   [添加 SendEmail 模型][添加 SendEmail 模型]
 -   [添加辅助角色启动时运行的代码][添加辅助角色启动时运行的代码]
--   [配置存储空间连接字符串][配置存储空间连接字符串]
+-   [配置存储服务连接字符串][配置存储服务连接字符串]
 -   [测试辅助角色 A][测试辅助角色 A]
 -   [后续步骤][后续步骤]
 
@@ -158,7 +158,7 @@
             return base.OnStart();
         }
 
-    你可能已在以前看到过有关如何使用 Azure 存储空间的文档，了解到循环中的初始化代码可以用来检查传输错误。而现在，这种方式已不再需要，因为 API 的内置重试机制会消除一过性的网络故障，最多可允许 3 次额外的尝试。
+    你可能已在以前看到过有关如何使用 Azure 存储服务的文档，了解到循环中的初始化代码可以用来检查传输错误。而现在，这种方式已不再需要，因为 API 的内置重试机制会消除一过性的网络故障，最多可允许 3 次额外的尝试。
 
     `ConfigureDiagnostics` 方法由 `OnStart` 方法调用，可用于设置跟踪，让你能够查看 `Trace.Information` 和 `Trace.Error` 方法的输出。此方法在[第二个教程][第二个教程]中介绍。
 
@@ -508,7 +508,7 @@
             messageTable.Execute(deleteOperation);
         }
 
-## <a name="configure"></a><span class="short-header">配置存储</span>配置存储空间连接字符串
+## <a name="configure"></a><span class="short-header">配置存储</span>配置存储服务连接字符串
 
 如果你在为 Web 角色配置存储帐户凭据的时候尚未为辅助角色 A 这样做，则请现在就这样做。
 
@@ -589,7 +589,7 @@
   [添加对 SCL 1.7 程序集的引用]: #addref2
   [添加 SendEmail 模型]: #addmodel
   [添加辅助角色启动时运行的代码]: #addcode
-  [配置存储空间连接字符串]: #configure
+  [配置存储服务连接字符串]: #configure
   [测试辅助角色 A]: #testing
   [后续步骤]: #nextsteps
   [在 WorkerRoleA 项目中添加引用]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-worker-a-add-reference-menu.png

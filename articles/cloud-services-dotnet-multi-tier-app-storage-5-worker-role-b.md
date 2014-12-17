@@ -562,9 +562,9 @@
 
 你现在已从头开始生成了 Azure 电子邮件服务应用程序，你所拥有的项目与所下载的完整项目是相同的。若要部署到云中、在云中进行测试以及提升到生产环境，你可以使用与你在[第二个教程][第二个教程]中看到的过程一样的过程。如果你选择构建替代体系结构，请参阅 [Azure 网站入门教程][Azure 网站入门教程]，了解如何将 MVC 项目部署到 Azure 网站。
 
-若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
+若要了解有关 Azure 存储服务的详细信息，请参阅以下资源：
 
--   [Microsoft Azure 存储空间基本知识][Microsoft Azure 存储空间基本知识]（Bruno Terkaly 的博客）
+-   [Microsoft Azure 存储服务基本知识][Microsoft Azure 存储服务基本知识]（Bruno Terkaly 的博客）
 
 若要了解有关 Azure 表服务的详细信息，请参阅以下资源：
 
@@ -643,7 +643,7 @@
   [GetMessages]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.storageclient.cloudqueue.getmessages.aspx
   [SendGrid MultiAuth - 多个帐户凭据]: http://support.sendgrid.com/entries/21658978-sendgrid-multiauth-multiple-account-credentials
   [Azure 网站入门教程]: /zh-cn/develop/net/tutorials/get-started
-  [Microsoft Azure 存储空间基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-windows-azure-storage.aspx
+  [Microsoft Azure 存储服务基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-windows-azure-storage.aspx
   [Azure 表存储基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-azure-table-storage.aspx
   [如何充分利用 Microsoft Azure 表]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
   [如何在 .NET 中使用表存储服务]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/table-services/

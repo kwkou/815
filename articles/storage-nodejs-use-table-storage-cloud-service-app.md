@@ -9,9 +9,9 @@
 应用程序。用户可以通过任务列表来检索任务、
 添加新任务以及将任务标记为已完成。
 
-任务项存储在 Azure 存储空间中。Azure 存储空间
+任务项存储在 Azure 存储服务中。Azure 存储服务
 提供了具有容错能力且可用性非常好的非结构化数据存储。
-Azure 存储空间包含一些可用来存储和访问数据的
+Azure 存储服务包含一些可用来存储和访问数据的
 数据结构，你可以通过 Azure SDK for Node.js 中
 包含的 API 或通过 REST API 利用存储
 服务。有关详细信息，请参阅[在 Azure 中存储和访问数据][]。
@@ -30,7 +30,7 @@ Azure 存储空间包含一些可用来存储和访问数据的
 
 ## 在 Web.Config 中设置存储凭据
 
-若要访问 Azure 存储空间，你需要传入存储凭据。
+若要访问 Azure 存储服务，你需要传入存储凭据。
 若要执行此操作，你将利用 web.config 应用程序设置。
 这些设置将作为环境变量传递给 Node，然后再由 Azure SDK 进行
 读取。
@@ -102,7 +102,7 @@ Azure 存储空间包含一些可用来存储和访问数据的
 
         var client = azure.createTableService();
 
-4.  接下来，在 Azure 存储空间中创建一个名为“tasks”的表。下面的逻辑将创建一个新表（如果该表不存在）并使用一些默认数据填充该表。
+4.  接下来，在 Azure 存储服务中创建一个名为“tasks”的表。下面的逻辑将创建一个新表（如果该表不存在）并使用一些默认数据填充该表。
 
         //创建表
         client.createTableIfNotExists('tasks', function(error){
@@ -246,7 +246,7 @@ Jade 模板引擎使用的标记语法不及 HTML 的详细，它是用于
 
         PS C:\node\tasklist\WebRole1> Start-AzureEmulator -launch
 
-    你的浏览器将显示以下页面，其中显示了从 Azure 存储空间中检索到的任务项：
+    你的浏览器将显示以下页面，其中显示了从 Azure 存储服务中检索到的任务项：
 
     ![显示了“My Tasklist”页的 Internet Explorer，该页的表中有一项内容。][]
 
@@ -357,7 +357,7 @@ Jade 模板引擎使用的标记语法不及 HTML 的详细，它是用于
 
 2.  为**“项目名称”**输入：“New task functionality”、为“项目类别” 输入：“Site work”，为“项目日期”**Item Date**输入："12/02/2011". 然后单击**“添加项目”**。
 
-    该项将添加到 Azure 存储空间中的任务表，并显示为以下屏幕快照中所示的内容。
+    该项将添加到 Azure 存储服务中的任务表，并显示为以下屏幕快照中所示的内容。
 
     ![将任务添加到该列表后，标题为 My Task List 的网页，其中所含表包含相关任务。][]
 

@@ -69,5 +69,5 @@ Console.WriteLine(string.Format("{0} % download progress.", e.Progress));
 后续步骤
 --------
 
-本主题介绍了如何从 Azure 存储空间下载资产。有关其他资产交付方式的信息，请转到[如何交付流内容](http://go.microsoft.com/fwlink/?LinkID=301942)主题。
+本主题介绍了如何从 Azure 存储服务下载资产。有关其他资产交付方式的信息，请转到[如何交付流内容](http://go.microsoft.com/fwlink/?LinkID=301942)主题。
 

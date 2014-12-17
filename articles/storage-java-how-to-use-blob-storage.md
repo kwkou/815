@@ -252,7 +252,7 @@ Internet 上的所有人都能查看公共容器中的 Blob，但公共访问权
 
 -   查看 MSDN 参考：[在 Windows Azure 中存储和访问
     数据]
--   访问 Azure 存储空间团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
+-   访问 Azure 存储服务团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
   [后续步骤]: #NextSteps

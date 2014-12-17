@@ -44,8 +44,8 @@
 ![files-concepts][files-concepts]
 
 
--   **存储帐户：** 对 Azure 存储空间进行的所有访问
-都要通过存储帐户完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/dn249410.aspx)。
+-   **存储帐户：** 对 Azure 存储服务进行的所有访问
+都要通过存储帐户完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储服务可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/dn249410.aspx)。
 
 -   **共享：**文件存储共享是 Azure 中的 SMB 2.1 文件共享。 
 所有目录和文件都必须在父共享中创建。一个帐户可以包含无限数量的共享，一个共享可以存储无限数量的文件，直到达到存储帐户的容量限制为止。
@@ -67,7 +67,7 @@
 
 ##<a name="use-cmdlets"></a>使用 PowerShell 创建文件共享
 
-###为 Azure 存储空间安装 PowerShell cmdlet
+###为 Azure 存储服务安装 PowerShell cmdlet
 
 若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
 

@@ -1,6 +1,6 @@
 <properties linkid="manage-services-storage-SQL-Server-backup" urlDisplayName="Storage for SQL Server backups" pageTitle="How to use Azure storage for SQL Server backup and restore | Azure" metaKeywords="" description="" metaCanonical="" services="storage" documentationCenter="" title="How to Use Azure Storage for SQL Server Backup and Restore" authors="karaman" solutions="" manager="clairt" editor="tysonn" />
 
-# 如何将 Azure 存储空间用于 SQL Server 备份和还原
+# 如何将 Azure 存储服务用于 SQL Server 备份和还原
 
 SQL Server 2012 SP1 CU2 中发布了可将 SQL Server 备份写入 Azure Blob 存储服务的功能。你可以使用此功能将数据从本地 SQL Server 数据库或 Azure 虚拟机中的 SQL Server 数据库备份到 Azure Blob 服务或从中进行还原。备份到云具有以下优点，即，实现可用性、无地域复制场外存储限制，以及可以轻松将数据迁移到云和从云中迁移数据。在此版本中，你可以使用 T-SQL 或 SMO 来发布 BACKUP 或 RESTORE 语句。无法使用“SQL Server Management Studio 备份或还原”向导来备份到 Azure Blob 存储服务或从中进行还原。
 

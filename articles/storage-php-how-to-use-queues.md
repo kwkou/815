@@ -374,7 +374,7 @@
 现在，你已了解了 Azure 队列服务的基础知识，单击下面的链接可了解如何执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   访问 Azure 存储空间团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
+-   访问 Azure 存储服务团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
 
   [后续步骤]: #NextSteps
   [什么是队列存储]: #what-is

@@ -36,7 +36,7 @@
 
 可通过 **TableService** 对象使用表服务。以下代码
 将创建 **TableService** 对象。在你希望在其中以
-编程方式访问 Azure 存储空间的任何 Python 文件中，将以下代码添加到文件的顶部附近：
+编程方式访问 Azure 存储服务的任何 Python 文件中，将以下代码添加到文件的顶部附近：
 
     from azure.storage import *
 
@@ -158,7 +158,7 @@
 执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   [访问 Azure 存储空间团队博客][]
+-   [访问 Azure 存储服务团队博客][]
 
   [后续步骤]: #next-steps
   [什么是表服务？]: #what-is
@@ -177,4 +177,4 @@
   [create-storage-account]: ../includes/create-storage-account.md
   [Python 安装指南]: /zh-cn/documentation/articles/python-how-to-install/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [访问 Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [访问 Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
