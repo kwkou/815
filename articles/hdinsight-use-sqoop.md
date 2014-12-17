@@ -511,9 +511,9 @@ WASB 语法是：
 
 现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
 
--   [将 Oozie 与 HDInsight 配合使用][]：在 Oozie 工作流中使用 Sqoop 操作。
--   [使用 HDInsight 分析航班延误数据][]：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 SQL 数据库。
--   [将数据上载到 HDInsight][]：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
+-   [将 Oozie 与 HDInsight 配合使用][]:在 Oozie 工作流中使用 Sqoop 操作。
+-   [使用 HDInsight 分析航班延误数据][]:使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 SQL 数据库。
+-   [将数据上载到 HDInsight][]:了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
 
   [什么是 Sqoop？]: #whatissqoop
   [先决条件]: #prerequisites

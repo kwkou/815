@@ -4,7 +4,7 @@
 
 有关事件中心接收模式的详细信息，请参阅[事件中心概述]。
 
-为了使用 [EventProcessorHost]，你必须具有 [Azure 存储帐户]：
+为了使用 [EventProcessorHost]，你必须具有 [Azure 存储帐户]:
 
 1. 登录到 [Azure 管理门户]，然后单击屏幕底部的**"新建"**。
 

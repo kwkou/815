@@ -202,10 +202,10 @@ Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Web Developer
 
 登录到管理门户。
 
--   **[subscriptionname]：**选择一个友好名称来代表包含要在其中使用自动缩放的应用程序的
+-   **[subscriptionname]:**选择一个友好名称来代表包含要在其中使用自动缩放的应用程序的
     Azure 订阅。
 
--   **[subscriptionid]：**包含要在其中使用自动缩放的应用程序的
+-   **[subscriptionid]:**包含要在其中使用自动缩放的应用程序的
     Azure 订阅的唯一 ID。
 
     1.  在 Azure 管理门户中单击
@@ -218,7 +218,7 @@ Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Web Developer
 
         ![图像][1]
 
-    -   **[hostedservicednsprefix]：**要在其中使用自动缩放的托管服务的 DNS 前缀。
+    -   **[hostedservicednsprefix]:**要在其中使用自动缩放的托管服务的 DNS 前缀。
 
     1.  在 Azure 管理门户中单击
         **“云服务”**。
@@ -229,7 +229,7 @@ Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Web Developer
 
         ![图像][2]
 
-    -   **[targetrolename]：**您的自动缩放规则的目标角色的名称。
+    -   **[targetrolename]:**您的自动缩放规则的目标角色的名称。
 
     1.  在 Azure 管理门户中单击
         **“云服务”**。
@@ -241,7 +241,7 @@ Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Web Developer
 
         ![图像][3]
 
-    -   **[storageaccountname]** 和 **[storageaccountkey]：**您将用于您的目标 Azure 应用程序的 Azure 存储帐户的名称。
+    -   **[storageaccountname]** 和 **[storageaccountkey]:**您将用于您的目标 Azure 应用程序的 Azure 存储帐户的名称。
 
     1.  在 Azure 管理门户中，单击
         **“存储”**。
@@ -253,7 +253,7 @@ Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Web Developer
 
         ![图像][4]
 
-    -   **[managementcertificatethumbprint]：**应用程序块将用于保护目标应用程序缩放请求的管理证书的**“指纹”**。
+    -   **[managementcertificatethumbprint]:**应用程序块将用于保护目标应用程序缩放请求的管理证书的**“指纹”**。
 
     1.  在 Azure 管理门户中，单击
         **“设置”**。

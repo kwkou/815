@@ -44,7 +44,7 @@
  * 再次单击“下一步”。
  * 为规则指定名称（例如“DjangoPort”），然后单击“完成”。
 
-6.  在虚拟机上安装适用于 Windows 的最新版本的 [MySQL Community Server][mysqlcommunity]：
+6.  在虚拟机上安装适用于 Windows 的最新版本的 [MySQL Community Server][mysqlcommunity]:
 
     **注意**：建议将你的数据库安装在与 OS 不同的数据分区中。
 
