@@ -13,7 +13,7 @@
 
 <li>**使用 SAN 复制的本地 VMM 站点到本地 VMM 站点保护** - 在承载源和目标本地站点中虚拟机数据的 SAN 设备之间使用基于存储阵列的复制安排端到端复制、故障转移和恢复。请阅读 <a href="http://www.windowsazure.cn/zh-cn/documentation/services/site-recovery/">Azure 站点恢复入门：: 使用 SAN 复制的两个本地 VMM 站点之间的保护</a>。</li>
 
-<li>**本地 VMM 站点到 Azure 保护** - 在本地 VMM 站点和 Azure 之间安排复制、故障转移和恢复。复制的虚拟机数据存储在 Azure 存储空间中。请阅读 <a href="http://msdn.microsoft.com/zh-cn/library/dn788903.aspx">Azure 站点恢复入门：本地 VMM 站点和 Azure 之间的保护。</a></li>
+<li>**本地 VMM 站点到 Azure 保护** - 在本地 VMM 站点和 Azure 之间安排复制、故障转移和恢复。复制的虚拟机数据存储在 Azure 存储服务中。请阅读 <a href="http://msdn.microsoft.com/zh-cn/library/dn788903.aspx">Azure 站点恢复入门：本地 VMM 站点和 Azure 之间的保护。</a></li>
 
 <li>**使用 InMage 的本地 VMWare 站点到本地 VMWare 站点** - InMage Scout 是一家最近由 Microsoft 收购的公司，它提供本地 VMWare 站点之间的实时复制。目前 InMage 作为一个单独的产品提供，可通过订阅 Azure 站点恢复服务来获取。请阅读 <a href="http://www.windowsazure.cn/zh-cn/documentation/services/site-recovery/">Azure 站点恢复入门：使用 InMage 的本地 VMWare 站点之间的保护</a>。</li>
 </ul>
@@ -31,7 +31,7 @@
 
 <tr>
 <td>数据到 Azure 站点恢复</td>
-<td><p>云元数据将发送到 Azure 站点恢复。</p> <p>复制的数据存储在 Azure 存储空间中。</p></td>
+<td><p>云元数据将发送到 Azure 站点恢复。</p> <p>复制的数据存储在 Azure 存储服务中。</p></td>
 <td><p>云元数据将发送到 Azure 站点恢复。</p> <p>复制的数据存储在目标 Hyper-V 服务器指定的位置。</p></td>
 <td><p>云元数据将发送到 Azure 站点恢复。</p> <p>复制的数据存储在目标数组存储中。</p></td>
 </tr>
@@ -45,21 +45,21 @@
 
 <tr>
 <td>复制</td>
-<td>从源本地 Hyper-V 服务器复制到目标 Azure 存储空间的虚拟机。你可以设置反向复制，以复制回源位置。</td>
+<td>从源本地 Hyper-V 服务器复制到目标 Azure 存储服务的虚拟机。你可以设置反向复制，以复制回源位置。</td>
 <td>从源本地 Hyper-V 的服务器复制到另一个服务器的虚拟机。你可以设置反向复制，以复制回源位置。</td>
 <td>从源 SAN 存储设备复制到目标 SAN 设备的虚拟机。你可以设置反向复制，以复制回源位置。</td>
 </tr>
 
 <tr>
 <td>虚拟机存储</td>
-<td>Azure 存储空间中存储的虚拟机硬盘</td>
+<td>Azure 存储服务中存储的虚拟机硬盘</td>
 <td>Hyper-V 主机上存储的虚拟机硬盘。</td>
 <td>SAN 存储阵列上存储的虚拟机硬盘。</td>
 </tr>
 
 <tr>
-<td>Azure 存储空间</td>
-<td><p>需要 Azure 存储空间帐户。</p> <p>该帐户应该启用了地域复制，应位于 Azure 站点恢复服务所在的同一区域，且应与同一订阅关联。</p></td>
+<td>Azure 存储服务</td>
+<td><p>需要 Azure 存储服务帐户。</p> <p>该帐户应该启用了地域复制，应位于 Azure 站点恢复服务所在的同一区域，且应与同一订阅关联。</p></td>
 <td>不适用</td>
 <td>不适用</td>
 </tr>

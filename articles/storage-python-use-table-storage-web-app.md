@@ -6,7 +6,7 @@
 
 对于本指南，你将创建一个可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。我们将使用 Django 作为 Web 框架。
 
-任务项存储在 Azure 存储空间中。Azure 存储空间提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储空间包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Python 中包含的 API 或通过 REST API 利用
+任务项存储在 Azure 存储服务中。Azure 存储服务提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储服务包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Python 中包含的 API 或通过 REST API 利用
 存储服务。有关详细信息，请参阅[在 Azure 中存储和访问数据][]。
 
 你将了解到以下内容：
@@ -171,7 +171,7 @@
 现在，你已了解了 Azure 表存储服务的基础知识，单击下面的链接可了解如何执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   访问 Azure 存储空间团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
+-   访问 Azure 存储服务团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Django Hello World Web 应用程序]: http://www.windowsazure.cn/zh-cn/develop/python/tutorials/web-app-with-django/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx

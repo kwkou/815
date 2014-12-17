@@ -466,7 +466,7 @@
 现在，你已了解了 Azure 表服务的基础知识，单击下面的链接可了解如何执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   访问 Azure 存储空间团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
+-   访问 Azure 存储服务团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Azure SDK for PHP]: http://go.microsoft.com/fwlink/?LinkID=252473
   [后续步骤]: #NextSteps

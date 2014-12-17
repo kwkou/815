@@ -29,7 +29,7 @@
 <UL>
 <LI><b>Azure 帐户</b> - 你需要一个 Azure 帐户。如果没有帐户，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。可在 <a href="http://www.windowsazure.cn/pricing/details/site-recovery/">Azure Site Recovery Manager 定价详细信息</a>中获取订阅定价信息。</LI>
 
-<LI><b>Azure 存储帐户</b> - 你需要使用一个 Azure 存储帐户将复制的数据存储到 Azure。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关如何设置 Azure 存储空间的详细信息，请参阅 <a href="/zh-cn/documentation/articles/storage-introduction/">Microsoft Azure 存储空间简介</a>。</LI><LI><b>VMM 服务器</b> - 在 System Center 2012 R2 上运行的 VMM 服务器。</LI>
+<LI><b>Azure 存储帐户</b> - 你需要使用一个 Azure 存储帐户将复制的数据存储到 Azure。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关如何设置 Azure 存储服务的详细信息，请参阅 <a href="/zh-cn/documentation/articles/storage-introduction/">Microsoft Azure 存储服务简介</a>。</LI><LI><b>VMM 服务器</b> - 在 System Center 2012 R2 上运行的 VMM 服务器。</LI>
 <LI><b>VMM 云</b> - VMM 服务器上至少有一个云。云应包含：
 	<UL>
 	<LI>一个或多个 VMM 主机组</LI>
@@ -164,7 +164,7 @@
 
 2. 在**"受保护的项"**选项卡上，单击你要配置的云，然后转到**"配置"**选项卡。
 3. 在<b>"目标"</b>中，选择<b>"Microsoft Azure"</b>。
-4. 在<b>"存储帐户"</b>中，选择要用来存储 Azure 虚拟机的 Azure 存储空间。
+4. 在<b>"存储帐户"</b>中，选择要用来存储 Azure 虚拟机的 Azure 存储服务。
 5. 将<b>"加密存储的数据"</b>设置为<b>"关闭"</b>。此设置指定应该加密在本地站点与 Azure 之间复制的数据。
 6. 在<b>"复制频率"</b>中，保留默认设置。此值指定数据应在源和目标位置之间同步的频率。  
 7. 在<b>"恢复点保留时长"</b>中，保留默认设置。当默认值为零时，副本主机服务器上只存储主虚拟机的最新恢复点。 

@@ -33,7 +33,7 @@
 
 使用 **BlobService** 对象可以对容器和 Blob 进行操作。以下代码
 将创建一个 **BlobService** 对象。在你希望在其中以
-编程方式访问 Azure 存储空间的任何 Python 文件中，将以下代码添加到文件的顶部附近：
+编程方式访问 Azure 存储服务的任何 Python 文件中，将以下代码添加到文件的顶部附近：
 
     from azure.storage import *
 
@@ -150,7 +150,7 @@
 如何执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   访问 [Azure 存储空间团队博客][]
+-   访问 [Azure 存储服务团队博客][]
 
   [后续步骤]: #next-steps
   [什么是 Blob 存储？]: #what-is
@@ -166,4 +166,4 @@
   [create-storage-account]: ../includes/create-storage-account.md
   [Python 安装指南]: ../python-how-to-install/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

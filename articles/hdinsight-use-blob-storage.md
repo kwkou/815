@@ -15,16 +15,16 @@ Azure HDInsight 支持使用 Hadoop 分布式文件系统 (HDFS) 和 Azure Blob 
 
 ## 本文内容
 
--   [HDInsight 存储空间体系结构][]
+-   [HDInsight 存储服务体系结构][]
 -   [Azure Blob 存储的优点][]
--   [为 Blob 存储空间准备容器][]
--   [确定 Blob 存储空间中文件的地址][]
+-   [为 Blob 存储服务准备容器][]
+-   [确定 Blob 存储服务中文件的地址][]
 -   [使用 PowerShell 访问 Blob][]
 -   [后续步骤][]
 
 ##<a id="architecture"></a>HDInsight 存储体系结构
 
-下图提供了 HDInsight 存储空间体系结构的抽象视图：
+下图提供了 HDInsight 存储服务体系结构的抽象视图：
 
 ![HDI.ASVArch][]
 
@@ -81,7 +81,7 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 
 ![HDI.QuickCreate][]
 
-使用自定义创建时，对于默认存储空间帐户，你可以选择以下选项之一：
+使用自定义创建时，对于默认存储服务帐户，你可以选择以下选项之一：
 
 -   使用现有存储
 -   创建新存储
@@ -249,10 +249,10 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 
   [HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
-  [HDInsight 存储空间体系结构]: #architecture
+  [HDInsight 存储服务体系结构]: #architecture
   [Azure Blob 存储的优点]: #benefits
-  [为 Blob 存储空间准备容器]: #preparingblobstorage
-  [确定 Blob 存储空间中文件的地址]: #addressing
+  [为 Blob 存储服务准备容器]: #preparingblobstorage
+  [确定 Blob 存储服务中文件的地址]: #addressing
   [使用 PowerShell 访问 Blob]: #powershell
   [后续步骤]: #nextsteps
   [HDI.ASVArch]: ./media/hdinsight-use-blob-storage/HDI.ASVArch.png "HDInsight 存储体系结构"

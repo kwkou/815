@@ -41,7 +41,7 @@
     第三个复制选项**“读取访问地域冗余”**当前处于预览状态。此选项启用了对辅助位置中复制数据的只读访问。当主位置或辅助位置中的某个位置变得不可用时，读取访问地域冗余复制允许你从另一个位置访问你的数据。
 
     > [WACOM.NOTE]
-    >  \> 若要在读取访问地域冗余复制处于预览状态时使用它，必须手动请求为你的订阅启用该功能。可以访问 [Azure 预览功能][]页面来为你的订阅请求读取访问地域冗余复制。有关读取访问地域冗余复制的更多详细信息，请参阅 [Azure 存储空间团队博客][]。
+    >  \> 若要在读取访问地域冗余复制处于预览状态时使用它，必须手动请求为你的订阅启用该功能。可以访问 [Azure 预览功能][]页面来为你的订阅请求读取访问地域冗余复制。有关读取访问地域冗余复制的更多详细信息，请参阅 [Azure 存储服务团队博客][]。
     > 如果在你的订阅上没有将读取访问地域冗余复制启用为预览功能，则用于为你的存储帐户选择该功能的选项将处于禁用状态。
 
     有关存储帐户复制的定价信息，请参阅[存储定价详细信息][]。
@@ -56,7 +56,7 @@
 
 -   若要更详细地了解 Azure 存储服务，请参阅[了解云存储][]和 [Blob、队列和表][]。
 
--   访问 [Azure 存储空间团队博客][1]。
+-   访问 [Azure 存储服务团队博客][1]。
 
 -   对你的应用程序进行配置以使用 Azure Blob、表和队列服务。[Azure 开发人员中心][]提供了将 Blob、表和队列存储服务与 .NET、Node.js、Java 和 PHP 应用程序结合使用的操作方法指南。有关特定于某种编程语言的说明，请参阅该语言对应的操作方法指南。
 
@@ -67,7 +67,7 @@
   [新建存储帐户]: ./media/storage-create-storage-account/storage_NewStorageAccount.png
   [对地缘组的操作]: http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx
   [Azure 预览功能]: https://account.windowsazure.com/PreviewFeatures
-  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx
   [存储定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/#storage
   [存储页面]: ./media/storage-create-storage-account/Storage_StoragePage.png
   [了解云存储]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/

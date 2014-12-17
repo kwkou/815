@@ -8,7 +8,7 @@ Azure HDInsight 在 Azure Blob 存储之上提供了一个功能完备的 Hadoop
 
 可以通过 [AzCopy][]、[Azure PowerShell][]或资源管理器工具访问 Azure Blob 存储。下面是一些可用的工具：
 
--   [Azure 存储空间资源管理器][]
+-   [Azure 存储服务资源管理器][]
 -   [Cloud Storage Studio 2][]
 -   [CloudXplorer][]
 -   [Azure 资源管理器][]
@@ -22,10 +22,10 @@ Azure HDInsight 在 Azure Blob 存储之上提供了一个功能完备的 Hadoop
 
 ## 本文内容
 
--   [使用 AzCopy 将数据上传到 Blob 存储空间][]
+-   [使用 AzCopy 将数据上传到 Blob 存储服务][]
 -   [使用 Azure PowerShell 将数据上载到 Blob 存储][]
--   [使用 Azure 存储空间资源管理器将数据上传到 Blob 存储空间][]
--   [使用 Hadoop 命令行将数据上传到 Blob 存储空间][]
+-   [使用 Azure 存储服务资源管理器将数据上传到 Blob 存储服务][]
+-   [使用 Hadoop 命令行将数据上传到 Blob 存储服务][]
 -   [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储][]
 
 ##<a id="azcopy"></a>使用 AzCopy 将数据上载到 Blob 存储
@@ -75,11 +75,11 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 
 ##<a id="storageexplorer"></a>使用 Azure 存储资源管理器将数据上载到 Blob 存储
 
-*Azure 存储资源管理器*是用于在 Azure 存储空间中检查和更改数据的有用工具。它是免费工具，可从 [Azure 存储空间资源管理器][]下载。
+*Azure 存储资源管理器*是用于在 Azure 存储服务中检查和更改数据的有用工具。它是免费工具，可从 [Azure 存储服务资源管理器][]下载。
 
 使用该工具之前，你必须知道你的 Azure 存储帐户名和帐户密钥。有关如何获取此信息的说明，请参见[管理存储帐户][]中的“如何：查看、复制和重新生成存储访问密钥”一节。
 
-1.  运行 Azure 存储空间资源管理器。
+1.  运行 Azure 存储服务资源管理器。
 
     ![HDI.AzureStorageExplorer][]
 
@@ -182,17 +182,17 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [AzCopy]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx
   [Azure PowerShell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
   [Azure .NET 存储客户端库]: zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/
-  [Azure 存储空间资源管理器]: http://azurestorageexplorer.codeplex.com/
+  [Azure 存储服务资源管理器]: http://azurestorageexplorer.codeplex.com/
   [Cloud Storage Studio 2]: http://www.cerebrata.com/Products/CloudStorageStudio/
   [CloudXplorer]: http://clumsyleaf.com/products/cloudxplorer
   [Azure 资源管理器]: http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx
   [Azure 资源管理器专业版]: http://www.cloudberrylab.com/microsoft-azure-explorer-pro.aspx
   [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
-  [使用 AzCopy 将数据上传到 Blob 存储空间]: #azcopy
+  [使用 AzCopy 将数据上传到 Blob 存储服务]: #azcopy
   [使用 Azure PowerShell 将数据上载到 Blob 存储]: #powershell
-  [使用 Azure 存储空间资源管理器将数据上传到 Blob 存储空间]: #storageexplorer
-  [使用 Hadoop 命令行将数据上传到 Blob 存储空间]: #commandline
+  [使用 Azure 存储服务资源管理器将数据上传到 Blob 存储服务]: #storageexplorer
+  [使用 Hadoop 命令行将数据上传到 Blob 存储服务]: #commandline
   [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储]: #sqoop
   [下载 AzCopy]: http://aka.ms/WaCopy
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/

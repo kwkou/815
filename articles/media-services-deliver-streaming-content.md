@@ -76,5 +76,5 @@ return originLocator;
 后续步骤
 --------
 
-到目前为止，我们已介绍如何通过从 Azure 存储空间下载内容以及使用平滑流式处理来交付媒体。下一主题[如何交付 HLS 内容](http://go.microsoft.com/fwlink/?LinkId=301817)将介绍如何使用 Apple HTTP 实时流 (HLS) 交付流内容。
+到目前为止，我们已介绍如何通过从 Azure 存储服务下载内容以及使用平滑流式处理来交付媒体。下一主题[如何交付 HLS 内容](http://go.microsoft.com/fwlink/?LinkId=301817)将介绍如何使用 Apple HTTP 实时流 (HLS) 交付流内容。
 

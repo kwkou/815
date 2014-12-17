@@ -11,7 +11,7 @@
 
 -   **AssetCreationOptions.None**：不加密。如果你想要创建不加密的资产，则必须设置此选项。
 -   **AssetCreationOptions.CommonEncryptionProtected**：适用于通用加密保护 (CENC) 文件，例如，已进行 PlayReady 加密的一组文件。
--   **AssetCreationOptions.StorageEncrypted**：存储加密。将明文输入文件上载到 Azure 存储空间之前对其进行加密。
+-   **AssetCreationOptions.StorageEncrypted**：存储加密。将明文输入文件上载到 Azure 存储服务之前对其进行加密。
 
 **注意**：Media Services 提供磁盘存储加密，而不通过数字版权管理器 (DRM) 等途径加密。
 
