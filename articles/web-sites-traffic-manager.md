@@ -2,7 +2,7 @@
 
 # 使用 Azure 流量管理器控制 Azure 网站流量
 
-> [WACOM.NOTE] 本文对 Microsoft Azure 流量管理器作简要介绍，因为它与 Azure 网站有关。有关 Azure 流量管理器本身的详细信息，请访问本文结尾处的链接。
+> [WACOM.NOTE] 本文对 Windows Azure 流量管理器作简要介绍，因为它与 Azure 网站有关。有关 Azure 流量管理器本身的详细信息，请访问本文结尾处的链接。
 
 ## 介绍
 

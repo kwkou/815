@@ -4,7 +4,7 @@
 
 ![启动 Sysprep][启动 Sysprep]
 
-Microsoft Azure 中的虚拟机运行你在创建虚拟机时选择的操作系统。Microsoft Azure 采用 VHD 格式（.vhd 文件）将虚拟机的操作系统存储在虚拟硬盘中。已为复制准备的操作系统的 VHD 称作映像。本文说明如何利用已安装且经过一般化的操作系统上载 .vhd 文件来创建你自己的映像。有关 Microsoft Azure 中的磁盘和映像的详细信息，请参阅[管理磁盘和映像（可能为英文页面）][管理磁盘和映像（可能为英文页面）]。
+Windows Azure 中的虚拟机运行你在创建虚拟机时选择的操作系统。Windows Azure 采用 VHD 格式（.vhd 文件）将虚拟机的操作系统存储在虚拟硬盘中。已为复制准备的操作系统的 VHD 称作映像。本文说明如何利用已安装且经过一般化的操作系统上载 .vhd 文件来创建你自己的映像。有关 Windows Azure 中的磁盘和映像的详细信息，请参阅[管理磁盘和映像（可能为英文页面）][管理磁盘和映像（可能为英文页面）]。
 
 **注意**：创建虚拟机时，你可以自定义操作系统设置以快速运行你的应用程序。你设置的配置存储在该虚拟机的磁盘上。有关说明，请参阅[如何创建自定义虚拟机][如何创建自定义虚拟机]。
 
@@ -12,13 +12,13 @@ Microsoft Azure 中的虚拟机运行你在创建虚拟机时选择的操作系�
 
 本文假定你拥有以下项目：
 
-**Microsoft Azure PowerShell** - 你已经安装了 Microsoft Azure PowerShell 模块。若要下载该模块，请参阅 [Microsoft Azure 下载（可能为英文页面）][Microsoft Azure 下载（可能为英文页面）]。在[此处][此处]可找到使用 Azure 订阅来安装和配置 PowerShell 的教程。
+**Windows Azure PowerShell** - 你已经安装了 Windows Azure PowerShell 模块。若要下载该模块，请参阅 [Windows Azure 下载（可能为英文页面）][Windows Azure 下载（可能为英文页面）]。在[此处][此处]可找到使用 Azure 订阅来安装和配置 PowerShell 的教程。
 
--   [Add-AzureVHD][Add-AzureVHD] cmdlet，它是 Microsoft Azure PowerShell 模块的组成部分，上载 VHD 时需要。
+-   [Add-AzureVHD][Add-AzureVHD] cmdlet，它是 Windows Azure PowerShell 模块的组成部分，上载 VHD 时需要。
 
 **存储在 .vhd 文件中的受支持的 Windows 操作系统** - 你已将受支持的 Windows Server 操作系统安装到虚拟硬盘。可使用多个工具创建 .vhd 文件。可使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机][安装 Hyper-V 角色和配置虚拟机]。
 
-**重要说明**：Microsoft Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet][Convert-VHD cmdlet] 将磁盘转换为 VHD 格式。在[此处][1]可找到教程。
+**重要说明**：Windows Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet][Convert-VHD cmdlet] 将磁盘转换为 VHD 格式。在[此处][1]可找到教程。
 
 **Window Server 操作系统介质。**此任务要求有包含 Windows Server 操作系统的 .iso 文件。支持以下版本的 Windows Server：
 
@@ -193,26 +193,26 @@ x64
 
     -   **访问策略** - 默认情况下，容器是私有的，并且只能由帐户所有者访问。若要允许对容器中的 Blob 进行公共读取访问，但不允许对容器属性和元数据进行公共读取访问，请使用“公共 Blob”选项。若要允许对容器和 Blob 进行完全公共读取访问，请使用“公共容器”选项。
 
-## <span id="PrepAzure"></span> </a>步骤 3：准备连接到 Microsoft Azure
+## <span id="PrepAzure"></span> </a>步骤 3：准备连接到 Windows Azure
 
-你首先需要在计算机和 Microsoft Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Microsoft Azure Active Directory 或证书方法来进行此操作。
+你首先需要在计算机和 Windows Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Windows Azure Active Directory 或证书方法来进行此操作。
 
-### 使用 Microsoft Azure AD 方法
+### 使用 Windows Azure AD 方法
 
-1.  打开 Microsoft Azure PowerShell 控制台，请按照[如何：安装 Azure PowerShell][如何：安装 Azure PowerShell] 中的说明操作。
+1.  打开 Windows Azure PowerShell 控制台，请按照[如何：安装 Azure PowerShell][如何：安装 Azure PowerShell] 中的说明操作。
 
 2.  输入以下命令：`Add-AzureAccount`. 这时会弹出一个窗口，你可以在其中使用 Microsoft 帐户登录到 Azure。
 
     ![PowerShell 窗口][PowerShell 窗口]
 
-3.  Microsoft Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
+3.  Windows Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
 ### 使用证书方法
 
-1.  打开 Microsoft Azure PowerShell 窗口。键入：
+1.  打开 Windows Azure PowerShell 窗口。键入：
     `Get-AzurePublishSettingsFile`.
 
-2.  此命令将打开浏览器窗口，并自动下载包含信息的 .publishsettings 文件和 Microsoft Azure 订阅的证书。
+2.  此命令将打开浏览器窗口，并自动下载包含信息的 .publishsettings 文件和 Windows Azure 订阅的证书。
 
     ![浏览器下载页面][浏览器下载页面]
 
@@ -223,15 +223,15 @@ x64
 
     其中`<PathToFile>` 是 .publishsettings 文件的完整路径。
 
-    有关详细信息，请参阅 [Microsoft Azure Cmdlet 入门][Microsoft Azure Cmdlet 入门]
+    有关详细信息，请参阅 [Windows Azure Cmdlet 入门][Windows Azure Cmdlet 入门]
 
-    有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Microsoft Azure PowerShell][此处]
+    有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Windows Azure PowerShell][此处]
 
 ## <span id="upload"></span> </a>步骤 4：上载 .vhd 文件
 
 在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你在步骤 2 中创建的存储帐户的 URL，**YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器。**VHDName** 是显示在管理门户中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
 
-1.  从你在上一步中使用的 Microsoft Azure PowerShell 窗口中，键入：
+1.  从你在上一步中使用的 Windows Azure PowerShell 窗口中，键入：
 
     `Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>`
 
@@ -266,7 +266,7 @@ x64
 
 5.  **可选：**你也可以使用 Azure PowerShell 的 Add-AzureVMImage cmdlet 将 VHD 添加为映像。
 
-    从 Microsoft Azure PowerShell 窗口中，键入：
+    从 Windows Azure PowerShell 窗口中，键入：
 
     `Add-AzureVMImage -ImageName <Your Image's Name> -MediaLocation <location of the VHD> -OS <Type of the OS on the VHD>`
 
@@ -284,12 +284,12 @@ x64
 
 在列表中有了映像之后，你可以使用该映像来创建虚拟机。有关说明，请参阅[创建运行 Windows Server 的虚拟机][如何创建自定义虚拟机]。
 
-创建虚拟机后，尝试创建 SQL Server 虚拟机。有关说明，请参阅[在 Microsoft Azure 上设置 SQL Server 虚拟机][在 Microsoft Azure 上设置 SQL Server 虚拟机]。
+创建虚拟机后，尝试创建 SQL Server 虚拟机。有关说明，请参阅[在 Windows Azure 上设置 SQL Server 虚拟机][在 Windows Azure 上设置 SQL Server 虚拟机]。
 
   [启动 Sysprep]: ./media/virtual-machines-create-upload-vhd-windows-server/ImageWithDisks.png
   [管理磁盘和映像（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
   [如何创建自定义虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-windows-tutorial/
-  [Microsoft Azure 下载（可能为英文页面）]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
+  [Windows Azure 下载（可能为英文页面）]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
   [此处]: http://windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/
   [Add-AzureVHD]: http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx
   [安装 Hyper-V 角色和配置虚拟机]: http://technet.microsoft.com/zh-cn/library/hh846766.aspx
@@ -312,7 +312,7 @@ x64
   [如何：安装 Azure PowerShell]: #Install
   [PowerShell 窗口]: ./media/virtual-machines-create-upload-vhd-windows-server/add_azureaccount.png
   [浏览器下载页面]: ./media/virtual-machines-create-upload-vhd-windows-server/Browser_download_GetPublishSettingsFile.png
-  [Microsoft Azure Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
+  [Windows Azure Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
   [PowerShell Add-AzureVHD]: ./media/virtual-machines-create-upload-vhd-windows-server/powershell_upload_vhd.png
   [Add-AzureVhd]: http://msdn.microsoft.com/zh-cn/library/dn495173.aspx
   [4]: ./media/virtual-machines-create-upload-vhd-windows-server/Create_Image.png
@@ -321,4 +321,4 @@ x64
   [PowerShell Add-AzureVMImage]: ./media/virtual-machines-create-upload-vhd-windows-server/add_azureimage_powershell.png
   [自定义映像]: ./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png
   [从自定义映像创建虚拟机]: ./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png
-  [在 Microsoft Azure 上设置 SQL Server 虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-provision-sql-server/
+  [在 Windows Azure 上设置 SQL Server 虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-provision-sql-server/

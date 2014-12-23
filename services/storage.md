@@ -43,7 +43,7 @@
 创建使用表、队列和 Blob 的多层 ASP.NET MVC 4 Web 应用程序。将应用程序部署到 Azure 云服务。
 
 ####[Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits/)
-了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。
+了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Windows Azure 限制。
 
 ###开发
 

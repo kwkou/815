@@ -1,8 +1,8 @@
 <properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create & provision" pageTitle="SQL Database 入门 - Azure" metaKeywords="" description="开始在 Azure 中创建和管理 SQL Database。" metaCanonical="" services="sql-database" documentationCenter="" title="Azure SQL Database 入门" authors="louisb"  solutions="" writer="" manager="jeffreyg" editor="tysonn"  />
 
-# Microsoft Azure SQL Database 入门
+# Windows Azure SQL Database 入门
 
-在本教程中，您将了解有关使用 Azure 管理门户执行 Microsoft Azure SQL Database 管理任务的基础知识。如果您对数据库管理不熟悉，则可以通过这些课程在大约 30 分钟的时间内学习一些基本技能。
+在本教程中，您将了解有关使用 Azure 管理门户执行 Windows Azure SQL Database 管理任务的基础知识。如果您对数据库管理不熟悉，则可以通过这些课程在大约 30 分钟的时间内学习一些基本技能。
 
 本教程假定您之前未使用过 SQL Server 或 Azure SQL Database。完成本教程后，您将在 Azure 上拥有一个示例数据库，并了解如何使用管理门户执行基本管理任务。
 
@@ -10,8 +10,8 @@
 
 ## 目录
 
--   [步骤 1：创建 Microsoft Azure 帐户][步骤 1：创建 Microsoft Azure 帐户]
--   [步骤 2：连接到 Azure 并创建数据库][步骤 1：创建 Microsoft Azure 帐户]
+-   [步骤 1：创建 Windows Azure 帐户][步骤 1：创建 Windows Azure 帐户]
+-   [步骤 2：连接到 Azure 并创建数据库][步骤 1：创建 Windows Azure 帐户]
 -   [步骤 3：配置防火墙][步骤 3：配置防火墙]
 -   [步骤 4：使用 Transact-SQL 脚本添加数据和架构][步骤 4：使用 Transact-SQL 脚本添加数据和架构]
 -   [步骤 5：创建架构][步骤 5：创建架构]
@@ -20,7 +20,7 @@
 -   [步骤 8：创建数据库登录名并分配权限][步骤 8：创建数据库登录名并分配权限]
 -   [步骤 9：从其他应用程序进行连接][步骤 9：从其他应用程序进行连接]
 
-## 步骤 1：创建 Microsoft Azure 帐户
+## 步骤 1：创建 Windows Azure 帐户
 
 1.  打开 Web 浏览器，并浏览到 <http://www.windowsazure.cn>。
     若要开始使用免费帐户，请单击右上角的“免费试用”，然后按照步骤进行操作。
@@ -89,7 +89,7 @@
 
 4.  通过指定规则名称以及 IP 范围的起始值和结束值可创建其他防火墙规则。
 
-5.  若要实现此服务器与其他 Azure 服务之间的交互，请单击“是”以显示“Microsoft Azure 服务”选项。
+5.  若要实现此服务器与其他 Azure 服务之间的交互，请单击“是”以显示“Windows Azure 服务”选项。
 
 6.  若要保存所做的更改，请单击页面底部的“保存”。
 
@@ -576,7 +576,7 @@ SQL Server 身份验证登录名用于建立服务器连接。访问 SQL Databas
 -   [在 SQL Database 中复制数据库][在 SQL Database 中复制数据库]
 -   [将 SQL Server 数据库部署到 Azure 虚拟机][将 SQL Server 数据库部署到 Azure 虚拟机]
 
-  [步骤 1：创建 Microsoft Azure 帐户]: #Subscribe
+  [步骤 1：创建 Windows Azure 帐户]: #Subscribe
   [步骤 3：配置防火墙]: #ConfigFirewall
   [步骤 4：使用 Transact-SQL 脚本添加数据和架构]: #AddData
   [步骤 5：创建架构]: #createschema

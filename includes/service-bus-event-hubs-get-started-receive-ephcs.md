@@ -26,7 +26,7 @@
 
 出现**"管理 NuGet 包"**对话框。
 
-6. 搜索"Microsoft Azure Service Bus 事件中心 - EventProcessorHost"，单击**"安装"**，并接受使用条款。 
+6. 搜索"Windows Azure Service Bus 事件中心 - EventProcessorHost"，单击**"安装"**，并接受使用条款。 
 
 	![][13]
 

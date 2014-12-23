@@ -2,7 +2,7 @@
 
 # 如何缩放网站
 
-为提高您的网站在 Microsoft Azure 上的性能和吞吐量，您可以使用 Azure 管理门户将 Web 托管计划模式从“免费”缩放为“共享”、“基本”或“标准”。
+为提高您的网站在 Windows Azure 上的性能和吞吐量，您可以使用 Azure 管理门户将 Web 托管计划模式从“免费”缩放为“共享”、“基本”或“标准”。
 
 在 Azure 网站上向上缩放包括两个相关操作：将 Web 托管计划模式更改为更高级别的服务，以及在切换到更高级别的服务之后配置某些设置。本文将介绍这两个主题。更高的服务层（如“标准”模式）在确定如何使用 Azure 上的资源方面可提供更高的可靠性和灵活性。
 
@@ -10,7 +10,7 @@
 
 有关 Web 托管计划的信息，请参阅[什么是 Web 托管计划？][什么是 Web 托管计划？]和 [Azure 网站 Web 托管计划深入概述][Azure 网站 Web 托管计划深入概述]。有关各个 Web 托管计划的定价和功能的信息，请参阅[网站定价详细信息][网站定价详细信息]。
 
-> [WACOM.NOTE] 在将网站从“免费”Web 托管计划模式切换到“基本”或“标准”Web 托管计划模式时，必须先取消网站订阅已有的支出上限。要查看或更改适用于您的 Microsoft Azure 网站订阅的选项，请参阅 [Microsoft Azure 订阅][Microsoft Azure 订阅]。
+> [WACOM.NOTE] 在将网站从“免费”Web 托管计划模式切换到“基本”或“标准”Web 托管计划模式时，必须先取消网站订阅已有的支出上限。要查看或更改适用于您的 Windows Azure 网站订阅的选项，请参阅 [Windows Azure 订阅][Windows Azure 订阅]。
 
 本文内容：
 
@@ -43,7 +43,7 @@
 
     “Web 托管计划站点”部分将介绍当前计划中的简短站点列表。当前计划中的所有站点都将更改为您选择的 Web 托管计划模式。
 
-5.  在“容量”部分中，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 [Microsoft Azure 虚拟机和云服务大小][Microsoft Azure 虚拟机和云服务大小]。
+5.  在“容量”部分中，选择“实例大小”。可用的选项包括“小”、“中”或“大”。在“共享”模式下，实例大小选项不可用。有关这些实例大小的详细信息，请参阅 [Windows Azure 虚拟机和云服务大小][Windows Azure 虚拟机和云服务大小]。
 
     ![“基本”模式的实例大小][“基本”模式的实例大小]
 
@@ -70,7 +70,7 @@
 
 <!-- ================================= -->
 
-> [WACOM.NOTE] 在将 Web 托管计划切换到“标准”模式之前，必须先取消 Microsoft Azure 网站订阅已有的支出上限。否则，如果在计费期结束之前达到上限，您的网站将有不可用的风险。要查看或更改适用于您的 Microsoft Azure 网站订阅的选项，请参阅 [Microsoft Azure 订阅][Microsoft Azure 订阅]。
+> [WACOM.NOTE] 在将 Web 托管计划切换到“标准”模式之前，必须先取消 Windows Azure 网站订阅已有的支出上限。否则，如果在计费期结束之前达到上限，您的网站将有不可用的风险。要查看或更改适用于您的 Windows Azure 网站订阅的选项，请参阅 [Windows Azure 订阅][Windows Azure 订阅]。
 
 1.  要缩放到“标准”模式，请按照缩放到“共享”或“基本”模式时采用的初始步骤，然后对“Web 托管计划模式”选择“标准”。
 
@@ -86,7 +86,7 @@
 
     ![选择实例大小][选择实例大小]
 
-    有关这些实例大小的详细信息，请参阅 [Microsoft Azure 虚拟机和云服务大小][Microsoft Azure 虚拟机和云服务大小]。
+    有关这些实例大小的详细信息，请参阅 [Windows Azure 虚拟机和云服务大小][Windows Azure 虚拟机和云服务大小]。
 
 4.  如果要根据白天与夜间、工作日与周末和/或特定日期与时间对资源进行自动缩放，请在“针对时间表编辑缩放设置”选项下选择“设置计划时间”。
 
@@ -126,7 +126,7 @@
 
     ![目标 CPU][目标 CPU]
 
-    **注意**：在启用了“按度量值缩放”后，Microsoft Azure 将每 5 分钟检查一次网站 CPU，并根据需要添加实例。如果 CPU 使用率较低，Microsoft Azure 将每两小时删除一次实例，以确保网站保持较高性能。通常，将最小实例计数设为 1 是适合的。但是，如果您的网站使用率突然增加，则必须确保您具有足够的最小实例数目来处理负载。例如，如果在 Microsoft Azure 检查 CPU 使用率之前的 5 分钟时间间隔内流量突增，则您的网站在该时间段可能无法响应。如果您预见到流量将突增，请将最小实例数设为更高的值以便应对这些突增。
+    **注意**：在启用了“按度量值缩放”后，Windows Azure 将每 5 分钟检查一次网站 CPU，并根据需要添加实例。如果 CPU 使用率较低，Windows Azure 将每两小时删除一次实例，以确保网站保持较高性能。通常，将最小实例计数设为 1 是适合的。但是，如果您的网站使用率突然增加，则必须确保您具有足够的最小实例数目来处理负载。例如，如果在 Windows Azure 检查 CPU 使用率之前的 5 分钟时间间隔内流量突增，则您的网站在该时间段可能无法响应。如果您预见到流量将突增，请将最小实例数设为更高的值以便应对这些突增。
 
 14. 在您完成了对“针对时间表编辑缩放设置”列表中所有项目的更改之后，单击页面底部命令栏中的“保存”图标可同时保存所有计划设置（无需单独保存每个计划）。
 
@@ -146,7 +146,7 @@
 
     对于“版本”，请选择“Web”或“Busines”，具体取决于您需要的存储容量。“Web”版提供较小容量范围，而“企业”版则提供较大容量范围。
 
-    您为“最大大小”选择的值将指定数据库的上限。数据库费用取决于您实际存储的数据量，因此更改“最大大小”属性本身不会影响您的数据库费用。有关详细信息，请参阅 [Microsoft Azure SQL Database 中的帐户和结算][Microsoft Azure SQL Database 中的帐户和结算]。
+    您为“最大大小”选择的值将指定数据库的上限。数据库费用取决于您实际存储的数据量，因此更改“最大大小”属性本身不会影响您的数据库费用。有关详细信息，请参阅 [Windows Azure SQL Database 中的帐户和结算][Windows Azure SQL Database 中的帐户和结算]。
 
 <a name="devfeatures"></a>
 
@@ -178,19 +178,19 @@
 
 ## 后续步骤
 
--   若要开始使用 Azure，请参阅 [Microsoft Azure 免费试用版][Microsoft Azure 免费试用版]。
+-   若要开始使用 Azure，请参阅 [Windows Azure 免费试用版][Windows Azure 免费试用版]。
 
 -   有关定价、支持和 SLA 的信息，请访问以下链接。
 
     [数据传输定价详细信息][数据传输定价详细信息]
 
-<!--     [Microsoft Azure Support Plans](http://azure.microsoft.com/zh-cn/support/plans/) -->
+<!--     [Windows Azure Support Plans](http://azure.microsoft.com/zh-cn/support/plans/) -->
 
     [Service Level Agreements](http://www.windowsazure.cn/zh-cn/support/legal/sla/)
 
     [SQL Database Pricing Details](http://www.windowsazure.cn/zh-cn/pricing/overview/#sql_database)
 
-    [Virtual Machine and Cloud Service Sizes for Microsoft Azure][vmsizes]
+    [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
 
     [Web Sites Pricing Details](http://azure.microsoft.com/zh-cn/pricing/details/web-sites/)
 
@@ -211,7 +211,7 @@
   [什么是 Web 托管计划？]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-web-hosting-plan-overview/
   [Azure 网站 Web 托管计划深入概述]: http://www.azure.microsoft.com/zh-cn/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/
   [网站定价详细信息]: http://azure.microsoft.com/zh-cn/pricing/details/web-sites/
-  [Microsoft Azure 订阅]: http://go.microsoft.com/fwlink/?LinkID=235288
+  [Windows Azure 订阅]: http://go.microsoft.com/fwlink/?LinkID=235288
   [缩放到“共享”或“基本”计划模式]: #scalingsharedorbasic
   [缩放到“标准”计划模式]: #scalingstandard
   [缩放连接到您的网站的 SQL Server 数据库]: #ScalingSQLServer
@@ -221,7 +221,7 @@
   [选择网站]: ./media/web-sites-scale/01SelectWebSite.png
   [“缩放”选项卡]: ./media/web-sites-scale/02SelectScaleTab.png
   [选择 Web 托管计划]: ./media/web-sites-scale/03aChooseWHP.png
-  [Microsoft Azure 虚拟机和云服务大小]: http://go.microsoft.com/fwlink/?LinkId=309169
+  [Windows Azure 虚拟机和云服务大小]: http://go.microsoft.com/fwlink/?LinkId=309169
   [“基本”模式的实例大小]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
   [“基本”模式的实例数]: ./media/web-sites-scale/04ChooseBasicInstanceCount.png
   [“保存”按钮]: ./media/web-sites-scale/05SaveButton.png
@@ -237,9 +237,9 @@
   [目标 CPU]: ./media/web-sites-scale/15TargetCPU.png
   [链接的数据库]: ./media/web-sites-scale/16LinkedResources.png
   [缩放 SQL Server 数据库]: ./media/web-sites-scale/17ScaleDatabase.png
-  [Microsoft Azure SQL Database 中的帐户和结算]: http://go.microsoft.com/fwlink/?LinkId=234930
+  [Windows Azure SQL Database 中的帐户和结算]: http://go.microsoft.com/fwlink/?LinkId=234930
   [如何监视网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/
-  [Microsoft Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [数据传输定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/#data_transfer
   [最佳实践：Windows Azure 网站 (WAWS)]: http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx
   [什么时候缩放 Azure 网站 - 和 Stefan Schackow 一起]: http://www.windowsazure.com/zh-cn/documentation/videos/azure-web-sites-free-vs-standard-scaling/

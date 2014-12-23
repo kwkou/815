@@ -29,7 +29,7 @@
 <UL>
 <LI><b>Azure 帐户</b> - 你需要一个 Azure 帐户。如果没有帐户，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。可在 <a href="http://www.windowsazure.cn/pricing/details/site-recovery/">Azure Site Recovery Manager 定价详细信息</a>中获取订阅定价信息。</LI>
 
-<LI><b>Azure 存储帐户</b> - 你需要使用一个 Azure 存储帐户将复制的数据存储到 Azure。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关如何设置 Azure 存储服务的详细信息，请参阅 <a href="/zh-cn/documentation/articles/storage-introduction/">Microsoft Azure 存储服务简介</a>。</LI><LI><b>VMM 服务器</b> - 在 System Center 2012 R2 上运行的 VMM 服务器。</LI>
+<LI><b>Azure 存储帐户</b> - 你需要使用一个 Azure 存储帐户将复制的数据存储到 Azure。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关如何设置 Azure 存储服务的详细信息，请参阅 <a href="/zh-cn/documentation/articles/storage-introduction/">Windows Azure 存储服务简介</a>。</LI><LI><b>VMM 服务器</b> - 在 System Center 2012 R2 上运行的 VMM 服务器。</LI>
 <LI><b>VMM 云</b> - VMM 服务器上至少有一个云。云应包含：
 	<UL>
 	<LI>一个或多个 VMM 主机组</LI>
@@ -49,7 +49,7 @@
 <LI><a href="#vault">步骤 1：创建保管库</a> - 创建 Azure Site Recovery 保管库。</LI>
 <LI><a href="#download">步骤 2：在 VMM 服务器上安装提供程序应用程序</a> - 在保管库中生成注册密钥，并下载提供程序安装程序文件。在 VMM 服务器上运行安装程序，以安装该提供程序并在保管库中注册 VMM 服务器。</LI>
 <LI><a href="#storage">步骤 3：添加 Azure 存储帐户</a> - 如果你没有帐户，请创建一个帐户。 </LI>
-<LI><a href="#agent">步骤 4：安装代理应用程序</a> - 在 VMM 云中要保护的每个 Hyper-V 主机上安装 Microsoft Azure 恢复服务代理。</LI>
+<LI><a href="#agent">步骤 4：安装代理应用程序</a> - 在 VMM 云中要保护的每个 Hyper-V 主机上安装 Windows Azure 恢复服务代理。</LI>
 <LI><a href="#clouds">步骤 5：配置云保护</a> - 为 VMM 云配置保护设置。</LI>
 <LI><a href="#NetworkMapping">步骤 6：配置网络映射</a> - 你可以选择配置网络映射，以将源 VM 网络映射到目标 Azure 网络。</LI>
 <LI><a href="#virtualmachines">步骤 7：为虚拟机启用保护</a> - 为受保护 VMM 云中的虚拟机启用保护。</LI>
@@ -88,12 +88,12 @@
 
 	![Quick Start Icon](./media/hyper-v-recovery-manager-configure-vault/SR_QuickStartIcon.png)
 
-2. 在下拉列表中，选择**"本地 Hyper-V 站点与 Microsoft Azure 之间"**。
+2. 在下拉列表中，选择**"本地 Hyper-V 站点与 Windows Azure 之间"**。
 3. 在**"准备 VMM 服务器"**中，单击**"生成注册密钥文件"**。该密钥生成后，有效期为 5 天。请将该文件复制到 VMM 服务器。安装提供程序时将会需要用到它。
 
 	![Registration key](./media/hyper-v-recovery-manager-configure-vault/SR_E2ARegisterKey.png)
 
-4. 在<b>"快速开始"</b>页上的**"准备 VMM 服务器"**中，单击<b>"下载用于 VMM 服务器安装的 Microsoft Azure Site Recovery 提供程序"</b>，以获取该提供程序安装文件的最新版本。
+4. 在<b>"快速开始"</b>页上的**"准备 VMM 服务器"**中，单击<b>"下载用于 VMM 服务器安装的 Windows Azure Site Recovery 提供程序"</b>，以获取该提供程序安装文件的最新版本。
 
 2. 在源 VMM 服务器上运行此文件。
 
@@ -163,7 +163,7 @@
 1. 在"快速启动"页上，单击**"为 VMM 云设置保护"**。
 
 2. 在**"受保护的项"**选项卡上，单击你要配置的云，然后转到**"配置"**选项卡。
-3. 在<b>"目标"</b>中，选择<b>"Microsoft Azure"</b>。
+3. 在<b>"目标"</b>中，选择<b>"Windows Azure"</b>。
 4. 在<b>"存储帐户"</b>中，选择要用来存储 Azure 虚拟机的 Azure 存储服务。
 5. 将<b>"加密存储的数据"</b>设置为<b>"关闭"</b>。此设置指定应该加密在本地站点与 Azure 之间复制的数据。
 6. 在<b>"复制频率"</b>中，保留默认设置。此值指定数据应在源和目标位置之间同步的频率。  

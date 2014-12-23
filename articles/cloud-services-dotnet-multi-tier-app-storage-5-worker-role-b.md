@@ -564,25 +564,25 @@
 
 若要了解有关 Azure 存储服务的详细信息，请参阅以下资源：
 
--   [Microsoft Azure 存储服务基本知识][Microsoft Azure 存储服务基本知识]（Bruno Terkaly 的博客）
+-   [Windows Azure 存储服务基本知识][Windows Azure 存储服务基本知识]（Bruno Terkaly 的博客）
 
 若要了解有关 Azure 表服务的详细信息，请参阅以下资源：
 
 -   [Azure 表存储基本知识][Azure 表存储基本知识]（Bruno Terkaly 的博客）
--   [如何充分利用 Microsoft Azure 表][如何充分利用 Microsoft Azure 表]（Azure 存储团队博客）
+-   [如何充分利用 Windows Azure 表][如何充分利用 Windows Azure 表]（Azure 存储团队博客）
 -   [如何在 .NET 中使用表存储服务][如何在 .NET 中使用表存储服务]
--   [Microsoft Azure 存储客户端库 2.0 表深入探讨][Microsoft Azure 存储客户端库 2.0 表深入探讨]（Azure 存储团队博客）
+-   [Windows Azure 存储客户端库 2.0 表深入探讨][Windows Azure 存储客户端库 2.0 表深入探讨]（Azure 存储团队博客）
 -   [实际应用：为 Azure 表存储设计可扩展分区策略][实际应用：为 Azure 表存储设计可扩展分区策略]
 
 若要了解有关 Azure 队列服务和 Azure Service Bus 队列的详细信息，请参阅以下资源：
 
--   [以队列为中心的工作模式（使用 Microsoft Azure 构建实际云应用程序)][以队列为中心的工作模式（使用 Microsoft Azure 构建实际云应用程序)]
+-   [以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)][以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)]
 -   [Azure 队列和 Azure Service Bus 队列 - 比较与对照][Azure 队列和 Azure Service Bus 队列 - 比较与对照]
 -   [如何在 .NET 中使用队列存储服务][如何在 .NET 中使用队列存储服务]
 
 若要了解有关 Azure Blob 服务的详细信息，请参阅以下资源：
 
--   [非结构化 Blob 存储（使用 Microsoft Azure 构建实际云应用程序）][非结构化 Blob 存储（使用 Microsoft Azure 构建实际云应用程序）]
+-   [非结构化 Blob 存储（使用 Windows Azure 构建实际云应用程序）][非结构化 Blob 存储（使用 Windows Azure 构建实际云应用程序）]
 -   [如何在 .NET 中使用 Azure Blob 存储服务][如何在 .NET 中使用 Azure Blob 存储服务]
 
 若要了解有关自动缩放 Azure 云服务角色的详细信息，请参阅以下资源：
@@ -643,16 +643,16 @@
   [GetMessages]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.storageclient.cloudqueue.getmessages.aspx
   [SendGrid MultiAuth - 多个帐户凭据]: http://support.sendgrid.com/entries/21658978-sendgrid-multiauth-multiple-account-credentials
   [Azure 网站入门教程]: /zh-cn/develop/net/tutorials/get-started
-  [Microsoft Azure 存储服务基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-windows-azure-storage.aspx
+  [Windows Azure 存储服务基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-windows-azure-storage.aspx
   [Azure 表存储基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-azure-table-storage.aspx
-  [如何充分利用 Microsoft Azure 表]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
+  [如何充分利用 Windows Azure 表]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
   [如何在 .NET 中使用表存储服务]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/table-services/
-  [Microsoft Azure 存储客户端库 2.0 表深入探讨]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx
+  [Windows Azure 存储客户端库 2.0 表深入探讨]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx
   [实际应用：为 Azure 表存储设计可扩展分区策略]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh508997.aspx
-  [以队列为中心的工作模式（使用 Microsoft Azure 构建实际云应用程序)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
+  [以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
   [Azure 队列和 Azure Service Bus 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx
   [如何在 .NET 中使用队列存储服务]: /zh-cn/develop/net/how-to-guides/queue-service/
-  [非结构化 Blob 存储（使用 Microsoft Azure 构建实际云应用程序）]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
+  [非结构化 Blob 存储（使用 Windows Azure 构建实际云应用程序）]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
   [如何在 .NET 中使用 Azure Blob 存储服务]: /zh-cn/develop/net/how-to-guides/blob-storage/
   [如何使用自动缩放应用程序块]: /zh-cn/develop/net/how-to-guides/autoscaling/
   [自动缩放和 Azure]: http://msdn.microsoft.com/zh-cn/library/hh680945(v=PandP.50).aspx

@@ -1,8 +1,8 @@
-<properties linkid="web-sites-restore" urlDisplayName="Restore a Microsoft Azure web site" pageTitle="Restore a Microsoft Azure web site" metaKeywords="Azure Web Sites, Restore, restoring" description="Learn how to restore your Azure web sites from backup." metaCanonical="" services="web-sites" documentationCenter="" title="Restore a Microsoft Azure web site" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
+<properties linkid="web-sites-restore" urlDisplayName="Restore a Windows Azure web site" pageTitle="Restore a Windows Azure web site" metaKeywords="Azure Web Sites, Restore, restoring" description="Learn how to restore your Azure web sites from backup." metaCanonical="" services="web-sites" documentationCenter="" title="Restore a Windows Azure web site" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 
-# 还原 Microsoft Azure 网站
+# 还原 Windows Azure 网站
 
-本文介绍如何还原以前通过使用 Azure 网站备份功能备份的网站。有关详细信息，请参阅 [Microsoft Azure 网站备份][Microsoft Azure 网站备份]。
+本文介绍如何还原以前通过使用 Azure 网站备份功能备份的网站。有关详细信息，请参阅 [Windows Azure 网站备份][Windows Azure 网站备份]。
 
 利用 Azure 网站还原功能，可将网站还原到以前某个你自己需要的状态，或基于原有网站备份之一创建新网站。创建与最新版本并行运行的新网站对于 A/B 测试会很有用。
 
@@ -113,7 +113,7 @@
 
 <!-- IMAGES -->
 
-  [Microsoft Azure 网站备份]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-backup/
+  [Windows Azure 网站备份]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-backup/
   [从以前制作的备份中还原 Azure 网站]: #PreviousBackup
   [从存储帐户直接还原 Azure 网站]: #StorageAccount
   [选择网站还原设置并开始还原操作]: #RestoreSettings

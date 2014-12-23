@@ -1,8 +1,8 @@
-<properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="Using import/export to transfer data to Blob Storage | Microsoft Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="Using import/export to transfer data to Blob Storage | Windows Azure" metaKeywords="" description="Learn how to create import and export jobs in the Azure Management Portal to transfer data to blob storage." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-# 使用 Microsoft Azure 导入/导出服务将数据传输到 Blob 存储中
+# 使用 Windows Azure 导入/导出服务将数据传输到 Blob 存储中
 
-在通过网络上载成本过高或不可行时，你可以使用 Microsoft Azure 导入/导出服务将大量文件数据传输到 Azure Blob 存储中。你还可以使用导入/导出服务将 Blob 存储中驻留的大量数据以即时且经济高效的方式传输到你的本地安装中。
+在通过网络上载成本过高或不可行时，你可以使用 Windows Azure 导入/导出服务将大量文件数据传输到 Azure Blob 存储中。你还可以使用导入/导出服务将 Blob 存储中驻留的大量数据以即时且经济高效的方式传输到你的本地安装中。
 
 若要将大量文件数据传输到 Blob 存储中，可以将包含这些数据的一个或多个硬盘驱动器运送到 Azure 数据中心，在那里，你的数据将上载到你的存储帐户中。同样，若要从 Blob 存储中导出数据，你可以将空的硬盘驱动器运送到 Azure 数据中心，在那里，来自你的存储帐户的 Blob 数据将被复制到你的硬盘驱动器，然后返还给你。在你运送包含数据的驱动器之前，你将对该驱动器中的数据进行加密；在导入/导出服务导出你的数据以便发送给你时，也将在运送前对数据进行加密。
 
@@ -22,7 +22,7 @@
 
 创建作业时，需通知导入/导出服务：你要将一个或多个硬盘驱动器运送到 Azure 数据中心。对于某一导入作业，你将要运送包含文件数据的硬盘驱动器。导出作业只需运送空的硬盘驱动器。
 
-若要为导入作业准备要运送的驱动器，你需要运行 **Microsoft Azure 导入/导出工具**，该工具可帮助你将数据复制到驱动器、使用 BitLocker 对驱动器上的数据进行加密以及生成驱动器日志文件。我们将在下文中讨论此方面的内容。
+若要为导入作业准备要运送的驱动器，你需要运行 **Windows Azure 导入/导出工具**，该工具可帮助你将数据复制到驱动器、使用 BitLocker 对驱动器上的数据进行加密以及生成驱动器日志文件。我们将在下文中讨论此方面的内容。
 
 **说明**
 
@@ -45,15 +45,15 @@
 
 ### 准备驱动器
 
-在创建导入作业前，使用 Microsoft Azure 导入/导出工具准备你的驱动器。有关使用 Microsoft Azure 导入/导出工具的更多详细信息，请参阅 [Microsoft Azure 导入/导出工具参考][Azure 导入/导出服务 REST API 参考]。你可以以独立软件包的方式下载 [Microsoft Azure 导入/导出工具][]。
+在创建导入作业前，使用 Windows Azure 导入/导出工具准备你的驱动器。有关使用 Windows Azure 导入/导出工具的更多详细信息，请参阅 [Windows Azure 导入/导出工具参考][Azure 导入/导出服务 REST API 参考]。你可以以独立软件包的方式下载 [Windows Azure 导入/导出工具][]。
 
 若要准备你的驱动器，请按照以下三个步骤执行：
 
 1.  确定要导入的数据，以及你将需要的驱动器的数量。
 2.  确定 Azure Blob 服务中用于你的数据的目标 Blob。
-3.  使用 Microsoft Azure 导入/导出工具将你的数据复制到一个或多个硬盘驱动器。
+3.  使用 Windows Azure 导入/导出工具将你的数据复制到一个或多个硬盘驱动器。
 
-对于每个驱动器，在准备它时，Microsoft Azure 导入/导出工具会生成一个“驱动器日志”**文件。该驱动器日志文件存储于你的本地计算机上，而不是存储于驱动器本身。你在创建导入作业时将上载该日志文件。驱动器日志文件包含驱动器 ID 和 BitLocker 密钥，以及与驱动器有关的其他信息。
+对于每个驱动器，在准备它时，Windows Azure 导入/导出工具会生成一个“驱动器日志”**文件。该驱动器日志文件存储于你的本地计算机上，而不是存储于驱动器本身。你在创建导入作业时将上载该日志文件。驱动器日志文件包含驱动器 ID 和 BitLocker 密钥，以及与驱动器有关的其他信息。
 
 ### 创建导入作业
 
@@ -218,7 +218,7 @@
     -   Anker 68UPSHHDS-BU
     -   Startech SATADOCK22UE
 
-> [WACOM.NOTE] 如果你有上方没有列出的转换器，则在购买受支持的转换器之前，可以尝试使用你的转换器运行 Microsoft Azure 导入/导出工具来准备驱动器并看看它是否工作。
+> [WACOM.NOTE] 如果你有上方没有列出的转换器，则在购买受支持的转换器之前，可以尝试使用你的转换器运行 Windows Azure 导入/导出工具来准备驱动器并看看它是否工作。
 
 **如果我想要导入或导出超过 10 个驱动器，我应该做什么？**
 
@@ -286,7 +286,7 @@
 
     请注意，你发运的物理介质可能需要穿越国界。你应当负责确保你的物理介质和数据是遵照适用的法律导入和/或导出的。在发运物理介质之前，请咨询你的顾问以验证你的介质和数据是否可以合法地发运到所确定的数据中心。这将有助于确保它可以及时到达 Microsoft。
 
--   在发运你的包裹时，必须遵守 [Microsoft Azure 服务条款][]和 [Microsoft Azure 预览功能补充使用条款][]上的条款。
+-   在发运你的包裹时，必须遵守 [Windows Azure 服务条款][]和 [Windows Azure 预览功能补充使用条款][]上的条款。
 
 **我是否可为导入/导出作业从 Microsoft 购买驱动器？**
 
@@ -298,12 +298,12 @@
 
   [Azure 导入/导出服务 REST API 参考]: http://msdn.microsoft.com/zh-cn/library/dn529096.aspx
   [如何创建存储帐户]: ../storage-create-storage-account/
-  [Microsoft Azure 导入/导出工具]: http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409
+  [Windows Azure 导入/导出工具]: http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409
   [创建导入作业 - 步骤 3]: ./media/storage-import-export-service/import-job-03.png
   [创建导出作业 - 步骤 3]: ./media/storage-import-export-service/export-job-03.png
   [查看导出作业的 BitLocker 密钥]: ./media/storage-import-export-service/export-job-bitlocker-keys.png
   [定价页]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [Federal Express]: http://www.fedex.com/us/oadr/
   [DHL]: http://www.dhl-welcome.com/Tutorial/
-  [Microsoft Azure 服务条款]: http://www.windowsazure.cn/zh-cn/support/legal/services-terms/
-  [Microsoft Azure 预览功能补充使用条款]: http://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/
+  [Windows Azure 服务条款]: http://www.windowsazure.cn/zh-cn/support/legal/services-terms/
+  [Windows Azure 预览功能补充使用条款]: http://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/

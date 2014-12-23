@@ -1,10 +1,10 @@
-<properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Microsoft Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
+<properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Windows Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 
 # 使用混合连接从 Azure 网站连接至本地 SQL Server
 
 ## 介绍
 
-混合连接可以将 Microsoft Azure 网站连接至使用静态 TCP 端口的本地资源。受支持的资源包括 Microsoft SQL Server、HTTP Web API 以及大多数自定义 Web 服务。
+混合连接可以将 Windows Azure 网站连接至使用静态 TCP 端口的本地资源。受支持的资源包括 Microsoft SQL Server、HTTP Web API 以及大多数自定义 Web 服务。
 
 在本教程中，您将了解如何在 Azure 预览版门户中创建网站、使用新的混合连接功能将该网站连接至您的本地 SQL Server 数据库以及创建将使用混合连接的简单 ASP.NET Web 应用程序并将该应用程序部署到 Azure 网站。在 Azure 上完成的网站将用户凭据存储在本地成员资格数据库中。本教程假定读者之前未使用过 Azure 或 ASP.NET。
 

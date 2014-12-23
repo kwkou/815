@@ -2,7 +2,7 @@
 
 # 使用混合连接将 Azure 网站连接到本地资源
 
-您可将 Microsoft Azure 上的网站连接到使用静态 TCP 端口的任何本地资源，例如 SQL Server、MySQL、HTTP Web API、移动服务和大多数自定义 Web 服务。本文将向您介绍如何在 Azure 网站和本地 SQL Server 数据库之间创建混合连接。
+您可将 Windows Azure 上的网站连接到使用静态 TCP 端口的任何本地资源，例如 SQL Server、MySQL、HTTP Web API、移动服务和大多数自定义 Web 服务。本文将向您介绍如何在 Azure 网站和本地 SQL Server 数据库之间创建混合连接。
 
 > [WACOM.NOTE] 混合连接功能的网站部分仅在 [Azure 门户][Azure 门户]中有提供。若要在 BizTalk 服务中创建连接，请参阅[混合连接][混合连接]。
 

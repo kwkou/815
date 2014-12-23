@@ -1,8 +1,8 @@
-<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Microsoft Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL Database, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL Database, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 # Azure 订阅和服务限制、配额和约束
 
-下面的文档中指定一些最常见的 Microsoft Azure 限制。请注意本文档中当前不包括所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
+下面的文档中指定一些最常见的 Windows Azure 限制。请注意本文档中当前不包括所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
 
 -   [订阅限制][订阅限制]
 -   [Web 工作进程限制][Web 工作进程限制]

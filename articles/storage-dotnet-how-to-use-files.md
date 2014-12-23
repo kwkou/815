@@ -1,10 +1,10 @@
-﻿<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Microsoft Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Microsoft Azure File storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Windows Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Windows Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
 
 <tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
 # 如何使用 Azure 文件存储
 
-在此入门指南中，我们将演示使用 Microsoft Azure 文件存储的基础知识。首先，我们将使用 PowerShell 来演示如何创建新的 Azure 文件共享、如何添加目录、如何将本地文件上载到该共享，以及如何列出该目录中的文件。然后，我们将演示如何从 Azure 虚拟机装载文件共享，就像装载任何 SMB 共享一样。
+在此入门指南中，我们将演示使用 Windows Azure 文件存储的基础知识。首先，我们将使用 PowerShell 来演示如何创建新的 Azure 文件共享、如何添加目录、如何将本地文件上载到该共享，以及如何列出该目录中的文件。然后，我们将演示如何从 Azure 虚拟机装载文件共享，就像装载任何 SMB 共享一样。
 
 对于可能想要从本地应用程序以及 Azure 虚拟机或云服务访问共享中的文件的用户，我们将演示如何使用 Azure .NET 存储客户端库通过桌面应用程序处理文件共享。
 
@@ -24,7 +24,7 @@
 
 ##<a name="what-is-file-storage"></a>什么是 Azure 文件存储？
 
-文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Microsoft Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。
+文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。
 
 在 Azure 虚拟机或云服务中运行的应用程序可以装载文件存储共享以访问文件数据，就像桌面应用程序可以装载典型 SMB 共享一样。任意数量的 Azure 虚拟机或角色可以同时装载并访问文件存储共享。
 
@@ -73,7 +73,7 @@
 
 > [WACOM.NOTE] 文件服务的 PowerShell cmdlet 只在最新的 0.8.5 版及更高版本的 Azure PowerShell 模块中提供。建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
-通过单击**"开始"**并键入**"Microsoft Azure PowerShell"**打开 Azure PowerShell 窗口。Azure PowerShell 窗口将为你加载 Azure PowerShell 模块。
+通过单击**"开始"**并键入**"Windows Azure PowerShell"**打开 Azure PowerShell 窗口。Azure PowerShell 窗口将为你加载 Azure PowerShell 模块。
 
 ###为存储帐户和密钥创建上下文
 
@@ -236,9 +236,9 @@
 </li>
 <li>查看与文件服务有关的 Azure 存储团队的博客文章：
   <ul>
-    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx">Microsoft Azure 文件服务简介</a>
+    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx">Windows Azure 文件服务简介</a>
     </li>
-    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx">将连接保存到 Microsoft Azure 文件中</a></li>
+    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx">将连接保存到 Windows Azure 文件中</a></li>
   </ul>
 </li><li>查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
   <ul>

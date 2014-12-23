@@ -773,7 +773,7 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 
 有关云开发的常规信息，请参阅[使用 Windows Azure 构建实际的云应用程序][使用 Windows Azure 构建实际的云应用程序]。
 
-有关 Azure 存储最佳实践和模式的视频介绍，请参阅[Microsoft Azure 存储 – 新功能、最佳实践和模式][Microsoft Azure 存储 – 新功能、最佳实践和模式]。
+有关 Azure 存储最佳实践和模式的视频介绍，请参阅[Windows Azure 存储 – 新功能、最佳实践和模式][Windows Azure 存储 – 新功能、最佳实践和模式]。
 
 有关详细信息，请参阅以下资源：
 
@@ -849,7 +849,7 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
   [分步教程系列]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/
   [Windows Azure 中的云服务基础知识]: http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649
   [使用 Windows Azure 构建实际的云应用程序]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-  [Microsoft Azure 存储 – 新功能、最佳实践和模式]: http://channel9.msdn.com/Events/Build/2014/3-628
+  [Windows Azure 存储 – 新功能、最佳实践和模式]: http://channel9.msdn.com/Events/Build/2014/3-628
   [2]: /zh-cn/documentation/services/cloud-services/
   [Azure 存储]: /zh-cn/documentation/services/storage/
   [如何通过 .NET 使用 Blob 存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/

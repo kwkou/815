@@ -382,7 +382,7 @@ Python Tools for Visual Studio 具有用于调试 Django 模板的特别支持�
 
 在本节中，我们将在 Azure 上创建一个 SQL 数据库，将必需的包添加到我们的虚拟环境中，以及更改我们的设置以便使用这个新数据库。
 
-1.  在 Microsoft Azure 管理门户中，选择“SQL DATABASES”。
+1.  在 Windows Azure 管理门户中，选择“SQL DATABASES”。
 
 2.  首先创建用于托管该数据库的服务器。选择“服务器”和“添加”。
 

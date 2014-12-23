@@ -1,4 +1,4 @@
-<properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="How to use Hudson with the Azure Blob service | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="How to use Hudson with the Azure Blob service | Windows Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 # 将 Azure 存储服务用于 Hudson 持续集成解决方案
 
@@ -72,7 +72,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 2.  在**“管理 Hudson”**页中，单击**“管理插件”**。
 3.  单击**“可用”**选项卡。
 4.  单击**“其他”**。
-5.  在**“项目上载程序”**部分中，选中**“Microsoft Azure 存储插件”**。
+5.  在**“项目上载程序”**部分中，选中**“Windows Azure 存储插件”**。
 6.  单击**“安装”**。
 7.  安装完毕后，重新启动 Hudson。
 
@@ -80,7 +80,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
 1.  在 Hudson 仪表板中，单击**“管理 Hudson”**。
 2.  在**“管理 Hudson”**页中，单击**“配置系统”**。
-3.  在**“Microsoft Azure 存储帐户配置”**部分中：
+3.  在**“Windows Azure 存储帐户配置”**部分中：
 
     1.  输入你的存储帐户名称，可以从 Azure 门户 <https://manage.windowsazure.cn> 获取该帐户名称。
     2.  输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。
@@ -104,7 +104,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
         date /t > date.txt
         time /t >> date.txt
 
-5.  在作业配置的**“生成后操作”**部分中，单击**“将项目上载到 Microsoft Azure Blob 存储”**。
+5.  在作业配置的**“生成后操作”**部分中，单击**“将项目上载到 Windows Azure Blob 存储”**。
 6.  对于**“存储帐户名称”**，请选择要使用的存储帐户。
 7.  对于**“容器名称”**，请指定容器名称。（如果上载生成项目时不存在该容器，则将创建该容器。）你可使用环境变量，因此在此示例中，请输入 **\${JOB\_NAME}** 作为容器名称。
 

@@ -1,4 +1,4 @@
-<properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="如何管理网站 - Microsoft Azure 服务管理" metaKeywords="Azure portal website management" description="Microsoft Azure 中的&ldquo;门户&rdquo;网站管理页的引用。为每个网站管理页提供了详细信息。" metaCanonical="" services="web-sites" documentationCenter="" title="如何管理网站" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
+<properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="如何管理网站 - Windows Azure 服务管理" metaKeywords="Azure portal website management" description="Windows Azure 中的&ldquo;门户&rdquo;网站管理页的引用。为每个网站管理页提供了详细信息。" metaCanonical="" services="web-sites" documentationCenter="" title="如何管理网站" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
 
 # <a name="howtomanage"></a>如何管理网站
 
@@ -8,7 +8,7 @@
 
 “快速启动”管理页包括以下部分：
 
--   **获取工具** – 提供指向[安装 WebMatrix][安装 WebMatrix] 和 [Microsoft Azure SDK][Microsoft Azure SDK] 的链接。
+-   **获取工具** – 提供指向[安装 WebMatrix][安装 WebMatrix] 和 [Windows Azure SDK][Windows Azure SDK] 的链接。
 -   **发布应用** - 提供下载网站的发布配置文件、为网站重置部署凭据、在非过渡网站上添加过渡发布（部署）槽以及了解过渡发布信息的链接。
 -   **集成源代码控制** – 从源代码控制工具或网站（例如 TFS、GitHub 或本地 Git）设置和管理部署。
 
@@ -30,7 +30,7 @@
 -   **自动缩放状态** - 在“标准”模式下，您可以自动缩放您的资源，以便按需使用。若要启用自动缩放，请选择“配置自动缩放”，这将显示“缩放”页。如果您的网站处于“免费”或“共享”模式，您需要首先将其更改为“标准”模式（可以在“缩放”页上执行此操作），然后才能配置自动缩放。“自动缩放操作日志”可打开“管理服务”门户，您可以从中查看网站的自动缩放历史记录。默认查询针对最近 24 小时，但您可以修改查询。
 
 -   **使用概览** - 此部分显示网站的 CPU、文件系统和内存使用情况的统计信息。
--   **链接的资源** - 此部分显示连接到您的网站的资源（如 SQL 数据库、Microsoft Azure 存储帐户）列表。单击资源的名称以便管理该资源。如果未列出任何资源，请单击“管理链接的资源”，转到“链接的资源”页，然后添加网站资源链接。
+-   **链接的资源** - 此部分显示连接到您的网站的资源（如 SQL 数据库、Windows Azure 存储帐户）列表。单击资源的名称以便管理该资源。如果未列出任何资源，请单击“管理链接的资源”，转到“链接的资源”页，然后添加网站资源链接。
 -   “速览”部分包含以下摘要信息和链接（根据您的设置，下面列出的某些选项可能不会显示）：
 -   **查看适用的外接程序** - 打开“从应用商店购买”对话框，选择购买可为您的网站提供附加功能的外接程序。在您的区域或环境中，某些外接程序可能不可用。
 -   **查看连接字符串** - 查看网站的数据库连接字符串。
@@ -39,19 +39,19 @@
 -   **重置发布配置文件凭据** - 重置网站的发布配置文件。之前下载的发布配置文件将无效。
 -   **从源代码控制设置部署** – 显示一个对话框，用于设置从 Team Foundation Service、GitHub 或本地 Git 连续发布。
 -   **添加新的部署槽** - 对于标准模式下的站点，可以使用此功能来创建站点过渡槽。过渡槽（过渡站点）可用于在将站点交换到生产环境之前验证站点内容和配置。您还可以使用站点的过渡版本逐渐添加内容更新，在过渡槽上完成更新之后将站点交换到生产环境。（您不能向位于过渡槽中的站点添加槽。）
--   **在 Visual Studio Online 中在线编辑** - 单击此链接可使用 Visual Studio Online 从 Microsoft Azure 门户直接在线编辑您的网站。此选项将不会显示，直到您在“配置”页面启用该选项。
+-   **在 Visual Studio Online 中在线编辑** - 单击此链接可使用 Visual Studio Online 从 Windows Azure 门户直接在线编辑您的网站。此选项将不会显示，直到您在“配置”页面启用该选项。
 
 <!--  - **Disconnect from Dropbox** - If you have set up a connection to Dropbox for deployment purposes, this link allows you to disconnect it.  -->
 
 -   **删除 Git 存储库** - 如果您已设置了 Git 存储库，该链接可用于将其删除。
 -   **状态** – 指示网站是否正在运行。
--   **管理服务** - 单击“操作日志”链接以查看您从 Microsoft Azure 管理服务门户执行的网站操作日志。
+-   **管理服务** - 单击“操作日志”链接以查看您从 Windows Azure 管理服务门户执行的网站操作日志。
 -   **虚拟 IP 地址** - 如果您已在“配置”选项卡的“SSL 绑定”部分为网站配置基于 IP 的 SSL 绑定，则该选项将显示网站的虚拟 IP 地址。
 -   **站点 URL** - 指定网站在 Internet 上可公开访问的地址。
 -   **计算模式** - 指定网站是在“免费”、“共享”、“基本”还是“标准”模式下运行。有关 Web 缩放组模式的详细信息，请参阅[如何缩放网站][如何缩放网站]。
 -   **FTP 主机名** - 指定通过 FTP 发布到网站时要使用的 URL。
 -   **FTPS 主机名** - 指定通过 FTPS 发布到网站时要使用的 URL。
--   **部署用户/FTP 用户** - 表示通过 FTP 或 Git 将网站部署到 Microsoft Azure 时所使用的帐户。
+-   **部署用户/FTP 用户** - 表示通过 FTP 或 Git 将网站部署到 Windows Azure 时所使用的帐户。
 -   **FTP 诊断日志** – 指定网站诊断日志的 FTP 位置（如果已在“配置”管理页上启用了诊断日志记录）。
 -   **FTPS 诊断日志** – 指定网站诊断日志的 FTPS 位置（如果已在“配置”管理页上启用了诊断日志记录）。
 -   **位置** – 指定托管网站的数据中心的区域。
@@ -68,7 +68,7 @@
 
 ## WebJobs
 
-WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的任务。有关详细信息，请参阅[如何在 Microsoft Azure 网站上使用 WebJobs 功能][如何在 Microsoft Azure 网站上使用 WebJobs 功能]。
+WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的任务。有关详细信息，请参阅[如何在 Windows Azure 网站上使用 WebJobs 功能][如何在 Windows Azure 网站上使用 WebJobs 功能]。
 
 ## 配置
 
@@ -79,10 +79,10 @@ WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的
 -   **域名** - 查看网站的域名或者为网站添加其他自定义域名。只能在“共享”、“基本”和“标准”模式下使用自定义域名。
 -   **SSL 绑定** - 只能在“基本”或“标准”模式下使用与自定义域的 SSL 绑定。为特定域选择 SSL 模式（“SNI”、“IP”或“非 SSL”）。如果您选择 SNI 或 IP，则可以从您已上载的证书为域指定证书。
 -   **部署** - 只有在您已经从源代码管理启用了部署后，此部分才出现。使用这些设置配置部署。
--   **应用程序诊断** – 设置选项以便为支持日志记录的 Web 应用程序收集诊断信息。您可以选择登录到文件系统或 Microsoft Azure 存储帐户，并选择一个日志记录级别以便指定收集的信息量。
+-   **应用程序诊断** – 设置选项以便为支持日志记录的 Web 应用程序收集诊断信息。您可以选择登录到文件系统或 Windows Azure 存储帐户，并选择一个日志记录级别以便指定收集的信息量。
 -   **网站诊断** – 设置用于收集网站诊断信息的日志记录选项，或者使 Visual Studio 2012 或 Visual Studio 2013 远程调试网站，时间最长不超过 48 小时。
 -   **监视** - 对于“标准”模式下的网站，从分布式地理位置测试 HTTP 或 HTTPS 终结点的可用性。
--   **开发人员分析** - 分析监视您的 Web 应用程序的性能。从 Microsoft Azure 应用商店选择一个分析外接程序，或者选择自定义分析提供程序，如 New Relic。
+-   **开发人员分析** - 分析监视您的 Web 应用程序的性能。从 Windows Azure 应用商店选择一个分析外接程序，或者选择自定义分析提供程序，如 New Relic。
 -   **应用设置** – 指定 Web 应用程序在启动时将加载的名称/值对。对于 .NET 站点，这些设置将在运行时注入到网站的 .NET 配置 AppSettings 中，并且将重写现有设置。对于 PHP 和 Node 网站，这些设置将在运行时作为环境变量提供。
 -   **连接字符串** – 查看链接的资源的连接字符串。对于 .NET 网站，这些连接字符串将在运行时注入到网站的 .NET 配置 connectionStrings 设置中，并且将重写其键等于链接的数据库名称的所有现有条目。对于 PHP 和 Node 网站，这些设置将在运行时作为环境变量提供。
 -   **默认文档** - 如果网站默认文档尚未在此列表中，可在此添加。如果网站的列表中包含多个文件，请确保通过更改列表中的文件顺序使网站的默认文档显示在列表的顶部。
@@ -95,17 +95,17 @@ WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的
 
 在“缩放”管理页上，您可以指定 Web 缩放组模式（“免费”、“共享”、“基本”或“标准”）。“共享”、“基本”和“标准”模式可以提供更好的吞吐量和性能。“共享”、“基本”和“标准”模式允许您增加“实例数”，即您的网站和您的其他网站在同一个 Web 缩放组中使用的虚拟机数。
 
-在“标准”模式下，您还可以通过更改“实例大小”来增加每个实例的内核数和内存大小。为了实现更高的成本效益，您可以选择“自动缩放”选项，使 Microsoft Azure 为您的网站动态分配资源。
+在“标准”模式下，您还可以通过更改“实例大小”来增加每个实例的内核数和内存大小。为了实现更高的成本效益，您可以选择“自动缩放”选项，使 Windows Azure 为您的网站动态分配资源。
 
 有关配置网站缩放选项的详细信息，请参阅[如何缩放网站][如何缩放网站]。
 
 ## 链接的资源
 
-“链接的资源”管理页提供了网站正在使用的 Microsoft Azure 资源列表，包括 SQL 数据库、MySQL 数据库和 Azure 存储帐户。可单击资源名称以便管理该资源。
+“链接的资源”管理页提供了网站正在使用的 Windows Azure 资源列表，包括 SQL 数据库、MySQL 数据库和 Azure 存储帐户。可单击资源名称以便管理该资源。
 
 ## 备份
 
-“备份”管理页可用于自动或手动创建网站备份，将网站还原到以前的状态，或基于其中一个备份创建新网站。有关详细信息，请参阅 [Microsoft Azure 网站备份][Microsoft Azure 网站备份]和[还原 Microsoft Azure 网站][还原 Microsoft Azure 网站]。
+“备份”管理页可用于自动或手动创建网站备份，将网站还原到以前的状态，或基于其中一个备份创建新网站。有关详细信息，请参阅 [Windows Azure 网站备份][Windows Azure 网站备份]和[还原 Windows Azure 网站][还原 Windows Azure 网站]。
 
 ## “管理页”图标
 
@@ -116,7 +116,7 @@ WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的
 -   **重新启动** - 重新启动网站。
 -   **管理域** - 将域映射到该网站。对“免费”缩放模式下的站点不可用。
 -   **删除** - 删除网站。
--   **WebMatrix** - 在 WebMatrix 中打开受支持的网站，允许您对网站进行更改，然后在 Microsoft Azure 上将所做的更改发布回网站。
+-   **WebMatrix** - 在 WebMatrix 中打开受支持的网站，允许您对网站进行更改，然后在 Windows Azure 上将所做的更改发布回网站。
 
 下列图标不会显示在“仪表板”管理页的底部，而是显示在其他管理页的底部以完成特定任务：
 
@@ -127,10 +127,10 @@ WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的
 <!-- LINKS -->
 
   [安装 WebMatrix]: http://go.microsoft.com/fwlink/?LinkID=226244
-  [Microsoft Azure SDK]: http://www.windowsazure.cn/zh-cn/downloads/
+  [Windows Azure SDK]: http://www.windowsazure.cn/zh-cn/downloads/
   [如何监视网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-monitor/
   [如何缩放网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-scale/
-  [如何在 Microsoft Azure 网站上使用 WebJobs 功能]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-create-web-jobs/
+  [如何在 Windows Azure 网站上使用 WebJobs 功能]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-create-web-jobs/
   [如何配置网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure/
-  [Microsoft Azure 网站备份]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-backup/
-  [还原 Microsoft Azure 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-restore/
+  [Windows Azure 网站备份]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-backup/
+  [还原 Windows Azure 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-restore/

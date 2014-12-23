@@ -1,4 +1,4 @@
-<properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Microsoft Azure" metaKeywords="" description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Windows Azure" metaKeywords="" description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 # 将 Azure 存储服务用于 Jenkins 持续集成解决方案
 
@@ -67,7 +67,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1.  在 Jenkins 仪表板中，单击**“管理 Jenkins”**。
 2.  在**“管理 Jenkins”**页中，单击**“管理插件”**。
 3.  单击**“可用”**选项卡。
-4.  在**“项目上载程序”**部分中，选中**“Microsoft Azure 存储插件”**。
+4.  在**“项目上载程序”**部分中，选中**“Windows Azure 存储插件”**。
 5.  单击**“安装而不重新启动”**或**“立即下载并在重新启动后安装”**。
 6.  重新启动 Jenkins。
 
@@ -75,7 +75,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 1.  在 Jenkins 仪表板中，单击**“管理 Jenkins”**。
 2.  在**“管理 Jenkins”**页中，单击**“配置系统”**。
-3.  在**“Microsoft Azure 存储帐户配置”**部分中：
+3.  在**“Windows Azure 存储帐户配置”**部分中：
 
     1.  输入你的存储帐户名称，可以从 Azure 门户 <https://manage.windowsazure.cn> 获取该帐户名称。
     2.  输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。

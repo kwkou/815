@@ -1,8 +1,8 @@
-<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="Microsoft Azure 存储服务简介 | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="An overview of Microsoft Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Microsoft Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="Windows Azure 存储服务简介 | Windows Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="An overview of Windows Azure Storage." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Windows Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-# Microsoft Azure 存储服务简介
+# Windows Azure 存储服务简介
 
-本文面向开发人员、IT 专业人员和业务决策者介绍了 Microsoft Azure 存储服务。通过阅读本文，你将会了解：
+本文面向开发人员、IT 专业人员和业务决策者介绍了 Windows Azure 存储服务。通过阅读本文，你将会了解：
 
 -   什么是 Azure 存储服务，以及如何在你的云、移动、服务器和桌面应用程序中利用它
 -   你可以使用 Azure 存储服务存储什么类型的数据：Blob、表和队列存储
