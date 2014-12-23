@@ -92,7 +92,7 @@ xplat-cli 有两种安装方法：使用适用于 Windows 和 OS X 的安装程�
     >
     > 5.  最后，从 Azure 门户注销，然后使用新的组织帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
     >
-    > 有关 Microsoft Azure 组织帐户的详细信息，请参阅[以组织身份注册 Microsoft Azure][以组织身份注册 Microsoft Azure]。
+    > 有关 Windows Azure 组织帐户的详细信息，请参阅[以组织身份注册 Windows Azure][以组织身份注册 Windows Azure]。
 
 -   只要订阅和证书有效，您就可以通过发布设置文件方法安装的证书执行管理任务。该方法可便于将自动化用于长时间运行的任务。在您下载并导入信息后，无需再次提供它。但是，使用此方法后难以管理对订阅的访问，因为可以访问证书的任何人都可以管理订阅。
 
@@ -391,7 +391,7 @@ xplat-cli 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
   [Windows 安装程序]: http://go.microsoft.com/fwlink/?LinkID=275464&clcid=0x409
   [OS X 安装程序]: http://go.microsoft.com/fwlink/?LinkId=252249
   []: https://manage.windowsazure.cn
-  [以组织身份注册 Microsoft Azure]: /zh-cn/documentation/articles/sign-up-organization/
+  [以组织身份注册 Windows Azure]: /zh-cn/documentation/articles/sign-up-organization/
   [“基于帐户的身份验证和基于证书的身份验证之间的区别是什么”]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
   [结合使用 Azure 跨平台命令行接口和 Resource Manager]: /zh-cn/documentation/articles/xplat-cli-azure-resource-manager/
   [高级 Bash 脚本撰写指南]: http://tldp.org/LDP/abs/html/

@@ -101,7 +101,7 @@ Azure 移动服务 SDK 包括支持进行 Windows 应用商店和 iOS 应用程�
 
 ####[.NET 服务库](http://msdn.microsoft.com/zh-cn/library/azure/dn632690.aspx)
 
-利用 Microsoft Azure 移动服务的 .NET 服务库，可以开发使用 .NET 后端的移动服务。本节提供库的详细参考。
+利用 Windows Azure 移动服务的 .NET 服务库，可以开发使用 .NET 后端的移动服务。本节提供库的详细参考。
 
 ####[REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/jj710108.aspx)
 

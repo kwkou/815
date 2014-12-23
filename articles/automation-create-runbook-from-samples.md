@@ -2,7 +2,7 @@
 
 # Azure 自动化入门
 
-通过 Microsoft Azure 自动化，开发人员可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。若要了解有关自动化的详细信息，请参阅[自动化概述指南][自动化概述指南]。
+通过 Windows Azure 自动化，开发人员可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。若要了解有关自动化的详细信息，请参阅[自动化概述指南][自动化概述指南]。
 
 本教程将逐步引导你完成将一个示例“Hello World”Runbook 导入 Azure 自动化、执行该 Runbook 并查看其输出的步骤。
 
@@ -34,7 +34,7 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 
 ## <a name="preview"></a>注册 Azure 自动化预览版
 
-若要开始使用自动化，你需要一个启用了 Microsoft Azure 自动化预览版功能的有效 Azure 订阅。
+若要开始使用自动化，你需要一个启用了 Windows Azure 自动化预览版功能的有效 Azure 订阅。
 
 -   在**“预览版功能”**页上单击**“立即试用”**。
 

@@ -156,7 +156,7 @@ Azure 资源的应用程序在云中启动并运行。
 
 ### 使用 Visual Studio 服务器资源管理器管理服务命名空间：
 
-若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处][此处]所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 这一节。当你登录到 Azure 时，服务器资源管理器中 **Microsoft Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
+若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处][此处]所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 这一节。当你登录到 Azure 时，服务器资源管理器中 **Windows Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
 
 ![][10]
 
@@ -212,7 +212,7 @@ Azure 资源的应用程序在云中启动并运行。
 9.  在 NuGet 对话框的左栏中，单击“联机”。
 
 10. 在右栏中，单击“搜索”框，键入“MicrosoftAzure”，
-    并选择“Microsoft Azure Service Bus”项。单击“安装”以完成安装，
+    并选择“Windows Azure Service Bus”项。单击“安装”以完成安装，
     然后关闭此对话框。
 
     ![][14]
@@ -532,7 +532,7 @@ Azure 资源的应用程序在云中启动并运行。
         “管理 NuGet 包”。
 
     3.  搜索“MicrosoftAzure.ServiceBus”，
-        然后选择“Microsoft Azure Service Bus”项。然后，完成安装过程
+        然后选择“Windows Azure Service Bus”项。然后，完成安装过程
         并关闭此对话框。
 
     4.  在“解决方案资源管理器”中，右键单击“ProductsPortal”项目，
@@ -646,7 +646,7 @@ Azure 资源的应用程序在云中启动并运行。
 
     4.  单击“下一步”。如果你的订阅尚未包含任何托管
         服务，则系统将要求你创建一个托管服务。托管服务
-        在 Microsoft Azure 订阅中充当应用程序的
+        在 Windows Azure 订阅中充当应用程序的
         容器。输入标识应用
         程序的名称，然后选择应为其优化应用
         程序的区域。（用户从此区域访问应用程序所花的

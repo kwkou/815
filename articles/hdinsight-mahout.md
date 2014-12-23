@@ -4,7 +4,7 @@
 
 # 将 Apache Mahout 与 HDInsight (Hadoop) 配合使用以生成电影推荐
 
-了解如何在 Microsoft Azure HDInsight (Hadoop) 上使用 [Apache Mahout](http://mahout.apache.org) 计算机学习库生成电影推荐。
+了解如何在 Windows Azure HDInsight (Hadoop) 上使用 [Apache Mahout](http://mahout.apache.org) 计算机学习库生成电影推荐。
 
 > [WACOM.NOTE] 若要使用本文中的信息，必须先创建一个 HDInsight 群集。有关创建 HDInsight 群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
 

@@ -43,7 +43,7 @@ Web 宿主计划表示一组可在你的网站间共享的功能和容量。Web 
 
 ### 后续步骤
 
-若要开始使用 Azure，请参阅 [Microsoft Azure 免费试用版][Microsoft Azure 免费试用版]。
+若要开始使用 Azure，请参阅 [Windows Azure 免费试用版][Windows Azure 免费试用版]。
 
 <!-- Images. -->
 
@@ -53,4 +53,4 @@ Web 宿主计划表示一组可在你的网站间共享的功能和容量。Web 
   [2]: ./media/web-sites-web-hosting-plan-overview/web-hosting-plan-resource-map.png
   [详细了解如何管理 Web 宿主计划]: http://azure.microsoft.com/zh-cn/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
   [3]: ./media/web-sites-web-hosting-plan-overview/web-hosting-plan-blade.png
-  [Microsoft Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/

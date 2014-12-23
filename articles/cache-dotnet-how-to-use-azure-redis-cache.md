@@ -26,9 +26,9 @@
 
 ## 什么是 Azure Redis Cache？
 
-Microsoft Azure Redis Cache 目前处于预览状态，它基于流行的开放源代码 Redis Cache。它让您访问 Microsoft 管理的安全专用的 Redis 缓存。使用 Azure Redis Cache 创建的缓存可从 Microsoft Azure 内的任何应用程序进行访问。
+Windows Azure Redis Cache 目前处于预览状态，它基于流行的开放源代码 Redis Cache。它让您访问 Microsoft 管理的安全专用的 Redis 缓存。使用 Azure Redis Cache 创建的缓存可从 Windows Azure 内的任何应用程序进行访问。
 
-Microsoft Azure Redis Cache 现已推出两种层级：
+Windows Azure Redis Cache 现已推出两种层级：
 
 -   **基本**– 单个节点。多个大小。
 -   **标准**– 两个节点“主/从”。多个大小。

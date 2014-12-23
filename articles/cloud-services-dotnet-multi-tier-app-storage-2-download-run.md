@@ -31,7 +31,7 @@
 
 ## 先决条件
 
-本教程演示如何使用下述任何一种产品配置你的计算机来进行 Azure 开发，以及如何将 Microsoft Azure 电子邮件服务应用程序部署到 Microsoft Azure 云服务：
+本教程演示如何使用下述任何一种产品配置你的计算机来进行 Azure 开发，以及如何将 Windows Azure 电子邮件服务应用程序部署到 Windows Azure 云服务：
 
 -   Visual Studio 2012
 -   Visual Studio 2012 Express for Web
@@ -109,7 +109,7 @@
 
     ![添加 ASE 帐户][1]
 
-也可以使用其他适用于 Azure 存储服务的工具。有关详细信息，请参阅 [Microsoft Azure 存储资源管理器 (2014)][Microsoft Azure 存储资源管理器 (2014)]。
+也可以使用其他适用于 Azure 存储服务的工具。有关详细信息，请参阅 [Windows Azure 存储资源管理器 (2014)][Windows Azure 存储资源管理器 (2014)]。
 
 ## <a name="createcloudsvc"></a><span class="short-header">创建云服务</span>创建云服务
 
@@ -145,7 +145,7 @@
 
 2.  使用提升的权限启动 Visual Studio。
 
-    允许 Visual Studio 在本地运行 Microsoft Azure 项目的计算模拟器需要提升的权限。
+    允许 Visual Studio 在本地运行 Windows Azure 项目的计算模拟器需要提升的权限。
 
     > [WACOM.NOTE] 使用 SDK 2.3 和更高版本时，默认的 Azure 计算模拟器不需要提升的权限，但此项目仍配置为使用原始计算模拟器，因此它仍然需要提升的权限。
 
@@ -208,7 +208,7 @@
 
 2.  展开**“Azure 存储服务”**节点下面的**“(开发)”**节点。
 
-    > [WACOM.NOTE] 在当前的 SDK 中，展开**“Microsoft Azure”**/**“存储”**/**“(开发)”**。
+    > [WACOM.NOTE] 在当前的 SDK 中，展开**“Windows Azure”**/**“存储”**/**“(开发)”**。
 
 3.  展开**“表”**以查看你在前面的步骤中创建的表。
 
@@ -518,7 +518,7 @@
 
     在该代码中，`DiagnosticMonitor` 配置为存储多达 500 MB 的跟踪信息（超过 500 MB 以后，将覆盖最旧的数据）和所有跟踪消息 (LogLevel.Verbose)。`ScheduledTransferPeriod` 每分钟都会将跟踪数据传输到存储中。必须设置 `ScheduledTransferPeriod` 才能保存跟踪数据。
 
-    每个辅助角色和 Web 角色中的 `ConfigureDiagnostics` 方法用于配置跟踪侦听器，以便在你调用跟踪 API 时记录数据。有关详细信息，请参阅[在 Microsoft Azure 云应用程序中使用跟踪][在 Microsoft Azure 云应用程序中使用跟踪]
+    每个辅助角色和 Web 角色中的 `ConfigureDiagnostics` 方法用于配置跟踪侦听器，以便在你调用跟踪 API 时记录数据。有关详细信息，请参阅[在 Windows Azure 云应用程序中使用跟踪][在 Windows Azure 云应用程序中使用跟踪]
 
 2.  在**服务器资源管理器**中，针对你此前添加的存储帐户双击 **WADLogsTable**（展开“**存储**/**yourstorageaccountname**/**表**”）。你可以输入 [WCF 数据服务筛选器][WCF 数据服务筛选器]以限制显示的实体。在下图中，仅显示警告和错误消息。
 
@@ -594,7 +594,7 @@
   [Azure 存储资源管理器]: http://azurestorageexplorer.codeplex.com/
   [添加 ASE 帐户]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase-add.png
   [1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase-add2.png
-  [Microsoft Azure 存储资源管理器 (2014)]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx
+  [Windows Azure 存储资源管理器 (2014)]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx
   [快速云]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-new-cloud.png
   [如何在 Azure 中创建地缘组]: http://msdn.microsoft.com/zh-cn/library/jj156209.aspx
   [2]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-cloud.png
@@ -635,7 +635,7 @@
   [12]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png
   [13]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c6.png
   [14]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c7.png
-  [在 Microsoft Azure 云应用程序中使用跟踪]: http://blogs.msdn.com/b/windowsazure/archive/2012/10/24/using-trace-in-windows-azure-cloud-applications-1.aspx "在 Microsoft Azure 中使用跟踪"
+  [在 Windows Azure 云应用程序中使用跟踪]: http://blogs.msdn.com/b/windowsazure/archive/2012/10/24/using-trace-in-windows-azure-cloud-applications-1.aspx "在 Windows Azure 中使用跟踪"
   [WCF 数据服务筛选器]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683669.aspx "WCF 筛选器"
   [15]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png
   [虚拟机大小]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee814754.aspx "VM 大小"

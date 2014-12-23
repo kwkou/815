@@ -2,7 +2,7 @@
 
 # 浏览和编辑您的源代码
 
-在 Microsoft Azure 门户预览中，您可以很容易地浏览和编辑 Visual Studio Online 团队项目源代码。
+在 Windows Azure 门户预览中，您可以很容易地浏览和编辑 Visual Studio Online 团队项目源代码。
 
 一旦您在该门户中创建团队项目，就可以通过该门户轻松地访问和浏览签入的代码（Team Foundation 版本控制）或提交的 (git) 代码。
 

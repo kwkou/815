@@ -36,7 +36,7 @@ Twilio 提供一个客户端 SDK，它可以将任何桌面 Web 浏览器、iOS 
 
 ## 注册 Twilio (Microsoft Discount)
 
-在使用 Twilio 服务之前，必须首先[注册帐户][注册帐户]。Microsoft Azure 客户可享受特别折扣 - [请务必在此处注册][注册帐户]!
+在使用 Twilio 服务之前，必须首先[注册帐户][注册帐户]。Windows Azure 客户可享受特别折扣 - [请务必在此处注册][注册帐户]!
 
 <span id="azuresite"></span></a>
 

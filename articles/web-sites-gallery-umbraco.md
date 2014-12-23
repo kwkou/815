@@ -1,6 +1,6 @@
-<properties title="从 Microsoft Azure 中的库创建 Umbraco 网站" pageTitle="从 Microsoft Azure 中的库创建 Umbraco 网站" description="必需" metaKeywords="Azure, gallery, Umbraco, web site, website" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
+<properties title="从 Windows Azure 中的库创建 Umbraco 网站" pageTitle="从 Windows Azure 中的库创建 Umbraco 网站" description="必需" metaKeywords="Azure, gallery, Umbraco, web site, website" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 
-# 从 Microsoft Azure 中的库创建 Umbraco 网站
+# 从 Windows Azure 中的库创建 Umbraco 网站
 
 Umbraco CMS 是一种功能齐备的开源内容管理系统，可用于创建各种规模的应用程序。Azure 网站应用程序库中提供了众多由 Microsoft、第三方公司以及开源软件计划开发的流行 Web 应用程序。凭借此库，无论是通过应用初学者工具包还是通过集成您自己的设计，只需几分钟就可创建出一个 Umbraco CMS 站点。
 
@@ -13,7 +13,7 @@ Umbraco CMS 是一种功能齐备的开源内容管理系统，可用于创建�
 
 ## 从 Azure 门户中的库创建网站
 
-1.  登录到 [Microsoft Azure 管理门户][Microsoft Azure 管理门户]。
+1.  登录到 [Windows Azure 管理门户][Windows Azure 管理门户]。
 
 2.  选择“Azure 库”图标。
 
@@ -85,17 +85,17 @@ Umbraco CMS 是一种功能齐备的开源内容管理系统，可用于创建�
 
 [Umbraco 视频教程][Umbraco 视频教程]
 
-[Microsoft Azure 预览版门户概述][Microsoft Azure 预览版门户概述]
+[Windows Azure 预览版门户概述][Windows Azure 预览版门户概述]
 
-[Microsoft Azure 预览版门户文档][Microsoft Azure 预览版门户文档]
+[Windows Azure 预览版门户文档][Windows Azure 预览版门户文档]
 
 [Azure 预览版门户（频道 9）][Azure 预览版门户（频道 9）]
 
-[Microsoft Azure 网站文档][Microsoft Azure 网站文档]
+[Windows Azure 网站文档][Windows Azure 网站文档]
 
 <!-- IMAGES -->
 
-  [Microsoft Azure 管理门户]: https://portal.azure.com/
+  [Windows Azure 管理门户]: https://portal.azure.com/
   [选择 Web 库]: ./media/web-sites-gallery-umbraco/01Startboard.PNG
   [在 Web 库中选择 Umbraco]: ./media/web-sites-gallery-umbraco/02WebGallery.PNG
   [单击创建]: ./media/web-sites-gallery-umbraco/03UmbracoCMS.PNG
@@ -113,7 +113,7 @@ Umbraco CMS 是一种功能齐备的开源内容管理系统，可用于创建�
   [已发布的网站页面]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
   [Umbraco 文档]: http://our.umbraco.org/documentation
   [Umbraco 视频教程]: https://umbraco.com/help-and-support/video-tutorials.aspx
-  [Microsoft Azure 预览版门户概述]: http://azure.microsoft.com/zh-cn/overview/preview-portal/
-  [Microsoft Azure 预览版门户文档]: http://azure.microsoft.com/zh-cn/documentation/preview-portal/
+  [Windows Azure 预览版门户概述]: http://azure.microsoft.com/zh-cn/overview/preview-portal/
+  [Windows Azure 预览版门户文档]: http://azure.microsoft.com/zh-cn/documentation/preview-portal/
   [Azure 预览版门户（频道 9）]: http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal
-  [Microsoft Azure 网站文档]: http://azure.microsoft.com/zh-cn/documentation/services/web-sites/
+  [Windows Azure 网站文档]: http://azure.microsoft.com/zh-cn/documentation/services/web-sites/

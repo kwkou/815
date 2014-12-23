@@ -25,7 +25,7 @@
 
 ####[Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits/)
 
-了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Microsoft Azure 限制。
+了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Windows Azure 限制。
 
 ####[教程和动手实验](http://msdn.microsoft.com/zh-cn/library/azure/hh778415.aspx)
 

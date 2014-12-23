@@ -187,7 +187,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 ## <a name="nextsteps"></a> 后续步骤
 
-在某些情况下，您可能想要能够轻松地在网站的过渡版本和生产版本之间来回切换。可以使用 Azure 网站过渡部署功能来实现该操作。有关详细信息，请参阅 [Microsoft Azure 网站上的过渡部署][Microsoft Azure 网站上的过渡部署]。
+在某些情况下，您可能想要能够轻松地在网站的过渡版本和生产版本之间来回切换。可以使用 Azure 网站过渡部署功能来实现该操作。有关详细信息，请参阅 [Windows Azure 网站上的过渡部署][Windows Azure 网站上的过渡部署]。
 
 准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Azure 网站的备份和还原功能的信息，请参阅 [Azure 网站备份][Azure 网站备份]。
 
@@ -242,6 +242,6 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
   [Web 部署工具]: http://technet.microsoft.com/zh-cn/library/dd568996
   [使用 Web 部署]: http://www.iis.net/learn/publish/using-web-deploy
   [堆栈溢出]: http://www.stackoverflow.com
-  [Microsoft Azure 网站上的过渡部署]: /zh-cn/documentation/articles/web-sites-staged-publishing/
+  [Windows Azure 网站上的过渡部署]: /zh-cn/documentation/articles/web-sites-staged-publishing/
   [Azure 网站备份]: /zh-cn/documentation/articles/web-sites-backup/
   [Azure 网站文档]: /zh-cn/documentation/services/web-sites/

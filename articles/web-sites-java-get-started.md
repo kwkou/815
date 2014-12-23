@@ -1,12 +1,12 @@
-<properties linkid="develop-java-tutorials-web-site-get-started" urlDisplayName="Get started with Azure" pageTitle="Get started with Microsoft Azure Web Sites using Java" metaKeywords="" description="This tutorial shows you how to deploy a Java web site to Microsoft Azure." metaCanonical="" services="web-sites" documentationCenter="Java" title="Get started with Azure and Java" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+<properties linkid="develop-java-tutorials-web-site-get-started" urlDisplayName="Get started with Azure" pageTitle="Get started with Windows Azure Web Sites using Java" metaKeywords="" description="This tutorial shows you how to deploy a Java web site to Windows Azure." metaCanonical="" services="web-sites" documentationCenter="Java" title="Get started with Azure and Java" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 
 # Azure 网站和 Java 入门
 
-本教程演示如何使用 Java 在 Microsoft Azure 上（使用 Azure 应用程序库或 Azure 网站配置 UI）创建网站。
+本教程演示如何使用 Java 在 Windows Azure 上（使用 Azure 应用程序库或 Azure 网站配置 UI）创建网站。
 
 如果你不想使用这些技术中的任何一种，例如，如果你想自定义应用程序容器，请参阅[将自定义 Java 网站上载到 Azure][将自定义 Java 网站上载到 Azure]。
 
-> [WACOM.NOTE] 若要完成本教程，你需要一个 Microsoft Azure 帐户。如果你没有帐户，则可以[激活 MSDN 订户权益][激活 MSDN 订户权益]或[注册免费试用][注册免费试用]。
+> [WACOM.NOTE] 若要完成本教程，你需要一个 Windows Azure 帐户。如果你没有帐户，则可以[激活 MSDN 订户权益][激活 MSDN 订户权益]或[注册免费试用][注册免费试用]。
 
 # 使用 Azure 应用程序库创建 Java 网站
 
@@ -20,7 +20,7 @@
 
 ![使用 Jetty 的网站][使用 Jetty 的网站]
 
-1.  登录到 Microsoft Azure 管理门户。
+1.  登录到 Windows Azure 管理门户。
 2.  依次单击“新建”、“计算”、“网站”和“从库中”。
 3.  从应用程序列表中，选择 Java 应用程序服务器之一，如 **Apache Tomcat** 或 **Jetty**。
 4.  单击“下一步”。
@@ -36,7 +36,7 @@
 
 此信息讲解如何使用 Azure 配置 UI 为你的网站选择 Java 应用程序容器（Apache Tomcat 或 Jetty）。
 
-1.  登录到 Microsoft Azure 管理门户。
+1.  登录到 Windows Azure 管理门户。
 2.  依次单击“新建”、“计算”、“网站”，和“快速创建”。
 3.  指定 URL 名称。
 4.  选择区域。例如，**China East**。

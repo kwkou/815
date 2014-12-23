@@ -30,7 +30,7 @@ Azure HDInsight 以云方式部署并设置 Apache Hadoop 群集，从而提供�
 
 ## <a name="overview"></a>HDInsight 上的 Hadoop 生态系统概述
 
-Hadoop 是一种迅速扩展的技术堆栈，是大数据分析的首选解决方案。HDInsight 是 Microsoft Azure 在云中实现 Hadoop 的框架。
+Hadoop 是一种迅速扩展的技术堆栈，是大数据分析的首选解决方案。HDInsight 是 Windows Azure 在云中实现 Hadoop 的框架。
  
 HDInsight 中的 Hadoop 群集使用 Hortonworks 数据平台 (HDP) 分发版本和该分发内包含的 Hadoop 组件套件。有关组件及其在 HDInsight 群集中的版本的信息，请参阅 [HDInsight 提供的群集版本有哪些新功能？][组件版本]
 

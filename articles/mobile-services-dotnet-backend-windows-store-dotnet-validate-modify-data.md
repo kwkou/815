@@ -152,7 +152,7 @@
 
     ![][3]
 
-8.  在 Visual Studio 的解决方案资源管理器中，右键单击 todolist 服务项目并单击“发布” 。使用你从 Azure 门户下载的发布设置文件将 .NET 后端服务发布到 Microsoft Azure。
+8.  在 Visual Studio 的解决方案资源管理器中，右键单击 todolist 服务项目并单击“发布” 。使用你从 Azure 门户下载的发布设置文件将 .NET 后端服务发布到 Windows Azure。
 
 9.  取消注释与移动服务地址建立的连接，以更新客户端项目的 App.xaml.cs 文件。针对 Azure 帐户中托管的 .NET 后端测试该应用程序。
 
