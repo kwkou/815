@@ -12,7 +12,6 @@
 <p>您将生成一个前端 ASP.NET MVC Web 角色，该角色使用后端辅助角色来处理长时间运行的作业。您将了解如何创建多角色解决方案以及如何使用 Service Bus 队列实现角色间通信。下面显示了已完成应用程序的屏幕快照：</p>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/getting-started-multi-tier-01.png"/></p>
 <p><strong>注意</strong>：Windows Azure 还提供了存储队列功能。有关 Windows Azure 存储队列和 Service Bus 队列的详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx">Windows Azure 队列和 Windows Azure Service Bus 队列 - 比较与对照</a>。</p>
-<!--?UMBRACO_MACRO chunkpath="devcenter/shared" hide="0" chunkname="create-account-note" macroAlias="AzureChunkDisplayer" ?-->
 <h2><span class="short-header">角色间通信</span>方案概述 </h2>
 <p>若要提交处理命令，以 Web 角色运行的前端 UI 组件需要与以辅助角色运行的中间层逻辑进行交互。此示例使用 Service Bu 中转消息传递在各层之间进行通信。</p>
 <p>在 Web 层和中间层之间使用代理消息传递将分离这两个组件。与直接消息传递（即 TCP 或 HTTP）相反，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到 Service Bus，Service Bus 将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。</p>
