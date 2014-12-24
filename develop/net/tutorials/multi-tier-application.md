@@ -1,3 +1,5 @@
+<properties linkid="multi-tier-application" urlDisplayName="multi-tier-application" pageTitle="multi-tier-application" metaKeywords="multi-tier-application" description="multi-tier-application" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Haifeng Liu" />
+
 <h1>使用 Service Bus 队列创建 .NET 多层应用程序</h1>
 <p>使用 Visual Studio 2012 和免费的 Windows Azure SDK for .NET，可以轻松针对 Windows Azure 进行开发。如果您还没有 Visual Studio 2012，则此 SDK 将自动安装 Visual Web Developer Express，以便您能完全免费地开始针对 Windows Azure 进行开发。本指南假定您之前未使用过 Windows Azure。完成本指南之后，您将拥有使用多项 Windows Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。</p>
 <p>您将了解：</p>

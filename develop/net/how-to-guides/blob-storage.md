@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<localize><TextpageLeftNav id="18424" parentID="18423" level="5" writerID="52" creatorID="94" nodeType="1137" template="1052" sortOrder="1" createDate="2013-04-26T18:57:02" updateDate="2014-08-18T11:09:04" nodeName="blob storage v1.7" urlName="blob-storage-v17" writerName="uRest" creatorName="xunfan" path="-1,11978,13431,17371,18423,18424" isDoc=""><bodyText><![CDATA[<div>
-<?UMBRACO_MACRO macroAlias="AzureChunkDisplayer" chunkpath="devcenter/dotnet" chunkname="article-left-menu" hide="0" />
+<properties linkid="blob-storage" urlDisplayName="blob-storage" pageTitle="blob-storage" metaKeywords="blob-storage" description="blob-storage" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Haifeng Liu" />
 <h1>如何在 .NET 中使用 Windows Azure Blob 存储服务</h1>
 <div class="dev-center-tutorial-selector"><a href="/zh-cn/develop/net/how-to-guides/blob-storage-v17/" title="版本 1.7" class="current">版本 1.7</a> </div>
 <p>本指南将演示如何使用 Windows Azure Blob 存储服务执行常见任务。相关示例用 C# 编写且使用 .NET API。所涉及的任务包括<strong>上载</strong>、<strong>列出</strong>、<strong>下载</strong>以及<strong>删除</strong> Blob。有关 Blob 的详细信息，请参阅<a href="#next-steps">后续步骤</a>一节。</p>
