@@ -99,11 +99,11 @@
 
 在以下代码中，*mClient* 是对移动服务客户端的引用。
 
-如果类名称与表名称相同，则使用[第一个重载][]：
+如果类名称与表名称相同，则使用[第一个重载][]:
 
         MobileServiceTable<ToDoItem> mToDoTable = mClient.getTable(ToDoItem.class);
 
-如果表名称与类型名称不同，则使用[第二个重载][]：
+如果表名称与类型名称不同，则使用[第二个重载][]:
 
         MobileServiceTable<ToDoItem> mToDoTable = mClient.getTable("ToDoItemBackup", ToDoItem.class);
 

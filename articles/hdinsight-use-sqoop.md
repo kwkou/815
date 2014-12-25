@@ -88,7 +88,7 @@ HDInsight 群集带有某些示例数据。你将会使用以下两个：
 
 ### 了解 HDInsight 存储
 
-HDInsight 将 Azure Blob 存储用于数据存储。它称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
+HDInsight 将 Azure Blob 存储用于数据存储。它称为 *WASB* 或 *Azure 存储服务 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
 设置 HDInsight 群集时，请将 Azure 存储帐户和该帐户上的特定 Blob 存储容器指定为默认文件系统，就像在 HDFS 中一样。除了此存储帐户外，在设置过程中，你还可以从同一 Azure 订阅或不同 Azure 订阅添加其他存储帐户。有关添加其他存储帐户的说明，请参阅[设置 HDInsight 群集][]。为了简化本教程中使用的 PowerShell 脚本，所有文件都存储在默认文件系统容器（位于 */tutorials/usesqoop*）中。默认情况下，此容器与 HDInsight 群集同名。
 WASB 语法是：
@@ -511,9 +511,9 @@ WASB 语法是：
 
 现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
 
--   [将 Oozie 与 HDInsight 配合使用][]：在 Oozie 工作流中使用 Sqoop 操作。
--   [使用 HDInsight 分析航班延误数据][]：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 SQL 数据库。
--   [将数据上载到 HDInsight][]：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
+-   [将 Oozie 与 HDInsight 配合使用][]:在 Oozie 工作流中使用 Sqoop 操作。
+-   [使用 HDInsight 分析航班延误数据][]:使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 SQL 数据库。
+-   [将数据上载到 HDInsight][]:了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
 
   [什么是 Sqoop？]: #whatissqoop
   [先决条件]: #prerequisites

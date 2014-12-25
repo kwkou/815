@@ -4,7 +4,7 @@
 
 本指南指导你开始使用 Microsoft HDInsight Emulator for Azure（以前称作 HDInsight Server 开发者预览版）。HDInsight Emulator 附带来自 Hadoop 生态系统的与 Azure HDInsight 相同的组件。有关详细信息（包括与部署的版本有关的信息），请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？][]。
 
-HDInsight Emulator 提供了针对 Azure HDInsight 的本地开发环境。如果你对 Hadoop 比较熟悉，则可以开始通过 HDFS 使用 HDInsight Emulator。但在 HDInsight 中，默认文件系统是 Azure Blob 存储（WASB，即 Azure 存储空间 - Blob），因此，最终你将需要使用 WASB 开发你的作业。你可以通过使用 Azure 存储模拟器针对 WASB 开始开发 – 可能只需要使用你的少量数据（在 HDInsight Emulator 中无需更改配置，只是存储帐户名称不同）。然后，再次针对 Windows Azure 存储空间在本地测试你的作业 – 还是只使用你的少量数据（要求在 HDInsight Emulator 中进行配置更改）。最后，你准备好将你的作业的计算部分移到 HDInsight 并且针对生产数据运行作业。
+HDInsight Emulator 提供了针对 Azure HDInsight 的本地开发环境。如果你对 Hadoop 比较熟悉，则可以开始通过 HDFS 使用 HDInsight Emulator。但在 HDInsight 中，默认文件系统是 Azure Blob 存储（WASB，即 Azure 存储服务 - Blob），因此，最终你将需要使用 WASB 开发你的作业。你可以通过使用 Azure 存储模拟器针对 WASB 开始开发 – 可能只需要使用你的少量数据（在 HDInsight Emulator 中无需更改配置，只是存储帐户名称不同）。然后，再次针对 Windows Azure 存储服务在本地测试你的作业 – 还是只使用你的少量数据（要求在 HDInsight Emulator 中进行配置更改）。最后，你准备好将你的作业的计算部分移到 HDInsight 并且针对生产数据运行作业。
 
 > [WACOM.NOTE] HDInsight Emulator 只能使用单节点部署。
 

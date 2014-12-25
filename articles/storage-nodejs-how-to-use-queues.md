@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何从 Node.js 使用队列服务 | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何从 Node.js 使用队列服务 | Windows Azure" metaKeywords="Azure Queue Service get messages Node.js" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Node.js." metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 
 # 如何从 Node.js 使用队列服务
 
@@ -38,7 +38,7 @@
 
 ## 配置应用程序以访问存储
 
-若要使用 Azure 存储空间，你需要下载并使用 Node.js azure 包，
+若要使用 Azure 存储服务，你需要下载并使用 Node.js azure 包，
 其中包括一组便于与存储 REST 服务
 进行通信的库。
 
@@ -260,7 +260,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]。
--   访问 [Azure 存储空间团队博客][]。
+-   访问 [Azure 存储服务团队博客][]。
 -   访问 GitHub 上的 [Azure SDK for Node][] 存储库。
 
   [后续步骤]: #next-steps
@@ -286,5 +286,5 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
   [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
   [使用存储构建 Node.js Web 应用程序]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node

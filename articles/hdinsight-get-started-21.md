@@ -41,7 +41,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 ## <a name="provision"></a>设置 HDInsight 群集
 
-HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]。
+HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 存储服务 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]。
 
 设置 HDInsight 群集时，请将 Azure 存储帐户和该帐户上的特定 Blob 存储容器指定为默认文件系统，就像在 HDFS 中一样。该存储帐户必须与 HDInsight 计算资源位于同一数据中心。目前，只能在以下数据中心内设置 HDInsight 群集：
 

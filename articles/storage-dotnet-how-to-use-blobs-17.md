@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service (2.0)" pageTitle="How to use blob storage in .NET | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob .NET, Azure blob C#, Azure blob C#" description="Learn how to use the Azure blob service to upload,,download, list, and delete blob content. Samples are written in C#." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Azure Blob Storage Service in .NET" authors="" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service (2.0)" pageTitle="How to use blob storage in .NET | Windows Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob .NET, Azure blob C#, Azure blob C#" description="Learn how to use the Azure blob service to upload,,download, list, and delete blob content. Samples are written in C#." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Azure Blob Storage Service in .NET" authors="" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 如何在 .NET 中使用 Azure Blob 存储服务
 
@@ -68,7 +68,7 @@ Azure .NET 存储 API 支持
     此时将打开**“存储帐户连接字符串”**对话框。
 
 5.  选择是要定位到存储模拟器（在本地计算机上模拟的 Windows
-    Azure 存储空间），还是要定位到云中的实际存储帐户。
+    Azure 存储服务），还是要定位到云中的实际存储帐户。
     本指南中的代码适用于其中任一方式。
     如果你希望使用我们之前在 Azure 中创建的存储帐户
     来存储 Blob 数据，请输入从本教程前面的步骤中
@@ -97,7 +97,7 @@ Azure .NET 存储 API 支持
 
 ## 以编程方式访问如何：以编程方式访问 Blob 存储
 
-在你希望在其中以编程方式访问 Azure 存储空间的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure;
@@ -272,7 +272,7 @@ Blob 的 **DownloadToFile**、**DownloadByteArray** 或
     -   [.NET 客户端库引用][]
     -   [REST API 参考][]
 
--   在以下位置了解使用 Azure 存储空间能够执行的更高级任务：[在 Azure 中存储和访问数据][]。
+-   在以下位置了解使用 Azure 存储服务能够执行的更高级任务：[在 Azure 中存储和访问数据][]。
 -   查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     -   使用[表存储][]来存储结构化数据。
     -   使用 [SQL Database][] 来存储关系数据。

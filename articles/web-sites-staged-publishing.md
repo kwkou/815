@@ -1,6 +1,6 @@
-<properties linkid="web-sites-staged-publishing" urlDisplayName="How to stage sites on Microsoft Azure" pageTitle="在 Microsoft Azure 网站上过渡部署" metaKeywords="Microsoft Azure Web Sites, Staged Deployment, Site Slots" description="了解如何在 Microsoft Azure 网站上使用过渡发布。" metaCanonical="" services="web-sites" documentationCenter="" title="在 Microsoft Azure 网站上过渡部署" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
+<properties linkid="web-sites-staged-publishing" urlDisplayName="How to stage sites on Windows Azure" pageTitle="在 Windows Azure 网站上过渡部署" metaKeywords="Windows Azure Web Sites, Staged Deployment, Site Slots" description="了解如何在 Windows Azure 网站上使用过渡发布。" metaCanonical="" services="web-sites" documentationCenter="" title="在 Windows Azure 网站上过渡部署" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 
-# 在 Microsoft Azure 网站上过渡部署
+# 在 Windows Azure 网站上过渡部署
 
 ## 目录
 
@@ -17,7 +17,7 @@
 
 ## 概述
 
-为在 Microsoft Azure 网站上运行的“标准”模式站点创建站点槽的选项允许使用过渡部署工作流。为每个默认生产站点（现在是生产槽）创建开发或过渡站点槽，并交换这些槽而无需停机。过渡部署对以下情况很有用：
+为在 Windows Azure 网站上运行的“标准”模式站点创建站点槽的选项允许使用过渡部署工作流。为每个默认生产站点（现在是生产槽）创建开发或过渡站点槽，并交换这些槽而无需停机。过渡部署对以下情况很有用：
 
 -   **在部署前验证** - 向过渡站点槽部署内容或配置后，您可以在将这些更改交换到生产环境之前，对更改进行验证。
 
@@ -25,7 +25,7 @@
 
 -   **回滚生产站点** - 如果交换到生产环境的更改和预期不同，您可以立即将原始内容交换回生产环境。
 
-在交换到生产环境之前，Microsoft Azure 会对源站点槽的所有实例进行预热，并防止部署内容时冷启动。流量重定向是无缝的，且不会因交换操作而删除任何请求。当前，除默认生产槽之外，每个标准网站只支持一个部署槽。
+在交换到生产环境之前，Windows Azure 会对源站点槽的所有实例进行预热，并防止部署内容时冷启动。流量重定向是无缝的，且不会因交换操作而删除任何请求。当前，除默认生产槽之外，每个标准网站只支持一个部署槽。
 
 <a name="Add"></a>
 
@@ -243,7 +243,7 @@ Azure 跨平台命令行接口 (xplat-cli) 提供了用于与 Azure 结合使用
 
 ## 后续步骤
 
-若要开始使用 Azure，请参阅 [Microsoft Azure 免费试用版][Microsoft Azure 免费试用版]。
+若要开始使用 Azure，请参阅 [Windows Azure 免费试用版][Windows Azure 免费试用版]。
 
 <!-- IMAGES -->
 
@@ -264,4 +264,4 @@ Azure 跨平台命令行接口 (xplat-cli) 提供了用于与 Azure 结合使用
   [删除站点槽]: ./media/web-sites-staged-publishing/DeleteStagingSiteButton.png
   [如何安装和配置 Windows Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
   [安装和配置 Azure 跨平台命令行接口]: http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/
-  [Microsoft Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/

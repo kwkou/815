@@ -1,4 +1,4 @@
-<properties linkid="manage-services-storage-net-shared-access-signature-part-1" urlDisplayName="" pageTitle="Shared access signatures: Understanding the SAS Model | Microsoft Azure" metaKeywords="Azure blob, Azure table, Azure queue, shared access signatures" description="Learn about delegating access to blob, queue, and table resources with shared access signatures" metaCanonical="" services="storage" documentationCenter="" title="Part 1: Understanding the SAS Model" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="manage-services-storage-net-shared-access-signature-part-1" urlDisplayName="" pageTitle="Shared access signatures: Understanding the SAS Model | Windows Azure" metaKeywords="Azure blob, Azure table, Azure queue, shared access signatures" description="Learn about delegating access to blob, queue, and table resources with shared access signatures" metaCanonical="" services="storage" documentationCenter="" title="Part 1: Understanding the SAS Model" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
 # 共享访问签名，第 1 部分：了解 SAS 模型
 
@@ -26,7 +26,7 @@ SAS 通常适用于用户需要在你的存储帐户中读取和写入其数据�
 
 ## 共享访问签名的工作方式
 
-共享访问签名是一种 URI，它指向存储资源并且包含一组特殊的查询参数，这些参数指示客户端如何访问资源。签名是其中一个参数，它是由 SAS 参数构造的并且使用帐户密钥进行签名。Azure 存储空间使用该签名对 SAS 进行身份验证。
+共享访问签名是一种 URI，它指向存储资源并且包含一组特殊的查询参数，这些参数指示客户端如何访问资源。签名是其中一个参数，它是由 SAS 参数构造的并且使用帐户密钥进行签名。Azure 存储服务使用该签名对 SAS 进行身份验证。
 
 共享访问签名具有定义它的以下约束，其中每个约束都表示为针对 URI 的参数：
 
@@ -195,11 +195,11 @@ sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
 7.  **了解对任何使用都将向你的帐户收费，包括使用 SAS 所做的工作。**如果向你提供了针对某一 Blob 的写访问权限，用户可以选择上载 200GB Blob。如果你还向用户提供了对 Blob 的读访问权限，他们可能会选择下载 Blob 10 次，对你产生 2TB 的传出费用。此外，提供受限权限，帮助降低恶意用户的潜在威胁。使用短期 SAS 以便减少这一威胁（但要注意结束时间上的时钟偏移）。
 8.  **验证使用 SAS 写入的数据。**在某一客户端应用程序将数据写入你的存储帐户时，请记住对于这些数据可能存在问题。如果你的应用程序要求在数据可供使用前对数据进行验证或授权，你应该在写入数据后、但在你的应用程序使用这些数据前执行此验证。这一实践还有助于防止损坏的数据或恶意数据写入你的帐户，这些数据可能是正常要求 SAS 的用户写入的，也可能是利用泄露的 SAS 的用户写入的。
 9.  **不要总是使用 SAS。**有时候，与针对你的存储帐户的特定操作相关联的风险要超过 SAS 所带来的好处。对于此类操作，应创建一个中间层服务，该服务在执行业务规则验证、身份验证和审核后写入你的存储帐户。此外，有时候以其他方式管理访问会更简单。例如，如果你想要使某一容器中的所有 Blob 都可以公开读取，则可以使该容器成为公共的，而不是为每个客户端都提供 SAS 以便进行访问。
-10. **使用存储分析监视你的应用程序。**你可以使用日志记录和度量来观察由于你的 SAS 提供程序服务中的中断或者由于某一存储访问策略的无意中删除而导致的身份验证失败中的任何峰值情形。有关其他信息，请参阅 [Azure 存储空间团队博客][]。
+10. **使用存储分析监视你的应用程序。**你可以使用日志记录和度量来观察由于你的 SAS 提供程序服务中的中断或者由于某一存储访问策略的无意中删除而导致的身份验证失败中的任何峰值情形。有关其他信息，请参阅 [Azure 存储服务团队博客][]。
 
 ## 结束语
 
-共享访问签名用于将存储帐户的受限权限提供给不应具有帐户密钥的客户端。因此，它们是安全模型的重要环节，适合使用 Azure 存储空间的任何应用程序。如果你按照本文中介绍的最佳实践执行，则可以使用 SAS 更灵活地访问你的存储帐户中的资源，且不会影响应用程序的安全性。
+共享访问签名用于将存储帐户的受限权限提供给不应具有帐户密钥的客户端。因此，它们是安全模型的重要环节，适合使用 Azure 存储服务的任何应用程序。如果你按照本文中介绍的最佳实践执行，则可以使用 SAS 更灵活地访问你的存储帐户中的资源，且不会影响应用程序的安全性。
 
 ## 后续步骤
 
@@ -213,7 +213,7 @@ sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
 
 
   [第 2 部分]: ../storage-dotnet-shared-access-signature-part-2/
-  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-logging-using-logs-to-track-storage-requests.aspx
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/08/03/windows-azure-storage-logging-using-logs-to-track-storage-requests.aspx
   [管理对 Azure 存储资源的访问]: http://msdn.microsoft.com/zh-cn/library/azure/ee393343.aspx
   [使用共享访问签名委托访问 (REST API)]: http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx
   [表和队列 SAS 介绍]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx

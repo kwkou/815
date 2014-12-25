@@ -1,4 +1,4 @@
-<properties linkid="dev-java-how-to-use-table-storage" urlDisplayName="Table Service" pageTitle="How to use table storage (Java) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Learn how to use the table storage service in Azure. Code samples are written in Java code." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-java-how-to-use-table-storage" urlDisplayName="Table Service" pageTitle="How to use table storage (Java) | Windows Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Learn how to use the table storage service in Azure. Code samples are written in Java code." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="" solutions="" manager="" editor="" />
 
 # 如何通过 Java 使用表存储服务
 
@@ -509,7 +509,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 -   查看 MSDN 参考：[在 Windows Azure 中存储和访问
     数据]
--   访问 [Azure 存储空间团队博客][]
+-   访问 [Azure 存储服务团队博客][]
 
   [后续步骤]: #NextSteps
   [什么是表存储]: #what-is
@@ -533,4 +533,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
   [create-storage-account]: ../includes/create-storage-account.md
   [Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
   [博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
-  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

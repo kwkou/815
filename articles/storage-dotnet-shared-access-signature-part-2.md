@@ -1,4 +1,4 @@
-<properties linkid="manage-services-storage-net-shared-access-signature-part-2" urlDisplayName="" pageTitle="Create and use a SAS with the Blob Service | Microsoft Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Explore generating and using shared access signatures with the Blob service" metaCanonical="" services="storage" documentationCenter="" title="Part 2: Create and Use a SAS with the Blob Service" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="manage-services-storage-net-shared-access-signature-part-2" urlDisplayName="" pageTitle="Create and use a SAS with the Blob Service | Windows Azure" metaKeywords="Azure blob, shared access signatures, stored access policy" description="Explore generating and using shared access signatures with the Blob service" metaCanonical="" services="storage" documentationCenter="" title="Part 2: Create and Use a SAS with the Blob Service" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
 # 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务
 
@@ -19,7 +19,7 @@
 
 在 Visual Studio 中，创建一个新的 Windows 控制台应用程序并将其命名为 **GenerateSharedAccessSignatures**。使用以下方法之一添加对 **Microsoft.WindowsAzure.Configuration.dll** 和 **Microsoft.WindowsAzure.Storage.dll** 的引用：
 
--   如果要安装 NuGet 程序包，请首先安装 [NuGet Package Manager Extension for Visual Studio][]。在 Visual Studio 中，选择**“项目”|“管理 NuGet 包”**，在线搜索**“Azure 存储空间”**，然后按照说明进行安装。
+-   如果要安装 NuGet 程序包，请首先安装 [NuGet Package Manager Extension for Visual Studio][]。在 Visual Studio 中，选择**“项目”|“管理 NuGet 包”**，在线搜索**“Azure 存储服务”**，然后按照说明进行安装。
 -   另外，还可以在你安装的 Azure SDK 中找到这些程序集，然后添加对它们的引用。
 
 在 Program.cs 文件的顶部，添加以下 **using** 语句：

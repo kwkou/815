@@ -22,7 +22,7 @@
 -   [创建云服务][创建云服务]
 -   [下载并运行已完成的解决方案][下载并运行已完成的解决方案]
 -   [在 Visual Studio 中查看开发人员存储][在 Visual Studio 中查看开发人员存储]
--   [针对 Azure 存储空间配置应用程序][针对 Azure 存储空间配置应用程序]
+-   [针对 Azure 存储服务配置应用程序][针对 Azure 存储服务配置应用程序]
 -   [将应用程序部署到 Azure][将应用程序部署到 Azure]
 -   [将应用程序从过渡型升级到生产型][将应用程序从过渡型升级到生产型]
 -   [将应用程序配置为使用 SendGrid][将应用程序配置为使用 SendGrid]
@@ -31,7 +31,7 @@
 
 ## 先决条件
 
-本教程演示如何使用下述任何一种产品配置你的计算机来进行 Azure 开发，以及如何将 Microsoft Azure 电子邮件服务应用程序部署到 Microsoft Azure 云服务：
+本教程演示如何使用下述任何一种产品配置你的计算机来进行 Azure 开发，以及如何将 Windows Azure 电子邮件服务应用程序部署到 Windows Azure 云服务：
 
 -   Visual Studio 2012
 -   Visual Studio 2012 Express for Web
@@ -49,7 +49,7 @@
 
 ## <a name="createWASA"></a><span class="short-header">创建存储帐户</span>创建 Azure 存储帐户
 
-在 Visual Studio 中运行示例应用程序时，你可以访问云端 Azure 开发存储或 Azure 存储帐户中的表、队列和 Blob。开发存储使用 SQL Server Express LocalDB 数据库来模拟云中 Azure 存储空间的工作方式。在本教程中，你一开始将使用开发存储，然后学习在 Visual Studio 中运行应用程序时如何配置应用程序以使用云存储帐户。在教程的这一部分，你需要创建一个 Azure 存储帐户，以便配置在教程后面要用到的 Visual Studio。
+在 Visual Studio 中运行示例应用程序时，你可以访问云端 Azure 开发存储或 Azure 存储帐户中的表、队列和 Blob。开发存储使用 SQL Server Express LocalDB 数据库来模拟云中 Azure 存储服务的工作方式。在本教程中，你一开始将使用开发存储，然后学习在 Visual Studio 中运行应用程序时如何配置应用程序以使用云存储帐户。在教程的这一部分，你需要创建一个 Azure 存储帐户，以便配置在教程后面要用到的 Visual Studio。
 
 1.  在浏览器中，打开 [Azure 管理门户][Azure 管理门户]。
 
@@ -109,7 +109,7 @@
 
     ![添加 ASE 帐户][1]
 
-也可以使用其他适用于 Azure 存储空间的工具。有关详细信息，请参阅 [Microsoft Azure 存储资源管理器 (2014)][Microsoft Azure 存储资源管理器 (2014)]。
+也可以使用其他适用于 Azure 存储服务的工具。有关详细信息，请参阅 [Windows Azure 存储资源管理器 (2014)][Windows Azure 存储资源管理器 (2014)]。
 
 ## <a name="createcloudsvc"></a><span class="short-header">创建云服务</span>创建云服务
 
@@ -145,7 +145,7 @@
 
 2.  使用提升的权限启动 Visual Studio。
 
-    允许 Visual Studio 在本地运行 Microsoft Azure 项目的计算模拟器需要提升的权限。
+    允许 Visual Studio 在本地运行 Windows Azure 项目的计算模拟器需要提升的权限。
 
     > [WACOM.NOTE] 使用 SDK 2.3 和更高版本时，默认的 Azure 计算模拟器不需要提升的权限，但此项目仍配置为使用原始计算模拟器，因此它仍然需要提升的权限。
 
@@ -198,17 +198,17 @@
 ![邮件创建页][邮件创建页]
  ![邮件索引页][邮件索引页]
 
-你已输入并查看的数据将存储在 Azure 开发存储中。开发存储使用 SQL Server Express LocalDB 数据库来模拟云中 Azure 存储空间的工作方式。应用程序使用开发存储是因为，那是你在下载项目时项目根据配置可以使用的东西。该设置存储在 **AzureEmailService** 项目的 *.cscfg* 文件中。*ServiceConfiguration.Local.cscfg* 文件用于确定当你在 Visual Studio 中本地运行应用程序时应使用什么，而 *ServiceConfiguration.Cloud.cscfg* 文件则用于确定当你将应用程序部署到云中时应使用什么。稍后你将了解如何配置应用程序，以便使用以前创建的 Azure 存储帐户。
+你已输入并查看的数据将存储在 Azure 开发存储中。开发存储使用 SQL Server Express LocalDB 数据库来模拟云中 Azure 存储服务的工作方式。应用程序使用开发存储是因为，那是你在下载项目时项目根据配置可以使用的东西。该设置存储在 **AzureEmailService** 项目的 *.cscfg* 文件中。*ServiceConfiguration.Local.cscfg* 文件用于确定当你在 Visual Studio 中本地运行应用程序时应使用什么，而 *ServiceConfiguration.Cloud.cscfg* 文件则用于确定当你将应用程序部署到云中时应使用什么。稍后你将了解如何配置应用程序，以便使用以前创建的 Azure 存储帐户。
 
 ## <a name="StorageExpVS"></a><span class="short-header">开发人员存储</span>在 Visual Studio 中查看开发人员存储
 
-**服务器资源管理器**中的 **Azure 存储空间**浏览器提供针对 Azure 存储资源的很方便的只读视图。
+**服务器资源管理器**中的 **Azure 存储服务**浏览器提供针对 Azure 存储资源的很方便的只读视图。
 
 1.  从 Visual Studio 中的“视图”菜单中，选择**“服务器资源管理器”**。
 
-2.  展开**“Azure 存储空间”**节点下面的**“(开发)”**节点。
+2.  展开**“Azure 存储服务”**节点下面的**“(开发)”**节点。
 
-    > [WACOM.NOTE] 在当前的 SDK 中，展开**“Microsoft Azure”**/**“存储”**/**“(开发)”**。
+    > [WACOM.NOTE] 在当前的 SDK 中，展开**“Windows Azure”**/**“存储”**/**“(开发)”**。
 
 3.  展开**“表”**以查看你在前面的步骤中创建的表。
 
@@ -328,11 +328,11 @@
 
 ### 使用服务器资源管理器来查看输入到你的存储帐户中的数据
 
-1.  在**“服务器资源管理器”**（或**“数据库资源管理器”**）中，右键单击**“Azure 存储空间”**，然后单击**“添加新的存储帐户”**。
+1.  在**“服务器资源管理器”**（或**“数据库资源管理器”**）中，右键单击**“Azure 存储服务”**，然后单击**“添加新的存储帐户”**。
 
 2.  按照你之前用过的同一过程，设置你的存储帐户凭据。
 
-3.  展开**“Azure 存储空间”**下的新节点，查看在你的 Azure 存储帐户中存储的数据。
+3.  展开**“Azure 存储服务”**下的新节点，查看在你的 Azure 存储帐户中存储的数据。
 
     ![ASE][6]
 
@@ -424,7 +424,7 @@
 
     ![云程序包][云程序包]
 
-3.  如果你此前使用了自动方法来导入存储帐户凭据，你的 Azure 订阅将位于下拉列表中，你可以选择它，然后单击“下一步”。否则，请单击“登录以下载凭据”，然后按照[针对 Azure 存储空间配置应用程序][针对 Azure 存储空间配置应用程序]中的说明下载并导入你的发布设置。
+3.  如果你此前使用了自动方法来导入存储帐户凭据，你的 Azure 订阅将位于下拉列表中，你可以选择它，然后单击“下一步”。否则，请单击“登录以下载凭据”，然后按照[针对 Azure 存储服务配置应用程序][针对 Azure 存储服务配置应用程序]中的说明下载并导入你的发布设置。
 
 4.  在**“通用设置”**选项卡中，验证**“云服务”**下拉列表中的设置。
 
@@ -518,7 +518,7 @@
 
     在该代码中，`DiagnosticMonitor` 配置为存储多达 500 MB 的跟踪信息（超过 500 MB 以后，将覆盖最旧的数据）和所有跟踪消息 (LogLevel.Verbose)。`ScheduledTransferPeriod` 每分钟都会将跟踪数据传输到存储中。必须设置 `ScheduledTransferPeriod` 才能保存跟踪数据。
 
-    每个辅助角色和 Web 角色中的 `ConfigureDiagnostics` 方法用于配置跟踪侦听器，以便在你调用跟踪 API 时记录数据。有关详细信息，请参阅[在 Microsoft Azure 云应用程序中使用跟踪][在 Microsoft Azure 云应用程序中使用跟踪]
+    每个辅助角色和 Web 角色中的 `ConfigureDiagnostics` 方法用于配置跟踪侦听器，以便在你调用跟踪 API 时记录数据。有关详细信息，请参阅[在 Windows Azure 云应用程序中使用跟踪][在 Windows Azure 云应用程序中使用跟踪]
 
 2.  在**服务器资源管理器**中，针对你此前添加的存储帐户双击 **WADLogsTable**（展开“**存储**/**yourstorageaccountname**/**表**”）。你可以输入 [WCF 数据服务筛选器][WCF 数据服务筛选器]以限制显示的实体。在下图中，仅显示警告和错误消息。
 
@@ -576,7 +576,7 @@
   [创建云服务]: #createcloudsvc
   [下载并运行已完成的解决方案]: #downloadcnfg
   [在 Visual Studio 中查看开发人员存储]: #StorageExpVS
-  [针对 Azure 存储空间配置应用程序]: #conf4azureStorage
+  [针对 Azure 存储服务配置应用程序]: #conf4azureStorage
   [将应用程序部署到 Azure]: #deployAz
   [将应用程序从过渡型升级到生产型]: #swap
   [将应用程序配置为使用 SendGrid]: #sendGrid
@@ -594,7 +594,7 @@
   [Azure 存储资源管理器]: http://azurestorageexplorer.codeplex.com/
   [添加 ASE 帐户]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase-add.png
   [1]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-ase-add2.png
-  [Microsoft Azure 存储资源管理器 (2014)]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx
+  [Windows Azure 存储资源管理器 (2014)]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx
   [快速云]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-new-cloud.png
   [如何在 Azure 中创建地缘组]: http://msdn.microsoft.com/zh-cn/library/jj156209.aspx
   [2]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-cloud.png
@@ -635,7 +635,7 @@
   [12]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png
   [13]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c6.png
   [14]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c7.png
-  [在 Microsoft Azure 云应用程序中使用跟踪]: http://blogs.msdn.com/b/windowsazure/archive/2012/10/24/using-trace-in-windows-azure-cloud-applications-1.aspx "在 Microsoft Azure 中使用跟踪"
+  [在 Windows Azure 云应用程序中使用跟踪]: http://blogs.msdn.com/b/windowsazure/archive/2012/10/24/using-trace-in-windows-azure-cloud-applications-1.aspx "在 Windows Azure 中使用跟踪"
   [WCF 数据服务筛选器]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683669.aspx "WCF 筛选器"
   [15]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png
   [虚拟机大小]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee814754.aspx "VM 大小"

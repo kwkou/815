@@ -82,7 +82,7 @@
 
         python distribute_setup.py
 
-3.  通过运行以下命令来安装 [Tornado][Tornado] 和 [PyZMQ][PyZMQ]：
+3.  通过运行以下命令来安装 [Tornado][Tornado] 和 [PyZMQ][PyZMQ]:
 
         easy_install tornado
         easy_install pyzmq

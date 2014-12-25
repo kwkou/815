@@ -1,4 +1,4 @@
-<properties linkid="dev-ruby-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Ruby) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<properties linkid="dev-ruby-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Ruby) | Windows Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
 
 # 如何通过 Ruby 使用 Blob 服务
 
@@ -35,7 +35,7 @@
 
 ## 配置应用程序以访问存储
 
-若要使用 Azure 存储空间，你需要下载并使用 Ruby azure 包，其中包括一组便于与存储 REST 服务进行通信的库。
+若要使用 Azure 存储服务，你需要下载并使用 Ruby azure 包，其中包括一组便于与存储 REST 服务进行通信的库。
 
 ### 使用 RubyGems 获取该程序包
 
@@ -142,7 +142,7 @@ azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解如何执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   访问 [Azure 存储空间团队博客][]
+-   访问 [Azure 存储服务团队博客][]
 -   访问 GitHub 上的 [Azure SDK for Ruby][] 存储库
 
   [后续步骤]: #next-steps
@@ -163,5 +163,5 @@ azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
   [在 Azure 上创建 Ruby 应用程序]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby

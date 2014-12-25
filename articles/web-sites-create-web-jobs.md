@@ -1,8 +1,8 @@
-<properties linkid="web-sites-create-web-jobs" urlDisplayName="Use WebJobs to run background tasks in Microsoft Azure Web Sites" pageTitle="使用 WebJobs 在 Microsoft Azure 网站中运行后台任务" metaKeywords="Microsoft Azure Web Sites, Web Jobs, background tasks" description="了解如何在 Microsoft Azure 网站中运行后台任务。" metaCanonical="" services="web-sites" documentationCenter="" title="使用 WebJobs 在 Microsoft Azure 网站中运行后台任务" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
+<properties linkid="web-sites-create-web-jobs" urlDisplayName="Use WebJobs to run background tasks in Windows Azure Web Sites" pageTitle="使用 WebJobs 在 Windows Azure 网站中运行后台任务" metaKeywords="Windows Azure Web Sites, Web Jobs, background tasks" description="了解如何在 Windows Azure 网站中运行后台任务。" metaCanonical="" services="web-sites" documentationCenter="" title="使用 WebJobs 在 Windows Azure 网站中运行后台任务" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 
-# 使用 WebJobs 在 Microsoft Azure 网站中运行后台任务
+# 使用 WebJobs 在 Windows Azure 网站中运行后台任务
 
-Microsoft Azure 网站允许您使用以下三种方式之一在网站中运行程序或脚本：按需运行、连续运行或按计划运行。除非您想要启用本文后面介绍的 Always On 功能，否则使用 Microsoft Azure WebJobs 无需额外付费。
+Windows Azure 网站允许您使用以下三种方式之一在网站中运行程序或脚本：按需运行、连续运行或按计划运行。除非您想要启用本文后面介绍的 Always On 功能，否则使用 Windows Azure WebJobs 无需额外付费。
 
 ## 目录
 
@@ -16,7 +16,7 @@ Microsoft Azure 网站允许您使用以下三种方式之一在网站中运行�
 -   [说明][说明]
 -   [后续步骤][后续步骤]
 
-    -   [使用 Microsoft Azure WebJobs SDK 提高效率][使用 Microsoft Azure WebJobs SDK 提高效率]
+    -   [使用 Windows Azure WebJobs SDK 提高效率][使用 Windows Azure WebJobs SDK 提高效率]
     -   [部署的替代方法][部署的替代方法]
     -   [其他资源][其他资源]
 
@@ -70,7 +70,7 @@ Microsoft Azure 网站允许您使用以下三种方式之一在网站中运行�
 
 2.  若要启动或停止连续运行的任务，请在列表中选择任务，然后在命令栏中单击“启动”或“停止”。
 
-> [WACOM.NOTE] 如果您的网站在多个实例上运行，则连续运行的任务将在所有实例上运行。按需运行任务和计划任务在 Microsoft Azure 针对负载平衡所选择的单个实例上运行。
+> [WACOM.NOTE] 如果您的网站在多个实例上运行，则连续运行的任务将在所有实例上运行。按需运行任务和计划任务在 Windows Azure 针对负载平衡所选择的单个实例上运行。
 
 > [WACOM.NOTE]
 > 对于连续运行任务，建议您在“配置”页上为网站启用“Always On”。Always On 功能（在基本和标准模式下可用）可防止网站被卸载，即使网站已空闲一段时间也是如此。如果您的网站始终处于加载状态，则连续运行的任务可能会更可靠地运行。
@@ -187,13 +187,13 @@ Microsoft Azure 网站允许您使用以下三种方式之一在网站中运行�
 
 <a name="WebJobsSDK"></a>
 
-### 使用 Microsoft Azure WebJobs SDK 提高效率
+### 使用 Windows Azure WebJobs SDK 提高效率
 
-Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure 网站中的任务。SDK 集成了 Microsoft Azure 存储空间，当项目添加到队列、Blob 或表中时，将触发程序中的函数。仪表板（现已集成到 Azure 门户中）为使用 SDK 编写的程序提供了丰富的监视和诊断功能。监视和诊断功能已内置到 SDK 中并且不需要您在程序中添加任何特殊代码。
+Windows Azure WebJobs SDK 简化了将后台处理添加到 Windows Azure 网站中的任务。SDK 集成了 Windows Azure 存储服务，当项目添加到队列、Blob 或表中时，将触发程序中的函数。仪表板（现已集成到 Azure 门户中）为使用 SDK 编写的程序提供了丰富的监视和诊断功能。监视和诊断功能已内置到 SDK 中并且不需要您在程序中添加任何特殊代码。
 
-有关详细信息，请参阅教程 [Microsoft Azure WebJobs SDK 入门][Microsoft Azure WebJobs SDK 入门]。本教程提供 WebJobs SDK 的功能概述，并指导您完成创建和运行简单的 Hello World 后台进程。
+有关详细信息，请参阅教程 [Windows Azure WebJobs SDK 入门][Windows Azure WebJobs SDK 入门]。本教程提供 WebJobs SDK 的功能概述，并指导您完成创建和运行简单的 Hello World 后台进程。
 
-若要查看使用 Microsoft Azure WebJobs SDK 创建的示例命令行应用的演练，请参阅 [Windows Azure WebJobs 简介][Windows Azure WebJobs 简介]。
+若要查看使用 Windows Azure WebJobs SDK 创建的示例命令行应用的演练，请参阅 [Windows Azure WebJobs 简介][Windows Azure WebJobs 简介]。
 
 <a name="AlternateDeployments"></a>
 
@@ -217,7 +217,7 @@ Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure �
 
 ### 入门
 
-若要开始使用 Azure，请参阅 [Microsoft Azure 免费试用版][Microsoft Azure 免费试用版]。
+若要开始使用 Azure，请参阅 [Windows Azure 免费试用版][Windows Azure 免费试用版]。
 
 <!-- LINKS --> <!-- IMAGES -->
 
@@ -229,7 +229,7 @@ Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure �
   [查看作业历史记录]: #ViewJobHistory
   [说明]: #WHPNotes
   [后续步骤]: #NextSteps
-  [使用 Microsoft Azure WebJobs SDK 提高效率]: #WebJobsSDK
+  [使用 Windows Azure WebJobs SDK 提高效率]: #WebJobsSDK
   [部署的替代方法]: #AlternateDeployments
   [其他资源]: #AdditionalResources
   [按需运行任务]: ./media/web-sites-create-web-jobs/01aOnDemandWebJob.png
@@ -255,7 +255,7 @@ Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure �
   [下载日志输出]: ./media/web-sites-create-web-jobs/17DownloadLogOutput.png
   [链接到 Web 作业列表]: ./media/web-sites-create-web-jobs/18WebJobsLinkToDashboardList.png
   [历史记录仪表板中的作业列表]: ./media/web-sites-create-web-jobs/19WebJobsListInJobsDashboard.png
-  [Microsoft Azure WebJobs SDK 入门]: http://asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs
+  [Windows Azure WebJobs SDK 入门]: http://asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs
   [Windows Azure WebJobs 简介]: http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx
   [如何部署 Windows Azure WebJobs]: http://blog.amitapple.com/post/74215124623/deploy-azure-webjobs
   [使用 WebJobs 通过 Git 将 .NET 控制台应用部署到 Azure 中]: http://blog.amitapple.com/post/73574681678/git-deploy-console-app
@@ -263,4 +263,4 @@ Microsoft Azure WebJobs SDK 简化了将后台处理添加到 Microsoft Azure �
   [Azure WebJobs 101 – Jamie Espinosa 介绍基本 WebJobs]: http://www.windowsazure.cn/zh-cn/documentation/videos/azure-webjobs-basics/
   [Azure WebJobs 102 – Jamie Espinosa 介绍计划 WebJobs 和 WebJobs 仪表板]: http://www.windowsazure.cn/zh-cn/documentation/videos/azure-webjobs-schedule-and-dashboard/
   [Azure Scheduler 101 – Kevin Lam 介绍如何安排计划]: http://www.windowsazure.cn/zh-cn/documentation/videos/azure-scheduler-how-to/
-  [Microsoft Azure 免费试用版]: http://azure.microsoft.cn/zh-cn/pricing/free-trial/
+  [Windows Azure 免费试用版]: http://azure.microsoft.cn/zh-cn/pricing/free-trial/

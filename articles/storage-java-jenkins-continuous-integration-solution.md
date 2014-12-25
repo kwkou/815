@@ -1,6 +1,6 @@
-<properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Microsoft Azure" metaKeywords="" description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="Using Azure Storage with a Jenkins Continuous Integration Solution | Windows Azure" metaKeywords="" description="This tutorial show how to use the Azure blob service as a repository for build artifacts created by a Jenkins continuous integration solution." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-# 将 Azure 存储空间用于 Jenkins 持续集成解决方案
+# 将 Azure 存储服务用于 Jenkins 持续集成解决方案
 
 *作者：[Microsoft Open Technologies Inc.][]*
 
@@ -67,7 +67,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1.  在 Jenkins 仪表板中，单击**“管理 Jenkins”**。
 2.  在**“管理 Jenkins”**页中，单击**“管理插件”**。
 3.  单击**“可用”**选项卡。
-4.  在**“项目上载程序”**部分中，选中**“Microsoft Azure 存储插件”**。
+4.  在**“项目上载程序”**部分中，选中**“Windows Azure 存储插件”**。
 5.  单击**“安装而不重新启动”**或**“立即下载并在重新启动后安装”**。
 6.  重新启动 Jenkins。
 
@@ -75,7 +75,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 1.  在 Jenkins 仪表板中，单击**“管理 Jenkins”**。
 2.  在**“管理 Jenkins”**页中，单击**“配置系统”**。
-3.  在**“Microsoft Azure 存储帐户配置”**部分中：
+3.  在**“Windows Azure 存储帐户配置”**部分中：
 
     1.  输入你的存储帐户名称，可以从 Azure 门户 <https://manage.windowsazure.cn> 获取该帐户名称。
     2.  输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。
@@ -119,7 +119,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
     2.  单击**“存储”**。
     3.  单击你用于 Jenkins 的存储帐户名称。
     4.  单击**“容器”**。
-    5.  单击名为**“myjob”**的容器，该名称是你创建 Jenkins 作业时分配的作业名称的小写形式。在 Azure 存储空间中，容器名称和 Blob 名称都是小写的（并且区分大小写）。在名为 **myjob** 的容器的 Blob 列表中，你应该能看到 **hello.txt** 和 **date.txt**。复制这两项中任一项的 URL 并在浏览器中打开。你将看到已作为生成项目上载的文本文件。
+    5.  单击名为**“myjob”**的容器，该名称是你创建 Jenkins 作业时分配的作业名称的小写形式。在 Azure 存储服务中，容器名称和 Blob 名称都是小写的（并且区分大小写）。在名为 **myjob** 的容器的 Blob 列表中，你应该能看到 **hello.txt** 和 **date.txt**。复制这两项中任一项的 URL 并在浏览器中打开。你将看到已作为生成项目上载的文本文件。
 
 每个作业只能创建一个用来将项目上载到 Azure Blob 存储的生成后操作。请注意，用来将项目上载到 Azure Blob 存储的单个生成后操作可以在**“要上载的项目列表”**中使用分号作为分隔符指定不同的文件（包括通配符）和文件路径。例如，如果你的 Jenkins 生成在你的工作空间的**“build”**文件夹中生成了 JAR 文件和 TXT 文件，并且你希望将这两者都上载到 Azure Blob 存储，请使用以下项作为**“要上载的项目列表”**值：**build/\*.jar;build/\*.txt**。你还可以使用双冒号语法指定要在 Blob 名称内使用的路径。例如，如果你希望在 Blob 路径中使用 **binaries** 以上载 JAR 并在 Blob 路径中使用 **notices** 以上载 TXT 文件，请使用以下项作为**“要上载的项目列表”**值：**build/\*.<jar::binaries;build/>\*.txt::notices**。
 
@@ -141,9 +141,9 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
 以下信息概述了 Blob 服务组件。
 
--   **存储帐户**：对 Azure 存储空间进行的所有访问都要通过存储帐户完成。存储帐户是访问 blob 的最高级别的命名空间。一个帐户可以包含无限个容器，只要这些容器的总大小不超过 100 TB 即可。
+-   **存储帐户**：对 Azure 存储服务进行的所有访问都要通过存储帐户完成。存储帐户是访问 blob 的最高级别的命名空间。一个帐户可以包含无限个容器，只要这些容器的总大小不超过 100 TB 即可。
 -   **容器**： 一个容器包含一组 Blob 集。所有 blob 必须位于相应的容器中。一个帐户可以包含无限个容器。一个容器可以存储无限个 Blob。
--   **Blob**：任何类型和大小的文件。Azure 存储空间中可存储两种类型的 Blob：块 Blob 和页 Blob。大部分文件都是块 blob。一个块 Blob 的大小可以达到 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的详细信息，请参阅[了解块 Blob 和页 Blob][]。
+-   **Blob**：任何类型和大小的文件。Azure 存储服务中可存储两种类型的 Blob：块 Blob 和页 Blob。大部分文件都是块 blob。一个块 Blob 的大小可以达到 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的详细信息，请参阅[了解块 Blob 和页 Blob][]。
 -   **URL 格式**：使用以下 URL 格式可访问 Blob：
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`

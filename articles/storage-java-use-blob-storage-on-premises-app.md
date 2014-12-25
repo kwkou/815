@@ -1,8 +1,8 @@
-<properties linkid="dev-java-how-to-on-premise-application-with-blob-storage" urlDisplayName="Image Gallery w/ Storage" pageTitle="On-premises application with blob storage (Java) | Microsoft Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="Learn how to create a console application that uploads an image to Azure, and then displays the image in your browser. Code samples in Java." metaCanonical="" services="storage" documentationCenter="Java" title="On-Premises Application with Blob Storage" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="dev-java-how-to-on-premise-application-with-blob-storage" urlDisplayName="Image Gallery w/ Storage" pageTitle="On-premises application with blob storage (Java) | Windows Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="Learn how to create a console application that uploads an image to Azure, and then displays the image in your browser. Code samples in Java." metaCanonical="" services="storage" documentationCenter="Java" title="On-Premises Application with Blob Storage" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 # 使用 Blob 存储的本地应用程序
 
-以下示例将演示如何使用 Azure 存储空间在 Azure 中存储图像。
+以下示例将演示如何使用 Azure 存储服务在 Azure 中存储图像。
 以下代码是一个控制台应用程序的代码，
 该应用程序将一个图像上载到 Azure，然后创建用于
 在浏览器中显示该图像的 HTML 文件。
@@ -117,7 +117,7 @@
     containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
     container.uploadPermissions(containerPermissions);
 
-获取对块 Blob 的引用，它将表示 Azure 存储空间中的 Blob。
+获取对块 Blob 的引用，它将表示 Azure 存储服务中的 Blob。
 
     blob = container.getBlockBlobReference("image1.jpg");
 
@@ -128,7 +128,7 @@
 
 通过调用 **CloudBlockBlob.upload** 方法上载该本地文件。
 **CloudBlockBlob.upload** 方法的第一个参数是一个
-**FileInputStream** 对象，它表示将上载到 Azure 存储空间
+**FileInputStream** 对象，它表示将上载到 Azure 存储服务
 的本地文件。第二个参数是该文件的大小
 （以字节为单位）。
 
@@ -346,7 +346,7 @@
         }
     }
 
-除了将本地图像文件上载到 Azure 存储空间之外，此示例代码
+除了将本地图像文件上载到 Azure 存储服务之外，此示例代码
 还将创建本地文件 namedindex.html，你可在浏览器中
 打开该文件以查看上载的图像。
 

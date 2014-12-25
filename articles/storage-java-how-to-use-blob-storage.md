@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Java) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Java." metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Java) | Windows Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Java." metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
 
 # 如何通过 Java 使用 Blob 存储
 
@@ -252,7 +252,7 @@ Internet 上的所有人都能查看公共容器中的 Blob，但公共访问权
 
 -   查看 MSDN 参考：[在 Windows Azure 中存储和访问
     数据]
--   访问 Azure 存储空间团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
+-   访问 Azure 存储服务团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
 
   [Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
   [后续步骤]: #NextSteps

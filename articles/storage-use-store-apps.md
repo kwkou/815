@@ -1,13 +1,13 @@
 <properties linkid="manage-services-storage-using-storage-with-windows-store-apps" urlDisplayName="Azure Storage in Windows Store apps" pageTitle="Use Azure storage in Windows Store Apps | Azure" metaKeywords="" description="Learn how to use Azure blobs, queues, and tables to store data for a Windows Store app." metaCanonical="" services="storage" documentationCenter="" title="How to use Azure Storage in Windows Store Apps" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-# 如何在 Windows 应用商店应用程序中使用 Azure 存储空间
+# 如何在 Windows 应用商店应用程序中使用 Azure 存储服务
 
-本指南演示了如何开始开发使用 Azure 存储空间的 Windows 应用商店应用程序。
+本指南演示了如何开始开发使用 Azure 存储服务的 Windows 应用商店应用程序。
 
 ## 下载所需工具
 
 -   [Visual Studio 2012][] 便于生成、调试、本地化、包装和部署 Windows 应用商店应用程序。
--   [Windows Azure Storage Client Library for Windows Runtime][] 包含用于与 Azure 存储空间进行通信的各种类型，它打包在 Windows 运行时组件中。
+-   [Windows Azure Storage Client Library for Windows Runtime][] 包含用于与 Azure 存储服务进行通信的各种类型，它打包在 Windows 运行时组件中。
 -   [WCF Data Services Tools for Windows Store Apps][] 利用 Visual Studio 2012 中对 Windows 应用商店应用程序的客户端 OData 支持，扩展了“添加服务引用”体验。
 
 ## 开发应用程序

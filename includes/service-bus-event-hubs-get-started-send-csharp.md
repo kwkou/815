@@ -9,7 +9,7 @@
 
 	此时将显示"管理 NuGet 包"对话框。
 
-3. 搜索"Microsoft Azure Service Bus"，单击**"安装"**，并接受使用条款。 
+3. 搜索"Windows Azure Service Bus"，单击**"安装"**，并接受使用条款。 
 
 	![][8]
 

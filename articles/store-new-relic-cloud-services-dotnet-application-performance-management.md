@@ -159,14 +159,14 @@ New Relic 可与 Azure Web 角色和辅助角色无缝集成。
 
 有关更多信息，请查看以下其他资源：
 
--   [在 Azure 上安装 .NET 代理（可能为英文页面）][在 Azure 上安装 .NET 代理（可能为英文页面）]：New Relic .NET 代理安装过程
--   [New Relic 用户界面][New Relic 用户界面]：
+-   [在 Azure 上安装 .NET 代理（可能为英文页面）][在 Azure 上安装 .NET 代理（可能为英文页面）]:New Relic .NET 代理安装过程
+-   [New Relic 用户界面][New Relic 用户界面]:
     大致介绍 New Relic UI、设置用户权限和配置文件、使用标准功能和仪表板向下钻取详细信息
--   [应用程序概览（可能为英文页面）][应用程序概览（可能为英文页面）]：使用 New Relic 的“Applications Overview”仪表板时的特性和功能
--   [Apdex][Apdex]：大致介绍 Apdex 如何衡量最终用户对你的应用程序的满意度
--   [实际用户监视（可能为英文页面）][实际用户监视（可能为英文页面）]：大致介绍 RUM 如何详细记录你的用户的浏览器加载你的
+-   [应用程序概览（可能为英文页面）][应用程序概览（可能为英文页面）]:使用 New Relic 的“Applications Overview”仪表板时的特性和功能
+-   [Apdex][Apdex]:大致介绍 Apdex 如何衡量最终用户对你的应用程序的满意度
+-   [实际用户监视（可能为英文页面）][实际用户监视（可能为英文页面）]:大致介绍 RUM 如何详细记录你的用户的浏览器加载你的
     网页所需的时间、这些用户所在的位置以及他们使用的浏览器
--   [寻求帮助（可能为英文页面）][寻求帮助（可能为英文页面）]：通过 New Relic 的联机帮助中心提供的资源
+-   [寻求帮助（可能为英文页面）][寻求帮助（可能为英文页面）]:通过 New Relic 的联机帮助中心提供的资源
 
   [使用 New Relic]: #using-new-relic
   [Azure 应用商店中的 New Relic 页]: http://www.windowsazure.com/zh-cn/gallery/store/new-relic/new-relic/

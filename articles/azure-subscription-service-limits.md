@@ -1,8 +1,8 @@
-<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Microsoft Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL Database, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL Database, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 # Azure 订阅和服务限制、配额和约束
 
-下面的文档中指定一些最常见的 Microsoft Azure 限制。请注意本文档中当前不包括所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
+下面的文档中指定一些最常见的 Windows Azure 限制。请注意本文档中当前不包括所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
 
 -   [订阅限制][订阅限制]
 -   [Web 工作进程限制][Web 工作进程限制]
@@ -239,7 +239,7 @@
 </tbody>
 </table>
 
-<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标][Azure 存储空间可伸缩性和性能目标]。
+<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储服务可伸缩性和性能目标][Azure 存储服务可伸缩性和性能目标]。
 
 <sup>2</sup>对于页面 blob，只是使用中的页面会产生容量使用情况。例如，虚拟机具有 127 GB VHD 但操作系统只使用 30 GB，则仅为 VHD 中已使用的 30 GB 部分计费，而非整个 127 GB。
 
@@ -259,7 +259,7 @@
 
 [虚拟机和 Azure 的云服务大小][虚拟机和 Azure 的云服务大小]
 
-[Azure 存储空间可伸缩性和性能目标][Azure 存储空间可伸缩性和性能目标]
+[Azure 存储服务可伸缩性和性能目标][Azure 存储服务可伸缩性和性能目标]
 
 [Azure SQL Database 服务层（版本）][Azure SQL Database 服务层（版本）]
 
@@ -275,7 +275,7 @@
   [SQL 数据库限制]: #sqldblimits
   [客户支持]: http://www.windowsazure.cn/support/faq/
   [虚拟网络网关]: http://msdn.microsoft.com/zh-cn/library/azure/jj156210.aspx
-  [Azure 存储空间可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx
+  [Azure 存储服务可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx
   [Azure SQL Database 服务层（版本）]: http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx
   [Azure SQL Database 服务层和性能级别]: http://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx
   [SQL Database 资源限制]: http://msdn.microsoft.com/zh-cn/library/azure/dn338081.aspx

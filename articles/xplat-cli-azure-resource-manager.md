@@ -1,14 +1,14 @@
-<properties linkid="script-xplat-intro" urlDisplayName="Microsoft Azure Cross-Platform Command-Line Interface" pageTitle="结合使用 Microsoft Azure 跨平台命令行接口和 Resource Manager" title="结合使用 Microsoft Azure 跨平台命令行接口和 Resource Manager" metaKeywords="windows azure cross-platform command-line interface Resource Manager, windows azure command-line resource manager, azure command-line resource manager, azure cli resource manager" description="结合使用 Microsoft Azure 跨平台命令行接口和 Resource Manager" metaCanonical="http://www.windowsazure.com/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="Haifeng Liu" />
+<properties linkid="script-xplat-intro" urlDisplayName="Windows Azure Cross-Platform Command-Line Interface" pageTitle="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" title="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" metaKeywords="windows azure cross-platform command-line interface Resource Manager, windows azure command-line resource manager, azure command-line resource manager, azure cli resource manager" description="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" metaCanonical="http://www.windowsazure.com/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="Haifeng Liu" />
 
 # 结合使用 Azure 跨平台命令行接口和 Resource Manager
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/powershell-azure-resource-manager.md" title="Windows PowerShell">Windows PowerShell</a><a href="/zh-cn/documentation/articles/xplat-cli-azure-resource-manager.md" title="跨平台 CLI" class="current">跨平台 CLI</a></div>
 
-我们最近发布了 Resource Manager 的预览版，这是一个管理 Microsoft Azure 的新方法。您将从本文了解到如何结合使用 Azure 跨平台命令行接口 (xplat-cli) 和 Resource Manager。
+我们最近发布了 Resource Manager 的预览版，这是一个管理 Windows Azure 的新方法。您将从本文了解到如何结合使用 Azure 跨平台命令行接口 (xplat-cli) 和 Resource Manager。
 
 > [WACOM.NOTE] Resource Manager 当前为预览版，不能提供与 Azure 服务管理相同级别的管理功能。
 
-> [WACOM.NOTE] 如果您尚未安装和配置 xplat-cli，有关如何安装、配置和使用 xplat-cli 的详细步骤，请参阅[安装和配置 Microsoft Azure 跨平台命令行接口][安装和配置 Microsoft Azure 跨平台命令行接口]。
+> [WACOM.NOTE] 如果您尚未安装和配置 xplat-cli，有关如何安装、配置和使用 xplat-cli 的详细步骤，请参阅[安装和配置 Windows Azure 跨平台命令行接口][安装和配置 Windows Azure 跨平台命令行接口]。
 
 ## Resource Manager
 
@@ -24,9 +24,9 @@
 
 ## 身份验证
 
-当前通过 xplat-cli 使用 Resource Manager 需要您使用组织帐户对 Microsoft Azure 进行身份验证。无法使用 Microsoft 帐户或通过发布设置文件安装的证书进行身份验证。
+当前通过 xplat-cli 使用 Resource Manager 需要您使用组织帐户对 Windows Azure 进行身份验证。无法使用 Microsoft 帐户或通过发布设置文件安装的证书进行身份验证。
 
-有关使用组织帐户进行身份验证的详细信息，请参阅[安装和配置 Microsoft Azure 跨平台命令行接口][安装和配置 Microsoft Azure 跨平台命令行接口]。
+有关使用组织帐户进行身份验证的详细信息，请参阅[安装和配置 Windows Azure 跨平台命令行接口][安装和配置 Windows Azure 跨平台命令行接口]。
 
 ## 使用组和模板
 
@@ -157,8 +157,8 @@
 
 ## 后续步骤
 
--   有关使用 Azure 跨平台命令行接口的详细信息，请参阅[安装和配置 Microsoft Azure 跨平台命令行接口][安装和配置 Microsoft Azure 跨平台命令行接口]。
+-   有关使用 Azure 跨平台命令行接口的详细信息，请参阅[安装和配置 Windows Azure 跨平台命令行接口][安装和配置 Windows Azure 跨平台命令行接口]。
 -   有关通过 Windows Azure PowerShell 使用 Resource Manager 的信息，请参阅[结合使用 Windows PowerShell 和 Resource Manager 入门][结合使用 Windows PowerShell 和 Resource Manager 入门]。
 
-  [安装和配置 Microsoft Azure 跨平台命令行接口]: /zh-cn/documentation/articles/xplat-cli/
+  [安装和配置 Windows Azure 跨平台命令行接口]: /zh-cn/documentation/articles/xplat-cli/
   [结合使用 Windows PowerShell 和 Resource Manager 入门]: /zh-cn/documentation/articles/azure-preview-portal-using-resource-groups/

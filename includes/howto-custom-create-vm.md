@@ -55,13 +55,13 @@
 	![成功创建自定义虚拟机](./media/howto-custom-create-vm/VMSuccessWindows.png)
 
 
-[将虚拟机添加到虚拟网络]：/zh-cn/manage/services/networking/add-a-vm-to-a-virtual-network/
+[将虚拟机添加到虚拟网络]:/zh-cn/manage/services/networking/add-a-vm-to-a-virtual-network/
 
-[关于虚拟网络的地缘组]：http://msdn.microsoft.com/zh-cn/library/windowsazure/
+[关于虚拟网络的地缘组]:http://msdn.microsoft.com/zh-cn/library/windowsazure/
 
-[新建虚拟机]：./media/howto-custom-create-vm/Create.png
+[新建虚拟机]:./media/howto-custom-create-vm/Create.png
 
-[新建自定义虚拟机]：./media/howto-custom-create-vm/CreateNew.png
+[新建自定义虚拟机]:./media/howto-custom-create-vm/CreateNew.png
 
 
 

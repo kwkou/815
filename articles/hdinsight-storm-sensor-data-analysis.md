@@ -1,4 +1,4 @@
-<properties title="Analyzing sensor data with Storm and HDInsight" pageTitle="使用 Apache Storm 和 Microsoft Azure HDInsight (Hadoop) 分析传感器数据" description="Learn how to use  Apache Storm to process sensor data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
+<properties title="Analyzing sensor data with Storm and HDInsight" pageTitle="使用 Apache Storm 和 Windows Azure HDInsight (Hadoop) 分析传感器数据" description="Learn how to use  Apache Storm to process sensor data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/30/2014" ms.author="larryfr" />
 
@@ -12,7 +12,7 @@
 
 * Azure 订阅
 
-* [Microsoft Azure SDK for .NET](http://www.windowsazure.cn/downloads/?sdk=net) 的 Visual Studio
+* [Windows Azure SDK for .NET](http://www.windowsazure.cn/downloads/?sdk=net) 的 Visual Studio
 
 * [Java 和 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
@@ -395,7 +395,7 @@ Event Hub 用于从传感器中接收消息（事件）。 按照下列步骤创
 
 3.  在**管理 NuGet 包**中，搜索并安装下列程序包。
 
-	* **Microsoft Azure Service Bus**
+	* **Windows Azure Service Bus**
 	* **JSON.Net**
 
 	当程序包安装完成后，**关闭**程序包管理器。

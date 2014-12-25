@@ -2,7 +2,7 @@
 
 # HDInsight 交互式 JavaScript 和 Hive 控制台
 
-Microsoft Azure HDInsight 服务附带了适用于 JavaScript 和 Hive 的交互式控制台。这些控制台提供了简单的交互式读取-计算-打印循环 (REPL) 体验，用户可在其中输入表达式，计算这些表达式，然后立即查询并显示 MapReduce 作业的结果。JavaScript 控制台执行 Pig Latin 语句。 Hive 控制台将计算 Hive 查询语言 (Hive QL) 语句。这两种类型的语句已编译为 MapReduce 程序。与远程连接到 Hadoop 群集的头节点并直接处理 MapReduce 程序相比，在这些控制台上管理 Hadoop 作业要简单得多。
+Windows Azure HDInsight 服务附带了适用于 JavaScript 和 Hive 的交互式控制台。这些控制台提供了简单的交互式读取-计算-打印循环 (REPL) 体验，用户可在其中输入表达式，计算这些表达式，然后立即查询并显示 MapReduce 作业的结果。JavaScript 控制台执行 Pig Latin 语句。 Hive 控制台将计算 Hive 查询语言 (Hive QL) 语句。这两种类型的语句已编译为 MapReduce 程序。与远程连接到 Hadoop 群集的头节点并直接处理 MapReduce 程序相比，在这些控制台上管理 Hadoop 作业要简单得多。
 
 **JavaScript 控制台**：一个提供 Hadoop 生态系统的流畅接口的命令外壳。流畅接口使用链接指令的方法，此方法将序列中某个调用的上下文中继到该序列中的后续调用。JavaScript 控制台提供：
 

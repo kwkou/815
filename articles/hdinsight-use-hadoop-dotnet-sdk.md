@@ -39,7 +39,7 @@ Hadoop .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 Hadoop �
 
 ## 为教程做准备
 
-继续操作之前，你必须先有 [Azure 订阅][]和 [Azure 存储帐户][]。你还必须知道你的 Azure 存储帐户名称和帐户密钥。有关如何获取此信息的说明，请参阅[如何管理存储空间帐户][]中的*如何：查看、复制和重新生成存储访问密钥*一节。
+继续操作之前，你必须先有 [Azure 订阅][]和 [Azure 存储帐户][]。你还必须知道你的 Azure 存储帐户名称和帐户密钥。有关如何获取此信息的说明，请参阅[如何管理存储服务帐户][]中的*如何：查看、复制和重新生成存储访问密钥*一节。
 
 你还必须下载本教程中使用的 Actors.txt 文件。执行以下步骤将此文件下载到你的开发环境中：
 
@@ -188,7 +188,7 @@ LOAD DATA INPATH 操作是一个移动操作，它将 Actors.txt 数据移入由
   [NuGet]: http://nuget.codeplex.com/wikipage?title=Getting%20Started
   [Azure 订阅]: /pricing/1rmb-trial/
   [Azure 存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
-  [如何管理存储空间帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
+  [如何管理存储服务帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
   [Actors.txt]: http://www.microsoft.com/en-us/download/details.aspx?id=37003
   [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [HDI.HadoopSDKOutput]: ./media/hdinsight-use-hadoop-dotnet-sdk/HDI.HadoopSDKOutput.PNG "控制台应用程序"

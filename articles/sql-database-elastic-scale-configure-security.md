@@ -4,7 +4,7 @@
 
 # 灵活扩展安全配置
 
-Microsoft Azure SQL Database 灵活扩展包括自托管服务。此分发包括服务配置文件，该文件包含必须配置的安全相关设置。
+Windows Azure SQL Database 灵活扩展包括自托管服务。此分发包括服务配置文件，该文件包含必须配置的安全相关设置。
 
 1.  [配置证书][配置证书]
 2.  [允许的 IP 地址][允许的 IP 地址]
@@ -224,7 +224,7 @@ Microsoft Azure SQL Database 灵活扩展包括自托管服务。此分发包括
 
 ## <a name="turn-off-client-cert"></a>禁用基于客户端证书的身份验证
 
-仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Microsoft Azure 虚拟网络）。
+仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Windows Azure 虚拟网络）。
 
 在服务配置文件中，将这些设置更改为 false 以关闭该功能：
 
@@ -445,7 +445,7 @@ Microsoft Azure SQL Database 灵活扩展包括自托管服务。此分发包括
 
 <h1 id="other-security-considerations"><a name="other-security"></a>其他安全注意事项</h1> 
 
-<p>使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保留在其内部表中，该表位于您在 Microsoft Azure 订阅中为元数据存储提供的 Microsoft Azure SQL Database 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分：</p> 
+<p>使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保留在其内部表中，该表位于您在 Windows Azure 订阅中为元数据存储提供的 Windows Azure SQL Database 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分：</p> 
 	<Setting name="ElasticScaleMetadata" value="Server=…" />
 
 <p>不会对存储在此数据库中的数据进行加密。若要避免从服务请求中公开凭据或其他敏感信息，请保护此数据库并总是以安全方式访问它。此外，由于服务部署的 Web 角色和辅助角色都可以访问元数据库，因此请同样确保这两个角色是最新且安全的。</p>

@@ -79,8 +79,8 @@
 <p>您的网站应用程序可通过连接字符串名称来获取连接字符串。在 .NET 应用程序中，连接字符串在 <b>connectionStrings</b> 对象中提供。在其他编程语言中，连接字符串作为环境变量提供。有关更多信息，请参见<a href="/zh-cn/manage/services/web-sites/how-to-configure-websites/">如何配置网站</a>。</p>
 </div>
 
-[ClearDB]：http://www.cleardb.com/
-[waws]：/zh-cn/manage/services/web-sites/
-[Windows Azure 应用商店]：/zh-cn/store/overview/
-[portal]：http://manage.windowsazure.com
+[ClearDB]:http://www.cleardb.com/
+[waws]:/zh-cn/manage/services/web-sites/
+[Windows Azure 应用商店]:/zh-cn/store/overview/
+[portal]:http://manage.windowsazure.com
 

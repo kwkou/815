@@ -220,7 +220,7 @@ Azure 云服务应用程序大约每月重新启动两次，以便进行操作�
 
 Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscribequeue` 队列和 `azuremailblobcontainer` Blob 容器。你可以使用 Azure 存储资源管理器之类的工具手动创建这些项目，但创建完以后，每次通过新的存储帐户使用该应用程序时，你仍然必须手动执行这些操作。在本部分中，你要添加的代码会在应用程序启动时运行，会查看所需表、队列和 Blob 容器是否存在，并且会在这些项目不存在时创建它们。
 
-你可以将此一次性启动代码添加到 *WebRole.cs* 文件的 `OnStart` 方法中，或者添加到 *Global.asax* 文件中。就本教程来说，你需要初始化 *Global.asax* 文件中的 Azure 存储空间，因为该空间兼容 Azure 网站和 Azure 云服务 Web 角色。
+你可以将此一次性启动代码添加到 *WebRole.cs* 文件的 `OnStart` 方法中，或者添加到 *Global.asax* 文件中。就本教程来说，你需要初始化 *Global.asax* 文件中的 Azure 存储服务，因为该空间兼容 Azure 网站和 Azure 云服务 Web 角色。
 
 1.  在**解决方案资源管理器**中，展开 *Global.asax*，然后打开 *Global.asax.cs*。
 
@@ -1554,11 +1554,11 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 5.  双击所添加的订户行。
 
-    ![Azure 存储空间资源管理器][Azure 存储空间资源管理器]
+    ![Azure 存储服务资源管理器][Azure 存储服务资源管理器]
 
 6.  在**“编辑实体”**对话框中，选择并复制 `SubscriberGUID` 值。
 
-    ![Azure 存储空间资源管理器][4]
+    ![Azure 存储服务资源管理器][4]
 
 7.  切换回你的浏览器窗口。在浏览器的地址栏中，将 URL 中的“Subscriber”更改为“unsubscribe?ID=[guidvalue]&listName=[listname]”，其中 [guidvalue] 是你从 Azure 存储资源管理器中复制的 GUID，[listname] 是邮件列表的名称。例如：
 
@@ -1580,7 +1580,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 -   当你创建解决方案时，请先创建 **ASP.NET MVC 4 Web 应用程序**项目，然后向解决方案添加带辅助角色的 **Azure 云服务**项目。
 
--   将 Azure 存储空间连接字符串存储在 Web.config 文件而非云服务设置文件中。（这仅适用于 Azure 网站。如果你尝试使用 Web.config 文件来保存 Azure 云服务 Web 角色中的存储空间连接字符串，你会收到一个 HTTP 500 错误。）
+-   将 Azure 存储服务连接字符串存储在 Web.config 文件而非云服务设置文件中。（这仅适用于 Azure 网站。如果你尝试使用 Web.config 文件来保存 Azure 云服务 Web 角色中的存储服务连接字符串，你会收到一个 HTTP 500 错误。）
 
 将一个新的名为 `StorageConnectionString` 的连接字符串添加到 *Web.config* 文件中，如以下示例所示：
 
@@ -1673,7 +1673,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
   [包含行的订户索引页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-subscribers-index-page.png
   [空邮件索引页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-message-empty-index-page.png
   [3]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-message-index-page.png
-  [Azure 存储空间资源管理器]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-ase-unsubscribe.png
+  [Azure 存储服务资源管理器]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-ase-unsubscribe.png
   [4]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-ase-edit-entity-unsubscribe.png
   [取消订阅页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-unsubscribe-query-page.png
   [取消订阅已确认页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-unsubscribe-confirmation-page.png

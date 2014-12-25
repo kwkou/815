@@ -1,4 +1,4 @@
-<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="如何从 Python 使用表存储服务 | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="如何从 Python 使用表存储服务 | Windows Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
 
 # 如何从 Python 使用表存储服务
 
@@ -36,7 +36,7 @@
 
 可通过 **TableService** 对象使用表服务。以下代码
 将创建 **TableService** 对象。在你希望在其中以
-编程方式访问 Azure 存储空间的任何 Python 文件中，将以下代码添加到文件的顶部附近：
+编程方式访问 Azure 存储服务的任何 Python 文件中，将以下代码添加到文件的顶部附近：
 
     from azure.storage import *
 
@@ -158,7 +158,7 @@
 执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   [访问 Azure 存储空间团队博客][]
+-   [访问 Azure 存储服务团队博客][]
 
   [后续步骤]: #next-steps
   [什么是表服务？]: #what-is
@@ -177,4 +177,4 @@
   [create-storage-account]: ../includes/create-storage-account.md
   [Python 安装指南]: /zh-cn/documentation/articles/python-how-to-install/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [访问 Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [访问 Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

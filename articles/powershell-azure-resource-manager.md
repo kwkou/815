@@ -6,7 +6,7 @@
 
 资源管理器引入了一种考虑您的 Azure 资源的全新方法。您首先设想一项复杂的服务，而不是创建和管理各个资源，如博客、照片库、SharePoint 门户或 wiki。您使用模板（服务的资源模型）来创建具有您支持服务所需要的资源的资源组。然后，可以将该资源组作为一个逻辑单元进行管理和部署。
 
-在本教程中，您将了解如何将 Windows PowerShell 与 Microsoft Azure 资源管理器一起使用。本教程将指导您逐步完成通过 SQL Database 创建和部署 Azure 托管网站（或 Web 应用程序）的资源组的过程，其中充分使用了支持该过程所需的所有资源。
+在本教程中，您将了解如何将 Windows PowerShell 与 Windows Azure 资源管理器一起使用。本教程将指导您逐步完成通过 SQL Database 创建和部署 Azure 托管网站（或 Web 应用程序）的资源组的过程，其中充分使用了支持该过程所需的所有资源。
 
 **估计完成时间：**15 分钟
 
@@ -463,12 +463,12 @@ AzureResourceManager 模块包括帮助您防止错误的 cmdlet。
 
 若要了解有关将 Windows PowerShell 与资源管理器一起使用的详细信息：
 
--   [Azure 资源管理器 Cmdlet][1]：了解如何在 AzureResourceManager 模块中使用这些 cmdlet。
--   [使用资源组管理 Azure 资源][使用资源组管理 Azure 资源]：了解如何创建和管理 Azure 管理门户中的资源组。
--   [将 Azure 跨平台命令行界面与资源管理器一起使用][将 Azure 跨平台命令行界面与资源管理器一起使用]：了解如何使用在许多操作系统平台上工作的命令行工具来创建和管理资源组。
--   [Azure 博客][Azure 博客]：了解 Azure 中的新功能。
--   [Windows PowerShell 博客][Windows PowerShell 博客]：了解 Windows PowerShell 中的新功能。
--   [“您好，脚本编写专家！”博客][“您好，脚本编写专家！”博客]：从 Windows PowerShell 社区获取实用提示和技巧。
+-   [Azure 资源管理器 Cmdlet][1]:了解如何在 AzureResourceManager 模块中使用这些 cmdlet。
+-   [使用资源组管理 Azure 资源][使用资源组管理 Azure 资源]:了解如何创建和管理 Azure 管理门户中的资源组。
+-   [将 Azure 跨平台命令行界面与资源管理器一起使用][将 Azure 跨平台命令行界面与资源管理器一起使用]:了解如何使用在许多操作系统平台上工作的命令行工具来创建和管理资源组。
+-   [Azure 博客][Azure 博客]:了解 Azure 中的新功能。
+-   [Windows PowerShell 博客][Windows PowerShell 博客]:了解 Windows PowerShell 中的新功能。
+-   [“您好，脚本编写专家！”博客][“您好，脚本编写专家！”博客]:从 Windows PowerShell 社区获取实用提示和技巧。
 
   [Windows Management Framework 3.0]: http://www.microsoft.com/zh-cn/download/details.aspx?id=34595
   [Windows Management Framework 4.0]: http://www.microsoft.com/zh-cn/download/details.aspx?id=40855

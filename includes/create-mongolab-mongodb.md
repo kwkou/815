@@ -29,8 +29,8 @@
 
 	![MongoLab 连接信息](./media/create-mongolab-mongodb/mongolab-conn-info.png)
 
-[MongoLab]：https://mongolab.com/home
-[waws]：/zh-cn/manage/services/web-sites/
-[Windows Azure 应用商店]：/zh-cn/store/overview/
-[portal]：http://windows.azure.com/
+[MongoLab]:https://mongolab.com/home
+[waws]:/zh-cn/manage/services/web-sites/
+[Windows Azure 应用商店]:/zh-cn/store/overview/
+[portal]:http://windows.azure.com/
 

@@ -117,7 +117,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 
     -   **AssetCreationOptions.None**：不加密。如果你想要创建不加密的资产，则必须设置此选项。
     -   **AssetCreationOptions.CommonEncryptionProtected**：适用于通用加密保护 (CENC) 文件，例如，已进行 PlayReady 加密的一组文件。
-    -   **AssetCreationOptions.StorageEncrypted**：存储加密。将明文输入文件上载到 Azure 存储空间之前对其进行加密。
+    -   **AssetCreationOptions.StorageEncrypted**：存储加密。将明文输入文件上载到 Azure 存储服务之前对其进行加密。
 
         **说明**
 
@@ -641,7 +641,7 @@ File download path:C:\supportFiles\outputfiles\interview2_metadata.xml
 
 **说明**
 
-在 Media Services 对象模型中，资产是代表一个或多个文件的 Media Services 内容集合对象。定位器路径提供 Azure Blob URL，该 URL 是此资产在 Azure 存储空间中的基路径。若要访问资产中的特定文件，请在定位器基路径中添加一个文件名。
+在 Media Services 对象模型中，资产是代表一个或多个文件的 Media Services 内容集合对象。定位器路径提供 Azure Blob URL，该 URL 是此资产在 Azure 存储服务中的基路径。若要访问资产中的特定文件，请在定位器基路径中添加一个文件名。
 
 后续步骤
 --------

@@ -25,7 +25,7 @@ Twilio 为将来的商业沟通提供强大支持，并使开发人员能够将�
 
 ## <span id="Pricing"></span></a>Twilio 定价和特别优惠
 
-Azure 客户可享受 [特别优惠][<http://www.twilio.com/azure>]：升级 Twilio 帐户即可免费获得 10 美元的 Twilio 信用。此 Twilio 信用可应用于任何 Twilio 使用（10 美元信用等价于发送多达 1,000 条 SMS 消息或接收长达 1000 分钟的入站语音，具体取决电话号码和消息或呼叫目标的位置）。兑换此 Twilio 信用并从以下网址开始：[][]<http://ahoy.twilio.com/azure></a>。
+Azure 客户可享受 [特别优惠][<http://www.twilio.com/azure>]:升级 Twilio 帐户即可免费获得 10 美元的 Twilio 信用。此 Twilio 信用可应用于任何 Twilio 使用（10 美元信用等价于发送多达 1,000 条 SMS 消息或接收长达 1000 分钟的入站语音，具体取决电话号码和消息或呼叫目标的位置）。兑换此 Twilio 信用并从以下网址开始：[][]<http://ahoy.twilio.com/azure></a>。
 
 Twilio 是一种现用现付服务。没有设置费用，并且你可以随时关闭你的帐户。你可以在 [Twilio 定价][1]上找到更多详细信息。
 

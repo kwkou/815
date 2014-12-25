@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Microsoft Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use the Windows Azure blob service to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use the Windows Azure Blob Storage Service in .NET" authors="tamram" />
+<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Windows Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use the Windows Azure blob service to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use the Windows Azure Blob Storage Service in .NET" authors="tamram" />
 
 # 如何通过 .NET 使用 Blob 存储
 
@@ -66,7 +66,7 @@ Azure .NET 存储客户端库支持使用存储连接字符
     此时将打开**“存储帐户连接字符串”**对话框。
 
 5.  选择是要定位到存储模拟器（在本地计算机上模拟的 Windows
-    Azure 存储空间），还是要定位到云中的存储帐户。
+    Azure 存储服务），还是要定位到云中的存储帐户。
     本指南中的代码适用于其中任一方式。
     如果你希望使用我们之前在 Azure 中创建的存储帐户
     来存储 Blob 数据，请输入从本教程前面的步骤中
@@ -102,7 +102,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 
 ### 命名空间声明
 
-在你希望在其中以编程方式访问 Azure 存储空间的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
 将以下命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure.Storage;
@@ -370,7 +370,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     -   [.NET 存储客户端库参考][]
     -   [REST API 参考][]
 
--   在以下位置了解使用 Azure 存储空间能够执行的更高级任务：[在 Azure 中存储和访问数据][]。
+-   在以下位置了解使用 Azure 存储服务能够执行的更高级任务：[在 Azure 中存储和访问数据][]。
 -   查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     -   使用[表存储][]来存储结构化数据。
     -   使用 [SQL Database][] 来存储关系数据。
