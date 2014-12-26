@@ -1,138 +1,120 @@
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="使用 Azure CDN" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons" description="Learn how to use the Azure Content Delivery Network (CDN) to deliver high-bandwidth content by caching blobs and static content." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+
 # 使用 Azure CDN
 
-Azure 内容交付网络 (CDN) 为开发人员提供了一个全球解决方案，通过在美国、欧洲、亚洲、澳洲和南美洲的物理节点缓存 Blob 和计算实例的静态内容来交付高带宽内容。若要查看 CDN 节点位置的当前列表，请参阅 [Azure CDN 节点位置][Azure CDN 节点位置]。
+
+
+Microsoft Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容和动态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
 此任务包括下列步骤：
 
--   [步骤 1：创建存储帐户][步骤 1：创建存储帐户]
--   [步骤 2：为存储帐户创建新的 CDN 终结点][步骤 2：为存储帐户创建新的 CDN 终结点]
--   [步骤 3：访问你的 CDN 内容][步骤 3：访问你的 CDN 内容]
--   [步骤 4：删除你的 CDN 内容][步骤 4：删除你的 CDN 内容]
++ [步骤 1:创建存储帐户，云服务或者网站]
++ [步骤 2:创建新的 CDN 终结点]
++ [步骤 3:访问 CDN 内容]
++ [步骤 4:删除 CDN 中的内容]
++ [步骤 5:使用高级管理功能]
 
-使用 CDN 来缓存 Azure 数据的优点包括：
+使用 CDN 缓存 Microsft Azure 数据的优点包括：
 
--   为远离内容源的最终用户提供更好的性能和用户体验，在使用的应用程序中需要很多“互联网往返”来加载内容
--   大规模分布，更好地处理瞬间的高负载，例如在产品发布活动开始时
+- 远离内容源并使用需要进行多次“互联网旅行”才能加载内容的应用程序的最终用户可获得更好的性能和用户体验
+- 大型分布式规模可更好地处理瞬时高负载（例如在像产品发布这样的活动开始时）
 
-现有 CDN 客户当前可在 [Azure 管理门户][Azure 管理门户]中使用 Azure CDN。CDN 是你的订阅的一项附加功能，具有单独的[计费计划][计费计划]。
+现有 Microsoft Azure 中国客户现在可使用[Microsoft Azure 管理门户](https://manage.windowsazure.cn/)中的 Microsoft Azure CDN。 
 
-<span id="Step1"></span> </a>
+## 步骤 1:创建存储帐户，云服务或者网站
+您可以为现有的Microsoft Azure订阅中的存储账户，云服务或者网站创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者网站用于 Microsft Azure 订阅。
 
-## 步骤 1：创建存储帐户
+### 为 Microsoft Azure 订阅创建存储帐户
+请参阅 [如何创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account/)
 
-</p>
-使用以下过程为 Azure 订阅创建新存储帐户。存储帐户提供对 Azure 存储服务的访问权限。存储帐户代表最高级别的命名空间，用于访问每个 Azure 存储服务组件：Blob 服务、队列服务和表服务。有关 Azure 存储服务的详细信息，请参阅[使用 Azure 存储服务]。
+### 为 Microsft Azure 订阅创建云服务
+请参阅 [如何创建和部署云服务](/zh-cn/documentation/articles/cloud-services-how-to-create-deploy/) 
 
-若要创建存储帐户，你必须是服务管理员或相关订阅的协同管理员。
+### 为 Microsoft Azure 订阅创建网站
+请参阅 [如何创建和部署网站](/zh-cn/documentation/articles/web-sites-create-deploy/) 
 
-<div class="dev-callout">
-<strong>说明</strong>
-<p>有关使用
-Azure 服务管理 API 执行此操作的信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx">创建存储帐户</a>参考主题。</p>
-</div>
+## 步骤 2:创建新的 CDN 终结点
+一旦启用对存储帐户，云服务或者网站的 CDN 访问，所有公开可用的对象将有资格获得 CDN 边缘高速缓存。如果您修改一个当前在 CDN 中缓存的对象，则只有 CDN 在缓存内容生存时间到期时刷新了对象的内容后（或通过高级管理功能进行手动刷新），才能通过 CDN 访问新内容。
 
-**为 Azure 订阅创建存储帐户**
+### 创建新的 CDN 终结点
+1. 在 [Microsoft Azure 管理门户](https://manage.windowsazure.cn/)的导航窗格中，单击“CDN”。
+2. 在功能区上，单击“新建”。在“新建”对话框上，依次选择“应用服务”、“CDN”和“快速创建”。
 
-1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  在左下角单击“新建”，然后单击“存储”。
-3.  单击“快速创建”。
+    ![CDN quick create][1]
+3. 在“订阅”下拉列表中选择所要使用的Azure 订阅（如果有多个订阅的话）。
+4. 在“原始域类型”下拉列表中，选择云服务，存储账户或者网站。
+5. 在“原始域”下拉列表中，从可用的云服务，存储帐户或者网站列表中选择一个用于创建CDN终结点。
+6. 在“自定义域”中输入要使用的自定义域名如：cdn.yourcompany.com
+7. 在“ICP编号”中输入和上一步中所输入的自定义域名相对应的**ICP备案号**（如：京ICP备XXXXXXXX号-X）。
+8. 单击“创建”按钮以创建新的终结点。
+9. 终结点创建后将出现在订阅的终结点的列表中。列表视图显示了用于访问缓存内容的自定义域以及原始域。
 
-    此时将显示“创建存储帐户”对话框。
+原始域是 CDN 所缓存内容的原始位置。自定义域是用于访问CDN缓存内容的URL。
+> **注意** 为终结点创建的配置将不能立即可用：
 
-    ![创建存储帐户][1]
+> 1. 首先需要审核所提供的自定义域名和ICP编号是否匹配、有效。这个过程需要最多一个工作日的时间来完成。
+2. 如果ICP审核没有通过，您需要删除之前创建的这个CDN终结点，然后使用正确的自定义域名和ICP编号重新创建。
+3. 如果ICP审核通过，CDN服务最多需要 60 分钟时间进行注册以便通过 CDN 网络传播。与此同时，您还需要按照界面上的提示信息配置CNAME映射信息，这样才可以最终通过自定义域名访问CDN缓存内容。**建议您在修改CNAME映射之前，先通过步骤5中所提供的“服务检查”功能，确定CDN服务已经生效，之后再进行CNAME配置，以免发生服务中断。**
 
-4.  在“URL”字段中，键入子域名称。输入的名称可包含 3-24 个小写字母和数字。
+## 步骤 3:访问 CDN 内容
+若要访问 CDN 上的缓存内容，请使用您在步骤2中所提供的自定义域名来访问CDN缓存内容。缓存 Blob 的地址将类似下面这样（以步骤2中的例子为例）：
 
-    此值将成为用于对订阅的 Blob、队列或表资源进行寻址的 URI 中的主机名。若要对 Blob 服务中的容器资源进行寻址，你可以使用以下格式的 URI，其中 *\<StorageAccountLabel\>* 指你在“输入 URL”中键入的值：
+`http://cdn.yourcompany.com/<myPublicContainer>/<BlobName>`
 
-    <http://>*\<StorageAcountLabel\>*.blob.core.chinacloudapi.cn/*\<mycontainer\>*
+## 步骤 4:删除 CDN 中的内容
+如果您不再想在 Microsoft Azure 内容交付网络 (CDN) 中缓存对象，则可执行下列步骤之一：
 
-    **重要说明：**该 URL 标签构成了存储帐户 URI 的子域，在Azure 中的所有托管服务中必须是唯一的。
+- 对于 Microsoft Azure Blob，可从公共容器中删除该 Blob。
+- 生成专用容器代替公用容器。有关更多信息，请参见[限制对容器和 Blob 的访问](http://msdn.microsoft.com/zh-cn/library/dd179354.aspx)。
+- 您可使用管理门户禁用或删除 CDN 终结点。
+- 您可将云服务修改为不再响应此对象的请求。
 
-    此值还在门户中用作此存储帐户的名称，或在通过编程方式访问此帐户时使用。
+已在 CDN 中缓存的对象将保持缓存状态，直到该对象的生存时间到期为止。当生存时间到期时，CDN 将查看 CDN 终结点是否仍有效，且是否仍可对该对象进行匿名访问。如果不能访问，则不再对该对象进行缓存。
 
-5.  从“区域/地缘组”下拉列表中，选择存储帐户的地理位置。也可以使用地缘组。有关创建地缘组的说明，请参阅[如何在 Azure 中创建地缘组][如何在 Azure 中创建地缘组]。
-6.  从“订阅”下拉列表中，选择将与存储帐户结合使用的订阅。
-7.  单击**“创建存储帐户”**。创建存储帐户的过程可能需要几分钟时间完成。
-8.  若要确认存储帐户已成功创建，请确认帐户显示在“存储”的所列项目中，而且其状态为“联机”。
+## 步骤 5:使用高级管理功能
+当您创建好CDN终结点之后，除了可以在管理门户中查看基本的配置信息和对CDN终结点做“禁用/启用”和“删除”等基本操作外，您还可以通过点击“管理”按钮，从而跳转到另外的管理页面进行高级管理功能：
 
-<span id="Step2"></span> </a>
+![Manage Button][2]
+> **注意：您将被引导至另外的管理页面，它不属于管理门户的一部分。（请注意允许浏览器打开新的窗口）**
 
-## 步骤 2：为存储帐户创建新的 CDN 终结点
+![Adv Portal][3]
 
-</p>
-启用对存储帐户或托管服务的 CDN 访问之后，所有公用对象都可以使用 CDN 边缘缓存。如果你修改了当前缓存在 CDN 中的对象，则新内容将无法通过 CDN 获取，直至 CDN 在缓存内容生存时间过期时刷新其内容。
+这个高级管理界面提供了“服务配置”、“统计报表”、“缓存刷新”以及“服务检查”四大类功能。具体的使用和配置方式，可以点击进入相应的功能模块，然后查看对应的帮助文件。
 
-**为存储帐户创建新的 CDN 终结点**
+下面着重介绍一下“服务检查”这个功能，您可以在切换CNAME映射之前使用这个功能来检验一下CDN服务是否生效。在确定CDN服务生效后，再进行CNAME映射切换，这样可以避免出现服务中断的情况。
 
-1.  在 [Azure 管理门户][Azure 管理门户]的导航窗格中单击“CDN”。
+下图所示是一个实际的“服务检查”例子：
 
-2.  在功能区上，单击“新建”。在“新建”对话框中，选择“应用程序服务”，然后选择“CDN”，再选择“快速创建”。
+![service check][4]
 
-3.  在“原始域”下拉列表中，从可用存储帐户列表中选择你在上一部分中创建的存储帐户。
+首先在输入框中输入一个用于服务检查的测试URL（使用用于创建该CDN终结点的自定义域名），如：`http://cdn.yourcompany.com/images/logo.png`。您需要先确定在使用源站地址的情况下，这个URL可被访问。
 
-4.  单击“创建”按钮创建新的终结点。
+### 接下来详细解释一下各检测值所表达的含义：
 
-5.  创建终结点之后，它将显示在订阅的终结点列表中。该列表视图显示用于访问缓存内容的 URL 以及原始域。
+1. 源站检查情况：到源站服务器请求这个URL，看返回结果是否是200。如果返回非200，则认为源站异常。如果直接检查域名，而有的网站域名本身是不可访问的，会返回302、400等结果，那么可以忽略该项。
+2. 是否CNAME：如果没有到域名托管商那里修改DNS解析，那么这里是“否”。
+3. 是否被CDN缓存：该项主要是检查所测试的URL是否能被CDN缓存（比如：响应header里有cookie、no-cache等字段，那么是不能缓存的）。该项不会影响CNAME后，网站的正常访问。 
+4. 源站与CDN一致性：到各个CDN节点请求该URL，然后将返回结果与去源站请求返回的结果做对比，看是否一致。如果不一致，则说明有CDN节点有问题，或者没有拿到任务。此时，如果CNAME，当解析到那个有问题的节点时，就会无法访问。**所以建议您只有当这个测试值显示“一致”之后，再进行CNAME解析切换，以防产生服务中断。**
 
-    原始域是 CDN 从其缓存内容的位置。原始域可以是存储帐户或云服务；在本例中，我们使用存储帐户。根据你指定的缓存控制设置或缓存网络的默认启发，存储内容被缓存到边缘服务器。有关详细信息，请参阅[如何管理 Blob 内容到期][如何管理 Blob 内容到期]。
+### 一致性检查 主要检查三项：
+1. Status是否一致：到CDN节点请求和到源站请求返回的状态码是否一致；
+2. ContentLength：到CDN节点请求和到源站请求得到的内容大小是否一致；
+3. LastModified：到CDN节点请求和到源站请求返回的内容最近更改时间是否一致；
 
-    <div class="dev-callout">
-<strong>说明</strong>
-<p>为终结点创建的配置不会
-即时可用；注册需要最多 60 分钟时间
-通过 CDN 网络传播。试图立即
-使用 CDN 域名的用户，将会收到状态代码 400
-（&ldquo;错误的请求&rdquo;），直到内容可通过 CDN 获取。</p>
-</div>
+如果1 在ICP审核通过60分钟后“不一致”个数仍大于零， 则说明CDN节点或者源站有问题。这是您需要及时联系客服。
 
-<span id="Step3"></span> </a>
+如果2、3不一致，说明源站内容有更新了，CDN节点上缓存还没有更新。此时可以等待原缓存内容的生存时间到期后自动更新，或者手动提交缓存刷新请求即可。
 
-## 步骤 3：访问 CDN 内容
 
-</p>
-若要访问 CDN 上的缓存内容，请使用门户中提供的 CDN URL。缓存 Blob 的地址将如下所示：
+[步骤 1:创建存储帐户，云服务或者网站]: #步骤-1创建存储帐户云服务或者网站
+[步骤 2:创建新的 CDN 终结点]: #步骤-2创建新的-cdn-终结点
+[步骤 3:访问 CDN 内容]: #步骤-3访问-cdn-内容
+[步骤 4:删除 CDN 中的内容]: #步骤-4删除-cdn-中的内容
+[步骤 5:使用高级管理功能]: #步骤-5使用高级管理功能
 
-<http://>\<*CDNNamespace*\>.vo.msecnd.net/\<*myPublicContainer*\>/\<*BlobName*\>
 
-<span id="Step4"></span> </a>
-
-## 步骤 4：从 CDN 删除内容
-
-</p>
-如果不再希望在 Azure 内容交付网络 (CDN) 中缓存对象，你可以执行以下步骤之一：
-
--   对于 Azure Blob，你可从公共
-    容器中删除 Blob。
--   你可将容器设为专用的，而不是公用的。有关详细信息，请参阅[限制对容器和 Blob 的访问][限制对容器和 Blob 的访问]。
--   你可以使用管理门户
-    禁用或删除 CDN 终结点。
--   你可以修改托管服务，使其不再响应
-    对象的请求。
-
-已缓存在 CDN 中的对象将保留在缓存中，直至对象的生存时间到期。当生存时间到期时，CDN 将检查 CDN 终结点是否仍然有效，以及对象是否仍可匿名访问。如果无效，则无法再缓存该对象。
-
-Azure CDN 当前没有可用的显式“清除”工具。
-
-## 其他资源
-
--   [如何在 Azure 中创建地缘组][如何在 Azure 中创建地缘组]
--   [如何：管理 Azure 订阅的存储帐户][如何：管理 Azure 订阅的存储帐户]
--   [关于服务管理 API][关于服务管理 API]
--   [如何将 CDN 内容映射到自定义域][如何将 CDN 内容映射到自定义域]
-
-  [Azure CDN 节点位置]: http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
-  [步骤 1：创建存储帐户]: #Step1
-  [步骤 2：为存储帐户创建新的 CDN 终结点]: #Step2
-  [步骤 3：访问你的 CDN 内容]: #Step3
-  [步骤 4：删除你的 CDN 内容]: #Step4
-  [Azure 管理门户]: https://manage.windowsazure.cn/
-  [计费计划]: /en-us/pricing/calculator/?scenario=full
-  [创建存储帐户]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
-  [1]: ./media/cdn/CDN_CreateNewStorageAcct.png
-  [如何在 Azure 中创建地缘组]: http://msdn.microsoft.com/zh-cn/library/azure/hh531560.aspx
-  [如何管理 Blob 内容到期]: http://msdn.microsoft.com/zh-cn/library/gg680306.aspx
-  [限制对容器和 Blob 的访问]: http://msdn.microsoft.com/zh-cn/library/dd179354.aspx
-  [如何：管理 Azure 订阅的存储帐户]: http://msdn.microsoft.com/zh-cn/library/azure/hh531567.aspx
-  [关于服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460807.aspx
-  [如何将 CDN 内容映射到自定义域]: http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx
+<!--Image references-->
+[1]: ./media/cdn/image001.png
+[2]: ./media/cdn/image002.png
+[3]: ./media/cdn/image003.png
+[4]: ./media/cdn/image004.png
