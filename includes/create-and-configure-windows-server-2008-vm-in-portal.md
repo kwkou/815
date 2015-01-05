@@ -1,11 +1,11 @@
-﻿<properties writer="kathydav" editor="tysonn" manager="jeffreyg" /> 
+<properties writer="kathydav" editor="tysonn" manager="jeffreyg" /> 
 
-**注意**：本文创建的是不连接到虚拟网络的虚拟机。如果您希望您的虚拟机使用虚拟网络，以便可以按主机名直接连接到它或设置跨界连接，请在创建虚拟机时使用“从库中”方法并指定虚拟网络。有关虚拟网络的更多信息，请参见 [Windows Azure 虚拟网络概述](http://go.microsoft.com/fwlink/p/?LinkID=294063)。
+**注意**：本文创建的是不连接到虚拟网络的虚拟机。如果您希望您的虚拟机使用虚拟网络，以便可以按主机名直接连接到它或设置跨界连接，请在创建虚拟机时使用“从库中”方法并指定虚拟网络。有关虚拟网络的更多信息，请参见 [Windows Azure 虚拟网络概述](http://msdn.microsoft.com/library/azure/jj156007.aspx)。
 
 
 可按照以下步骤创建虚拟机：
 
-1. 使用您的 Windows Azure 帐户登录 [Windows Azure 管理门户](http://manage.windowsazure.com)。
+1. 使用您的 Windows Azure 帐户登录 [Windows Azure 管理门户](http://manage.windowsazure.cn)。
 
 2. 在管理门户中，在网页的左下角依次单击“+新建”、“虚拟机”，然后单击“从库中”。
 	![新建虚拟机][Image1]

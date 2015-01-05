@@ -188,10 +188,10 @@
   [如何：附加空磁盘]: #attachempty
   [如何：在 Windows Server 2008 R2 中初始化新的数据磁盘]: #initializeinWS
   [如何：在 Linux 中初始化新的数据磁盘]: #initializeinlinux
-  [Add-AzureDataDisk]: http://go.microsoft.com/fwlink/p/?LinkId=391661
-  [下载]: http://www.windowsazure.cn/zh-cn/downloads/?sdk=net
-  [针对 Azure 的虚拟机大小]: http://go.microsoft.com/FWLink/p/?LinkID=294683
-  [Azure Linux Agent User Guide]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
+<!--  [Add-AzureDataDisk]: http://go.microsoft.com/fwlink/p/?LinkId=391661 -->
+  [下载]: /zh-cn/downloads/?sdk=net
+  [针对 Azure 的虚拟机大小]: http://msdn.microsoft.com/library/azure/dn197896.aspx
+  [Azure Linux Agent User Guide]: /zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
   [管理磁盘和映像]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
   [附加数据磁盘]: ./media/howto-attach-disk-window-linux/AttachExistingDiskWindows.png

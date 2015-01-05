@@ -1,4 +1,4 @@
-﻿
+
 可按照以下步骤附加数据磁盘：
 
 1. 在 [Windows Azure 管理门户][AzurePreviewPortal]中，单击“虚拟机”，然后选择刚才创建的虚拟机 (testwinvm)。
@@ -48,7 +48,7 @@
 	![初始化成功][Image7]
 
 
-[AzurePreviewPortal]: http://manage.windowsazure.com
+[AzurePreviewPortal]: http://manage.windowsazure.cn
 
 [Image2]: ./media/attach-data-disk-windows-server-2008-vm-in-portal/AttachDataDiskWinVM2.png
 [Image3]: ./media/attach-data-disk-windows-server-2008-vm-in-portal/AttachDataDiskWinVM3.png
