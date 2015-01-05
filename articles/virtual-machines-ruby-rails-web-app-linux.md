@@ -1,304 +1,312 @@
-<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web App on Azure using Linux VM" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="Host a Ruby on Rails-based web site on Azure using a Linux virtual machine. " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web App on Azure using Linux VM" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="Host a Ruby on Rails-based  Website on Azure using a Linux virtual machine. " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
 
-# Azure 虚拟机上的 Ruby on Rails Web 应用程序
 
-本教程介绍如何在 Azure 中使用 Linux 虚拟机托管基于 Ruby on Rails 的网站。本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动和运行基于 Ruby on Rails 的应用程序。
 
-你将了解如何执行以下操作：
 
--   设置开发环境
 
--   设置 Azure 虚拟机以托管 Ruby on Rails。
+#Ruby on Rails Web application on an Azure VM
 
--   新建 Rails 应用程序
+This tutorial describes how to host a Ruby on Rails-based  Website on Azure using a Linux virtual machine. This tutorial assumes you have no prior experience using Azure. Upon completing this tutorial, you will have a Ruby on Rails-based application up and running in the cloud.
 
--   使用 scp 将文件复制到虚拟机
+You will learn how to:
 
-下面是已完成应用程序的屏幕快照：
+* Setup your development environment
 
-![显示 Listing Posts 的浏览器窗口][显示 Listing Posts 的浏览器窗口]
+* Setup an Azure virtual machine to host Ruby on Rails.
 
-## 本文内容
+* Create a new Rails application
 
--   [设置开发环境][设置开发环境]
+* Copy files to the virtual machine using scp 
 
--   [创建 Rails 应用程序][创建 Rails 应用程序]
+The following is a screenshot of the completed application:
 
--   [测试应用程序][测试应用程序]
+![a browser displaying Listing Posts][blog-rails-cloud]
 
--   [创建 Azure 虚拟机][创建 Azure 虚拟机]
+##In this article
 
--   [将应用程序复制到虚拟机][将应用程序复制到虚拟机]
+* [Set up your development environment](#setup)
 
--   [安装 gem 并启动应用程序][安装 gem 并启动应用程序]
+* [Create a Rails application](#create)
 
--   [后续步骤][后续步骤]
+* [Test the application](#test)
 
-## <span id="setup"></span></a>设置开发环境
+* [Create an Azure Virtual Machine](#createvm)
 
-1.  在开发环境中安装 Ruby。具体步骤因操作系统而异。
+* [Copy the application to the VM](#copy)
 
-    -   **Apple OS X** - 有多个适用于 OS X 的 Ruby 版本。本教程通过使用 [Homebrew][Homebrew] 安装 **rbenv** 和 **ruby-build** 在 OS X 上进行了验证。可在 [][]<https://github.com/sstephenson/rbenv/></a> 中找到安装信息。
+* [Install gems and start the application](#start)
 
-    -   **Linux** - 使用版本程序包管理系统。本教程使用 ruby1.9.1 和 ruby1.9.1-dev 程序包在 Ubuntu 12.10 上进行了验证。
+* [Next steps](#next)
 
-    -   **Windows** - 有多个适用于 Windows 的 Ruby 版本。本教程使用 [RailsInstaller][RailsInstaller] 1.9.3-p392 进行了验证。
+##<a id="setup"></a>Set up your development environment
 
-2.  打开一个新命令行或终端会话并输入以下命令以安装 Ruby on Rails：
+1. Install Ruby in your development environment. Depending on your operating system, the steps may vary.
 
-        gem install rails --no-rdoc --no-ri
+	* **Apple OS X** - There are several Ruby distributions for OS X. This tutorial was validated on OS X by using [Homebrew](http://brew.sh/) to install **rbenv** and **ruby-build**. Installation information can be found at [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/).
 
-    <div class="dev-callout">
-<strong>说明</strong>
-<p>在有些操作系统上，此命令可能需要管理员或 root 权限。如果在运行此命令时收到错误，请尝试按如下所示使用&ldquo;sudo&rdquo;：</p>
-<pre class="prettyprint">sudo gem install rails</pre>
-</div>
+	* **Linux** - Use your distributions package management system. This tutorial was validated on Ubuntu 12.10 using the ruby1.9.1 and ruby1.9.1-dev packages.
 
-    <div class="dev-callout">
-    <strong>说明</strong>
-    <p>本教程使用的是 Rails gem 版本 3.2.12。</p>
+	* **Windows** - There are several Ruby distributions for Windows. This tutorial was validated using [RailsInstaller](http://railsinstaller.org/) 1.9.3-p392.
 
-    </div>
+2. Open a new command-line or terminal session and enter the following command to install Ruby on Rails:
 
-3.  你还必须安装 JavaScript 解释程序，Rails 将使用它来编译你的 Rails 应用程序使用的 CoffeeScript 资产。[][1]<https://github.com/sstephenson/execjs#readme></a> 中提供了支持的解释程序列表。
+		gem install rails --no-rdoc --no-ri
 
-    在验证本教程时，使用了 [Node.js][Node.js]，因为它适用于 OS X、Linux 和 Windows 操作系统。
+	<div class="dev-callout">
+	<strong>Note</strong>
+	<p>This command may require administrator or root privileges on some operating systems. If you receive an error while running this command, try using 'sudo' as follows:</p>
+	<pre class="prettyprint">sudo gem install rails</pre>
+	</div>
 
-## <span id="create"></span></a>创建 Rails 应用程序
+	<div class="dev-callout">
+	<strong>Note</strong>
+	<p>Version 3.2.12 of the Rails gem was used for this tutorial.</p>
 
-1.  从命令行或终端会话中，使用以下命令创建一个名为“blog\_app”的新 Rails 应用程序：
+	</div>
 
-        rails new blog_app
+3. You must also install a JavaScript interpreter, which will be used by Rails to compile CoffeeScript assets used by your Rails application. A list of supported interpreters is available at [https://github.com/sstephenson/execjs#readme](https://github.com/sstephenson/execjs#readme).
+	
+	[Node.js](http://nodejs.org/) was used during validation of this tutorial, as it is available for OS X, Linux and Windows operating systems.
 
-    此命令将新建一个名为 **blog\_app** 的目录，并使用 Rails 应用程序所需的文件和子目录填充它。
+##<a id="create"></a>Create a Rails application
 
-    <div class="dev-callout">
-<strong>说明</strong>
-<p>此命令可能需要一分钟或更长时间才能完成。它以静默方式安装默认应用程序所需的 gem，在此时间段，该命令看起来似乎已挂起。</p>
-</div>
+1. From the command-line or terminal session, create a new Rails application named "blog_app" by using the following command:
 
-2.  将目录更改为 **blog\_app** 目录，然后使用以下命令创建一个基本博客基架：
+		rails new blog_app
 
-        rails generate scaffold Post name:string title:string content:text
+	This command creates a new directory named **blog_app**, and populates it with the files and sub-directories required by a Rails application.
 
-    这将创建用于将文章保存到博客的控制器、视图、模型和数据库迁移。每篇文章都有一个作者姓名、文章标题和文本内容。
+	<div class="dev-callout">
+	<strong>Note</strong>
+	<p>This command may take a minute or longer to complete. It performs a silent installation of the gems required for a default application, and during this time may appear to hang.</p>
+	</div>
 
-3.  若要创建将存储博客文章的数据库，请使用以下命令：
+2. Change directories to the the **blog_app** directory, and then use the following command to create a basic blog scaffolding:
 
-        rake db:migrate
+		rails generate scaffold Post name:string title:string content:text
 
-    这将对 Rails 使用默认数据库提供程序，即 [SQLite3 数据库][SQLite3 数据库]。虽然你可能希望对生产应用程序使用不同的数据库，但 SQLite 对于本教程而言已足够。
+	This will create the controller, view, model, and database migrations used to hold posts to the blog. Each post will have an author name, title for the post, and text content.
 
-## <span id="test"></span></a>测试应用程序
+3. To create the database that will store the blog posts, use the following command:
 
-执行以下步骤在你的开发环境中启动 Rails 服务器
+		rake db:migrate
 
-1.  从命令行或终端会话中，使用以下命令启动 Rails 服务器：
+	This will use the default database provider for Rails, which is the [SQLite3 Database][sqlite3]. While you may wish to use a different database for a production application, SQLite is sufficient for the purposes of this tutorial.
 
-        rails s
+##<a id="test"></a>Test the application
 
-    你应该会看到与下面类似的输出。记下 Web 服务器正在侦听的端口。在下面的示例中，它正在侦听端口 3000。
+Perform the following steps to start the Rails server in your development environment
 
-        => Booting WEBrick
-        => Rails 3.2.12 application starting in development on http://0.0.0.0:3000
-        => Call with -d to detach
-        => Ctrl-C to shutdown server
-        [2013-03-12 19:11:31] INFO  WEBrick 1.3.1
-        [2013-03-12 19:11:31] INFO  ruby 1.9.3 (2012-04-20) [x86_64-linux]
-        [2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
+1. From the command-line or terminal session, start the rails server using the following command:
 
-2.  打开浏览器并导航到 <http://localhost:3000/>。你应看到与下图类似的页面：
+		rails s
 
-    ![默认 rails 页面][默认 rails 页面]
+	You should see output similar to the following. Note the port that the web server is listening on. In the example below, it is listening on port 3000.
 
-    该页面是一个静态欢迎页面。若要查看基架命令生成的表单，请导航到 <http://localhost:3000/posts>。你应看到与下图类似的页面：
+		=> Booting WEBrick
+		=> Rails 3.2.12 application starting in development on http://0.0.0.0:3000
+		=> Call with -d to detach
+		=> Ctrl-C to shutdown server
+		[2013-03-12 19:11:31] INFO  WEBrick 1.3.1
+		[2013-03-12 19:11:31] INFO  ruby 1.9.3 (2012-04-20) [x86_64-linux]
+		[2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
 
-    ![列出文章的页面][列出文章的页面]
+2. Open your browser and navigate to http://localhost:3000/. You should see a page similar to the following:
 
-    若要结束服务器进程，请在命令行按 Ctrl+C
+	![default rails page][default-rails]
 
-## <span id="createvm"></span></a>创建 Azure 虚拟机
+	This page is a static welcome page. To see the forms generated by the scaffolding command, navigate to http://localhost:3000/posts. You should see a page similar to the following:
 
-按照[此处][此处]提供的说明可创建托管 Linux 的 Azure 虚拟机。
+	![a page listing posts][blog-rails]
+
+	To stop the server process, enter CTRL+C in the command-line
+
+##<a id="createvm"></a>Create an Azure Virtual Machine
+
+Follow the instructions given [here][vm-instructions] to create an Azure virtual machine that hosts Linux.
 
 <div class="dev-callout">
-<strong>说明</strong>
+<strong>Note</strong>
 
-<p>本教程中的步骤是在托管 Ubuntu 12.10 的 Azure 虚拟机上执行的。如果你使用的是不同的 Linux 版本，可能需要执行不同的步骤才能完成相同的任务。</p></div>
-
-<div class="dev-callout">
-<strong>说明</strong>
-<p>你<strong>只</strong>需创建虚拟机。在了解了如何使用 SSH 连接到虚拟机后停止。</p>
-</div>
-
-创建 Azure 虚拟机后，执行以下步骤在该虚拟机上安装 Ruby 和 Rails：
-
-1.  从命令行或终端会话中，使用以下命令通过 SSH 连接到虚拟机：
-
-        ssh username@vmdns -p port
-
-    替换在创建虚拟机的过程中指定的用户名、虚拟机的 DNS 地址和 SSH 终结点的端口。例如：
-
-        ssh railsdev@railsvm.chinacloudapp.cn -p 61830
-
-    <div class="dev-callout">
-<strong>说明</strong>
-<p>如果使用 Windows 作为开发环境，则可以使用 <b>PuTTY</b> 之类的实用工具实现 SSH 功能。可从 <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY 下载页</a>获取 PuTTY。</p>
-</div>
-
-2.  从 SSH 会话中，使用以下命令在虚拟机上安装 Ruby：
-
-        sudo apt-get update -y
-        sudo apt-get upgrade -y
-        sudo apt-get install ruby1.9.1 ruby1.9.l-dev build-essential libsqlite3-dev nodejs -y
-
-    安装完成后，使用以下命令验证 Ruby 是否已成功安装：
-
-        ruby -v
-
-    这应该会返回虚拟机上安装的 Ruby 版本，它可能不是 1.9.1。例如 **ruby 1.9.3p194 (2012-04-20 修订版 35410) [x86\_64-linux]**。
-
-3.  使用以下命令安装捆绑包：
-
-        sudo gem install bundler --no-rdoc --no-ri
-
-    捆绑包将用于安装 rails 应用程序被复制到服务器后所需的 gem。
-
-## <span id="copy"></span></a>将应用程序复制到虚拟机
-
-从开发环境中，打开一个新命令行或终端会话，并使用 **scp** 命令将 **blog\_app** 目录复制到虚拟机。此命令的格式如下所示：
-
-    scp -r -P 54822 -C directory-to-copy user@vmdns:
-
-例如：
-
-    scp -r -P 54822 -C ~/blog_app railsdev@railsvm.chinacloudapp.cn:
+<p>the steps in this tutorial were performed on an Azure Virtual Machine hosting Ubuntu 12.10. If you are using a different Linux distribution, different steps may be required to accomplish the same tasks.</p></div>
 
 <div class="dev-callout">
-<strong>说明</strong>
-<p>如果使用 Windows 作为开发环境，则可以使用 <b>pscp</b> 之类的实用工具实现 scp 功能。可从 <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY 下载页</a>获取 Pscp。</p>
+<strong>Note</strong>
+<p>You <strong>only</strong> need to create the virtual machine. Stop after learning how to connect to the virtual machine using SSH.</p>
+</div> 
+
+After creating the Azure Virtual Machine, perform the following steps to install Ruby and Rails on the virtual machine:
+
+1. From the command-line or terminal session, use the following command to connect to the virtual machine using SSH:
+
+		ssh username@vmdns -p port
+
+	Substitute the user name specified during the creation of the VM, the DNS address of the VM, and the port of the SSH endpoint. For example:
+
+		ssh railsdev@railsvm.chinacloudapp.cn -p 61830
+
+	<div class="dev-callout">
+	<strong>Note</strong>
+	<p>If you are using Windows as your development environment, you can use a utility such as <b>PuTTY</b> for SSH functionality. PuTTY can be obtained from the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY download page</a>.</p>
+	</div>
+
+2. From the SSH session, use the following commands to install Ruby on the VM:
+
+		sudo apt-get update -y
+		sudo apt-get upgrade -y
+		sudo apt-get install ruby1.9.1 ruby1.9.1-dev build-essential libsqlite3-dev nodejs -y
+
+	After the installation completes, use the following command to verify that Ruby has been successfully installed:
+
+		ruby -v
+
+	This should return the version of Ruby that is installed on the virtual machine, which may be different than 1.9.1. For example, **ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]**.
+
+2. Use the following command to install Bundler:
+
+		sudo gem install bundler --no-rdoc --no-ri
+
+	Bundler will be used to install the gems required by your rails application once it has been copied to the server.
+
+##<a id="copy"></a>Copy the application to the VM
+
+From your development envirionment, open a new command-line or terminal session and use the **scp** command to copy the **blog_app** directory to the virtual machine. The format for this command is as follows:
+
+	scp -r -P 54822 -C directory-to-copy user@vmdns:
+
+For example:
+
+	scp -r -P 54822 -C ~/blog_app railsdev@railsvm.chinacloudapp.cn:
+
+<div class="dev-callout">
+<strong>Note</strong>
+<p>If you are using Windows as your development environment, you can use a utility such as <b>pscp</b> for scp functionality. Pscp can be obtained from the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY download page</a>.</p>
 </div>
 
-用于此命令的参数具有以下效果：
+The parameters used for this command have the following effect:
 
--   **-r**：以递归方式复制指定目录和所有子目录中的内容
+* **-r**: Recursively copies the contents of the specified directory and all sub-directories
 
--   **-P**：使用指定的端口进行 SSH 通信
+* **-P**: Use the specified port for SSH communication
 
--   **-C**：启用压缩
+* **-C**: Enable compression
 
--   **directory-to-copy**：要复制的本地目录
+* **directory-to-copy**: The local directory to be copied
 
--   <**user@vmdns**>:要将文件复制到其中的计算机的地址以及用于登录的用户帐户
+* **user@vmdns**: The address of the machine to copy the files to, as well as the user account to log in with
 
-复制操作完成后，**blog\_app** 目录将位于用户的主目录中。在 SSH 会话中对虚拟机使用以下命令来查看已复制的文件：
+After the copy operation, the **blog_app** directory will be located in the users home directory. Use the following commands in the SSH session with the virtual machine to view the files that were copied:
 
-    cd ~/blog_app
-    ls
+	cd ~/blog_app
+	ls
 
-返回的文件列表应该与开发环境中 **blog\_app** 目录包含的文件相匹配。
+The list of files returned should match the files contained in the **blog_app** directory in your development environment.
 
-## <span id="start"></span></a>安装 gem 并启动 Rails
+##<a id="start"></a>Install gems and start Rails
 
-1.  在虚拟机上，将目录更改为 **blog\_app** 目录，并使用以下命令安装 **Gemfile** 中指定的 gem：
+1. On the virtual machine, change directories to the **blog_app** directory and use the following command to install the gems specified in the **Gemfile**:
 
-        sudo bundle install
+		sudo bundle install
 
-2.  若要创建数据库，请使用以下命令：
+2. To create the database, use the following command:
 
-        rake db:migrate
+		rake db:migrate
 
-3.  使用以下命令启动服务器：
+3. Use the following command to start the server:
+	
+		rails s
 
-        rails s
+	You should see output similar to the following. Note the port that the web server is listening on. In the example below, it is listening on port 3000.
 
-    你应该会看到与下面类似的输出。记下 Web 服务器正在侦听的端口。在下面的示例中，它正在侦听端口 3000。
+		=> Booting WEBrick
+		=> Rails 3.2.12 application starting in development on http://0.0.0.0:3000
+		=> Call with -d to detach
+		=> Ctrl-C to shutdown server
+		[2013-03-12 19:11:31] INFO  WEBrick 1.3.1
+		[2013-03-12 19:11:31] INFO  ruby 1.9.3 (2012-04-20) [x86_64-linux]
+		[2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
 
-        => Booting WEBrick
-        => Rails 3.2.12 application starting in development on http://0.0.0.0:3000
-        => Call with -d to detach
-        => Ctrl-C to shutdown server
-        [2013-03-12 19:11:31] INFO  WEBrick 1.3.1
-        [2013-03-12 19:11:31] INFO  ruby 1.9.3 (2012-04-20) [x86_64-linux]
-        [2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
+2. In your browser, navigate to the [Azure Management Portal][management-portal] and select your Virtual Machine.
 
-4.  在浏览器中，导航到 [Azure 管理门户][Azure 管理门户]并选择你的虚拟机。
+	![virtual machine list][vmlist]
 
-    ![虚拟机列表][虚拟机列表]
+3. Select **ENDPOINTS** at the top of the page, and then click **+ ADD ENDPOINT** at the bottom of the page.
 
-5.  选择页面顶部的“终结点”，然后单击页面底部的“+添加终结点”。
+	![endpoints page][endpoints]
 
-    ![终结点页面][终结点页面]
+4. In the **ADD ENDPOINT** dialog, click the arrow in the bottom left to continue to the second page, and enter the following information in the form:
 
-6.  在“添加终结点”对话框中，单击左下角的箭头以继续进行第二页，然后在表单中输入以下信息：
+	* **NAME**: HTTP
 
-    -   **名称**：HTTP
+	* **PROTOCOL**: TCP
 
-    -   **协议**：TCP
+	* **PUBLIC PORT**: 80
 
-    -   **公用端口**： 80
+	* **PRIVATE PORT**: &lt;port information from step 3 above&gt;
 
-    -   **专用端口**：\<来自上述第 3 步的端口信息\>
+	This will create a public port of 80 that will route traffic to the private port of 3000 - where the Rails server is listening.
 
-    这将创建一个公用端口 80，以便将流量路由到专用端口 3000，即 Rails 服务器侦听的端口。
+	![new endpoint dialog][new-endpoint]
 
-    ![新建终结点对话框][新建终结点对话框]
+5. Click the checkmark to save the endpoint.
 
-7.  单击复选标记保存该终结点。
+6. A message should appear that states **UPDATE IN PROGRESS**. Once this message disappears, the endpoint is active. You may now test your application by navigating to the DNS name of your virtual machine. The  Website should appear similar to the following:
 
-8.  应该会出现一条消息，指出“正在进行更新”。此消息消失后，终结点即处于活动状态。现在你可以通过导航到虚拟机的 DNS 名称来测试你的应用程序。网站应类似下面这样：
+	![default rails page][default-rails-cloud]
 
-    ![默认 rails 页面][2]
+	Appending **/posts** to the URL should display the pages generated by the scaffolding command.
 
-    向 URL 中追加 **/posts** 应该会显示基架命令生成的页面。
+	![posts page][blog-rails-cloud]
 
-    ![文章页面][显示 Listing Posts 的浏览器窗口]
+##<a id="next"></a>Next steps
 
-## <span id="next"></span></a>后续步骤
+In this article you have learned how to create and publish a basic forms-based Rails application to an Azure Virtual Machine. Most of the actions we performed were manual, and in a production environment it would be desirable to automate. Also, most production environments host the Rails application in conjunction with another server process such as Apache or NginX, which handles request routing to multiple instances of the Rails application and serving static resources.
 
-在本文中，你学习了如何创建基于表单的基本 Rails 应用程序并将其发布到 Azure 虚拟机。我们执行的大部分操作都是手动的，在生产环境中，可以自动完成这些操作。此外，大多数生产环境都结合其他服务器进程（如 Apache 或 NginX）来托管 Rails 应用程序，这些进程会处理路由到多个 Rails 应用程序实例的请求并提供静态资源。
+For information on automating deployment of your Rails application, as well as using the Unicorn web server and NginX, see [Unicorn+NginX+Capistrano with an Azure Virtual Machine][unicorn-nginx-capistrano].
 
-有关自动部署 Rails 应用程序以及使用 Unicorn Web 服务器和 NginX 的信息，请参阅[在 Azure 虚拟机中使用 Unicorn+NginX+Capistrano][在 Azure 虚拟机中使用 Unicorn+NginX+Capistrano]。
+If you would like to learn more about Ruby on Rails, visit the [Ruby on Rails Guides][rails-guides].
 
-如果想要详细了解 Ruby on Rails，请访问 [Ruby on Rails 指南][Ruby on Rails 指南]。
+To learn how to use the Azure SDK for Ruby to access Azure services from your Ruby application, see:
 
-若要了解如何使用 Azure SDK for Ruby 从 Ruby 应用程序访问 Azure 服务，请参阅：
+* [Store unstructured data using blobs][blobs]
 
--   [使用 Blob 存储非结构化数据][使用 Blob 存储非结构化数据]
+* [Store key/value pairs using tables][tables]
 
--   [使用表存储键/值对][使用表存储键/值对]
+* [Serve high bandwidth content with the Content Delivery Network][cdn-howto]
 
--   [使用内容交付网络提供高带宽内容][使用内容交付网络提供高带宽内容]
 
-<!-- WA.com links --> 
-<!-- External Links --> 
+
+<!-- WA.com links -->
+[blobs]: /zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage
+
+[cdn-howto]: /zh-cn/develop/ruby/app-services/
+
+[management-portal]: https://manage.windowsazure.cn/
+
+[tables]: /zh-cn/develop/ruby/how-to-guides/table-service/
+
+[unicorn-nginx-capistrano]: /zh-cn/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
+
+[vm-instructions]: /zh-cn/documentation/articles/virtual-machines-linux-tutorial
+
+
+<!-- External Links -->
+[rails-guides]: http://guides.rubyonrails.org/
+
+[sqlite3]: http://www.sqlite.org/
+
 <!-- Images -->
+[blog-rails]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilslocal.png
 
-  [显示 Listing Posts 的浏览器窗口]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilscloud.png
-  [设置开发环境]: #setup
-  [创建 Rails 应用程序]: #create
-  [测试应用程序]: #test
-  [创建 Azure 虚拟机]: #createvm
-  [将应用程序复制到虚拟机]: #copy
-  [安装 gem 并启动应用程序]: #start
-  [后续步骤]: #next
-  [Homebrew]: http://brew.sh/
-  []: https://github.com/sstephenson/rbenv/
-  [RailsInstaller]: http://railsinstaller.org/
-  [1]: https://github.com/sstephenson/execjs#readme
-  [Node.js]: http://nodejs.org/
-  [SQLite3 数据库]: http://www.sqlite.org/
-  [默认 rails 页面]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailslocal.png
-  [列出文章的页面]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilslocal.png
-  [此处]: /zh-cn/documentation/articles/virtual-machines-linux-tutorial
-  [PuTTY 下载页]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-  [Azure 管理门户]: https://manage.windowsazure.cn/
-  [虚拟机列表]: ./media/virtual-machines-ruby-rails-web-app-linux/vmlist.png
-  [终结点页面]: ./media/virtual-machines-ruby-rails-web-app-linux/endpoints.png
-  [新建终结点对话框]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
-  [2]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailscloud.png
-  [在 Azure 虚拟机中使用 Unicorn+NginX+Capistrano]: /zh-cn/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
-  [Ruby on Rails 指南]: http://guides.rubyonrails.org/
-  [使用 Blob 存储非结构化数据]: /zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage
-  [使用表存储键/值对]: /en-us/develop/ruby/how-to-guides/table-service/
-  [使用内容交付网络提供高带宽内容]: /en-us/develop/ruby/app-services/
+[blog-rails-cloud]: ./media/virtual-machines-ruby-rails-web-app-linux/blograilscloud.png 
+
+[default-rails]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailslocal.png
+
+[default-rails-cloud]: ./media/virtual-machines-ruby-rails-web-app-linux/basicrailscloud.png
+
+[vmlist]: ./media/virtual-machines-ruby-rails-web-app-linux/vmlist.png
+
+[endpoints]: ./media/virtual-machines-ruby-rails-web-app-linux/endpoints.png
+
+[new-endpoint]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint.png
+

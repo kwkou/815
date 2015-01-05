@@ -3,30 +3,32 @@
 
 
 
-# 如何登录到运行 Windows Server 的虚拟机
+#How to Log on to a Virtual Machine Running Windows Server#
 
-对于运行 Windows Server 操作系统的虚拟机，你可以使用管理门户中的“连接”按钮建立远程桌面连接。
+For a virtual machine that's running the Windows Server operating system, you use the Connect button in the Management Portal to start a Remote Desktop Connection. 
 
-1.  登录到 [Azure 管理门户](http://manage.windowsazure.cn) - 如果你尚未这么做。
+>[WACOM.NOTE] If you need to reset the user name or password, or enable RDP in the virtual machine, you can use the [VMAccess](http://msdn.microsoft.com/library/azure/dn606308.aspx) extension to do that. For requirements and troubleshooting tips, see [Connect to an Azure virtual machine with RDP or SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx).
 
-2.  单击**“虚拟机”**，然后选择相应的虚拟机。
+1. If you have not already done so, sign in to the [Azure Management Portal](http://manage.windowsazure.cn).
 
-3.  在命令栏中，单击“连接”。
+2. Click **Virtual Machines**, and then select the appropriate virtual machine.
 
-	![登录到虚拟机](./media/virtual-machines-log-on-windows-server/connectwindows.png)
+3. On the command bar, click **Connect**.
 
-4.  单击“打开”以使用为虚拟机自动创建的远程桌面协议文件。
+	![Log on to the virtual machine](./media/virtual-machines-log-on-windows-server/connectwindows.png)
 
-5.  单击“连接”继续连接过程。
+4. Click **Open** to use the Remote Desktop Protocol file that was automatically created for the virtual machine.
+	
+5. Click **Connect** to continue.
 
-	![继续连接](./media/virtual-machines-log-on-windows-server/connectpublisher.png)
+	![Continue with connecting](./media/virtual-machines-log-on-windows-server/connectpublisher.png)
 
-6.  输入虚拟机上 Administrator 帐户的用户名和密码，然后单击“确定”。
+6. Type the user name and password of the administrative account on the virtual machine, and then click **OK**. This is the user name and password you specified when you created the virtual machine, unless the virtual machine is now a domain controller. In that case, type the user name and password of a domain administrator account for the domain.
+	
+	
+7. Click **Yes** to verify the identity of the virtual machine.
 
+	![Verify the identity of the machine](./media/virtual-machines-log-on-windows-server/connectverify.png)
 
-7.  单击“是”以验证虚拟机的标识。
+	You can now work with the virtual machine just as you would with any other server.
 
-	![验证计算机的标识](./media/virtual-machines-log-on-windows-server/connectverify.png)
-	你现在可以像使用任何其他服务器一样使用该虚拟机。
-
-[WACOM.NOTE] 有关要求和疑难解答提示，请参阅[使用 RDP 或 SSH 连接到 Windows Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)。

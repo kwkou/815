@@ -1,324 +1,234 @@
+
 <properties linkid="manage-windows-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="Create and upload a Windows Server VHD to Azure" metaKeywords="Azure VHD, uploading VHD" description="Learn how to create and upload a virtual hard disk (VHD) in Azure that has the Windows Server operating system." metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
 
-# 创建并上载包含 Windows Server 操作系统的虚拟硬盘
 
-![启动 Sysprep][启动 Sysprep]
 
-Windows Azure 中的虚拟机运行你在创建虚拟机时选择的操作系统。Windows Azure 采用 VHD 格式（.vhd 文件）将虚拟机的操作系统存储在虚拟硬盘中。已为复制准备的操作系统的 VHD 称作映像。本文说明如何利用已安装且经过一般化的操作系统上载 .vhd 文件来创建你自己的映像。有关 Windows Azure 中的磁盘和映像的详细信息，请参阅[管理磁盘和映像（可能为英文页面）][管理磁盘和映像（可能为英文页面）]。
 
-**注意**：创建虚拟机时，你可以自定义操作系统设置以快速运行你的应用程序。你设置的配置存储在该虚拟机的磁盘上。有关说明，请参阅[如何创建自定义虚拟机][如何创建自定义虚拟机]。
+#Create and upload a Windows Server VHD to Azure#
 
-## 先决条件
+This article shows you how to upload a virtual hard disk (VHD) with an operating system so you can use it as an image to create virtual machines based on that image. For more information about disks and images in Windows Azure, see [About Disks and Images in Azure](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj672979.aspx).
 
-本文假定你拥有以下项目：
+**Note**: When you create a virtual machine, you can customize the operating system settings to facilitate running your application. The configuration that you set is stored on disk for that virtual machine. For instructions, see [How to Create a Custom Virtual Machine](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/).
 
-**Windows Azure PowerShell** - 你已经安装了 Windows Azure PowerShell 模块。若要下载该模块，请参阅 [Windows Azure 下载（可能为英文页面）][Windows Azure 下载（可能为英文页面）]。在[此处][此处]可找到使用 Azure 订阅来安装和配置 PowerShell 的教程。
+##Prerequisites##
+This article assumes that you have the following items:
 
--   [Add-AzureVHD][Add-AzureVHD] cmdlet，它是 Windows Azure PowerShell 模块的组成部分，上载 VHD 时需要。
+**An Azure subscription** - If you don't have one, you can create a free trial account in just a couple of minutes. For details, see [Create an Azure account](/zh-cn/develop/php/tutorials/create-a-windows-azure-account/).  
 
-**存储在 .vhd 文件中的受支持的 Windows 操作系统** - 你已将受支持的 Windows Server 操作系统安装到虚拟硬盘。可使用多个工具创建 .vhd 文件。可使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机][安装 Hyper-V 角色和配置虚拟机]。
+**Windows Azure PowerShell** - You have the Windows Azure PowerShell module installed. To download the module, see [Windows Azure Downloads](/zh-cn/downloads/). A tutorial to install and configure PowerShell with your Azure Subscription can be found [here](/zh-cn/documentation/articles/install-configure-powershell/).
 
-**重要说明**：Windows Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet][Convert-VHD cmdlet] 将磁盘转换为 VHD 格式。在[此处][1]可找到教程。
+- The [Add-AzureVHD](http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx) cmdlet, which is part of the Windows Azure PowerShell module, is required to upload the VHD.
 
-**Window Server 操作系统介质。**此任务要求有包含 Windows Server 操作系统的 .iso 文件。支持以下版本的 Windows Server：
+**A supported Windows operating system stored in a .vhd file** - You have installed a supported Windows Server operating system to a virtual hard disk. Multiple tools exist to create .vhd files. You can use a virtualization solutions such as Hyper-V to create the .vhd file and install the operating system. For instructions, see [Install the Hyper-V Role and Configure a Virtual Machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
-<table border="1" width="600">
+**Important**: The VHDX format is not supported in Windows Azure. You can convert the disk to VHD format using Hyper-V Manager or the [Convert-VHD cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx). A tutorial on this can be found [here](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx).
+ 
+**Window Server operating system media.** This task requires an .iso file that contains the Windows Server operating system. The following Windows Server versions are supported:
+<P>
+  <TABLE BORDER="1" WIDTH="600">
+  <TR BGCOLOR="#E9E7E7">
+    <TH>OS</TH>
+    <TH>SKU</TH>
+    <TH>Service Pack</TH>
+    <TH>Architecture</TH>
+  </TR>
+  <TR>
+    <TD>Windows Server 2012 R2</TD>
+    <TD>All editions</TD>
+    <TD>N/A</TD>
+    <TD>x64</TD>
+  </TR>
+  <TR>
+    <TD>Windows Server 2012</TD>
+    <TD>All editions</TD>
+    <TD>N/A</TD>
+    <TD>x64</TD>
+  </TR>
+  <TR>
+    <TD>Windows Server 2008 R2</TD>
+    <TD>All editions</TD>
+    <TD>SP1</TD>
+    <TD>x64</TD>
+  </TR>
+  </TABLE>
+</P>
 
-<tr bgcolor="#E9E7E7">
 
-<th>
-操作系统
+This task includes the following steps:
 
-</th>
+- [Step 1: Prepare the image to be uploaded] []
+- [Step 2: Create a storage account in Azure] []
+- [Step 3: Prepare the connection to Azure] []
+- [Step 4: Upload the .vhd file] []
 
-<th>
-SKU
+## <a id="prepimage"> </a>Step 1: Prepare the image to be uploaded ##
 
-</th>
 
-<th>
-Service Pack
+Before the image can be uploaded to Azure, it must be generalized by using the Sysprep command. For more information about using Sysprep, see [How to Use Sysprep: An Introduction](http://technet.microsoft.com/zh-cn/library/bb457073.aspx).
 
-</th>
+In the virtual machine that you just created, complete the following procedure:
 
-<th>
-体系结构
+1. Log in to the operating system.
 
-</th>
+2. Open a Command Prompt window as an administrator. Change the directory to **%windir%\system32\sysprep**, and then run `sysprep.exe`.
 
-</tr>
+	![Open Command Prompt window](./media/virtual-machines-create-upload-vhd-windows-server/sysprep_commandprompt.png)
 
-<tr>
+3.	The **System Preparation Tool** dialog box appears.
 
-<td>
-Windows Server 2012 R2
+	![Start Sysprep](./media/virtual-machines-create-upload-vhd-windows-server/sysprepgeneral.png)
+4.  In the **System Preparation Tool**, select **Enter System Out of Box Experience (OOBE)** and make sure that Generalize is checked.
+5.  In **Shutdown Options**, select **Shutdown**.
+6.  Click **OK**. 
 
-</td>
 
-<td>
-所有版本
 
-</td>
 
-<td>
-不适用
+## <a id="createstorage"> </a>Step 2: Create a storage account in Azure ##
 
-</td>
+A storage account represents the highest level of the namespace for accessing the storage services and is associated with your Azure subscription. You need a storage account in Azure to upload a .vhd file to Azure that can be used for creating a virtual machine. You can use the Azure Management Portal to create a storage account.
 
-<td>
-x64
+1. Sign in to the Azure Management Portal.
 
-</td>
+2. On the command bar, click **New**.
 
-</tr>
+3. Click **Storage Account**, and then click **Quick Create**.
 
-<tr>
+	![Quick create a storage account](./media/virtual-machines-create-upload-vhd-windows-server/Storage-quick-create.png)
 
-<td>
-Windows Server 2012
+4. Fill out the fields as follows:
 
-</td>
+	
+	
+- Under **URL**, type a subdomain name to use in the URL for the storage account. The entry can contain from 3-24 lowercase letters and numbers. This name becomes the host name within the URL that is used to address Blob, Queue, or Table resources for the subscription.
+			
+- Choose the **location or affinity group** for the storage account. By specifying an affinity group, you can co-locate your cloud services in the same data center with your storage.
+		 
+- Decide whether to use **geo-replication** for the storage account. Geo-replication is turned on by default. This option replicates your data to a secondary location, at no cost to you, so that your storage fails over to a secondary location if a major failure occurs that can't be handled in the primary location. The secondary location is assigned automatically, and can't be changed. If legal requirements or organizational policy requires tighter control over the location of your cloud-based storage, you can turn off geo-replication. However, be aware that if you later turn on geo-replication, you will be charged a one-time data transfer fee to replicate your existing data to the secondary location. Storage services without geo-replication are offered at a discount. More details on managing geo-replication of Storage accounts can be found here: [Create, manage, or delete a storage account](../storage-create-storage-account/#replication-options).
 
-<td>
-所有版本
+	![Enter storage account details](./media/virtual-machines-create-upload-vhd-windows-server/Storage-create-account.png)
 
-</td>
+5. Click **Create Storage Account**.
 
-<td>
-不适用
+	The account now appears under **Storage Accounts**.
 
-</td>
+	![Storage account successfully created](./media/virtual-machines-create-upload-vhd-windows-server/Storagenewaccount.png)
 
-<td>
-x64
+6. Next, create a container for your uploaded VHDs. Click on the **Storage account name** and then click on **Containers**.
 
-</td>
+	![Storage account detail](./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_detail.png)
 
-</tr>
+7. Click **Create a Container**.
 
-<tr>
+	![Storage account detail](./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_container.png)
 
-<td>
-Windows Server 2008 R2
+8. Type a **Name** for your container and select the **Access Policy**.
 
-</td>
+	![Container name](./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_containervalues.png)
 
-<td>
-所有版本
+	> [WACOM.NOTE] By default, the container is private and can be accessed only by the account owner. To allow public read access to the blobs in the container, but not the container properties and metadata, use the "Public Blob" option. To allow full public read access for the container and blobs, use the "Public Container" option.
 
-</td>
+## <a id="PrepAzure"> </a>Step 3: Prepare the connection to Windows Azure ##
 
-<td>
-SP1
+Before you can upload a .vhd file, you need to establish a secure connection between your computer and your subscription in Windows Azure. You can use the Windows Azure Active Directory method or the certificate method to do this.
 
-</td>
+<h3>Use the Windows Azure AD method</h3>
 
-<td>
-x64
+1. Open the Windows Azure PowerShell console, as instructed in [How to: Install Windows Azure PowerShell](#Install).
 
-</td>
+2. Type the following command:  
+	`Add-AzureAccount`
+	
+	This command opens a sign-in window so you can sign with your work or school account.
 
-</tr>
+	![PowerShell Window](./media/virtual-machines-create-upload-vhd-windows-server/add_azureaccount.png)
 
-</table>
+3. Windows Azure authenticates and saves the credential information, and then closes the window.
 
-</p>
-</p>
-此任务包括下列步骤：
+<h3>Use the certificate method</h3> 
 
--   [步骤 1：准备要上载的映像][步骤 1：准备要上载的映像]
--   [步骤 2：在 Azure 中创建存储帐户][步骤 2：在 Azure 中创建存储帐户]
--   [步骤 3：准备连接到 Azure][步骤 3：准备连接到 Azure]
--   [步骤 4：上载 .vhd 文件][步骤 4：上载 .vhd 文件]
+1. Open a Windows Azure PowerShell window. 
 
-## <span id="prepimage"></span> </a>步骤 1：准备要上载的映像
+2.	Type: 
+	`Get-AzurePublishSettingsFile`.
 
-在将映像上载到 Azure 之前，必须先使用 Sysprep 命令通用化。有关使用 Sysprep 的更多信息，请参阅[如何使用 Sysprep：简介][如何使用 Sysprep：简介]。
 
-在你刚创建的虚拟机中，完成以下过程：
+3. A browser window opens and prompts you to download a .publishsettings file. It contains information and a certificate for your Windows Azure subscription.
 
-1.  登录到操作系统。
+	![Browser download page](./media/virtual-machines-create-upload-vhd-windows-server/Browser_download_GetPublishSettingsFile.png)
 
-2.  以管理员身份打开“命令提示符”窗口。将目录更改为 **%windir%\\system32\\sysprep**，然后运行 `sysprep.exe`。
+3. Save the .publishsettings file. 
 
-    ![打开“命令提示符”窗口][打开“命令提示符”窗口]
+4. Type: 
+	`Import-AzurePublishSettingsFile <PathToFile>`
 
-3.  会显示**“系统准备工具”**对话框。
+	Where `<PathToFile>` is the full path to the .publishsettings file. 
 
-    ![启动 Sysprep][2]
 
-4.  在“系统准备工具”中，选择“进入系统全新体验(OOBE)”并确保选中“一般化”。
-5.  在**“关机选项”**中选择**“关机”**。
-6.  单击“确定”。
+	For more information, see [Get Started with Windows Azure Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx) 
+	
+	For more information on installing and configuring PowerShell, see [How to install and configure Windows Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/) 
 
-## <span id="createstorage"></span> </a>步骤 2：在 Azure 中创建存储帐户
 
-存储帐户表示用于访问存储服务的最高级别的命名空间，并且与你的 Azure 订阅相关联。你需要在 Azure 中具有存储帐户才能将 .vhd 文件上载到可用于创建虚拟机的 Azure。可使用 Azure 管理门户创建存储帐户。
+## <a id="upload"> </a>Step 4: Upload the .vhd file ##
 
-1.  登录到 Azure 管理门户。
+When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account that you created in Step 2, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the Management Portal to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file. 
 
-2.  在命令栏上，单击“新建”。
 
-3.  单击“存储帐户”，然后单击“快速创建”。
+1. From the Windows Azure PowerShell window you used in the previous step, type:
 
-    ![快速创建存储帐户][快速创建存储帐户]
+	`Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>`
+	
+	![PowerShell Add-AzureVHD](./media/virtual-machines-create-upload-vhd-windows-server/powershell_upload_vhd.png)
 
-4.  如下所示填写字段：
+	For more information about the Add-AzureVhd cmdlet, see [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/dn495173.aspx).
 
-    ![输入存储帐户详细信息][输入存储帐户详细信息]
+##Add the Image to Your List of Custom Images ##
+After you upload the .vhd, you add it as an image to the list of custom images associated with your subscription.
 
-    在 **URL** 下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
+1. From the Management Portal, under **All Items**, click **Virtual Machines**.
 
-    选择存储帐户的位置或地缘组。通过指定地缘组，可将同一数据中心内的云服务与你的存储放置在一起。
+2. Under Virtual Machines, click **Images**.
 
-    决定是否使用存储帐户的地域复制。默认情况下启用地域复制。此选项会将你的数据免费复制到辅助位置，以便在发生无法在主要位置进行处理的严重故障时将你的存储故障转移到辅助位置。将自动分配辅助位置，并且无法对其进行更改。如果法律要求或组织政策要求更加严格地控制基于云的存储的位置，则你可以关闭地域复制。但是，请注意，如果稍后你打开地域复制，则将现有数据复制到辅助位置时将向你收取一次性数据传输费用。不具有地域复制的存储服务将以优惠价提供。有关管理存储帐户的地域复制的详细信息，请参阅：[如何管理存储帐户][如何管理存储帐户]。
+3. And then click **Create an Image**.
 
-5.  单击**“创建存储帐户”**。
+	![PowerShell Add-AzureVHD](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image.png)
 
-    该帐户现在会出现在“存储帐户”下。
+4. In **Create an image from a VHD**, do the following:
+ 	
+	- Specify **name**
+	- Specify **description**
+	- To specify the **URL of your VHD** click the folder button to launch the below dialog box 
+	![Select VHD](./media/virtual-machines-create-upload-vhd-windows-server/Select_VHD.png)
+	- Select the storage account your VHD is in and click **Open**. This returns you to the **Create an image from a VHD** window.
+	- After you return to the **Create an image from a VHD** window, select the Operating System Family.
+	- Check **I have run Sysprep on the virtual machine associated with this VHD** to acknowledge that you generalized the operating system in Step 1, and then click **OK**. 
 
-    ![已成功创建存储帐户][已成功创建存储帐户]
+	![Add Image](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image_From_VHD.png)
 
-6.  现在我们要来为你上载的 VHD 创建容器。单击“存储帐户名称”，然后单击“容器”。
+5. **OPTIONAL :** You can also use Azure PowerShell's Add-AzureVMImage cmdlet to add your VHD as an image.
 
-    ![存储帐户详细信息][存储帐户详细信息]
+	From the Windows Azure PowerShell window, type:
 
-7.  接下来，单击“创建容器”。
+	`Add-AzureVMImage -ImageName <Your Image's Name> -MediaLocation <location of the VHD> -OS <Type of the OS on the VHD>`
+	
+	![PowerShell Add-AzureVMImage](./media/virtual-machines-create-upload-vhd-windows-server/add_azureimage_powershell.png)
 
-    ![存储帐户详细信息][3]
+6. After you complete the previous steps, the new image is listed when you choose the **Images** tab. 
 
-8.  现在为你的容器选择“名称”，并选择该容器的“访问策略”。
 
-    ![容器名称][容器名称]
+	![custom image](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
 
-    -   **访问策略** - 默认情况下，容器是私有的，并且只能由帐户所有者访问。若要允许对容器中的 Blob 进行公共读取访问，但不允许对容器属性和元数据进行公共读取访问，请使用“公共 Blob”选项。若要允许对容器和 Blob 进行完全公共读取访问，请使用“公共容器”选项。
+	When you create a new virtual machine, you can now use this new image. Choose **My Images** to show the new image. For instructions, see [Create a Virtual Machine Running Windows Server](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/).
 
-## <span id="PrepAzure"></span> </a>步骤 3：准备连接到 Windows Azure
+	![create VM from custom image](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 
-你首先需要在计算机和 Windows Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Windows Azure Active Directory 或证书方法来进行此操作。
+## Next Steps ##
+ 
 
-### 使用 Windows Azure AD 方法
+After creating a virtual machine, trying creating a SQL Server Virtual Machine. For instructions, see [Provisioning a SQL Server Virtual Machine on Windows Azure](/zh-cn/documentation/articles/virtual-machines-provision-sql-server/). 
 
-1.  打开 Windows Azure PowerShell 控制台，请按照[如何：安装 Azure PowerShell][如何：安装 Azure PowerShell] 中的说明操作。
-
-2.  输入以下命令：`Add-AzureAccount`. 这时会弹出一个窗口，你可以在其中使用 Microsoft 帐户登录到 Azure。
-
-    ![PowerShell 窗口][PowerShell 窗口]
-
-3.  Windows Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
-
-### 使用证书方法
-
-1.  打开 Windows Azure PowerShell 窗口。键入：
-    `Get-AzurePublishSettingsFile`.
-
-2.  此命令将打开浏览器窗口，并自动下载包含信息的 .publishsettings 文件和 Windows Azure 订阅的证书。
-
-    ![浏览器下载页面][浏览器下载页面]
-
-3.  保存 .publishsettings 文件。
-
-4.  键入：
-    `Import-AzurePublishSettingsFile <PathToFile>`
-
-    其中`<PathToFile>` 是 .publishsettings 文件的完整路径。
-
-    有关详细信息，请参阅 [Windows Azure Cmdlet 入门][Windows Azure Cmdlet 入门]
-
-    有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Windows Azure PowerShell][此处]
-
-## <span id="upload"></span> </a>步骤 4：上载 .vhd 文件
-
-在上载 .vhd 文件时，你可以将 .vhd 文件放置在 Blob 存储中的任何位置。在以下命令示例中，**BlobStorageURL** 是你在步骤 2 中创建的存储帐户的 URL，**YourImagesFolder** 是要在其中存储映像的 Blob 存储中的容器。**VHDName** 是显示在管理门户中用于标识虚拟硬盘的标签。**PathToVHDFile** 是 .vhd 文件的完整路径和名称。
-
-1.  从你在上一步中使用的 Windows Azure PowerShell 窗口中，键入：
-
-    `Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>`
-
-    ![PowerShell Add-AzureVHD][PowerShell Add-AzureVHD]
-
-    有关 Add-AzureVhd cmdlet 的详细信息，请参阅 [Add-AzureVhd][Add-AzureVhd]。
-
-## 将映像添加到自定义映像列表
-
-上载 .vhd 后，将其作为映像添加到与订阅关联的自定义映像列表。
-
-1.  从管理门户中的“所有项目”下单击“虚拟机”。
-
-2.  在“虚拟机”下，单击“映像”。
-
-3.  然后单击“创建映像”。
-
-    ![PowerShell Add-AzureVHD][4]
-
-4.  在“从 VHD 创建映像”中。
-    
-    ![添加映像][添加映像]
-
-    -   指定“名称”
-    -   指定“说明”
-    -   若要指定“VHD 的 URL”，请单击文件夹图标，以启动下面的对话框
-        
-        ![选择 VHD][选择 VHD]
-    -   在此选择对话框中，选中你的 VHD 所在的存储帐户并单击“打开”。这样你会回到前面的“从 VHD 创建映像”框。
-    -   返回到“从 VHD 创建映像”框后，请选择“操作系统系列”。
-    -   选中“我已在与此 VHD 关联的虚拟机上运行 Sysprep”，确认你的第 1 步中已通用化了操作系统，然后单击“确定”。
-
-5.  **可选：**你也可以使用 Azure PowerShell 的 Add-AzureVMImage cmdlet 将 VHD 添加为映像。
-
-    从 Windows Azure PowerShell 窗口中，键入：
-
-    `Add-AzureVMImage -ImageName <Your Image's Name> -MediaLocation <location of the VHD> -OS <Type of the OS on the VHD>`
-
-    ![PowerShell Add-AzureVMImage][PowerShell Add-AzureVMImage]
-
-6.  完成上述步骤后，应该会看到“映像”选项卡中已经有了你的映像，如下面截屏所示。
-
-    ![自定义映像][自定义映像]
-
-    现在在尝试创建新虚拟机时，你将能够通过在库中选择“我的映像”选项卡来使用此映像，如下面截屏所示
-
-    ![从自定义映像创建虚拟机][从自定义映像创建虚拟机]
-
-## 后续步骤
-
-在列表中有了映像之后，你可以使用该映像来创建虚拟机。有关说明，请参阅[创建运行 Windows Server 的虚拟机][如何创建自定义虚拟机]。
-
-创建虚拟机后，尝试创建 SQL Server 虚拟机。有关说明，请参阅[在 Windows Azure 上设置 SQL Server 虚拟机][在 Windows Azure 上设置 SQL Server 虚拟机]。
-
-  [启动 Sysprep]: ./media/virtual-machines-create-upload-vhd-windows-server/ImageWithDisks.png
-  [管理磁盘和映像（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
-  [如何创建自定义虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-windows-tutorial/
-  [Windows Azure 下载（可能为英文页面）]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
-  [此处]: http://windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/
-  [Add-AzureVHD]: http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx
-  [安装 Hyper-V 角色和配置虚拟机]: http://technet.microsoft.com/zh-cn/library/hh846766.aspx
-  [Convert-VHD cmdlet]: http://technet.microsoft.com/zh-cn/library/hh848454.aspx
-  [1]: http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx
-  [步骤 1：准备要上载的映像]: #prepimage
-  [步骤 2：在 Azure 中创建存储帐户]: #createstorage
-  [步骤 3：准备连接到 Azure]: #prepAzure
-  [步骤 4：上载 .vhd 文件]: #upload
-  [如何使用 Sysprep：简介]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
-  [打开“命令提示符”窗口]: ./media/virtual-machines-create-upload-vhd-windows-server/sysprep_commandprompt.png
-  [2]: ./media/virtual-machines-create-upload-vhd-windows-server/sysprepgeneral.png
-  [快速创建存储帐户]: ./media/virtual-machines-create-upload-vhd-windows-server/Storage-quick-create.png
-  [输入存储帐户详细信息]: ./media/virtual-machines-create-upload-vhd-windows-server/Storage-create-account.png
-  [如何管理存储帐户]: http://windowsazure.cn/zh-cn/documentation/articles/storage-manage-storage-account/
-  [已成功创建存储帐户]: ./media/virtual-machines-create-upload-vhd-windows-server/Storagenewaccount.png
-  [存储帐户详细信息]: ./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_detail.png
-  [3]: ./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_container.png
-  [容器名称]: ./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_containervalues.png
-  [如何：安装 Azure PowerShell]: #Install
-  [PowerShell 窗口]: ./media/virtual-machines-create-upload-vhd-windows-server/add_azureaccount.png
-  [浏览器下载页面]: ./media/virtual-machines-create-upload-vhd-windows-server/Browser_download_GetPublishSettingsFile.png
-  [Windows Azure Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
-  [PowerShell Add-AzureVHD]: ./media/virtual-machines-create-upload-vhd-windows-server/powershell_upload_vhd.png
-  [Add-AzureVhd]: http://msdn.microsoft.com/zh-cn/library/dn495173.aspx
-  [4]: ./media/virtual-machines-create-upload-vhd-windows-server/Create_Image.png
-  [添加映像]: ./media/virtual-machines-create-upload-vhd-windows-server/Create_Image_From_VHD.png
-  [选择 VHD]: ./media/virtual-machines-create-upload-vhd-windows-server/Select_VHD.png
-  [PowerShell Add-AzureVMImage]: ./media/virtual-machines-create-upload-vhd-windows-server/add_azureimage_powershell.png
-  [自定义映像]: ./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png
-  [从自定义映像创建虚拟机]: ./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png
-  [在 Windows Azure 上设置 SQL Server 虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-provision-sql-server/
+[Step 1: Prepare the image to be uploaded]: #prepimage
+[Step 2: Create a storage account in Azure]: #createstorage
+[Step 3: Prepare the connection to Azure]: #prepAzure
+[Step 4: Upload the .vhd file]: #upload

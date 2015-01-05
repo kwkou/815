@@ -1,148 +1,145 @@
 <properties linkid="dev-java-vm-application-server" urlDisplayName="Tomcat on Virtual Machine" pageTitle="Tomcat on a virtual machine - Azure tutorial" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="Learn how to create a Windows Virtual machine and configure the machine to run a Apache Tomcat application server." metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a Java application server on a virtual machine" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-# 如何在虚拟机上运行 Java 应用程序服务器
+# How to run a Java application server on a virtual machine
 
-通过 Azure，你可使用虚拟机提供服务器功能。例如，在 Azure 上运行的虚拟机可配置为托管 Java 应用程序服务器，如 Apache Tomcat。完成本指南之后，你将会了解如何创建在 Azure 上运行的虚拟机并将其配置为运行 Java 应用程序服务器。
+With Azure, you can use a virtual machine to provide server capabilities. As an example, a virtual machine running on Azure can be configured to host a Java application server, such as Apache Tomcat. On completing this guide, you will have an understanding of how to create a virtual machine running on Azure and configure it to run a Java application server.
 
-你将了解到以下内容：
+You will learn:
 
--   如何创建已安装 JDK 的虚拟机。
--   如何远程登录到虚拟机。
--   如何在虚拟机上安装 Java 应用程序服务器。
--   如何为虚拟机创建终结点。
--   如何在防火墙中为应用程序服务器开放一个端口。
+* How to create a virtual machine that has a JDK already installed.
+* How to remotely log in to your virtual machine.
+* How to install a Java application server on your virtual machine.
+* How to create an endpoint for your virtual machine.
+* How to open a port in the firewall for your application server.
 
-在本教程中，将在虚拟机上安装 Apache Tomcat 应用程序服务器。安装完成后将生成一个 Tomcat 安装，如下所示。
+For purposes of this tutorial, an Apache Tomcat application server will be installed on a virtual machine. The completed installation will result in a Tomcat installation such as the following.
 
-![运行 Apache Tomcat 的虚拟机][运行 Apache Tomcat 的虚拟机]
+![Virtual machine running Apache Tomcat][virtual_machine_tomcat]
 
 [WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
-## 创建虚拟机
+## To create a virtual machine
 
-1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  依次单击“新建”、“计算”、“虚拟机”和“从库中”。
-3.  在“虚拟机映像选择”对话框中，选择 **JDK 7 Windows Server 2012**。
-    请注意，万一你安装的是还不能在 JDK 7 中运行的旧应用程序，可选择 **JDK 6 Windows Server 2012**。
-4.  单击“下一步”。
-5.  在“虚拟机配置”对话框中：
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
+2. Click **New**, click **Compute**, click **Virtual machine**, and then click **From Gallery**.
+3. In the **Virtual machine image select** dialog, select **JDK 7 Windows Server 2012**.
+Note that **JDK 6 Windows Server 2012** is available in case you have legacy applications that are not yet ready to run in JDK 7.
+4. Click **Next**.
+5. In the <strong>Virtual machine configuration</strong> dialog:
+    1. Specify a name for the virtual machine.
+    2. Specify the size to use for the virtual machine.
+    3. Enter a name for the administrator in the **User Name** field. Remember this name and the password you will enter next, you will use them when you remotely log in to the virtual machine.
+    4. Enter a password in the **New password** field, and re-enter it in the **Confirm** field. This is the Administrator account password.
+    5. Click **Next**.
+6. In the next <strong>Virtual machine configuration</strong> dialog:
+    1. For **Cloud service**, use the default **Create a new cloud service**.
+    2. The value for **Cloud service DNS name** must be unique across cloudapp.net. If needed, modify this value so that Azure indicates it is unique.
+    2. Specify a region, affinity group, or virtual network. For purposes of this tutorial, specify a region such as **West US**.
+    2. For **Storage Account**, select **Use an automatically generated storage account**.
+    3. For **Availability Set**, select **(None)**.
+    4. Click **Next**.
+7. In the final <strong>Virtual machine configuration</strong> dialog:
+    1. Accept the default endpoint entries.
+    2. Click **Complete**.
 
-    1.  指定虚拟机的名称。
-    2.  指定要用于虚拟机的大小。
-    3.  在“用户名”字段中输入管理员的名称。记住你下次要输入的此名称和密码，远程登录虚拟机时你将使用它们。
-    4.  在“新密码”字段中输入密码，然后在“确认”字段中重新输入一次。这是 Administrator 帐户密码。
-    5.  单击“下一步”。
+## To remotely log in to your virtual machine
 
-6.  在下一个“虚拟机配置”对话框中：
+1. Log on to the [Management Portal](https://manage.windowsazure.cn).
+2. Click **Virtual machines**.
+3. Click the name of the virtual machine that you want to log in to.
+4. Once the virtual machine has started, a pop-up menu at the bottom of the page will allow connections.
+5. Click **Connect**.
+6. Respond to the prompts as needed to connect to the virtual machine. This should entail saving or opening the .rdp file that contains the connection details. You might have to copy the url:port as the last part of the first line of the .rdp file and paste it in a remote log-in application.
 
-    1.  对于“云服务”，使用默认的“创建新云服务”。
-    2.  “云服务 DNS 名称”的值在 cloudapp.net 中必须是唯一的。如有必要，请修改此值，直至 Azure 指出它是唯一的值。
-    3.  指定区域、地缘组或虚拟网络。在本教程中，请指定区域，如“美国西部”。
-    4.  对于“存储帐户”框，选择“使用自动生成的存储帐户”。
-    5.  对于“可用性集”，请选择“(无)”。
-    6.  单击“下一步”。
+## To install a Java application server on your virtual machine
 
-7.  在最后一个“虚拟机配置”对话框中：
+You can copy a Java application server to your virtual machine, or install a Java application server through an installer. 
 
-    1.  接受默认的终结点项。
-    2.  单击“完成”。
+For purposes of this tutorial, Tomcat will be installed.
 
-## 远程登录到虚拟机
+1. While logged on to your virtual machine, open a browser session to <http://tomcat.apache.org/download-70.cgi>.
+2. Double-click the link for **32-bit/64-bit Windows Service Installer**. Using this technique, Tomcat will be installed as a Windows service.
+3. When prompted, choose to run the installer.
+4. Within the **Apache Tomcat Setup** wizard, follow the prompts to install Tomcat. For purposes of this tutorial, accepting the defaults is fine. When you reach the **Completing the Apache Tomcat Setup Wizard** dialog, you can optionally check **Run Apache Tomcat**, to have Tomcat started now. Click **Finish** to complete the Tomcat setup process.
 
-1.  登录到[“管理门户”][Azure 管理门户]。
-2.  单击“虚拟机”。
-3.  单击你要登录的虚拟机名称。
-4.  单击“连接”。
-5.  根据需要响应提示以连接到虚拟机。提示需要管理员名称和密码时，请使用你创建虚拟机时提供的值。
+## To start Tomcat
+If you did not choose to run Tomcat in the **Completing the Apache Tomcat Setup Wizard** dialog, start it by opening a command prompt on your virtual machine and running **net start Tomcat7**.
 
-## 在虚拟机上安装 Java 应用程序服务器
+You should now see Tomcat running if you run the virtual machine's browser and open <http://localhost:8080>.
 
-你可将 Java 应用程序服务器安装到虚拟机，也可以通过安装程序安装 Java 应用程序服务器。
+To see Tomcat running from external machines, you'll need to create an endpoint and open a port.
 
-在本教程中，将安装 Tomcat。
+## To create an endpoint for your virtual machine
+1. Log in to the [Management Portal](https://manage.windowsazure.cn).
+2. Click **Virtual machines**.
+3. Click the name of the virtual machine that is running your Java application server.
+4. Click **Endpoints**.
+5. Click **Add**.
+6. In the **Add endpoint** dialog, ensure **Add standalone endpoint** is checked and then click **Next**.
+7. In the <strong>New endpoint details</strong> dialog:
+    1. Specify a name for the endpoint; for example, **HttpIn**.
+    2. Specify **TCP** for the protocol.
+    3. Specify **80** for the public port.
+    4. Specify **8080** for the private port.
+    5. Click the **Complete** button to close the dialog. Your endpoint will now be created.
 
-1.  登录到虚拟机后，将浏览器会话打开到 <http://tomcat.apache.org/download-70.cgi>。
-2.  双击“32 位/64 位 Windows Service 安装程序”的链接。利用此方法，Tomcat 将作为 Windows 服务安装。
-3.  系统提示时，请选择运行该安装程序。
-4.  在“Apache Tomcat 安装程序”向导中，按照提示操作来安装 Tomcat。在本教程中，接受默认值即可。当显示“完成 Apache Tomcat 安装程序向导”对话框时，可以选择“运行 Apache Tomcat”以立即启动 Tomcat。单击“完成”以完成 Tomcat 安装过程。
+## To open a port in the firewall for your virtual machine
+1. Log in to your virtual machine.
+2. Click **Windows Start**.
+3. Click **Control Panel**.
+4. Click **System and Security**, click **Windows Firewall**, and then click **Advanced Settings**.
+5. Click **Inbound Rules** and then click **New Rule**.
 
-## 启动 Tomcat
+ ![New inbound rule][NewIBRule]
 
-如果你未在“完成 Apache Tomcat 安装程序向导”对话框中选择运行 Tomcat，请通过在虚拟机上打开命令提示符并运行 **net start Tomcat7** 来启动它。
+6. For the new rule, select **Port** for the **Rule type** and then click **Next**.
 
-如果你运行虚拟机的浏览器并打开 <http://localhost:8080>，则应立即看到 Tomcat 在运行。
+ ![New inbound rule port][NewRulePort]
 
-若要从外部计算机查看 Tomcat 的运行，则需要创建一个终结点并开放一个端口。
+7. Select **TCP** for the protocol and specify **8080** for the port, and then click **Next**.
 
-## 为虚拟机创建终结点
+ ![New inbound rule ][NewRuleProtocol]
 
-1.  登录到[“管理门户”][Azure 管理门户]。
-2.  单击“虚拟机”。
-3.  单击正在运行 Java 应用程序服务器的虚拟机的名称。
-4.  单击“终结点”。
-5.  单击“添加”。
-6.  在“添加终结点”对话框中，确保选中“添加独立终结点”，然后单击“下一步”按钮。
-7.  在“新建终结点详细信息”对话框中：
+8. Choose **Allow the connection** and then click **Next**.
 
-    1.  为终结点指定名称；例如，**HttpIn**。
-    2.  指定 **TCP** 作为协议。
-    3.  指定 **80** 作为公用端口。
-    4.  指定 **8080** 作为私有端口。
-    5.  单击“完成”按钮以关闭对话框。将立即为你创建终结点。
+ ![New inbound rule action][NewRuleAction]
 
-## 在防火墙上为虚拟机开放一个端口
+9. Ensure **Domain**, **Private**, and **Public** are checked for the profile and then click **Next**.
 
-1.  登录虚拟机。
-2.  单击 Windows 的“开始”。
-3.  单击“控制面板”。
-4.  依次单击“系统和安全性”、“Windows 防火墙”和“高级设置”。
-5.  单击“入站规则”，然后单击“新建规则”。
+ ![New inbound rule profile][NewRuleProfile]
 
-![新建入站规则][新建入站规则]
+10. Specify a name for the rule, such as **HttpIn** (the rule name is not required to match the endpoint name, however), and then click **Finish**.  
 
-1.  对于新规则，请选择“端口”作为“规则类型”，然后单击“下一步”。
+ ![New inbound rule name][NewRuleName]
 
-![新建入站规则端口][新建入站规则端口]
+At this point, your Tomcat  Website should now be viewable from an external browser, using a URL of the form **http://*your\_DNS\_name*.cloudapp.net**, where ***your\_DNS\_name*** is the DNS name you specified when you created the virtual machine.
 
-1.  选择“TCP”作为协议并指定“8080”作为端口，然后单击“下一步”。
+## Application lifecycle considerations
+* You could create your own application web archive (WAR) and add it to the **webapps** folder. For example, create a basic Java Service Page (JSP) dynamic web project and export it as a WAR file, copy the WAR to the Apache Tomcat **webapps** folder on the virtual machine, then run it in a browser.
+* By default when the Tomcat service is installed, it will be set to start manually. You can switch it to start automatically by using the Services snap-in. Start the Services snap-in by clicking **Windows Start**, **Administrative Tools**, and then **Services**. To set Tomcat to start automatically, double-click the **Apache Tomcat** service in the Services snap-in and set **Startup type** to **Automatic**, as shown in the following.
 
-![新建入站规则][1]
+    ![Setting a service to start automatically][service_automatic_startup]
 
-1.  选择“允许连接”，然后单击“下一步”。
+    The benefit of having Tomcat start automatically is it will start again if the virtual machine is rebooted (for example, after software updates that require a reboot are installed).
 
-![新建入站规则操作][新建入站规则操作]
+## Next steps
+* Learn about other services, such as Azure Storage, service bus, SQL Database, and more that you may want to include with your Java applications, by viewing the information available at <http://www.windowsazure.com/zh-cn/develop/java/>.
 
-1.  确保为配置文件选中“域”、“私有”和“公开”，然后单击“下一步”。
+[virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 
-![新建入站规则配置文件][新建入站规则配置文件]
+[service_automatic_startup]: ./media/virtual-machines-java-run-tomcat-application-server/WA_TomcatServiceAutomaticStart.png
 
-1.  指定规则的名称，如 **HttpIn**（但是，规则名称无需与终结点名称匹配），然后单击“完成”。
 
-![新建入站规则名称][新建入站规则名称]
 
-此时，应可从外部浏览器使用 **http://*your\_DNS\_name*.cloudapp.net** 格式的 URL 立即查看你的 Tomcat 网站，其中 **your\_DNS\_name** 是你创建虚拟机时指定的 DNS 名称。
 
-## 应用程序生命周期注意事项
 
--   你可创建你自己的应用程序 Web 存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本的 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件，将此 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。
--   默认情况下，Tomcat 服务在安装后将会设置为手动启动。你可以使用“服务”管理单元将它切换为自动启动。请依次单击 Windows 的“开始”、“管理工具”和“服务”以启动“服务”管理单元。若要将 Tomcat 设置为自动启动，请在“服务”管理单元中双击“Apache Tomcat”服务，并将“启动类型”设置为“自动”，如下图所示。
 
-    ![将服务设置为自动启动][将服务设置为自动启动]
 
-    让 Tomcat 自动启动的好处是，当虚拟机重新启动时（例如，在安装需要重新启动的软件更新后），Tomcat 将再次启动。
 
-## 后续步骤
 
--   通过查看 <http://www.windowsazure.com/zh-cn/develop/java/> 上提供的信息，了解要与 Java 应用程序一起包含的 Azure 存储、Service Bus、SQL Database 等其他服务。
-
-  [运行 Apache Tomcat 的虚拟机]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
-  [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
-  [Azure 管理门户]: https://manage.windowsazure.cn
-  [新建入站规则]: ./media/virtual-machines-java-run-tomcat-application-server/NewInboundRule.png
-  [新建入站规则端口]: ./media/virtual-machines-java-run-tomcat-application-server/NewRulePort.png
-  [1]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProtocol.png
-  [新建入站规则操作]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleAction.png
-  [新建入站规则配置文件]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
-  [新建入站规则名称]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
-  [http://\*your\\\_DNS\\\_name]: http://*your\_DNS\_name
-  [将服务设置为自动启动]: ./media/virtual-machines-java-run-tomcat-application-server/WA_TomcatServiceAutomaticStart.png
+[NewIBRule]: ./media/virtual-machines-java-run-tomcat-application-server/NewInboundRule.png
+[NewRulePort]: ./media/virtual-machines-java-run-tomcat-application-server/NewRulePort.png
+[NewRuleProtocol]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProtocol.png
+[NewRuleAction]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleAction.png
+[NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
+[NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png

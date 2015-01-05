@@ -4,369 +4,364 @@
 
 
 
-# 在 Azure 上设置 SQL Server 虚拟机#
+# Provisioning a SQL Server Virtual Machine on Azure #
 
-Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以从库中选择虚拟机映像之一，只需要单击几次，即可将虚拟机设置到你的 Azure 环境。
+The Azure virtual machine gallery includes several images that contain Microsoft SQL Server. You can select one of the virtual machine images from the gallery and with a few clicks you can provision the virtual machine to your Azure environment.
 
-在本教程中，你将：
+In this tutorial, you will:
 
-* [从库连接到 Azure 管理门户并设置虚拟机](#Provision)
-* [使用远程桌面和完整安装打开虚拟机](#RemoteDesktop)
-* [完成配置步骤以便在另一台计算机上使用 SQL Server Management Studio 连接到虚拟机](#SSMS)
-* [后续步骤](#Optional)
+* [Connect to the Azure management portal and provision a virtual machine from the gallery](#Provision)
+* [Open the virtual machine using Remote Desktop and complete setup](#RemoteDesktop)
+* [Complete configuration steps to connect to the virtual machine using SQL Server Management Studio on another computer](#SSMS)
+* [Next steps](#Optional)
 
-## <span id="Provision"></span>从库连接到 Azure 管理门户并设置虚拟机
+##<a id="Provision">Connect to the Azure management portal and provision a virtual machine from the gallery</a>
 
-1.  使用你的帐户登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
+1. Log in to the [Azure Management Portal](http://manage.windowsazure.cn) using your account. 
 
-2.  在 Azure 管理门户中网页的左下角，依次单击“+新建”、“计算”、“虚拟机”、“从库中”。
+2. On the Azure Management Portal, at the bottom left of the web page, click **+NEW**, click **COMPUTE**, click **VIRTUAL MACHINE**, and then click **FROM GALLERY**.
 
-3.  在“创建虚拟机”页面上，选择包含 SQL Server 的虚拟机映像，然后单击该页右下角的“下一步”箭头。有关在 Azure 上受支持的 SQL Server 映像的最新信息，请参阅 [Azure 虚拟机中的 SQL Server](http://msdn.microsoft.com/zh-cn/library/azure/dn133151.aspx) 文档集中的 [Azure 中的 SQL Server 虚拟机入门](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx)主题。
+3. On the **Create a Virtual Machine** page, select a virtual machine image containing SQL Server, and then click the next arrow at the bottom right of the page. For the most up-to-date information on the supported SQL Server images on Azure, see [Getting Started with SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133151.aspx) topic in the [SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx) documentation set. 
 
-    > [WACOM.NOTE] 如果虚拟机是通过使用平台映像 SQL Server 评估版创建的，则无法将其升级到库中的按分钟付费版本的映像。可以选择以下两个选项之一：
+    >[WACOM.NOTE] If you have a virtual machine created by using the platform image SQL Server Evaluation edition, you cannot upgrade it to a per-minute paid edition image in the gallery. You can choose one of the following two options:
+    
+    > - You can create a new virtual machine by using the per-minute paid SQL Server edition from the gallery and migrate your database files to this new virtual machine by following the steps at [How to migrate SQL Server database files and schema between virtual machines in Azure using data disks](http://msdn.microsoft.com/zh-cn/library/azure/jj898505.aspx). **Or**,
 
-    > -   你可以通过从库中使用按分钟付费 SQL Server 版本创建一台新虚拟机，并按[如何使用数据磁盘在 Azure 中的虚拟机之间迁移 SQL Server 数据库文件和架构](http://msdn.microsoft.com/zh-cn/library/azure/jj898505.aspx)中所述步骤将数据库文件迁移到这台新虚拟机。**或者**，
+    > - You can upgrade an existing instance of SQL Server Evaluation edition to a different edition of SQL Server under the [License Mobility through Software Assurance on Azure](/zh-cn/pricing/license-mobility/) agreement by following the steps at [Upgrade to a Different Edition of SQL Server 2014](http://msdn.microsoft.com/zh-cn/library/cc707783(v=sql.120).aspx). For information on how to purchase the licensed copy of SQL Server, see [How to Buy SQL Server](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server/buy.aspx#fbid=t8CT8yhDl9X).
+   
 
-    > -   根据[在 Azure 上通过软件保证实现许可迁移](http://azure.microsoft.com/zh-cn/pricing/license-mobility/)协议，通过[升级到 SQL Server 2014 的不同版本](http://msdn.microsoft.com/zh-cn/library/cc707783(v=sql.120).aspx)中所述的步骤，将 SQL Server 评估版的现有实例升级到 SQL Server 的另一版本。有关如何购买 SQL Server 的许可副本的信息，请参阅[如何购买 SQL Server](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server/buy.aspx#fbid=t8CT8yhDl9X)。
+4. On the first **Virtual Machine Configuration** page, provide the following information:
+	- Provide a **VIRTUAL MACHINE NAME**.
+	- In the **NEW USER NAME** box, type unique user name for the VM local administrator account.
+	- In the **NEW PASSWORD** box, type a strong password. For more information, see [Strong Passwords](http://msdn.microsoft.com/zh-cn/library/ms161962.aspx).
+	- In the **CONFIRM PASSWORD** box, retype the password.
+	- Select the appropriate **SIZE** from the drop down list. 
 
-4.  在“虚拟机配置”页上，提供以下信息：
-	-   提供一个“虚拟机名称”。
-	-   在“新用户名”框中，键入用于虚拟机本地管理员帐户的唯一用户名。
-	-   在**“新密码”**框中，键入一个强密码。有关详细信息，请参阅[强密码](http://msdn.microsoft.com/zh-cn/library/ms161962.aspx)。
-	-   在**“确认密码”**框中，重新键入该密码。
-	-   从下拉列表中选择合适的**“大小”**。
+	>[WACOM.NOTE] The size of the virtual machine is specified during provisioning:
+ 	> A2 is the smallest size recommended for production workloads. 
+    > The minimum recommended size for a virtual machine is A3 when using SQL Server Enterprise Edition.
+    > Select A3 or higher when using SQL Server Enterprise Edition.
+   	> Select A4 when using SQL Server 2012 or 2014 Enterprise Optimized for Transactional Workloads images.  
+   	> Select A7 when using SQL Server 2012 or 2014 Enterprise Optimized for Data Warehousing Workloads images. 
+   	> The size selected limits the number of data disks you can configure. For most up-to-date information on available virtual machine sizes and the number of data disks that you can attach to a virtual machine, see [Virtual Machine Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx).
 
-	> [WACOM.NOTE] 虚拟机的大小是在设置期间指定的：
-	> A2 是推荐用于生产负载的最小大小。
-    > 在使用 SQL Server Enterprise Edition 时推荐用于虚拟机的最小大小是 A3。
-    > 在使用 SQL Server Enterprise Edition 时请选择 A3 或更高的值。
-   	> 在使用 SQL Server 2012 Enterprise for Data Warehousing 映像时请选择 A6。
-   	> 在使用 SQL Server 2014 for Data Warehousing 映像时请选择 A7。
-   	> 所选的大小会限制你可以配置的数据磁盘的数量。有关可用虚拟机大小和可附加到虚拟机的数据磁盘数目的最新信息，请参阅[用于 Azure 的虚拟机大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。
+	Click the next arrow on the bottom right to continue.
 
-	单击右下角的“下一步”箭头以继续。
+	![VM Configuration](./media/virtual-machines-provision-sql-server/4VM-Config.png)
 
-	![VM 配置](./media/virtual-machines-provision-sql-server/4VM-Config.png)
 
-5.  在**“虚拟机模式”**页上，提供以下信息：
-	-   选择“独立虚拟机”。
-	-   在“DNS 名称”框中，提供所选 DNS 名称的第一部分，让它完成时的格式是 **TESTNAME.cloudapp.net**
-	-   在“区域/地缘组/虚拟网络”框中，选择将托管此虚拟映像的区域。
-
-	单击下一步箭头以继续。
-
-	![VM 模式][Image5]
-
-6.  在“虚拟机选项”页上：
-	-   在“可用性集”框中，选择“(无)”。
-	-   阅读并接受法律条款。
-
-	![VM 选项][Image6]
-
-7.  单击右下角的对号标记以继续。
-
-8.  请等候 Azure 准备你的虚拟机。预计虚拟机的状态将出现如下变化：
-
-	-   正在启动（正在配置）
-	-   已停止
-	-   正在启动（正在配置）
-	-   正在运行（正在配置）
-	-   正在运行
+5. On the second **Virtual machine configuration** page, configure resources for networking, storage, and availability:
+	- In the **Cloud Service** box, choose **Create a new cloud service**.
+	- In the **Cloud Service DNS Name** box, provide the first portion of a DNS name of your choice, so that it completes a name in the format **TESTNAME.cloudapp.net** 
+	- In the **REGION/AFFINITY GROUP/VIRTUAL NETWORK** box, select a region where this virtual image will be hosted.
+	- In the **Storage Account**, select an existing storage account or select an automatically generated one.
+	- In the **AVAILABILITY SET** box, select **(none)**.
+	- Read and accept the legal terms.
 	
 
-## <span id="RemoteDesktop"></span>使用远程桌面和完整安装打开虚拟机
+6. Click the next arrow to continue.
 
-1.  当设置完成时，单击你的虚拟机的名称，以转到“仪表板”页面。在页面底部，单击“连接”。
 
-	![选择仪表板页][Image5b]
-2.  选择使用 Windows 远程桌面程序 (`%windir%\system32\mstsc.exe`) 打开 .rpd 文件。
+7. Click the check mark in the bottom right corner to continue.
 
-	
-3.  在“Windows 安全性”对话框中，提供你在前面步骤中指定的本地管理员帐户的密码。（系统可能会要求你验证虚拟机的凭据。）
+8. Wait while Azure prepares your virtual machine. Expect the virtual machine status to proceed through:
 
-4.  首次登录到此虚拟机时，可能需要完成若干过程，其中包括设置桌面、更新 Windows 和完成 Windows 初始配置任务 (sysprep)。Windows sysprep 完成后，SQL Server 安装程序将完成配置任务。这些任务在其完成过程中可能会导致短时延迟。`SELECT @@SERVERNAME` 可能要等 SQL Server 安装程序完成之后才会返回正确名称。
-
-用 Windows 远程桌面连接到该虚拟机后，该虚拟机即可像任何其他计算机一样工作。以正常方式通过 SQL Server Management Studio（在虚拟机上运行）连接到 SQL Server 的默认实例。
-
-## <span id="SSMS"></span>完成配置步骤以便在另一台计算机上使用 SQL Server Management Studio 连接到虚拟机
-
-你必须先完成下列各节中描述的下列任务，然后才能通过 Internet 连接到 SQL Server 的实例：
-
--   [为虚拟机创建 TCP 终结点](#Endpoint)
--   [在 Windows 防火墙中打开 TCP 端口](#FW)
--   [将 SQL Server 配置为侦听 TCP 协议](#TCP)
--   [配置混合模式的 SQL Server 身份验证](#Mixed)
--   [创建 SQL Server 身份验证登录名](#Logins)
--   [确定虚拟机的 DNS 名称](#DNS)
--   [从其他计算机连接到数据库引擎](#cde)
--   [从应用程序连接到数据库引擎](#cdea)
-
-下图中概述了此连接路径：
-
-![连接到 SQL Server 虚拟机][Image8b]
-
-### <span id="Endpoint"></span>为虚拟机创建 TCP 终结点
-
-虚拟机必须具有终结点以侦听传入的 TCP 通信。此 Azure 配置步骤将传入 TCP 端口通信定向到虚拟机可以访问的 TCP 端口。
-
-1.  在 Azure 管理门户上，单击**“虚拟机”**。
-
-	
-2.  单击你新创建的虚拟机。将显示有关你的虚拟机的信息。
+	- Starting (Provisioning)
+	- Stopped
+	- Starting (Provisioning)
+	- Running (Provisioning)
+	- Running
 	
 
-3.  在靠近页面顶端的位置，选择“终结点”页面，然后在页面底部单击“添加终结点”。
+##<a id="RemoteDesktop">Open the virtual machine using Remote Desktop and complete setup</a>
 
-	![单击添加终结点][Image28]
+1. When provisioning completes, click on the name of your virtual machine to go to the DASHBOARD page. At the bottom of the page, click **Connect**.
 
-4.  在“给虚拟机添加终结点”页上，单击“添加终结点”，然后单击“下一步”箭头以继续。
+	
+2. Choose to open the rpd file using the Windows Remote Desktop program (`%windir%\system32\mstsc.exe`).
 
-	![单击添加终结点][Image29]
+	
+3. At the **Windows Security** dialog box, provide the password for the local administrator account that you specified in an earlier step. (You might be asked to verify the credentials of the virtual machine.)
 
-5.  在“指定终结点的详细信息”页面上，提供以下信息。
+4. The first time you log on to this virtual machine, several processes may need to complete, including setup of your desktop, Windows updates, and completion of the Windows initial configuration tasks (sysprep). After Windows sysprep completes, SQL Server setup  completes configuration tasks. These tasks make cause a short delay while they complete. `SELECT @@SERVERNAME` may not return the correct name until SQL Server setup completes.
 
-	-   在“名称”框中，为终结点提供名称。
-	-   在“协议”框中，选择“TCP”。可在“专用端口”框中键入 SQL Server 的默认侦听端口 **1433**。同样，你可以在“公用端口”框中键入 **57500**。注意，许多组织选择其他端口号以避免恶意的安全攻击。
+Once you are connected to the virtual machine with Windows Remote Desktop, the virtual machine works much like any other computer. Connect to the default instance of SQL Server with SQL Server Management Studio (running on the virtual machine) in the normal way. 
 
+##<a id="SSMS">Complete Configuration steps to connect to the virtual machine Using SQL Server Management Studio on another computer</a>
 
-	![终结点屏幕][Image30]
+Before you can connect to the instance of SQL Server from the internet, you must complete the following tasks as described in the sections that follow:
 
-6.  单击复选标记以继续。终结点创建完成。
+- [Create a TCP endpoint for the virtual machine](#Endpoint)
+- [Open TCP ports in the Windows firewall](#FW)
+- [Configure SQL Server to listen on the TCP protocol](#TCP)
+- [Configure SQL Server for mixed mode authentication](#Mixed)
+- [Create SQL Server authentication logins](#Logins)
+- [Determine the DNS name of the virtual machine](#DNS)
+- [Connect to the Database Engine from another computer](#cde)
+- [Connecting to the Database Engine from your application](#cdea)
 
-	![带有终结点的 VM][Image31]
+The connection path is summarized by the following diagram:
 
-### <span id="FW"></span>在 Windows 防火墙中为数据库引擎的默认实例打开 TCP 端口
+![Connecting to a SQL Server virtual machine][Image8b]
 
-1.  通过 Windows 远程桌面连接到虚拟机。登录后，在“开始”菜单上单击“运行”，键入 **WF.msc**，然后单击“确定”。
+###<a id="Endpoint">Create a TCP endpoint for the virtual machine</a>
 
-	![启动防火墙程序][Image12]
-2.  在**“高级安全 Windows 防火墙”**的左窗格中，右键单击**“入站规则”**，然后在操作窗格中单击**“新建规则”**。
+The virtual machine must have an endpoint to listen for incoming TCP communication. This Azure configuration step, directs incoming TCP port traffic to a TCP port that is accessible to the virtual machine.
 
-	![新建规则][Image13]
+1. On the Azure Management Portal, click on **VIRTUAL MACHINES**.
 
-3.  在**“规则类型”**对话框中，选择**“端口”**，然后单击**“下一步”**。
+	
+2. Click on your newly created virtual machine. Information about your virtual machine is presented.
+	
 
-4.  在**“协议和端口”**对话框中，选择 **TCP**。选择“特定本地端口”，然后键入数据库引擎实例的端口号（即默认实例对应的端口号 **1433**，或你在终结点步骤中为专用端口选择的端口号）。
+3. Near the top of the page, select the **ENDPOINTS** page, and then at the bottom of the page, click **ADD**.
+	
 
-	![TCP 端口 1433][Image14]
+4. On the **Add an Endpoint to a Virtual Machine** page, click **Add a Stand-alone Endpoint**, and then click the Next arrow to continue.
 
-5.  单击“下一步”。
+	
+5. On the **Specify the details of the endpoint** page, provide the following information.
 
-6.  在**“操作”**对话框中，选择**“允许连接”**，然后单击**“下一步”**。
+	- In the **NAME** box, provide a name for the endpoint.
+	- In the **PROTOCOL** box, select **TCP**. You may type **57500** in the **PUBLIC PORT** box. Similarly, you may type SQL Server's default listening port **1433** in the **Private Port** box. Note that many organizations select different port numbers to avoid malicious security attacks. 
 
-	**安全说明：** 选择“只允许安全连接”可增加安全性。如果你想在你的环境中配置其他安全性选项，请选择此选项。
 
-	![允许连接][Image15]
+6. Click the check mark to continue. The endpoint is created.
+	
 
-7.  在“配置文件”对话框中，选择“公用”，然后单击**“下一步”**。
+###<a id="FW">Open TCP ports in the Windows firewall for the default instance of the Database Engine</a>
 
-    **安全说明：** 选择“公用”允许通过 Internet 进行访问。只要有可能，就请选择更具限制性的配置文件。
+1. Connect to the virtual machine via Windows Remote Desktop. Once logged in, on the Start menu, click **Run**, type **WF.msc**, and then click **OK**. If running Windows Server 2012 or later, you may also type **WF** on the Start menu and then select **Windows Firewall with Advanced Security**.
 
-	![公用配置文件][Image16]
+	![Start the Firewall Program][Image12]
+2. In the **Windows Firewall with Advanced Security**, in the left pane, right-click **Inbound Rules**, and then click **New Rule** in the action pane.
 
-8.  在“名称”对话框中，键入此规则的名称和说明，然后单击“完成”。
+	![New Rule][Image13]
 
-	![规则名称][Image17]
+3. In the **Rule Type** dialog box, select **Port**, and then click **Next**.
 
-根据需要为其他组件打开附加端口。有关详细信息，请参阅[配置 Windows 防火墙以允许 SQL Server 访问](http://msdn.microsoft.com/zh-cn/library/cc646023.aspx)。
+4. In the **Protocol and Ports** dialog box, select **TCP**. Select **Specific local ports**, and then type the port number of the instance of the Database Engine (**1433** for the default instance or your choice for the private port in the endpoint step). 
 
+	![TCP Port 1433][Image14]
 
-### <span id="TCP"></span>将 SQL Server 配置为侦听 TCP 协议
+5. Click **Next**.
 
-1.  使用远程桌面连接到虚拟机后，在“开始”菜单上，依次单击“所有程序”、Microsoft SQL Server *版本*、“配置工具”、“SQL Server 配置管理器”。
+6. In the **Action** dialog box, select **Allow the connection**, and then click **Next**.
 
-	![打开 SSCM][Image9]
+	**Security Note:** Selecting **Allow the connection if it is secure** can provide additional security. Select this option if you want to configure additional security options in your environment.
 
-2.  在“SQL Server 配置管理器”的控制台窗格中，展开“SQL Server 网络配置”。
+	![Allow Connections][Image15]
 
-3.  在控制台窗格中，单击“*实例名称* 的协议”。（默认实例为“MSSQLSERVER 的协议”。）
+7. In the **Profile** dialog box, select **Public**, and then click **Next**. 
 
-4.  在详细信息窗格中，右键单击“TCP”，默认情况下该协议对于库映像应为“已启用”状态。对于你的自定义映像，单击**“启用”**（如果其状态为“已禁用”）。
+    **Security Note:**  Selecting **Public** allows access over the internet. Whenever possible, select a more restrictive profile.
 
-	![启用 TCP][Image10]
+	![Public Profile][Image16]
 
-5.  在控制台窗格中，单击“SQL Server 服务”。（数据库引擎的重新启动可能会延迟到下一步完成之后。）
+8. In the **Name** dialog box, type a name and description for this rule, and then click **Finish**.
 
-6.  在详细信息窗格中，右键单击“SQL Server (*实例名*)”（默认实例为“SQL Server (MSSQLSERVER)”），然后单击“重新启动”以停止并重新启动该 SQL Server 实例。
+	![Rule Name][Image17]
 
-    ![重新启动数据库引擎][Image11]
+Open additional ports for other components as needed. For more information, see [Configuring the Windows Firewall to Allow SQL Server Access](http://msdn.microsoft.com/zh-cn/library/cc646023.aspx).
 
-7.  关闭 SQL Server 配置管理器。
 
-有关启用 SQL Server 数据库引擎的协议的详细信息，请参阅[启用或禁用服务器网络协议](http://msdn.microsoft.com/zh-cn/library/ms191294.aspx)。
+###<a id="TCP">Configure SQL Server to listen on the TCP protocol</a>
 
-### <span id="Mixed"></span>配置混合模式的 SQL Server 身份验证
+1. While connected to the virtual machine by using Remote Desktop, on the Start menu, click **All Programs**, click **Microsoft SQL Server** *version*, click **Configuration Tools**, and then click **SQL Server Configuration Manager**.
+	
+	![Open SSCM][Image9]
 
-在没有域环境的情况下，SQL Server 数据库引擎无法使用 Windows 身份验证。若要从其他计算机连接到数据库引擎，请将 SQL Server 的身份验证模式配置为混合。混合模式身份验证同时允许 SQL Server 身份验证和 Windows 身份验证。（如果你已经配置了 Azure 虚拟网络，可能没有必要配置混合模式身份验证。有关详细信息，请参阅 [Azure 虚拟机中的 SQL Server](http://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx) 文档集中的 [Azure 虚拟机中 SQL Server 的连接性注意事项](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx)主题。
+2. In SQL Server Configuration Manager, in the console pane, expand **SQL Server Network Configuration**.
 
-1.  使用远程桌面连接到虚拟机后，在“开始”菜单上，依次单击“所有程序”、Microsoft SQL Server *版本*、SQL Server Management Studio。
+3. In the console pane, click **Protocols for _instance name_**. (The default instance is **Protocols for MSSQLSERVER**.)
 
-	![启动 SSMS][Image18]
+4. In the details pane, right-click TCP, it should be Enabled for the gallery images by default. For your custom images, click **Enable** (if its status is Disabled.)
 
-	Management Studio 在首次打开时，一定会创建用户 Management Studio 环境。这可能需要一小段时间。
+	![Enable TCP][Image10]
 
-2.  打开时，Management Studio 会显示“连接到服务器”对话框。在“服务器名称”框中，键入要连接到对象资源管理器中的数据库引擎的虚拟机的名称。（你还可使用“(local)”或一个句点代替虚拟机名称作为“服务器名称”。选择“Windows 身份验证”，在“用户名”框中保留 ***your\_VM\_name*\\your\_local\_administrator**。单击“连接”。
+5. In the console pane, click **SQL Server Services**. (Restarting the Database Engine can be postponed until completion of the next step.)
 
-	![连接到服务器][Image19]
+6. In the details pane, right-click **SQL Server (_instance name_)** (the default instance is **SQL Server (MSSQLSERVER)**), and then click **Restart**, to stop and restart the instance of SQL Server. 
 
-3.  在 SQL Server Management Studio 的“对象资源管理器”中，右键单击 SQL Server 实例的名称（虚拟机名称），然后单击**“属性”**。
+	![Restart Database Engine][Image11]
 
-	![服务器属性][Image20]
+7. Close SQL Server Configuration Manager.
 
-4.  在“安全性”页上的“服务器身份验证”下，选择“SQL Server 和 Windows 身份验证模式”，然后单击“确定”。
+For more information about enabling protocols for the SQL Server Database Engine, see [Enable or Disable a Server Network Protocol](http://msdn.microsoft.com/zh-cn/library/ms191294.aspx).
 
-	![选择身份验证模式][Image21]
+###<a id="Mixed">Configure SQL Server for mixed mode authentication</a>
 
-5.  在 SQL Server Management Studio 对话框中，单击“确定”,以接受重新启动 SQL Server 的要求。
+The SQL Server Database Engine cannot use Windows Authentication without domain environment. To connect to the Database Engine from another computer, configure SQL Server for mixed mode authentication. Mixed mode authentication allows both SQL Server Authentication and Windows Authentication. (Configuring mixed mode authentication might not be necessary if you have configured an Azure Virtual Network. For more information, see [Connectivity Considerations for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx) topic in the [SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx) documentation set.
 
-6.  在“对象资源管理器”中，右键单击你的服务器，然后单击“重新启动”。（如果 SQL Server 代理正在运行，它也必须重新启动。）
+1. While connected to the virtual machine by using Remote Desktop, on the Start menu, click **All Programs**, click **Microsoft SQL Server _version_**, and then click **SQL Server Management Studio**. 
 
-	![重新启动][Image22]
+	![Start SSMS][Image18]
 
-7.  在 SQL Server Management Studio 对话框中，单击“是”以同意重新启动 SQL Server。
+	The first time you open Management Studio it must create the users Management Studio environment. This may take a few moments.
 
-### <span id="Logins"></span>创建 SQL Server 身份验证登录名
+2. When opening, Management Studio presents the **Connect to Server** dialog box. In the **Server name** box, type the name of the virtual machine to connect to the Database Engine  with the Object Explorer. (Instead of the virtual machine name you can also use **(local)** or a single period as the **Server name**. Select **Windows Authentication**, and leave **_your_VM_name_\your_local_administrator** in the **User name** box. Click **Connect**.
 
-若要从其他计算机连接到数据库引擎，你必须创建至少一个 SQL Server 身份验证登录名。
+	![Connect to Server][Image19]
 
-1.  在 SQL Server Management Studio 对象资源管理器中，展开你要在其中创建新登录名的服务器实例所在的文件夹。
+3. In SQL Server Management Studio Object Explorer, right-click the name of the instance of SQL Server (the virtual machine name), and then click **Properties**.
 
-2.  右键单击“安全性”文件夹，指向“新建”，然后选择“登录名…”。
+	![Server Properties][Image20]
 
-	![新建登录名][Image23]
+4. On the **Security** page, under **Server authentication**, select **SQL Server and Windows Authentication mode**, and then click **OK**.
 
-3.  在“登录名 - 新建”对话框中的“常规”页上，在“登录名”框中输入新用户的名称。
+	![Select Authentication Mode][Image21]
 
-4.  选择“SQL Server 身份验证”。
+5. In the SQL Server Management Studio dialog box, click **OK** to acknowledge the requirement to restart SQL Server.
 
-5.  在“密码”框中，输入新用户的密码。在“确认密码”框中再次输入该密码。
+6. In Object Explorer, right-click your server, and then click **Restart**. (If SQL Server Agent is running, it must also be restarted.)
 
-6.  若要强制实施针对复杂性和强制实施的密码策略选项，请选择“强制实施密码策略”（推荐）。这是选择 SQL Server 身份验证时的默认选项。
+	![Restart][Image22]
 
-7.  若要强制实施针对过期的密码策略选项，请选择“强制密码过期”（推荐）。必须选择强制密码策略才能启用此复选框。这是选择 SQL Server 身份验证时的默认选项。
+7. In the SQL Server Management Studio dialog box, click **Yes** to agree that you want to restart SQL Server.
 
-8.  若要强制用户在首次使用登录名后创建新密码，请选择“用户在下次登录时必须更改密码”（如果此登录名给其他人使用，推荐选择此选项。如果登录名是为了自用，请勿选择此选项。）必须选择强制密码过期才能启用此复选框。这是选择 SQL Server 身份验证时的默认选项。
+###<a id="Logins">Create SQL Server authentication logins</a>
 
-9.  从“默认数据库”列表中，为该登录名选择默认数据库。**master** 是此选项的默认值。如果你尚未创建用户数据库，则保留此设置为 **master**。
+To connect to the Database Engine from another computer, you must create at least one SQL Server authentication login.
 
-10. 在“默认语言”列表中，保留“默认”值。
+1. In SQL Server Management Studio Object Explorer, expand the folder of the server instance in which you want to create the new login.
 
-	![登录名属性][Image24]
+2. Right-click the **Security** folder, point to **New**, and select **Login...**.
 
-11. 如果这是你创建的第一个登录名，可能会需要将此登录名指派为 SQL Server 管理员。这样的话，请在“服务器角色”页面上选中 **sysadmin**。
+	![New Login][Image23]
 
-	**安全说明：** sysadmin 固定服务器角色的成员对数据库引擎具有完全控制权限。应谨慎限制此角色中的成员资格。
+3. In the **Login - New** dialog box, on the **General** page, enter the name of the new user in the **Login name** box.
+
+4. Select **SQL Server authentication**.
+
+5. In the **Password** box, enter a password for the new user. Enter that password again into the **Confirm Password** box.
+
+6. To enforce password policy options for complexity and enforcement, select **Enforce password policy** (recommended). This is a default option when SQL Server authentication is selected.
+
+7. To enforce password policy options for expiration, select **Enforce password expiration** (recommended). Enforce password policy must be selected to enable this checkbox. This is a default option when SQL Server authentication is selected.
+
+8. To force the user to create a new password after the first time the login is used, select **User must change password at next login** (Recommended if this login is for someone else to use. If the login is for your own use, do not select this option.) Enforce password expiration must be selected to enable this checkbox. This is a default option when SQL Server authentication is selected. 
+
+9. From the **Default database** list, select a default database for the login. **master** is the default for this option. If you have not yet created a user database, leave this set to **master**.
+
+10. In the **Default language** list, leave **default** as the value.
+    
+	![Login Properties][Image24]
+
+11. If this is the first login you are creating, you may want to designate this login as a SQL Server administrator. If so, on the **Server Roles** page, check **sysadmin**. 
+
+	**Security Note:** Members of the sysadmin fixed server role have complete control of the Database Engine. You should carefully restrict membership in this role.
 
 	![sysadmin][Image25]
 
-12. 单击“确定”。
+12. Click OK.
 
-有关 SQL Server 登录名的详细信息，请参阅[创建登录名](http://msdn.microsoft.com/zh-cn/library/aa337562.aspx)。
+For more information about SQL Server logins, see [Create a Login](http://msdn.microsoft.com/zh-cn/library/aa337562.aspx).
 
 
 
-### <span id="DNS"></span>确定虚拟机的 DNS 名称
+###<a id="DNS">Determine the DNS name of the virtual machine</a>
 
-若要从另一台计算机连接到 SQL Server 数据库引擎，必须知道虚拟机的域名系统 (DNS) 名称。（这是 Internet 用于识别虚拟机的名称）。可以使用 IP 地址，但 IP 地址在 Azure 为冗余或维护而移动资源时可能会变更。DNS 名称将保持不变，因为可将该名称重定向到新的 IP 地址。）
+To connect to the SQL Server Database Engine from another computer, you must know the Domain Name System (DNS) name of the virtual machine. (This is the name the internet uses to identify the virtual machine. You can use the IP address, but the IP address might change when Azure moves resources for redundancy or maintenance. The DNS name will be stable because it can be redirected to a new IP address.)  
 
-1.  在 Azure 管理门户（或在完成前一步后），选择“虚拟机”。
+1. In the Azure Management Portal (or from the previous step), select **VIRTUAL MACHINES**. 
 
-2.  在“虚拟机实例”页面上的“DNS 名称”列中，找到并复制带有前缀 **http://** 的虚拟机 DNS 名称。（在用户界面上可能显示不出整个名称，不过没关系，你可以右键单击它，并选择“复制”。）
+2. On the **VIRTUAL MACHINE INSTANCES** page, in the **DNS NAME** column, find and copy the DNS name for the virtual machine which appears preceded by **http://**. (The user interface might not display the entire name, but you can right-click on it, and select copy.)
+	
 
-	![DNS 名称][Image32]
+### <a id="cde">Connect to the Database Engine from another computer</a>
+ 
+1. On a computer connected to the internet, open SQL Server Management Studio.
 
-### <span id="cde"></span>从其他计算机连接到数据库引擎
+2. In the **Connect to Server** or **Connect to Database Engine** dialog box, in the **Server name** box, enter the DNS name of the virtual machine (determined in the previous task) and a public endpoint port number in the format of *DNSName,portnumber* such as **tutorialtestVM.chinacloudapp.cn,57500**.
 
-1.  在连接到 Internet 的计算机上，打开 SQL Server Management Studio。
+3. In the **Authentication** box, select **SQL Server Authentication**.
 
-2.  在“连接到服务器”或“连接到数据库引擎”对话框的“服务器名称”框中，按 *DNSName,portnumber* 的格式输入（在前一任务中确定的）虚拟机的 DNS 名称和公用终结点端口号，例如 **tutorialtestVM.chinacloudapp.cn,57500**。
+4. In the **Login** box, type the name of a login that you created in an earlier task.
 
-3.  在“身份验证”框中，选择“SQL Server 身份验证”。
+5. In the **Password** box, type the password of the login that you create in an earlier task.
 
-4.  在“登录名”框中，键入你在前面的任务中创建的登录名。
+6. Click **Connect**.
 
-5.  在“密码”框中，键入你在前面的任务中创建的登录名的密码。
+	![Connect using SSMS][Image33]
 
-6.  单击“连接”。
+### <a id="cdea"> Connecting to the Database Engine from your application</a>
 
-	![使用 SSMS 进行连接][Image33]
-
-### <span id="cdea"></span> 从应用程序连接到数据库引擎
-
-如果你可以使用 Management Studio 连接到 Azure 虚拟机上运行的 SQL Server 的实例，就应该能够使用类似于下面这样的连接字符串来连接。
+If you can connect to an instance of SQL Server running on an Azure virtual machine by using Management Studio, you should be able to connect by using a connection string similar to the following.
 
 	connectionString="Server=<DNS_Name>;Integrated Security=false;User ID=<login_name>;Password=<your_password>;"providerName="System.Data.SqlClient"
 
-有关详细信息，请参阅[如何解决 SQL Server 数据库引擎的连接问题](http://social.technet.microsoft.com/wiki/contents/articles/2102.how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx)。
+For more information, see [How to Troubleshoot Connecting to the SQL Server Database Engine](http://social.technet.microsoft.com/wiki/contents/articles/how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx).
 
-## <span id="Optional"></span>后续步骤
+##<a id="Optional">Next Steps</a>
+You've seen how to create and configure a SQL Server on an Azure virtual machine using the platform image. When using SQL Server in Azure Virtual Machines, we recommend that you follow the detailed guidance given in the [SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx) documentation in the library. This documentation set includes a series of articles and tutorials that provide detailed guidance. The series includes the following sections:
 
-你已经看到了如何使用平台映像在 Azure 虚拟机上创建和配置 SQL Server。在使用 Azure 虚拟机中的 SQL Server 时，建议遵循库中 [Azure 虚拟机中的 SQL Server](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx) 文档中提供的详细指导。该文档集包含一系列提供详细指导的文章和教程。该系列包括以下各部分：
+[SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx)
 
-[Azure 虚拟机中的 SQL Server](http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx)
+[Getting Started with SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133151.aspx)
 
-[Azure 虚拟机中的 SQL Server 入门](http://msdn.microsoft.com/zh-cn/library/azure/dn133151.aspx)
+[Getting Ready to Migrate to SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133142.aspx)
 
-[准备迁移到 Azure 虚拟机中的 SQL Server](http://msdn.microsoft.com/zh-cn/library/azure/dn133142.aspx)
+- How to migrate SQL Server database files and schema between virtual machines in Azure using data disks
 
--   如何使用数据磁盘在 Azure 中的虚拟机之间迁移 SQL Server 数据库文件和架构
+[SQL Server Deployment in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133141.aspx)
 
-[Azure 虚拟机中的 SQL Server 部署](http://msdn.microsoft.com/zh-cn/library/azure/dn133141.aspx)
+- How to copy SQL Server data and setup files in a data disk from on-premises to Azure using CSUpload
+- How to create a base virtual machine on-premises using Hyper-V
+- How to create a SQL Server virtual machine in Azure using the existing on-premises SQL Server disk
+- How to create a SQL Server virtual machine in Azure using the existing on-premises SQL Server virtual machine 
+- How to use PowerShell to set up a SQL Server virtual machine in Azure 
+- How to Use Attached Data Disk to Store Database Files
 
--   如何使用 CSUpload 将数据磁盘中的 SQL Server 数据和安装文件从本地复制到 Azure
--   如何使用 Hyper-V 在本地创建基础虚拟机
--   如何使用现有本地 SQL Server 磁盘在 Azure 中创建 SQL Server 虚拟机
--   如何使用现有本地 SQL Server 虚拟机在 Azure 中创建 SQL Server 虚拟机
--   如何使用 PowerShell 在 Azure 中设置 SQL Server 虚拟机
--   如何使用附加的数据磁盘存储数据库文件
+[Connectivity Considerations for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx)
 
-[Azure 虚拟机中的 SQL Server 的连接注意事项](http://msdn.microsoft.com/zh-cn/library/azure/dn133152.aspx)
+- Tutorial: Connect to SQL Server in the same cloud service 
+- Tutorial: Connect to SQL Server in a different cloud service 
+- Tutorial: Connect ASP.NET application to SQL Server in Azure via Virtual Network 
 
--   教程：连接到同一云服务中的 SQL Server
--   教程：连接到不同云服务中的 SQL Server
--   教程：通过虚拟网络将 ASP.NET 应用程序连接到 Azure 中的 SQL Server
+[Performance Considerations for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx)
 
-[Azure 虚拟机中的 SQL Server 的性能注意事项](http://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx)
+[Security Considerations for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133147.aspx)
 
-[Azure 虚拟机中的 SQL Server 的安全注意事项](http://msdn.microsoft.com/zh-cn/library/azure/dn133147.aspx)
+[Troubleshooting and Monitoring for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn195883.aspx)
 
-[Azure 虚拟机中 SQL Server 的故障排除和监视](http://msdn.microsoft.com/zh-cn/library/azure/dn195883.aspx)
+[High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj870962.aspx)
 
-[Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](http://msdn.microsoft.com/zh-cn/library/azure/jj870962.aspx)
+- Tutorial: AlwaysOn Availability Groups in Azure (GUI)
+- Tutorial: AlwaysOn Availability Groups in Azure (PowerShell)
+- Tutorial: Listener Configuration for AlwaysOn Availability Groups
+- Tutorial: Add Azure Replica Wizard
+- Tutorial: Database Mirroring for Disaster Recovery in Azure
+- Tutorial: Database Mirroring for Disaster Recovery in Hybrid IT 
+- Tutorial: Database Mirroring for High Availability in Azure
+- Tutorial: Log Shipping for Disaster Recovery in Hybrid IT 
+- Troubleshooting Availability Group Listener in Azure
 
-- 教程：Azure 中的 AlwaysOn 可用性组 (GUI)
-- 教程：Azure 中的 AlwaysOn 可用性组 (PowerShell)
-- 教程：混合 IT 环境中的 AlwaysOn 可用性组 (PowerShell)
-- 教程：Azure 中 AlwaysOn 可用性组的侦听器配置
-- 教程：HybridIT 中 AlwaysOn 可用性组的侦听器配置
-- 教程：在 Azure 中进行数据库镜像以实现灾难恢复
-- 教程：混合 IT 环境中用于实现灾难恢复的数据库镜像
-- 教程：在 Azure 中进行数据库镜像以实现高可用性
-- 教程：在混合 IT 环境中进行日志传送以实现灾难恢复
-- Azure 中可用性组侦听器的故障排除
+[Backup and Restore for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn133143.aspx)
 
-[Azure 虚拟机中 SQL Server 的备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/dn133143.aspx)
+[SQL Server Business Intelligence in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj992719.aspx)
 
-[Azure 虚拟机中的 SQL Server Business Intelligence](http://msdn.microsoft.com/zh-cn/library/azure/jj992719.aspx)
+- Use PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2010
+- Use PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2013
+- Use PowerShell to Create an Azure VM With a Native Mode Report Server
 
-- 使用 PowerShell 创建运行 SQL Server BI 和 SharePoint 2010 的 Azure VM
-- 使用 PowerShell 创建运行 SQL Server BI 和 SharePoint 2013 的 Azure VM
-- 使用 PowerShell 创建运行本机模式报表服务器的 Azure VM
+[SQL Server Data Warehousing in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn387396.aspx)
 
-[Azure 虚拟机中的 SQL Server 数据仓库](http://msdn.microsoft.com/zh-cn/library/azure/dn387396.aspx)
+[Technical Articles for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/dn248435.aspx)
 
-[Azure 虚拟机中的 SQL Server 技术文章](http://msdn.microsoft.com/zh-cn/library/azure/dn248435.aspx)
+- [White paper: Understand Azure SQL Database and SQL Server in Azure Virtual Machines](/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)
 
-- [白皮书：Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](http://msdn.microsoft.com/zh-cn/library/azure/dn574746.aspx)
+- [White paper: Application Patterns and Development Strategies for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/library/azure/dn574746.aspx)
 
-- [白皮书：在 Azure 虚拟机中部署 SQL Server Business Intelligence](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn321998.aspx)
+- [White paper: Deploy SQL Server Business Intelligence in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn321998.aspx)
 
-- [白皮书：Azure 虚拟机中 SQL Server 的性能指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn248436.aspx)
+- [White paper: Performance Guidance for SQL Server in Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn248436.aspx)
+
+- [White paper: Reporting Services report viewer control and Windows Azure virtual machine based report servers](http://msdn.microsoft.com/library/azure/dn753698.aspx)
 
 [Image5]: ./media/virtual-machines-provision-sql-server/5VM-Mode.png
 [Image5b]: ./media/virtual-machines-provision-sql-server/5VM-Connect.png
 [Image6]: ./media/virtual-machines-provision-sql-server/6VM-Options.png
-[Image8b]: ./media/virtual-machines-provision-sql-server/SQLVMConnectionsOnAzure.GIF
+[Image8b]: ./media/virtual-machines-provision-sql-server/SQLServerinVMConnectionMap.png
 [Image9]: ./media/virtual-machines-provision-sql-server/9Click-SSCM.png
 [Image10]: ./media/virtual-machines-provision-sql-server/10Enable-TCP.png
 [Image11]: ./media/virtual-machines-provision-sql-server/11Restart.png

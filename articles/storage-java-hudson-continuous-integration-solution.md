@@ -1,175 +1,171 @@
 <properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="How to use Hudson with the Azure Blob service | Windows Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="Describes how to use Hudson with Azure Blob storage as a repository for build artifacts." metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-# 将 Azure 存储服务用于 Hudson 持续集成解决方案
+#Using Azure Storage with a Hudson Continuous Integration solution
 
-*作者：[Microsoft Open Technologies Inc.][]*
+*By [Microsoft Open Technologies Inc.][ms-open-tech]*
 
-下列信息演示了如何将 Azure Blob 服务用作 Hudson 持续集成 (CI) 解决方案创建的生成项目的存储库，或者用作要在生成过程中使用的可下载文件的源。在以下情况中你将会发现这一做法很有用：你在敏捷开发环境进行编码（使用 Java 或其他语言），生成是基于持续集成运行的并且你需要一个适用于生成项目的存储库，以便（举例来说）你能与其他组织成员、你的客户共享生成项目或维护存档。另一种情况是，当你的生成作业本身需要其他文件时，例如需要下载依赖项作为生成输入的一部分时。
+The following information shows how to use the Azure Blob service as a repository of build artifacts created by a Hudson Continuous Integration (CI) solution, or as a source of downloadable files to be used in a build process. One of the scenarios where you would find this useful is when you're coding in an agile development environment (using Java or other languages), builds are running based on continuous integration, and you need a repository for your build artifacts, so that you could, for example, share them with other organization members, your customers, or maintain an archive.  Another scenario is when your build job itself requires other files, for example, dependencies to download as part of the build input.
 
-在本教程中，你将使用 Microsoft Open Technologies, Inc. 提供的适用于 Hudson CI 的 Azure 存储插件。
+In this tutorial you will be using the Azure Storage Plugin for Hudson CI made available by Microsoft Open Technologies, Inc.
 
-## 目录
+## Table of Contents
 
--   [Hudson 概述][]
--   [使用 Blob 服务的好处][]
--   [先决条件][]
--   [如何将 Blob 服务用于 Hudson CI][]
--   [如何安装 Azure 存储插件][]
--   [如何配置 Azure 存储插件以使用你的存储帐户][]
--   [如何创建将你的生成项目上载到存储帐户的后期生成操作][]
--   [如何创建从 Azure Blob 存储进行下载的生成步骤][]
--   [Blob 服务使用的组件][]
+-   [Overview of Hudson][]
+-   [Benefits of using the Blob service][]
+-   [Prerequisites][]
+-   [How to use the Blob service with Hudson CI][]
+-   [How to install the Azure Storage plugin][]
+-   [How to configure the Azure Storage plugin to use your storage account][]
+-   [How to create a post-build action that uploads your build artifacts to your storage account][]
+-   [How to create a build step that downloads from Azure blob storage][]
+-   [Components used by the Blob service][]
 
-## 概述Hudson 概述
+## <a id="overview"></a>Overview of Hudson ##
+Hudson enables continuous integration of a software project by allowing developers to easily integrate their code changes and have builds produced automatically and frequently, thereby increasing the productivity of the developers. Builds are versioned, and build artifacts can be uploaded to various repositories. This topic will show how to use Azure blob storage as the repository of the build artifacts. It will also show how to download dependencies from Azure blob storage.
 
-Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频繁地生成版本，实现了软件项目的持续集成，因此提高了开发人员的工作效率。生成是版本控制的，并且可将生成项目上载到不同存储库中。本主题将演示如何将 Azure Blob 存储用作生成项目的存储库。它还将演示如何从 Azure Blob 存储下载依赖项。
+More information about Hudson can be found at [Meet Hudson][].
 
-有关 Hudson 的更多信息，请访问 [Hudson 概览][]。
+## <a id="benefits"></a>Benefits of using the Blob service ##
 
-## 好处使用 Blob 服务的好处
+Benefits of using the Blob service to host your agile development build artifacts include:
 
-使用 Blob 服务承载敏捷开发生成项目的好处包括：
+- High availability of your build artifacts and/or downloadable dependencies.
+- Performance when your Hudson CI solution uploads your build artifacts.
+- Performance when your customers and partners download your build artifacts.
+- Control over user access policies, with a choice between anonymous access, expiration-based shared access signature access, private access, etc.
 
--   生成项目和/或可下载依赖项的高可用性。
--   Hudson CI 解决方案上载生成项目时的性能。
--   客户和合作伙伴下载生成项目时的性能。
--   通过选择匿名访问、基于过期的共享访问、签名访问、专用访问等来控制用户访问策略。
+## <a id="prerequisites"></a>Prequisites ##
 
-## 先决条件先决条件
+You will need the following to use the Blob service with your Hudson CI solution:
 
-你将需要下列项才能将 Blob 服务用于 Hudson CI 解决方案：
+- A Hudson Continuous Integration solution.
 
--   一个 Hudson 持续集成解决方案。
+    If you currently don't have a Hudson CI solution, you can run a Hudson CI solution using the following technique:
 
-    如果你当前没有 Hudson CI 解决方案，可以使用以下技术运行一个 Hudson CI 解决方案：
-
-    1.  在已启用 Java 的计算机上，从 <http://hudson-ci.org/> 下载 Hudson WAR。
-    2.  在打开到包含 Hudson WAR 的文件夹的命令提示符处，运行 Hudson WAR。例如，如果你下载了版本 3.1.2：
+    1. On a Java-enabled machine, download the Hudson WAR from <http://hudson-ci.org/>.
+    2. At a command prompt that is opened to the folder that contains the Hudson WAR, run the Hudson WAR. For example, if you have downloaded version 3.1.2:
 
         `java -jar hudson-3.1.2.war`
 
-    3.  在浏览器中，打开 `http://localhost:8080/`。这将打开 Hudson 仪表板。
+    3. In your browser, open `http://localhost:8080/`. This will open the Hudson dashboard.
 
-    4.  首次使用 Hudson 时，在 `http://localhost:8080/` 完成初始设置。
+    4. Upon first use of Hudson, complete the initial setup at `http://localhost:8080/`. 
 
-    5.  在完成初始设置后，取消 Hudson WAR 的正在运行的实例，再次启动 Hudson WAR，然后重新打开 Hudson 仪表板 `http://localhost:8080/`，你将使用它来安装和配置 Azure 存储插件。
+    5. After you complete the initial setup, cancel the running instance of the Hudson WAR, start the Hudson WAR again, and  re-open the Hudson dashboard, `http://localhost:8080/`, which you will use to install and configure the Azure Storage plugin.
 
-        虽然典型 Hudson CI 解决方案将设置为作为一个服务运行，但在本教程中，通过命令行运行 Hudson war 就足够了。
+        While a typical Hudson CI solution would be set up to run as a service, running the Hudson war at the command line will be sufficient for this tutorial.
 
--   一个 Azure 帐户。你可以在 <http://www.windowsazure.cn> 中注册 Azure 帐户。
+- An Azure account. You can sign up for an Azure account at <http://www.windowsazure.cn>.
 
--   一个 Azure 存储帐户。如果你还没有存储帐户，可以使用[如何创建存储帐户][]中的步骤创建一个。
+- An Azure storage account. If you don't already have a storage account, you can create one using the steps at [How to Create a Storage Account][].
 
--   建议熟悉 Hudson CI 解决方案（但不是必需的），因为以下内容将使用一个基本示例向你演示使用 Blob 服务作为 Hudson CI 生成项目的存储库时所需的步骤。
+- Familiarity with the Hudson CI solution is recommended but not required, as the following content will use a basic example to show you the steps needed when using the Blob service as a repository for Hudson CI build artifacts.
 
-## 如何使用 Blob 服务如何将 Blob 服务用于 Hudson CI
+## <a id="howtouse"></a>How to use the Blob service with Hudson CI ##
 
-若要将 Blob 服务用于 Hudson，你将需要安装 Azure 存储插件，并对该插件进行配置以使用你的存储帐户，然后创建一个将生成项目上载到你的存储帐户的生成后操作。将在下面各节中介绍这些步骤。
+To use the Blob service with Hudson, you'll need to install the Azure Storage plugin, configure the plugin to use your storage account, and then create a post-build action that uploads your build artifacts to your storage account. These steps are described in the following sections.
 
-## 如何安装如何安装 Azure 存储插件
+## <a id="howtoinstall"></a>How to install the Azure Storage plugin ##
 
-1.  在 Hudson 仪表板中，单击**“管理 Hudson”**。
-2.  在**“管理 Hudson”**页中，单击**“管理插件”**。
-3.  单击**“可用”**选项卡。
-4.  单击**“其他”**。
-5.  在**“项目上载程序”**部分中，选中**“Windows Azure 存储插件”**。
-6.  单击**“安装”**。
-7.  安装完毕后，重新启动 Hudson。
+1. Within the Hudson dashboard, click **Manage Hudson**.
+2. In the **Manage Hudson** page, click **Manage Plugins**.
+3. Click the **Available** tab.
+4. Click **Others**.
+5. In the **Artifact Uploaders** section, check **Windows Azure Storage plugin**.
+6. Click **Install**.
+7. After the installation is complete, restart Hudson.
 
-## 如何配置如何配置 Azure 存储插件以使用你的存储帐户
+## <a id="howtoconfigure"></a>How to configure the Azure Storage plugin to use your storage account ##
 
-1.  在 Hudson 仪表板中，单击**“管理 Hudson”**。
-2.  在**“管理 Hudson”**页中，单击**“配置系统”**。
-3.  在**“Windows Azure 存储帐户配置”**部分中：
+1. Within the Hudson dashboard, click **Manage Hudson**.
+2. In the **Manage Hudson** page, click **Configure System**.
+3. In the **Windows Azure Storage Account Configuration** section:
+    1. Enter your storage account name, which you can obtain from the Azure portal, <https://manage.windowsazure.cn>.
+    2. Enter your storage account key, also obtainable from the Azure portal.
+    3. Use the default value for **Blob Service Endpoint URL** if you are using the public Azure cloud. If you are using a different Azure cloud, use the endpoint as specified in the Azure management portal for your storage account. 
+    4. Click **Validate storage credentials** to validate your storage account. 
+    5. [Optional] If you have additional storage accounts that you want made available to your Hudson CI, click **Add more storage accounts**.
+    6. Click **Save** to save your settings.
 
-    1.  输入你的存储帐户名称，可以从 Azure 门户 <https://manage.windowsazure.cn> 获取该帐户名称。
-    2.  输入你的存储帐户密钥，同样可以从 Azure 门户获取该密钥。
-    3.  如果你在使用公共 Azure 云，对于**“Blob 服务终结点 URL”**，请使用默认值。如果你在使用其他 Azure 云，则使用在 Azure 管理门户中为你的存储帐户指定的终结点。
-    4.  单击**“验证存储凭据”**以验证你的存储帐户。
-    5.  [可选] 如果你有其他存储帐户并且希望其可供 Hudson CI 使用，请单击**“添加更多存储帐户”**。
-    6.  单击**“保存”**以保存你的设置。
+## <a id="howtocreatepostbuild"></a>How to create a post-build action that uploads your build artifacts to your storage account ##
 
-## 如何创建生成后操作如何创建将你的生成项目上载到存储帐户的生成后操作
+For instruction purposes, first we'll need to create a job that will create several files, and then add in the post-build action to upload the files to your storage account.
 
-为了进行说明，首先我们将需要创建一个将创建若干个文件的作业，然后添加生成后操作以将文件上载到存储帐户。
-
-1.  在 Hudson 仪表板中，单击**“新建作业”**。
-2.  将此作业命名为**“MyJob”**，单击**“生成自由格式的软件作业”**，然后单击**“确定”**。
-3.  在作业配置的**“生成”**部分中，单击**“添加生成步骤”**并选择**“执行 Windows 批处理命令”**。
-4.  在**“命令”**中，使用下列命令：
+1. Within the Hudson dashboard, click **New Job**.
+2. Name the job **MyJob**, click **Build a free-style software job**, and then click **OK**.
+3. In the **Build** section of the job configuration, click **Add build step** and choose **Execute Windows batch command**.
+4. In **Command**, use the following commands:
 
         md text
         cd text
         echo Hello Azure Storage from Hudson > hello.txt
         date /t > date.txt
         time /t >> date.txt
+ 
+5. In the **Post-build Actions** section of the job configuration, click **Upload artifacts to Windows Azure Blob storage**.
+6. For **Storage Account Name**, select the storage account to use.
+7. For **Container Name**, specify the container name. (The container will be created if it does not already exist when the build artifacts are uploaded.) You can use environment variables, so for this example enter **${JOB_NAME}** as the container name.
 
-5.  在作业配置的**“生成后操作”**部分中，单击**“将项目上载到 Windows Azure Blob 存储”**。
-6.  对于**“存储帐户名称”**，请选择要使用的存储帐户。
-7.  对于**“容器名称”**，请指定容器名称。（如果上载生成项目时不存在该容器，则将创建该容器。）你可使用环境变量，因此在此示例中，请输入 **\${JOB\_NAME}** 作为容器名称。
+    **Tip**
+    
+    Below the **Command** section where you entered a script for **Execute Windows batch command** is a link to the environment variables recognized by Hudson. Click that link to learn the environment variable names and descriptions. Note that environment variables that contain special characters, such as the **BUILD_URL** environment variable, are not allowed as a container name or common virtual path.
 
-    **提示**
+8. Click **Make new container public by default** for this example. (If you want to use a private container, you'll need to create a shared access signature to allow access. That is beyond the scope of this topic. You can learn more about shared access signatures at [Creating a Shared Access Signature](http://msdn.microsoft.com/library/azure/jj721951.aspx).)
+9. [Optional] Click **Clean container before uploading** if you want the container to be cleared of contents before build artifacts are uploaded (leave it unchecked if you do not want to clean the contents of the container).
+10. For **List of Artifacts to upload**, enter **text/*.txt**.
+11. For **Common virtual path for uploaded artifacts**, enter **${BUILD\_ID}/${BUILD\_NUMBER}**.
+12. Click **Save** to save your settings.
+13. In the Hudson dashboard, click **Build Now** to run **MyJob**. Examine the console output for status. Status messages for Azure storage will be included in the console output when the post-build action starts to upload build artifacts.
+14. Upon successful completion of the job, you can examine the build artifacts by opening the public blob.
+    1. Login to the Azure management portal, <https://manage.windowsazure.cn>.
+    2. Click **Storage**.
+    3. Click the storage account name that you used for Hudson.
+    4. Click **Containers**.
+    5. Click the container named **myjob**, which is the lowercase version of the job name that you assigned when you created the Hudson job. Container names and blob names are lowercase (and case-sensitive) in Azure storage. Within the list of blobs for the container named **myjob** you should see **hello.txt** and **date.txt**. Copy the URL for either of these items and open it in your browser. You will see the text file that was uploaded as a build artifact.
 
-    在你为**“执行 Windows 批处理命令”**输入脚本的**“命令”**部分下方，有一个指向 Hudson 识别的环境变量的链接。单击此链接可了解环境变量名称和说明。请注意，不允许将包含特殊字符的环境变量（如 **BUILD\_URL** 环境变量）用作容器名称或通用虚拟路径。
+Only one post-build action that uploads artifacts to Azure blob storage can be created per job. Note that the single post-build action to upload artifacts to Azure blob storage can specify different files (including wildcards) and paths to files within **List of Artifacts to upload** using a semi-colon as a separator. For example, if your Hudson build produces JAR files and TXT files in your workspace's **build** folder, and you want to upload both to Azure blob storage, use the following for the **List of Artifacts to upload** value: **build/\*.jar;build/\*.txt**. You can also use double-colon syntax to specify a path to use within the blob name. For example, if you want the JARs to get uploaded using **binaries** in the blob path and the TXT files to get uploaded using **notices** in the blob path, use the following for the **List of Artifacts to upload** value: **build/\*.jar::binaries;build/\*.txt::notices**.
 
-8.  对于此示例，请单击**“默认将新容器设为公开的”**。（如果要使用私有容器，你将需要创建共享访问签名以允许访问。这超出了本主题的范围。你可在[创建共享访问签名][]中了解有关共享访问签名的详细信息。）
-9.  [可选] 如果你希望在上载生成项目之前清除容器的内容，请单击**“在上载前清除容器”**（如果你不希望清除容器的内容，则使该复选框保持未选中状态）。
-10. 对于**“要上载的项目列表”**，请输入 \*\*text/\*.txt\*\*。
-11. 对于**“已上载项目的通用虚拟路径”**，请输入 **\${BUILD\_ID}/\${BUILD\_NUMBER}**。
-12. 单击**“保存”**以保存你的设置。
-13. 在 Hudson 仪表板中，单击**“立即生成”**以运行**“MyJob”**。检查控制台输出中的状态。当生成后操作开始上载生成项目时，Azure 存储的状态消息将包括在控制台输出中。
-14. 成功完成此作业后，你可通过打开公共 Blob 检查生成项目。
+## <a name="howtocreatebuildstep"></a>How to create a build step that downloads from Azure blob storage ##
 
-    1.  登录到 Azure 管理门户 <https://manage.windowsazure.cn>。
-    2.  单击**“存储”**。
-    3.  单击你用于 Hudson 的存储帐户名称。
-    4.  单击**“容器”**。
-    5.  单击名为**“myjob”**的容器，该名称是你创建 Hudson 作业时分配的作业名称的小写形式。在 Azure 存储服务中，容器名称和 Blob 名称都是小写的（并且区分大小写）。在名为 **myjob** 的容器的 Blob 列表中，你应该能看到 **hello.txt** 和 **date.txt**。复制这两项中任一项的 URL 并在浏览器中打开。你将看到已作为生成项目上载的文本文件。
+The following steps show how to configure a build step to download items from Azure blob storage. This would be useful if you want to include items in your build, for example, JARs that you keep in Azure blob storage.
 
-每个作业只能创建一个用来将项目上载到 Azure Blob 存储的生成后操作。请注意，用来将项目上载到 Azure Blob 存储的单个生成后操作可以在**“要上载的项目列表”**中使用分号作为分隔符指定不同的文件（包括通配符）和文件路径。例如，如果你的 Hudson 生成在你的工作空间的**“build”**文件夹中生成了 JAR 文件和 TXT 文件，并且你希望将这两者都上载到 Azure Blob 存储，请使用以下项作为**“要上载的项目列表”**值：**build/\*.jar;build/\*.txt**。你还可以使用双冒号语法指定要在 Blob 名称内使用的路径。例如，如果你希望在 Blob 路径中使用 **binaries** 以上载 JAR 并在 Blob 路径中使用 **notices** 以上载 TXT 文件，请使用以下项作为**“要上载的项目列表”**值：**build/\*.<jar::binaries;build/>\*.txt::notices**。
+1. In the **Build** section of the job configuration, click **Add build step** and choose **Download from Azure Blob storage**.
+2. For **Storage account name**, select the storage account to use.
+3. For **Container name**, specify the name of the container that has the blobs you want to download. You can use environment variables.
+4. For **Blob name**, specify the blob name. You can use environment variables. Also, you can use an asterisk, as a wildcard after you specify the initial letter(s) of the blob name. For example, **project\*** would specify all blobs whose names start with **project**.
+5. [Optional] For **Download path**, specify the path on the Hudson machine where you want to download files from Azure blob storage. Environment variables can also be used. (If you do not provide a value for **Download path**, the files from Azure blob storage will be downloaded to the job's workspace.)
 
-## 如何创建生成步骤如何创建从 Azure Blob 存储进行下载的生成步骤
+If you have additional items you want to download from Azure blob storage, you can create additional build steps.
 
-以下步骤演示了如何配置从 Azure Blob 存储来下载项的生成步骤。如果你希望在你的生成中包括这些项（例如你保存在 Azure Blob 存储中的 JAR），则这将非常有用。
+After you run a build, you can check the build history console output, or look at your download location, to see whether the blobs you expected were successfully downloaded. 
 
-1.  在作业配置的**“生成”**部分中，单击**“添加生成步骤”**并选择**“从 Azure Blob 存储下载”**。
-2.  对于**“存储帐户名称”**，请选择要使用的存储帐户。
-3.  对于**“容器名称”**，指定包含你要下载的 Blob 的容器的名称。你可以使用环境变量。
-4.  对于**“Blob 名称”**，指定 Blob 名称。你可以使用环境变量。另外，在指定 Blob 名称的初始字母后，你可以使用星号作为通配符。例如，**project\*** 将指定其名称以 **project** 开头的所有 Blob。
-5.  [可选] 对于**“下载路径”**，指定 Hudson 计算机上你希望将文件从 Azure Blob 存储下载到其中的路径。也可以使用环境变量。（如果你没有为**“下载路径”**提供值，则 Azure Blob 存储中的文件将被下载到作业的工作空间中。）
+## <a id="components"></a>Components used by the Blob service ##
 
-如果你还希望从 Azure Blob 存储下载其他项，可以创建其他生成步骤。
+The following provides an overview of the Blob service components.
 
-在运行生成后，你可以检查生成历史记录控制台输出或你的下载位置，看是否成功下载了你需要的 Blob。
-
-## Blob 服务组件Blob 服务使用的组件
-
-以下信息概述了 Blob 服务组件。
-
--   **存储帐户**：对 Azure 存储服务进行的所有访问都要通过存储帐户完成。存储帐户是访问 blob 的最高级别的命名空间。一个帐户可以包含无限个容器，只要这些容器的总大小不超过 100 TB 即可。
--   **容器**： 一个容器包含一组 Blob 集。所有 blob 必须位于相应的容器中。一个帐户可以包含无限个容器。一个容器可以存储无限个 Blob。
--   **Blob**：任何类型和大小的文件。Azure 存储服务中可存储两种类型的 Blob：块 Blob 和页 Blob。大部分文件都是块 blob。一个块 Blob 的大小可以达到 200 GB。本教程使用的是块 Blob。另一种 Blob 类型为页 Blob，其大小可以达 1 TB，在对文件中的一系列字节进行频繁修改时，这种 Blob 类型更加高效。有关 Blob 的详细信息，请参阅[了解块 Blob 和页 Blob][]。
--   **URL 格式**：使用以下 URL 格式可访问 Blob：
+- **Storage Account**: All access to Azure Storage is done through a storage account. This is the highest level of the namespace for accessing blobs. An account can contain an unlimited number of containers, as long as their total size is under 100TB.
+- **Container**: A container provides a grouping of a set of blobs. All blobs must be in a container. An account can contain an unlimited number of containers. A container can store an unlimited number of blobs.
+- **Blob**: A file of any type and size. There are two types of blobs that can be stored in Azure Storage: block and page blobs. Most files are block blobs. A single block blob can be up to 200GB in size. This tutorial uses block blobs. Page blobs, another blob type, can be up to 1TB in size, and are more efficient when ranges of bytes in a file are modified frequently. For more information about blobs, see [Understanding Block Blobs and Page Blobs](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee691964.aspx).
+- **URL format**: Blobs are addressable using the following URL format:
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
+    
+    (The format above applies to the public Azure cloud. If you are using a different Azure cloud, use the endpoint within the Azure management portal to determine your URL endpoint.)
 
-    （以上格式适用于公共 Azure 云。如果你在使用其他 Azure 云，请使用 Azure 管理门户中的终结点来确定你的 URL 终结点。）
+    In the format above, `storageaccount` represents the name of your storage account, `container_name` represents the name of your container, and `blob_name` represents the name of your blob, respectively. Within the container name, you can have multiple paths, separated by a forward slash, **/**. The example container name in this tutorial was **MyJob**, and **${BUILD\_ID}/${BUILD\_NUMBER}** was used for the common virtual path, resulting in the blob having a URL of the following form:
 
-    在以上格式中，`storageaccount` 表示你的存储帐户的名称，`container_name` 表示你的容器的名称，而 `blob_name` 表示你的 Blob 的名称。在容器名称中，你可具有多个由正斜杠 **/** 分隔的路径。本教程中的示例容器名称为**“MyJob”**，**\${BUILD\_ID}/\${BUILD\_NUMBER}** 用于通用虚拟路径，从而导致 Blob 具有以下格式的 URL：
+    `http://example.blob.core.chinacloudapi.cn/myjob/2014-05-01_11-56-22/1/hello.txt`
 
-    `http://example.blob.core.windows.net/myjob/2014/5/1_11-56-22/1/hello.txt`
+  [Overview of Hudson]: #overview
+  [Benefits of using the Blob service]: #benefits
+  [Prerequisites]: #prerequisites
+  [How to use the Blob service with Hudson CI]: #howtouse
+  [How to install the Azure Storage plugin]: #howtoinstall
+  [How to configure the Azure Storage plugin to use your storage account]: #howtoconfigure
+  [How to create a post-build action that uploads your build artifacts to your storage account]: #howtocreatepostbuild
+  [How to create a build step that downloads from Azure blob storage]: #howtocreatebuildstep
+  [Components used by the Blob service]: #components
+  [How to Create a Storage Account]: /zh-cn/documentation/articles/storage-create-storage-account/
+  [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
+  [ms-open-tech]: http://msopentech.com
 
-  [Microsoft Open Technologies Inc.]: http://msopentech.com
-  [Hudson 概述]: #overview
-  [使用 Blob 服务的好处]: #benefits
-  [先决条件]: #prerequisites
-  [如何将 Blob 服务用于 Hudson CI]: #howtouse
-  [如何安装 Azure 存储插件]: #howtoinstall
-  [如何配置 Azure 存储插件以使用你的存储帐户]: #howtoconfigure
-  [如何创建将你的生成项目上载到存储帐户的后期生成操作]: #howtocreatepostbuild
-  [如何创建从 Azure Blob 存储进行下载的生成步骤]: #howtocreatebuildstep
-  [Blob 服务使用的组件]: #components
-  [Hudson 概览]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
-  [如何创建存储帐户]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-create-storage-account/
-  [创建共享访问签名]: http://go.microsoft.com/fwlink/?LinkId=279889
-  [了解块 Blob 和页 Blob]: http://msdn.microsoft.com/en-us/library/windowsazure/ee691964.aspx

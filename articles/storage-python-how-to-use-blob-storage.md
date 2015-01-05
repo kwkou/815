@@ -1,169 +1,114 @@
 <properties linkid="develop-python-blob-service" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Python) | Windows Azure" metaKeywords="Azure blob service Python, Azure blobs Python" description="Learn how to use the Azure Blob service to upload, list, download, and delete blobs." metaCanonical="" disqusComments="1" umbracoNaviHide="0" services="storage" documentationCenter="Python" title="How to use the Blob service from Python" authors="" videoId="" scriptId="" />
 
-# 如何从 Python 使用 Blob 存储服务
+# How to Use the Blob Storage Service from Python
+This guide will show you how to perform common scenarios using the
+Azure Blob storage service. The samples are written using the
+Python API. The scenarios covered include **uploading**, **listing**,
+**downloading**, and **deleting** blobs. For more information on blobs,
+see the [Next Steps][] section.
 
-本指南将演示如何使用 Azure Blob 存储服务执行常见方案。
-示例是用 Python API 编写的。
-涉及的任务包括**上载**、**列出**、
-**下载**和**删除** Blob。有关 Blob 的
-详细信息，请参阅[后续步骤][]部分。
+## Table of Contents
 
-## 目录
+[What is Blob Storage?][]   
+ [Concepts][]   
+ [Create an Azure Storage Account][]   
+ [How To: Create a Container][]   
+ [How To: Upload a Blob into a Container][]   
+ [How To: List the Blobs in a Container][]   
+ [How To: Download Blobs][]   
+ [How To: Delete a Blob][]   
+ [How To: Upload and Download Large Blobs][]   
+ [Next Steps][]
 
-[什么是 Blob 存储？][]
- [概念][]
- [创建 Azure 存储帐户][]
- [如何：创建容器][]
- [如何：将 Blob 上载到容器][]
- [如何：列出容器中的 Blob][]
- [如何：下载 Blob][]
- [如何：删除 Blob][]
- [如何：上载和下载大型 Blob][]
- [后续步骤][]
+[WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
 
-[WACOM.INCLUDE [howto-blob-storage][]]
+## <a name="create-account"> </a>Create an Azure Storage Account
 
-## 创建 Azure 存储帐户
+[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
-[WACOM.INCLUDE [create-storage-account][]]
+## <a name="create-container"> </a>How to: Create a Container
 
-## 如何：创建容器
+**Note:** If you need to install Python or the Client Libraries, please see the [Python Installation Guide](../python-how-to-install/).
 
-**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南][]。
 
-使用 **BlobService** 对象可以对容器和 Blob 进行操作。以下代码
-将创建一个 **BlobService** 对象。在你希望在其中以
-编程方式访问 Azure 存储服务的任何 Python 文件中，将以下代码添加到文件的顶部附近：
+The **BlobService** object lets you work with containers and blobs. The
+following code creates a **BlobService** object. Add the following near
+the top of any Python file in which you wish to programmatically access Azure Storage:
 
-    from azure.storage import *
+	from azure.storage import *
 
-以下代码使用存储帐户名称和帐户密钥创建一个 **BlobService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
+The following code creates a **BlobService** object using the storage account name and account key.  Replace 'myaccount' and 'mykey' with the real account and key.
 
-    blob_service = BlobService(account_name='myaccount', account_key='mykey')
+	blob_service = BlobService(account_name='myaccount', account_key='mykey')
 
-所有存储 Blob 都驻留在一个容器中。如果该容器不存在，可以使用 **BlobService** 对象来创建它：
+All storage blobs reside in a container. You can use a **BlobService** object to create the container if it doesn't exist:
 
-    blob_service.create_container('mycontainer')
+	blob_service.create_container('mycontainer')
 
-默认情况下，新容器是专用容器，因此你必须指定存储访问密钥（如上面所做的那样）才能从该容器下载 Blob。如果你要让容器中的文件可供所有人使用，则可以使用以下代码创建容器并传递公共访问级别：
+By default, the new container is private, so you must specify your storage access key (as you did above) to download blobs from this container. If you want to make the files within the container available to everyone, you can create the container and pass the public access level using the following code:
 
-    blob_service.create_container('mycontainer', x_ms_blob_public_access='container') 
+	blob_service.create_container('mycontainer', x_ms_blob_public_access='container') 
 
-或者，也可以在创建容器后使用以下代码修改该容器：
+Alternatively, you can modify a container after you have created it using the following code:
 
-    blob_service.set_container_acl('mycontainer', x_ms_blob_public_access='container')
+	blob_service.set_container_acl('mycontainer', x_ms_blob_public_access='container')
 
-在执行此更改后，Internet 上的任何人都可以看到公共容器中的 Blob，
-但只有你可以修改或删除它们。
+After this change, anyone on the Internet can see blobs in a public
+container, but only you can modify or delete them.
 
-## 如何：将 Blob 上载到容器
+## <a name="upload-blob"> </a>How to: Upload a Blob into a Container
 
-若要将文件上载到 Blob，请使用 **put\_blob** 方法
-来创建 Blob，将文件流用作 Blob 的内容。首先，
-创建一个名为 **task1.txt** 的文件（包含任意内容都可以）
-并将其与你的 Python 文件存储在同一目录中。
+To upload data to a blob, use the **put\_block\_blob\_from\_path**, **put\_block\_blob\_from\_file**, **put\_block\_blob\_from\_bytes** or **put\_block\_blob\_from\_text** methods. They are high-level methods that perform the necessary chunking when the size of the data exceeds 64 MB.
 
-    myblob = open(r'task1.txt', 'r').read()
-    blob_service.put_blob('mycontainer', 'myblob', myblob, x_ms_blob_type='BlockBlob')
+**put\_block\_blob\_from\_path** uploads the contents of a file from the specified path, **put\_block\_blob\_from\_file** uploads the contents from an already opened file/stream. **put\_block\_blob\_from\_bytes** uploads an array of bytes, **put\_block\_blob\_from\_text** uploads the specified text value using the specified encoding (defaults to UTF-8).
 
-## 如何：列出容器中的 Blob
+The following example uploads the contents of the **task1.txt** file into the **myblob** blob.
 
-若要列出容器中的 Blob，可使用带 **for** 循环的
-**list\_blobs** 方法来显示容器中每个 Blob 的名称。以下
-代码将容器中每个 Blob 的**名称**和 **url** 输出到
-控制台。
+	blob_service.put_block_blob_from_path('mycontainer', 'myblob', 'task1.txt')
 
-    blobs = blob_service.list_blobs('mycontainer')
-    for blob in blobs:
-    print(blob.name)
-    print(blob.url)
+## <a name="list-blob"> </a>How to: List the Blobs in a Container
 
-## 如何：下载 Blob
+To list the blobs in a container, use the **list\_blobs** method with a
+**for** loop to display the name of each blob in the container. The
+following code outputs the **name** and **url** of each blob in a container to the
+console.
 
-若要下载 Blob，请使用 **get\_blob** 方法将 Blob 内容
-传输到一个流对象，稍后可以将该对象永久保存到一个
-本地文件。
+	blobs = blob_service.list_blobs('mycontainer')
+	for blob in blobs:
+		print(blob.name)
+		print(blob.url)
 
-    blob = blob_service.get_blob('mycontainer', 'myblob')
-    with open(r'out-task1.txt', 'w') as f:
-    f.write(blob)
+## <a name="download-blobs"> </a>How to: Download Blobs
 
-## 如何：删除 Blob
+To download data from a blob, use **get\_blob\_to\_path**, **get\_blob\_to\_file**, **get\_blob\_to\_bytes** or **get\_blob\_to\_text**. They are high-level methods that perform the necessary chunking when the size of the data exceeds 64 MB.
 
-最后，若要删除 Blob，请调用 **delete\_blob**。
+The following example demonstrates using **get\_blob\_to\_path** to download the contents of the **myblob** blob and store it to the **out-task1.txt** file:
 
-    blob_service.delete_blob('mycontainer', 'myblob') 
+	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-task1.txt')
 
-## 如何：上载和下载大型 Blob
+## <a name="delete-blobs"> </a>How to: Delete a Blob
 
-块 Blob 的最大大小为 200 GB。对于小于 64 MB 的 Blob，可以通过调用一次 **put\_blob** 或 **get\_blob** 来上载或下载 Blob，如前所述。对于大于 64 MB 的 Blob，需要以 4 MB 或更小的块为单位上载或下载 Blob。
+Finally, to delete a blob, call **delete_blob**.
 
-以下代码演示用于上载或下载任意大小的块 Blob 的函数示例。
+	blob_service.delete_blob('mycontainer', 'myblob') 
 
-    import base64
+## <a name="next-steps"> </a>Next Steps
 
-    chunk_size = 4 * 1024 * 1024
+Now that you have learned the basics of blob storage, follow these links
+to learn how to do more complex storage tasks.
 
-    def upload(blob_service, container_name, blob_name, file_path):
-    blob_service.create_container(container_name, None, None, False)
-    blob_service.put_blob(container_name, blob_name, '', 'BlockBlob')
+-   See the MSDN Reference: [Storing and Accessing Data in Azure][]
+-   Visit the [Azure Storage Team Blog][]
 
-    block_ids = []
-    index = 0
-    with open(file_path, 'rb') as f:
-    while True:
-    data = f.read(chunk_size)
-    if data:
-    length = len(data)
-    block_id = base64.b64encode(str(index))
-    blob_service.put_block(container_name, blob_name, data, block_id)
-    block_ids.append(block_id)
-    index += 1
-    else:
-    break
-
-    blob_service.put_block_list(container_name, blob_name, block_ids)
-
-    def download(blob_service, container_name, blob_name, file_path):
-    props = blob_service.get_blob_properties(container_name, blob_name)
-    blob_size = int(props['content-length'])
-
-    index = 0
-    with open(file_path, 'wb') as f:
-    while index < blob_size:
-    chunk_range = 'bytes={}-{}'.format(index, index + chunk_size - 1)
-    data = blob_service.get_blob(container_name, blob_name, x_ms_range=chunk_range)
-    length = len(data)
-    index += length
-    if length > 0:
-    f.write(data)
-    if length < chunk_size:
-    break
-    else:
-    break
-
-如果你需要大于 200 GB 的 Blob，则可以使用页 Blob 而非块 Blob。页 Blob 的最大大小为 1 TB，其中的页与 512 字节页边界对齐。使用 **put\_blob** 可创建页 Blob，使用 **put\_page** 可向其中写入内容，而使用 **get\_blob** 可从中读取内容。
-
-## 后续步骤
-
-现在，你已了解了有关 Blob 存储的基础知识，可单击下面的链接来了解
-如何执行更复杂的存储任务。
-
--   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
--   访问 [Azure 存储服务团队博客][]
-
-  [后续步骤]: #next-steps
-  [什么是 Blob 存储？]: #what-is
-  [概念]: #concepts
-  [创建 Azure 存储帐户]: #create-account
-  [如何：创建容器]: #create-container
-  [如何：将 Blob 上载到容器]: #upload-blob
-  [如何：列出容器中的 Blob]: #list-blob
-  [如何：下载 Blob]: #download-blobs
-  [如何：删除 Blob]: #delete-blobs
-  [如何：上载和下载大型 Blob]: #large-blobs
-  [howto-blob-storage]: ../includes/howto-blob-storage.md
-  [create-storage-account]: ../includes/create-storage-account.md
-  [Python 安装指南]: ../python-how-to-install/
-  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Next Steps]: #next-steps
+  [What is Blob Storage?]: #what-is
+  [Concepts]: #concepts
+  [Create an Azure Storage Account]: #create-account
+  [How To: Create a Container]: #create-container
+  [How To: Upload a Blob into a Container]: #upload-blob
+  [How To: List the Blobs in a Container]: #list-blob
+  [How To: Download Blobs]: #download-blobs
+  [How To: Delete a Blob]: #delete-blobs
+  [How To: Upload and Download Large Blobs]: #large-blobs
+  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/

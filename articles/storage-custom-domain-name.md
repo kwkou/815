@@ -1,134 +1,148 @@
 <properties linkid="manage-services-storage-custom-dns-storage" urlDisplayName="custom dns storage" pageTitle="Configure a domain name for blob data in a storage account | Windows Azure" metaKeywords="" description="Learn how to configure a custom domain for accessing blob data in an Azure storage account." metaCanonical="" services="storage" documentationCenter="" title="Configure a custom domain name for blob data in a storage account" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-# 为 Azure 存储帐户中的 Blob 数据配置自定义域名
 
-你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 服务的默认终结点为 <https://>\<*mystorageaccount*\>.blob.core.chinacloudapi.cn。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
 
-**说明**
+# Configure a custom domain name for blob data in an Azure storage account
+You can configure a custom domain for accessing blob data in your Azure storage account. The default endpoint for the Blob service is https://<*mystorageaccount*>.blob.core.chinacloudapi.cn. If you map a custom domain and subdomain such as **www.contoso.com** to the blob endpoint for your storage account, then your users can also access blob data in your storage account using that domain.
 
-此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅[为 Azure 云服务配置自定义域名][]；对于网站，请参阅[为 Azure 网站配置自定义域名][]。
 
-有两种方法可用于将你的自定义域指向你的存储帐户的 Blob 终结点。最简单方法是创建一个 CNAME 记录，将你的自定义域和子域映射到 Blob 终结点。CNAME 记录是一种 DNS 功能，用于将源域映射到目标域。在此情况下，源域是你的自定义域和子域 -- 请注意，始终需要子域。目标域是你的 Blob 服务终结点。
+> [WACOM.NOTE]	The procedures in this task apply to Azure storage accounts. For cloud services, see <a href = "/zh-cn/develop/net/common-tasks/custom-dns/">Configuring a Custom Domain Name for an Azure Cloud Service</a>; for  Websites, see <a href="/zh-cn/develop/net/common-tasks/custom-dns-web-site/">Configuring a Custom Domain Name for an Azure  Website</a>. 
 
-但是，将你的自定义域映射到 Blob 终结点的过程会导致域在你在 Azure 管理门户中注册域时出现短暂的停机时间。如果你的自定义域目前所支持的应用程序的服务级别协议 (SLA) 要求不能有停机时间，则可以使用 Azure **asverify** 子域提供中间注册步骤，以便用户在 DNS 映射进行时能够访问你的域。
+> [WACOM.NOTE]	A premium storage account cannot be mapped to a custom domain name. See [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/zh-cn/documentation/articles/storage-premium-storage-preview-portal/) for information about premium storage accounts.
 
-下表显示了用于访问名为 **mystorageaccount** 的存储帐户中的 Blob 数据的示例 URL。为存储帐户注册的自定义域是 **www.contoso.com**：
+There are two ways to point your custom domain to the blob endpoint for your storage account. The simplest way is to create a CNAME record mapping your custom domain and subdomain to the blob endpoint. A CNAME record is a DNS feature that maps a source domain to a destination domain. In this case, the source domain is your custom domain and subdomain--note that the subdomain is always required. The destination domain is your Blob service endpoint.
+
+The process of mapping your custom domain to your blob endpoint can, however, result in a brief period of downtime for the domain while you are registering the domain in the Azure Management Portal. If your custom domain is currently supporting an application with a service-level agreement (SLA) that requires that there be no downtime, then you can use the Azure **asverify** subdomain to provide an intermediate registration step so that users will be able to access your domain while the DNS mapping takes place.
+
+The following table shows sample URLs for accessing blob data in a storage account named **mystorageaccount**. The custom domain registered for the storage account is **www.contoso.com**:
 
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
-    <tbody>
-        <tr>
-<td style="width: 100px;"><strong>资源类型</strong></td>
-<td><strong>URL 格式</strong></td>
-        </tr>
-        <tr>
-<td>存储帐户</td>
-<td><strong>默认 URL：</strong> http://mystorageaccount.blob.core.chinacloudapi.cn<br /> <strong>自定义域 URL：</strong>http://www.contoso.com</td>
-        </tr>
-        <tr>
-<td>Blob</td>
-<td><strong>默认 URL：</strong> http://mystorageaccount.blob.core.chinacloudapi.cn/mycontainer/myblob<br /><strong>自定义域 URL：</strong>http://www.contoso.com/mycontainer/myblob</td>
-        </tr>
-        <tr>
-<td>根容器</td>
-<td><strong>默认 URL：</strong> http://mystorageaccount.blob.core.chinacloudapi.cn/myblob <br/>或<br /> http://mystorageaccount.blob.core.chinacloudapi.cn/$root/myblob<br /> <strong>自定义域 URL：</strong>http://www.contoso.com/myblob <br/>或<br /> http://www.contoso.com/$root/myblob</td>
-        </tr>
-    </tbody>
+	<tbody>
+		<tr>
+			<td style="width: 100px;"><strong>Resource Type</strong></td>
+			<td><strong>URL Formats</strong></td>
+		</tr>
+		<tr>
+			<td>Storage account</td>
+			<td><strong>Default URL:</strong> http://mystorageaccount.blob.core.chinacloudapi.cn<br />
+			<strong>Custom domain URL:</strong> http://www.contoso.com</td>
+		</tr>
+		<tr>
+			<td>Blob</td>
+			<td><strong>Default URL:</strong> http://mystorageaccount.blob.core.chinacloudapi.cn/mycontainer/myblob<br /><strong>Custom domain URL:</strong>
+			http://www.contoso.com/mycontainer/myblob</td>
+		</tr>
+		<tr>
+			<td>Root container</td>
+			<td><strong>Default URL:</strong> http://mystorageaccount.blob.core.chinacloudapi.cn/myblob
+			<br/>or<br />
+			http://mystorageaccount.blob.core.chinacloudapi.cn/$root/myblob<br />
+			<strong>Custom domain URL:</strong> http://www.contoso.com/myblob
+			<br/>or<br />
+			http://www.contoso.com/$root/myblob</td>
+		</tr>
+	</tbody>
 </table>
 
-本任务将向你演示如何：
+This task will show you how to:
 
--   [为你的存储帐户注册自定义域][]
--   [使用中间 asverify 子域为你的存储帐户注册自定义域][]
--   验证该自定义域引用你的 Blob 服务终结点
 
-## 为你的存储帐户注册自定义域
 
-如果你不担心域暂时对用户不可用，或者你的自定义域当前未托管应用程序，则使用本过程可注册你的自定义域。
+- <a href="#register-domain">Register a custom domain for your storage account</a>
+- <a href="#register-asverify">Register a custom domain for your storage account using the intermediary asverify subdomain</a>
+- <a name="#verify-subdomain">Verify that the custom domain references your Blob service endpoint</a>
 
-如果你的自定义域目前在支持不能有任何停机时间的应用程序，则使用在[使用中间 asverify 子域为你的存储帐户注册自定义域][]中介绍的过程。
+<h2><a name="register-domain"></a>Register a custom domain for your storage account</h2>
 
-若要配置自定义域名，必须通过你的域注册机构创建一个新的 CNAME 记录。该 CNAME 记录为域名指定别名；在本例中，它将你的自定义域的地址映射到你的存储帐户的 Blob 服务终结点。
+Use this procedure to register your custom domain if you do not have concerns about having the domain be briefly unavailable to users, or if your custom domain is not currently hosting an application. 
 
-每个注册机构指定 CNAME 记录的方法类似但略有不同，但概念是相同的。
-请注意，许多基本域注册程序包未提供 DNS 配置，因此，你可能需要首先升级你的域注册程序包，然后才能创建 CNAME 记录。
+If your custom domain is currently supporting an application that cannot have any downtime, then use the procedure outlined in <a href="#register-asverify">Register a custom domain for your storage account using the intermediary asverify subdomain</a>.
 
-1.  在 Azure 管理门户中，导航到**“存储”**选项卡。
+To configure a custom domain name, you must create a new CNAME record with your domain registrar. The CNAME record specifies an alias for a domain name; in this case it maps the address of your custom domain to the the Blob service endpoint for your storage account.
 
-2.  在**“存储”**选项卡中，单击你要为其映射自定义域的存储帐户的名称。
+Each registrar has a similar but slightly different method of specifying a CNAME record, but the concept
+is the same. Note that many basic domain registration packages do not offer DNS configuration, so you may need to upgrade your domain registration package before you can create the CNAME record. 
 
-3.  单击**“配置”**选项卡。
+1.  In the Azure Management Portal, navigate to the **Storage** tab.
 
-4.  在屏幕的底部，单击**“管理域”**以显示**“管理自定义域”**对话框。在该对话框顶部的文本中，你将看到有关如何创建 CNAME 记录的信息。对于此过程，请忽略引用 **asverify** 子域的文本。
+2.  In the **Storage** tab, click the name of the storage account for which you want to map the custom domain.
 
-5.  登录到你的 DNS 注册机构的网站，然后转至用于管理 DNS 的
-    页面。你可以在诸如**“域名”**、**“DNS”**
-    或**“名称服务器管理”**之类的部分中找到此页面。
+3.  Click the **Configure** tab.
 
-6.  找到用于管理 CNAME 的部分。你可能需要转至高级设置
-    页面，并查找**“CNAME”**、**“别名”**、
-    或**“子域”**字样。
+4.  At the bottom of the screen click **Manage Domain** to display the **Manage Custom Domain** dialog. In the text at the top of the dialog, you'll see information on how to create the CNAME record. For this procedure, ignore the text that refers to the **asverify** subdomain.
 
-7.  创建一个新的 CNAME 记录，并且提供子域别名，例如 **www** 或 **photos**。然后
-    以 **mystorageaccount.blob.core.chinacloudapi.cn** 格式（其中，**mystorageaccount** 是你的存储帐户的名称）提供主机名，这是你的 Blob 服务终结点。在**“管理自定义域”**对话框的文本中为你提供了要使用的主机名。
+5.  Log on to your DNS registrar's  Website, and go to the page for
+    managing DNS. You might find this in a section such as **Domain
+    Name**, **DNS**, or **Name Server Management**.
 
-8.  在创建该 CNAME 记录后，返回到**“管理自定义域”**对话框，并且在**“自定义域名”**字段中输入你的自定义域（包括子域）的名称。例如，如果你的域是 **contoso.com** 并且你的子域是 **www**，则输入 **www.contoso.com**；如果你的子域是 **photos**，则输入 **photos.contoso.com**。请注意，子域是必需的。
+6.  Find the section for managing CNAMEs. You may have to go to an
+    advanced settings page and look for the words **CNAME**, **Alias**,
+    or **Subdomains**.
 
-9.  单击**“注册”**按钮以注册你的自定义域。
+7.  Create a new CNAME record, and provide a subdomain alias, such as **www** or **photos**. Then
+    provide a host name, which is your Blob service endpoint, in the format **mystorageaccount.blob.core.chinacloudapi.cn** (where **mystorageaccount** is the name of your storage account). The host name to use is provided for you in the text of the **Manage Custom Domain** dialog.
 
-    如果注册成功，你将会看到一条消息**“你的自定义域处于活动状态”**。用户现在可以查看你的自定义域上的 Blob 数据，只要用户具有适当的权限。
+8.  After you have created the CNAME record, return to the **Manage Custom Domain** dialog, and enter the name of your custom domain, including the subdomain, in the **Custom Domain Name** field. For example, if your domain is **contoso.com** and your subdomain is **www**, enter **www.contoso.com**; if your subdomain is **photos**, enter **photos.contoso.com**. Note that the subdomain is required.
 
-## 使用中间 asverify 子域为你的存储帐户注册自定义域
+9. Click the **Register** button to register your custom domain. 
 
-如果你的自定义域当前所支持的应用程序的 SLA 要求没有停机时间，则使用此过程注册你的自定义域。通过创建从 asverify.\<subdomain\>.\<customdomain\> 指向 asverify.\<storageaccount\>.blob.core.chinacloudapi.cn 的 CNAME，你可以预先向 Azure 注册你的域。然后，你可以创建第二个从 \<subdomain\>.\<customdomain\> 指向 \<storageaccount\>.blob.core.chinacloudapi.cn 的 CNAME，指向你的自定义域的通信量将在此处被定向到你的 Blob 终结点。
+	If the registration is successful, you will see the message **Your custom domain is active**. Users can now view blob data on your custom domain, so long as they have the appropriate permissions. 
 
-该 asverify 子域是 Azure 能够识别的一个特殊子域。通过将 **asverify** 追加到你自己的子域，可以使 Azure 能够识别你的自定义域且不需要修改针对该域的 DNS 记录。一旦你修改该域的 DNS 记录，它将映射到 Blob 终结点且没有停机时间。
+<h2><a name="register-asverify"></a>Register a custom domain for your storage account using the intermediary asverify subdomain</h2>
 
-1.  在 Azure 管理门户中，导航到**“存储”**选项卡。
+Use this procedure to register your custom domain if your custom domain is currently supporting an application with an SLA that requires that there be no downtime. By creating a CNAME that points from asverify.&lt;subdomain&gt;.&lt;customdomain&gt; to asverify.&lt;storageaccount&gt;.blob.core.chinacloudapi.cn, you can pre-register your domain with Azure. You can then create a second CNAME that points from &lt;subdomain&gt;.&lt;customdomain&gt; to &lt;storageaccount&gt;.blob.core.chinacloudapi.cn, at which point traffic to your custom domain will be directed to your blob endpoint.
 
-2.  在**“存储”**选项卡中，单击你要为其映射自定义域的存储帐户的名称。
+The asverify subdomain is a special subdomain recognized by Azure. By prepending **asverify** to your own subdomain, you permit Azure to recognize your custom domain without modifying the DNS record for the domain. Once you do modify the DNS record for the domain, it will be mapped to the blob endpoint with no downtime.
 
-3.  单击**“配置”**选项卡。
+1.  In the Azure Management Portal, navigate to the **Storage** tab.
 
-4.  在屏幕的底部，单击**“管理域”**以显示**“管理自定义域”**对话框。在该对话框顶部的文本中，你将看到有关如何使用 **asverify** 子域创建 CNAME 记录的信息。
+2.  In the **Storage** tab, click the name of the storage account for which you want to map the custom domain.
 
-5.  登录到你的 DNS 注册机构的网站，然后转至用于管理 DNS 的
-    页面。你可以在诸如**“域名”**、**“DNS”**
-    或**“名称服务器管理”**之类的部分中找到此页面。
+3.  Click the **Configure** tab.
 
-6.  找到用于管理 CNAME 的部分。你可能需要转至高级设置
-    页面，并查找**“CNAME”**、**“别名”**、
-    或**“子域”**字样。
+4.  At the bottom of the screen click **Manage Domain** to display the **Manage Custom Domain** dialog. In the text at the top of the dialog, you'll see information on how to create the CNAME record using the **asverify** subdomain.
 
-7.  创建一个新的 CNAME 记录，并且提供包括 asverify 子域的子域别名。例如，你指定的子域将采用 **asverify.www** 或 **asverify.photos** 格式。然后
-    以 **asverify.mystorageaccount.blob.core.chinacloudapi.cn** 格式（其中，**mystorageaccount** 是你的存储帐户的名称）提供主机名，这是你的 Blob 服务终结点。在**“管理自定义域”**对话框的文本中为你提供了要使用的主机名。
+5.  Log on to your DNS registrar's  Website, and go to the page for
+    managing DNS. You might find this in a section such as **Domain
+    Name**, **DNS**, or **Name Server Management**.
 
-8.  在创建该 CNAME 记录后，返回到**“管理自定义域”**对话框，并且在**“自定义域名”**字段中输入你的自定义域的名称。例如，如果你的域是 **contoso.com** 并且你的子域是 **www**，则输入 **www.contoso.com**；如果你的子域是 **photos**，则输入 **photos.contoso.com**。请注意，子域是必需的。
+6.  Find the section for managing CNAMEs. You may have to go to an
+    advanced settings page and look for the words **CNAME**, **Alias**,
+    or **Subdomains**.
 
-9.  单击指示**“高级:使用‘asverify’子域预先注册自定义域”**的复选框。
+7.  Create a new CNAME record, and provide a subdomain alias that includes the asverify subdomain. For example, the subdomain you specify will be in the format **asverify.www** or **asverify.photos**. Then
+    provide a host name, which is your Blob service endpoint, in the format **asverify.mystorageaccount.blob.core.chinacloudapi.cn** (where **mystorageaccount** is the name of your storage account). The host name to use is provided for you in the text of the **Manage Custom Domain** dialog.
 
-10. 单击**“注册”**按钮以预先注册你的自定义域。
+8.  After you have created the CNAME record, return to the **Manage Custom Domain** dialog, and enter the name of your custom domain in the **Custom Domain Name** field. For example, if your domain is **contoso.com** and your subdomain is **www**, enter **www.contoso.com**; if your subdomain is **photos**, enter **photos.contoso.com**. Note that the subdomain is required.
 
-    如果预先注册成功，你将会看到一条消息**“你的自定义域处于活动状态”**。
+9.	Click the checkbox that says **Advanced: Use the 'asverify' subdomain to preregister my custom domain**. 
 
-11. 此时，你的自定义域已由 Azure 进行了验证，但传输到你的域的流量尚未路由到你的存储帐户。若要完成此过程，请返回到你的 DNS 注册机构的网站，创建将你的子域映射到你的 Blob 终结点的另一条 CNAME 记录。例如，将该子域指定为 **www** 或 **photos**，将主机名指定为 **mystorageaccount.blob.core.chinacloudapi.cn**（其中，**mystorageaccount** 是你的存储帐户的名称）。完成此步骤后，也就完成了你的自定义域的注册。
+10. Click the **Register** button to preregister your custom domain. 
 
-12. 最后，你可以使用 **asverify** 删除你创建的 CNAME 记录，因为只需要将其作为中间步骤使用。
+	If the preregistration is successful, you will see the message **Your custom domain is active**. 
 
-用户现在可以查看你的自定义域上的 Blob 数据，只要用户具有适当的权限。
+11. At this point, your custom domain has been verified by Azure, but traffic to your domain is not yet being routed to your storage account. To complete the process, return to your DNS registrar's  Website, and create another CNAME record that maps your subdomain to your Blob service endpoint. For example, specify the subdomain as **www** or **photos**, and the hostname as **mystorageaccount.blob.core.chinacloudapi.cn** (where **mystorageaccount** is the name of your storage account). With this step, the registration of your custom domain is complete.
 
-## 验证该自定义域引用你的 Blob 服务终结点
+12. Finally, you can delete the CNAME record you created using **asverify**, as it was necessary only as an intermediary step.
 
-若要验证你的自定义域是否确实已映射到你的 Blob 服务终结点，请在你的存储帐户内的公共容器中创建一个 Blob。然后在 Web 浏览器中，使用以下格式的 URI 来访问该 Blob：
+Users can now view blob data on your custom domain, so long as they have the appropriate permissions.
 
--   <http://>\<*subdomain.customdomain*\>/\<*mycontainer*\>/\<*myblob*\>
+<a name="verify-subdomain"> </a>
 
-例如，你可以使用以下 URI 通过映射到 **myforms** 容
-器中的 Blob 的自定义子域 **photos.contoso.com** 来访
-问 Web 窗体：
+<h2>Verify that the custom domain references your Blob service endpoint</h2>
 
--   <http://photos.contoso.com/myforms/applicationform.htm>
+To verify that your custom domain is indeed mapped to your Blob service endpoint, create a blob in a public container within your storage account. Then, in a web browser, use a URI in the following format to access the blob:
 
-  [为 Azure 云服务配置自定义域名]: /en-us/develop/net/common-tasks/custom-dns/
-  [为 Azure 网站配置自定义域名]: /en-us/develop/net/common-tasks/custom-dns-web-site/
-  [为你的存储帐户注册自定义域]: #register-domain
-  [使用中间 asverify 子域为你的存储帐户注册自定义域]: #register-asverify
+-   http://<*subdomain.customdomain*>/<*mycontainer*>/<*myblob*>
+
+For example, you might use the following URI to access a web form via a
+**photos.contoso.com** custom subdomain that maps to a blob in your
+**myforms** container:
+
+-   http://photos.contoso.com/myforms/applicationform.htm
+
+<!--
+## Additional Resources
+
+-   <a href="http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx">How to Map CDN Content to a Custom Domain</a>
+-->

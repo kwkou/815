@@ -1,159 +1,156 @@
 <properties linkid="manage-services-how-to-monitor-a-storage-account" urlDisplayName="How to monitor" pageTitle="How to monitor a storage account | Windows Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="Learn how to monitor a storage account in Azure by using the Management Portal." metaCanonical="" services="storage" documentationCenter="" title="How To Monitor a Storage Account" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 
-# 如何监视存储帐户
 
-你可以在 Azure 预览版管理门户中监视你的存储帐户。对于与存储帐户关联的每项存储服务（Blob、队列和表），你可以选择监视级别（最少监视或详细监视），并指定适当的数据保留策略。
 
-在你为存储帐户配置监视之前，不会收集任何监视数据，且仪表板和**“监视”**页上的度量值图表为空。
+# <a id="createstorageaccount"></a>Monitor a Storage Account in the Azure Management Portal
 
-**说明**
+You can monitor your storage accounts in the Azure Management Portal. For each storage service associated with the storage account (Blob, Queue, and Table), you can choose the level of monitoring - minimal or verbose - and specify the appropriate data retention policy. 
 
-在管理门户中查看监视数据会产生相关的额外费用。有关详细信息，请参阅[存储分析和计费][]。
+> [WACOM.NOTE] Additional costs are associated with examining monitoring data in the Management Portal. For more information, see <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh360997.aspx">Storage Analytics and Billing</a>. 
 
-## 目录
+> [WACOM.NOTE] The Azure File service does not currently support Storage Analytics.
 
--   [如何：为存储帐户配置监视][]
--   [如何：自定义仪表板以进行监视][]
--   [如何：自定义“监视”页][]
--   [如何：向度量值表中添加度量值][]
--   [如何：在“监视”页上自定义度量值图表][]
--   [如何：配置日志记录][]
+> [WACOM.NOTE] For an in-depth guide on using Storage Analytics and other tools to identify, diagnose, and troubleshoot Azure Storage-related issues, see [Monitor, diagnose, and troubleshoot Windows Azure Storage](../storage-monitoring-diagnosing-troubleshooting/).
 
-## 如何：为存储帐户配置监视
 
-1.  在[管理门户][]中，单击**“存储”**，然后单击存储帐户名称以打开仪表板。
+##Table of Contents##
 
-2.  单击**“配置”**，然后向下滚动到 Blob、表和队列服务的**“监视”**设置，如下所示。
+* [How to: Configure monitoring for a storage account](#configurestoragemonitoring)
+* [How to: Customize the dashboard for monitoring](#customizestoragemonitoring)
+* [How to: Customize the Monitor page](#customizemonitorpage)
+* [How to: Add metrics to the metrics table](#addmonitoringmetrics)
+* [How to: Customize the metrics chart on the Monitor page](#customizemetricschart)
+* [How to: Configure logging](#configurelogging)
 
-    ![监视选项][]
 
-3.  在**“监视”**中，为每项服务设置监视级别和数据保留策略：
+<h2><a id="configurestoragemonitoring"></a>How to: Configure monitoring for a storage account</h2>
 
--   若要设置监视级别，请选择以下一项：
+1. In the [Management Portal](https://manage.windowsazure.cn/), click **Storage**, and then click the storage account name to open the dashboard.
 
-    **最少** - 收集经过汇总的有关 Blob、表和队列服务的入口/出口、可用性、延迟及成功百分比等度量值。
+2. Click **Configure**, and scroll down to the **monitoring** settings for the Blob, Table, and Queue services, shown below.
 
-    **详细** – 除最少监视度量值外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的度量值。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
+	![MonitoringOptions](./media/storage-monitor-storage-account/Storage_MonitoringOptions.png)
 
-    **关闭** - 关闭监视。现有监视数据将一直保留到保留期结束。
+3. In **monitoring**, set the level of monitoring and the data retention policy for each service:
 
--   若要设置数据保留策略，请在**“保留期(天)”**中，键入要保留数据的天数，范围介于 1-365 天之间。如果不需要设置保留策略，请输入零。如果没有保留策略，则是否删除监视数据由你自己决定。建议你根据要将帐户的存储分析数据保留多长时间来设置保留策略，以便可以由系统免费删除旧数据和未使用的分析数据。
+-  To set the monitoring level, select one of the following:
 
-1.  完成监视配置后，单击“保存” 。
+      **Minimal** - Collects metrics such as ingress/egress, availability, latency, and success percentages, which are aggregated for the Blob, Table, and Queue services.
 
-大约一小时后，你应当可以开始在仪表板和**“监视”**页上看到监视数据。
+      **Verbose** - In addition to the minimal metrics, collects the same set of metrics for each storage operation in the Azure Storage Service API. Verbose metrics enable closer analysis of issues that occur during application operations. 
 
-度量值存储在存储帐户中的以下 4 个表中：\$MetricsTransactionsBlob、\$MetricsTransactionsTable、\$MetricsTransactionsQueue 和 \$MetricsCapacityBlob。有关详细信息，请参阅[关于存储分析度量值][]。
+      **Off** - Turns off monitoring. Existing monitoring data is persisted through the end of the retention period.
 
-在设置监视级别和保留策略后，你可以选择要在管理门户中监视哪些可用度量值，以及要在度量值图表上显示哪些度量值。将在每个监视级别显示一组默认度量值。你可以使用**“添加度量值”**在度量值列表中添加或删除度量值。
+- To set the data retention policy, in **Retention (in days)**, type the number of days of data to retain from 1-365 days. If you do not want to set a retention policy, enter zero. If there is no retention policy, it is up to you to delete the monitoring data. We recommend setting a retention policy based on how long you want to retain storage analytics data for your account so that old and unused analytics data can be deleted by system at no cost.
 
-## 如何：针对监视功能自定义仪表板
+4. When you finish the monitoring configuration, click **Save**.
 
-在仪表板上，你可以从 9 个可用度量值中最多选择 6 个要显示在度量值图表上的度量值。对于每项服务（Blob、表和队列），“可用性”、“成功百分比”和“请求总数”均可供选择。对于最少监视或详细监视，仪表板上提供的度量值是相同的。
+You should start seeing monitoring data on the dashboard and the **Monitor** page after about an hour.
 
-1.  在[管理门户][]中，单击**“存储”**，然后单击存储帐户名称以打开仪表板。
+Metrics are stored in the storage account in four tables named $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue, and $MetricsCapacityBlob. For more information, see [About Storage Analytics Metrics](http://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx).
 
-2.  若要更改显示在图表上的度量值，请执行以下操作之一：
+After you set the monitoring levels and retention policies, you can choose which of the available metrics to monitor in the Management Portal, and which metrics to plot on metrics charts. A default set of metrics are displayed at each monitoring level. You can use **Add Metrics** to add or remove metrics from the metrics list.
 
--   若要向图表中添加新的度量值，请单击度量值标题旁的复选框。在收缩显示模式中，单击**“更多(*n* 个)”**可访问无法显示在标题区域中的标题。
+Metrics are stored in the storage account in four tables named $MetricsTransactionsBlob, $MetricsTransactionsTable, $MetricsTransactionsQueue, and $MetricsCapacityBlob. For more information, see [About Storage Analytics Metrics](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh343258.aspx).
 
--   要隐藏显示在图表上的某个度量值，请清除该度量值标题旁的复选框。
 
-    ![监视\_更多 n 个][]
+<h2><a id="customizestoragemonitoring"></a>How to: Customize the dashboard for monitoring</h2>
 
-1.  默认情况下，该图表显示趋势，以便仅显示每个度量值的当前值（选择图表顶部的**“相对”**选项）。若要显示 Y 轴以便能够看到绝对值，请选择**“绝对”**。
+On the dashboard, you can choose up to six metrics to plot on the metrics chart from nine available metrics. For each service (Blob, Table, and Queue), the Availability, Success Percentage, and Total Requests metrics are available. The metrics available on the dashboard are the same for minimal or verbose monitoring.
 
-2.  若要更改度量值图表的显示时间范围，请在图表顶部选择 6 小时、24 小时或者 7 天。
+1. In the [Management Portal](https://manage.windowsazure.cn/), click **Storage**, and then click the name of the storage account to open the dashboard.
 
-## 如何：自定义“监视”页
+2. To change the metrics that are plotted on the chart, take one of the following actions:
 
-在**“监视”**页上，你可以查看你的存储帐户的一组完整度量值。
+- To add a new metric to the chart, click the check box by the metric header. In a narrow display, click ***n* more** to access headers that can't be displayed in the header area.
 
--   如果你的存储帐户已配置最少监视，将汇总有关 Blob、表和队列服务的入口/出口、可用性、延迟及成功百分比等度量值。
+- To hide a metric that is plotted on the chart, clear the check box by the metric header.
 
--   如果你的存储帐户已配置详细监视，那么除了服务级别的汇总之外，将以各项存储操作的更高分辨率提供度量值。
+	![Monitoring_nmore](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
+  
+3. By default, the chart shows trends, displaying only the current value of each metric (the **Relative** option at the top of the chart). To display a Y axis so you can see absolute values, select **Absolute**.
 
-使用以下过程可选择要在**“监视”**页上显示的度量值图表和表中查看哪些存储度量值。这些设置不会影响存储帐户下监视数据的收集、汇总和存储。
+4. To change the time range the metrics chart displays, select 6 hours, 24 hours, or 7 days at the top of the chart.
+     
 
-## 如何：向度量值表中添加度量值
+<h2><a id="customizemonitorpage"></a>How to: Customize the Monitor page</h2>
 
-1.  在[管理门户][]中，单击**“存储”**，然后单击存储帐户名称以打开仪表板。
+On the **Monitor** page, you can view the full set of metrics for your storage account. 
 
-2.  单击**“监视”**。
+- If your storage account has minimal monitoring configured, metrics such as ingress/egress, availability, latency, and success percentages are aggregated from the Blob, Table, and Queue services.
 
-    此时将打开**“监视”**页。默认情况下，度量值表显示可用于监视的度量值的子集。下图中显示的是为所有三项服务配置了详细监视的存储帐户的默认“监视”视图。可使用**“添加度量值”**从所有可用度量值中选择要监视的度量值。
+- If your storage account has verbose monitoring configured, the metrics are available at a finer resolution of individual storage operations in addition to the service-level aggregates.
 
-    ![监视\_详细监视视图][]
+Use the following procedures to choose which storage metrics to view in the metrics charts and table that are displayed on the **Monitor** page. These settings do not affect the collection, aggregation, and storage of monitoring data in the storage account.
 
-    **说明**
+<h2><a id="addmonitoringmetrics"></a>How to: Add metrics to the metrics table</h2>
 
-    在选择度量值时应考虑成本。在刷新监视视图时会产生相关的事务和数据传出费用。有关详细信息，请参阅[存储分析和计费][]。
 
-1.  单击**“添加度量值”**。
+1. In the [Management Portal](https://manage.windowsazure.cn/), click **Storage**, and then click the name of the storage account to open the dashboard.
 
-    最少监视中可用的汇总度量值位于列表顶部。如果选中该复选框，则度量值将显示在度量值列表中。
+2. Click **Monitor**.
 
-    ![添加度量值初始视图][]
+	The **Monitor** page opens. By default, the metrics table displays a subset of the metrics that are available for monitoring. The illustration shows the default Monitor display for a storage account with verbose monitoring configured for all three services. Use **Add Metrics** to select the metrics you want to monitor from all available metrics.
 
-2.  将鼠标指针悬停于对话框右侧时会显示滚动条，你可以拖动它以在视图中滚动查看其他度量值。
 
-    ![添加度量值滚动条][]
+	![Monitoring_VerboseDisplay](./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png)
 
-3.  单击度量值旁边的向下箭头，以展开该度量值范围内所包括的操作的列表。选择你要在管理门户中的度量值表中查看的每项操作。
+	<div class="dev-callout"> 
+	<b>Note</b> 
+	<p>Consider costs when you select the metrics. There are transaction and egress costs associated with refreshing monitoring displays. For more information, see <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx">Storage Analytics and Billing</a>.</p>
+</div>
 
-    在下图中，“授权错误百分比”度量值已展开。
+3. Click **Add Metrics**. 
 
-    ![展开/折叠][]
+	The aggregate metrics that are available in minimal monitoring are at the top of the list. If the check box is selected, the metric is displayed in the metrics list. 
 
-4.  在你为所有服务选择度量值后，单击“确定”（复选标记）以更新监视配置。所选度量值将添加到度量值表中。
+	![AddMetricsInitialDisplay](./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png)
+ 
+4. Hover over the right side of the dialog box to display a scrollbar that you can drag to scroll additional metrics into view.
 
-5.  若要从表中删除某个度量值，请单击该度量值以选中它，然后单击**“删除度量值”**，如下所示。
+	![AddMetricsScrollbar](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
 
-    ![删除度量值][]
 
-## 如何：在“监视”页上自定义度量值图表
+5. Click the down arrow by a metric to expand a list of operations the metric is scoped to include. Select each operation that you want to view in the metrics table in the Management Portal.
 
-1.  在存储帐户的**“监视”**页上的度量值表中，最多可选择 6 个要显示在度量值图表上的度量值。要选择度量值，请单击其左侧的复选框。若要从图表中删除度量值，请清除复选框。
+	In the following illustration, the AUTHORIZATION ERROR PERCENTAGE metric has been expanded.
 
-2.  若要在相对值（仅显示的最终值）和绝对值（显示的 Y 轴）之间切换图表，请选择图表顶部的**“相对”**或**“绝对”**。
+	![ExpandCollapse](./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png)
 
-3.  若要更改度量值图表的显示时间范围，请在图表顶部选择**“6 小时”**、**“24 小时”**或者**“7 天”**。
 
-## 如何：配置日志记录
+6. After you select metrics for all services, click OK (checkmark) to update the monitoring configuration. The selected metrics are added to the metrics table.
 
-对于你的存储帐户中提供的每项存储服务（Blob、表和队列），你可以保存“读取请求”、“写入请求”和/或“删除请求”的诊断日志，并且可以为其中每项服务设置数据保留策略。
+7. To delete a metric from the table, click the metric to select it, and then click **Delete Metric**, as shown below.
 
-1.  在[管理门户][]中，单击**“存储”**，然后单击存储帐户名称以打开仪表板。
+	![DeleteMetric](./media/storage-monitor-storage-account/Storage_DeleteMetric.png)
 
-2.  单击**“配置”**，然后使用键盘上的向下箭头向下滚动到**“日志记录”**（如下所示）。
+<h2><a id="customizemetricschart"></a>How to: Customize the metrics chart on the Monitor page</h2>
 
-    ![存储日志记录][]
+1. On the **Monitor** page for the storage account, in the metrics table, select up to 6 metrics to plot on the metrics chart. To select a metric, click the check box on its left side. To remove a metric from the chart, clear the check box.
 
-3.  为每项服务（Blob、表和队列）配置下列内容：
+2. To switch the chart between relative values (final value only displayed) and absolute values (Y axis displayed), select **Relative** or **Absolute** at the top of the chart.
 
-    -   要记录的请求类型：“读取请求”、“写入请求”和“删除请求”
+3.	To change the time range the metrics chart displays, select **6 hours**, **24 hours**, or **7 days** at the top of the chart.
 
-    -   保留记录数据的天数。如果不需要设置保留策略，请输入零。如果不设置保留策略，则是否删除日志由你自己决定。
 
-4.  单击**“保存”**。
 
-诊断日志保存在你的存储帐户下名为 \$logs 的 Blob 容器中。有关访问 \$logs 容器的信息，请参阅[关于存储分析日志记录][]。
+<h2><a id="configurelogging"></a>How to: Configure logging</h2>
 
-  [存储分析和计费]: http://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx
-  [如何：为存储帐户配置监视]: #configurestoragemonitoring
-  [如何：自定义仪表板以进行监视]: #customizestoragemonitoring
-  [如何：自定义“监视”页]: #customizemonitorpage
-  [如何：向度量值表中添加度量值]: #addmonitoringmetrics
-  [如何：在“监视”页上自定义度量值图表]: #customizemetricschart
-  [如何：配置日志记录]: #configurelogging
-  [管理门户]: https://manage.windowsazure.cn/
-  [监视选项]: ./media/storage-monitor-storage-account/Storage_MonitoringOptions.png
-  [关于存储分析度量值]: http://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx
-  [监视\_更多 n 个]: ./media/storage-monitor-storage-account/storage_Monitoring_nmore.png
-  [监视\_详细监视视图]: ./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png
-  [添加度量值初始视图]: ./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png
-  [添加度量值滚动条]: ./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png
-  [展开/折叠]: ./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png
-  [删除度量值]: ./media/storage-monitor-storage-account/Storage_DeleteMetric.png
-  [存储日志记录]: ./media/storage-monitor-storage-account/Storage_LoggingOptions.png
-  [关于存储分析日志记录]: http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx
+For each of the storage services available with your storage account (Blob, Table, and Queue), you can save diagnostics logs for Read Requests, Write Requests, and/or Delete Requests, and can set the data retention policy for each of the services.
+
+1. In the [Management Portal](https://manage.windowsazure.cn/), click **Storage**, and then click the name of the storage account to open the dashboard.
+
+2. Click **Configure**, and use the Down arrow on the keyboard to scroll down to **logging** (shown below).
+
+	![Storagelogging](./media/storage-monitor-storage-account/Storage_LoggingOptions.png)
+
+ 
+3. For each service (Blob, Table, and Queue), configure the following:
+
+	- The types of request to log: Read Requests, Write Requests, and Delete Requests
+
+	- The number of days to retain the logged data. Enter zero is if you do not want to set a retention policy. If you do not set a retention policy, it is up to you to delete the logs.
+
+4. Click **Save**.
+
+The diagnostics logs are saved in a blob container named $logs in your storage account. For information about accessing the $logs container, see [About Storage Analytics Logging](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx).

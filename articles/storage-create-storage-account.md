@@ -1,76 +1,178 @@
 <properties linkid="manage-services-how-to-create-a-storage-account" urlDisplayName="How to create" pageTitle="How to create a storage account | Azure" metaKeywords="" description="Learn how to create a storage account in the Azure management portal." metaCanonical="" services="storage" documentationCenter="" title="How To Create a Storage Account" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 
-# 如何创建存储帐户
 
-若要将 Blob、表和队列服务中的文件和数据存储在 Azure 中，你必须在要存储数据的地理区域中创建存储帐户。一个存储帐户最多可以包含 500 TB 的数据，你最多可以为每个 Azure 订阅创建二十个存储帐户。有关详细信息，请参阅 [Azure 存储的可伸缩性和性能目标][]。
 
-本主题介绍了如何在 Azure 管理门户中创建存储帐户。
+# About Azure Storage Accounts
 
-**说明**
+An Azure storage account is a secure account that gives you access to services in Azure Storage. Your storage account provides the unique namespace for your data, and by default, it is available only to you, the account owner. 
 
-对于 Azure 虚拟机，如果你在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。存储帐户名称将基于虚拟机名称。
+There is one types of storage accounts in China:
 
-## 目录
+- A standard storage account includes Blob, Table, and Queue storage. File storage is available by request via the [Azure portal](/zh-cn/).
+<!--
+- A premium storage account currently supports Azure Virtual Machine disks only. Azure Premium Storage is available by request via the [Azure portal](/zh-cn/). See [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](http://go.microsoft.com/fwlink/?LinkId=521898) for an in-depth overview of Premium Storage.
+-->
+You are billed for Azure Storage usage based on your storage account. Storage costs are based on four factors: storage capacity, replication scheme, storage transactions, and data egress. 
 
--   [如何：创建存储帐户][]
--   [后续步骤][]
+- Storage capacity refers to how much of your storage account allotment you are using to store data. The cost of simply storing your data is determined by how much data you are storing, and how it is replicated. 
+- Replication determines how many copies of your data are maintained at once, and in what locations. 
+- Transactions refer to all read and write operations to Azure Storage. 
+- Data egress refers to data transferred out of an Azure region. When the data in your storage account is accessed by an application that is not running in the same region, whether that application is a cloud service or some other type of application, then you are charged for data egress. (For Azure services, you can take steps to group your data and services in the same data centers to reduce or eliminate data egress charges.)  
 
-## 如何：创建存储帐户
+The [Storage Pricing Details](/zh-cn/pricing/details/#storage) page provides detailed pricing information for storage capacity, replication, and transactions. The [Data Transfers Pricing Details](/zh-cn/pricing/details/data-transfers/) provides detailed pricing information for data egress.
 
-1.  登录到[管理门户][]。
+For details about storage account capacity and performance targets, see [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx).
 
-2.  依次单击**“新建”**、**“存储”**和**“快速创建”**。
+> [WACOM.NOTE] When you create an Azure virtual machine, a storage account is created for you automatically in the deployment location if you do not already have a storage account in that location. So it's not necessary to follow the steps below to create a storage account for your virtual machine disks. The storage account name will be based on the virtual machine name. See the [Azure Virtual Machines documentation](/zh-cn/documentation/services/virtual-machines/) for more details. <br />
 
-    ![新建存储帐户][]
+##Table of Contents##
 
-3.  在**“URL”**中，输入要在存储帐户 URL 中使用的子域名称。若要访问存储中的对象，请将该对象的位置附加到终结点。例如，用于访问 Blob 的 URL 可以是 <http://*myaccount>*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob\*。
+This article describes how to create a standard storage account, and some decisions to consider as you create it. It also describes how to manage your storage account access keys, and how to delete a storage account.
 
-4.  在**“区域/地缘组”**中，为存储选择区域或地缘组。如果你希望存储服务与你所使用的其他 Azure 服务位于同一数据中心，请选择一个地缘组而不是区域。这可以提高性能，且不会对传出收费。
 
-    > [WACOM.NOTE]
-    >  \> 若要创建地缘组，请打开管理门户的**“网络”**区域，单击**“地缘组”**，然后单击**“创建新的地缘组”**或**“创建”**。可以使用你在以前的管理门户中创建的地缘组。若要打开其他门户，请单击标题栏上的**“预览”**，然后单击**“转到以前的门户”**。（若要返回此门户，请单击门户底部的**“查看预览门户”**。）你也可以使用 Azure 服务管理 API 创建和管理地缘组。有关详细信息，请参阅[对地缘组的操作][]。
+- [How to: Create a storage account](#create)
+- [How to: View, copy, and regenerate storage access keys](#regeneratestoragekeys)
+- [How to: Delete a storage account](#deletestorageaccount)
+* [Next steps](#next)
 
-5.  如果你有多个 Azure 订阅，则会显示**“订阅”**字段。在**“订阅”**中，输入要使用存储帐户的 Azure 订阅。你最多可以为一个订阅创建五个存储帐户。
+## <a id="create"></a>How to: Create a storage account ##
 
-6.  在**“复制”**中，选择要用于存储帐户的复制级别。
+1. Sign in to the [Management Portal](https://manage.windowsazure.cn).
 
-    默认情况下，复制设置为**“地域冗余”**。使用地域冗余复制，你的存储帐户及其中的所有数据在主位置发生重大灾难时就能够故障转移到辅助位置。Azure 将分配同一区域中的辅助位置，并且无法对其进行更改。在进行故障转移后，辅助位置将成为存储帐户的主位置，并且会将你的数据复制到新的辅助位置。
+2. Click **Create New**, click **Storage**, and then click **Quick Create**.
 
-    如果希望能够从辅助位置读取数据，可以选择**“读取访问地域冗余”**复制。此选项提供了地域冗余复制并启用了对辅助位置中复制数据的只读访问。当主位置或辅助位置中的某个位置变得不可用时，读取访问地域冗余复制允许你从另一个位置访问你的数据。
+	![NewStorageAccount](./media/storage-create-storage-account/storage_NewStorageAccount.png)
 
-    第三个复制选项**“读取访问地域冗余”**当前处于预览状态。此选项启用了对辅助位置中复制数据的只读访问。当主位置或辅助位置中的某个位置变得不可用时，读取访问地域冗余复制允许你从另一个位置访问你的数据。
+3. In **URL**, enter a name for your storage account. See [Storage account endpoints](#account-endpoints) below for details about how this name will be used to address objects that you store in Azure Storage.
 
-    > [WACOM.NOTE]
-    >  \> 若要在读取访问地域冗余复制处于预览状态时使用它，必须手动请求为你的订阅启用该功能。可以访问 [Azure 预览功能][]页面来为你的订阅请求读取访问地域冗余复制。有关读取访问地域冗余复制的更多详细信息，请参阅 [Azure 存储服务团队博客][]。
-    > 如果在你的订阅上没有将读取访问地域冗余复制启用为预览功能，则用于为你的存储帐户选择该功能的选项将处于禁用状态。
+4. In **Location/Affinity Group**, select a location for your storage account that is close to you or to your customers. If data in your storage account will be accessed from another Azure service, such as an Azure virtual machine or cloud service, you may want to select an affinity group from the list to group your storage account in the same data center with other Azure services that you are using to improve performance and lower costs. 
 
-    有关存储帐户复制的定价信息，请参阅[存储定价详细信息][]。
+	> [WACOM.NOTE] Note that you must select an affinity group when your storage account is created; you cannot move an existing account to an affinity group.
 
-7.  单击**“创建存储帐户”**。
+	For details about affinity groups, see [Service co-location with an affinity group](#affinity-group) below.
 
-    创建存储帐户可能需要花费几分钟的时间。若要检查状态，你可以监视门户底部的通知。创建存储帐户后，你的新存储帐户将处于**“联机”**状态并且随时可供使用。
+	
+5. If you have more than one Azure subscription, then the **Subscription** field is displayed. In **Subscription**, enter the Azure subscription that you want to use the storage account with. You can create up to five storage accounts for a subscription.
 
-    ![存储页面][]
+6. In **Replication**, select the desired level of replication for your storage account. The recommended replication option is Geo-Redundant replication, which provides maximum durability for your data. For more details on Azure Storage replication options, see [Storage account replication options](#replication-options) below.
 
-## 后续步骤
+6. Click **Create Storage Account**.
 
--   若要更详细地了解 Azure 存储服务，请参阅[了解云存储][]和 [Blob、队列和表][]。
+	It may take a few minutes to create your storage account. To check the status, you can monitor the notifications at the bottom of the portal. After the storage account has been created, your new storage account has **Online** status and is ready for use. 
 
--   访问 [Azure 存储服务团队博客][1]。
+![StoragePage](./media/storage-create-storage-account/Storage_StoragePage.png)
 
--   对你的应用程序进行配置以使用 Azure Blob、表和队列服务。[Azure 开发人员中心][]提供了将 Blob、表和队列存储服务与 .NET、Node.js、Java 和 PHP 应用程序结合使用的操作方法指南。有关特定于某种编程语言的说明，请参阅该语言对应的操作方法指南。
 
-  [Azure 存储的可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/dn249410.aspx
-  [如何：创建存储帐户]: #create
-  [后续步骤]: #next
-  [管理门户]: https://manage.windowsazure.cn
-  [新建存储帐户]: ./media/storage-create-storage-account/storage_NewStorageAccount.png
-  [对地缘组的操作]: http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx
-  [Azure 预览功能]: https://account.windowsazure.com/PreviewFeatures
-  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx
-  [存储定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/#storage
-  [存储页面]: ./media/storage-create-storage-account/Storage_StoragePage.png
-  [了解云存储]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/
-  [Blob、队列和表]: http://msdn.microsoft.com/zh-cn/library/gg433040.aspx
-  [1]: http://blogs.msdn.com/b/windowsazurestorage/
-  [Azure 开发人员中心]: http://azure.microsoft.com/zh-cn/documentation/
+### <a id="account-endpoints"></a>Storage account endpoints 
+
+Every object that you store in Azure Storage has a unique URL address; the storage account name forms the subdomain of that address. The subdomain together with the domain name, which is specific to each service, form an *endpoint* for your storage account. 
+
+For example, if your storage account is named *mystorageaccount*, then the default endpoints for your storage account are: 
+
+- Blob service: http://*mystorageaccount*.blob.core.chinacloudapi.cn
+
+- Table service: http://*mystorageaccount*.table.core.chinacloudapi.cn
+
+- Queue service: http://*mystorageaccount*.queue.core.chinacloudapi.cn
+
+- File service: http://*mystorageaccount*.file.core.chinacloudapi.cn
+
+You can see the endpoints for your storage account on the storage Dashboard in the Azure Management Portal once the account has been created.
+
+The URL for accessing an object in a storage account is built by appending the object's location in the storage account to the endpoint. For example, a blob address might have this format: http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*.
+
+You can also configure a custom domain name to use with your storage account. See [Configure a custom domain name for blob data in a storage account](../storage-custom-domain-name/) for details.
+
+### <a id="affinity-group"></a>Service co-location with an affinity group 
+
+An *affinity group* is a geographic grouping of your Azure services and VMs with your Azure storage account. An affinity group can improve service performance by locating computer workloads in the same data center or near the target user audience. Also, no billing charges are incurred for egress when data in a storage account is accessed from another service that is part of the same affinity group.
+
+> [WACOM.NOTE]  To create an affinity group, open the <b>Settings</b> area of the Management Portal, click <b>Affinity Groups</b>, and then click either <b>Add an affinity group</b> or the <b>Add</b> button. You can also create and manage affinity groups using the Azure Service Management API. See <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460798.aspx">Operations on Affinity Groups</a> for more information.
+
+
+### <a id="replication-options"></a>Storage account replication options
+
+[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
+
+
+## <a id="regeneratestoragekeys"></a>How to: View, copy, and regenerate storage access keys
+
+When you create a storage account, Azure generates two 512-bit storage access keys, which are used for authentication when the storage account is accessed. By providing two storage access keys, Azure enables you to regenerate the keys with no interruption to your storage service or access to that service.
+
+> [WACOM.NOTE] We recommend that you avoid sharing your storage account access keys with anyone else. To permit access to storage resources without giving out your access keys, you can use a *shared access signature*. A shared access signature provides access to a resource in your account for an interval that you define and with the permissions that you specify. See the [shared access signature tutorial](../storage-dotnet-shared-access-signature-part-1/) for more information.
+
+In the [Management Portal](http://manage.windowsazure.cn), use **Manage Keys** on the dashboard or the **Storage** page to view, copy, and regenerate the storage access keys that are used to access the Blob, Table, and Queue services. 
+
+### Copy a storage access key ###
+
+You can use **Manage Keys** to copy a storage access key to use in a connection string. The connection string requires the storage account name and a key to use in authentication. For information about configuring connection strings to access Azure storage services, see [Configuring Connection Strings](http://msdn.microsoft.com/zh-cn/library/ee758697.aspx).
+
+1. In the [Management Portal](http://manage.windowsazure.cn), click **Storage**, and then click the name of the storage account to open the dashboard.
+
+2. Click **Manage Keys**.
+
+ 	**Manage Access Keys** opens.
+
+	![Managekeys](./media/storage-create-storage-account/Storage_ManageKeys.png)
+
+ 
+3. To copy a storage access key, select the key text. Then right-click, and click **Copy**.
+
+### Regenerate storage access keys ###
+You should change the access keys to your storage account periodically to help keep your storage connections more secure. Two access keys are assigned to enable you to maintain connections to the storage account using one access key while you regenerate the other access key. 
+
+<div class="dev-callout"> 
+    <b>Warning</b> 
+    <p>Regenerating your access keys affects virtual machines, media services, and any applications that are dependent on the storage account. All clients that use the access key to access the storage account must be updated to use the new key.
+    </p> 
+    </div>
+
+**Virtual machines** - If your storage account contains any virtual machines that are running, you will have to redeploy all virtual machines after you regenerate the access keys. To avoid redeployment, shut down the virtual machines before you regenerate the access keys.
+ 
+**Media services** - If you have media services dependent on your storage account, you must re-sync the access keys with your media service after you regenerate the keys.
+ 
+**Applications** - If you have web applications or cloud services using the storage account, you will lose the connections if you regenerate keys, unless you roll your keys. Here is the process:
+
+1. Update the connection strings in your application code to reference the secondary access key of the storage account. 
+
+2. Regenerate the primary access key for your storage account. In the [Management Portal](http://manage.windowsazure.cn), from the dashboard or the **Configure** page, click **Manage Keys**. Click **Regenerate** under the primary access key, and then click **Yes** to confirm you want to generate a new key.
+
+3. Update the connection strings in your code to reference the new primary access key.
+
+4. Regenerate the secondary access key.
+
+## <a id="deletestorageaccount"></a>How to: Delete a storage account
+
+To remove a storage account that you are no longer using, use **Delete** on the dashboard or the **Configure** page. **Delete** deletes the entire storage account, including all of the blobs, tables, and queues in the account. 
+
+<div class="dev-callout">
+	<b>Warning</b>
+	<p>There's no way to restore the content from a deleted storage account. Make 
+	sure you back up anything you want to save before you delete the account.
+	</p>
+	<p>
+	If your storage account contains any VHD files or disks for an Azure 
+	virtual machine, then you must delete any images and disks that are using those VHD files 
+	before you can delete the storage account. First, stop the virtual machine if it is running, and then delete it. To delete disks, navigate to the Disks tab and delete any disks contained in the storage account. To delete images, navigate to the Images tab and delete any images stored in the account.
+	</p>
+</div>
+
+
+1. In the [Management Portal](http://manage.windowsazure.cn), click **Storage**.
+
+2. Click anywhere in the storage account entry except the name, and then click **Delete**.
+
+	 -Or-
+
+	Click the name of the storage account to open the dashboard, and then click **Delete**.
+
+3. Click **Yes** to confirm you want to delete the storage account.
+
+## <a id="next"></a>Next steps
+
+- To learn more about Azure storage services, see [Understanding Cloud Storage](/zh-cn/documentation/articles/storage-introduction/) and [Blobs, Queues, and Tables](http://msdn.microsoft.com/zh-cn/library/gg433040.aspx).
+
+- Visit the [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/).
+
+
+
