@@ -1,98 +1,104 @@
 <properties linkid="manage-services-how-to-manage-a-storage-account" urlDisplayName="How to manage" pageTitle="How to manage storage accounts | Windows Azure" metaKeywords="Azure manage storage accounts, storage account management portal, storage account geo-replication, Azure geo-replication, Azure access keys" description="Learn how to manage storage accounts in Azure by using the Management Portal." metaCanonical="" services="storage" documentationCenter="" title="How To Manage Storage Accounts" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 
+# 如何管理存储帐户
 
+## 目录
 
+-   [如何：管理存储帐户复制][]
+-   [如何：查看、复制和重新生成存储访问密钥][]
+-   [如何：删除存储帐户][]
 
-<h1><a id="managestorageaccounts"></a>How To Manage Storage Accounts</h1>
+## 如何：管理存储帐户复制
 
-##Table of Contents##
+你有三个选项用于复制你的存储帐户：
 
-* [How to: Manage storage account replication](#georeplication)
-* [How to: View, copy, and regenerate storage access keys](#regeneratestoragekeys)
-* [How to: Delete a storage account](#deletestorageaccount)
+-   **地域冗余复制。**默认情况下会为你的存储帐户启用地域冗余复制。使用地域冗余复制时，你的数据将被复制到一个辅助地理位置，这样就能够在主位置发生重大灾难时故障转移到该位置。辅助位置与主要位置位于同一区域，但距离主要位置数百英里。
 
-<h2><a id="georeplication"></a>How to: Replicate your storage account data for durability and high availability</h2>
+-   **读取访问地域冗余复制。**读取访问地域冗余复制将你的数据复制到一个辅助地理位置，并且还提供对辅助位置中你的数据的读取访问权限。当主位置或辅助位置中的某个位置变得不可用时，读取访问地域冗余复制允许你从另一个位置访问你的数据。
 
-[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
+-   **本地冗余复制**。使用本地冗余复制时，将在同一数据中心内将你的存储帐户数据复制三次。本地冗余复制将以优惠价提供。
 
-### To specify replication settings for a storage account ###
+    请注意，如果你为存储帐户指定了本地冗余复制，但之后又决定启用地域冗余复制，则在你将现有数据复制到辅助位置时将向你收取一次性数据费用。
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn), click **Storage**, and then click the name of your storage account to display the dashboard.
+有关存储帐户复制的定价信息，请参阅[存储定价详细信息][]。
 
-2. Click **Configure**.
+### 为存储帐户指定复制设置
 
-3. In the **Replication**, field, select the type of replication you want for your storage account.
+1.  在 [Azure 管理门户][]中，单击**“存储”**，然后单击你的存储帐户名称以显示仪表板。
 
-4. Click **Save**, and confirm your choice if prompted.
+2.  单击**“配置”**。
 
+3.  在**“复制”**字段中，选择要用于存储帐户的复制类型。
 
-<h2><a id="regeneratestoragekeys"></a>How to: View, copy, and regenerate storage access keys</h2>
-When you create a storage account, Azure generates two 512-bit storage access keys, which are used for authentication when the storage account is accessed. By providing two storage access keys, Azure enables you to regenerate the keys with no interruption to your storage service or access to that service.
+4.  单击**“保存”**，并在出现提示时确认你的选择。
 
-In the [Management Portal](http://manage.windowsazure.cn), use **Manage Keys** on the dashboard or the **Storage** page to view, copy, and regenerate the storage access keys that are used to access the Blob, Table, and Queue services.
+## 如何：查看、复制和重新生成存储访问密钥
 
-### Copy a storage access key ###
+当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-You can use **Manage Keys** to copy a storage access key to use in a connection string. The connection string requires the storage account name and a key to use in authentication. For information about configuring connection strings to access Azure storage services, see [Configuring Connection Strings](http://msdn.microsoft.com/zh-cn/library/ee758697.aspx).
+在[管理门户][]中，可使用仪表板或**“存储”**页上的**“管理密钥”**查看、复制和重新生成用于访问 Blob、表和队列服务的存储访问密钥。
 
-1. In the [Management Portal](http://manage.windowsazure.cn), click **Storage**, and then click the name of the storage account to open the dashboard.
+### 复制存储访问密钥
 
-2. Click **Manage Keys**.
+你可以使用**“管理密钥”**复制要在连接字符串中使用的存储访问密钥。连接字符串需要在进行身份验证时使用存储帐户名称和密钥。有关配置连接字符串以访问 Azure 存储服务的信息，请参阅[配置连接字符串][]。
 
- 	**Manage Access Keys** opens.
+1.  在[管理门户][]中，单击**“存储”**，然后单击存储帐户名称以打开仪表板。
 
-	![Managekeys](./media/storage-manage-storage-account/Storage_ManageKeys.png)
+2.  单击**“管理密钥”**。
 
- 
-3. To copy a storage access key, select the key text. Then right-click, and click **Copy**.
+    此时将打开**“管理访问密钥”**页面。
 
-### Regenerate storage access keys ###
-You should change the access keys to your storage account periodically to help keep your storage connections more secure. Two access keys are assigned to enable you to maintain connections to the storage account using one access key while you regenerate the other access key. 
+    ![管理密钥][]
 
-<div class="dev-callout"> 
-    <b>Warning</b> 
-    <p>Regenerating your access keys affects virtual machines, media services, and any applications that are dependent on the storage account.
-    </p> 
-    </div>
+3.  若要复制存储访问密钥，请选择密钥文本。然后右键单击，并单击**“复制”**。
 
-**Virtual machines** - If your storage account contains any virtual machines that are running, you will have to redeploy all virtual machines after you regenerate the access keys. To avoid redeployment, shut down the virtual machines before you regenerate the access keys.
- 
-**Media services** - If you have media services dependent on your storage account, you must re-sync the access keys with your media service after you regenerate the keys.
- 
-**Applications** - If you have web applications or cloud services using the storage account, you will lose the connections if you regenerate keys, unless you roll your keys. Here is the process:
+### 重新生成存储访问密钥
 
-1. Update the connection strings in your application code to reference the secondary access key of the storage account. 
+你应定期更改你的存储帐户的访问密钥，使存储连接更安全。分配了两个访问密钥，以便在你重新生成其中一个访问密钥时，始终能够使用另一个访问密钥连接到存储帐户。
 
-2. Regenerate the primary access key for your storage account. In the [Management Portal](http://manage.windowsazure.cn), from the dashboard or the **Configure** page, click **Manage Keys**. Click **Regenerate** under the primary access key, and then click **Yes** to confirm you want to generate a new key.
+**警告**
 
-3. Update the connection strings in your code to reference the new primary access key.
+重新生成访问密钥会影响虚拟机、媒体服务以及任何依赖于存储帐户的应用程序。
 
-4. Regenerate the secondary access key.
+**虚拟机** - 如果你的存储帐户包含任何正在运行的虚拟机，则在重新生成访问密钥后必须重新部署所有虚拟机。若要避免重新部署，请在重新生成访问密钥之前关闭虚拟机。
 
+**Media services** - 如果你的 Media Services 依赖于存储帐户，则必须在重新生成密钥后将访问密钥与 Media Services 重新同步。
 
-<h2><a id="deletestorageaccount"></a>How to: Delete a storage account</h2>
+**应用程序** - 如果你具有使用存储帐户的 Web 应用程序或云服务，则重新生成密钥将失去连接，除非你滚动使用密钥。过程如下：
 
-To remove a storage account that you are no longer using, use **Delete** on the dashboard or the **Configure** page. **Delete** deletes the entire storage account, including all of the blobs, tables, and queues in the account. 
+1.  更新应用程序代码中的连接字符串以引用存储帐户的辅助访问密钥。
 
-<div class="dev-callout">
-	<b>Warning</b>
-	<p>There's no way to restore the content from a deleted storage account. Make 
-	sure you back up anything you want to save before you delete the account.
-	</p>
-	<p>
-	If your storage account contains any VHD files or disks for an Azure 
-	virtual machine, then you must delete any images and disks that are using those VHD files 
-	before you can delete the storage account. First, stop the virtual machine if it is running, and then delete it. To delete disks, navigate to the Disks tab and delete any disks contained in the storage account. To delete images, navigate to the Images tab and delete any images stored in the account.
-	</p>
-</div>
+2.  为你的存储帐户重新生成主访问密钥。在[管理门户][]中，从仪表板或“配置” 页，单击“管理密钥” 。单击主访问密钥下的**“重新生成”**，然后单击**“是”**确认你要生成新密钥。
 
+3.  更新代码中的连接字符串以引用新的主访问密钥。
 
-1. In the [Management Portal](http://manage.windowsazure.cn), click **Storage**.
+4.  重新生成辅助访问密钥。
 
-2. Click anywhere in the storage account entry except the name, and then click **Delete**.
+## 如何：删除存储帐户
 
-	 -Or-
+若要删除不再使用的存储帐户，请使用仪表板或**“配置”**页上的**“删除”**。**“删除”**操作将删除整个存储帐户，包括帐户中的所有 Blob、表和队列。
 
-	Click the name of the storage account to open the dashboard, and then click **Delete**.
+**警告**
 
-3. Click **Yes** to confirm you want to delete the storage account.
+无法从已删除的存储帐户中还原内容。请确保在删除帐户之前对要保存的所有内容进行备份。
+
+如果你的存储帐户包含用于 Azure 虚拟机的任何 VHD 文件或磁盘，则必须删除使用这些 VHD 文件的任何映像和磁盘，然后才能删除存储帐户。首先，如果虚拟机正在运行，则停止运行，然后将其删除。若要删除磁盘，请导航到“磁盘”选项卡并删除存储帐户中包含的所有磁盘。若要删除映像，请导航到“映像”选项卡并删除存储帐户中存储的任何映像。
+
+1.  在[管理门户][]中，单击**“存储”**。
+
+2.  单击存储帐户条目中除名称之外的任何位置，然后单击**“删除”**。
+
+    -或-
+
+    单击存储帐户的名称以打开仪表板，然后单击**“删除”**。
+
+3.  单击**“是”**确认你要删除存储帐户。
+
+  [如何：管理存储帐户复制]: #georeplication
+  [如何：查看、复制和重新生成存储访问密钥]: #regeneratestoragekeys
+  [如何：删除存储帐户]: #deletestorageaccount
+  [存储定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/#storage
+  [Azure 管理门户]: https://manage.windowsazure.cn
+  [管理门户]: http://manage.windowsazure.cn
+  [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/ee758697.aspx
+  [管理密钥]: ./media/storage-manage-storage-account/Storage_ManageKeys.png

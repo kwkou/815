@@ -1,568 +1,536 @@
 <properties linkid="dev-java-how-to-use-table-storage" urlDisplayName="Table Service" pageTitle="How to use table storage (Java) | Windows Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="Learn how to use the table storage service in Azure. Code samples are written in Java code." metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="" solutions="" manager="" editor="" />
 
+# 如何通过 Java 使用表存储服务
 
-# How to use the Table storage service from Java
-# How to use Table Storage from Java
+本指南将演示如何使用 Azure 表存储服务执行常见方案。
+示例是用 Java 代码编写的。
+涉及的方案包括**创建和删除表、在表中插入和查询实体**
+。有关表的详细信息，请参阅
+[后续步骤][]部分。
 
-This guide will show you how to perform common scenarios using the Azure Table storage service. The samples are written in Java and use the [Azure Storage SDK for Java][]. The scenarios covered include **creating**, **listing**, and **deleting** tables, as well as **inserting**, **querying**, **modifying**, and **deleting** entities in a table. For more information on tables, see the [Next steps](#NextSteps) section.
+## 目录
 
-Note: An SDK is available for developers who are using Azure Storage on Android devices. For more information, see the [Azure Storage SDK for Android][]. 
+-   [什么是表存储][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [创建 Java 应用程序][]
+-   [创建用于访问表存储的应用程序][]
+-   [设置 Azure 存储连接字符串][]
+-   [如何：创建表][]
+-   [如何：将实体添加到表][]
+-   [如何：插入一批实体][]
+-   [如何：检索分区中的所有实体][]
+-   [如何：检索分区中的一部分实体][]
+-   [如何：检索单个实体][]
+-   [如何：修改实体][]
+-   [如何：查询一部分实体属性][]
+-   [如何：插入或替换实体][]
+-   [如何：删除实体][]
+-   [如何：删除表][]
+-   [后续步骤][]
 
-## <a name="Contents"> </a>Table of Contents
+[WACOM.INCLUDE [howto-table-storage][]]
 
-* [What is Table Storage](#what-is)
-* [Concepts](#Concepts)
-* [Create an Azure storage account](#CreateAccount)
-* [Create a Java application](#CreateApplication)
-* [Configure your application to access Table Storage](#ConfigureStorage)
-* [Setup an Azure storage connection string](#ConnectionString)
-* [How to: Create a table](#CreateTable)
-* [How to: List the tables](#ListTables)
-* [How to: Add an entity to a table](#AddEntity)
-* [How to: Insert a batch of entities](#InsertBatch)
-* [How to: Retrieve all entities in a partition](#RetrieveEntities)
-* [How to: Retrieve a range of entities in a partition](#RetrieveRange)
-* [How to: Retrieve a single entity](#RetriveSingle)
-* [How to: Modify an entity](#ModifyEntity)
-* [How to: Query a subset of entity properties](#QueryProperties)
-* [How to: Insert or Replace an entity](#InsertOrReplace)
-* [How to: Delete an entity](#DeleteEntity)
-* [How to: Delete a table](#DeleteTable)
-* [Next steps](#NextSteps)
+## 创建 Azure 存储帐户
 
-[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
+[WACOM.INCLUDE [create-storage-account][]]
 
-##<a name="CreateAccount"></a>Create an Azure storage account
+## 创建 Java 应用程序
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+在本指南中，你将使用存储功能，这些功能可在本地 Java 应用
+程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码
+来运行。我们假定你已下载并安装了 Java 开发工具包 (JDK)，已按照
+[Azure SDK for Java][] 中的说明安装了
+Azure Libraries for Java 和 Azure SDK，并已在你的 Azure 订阅中
+创建了一个 Azure 存储帐户。
 
-## <a name="CreateApplication"></a>Create a Java application
+你可以使用任何开发工具（包括“记事本”）创建应用程序。
+你只要能够编译 Java 项目并引用 Azure Libraries
+for Java 即可。
 
-In this guide, you will use storage features which can be run within a Java application locally, or in code running within a web role or worker role in Azure.
+## 配置应用程序以访问表存储
 
-To do so, you will need to install the Java Development Kit (JDK) and create an Azure storage account in your Azure subscription. Once you have done so, you will need to verify that your development system meets the minimum requirements and dependencies which are listed in the [Azure Storage SDK for Java][] repository on GitHub. If your system meets those requirements, you can follow the instructions for downloading and installing the Azure Storage Libraries for Java on your system from that repository. Once you have completed those tasks, you will be able to create a Java application which uses the examples in this article.
+将下列 import 语句添加到需要在其中使用 Azure 存储 API 来
+访问表的 Java 文件的顶部：
 
-## <a name="ConfigureStorage"> </a>Configure your application to access table storage
+    // 包括下列 import 语句以使用表 API
+    import com.microsoft.windowsazure.services.core.storage.*;
+    import com.microsoft.windowsazure.services.table.client.*;
+    import com.microsoft.windowsazure.services.table.client.TableQuery.*;
 
-Add the following import statements to the top of the Java file where you want to use Windows Azure storage APIs to access tables:
+## 设置 Azure 存储连接字符串
 
-    // Include the following imports to use table APIs
-    import com.microsoft.azure.storage.*;
-    import com.microsoft.azure.storage.table.*;
-    import com.microsoft.azure.storage.table.TableQuery.*;
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务
+的终结点和凭据。在客户端应用程序中运行时，
+必须提供以下格式的存储连接字符串，
+并对**“AccountName”和**“AccountKey”值使用
+管理门户中列出的存储帐户的名称
+和存储帐户的主访问密钥。此示例演示了如何
+声明一个静态字段来保存连接字符串：
 
-## <a name="ConnectionString"> </a>Setup an Azure storage connection string
-
-An Azure storage client uses a storage connection string to store endpoints and credentials for accessing data management services. When running in a client application, you must provide the storage connection string in the following format, using the name of your storage account and the Primary access key for the storage account listed in the Management Portal for the *AccountName* and *AccountKey* values. This example shows how you can declare a static field to hold the connection string:
-
-    // Define the connection-string with your values.
+    // 使用你的值定义连接字符串
     public static final String storageConnectionString = 
-        "DefaultEndpointsProtocol=http;" + 
-        "AccountName=your_storage_account;" + 
-        "AccountKey=your_storage_account_key";
+    "DefaultEndpointsProtocol=http;" + 
+    "AccountName=your_storage_account;" + 
+    "AccountKey=your_storage_account_key";
 
-In an application running within a role in Windows Azure, this string can be stored in the service configuration file, *ServiceConfiguration.cscfg*, and can be accessed with a call to the **RoleEnvironment.getConfigurationSettings** method. Here's an example of getting the connection string from a **Setting** element named *StorageConnectionString* in the service configuration file:
+在 Azure 中的某个角色内运行的应用程序中，此字符串可
+存储在服务配置文件 ServiceConfiguration.cscfg 中，
+并可通过调用 **RoleEnvironment.getConfigurationSettings**
+方法进行访问。下面是从服务配置文件中
+名为 StorageConnectionString 的**设置**
+元素中获取连接字符串的示例**：
 
-    // Retrieve storage account from connection-string.
+    // 通过连接字符串检索存储帐户
     String storageConnectionString = 
-        RoleEnvironment.getConfigurationSettings().get("StorageConnectionString");
+    RoleEnvironment.getConfigurationSettings().get("StorageConnectionString");
 
-The following samples assume that you have used one of these two methods to get the storage connection string.
+下面的示例假定你使用了这两个定义之一来获取存储连接字符串。
 
-## <a name="CreateTable"> </a>How to: Create a table
+## 如何：创建表
 
-A **CloudTableClient** object lets you get reference objects for tables
-and entities. The following code creates a **CloudTableClient** object
-and uses it to create a new **CloudTable** object which represents a table named "people". (Note: There are additional ways to create **CloudStorageAccount** objects; for more information, see **CloudStorageAccount** in the [Azure Storage Client SDK Reference].)
+利用 **CloudTableClient** 对象，你可以获得表和实体的引用对象。
+以下代码将创建 **CloudTableClient** 对象
+并使用它创建新表。本指南中的所有代码
+都使用存储在 Azure 应用程序的服务配置中的
+存储连接字符串。还有其他方法可用来
+创建 **CloudStorageAccount** 对象。
 
-    try
-    {
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 如果该表不存在，则创建它。
+    String tableName = "people";
+    tableClient.createTableIfNotExists(tableName);
 
-	   // Create the table client.
-	   CloudTableClient tableClient = storageAccount.createCloudTableClient();
+## 如何：将实体添加到表
 
-	   // Create the table if it doesn't exist.
-	   String tableName = "people";
-	   CloudTable cloudTable = new CloudTable(tableName,tableClient);
-	   cloudTable.createIfNotExists();
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
-
-## <a name="ListTables"></a>How to: List the tables
-
-To get a list of tables, call the **CloudTableClient.listTables()** method to retrieve an iterable list of table names.
-
-    try
-    {
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
-
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
-
-    	// Loop through the collection of table names.
-    	for (String table : tableClient.listTables())
-    	{
-		  // Output each table name.
-		  System.out.println(table);
-	   }
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
-
-## <a name="AddEntity"> </a>How to: Add an entity to a table
-
-Entities map to Java objects using a custom class implementing **TableEntity**. For convenience, the **TableServiceEntity** class implements **TableEntity** and uses reflection to map properties to getter and setter methods named for the properties. To add an entity to a table, first create a class that defines the properties of your entity. The following code defines an entity class which uses the customer's first name as the row key, and last name as the partition key. Together, an entity's partition and row key uniquely identify the entity in the table. Entities with the same partition key can be queried faster than those with different partition keys.
+实体将映射到使用实现了 **TableEntity** 的
+自定义类的 Java 对象。为方便起见，**TableServiceEntity** 类实现了
+**TableEntity**，并使用反射将属性映射到为
+属性指定的 getter 和 setter 方法。若要将实体添加到表，
+请先创建用于定义实体的属性的类。
+以下代码定义了将客户的名字和姓氏
+分别用作行键和分区键的实体类。
+实体的分区键和行键共同唯一地标识表中的实体。
+查询分区键相同的实体的速度快于查询分区键
+不同的实体的速度。
 
     public class CustomerEntity extends TableServiceEntity {
-        public CustomerEntity(String lastName, String firstName) {
-            this.partitionKey = lastName;
-            this.rowKey = firstName;
+    public CustomerEntity(String lastName, String firstName) {
+    this.partitionKey = lastName;
+    this.rowKey = firstName;
         }
 
-        public CustomerEntity() { }
+    public CustomerEntity() { }
 
-        String email;
-        String phoneNumber;
+    String email;
+    String phoneNumber;
         
-        public String getEmail() {
-            return this.email;
-        }
-        
-        public void setEmail(String email) {
-            this.email = email;
+    public String getEmail() {
+    return this.email;
         }
         
-        public String getPhoneNumber() {
-            return this.phoneNumber;
+    public void setEmail(String email) {
+    this.email = email;
         }
         
-        public void setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
+    public String getPhoneNumber() {
+    return this.phoneNumber;
+        }
+        
+    public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
         }
     }
 
-Table operations involving entities require a **TableOperation** object. This object defines the operation to be performed on an entity, which can be executed with a **CloudTable** object. The following code creates a new instance of the **CustomerEntity** class with some customer data to be stored. The code next calls **TableOperation.insertOrReplace** to create a **TableOperation** object to insert an entity into a table, and associates the new **CustomerEntity** with it. Finally, the code calls the **execute** method on the **CloudTable** object, specifying the "people" table and the new **TableOperation**, which then sends a request to the storage service to insert the new customer entity into the "people" table, or replace the entity if it already exists.
+涉及实体的表操作需要使用 **TableOperation** 对象。此对象
+用于定义要对实体执行的操作，该操作可使
+用 **CloudTableClient** 对象执行。以下代码
+创建一个包含要存储的某些客户数据的 **CustomerEntity** 类
+的新实例。接下来，该代码调用 **TableOperation.insert**
+创建一个 **TableOperation** 对象，以便将实体
+插入表中，并将新的 **CustomerEntity** 与之
+关联。最后，该代码对 **CloudTableClient** 调用
+**execute** 方法，并指定了“people”表和新的
+**TableOperation**，后者随后向存储服务发送将新客户实体
+插入“people”表的请求。
 
-    try
-    {
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 创建新客户实体。
+    CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
+    customer1.setEmail("Walter@contoso.com");
+    customer1.setPhoneNumber("425-555-0101");
 
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
-			
-    	// Create a cloud table object for the table.
-    	CloudTable cloudTable = tableClient.getTableReference("people");
-			
-    	// Create a new customer entity.
-    	CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
-    	customer1.setEmail("Walter@contoso.com");
-    	customer1.setPhoneNumber("425-555-0101");
-			
-    	// Create an operation to add the new customer to the people table.
-    	TableOperation insertCustomer1 = TableOperation.insertOrReplace(customer1);
+    // 创建一个操作来将新客户添加到 people 表。
+    TableOperation insertCustomer1 = TableOperation.insert(customer1);
 
-    	// Submit the operation to the table service.
-    	cloudTable.execute(insertCustomer1);
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
+    // 将操作提交到表服务。
+    tableClient.execute("people", insertCustomer1);
 
-## <a name="InsertBatch"> </a>How to: Insert a batch of entities
+## 如何：插入一批实体
 
-You can insert a batch of entities to the table service in one write operation. The following code creates a **TableBatchOperation** object, then adds three insert operations to it. Each insert operation is added by creating a new entity object, setting its values, and then calling the **insert** method on the **TableBatchOperation** object to associate the entity with a new insert operation. Then the code calls **execute** on the **CloudTable** object, specifying the "people" table and the **TableBatchOperation** object, which sends the batch of table operations to the storage service in a single request.
+你可以通过一个写入操作将一批实体插入到表服务。
+以下代码创建一个 **TableBatchOperation** 对象，
+然后向其中添加三个插入操作。每个插入操作的添加方法如下：
+创建一个新的实体对象，设置它的值，然后
+对 **TableBatchOperation** 对象调用 **insert** 方法
+以将实体与新的插入操作相关联。然后，该代码对 **CloudTableClient** 调
+用 **execute**，并指定“people”表和 **TableBatchOperation** 对象，
+后者将在一个请求中向存储服务发送一批表操作。
+下面是批处理操作的一些注意事项：
 
-    try
-    {
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
+1.  你在单个批处理操作中最多可以执行 100 个插入、删除、合并、
+    替换、插入或合并以及插入或替换操作（可以是这些操作的
+    任意组合）。
+2.  批处理操作可以包含检索操作，但前提是检索操作是批处理中的
+    唯一操作。
+3.  单个批处理操作中的所有实体都必须具有相同的
+    分区键。
+4.  批处理操作的数据负载限制为 4MB。
 
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
+<!-- -->
 
-    	// Define a batch operation.
-    	TableBatchOperation batchOperation = new TableBatchOperation();
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 定义批处理操作。
+    TableBatchOperation batchOperation = new TableBatchOperation();
 
-    	// Create a cloud table object for the table.
-    	CloudTable cloudTable = tableClient.getTableReference("people");
+    // 创建一个要添加到表中的客户实体。
+    CustomerEntity customer = new CustomerEntity("Smith", "Jeff");
+    customer.setEmail("Jeff@contoso.com");
+    customer.setPhoneNumber("425-555-0104");
+    batchOperation.insert(customer);
 
-    	// Create a customer entity to add to the table.
-    	CustomerEntity customer = new CustomerEntity("Smith", "Jeff");
-    	customer.setEmail("Jeff@contoso.com");
-    	customer.setPhoneNumber("425-555-0104");
-    	batchOperation.insertOrReplace(customer);
+    // 创建另一个要添加到表中的客户实体。
+    CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
+    customer2.setEmail("Ben@contoso.com");
+    customer2.setPhoneNumber("425-555-0102");
+    batchOperation.insert(customer2);
 
-	   // Create another customer entity to add to the table.
-	   CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
-	   customer2.setEmail("Ben@contoso.com");
-	   customer2.setPhoneNumber("425-555-0102");
-	   batchOperation.insertOrReplace(customer2);
+    // 创建第三个要添加到表中的客户实体。
+    CustomerEntity customer3 = new CustomerEntity("Smith", "Denise");
+    customer3.setEmail("Denise@contoso.com");
+    customer3.setPhoneNumber("425-555-0103");
+    batchOperation.insert(customer3);
 
-	   // Create a third customer entity to add to the table.
-	   CustomerEntity customer3 = new CustomerEntity("Smith", "Denise");
-	   customer3.setEmail("Denise@contoso.com");
-	   customer3.setPhoneNumber("425-555-0103");
-	   batchOperation.insertOrReplace(customer3);
+    // 对“people”表执行批处理操作。
+    tableClient.execute("people", batchOperation);
 
-	   // Execute the batch of operations on the "people" table.
-	   cloudTable.execute(batchOperation);
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
+## 如何：检索分区中的所有实体
 
-Some things to note on batch operations:
+若要从表中查询分区中的实体，可以使用 **TableQuery**。
+调用 **TableQuery.from** 可创建一个针对特定表
+的查询，该查询将返回指定的结果类型。以下代码指定了
+一个筛选器，用于筛选其中的分区键是“Smith”的实体。
+**TableQuery.generateFilterCondition** 是一个用于创建查询筛选器
+的帮助器方法。对 **TableQuery.from** 方法返回的引用调用
+**where** 可将对查询应用筛选器。当通过
+对 **CloudTableClient** 对象调用 **execute** 来执行查询时，
+该查询将返回指定了 **CustomerEntity** 结果类型
+的 **Iterator**。然后，你可以利用在 for each 循环中返回
+的 **Iterator** 来使用结果。此代码会将查询结果中每个实体的字段
+输出到控制台。
 
-- You can perform up to 100 insert, delete, merge, replace, insert or merge, and insert or replace operations in any combination in a single batch.
-- A batch operation can have a retrieve operation, if it is the only operation in the batch.
-- All entities in a single batch operation must have the same partition key.
-- A batch operation is limited to a 4MB data payload.
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 创建一个分区键为“Smith”的筛选条件。
+    String partitionFilter = TableQuery.generateFilterCondition(
+    TableConstants.PARTITION_KEY, 
+    QueryComparisons.EQUAL,
+    "Smith");
 
-## <a name="RetrieveEntities"> </a>How to: Retrieve all entities in a partition
+    // 指定一个分区查询，使用“Smith”作为分区键筛选器。
+    TableQuery<CustomerEntity> partitionQuery =
+    TableQuery.from("people", CustomerEntity.class)
+    .where(partitionFilter);
 
-To query a table for entities in a partition, you can use a **TableQuery**. Call **TableQuery.from** to create a query on a particular table that returns a specified result type. The following code specifies a filter for entities where 'Smith' is the partition key. **TableQuery.generateFilterCondition** is a helper method to create filters for queries. Call **where** on the reference returned by the **TableQuery.from** method to apply the filter to the query. When the query is executed with a call to **execute** on the **CloudTable** object, it returns an **Iterator** with the **CustomerEntity** result type specified. You can then use the **Iterator** returned in a for each loop to consume the results. This code prints the fields of each entity in the query results to the console.
-
-    try
-    {
-    	// Define constants for filters.
-    	final String PARTITION_KEY = "PartitionKey";
-    	final String ROW_KEY = "RowKey";
-    	final String TIMESTAMP = "Timestamp";
-
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
-
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
-			
-	   // Create a cloud table object for the table.
-	   CloudTable cloudTable = tableClient.getTableReference("people");
-
-    	// Create a filter condition where the partition key is "Smith".
-    	String partitionFilter = TableQuery.generateFilterCondition(
-	       PARTITION_KEY, 
-	       QueryComparisons.EQUAL,
-	       "Smith");
-
-	   // Specify a partition query, using "Smith" as the partition key filter.
-	   TableQuery<CustomerEntity> partitionQuery =
-	       TableQuery.from(CustomerEntity.class)
-	       .where(partitionFilter);
-
-        // Loop through the results, displaying information about the entity.
-        for (CustomerEntity entity : cloudTable.execute(partitionQuery)) {
-            System.out.println(entity.getPartitionKey() +
-                " " + entity.getRowKey() + 
-                "\t" + entity.getEmail() +
-                "\t" + entity.getPhoneNumber());
-	   }
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
+    // 循环访问结果，显示实体的有关信息。
+    for (CustomerEntity entity :tableClient.execute(partitionQuery)) {
+    System.out.println(entity.getPartitionKey() + " " + entity.getRowKey() + 
+    "\t" + entity.getEmail() + "\t" + entity.getPhoneNumber());
     }
 
-## <a name="RetrieveRange"> </a>How to: Retrieve a range of entities in a partition
+## 如何：检索分区中的一部分实体
 
-If you don't want to query all the entities in a partition, you can specify a range by using comparison operators in a filter. The following code combines two filters to get all entities in partition "Smith" where the row key (first name) starts with a letter up to 'E' in the alphabet. Then it prints the query results. If you use the entities added to the table in the batch insert section of this guide, only two entities are returned this time (Ben and Denise Smith); Jeff Smith is not included.
+如果不想查询分区中的所有实体，则可以在筛选器中使用比较
+运算符来指定一个范围。以下代码
+组合使用两个筛选器来获取分区“Smith”中行键（名字）以字母表中字母
+“E”前面的字母开头的所有实体，
+然后输出查询结果。如果你使用在本指南的批量插入部分中
+添加到表的实体，则此次只会返回两个实体（Ben 和 Denise Smith），
+而不会包括 Jeff Smith。
 
-    try
-    {
-    	// Define constants for filters.
-    	final String PARTITION_KEY = "PartitionKey";
-    	final String ROW_KEY = "RowKey";
-    	final String TIMESTAMP = "Timestamp";
-			
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 创建一个分区键为“Smith”的筛选条件。
+    String partitionFilter = TableQuery.generateFilterCondition(
+    TableConstants.PARTITION_KEY, 
+    QueryComparisons.EQUAL,
+    "Smith");
 
-	   // Create the table client.
-	   CloudTableClient tableClient = storageAccount.createCloudTableClient();
+    // 创建一个行键小于字母“E”的筛选条件。
+    String rowFilter = TableQuery.generateFilterCondition(
+    TableConstants.ROW_KEY, 
+    QueryComparisons.LESS_THAN,
+    "E");
 
-	   // Create a cloud table object for the table.
-	   CloudTable cloudTable = tableClient.getTableReference("people");
+    // 将两个条件组合到一个筛选器表达式中。
+    String combinedFilter = TableQuery.combineFilters(partitionFilter, 
+    Operators.AND, rowFilter);
 
-    	// Create a filter condition where the partition key is "Smith".
-    	String partitionFilter = TableQuery.generateFilterCondition(
-	       PARTITION_KEY, 
-	       QueryComparisons.EQUAL,
-	       "Smith");
+    // 指定一个范围查询，使用“Smith”作为分区键，
+    // 使用最大为字母“E”的行键。
+    TableQuery<CustomerEntity> rangeQuery =
+    TableQuery.from("people", CustomerEntity.class)
+    .where(combinedFilter);
 
-    	// Create a filter condition where the row key is less than the letter "E".
-    	String rowFilter = TableQuery.generateFilterCondition(
-	       ROW_KEY, 
-	       QueryComparisons.LESS_THAN,
-	       "E");
+    // 循环访问结果，显示实体的相关信息
+    for (CustomerEntity entity :tableClient.execute(rangeQuery)) {
+    System.out.println(entity.getPartitionKey() + " " + entity.getRowKey() + 
+    "\t" + entity.getEmail() + "\t" + entity.getPhoneNumber());
+    }
 
-    	// Combine the two conditions into a filter expression.
-    	String combinedFilter = TableQuery.combineFilters(partitionFilter, 
-	        Operators.AND, rowFilter);
+## 如何：检索单个实体
 
-    	// Specify a range query, using "Smith" as the partition key,
-    	// with the row key being up to the letter "E".
-    	TableQuery<CustomerEntity> rangeQuery =
-	       TableQuery.from(CustomerEntity.class)
-	       .where(combinedFilter);
+你可以编写查询以检索单个特定实体。以下代码
+使用分区键和行键参数调用 **TableOperation.retrieve** 来
+指定客户“Jeff Smith”，而不是创建 **TableQuery** 并
+使用筛选器来执行同一操作。当执行时，
+检索操作将只返回一个实体，而不会返回一个集合。
+**getResultAsType** 方法会将结果强制转换为分配目标的
+类型 - **CustomerEntity** 对象。如果此类型与
+为查询指定的类型不兼容，则会引发异常。
+如果没有实体具有完全匹配的分区键和行键，
+则会返回 null 值。在查询中同时指定分区键和行键是从表服务中
+检索单个实体的最快方法。
 
-    	// Loop through the results, displaying information about the entity
-        for (CustomerEntity entity : cloudTable.execute(rangeQuery)) {
-            System.out.println(entity.getPartitionKey() +
-                " " + entity.getRowKey() +
-                "\t" + entity.getEmail() +
-                "\t" + entity.getPhoneNumber());
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 检索分区键为“Smith”且行键为“Jeff”的实体
+    TableOperation retrieveSmithJeff = 
+    TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
+
+    // 将操作提交到表服务并获取特定的实体。
+    CustomerEntity specificEntity =
+    tableClient.execute("people", retrieveSmithJeff).getResultAsType();
+
+## 如何：修改实体
+
+若要修改实体，请从表服务中检索它，对实体对象进行更改，
+然后通过替换或合并操作将更改
+保存回表服务。以下代码将更改现有客户的
+电话号码。此代码将调用 **TableOperation.replace**
+，而不是像执行插入时那样调用 **TableOperation.insert**
+。
+**CloudTableClient.execute** 方法将调用表服务，并替换该实体，
+除非在此应用程序检索到该实体之后另一个
+应用程序对它进行了更改。如果出现这种情况，
+则会引发异常，必须再次检索、修改并保存该实体。
+此乐观并发重试模式在分布式存储系统中
+很常见。
+
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 检索分区键为“Smith”且行键为“Jeff”的实体。
+    TableOperation retrieveSmithJeff = 
+    TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
+
+    // 将操作提交到表服务并获取特定的实体。
+    CustomerEntity specificEntity =
+    tableClient.execute("people", retrieveSmithJeff).getResultAsType();
+        
+    // 指定一个新电话号码。
+    specificEntity.setPhoneNumber("425-555-0105");
+
+    // 创建一个操作来替换实体。
+    TableOperation replaceEntity = TableOperation.replace(specificEntity);
+
+    // 将操作提交到表服务。
+    tableClient.execute("people", replaceEntity);
+
+## 如何：查询一部分实体属性
+
+对表的查询可以只检索实体中的少数几个属性。此方法称为投影，
+可减少带宽并提高查询性能，尤其适用于大型实体。
+以下代码中的查询
+使用 **select** 方法，仅返回表中实体的
+电子邮件地址。返回结果在 **EntityResolver**
+（用于对从服务器返回的实体执行类型转换）的帮助下
+投影到一个 **String** 集合中。你
+可以在此[博客文章][]中了解有关投影的详细信息。
+请注意，本地存储模拟器不支持投影，因此，
+此代码仅在使用表服务中的帐户时才能运行。
+
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 定义一个仅检索 Email 属性的投影查询
+    TableQuery<CustomerEntity> projectionQuery = 
+    TableQuery.from("people", CustomerEntity.class)
+    .select(new String[] {"Email"});
+
+    // 定义一个实体解析器以将实体投影到 Email 值。
+    EntityResolver<String> emailResolver = new EntityResolver<String>() {
+    @Override
+    public String resolve(String PartitionKey, String RowKey, Date timeStamp,
+    HashMap<String, EntityProperty> properties, String etag) {
+    return properties.get("Email").getValueAsString();
         }
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
+    };
 
-## <a name="RetriveSingle"> </a>How to: Retrieve a single entity
-
-You can write a query to retrieve a single, specific entity. The following code calls **TableOperation.retrieve** with partition key and row key parameters to specify the customer "Jeff Smith", instead of creating a **TableQuery** and using filters to do the same thing. When executed, the retrieve operation returns just one entity, rather than a collection. The **getResultAsType** method casts the result to the type of the assignment target, a **CustomerEntity** object. If this type is not compatible with the type specified for the query, an exception will be thrown. A null value is returned if no entity has an exact partition and row key match. Specifying both partition and row keys in a query is the fastest way to retrieve a single entity from the Table service.
-
-    try
-    {
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
-
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
-
-    	// Create a cloud table object for the table.
-    	CloudTable cloudTable = tableClient.getTableReference("people");
-
-    	// Retrieve the entity with partition key of "Smith" and row key of "Jeff"
-    	TableOperation retrieveSmithJeff = 
-	       TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
-
-	   // Submit the operation to the table service and get the specific entity.
-	   CustomerEntity specificEntity =
-    		cloudTable.execute(retrieveSmithJeff).getResultAsType();
-			
-    	// Output the entity.
-    	if (specificEntity != null)
-    	{
-            System.out.println(specificEntity.getPartitionKey() +
-                " " + specificEntity.getRowKey() +
-                "\t" + specificEntity.getEmail() +
-                "\t" + specificEntity.getPhoneNumber());
-	   }
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
+    // 循环访问结果，显示 Email 值。
+    for (String projectedString : 
+    tableClient.execute(projectionQuery, emailResolver)) {
+    System.out.println(projectedString);
     }
 
-## <a name="ModifyEntity"> </a>How to: Modify an entity
+## 如何：插入或替换实体
 
-To modify an entity, retrieve it from the table service, make changes to the entity object, and save the changes back to the table service with a replace or merge operation. The following code changes an existing customer's phone number. Instead of calling **TableOperation.insert** like we did to insert, this code calls **TableOperation.replace**. The **CloudTable.execute** method calls the table service, and the entity is replaced, unless another application changed it in the time since this application retrieved it. When that happens, an exception is thrown, and the entity must be retrieved, modified, and saved again. This optimistic concurrency retry pattern is common in a distributed storage system.
+很多时候，你需要将某个实体添加到表中，但又不知道该实体是否
+已存在于表中。利用“插入或替换”操作，你可以提出一个以下形式的
+请求：如果实体不存在，则插入一个实体；如果实体存在，
+则替换现有实体。以下代码基于前面的示例
+针对“Walter Harp”插入或替换实体。创建
+新实体后，此代码调用
+**TableOperation.insertOrReplace** 方法。此代码随后使用表
+和插入或替换表操作作为参数对
+**CloudTableClient** 调用 **execute**。若只更新实体的一部分，
+则可以改用 **TableOperation.insertOrMerge** 方法。
+请注意，本地存储模拟器不支持插入或替换，
+因此，此代码仅在使用表服务中的帐户时
+才能运行。你可以在此[博客文章][]中了解
+有关“插入或替换”和“插入或合并”的更多信息。
 
-    try
-    {
-    	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount =
-	       CloudStorageAccount.parse(storageConnectionString);
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 创建新客户实体。
+    CustomerEntity customer5 = new CustomerEntity("Harp", "Walter");
+    customer5.setEmail("Walter@contoso.com");
+    customer5.setPhoneNumber("425-555-0106");
 
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
+    // 创建一个操作来将新客户添加到 people 表。
+    TableOperation insertCustomer5 = TableOperation.insertOrReplace(customer5);
 
-    	// Create a cloud table object for the table.
-    	CloudTable cloudTable = tableClient.getTableReference("people");
+    // 将操作提交到表服务。
+    tableClient.execute("people", insertCustomer5);
 
-    	// Retrieve the entity with partition key of "Smith" and row key of "Jeff".
-    	TableOperation retrieveSmithJeff = 
-	       TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
+## 如何：删除实体
 
-    	// Submit the operation to the table service and get the specific entity.
-    	CustomerEntity specificEntity =
-		  cloudTable.execute(retrieveSmithJeff).getResultAsType();
+你可以在检索到实体后轻松将其删除。检索到实体后，
+对要删除的实体调用 **TableOperation.delete**。
+然后对 **CloudTableClient** 调用 **execute**。以下代码
+检索并删除一个客户实体。
 
-    	// Specify a new phone number.
-    	specificEntity.setPhoneNumber("425-555-0105");
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 创建一个操作来检索分区键为“Smith”且行键为“Jeff”的实体。
+    TableOperation retrieveSmithJeff = TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
 
-    	// Create an operation to replace the entity.
-    	TableOperation replaceEntity = TableOperation.replace(specificEntity);
+    // 检索分区键为“Smith”且行键为“Jeff”的实体。
+    CustomerEntity entitySmithJeff =
+    tableClient.execute("people", retrieveSmithJeff).getResultAsType();
 
-    	// Submit the operation to the table service.
-    	cloudTable.execute(replaceEntity);
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
+    // 创建一个操作来删除实体。
+    TableOperation deleteSmithJeff = TableOperation.delete(entitySmithJeff);
 
-## <a name="QueryProperties"> </a>How to: Query a subset of entity properties
+    // 将删除操作提交到表服务。
+    tableClient.execute("people", deleteSmithJeff);
 
-A query to a table can retrieve just a few properties from an entity. This technique, called projection, reduces bandwidth and can improve query performance, especially for large entities. The query in the following code uses the **select** method to return only the email addresses of entities in the table. The results are projected into a collection of **String** with the help of an **EntityResolver**, which does the type conversion on the entities returned from the server. You can learn more about projection in this [blog post][]. Note that projection is not supported on the local storage emulator, so this code runs only when using an account on the table service.
+## 如何：删除表
 
-    try
-    {
-        // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount =
-            CloudStorageAccount.parse(storageConnectionString);
+最后，以下代码将从存储帐户中删除一个表。
+表在删除之后的一段时间内（通常小于四十秒）
+无法重新创建。
 
-    	// Create the table client.
-    	CloudTableClient tableClient = storageAccount.createCloudTableClient();
+    // 通过连接字符串检索存储帐户
+    CloudStorageAccount storageAccount =
+    CloudStorageAccount.parse(storageConnectionString);
+     
+    // 创建表客户端。
+    CloudTableClient tableClient = storageAccount.createCloudTableClient();
+     
+    // 如果表存在，则删除它及其所有数据。
+    tableClient.deleteTableIfExists("people");
 
-    	// Create a cloud table object for the table.
-    	CloudTable cloudTable = tableClient.getTableReference("people");
+## 后续步骤
 
-    	// Define a projection query that retrieves only the Email property
-    	TableQuery<CustomerEntity> projectionQuery = 
-	       TableQuery.from(CustomerEntity.class)
-	       .select(new String[] {"Email"});
+现在，你已了解有关表存储的基础知识，可单击下面的链接来了解如何
+执行更复杂的存储任务。
 
-    	// Define a Entity resolver to project the entity to the Email value.
-    	EntityResolver<String> emailResolver = new EntityResolver<String>() {
-            @Override
-            public String resolve(String PartitionKey, String RowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag) {
-                return properties.get("Email").getValueAsString();
-            }
-        };
+-   查看 MSDN 参考：[在 Windows Azure 中存储和访问
+    数据]
+-   访问 [Azure 存储服务团队博客][]
 
-        // Loop through the results, displaying the Email values.
-        for (String projectedString : 
-            cloudTable.execute(projectionQuery, emailResolver)) {
-                System.out.println(projectedString);
-        }
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
-
-## <a name="InsertOrReplace"> </a>How to: Insert or Replace an entity
-
-Often you want to add an entity to a table without knowing if it already exists in the table. An insert-or-replace operation allows you to make a single request which will insert the entity if it does not exist or replace the existing one if it does. Building on prior examples, the following code inserts or replaces the entity for "Walter Harp". After creating a new entity, this code calls the **TableOperation.insertOrReplace** method. This code then calls **execute** on the **CloudTable** object with the table and the insert or replace table operation as the parameters. To update only part of an entity, the **TableOperation.insertOrMerge** method can be used instead. Note that insert-or-replace is not supported on the local storage emulator, so this code runs only when using an account on the table service. You can learn more about insert-or-replace and insert-or-merge in this [blog post][].
-
-    try
-    {
-        // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount =
-            CloudStorageAccount.parse(storageConnectionString);
-
-        // Create the table client.
-        CloudTableClient tableClient = storageAccount.createCloudTableClient();
-
-        // Create a cloud table object for the table.
-        CloudTable cloudTable = tableClient.getTableReference("people");
-
-        // Create a new customer entity.
-        CustomerEntity customer5 = new CustomerEntity("Harp", "Walter");
-        customer5.setEmail("Walter@contoso.com");
-        customer5.setPhoneNumber("425-555-0106");
-
-        // Create an operation to add the new customer to the people table.
-        TableOperation insertCustomer5 = TableOperation.insertOrReplace(customer5);
-
-        // Submit the operation to the table service.
-        cloudTable.execute(insertCustomer5);
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
-
-## <a name="DeleteEntity"> </a>How to: Delete an entity
-
-You can easily delete an entity after you have retrieved it. Once the entity is retrieved, call **TableOperation.delete** with the entity to delete. Then call **execute** on the **CloudTable** object. The following code retrieves and deletes a customer entity.
-
-    try
-    {
-        // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount =
-            CloudStorageAccount.parse(storageConnectionString);
-
-        // Create the table client.
-        CloudTableClient tableClient = storageAccount.createCloudTableClient();
-
-        // Create a cloud table object for the table.
-        CloudTable cloudTable = tableClient.getTableReference("people");
-
-        // Create an operation to retrieve the entity with partition key of "Smith" and row key of "Jeff".
-        TableOperation retrieveSmithJeff = TableOperation.retrieve("Smith", "Jeff", CustomerEntity.class);
-
-        // Retrieve the entity with partition key of "Smith" and row key of "Jeff".
-        CustomerEntity entitySmithJeff =
-            cloudTable.execute(retrieveSmithJeff).getResultAsType();
-
-        // Create an operation to delete the entity.
-        TableOperation deleteSmithJeff = TableOperation.delete(entitySmithJeff);
-
-        // Submit the delete operation to the table service.
-        cloudTable.execute(deleteSmithJeff);
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
-
-## <a name="DeleteTable"> </a>How to: Delete a table
-
-Finally, the following code deletes a table from a storage account. A table which has been deleted will be unavailable to be recreated for a period of time following the deletion, usually less than forty seconds.
-
-    try
-    {
-        // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount =
-            CloudStorageAccount.parse(storageConnectionString);
-
-        // Create the table client.
-        CloudTableClient tableClient = storageAccount.createCloudTableClient();
-
-        // Delete the table and all its data if it exists.
-        CloudTable cloudTable = new CloudTable("people",tableClient);
-        cloudTable.deleteIfExists();
-    }
-    catch (Exception e)
-    {
-        // Output the stack trace.
-        e.printStackTrace();
-    }
-
-## <a name="NextSteps"> </a>Next steps
-
-Now that you've learned the basics of table storage, follow these links to learn how to do more complex storage tasks.
-
-- [Azure Storage SDK for Java]
-- [Azure Storage Client SDK Reference]
-- [Azure Storage REST API]
-- [Azure Storage Team Blog]
-
-[Azure SDK for Java]: /zh-cn/develop/java/
-[Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
-[Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[blog post]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+  [后续步骤]: #NextSteps
+  [什么是表存储]: #what-is
+  [概念]: #Concepts
+  [创建 Azure 存储帐户]: #CreateAccount
+  [创建 Java 应用程序]: #CreateApplication
+  [创建用于访问表存储的应用程序]: #ConfigureStorage
+  [设置 Azure 存储连接字符串]: #ConnectionString
+  [如何：创建表]: #CreateTable
+  [如何：将实体添加到表]: #AddEntity
+  [如何：插入一批实体]: #InsertBatch
+  [如何：检索分区中的所有实体]: #RetrieveEntities
+  [如何：检索分区中的一部分实体]: #RetrieveRange
+  [如何：检索单个实体]: #RetriveSingle
+  [如何：修改实体]: #ModifyEntity
+  [如何：查询一部分实体属性]: #QueryProperties
+  [如何：插入或替换实体]: #InsertOrReplace
+  [如何：删除实体]: #DeleteEntity
+  [如何：删除表]: #DeleteTable
+  [howto-table-storage]: ../includes/howto-table-storage.md
+  [create-storage-account]: ../includes/create-storage-account.md
+  [Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
+  [博客文章]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

@@ -1,184 +1,180 @@
-<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="How to use table storage (Python) | Windows Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="如何从 Python 使用表存储服务 | Windows Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="Learn how to use the Table service from Python to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
 
+# 如何从 Python 使用表存储服务
 
+本指南将演示如何使用 Windows Azure 表存储服务执行常见方案。
+示例是用 Python API 编写的。
+涉及的方案包括**创建和删除表、在表中插入和查询实体**。
+有关表的详细信息，请参阅
+[后续步骤][]部分。
 
+## 目录
 
+-   [什么是表服务？][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [如何：创建表][]
+-   [如何：向表中添加实体][]
+-   [如何：更新实体][]
+-   [如何：更改实体组][]
+-   [如何：查询实体][]
+-   [如何：查询实体集][]
+-   [如何：查询实体属性子集][]
+-   [如何：删除实体][]
+-   [如何：删除表][]
+-   [后续步骤][]
 
-# How to Use the Table Storage Service from Python
-This guide shows you how to perform common scenarios using the Windows
-Azure Table storage service. The samples are written written using the
-Python API. The scenarios covered include **creating and deleting a
-table, inserting and querying entities in a table**. For more
-information on tables, see the [Next Steps][] section.
+[WACOM.INCLUDE [howto-table-storage][]]
 
-## Table of Contents
+## 创建 Azure 存储帐户
 
-[What is the Table Service?][]   
- [Concepts][]   
- [Create an Azure Storage Account][]   
- [How To: Create a Table][]   
- [How To: Add an Entity to a Table][]   
- [How To: Update an Entity][]   
- [How To: Change a Group of Entities][]   
- [How To: Query for an Entity][]   
- [How To: Query a Set of Entities][]   
- [How To: Query a Subset of Entity Properties][]   
- [How To: Delete an Entity][]   
- [How To: Delete a Table][]   
- [Next Steps][]
+[WACOM.INCLUDE [create-storage-account][]]
 
-[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
+**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南][]。
 
-## <a name="create-account"> </a>Create an Azure Storage Account
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+## 如何创建表
 
-**Note:** If you need to install Python or the Client Libraries, please see the [Python Installation Guide](../python-how-to-install/).
+可通过 **TableService** 对象使用表服务。以下代码
+将创建 **TableService** 对象。在你希望在其中以
+编程方式访问 Azure 存储服务的任何 Python 文件中，将以下代码添加到文件的顶部附近：
 
+    from azure.storage import *
 
-## <a name="create-table"> </a>How to Create a Table
+以下代码使用存储帐户名称和帐户密钥创建 **TableService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
 
-The **TableService** object lets you work with table services. The
-following code creates a **TableService** object. Add the following near
-the top of any Python file in which you wish to programmatically access Azure Storage:
+    table_service = TableService(account_name='myaccount', account_key='mykey')
 
-	from azure.storage import TableService, Entity
+    table_service.create_table('tasktable')
 
-The following code creates a **TableService** object using the storage account name and account key.  Replace 'myaccount' and 'mykey' with the real account and key.
+## 如何向表中添加实体
 
-	table_service = TableService(account_name='myaccount', account_key='mykey')
+若要添加实体，请首先创建定义了你的实体属性名称和值的字典。
+请注意，对于每个实体，你必须指定
+**PartitionKey** 和 **RowKey**。这些值是你的实体的
+唯一标识符，并且查询它们比查询其他属性快很多。
+系统使用 **PartitionKey** 自动将表的实体
+分发到许多存储节点上。具有相同 **PartitionKey** 的
+实体存储在相同的节点上。
+**RowKey** 是实体在其所属分区内的唯一 ID。
 
-	table_service.create_table('tasktable')
+若要将实体添加到表中，请将字典对象传递
+给 **insert\_entity** 方法。
 
-## <a name="add-entity"> </a>How to Add an Entity to a Table
+    task = {'PartitionKey':'tasksSeattle', 'RowKey':'1', 'description' :'Take out the trash', 'priority' : 200}
+    table_service.insert_entity('tasktable', task)
 
-To add an entity, first create a dictionary that defines your entity
-property names and values. Note that for every entity you must
-specify a **PartitionKey** and **RowKey**. These are the unique
-identifiers of your entities, and are values that can be queried much
-faster than your other properties. The system uses **PartitionKey** to
-automatically distribute the table entities over many storage nodes.
-Entities with the same **PartitionKey** are stored on the same node. The
-**RowKey** is the unique ID of the entity within the partition it
-belongs to.
+你还可以将 **Entity** 类的实例传递给 **insert\_entity** 方法。
 
-To add an entity to your table, pass a dictionary object
-to the **insert\_entity** method.
+    task = Entity()
+    task.PartitionKey = 'tasksSeattle'
+    task.RowKey = '2'
+    task.description = 'Wash the car'
+    task.priority = 100
+    table_service.insert_entity('tasktable', task)
 
-	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
-	table_service.insert_entity('tasktable', task)
+## 如何更新实体
 
-You can also pass an instance of the **Entity** class to the **insert\_entity** method.
+此代码演示了如何使用更新的版本替换现有实体的旧版本。
 
-	task = Entity()
-	task.PartitionKey = 'tasksSeattle'
-	task.RowKey = '2'
-	task.description = 'Wash the car'
-	task.priority = 100
-	table_service.insert_entity('tasktable', task)
+    task = {'description' :'Take out the garbage', 'priority' : 250}
+    table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-## <a name="update-entity"> </a>How to Update an Entity
+如果要更新的实体不存在，更新操作将失败。
+如果你要存储实体，而不管它以前是否已存在，
+请使用 **insert\_or\_replace\_entity**。
+在下面的示例中，第一个调用将替换现有实体。第二个调用将插入新实体，因为表中不存在具有指定 **PartitionKey** 和 **RowKey** 的实体。
 
-This code shows how to replace the old version of an existing entity
-with an updated version.
+    task = {'description' :'Take out the garbage again', 'priority' : 250}
+    table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task)
 
-	task = {'description' : 'Take out the garbage', 'priority' : 250}
-	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
+    task = {'description' :'Buy detergent', 'priority' : 300}
+    table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '3', task)
 
-If the entity that is being updated does not exist, then the update
-operation will fail. If you want to store an entity
-regardless of whether it already existed before, use **insert\_or\_replace_entity**. 
-In the following example, the first call will replace the existing entity. The second call will insert a new entity, since no entity with the specified **PartitionKey** and **RowKey** exists in the table.
+## 如何更改实体组
 
-	task = {'description' : 'Take out the garbage again', 'priority' : 250}
-	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task)
+有时，有必要成批地同时提交多项操作以确保通过服务器进行原子处理。
+若要完成此操作，可以对 **TableService** 使用
+**begin\_batch** 方法，然后像通常一样
+调用操作系列。在你确实要按批提交时，则应
+调用 **commit\_batch**。请注意，所有实体必须在相同分区中才能更改为批处理。下面的示例将两个实体一起添加到批处理中。
 
-	task = {'description' : 'Buy detergent', 'priority' : 300}
-	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '3', task)
+    task10 = {'PartitionKey':'tasksSeattle', 'RowKey':'10', 'description' :'Go grocery shopping', 'priority' : 400}
+    task11 = {'PartitionKey':'tasksSeattle', 'RowKey':'11', 'description' :'Clean the bathroom', 'priority' : 100}
+    table_service.begin_batch()
+    table_service.insert_entity('tasktable', task10)
+    table_service.insert_entity('tasktable', task11)
+    table_service.commit_batch()
 
-## <a name="change-entities"> </a>How to Change a Group of Entities
+## 如何查询实体
 
-Sometimes it makes sense to submit multiple operations together in a
-batch to ensure atomic processing by the server. To accomplish that, you
-use the **begin\_batch** method on **TableService** and then call the
-series of operations as usual. When you do want to submit the
-batch, you call **commit\_batch**. Note that all entities must be in the same partition in order to be changed as a batch. The example below adds two entities together in a batch.
+若要查询表中的实体，请使用 **get\_entity** 方法并
+传递 **PartitionKey** 和 **RowKey**。
 
-	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
-	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
-	table_service.begin_batch()
-	table_service.insert_entity('tasktable', task10)
-	table_service.insert_entity('tasktable', task11)
-	table_service.commit_batch()
+    task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
+    print(task.description)
+    print(task.priority)
 
-## <a name="query-for-entity"> </a>How to Query for an Entity
+## 如何查询实体集
 
-To query an entity in a table, use the **get\_entity** method, by
-passing the **PartitionKey** and **RowKey**.
+此示例基于 **PartitionKey** 查找 Seattle 中的所有任务。
 
-	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
-	print(task.description)
-	print(task.priority)
+    tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'")
+    for task in tasks:
+    print(task.description)
+    print(task.priority)
 
-## <a name="query-set-entities"> </a>How to Query a Set of Entities
+## 如何查询实体属性子集
 
-This example finds all tasks in Seattle based on the **PartitionKey**.
+对表的查询可以只检索实体中的少数几个属性。此方法称为**“投影”，
+可减少带宽并提高查询性能，尤其适用于
+大型实体。使用 **select** 参数
+并传递你希望显示给客户端的属性
+的名称。
 
-	tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'")
-	for task in tasks:
-		print(task.description)
-		print(task.priority)
+以下代码中的查询只返回表中实体的**说明**。
 
-## <a name="query-entity-properties"> </a>How to Query a Subset of Entity Properties
+**请注意，下面的代码段只适用于云存储服务，
+存储模拟器不支持它。
 
-A query to a table can retrieve just a few properties from an entity.
-This technique, called *projection*, reduces bandwidth and can improve
-query performance, especially for large entities. Use the **select**
-parameter and pass the names of the properties you would like to bring over
-to the client.
+    tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'", 'description')
+    for task in tasks:
+    print(task.description)
 
-The query in the following code only returns the **Descriptions** of
-entities in the table.
+## 如何删除实体
 
-*Please note that the following snippet only works against the cloud
-storage service, this not supported by the Storage
-Emulator.*
+可以使用实体的分区键和行键删除实体。
 
-	tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'", 'description')
-	for task in tasks:
-		print(task.description)
+    table_service.delete_entity('tasktable', 'tasksSeattle', '1')
 
-## <a name="delete-entity"> </a>How to Delete an Entity
+## 如何删除表
 
-You can delete an entity using its partition and row key.
+以下代码从存储帐户中删除一个表。
 
-	table_service.delete_entity('tasktable', 'tasksSeattle', '1')
+    table_service.delete_table('tasktable')
 
-## <a name="delete-table"> </a>How to Delete a Table
+## 后续步骤
 
-The following code deletes a table from a storage account.
+现在，你已了解有关表存储的基础知识，可单击下面的链接来了解如何
+执行更复杂的存储任务。
 
-	table_service.delete_table('tasktable')
+-   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
+-   [访问 Azure 存储服务团队博客][]
 
-## <a name="next-steps"> </a>Next Steps
-
-Now that you have learned the basics of table storage, follow these links
-to learn how to do more complex storage tasks.
-
--   See the MSDN Reference: [Storing and Accessing Data in Azure][]
--   [Visit the Azure Storage Team Blog][]
-
-  [Next Steps]: #next-steps
-  [What is the Table Service?]: #what-is
-  [Concepts]: #concepts
-  [Create an Azure Storage Account]: #create-account
-  [How To: Create a Table]: #create-table
-  [How To: Add an Entity to a Table]: #add-entity
-  [How To: Update an Entity]: #update-entity
-  [How To: Change a Group of Entities]: #change-entities
-  [How To: Query for an Entity]: #query-for-entity
-  [How To: Query a Set of Entities]: #query-set-entities
-  [How To: Query a Subset of Entity Properties]: #query-entity-properties
-  [How To: Delete an Entity]: #delete-entity
-  [How To: Delete a Table]: #delete-table
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Visit the Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+  [后续步骤]: #next-steps
+  [什么是表服务？]: #what-is
+  [概念]: #concepts
+  [创建 Azure 存储帐户]: #create-account
+  [如何：创建表]: #create-table
+  [如何：向表中添加实体]: #add-entity
+  [如何：更新实体]: #update-entity
+  [如何：更改实体组]: #change-entities
+  [如何：查询实体]: #query-for-entity
+  [如何：查询实体集]: #query-set-entities
+  [如何：查询实体属性子集]: #query-entity-properties
+  [如何：删除实体]: #delete-entity
+  [如何：删除表]: #delete-table
+  [howto-table-storage]: ../includes/howto-table-storage.md
+  [create-storage-account]: ../includes/create-storage-account.md
+  [Python 安装指南]: /zh-cn/documentation/articles/python-how-to-install/
+  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [访问 Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

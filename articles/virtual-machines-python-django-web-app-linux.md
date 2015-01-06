@@ -1,120 +1,120 @@
-<properties linkid="develop-python-web-app-with-django-mac" urlDisplayName="Web with Django" pageTitle="Python web app with Django on Mac - Azure tutorial" metaKeywords="" description="A tutorial that shows how to host a Django-based  Website on Azure using a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application (mac-linux)" authors="larryf" solutions="" manager="" editor="" />
+<properties linkid="develop-python-web-app-with-django-mac" urlDisplayName="Web with Django" pageTitle="Python web app with Django on Mac - Azure tutorial" metaKeywords="" description="A tutorial that shows how to host a Django-based web site on Azure using a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application (mac-linux)" authors="larryf" solutions="" manager="" editor="" />
 
-
-
-
-
-# Django Hello World Web Application (mac-linux)
+# Django Hello World Web 应用程序 (mac-linux)
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
 
-This tutorial describes how to host a Django-based  Website on Windows 
-Azure using a Linux virtual machine. This tutorial assumes you have no prior experience using Azure. Upon completing this guide, you will have a Django-based application up and running in the cloud.
+本教程介绍如何在 Windows Azure 中使用 Linux 虚拟机托管基于 Django 的网站。本教程假定你之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
-You will learn how to:
+你将了解如何执行以下操作：
 
-* Setup an Azure virtual machine to host Django. While this tutorial explains how to accomplish this under **Linux**, the same could also be done with a Windows Server VM hosted in Azure. 
-* Create a new Django application from Linux.
+-   设置 Azure 虚拟机以托管 Django。虽然本教程介绍如何在 **Linux** 下实现此目的，但也可以使用托管在 Azure 中的 Windows Server VM 实现相同目的。
+-   从 Linux 创建新的 Django 应用程序。
 
-By following this tutorial, you will build a simple Hello World web
-application. The application will be hosted in an Azure virtual machine.
+遵循本教程中的说明，你可以生成一个简单的 Hello World Web应用程序。该应用程序将托管在 Azure 虚拟机中。
 
-A screenshot of the completed application is below:
+以下是已完成应用程序的屏幕快照：
 
-![A browser window displaying the hello world page on Azure](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
+![显示 Azure 上的 hello world 页面的浏览器窗口][显示 Azure 上的 hello world 页面的浏览器窗口]
 
 [WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
-## Creating and configuring an Azure virtual machine to host Django
+## 创建并配置 Azure 虚拟机以托管 Django
 
-1. Follow the instructions given [here][portal-vm] to create an Azure virtual machine of the *Ubuntu Server 14.04 LTS* distribution.
+1.  按照[此处][此处]提供的说明可创建 *Ubuntu Server 12.04* 分发的 Azure 虚拟机。
 
-  **Note:** you *only* need to create the virtual machine. Stop at the section titled *How to log on to the virtual machine after you create it*.
+	**注意：**你*只* 需创建虚拟机。停在标题为*创建虚拟机后如何登录该虚拟机* 的一节。
 
-1. Instruct Azure to direct port **80** traffic from the web to port **80** on the virtual machine:
-	* Navigate to your newly created virtual machine in the Azure Portal and click the *ENDPOINTS* tab.
-	* Click the *ADD* button at the bottom of the screen.
-	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* Open up the *TCP* protocol's *PUBLIC PORT 80* as *PRIVATE PORT 80*.
-	![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
+1.  指示 Azure 将来自 Web 的端口 **80** 通信定向到虚拟机上的端口 **80**：
 
-## <a id="setup"> </a>Setting up the development environment
+    -   导航到 Azure 门户中你新创建的虚拟机，然后单击“终结点”选项卡。
+    -   单击屏幕底部的“添加终结点”按钮。
+        ![添加终结点][添加终结点]
+    -   打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。
+        ![port80][port80]
 
-**Note:** If you need to install Python or would like to use the Client Libraries, please see the [Python Installation Guide](../python-how-to-install/).
+## <span id="setup"></span> </a>设置开发环境
 
-The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't have Apache or django installed.  Follow these steps to connect to your VM and install Apache and django.
+**注意：**如果你需要安装 Python 或希望使用客户端库，请参阅 [Python 安装指南][Python 安装指南]。
 
-1.  Launch a new **Terminal** window.
-    
-1.  Enter the following command to connect to the Azure VM.
+Ubuntu Linux VM 已预安装了 Python 2.7，但它没有安装 Apache 或 Django。按照以下步骤可连接到你的 VM 并安装 Apache 和 Django。
 
-		$ ssh yourusername@yourVmUrl
+1.  启动新的 **Terminal** 窗口。
 
-1.  Enter the following commands to install django:
+2.  输入以下命令来连接到 Azure VM。
 
-		$ sudo apt-get install python-setuptools
-		$ sudo easy_install django
+        $ ssh yourusername@yourVmUrl
 
-1.  Enter the following command to install Apache with mod-wsgi:
+3.  输入以下命令来安装 Django：
 
-		$ sudo apt-get install apache2 libapache2-mod-wsgi
+        $ sudo apt-get install python-setuptools
+        $ sudo easy_install django
 
+4.  输入以下带 mod-wsgi 的命令来安装 Apache：
 
-## Creating a new Django application
+        $ sudo apt-get install apache2 libapache2-mod-wsgi
 
-1.  Open the **Terminal** window you used in the previous section to ssh into your VM.
-    
-1.  Enter the following commands to create a new Django project:
+## 创建新的 Django 应用程序
 
-		$ cd /var/www
-		$ sudo django-admin.py startproject helloworld
+1.  打开你在上一节中使用的 **Terminal** 窗口，通过 ssh 进入你的 VM。
 
-    The **django-admin.py** script generates a basic structure for Django-based  Websites:
-    -   **helloworld/manage.py** helps you to start hosting and stop hosting your Django-based  Website
-    -   **helloworld/helloworld/settings.py** contains Django settings for your application.
-    -   **helloworld/helloworld/urls.py** contains the mapping code between each url and its view.
+2.  输入以下命令来创建新的 Django 项目：
 
-1.  Create a new file named **views.py** in the **/var/www/helloworld/helloworld** directory. This will contain the view that renders the "hello world" page. Start your editor and enter the following:
-		
-		from django.http import HttpResponse
-		def home(request):
-    		html = "<html><body>Hello World!</body></html>"
-    		return HttpResponse(html)
+    ![django-admin 命令的结果][django-admin 命令的结果]
 
-1.  Now replace the contents of the **urls.py** file with the following:
+    **django-admin.py** 脚本生成基于 Django 的网站的基本结构：
 
-		from django.conf.urls import patterns, url
-		urlpatterns = patterns('',
-			url(r'^$', 'helloworld.views.home', name='home'),
-		)
+    -   **manage.py** 帮助你开始托管和停止托管你的基于 Django 的网站
+    -   **helloworld\\settings.py** 包含你的应用程序的 Django 设置。
+    -   **helloworld\\urls.py** 包含每个 url 及其视图之间的映射代码。
 
+3.  在 *django\\helloworld* 的 *helloworld* 子目录中创建一个名为 **views.py** 的新文件作为 **urls.py** 的同级。这会包含呈现“hello world”页面的视图。启动编辑器并输入以下代码：
 
-## Setting up Apache
+        from django.http import HttpResponse
+        def hello(request):
+            html = "<html><body>Hello World!</body></html>"
+            return HttpResponse(html)
 
-1.  Create an Apache virtual host configuration file **/etc/apache2/sites-available/helloworld.conf**. Set the contents to the following, and make sure to replace *yourVmUrl* with the actual URL of the machine you are using (for example *pyubuntu.cloudapp.net*).
+4.  现在，将 **urls.py** 文件的内容替换为以下代码：
 
-		<VirtualHost *:80>
-		ServerName yourVmUrl
-		</VirtualHost>
-		WSGIScriptAlias / /var/www/helloworld/helloworld/wsgi.py
-		WSGIPythonPath /var/www/helloworld
+        from django.conf.urls.defaults import patterns, include, url
+        from helloworld.views import hello
+        urlpatterns = patterns('',
+            (r'^$',hello),
+        )
 
-1.  Enable the site with the following command:
+## 部署并运行你的 Django 网站
 
-        $ sudo a2ensite helloworld
+1.  编辑 apache 配置文件 **/etc/apache2/httpd.conf** 并添加以下代码，将 *username* 替换为你在创建 VM 时所指定的用户名：
 
-1.  Restart Apache with the following command:
+        WSGIScriptAlias / /home/*username*/django/helloworld/helloworld/wsgi.py
+        WSGIPythonPath /home/*username*/django/helloworld
 
-        $ sudo service apache2 reload
+        <Directory /home/*username*/django/helloworld/helloworld>
+        <Files wsgi.py>
+        Order deny,allow
+        Allow from all
+        </Files>
+        </Directory>
 
-1.  Finally, load the web page in your browser:
+2.  使用以下命令重新启动 apache：
 
-	![A browser window displaying the hello world page on Azure](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
+        $ sudo apachectl restart
 
+3.  最后，在你的浏览器中加载网页：
 
-## Shutting down your Azure virtual machine
+    ![显示 Azure 上的 hello world 页面的浏览器窗口][显示 Azure 上的 hello world 页面的浏览器窗口]
 
-When you're done with this tutorial, shutdown and/or remove your newly created Azure virtual machine to free up resources for other tutorials and avoid incurring Azure usage charges.
+## 关闭你的 Azure 虚拟机
 
+在你完成本教程后，关闭并/或删除你新创建的 Azure 虚拟机以为其他教程释放资源并避免产生 Azure 使用费。
 
-[portal-vm]: /zh-cn/manage/linux/tutorials/virtual-machine-from-gallery/
+  [Windows]: /zh-cn/develop/python/tutorials/web-app-with-django/ "Windows"
+  [Mac/Linux]: /zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/ "Mac/Linux"
+  [显示 Azure 上的 hello world 页面的浏览器窗口]: ./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png
+  [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
+  [此处]: /zh-cn/manage/linux/tutorials/virtual-machine-from-gallery/
+  [添加终结点]: ./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png
+  [port80]: ./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png
+  [Python 安装指南]: ../python-how-to-install/
+  [django-admin 命令的结果]: ./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-dir.png

@@ -1,152 +1,167 @@
 <properties linkid="dev-ruby-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage (Ruby) | Windows Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="Learn how to use the Azure blob service to upload, download, list, and delete blob content. Samples written in Ruby." metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
 
+# 如何通过 Ruby 使用 Blob 服务
 
+本指南将演示如何使用 Azure Blob 服务执行常见方案。
+示例是用 Ruby API 编写的。涉及的方案包括
+**上载、列出、下载**和**删除** Blob。
+有关 Blob 的详细信息，请参阅[后续步骤][]部分。
 
+## 目录
 
+-   [什么是 Blob 服务？][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [创建 Ruby 应用程序][]
+-   [配置应用程序以访问存储][]
+-   [设置 Azure 存储连接][]
+-   [如何：创建容器][]
+-   [如何：将 Blob 上载到容器][]
+-   [如何：列出容器中的 Blob][]
+-   [如何：下载 Blob][]
+-   [如何：删除 Blob][]
+-   [后续步骤][1]
 
-#How to Use the Blob Service from Ruby
+[WACOM.INCLUDE [howto-blob-storage][]]
 
-This guide will show you how to perform common scenarios using the
-Azure Blob service. The samples are written using the Ruby API.
-The scenarios covered include **uploading, listing, downloading,** and **deleting** blobs.
-For more information on blobs, see the [Next Steps](#next-steps) section.
+## 创建 Azure 存储帐户
 
-##Table of Contents
+[WACOM.INCLUDE [create-storage-account][]]
 
-* [What is the Blob Service?](#what-is)
-* [Concepts](#concepts)
-* [Create an Azure Storage Account](#CreateAccount)
-* [Create a Ruby Application](#CreateRubyApp)
-* [Configure Your Application to Access Storage](#ConfigAccessStorage)
-* [Setup an Azure Storage Connection](#SetupStorageConnection)
-* [How To: Create a Container](#CreateContainer)
-* [How To: Upload a Blob into a Container](#UploadBlob)
-* [How To: List the Blobs in a Container](#ListBlobs)
-* [How To: Download Blobs](#DownloadBlobs)
-* [How To: Delete a Blob](#DeleteBlob)
-* [Next Steps](#NextSteps)
+## 创建 Ruby 应用程序
 
+创建 Ruby 应用程序。有关说明，请参阅
+[在 Azure 上创建 Ruby 应用程序][]。
 
-[WACOM.INCLUDE [howto-blob-storage](../includes/howto-blob-storage.md)]
+## 配置应用程序以访问存储
 
-## <a id="CreateAccount"></a>Create an Azure storage account
+若要使用 Azure 存储服务，你需要下载并使用 Ruby azure 包，其中包括一组便于与存储 REST 服务进行通信的库。
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+### 使用 RubyGems 获取该程序包
 
-## <a id="CreateRubyApp"></a>Create a Ruby Application
+1.  使用命令行接口，例如 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix)。
 
-Create a Ruby application. For instructions, 
-see [Create a Ruby Application on Azure](/zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/).
+2.  在命令窗口中键入“gem install azure”以安装 gem 和依赖项。
 
-## <a id="ConfigAccessStorage"></a>Configure Your Application to Access Storage
+### 导入包
 
-To use Azure storage, you need to download and use the Ruby azure package, which includes a set of convenience libraries that communicate with the storage REST services.
+使用常用的文本编辑器将以下内容添加到你要在其中使用存储的 Ruby 文件的顶部：
 
-### Use RubyGems to obtain the package
+    require "azure"
 
-1. Use a command-line interface such as **PowerShell** (Windows), **Terminal** (Mac), or **Bash** (Unix).
+## 设置 Azure 存储连接
 
-2. Type "gem install azure" in the command window to install the gem and dependencies.
+azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 以获取
+连接到你的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在使用 **Azure::BlobService** 之前必须通过以下代码指定帐户信息：
 
-### Import the package
+    Azure.config.storage_account_name = "<your azure storage account>"
+    Azure.config.storage_access_key = "<your azure storage access key>"
 
-Using your favorite text editor, add the following to the top of the Ruby file where you intend to use storage:
+获取这些值：
 
-	require "azure"
+1.  登录到 [Azure 管理门户][]。
+2.  导航到要使用的存储帐户
+3.  单击导航窗格底部的**“管理密钥”**。
+4.  在弹出对话框中，你将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，你可以使用主访问密钥，也可以使用辅助访问密钥。
 
-## <a id="SetupStorageConnection"></a>Setup an Azure Storage Connection
+## 如何：创建容器
 
-The azure module will read the environment variables **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS_KEY** 
-for information required to connect to your Azure storage account. If these environment variables are not set, you must specify the account information before using **Azure::BlobService** with the following code:
+使用 **Azure::BlobService** 对象可以对容器和 Blob 进行操作。若要创建容器，请使用 **create\_container()** 方法。
 
-	Azure.config.storage_account_name = "<your azure storage account>"
-	Azure.config.storage_access_key = "<your azure storage access key>"
+以下示例创建一个容器或输出存在的错误。
 
+    azure_blob_service = Azure::BlobService.new
+    begin
+    container = azure_blob_service.create_container("test-container")
+    rescue
+    puts $!
+    end
 
-To obtain these values:
+若要将容器中的文件设为公用，你可以设置容器的权限。
 
-1. Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
-2. Navigate to the storage account you want to use
-3. Click **MANAGE KEYS** at the bottom of the navigation pane.
-4. In the pop up dialog, you will see the storage account name, primary access key and secondary access key. For access key, you can either the primary one or the secondary one.
+只需修改 **create\_container()** 调用来传递 **:public\_access\_level** 选项即可：
 
-## <a id="CreateContainer"></a>How To: Create a Container
+    container = azure_blob_service.create_container("test-container", 
+    :public_access_level => "<public access level>")
 
-The **Azure::BlobService** object lets you work with containers and blobs. To create a container, use the **create\_container()** method.
+**:public\_access\_level** 选项的有效值为：
 
-The following example creates a container or print out the error if there is any.
+-   **blob：**指定对容器和 Blob 数据的完整公共读取权限。客户端可以通过匿名请求枚举容器中的 Blob，但无法枚举存储帐户中的容器。
 
-	azure_blob_service = Azure::BlobService.new
-	begin
-	  container = azure_blob_service.create_container("test-container")
-	rescue
-	  puts $!
-	end
+-   **container：**指定对 Blob 的公共读取权限。可以通过匿名请求读取此容器中的 Blob 数据，但无法使用容器数据。客户端无法通过匿名请求枚举容器中的 Blob。
 
-If you want to make the files in the container public, you can set the container's permissions. 
+另外，还可以通过使用 **set\_container\_acl()** 方法指定公共访问级别来修改容器的公共访问级别。
 
-You can just modify the <strong>create\_container()</strong> call to pass the **:public\_access\_level** option:
+下面的示例将公共访问级别更改为“容器” ：
 
-	container = azure_blob_service.create_container("test-container", 
-	  :public_access_level => "<public access level>")
+    azure_blob_service.set_container_acl('test-container', "container")
 
+## 如何：将 Blob 上载到容器
 
-Valid values for the **:public\_access\_level** option are:
+若要将内容上载到 Blob，请使用 **create\_block\_blob()** 方法创建 Blob，将文件或字符串用作 Blob 的内容。
 
-* **blob:** Specifies full public read access for container and blob data. Clients can enumerate blobs within the container via anonymous request, but cannot enumerate containers within the storage account.
+以下代码会将文件 **test.png** 作为名为“image-blob”的新 Blob 上载到容器中。
 
-* **container:** Specifies public read access for blobs. Blob data within this container can be read via anonymous request, but container data is not available. Clients cannot enumerate blobs within the container via anonymous request.
+    content = File.open("test.png", "rb") { |file| file.read }
+    blob = azure_blob_service.create_block_blob(container.name,
+    "image-blob", content)
+    puts blob.name
 
-Alternatively, you can modify the public access level of a container by using **set\_container\_acl()** method to specify the public access level.
- 
-The following example changes the public access level to **container**:
+## 如何：列出容器中的 Blob
 
-	azure_blob_service.set_container_acl('test-container', "container")
+若要列出容器，请使用 **list\_containers()** 方法。
+若要列出容器中的 Blob，请使用 **list\_blobs()** 方法。
 
-## <a id="UploadBlob"></a>How To: Upload a Blob into a Container
+这将输出帐户的所有容器中的所有 Blog 的 URL。
 
-To upload content to a blob, use the **create\_block\_blob()** method to create the blob, use a file or string as the content of the blob. 
+    containers = azure_blob_service.list_containers()
+    containers.each do |container|
+    blobs = azure_blob_service.list_blobs(container.name)
+    blobs.each do |blob|
+    puts blob.name
+    end
+    end
 
-The following code will upload the file **test.png** as a new blob named "image-blob" in the container.
+## 如何：下载 Blob
 
-	content = File.open("test.png", "rb") { |file| file.read }
-	blob = azure_blob_service.create_block_blob(container.name,
-	  "image-blob", content)
-	puts blob.name
+若要下载 Blob，请使用 **get\_blob()** 方法来检索内容。
 
-## <a id="ListBlobs"></a>How To: List the Blobs in a Container
+以下示例演示了如何使用 **get\_blob()** 下载“image-blob”的内容并将其写入本地文件中。
 
-To list the containers, use **list_containers()** method. 
-To list the blobs within a container, use **list\_blobs()** method. 
+    blob, content = azure_blob_service.get_blob(container.name,"image-blob")
+    File.open("download.png","wb") {|f| f.write(content)}
 
-This outputs the urls of all the blobs in all the containers for the account.
+## 如何：删除 Blob
 
-	containers = azure_blob_service.list_containers()
-	containers.each do |container|
-	  blobs = azure_blob_service.list_blobs(container.name)
-	  blobs.each do |blob|
-	    puts blob.name
-	  end
-	end
+最后，若要删除 Blob，请使用 **delete\_blob()** 方法。下面的示例演示了如何删除 Blob。
 
-## <a id="DownloadBlobs"></a>How To: Download Blobs
+    azure_blob_service.delete_blob(container.name, "image-blob")
 
-To download blobs, use the **get\_blob()** method to retrieve the contents. 
+## 后续步骤
 
-The following example demonstrates using **get\_blob()** to download the contents of "image-blob" and write it to a local file.
+现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解如何执行更复杂的存储任务。
 
-	blob, content = azure_blob_service.get_blob(container.name,"image-blob")
-	File.open("download.png","wb") {|f| f.write(content)}
+-   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
+-   访问 [Azure 存储服务团队博客][]
+-   访问 GitHub 上的 [Azure SDK for Ruby][] 存储库
 
-## <a id="DeleteBlob"></a>How To: Delete a Blob
-Finally, to delete a blob, use the **delete\_blob()** method. The following example demonstrates how to delete a blob.
-
-	azure_blob_service.delete_blob(container.name, "image-blob")
-
-## <a id="NextSteps"></a>Next Steps
-
-Now that you have learned the basics of blob storage, follow these links to learn how to do more complex storage tasks.
-
--   See the MSDN Reference: [Storing and Accessing Data in Azure](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
--   Visit the [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
--   Visit the [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) repository on GitHub
+  [后续步骤]: #next-steps
+  [什么是 Blob 服务？]: #what-is
+  [概念]: #concepts
+  [创建 Azure 存储帐户]: #CreateAccount
+  [创建 Ruby 应用程序]: #CreateRubyApp
+  [配置应用程序以访问存储]: #ConfigAccessStorage
+  [设置 Azure 存储连接]: #SetupStorageConnection
+  [如何：创建容器]: #CreateContainer
+  [如何：将 Blob 上载到容器]: #UploadBlob
+  [如何：列出容器中的 Blob]: #ListBlobs
+  [如何：下载 Blob]: #DownloadBlobs
+  [如何：删除 Blob]: #DeleteBlob
+  [1]: #NextSteps
+  [howto-blob-storage]: ../includes/howto-blob-storage.md
+  [create-storage-account]: ../includes/create-storage-account.md
+  [在 Azure 上创建 Ruby 应用程序]: /en-us/develop/ruby/tutorials/web-app-with-linux-vm/
+  [Azure 管理门户]: https://manage.windowsazure.cn/
+  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby

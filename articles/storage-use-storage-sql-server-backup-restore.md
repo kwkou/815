@@ -1,72 +1,70 @@
 <properties linkid="manage-services-storage-SQL-Server-backup" urlDisplayName="Storage for SQL Server backups" pageTitle="How to use Azure storage for SQL Server backup and restore | Azure" metaKeywords="" description="" metaCanonical="" services="storage" documentationCenter="" title="How to Use Azure Storage for SQL Server Backup and Restore" authors="karaman" solutions="" manager="clairt" editor="tysonn" />
 
+# 如何将 Azure 存储服务用于 SQL Server 备份和还原
 
+SQL Server 2012 SP1 CU2 中发布了可将 SQL Server 备份写入 Azure Blob 存储服务的功能。你可以使用此功能将数据从本地 SQL Server 数据库或 Azure 虚拟机中的 SQL Server 数据库备份到 Azure Blob 服务或从中进行还原。备份到云具有以下优点，即，实现可用性、无地域复制场外存储限制，以及可以轻松将数据迁移到云和从云中迁移数据。在此版本中，你可以使用 T-SQL 或 SMO 来发布 BACKUP 或 RESTORE 语句。无法使用“SQL Server Management Studio 备份或还原”向导来备份到 Azure Blob 存储服务或从中进行还原。
 
-<h1 id="SQLServerBackupandRestoretostorage">  How to Use Azure Storage for SQL Server Backup and Restore</h1>
+## 使用 Azure Blob 服务执行 SQL Server 备份的优点
 
-The feature that provides the ability to write SQL Server backups to the Azure Blob storage service was released in SQL Server 2012 SP1 CU2. You can use this functionality to back up to and restore from the Azure Blob service from a on-premises SQL Server database or a SQL Server database in an Azure Virtual Machine. Backup to cloud offers benefits of availability, limitless geo-replicated off-site storage, and ease of migration of data to and from the cloud.   In this release, you can issue BACKUP or RESTORE statements by using T-SQL or SMO. Back up to or restore from the Azure Blob storage service by using SQL Server Management Studio Backup or Restore Wizard is not available.
+存储管理、存储故障产生的风险、访问场外存储以及对设备进行配置是一些普遍存在的备份难题。对于在 Azure 虚拟机中运行的 SQL Server，配置和备份 VHD 或配置附加驱动器将面临一些额外挑战。下面列出了使用 Azure Blob 存储服务存储进行 SQL Server 备份的一些主要优点：
 
-<h2> Benefits of Using the Azure Blob Service for SQL Server Backups</h2>
+-   灵活、可靠且无限制的场外存储：在 Azure Blob 服务中存储备份非常方便、灵活且可轻松访问场外存储。为 SQL Server 备份创建场外存储就像修改现有脚本/作业一样简单。场外存储通常应当远离生产数据库位置，以防止某个灾难可能同时影响场外和生产数据库位置。通过选择地域复制 Blob 存储，你可以在发生可能影响整个地区的灾难时进一步加强保护。此外，可随时随地且轻松地访问备份数据以进行还原。
+-   备份存档：在对备份进行存档时，Azure Blob 存储服务提供了可替代常用磁带存储方式的更好方式。选择磁带存储时可能需要将数据实际运输到场外设施，并且需要采取一些介质保护措施。在 Azure Blob 存储中存储备份可提供即时、具有高可用性且持久的存档方式。
+-   无硬件管理开销：使用 Azure 服务没有硬件管理开销。Azure 服务可管理硬件并提供地域冗余复制和硬件故障防护。
+-   当前，对于在 Azure 虚拟机中运行的 SQL Server 实例，可以通过创建附加的磁盘来备份到 Azure Blob 存储服务。不过，你只能将有限数量的磁盘附加到 Azure 虚拟机。对特大实例的限制为 16 个磁盘；对较小实例的磁盘限制数更少。通过直接备份到 Azure Blob 存储，你可以绕过 16 个磁盘这一限制。
+-   此外，目前存储在 Azure Blob 存储服务中的备份文件可供本地 SQL Server 或运行在 Azure 虚拟机中的其他 SQL Server 直接访问，而无需进行数据库附加/分离或者下载和附加 VHD。
+-   成本优势：只需为所使用的服务付费。作为场外和备份存档方式可能更加划算。有关详细信息，请参阅 [Azure 定价条款][]。
 
-Storage management, risk of storage failure, access to off-site storage, and configuring devices are some of the general backup challenges.  For SQL Server running in an Azure Virtual Machine, there are additional challenges of configuring and backing up a VHD, or configuring attached drives. The following lists some of the key benefits of using the Azure Blob storage service storage for SQL Server backups:
+有关更多详细信息，请参阅[使用 Azure Blob 存储服务执行 SQL Server 备份和还原][]。
 
-* Flexible, reliable, and limitless off-site storage: Storing your backups on Azure Blob service can be a convenient, flexible, and easy to access off-site option. Creating off-site storage for your SQL Server backups can be as easy as modifying your existing scripts/jobs. Off-site storage should typically be far enough from the production database location to prevent a single disaster that might impact both the off-site and production database locations. By choosing to geo replicate the Blob storage you have an extra layer of protection in the event of a disaster that could affect the whole region. In addition, backups are available from anywhere and at any time and can easily be accessed for restores.
-* Backup Archive: The Azure Blob Storage service offers a better alternative to the often used tape option to archive backups. Tape storage might require physical transportation to an off-site facility and measures to protect the media. Storing your backups in Azure Blob Storage provides an instant, highly available, and a durable archiving option.
-* No overhead of hardware management: There is no overhead of hardware management with Azure services. Azure services manage the hardware and provide geo-replication for redundancy and protection against hardware failures.
-* Currently for instances of SQL Server running in an Azure Virtual Machine, backing up to Azure Blob storage services can be done by creating attached disks. However, there is a limit to the number of disks you can attach to an Azure Virtual Machine. This limit is 16 disks for an extra large instance and fewer for smaller instances. By enabling a direct backup to Azure Blob Storage, you can bypass the 16 disk limit.
-* In addition, the backup file which now is stored in the Azure Blob storage service is directly available to either an on-premises SQL Server or another SQL Server running in an Azure Virtual Machine, without the need for database attach/detach or downloading and attaching the VHD.
-* Cost Benefits: Pay only for the service that is used. Can be cost-effective as an off-site and backup archive option. See the [Azure pricing calculator](/zh-cn/pricing/calculator/#data-management "Pricing Calculator"), and the [Azure Pricing article](/zh-cn/pricing/ "Pricing article") for more information.
+以下两部分介绍了 Azure Blob 存储服务，以及备份到 Azure Blob 存储服务或从中进行还原时使用的 SQL Server 组件。了解这些组件以及它们之间的交互对备份到 Azure Blob 存储服务或从中进行还原来说至关重要。
 
-For more details, see [SQL Server Backup and Restore with Azure Blob Storage Service](http://msdn.microsoft.com/zh-cn/library/jj919148.aspx).
+创建 Azure 帐户是这个过程的第一步。SQL Server 使用 Azure 存储帐户名及其访问密钥值来对存储服务进行身份验证，然后读取 Blob 并将其写入存储服务。SQL Server 凭据存储着此身份验证信息，在备份或还原操作过程中将使用该凭据。
 
-The following two sections introduce the Azure Blob storage service, and the SQL Server components used when backing up to or restoring from the Azure Blob storage service. It is important to understand the components and the interaction between them to do a backup to or restore from the Azure Blob storage service. 
+有关创建存储帐户和执行简单还原操作的完整演练，请参阅[开始使用 Azure 存储服务执行 SQL Server 备份和还原][]
 
-Creating an Azure account is the first step to this process. SQL Server uses the Azure storage account name and its access key values to authenticate and write and read blobs to the storage service. The SQL Server Credential stores this authentication information and is used during the backup or restore operations. 
+## Azure Blob 存储服务组件
 
-For a complete walkthrough of creating a storage account and performing a simple restore, see [Getting Started with Azure Storage Service for SQL Server Backup and Restore](http://msdn.microsoft.com/zh-cn/library/jj720558.aspx)
+-   存储帐户：存储帐户是所有存储服务的起点。若要访问 Azure Blob 存储服务，请先创建一个 Azure 存储帐户。存储帐户名称及其访问密钥属性是通过 Azure Blob 存储服务及其组件进行身份验证所必需的。
+    有关 Azure Blob 存储服务的详细信息，请参阅[如何使用 Azure Blob 存储服务][]
 
-## Azure Blob Storage Service Components 
+-   容器：容器提供一组 Blob 集，并且可存储无限数量的 Blob。若要将 SQL Server 备份写入到 Azure Blob 服务，你必须至少创建一个根容器。
 
-* Storage Account: The storage account is the starting point for all storage services. To access an Azure Blob Storage service, first create an Azure Storage account. The storage account name and its access key properties are required to authenticate to the Azure Blob Storage service and its components. 
-For more information about Azure Blob storage service, see [How to use the Azure Blob Storage Service](/zh-cn/develop/net/how-to-guides/blob-storage-v17/)
+-   Blob：任何类型和大小的文件。Azure Blob 存储服务中可以存储两种 Blob：块 Blob 和页 Blob。SQL Server 备份使用页 Blob 作为 Blob 类型。使用以下 URL 格式可访问 Blob：`https://<storage account>.blob.core.chinacloudapi.cn/<container>/<blob>`
+    有关页 Blob 的详细信息，请参阅[了解块 Blob 和页 Blob][]
 
-* Container: A container provides a grouping of a set of Blobs, and can store an unlimited number of Blobs. To write a SQL Server backup to an Azure Blob service, you must have at least the root container created. 
+## SQL Server 组件
 
-* Blob: A file of any type and size. There are two types of blobs that can be stored in the Azure Blob storage service: block and page blobs.  SQL Server backup uses page Blobs as the Blob type. Blobs are addressable using the following URL format: `https://<storage account>.blob.core.chinacloudapi.cn/<container>/<blob>`
-For more information about page Blobs, see [Understanding Block and Page Blobs](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)
+-   URL：URL 指定到唯一备份文件的统一资源标识符 (URI)。URL 用于提供 SQL Server 备份文件的位置和名称。在此实现中，唯一有效的 URL 是指向 Azure 存储帐户中的页 Blob 的 URL。URL 必须指向实际 Blob，而不是仅指向容器。如果 Blob 不存在，则会创建一个。如果指定了现有 Blob，BACKUP 将失败，除非指定了 \> WITH FORMAT 选项。
+    下面是你将在 BACKUP 命令中指定的 URL 的示例：
+    \*\*`http[s]://ACCOUNTNAME.Blob.core.chinacloudapi.cn/<CONTAINER>/<FILENAME.bak>`
 
-## SQL Server Components
+**注意：** HTTPS 不是必需的，但建议使用。
+**重要说明**
+如果你选择将备份文件复制并上载到 Azure Blob 存储服务中，并且打算使用此文件执行还原操作，则必须使用页 Blob 类型作为存储选项。从块 Blob 类型执行 RESTORE 命令将失败并报错。
 
-* URL: A URL specifies a Uniform Resource Identifier (URI) to a unique backup file. The URL is used to provide the location and name of the SQL Server backup file. In this implementation, the only valid URL is one that points to a page Blob in an Azure Storage account. The URL must point to an actual Blob, not just a container. If the Blob does not exist, it is created. If an existing Blob is specified, BACKUP fails, unless the > WITH FORMAT option is specified. 
-Following is an example of the URL you would specifiy in the BACKUP command: 
-**`http[s]://ACCOUNTNAME.Blob.core.chinacloudapi.cn/<CONTAINER>/<FILENAME.bak>`
+-   凭据：连接到 Azure Blob 存储服务并通过其进行身份验证所需的信息将存储为凭据。为了使 SQL Server 将备份写入 Azure Blob 或从中进行还原，必须创建 SQL Server 凭据。凭据存储存储帐户的名称和存储帐户访问密钥。创建凭据后，必须在发布 BACKUP/RESTORE 语句时在 WITH CREDENTIAL 选项中指定该凭据。有关如何查看、复制或重新生成存储帐户访问密钥的详细信息，请参阅[存储帐户访问密钥][]。
+    有关如何创建 SQL Server 凭据的分步说明，请参阅[开始使用 Azure 存储服务执行 SQL Server 备份和还原][]。
 
-<b>Note:</b> HTTPS is not required, but is recommended.
-<b>Important</b>
-If you choose to copy and upload a backup file to the Azure Blob storage service, you must use a page blob type as your storage option if you are planning to use this file for restore operations. RESTORE from a block blob type will fail with an error. 
+## 使用 Azure Blob 执行 SQL Server 数据库备份和还原 - 概念和任务：
 
-* Credential: The information that is required to connect and authenticate to Azure Blob storage service is stored as a Credential.  In order for SQL Server to write backups to an Azure Blob or restore from it, a SQL Server credential must be created. The Credential stores the name of the storage account and the storage account access key.  Once the credential is created, it must be specified in the WITH CREDENTIAL option when issuing the BACKUP/RESTORE statements. For more information about how to view, copy or regenerate storage account access keys, see [Storage Account Access Keys](http://msdn.microsoft.com/zh-cn/library/azure/hh531566.aspx).
-For step by step instructions about how to create a SQL Server Credential, see [Getting Started with Azure Storage Service for SQL Server Backup and Restore](http://msdn.microsoft.com/zh-cn/library/jj720558.aspx).
+**概念、注意事项和代码示例：**
 
-## SQL Server Database Backups and Restore with Azure Blobs- Concepts and Tasks:
+[使用 Azure Blob 存储服务执行 SQL Server 备份和还原][]
 
-**Concepts, Considerations, and Code samples:**
+**教程入门：**
 
-[SQL Server Backup and Restore with Azure Blob Storage Service](http://msdn.microsoft.com/zh-cn/library/jj919148.aspx)
+[开始使用 Azure Blob 存储服务执行 SQL Server 备份和还原][]
 
-**Getting Started Tutorial:**
+**最佳实践、疑难解答：**
 
-[Getting Started with SQL Server Backup and Restore to Azure Blob Storage Service](http://msdn.microsoft.com/zh-cn/library/jj720558.aspx "Tutorial")
+[备份和还原最佳实践（Azure Blob 存储服务）][]
 
-**Best Practices, Troubleshooting:**
-	
-[Back and Restore Best Practices (Azure Blob Storage Service)](http://msdn.microsoft.com/zh-cn/library/jj919149.aspx)
-
-
-
-
-	
-
-
-
-
+  [Azure 定价条款]: http://www.windowsazure.cn/zh-cn/pricing/overview/ "定价条款"
+  [使用 Azure Blob 存储服务执行 SQL Server 备份和还原]: http://msdn.microsoft.com/zh-cn/library/jj919148.aspx
+  [开始使用 Azure 存储服务执行 SQL Server 备份和还原]: http://msdn.microsoft.com/zh-cn/library/jj720558.aspx
+  [如何使用 Azure Blob 存储服务]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/blob-storage-v17/
+  [了解块 Blob 和页 Blob]: http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
+  [存储帐户访问密钥]: http://msdn.microsoft.com/zh-cn/library/azure/hh531566.aspx
+  [开始使用 Azure Blob 存储服务执行 SQL Server 备份和还原]: http://msdn.microsoft.com/zh-cn/library/jj720558.aspx "教程"
+  [备份和还原最佳实践（Azure Blob 存储服务）]: http://msdn.microsoft.com/zh-cn/library/jj919149.aspx

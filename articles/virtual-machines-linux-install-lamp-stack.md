@@ -1,108 +1,81 @@
 <properties linkid="manage-linux-common-tasks-lampstack" urlDisplayName="Install LAMP stack" pageTitle="Install the LAMP stack on a Linux virtual machine" metaKeywords="" description="Learn how to install the LAMP stack on a Linux virtual machine (VM) in Azure. You can install on Ubuntu or CentOS." metaCanonical="" services="virtual-machines" documentationCenter="" title="Install the LAMP Stack on a Linux virtual machine in Azure" authors="" solutions="" manager="" editor="" />
 
+# 在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈
 
+LAMP 堆栈包含以下不同元素：
 
+-   **L**inux - 操作系统
+-   **A**pache - Web 服务器
+-   **M**ySQL - 数据库服务器
+-   **P**HP - 编程语言
 
-#Install the LAMP Stack on a Linux virtual machine in Azure
+## 在 Ubuntu 上安装
 
-A LAMP stack consists of the following different elements:
+你将需要安装以下程序包：
 
-- **L**inux - Operating System
-- **A**pache - Web Server
-- **M**ySQL - Database Server
-- **P**HP - Programming Language
+-   `apache2`
+-   `mysql-server`
+-   `php5`
+-   `php5-mysql`
+-   `libapache2-mod-auth-mysql`
+-   `libapache2-mod-php5`
+-   `php5-xsl`
+-   `php5-gd`
+-   `php-pear`
 
+你可以将其作为单个`apt-get install` 命令运行：
 
-##Installing on Ubuntu
+    apt-get install apache2 mysql-server php5 php5-mysql libapache2-mod-auth-mysql libapache2-mod-php5 php5-xsl php5-gd php-pear
 
-You will need the following packages installed:
+## 在 CentOS 上安装
 
-- `apache2`
-- `mysql-server`
-- `php5`
-- `php5-mysql`
+你将需要安装以下程序包：
 
-After running `apt-get update` to update the local list of packages, you can then install these packages with a single `apt-get install` command:
+-   `httpd`
+-   `mysql`
+-   `mysql-server`
+-   `php`
+-   `php-mysql`
 
-	# sudo apt-get update
-	# sudo apt-get install apache2 mysql-server php5 php5-mysql
+你可以将其作为单个`yum install` 命令运行：
 
-After running the above command you will be prompted to install these packages and a number of other dependencies.  Press 'y' and then 'Enter' to continue, and follow any other prompts to set an administrative password for MySQL.
+    yum install httpd mysql mysql-server php-php-mysql
 
-This will install the minimum required PHP extensions needed to use PHP with MySQL. Run the following command to see other PHP extensions that are available as packages:
+## 设置
 
-	# apt-cache search php5
+1.  设置 **Apache**。
 
+    1.  你将需要重新启动 Apache Web 服务器。运行以下命令：
 
-##Installing On CentOS
+            sudo /etc/init.d/apache2 restart
 
-You will need the following packages installed:
+    2.  查看安装是否正在运行。使你的浏览器指向：[][]<http://localhost></a>。应该会显示“It works!”。
 
-- `httpd`
-- `mysql`
-- `mysql-server`
-- `php`
-- `php-mysql`
+2.  设置 **MySQL**。
 
-You can install these packages with a single `yum install` command:
+    1.  通过运行以下命令为 mysql 设置根密码
 
-	# sudo yum install httpd mysql mysql-server php php-mysql
+            mysqladmin -u root -p password yourpassword
 
-After running the above command you will be prompted to install these packages and a number of other dependencies.  Press 'y' and then 'Enter' to continue.
+    2.  使用`mysql` 或多种 MySQL 客户端登录到控制台。
 
-This will install the minimum required PHP extensions needed to use PHP with MySQL. Run the following command to see other PHP extensions that are available as packages:
+3.  设置 **PHP**。
 
-	# yum search php
+    1.  通过运行以下命令启用 Apache PHP 模块：
 
+            sudo a2enmod php5
 
-## Installing on SUSE Linux Enterprise Server
+    2.  通过运行以下命令重新启动 Apache：
 
-You will need the following packages installed:
+            sudo service apache2 restart
 
-- apache2
-- mysql
-- apache2-mod_php53
-- php53-mysql
+## 延伸阅读
 
-You can install these packages with a single `zypper install` command:
+有许多在 Ubuntu 上设置 LAMP 堆栈的资源。
 
-	# sudo zypper install apache2 mysql apache2-mod_php53 php53-mysql
+-   [][1]<https://help.ubuntu.com/community/ApacheMySQLPHP></a>
+-   [][2]<http://fedorasolved.org/server-solutions/lamp-stack></a>
 
-After running the above command you will be prompted to install these packages and a number of other dependencies.  Press 'y' and then 'Enter' to continue.
-
-This will install the minimum required PHP extensions needed to use PHP with MySQL. Run the following command to see other PHP extensions that are available as packages:
-
-	# zypper search php
-
-
-Setting Up
-----------
-
-1. Set up **Apache**
-
-	- Run the following command to ensure the Apache web server is started:
-
-		- Ubuntu & SLES: `sudo service apache2 restart`
-
-		- CentOS & Oracle: `sudo service httpd restart`
-
-	- Apache listens on port 80 by default. You may need to open an endpoint to access your Apache server remotely.  Please see the documentation on [configuring endpoints](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/) for more detailed instructions.
-
-	- You can now check to see that Apache is running and serving content. Point your browser to `http://[MYSERVICE].cloudapp.net`, where **[MYSERVICE]** is the name of the cloud service in which your virtual machine resides. On some distributions you may be greeted by a default web page that simply states "It works!". On others you may see a more complete web page with links to additional documentation and content for configuring the Apache server.
-
-2. Set up **MySQL**
-
-	- Note that this step is not necessary on Ubuntu, which prompts you for a MySQL `root` password when the mysql-server package was installed.
-
-	- On other distributions, set the root password for MySQL by running the following command:
-
-			# mysqladmin -u root -p password yourpassword
-
-	- You can then manage MySQL using the `mysql` or `mysqladmin` utilities.
-
-
-##Further Reading
-
-There are many resources for setting up a LAMP stack on Ubuntu.
-
-- [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
+  []: http://localhost
+  [1]: https://help.ubuntu.com/community/ApacheMySQLPHP
+  [2]: http://fedorasolved.org/server-solutions/lamp-stack

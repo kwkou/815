@@ -1,417 +1,426 @@
 <properties linkid="dev-nodejs-basic-web-app-with-storage" urlDisplayName="Web App with Storage" pageTitle="Web app with table storage (Node.js) | Windows Azure" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="A tutorial that builds on the Web App with Express tutorial by adding Azure Storage services and the Azure module." metaCanonical="" services="cloud-services,storage" documentationCenter="Node.js" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="" editor="" />
 
+# 使用存储构建 Node.js Web 应用程序
 
+在本教程中，你将通过使用针对 Node.js 的 Windows Azure
+客户端库来扩展在[使用 Express 构建 Node.js Web 应用程序][]
+教程中创建的应用程序以操作数据管理服务。你将
+扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表
+应用程序。用户可以通过任务列表来检索任务、
+添加新任务以及将任务标记为已完成。
 
+任务项存储在 Azure 存储服务中。Azure 存储服务
+提供了具有容错能力且可用性非常好的非结构化数据存储。
+Azure 存储服务包含一些可用来存储和访问数据的
+数据结构，你可以通过 Azure SDK for Node.js 中
+包含的 API 或通过 REST API 利用存储
+服务。有关详细信息，请参阅[在 Azure 中存储和访问数据][]。
 
+本教程假定你已完成 [Node.js Web 应用程序][]
+和[使用 Express 构建 Node.js][使用 Express 构建 Node.js Web 应用程序] 教程。
 
+你将了解到以下内容：
 
-# Node.js Web Application using Storage
+-   如何操作 Jade 模板引擎
+-   如何操作 Azure 数据管理服务
 
-In this tutorial, you will extend the application created in the
-[Node.js Web Application using Express] tutorial by using the Windows
-Azure Client Libraries for Node.js to work with data management services. You
-will extend your application to create a web-based task-list application
-that you can deploy to Azure. The task list allows a user to
-retrieve tasks, add new tasks, and mark tasks as completed.
+以下是已完成应用程序的屏幕快照：
 
-The task items are stored in Azure Storage. Azure
-Storage provides unstructured data storage that is fault-tolerant and
-highly available. Azure Storage includes several data structures
-where you can store and access data, and you can leverage the storage
-services from the APIs included in the Azure SDK for Node.js or
-via REST APIs. For more information, see [Storing and Accessing Data in Azure].
+![Internet Explorer 中已完成的网页][]
 
-This tutorial assumes that you have completed the [Node.js Web
-Application] and [Node.js with Express][Node.js Web Application using Express] tutorials.
+## 在 Web.Config 中设置存储凭据
 
-You will learn:
+若要访问 Azure 存储服务，你需要传入存储凭据。
+若要执行此操作，你将利用 web.config 应用程序设置。
+这些设置将作为环境变量传递给 Node，然后再由 Azure SDK 进行
+读取。
 
--   How to work with the Jade template engine
--   How to work with Azure Data Management services
+**说明**
 
-A screenshot of the completed application is below:
+仅在将应用程序部署到 Azure 时才使用存储凭据。应用程序在模拟器中运行时将使用存储模拟器。
 
-![The completed web page in internet explorer](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
+执行下列步骤检索存储帐户凭据并将这些凭据添加
+到 web.config 设置中：
 
-## Setting Storage Credentials in Web.Config
+1.  如果尚未打开 Azure PowerShell，请通过在**“开始”**菜单中展开**“所有程序”、“Azure”**，右键单击**“Azure PowerShell”**，然后选择**“以管理员身份运行”**启动 Azure PowerShell。
 
-To access Azure Storage, you need to pass in storage
-credentials. To do this, you utilize web.config application settings.
-Those settings will be passed as environment variables to Node, which
-are then read by the Azure SDK.
+2.  将目录更改到包含你的应用程序的文件夹。例如，C:\\node\\tasklist\\WebRole1。
 
-<div class="dev-callout">
-<strong>Note</strong>
-<p>Storage credentials are only used when the application is
-deployed to Azure. When running in the emulator, the application
-will use the storage emulator.</p>
-</div>
-
-Perform the following steps to retrieve the storage account credentials
-and add them to the web.config settings:
-
-1.  If it is not already open, start the Azure PowerShell from the **Start** menu by expanding **All Programs, Azure**, right-click **Azure PowerShell**, and then select **Run As Administrator**.
-
-2.  Change directories to the folder containing your application. For example, C:\\node\\tasklist\\WebRole1.
-
-3.  From the Azure Powershell window enter the following cmdlet to retrieve the storage account information:
+3.  从 Azure Powershell 窗口中，输入以下 cmdlet 以检索存储帐户信息：
 
         PS C:\node\tasklist\WebRole1> Get-AzureStorageAccounts
 
-	This retrieves the list of storage accounts and account keys associated with your hosted service.
+    这样可以检索与托管服务关联的存储帐户和帐户密钥的列表。
 
-	<div class="dev-callout">
-	<strong>Note</strong>
-	<p>Since the Azure SDK creates a storage account when you deploy a service, a storage account should already exist from deploying your application in the previous guides.</p>
-	</div>
+    **说明**
 
-4.  Open the **ServiceDefinition.csdef** file containing the environment settings that are used when the application is deployed to Azure:
+    由于在你部署服务时 Azure SDK 会创建一个存储帐户，因此在前面的指南中部署你的应用程序之后应当已存在一个存储帐户。
 
-        PS C:\node\tasklist> notepad ServiceDefinition.csdef
+4.  打开 web.cloud.config 文件，该文件包含将应用程序部署到 Azure 时所使用的环境设置：
 
-5.  Insert the following block under **Environment** element, substituting {STORAGE ACCOUNT} and {STORAGE ACCESS KEY} with the account name and the primary key for the storage account you want to use for deployment:
+        PS C:\node\tasklist\WebRole1> notepad web.cloud.config
 
-        <Variable name="AZURE_STORAGE_ACCOUNT" value="{STORAGE ACCOUNT}" />
-        <Variable name="AZURE_STORAGE_ACCESS_KEY" value="{STORAGE ACCESS KEY}" />
+5.  在 **configuration** 元素下插入以下块，使用你要用于部署的存储帐户的帐户名称和主密钥替换 {STORAGE ACCOUNT} 和 {STORAGE ACCESS KEY}：
 
-	![The web.cloud.config file contents](./media/storage-nodejs-use-table-storage-cloud-service-app/node37.png)
-
-6.  Save the file and close notepad.
-
-###Install additional modules
-
-2. Use the following command to install the [azure], [node-uuid], [nconf] and [async] modules locally as well as to save an entry for them to the **package.json** file:
-
-		PS C:\node\tasklist\WebRole1> npm install azure-storage node-uuid async nconf --save
-
-	The output of this command should appear similar to the following:
-
-		node-uuid@1.4.1 node_modules\node-uuid
-
-		nconf@0.6.9 node_modules\nconf
-		������ ini@1.1.0
-		������ async@0.2.9
-		������ optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
-
-        azure-storage@0.1.0 node_modules\azure-storage
-		������ extend@1.2.1
-		������ xmlbuilder@0.4.3
-		������ mime@1.2.11
-		������ underscore@1.4.4
-		������ validator@3.1.0
-		������ node-uuid@1.4.1
-		������ xml2js@0.2.7 (sax@0.5.2)
-		������ request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+        <appSettings>
+        <add key="AZURE_STORAGE_ACCOUNT" value="{STORAGE ACCOUNT}"/>
+        <add key="AZURE_STORAGE_ACCESS_KEY" value="{STORAGE ACCESS KEY}"/>
+        </appSettings>
 
-##Using the Table service in a node application
+    ![web.cloud.config 文件内容][]
 
-In this section you will extend the basic application created by the **express** command by adding a **task.js** file which contains the model for your tasks. You will also modify the existing **app.js** and create a new **tasklist.js** file that uses the model.
+6.  保存该文件并关闭记事本。
 
-### Create the model
+## 安装模块
 
-1. In the **WebRole1** directory, create a new directory named **models**.
+若要使用 Azure 数据管理服务，必须为 Node 安装 Azure 模块。
+你还必须安装 node-uuid 模块，因为将使用此
+模块来生成全局唯一标识符 (UUID)。
+若要安装这些模块，请输入以下命令：
 
-2. In the **models** directory, create a new file named **task.js**. This file will contain the model for the tasks created by your application.
-
-3. At the beginning of the **task.js** file, add the following code to reference required libraries:
-
-        var azure = require('azure-storage');
-  		var uuid = require('node-uuid');
-		var entityGen = azure.TableUtilities.entityGenerator;
-
-4. Next, you will add code to define and export the Task object. This object is responsible for connecting to the table.
-
-  		module.exports = Task;
-
-		function Task(storageClient, tableName, partitionKey) {
-		  this.storageClient = storageClient;
-		  this.tableName = tableName;
-		  this.partitionKey = partitionKey;
-		  this.storageClient.createTableIfNotExists(tableName, function tableCreated(error) {
-		    if(error) {
-		      throw error;
-		    }
-		  });
-		};
-
-5. Next, add the following code to define additional methods on the Task object, which allow interactions with data stored in the table:
-
-		Task.prototype = {
-		  find: function(query, callback) {
-		    self = this;
-		    self.storageClient.queryEntities(query, function entitiesQueried(error, result) {
-		      if(error) {
-		        callback(error);
-		      } else {
-		        callback(null, result.entries);
-		      }
-		    });
-		  },
-
-		  addItem: function(item, callback) {
-		    self = this;
-			// use entityGenerator to set types
-			// NOTE: RowKey must be a string type, even though
-            // it contains a GUID in this example.
-		    var itemDescriptor = {
-		      PartitionKey: entityGen.String(self.partitionKey),
-		      RowKey: entityGen.String(uuid()),
-		      name: entityGen.String(item.name),
-		      category: entityGen.String(item.category),
-		      completed: entityGen.Boolean(false)
-		    };
-
-		    self.storageClient.insertEntity(self.tableName, itemDescriptor, function entityInserted(error) {
-		      if(error){  
-		        callback(error);
-		      }
-		      callback(null);
-		    });
-		  },
-
-		  updateItem: function(rKey, callback) {
-		    self = this;
-		    self.storageClient.retrieveEntity(self.tableName, self.partitionKey, rKey, function entityQueried(error, entity) {
-		      if(error) {
-		        callback(error);
-		      }
-		      entity.completed._ = true;
-		      self.storageClient.updateEntity(self.tableName, entity, function entityUpdated(error) {
-		        if(error) {
-		          callback(error);
-		        }
-		        callback(null);
-		      });
-		    });
-		  }
-		}
-
-6. Save and close the **task.js** file.
-
-###Create the controller
-
-1. In the **WebRole1/routes** directory, create a new file named **tasklist.js** and open it in a text editor.
-
-2. Add the following code to **tasklist.js**. This loads the azure and async modules, which are used by **tasklist.js**. This also defines the **TaskList** function, which is passed an instance of the **Task** object we defined earlier:
-
-		var azure = require('azure-storage');
-		var async = require('async');
-
-		module.exports = TaskList;
-
-		function TaskList(task) {
-		  this.task = task;
-		}
-
-2. Continue adding to the **tasklist.js** file by adding the methods used to **showTasks**, **addTask**, and **completeTasks**:
-
-		TaskList.prototype = {
-		  showTasks: function(req, res) {
-		    self = this;
-		    var query = azure.TableQuery()
-		      .where('completed eq ?', false);
-		    self.task.find(query, function itemsFound(error, items) {
-		      res.render('index',{title: 'My ToDo List ', tasks: items});
-		    });
-		  },
-
-		  addTask: function(req,res) {
-		    var self = this      
-		    var item = req.body.item;
-		    self.task.addItem(item, function itemAdded(error) {
-		      if(error) {
-		        throw error;
-		      }
-		      res.redirect('/');
-		    });
-		  },
-
-		  completeTask: function(req,res) {
-		    var self = this;
-		    var completedTasks = Object.keys(req.body);
-		    async.forEach(completedTasks, function taskIterator(completedTask, callback) {
-		      self.task.updateItem(completedTask, function itemsUpdated(error) {
-		        if(error){
-		          callback(error);
-		        } else {
-		          callback(null);
-		        }
-		      });
-		    }, function goHome(error){
-		      if(error) {
-		        throw error;
-		      } else {
-		       res.redirect('/');
-		      }
-		    });
-		  }
-		}
-
-3. Save the **tasklist.js** file.
-
-### Modify app.js
-
-1. In the **WebRole1** directory, open the **app.js** file in a text editor. 
-
-2. At the beginning of the file, add the following to load the azure module and set the table name and partition key:
-
-		var azure = require('azure-storage');
-		var tableName = 'tasks';
-		var partitionKey = 'hometasks';
-
-3. In the app.js file, scroll down to where you see the following line:
-
-		app.use('/', routes);
-		app.use('/users', users);
-
-	Replace the above lines with the code shown below. This will initialize an instance of <strong>Task</strong> with a connection to your storage account. This is passed to the <strong>TaskList</strong>, which will use it to communicate with the Table service:
-
-		var TaskList = require('./routes/tasklist');
-		var Task = require('./models/task');
-		var task = new Task(azure.createTableService(), tableName, partitionKey);
-		var taskList = new TaskList(task);
-
-		app.get('/', taskList.showTasks.bind(taskList));
-		app.post('/addtask', taskList.addTask.bind(taskList));
-		app.post('/completetask', taskList.completeTask.bind(taskList));
-	
-4. Save the **app.js** file.
-
-###Modify the index view
-
-1. Change directories to the **views** directory and open the **index.jade** file in a text editor.
-
-2. Replace the contents of the **index.jade** file with the code below. This defines the view for displaying existing tasks, as well as a form for adding new tasks and marking existing ones as completed.
-
-		extends layout
-
-		block content
-		  h1= title
-		  br
-		
-		  form(action="/completetask", method="post")
-		    table.table.table-striped.table-bordered
-		      tr
-		        td Name
-		        td Category
-		        td Date
-		        td Complete
-		      if tasks != []
-		        tr
-		          td 
-		      else
-		        each task in tasks
-		          tr
-		            td #{task.name._}
-		            td #{task.category._}
-		            - var day   = task.Timestamp._.getDate();
-		            - var month = task.Timestamp._.getMonth() + 1;
-		            - var year  = task.Timestamp._.getFullYear();
-		            td #{month + "/" + day + "/" + year}
-		            td
-		              input(type="checkbox", name="#{task.RowKey._}", value="#{!task.completed._}", checked=task.completed._)
-		    button.btn(type="submit") Update tasks
-		  hr
-		  form.well(action="/addtask", method="post")
-		    label Item Name: 
-		    input(name="item[name]", type="textbox")
-		    label Item Category: 
-		    input(name="item[category]", type="textbox")
-		    br
-		    button.btn(type="submit") Add item
-
-3. Save and close **index.jade** file.
-
-###Modify the global layout
-
-The **layout.jade** file in the **views** directory is used as a global template for other **.jade** files. In this step you will modify it to use [Twitter Bootstrap](https://github.com/twbs/bootstrap), which is a toolkit that makes it easy to design a nice looking  Website.
-
-1. Download and extract the files for [Twitter Bootstrap](http://getbootstrap.com/). Copy the **bootstrap.min.css** file from the **bootstrap\\dist\\css** folder to the **public\\stylesheets** directory of your tasklist application.
-
-2. From the **views** folder, open the **layout.jade** in your text editor and replace the contents with the following:
-
-		doctype html
-		html
-		  head
-		    title= title
-		    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-		    link(rel='stylesheet', href='/stylesheets/style.css')
-		  body.app
-		    nav.navbar.navbar-default
-		      div.navbar-header
-		        a.navbar-brand(href='/') My Tasks
-		    block content
-
-3. Save the **layout.jade** file.
-
-### Running the Application in the Emulator
-
-Use the following command to start the application in the emulator.
-
-	PS C:\node\tasklist\WebRole1> start-azureemulator -launch
-
-The browser will open and displays the following page:
-
-![A web paged titled My Task List with a table containing tasks and fields to add a new task.](./media/storage-nodejs-use-table-storage-cloud-service-app/node44.png)
-
-Use the form to add items, or remove existing items by marking them as completed.
-
-## Publishing the Application to Azure
-
-
-In the Windows PowerShell window, call the following cmdlet to redeploy your hosted service to Azure.
-
-    PS C:\node\tasklist\WebRole1> Publish-AzureServiceProject -name myuniquename -location datacentername -launch
-
-Replace **myuniquename** with a unique name for this application. Replace **datacentername** with the name of an Azure data center, such as **West US**.
-
-After the deployment is complete, you should see a response similar to the following:
-
-	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "West US"
-	WARNING: Publishing tasklist to Windows Azure. This may take several minutes...
-	WARNING: 2:18:42 PM - Preparing runtime deployment for service 'tasklist'
-	WARNING: 2:18:42 PM - Verifying storage account 'tasklist'...
-	WARNING: 2:18:43 PM - Preparing deployment for tasklist with Subscription ID: 65a1016d-0f67-45d2-b838-b8f373d6d52e...
-	WARNING: 2:19:01 PM - Connecting...
-	WARNING: 2:19:02 PM - Uploading Package to storage service larrystore...
-	WARNING: 2:19:40 PM - Upgrading...
-	WARNING: 2:22:48 PM - Created Deployment ID: b7134ab29b1249ff84ada2bd157f296a.
-	WARNING: 2:22:48 PM - Initializing...
-	WARNING: 2:22:49 PM - Instance WebRole1_IN_0 of role WebRole1 is ready.
-	WARNING: 2:22:50 PM - Created  Website URL: http://tasklist.cloudapp.net/.
-
-	As before, because you specified the **-launch** option, the browser opens and displays your application running in Azure when publishing is completed.
-
-![A browser window displaying the My Task List page. The URL indicates the page is now being hosted on Azure.](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
-
-## Stopping and Deleting Your Application
-
-After deploying your application, you may want to disable it so you can
-avoid costs or build and deploy other applications within the free trial
-time period.
-
-Azure bills web role instances per hour of server time consumed.
-Server time is consumed once your application is deployed, even if the
-instances are not running and are in the stopped state.
-
-The following steps show you how to stop and delete your application.
-
-1.  In the Windows PowerShell window, stop the service deployment
-    created in the previous section with the following cmdlet:
+    PS C:\node\tasklist\WebRole1> npm install node-uuid azure
+
+在命令完成后，这些模块已添加到 **node\_modules**
+文件夹。执行下列步骤以在应用程序中使用这些
+模块：
+
+1.  打开 app.js 文件：
+
+        PS C:\node\tasklist\WebRole1> notepad app.js
+
+2.  在以 `var app - express();` 结尾的行后添加以下代码
+
+        var uuid = require('node-uuid');
+        var Home = require('./home');
+        var azure = require('azure');
+
+3.  添加用于创建存储表客户端的代码，以传入存储帐户和访问密钥信息。
+
+    **说明**
+
+    在模拟器中运行时，即使存储帐户信息是通过 web.config 提供的，SDK 也会自动使用模拟器。
+
+        var client = azure.createTableService();
+
+4.  接下来，在 Azure 存储服务中创建一个名为“tasks”的表。下面的逻辑将创建一个新表（如果该表不存在）并使用一些默认数据填充该表。
+
+        //创建表
+        client.createTableIfNotExists('tasks', function(error){
+        if(error){
+        throw error;
+            }
+
+        var item = {
+        name:'Add readonly task list',
+        category:'Site work',
+        date: '12/01/2011',
+        RowKey:uuid(),
+        PartitionKey :'partition1',
+        completed:false
+            };
+
+        client.insertEntity('tasks', item, function(){});
+
+        });
+
+5.  查找下面的两行：
+
+        app.use('/', routes);
+        app.use('/users', users);
+
+    将上面的两行替换为下面的代码，这将创建一个主控制器实例并将对 **/** 或 **/home** 的所有请求路由至该实例。
+
+        var home = new Home(client);
+        app.get('/', home.showItems.bind(home));
+        app.get('/home', home.showItems.bind(home));
+
+    请注意，你现在要将命令委派给 Home 对象，而不是以内联方式处理请求。若要确保这些引用在主控制器内在本地正确解析，将需要 **bind** 命令。
+
+## 创建主控制器
+
+你现在必须创建一个主控制器，它用于处理针对任务列表站点的所有请求。
+执行下列步骤以创建控制器：
+
+1.  在记事本中新建一个 home.js 文件。该文件将包含用于
+    为任务列表处理逻辑的控制器代码。
+
+        PS C:\node\tasklist\WebRole1> notepad home.js
+
+2.  将内容替换为以下代码并保存该文件。下面的
+    代码使用了 javascript 模块模式。它将导出一个
+    Home 函数。Home 原型包含用于处理实际请求的函数。
+
+        var azure=require('azure');
+        module.exports = Home;
+
+        function Home (client) {
+        this.client = client;
+        };
+
+        Home.prototype = {
+        showItems:function (req, res) {
+        var self = this;
+        this.getItems(false, function (resp, tasklist) {
+        if (!tasklist) {
+        tasklist = [];
+                    }           
+        self.showResults(res, tasklist);
+                });
+            },
+
+        getItems:function (allItems, callback) {
+        var query = azure.TableQuery
+        .select()
+        .from('tasks');
+
+        if (!allItems) {
+        query = query.where('completed eq ?', 'false');
+                }
+        this.client.queryEntities(query, callback);
+             },
+
+        showResults:function (res, tasklist) {
+        res.render('home', { 
+        title:'Todo list', 
+        layout:false, 
+        tasklist:tasklist });
+             },
+        };
+
+    你的主控制器现在包含以下三个函数：
+
+    -   *showItems* 处理请求。
+    -   *getItems* 使用表客户端从 tasks 表中检索打开的任务项。
+        请注意，查询可以应用其他筛选器；例如，
+        上面的查询筛选器只
+        显示 completed 等于 false 的任务。
+    -   *showResults* 调用 Express 呈现函数来呈现
+        使用主视图（将在下一节中创建）
+        的页面。
+
+### 修改主视图
+
+Jade 模板引擎使用的标记语法不及 HTML 的详细，它是用于
+操作 Express 的默认引擎。执行下列
+步骤创建一个支持显示任务列表项
+的视图：
+
+1.  从 Windows PowerShell 命令窗口中，使用以下命令
+    编辑 home.jade 文件：
+
+        PS C:\node\tasklist\WebRole1\views> notepad home.jade
+
+2.  将 home.jade 文件的内容替换为以下代码并保存
+    该文件。下面的表单包含用于读取和更新
+    任务项的功能。（请注意，目前，主控制器仅支持读取；
+    你将在后面对此进行更改。）该表单包含
+    任务列表中每一项的详细信息。
+
+        html
+        head
+        title Index
+        body
+        h1 My ToDo List
+
+        form
+        table(border="1")
+        tr
+        td Name
+        td Category
+        td Date
+        td Complete
+
+        each item in tasklist
+        tr
+        td #{item.name}
+        td #{item.category} 
+        td #{item.date} 
+        td 
+        input(type="checkbox", name="completed", value="#{item.RowKey}") 
+
+## 在计算模拟器中运行应用程序
+
+1.  在 Windows PowerShell 窗口中，输入以下 cmdlet 以在
+    计算模拟器中启动你的服务并显示调用你的服务的
+    一个网页。
+
+        PS C:\node\tasklist\WebRole1> Start-AzureEmulator -launch
+
+    你的浏览器将显示以下页面，其中显示了从 Azure 存储服务中检索到的任务项：
+
+    ![显示了“My Tasklist”页的 Internet Explorer，该页的表中有一项内容。][]
+
+## 添加新任务功能
+
+在本节中，你将更新应用程序以支持添加新
+任务项。
+
+### 向 app.js 添加新路由
+
+在 app.js 文件中，查找以下行：
+
+    app.get('/home', home.showItems.bind(home));
+
+在此行下，添加以下内容：
+
+    app.post('/home/newitem', home.newItem.bind(home));
+
+### 添加 Node-UUID 模块
+
+若要使用 node-uuid 模块创建唯一标识符，请在 home.js 文件
+顶部在导入该模块的第一行后面
+添加以下行。
+
+![突出显示 module.exports = Home 行的 home.js 文件。][]
+
+       var uuid = require('node-uuid');
+
+### 向主控制器添加新建项功能
+
+若要实现新建项功能，请创建 **newItem** 函数。
+在 home.js 文件中，将以下代码粘贴到最后一个函数后，
+然后保存该文件。
+
+![突出显示了 showresults 函数][]
+
+       newItem:function (req, res) {
+    var self = this;
+    var createItem = function (resp, tasklist) {
+    if (!tasklist) {
+    tasklist = [];
+               }
+
+    var count = tasklist.length;
+
+    var item = req.body.item;
+    item.RowKey = uuid();
+    item.PartitionKey = 'partition1';
+    item.completed = false;
+
+    self.client.insertEntity('tasks', item, function (error) {
+    if(error){  
+    throw error;
+                   }
+    self.showItems(req, res);
+               });
+           };
+
+    this.getItems(true, createItem);
+       },
+
+**newItem** 函数将执行以下任务：
+
+-   从正文中提取已发布的项。
+-   为新项设置 **RowKey** 和 **PartitionKey** 值。
+    这些值是向 Azure 表中插入新项所必需的。
+    将为 **RowKey** 值生成 UUID。
+-   通过调用 **insertEntity** 函数
+    将该项插入 tasks 表中。
+-   通过调用 **getItems** 函数来呈现页面。
+
+### 向主视图添加新建项表单
+
+现在，对视图进行更新，通过添加一个新表单来允许用户添加项。
+将以下代码粘贴在 home.jade 文件的末尾，然后保存该文件。
+
+**说明**
+
+在 Jade 中，空格是有意义的，因此不要删除下面的任何一个空格。
+
+        hr
+    form(action="/home/newitem", method="post")
+    table(border="1")    
+    tr
+    td Item Name: 
+    td 
+    input(name="item[name]", type="textbox")
+    tr
+    td Item Category: 
+    td 
+    input(name="item[category]", type="textbox")
+    tr
+    td Item Date: 
+    td 
+    input(name="item[date]", type="textbox")
+    input(type="submit", value="Add item")
+
+### 在模拟器中运行应用程序
+
+1.  因为 Azure 模拟器已在运行，因此你可以浏览
+    更新后的应用程序：
+
+        PS C:\node\tasklist\WebRole1> start http://localhost:81/home
+
+    浏览器将打开并显示以下页面：
+
+    ![标题为 My Task List 的网页，其中所含的表包含任务和用于添加新任务的字段。][]
+
+2.  为**“项目名称”**输入：“New task functionality”、为“项目类别” 输入：“Site work”，为“项目日期”**Item Date**输入："12/02/2011". 然后单击**“添加项目”**。
+
+    该项将添加到 Azure 存储服务中的任务表，并显示为以下屏幕快照中所示的内容。
+
+    ![将任务添加到该列表后，标题为 My Task List 的网页，其中所含表包含相关任务。][]
+
+## 将应用程序重新发布到 Azure
+
+现在应用程序已完成，你将通过更新现有托管服务的部署来
+将应用程序发布到 Azure。
+
+1.  在 Windows PowerShell 窗口中，调用以下 cmdlet 将
+    托管服务重新部署到 Azure。你的存储设置和位置
+    在前面已经保存，因此无需重新输入。
+
+        PS C:\node\tasklist\WebRole1> Publish-AzureServiceProject -name myuniquename -location datacentername -launch
+
+    部署完成后，你将看到如下响应：
+
+    ![部署期间显示的状态消息。][]
+
+    与先前一样，由于你指定了 **-launch** 选项，因此在发布完成后，浏览器将打开并显示正在 Azure 中运行的应用程序。
+
+    ![浏览器窗口中显示 My Task List 页面。URL 表明该页面现在托管在 Azure 上。][]
+
+## 停止并删除应用程序
+
+在部署应用程序后，你可能希望禁用它，以避免在免费试用期内
+产生费用或生成和部署其他应用程序。
+
+Azure 按使用服务器的小时数对 Web 角色实例进行收费。
+你的应用程序一旦部署，就开始使用服务器时间，即使
+实例未运行并处于停止状态也是如此。
+
+以下步骤演示了如何停止和删除应用程序。
+
+1.  在 Windows PowerShell 窗口中，使用以下 cmdlet 停止
+    在上一节中创建的服务部署：
 
         PS C:\node\tasklist\WebRole1> Stop-AzureService
 
-	Stopping the service may take several minutes. When the service is stopped, you receive a message indicating that it has stopped.
+    停止服务可能需要花费几分钟时间。在服务停止时，你会收到一条指示服务已停止的消息。
 
-3.  To delete the service, call the following cmdlet:
+    ![指示服务已停止的状态消息。][]
+
+2.  若要删除服务，请调用以下 cmdlet：
 
         PS C:\node\tasklist\WebRole1> Remove-AzureService contosotasklist
 
-	When prompted, enter **Y** to delete the service.
+    在出现提示时，输入 **Y** 以删除服务。
 
-	Deleting the service may take several minutes. After the service has been deleted you receive a message indicating that the service was deleted.
+    删除服务可能需要花费几分钟时间。在服务被删除后，你将收到一条指示服务已被删除的消息。
 
-  [Node.js Web Application using Express]: /zh-cn/develop/nodejs/tutorials/web-app-with-express/
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx
-  [Node.js Web Application]: /zh-cn/develop/nodejs/tutorials/getting-started/
- 
+    ![指示服务已被删除的状态消息。][]
+
+  [使用 Express 构建 Node.js Web 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-express-app/
+  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Node.js Web 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Internet Explorer 中已完成的网页]: ./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png
+  [web.cloud.config 文件内容]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node37.png
+  [显示了“My Tasklist”页的 Internet Explorer，该页的表中有一项内容。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node40.png
+  [突出显示 module.exports = Home 行的 home.js 文件。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node42.png
+  [突出显示了 showresults 函数]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node43.png
+  [标题为 My Task List 的网页，其中所含的表包含任务和用于添加新任务的字段。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node44.png
+  [将任务添加到该列表后，标题为 My Task List 的网页，其中所含表包含相关任务。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node45.png
+  [部署期间显示的状态消息。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node35.png
+  [浏览器窗口中显示 My Task List 页面。URL 表明该页面现在托管在 Azure 上。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node47.png
+  [指示服务已停止的状态消息。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node48.png
+  [指示服务已被删除的状态消息。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node49.png

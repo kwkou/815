@@ -1,73 +1,66 @@
 <properties linkid="manage-windows-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="Capture an image of a virtual machine running Windows Server" metaKeywords="Azure capture image vm, capturing vm" description="Learn how to capture an image of an Azure virtual machine (VM) running Windows Server 2008 R2. " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 
-#How to Capture a Windows Virtual Machine to Use as a Template#
+# 如何捕获一台用作模板的 Windows 虚拟机
 
-This article shows you how to capture an Azure virtual machine running Windows so you can use it like a template to create other virtual machines. This template includes the OS disk and any data disks attached the virtual machine. It doesn't include networking configuration, so you'll need to configure that when you create the other virtual machines that use the template.
+本文介绍如何捕获一台 Windows 虚拟机以便将其用作创建其他虚拟机的模板。此虚拟机模板包括操作系统磁盘以及附加到该虚拟机的任何数据磁盘。它不包括网络配置，所以你需要在使用该模板创建其他虚拟机时配置网络。
 
-Azure treats this template as an image and stores it under **My Images**. This is also where any images you've uploaded are stored. For more information about images, see [About Virtual Machine Images in Azure] [].
+捕获到虚拟机后，你在创建虚拟机时可以在“我的映像”下使用它。该映像文件在你的存储帐户中存储为 VHD。有关映像的详细信息，请参阅[管理磁盘和映像][管理磁盘和映像]。
 
-##Before You Begin##
+## 开始之前
 
-These steps assume that you've already created an Azure virtual machine and configured the operating system, including attaching any data disks. If you haven't done this yet, see these instructions:
+这些步骤假定你已经创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘。如果尚未完成这些操作，请参阅以下说明：
 
-- [How to Create a Custom Virtual Machine] []
-- [How to Attach a Data Disk to a Virtual Machine] []
+-   [如何创建自定义虚拟机][如何创建自定义虚拟机]
+-   [如何将数据磁盘附加到虚拟机][如何将数据磁盘附加到虚拟机]
 
-##Capture the Virtual Machine##
+## 捕获虚拟机
 
-1. Connect to the virtual machine by clicking **Connect** on the command bar. For details, see [How to Log on to a Virtual Machine Running Windows Server] [].
+1.  通过单击命令栏上的“连接”连接到虚拟机。有关详细信息，请参阅[如何登录到运行 Windows Server 的虚拟机][如何登录到运行 Windows Server 的虚拟机]。
 
-2.	Open a Command Prompt window as an administrator.
+2.  以管理员身份打开“命令提示符”窗口。
 
+3.  将目录更改为`%windir%\system32\sysprep`，然后运行 sysprep.exe。
 
-3.	Change the directory to `%windir%\system32\sysprep`, and then run sysprep.exe.
+4.  会显示**“系统准备工具”**对话框。请执行以下操作：
 
+    -   在**“系统清理操作”**中，选择**“进入系统全新体验(OOBE)”**，并且一定要选中**“通用”**。有关使用 Sysprep 的更多信息，请参阅[如何使用 Sysprep：简介][如何使用 Sysprep：简介]。
 
-4. 	The **System Preparation Tool** dialog box appears. Do the following:
+    -   在**“关机选项”**中选择**“关机”**。
 
+    -   单击“确定”。
 
-	- In **System Cleanup Action**, select **Enter System Out-of-Box Experience (OOBE)** and make sure that **Generalize** is checked. For more information about using Sysprep, see [How to Use Sysprep: An Introduction][].
+    ![运行 Sysprep][运行 Sysprep]
 
-	- In **Shutdown Options**, select **Shutdown**.
+5.  sysprep 命令将关闭虚拟机，这会在[管理门户][管理门户]中将虚拟机的状态更改为“已停止”。
 
-	- Click **OK**.
+6.  单击“虚拟机”，然后选择你要捕获的虚拟机。
 
-	![Run Sysprep](./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png)
+7.  在命令栏中，单击“捕获”。
 
-7.	Sysprep shuts down the virtual machine, which changes the status of the virtual machine in the [Management Portal](http://manage.windowsazure.cn) to **Stopped**.
+    ![捕获虚拟机][捕获虚拟机]
 
+    将出现“捕获虚拟机”对话框。
 
-8.	Click **Virtual Machines**, and then select the virtual machine you want to capture.
+8.  在“映像名称”框中，为新映像输入名称。
 
-9.	On the command bar, click **Capture**.
+9.  在将 Windows Server 映像添加到自定义映像组之前，该映像必须先按前面步骤中的说明通过运行 Sysprep 来通用化。单击“我已在虚拟机上运行了 Sysprep ”以指明你已经完成了此操作。
 
-	![Capture virtual machine](./media/virtual-machines-capture-image-windows-server/CaptureVM.png)
+10. 单击复选标记以捕获映像。在捕获已通用化的虚拟机的映像时，该虚拟机会被删除。
 
-	The **Capture the Virtual Machine** dialog box appears.
+    新映像现在显示在“映像”下。
 
-10.	In **Image Name**, type a name for the new image.
+    ![成功捕获映像][成功捕获映像]
 
-11.	Before you add a Windows Server image to your set of custom images, it must be generalized by running Sysprep as instructed in the previous steps. Click **I have run Sysprep on the virtual machine** to indicate that you have done this.
+## 后续步骤
 
-12.	Click the check mark to capture the image. When you capture an image of a generalized virtual machine, the virtual machine is deleted.
+该映像已就绪，可用作创建虚拟机的模板了。为此，你要通过使用“从库中”方法并选择你刚创建的映像创建一个自定义虚拟机。有关说明，请参阅[如何创建自定义虚拟机][如何创建自定义虚拟机]。
 
-	The new image is now available under **Images**.
-
-	![Image capture successful](./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png)
-
-##Next Steps##
-The image is ready to be used as a template to create virtual machines. To do this, you'll create a custom virtual machine by using the **From Gallery** method and select the image you just created. For instructions, see [How to Create a Custom Virtual Machine] [].
-
-	
-[Manage Disks and Images]:http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
-[How to Create a Custom Virtual Machine]: ../virtual-machines-create-custom/
-[How to Attach a Data Disk to a Virtual Machine]: ../storage-windows-attach-disk/
-[How to Log on to a Virtual Machine Running Windows Server]:/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/
-[How to Use Sysprep: An Introduction]:http://technet.microsoft.com/zh-cn/library/bb457073.aspx
-[Run Sysprep.exe]: ./media/virtual-machines-capture-image-windows-server/SysprepCommand.png
-[Enter Sysprep.exe options]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png
-[The virtual machine is stopped]: ./media/virtual-machines-capture-image-windows-server/SysprepStopped.png
-[Capture an image of the virtual machine]: ./media/virtual-machines-capture-image-windows-server/CaptureVM.png
-[Enter the image name]: ./media/virtual-machines-capture-image-windows-server/Capture.png
-[Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
-[Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
+  [管理磁盘和映像]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
+  [如何创建自定义虚拟机]: ../virtual-machines-create-custom/
+  [如何将数据磁盘附加到虚拟机]: ../storage-windows-attach-disk/
+  [如何登录到运行 Windows Server 的虚拟机]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/
+  [如何使用 Sysprep：简介]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
+  [运行 Sysprep]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png
+  [管理门户]: http://manage.windowsazure.cn
+  [捕获虚拟机]: ./media/virtual-machines-capture-image-windows-server/CaptureVM.png
+  [成功捕获映像]: ./media/virtual-machines-capture-image-windows-server/VMCapturedImageAvailable.png

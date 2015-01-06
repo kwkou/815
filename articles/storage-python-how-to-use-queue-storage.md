@@ -1,151 +1,149 @@
 <properties linkid="develop-python-queue-service" urlDisplayName="Queue Service" pageTitle="How to use the queue service (Python) | Windows Azure" metaKeywords="Azure Queue Service messaging Python" description="Learn how to use the Azure Queue service to create and delete queues, and insert, get, and delete messages. Samples written in Python." metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="" solutions="" manager="" editor="" />
 
+# 如何从 Python 使用队列存储服务
 
+本指南将演示如何使用 Windows Azure 队列存储服务执行常见方案。
+示例是用 Python API 编写的。
+涉及的方案包括**插入**、**扫视**、**获取**
+和**删除**队列消息以及
+**创建和删除队列**。有关队列的详细信息，请参阅[后续步骤][]部分。
 
-# How to Use the Queue Storage Service from Python
-This guide shows you how to perform common scenarios using the Windows
-Azure Queue storage service. The samples are written using the Python
-API. The scenarios covered include **inserting**, **peeking**,
-**getting**, and **deleting** queue messages, as well as **creating and
-deleting queues**. For more information on queues, refer to the [Next Steps][] section.
+## 目录
 
-## Table of Contents
+-   [什么是队列存储？][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [如何：创建队列][]
+-   [如何：在队列中插入消息][]
+-   [如何：扫视下一条消息][]
+-   [如何：取消对下一条消息的排队][]
+-   [如何：更改已排队消息的内容][]
+-   [如何：用于对消息取消排队的其他方法][]
+-   [如何：获取队列长度][]
+-   [如何：删除队列][]
+-   [后续步骤][]
 
-[What is Queue Storage?][]   
- [Concepts][]   
- [Create an Azure Storage Account][]   
- [How To: Create a Queue][]   
- [How To: Insert a Message into a Queue][]   
- [How To: Peek at the Next Message][]   
- [How To: Dequeue the Next Message][]   
- [How To: Change the Contents of a Queued Message][]   
- [How To: Additional Options for Dequeuing Messages][]   
- [How To: Get the Queue Length][]   
- [How To: Delete a Queue][]   
- [Next Steps][]
+[WACOM.INCLUDE [howto-queue-storage][]]
 
-[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
+## 创建 Azure 存储帐户
 
-## <a name="create-account"> </a>Create an Azure Storage Account
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account][]]
 
+**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南][]。
 
-**Note:** If you need to install Python or the Client Libraries, please see the [Python Installation Guide](../python-how-to-install/).
+## 如何：创建队列
 
-## <a name="create-queue"> </a>How To: Create a Queue
+可以通过 **QueueService** 对象来处理队列。以下代码创建 **QueueService** 对象。在你希望在其中以编程方式访问 Azure 存储服务的任何 Python 文件中，将以下代码添加到文件的顶部附近：
 
-The **QueueService** object lets you work with queues. The following code creates a **QueueService** object. Add the following near the top of any Python file in which you wish to programmatically access Azure Storage:
+    from azure.storage import *
 
-	from azure.storage import QueueService
+以下代码使用存储帐户名称和帐户密钥创建 **QueueService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
 
-The following code creates a **QueueService** object using the storage account name and account key. Replace 'myaccount' and 'mykey' with the real account and key.
+    queue_service = QueueService(account_name='myaccount', account_key='mykey')
 
-	queue_service = QueueService(account_name='myaccount', account_key='mykey')
+    queue_service.create_queue('taskqueue')
 
-	queue_service.create_queue('taskqueue')
+## 如何：在队列中插入消息
 
+若要在队列中插入消息，可使用 **put\_message** 方法创建一条
+新消息并将其添加到队列中。
 
-## <a name="insert-message"> </a>How To: Insert a Message into a Queue
+    queue_service.put_message('taskqueue', 'Hello World')
 
-To insert a message into a queue, use the **put\_message** method to
-create a new message and add it to the queue.
+## 如何：扫视下一条消息
 
-	queue_service.put_message('taskqueue', 'Hello World')
+通过调用 **peek\_messages** 方法，你可以扫视队列
+前面的消息，而不会从队列中删除它。默认情况下，
+**peek\_messages** 扫视单条消息。
 
+    messages = queue_service.peek_messages('taskqueue')
+    for message in messages:
+    print(message.message_text)
 
-## <a name="peek-message"> </a>How To: Peek at the Next Message
+## 如何：取消对下一条消息的排队
 
-You can peek at the message in the front of a queue without removing it
-from the queue by calling the **peek\_messages** method. By default,
-**peek\_messages** peeks at a single message.
+你的代码分两步从队列中删除消息。在调用
+**get\_messages** 时，默认情况下你会获得队列中的下一条消息。对于
+从该队列读取消息的任何其他代码，从 **get\_messages** 返回的
+消息将变得不可见。默认情况下，此消息将持续 30 秒
+不可见。若要从队列中删除消息，你还必须
+调用 **delete\_message**。此删除消息的两步过程可确保
+当你的代码因硬件或软件故障而无法处理消息时，
+你的代码的另一实例可以获取同一消息
+并重试。你的代码在处理消息后会立即
+调用 **delete\_message**。
 
-	messages = queue_service.peek_messages('taskqueue')
-	for message in messages:
-		print(message.message_text)
+    messages = queue_service.get_messages('taskqueue')
+    for message in messages:
+    print(message.message_text)
+    queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)
 
+## 如何：更改已排队消息的内容
 
-## <a name="get-message"> </a>How To: Dequeue the Next Message
+你可以更改队列中现有消息的内容。如果消息
+表示工作任务，则可以使用此功能来更新该工作任务的状态。
+以下代码使用 **update\_message** 方法
+来更新消息。
 
-Your code removes a message from a queue in two steps. When you call
-**get\_messages**, you get the next message in a queue by default. A
-message returned from **get\_messages** becomes invisible to any other
-code reading messages from this queue. By default, this message stays
-invisible for 30 seconds. To finish removing the message from the queue,
-you must also call **delete\_message**. This two-step process of removing
-a message assures that when your code fails to process a message due to
-hardware or software failure, another instance of your code can get the
-same message and try again. Your code calls **delete\_message** right
-after the message has been processed.
+    messages = queue_service.get_messages('taskqueue')
+    for message in messages:
+    queue_service.update_message('taskqueue', message.message_id, 'Hello World Again', message.pop_receipt, 0)
 
-	messages = queue_service.get_messages('taskqueue')
-	for message in messages:
-		print(message.message_text)
-		queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)
+## 如何：用于对消息取消排队的其他方法
 
+你可以通过两种方式自定义队列的消息检索。
+首先，你可以获取一批消息（最多 32 条）。其次，你可以
+设置更长或更短的不可见超时，从而允许你的代码使用更多或
+更少的时间来彻底处理每条消息。以下代码示例使用
+**get\_messages** 方法在一次调用中获取 16 条消息。然后，它使用 for 循环
+来处理每条消息。它还将每条消息的不可见超时时间设置为
+ 5 分钟。
 
-## <a name="change-contents"> </a>How To: Change the Contents of a Queued Message
+    messages = queue_service.get_messages('taskqueue', numofmessages=16, visibilitytimeout=5*60)
+    for message in messages:
+    print(message.message_text)
+    queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)
 
-You can change the contents of a message in-place in the queue. If the
-message represents a work task, you could use this feature to update the
-status of the work task. The code below uses the **update\_message**
-method to update a message.
+## 如何：获取队列长度
 
-	messages = queue_service.get_messages('taskqueue')
-	for message in messages:
-		queue_service.update_message('taskqueue', message.message_id, 'Hello World Again', message.pop_receipt, 0)
+你可以获取队列中消息的估计数。
+**get\_queue\_metadata** 方法要求队列服务返回有关队列的元数据，并且应当将
+**x-ms-approximate-messages-count** 用作返回的字典中的索引来查找计数。
+此结果只是一个近似值，因为在队列服务响应你的请求后
+可能会添加或删除消息。
 
-## <a name="advanced-get"> </a>How To: Additional Options for Dequeuing Messages
+    queue_metadata = queue_service.get_queue_metadata('taskqueue')
+    count = queue_metadata['x-ms-approximate-messages-count']
 
-There are two ways you can customize message retrieval from a queue.
-First, you can get a batch of messages (up to 32). Second, you can set a
-longer or shorter invisibility timeout, allowing your code more or less
-time to fully process each message. The following code example uses the
-**get\_messages** method to get 16 messages in one call. Then it processes
-each message using a for loop. It also sets the invisibility timeout to
-five minutes for each message.
+## 如何：删除队列
 
-	messages = queue_service.get_messages('taskqueue', numofmessages=16, visibilitytimeout=5*60)
-	for message in messages:
-		print(message.message_text)
-		queue_service.delete_message('taskqueue', message.message_id, message.pop_receipt)
+若要删除队列及其中包含的所有消息，请
+调用 **delete\_queue** 方法。
 
-## <a name="get-queue-length"> </a>How To: Get the Queue Length
+    queue_service.delete_queue('taskqueue')
 
-You can get an estimate of the number of messages in a queue. The
-**get\_queue\_metadata** method asks the queue service to return metadata
-about the queue, and the **x-ms-approximate-messages-count** should be used as the index into the returned dictionary to find the count.
-The result is only approximate because messages can be added or removed after the
-queue service responds to your request.
+## 后续步骤
 
-	queue_metadata = queue_service.get_queue_metadata('taskqueue')
-	count = queue_metadata['x-ms-approximate-messages-count']
+现在，你已了解有关队列存储的基础知识，可单击下面的链接来了解如何
+执行更复杂的存储任务。
 
-## <a name="delete-queue"> </a>How To: Delete a Queue
+-   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
+-   访问 [Azure 存储服务团队博客][]
 
-To delete a queue and all the messages contained in it, call the
-**delete\_queue** method.
-
-	queue_service.delete_queue('taskqueue')
-
-## <a name="next-steps"> </a>Next Steps
-
-Now that you have learned the basics of queue storage, follow these links
-to learn how to do more complex storage tasks.
-
--   See the MSDN Reference: [Storing and Accessing Data in Azure][]
--   Visit the [Azure Storage Team Blog][]
-
-  [Next Steps]: #next-steps
-  [What is Queue Storage?]: #what-is
-  [Concepts]: #concepts
-  [Create an Azure Storage Account]: #create-account
-  [How To: Create a Queue]: #create-queue
-  [How To: Insert a Message into a Queue]: #insert-message
-  [How To: Peek at the Next Message]: #peek-message
-  [How To: Dequeue the Next Message]: #get-message
-  [How To: Change the Contents of a Queued Message]: #change-contents
-  [How To: Additional Options for Dequeuing Messages]: #advanced-get
-  [How To: Get the Queue Length]: #get-queue-length
-  [How To: Delete a Queue]: #delete-queue
-  [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+  [后续步骤]: #next-steps
+  [什么是队列存储？]: #what-is
+  [概念]: #concepts
+  [创建 Azure 存储帐户]: #create-account
+  [如何：创建队列]: #create-queue
+  [如何：在队列中插入消息]: #insert-message
+  [如何：扫视下一条消息]: #peek-message
+  [如何：取消对下一条消息的排队]: #get-message
+  [如何：更改已排队消息的内容]: #change-contents
+  [如何：用于对消息取消排队的其他方法]: #advanced-get
+  [如何：获取队列长度]: #get-queue-length
+  [如何：删除队列]: #delete-queue
+  [howto-queue-storage]: ../includes/howto-queue-storage.md
+  [create-storage-account]: ../includes/create-storage-account.md
+  [Python 安装指南]: /zh-cn/documentation/articles/python-how-to-install/
+  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/

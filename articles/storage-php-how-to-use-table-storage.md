@@ -1,480 +1,496 @@
 <properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="How to use table storage (PHP) | Windows Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="Learn how to use the Table service from PHP to create and delete a table, and insert, delete, and query the table." metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
 
-# How to use the Table service from PHP
+# 如何通过 PHP 使用表服务
 
-This guide will show you how to perform common scenarios using the Azure Table service. The samples are written in PHP and use the [Azure SDK for PHP][download]. The scenarios covered include **creating and deleting a table, and inserting, deleting, and querying entities in a table**. For more information on the Azure Table service, see the [Next Steps](#NextSteps) section.
+本指南将演示如何使用 Azure 表服务执行常见方案。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][]。所涉及的任务包括**创建和删除表以及在表中插入、删除和查询实体**。有关 Azure 表服务的详细信息，请参阅[后续步骤][]部分。
 
-##Table of contents
+## 目录
 
-* [What is the Table Service](#what-is)
-* [Concepts](#concepts)
-* [Create an Azure storage account](#CreateAccount)
-* [Create a PHP application](#CreateApplication)
-* [Configure your application to access the Table service](#ConfigureStorage)
-* [Setup an Azure storage connection](#ConnectionString)
-* [How to: Create a table](#CreateTable)
-* [How to: Add an entity to a table](#AddEntity)
-* [How to: Retrieve a single entity](#RetrieveEntity)
-* [How to: Retrieve all entities in a partition](#RetEntitiesInPartition)
-* [How to: Retrieve a subset of entities in a partition](#RetrieveSubset)
-* [How to: Retrieve a subset of entity properties](#RetPropertiesSubset)
-* [How to: Update an entity](#UpdateEntity)
-* [How to: Batch table operations](#BatchOperations)
-* [How to: Delete a table](#DeleteTable)
-* [Next Steps](#NextSteps)
+-   [什么是表服务？][]
+-   [概念][]
+-   [创建 Azure 存储帐户][]
+-   [创建 PHP 应用程序][]
+-   [配置你的应用程序以访问表服务][]
+-   [设置 Azure 存储连接][]
+-   [如何：创建表][]
+-   [如何：将实体添加到表][]
+-   [如何：检索单个实体][]
+-   [如何：检索分区中的所有实体][]
+-   [如何：检索分区中的一部分实体][]
+-   [如何：检索一部分实体属性][]
+-   [如何：更新实体][]
+-   [如何：对表操作进行批处理][]
+-   [如何：删除表][]
+-   [后续步骤][]
 
-[WACOM.INCLUDE [howto-table-storage](../includes/howto-table-storage.md)]
+[WACOM.INCLUDE [howto-table-storage][]]
 
-##<a id="CreateAccount"></a>Create an Azure storage account
+## 创建 Azure 存储帐户
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+[WACOM.INCLUDE [create-storage-account][]]
 
-##<a id="CreateApplication"></a>Create a PHP application
+## 创建 PHP 应用程序
 
-The only requirement for creating a PHP application that accesses the Azure Table service is the referencing of classes in the Azure SDK for PHP from within your code. You can use any development tools to create your application, including Notepad.
+创建访问 Azure 表服务的 PHP 应用程序的唯一要求是从代码中引用 Azure SDK for PHP 中的类。你可以使用任何开发工具（包括“记事本”）创建应用程序。
 
-In this guide, you will use Table service features which can be called from within a PHP application locally, or in code running within an Azure web role, worker role, or  Website.
+在本指南中，你将使用表服务功能，这些功能可在 PHP 应用程序中本地调用，或通过在 Azure 的 Web 角色、辅助角色或网站中运行的代码调用。
 
-##<a id="GetClientLibrary"></a>Get the Azure Client Libraries
+## 获取 Azure 客户端库
 
-[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
+[WACOM.INCLUDE [get-client-libraries][]]
 
-##<a id="ConfigureStorage"></a>Configure your application to access the Table service
+## 配置你的应用程序以访问表服务
 
-To use the Azure Table service APIs, you need to:
+若要使用 Azure 表服务 API，你需要：
 
-1. Reference the autoloader file using the [require_once][require_once] statement, and
-2. Reference any classes you might use.
+1.  使用 [require\_once][] 语句引用 autoloader 文件，并
+2.  引用可使用的所有类。
 
-The following example shows how to include the autoloader file and reference the **ServicesBuilder** class.
+下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。
 
 > [WACOM.NOTE]
-> This example (and other examples in this article) assume you have installed the PHP Client Libraries for Azure via Composer. If you installed the libraries manually or as a PEAR package, you will need to reference the <code>WindowsAzure.php</code> autoloader file.
+> 本示例（以及本文中的其他示例）假定你已通过 Composer 安装了用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 `WindowsAzure.php` autoloader 文件。
 
-	require_once 'vendor\autoload.php';
-	use WindowsAzure\Common\ServicesBuilder;
+    require_once 'vendor\autoload.php';
+    use WindowsAzure\Common\ServicesBuilder;
 
+在下面的示例中，`require_once` 语句将始终显示，但只会引用执行该示例所需的类。
 
-In the examples below, the `require_once` statement will be shown always, but only the classes necessary for the example to execute will be referenced.
+## 设置 Azure 存储连接
 
-##<a id="ConnectionString"></a>Setup an Azure storage connection
+若要实例化 Azure 表服务客户端，你必须首先具有有效的连接字符串。表服务连接字符串的格式为：
 
-To instantiate an Azure Table service client you must first have a valid connection string. The format for the table service connection string is:
+对于访问实时服务：
 
-For accessing a live service:
+    DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
+对于访问模拟器存储：
 
-For accessing the emulator storage:
+    UseDevelopmentStorage=true
 
-	UseDevelopmentStorage=true
+若要创建任何 Azure 服务客户端，你将需要使用 **ServicesBuilder** 类。你可以：
 
+-   将连接字符串直接传递给此类或
+-   使用 **CloudConfigurationManager (CCM)** 检查多个外部源以获取连接字符串：
 
-To create any Azure service client you need to use the **ServicesBuilder** class. You can:
+    -   默认情况下，它附带了对一个外部源的支持 - 环境变量
+    -   你可通过扩展 **ConnectionStringSource** 类来添加新源
 
-* pass the connection string directly to it or
-* use the **CloudConfigurationManager (CCM)** to check multiple external sources for the connection string:
-	* by default it comes with support for one external source - environmental variables
-	* you can add new sources by extending the **ConnectionStringSource** class
+在此处列出的示例中，将直接传递连接字符串。
 
-For the examples outlined here, the connection string will be passed directly.
+    require_once 'vendor\autoload.php';
 
-	require_once 'vendor\autoload.php';
+    use WindowsAzure\Common\ServicesBuilder;
 
-	use WindowsAzure\Common\ServicesBuilder;
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+## 如何：创建表
 
+利用 **TableRestProxy** 对象，可以使用 **createTable** 方法创建表。创建表时，可以设置表服务超时。（有关表服务超时的详细信息，请参阅[为表服务操作设置超时][]。）
 
-##<a id="CreateTable"></a>How to: create a table
-
-A **TableRestProxy** object lets you create a table with the **createTable** method. When creating a table, you can set the Table Service timeout. (For more information about the table service timeout, see [Setting Timeouts for Table Service Operations][table-service-timeouts].)
+    require_once 'vendor\autoload.php';
 
-	require_once 'vendor\autoload.php';
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
 
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+    try {
+    // 创建表。
+    $tableRestProxy->createTable("mytable");
+    }
+    catch(ServiceException $e){
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    // 基于错误代码和消息处理异常。
+    // 可以在以下位置找到错误代码和消息： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    }
 
-	try	{
-		// Create table.
-		$tableRestProxy->createTable("mytable");
-	}
-	catch(ServiceException $e){
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		// Handle exception based on error codes and messages.
-		// Error codes and messages can be found here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-	}
-
-For information about restrictions on Table names, see [Understanding the Table Service Data Model][table-data-model].
-
-##<a id="AddEntity"></a>How to: Add an entity to a table
-
-To add an entity to a table, create a new **Entity** object and pass it to **TableRestProxy->insertEntity**. Note that when you create an entity you must specify a `PartitionKey` and `RowKey`. These are the unique identifiers for an entity and are values that can be queried much faster than other entity properties. The system uses `PartitionKey` to automatically distribute the table’s entities over many storage nodes. Entities with the same `PartitionKey` are stored on the same node. (Operations on multiple entities stored on the same node will perform better than on entities stored across different nodes.) The `RowKey` is the unique ID of an entity within a partition.
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Table\Models\Entity;
-	use WindowsAzure\Table\Models\EdmType;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	$entity = new Entity();
-	$entity->setPartitionKey("tasksSeattle");
-	$entity->setRowKey("1");
-	$entity->addProperty("Description", null, "Take out the trash.");
-	$entity->addProperty("DueDate", 
-						 EdmType::DATETIME, 
-						 new DateTime("2012-11-05T08:15:00-08:00"));
-	$entity->addProperty("Location", EdmType::STRING, "Home");
-	
-	try{
-		$tableRestProxy->insertEntity("mytable", $entity);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-	}
-
-For information about Table properties and types, see [Understanding the Table Service Data Model][table-data-model].
-
-The **TableRestProxy** class offers two alternative methods for inserting entities: **insertOrMergeEntity** and **insertOrReplaceEntity**. To use these methods, create a new **Entity** and pass it as a parameter to either method. Each method will insert the entity if it does not exist. If the entity already exists, **insertOrMergeEntity** will update property values if the properties already exist and add new properties if they do not exist, while **insertOrReplaceEntity** completely replaces an existing entity. The following example shows how to use **insertOrMergeEntity**. If the entity with `PartitionKey` "tasksSeattle" and `RowKey` "1" does not already exist, it will be inserted. However, if it has previously been inserted (as shown in the example above), the `DueDate` property will be updated and the `Status` property will be added. The `Description` and `Location` properties are also updated, but with values that effectively leave them unchanged. If these latter two properties were not added as shown in the example, but existed on the target entity, their existing values would remain unchanged.
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Table\Models\Entity;
-	use WindowsAzure\Table\Models\EdmType;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	//Create new entity.
-	$entity = new Entity();
-	
-	// PartitionKey and RowKey are required.
-	$entity->setPartitionKey("tasksSeattle");
-	$entity->setRowKey("1");
-	
-	// If entity exists, existing properties are updated with new values and
-	// new properties are added. Missing properties are unchanged.
-	$entity->addProperty("Description", null, "Take out the trash.");
-	$entity->addProperty("DueDate", EdmType::DATETIME, new DateTime()); // Modified the DueDate field.
-	$entity->addProperty("Location", EdmType::STRING, "Home");
-	$entity->addProperty("Status", EdmType::STRING, "Complete"); // Added Status field.
-	
-	try	{
-		// Calling insertOrReplaceEntity, instead of insertOrMergeEntity as shown,
-		// would simply replace the entity with PartitionKey "tasksSeattle" and RowKey "1".
-		$tableRestProxy->insertOrMergeEntity("mytable", $entity);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-	   
-
-##<a id="RetrieveEntity"></a>How to: Retrieve a single entity
-
-The **TableRestProxy->getEntity** method allows you to retrieve a single entity by querying for its `PartitionKey` and `RowKey`. In the example below, the partition key `tasksSeattle` and row key `1` are passed to the **getEntity** method.
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	try	{
-		$result = $tableRestProxy->getEntity("mytable", "tasksSeattle", 1);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-	
-	$entity = $result->getEntity();
-
-	echo $entity->getPartitionKey().":".$entity->getRowKey();
-
-##<a id="RetEntitiesInPartition"></a>How to: Retrieve all entities in a partition
-
-Entity queries are constructed using filters (for more information, see [Querying Tables and Entities][filters]). To retrieve all entities in partition, use the filter "PartitionKey eq *partition_name*". The following example shows how to retrieve all entities in the `tasksSeattle` partition by passing a filter to the **queryEntities** method.
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	$filter = "PartitionKey eq 'tasksSeattle'";
-	
-	try	{
-		$result = $tableRestProxy->queryEntities("mytable", $filter);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-	
-	$entities = $result->getEntities();
-	
-	foreach($entities as $entity){
-		echo $entity->getPartitionKey().":".$entity->getRowKey()."<br />";
-	}
-
-##<a id="RetrieveSubset"></a>How to: Retrieve a subset of entities in a partition
-
-The same pattern used in the previous example can be used to retrieve any subset of entities in a partition. The subset of entities you retrieve will be determined by the filter you use (for more information, see [Querying Tables and Entities][filters]).The following example shows how to use a filter to retrieve all entities with a specific `Location` and a `DueDate` less than a specified date.
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	$filter = "Location eq 'Office' and DueDate lt '2012-11-5'";
-	
-	try	{
-		$result = $tableRestProxy->queryEntities("mytable", $filter);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-	
-	$entities = $result->getEntities();
-	
-	foreach($entities as $entity){
-		echo $entity->getPartitionKey().":".$entity->getRowKey()."<br />";
-	}
-
-##<a id="RetPropertiesSubset"></a>How to: Retrieve a subset of entity properties
-
-A query can retrieve a subset of entity properties. This technique, called *projection*, reduces bandwidth and can improve query performance, especially for large entities. To specify a property to be retrieved, pass the name of the property to the **Query->addSelectField** method. You can call this method multiple times to add more properties. After executing **TableRestProxy->queryEntities**, the returned entities will only have the selected properties. (If you want to return a subset of Table entities, use a filter as shown in the queries above.)
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Table\Models\QueryEntitiesOptions;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	$options = new QueryEntitiesOptions();
-	$options->addSelectField("Description");
-	
-	try	{
-		$result = $tableRestProxy->queryEntities("mytable", $options);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-	
-	// All entities in the table are returned, regardless of whether 
-	// they have the Description field.
-	// To limit the results returned, use a filter.
-	$entities = $result->getEntities();
-
-	foreach($entities as $entity){
-		$description = $entity->getProperty("Description")->getValue();
-		echo $description."<br />";
-	}
-
-##<a id="UpdateEntity"></a>How to: Update an entity
-
-An existing entity can be updated by using the **Entity->setProperty** and **Entity->addProperty** methods on the entity, and then calling **TableRestProxy->updateEntity**. The following example retrieves an entity, modifies one property, removes another property, and adds a new property. Note that removing a property is done by setting its value to **null**. 
-
-	require_once 'vendor\autoload.php';
-	
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Table\Models\Entity;
-	use WindowsAzure\Table\Models\EdmType;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	$result = $tableRestProxy->getEntity("mytable", "tasksSeattle", 1);
-	
-	$entity = $result->getEntity();
-	
-	$entity->setPropertyValue("DueDate", new DateTime()); //Modified DueDate.
-	
-	$entity->setPropertyValue("Location", null); //Removed Location.
-	
-	$entity->addProperty("Status", EdmType::STRING, "In progress"); //Added Status.
-
-	try	{
-		$tableRestProxy->updateEntity("mytable", $entity);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-
-##<a id="DeleteEntity"></a>How to: Delete an entity
-
-To delete an entity, pass the table name, and the entity's `PartitionKey` and `RowKey` to the **TableRestProxy->deleteEntity** method.
-
-	require_once 'vendor\autoload.php';
-
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	try	{
-		// Delete entity.
-		$tableRestProxy->deleteEntity("mytable", "tasksSeattle", "2");
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
-
-Note that for concurrency checks, you can set the Etag for an entity to be deleted by using the **DeleteEntityOptions->setEtag** method and passing the **DeleteEntityOptions** object to **deleteEntity** as a fourth parameter.
-
-##<a id="BatchOperations"></a>How to: Batch table operations
-
-The **TableRestProxy->batch** method allows you to execute multiple operations in a single request. The pattern here involves adding operations to **BatchRequest** object and then passing the **BatchRequest** object to the **TableRestProxy->batch** method. To add an operation to a **BatchRequest** object, you can call any of the following methods multiple times:
-
-* **addInsertEntity** (adds an insertEntity operation)
-* **addUpdateEntity** (adds an updateEntity operation)
-* **addMergeEntity** (adds a mergeEntity operation)
-* **addInsertOrReplaceEntity** (adds an insertOrReplaceEntity operation)
-* **addInsertOrMergeEntity** (adds an insertOrMergeEntity operation)
-* **addDeleteEntity** (adds a deleteEntity operation)
-
-The following example shows how to execute **insertEntity** and **deleteEntity** operations in a single request:
-
-	require_once 'vendor\autoload.php';
-	
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\Table\Models\Entity;
-	use WindowsAzure\Table\Models\EdmType;
-	use WindowsAzure\Table\Models\BatchOperations;
-
- 	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	// Create list of batch operation.
-	$operations = new BatchOperations();
-	
-	$entity1 = new Entity();
-	$entity1->setPartitionKey("tasksSeattle");
-	$entity1->setRowKey("2");
-	$entity1->addProperty("Description", null, "Clean roof gutters.");
-	$entity1->addProperty("DueDate", 
-						  EdmType::DATETIME, 
-						  new DateTime("2012-11-05T08:15:00-08:00"));
-	$entity1->addProperty("Location", EdmType::STRING, "Home");
-	
-	// Add operation to list of batch operations.
+有关表名称的限制的信息，请参阅[了解表服务数据模型][]。
+
+## 如何：将实体添加到表
+
+若要将实体添加到表，请创建一个新的 **Entity** 对象并将其传递到 **TableRestProxy-\>insertEntity**。请注意，在创建实体时，你必须指定 `PartitionKey` 和 `RowKey`。这些值是实体的唯一标识符，并且其查询速度比其他实体属性的查询速度快得多。系统使用 `PartitionKey` 自动将表的实体分发到多个存储节点上。具有相同的 `PartitionKey` 的实体存储在同一个节点上。（对存储在同一节点上的多个实体执行操作要将比对存储在不同节点上的实体执行的操作的效果更佳。）`RowKey` 是实体在分区中的唯一 ID。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+    use WindowsAzure\Table\Models\Entity;
+    use WindowsAzure\Table\Models\EdmType;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    $entity = new Entity();
+    $entity->setPartitionKey("tasksSeattle");
+    $entity->setRowKey("1");
+    $entity->addProperty("Description", null, "Take out the trash.");
+    $entity->addProperty("DueDate", 
+    EdmType::DATETIME, 
+    new DateTime("2012-11-05T08:15:00-08:00"));
+    $entity->addProperty("Location", EdmType::STRING, "Home");
+
+    try {
+    $tableRestProxy->insertEntity("mytable", $entity);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    }
+
+有关表属性和类型的信息，请参阅[了解表服务数据模型][]。
+
+**TableRestProxy** 类提供了用于插入实体的两个替代方法：**insertOrMergeEntity** 和 **insertOrReplaceEntity**。若要使用这些方法，请创建一个新的 **Entity**，并将其作为参数传递到上述任一方法。如果实体不存在，则每种方法都将插入实体。在实体已存在的情况下，如果属性已存在，则 **insertOrMergeEntity** 将更新属性值；如果属性不存在，则该方法将添加新属性，而 **insertOrReplaceEntity** 将完全替换现有实体。下面的示例演示如何使用 **insertOrMergeEntity**。如果 `PartitionKey` 为“tasksSeattle”且 `RowKey` 为“1”的实体不存在，则将会插入该实体。但是，如果之前已插入该实体（如上面的示例所示），则将更新 `DueDate` 属性并添加 `Status` 属性。系统还将更新 `Description` 和 `Location` 属性，但使用的值实际上会使其保持不变。如果后面两个属性不是如示例中所示添加的，但已存在于目标实体上，则其现有值将保持不变。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+    use WindowsAzure\Table\Models\Entity;
+    use WindowsAzure\Table\Models\EdmType;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    //创建新实体。
+    $entity = new Entity();
+
+    // PartitionKey 和 RowKey 是必需的。
+    $entity->setPartitionKey("tasksSeattle");
+    $entity->setRowKey("1");
+
+    // 如果实体存在，则将使用新值更新现有属性并
+    // 添加新属性。缺少的属性不会更改。
+    $entity->addProperty("Description", null, "Take out the trash.");
+    $entity->addProperty("DueDate", EdmType::DATETIME, new DateTime()); // 修改了 DueDate 字段。
+    $entity->addProperty("Location", EdmType::STRING, "Home");
+    $entity->addProperty("Status", EdmType::STRING, "Complete"); // 添加了 Status 字段。
+
+    try {
+    // 如果调用 insertOrReplaceEntity（而不是如下所示调用 insertOrMergeEntity），
+    // 则只会简单地替换 PartitionKey 为“tasksSeattle”且 RowKey 为“1”的实体。
+    $tableRestProxy->insertOrMergeEntity("mytable", $entity);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+       
+
+## 如何：检索单个实体
+
+利用 **TableRestProxy-\>getEntity** 方法，可以通过查询实体的 `PartitionKey` 和 `RowKey` 来检索单个实体。在下面的示例中，分区键 `tasksSeattle` 和行键 `1` 将传递到 **getEntity** 方法。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    try {
+    $result = $tableRestProxy->getEntity("mytable", "tasksSeattle", 1);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+
+    $entity = $result->getEntity();
+
+    echo $entity->getPartitionKey().":".$entity->getRowKey();
+
+## 如何：检索分区中的所有实体
+
+实体查询是使用筛选器构造的（有关详细信息，请参阅[查询表和实体][]）。若要检索分区中的所有实体，请使用筛选器“PartitionKey eq *partition\_name*”。下面的示例演示了如何通过将筛选器传递到 **queryEntities** 方法来检索 `tasksSeattle` 分区中的所有实体。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    $filter = "PartitionKey eq 'tasksSeattle'";
+
+    try {
+    $result = $tableRestProxy->queryEntities("mytable", $filter);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+
+    $entities = $result->getEntities();
+
+    foreach($entities as $entity){
+    echo $entity->getPartitionKey().":".$entity->getRowKey()."<br />";
+    }
+
+## 如何：检索分区中的一部分实体
+
+可以使用上一示例中使用的同一模式来检索分区中的部分实体。你检索的部分实体将由你使用的筛选器确定（有关详细信息，请参阅[查询表和实体][]）。下面的示例演示了如何使用筛选器检索具有特定的 `Location` 且 `DueDate` 早于指定日期的所有实体。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    $filter = "Location eq 'Office' and DueDate lt '2012-11-5'";
+
+    try {
+    $result = $tableRestProxy->queryEntities("mytable", $filter);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+
+    $entities = $result->getEntities();
+
+    foreach($entities as $entity){
+    echo $entity->getPartitionKey().":".$entity->getRowKey()."<br />";
+    }
+
+## 如何：检索一部分实体属性
+
+查询可检索一部分实体属性。此方法称为*投影*，可减少带宽并提高查询性能，尤其适用于大型实体。若要指定要检索的属性，请将该属性的名称传递到 **Query-\>addSelectField** 方法。可以多次调用此方法来添加更多属性。执行 **TableRestProxy-\>queryEntities** 后，返回的实体将仅具有选定的属性。（若要返回一部分表实体，请使用上述查询中所示的筛选器。）
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+    use WindowsAzure\Table\Models\QueryEntitiesOptions;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    $options = new QueryEntitiesOptions();
+    $options->addSelectField("Description");
+
+    try {
+    $result = $tableRestProxy->queryEntities("mytable", $options);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+
+    // 将返回表中的所有实体，无论它们 
+    // 是否具有 Description 字段。
+    // 若要限制返回的结果，请使用筛选器。
+    $entities = $result->getEntities();
+
+    foreach($entities as $entity){
+    $description = $entity->getProperty("Description")->getValue();
+    echo $description."<br />";
+    }
+
+## 如何：更新实体
+
+可通过对现有实体使用 **Entity-\>setProperty** 和 **Entity-\>addProperty** 方法并调用 **TableRestProxy-\>updateEntity** 来更新该实体。下面的示例将检索一个实体、修改一个属性、删除另一个属性并添加一个新属性。请注意，通过将属性的值设为 **null** 可删除该属性。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+    use WindowsAzure\Table\Models\Entity;
+    use WindowsAzure\Table\Models\EdmType;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    $result = $tableRestProxy->getEntity("mytable", "tasksSeattle", 1);
+
+    $entity = $result->getEntity();
+
+    $entity->setPropertyValue("DueDate", new DateTime()); //修改了 DueDate。
+
+    $entity->setPropertyValue("Location", null); //删除了 Location。
+
+    $entity->addProperty("Status", EdmType::STRING, "In progress"); //添加了 Status。
+
+    try {
+    $tableRestProxy->updateEntity("mytable", $entity);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+
+## 如何：删除实体
+
+若要删除实体，请将表名以及实体的 `PartitionKey` 和 `RowKey` 传递到 **TableRestProxy-\>deleteEntity** 方法。
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    try {
+    // 删除实体。
+    $tableRestProxy->deleteEntity("mytable", "tasksSeattle", "2");
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
+
+请注意，为了进行并发检查，可以使用 **DeleteEntityOptions-\>setEtag** 方法并将 **DeleteEntityOptions** 对象作为第四个参数传递到 **deleteEntity**，来为要删除的实体设置 Etag。
+
+## 如何：对表操作进行批处理
+
+利用 **TableRestProxy-\>batch** 方法，你可以通过一个请求执行多个操作。此处的模式涉及将操作添加到 **BatchRequest** 对象，然后将 **BatchRequest** 对象传递到 **TableRestProxy-\>batch** 方法。若要将操作添加到 **BatchRequest** 对象，可以多次调用以下任一方法：
+
+-   **addInsertEntity**（添加 insertEntity 操作）
+-   **addUpdateEntity**（添加 updateEntity 操作）
+-   **addMergeEntity**（添加 mergeEntity 操作）
+-   **addInsertOrReplaceEntity**（添加 insertOrReplaceEntity 操作）
+-   **addInsertOrMergeEntity**（添加 insertOrMergeEntity 操作）
+-   **addDeleteEntity**（添加 deleteEntity 操作）
+
+下面的示例演示了如何通过单个请求执行 **insertEntity** 和 **deleteEntity** 操作：
+
+    require_once 'vendor\autoload.php';
+
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
+    use WindowsAzure\Table\Models\Entity;
+    use WindowsAzure\Table\Models\EdmType;
+    use WindowsAzure\Table\Models\BatchOperations;
+
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+    // 创建批处理操作列表。
+    $operations = new BatchOperations();
+
+    $entity1 = new Entity();
+    $entity1->setPartitionKey("tasksSeattle");
+    $entity1->setRowKey("2");
+    $entity1->addProperty("Description", null, "Clean roof gutters.");
+    $entity1->addProperty("DueDate", 
+    EdmType::DATETIME, 
+    new DateTime("2012-11-05T08:15:00-08:00"));
+    $entity1->addProperty("Location", EdmType::STRING, "Home");
+
+    // 将操作添加到批处理操作列表中。
     $operations->addInsertEntity("mytable", $entity1);
 
-	// Add operation to list of batch operations.
-	$operations->addDeleteEntity("mytable", "tasksSeattle", "1");
-	
-	try	{
-		$tableRestProxy->batch($operations);
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
+    // 将操作添加到批处理操作列表中。
+    $operations->addDeleteEntity("mytable", "tasksSeattle", "1");
 
-For more information about batching Table operations, see [Performing Entity Group Transactions][entity-group-transactions].
+    try {
+    $tableRestProxy->batch($operations);
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
 
-##<a id="DeleteTable"></a>How to: Delete a table
+有关对表操作进行批处理的详细信息，请参阅[执行实体组事务][]。
 
-Finally, to delete a table, pass the table name to the **TableRestProxy->deleteTable** method.
+## 如何：删除表
 
-	require_once 'vendor\autoload.php';
+最后，若要删除表，请将表名传递到 **TableRestProxy-\>deleteTable** 方法。
 
-	use WindowsAzure\Common\ServicesBuilder;
-	use WindowsAzure\Common\ServiceException;
+    require_once 'vendor\autoload.php';
 
-	// Create table REST proxy.
-	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
-	
-	try	{
-		// Delete table.
-		$tableRestProxy->deleteTable("mytable");
-	}
-	catch(ServiceException $e){
-		// Handle exception based on error codes and messages.
-		// Error codes and messages are here: 
-		// http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
-		$code = $e->getCode();
-		$error_message = $e->getMessage();
-		echo $code.": ".$error_message."<br />";
-	}
+    use WindowsAzure\Common\ServicesBuilder;
+    use WindowsAzure\Common\ServiceException;
 
-##<a id="NextSteps"></a>Next steps
+    // 创建表 REST 代理。
+    $tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
 
-Now that you’ve learned the basics of the Azure Table Service, follow these links to learn how to do more complex storage tasks.
+    try {
+    // 删除表。
+    $tableRestProxy->deleteTable("mytable");
+    }
+    catch(ServiceException $e){
+    // 基于错误代码和消息处理异常。
+    // 错误代码和消息位于以下位置： 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.":".$error_message."<br />";
+    }
 
-- See the MSDN Reference: [Storing and Accessing Data in Azure] []
-- Visit the Azure Storage Team Blog: <http://blogs.msdn.com/b/windowsazurestorage/>
+## 后续步骤
 
-[download]: http://azure.microsoft.com/zh-cn/documentation/articles/php-download-sdk/?fb=zh-cn
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-[require_once]: http://php.net/require_once
-[table-service-timeouts]: http://msdn.microsoft.com/zh-cn/library/azure/dd894042.aspx
+现在，你已了解了 Azure 表服务的基础知识，单击下面的链接可了解如何执行更复杂的存储任务。
 
-[table-data-model]: http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx
-[filters]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
-[entity-group-transactions]: http://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
+-   查看 MSDN 参考：[在 Azure 中存储和访问数据][]
+-   访问 Azure 存储服务团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
+
+  [Azure SDK for PHP]: http://go.microsoft.com/fwlink/?LinkID=252473
+  [后续步骤]: #NextSteps
+  [什么是表服务？]: #what-is
+  [概念]: #concepts
+  [创建 Azure 存储帐户]: #CreateAccount
+  [创建 PHP 应用程序]: #CreateApplication
+  [配置你的应用程序以访问表服务]: #ConfigureStorage
+  [设置 Azure 存储连接]: #ConnectionString
+  [如何：创建表]: #CreateTable
+  [如何：将实体添加到表]: #AddEntity
+  [如何：检索单个实体]: #RetrieveEntity
+  [如何：检索分区中的所有实体]: #RetEntitiesInPartition
+  [如何：检索分区中的一部分实体]: #RetrieveSubset
+  [如何：检索一部分实体属性]: #RetPropertiesSubset
+  [如何：更新实体]: #UpdateEntity
+  [如何：对表操作进行批处理]: #BatchOperations
+  [如何：删除表]: #DeleteTable
+  [howto-table-storage]: ../includes/howto-table-storage.md
+  [create-storage-account]: ../includes/create-storage-account.md
+  [get-client-libraries]: ../includes/get-client-libraries.md
+  [require\_once]: http://php.net/require_once
+  [为表服务操作设置超时]: http://msdn.microsoft.com/zh-cn/library/azure/dd894042.aspx
+  [了解表服务数据模型]: http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx
+  [查询表和实体]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
+  [执行实体组事务]: http://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx
+  [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx

@@ -1,33 +1,27 @@
 <properties linkid="manage-linux-common-tasks-user-root-privileges" urlDisplayName="Use root privileges" pageTitle="Use root privileges on Linux virtual machines in Azure" metaKeywords="" description="Learn how to use root privileges on a Linux virtual machine in Azure." metaCanonical="" services="virtual-machines" documentationCenter="" title="Using root privileges on Linux virtual machines in Azure" authors="" solutions="" manager="" editor="" />
 
+# 在 Azure 中使用 Linux 虚拟机的根权限
 
+用户可以使用`sudo` 命令在 Linux 虚拟机上使用提升的特权来运行命令。但是，体验可能因系统设置方式而异。
 
+1.  **SSH 密钥和密码或仅密码** - 虚拟机设置时使用的是证书（`.CER` 文件）和密码，或者只是用户名和密码。在这种情况下，`sudo` 在执行命令前将提示用户输入密码。
 
+2.  **仅 SSH 密钥** - 虚拟机设置时使用的是证书（`.cer` 或`.pem` 文件），但没有密码。在这种情况下，`sudo` 在执行命令前**将不**提示用户输入密码。
 
-# Using root privileges on Linux virtual machines in Azure
+## SSH 密钥和密码，或仅密码
 
-By default, the `root` user is disabled on Linux virtual machines in Azure. Users can run commands with elevated privileges by using the `sudo` command. However, the experience may vary depending on how the system was provisioned.
+使用 SSH 密钥或密码身份验证登录到 Linux 虚拟机中，然后使用`sudo`运行命令，例如：
 
-1. **SSH key and password OR password only** - the virtual machine was provisioned with either a certificate (`.CER` file) or SSH key as well as a password, or just a user name and password. In this case `sudo` will prompt for the user's password before executing the command.
+    # sudo <command>
+    [sudo] password for azureuser:
 
-2. **SSH key only** - the virtual machine was provisioned with a certificate (`.cer` or `.pem` file) or SSH key, but no password.  In this case `sudo` **will not** prompt for the user's password before executing the command.
+在这种情况下，将会提示用户输入密码。输入密码后，`sudo` 将使用`root` 特权来运行命令。
 
+## 仅 SSH 密钥
 
-## SSH Key and Password, or Password Only
+使用 SSH 密钥身份验证登录到 Linux 虚拟机中，然后使用`sudo`运行命令，例如：
 
-Log into the Linux virtual machine using SSH key or password authentication, then run commands using `sudo`, for example:
+    # sudo <command>
 
-	# sudo <command>
-	[sudo] password for azureuser:
-
-In this case the user will be prompted for a password. After entering the password `sudo` will run the command with `root` privileges.
-
-
-## SSH Key Only
-
-Log into the Linux virtual machine using SSH key authentication, then run commands using `sudo`, for example:
-
-	# sudo <command>
-
-In this case the user will **not** be prompted for a password. After pressing `<enter>`, `sudo` will run the command with `root` privileges.
+在这种情况下，将**不**会提示用户输入密码。在按`<enter>` 键后，`sudo` 将使用`root` 特权来运行命令。
 

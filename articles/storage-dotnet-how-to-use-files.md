@@ -1,174 +1,164 @@
-<properties urlDisplayName="File Service" pageTitle="How to use Azure File storage | Windows Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Windows Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Windows Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="Learn how to use Windows Azure File storage to create file shares and manage file content. Samples are written in PowerShell and C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
 
-# How to use Azure File storage
+<tags ms.service="storage" ms.workload="storage" ms.tgt_pltfrm="na" ms.devlang="dotnet" ms.topic="article" ms.date="11/10/2014" ms.author="tamram" />
 
-In this getting started guide, we demonstrate the basics of using Windows Azure File storage. First we use PowerShell to show how to create a new Azure File share, add a directory, upload a local file to the share, and list the files in the directory. Then we show how to mount the file share from an Azure virtual machine, just as you would any SMB share.
+# 如何使用 Azure 文件存储
 
-For users who may want to access files in a share from an on-premise application as well as from an Azure virtual machine or cloud service, we show how to use the Azure .NET Storage Client Library to work with the file share from a desktop application.
+在此入门指南中，我们将演示使用 Windows Azure 文件存储的基础知识。首先，我们将使用 PowerShell 来演示如何创建新的 Azure 文件共享、如何添加目录、如何将本地文件上载到该共享，以及如何列出该目录中的文件。然后，我们将演示如何从 Azure 虚拟机装载文件共享，就像装载任何 SMB 共享一样。
 
-> [WACOM.NOTE] Running the .NET code examples in this guide requires the Azure .NET Storage Client Library 4.x or later. The Storage Client Library is available via [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/).
+对于可能想要从本地应用程序以及 Azure 虚拟机或云服务访问共享中的文件的用户，我们将演示如何使用 Azure .NET 存储客户端库通过桌面应用程序处理文件共享。
 
-
-##Table of contents
-
--   [What is File storage?][]
--   [File storage concepts][]
--   [Create an Azure storage account][]
--   [Use PowerShell to create a file share][]
--	[Mount the share from an Azure virtual machine][]
--   [Create an on-premise application to access File storage][]
--   [Next steps][]
+> [WACOM.NOTE] 运行本指南中的 .NET 代码示例需要 Azure .NET 存储客户端库 4.x 或更高版本。存储客户端库可通过以下方式获得：[NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/).
 
 
-##<a name="what-is-file-storage"></a>What is Azure File storage?
+##目录
 
-File storage offers shared storage for applications using the standard SMB 2.1 protocol. Windows Azure virtual machines and cloud services can share file data across application components via mounted shares, and on-premise applications can access file data in a share via the File storage API.
+-   [什么是文件存储？][]
+-   [文件存储概念][]
+-   [创建 Azure 存储帐户][]
+-   [使用 PowerShell 创建文件共享][]
+-	[从 Azure 虚拟机装载共享][]
+-   [创建本地应用程序以访问文件存储][]
+-   [后续步骤][]
 
-Applications running in Azure virtual machines or cloud services can mount a File storage share to access file data, just as a desktop application would mount a typical SMB share. Any number of Azure virtual machines or roles can mount and access the File storage share simultaneously.
 
-Since a File storage share is a standard SMB 2.1 file share, applications running in Azure can access data in the share via file I/O APIs. Developers can therefore leverage their existing code and skills to migrate existing applications. IT Pros can use PowerShell cmdlets to create, mount, and manage File storage shares as part of the administration of Azure applications. This guide will show examples of both.
+##<a name="what-is-file-storage"></a>什么是 Azure 文件存储？
 
-Common uses of File storage include:
+文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。
 
-- Migrating on-premise applications that rely on file shares to run on Azure virtual machines or cloud services, without expensive rewrites
-- Storing shared application settings, for example in configuration files
-- Storing diagnostic data such as logs, metrics, and crash dumps in a shared location 
-- Storing tools and utilities needed for developing or administering Azure virtual machines or cloud services
+在 Azure 虚拟机或云服务中运行的应用程序可以装载文件存储共享以访问文件数据，就像桌面应用程序可以装载典型 SMB 共享一样。任意数量的 Azure 虚拟机或角色可以同时装载并访问文件存储共享。
 
-##<a name="file-storage-concepts"></a>File storage concepts
+由于文件存储共享是标准的 SMB 2.1 文件共享，在 Azure 中运行的应用程序可通过文件 I/O API 来访问共享中的数据。因此，开发人员可以利用其现有代码和技术迁移现有应用程序。IT 专业人员在管理 Azure 应用程序的过程中，可以使用 PowerShell cmdlet 来创建、装载和管理文件存储共享。本指南将演示这两方面的示例。
 
-File storage contains the following components:
+文件存储的常见用途包括：
+
+- 迁移依赖文件共享在 Azure 虚拟机或云服务中运行的本地应用程序，而无需进行昂贵的重写操作
+- 存储共享的应用程序设置，例如在配置文件中进行存储
+- 在共享位置存储诊断数据，如日志、指标和故障转储 
+- 存储开发或管理 Azure 虚拟机或云服务所需的工具和实用工具
+
+##<a name="file-storage-concepts"></a>文件存储概念
+
+文件存储包含以下组件：
 
 ![files-concepts][files-concepts]
 
 
--   **Storage Account:** All access to Azure Storage is done
-    through a storage account. See [Azure Storage Scalability and Performance Targets](http://msdn.microsoft.com/zh-cn/library/dn249410.aspx) for details about storage account capacity.
+-   **存储帐户：** 对 Azure 存储服务进行的所有访问
+都要通过存储帐户完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储服务可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/dn249410.aspx)。
 
--   **Share:** A File storage share is an SMB 2.1 file share in Azure. 
-    All directories and files must be created in a parent share. An account can contain an
-    unlimited number of shares, and a share can store an unlimited
-    number of files, up to the capacity limits of the storage account.
+-   **共享：**文件存储共享是 Azure 中的 SMB 2.1 文件共享。 
+所有目录和文件都必须在父共享中创建。一个帐户可以包含无限数量的共享，一个共享可以存储无限数量的文件，直到达到存储帐户的容量限制为止。
 
--   **Directory:** An optional hierarchy of directories. 
+-   **Directory:**可选的目录层次结构。 
 
--	**File:** A file in the share. A file may be up to 1 TB in size.
+-	**文件：**共享中的文件。文件大小最大可以为 1 TB。
 
--   **URL format:** Files are addressable using the following URL
-    format:   
-    https://`<storage
+-   **URL 格式：**使用以下 URL 格式可访问文件：https://`<storage
     account>`.file.core.chinacloudapi.cn/`<share>`/`<directory/directories>`/`<file>`  
     
-    The following example URL could be used to address one of the files in the
-    diagram above:  
+    可使用以下示例 URL 寻址上图中的
+某个文件：  
     `http://acmecorp.file.core.chinacloudapi.cn/cloudfiles/diagnostics/log.txt`
 
 
 
-For details about how to name shares, directories, and files, see [Naming and Referencing Shares, Directories, Files, and Metadata](http://msdn.microsoft.com/zh-cn/library/azure/dn167011.aspx).
+有关如何命名共享、目录和文件的详细信息，请参阅[命名和引用共享、目录、文件和元数据](http://msdn.microsoft.com/zh-cn/library/azure/dn167011.aspx)。
 
-##<a name="create-account"></a>Create an Azure Storage account
-<!--
-Azure File storage is currently in preview. To request access to the preview, navigate to the [Windows Azure Preview page](/zh-cn/services/preview/), and request access to **Azure Files**. Once your request is approved, you'll be notified that you can access the File storage preview. You can then create a storage account for accessing File storage.
--->
-> [WACOM.NOTE] File storage is currently available only for new storage accounts. After your subscription is granted access to File storage, create a new storage account for use with this guide.
+##<a name="use-cmdlets"></a>使用 PowerShell 创建文件共享
 
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
+###为 Azure 存储服务安装 PowerShell cmdlet
 
-##<a name="use-cmdlets"></a>Use PowerShell to create a file share
+若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
 
-###Install the PowerShell cmdlets for Azure Storage
+> [WACOM.NOTE] 文件服务的 PowerShell cmdlet 只在最新的 0.8.5 版及更高版本的 Azure PowerShell 模块中提供。建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
-To prepare to use PowerShell, download and install the Azure PowerShell cmdlets. See [How to install and configure Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/) for the install point and installation instructions.
+通过单击**"开始"**并键入**"Windows Azure PowerShell"**打开 Azure PowerShell 窗口。Azure PowerShell 窗口将为你加载 Azure PowerShell 模块。
 
-> [WACOM.NOTE] The PowerShell cmdlets for the File service are available only in the latest Azure PowerShell module, version 0.8.5 and later. It's recommended that you download and install or upgrade to the latest Azure PowerShell module.
+###为存储帐户和密钥创建上下文
 
-Open an Azure PowerShell window by clicking **Start** and typing **Windows Azure PowerShell**. The Azure PowerShell window loads the Azure Powershell module for you.
-
-###Create a context for your storage account and key
-
-Now, create the storage account context. The context encapsulates the account name and account key. Replace `account-name` and `account-key` with your account name and key in the following example:
+现在，将创建存储帐户上下文。该上下文封装了帐户名称和帐户密钥。请将下面示例中的"account-name"和"account-key"替换为你的帐户名称和密钥：
 
     # create a context for account and key
     $ctx=New-AzureStorageContext account-name account-key
     
-###Create a new file share
+###创建新的文件共享
 
-Next, create the new share, named `sampleshare` in this example:
+接下来，在此示例中创建名为"sampleshare"的新共享：
 
     # create a new share
     $s = New-AzureStorageShare sampleshare -Context $ctx
 
-You now have a file share in File storage. Next we'll add a directory and a file.
+现在，你在文件存储中已有一个文件共享。接下来，我们将添加目录和文件。
 
-###Create a directory in the file share
+###在文件共享中创建目录
 
-Next, create a directory in the share. In the following example, the directory is named `sampledir`:
+接下来，将在共享中创建目录。在下面的示例中，目录名为"sampledir"：
 
     # create a directory in the share
     New-AzureStorageDirectory -Share $s -Path sampledir
 
-###Upload a local file to the directory
+###将本地文件上载到目录
 
-Now upload a local file to the directory. The following example uploads a file from `C:\temp\samplefile.txt`. Edit the file path so that it points to a valid file on your local machine: 
+现在，将本地文件上载到该目录。以下示例从"C:\temp\samplefile.txt"上载文件。请编辑文件路径，使其指向你本地计算机上的有效文件： 
     
     # upload a local file to the new directory
     Set-AzureStorageFileContent -Share $s -Source C:\temp\samplefile.txt -Path sampledir
 
-###List the files in the directory
+###列出目录中的文件
 
-To see the file in the directory, you can list the directory's files. This command will also list subdirectories, but in this example, there is no subdirectory, so only the file will be listed.  
+可以列出目录的文件，以便查看其中的文件。此命令也将列出子目录，但在此示例中没有子目录，因此只列出文件。  
 
     # list files in the new directory
     Get-AzureStorageFile -Share $s -Path sampledir
 
-##<a name="mount-share"></a>Mount the share from an Azure virtual machine
+##<a name="mount-share"></a>从 Azure 虚拟机装载共享
 
-To demonstrate how to mount an Azure file share, we'll now create an Azure virtual machine, and remote into it to mount the share. 
+为了演示如何装载 Azure 文件共享，现在我们将创建一个 Azure 虚拟机，并远程登录到它内部以装载共享。 
 
-1. First, create a new Azure virtual machine by following the instructions in [Create a Virtual Machine Running Windows Server](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/).
-2. Next, remote into the virtual machine by following the instructions in [How to Log on to a Virtual Machine Running Windows Server](/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/).
-3. Open a PowerShell window on the virtual machine. 
+1. 首先，按照 [创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/) 中的说明创建一个新的 Azure 虚拟机。
+2. 然后，按照 [如何登录到运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/) 中的说明远程登录到该虚拟机内部。
+3. 在该虚拟机上打开 PowerShell 窗口。 
 
-###Persist your storage account credentials for the virtual machine
+###保存虚拟机的存储帐户凭据
 
-Before mounting to the file share, first persist your storage account credentials on the virtual machine. This step allows Windows to automatically reconnect to the file share when the virtual machine reboots. To persist your account credentials, execute the `cmdkey` command from within the PowerShell window on the virtual machine. Replace `<storage-account>` with the name of your storage account, and `<account-key>` with your storage account key:
+装载到文件共享之前，先在虚拟机上保存存储帐户凭据。当虚拟机重新启动时，此步骤允许 Windows 自动重新连接到文件共享。若要保存帐户凭据，请在虚拟机上的 PowerShell 窗口中执行"cmdkey"命令。请将"<storage-account>"替换为你的存储帐户名称，将"<account-key>"替换为你的存储帐户密钥：
 
 	cmdkey /add:<storage-account>.file.core.chinacloudapi.cn /user:<storage-account> /pass:<account-key>
 
-Windows will now reconnect to your file share when the virtual machine reboots. You can verify that the share has been reconnected by executing the `net use` command from within a PowerShell window.
+现在，当虚拟机重新启动时，Windows 将重新连接到你的文件共享。可以通过在 PowerShell 窗口中执行"net use"命令来验证是否已重新连接共享。
 
-###Mount the file share using the persisted credentials
+###使用保存的凭据装载文件共享
 
-Once you have a remote connection to the virtual machine, you can execute the `net use` command to mount the file share, using the following syntax. Replace `<storage-account>` with the name of your storage account, and `<share-name>` with the name of your File storage share.
+建立与虚拟机的远程连接后，便可以使用以下语法执行"net use"命令来装载文件共享了。请将"<storage-account>"替换为你的存储帐户名称，将"<share-name>"替换为你的文件存储共享名称。
 
 	net use z: \\<storage-account>.file.core.chinacloudapi.cn\<share-name>
 
-> [WACOM.NOTE] Since you persisted your storage account credentials in the previous step, you do not need to provide them with the `net use` command. If you have not already persisted your credentials, then include them as a parameter passed to the `net use` command. Replace `<storage-account>` with the name of your storage account, `<share-name>` with the name of your File storage share, and `<account-key>` with your storage account key:
+> [WACOM.NOTE] 由于你已在上一步中保存了存储帐户凭据，因此你无需为"net use"命令提供这些凭据。如果你尚未保存凭据，请提供凭据作为传递给"net use"命令的参数。请将"<storage-account>"替换为你的存储帐户名称，将"<share-name>"替换为你的文件存储共享名称，将"<account-key>"替换为你的存储帐户密钥：
 	   
 	net use z: \\<storage-account>.file.core.chinacloudapi.cn\<share-name> /u:<storage-account> <account-key>
 
-You can now work with the File storage share from within the virtual machine as you would with any other drive. You can issue standard file commands from the command prompt, or view the mounted share and its contents from File Explorer. You can also run code within the virtual machine that accesses the file share using standard Windows file I/O APIs, such as those provided by the [System.IO namespaces](http://msdn.microsoft.com/zh-cn/library/gg145019(v=vs.110).aspx) in the .NET Framework. 
+现在，你可以使用虚拟机中的文件存储共享，就像使用任何其他驱动器一样。你可以从命令提示符发出标准文件命令，也可以从文件资源管理器查看已装载的共享及其内容。你也可以在虚拟机中运行代码，以便访问使用标准 Windows 文件 I/O API（例如 .NET Framework 中由 [System.IO 命名空间](http://msdn.microsoft.com/zh-cn/library/gg145019(v=vs.110).aspx) 提供的 API）的文件共享。 
 
-You can also mount the file share from a role running in an Azure cloud service by remoting into the role.
+你还可以通过远程登录到角色中从 Azure 云服务中运行的角色装载文件共享。
 
-##<a name="create-console-app"></a>Create a on-premise application to work with File storage
+##<a name="create-console-app"></a>创建本地应用程序以使用文件存储
 
-You can mount a File storage share from within a virtual machine or a cloud service running in Azure, as demonstrated above. However, you cannot mount a File storge share from an on-premise application. To access share data from an on-premise application, you must use the File storage API. This example demonstrates how to work with a file share via the [Azure .NET Storage Client Library](http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx). 
+你可以从 Azure 中运行的虚拟机或云服务装载文件存储共享，如上所示。但是，你不能从本地应用程序装载文件存储共享。若要从本地应用程序访问共享数据，必须使用文件存储 API。此示例演示如何通过 [Azure .NET 存储客户端库](http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx) 使用文件共享。 
 
-To show how to use the API from an on-premise application, we'll create a simple console application running on the desktop.
+为了演示如何通过本地应用程序使用 API，我们将创建一个在桌面上运行的简单控制台应用程序。
 
-###Create the console application and obtain the assembly
+###创建控制台应用程序，并获取程序集
 
-To create a new console application in Visual Studio and install the Azure Storage NuGet package:
+若要在 Visual Studio 中创建新的控制台应用程序并安装 Azure 存储 NuGet 包，请执行以下操作：
 
-1. In Visual Studio, choose **File** -> **New Project**, and choose **Windows** -> **Console Application** from the list of Visual C# templates.
-2. Provide a name for the console application, and click **OK**.
-3. Once your project has been created, right-click the project in Solution Explorer and choose **Manage NuGet Packages**. Search online for "WindowsAzure.Storage" and click **Install** to install the Azure Storage package and dependencies.
+1. 在 Visual Studio 中，选择**"文件"**->**"新建项目"**，然后从 Visual C# 模板列表中选择**"Windows"**->**"控制台应用程序"**。
+2. 提供控制台应用程序的名称，并单击**"确定"**。
+3. 创建项目后，在解决方案资源管理器中，右键单击该项目并选择**"管理 NuGet 包"**。在线搜索"MicrosoftAzure.Storage"，然后单击**"安装"**以安装 Azure 存储包和依赖项。
 
-###Save your storage account credentials to the app.config file
+###将存储帐户凭据保存到 app.config 文件
 
-Next, save your credentials in your project's app.config file. Edit the app.config file so that it appears similar to the following example, replacing `myaccount` with your storage account name, and `mykey` with your storage account key:
+接下来，将你的凭据保存到项目的 app.config 文件中。编辑 app.config 文件，使其看起来类似于下面的示例，将"myaccount"替换为你的存储帐户名称，将"mykey"替换为你的存储帐户密钥：
 
     <?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
@@ -180,25 +170,25 @@ Next, save your credentials in your project's app.config file. Edit the app.conf
 		</appSettings>
 	</configuration>
 
-> [WACOM.NOTE] The latest version of the Azure storage emulator does not support File storage. Your connection string must target an Azure storage account in the cloud with access to the Files preview.
+> [WACOM.NOTE] 最新版本的 Azure 存储模拟器不支持文件存储。连接字符串必须针对云中可以访问文件预览的 Azure 存储帐户。
 
 
-###Add namespace declarations
-Open the program.cs file from Solution Explorer, and add the following namespace declarations to the top of the file:
+###添加命名空间声明
+从解决方案资源管理器打开 program.cs 文件，并在该文件顶部添加以下命名空间声明：
 
     using Microsoft.WindowsAzure;
 	using Microsoft.WindowsAzure.Storage;
 	using Microsoft.WindowsAzure.Storage.File;
 
-###Retrieve your connection string programmatically
-You can retrieve your saved credentials from the app.config file using either the `Microsoft.WindowsAzure.CloudConfigurationManager` class, or the `System.Configuration.ConfigurationManager `class. The example here shows how to retrieve your credentials using the `CloudConfigurationManager` class and encapsulate them with the `CloudStorageAccount` class. Add the following code to the `Main()` method in program.cs:
+###以编程方式检索连接字符串
+可以使用"Microsoft.WindowsAzure.CloudConfigurationManager"类或"System.Configuration.ConfigurationManager"类从 app.config 文件中检索保存的凭据。此处的示例显示如何使用"CloudConfigurationManager"类检索凭据，并使用"CloudStorageAccount"类封装这些凭据。将以下代码添加到 Program.cs 的 Main() 方法中：
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-###Access the File storage share programmatically
+###以编程方式访问文件存储共享
 
-Next, add the following code to the `Main()` method, after the code shown above to retrieve the connection string. This code gets a reference to the file we created earlier and outputs its contents to the console window.
+接下来，将以下代码添加到上面显示的 Main() 方法中用于检索连接字符串的代码的后面。此代码将获取我们先前创建的文件的引用，并将其内容输出到控制台窗口中。
 
 	//Create a CloudFileClient object for credentialed access to File storage.
     CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
@@ -230,43 +220,43 @@ Next, add the following code to the `Main()` method, after the code shown above 
         }
     }
 
-Run the console application to see the output.
+运行控制台应用程序以查看输出。
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>后续步骤
 
-Now that you've learned the basics of File storage, follow these links
-for more detailed information.
+现在，你已了解文件存储的基础知识，单击下面的链接
+可获取更详细的信息。
 <ul>
-<li>View the File service reference documentation for complete details about available APIs:
+<li>查看文件服务参考文档，了解有关可用 API 的完整详细信息：
   <ul>
-    <li><a href="http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx">Storage Client Library for .NET reference</a>
+    <li><a href="http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx">.NET 存储客户端库参考</a>
     </li>
-    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx">File Service REST API reference</a></li>
+    <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx">文件服务 REST API 参考</a></li>
   </ul>
 </li>
-<li>View the Azure Storage Team's blog posts relating to the File service:
+<li>查看与文件服务有关的 Azure 存储团队的博客文章：
   <ul>
-    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx">Introducing Windows Azure File Service</a>
+    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx">Windows Azure 文件服务简介</a>
     </li>
-    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx">Persisting connections to Windows Azure Files</a></li>
+    <li><a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx">将连接保存到 Windows Azure 文件中</a></li>
   </ul>
-</li><li>View more feature guides to learn about additional options for storing data in Azure.
+</li><li>查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
   <ul>
-    <li>Use <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob Storage</a> to store unstructured data.</li>
-    <li>Use <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/">Table Storage</a> to store structured data.</li>
-    <li>Use <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/">Queue Storage</a> to store messages reliably.</li>
-    <li>Use <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> to store relational data.</li>
+    <li>使用 <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob 存储</a>存储非结构化数据。</li>
+    <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/">表存储</a>存储结构化数据。</li>
+    <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/">队列存储</a>可靠地存储消息。</li>
+    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> 存储关系数据。</li>
   </ul>
 </li>
 </ul>
 
-[Next Steps]: #next-steps
-[What is File storage?]: #what-is-file-storage 
-[File storage concepts]: #file-storage-concepts
-[Create an Azure storage account]: #create-account
-[Use PowerShell to create a file share]: #use-cmdlets
-[Mount the share from an Azure virtual machine]: #mount-share
-[Create an on-premise application to access File storage]: #create-console-app
+[后续步骤]: #next-steps
+[什么是文件存储？]: #what-is-file-storage 
+[文件存储概念]: #file-storage-concepts
+[创建 Azure 存储帐户]: #create-account
+[使用 PowerShell 创建文件共享]: #use-cmdlets
+[从 Azure 虚拟机装载共享]: #mount-share
+[创建本地应用程序以访问文件存储]: #create-console-app
 
 [files-concepts]: ./media/storage-dotnet-how-to-use-files/files-concepts.png
 

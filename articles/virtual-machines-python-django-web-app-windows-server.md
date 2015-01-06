@@ -1,190 +1,130 @@
-<properties linkid="develop-python-web-app-with-django" urlDisplayName="Web with Django (Windows)" pageTitle="Python web app with Django - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to host a Django-based  Website on Azure using a Windows Server 2008 R2 virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-web-app-with-django" urlDisplayName="Web with Django (Windows)" pageTitle="Python web app with Django - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to host a Django-based website on Azure using a Windows Server 2008 R2 virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application" authors="" solutions="" manager="" editor="" />
 
-
-
-
-
-
-# Django Hello World Web Application
+# Django Hello World Web 应用程序
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/python/tutorials/web-app-with-django/" title="Windows" class="current">Windows</a><a href="/zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/" title="MacLinux">Mac/Linux</a></div>
 
-This tutorial describes how to host a Django-based  Website on Microsoft 
-Azure using a Windows Server virtual machine. This tutorial assumes you have no prior experience using Azure. Upon completing this guide, you will have a Django-based application up and running in the cloud.
+本教程介绍如何在 Windows Azure 中使用 Windows Server 虚拟机托管基于 Django 的网站。本教程假定你之前未使用过 Azure。完成本指南之后，你将能够在云中启动和运行基于 Django 的应用程序。
 
-You will learn how to:
+你将了解如何执行以下操作：
 
-* Setup an Azure virtual machine to host Django. While this tutorial explains how to accomplish this under **Windows Server**, the same could also be done with a Linux VM hosted in Azure. 
-* Create a new Django application from Windows.
+-   设置 Azure 虚拟机以托管 Django。虽然本教程介绍如何在 **Windows Server** 下实现此目的，但也可以使用托管在 Azure 中的 Linux VM 实现相同目的。
+-   从 Windows 创建新的 Django 应用程序。
 
-By following this tutorial, you will build a simple Hello World web
-application. The application will be hosted in an Azure virtual machine.
+遵循本教程中的说明，你可以生成一个简单的 Hello World Web应用程序。该应用程序将托管在 Azure 虚拟机中。
 
-A screenshot of the completed application is below:
+以下是已完成应用程序的屏幕快照：
 
-![A browser window displaying the hello world page on Azure][1]
+![显示 Azure 上的 hello world 页面的浏览器窗口][显示 Azure 上的 hello world 页面的浏览器窗口]
 
 [WACOM.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
-## Creating and configuring an Azure virtual machine to host Django
+## 创建并配置 Azure 虚拟机以托管 Django
 
-1. Follow the instructions given [here][portal-vm] to create an Azure virtual machine of the *Windows Server 2012 R2 Datacenter* distribution.
+1.  按照[此处][此处]提供的说明可创建 *Windows Server 2012 Datacenter* 分发的 Azure 虚拟机。
 
-1. Instruct Azure to direct port **80** traffic from the web to port **80** on the virtual machine:
- - Navigate to your newly created virtual machine in the Azure Portal and click the *ENDPOINTS* tab.
- - Click the *ADD* button at the bottom of the screen.
-	![add endpoint](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
+1.  指示 Azure 将来自 Web 的端口 **80** 通信定向到虚拟机上的端口 **80**：
 
- - Open up the *TCP* protocol's *PUBLIC PORT 80* as *PRIVATE PORT 80*.
-![][port80]
-1. From the *DASHBOARD* tab, click *CONNECT* to use *Remote Desktop* to remotely log into the newly created Azure virtual machine.  
+ - 导航到 Azure 门户中你新创建的虚拟机，然后单击“终结点”选项卡。
+ - 单击屏幕底部的“添加终结点”按钮。
+    ![添加终结点][添加终结点]
 
-**Important Note:** all instructions below assume you logged into the virtual machine correctly and are issuing commands there rather than your local machine! 
+ - 打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。
+    ![][0]
 
-## <a id="setup"> </a>Setting up Python and Django
+1.  使用 Windows *远程桌面* 远程登录到新创建的 Azure 虚拟机。
 
-**Note:** In order to download using Internet Explorer you may have to configure IE ESC settings (Start/Administrative Tools/Server Manager/Local Server, then click  **IE Enhanced Security Configuration**, set to Off).
+**重要事项：**下面的所有说明假定你已正确登录到虚拟机并在那里而非在你的本地计算机发出命令！
 
-1. Install [Web Platform Installer][].
-1. Install Python and WFastCGI using Web Platform Installer.  This will install wfastcgi.py in your Python scripts folder.
-	1. Start Web Platform Installer.
-	1. Type WFastCGI in the search bar. 
-	1. Select the WFactCGI entry for the version of Python you wish to use (2.7 or 3.4).  Note that this will install Python as a dependency of WFastCGI. 
-1. If you installed Python 2.7, [follow these instructions to install pip manually](https://pip.pypa.io/en/latest/installing.html) (Python 3.4 comes with pip already installed).
-1. Install Django using pip.
+## <span id="setup"></span> </a>设置开发环境
 
-    Python 2.7:
+若要设置你的 Python 和 Django 环境，请参阅[安装指南][安装指南]以获取更多信息。
 
-        c:\python27\scripts\pip install django
+**注意 1：**你*只* 需在 Azure 虚拟机上从 Windows WebPI 安装程序安装 **Django** 产品即可使用*本* 特定教程。
 
-    Python 3.4:
+**注意 2：**若要下载 WebPI 安装程序，你可能必须配置 IE ESC 设置（“开始”/“管理工具”/“服务器管理器”，然后单击“配置 IE ESC”，设置为“关闭”）。
 
-        c:\python34\scripts\pip install django
+## 设置具有 FastCGI 的 IIS
 
+1.  安装具有 FastCGI 支持的 IIS
 
-## Setting up IIS with FastCGI
+        start /wait %windir%\System32\\PkgMgr.exe /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-Security;IIS-RequestFiltering;IIS-HttpCompressionStatic;IIS-WebServerManagementTools;IIS-ManagementConsole;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI;IIS-CGI
 
-1. Install IIS with FastCGI support.  This may take several minutes to execute.
+2.  设置 Python Fast CGI 处理程序
 
-		start /wait %windir%\System32\\PkgMgr.exe /iu:IIS-WebServerRole;IIS-WebServer;IIS-CommonHttpFeatures;IIS-StaticContent;IIS-DefaultDocument;IIS-DirectoryBrowsing;IIS-HttpErrors;IIS-HealthAndDiagnostics;IIS-HttpLogging;IIS-LoggingLibraries;IIS-RequestMonitor;IIS-Security;IIS-RequestFiltering;IIS-HttpCompressionStatic;IIS-WebServerManagementTools;IIS-ManagementConsole;WAS-WindowsActivationService;WAS-ProcessModel;WAS-NetFxEnvironment;WAS-ConfigurationAPI;IIS-CGI
+        %windir%\system32\inetsrv\appcmd set config /section:system.webServer/fastCGI "/+[fullPath='c:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py']"
 
+3.  为此网站注册处理程序
 
-### Python 2.7
+        %windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers "/+[name='Python_via_FastCGI',path='*',verb='*',modules='FastCgiModule',scriptProcessor='c:\Python27\python.exe|C:\Python27\Scripts\wfastcgi.py',resourceType='Unspecified']"
 
-Run these commands only if you are using Python 2.7.
+4.  配置处理程序以运行你的 Django 应用程序
 
-1. Setup the Python Fast CGI Handler.
+        %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py'].environmentVariables.[name='DJANGO_SETTINGS_MODULE',value='DjangoApplication.settings']" /commit:apphost
 
-		%windir%\system32\inetsrv\appcmd set config /section:system.webServer/fastCGI "/+[fullPath='c:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py']"
+5.  配置 PYTHONPATH，以便 Python 解释程序可以找到你的 Django 应用程序
 
+        %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py'].environmentVariables.[name='PYTHONPATH',value='C:\inetpub\wwwroot\DjangoApplication']" /commit:apphost
 
-1. Register the handler for this site.
+    你应该看到以下内容：
 
-		%windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers "/+[name='Python_via_FastCGI',path='*',verb='*',modules='FastCgiModule',scriptProcessor='c:\Python27\python.exe|C:\Python27\Scripts\wfastcgi.py',resourceType='Unspecified']"
+    ![IIS config1][IIS config1]
 
+6.  将 FastCGI 告诉给 WSGI 处理程序要使用的 WSGI 网关：
 
-1. Configure the handler to run your Django application.
+        %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py'].environmentVariables.[name='WSGI_HANDLER',value='django.core.handlers.wsgi.WSGIHandler()']" /commit:apphost
 
-		%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py'].environmentVariables.[name='DJANGO_SETTINGS_MODULE',value='helloworld.settings']" /commit:apphost
+7.  从 [codeplex][codeplex] 下载 wfastcgi.py 并且将其保存到 C:\\Python27\\Scripts。这是前面的命令用于注册 FastCGI 处理程序的位置。或者，你可以使用 Web 平台安装程序安装它。搜索“WFastCGI”。
 
+## 创建新的 Django 应用程序
 
-1. Configure PYTHONPATH so your Django app can be found by the Python interpreter.
+1.  启动 cmd.exe
 
-		%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py'].environmentVariables.[name='PYTHONPATH',value='C:\inetpub\wwwroot\helloworld']" /commit:apphost
+2.  通过 cd 进入 C:\\inetpub\\wwwroot
 
+3.  输入以下命令来创建新的 Django 项目：
 
-1. Tell the FastCGI to WSGI gateway which WSGI handler to use.
+    C:\\Python27\\python.exe -m django.bin.django-admin startproject DjangoApplication
 
-		%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python27\python.exe', arguments='C:\Python27\Scripts\wfastcgi.py'].environmentVariables.[name='WSGI_HANDLER',value='django.core.handlers.wsgi.WSGIHandler()']" /commit:apphost
+    ![New-AzureService 命令的结果][New-AzureService 命令的结果]
 
+    **django-admin.py** 脚本生成基于 Django 的网站的基本结构：
 
-1. You should see the following:
+-   **manage.py** 帮助你开始托管和停止托管你的基于 Django 的网站
+-   **DjangoApplication\\settings.py** 包含你的应用程序的 Django 设置。
+-   **DjangoApplication\\urls.py** 包含每个 url 和其视图之间的映射代码。
 
-	![IIS config1](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis-27.png) 
+1.  在 *C:\\inetpub\\wwwroot\\DjangoApplication* 的 *DjangoApplication* 子目录中创建一个名为 **views.py** 的新文件作为 **urls.py** 的同级。这会包含呈现“hello world”页面的视图。启动编辑器并输入以下代码：
 
-### Python 3.4
+        from django.http import HttpResponse
+        def hello(request):
+            html = "<html><body>Hello World!</body></html>"
+            return HttpResponse(html)
 
-Run these commands only if you are using Python 3.4.
+2.  现在，将 **urls.py** 文件的内容替换为以下代码：
 
-1. Setup the Python Fast CGI Handler.
+        from django.conf.urls.defaults import patterns, include, url
+        from DjangoApplication.views import hello
+        urlpatterns = patterns('',
+            (r'^$',hello),
+        )
 
-		%windir%\system32\inetsrv\appcmd set config /section:system.webServer/fastCGI "/+[fullPath='c:\Python34\python.exe', arguments='C:\Python34\Scripts\wfastcgi.py']"
+3.  最后，在你的浏览器中加载网页。
 
+![显示 Azure 上的 hello world 页面的浏览器窗口][显示 Azure 上的 hello world 页面的浏览器窗口]
 
-1. Register the handler for this site.
+## 关闭你的 Azure 虚拟机
 
-		%windir%\system32\inetsrv\appcmd set config /section:system.webServer/handlers "/+[name='Python_via_FastCGI',path='*',verb='*',modules='FastCgiModule',scriptProcessor='c:\Python34\python.exe|C:\Python34\Scripts\wfastcgi.py',resourceType='Unspecified']"
+在你完成本教程后，关闭并/或删除你新创建的 Azure 虚拟机以为其他教程释放资源并避免产生 Azure 使用费。
 
-
-1. Configure the handler to run your Django application.
-
-		%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python34\python.exe', arguments='C:\Python34\Scripts\wfastcgi.py'].environmentVariables.[name='DJANGO_SETTINGS_MODULE',value='helloworld.settings']" /commit:apphost
-
-
-1. Configure PYTHONPATH so your Django app can be found by the Python interpreter.
-
-		%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python34\python.exe', arguments='C:\Python34\Scripts\wfastcgi.py'].environmentVariables.[name='PYTHONPATH',value='C:\inetpub\wwwroot\helloworld']" /commit:apphost
-
-
-1. Tell the FastCGI to WSGI gateway which WSGI handler to use.
-
-		%windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+"[fullPath='C:\Python34\python.exe', arguments='C:\Python34\Scripts\wfastcgi.py'].environmentVariables.[name='WSGI_HANDLER',value='django.core.handlers.wsgi.WSGIHandler()']" /commit:apphost
-
-1. You should see the following:
-
-	![IIS config1](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis-34.png) 
-
-
-## Creating a new Django application
-
-
-1.  From *C:\inetpub\wwwroot*, enter the following command to create a new Django project:
-
-    Python 2.7:
-
-		C:\Python27\Scripts\django-admin.exe startproject helloworld
-
-    Python 3.4:
-
-		C:\Python34\Scripts\django-admin.exe startproject helloworld
-    
-	![The result of the New-AzureService command](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-cmd-new-azure-service.png)
-
-1.  The **django-admin** command generates a basic structure for Django-based  Websites:
-    
-  -   **helloworld\manage.py** helps you to start hosting and stop hosting your Django-based  Website
-  -   **helloworld\helloworld\settings.py** contains Django settings for your application.
-  -   **helloworld\helloworld\urls.py** contains the mapping code between each url and its view.
-
-
-
-1.  Create a new file named **views.py** in the *C:\inetpub\wwwroot\helloworld\helloworld* directory. This will contain the view that renders the "hello world" page. Start your editor and enter the following:
-		
-		from django.http import HttpResponse
-		def home(request):
-    		html = "<html><body>Hello World!</body></html>"
-    		return HttpResponse(html)
-
-1.  Replace the contents of the **urls.py** file with the following:
-
-		from django.conf.urls import patterns, url
-		urlpatterns = patterns('',
-			url(r'^$', 'helloworld.views.home', name='home'),
-		)
-
-1. Finally, load the web page in your browser.
-
-![A browser window displaying the hello world page on Azure][1]
-
-## Shutting down your Azure virtual machine
-
-When you're done with this tutorial, shutdown and/or remove your newly created Azure virtual machine to free up resources for other tutorials and avoid incurring Azure usage charges.
-
-[1]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-browser-azure.png
-
-[port80]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-port80.png
-
-[portal-vm]: /zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/
-
-[Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
-
+  [Windows]: /zh-cn/develop/python/tutorials/web-app-with-django/ "Windows"
+  [Mac/Linux]: /zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/ "MacLinux"
+  [显示 Azure 上的 hello world 页面的浏览器窗口]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-browser-azure.png
+  [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md
+  [此处]: /zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/
+  [添加终结点]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png
+  [0]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-port80.png
+  [安装指南]: ../python-how-to-install/
+  [IIS config1]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-iis1.png
+  [codeplex]: http://go.microsoft.com/fwlink/?LinkID=316392&clcid=0x409
+  [New-AzureService 命令的结果]: ./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-cmd-new-azure-service.png
