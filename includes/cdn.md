@@ -24,12 +24,12 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 ## 步骤 1:创建存储帐户，云服务或者网站
 
-您可以为现有的Windows Azure订阅中的存储账户，云服务或者网站创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者网站用于 Microsft Azure 订阅。
+您可以为现有的Windows Azure订阅中的存储账户，云服务或者网站创建CDN终结点。您也可以按以下过程创建新的存储帐户，云服务或者网站用于 Windows Azure 订阅。
 
 ### 为 Windows Azure 订阅创建存储帐户
 请参阅 [如何创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account/)
 
-### 为 Microsft Azure 订阅创建云服务
+### 为 Windows Azure 订阅创建云服务
 请参阅 [如何创建和部署云服务](/zh-cn/documentation/articles/cloud-services-how-to-create-deploy/) 
 
 ### 为 Windows Azure 订阅创建网站
