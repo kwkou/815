@@ -155,7 +155,7 @@
   [PhoneGap]: /zh-cn/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/ "PhoneGap"
   [观看教程]: http://go.microsoft.com/fwlink/?LinkId=287040
   [0]: ./media/mobile-services-html-get-started/mobile-quickstart-completed-html.png
-  [Azure 免费试用]: /pricing/1rmb-trial/WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-html%2F
+  [Azure 试用]: /pricing/1rmb-trial/
   [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?LinkId=286333
   [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
   [mobile-services-create-new-service]: ../includes/mobile-services-create-new-service.md
