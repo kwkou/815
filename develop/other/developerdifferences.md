@@ -50,2329 +50,2351 @@
   <a href="#_Toc359582683">
     <span>数据备份</span>
   </a>
-</p><p>
-      <a href="#_Toc359582684">
-        <span>设置用于开发的计算机</span>
-      </a>
-    </p>
-    <p class="MsoToc3">
-      <span>
-        <a href="#_Toc359582685">配置订阅</a>
-      </span>
-      <a href="#_Toc359582685"></a>
-    </p>
-    <p class="MsoToc3">
-      <span>
-        <a href="#_Toc359582686">配置设置</a>
-      </span>
-      <a href="#_Toc359582686"></a>
-    </p>
-    <p class="MsoToc3">
-      <span>
-        <a href="#_Toc359582687">发布项目</a>
-      </span>
-      <a href="#_Toc359582687"></a>
-    </p>
-    <p>
-      <a href="#_Toc359582688">
-        <span>修改中国服务的配置和服务定义文件</span>
-      </a>
-    </p>
-    <p class="MsoToc2">
-      <span>
-        <a href="#_Toc359582689">存储端点</a>
-      </span>
-      <a href="#_Toc359582689"></a>
-    </p>
-    <p class="MsoToc2">
-      <a href="#_Toc359582690">
-        <span>Windows Azure </span>
-        <span>计算中的端口绑定</span>
-      </a>
-    </p>
-    <p class="MsoToc2">
-      <a href="#_Toc359582691">
-        <span>与</span>
-        <span> SQL </span>
-        <span>数据库服务器的连接</span>
-      </a>
-    </p>
-    <p class="MsoToc2">
-      <a href="#_Toc359582692">
-        <span>服务总线和Active Directory</span>
-      </a>
-    </p>
-    <p class="MsoToc3">
-      <span>
-        <a href="#_Toc359582693">Active Directory</a>
-      </span>
-      <a href="#_Toc359582693"></a>
-    </p>
+</p>
+<p>
+  <a href="#_Toc359582684">
+    <span>设置用于开发的计算机</span>
+  </a>
+</p>
+<p class="MsoToc3">
+  <span>
+    <a href="#_Toc359582685">配置订阅</a>
+  </span>
+  <a href="#_Toc359582685"></a>
+</p>
+<p class="MsoToc3">
+  <span>
+    <a href="#_Toc359582686">配置设置</a>
+  </span>
+  <a href="#_Toc359582686"></a>
+</p>
+<p class="MsoToc3">
+  <span>
+    <a href="#_Toc359582687">发布项目</a>
+  </span>
+  <a href="#_Toc359582687"></a>
+</p>
+<p>
+  <a href="#_Toc359582688">
+    <span>修改中国服务的配置和服务定义文件</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <span>
+    <a href="#_Toc359582689">存储端点</a>
+  </span>
+  <a href="#_Toc359582689"></a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582690">
+    <span>Windows Azure </span>
+    <span>计算中的端口绑定</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582691">
+    <span>与</span>
+    <span> SQL </span>
+    <span>数据库服务器的连接</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582692">
+    <span>服务总线和Active Directory</span>
+  </a>
+</p>
+<p class="MsoToc3">
+  <span>
+    <a href="#_Toc359582693">Active Directory</a>
+  </span>
+  <a href="#_Toc359582693"></a>
+</p>
 <p style="display:none;tab-stops: right dotted 467.5pt;" class="MsoToc3">
   <a href="#_Toc359582694">
     <span>ACS </span>
   </a>
 </p>
-      <span>配置</span>
-      <p class="MsoToc3">
-        <span>
-          <a href="#_Toc359582695">服务总线配置</a>
-        </span>
-        <a href="#_Toc359582695"></a>
-      </p>
-      <p>
-        <a href="#_Toc359582696">
-          <span>使用服务管理</span>
-          <span> API</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582697">
-          <span>将自定义域名重定向到中国服务中的托管服务</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582698">
-          <span>对中国服务使用</span>
-          <span> VM </span>
-          <span>角色</span>
-        </a>
-      </p>
-      <p class="MsoToc2">
-        <a href="#_Toc359582699">
-          <span>使用</span>
-          <span> VM </span>
-          <span>角色和</span>
-          <span> CSUpload</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582700">
-          <span>修改代码示例和工具</span>
-        </a>
-      </p>
-      <p class="MsoToc2">
-        <span>
-          <a href="#_Toc359582701">常规工具</a>
-        </span>
-        <a href="#_Toc359582701"></a>
-      </p>
-      <p class="MsoToc2">
-        <a href="#_Toc359582702">
-          <span>Visual Studio </span>
-          <span>服务器资源管理器</span>
-        </a>
-      </p>
-      <p class="MsoToc2">
-        <a href="#_Toc359582703">
-          <span>CSManage - Windows Azure </span>
-          <span>服务管理示例</span>
-        </a>
-      </p>
-      <p class="MsoToc2">
-        <a href="#_Toc359582704">
-          <span>为中国服务更新</span>
-          <span> ServiceBus SDK </span>
-          <span>中的</span>
-          <span> PlainHttp </span>
-          <span>示例</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582705">
-          <span>使用</span>
-          <span> Windows Azure </span>
-          <span>诊断</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582707">
-          <span>重新颁发</span>
-          <span> HTTPS </span>
-          <span>端点的证书</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582708">
-          <span>使用</span>
-          <span> Windows Azure PowerShell</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582709">
-          <span>使用</span>
-          <span> Node.js </span>
-          <span>的</span>
-          <span> Windows Azure SDK</span>
-        </a>
-      </p>
-      <p>
-        <a href="#_Toc359582710">
-          <span>附录：</span>
-          <span>Windows Azure </span>
-          <span>的内容库</span>
-        </a>
-      </p>
-      <p> </p>
+<span>配置</span>
+<p class="MsoToc3">
+  <span>
+    <a href="#_Toc359582695">服务总线配置</a>
+  </span>
+  <a href="#_Toc359582695"></a>
+</p>
+<p>
+  <a href="#_Toc359582696">
+    <span>使用服务管理</span>
+    <span> API</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582697">
+    <span>将自定义域名重定向到中国服务中的托管服务</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582698">
+    <span>对中国服务使用</span>
+    <span> VM </span>
+    <span>角色</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582699">
+    <span>使用</span>
+    <span> VM </span>
+    <span>角色和</span>
+    <span> CSUpload</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582700">
+    <span>修改代码示例和工具</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <span>
+    <a href="#_Toc359582701">常规工具</a>
+  </span>
+  <a href="#_Toc359582701"></a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582702">
+    <span>Visual Studio </span>
+    <span>服务器资源管理器</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582703">
+    <span>CSManage - Windows Azure </span>
+    <span>服务管理示例</span>
+  </a>
+</p>
+<p class="MsoToc2">
+  <a href="#_Toc359582704">
+    <span>为中国服务更新</span>
+    <span> ServiceBus SDK </span>
+    <span>中的</span>
+    <span> PlainHttp </span>
+    <span>示例</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582705">
+    <span>使用</span>
+    <span> Windows Azure </span>
+    <span>诊断</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582707">
+    <span>重新颁发</span>
+    <span> HTTPS </span>
+    <span>端点的证书</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582708">
+    <span>使用</span>
+    <span> Windows Azure PowerShell</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582709">
+    <span>使用</span>
+    <span> Node.js </span>
+    <span>的</span>
+    <span> Windows Azure SDK</span>
+  </a>
+</p>
+<p>
+  <a href="#_Toc359582710">
+    <span>附录：</span>
+    <span>Windows Azure </span>
+    <span>的内容库</span>
+  </a>
+</p>
+<p> </p>
+<span>
+  <br />
+</span>
+
+<h1>
+  <a name="_Toc359582676"></a>
+  <a name="_Toc358494503"></a>
+  <span>
+    <span>关于本文档</span>
+  </span>
+  <a name="z7f594c8cef0d418588f328423b924263"></a>
+</h1>
+
+<p>
+  <span>Microsoft </span>
+  <span>提供了一些工具来创建和部署</span>
+  <span>Microsoft Windows Azure </span>
+  <span>全球服务（</span>
+  <span>“</span>
+  <span>全球服务</span>
+  <span>”</span>
+  <span>）</span>
+  <span>的云应用程序。</span>
+</p>
+<p>
+  <span>中国</span>
+  <span> Windows Azure </span>
+  <span>是由中国公司世纪互联从位于中国人民共和国（不包括香港特别行政区、澳门特别行政区和中国台湾地区）的数据中心运营并提供的独立</span>
+  <span> Windows Azure </span>
+  <span>平台。</span>
+  <span>因此，创建和部署</span>
+  <span>Windows Azure </span>
+  <span>服务</span>
+  <span>—</span>
+  <span>由世纪互联运营（</span>
+  <span>“</span>
+  <span>中国服务</span>
+  <span>”</span>
+  <span>）</span>
+  <span>，而不是由</span>
+  <span>全球服务</span>
+  <span>运营的应用程序时，开发人员需要先了解这两项服务之间的主要区别，然后再设置自己的编程环境、编写应用程序并将其部署为在中国托管的服务。</span>
+</p>
+<p>
+  <span>本文档概要说明了这些区别并为中国</span>
+  <span>
+    Windows Azure <a href="http://www.windowsazure.cn/">
+      <span>门户</span>
+    </a>
+  </span>
+  <span>及</span>
+  <span>
+    <a href="http://msdn.microsoft.com/zh-cn/library/dd163896.aspx">
+      MSDN <span>上的</span> Windows Azure <span>技术库</span>
+    </a>
+  </span>
+  <span>提供补充信息。官方信息也会在许多其他地方发布，如</span>
+  <span>
+    Windows Azure <a href="http://www.microsoft.com/zh-cn/download/details.aspx?id=35473">
+      <span>海报</span>
+    </a>
+  </span>
+  <span>、</span>
+  <span>
+    <a href="http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx">TechNet wiki</a>
+  </span>
+  <span>以及</span>
+  <span> Microsoft </span>
+  <span>员工发表的各种博客文章。</span>
+  <span>本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。</span>
+</p>
+<p>
+  <span>有关</span>
+  <span>中国服务</span>
+  <span>功能可用性的最新更新，请访问中国</span>
+  <span>
+    <a href="http://www.windowsazure.cn/">
+      <span>Windows Azure </span>
+      <span>门户</span>
+    </a>
+  </span>
+  <span>。有关</span>
+  <span> Windows Azure </span>
+  <span>上当前内容资产的列表，请参阅本文档的附录。</span>
+</p>
+
+<h1>
+  <a name="_Toc359582677"></a>
+  <a name="_Toc358494504"></a>
+  <span>
+    <span>为开发人员提供指导</span>
+  </span>
+  <a name="z2c0a8942998a4d798858afe74fba64e9"></a>
+</h1>
+
+<p>
+  <span>由于</span>
+  <span> Microsoft </span>
+  <span>提供的大部分英文技术内容当前均假定应用程序是针对</span>
+  <span>全球服务</span>
+  <span>而开发，而非</span>
+  <span>中国服务</span>
+  <span>，因此务必确保开发人员了解为托管于中国而开发的应用程序的主要区别。</span>
+</p>
+<p>
+  <span>首先，功能上的差异，意即</span>
+  <span>全球服务</span>
+  <span>中的某些功能在中国不提供。</span>
+</p>
+<p>
+  <span>其次，在中国提供的功能具有运营差异，意即如需使用公共英文内容（针对</span>
+  <span>全球服务</span>
+  <span>而撰写），则必须自定义任何示例代码和步骤。</span>
+</p>
+
+<h1>
+  <a name="_Toc358494505"></a>
+  <a name="_Toc359582678"></a>
+  <span>
+
+    <span>中国</span>服务
+  </span>
+  <span>
+
+    <span>当前提供的功能</span>
+
+  </span>
+</h1>
+
+<p>
+  <span>
+
+    <span>中国</span>服务
+  </span>
+  <span>
+    <span>当前包含以下的</span>
+  </span>
+  <span>
+    <span> Windows Azure </span>
+  </span>
+  <span>
+    <span>功能。</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>计算</span>
+  </span>
+  <span>
+    <span> – </span>
+  </span>
+  <span>
+    <span>虚拟机（适用于</span>
+  </span>
+  <span>
+    <span> IaaS </span>
+  </span>
+  <span>
+    <span>服务）</span>
+  </span>
+</p>
+<p>
+  <span>-</span><span>
+    <span>包含</span>
+  </span>  Windows Server Essentials Experience<span >
+    <span>服务器角色的</span>
+  </span>   Windows Server 2012 R2 Data Center<span class="eop">
+    <span> </span>
+  </span>
+</p>
+<p>
+  <span class="textrun">
+    <span> </span>
+  </span>
+  <span class="textrun">
+    <span>- Windows Server 2012 R2 Data Center</span>
+  </span>
+  <span class="eop">
+    <span> </span>
+  </span>
+</p>
+<p>
+            - SQL Server (<span >
+    <span>包含</span>
+  </span><span >
+    <span>SQL</span>
+  </span> Server 2014, SQL Server 2012, SQL Server 2008 R2 <span>各版本</span>)<span> </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>计算</span>
+  </span>
+  <span>
+    <span> – </span>
+  </span>
+  <span>
+    <span>云服务（适用于</span>
+  </span>
+  <span>
+    <span> PaaS </span>
+  </span>
+  <span>
+    <span>服务）</span>
+  </span>
+</p>
+<p>·计算 – 网站</p>
+<p>·计算 – 移动服务</p>
+<p>
+  <span>·数据服务</span>
+  <span> – </span>
+  <span>存储（适用于Blob、表和队列）</span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>数据服务</span>
+  </span>
+  <span>
+    <span> – SQL </span>
+  </span>
+  <span>
+    <span>数据库</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>数据服务</span>
+  </span>
+  <span>
+    <span> – SQL </span>
+  </span>
+  <span>
+    <span>数据库 – SQL 导入/导出</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>数据服务</span>
+  </span>
+  <span>
+    <span> – HDInsight </span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>数据服务</span>
+  </span>
+  <span>
+    <span> – 备份</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>访问控制服务</span>
+  </span>
+  <span>
+    <span> – </span>
+  </span>
+  <span>
+    <span>拥有其自己的</span>
+  </span>
+  <span>
+    <span> UI </span>
+  </span>
+  <span>
+    <span>和命名空间</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>缓存</span>
+  </span>
+  <span>
+    <span> – </span>
+  </span>
+  <span>
+    <span>仅支持专用缓存</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>网络服务 – 虚拟网络
+  </span>
+  （通过本地网络在云服务之间进行通信）
+</p>
+<p>
+  <span>
+
+    <span>·</span>网络服务 – Traffic Manager
+  </span>
+
+</p>
+<p>
+  <span>
+
+    <span>·</span>应用服务 – 服务总线(Service Bus)
+  </span>
+
+</p>
+<p>
+  <span>
+
+    <span>·</span>应用服务 – Active Directory
+  </span>
+
+</p>
+<p>
+  <span>
+
+    <span>·</span>应用服务 – 计划程序
+  </span>
+
+</p>
+<p>
+  <span>·</span>应用服务 – CDN
+</p>
+<p>
+  <span>·</span>应用服务 – 媒体服务
+</p>
+<p>
+  <span>
+
+    <span>·</span>应用服务 – 通知中心
+  </span>
+
+</p>
+
+<p style="display:none">
+  <span>
+    <img src="/media/devcenter/shared/Windows_Azure_Top_Level_MSDN_Only_v8_Mooncake.png" />
+  </span>
+</p>
+<div >
+  <h1>
+    <span>
+      <a name="_Toc359582679"></a>
       <span>
-        <br />
+        <span>中国</span>服务
       </span>
+    </span>
+    <span>
+      <span>
+        <span>当前未提供的功能</span>
+      </span>
+    </span>
+  </h1>
+</div>
+<p>
+  <span>
+    <span>
+      <span>中国</span>服务
+    </span>
+  </span>
+  <span>
+    <span>当前不包含以下的</span>
+  </span>
+  <span>
+    <span> Windows Azure </span>
+  </span>
+  <span>
+    <span>功能。</span>
+  </span>
+</p>
+<p>
+  <span>·计算</span>
+  <span> – </span>
+  <span>在中国服务中，辅助角色实例不能作为计算资源添加到由Microsoft HPC Pack 2008 R2 或 Microsoft HPC Pack 2012 创建的本地高性能计算(HPC) 群集中。</span>
+  <span>HPC Pack仅支持在全球服务中添加辅助角色实例。</span>
+</p>
+<p>
+  <span>
+    <span>
+      <span>· </span>
+      <span>Access Control Service(访问控制服务)命名空间</span>
+    </span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>数据服务</span>
+  </span>
+  <span>
+    <span> – SQL Reporting</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>·</span>
+    <span>数据服务</span>
+  </span>
+  <span>
+    <span> – SQL </span>
+  </span>
+  <span>
+    <span>数据同步</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>
+      <span>· SQL 数据库管理门户</span>
+    </span>
+  </span>
+</p>
+<div >
+  <h1>
+    <span>
+      <a name="_Toc359582680"></a>
+      <span>在</span>
+      <a name="z0f69961731024b1ab7fc0b2083d00854"></a>
+    </span>
+    <span>
 
-      <h1>
-        <a name="_Toc359582676"></a>
-        <a name="_Toc358494503"></a>
-        <span>
-          <span>关于本文档</span>
-        </span>
-        <a name="z7f594c8cef0d418588f328423b924263"></a>
-      </h1>
-
-      <p>
-        <span>Microsoft </span>
-        <span>提供了一些工具来创建和部署</span>
-        <span>Microsoft Windows Azure </span>
-        <span>全球服务（</span>
-        <span>“</span>
-        <span>全球服务</span>
-        <span>”</span>
-        <span>）</span>
-        <span>的云应用程序。</span>
-      </p>
-      <p>
-        <span>中国</span>
-        <span> Windows Azure </span>
-        <span>是由中国公司世纪互联从位于中国人民共和国（不包括香港特别行政区、澳门特别行政区和中国台湾地区）的数据中心运营并提供的独立</span>
-        <span> Windows Azure </span>
-        <span>平台。</span>
-        <span>因此，创建和部署</span>
-        <span>Windows Azure </span>
-        <span>服务</span>
-        <span>—</span>
-        <span>由世纪互联运营（</span>
-        <span>“</span>
-        <span>中国服务</span>
-        <span>”</span>
-        <span>）</span>
-        <span>，而不是由</span>
-        <span>全球服务</span>
-        <span>运营的应用程序时，开发人员需要先了解这两项服务之间的主要区别，然后再设置自己的编程环境、编写应用程序并将其部署为在中国托管的服务。</span>
-      </p>
-      <p>
-        <span>本文档概要说明了这些区别并为中国</span>
-        <span>
-          Windows Azure <a href="http://www.windowsazure.cn/">
-            <span>门户</span>
-          </a>
-        </span>
-        <span>及</span>
-        <span>
-          <a href="http://msdn.microsoft.com/zh-cn/library/dd163896.aspx">
-            MSDN <span>上的</span> Windows Azure <span>技术库</span>
-          </a>
-        </span>
-        <span>提供补充信息。官方信息也会在许多其他地方发布，如</span>
-        <span>
-          Windows Azure <a href="http://www.microsoft.com/zh-cn/download/details.aspx?id=35473">
-            <span>海报</span>
-          </a>
-        </span>
-        <span>、</span>
-        <span>
-          <a href="http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx">TechNet wiki</a>
-        </span>
-        <span>以及</span>
-        <span> Microsoft </span>
-        <span>员工发表的各种博客文章。</span>
-        <span>本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。</span>
-      </p>
-      <p>
-        <span>有关</span>
-        <span>中国服务</span>
-        <span>功能可用性的最新更新，请访问中国</span>
-        <span>
-          <a href="http://www.windowsazure.cn/">
-            <span>Windows Azure </span>
-            <span>门户</span>
-          </a>
-        </span>
-        <span>。有关</span>
-        <span> Windows Azure </span>
-        <span>上当前内容资产的列表，请参阅本文档的附录。</span>
-      </p>
-
-      <h1>
-        <a name="_Toc359582677"></a>
-        <a name="_Toc358494504"></a>
-        <span>
-          <span>为开发人员提供指导</span>
-        </span>
-        <a name="z2c0a8942998a4d798858afe74fba64e9"></a>
-      </h1>
-
-      <p>
-        <span>由于</span>
-        <span> Microsoft </span>
-        <span>提供的大部分英文技术内容当前均假定应用程序是针对</span>
-        <span>全球服务</span>
-        <span>而开发，而非</span>
-        <span>中国服务</span>
-        <span>，因此务必确保开发人员了解为托管于中国而开发的应用程序的主要区别。</span>
-      </p>
-      <p>
-        <span>首先，功能上的差异，意即</span>
-        <span>全球服务</span>
-        <span>中的某些功能在中国不提供。</span>
-      </p>
-      <p>
-        <span>其次，在中国提供的功能具有运营差异，意即如需使用公共英文内容（针对</span>
-        <span>全球服务</span>
-        <span>而撰写），则必须自定义任何示例代码和步骤。</span>
-      </p>
-
-      <h1>
-        <a name="_Toc358494505"></a>
-        <a name="_Toc359582678"></a>
-        <span>
-
-            <span>中国</span>服务
-        </span>
-        <span>
-      
-            <span>当前提供的功能</span>
-      
-        </span>
-      </h1>
-
-      <p>
-        <span>
-  
-            <span>中国</span>服务
-        </span>
-        <span>
-          <span>当前包含以下的</span>
-        </span>
-        <span>
-          <span> Windows Azure </span>
-        </span>
-        <span>
-          <span>功能。</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>计算</span>
-        </span>
-        <span>
-          <span> – </span>
-        </span>
-        <span>
-          <span>虚拟机（适用于</span>
-        </span>
-        <span>
-          <span> IaaS </span>
-        </span>
-        <span>
-          <span>服务）</span>
-        </span>
-      </p>
-      <p>
-       <span>-</span><span>
-          <span>包含</span>
-        </span>  Windows Server Essentials Experience<span >
-          <span>服务器角色的</span>
-        </span>   Windows Server 2012 R2 Data Center<span class="eop">
-          <span> </span>
-        </span>
-      </p>
-      <p>
-        <span class="textrun">
-          <span> </span>
-        </span>
-        <span class="textrun">
-          <span>- Windows Server 2012 R2 Data Center</span>
-        </span>
-        <span class="eop">
-          <span> </span>
-        </span>
-      </p>
-      <p>
-                 - SQL Server (<span >
-          <span>包含</span>
-        </span><span >
-          <span>SQL</span>
-        </span> Server 2014, SQL Server 2012, SQL Server 2008 R2 <span>各版本</span>)<span> </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>计算</span>
-        </span>
-        <span>
-          <span> – </span>
-        </span>
-        <span>
-          <span>云服务（适用于</span>
-        </span>
-        <span>
-          <span> PaaS </span>
-        </span>
-        <span>
-          <span>服务）</span>
-        </span>
-      </p>
-      <p>·计算 – 网站</p>
-      <p>·计算 – 移动服务</p>
-      <p>
-        <span>·数据服务</span>
-        <span> – </span>
-        <span>存储（适用于Blob、表和队列）</span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>数据服务</span>
-        </span>
-        <span>
-          <span> – SQL </span>
-        </span>
-        <span>
-          <span>数据库</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>数据服务</span>
-        </span>
-        <span>
-          <span> – SQL </span>
-        </span>
-        <span>
-          <span>数据库 – SQL 导入/导出</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>数据服务</span>
-        </span>
-        <span>
-          <span> – HDInsight </span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>数据服务</span>
-        </span>
-        <span>
-          <span> – 备份</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>访问控制服务</span>
-        </span>
-        <span>
-          <span> – </span>
-        </span>
-        <span>
-          <span>拥有其自己的</span>
-        </span>
-        <span>
-          <span> UI </span>
-        </span>
-        <span>
-          <span>和命名空间</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>缓存</span>
-        </span>
-        <span>
-          <span> – </span>
-        </span>
-        <span>
-          <span>仅支持专用缓存</span>
-        </span>
-      </p>
-      <p>
-        <span>
-                <span>·</span>网络服务 – 虚拟网络
-              </span>
-          （通过本地网络在云服务之间进行通信）
-      </p>
-      <p>
-        <span>
- 
-                <span>·</span>网络服务 – Traffic Manager
-              </span>
-
-      </p>
-      <p>
-        <span>
-          
-                <span>·</span>应用服务 – 服务总线(Service Bus)
-              </span>
-     
-      </p>
-      <p>
-        <span>
-         
-                <span>·</span>应用服务 – Active Directory
-              </span>
-  
-      </p>
-      <p>
-        <span>
-         
-                <span>·</span>应用服务 – 计划程序
-              </span>
-         
-      </p>
-      <p>
-        <span>·</span>应用服务 – CDN
-      </p>
-      <p>
-        <span>·</span>应用服务 – 媒体服务
-      </p>
-      <p>
-        <span>
-         
-                <span>·</span>应用服务 – 通知中心
-              </span>
-         
-      </p>
-
-
-      <p>
-        <span>
-          <img src="/media/devcenter/shared/Windows_Azure_Top_Level_MSDN_Only_v8_Mooncake.png" />
-        </span>
-      </p>
-      <div >
-        <h1>
-          <span>
-            <a name="_Toc359582679"></a>
-            <span>
-              <span>中国</span>服务
-            </span>
-          </span>
-          <span>
-            <span>
-              <span>当前未提供的功能</span>
-            </span>
-          </span>
-        </h1>
-      </div>
-      <p>
-        <span>
+      <span>中国服务上创建应用程序时的区别概述</span>
+    </span>
+  </h1>
+</div>
+<p>
+  <span>Windows Azure </span>
+  <span>中的托管服务由一个设计为在托管服务中运行的应用程序和多个定义托管服务如何运行的</span>
+  <span> XML </span>
+  <span>配置文件组成。托管服务同时使用服务定义文件</span>
+  <span> (.csdef) </span>
+  <span>和配置文件</span>
+  <span> (.cscfg)</span>
+  <span>。有关详细信息，请参阅</span>
+  <span>
+    <a href="http://msdn.microsoft.com/zh-cn/library/gg432976.aspx">
+      <span>创建</span>
+      <span> Windows Azure </span>
+      <span>托管服务概述</span>
+    </a>
+  </span>
+  <span>。</span>
+</p>
+<p>
+  <span>
+    在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的URI。例如，Windows Azure和 SQL 数据库的URI通常以<span class="LabelEmbedded">windows.net</span>
+    结尾。
+  </span>
+  <span>
+    中国服务的开发人员必须能够识别URI端点的不同之处，然后将其使用的工具以及开发的应用程序配置为使用这些不同端点的对应URI。
+  </span>
+</p>
+<p>
+  <span>以下是需要更改端点URI时的示例：</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>配置Visual Studio时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>定义SQL数据库的连接字符串时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>定义Windows Azure存储的连接字符串时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>定义Windows Azure计算的端口通信时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>使用服务管理API时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>将URL从自定义域名重定向到您所托管的服务时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>发行HTTPS端点证书时</span>
+</p>
+<p  >
+  <span>·</span>
+  <span>使用Windows Azure诊断（诊断使用Windows Azure存储）时</span>
+</p>
+<p>
+  <span>·</span>
+  <span>使用设计为在Windows Azure上运行的工具和服务（这些工具和服务具有其自己的配置文件或服务定义文件）时</span>
+</p>
+<p>
+  <span>·</span>
+  <span>使用CSUPLOAD工具为VM角色上传映像</span>
+</p>
+<h2>
+  <a name="_Toc359582681"></a>
+  <a name="_Toc358494506"></a>
+  <span>
+    <span>端点映射</span>
+  </span>
+</h2>
+<p>
+  <span>将Windows Azure和SQL数据库公共端点映射到中国特定的端点时，请参照下表。</span>
+</p>
+<p class="TableSpacing"> </p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
+      <td width="138" valign="top">
+        <p style="page-break-after: avoid;" >
+          <span>服务类型</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p style="page-break-after: avoid;" >
+          <span>全球服务</span>
+          <span> URI</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p style="page-break-after: avoid;" >
           <span>
             <span>中国</span>服务
           </span>
-        </span>
-        <span>
-          <span>当前不包含以下的</span>
-        </span>
-        <span>
-          <span> Windows Azure </span>
-        </span>
-        <span>
-          <span>功能。</span>
-        </span>
-      </p>
-      <p>
-        <span>·计算</span>
-        <span> – </span>
-        <span>在中国服务中，辅助角色实例不能作为计算资源添加到由Microsoft HPC Pack 2008 R2 或 Microsoft HPC Pack 2012 创建的本地高性能计算(HPC) 群集中。</span>
-        <span>HPC Pack仅支持在全球服务中添加辅助角色实例。</span>
-      </p>
-      <p>
-        <span>
-          <span>
-            <span>· </span>
-            <span>Access Control Service(访问控制服务)命名空间</span>
-          </span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>数据服务</span>
-        </span>
-        <span>
-          <span> – SQL Reporting</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>·</span>
-          <span>数据服务</span>
-        </span>
-        <span>
-          <span> – SQL </span>
-        </span>
-        <span>
-          <span>数据同步</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>
-            <span>· SQL 数据库管理门户</span>
-          </span>
-        </span>
-      </p>
-      <div >
-        <h1>
-          <span>
-            <a name="_Toc359582680"></a>
-            <span>在</span>
-            <a name="z0f69961731024b1ab7fc0b2083d00854"></a>
-          </span>
-          <span>
-            
-                <span>中国服务上创建应用程序时的区别概述</span>
-          </span>
-        </h1>
-      </div>
-      <p>
-        <span>Windows Azure </span>
-        <span>中的托管服务由一个设计为在托管服务中运行的应用程序和多个定义托管服务如何运行的</span>
-        <span> XML </span>
-        <span>配置文件组成。托管服务同时使用服务定义文件</span>
-        <span> (.csdef) </span>
-        <span>和配置文件</span>
-        <span> (.cscfg)</span>
-        <span>。有关详细信息，请参阅</span>
-        <span>
-          <a href="http://msdn.microsoft.com/zh-cn/library/gg432976.aspx">
-            <span>创建</span>
-            <span> Windows Azure </span>
-            <span>托管服务概述</span>
-          </a>
-        </span>
-        <span>。</span>
-      </p>
-      <p>
-        <span>在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的URI。例如，Windows Azure和 SQL 数据库的URI通常以<span class="LabelEmbedded">windows.net</span>
-     结尾。</span>
-        <span>
-       中国服务的开发人员必须能够识别URI端点的不同之处，然后将其使用的工具以及开发的应用程序配置为使用这些不同端点的对应URI。</span>
-      </p>
-      <p>
-        <span>以下是需要更改端点URI时的示例：</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>配置Visual Studio时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>定义SQL数据库的连接字符串时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>定义Windows Azure存储的连接字符串时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>定义Windows Azure计算的端口通信时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>使用服务管理API时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>将URL从自定义域名重定向到您所托管的服务时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>发行HTTPS端点证书时</span>
-      </p>
-      <p  >
-        <span>·</span>
-        <span>使用Windows Azure诊断（诊断使用Windows Azure存储）时</span>
-      </p>
-      <p>
-        <span>·</span>
-        <span>使用设计为在Windows Azure上运行的工具和服务（这些工具和服务具有其自己的配置文件或服务定义文件）时</span>
-      </p>
-      <p>
-        <span>·</span>
-        <span>使用CSUPLOAD工具为VM角色上传映像</span>
-      </p>
-      <h2>
-        <a name="_Toc359582681"></a>
-        <a name="_Toc358494506"></a>
-        <span>
-          <span>端点映射</span>
-        </span>
-      </h2>
-      <p>
-        <span>将Windows Azure和SQL数据库公共端点映射到中国特定的端点时，请参照下表。</span>
-      </p>
-      <p class="TableSpacing"> </p>
-      <table border="1" cellspacing="0" cellpadding="0">
-        <thead>
-          <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
-            <td width="138" valign="top">
-              <p style="page-break-after: avoid;" >
-                <span>服务类型</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p style="page-break-after: avoid;" >
-                <span>全球服务</span>
-                <span> URI</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p style="page-break-after: avoid;" >
-                <span>
-                  <span>中国</span>服务
-                </span>
-                <span> URI</span>
-              </p>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="mso-yfti-irow: 1;">
-            <td width="138" valign="top">
-              <p>
-                <span>Windows Azure - </span>
-                <span>常规</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.windows.net</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>*.chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 2;">
-            <td width="138" valign="top">
-              <p>
-                <span>Windows Azure </span>
-                <span>计算</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.cloudapp.net</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>*.chinacloudapp.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 3;">
-            <td width="138" valign="top">
-              <p>
-                <span>Windows Azure </span>
-                <span>存储</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.blob.core.windows.net</span>
-              </p>
-              <p>
-                <span>*.queue.core.windows.net</span>
-              </p>
-              <p>
-                <span>*.table.core.windows.net</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>*.blob.core.chinacloudapi.cn</span>
-              </p>
-              <p>
-                <span>*.queue.core.chinacloudapi.cn</span>
-              </p>
-              <p>
-                <span>*.table.core.chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 4;">
-            <td width="138" valign="top">
-              <p>
-                <span>Windows Azure </span>
-                <span>服务管理</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>https://management.core.windows.net</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>https://management.core.chinacloudapi.cn/</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 5;">
-            <td width="138" valign="top">
-              <p>
-                <span>SQL </span>
-                <span>数据库</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.database.windows.net</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>*.database.chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 6;">
-            <td width="138" valign="top">
-              <p>
-                <span>Windows Azure </span>
-                <span>管理门户</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>http://manage.windowsazure.com</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>http://manage.windowsazure.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 7;">
-            <td width="138" valign="top">
-              <p>
-                <span>SQL Azure </span>
-                <span>数据库管理</span>
-                <span> API</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>https://management.database.windows.net</span>
-                <span>
-                  <br />
-                  <br />
-                </span>
-              </p>
-              <p>
-                <span>请参阅</span>
-                <span>
-                  <a href="http://msdn.microsoft.com/zh-cn/library/gg715281.aspx">
-                    <span>关于</span>
-                    <span> SQL Azure </span>
-                    <span>数据库管理</span>
-                    <span> API</span>
-                  </a>
-                </span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>https://management.database</span>
-                <span class="Italic">
-                  <span>.</span>
-                </span>
-                <span>.chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 9;">
-            <td width="138" valign="top">
-              <p>
-                <span>服务总线</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.servicebus.windows.net</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>*.servicebus.chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 10;">
-            <td width="138" valign="top">
-              <p>
-                <span>ACS</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.accesscontrol.windows.net </span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>
-                  *.accesscontrol.<span>chinacloudapi.cn</span>
-                </span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 11;">
-            <td width="138" valign="top">
-              <p>
-                <span>HDInsight</span>
-              </p>
-            </td>
-            <td width="240" valign="top">
-              <p>
-                <span>*.azurehdinsight.net </span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <p>
-                <span>*.hdinsightservices.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 12; mso-yfti-lastrow: yes;">
-            <td width="138" valign="top">
-              <p>
-                <span>SQL </span>
-                <span>数据库导入</span>
-                <span>/</span>
-                <span>导出服务映射端点</span>
-              </p>
-            </td>
-            <td width="270" valign="top">
-              <ol>
-                <li>
-                  <span>中国东部：</span>
-                  <span>
-                    <a href="https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc">https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.sv</a>c
-                  </span>
-                </li>
-                <li>
-                  <span>中国北部：</span>
-                  <span>
-                    <a href="https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc">https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc</a>
-                  </span>
-                </li>
-              </ol>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="TableSpacing"> </p>
-      <div >
-        <h1>
-          <a name="_Toc359582682"></a>
-          <a name="_Toc358494509"></a>
-          <a name="z5f85e34bca244b589e79873b56fbca12"></a>
-          <span>
-            <span>
-              <span>中国的数据中心</span>
-            </span>
-          </span>
-        </h1>
-      </div>
-      <p>
-        <span>
-          <span>中国</span>服务
-        </span>
-        <span>当前运营着两个数据中心。这两个数据中心在</span>
-        <span>location</span>
-        <span>字段中显示为</span>
-        <span>“China North”</span>
-        <span>和</span>
-        <span>“China East”</span>
-        <span>。</span>
-      </p>
-      <p> </p>
-      <div >
-        <h1 style="display:none;">
-          <a name="_Toc359582683"></a>
-          <a name="_Toc358494510"></a>
-          <a name="_Toc311613938"></a>
-          <span>
-            <span>
-              <span>数据备份</span>
-            </span>
-          </span>
-          <a name="z7babf1eb8946439c858375c42e681fec"></a>
-        </h1>
-      </div>
-      <p style="display:none;" >
-        <span>所有数据和设置（包括所有类型的配置、存储和数据库）均与</span>
-        <span>“</span>
-        <span>全球服务</span>
-        <span>”</span>
-        <span>相同的方式进行备份。中国两个数据中心中的所有数据进行复制，但并不会自动备份到全球的其他位置。</span>
-      </p>
-      <p style="display:none;" >
-        <span>如果整个系统出现灾难性故障，数据可能会丢失。为确保数据的连续性，开发人员应创建数据快照，并将其存储到</span>
-        <span> Windows Azure </span>
-        <span>之外的位置。</span>
-      </p>
-      <p> </p>
-      <div >
-        <h1>
-          <a name="_Toc359582684"></a>
-          <a name="_Toc358494511"></a>
-          <span>
-            <span>设置用于开发的计算机</span>
-          </span>
-          <a name="zb3c4f78c2434484884cd18ecc6231030"></a>
-        </h1>
-      </div>
-      <p>
-        <span>准备发布应用程序时，请打开</span>
-        <span> Windows Azure </span>
-        <span>项目的快捷菜单，然后选择</span>
-        <span class="label0">
-          <span>Publish</span>
-        </span>
-        <span>。</span>
-        <span>下图显示了</span>
-        <span> Publish Windows Azure Application </span>
-        <span>向导</span>
-      </p>
-      <h3>
-        <a name="_Toc359582685"></a>
-        <a name="_Toc358494512"></a>
-        <span>
-          <span>配置订阅</span>
-        </span>
-      </h3>
-      <p>
-        <span>
-          <span>1.</span>
-        </span>
-        <span>从</span>
-        <span>“Publish Windows Azure Application”</span>
-        <span>向导的</span>
-        <span>“Choose your subscription”</span>
-        <span>下，选择</span>
-        <span> &lt;Manage…&gt;</span>
-        <span>，</span>
-        <span>然后再选择</span>
-        <span>“New”</span>
-        <span>。</span>
-      </p>
-      <p>
-        <span>
-          <img src="/media/devcenter/shared/developerdifferences-001.png" />
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>2.</span>
-        </span>
-        <span>在</span>
-        <span>“New subscription”</span>
-        <span>窗口中</span>
-      </p>
-      <p>
-        <span>
-          <span>a.</span>
-        </span>
-        <span>选择要用于身份验证的证书。可以选择现有证书或创建新证书。</span>
-      </p>
-      <p>
-        <span>
-          <span>b.</span>
-        </span>
-        <span>使用设置部分下的管理门户</span>
-        <span> (</span>
-        <span>
-          <a href="http://manage.windowsazure.cn">
-            <span>http://manage.windowsazure.cn</span>
-          </a>
-        </span>
-        <span>) </span>
-        <span>将此证书上传至您的帐户</span>
-      </p>
-      <p>
-        <span>
-          <span>c.</span>
-        </span>
-        <span>复制门户中的订阅</span>
-        <span> ID</span>
-      </p>
-      <p>
-        <span>
-          <span>d.</span>
-        </span>
-        <span>输入以下服务管理</span>
-        <span> URL </span>
-        <span>
-          <a href="https://management.core.chinacloudapi.cn">
-            <span>https://management.core.chinacloudapi.cn</span>
-          </a>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>e.</span>
-        </span>
-        <span>指定订阅的名称</span>
-      </p>
-      <p>
-        <span>
-          <img src="/media/devcenter/shared/developerdifferences-002.png" />
-        </span>
-      </p>
-      <p> </p>
-      <h3>
-        <a name="_Toc359582686"></a>
-        <a name="_Toc358494513"></a>
-        <span>
-          <span>配置设置</span>
-        </span>
-      </h3>
-      <p>
-        <span>
-          <span>1.</span>
-        </span>
-        <span>在</span>
-        <span>
-          <span class="label0">Cloud service</span>
-        </span>
-        <span>列表中，请执行以下两组步骤之一：</span>
-      </p>
-      <p>
-        <span>
-          <span>o</span>
-        </span>
-        <span>选择一项现有服务。此时将显示此云服务的数据中心的位置。记下这一位置并确保您的存储帐户位置与该数据中心位置相同。</span>
-      </p>
-      <p>
-        <span>
-          <span>o</span>
-        </span>
-        <span>选择</span>
-        <span>
-          <span class="label0">Create New</span>
-        </span>
-        <span>创建</span>
-        <span> Windows Azure </span>
-        <span>托管的云服务。在</span>
-        <span>
-          <span class="label0">Create Windows Azure Services</span>
-        </span>
-        <span>对话框中，指定服务的名称，然后指定</span>
-        <span>“China North”</span>
-        <span>作为数据中心。</span>
-      </p>
-      <p>
-        <span>
-          <span>2.</span>
-        </span>
-        <span>在</span>
-        <span>
-          <span class="label0">Environment</span>
-        </span>
-        <span>列表中，选择</span>
-        <span>
-          <span class="label0">Production</span>
-        </span>
-        <span>或</span>
-        <span>
-          <span class="label0">Staging</span>
-        </span>
-        <span>。如果要将应用程序部署到测试环境中，请选择过渡环境。稍后可将应用程序移动到生产环境中。</span>
-      </p>
-      <p>
-        <span>
-          <span>3.</span>
-        </span>
-        <span>在</span>
-        <span>
-          <span class="label0">Build configuration</span>
-        </span>
-        <span>列表中，选择</span>
-        <span>
-          <span class="label0">Debug</span>
-        </span>
-        <span>或</span>
-        <span>
-          <span class="label0">Release</span>
-        </span>
-        <span>。</span>
-      </p>
-      <p>
-        <span>
-          <span>4.</span>
-        </span>
-        <span>在</span>
-        <span>
-          <span class="label0">Service configuration</span>
-        </span>
-        <span>列表中，选择</span>
-        <span>
-          <span class="label0">Cloud</span>
-        </span>
-        <span>。</span>
-      </p>
-      <p style="margin-left: .5in; text-indent: -.25in; mso-list: l23 level1 lfo34; tab-stops: list .5in;">
-        <span>
-          <span>5.</span>
-        </span>
-        <span>选中</span>
-        <span>
-          <span class="label0">Enable Remote Desktop for all roles</span>
-        </span>
-        <span>复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示</span>
-        <span>
-          <span class="label0">Remote Desktop Configuration</span>
-        </span>
-        <span>对话框。选择</span>
-        <span>
-          <span class="label0">Settings</span>
-        </span>
-        <span>链接可更改配置。</span>
-      </p>
-      <p style="margin-left: .5in;">
-        <span>选中</span>
-        <span>
-          <span class="label0">Enable Web Deploy for all web roles</span>
-        </span>
-        <span>复选框启用</span>
-        <span> Web </span>
-        <span>部署。必须启用远程桌面才能使用此功能。有关详细信息，请参阅</span>
-        <span>
-          <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">
-            <span>使用</span> Windows Azure <span>工具发布云服务</span>
-          </a>
-        </span>
-        <span>。有关</span>
-        <span> Web </span>
-        <span>部署的详细信息，请参阅</span>
-        <span>
-          <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">
-            <span>使用</span> Windows Azure <span>工具发布云服务</span>
-          </a>.
-        </span>
-      </p>
-      <p style="margin-left: .5in;">
-        <span>
-          <img src="/media/devcenter/shared/developerdifferences-003.png" />
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>6.</span>
-        </span>
-        <span>选择</span>
-        <span>
-          <span class="label0">Advanced Settings</span>
-        </span>
-        <span>选项卡。在</span>
-        <span>
-          <span class="label0">Deployment label</span>
-        </span>
-        <span>字段中，可以接受默认名称，也可以输入您选择名称。如需将日期附加到部署标签，请选中对应复选框。</span>
-      </p>
-      <p>
-        <span>
-          <span>7.</span>
-        </span>
-        <span>在</span>
-        <span class="label0">
-          <span>Storage account</span>
-        </span>
-        <span>列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。</span>
-      </p>
-      <p>
-        <img src="/media/devcenter/shared/developerdifferences-004.png" />
-      </p>
-      <p>
-        <span>
-          <span>8.</span>
-        </span>
-        <span>如果您只希望部署已更新的组件，请选中</span>
-        <span>
-          <span class="label0">Deployment update</span>
-        </span>
-        <span>复选框。此类型的部署速度比全面部署更快。选择</span>
-        <span>
-          <span class="label0">Settings</span>
-        </span>
-        <span>链接，以打开</span>
-        <span>
-          <span class="label0">Deployment update settings</span>
-        </span>
-        <span>对话框，如下图所示。</span>
-      </p>
-      <p>
-        <span>
-          <img src="/media/devcenter/shared/developerdifferences-005.png" />
-        </span>
-      </p>
-      <p style="margin-left: .5in;">
-        <span>您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。</span>
-      </p>
-      <p style="margin-left: .5in;">
-        <span>当更新部署失败后，如果您希望自动执行完整部署，应选中复选框</span>
-        <span>
-          <span class="label0">if deployment can't be updated, do a full deployment</span>
-        </span>
-        <span>。完整部署将重置云服务的虚拟</span>
-        <span> IP (VIP) </span>
-        <span>地址。有关详细信息，请参见</span>
-        <span>
-          <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614593.aspx">
-            <span>如何：为云服务保留固定的虚拟</span> IP <span>地址</span>
-          </a>
-        </span>
-        <span>。</span>
-      </p>
-      <h3>
-        <a name="_Toc359582687"></a>
-        <a name="_Toc358494514"></a>
-        <span>
-          <span>发布项目</span>
-        </span>
-      </h3>
-      <p>
-        <span>
-          <span>1.</span>
-        </span>
-        <span>您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择</span>
-        <span class="label0">
-          <span>Save</span>
-        </span>
-        <span>图标。</span>
-        <span>此向导将创建配置文件并将其保存在</span>
-        <span> Visual Studio </span>
-        <span>项目中。</span>
-      </p>
-      <p>
-        <span>
-          <img src="/media/devcenter/shared/developerdifferences-006.png" />
-        </span>
-      </p>
-      <table border="0" cellpadding="0">
-        <tbody>
-          <tr style="mso-yfti-irow: 1; mso-yfti-lastrow: yes;">
-            <td style="padding: .75pt .75pt .75pt .75pt;">
-              <p>
-                <span>发布配置文件会显示在</span>
-                <span> Visual Studio </span>
-                <span>的</span>
-                <span>
-                  <span class="label0">Solution Explorer</span>
-                </span>
-                <span>中，配置文件设置将被写入扩展名为</span>
-                <span> .azurePubxml </span>
-                <span>的文件中。这些设置均保存为</span>
-                <span> XML </span>
-                <span>标记的属性。</span>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <span>
-          <span>2.</span>
-        </span>
-        <span>选择</span>
-           <span class="label0">Publish以发布应用程序。您可以在 Visual Studio中Output窗格中监控流程状态。</span>
-      </p>
-      <div >
-        <h1>
-          <a name="_Toc359582688"></a>
-          <a name="_Toc358494515"></a>
-          <span>
-            <span>修改</span>
-          </span>
-          <a name="zcbea9521c2074678a57446495803ff38"></a>
-          <span>
-            <span>
-              <span>中国</span>服务的配置和服务定义文件
-            </span>
-          </span>
-        </h1>
-      </div>
-      <p>
-        <span>修改现有项目时，请在指向Windows Azure、SQL数据库 URI的服务定义文件或配置文件中搜索您的项目，以获取端点 URI。</span>
-      </p>
-      <p>
-        <span>对于中国，应将指向 *.windows.net的端点重定向至新的URI。以下列出了几个示例。</span>
-      </p>
-      <h2>
-        <a name="_Toc359582689"></a>
-        <a name="_Toc358494516"></a>
-        <span>
-          <span>存储端点</span>
-        </span>
-      </h2>
-      <p>
-        <span>您必须使用自定义存储端点。默认设置指向 *.core.windows.net，其中* 基于您的应用程序和存储位置而发生变更。</span>
-      </p>
-      <p>
-        <span>在 Windows Azure 应用程序的 Windows Azure 服务配置文件(.cscfg) 中，设置自定义数据连接字符串以指向中国服务中的blob、队列和表存储URI。以下代码显示了自定义端点的示例，其中
-        <span class="Italic">
-          &lt;AccountKey&gt;</span>
-        是一个变量，该变量必须由特定的存储帐户密钥替换。字符串mystorageaccount是在订阅下创建的存储账户的一个示例。</span>
-      </p>
-      <p> </p>
-      <p style="background: #E7E6E6;" class="Code">
-        <span>&lt;Setting name="DataConnectionString" value=</span>
-      </p>
-      <p style="background: #E7E6E6; width: 880px;" class="Code">
-        <span>
-          "BlobEndpoint=https://mystorageaccount.blob.core.chinacloudapi.cn/;QueueEndpoint=<br />https://mystorageaccount.queue.core.chinacloudapi.cn/;TableEndpoint=https://mystorageaccount.table.core.chinacloudapi.cn/;<br />AccountName=mystorageaccount;AccountKey=
-        </span>
-        <span class="Italic">
-          <span>&lt;AccountKey&gt;</span>
-        </span>
-        <span> " /&gt;</span>
-      </p>
-      <p class="Code"> </p>
-      <p>
-        <span>请注意，自定义存储端点不包括DefaultEndpointsProtocol设置。此设置通常显示在指向Windows Azure公共版本的存储端点的连接字符串中。</span>
-      </p>
-      <p>
-        <span>Visual Studio还提供了一个用于在给定角色的Settings部分中创建自定义存储端点的选项。</span>
-      </p>
-      <p> </p>
-      <div>
-        <table border="0" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td align="left" valign="top" style="padding: 0in;">
-                <p class="ProcedureTitle">
-                  <span>要在Visual Studio中创建自定义端点，请执行以下操作：</span>
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <table border="0" cellspacing="0" cellpadding="0" class="MsoNormalTable">
-        <tbody>
-          <tr>
-            <td width="590" valign="top">
-              <p>
-                <span>1.打开包含一个或多个角色的Windows Azure解决方案。</span>
-              </p>
-              <p>
-                <span>2.右键单击Solution Explorer中的任意角色。此操作将弹出该角色的配置。</span>
-              </p>
-              <p>
-                <span>3.单击<span class="UI">Settings</span>。</span>
-              </p>
-              <p>
-                <span>4.单击<span class="UI">Add Setting</span>。</span>
-              </p>
-              <p >
-                <span>5.为设置键入一个<span class="UI">名称</span>。</span>
-              </p>
-              <p >
-                <span>6.选择<span class="UI">连接字符串</span>的<span class="UI">类型</span>。</span>
-              </p>
-              <p >
-                <span>7.单击<span class="UI">…</span>弹出<span class="UI">Storage Account Connection String</span>对话框。</span>
-              </p>
-              <p >
-                <span>8.选择<span class="UI">Enter storage account credentials</span>。</span>
-              </p>
-              <p >
-                <span>9.输入正确的存储帐户名和密钥。</span>
-              </p>
-              <p >
-                <span>10.选择<span class="UI">Use custom endpoints</span>，然后为blob、表和队列端点输入正确的https字符串。</span>
-              </p>
-              <p >
-                <span>11.单击<span class="UI">OK</span>。</span>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p> </p>
-      <p>
-        <span>Visual Studio </span>
-        <span>将在您的服务配置文件中创建一个自定义存储端点。您可以通过角色中的代码使用此存储端点。</span>
-      </p>
-      <p>
-        <span>以下代码通过使用特定于</span>
-        <span>
-          <span>中国</span>服务
-        </span>
-        <span>的自定义</span>
-        <span> URI </span>
-        <span>以编程方式显示与存储帐户的连接</span>
-      </p>
-      <p style="background: #F2F2F2; text-autospace: none;" >
-        <span>CloudStorageAccount Account = </span>
-        <span>new</span>
-        <span>CloudStorageAccount</span>
-        <span>( </span>
-      </p>
-      <p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
-        <span>new</span>
-        <span>StorageCredentialsAccountAndKey</span>
-        <span>(ACCOUNTNAME, ACCOUNTKEY), </span>
-      </p>
-      <p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
-        <span>new</span>
-        <span>Uri</span>
-        <span>(</span>
-        <span>
-          "<a href="http://ACCOUNTNAME.blob.core.chinacloudapi.cn/">
-            <span>http://ACCOUNTNAME.blob.core.chinacloudapi.cn/</span>
-          </a>"
-        </span>
-        <span>), </span>
-      </p>
-      <p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
-        <span>new</span>
-        <span>Uri</span>
-        <span>(</span>
-        <span>
-          "<a href="http://ACCOUNTNAME.queue.core.chinacloudapi.cn/">
-            <span>http://ACCOUNTNAME.queue.core.chinacloudapi.cn/</span>
-          </a>"
-        </span>
-        <span>), </span>
-      </p>
-      <p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
-        <span>new</span>
-        <span>Uri</span>
-        <span>(</span>
-        <span>
-          "<a href="http://ACCOUNTNAME.table.core.chinacloudapi.cn/">
-            <span>http://ACCOUNTNAME.table.core.chinacloudapi.cn/</span>
-          </a>"
-        </span>
-        <span>)</span>
-      </p>
-      <p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
-        <span>);</span>
-      </p>
-      <p style="background: #F2F2F2; text-autospace: none;" >
-        <span>CloudBlobClient BlobClient = Account.CreateCloudBlobClient();</span>
-      </p>
-      <h2>
-        <a name="_Toc359582690"></a>
-        <a name="_Toc358494517"></a>
-        <span>
+          <span> URI</span>
+        </p>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="mso-yfti-irow: 1;">
+      <td width="138" valign="top">
+        <p>
+          <span>Windows Azure - </span>
+          <span>常规</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.windows.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>*.chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 2;">
+      <td width="138" valign="top">
+        <p>
           <span>Windows Azure </span>
-        </span>
-        <span>
-          <span>
-            <span>计算中的端口绑定</span>
-          </span>
-        </span>
-      </h2>
-      <p>
-        <span>端口绑定还使用以</span>
-        <span> *.cloudapp.net </span>
-        <span>结尾的</span>
-        <span> DNS </span>
-        <span>名称。您必须更改这些名称以指向</span>
-        <span> *.</span>
-        <span class="Italic">
-          <span>chinacloudapp.cn)</span>
-        </span>
-        <span>。以下显示了包括端口说明的部分服务定义文件。</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Sites&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Site name="MySite" physcalDirectory="..\WebSite1"&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Bindings&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Binding name="My" endpointName="HttpIn" hostHeader="WebSite1.mysite.Chinacloudapp.cn" /&gt; </span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;/Bindings&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;/Site&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Site name="Web"&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Bindings&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;Binding name="HttpIn" endpointName="HttpIn" /&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;/Bindings&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;/Site&gt;</span>
-      </p>
-      <p style="line-height: normal; background: #E7E6E6;" class="Code">
-        <span>&lt;/Sites&gt;</span>
-      </p>
-      <p>
-        <span>有关详细信息，请参见</span>
-        <span>
-          <a href="http://msdn.microsoft.com/zh-cn/library/hh180158.aspx">
-            <span>如何配置</span>Windows Azure <span>端口</span>
-          </a>
-          <a name="_Hlt358838552"></a>
-          <a name="_Hlt358838553"></a>
-        </span>
-        <span>。</span>
-      </p>
-      <h2>
-        <a name="_Toc359582691"></a>
-        <a name="_Toc358494518"></a>
-        <a name="_Toc311613945"></a>
-        <span>
-          <span>
-            <span>与</span>
-          </span>
-        </span>
-        <span>
-          <span>
-            <span>
-              <span> SQL </span>
-            </span>
-          </span>
-        </span>
-        <span>
-          <span>
-            <span>
-              <span>数据库服务器的连接</span>
-            </span>
-          </span>
-        </span>
-      </h2>
-      <p>
-        <span>SQL </span>
-        <span>数据库服务器名称将从</span>
-        <span> *.database.windows.net </span>
-        <span>更改为</span>
-        <span> *.devdatabase.chinacloudapi.cn</span>
-        <span>。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该新名称。对于未在</span>
-        <span>
-          <span>中国</span>服务
-        </span>
-        <span>中运行的应用程序，对</span>
-        <span> SQL </span>
-        <span>数据库服务器的引用可以是服务定义文件中的</span>
-        <span> DataConnectionString </span>
-        <span>值或其他</span>
-        <span> .NET </span>
-        <span>配置文件中的值。</span>
-        <span>例如，</span>
-      </p>
-      <p class="Code">
-        <span>&lt;configuration&gt;</span>
-      </p>
-      <p class="Code">
-        <span>&lt;connectionStrings&gt;</span>
-      </p>
-      <p class="Code">
-        <span>&lt;add name="SQLAzure" connectionString="Server=tcp:yourserver.devdatabase.chinacloudapi.cn;</span>
-      </p>
-      <p class="Code">
-        <span>Database=Test;User ID=login@server;Password=yourPassword;</span>
-      </p>
-      <p class="Code">
-        <span>Trusted_Connection=False;Encrypt=True;"/&gt;</span>
-      </p>
-      <p class="Code">
-        <span>&lt;/connectionStrings&gt;</span>
-      </p>
-      <p>
-        <span>&lt;/configuration&gt;</span>
-      </p>
-      <h2>
-        <a name="_Toc359582692"></a>
-        <a name="_Toc358494519"></a>
-        <a name="_Toc311613946"></a>
-        <span>
-          <span>
-            <span>服务总线和Active Directory</span>
-          </span>
-        </span>
-      </h2>
-      <p> </p>
-      <h3>
-        <a name="_Toc359582693"></a>
-        <span>Active Directory</span>
-      </h3>
-      <p>
-        <span>Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问功能，可用于内部部署和云应用。开发人员可以使用Windows Azure AD功能为企业应用和软件作为服务（SaaS）的供应商实现单点登录和登出，使用图形API来查询和管理云的目录对象，整合内部部署</span>
-        <span>来</span>
-        <span>将</span>
-        <span>Active Directory的目录数据同步到云端。</span>
-        <a name="_Toc358494520"></a>
-      </p>
-      <p>
-        <span>中国服务中包含</span>
-        <span> Windows Azure AD</span>
-        <span>。但按照设计，仍会存在一些影响开发人员体验的差异。中国服务是一种自定义的产品，该产品与全球服务有许多共同特性。自定义会导致出现以下差异，这些差异会对使用</span>
-        <span> Windows Azure AD </span>
-        <span>的开发人员造成影响。</span>
-      </p>
-      <p>
-        <span>
-          <span>
-            <span> · </span>
-          </span>
-        </span>
-        <span>不包含Access Control (</span>
-        <span>访问控制)</span>
-        <span>
-          命名空间<span>
-            。如果您需要集成应用程序和与Windows Azure的<span>身份验证</span>服务同步企业目录，请使用Windows Azure中的Active Directory。在 Windows Azure管理门户中，单击“Active Directory"。
-          </span>
-        </span>
-      </p>
-      <p style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l27 level1 lfo47;">
-        <span>
-          <span>
-            <span>
-              ·<span> ACS管理门户仅适用于服务总线命名空间。</span>
-            </span>
-          </span>
-        </span>
-        <span>
+          <span>计算</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.cloudapp.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>*.chinacloudapp.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 3;">
+      <td width="138" valign="top">
+        <p>
+          <span>Windows Azure </span>
+          <span>存储</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.blob.core.windows.net</span>
+        </p>
+        <p>
+          <span>*.queue.core.windows.net</span>
+        </p>
+        <p>
+          <span>*.table.core.windows.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>*.blob.core.chinacloudapi.cn</span>
+        </p>
+        <p>
+          <span>*.queue.core.chinacloudapi.cn</span>
+        </p>
+        <p>
+          <span>*.table.core.chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 4;">
+      <td width="138" valign="top">
+        <p>
+          <span>Windows Azure </span>
+          <span>服务管理</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>https://management.core.windows.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>https://management.core.chinacloudapi.cn/</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 5;">
+      <td width="138" valign="top">
+        <p>
+          <span>SQL </span>
+          <span>数据库</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.database.windows.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>*.database.chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 6;">
+      <td width="138" valign="top">
+        <p>
+          <span>Windows Azure </span>
+          <span>管理门户</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>http://manage.windowsazure.com</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>http://manage.windowsazure.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 7;">
+      <td width="138" valign="top">
+        <p>
+          <span>SQL Azure </span>
+          <span>数据库管理</span>
+          <span> API</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>https://management.database.windows.net</span>
           <span>
             <br />
             <br />
           </span>
-        </span>
-      </p>
-      <p style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l27 level1 lfo47;">
-        <span>
-          <span>·</span>
-          <span>授权</span>
-        </span>
-        <span>
-          <span>。对于本地应用程序和服务器到服务器案例，目前尚不支持</span>
-        </span>
-        <span>
-          <span> OAuth 2.0 </span>
-        </span>
-        <span>
-          <span>授权代码授予类型的预览功能。</span>
-        </span>
-      </p>
-      <p>
-        <span>
+        </p>
+        <p>
+          <span>请参阅</span>
           <span>
-            除了这些基于设计的差异之外，<span>中国</span>服务中的
-          </span>
-        </span>
-        <span>
-          <span> Windows Azure AD </span>
-        </span>
-        <span>
-          <span>设计与全球服务相同。有关世纪互联服务中的</span>
-        </span>
-        <span>
-          <span> Windows Azure AD </span>
-        </span>
-        <span>
-          <span>的信息，请参见</span>
-        </span>
-        <a href="http://go.microsoft.com/fwlink/?LinkId=306710">
-          <span>
-            <span>如何使用</span>
-          </span>
-          <span>
-            <span> Windows Azure Active Directory </span>
-          </span>
-          <span>
-            <span>访问控制对</span>
-          </span>
-          <span>
-            <span> Web </span>
-          </span>
-          <span>
-            <span>用户进行身份验证</span>
-          </span>
-        </a>
-        <span>
-          <span>。</span>
-        </span>
-      </p>
-      <p>
-        <span>
-          <span>注意：</span>
-        </span>
-        <span>在公共预览期间创建的访问控制命名空间将不可操作或访问。然而，类似的功能可在Windows Azure管理门户的Active Directory使用</span>
-        <span>。</span>
-      </p>
-
-      <div style="display:none">
-        <h3>
-          <a name="_Toc359582694"></a>
-          <a name="_Toc358494521"></a>
-          <a name="_Toc311613947"></a>
-          <span>
-            <span>
-              <span>ACS </span>
-            </span>
-          </span>
-          <span>
-            <span>
-              <span>
-                <span>配置</span>
-              </span>
-            </span>
-          </span>
-        </h3>
-        <p style="display:none" >
-          <span>要创建使用</span>
-          <span> ACS </span>
-          <span>的应用程序，开发人员应阅读</span>
-          <span>
-            <a href="http://acs.codeplex.com/">
-              <span>有关</span>
-              <span> Codeplex </span>
-              <span>的访问控制服务示例和文档</span>
+            <a href="http://msdn.microsoft.com/zh-cn/library/gg715281.aspx">
+              <span>关于</span>
+              <span> SQL Azure </span>
+              <span>数据库管理</span>
+              <span> API</span>
             </a>
           </span>
-          <span>中的文档和代码示例。要在中国使用</span>
-          <span> Windows Azure </span>
-          <span>中的这些示例，请在</span>
-          <span> \Management\ManagementService\Common\SamplesConfiguration.cs </span>
-          <span>文件中将</span>
-          <span> AcsHostUrl </span>
-          <span>端点</span>
-          <span class="Bold">
-            <span>accesscontrol.windows.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>https://management.database</span>
+          <span class="Italic">
+            <span>.</span>
           </span>
-          <span>替换为</span>
+          <span>.chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 9;">
+      <td width="138" valign="top">
+        <p>
+          <span>服务总线</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.servicebus.windows.net</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>*.servicebus.chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 10;">
+      <td width="138" valign="top">
+        <p>
+          <span>ACS</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.accesscontrol.windows.net </span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
           <span>
             *.accesscontrol.<span>chinacloudapi.cn</span>
           </span>
-          <span>。</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 11;">
+      <td width="138" valign="top">
+        <p>
+          <span>HDInsight</span>
+        </p>
+      </td>
+      <td width="240" valign="top">
+        <p>
+          <span>*.azurehdinsight.net </span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <p>
+          <span>*.hdinsightservices.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 12; mso-yfti-lastrow: yes;">
+      <td width="138" valign="top">
+        <p>
+          <span>SQL </span>
+          <span>数据库导入</span>
+          <span>/</span>
+          <span>导出服务映射端点</span>
+        </p>
+      </td>
+      <td width="270" valign="top">
+        <ol>
+          <li>
+            <span>中国东部：</span>
+            <span>
+              <a href="https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc">https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.sv</a>c
+            </span>
+          </li>
+          <li>
+            <span>中国北部：</span>
+            <span>
+              <a href="https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc">https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc</a>
+            </span>
+          </li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="TableSpacing"> </p>
+<div >
+  <h1>
+    <a name="_Toc359582682"></a>
+    <a name="_Toc358494509"></a>
+    <a name="z5f85e34bca244b589e79873b56fbca12"></a>
+    <span>
+      <span>
+        <span>中国的数据中心</span>
+      </span>
+    </span>
+  </h1>
+</div>
+<p>
+  <span>
+    <span>中国</span>服务
+  </span>
+  <span>当前运营着两个数据中心。这两个数据中心在</span>
+  <span>location</span>
+  <span>字段中显示为</span>
+  <span>“China North”</span>
+  <span>和</span>
+  <span>“China East”</span>
+  <span>。</span>
+</p>
+<p> </p>
+<div >
+  <h1 style="display:none;">
+    <a name="_Toc359582683"></a>
+    <a name="_Toc358494510"></a>
+    <a name="_Toc311613938"></a>
+    <span>
+      <span>
+        <span>数据备份</span>
+      </span>
+    </span>
+    <a name="z7babf1eb8946439c858375c42e681fec"></a>
+  </h1>
+</div>
+<p style="display:none;" >
+  <span>所有数据和设置（包括所有类型的配置、存储和数据库）均与</span>
+  <span>“</span>
+  <span>全球服务</span>
+  <span>”</span>
+  <span>相同的方式进行备份。中国两个数据中心中的所有数据进行复制，但并不会自动备份到全球的其他位置。</span>
+</p>
+<p style="display:none;" >
+  <span>如果整个系统出现灾难性故障，数据可能会丢失。为确保数据的连续性，开发人员应创建数据快照，并将其存储到</span>
+  <span> Windows Azure </span>
+  <span>之外的位置。</span>
+</p>
+<p> </p>
+<div >
+  <h1>
+    <a name="_Toc359582684"></a>
+    <a name="_Toc358494511"></a>
+    <span>
+      <span>设置用于开发的计算机</span>
+    </span>
+    <a name="zb3c4f78c2434484884cd18ecc6231030"></a>
+  </h1>
+</div>
+<p>
+  <span>准备发布应用程序时，请打开</span>
+  <span> Windows Azure </span>
+  <span>项目的快捷菜单，然后选择</span>
+  <span class="label0">
+    <span>Publish</span>
+  </span>
+  <span>。</span>
+  <span>下图显示了</span>
+  <span> Publish Windows Azure Application </span>
+  <span>向导</span>
+</p>
+<h3>
+  <a name="_Toc359582685"></a>
+  <a name="_Toc358494512"></a>
+  <span>
+    <span>配置订阅</span>
+  </span>
+</h3>
+<p>
+  <span>
+    <span>1.</span>
+  </span>
+  <span>从</span>
+  <span>“Publish Windows Azure Application”</span>
+  <span>向导的</span>
+  <span>“Choose your subscription”</span>
+  <span>下，选择</span>
+  <span> &lt;Manage…&gt;</span>
+  <span>，</span>
+  <span>然后再选择</span>
+  <span>“New”</span>
+  <span>。</span>
+</p>
+<p>
+  <span>
+    <img src="/media/devcenter/shared/developerdifferences-001.png" />
+  </span>
+</p>
+<p>
+  <span>
+    <span>2.</span>
+  </span>
+  <span>在</span>
+  <span>“New subscription”</span>
+  <span>窗口中</span>
+</p>
+<p>
+  <span>
+    <span>a.</span>
+  </span>
+  <span>选择要用于身份验证的证书。可以选择现有证书或创建新证书。</span>
+</p>
+<p>
+  <span>
+    <span>b.</span>
+  </span>
+  <span>使用设置部分下的管理门户</span>
+  <span> (</span>
+  <span>
+    <a href="http://manage.windowsazure.cn">
+      <span>http://manage.windowsazure.cn</span>
+    </a>
+  </span>
+  <span>) </span>
+  <span>将此证书上传至您的帐户</span>
+</p>
+<p>
+  <span>
+    <span>c.</span>
+  </span>
+  <span>复制门户中的订阅</span>
+  <span> ID</span>
+</p>
+<p>
+  <span>
+    <span>d.</span>
+  </span>
+  <span>输入以下服务管理</span>
+  <span> URL </span>
+  <span>
+    <a href="https://management.core.chinacloudapi.cn">
+      <span>https://management.core.chinacloudapi.cn</span>
+    </a>
+  </span>
+</p>
+<p>
+  <span>
+    <span>e.</span>
+  </span>
+  <span>指定订阅的名称</span>
+</p>
+<p>
+  <span>
+    <img src="/media/devcenter/shared/developerdifferences-002.png" />
+  </span>
+</p>
+<p> </p>
+<h3>
+  <a name="_Toc359582686"></a>
+  <a name="_Toc358494513"></a>
+  <span>
+    <span>配置设置</span>
+  </span>
+</h3>
+<p>
+  <span>
+    <span>1.</span>
+  </span>
+  <span>在</span>
+  <span>
+    <span class="label0">Cloud service</span>
+  </span>
+  <span>列表中，请执行以下两组步骤之一：</span>
+</p>
+<p>
+  <span>
+    <span>o</span>
+  </span>
+  <span>选择一项现有服务。此时将显示此云服务的数据中心的位置。记下这一位置并确保您的存储帐户位置与该数据中心位置相同。</span>
+</p>
+<p>
+  <span>
+    <span>o</span>
+  </span>
+  <span>选择</span>
+  <span>
+    <span class="label0">Create New</span>
+  </span>
+  <span>创建</span>
+  <span> Windows Azure </span>
+  <span>托管的云服务。在</span>
+  <span>
+    <span class="label0">Create Windows Azure Services</span>
+  </span>
+  <span>对话框中，指定服务的名称，然后指定</span>
+  <span>“China North”</span>
+  <span>作为数据中心。</span>
+</p>
+<p>
+  <span>
+    <span>2.</span>
+  </span>
+  <span>在</span>
+  <span>
+    <span class="label0">Environment</span>
+  </span>
+  <span>列表中，选择</span>
+  <span>
+    <span class="label0">Production</span>
+  </span>
+  <span>或</span>
+  <span>
+    <span class="label0">Staging</span>
+  </span>
+  <span>。如果要将应用程序部署到测试环境中，请选择过渡环境。稍后可将应用程序移动到生产环境中。</span>
+</p>
+<p>
+  <span>
+    <span>3.</span>
+  </span>
+  <span>在</span>
+  <span>
+    <span class="label0">Build configuration</span>
+  </span>
+  <span>列表中，选择</span>
+  <span>
+    <span class="label0">Debug</span>
+  </span>
+  <span>或</span>
+  <span>
+    <span class="label0">Release</span>
+  </span>
+  <span>。</span>
+</p>
+<p>
+  <span>
+    <span>4.</span>
+  </span>
+  <span>在</span>
+  <span>
+    <span class="label0">Service configuration</span>
+  </span>
+  <span>列表中，选择</span>
+  <span>
+    <span class="label0">Cloud</span>
+  </span>
+  <span>。</span>
+</p>
+<p style="margin-left: .5in; text-indent: -.25in; mso-list: l23 level1 lfo34; tab-stops: list .5in;">
+  <span>
+    <span>5.</span>
+  </span>
+  <span>选中</span>
+  <span>
+    <span class="label0">Enable Remote Desktop for all roles</span>
+  </span>
+  <span>复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示</span>
+  <span>
+    <span class="label0">Remote Desktop Configuration</span>
+  </span>
+  <span>对话框。选择</span>
+  <span>
+    <span class="label0">Settings</span>
+  </span>
+  <span>链接可更改配置。</span>
+</p>
+<p style="margin-left: .5in;">
+  <span>选中</span>
+  <span>
+    <span class="label0">Enable Web Deploy for all web roles</span>
+  </span>
+  <span>复选框启用</span>
+  <span> Web </span>
+  <span>部署。必须启用远程桌面才能使用此功能。有关详细信息，请参阅</span>
+  <span>
+    <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">
+      <span>使用</span> Windows Azure <span>工具发布云服务</span>
+    </a>
+  </span>
+  <span>。有关</span>
+  <span> Web </span>
+  <span>部署的详细信息，请参阅</span>
+  <span>
+    <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">
+      <span>使用</span> Windows Azure <span>工具发布云服务</span>
+    </a>.
+  </span>
+</p>
+<p style="margin-left: .5in;">
+  <span>
+    <img src="/media/devcenter/shared/developerdifferences-003.png" />
+  </span>
+</p>
+<p>
+  <span>
+    <span>6.</span>
+  </span>
+  <span>选择</span>
+  <span>
+    <span class="label0">Advanced Settings</span>
+  </span>
+  <span>选项卡。在</span>
+  <span>
+    <span class="label0">Deployment label</span>
+  </span>
+  <span>字段中，可以接受默认名称，也可以输入您选择名称。如需将日期附加到部署标签，请选中对应复选框。</span>
+</p>
+<p>
+  <span>
+    <span>7.</span>
+  </span>
+  <span>在</span>
+  <span class="label0">
+    <span>Storage account</span>
+  </span>
+  <span>列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。</span>
+</p>
+<p>
+  <img src="/media/devcenter/shared/developerdifferences-004.png" />
+</p>
+<p>
+  <span>
+    <span>8.</span>
+  </span>
+  <span>如果您只希望部署已更新的组件，请选中</span>
+  <span>
+    <span class="label0">Deployment update</span>
+  </span>
+  <span>复选框。此类型的部署速度比全面部署更快。选择</span>
+  <span>
+    <span class="label0">Settings</span>
+  </span>
+  <span>链接，以打开</span>
+  <span>
+    <span class="label0">Deployment update settings</span>
+  </span>
+  <span>对话框，如下图所示。</span>
+</p>
+<p>
+  <span>
+    <img src="/media/devcenter/shared/developerdifferences-005.png" />
+  </span>
+</p>
+<p style="margin-left: .5in;">
+  <span>您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。</span>
+</p>
+<p style="margin-left: .5in;">
+  <span>当更新部署失败后，如果您希望自动执行完整部署，应选中复选框</span>
+  <span>
+    <span class="label0">if deployment can't be updated, do a full deployment</span>
+  </span>
+  <span>。完整部署将重置云服务的虚拟</span>
+  <span> IP (VIP) </span>
+  <span>地址。有关详细信息，请参见</span>
+  <span>
+    <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614593.aspx">
+      <span>如何：为云服务保留固定的虚拟</span> IP <span>地址</span>
+    </a>
+  </span>
+  <span>。</span>
+</p>
+<h3>
+  <a name="_Toc359582687"></a>
+  <a name="_Toc358494514"></a>
+  <span>
+    <span>发布项目</span>
+  </span>
+</h3>
+<p>
+  <span>
+    <span>1.</span>
+  </span>
+  <span>您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择</span>
+  <span class="label0">
+    <span>Save</span>
+  </span>
+  <span>图标。</span>
+  <span>此向导将创建配置文件并将其保存在</span>
+  <span> Visual Studio </span>
+  <span>项目中。</span>
+</p>
+<p>
+  <span>
+    <img src="/media/devcenter/shared/developerdifferences-006.png" />
+  </span>
+</p>
+<table border="0" cellpadding="0">
+  <tbody>
+    <tr style="mso-yfti-irow: 1; mso-yfti-lastrow: yes;">
+      <td style="padding: .75pt .75pt .75pt .75pt;">
+        <p>
+          <span>发布配置文件会显示在</span>
+          <span> Visual Studio </span>
+          <span>的</span>
+          <span>
+            <span class="label0">Solution Explorer</span>
+          </span>
+          <span>中，配置文件设置将被写入扩展名为</span>
+          <span> .azurePubxml </span>
+          <span>的文件中。这些设置均保存为</span>
+          <span> XML </span>
+          <span>标记的属性。</span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <span>
+    <span>2.</span>
+  </span>
+  <span>选择</span>
+  <span class="label0">Publish以发布应用程序。您可以在 Visual Studio中Output窗格中监控流程状态。</span>
+</p>
+<div >
+  <h1>
+    <a name="_Toc359582688"></a>
+    <a name="_Toc358494515"></a>
+    <span>
+      <span>修改</span>
+    </span>
+    <a name="zcbea9521c2074678a57446495803ff38"></a>
+    <span>
+      <span>
+        <span>中国</span>服务的配置和服务定义文件
+      </span>
+    </span>
+  </h1>
+</div>
+<p>
+  <span>修改现有项目时，请在指向Windows Azure、SQL数据库 URI的服务定义文件或配置文件中搜索您的项目，以获取端点 URI。</span>
+</p>
+<p>
+  <span>对于中国，应将指向 *.windows.net的端点重定向至新的URI。以下列出了几个示例。</span>
+</p>
+<h2>
+  <a name="_Toc359582689"></a>
+  <a name="_Toc358494516"></a>
+  <span>
+    <span>存储端点</span>
+  </span>
+</h2>
+<p>
+  <span>您必须使用自定义存储端点。默认设置指向 *.core.windows.net，其中* 基于您的应用程序和存储位置而发生变更。</span>
+</p>
+<p>
+  <span>
+    在 Windows Azure 应用程序的 Windows Azure 服务配置文件(.cscfg) 中，设置自定义数据连接字符串以指向中国服务中的blob、队列和表存储URI。以下代码显示了自定义端点的示例，其中
+    <span class="Italic">
+      &lt;AccountKey&gt;
+    </span>
+    是一个变量，该变量必须由特定的存储帐户密钥替换。字符串mystorageaccount是在订阅下创建的存储账户的一个示例。
+  </span>
+</p>
+<p> </p>
+<p style="background: #E7E6E6;" class="Code">
+  <span>&lt;Setting name="DataConnectionString" value=</span>
+</p>
+<p style="background: #E7E6E6; width: 880px;" class="Code">
+  <span>
+    "BlobEndpoint=https://mystorageaccount.blob.core.chinacloudapi.cn/;QueueEndpoint=<br />https://mystorageaccount.queue.core.chinacloudapi.cn/;TableEndpoint=https://mystorageaccount.table.core.chinacloudapi.cn/;<br />AccountName=mystorageaccount;AccountKey=
+  </span>
+  <span class="Italic">
+    <span>&lt;AccountKey&gt;</span>
+  </span>
+  <span> " /&gt;</span>
+</p>
+<p class="Code"> </p>
+<p>
+  <span>请注意，自定义存储端点不包括DefaultEndpointsProtocol设置。此设置通常显示在指向Windows Azure公共版本的存储端点的连接字符串中。</span>
+</p>
+<p>
+  <span>Visual Studio还提供了一个用于在给定角色的Settings部分中创建自定义存储端点的选项。</span>
+</p>
+<p> </p>
+<div>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td align="left" valign="top" style="padding: 0in;">
+          <p class="ProcedureTitle">
+            <span>要在Visual Studio中创建自定义端点，请执行以下操作：</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" class="MsoNormalTable">
+  <tbody>
+    <tr>
+      <td width="590" valign="top">
+        <p>
+          <span>1.打开包含一个或多个角色的Windows Azure解决方案。</span>
         </p>
         <p>
-          <span>例如，要使用</span>
-          <span> Acs2WindowsPhoneSample </span>
-          <span>示例，请另外进行以下更改：</span>
+          <span>2.右键单击Solution Explorer中的任意角色。此操作将弹出该角色的配置。</span>
+        </p>
+        <p>
           <span>
-            <br />
-            <br />
+            3.单击<span class="UI">Settings</span>。
           </span>
         </p>
-        <p class="TableSpacing">
-          <span> </span>
+        <p>
+          <span>
+            4.单击<span class="UI">Add Setting</span>。
+          </span>
         </p>
+        <p >
+          <span>
+            5.为设置键入一个<span class="UI">名称</span>。
+          </span>
+        </p>
+        <p >
+          <span>
+            6.选择<span class="UI">连接字符串</span>的<span class="UI">类型</span>。
+          </span>
+        </p>
+        <p >
+          <span>
+            7.单击<span class="UI">…</span>弹出<span class="UI">Storage Account Connection String</span>对话框。
+          </span>
+        </p>
+        <p >
+          <span>
+            8.选择<span class="UI">Enter storage account credentials</span>。
+          </span>
+        </p>
+        <p >
+          <span>9.输入正确的存储帐户名和密钥。</span>
+        </p>
+        <p >
+          <span>
+            10.选择<span class="UI">Use custom endpoints</span>，然后为blob、表和队列端点输入正确的https字符串。
+          </span>
+        </p>
+        <p >
+          <span>
+            11.单击<span class="UI">OK</span>。
+          </span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p> </p>
+<p>
+  <span>Visual Studio </span>
+  <span>将在您的服务配置文件中创建一个自定义存储端点。您可以通过角色中的代码使用此存储端点。</span>
+</p>
+<p>
+  <span>以下代码通过使用特定于</span>
+  <span>
+    <span>中国</span>服务
+  </span>
+  <span>的自定义</span>
+  <span> URI </span>
+  <span>以编程方式显示与存储帐户的连接</span>
+</p>
+<p style="background: #F2F2F2; text-autospace: none;" >
+  <span>CloudStorageAccount Account = </span>
+  <span>new</span>
+  <span>CloudStorageAccount</span>
+  <span>( </span>
+</p>
+<p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
+  <span>new</span>
+  <span>StorageCredentialsAccountAndKey</span>
+  <span>(ACCOUNTNAME, ACCOUNTKEY), </span>
+</p>
+<p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
+  <span>new</span>
+  <span>Uri</span>
+  <span>(</span>
+  <span>
+    "<a href="http://ACCOUNTNAME.blob.core.chinacloudapi.cn/">
+      <span>http://ACCOUNTNAME.blob.core.chinacloudapi.cn/</span>
+    </a>"
+  </span>
+  <span>), </span>
+</p>
+<p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
+  <span>new</span>
+  <span>Uri</span>
+  <span>(</span>
+  <span>
+    "<a href="http://ACCOUNTNAME.queue.core.chinacloudapi.cn/">
+      <span>http://ACCOUNTNAME.queue.core.chinacloudapi.cn/</span>
+    </a>"
+  </span>
+  <span>), </span>
+</p>
+<p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
+  <span>new</span>
+  <span>Uri</span>
+  <span>(</span>
+  <span>
+    "<a href="http://ACCOUNTNAME.table.core.chinacloudapi.cn/">
+      <span>http://ACCOUNTNAME.table.core.chinacloudapi.cn/</span>
+    </a>"
+  </span>
+  <span>)</span>
+</p>
+<p style="margin-left: 1.25in; text-indent: -1.25in; tab-stops: 85.5pt; background: #F2F2F2; text-autospace: none;" >
+  <span>);</span>
+</p>
+<p style="background: #F2F2F2; text-autospace: none;" >
+  <span>CloudBlobClient BlobClient = Account.CreateCloudBlobClient();</span>
+</p>
+<h2>
+  <a name="_Toc359582690"></a>
+  <a name="_Toc358494517"></a>
+  <span>
+    <span>Windows Azure </span>
+  </span>
+  <span>
+    <span>
+      <span>计算中的端口绑定</span>
+    </span>
+  </span>
+</h2>
+<p>
+  <span>端口绑定还使用以</span>
+  <span> *.cloudapp.net </span>
+  <span>结尾的</span>
+  <span> DNS </span>
+  <span>名称。您必须更改这些名称以指向</span>
+  <span> *.</span>
+  <span class="Italic">
+    <span>chinacloudapp.cn)</span>
+  </span>
+  <span>。以下显示了包括端口说明的部分服务定义文件。</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Sites&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Site name="MySite" physcalDirectory="..\WebSite1"&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Bindings&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Binding name="My" endpointName="HttpIn" hostHeader="WebSite1.mysite.Chinacloudapp.cn" /&gt; </span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;/Bindings&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;/Site&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Site name="Web"&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Bindings&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;Binding name="HttpIn" endpointName="HttpIn" /&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;/Bindings&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;/Site&gt;</span>
+</p>
+<p style="line-height: normal; background: #E7E6E6;" class="Code">
+  <span>&lt;/Sites&gt;</span>
+</p>
+<p>
+  <span>有关详细信息，请参见</span>
+  <span>
+    <a href="http://msdn.microsoft.com/zh-cn/library/hh180158.aspx">
+      <span>如何配置</span>Windows Azure <span>端口</span>
+    </a>
+    <a name="_Hlt358838552"></a>
+    <a name="_Hlt358838553"></a>
+  </span>
+  <span>。</span>
+</p>
+<h2>
+  <a name="_Toc359582691"></a>
+  <a name="_Toc358494518"></a>
+  <a name="_Toc311613945"></a>
+  <span>
+    <span>
+      <span>与</span>
+    </span>
+  </span>
+  <span>
+    <span>
+      <span>
+        <span> SQL </span>
+      </span>
+    </span>
+  </span>
+  <span>
+    <span>
+      <span>
+        <span>数据库服务器的连接</span>
+      </span>
+    </span>
+  </span>
+</h2>
+<p>
+  <span>SQL </span>
+  <span>数据库服务器名称将从</span>
+  <span> *.database.windows.net </span>
+  <span>更改为</span>
+  <span> *.devdatabase.chinacloudapi.cn</span>
+  <span>。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该新名称。对于未在</span>
+  <span>
+    <span>中国</span>服务
+  </span>
+  <span>中运行的应用程序，对</span>
+  <span> SQL </span>
+  <span>数据库服务器的引用可以是服务定义文件中的</span>
+  <span> DataConnectionString </span>
+  <span>值或其他</span>
+  <span> .NET </span>
+  <span>配置文件中的值。</span>
+  <span>例如，</span>
+</p>
+<p class="Code">
+  <span>&lt;configuration&gt;</span>
+</p>
+<p class="Code">
+  <span>&lt;connectionStrings&gt;</span>
+</p>
+<p class="Code">
+  <span>&lt;add name="SQLAzure" connectionString="Server=tcp:yourserver.devdatabase.chinacloudapi.cn;</span>
+</p>
+<p class="Code">
+  <span>Database=Test;User ID=login@server;Password=yourPassword;</span>
+</p>
+<p class="Code">
+  <span>Trusted_Connection=False;Encrypt=True;"/&gt;</span>
+</p>
+<p class="Code">
+  <span>&lt;/connectionStrings&gt;</span>
+</p>
+<p>
+  <span>&lt;/configuration&gt;</span>
+</p>
+<h2>
+  <a name="_Toc359582692"></a>
+  <a name="_Toc358494519"></a>
+  <a name="_Toc311613946"></a>
+  <span>
+    <span>
+      <span>服务总线和Active Directory</span>
+    </span>
+  </span>
+</h2>
+<p> </p>
+<h3>
+  <a name="_Toc359582693"></a>
+  <span>Active Directory</span>
+</h3>
+<p>
+  <span>Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问功能，可用于内部部署和云应用。开发人员可以使用Windows Azure AD功能为企业应用和软件作为服务（SaaS）的供应商实现单点登录和登出，使用图形API来查询和管理云的目录对象，整合内部部署</span>
+  <span>来</span>
+  <span>将</span>
+  <span>Active Directory的目录数据同步到云端。</span>
+  <a name="_Toc358494520"></a>
+</p>
+<p>
+  <span>中国服务中包含</span>
+  <span> Windows Azure AD</span>
+  <span>。但按照设计，仍会存在一些影响开发人员体验的差异。中国服务是一种自定义的产品，该产品与全球服务有许多共同特性。自定义会导致出现以下差异，这些差异会对使用</span>
+  <span> Windows Azure AD </span>
+  <span>的开发人员造成影响。</span>
+</p>
+<p>
+  <span>
+    <span>
+      <span> · </span>
+    </span>
+  </span>
+  <span>不包含Access Control (</span>
+  <span>访问控制)</span>
+  <span>
+    命名空间<span>
+      。如果您需要集成应用程序和与Windows Azure的<span>身份验证</span>服务同步企业目录，请使用Windows Azure中的Active Directory。在 Windows Azure管理门户中，单击“Active Directory"。
+    </span>
+  </span>
+</p>
+<p style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l27 level1 lfo47;">
+  <span>
+    <span>
+      <span>
+        ·<span> ACS管理门户仅适用于服务总线命名空间。</span>
+      </span>
+    </span>
+  </span>
+  <span>
+    <span>
+      <br />
+      <br />
+    </span>
+  </span>
+</p>
+<p style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-left: .5in; text-indent: -.25in; line-height: normal; mso-list: l27 level1 lfo47;">
+  <span>
+    <span>·</span>
+    <span>授权</span>
+  </span>
+  <span>
+    <span>。对于本地应用程序和服务器到服务器案例，目前尚不支持</span>
+  </span>
+  <span>
+    <span> OAuth 2.0 </span>
+  </span>
+  <span>
+    <span>授权代码授予类型的预览功能。</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>
+      除了这些基于设计的差异之外，<span>中国</span>服务中的
+    </span>
+  </span>
+  <span>
+    <span> Windows Azure AD </span>
+  </span>
+  <span>
+    <span>设计与全球服务相同。有关世纪互联服务中的</span>
+  </span>
+  <span>
+    <span> Windows Azure AD </span>
+  </span>
+  <span>
+    <span>的信息，请参见</span>
+  </span>
+  <a href="http://go.microsoft.com/fwlink/?LinkId=306710">
+    <span>
+      <span>如何使用</span>
+    </span>
+    <span>
+      <span> Windows Azure Active Directory </span>
+    </span>
+    <span>
+      <span>访问控制对</span>
+    </span>
+    <span>
+      <span> Web </span>
+    </span>
+    <span>
+      <span>用户进行身份验证</span>
+    </span>
+  </a>
+  <span>
+    <span>。</span>
+  </span>
+</p>
+<p>
+  <span>
+    <span>注意：</span>
+  </span>
+  <span>在公共预览期间创建的访问控制命名空间将不可操作或访问。然而，类似的功能可在Windows Azure管理门户的Active Directory使用</span>
+  <span>。</span>
+</p>
+
+<div style="display:none">
+  <h3>
+    <a name="_Toc359582694"></a>
+    <a name="_Toc358494521"></a>
+    <a name="_Toc311613947"></a>
+    <span>
+      <span>
+        <span>ACS </span>
+      </span>
+    </span>
+    <span>
+      <span>
+        <span>
+          <span>配置</span>
+        </span>
+      </span>
+    </span>
+  </h3>
+  <p style="display:none" >
+    <span>要创建使用</span>
+    <span> ACS </span>
+    <span>的应用程序，开发人员应阅读</span>
+    <span>
+      <a href="http://acs.codeplex.com/">
+        <span>有关</span>
+        <span> Codeplex </span>
+        <span>的访问控制服务示例和文档</span>
+      </a>
+    </span>
+    <span>中的文档和代码示例。要在中国使用</span>
+    <span> Windows Azure </span>
+    <span>中的这些示例，请在</span>
+    <span> \Management\ManagementService\Common\SamplesConfiguration.cs </span>
+    <span>文件中将</span>
+    <span> AcsHostUrl </span>
+    <span>端点</span>
+    <span class="Bold">
+      <span>accesscontrol.windows.net</span>
+    </span>
+    <span>替换为</span>
+    <span>
+      *.accesscontrol.<span>chinacloudapi.cn</span>
+    </span>
+    <span>。</span>
+  </p>
+  <p>
+    <span>例如，要使用</span>
+    <span> Acs2WindowsPhoneSample </span>
+    <span>示例，请另外进行以下更改：</span>
+    <span>
+      <br />
+      <br />
+    </span>
+  </p>
+  <p class="TableSpacing">
+    <span> </span>
+  </p>
+  <table border="1" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
+        <td width="207" valign="top">
+          <p style="page-break-after: avoid;" >
+            <span>示例代码中的文件</span>
+          </p>
+        </td>
+        <td width="207" valign="top">
+          <p style="page-break-after: avoid;" >
+            <span>现有值</span>
+          </p>
+        </td>
+        <td width="221" valign="top">
+          <p style="page-break-after: avoid;" >
+            <span>中国</span>
+            <span> Windows Azure </span>
+            <span>值</span>
+          </p>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="mso-yfti-irow: 3;">
+        <td width="207" valign="top">
+          <p>
+            <span>
+              \Webservices\Acs2WindowsPhoneSample<br /> <span> </span>\ContosoContactsApp\SignIn.xaml
+            </span>
+          </p>
+        </td>
+        <td width="207" valign="top">
+          <p>
+            <span>AcsHostUrl="accesscontrol.windows.net"</span>
+          </p>
+        </td>
+        <td width="221" valign="top">
+          <p>
+            <span>AcsHostUrl="*.accesscontrol.chinacloudapi.cn"</span>
+          </p>
+        </td>
+      </tr>
+      <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
+        <td width="207" valign="top">
+          <p>
+            <span>
+              Webservices\Acs2WindowsPhoneSample<br /> <span> </span>\CustomerInformationService\Web.config
+            </span>
+          </p>
+        </td>
+        <td width="207" valign="top">
+          <p>
+            <span>&lt;add issuerIdentifier="https://[Service Namespace].accesscontrol.windows.net/" name="ContosoContacts" /&gt;</span>
+          </p>
+        </td>
+        <td width="221" valign="top">
+          <p>
+            <span>&lt;add issuerIdentifier="https://[Service Namespace].accesscontrol.chinacloudapi.cn/" name="ContosoContacts" /&gt;</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="TableSpacing">
+    <span> </span>
+  </p>
+</div>
+
+<h3>
+  <a name="_Toc359582695"></a>
+  <a name="_Toc358494522"></a>
+  <a name="_Toc311613948"></a>
+  <span>
+    <span>
+      <span>服务总线配置</span>
+    </span>
+  </span>
+</h3>
+<p>
+  <span>您可以通过以下方法之一将使用服务总线的应用程序重定向至特定端口</span>
+</p>
+<p>
+  <span class="Bold">
+    <span>选项</span>
+  </span>
+  <span class="Bold">
+    <span> 1</span>
+  </span>
+  <span class="Bold">
+    <span>：</span>
+  </span>
+  <span>使用环境变量重定向各个或所有应用程序。</span>
+</p>
+<p>
+  <span class="Bold">
+    <span>选项</span>
+  </span>
+  <span class="Bold">
+    <span> 2</span>
+  </span>
+  <span class="Bold">
+    <span>：</span>
+  </span>
+  <span>使用</span>
+  <span> ServiceBus.config </span>
+  <span>文件重定向各个应用程序。</span>
+</p>
+<p>
+  <span class="Bold">
+    <span>选项</span>
+  </span>
+  <span class="Bold">
+    <span> 3</span>
+  </span>
+  <span class="Bold">
+    <span>：</span>
+  </span>
+  <span>使用</span>
+  <span> ServiceBus.config </span>
+  <span>文件重定向所有应用程序。</span>
+</p>
+<p>
+  <span>如果您运行的是</span>
+  <span> EXE </span>
+  <span>文件或辅助角色，则所有选项都将可用。如果您运行的是</span>
+  <span> Web </span>
+  <span>角色，则仅选项</span>
+  <span> 3 </span>
+  <span>可用。</span>
+</p>
+<p>
+  <span>无论方法如何，端点名称都会更改，如下表所示。</span>
+</p>
+<p class="TableSpacing"> </p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
+      <td width="295" valign="top">
+        <p style="page-break-after: avoid;" >
+          <span>服务总线端点</span>
+        </p>
+      </td>
+      <td width="295" valign="top">
+        <p style="page-break-after: avoid;" >
+          <span>等效的中国</span>
+          <span> Windows Azure </span>
+          <span>服务总线端点</span>
+        </p>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="mso-yfti-irow: 3;">
+      <td width="295" valign="top">
+        <p>
+          <span>servicebus.windows.net</span>
+        </p>
+      </td>
+      <td width="295" valign="top">
+        <p>
+          <span>servicebus. chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+    <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
+      <td width="295" valign="top">
+        <p>
+          <span>accesscontrol.windows.net</span>
+        </p>
+      </td>
+      <td width="295" valign="top">
+        <p>
+          <span>accesscontrol. chinacloudapi.cn</span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="TableSpacing"> </p>
+<div>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td align="left" valign="top" style="padding: 0in;">
+          <p class="ProcedureTitle">
+            <strong>选项 1</strong>
+            <span>：要使用环境变量进行重定向，请执行以下操作：</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes;">
+      <td width="590" valign="top" style="width: 6.15in; padding: 0in 0in 0in 0in;">
+        <p>
+          <span>1.</span>
+          <span>考虑设置变量的级别。为整个计算机、一个用户还是运行单个应用程序的环境设置环境变量所带来影响不一样。</span>
+        </p>
+        <p >
+          <span>2.</span>
+          <span>以适当的级别设置以下环境变量：</span>
+        </p>
+        <p class="CodeinList1">
+          <span>RELAYHOST=servicebus.</span>
+          <span>chinacloudapi.cn</span>
+        </p>
+        <p class="CodeinList1">
+          <span>STSHOST=accesscontrol.</span>
+          <span>chinacloudapi.cn</span>
+        </p>
+        <p class="CodeinList1">
+          <span>RELAYENV=Custom</span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td align="left" valign="top" style="padding: 0in;">
+          <p class="AlertLabel">
+            <strong>警告: </strong>
+            <span>通过</span>
+            <span> Web </span>
+            <span>角色的</span>
+            <span> csdef </span>
+            <span>文件中的</span>
+            <span> &lt;environment&gt; </span>
+            <span>标记添加环境变量时，该选项不可用。</span>
+            <span>Web </span>
+            <span>角色在</span>
+            <span> w3wp.exe </span>
+            <span>的上下文中运行。环境变量不会传播至</span>
+            <span> w3wp.exe </span>
+            <span>环境。请参见</span>
+            <span> Web </span>
+            <span>角色的选项</span>
+            <span> 3</span>
+            <span>。</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td align="left" valign="top" style="padding: 0in;">
+          <p class="ProcedureTitle">
+            <strong>选项 2</strong>
+            <span>：要使用</span>
+            <span> ServiceBus.config </span>
+            <span>文件重定向各个应用程序，请执行以下操作：</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="margin-left: 0.25in; border-collapse: collapse; mso-yfti-tbllook: 480; mso-padding-alt: 0in 0in 0in 0in;">
+  <tbody>
+    <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes;">
+      <td width="590" valign="top" style="width: 6.15in; padding: 0in 0in 0in 0in;">
+        <p>
+          <span>1.</span>
+          <span>使用适当的主机信息创建具有以下内容的</span>
+          <span> ServiceBus.config </span>
+          <span>文件。</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;configuration&gt;</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;Microsoft.ServiceBus&gt;</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;relayHostName&gt;servicebus.</span>
+          <span class="Italic">
+            <span>chinacloudapi.cn</span>
+          </span>
+          <span>&lt;/relayHostName&gt;</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;stsHostName&gt;accesscontrol.</span>
+          <span class="Italic">
+            <span>chinacloudapi.cn</span>
+          </span>
+          <span>&lt;/stsHostName&gt;</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;/Microsoft.ServiceBus&gt;</span>
+        </p>
+        <p class="CodeinList1">
+          <span>&lt;/configuration&gt;</span>
+        </p>
+        <p class="CodeinList1"> </p>
+        <p>
+          <span>2.</span>
+          <span>将</span>
+          <span> ServiceBus.config </span>
+          <span>文件与服务总线</span>
+          <span>/ACS </span>
+          <span>应用程序的</span>
+          <span> .exe </span>
+          <span>文件放在相同的目录中。</span>
+        </p>
+        <p class="TextinList1">
+          <span>此选项将不会用于</span>
+          <span> Web </span>
+          <span>角色，因为这些角色在</span>
+          <span> w3wp.exe </span>
+          <span>上下文中运行。因此，系统在</span>
+          <span> %Windir%\System32\inetsrv\ </span>
+          <span>中查找</span>
+          <span> servicebus.config </span>
+          <span>文件时，该文件不存在。</span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td align="left" valign="top" style="padding: 0in;">
+          <p class="ProcedureTitle">
+            <strong>选项 3</strong>
+            <span>：要使用</span>
+            <span> ServiceBus.config </span>
+            <span>文件重定向所有应用程序，请执行以下操作：</span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" >
+  <tbody>
+    <tr>
+      <td width="590" valign="top" style="width: 6.15in; padding: 0in 0in 0in 0in;">
+        <p >
+          <span>1.</span>
+          <span>在</span>
+          <span> .NET Framework </span>
+          <span>配置目录中查找现有</span>
+          <span> ServiceBus.config </span>
+          <span>文件。</span>
+          <span>.NET Framework </span>
+          <span>配置目录取决于</span>
+          <span> 32 </span>
+          <span>位或</span>
+          <span> 64 </span>
+          <span>位的操作系统版本和已安装的框架版本，以下为常用位置。</span>
+        </p>
+        <p class="TableSpacinginList1"> </p>
         <table border="1" cellspacing="0" cellpadding="0">
           <thead>
             <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
-              <td width="207" valign="top">
+              <td width="199" valign="top">
                 <p style="page-break-after: avoid;" >
-                  <span>示例代码中的文件</span>
+                  <span>Microsoft .NET Framework </span>
+                  <span>版本</span>
                 </p>
               </td>
-              <td width="207" valign="top">
+              <td width="178" valign="top">
                 <p style="page-break-after: avoid;" >
-                  <span>现有值</span>
+                  <span>操作系统版本</span>
                 </p>
               </td>
-              <td width="221" valign="top">
+              <td width="188" valign="top">
                 <p style="page-break-after: avoid;" >
-                  <span>中国</span>
-                  <span> Windows Azure </span>
-                  <span>值</span>
+                  <span>目录</span>
                 </p>
               </td>
             </tr>
           </thead>
           <tbody>
+            <tr style="mso-yfti-irow: 1;">
+              <td width="199" valign="top">
+                <span>2.0 </span>
+                <span>至</span>
+                <span> 3.5</span>
+              </td>
+              <td width="178" valign="top">
+                <span>32 </span>
+                <span>位</span>
+
+              </td>
+              <td width="188" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>%Windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG</span>
+                </p>
+              </td>
+            </tr>
+            <tr style="mso-yfti-irow: 2;">
+              <td width="199" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>2.0 </span>
+                  <span>至</span>
+                  <span> 3.5</span>
+                </p>
+              </td>
+              <td width="178" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>64 </span>
+                  <span>位</span>
+                </p>
+              </td>
+              <td width="188" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>%Windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG</span>
+                </p>
+              </td>
+            </tr>
             <tr style="mso-yfti-irow: 3;">
-              <td width="207" valign="top">
-                <p>
-                  <span>
-                    \Webservices\Acs2WindowsPhoneSample<br /> <span> </span>\ContosoContactsApp\SignIn.xaml
-                  </span>
+              <td width="199" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>4.0</span>
                 </p>
               </td>
-              <td width="207" valign="top">
-                <p>
-                  <span>AcsHostUrl="accesscontrol.windows.net"</span>
+              <td width="178" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>32 </span>
+                  <span>位</span>
                 </p>
               </td>
-              <td width="221" valign="top">
-                <p>
-                  <span>AcsHostUrl="*.accesscontrol.chinacloudapi.cn"</span>
+              <td width="188" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>%Windir%\Microsoft.NET\Framework\v4.0.30319\Config</span>
                 </p>
               </td>
             </tr>
             <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
-              <td width="207" valign="top">
-                <p>
-                  <span>
-                    Webservices\Acs2WindowsPhoneSample<br /> <span> </span>\CustomerInformationService\Web.config
-                  </span>
+              <td width="199" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>4.0</span>
                 </p>
               </td>
-              <td width="207" valign="top">
-                <p>
-                  <span>&lt;add issuerIdentifier="https://[Service Namespace].accesscontrol.windows.net/" name="ContosoContacts" /&gt;</span>
+              <td width="178" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>64 </span>
+                  <span>位</span>
                 </p>
               </td>
-              <td width="221" valign="top">
-                <p>
-                  <span>&lt;add issuerIdentifier="https://[Service Namespace].accesscontrol.chinacloudapi.cn/" name="ContosoContacts" /&gt;</span>
+              <td width="188" valign="top">
+                <p style="page-break-after: avoid;" >
+                  <span>%Windir%\Microsoft.NET\Framework64\v4.0.30319\Config</span>
                 </p>
               </td>
             </tr>
           </tbody>
         </table>
-        <p class="TableSpacing">
-          <span> </span>
-        </p>
-      </div>
-
-      <h3>
-        <a name="_Toc359582695"></a>
-        <a name="_Toc358494522"></a>
-        <a name="_Toc311613948"></a>
-        <span>
-          <span>
-            <span>服务总线配置</span>
-          </span>
-        </span>
-      </h3>
-      <p>
-        <span>您可以通过以下方法之一将使用服务总线的应用程序重定向至特定端口</span>
-      </p>
-      <p>
-        <span class="Bold">
-          <span>选项</span>
-        </span>
-        <span class="Bold">
-          <span> 1</span>
-        </span>
-        <span class="Bold">
-          <span>：</span>
-        </span>
-        <span>使用环境变量重定向各个或所有应用程序。</span>
-      </p>
-      <p>
-        <span class="Bold">
-          <span>选项</span>
-        </span>
-        <span class="Bold">
+        <p class="TableSpacinginList1"> </p>
+        <p>
+          <span>2.</span>
+          <span>如果目录中存在现有</span>
+          <span> ServiceBus.config </span>
+          <span>文件，则必须编辑该文件以添加选项</span>
+          <span> 2 </span>
+          <span>中概述的</span>
+          <span> XML </span>
+          <span>配置（使用</span>
+          <span> ServiceBus.config </span>
+          <span>的单个重定向）。</span>
+          <span>如果添加该配置会与现有</span>
+          <span> ServiceBus.config </span>
+          <span>文件中已存在的信息冲突，则不能使用此选项。必须使用选项</span>
+          <span> 1 </span>
+          <span>或</span>
           <span> 2</span>
-        </span>
-        <span class="Bold">
-          <span>：</span>
-        </span>
-        <span>使用</span>
-        <span> ServiceBus.config </span>
-        <span>文件重定向各个应用程序。</span>
-      </p>
-      <p>
-        <span class="Bold">
-          <span>选项</span>
-        </span>
-        <span class="Bold">
-          <span> 3</span>
-        </span>
-        <span class="Bold">
-          <span>：</span>
-        </span>
-        <span>使用</span>
-        <span> ServiceBus.config </span>
-        <span>文件重定向所有应用程序。</span>
-      </p>
-      <p>
-        <span>如果您运行的是</span>
-        <span> EXE </span>
-        <span>文件或辅助角色，则所有选项都将可用。如果您运行的是</span>
-        <span> Web </span>
-        <span>角色，则仅选项</span>
-        <span> 3 </span>
-        <span>可用。</span>
-      </p>
-      <p>
-        <span>无论方法如何，端点名称都会更改，如下表所示。</span>
-      </p>
-      <p class="TableSpacing"> </p>
-      <table border="1" cellspacing="0" cellpadding="0">
-        <thead>
-          <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
-            <td width="295" valign="top">
-              <p style="page-break-after: avoid;" >
-                <span>服务总线端点</span>
-              </p>
-            </td>
-            <td width="295" valign="top">
-              <p style="page-break-after: avoid;" >
-                <span>等效的中国</span>
-                <span> Windows Azure </span>
-                <span>服务总线端点</span>
-              </p>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="mso-yfti-irow: 3;">
-            <td width="295" valign="top">
-              <p>
-                <span>servicebus.windows.net</span>
-              </p>
-            </td>
-            <td width="295" valign="top">
-              <p>
-                <span>servicebus. chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
-            <td width="295" valign="top">
-              <p>
-                <span>accesscontrol.windows.net</span>
-              </p>
-            </td>
-            <td width="295" valign="top">
-              <p>
-                <span>accesscontrol. chinacloudapi.cn</span>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="TableSpacing"> </p>
-      <div>
-        <table border="0" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td align="left" valign="top" style="padding: 0in;">
-                <p class="ProcedureTitle">
-                  <strong>选项 1</strong>
-                  <span>：要使用环境变量进行重定向，请执行以下操作：</span>
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <table border="0" cellspacing="0" cellpadding="0">
-        <tbody>
-          <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes;">
-            <td width="590" valign="top" style="width: 6.15in; padding: 0in 0in 0in 0in;">
-              <p>
-                <span>1.</span>
-                <span>考虑设置变量的级别。为整个计算机、一个用户还是运行单个应用程序的环境设置环境变量所带来影响不一样。</span>
-              </p>
-              <p >
-                <span>2.</span>
-                <span>以适当的级别设置以下环境变量：</span>
-              </p>
-              <p class="CodeinList1">
-                <span>RELAYHOST=servicebus.</span>
-                <span>chinacloudapi.cn</span>
-              </p>
-              <p class="CodeinList1">
-                <span>STSHOST=accesscontrol.</span>
-                <span>chinacloudapi.cn</span>
-              </p>
-              <p class="CodeinList1">
-                <span>RELAYENV=Custom</span>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div>
-        <table border="0" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td align="left" valign="top" style="padding: 0in;">
-                <p class="AlertLabel">
-                  <strong>警告: </strong>
-                  <span>通过</span>
-                  <span> Web </span>
-                  <span>角色的</span>
-                  <span> csdef </span>
-                  <span>文件中的</span>
-                  <span> &lt;environment&gt; </span>
-                  <span>标记添加环境变量时，该选项不可用。</span>
-                  <span>Web </span>
-                  <span>角色在</span>
-                  <span> w3wp.exe </span>
-                  <span>的上下文中运行。环境变量不会传播至</span>
-                  <span> w3wp.exe </span>
-                  <span>环境。请参见</span>
-                  <span> Web </span>
-                  <span>角色的选项</span>
-                  <span> 3</span>
-                  <span>。</span>
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <table border="0" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td align="left" valign="top" style="padding: 0in;">
-                <p class="ProcedureTitle">
-                  <strong>选项 2</strong>
-                  <span>：要使用</span>
-                  <span> ServiceBus.config </span>
-                  <span>文件重定向各个应用程序，请执行以下操作：</span>
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <table border="0" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="margin-left: 0.25in; border-collapse: collapse; mso-yfti-tbllook: 480; mso-padding-alt: 0in 0in 0in 0in;">
-        <tbody>
-          <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes;">
-            <td width="590" valign="top" style="width: 6.15in; padding: 0in 0in 0in 0in;">
-              <p>
-                <span>1.</span>
-                <span>使用适当的主机信息创建具有以下内容的</span>
-                <span> ServiceBus.config </span>
-                <span>文件。</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;configuration&gt;</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;Microsoft.ServiceBus&gt;</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;relayHostName&gt;servicebus.</span>
-                <span class="Italic">
-                  <span>chinacloudapi.cn</span>
-                </span>
-                <span>&lt;/relayHostName&gt;</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;stsHostName&gt;accesscontrol.</span>
-                <span class="Italic">
-                  <span>chinacloudapi.cn</span>
-                </span>
-                <span>&lt;/stsHostName&gt;</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;/Microsoft.ServiceBus&gt;</span>
-              </p>
-              <p class="CodeinList1">
-                <span>&lt;/configuration&gt;</span>
-              </p>
-              <p class="CodeinList1"> </p>
-              <p>
-                <span>2.</span>
-                <span>将</span>
-                <span> ServiceBus.config </span>
-                <span>文件与服务总线</span>
-                <span>/ACS </span>
-                <span>应用程序的</span>
-                <span> .exe </span>
-                <span>文件放在相同的目录中。</span>
-              </p>
-              <p class="TextinList1">
-                <span>此选项将不会用于</span>
-                <span> Web </span>
-                <span>角色，因为这些角色在</span>
-                <span> w3wp.exe </span>
-                <span>上下文中运行。因此，系统在</span>
-                <span> %Windir%\System32\inetsrv\ </span>
-                <span>中查找</span>
-                <span> servicebus.config </span>
-                <span>文件时，该文件不存在。</span>
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div>
-        <table border="0" cellspacing="0" cellpadding="0">
-          <tbody>
-            <tr>
-              <td align="left" valign="top" style="padding: 0in;">
-                <p class="ProcedureTitle">
-                  <strong>选项 3</strong>
-                  <span>：要使用</span>
-                  <span> ServiceBus.config </span>
-                  <span>文件重定向所有应用程序，请执行以下操作：</span>
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <table border="0" cellspacing="0" cellpadding="0" >
-        <tbody>
-          <tr>
-            <td width="590" valign="top" style="width: 6.15in; padding: 0in 0in 0in 0in;">
-              <p >
-                <span>1.</span>
-                <span>在</span>
-                <span> .NET Framework </span>
-                <span>配置目录中查找现有</span>
-                <span> ServiceBus.config </span>
-                <span>文件。</span>
-                <span>.NET Framework </span>
-                <span>配置目录取决于</span>
-                <span> 32 </span>
-                <span>位或</span>
-                <span> 64 </span>
-                <span>位的操作系统版本和已安装的框架版本，以下为常用位置。</span>
-              </p>
-              <p class="TableSpacinginList1"> </p>
-              <table border="1" cellspacing="0" cellpadding="0">
-                <thead>
-                  <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
-                    <td width="199" valign="top">
-                      <p style="page-break-after: avoid;" >
-                        <span>Microsoft .NET Framework </span>
-                        <span>版本</span>
-                      </p>
-                    </td>
-                    <td width="178" valign="top">
-                      <p style="page-break-after: avoid;" >
-                        <span>操作系统版本</span>
-                      </p>
-                    </td>
-                    <td width="188" valign="top">
-                      <p style="page-break-after: avoid;" >
-                        <span>目录</span>
-                      </p>
-                    </td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr style="mso-yfti-irow: 1;">
-                    <td width="199" valign="top">
-                      <span>2.0 </span>
-                      <span>至</span>
-                      <span> 3.5</span>
-    </td>
-    <td width="178" valign="top">
-      <span>32 </span>
-      <span>位</span>
-
-</td>
-<td width="188" valign="top">
-  <p style="page-break-after: avoid;" >
-    <span>%Windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG</span>
-  </p>
-</td>
-</tr>
-<tr style="mso-yfti-irow: 2;">
-  <td width="199" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>2.0 </span>
-      <span>至</span>
-      <span> 3.5</span>
-    </p>
-  </td>
-  <td width="178" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>64 </span>
-      <span>位</span>
-    </p>
-  </td>
-  <td width="188" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>%Windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG</span>
-    </p>
-  </td>
-</tr>
-<tr style="mso-yfti-irow: 3;">
-  <td width="199" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>4.0</span>
-    </p>
-  </td>
-  <td width="178" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>32 </span>
-      <span>位</span>
-    </p>
-  </td>
-  <td width="188" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>%Windir%\Microsoft.NET\Framework\v4.0.30319\Config</span>
-    </p>
-  </td>
-</tr>
-<tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
-  <td width="199" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>4.0</span>
-    </p>
-  </td>
-  <td width="178" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>64 </span>
-      <span>位</span>
-    </p>
-  </td>
-  <td width="188" valign="top">
-    <p style="page-break-after: avoid;" >
-      <span>%Windir%\Microsoft.NET\Framework64\v4.0.30319\Config</span>
-    </p>
-  </td>
-</tr>
-</tbody>
-</table>
-<p class="TableSpacinginList1"> </p>
-<p>
-  <span>2.</span>
-  <span>如果目录中存在现有</span>
-  <span> ServiceBus.config </span>
-  <span>文件，则必须编辑该文件以添加选项</span>
-  <span> 2 </span>
-  <span>中概述的</span>
-  <span> XML </span>
-  <span>配置（使用</span>
-  <span> ServiceBus.config </span>
-  <span>的单个重定向）。</span>
-  <span>如果添加该配置会与现有</span>
-  <span> ServiceBus.config </span>
-  <span>文件中已存在的信息冲突，则不能使用此选项。必须使用选项</span>
-  <span> 1 </span>
-  <span>或</span>
-  <span> 2</span>
-  <span>。</span>
-</p>
-</td>
-</tr>
-</tbody>
+          <span>。</span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
 </table>
 <p style="page-break-before: always;" >
   <span>除非知道角色使用的框架，否则不可能指向特定的框架目录。但是，以下脚本概括了使用</span>
