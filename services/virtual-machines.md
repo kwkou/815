@@ -92,7 +92,7 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 
 准备迁移计划，了解针对在 Azure 虚拟机上运行的 SQL Server 的许可，以及评估迁移途径。
 
-####[了解 Azure 虚拟机中的 SQL Server 部署选项](http://msdn.microsoft.com/zh-cnlibrary/azure/dn133141.aspx)
+####[了解 Azure 虚拟机中的 SQL Server 部署选项](http://msdn.microsoft.com/zh-cn/library/azure/dn133141.aspx)
 
 帮助您决定如何在 Windows Azure 虚拟机中部署 SQL Server 的指导 – 您可以对多种方法进行评估以便决定适合您的方法。
 
