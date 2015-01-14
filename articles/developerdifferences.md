@@ -120,9 +120,9 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 
 服务类型|全球服务URI|中国服务URI
 :--|:--|:--
-Windows Azure - 常规 | *.windows.net | *.chinacloudapi.cn
-Windows Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
-Windows Azure - 存储 | \*.blob.core.windows.net <br> \*.queue.core.windows.net <br> \*.table.core.windows.net | \*.blob.core.chinacloudapi.cn <br> \*.queue.core.chinacloudapi.cn <br> \*.table.core.chinacloudapi.cn
+Windows Azure - 常规 | **.windows.net | *.chinacloudapi.cn
+Windows Azure - 计算 | **.cloudapp.net | *.chinacloudapp.cn
+Windows Azure - 存储 | **.blob.core.windows.net <br> \**.queue.core.windows.net <br> \*.table.core.windows.net | \*.blob.core.chinacloudapi.cn <br> \*.queue.core.chinacloudapi.cn <br> \*.table.core.chinacloudapi.cn
 Windows Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 SQL数据库 | \*.database.windows.net | \*.database.chinacloudapi.cn
 Windows Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
@@ -641,10 +641,9 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
 <p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"> 
 <ul style="margin-top: 0in;">
-<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure">http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure</a></li>
-<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2">http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2</a></li>
-<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure">http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure</a></li>
-<li class="MsoNormal" style="color: black; margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure">http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure</a></li>
+<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
+<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
+<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure" target="_blank">云应用开发(第2版) </a></li>
 </ul>
 </td>
 </tr>
