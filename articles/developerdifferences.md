@@ -122,7 +122,7 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 :--|:--|:--
 Windows Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Windows Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
-Windows Azure - 存储 | *.blob.core.windows.net <br> *.queue.core.windows.net <br> \*.table.core.windows.net | *.blob.core.chinacloudapi.cn <br> \*.queue.core.chinacloudapi.cn <br> *.table.core.chinacloudapi.cn
+Windows Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
 Windows Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 SQL数据库 | *.database.windows.net | *.database.chinacloudapi.cn
 Windows Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
@@ -130,7 +130,7 @@ SQL Azure数据库管理API | https://management.database.windows.net | https://
 服务总线 | *.servicebus.windows.net | *.servicebus.chinacloudapi.cn
 ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
 HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
-SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
+SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
 
 
 #[中国的数据中心](id:cncenter)#
@@ -149,7 +149,7 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 
 准备发布应用程序时，请打开 Windows Azure 项目的快捷菜单，然后选择Publish。下图显示了 Publish Windows Azure Application 向导
 ###[配置订阅](id:confsub)###
-1. 从“Publish Windows Azure Application”向导的“Choose your subscription”下，选择 &lt;Manage…&gt;，然后再选择“New”。<br>
+1. 从“Publish Windows Azure Application”向导的“Choose your subscription”下，选择 &lt;Manage…&gt;，然后再选择“New”。<br />
 ![developerdifferences-001](./media/developerdifferences/developerdifferences-001.png)
  
 2. 在“New subscription”窗口中
@@ -158,7 +158,7 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 	b. 使用设置部分下的管理门户 (<a href="http://manage.windowsazure.cn">http://manage.windowsazure.cn</a>) 将此证书上传至您的帐户
 	c. 复制门户中的订阅 ID
 	d. 输入以下服务管理 URL <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>
-	e. 指定订阅的名称<br>
+	e. 指定订阅的名称<br />
 	
 	![developerdifferences-002](./media/developerdifferences/developerdifferences-002.png)
  
@@ -172,21 +172,21 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 2. 在 Environment 列表中，选择 Production 或 Staging。如果要将应用程序部署到测试环境中，请选择过渡环境。稍后可将应用程序移动到生产环境中。
 3. 在 Build configuration 列表中，选择 Debug 或 Release。
 4. 在 Service configuration 列表中，选择 Cloud。
-5. 选中 Enable Remote Desktop for all roles 复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示 Remote Desktop Configuration 对话框。选择 Settings 链接可更改配置。选中 Enable Web Deploy for all web roles 复选框启用 Web 部署。必须启用远程桌面才能使用此功能。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Windows Azure 工具发布云服务</a>。有关 Web 部署的详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Windows Azure 工具发布云服务</a>。<br>
+5. 选中 Enable Remote Desktop for all roles 复选框启用远程桌面。此选项主要用于故障排除。选中此复选框时，将显示 Remote Desktop Configuration 对话框。选择 Settings 链接可更改配置。选中 Enable Web Deploy for all web roles 复选框启用 Web 部署。必须启用远程桌面才能使用此功能。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Windows Azure 工具发布云服务</a>。有关 Web 部署的详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683672.aspx">使用 Windows Azure 工具发布云服务</a>。<br />
 ![developerdifferences-003](./media/developerdifferences/developerdifferences-003.png)
 
 6. 选择 Advanced Settings 选项卡。在 Deployment label 字段中，可以接受默认名称，也可以输入您选择名称。如需将日期附加到部署标签，请选中对应复选框。
-7. 在Storage account列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。<br>
+7. 在Storage account列表中，选择用于此部署的存储帐户。比较云服务数据中心和存储帐户的位置。理想状态下，这两个位置应该相同。<br />
 ![developerdifferences-004](./media/developerdifferences/developerdifferences-004.png)
 
-8. 如果您只希望部署已更新的组件，请选中 Deployment update 复选框。此类型的部署速度比全面部署更快。选择 Settings 链接，以打开 Deployment update settings 对话框，如下图所示。<br>
- ![developerdifferences-005](./media/developerdifferences/developerdifferences-005.png)<br>
-您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。<br>
+8. 如果您只希望部署已更新的组件，请选中 Deployment update 复选框。此类型的部署速度比全面部署更快。选择 Settings 链接，以打开 Deployment update settings 对话框，如下图所示。<br />
+ ![developerdifferences-005](./media/developerdifferences/developerdifferences-005.png)<br />
+您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。<br />
 当更新部署失败后，如果您希望自动执行完整部署，应选中复选框 *if deployment can't be updated, do a full deployment*。完整部署将重置云服务的虚拟 IP (VIP) 地址。有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614593.aspx">如何：为云服务保留固定的虚拟 IP 地址</a>。
 
 ###[发布项目](id:pubproj)###
-1. 您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择Save图标。此向导将创建配置文件并将其保存在 Visual Studio 项目中。<br>
-![developerdifferences-006](./media/developerdifferences/developerdifferences-006.png)<br>
+1. 您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择Save图标。此向导将创建配置文件并将其保存在 Visual Studio 项目中。<br />
+![developerdifferences-006](./media/developerdifferences/developerdifferences-006.png)<br />
 发布配置文件会显示在 Visual Studio 的 Solution Explorer 中，配置文件设置将被写入扩展名为 .azurePubxml 的文件中。这些设置均保存为 XML 标记的属性。
 
 2. 选择 Publish 以发布应用程序。您可以在 Visual Studio 中 Output 窗格中监控流程状态。
@@ -288,18 +288,17 @@ Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问�
 
 要创建使用 ACS 的应用程序，开发人员应阅读[有关 Codeplex 的访问控制服务示例和文档](http://acs.codeplex.com/)中的文档和代码示例。要在中国使用 Windows Azure 中的这些示例，请在 \Management\ManagementService\Common\SamplesConfiguration.cs 文件中将 AcsHostUrl 端点 *.accesscontrol.windows.net*替换为 *.accesscontrol.chinacloudapi.cn*。
 例如，要使用 Acs2WindowsPhoneSample 示例，请另外进行以下更改：
-<p class="TableSpacing"> 
 <table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid gray 1.5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0in 4.3pt 0in 4.3pt; mso-border-insideh: .75pt solid gray; mso-border-insidev: .75pt solid gray;">
 <thead>
 <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
 <td width="207" valign="top" style="width: 155.6pt; border-top: 1.5pt; border-left: 1.5pt; border-bottom: 1.0pt; border-right: 1.0pt; border-color: gray; border-style: solid; mso-border-top-alt: 1.5pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">示例代码中的文件
+示例代码中的文件
 </td>
 <td width="207" valign="top" style="width: 155.6pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">现有值
+现有值
 </td>
 <td width="221" valign="top" style="width: 165.4pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: 1.5pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">中国 Windows Azure 值
+中国 Windows Azure 值
 </td>
 </tr>
 </thead>
@@ -341,15 +340,14 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 
 如果您运行的是 EXE 文件或辅助角色，则所有选项都将可用。如果您运行的是 Web 角色，则仅选项 3 可用。
 无论方法如何，端点名称都会更改，如下表所示。
-<p class="TableSpacing"> 
 <table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; border-collapse: collapse; mso-border-alt: solid gray 1.5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0in 4.3pt 0in 4.3pt; mso-border-insideh: .75pt solid gray; mso-border-insidev: .75pt solid gray;">
 <thead>
 <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
 <td width="295" valign="top" style="width: 221.4pt; border-top: 1.5pt; border-left: 1.5pt; border-bottom: 1.0pt; border-right: 1.0pt; border-color: gray; border-style: solid; mso-border-top-alt: 1.5pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">服务总线端点
+服务总线端点
 </td>
 <td width="295" valign="top" style="width: 221.4pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: 1.5pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">等效的中国 Windows Azure 服务总线端点
+等效的中国 Windows Azure 服务总线端点
 </td>
 </tr>
 </thead>
@@ -407,64 +405,64 @@ accesscontrol. chinacloudapi.cn
 
 
 1. 在 .NET Framework 配置目录中查找现有 ServiceBus.config 文件。.NET Framework 配置目录取决于 32 位或 64 位的操作系统版本和已安装的框架版本，以下为常用位置。
-<p class="TableSpacinginList1"> 
+
 <table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; margin-left: 0.25in; border-collapse: collapse; mso-border-alt: solid gray 1.5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0in 4.3pt 0in 4.3pt; mso-border-insideh: .75pt solid gray; mso-border-insidev: .75pt solid gray;">
 <thead>
 <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
 <td width="199" valign="top" style="width: 149.25pt; border-top: 1.5pt; border-left: 1.5pt; border-bottom: 1.0pt; border-right: 1.0pt; border-color: gray; border-style: solid; mso-border-top-alt: 1.5pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">Microsoft .NET Framework 版本
+Microsoft .NET Framework 版本
 </td>
 <td width="178" valign="top" style="width: 133.15pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">操作系统版本
+操作系统版本
 </td>
 <td width="188" valign="top" style="width: 140.9pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: 1.5pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">目录
+目录
 </td>
 </tr>
 </thead>
 <tbody>
 <tr style="mso-yfti-irow: 1;">
 <td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-left-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">2.0 至 3.5
+2.0 至 3.5
 </td>
 <td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">32 位
+32 位
 </td>
 <td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-right-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">%Windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG
+%Windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG
 </td>
 </tr>
 <tr style="mso-yfti-irow: 2;">
 <td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-left-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">2.0 至 3.5
+2.0 至 3.5
 </td>
 <td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">64 位
+64 位
 </td>
 <td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-right-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">%Windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG
+%Windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG
 </td>
 </tr>
 <tr style="mso-yfti-irow: 3;">
 <td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-left-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">4.0
+4.0
 </td>
 <td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">32 位
+32 位
 </td>
 <td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-right-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">%Windir%\Microsoft.NET\Framework\v4.0.30319\Config
+%Windir%\Microsoft.NET\Framework\v4.0.30319\Config
 </td>
 </tr>
 <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
 <td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">4.0
+4.0
 </td>
 <td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-bottom-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">64 位
+64 位
 </td>
 <td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-<p style="page-break-after: avoid;" class="MsoNormal">%Windir%\Microsoft.NET\Framework64\v4.0.30319\Config
+%Windir%\Microsoft.NET\Framework64\v4.0.30319\Config
 </td>
 </tr>
 </tbody>
@@ -484,7 +482,9 @@ accesscontrol. chinacloudapi.cn
 #[使用服务管理 API](id:srvapi)#
 
 通过服务管理 API，开发人员可以对 Windows Azure 中运行的托管服务进行部署管理。事实上，全球服务和中国服务的管理门户都使用服务管理 API。
-全球服务使用的路径为<a href="https://management.core.windows.net">https://management.core.windows.net</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic"><a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>
+全球服务使用的路径为<a href="https://management.core.windows.net">https://management.core.windows.net</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic">
+  <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>
+</span>
 有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/ee460786.aspx">访问服务管理资源</a>和<a href="http://msdn.microsoft.com/zh-cn/library/ee460807.aspx">关于服务管理 API</a>。
  
 
@@ -500,7 +500,7 @@ accesscontrol. chinacloudapi.cn
 ##[使用 VM 角色和 CSUpload](id:usevm)##
 
 使用 VM 角色时，请更改 CSUpload 端点以便使用特定于中国的 URI。例如：
-<span class="LabelEmbedded">csupload<span class="LabelEmbedded">Set-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;<span class="LabelEmbedded">;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;<span class="LabelEmbedded">;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn<span class="LabelEmbedded">"
+csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;</span>;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;</span>;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
  
 
 #[修改代码示例和工具](id:codetool)#
@@ -520,14 +520,14 @@ accesscontrol. chinacloudapi.cn
 
 ##[CSManage - Windows Azure 服务管理示例](id:csmanage)##
 
-CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对<span class="Bold">http://*.windows.net的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="http://code.msdn.microsoft.com/Windows-Azure-CSManage-e3f1882c/sourcecode?fileId=21328&amp;pathId=1293677472">服务管理示例</a>中下载 CSManage 示例。
+CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.windows.net的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="http://code.msdn.microsoft.com/Windows-Azure-CSManage-e3f1882c/sourcecode?fileId=21328&amp;pathId=1293677472">服务管理示例</a>中下载 CSManage 示例。
 
 ##[为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例](id:plainhttp)##
 
 当在中国运行时，需要对 PlainHttp 示例中的 URL 进行多项更新。按照以下步骤更新该示例。
 1.打开此示例的根文件夹：WindowsAzureAppFabricSDKSamples_V1.0-CS\ServiceBus\ExploringFeatures\MessageBuffer\PlainHttp 
 2.导航到 MessageBufferClient 子文件夹并编辑 MainPage.xaml.cs
-3.将所有<span class="Bold">windows.net实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 行。
+windows.net实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 行。
  
 
 #[使用 Windows Azure 诊断](id:wadig)#
@@ -578,68 +578,67 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 <tbody>
 <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin-top: 0in; margin-right: 0in; margin-bottom: .0001pt; margin-left: 43.45pt; line-height: normal;" class="MsoNormal"><strong>资产</strong>
+<strong>资产</strong>
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><strong>内容是否专为中国创建</strong>
+<strong>内容是否专为中国创建</strong>
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><strong>说明</strong>
+<strong>说明</strong>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 1; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">windowsazure.com
+windowsazure.com
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">Windows Azure 的全球门户。
+Windows Azure 的全球门户。
 </td>
 </tr>
 <tr style="mso-yfti-irow: 2; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">windowsazure.cn
+windowsazure.cn
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">是
+是
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">专为在中国运营的 Windows Azure 构建的门户
+专为在中国运营的 Windows Azure 构建的门户
 </td>
 </tr>
 <tr style="mso-yfti-irow: 3; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">Windows Azure 案例研究
+Windows Azure 案例研究
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a>
+<a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 4; height: 15.0pt; mso-row-margin-right: 595.45pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">中国案例研究
+中国案例研究
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">是
+是
 </td>
-<td width="794" style="mso-cell-special: placeholder; border: none; border-bottom: solid windowtext 1.0pt;">
+<td>
 <a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 5; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">P&amp;P 丛书
+P&amp;P 丛书
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"> 
 <ul style="margin-top: 0in;">
 <li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
 <li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
@@ -649,103 +648,103 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 </tr>
 <tr style="mso-yfti-irow: 6; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">MVP 的著作
+MVP 的著作
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 </tr>
 <tr style="mso-yfti-irow: 7; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">MSDN 库
+MSDN 库
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">不一定
+一定
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx">http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx</a>
+<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx">http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx</a>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 8; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">Windows Azure 团队的博客
+Windows Azure 团队的博客
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">不一定
+不一定
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><a href="http://blogs.msdn.com/b/azchina/">http://blogs.msdn.com/b/azchina/</a>
+<a href="http://blogs.msdn.com/b/azchina/">http://blogs.msdn.com/b/azchina/</a>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 9; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">MSDN Azure 门户
+MSDN Azure 门户
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><a href="http://msdn.microsoft.com/zh-cn/ff380142">http://msdn.microsoft.com/zh-cn/ff380142</a><a name="_Hlt358907713"></a><a name="_Hlt358907714"></a>
+<a href="http://msdn.microsoft.com/zh-cn/ff380142">http://msdn.microsoft.com/zh-cn/ff380142</a><a name="_Hlt358907713"></a><a name="_Hlt358907714"></a>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 10; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">MSDN 杂志
+MSDN 杂志
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 </tr>
 <tr style="mso-yfti-irow: 11; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">虚拟实验室
+虚拟实验室
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 </tr>
 <tr style="mso-yfti-irow: 12; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">视频
+视频
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">第 9 频道的视频讨论全球服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同
+第 9 频道的视频讨论全球服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同
 </td>
 </tr>
 <tr style="mso-yfti-irow: 13; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">Windows Azure 培训包
+Windows Azure 培训包
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">Github 中的本地化培训包用于全球服务
+Github 中的本地化培训包用于全球服务
 </td>
 </tr>
 <tr style="mso-yfti-irow: 14; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">MSDN 代码库
+MSDN 代码库
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal"><a href="http://code.msdn.microsoft.com/windowsazure/">http://code.msdn.microsoft.com/windowsazure/</a>
+<a href="http://code.msdn.microsoft.com/windowsazure/">http://code.msdn.microsoft.com/windowsazure/</a>
 </td>
 </tr>
 <tr style="mso-yfti-irow: 15; mso-yfti-lastrow: yes; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">Github
+Github
 </td>
 <td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">否
+否
 </td>
 <td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<p style="margin: 0in; margin-bottom: .0001pt; line-height: normal;" class="MsoNormal">我们仅在此处托管 windowsazure.com 的英文内容，不提供本地化内容
+我们仅在此处托管 windowsazure.com 的英文内容，不提供本地化内容
 </td>
 </tr>
 </tbody>
