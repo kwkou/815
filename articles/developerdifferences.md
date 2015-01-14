@@ -120,16 +120,16 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 
 服务类型|全球服务URI|中国服务URI
 :--|:--|:--
-Windows Azure - 常规 | **.windows.net | *.chinacloudapi.cn
-Windows Azure - 计算 | **.cloudapp.net | *.chinacloudapp.cn
-Windows Azure - 存储 | **.blob.core.windows.net <br> \**.queue.core.windows.net <br> \*.table.core.windows.net | \*.blob.core.chinacloudapi.cn <br> \*.queue.core.chinacloudapi.cn <br> \*.table.core.chinacloudapi.cn
+Windows Azure - 常规 | *.windows.net | *.chinacloudapi.cn
+Windows Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
+Windows Azure - 存储 | *.blob.core.windows.net <br> *.queue.core.windows.net <br> \*.table.core.windows.net | *.blob.core.chinacloudapi.cn <br> \*.queue.core.chinacloudapi.cn <br> *.table.core.chinacloudapi.cn
 Windows Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
-SQL数据库 | \*.database.windows.net | \*.database.chinacloudapi.cn
+SQL数据库 | *.database.windows.net | *.database.chinacloudapi.cn
 Windows Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
 SQL Azure数据库管理API | https://management.database.windows.net | https://management.database.chinacloudapi.cn
-服务总线 | \*.servicebus.windows.net | \*.servicebus.chinacloudapi.cn
-ACS | \*.accesscontrol.windows.net | \*.accesscontrol.chinacloudapi.cn
-HDInsight | \*.azurehdinsight.net | \*.azurehdinsight.cn
+服务总线 | *.servicebus.windows.net | *.servicebus.chinacloudapi.cn
+ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
+HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
 SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
 
 
@@ -574,7 +574,7 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 
 下面列出了目前可用于 Windows Azure 的所有内容资产，并指出该资产是否专门针对中国服务。
  
-<table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; width: 880px; margin-left: 0.9pt; border-collapse: collapse;">
+<table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; width: 850px; margin-left: 0.9pt; border-collapse: collapse;">
 <tbody>
 <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 15.0pt;">
 <td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
