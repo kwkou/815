@@ -588,162 +588,162 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 </td>
 </tr>
 <tr style="mso-yfti-irow: 1; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="130" valign="top">
 windowsazure.com
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 Windows Azure 的全球门户。
 </td>
 </tr>
 <tr style="mso-yfti-irow: 2; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="130" valign="top">
 windowsazure.cn
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 是
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 专为在中国运营的 Windows Azure 构建的门户
 </td>
 </tr>
-<tr style="mso-yfti-irow: 3; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 Windows Azure 案例研究
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a>
+<td width="794" valign="top">
+<a href="http://azure.microsoft.com/zh-cn/case-studies/">http://azure.microsoft.com/zh-cn/case-studies/</a>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 4; height: 15.0pt; mso-row-margin-right: 595.45pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 中国案例研究
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 是
 </td>
 <td>
 <a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 5; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 P&amp;P 丛书
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 <ul style="margin-top: 0in;">
-<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
-<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
-<li class="MsoNormal" style="margin-top: 0in; margin-bottom: .0001pt; line-height: normal; mso-list: l10 level1 lfo42;"><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure" target="_blank">云应用开发(第2版) </a></li>
+<li><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
+<li><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
+<li><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure" target="_blank">云应用开发(第2版) </a></li>
 </ul>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 6; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 MVP 的著作
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
 </tr>
-<tr style="mso-yfti-irow: 7; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 MSDN 库
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 一定
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx">http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx</a>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 8; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 Windows Azure 团队的博客
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 不一定
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 <a href="http://blogs.msdn.com/b/azchina/">http://blogs.msdn.com/b/azchina/</a>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 9; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 MSDN Azure 门户
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 <a href="http://msdn.microsoft.com/zh-cn/ff380142">http://msdn.microsoft.com/zh-cn/ff380142</a><a name="_Hlt358907713"></a><a name="_Hlt358907714"></a>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 10; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 MSDN 杂志
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
 </tr>
-<tr style="mso-yfti-irow: 11; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 虚拟实验室
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
 </tr>
-<tr style="mso-yfti-irow: 12; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 视频
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 第 9 频道的视频讨论全球服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同
 </td>
 </tr>
 <tr style="mso-yfti-irow: 13; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="130" valign="top">
 Windows Azure 培训包
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 Github 中的本地化培训包用于全球服务
 </td>
 </tr>
-<tr style="mso-yfti-irow: 14; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 MSDN 代码库
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 <a href="http://code.msdn.microsoft.com/windowsazure/">http://code.msdn.microsoft.com/windowsazure/</a>
 </td>
 </tr>
-<tr style="mso-yfti-irow: 15; mso-yfti-lastrow: yes; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<tr>
+<td width="130" valign="top">
 Github
 </td>
-<td width="180" valign="top" style="width: 135.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="180" valign="top">
 否
 </td>
-<td width="794" valign="top" style="width: 595.45pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
+<td width="794" valign="top">
 我们仅在此处托管 windowsazure.com 的英文内容，不提供本地化内容
 </td>
 </tr>
