@@ -25,7 +25,7 @@
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]，然后单击屏幕底部的“+新建”。
 
-2.  依次单击“应用程序服务”、“Service Bus”、“通知中心”和“快速创建”。
+2.  依次单击“应用程序服务”、“服务总线”、“通知中心”和“快速创建”。
 
     ![][]
 
@@ -113,7 +113,7 @@
 
     ![][8]
 
-2.  通过使用 [WindowsAzure.ServiceBus NuGet 包][WindowsAzure.ServiceBus NuGet 包]添加对 Azure Service Bus SDK 的引用。在 Visual Studio 主菜单中，依次单击“工具”、“库程序包管理器”和“程序包管理器控制台”。然后，在控制台窗口中键入：
+2.  通过使用 [WindowsAzure.ServiceBus NuGet 包][WindowsAzure.ServiceBus NuGet 包]添加对 Azure 服务总线 SDK 的引用。在 Visual Studio 主菜单中，依次单击“工具”、“库程序包管理器”和“程序包管理器控制台”。然后，在控制台窗口中键入：
 
         Install-Package WindowsAzure.ServiceBus
 

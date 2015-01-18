@@ -156,7 +156,7 @@ location in which you want your code to execute.
 To achieve high availability and scalability, it is critically important
 that your application's data be kept in a central repository accessible
 to multiple role instances. To help with this, Azure offers
-several storage options such as blobs, tables, and SQL Database. Please see
+several storage options such as blobs, tables, and SQL数据库. Please see
 the [Data Storage Offerings in Azure][] article for more
 information about these storage technologies. The figure below shows how
 the load balancer inside the Azure data center distributes
@@ -204,7 +204,7 @@ customer's order but then it offloads the order processing to the Order
 Processing role instances. The best way to pass work form one set of
 role instances to another set of instances is using the queuing
 technology provided by Azure, either the Queue Service or
-Service Bus Queues. The use of a queue is a critical part of the story
+服务总线 Queues. The use of a queue is a critical part of the story
 here. The queue allows the hosted service to scale its roles
 independently allowing you to balance the workload against cost. If the
 number of messages in the queue increases over time, then you can scale
@@ -500,7 +500,7 @@ file:
 -   **Configuration Setting Values**. This element indicates values for
     settings (as defined in the CSDEF file). Your role can read these
     values while it is running. These configuration settings values are
-    typically used for connection strings to SQL Database or to 
+    typically used for connection strings to SQL数据库 or to 
     Azure Storage, but they can be used for any purpose you desire.
 
 ## <a id="hostedservices"> </a>Creating and Deploying a Hosted Service
@@ -559,7 +559,7 @@ article.<a id="Ref" name="Ref"></a>
   [0]: ./media/application-model/application-model-3.jpg
   [1]: ./media/application-model/application-model-4.jpg
   [2]: ./media/application-model/application-model-5.jpg
-  [Configuring a Custom Domain Name in Azure]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-custom-domain-name/
+  [Configuring a Custom Domain Name in Azure]: /zh-cn/documentation/articles/cloud-services-custom-domain-name/
   [Data Storage Offerings in Azure]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/blob-storage-v17/
   [3]: ./media/application-model/application-model-6.jpg
   [4]: ./media/application-model/application-model-7.jpg

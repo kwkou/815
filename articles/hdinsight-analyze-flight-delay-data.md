@@ -1,8 +1,8 @@
-<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL Database using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL数据库 using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 使用 HDInsight 分析航班延误数据
 
-Hive 提供了通过类似 SQL 的脚本语言（称作 *[HiveQL][]*）运行 MapReduce 作业的方法，此方法可用于对大量数据进行汇总、查询和分析。本教程演示如何使用 Hive 计算机场之间的平均延迟，以及如何使用 Sqoop 将结果导出到 SQL Database。
+Hive 提供了通过类似 SQL 的脚本语言（称作 *[HiveQL][]*）运行 MapReduce 作业的方法，此方法可用于对大量数据进行汇总、查询和分析。本教程演示如何使用 Hive 计算机场之间的平均延迟，以及如何使用 Sqoop 将结果导出到 SQL数据库。
 
 **先决条件：**
 
@@ -18,7 +18,7 @@ Hive 提供了通过类似 SQL 的脚本语言（称作 *[HiveQL][]*）运行 Ma
 -   [准备教程][]
 -   [创建并上载 HiveQL 脚本][]
 -   [执行 HiveQL 脚本][]
--   [将输出导出到 Azure SQL Database][]
+-   [将输出导出到 Azure SQL数据库][]
 -   [后续步骤][]
 
 ## <a id="prepare"></a>准备教程
@@ -27,7 +27,7 @@ Hive 提供了通过类似 SQL 的脚本语言（称作 *[HiveQL][]*）运行 Ma
 
 1.  使用 Web 浏览器从 RITA 将准时表现数据下载到你的工作站
 2.  使用 Azure PowerShell 将数据上载到 HDInsight
-3.  准备使用 Azure PowerShell 对 SQL Database 进行数据导出
+3.  准备使用 Azure PowerShell 对 SQL数据库 进行数据导出
 
 **了解 HDInsight 存储**
 
@@ -219,43 +219,43 @@ WASB 语法为：
 
     \$sqlDatabaseServer
 
-    Sqoop 用于将数据导出到的 SQL Database 服务器名称。如果你将此项按原样保留，则此脚本将为你创建一个。否则，指定现有 SQL Database 或 SQL Server。
+    Sqoop 用于将数据导出到的 SQL数据库 服务器名称。如果你将此项按原样保留，则此脚本将为你创建一个。否则，指定现有 SQL数据库 或 SQL Server。
 
     \$sqlDatabaseUsername
 
-    SQL Database/SQL Server 用户名。
+    SQL数据库/SQL Server 用户名。
 
     \$sqlDatabasePassword
 
-    SQL Database/SQL Server 用户密码。
+    SQL数据库/SQL Server 用户密码。
 
     \$sqlDatabaseLocation
 
-    仅当你想让脚本为你创建 SQL Database 服务器时，才使用此变量。
+    仅当你想让脚本为你创建 SQL数据库 服务器时，才使用此变量。
 
     \$sqlDatabaseName
 
-    Sqoop 用于将数据导出到的 SQL Database 名称。如果你将此项按原样保留，则此脚本将为你创建一个。否则，指定现有 SQL Database 或 SQL Server。
+    Sqoop 用于将数据导出到的 SQL数据库 名称。如果你将此项按原样保留，则此脚本将为你创建一个。否则，指定现有 SQL数据库 或 SQL Server。
 
     \$sqlDatabaseMaxSizeGB
 
-    仅当你想让脚本为你创建 SQL Database 时，才使用此变量。
+    仅当你想让脚本为你创建 SQL数据库 时，才使用此变量。
 
-4.  运行以下命令以创建 SQL Database 服务器/数据库/表。
+4.  运行以下命令以创建 SQL数据库 服务器/数据库/表。
 
         # 当有多个订阅时，选择当前 Azure 订阅
         Select-AzureSubscription $subscriptionName
 
-        # 如果收到请求，则创建新的 Azure SQL Database
+        # 如果收到请求，则创建新的 Azure SQL数据库
         if ([string]::IsNullOrEmpty($sqlDatabaseServer))
         {
         $sqlDatabaseServer = New-AzureSqlDatabaseServer -AdministratorLogin $sqlDatabaseUsername -AdministratorLoginPassword $sqlDatabasePassword -Location $sqlDatabaseLocation 
-        Write-Host "The new SQL Database server is $sqlDatabaseServer."-BackgroundColor Green
+        Write-Host "The new SQL数据库 server is $sqlDatabaseServer."-BackgroundColor Green
 
         }
         else
         {
-        Write-Host "Use an existing SQL Database server:$sqlDatabaseServer" -BackgroundColor Green
+        Write-Host "Use an existing SQL数据库 server:$sqlDatabaseServer" -BackgroundColor Green
         }
 
         # 如果收到请求，则创建新的 SQL 数据库
@@ -267,12 +267,12 @@ WASB 语法为：
 
         $sqlDatabase = New-AzureSqlDatabase -ConnectionContext $sqlDatabaseServerConnectionContext -DatabaseName $sqlDatabaseName -MaxSizeGB $sqlDatabaseMaxSizeGB
 
-        Write-Host "The new SQL Database is $sqlDatabaseName."-BackgroundColor Green
+        Write-Host "The new SQL数据库 is $sqlDatabaseName."-BackgroundColor Green
 
         }
         else
         {
-        Write-Host "Use an existing SQL Database :$sqlDatabaseName" -BackgroundColor Green
+        Write-Host "Use an existing SQL数据库 :$sqlDatabaseName" -BackgroundColor Green
         }
 
         #创建 AvgDelays 表
@@ -346,7 +346,7 @@ HiveQL 脚本将执行以下操作：
 
     \$dstDataFolder
 
-    这是 HiveQL 脚本将输出发送到的 WASB 上的文件夹。稍后在本教程中，你将使用 Sqoop 将此文件夹中的数据导出到 Azure SQL Database。
+    这是 HiveQL 脚本将输出发送到的 WASB 上的文件夹。稍后在本教程中，你将使用 Sqoop 将此文件夹中的数据导出到 Azure SQL数据库。
 
 4.  运行以下命令以定义 HiveQL 语句：
 
@@ -521,11 +521,11 @@ HiveQL 脚本将执行以下操作：
 
     在每个城市和延迟时间之间有一个分隔符，该分隔符在 PowerShell 输出窗口中不可见。该分隔符是“\\001”。当你运行 Sqoop 导出时，将使用此分隔符。
 
-## <a id="exportdata"></a>将 Hive 作业输出导出到 Azure SQL Database
+## <a id="exportdata"></a>将 Hive 作业输出导出到 Azure SQL数据库
 
-最后的步骤是运行 Sqoop 导出，将数据导出到 SQL Database。在本教程的前面部分，你已创建 SQL Database 和 AvgDelays 表。
+最后的步骤是运行 Sqoop 导出，将数据导出到 SQL数据库。在本教程的前面部分，你已创建 SQL数据库 和 AvgDelays 表。
 
-**将数据导出到 SQL Database**
+**将数据导出到 SQL数据库**
 
 1.  打开 Azure PowerShell。
 2.  运行以下命令以连接到 Azure 订阅：
@@ -559,27 +559,27 @@ HiveQL 脚本将执行以下操作：
 
     \$sqlDatabaseServer
 
-    Sqoop 将数据导出到的 SQL Database 服务器。
+    Sqoop 将数据导出到的 SQL数据库 服务器。
 
     \$sqlDatabaseUsername
 
-    SQL Database 用户名。
+    SQL数据库 用户名。
 
     \$sqlDatabasePassword
 
-    SQL Database 用户密码。
+    SQL数据库 用户密码。
 
     \$sqlDatabaseName
 
-    Sqoop 将数据导出到的 SQL Database。默认名称是“HDISqoop”。
+    Sqoop 将数据导出到的 SQL数据库。默认名称是“HDISqoop”。
 
     \$sqlDatabaseTableName
 
-    Sqoop 将数据导出到的 SQL Database。默认名称是 AvgDelays。这是先前在教程中创建的表。
+    Sqoop 将数据导出到的 SQL数据库。默认名称是 AvgDelays。这是先前在教程中创建的表。
 
     \$exportDir
 
-    这是 Hive 输出文件位置。Sqoop 会将此位置中的文件导出到 SQL Database。
+    这是 Hive 输出文件位置。Sqoop 会将此位置中的文件导出到 SQL数据库。
 
 4.  运行以下命令以导出数据：
 
@@ -593,13 +593,13 @@ HiveQL 脚本将执行以下操作：
         Write-Host "Standard Output" -BackgroundColor Green
         Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
-5.  连接到 SQL Database，并在“AvgDelays”**表中按城市查看平均航班延迟：
+5.  连接到 SQL数据库，并在“AvgDelays”**表中按城市查看平均航班延迟：
 
     ![HDI.FlightDelays.AvgDelays.Dataset][]
 
 ## <a id="nextsteps"></a>后续步骤
 
-现在你已了解如何执行以下操作：将文件上载到 Blob 存储、使用 Blob 存储中的数据填充 Hive 表、运行 Hive 查询以及使用 Sqoop 将数据从 HDFS 导出到 Azure SQL Database。若要了解更多信息，请参阅下列文章：
+现在你已了解如何执行以下操作：将文件上载到 Blob 存储、使用 Blob 存储中的数据填充 Hive 表、运行 Hive 查询以及使用 Sqoop 将数据从 HDFS 导出到 Azure SQL数据库。若要了解更多信息，请参阅下列文章：
 
 -   [HDInsight 入门][]
 -   [将 Hive 与 HDInsight 配合使用][]
@@ -616,7 +616,7 @@ HiveQL 脚本将执行以下操作：
   [准备教程]: #prepare
   [创建并上载 HiveQL 脚本]: #createscript
   [执行 HiveQL 脚本]: #executehqlscript
-  [将输出导出到 Azure SQL Database]: #exportdata
+  [将输出导出到 Azure SQL数据库]: #exportdata
   [后续步骤]: #nextsteps
   [美国研究与技术创新管理部门 - 运输统计局]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
   [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/

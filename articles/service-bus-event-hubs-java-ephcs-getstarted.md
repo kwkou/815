@@ -1,4 +1,4 @@
-﻿<properties linkid="service-bus-event-hubs-csharp-storm-getstarted" pageTitle="事件中心入门" metaKeywords="Azure Service Bus, 事件中心, 事件中心入门" description="Follow this tutorial to get started using Azure Event Hubs sending events with Java and receiving in C# using EventProcessorHost" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+﻿<properties linkid="service-bus-event-hubs-csharp-storm-getstarted" pageTitle="事件中心入门" metaKeywords="Azure 服务总线, 事件中心, 事件中心入门" description="Follow this tutorial to get started using Azure Event Hubs sending events with Java and receiving in C# using EventProcessorHost" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
 
 
 # <a name="getting-started"> </a>事件中心入门
@@ -23,7 +23,7 @@
 
 1. 登录到 [Azure 管理门户]，然后单击屏幕底部的**"新建"**。
 
-2. 依次单击**"应用服务"**、**Service Bus**、**"事件中心"**、**"快速创建"**。
+2. 依次单击**"应用服务"**、**服务总线**、**"事件中心"**、**"快速创建"**。
 
    	![][1]
 

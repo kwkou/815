@@ -1,6 +1,6 @@
-<properties linkid="dev-net-tutorials-hybrid-solution" urlDisplayName="Hybrid Application" pageTitle="本地/云混合应用程序 (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="了解如何使用 Azure Service Bus 中继创建 .NET 本地/云混合应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="使用 Service Bus 中继创建 .NET 本地/云混合应用程序" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+<properties linkid="dev-net-tutorials-hybrid-solution" urlDisplayName="Hybrid Application" pageTitle="本地/云混合应用程序 (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="了解如何使用 Azure 服务总线 中继创建 .NET 本地/云混合应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="使用 服务总线 中继创建 .NET 本地/云混合应用程序" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 
-# 使用 Service Bus 中继创建 .NET 本地/云混合应用程序
+# 使用 服务总线 中继创建 .NET 本地/云混合应用程序
 
 ## <span class="short-header">简介</span>简介
 
@@ -14,12 +14,12 @@ Azure 资源的应用程序在云中启动并运行。
 
 -   如何创建或修改现有 Web 服务
     以供 Web 解决 方案使用。
--   如何使用 Azure Service Bus 中继功能
+-   如何使用 Azure 服务总线 中继功能
     在 Azure 应用程序和托管于其他某处的 Web 服务之间共享数据。
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-### Service Bus 中继功能将为混合解决方案带来哪些帮助
+### 服务总线 中继功能将为混合解决方案带来哪些帮助
 
 业务解决方案通常由为处理独特的
 新业务需求而编写的自定义代码和已有的
@@ -34,13 +34,13 @@ Azure 资源的应用程序在云中启动并运行。
 构建或托管方式使得它们无法
 在企业网络边缘轻松公开。
 
-*“Service Bus 中继”*的设计考虑到如何利用
+*“服务总线 中继”*的设计考虑到如何利用
 现有的 Windows Communication Foundation (WCF) Web 服务
 ，使得位于企业外部的解决方案
 能够安全地访问这些服务，而无需对企业网络基础结构
-进行彻底的更改。虽然此类 Service Bus 中继服务
+进行彻底的更改。虽然此类 服务总线 中继服务
 仍托管在现有环境中，但它们会将侦听传入会话和请求
-这一任务委托给云托管的 Service Bus。Service Bus 还会通过
+这一任务委托给云托管的 服务总线。服务总线 还会通过
 使用 Azure Active Directory Access Control
 来保护这些服务免遭未经授权的访问。
 
@@ -52,7 +52,7 @@ Azure 资源的应用程序在云中启动并运行。
 ![][0]
 
 本教程假定你的产品信息位于现有的
-本地系统中，而且你使用 Service Bus 中继
+本地系统中，而且你使用 服务总线 中继
 来访问该系统。这是由在简单的控制台应用程序中运行的 Web 服务
 模拟的，并由一系列内存中产品提供支持。你
 将能够在你自己的计算机上运行此控制台应用程序并
@@ -98,18 +98,18 @@ Azure 资源的应用程序在云中启动并运行。
 
 ## <span class="short-header">创建命名空间</span>创建服务命名空间
 
-若要开始在 Azure 中使用 Service Bus 功能，必须先
+若要开始在 Azure 中使用 服务总线 功能，必须先
 创建一个服务命名空间。服务命名空间提供了用于对应用程序
-中的 Service Bus 资源进行寻址的范围容器。
+中的 服务总线 资源进行寻址的范围容器。
 
-你可以使用 [Azure 管理门户][Azure 管理门户]或 Visual Studio 服务器资源管理器来管理命名空间和 Service Bus 消息传送实体，但只能在门户内创建新的命名空间。
+你可以使用 [Azure 管理门户][Azure 管理门户]或 Visual Studio 服务器资源管理器来管理命名空间和 服务总线 消息传送实体，但只能在门户内创建新的命名空间。
 
 ### 若要使用门户创建服务命名空间，请执行以下操作：
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
 
 2.  在该管理门户的左侧导航窗格中，单击
-    **Service Bus**。
+    **服务总线**。
 
 3.  在该管理门户的下方窗格中，单击“创建”。
     ![][5]
@@ -156,7 +156,7 @@ Azure 资源的应用程序在云中启动并运行。
 
 ### 使用 Visual Studio 服务器资源管理器管理服务命名空间：
 
-若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处][此处]所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 这一节。当你登录到 Azure 时，服务器资源管理器中 **Windows Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
+若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处][此处]所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 这一节。当你登录到 Azure 时，服务器资源管理器中 **Windows Azure** 树下的 **服务总线** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
 
 ![][10]
 
@@ -170,13 +170,13 @@ Azure 资源的应用程序在云中启动并运行。
 其中包含我们将尝试集成的完整服务图面。
 
 此项目将作为 Visual Studio 控制台应用程序启动。此
-项目使用 Service Bus NuGet 包，其中包含 Service Bus 库
+项目使用 服务总线 NuGet 包，其中包含 服务总线 库
 和配置设置。利用 NuGet Visual Studio 扩展，可以
 轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新
-库和工具。Service Bus NuGet 包是
-获取 Service Bus API 和使用所有 Service Bus 依赖项配置
-应用程序的最简单的方法。有关使用 NuGet 和 Service Bus 包的详细信息，请参阅
-[使用 NuGet Service Bus 包][使用 NuGet Service Bus 包]。
+库和工具。服务总线 NuGet 包是
+获取 服务总线 API 和使用所有 服务总线 依赖项配置
+应用程序的最简单的方法。有关使用 NuGet 和 服务总线 包的详细信息，请参阅
+[使用 NuGet 服务总线 包][使用 NuGet 服务总线 包]。
 
 ### 创建项目
 
@@ -212,7 +212,7 @@ Azure 资源的应用程序在云中启动并运行。
 9.  在 NuGet 对话框的左栏中，单击“联机”。
 
 10. 在右栏中，单击“搜索”框，键入“MicrosoftAzure”，
-    并选择“Windows Azure Service Bus”项。单击“安装”以完成安装，
+    并选择“Windows Azure 服务总线”项。单击“安装”以完成安装，
     然后关闭此对话框。
 
     ![][14]
@@ -532,7 +532,7 @@ Azure 资源的应用程序在云中启动并运行。
         “管理 NuGet 包”。
 
     3.  搜索“MicrosoftAzure.ServiceBus”，
-        然后选择“Windows Azure Service Bus”项。然后，完成安装过程
+        然后选择“Windows Azure 服务总线”项。然后，完成安装过程
         并关闭此对话框。
 
     4.  在“解决方案资源管理器”中，右键单击“ProductsPortal”项目，
@@ -721,11 +721,11 @@ Azure 将按使用的服务器小时数对 Web 角色
 
 ## <a name="nextsteps"></a><span class="short-header">后续步骤</span>后续步骤
 
-若要了解有关 Service Bus 的详细信息，请参阅以下资源：
+若要了解有关 服务总线 的详细信息，请参阅以下资源：
 
--   [Azure Service Bus][Azure Service Bus]
--   [Service Bus 操作方法][Service Bus 操作方法]
--   [如何使用 Service Bus 队列][如何使用 Service Bus 队列]
+-   [Azure 服务总线][Azure 服务总线]
+-   [服务总线 操作方法][服务总线 操作方法]
+-   [如何使用 服务总线 队列][如何使用 服务总线 队列]
 
   [0]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
   [1]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/App2.png
@@ -741,7 +741,7 @@ Azure 将按使用的服务器小时数对 Web 角色
   [9]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/sb-queues-06.png
   [此处]: http://http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx
   [10]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/VSProperties.png
-  [使用 NuGet Service Bus 包]: http://go.microsoft.com/fwlink/?LinkId=234589
+  [使用 NuGet 服务总线 包]: http://go.microsoft.com/fwlink/?LinkId=234589
   [11]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-web-1.png
   [12]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-con-1.png
   [13]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-con-3.png
@@ -770,6 +770,6 @@ Azure 将按使用的服务器小时数对 Web 角色
   [32]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-41.png
   [33]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-service1.png
   [34]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-43.png
-  [Azure Service Bus]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee732537.aspx
-  [Service Bus 操作方法]: /zh-cn/documentation/services/service-bus/
-  [如何使用 Service Bus 队列]: /zh-cn/develop/net/how-to-guides/service-bus-queues/
+  [Azure 服务总线]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee732537.aspx
+  [服务总线 操作方法]: /zh-cn/documentation/services/service-bus/
+  [如何使用 服务总线 队列]: /zh-cn/develop/net/how-to-guides/service-bus-queues/

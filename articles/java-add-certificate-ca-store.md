@@ -1,8 +1,8 @@
-<properties linkid="develop-java-how-to-add-a-certificate" urlDisplayName="Add a Cert to the CA Store" pageTitle="Add a certificate to the Java CA store - Azure" metaKeywords="Azure Twilio Java, Twilio Java Certificate, Azure Service Bus Certificate" description="Learn how to add a certificate authority (CA) certificate to the Java CA certificate (cacerts) store for Twilio service or Azure Service Bus." metaCanonical="" services="" documentationCenter="Java" title="Adding a Certificate to the Java CA Certificates Store" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-java-how-to-add-a-certificate" urlDisplayName="Add a Cert to the CA Store" pageTitle="Add a certificate to the Java CA store - Azure" metaKeywords="Azure Twilio Java, Twilio Java Certificate, Azure 服务总线 Certificate" description="Learn how to add a certificate authority (CA) certificate to the Java CA certificate (cacerts) store for Twilio service or Azure 服务总线." metaCanonical="" services="" documentationCenter="Java" title="Adding a Certificate to the Java CA Certificates Store" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
 # 将证书添加到 Java CA 证书存储
 
-以下步骤演示如何将证书颁发机构 (CA) 证书添加到 Java CA 证书 (cacerts) 存储。使用的示例适用于 Twilio 服务所需的 CA 证书。本主题中稍后提供的信息将介绍如何安装 Azure Service Bus 的 CA 证书。
+以下步骤演示如何将证书颁发机构 (CA) 证书添加到 Java CA 证书 (cacerts) 存储。使用的示例适用于 Twilio 服务所需的 CA 证书。本主题中稍后提供的信息将介绍如何安装 Azure 服务总线 的 CA 证书。
 
 在压缩 JDK 并将其添加到 Azure 项目的 **approot** 文件夹之前，你可使用 keytool 添加 CA 证书，也可以运行使用 keytool 添加证书的 Azure 启动任务。此示例假定你在压缩 JDK 之前将添加 CA 证书。此示例中还将使用特定 CA 证书，但获取其他 CA 证书并将其导入 cacerts 存储的步骤将类似。
 
@@ -31,7 +31,7 @@
 
 # Azure 根证书
 
-使用 Azure 服务（如 Azure Service Bus）的应用程序需要信任 Baltimore CyberTrust 根证书。（Azure 已在 2013 年 4 月 15 日开始从 GTE CyberTrust 全局根迁移到 Baltimore CyberTrust 根。完成这种迁移花费了几个月的时间。）
+使用 Azure 服务（如 Azure 服务总线）的应用程序需要信任 Baltimore CyberTrust 根证书。（Azure 已在 2013 年 4 月 15 日开始从 GTE CyberTrust 全局根迁移到 Baltimore CyberTrust 根。完成这种迁移花费了几个月的时间。）
 
 Baltimore 证书可能已安装到你的 cacerts 存储中，因此请务必先运行 **keytool -list** 命令来查看它是否已存在。
 

@@ -29,7 +29,7 @@ more intensive information on the practices described.
 or have successfully deployed your Azure application and that
 something unexpected is now occurring. It does not discuss how to deploy
 an application on Azure. For more information about developing
-and deploying your Azure application, see <a href="http://azure.microsoft.com/zh-cn/documentation/">http://azure.microsoft.com/zh-cn/documentation/</a>.
+and deploying your Azure application, see <a href="/zh-cn/documentation/">/zh-cn/documentation/</a>.
 
 This topic first describes some best practices that will help you design
 your application so that you can troubleshoot effectively when problems
@@ -55,7 +55,7 @@ describe how to implement them.
 * [Azure Cloud Services](#CloudServices)
 * [Azure Virtual Machines](#Vms)
 * [Azure Services](#PlatformServices)
-* [SQL Database Troubleshooting](#SQLTroubleshooting)
+* [SQL数据库 Troubleshooting](#SQLTroubleshooting)
 
 <h2><a id="BestPractices"></a>Best Practices for Troubleshooting in Azure</h2>
 
@@ -91,7 +91,7 @@ network connections inherent in shared resources on the internet. Some
 examples are:
 
 -   Shared computer resources such as Azure Cloud Services and
-    SQL Database (to give two examples) can be slightly less or more
+    SQL数据库 (to give two examples) can be slightly less or more
     responsive from moment to moment.
 -   Responsiveness delays due to providing durability for services. For example, SQL
     Azure keeps multiple copies of databases consistent in order to
@@ -229,7 +229,7 @@ Cloud Storage Studio 2 is a Windows (WPF) based client for managing
 Azure Storage.
 
 Azure Management Cmdlets is a set of Windows PowerShell cmdlets for managing
-Azure Storage, Hosted Services, SQL Database instances, and
+Azure Storage, Hosted Services, SQL数据库 instances, and
 Diagnostics. It also provides cmdlets to back up and restore storage
 accounts.
 
@@ -278,7 +278,7 @@ do rudimentary tests without having to deploying your application. The
 debugging tools you use vary depending upon the programming language and the development tools
 you are using.
 
-After an application has been deployed, you can debug in the cloud using a debugger like Visual Studio. This requires creating a debug build and deploying it. In order to do this,you must connect to a specific role instance. If you have a complex application with multiple roles and role instances, it can be very difficult to determine to which role instance to connect. Visual Studio Ultimate supports IntelliTrace, which allows .NET roles to track debug information. When a problem occurs you can download this information and load it into Visual Studio. You can look at each role instance's IntelliTrace log to determine where the problem occurred. While there are some drawbacks to debugging in the cloud, there are some circumstances in which it is required. Not all Azure Services have an emulator (for example Service Bus) and not all supported development tools (for example Mac and Linux) come with emulators. 
+After an application has been deployed, you can debug in the cloud using a debugger like Visual Studio. This requires creating a debug build and deploying it. In order to do this,you must connect to a specific role instance. If you have a complex application with multiple roles and role instances, it can be very difficult to determine to which role instance to connect. Visual Studio Ultimate supports IntelliTrace, which allows .NET roles to track debug information. When a problem occurs you can download this information and load it into Visual Studio. You can look at each role instance's IntelliTrace log to determine where the problem occurred. While there are some drawbacks to debugging in the cloud, there are some circumstances in which it is required. Not all Azure Services have an emulator (for example 服务总线) and not all supported development tools (for example Mac and Linux) come with emulators. 
 
 Once you have debugged your application locally you will most likely
 have to rely on the instrumentation built into your application to
@@ -466,7 +466,7 @@ with the operating systems and platforms in use. For example:
 
 <h2><a id="PlatformServices"></a>Troubleshooting Azure Services</h2>
 
-Many of the Azure services such as Azure SQL Database, Azure
+Many of the Azure services such as Azure SQL数据库, Azure
 Active Directory, and Azure storage have troubleshooting advice
 that is specific to their use, regardless whether the application is
 executing on Azure, what programming language or libraries it was built
@@ -503,27 +503,27 @@ these will allow you to see Diagnostics files and Azure Storage
 Analytics files. Cloudberry Lab's [Explorer for Azure Blob Storage] provides a user interface to enable Storage Analytics directly in the
 application by clicking **Storage Settings**.
 
-<h2><a id="Misc"></a>Azure Service Bus Troubleshooting</h2>
+<h2><a id="Misc"></a>Azure 服务总线 Troubleshooting</h2>
 
 This section provides high-level guidance about how to develop an
-application that uses the Azure Service Bus in a robust and
+application that uses the Azure 服务总线 in a robust and
 maintainable way that will minimize common issues. It also provides
-details about how to identify and address common Service Bus errors.
+details about how to identify and address common 服务总线 errors.
 
 ###General Guidance
 
-The Service Bus is an internet-scale [enterprise service bus] that
-supports relayed and brokered messaging capabilities. The Service Bus
+The 服务总线 is an internet-scale [enterprise 服务总线] that
+supports relayed and brokered messaging capabilities. The 服务总线
 implements quotas and thresholds at a system level for both types of
 messaging. If your application exceeds these quotas, it will be
 throttled or your requests or messages will be rejected. For full
-details about Service Bus quotas and the behavior you will see when they
-are exceeded, see [Azure Service Bus Quotas]. Some quotas are user
+details about 服务总线 quotas and the behavior you will see when they
+are exceeded, see [Azure 服务总线 Quotas]. Some quotas are user
 defined, for example the size of a queue or topic, which is defined when
 the entity is created.
 
-To get a view into the data in your Service Bus messaging entity and how
-it is being processed, you can use [Service Bus Explorer] or the Server
+To get a view into the data in your 服务总线 messaging entity and how
+it is being processed, you can use [服务总线 Explorer] or the Server
 Explorer in the Azure Tools for Visual Studio (version 1.7 or higher,) to create, delete, and test queues, topics, subscriptions, and rules. This
 is an excellent way to troubleshoot an application that is running but
 not processing data the way you expect. These tools include
@@ -532,11 +532,11 @@ entities, trace the operations performed by individual sender and
 receiver tasks, monitor progress and performance of an ongoing test run,
 and generate detailed logs of the results, including any error messages.
 
-###Service Bus Relay
+###服务总线 Relay
 
-The Service Bus "relay" service runs in the cloud and supports a
+The 服务总线 "relay" service runs in the cloud and supports a
 variety of different transport protocols and Web services standards,
-including SOAP, WS-\*, and REST. You can use the Service Bus relay as a
+including SOAP, WS-\*, and REST. You can use the 服务总线 relay as a
 delegate to listen for incoming sessions and requests sent to a WCF
 service. In the relayed messaging pattern, an on-premises or cloud-based
 service connects to the relay service through an outbound port and
@@ -544,15 +544,15 @@ creates a bi-directional socket for communication tied to a particular
 rendezvous address. The client does not have to know where the service
 resides, and the on-premises service does not need any inbound ports
 open on the firewall. However, depending on your network configuration,
-you may encounter problems when connecting to the Service Bus relay from
+you may encounter problems when connecting to the 服务总线 relay from
 behind a firewall or through a proxy server. [Hosting Behind a Firewall
-with the Service Bus] describes how to troubleshoot and resolve such
+with the 服务总线] describes how to troubleshoot and resolve such
 connection issues.
 
-###Service Bus Queues and Topics
+###服务总线 Queues and Topics
 
-Service Bus queues and topics provide brokered messaging
-functionality-messages are pushed to the Service Bus queue or topic
+服务总线 queues and topics provide brokered messaging
+functionality-messages are pushed to the 服务总线 queue or topic
 where they are reliably retained until the receiver is ready to consume
 them. Message senders and receivers do not have to be online at the same
 time; the messaging infrastructure reliably stores messages until the
@@ -575,7 +575,7 @@ can be broadly grouped into the following categories:
     used for tracing.
 
 [Messaging Exceptions] provides an overview of exceptions that users of
-the Service Bus client libraries for .NET might encounter, along with
+the 服务总线 client libraries for .NET might encounter, along with
 recommendations about how to handle each type of exception. Because the
 client libraries for .NET align closely to the structure of the Service
 Bus libraries for other languages, this guidance may be useful even if
@@ -584,13 +584,13 @@ with transient errors, you can retry the action. You can follow the
 transient error handling guidelines outlined earlier in this article to
 efficiently handle transient errors. In addition, for more details, best
 practices, and sample code that demonstrates how to handle transient
-Service Bus errors in a .NET application, see the [Handling Transient Communication Errors] section in the Azure Developer Guidance
-article [Best Practices for Leveraging Azure Service Bus Brokered Messaging API].
+服务总线 errors in a .NET application, see the [Handling Transient Communication Errors] section in the Azure Developer Guidance
+article [Best Practices for Leveraging Azure 服务总线 Brokered Messaging API].
 
 Another area to focus on when developing an application that uses
 brokered messaging is to ensure you implement reliable message receiving
 logic that can accurately and efficiently handle anomalies in messages.
-The "Implementing Reliable Message Receive Loops" section of the [Best Practices for Leveraging Azure Service Bus Brokered Messaging API] article describes a number of techniques for using the **PeekLock** receive mode, which is the mode that supports multiple message
+The "Implementing Reliable Message Receive Loops" section of the [Best Practices for Leveraging Azure 服务总线 Brokered Messaging API] article describes a number of techniques for using the **PeekLock** receive mode, which is the mode that supports multiple message
 deliveries if the message isn't delivered successfully on the first try.
 The article recommends best practices that will help ensure your
 application does not process duplicate messages. It also helps avoid
@@ -601,8 +601,8 @@ Bus client libraries for .NET.
 
 ###Additional Troubleshooting Resources
 
-For additional details about common Service Bus errors and ways to
-investigate and address them, see [Troubleshooting the Service Bus].
+For additional details about common 服务总线 errors and ways to
+investigate and address them, see [Troubleshooting the 服务总线].
 
 <!--
 ##Azure Active Directory Access Control Service (ACS)
@@ -613,32 +613,32 @@ Troubleshooting
 -   ACS Service limitations:
     [http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185909.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185909.aspx)
 
-<h2><a id="SQLTroubleshooting"></a>Azure SQL Database Troubleshooting</h2>
+<h2><a id="SQLTroubleshooting"></a>Azure SQL数据库 Troubleshooting</h2>
 
-When interacting with an Azure SQL database extra care must be taken to
-deal with the distributed nature of Azure SQL Database applications. This
+When interacting with an Azure SQL数据库 extra care must be taken to
+deal with the distributed nature of Azure SQL数据库 applications. This
 section discusses several areas that warrant attention. This is by no
-means an exhaustive list. The key to writing supportable Azure SQL Database code
+means an exhaustive list. The key to writing supportable Azure SQL数据库 code
 is to examine the return codes and make sure that you have solid retry
 code to handle failures.
 
-Your application must handle login failures gracefully. SQL Database
+Your application must handle login failures gracefully. SQL数据库
 instances require the use of SQL Authentication. If you cannot
 successfully log in, either your credentials are not valid or the
 database you requested is not available.
 
 Your application must handle the service being inaccessible. If the
-server is already provisioned and the Azure SQL Database service is
+server is already provisioned and the Azure SQL数据库 service is
 available (you can check this using the [Azure Health Status] page), the
 likely cause is configuration issues in your on-site installation. For
 instance, you may be unable to resolve the name (which can be tested
 with tools such as tracert), you may have a firewall blocking port 1433
-that is used by SQL Database, or you may be using a proxy server that is
+that is used by SQL数据库, or you may be using a proxy server that is
 not configured properly. Use the same techniques to troubleshoot these
-difficulties that you would for SQL Server. For more information, see [SQL Database Connectivity Troubleshooting Guide] and [Troubleshooting SQL Database].
+difficulties that you would for SQL Server. For more information, see [SQL数据库 Connectivity Troubleshooting Guide] and [Troubleshooting SQL数据库].
 
 Your application must handle general network errors. You may receive
-general network errors because Azure SQL Database might disconnect users
+general network errors because Azure SQL数据库 might disconnect users
 under these circumstances:
 
 -   When a connection is idle for an extended period of time
@@ -646,17 +646,17 @@ under these circumstances:
     onto a transaction for an extended period of time
 -   If the server is too busy
 
-To improve performance in Azure SQL Database, use the same techniques
+To improve performance in Azure SQL数据库, use the same techniques
 you would use with SQL Server. For more information, see the following
 topics:
 
 -   [Troubleshooting Queries] in SQL Server Books Online
--   [Troubleshoot and Optimize Queries with SQL Database]
--   [SQL Database Performance Considerations and Troubleshooting]
+-   [Troubleshoot and Optimize Queries with SQL数据库]
+-   [SQL数据库 Performance Considerations and Troubleshooting]
 -   [Improving Your I/O Performance]
--   [System Center Monitoring Pack for SQL Database]
+-   [System Center Monitoring Pack for SQL数据库]
 
-Azure SQL Database uses a subset of SQL Server error messages. For more
+Azure SQL数据库 uses a subset of SQL Server error messages. For more
 information about SQL Server errors, see [Errors and Events Reference
 (Database Engine)] in SQL Server Books Online
 
@@ -665,7 +665,7 @@ administrator, who can grant you proper access to the server and
 database. Service administrators can also reset their own passwords
 using the Azure Management Portal.
 
-SQL Database queries can fail for various reasons - a malformed query,
+SQL数据库 queries can fail for various reasons - a malformed query,
 network issues, and so on. Some errors are transient, meaning the
 problem often goes away by itself. For this subset of errors, it makes
 sense to retry the query after a short interval. If the query still
@@ -675,23 +675,23 @@ away no matter how many times you submit the same query. In short,
 implementing robust retry logic requires some thought. A tabular data
 stream (TDS) error token is sent prior to disconnecting users, when
 possible. To improve application experience, we recommend that you
-implement the retry logic in your SQL Database applications to catch these
+implement the retry logic in your SQL数据库 applications to catch these
 errors. When an error occurs, re-establish the connection, and then
 re-execute the failed commands or the query. For more information, see
 the following links:
 
--   [Retry Logic for Transient Failures in SQL Database]
--   [SQL Database Retry Logic Sample]
+-   [Retry Logic for Transient Failures in SQL数据库]
+-   [SQL数据库 Retry Logic Sample]
 -   [The Transient Fault Handling Application Block]
 
 ###Azure SQL Backup and Restore Strategy
 
-Azure SQL Database requires its own backup-and-restore strategy because of the
+Azure SQL数据库 requires its own backup-and-restore strategy because of the
 environment and tools available. In many ways the risks have been
 mediated by the database being in the Microsoft data centers. The tools
 that we have today cover the other risk factors, however better tools
 are coming to make the job much easier. Red-gate recently published a
-free tool for SQL Database backup and restore which can be found here: [http://www.red-gate.com/products/dba/sql-azure-backup/](http://www.red-gate.com/products/dba/sql-azure-backup/).
+free tool for SQL数据库 backup and restore which can be found here: [http://www.red-gate.com/products/dba/sql-azure-backup/](http://www.red-gate.com/products/dba/sql-azure-backup/).
 
 SQL Data Sync enables you to easily create and schedule
 bi-directional synchronizations from within the Data Sync web site
@@ -699,23 +699,23 @@ without the need to write a single line of code. You can find more
 information here:
 [http://msdn.microsoft.com/zh-cn/library/windowsazure/hh456371.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh456371.aspx).
 
-For more information on SQL Database backup and Restore strategies see the
+For more information on SQL数据库 backup and Restore strategies see the
 following articles:
 
--   This topic gives an overview of SQL Database Backup and Restore
+-   This topic gives an overview of SQL数据库 Backup and Restore
     Strategies:
     [http://social.technet.microsoft.com/wiki/contents/articles/1792.sql-azure-backup-and-restore-strategy.aspx](http://social.technet.microsoft.com/wiki/contents/articles/1792.sql-azure-backup-and-restore-strategy.aspx)
 -   This topic explains how to back up a database to another database on
     the same server:
     [http://msdn.microsoft.com/zh-cn/library/windowsazure/ff951631.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff951631.aspx)
--   This topic explains how to export an existing SQL Database instance to
+-   This topic explains how to export an existing SQL数据库 instance to
     a blob on a given storage account:
     [http://msdn.microsoft.com/zh-cn/library/windowsazure/hh335292.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh335292.aspx)
--   This topic explains how to import an existing SQL Database instance
+-   This topic explains how to import an existing SQL数据库 instance
     from a bacpac file stored in a blob:
     [http://msdn.microsoft.com/zh-cn/library/windowsazure/hh335291.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh335291.aspx)
 -   This topic describes the business continuity capabilities provided
-    by SQL Database:
+    by SQL数据库:
     [http://msdn.microsoft.com/zh-cn/library/windowsazure/hh852669.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh852669.aspx)
 
 <h2><a id="Cache"></a>Azure Caching</h2>
@@ -779,26 +779,26 @@ For more information on quota-related errors, see [Understanding Quotas].
 [Suse Linux documentation]: https://www.suse.com/documentation/
 [list of storage explorers]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/04/17/windows-azure-storage-explorers.aspx
 [Explorer for Azure Blob Storage]: http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx
-[enterprise service bus]: http://en.wikipedia.org/wiki/Enterprise_service_bus
-[Azure Service Bus Quotas]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee732538.aspx
-[Service Bus Explorer]: http://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a
-[Hosting Behind a Firewall with the Service Bus]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706729.aspx
+[enterprise 服务总线]: http://en.wikipedia.org/wiki/Enterprise_service_bus
+[Azure 服务总线 Quotas]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee732538.aspx
+[服务总线 Explorer]: http://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a
+[Hosting Behind a Firewall with the 服务总线]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706729.aspx
 [Handling Transient Communication Errors]: http://msdn.microsoft.com/zh-cn/library/hh851746(VS.103).aspx
 [Messaging Exceptions]: http://msdn.microsoft.com/zh-cn/library/hh418082.aspx
 [Handling Transient Communication Errors]: http://msdn.microsoft.com/zh-cn/library/hh851746(VS.103).aspx
-[Best Practices for Leveraging Azure Service Bus Brokered Messaging API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh545245.aspx
-[Troubleshooting the Service Bus]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706702.aspx
+[Best Practices for Leveraging Azure 服务总线 Brokered Messaging API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh545245.aspx
+[Troubleshooting the 服务总线]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706702.aspx
 [Azure Health Status]: http://go.microsoft.com/fwlink/p/?LinkId=168847
-[SQL Database Connectivity Troubleshooting Guide]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-connectivity-troubleshooting-guide.aspx
-[Troubleshooting SQL Database]: http://msdn.microsoft.com/zh-cn/library/ee730906.aspx
+[SQL数据库 Connectivity Troubleshooting Guide]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-connectivity-troubleshooting-guide.aspx
+[Troubleshooting SQL数据库]: http://msdn.microsoft.com/zh-cn/library/ee730906.aspx
 [Troubleshooting Queries]: http://msdn.microsoft.com/zh-cn/library/ms186351(SQL.100).aspx
-[Troubleshoot and Optimize Queries with SQL Database]: http://social.technet.microsoft.com/wiki/contents/articles/1104.troubleshoot-and-optimize-queries-with-sql-azure.aspx
-[SQL Database Performance Considerations and Troubleshooting]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2011/DBI314
+[Troubleshoot and Optimize Queries with SQL数据库]: http://social.technet.microsoft.com/wiki/contents/articles/1104.troubleshoot-and-optimize-queries-with-sql-azure.aspx
+[SQL数据库 Performance Considerations and Troubleshooting]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2011/DBI314
 [Improving Your I/O Performance]: http://blogs.msdn.com/b/sqlazure/archive/2010/07/27/10043069.aspx?PageIndex=2#comments
-[System Center Monitoring Pack for SQL Database]: http://www.microsoft.com/zh-cn/download/details.aspx?id=10631
+[System Center Monitoring Pack for SQL数据库]: http://www.microsoft.com/zh-cn/download/details.aspx?id=10631
 [Errors and Events Reference (Database Engine)]: http://go.microsoft.com/fwlink/p/?LinkId=166622
-[Retry Logic for Transient Failures in SQL Database]: http://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-sql-azure.aspx
-[SQL Database Retry Logic Sample]: http://code.msdn.microsoft.com/windowsazure/SQL-Azure-Retry-Logic-2d0a8401
+[Retry Logic for Transient Failures in SQL数据库]: http://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-sql-azure.aspx
+[SQL数据库 Retry Logic Sample]: http://code.msdn.microsoft.com/windowsazure/SQL-Azure-Retry-Logic-2d0a8401
 [The Transient Fault Handling Application Block]: http://msdn.microsoft.com/zh-cn/library/hh680934(PandP.50).aspx
 [Microsoft Enterprise Library 5.0 Integration Pack for Azure]: http://msdn.microsoft.com/zh-cn/library/hh680918%28v=pandp.50%29.aspx
 [Take Control of Logging and Tracing in Azure]: http://msdn.microsoft.com/zh-cn/magazine/ff714589.aspx

@@ -127,7 +127,7 @@
   [本地安装混合连接管理器]: #InstallHCM
   [管理混合连接]: #ManageHybridConnection
   [将 Azure 网站连接到本地资源]: http://go.microsoft.com/fwlink/p/?LinkId=397538
-  [Azure 移动服务和混合连接]: http://azure.microsoft.com/zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
+  [Azure 移动服务和混合连接]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
   [Azure 管理门户]: http://go.microsoft.com/fwlink/p/?LinkID=213885
   [创建 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=329870
   [“混合连接”选项卡]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionTab.png

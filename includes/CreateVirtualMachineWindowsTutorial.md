@@ -86,7 +86,7 @@
 
 ## <span id="attachdisk"></span> </a>如何将数据磁盘附加到新的虚拟机
 
-本部分将演示如何将空数据磁盘附加到虚拟机。有关如何附加空磁盘以及如何附加现有磁盘的详细信息，请参阅 [附加数据磁盘教程] (<http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/>)。
+本部分将演示如何将空数据磁盘附加到虚拟机。有关如何附加空磁盘以及如何附加现有磁盘的详细信息，请参阅 [附加数据磁盘教程] (</zh-cn/documentation/articles/storage-windows-attach-disk/>)。
 
 1.  登录到 Azure [管理门户][管理门户]。
 

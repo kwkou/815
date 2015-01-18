@@ -1,4 +1,4 @@
-<properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL Database 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor="" />
 
 # 使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序
 
@@ -378,11 +378,11 @@ Python Tools for Visual Studio 具有用于调试 Django 模板的特别支持�
 
 **注意：**可以在 Azure 上使用 sqlite3 数据库（仅限开发目的，我们不建议在生产中使用它）。你将需要将 **db.sqlite3** 文件添加到你的项目中，以便将该数据库连同你的 django 应用程序一起部署。
 
-### SQL Database
+### SQL数据库
 
 在本节中，我们将在 Azure 上创建一个 SQL 数据库，将必需的包添加到我们的虚拟环境中，以及更改我们的设置以便使用这个新数据库。
 
-1.  在 Windows Azure 管理门户中，选择“SQL DATABASES”。
+1.  在 Windows Azure 管理门户中，选择“SQL数据库S”。
 
 2.  首先创建用于托管该数据库的服务器。选择“服务器”和“添加”。
 

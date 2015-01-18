@@ -28,7 +28,7 @@
 
 网站还包含一个静态 index.html 文件，其也与 SignalR 连接并使用 D3.js 对通过 Storm 拓扑传输的数据进行图形处理。
 
-> [WACOM.NOTE] 尽管您还可以使用原 WebSocket 代替 SignalR，但是如果您需要向外扩展网站，WebSocket 不提供内置扩展机制。 SignalR 可使用 Azure Service Bus 进行扩展 ([http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus](http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus))。
+> [WACOM.NOTE] 尽管您还可以使用原 WebSocket 代替 SignalR，但是如果您需要向外扩展网站，WebSocket 不提供内置扩展机制。 SignalR 可使用 Azure 服务总线 进行扩展 ([http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus](http://www.asp.net/signalr/overview/performance/scaleout-with-windows-azure-service-bus))。
 >
 > 有关使用 Storm 拓扑结构与使用原 WebSocket 的 Python 网站进行通信的示例，请参见 [Storm Tweet 观点数据 D3 可视化](https://github.com/P7h/StormTweetsSentimentD3Viz) 项目。
 
@@ -365,7 +365,7 @@
 
 Event Hub 用于从传感器中接收消息（事件）。 按照下列步骤创建一个新的 Event Hub。
 
-1.  从 [Azure 门户](https://manage.windowsazure.cn)中，选择**新建 | Service Bus | Event Hub | 自定义创建**。
+1.  从 [Azure 门户](https://manage.windowsazure.cn)中，选择**新建 | 服务总线 | Event Hub | 自定义创建**。
 
 2.  在**添加新 Event Hub** 对话框中，输入 **Event Hub 名称**，选择要创建 Hub 的**区域**，然后创建一个新的命名空间或选择一个现有的命名空间。 最后，单击**箭头**。
 
@@ -395,7 +395,7 @@ Event Hub 用于从传感器中接收消息（事件）。 按照下列步骤创
 
 3.  在**管理 NuGet 包**中，搜索并安装下列程序包。
 
-	* **Windows Azure Service Bus**
+	* **Windows Azure 服务总线**
 	* **JSON.Net**
 
 	当程序包安装完成后，**关闭**程序包管理器。

@@ -226,9 +226,9 @@ The data disk that you just attached to the virtual machine is offline and not i
 
 To learn more about Linux on Azure, see the following articles:
 
-- [Introduction to Linux on Azure](http://azure.microsoft.com/zh-cn/documentation/articles/introduction-linux/)
+- [Introduction to Linux on Azure](/zh-cn/documentation/articles/introduction-linux/)
 
-- [How to use the Azure Command-Line Tools for Mac and Linux](http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/)
+- [How to use the Azure Command-Line Tools for Mac and Linux](/zh-cn/documentation/articles/xplat-cli/)
 
 
 [Next Steps]: #next

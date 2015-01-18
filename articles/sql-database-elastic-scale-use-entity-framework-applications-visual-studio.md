@@ -1,10 +1,10 @@
-<properties title="将实体框架与灵活扩展一起使用" pageTitle="将实体框架与灵活扩展一起使用" description="灵活扩展简化了扩展；实体框架易于在编码数据库中使用 " metaKeywords="Using Elastic Scale with Entity Framework, Azure SQL Database sharding, elastic scale, Entity Framework and Elastic Scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="将实体框架与灵活扩展一起使用" pageTitle="将实体框架与灵活扩展一起使用" description="灵活扩展简化了扩展；实体框架易于在编码数据库中使用 " metaKeywords="Using Elastic Scale with Entity Framework, Azure SQL数据库 sharding, elastic scale, Entity Framework and Elastic Scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
 # 将实体框架与灵活扩展一起使用
 
-您可以将 Azure SQL Database 灵活扩展与 Microsoft 的实体框架 (EF) 一起用于构建应用程序。灵活扩展使您可以通过应用程序的数据层的分片和向外扩展来增加和缩小容量。此文档介绍与灵活扩展功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[灵活扩展分片管理][灵活扩展分片管理]和[数据依赖路由][数据依赖路由]（请参阅[此处][此处]）。EF 的**代码优先 – 新数据库**教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中灵活扩展示例的一部分。
+您可以将 Azure SQL数据库 灵活扩展与 Microsoft 的实体框架 (EF) 一起用于构建应用程序。灵活扩展使您可以通过应用程序的数据层的分片和向外扩展来增加和缩小容量。此文档介绍与灵活扩展功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[灵活扩展分片管理][灵活扩展分片管理]和[数据依赖路由][数据依赖路由]（请参阅[此处][此处]）。EF 的**代码优先 – 新数据库**教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中灵活扩展示例的一部分。
 
 ## 下载和运行示例代码
 
@@ -17,9 +17,9 @@
 
     ![实体框架和灵活扩展示例应用][实体框架和灵活扩展示例应用]
 
-    选择称为 **Azure SQL Database 的灵活扩展 – 与实体框架集成**的示例。在接受许可证后，该示例将加载。
+    选择称为 **Azure SQL数据库 的灵活扩展 – 与实体框架集成**的示例。在接受许可证后，该示例将加载。
 
-若要运行该示例，您需要在 Azure SQL Database 中创建三个空数据库：
+若要运行该示例，您需要在 Azure SQL数据库 中创建三个空数据库：
 
 -   分片映射管理器数据库
 -   分片 1 数据库
@@ -42,7 +42,7 @@
 
 有关术语定义，请参阅[灵活扩展术语库][灵活扩展术语库]。
 
-借助 Azure SQL Database 灵活扩展，您可以定义称为 shardlet 的应用程序数据分区。Shardlet 由分片键标识，并且映射到特定数据库。应用程序可以具有任意所需数量的数据库，并根据当前业务需求分发 shardlet 以提供足够的容量或性能。分片键值到数据库的映射由灵活扩展 API 提供的分片映射存储。我们将此功能称为分片映射管理或简称为 SMM。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为数据依赖路由。
+借助 Azure SQL数据库 灵活扩展，您可以定义称为 shardlet 的应用程序数据分区。Shardlet 由分片键标识，并且映射到特定数据库。应用程序可以具有任意所需数量的数据库，并根据当前业务需求分发 shardlet 以提供足够的容量或性能。分片键值到数据库的映射由灵活扩展 API 提供的分片映射存储。我们将此功能称为分片映射管理或简称为 SMM。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为数据依赖路由。
 
 灵活扩展中的分片映射管理器防止用户在 shardlet 数据中出现不一致视图，当发生并发 shardlet 管理操作时（例如将数据从一个分片重新分配到另一个分片）可能发生此情况。为了执行此操作，灵活扩展中的分片映射将为灵活扩展应用程序代理数据库连接。当分片管理操作可能影响为其创建数据库连接的 shardlet 时，此操作允许分片映射功能自动终止该连接。此方法需要与一些 EF 的功能集成，例如从现有连接创建新连接以检查数据库是否存在。在通常情况下，我们观察到标准 DbContext 构造函数仅对可安全克隆用于 EF 工作的关闭数据库连接有效。相反，灵活扩展的设计原则是仅代理打开的连接。有人可能认为，在交付给 EF DbContext 之前关闭由灵活扩展代理的连接可能解决此问题。但是，通过关闭连接并依靠 EF 重新打开它，将放弃由灵活扩展执行的验证和一致性检查。但是，EF 中的迁移功能使用这些连接以对应用程序透明的方式管理基础数据库架构。理想情况下，我们希望在相同的应用程序中保留和合并所有这些来自灵活扩展和 EF 的功能。以下部分将更详细地讨论这些属性和要求。
 
@@ -58,7 +58,7 @@
 
 -   **架构**：实体框架通过迁移处理初始数据库架构创建和后续架构演变。通过保留这些功能，随着数据的演变调整您的应用很容易。
 
-以下指南指导如何满足使用 Azure SQL Database 灵活扩展的“代码优先”应用程序的这些要求。
+以下指南指导如何满足使用 Azure SQL数据库 灵活扩展的“代码优先”应用程序的这些要求。
 
 ## 使用 EF DbContext 的数据依赖路由
 
@@ -253,7 +253,7 @@ Microsoft 模式和实践团队已发布[暂时性故障处理应用程序块][�
 
 ## 结论
 
-实体框架应用程序可以从 Azure SQL Database 灵活扩展中轻松受益。通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用灵活扩展的数据依赖路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和灵活扩展分片映射中的映射进行结合，来继续从自动架构部署中受益。
+实体框架应用程序可以从 Azure SQL数据库 灵活扩展中轻松受益。通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用灵活扩展的数据依赖路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和灵活扩展分片映射中的映射进行结合，来继续从自动架构部署中受益。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -261,8 +261,8 @@ Microsoft 模式和实践团队已发布[暂时性故障处理应用程序块][�
 
   [灵活扩展分片管理]: http://go.microsoft.com/?linkid=9862595
   [数据依赖路由]: ./sql-database-elastic-scale-data-dependent-routing.md
-  [此处]: http://msdn.microsoft.com/en-us/data/jj193542.aspx
+  [此处]: http://msdn.microsoft.com/zh-cn/data/jj193542.aspx
   [实体框架和灵活扩展示例应用]: ./media/sql-database-elastic-scale-using-entity-framework/sample.png
   [灵活扩展术语库]: ./sql-database-elastic-scale-glossary.md
-  [暂时性故障处理应用程序块]: http://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx
-  [重试执行策略的限制（从 EF6 开始）]: http://msdn.microsoft.com/en-us/data/dn307226
+  [暂时性故障处理应用程序块]: http://msdn.microsoft.com/zh-cn/library/dn440719(v=pandp.60).aspx
+  [重试执行策略的限制（从 EF6 开始）]: http://msdn.microsoft.com/zh-cn/data/dn307226

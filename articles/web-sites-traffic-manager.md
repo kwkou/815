@@ -1,4 +1,4 @@
-<properties linkid="web-sites-traffic-manager" urlDisplayName="Controlling Windows Azure Web Sites Traffic with Azure Traffic Manager" pageTitle="Controlling Azure Web Sites Traffic with Azure Traffic Manager" metaKeywords="Azure Web Sites, Traffic Manager, request routing, round robin, failover, performance" description="This article provides summary information for  Azure Traffic Manager as it relates to Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="" title="Controlling Azure Web Sites Traffic with Azure Traffic Manager" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
+<properties linkid="web-sites-traffic-manager" urlDisplayName="Controlling Windows Azure Web Sites Traffic with Azure 流量管理器" pageTitle="Controlling Azure Web Sites Traffic with Azure 流量管理器" metaKeywords="Azure Web Sites, 流量管理器, request routing, round robin, failover, performance" description="This article provides summary information for  Azure 流量管理器 as it relates to Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="" title="Controlling Azure Web Sites Traffic with Azure 流量管理器" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 
 # 使用 Azure 流量管理器控制 Azure 网站流量
 
@@ -49,6 +49,6 @@ Azure 流量管理器使用三种不同的负载平衡方法。下面的列表�
 有关 Azure 流量管理器中负载平衡的详细信息，请参阅[关于流量管理器负载平衡方法][关于流量管理器负载平衡方法]。
 
   [关于流量管理器负载平衡方法]: http://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx
-  [为 Azure 网站配置自定义域名]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-custom-domain-name/
+  [为 Azure 网站配置自定义域名]: /zh-cn/documentation/articles/web-sites-custom-domain-name/
   [流量管理器概述]: http://msdn.microsoft.com/zh-cn/library/azure/hh744833.aspx
   [流量管理器配置任务]: http://msdn.microsoft.com/zh-cn/library/azure/hh744830.aspx

@@ -1,15 +1,15 @@
-<properties linkid="service-bus-monitor-messaging-entitites" urlDisplayName="Traffic Manager" pageTitle="Monitor Service Bus Messaging Entities - Azure" metaKeywords="" description="Learn how to monitor your Service Bus entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Monitor Service Bus Messaging Entities" authors="sethm" solutions="" />
+<properties linkid="service-bus-monitor-messaging-entitites" urlDisplayName="流量管理器" pageTitle="Monitor 服务总线 Messaging Entities - Azure" metaKeywords="" description="Learn how to monitor your 服务总线 entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Monitor 服务总线 Messaging Entities" authors="sethm" solutions="" />
 
-# 如何监视 Service Bus 消息传送实体
+# 如何监视 服务总线 消息传送实体
 
-本主题介绍如何使用 [Azure 管理门户][Azure 管理门户]管理和监视 Service Bus 实体。利用此门户，你可以全面了解队列和主题的状态。也可以监视其使用情况。
+本主题介绍如何使用 [Azure 管理门户][Azure 管理门户]管理和监视 服务总线 实体。利用此门户，你可以全面了解队列和主题的状态。也可以监视其使用情况。
 
-## 如何监视有关 Service Bus 队列的活动
+## 如何监视有关 服务总线 队列的活动
 
-若要监视 Service Bus 队列，请执行以下操作：
+若要监视 服务总线 队列，请执行以下操作：
 
 1.  登录到 [Azure（预览版）管理门户][Azure 管理门户]
-2.  在左侧导航栏上单击 **Service Bus** 图标可获取服务命名空间的列表。
+2.  在左侧导航栏上单击 **服务总线** 图标可获取服务命名空间的列表。
 3.  单击包含要监视的队列的命名空间。
 4.  在页面顶部的透视栏中，单击“队列”。
 5.  单击要监视的队列的名称。队列仪表板将出现。
@@ -28,12 +28,12 @@
 
 ![][0]
 
-## 如何监视有关 Service Bus 主题的活动
+## 如何监视有关 服务总线 主题的活动
 
-若要监视 Service Bus 主题，请执行以下操作：
+若要监视 服务总线 主题，请执行以下操作：
 
 1.  登录到 [Azure（预览版）管理门户][Azure 管理门户]
-2.  在左侧导航栏上单击 **Service Bus** 图标可获取服务命名空间的列表。
+2.  在左侧导航栏上单击 **服务总线** 图标可获取服务命名空间的列表。
 3.  单击包含要监视的主题的命名空间。
 4.  在页面顶部的透视栏中，单击“主题”。
 5.  单击要监视的主题的名称。主题仪表板将出现。

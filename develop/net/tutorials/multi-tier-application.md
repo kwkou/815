@@ -1,26 +1,26 @@
 <properties linkid="multi-tier-application" urlDisplayName="multi-tier-application" pageTitle="multi-tier-application" metaKeywords="multi-tier-application" description="multi-tier-application" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Haifeng Liu" />
 
-<h1>使用 Service Bus 队列创建 .NET 多层应用程序</h1>
+<h1>使用 服务总线 队列创建 .NET 多层应用程序</h1>
 <p>使用 Visual Studio 2012 和免费的 Windows Azure SDK for .NET，可以轻松针对 Windows Azure 进行开发。如果您还没有 Visual Studio 2012，则此 SDK 将自动安装 Visual Web Developer Express，以便您能完全免费地开始针对 Windows Azure 进行开发。本指南假定您之前未使用过 Windows Azure。完成本指南之后，您将拥有使用多项 Windows Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。</p>
 <p>您将了解：</p>
 <ul>
 <li>如何通过单个下载和安装来使您的计算机能够进行 Windows Azure 开发。</li>
 <li>如何使用 Visual Studio 针对 Windows Azure 进行开发。</li>
 <li>如何使用 Web 角色和辅助角色在 Windows Azure 中创建多层应用程序。</li>
-<li>如何使用 Service Bus 队列在各层之间进行通信。</li>
+<li>如何使用 服务总线 队列在各层之间进行通信。</li>
 </ul>
-<p>您将生成一个前端 ASP.NET MVC Web 角色，该角色使用后端辅助角色来处理长时间运行的作业。您将了解如何创建多角色解决方案以及如何使用 Service Bus 队列实现角色间通信。下面显示了已完成应用程序的屏幕快照：</p>
+<p>您将生成一个前端 ASP.NET MVC Web 角色，该角色使用后端辅助角色来处理长时间运行的作业。您将了解如何创建多角色解决方案以及如何使用 服务总线 队列实现角色间通信。下面显示了已完成应用程序的屏幕快照：</p>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/getting-started-multi-tier-01.png"/></p>
-<p><strong>注意</strong>：Windows Azure 还提供了存储队列功能。有关 Windows Azure 存储队列和 Service Bus 队列的详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx">Windows Azure 队列和 Windows Azure Service Bus 队列 - 比较与对照</a>。</p>
+<p><strong>注意</strong>：Windows Azure 还提供了存储队列功能。有关 Windows Azure 存储队列和 服务总线 队列的详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx">Windows Azure 队列和 Windows Azure 服务总线 队列 - 比较与对照</a>。</p>
 <h2><span class="short-header">角色间通信</span>方案概述 </h2>
 <p>若要提交处理命令，以 Web 角色运行的前端 UI 组件需要与以辅助角色运行的中间层逻辑进行交互。此示例使用 Service Bu 中转消息传递在各层之间进行通信。</p>
-<p>在 Web 层和中间层之间使用代理消息传递将分离这两个组件。与直接消息传递（即 TCP 或 HTTP）相反，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到 Service Bus，Service Bus 将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。</p>
-<p>Service Bus 提供了两个实体以支持中转消息传递、队列和主题。通过队列，发送到队列的每个消息均由一个接收方使用。主题支持发布/订阅模式，在该模式中，会为注册到主题中的每个订阅提供每个已发布消息。每个订阅都会以逻辑方式保留其自己的消息队列。此外，还可以使用筛选规则配置订阅，这些规则可将传递给订阅队列的消息集限制为符合筛选条件的消息集。此示例使用 Service Bus 队列。</p>
+<p>在 Web 层和中间层之间使用代理消息传递将分离这两个组件。与直接消息传递（即 TCP 或 HTTP）相反，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到 服务总线，服务总线 将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。</p>
+<p>服务总线 提供了两个实体以支持中转消息传递、队列和主题。通过队列，发送到队列的每个消息均由一个接收方使用。主题支持发布/订阅模式，在该模式中，会为注册到主题中的每个订阅提供每个已发布消息。每个订阅都会以逻辑方式保留其自己的消息队列。此外，还可以使用筛选规则配置订阅，这些规则可将传递给订阅队列的消息集限制为符合筛选条件的消息集。此示例使用 服务总线 队列。</p>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/getting-started-multi-tier-100.png"/></p>
 <p>与直接消息传递相比，此通信机制具有多项优势，即：</p>
 <ul>
 <li>
-<p><strong>暂时分离。</strong>利用异步消息传递模式，创建者和使用者无需同时联机。Service Bus 会以可靠方式存储消息，直到使用方准备好接收这些消息。这将允许分布式应用程序的组件断开连接，例如，为进行维护而自动断开，或因组件故障断开连接，而不会影响系统的整体性能。此外，使用方应用程序可能只需在一天的特定时段内联机。</p>
+<p><strong>暂时分离。</strong>利用异步消息传递模式，创建者和使用者无需同时联机。服务总线 会以可靠方式存储消息，直到使用方准备好接收这些消息。这将允许分布式应用程序的组件断开连接，例如，为进行维护而自动断开，或因组件故障断开连接，而不会影响系统的整体性能。此外，使用方应用程序可能只需在一天的特定时段内联机。</p>
 </li>
 <li>
 <p><strong>负荷量</strong>。在许多应用程序中，系统负荷随时间而变化，而每个工作单元所需的处理时间通常为常量。使用队列在消息创建者与使用者之间中继意味着，只需将使用方应用程序（辅助）设置为适应平均负荷而非最大负荷。队列深度将随传入负荷的变化而加大和减小。这将直接根据为应用程序加载提供服务所需的基础结构的数目来节省成本。</p>
@@ -57,14 +57,14 @@
 <p>安装完成后，您便已做好开发准备工作。SDK 包含了一些工具，可利用这些工具在 Visual Studio 中轻松开发 Windows Azure 应用程序。如果您尚未安装 Visual Studio，则 SDK 也会安装免费的 Visual Web Developer Express。</p>
 </li>
 </ol>
-<h2>设置 Service Bus 命名空间</h2>
-<p>下一步是创建服务命名空间并获取共享密钥。服务命名空间为通过 Service Bus 公开的每个应用程序提供一个应用程序边界。 创建服务命名空间时，系统将自动生成共享密钥。服务命名空间和共享密钥的组合为 Service Bus 提供了用于验证对应用程序的访问的凭据。</p>
+<h2>设置 服务总线 命名空间</h2>
+<p>下一步是创建服务命名空间并获取共享密钥。服务命名空间为通过 服务总线 公开的每个应用程序提供一个应用程序边界。 创建服务命名空间时，系统将自动生成共享密钥。服务命名空间和共享密钥的组合为 服务总线 提供了用于验证对应用程序的访问的凭据。</p>
 <ol>
 <li>
 <p>登录到 <a href="http://manage.windowsazure.cn">Windows Azure 管理门户</a>。</p>
 </li>
 <li>
-<p>在该管理门户的左侧导航窗格中，单击“Service Bus”。</p>
+<p>在该管理门户的左侧导航窗格中，单击“服务总线”。</p>
 </li>
 <li>
 <p>在管理门户的下方窗格中，单击“创建”。</p>
@@ -97,7 +97,7 @@
 </li>
 </ol>
 <h2>创建 Web 角色</h2>
-<p>在本节中，您将生成应用程序的前端。您首先将创建应用程序显示的各种页面。之后，您将添加代码，这些代码用于将项提交到 Service Bus 队列并显示有关队列的状态信息。</p>
+<p>在本节中，您将生成应用程序的前端。您首先将创建应用程序显示的各种页面。之后，您将添加代码，这些代码用于将项提交到 服务总线 队列并显示有关队列的状态信息。</p>
 <h3>创建项目</h3>
 <ol>
 <li>
@@ -125,7 +125,7 @@
 <p>在“解决方案资源管理器”中，右键单击“引用”，然后单击“管理 NuGet 包...”或“添加库程序包引用”。</p>
 </li>
 <li>
-<p>在该对话框的左侧选择“联机”。搜索“WindowsAzure”，然后选择“Windows Azure Service Bus”项。然后，完成安装过程并关闭此对话框。</p>
+<p>在该对话框的左侧选择“联机”。搜索“WindowsAzure”，然后选择“Windows Azure 服务总线”项。然后，完成安装过程并关闭此对话框。</p>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/getting-started-multi-tier-13.png"/></p>
 </li>
 <li>
@@ -150,7 +150,7 @@
 }</pre>
 </li>
 <li>
-<p>在“解决方案资源管理器”中，双击 <strong>Controllers\HomeController.cs</strong>。在文件顶部添加以下 <strong>using</strong> 语句以包括针对您刚创建的模型以及 Service Bus 的命名空间：</p>
+<p>在“解决方案资源管理器”中，双击 <strong>Controllers\HomeController.cs</strong>。在文件顶部添加以下 <strong>using</strong> 语句以包括针对您刚创建的模型以及 服务总线 的命名空间：</p>
 <pre class="prettyprint">using FrontendWebRole.Models;
 using Microsoft.ServiceBus.Messaging;
 using Microsoft.ServiceBus;</pre>
@@ -250,8 +250,8 @@ using Microsoft.ServiceBus;</pre>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/getting-started-multi-tier-36.png"/></p>
 </li>
 </ol>
-<h3>编写用于将项提交到 Service Bus 队列的代码</h3>
-<p>现在，您将添加用于将项提交到队列的代码。您首先将创建一个包含 Service Bus 队列连接信息的类。然后，您将从 <strong>Global.aspx.cs</strong> 初始化您的连接。最后，您将更新您之前在 <strong>HomeController.cs</strong> 中创建的提交代码以便实际将项提交到 Service Bus 队列。</p>
+<h3>编写用于将项提交到 服务总线 队列的代码</h3>
+<p>现在，您将添加用于将项提交到队列的代码。您首先将创建一个包含 服务总线 队列连接信息的类。然后，您将从 <strong>Global.aspx.cs</strong> 初始化您的连接。最后，您将更新您之前在 <strong>HomeController.cs</strong> 中创建的提交代码以便实际将项提交到 服务总线 队列。</p>
 <ol>
 <li>
 <p>在“解决方案资源管理器”中，右键单击“FrontendWebRole”（右键单击项目而不是角色）。单击“添加”，然后单击“类”。</p>
@@ -260,7 +260,7 @@ using Microsoft.ServiceBus;</pre>
 <p>将类命名为 <strong>QueueConnector.cs</strong>。单击“添加”以创建类。</p>
 </li>
 <li>
-<p>现在，您将粘贴代码，该代码用于封装连接信息和包含用于初始化与 Service Bus 队列的连接的方法。在 QueueConnector.cs 中，粘贴以下代码，然后为 <strong>Namespace</strong>、<strong>IssuerName</strong> 和 <strong>IssuerKey</strong> 输入值。您可以在<a href="http://manage.windowsazure.cn">管理门户</a>中找到这些值。</p>
+<p>现在，您将粘贴代码，该代码用于封装连接信息和包含用于初始化与 服务总线 队列的连接的方法。在 QueueConnector.cs 中，粘贴以下代码，然后为 <strong>Namespace</strong>、<strong>IssuerName</strong> 和 <strong>IssuerKey</strong> 输入值。您可以在<a href="http://manage.windowsazure.cn">管理门户</a>中找到这些值。</p>
 <pre class="prettyprint">using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -279,7 +279,7 @@ namespace FrontendWebRole
 
 
     // Obtain these values from the Management Portal
-    public const string Namespace = "your service bus namespace";
+    public const string Namespace = "your 服务总线 namespace";
     public const string IssuerName = "issuer name";
     public const string IssuerKey = "issuer key";
 
@@ -346,7 +346,7 @@ namespace FrontendWebRole
 <pre class="prettyprint">public ActionResult Submit()
 {            
     // Get a NamespaceManager which allows you to perform management and
-    // diagnostic operations on your Service Bus Queues.
+    // diagnostic operations on your 服务总线 Queues.
     var namespaceManager = QueueConnector.CreateNamespaceManager();
 
 
@@ -388,9 +388,9 @@ else
 </li>
 </ol>
 <h2>云配置管理器</h2>
-<p>Windows Azure 支持一组托管 API，提供了跨 Microsoft 云服务创建 Windows Azure 服务客户端（例如 Service Bus）新实例的一致方法。这些 API 使您能够实例化这些客户端（例如 <strong>CloudBlobClient</strong>、<strong>QueueClient</strong>、<strong>TopicClient</strong>），而无论应用程序托管在何处 -- 在本地、在 Microsoft 云服务中、在网站中或是在永久性虚拟机角色中。您还可以使用这些 API 检索实例化这些客户端所需的配置信息，以及更改配置，而无需重新部署调用应用程序。这些 API 位于 <a href="http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudconfigurationmanager.aspx">Microsoft.WindowsAzure.Configuration.CloudConfigurationManager</a> 类中。还有一些 API 位于客户端。</p>
+<p>Windows Azure 支持一组托管 API，提供了跨 Microsoft 云服务创建 Windows Azure 服务客户端（例如 服务总线）新实例的一致方法。这些 API 使您能够实例化这些客户端（例如 <strong>CloudBlobClient</strong>、<strong>QueueClient</strong>、<strong>TopicClient</strong>），而无论应用程序托管在何处 -- 在本地、在 Microsoft 云服务中、在网站中或是在永久性虚拟机角色中。您还可以使用这些 API 检索实例化这些客户端所需的配置信息，以及更改配置，而无需重新部署调用应用程序。这些 API 位于 <a href="http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudconfigurationmanager.aspx">Microsoft.WindowsAzure.Configuration.CloudConfigurationManager</a> 类中。还有一些 API 位于客户端。</p>
 <h3>连接字符串</h3>
-<p>若要实例化客户端（例如 Service Bus <strong>QueueClient</strong>），可以将配置信息表示为连接字符串。在客户端，有一个通过使用该连接字符串实例化客户端类型的 <strong>CreateFromConnectionString()</strong> 方法。例如，考虑下面的配置部分：</p>
+<p>若要实例化客户端（例如 服务总线 <strong>QueueClient</strong>），可以将配置信息表示为连接字符串。在客户端，有一个通过使用该连接字符串实例化客户端类型的 <strong>CreateFromConnectionString()</strong> 方法。例如，考虑下面的配置部分：</p>
 <pre class="prettyprint">&lt;ConfigurationSettings&gt;
 â€¦
     &lt;Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" /&gt;
@@ -409,18 +409,18 @@ if (!namespaceManager.QueueExists(QueueName))
     namespaceManager.CreateQueue(QueueName);
 }
 
-// Initialize the connection to Service Bus Queue
+// Initialize the connection to 服务总线 Queue
 Client = QueueClient.CreateFromConnectionString(connectionString, QueueName);</pre>
 <p>以下部分中的代码使用这些配置管理 API。</p>
 <h2><span class="short-header">创建辅助角色 </span></h2>
-<p>现在，您将创建用于处理订单提交的辅助角色。此示例使用“Service Bus 队列的辅助角色”Visual Studio 项目模板。首先，您将使用 Visual Studio 中的“服务器资源管理器”获取所需凭据。</p>
+<p>现在，您将创建用于处理订单提交的辅助角色。此示例使用“服务总线 队列的辅助角色”Visual Studio 项目模板。首先，您将使用 Visual Studio 中的“服务器资源管理器”获取所需凭据。</p>
 <ol>
 <li>
-<p>从 Visual Studio 的菜单栏中，选择“视图”，然后单击“服务器资源管理器”。“Windows Azure Service Bus”节点将显示在“服务器资源管理器”层次结构中，如下图所示。</p>
+<p>从 Visual Studio 的菜单栏中，选择“视图”，然后单击“服务器资源管理器”。“Windows Azure 服务总线”节点将显示在“服务器资源管理器”层次结构中，如下图所示。</p>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/sbexplorer.png"/></p>
 </li>
 <li>
-<p>在“服务器资源管理器”中，右键单击“Windows Azure Service Bus”，然后单击“添加新连接”。</p>
+<p>在“服务器资源管理器”中，右键单击“Windows Azure 服务总线”，然后单击“添加新连接”。</p>
 </li>
 <li>
 <p>在“添加连接”对话框中，键入服务命名空间的名称、颁发者名称和颁发者密钥。然后单击“确定”进行连接。</p>
@@ -434,7 +434,7 @@ Client = QueueClient.CreateFromConnectionString(connectionString, QueueName);</p
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/sbnewworkerrole.png"/></p>
 </li>
 <li>
-<p>在“添加新角色项目”对话框中，单击“Service Bus 队列的辅助角色”，如下图所示：</p>
+<p>在“添加新角色项目”对话框中，单击“服务总线 队列的辅助角色”，如下图所示：</p>
 <p><img src="http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/media/devcenter/dotnet/sbworkerrole1.png"/></p>
 </li>
 <li>
@@ -492,11 +492,11 @@ receivedMessage.Complete();
 </li>
 </ol>
 <h2><a name="nextsteps"></a><span class="short-header">后续步骤 </span></h2>
-<p>若要了解有关 Service Bus 的详细信息，请使用以下资源：</p>
+<p>若要了解有关 服务总线 的详细信息，请使用以下资源：</p>
 <ul>
-<li><a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee732537.aspx">Windows Azure Service Bus</a></li>
-<li><a href="/zh-cn/manage/services/service-bus/">Service Bus 操作方法</a></li>
-<li><a href="/zh-cn/develop/net/how-to-guides/service-bus-queues/">如何使用 Service Bus 队列</a></li>
+<li><a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee732537.aspx">Windows Azure 服务总线</a></li>
+<li><a href="/zh-cn/manage/services/service-bus/">服务总线 操作方法</a></li>
+<li><a href="/zh-cn/develop/net/how-to-guides/service-bus-queues/">如何使用 服务总线 队列</a></li>
 </ul>
 <p>若要了解有关多层方案的详细信息，请参阅：</p>
 <ul>

@@ -126,7 +126,7 @@
 
 <div class="dev-callout"> 
 <b>说明</b> 
-<p>也可以从 Azure PowerShell 中使用 <b>Set-AzureWebsite</b> cmdlet 来启用诊断。</p><p>如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅<a href="http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/">如何使用 Azure PowerShell</a>。</p></div>
+<p>也可以从 Azure PowerShell 中使用 <b>Set-AzureWebsite</b> cmdlet 来启用诊断。</p><p>如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅<a href="/zh-cn/documentation/articles/install-configure-powershell/">如何使用 Azure PowerShell</a>。</p></div>
 
 <div class="dev-callout"> 
 <b>说明</b> 
@@ -231,7 +231,7 @@
 
 <div class="dev-callout"> 
 <b>说明</b> 
-<p>如果未安装 <b>azure</b> 命令，请参阅<a href="http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/">如何使用 Azure 命令行工具</a>以了解安装和配置信息。</p>
+<p>如果未安装 <b>azure</b> 命令，请参阅<a href="/zh-cn/documentation/articles/xplat-cli/">如何使用 Azure 命令行工具</a>以了解安装和配置信息。</p>
 </div>
 
 ### 读取日志文件
@@ -310,13 +310,13 @@
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://go.microsoft.com/fwlink/?LinkId=309356
   [Azure 的虚拟机和云服务大小]: http://go.microsoft.com/fwlink/?LinkID=309169
   [如何管理存储帐户]: http://www.windowsazure.cn/zh-cn/manage/services/storage/how-to-manage-a-storage-account/
-  [如何使用 Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
+  [如何使用 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [为 Azure 网站启用诊断日志记录]: /en-us/develop/net/common-tasks/diagnostics-logging-and-instrumentation/
   [如何在 Azure 网站中调试 Node.js 应用程序]: /en-us/develop/nodejs/how-to-guides/Debug-Website/
   [FileZilla]: http://go.microsoft.com/fwlink/?LinkId=247914
   [Azure PowerShell Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
-  [如何使用 Azure 命令行工具]: http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/
+  [如何使用 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
   [W3C 扩展日志格式]: http://go.microsoft.com/fwlink/?LinkID=90561
   []: http://contoso.chinacloudapp.cn
-  [Scott Guthrie 介绍 Azure 网站并设置终结点监视]: http://azure.microsoft.com/zh-cn/documentation/videos/websites-and-endpoint-monitoring-scottgu/
-  [保持 Azure 网站运行以及终结点监视 - Stefan Schackow]: http://azure.microsoft.com/zh-cn/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/
+  [Scott Guthrie 介绍 Azure 网站并设置终结点监视]: /zh-cn/documentation/videos/websites-and-endpoint-monitoring-scottgu/
+  [保持 Azure 网站运行以及终结点监视 - Stefan Schackow]: /zh-cn/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/

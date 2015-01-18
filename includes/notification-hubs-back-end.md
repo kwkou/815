@@ -18,7 +18,7 @@
 
         Install-Package WindowsAzure.ServiceBus
  	
-	这将通过使用 <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet 程序包</a>添加对 Azure Service Bus SDK 的引用。
+	这将通过使用 <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet 程序包</a>添加对 Azure 服务总线 SDK 的引用。
 
 3. 打开文件 Program.cs 并添加以下 `using` 语句：
 

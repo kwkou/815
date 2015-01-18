@@ -75,7 +75,7 @@
 
     > [WACOM.NOTE] 不能还原与同一 SQL Server 同名的 SQL 数据库。必须选择其他数据库名称或其他要将该数据库还原到其中的 SQL Server 主机。
 
-<!--     > [WACOM.NOTE] You can restore a MySQL database with the same name to the same server, but be aware that this will clear out the existing content stored in the MySQL database. -->
+<!--     > [WACOM.NOTE] You can restore a MySQL数据库 with the same name to the same server, but be aware that this will clear out the existing content stored in the MySQL数据库. -->
 
 1.  如果选择还原现有数据库，需要提供用户名和密码。如果选择还原到新数据库，需要提供新数据库名称：
 
@@ -113,7 +113,7 @@
 
 <!-- IMAGES -->
 
-  [Windows Azure 网站备份]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-backup/
+  [Windows Azure 网站备份]: /zh-cn/documentation/articles/web-sites-backup/
   [从以前制作的备份中还原 Azure 网站]: #PreviousBackup
   [从存储帐户直接还原 Azure 网站]: #StorageAccount
   [选择网站还原设置并开始还原操作]: #RestoreSettings

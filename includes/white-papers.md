@@ -29,9 +29,9 @@
       </tr>
       <tr>
         <td style="width: 200px;">
-          <a href="http://go.microsoft.com/?linkid=9751403">A Developer's Guide to Service Bus for the Azure AppFabric</a>
+          <a href="http://go.microsoft.com/?linkid=9751403">A Developer's Guide to 服务总线 for the Azure AppFabric</a>
         </td>
-        <td style="width: 400px;">This paper focuses on how you can use the Service Bus to overcome some of the most common Internet connectivity challenges inherent in today's world.</td>
+        <td style="width: 400px;">This paper focuses on how you can use the 服务总线 to overcome some of the most common Internet connectivity challenges inherent in today's world.</td>
       </tr>
       <tr>
         <td style="width: 200px;">
@@ -91,7 +91,7 @@
         <td style="width: 200px;">
           <a href="http://download.microsoft.com/download/E/B/5/EB512F2E-7771-40A3-8025-0DC6D9429951/An%20Introduction%20to%20Windows%20Azure%20platform%20AppFabric%20for%20Developers.docx">An Introduction to Azure AppFabric for Developers</a>
         </td>
-        <td style="width: 400px;">This paper provides a quick introduction to Azure Platform AppFabric, which includes Service Bus and Access Control and provides common building blocks required by .NET applications when extending their functionality to the cloud, and specifically, the Azure platform.</td>
+        <td style="width: 400px;">This paper provides a quick introduction to Azure Platform AppFabric, which includes 服务总线 and Access Control and provides common building blocks required by .NET applications when extending their functionality to the cloud, and specifically, the Azure platform.</td>
       </tr>
       <tr>
         <td style="width: 200px;">

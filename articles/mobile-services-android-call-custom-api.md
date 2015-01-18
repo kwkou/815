@@ -2,10 +2,10 @@
 
 # 从客户端调用自定义 API
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/en-us/documentation/articles/mobile-services-windows-store-javascript-call-custom-api" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a><a href="/en-us/documentation/articles/mobile-services-windows-phone-call-custom-api" title="Windows Phone">Windows Phone</a><a href="/en-us/documentation/articles/mobile-services-ios-call-custom-api" title="iOS">iOS</a><a href="/en-us/documentation/articles/mobile-services-android-call-custom-api" title="Android" class="current">Android</a>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-call-custom-api" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-windows-phone-call-custom-api" title="Windows Phone">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-ios-call-custom-api" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-call-custom-api" title="Android" class="current">Android</a>
 </div>
 
-<div class="dev-center-tutorial-subselector"><a href="/en-us/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api" title=".NET 后端">.NET 后端</a> | <a href="/en-us/documentation/articles/mobile-services-android-call-custom-api"  title="JavaScript 后端" class="current">JavaScript 后端</a></div>
+<div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api" title=".NET 后端">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-android-call-custom-api"  title="JavaScript 后端" class="current">JavaScript 后端</a></div>
 
 本主题说明如何从 Android 应用程序调用自定义 API。自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。
 
@@ -40,13 +40,13 @@
 <!-- Anchors. --> 
 <!-- URLs. -->
 
-  [Windows 应用商店 C\#]: /en-us/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /en-us/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows 应用商店 JavaScript"
-  [Windows Phone]: /en-us/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
-  [iOS]: /en-us/documentation/articles/mobile-services-ios-call-custom-api "iOS"
-  [Android]: /en-us/documentation/articles/mobile-services-android-call-custom-api "Android"
-  [.NET 后端]: /en-us/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api ".NET 后端"
-  [JavaScript 后端]: /en-us/documentation/articles/mobile-services-android-call-custom-api "JavaScript 后端"
+  [Windows 应用商店 C\#]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-call-custom-api "Windows 应用商店 JavaScript"
+  [Windows Phone]: /zh-cn/documentation/articles/mobile-services-windows-phone-call-custom-api "Windows Phone"
+  [iOS]: /zh-cn/documentation/articles/mobile-services-ios-call-custom-api "iOS"
+  [Android]: /zh-cn/documentation/articles/mobile-services-android-call-custom-api "Android"
+  [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-call-custom-api ".NET 后端"
+  [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-android-call-custom-api "JavaScript 后端"
   [移动服务入门]: /zh-cn/documentation/articles/mobile-services-android-get-started/
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-android-get-started-data/
   [定义自定义 API]: #define-custom-api

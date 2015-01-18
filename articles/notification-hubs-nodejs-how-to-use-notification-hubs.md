@@ -1,28 +1,28 @@
-<properties linkid="develop-nodejs-how-to-guides-service-bus-notification-hubs" urlDisplayName="Notification Hubs" pageTitle="Service Bus Notification Hubs - Node.js Dev Center" metaKeywords="" description="Learn how to use Service Bus Notification Hubs to send push notifications. Code samples are written for Node.js applications." metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Notification Hubs" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="develop-nodejs-how-to-guides-service-bus-notification-hubs" urlDisplayName="Notification Hubs" pageTitle="服务总线 Notification Hubs - Node.js Dev Center" metaKeywords="" description="Learn how to use 服务总线 Notification Hubs to send push notifications. Code samples are written for Node.js applications." metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use 服务总线 Notification Hubs" authors="larryfr" solutions="" manager="" editor="" />
 
-# 如何使用 Service Bus 通知中心
+# 如何使用 服务总线 通知中心
 
-本指南演示如何从 Node.js 应用程序使用 Service Bus 通知中心。涉及的任务包括**将通知发送到 Android、iOS、Windows Phone 和 Windows 应用商店应用程序**。有关通知中心的详细信息，请参阅[后续步骤][后续步骤]部分。
+本指南演示如何从 Node.js 应用程序使用 服务总线 通知中心。涉及的任务包括**将通知发送到 Android、iOS、Windows Phone 和 Windows 应用商店应用程序**。有关通知中心的详细信息，请参阅[后续步骤][后续步骤]部分。
 
 ## 目录
 
--   [什么是 Service Bus 通知中心？][什么是 Service Bus 通知中心？]
+-   [什么是 服务总线 通知中心？][什么是 服务总线 通知中心？]
 -   [创建 Node.js 应用程序][创建 Node.js 应用程序]
--   [配置应用程序以使用 Service Bus][配置应用程序以使用 Service Bus]
+-   [配置应用程序以使用 服务总线][配置应用程序以使用 服务总线]
 -   [如何：发送通知][如何：发送通知]
 -   [后续步骤][后续步骤]
 
-## <span id="hub"></span></a>什么是 Service Bus 通知中心？
+## <span id="hub"></span></a>什么是 服务总线 通知中心？
 
-Azure Service Bus 通知中心可提供用于向移动设备发送推送通知的易于使用、多平台且可扩展的基础结构。有关详细信息，请参阅 [Azure Service Bus 通知中心][Azure Service Bus 通知中心]。
+Azure 服务总线 通知中心可提供用于向移动设备发送推送通知的易于使用、多平台且可扩展的基础结构。有关详细信息，请参阅 [Azure 服务总线 通知中心][Azure 服务总线 通知中心]。
 
 ## <span id="create"></span></a>创建 Node.js 应用程序
 
 创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 生成网站][使用 WebMatrix 生成网站]。
 
-## <span id="config"></span></a>配置应用程序以使用 Service Bus
+## <span id="config"></span></a>配置应用程序以使用 服务总线
 
-若要使用 Azure Service Bus，需要下载和 使用 Node.js azure 包。其中包括一组便于与 Service Bus REST 服务进行通信的库。
+若要使用 Azure 服务总线，需要下载和 使用 Node.js azure 包。其中包括一组便于与 服务总线 REST 服务进行通信的库。
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
@@ -42,7 +42,7 @@ Azure Service Bus 通知中心可提供用于向移动设备发送推送通知�
         |-- xml2js@0.2.6 (sax@0.4.2)
         |-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
 
-3.  可以手动运行 **ls** 或 **dir** 命令来验证是否创建了**node\_modules** 文件夹。在该文件夹中，找到**azure** 包，其中包含访问 Service Bus 通知中心所需的库。
+3.  可以手动运行 **ls** 或 **dir** 命令来验证是否创建了**node\_modules** 文件夹。在该文件夹中，找到**azure** 包，其中包含访问 服务总线 通知中心所需的库。
 
 ### 导入模块
 
@@ -50,7 +50,7 @@ Azure Service Bus 通知中心可提供用于向移动设备发送推送通知�
 
     var azure = require('azure');
 
-### 设置 Azure Service Bus 连接
+### 设置 Azure 服务总线 连接
 
 可以通过 **NotificationHubService** 对象使用通知中心。以下代码为名为 **hubname** 的通知中心创建一个**NotificationHubService** 对象。将它添加到靠近 **server.js** 文件顶部、用于导入 azure 模块的语句之后的位置：
 
@@ -58,7 +58,7 @@ Azure Service Bus 通知中心可提供用于向移动设备发送推送通知�
 
 可通过执行以下步骤从 Azure 管理门户获取连接 **connectionstring** 值：
 
-1.  在 Azure 管理门户中选择“Service Bus”，然后选择包含通知中心的命名空间。
+1.  在 Azure 管理门户中选择“服务总线”，然后选择包含通知中心的命名空间。
 
 2.  选择“通知中心”，然后选择要使用的通知中心。
 
@@ -168,18 +168,18 @@ Azure Service Bus 通知中心可提供用于向移动设备发送推送通知�
 
 ## <span id="next"></span></a> 后续步骤
 
-现在，你已了解有关 Service Bus 主题的基础知识，单击
+现在，你已了解有关 服务总线 主题的基础知识，单击
 下面的链接可了解更多信息。
 
--   查看 MSDN 参考：[Azure Service Bus 通知中心][Azure Service Bus 通知中心]。
+-   查看 MSDN 参考：[Azure 服务总线 通知中心][Azure 服务总线 通知中心]。
 -   访问 GitHub 上的 [Azure SDK for Node][Azure SDK for Node] 存储库。
 
   [后续步骤]: #next
-  [什么是 Service Bus 通知中心？]: #hub
+  [什么是 服务总线 通知中心？]: #hub
   [创建 Node.js 应用程序]: #create
-  [配置应用程序以使用 Service Bus]: #config
+  [配置应用程序以使用 服务总线]: #config
   [如何：发送通知]: #send
-  [Azure Service Bus 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
+  [Azure 服务总线 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /en-us/develop/nodejs/tutorials/create-a-website-(mac)/
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [使用 WebMatrix 生成网站]: /en-us/develop/nodejs/tutorials/web-site-with-webmatrix/

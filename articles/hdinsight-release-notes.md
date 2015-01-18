@@ -70,7 +70,7 @@
 	* 美国中南部。 
 
 <!--
-* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](http://azure.microsoft.com/zh-cn/documentation/articles/hdinsight-component-versioning/)页。
+* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](/zh-cn/documentation/articles/hdinsight-component-versioning/)页。
 -->
 
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改： 

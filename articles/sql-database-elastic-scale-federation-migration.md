@@ -4,7 +4,7 @@
 
 # 联合迁移
 
-Azure SQL Database 联合功能将随 Web/企业版一起于 2015 年 9 月停用。届时，使用联合功能的应用程序将停止执行。为了确保迁移成功，强烈建议您尽快开始迁移工作，以便充分计划和执行。本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到 [Azure SQL DB 灵活扩展预览 API][Azure SQL DB 灵活扩展预览 API]。该文档的目标是引导您完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
+Azure SQL数据库 联合功能将随 Web/企业版一起于 2015 年 9 月停用。届时，使用联合功能的应用程序将停止执行。为了确保迁移成功，强烈建议您尽快开始迁移工作，以便充分计划和执行。本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到 [Azure SQL DB 灵活扩展预览 API][Azure SQL DB 灵活扩展预览 API]。该文档的目标是引导您完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
 
 将现有联合应用程序迁移到使用灵活扩展 API 的应用程序需要三个主要步骤。
 
@@ -74,7 +74,7 @@ Azure SQL Database 联合功能将随 Web/企业版一起于 2015 年 9 月停�
 
 ![断开分片的联合成员][断开分片的联合成员]
 
-将应用程序修改为包含灵活扩展 API 后，迁移联合应用程序的最后一步是 **SWITCH OUT** 联合成员（有关详细信息，请参阅 [ALTER FEDERATION (Azure SQL Database)][ALTER FEDERATION (Azure SQL Database)] 的 MSDN 参考）。针对特定联合成员发出 **SWITCH OUT** 的最终结果将导致删除所有联合约束和元数据，从而将联合成员呈现为常规 Azure SQL Database，与其他任何 Azure SQL Database 无异。
+将应用程序修改为包含灵活扩展 API 后，迁移联合应用程序的最后一步是 **SWITCH OUT** 联合成员（有关详细信息，请参阅 [ALTER FEDERATION (Azure SQL数据库)][ALTER FEDERATION (Azure SQL数据库)] 的 MSDN 参考）。针对特定联合成员发出 **SWITCH OUT** 的最终结果将导致删除所有联合约束和元数据，从而将联合成员呈现为常规 Azure SQL数据库，与其他任何 Azure SQL数据库 无异。
 
 请注意，针对联合成员发出 **SWITCH OUT** 是一个单向操作，无法撤消。执行后，无法将产生的数据库添加回联合，并且 USE FEDERATION 命令将不再适用于此数据库。
 
@@ -83,7 +83,7 @@ Azure SQL Database 联合功能将随 Web/企业版一起于 2015 年 9 月停�
 对所有现有联合成员执行切换后，便完成了应用程序的迁移。
 联合迁移实用工具提供了以下功能：
 
-1.  执行联合根到分片映射管理器的克隆。开发人员可选择将现有的分片映射管理器放置在新 Azure SQL Database 上（推荐）或放置在现有联合根数据库上。
+1.  执行联合根到分片映射管理器的克隆。开发人员可选择将现有的分片映射管理器放置在新 Azure SQL数据库 上（推荐）或放置在现有联合根数据库上。
 2.  针对联合中的所有联合成员发出 SWITCH OUT。
 
 ## 功能比较
@@ -109,7 +109,7 @@ Azure SQL Database 联合功能将随 Web/企业版一起于 2015 年 9 月停�
 
 -   在 2015 年秋季，我们将弃用 Web 与企业版以及联合。作为联合应用程序迁移的一部分，强烈建议对基本、标准和高级版本执行性能测试。
 
--   对联合成员执行 SWITCH OUT 语句将使生成的数据库能够利用所有 Azure SQL Database 功能（即新版本、备份、PITR、审核等）。
+-   对联合成员执行 SWITCH OUT 语句将使生成的数据库能够利用所有 Azure SQL数据库 功能（即新版本、备份、PITR、审核等）。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
@@ -128,7 +128,7 @@ Azure SQL Database 联合功能将随 Web/企业版一起于 2015 年 9 月停�
   [灵活扩展的概念性概述]: ./sql-database-elastic-scale-introduction.md
   [API 参考]: http://go.microsoft.com/?linkid=9862604
   [断开分片的联合成员]: ./media/sql-database-elastic-scale-federation-migration/migrate-3.png
-  [ALTER FEDERATION (Azure SQL Database)]: http://msdn.microsoft.com/en-us/library/azure/hh597475.aspx
+  [ALTER FEDERATION (Azure SQL数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/hh597475.aspx
   [多分片查询]: ./sql-database-elastic-scale-multishard-querying.md
   [拆分和合并分片]: ./sql-database-elastic-scale-overview-split-and-merge.md
   [分片灵活性]: ./sql-database-elastic-scale-elasticity.md

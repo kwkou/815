@@ -67,7 +67,7 @@ One of the most common things that people do in the cloud is run web sites and w
 
 This is exactly what Azure Web Sites provides. This execution model offers a managed web environment using the Azure Management portal as well as APIs. You can move an existing web site into Azure Web Sites unchanged, or you can create a new one directly in the cloud. Once a web site is running, you can add or remove instances dynamically, relying on Azure Web Sites to load balance requests across them. Azure Web Sites offers both a shared option, where your web site runs in a virtual machine with other sites, and a standard option that allows a site to run in its own VM. The standard option also lets you increase the size (computing power) of your instances if needed.
 
-Azure Web Sites is intended to be useful for corporations, developers, and web design agencies. For corporations, it's an easy-to-manage, scalable, highly secure, and highly available solution for running presence web sites. For development, it supports .NET, PHP, Node.js, and Python along with SQL Database and MySQL (from ClearDB, a Microsoft partner) for relational storage. It also provides built-in support for several popular applications, including WordPress, Joomla, and Drupal. The goal is to provide a low-cost, scalable, and broadly useful platform for creating web sites and web applications in the public cloud.
+Azure Web Sites is intended to be useful for corporations, developers, and web design agencies. For corporations, it's an easy-to-manage, scalable, highly secure, and highly available solution for running presence web sites. For development, it supports .NET, PHP, Node.js, and Python along with SQL数据库 and MySQL (from ClearDB, a Microsoft partner) for relational storage. It also provides built-in support for several popular applications, including WordPress, Joomla, and Drupal. The goal is to provide a low-cost, scalable, and broadly useful platform for creating web sites and web applications in the public cloud.
 
 ###Cloud Services###
 
@@ -87,7 +87,7 @@ You have two roles to choose from when you create an instance, both based on Win
 If you are creating an app for a mobile device, Azure Mobile Services accelerates development by providing turnkey way to store data in the cloud, authenticate users, and send push notifications.  
 Native client libraries for Android, iOS, HTML/JavaScript, Windows Phone, and Windows Store make it easy to power apps available on all major mobile platforms.  An open and flexible REST API also enables you to use Mobile Services data and authentication functionality with apps on almost any platform.  A single Mobile Service can back multiple client apps so you can provide a consistent user experience across devices. 
 
-Mobile Services allows you to do simple provisioning and management of data stored in a SQL Database, authenticate users through well-known identity providers like Facebook, Twitter, Microsoft or Google account, and use notification services to deliver push notifications to your app. With server-side code you can easily use additional data storage options like blob storage or MongoDB, consume Add-Ons from the Azure Store like SendGrid or Pusher, use other Azure Services like Service Bus and worker roles, or even connect to on-premises systems.  A service can be scaled as an app becomes more popular, and monitoring and logging are supported.
+Mobile Services allows you to do simple provisioning and management of data stored in a SQL数据库, authenticate users through well-known identity providers like Facebook, Twitter, Microsoft or Google account, and use notification services to deliver push notifications to your app. With server-side code you can easily use additional data storage options like blob storage or MongoDB, consume Add-Ons from the Azure Store like SendGrid or Pusher, use other Azure Services like 服务总线 and worker roles, or even connect to on-premises systems.  A service can be scaled as an app becomes more popular, and monitoring and logging are supported.
 
 While you can certainly build the backend for a mobile app using Virtual Machines, Cloud Services or Web Sites, by opting for Mobile Services you can spend much less time writing the underlying service components.
 -->
@@ -104,19 +104,19 @@ One of these has already been mentioned: the ability to run SQL Server or anothe
 
 Each of the three options addresses a different need: relational storage, fast access to potentially large amounts of simple typed data, and unstructured binary storage. In all three cases, data is automatically replicated across three different computers in an Azure datacenter to provide high availability. It's also worth pointing out that all three options can be accessed either by Azure applications or by applications running elsewhere, such as your on-premises datacenter, your laptop, or your phone. And however you apply them, you pay for all Azure data management services based on usage, including a gigabyte-per-month charge for stored data. 
 
-###SQL Database###
+###SQL数据库###
 
-For relational storage, Azure provides SQL Database. Formerly called SQL Azure, SQL Database provides all of the key features of a relational database management system, including atomic transactions, concurrent data access by multiple users with data integrity, ANSI SQL queries, and a familiar programming model. Like SQL Server, SQL Database can be accessed using Entity Framework, ADO.NET, JDBC, and other familiar data access technologies. It also supports most of the T-SQL language, along with SQL Server tools such as SQL Server Management Studio. For anybody familiar with SQL Server (or another relational database), using SQL Database is straightforward.
+For relational storage, Azure provides SQL数据库. Formerly called SQL Azure, SQL数据库 provides all of the key features of a relational database management system, including atomic transactions, concurrent data access by multiple users with data integrity, ANSI SQL queries, and a familiar programming model. Like SQL Server, SQL数据库 can be accessed using Entity Framework, ADO.NET, JDBC, and other familiar data access technologies. It also supports most of the T-SQL language, along with SQL Server tools such as SQL Server Management Studio. For anybody familiar with SQL Server (or another relational database), using SQL数据库 is straightforward.
 
-But SQL Database isn't just a DBMS in the cloud-it's a PaaS service. You still control your data and who can access it, but SQL Database takes care of the administrative grunt work, such as managing the hardware infrastructure and automatically keeping the database and operating system software up to date. SQL Database also provides a federation option that distributes data across multiple servers. This is useful for applications that work with large amounts of data or need to spread data access requests across multiple servers for better performance.
+But SQL数据库 isn't just a DBMS in the cloud-it's a PaaS service. You still control your data and who can access it, but SQL数据库 takes care of the administrative grunt work, such as managing the hardware infrastructure and automatically keeping the database and operating system software up to date. SQL数据库 also provides a federation option that distributes data across multiple servers. This is useful for applications that work with large amounts of data or need to spread data access requests across multiple servers for better performance.
 
-If you're creating an Azure application (using any of the three execution models) that needs relational storage, SQL Database can be a good option. Applications running outside the cloud can also use this service, though, so there are plenty of other scenarios. For instance, data stored in SQL Database can be accessed from different client systems, including desktops, laptops, tablets, and phones. And because it provides built-in high availability through replication, using SQL Database can help minimize downtime.
+If you're creating an Azure application (using any of the three execution models) that needs relational storage, SQL数据库 can be a good option. Applications running outside the cloud can also use this service, though, so there are plenty of other scenarios. For instance, data stored in SQL数据库 can be accessed from different client systems, including desktops, laptops, tablets, and phones. And because it provides built-in high availability through replication, using SQL数据库 can help minimize downtime.
 
 ###Tables###
 
 Suppose you want to create an Azure application that needs fast access to typed data, maybe lots of it, but doesn't need to perform complex SQL queries on this data. For example, imagine you're creating a consumer application that needs to store customer profile information for each user. Your app is going to be very popular, so you need to allow for lots of data, but you won't do much with this data beyond storing it, then retrieving it in simple ways. This is exactly the kind of scenario where Azure Tables makes sense.
 
-Don't be confused by the name: this technology doesn't provide relational storage. (In fact, it's an example of a NoSQL approach called a key/value store.) Instead, Azure Tables let an application store properties of various types, such as strings, integers, and dates. An application can then retrieve a group of properties by providing a unique key for that group. While complex operations like joins aren't supported, tables offer fast access to typed data. They're also very scalable, with a single table able to hold as much as a terabyte of data. And matching their simplicity, tables are usually less expensive to use than SQL Database's relational storage. 
+Don't be confused by the name: this technology doesn't provide relational storage. (In fact, it's an example of a NoSQL approach called a key/value store.) Instead, Azure Tables let an application store properties of various types, such as strings, integers, and dates. An application can then retrieve a group of properties by providing a unique key for that group. While complex operations like joins aren't supported, tables offer fast access to typed data. They're also very scalable, with a single table able to hold as much as a terabyte of data. And matching their simplicity, tables are usually less expensive to use than SQL数据库's relational storage. 
 
 ###Blobs###
 
@@ -129,7 +129,7 @@ Azure runs today in several datacenters spread across the United States, Europe,
 
 - You can use Azure Virtual Network to connect your own on-premises local network to a defined set of Azure VMs.
 
-- If your Azure application is running in multiple datacenters, you can use Azure Traffic Manager to route requests from users intelligently across instances of the application.
+- If your Azure application is running in multiple datacenters, you can use Azure 流量管理器 to route requests from users intelligently across instances of the application.
 
 Figure 3 illustrates these options.
 
@@ -142,11 +142,11 @@ One useful way to use a public cloud is to treat it as an extension of your own 
 
 To make this really useful, though, your users ought to be able to treat these applications as if they were running in your own datacenter. This is exactly what Azure Virtual Network allows. Using a VPN gateway device, an administrator can set up a virtual private network (VPN) between your local network and a defined group of VMs running in Azure. Because you assign your own IP v4 addresses to the cloud VMs, they appear to be on your own network. Users in your organization can access the applications those VMs contain as if they were running locally.
 <!--
-###Traffic Manager###
+###流量管理器###
 
-an Azure application with users in just a single part of the world might run in only one Azure datacenter. An application with users scattered around the world, however, is more likely to run in multiple datacenters, maybe even all of them. In this second situation, you face a problem: How do you intelligently direct users to application instances? Most of the time, you probably want each user to access the datacenter closest to her, since it will likely give her the best response time. But what if that instance of the application is overloaded or unavailable? In this case, it would be nice to direct her request automatically to another datacenter. This is exactly what's done by Azure Traffic Manager. 
+an Azure application with users in just a single part of the world might run in only one Azure datacenter. An application with users scattered around the world, however, is more likely to run in multiple datacenters, maybe even all of them. In this second situation, you face a problem: How do you intelligently direct users to application instances? Most of the time, you probably want each user to access the datacenter closest to her, since it will likely give her the best response time. But what if that instance of the application is overloaded or unavailable? In this case, it would be nice to direct her request automatically to another datacenter. This is exactly what's done by Azure 流量管理器. 
 
-The owner of an application defines rules that specify how requests from users should be directed to datacenters, then relies on Traffic Manager to carry out these rules. For example, users might normally be directed to the closest Azure datacenter, but get sent to another one when the response time from their default datacenter exceeds the response time from other datacenters. For globally distributed applications with many users, having a built-in service to handle problems like these is useful.
+The owner of an application defines rules that specify how requests from users should be directed to datacenters, then relies on 流量管理器 to carry out these rules. For example, users might normally be directed to the closest Azure datacenter, but get sent to another one when the response time from their default datacenter exceeds the response time from other datacenters. For globally distributed applications with many users, having a built-in service to handle problems like these is useful.
 
 
 <h2><a id="analytics"></a>Business Analytics</h2>
@@ -158,12 +158,12 @@ Analyzing data is a fundamental part of how businesses use information technolog
 
 Analyzing data can take many forms, and so these two options are quite different. It's worth looking at each one separately.
 
-###Reporting with SQL Database###
+###Reporting with SQL数据库###
 One of the most common ways to use stored data is to create reports based on that data.
  
 Running SQL Server Reporting Services (SSRS) on Azure Virtual Machines allows you to build easily accessible reporting capabilities into your Azure application. You can create reports with tables, charts, maps, gauges, and more in various formats, including HTML, XML, PDF, and Excel. 
 
-You can also perform analytics with SQL Database data using on-premises business intelligence tools, including SSRS. To a client, SQL Database looks like SQL Server, and so the same technologies can work with both.  
+You can also perform analytics with SQL数据库 data using on-premises business intelligence tools, including SSRS. To a client, SQL数据库 looks like SQL Server, and so the same technologies can work with both.  
  
 
 ###HDInsight (Hadoop)###
@@ -193,13 +193,13 @@ Queuing is a simple idea: One application places a message in a queue, and that 
 
 One common use of Queues today is to let a web role instance communicate with a worker role instance within the same Cloud Services application. For example, suppose you create an Azure application for video sharing. The application consists of PHP code running in a web role that lets users upload and watch videos, together with a worker role implemented in C# that translates uploaded video into various formats. When a web role instance gets a new video from a user, it can store the video in a blob, then send a message to a worker role via a queue telling it where to find this new video. A worker role instance-it doesn't matter which one-will then read the message from the queue and carry out the required video translations in the background. Structuring an application in this way allows asynchronous processing, and it also makes the application easier to scale, since the number of web role instances and worker role instances can be varied independently.
 
-###Service Bus###
+###服务总线###
 
-Whether they run in the cloud, in your data center, on a mobile device, or somewhere else, applications need to interact. The goal of Azure Service Bus is to let applications running pretty much anywhere exchange data.
+Whether they run in the cloud, in your data center, on a mobile device, or somewhere else, applications need to interact. The goal of Azure 服务总线 is to let applications running pretty much anywhere exchange data.
 
-As Figure 5 shows, Service Bus provides a queuing service. This service isn't identical to the Queues just described, however. Unlike Azure Queues, for example, Service Bus provides a both queues (one-to-one) and publish-and-subscribe mechanisms. With publish-subscribe, an application can send messages to a topic, while other applications can create subscriptions to this topic. This allows one-to-many communication among a set of applications, letting the same message be read by multiple recipients. And queuing isn't the only option: Service Bus also allows direct communication through its relay service, providing a secure way to interact through firewalls. Service Bus relays enable applications to communicate by exchanging messages through an endpoint hosted in the cloud, rather than locally.
+As Figure 5 shows, 服务总线 provides a queuing service. This service isn't identical to the Queues just described, however. Unlike Azure Queues, for example, 服务总线 provides a both queues (one-to-one) and publish-and-subscribe mechanisms. With publish-subscribe, an application can send messages to a topic, while other applications can create subscriptions to this topic. This allows one-to-many communication among a set of applications, letting the same message be read by multiple recipients. And queuing isn't the only option: 服务总线 also allows direct communication through its relay service, providing a secure way to interact through firewalls. 服务总线 relays enable applications to communicate by exchanging messages through an endpoint hosted in the cloud, rather than locally.
 
-Applications that communicate through Service Bus might be Azure applications or software running on some other cloud platform. They can also be applications running outside the cloud, however. For example, think of an airline that implements reservation services in computers inside its own datacenter. The airline needs to expose these services to many clients, including check-in kiosks in airports, reservation agent terminals, and maybe even customers' phones. It might use Service Bus to do this, creating loosely coupled interactions among the various applications.
+Applications that communicate through 服务总线 might be Azure applications or software running on some other cloud platform. They can also be applications running outside the cloud, however. For example, think of an airline that implements reservation services in computers inside its own datacenter. The airline needs to expose these services to many clients, including check-in kiosks in airports, reservation agent terminals, and maybe even customers' phones. It might use 服务总线 to do this, creating loosely coupled interactions among the various applications.
 
 
 <!--
@@ -212,7 +212,7 @@ Applications tend to access the same data over and over. One way to improve perf
 
 ###Caching###
 
-Accessing data stored in any of Azure's data management services-SQL Database, Tables, or Blobs-is quite fast. Yet accessing data stored in memory is even faster. Because of this, keeping an in-memory copy of frequently accessed data can improve application performance. You can use Azure's in-memory Caching to do this. 
+Accessing data stored in any of Azure's data management services-SQL数据库, Tables, or Blobs-is quite fast. Yet accessing data stored in memory is even faster. Because of this, keeping an in-memory copy of frequently accessed data can improve application performance. You can use Azure's in-memory Caching to do this. 
 
 A Cloud Services application can store data in this cache, then retrieve it directly without needing to access persistent storage. As Figure 6 shows, the cache can be maintained inside your application's VMs or be provided by VMs dedicated solely to caching. In either case, the cache can be distributed, with the data it contains spread across multiple VMs in an Azure datacenter. 
 

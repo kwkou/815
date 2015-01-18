@@ -114,7 +114,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 <div class="dev-callout">
 <strong>说明</strong>
-<p>为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 <a href="https://github.com/WindowsAzure/azure-sdk-for-node">Azure SDK for Node.js GitHub 存储库</a>中的 Service Bus 队列和主题使用示例。</p>
+<p>为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 服务总线 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 <a href="https://github.com/WindowsAzure/azure-sdk-for-node">Azure SDK for Node.js GitHub 存储库</a>中的 服务总线 队列和主题使用示例。</p>
 </div>
 
 ## 后续步骤

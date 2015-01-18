@@ -284,7 +284,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
   [配置缓存]: #enable-caching
   [新建缓存]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-new-cache-menu.png
   [1]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-cache-create.png
-  [使用资源组管理您的 Azure 资源]: http://azure.microsoft.com/zh-cn/documentation/articles/azure-preview-portal-using-resource-groups/
+  [使用资源组管理您的 Azure 资源]: /zh-cn/documentation/articles/azure-preview-portal-using-resource-groups/
   [创建的缓存]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-cache-created.png
   [浏览边栏选项卡]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-browse-caches.png
   [缓存]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-caches.png

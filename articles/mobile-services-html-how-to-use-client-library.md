@@ -50,7 +50,7 @@
 <a name="querying"></a>
 ## 查询数据如何：从移动服务查询数据
 
-访问或修改 SQL Database 表中数据的所有代码都将对 `MobileServiceTable` 对象调用函数。对 `MobileServiceClient` 的实例调用 `getTable()` 函数可获取对表的引用。
+访问或修改 SQL数据库 表中数据的所有代码都将对 `MobileServiceTable` 对象调用函数。对 `MobileServiceClient` 的实例调用 `getTable()` 函数可获取对表的引用。
 
             var todoItemTable = client.getTable('todoitem');
 

@@ -1,13 +1,13 @@
-<properties linkid="manage-services-how-to-configure-websites" urlDisplayName="How to configure" pageTitle="How to configure web sites - Azure service management" metaKeywords="Azure websites, configuring Azure websites, Azure SQL database, Azure MySQL" description="Learn how to configure web sites in Azure, including how to configure a web site to use a SQL Database or MySQL database." metaCanonical="" services="web-sites" documentationCenter="" title="How to Configure Web Sites" authors="timamm" solutions="" manager="" editor="mollybos" />
+<properties linkid="manage-services-how-to-configure-websites" urlDisplayName="How to configure" pageTitle="How to configure web sites - Azure service management" metaKeywords="Azure websites, configuring Azure websites, Azure SQL数据库, Azure MySQL" description="Learn how to configure web sites in Azure, including how to configure a web site to use a SQL数据库 or MySQL数据库." metaCanonical="" services="web-sites" documentationCenter="" title="How to Configure Web Sites" authors="timamm" solutions="" manager="" editor="mollybos" />
 
 # 如何配置网站
 
-在 Azure 管理门户中，你可以更改用于网站的配置选项，而且可以将网站链接到其他 Azure 资源。例如，你可以将网站链接到 SQL Database 来提供其他功能。你也可以配置网站来使用全新或现有的 MySQL 数据库。
+在 Azure 管理门户中，你可以更改用于网站的配置选项，而且可以将网站链接到其他 Azure 资源。例如，你可以将网站链接到 SQL数据库 来提供其他功能。你也可以配置网站来使用全新或现有的 MySQL 数据库。
 
 ## 目录
 
 -   [如何：更改网站的配置选项][如何：更改网站的配置选项]
--   [如何：将网站配置为使用 SQL Database][如何：将网站配置为使用 SQL Database]
+-   [如何：将网站配置为使用 SQL数据库][如何：将网站配置为使用 SQL数据库]
 -   [如何：将网站配置为使用 MySQL 数据库][如何：将网站配置为使用 MySQL 数据库]
 -   [如何：配置自定义域名][如何：配置自定义域名]
 -   [如何：将网站配置为使用 SSL][如何：将网站配置为使用 SSL]
@@ -76,7 +76,7 @@
     -   **连接字符串** - 为链接的资源查看连接字符串。对于 .NET 网站，这些连接字符串将在运行时注入到 .NET 配置 connectionStrings 设置中，并且将重写其中的键等于链接的数据库名称的所有现有条目。对于 PHP 和 Node 网站，这些设置将作为运行时环境变量提供，并且用连接类型作为前缀。下面列出了环境变量前缀：
         -   SQL Server：SQLCONNSTR\_
         -   MySQL：MYSQLCONNSTR\_
-        -   SQL Database：SQLAZURECONNSTR\_
+        -   SQL数据库：SQLAZURECONNSTR\_
         -   自定义：CUSTOMCONNSTR\_
 
         例如，如果 MySql 连接字符串被命名为 connectionstring1，则会通过环境变量 `MYSQLCONNSTR_connectionString1` 来访问它。
@@ -87,11 +87,11 @@
 
 4.  在“配置”管理页的底部单击“保存”，以保存配置更改。
 
-<!-- HOW TO: CONFIGURE A WEB SITE TO USE A SQL DATABASE -->
+<!-- HOW TO: CONFIGURE A WEB SITE TO USE A SQL数据库 -->
 
-## <a name="howtoconfigSQL"></a>如何：将网站配置为使用 SQL Database
+## <a name="howtoconfigSQL"></a>如何：将网站配置为使用 SQL数据库
 
-按照下列步骤操作可将网站链接到 SQL Database：
+按照下列步骤操作可将网站链接到 SQL数据库：
 
 1.  在[管理门户][管理门户]中，选择“网站”,以显示当前登录的帐户创建的网站的列表。
 
@@ -109,7 +109,7 @@
 
 Azure 将使用指定的参数创建一个 SQL 数据库并将该数据库链接到网站。
 
-<!-- HOW TO: CONFIGURE A WEB SITE TO USE A MYSQL DATABASE -->
+<!-- HOW TO: CONFIGURE A WEB SITE TO USE A MYSQL数据库 -->
 
 ## <a name="howtoconfigMySQL"></a>如何：将网站配置为使用 MySQL 数据库
 
@@ -132,16 +132,16 @@ Azure 将使用指定的参数创建一个 SQL 数据库并将该数据库链接
 -   [如何监视网站][如何监视网站]
 
   [如何：更改网站的配置选项]: #howtochangeconfig
-  [如何：将网站配置为使用 SQL Database]: #howtoconfigSQL
+  [如何：将网站配置为使用 SQL数据库]: #howtoconfigSQL
   [如何：将网站配置为使用 MySQL 数据库]: #howtoconfigMySQL
   [如何：配置自定义域名]: #howtodomain
   [如何：将网站配置为使用 SSL]: #howtoconfigSSL
   [后续步骤]: #next
-  [为 Azure 网站启用 HTTPS]: http://www.windowsazure.com/en-us/documentation/articles/web-sites-configure-ssl-certificate/
-  [为 Azure 网站配置自定义域名]: http://www.windowsazure.com/en-us/documentation/articles/web-sites-custom-domain-name/
+  [为 Azure 网站启用 HTTPS]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [为 Azure 网站配置自定义域名]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-custom-domain-name/
   [服务器名称指示]: http://en.wikipedia.org/wiki/Server_Name_Indication
-  [如何：查看、复制和重新生成存储访问密钥]: http://www.windowsazure.com/en-us/documentation/articles/storage-manage-storage-account/#regeneratestoragekeys
-  [Azure 网站上的 New Relic 应用程序性能管理]: http://www.windowsazure.com/en-us/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/
+  [如何：查看、复制和重新生成存储访问密钥]: http://www.windowsazure.com/zh-cn/documentation/articles/storage-manage-storage-account/#regeneratestoragekeys
+  [Azure 网站上的 New Relic 应用程序性能管理]: http://www.windowsazure.com/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/
   [管理门户]: http://manage.windowsazure.cn
   [1]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-custom-domain-name/
   [2]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/

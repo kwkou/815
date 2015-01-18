@@ -5,7 +5,7 @@
 操作日志是 Azure 管理门户中提供的一项管理服务功能，可让你查看针对 Azure 服务（包括 BizTalk 服务）执行的操作的历史日志。可以查看过去最多 180 天内对 BizTalk 服务订阅执行的管理操作的相关历史数据。
 
 <div class="dev-callout"><b>说明</b>
-<p>此功能只会捕获对 BizTalk 服务执行的管理操作日志，例如，服务的启动时间、备份时间，等等。不管此类操作是从 Azure 管理门户执行的，还是使用 <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn232347.aspx">BizTalk 服务 REST API</a> 执行的，都会受到跟踪。有关使用管理服务跟踪的操作的完整列表，请参阅<a href="#bizops">使用 Azure 管理服务跟踪的操作</a>。</p>
+<p>此功能只会捕获对 BizTalk 服务执行的管理操作日志，例如，服务的启动时间、备份时间，等等。不管此类操作是从 Azure 管理门户执行的，还是使用 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn232347.aspx">BizTalk 服务 REST API</a> 执行的，都会受到跟踪。有关使用管理服务跟踪的操作的完整列表，请参阅<a href="#bizops">使用 Azure 管理服务跟踪的操作</a>。</p>
 <p>此功能不会捕获与 BizTalk 服务运行时相关的活动（例如桥处理的消息等）的日志。若要查看此类日志，必须使用 BizTalk 服务门户中的&ldquo;跟踪&rdquo;视图。有关详细信息，请参阅<a HREF="http://msdn.microsoft.com/library/windowsazure/hh949805.aspx">跟踪消息</a>。</p>
 </div>
 
@@ -99,7 +99,7 @@
 -   [BizTalk 服务：颁发者名称和颁发者密钥][BizTalk 服务：颁发者名称和颁发者密钥]
 -   [如何开始使用 Azure BizTalk 服务 SDK][如何开始使用 Azure BizTalk 服务 SDK]
 
-  [BizTalk 服务 REST API]: http://msdn.microsoft.com/en-us/library/windowsazure/dn232347.aspx
+  [BizTalk 服务 REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn232347.aspx
   [使用 Azure 管理服务跟踪的操作]: #bizops
   [跟踪消息]: http://msdn.microsoft.com/library/windowsazure/hh949805.aspx
   [查看操作日志]: ./media/biztalk-troubleshoot-using-ops-logs/Operation-Logs.png

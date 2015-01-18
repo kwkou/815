@@ -1,14 +1,14 @@
-<properties title="Azure 灵活扩展词汇表" pageTitle="Azure 灵活扩展词汇表" description="用于 Azure SQL Database 的灵活扩展功能的术语解释" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Azure 灵活扩展词汇表" pageTitle="Azure 灵活扩展词汇表" description="用于 Azure SQL数据库 的灵活扩展功能的术语解释" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
 # 灵活扩展词汇表
 
-为 Azure SQL Database 的灵活扩展功能定义了以下术语。
+为 Azure SQL数据库 的灵活扩展功能定义了以下术语。
 
 ![灵活扩展术语][灵活扩展术语]
 
-**数据库**：Azure SQL Database。
+**数据库**：Azure SQL数据库。
 
 **数据依赖路由**：使应用程序能够连接到给定了特定分片键的分片的功能。与**多分片查询**进行比较。
 
@@ -24,7 +24,7 @@
 
 **引用表**：未进行分片，但在分片间进行复制的表。
 
-**分片**：用于存储分片数据集中的数据的 Azure SQL Database。
+**分片**：用于存储分片数据集中的数据的 Azure SQL数据库。
 
 **分片灵活性** (SE)：能够执行**水平扩展**和**垂直扩展**。
 

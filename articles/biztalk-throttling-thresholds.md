@@ -85,7 +85,7 @@ RoleInstanceA 正在进行限制。RoleInstanceB 未进行限制。在这种情�
 -   无法禁用限制。
 -   无法修改限制阈值。
 -   限制是在系统范围内实施的。
--   Azure SQL Database Server 还具有内置限制。
+-   Azure SQL数据库 Server 还具有内置限制。
 
 ## 其他 Azure BizTalk 服务主题
 

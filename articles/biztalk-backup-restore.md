@@ -211,7 +211,7 @@ BizTalk 服务设置
 
 </td>
 <td>
-在创建 BizTalk 服务时，将输入跟踪数据库详细信息，包括 Azure SQL Database Server 和跟踪数据库名称。不会自动备份跟踪数据库。
+在创建 BizTalk 服务时，将输入跟踪数据库详细信息，包括 Azure SQL数据库 Server 和跟踪数据库名称。不会自动备份跟踪数据库。
  **重要说明**
  如果删除跟踪数据库，并且需要恢复该数据库，必须存在上一个备份。如果某一备份不存在，则跟踪数据库及其数据将无法恢复。在此情况下，应使用相同数据库名称创建新的跟踪数据库。建议执行地域复制。
 
@@ -239,7 +239,7 @@ BizTalk 服务设置
   [还原备份]: #restore
   [备份的内容]: #budata
   [BizTalk 服务 REST API]: http://go.microsoft.com/fwlink/p/?LinkID=325584
-  [BizTalk 服务：版本图表]: http://azure.microsoft.com/zh-cn/documentation/articles/biztalk-editions-feature-chart/
+  [BizTalk 服务：版本图表]: /zh-cn/documentation/articles/biztalk-editions-feature-chart/
   [按需备份]: #backupnow
   [计划备份]: #backupschedule
   [0]: ./media/biztalk-backup-restore/AutomaticBU.png

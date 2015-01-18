@@ -68,7 +68,7 @@
 
 
 <h3><a id="AtleastOneSqlMetastoreMustBeProvided"></a>AtleastOneSqlMetastoreMustBeProvided</h3>
-- **描述**：请至少为一个组件提供 Azure SQL Database 以便对配置单元和 Oozie 元存储使用自定义设置。
+- **描述**：请至少为一个组件提供 Azure SQL数据库 以便对配置单元和 Oozie 元存储使用自定义设置。
 - **缓解**：用户需要提供有效的 SQL Azure 元存储，然后重试该请求。
 
 <h3><a id="AzureRegionNotSupported"></a>AzureRegionNotSupported</h3>

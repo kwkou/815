@@ -20,7 +20,7 @@ with world-class security practices, tools, technology. On the other
 hand, the cloud intrinsically exposes more surface area for your
 application that can be potentially exploited by attackers. This is
 because many cloud technologies and services are exposed as end points
-vs. in-memory components. Azure storage, Service Bus, SQL
+vs. in-memory components. Azure storage, 服务总线, SQL
 Database (formerly SQL Azure), and many other services are accessible
 via their endpoints over the wire.
 
@@ -151,11 +151,11 @@ ID 2.0 identity providers. The following resources provide in-depth
 information about Azure AD Access Control:
 
 -   [Access Control Service 2.0](http://msdn.microsoft.com/library/gg429786.aspx) 
--   [Scenarios and Solutions Using ACS](http://msdn.microsoft.com/en-us/library/gg185920.aspx)
--   [ACS How To's](http://msdn.microsoft.com/en-us/library/windowsazure/gg185939.aspx)
--   [A Guide to Claims-Based Identity and Access Control](http://msdn.microsoft.com/en-us/library/ff423674.aspx)
+-   [Scenarios and Solutions Using ACS](http://msdn.microsoft.com/zh-cn/library/gg185920.aspx)
+-   [ACS How To's](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
+-   [A Guide to Claims-Based Identity and Access Control](http://msdn.microsoft.com/zh-cn/library/ff423674.aspx)
 -   [Identity Developer Training Kit](http://www.microsoft.com/en-us/download/details.aspx?id=14347)
--   [MSDN-hosted Identity Developer Training Course](http://msdn.microsoft.com/en-us/IdentityTrainingCourse)
+-   [MSDN-hosted Identity Developer Training Course](http://msdn.microsoft.com/zh-cn/IdentityTrainingCourse)
 -->
 
 **Active Directory Federation Services (AD FS).**Active Directory
@@ -214,13 +214,13 @@ application.
 -   **Azure Storage Service Identity and Access Scenarios.**In
     this scenario you need to securely share access to Azure
     storage blobs and containers.
--   **Azure SQL Database Identity and Access Scenarios.**SQL
+-   **Azure SQL数据库 Identity and Access Scenarios.**SQL
     Database supports only SQL Server Authentication. Windows
     Authentication (integrated security) is not supported. Users must
     provide credentials (login and password) every time they connect to
-    SQL Database.
--   **Azure Service Bus Identity and Access Scenarios.**In this
-    scenario you need securely access Azure Service Bus queues.
+    SQL数据库.
+-   **Azure 服务总线 Identity and Access Scenarios.**In this
+    scenario you need securely access Azure 服务总线 queues.
 -   **In-Memory Cache Identity and Access Scenarios.**In this scenario
     you need to securely access data managed by in-memory cache.
 -   **Azure Marketplace Identity and Access Scenarios.**In this
@@ -247,7 +247,7 @@ Identity Foundation.
 
 Refer to the following resources to implement this scenario:
 <!--
--   [How To: Create My First Claims-Aware ASP.NET Application Using ACS](http://msdn.microsoft.com/en-us/library/gg429779.aspx)-->
+-   [How To: Create My First Claims-Aware ASP.NET Application Using ACS](http://msdn.microsoft.com/zh-cn/library/gg429779.aspx)-->
 -   [How To: Host Login Pages in Your ASP.NET Web Application](http://msdn.microsoft.com/zh-cn/library/gg185926.aspx)
 -   [How To: Implement Claims Authorization in a Claims-Aware ASP.NET Application Using WIF](http://msdn.microsoft.com/zh-cn/library/gg185907.aspx)    
 -   [How To: Implement Role Based Access Control (RBAC) in a Claims-Aware
@@ -531,34 +531,34 @@ Refer to the following resources to solve this scenario
 -   [Shared Access Signatures Are Easy These Days](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days)
 
 
-##Azure SQL Database Identity and Access Scenarios
+##Azure SQL数据库 Identity and Access Scenarios
 
-SQL Database only supports SQL Server Authentication. Windows
+SQL数据库 only supports SQL Server Authentication. Windows
 Authentication (integrated security) is not supported. Users must
 provide credentials (login and password) every time they connect to a
-SQL Database. Pay special attention when managing your username and
+SQL数据库. Pay special attention when managing your username and
 password to avoid information disclosure.
 
 ![][15]
 
 Refer to the following resources to solve this scenario:
 
--   [Security Guidelines and Limitations (SQL Database)](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394108.aspx#authentication)
--   [How to: Connect to SQL Database Using sqlcmd](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336280.aspx)
--   [How to: Connect to SQL Database Using ADO.NET](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336243.aspx)
--   [How to: Connect to SQL Database Through ASP.NET](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621781.aspx)
--   [How to: Connect to SQL Database Through WCF Data Services](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621789.aspx)
--  [ How to: Connect to SQL Database Using PHP](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394110.aspx)
--   [How to: Connect to SQL Database Using JDBC](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg715284.aspx)
--   [How to: Connect to SQL Database Using the ADO.NET Entity Framework](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff951633.aspx)
+-   [Security Guidelines and Limitations (SQL数据库)](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394108.aspx#authentication)
+-   [How to: Connect to SQL数据库 Using sqlcmd](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336280.aspx)
+-   [How to: Connect to SQL数据库 Using ADO.NET](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336243.aspx)
+-   [How to: Connect to SQL数据库 Through ASP.NET](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621781.aspx)
+-   [How to: Connect to SQL数据库 Through WCF Data Services](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621789.aspx)
+-  [ How to: Connect to SQL数据库 Using PHP](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394110.aspx)
+-   [How to: Connect to SQL数据库 Using JDBC](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg715284.aspx)
+-   [How to: Connect to SQL数据库 Using the ADO.NET Entity Framework](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff951633.aspx)
 
-##Azure Service Bus Identity and Access Scenarios
+##Azure 服务总线 Identity and Access Scenarios
 
-The Service Bus and Azure AD Access Control have a special
-relationship in that each Service Bus service namespace is paired with a
+The 服务总线 and Azure AD Access Control have a special
+relationship in that each 服务总线 service namespace is paired with a
 matching Access Control service namespace of the same name, with the
 suffix "-sb". The reason for this special relationship is in the way
-that Service Bus and Access Control manage their mutual trust
+that 服务总线 and Access Control manage their mutual trust
 relationship and the associated cryptographic secrets. Refer to the
 resources listed below for more details.
 
@@ -566,9 +566,9 @@ resources listed below for more details.
 
 Refer to the following resources to solve this scenario:
 
--   [Securing Service Bus with ACS](http://channel9.msdn.com/posts/Securing-Service-Bus-with-ACS) (Video)
--   [Securing Service Bus with ACS](https://skydrive.live.com/view.aspx?cid=123CCD2A7AB10107&resid=123CCD2A7AB10107%211849) (Slides)
--   [Service Bus Authentication and Authorization with the Access Control
+-   [Securing 服务总线 with ACS](http://channel9.msdn.com/posts/Securing-Service-Bus-with-ACS) (Video)
+-   [Securing 服务总线 with ACS](https://skydrive.live.com/view.aspx?cid=123CCD2A7AB10107&resid=123CCD2A7AB10107%211849) (Slides)
+-   [服务总线 Authentication and Authorization with the Access Control
     Service](http://msdn.microsoft.com/zh-cn/library/hh403962.aspx)
 
 ##In-Memory Cache Identity and Access Scenarios
@@ -587,8 +587,8 @@ Refer to the following resources to solve this scenario:
 -   [How to: Configure a Cache Client Programmatically for Azure
     Caching](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg618003.aspx)
 -   [How to: Configure a Cache Client using the Application Configuration
-    File for Azure Caching](http://msdn.microsoft.com/en-us/library/windowsazure/gg278346.aspx)
--   [Azure Service Bus and Caching Samples](http://msdn.microsoft.com/zh-cn/library/ee706741.aspx) (Caching Samples
+    File for Azure Caching](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg278346.aspx)
+-   [Azure 服务总线 and Caching Samples](http://msdn.microsoft.com/zh-cn/library/ee706741.aspx) (Caching Samples
     section)
 
 ##Azure Marketplace Identity and Access Scenarios
@@ -683,7 +683,7 @@ digest from [WIF Design Considerations](http://msdn.microsoft.com/zh-cn/library/
 
 Consider the following security knobs in Azure AD Access Control
 deployment. The information below is a digest from [ACS Security
-Guidelines](http://msdn.microsoft.com/en-us/library/gg185962.aspx) and [Certificates and Keys Management Guidelines](http://msdn.microsoft.com/en-us/library/hh204521.aspx).
+Guidelines](http://msdn.microsoft.com/zh-cn/library/gg185962.aspx) and [Certificates and Keys Management Guidelines](http://msdn.microsoft.com/zh-cn/library/hh204521.aspx).
 
 -   **STS tokens expiration**. Use Azure AD Access Control
     management portal to set aggressive token expiration.
@@ -772,8 +772,8 @@ application is hosted on Azure Virtual Machines.
 -   [A Guide to Claims-based Identity and Access Control](http://go.microsoft.com/fwlink/?LinkId=214562)
 
 <!--
--   [Access Control Service](http://msdn.microsoft.com/en-us/library/windowsazure/gg429786.aspx)
--   [ACS How To's](http://msdn.microsoft.com/en-us/library/windowsazure/gg185939.aspx)
+-   [Access Control Service](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg429786.aspx)
+-   [ACS How To's](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
 -   [Secure Azure Web Role ASP.NET Web Application Using Access Control Service v2.0](http://social.technet.microsoft.com/wiki/contents/articles/2590.aspx)
 -   [Azure AD Access Control Service (ACS) Academy Videos](http://social.technet.microsoft.com/wiki/contents/articles/2777.aspx)
 -->

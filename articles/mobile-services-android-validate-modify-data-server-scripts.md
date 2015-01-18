@@ -125,7 +125,7 @@
 
     <div class="dev-callout"><b>说明</b>
 
-    <p><code>SerializedName</code> 批注告知客户端要将应用程序中的新 <code>mCreatedAt</code> 属性映射到 TodoItem 表中定义的 <code>createdAt</code> 列，该列具有不同的名称。如果你使用此批注，应用程序在对象上使用的属性名称可以不同于 SQL Database 中的列名称。如果不使用此批注，则会因大小写不同而发生错误。</p>
+    <p><code>SerializedName</code> 批注告知客户端要将应用程序中的新 <code>mCreatedAt</code> 属性映射到 TodoItem 表中定义的 <code>createdAt</code> 列，该列具有不同的名称。如果你使用此批注，应用程序在对象上使用的属性名称可以不同于 SQL数据库 中的列名称。如果不使用此批注，则会因大小写不同而发生错误。</p>
 	</div>
 
 3.  将以下方法添加到 ToDoItem 类，以获取并设置新的 mCreatedAt 属性：

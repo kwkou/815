@@ -100,5 +100,5 @@
 
   [分片映射管理器]: ./sql-database-elastic-scale-shard-map-management.md
   [管理灵活扩展凭据]: sql-database-elastic-scale-manage-credentials.md
-  [暂时性故障处理]: http://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx
+  [暂时性故障处理]: http://msdn.microsoft.com/zh-cn/library/dn440719(v=pandp.60).aspx
   [Enterprise Library - 暂时性故障处理应用程序块]: http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/

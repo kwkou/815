@@ -4,7 +4,7 @@
 
 当企业过渡到云时，通常会出于技术、法规或安全原因而需要将某些资产保留在本地。借助移动服务，你可以轻松地在这些资产的顶部创建云托管的移动层，同时还可以使用混合连接在你的场所安全地与它们重新建立连接。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。
 
-在本教程中，你将学习如何修改 .NET 后端移动服务，以使用本地 SQL Server 数据库，而不是随服务一起提供的默认 Azure SQL Database。尽管 JavaScript 后端移动服务支持混合连接，但本主题只涉及 .NET 后端移动服务。
+在本教程中，你将学习如何修改 .NET 后端移动服务，以使用本地 SQL Server 数据库，而不是随服务一起提供的默认 Azure SQL数据库。尽管 JavaScript 后端移动服务支持混合连接，但本主题只涉及 .NET 后端移动服务。
 
 本主题将指导你完成以下基本步骤：
 
@@ -188,4 +188,4 @@
   [SQL Management Studio]: ./media/mobile-services-dotnet-backend-hybrid-connections-get-started/12.png
   [混合连接网站]: http://azure.microsoft.com/zh-cn/services/biztalk-services/
   [混合连接概述]: http://go.microsoft.com/fwlink/p/?LinkID=397274
-  [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: http://azure.microsoft.com/zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: /zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/

@@ -113,11 +113,11 @@ WordPress Multisite 当前没有用于映射自定义域的内置方法。但是
 
   [Ben Lobaugh]: http://ben.lobaugh.net
   [Microsoft Open Technologies Inc.]: http://msopentech.com
-  [在 Azure 中从库中创建 WordPress 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-php-web-site-gallery/
+  [在 Azure 中从库中创建 WordPress 网站]: /zh-cn/documentation/articles/web-sites-php-web-site-gallery/
   [WordPress Codex]: http://codex.wordpress.org
   [创建网络]: http://codex.wordpress.org/Create_A_Network
-  [带 MySQL 和 FTP 的 PHP 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
-  [带 MySQL 和 Git 的 PHP 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
+  [带 MySQL 和 FTP 的 PHP 网站]: /zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
+  [带 MySQL 和 Git 的 PHP 网站]: /zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
   [“网络设置”屏幕]: ./media/web-sites-php-convert-wordpress-multisite/wordpress-network-setup.png
   [Multisite 网络的类型]: http://codex.wordpress.org/Before_You_Create_A_Network#Types_of_multisite_network
   [WordPress MU 域映射]: http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/

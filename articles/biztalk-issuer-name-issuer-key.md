@@ -2,7 +2,7 @@
 
 # BizTalk 服务：颁发者名称和颁发者密钥
 
-Azure BizTalk 服务使用 Service Bus 颁发者名称和颁发者密钥以及 Access Control 颁发者名称和颁发者密钥。具体内容包括：
+Azure BizTalk 服务使用 服务总线 颁发者名称和颁发者密钥以及 Access Control 颁发者名称和颁发者密钥。具体内容包括：
 
 <table border="1">
 <tr bgcolor="FAF9F9">
@@ -19,7 +19,7 @@ Azure BizTalk 服务使用 Service Bus 颁发者名称和颁发者密钥以及 A
 </tr>
 <tr>
 <td>在 Visual Studio 中使用 BizTalk 适配器服务创建 LOB 中继</td>
-<td>Service Bus 颁发者名称和颁发者密钥</td>
+<td>服务总线 颁发者名称和颁发者密钥</td>
 </tr>
 </table>
 
@@ -62,14 +62,14 @@ Access Control 颁发者名称和颁发者密钥由以下各项使用：
 <p><a href="http://go.microsoft.com/fwlink/p/?LinkID=303942">如何：使用 ACS 管理服务配置服务标识</a>提供了有关 Access Control 服务标识的详细信息。</p>
 </div>
 
-## Service Bus 颁发者名称和颁发者密钥
+## 服务总线 颁发者名称和颁发者密钥
 
-Service Bus 颁发者名称和颁发者密钥由 BizTalk 适配器服务使用。在 Visual Studio 中的 BizTalk 服务项目中，使用 BizTalk 适配器服务连接到内部部署的业务线 (LOB) 系统。若要连接，请创建 LOB 中继并输入 LOB 系统的详细信息。在执行此操作时，你还可以输入 Service Bus 颁发者名称和颁发者密钥。
+服务总线 颁发者名称和颁发者密钥由 BizTalk 适配器服务使用。在 Visual Studio 中的 BizTalk 服务项目中，使用 BizTalk 适配器服务连接到内部部署的业务线 (LOB) 系统。若要连接，请创建 LOB 中继并输入 LOB 系统的详细信息。在执行此操作时，你还可以输入 服务总线 颁发者名称和颁发者密钥。
 
-### 检索 Service Bus 颁发者名称和颁发者密钥
+### 检索 服务总线 颁发者名称和颁发者密钥
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  在左侧导航窗格中，单击**“Service Bus”**。
+2.  在左侧导航窗格中，单击**“服务总线”**。
 3.  单击你的命名空间。在任务栏中，单击**“连接信息”**。这会显示**“默认颁发者”**（颁发者名称）和**“默认密钥”**（颁发者密钥）。可以复制其值。<br/><br/>
     总结：<br/>
     颁发者名称 = 默认颁发者<br/>

@@ -1,16 +1,16 @@
-<properties linkid="dev-nodejs-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="How to use Service Bus topics (Node.js) - Azure" metaKeywords="Get started Azure Service Bus topics, Get Started Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, Service Bus topic Node.js" description="Learn how to use Service Bus topics and subscriptions in Azure. Code samples are written for Node.js applications." metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Topics/Subscriptions" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-how-to-service-bus-topics" urlDisplayName="服务总线 Topics" pageTitle="How to use 服务总线 topics (Node.js) - Azure" metaKeywords="Get started Azure 服务总线 topics, Get Started 服务总线 topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, 服务总线 topic Node.js" description="Learn how to use 服务总线 topics and subscriptions in Azure. Code samples are written for Node.js applications." metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use 服务总线 Topics/Subscriptions" authors="larryfr" solutions="" manager="" editor="" />
 
-# 如何使用 Service Bus 主题/订阅
+# 如何使用 服务总线 主题/订阅
 
-本指南演示如何从 Node.js 应用程序使用 Service Bus 主题和订阅。涉及的应用场景包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][后续步骤]一节。
+本指南演示如何从 Node.js 应用程序使用 服务总线 主题和订阅。涉及的应用场景包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][后续步骤]一节。
 
 ## 目录
 
--   [什么是 Service Bus 主题和订阅？][什么是 Service Bus 主题和订阅？]
+-   [什么是 服务总线 主题和订阅？][什么是 服务总线 主题和订阅？]
 -   [创建服务命名空间][创建服务命名空间]
 -   [获得命名空间的默认管理凭据][获得命名空间的默认管理凭据]
 -   [创建 Node.js 应用程序][创建 Node.js 应用程序]
--   [配置应用程序以使用 Service Bus][配置应用程序以使用 Service Bus]
+-   [配置应用程序以使用 服务总线][配置应用程序以使用 服务总线]
 -   [如何：创建主题][如何：创建主题]
 -   [如何：创建订阅][如何：创建订阅]
 -   [如何：将消息发送到主题][如何：将消息发送到主题]
@@ -25,9 +25,9 @@
 
 创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 构建网站][使用 WebMatrix 构建网站]。
 
-## <a name="configure-app"></a>配置应用程序以使用 Service Bus
+## <a name="configure-app"></a>配置应用程序以使用 服务总线
 
-若要使用 Azure Service Bus，需要下载和使用 Node.js azure 包。其中包括一组便于与 Service Bus REST 服务进行通信的库。
+若要使用 Azure 服务总线，需要下载和使用 Node.js azure 包。其中包括一组便于与 服务总线 REST 服务进行通信的库。
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
@@ -48,7 +48,7 @@
         ├── xml2js@0.2.7 (sax@0.5.2)
         └── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 
-3.  可以手动运行 **ls** 命令来验证是否创建了**node\_modules** 文件夹。在该文件夹中，找到**azure** 程序包，其中包含访问 Service Bus 主题所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了**node\_modules** 文件夹。在该文件夹中，找到**azure** 程序包，其中包含访问 服务总线 主题所需的库。
 
 ### 导入模块
 
@@ -56,9 +56,9 @@
 
     var azure = require('azure');
 
-### 设置 Azure Service Bus 连接
+### 设置 Azure 服务总线 连接
 
-azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVICEBUS\_ACCESS\_KEY 以获取连接 Azure Service Bus 所需的信息。如果未设置这些环境变量，则必须在调用 **createServiceBusService** 时指定帐户信息。
+azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVICEBUS\_ACCESS\_KEY 以获取连接 Azure 服务总线 所需的信息。如果未设置这些环境变量，则必须在调用 **createServiceBusService** 时指定帐户信息。
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][使用存储构建 Node.js 云服务]。
 
@@ -214,7 +214,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 ## <a name="send-messages"></a>如何将消息发送到主题
 
-若要将消息发送到 Service Bus 主题，你的应用程序必须使用 **ServiceBusService** 对象的 **sendTopicMessage** 方法。 发送到 Service Bus 主题的消息是 **BrokeredMessage** 对象。**BrokeredMessage** 对象具有一组标准属性（如 **Label** 和 **TimeToLive**）、一个用于保存自定义应用程序特定属性的字典，以及字符串数据正文。应用程序可以通过将字符串值传递给 **sendTopicMessage** 来设置消息正文，并且任何必需的标准属性将用默认值填充。
+若要将消息发送到 服务总线 主题，你的应用程序必须使用 **ServiceBusService** 对象的 **sendTopicMessage** 方法。 发送到 服务总线 主题的消息是 **BrokeredMessage** 对象。**BrokeredMessage** 对象具有一组标准属性（如 **Label** 和 **TimeToLive**）、一个用于保存自定义应用程序特定属性的字典，以及字符串数据正文。应用程序可以通过将字符串值传递给 **sendTopicMessage** 来设置消息正文，并且任何必需的标准属性将用默认值填充。
 
 下面的示例演示如何向“MyTopic”发送五条测试消息。请注意，每条消息的 **messagenumber** 属性值因循环迭代而异（这将确定哪些
 订阅接收它）：
@@ -236,15 +236,15 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
         });
     }
 
-Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## <a name="receive-messages"></a>如何从订阅接收消息
 
 对 **ServiceBusService** 对象使用 **receiveSubscriptionMessage** 方法可从订阅接收消息。默认情况下，在读取消息后将从订阅中删除它们；不过，通过将可选参数 **isPeekLock** 设置为**true**，你可以读取（扫视）并锁定消息，以避免将其从订阅中删除。
 
-在接收过程中读取并删除消息的默认行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
+在接收过程中读取并删除消息的默认行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 服务总线 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
-如果将 **isPeekLock** 参数设置为 **true**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 接收请求时，它会查找将要被使用的下一条消息，将其锁定以防止其他使用者接收它，然后将它返回到应用程序。当应用程序完成处理该消息（或将其可靠地存储下来以备将来处理）后，它会通过调用 **deleteMessage** 方法并提供要删除的消息作为参数来完成接收过程的第二阶段。**deleteMessage** 方法会将消息标记为已使用，并从订阅中删除它。
+如果将 **isPeekLock** 参数设置为 **true**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 服务总线 接收请求时，它会查找将要被使用的下一条消息，将其锁定以防止其他使用者接收它，然后将它返回到应用程序。当应用程序完成处理该消息（或将其可靠地存储下来以备将来处理）后，它会通过调用 **deleteMessage** 方法并提供要删除的消息作为参数来完成接收过程的第二阶段。**deleteMessage** 方法会将消息标记为已使用，并从订阅中删除它。
 
 下面的示例演示如何使用 **receiveSubscriptionMessage** 接收和处理消息。该示例先从“LowMessages”订阅接收并删除一条消息，然后将 **isPeekLock** 设置为 true 后再从“HighMessages”接收一条消息。最后使用 **deleteMessage** 删除该消息：
 
@@ -269,9 +269,9 @@ Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其
 
 ## <a name="handle-crashes"></a>如何处理应用程序崩溃和不可读消息
 
-Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对 **ServiceBusService** 对象调用 **unlockMessage** 方法。这会导致 Service Bus 解锁订阅中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
+服务总线 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对 **ServiceBusService** 对象调用 **unlockMessage** 方法。这会导致 服务总线 解锁订阅中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
 
-还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，应用程序崩溃），Service Bus 将自动解锁该消息并使之重新可供接收。
+还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，应用程序崩溃），服务总线 将自动解锁该消息并使之重新可供接收。
 
 如果应用程序在处理消息之后，但在调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的**MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
@@ -295,18 +295,18 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## <a name="next-steps"></a> 后续步骤
 
-现在，你已了解有关 Service Bus 主题的基础知识，单击下面的链接可了解更多信息。
+现在，你已了解有关 服务总线 主题的基础知识，单击下面的链接可了解更多信息。
 
 -   查看 MSDN 参考：[队列、主题和订阅][队列、主题和订阅]。
 -   [SqlFilter][SqlFilter] 的 API 参考。
 -   访问 GitHub 上的 [Azure SDK for Node][Azure SDK for Node] 存储库。
 
   [后续步骤]: #nextsteps
-  [什么是 Service Bus 主题和订阅？]: #what-are-service-bus-topics
+  [什么是 服务总线 主题和订阅？]: #what-are-service-bus-topics
   [创建服务命名空间]: #create-a-service-namespace
   [获得命名空间的默认管理凭据]: #obtain-default-credentials
   [创建 Node.js 应用程序]: #create-app
-  [配置应用程序以使用 Service Bus]: #configure-app
+  [配置应用程序以使用 服务总线]: #configure-app
   [如何：创建主题]: #create-topic
   [如何：创建订阅]: #create-subscription
   [如何：将消息发送到主题]: #send-messages

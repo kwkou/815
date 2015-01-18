@@ -1,16 +1,16 @@
-<properties linkid="develop-php-website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP web site with SQL Database and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web site that stores data in SQL Database." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Web Site and SQL Database using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
+<properties linkid="develop-php-website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP web site with SQL数据库 and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web site that stores data in SQL数据库." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Web Site and SQL数据库 using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
 
-# 使用 WebMatrix 创建和部署 PHP 网站与 SQL Database
+# 使用 WebMatrix 创建和部署 PHP 网站与 SQL数据库
 
-本教程向你演示如何使用 WebMatrix 开发使用 Azure SQL Database 的 PHP 应用程序并将该应用程序部署到 Azure 网站。WebMatrix 是 Microsoft 提供的一类免费的 Web 开发工具，此工具包含进行网站开发所需的一切。WebMatrix 支持 PHP 并包含用于 PHP 开发的智能感知。
+本教程向你演示如何使用 WebMatrix 开发使用 Azure SQL数据库 的 PHP 应用程序并将该应用程序部署到 Azure 网站。WebMatrix 是 Microsoft 提供的一类免费的 Web 开发工具，此工具包含进行网站开发所需的一切。WebMatrix 支持 PHP 并包含用于 PHP 开发的智能感知。
 
 本教程假定你已在计算机上安装 [SQL Server Express][SQL Server Express]，以便能本地测试应用程序。不过，你可以在不安装 SQL Server Express 的情况下完成本教程。相反，你可以将应用程序直接部署到 Azure 网站。
 
-完成本指南之后，你将拥有一个在 Azure 中运行的 PHP-SQL Database 网站。
+完成本指南之后，你将拥有一个在 Azure 中运行的 PHP-SQL数据库 网站。
 
 你将了解到以下内容：
 
--   如何使用管理门户创建 Azure 网站和 SQL Database。由于默认情况下已在 Azure 网站中启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+-   如何使用管理门户创建 Azure 网站和 SQL数据库。由于默认情况下已在 Azure 网站中启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 -   如何使用 WebMatrix 开发 PHP 应用程序。
 -   如何使用 WebMatrix 将应用程序发布和重新发布到 Azure。
 
@@ -22,7 +22,7 @@
 
 ## 先决条件
 
-1.  [下载][下载] Tasklist 应用程序文件。Tasklist 应用程序是一个简单的 PHP 应用程序，可利用该应用程序在任务列表中添加和删除项目以及将项目标记为完成。任务列表项目存储在 SQL Database（用于本地测试的 SQL Server Express）中。此应用程序包含以下文件：
+1.  [下载][下载] Tasklist 应用程序文件。Tasklist 应用程序是一个简单的 PHP 应用程序，可利用该应用程序在任务列表中添加和删除项目以及将项目标记为完成。任务列表项目存储在 SQL数据库（用于本地测试的 SQL Server Express）中。此应用程序包含以下文件：
 
 -   **index.php**：显示任务并提供用于向列表添加项目的窗体。
 -   **additem.php**：向列表中添加一个项。
@@ -30,7 +30,7 @@
 -   **markitemcomplete.php**：将项目的状态更改为已完成。
 -   **deleteitem.php**：删除项目。
 -   **taskmodel.php**：包含用于在数据库中添加、获取、更新和删除项目的函数。
--   **createtable.php**：为应用程序创建 SQL Database 表。该文件只能被调用一次。
+-   **createtable.php**：为应用程序创建 SQL数据库 表。该文件只能被调用一次。
 
 1.  创建一个 SQL Server 数据库，名为`tasklist`。你可以从`sqlcmd` 命令提示符使用以下命令执行此操作：
 
@@ -40,7 +40,7 @@
 
     此步骤仅在你需要本地测试应用程序时是必需的。
 
-## 创建网站和 SQL Database
+## 创建网站和 SQL数据库
 
 1.  登录到 [管理门户][预览门户]。
 2.  单击该门户左下角的“+ 新建”图标。
@@ -51,13 +51,13 @@
 
     ![自定义创建新的网站][自定义创建新的网站]
 
-    输入“URL”的值，从“数据库”下拉列表中选择“新建 SQL Database”，并在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
+    输入“URL”的值，从“数据库”下拉列表中选择“新建 SQL数据库”，并在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
 
     ![填写网站详细信息][填写网站详细信息]
 
-4.  输入你的数据库的“名称”的值并且选择“新建 SQL Database 服务器”。输入服务器登录名和密码（并确认密码）。选择你将在其中创建新的 SQL Database 服务器的区域。
+4.  输入你的数据库的“名称”的值并且选择“新建 SQL数据库 服务器”。输入服务器登录名和密码（并确认密码）。选择你将在其中创建新的 SQL数据库 服务器的区域。
 
-    ![填写 SQL Database 设置][填写 SQL Database 设置]
+    ![填写 SQL数据库 设置][填写 SQL数据库 设置]
 
     创建网站后，你会看到文本“创建网站‘[SITENAME]’已成功”。接下来，你将获取数据库连接信息。
 
@@ -125,7 +125,7 @@
 
 ## <span id="Publish"></span></a>发布应用程序
 
-在将应用程序发布到 Azure 网站之前，需要将`taskmodel.php` 中的数据库连接信息与前面获取的连接信息（在[创建 Azure 网站和 SQL Database][创建 Azure 网站和 SQL Database] 一节中）一起更新。
+在将应用程序发布到 Azure 网站之前，需要将`taskmodel.php` 中的数据库连接信息与前面获取的连接信息（在[创建 Azure 网站和 SQL数据库][创建 Azure 网站和 SQL数据库] 一节中）一起更新。
 
 1.  双击`taskmodel.php` 文件以打开该文件，并更新`connect` 函数中的数据库连接信息。
 
@@ -175,7 +175,7 @@
   [创建新的 Azure 网站]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite1.jpg
   [自定义创建新的网站]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite2.png
   [填写网站详细信息]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite3_SQL.png
-  [填写 SQL Database 设置]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite4_SQL.png
+  [填写 SQL数据库 设置]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite4_SQL.png
   [链接的资源]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite6_SQL.png
   [连接字符串]: ./media/web-sites-php-sql-database-use-webmatrix/NewWebSite7.png
   [安装 WebMatrix]: ./media/web-sites-php-sql-database-use-webmatrix/InstallWebMatrix.png
@@ -185,7 +185,7 @@
   [WebMatrix - 添加现有文件]: ./media/web-sites-php-sql-database-use-webmatrix/edit_addexisting.png
   [发布应用程序]: #Publish
   [WebMatrix - 在浏览器中启动 createtable.php]: ./media/web-sites-php-sql-database-use-webmatrix/edit_run.png
-  [创建 Azure 网站和 SQL Database]: #CreateWebsite
+  [创建 Azure 网站和 SQL数据库]: #CreateWebsite
   [WebMatrix - 发布]: ./media/web-sites-php-sql-database-use-webmatrix/edit_publish.png
   [http://[你的]: http://[your
   [WebMatrix - 打开远程视图]: ./media/web-sites-php-sql-database-use-webmatrix/OpenRemoteView.png

@@ -549,7 +549,7 @@ Microsoft.WindowsAzure.CloudConfigurationManager 命名空间，
 -   查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     -   使用 [Blob 存储][]来存储非结构化数据。
     -   使用[队列存储][]来存储结构化数据。
-    -   使用 [SQL Database][] 来存储关系数据。
+    -   使用 [SQL数据库][] 来存储关系数据。
 
   [后续步骤]: #next-steps
   [如何：以编程方式访问表存储]: #configure-access
@@ -584,6 +584,6 @@ Microsoft.WindowsAzure.CloudConfigurationManager 命名空间，
   [.NET 存储客户端库参考]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Blob 存储]: /en-us/documentation/articles/storage-dotnet-how-to-use-blobs/
-  [队列存储]: /en-us/documentation/articles/storage-dotnet-how-to-use-queues/
-  [SQL Database]: /en-us/documentation/articles/sql-database-dotnet-how-to-use/
+  [Blob 存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/
+  [队列存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/
+  [SQL数据库]: /zh-cn/documentation/articles/sql-database-dotnet-how-to-use/

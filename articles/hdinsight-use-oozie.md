@@ -67,17 +67,17 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。它与 Had
 	<tr><td>Azure Blob 容器名称</td><td>$containerName</td><td></td><td>在此示例中，使用用于默认 HDInsight 群集文件系统的 Azure Blob 存储容器。默认情况下，该容器与 HDInsight 群集同名。</td></tr>
 	</table>
 
-- **Azure SQL Database**。你必须为 SQL Database 服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 SQL 数据库和配置防火墙的说明，请参阅[使用 Azure SQL 数据库入门][sqldatabase-get-started]。本文提供了用于创建本教程所需的 SQL 数据库表的 PowerShell 脚本。
+- **Azure SQL数据库**。你必须为 SQL数据库 服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 SQL 数据库和配置防火墙的说明，请参阅[使用 Azure SQL 数据库入门][sqldatabase-get-started]。本文提供了用于创建本教程所需的 SQL 数据库表的 PowerShell 脚本。
 
 	<table border = "1">
 	<tr><th>SQL 数据库属性</th><th>PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-	<tr><td>SQL 数据库服务器名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中的 SQL Database 服务器。 </td></tr>
-	<tr><td>SQL 数据库登录名</td><td>$sqlDatabaseLogin</td><td></td><td>SQL Database 登录名。</td></tr>
-	<tr><td>SQL 数据库登录密码</td><td>$sqlDatabaseLoginPassword</td><td></td><td>SQL Database 登录密码。</td></tr>
-	<tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中的 Azure SQL Database。 </td></tr>
+	<tr><td>SQL 数据库服务器名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中的 SQL数据库 服务器。 </td></tr>
+	<tr><td>SQL 数据库登录名</td><td>$sqlDatabaseLogin</td><td></td><td>SQL数据库 登录名。</td></tr>
+	<tr><td>SQL 数据库登录密码</td><td>$sqlDatabaseLoginPassword</td><td></td><td>SQL数据库 登录密码。</td></tr>
+	<tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中的 Azure SQL数据库。 </td></tr>
 	</table>
 
-	> [WACOM.NOTE] 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL Database][sqldatabase-create-configue]。
+	> [WACOM.NOTE] 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL数据库][sqldatabase-create-configue]。
 
 
 > [WACOM.NOTE] 将值填入表。这将有助于学习本教程。
@@ -195,8 +195,8 @@ Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。�
 
 	<table border = "1">
 	<tr><th>Sqoop 操作变量</th><th>说明</th></tr>
-	<tr><td>${sqlDatabaseConnectionString}</td><td>SQL Database 连接字符串。</td></tr>
-	<tr><td>${sqlDatabaseTableName}</td><td>数据将要导出到的 SQL Database 表。</td></tr>
+	<tr><td>${sqlDatabaseConnectionString}</td><td>SQL数据库 连接字符串。</td></tr>
+	<tr><td>${sqlDatabaseTableName}</td><td>数据将要导出到的 SQL数据库 表。</td></tr>
 	<tr><td>${hiveOutputFolder}</td><td>Hive INSERT OVERWRITE 语句的输出文件夹。这是用于 Sqoop Export export-dir 的同一个文件夹。</td></tr>
 	</table>
 
@@ -211,7 +211,7 @@ Oozie 工作流定义是用 hPDL（一种 XML 过程定义语言）编写的。�
 - 将 HiveQL 脚本 (useoozie.hql) 复制到 Azure Blob 存储 wasb:///tutorials/useoozie/useoozie.hql。
 - 将 workflow.xml 复制到 wasb:///tutorials/useoozie/workflow.xml。
 - 将数据文件 (/example/data/sample.log) 复制到 wasb:///tutorials/useoozie/data/sample.log。
-- 创建用于存储 Sqoop 导出数据的 SQL Database 表。表的名称为 *log4jLogCount*。
+- 创建用于存储 Sqoop 导出数据的 SQL数据库 表。表的名称为 *log4jLogCount*。
 
 **了解 HDInsight 存储**
 
@@ -510,7 +510,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 	![教程运行工作流输出][img-runworkflow-output]
 
-8. 连接到 SQL Database 以查看导出的数据。
+8. 连接到 SQL数据库 以查看导出的数据。
 
 **检查作业错误日志**
 

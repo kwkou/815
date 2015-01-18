@@ -157,7 +157,7 @@ azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 -   访问 [Azure 存储服务团队博客][]
 -   访问 GitHub 上的 [Azure SDK for Ruby][] 存储库
 
-有关本文中讨论的 Azure 队列服务与[如何使用 Service Bus 队列][]一文中讨论的 Azure Service Bus 队列的比较，请参阅 [Azure 队列和 Azure Service Bus 队列 - 比较与对照][]
+有关本文中讨论的 Azure 队列服务与[如何使用 服务总线 队列][]一文中讨论的 Azure 服务总线 队列的比较，请参阅 [Azure 队列和 Azure 服务总线 队列 - 比较与对照][]
 
   [后续步骤]: #next-steps
   [什么是队列存储？]: #what-is
@@ -181,5 +181,5 @@ azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储服务团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [Azure SDK for Ruby]: https://github.com/WindowsAzure/azure-sdk-for-ruby
-  [如何使用 Service Bus 队列]: /zh-cn/documentation/articles/service-bus-ruby-how-to-use-queues/
-  [Azure 队列和 Azure Service Bus 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx
+  [如何使用 服务总线 队列]: /zh-cn/documentation/articles/service-bus-ruby-how-to-use-queues/
+  [Azure 队列和 Azure 服务总线 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx

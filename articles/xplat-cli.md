@@ -4,7 +4,7 @@
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/install-configure-powershell/" title="PowerShell">PowerShell</a><a href="/zh-cn/documentation/articles/xplat-cli/" title="跨平台 CLI" class="current">跨平台 CLI</a></div>
 
-Azure 跨平台命令行接口 (xplat-cli) 提供了一组开源的跨平台命令以便使用 Azure 平台。该 xplat-cli 提供了很多与 Azure 管理门户中提供的功能相同的功能，例如用于管理网站、虚拟机、移动服务、SQL Database 以及 Azure 平台提供的其他服务的功能。
+Azure 跨平台命令行接口 (xplat-cli) 提供了一组开源的跨平台命令以便使用 Azure 平台。该 xplat-cli 提供了很多与 Azure 管理门户中提供的功能相同的功能，例如用于管理网站、虚拟机、移动服务、SQL数据库 以及 Azure 平台提供的其他服务的功能。
 
 该 xplat-cli 是用 JavaScript 编写的，且需要 Node.js。它是使用 Azure SDK for Node.js 实现的，且基于 Apache 2.0 许可证发布。项目存储库位于 <https://github.com/WindowsAzure/azure-sdk-tools-xplat>。
 
@@ -195,7 +195,7 @@ xplat-cli 有两种安装方法：使用适用于 Windows 和 OS X 的安装程�
     help:      hdinsight      Commands to manage your HDInsight accounts
     help:      mobile         Commands to manage your Mobile Services
     help:      network        Commands to manage your Networks
-    help:      sb             Commands to manage your Service Bus configuration
+    help:      sb             Commands to manage your 服务总线 configuration
     help:      service        Commands to manage your Cloud Services
     help:      site           Commands to manage your Web Sites
     help:      sql            Commands to manage your SQL Server accounts

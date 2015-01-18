@@ -5,7 +5,7 @@
 本教程介绍用于在 Azure 网站上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的各种方法。Azure 网站的使用很简单，并且你的 Python 应用程序将有缩放和扩展到其他 Azure 服务的空间。Azure 网站平台包括 Python 2.7 和 Python 的常规 wfastcgi.py FastCGI 处理程序。你只需将网站配置为使用 Python 处理程序即可。
 
 有关在 Azure 网站上配置 Django 框架的更复杂示例，请参阅以下教程：
-[][]<http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-python-create-deploy-django-app/></a>。
+[][]</zh-cn/documentation/articles/web-sites-python-create-deploy-django-app/></a>。
 
 ## WSGI 支持
 
@@ -127,7 +127,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 ![][5]
 
-  []: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-python-create-deploy-django-app/
+  []: /zh-cn/documentation/articles/web-sites-python-create-deploy-django-app/
   [PEP 3333]: http://www.python.org/dev/peps/pep-3333/
   [1]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-create-websites/
   []: ./media/web-sites-python-configure/configure-python-create-website.png

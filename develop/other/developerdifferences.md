@@ -510,14 +510,14 @@
 <p>
   <span>
 
-    <span>·</span>网络服务 – Traffic Manager
+    <span>·</span>网络服务 – 流量管理器
   </span>
 
 </p>
 <p>
   <span>
 
-    <span>·</span>应用服务 – 服务总线(Service Bus)
+    <span>·</span>应用服务 – 服务总线(服务总线)
   </span>
 
 </p>

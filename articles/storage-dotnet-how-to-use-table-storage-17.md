@@ -514,7 +514,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 -   在以下位置了解使用 Azure 存储服务能够执行的更高级任务：[在 Azure 中存储和访问数据][]。
 -   查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     -   使用 [Blob 存储][]来存储非结构化数据。
-    -   使用 [SQL Database][] 来存储关系数据。
+    -   使用 [SQL数据库][] 来存储关系数据。
 
   [1.7 版]: /en-us/develop/net/how-to-guides/table-services-v17/ "1.7 版"
   [2.0 版]: /en-us/develop/net/how-to-guides/table-services/ "2.0 版"
@@ -548,4 +548,4 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Blob 存储]: /en-us/develop/net/how-to-guides/blob-storage/
-  [SQL Database]: /en-us/develop/net/how-to-guides/sql-database/
+  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/

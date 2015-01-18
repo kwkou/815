@@ -1,31 +1,31 @@
-# 如何管理 Azure 上的 SQL Database
+# 如何管理 Azure 上的 SQL数据库
 
-本指南演示了如何针对 Azure SQL Database 上的逻辑服务器和数据库实例执行管理任务。
+本指南演示了如何针对 Azure SQL数据库 上的逻辑服务器和数据库实例执行管理任务。
 
-## 什么是 SQL Database？
+## 什么是 SQL数据库？
 
-SQL Database 在 Azure 上提供关系数据库管理服务并且基于 SQL Server 技术。通过使用 SQL Database，您可以轻松地设置和部署数据库实例，并且利用能够为企业级可用性、可缩放性和安全性提供内置数据保护和自愈优势的分布式数据中心。
+SQL数据库 在 Azure 上提供关系数据库管理服务并且基于 SQL Server 技术。通过使用 SQL数据库，您可以轻松地设置和部署数据库实例，并且利用能够为企业级可用性、可缩放性和安全性提供内置数据保护和自愈优势的分布式数据中心。
 
 ## 目录
 
 -   [登录 Azure][登录 Azure]
--   [配置 SQL Database][配置 SQL Database]
+-   [配置 SQL数据库][配置 SQL数据库]
 -   [使用 Management Studio 进行连接][使用 Management Studio 进行连接]
 -   [将数据库部署到 Azure][将数据库部署到 Azure]
 -   [添加登录名和用户][添加登录名和用户]
--   [缩放 SQL Database 解决方案][缩放 SQL Database 解决方案]
+-   [缩放 SQL数据库 解决方案][缩放 SQL数据库 解决方案]
 -   [监视逻辑服务器和数据库实例][监视逻辑服务器和数据库实例]
 -   [后续步骤][后续步骤]
 
 ## <span id="PreReq1"></span></a>登录 Azure
 
-SQL Database 在 Azure 上提供关系数据存储、访问和管理服务。若要使用它，您将需要一个 Azure 订阅。
+SQL数据库 在 Azure 上提供关系数据存储、访问和管理服务。若要使用它，您将需要一个 Azure 订阅。
 
 1.  打开 Web 浏览器并浏览到 <http://www.windowsazure.cn>。若要开始使用免费帐户，请单击右上角的“免费试用”并执行相应步骤。
 
 2.  现已创建您的帐户。一切准备就绪，即可开始。
 
-## <span id="PreReq2"></span></a>创建和配置 SQL Database
+## <span id="PreReq2"></span></a>创建和配置 SQL数据库
 
 接下来，您将逐步了解逻辑服务器的创建和配置过程。在新的 Azure（预览版）管理门户中，您可以先使用已修订的工作流创建数据库，然后再创建服务器。
 
@@ -35,35 +35,35 @@ SQL Database 在 Azure 上提供关系数据存储、访问和管理服务。若
 
 1.  在 <http://www.windowsazure.cn> 中进行登录，
 
-2.  单击“SQL Database”，然后单击 SQL Database 主页上的“服务器”。
+2.  单击“SQL数据库”，然后单击 SQL数据库 主页上的“服务器”。
 
 3.  单击页面底部的“添加”。
 
 4.  在“服务器设置”中，输入一个没有空格的单词作为管理员名称。
 
-    SQL Database 使用 SQL 身份验证进行加密连接。将使用您提供的名称创建一个分配给 sysadmin 固定服务器角色的新 SQL Server 身份验证登录名。
+    SQL数据库 使用 SQL 身份验证进行加密连接。将使用您提供的名称创建一个分配给 sysadmin 固定服务器角色的新 SQL Server 身份验证登录名。
 
-    该登录名不能是电子邮件地址、Windows 用户帐户或 Windows Live ID。SQL Database 不支持声明，也不支持 Windows 身份验证。
+    该登录名不能是电子邮件地址、Windows 用户帐户或 Windows Live ID。SQL数据库 不支持声明，也不支持 Windows 身份验证。
 
 5.  提供由大小写值以及数字或符号共同组成的 8 个以上字符的强密码。
 
 6.  选择区域。区域将确定服务器的地理位置。区域不能随意切换，因此要选择一个对此服务器有效的区域。选择一个最靠近您的位置。将 Azure 应用程序和数据库放置在同一区域可以降低出口带宽成本以及减少数据延迟情况。
 
-7.  确保“允许服务”选项处于选中状态，以便您能够使用 SQL Database 管理门户、存储服务以及 Azure 上的其他服务连接到此数据库。
+7.  确保“允许服务”选项处于选中状态，以便您能够使用 SQL数据库 管理门户、存储服务以及 Azure 上的其他服务连接到此数据库。
 
 8.  完成后，请单击页面底部的复选标记。
 
-请注意，您没有指定服务器名称。SQL Database 会自动生成服务器名称以确保没有重复的 DNS 条目。服务器名称是一个由 10 个字符组成的字母数字字符串。您不能更改 SQL Database 服务器的名称。
+请注意，您没有指定服务器名称。SQL数据库 会自动生成服务器名称以确保没有重复的 DNS 条目。服务器名称是一个由 10 个字符组成的字母数字字符串。您不能更改 SQL数据库 服务器的名称。
 
 在下一步中，您将配置防火墙以便允许您网络上运行的应用程序通过建立连接来访问相关数据。
 
 ### <span id="configFWLogical"></span></a>配置逻辑服务器的防火墙
 
-1.  依次单击“SQL Database”、“服务器”以及您刚创建的服务器。
+1.  依次单击“SQL数据库”、“服务器”以及您刚创建的服务器。
 
 2.  单击**“配置”**。
 
-3.  复制当前客户端 IP 地址。如果您从某网络进行连接，则为您的路由器或代理服务器侦听的 IP 地址。SQL Database 会检测当前连接所使用的 IP 地址，以便您可以创建一个接受来自该设备的连接请求的防火墙规则。
+3.  复制当前客户端 IP 地址。如果您从某网络进行连接，则为您的路由器或代理服务器侦听的 IP 地址。SQL数据库 会检测当前连接所使用的 IP 地址，以便您可以创建一个接受来自该设备的连接请求的防火墙规则。
 
 4.  将 IP 地址粘贴到起始和结束地址范围中。日后，如果您遇到指示该范围太窄的连接错误，则可以编辑此规则来扩大范围。
 
@@ -83,9 +83,9 @@ SQL Database 在 Azure 上提供关系数据存储、访问和管理服务。若
 
 Management Studio 是一种管理工具，让您能够管理单个工作空间中的多个 SQL Server 实例和服务器。如果您已经有了本地 SQL Server 实例，则可同时打开与本地实例和 Azure 上的逻辑服务器的连接，以便并行执行任务。
 
-Management Studio 包括在管理门户中当前不可用的功能，例如语法检查程序以及保存脚本和命名查询以供重复使用的功能。SQL Database 只是一个表格格式数据流 (TDS) 终结点。适用于 TDS 的任何工具，包括 Management Studio，都可以有效地执行 SQL Database 操作。您为本地服务器开发的脚本将在 SQL Database 逻辑服务器上运行。
+Management Studio 包括在管理门户中当前不可用的功能，例如语法检查程序以及保存脚本和命名查询以供重复使用的功能。SQL数据库 只是一个表格格式数据流 (TDS) 终结点。适用于 TDS 的任何工具，包括 Management Studio，都可以有效地执行 SQL数据库 操作。您为本地服务器开发的脚本将在 SQL数据库 逻辑服务器上运行。
 
-在下一步中，您将使用 Management Studio 连接到 Azure 上的逻辑服务器。执行此步骤要求您安装了 SQL Server Management Studio 2008 R2 或 2012 版本。如果您在下载或连接到 Management Studio 方面需要帮助，请参阅本网站上的[使用 Management Studio 管理 SQL Database][使用 Management Studio 管理 SQL Database]。
+在下一步中，您将使用 Management Studio 连接到 Azure 上的逻辑服务器。执行此步骤要求您安装了 SQL Server Management Studio 2008 R2 或 2012 版本。如果您在下载或连接到 Management Studio 方面需要帮助，请参阅本网站上的[使用 Management Studio 管理 SQL数据库][使用 Management Studio 管理 SQL数据库]。
 
 在能够连接之前，有时必须创建防火墙例外，允许本地系统的端口 1433 上的出站请求。安全的计算机通常默认不打开端口 1433。
 
@@ -117,15 +117,15 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 
 ## <span id="HowTo1"></span></a>将数据库部署到 Azure
 
-有很多方法可将本地 SQL Server 数据库移动到 Azure。在此任务中，您将使用“将数据库部署到 SQL Database”向导来上载示例数据库。
+有很多方法可将本地 SQL Server 数据库移动到 Azure。在此任务中，您将使用“将数据库部署到 SQL数据库”向导来上载示例数据库。
 
-School 示例数据库方便简单；其所有对象均与 SQL Database 兼容，因此不需要修改或准备要迁移的数据库。作为新的管理员，请在使用您自己的数据库之前先尝试部署简单的数据库，以了解相关步骤。
+School 示例数据库方便简单；其所有对象均与 SQL数据库 兼容，因此不需要修改或准备要迁移的数据库。作为新的管理员，请在使用您自己的数据库之前先尝试部署简单的数据库，以了解相关步骤。
 
-**注意：**有关如何准备要迁移到 Azure 的本地数据库的详细说明，请查看“SQL Database 迁移指南”。此外，请考虑下载 Azure 培训工具包。它包含一个实验，演示了用于迁移本地数据库的替代方法。
+**注意：**有关如何准备要迁移到 Azure 的本地数据库的详细说明，请查看“SQL数据库 迁移指南”。此外，请考虑下载 Azure 培训工具包。它包含一个实验，演示了用于迁移本地数据库的替代方法。
 
 ### <span id="CreateDB"></span></a>在本地服务器上创建 school 数据库
 
-可在 [SQL Database 管理入门][SQL Database 管理入门]中找到用于创建此数据库的脚本。在本指南中，您将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
+可在 [SQL数据库 管理入门][SQL数据库 管理入门]中找到用于创建此数据库的脚本。在本指南中，您将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
 
 1.  在 Management Studio 中，连接到本地服务器。右键单击“数据库”、单击“新建数据库”，然后输入 *school*。
 
@@ -625,13 +625,13 @@ VALUES (1061, 30, 4);
 GO
 </pre></div>
 
-现在，您拥有了一个可导出到 Azure 的本地数据库。接下来，您将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL Database 中的向导。
+现在，您拥有了一个可导出到 Azure 的本地数据库。接下来，您将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL数据库 中的向导。
 
-### <span id="DeployDB"></span></a>部署到 SQL Database
+### <span id="DeployDB"></span></a>部署到 SQL数据库
 
 1.  在 Management Studio 中，连接到包含您要迁移的数据库的本地 SQL Server 实例。
 
-2.  右键单击您刚创建的 school 数据库、指向“任务”，然后单击“将数据库部署到 SQL Database”。
+2.  右键单击您刚创建的 school 数据库、指向“任务”，然后单击“将数据库部署到 SQL数据库”。
 
 3.  在“部署设置”中，为该数据库输入一个名称，如 *school*。
 
@@ -641,7 +641,7 @@ GO
 
 6.  在“身份验证”中，选择“SQL Server 身份验证”。
 
-7.  输入您在创建 SQL Database 逻辑服务器时设置的管理员登录名和密码。
+7.  输入您在创建 SQL数据库 逻辑服务器时设置的管理员登录名和密码。
 
 8.  单击“选项”。
 
@@ -689,7 +689,7 @@ ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
 
 对于第一个脚本，您将连接到 master 数据库并运行创建登录名的脚本。登录名将用于支持读写操作，并且委托操作任务，例如能够在没有“SA”权限的情况下运行系统查询。
 
-您创建的登录名必须是 SQL Server 身份验证登录名。如果您已经有了使用 Windows 用户标识或声明标识的现成脚本，则该脚本将不在 SQL Database 上运行。
+您创建的登录名必须是 SQL Server 身份验证登录名。如果您已经有了使用 Windows 用户标识或声明标识的现成脚本，则该脚本将不在 SQL数据库 上运行。
 
 第二个脚本用于分配数据库用户权限。对于此脚本，您将连接到已在 Azure 上装载的数据库。
 
@@ -753,19 +753,19 @@ GRANT VIEW DATABASE STATE to 'sqlops';
 
 6.  打开第二个查询窗口，并将连接上下文更改为 *sqlwriter*。相同的查询现在应该成功运行。
 
-您现在已经创建和测试了几个登录名。有关详细信息，请参阅[在 SQL Database 中管理数据库和登录][在 SQL Database 中管理数据库和登录]和[使用动态管理视图监视 SQL Database][使用动态管理视图监视 SQL Database]。
+您现在已经创建和测试了几个登录名。有关详细信息，请参阅[在 SQL数据库 中管理数据库和登录][在 SQL数据库 中管理数据库和登录]和[使用动态管理视图监视 SQL数据库][使用动态管理视图监视 SQL数据库]。
 
 ## <span id="HowTo3"></span></a>监视逻辑服务器和数据库实例
 
-您在本地服务器上通常使用的监视工具和方法（例如审核登录名、运行跟踪和使用性能计数器）并不适用于 SQL Database。在 Azure 上，您可以使用数据管理视图 (DMV) 来监视数据容量、查询问题和当前连接。
+您在本地服务器上通常使用的监视工具和方法（例如审核登录名、运行跟踪和使用性能计数器）并不适用于 SQL数据库。在 Azure 上，您可以使用数据管理视图 (DMV) 来监视数据容量、查询问题和当前连接。
 
-有关详细信息，请参阅[使用动态管理视图监视 SQL Database][使用动态管理视图监视 SQL Database]。
+有关详细信息，请参阅[使用动态管理视图监视 SQL数据库][使用动态管理视图监视 SQL数据库]。
 
-## <span id="HowTo4"></span></a>缩放 SQL Database 解决方案
+## <span id="HowTo4"></span></a>缩放 SQL数据库 解决方案
 
 在 Azure 上，数据库可伸缩性是横向扩展的同义词，在横向扩展时，工作负载将跨数据中心内的多个商品服务器重新分配。横向扩展是一种解决数据容量或性能问题的策略。一个具有高速增长趋势的超大型数据库无论是供部分用户还是供大量用户访问，最终都将需要横向扩展策略。
 
-通过联合可在 Azure 上以最佳方式实现横向扩展。SQL Database 联合基于水平分片，其中一个或多个表按行进行拆分，并被划分到多个联合成员中。
+通过联合可在 Azure 上以最佳方式实现横向扩展。SQL数据库 联合基于水平分片，其中一个或多个表按行进行拆分，并被划分到多个联合成员中。
 
 联合并不是解决每个可伸缩性问题的唯一方法。有时，可根据数据的特征或应用程序要求采用更简单的方法。下表按复杂性顺序显示了可能的解决方案。
 
@@ -781,9 +781,9 @@ GRANT VIEW DATABASE STATE to 'sqlops';
 
 **使用联合**
 
-使用 SQL Database 中的联合方法可大大提高可伸缩性和性能。数据库中的一个或多个表按行进行拆分，并被划分到多个数据库（联合成员）中。这种水平分区通常称为“分片”。如果您需要实现缩放、提高性能或管理容量，则该方法在此类主要情形中很有用。
+使用 SQL数据库 中的联合方法可大大提高可伸缩性和性能。数据库中的一个或多个表按行进行拆分，并被划分到多个数据库（联合成员）中。这种水平分区通常称为“分片”。如果您需要实现缩放、提高性能或管理容量，则该方法在此类主要情形中很有用。
 
-企业版支持联合。有关详细信息，请参阅 [SQL Database 中的联合][SQL Database 中的联合]和 [SQL Database 联合教程 - DBA][SQL Database 联合教程 - DBA]。
+企业版支持联合。有关详细信息，请参阅 [SQL数据库 中的联合][SQL数据库 中的联合]和 [SQL数据库 联合教程 - DBA][SQL数据库 联合教程 - DBA]。
 
 **考虑其他存储形式。**
 
@@ -791,24 +791,24 @@ GRANT VIEW DATABASE STATE to 'sqlops';
 
 ## <span id="NextSteps"></span></a> 后续步骤
 
-现在，您已了解有关 SQL Database 管理的基础知识，单击下面的链接可了解如何执行更复杂的管理任务。
+现在，您已了解有关 SQL数据库 管理的基础知识，单击下面的链接可了解如何执行更复杂的管理任务。
 
--   请参阅 MSDN 上的 [SQL Database][SQL Database]
--   请访问 [SQL Database TechNet WIKI][SQL Database TechNet WIKI]
+-   请参阅 MSDN 上的 [SQL数据库][SQL数据库]
+-   请访问 [SQL数据库 TechNet WIKI][SQL数据库 TechNet WIKI]
 
   [登录 Azure]: #PreReq1
-  [配置 SQL Database]: #PreReq2
+  [配置 SQL数据库]: #PreReq2
   [使用 Management Studio 进行连接]: #PreReq3
   [将数据库部署到 Azure]: #HowTo1
   [添加登录名和用户]: #HowTo2
-  [缩放 SQL Database 解决方案]: #HowTo4
+  [缩放 SQL数据库 解决方案]: #HowTo4
   [监视逻辑服务器和数据库实例]: #HowTo3
   [后续步骤]: #NextSteps
-  [使用 Management Studio 管理 SQL Database]: http://azure.microsoft.com/zh-cn/documentation/articles/sql-database-manage-azure-ssms/
-  [SQL Database 管理入门]: http://www.windowsazure.cn/zh-cn/manage/services/sql-databases/how-to-manage-a-sqldb/
-  [在 SQL Database 中管理数据库和登录]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
-  [使用动态管理视图监视 SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
-  [SQL Database 中的联合]: http://msdn.microsoft.com/zh-cn/library/azure/hh597452.aspx
-  [SQL Database 联合教程 - DBA]: http://msdn.microsoft.com/zh-cn/library/azure/hh778416.aspx
-  [SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/gg619386
-  [SQL Database TechNet WIKI]: http://social.technet.microsoft.com/wiki/contents/articles/2267.sql-azure-technet-wiki-articles-index-zh-cn.aspx
+  [使用 Management Studio 管理 SQL数据库]: /zh-cn/documentation/articles/sql-database-manage-azure-ssms/
+  [SQL数据库 管理入门]: http://www.windowsazure.cn/zh-cn/manage/services/sql-databases/how-to-manage-a-sqldb/
+  [在 SQL数据库 中管理数据库和登录]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
+  [使用动态管理视图监视 SQL数据库]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
+  [SQL数据库 中的联合]: http://msdn.microsoft.com/zh-cn/library/azure/hh597452.aspx
+  [SQL数据库 联合教程 - DBA]: http://msdn.microsoft.com/zh-cn/library/azure/hh778416.aspx
+  [SQL数据库]: http://msdn.microsoft.com/zh-cn/library/azure/gg619386
+  [SQL数据库 TechNet WIKI]: http://social.technet.microsoft.com/wiki/contents/articles/2267.sql-azure-technet-wiki-articles-index-zh-cn.aspx

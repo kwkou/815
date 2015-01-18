@@ -1,4 +1,4 @@
-<properties title="将 Azure SQL DB 灵活扩展引用添加到 Visual Studio 项目" pageTitle="将 Azure SQL DB 灵活扩展引用添加到 Visual Studio 项目" description="如何使用 Nuget 将灵活扩展 API 的 .NET 引用添加到 Visual Studio 项目。" metaKeywords="Azure SQL Database, elastic scale, Nuget references" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="将 Azure SQL DB 灵活扩展引用添加到 Visual Studio 项目" pageTitle="将 Azure SQL DB 灵活扩展引用添加到 Visual Studio 项目" description="如何使用 Nuget 将灵活扩展 API 的 .NET 引用添加到 Visual Studio 项目。" metaKeywords="Azure SQL数据库, elastic scale, Nuget references" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
@@ -16,7 +16,7 @@
 4.  在“联机搜索”对话框中，键入“灵活扩展”、选择“灵活扩展客户端库”，然后单击“安装”。
 5.  查看许可证，然后单击“我接受”。
 
-Azure SQL Database 灵活扩展引用现已添加到您的项目。
+Azure SQL数据库 灵活扩展引用现已添加到您的项目。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

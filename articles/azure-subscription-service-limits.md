@@ -1,4 +1,4 @@
-<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL Database, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL数据库, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 # Azure 订阅和服务限制、配额和约束
 
@@ -251,9 +251,9 @@
 
 有关 SQL 数据库限制，请参阅以下主题：
 
--   [Azure SQL Database 服务层（版本）][Azure SQL Database 服务层（版本）]
--   [Azure SQL Database 服务层和性能级别][Azure SQL Database 服务层和性能级别]
--   [SQL Database 资源限制][SQL Database 资源限制]
+-   [Azure SQL数据库 服务层（版本）][Azure SQL数据库 服务层（版本）]
+-   [Azure SQL数据库 服务层和性能级别][Azure SQL数据库 服务层和性能级别]
+-   [SQL数据库 资源限制][SQL数据库 资源限制]
 
 ## <a name="seealso"></a>另请参阅
 
@@ -261,11 +261,11 @@
 
 [Azure 存储服务可伸缩性和性能目标][Azure 存储服务可伸缩性和性能目标]
 
-[Azure SQL Database 服务层（版本）][Azure SQL Database 服务层（版本）]
+[Azure SQL数据库 服务层（版本）][Azure SQL数据库 服务层（版本）]
 
-[Azure SQL Database 服务层和性能级别][Azure SQL Database 服务层和性能级别]
+[Azure SQL数据库 服务层和性能级别][Azure SQL数据库 服务层和性能级别]
 
-[SQL Database 资源限制][SQL Database 资源限制]
+[SQL数据库 资源限制][SQL数据库 资源限制]
 
   [订阅限制]: #subscription
   [Web 工作进程限制]: #webworkerlimits
@@ -276,7 +276,7 @@
   [客户支持]: http://www.windowsazure.cn/support/faq/
   [虚拟网络网关]: http://msdn.microsoft.com/zh-cn/library/azure/jj156210.aspx
   [Azure 存储服务可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx
-  [Azure SQL Database 服务层（版本）]: http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx
-  [Azure SQL Database 服务层和性能级别]: http://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx
-  [SQL Database 资源限制]: http://msdn.microsoft.com/zh-cn/library/azure/dn338081.aspx
+  [Azure SQL数据库 服务层（版本）]: http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx
+  [Azure SQL数据库 服务层和性能级别]: http://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx
+  [SQL数据库 资源限制]: http://msdn.microsoft.com/zh-cn/library/azure/dn338081.aspx
   [虚拟机和 Azure 的云服务大小]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx

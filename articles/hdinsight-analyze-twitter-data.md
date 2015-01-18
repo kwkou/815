@@ -468,7 +468,7 @@ HiveQL 脚本将执行以下操作：
 
 > [WACOM.NOTE] Hive 表使用 \\001 作为字段分隔符。该分隔符在输出中不可见。
 
-在将分析结果放到 WASB 上后，可以将数据导出到 Azure SQL Database/SQL Server，使用 Power Query 将数据导出到 Excel，或者使用 Hive ODBC 驱动程序将应用程序连接到数据。有关详细信息，请参阅[将 Sqoop 与 HDInsight 配合使用][]、[使用 HDInsight 分析航班延误数据][]、[利用 Power Query 将 Excel 连接到 HDInsight][]，以及[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][]。
+在将分析结果放到 WASB 上后，可以将数据导出到 Azure SQL数据库/SQL Server，使用 Power Query 将数据导出到 Excel，或者使用 Hive ODBC 驱动程序将应用程序连接到数据。有关详细信息，请参阅[将 Sqoop 与 HDInsight 配合使用][]、[使用 HDInsight 分析航班延误数据][]、[利用 Power Query 将 Excel 连接到 HDInsight][]，以及[使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight][]。
 
 ## 教程结束
 

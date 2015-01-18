@@ -70,7 +70,7 @@ Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云
 
 MongoDB 是面向常用文档的 NoSQL 解决方案。在本教程中，你将了解如何创建 C#“任务列表”型应用程序，以便在由 MongoLab 托管的 MongoDB 实例中存储数据。
 
-####[使用 ASP.NET Web API 和 SQL Database 创建具有良好移动性的 REST 服务](/zh-cn/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/)
+####[使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务](/zh-cn/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/)
 
 ASP.NET Web API 是一个用于在 .NET Framework 之上构建 Web API 的框架。在本教程中，你将使用 Web API 创建提供存储在 SQL 数据库实例中的数据的 REST 服务。
 

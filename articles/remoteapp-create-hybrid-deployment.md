@@ -99,7 +99,7 @@ RemoteApp 程序是您为用户提供的应用程序或程序。它位于您为�
 
 全部完成 - 您已成功创建并部署了 RemoteApp 混合部署。下一步是让您的用户下载并安装远程桌面客户端。您可以在 RemoteApp 的“快速启动”页上找到客户端的 URL。然后，让用户登录到 Azure 并访问您发布的 RemoteApp 程序。
 
-  [Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
+  [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [在企业中部署 Azure RemoteApp]: http://go.microsoft.com/fwlink/?LinkId=397721
   [Windows Azure 管理门户]: http://manage.windowsazure.cn
   [在管理门户中配置站点到站点 VPN]: http://msdn.microsoft.com/library/azure/dn133795.aspx

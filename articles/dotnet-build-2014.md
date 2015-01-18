@@ -57,7 +57,7 @@ Emulator Express 是新的针对云服务的轻量型本地模拟器。了解如
 
 我们还提供了几项改进，帮助你通过服务器资源管理器更有效地管理其他 Azure 服务。有关详细信息，请参阅：
 
--   [使用 Visual Studio 服务器资源管理器浏览 Service Bus 资源][使用 Visual Studio 服务器资源管理器浏览 Service Bus 资源]
+-   [使用 Visual Studio 服务器资源管理器浏览 服务总线 资源][使用 Visual Studio 服务器资源管理器浏览 服务总线 资源]
 -   [使用服务器资源管理器浏览存储资源][使用服务器资源管理器浏览存储资源]
 
 ## <span id="automation"></span></a>使用 PowerShell 和 API 执行自动操作
@@ -118,7 +118,7 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
   [使用.NET 的移动开发]: #mobile
   [存储客户端库 3.0 和新的存储模拟器]: #storage
   [资源管理器]: #arm
-  [Azure 和 ASP.NET 入门]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/
+  [Azure 和 ASP.NET 入门]: /zh-cn/documentation/articles/web-sites-dotnet-get-started/
   [Azure Tools for Visual Studio 入门]: http://msdn.microsoft.com/zh-cn/library/azure/ff687127.aspx
   [在 Visual Studio 2013 中创建 ASP.NET Web 项目]: http://asp.net/visual-studio/overview/2013/creating-web-projects-in-visual-studio
   [版本 2014：Visual Studio 2013 Update 2 及更高版本中针对 ASP.NET 和 Web 的新功能（视频）]: http://channel9.msdn.com/Events/Build/2014/3-602
@@ -127,7 +127,7 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
   [在 Visual Studio 中对 Azure 网站进行故障排除]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio
   [从服务器资源管理器创建虚拟机]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn569263.aspx
   [从服务器资源管理器访问 Azure 虚拟机]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj131259.aspx
-  [使用 Visual Studio 服务器资源管理器浏览 Service Bus 资源]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj149828.aspx
+  [使用 Visual Studio 服务器资源管理器浏览 服务总线 资源]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj149828.aspx
   [使用服务器资源管理器浏览存储资源]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683677.aspx
   [如何安装和配置 Azure PowerShell]: http://www.windowsazure.com/zh-cn/documentation/articles/install-configure-powershell/
   [Azure PowerShell 文档]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156055.aspx

@@ -21,17 +21,17 @@
     <tr data-morhtml="true">
 <td data-morhtml="true">Azure 媒体编码器</td>
 <td data-morhtml="true">让你使用媒体编码器运行编码任务。</td>
-<td data-morhtml="true"><a data-morhtml="true" href="http://msdn.microsoft.com/en-us/library/jj129582.aspx"> Azure 媒体编码器的任务预设字符串</a></td>
+<td data-morhtml="true"><a data-morhtml="true" href="http://msdn.microsoft.com/zh-cn/library/jj129582.aspx"> Azure 媒体编码器的任务预设字符串</a></td>
     </tr>
     <tr data-morhtml="true">
 <td data-morhtml="true">Azure 媒体包装器</td>
 <td data-morhtml="true">让你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时流 (HLS) 格式。</td>
-		<td data-morhtml="true"><a data-morhtml="true" href="http://msdn.microsoft.com/en-us/library/hh973635.aspx">Azure 媒体包装器的任务预设字符串</a></td>
+		<td data-morhtml="true"><a data-morhtml="true" href="http://msdn.microsoft.com/zh-cn/library/hh973635.aspx">Azure 媒体包装器的任务预设字符串</a></td>
     </tr>
     <tr data-morhtml="true">
 <td data-morhtml="true">Azure 媒体加密器</td>
 <td data-morhtml="true">让你使用 PlayReady 保护加密媒体资产。</td>
-<td data-morhtml="true"><a data-morhtml="true" href="http://msdn.microsoft.com/en-us/library/hh973610.aspx">Azure 媒体包装器的任务预设字符串</a></td>
+<td data-morhtml="true"><a data-morhtml="true" href="http://msdn.microsoft.com/zh-cn/library/hh973610.aspx">Azure 媒体包装器的任务预设字符串</a></td>
     </tr>
     <tr data-morhtml="true">
 <td data-morhtml="true">存储解密</td>

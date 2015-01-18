@@ -1,15 +1,15 @@
-<properties linkid="develop-php-website-with-sql-database-and-git" urlDisplayName="Web w/ SQL + Git" pageTitle="PHP web site with SQL Database and Git - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in SQL Database and use Git deployment to Azure." metaCanonical="" services="web-sites,sql-database" documentationCenter="PHP" title="Create a PHP web site with a SQL Database and deploy using Git" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-php-website-with-sql-database-and-git" urlDisplayName="Web w/ SQL + Git" pageTitle="PHP web site with SQL数据库 and Git - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in SQL数据库 and use Git deployment to Azure." metaCanonical="" services="web-sites,sql-database" documentationCenter="PHP" title="Create a PHP web site with a SQL数据库 and deploy using Git" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-# 创建带 SQL Database 的 PHP 网站并使用 Git 进行部署
+# 创建带 SQL数据库 的 PHP 网站并使用 Git 进行部署
 
-本教程演示如何创建带 Azure SQL Database 的 PHP Azure 网站以及如何使用 Git 部署该网站。本教程假定你已在计算机上安装 [PHP][PHP]、[SQL Server Express][SQL Server Express]、[Microsoft Drivers for SQL Server for PHP][Microsoft Drivers for SQL Server for PHP]、Web 服务器和 [Git][Git]。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP-SQL Database 网站。
+本教程演示如何创建带 Azure SQL数据库 的 PHP Azure 网站以及如何使用 Git 部署该网站。本教程假定你已在计算机上安装 [PHP][PHP]、[SQL Server Express][SQL Server Express]、[Microsoft Drivers for SQL Server for PHP][Microsoft Drivers for SQL Server for PHP]、Web 服务器和 [Git][Git]。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP-SQL数据库 网站。
 
 > [WACOM.NOTE]
 > 你可以使用 [Microsoft Web 平台安装程序][Microsoft Web 平台安装程序]安装和配置 PHP、SQL Server Express、Microsoft Drivers for SQL Server for PHP 和 Internet Information Services (IIS)。
 
 你将了解到以下内容：
 
--   如何使用管理门户创建 Azure 网站和 SQL Database。由于默认情况下已在 Azure 网站中启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+-   如何使用管理门户创建 Azure 网站和 SQL数据库。由于默认情况下已在 Azure 网站中启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 -   如何使用 Git 将应用程序发布和重新发布到 Azure。
 
 通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用程序。应用程序将托管于 Azure 网站中。以下是已完成应用程序的屏幕快照：
@@ -20,7 +20,7 @@
 
 ## 创建 Azure 网站并设置 Git 发布
 
-按照以下步骤创建 Azure 网站和 SQL Database：
+按照以下步骤创建 Azure 网站和 SQL数据库：
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
 2.  单击门户左下角的“新建”图标。
@@ -30,17 +30,17 @@
 
     ![自定义创建新的网站][自定义创建新的网站]
 
-    输入“URL”的值，从“数据库”下拉列表中选择“新建 SQL Database”，并在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
+    输入“URL”的值，从“数据库”下拉列表中选择“新建 SQL数据库”，并在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
 
     ![填写网站详细信息][填写网站详细信息]
 
-4.  输入数据库的“名称”的值，选择“版本”[（Web 版或企业版）][（Web 版或企业版）]，再依次选择数据库的“最大大小”、“排序规则”和“新建 SQL Database 服务器”。单击对话框底部的箭头。
+4.  输入数据库的“名称”的值，选择“版本”[（Web 版或企业版）][（Web 版或企业版）]，再依次选择数据库的“最大大小”、“排序规则”和“新建 SQL数据库 服务器”。单击对话框底部的箭头。
 
-    ![填写 SQL Database 设置][填写 SQL Database 设置]
+    ![填写 SQL数据库 设置][填写 SQL数据库 设置]
 
-5.  输入管理员名称和密码（并确认密码），选择你将在其中创建新的 SQL Database 服务器的区域，并选中“`Allow Azure Services to access the server` 框。
+5.  输入管理员名称和密码（并确认密码），选择你将在其中创建新的 SQL数据库 服务器的区域，并选中“`Allow Azure Services to access the server` 框。
 
-    ![新建 SQL Database 服务器][新建 SQL Database 服务器]
+    ![新建 SQL数据库 服务器][新建 SQL数据库 服务器]
 
     创建网站后，你会看到文本“网站‘[SITENAME]’创建已成功完成”。现在，你可以启用 Git 发布。
 
@@ -66,9 +66,9 @@
 
     ![Git 说明][Git 说明]
 
-## 获取 SQL Database 连接信息
+## 获取 SQL数据库 连接信息
 
-若要连接到正在 Azure 网站中运行的 SQL Database 实例，你将需要连接信息。若要获取 SQL Database 连接信息，请按照以下步骤操作：
+若要连接到正在 Azure 网站中运行的 SQL数据库 实例，你将需要连接信息。若要获取 SQL数据库 连接信息，请按照以下步骤操作：
 
 1.  从 Azure 管理门户中，单击“链接的资源”，然后单击数据库名称。
 
@@ -82,10 +82,10 @@
 
 ## 本地构建和测试应用程序
 
-注册应用程序是一个简单的 PHP 应用程序，它使你能够通过提供你的姓名和电子邮件地址来注册事件。有关以前的注册者的信息将显示在表中。注册信息将存储在 SQL Database 实例中。应用程序由两个文件组成（复制/粘贴以下可用代码）：
+注册应用程序是一个简单的 PHP 应用程序，它使你能够通过提供你的姓名和电子邮件地址来注册事件。有关以前的注册者的信息将显示在表中。注册信息将存储在 SQL数据库 实例中。应用程序由两个文件组成（复制/粘贴以下可用代码）：
 
 -   **index.php**：将显示注册形式及包含注册者信息的表。
--   **createtable.php**：为应用程序创建 SQL Database 表。该文件只能被使用一次。
+-   **createtable.php**：为应用程序创建 SQL数据库 表。该文件只能被使用一次。
 
 若要本地运行应用程序，请执行下列步骤。请注意，这些步骤假定你已在本地计算机上设置 PHP、SQL Server Express 和 Web 服务器，并且你已启用 [SQL Server 的 PDO 扩展][SQL Server 的 PDO 扩展]。
 
@@ -224,7 +224,7 @@
 
 ## 发布应用程序
 
-在本地测试你的应用程序之后，你可以使用 Git 将其发布到 Azure 网站。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 SQL Database 连接信息”一节中），使用适当的值在`createdatabase.php` 和 `index.php` 文件中更新以下信息：
+在本地测试你的应用程序之后，你可以使用 Git 将其发布到 Azure 网站。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 SQL数据库 连接信息”一节中），使用适当的值在`createdatabase.php` 和 `index.php` 文件中更新以下信息：
 
     // DB connection info
     $host = "tcp:<value of SERVER>";
@@ -282,8 +282,8 @@
   [自定义创建新的网站]: ./media/web-sites-php-sql-database-deploy-use-git/custom_create.png
   [填写网站详细信息]: ./media/web-sites-php-sql-database-deploy-use-git/website_details_sqlazure.jpg
   [（Web 版或企业版）]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
-  [填写 SQL Database 设置]: ./media/web-sites-php-sql-database-deploy-use-git/database_settings.jpg
-  [新建 SQL Database 服务器]: ./media/web-sites-php-sql-database-deploy-use-git/create_server.jpg
+  [填写 SQL数据库 设置]: ./media/web-sites-php-sql-database-deploy-use-git/database_settings.jpg
+  [新建 SQL数据库 服务器]: ./media/web-sites-php-sql-database-deploy-use-git/create_server.jpg
   [打开网站仪表板]: ./media/web-sites-php-sql-database-deploy-use-git/go_to_dashboard.png
   [设置 Git 发布]: ./media/web-sites-php-sql-database-deploy-use-git/setup_git_publishing.png
   [你的源代码在哪里]: ./media/web-sites-php-sql-database-deploy-use-git/where_is_code.png

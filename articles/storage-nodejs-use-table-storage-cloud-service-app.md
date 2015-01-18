@@ -410,9 +410,9 @@ Azure 按使用服务器的小时数对 Web 角色实例进行收费。
 
     ![指示服务已被删除的状态消息。][]
 
-  [使用 Express 构建 Node.js Web 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-express-app/
+  [使用 Express 构建 Node.js Web 应用程序]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-express-app/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Node.js Web 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Node.js Web 应用程序]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Internet Explorer 中已完成的网页]: ./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png
   [web.cloud.config 文件内容]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node37.png
   [显示了“My Tasklist”页的 Internet Explorer，该页的表中有一项内容。]: ./media/storage-nodejs-use-table-storage-cloud-service-app/node40.png

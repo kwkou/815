@@ -140,7 +140,7 @@
 
 以下步骤显示如何在 Visual Studio 中更新数据库以制造冲突。
 
-1.  在 Visual Studio 中运行服务器资源管理器，并连接到你的 Azure 帐户。为你的 Azure 帐户展开“SQL Database” 。
+1.  在 Visual Studio 中运行服务器资源管理器，并连接到你的 Azure 帐户。为你的 Azure 帐户展开“SQL数据库” 。
 
     ![][2]
 

@@ -721,7 +721,7 @@ Azure 中的虚拟机运行您在创建虚拟机时选择的操作系统。Azure
   [已成功创建存储帐户]: ./media/virtual-machines-linux-create-upload-vhd/Storagenewaccount.png
   [Azure Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
   [Add-AzureVhd]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn205185.aspx
-  [合作伙伴认可的映像]: http://azure.microsoft.com/zh-cn/documentation/articles/linux-endorsed-distributions/
+  [合作伙伴认可的映像]: /zh-cn/documentation/articles/linux-endorsed-distributions/
   [此处]: http://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409
-  [Linux 代理指南]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
+  [Linux 代理指南]: /zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
   [代理 GitHub 位置]: http://go.microsoft.com/fwlink/p/?LinkID=250998&clcid=0x409

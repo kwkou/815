@@ -266,7 +266,7 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 -   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具][针对 Mac 和 Linux 的 Azure 命令行工具]
 -   [Git 文档][Git 文档]
 
-  [使用 Visual Studio Online 向 Azure 持续传送项目]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso/
+  [使用 Visual Studio Online 向 Azure 持续传送项目]: /zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso/
   [针对 Mac 和 Linux 的 Azure 命令行工具]: /en-us/develop/nodejs/how-to-guides/command-line-tools/
   [安装 Git]: #Step1
   [创建本地存储库]: #Step2

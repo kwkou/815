@@ -18,7 +18,7 @@
 
 <div class="dev-callout">
 <strong>说明</strong>
-<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/">全球网络影响力</a>和<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-business-application-solution-overview/">业务应用程序</a>中的其他指南。</p>
+<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/">全球网络影响力</a>和<a href="/zh-cn/documentation/articles/web-sites-business-application-solution-overview/">业务应用程序</a>中的其他指南。</p>
 </div>
 
 ## <a name="deployexisting"></a>部署现有网站
@@ -47,7 +47,7 @@ Azure 网站的另外一个优势是加快将过渡网站部署到 Web 的速度
 
 ## <a name="socialmedia"></a>与社交媒体相集成
 
-大多数数字市场营销活动都利用社交媒体网站，例如 Facebook 或 Twitter。一个集成点是将社交媒体标识用于身份验证。有关针对 ASP.NET 应用程序的此方法的示例，请参阅[使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站][使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]。
+大多数数字市场营销活动都利用社交媒体网站，例如 Facebook 或 Twitter。一个集成点是将社交媒体标识用于身份验证。有关针对 ASP.NET 应用程序的此方法的示例，请参阅[使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站][使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]。
 
 但是，许多数字市场营销活动都超出了身份验证并且使用社交媒体集成作为其策略的关键部分。社交媒体网站通常具有开发人员部分，说明与其服务相集成的应用程序的不同方式。可以从几乎所有 Web 框架使用提供 REST API 的服务。但是，通常具有特定于你所选语言的信息。你应该从你选择作为目标的每个社交媒体网站直接查找类似的开发人员指导。
 
@@ -82,7 +82,7 @@ Azure 网站的另外一个优势是加快将过渡网站部署到 Web 的速度
 <p>对于选择使用云服务和 Web 角色的 Web 应用程序，还有其他可基于队列中项的长度进行缩放的选项。在云服务中，处理后端队列的角色是常见的体系结构模式。有关云服务缩放的更多信息，请参阅<a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-scale-a-cloud-service/">如何缩放云服务</a>。</p>
 </div>
 
-<!-- ##<a name="integrate"></a>Integrate with Other Services A digital marketing site will often incorporate rich media, such as video streaming. Hosting these sites in Azure provides close integration to related Azure services. For example, you can use Azure Media Services to encode and stream video for your web site. For more information on Media Services, see [Introduction to Azure Media Services Concepts and Scenarios][mediaservices].  Other Azure services can be used to create a more robust application. For example, Web Sites can use distributed caching provided by the new [Azure Cache Service (Preview)][caching]. Or you can use Azure Storage Services to store application data and resources. For example, graphics, videos, and other large files can be durably stored in blobs. Database services, such as Azure SQL Database and MySQL, are also available for relational data requirements. -->
+<!-- ##<a name="integrate"></a>Integrate with Other Services A digital marketing site will often incorporate rich media, such as video streaming. Hosting these sites in Azure provides close integration to related Azure services. For example, you can use Azure Media Services to encode and stream video for your web site. For more information on Media Services, see [Introduction to Azure Media Services Concepts and Scenarios][mediaservices].  Other Azure services can be used to create a more robust application. For example, Web Sites can use distributed caching provided by the new [Azure Cache Service (Preview)][caching]. Or you can use Azure Storage Services to store application data and resources. For example, graphics, videos, and other large files can be durably stored in blobs. Database services, such as Azure SQL数据库 and MySQL, are also available for relational data requirements. -->
 
 ## <a name="monitor"></a>监视活动
 
@@ -113,7 +113,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 </tr>
 <tr>
 <td valign="middle"><strong>计划</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>创建</strong></td>
@@ -121,18 +121,18 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 </tr>
 <tr>
 <td valign="middle"><strong>部署</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-deploy/">如何部署 Azure 网站</a><br/>- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-deploy/">如何部署 Azure 网站</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>社交媒体</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/">使用成员资格、OAuth 和 SQL Database 部署安全的 ASP.NET MVC 应用程序</a><br/></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/">使用成员资格、OAuth 和 SQL数据库 部署安全的 ASP.NET MVC 应用程序</a><br/></td>
 </tr>
 <tr>
 <td valign="middle"><strong>缩放</strong></td>
 <td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-scale-websites/">如何缩放网站</a></td>
 </tr>
 
-<!-- <tr>    <td valign="middle"><strong>Rich Media</strong></td>    <td valign="top">- <a href="http://msdn.microsoft.com/en-us/library/windowsazure/dn223282.aspx">Introduction to Azure Media Services Concepts and Scenarios</a></td> </tr>  -->
+<!-- <tr>    <td valign="middle"><strong>Rich Media</strong></td>    <td valign="top">- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223282.aspx">Introduction to Azure Media Services Concepts and Scenarios</a></td> </tr>  -->
  
 <tr>
 <td valign="middle"><strong>监视</strong></td>
@@ -141,7 +141,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 </table>
 <!--   [twitter]:https://dev.twitter.com/docs/twitter-libraries#dotnet   [fbtutorial]:http://blogs.msdn.com/b/africaapps/archive/2013/02/20/creating-a-facebook-app-using-asp-net-mvc-facebook-templates-and-hosting-them-for-free-on-windows-azure-websites.aspx   [fbbirthdayapp]:http://www.asp.net/mvc/tutorials/mvc-4/aspnet-mvc-facebook-birthday-app   [fbvstemplate]:http://blogs.msdn.com/b/webdev/archive/2012/12/13/the-new-facebook-application-template-and-library-for-asp.net-mvc.aspx  -->
 
-<!--[mediaservices]:http://msdn.microsoft.com/en-us/library/windowsazure/dn223282.aspx   [caching]:http://msdn.microsoft.com/en-us/library/windowsazure/dn386094.aspx   -->
+<!--[mediaservices]:http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223282.aspx   [caching]:http://msdn.microsoft.com/zh-cn/library/windowsazure/dn386094.aspx   -->
 
 <!--[DigitalMarketingFacebook]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Facebook.png -->
 
@@ -154,15 +154,15 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [根据用户要求进行缩放]: #scale
   [与其他服务集成]: #integrate
   [监视活动]: #monitor
-  [全球网络影响力]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/
-  [业务应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-business-application-solution-overview/
+  [全球网络影响力]: /zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/
+  [业务应用程序]: /zh-cn/documentation/articles/web-sites-business-application-solution-overview/
   [查看该信息]: /en-us/manage/services/web-sites/global-web-presence-solution-overview/
   [DigitalMarketingDeploy1]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy1.png
   [DigitalMarketingDeploy2]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy2.png
   [具有 Azure 网站的多个环境]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
   [从源代码管理发布到 Azure 网站]: /en-us/develop/net/common-tasks/publishing-with-git/
   [DigitalMarketingFrameworkVersions]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_FrameworkVersions.png
-  [使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /en-us/develop/net/tutorials/web-site-with-sql-database/
+  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /en-us/develop/net/tutorials/web-site-with-sql-database/
   [Azure 管理门户]: http://manage.windowsazure.cn/
   [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
   [PowerShell 脚本编写]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -175,11 +175,11 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [如何监视网站]: /en-us/manage/services/web-sites/how-to-monitor-websites/
   [DigitalMarketingUsageOverview]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_UsageOverview.png
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
-  [1]: http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [1]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
   [如何创建和部署网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-create-websites/
-  [如何部署 Azure 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-deploy/
-  [2]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-publish-source-control/
-  [使用成员资格、OAuth 和 SQL Database 部署安全的 ASP.NET MVC 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+  [如何部署 Azure 网站]: /zh-cn/documentation/articles/web-sites-deploy/
+  [2]: /zh-cn/documentation/articles/web-sites-publish-source-control/
+  [使用成员资格、OAuth 和 SQL数据库 部署安全的 ASP.NET MVC 应用程序]: /zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
   [如何缩放网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-scale-websites/
   [3]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/
   [4]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx

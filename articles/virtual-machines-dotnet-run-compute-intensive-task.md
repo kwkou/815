@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-compute-intensive-task-on-a-virtual-machine" urlDisplayName="Compute Intensive .NET Task" pageTitle="虚拟机上需要进行大量计算的 .NET 任务 &ndash; Azure" metaKeywords="deploying compute .NET application, vm .NET application, Service Bus queue monitoring, remote monitoring" description="了解如何在 Azure 虚拟机上部署和运行需要进行大量计算的 .NET 应用以及如何使用 Service Bus 队列远程监视进度。" metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="如何在 Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务" authors="waltpo" solutions="" manager="keboyd" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-net-tutorials-compute-intensive-task-on-a-virtual-machine" urlDisplayName="Compute Intensive .NET Task" pageTitle="虚拟机上需要进行大量计算的 .NET 任务 &ndash; Azure" metaKeywords="deploying compute .NET application, vm .NET application, 服务总线 queue monitoring, remote monitoring" description="了解如何在 Azure 虚拟机上部署和运行需要进行大量计算的 .NET 应用以及如何使用 服务总线 队列远程监视进度。" metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="如何在 Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务" authors="waltpo" solutions="" manager="keboyd" editor="mollybos" scriptId="" videoId="" />
 
 # 如何在 Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务
 
@@ -10,7 +10,7 @@
 
 -   如何创建虚拟机。
 -   如何远程登录到虚拟机。
--   如何创建 Service Bus 命名空间。
+-   如何创建 服务总线 命名空间。
 -   如何创建 .NET 应用程序来执行需要进行大量计算的任务。
 -   如何创建 .NET 应用程序来监视需要进行大量计算的任务的进度。
 -   如何运行 .NET 应用程序。
@@ -47,19 +47,19 @@
 4.  单击“连接”。
 5.  根据需要响应提示以连接到虚拟机。提示需要管理员名称和密码时，请使用您创建虚拟机时提供的值。
 
-## 如何创建 Service Bus 命名空间
+## 如何创建 服务总线 命名空间
 
-若要开始在 Azure 中使用 Service Bus 队列，必须先
+若要开始在 Azure 中使用 服务总线 队列，必须先
 创建一个服务命名空间。服务命名空间提供了用于对应用程序
-中的 Service Bus 资源进行寻址的范围容器。
+中的 服务总线 资源进行寻址的范围容器。
 
 创建服务命名空间：
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  在该管理门户的左侧导航窗格中，单击 **Service Bus**。
+2.  在该管理门户的左侧导航窗格中，单击 **服务总线**。
 3.  在该管理门户的下方窗格中，单击“创建”。
 
-    ![新建 Service Bus][新建 Service Bus]
+    ![新建 服务总线][新建 服务总线]
 
 4.  在“创建命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用，因为该名称必须是唯一名称。
 
@@ -86,7 +86,7 @@
 新命名空间上执行管理操作（如创建队列），则需要获取该
 命名空间的管理凭据。
 
-1.  在左侧导航窗格中，单击“Service Bus”节点，
+1.  在左侧导航窗格中，单击“服务总线”节点，
     显示可用命名空间的列表：
     ![可用命名空间屏幕快照][可用命名空间屏幕快照]
 2.  从显示的列表中选择刚创建的命名空间：
@@ -102,7 +102,7 @@
 3.  加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击“TSPSolver”、单击“添加引用”、单击“浏览”选项卡、浏览至 **C:\\Program Files\\Microsoft SDKs\\Windows Azure.NET SDK\\2012-06\\ref**，然后将 **Microsoft.ServiceBus.dll** 选为引用。
 4.  加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击“TSPSolver”、单击“添加引用”、单击“.NET”选项卡，然后将 **System.Runtime.Serialization** 选为引用。
 5.  将本节末尾的示例代码用于 **Program.cs** 的内容。
-6.  将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
+6.  将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 服务总线 的“命名空间”、“默认颁发者”和“默认密钥”值。
 7.  编译应用程序。这将在项目的 **bin** 文件夹（**bin\\release** 或者 **bin\\debug**，具体取决于您是针对发布版本还是调试版本）中创建 **TSPSolver.exe**。稍后您会将此可执行文件和 Microsoft.ServiceBus.dll 复制到您的虚拟机。
 
     using System;
@@ -330,7 +330,7 @@
 2.  加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击“TSPSolver”、单击“添加引用”、单击“浏览”选项卡、浏览至 **C:\\Program Files\\Microsoft SDKs\\Windows Azure.NET SDK\\2012-06\\ref**，然后将 **Microsoft.ServiceBus.dll** 选为引用。
 3.  加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击“TSPClient”、单击“添加引用”、单击“.NET”选项卡，然后将 **System.Runtime.Serialization** 选为引用。
 4.  将本节末尾的示例代码用于 **Program.cs** 的内容。
-5.  将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
+5.  将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 服务总线 的“命名空间”、“默认颁发者”和“默认密钥”值。
 6.  编译应用程序。这将在项目的 **bin** 文件夹（**bin\\release** 或者 **bin\\debug**，具体取决于您是针对发布版本还是调试版本）中创建 **TSPClient.exe**。您可以从开发计算机上运行此代码，或将此可执行文件和 Microsoft.ServiceBus.dll 复制到将要运行该客户端应用程序的计算计上（不需要放置于您的虚拟机上）。
 
     using System;
@@ -444,7 +444,7 @@
 
 ## 如何运行 .NET 应用程序
 
-运行需要进行大量计算的应用程序，首先创建队列，然后解决旅行商问题，这样会将当前最佳路线添加到 Service Bus 队列。需要进行大量计算的应用程序正在运行时（或运行后），运行客户端可显示来自 Service Bus 队列的结果。
+运行需要进行大量计算的应用程序，首先创建队列，然后解决旅行商问题，这样会将当前最佳路线添加到 服务总线 队列。需要进行大量计算的应用程序正在运行时（或运行后），运行客户端可显示来自 服务总线 队列的结果。
 
 ### 如何运行需要进行大量计算的应用程序
 
@@ -505,7 +505,7 @@
         City_50, 588.51, 679.33
 
 5.  在命令提示符处，将目录更改为 c:\\TSP。
-6.  在运行 TSP 解算器排列之前，您需要先创建 Service Bus 队列。运行以下命令以创建 Service Bus 队列：
+6.  在运行 TSP 解算器排列之前，您需要先创建 服务总线 队列。运行以下命令以创建 服务总线 队列：
 
         TSPSolver createqueue
 
@@ -544,12 +544,12 @@
 
 ## 使用 TSPSolver 创建或删除队列的替代方法
 
-除了使用 TSPSolver 创建或删除队列外，您还可以使用 [Azure 管理门户][Azure 管理门户]创建或删除队列。访问管理门户的 Service Bus 部分即可访问用于创建或删除队列以及检索连接字符串、颁发者和访问密钥的用户界面。您也可以查看 Service Bus 队列的仪表板，从而使您可以查看传入消息和传出消息的指标。
+除了使用 TSPSolver 创建或删除队列外，您还可以使用 [Azure 管理门户][Azure 管理门户]创建或删除队列。访问管理门户的 服务总线 部分即可访问用于创建或删除队列以及检索连接字符串、颁发者和访问密钥的用户界面。您也可以查看 服务总线 队列的仪表板，从而使您可以查看传入消息和传出消息的指标。
 
   [旅行商问题解算器]: ./media/virtual-machines-dotnet-run-compute-intensive-task/WA_dotNetTSPSolver.png
   [旅行商问题客户端]: ./media/virtual-machines-dotnet-run-compute-intensive-task/WA_dotNetTSPClient.png
   [Azure 管理门户]: https://manage.windowsazure.cn
-  [新建 Service Bus]: ./media/virtual-machines-dotnet-run-compute-intensive-task/ServiceBusCreateNew.png
+  [新建 服务总线]: ./media/virtual-machines-dotnet-run-compute-intensive-task/ServiceBusCreateNew.png
   [“创建命名空间”对话框]: ./media/virtual-machines-dotnet-run-compute-intensive-task/CreateNameSpaceDialog.png
   [单击创建屏幕快照]: ./media/virtual-machines-dotnet-run-compute-intensive-task/ClickCreate.png
   [可用命名空间屏幕快照]: ./media/virtual-machines-dotnet-run-compute-intensive-task/AvailableNamespaces.png

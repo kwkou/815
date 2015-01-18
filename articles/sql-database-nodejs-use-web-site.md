@@ -1,20 +1,20 @@
-<properties linkid="develop-nodejs-tutorials-web-site-with-sql-database" urlDisplayName="Web site with SQL Database" pageTitle="Node.js web site with SQL Database - Azure tutorial" metaKeywords="" description="Learn how to create a Node.js website that accesses a SQL Database and is deployed to Azure" metaCanonical="" services="web-sites,sql-database" documentationCenter="Node.js" title="Node.js Web Application using the Azure SQL Database" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="develop-nodejs-tutorials-web-site-with-sql-database" urlDisplayName="Web site with SQL数据库" pageTitle="Node.js web site with SQL数据库 - Azure tutorial" metaKeywords="" description="Learn how to create a Node.js website that accesses a SQL数据库 and is deployed to Azure" metaCanonical="" services="web-sites,sql-database" documentationCenter="Node.js" title="Node.js Web Application using the Azure SQL数据库" authors="larryfr" solutions="" manager="" editor="" />
 
-# 使用 Azure SQL Database 创建 Node.js Web 应用程序
+# 使用 Azure SQL数据库 创建 Node.js Web 应用程序
 
-本教程向你演示如何使用 Azure 数据管理提供的 SQL Database，在 Azure 上托管的 [Node][Node] 应用程序中存储和访问数据。本教程假定你之前有使用 Node 和 [Git][Git] 的经验。
+本教程向你演示如何使用 Azure 数据管理提供的 SQL数据库，在 Azure 上托管的 [Node][Node] 应用程序中存储和访问数据。本教程假定你之前有使用 Node 和 [Git][Git] 的经验。
 
 你将了解到以下内容：
 
--   如何使用 Azure 管理门户创建 Azure 网站和 SQL Database
+-   如何使用 Azure 管理门户创建 Azure 网站和 SQL数据库
 
 -   如何使用 npm（Node 包管理器）安装 Node 模块
 
--   如何结合使用 SQL Database 与 node-sqlserver 模块
+-   如何结合使用 SQL数据库 与 node-sqlserver 模块
 
 -   如何使用应用程序设置指定应用程序的运行时值
 
-按照本教程中的说明操作，你将构建一个简单的基于 Web 的任务管理应用程序，该应用程序可用于创建、检索和完成任务。这些任务存储在 SQL Database 中。
+按照本教程中的说明操作，你将构建一个简单的基于 Web 的任务管理应用程序，该应用程序可用于创建、检索和完成任务。这些任务存储在 SQL数据库 中。
 
 本教程中的项目文件将存储在名为 **tasklist** 的目录中，已完成的应用程序将与下图类似：
 
@@ -53,7 +53,7 @@
 
 ## 创建网站和数据库
 
-按照以下步骤创建 Azure 网站和 SQL Database：
+按照以下步骤创建 Azure 网站和 SQL数据库：
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
 2.  单击该门户左下角的“+ 新建”图标。
@@ -64,17 +64,17 @@
 
     ![自定义创建新的网站][自定义创建新的网站]
 
-    输入“URL”的值，从“数据库”下拉列表中选择“新建 SQL Database”，并在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
+    输入“URL”的值，从“数据库”下拉列表中选择“新建 SQL数据库”，并在“区域”下拉列表中选择网站的数据中心。单击对话框底部的箭头。
 
     ![填写网站详细信息][填写网站详细信息]
 
-4.  输入数据库的“名称”的值，选择“版本”[（Web 版或企业版）][（Web 版或企业版）]，再依次选择数据库的“最大大小”、“排序规则”和“新建 SQL Database 服务器”。单击对话框底部的箭头。
+4.  输入数据库的“名称”的值，选择“版本”[（Web 版或企业版）][（Web 版或企业版）]，再依次选择数据库的“最大大小”、“排序规则”和“新建 SQL数据库 服务器”。单击对话框底部的箭头。
 
-    ![填写 SQL Database 设置][填写 SQL Database 设置]
+    ![填写 SQL数据库 设置][填写 SQL数据库 设置]
 
-5.  输入管理员名称和密码（并确认密码），选择你将在其中创建新的 SQL Database 服务器的区域，选中“允许 Azure 服务访问服务器”框。
+5.  输入管理员名称和密码（并确认密码），选择你将在其中创建新的 SQL数据库 服务器的区域，选中“允许 Azure 服务访问服务器”框。
 
-    ![新建 SQL Database 服务器][新建 SQL Database 服务器]
+    ![新建 SQL数据库 服务器][新建 SQL数据库 服务器]
 
     创建网站后，你会看到文本“网站‘[SITENAME]’创建已成功完成”。现在，你可以启用 Git 发布。
 
@@ -96,9 +96,9 @@
 
     ![Git 说明][Git 说明]
 
-## 获取 SQL Database 连接信息
+## 获取 SQL数据库 连接信息
 
-若要连接到正在 Azure 网站中运行的 SQL Database 实例，你将需要连接信息。若要获取 SQL Database 连接信息，请按照以下步骤操作：
+若要连接到正在 Azure 网站中运行的 SQL数据库 实例，你将需要连接信息。若要获取 SQL数据库 连接信息，请按照以下步骤操作：
 
 1.  从 Azure 管理门户中，单击“链接的资源”，然后单击数据库名称。
 
@@ -114,7 +114,7 @@
 
 若要创建用于存储 tasklist 应用程序项的数据库表，请执行下列步骤：
 
-1.  从 Azure 管理门户中，选择你的 SQL Database，然后单击该页面底部的“管理”。如果你收到一条内容为当前 IP 不属于防火墙规则的消息，请选择“确定”以添加该 IP 地址。
+1.  从 Azure 管理门户中，选择你的 SQL数据库，然后单击该页面底部的“管理”。如果你收到一条内容为当前 IP 不属于防火墙规则的消息，请选择“确定”以添加该 IP 地址。
 
     ![“管理”按钮][“管理”按钮]
 
@@ -134,11 +134,11 @@
 
     ![表设计已完成][表设计已完成]
 
-6.  单击“保存”按钮保存对表所做的更改。现在，你可以关闭 SQL Database 管理页面。
+6.  单击“保存”按钮保存对表所做的更改。现在，你可以关闭 SQL数据库 管理页面。
 
 ## 安装模块并生成基架
 
-在本节中，你将创建一个新的 Node 应用程序并使用 npm 添加模块包。对于任务列表应用程序，你将使用 [express][express] 和 [node-sqlserver][node-sqlserver] 模块。Express 模块为 Node 提供“模型视图控制器”框架，而 node-sqlserver 模块提供与 Azure SQL Database 的连接。
+在本节中，你将创建一个新的 Node 应用程序并使用 npm 添加模块包。对于任务列表应用程序，你将使用 [express][express] 和 [node-sqlserver][node-sqlserver] 模块。Express 模块为 Node 提供“模型视图控制器”框架，而 node-sqlserver 模块提供与 Azure SQL数据库 的连接。
 
 ### 安装 Express 并生成基架
 
@@ -222,7 +222,7 @@
 
 6.  如果不再需要 **msnodesql-install.cmd** 文件，则将其删除。
 
-## 在 Node 应用程序中使用 SQL Database
+## 在 Node 应用程序中使用 SQL数据库
 
 在此部分，你将通过修改现有 **app.js** 来扩展 **express** 命令创建的基本应用程序，并创建一个新 **index.js** 文件来使用前面创建的数据库。
 
@@ -357,7 +357,7 @@
 
 ### 创建配置文件
 
-**config.json** 文件包含用于连接到 SQL Database 的连接字符串，并在运行时由 **index.js** 文件进行读取。若要创建该文件，请执行以下步骤：
+**config.json** 文件包含用于连接到 SQL数据库 的连接字符串，并在运行时由 **index.js** 文件进行读取。若要创建该文件，请执行以下步骤：
 
 1.  在 **tasklist** 目录中，创建一个名为 **config.json** 的新文件并在文本编辑器中将其打开。
 
@@ -476,8 +476,8 @@
   [自定义创建新的网站]: ./media/sql-database-nodejs-use-web-site/custom_create.png
   [填写网站详细信息]: ./media/sql-database-nodejs-use-web-site/website_details_sqlazure.jpg
   [（Web 版或企业版）]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621788.aspx
-  [填写 SQL Database 设置]: ./media/sql-database-nodejs-use-web-site/database_settings.jpg
-  [新建 SQL Database 服务器]: ./media/sql-database-nodejs-use-web-site/create_server.jpg
+  [填写 SQL数据库 设置]: ./media/sql-database-nodejs-use-web-site/database_settings.jpg
+  [新建 SQL数据库 服务器]: ./media/sql-database-nodejs-use-web-site/create_server.jpg
   [打开网站仪表板]: ./media/sql-database-nodejs-use-web-site/go_to_dashboard.png
   [设置 Git 发布]: ./media/sql-database-nodejs-use-web-site/setup_git_publishing.png
   [创建发布凭据]: ./media/sql-database-nodejs-use-web-site/git-deployment-credentials.png

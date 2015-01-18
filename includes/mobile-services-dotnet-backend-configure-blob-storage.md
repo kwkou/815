@@ -25,7 +25,7 @@ The TodoItem class defines the data object, and you need to add the same propert
 
 	These properties are used to generate the SAS and to store image information. Note that the casing on these properties matches the JavaScript backend version. 
 
-	>[WACOM.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database when it detects a data model change in the Code First definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. The default initializer cannot be used against a SQL Database in Azure. For more information, see [How to Use Code First Migrations to Update the Data Model](/zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
+	>[WACOM.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database when it detects a data model change in the Code First definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. The default initializer cannot be used against a SQL数据库 in Azure. For more information, see [How to Use Code First Migrations to Update the Data Model](/zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
 
 ##<a name="update-scripts"></a>Update the TodoItem controller to generate a shared access signature 
 
@@ -145,4 +145,4 @@ Next, you will update the quickstart app to add image upload functionality by us
 
 <!-- URLs. -->
 [How To Create a Storage Account]: /en-us/manage/services/storage/how-to-create-a-storage-account
-[App settings]: http://msdn.microsoft.com/en-us/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

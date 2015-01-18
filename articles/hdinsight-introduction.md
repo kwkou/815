@@ -109,15 +109,15 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
 
 -   [Azure HDInsight SDK][]:HDinsight SDK 的参考文档。
 
-**Microsoft：Windows 和 SQL Database**
+**Microsoft：Windows 和 SQL数据库**
 
 -   [Azure 主页][]:开始构建应用程序所需的方案、免费试用版注册、开发工具和文档。
 
--   [Azure SQL Database][]:有关 SQL Database 的 MSDN 文档。
+-   [Azure SQL数据库][]:有关 SQL数据库 的 MSDN 文档。
 
--   [SQL Database 的管理门户][]:一种轻量版易用型数据库管理工具，用于以云方式管理 SQL Database。
+-   [SQL数据库 的管理门户][]:一种轻量版易用型数据库管理工具，用于以云方式管理 SQL数据库。
 
--   [Adventure Works for SQL Database][]:SQL Database 示例数据库的下载页。
+-   [Adventure Works for SQL数据库][]:SQL数据库 示例数据库的下载页。
 
 **Microsoft：商业智能**
 
@@ -158,9 +158,9 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
   [大数据和 Azure]: http://azure.microsoft.com/zh-cn/solutions/big-data/
   [Azure HDInsight SDK]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
   [Azure 主页]: https://www.windowsazure.cn
-  [Azure SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx
-  [SQL Database 的管理门户]: http://msdn.microsoft.com/zh-cn/library/azure/gg442309.aspx
-  [Adventure Works for SQL Database]: http://msftdbprodsamples.codeplex.com/releases/view/37304
+  [Azure SQL数据库]: http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx
+  [SQL数据库 的管理门户]: http://msdn.microsoft.com/zh-cn/library/azure/gg442309.aspx
+  [Adventure Works for SQL数据库]: http://msftdbprodsamples.codeplex.com/releases/view/37304
   [利用 Power Query 将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-power-query/
   [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC/
   [Microsoft BI PowerPivot]: http://office.microsoft.com/zh-cn/excel/HA101959985.aspx

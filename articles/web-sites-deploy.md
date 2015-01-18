@@ -76,7 +76,7 @@ WebMatrix 可快速安装且易于学习，但 Visual Studio 提供了更多用�
 有关如何从 Visual Studio 部署到 Azure 网站的信息，请参阅以下资源：
 
 -   [Azure 和 ASP.NET 入门][Azure 和 ASP.NET 入门]。如何使用 Visual Studio 和 Web 部署来创建和部署一个简单的 ASP.NET MVC Web 项目。
--   [使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站][使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站]。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
+-   [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站][使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站]。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
 -   [Visual Studio 和 ASP.NET 的 Web 部署概述][Visual Studio 和 ASP.NET 的 Web 部署概述]。使用 Visual Studio 的 Web 部署的基本简介。虽然已过时，但包括仍然相关的信息，其中包括用于部署数据库和 Web 应用程序的选项的概述，以及其他部署任务的列表（这些任务可能需要您来执行，或需要您手动配置 Visual Studio 以代替您执行）。本主题提供有关常规部署的信息，不只是关于部署到 Azure 网站。
 -   [使用 Visual Studio 的 ASP.NET Web 部署][使用 Visual Studio 的 ASP.NET Web 部署]。共 12 篇的系列教程涵盖了比此列表中其他部署任务更完整的部署任务。
 -   [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure][在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure]。说明如何在 Visual Studio 中部署 ASP.NET Web 项目（使用 Git 插件将代码提交到 Git 并将 Azure 连接到 Git 存储库）。
@@ -217,11 +217,11 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
   [Team Foundation Server]: #tfs
   [Git 存储库]: #git
   [Azure 和 ASP.NET 入门]: /zh-cn/develop/net/tutorials/get-started/
-  [使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/
+  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/
   [Visual Studio 和 ASP.NET 的 Web 部署概述]: http://msdn.microsoft.com/zh-cn/library/dd394698.aspx
   [使用 Visual Studio 的 ASP.NET Web 部署]: http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction
   [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure]: http://www.dotnetcurry.com/ShowArticle.aspx?ID=881
-  [使用 Microsoft WebMatrix 开发和部署网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/
+  [使用 Microsoft WebMatrix 开发和部署网站]: /zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/
   [使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
   [WebMatrix 3:集成 Git 与到 Azure 的部署]: http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD
   [FileZilla]: https://filezilla-project.org/

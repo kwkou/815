@@ -79,7 +79,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 * 缓存 – 仅支持专用缓存
 * 网络服务 – 虚拟网络（通过本地网络在云服务之间进行通信）
 * 网络服务 – 流量管理器
-* 应用服务 – 服务总线(Service Bus) 
+* 应用服务 – 服务总线(服务总线) 
 * 应用服务 – Active Directory
 * 应用服务 – 计划程序
 * 应用服务 – CDN 

@@ -1,21 +1,21 @@
-<properties title="Azure SQL Database 灵活扩展" pageTitle="Azure SQL Database 灵活扩展" description="使用 Azure SQL Database 的灵活扩展功能，轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Azure SQL数据库 灵活扩展" pageTitle="Azure SQL数据库 灵活扩展" description="使用 Azure SQL数据库 的灵活扩展功能，轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
-# Azure SQL Database 灵活扩展
+# Azure SQL数据库 灵活扩展
 
-欢迎使用 Azure SQL Database 灵活扩展公共预览版！
+欢迎使用 Azure SQL数据库 灵活扩展公共预览版！
 
 ### 约定和挑战
 
-Azure SQL Database 灵活扩展将交付云计算约定，并在 Azure SQL DB 平台上同时实现几乎无限制的容量以及灵活性。到目前为止，云服务提供程序已经能够在无限计算容量和 Blob 存储等大多数方面进行交付。但是，当灵活性涉及云中有状态的数据处理（特别是关系数据库处理）时，灵活性仍然是一个挑战。我们发现这些挑战主要出现在以下两种情况中：
+Azure SQL数据库 灵活扩展将交付云计算约定，并在 Azure SQL DB 平台上同时实现几乎无限制的容量以及灵活性。到目前为止，云服务提供程序已经能够在无限计算容量和 Blob 存储等大多数方面进行交付。但是，当灵活性涉及云中有状态的数据处理（特别是关系数据库处理）时，灵活性仍然是一个挑战。我们发现这些挑战主要出现在以下两种情况中：
 
 -   增加和缩小您的工作负载的关系数据库部分的容量。
 -   管理有状态的数据库工作负载及其数据的利用率热点。
 
-通常，通过购买更多可托管应用程序数据层的硬件来处理这些情况。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。就成本和灵活性而言，出于容量原因而在几个扩展单元上进行分片（或分发数据）和处理，可提供一种出色的替代方法来代替传统的向上扩展方法。在过去的几年中，我们发现客户必须在 Azure SQL DB 顶部实现他们自己的向外扩展方法，才能成功进行分片。对于某些客户，这意味着要管理数百或数千个 Azure SQL Database。这意味着其数据层中有大量代码，该数据层用于处理分片的复杂性，而不是应用程序的业务逻辑。
+通常，通过购买更多可托管应用程序数据层的硬件来处理这些情况。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。就成本和灵活性而言，出于容量原因而在几个扩展单元上进行分片（或分发数据）和处理，可提供一种出色的替代方法来代替传统的向上扩展方法。在过去的几年中，我们发现客户必须在 Azure SQL DB 顶部实现他们自己的向外扩展方法，才能成功进行分片。对于某些客户，这意味着要管理数百或数千个 Azure SQL数据库。这意味着其数据层中有大量代码，该数据层用于处理分片的复杂性，而不是应用程序的业务逻辑。
 
-经过多年与客户直接合作，我们从这些项目中发现了几种可供分片的模式。Azure SQL Database 灵活扩展围绕这些模式提供了客户端库和服务产品。通过灵活扩展，您可以更轻松地开发、扩展和管理您的 Azure 应用程序的有状态数据层。
+经过多年与客户直接合作，我们从这些项目中发现了几种可供分片的模式。Azure SQL数据库 灵活扩展围绕这些模式提供了客户端库和服务产品。通过灵活扩展，您可以更轻松地开发、扩展和管理您的 Azure 应用程序的有状态数据层。
 
 然后，您可以侧重于您的应用程序的业务逻辑，而不是构建分片的基础结构。
 
@@ -31,7 +31,7 @@ Azure SQL Database 灵活扩展将交付云计算约定，并在 Azure SQL DB �
 ![][0]
 
 该图在左侧和右侧显示开发人员和管理员。当提交局部分片操作，而非具有其自己的语义的跨分片操作时，客户期望获取完全的 T-SQL 功能。
-通过以下特定功能，Azure SQL Database 灵活扩展的公共预览版可更加轻松地开发标准 Azure SQL DB 应用程序：
+通过以下特定功能，Azure SQL数据库 灵活扩展的公共预览版可更加轻松地开发标准 Azure SQL DB 应用程序：
 
 -   **分片映射管理**：分片映射管理 (1) 是使应用程序能够管理有关其分片的各种元数据的功能。分片映射管理是灵活扩展客户端库的一项功能。开发人员可以使用此功能来注册分片、介绍如何将单独的分片键或键范围映射到分片，以及在数据层中的分片布局发生变化时维护此元数据以反映容量更改。分片映射管理组成大量重复代码，当客户自行实现分片时，他们必须在其应用程序中编写这些代码。有关详细信息，请参阅[分片映射管理][分片映射管理]
 

@@ -94,7 +94,7 @@
 <li>在以下位置了解有关可以使用 Windows Azure 存储执行的更高级任务：<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx">在 Windows Azure 中存储和访问数据</a>。</li>
 <li>查看更多功能指南，以了解在 Windows Azure 中存储数据的其他方式。
 <ul><li style="display:none">使用<a href="/zh-cn/develop/net/how-to-guides/table-services/">表存储</a>存储结构化数据。</li>
-<li>使用 <a href="/zh-cn/develop/net/how-to-guides/sql-database/">SQL Database</a> 存储关系数据。</li>
+<li>使用 <a href="/zh-cn/develop/net/how-to-guides/sql-database/">SQL数据库</a> 存储关系数据。</li>
 </ul>
 </li>
 </ul>

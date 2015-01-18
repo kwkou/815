@@ -124,7 +124,7 @@
         public DateTime?CompleteDate { get; set; }
         }
 
-    > [WACOM.NOTE] `DataMemberAttribute` 告知客户端要将应用程序中的新 `CompleteDate` 属性映射到 TodoItem 表中定义的 `CompleteDate` 列。如果你使用此属性，应用程序在对象上使用的属性名称可以不同于 SQL Database 中的列名称。
+    > [WACOM.NOTE] `DataMemberAttribute` 告知客户端要将应用程序中的新 `CompleteDate` 属性映射到 TodoItem 表中定义的 `CompleteDate` 列。如果你使用此属性，应用程序在对象上使用的属性名称可以不同于 SQL数据库 中的列名称。
 
 4.  在 MainPage.xaml.cs 中，删除或注释掉现有 "RefreshTodoItems" 方法中的 `.Where` 子句函数，以便在结果中包含已完成的 todoitem。
 

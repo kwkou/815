@@ -1,17 +1,17 @@
-<properties linkid="develop-php-how-to-guides-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="How to use Service Bus topics (PHP) - Azure" metaKeywords="" description="Learn how to use Service Bus topics with PHP in Azure." metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-php-how-to-guides-service-bus-topics" urlDisplayName="服务总线 Topics" pageTitle="How to use 服务总线 topics (PHP) - Azure" metaKeywords="" description="Learn how to use 服务总线 topics with PHP in Azure." metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use 服务总线 Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
 
-# 如何使用 Service Bus 主题/订阅
+# 如何使用 服务总线 主题/订阅
 
-本指南演示如何使用 Service Bus 主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][Azure SDK for PHP]。涉及的应用场景包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
+本指南演示如何使用 服务总线 主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP][Azure SDK for PHP]。涉及的应用场景包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
 
 ## 目录
 
--   [什么是 Service Bus 主题和订阅？][什么是 Service Bus 主题和订阅？]
+-   [什么是 服务总线 主题和订阅？][什么是 服务总线 主题和订阅？]
 -   [创建服务命名空间][创建服务命名空间]
 -   [获得命名空间的默认管理凭据][获得命名空间的默认管理凭据]
 -   [创建 PHP 应用程序][创建 PHP 应用程序]
 -   [获取 Azure 客户端库][获取 Azure 客户端库]
--   [配置应用程序以使用 Service Bus][配置应用程序以使用 Service Bus]
+-   [配置应用程序以使用 服务总线][配置应用程序以使用 服务总线]
 -   [如何：创建主题][如何：创建主题]
 -   [如何：创建订阅][如何：创建订阅]
 -   [如何：将消息发送到主题][如何：将消息发送到主题]
@@ -35,9 +35,9 @@
 
 [WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
-## <span id="ConfigureApp"></span></a>配置应用程序以使用 Service Bus
+## <span id="ConfigureApp"></span></a>配置应用程序以使用 服务总线
 
-若要使用 Azure Service Bus 主题 API，你需要：
+若要使用 Azure 服务总线 主题 API，你需要：
 
 1.  使用 [require\_once][require\_once] 语句引用 autoloader 文件，并
 2.  引用可使用的所有类。
@@ -52,9 +52,9 @@
 
 在下面的示例中，将始终显示`require_once` 语句，但仅引用执行该示例所需的类。
 
-## <span id="ConnectionString"></span></a>设置 Azure Service Bus 连接
+## <span id="ConnectionString"></span></a>设置 Azure 服务总线 连接
 
-若要实例化 Azure Service Bus 客户端，你必须先拥有采用此格式的有效连接字符串：
+若要实例化 Azure 服务总线 客户端，你必须先拥有采用此格式的有效连接字符串：
 
     Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 
@@ -80,7 +80,7 @@
 
 ## <span id="CreateTopic"></span></a>如何：创建主题
 
-Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**ServiceBusRestProxy** 对象是通过**ServicesBuilder::createServiceBusService** 工厂方法与一个适当的连接字符串（该字符串封装了令牌权限以进行管理）构造的。
+服务总线 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**ServiceBusRestProxy** 对象是通过**ServicesBuilder::createServiceBusService** 工厂方法与一个适当的连接字符串（该字符串封装了令牌权限以进行管理）构造的。
 
 下面的示例说明如何实例化 **ServiceBusRestProxy** 并调用 **ServiceBusRestProxy-\>createTopic** 来创建名为`mytopic` 的主题（在`MySBNamespace` 服务命名空间中）：
 
@@ -90,7 +90,7 @@ Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**
     use WindowsAzure\Common\ServiceException;
     use WindowsAzure\ServiceBus\Models\TopicInfo;
 
-    // Create Service Bus REST proxy.
+    // Create 服务总线 REST proxy.
     $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
 
     try {       
@@ -124,7 +124,7 @@ Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**
     use WindowsAzure\Common\ServiceException;
     use WindowsAzure\ServiceBus\Models\SubscriptionInfo;
 
-    // Create Service Bus REST proxy.
+    // Create 服务总线 REST proxy.
     $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
 
     try {
@@ -176,7 +176,7 @@ Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**
 
 ## <span id="SendMessage"></span></a>如何：将消息发送到主题
 
-若要向 Service Bus 主题发送消息，你的应用程序将调用 **ServiceBusRestProxy-\>sendTopicMessage** 方法。下面的代码演示了如何将消息发送到`mytopic` 主题（我们之前在
+若要向 服务总线 主题发送消息，你的应用程序将调用 **ServiceBusRestProxy-\>sendTopicMessage** 方法。下面的代码演示了如何将消息发送到`mytopic` 主题（我们之前在
 `MySBNamespace` 服务命名空间中创建的）。
 
     require_once 'vendor\autoload.php';
@@ -185,7 +185,7 @@ Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**
     use WindowsAzure\Common\ServiceException;
     use WindowsAzure\ServiceBus\Models\BrokeredMessage;
 
-    // Create Service Bus REST proxy.
+    // Create 服务总线 REST proxy.
     $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
         
     try {
@@ -205,7 +205,7 @@ Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**
         echo $code.": ".$error_message."<br />";
     }
 
-发送到 Service Bus 主题的消息是 **BrokeredMessage** 类的实例。**BrokeredMessage** 对象包含一组标准属性和方法（如 **getLabel**、**getTimeToLive**、**setLabel** 和 **setTimeToLive**）以及用来保存自定义应用程序特定属性的属性。下面的示例演示如何向我们之前创建的`mytopic` 主题发送五条测试消息。**setProperty** 方法用于将自定义属性（`MessageNumber`）添加到每条消息。请注意`MessageNumber` 属性值在每条消息中都不同（这可用于确定接收到消息的订阅，如上面的[如何：创建订阅][如何：创建订阅]一节所示）：
+发送到 服务总线 主题的消息是 **BrokeredMessage** 类的实例。**BrokeredMessage** 对象包含一组标准属性和方法（如 **getLabel**、**getTimeToLive**、**setLabel** 和 **setTimeToLive**）以及用来保存自定义应用程序特定属性的属性。下面的示例演示如何向我们之前创建的`mytopic` 主题发送五条测试消息。**setProperty** 方法用于将自定义属性（`MessageNumber`）添加到每条消息。请注意`MessageNumber` 属性值在每条消息中都不同（这可用于确定接收到消息的订阅，如上面的[如何：创建订阅][如何：创建订阅]一节所示）：
 
     for($i = 0; $i < 5; $i++){
         // Create message.
@@ -219,16 +219,16 @@ Service Bus 队列的管理操作可通过**ServiceBusRestProxy** 类执行。**
         $serviceBusRestProxy->sendTopicMessage("mytopic", $message);
     }
 
-Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。
+服务总线 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。队列大小的上限为 5 GB。
 
 ## <span id="ReceiveMessages"></span></a>如何：从订阅接收消息
 
 从队列接收消息的主要方法是使用 **ServiceBusRestProxy-\>receiveSubscriptionMessage** 方法。收到的消息可在两种不同模式下工作：**ReceiveAndDelete**（默认值）和 **PeekLock**。
 
-当使用 **ReceiveAndDelete** 模式时，接收是一个单击操作 - 即，当 Service Bus 接收订阅中的消息读取请求时，它会将消息标记为“将使用”并将其返回应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序
-允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
+当使用 **ReceiveAndDelete** 模式时，接收是一个单击操作 - 即，当 服务总线 接收订阅中的消息读取请求时，它会将消息标记为“将使用”并将其返回应用程序。**ReceiveAndDelete** 模式是最简单的模式，最适合应用程序
+允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 服务总线 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
-在 **PeekLock** 模式下，接收消息会变成一个两阶段操作，这将能够支持不能允许丢失消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或以可靠方式存储消息以供将来处理）后，它通过将收到的消息传送到 **ServiceBusRestProxy-\>deleteMessage** 来完成接收过程的第二个阶段。当 Service Bus 发现 **deleteMessage** 调用时，它会将消息标记为“将使用”并将其从队列中删除。
+在 **PeekLock** 模式下，接收消息会变成一个两阶段操作，这将能够支持不能允许丢失消息的应用程序。当 服务总线 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或以可靠方式存储消息以供将来处理）后，它通过将收到的消息传送到 **ServiceBusRestProxy-\>deleteMessage** 来完成接收过程的第二个阶段。当 服务总线 发现 **deleteMessage** 调用时，它会将消息标记为“将使用”并将其从队列中删除。
 
 下面的示例演示了如何使用 **PeekLock** 模式（非默认模式）接收和处理消息。
 
@@ -238,7 +238,7 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
     use WindowsAzure\Common\ServiceException;
     use WindowsAzure\ServiceBus\Models\ReceiveMessageOptions;
 
-    // Create Service Bus REST proxy.
+    // Create 服务总线 REST proxy.
     $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
         
     try {
@@ -272,9 +272,9 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 ## <span id="HandleCrashes"></span></a>如何：处理应用程序崩溃和不可读消息
 
-Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序出于某种原因无法处理消息，它可以对收到的消息调用 **unlockMessage** 方法（而不是 **deleteMessage** 方法）。这将导致 Service Bus 解锁队列中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
+服务总线 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序出于某种原因无法处理消息，它可以对收到的消息调用 **unlockMessage** 方法（而不是 **deleteMessage** 方法）。这将导致 服务总线 解锁队列中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
 
-还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
+还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），服务总线 将自动解锁该消息并使它可再次被接收。
 
 如果在处理消息之后但在发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
 
@@ -290,7 +290,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
     use WindowsAzure\ServiceBus\ServiceBusSettings;
     use WindowsAzure\Common\ServiceException;
 
-    // Create Service Bus REST proxy.
+    // Create 服务总线 REST proxy.
     $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
 
     try {       
@@ -312,15 +312,15 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## <span id="NextSteps"></span></a>后续步骤
 
-现在，你已了解 Service Bus 队列的基础知识，请参阅 MSDN 主题[队列、主题和订阅][队列、主题和订阅]以获取更多信息。
+现在，你已了解 服务总线 队列的基础知识，请参阅 MSDN 主题[队列、主题和订阅][队列、主题和订阅]以获取更多信息。
 
   [Azure SDK for PHP]: http://go.microsoft.com/fwlink/?LinkId=252473
-  [什么是 Service Bus 主题和订阅？]: #what-are-service-bus-topics
+  [什么是 服务总线 主题和订阅？]: #what-are-service-bus-topics
   [创建服务命名空间]: #create-a-service-namespace
   [获得命名空间的默认管理凭据]: #obtain-default-credentials
   [创建 PHP 应用程序]: #CreateApplication
   [获取 Azure 客户端库]: #GetClientLibrary
-  [配置应用程序以使用 Service Bus]: #ConfigureApp
+  [配置应用程序以使用 服务总线]: #ConfigureApp
   [如何：创建主题]: #CreateTopic
   [如何：创建订阅]: #CreateSubscription
   [如何：将消息发送到主题]: #SendMessage

@@ -1,8 +1,8 @@
-﻿<properties linkid="dev-net-tutorials-web-app-with-sql-azure-vs2013" urlDisplayName="使用 SQL Database 创建网站" pageTitle="使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Windows Azure 网站" metaKeywords="Azure Hello World 教程, Azure 入门教程, SQL Database 教程, Azure .NET Hello World 教程, Azure C# Hello World 教程, SQL Azure C# 教程" description="了解如何开发带有 SQL Database 后端的 ASP.NET MVC 5 网站并将其部署到 Windows Azure。" metaCanonical="" services="web-sites,sql-database" documentationCenter=".NET" title="OAuth" authors=""  solutions="" writer="riande" manager="wpickett" editor="mollybos"  />
+﻿<properties linkid="dev-net-tutorials-web-app-with-sql-azure-vs2013" urlDisplayName="使用 SQL数据库 创建网站" pageTitle="使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Windows Azure 网站" metaKeywords="Azure Hello World 教程, Azure 入门教程, SQL数据库 教程, Azure .NET Hello World 教程, Azure C# Hello World 教程, SQL Azure C# 教程" description="了解如何开发带有 SQL数据库 后端的 ASP.NET MVC 5 网站并将其部署到 Windows Azure。" metaCanonical="" services="web-sites,sql-database" documentationCenter=".NET" title="OAuth" authors=""  solutions="" writer="riande" manager="wpickett" editor="mollybos"  />
 
 
 
-# 使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 5 应用程序部署到 Windows Azure 网站
+# 使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 5 应用程序部署到 Windows Azure 网站
 
 ***由 [Rick Anderson](https://twitter.com/RickAndMSFT) 和 Tom Dykstra 撰写。上次更新时间：2013 年 10 月 18 日。***
 
@@ -20,7 +20,7 @@
 * 如何创建安全的 ASP.NET MVC 5 项目并将其发布到 Windows Azure 网站。
 * 如何使用 [OAuth](http://oauth.net/ "http://oauth.net/")、[OpenID](http://openid.net/) 和 ASP.NET 成员资格数据库保护您的应用程序。
 * 如何使用新成员资格 API 添加用户和角色。
-* 如何使用 SQL Database 在 Windows Azure 中存储数据。
+* 如何使用 SQL数据库 在 Windows Azure 中存储数据。
 
 您将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整应用程序的登录页面：
 
@@ -47,13 +47,13 @@
 
 <h2><a name="bkmk_setupwindowsazure"></a>设置 Windows Azure 环境</h2>
 
-接下来，通过创建 Windows Azure 网站和 SQL Database 来设置 Windows Azure 环境。
+接下来，通过创建 Windows Azure 网站和 SQL数据库 来设置 Windows Azure 环境。
 
 ### 在 Windows Azure 中创建网站和 SQL 数据库
 
 您的 Windows Azure 网站将在共享宿主环境中运行，这意味着它将在与其他 Windows Azure 客户端共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。稍后，如果您的 Web 流量增加，则应用程序可进行扩展，通过在专用 VM 上运行来满足需要。如果您需要一个更复杂的体系结构，则可迁移到 Windows Azure 云服务。云服务在您可根据自己的需求进行配置的专用 VM 上运行。
 
-Windows Azure SQL Database 是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL Database。
+Windows Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL数据库。
 
 1. 在 [Windows Azure 管理门户](https://manage.windowsazure.com) 中，单击左侧选项卡中的“网站”，然后单击“新建”。
 
@@ -78,9 +78,9 @@ Windows Azure SQL Database 是根据 SQL Server 技术构建的基于云的关�
 该向导将前进到“指定数据库设置”步骤。
 
 1. 在“名称”框中，输入 *ContactDB*。（参见下图）。
-1. 在“服务器”框中，选择“新建 SQL Database 服务器”。（参见下图）。或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
+1. 在“服务器”框中，选择“新建 SQL数据库 服务器”。（参见下图）。或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
 1. 将“区域”设置为创建网站的同一区域。
-1. 输入管理员“登录名”和“密码”。如果您选择了“新建 SQL Database 服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，您现在定义的名称和密码将在您以后访问数据库时使用。如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。对于免费数据库，只能设置排序规则。
+1. 输入管理员“登录名”和“密码”。如果您选择了“新建 SQL数据库 服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，您现在定义的名称和密码将在您以后访问数据库时使用。如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。对于免费数据库，只能设置排序规则。
 1. 单击对话框右下角的复选标记以指示您已完成操作。
 
 	![“新建网站 - 与数据库一起创建”向导的“数据库设置”步骤][setup007]
@@ -89,7 +89,7 @@ Windows Azure SQL Database 是根据 SQL Server 技术构建的基于云的关�
 
 	![“新建网站 - 与数据库一起创建”向导的“数据库设置”步骤][rxPrevDB]
 
-	管理门户返回到“网站”页面，“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，您的帐户中拥有的网站的数量将会显示在“网站”图标旁边，而数据库的数量将会显示在“SQL Database”图标旁边。
+	管理门户返回到“网站”页面，“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，您的帐户中拥有的网站的数量将会显示在“网站”图标旁边，而数据库的数量将会显示在“SQL数据库”图标旁边。
 
 <h2><a name="bkmk_createmvc4app"></a>创建 ASP.NET MVC 5 应用程序</h2>
 
@@ -166,7 +166,7 @@ Windows Azure SQL Database 是根据 SQL Server 技术构建的基于云的关�
    
 	* 单击“登录”，然后输入您的 Windows Azure 帐户的凭据。
 
-		此方法虽然又快又简单，但如果您使用此方法，将无法在“服务器资源管理器”窗口中看到 Windows Azure SQL Database 或移动服务。
+		此方法虽然又快又简单，但如果您使用此方法，将无法在“服务器资源管理器”窗口中看到 Windows Azure SQL数据库 或移动服务。
 
 	* 单击“管理订阅”以便安装允许访问您帐户的管理证书。
 
@@ -564,7 +564,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 ![在 SSOX 中打开](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/rrr12.png)
 
  
-**注意**：如果无法从 Visual Studio 展开 SQL Databases 并且无法看到 ContactDB，则必须按照下面的说明来打开防火墙端口或一系列端口。按照“添加一系列允许的 IP 地址”和“从 SSOX 连接到 SQL Azure 数据库”下面的说明操作。在添加防火墙规则后，您可能必须等待几分钟才能访问数据库。
+**注意**：如果无法从 Visual Studio 展开 SQL数据库s 并且无法看到 ContactDB，则必须按照下面的说明来打开防火墙端口或一系列端口。按照“添加一系列允许的 IP 地址”和“从 SSOX 连接到 SQL Azure 数据库”下面的说明操作。在添加防火墙规则后，您可能必须等待几分钟才能访问数据库。
  
 1. 右键单击 AspNetUsers 表，然后选择“查看数据”。
 
@@ -588,7 +588,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 您需要将 IP 地址添加到允许的 IP。
 
-1. 在 Windows Azure 门户中的左侧选项卡中选择 SQL Databases。
+1. 在 Windows Azure 门户中的左侧选项卡中选择 SQL数据库s。
 	![选择 SQL][rx6]
 
 1. 选择您要打开的数据库。
@@ -600,7 +600,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 下一步是添加一系列允许的 IP 地址。
 
-1. 在 Windows Azure 门户中，单击 SQL Databases。
+1. 在 Windows Azure 门户中，单击 SQL数据库s。
 1. 单击承载您的数据库的“服务器”。
 
 	![数据库服务器][rx8]
@@ -613,13 +613,13 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 1. 在页面底部，单击“保存”。
 1. 请留下反馈，告诉我们您是否需要添加一系列 IP 地址以进行连接。
 
-最后，您可以从 SSOX 连接到 SQL Database 实例
+最后，您可以从 SSOX 连接到 SQL数据库 实例
 
 1. 在“视图”菜单中，单击“SQL Server 对象资源管理器”。
 1. 右键单击“SQL Server”并选择“添加 SQL Server”。
 1. 在“连接到服务器”对话框中，将“身份验证”设置为“SQL Server 身份验证”。您将从 Windows Azure 门户中获取“服务器名称”和“登录名”。
-1. 在您的浏览器中，导航到门户并选择“SQL Database”。
-1. 选择 ContactDB，然后单击“查看 SQL Database 连接字符串”。
+1. 在您的浏览器中，导航到门户并选择“SQL数据库”。
+1. 选择 ContactDB，然后单击“查看 SQL数据库 连接字符串”。
 1. 在“连接字符串”页中，复制“服务器”和“用户 ID”。
 1. 将“服务器”和“用户 ID”值传入 Visual Studio 中的“连接到服务器”对话框。“用户 ID”值将进入“登录名”条目。输入用于创建 SQL 数据库的密码。
 

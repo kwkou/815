@@ -1,10 +1,10 @@
-<properties title="灵活扩展安全配置" pageTitle="灵活扩展安全配置" description="使用 Azure SQL Database 灵活扩展的拆分/合并服务安全" metaKeywords="Elastic Scale Security Configurations, Azure SQL Database sharding, elastic scale " services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="灵活扩展安全配置" pageTitle="灵活扩展安全配置" description="使用 Azure SQL数据库 灵活扩展的拆分/合并服务安全" metaKeywords="Elastic Scale Security Configurations, Azure SQL数据库 sharding, elastic scale " services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
 # 灵活扩展安全配置
 
-Windows Azure SQL Database 灵活扩展包括自托管服务。此分发包括服务配置文件，该文件包含必须配置的安全相关设置。
+Windows Azure SQL数据库 灵活扩展包括自托管服务。此分发包括服务配置文件，该文件包含必须配置的安全相关设置。
 
 1.  [配置证书][配置证书]
 2.  [允许的 IP 地址][允许的 IP 地址]
@@ -445,7 +445,7 @@ Windows Azure SQL Database 灵活扩展包括自托管服务。此分发包括�
 
 <h1 id="other-security-considerations"><a name="other-security"></a>其他安全注意事项</h1> 
 
-<p>使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保留在其内部表中，该表位于您在 Windows Azure 订阅中为元数据存储提供的 Windows Azure SQL Database 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分：</p> 
+<p>使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保留在其内部表中，该表位于您在 Windows Azure 订阅中为元数据存储提供的 Windows Azure SQL数据库 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分：</p> 
 	<Setting name="ElasticScaleMetadata" value="Server=…" />
 
 <p>不会对存储在此数据库中的数据进行加密。若要避免从服务请求中公开凭据或其他敏感信息，请保护此数据库并总是以安全方式访问它。此外，由于服务部署的 Web 角色和辅助角色都可以访问元数据库，因此请同样确保这两个角色是最新且安全的。</p>
@@ -458,11 +458,11 @@ Windows Azure SQL Database 灵活扩展包括自托管服务。此分发包括�
   [其他安全注意事项]: #other-security
   [配置 SSL 证书]: #to-configure-ssl-cert
   [配置客户端证书]: #configuring-client-certs
-  [Windows 证书服务]: http://msdn.microsoft.com/en-us/library/windows/desktop/aa376539.aspx
-  [makecert.exe]: http://msdn.microsoft.com/en-us/library/bfsktky3.aspx
-  [pvk2pfx.exe]: http://msdn.microsoft.com/en-us/library/windows/hardware/ff550672.aspx
-  [Visual Studio 命令提示符]: http://msdn.microsoft.com/en-us/library/ms229859.aspx
-  [Windows 8.1：下载工具包和工具]: http://msdn.microsoft.com/en-US/windows/hardware/gg454513#drivers
+  [Windows 证书服务]: http://msdn.microsoft.com/zh-cn/library/windows/desktop/aa376539.aspx
+  [makecert.exe]: http://msdn.microsoft.com/zh-cn/library/bfsktky3.aspx
+  [pvk2pfx.exe]: http://msdn.microsoft.com/zh-cn/library/windows/hardware/ff550672.aspx
+  [Visual Studio 命令提示符]: http://msdn.microsoft.com/zh-cn/library/ms229859.aspx
+  [Windows 8.1：下载工具包和工具]: http://msdn.microsoft.com/zh-cn/windows/hardware/gg454513#drivers
   [创建自签名证书]: #create-self-signed-cert
   [为自签名 SSL 证书创建 PFX 文件]: #create-pfx-for-self-signed-cert
   [将 SSL 证书上载到云服务]: #upload-ssl

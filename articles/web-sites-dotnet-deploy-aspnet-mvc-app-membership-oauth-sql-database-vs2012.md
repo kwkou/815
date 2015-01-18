@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
 
-# 使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用部署到 Azure 网站
+# 使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用部署到 Azure 网站
 
 ***由 [Rick Anderson][Rick Anderson] 和 Tom Dykstra 撰写。上次更新时间：2013 年 10 月 15 日。***
 
@@ -20,7 +20,7 @@
 -   如何创建安全的 ASP.NET MVC 4 项目并将其发布到 Azure 网站。
 -   如何使用 OAuth 和 ASP.NET 成员资格数据库保护您的应用程序。
 -   如何将成员资格数据库部署到 Azure。
--   如何使用 SQL Database 在 Azure 中存储数据。
+-   如何使用 SQL数据库 在 Azure 中存储数据。
 -   如何使用 Visual Studio 更新和管理成员资格数据库。
 
 您将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET MVC 4 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整应用程序的登录页面：
@@ -58,13 +58,13 @@
 
 ## <a name="bkmk_setupwindowsazure"></a>设置 Azure 环境
 
-接下来，通过创建 Azure 网站和 SQL Database 来设置 Azure 环境。
+接下来，通过创建 Azure 网站和 SQL数据库 来设置 Azure 环境。
 
 ### 在 Azure 中创建网站和 SQL 数据库
 
 您的 Azure 网站将在共享宿主环境中运行，这意味着它将在与其他 Azure 客户端共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。稍后，如果您的 Web 流量增加，则应用程序可进行扩展，通过在专用 VM 上运行来满足需要。如果您需要一个更复杂的体系结构，则可迁移到 Azure 云服务。云服务在您可根据自己的需求进行配置的专用 VM 上运行。
 
-Azure SQL Database 是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL Database。
+Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL数据库。
 
 1.  在 [Azure 管理门户][Azure 管理门户]中，单击左侧选项卡中的“网站”，然后单击“新建”。
 
@@ -90,9 +90,9 @@ Azure SQL Database 是根据 SQL Server 技术构建的基于云的关系数据�
 
 5.  在“名称”框中，输入 *ContactDB*。
 
-6.  在“服务器”框中，选择“新建 SQL Database 服务器”。或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
+6.  在“服务器”框中，选择“新建 SQL数据库 服务器”。或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
 
-7.  输入管理员“登录名”和“密码”。如果您选择了“新建 SQL Database 服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，您现在定义的名称和密码将在您以后访问数据库时使用。如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。您可以使用“高级”框设置数据库大小（默认为 1 GB，但您可以将其增加到 150 GB）和排序规则。
+7.  输入管理员“登录名”和“密码”。如果您选择了“新建 SQL数据库 服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，您现在定义的名称和密码将在您以后访问数据库时使用。如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。您可以使用“高级”框设置数据库大小（默认为 1 GB，但您可以将其增加到 150 GB）和排序规则。
 
 8.  单击对话框底部的复选标记以指示您已完成操作。
 
@@ -101,7 +101,7 @@ Azure SQL Database 是根据 SQL Server 技术构建的基于云的关系数据�
     下图指示使用的是现有 SQL Server 和登录名。
     ![“新建网站 – 与数据库一起创建”向导的“数据库设置”步骤][“新建网站 – 与数据库一起创建”向导的“数据库设置”步骤]
 
-    管理门户返回到“网站”页面，“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，您的帐户中拥有的网站的数量将会显示在“网站”图标旁边，而数据库的数量将会显示在“SQL Database”图标旁边。
+    管理门户返回到“网站”页面，“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，您的帐户中拥有的网站的数量将会显示在“网站”图标旁边，而数据库的数量将会显示在“SQL数据库”图标旁边。
 
 ## <a name="bkmk_createmvc4app"></a>创建 ASP.NET MVC 4 应用程序
 
@@ -553,7 +553,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 
 6.  在“高级脚本编写选项”对话框中，向下滚动到“要编写脚本的数据的类型”，然后单击下拉列表中的“仅数据”选项。（有关下一步，请参见下图。）
 
-7.  将“编写 USE DATABASE 脚本”更改为“False”。USE 语句对于 Azure SQL Database 无效，且在测试环境中部署到 SQL Server Express 时不需要这些语句。
+7.  将“编写 USE DATABASE 脚本”更改为“False”。USE 语句对于 Azure SQL数据库 无效，且在测试环境中部署到 SQL Server Express 时不需要这些语句。
 
     ![设置脚本编写选项][7]
 
@@ -633,7 +633,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 
 ![防火墙错误][防火墙错误]
 
-1.  在 Azure 门户中的左侧选项卡中选择 **SQL Databases**。
+1.  在 Azure 门户中的左侧选项卡中选择 **SQL数据库s**。
 
     ![选择 SQL][选择 SQL]
 
@@ -647,7 +647,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 
 ## 添加一系列允许的 IP 地址
 
-1.  在 Azure 门户中，单击“SQL Databases”。
+1.  在 Azure 门户中，单击“SQL数据库s”。
 2.  单击托管您的数据库的“服务器”。
 
     ![数据库服务器][数据库服务器]
@@ -687,9 +687,9 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 -   您想要使用远程桌面连接来访问运行应用程序的 Web 服务器。
 -   您的应用程序是多层的，并且您想要在多个虚拟服务器（Web 服务器和辅助服务器）上分布工作。
 
-有关 SQL Database 和 Azure 存储的详细信息，请参阅 [Azure 上的数据存储产品/服务][Azure 上的数据存储产品/服务]。
+有关 SQL数据库 和 Azure 存储的详细信息，请参阅 [Azure 上的数据存储产品/服务][Azure 上的数据存储产品/服务]。
 
-若要了解有关如何使用 SQL Database 的详细信息，请参阅[在 ASP.NET 数据访问内容映射中使用 Azure SQL Database][在 ASP.NET 数据访问内容映射中使用 Azure SQL Database]。
+若要了解有关如何使用 SQL数据库 的详细信息，请参阅[在 ASP.NET 数据访问内容映射中使用 Azure SQL数据库][在 ASP.NET 数据访问内容映射中使用 Azure SQL数据库]。
 
 若要了解有关 Entity Framework 和代码优先迁移的更多信息，请参见以下资源：
 
@@ -795,14 +795,14 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
   [在 ASP.NET MVC 4 中自定义外部登录按钮]: http://www.beabigrockstar.com/customizing-external-login-buttons-in-asp-net-mvc-4/
   [Azure 身份验证]: http://www.asp.net/vnext/overview/fall-2012-update/windows-azure-authentication
   [如何使用 ASP.NET MVC 创建 Intranet 站点]: http://msdn.microsoft.com/zh-cn/library/gg703322(v=vs.98).aspx
-  [使用存储表、队列和 Blob 的 .NET 多层应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/
+  [使用存储表、队列和 Blob 的 .NET 多层应用程序]: /zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/
   [ASP.NET MVC 4 简介]: http://www.asp.net/mvc/tutorials/mvc-4/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
   [使用 MVC 的 Entity Framework 入门]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
   [OAuth 2.0 与登录]: http://blogs.msdn.com/b/vbertocci/archive/2013/01/02/oauth-2-0-and-sign-in.aspx
   [常见任务]: http://www.windowsazure.com/zh-cn/develop/net/common-tasks/
   [在 Visual Studio 中对 Azure 网站进行故障排除]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
-  [本教程中的云服务版本]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/
+  [本教程中的云服务版本]: /zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/
   [使用 Azure 开发 Web 应用程序]: http://msdn.microsoft.com/zh-cn/library/Hh674484
   [Azure 上的数据存储产品/服务]: http://social.technet.microsoft.com/wiki/contents/articles/data-storage-offerings-on-the-windows-azure-platform.aspx
-  [在 ASP.NET 数据访问内容映射中使用 Azure SQL Database]: http://go.microsoft.com/fwlink/p/?LinkId=282414#ssdb
+  [在 ASP.NET 数据访问内容映射中使用 Azure SQL数据库]: http://go.microsoft.com/fwlink/p/?LinkId=282414#ssdb
   [13]: http://msdn.microsoft.com/zh-cn/library/hh770484
