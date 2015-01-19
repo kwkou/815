@@ -118,7 +118,7 @@
 
 3.  在新的 **federation.ini** 文件中，输入以下信息，并提供包含创建服务主体时在第 2 步中保存的信息的值：
 
-        federation.trustedissuers.issuer=https://accounts.accesscontrol.windows.net/v2/wsfederation
+        federation.trustedissuers.issuer=https://accounts.accesscontrol.chinacloudapi.cn/v2/wsfederation
         federation.trustedissuers.thumbprint=qY+Drf20Zz+A4t2we3PebCopoCugO76My+JMVsqNBFc=
         federation.trustedissuers.friendlyname=Fabrikam
         federation.audienceuris=spn:7829c758-2bef-43df-a685-717089474505
@@ -181,7 +181,7 @@
         </body>
         </html> 
 
-8.  在**“运行”**菜单中，单击**“运行”**。你将自动重定向到“Office 365 标识提供程序”页，你可在其中使用目录租户凭据进行登录。例如 *john.doe@fabrikam.onmicrosoft.com*。
+8.  在**“运行”**菜单中，单击**“运行”**。你将自动重定向到“Office 365 标识提供程序”页，你可在其中使用目录租户凭据进行登录。例如 *john.doe@fabrikam.partner.onmschina.cn*。
 
 ## <a name="summary"></a>摘要
 

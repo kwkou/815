@@ -277,7 +277,7 @@ WASB 语法为：
 
         #创建 AvgDelays 表
         $conn = New-Object System.Data.SqlClient.SqlConnection
-        $conn.ConnectionString = "Data Source=$sqlDatabaseServer.database.windows.net;Initial Catalog=$sqlDatabaseName;User ID=$sqlDatabaseUsername;Password=$sqlDatabasePassword;Encrypt=true;Trusted_Connection=false;"
+        $conn.ConnectionString = "Data Source=$sqlDatabaseServer.database.chinacloudapi.cn;Initial Catalog=$sqlDatabaseName;User ID=$sqlDatabaseUsername;Password=$sqlDatabasePassword;Encrypt=true;Trusted_Connection=false;"
         $conn.open()
         $cmd = New-Object System.Data.SqlClient.SqlCommand
         $cmd.connection = $conn

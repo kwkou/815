@@ -248,7 +248,7 @@
   [测试已连接到移动服务的应用程序]: #test-online-app
   [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
   [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
-  [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28
   [用于 Windows Phone 的入门脱机示例]: http://go.microsoft.com/fwlink/?LinkId=397952
   [0]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
   [1]: ./media/mobile-services-windows-phone-get-started-offline-data/vs-select-processor-architecture.png

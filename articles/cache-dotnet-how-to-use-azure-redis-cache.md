@@ -134,11 +134,11 @@ NuGet 程序包会给客户端应用程序下载并添加所需的程序集引�
 
 要连接到 Azure Redis Cache 并返回连接的 `ConnectionMultiplexer` 的实例，请调用静态 `Connect` 方法并传递到缓存端点和密钥中，如下例所示。
 
-    ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,ssl=true,password=...");
+    ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.chinacloudapi.cn,ssl=true,password=...");
 
 如果您不想使用 SSL，则设置 `ssl=false` 或只需传递到端点和密钥。
 
-    connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,password=...");
+    connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.chinacloudapi.cn,password=...");
 
 > 有关高级连接配置选项的详细信息，请参阅 [StackExchange.Redis 配置模型][StackExchange.Redis 配置模型]。
 
@@ -239,7 +239,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
             retryTimeoutInMilliseconds = "0" [number]
           />
         -->
-        <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="contoso5.redis.cache.windows.net" 
+        <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="contoso5.redis.cache.chinacloudapi.cn" 
         accessKey="..." ssl="false" />
       </providers>
     </sessionState>
@@ -279,7 +279,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
   [添加和从缓存检索对象]: #add-object
   [在缓存中指定对象的有效期]: #specify-expiration
   [在缓存中存储 ASP.NET 会话状态]: #store-session
-  [缓存定价详细信息]: http://www.windowsazure.com/zh-cn/pricing/details/cache/
+  [缓存定价详细信息]: /pricing/details/cache/
   [Azure Redis Cache 概述]: http://go.microsoft.com/fwlink/?LinkId=320830
   [配置缓存]: #enable-caching
   [新建缓存]: ./media/cache-dotnet-how-to-use-azure-redis-cache/redis-cache-new-cache-menu.png

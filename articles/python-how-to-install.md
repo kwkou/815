@@ -159,4 +159,4 @@ Python 很可能已安装在你的开发计算机上。你可以通过输入以�
   [SciPy - Scientific Python 库套件]: http://www.scipy.org
   [NumPy - Python 的数字库]: http://www.numpy.org
   [Django 项目 - 成熟的 Web 框架/CMS]: http://www.djangoproject.com
-  [Azure 上的 IPython Notebook]: http://windowsazure.com/zh-cn/documentation/articles/virtual-machines-python-ipython-notebook
+  [Azure 上的 IPython Notebook]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-python-ipython-notebook

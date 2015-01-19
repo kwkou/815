@@ -220,7 +220,7 @@
         Development server is running at http://123.34.56.78:80
         Quit the server with CTRL-BREAK.
 
-2.  从你的本地 Web 浏览器中，打开 **http://*yourVmName*.cloudapp.net**（其中，*yourVmName* 是你在虚拟机创建步骤中使用的任何名称）。你应看到显示了“Hello ...!" 如下面的屏幕快照所示。这表明 Django 正运行在虚拟机中并能够正常运行。
+2.  从你的本地 Web 浏览器中，打开 **http://*yourVmName*.chinacloudapp.cn**（其中，*yourVmName* 是你在虚拟机创建步骤中使用的任何名称）。你应看到显示了“Hello ...!" 如下面的屏幕快照所示。这表明 Django 正运行在虚拟机中并能够正常运行。
 
     ![][5]
 
@@ -237,7 +237,7 @@
 [2]: ./media/virtual-machines-python-use-mysql-django/mysql_tutorial01-2.png
 [5]: ./media/virtual-machines-python-use-mysql-django/mysql_tutorial01.png
 
-[djangohelloworld]: http://windowsazure.com/zh-cn/documentation/articles/virtual-machines-python-django-web-app-windows-server
+[djangohelloworld]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-python-django-web-app-windows-server
 
 [mysqldoc]: http://dev.mysql.com/doc/
 [mysqlpy]: http://pypi.python.org/pypi/MySQL-python/1.2.3
@@ -254,5 +254,5 @@
 [The status of the Stop-AzureService command]: ../Media/django-helloworld-ps-stop.png
 [The status of the Remove-AzureService command]: ../Media/django-helloworld-ps-remove.png
 
-[Installation Guide]: http://windowsazure.com/zh-cn/documentation/articles/python-how-to-install
+[Installation Guide]: http://windowsazure.cn/zh-cn/documentation/articles/python-how-to-install
  

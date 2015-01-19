@@ -75,7 +75,7 @@
 
   [SQL数据库 业务连续性指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh852669.aspx
   [Team Foundation Service]: http://tfs.visualstudio.com/
-  [源代码管理功能]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/store-scripts-in-source-control/
-  [使用 Azure 命令行工具]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/command-line-administration/
+  [源代码管理功能]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/store-scripts-in-source-control/
+  [使用 Azure 命令行工具]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/command-line-administration/
   [Azure 门户]: http://manage.windowsazure.cn/
-  [Azure 服务仪表板]: http://www.windowsazure.com/zh-cn/support/service-dashboard/
+  [Azure 服务仪表板]: http://www.windowsazure.cn/zh-cn/support/service-dashboard/

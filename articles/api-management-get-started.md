@@ -240,7 +240,7 @@ API 部分有四个选项卡。**摘要**选项卡显示有关 API 的基本度�
   [从开发人员门户调用操作]: #call-operation
   [查看分析]: #view-analytics
   [后续步骤]: #next-steps
-  [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/
+  [Azure 免费试用]: /zh-cn/pricing/1rmb-trial/
   [管理门户]: https://manage.windowsazure.cn/
   [API 管理新实例]: ./media/api-management-get-started/api-management-create-instance-menu.png
   [新的 API 管理服务]: ./media/api-management-get-started/api-management-create-instance-step1.png

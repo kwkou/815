@@ -137,11 +137,11 @@ Azure 将使用指定的参数创建一个 SQL 数据库并将该数据库链接
   [如何：配置自定义域名]: #howtodomain
   [如何：将网站配置为使用 SSL]: #howtoconfigSSL
   [后续步骤]: #next
-  [为 Azure 网站启用 HTTPS]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
-  [为 Azure 网站配置自定义域名]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-custom-domain-name/
+  [为 Azure 网站启用 HTTPS]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [为 Azure 网站配置自定义域名]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-custom-domain-name/
   [服务器名称指示]: http://en.wikipedia.org/wiki/Server_Name_Indication
-  [如何：查看、复制和重新生成存储访问密钥]: http://www.windowsazure.com/zh-cn/documentation/articles/storage-manage-storage-account/#regeneratestoragekeys
-  [Azure 网站上的 New Relic 应用程序性能管理]: http://www.windowsazure.com/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/
+  [如何：查看、复制和重新生成存储访问密钥]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-manage-storage-account/#regeneratestoragekeys
+  [Azure 网站上的 New Relic 应用程序性能管理]: http://www.windowsazure.cn/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/
   [管理门户]: http://manage.windowsazure.cn
   [1]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-custom-domain-name/
   [2]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/

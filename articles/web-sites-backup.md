@@ -156,7 +156,7 @@ Azure 网站备份以下信息：
   [说明]: #notes
   [后续步骤]: #nextsteps
   [有关存储帐户的详细信息]: #moreaboutstorage
-  [如何缩放网站]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-scale/
+  [如何缩放网站]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-scale/
   [“备份”页面]: ./media/web-sites-backup/01ChooseBackupsPage.png
   [选择存储帐户]: ./media/web-sites-backup/02ChooseStorageAccount.png
   [选择要包含的数据库]: ./media/web-sites-backup/03IncludedDatabases.png
@@ -167,9 +167,9 @@ Azure 网站备份以下信息：
   [选择开始日期]: ./media/web-sites-backup/08StartDate.png
   [选择开始时间]: ./media/web-sites-backup/09StartTime.png
   [“保存”按钮]: ./media/web-sites-backup/10SaveIcon.png
-  [1]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-restore/
+  [1]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-restore/
   [Windows Azure 免费试用版]: http://azure.microsoft.com/en-us/pricing/free-trial/
-  [什么是存储帐户？]: http://www.windowsazure.com/zh-cn/documentation/articles/storage-whatis-account/
-  [如何：创建存储帐户]: http://www.windowsazure.com/zh-cn/documentation/articles/storage-create-storage-account/
-  [如何监视存储帐户]: http://www.windowsazure.com/zh-cn/documentation/articles/storage-monitor-storage-account/
+  [什么是存储帐户？]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-whatis-account/
+  [如何：创建存储帐户]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-create-storage-account/
+  [如何监视存储帐户]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-monitor-storage-account/
   [了解 Winidows Azure 存储计费]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx

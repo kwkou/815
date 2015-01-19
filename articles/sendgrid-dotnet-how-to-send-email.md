@@ -212,7 +212,7 @@ SendGrid 可通过使用筛选器来提供其他电子邮件功能。可将这�
     myMessage.AddTo("anna@contoso.com");
     myMessage.From = new MailAddress("john@contoso.com", "John Smith");
     myMessage.Subject = "Testing the SendGrid Library";
-    myMessage.Html = "<p><a href=\"http://www.windowsazure.com\">Hello World Link!</a></p>";
+    myMessage.Html = "<p><a href=\"http://www.windowsazure.cn\">Hello World Link!</a></p>";
     myMessage.Text = "Hello World!";
 
     myMessage.InitializeFilters();

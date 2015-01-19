@@ -291,7 +291,7 @@ Visual Studio Online（前称 Team Foundation Service）是 Microsoft 提供的�
   [处理团队项目组件，选择过程模板]: http://go.microsoft.com/fwlink/?LinkId=324035
   [3]: ./media/cloud-services-continuous-delivery-use-vso/tfs1.png
   [4]: ./media/cloud-services-continuous-delivery-use-vso/tfs2.png
-  [Azure 和 ASP.NET 入门]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/
+  [Azure 和 ASP.NET 入门]: /zh-cn/documentation/articles/web-sites-dotnet-get-started/
   [5]: ./media/cloud-services-continuous-delivery-use-vso/tfs5.png
   [6]: ./media/cloud-services-continuous-delivery-use-vso/tfs6.png
   [7]: ./media/cloud-services-continuous-delivery-use-vso/tfs7.png

@@ -49,7 +49,7 @@
 
 2.  在该项目中，创建名为 **Notifications** 的新类，向类定义添加 **public** 修饰符，然后将以下 **using** 语句添加到新的代码文件：
 
-        using Windows.Networking.PushNotifications;
+        using chinacloudapi.cnworking.PushNotifications;
         using Microsoft.WindowsAzure.Messaging;
         using Windows.Storage;
 

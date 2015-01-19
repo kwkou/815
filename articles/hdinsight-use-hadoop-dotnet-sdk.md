@@ -179,7 +179,7 @@ LOAD DATA INPATH 操作是一个移动操作，它将 Actors.txt 数据移入由
 -   [MapReduce 与 HDInsight 配合使用][]
 -   [Hive 与 HDInsight 配合使用][]
 
-  [此处]: https://account.windowsazure.com/PreviewFeatures
+  [此处]: https://account.windowsazure.cn/PreviewFeatures
   [下载和安装 Hadoop .NET SDK]: #install
   [为教程做准备]: #prepare
   [创建应用程序]: #create

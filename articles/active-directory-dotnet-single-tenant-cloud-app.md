@@ -103,9 +103,9 @@
 
         spn:<Your AppPrincipalId>@<Your Directory Domain>
 
-    **spn** 指定 URI 为服务主体名称，**Your AppPrincpalId** 是在你创建服务主体时生成的 **AppPrincipalId** GUID 值，**Your Directory Domain** 是目录租户的 \*.onmicrosoft.com 域。对于本示例应用程序，我们指定了如下所示的完整应用程序 URI 值：
+    **spn** 指定 URI 为服务主体名称，**Your AppPrincpalId** 是在你创建服务主体时生成的 **AppPrincipalId** GUID 值，**Your Directory Domain** 是目录租户的 \*.partner.onmschina.cn 域。对于本示例应用程序，我们指定了如下所示的完整应用程序 URI 值：
 
-        spn:7829c758-2bef-43df-a685-717089474505@awesomecomputers.onmicrosoft.com
+        spn:7829c758-2bef-43df-a685-717089474505@awesomecomputers.partner.onmschina.cn
 
     输入应用程序 URI 后，单击 **下一步**。
 
@@ -113,11 +113,11 @@
 
 4.  在联合身份验证实用工具的下一页，选择 **使用现有 STS**，然后在 **STS WS 联合身份验证元数据文档位置** 下输入 WS 联合身份验证元数据文档的 URL。此 URL 是使用以下格式指定的：
 
-        https://accounts.accesscontrol.windows.net/<Domain Name or Tenant ID>/FederationMetadata/2007-06/FederationMetadata.xml 
+        https://accounts.accesscontrol.chinacloudapi.cn/<Domain Name or Tenant ID>/FederationMetadata/2007-06/FederationMetadata.xml 
 
     对于本应用程序，已按如下所示指定了 WS 联合身份验证元数据位置：
 
-        https://accounts.accesscontrol.windows.net/fabrikam.onmicrosoft.com/FederationMetadata/2007-06/FederationMetadata.xml 
+        https://accounts.accesscontrol.chinacloudapi.cn/fabrikam.partner.onmschina.cn/FederationMetadata/2007-06/FederationMetadata.xml 
 
     输入元数据位置后，单击 **下一步**。
 
@@ -141,7 +141,7 @@
 
 14. 在 **Web.config** 文件中，找到 **wsFederation** 节并添加一个 **reply** 属性，该属性的值与你在创建服务主体时指定的 **$replyUrl** 变量值相同。例如：
 
-        <wsFederation passiveRedirectEnabled="true" issuer="https://accounts.accesscontrol.windows.net/v2/wsfederation" realm="spn: 7829c758-2bef-43df-a685-717089474505" requireHttps="false" reply="https://localhost/OrgIdFederationSample" /> 
+        <wsFederation passiveRedirectEnabled="true" issuer="https://accounts.accesscontrol.chinacloudapi.cn/v2/wsfederation" realm="spn: 7829c758-2bef-43df-a685-717089474505" requireHttps="false" reply="https://localhost/OrgIdFederationSample" /> 
 
 15. 在 **system.web** 节中添加一个 **httpRuntime** 节点，该节点的 **requestValidationMode** 属性设置为 **2.0**。例如：
 
@@ -167,7 +167,7 @@
             }
         </p> 
 
-18. 保存对 **Index.cshtml** 文件所做的更改后，按 **F5** 以运行应用程序。你将会重定向到“Office 365 标识提供程序”页，你可在其中使用目录租户凭据进行登录。例如 <*john.doe@awesomecomputers.onmicrosoft.com*>。
+18. 保存对 **Index.cshtml** 文件所做的更改后，按 **F5** 以运行应用程序。你将会重定向到“Office 365 标识提供程序”页，你可在其中使用目录租户凭据进行登录。例如 <*john.doe@awesomecomputers.partner.onmschina.cn*>。
 
 19. 使用你的凭据登录后，你将会重定向到“主页”控制器的“索引”页，其中显示了你的帐户的声明。这表明某个用户已成功使用 Azure Active Directory 提供的单一登录在应用程序上进行身份验证。
 
@@ -195,7 +195,7 @@
 
         <appSettings> 
             ...
-            <add key="TenantDomainName" value="awesomecomputers.onmicrosoft.com"/> 
+            <add key="TenantDomainName" value="awesomecomputers.partner.onmschina.cn"/> 
             ...
             <add key="AppPrincipalId" value="7829c758-2bef-43df-a685-717089474505"/>     
             ...

@@ -7,7 +7,7 @@
 
 ### 先决条件
 
--   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](http://www.windowsazure.com/zh-cn/manage/services/media-services/how-to-create-a-media-services-account/)。
+-   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-create-a-media-services-account/)。
 -   操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 -   .NET Framework 4.5 或 .NET Framework 4。
 -   Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）。

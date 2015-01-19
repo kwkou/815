@@ -44,7 +44,7 @@
 6.  在下一个“虚拟机配置”对话框中：
 
     1.  对于“云服务”，使用默认的“创建新云服务”。
-    2.  “云服务 DNS 名称”的值在 cloudapp.net 中必须是唯一的。如有必要，请修改此值，直至 Azure 指出它是唯一的值。
+    2.  “云服务 DNS 名称”的值在 chinacloudapp.cn 中必须是唯一的。如有必要，请修改此值，直至 Azure 指出它是唯一的值。
     3.  指定区域、地缘组或虚拟网络。在本教程中，请指定区域，如“美国西部”。
     4.  对于“存储帐户”框，选择“使用自动生成的存储帐户”。
     5.  对于“可用性集”，请选择“(无)”。
@@ -229,8 +229,8 @@
                 Configuration config = ServiceBusConfiguration.configureWithWrapAuthentication(
                         "your_service_bus_namespace", "your_service_bus_owner",
                         "your_service_bus_key",
-                        ".servicebus.windows.net",
-                        "-sb.accesscontrol.windows.net/WRAPv0.9");
+                        ".servicebus.chinacloudapi.cn",
+                        "-sb.accesscontrol.chinacloudapi.cn/WRAPv0.9");
 
                 service = ServiceBusService.create(config);
 
@@ -329,8 +329,8 @@
                     Configuration config;
                     config = ServiceBusConfiguration.configureWithWrapAuthentication(
                             namespace, issuer, key,
-                            ".servicebus.windows.net",
-                            "-sb.accesscontrol.windows.net/WRAPv0.9");
+                            ".servicebus.chinacloudapi.cn",
+                            "-sb.accesscontrol.chinacloudapi.cn/WRAPv0.9");
 
                     ServiceBusContract service = ServiceBusService.create(config);
 

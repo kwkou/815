@@ -571,7 +571,7 @@ article.<a id="Ref" name="Ref"></a>
   [Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/zh-cn/library/ee924680.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
   [5]: ./media/application-model/application-model-8.jpg
-  [Deploying and Updating Azure Applications]: http://www.windowsazure.com/en-us/develop/net/fundamentals/deploying-applications/
+  [Deploying and Updating Azure Applications]: http://www.windowsazure.cn/en-us/develop/net/fundamentals/deploying-applications/
   [Creating a Hosted Service for Azure]: http://msdn.microsoft.com/zh-cn/library/gg432967.aspx
   [Managing Hosted Services in Azure]: http://msdn.microsoft.com/zh-cn/library/gg433038.aspx
   [Migrating Applications to Azure]: http://msdn.microsoft.com/zh-cn/library/gg186051.aspx

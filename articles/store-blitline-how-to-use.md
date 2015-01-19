@@ -110,7 +110,7 @@ SAS 必须包含完整 SAS URL，包括目标文件的文件名。
 
 示例：
 
-    http://blitline.blob.core.windows.net/sample/image.jpg?sr=b&sv=2012-02-12&st=2013-04-12T03%3A18%3A30Z&se=2013-04-12T04%3A18%3A30Z&sp=w&sig=Bte2hkkbwTT2sqlkkKLop2asByrE0sIfeesOwj7jNA5o%3D
+    http://blitline.blob.core.chinacloudapi.cn/sample/image.jpg?sr=b&sv=2012-02-12&st=2013-04-12T03%3A18%3A30Z&se=2013-04-12T04%3A18%3A30Z&sp=w&sig=Bte2hkkbwTT2sqlkkKLop2asByrE0sIfeesOwj7jNA5o%3D
 
 你还可以在[此处][此处]参阅 Blitline 的最新版本的 Azure 存储文档。
 

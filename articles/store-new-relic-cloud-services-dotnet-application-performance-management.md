@@ -169,7 +169,7 @@ New Relic 可与 Azure Web 角色和辅助角色无缝集成。
 -   [寻求帮助（可能为英文页面）][寻求帮助（可能为英文页面）]:通过 New Relic 的联机帮助中心提供的资源
 
   [使用 New Relic]: #using-new-relic
-  [Azure 应用商店中的 New Relic 页]: http://www.windowsazure.com/zh-cn/gallery/store/new-relic/new-relic/
+  [Azure 应用商店中的 New Relic 页]: http://www.windowsazure.cn/zh-cn/gallery/store/new-relic/new-relic/
   [Azure 管理门户]: https://manage.windowsazure.cn
   [Visual Studio]: ./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget01.png
   [创建云服务]: ./media/store-new-relic-cloud-services-dotnet-application-performce-management/NewRelicAzureNuget02.png

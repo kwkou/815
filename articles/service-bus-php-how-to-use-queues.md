@@ -59,7 +59,7 @@
 
     Endpoint=[yourEndpoint];SharedSecretIssuer=[Default Issuer];SharedSecretValue=[Default Key]
 
-其中，终结点的格式通常为 `https://[yourNamespace].servicebus.windows.net`。
+其中，终结点的格式通常为 `https://[yourNamespace].servicebus.chinacloudapi.cn`。
 
 若要创建任何 Azure 服务客户端，您将需要使用 **ServicesBuilder** 类。您可以：
 

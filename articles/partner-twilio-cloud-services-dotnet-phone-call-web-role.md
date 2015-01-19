@@ -175,8 +175,8 @@
   [使用 Twilio 和 ASP.NET 的 Azure 呼叫响应]: ./media/partner-twilio-cloud-services-dotnet-phone-call-web-role/WA_twilio_dotnet_basic_form_output.png
   [4]: http://www.twilio.com/docs/api/twiml
   [5]: http://www.twilio.com/docs/api/twiml/say
-  [如何在 .NET 中使用 Azure Blob 存储服务]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/blob-storage/
-  [如何在 .NET 应用程序中使用 Azure SQL数据库]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/sql-database/
+  [如何在 .NET 中使用 Azure Blob 存储服务]: https://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/blob-storage/
+  [如何在 .NET 应用程序中使用 Azure SQL数据库]: https://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/sql-database/
   [Microsoft.WindowsAzure.ServiceRuntime 命名空间]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
   [6]: http://www.twilio.com/docs/security
   [7]: http://www.twilio.com/docs

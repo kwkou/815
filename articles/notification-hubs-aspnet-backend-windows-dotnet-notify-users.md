@@ -225,7 +225,7 @@
 		using System.Net.Http;
 		using Windows.Storage;
 		using System.Net.Http.Headers;
-		using Windows.Networking.PushNotifications;
+		using chinacloudapi.cnworking.PushNotifications;
 		using Windows.UI.Popups;
 
 ## 运行应用程序

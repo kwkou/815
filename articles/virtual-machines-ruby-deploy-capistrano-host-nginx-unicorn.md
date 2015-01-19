@@ -366,7 +366,7 @@ Rails 用于开发的默认数据库是 SQLite。通常，您会在生产中使�
 
     此文件提供所有部署类型所共有的通用信息和任务。
 
-6.  编辑 **config/deploy/production.rb** 文件，并将现有内容替换为以下内容。将 **YourVm.cloudapp.net** 替换为您的虚拟机的域名。将 **YourAzureVMUserName** 替换为以前为 Azure 虚拟机创建的登录帐户。
+6.  编辑 **config/deploy/production.rb** 文件，并将现有内容替换为以下内容。将 **YourVm.chinacloudapp.cn** 替换为您的虚拟机的域名。将 **YourAzureVMUserName** 替换为以前为 Azure 虚拟机创建的登录帐户。
 
         # production deployment
         set :stage, :production

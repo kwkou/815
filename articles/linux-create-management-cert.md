@@ -41,7 +41,7 @@
     <PublishData>
       <PublishProfile
         PublishMethod="AzureServiceManagementAPI"
-        Url="https://management.core.windows.net/"
+        Url="https://management.core.chinacloudapi.cn/"
         ManagementCertificate="xxxxx">
         <Subscription
           Id="8a4a0a51-728e-482e-8daa-c477f03c541d"
@@ -105,7 +105,7 @@
 1.  以管理员身份打开“Azure SDK 命令提示符”窗口。
 2.  通过使用以下命令并将“Subscriptionid”和“CertThumbprint”替换为您先前获取的值，设置连接字符串：
 
-        csupload Set-Connection "SubscriptionID=<Subscriptionid>;CertificateThumbprint=<Thumbprint>;ServiceManagementEndpoint=https://management.core.windows.net"
+        csupload Set-Connection "SubscriptionID=<Subscriptionid>;CertificateThumbprint=<Thumbprint>;ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
 
 #### 对于 Linux Azure 命令行工具
 
@@ -119,7 +119,7 @@
         <PublishData>
           <PublishProfile
             PublishMethod="AzureServiceManagementAPI"
-            Url="https://management.core.windows.net/"
+            Url="https://management.core.chinacloudapi.cn/"
             ManagementCertificate="xxxxx">
             <Subscription
               Id="8a4a0a51-728e-482e-8daa-c477f03c541d"

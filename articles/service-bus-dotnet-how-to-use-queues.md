@@ -58,7 +58,7 @@
         <Role name="MyRole">
             <ConfigurationSettings>
                 <Setting name="Microsoft.ServiceBus.ConnectionString" 
-                         value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
+                         value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
             </ConfigurationSettings>
         </Role>
     ...
@@ -73,7 +73,7 @@
     <configuration>
         <appSettings>
             <add key="Microsoft.ServiceBus.ConnectionString"
-                 value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
+                 value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
         </appSettings>
     </configuration>
 
@@ -85,7 +85,7 @@
 
 此示例使用带连接字符串的 Azure **CloudConfigurationManager** 类构造 **NamespaceManager** 对象，此连接字符串包含 服务总线 服务命名空间的基址和有权管理该命名空间的相应凭据。此连接字符串的形式为
 
-    Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]
+    Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]
 
 例如，考虑上一节中的配置设置：
 

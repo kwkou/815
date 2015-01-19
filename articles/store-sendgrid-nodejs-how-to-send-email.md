@@ -216,7 +216,7 @@ SendGrid 提供了基于 Web 的 API，可通过这些 API从 Azure 应用程序
 -   面向 Azure 客户的 SendGrid 特惠产品/服务：
     [][2]<http://sendgrid.com/azure.html></a>
 
-  [后续步骤]: http://www.windowsazure.com/zh-cn/develop/nodejs/how-to-guides/blob-storage/#next-steps
+  [后续步骤]: http://www.windowsazure.cn/zh-cn/develop/nodejs/how-to-guides/blob-storage/#next-steps
   [什么是 SendGrid 电子邮件服务？]: #whatis
   [创建 SendGrid 帐户]: #createaccount
   [引用 SendGrid Node.js 模块]: #reference

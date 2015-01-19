@@ -461,7 +461,7 @@
   [如何：访问自定义参数]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/#access-headers
   [NSDictionary 对象]: http://go.microsoft.com/fwlink/p/?LinkId=301965
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-  [用于管理移动服务表的 CLI]: http://www.windowsazure.com/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+  [用于管理移动服务表的 CLI]: http://www.windowsazure.cn/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
   [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
   [身份验证入门]: /zh-cn/documentation/articles/mobile-services-ios-get-started-users/
   [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-ios-authorize-users-in-scripts/

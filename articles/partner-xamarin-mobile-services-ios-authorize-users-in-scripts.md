@@ -90,7 +90,7 @@
   [iOS C\#]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios "Xamarin.iOS"
   [Android C\#]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android "Xamarin.Android"
   [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-ios
-  [Azure 管理门户]: https://manage.windowsazure.com/
+  [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/partner-xamarin-mobile-services-ios-authorize-users-in-scripts/mobile-services-selection.png
   [1]: ./media/partner-xamarin-mobile-services-ios-authorize-users-in-scripts/mobile-portal-data-tables.png
   [2]: ./media/partner-xamarin-mobile-services-ios-authorize-users-in-scripts/mobile-insert-script-users.png

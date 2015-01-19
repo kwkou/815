@@ -82,5 +82,5 @@
 [ClearDB]:http://www.cleardb.com/
 [waws]:/zh-cn/manage/services/web-sites/
 [Windows Azure 应用商店]:/zh-cn/store/overview/
-[portal]:http://manage.windowsazure.com
+[portal]:http://manage.windowsazure.cn
 

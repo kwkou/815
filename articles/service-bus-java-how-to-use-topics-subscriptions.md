@@ -53,8 +53,8 @@
           "HowToSample",
           "your_service_bus_owner",
           "your_service_bus_key",
-          ".servicebus.windows.net",
-          "-sb.accesscontrol.windows.net/WRAPv0.9");
+          ".servicebus.chinacloudapi.cn",
+          "-sb.accesscontrol.chinacloudapi.cn/WRAPv0.9");
 
     ServiceBusContract service = ServiceBusService.create(config);
     TopicInfo topicInfo = new TopicInfo("TestTopic");

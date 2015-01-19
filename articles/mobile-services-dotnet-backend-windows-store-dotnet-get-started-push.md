@@ -39,7 +39,7 @@
 
 1.  在 Visual Studio 中，打开文件 App.xaml.cs 并添加以下 `using` 语句：
 
-        using Windows.Networking.PushNotifications;
+        using chinacloudapi.cnworking.PushNotifications;
         using Windows.UI.Popups;
 
 2.  将以下 `InitNotificationAsync` 方法添加到 "App" 类，以创建推送通知通道并注册推送通知：

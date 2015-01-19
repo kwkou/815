@@ -117,9 +117,9 @@
   [设置 Azure SDK for PHP]: http://azurephp.interoperabilitybridges.com/articles/setup-the-windows-azure-sdk-for-php
   [6]: https://www.twilio.com/docs/api/rest/call#instance-properties
   [使用 Twilio 和 PHP 的 Azure 呼叫响应]: ./media/partner-twilio-php-make-phone-call/WA_TwilioPHPMakeCall.jpg
-  [创建 PHP-MySQL Azure 网站并使用 Git 进行部署]: https://www.windowsazure.com/zh-cn/develop/php/tutorials/website-w-mysql-and-git/
-  [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署]: https://www.windowsazure.com/zh-cn/develop/php/tutorials/website-w-mysql-and-ftp/
-  [使用 WebMatrix 创建和部署 PHP-MySQL Azure 网站]: https://www.windowsazure.com/zh-cn/develop/php/tutorials/website-w-mysql-and-webmatrix/
+  [创建 PHP-MySQL Azure 网站并使用 Git 进行部署]: https://www.windowsazure.cn/zh-cn/develop/php/tutorials/website-w-mysql-and-git/
+  [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署]: https://www.windowsazure.cn/zh-cn/develop/php/tutorials/website-w-mysql-and-ftp/
+  [使用 WebMatrix 创建和部署 PHP-MySQL Azure 网站]: https://www.windowsazure.cn/zh-cn/develop/php/tutorials/website-w-mysql-and-webmatrix/
   [在 PHP 应用程序中使用 Azure 存储服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh674502(v=vs.103).aspx
   [在 PHP 应用程序中使用 SQL数据库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh674500(v=vs.103).aspx
   [7]: http://twimlets.com/message

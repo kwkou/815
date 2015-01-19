@@ -4,9 +4,9 @@
 
 另外，你可以使用 Azure 流量管理器 对你的网站的传入流量进行负载平衡。有关 流量管理器 如何作用于网站的详细信息，请参阅[使用 Azure 流量管理器 控制 Azure 网站流量][trafficmanager]。
 
-> [WACOM.NOTE] 本任务中的过程适用于 Azure 网站；对于云服务，请参阅<a href="http://www.windowsazure.com/en-us/develop/net/common-tasks/custom-dns/">在 Azure 中配置自定义域名</a>。
+> [WACOM.NOTE] 本任务中的过程适用于 Azure 网站；对于云服务，请参阅<a href="/zh-cn/documentation/articles/cloud-services-custom-domain-name/">在 Azure 中配置自定义域名</a>。
 
-> [WACOM.NOTE] 本任务中的步骤要求你将网站配置为共享或标准模式，这可能会更改对你的订阅的计费量。有关详细信息，请参阅<a href="http://www.windowsazure.com/en-us/pricing/details/web-sites/">网站定价详细信息</a>。
+> [WACOM.NOTE] 本任务中的步骤要求你将网站配置为共享或标准模式，这可能会更改对你的订阅的计费量。有关详细信息，请参阅<a href="/pricing/details/web-sites/">网站定价详细信息</a>。
 
 本文内容：
 
@@ -106,11 +106,11 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 	* 登录到 [Azure 管理门户][管理门户]，选择你的网站，选择**仪表板**，然后在**速览**部分中查找**网站 URL**条目。
 
-	* 安装并配置 [Azure Powershell](http://www.windowsazure.com/en-us/manage/install-and-configure-windows-powershell/)，然后使用以下命令：
+	* 安装并配置 [Azure Powershell](/zh-cn/documentation/articles/install-configure-powershell/)，然后使用以下命令：
 			
 			get-azurewebsite yoursitename | select hostnames
 
-	* 安装并配置 [Azure 跨平台命令行界面](http://www.windowsazure.com/en-us/manage/install-and-configure-cli/)，然后使用以下命令：
+	* 安装并配置 [Azure 跨平台命令行界面](/zh-cn/documentation/articles/xplat-cli/)，然后使用以下命令：
 
 			azure site domain list yoursitename
 
@@ -150,7 +150,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 **使用命令行工具添加域名**
 
-安装并配置 [Azure 跨平台命令行界面](http://www.windowsazure.com/en-us/manage/install-and-configure-cli/)，然后使用以下命令：
+安装并配置 [Azure 跨平台命令行界面](/zh-cn/documentation/articles/xplat-cli/)，然后使用以下命令：
 
     azure site domain add customdomain yoursitename
 
@@ -246,7 +246,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 **使用命令行工具添加域名**
 
-安装并配置 [Azure 跨平台命令行界面](http://www.windowsazure.com/en-us/manage/install-and-configure-cli/)，然后使用以下命令：
+安装并配置 [Azure 跨平台命令行界面](/zh-cn/documentation/articles/xplat-cli/)，然后使用以下命令：
 
     azure site domain add customdomain yoursitename
 
@@ -280,9 +280,9 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 ## 后续步骤
 
--   [如何管理网站](http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-manage-websites/)
+-   [如何管理网站](/zh-cn/documentation/articles/web-sites-manage/)
 
--   [为网站配置 SSL 证书](http://www.windowsazure.com/en-us/develop/net/common-tasks/enable-ssl-web-site/)
+-   [为网站配置 SSL 证书](/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/)
 
 
 <!-- Bookmarks -->
@@ -295,7 +295,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 <!-- Links -->
 
-[PricingDetails]: http://www.windowsazure.cn/zh-cn/pricing/overview/
+[PricingDetails]: /pricing/overview/
 [portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
 [cloudservicedns]: ../custom-dns/

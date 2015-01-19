@@ -218,7 +218,7 @@ TwiML 是一组基于 XML 的指令，这些指令以用于指示 Twilio 如何�
     $token = "your_twilio_authentication_token";
     $from_number = "NNNNNNNNNNN";
     $to_number = "NNNNNNNNNNN";
-    $url = "http://<your_hosted_service>.cloudapp.net/MyTwiML/mytwiml.php";
+    $url = "http://<your_hosted_service>.chinacloudapp.cn/MyTwiML/mytwiml.php";
 
     // The phone message text.
     $message = "Hello world.";
@@ -275,7 +275,7 @@ TwiML 是一组基于 XML 的指令，这些指令以用于指示 Twilio 如何�
   [Twilio 电话号码帮助]: https://www.twilio.com/help/faq/phone-numbers
   [Github 提供的用于 PHP 的 Twilio 库]: https://github.com/twilio/twilio-php
   []: http://readthedocs.org/docs/twilio-php/en/latest/index.html
-  [如何在 Azure 中通过 PHP 应用程序使用 Twilio 发起电话呼叫]: http://windowsazure.com/zh-cn/documentation/articles/partner-twilio-php-make-phone-call
+  [如何在 Azure 中通过 PHP 应用程序使用 Twilio 发起电话呼叫]: http://windowsazure.cn/zh-cn/documentation/articles/partner-twilio-php-make-phone-call
   [2]: https://github.com/twilio/twilio-php/blob/master/README.md
   [3]: http://readthedocs.org/docs/twilio-php/en/latest/usage/rest.html
   [4]: http://twimlets.com/message

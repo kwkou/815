@@ -115,11 +115,11 @@
 
 4.  在联合身份验证实用工具的下一页，选择“使用现有 STS”，然后在“STS WS 联合身份验证元数据文档位置”下输入 WS 联合身份验证元数据文档的 URL。此 URL 是使用以下格式指定的：
 
-        https://accounts.accesscontrol.windows.net/<Domain Name or Tenant ID>/FederationMetadata/2007-06/FederationMetadata.xml 
+        https://accounts.accesscontrol.chinacloudapi.cn/<Domain Name or Tenant ID>/FederationMetadata/2007-06/FederationMetadata.xml 
 
     对于本应用程序，已按如下所示指定了 WS 联合身份验证元数据位置：
 
-        https://accounts.accesscontrol.windows.net/fabrikam.onmicrosoft.com/FederationMetadata/2007-06/FederationMetadata.xml 
+        https://accounts.accesscontrol.chinacloudapi.cn/fabrikam.partner.onmschina.cn/FederationMetadata/2007-06/FederationMetadata.xml 
 
     输入元数据位置后，单击“下一步”。
 
@@ -143,7 +143,7 @@
 
 14. 在 **Web.config** 文件中，找到 **wsFederation** 节并添加一个 **reply** 属性，该属性的值与你在创建服务主体时指定的 **$replyUrl** 变量值相同。例如：
 
-        <wsFederation passiveRedirectEnabled="true" issuer="https://accounts.accesscontrol.windows.net/v2/wsfederation" realm="spn: 7829c758-2bef-43df-a685-717089474505" requireHttps="false" reply="https://localhost/OrgIdFederationSample" /> 
+        <wsFederation passiveRedirectEnabled="true" issuer="https://accounts.accesscontrol.chinacloudapi.cn/v2/wsfederation" realm="spn: 7829c758-2bef-43df-a685-717089474505" requireHttps="false" reply="https://localhost/OrgIdFederationSample" /> 
 
 15. 在 **system.web** 节中添加一个 **httpRuntime** 节点，该节点的 **requestValidationMode** 属性设置为 **2.0**。例如：
 

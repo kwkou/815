@@ -2,5 +2,5 @@
 
 # Javadoc 内容
 
-可以在 <http://dl.windowsazure.com/javadoc> 上查看有关 Azure Libraries for Java 的 Javadoc 内容。
+可以在 <http://dl.windowsazure.cn/javadoc> 上查看有关 Azure Libraries for Java 的 Javadoc 内容。
 

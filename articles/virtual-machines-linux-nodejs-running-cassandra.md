@@ -111,7 +111,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照[如
     </tr>
     <tr>
 <td>DNS 名称</td>
-<td><i>唯一名称</i>.cloudapp.net</td>
+<td><i>唯一名称</i>.chinacloudapp.cn</td>
 <td>为计算机提供不可知的负载平衡器名称</td>
     </tr>
     <tr>

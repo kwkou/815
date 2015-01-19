@@ -135,7 +135,7 @@
 <a name="vault"></a> <h2>步骤 2：创建保管库</h2>
 验证部署先决条件之后，创建 Azure Site Recovery 保管库。或者，可以使用现有存储库并配置 SAN 复制。
 
-1. 登录到[管理门户](https://manage.windowsazure.com)。
+1. 登录到[管理门户](https://manage.windowsazure.cn)。
 
 
 2. 依次展开<b>"数据服务"</b>、<b>"恢复服务"</b>，然后单击<b>"Site Recovery 保管库"</b>。

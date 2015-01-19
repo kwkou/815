@@ -492,7 +492,7 @@ Azure 提供两种部署环境：过渡环境和生产环境。通常，在将�
 -   查看 MSDN 参考：[云服务][服务包]
 -   查看 MSDN 参考：[虚拟机][虚拟机]
 
-  [Azure SDK for Python]: https://www.windowsazure.com/zh-cn/develop/python/common-tasks/install-python/
+  [Azure SDK for Python]: https://www.windowsazure.cn/zh-cn/develop/python/common-tasks/install-python/
   [管理门户]: https://manage.windowsazure.cn/
   [什么是服务管理]: #WhatIs
   [概念]: #Concepts
@@ -514,20 +514,20 @@ Azure 提供两种部署环境：过渡环境和生产环境。通常，在将�
   [如何：创建虚拟机]: #CreateVM
   [如何：删除虚拟机]: #DeleteVM
   [后续步骤]: #NextSteps
-  [创建 Azure 帐户]: http://www.windowsazure.com/zh-cn/pricing/free-trial/
+  [创建 Azure 帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [Azure 服务管理 API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460799.aspx
   [创建并上载 Azure 管理证书]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg551722.aspx
   [OpenSSL]: http://www.openssl.org/
   [在 Azure 中管理证书]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg981929.aspx
   []: http://www.openssl.org/docs/apps/openssl.html
-  [云服务]: http://windowsazure.com/zh-cn/documentation/articles/cloud-services-what-is
+  [云服务]: http://windowsazure.cn/zh-cn/documentation/articles/cloud-services-what-is
   [服务包]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
-  [Azure PowerShell cmdlet]: https://www.windowsazure.com/zh-cn/develop/php/how-to-guides/powershell-cmdlets/
+  [Azure PowerShell cmdlet]: https://www.windowsazure.cn/zh-cn/develop/php/how-to-guides/powershell-cmdlets/
   [cspack 命令行工具]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg432988.aspx
   [Azure 服务配置架构 (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx
   [部署 Azure 服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433027.aspx
-  [存储服务]: https://www.windowsazure.com/zh-cn/manage/services/storage/what-is-a-storage-account/
-  [Blob]: https://www.windowsazure.com/zh-cn/develop/python/how-to-guides/blob-service/
-  [表]: https://www.windowsazure.com/zh-cn/develop/python/how-to-guides/table-service/
-  [队列]: https://www.windowsazure.com/zh-cn/develop/python/how-to-guides/queue-service/
+  [存储服务]: https://www.windowsazure.cn/zh-cn/manage/services/storage/what-is-a-storage-account/
+  [Blob]: https://www.windowsazure.cn/zh-cn/develop/python/how-to-guides/blob-service/
+  [表]: https://www.windowsazure.cn/zh-cn/develop/python/how-to-guides/table-service/
+  [队列]: https://www.windowsazure.cn/zh-cn/develop/python/how-to-guides/queue-service/
   [虚拟机]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156003.aspx

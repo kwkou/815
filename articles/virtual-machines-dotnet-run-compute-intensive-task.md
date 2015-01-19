@@ -243,7 +243,7 @@
 
                     String connectionString = @"Endpoint=sb://" +
                            serviceBusNamespace +
-                           @".servicebus.windows.net/;SharedSecretIssuer=" +
+                           @".servicebus.chinacloudapi.cn/;SharedSecretIssuer=" +
                            issuer + @";SharedSecretValue=" + key;
 
                     int numCities = 10; // Use as the default, if no value is specified
@@ -362,7 +362,7 @@
 
                     String connectionString = @"Endpoint=sb://" +
                            serviceBusNamespace +
-                           @".servicebus.windows.net/;SharedSecretIssuer=" +
+                           @".servicebus.chinacloudapi.cn/;SharedSecretIssuer=" +
                            issuer + @";SharedSecretValue=" + key;
 
                     QueueClient queueClient = QueueClient.CreateFromConnectionString(connectionString, "TSPQueue");

@@ -154,7 +154,7 @@
   [如何创建虚拟机并将其部署到虚拟网络]: #CreateVM
   [在 Azure 中创建虚拟网络]: /zh-cn/manage/services/networking/create-a-virtual-network/
   [创建虚拟网络进行跨界连接]: /zh-cn/manage/services/networking/cross-premises-connectivity/
-  [Azure 管理门户]: http://manage.windowsazure.com/
+  [Azure 管理门户]: http://manage.windowsazure.cn/
   [NewStorAcct]: ./media/virtual-networks-add-virtual-machine/VNTut3_01_NewStorageAccount.png
   [QuickCreate]: ./media/virtual-networks-add-virtual-machine/VNTut3_02_StorageAcct_QuickCreate.png
   [CreateNewAcct]: ./media/virtual-networks-add-virtual-machine/VNTut3_03_CreateNewStorageAccount.png

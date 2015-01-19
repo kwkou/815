@@ -100,14 +100,14 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
     <div class="dev-callout">
 <strong>说明</strong>
 <p>确保使用唯一名称，否则发布过程会失败。部署完成后，浏览器将打开并导航到已部署的服务。</p>
-<p>如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅<a href="https://www.windowsazure.com/zh-cn/develop/nodejs/tutorials/getting-started/">生成 Node.js 应用程序并将其部署到 Azure 云服务</a>中的&ldquo;将应用程序部署到 Azure&rdquo;<b></b>部分</p>
+<p>如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅<a href="https://www.windowsazure.cn/zh-cn/develop/nodejs/tutorials/getting-started/">生成 Node.js 应用程序并将其部署到 Azure 云服务</a>中的&ldquo;将应用程序部署到 Azure&rdquo;<b></b>部分</p>
 </div>
 
     ![显示托管在 Azure 上的服务的浏览器窗口][显示托管在 Azure 上的服务的浏览器窗口]
 
     <div class="dev-callout">
 <strong>说明</strong>
-<p>如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅<a href="https://www.windowsazure.com/zh-cn/develop/nodejs/tutorials/getting-started/">生成 Node.js 应用程序并将其部署到 Azure 云服务</a>中的&ldquo;将应用程序部署到 Azure&rdquo;<b></b>部分</p>
+<p>如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅<a href="https://www.windowsazure.cn/zh-cn/develop/nodejs/tutorials/getting-started/">生成 Node.js 应用程序并将其部署到 Azure 云服务</a>中的&ldquo;将应用程序部署到 Azure&rdquo;<b></b>部分</p>
 </div>
 
 现在，你的应用程序在 Azure 上运行，它可以使用 Socket.IO 在不同客户端之间中继聊天消息。
@@ -130,6 +130,6 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
   [资源管理器，显示从存档中解压缩的 examples\\chat 目录的内容]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-5.png
   [npm install 命令的输出]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-7.png
   [显示来自用户 1 和用户 2 的聊天消息的两个浏览器窗口]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-8.png
-  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: https://www.windowsazure.com/zh-cn/develop/nodejs/tutorials/getting-started/
+  [生成 Node.js 应用程序并将其部署到 Azure 云服务]: https://www.windowsazure.cn/zh-cn/develop/nodejs/tutorials/getting-started/
   [Azure SDK for Node.js GitHub 存储库]: https://github.com/WindowsAzure/azure-sdk-for-node
   [在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序]: /zh-cn/develop/nodejs/tutorials/website-using-socketio/

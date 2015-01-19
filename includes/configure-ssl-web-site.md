@@ -2,7 +2,7 @@
 
 When someone visits your web site using HTTPS, the communication between the web site and the browser is secured using Secure Socket Layer (SSL) encryption. This is the most commonly used method of securing data sent across the internet, and assures visitors that their transactions with your site are secure. This article discusses how to enable HTTPS for an Azure Web Site. 
 
-> [WACOM.NOTE] In order to enable HTTPS for custom domain names, you must configure your web sites for standard mode. This may incur additional costs if you are currently using free or shared mode. For more information on shared and standard mode pricing, see [Pricing Details](http://www.windowsazure.cn/zh-cn/pricing/overview/). To get started with Azure, see [Windows Azure Free Trial](http://www.windowsazure.cn/zh-cn/pricing/free-trial/).
+> [WACOM.NOTE] In order to enable HTTPS for custom domain names, you must configure your web sites for standard mode. This may incur additional costs if you are currently using free or shared mode. For more information on shared and standard mode pricing, see [Pricing Details](http://www.windowsazure.cn/pricing/overview/). To get started with Azure, see [Windows Azure Free Trial](http://www.windowsazure.cn/pricing/1rmb-trial/).
 
 <a href="bkmk_azurewebsites"></a><h2>The \*.azurewebsites.net domain</h2>
 
@@ -12,7 +12,7 @@ The rest of this document provides details on enabling HTTPS for custom domain n
 
 <a href="bkmk_domainname"></a><h2>Custom domain names</h2>
 
-To enable HTTPS for a custom domain name, such as **contoso.com**, you must register a custom domain name with a domain name registrar. For more information on how to configure the domain name of an Azure Web Site, see [Configuring a custom domain name for an Azure Web Site](/en-us/develop/net/common-tasks/custom-dns-web-site/). Once you have registered a custom domain name and configured your web site to respond to the custom name, you must request an SSL certificate for the domain. 
+To enable HTTPS for a custom domain name, such as **contoso.com**, you must register a custom domain name with a domain name registrar. For more information on how to configure the domain name of an Azure Web Site, see [Configuring a custom domain name for an Azure Web Site](/zh-cn/documentation/articles/web-sites-custom-domain-name/). Once you have registered a custom domain name and configured your web site to respond to the custom name, you must request an SSL certificate for the domain. 
 
 Registering a domain name also enables you to create subdomains such as **www.contoso.com** or **mail.contoso.com**. Before requesting an SSL certificate you must first determine which domain names will be secured by the certificate. This will determine what type of certificate you must obtain. If you just need to secure a single domain name such as **contoso.com** or **www.contoso.com** a basic certificate will probably be sufficient. If you need to secure multiple domain names, such as **contoso.com**, **www.contoso.com**, and **mail.contoso.com**, then a wildcard certificate, or a certificate with Subject Alternate Name (subjectAltName, SAN) will be required.
 
@@ -82,7 +82,7 @@ If you wish to use the IIS Manager to create a certificate request, see the [Get
 		[EnhancedKeyUsageExtension]
 		OID=1.3.6.1.5.5.7.3.1
 
-	For more information on the options specified above, as well as other available options, see the [Certreq reference documentationn](http://technet.microsoft.com/library/cc725793.aspx).
+	For more information on the options specified above, as well as other available options, see the [Certreq reference documentationn](http://technet.microsoft.com/zh-cn/library/cc725793.aspx).
 
 2. Save the text file as **myrequest.txt**.
 
@@ -217,7 +217,7 @@ Enabling HTTPS for a custom domain is only available for the standard mode of Az
 
 5. Click **Save**. When prompted, click **Yes**.
 
-	> [WACOM.NOTE] If you receive a "Configuring scale for web site '&lt;site name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](http://www.windowsazure.com/en-us/support/options/).
+	> [WACOM.NOTE] If you receive a "Configuring scale for web site '&lt;site name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](http://www.windowsazure.cn/en-us/support/options/).
 
 <a href="bkmk_configuressl"></a><h2>Configure SSL</h2>
 
@@ -465,19 +465,19 @@ You can create a test certificate from a Windows system that has Visual Studio i
 
 	The **myserver.pfx** produced by this command can be used to secure your Azure Web Site for testing purposes.
 
-[customdomain]: /en-us/develop/net/common-tasks/custom-dns-web-site/
-[iiscsr]: http://technet.microsoft.com/en-us/library/cc732906(WS.10).aspx
+[customdomain]: /zh-cn/documentation/articles/web-sites-custom-domain-name/
+[iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx
 [cas]: http://go.microsoft.com/fwlink/?LinkID=269988
-[installcertiis]: http://technet.microsoft.com/en-us/library/cc771816(WS.10).aspx
-[exportcertiis]: http://technet.microsoft.com/en-us/library/cc731386(WS.10).aspx
+[installcertiis]: http://technet.microsoft.com/zh-cn/library/cc771816(WS.10).aspx
+[exportcertiis]: http://technet.microsoft.com/zh-cn/library/cc731386(WS.10).aspx
 [openssl]: http://www.openssl.org/
-[portal]: https://manage.windowsazure.com/
-[tls]: http://en.wikipedia.org/wiki/Transport_Layer_Security
+[portal]: https://manage.windowsazure.cn/
+[tls]: http://zh.wikipedia.org/wiki/Transport_Layer_Security
 [staticip]: ./media/configure-ssl-web-site/staticip.png
 [website]: ./media/configure-ssl-web-site/sslwebsite.png
 [scale]: ./media/configure-ssl-web-site/sslscale.png
 [standard]: ./media/configure-ssl-web-site/sslreserved.png
-[pricing]: https://www.windowsazure.com/en-us/pricing/details/
+[pricing]: https://www.windowsazure.cn/en-us/pricing/details/
 [configure]: ./media/configure-ssl-web-site/sslconfig.png
 [uploadcert]: ./media/configure-ssl-web-site/ssluploadcert.png
 [uploadcertdlg]: ./media/configure-ssl-web-site/ssluploaddlg.png

@@ -243,7 +243,7 @@
 -   [调试 Azure 应用程序][调试 Azure 应用程序]
 
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [如何监视云服务]: https://www.windowsazure.com/zh-cn/manage/services/cloud-services/how-to-monitor-a-cloud-service/
+  [如何监视云服务]: https://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-monitor-a-cloud-service/
   [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
   [先决条件]: #prereqs
   [步骤 1：通过性能计数器收集和存储数据]: #step1
@@ -251,13 +251,13 @@
   [步骤 3：查询性能计数器数据]: #step3
   [后续步骤]: #nextsteps
   [其他资源]: #additional
-  [在 Azure 中启用诊断]: https://www.windowsazure.com/zh-cn/develop/net/common-tasks/diagnostics/
+  [在 Azure 中启用诊断]: https://www.windowsazure.cn/zh-cn/develop/net/common-tasks/diagnostics/
   [Azure 存储资源管理器]: http://azurestorageexplorer.codeplex.com/
   [Azure 诊断管理器]: http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx
-  [Java]: http://www.windowsazure.com/zh-cn/develop/java/how-to-guides/table-service/
-  [Python]: http://www.windowsazure.com/zh-cn/develop/python/how-to-guides/table-service/
-  [PHP]: http://www.windowsazure.com/zh-cn/develop/php/how-to-guides/table-service/
-  [如何使用自动缩放应用程序块]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/autoscaling/
+  [Java]: http://www.windowsazure.cn/zh-cn/develop/java/how-to-guides/table-service/
+  [Python]: http://www.windowsazure.cn/zh-cn/develop/python/how-to-guides/table-service/
+  [PHP]: http://www.windowsazure.cn/zh-cn/develop/php/how-to-guides/table-service/
+  [如何使用自动缩放应用程序块]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/autoscaling/
   [构建灵活的、可复原的云应用程序]: http://msdn.microsoft.com/zh-cn/library/hh680949(PandP.50).aspx
   [使用 Azure 诊断收集日志记录数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433048.aspx
   [调试 Azure 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee405479.aspx

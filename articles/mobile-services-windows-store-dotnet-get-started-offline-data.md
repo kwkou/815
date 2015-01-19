@@ -254,7 +254,7 @@
   [在脱机情况下测试应用程序]: #test-offline-app
   [更新应用程序以重新连接移动服务]: #update-online-app
   [测试已连接到移动服务的应用程序]: #test-online-app
-  [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/?WT.mc_id=AE564AB28
   [脱机示例入门]: http://go.microsoft.com/fwlink/?LinkId=394777
   [SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
   [0]: ./media/mobile-services-windows-store-dotnet-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png

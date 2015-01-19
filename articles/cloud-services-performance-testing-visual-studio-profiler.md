@@ -163,7 +163,7 @@
 Visual Studio 2010 探查器不支持在模拟器中检测 Azure 二进制文件，但若要测试内存分配，你可以在分析时选择该选项。此外，你可以选择并发分析，这将帮助你确定线程是否正在浪费时间竞争锁；也可以选择层交互分析，这将帮助你跟踪在应用程序的各个层之间（最常见的是数据层和辅助角色之间）进行交互时的性能问题。你可以查看应用程序生成的数据库查询并使用分析数据来改进对数据库的使用。有关层交互分析的信息，请参阅[演练：在 Visual Studio Team System 2010 中使用层交互探查器][演练：在 Visual Studio Team System 2010 中使用层交互探查器]。
 
   [分析 Azure 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh369930.aspx
-  [在 Azure 中使用性能计数器]: http://www.windowsazure.com/zh-cn/develop/net/common-tasks/performance-profiling
+  [在 Azure 中使用性能计数器]: http://www.windowsazure.cn/zh-cn/develop/net/common-tasks/performance-profiling
   [步骤 1：配置 Visual Studio 以进行分析]: #step1
   [步骤 2：附加到进程]: #step2
   [步骤 3：查看分析报告]: #step3

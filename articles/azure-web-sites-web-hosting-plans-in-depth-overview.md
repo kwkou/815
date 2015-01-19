@@ -236,7 +236,7 @@ Web 托管计划 (WHP) 表示一组可在你的网站间共享的功能和容量
   [1]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview08.png
   [Select a hosting plan]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview09.png
   [Select a hosting plan in the existing portal]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview10.png
-  [Azure PowerShell 工具]: http://www.windowsazure.com/zh-cn/documentation/articles/install-configure-powershell/
+  [Azure PowerShell 工具]: /zh-cn/documentation/articles/install-configure-powershell/
   [Get the content of a Resource group]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview11.png
   [Get the detailed configuration for website pstest]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview12.png
   [Get the detailed configuration for website pstest2]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview13.png

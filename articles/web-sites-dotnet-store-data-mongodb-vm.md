@@ -412,7 +412,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Driver.dll** 和 **MongoDB.B
 
 将 `<vm-dns-name>` 替换为运行 MongoDB 的虚拟机（在本教程[创建虚拟机并安装 MongoDB][创建虚拟机和安装 MongoDB] 中创建）的 DNS 名。若要查找虚拟机的 DNS 名，请转至 Azure 管理门户，选择“虚拟机”并找到“DNS 名”。
 
-如果虚拟机的 DNS 名是“testlinuxvm.cloudapp.net”而 MongoDB 在默认端口 27017 进行侦听，连接字符串代码行将如下所示：
+如果虚拟机的 DNS 名是“testlinuxvm.chinacloudapp.cn”而 MongoDB 在默认端口 27017 进行侦听，连接字符串代码行将如下所示：
 
     private string connectionString = "mongodb://testlinuxvm.chinacloudapp.cn";
 

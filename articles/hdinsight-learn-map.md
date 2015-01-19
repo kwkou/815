@@ -6,12 +6,12 @@
 # HDInsight 学习计划图
 HDInsight 能够适用于 Azure 上的"大数据"，让您可以在云上设置 Hadoop 和 HBase 群集。 本页面为您开始学习 HDInsight 所需的全部资源提供相关链接。 使用示图中建议的流程是最有效的学习途径。
 
-<object type="image/svg+xml" data="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" width="100%" height="100%">
+<object type="image/svg+xml" data="https://mysstorage.blob.core.chinacloudapi.cn/picture/HDI.Content.Flow.svg" width="100%" height="100%">
 </object>
 
-<!--center><iframe width="780" height="1407" src="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" frameborder="0"></iframe></center-->
+<!--center><iframe width="780" height="1407" src="https://mysstorage.blob.core.chinacloudapi.cn/picture/HDI.Content.Flow.svg" frameborder="0"></iframe></center-->
 
-<!--center><img src = "https://mysstorage.blob.core.windows.net/picture/HDI.ContentFlow.png" title = "" usemap="#imagemap">
+<!--center><img src = "https://mysstorage.blob.core.chinacloudapi.cn/picture/HDI.ContentFlow.png" title = "" usemap="#imagemap">
 	<map name="imagemap">
 	  <area shape="rect" alt="What is Hadoop on HDInsight" title="What is Hadoop on HDInsight" coords="591,70,717,99" href="http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hadoop-introduction/" target="_blank" />
 	  <area shape="rect" alt="What is HBase on HDInsight" title="What is HBase on HDInsight" coords="591,107,718,136" href="http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hbase-overview/" target="_blank" />

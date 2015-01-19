@@ -34,7 +34,7 @@
 -   [将应用程序更新发布到 Azure 和 SQL 数据库][将应用程序更新发布到 Azure 和 SQL 数据库]
 
 <a name="bkmk_setupdevenv"></a>
-<!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/ -->
+<!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/ -->
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
 ## <a name="bkmk_setupwindowsazure"></a> 设置 Azure 环境

@@ -343,7 +343,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
   [测试应用程序中的数据库写入冲突]: #test-app
   [使用服务器脚本自动解决冲突]: #scriptsexample
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
-  [Azure 帐户]: http://www.windowsazure.com/zh-cn/pricing/free-trial/
+  [Azure 帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [0]: ./media/mobile-services-windows-store-dotnet-handle-database-conflicts/mobile-manage-nuget-packages-VS.png
   [1]: ./media/mobile-services-windows-store-dotnet-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png
   [乐观并发控制]: http://go.microsoft.com/fwlink/?LinkId=330935

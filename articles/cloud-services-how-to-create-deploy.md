@@ -59,7 +59,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
     ![云服务\_快速创建][云服务\_快速创建]
 
-2.  在“URL”中，输入要在公用 URL 中使用的子域名称，以便在生产部署中访问你的云服务。生产部署的 URL 格式为：http://*myURL*.cloudapp.net。
+2.  在“URL”中，输入要在公用 URL 中使用的子域名称，以便在生产部署中访问你的云服务。生产部署的 URL 格式为：http://*myURL*.chinacloudapp.cn。
 
 3.  在“区域/地缘组”中，选择要在其中部署云服务的地理区域或地缘组。如果要将云服务和其他 Azure 服务部署到某个区域中的同一位置，请选择一个地缘组。
 
@@ -120,7 +120,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 4.  单击“新建生产部署”或“新建过渡部署”。
 
-    如果你希望在将云服务部署到生产环境之前先在 Azure 中测试该云服务，则可以将其部署到过渡环境。在过渡环境中，使用云服务的全局唯一标识符 (GUID) 在 URL 中标识该云服务 (*GUID*.cloudapp.net)。在生产环境中，将使用你所分配的更加友好的 DNS 前缀（例如，*myservice*.cloudapp.net）。在准备好将处于过渡环境的云服务升级到生产环境时，可使用“交换”将客户端请求重定向到该部署。
+    如果你希望在将云服务部署到生产环境之前先在 Azure 中测试该云服务，则可以将其部署到过渡环境。在过渡环境中，使用云服务的全局唯一标识符 (GUID) 在 URL 中标识该云服务 (*GUID*.chinacloudapp.cn)。在生产环境中，将使用你所分配的更加友好的 DNS 前缀（例如，*myservice*.chinacloudapp.cn）。在准备好将处于过渡环境的云服务升级到生产环境时，可使用“交换”将客户端请求重定向到该部署。
 
     当你选择部署环境时，会打开“上载包”。
 
@@ -158,11 +158,11 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
   [如何：使用“快速创建”创建云服务]: #quick
   [如何：为云服务上载证书]: #uploadcertificate
   [如何：部署云服务]: #deploy
-  [Azure 下载]: http://www.windowsazure.com/zh-cn/develop/downloads/
+  [Azure 下载]: http://www.windowsazure.cn/zh-cn/develop/downloads/
   [Azure 代码示例]: http://code.msdn.microsoft.com/windowsazure/
   [如何在 HTTPS 终结点上配置 SSL 证书]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff795779.aspx
   [为角色设置远程桌面连接概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433010.aspx
-  [在 Azure 中启用诊断]: http://www.windowsazure.com/zh-cn/develop/net/common-tasks/diagnostics/
+  [在 Azure 中启用诊断]: http://www.windowsazure.cn/zh-cn/develop/net/common-tasks/diagnostics/
   [管理门户]: http://manage.windowsazure.cn/
   [云服务\_快速创建]: ./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png
   [针对地缘组的操作]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460798.aspx
@@ -174,5 +174,5 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
   [云服务\_快速启动页]: ./media/cloud-services-how-to-create-deploy/CloudServices_QuickStartPage.png
   [Azure SDK 发行说明]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh552718.aspx
   [云服务\_上载包]: ./media/cloud-services-how-to-create-deploy/CloudServices_UploadaPackage.png
-  [服务级别协议]: http://www.windowsazure.com/zh-cn/support/legal/sla/
+  [服务级别协议]: http://www.windowsazure.cn/zh-cn/support/legal/sla/
   [云服务\_上载过程]: ./media/cloud-services-how-to-create-deploy/CloudServices_UploadProgress.png

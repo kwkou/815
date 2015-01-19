@@ -40,7 +40,7 @@
 
 5.  使用 SSH 连接到 Linux 虚拟机。
 
-        ssh -i  myPrivateKey.key -p port  username@servicename.cloudapp.net
+        ssh -i  myPrivateKey.key -p port  username@servicename.chinacloudapp.cn
 
     当您首次登录时，系统将提示您接受主机公钥的指纹。
 
