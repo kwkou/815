@@ -262,6 +262,6 @@ Azure 跨平台命令行接口 (xplat-cli) 提供了用于与 Azure 结合使用
   [“交换”按钮]: ./media/web-sites-staged-publishing/SwapButtonBar.png
   [“交换部署”对话框]: ./media/web-sites-staged-publishing/SwapDeploymentsDialog.png
   [删除站点槽]: ./media/web-sites-staged-publishing/DeleteStagingSiteButton.png
-  [如何安装和配置 Windows Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
-  [安装和配置 Azure 跨平台命令行接口]: http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/
+  [如何安装和配置 Windows Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [安装和配置 Azure 跨平台命令行接口]: /zh-cn/documentation/articles/xplat-cli/
   [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/

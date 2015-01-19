@@ -21,10 +21,10 @@
 -   [调试 Azure 应用程序][调试 Azure 应用程序]
 -   [配置 Azure 诊断][配置 Azure 诊断]
 
-  [配置Azure诊断]: http://msdn.microsoft.com/en-us/library/windowsazure/dn186185.aspx
-  [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/en-us/library/windowsazure/hh771389.aspx
+  [配置Azure诊断]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn186185.aspx
+  [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
   [使用 Azure 诊断收集日志记录数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433048.aspx
-  [远程更改诊断监视器配置]: http://msdn.microsoft.com/en-us/library/windowsazure/gg432992.aspx
+  [远程更改诊断监视器配置]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg432992.aspx
   [如何监视云服务]: ../cloud-services-how-to-monitor/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [调试 Azure 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee405479.aspx

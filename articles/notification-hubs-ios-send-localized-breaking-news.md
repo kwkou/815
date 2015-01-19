@@ -1,4 +1,4 @@
-<properties linkid="develop-notificationhubs-tutorials-send-localized-breaking-news-iOS" urlDisplayName="Localized Breaking News" pageTitle="Notification Hubs Localized Breaking News Tutorial for iOS" metaKeywords="" description="Learn how to use Azure Service Bus Notification Hubs to send localized breaking news notifications (iOS)." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send localized breaking news to iOS devices" authors="ricksal" solutions="" manager="" editor="" />
+<properties linkid="develop-notificationhubs-tutorials-send-localized-breaking-news-iOS" urlDisplayName="Localized Breaking News" pageTitle="Notification Hubs Localized Breaking News Tutorial for iOS" metaKeywords="" description="Learn how to use Azure 服务总线 Notification Hubs to send localized breaking news notifications (iOS)." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send localized breaking news to iOS devices" authors="ricksal" solutions="" manager="" editor="" />
 
 # 使用通知中心将本地化的突发新闻发送到 iOS 设备
 
@@ -49,7 +49,7 @@
         }
     }
 
-模板是很强大的功能，你可以在[通知中心指南][通知中心指南]一文中了解其更多信息。一个模板表达语言的参考是 [操作指南：Service Bus 通知中心（iOS 应用程序）][操作指南：Service Bus 通知中心（iOS 应用程序）]。
+模板是很强大的功能，你可以在[通知中心指南][通知中心指南]一文中了解其更多信息。一个模板表达语言的参考是 [操作指南：服务总线 通知中心（iOS 应用程序）][操作指南：服务总线 通知中心（iOS 应用程序）]。
 
 ## <a name="ui"></a><span class="short-header">应用程序 UI</span>应用程序用户界面
 
@@ -162,7 +162,7 @@
 -   [使用通知中心通知用户：移动服务][使用通知中心通知用户：移动服务]
 -   [通知中心指南][通知中心指南]
 
-[适用于 iOS 的通知中心操作方法][操作指南：Service Bus 通知中心（iOS 应用程序）]中提供了模板表达式语言的参考信息。
+[适用于 iOS 的通知中心操作方法][操作指南：服务总线 通知中心（iOS 应用程序）]中提供了模板表达式语言的参考信息。
 
 
 
@@ -180,7 +180,7 @@
   [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-send-localized-breaking-news/ "iOS"
   [使用通知中心发送突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-ios
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-  [操作指南：Service Bus 通知中心（iOS 应用程序）]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
+  [操作指南：服务总线 通知中心（iOS 应用程序）]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
   []: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
   [1]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
   [notification-hubs-localized-back-end]: ../includes/notification-hubs-localized-back-end.md

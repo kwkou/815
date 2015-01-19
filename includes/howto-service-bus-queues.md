@@ -1,7 +1,7 @@
 ﻿<a id="what-are-service-bus-queues"></a>
-##什么是 Service Bus 队列？
+##什么是 服务总线 队列？
 
-Service Bus 队列支持中转消息传递通信模型。在使用队列时，分布式应用程序的组件
+服务总线 队列支持中转消息传递通信模型。在使用队列时，分布式应用程序的组件
 不会直接相互通信，而是通过
 充当中介的队列交换消息。消息创建方（发送方）
 将消息传送到队列，然后继续对其进行处理。
@@ -16,7 +16,7 @@ Service Bus 队列支持中转消息传递通信模型。在使用队列时，�
 
 ![QueueConcepts](./media/howto-service-bus-queues/sb-queues-08.png)
 
-Service Bus 队列是一种可用于各种应用场景
+服务总线 队列是一种可用于各种应用场景
 的通用技术：
 
 -   多层 Windows Azure 应用程序中 Web 角色和辅助角色之间的通信
@@ -30,15 +30,15 @@ Service Bus 队列是一种可用于各种应用场景
 <a id="create-a-service-namespace"></a>
 <h2>创建服务命名空间</h2>
 
-若要开始在 Windows Azure 中使用 Service Bus 队列，必须先
+若要开始在 Windows Azure 中使用 服务总线 队列，必须先
 创建一个服务命名空间。服务命名空间提供了
-用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
+用于对应用程序中的 服务总线 资源进行寻址的范围容器。
 
 创建服务命名空间：
 
 1. 登录到 [Windows Azure 管理门户][]。
 
-2. 在该管理门户的左侧导航窗格中，单击 Service Bus。
+2. 在该管理门户的左侧导航窗格中，单击 服务总线。
 
 3. 在管理门户的下方窗格中，单击“创建”。
 	![](./media/howto-service-bus-queues/sb-queues-03.png)
@@ -68,7 +68,7 @@ Service Bus 队列是一种可用于各种应用场景
 则必须获取该命名空间的管理
 凭据。
 
-1. 在左侧导航窗格中，单击 Service Bus 节点以显示
+1. 在左侧导航窗格中，单击 服务总线 节点以显示
     可用命名空间的列表：
 	![](./media/howto-service-bus-queues/sb-queues-13.png)
 

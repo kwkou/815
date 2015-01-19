@@ -70,7 +70,7 @@ ACS 会对自己颁发的所有安全令牌进行签名。在你生成使用 ACS
 
 2.  使用 Windows Live ID 登录到该网站。如果你没有 Windows Live ID，则请单击“注册”以自行创建该 ID。
 
-3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“Service Bus 和 Access Control”。
+3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“服务总线 和 Access Control”。
 
     ![][0]
 
@@ -127,7 +127,7 @@ ACS 会对自己颁发的所有安全令牌进行签名。在你生成使用 ACS
 
 2.  使用 Windows Live ID 登录到该网站。如果你没有 Windows Live ID，则请单击“注册”以自行创建该 ID。
 
-3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“Service Bus 和 Access Control”。
+3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“服务总线 和 Access Control”。
 
     ![][0]
 
@@ -183,7 +183,7 @@ ACS 会对自己颁发的所有安全令牌进行签名。在你生成使用 ACS
 
 2.  使用 Windows Live ID 登录到该网站。如果你没有 Windows Live ID，则请单击“注册”以自行创建该 ID。
 
-3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“Service Bus 和 Access Control”。
+3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“服务总线 和 Access Control”。
 
     ![][0]
 
@@ -234,7 +234,7 @@ ACS 可以接受来自 WS 联合身份验证标识提供程序（例如，AD FS 
 
 2.  使用 Windows Live ID 登录到该网站。如果你没有 Windows Live ID，则请单击“注册”以自行创建该 ID。
 
-3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“Service Bus 和 Access Control”。
+3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“服务总线 和 Access Control”。
 
     ![][0]
 
@@ -292,7 +292,7 @@ ACS 可以接受来自 WS 联合身份验证标识提供程序（例如，AD FS 
 
 2.  使用 Windows Live ID 登录到该网站。如果你没有 Windows Live ID，则请单击“注册”以自行创建该 ID。
 
-3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“Service Bus 和 Access Control”。
+3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“服务总线 和 Access Control”。
 
     ![][0]
 
@@ -365,7 +365,7 @@ ACS 管理服务是 ACS 的一个关键组件，它允许你以编程方式在 A
 
 2.  使用 Windows Live ID 登录到该网站。如果你没有 Windows Live ID，则请单击“注册”以自行创建该 ID。
 
-3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“Service Bus 和 Access Control”。
+3.  使用你的 Windows Live ID 登录后，你将重定向到管理门户页。在该页的左下方，单击“服务总线 和 Access Control”。
 
     ![][0]
 

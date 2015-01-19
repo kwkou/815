@@ -64,7 +64,7 @@ Azure 将发起构建和部署操作。在构建和部署网站的同时，网�
 ## <span class="short-header">后续步骤</span>后续步骤
 
 -   [使用 Microsoft WebMatrix 开发和部署网站][使用 Microsoft WebMatrix 开发和部署网站] -- 了解如何在 WebMatrix 中编辑 Azure 网站。
--   [使用成员资格、OAuth 和 SQL Database 将安全 ASP.NET MVC 应用程序部署到 Azure 网站][使用成员资格、OAuth 和 SQL Database 将安全 ASP.NET MVC 应用程序部署到 Azure 网站]-- 了解如何从 Visual Studio 创建新网站。
+-   [使用成员资格、OAuth 和 SQL数据库 将安全 ASP.NET MVC 应用程序部署到 Azure 网站][使用成员资格、OAuth 和 SQL数据库 将安全 ASP.NET MVC 应用程序部署到 Azure 网站]-- 了解如何从 Visual Studio 创建新网站。
 
   [Azure 管理门户]: http://manage.windowsazure.cn
   [Windows Web 应用程序库]: http://www.microsoft.com/web/gallery/categories.aspx
@@ -81,4 +81,4 @@ Azure 将发起构建和部署操作。在构建和部署网站的同时，网�
   [登录到 Orchard]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-07.png
   [Orchard 文档]: http://docs.orchardproject.net/
   [使用 Microsoft WebMatrix 开发和部署网站]: /en-us/develop/net/tutorials/website-with-webmatrix/
-  [使用成员资格、OAuth 和 SQL Database 将安全 ASP.NET MVC 应用程序部署到 Azure 网站]: /en-us/develop/net/tutorials/web-site-with-sql-database/
+  [使用成员资格、OAuth 和 SQL数据库 将安全 ASP.NET MVC 应用程序部署到 Azure 网站]: /en-us/develop/net/tutorials/web-site-with-sql-database/

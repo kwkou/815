@@ -1,22 +1,22 @@
-<properties linkid="develop-java-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Azure (Java) - Azure 功能指南" metaKeywords="" description="了解如何通过 Java 代码使用 Azure SQL Database。" metaCanonical="" services="sql-database" documentationCenter="Java" title="如何通过 Java 使用 Azure SQL Database" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<properties linkid="develop-java-sql-azure" urlDisplayName="SQL数据库" pageTitle="如何使用 SQL Azure (Java) - Azure 功能指南" metaKeywords="" description="了解如何通过 Java 代码使用 Azure SQL数据库。" metaCanonical="" services="sql-database" documentationCenter="Java" title="如何通过 Java 使用 Azure SQL数据库" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 
-# 如何通过 Java 使用 Azure SQL Database
+# 如何通过 Java 使用 Azure SQL数据库
 
-以下步骤演示了如何通过 Java 使用 Azure SQL Database。显示命令行示例是为了简单起见，但对于在本地、Azure 或其他环境中托管的 Web 应用程序，采用的步骤非常相似。本指南介绍了如何从 [Azure 管理门户][Azure 管理门户]创建服务器和数据库。
+以下步骤演示了如何通过 Java 使用 Azure SQL数据库。显示命令行示例是为了简单起见，但对于在本地、Azure 或其他环境中托管的 Web 应用程序，采用的步骤非常相似。本指南介绍了如何从 [Azure 管理门户][Azure 管理门户]创建服务器和数据库。
 
-## 什么是 Azure SQL Database
+## 什么是 Azure SQL数据库
 
-Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL Server 技术。使用 SQL Database 实例，您可以轻松地配置关系数据库解决方案并将其部署到云中，并且利用能够为企业级可用性、可缩放性和安全性提供内置数据保护和自愈优势的分布式数据中心。
+Azure SQL数据库 为 Azure 提供关系数据库管理系统并且基于 SQL Server 技术。使用 SQL数据库 实例，您可以轻松地配置关系数据库解决方案并将其部署到云中，并且利用能够为企业级可用性、可缩放性和安全性提供内置数据保护和自愈优势的分布式数据中心。
 
 ## 目录
 
 -   [概念][概念]
 -   [先决条件][先决条件]
--   [创建 Azure SQL Database][创建 Azure SQL Database]
--   [确定 SQL Database 连接字符串][确定 SQL Database 连接字符串]
+-   [创建 Azure SQL数据库][创建 Azure SQL数据库]
+-   [确定 SQL数据库 连接字符串][确定 SQL数据库 连接字符串]
 -   [允许访问一系列 IP 地址][允许访问一系列 IP 地址]
--   [通过 Java 使用 Azure SQL Database][通过 Java 使用 Azure SQL Database]
--   [通过代码与 Azure SQL Database 通信][通过代码与 Azure SQL Database 通信]
+-   [通过 Java 使用 Azure SQL数据库][通过 Java 使用 Azure SQL数据库]
+-   [通过代码与 Azure SQL数据库 通信][通过代码与 Azure SQL数据库 通信]
 -   [创建表][创建表]
 -   [在表中创建索引][在表中创建索引]
 -   [插入行][插入行]
@@ -28,41 +28,41 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 -   [检查表是否存在][检查表是否存在]
 -   [删除索引][删除索引]
 -   [删除表][删除表]
--   [在 Azure 部署中通过 Java 使用 SQL Database][在 Azure 部署中通过 Java 使用 SQL Database]
+-   [在 Azure 部署中通过 Java 使用 SQL数据库][在 Azure 部署中通过 Java 使用 SQL数据库]
 -   [后续步骤][后续步骤]
 
 ## <span id="concepts"></span></a>概念
 
-由于 Azure SQL Database 是基于 SQL Server 技术构建的，因此通过 Java 访问 SQL Database 与通过 Java 访问 SQL Server 非常相似。您可以本地部署应用程序（使用 SQL Server），然后通过仅更改连接字符串连接到 SQL Database。您可以对应用程序使用 SQL Server JDBC 驱动程序。但是，SQL Database 和 SQL Server 之间有一些可能影响您的应用程序的差别。有关详细信息，请参阅[指导原则和限制 (SQL Database)][指导原则和限制 (SQL Database)]。
+由于 Azure SQL数据库 是基于 SQL Server 技术构建的，因此通过 Java 访问 SQL数据库 与通过 Java 访问 SQL Server 非常相似。您可以本地部署应用程序（使用 SQL Server），然后通过仅更改连接字符串连接到 SQL数据库。您可以对应用程序使用 SQL Server JDBC 驱动程序。但是，SQL数据库 和 SQL Server 之间有一些可能影响您的应用程序的差别。有关详细信息，请参阅[指导原则和限制 (SQL数据库)][指导原则和限制 (SQL数据库)]。
 
-有关 SQL Database 的其他资源，请参阅[后续步骤][后续步骤]部分。
+有关 SQL数据库 的其他资源，请参阅[后续步骤][后续步骤]部分。
 
 ## <span id="prerequisites"></span></a> 先决条件
 
-如果您打算通过 Java 使用 SQL Database，则需满足下面的先决条件。
+如果您打算通过 Java 使用 SQL数据库，则需满足下面的先决条件。
 
 -   Java 开发人员工具包 (JDK) 1.6 版或更高版本。
 -   Azure 订阅，可从 <http://www.windowsazure.cn/zh-cn/pricing/overview/> 获取。
 -   如果您使用的是 Eclipse，则将需要 Eclipse IDE for Java EE Developers Indigo 或更高版本。可从 <http://www.eclipse.org/downloads/> 下载。还需要 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）。在此插件的安装过程中，请确保包含了 Microsoft JDBC Driver 4.0 for SQL Server。有关详细信息，请参阅[安装 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）][安装 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）]。
 -   如果您未使用 Eclipse，则将需要 Microsoft JDBC Driver 4.0 for SQL Server，可从 <http://www.microsoft.com/zh-cn/download/details.aspx?id=11774> 下载它。
 
-## <span id="create_db"></span></a>创建 Azure SQL Database
+## <span id="create_db"></span></a>创建 Azure SQL数据库
 
-通过 Java 代码使用 Azure SQL Database 之前，需要创建 Azure SQL Database 服务器。
+通过 Java 代码使用 Azure SQL数据库 之前，需要创建 Azure SQL数据库 服务器。
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
 2.  单击“新建”。
 
-    ![新建 SQL Database][新建 SQL Database]
+    ![新建 SQL数据库][新建 SQL数据库]
 
-3.  单击“SQL Database”，然后单击“自定义创建”。
+3.  单击“SQL数据库”，然后单击“自定义创建”。
 
-    ![创建自定义 SQL Database][创建自定义 SQL Database]
+    ![创建自定义 SQL数据库][创建自定义 SQL数据库]
 
 4.  在“数据库设置”对话框中，指定数据库名称。在本指南中，使用 **gettingstarted** 作为数据库名称。
-5.  对于“服务器”，选择“新建 SQL Database 服务器”。对其他字段使用默认值。
+5.  对于“服务器”，选择“新建 SQL数据库 服务器”。对其他字段使用默认值。
 
-    ![SQL Database 设置][SQL Database 设置]
+    ![SQL数据库 设置][SQL数据库 设置]
 
 6.  单击“下一步”箭头。
 7.  在“服务器设置”对话框中，指定 SQL Server 登录名。在本指南中，使用了 **MySQLAdmin**。指定并确认密码。指定一个区域，并确保选中了“允许 Azure 服务访问服务器”。
@@ -71,10 +71,10 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 8.  单击“完成”按钮。
 
-## <span id="determine_connection_string"></span></a>确定 SQL Database 连接字符串
+## <span id="determine_connection_string"></span></a>确定 SQL数据库 连接字符串
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  单击“SQL Database”。
+2.  单击“SQL数据库”。
 3.  单击要使用的数据库。
 4.  单击“显示连接字符串”。
 5.  突出显示 **JDBC** 连接字符串的内容。
@@ -82,7 +82,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
     ![确定 JDBC 连接字符串][确定 JDBC 连接字符串]
 
 6.  右键单击 **JDBC** 连接字符串的突出显示内容，然后单击“复制”。
-7.  现在，您可以将此值粘贴到代码文件中，以创建以下形式的连接字符串。将 *your\_server*（在两个位置中）替换为在上一步中复制的文本，并将 *your\_password* 替换为创建 SQL Database 帐户时指定的密码值。（如果未使用 **gettingstarted** 和 **MySQLAdmin**，则还要分别替换分配给 **database=** 和 **user=** 的值。）
+7.  现在，您可以将此值粘贴到代码文件中，以创建以下形式的连接字符串。将 *your\_server*（在两个位置中）替换为在上一步中复制的文本，并将 *your\_password* 替换为创建 SQL数据库 帐户时指定的密码值。（如果未使用 **gettingstarted** 和 **MySQLAdmin**，则还要分别替换分配给 **database=** 和 **user=** 的值。）
 
     String connectionString =
      "jdbc:sqlserver://*your\_server*.database.chinacloudapi.cn:1433" + ";" +
@@ -98,7 +98,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 ## <span id="specify_allowed_ips"></span></a>允许访问一系列 IP 地址
 
 1.  登录到[管理门户][Azure 管理门户]。
-2.  单击“SQL Database”。
+2.  单击“SQL数据库”。
 3.  单击“服务器”。
 4.  单击要使用的服务器。
 5.  单击“管理”。
@@ -109,7 +109,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 8.  单击“完成”按钮。您指定的 IP 地址现在可以访问您的数据库服务器。
 
-## <span id="use_sql_azure_in_java"></span></a>通过 Java 使用 Azure SQL Database
+## <span id="use_sql_azure_in_java"></span></a>通过 Java 使用 Azure SQL数据库
 
 1.  创建一个 Java 项目。在本教程中，将该项目命名为 **HelloSQLAzure**。
 2.  将名为 **HelloSQLAzure.java** 的 Java 类文件添加到该项目。
@@ -130,7 +130,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
         import java.sql.*;
         import com.microsoft.sqlserver.jdbc.*;
 
-2.  指定连接字符串。下面是一个示例。如上所述，将 *your\_server*（在两个位置中）、*your\_user* 和 *your\_password* 替换为适合您的 SQL Database 服务器的值。
+2.  指定连接字符串。下面是一个示例。如上所述，将 *your\_server*（在两个位置中）、*your\_user* 和 *your\_password* 替换为适合您的 SQL数据库 服务器的值。
 
         String connectionString =
             "jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433" + ";" +
@@ -138,13 +138,13 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
                 "user=your_user@your_server" + ";" +  
                 "password=your_password";
 
-您现在已准备好添加与 SQL Database 服务器通信的代码。
+您现在已准备好添加与 SQL数据库 服务器通信的代码。
 
-## <span id="communicate_from_code"></span></a>通过代码与 Azure SQL Database 通信
+## <span id="communicate_from_code"></span></a>通过代码与 Azure SQL数据库 通信
 
 本主题剩下的部分将显示执行以下操作的示例：
 
-1.  连接到 SQL Database 服务器。
+1.  连接到 SQL数据库 服务器。
 2.  定义 SQL 语句，例如，创建或删除表、插入/选择/删除行，等等。
 3.  通过调用 **executeUpdate** 或 **executeQuery** 执行 SQL 语句。
 4.  在适当的时候显示查询结果。
@@ -163,7 +163,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
         public static void main(String[] args) 
         {
 
-            // Connection string for your SQL Database server.
+            // Connection string for your SQL数据库 server.
             // Change the values assigned to your_server, 
             // your_user@your_server,
             // and your_password.
@@ -239,7 +239,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何使用 **PersonID** 列在 **Person** 表上创建名为 **index1** 的索引。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -283,7 +283,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何将行添加到 **Person** 表。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -334,7 +334,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何从 **Person** 表中检索行。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -402,7 +402,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何从 **Person** 表中检索行的计数。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -453,7 +453,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何更新行。在此示例中，将 **FirstName** 值为 **Jim** 的所有行的 **LastName** 值更改为 **Kim**。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -496,7 +496,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何删除行。在此示例中，将删除 **FirstName** 值为 **Jim** 的所有行。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -541,7 +541,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何确定某个表是否存在。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -596,7 +596,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何在 **Person** 表上删除名为 **index1** 的索引。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -641,7 +641,7 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 以下代码演示了如何删除名为 **Person** 的表。
 
-    // Connection string for your SQL Database server.
+    // Connection string for your SQL数据库 server.
     // Change the values assigned to your_server, 
     // your_user@your_server,
     // and your_password.
@@ -680,9 +680,9 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
     }
     // Exception handling and resource closing not shown...
 
-## <span id="using_in_azure"></span></a>在 Azure 部署中通过 Java 使用 SQL Database
+## <span id="using_in_azure"></span></a>在 Azure 部署中通过 Java 使用 SQL数据库
 
-若要在 Azure 部署中通过 Java 使用 SQL Database，除了将 Microsoft JDBC Driver 4.0 for SQL Server 作为类路径中的库（如前面所述）之外，还需要将它与您的部署一起打包。
+若要在 Azure 部署中通过 Java 使用 SQL数据库，除了将 Microsoft JDBC Driver 4.0 for SQL Server 作为类路径中的库（如前面所述）之外，还需要将它与您的部署一起打包。
 
 **在使用 Eclipse 的情况下打包 Microsoft JDBC Driver 4.0 SQL Server**
 
@@ -699,16 +699,16 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
 
 ## <span id="nextsteps"></span></a>后续步骤
 
-若要了解有关 Microsoft JDBC Driver for SQL Server 的详细信息，请参阅 [JDBC 驱动程序概述][JDBC 驱动程序概述]。若要了解有关 SQL Database 的详细信息，请参阅 [SQL Database 概述][SQL Database 概述]。
+若要了解有关 Microsoft JDBC Driver for SQL Server 的详细信息，请参阅 [JDBC 驱动程序概述][JDBC 驱动程序概述]。若要了解有关 SQL数据库 的详细信息，请参阅 [SQL数据库 概述][SQL数据库 概述]。
 
   [Azure 管理门户]: https://manage.windowsazure.cn
   [概念]: #concepts
   [先决条件]: #prerequisites
-  [创建 Azure SQL Database]: #create_db
-  [确定 SQL Database 连接字符串]: #determine_connection_string
+  [创建 Azure SQL数据库]: #create_db
+  [确定 SQL数据库 连接字符串]: #determine_connection_string
   [允许访问一系列 IP 地址]: #specify_allowed_ips
-  [通过 Java 使用 Azure SQL Database]: #use_sql_azure_in_java
-  [通过代码与 Azure SQL Database 通信]: #communicate_from_code
+  [通过 Java 使用 Azure SQL数据库]: #use_sql_azure_in_java
+  [通过代码与 Azure SQL数据库 通信]: #communicate_from_code
   [创建表]: #to_create_table
   [在表中创建索引]: #to_create_index
   [插入行]: #to_insert_rows
@@ -720,16 +720,16 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并且基于 SQL S
   [检查表是否存在]: #to_check_table_existence
   [删除索引]: #to_drop_index
   [删除表]: #to_drop_table
-  [在 Azure 部署中通过 Java 使用 SQL Database]: #using_in_azure
+  [在 Azure 部署中通过 Java 使用 SQL数据库]: #using_in_azure
   [后续步骤]: #nextsteps
-  [指导原则和限制 (SQL Database)]: http://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx
+  [指导原则和限制 (SQL数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx
   [安装 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）]: http://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx
-  [新建 SQL Database]: ./media/sql-data-java-how-to-use-sql-database/WA_New.png
-  [创建自定义 SQL Database]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_DB_Create.png
-  [SQL Database 设置]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_1.png
+  [新建 SQL数据库]: ./media/sql-data-java-how-to-use-sql-database/WA_New.png
+  [创建自定义 SQL数据库]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_DB_Create.png
+  [SQL数据库 设置]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_1.png
   [SQL Server 设置]: ./media/sql-data-java-how-to-use-sql-database/WA_CustomCreate_2.png
   [确定 JDBC 连接字符串]: ./media/sql-data-java-how-to-use-sql-database/WA_SQL_JDBC_ConnectionString.png
   [“允许的 IP 地址”对话框]: ./media/sql-data-java-how-to-use-sql-database/WA_Allowed_IPs.png
   [使用 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）创建 Hello World 应用程序]: http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx
   [JDBC 驱动程序概述]: http://msdn.microsoft.com/zh-cn/library/ms378749.aspx
-  [SQL Database 概述]: http://msdn.microsoft.com/zh-cn/library/azure/ee336241.aspx
+  [SQL数据库 概述]: http://msdn.microsoft.com/zh-cn/library/azure/ee336241.aspx

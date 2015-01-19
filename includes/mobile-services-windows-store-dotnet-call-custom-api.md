@@ -68,5 +68,5 @@
 
     此时会显示一个消息框，指示标记为完成的多个项，并再次执行筛选查询，将所有项从列表中清除。
 
-  [InvokeApiAsync]: http://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
+  [InvokeApiAsync]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
   [0]: ./media/mobile-services-windows-store-dotnet-call-custom-api/mobile-custom-api-windows-store-completed.png

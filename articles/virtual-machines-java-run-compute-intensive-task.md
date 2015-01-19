@@ -10,7 +10,7 @@
 
 -   如何创建已安装 JDK 的虚拟机。
 -   如何远程登录到虚拟机。
--   如何创建 Service Bus 命名空间。
+-   如何创建 服务总线 命名空间。
 -   如何创建 Java 应用程序来执行需要进行大量计算的任务。
 -   如何创建 Java 应用程序来监视需要进行大量计算的任务的进度。
 -   如何运行 Java 应用程序。
@@ -63,21 +63,21 @@
 4.  单击“连接”。
 5.  根据需要响应提示以连接到虚拟机。提示需要管理员名称和密码时，请使用您创建虚拟机时提供的值。
 
-请注意，Azure Service Bus 功能需要将 Baltimore CyberTrust 根证书作为您的 JRE 的 **cacerts** 存储的一部分安装。此证书将自动包含在本教程使用的 JRE 中。如果您的 JRE **cacerts** 存储中没有此证书，请参阅[将证书添加到 Java CA 证书存储][将证书添加到 Java CA 证书存储]，以获取有关添加该证书的信息（以及有关在您的 cacerts 存储中查看证书的信息）。
+请注意，Azure 服务总线 功能需要将 Baltimore CyberTrust 根证书作为您的 JRE 的 **cacerts** 存储的一部分安装。此证书将自动包含在本教程使用的 JRE 中。如果您的 JRE **cacerts** 存储中没有此证书，请参阅[将证书添加到 Java CA 证书存储][将证书添加到 Java CA 证书存储]，以获取有关添加该证书的信息（以及有关在您的 cacerts 存储中查看证书的信息）。
 
-## 如何创建 Service Bus 命名空间
+## 如何创建 服务总线 命名空间
 
-若要开始在 Azure 中使用 Service Bus 队列，必须先
+若要开始在 Azure 中使用 服务总线 队列，必须先
 创建一个服务命名空间。服务命名空间提供了用于对应用程序
-中的 Service Bus 资源进行寻址的范围容器。
+中的 服务总线 资源进行寻址的范围容器。
 
 创建服务命名空间：
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  在管理门户的左下方导航窗格中，单击“Service Bus、Access Control 和 Caching”。
+2.  在管理门户的左下方导航窗格中，单击“服务总线、Access Control 和 Caching”。
 3.  在管理门户的左上方窗格中，单击“Service
     Bus”节点，然后单击“新建”按钮。
-    ![Service Bus 节点屏幕快照][Service Bus 节点屏幕快照]
+    ![服务总线 节点屏幕快照][服务总线 节点屏幕快照]
 4.  在“新建服务命名空间”对话框中，输入一个
     命名空间，然后单击
     “检查可用性”按钮以确保该命名空间是唯一的。
@@ -94,7 +94,7 @@
 新命名空间上执行管理操作（如创建队列），则需要获取该
 命名空间的管理凭据。
 
-1.  在左侧导航窗格中，单击“Service Bus”节点，
+1.  在左侧导航窗格中，单击“服务总线”节点，
     显示可用命名空间的列表：
     ![可用命名空间屏幕快照][可用命名空间屏幕快照]
 2.  从显示的列表中选择刚创建的命名空间：
@@ -112,7 +112,7 @@
 ## 如何创建 Java 应用程序来执行需要进行大量计算的任务
 
 1.  在您的开发计算机（不必是您创建的虚拟机）上，下载 [Azure SDK for Java][Azure SDK for Java]。
-2.  使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
+2.  使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 服务总线 的“命名空间”、“默认颁发者”和“默认密钥”值。
 3.  编码后，将应用程序导出至可运行的 Java 存档 (JAR)，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPSolver.jar** 作为生成的 JAR 名称。
 
     // TSPSolver.java
@@ -298,7 +298,7 @@
 
 ## 如何创建 Java 应用程序来监视需要进行大量计算的任务的进度
 
-1.  在开发计算机上，使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPClient.java** 作为 Java 文件名。如上所述，将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 Service Bus 的“命名空间”、“默认颁发者”和“默认密钥”值。
+1.  在开发计算机上，使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPClient.java** 作为 Java 文件名。如上所述，将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符修改为分别使用您的 服务总线 的“命名空间”、“默认颁发者”和“默认密钥”值。
 2.  将应用程序导出至可运行的 JAR，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPClient.jar** 作为生成的 JAR 名称。
 
     // TSPClient.java
@@ -413,7 +413,7 @@
 
 ## 如何运行 Java 应用程序
 
-运行需要进行大量计算的应用程序，首先创建队列，然后解决旅行商问题，这样会将当前最佳路线添加到 Service Bus 队列。需要进行大量计算的应用程序正在运行时（或运行后），运行客户端可显示来自 Service Bus 队列的结果。
+运行需要进行大量计算的应用程序，首先创建队列，然后解决旅行商问题，这样会将当前最佳路线添加到 服务总线 队列。需要进行大量计算的应用程序正在运行时（或运行后），运行客户端可显示来自 服务总线 队列的结果。
 
 ### 如何运行需要进行大量计算的应用程序
 
@@ -475,7 +475,7 @@
 
 5.  在命令提示符处，将目录更改为 c:\\TSP。
 6.  确保 JRE 的 bin 文件夹位于 PATH 环境变量中。
-7.  在运行 TSP 解算器排列之前，您需要先创建 Service Bus 队列。运行以下命令以创建 Service Bus 队列：
+7.  在运行 TSP 解算器排列之前，您需要先创建 服务总线 队列。运行以下命令以创建 服务总线 队列：
 
         java -jar TSPSolver.jar createqueue
 
@@ -517,7 +517,7 @@
   [旅行商问题客户端]: ./media/virtual-machines-java-run-compute-intensive-task/WA_JavaTSPClient.png
   [Azure 管理门户]: https://manage.windowsazure.cn
   [将证书添加到 Java CA 证书存储]: ../java-add-certificate-ca-store
-  [Service Bus 节点屏幕快照]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_02_SvcBusNode.jpg
+  [服务总线 节点屏幕快照]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_02_SvcBusNode.jpg
   [新建命名空间屏幕快照]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_03_CreateNewSvcNamespace.jpg
   [可用命名空间屏幕快照]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_04_SvcBusNode_AvailNamespaces.jpg
   [命名空间列表屏幕快照]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_05_NamespaceList.jpg

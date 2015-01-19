@@ -145,7 +145,7 @@
 </tr>
 <tr>
 <td><strong>跟踪数据库</strong></td>
-<td> 存储你的 BizTalk 服务所使用的跟踪表的 Azure SQL Database 名称。</td>
+<td> 存储你的 BizTalk 服务所使用的跟踪表的 Azure SQL数据库 名称。</td>
 </tr>
 <tr>
 <td><strong>监视/存档存储</strong></td>
@@ -349,7 +349,7 @@
   [BizTalk 服务：版本图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
   [BizTalk 服务：备份和还原]: http://go.microsoft.com/fwlink/p/?LinkID=329873
   [混合连接：将 Azure 网站连接到本地资源]: http://go.microsoft.com/fwlink/p/?LinkId=397538
-  [Azure 移动服务和混合连接]: http://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
+  [Azure 移动服务和混合连接]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
   [1]: http://go.microsoft.com/fwlink/p/?LinkID=397274
   [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
   [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941

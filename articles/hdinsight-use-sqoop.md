@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-use-sqoop" urlDisplayName="Use Sqoop with HDInsight Samples" pageTitle="将 Sqoop 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use Azure PowerShell from a workstation to run Sqoop import and export between an HDInsight cluster and an Azure SQL database." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Use Sqoop with HDInsight" authors="jgao" />
+<properties linkid="manage-services-hdinsight-use-sqoop" urlDisplayName="Use Sqoop with HDInsight Samples" pageTitle="将 Sqoop 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use Azure PowerShell from a workstation to run Sqoop import and export between an HDInsight cluster and an Azure SQL数据库." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Use Sqoop with HDInsight" authors="jgao" />
 
 # 将 Sqoop 与 HDInsight 配合使用
 
@@ -21,7 +21,7 @@
 
 虽然自然而然地选用 Hadoop 处理如日志和文件等非结构化和半结构化的数据，但可能还需要处理存储在关系数据库中的结构化数据。
 
-[Sqoop][] 是一种为在 Hadoop 群集和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL、MySQL 或 Oracle）中导入到 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后回过来将数据导出到 RDBMS。在本教程中，你要为你的关系数据库使用 SQL Database。
+[Sqoop][] 是一种为在 Hadoop 群集和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL、MySQL 或 Oracle）中导入到 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后回过来将数据导出到 RDBMS。在本教程中，你要为你的关系数据库使用 SQL数据库。
 
 有关 HDInsight 群集上支持的 Sqoop 版本，请参阅 [HDInsight 提供的群集版本有哪些新功能？][]。
 
@@ -40,17 +40,17 @@
 	<tr><td>Azure Blob 容器名称</td><td>$containerName</td><td></td><td>在此示例中，使用用于默认 HDInsight 群集文件系统的 Azure Blob 存储容器。默认情况下，该容器与 HDInsight 群集同名。</td></tr>
 	</table>
 
--   **Azure SQL Database**。你必须为 SQL Database 服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 SQL 数据库和配置防火墙的说明，请参阅[使用 Azure SQL 数据库入门][]。本文提供了用于创建本教程所需的 SQL 数据库表的 PowerShell 脚本。
+-   **Azure SQL数据库**。你必须为 SQL数据库 服务器配置防火墙规则以允许从你的工作站进行访问。有关创建 SQL 数据库和配置防火墙的说明，请参阅[使用 Azure SQL 数据库入门][]。本文提供了用于创建本教程所需的 SQL 数据库表的 PowerShell 脚本。
 
 	<table border="1">
 	<tr><th>SQL 数据库属性</th><th>PowerShell 变量名</th><th>值</th><th>说明</th></tr>
-	<tr><td>SQL 数据库服务器名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 SQL Database 服务器。 </td></tr>
-	<tr><td>SQL 数据库登录名</td><td>$sqlDatabaseLogin</td><td></td><td>SQL Database 登录名。</td></tr>
-	<tr><td>SQL 数据库登录密码</td><td>$sqlDatabasePassword</td><td></td><td>SQL Database 登录密码。</td></tr>
-	<tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 Azure SQL Database。 </td></tr>
+	<tr><td>SQL 数据库服务器名称</td><td>$sqlDatabaseServer</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 SQL数据库 服务器。 </td></tr>
+	<tr><td>SQL 数据库登录名</td><td>$sqlDatabaseLogin</td><td></td><td>SQL数据库 登录名。</td></tr>
+	<tr><td>SQL 数据库登录密码</td><td>$sqlDatabasePassword</td><td></td><td>SQL数据库 登录密码。</td></tr>
+	<tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 要将数据导出到其中或从中导入数据的 Azure SQL数据库。 </td></tr>
 	</table>
 
-    > [WACOM.NOTE] 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL Database][]。
+    > [WACOM.NOTE] 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL数据库][]。
 
 > [WACOM.NOTE] 将值填入表。这将有助于学习本教程。
 
@@ -129,7 +129,7 @@ WASB 语法是：
 
     有关这些变量的详细说明，请参阅本教程中的[先决条件][]一节。
 
-3.  将以下脚本追加到脚本窗格中。这些是定义两个表及其群集索引的 SQL 语句。SQL Database 要求群集索引。
+3.  将以下脚本追加到脚本窗格中。这些是定义两个表及其群集索引的 SQL 语句。SQL数据库 要求群集索引。
 
         # 用于创建表和群集索引的 SQL 查询字符串
         $cmdCreateLog4jTable = "CREATE TABLE [dbo].[log4jlogs](
@@ -160,7 +160,7 @@ WASB 语法是：
 
 4.  将以下脚本追加到脚本窗格中以便运行 SQL 命令：
 
-        Write-Host "Connect to the SQL Database ..."-ForegroundColor Green
+        Write-Host "Connect to the SQL数据库 ..."-ForegroundColor Green
         $conn = New-Object System.Data.SqlClient.SqlConnection
         $conn.ConnectionString = $sqlDatabaseConnectionString
         $conn.Open()
@@ -187,7 +187,7 @@ WASB 语法是：
 5.  单击“运行脚本” 或按 **F5** 键以运行该脚本。
 6.  使用 [Azure 管理门户][]来检查表和群集索引。
 
-在本教程中，你要将一个 log4j log 文件（带分隔符的文件）和一个 Hive 表导出到 SQL Database。带分隔符的文件为 */example/data/sample.log*。在本教程前面，你看到了几个 log4j 日志的示例。在日志文件中，有一些空行和一些类似下面这样的其他行：
+在本教程中，你要将一个 log4j log 文件（带分隔符的文件）和一个 Hive 表导出到 SQL数据库。带分隔符的文件为 */example/data/sample.log*。在本教程前面，你看到了几个 log4j 日志的示例。在日志文件中，有一些空行和一些类似下面这样的其他行：
 
     java.lang.Exception:2012-02-03 20:11:35 SampleClass2 [FATAL] unrecoverable system problem at id 609774657
     at com.osa.mocklogger.MockLogger$2.run(MockLogger.java:83)
@@ -461,7 +461,7 @@ WASB 语法是：
 
 ## <a id="import"></a>使用 PowerShell 来运行 Sqoop 导入
 
-在本节中，你要将 log4j 日志（已导出到 SQL Database）导回到 HDInsight 中。
+在本节中，你要将 log4j 日志（已导出到 SQL数据库）导回到 HDInsight 中。
 
 1.  打开 Windows PowerShell ISE。
 2.  在底部窗格中，运行以下命令以连接到 Azure 订阅：
@@ -530,7 +530,7 @@ WASB 语法是：
   [开始使用 HDInsight]: /zh-cn/documentation/articles/hdinsight-get-started/
   [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [使用 Azure SQL 数据库入门]: /zh-cn/documentation/articles/sql-database-get-started/
-  [创建和配置 SQL Database]: /zh-cn/documentation/articles/sql-database-create-configure/
+  [创建和配置 SQL数据库]: /zh-cn/documentation/articles/sql-database-create-configure/
   [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [在 Windows 8 和 Windows 上启动 Windows PowerShell]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn/

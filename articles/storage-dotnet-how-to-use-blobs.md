@@ -376,7 +376,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 -   查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     -   使用[表存储][]来存储结构化数据。
     -   使用[队列存储][]来存储非结构化数据。
-    -   使用 [SQL Database][] 来存储关系数据。
+    -   使用 [SQL数据库][] 来存储关系数据。
 
   [后续步骤]: #next-steps
   [如何：以编程方式访问 Blob 存储]: #configure-access
@@ -404,6 +404,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
   [.NET 存储客户端库参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [表存储]: /en-us/documentation/articles/storage-dotnet-how-to-use-tables/
-  [队列存储]: /en-us/documentation/articles/storage-dotnet-how-to-use-queues/
-  [SQL Database]: /en-us/documentation/articles/sql-database-dotnet-how-to-use/
+  [表存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/
+  [队列存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/
+  [SQL数据库]: /zh-cn/documentation/articles/sql-database-dotnet-how-to-use/

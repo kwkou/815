@@ -9,7 +9,7 @@ You will learn:
 - [How to log on to the virtual machine after you create it] []
 - [How to attach a data disk to the new virtual machine] []
 
-**Note**: This tutorial creates a virtual machine that is not connected to a virtual network. If you want a virtual machine to use a virtual network, you must specify the virtual network when you create the virtual machine. For more information about virtual networks, see [Azure Virtual Network Overview](http://go.microsoft.com/fwlink/p/?LinkID=294063).
+**Note**: This tutorial creates a virtual machine that is not connected to a virtual network. If you want a virtual machine to use a virtual network, you must specify the virtual network when you create the virtual machine. For more information about virtual networks, see [Azure Virtual Network Overview](http://msdn.microsoft.com/library/azure/jj156007.aspx).
 
 ## <a id="virtualmachine"> </a>About virtual machines in Azure ##
 
@@ -21,9 +21,9 @@ A virtual machine in Azure is a server in the cloud that you can control and man
 The following options are available for using images to create a virtual machine:
 
 - Create a virtual machine by using an image that is provided in the Image Gallery of the Azure Management Portal.
-- Create and upload a .vhd file that contains an image to Azure, and then create a virtual machine using the image. For more information about creating and uploading a custom image, see [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System](/en-us/manage/linux/common-tasks/upload-a-vhd/).
+- Create and upload a .vhd file that contains an image to Azure, and then create a virtual machine using the image. For more information about creating and uploading a custom image, see [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System](/zh-cn/manage/linux/common-tasks/upload-a-vhd/).
 
-Each virtual machine resides in a cloud service, either by itself, or grouped with other virtual machines. You can place virtual machines in the same cloud service to enable the virtual machines to communicate with each other, to load-balance network traffic among virtual machines, and to maintain high availability of the machines. For more information about cloud services and virtual machines, see the "Execution Models" section in [Introducing Azure](http://go.microsoft.com/fwlink/p/?LinkId=311926).
+Each virtual machine resides in a cloud service, either by itself, or grouped with other virtual machines. You can place virtual machines in the same cloud service to enable the virtual machines to communicate with each other, to load-balance network traffic among virtual machines, and to maintain high availability of the machines. For more information about cloud services and virtual machines, see the "Execution Models" section in [Introducing Azure](/zh-cn/documentation/articles/fundamentals-introduction-to-azure/).
 
 ## <a id="custommachine"> </a>How to create the virtual machine ##
 
@@ -58,7 +58,7 @@ On the command bar, click **New**.
 
 14.  Under **VM Agent**, decide whether to install the VM Agent. This agent provides the environment for you to install extensions that can help you interact with the virtual machine. For details, see [Using Extensions](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx).
 
-15. Under **Endpoints**, review the endpoint that's automatically created to allow Secure Shell (SSH) connections to the virtual machine. (Endpoints allow resources on the Internet or other virtual networks to communicate with a virtual machine.) You can add more endpoints now, or create them later. For instructions on creating them later, see [How to Set Up Communication with a Virtual Machine](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/).
+15. Under **Endpoints**, review the endpoint that's automatically created to allow Secure Shell (SSH) connections to the virtual machine. (Endpoints allow resources on the Internet or other virtual networks to communicate with a virtual machine.) You can add more endpoints now, or create them later. For instructions on creating them later, see [How to Set Up Communication with a Virtual Machine](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/).
   
 After the virtual machine and cloud service are created, the Management Portal lists the new virtual machine under **Virtual Machines** and lists the cloud service under **Cloud Services**. Both the virtual machine and the cloud service are started automatically.
 
@@ -97,7 +97,7 @@ Data Disks reside on Azure Storage and can be used for persistent storage of fil
 
 Each virtual machine created also has a temporary local *Resource Disk* attached. Because data on a resource disk may not be durable across reboots, it is often used by applications and processes running in the virtual machine for transient and temporary storage of data. It is also used to store page or swap files for the operating system.
 
-On Linux, the Resource Disk is typically managed by the Azure Linux Agent and automatically mounted to **/mnt/resource** (or **/mnt** on Ubuntu images). Please see the [Azure Linux Agent User Guide](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/) for more information.
+On Linux, the Resource Disk is typically managed by the Azure Linux Agent and automatically mounted to **/mnt/resource** (or **/mnt** on Ubuntu images). Please see the [Azure Linux Agent User Guide](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/) for more information.
 
 
 1. If you have not already done so, sign in to the Azure Management Portal.
@@ -226,9 +226,9 @@ The data disk that you just attached to the virtual machine is offline and not i
 
 To learn more about Linux on Azure, see the following articles:
 
-- [Introduction to Linux on Azure](http://azure.microsoft.com/zh-cn/documentation/articles/introduction-linux/)
+- [Introduction to Linux on Azure](/zh-cn/documentation/articles/introduction-linux/)
 
-- [How to use the Azure Command-Line Tools for Mac and Linux](http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/)
+- [How to use the Azure Command-Line Tools for Mac and Linux](/zh-cn/documentation/articles/xplat-cli/)
 
 
 [Next Steps]: #next

@@ -1,5 +1,5 @@
 ﻿## 将消息发送到事件中心
-在本节中，我们将编写用于将事件发送到事件中心的 Java 控制台应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org/)中利用 JMS AMQP 提供程序。这类似于通过 Java 将 Service Bus 队列和主题与 AMQP 配合使用，如[此处](http://www.windowsazure.cn/zh-cn/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)所示。有关详细信息，请参阅 [Qpid JMS 文档](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html)和 [Java 消息服务](http://www.oracle.com/technetwork/java/jms/index.html)。
+在本节中，我们将编写用于将事件发送到事件中心的 Java 控制台应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org/)中利用 JMS AMQP 提供程序。这类似于通过 Java 将 服务总线 队列和主题与 AMQP 配合使用，如[此处](http://www.windowsazure.cn/zh-cn/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)所示。有关详细信息，请参阅 [Qpid JMS 文档](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html)和 [Java 消息服务](http://www.oracle.com/technetwork/java/jms/index.html)。
 
 1. 在 Eclipse 中，创建一个名为 **Sender** 的新 Java 项目。
 

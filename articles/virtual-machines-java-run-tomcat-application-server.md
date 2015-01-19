@@ -133,7 +133,7 @@
 
 ## 后续步骤
 
--   通过查看 <http://www.windowsazure.com/zh-cn/develop/java/> 上提供的信息，了解要与 Java 应用程序一起包含的 Azure 存储、Service Bus、SQL Database 等其他服务。
+-   通过查看 <http://www.windowsazure.com/zh-cn/develop/java/> 上提供的信息，了解要与 Java 应用程序一起包含的 Azure 存储、服务总线、SQL数据库 等其他服务。
 
   [运行 Apache Tomcat 的虚拟机]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
   [create-account-and-vms-note]: ../includes/create-account-and-vms-note.md

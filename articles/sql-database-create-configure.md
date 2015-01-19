@@ -1,6 +1,6 @@
-<properties linkid="manage-services-how-to-configure-a-sqldb" urlDisplayName="How to configure" pageTitle="How to configure a SQL Database - Azure" metaKeywords="Azure creating SQL Server, Azure configuring SQL Server" description="Learn how to create and configure a logical server using SQL Server in Azure." metaCanonical="" services="sql-database" documentationCenter="" title="How to Create and Configure SQL Database" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-configure-a-sqldb" urlDisplayName="How to configure" pageTitle="How to configure a SQL数据库 - Azure" metaKeywords="Azure creating SQL Server, Azure configuring SQL Server" description="Learn how to create and configure a logical server using SQL Server in Azure." metaCanonical="" services="sql-database" documentationCenter="" title="How to Create and Configure SQL数据库" authors="" solutions="" manager="" editor="" />
 
-# <span id="configLogical"></span></a>如何创建和配置 SQL Database
+# <span id="configLogical"></span></a>如何创建和配置 SQL数据库
 
 在本主题中，你将逐步了解逻辑服务器的创建和配置过程。在新的 Azure（预览版）管理门户中，你可以先使用已修订的工作流创建数据库，然后再创建服务器。
 
@@ -15,35 +15,35 @@
 
 1.  登录到[管理门户][管理门户]。
 
-2.  单击“SQL Database”，然后单击 SQL Database 主页上的“服务器”。
+2.  单击“SQL数据库”，然后单击 SQL数据库 主页上的“服务器”。
 
 3.  单击页面底部的“添加”。
 
 4.  在“服务器设置”中，输入一个没有空格的单词作为管理员名称。
 
-    SQL Database 使用 SQL 身份验证进行加密连接。将使用你提供的名称创建一个分配给 sysadmin 固定服务器角色的新 SQL Server 身份验证登录名。
+    SQL数据库 使用 SQL 身份验证进行加密连接。将使用你提供的名称创建一个分配给 sysadmin 固定服务器角色的新 SQL Server 身份验证登录名。
 
-    该登录名不能是电子邮件地址、Windows 用户帐户或 Windows Live ID。SQL Database 不支持声明，也不支持 Windows 身份验证。
+    该登录名不能是电子邮件地址、Windows 用户帐户或 Windows Live ID。SQL数据库 不支持声明，也不支持 Windows 身份验证。
 
 5.  提供由大小写值以及数字或符号共同组成的 8 个以上字符的强密码。
 
 6.  选择区域。区域将确定服务器的地理位置。区域不能随意切换，因此要选择一个对此服务器有效的区域。选择一个最靠近你的位置。将 Azure 应用程序和数据库放置在同一区域可以降低出口带宽成本以及减少数据延迟情况。
 
-7.  确保“允许服务”选项处于选中状态，以便你能够使用 SQL Database 管理门户、存储服务以及 Azure 上的其他服务连接到此数据库。
+7.  确保“允许服务”选项处于选中状态，以便你能够使用 SQL数据库 管理门户、存储服务以及 Azure 上的其他服务连接到此数据库。
 
 8.  完成后，请单击页面底部的复选标记。
 
-请注意，你没有指定服务器名称。SQL Database 会自动生成服务器名称以确保没有重复的 DNS 条目。服务器名称是一个由 10 个字符组成的字母数字字符串。你不能更改 SQL Database 服务器的名称。
+请注意，你没有指定服务器名称。SQL数据库 会自动生成服务器名称以确保没有重复的 DNS 条目。服务器名称是一个由 10 个字符组成的字母数字字符串。你不能更改 SQL数据库 服务器的名称。
 
 在下一步中，你将配置防火墙以便允许你网络上运行的应用程序通过建立连接来访问相关数据。
 
 ## <span id="configFWLogical"></span></a>如何：配置逻辑服务器的防火墙
 
-1.  在[管理门户][管理门户]中，单击“SQL Database”，单击“服务器”，然后单击你刚才创建的服务器。
+1.  在[管理门户][管理门户]中，单击“SQL数据库”，单击“服务器”，然后单击你刚才创建的服务器。
 
 2.  单击**“配置”**。
 
-3.  复制当前客户端 IP 地址。如果你从某网络进行连接，则为你的路由器或代理服务器侦听的 IP 地址。SQL Database 会检测当前连接所使用的 IP 地址，以便你可以创建一个接受来自该设备的连接请求的防火墙规则。
+3.  复制当前客户端 IP 地址。如果你从某网络进行连接，则为你的路由器或代理服务器侦听的 IP 地址。SQL数据库 会检测当前连接所使用的 IP 地址，以便你可以创建一个接受来自该设备的连接请求的防火墙规则。
 
 4.  将 IP 地址粘贴到起始和结束地址范围中。日后，如果你遇到指示该范围太窄的连接错误，则可以编辑此规则来扩大范围。
 

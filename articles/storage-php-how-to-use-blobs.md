@@ -290,7 +290,7 @@
 -   参阅位于以下位置的 PHP 块 Blob 示例：<https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php>。
 -   参阅位于以下位置的 PHP 页 Blob 示例：<https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php>
 
-  [Azure SDK for PHP]: http://azure.microsoft.com/zh-cn/documentation/articles/php-download-sdk/
+  [Azure SDK for PHP]: /zh-cn/documentation/articles/php-download-sdk/
   [后续步骤]: #NextSteps
   [什么是 Blob 存储]: #what-is
   [概念]: #concepts

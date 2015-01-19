@@ -114,7 +114,7 @@
 
     <div class="dev-callout"><b>说明</b>
 
-    <p><code>DataMember 的 Name</code> 批注告知客户端要将应用程序中的新 <code>CreatedAt</code> 属性映射到 TodoItem 表中定义的具有不同名称的 <code>createdAt</code> 列。如果你使用此批注，应用程序在对象上使用的属性名称可以不同于 SQL Database 中的列名称。如果不使用此批注，则会因大小写不同而发生错误。</p>
+    <p><code>DataMember 的 Name</code> 批注告知客户端要将应用程序中的新 <code>CreatedAt</code> 属性映射到 TodoItem 表中定义的具有不同名称的 <code>createdAt</code> 列。如果你使用此批注，应用程序在对象上使用的属性名称可以不同于 SQL数据库 中的列名称。如果不使用此批注，则会因大小写不同而发生错误。</p>
 	</div>
 
 2.  在 GetView 方法中，在将 `checkBox.Text` 设置为 `currentItem.Text` 的当前代码的上面添加以下代码：

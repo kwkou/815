@@ -97,7 +97,7 @@
 
 提供此代码是为了向你演示在 Azure 上通过 PHP 使用 Twilio 的基本功能。在生产中部署到 Azure 之前，你可能希望添加更多错误处理功能或其他功能。例如：
 
--   你可以使用 Azure 存储 Blob 或 SQL Database 存储电话号码和呼叫文本，而不使用 Web 窗体。有关通过 PHP 使用 Azure 存储 Blob 的信息，请参阅[在 PHP 应用程序中使用 Azure 存储服务][在 PHP 应用程序中使用 Azure 存储服务]。有关通过 PHP 使用 SQL Database 的信息，请参阅[在 PHP 应用程序中使用 SQL Database][在 PHP 应用程序中使用 SQL Database]。
+-   你可以使用 Azure 存储 Blob 或 SQL数据库 存储电话号码和呼叫文本，而不使用 Web 窗体。有关通过 PHP 使用 Azure 存储 Blob 的信息，请参阅[在 PHP 应用程序中使用 Azure 存储服务][在 PHP 应用程序中使用 Azure 存储服务]。有关通过 PHP 使用 SQL数据库 的信息，请参阅[在 PHP 应用程序中使用 SQL数据库][在 PHP 应用程序中使用 SQL数据库]。
 -   **makecall.php** 代码使用 Twilio 提供的 URL ([][7]<http://twimlets.com/message></a>) 提供了一个 Twilio 标记语言 (TwiML) 响应，指示 Twilio 如何继续进行呼叫。例如，返回的 TwiML 可能包含 `<Say>` 谓词，该谓词生成了与呼叫接收人的谈话的文本。你可以构建自己的服务来响应 Twilio 的请求，而不使用 Twilio 提供的 URL；有关详细信息，请参阅[如何通过 PHP 使用 Twilio 实现语音和 SMS 功能][如何通过 PHP 使用 Twilio 实现语音和 SMS 功能]。有关 TwiML 的详细信息可在 [][8]<http://www.twilio.com/docs/api/twiml></a> 中找到，有关`<Say>` 和其他 Twilio 谓词的详细信息可在 [][9]<http://www.twilio.com/docs/api/twiml/say></a> 中找到。
 -   阅读 [][10]<https://www.twilio.com/docs/security></a> 上的 Twilio 安全准则。
 
@@ -121,7 +121,7 @@
   [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署]: https://www.windowsazure.com/zh-cn/develop/php/tutorials/website-w-mysql-and-ftp/
   [使用 WebMatrix 创建和部署 PHP-MySQL Azure 网站]: https://www.windowsazure.com/zh-cn/develop/php/tutorials/website-w-mysql-and-webmatrix/
   [在 PHP 应用程序中使用 Azure 存储服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh674502(v=vs.103).aspx
-  [在 PHP 应用程序中使用 SQL Database]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh674500(v=vs.103).aspx
+  [在 PHP 应用程序中使用 SQL数据库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh674500(v=vs.103).aspx
   [7]: http://twimlets.com/message
   [如何通过 PHP 使用 Twilio 实现语音和 SMS 功能]: ../partner-twilio-php-how-to-use-voice-sms
   [8]: http://www.twilio.com/docs/api/twiml

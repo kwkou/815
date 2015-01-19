@@ -1,6 +1,6 @@
-# Service Bus 的 AMQP 1.0 支持
+# 服务总线 的 AMQP 1.0 支持
 
-> Azure Service Bus 和 Service Bus for Windows Server (Service Bus 1.1) 都支持高级消息队列协议 (AMQP) 1.0。AMQP 让你能够使用开放标准协议构建跨平台的混合应用程序。你可以借助使用不同语言和框架构建的、并且运行在不同操作系统上的组件构建应用程序。所有这些组件均可连接到 Service Bus，并且能够高效且完全无损地无缝交换结构化业务消息。
+> Azure 服务总线 和 服务总线 for Windows Server (服务总线 1.1) 都支持高级消息队列协议 (AMQP) 1.0。AMQP 让你能够使用开放标准协议构建跨平台的混合应用程序。你可以借助使用不同语言和框架构建的、并且运行在不同操作系统上的组件构建应用程序。所有这些组件均可连接到 服务总线，并且能够高效且完全无损地无缝交换结构化业务消息。
 
 ## 简介：什么是 AMQP 1.0 以及为何它很重要？
 
@@ -39,17 +39,17 @@ AMQP 1.0 是一个高效、可靠的线级消息传送协议，可用于构建�
 -   随时可找到知识渊博的工作人员
 -   风险较低且可控
 
-## AMQP 1.0 和 Service Bus
+## AMQP 1.0 和 服务总线
 
-添加 AMQP 1.0 意味着现在可以通过一系列使用有效的二进制协议的平台利用 Service Bus 的队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
+添加 AMQP 1.0 意味着现在可以通过一系列使用有效的二进制协议的平台利用 服务总线 的队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 
-下图显示了一个部署示例，其中 Java 客户端运行在 Linux 上，并使用标准 Java 消息服务 (JMS) API 写入数据；而 .NET 客户端运行在 Windows 上，并通过 Service Bus 使用 AMQP 1.0 交换消息。
+下图显示了一个部署示例，其中 Java 客户端运行在 Linux 上，并使用标准 Java 消息服务 (JMS) API 写入数据；而 .NET 客户端运行在 Windows 上，并通过 服务总线 使用 AMQP 1.0 交换消息。
 
 ![][]
 
-**图 1：演示使用 Service Bus 和 AMQP 1.0 进行跨平台消息传送的部署方案示例**
+**图 1：演示使用 服务总线 和 AMQP 1.0 进行跨平台消息传送的部署方案示例**
 
-在这种情况下，已知下列客户端库将使用 Service Bus：
+在这种情况下，已知下列客户端库将使用 服务总线：
 
 <table>
   <tr>
@@ -78,22 +78,22 @@ AMQP 1.0 是一个高效、可靠的线级消息传送协议，可用于构建�
 
 **图 2：AMQP 1.0 客户端库表**
 
-有关如何获取这些库并将其用于 Service Bus 的更多信息，请参阅 Service Bus AMQP 开发人员指南。有关更多信息，请参阅下面的“参考”一节。
+有关如何获取这些库并将其用于 服务总线 的更多信息，请参阅 服务总线 AMQP 开发人员指南。有关更多信息，请参阅下面的“参考”一节。
 
 ## 摘要
 
 -   AMQP 1.0 是一个开放、可靠的消息传送协议，可用于构建跨平台的混合应用程序。AMQP 1.0 是一种 OASIS 标准。
--   Azure Service Bus 和 Service Bus for Windows Server (Service Bus 1.1) 都支持 AMQP 1.0。定价与现有协议相同。
+-   Azure 服务总线 和 服务总线 for Windows Server (服务总线 1.1) 都支持 AMQP 1.0。定价与现有协议相同。
 
 ## 参考
 
--   [如何将 AMQP 1.0 与 Service Bus .NET API 一起使用][如何将 AMQP 1.0 与 Service Bus .NET API 一起使用]
--   [如何将 Java 消息服务 (JMS) API 用于 Service Bus 和 AMQP 1.0][如何将 Java 消息服务 (JMS) API 用于 Service Bus 和 AMQP 1.0]
--   [Service Bus AMQP 1.0 开发人员指南][Service Bus AMQP 1.0 开发人员指南]
+-   [如何将 AMQP 1.0 与 服务总线 .NET API 一起使用][如何将 AMQP 1.0 与 服务总线 .NET API 一起使用]
+-   [如何将 Java 消息服务 (JMS) API 用于 服务总线 和 AMQP 1.0][如何将 Java 消息服务 (JMS) API 用于 服务总线 和 AMQP 1.0]
+-   [服务总线 AMQP 1.0 开发人员指南][服务总线 AMQP 1.0 开发人员指南]
 -   [OASIS 高级消息队列协议 (AMQP) 1.0 版规范][OASIS 高级消息队列协议 (AMQP) 1.0 版规范]
 
   []: ./media/service-bus-amqp-overview/Example1.png
-  [如何将 AMQP 1.0 与 Service Bus .NET API 一起使用]: http://aka.ms/lym3vk
-  [如何将 Java 消息服务 (JMS) API 用于 Service Bus 和 AMQP 1.0]: http://aka.ms/ll1fm3
-  [Service Bus AMQP 1.0 开发人员指南]: http://msdn.microsoft.com/en-us/library/windowsazure/jj841071.aspx
+  [如何将 AMQP 1.0 与 服务总线 .NET API 一起使用]: http://aka.ms/lym3vk
+  [如何将 Java 消息服务 (JMS) API 用于 服务总线 和 AMQP 1.0]: http://aka.ms/ll1fm3
+  [服务总线 AMQP 1.0 开发人员指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx
   [OASIS 高级消息队列协议 (AMQP) 1.0 版规范]: http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf

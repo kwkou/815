@@ -6,7 +6,7 @@ Managing and analyzing data in the cloud is just as important as it is anywhere 
 
 - [Blob Storage](#blob)
 - [Running a DBMS in a Virtual Machine](#dbinvm)
-- [SQL Database](#sqldb)
+- [SQL数据库](#sqldb)
 	- [SQL Data Sync](#datasync)
 	- [SQL Data Reporting using Virtual Machines](#datarpt)
 - [Table Storage](#tblstor)
@@ -63,57 +63,57 @@ As [Figure 2](#Fig2) shows, your databases appear to be stored on the local disk
 Another way to use SQL Server in a VM is to create a hybrid application, where the data lives on Azure while the application logic runs on-premises. For example, this might make sense when applications running in multiple locations or on various mobile devices must share the same data. To make communication between the cloud database and on-premises logic simpler, an organization can use Azure Virtual Network to create a virtual private network (VPN) connection between an Azure datacenter and its own on-premises datacenter.
 
 
-## <a name="sqldb"></a>SQL Database
+## <a name="sqldb"></a>SQL数据库
 
-For many people, running a DBMS in a VM is the first option that comes to mind for managing structured data in the cloud. It's not the only choice, though, nor is it always the best choice. In some cases, managing data using a Platform as a Service (PaaS) approach makes more sense. Azure provides a PaaS technology called SQL Database that lets you do this for relational data. [Figure 3](#Fig3) illustrates this option. 
+For many people, running a DBMS in a VM is the first option that comes to mind for managing structured data in the cloud. It's not the only choice, though, nor is it always the best choice. In some cases, managing data using a Platform as a Service (PaaS) approach makes more sense. Azure provides a PaaS technology called SQL数据库 that lets you do this for relational data. [Figure 3](#Fig3) illustrates this option. 
 
-<a name="Fig3"></a>![Diagram of SQL Database][SQL-db]
+<a name="Fig3"></a>![Diagram of SQL数据库][SQL-db]
  
-**Figure 3: SQL Database provides a shared PaaS relational storage service.**
+**Figure 3: SQL数据库 provides a shared PaaS relational storage service.**
 
-SQL Database doesn't give each customer its own physical instance of SQL Server. Instead, it provides a multi-tenant service, with a logical SQL Database server for each customer. All customers share the compute and storage capacity that the service provides. And as with Blob Storage, all data in SQL Database is stored on three separate computers within an Azure datacenter, giving your databases built-in high availability (HA).
+SQL数据库 doesn't give each customer its own physical instance of SQL Server. Instead, it provides a multi-tenant service, with a logical SQL数据库 server for each customer. All customers share the compute and storage capacity that the service provides. And as with Blob Storage, all data in SQL数据库 is stored on three separate computers within an Azure datacenter, giving your databases built-in high availability (HA).
 
-To an application, SQL Database looks much like SQL Server. Applications can issue SQL queries against relational tables, use T-SQL stored procedures, and execute transactions across multiple tables. And because applications access SQL Database using the Tabular Data Stream (TDS) protocol, the same protocol used to access SQL Server, they can work with data using Entity Framework, ADO.NET, JDBC, and other familiar data access interfaces. 
+To an application, SQL数据库 looks much like SQL Server. Applications can issue SQL queries against relational tables, use T-SQL stored procedures, and execute transactions across multiple tables. And because applications access SQL数据库 using the Tabular Data Stream (TDS) protocol, the same protocol used to access SQL Server, they can work with data using Entity Framework, ADO.NET, JDBC, and other familiar data access interfaces. 
 
-But because SQL Database is a cloud service running in Azure data centers, you don't need to manage any of the system's physical aspects, such as disk usage. You also don't need to worry about updating software or handling other low-level administrative tasks. Each customer organization still controls its own databases, of course, including their schemas and user logins, but many of the mundane administrative tasks are done for you. 
+But because SQL数据库 is a cloud service running in Azure data centers, you don't need to manage any of the system's physical aspects, such as disk usage. You also don't need to worry about updating software or handling other low-level administrative tasks. Each customer organization still controls its own databases, of course, including their schemas and user logins, but many of the mundane administrative tasks are done for you. 
 
-While SQL Database looks much like SQL Server to applications, it doesn't behave exactly the same as a DBMS running on a physical or virtual machine. Because it runs on shared hardware, its performance will vary with the load placed on that hardware by all of its customers. This means that the performance of, say, a stored procedure in SQL Database might vary from one day to the next. 
+While SQL数据库 looks much like SQL Server to applications, it doesn't behave exactly the same as a DBMS running on a physical or virtual machine. Because it runs on shared hardware, its performance will vary with the load placed on that hardware by all of its customers. This means that the performance of, say, a stored procedure in SQL数据库 might vary from one day to the next. 
 
-Today, SQL Database lets you create a database holding up to 150 gigabytes. If you need to work with larger databases, the service provides an option called *Federation*. To do this, a database administrator creates two or more *federation members*, each of which is a separate database with its own schema. Data is spread across these members, something that's often referred to as *sharding*, with each member assigned a unique *federation key*. An application issues SQL queries against this data by specifying the federation key that identifies the federation member the query should target. This allows using a traditional relational approach with large amounts of data. As always, there are trade-offs; neither queries nor transactions can span federation members, for instance. But when a relational PaaS service is the best choice and these trade-offs are acceptable, using SQL Federation can be a good solution.
+Today, SQL数据库 lets you create a database holding up to 150 gigabytes. If you need to work with larger databases, the service provides an option called *Federation*. To do this, a database administrator creates two or more *federation members*, each of which is a separate database with its own schema. Data is spread across these members, something that's often referred to as *sharding*, with each member assigned a unique *federation key*. An application issues SQL queries against this data by specifying the federation key that identifies the federation member the query should target. This allows using a traditional relational approach with large amounts of data. As always, there are trade-offs; neither queries nor transactions can span federation members, for instance. But when a relational PaaS service is the best choice and these trade-offs are acceptable, using SQL Federation can be a good solution.
 
-SQL Database can be used by applications running on Azure or elsewhere, such as in your on-premises datacenter. This makes it useful for cloud applications that need relational data, as well as on-premises applications that can benefit from storing data in the cloud. A mobile application might rely on SQL Database to manage shared relational data, for instance, as might an inventory application that runs at multiple dealers around the world.
+SQL数据库 can be used by applications running on Azure or elsewhere, such as in your on-premises datacenter. This makes it useful for cloud applications that need relational data, as well as on-premises applications that can benefit from storing data in the cloud. A mobile application might rely on SQL数据库 to manage shared relational data, for instance, as might an inventory application that runs at multiple dealers around the world.
 
-Thinking about SQL Database raises an obvious (and important) issue: When should you run SQL Server in a VM, and when is SQL Database a better choice? As usual, there are trade-offs, and so which approach is better depends on your requirements. 
+Thinking about SQL数据库 raises an obvious (and important) issue: When should you run SQL Server in a VM, and when is SQL数据库 a better choice? As usual, there are trade-offs, and so which approach is better depends on your requirements. 
 
-One simple way to think about it is to view SQL Database as being for new applications, while SQL Server in a VM is a better choice when you're moving an existing on-premises application to the cloud. It can also be useful to look at this decision in a more fine-grained way, however. For example, SQL Database is easier to use, since there's minimal setup and administration. But running SQL Server in a VM can have more predictable performance - it's not a shared service - and it also supports larger non-federated databases than SQL Database. Still, SQL Database provides built-in replication of both data and processing, effectively giving you a high-availability DBMS with very little work. While SQL Server gives you more control and a somewhat broader set of options, SQL Database is simpler to set up and significantly less work to manage.
+One simple way to think about it is to view SQL数据库 as being for new applications, while SQL Server in a VM is a better choice when you're moving an existing on-premises application to the cloud. It can also be useful to look at this decision in a more fine-grained way, however. For example, SQL数据库 is easier to use, since there's minimal setup and administration. But running SQL Server in a VM can have more predictable performance - it's not a shared service - and it also supports larger non-federated databases than SQL数据库. Still, SQL数据库 provides built-in replication of both data and processing, effectively giving you a high-availability DBMS with very little work. While SQL Server gives you more control and a somewhat broader set of options, SQL数据库 is simpler to set up and significantly less work to manage.
 
-Finally, it's important to point out that SQL Database isn't the only PaaS data service available on Azure. Microsoft partners provide other options as well. For example, ClearDB offers a MySQL PaaS offering, while Cloudant sells a NoSQL option. PaaS data services are the right solution in many situations, and so this approach to data management is an important part of Azure.
+Finally, it's important to point out that SQL数据库 isn't the only PaaS data service available on Azure. Microsoft partners provide other options as well. For example, ClearDB offers a MySQL PaaS offering, while Cloudant sells a NoSQL option. PaaS data services are the right solution in many situations, and so this approach to data management is an important part of Azure.
 
 
 ### <a name="datasync"></a>SQL Data Sync
 
-While SQL Database does maintain three copies of each database within a single Azure datacenter, it doesn't automatically replicate data between Azure datacenters. Instead, it provides SQL Data Sync, a service that you can use to do this. [Figure 4](#Fig4) shows how this looks.
+While SQL数据库 does maintain three copies of each database within a single Azure datacenter, it doesn't automatically replicate data between Azure datacenters. Instead, it provides SQL Data Sync, a service that you can use to do this. [Figure 4](#Fig4) shows how this looks.
 
 <a name="Fig4"></a>![Diagram of SQL data sync][SQL-datasync]
  
-**Figure 4: SQL Data Sync synchronizes data in SQL Database with data in other Azure and on-premises datacenters.**
+**Figure 4: SQL Data Sync synchronizes data in SQL数据库 with data in other Azure and on-premises datacenters.**
 
-As the diagram shows, SQL Data Sync can synchronize data across different locations. Suppose you're running an application in multiple Azure datacenters, for instance, with data stored in SQL Database. You can use SQL Data Sync to keep that data synchronized. SQL Data Sync can also synchronize data between an Azure datacenter and an instance of SQL Server running in an on-premises datacenter. This might be useful for maintaining both a local copy of data used by on-premises applications and a cloud copy used by applications running on Azure. And although it's not shown in the figure, SQL Data Sync can also be used to synchronize data between SQL Database and SQL Server running in a VM on Azure or elsewhere.
+As the diagram shows, SQL Data Sync can synchronize data across different locations. Suppose you're running an application in multiple Azure datacenters, for instance, with data stored in SQL数据库. You can use SQL Data Sync to keep that data synchronized. SQL Data Sync can also synchronize data between an Azure datacenter and an instance of SQL Server running in an on-premises datacenter. This might be useful for maintaining both a local copy of data used by on-premises applications and a cloud copy used by applications running on Azure. And although it's not shown in the figure, SQL Data Sync can also be used to synchronize data between SQL数据库 and SQL Server running in a VM on Azure or elsewhere.
 
 Synchronization can be bi-directional, and you determine exactly what data is synchronized and how frequently it's done. (Synchronization between databases isn't atomic, however - there's always at least some delay.) And however it's used, setting up synchronization with SQL Data Sync is entirely configuration-driven; there's no code to write.
 
 
 ### <a name="datarpt"></a>SQL Data Reporting using Virtual Machines
 
-Once a database contains data, somebody will probably want to create reports using that data. Azure can run SQL Server Reporting Services (SSRS) in Azure Virtual Machines, which is functionally equivalent to running SQL Server Reporting Services on-premises. Then you can use SSRS to run reports on data stored in an Azure SQL Database.  [Figure 5](#Fig5) shows how the process works.
+Once a database contains data, somebody will probably want to create reports using that data. Azure can run SQL Server Reporting Services (SSRS) in Azure Virtual Machines, which is functionally equivalent to running SQL Server Reporting Services on-premises. Then you can use SSRS to run reports on data stored in an Azure SQL数据库.  [Figure 5](#Fig5) shows how the process works.
 
 <a name="Fig5"></a>![Diagram of SQL reporting][SQL-report]
  
-**Figure 5: SQL Server Reporting Services running in an Azure Virtual Machines provides reporting services for data in SQL Database. .**
+**Figure 5: SQL Server Reporting Services running in an Azure Virtual Machines provides reporting services for data in SQL数据库. .**
 
 Before a user can see a report, someone defines what that report should look like (step 1). With SSRS on a VM, this can be done using either of two tools: SQL Server Data Tools, part of SQL Server 2012, or its predecessor, Business Intelligence (BI) Development Studio. As with SSRS, these report definitions are expressed in the Report Definition Language (RDL). After the RDL files for a report have been created, they are uploaded to a VM in the cloud (step 2). The report definition is now ready to use.
 
-Next, a user of the application accesses the report (step 3). The application passes this request to the SSRS VM (step 4), which contacts SQL Database or other data sources to get the data it needs (step 5). SSRS uses this data and the relevant RDL files to render the report (step 6), then returns the report to the application (step 7), which displays it to the user (step 8).
+Next, a user of the application accesses the report (step 3). The application passes this request to the SSRS VM (step 4), which contacts SQL数据库 or other data sources to get the data it needs (step 5). SSRS uses this data and the relevant RDL files to render the report (step 6), then returns the report to the application (step 7), which displays it to the user (step 8).
 
 Embedding a report in an application, the scenario shown here, isn't the only option. It's also possible to view reports in Report Manager on the VM, SharePoint on the VM, or in other ways. Reports can also be combined, with one report containing a link to another.
 

@@ -354,7 +354,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 -   查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
     -   使用[表存储][]来存储结构化数据。
     -   使用 [Blob 存储][]来存储非结构化数据。
-    -   使用 [SQL Database][] 来存储关系数据。
+    -   使用 [SQL数据库][] 来存储关系数据。
 
   [后续步骤]: #next-steps
   [什么是队列存储]: #what-is
@@ -388,4 +388,4 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [表存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/
   [Blob 存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/
-  [SQL Database]: /zh-cn/documentation/articles/sql-database-dotnet-how-to-use/
+  [SQL数据库]: /zh-cn/documentation/articles/sql-database-dotnet-how-to-use/

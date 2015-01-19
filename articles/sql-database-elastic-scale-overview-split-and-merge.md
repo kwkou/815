@@ -1,10 +1,10 @@
-<properties title="使用灵活扩展拆分和合并" pageTitle="使用灵活扩展拆分和合并" description="介绍如何使用灵活扩展 API 通过自托管服务来操作分片和移动数据。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="使用灵活扩展拆分和合并" pageTitle="使用灵活扩展拆分和合并" description="介绍如何使用灵活扩展 API 通过自托管服务来操作分片和移动数据。" metaKeywords="sharding scaling, Azure SQL数据库 sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
 # 使用灵活扩展拆分和合并
 
-当在 Azure SQL Database 上构建的应用程序的数据或处理需求不再符合 Azure SQL Database 中的单个扩展单元时，它们将面临许多挑战。例如，病毒式传播的应用程序，或其中某个特定租户集的增长超过单个 Azure SQL DB 限制的应用程序。灵活扩展“拆分/合并服务”将显著缓解此问题。
+当在 Azure SQL数据库 上构建的应用程序的数据或处理需求不再符合 Azure SQL数据库 中的单个扩展单元时，它们将面临许多挑战。例如，病毒式传播的应用程序，或其中某个特定租户集的增长超过单个 Azure SQL DB 限制的应用程序。灵活扩展“拆分/合并服务”将显著缓解此问题。
 
 对拆分/合并服务的这一讨论将通过更改 Azure DB Database 的数量并平衡 **shardlet** 在其中的分布来管理向内扩展和向外扩展。（有关术语定义，请参阅[灵活扩展术语表][灵活扩展术语表]）。
 
@@ -82,7 +82,7 @@
 
 -   操作类型：操作类型是一个单选按钮，用于控制针对此请求由服务执行的操作类型。您可以在“概念和主要功能”中讨论的拆分、合并和移动方案之间进行选择。此外，您还可以取消以前提交的操作。
 
--   分片映射：请求参数的下一部分包含有关分片映射和托管分片映射的数据库的信息。具体而言，您需要提供托管分片映射的 Azure SQL Database 服务器和数据库的名称、用于连接到分片映射数据库的凭据以及分片映射的名称。当前，该操作仅接受一个凭据集。这些凭据需要具有足够的权限，才能对分片映射和分片上的用户数据执行更改。
+-   分片映射：请求参数的下一部分包含有关分片映射和托管分片映射的数据库的信息。具体而言，您需要提供托管分片映射的 Azure SQL数据库 服务器和数据库的名称、用于连接到分片映射数据库的凭据以及分片映射的名称。当前，该操作仅接受一个凭据集。这些凭据需要具有足够的权限，才能对分片映射和分片上的用户数据执行更改。
 
 -   源范围（拆分/合并）：对于拆分和合并操作，请求需要在源分片上具有源范围的低键和高键。当前，由于这些键出现在您的分片映射的映射中，因此您需要准确指定这些键。可以使用 GetMappings.ps1 PowerShell 脚本检索给定分片映射中的当前映射。
 
@@ -149,7 +149,7 @@ WAD 中的日志和计数器通常需要对 Microsoft 团队可见，以免您�
 
 ## 性能
 
-拆分、合并和移动操作的性能取决于多种因素。通常，Azure SQL Database 中更高、更可执行的服务层应具有更好的性能。为更高服务层分配更高的 IO、CPU 和内存有利于拆分/合并服务在内部使用的批量复制和删除操作。因此，在定义明确的有限时间段内仅为某个给定的数据库集增加服务层，以快速完成为在这些数据库上托管的范围所计划的拆分/合并服务操作，这种做法可能是强制性的。
+拆分、合并和移动操作的性能取决于多种因素。通常，Azure SQL数据库 中更高、更可执行的服务层应具有更好的性能。为更高服务层分配更高的 IO、CPU 和内存有利于拆分/合并服务在内部使用的批量复制和删除操作。因此，在定义明确的有限时间段内仅为某个给定的数据库集增加服务层，以快速完成为在这些数据库上托管的范围所计划的拆分/合并服务操作，这种做法可能是强制性的。
 
 请注意，该服务也会将验证查询作为其常规操作的一部分来执行。除此之外，这些验证查询还会检查目标范围中数据的异常存在，确保任何拆分/合并/移动操作都从一致状态开始进行。这些查询在由拆分/合并/移动操作范围定义的分片键范围和作为请求定义的一部分而提供的批大小上都有效。当使用分片键作为起始列的索引存在时，这些查询表现最好。
 

@@ -85,7 +85,7 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
 
 ## <a name="services"></a>服务摘要
 
-[Azure 网站][Azure 网站]允许您在 Azure 上快速生成高度可扩展的网站。您可以使用 Azure 门户或命令行工具，通过流行的语言（例如 .NET、PHP 和 Python）设置网站。支持的框架已部署并且不要求更多安装步骤。Azure 网站库包含许多第三方应用程序（例如 Drupal 和 WordPress）以及开发框架（例如 Django 和 CakePHP）。在创建网站后，您可以迁移现有网站或者生成全新网站。Web 站点无需管理物理硬件，还提供了几个扩展选项。您可以从共享的多租户模型移动到标准模式，那里的专用机服务于传入流量。网站还允许您与其他 Azure 服务（例如 SQL Database、Service Bus 和存储）相集成。使用 [Azure WebJobs SDK][Azure WebJobs SDK] 预览，您可以添加后台处理。总之，Azure 网站通过支持多种语言、开放源应用程序和部署方法（FTP、Git、Web Deploy 或 TFS），从而更便于关注应用程序开发。如果您没有要求云服务或虚拟机的专门要求，则 Azure 网站非常有可能是您的最佳选择。
+[Azure 网站][Azure 网站]允许您在 Azure 上快速生成高度可扩展的网站。您可以使用 Azure 门户或命令行工具，通过流行的语言（例如 .NET、PHP 和 Python）设置网站。支持的框架已部署并且不要求更多安装步骤。Azure 网站库包含许多第三方应用程序（例如 Drupal 和 WordPress）以及开发框架（例如 Django 和 CakePHP）。在创建网站后，您可以迁移现有网站或者生成全新网站。Web 站点无需管理物理硬件，还提供了几个扩展选项。您可以从共享的多租户模型移动到标准模式，那里的专用机服务于传入流量。网站还允许您与其他 Azure 服务（例如 SQL数据库、服务总线 和存储）相集成。使用 [Azure WebJobs SDK][Azure WebJobs SDK] 预览，您可以添加后台处理。总之，Azure 网站通过支持多种语言、开放源应用程序和部署方法（FTP、Git、Web Deploy 或 TFS），从而更便于关注应用程序开发。如果您没有要求云服务或虚拟机的专门要求，则 Azure 网站非常有可能是您的最佳选择。
 
 通过[云服务][云服务]，您能够在丰富的平台即服务 (PaaS) 环境中创建高度可用的、可扩展 Web 应用程序。与网站不同，云服务首先在 Visual Studio 之类的开发环境中创建，然后部署到 Azure。PHP 之类的框架要求在角色启动时安装框架的自定义部署步骤或任务。云服务的主要优势在于能够支持更复杂的多层体系结构。单个云服务可由一个前端 Web 角色以及一个或多个辅助角色构成。每个层都可以单独缩放。还有对您的 Web 应用程序体系结构的提高的控制级别。例如，您可以使用远程桌面控制正在运行角色实例的计算机。您还可以编写在角色启动时运行的更高级的 IIS 和计算机配置更改的脚本，包括要求管理员控制的任务。
 
@@ -112,7 +112,7 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>访问 Service Bus、存储、SQL Database 之类的服务</p></td>
+<td align="left"><p>访问 服务总线、存储、SQL数据库 之类的服务</p></td>
 <td align="left">X</td>
 <td align="left">X</td>
 <td align="left">X</td>
@@ -220,7 +220,7 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
 <td align="left">X</td>
 </tr>
 <tr class="odd">
-<td align="left"><p>支持 Azure Traffic Manager</p></td>
+<td align="left"><p>支持 Azure 流量管理器</p></td>
 <td align="left">X</td>
 <td align="left">X</td>
 <td align="left">X</td>
@@ -266,21 +266,21 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
 
 <sup>4</sup> 在部署到单实例角色时云服务支持 Web 部署。但是，生产角色要求多个实例以便满足 Azure SLA。因此，Web 部署不是在生产中用于云服务的合适的部署机制。
 
-  [Azure 网站]: http://azure.microsoft.com/zh-cn/
-  [云服务]: http://azure.microsoft.com/zh-cn/documentation/services/cloud-services/
-  [虚拟机]: http://azure.microsoft.com/zh-cn/documentation/services/virtual-machines/
+  [Azure 网站]: /zh-cn/documentation/services/web-sites/
+  [云服务]: /zh-cn/documentation/services/cloud-services/
+  [虚拟机]: /zh-cn/documentation/services/virtual-machines/
   [Azure WebJobs SDK]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs
   [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_2.png
   [方案]: #scenarios
   [服务摘要]: #services
   [功能比较]: #features
-  [自动任务]: http://azure.microsoft.com/zh-cn/documentation/scripts/?services=web-sites
+  [自动任务]: /zh-cn/documentation/scripts/?services=web-sites
   [.Net]: http://azure.microsoft.com/zh-cn/develop/net/
   [PHP]: http://azure.microsoft.com/zh-cn/develop/php/
   [Node.js]: http://azure.microsoft.com/zh-cn/develop/nodejs/
   [Python]: http://azure.microsoft.com/zh-cn/develop/python/
-  [SQL 数据库]: http://azure.microsoft.com/zh-cn/documentation/services/sql-database/
-  [服务总线]: http://azure.microsoft.com/zh-cn/documentation/services/service-bus/
-  [存储]: http://azure.microsoft.com/zh-cn/documentation/services/storage/
+  [SQL 数据库]: /zh-cn/documentation/services/sql-database/
+  [服务总线]: /zh-cn/documentation/services/service-bus/
+  [存储]: /zh-cn/documentation/services/storage/
   [Azure 应用商店]: http://azure.microsoft.com/zh-cn/gallery/store/
-  [为 Azure 网站配置 SSL 证书]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [为 Azure 网站配置 SSL 证书]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/

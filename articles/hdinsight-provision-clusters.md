@@ -47,7 +47,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 元存储包含有关 Hive 表、分区、架构、列等的信息。该信息被 Hive 用于定位数据在 HDFS 上的存储位置（或用于 HDInsight 的 WASB）。默认情况下，Hive 使用嵌入的数据库存储该信息。
 
-设置 HDInsight 群集时，你可以指定一个 SQL Database 来包含 Hive 元存储。由此，当你删除一个群集时将保留元数据信息，因为它存储到外部的 SQL Database 中。
+设置 HDInsight 群集时，你可以指定一个 SQL数据库 来包含 Hive 元存储。由此，当你删除一个群集时将保留元数据信息，因为它存储到外部的 SQL数据库 中。
 
 ### 虚拟网络
 
@@ -136,7 +136,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 			<td>指定 SQL 数据库用户密码。</td></tr>
 	</table>
 
-	>[WACOM.NOTE] 用于元存储的 Azure SQL Database 必须允许连接到其他 Azure 服务，包括 Azure HDInsight。在 Azure SQL 数据库仪表板的右侧单击服务器名称。这是运行 SQL 数据库实例的服务器。进入服务器视图后，请单击**配置**、单击 **Windows Azure 服务**对应的**是**，然后单击**保存**。   
+	>[WACOM.NOTE] 用于元存储的 Azure SQL数据库 必须允许连接到其他 Azure 服务，包括 Azure HDInsight。在 Azure SQL 数据库仪表板的右侧单击服务器名称。这是运行 SQL 数据库实例的服务器。进入服务器视图后，请单击**配置**、单击 **Windows Azure 服务**对应的**是**，然后单击**保存**。   
 
     单击右箭头。
 
@@ -436,18 +436,18 @@ HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供�
 		azure hdinsight cluster config storage add <file> --storageAccountName "<StorageAccountName>.blob.core.chinacloudapi.cn"
 		       --storageAccountKey "<StorageAccountKey>"
 		 
-		#If required, include commands to use a SQL database as a Hive metastore
+		#If required, include commands to use a SQL数据库 as a Hive metastore
 		azure hdinsight cluster config metastore set <file> --type "hive" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
 		       --database "<HiveDatabaseName>" --user "<Username>" --metastorePassword "<UserPassword>"
 		
-		#If required, include commands to use a SQL database as an Oozie metastore 
+		#If required, include commands to use a SQL数据库 as an Oozie metastore 
 		azure hdinsight cluster config metastore set <file> --type "oozie" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
 		       --database "<OozieDatabaseName>" --user "<SQLUsername>" --metastorePassword "<SQLPassword>"
 		 
 		#Run this command to create a cluster using the config file		
 		azure hdinsight cluster create --config <file>
 		 
-	>[WACOM.NOTE] 用于元存储的 Azure SQL Database 必须允许连接到其他 Azure 服务，包括 Azure HDInsight。在 Azure SQL 数据库仪表板的右侧单击服务器名称。这是运行 SQL 数据库实例的服务器。进入服务器视图后，请单击**配置**、单击 **Windows Azure 服务**对应的**是**，然后单击**保存**。
+	>[WACOM.NOTE] 用于元存储的 Azure SQL数据库 必须允许连接到其他 Azure 服务，包括 Azure HDInsight。在 Azure SQL 数据库仪表板的右侧单击服务器名称。这是运行 SQL 数据库实例的服务器。进入服务器视图后，请单击**配置**、单击 **Windows Azure 服务**对应的**是**，然后单击**保存**。
 
 
 	![HDI.CLIClusterCreationConfig][image-cli-clustercreation-config]

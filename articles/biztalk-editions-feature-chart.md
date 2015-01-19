@@ -116,7 +116,7 @@ Azure BizTalk 服务提供以下版本：“免费”、“开发人员”、“
 <li>FTP</li>
 <li>SFTP</li>
 <li>WCF</li>
-<li>Service Bus (SB)</li>
+<li>服务总线 (SB)</li>
 <li>Azure Blob</li>
 <li>REST API</li>
 </ul></td>

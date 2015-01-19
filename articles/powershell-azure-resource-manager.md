@@ -6,7 +6,7 @@
 
 资源管理器引入了一种考虑您的 Azure 资源的全新方法。您首先设想一项复杂的服务，而不是创建和管理各个资源，如博客、照片库、SharePoint 门户或 wiki。您使用模板（服务的资源模型）来创建具有您支持服务所需要的资源的资源组。然后，可以将该资源组作为一个逻辑单元进行管理和部署。
 
-在本教程中，您将了解如何将 Windows PowerShell 与 Windows Azure 资源管理器一起使用。本教程将指导您逐步完成通过 SQL Database 创建和部署 Azure 托管网站（或 Web 应用程序）的资源组的过程，其中充分使用了支持该过程所需的所有资源。
+在本教程中，您将了解如何将 Windows PowerShell 与 Windows Azure 资源管理器一起使用。本教程将指导您逐步完成通过 SQL数据库 创建和部署 Azure 托管网站（或 Web 应用程序）的资源组的过程，其中充分使用了支持该过程所需的所有资源。
 
 **估计完成时间：**15 分钟
 
@@ -96,7 +96,7 @@ Azure 模块和 Azure 资源管理器模块不能在同一 Windows PowerShell �
 
 # <span id="create"></span></a>创建资源组
 
-教程的本部分将指导您借助 SQL Database 完成创建和部署网站的资源组的过程。
+教程的本部分将指导您借助 SQL数据库 完成创建和部署网站的资源组的过程。
 
 您不必成为 Azure、SQL、网站或资源管理方面的专家，即可执行此任务。这些模板提供了具有您可能会需要的所有资源的资源组模型。而且，因为我们使用 Windows PowerShell 来自动执行任务，您可以将这些过程作为参照，以便为大规模任务撰写脚本。
 
@@ -171,9 +171,9 @@ Save-AzureResourceGroupGalleryTemplate 将保存模板，并返回 JSON 模板�
 
 您可以在诸如记事本之类的文本编辑器中查看模板文件。每个模板都有**资源**部分和**参数**部分。
 
-模板的**资源**部分列出了该模板将创建的资源。该模板创建 SQL Database 服务器和 SQL Database、服务器场和网站，以及多个管理设置。
+模板的**资源**部分列出了该模板将创建的资源。该模板创建 SQL数据库 服务器和 SQL数据库、服务器场和网站，以及多个管理设置。
 
-每个资源的定义包括其属性（如名称、类型和位置）以及用户定义的值的参数。例如，模板的此部分定义 SQL Database。它包括数据库名称（[parameters('databaseName')]）、数据库服务器位置 [parameters('serverLocation')] 和排序规则属性 [parameters('collation')] 的参数。
+每个资源的定义包括其属性（如名称、类型和位置）以及用户定义的值的参数。例如，模板的此部分定义 SQL数据库。它包括数据库名称（[parameters('databaseName')]）、数据库服务器位置 [parameters('serverLocation')] 和排序规则属性 [parameters('collation')] 的参数。
 
         {
           "name": "[parameters('databaseName')]",
@@ -472,7 +472,7 @@ AzureResourceManager 模块包括帮助您防止错误的 cmdlet。
 
   [Windows Management Framework 3.0]: http://www.microsoft.com/zh-cn/download/details.aspx?id=34595
   [Windows Management Framework 4.0]: http://www.microsoft.com/zh-cn/download/details.aspx?id=40855
-  [如何安装和配置 Windows Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
+  [如何安装和配置 Windows Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [Windows PowerShell 入门]: http://technet.microsoft.com/zh-cn/library/hh857337.aspx
   [有关 Azure Powershell 模块]: #about
   [创建资源组]: #create
@@ -484,7 +484,7 @@ AzureResourceManager 模块包括帮助您防止错误的 cmdlet。
   [Azure 配置文件 Cmdlet]: http://go.microsoft.com/fwlink/?LinkID=394766
   [Switch-AzureMode]: http://go.microsoft.com/fwlink/?LinkID=394398
   [1]: http://go.microsoft.com/fwlink/?LinkID=394765&clcid=0x409
-  [使用资源组管理 Azure 资源]: http://azure.microsoft.com/zh-cn/documentation/articles/azure-preview-portal-using-resource-groups
+  [使用资源组管理 Azure 资源]: /zh-cn/documentation/articles/azure-preview-portal-using-resource-groups
   [将 Azure 跨平台命令行界面与资源管理器一起使用]: http://www.windowsazure.com/zh-cn/documentation/articles/xplat-cli-azure-resource-manager/
   [Azure 博客]: http://blogs.msdn.com/windowsazure
   [Windows PowerShell 博客]: http://blogs.msdn.com/powershell

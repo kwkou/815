@@ -48,4 +48,4 @@
 接下来，你将修改快速启动应用程序，以添加新按钮和用于异步调用新的自定义 API 的代码。
 
   [0]: ./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png
-  [数据库类]: http://msdn.microsoft.com/en-us/library/system.data.entity.database.aspx
+  [数据库类]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.database.aspx

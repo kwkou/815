@@ -26,7 +26,7 @@ Azure HDInsight 在 Azure Blob 存储之上提供了一个功能完备的 Hadoop
 -   [使用 Azure PowerShell 将数据上载到 Blob 存储][]
 -   [使用 Azure 存储服务资源管理器将数据上传到 Blob 存储服务][]
 -   [使用 Hadoop 命令行将数据上传到 Blob 存储服务][]
--   [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储][]
+-   [使用 Sqoop 从 Azure SQL数据库 将数据导入到 Blob 存储][]
 
 ##<a id="azcopy"></a>使用 AzCopy 将数据上载到 Blob 存储
 
@@ -128,13 +128,13 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 
         hadoop dfs -lsr /example/data
 
-##<a id="sqoop"></a>使用 Sqoop 将数据从 SQL Database/SQL Server 导入到 HDFS
+##<a id="sqoop"></a>使用 Sqoop 将数据从 SQL数据库/SQL Server 导入到 HDFS
 
 Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工具。可以使用此工具将数据从关系数据库管理系统 (RDBMS)（如 SQL、MySQL 或 Oracle）中导入 Hadoop 分布式文件系统 (HDFS)，在 Hadoop 中使用 MapReduce 或 Hive 转换数据，然后再将数据导回到 RDBMS。有关详细信息，请参阅 [Sqoop 用户指南][]。
 
-在导入数据前，你必须知道 Azure SQL Database 服务器名称、数据库帐户名称、帐户密码和数据库名称。
+在导入数据前，你必须知道 Azure SQL数据库 服务器名称、数据库帐户名称、帐户密码和数据库名称。
 
-默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL Database][]。
+默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。如果禁用了此防火墙设置，则必须从 Azure 管理门户启用它。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL数据库][]。
 
 以下过程使用 PowerShell 提交 Sqoop 作业。
 
@@ -193,7 +193,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [使用 Azure PowerShell 将数据上载到 Blob 存储]: #powershell
   [使用 Azure 存储服务资源管理器将数据上传到 Blob 存储服务]: #storageexplorer
   [使用 Hadoop 命令行将数据上传到 Blob 存储服务]: #commandline
-  [使用 Sqoop 从 Azure SQL Database 将数据导入到 Blob 存储]: #sqoop
+  [使用 Sqoop 从 Azure SQL数据库 将数据导入到 Blob 存储]: #sqoop
   [下载 AzCopy]: http://aka.ms/WaCopy
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
@@ -202,7 +202,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
   [HDI.ASEBlob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
   [管理门户]: https://manage.windowsazure.cn
   [Sqoop 用户指南]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
-  [创建和配置 SQL Database]: /zh-cn/documentation/articles/sql-database-create-configure/
+  [创建和配置 SQL数据库]: /zh-cn/documentation/articles/sql-database-create-configure/
   [将 Sqoop 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
   [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
   [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/

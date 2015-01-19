@@ -1,7 +1,7 @@
 
    * Sign in to the Azure account by entering your credentials.
 
-     This method is quicker and easier, but if you use this method you won't be able to see Azure SQL Database or Mobile Services in the **Server Explorer** window.
+     This method is quicker and easier, but if you use this method you won't be able to see Azure SQL数据库 or Mobile Services in the **Server Explorer** window.
 
      In **Server Explorer**, click the **Connect to Azure** button. An alternative is to right-click the **Azure** node, and then click **Connect to Azure** in the context menu.
 

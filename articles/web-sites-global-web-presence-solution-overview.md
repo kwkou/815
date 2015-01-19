@@ -1,4 +1,4 @@
-<properties linkid="websites-global-web-presence" urlDisplayName="Create a Global Web Presence on Azure Web Sites" pageTitle="Create a Global Web Presence on Azure Web Sites" metaKeywords="" description="This guide provides a technical overview of how to host your organization's (.COM) site on Azure Web Sites. This includes deployment, custom domains, SSL, and monitoring." metaCanonical="http://www.windowsazure.com/en-us/documentation/articles/web-sites-global-web-presence-solution-overview/" services="" documentationCenter="" title="Create a Global Web Presence on Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="websites-global-web-presence" urlDisplayName="Create a Global Web Presence on Azure Web Sites" pageTitle="Create a Global Web Presence on Azure Web Sites" metaKeywords="" description="This guide provides a technical overview of how to host your organization's (.COM) site on Azure Web Sites. This includes deployment, custom domains, SSL, and monitoring." metaCanonical="http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/" services="" documentationCenter="" title="Create a Global Web Presence on Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 # 在 Azure 网站上打造全球网络影响力
 
@@ -14,7 +14,7 @@
 
 <div class="dev-callout">
 <strong>说明</strong>
-<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>和<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-business-application-solution-overview/">业务应用程序</a>中的其他指南。</p>
+<p>本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>和<a href="/zh-cn/documentation/articles/web-sites-business-application-solution-overview/">业务应用程序</a>中的其他指南。</p>
 </div>
 
 ## <a name="createwebsite"></a>创建 Azure 网站
@@ -25,7 +25,7 @@
 
 有两个用于创建新网站的选项：“快速创建”和“自定义创建”。对于上述每个选项，你都应选择适合于你的主要用户群的 Azure 区域。
 
-如果你在迁移现有网站，则“自定义创建”选项允许你创建或关联 SQL Database。此选项还提供为部署指定若干源代码管理选项的功能，例如 GitHub 或 Team Foundation Server (TFS)。如果你已在使用源代码管理机制管理你的网站，则这是一种针对部署设置 Azure 网站的快速方法。
+如果你在迁移现有网站，则“自定义创建”选项允许你创建或关联 SQL数据库。此选项还提供为部署指定若干源代码管理选项的功能，例如 GitHub 或 Team Foundation Server (TFS)。如果你已在使用源代码管理机制管理你的网站，则这是一种针对部署设置 Azure 网站的快速方法。
 
 <!-- The **From Gallery** option allows you to setup a new site with one of several frameworks, such as Drupal or WordPress. This can be helpful to quickly set up a new site that you can then customize within the chosen framework. -->
 
@@ -186,27 +186,27 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
 </tr>
 <tr>
 <td valign="middle"><strong>计划</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和虚拟机：何时使用何种产品？</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>创建</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/">Azure 网站和 ASP.NET 入门</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-dotnet-get-started/">Azure 网站和 ASP.NET 入门</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>部署</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a><br/>- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/">使用 Microsoft WebMatrix 开发和部署网站</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-dotnet-get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/">使用 Microsoft WebMatrix 开发和部署网站</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>自定义域</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>SSL</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>监视</strong></td>
-<td valign="top">- <a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-monitor/">如何监视网站</a></td>
+<td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-monitor/">如何监视网站</a></td>
 </tr>
 </table>
 
@@ -221,10 +221,10 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [添加自定义域]: #customdomain
   [使用 SSL 保护网站]: #ssl
   [监视网站]: #monitor
-  [数字市场营销活动]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/
-  [业务应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-business-application-solution-overview/
+  [数字市场营销活动]: /zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/
+  [业务应用程序]: /zh-cn/documentation/articles/web-sites-business-application-solution-overview/
   [GlobalWebCreate]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Create.png
-  [Azure 网站和 ASP.NET 入门]: /en-us/documentation/articles/web-sites-dotnet-get-started
+  [Azure 网站和 ASP.NET 入门]: /zh-cn/documentation/articles/web-sites-dotnet-get-started
   [WebMatrix]: http://www.microsoft.com/web/webmatrix/
   [GlobalWebQuickGlance]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_QuickGlance.png
   [GlobalWebFTPSettings]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_FTPSettings.png
@@ -245,10 +245,10 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [GlobalWebMonitor4]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor4.png
   [1]: /en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview
   [如何监视网站]: /en-us/manage/services/web-sites/how-to-monitor-websites/
-  [2]: http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
-  [3]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-get-started/
-  [4]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-publish-source-control/
-  [5]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/
-  [6]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-custom-domain-name/
-  [7]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
-  [8]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-monitor/
+  [2]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [3]: /zh-cn/documentation/articles/web-sites-dotnet-get-started/
+  [4]: /zh-cn/documentation/articles/web-sites-publish-source-control/
+  [5]: /zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/
+  [6]: /zh-cn/documentation/articles/web-sites-custom-domain-name/
+  [7]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [8]: /zh-cn/documentation/articles/web-sites-monitor/

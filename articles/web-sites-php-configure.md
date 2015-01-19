@@ -14,7 +14,7 @@
 
 ## <a name="WhatIs"></a>什么是 Azure 网站？
 
-利用 Azure 网站，你可以在 Azure 上构建可高度缩放的网站。可以快速而轻松地将网站部署到可高度缩放的云环境，这样你便能首先构建小型网站，然后随着流量的增加来扩展网站。Azure 网站使用你所选的语言和开放源应用程序，并支持使用 Git、FTP 和 TFS 进行的部署。可以轻松集成其他服务，如 MySQL、SQL Database、Caching、CDN 和存储。
+利用 Azure 网站，你可以在 Azure 上构建可高度缩放的网站。可以快速而轻松地将网站部署到可高度缩放的云环境，这样你便能首先构建小型网站，然后随着流量的增加来扩展网站。Azure 网站使用你所选的语言和开放源应用程序，并支持使用 Git、FTP 和 TFS 进行的部署。可以轻松集成其他服务，如 MySQL、SQL数据库、Caching、CDN 和存储。
 
 ## <a name="ChangeBuiltInPHP"></a>如何：更改内置 PHP 配置
 
@@ -97,7 +97,7 @@ Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）�
 
   [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [PHP 开发中心教程]: http://azure.microsoft.com/zh-cn/develop/php/
-  [如何配置网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure/
+  [如何配置网站]: /zh-cn/documentation/articles/web-sites-configure/
   [什么是 Azure 网站？]: #WhatIs
   [如何：更改默认 PHP 配置]: #ChangeBuiltInPHP
   [如何：启用内置 PHP 运行时中的扩展]: #EnableExtDefaultPHP

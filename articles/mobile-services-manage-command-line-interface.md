@@ -63,7 +63,7 @@
 <a name="create-service"></a>
 ## 创建服务如何创建移动服务
 
-可以使用命令行工具创建新的移动服务实例。在创建移动服务的同时，还会在新服务器中创建一个 SQL Database 实例。
+可以使用命令行工具创建新的移动服务实例。在创建移动服务的同时，还会在新服务器中创建一个 SQL数据库 实例。
 
 以下命令将在订阅中创建一个新的移动服务实例，其中，`<service-name>` 是新移动服务的名称，`<server-admin>` 是新服务器的登录名，`<server-password>` 是新登录名的密码：
 
@@ -83,15 +83,15 @@
 <a name="delete-service"></a>
 ## 删除服务如何删除现有的移动服务
 
-可以使用命令行工具将现有的某个移动服务连同相关的 SQL Database 和服务器一起删除。以下命令将删除移动服务，其中，`<service-name>` 是要删除的移动服务的名称：
+可以使用命令行工具将现有的某个移动服务连同相关的 SQL数据库 和服务器一起删除。以下命令将删除移动服务，其中，`<service-name>` 是要删除的移动服务的名称：
 
         azure mobile delete <service-name> -a -q
 
-如果包含 `-a` 和 `-q` 参数的话，此命令还会删除该移动服务使用的 SQL Database 和服务器且不显示任何提示。
+如果包含 `-a` 和 `-q` 参数的话，此命令还会删除该移动服务使用的 SQL数据库 和服务器且不显示任何提示。
 
 <div class="dev-callout"><b>说明</b>
 
-<p>如果不随 <code>-a</code> 或 <code>-d</code> 一起指定 <code>-q</code> 参数，则执行将会暂停，并且系统会提示你针对 SQL Database 选择删除选项。仅当没有其他任何服务使用该数据库或服务器时，才能使用 <code>-a</code> 参数；否则，请使用 <code>-d</code> 参数，以便只删除属于要删除的移动服务的数据。</p>
+<p>如果不随 <code>-a</code> 或 <code>-d</code> 一起指定 <code>-q</code> 参数，则执行将会暂停，并且系统会提示你针对 SQL数据库 选择删除选项。仅当没有其他任何服务使用该数据库或服务器时，才能使用 <code>-a</code> 参数；否则，请使用 <code>-d</code> 参数，以便只删除属于要删除的移动服务的数据。</p>
 </div>
 
 <a name="create-table"></a>
@@ -162,7 +162,7 @@
   [列出移动服务]: #list-services
   [删除现有移动服务]: #delete-service
   [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/
-  [启用 Azure 预览功能]: http://azure.microsoft.com/zh-cn/documentation/articles/php-create-account/#enable
+  [启用 Azure 预览功能]: /zh-cn/documentation/articles/php-create-account/#enable
   [Azure 命令行工具文档]: /zh-cn/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services
   [Azure 命令行工具安装程序]: http://go.microsoft.com/fwlink/p?LinkID=275464
   [Azure SDK 安装程序]: http://go.microsoft.com/fwlink/p?LinkId=252249

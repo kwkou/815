@@ -118,7 +118,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 * 最先进的 Hadoop 组件。有关详细信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][组件版本]
 * 群集具有高可用性和可靠性。有关详细信息，请参阅[ HDInsight 中的 Hadoop 群集的可用性和可靠性](/zh-cn/documentation/articles/hdinsight-high-availability/)。
 * 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-blob-storage/)。
-* 与其他 Azure 服务集成，包括[网站](/zh-cn/documentation/services/web-sites/) 和 [SQL Database](/zh-cn/documentation/services/sql-databases/)。
+* 与其他 Azure 服务集成，包括[网站](/zh-cn/documentation/services/web-sites/) 和 [SQL数据库](/zh-cn/documentation/services/sql-databases/)。
 * 进入成本低。开始[免费试用](/zh-cn/pricing/1rmb-trial/) 或咨询 [HDInsight 定价详细信息](../pricing/details/hdinsight/)。
 
 若要详细了解 HDInsight 中的 Hadoop 的优势，请参阅 [HDInsight 的 Azure 功能页面][营销页面]。
@@ -150,13 +150,13 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 * [Azure HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/dn479185.aspx)：HDinsight SDK 的参考文档。
 
 
-### Azure 上的 SQL Database	
+### Azure 上的 SQL数据库	
 		
-* [Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336279.aspx)：有关 SQL Database 的 MSDN 文档。
+* [Azure SQL数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336279.aspx)：有关 SQL数据库 的 MSDN 文档。
 	
-* [SQL Database 的管理门户](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg442309.aspx)：一个易用的轻型数据库管理工具，用于在云中管理 SQL Database。
+* [SQL数据库 的管理门户](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg442309.aspx)：一个易用的轻型数据库管理工具，用于在云中管理 SQL数据库。
 
-* [Adventure Works for SQL Database](http://msftdbprodsamples.codeplex.com/releases/view/37304)：SQL Database 示例数据库的下载页。	
+* [Adventure Works for SQL数据库](http://msftdbprodsamples.codeplex.com/releases/view/37304)：SQL数据库 示例数据库的下载页。	
 
 ### Microsoft 商业智能		
 

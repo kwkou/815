@@ -28,7 +28,7 @@ Azure Media Services 构成了一个可扩展的媒体平台，它在 Azure 中�
 -   **编码**。编码操作包括编码、变换和转换媒体资产。你可以使用 Azure 媒体编码器在云中运行编码任务。编码选项包括：
     -   使用 Azure 媒体编码器并操作一系列标准编解码器和格式，包括行业领先的 IIS 平滑流式处理和 MP4，以及将相关格式转换为 Apple HTTP 实时流。
     -   转换整个库或单个文件，并获取对输入和输出的全面控制权。
-    -   受支持的文件类型、格式和编解码器众多（请参阅 [Media Services 支持的文件类型](http://msdn.microsoft.com/en-us/library/hh973634)）。
+    -   受支持的文件类型、格式和编解码器众多（请参阅 [Media Services 支持的文件类型](http://msdn.microsoft.com/zh-cn/library/hh973634)）。
     -   支持的格式转换。Media Services 允许你将 ISO MP4 (.mp4) 转换为平滑流式处理文件格式 (PIFF 1.3)（.ismv；.isma）。还可以将平滑流式处理文件格式 (PIFF) 转换为 Apple HTTP 实时流（.msu8、.ts）。
 -   **保护**。保护内容意味着对实时流内容或点播内容进行加密，以安全地进行传输、存储和交付。Media Services 提供 DRM 技术感知的解决方案来保护内容。当前支持的 DRM 技术包括 Microsoft PlayReady 和 MPEG 通用加密。将来会提供对其他 DRM 技术的支持。
 -   **流式处理**。流式处理内容涉及到将实时内容或点播内容发送到客户端，或者让你从云中下载特定的媒体文件。Media Services 提供格式感知的解决方案来流式处理内容。Media Services 针对平滑流式处理、Apple HTTP 实时流和 MP4 格式提供流式来源支持。将来会提供对其他格式的支持。你也可以使用第三方 CDN（启用相应的选项即可扩展为支持数百万个用户）无缝交付流式处理内容。
@@ -78,7 +78,7 @@ Media Services 支持下表中所述的多种常见媒体开发方案。
 
 对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C\# 和 C+）生成 Windows 应用商店应用程序。
 
--   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://go.microsoft.com/fwlink/?LinkID=246146)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](http://go.microsoft.com/fwlink/?LinkId=271647)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/en-us/library/jj573656(v=vs.90).aspx)。
+-   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://go.microsoft.com/fwlink/?LinkID=246146)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](http://go.microsoft.com/fwlink/?LinkId=271647)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/zh-cn/library/jj573656(v=vs.90).aspx)。
 
 -   [Microsoft Media Platform：适用于 Windows 8 Windows 应用商店应用程序的播放器框架](http://playerframework.codeplex.com/wikipage?title=Player%20Framework%20for%20Windows%208%20Metro%20Style%20Apps&referringTitle=Home)
 

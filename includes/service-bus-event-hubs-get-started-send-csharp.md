@@ -9,11 +9,11 @@
 
 	此时将显示"管理 NuGet 包"对话框。
 
-3. 搜索"Windows Azure Service Bus"，单击**"安装"**，并接受使用条款。 
+3. 搜索"Windows Azure 服务总线"，单击**"安装"**，并接受使用条款。 
 
 	![][8]
 
-	这样就会下载、安装 <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">Azure Service Bus 库 NuGet 包</a>并添加对它的引用。
+	这样就会下载、安装 <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus/">Azure 服务总线 库 NuGet 包</a>并添加对它的引用。
 
 4. 在 **Program.cs** 文件的顶部添加以下"using"语句：
 

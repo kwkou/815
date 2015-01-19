@@ -86,7 +86,7 @@
 
 ## <span id="attachdisk"></span> </a>如何将数据磁盘附加到新的虚拟机
 
-本部分将演示如何将空数据磁盘附加到虚拟机。有关如何附加空磁盘以及如何附加现有磁盘的详细信息，请参阅 [附加数据磁盘教程] (<http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/>)。
+本部分将演示如何将空数据磁盘附加到虚拟机。有关如何附加空磁盘以及如何附加现有磁盘的详细信息，请参阅 [附加数据磁盘教程] (</zh-cn/documentation/articles/storage-windows-attach-disk/>)。
 
 1.  登录到 Azure [管理门户][管理门户]。
 
@@ -165,11 +165,11 @@
   [选择映像]: ./media/CreateVirtualMachineWindowsTutorial/chooseimage.png
   [配置虚拟机的属性]: ./media/CreateVirtualMachineWindowsTutorial/vmconfiguration.png
   [配置虚拟机的连接资源]: ./media/CreateVirtualMachineWindowsTutorial/resourceconfiguration.png
-  [多个虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-connect-virtual-machine/
-  [Azure 虚拟网络概述]: http://go.microsoft.com/fwlink/p/?LinkID=294063
+  [多个虚拟机]: /zh-cn/documentation/articles/cloud-services-connect-virtual-machine/
+  [Azure 虚拟网络概述]: http://msdn.microsoft.com/library/azure/jj156007.aspx
   [配置虚拟机的 VM 代理和终结点]: ./media/CreateVirtualMachineWindowsTutorial/endpointconfiguration.png
   [使用扩展]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
-  [如何设置虚拟机的终结点]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/
+  [如何设置虚拟机的终结点]: /zh-cn/documentation/articles/virtual-machines-set-up-endpoints/
   [1]: ./media/CreateVirtualMachineWindowsTutorial/vmcreated.png
   [选择 MyTestVM]: ./media/CreateVirtualMachineWindowsTutorial/selectvm.png
   [连接到 MyTestVM]: ./media/CreateVirtualMachineWindowsTutorial/commandbarconnect.png
@@ -186,6 +186,6 @@
   [继续初始化]: ./media/CreateVirtualMachineWindowsTutorial/yesinitialize.png
   [创建卷]: ./media/CreateVirtualMachineWindowsTutorial/initializediskvolume.png
   [3]: ./media/CreateVirtualMachineWindowsTutorial/newvolumecreated.png
-  [如何创建和上载你自己的包含 Windows Server 操作系统的虚拟硬盘]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
-  [将数据磁盘附加到虚拟机]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-windows-attach-disk/
-  [管理虚拟机的可用性]: http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-manage-availability/
+  [如何创建和上载你自己的包含 Windows Server 操作系统的虚拟硬盘]: /zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/
+  [将数据磁盘附加到虚拟机]: /zh-cn/documentation/articles/storage-windows-attach-disk/
+  [管理虚拟机的可用性]: /zh-cn/documentation/articles/virtual-machines-manage-availability/

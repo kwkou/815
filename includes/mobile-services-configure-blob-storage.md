@@ -92,7 +92,7 @@
   [0]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account.png
   [1]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-account-keys.png
   [2]: ./media/mobile-services-configure-blob-storage/mobile-blob-storage-app-settings.png
-  [应用程序设置]: http://msdn.microsoft.com/en-us/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+  [应用程序设置]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
   [3]: ./media/mobile-services-configure-blob-storage/mobile-portal-data-tables.png
   [4]: ./media/mobile-services-configure-blob-storage/mobile-insert-script-blob.png
   [generateSharedAccessSignature 方法]: http://go.microsoft.com/fwlink/?LinkId=390455

@@ -1,4 +1,4 @@
-﻿1. 在 [Windows Azure（预览版）管理门户][AzurePreviewPortal]中，单击“虚拟机”，然后选择刚才创建的虚拟机 (**testlinuxvm**)。
+1. 在 [Windows Azure管理门户][Azure Portal]中，单击“虚拟机”，然后选择刚才创建的虚拟机 (**testlinuxvm**)。
 
 2. 在命令栏上，单击“附加”，然后单击“附加空磁盘”。
 

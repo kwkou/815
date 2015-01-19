@@ -471,7 +471,7 @@ Rails 用于开发的默认数据库是 SQLite。通常，您会在生产中使�
   [此处]: /zh-cn/manage/linux/tutorials/virtual-machine-from-gallery/
   [管理门户]: https://manage.windowsazure.cn/
   [Capistrano]: http://capistranorb.com
-  [如何在 Azure 上通过 Linux 使用 SSH]: http://azure.microsoft.com/zh-cn/documentation/articles/linux-use-ssh-key/
+  [如何在 Azure 上通过 Linux 使用 SSH]: /zh-cn/documentation/articles/linux-use-ssh-key/
   [nginx 欢迎页]: ./media/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/welcomenginx.png
   [Azure、Ruby on Rails、Capistrano 3 和 PostgreSQL]: http://wootstudio.ca/articles/tutorial-windows-azure-ruby-on-rails-capistrano-3-postgresql
   [Capistrano 3 教程]: http://www.talkingquickly.co.uk/2014/01/deploying-rails-apps-to-a-vps-with-capistrano-v3/

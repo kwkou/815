@@ -54,7 +54,7 @@
 
 	where `ip-address` is the IP address of the computer from which you will connect to MySQL.
 	
-10. To exit the MySQL database administration utility, issue the following command:
+10. To exit the MySQL数据库 administration utility, issue the following command:
 
 		quit
 

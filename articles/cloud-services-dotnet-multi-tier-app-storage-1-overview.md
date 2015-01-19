@@ -121,7 +121,7 @@
 
 ## <a name="tables"></a><span class="short-header">表</span>Azure 表
 
-Azure 电子邮件服务应用程序在 Azure 存储表中存储数据。Azure 表是一种 NoSQL 数据存储形式，不同于 [Azure SQL Database][Azure SQL Database] 这样的关系数据库。因此，当效率和可伸缩性比数据规范化和关系完整性更重要时，不妨选择这种存储形式。例如，在本应用程序中，一个辅助角色会在每次创建一个队列工作项时创建一个行，而另一个辅助角色会在每次发送一封电子邮件时检索并更新一个行，这在使用关系数据库的情况下，可能会造成性能瓶颈。此外，Azure 表比 Azure SQL 更廉价。有关 Azure 表的详细信息，请参阅[本系列最后一个教程][构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]结尾处列出的资源。
+Azure 电子邮件服务应用程序在 Azure 存储表中存储数据。Azure 表是一种 NoSQL 数据存储形式，不同于 [Azure SQL数据库][Azure SQL数据库] 这样的关系数据库。因此，当效率和可伸缩性比数据规范化和关系完整性更重要时，不妨选择这种存储形式。例如，在本应用程序中，一个辅助角色会在每次创建一个队列工作项时创建一个行，而另一个辅助角色会在每次发送一封电子邮件时检索并更新一个行，这在使用关系数据库的情况下，可能会造成性能瓶颈。此外，Azure 表比 Azure SQL 更廉价。有关 Azure 表的详细信息，请参阅[本系列最后一个教程][构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]结尾处列出的资源。
 
 以下各节介绍 Azure 电子邮件服务应用程序所使用的 Azure 表的内容。如需一张显示这些表及其关系的图，请参阅本页后面的 [Azure 电子邮件服务数据图][数据图]。
 
@@ -129,7 +129,7 @@ Azure 电子邮件服务应用程序在 Azure 存储表中存储数据。Azure �
 
 `mailinglist` 表存储有关邮件列表及邮件列表订户的信息。（Azure 表命名约定的最佳做法是全部使用小写字母。）管理员使用网页来创建和编辑邮件列表，而客户端和订户则使用一组网页和服务方法来订阅和取消订阅。
 
-在 NoSQL 表中，不同的行可以有不同的架构，通常可以利用这种灵活性来使用一个表存储在关系数据库中需要多个表才能存储的数据。例如，在 SQL Database 中存储邮件列表数据时，你可能会使用三个表：一个 `mailinglist` 表，用于存储列表信息；一个 `subscriber` 表，用于存储订户信息；一个 `mailinglistsubscriber` 表，用于将邮件列表与订户关联起来（反过来也一样）。在本应用程序的 NoSQL 表中，所有这些功能都集中在一个名为 `mailinglist` 的表中。
+在 NoSQL 表中，不同的行可以有不同的架构，通常可以利用这种灵活性来使用一个表存储在关系数据库中需要多个表才能存储的数据。例如，在 SQL数据库 中存储邮件列表数据时，你可能会使用三个表：一个 `mailinglist` 表，用于存储列表信息；一个 `subscriber` 表，用于存储订户信息；一个 `mailinglistsubscriber` 表，用于将邮件列表与订户关联起来（反过来也一样）。在本应用程序的 NoSQL 表中，所有这些功能都集中在一个名为 `mailinglist` 的表中。
 
 在 Azure 表中，每一行都有一个*分区键* 和一个*行键*，用于唯一标识该行。分区键通过逻辑方式将表划分为各个分区。在分区中，行键用于唯一标识某个行。没有辅助索引，因此若要确保应用程序能够进行伸缩，必须将表设计为允许你在查询的 Where 子句中指定分区键和行键的值。
 
@@ -840,7 +840,7 @@ fabrikam
 Azure 队列可用于加强此多层应用程序各层之间以及后端层中辅助角色之间的通信。
 可以使用队列在辅助角色 A 和辅助角色 B 之间进行通信，使应用程序具有可伸缩性。辅助角色 A 可以在邮件表中为每封电子邮件创建一个行，而辅助角色 B 则可以扫描表中是否存在代表未发送电子邮件的行，不过你无法添加额外的辅助角色 B 实例来对工作进行划分。使用表行来协调辅助角色 A 与辅助角色 B 的工作的一个问题是，你无法确保只有一个辅助角色实例会选取任何给定的表行来进行处理。队列为你提供这种保障。当某个辅助角色实例从队列中拉取一个工作项时，队列服务会确保其他辅助角色实例无法拉取同一个工作项。Azure 队列的这种排他性的租约功能有助于在一个辅助角色的多个实例之间共享工作负载。
 
-Azure 还提供 Service Bus 队列服务。有关 Azure 存储队列和 Service Bus 队列的详细信息，请参阅[本系列最后一个教程][构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]结尾处列出的资源。
+Azure 还提供 服务总线 队列服务。有关 Azure 存储队列和 服务总线 队列的详细信息，请参阅[本系列最后一个教程][构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]结尾处列出的资源。
 
 Azure 电子邮件服务应用程序使用名为 `AzureMailQueue` 和 `AzureMailSubscribeQueue` 的两个队列。
 
@@ -1096,7 +1096,7 @@ $60.43
   [取消订阅已确认页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-unsubscribe-confirmation-page.png
   [阻止重复的电子邮件]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-message-processing.png
   [订阅队列邮件处理]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-subscribe-diagram.png
-  [Azure SQL Database]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336279.aspx
+  [Azure SQL数据库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336279.aspx
   [实际应用：为 Azure 表存储设计可扩展分区策略]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh508997.aspx
   [Azure 电子邮件服务应用程序的数据图]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-datadiagram.png
   [应用程序体系结构概述]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-architecture-overview.png

@@ -372,11 +372,11 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
   [后续步骤]: #nextsteps
   [W3C 扩展日志文件格式]: http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx
   [System.Diagnostics.Trace]: http://msdn.microsoft.com/zh-cn/library/36hhw2t6.aspx
-  [1]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/
+  [1]: /zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/
   [Azure 管理门户]: https://manage.microsoft.cn
   [Azure SDK]: http://www.windowsazure.cn/zh-cn/downloads/#
-  [如何使用 Azure PowerShell]: http://azure.microsoft.com/zh-cn/documentation/articles/install-configure-powershell/
-  [如何使用 Azure 命令行工具]: http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/
+  [如何使用 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+  [如何使用 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
   [在浏览器中查看的失败的请求]: ./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png
   [Log Parser]: http://go.microsoft.com/fwlink/?LinkId=246619
   [如何监视网站]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/

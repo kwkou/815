@@ -245,7 +245,7 @@
     <li>使用 <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob 存储</a>存储非结构化数据。</li>
     <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/">表存储</a>存储结构化数据。</li>
     <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/">队列存储</a>可靠地存储消息。</li>
-    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> 存储关系数据。</li>
+    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL数据库</a> 存储关系数据。</li>
   </ul>
 </li>
 </ul>

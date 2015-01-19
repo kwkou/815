@@ -38,7 +38,7 @@ Azure 提供了三种可用于承载 Web 应用程序的计算模型：网站、
 
 ####[将资源链接到云服务](/zh-cn/documentation/articles/cloud-services-how-to-manage/#linkresources)
 
-要揭示云服务对其他资源的依赖性，您可以将 Azure SQL Database 实例或存储帐户链接到云服务。
+要揭示云服务对其他资源的依赖性，您可以将 Azure SQL数据库 实例或存储帐户链接到云服务。
 
 ####[创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account/)
 
@@ -52,7 +52,7 @@ Azure 提供了三种可用于承载 Web 应用程序的计算模型：网站、
 
 ####[缩放应用程序](/zh-cn/documentation/articles/cloud-services-how-to-scale/)
 
-可以通过添加或删除角色实例来缩放云服务。如果将 Azure SQL Database 实例链接到云服务，则还可以缩放数据库。
+可以通过添加或删除角色实例来缩放云服务。如果将 Azure SQL数据库 实例链接到云服务，则还可以缩放数据库。
 
 ###管理
 

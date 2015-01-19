@@ -39,7 +39,7 @@
 
 ## <a name="bkmk_setupwindowsazure"></a> 设置 Azure 环境
 
-接下来，通过创建 Azure 网站和 SQL Database 来设置 Azure 环境。
+接下来，通过创建 Azure 网站和 SQL数据库 来设置 Azure 环境。
 
 ### 在 Azure 中创建网站和 SQL 数据库
 
@@ -47,7 +47,7 @@
 
 您的 Azure 网站将在共享宿主环境中运行，这意味着它将在与其他 Azure 客户端共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。稍后，如果您的 Web 流量增加，则应用程序可进行扩展，通过在专用 VM 上运行来满足需要。如果您需要一个更复杂的体系结构，则可迁移到 Azure 云服务。云服务在您可根据自己的需求进行配置的专用 VM 上运行。
 
-SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL Database。
+SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL数据库。
 
 1.  在 [Azure 管理门户][Azure 管理门户] 中，单击左侧选项卡中的“网站”，然后单击“新建”。
 
@@ -868,10 +868,10 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
   [XSRF]: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
   [发布]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rxP.png
   [设置]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt5.png
-  [使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+  [使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序]: /zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
   [使用 MVC 的 Entity Framework 入门]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
   [ASP.NET MVC 5 简介]: http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started
   [您的第一个 ASP.NET Web API]: http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-  [调试 WAWS]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/
+  [调试 WAWS]: /zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/
   [5]: http://blogs.msdn.com/b/rickandy/
   [@blowdart]: https://twitter.com/blowdart

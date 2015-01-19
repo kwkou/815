@@ -417,8 +417,8 @@
   [先决条件]: #bkmk_prerequisites
   [使用 Azure Blob 存储上载文件]: #bkmk_uploadfile
   [删除容器]: #bkmk_deletecontainer
-  [下载 Azure SDK for Java]: http://azure.microsoft.com/zh-cn/develop/java/
-  [如何创建存储帐户]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-create-storage-account/
-  [如何管理存储帐户]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-manage-storage-account/
+  [下载 Azure SDK for Java]: http://www.windowsazure.cn/zh-cn/develop/java/
+  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
+  [如何管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
   [create-account-note]: ../includes/create-account-note.md
-  [如何通过 Java 使用 Blob 存储服务]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-java-how-to-use-blob-storage/
+  [如何通过 Java 使用 Blob 存储服务]: /zh-cn/documentation/articles/storage-java-how-to-use-blob-storage/

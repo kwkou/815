@@ -1,8 +1,8 @@
-<properties linkid="dev-java-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (Java) - Azure" metaKeywords="Get started Azure Service Bus topics, Get Started Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, Service Bus topic Java" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Java 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Java" title="如何使用 Service Bus 主题/订阅" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="dev-java-how-to-service-bus-topics" urlDisplayName="服务总线 Topics" pageTitle="如何使用 服务总线 主题 (Java) - Azure" metaKeywords="Get started Azure 服务总线 topics, Get Started 服务总线 topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, 服务总线 topic Java" description="了解如何在 Azure 中使用 服务总线 主题和订阅。代码示例是针对 Java 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Java" title="如何使用 服务总线 主题/订阅" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 
-# 如何使用 Service Bus 主题/订阅
+# 如何使用 服务总线 主题/订阅
 
-本指南演示如何使用 Service Bus 主题和
+本指南演示如何使用 服务总线 主题和
 订阅。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][Azure SDK for Java]。所涉及的方案包括**创建主题和订阅
 **、**创建订阅筛选器**、**将消息发送到主题
 **、**从订阅接收消息**以及
@@ -10,10 +10,10 @@
 
 ## 目录
 
--   [什么是 Service Bus 主题和订阅？][什么是 Service Bus 主题和订阅？]
+-   [什么是 服务总线 主题和订阅？][什么是 服务总线 主题和订阅？]
 -   [创建服务命名空间][创建服务命名空间]
 -   [获得命名空间的默认管理凭据][获得命名空间的默认管理凭据]
--   [配置应用程序以使用 Service Bus][配置应用程序以使用 Service Bus]
+-   [配置应用程序以使用 服务总线][配置应用程序以使用 服务总线]
 -   [如何：创建主题][如何：创建主题]
 -   [如何：创建订阅][如何：创建订阅]
 -   [如何：将消息发送到主题][如何：将消息发送到主题]
@@ -24,11 +24,11 @@
 
 [WACOM.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
-## <a name="bkmk_ConfigYourApp"> </a>配置应用程序以使用 Service Bus
+## <a name="bkmk_ConfigYourApp"> </a>配置应用程序以使用 服务总线
 
 将以下导入语句添加到 Java 文件顶部：
 
-    // Include the following imports to use service bus APIs
+    // Include the following imports to use 服务总线 APIs
     import com.microsoft.windowsazure.services.serviceBus.*;
     import com.microsoft.windowsazure.services.serviceBus.models.*;
     import com.microsoft.windowsazure.services.core.*;
@@ -38,7 +38,7 @@
 
 ## <a name="bkmk_HowToCreateTopic"> </a>如何创建主题
 
-Service Bus 主题的管理操作可通过
+服务总线 主题的管理操作可通过
 **ServiceBusContract** 类执行。**ServiceBusContract** 对象是
 使用封装了用于管理对象本身的令牌权限的适当
 配置构造的，而 **ServiceBusContract** 类是
@@ -153,7 +153,7 @@ Service Bus 主题的管理操作可通过
 
 ## <a name="bkmk_HowToSendMsgs"> </a>如何将消息发送到主题
 
-若要将消息发送到 Service Bus 主题，则您的应用程序将获得
+若要将消息发送到 服务总线 主题，则您的应用程序将获得
  **ServiceBusContract** 对象。下面的代码演示了如何为
 为我们之前在
 “HowToSample”服务命名空间中创建的“TestTopic“主题发送消息：
@@ -161,7 +161,7 @@ Service Bus 主题的管理操作可通过
     BrokeredMessage message = new BrokeredMessage("MyMessage");
     service.sendTopicMessage("TestTopic", message);
 
-发送到 Service Bus 主题的消息是
+发送到 服务总线 主题的消息是
 **BrokeredMessage** 类的实例。**BrokeredMessage** 对象包含一组
 标准方法（如 **setLabel** 和 **TimeToLive**）、一个
 用来保留自定义应用程序特定属性的词典以及大量
@@ -186,7 +186,7 @@ Service Bus 主题的管理操作可通过
         service.sendTopicMessage("TestTopic", message);
     }
 
-Service Bus 主题支持最大为 256 MB 的消息（标头
+服务总线 主题支持最大为 256 MB 的消息（标头
 最大为 64 MB，其中包括标准和自定义
 应用程序属性）。一个主题中包含的消息数量不受
 限制，但消息的总大小
@@ -200,25 +200,25 @@ Service Bus 主题支持最大为 256 MB 的消息（标头
 不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。
 
 当使用 **ReceiveAndDelete** 模式时，接收是一项单步
-操作，即当 Service Bus 接收
+操作，即当 服务总线 接收
 某条消息的读取请求时，它会将该消息标记为“已使用”并将其
 返回给应用程序。**ReceiveAndDelete** 模式是最简单的模式
 ，并且最适合应用程序允许出现故障时不处理
 消息的情况。为了理解这一点，可以考虑
 这样一种情形：使用方发出接收请求，但
-在处理该请求前发生了崩溃。由于 Service Bus 会将
+在处理该请求前发生了崩溃。由于 服务总线 会将
 消息标记为“已使用”，因此当应用程序重新启动并重新开始
 使用消息时，它会丢失在发生崩溃前使用的
 消息。
 
 在 **PeekLock** 模式下，接收变成了一个两阶段操作，从而
 有可能支持无法容忍遗漏消息的应用
-程序。当 Service Bus 收到请求时，它会查找下一条
+程序。当 服务总线 收到请求时，它会查找下一条
 要使用的消息，锁定该消息以防其他使用者接收，然后
 将该消息返回到应用程序。应用程序完成
 消息处理（或可靠地存储消息以供将来处理）后，它
 将通过对收到的消息调用 **Delete**
- 完成接收过程的第二个阶段。当 Service Bus 发现 **Delete** 调用时，它
+ 完成接收过程的第二个阶段。当 服务总线 发现 **Delete** 调用时，它
 会将消息标记为“已使用”并将其从主题中删除。
 
 下面的示例演示了如何使用 **PeekLock** 模式
@@ -278,11 +278,11 @@ Service Bus 主题支持最大为 256 MB 的消息（标头
 
 ## <a name="bkmk_HowToHandleAppCrash"> </a>如何处理应用程序崩溃和不可读消息
 
-Service Bus 提供了相关功能来帮助您轻松地从
+服务总线 提供了相关功能来帮助您轻松地从
 应用程序错误或消息处理问题中恢复。如果
 接收方应用程序出于某种原因无法处理消息，
 它可以对收到的消息调用 **unlockMessage** 方法（而不
-是 **deleteMessage** 方法）。这将导致 Service Bus
+是 **deleteMessage** 方法）。这将导致 服务总线
  解锁主题中的消息并使其能够
 重新被同一个正在使用的应用程序
 或其他正在使用的应用程序接收。
@@ -290,7 +290,7 @@ Service Bus 提供了相关功能来帮助您轻松地从
 还存在与主题中已锁定消息关联的
 超时，并且如果应用程序无法在锁定超时
 到期之前处理消息（例如，如果应用程序崩溃）
-，Service Bus 将自动解锁该消息
+，服务总线 将自动解锁该消息
 并使其可重新被接收。
 
 如果在处理消息之后但在发出 **deleteMessage** 请求
@@ -320,14 +320,14 @@ Service Bus 提供了相关功能来帮助您轻松地从
 
 # <a name="bkmk_NextSteps"> </a> 后续步骤
 
-现在，您已了解 Service Bus 队列的基础知识，请参阅 MSDN
- 主题 [Service Bus 队列、主题和订阅][Service Bus 队列、主题和订阅]以了解详细信息。
+现在，您已了解 服务总线 队列的基础知识，请参阅 MSDN
+ 主题 [服务总线 队列、主题和订阅][服务总线 队列、主题和订阅]以了解详细信息。
 
   [Azure SDK for Java]: http://www.windowsazure.cn/zh-cn/develop/java/
-  [什么是 Service Bus 主题和订阅？]: #what-are-service-bus-topics
+  [什么是 服务总线 主题和订阅？]: #what-are-service-bus-topics
   [创建服务命名空间]: #create-a-service-namespace
   [获得命名空间的默认管理凭据]: #obtain-default-credentials
-  [配置应用程序以使用 Service Bus]: #bkmk_ConfigYourApp
+  [配置应用程序以使用 服务总线]: #bkmk_ConfigYourApp
   [如何：创建主题]: #bkmk_HowToCreateTopic
   [如何：创建订阅]: #bkmk_HowToCreateSubscrip
   [如何：将消息发送到主题]: #bkmk_HowToSendMsgs
@@ -335,4 +335,4 @@ Service Bus 提供了相关功能来帮助您轻松地从
   [如何：处理应用程序崩溃和不可读消息]: #bkmk_HowToHandleAppCrash
   [如何：删除主题和订阅]: #bkmk_HowToDeleteTopics
   [后续步骤]: #bkmk_NextSteps
-  [Service Bus 队列、主题和订阅]: http://msdn.microsoft.com/library/windowsazure/hh367516.aspx
+  [服务总线 队列、主题和订阅]: http://msdn.microsoft.com/library/windowsazure/hh367516.aspx

@@ -1,12 +1,12 @@
-<properties linkid="develop-python-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="How to use Service Bus topics (Python) - Azure" metaKeywords="Get started Azure Service Bus topics publising subscribe messaging Python" description="Learn how to use Service Bus topics and subscriptions in Azure. Code samples are written for Python applications." metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-service-bus-topics" urlDisplayName="服务总线 Topics" pageTitle="How to use 服务总线 topics (Python) - Azure" metaKeywords="Get started Azure 服务总线 topics publising subscribe messaging Python" description="Learn how to use 服务总线 topics and subscriptions in Azure. Code samples are written for Python applications." metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use 服务总线 Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
 
-# 如何使用 Service Bus 主题/订阅
+# 如何使用 服务总线 主题/订阅
 
-本指南将演示如何从 Python 应用程序使用 Service Bus 主题和订阅。涉及的应用场景包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][后续步骤]一节。
+本指南将演示如何从 Python 应用程序使用 服务总线 主题和订阅。涉及的应用场景包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][后续步骤]一节。
 
 ## 目录
 
--   [什么是 Service Bus 主题和订阅？][什么是 Service Bus 主题和订阅？]
+-   [什么是 服务总线 主题和订阅？][什么是 服务总线 主题和订阅？]
 -   [创建服务命名空间][创建服务命名空间]
 -   [获得命名空间的默认管理凭据][获得命名空间的默认管理凭据]
 -   [如何：创建主题][如何：创建主题]
@@ -23,7 +23,7 @@
 
 ## <a name="How_to_Create_a_Topic"></a>如何创建主题
 
-可以通过 **ServiceBusService** 对象处理主题。将以下代码添加到任何 Python 文件的顶部附近，你希望在其中以编程方式访问 Azure Service Bus：
+可以通过 **ServiceBusService** 对象处理主题。将以下代码添加到任何 Python 文件的顶部附近，你希望在其中以编程方式访问 Azure 服务总线：
 
     from azure.servicebus import *
 
@@ -90,7 +90,7 @@
 
 ## <a name="How_to_Send_Messages_to_a_Topic"></a>如何将消息发送到主题
 
-若要将消息发送到 Service Bus 主题，你的应用程序必须使用**ServiceBusService** 对象的 **send\_topic\_message** 方法。
+若要将消息发送到 服务总线 主题，你的应用程序必须使用**ServiceBusService** 对象的 **send\_topic\_message** 方法。
 
 下面的示例演示如何向“mytopic”发送五条测试消息。请注意，每条消息的 **messagenumber** 属性值因循环迭代而异（这将确定哪些订阅接收它）：
 
@@ -98,7 +98,7 @@
         msg = Message('Msg ' + str(i), custom_properties={'messagenumber':i})
         bus_service.send_topic_message('mytopic', msg)
 
-Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其中包括标准和自定义应用程序属性）。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## <a name="How_to_Receive_Messages_from_a_Subscription"></a>如何从订阅接收消息
 
@@ -109,9 +109,9 @@ Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其
 
 在读取消息后将从订阅中删除它们；不过，通过将可选参数 **peek\_lock** 设置为 **True**，你可以读取（扫视）并锁定消息，以避免将其从订阅中删除。
 
-在接收过程中读取并删除消息的默认行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
+在接收过程中读取并删除消息的默认行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 服务总线 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
-如果将 **peek\_lock** 参数设置为 **True**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 接收请求时，它会查找要耗用的下一条消息，将其锁定以防止其他使用者接收它，然后将它返回到应用程序。在应用程序完成处理该消息（或将其可靠存储以备将来处理）后，它通过对 **Message** 对象调用 **delete** 方法完成接收过程的第二阶段。**delete** 方法会将消息标记为已使用，并从订阅中删除它。
+如果将 **peek\_lock** 参数设置为 **True**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 服务总线 接收请求时，它会查找要耗用的下一条消息，将其锁定以防止其他使用者接收它，然后将它返回到应用程序。在应用程序完成处理该消息（或将其可靠存储以备将来处理）后，它通过对 **Message** 对象调用 **delete** 方法完成接收过程的第二阶段。**delete** 方法会将消息标记为已使用，并从订阅中删除它。
 
     msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=True)
     print(msg.body)
@@ -120,9 +120,9 @@ Service Bus 主题支持最大为 256 MB 的消息（标头最大为 64 MB，其
 
 ## <a name="How_to_Handle_Application_Crashes_and_Unreadable_Messages"></a>如何处理应用程序崩溃和不可读消息
 
-Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对**Message** 对象调用 **unlock** 方法。这会导致 Service Bus 解锁订阅中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
+服务总线 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对**Message** 对象调用 **unlock** 方法。这会导致 服务总线 解锁订阅中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
 
-还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，应用程序崩溃），Service Bus 将自动解锁该消息并使之重新可供接收。
+还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，应用程序崩溃），服务总线 将自动解锁该消息并使之重新可供接收。
 
 如果应用程序在处理消息之后，但在调用 **delete** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的**MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
@@ -138,13 +138,13 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## <a name="Next_Steps"></a> 后续步骤
 
-现在，你已了解有关 Service Bus 主题的基础知识，单击下面的链接可了解更多信息。
+现在，你已了解有关 服务总线 主题的基础知识，单击下面的链接可了解更多信息。
 
 -   查看 MSDN 参考：[队列、主题和订阅][队列、主题和订阅]。
 -   [SqlFilter][SqlFilter] 的 API 参考。
 
   [后续步骤]: #Next_Steps
-  [什么是 Service Bus 主题和订阅？]: #what-are-service-bus-topics
+  [什么是 服务总线 主题和订阅？]: #what-are-service-bus-topics
   [创建服务命名空间]: #create-a-service-namespace
   [获得命名空间的默认管理凭据]: #obtain-default-credentials
   [如何：创建主题]: #How_to_Create_a_Topic

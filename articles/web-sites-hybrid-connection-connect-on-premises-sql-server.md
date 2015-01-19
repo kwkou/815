@@ -437,6 +437,6 @@
   [查看结果]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F10HCTestSSMSTree.png
   [本地数据库中注册的用户]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
   [混合连接网站]: http://azure.microsoft.com/zh-cn/services/biztalk-services/
-  [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: http://azure.microsoft.com/zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/
-  [使用混合连接从 Azure 移动服务连接到本地 SQL Server]: http://azure.microsoft.com/zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/
+  [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: /zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [使用混合连接从 Azure 移动服务连接到本地 SQL Server]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/
   [ASP.NET 标识概述]: http://www.asp.net/identity

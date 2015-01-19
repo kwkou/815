@@ -2,9 +2,9 @@
 
 # 为 Azure 网站配置自定义域名 (Moniker)
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/en-us/documentation/articles/web-sites-custom-domain-name" title="自定义域">自定义域</a><a href="/en-us/documentation/articles/web-sites-godaddy-custom-domain-name" title="GoDaddy">GoDaddy</a><a href="/en-us/documentation/articles/web-sites-network-solutions-custom-domain-name" title="Network Solutions">Network Solutions</a><a href="/en-us/documentation/articles/web-sites-registerdotcom-custom-domain-name" title="Register.com">Register.com</a><a href="/en-us/documentation/articles/web-sites-enom-custom-domain-name" title="Enom">Enom</a><a href="/en-us/documentation/articles/web-sites-moniker-custom-domain-name" title="Moniker" class="current">Moniker</a><a href="/en-us/documentation/articles/web-sites-dotster-custom-domain-name" title="Dotster">Dotster</a><a href="/en-us/documentation/articles/web-sites-domaindiscover-custom-domain-name" title="DomainDiscover">DomainDiscover</a><a href="/en-us/documentation/articles/web-sites-directnic-custom-domain-name" title="Directnic">Directnic</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/web-sites-custom-domain-name" title="自定义域">自定义域</a><a href="/zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name" title="GoDaddy">GoDaddy</a><a href="/zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name" title="Network Solutions">Network Solutions</a><a href="/zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name" title="Register.com">Register.com</a><a href="/zh-cn/documentation/articles/web-sites-enom-custom-domain-name" title="Enom">Enom</a><a href="/zh-cn/documentation/articles/web-sites-moniker-custom-domain-name" title="Moniker" class="current">Moniker</a><a href="/zh-cn/documentation/articles/web-sites-dotster-custom-domain-name" title="Dotster">Dotster</a><a href="/zh-cn/documentation/articles/web-sites-domaindiscover-custom-domain-name" title="DomainDiscover">DomainDiscover</a><a href="/zh-cn/documentation/articles/web-sites-directnic-custom-domain-name" title="Directnic">Directnic</a></div>
 
-<div class="dev-center-tutorial-subselector"><a href="/en-us/documentation/articles/web-sites-moniker-custom-domain-name/" title="网站" class="current">网站</a> | <a href="/en-us/documentation/articles/web-sites-moniker-traffic-manager-custom-domain-name/" title="使用流量管理器的网站">使用流量管理器的网站</a></div>
+<div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/web-sites-moniker-custom-domain-name/" title="网站" class="current">网站</a> | <a href="/zh-cn/documentation/articles/web-sites-moniker-traffic-manager-custom-domain-name/" title="使用流量管理器的网站">使用流量管理器的网站</a></div>
 
 [WACOM.INCLUDE [介绍][介绍]]
 
@@ -78,17 +78,17 @@
 
 [WACOM.INCLUDE [modes][2]]
 
-  [自定义域]: /en-us/documentation/articles/web-sites-custom-domain-name "自定义域"
-  [GoDaddy]: /en-us/documentation/articles/web-sites-godaddy-custom-domain-name "GoDaddy"
-  [Network Solutions]: /en-us/documentation/articles/web-sites-network-solutions-custom-domain-name "Network Solutions"
-  [Register.com]: /en-us/documentation/articles/web-sites-registerdotcom-custom-domain-name "Register.com"
-  [Enom]: /en-us/documentation/articles/web-sites-enom-custom-domain-name "Enom"
-  [Moniker]: /en-us/documentation/articles/web-sites-moniker-custom-domain-name "Moniker"
-  [Dotster]: /en-us/documentation/articles/web-sites-dotster-custom-domain-name "Dotster"
-  [DomainDiscover]: /en-us/documentation/articles/web-sites-domaindiscover-custom-domain-name "DomainDiscover"
-  [Directnic]: /en-us/documentation/articles/web-sites-directnic-custom-domain-name "Directnic"
-  [网站]: /en-us/documentation/articles/web-sites-moniker-custom-domain-name/ "网站"
-  [使用流量管理器的网站]: /en-us/documentation/articles/web-sites-moniker-traffic-manager-custom-domain-name/ "使用流量管理器的网站"
+  [自定义域]: /zh-cn/documentation/articles/web-sites-custom-domain-name "自定义域"
+  [GoDaddy]: /zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name "GoDaddy"
+  [Network Solutions]: /zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name "Network Solutions"
+  [Register.com]: /zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name "Register.com"
+  [Enom]: /zh-cn/documentation/articles/web-sites-enom-custom-domain-name "Enom"
+  [Moniker]: /zh-cn/documentation/articles/web-sites-moniker-custom-domain-name "Moniker"
+  [Dotster]: /zh-cn/documentation/articles/web-sites-dotster-custom-domain-name "Dotster"
+  [DomainDiscover]: /zh-cn/documentation/articles/web-sites-domaindiscover-custom-domain-name "DomainDiscover"
+  [Directnic]: /zh-cn/documentation/articles/web-sites-directnic-custom-domain-name "Directnic"
+  [网站]: /zh-cn/documentation/articles/web-sites-moniker-custom-domain-name/ "网站"
+  [使用流量管理器的网站]: /zh-cn/documentation/articles/web-sites-moniker-traffic-manager-custom-domain-name/ "使用流量管理器的网站"
   [介绍]: ../includes/custom-dns-web-site-intro.md
   [Moniker.com]: https://moniker.com
   [introfooter]: ../includes/custom-dns-web-site-intro-notes.md

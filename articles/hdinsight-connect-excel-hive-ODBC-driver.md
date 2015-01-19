@@ -57,7 +57,7 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
  在单击“高级选项” 时，有一些重要参数要注意：
 
 <table border="1">
-<tr><td>使用本机查询</td><td>选择此项时，ODBC 驱动程序将不会尝试将 TSQL 转换为 HiveQL。仅当你 100% 确定提交的是纯 HiveQL 语句时，才应使用此项。连接 SQL Server 或 Azure SQL Database 时，应将此项保留为未选中状态。</td></tr>
+<tr><td>使用本机查询</td><td>选择此项时，ODBC 驱动程序将不会尝试将 TSQL 转换为 HiveQL。仅当你 100% 确定提交的是纯 HiveQL 语句时，才应使用此项。连接 SQL Server 或 Azure SQL数据库 时，应将此项保留为未选中状态。</td></tr>
 <tr><td>每块提取的行数</td><td>提取大量记录时，可能需要调整此参数以确保最佳性能。</td></tr>
 <tr><td>默认字符串列长度、<br/> 二进制列长度、<br/> 十进制列小数位数</td><td>数据类型长度和精度可能会影响返回数据的方式。由于精度损失和/或截断，可能会返回不正确的信息。</td></tr>
 </table>
@@ -95,7 +95,7 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
 
 ## <a id="nextsteps"></a>后续步骤
 
-在本文中，你已了解如何使用 Microsoft Hive ODBC 驱动程序将来自 HDInsight 服务的数据检索到 Excel 中。同样地，你也可以将来自 HDInsight 服务的数据检索到 SQL Database 中。也可以将数据上载到 HDInsight 服务中。若要了解更多信息，请参阅以下文章：
+在本文中，你已了解如何使用 Microsoft Hive ODBC 驱动程序将来自 HDInsight 服务的数据检索到 Excel 中。同样地，你也可以将来自 HDInsight 服务的数据检索到 SQL数据库 中。也可以将数据上载到 HDInsight 服务中。若要了解更多信息，请参阅以下文章：
 
 -   [使用 HDInsight 分析航班延误数据][]
 -   [将数据上载到 HDInsight][]

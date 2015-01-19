@@ -42,7 +42,7 @@
 
 1.  如果您还未在 Visual Studio 中登录到 Azure，请单击“服务器资源管理器”中的“连接至 Azure”按钮。
 
-    一种替代方法是安装可以访问您的帐户的管理证书。管理证书可以让服务器资源管理器访问其他 Azure 服务（SQL Database 和移动服务）。如果选择安装证书，请右键单击“服务器资源管理器”中的“Azure”，然后单击上下文菜单中的“管理订阅”。。在“管理 Azure 订阅”对话框中，单击“证书”选项卡，然后单击“导入”。按照说明为您的 Azure 帐户下载并导入一个订阅文件（也称为 *.publishsettings* 文件）。
+    一种替代方法是安装可以访问您的帐户的管理证书。管理证书可以让服务器资源管理器访问其他 Azure 服务（SQL数据库 和移动服务）。如果选择安装证书，请右键单击“服务器资源管理器”中的“Azure”，然后单击上下文菜单中的“管理订阅”。。在“管理 Azure 订阅”对话框中，单击“证书”选项卡，然后单击“导入”。按照说明为您的 Azure 帐户下载并导入一个订阅文件（也称为 *.publishsettings* 文件）。
 
     > [WACOM.NOTE]
     > 将此订阅文件下载并保存到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除您的 Azure 服务。
@@ -774,8 +774,8 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [错误处理程序的完整示例]: http://msdn.microsoft.com/zh-cn/library/bb397417.aspx
   [从 Azure 命令行流式传输诊断跟踪日志记录（加上 Glimpse！）]: http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx
   [Glimpse]: http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx
-  [使用 Azure 网站日志记录和诊断 — 与 David Ebbo 协作完成]: http://azure.microsoft.com/zh-cn/documentation/videos/azure-web-site-logging-and-diagnostics/
-  [从 Azure 网站流式传输日志 — 与 David Ebbo 协作完成]: http://azure.microsoft.com/zh-cn/documentation/videos/log-streaming-with-azure-web-sites/
+  [使用 Azure 网站日志记录和诊断 — 与 David Ebbo 协作完成]: /zh-cn/documentation/videos/azure-web-site-logging-and-diagnostics/
+  [从 Azure 网站流式传输日志 — 与 David Ebbo 协作完成]: /zh-cn/documentation/videos/log-streaming-with-azure-web-sites/
   [ELMAH]: http://nuget.org/packages/elmah/
   [Scott Hanselman 有关 ELMAH 的博客文章]: http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx
   [LogParser]: http://www.microsoft.com/zh-cn/download/details.aspx?id=24659

@@ -293,7 +293,7 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 
     // Create a task with the specified media processor, in this case to transform the original asset to the H264 Broadband 720p preset.
     // Information on the various configurations can be found at
-    // http://msdn.microsoft.com/en-us/library/windowsazure/jj129582.aspx.
+    // http://msdn.microsoft.com/zh-cn/library/windowsazure/jj129582.aspx.
     // This example uses only one task, but others could be added.
     Task.CreateBatchOperation task = Task.create(
     mediaProcessor.getId(),

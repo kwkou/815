@@ -574,10 +574,10 @@
 -   [Windows Azure 存储客户端库 2.0 表深入探讨][Windows Azure 存储客户端库 2.0 表深入探讨]（Azure 存储团队博客）
 -   [实际应用：为 Azure 表存储设计可扩展分区策略][实际应用：为 Azure 表存储设计可扩展分区策略]
 
-若要了解有关 Azure 队列服务和 Azure Service Bus 队列的详细信息，请参阅以下资源：
+若要了解有关 Azure 队列服务和 Azure 服务总线 队列的详细信息，请参阅以下资源：
 
 -   [以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)][以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)]
--   [Azure 队列和 Azure Service Bus 队列 - 比较与对照][Azure 队列和 Azure Service Bus 队列 - 比较与对照]
+-   [Azure 队列和 Azure 服务总线 队列 - 比较与对照][Azure 队列和 Azure 服务总线 队列 - 比较与对照]
 -   [如何在 .NET 中使用队列存储服务][如何在 .NET 中使用队列存储服务]
 
 若要了解有关 Azure Blob 服务的详细信息，请参阅以下资源：
@@ -650,7 +650,7 @@
   [Windows Azure 存储客户端库 2.0 表深入探讨]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx
   [实际应用：为 Azure 表存储设计可扩展分区策略]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh508997.aspx
   [以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
-  [Azure 队列和 Azure Service Bus 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx
+  [Azure 队列和 Azure 服务总线 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx
   [如何在 .NET 中使用队列存储服务]: /zh-cn/develop/net/how-to-guides/queue-service/
   [非结构化 Blob 存储（使用 Windows Azure 构建实际云应用程序）]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
   [如何在 .NET 中使用 Azure Blob 存储服务]: /zh-cn/develop/net/how-to-guides/blob-storage/

@@ -1,4 +1,4 @@
-<properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL database server and Storage account." metaCanonical="http://www.windowsazure.com/en-us/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL数据库 server and Storage account." metaCanonical="http://www.windowsazure.com/en-us/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 使用 Azure 管理门户创建 BizTalk 服务
 
@@ -76,7 +76,7 @@
     </tr>
     <tr class="even">
     <td align="left"><strong>跟踪数据库</strong></td>
-    <td align="left">如果你要使用现有的 Azure SQL Database，需保证它没有被其他 BizTalk 服务使用。你需要使用创建该 Azure SQL Database 服务器时输入的登录名和密码。<br /><br />
+    <td align="left">如果你要使用现有的 Azure SQL数据库，需保证它没有被其他 BizTalk 服务使用。你需要使用创建该 Azure SQL数据库 服务器时输入的登录名和密码。<br /><br />
     <div class="dev-callout"> 
 <b>提示</b> 
 <p>在与 BizTalk 服务相同的区域中创建跟踪数据库和监视/存档存储帐户。</p> 
@@ -93,15 +93,15 @@
 	<table border="1">
 	<tr>
 	<td><strong>名称</strong></td>
-	<td>如果在上一屏幕中选择了<b>“创建新的 SQL Database 实例”</b>，将会提供此设置。
+	<td>如果在上一屏幕中选择了<b>“创建新的 SQL数据库 实例”</b>，将会提供此设置。
 	<br/><br/>
-	输入 BizTalk 服务要使用的 SQL Database 名称。</td>
+	输入 BizTalk 服务要使用的 SQL数据库 名称。</td>
 	</tr>
 	<tr>
 	<td><strong>服务器</strong></td>
-	<td>如果在上一屏幕中选择了<b>“创建新的 SQL Database 实例”</b>，将会提供此设置。
+	<td>如果在上一屏幕中选择了<b>“创建新的 SQL数据库 实例”</b>，将会提供此设置。
 	<br/><br/>
-	 选择现有的 SQL Database 服务器或创建新的 SQL Database 服务器。</td>
+	 选择现有的 SQL数据库 服务器或创建新的 SQL数据库 服务器。</td>
 	</tr>
 	<tr>
 	<td><strong>服务器登录名</strong></td>
@@ -113,7 +113,7 @@
 	</tr>
 	<tr>
 	<td><strong>区域</strong></td>
-	<td>如果选择了<b>“创建新的 SQL Database 实例”</b>，将会提供此设置。选择用于托管你的 SQL Database 的地理区域。</td>
+	<td>如果选择了<b>“创建新的 SQL数据库 实例”</b>，将会提供此设置。选择用于托管你的 SQL数据库 的地理区域。</td>
 	</tr>
 	</table>
 
@@ -211,22 +211,22 @@ Azure 帐户可以有多个订阅，并且可由获得许可的任何用户管�
 <tr>
 
 <td>
-Azure SQL Database
+Azure SQL数据库
 
 </td>
 
 <td>
 存储 Azure BizTalk 服务使用的表、视图和存储过程，包括跟踪数据。
 <br/><br/>
-创建 BizTalk 服务时，你可以使用现有的 Azure SQL Server、Azure SQL Database，或者自动创建新的服务器或数据库。
+创建 BizTalk 服务时，你可以使用现有的 Azure SQL Server、Azure SQL数据库，或者自动创建新的服务器或数据库。
 <br/><br/>
-SQL Database 的规模是自动配置的。通常，默认的规模就足以满足 BizTalk 服务的需要。更改规模会影响定价。请参阅 <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=234930"> Azure SQL Database 中的帐户和计费</a>
+SQL数据库 的规模是自动配置的。通常，默认的规模就足以满足 BizTalk 服务的需要。更改规模会影响定价。请参阅 <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=234930"> Azure SQL数据库 中的帐户和计费</a>
 <br/><br/>
 <b>注意</b>
 <br/>
 <ul>
 <li>当你创建新的 Azure SQL Server 和 Database 时，将自动启用 Azure 服务。BizTalk 服务要求启用 Azure 服务。</li>
-<li>如果你在现有 Azure SQL Server 的基础上创建新的 Azure SQL Database，将不会更改服务器的防火墙规则。因此，可能不允许其他 Azure 服务访问服务器的数据库。</li>
+<li>如果你在现有 Azure SQL Server 的基础上创建新的 Azure SQL数据库，将不会更改服务器的防火墙规则。因此，可能不允许其他 Azure 服务访问服务器的数据库。</li>
 </ul>
 </td>
 
@@ -341,7 +341,7 @@ SSL 专用证书
   [管理 ACS 命名空间]: http://go.microsoft.com/fwlink/p/?LinkID=285670
   [Azure 订阅]: https://account.windowsazure.com/Subscriptions
   [在 Azure 管理门户中管理订阅和存储帐户]: http://go.microsoft.com/fwlink/p/?LinkID=267577
-  [Azure SQL Database 中的帐户和计费]: http://go.microsoft.com/fwlink/p/?LinkID=234930
+  [Azure SQL数据库 中的帐户和计费]: http://go.microsoft.com/fwlink/p/?LinkID=234930
   [存储]: http://go.microsoft.com/fwlink/p/?LinkID=285671
   [混合连接选项卡]: ./media/biztalk-provision-services/WABS_HybridConnectionTab.png
   [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274

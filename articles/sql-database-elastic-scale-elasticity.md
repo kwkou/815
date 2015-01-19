@@ -1,10 +1,10 @@
-<properties title="数据依赖路由" pageTitle="分片灵活性" description="介绍了分片灵活性（可轻松向外扩展 Azure SQL Database 的能力）的概念并提供了相关示例。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="数据依赖路由" pageTitle="分片灵活性" description="介绍了分片灵活性（可轻松向外扩展 Azure SQL数据库 的能力）的概念并提供了相关示例。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags ms.service="sql-database" ms.workload="sql-database" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/02/2014" ms.author="sidneyh"></tags>
 
 # 分片灵活性
 
-**分片灵活性**允许应用程序开发人员根据需求动态增加和缩减数据库资源，使开发人员能够优化其应用程序的性能并最大程度地降低成本。Azure SQL Database 的灵活扩展与[基本、标准和高级服务层][基本、标准和高级服务层]的组合提供了非常有说服力的灵活性方案。灵活扩展支持**水平缩放** - 一种设计模式，在该模式中，通过从**分片集**添加或删除数据库（在[灵活扩展术语][灵活扩展术语]中称为“分片”）来增加或缩减容量。类似地，SQL Database 服务层提供了**垂直缩放**功能，其中单个数据库的资源可以向上或向下扩展以相应地满足需求。单个分片的垂直缩放和多个分片的水平缩放共同向应用程序开发人员提供了非常灵活的环境，可对该环境进行缩放以满足性能、容量和成本优化需求。
+**分片灵活性**允许应用程序开发人员根据需求动态增加和缩减数据库资源，使开发人员能够优化其应用程序的性能并最大程度地降低成本。Azure SQL数据库 的灵活扩展与[基本、标准和高级服务层][基本、标准和高级服务层]的组合提供了非常有说服力的灵活性方案。灵活扩展支持**水平缩放** - 一种设计模式，在该模式中，通过从**分片集**添加或删除数据库（在[灵活扩展术语][灵活扩展术语]中称为“分片”）来增加或缩减容量。类似地，SQL数据库 服务层提供了**垂直缩放**功能，其中单个数据库的资源可以向上或向下扩展以相应地满足需求。单个分片的垂直缩放和多个分片的水平缩放共同向应用程序开发人员提供了非常灵活的环境，可对该环境进行缩放以满足性能、容量和成本优化需求。
 
 ### 水平缩放示例：Concert Spike
 
@@ -130,14 +130,14 @@
 
 ## 执行分片灵活性方案
 
-为了促进水平和垂直方案的实际实现，已在脚本中心上创建并发布了许多[分片灵活性示例脚本][分片灵活性示例脚本]。编写这些 PowerShell Runbook 旨在使其在 Azure Automation 服务中运行，它们提供了许多与灵活扩展客户端库和 Azure SQL Database 交互的方法。通过基于这些代码示例进行构建，或从其中提取部分代码，开发人员可以生成必要的脚本，以使其应用程序的水平缩放、垂直缩放或这两种方案实现自动化。
+为了促进水平和垂直方案的实际实现，已在脚本中心上创建并发布了许多[分片灵活性示例脚本][分片灵活性示例脚本]。编写这些 PowerShell Runbook 旨在使其在 Azure Automation 服务中运行，它们提供了许多与灵活扩展客户端库和 Azure SQL数据库 交互的方法。通过基于这些代码示例进行构建，或从其中提取部分代码，开发人员可以生成必要的脚本，以使其应用程序的水平缩放、垂直缩放或这两种方案实现自动化。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references--> 
 <!--anchors-->
 
-  [基本、标准和高级服务层]: http://msdn.microsoft.com/en-us/library/azure/dn741340.aspx
+  [基本、标准和高级服务层]: http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx
   [灵活扩展术语]: sql-database-elastic-scale-glossary.md
   [更改服务层和性能级别]: http://msdn.microsoft.com/library/azure/dn369872.aspx
   [操作数据引入]: ./media/sql-database-elastic-scale-elasticity/data-ingestion.png

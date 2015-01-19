@@ -128,9 +128,9 @@ WebJobs 管理页用于为您的网站创建按需、按计划或连续运行的
 
   [安装 WebMatrix]: http://go.microsoft.com/fwlink/?LinkID=226244
   [Windows Azure SDK]: http://www.windowsazure.cn/zh-cn/downloads/
-  [如何监视网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-monitor/
-  [如何缩放网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-scale/
-  [如何在 Windows Azure 网站上使用 WebJobs 功能]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-create-web-jobs/
-  [如何配置网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-configure/
-  [Windows Azure 网站备份]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-backup/
-  [还原 Windows Azure 网站]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-restore/
+  [如何监视网站]: /zh-cn/documentation/articles/web-sites-monitor/
+  [如何缩放网站]: /zh-cn/documentation/articles/web-sites-scale/
+  [如何在 Windows Azure 网站上使用 WebJobs 功能]: /zh-cn/documentation/articles/web-sites-create-web-jobs/
+  [如何配置网站]: /zh-cn/documentation/articles/web-sites-configure/
+  [Windows Azure 网站备份]: /zh-cn/documentation/articles/web-sites-backup/
+  [还原 Windows Azure 网站]: /zh-cn/documentation/articles/web-sites-restore/

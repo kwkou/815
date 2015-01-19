@@ -282,8 +282,8 @@
 
 -   [Azure 管理 Cmdlet][Azure 管理 Cmdlet]
 
-  [Azure 虚拟网络]: http://msdn.microsoft.com/en-us/library/windowsazure/jj156007.aspx
-  [在 Azure 虚拟机上部署 Windows Server Active Directory 的指南]: http://msdn.microsoft.com/en-us/library/windowsazure/jj156090.aspx
+  [Azure 虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
+  [在 Azure 虚拟机上部署 Windows Server Active Directory 的指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx
   [先决条件]: #Prerequisites
   [步骤 1：验证 YourPrimaryDC 的静态 IP 地址]: #verifystaticip
   [步骤 2：安装 Corp 林]: #installforest
@@ -293,7 +293,7 @@
   [步骤 6：设置在启动时加入域的虚拟机]: #provisionvm
   [步骤 7：备份域控制器]: #backup
   [步骤 8：测试身份验证和授权]: #test
-  [在管理门户中配置站点到站点的 VPN]: http://msdn.microsoft.com/en-us/library/dn133795.aspx
+  [在管理门户中配置站点到站点的 VPN]: http://msdn.microsoft.com/zh-cn/library/dn133795.aspx
   [将虚拟机添加到虚拟网络（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-networks-add-virtual-machine/
   [创建区域委派]: http://technet.microsoft.com/library/cc753500.aspx
   [在 Azure 中安装新的 Active Directory 林]: /en-us/manage/services/networking/active-directory-forest/
@@ -332,8 +332,8 @@
   [AddDC12]: ./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC12.png
   [AddDC13]: ./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC13.png
   [AddDC14]: ./media/virtual-networks-install-replica-active-directory-domain-controller/AddDC14.png
-  [Azure PowerShell 入门]: http://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx
-  [Azure 管理 Cmdlet]: http://msdn.microsoft.com/en-us/library/windowsazure/jj152841
+  [Azure PowerShell 入门]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156055.aspx
+  [Azure 管理 Cmdlet]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj152841
   [BackupDC]: ./media/virtual-networks-install-replica-active-directory-domain-controller/BackupDC.png
   [Windows Azure IT Pro IaaS：(01) 虚拟机基础知识]: http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01
   [Windows Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接]: http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05

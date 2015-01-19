@@ -1,6 +1,6 @@
 <properties linkid="dev-net-site-recovery" urlDisplayName="Windows Azure 站点恢复" pageTitle="Windows Azure 服务管理：站点恢复" metaKeywords="站点恢复" description="" metaCanonical="" services="站点恢复" documentationCenter="Services" title="Orchestrate recovery of private clouds" authors="Eric" solutions="" manager="TK" editor="Haifeng Liu" />
 
-#站点恢复<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase;" class="wa-previewTag">预览</sup>
+#站点恢复
 
 ####安排私有云的恢复
 使用**站点恢复**服务可以保护数据和云。Windows Azure 站点恢复可帮助您自动保护私有云并安排私有云的恢复。

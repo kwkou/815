@@ -1,4 +1,4 @@
-<properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="在 VM 上使用 MongoDB 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="本教程将介绍如何使用 MongoDB 在托管在 Azure 上的 Node 应用程序中存储和访问数据。" metaCanonical="http://azure.microsoft.com/zh-cn/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="使用 MongoDB 中的存储的 Node.js Web 应用程序（虚拟机）" authors="larryfr"  solutions="" writer="" manager="" editor=""  />
+<properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="在 VM 上使用 MongoDB 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="本教程将介绍如何使用 MongoDB 在托管在 Azure 上的 Node 应用程序中存储和访问数据。" metaCanonical="/zh-cn/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="使用 MongoDB 中的存储的 Node.js Web 应用程序（虚拟机）" authors="larryfr"  solutions="" writer="" manager="" editor=""  />
 
 # 在虚拟机中使用 MongoDB 在 Azure 上创建 Node.js 应用程序
 
@@ -506,7 +506,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
   [注册映像的屏幕截图]: ./media/web-sites-nodejs-store-data-mongodb/register.png
   [映像的屏幕截图]: ./media/web-sites-nodejs-store-data-mongodb/myimages.png
   [VM 名称、用户名等的屏幕截图]: ./media/web-sites-nodejs-store-data-mongodb/vmname.png
-  [如何在安装了 Linux 的 Azure 上使用 SSH]: http://azure.microsoft.com/zh-cn/documentation/articles/linux-use-ssh-key/
+  [如何在安装了 Linux 的 Azure 上使用 SSH]: /zh-cn/documentation/articles/linux-use-ssh-key/
   [VM 配置的屏幕截图]: ./media/web-sites-nodejs-store-data-mongodb/vmconfig.png
   [终结点配置的屏幕截图]: ./media/web-sites-nodejs-store-data-mongodb/endpoints.png
   [MongoDB 文档]: http://docs.mongodb.org/manual/

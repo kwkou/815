@@ -26,11 +26,11 @@
 
 出现**"管理 NuGet 包"**对话框。
 
-6. 搜索"Windows Azure Service Bus 事件中心 - EventProcessorHost"，单击**"安装"**，并接受使用条款。 
+6. 搜索"Windows Azure 服务总线 事件中心 - EventProcessorHost"，单击**"安装"**，并接受使用条款。 
 
 	![][13]
 
-	这样就会下载、安装 <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost">Azure Service Bus 事件中心 - EventProcessorHost NuGet 程序包</a>并添加对该程序包的引用，包括其所有依赖项。
+	这样就会下载、安装 <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost">Azure 服务总线 事件中心 - EventProcessorHost NuGet 程序包</a>并添加对该程序包的引用，包括其所有依赖项。
 
 7. 创建一个名为 **SimpleEventProcessor** 的新类，在该文件的顶部添加以下语句：
 

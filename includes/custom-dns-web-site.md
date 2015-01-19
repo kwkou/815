@@ -2,7 +2,7 @@
 
 当你创建网站时，Azure 在 azurewebsites.net 域中提供了一个友好的子域，以使你的用户可使用类似 http://&lt;mysite>.azurewebsites.net 的 URL 访问你的网站。但是，如果你将网站配置为共享或标准模式，则可将网站映射到你自己的域名。
 
-另外，你可以使用 Azure Traffic Manager 对你的网站的传入流量进行负载平衡。有关 Traffic Manager 如何作用于网站的详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure 网站流量][trafficmanager]。
+另外，你可以使用 Azure 流量管理器 对你的网站的传入流量进行负载平衡。有关 流量管理器 如何作用于网站的详细信息，请参阅[使用 Azure 流量管理器 控制 Azure 网站流量][trafficmanager]。
 
 > [WACOM.NOTE] 本任务中的过程适用于 Azure 网站；对于云服务，请参阅<a href="http://www.windowsazure.com/en-us/develop/net/common-tasks/custom-dns/">在 Azure 中配置自定义域名</a>。
 
@@ -12,7 +12,7 @@
 
 -   [了解 CNAME 和 A 记录](#understanding-records)
 -   [将网站配置为共享或标准模式](#bkmk_configsharedmode)
--   [将网站添加到 Traffic Manager](#trafficmanager)
+-   [将网站添加到 流量管理器](#trafficmanager)
 -   [为自定义域添加 CNAME](#bkmk_configurecname)
 -   [为自定义域添加 A 记录](#bkmk_configurearecord)
 
@@ -22,7 +22,7 @@ CNAME（即别名记录）和 A 记录都允许你将域名与网站进行关联
 
 ### CNAME（即别名）记录
 
-CNAME 记录将*特定的*域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是你的 Azure 网站的 **\<myapp\>.azurewebsites.net** 域名或你的 Traffic Manager 配置文件的 **\<myapp\>.trafficmgr.com** 域名。一旦创建，CNAME 即为 **\<myapp\>.azurewebsites.net** 或 **\<myapp\>.trafficmgr.com** 域名创建别名。CNAME 条目将自动解析为你的 **\<myapp\>.azurewebsites.net** 或 **\<myapp\>.trafficmgr.com** 域名的 IP 地址。因此，如果网站的 IP 地址发生更改，你不必采取任何操作。
+CNAME 记录将*特定的*域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是你的 Azure 网站的 **\<myapp\>.azurewebsites.net** 域名或你的 流量管理器 配置文件的 **\<myapp\>.trafficmgr.com** 域名。一旦创建，CNAME 即为 **\<myapp\>.azurewebsites.net** 或 **\<myapp\>.trafficmgr.com** 域名创建别名。CNAME 条目将自动解析为你的 **\<myapp\>.azurewebsites.net** 或 **\<myapp\>.trafficmgr.com** 域名的 IP 地址。因此，如果网站的 IP 地址发生更改，你不必采取任何操作。
 
 > [WACOM.NOTE] 某些域注册机构只允许你在使用 CNAME 记录（例如 www.contoso.com）而非根名称（例如 contoso.com）时对子域进行映射。有关 CNAME 记录的详细信息，请参阅你的注册机构提供的文档<a href="http://en.wikipedia.org/wiki/CNAME_record">关于 CNAME 记录的 Wikipedia 词条</a>或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
 
@@ -32,7 +32,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 > [WACOM.NOTE] 由于 A 记录映射到静态 IP 地址，因此它无法动态解析你的网站的 IP 地址的更改。用于 A 记录的 IP 地址是你为网站配置自定义域名设置时提供的；但是，如果你删除并重新创建了网站或者将网站模式改回了免费，则该值可能会更改。
 
-> [WACOM.NOTE] A 记录不能用于使用 Traffic Manager 的负载平衡。有关详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure 网站流量][trafficmanage]。
+> [WACOM.NOTE] A 记录不能用于使用 流量管理器 的负载平衡。有关详细信息，请参阅[使用 Azure 流量管理器 控制 Azure 网站流量][trafficmanage]。
 
 <a name="bkmk_configsharedmode"></a><h2>将网站配置为共享或标准模式</h2>
 
@@ -52,7 +52,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 	![][standardmode3]
 
-	> [WACOM.NOTE] 如果你将为此网站使用 Traffic Manager，则必须选择标准模式而非共享模式。
+	> [WACOM.NOTE] 如果你将为此网站使用 流量管理器，则必须选择标准模式而非共享模式。
 
 5.  单击**保存**。
 6.  在系统提示你共享模式（如果你选择“标准”，则此处为标准模式）成本将增加时，如果你同意成本增加，则单击**是**。
@@ -62,15 +62,15 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 	**注意**<br /> 
 	如果出现“为网站‘网站名称’配置规模失败”错误，则可使用详细信息按钮获得详细信息。
 
-<a name="trafficmanager"></a><h2>可选）将网站添加到 Traffic Manager</h2>
+<a name="trafficmanager"></a><h2>可选）将网站添加到 流量管理器</h2>
 
-如果希望为网站使用 Traffic Manager，请执行下列步骤。
+如果希望为网站使用 流量管理器，请执行下列步骤。
 
-1.  如果还没有 Traffic Manager 配置文件，请根据[使用“快速创建”创建 Traffic Manager 配置文件][createprofile]中的信息创建一个。记下与你的 Traffic Manager 配置文件关联的 **.trafficmgr.com** 域名。这将在后面的步骤中使用。
+1.  如果还没有 流量管理器 配置文件，请根据[使用“快速创建”创建 流量管理器 配置文件][createprofile]中的信息创建一个。记下与你的 流量管理器 配置文件关联的 **.trafficmgr.com** 域名。这将在后面的步骤中使用。
 
-2.  根据[添加或删除终结点][addendpoint]中的信息在 Traffic Manager 配置文件中将你的网站添加为终结点。
+2.  根据[添加或删除终结点][addendpoint]中的信息在 流量管理器 配置文件中将你的网站添加为终结点。
 
-    > [WACOM.NOTE] 如果在添加终结点时你的网站未列出，请验证是否已将其配置为标准模式。必须将网站配置为标准模式，Traffic Manager 才起作用。
+    > [WACOM.NOTE] 如果在添加终结点时你的网站未列出，请验证是否已将其配置为标准模式。必须将网站配置为标准模式，流量管理器 才起作用。
 
 3.  登录到你的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。查找网站中标签为**域名**、**DNS**或**名称服务器管理**的链接或区域。
 
@@ -96,7 +96,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 **www.contoso.com** 的访问者将从不会看到真正的主机
 (contoso.azurewebsite.net)，因此，最终用户看不到转发过程。
 
-> [WACOM.NOTE] 如果你在为网站使用 Traffic Manager，则不需要执行下面的部分（**为自定义域添加 CNAME** 和**为自定义域添加 A 记录**）中的步骤。在前面的步骤中创建的 CNAME 记录会将传入流量路由到 Traffic Manager，然后后者会将流量路由到网站终结点。
+> [WACOM.NOTE] 如果你在为网站使用 流量管理器，则不需要执行下面的部分（**为自定义域添加 CNAME** 和**为自定义域添加 A 记录**）中的步骤。在前面的步骤中创建的 CNAME 记录会将传入流量路由到 流量管理器，然后后者会将流量路由到网站终结点。
 
 <a name="bkmk_configurecname"></a><h2>为自定义域添加 CNAME</h2>
 
@@ -289,7 +289,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 [将网站配置为共享或标准模式]: #bkmk_configsharedmode
 [为自定义域添加 CNAME]: #bkmk_configurecname
-[将网站添加到 Traffic Manager]: #trafficmanager
+[将网站添加到 流量管理器]: #trafficmanager
 [为自定义域添加 A 记录]:#bkmk_configurearecord
 [了解 CNAME 和 A 记录]: #understanding-records
 

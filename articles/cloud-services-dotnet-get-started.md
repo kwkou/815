@@ -790,12 +790,12 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
   [广告列表]: ./media/cloud-services-dotnet-get-started/list.png
   [Azure 网站]: /zh-cn/services/web-sites/
   [WebJobs]: http://go.microsoft.com/fwlink/?LinkId=390226
-  [Azure 网站、云服务和虚拟机比较]: http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
-  [有关 Azure 的基本概念云服务]: http://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/#CloudServices
+  [Azure 网站、云服务和虚拟机比较]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [有关 Azure 的基本概念云服务]: /zh-cn/documentation/articles/fundamentals-application-models/#CloudServices
   [ASP.NET MVC]: http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started
   [Web 窗体]: http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview
   [激活 MSDN 订户权益]: /zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668
-  [注册免费试用]: /zh-cn/pricing/free-trial/?WT.mc_id=A55E3C668
+  [注册免费试用]: /zh-cn/pricing/1rmb-trial/
   [应用程序体系结构]: #application-architecture
   [设置开发环境]: #setupdevenv
   [下载并运行已完成的解决方案]: #download-and-run-the-completed-solution
@@ -826,7 +826,7 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
   [创建存储连接字符串]: ./media/cloud-services-dotnet-get-started/createstoragecs.png
   [发布菜单]: ./media/cloud-services-dotnet-get-started/pubmenu.png
   [登录步骤]: ./media/cloud-services-dotnet-get-started/pubsignin.png
-  [发布 Azure 应用程序向导]: http://msdn.microsoft.com/library/windowsazure/hh535756.aspx
+  [发布 Azure 应用程序向导]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh535756.aspx
   [摘要步骤]: ./media/cloud-services-dotnet-get-started/pubsummary.png
   [Azure 活动日志窗口]: ./media/cloud-services-dotnet-get-started/waal.png
   [新项目]: ./media/cloud-services-dotnet-get-started/newproject.png
@@ -846,7 +846,7 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
   [EF 连接复原]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
   [PhluffyFotos]: http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31
   [带有表、队列和 Blob 的 Azure 云服务多层应用程序]: http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36
-  [分步教程系列]: http://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/
+  [分步教程系列]: /zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/
   [Windows Azure 中的云服务基础知识]: http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649
   [使用 Windows Azure 构建实际的云应用程序]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
   [Windows Azure 存储 – 新功能、最佳实践和模式]: http://channel9.msdn.com/Events/Build/2014/3-628

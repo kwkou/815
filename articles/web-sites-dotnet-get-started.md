@@ -104,7 +104,7 @@
 
 	* 单击“登录”，然后输入您的 Windows Azure 帐户的凭据。
 
-		此方法虽然又快又简单，但如果您使用此方法，将无法在“服务器资源管理器”窗口中看到 Windows Azure SQL Database 或移动服务。
+		此方法虽然又快又简单，但如果您使用此方法，将无法在“服务器资源管理器”窗口中看到 Windows Azure SQL数据库 或移动服务。
 
 	* 单击“管理订阅”以便安装允许访问您帐户的管理证书。
 
@@ -201,7 +201,7 @@
 您可能需要查看跟踪或日志输出来寻求帮助以进行故障排除。Visual Studio 提供了内置工具，使您能够在 Windows Azure 日志生成时轻松实时查看这些日志。您还可以在 Windows Azure 中采用调试模式远程运行。有关更多信息，请参见[在 Visual Studio 中对 Windows Azure 网站进行故障排除](/zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)。
 
 <h3>如何添加数据库和授权功能</h3>
-大多数生产网站使用数据库并且只允许特定授权用户访问某些网站功能。有关说明如何开始使用数据库访问、身份验证和授权的教程，请参见[使用成员资格、OAuth 和 SQL Database 将安全 ASP.NET MVC 应用程序部署到 Windows Azure 网站](/zh-cn/develop/net/tutorials/web-site-with-sql-database/)。
+大多数生产网站使用数据库并且只允许特定授权用户访问某些网站功能。有关说明如何开始使用数据库访问、身份验证和授权的教程，请参见[使用成员资格、OAuth 和 SQL数据库 将安全 ASP.NET MVC 应用程序部署到 Windows Azure 网站](/zh-cn/develop/net/tutorials/web-site-with-sql-database/)。
 
 <h3>如何决定应用程序是否应在云服务中运行</h3>
 在某些方案中，您可能需要在 Windows Azure 云服务中而不是 Windows Azure 网站中运行应用程序。有关更多信息，请参见 [Windows Azure 执行模型](/zh-cn/develop/net/fundamentals/compute/)以及 [Windows Azure 网站、云服务和 VM：何时使用何种产品？](http://www.windowsazure.com/zh-cn/manage/services/web-sites/choose-web-app-service/)。有关说明如何创建多层 ASP.NET Web 应用程序并将其部署到云服务的系列教程，请参见[使用存储表、队列和 Blob 的 .NET 多层应用程序](/zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/)。

@@ -24,7 +24,7 @@
 <div class="dev-callout">
 
 **说明**
-您在本教程中创建的 ASP.NET Web API 项目将在本地计算机上运行。还可以将 ASP.NET Web API 项目发布到 Azure。有关更多信息，请参见[使用 ASP.NET Web API 和 SQL Database 创建具有良好移动性的 REST 服务][使用 ASP.NET Web API 和 SQL Database 创建具有良好移动性的 REST 服务]。
+您在本教程中创建的 ASP.NET Web API 项目将在本地计算机上运行。还可以将 ASP.NET Web API 项目发布到 Azure。有关更多信息，请参见[使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务][使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务]。
 
 </div>
 
@@ -127,7 +127,7 @@
 
 下一步是通过创建新的 **Registration** 控制器来向 ASP.NET 应用程序添加通知中心的注册逻辑。
 
-1.  登录到 [Azure 管理门户][Azure 管理门户]，依次单击“Service Bus”、您的命名空间和“通知中心”，然后选择您的通知中心并单击“连接信息”。
+1.  登录到 [Azure 管理门户][Azure 管理门户]，依次单击“服务总线”、您的命名空间和“通知中心”，然后选择您的通知中心并单击“连接信息”。
 
     ![][2]
 
@@ -139,7 +139,7 @@
 
 3.  在“解决方案资源管理器”中，右键单击该项目名称，然后选择“管理 NuGet 包”。
 
-4.  在左窗格中，选择“联机”类别，搜索 `WindowsAzure.ServiceBus`，在 **Azure Service Bus** 包上单击“安装”，然后接受许可协议。
+4.  在左窗格中，选择“联机”类别，搜索 `WindowsAzure.ServiceBus`，在 **Azure 服务总线** 包上单击“安装”，然后接受许可协议。
 
     ![][4]
 
@@ -341,7 +341,7 @@
   [Windows 应用商店 C#]: /zh-cn/manage/services/notification-hubs/getting-started-windows-dotnet
   [iOS]: /zh-cn/manage/services/notification-hubs/get-started-notification-hubs-ios
   [Android]: /zh-cn/manage/services/notification-hubs/get-started-notification-hubs-android
-  [使用 ASP.NET Web API 和 SQL Database 创建具有良好移动性的 REST 服务]: /zh-cn/develop/net/tutorials/rest-service-using-web-api/
+  [使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务]: /zh-cn/develop/net/tutorials/rest-service-using-web-api/
   [0]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-mvc-app.png
   [1]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-aspnet-class.png
   [Azure 管理门户]: https://manage.windowsazure.cn/

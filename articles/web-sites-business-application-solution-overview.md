@@ -1,4 +1,4 @@
-<properties linkid="websites-business-application" urlDisplayName="Create a Line-of-Business Application on Azure Web Sites" pageTitle="Create a Line-of-Business Application on Azure Web Sites" metaKeywords="Web Sites" description="This guide provides a technical overview of how to use Azure Web Sites to create intranet, line-of-business applications. This includes authentication strategies, service bus relay, and monitoring." umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" title="Create a Line-of-Business Application on Azure Web Sites" authors="jroth" />
+<properties linkid="websites-business-application" urlDisplayName="Create a Line-of-Business Application on Azure Web Sites" pageTitle="Create a Line-of-Business Application on Azure Web Sites" metaKeywords="Web Sites" description="This guide provides a technical overview of how to use Azure Web Sites to create intranet, line-of-business applications. This includes authentication strategies, 服务总线 relay, and monitoring." umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" title="Create a Line-of-Business Application on Azure Web Sites" authors="jroth" />
 
 # 在 Azure 网站上创建业务线应用程序
 
@@ -9,7 +9,7 @@
 -   [考虑利益][考虑利益]
 -   [选择身份验证策略][选择身份验证策略]
 -   [创建支持身份验证的 Azure 网站][创建支持身份验证的 Azure 网站]
--   [使用 Service Bus 与本地资源进行集成][使用 Service Bus 与本地资源进行集成]
+-   [使用 服务总线 与本地资源进行集成][使用 服务总线 与本地资源进行集成]
 -   [监视应用程序][监视应用程序]
 
 <div class="dev-callout">
@@ -96,17 +96,17 @@
 
 ![BusinessApplicationsDeploy][BusinessApplicationsDeploy]
 
-## <a name="servicebusrelay"></a>使用 Service Bus 与本地资源进行集成
+## <a name="servicebusrelay"></a>使用 服务总线 与本地资源进行集成
 
 许多业务线应用程序都必须与本地数据和服务相集成。有多种原因会导致某些类型的数据不能移到云。这些原因可以是实践原因或法规原因。如果你处于计划阶段，需要确定要在 Azure 中托管哪些数据以及哪些数据应保留在本地，则一定要查看 [Azure 信任中心][Azure 信任中心]上的资源。混合 Web 应用程序在 Azure 中运行并且访问必须保留在本地的资源。
 
-在使用虚拟机或云服务时，你可以使用虚拟网络将 Azure 中的应用程序与公司网络连接起来。但是，网站不支持虚拟网络，因此，执行此类型的与网站集成的最佳方法是通过使用 [Azure Service Bus 中继服务][Azure Service Bus 中继服务]。该 Service Bus 中继服务允许云中的应用程序安全地连接到在公司网络上运行的 WCF 服务。Service Bus 无需开放防火墙端口即允许此通信。
+在使用虚拟机或云服务时，你可以使用虚拟网络将 Azure 中的应用程序与公司网络连接起来。但是，网站不支持虚拟网络，因此，执行此类型的与网站集成的最佳方法是通过使用 [Azure 服务总线 中继服务][Azure 服务总线 中继服务]。该 服务总线 中继服务允许云中的应用程序安全地连接到在公司网络上运行的 WCF 服务。服务总线 无需开放防火墙端口即允许此通信。
 
-在下图中，云应用程序和本地 WCF 服务都通过以前创建的命名空间与 Service Bus 通信。该本地 WCF 服务能够访问不能移到云中的内部数据和服务。该 WCF 服务将在命名空间中注册一个终结点。在 Azure 中运行的网站也在 Service Bus 中连接到此终结点。它们只需能够发起传出公共 HTTP 请求即可完成该步骤。
+在下图中，云应用程序和本地 WCF 服务都通过以前创建的命名空间与 服务总线 通信。该本地 WCF 服务能够访问不能移到云中的内部数据和服务。该 WCF 服务将在命名空间中注册一个终结点。在 Azure 中运行的网站也在 服务总线 中连接到此终结点。它们只需能够发起传出公共 HTTP 请求即可完成该步骤。
 
 ![BusinessApplicationsServiceBusRelay][BusinessApplicationsServiceBusRelay]
 
-Service Bus 然后将云应用程序连接到本地 WCF 服务。这为创建使用 Azure 以及本地上的服务和资源的混合应用程序提供基本的体系结构。有关更多信息，请参见[如何使用 Service Bus 中继服务][如何使用 Service Bus 中继服务]和教程 [Service Bus 中继消息传送教程][Service Bus 中继消息传送教程]。有关演示此技术的示例，请参见 [Enterprise Pizza - 使用 Service Bus 将网站连接到本地][Enterprise Pizza - 使用 Service Bus 将网站连接到本地]。
+服务总线 然后将云应用程序连接到本地 WCF 服务。这为创建使用 Azure 以及本地上的服务和资源的混合应用程序提供基本的体系结构。有关更多信息，请参见[如何使用 服务总线 中继服务][如何使用 服务总线 中继服务]和教程 [服务总线 中继消息传送教程][服务总线 中继消息传送教程]。有关演示此技术的示例，请参见 [Enterprise Pizza - 使用 服务总线 将网站连接到本地][Enterprise Pizza - 使用 服务总线 将网站连接到本地]。
 
 ## <a name="monitor"></a>监视应用程序
 
@@ -128,7 +128,7 @@ Service Bus 然后将云应用程序连接到本地 WCF 服务。这为创建使
 
 ## <a name="summary"></a>摘要
 
-Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active Directory 提供对用户进行身份验证的功能，以便只有你的组织的成员可以访问应用程序。Service Bus 中继服务提供使 Web 应用程序与内部服务和数据进行通信的机制。通过此混合应用程序方法，能够更容易地将业务应用程序发布到云，而不必也迁移所有依赖数据和服务。在部署后，业务应用程序将受益于 Azure 网站提供的标准缩放和监视功能。有关详细信息，请参阅以下技术文章。
+Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active Directory 提供对用户进行身份验证的功能，以便只有你的组织的成员可以访问应用程序。服务总线 中继服务提供使 Web 应用程序与内部服务和数据进行通信的机制。通过此混合应用程序方法，能够更容易地将业务应用程序发布到云，而不必也迁移所有依赖数据和服务。在部署后，业务应用程序将受益于 Azure 网站提供的标准缩放和监视功能。有关详细信息，请参阅以下技术文章。
 
 <table cellspacing="0" border="1">
 <tr>
@@ -148,8 +148,8 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 <td valign="top">- <a href ="http://www.windowsazure.com/en-us/manage/windows/fundamentals/identity/">了解 Azure 标识选项</a><br/>- <a href="http://www.windowsazure.com/en-us/documentation/services/active-directory/">Azure Active Directory 服务</a><br/>- <a href="http://technet.microsoft.com/en-us/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn151790.aspx">使用 Azure AD 将登录名添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
 </tr>
 <tr>
-<td valign="middle"><strong>Service Bus 中继</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-relay/">如何使用 Service Bus 中继服务</a><br/>- <a href="http://msdn.microsoft.com/en-us/library/windowsazure/ee706736.aspx">Service Bus 中继消息传送教程</a></td>
+<td valign="middle"><strong>服务总线 中继</strong></td>
+<td valign="top">- <a href="http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-relay/">如何使用 服务总线 中继服务</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx">服务总线 中继消息传送教程</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>监视</strong></td>
@@ -164,7 +164,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [考虑利益]: #benefits
   [选择身份验证策略]: #authentication
   [创建支持身份验证的 Azure 网站]: #createintranetsite
-  [使用 Service Bus 与本地资源进行集成]: #servicebusrelay
+  [使用 服务总线 与本地资源进行集成]: #servicebusrelay
   [监视应用程序]: #monitor
   [全球网络影响力]: http://www.windowsazure.com/en-us/manage/services/web-sites/global-web-presence-solution-overview/
   [数字市场营销活动]: http://www.windowsazure.com/en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview
@@ -194,11 +194,11 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [Azure 身份验证]: http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication
   [BusinessApplicationsDeploy]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Deploy.png
   [Azure 信任中心]: /zh-cn/support/trust-center/
-  [Azure Service Bus 中继服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860549.aspx
+  [Azure 服务总线 中继服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860549.aspx
   [BusinessApplicationsServiceBusRelay]: ./media/web-sites-business-application-solution-overview/BusinessApplications_ServiceBusRelay.png
-  [如何使用 Service Bus 中继服务]: /zh-cn/develop/net/how-to-guides/service-bus-relay/
-  [Service Bus 中继消息传送教程]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
-  [Enterprise Pizza - 使用 Service Bus 将网站连接到本地]: http://code.msdn.microsoft.com/windowsazure/Enterprise-Pizza-e2d8f2fa
+  [如何使用 服务总线 中继服务]: /zh-cn/develop/net/how-to-guides/service-bus-relay/
+  [服务总线 中继消息传送教程]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
+  [Enterprise Pizza - 使用 服务总线 将网站连接到本地]: http://code.msdn.microsoft.com/windowsazure/Enterprise-Pizza-e2d8f2fa
   [2]: /zh-cn/manage/services/web-sites/digital-marketing-campaign-solution-overview
   [New Relic]: http://newrelic.com/azure
   [BusinessApplicationsDiagnostics]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diagnostics.png
@@ -212,7 +212,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [4]: http://www.windowsazure.com/en-us/documentation/services/active-directory/
   [什么是 Azure AD 租户？]: http://technet.microsoft.com/en-us/library/jj573650.aspx
   [5]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/service-bus-relay/
-  [6]: http://msdn.microsoft.com/en-us/library/windowsazure/ee706736.aspx
+  [6]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
   [如何监视网站]: http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
   [7]: http://www.windowsazure.com/en-us/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics

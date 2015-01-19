@@ -170,6 +170,6 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
   [如何创建从 Azure Blob 存储进行下载的生成步骤]: #howtocreatebuildstep
   [Blob 服务使用的组件]: #components
   [Hudson 概览]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
-  [如何创建存储帐户]: http://azure.microsoft.com/zh-cn/documentation/articles/storage-create-storage-account/
+  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [创建共享访问签名]: http://go.microsoft.com/fwlink/?LinkId=279889
-  [了解块 Blob 和页 Blob]: http://msdn.microsoft.com/en-us/library/windowsazure/ee691964.aspx
+  [了解块 Blob 和页 Blob]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee691964.aspx

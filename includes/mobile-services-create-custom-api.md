@@ -46,8 +46,8 @@
   [1]: ./media/mobile-services-create-custom-api/mobile-custom-api-create.png
   [2]: ./media/mobile-services-create-custom-api/mobile-custom-api-create-dialog2.png
   [3]: ./media/mobile-services-create-custom-api/mobile-custom-api-select2.png
-  [mssql 对象]: http://msdn.microsoft.com/en-us/library/windowsazure/jj554212.aspx
-  [request]: http://msdn.microsoft.com/en-us/library/windowsazure/jj554218.aspx
-  [response]: http://msdn.microsoft.com/en-us/library/windowsazure/dn303373.aspx
+  [mssql 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx
+  [request]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx
+  [response]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303373.aspx
   [Express.js 库]: http://go.microsoft.com/fwlink/p/?LinkId=309046
-  [自定义 API]: http://msdn.microsoft.com/en-us/library/windowsazure/dn280974.aspx
+  [自定义 API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn280974.aspx

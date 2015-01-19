@@ -174,7 +174,7 @@ public DateTime createdAt { set; get; }
 
     <div class="dev-callout"><b>说明</b>
 
-    <p><b>DataMemberAttribute</b> 告知客户端要将应用程序中的新 <b>CreatedAt</b> 属性映射到 TodoItem 表中定义的具有不同大小写的 <b>createdAt</b> 列。如果你使用此属性，应用程序在对象上使用的属性名称可以不同于 SQL Database 中的列名称。如果不使用此属性，则会因大小写不同而发生错误。</p>
+    <p><b>DataMemberAttribute</b> 告知客户端要将应用程序中的新 <b>CreatedAt</b> 属性映射到 TodoItem 表中定义的具有不同大小写的 <b>createdAt</b> 列。如果你使用此属性，应用程序在对象上使用的属性名称可以不同于 SQL数据库 中的列名称。如果不使用此属性，则会因大小写不同而发生错误。</p>
 	</div>
 
 2.  在 MainPage.xaml 文件中的 "CheckBoxComplete" 元素的正下方，添加以下 XAML 元素：

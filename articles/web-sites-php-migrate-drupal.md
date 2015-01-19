@@ -80,14 +80,14 @@
 -   [Azure 集成模块][Azure 集成模块]
 -   [Azure Blob 存储模块][Azure Blob 存储模块]
 
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
   [将 Drupal 网站从 LAMP 迁移到 Azure]: http://blogs.msdn.com/b/brian_swan/archive/2012/03/19/azure-real-world-migrating-drupal-from-lamp-to-windows-azure.aspx
   [创建 Azure 网站]: #create-siteanddb
   [复制数据库]: #copy-database
   [修改 Settings.php]: #modify-settingsphp
   [部署 Drupal 代码]: #deploy-drupalcode
   [相关信息]: #related-information
-  [创建 PHP-MySQL Azure 网站并使用 Git 进行部署]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git/
+  [创建 PHP-MySQL Azure 网站并使用 Git 进行部署]: /zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-git/
   [Azure 网站，PHP 视角]: http://blogs.msdn.com/b/silverlining/archive/2012/06/12/windows-azure-websites-a-php-perspective.aspx
   [使用 .user.ini 文件在 Azure 网站中配置 PHP]: http://blogs.msdn.com/b/silverlining/archive/2012/07/10/configuring-php-in-windows-azure-websites-with-user-ini-files.aspx
   [Azure 集成模块]: https://drupal.org/project/azure_auth

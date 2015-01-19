@@ -193,7 +193,7 @@
   [安装]: ./media/web-sites-hybrid-connection-get-started/D08HCMInstalling.png
   [单击关闭]: ./media/web-sites-hybrid-connection-get-started/D09HCMInstallComplete.png
   [已连接状态]: ./media/web-sites-hybrid-connection-get-started/D10HCStatusConnected.png
-  [使用混合连接从 Azure 移动服务连接到本地 SQL Server]: http://azure.microsoft.com/zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/
-  [混合连接概述]: http://azure.microsoft.com/zh-cn/documentation/articles/integration-hybrid-connection-overview/
+  [使用混合连接从 Azure 移动服务连接到本地 SQL Server]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/
+  [混合连接概述]: /zh-cn/documentation/articles/integration-hybrid-connection-overview/
   [混合连接网站]: http://azure.microsoft.com/zh-cn/services/biztalk-services/
-  [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: http://azure.microsoft.com/zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: /zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/

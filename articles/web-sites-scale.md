@@ -146,7 +146,7 @@
 
     对于“版本”，请选择“Web”或“Busines”，具体取决于您需要的存储容量。“Web”版提供较小容量范围，而“企业”版则提供较大容量范围。
 
-    您为“最大大小”选择的值将指定数据库的上限。数据库费用取决于您实际存储的数据量，因此更改“最大大小”属性本身不会影响您的数据库费用。有关详细信息，请参阅 [Windows Azure SQL Database 中的帐户和结算][Windows Azure SQL Database 中的帐户和结算]。
+    您为“最大大小”选择的值将指定数据库的上限。数据库费用取决于您实际存储的数据量，因此更改“最大大小”属性本身不会影响您的数据库费用。有关详细信息，请参阅 [Windows Azure SQL数据库 中的帐户和结算][Windows Azure SQL数据库 中的帐户和结算]。
 
 <a name="devfeatures"></a>
 
@@ -188,7 +188,7 @@
 
     [Service Level Agreements](http://www.windowsazure.cn/zh-cn/support/legal/sla/)
 
-    [SQL Database Pricing Details](http://www.windowsazure.cn/zh-cn/pricing/overview/#sql_database)
+    [SQL数据库 Pricing Details](http://www.windowsazure.cn/zh-cn/pricing/overview/#sql_database)
 
     [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
 
@@ -208,7 +208,7 @@
 
 <!-- LINKS --> <!-- IMAGES -->
 
-  [什么是 Web 托管计划？]: http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-web-hosting-plan-overview/
+  [什么是 Web 托管计划？]: /zh-cn/documentation/articles/web-sites-web-hosting-plan-overview/
   [Azure 网站 Web 托管计划深入概述]: http://www.azure.microsoft.com/zh-cn/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/
   [网站定价详细信息]: http://azure.microsoft.com/zh-cn/pricing/details/web-sites/
   [Windows Azure 订阅]: http://go.microsoft.com/fwlink/?LinkID=235288
@@ -237,7 +237,7 @@
   [目标 CPU]: ./media/web-sites-scale/15TargetCPU.png
   [链接的数据库]: ./media/web-sites-scale/16LinkedResources.png
   [缩放 SQL Server 数据库]: ./media/web-sites-scale/17ScaleDatabase.png
-  [Windows Azure SQL Database 中的帐户和结算]: http://go.microsoft.com/fwlink/?LinkId=234930
+  [Windows Azure SQL数据库 中的帐户和结算]: http://go.microsoft.com/fwlink/?LinkId=234930
   [如何监视网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/
   [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [数据传输定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/#data_transfer

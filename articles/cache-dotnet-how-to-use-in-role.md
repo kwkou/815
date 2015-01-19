@@ -388,13 +388,13 @@ NuGet 包还添加对以下程序集的引用：
   [如何配置虚拟机大小]: http://go.microsoft.com/fwlink/?LinkId=164387
   [RoleCache4]: ./media/cache-dotnet-how-to-use-in-role/cache11.png
   [RoleCache5]: ./media/cache-dotnet-how-to-use-in-role/cache12.png
-  [解决和诊断角色中缓存问题]: http://msdn.microsoft.com/en-us/library/windowsazure/hh914135.aspx
+  [解决和诊断角色中缓存问题]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh914135.aspx
   [RoleCache6]: ./media/cache-dotnet-how-to-use-in-role/cache13.png
   [NuGet 包管理器安装]: http://go.microsoft.com/fwlink/?LinkId=240311
-  [用于角色中缓存的会话状态提供程序]: http://msdn.microsoft.com/en-us/library/windowsazure/gg185668.aspx
+  [用于角色中缓存的会话状态提供程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185668.aspx
   [OutputCache 指令]: http://go.microsoft.com/fwlink/?LinkId=251979
-  [用于角色中缓存的输出缓存提供程序]: http://msdn.microsoft.com/en-us/library/windowsazure/gg185662.aspx
+  [用于角色中缓存的输出缓存提供程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185662.aspx
   [角色中缓存]: http://www.microsoft.com/en-us/showcase/Search.aspx?phrase=azure+caching
-  [迁移到角色中缓存]: http://msdn.microsoft.com/en-us/library/hh914163.aspx
-  [角色中缓存示例]: http://msdn.microsoft.com/en-us/library/jj189876.aspx
+  [迁移到角色中缓存]: http://msdn.microsoft.com/zh-cn/library/hh914163.aspx
+  [角色中缓存示例]: http://msdn.microsoft.com/zh-cn/library/jj189876.aspx
   [最高性能：使用 Azure Caching 让你的云服务应用程序提速]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/WAD-B326#fbid=kmrzkRxQ6gU

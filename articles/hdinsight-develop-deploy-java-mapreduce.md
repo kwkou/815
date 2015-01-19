@@ -471,7 +471,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
         Get-AzureStorageBlobContent -Container $containerName_Data -Blob $blobName -Context $storageContext -Force
         cat "./$blobName" | findstr "there"
 
-作业完成后，你可以选择使用 [Sqoop][] 将数据导出到 SQL Server 或 Azure SQL Database，或者将数据导出到 Excel。
+作业完成后，你可以选择使用 [Sqoop][] 将数据导出到 SQL Server 或 Azure SQL数据库，或者将数据导出到 Excel。
 
 ## <a id="nextsteps"></a>后续步骤
 

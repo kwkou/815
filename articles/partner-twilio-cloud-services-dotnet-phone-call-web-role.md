@@ -153,7 +153,7 @@
 
 提供此代码是为了演示在 Azure 上的 ASP.NET Web 角色中使用 Twilio 的基本功能。在生产中部署到 Azure 之前，你可能希望添加更多错误处理功能或其他功能。例如：
 
--   你可以使用 Azure Blob 存储或 Azure SQL Database 实例存储电话号码和呼叫文本，而不使用 Web 窗体。有关在 Azure 中使用 Blob 的信息，请参阅[如何在 .NET 中使用 Azure Blob 存储服务][如何在 .NET 中使用 Azure Blob 存储服务]。有关使用 SQL Database 的信息，请参阅[如何在 .NET 应用程序中使用 Azure SQL Database][如何在 .NET 应用程序中使用 Azure SQL Database]。
+-   你可以使用 Azure Blob 存储或 Azure SQL数据库 实例存储电话号码和呼叫文本，而不使用 Web 窗体。有关在 Azure 中使用 Blob 的信息，请参阅[如何在 .NET 中使用 Azure Blob 存储服务][如何在 .NET 中使用 Azure Blob 存储服务]。有关使用 SQL数据库 的信息，请参阅[如何在 .NET 应用程序中使用 Azure SQL数据库][如何在 .NET 应用程序中使用 Azure SQL数据库]。
 -   你可以使用 RoleEnvironment.getConfigurationSettings 从部署的配置设置中检索 Twilio 帐户 ID 和身份验证令牌，而不是在窗体中对这些值进行硬编码。有关 RoleEnvironment 类的信息，请参阅 [Microsoft.WindowsAzure.ServiceRuntime 命名空间][Microsoft.WindowsAzure.ServiceRuntime 命名空间]。
 -   阅读 [][6]<https://www.twilio.com/docs/security></a> 上的 Twilio 安全准则。
 -   在 [][7]<https://www.twilio.com/docs></a> 上了解有关 Twilio 的详细信息。
@@ -176,7 +176,7 @@
   [4]: http://www.twilio.com/docs/api/twiml
   [5]: http://www.twilio.com/docs/api/twiml/say
   [如何在 .NET 中使用 Azure Blob 存储服务]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/blob-storage/
-  [如何在 .NET 应用程序中使用 Azure SQL Database]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/sql-database/
+  [如何在 .NET 应用程序中使用 Azure SQL数据库]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/sql-database/
   [Microsoft.WindowsAzure.ServiceRuntime 命名空间]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
   [6]: http://www.twilio.com/docs/security
   [7]: http://www.twilio.com/docs

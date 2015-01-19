@@ -201,7 +201,7 @@
 
 ### 如何添加数据库和授权功能
 
-大多数生产网站使用数据库并且只允许特定授权用户访问某些网站功能。有关说明如何开始使用数据库访问、身份验证和授权的教程，请参见[使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站][使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]。
+大多数生产网站使用数据库并且只允许特定授权用户访问某些网站功能。有关说明如何开始使用数据库访问、身份验证和授权的教程，请参见[使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站][使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]。
 
 ### 如何决定应用程序是否应在云服务中运行
 
@@ -244,7 +244,7 @@
   [如何缩放网站]: /zh-cn/manage/services/web-sites/how-to-scale-websites/
   [Visual Studio 中的日志]: ./media/web-sites-dotnet-get-started-vs2012/LogsInVS.png
   [在 Visual Studio 中排除 Windows Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
-  [使用成员资格、OAuth 和 SQL Database 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/
+  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/
   [Azure 执行模型]: /zh-cn/develop/net/fundamentals/compute/
-  [Azure 网站、 云服务和虚拟机比较]: http://azure.microsoft.com/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [Azure 网站、 云服务和虚拟机比较]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
   [使用存储表、队列和 Blob 的 .NET 多层应用程序]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
