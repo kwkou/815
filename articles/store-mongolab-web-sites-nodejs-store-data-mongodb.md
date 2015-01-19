@@ -384,10 +384,10 @@
         info:   Executing `git init`
         info:   Creating default web.config file
         info:   Creating a new web site
-        info:   Created web site at  mongodbtasklist.azurewebsites.net
+        info:   Created web site at  mongodbtasklist.chinacloudsites.cn
         info:   Initializing repository
         info:   Repository initialized
-        info:   Executing `git remote add azure http://gitusername@myuniquesitename.azurewebsites.net/mongodbtasklist.git`
+        info:   Executing `git remote add azure http://gitusername@myuniquesitename.chinacloudsites.cn/mongodbtasklist.git`
         info:   site create command OK
 
 8.  使用以下命令将文件添加然后提交到你的本地 Git 存储库：
@@ -416,7 +416,7 @@
         ...
         remote: Deploying Web.config to enable Node.js activation.
         remote: Deployment successful.
-        To https://username@mongodbtasklist.azurewebsites.net/MongoDBTasklist.git
+        To https://username@mongodbtasklist.chinacloudsites.cn/MongoDBTasklist.git
          * [new branch]      master -> master
 
 即将完成！
@@ -435,7 +435,7 @@
 
 ## 成功！
 
-从你的项目目录运行`azure site browse` 以便自动打开浏览器，或者打开浏览器并手动导航到你的网站 URL (myuniquesite.azurewebsites.net)：
+从你的项目目录运行`azure site browse` 以便自动打开浏览器，或者打开浏览器并手动导航到你的网站 URL (myuniquesite.chinacloudsites.cn)：
 
 ![显示空白 tasklist 的网页][显示空白 tasklist 的网页]
 

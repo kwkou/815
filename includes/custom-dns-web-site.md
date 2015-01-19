@@ -1,6 +1,6 @@
 # 为 Azure 网站配置自定义域名
 
-当你创建网站时，Azure 在 azurewebsites.net 域中提供了一个友好的子域，以使你的用户可使用类似 http://&lt;mysite>.azurewebsites.net 的 URL 访问你的网站。但是，如果你将网站配置为共享或标准模式，则可将网站映射到你自己的域名。
+当你创建网站时，Azure 在 chinacloudsites.cn 域中提供了一个友好的子域，以使你的用户可使用类似 http://&lt;mysite>.chinacloudsites.cn 的 URL 访问你的网站。但是，如果你将网站配置为共享或标准模式，则可将网站映射到你自己的域名。
 
 另外，你可以使用 Azure 流量管理器 对你的网站的传入流量进行负载平衡。有关 流量管理器 如何作用于网站的详细信息，请参阅[使用 Azure 流量管理器 控制 Azure 网站流量][trafficmanager]。
 
@@ -22,7 +22,7 @@ CNAME（即别名记录）和 A 记录都允许你将域名与网站进行关联
 
 ### CNAME（即别名）记录
 
-CNAME 记录将*特定的*域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是你的 Azure 网站的 **\<myapp\>.azurewebsites.net** 域名或你的 流量管理器 配置文件的 **\<myapp\>.trafficmgr.com** 域名。一旦创建，CNAME 即为 **\<myapp\>.azurewebsites.net** 或 **\<myapp\>.trafficmgr.com** 域名创建别名。CNAME 条目将自动解析为你的 **\<myapp\>.azurewebsites.net** 或 **\<myapp\>.trafficmgr.com** 域名的 IP 地址。因此，如果网站的 IP 地址发生更改，你不必采取任何操作。
+CNAME 记录将*特定的*域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是你的 Azure 网站的 **\<myapp\>.chinacloudsites.cn** 域名或你的 流量管理器 配置文件的 **\<myapp\>.trafficmgr.com** 域名。一旦创建，CNAME 即为 **\<myapp\>.chinacloudsites.cn** 或 **\<myapp\>.trafficmgr.com** 域名创建别名。CNAME 条目将自动解析为你的 **\<myapp\>.chinacloudsites.cn** 或 **\<myapp\>.trafficmgr.com** 域名的 IP 地址。因此，如果网站的 IP 地址发生更改，你不必采取任何操作。
 
 > [WACOM.NOTE] 某些域注册机构只允许你在使用 CNAME 记录（例如 www.contoso.com）而非根名称（例如 contoso.com）时对子域进行映射。有关 CNAME 记录的详细信息，请参阅你的注册机构提供的文档<a href="http://en.wikipedia.org/wiki/CNAME_record">关于 CNAME 记录的 Wikipedia 词条</a>或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
 
@@ -192,7 +192,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
 3.  在**管理自定义域**对话框上，找到**在配置 A 记录时要使用的 IP 地址**。复制 IP 地址。在创建 A 记录时将使用该地址。
 
-4.  在**管理自定义域**对话框上，记下位于对话框顶部文本末尾的 awverify 域名。它应当是 **awverify.mysite.azurewebsites.net**，其中 **mysite** 是你的网站的名称。复制该域名，因为在创建验证用的 CNAME 记录时将使用该域名。
+4.  在**管理自定义域**对话框上，记下位于对话框顶部文本末尾的 awverify 域名。它应当是 **awverify.mysite.chinacloudsites.cn**，其中 **mysite** 是你的网站的名称。复制该域名，因为在创建验证用的 CNAME 记录时将使用该域名。
 
 5.  登录到你的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。查找网站中标签为**域名**、**DNS**或**名称服务器管理**的链接或区域。
 
@@ -221,7 +221,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 
         此示例展示了如何为根域创建 A 记录。如果希望创建一个通配符条目来涵盖所有子域，则输入 '__*__' 作为子域。
 
-8.  接下来，创建一个别名为 **awverify** 且规范域为之前获得的 **awverify.mysite.azurewebsites.net** 的 CNAME 记录。
+8.  接下来，创建一个别名为 **awverify** 且规范域为之前获得的 **awverify.mysite.chinacloudsites.cn** 的 CNAME 记录。
 
     > [WACOM.NOTE] 虽然别名 awverify 对某些注册机构而言可能有效，但是另一些注册机构可能需要完整的别名域名 awverify.www.customdomainname.com 或 awverify.customdomainname.com。
 
@@ -234,7 +234,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）或*通配符�
 	</tr>
 	<tr>
 	<td>awverify</td>
-	<td>awverify.contoso.azurewebsites.net</td>
+	<td>awverify.contoso.chinacloudsites.cn</td>
 	</tr>
 	</table>
 

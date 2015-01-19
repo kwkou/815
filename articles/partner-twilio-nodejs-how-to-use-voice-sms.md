@@ -135,7 +135,7 @@ Twilio 提供一个客户端 SDK，它可以将任何桌面 Web 浏览器、iOS 
 
           // A URL in our app which generates TwiML
           // Change "CHANGE_ME" to your app's name
-          url:'https://CHANGE_ME.azurewebsites.net/outbound_call'
+          url:'https://CHANGE_ME.chinacloudsites.cn/outbound_call'
       }, function(error, data) {
           // Go back to the home page
           response.redirect('/');

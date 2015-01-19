@@ -45,7 +45,7 @@ Umbraco CMS 是一种功能齐备的开源内容管理系统，可用于创建�
 
 ## 启动并配置 Umbraco CMS 网站
 
-1.  在网站的详细信息分页中，单击“浏览”浏览您的站点（本例中为 umbracocmsgroup.azurewebsites.net。）
+1.  在网站的详细信息分页中，单击“浏览”浏览您的站点（本例中为 umbracocmsgroup.chinacloudsites.cn。）
 
     ![浏览到您的站点][浏览到您的站点]
 

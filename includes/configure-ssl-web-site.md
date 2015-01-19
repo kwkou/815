@@ -4,9 +4,9 @@ When someone visits your web site using HTTPS, the communication between the web
 
 > [WACOM.NOTE] In order to enable HTTPS for custom domain names, you must configure your web sites for standard mode. This may incur additional costs if you are currently using free or shared mode. For more information on shared and standard mode pricing, see [Pricing Details](http://www.windowsazure.cn/pricing/overview/). To get started with Azure, see [Windows Azure Free Trial](http://www.windowsazure.cn/pricing/1rmb-trial/).
 
-<a href="bkmk_azurewebsites"></a><h2>The \*.azurewebsites.net domain</h2>
+<a href="bkmk_azurewebsites"></a><h2>The \*.chinacloudsites.cn domain</h2>
 
-If you are not planning on using a custom domain name, but are instead planning on using the \*.azurewebsites.net domain assigned to your web site by Azure (for example, contoso.azurewebsites.net,) then your site is already secured by a certificate provided by Microsoft. You can use **https://mywebsite.azurewebsites.net** to access your site securely.
+If you are not planning on using a custom domain name, but are instead planning on using the \*.chinacloudsites.cn domain assigned to your web site by Azure (for example, contoso.chinacloudsites.cn,) then your site is already secured by a certificate provided by Microsoft. You can use **https://mywebsite.chinacloudsites.cn** to access your site securely.
 
 The rest of this document provides details on enabling HTTPS for custom domain names, such as **contoso.com**, **www.contoso.com**, or **\*.contoso.com**
 
@@ -22,7 +22,7 @@ Registering a domain name also enables you to create subdomains such as **www.co
 
 **Wildcard certificates** are certificates where the CN of the certificate contains a wildcard '\*' at the subdomain level. This allows the certificate to match a single level of subdomains for a given domain. For example, a wildcard certificate for **\*.contoso.com** would be valid for **www.contoso.com**, **payment.contoso.com**, and **login.contoso.com**. It would not be valid for **test.login.contoso.com**, as this adds an extra subdomain level. It would also not be valid for **contoso.com**, as this is the root domain level and not a subdomain.
 
-A wildcard certificate is what Microsoft provides for the \*.azurewebsites.net domain name automatically created for your web site.
+A wildcard certificate is what Microsoft provides for the \*.chinacloudsites.cn domain name automatically created for your web site.
 
 **subjectAltName** is an certificate extension that allows various values, or Subject Alternate Names, to be associated with a certificate. For the purpose of SSL certificates, this allows you to add additional DNS names that the certificate will be valid against. For example, a certificate using subjectAltName may have a CN of **contoso.com**, but may also have alternate names of **www.contoso.com**, **payment.contoso.com**, **test.login.contoso.com**, and even **fabrikam.com**. Such a certificate would be valid for all domain names specified in the Common Name and subjectAltName.
 
@@ -42,7 +42,7 @@ The certificate must meet the following requirements for SSL certificates in Azu
 
 	* For information on configuring a custom domain name for an Azure Web Site, see [Configuring a custom domain name for an Azure Web Site][customdomain].
 	
-	> [WACOM.NOTE] Do not attempt to obtain or generate a certificate for the azurewebsites.net domain.
+	> [WACOM.NOTE] Do not attempt to obtain or generate a certificate for the chinacloudsites.cn domain.
 
 * The certificate should use a minimum of 2048-bit encryption.
 
