@@ -26,7 +26,7 @@
 
 ![登录页面][rxb]
 
-<div class="dev-callout"><p><strong>注意</strong> 若要完成本教程，您需要一个 Windows Azure 帐户。如果您没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关更多信息，请参见 <a href="http://www.windowsazure.com/zh-cn/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">Windows Azure 免费试用</a>。</p></div>
+<div class="dev-callout"><p><strong>注意</strong> 若要完成本教程，您需要一个 Windows Azure 帐户。如果您没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关更多信息，请参见 <a href="http://www.windowsazure.cn/zh-cn/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">Windows Azure 免费试用</a>。</p></div>
 
 
 在本教程中：
@@ -55,7 +55,7 @@
 
 Windows Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL数据库。
 
-1. 在 [Windows Azure 管理门户](https://manage.windowsazure.com) 中，单击左侧选项卡中的“网站”，然后单击“新建”。
+1. 在 [Windows Azure 管理门户](https://manage.windowsazure.cn) 中，单击左侧选项卡中的“网站”，然后单击“新建”。
 
 	![管理门户中的“新建”按钮][rxWSnew]
 

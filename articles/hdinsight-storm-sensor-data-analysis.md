@@ -611,7 +611,7 @@ Event Hub 用于从传感器中接收消息（事件）。 按照下列步骤创
 
 1.  使用"远程桌面"连接到 HBase 群集。
 
-2.  连接到群集后，打开 Hadoop 命令行并运行 **ipconfig** 命令以获取 DNS 后缀。 **连接特定 DNS 后缀**将包含后缀值。 例如，**mycluster.b4.internal.cloudapp.net**。请保存此信息。
+2.  连接到群集后，打开 Hadoop 命令行并运行 **ipconfig** 命令以获取 DNS 后缀。 **连接特定 DNS 后缀**将包含后缀值。 例如，**mycluster.b4.internal.chinacloudapp.cn**。请保存此信息。
 
 ## 开发 Storm 拓扑
 

@@ -44,7 +44,7 @@ API 管理（预览版）提供了一个 API 检查器工具，帮助您进行�
 
 响应标头将是 **ocp-apim-trace-location**，值类似于下面的示例。
 
-    ocp-apim-trace-location : https://contosoltdxw7zagdfsprykd.blob.core.windows.net/apiinspectorcontainer/ZW3e23NsW4wQyS-SHjS0Og2-2?sv=2013-08-15&sr=b&sig=Mgx7cMHsLmVDv%2B%2BSzvg3JR8qGTHoOyIAV7xDsZbF7%2Bk%3D&se=2014-05-04T21%3A00%3A13Z&sp=r&verify_guid=a56a17d83de04fcb8b9766df38514742
+    ocp-apim-trace-location : https://contosoltdxw7zagdfsprykd.blob.core.chinacloudapi.cn/apiinspectorcontainer/ZW3e23NsW4wQyS-SHjS0Og2-2?sv=2013-08-15&sr=b&sig=Mgx7cMHsLmVDv%2B%2BSzvg3JR8qGTHoOyIAV7xDsZbF7%2Bk%3D&se=2014-05-04T21%3A00%3A13Z&sp=r&verify_guid=a56a17d83de04fcb8b9766df38514742
 
 可以从指定的位置下载和查看跟踪，如下一步中所示。
 

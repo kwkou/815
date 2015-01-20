@@ -1,4 +1,4 @@
-<properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL数据库 server and Storage account." metaCanonical="http://www.windowsazure.com/en-us/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL数据库 server and Storage account." metaCanonical="http://www.windowsazure.cn/en-us/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
 
 # 使用 Azure 管理门户创建 BizTalk 服务
 
@@ -33,10 +33,10 @@
 	<tr>
 	<td><strong>BizTalk 服务名称</strong></td>
 	<td>你可以输入任何名称，但请尽量具体。示例包括：<br/><br/>
-	<em>mycompany</em>.biztalk.windows.net<br/>
-	<em>mycompanymyapplication</em>.biztalk.windows.net<br/>
-	<em>myapplication</em>.biztalk.windows.net<br/><br/>
-“.biztalk.windows.net”将自动添加到你输入的名称上。此时将会创建一个用于访问 BizTalk 服务的 URL，例如<strong>https://<em>myapplication</em>.biztalk.windows.net。</strong>.
+	<em>mycompany</em>.biztalk.chinacloudapi.cn<br/>
+	<em>mycompanymyapplication</em>.biztalk.chinacloudapi.cn<br/>
+	<em>myapplication</em>.biztalk.chinacloudapi.cn<br/><br/>
+“.biztalk.chinacloudapi.cn”将自动添加到你输入的名称上。此时将会创建一个用于访问 BizTalk 服务的 URL，例如<strong>https://<em>myapplication</em>.biztalk.chinacloudapi.cn。</strong>.
 	</td>
 	</tr>
 	<tr>
@@ -50,7 +50,7 @@
 	</tr>
 	<tr>
 	<td><strong>域 URL</strong></td>
-	<td><strong>可选</strong>。 默认情况下，域 URL 为 <em>YourBizTalkServiceName</em>.biztalk.windows.net。也可以输入自定义域。例如，如果你的域是contoso，则可输入：<br/><br/>
+	<td><strong>可选</strong>。 默认情况下，域 URL 为 <em>YourBizTalkServiceName</em>.biztalk.chinacloudapi.cn。也可以输入自定义域。例如，如果你的域是contoso，则可输入：<br/><br/>
 	<em>MyCompany</em>.contoso.com<br/>
 	<em>MyCompanyMyApplication</em>.contoso.com<br/>
 	<em>MyApplication</em>.contoso.com<br/>
@@ -198,7 +198,7 @@ Azure 订阅
 </td>
 
 <td>
-订阅决定了谁可以登录 Azure 管理门户，由帐户持有人在 <a HREF="https://account.windowsazure.com/Subscriptions"> Azure 订阅</a>中创建。
+订阅决定了谁可以登录 Azure 管理门户，由帐户持有人在 <a HREF="https://account.windowsazure.cn/Subscriptions"> Azure 订阅</a>中创建。
 <br/><br/>
 Azure 帐户可以有多个订阅，并且可由获得许可的任何用户管理。例如，你的 Azure 帐户持有人创建一个名为 <em>BizTalkServiceSubscription</em> 的订阅，并向贵公司内的 BizTalk 管理员（如 <ContosoBTSAdmins@live.com>）授予对此订阅的访问权限。在这种情况下，BizTalk 管理员登录到 Azure 管理门户，并对订阅中的所有托管服务（包括 Azure BizTalk 服务）拥有完全管理员权限。BizTalk 管理员不是 Azure 帐户持有人，因此无法访问任何结算信息。
 <br/><br/>
@@ -339,7 +339,7 @@ SSL 专用证书
   [选择连接信息]: ./media/biztalk-provision-services/WABS_ACSConnectInformation.png
   [Access Control 管理门户中的 ACS 服务标识]: ./media/biztalk-provision-services/WABS_ACSServiceIdentities.png
   [管理 ACS 命名空间]: http://go.microsoft.com/fwlink/p/?LinkID=285670
-  [Azure 订阅]: https://account.windowsazure.com/Subscriptions
+  [Azure 订阅]: https://account.windowsazure.cn/Subscriptions
   [在 Azure 管理门户中管理订阅和存储帐户]: http://go.microsoft.com/fwlink/p/?LinkID=267577
   [Azure SQL数据库 中的帐户和计费]: http://go.microsoft.com/fwlink/p/?LinkID=234930
   [存储]: http://go.microsoft.com/fwlink/p/?LinkID=285671

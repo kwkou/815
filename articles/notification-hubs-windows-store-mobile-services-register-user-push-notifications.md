@@ -60,7 +60,7 @@
 
             // Get a channel for push notifications.
             var channel =
-                await Windows.Networking.PushNotifications
+                await chinacloudapi.cnworking.PushNotifications
                 .PushNotificationChannelManager
                 .CreatePushNotificationChannelForApplicationAsync();
 

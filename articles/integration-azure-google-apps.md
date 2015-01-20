@@ -190,7 +190,7 @@
   [Google\_Tutorial\_06]: ./media/integration-azure-google-apps/Google_Tutorial_06.png
   [Google\_Tutorial\_07]: ./media/integration-azure-google-apps/Google_Tutorial_07.png
   [Google\_Tutorial\_08]: ./media/integration-azure-google-apps/Google_Tutorial_08.png
-  [访问面板]: https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384289458&rver=6.1.6206.0&wp=MCMBI&wreply=https:%2F%2Faccount.activedirectory.windowsazure.com%2Flanding.aspx%3Ftarget%3D%252fapplications%252fdefault.aspx&lc=1033&id=500633
+  [访问面板]: https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384289458&rver=6.1.6206.0&wp=MCMBI&wreply=https:%2F%2Faccount.activedirectory.windowsazure.cn%2Flanding.aspx%3Ftarget%3D%252fapplications%252fdefault.aspx&lc=1033&id=500633
   [Google\_Tutorial\_09]: ./media/integration-azure-google-apps/Google_Tutorial_09.png
   [Google\_Tutorial\_10]: ./media/integration-azure-google-apps/Google_Tutorial_10.png
   [Google\_Tutorial\_11]: ./media/integration-azure-google-apps/Google_Tutorial_11.png

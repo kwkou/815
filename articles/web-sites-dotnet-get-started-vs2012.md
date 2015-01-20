@@ -213,7 +213,7 @@
   [创建 ASP.NET MVC 4 应用程序]: #createmvc4app
   [将应用程序部署到 Azure]: #deploytowindowsazure
   [后续步骤]: #nextsteps
-  [Azure 管理门户]: http://manage.windowsazure.com
+  [Azure 管理门户]: http://manage.windowsazure.cn
   [新建网站]: ./media/web-sites-dotnet-get-started-vs2012/WebSiteNew.png
   [快速创建]: ./media/web-sites-dotnet-get-started-vs2012/ClickQuickCreate.png
   [创建新网站]: ./media/web-sites-dotnet-get-started-vs2012/CreateWebsite.png

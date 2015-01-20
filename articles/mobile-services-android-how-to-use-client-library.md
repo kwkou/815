@@ -820,7 +820,7 @@
 <a name="next-steps"></a>
 ## 后续步骤
 
-[][]<http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/package-summary.html>提供了 Android 客户端 API 的 Javadocs 参考
+[][]<http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/package-summary.html>提供了 Android 客户端 API 的 Javadocs 参考
 
   [.NET Framework]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
   [HTML/JavaScript]: /zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
@@ -861,7 +861,7 @@
   [mobile-services-concepts]: ../includes/mobile-services-concepts.md
   [创建表]: http://go.microsoft.com/fwlink/p/?LinkId=298592
   [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-  [MobileServiceClient]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html
+  [MobileServiceClient]: http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html
   [gson]: %20http://go.microsoft.com/fwlink/p/?LinkId=290801
   [MobileServiceTable]: http://go.microsoft.com/fwlink/p/?LinkId=296835
   [第一个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296839
@@ -924,6 +924,6 @@
   ["TableJsonQueryCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=298543
   [身份验证入门]: http://go.microsoft.com/fwlink/p/?LinkId=296316
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [此处]: https://www.windowsazure.com/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
+  [此处]: https://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
   [在移动服务 Android 客户端中使用]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
   []: http://go.microsoft.com/fwlink/p/?LinkId=298735 "此处"

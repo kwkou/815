@@ -218,7 +218,7 @@ TwiML 是一组基于 XML 的指令，这些指令以用于指示 Twilio 如何�
     $token = "your_twilio_authentication_token";
     $from_number = "NNNNNNNNNNN";
     $to_number = "NNNNNNNNNNN";
-    $url = "http://<your_hosted_service>.cloudapp.net/MyTwiML/mytwiml.php";
+    $url = "http://<your_hosted_service>.chinacloudapp.cn/MyTwiML/mytwiml.php";
 
     // The phone message text.
     $message = "Hello world.";

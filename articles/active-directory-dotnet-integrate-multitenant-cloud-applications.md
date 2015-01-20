@@ -93,7 +93,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 3.  客户可授权或拒绝您的应用程序的同意。
 4.  Azure AD 将客户重定向到您指定的“应用重定向 URL”。在 Microsoft Seller Dashboard 上生成客户端 ID 和客户端机密时，您指定此 URL。重定向请求表示同意请求的结果，如果授予同意则包括有关其租户的信息。
 
-要在上面的步骤 2 中生成重定向请求，必须为 Azure AD 授权页将查询字符串参数附加到以下 URL：*http://activedirectory.windowsazure.com/Consent/AuthorizeApplication.aspx*
+要在上面的步骤 2 中生成重定向请求，必须为 Azure AD 授权页将查询字符串参数附加到以下 URL：*http://activedirectory.windowsazure.cn/Consent/AuthorizeApplication.aspx*
 
 查询字符串参数的描述如下：
 
@@ -112,7 +112,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 如果未指定参数或参数指定错误，则默认值为 "None"。
 
 以下是一个有效同意请求 URL 的示例：
-*https://activedirectory.windowsazure.com/Consent/AuthorizeApplication.aspx?ApplicationId=33E48BD5-1C3E-4862-BA79-1C0D2B51FB26&RequestedPermissions=DirectoryReader*
+*https://activedirectory.windowsazure.cn/Consent/AuthorizeApplication.aspx?ApplicationId=33E48BD5-1C3E-4862-BA79-1C0D2B51FB26&RequestedPermissions=DirectoryReader*
 
 在示例应用程序中，“注册”链接包含用于同意请求的类似 URL，如下所示：
 
@@ -184,10 +184,10 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 为演示这一过程，以下步骤使用 contoso.com 域名。
 
 1.  为 Azure AD 租户获取 **FederationMetadata.xml** 文件。例如：
-    *https://accounts.accesscontrol.windows.net/contoso.com/FederationMetadata/2007-06/FederationMetadata.xml*
-2.  在 **FederationMetadata.xml** 文件中，找到**实体描述符**条目。租户 ID 包含作为 **entityID** 属性的一部分，遵循 "https://sts.windows.net"，如下所示：
+    *https://accounts.accesscontrol.chinacloudapi.cn/contoso.com/FederationMetadata/2007-06/FederationMetadata.xml*
+2.  在 **FederationMetadata.xml** 文件中，找到**实体描述符**条目。租户 ID 包含作为 **entityID** 属性的一部分，遵循 "https://sts.chinacloudapi.cn"，如下所示：
 
-         <EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://sts.windows.net/a7456b11-6fe2-4e5b-bc83-67508c201e4b/" ID="_cba45203-f8f4-4fc3-a3bb-0b136a2bafa5"> 
+         <EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://sts.chinacloudapi.cn/a7456b11-6fe2-4e5b-bc83-67508c201e4b/" ID="_cba45203-f8f4-4fc3-a3bb-0b136a2bafa5"> 
 
     在这种情况下，TenantID 值是 **a7456b11-6fe2-4e5b-bc83-67508c201e4b**。
 
@@ -240,7 +240,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 2.  使用 Azure 身份验证库 (AAL) 获取访问令牌
 3.  调用 Azure AD Graph，获取租户用户的列表
 
-<div class="dev-callout"><strong>说明</strong><p>示例应用程序帮助程序库 Microsoft.IdentityModel.WAAD.Preview 已经包含一个自动生成的代理类（通过将服务引用添加到调用 GraphService 的 https://graph.windows.net/your-domain-name 创建）。该应用程序将使用此代理类来调入 Azure AD Graph 服务。</p></div>
+<div class="dev-callout"><strong>说明</strong><p>示例应用程序帮助程序库 Microsoft.IdentityModel.WAAD.Preview 已经包含一个自动生成的代理类（通过将服务引用添加到调用 GraphService 的 https://graph.chinacloudapi.cn/your-domain-name 创建）。该应用程序将使用此代理类来调入 Azure AD Graph 服务。</p></div>
 
 ### 步骤 1：使用代理类调用 Azure AD Graph
 
@@ -258,7 +258,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
         // that contains a tenant id. Extract that here
         TenantDomainName = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/ws/2012/10/identity/claims/tenantid").Value;
 
-        // 1b: We generate a URL (https://graph.windows.net/<CustomerDomainName>)
+        // 1b: We generate a URL (https://graph.chinacloudapi.cn/<CustomerDomainName>)
         // to access the Azure AD Graph API endpoint for the tenant 
         connectionUri = new Uri(string.Format(@"https://{0}/{1}", TenantUtils.Globals.endpoint, TenantDomainName));
 

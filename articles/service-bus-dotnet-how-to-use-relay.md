@@ -148,7 +148,7 @@
 
     sh.Close();
 
-在本示例中，你将创建两个位于同一协定实施中的终结点。一个是本地的，一个通过 服务总线 进行投影。两者之间的主要区别是绑定；本地终结点使用**NetTcpBinding**，而 服务总线 终结点和地址使用**NetTcpRelayBinding**。本地终结点有一个使用不同端口的本地网络地址。服务总线 终结点有一个由字符串“sb”、你的命名空间名称、路径“solver”组成的终结点地址。这将生成 URI“sb://[serviceNamespace].servicebus.windows.net/solver”，将服务终结点标识为具有完全限定的外部 DNS 名称的 服务总线 TCP 终结点。如果将替换上述占位符的代码放入“服务”应用程序的**Main** 函数中，你将会获得一个可正常运行的服务。如果你希望你的服务专门侦听 服务总线，请删除本地终结点声明。
+在本示例中，你将创建两个位于同一协定实施中的终结点。一个是本地的，一个通过 服务总线 进行投影。两者之间的主要区别是绑定；本地终结点使用**NetTcpBinding**，而 服务总线 终结点和地址使用**NetTcpRelayBinding**。本地终结点有一个使用不同端口的本地网络地址。服务总线 终结点有一个由字符串“sb”、你的命名空间名称、路径“solver”组成的终结点地址。这将生成 URI“sb://[serviceNamespace].servicebus.chinacloudapi.cn/solver”，将服务终结点标识为具有完全限定的外部 DNS 名称的 服务总线 TCP 终结点。如果将替换上述占位符的代码放入“服务”应用程序的**Main** 函数中，你将会获得一个可正常运行的服务。如果你希望你的服务专门侦听 服务总线，请删除本地终结点声明。
 
 **如何在 App.config 文件中配置服务主机**
 
@@ -170,7 +170,7 @@
                       address="net.tcp://localhost:9358/solver"/>
             <endpoint contract="Service.IProblemSolver"
                       binding="netTcpRelayBinding"
-                      address="sb://**namespace**.servicebus.windows.net/solver"
+                      address="sb://**namespace**.servicebus.chinacloudapi.cn/solver"
                       behaviorConfiguration="sbTokenProvider"/>
         </service>
     </services>
@@ -227,7 +227,7 @@
     <client>
         <endpoint name="solver" contract="Service.IProblemSolver"
                   binding="netTcpRelayBinding"
-                  address="sb://**namespace**.servicebus.windows.net/solver"
+                  address="sb://**namespace**.servicebus.chinacloudapi.cn/solver"
                   behaviorConfiguration="sbTokenProvider"/>
     </client>
     <behaviors>

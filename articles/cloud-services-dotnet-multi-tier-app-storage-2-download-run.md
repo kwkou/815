@@ -73,7 +73,7 @@
 
 4.  单击**“创建存储帐户”**。
 
-    在下图中，存储帐户是使用 `aestest3.core.windows.net` 创建的。
+    在下图中，存储帐户是使用 `aestest3.core.chinacloudapi.cn` 创建的。
 
     ![使用 URL 前缀创建存储][使用 URL 前缀创建存储]
 
@@ -133,7 +133,7 @@
 
 6.  单击“创建云服务”。
 
-    在下图中，使用 URL aescloud.cloudapp.net 创建了一项云服务。
+    在下图中，使用 URL aescloud.chinacloudapp.cn 创建了一项云服务。
 
     ![使用 URL 前缀创建存储][2]
 
@@ -378,7 +378,7 @@
 
     ![SendGridSettings][SendGridSettings]
 
-2.  此外还有 AzureMailServiceURL 设置。将此值设置为你在创建 Azure 云服务时选择的 URL，例如：“http://aescloud.cloudapp.net”。
+2.  此外还有 AzureMailServiceURL 设置。将此值设置为你在创建 Azure 云服务时选择的 URL，例如：“http://aescloud.chinacloudapp.cn”。
 
 通过更新云配置文件，你可以配置应用程序在云中运行时将使用的设置。如果你想要应用程序在本地运行时发送电子邮件，则还需更新 *ServiceConfiguration.Local.cscfg* 文件。
 
@@ -619,7 +619,7 @@
   [选择云项目属性]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-aesp.png
   [禁用存储模拟器的自动启动]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-1.png
   [7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png
-  [如何在 Azure 中使用 SendGrid 发送电子邮件]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
+  [如何在 Azure 中使用 SendGrid 发送电子邮件]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
   [SendGridSettings]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-sg.png
   [必应]: http://www.bing.com/search?q=find+my+IP&qs=n&form=QBLH&pq=find+my+ip&sc=8-10&sp=-1&sk= "查找我的 IP"
   [程序包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-6.png
@@ -630,7 +630,7 @@
   [8]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-11.png
   [9]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-9.png
   [10]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c55.png
-  [Azure 免费试用帐户]: http://www.windowsazure.com/zh-cn/pricing/free-trial/ "免费试用帐户"
+  [Azure 免费试用帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/ "免费试用帐户"
   [11]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-19.png
   [12]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png
   [13]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c6.png

@@ -302,7 +302,7 @@
   [测试应用程序中的数据库写入冲突]: #test-app
   [使用服务器脚本自动解决冲突]: #scriptsexample
   [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=268374
-  [Azure 帐户]: http://www.windowsazure.com/zh-cn/pricing/free-trial/
+  [Azure 帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-wp8
   [0]: ./media/mobile-services-windows-phone-handle-database-conflicts/mobile-manage-nuget-packages-VS.png
   [1]: ./media/mobile-services-windows-phone-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png

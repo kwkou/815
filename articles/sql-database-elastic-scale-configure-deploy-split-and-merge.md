@@ -35,7 +35,7 @@
 
 3.  创建新的数据库或选择现有的数据库，以将其用作拆分/合并操作的状态数据库并检索该数据库的连接字符串。在 Azure SQL DB 中，连接字符串通常采用以下形式：
 
-        "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
+        "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 4.  同时在 ElasticScaleMetadata 设置的 **SplitMergeWeb** 和 **SplitMergeWorker** 角色部分中，在 cscfg 文件内输入此连接字符串。
 
@@ -60,7 +60,7 @@
 创建新的目录并使用 [Visual Studio 的开发人员命令提示符][Visual Studio 的开发人员命令提示符]窗口从该目录执行以下命令：
 
     makecert ^
-    -n "CN=*.cloudapp.net" ^
+    -n "CN=*.chinacloudapp.cn" ^
     -r -cy end -sky exchange -eku "1.3.6.1.5.5.7.3.1,1.3.6.1.5.5.7.3.2" ^
     -a sha1 -len 2048 ^
     -sr currentuser -ss root ^
@@ -130,10 +130,10 @@
 -   检查服务器和数据库是否存在，以及用户 ID 和密码是否正确。
 -   对于 Azure SQL DB，连接字符串应采用以下形式：
 
-        "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
+        "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 -   确保服务器名称不以 **<https://>** 开头。
--   确保您的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 <https://manage.windowsazure.com>、依次单击左侧的“SQL数据库s”和顶部的“服务器”，然后选择您的服务器。在顶部单击“配置”并确保将“Windows Azure 服务”设置为“是”。（请参阅此文章顶部的“先决条件”部分）。
+-   确保您的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 <https://manage.windowsazure.cn>、依次单击左侧的“SQL数据库s”和顶部的“服务器”，然后选择您的服务器。在顶部单击“配置”并确保将“Windows Azure 服务”设置为“是”。（请参阅此文章顶部的“先决条件”部分）。
 
 -   查看您的拆分/合并服务实例的诊断日志。打开 Visual Studio 实例，然后在菜单栏中，依次单击“视图”和“服务器资源管理器”。单击“Windows Azure”图标以连接到您的 Azure 订阅。然后，导航到“Windows Azure”-\>“存储”-\>“<your storage account>”-\>“表”-\>“WADLogsTable”。有关详细信息，请参阅[使用服务器资源管理器浏览存储资源][使用服务器资源管理器浏览存储资源]
 
@@ -264,14 +264,14 @@ ExecuteSampleSplitMerge.ps1
         .\SetupSampleSplitMergeEnvironment.ps1 `
             -UserName 'mysqluser' `
             -Password 'MySqlPassw0rd' `
-            -ShardMapManagerServerName 'abcdefghij.database.windows.net'
+            -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn'
 
 4.  执行 Getmappings.ps1 脚本以查看示例环境中当前存在的映射。
 
         .\GetMappings.ps1 `
             -UserName 'mysqluser' `
             -Password 'MySqlPassw0rd' `
-            -ShardMapManagerServerName 'abcdefghij.database.windows.net'
+            -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn'
 
 5.  执行 ExecuteSampleSplitMerge.ps1 脚本以执行拆分操作（将第一个分片上一半的数据移至第二个分片），然后执行合并操作（将数据移回第一个分片）。如果您已配置 SSL 并且已将 http 终结点保留为禁用，请确保改为使用 <https://> 终结点。
 
@@ -280,8 +280,8 @@ ExecuteSampleSplitMerge.ps1
         .\ExecuteSampleSplitMerge.ps1 `
             -UserName 'mysqluser' `
             -Password 'MySqlPassw0rd' `
-            -ShardMapManagerServerName 'abcdefghij.database.windows.net' `
-            -SplitMergeServiceEndpoint 'https://mysplitmergeservice.cloudapp.net' `
+            -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn' `
+            -SplitMergeServiceEndpoint 'https://mysplitmergeservice.chinacloudapp.cn' `
             -CertificateThumbprint '0123456789abcdef0123456789abcdef01234567'
 
     如果您收到以下错误，很有可能是您的 Web 终结点证书出现了问题。尝试使用您最喜欢的 Web 浏览器连接到 Web 终结点并检查是否存在证书错误。
@@ -290,7 +290,7 @@ ExecuteSampleSplitMerge.ps1
 
     如果成功，则输出应如下所示：
 
-        > .\ExecuteSampleSplitMerge.ps1 -UserName 'mysqluser' -Password 'MySqlPassw0rd' -ShardMapManagerServerName 'abcdefghij.database.windows.net' -SplitMergeServiceEndpoint 'http://mysplitmergeservice.cloudapp.net' –CertificateThumbprint 0123456789abcdef0123456789abcdef01234567
+        > .\ExecuteSampleSplitMerge.ps1 -UserName 'mysqluser' -Password 'MySqlPassw0rd' -ShardMapManagerServerName 'abcdefghij.database.chinacloudapi.cn' -SplitMergeServiceEndpoint 'http://mysplitmergeservice.chinacloudapp.cn' –CertificateThumbprint 0123456789abcdef0123456789abcdef01234567
         Sending split request
         Began split operation with id dc68dfa0-e22b-4823-886a-9bdc903c80f3
         Polling split-merge request status. Press Ctrl-C to end
@@ -355,7 +355,7 @@ ExecuteSampleSplitMerge.ps1
 <!--Image references-->
 
   [NuGet]: http://docs.nuget.org/docs/start-here/installing-nuget
-  [Azure 管理门户]: https://manage.windowsazure.com
+  [Azure 管理门户]: https://manage.windowsazure.cn
   [允许的服务]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/allowed-services.png
   [管理访问密钥]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/manage.png
   [灵活扩展安全配置]: ./sql-database-elastic-scale-configure-security.md

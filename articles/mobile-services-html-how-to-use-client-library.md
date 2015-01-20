@@ -591,8 +591,8 @@
   [iOS]: /zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
   [Android]: /zh-cn/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
   [Xamarin]: /zh-cn/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
-  [Windows 应用商店 JavaScript 快速入门]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started
-  [HTML 快速入门]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-html
+  [Windows 应用商店 JavaScript 快速入门]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started
+  [HTML 快速入门]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-html
   [什么是移动服务]: #what-is
   [概念]: #concepts
   [如何：创建移动服务客户端]: #create-client
@@ -613,10 +613,10 @@
   [如何：使用跨域资源共享]: #hostnames
   [后续步骤]: #nextsteps
   [mobile-services-concepts]: ../includes/mobile-services-concepts.md
-  [Windows 应用商店 JavaScript 中的数据处理入门]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-data-js
-  [HTML/JavaScript 中的数据处理入门]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-data-html/
+  [Windows 应用商店 JavaScript 中的数据处理入门]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-data-js
+  [HTML/JavaScript 中的数据处理入门]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-data-html/
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-  [用于管理移动服务表的 CLI]: http://www.windowsazure.com/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+  [用于管理移动服务表的 CLI]: http://www.windowsazure.cn/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
   [ListView]: http://msdn.microsoft.com/zh-cn/library/windows/apps/br211837.aspx
   [数据绑定（使用 JavaScript 和 HTML 的 Windows 应用商店应用程序）]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh758311.aspx
   [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-html

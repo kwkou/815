@@ -78,7 +78,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
             }
 
             // Set the URI for the Blob Storage service.
-            Uri blobEndpoint = new Uri(string.Format("https://{0}.blob.core.windows.net", storageAccountName));
+            Uri blobEndpoint = new Uri(string.Format("https://{0}.blob.core.chinacloudapi.cn", storageAccountName));
 
             // Create the BLOB service client.
             CloudBlobClient blobClient = new CloudBlobClient(blobEndpoint, 

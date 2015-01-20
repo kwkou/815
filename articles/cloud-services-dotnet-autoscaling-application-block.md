@@ -493,7 +493,7 @@ Visual Studio 的“输出”窗口中看到如下消息。这些日志消息有
   [如何：定义自动缩放规则]: #DefineAutoscalingRules
   [如何：配置自动缩放应用程序块]: #Configure
   [自动缩放示例图]: ./media/cloud-services-dotnet-autoscaling-application-block/autoscaling01.png
-  [在 Azure 中使用性能计数器]: http://www.windowsazure.com/zh-cn/develop/net/common-tasks/performance-profiling/
+  [在 Azure 中使用性能计数器]: http://www.windowsazure.cn/zh-cn/develop/net/common-tasks/performance-profiling/
   [NuGet]: http://nuget.org/
   [自动缩放 NuGet 程序包配置的文件]: ./media/cloud-services-dotnet-autoscaling-application-block/auotscaling02.png
   [图像]: ./media/cloud-services-dotnet-autoscaling-application-block/autoscaling03.png

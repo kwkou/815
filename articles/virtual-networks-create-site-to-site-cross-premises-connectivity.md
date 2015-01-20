@@ -256,7 +256,7 @@
   [创建虚拟网络]: #CreateVN
   [启动网关并为网络管理员收集信息]: #StartGateway
   [配置 VPN 设备]: #ConfigVPN
-  [Azure 管理门户]: http://manage.windowsazure.com/
+  [Azure 管理门户]: http://manage.windowsazure.cn/
   [0]: ./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVnet_01_OpenVirtualNetworkWizard.png
   [使用管理门户配置虚拟网络]: http://go.microsoft.com/fwlink/?LinkID=248092
   [1]: ./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVnet_02_VirtualNetworkDetails.png
@@ -275,5 +275,5 @@
   [将虚拟网络设置导出到网络配置文件]: http://go.microsoft.com/fwlink/?LinkID=299880
   [虚拟网络常见问题解答]: http://msdn.microsoft.com/library/windowsazure/dn133803.aspx
   [使用网络配置文件配置虚拟网络（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156097.aspx
-  [将虚拟机添加到虚拟网络]: http://www.windowsazure.com/zh-cn/manage/services/networking/add-a-vm-to-a-virtual-network/
+  [将虚拟机添加到虚拟网络]: http://www.windowsazure.cn/zh-cn/manage/services/networking/add-a-vm-to-a-virtual-network/
   [Azure 名称解析概述]: http://go.microsoft.com/fwlink/?LinkId=248097

@@ -142,7 +142,7 @@
 
     -   “名称”：SendGridPassword，**值**：SendGrid 密码。
 
-    -   “名称”：AzureMailServiceURL，**值**：在部署时应用程序会具有的基 URL，例如：http://sampleurl.cloudapp.net。
+    -   “名称”：AzureMailServiceURL，**值**：在部署时应用程序会具有的基 URL，例如：http://sampleurl.chinacloudapp.cn。
 
     ![WorkerRoleB 项目中的新设置][WorkerRoleB 项目中的新设置]
 
@@ -646,7 +646,7 @@
   [Windows Azure 存储服务基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-windows-azure-storage.aspx
   [Azure 表存储基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-azure-table-storage.aspx
   [如何充分利用 Windows Azure 表]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
-  [如何在 .NET 中使用表存储服务]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/table-services/
+  [如何在 .NET 中使用表存储服务]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/table-services/
   [Windows Azure 存储客户端库 2.0 表深入探讨]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx
   [实际应用：为 Azure 表存储设计可扩展分区策略]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh508997.aspx
   [以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern

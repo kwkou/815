@@ -43,7 +43,7 @@
 
     > [WACOM.NOTE] 在给区域文件添加条目之前，请注意，GoDaddy 已经为常用子域（在编辑器中被称为“主机”）创建了 DNS 记录，如“电子邮件”、“文件”、“邮件”，以及其他。如果你要使用的名称已经存在，请修改现有的记录，而不是创建新记录。
 
-    -   添加 CNAME 记录时，必须将“主机”字段设置为你要使用的子域。例如，**www**。必须将“指向”字段设置为 Azure 网站的 **.azurewebsites.net** 域名。例如 **contoso.chinacloudsites.cn**。
+    -   添加 CNAME 记录时，必须将“主机”字段设置为你要使用的子域。例如，**www**。必须将“指向”字段设置为 Azure 网站的 **.chinacloudsites.cn** 域名。例如 **contoso.chinacloudsites.cn**。
 
         ![区域文件编辑器][区域文件编辑器]
 

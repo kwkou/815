@@ -285,7 +285,7 @@
 
 19. 在 **federation.properties** 文件中，包含以下配置项，然后保存文件：
 
-        federation.trustedissuers.issuer=https://accounts.accesscontrol.windows.net/v2/wsfederation
+        federation.trustedissuers.issuer=https://accounts.accesscontrol.chinacloudapi.cn/v2/wsfederation
         federation.trustedissuers.thumbprint=qY+Drf20Zz+A4t2we3PebCopoCugO76My+JMVsqNBFc=
         federation.trustedissuers.friendlyname=Fabrikam
         federation.audienceuris=spn:7829c758-2bef-43df-a685-717089474505
@@ -398,7 +398,7 @@
 
 29. 现在我们已做好端到端运行应用程序的准备。右键单击 **sample** 项目，单击“运行身份”，然后单击“在服务器上运行”。接受之前指定的值，然后单击**“完成”**。
 
-30. JBoss 浏览器将打开登录页。如果单击“出色的计算机”链接，您将重定向到“Office 365 标识提供程序”页，您可在其中使用目录租户凭据进行登录。例如，*john.doe@fabrikam.onmicrosoft.com*。
+30. JBoss 浏览器将打开登录页。如果单击“出色的计算机”链接，您将重定向到“Office 365 标识提供程序”页，您可在其中使用目录租户凭据进行登录。例如，*john.doe@fabrikam.partner.onmschina.cn*。
 
 31. 登录后，您将作为经过身份验证的用户再次重定向到受保护页面 (**sample/index.jsp**)。
 

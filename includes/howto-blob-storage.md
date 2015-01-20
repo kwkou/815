@@ -44,7 +44,7 @@ Blob 服务包含以下组件：
 
     可以使用以下示例 URL 表示上面的示意图中的 Blob 之一
     的地址
-    ：`http://sally.blob.core.windows.net/movies/MOV1.AVI`
+    ：`http://sally.blob.core.chinacloudapi.cn/movies/MOV1.AVI`
 
   [Azure 存储服务可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/dn249410.aspx
   [Blob1]: ./media/howto-blob-storage/blob1.jpg

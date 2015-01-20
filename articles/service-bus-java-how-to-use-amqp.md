@@ -37,7 +37,7 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 
     # Register a ConnectionFactory in JNDI using the form:
     # connectionfactory.[jndi_name] = [ConnectionURL]
-    connectionfactory.SBCF = amqps://[username]:[password]@[namespace].servicebus.windows.net
+    connectionfactory.SBCF = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
     # Register some queues in JNDI using the form
     # queue.[jndi_name] = [physical_name]
@@ -64,7 +64,7 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
                                          
 **ConnectionURL** 的格式如下：
 
-    amqps://[username]:[password]@[namespace].servicebus.windows.net
+    amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 其中，[namespace]、[username] 和 [password] 具有以下意义：
 
@@ -90,7 +90,7 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 <table>
   <tr>
 <td>命名空间：</td>
-<td>foo.servicebus.windows.net</td>
+<td>foo.servicebus.chinacloudapi.cn</td>
   </tr>
   <tr>
 <td>颁发者名称：</td>
@@ -104,7 +104,7 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 
 那么，为了定义名为“SBCF”的 **ConnectionFactory**，配置字符串将按以下格式出现：
 
-    connectionfactory.SBCF = amqps://owner:j9VYv1q33Ea%2BcbahWsHFYnLkEzrF0yA5SAqcLNvU7KM%3D@foo.servicebus.windows.net
+    connectionfactory.SBCF = amqps://owner:j9VYv1q33Ea%2BcbahWsHFYnLkEzrF0yA5SAqcLNvU7KM%3D@foo.servicebus.chinacloudapi.cn
 
 **配置目标**
 
@@ -346,10 +346,10 @@ JNDI 环境是通过将配置信息的哈希表传入到 javax.naming.InitialCon
 -   [如何使用 服务总线 队列][如何使用 服务总线 队列]
 
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [如何使用 服务总线 队列（可能为英文页面）]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/service-bus-queues/
+  [如何使用 服务总线 队列（可能为英文页面）]: https://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/service-bus-queues/
   []: http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html
   [1]: http://www.w3schools.com/tags/ref_urlencode.asp
   [服务总线 AMQP 1.0 开发人员指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx
   [如何将 AMQP 1.0 用于 .NET 服务总线 .NET API]: http://aka.ms/lym3vk
   [Azure 服务总线 中的 AMQP 1.0 支持]: http://aka.ms/pgr3dp
-  [如何使用 服务总线 队列]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/service-bus-queues/
+  [如何使用 服务总线 队列]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/service-bus-queues/

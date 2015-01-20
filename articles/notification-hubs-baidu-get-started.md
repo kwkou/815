@@ -445,7 +445,7 @@ import com.baidu.android.pushservice.PushConstants;
   [此处]: http://go.microsoft.com/fwlink/?LinkId=389797
   [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
   [百度推送 Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
-  [Azure 免费试用]: http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F
+  [Azure 免费试用]: http://www.windowsazure.cn/en-us/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F
   [创建百度帐户]: #createBaiduAccount
   [注册为百度开发者]: #registerBaiduDeveloper
   [创建百度云推送项目]: #createBaiduPushProject
@@ -472,7 +472,7 @@ import com.baidu.android.pushservice.PushConstants;
   [16]: ./media/notification-hubs-baidu-get-started/BaiduPushConfig1.png
   [17]: ./media/notification-hubs-baidu-get-started/BaiduPushConfig2.png
   [18]: ./media/notification-hubs-baidu-get-started/BaiduPushConfig3.png
-  [Azure 管理门户]: https://manage.windowsazure.com/
+  [Azure 管理门户]: https://manage.windowsazure.cn/
   [19]: ./media/notification-hubs-baidu-get-started/AzureNHCreation.png
   [20]: ./media/notification-hubs-baidu-get-started/NotificationHubs.png
   [21]: ./media/notification-hubs-baidu-get-started/NotificationHubsConfigure.png

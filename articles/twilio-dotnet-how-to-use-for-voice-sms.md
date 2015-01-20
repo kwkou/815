@@ -350,7 +350,7 @@ Twilio.Client.Capability
     // This sample uses the sandbox number provided by Twilio to make the call.
     options.From = "NNNNNNNNNN";
     options.To = "NNNNNNNNNN";
-    options.Url = "http://<your_hosted_service>.cloudapp.net/MyTwiML/mytwiml.ashx";
+    options.Url = "http://<your_hosted_service>.chinacloudapp.cn/MyTwiML/mytwiml.ashx";
 
     // Place the call.
     var call = client.InitiateOutboundCall(options);

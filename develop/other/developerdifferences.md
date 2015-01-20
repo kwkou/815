@@ -660,7 +660,7 @@
 </p>
 <p>
   <span>
-    在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的URI。例如，Windows Azure和 SQL 数据库的URI通常以<span class="LabelEmbedded">windows.net</span>
+    在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的URI。例如，Windows Azure和 SQL 数据库的URI通常以<span class="LabelEmbedded">chinacloudapi.cn</span>
     结尾。
   </span>
   <span>
@@ -755,7 +755,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>*.windows.net</span>
+          <span>*.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -773,7 +773,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>*.cloudapp.net</span>
+          <span>*.chinacloudapp.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -791,13 +791,13 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>*.blob.core.windows.net</span>
+          <span>*.blob.core.chinacloudapi.cn</span>
         </p>
         <p>
-          <span>*.queue.core.windows.net</span>
+          <span>*.queue.core.chinacloudapi.cn</span>
         </p>
         <p>
-          <span>*.table.core.windows.net</span>
+          <span>*.table.core.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -821,7 +821,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>https://management.core.windows.net</span>
+          <span>https://management.core.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -839,7 +839,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>*.database.windows.net</span>
+          <span>*.database.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -857,7 +857,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>http://manage.windowsazure.com</span>
+          <span>http://manage.windowsazure.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -876,7 +876,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>https://management.database.windows.net</span>
+          <span>https://management.database.chinacloudapi.cn</span>
           <span>
             <br />
             <br />
@@ -912,7 +912,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>*.servicebus.windows.net</span>
+          <span>*.servicebus.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -929,7 +929,7 @@
       </td>
       <td width="240" valign="top">
         <p>
-          <span>*.accesscontrol.windows.net </span>
+          <span>*.accesscontrol.chinacloudapi.cn </span>
         </p>
       </td>
       <td width="270" valign="top">
@@ -1421,7 +1421,7 @@
   <span>修改现有项目时，请在指向Windows Azure、SQL数据库 URI的服务定义文件或配置文件中搜索您的项目，以获取端点 URI。</span>
 </p>
 <p>
-  <span>对于中国，应将指向 *.windows.net的端点重定向至新的URI。以下列出了几个示例。</span>
+  <span>对于中国，应将指向 *.chinacloudapi.cn的端点重定向至新的URI。以下列出了几个示例。</span>
 </p>
 <h2>
   <a name="_Toc359582689"></a>
@@ -1431,7 +1431,7 @@
   </span>
 </h2>
 <p>
-  <span>您必须使用自定义存储端点。默认设置指向 *.core.windows.net，其中* 基于您的应用程序和存储位置而发生变更。</span>
+  <span>您必须使用自定义存储端点。默认设置指向 *.core.chinacloudapi.cn，其中* 基于您的应用程序和存储位置而发生变更。</span>
 </p>
 <p>
   <span>
@@ -1611,7 +1611,7 @@
 </h2>
 <p>
   <span>端口绑定还使用以</span>
-  <span> *.cloudapp.net </span>
+  <span> *.chinacloudapp.cn </span>
   <span>结尾的</span>
   <span> DNS </span>
   <span>名称。您必须更改这些名称以指向</span>
@@ -1695,7 +1695,7 @@
 <p>
   <span>SQL </span>
   <span>数据库服务器名称将从</span>
-  <span> *.database.windows.net </span>
+  <span> *.database.chinacloudapi.cn </span>
   <span>更改为</span>
   <span> *.devdatabase.chinacloudapi.cn</span>
   <span>。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该新名称。对于未在</span>
@@ -1889,7 +1889,7 @@
     <span> AcsHostUrl </span>
     <span>端点</span>
     <span class="Bold">
-      <span>accesscontrol.windows.net</span>
+      <span>accesscontrol.chinacloudapi.cn</span>
     </span>
     <span>替换为</span>
     <span>
@@ -1942,7 +1942,7 @@
         </td>
         <td width="207" valign="top">
           <p>
-            <span>AcsHostUrl="accesscontrol.windows.net"</span>
+            <span>AcsHostUrl="accesscontrol.chinacloudapi.cn"</span>
           </p>
         </td>
         <td width="221" valign="top">
@@ -1961,7 +1961,7 @@
         </td>
         <td width="207" valign="top">
           <p>
-            <span>&lt;add issuerIdentifier="https://[Service Namespace].accesscontrol.windows.net/" name="ContosoContacts" /&gt;</span>
+            <span>&lt;add issuerIdentifier="https://[Service Namespace].accesscontrol.chinacloudapi.cn/" name="ContosoContacts" /&gt;</span>
           </p>
         </td>
         <td width="221" valign="top">
@@ -2064,7 +2064,7 @@
     <tr style="mso-yfti-irow: 3;">
       <td width="295" valign="top">
         <p>
-          <span>servicebus.windows.net</span>
+          <span>servicebus.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="295" valign="top">
@@ -2076,7 +2076,7 @@
     <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
       <td width="295" valign="top">
         <p>
-          <span>accesscontrol.windows.net</span>
+          <span>accesscontrol.chinacloudapi.cn</span>
         </p>
       </td>
       <td width="295" valign="top">
@@ -2452,8 +2452,8 @@
 <p>
   <span>全球服务使用的路径为</span>
   <span>
-    <a href="https://management.core.windows.net">
-      <span>https://management.core.windows.net</span>
+    <a href="https://management.core.chinacloudapi.cn">
+      <span>https://management.core.chinacloudapi.cn</span>
     </a>
   </span>
   <span>
@@ -2511,7 +2511,7 @@
   <span>例如，如果将</span>
   <span> www.contoso.com </span>
   <span>重定向到在</span>
-  <span> contoso.cloudapp.net </span>
+  <span> contoso.chinacloudapp.cn </span>
   <span>运行的</span>
   <span> Web </span>
   <span>角色，现在必须将其重定向到</span>
@@ -2653,9 +2653,9 @@
 </h2>
 <p>
   <span>开发人员应该识别引用全球服务计算</span>
-  <span> (*.cloudapp.net) </span>
+  <span> (*.chinacloudapp.cn) </span>
   <span>或存储端点</span>
-  <span> (*.core.windows.net) </span>
+  <span> (*.core.chinacloudapi.cn) </span>
   <span>的内部工具或应用程序，并对其进行更新以便使用特定于中国的端点。按照端点映射中的表，替换可在配置文件或这些工具的代码中找到的各个字符串。</span>
 </p>
 <p>
@@ -2748,7 +2748,7 @@
   <span> API</span>
   <span>。此示例包含指向全球服务的代码。必须找到对</span>
   <span class="Bold">
-    <span>http://*.windows.net</span>
+    <span>http://*.chinacloudapi.cn</span>
   </span>
   <span>的引用并将其更新为</span>
   <span> *.chinacloudapi.cn</span>
@@ -2807,7 +2807,7 @@
   <span>3.</span>
   <span>将所有</span>
   <span class="Bold">
-    <span>windows.net</span>
+    <span>chinacloudapi.cn</span>
   </span>
   <span>实例更改为</span>
   <span> *.chinacloudapi.cn</span>
@@ -2918,7 +2918,7 @@
   <span> HTTPS </span>
   <span>端点并将证书绑定到</span>
   <span class="LabelEmbedded">
-    <span>https://*.cloudapp.net</span>
+    <span>https://*.chinacloudapp.cn</span>
   </span>
   <span>（其中</span>
   <span> * </span>
@@ -3061,7 +3061,7 @@
     <tr style="mso-yfti-irow: 1; height: 15.0pt;">
       <td width="130" valign="top">
         <p>
-          <span>windowsazure.com</span>
+          <span>windowsazure.cn</span>
         </p>
       </td>
       <td width="180" valign="top">
@@ -3367,7 +3367,7 @@
       <td width="794" valign="top">
         <p>
           <span>我们仅在此处托管</span>
-          <span> windowsazure.com </span>
+          <span> windowsazure.cn </span>
           <span>的英文内容，不提供本地化内容</span>
         </p>
       </td>

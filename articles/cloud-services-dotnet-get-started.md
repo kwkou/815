@@ -133,7 +133,7 @@ Azure 云服务是该应用程序将运行的环境。
 
 5.  单击“创建云服务”。
 
-    在下图中，使用 URL contosoads.cloudapp.net 创建一个云服务。
+    在下图中，使用 URL contosoads.chinacloudapp.cn 创建一个云服务。
 
     ![新的云服务][新的云服务]
 
@@ -187,7 +187,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。
 
     ![新的存储帐户][新的存储帐户]
 
-    在图中，使用 URL 创建一个存储帐户`contosoads.core.windows.net`。
+    在图中，使用 URL 创建一个存储帐户`contosoads.core.chinacloudapi.cn`。
 
 ### 配置解决方案，以便在 Azure 中运行时使用您的 Azure SQL 数据库
 

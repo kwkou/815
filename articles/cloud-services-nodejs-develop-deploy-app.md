@@ -187,7 +187,7 @@ Azure 计算模拟器是 Azure SDK 所安装的工具之一，你可以使用此
 
   [Azure 网站、云服务和虚拟机：何时使用何种产品？]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj218759.aspx
   [使用轻型 Azure 网站。]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-  [浏览器窗口中显示“Hello World”页面。URL 指示该页面托管在 Azure 上。]: https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png
+  [浏览器窗口中显示“Hello World”页面。URL 指示该页面托管在 Azure 上。]: https://wacomdpsstablestorage.blob.core.chinacloudapi.cn/articlesmedia/demo-ppe.windowsazure.cn/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png
   [Azure PowerShell 图标]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
   [install-dev-tools]: ../includes/install-dev-tools.md
   [命令提示符处显示命令“mkdir c:\\node”和“cd node”。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png

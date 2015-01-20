@@ -64,6 +64,6 @@
   [5]: ./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png
   [6]: ./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth.png
   [7]: ./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth-2.png
-  [Azure 管理门户]: https://manage.windowsazure.com/
+  [Azure 管理门户]: https://manage.windowsazure.cn/
   [8]: ./media/mobile-services-register-windows-store-app/mobile-services-selection.png
   [9]: ./media/mobile-services-register-windows-store-app/mobile-push-tab.png

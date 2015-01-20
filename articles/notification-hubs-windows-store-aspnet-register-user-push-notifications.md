@@ -104,7 +104,7 @@
         using Newtonsoft.Json;
         using System.Net.Http;
         using System.Text;
-        using Windows.Networking.PushNotifications;
+        using chinacloudapi.cnworking.PushNotifications;
         using Windows.UI.Popups;
 
 10. 在 **MainPage** 类中添加以下定义：

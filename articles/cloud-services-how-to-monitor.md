@@ -185,7 +185,7 @@
   [如何创建存储帐户]: /zh-cn/manage/services/storage/how-to-create-a-storage-account/
   [配置 Azure 诊断]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn186185.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [如何管理云服务]: http://www.windowsazure.com/zh-cn/manage/services/cloud-services/how-to-manage-a-cloud-service/
+  [如何管理云服务]: http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-manage-a-cloud-service/
   [监视选项]: ./media/cloud-services-how-to-monitor/CloudServices_MonitoringOptions.png
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://go.microsoft.com/fwlink/?LinkId=309356
   [管理门户]: http://manage.windowsazure.cn/

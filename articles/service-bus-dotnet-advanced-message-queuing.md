@@ -35,7 +35,7 @@ AMQP 1.0 支持在 服务总线 SDK 2.1 版或更高版本中提供。可从以�
     <configuration>
         <appSettings>
             <add key="Microsoft.ServiceBus.ConnectionString"
-                 value="Endpoint=sb://[namespace].servicebus.windows.net;SharedSecretIssuer=[issuer name];SharedSecretValue=[issuer key];TransportType=Amqp" />
+                 value="Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedSecretIssuer=[issuer name];SharedSecretValue=[issuer key];TransportType=Amqp" />
             <add key="EntityName" value="queue1" />
         </appSettings>
     </configuration>
@@ -44,7 +44,7 @@ AMQP 1.0 支持在 服务总线 SDK 2.1 版或更高版本中提供。可从以�
 
 **Microsoft.ServiceBus.ConnectionString** 设置的值是用于配置与 服务总线 的连接的 服务总线 连接字符串，其格式如下所示：
 
-    Endpoint=sb://[namespace].servicebus.windows.net;SharedSecretIssuer=[issuer name];SharedSecretValue=[issuer key];TransportType=Amqp
+    Endpoint=sb://[namespace].servicebus.chinacloudapi.cn;SharedSecretIssuer=[issuer name];SharedSecretValue=[issuer key];TransportType=Amqp
 
 其中，[namespace]、[issuer name] 和 [issuer key] 可从 Azure 管理门户获得。有关详细信息，请参阅[如何使用 服务总线 队列][如何使用 服务总线 队列]。
 
@@ -294,9 +294,9 @@ AMQP 1.0 支持在 服务总线 SDK 2.1 版或更高版本中提供。可从以�
 -   [如何使用 服务总线 队列][如何使用 服务总线 队列]
 
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [如何使用 服务总线 队列（可能为英文页面）]: https://www.windowsazure.com/zh-cn/develop/net/how-to-guides/service-bus-queues/
+  [如何使用 服务总线 队列（可能为英文页面）]: https://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/service-bus-queues/
   []: http://nuget.org/packages/WindowsAzure.ServiceBus/
   [服务总线 AMQP 1.0 开发人员指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx
-  [如何使用 服务总线 队列]: http://www.windowsazure.com/zh-cn/develop/net/how-to-guides/service-bus-queues/
+  [如何使用 服务总线 队列]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/service-bus-queues/
   [如何将 Java 消息服务 (JMS) API 用于 服务总线 和 AMQP 1.0]: http://aka.ms/ll1fm3
   [Azure 服务总线 中的 AMQP 1.0 支持]: http://aka.ms/pgr3dp

@@ -67,7 +67,7 @@
     ![你的 WordPress 网站][Wordpress 博客]
 
   [Wordpress 博客]: ./media/website-from-gallery/wordpressgallery-09.png
-  [创建 Azure 帐户]: http://www.windowsazure.com/en-us/develop/php/tutorials/create-a-windows-azure-account/
+  [创建 Azure 帐户]: /zh-cn/documentation/articles/php-create-account/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建]: ./media/website-from-gallery/wordpressgallery-01.png
   [从库创建]: ./media/website-from-gallery/wordpressgallery-02.png

@@ -504,7 +504,7 @@ Azure 支持一组托管 API，提供了跨 Microsoft 云服务创建 Azure 服�
 
     <ConfigurationSettings>
     ...
-        <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
+        <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
     </ConfigurationSettings>
 
 以下代码检索连接字符串，创建队列并初始化与队列的连接：
@@ -663,5 +663,5 @@ Azure 支持一组托管 API，提供了跨 Microsoft 云服务创建 Azure 服�
   [服务总线 操作方法]: /zh-cn/documentation/services/service-bus/
   [如何使用 服务总线 队列]: /zh-cn/develop/net/how-to-guides/service-bus-queues/
   [使用存储表、队列和 Blob 的 .NET 多层应用程序]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
-  [Azure 执行模型]: http://www.windowsazure.com/zh-cn/develop/net/fundamentals/compute/
-  [将 ASP.NET Web 应用程序部署到 Azure 网站]: http://www.windowsazure.com/zh-cn/develop/net/tutorials/get-started/
+  [Azure 执行模型]: http://www.windowsazure.cn/zh-cn/develop/net/fundamentals/compute/
+  [将 ASP.NET Web 应用程序部署到 Azure 网站]: http://www.windowsazure.cn/zh-cn/develop/net/tutorials/get-started/

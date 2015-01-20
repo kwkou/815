@@ -39,7 +39,7 @@
 1.  打开文件 default.js，并在创建 "MobileServiceClient" 实例的代码后面插入以下代码。此代码将创建推送通知通道，并注册推送通知：
 
         // Request a push notification channel.
-        Windows.Networking.PushNotifications
+        chinacloudapi.cnworking.PushNotifications
         .PushNotificationChannelManager
         .createPushNotificationChannelForApplicationAsync()
         .then(function (channel) {

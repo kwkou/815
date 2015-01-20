@@ -36,7 +36,7 @@
   [Twitter 开发人员]: http://go.microsoft.com/fwlink/p/?LinkId=268300
   [0]: ./media/mobile-services-register-twitter-access/mobile-twitter-my-apps.png
   [1]: ./media/mobile-services-register-twitter-access/mobile-twitter-app-secrets.png
-  [Windows Azure 管理门户]: https://manage.windowsazure.com/
+  [Windows Azure 管理门户]: https://manage.windowsazure.cn/
   [2]: ./media/mobile-services-register-twitter-access/mobile-identity-tab-twitter-only.png
   [3]: ./media/mobile-services-register-twitter-access/mobile-schedule-job-app-settings.png
   [应用程序设置]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

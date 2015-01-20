@@ -50,7 +50,7 @@
 
 已添加以下配置条目。
 
-     <appSettings>         <add key="ida:ClientId" value="ClientId from the new Azure AD App" />          <add key="ida:Tenant" value="Your selected Azure AD Tenant" />          <add key="ida:AADInstance" value="https://login.windows.net/{0}" />          <add key="Ida:PostLogoutRedirectURI" value="Your project start page" />      </appSettings> 
+     <appSettings>         <add key="ida:ClientId" value="ClientId from the new Azure AD App" />          <add key="ida:Tenant" value="Your selected Azure AD Tenant" />          <add key="ida:AADInstance" value="https://login.chinacloudapi.cn/{0}" />          <add key="Ida:PostLogoutRedirectURI" value="Your project start page" />      </appSettings> 
 
 </p>
 ##### 已创建 Azure Active Directory (AD) 应用

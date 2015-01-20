@@ -169,7 +169,7 @@ Windows Azure SQL数据库 灵活扩展包括自托管服务。此分发包括�
 执行：
 
     makecert ^
-      -n "CN=myservice.cloudapp.net" ^
+      -n "CN=myservice.chinacloudapp.cn" ^
       -e MM/DD/YYYY ^
       -r -cy end -sky exchange -eku "1.3.6.1.5.5.7.3.1" ^
       -a sha1 -len 2048 ^
@@ -177,7 +177,7 @@ Windows Azure SQL数据库 灵活扩展包括自托管服务。此分发包括�
 
 自定义：
 
--   -n，带有服务 URL。通配符 ("CN=\*.cloudapp.net") 和替代名称 ("CN=myservice1.cloudapp.net, CN=myservice2.cloudapp.net") 均受支持。
+-   -n，带有服务 URL。通配符 ("CN=\*.chinacloudapp.cn") 和替代名称 ("CN=myservice1.chinacloudapp.cn, CN=myservice2.chinacloudapp.cn") 均受支持。
 -   -e，带有证书过期日期
     创建强密码并在提示时指定它。
 
@@ -432,7 +432,7 @@ Windows Azure SQL数据库 灵活扩展包括自托管服务。此分发包括�
 </li> 
 </ol> 
 <h2 id="upload-certificate"><a name="upload-certificate"></a>上载证书</h2> 
-<p>在 <a href="http://manage.windowsazure.com/">Azure 管理门户中</a></p>
+<p>在 <a href="http://manage.windowsazure.cn/">Azure 管理门户中</a></p>
 <ol> 
 <li>选择云服务</li> 
 <li>选择云服务</li> 

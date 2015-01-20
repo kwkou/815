@@ -129,7 +129,7 @@ Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**
     to = "NNNNNNNNNNN";
 
     # Use the Twilio-provided site for the TwiML response.
-    url = "http://yourdomain.cloudapp.net/voice_url";
+    url = "http://yourdomain.chinacloudapp.cn/voice_url";
       
     get '/make_call' do
       # Create the call client.
@@ -145,9 +145,9 @@ Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**
        </Response>"
     end
 
-如果你在浏览器中打开 `http://yourdomain.cloudapp.net/make_call` ，将会触发 Twilio API 调用以发起电话呼叫。元素 `client.account.calls.create` 中的前两个参数很容易理解：主叫号码为 `from` ，被叫号码为 `to`.
+如果你在浏览器中打开 `http://yourdomain.chinacloudapp.cn/make_call` ，将会触发 Twilio API 调用以发起电话呼叫。元素 `client.account.calls.create` 中的前两个参数很容易理解：主叫号码为 `from` ，被叫号码为 `to`.
 
-第三个参数 (`url`) 是 Twilio 请求的 URL，用于获取在连接呼叫后要执行的操作的说明。在本例中，我们设置的 URL (`http://yourdomain.cloudapp.net`) 会返回一个简单 TwiML 文档，并使用 `<Say>` 谓词执行某种形式的文本到语音转换，以便向被呼叫方讲出“Hello Monkey”。
+第三个参数 (`url`) 是 Twilio 请求的 URL，用于获取在连接呼叫后要执行的操作的说明。在本例中，我们设置的 URL (`http://yourdomain.chinacloudapp.cn`) 会返回一个简单 TwiML 文档，并使用 `<Say>` 谓词执行某种形式的文本到语音转换，以便向被呼叫方讲出“Hello Monkey”。
 
 ## <span id="howto_recieve_sms"></span></a>如何：接收 SMS 消息
 
@@ -155,7 +155,7 @@ Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**
 
 首先，请登录到 [Twilio 仪表板][Twilio 帐户页]。单击顶部导航栏中的“Numbers”（号码），然后单击提供给你的 Twilio 号码。你将看到两个可以配置的 URL。一个语音请求 URL 和一个短信请求 URL。每当有人拨打你的号码或向你的号码发送短信时，Twilio 就会调用这些 URL。这些 URL 也称为“Web 挂钩”。
 
-我们想要处理传入的 SMS 消息，因此需要将 URL 更新为`http://yourdomain.cloudapp.net/sms_url`. 继续操作并单击页面底部的“Save Changes”（保存更改）。现在，请返回到 `web.rb` ，然后对应用程序进行编程以处理此更改：
+我们想要处理传入的 SMS 消息，因此需要将 URL 更新为`http://yourdomain.chinacloudapp.cn/sms_url`. 继续操作并单击页面底部的“Save Changes”（保存更改）。现在，请返回到 `web.rb` ，然后对应用程序进行编程以处理此更改：
 
     post '/sms_url' do
       "<Response>
@@ -198,7 +198,7 @@ Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**
   [Twilio 帐户页]: https://www.twilio.com/user/account
   [管理号码（可能为英文页面）]: https://www.twilio.com/user/account/phone-numbers/verified#
   [用于 Ruby 的 Twilio 帮助程序库]: https://www.twilio.com/docs/ruby/install
-  [设置一台新的 Azure Linux 虚拟机]: http://www.windowsazure.com/zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/
+  [设置一台新的 Azure Linux 虚拟机]: http://www.windowsazure.cn/zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/
   [Sinatra]: http://www.sinatrarb.com/
   [Twilio 安全准则]: http://www.twilio.com/docs/security
   [Twilio 操作方法和示例代码]: http://www.twilio.com/docs/howto

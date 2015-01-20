@@ -157,7 +157,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
     在以上格式中，`storageaccount` 表示你的存储帐户的名称，`container_name` 表示你的容器的名称，而 `blob_name` 表示你的 Blob 的名称。在容器名称中，你可具有多个由正斜杠 **/** 分隔的路径。本教程中的示例容器名称为**“MyJob”**，**\${BUILD\_ID}/\${BUILD\_NUMBER}** 用于通用虚拟路径，从而导致 Blob 具有以下格式的 URL：
 
-    `http://example.blob.core.windows.net/myjob/2014/5/1_11-56-22/1/hello.txt`
+    `http://example.blob.core.chinacloudapi.cn/myjob/2014/5/1_11-56-22/1/hello.txt`
 
   [Microsoft Open Technologies Inc.]: http://msopentech.com
   [Hudson 概述]: #overview

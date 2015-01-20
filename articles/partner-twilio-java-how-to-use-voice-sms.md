@@ -207,7 +207,7 @@ TwiML 是一组基于 XML 的指令，这些指令以用于指示 Twilio 如何�
     HashMap<String, String> params = new HashMap<String, String>();
     params.put("From", "NNNNNNNNNN");
     params.put("To", "NNNNNNNNNN");
-    params.put("Url", "http://<your_hosted_service>.cloudapp.net/MyTwiML/mytwiml.jsp");
+    params.put("Url", "http://<your_hosted_service>.chinacloudapp.cn/MyTwiML/mytwiml.jsp");
 
     CallFactory callFactory = account.getCallFactory();
     Call call = callFactory.create(params);

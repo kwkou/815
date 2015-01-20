@@ -675,10 +675,10 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading][] �
   [iOS]: /zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
   [Android]: /zh-cn/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
   [Xamarin]: /zh-cn/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
-  [Windows 应用商店快速入门教程]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started/
-  [Windows Phone 快速入门教程]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-wp8/
-  [Windows 应用商店数据教程]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/
-  [Windows Phone 数据教程]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8/
+  [Windows 应用商店快速入门教程]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started/
+  [Windows Phone 快速入门教程]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-wp8/
+  [Windows 应用商店数据教程]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/
+  [Windows Phone 数据教程]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8/
   [移动服务 SDK]: http://nuget.org/packages/WindowsAzure.MobileServices/
   [什么是移动服务]: #what-is
   [概念]: #concepts
@@ -711,11 +711,11 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading][] �
   [Skip]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn250573.aspx
   [IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn250560.aspx
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-  [用于管理移动服务表的 CLI]: http://www.windowsazure.com/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
-  [乐观并发教程]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/
+  [用于管理移动服务表的 CLI]: http://www.windowsazure.cn/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+  [乐观并发教程]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/
   [ISupportIncrementalLoading]: http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh701916
-  [Windows 应用商店]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet/
-  [Windows Phone]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started-with-users-wp8/
+  [Windows 应用商店]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet/
+  [Windows Phone]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-users-wp8/
   [MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider.aspx
   [LoginAsync 方法]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
   [MobileServiceUser]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx

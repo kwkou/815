@@ -46,7 +46,7 @@
 ###使用 SSH 进行连接
 如果您使用的是 Linux 计算机，请使用 SSH 连接到 VM。在命令提示符处，运行：
 
-	$ ssh newuser@testlinuxvm.cloudapp.net -o ServerAliveInterval=180
+	$ ssh newuser@testlinuxvm.chinacloudapp.cn -o ServerAliveInterval=180
 
 输入用户的密码。
 
@@ -55,7 +55,7 @@
 
 1. 将 putty.exe 下载并保存到您的计算机上的某个目录。打开命令提示符，导航到该文件夹，然后执行 putty.exe。
 
-2. 为“主机名”输入“testlinuxvm.cloudapp.net”，为“端口”输入“22”。
+2. 为“主机名”输入“testlinuxvm.chinacloudapp.cn”，为“端口”输入“22”。
 ![PuTTY 屏幕][Image6]
 
 ##更新虚拟机（可选）
@@ -68,7 +68,7 @@
 3. 安装完成后，请选择“完成”。您的系统现在已为最新。
 
 [PuTTYDownload]: http://www.puttyssh.org/download.html
-[AzurePreviewPortal]: http://manage.windowsazure.com
+[AzurePreviewPortal]: http://manage.windowsazure.cn
 
 [Image1]: ./media/create-and-configure-opensuse-vm-in-portal/CreateVM.png
 

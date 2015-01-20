@@ -32,7 +32,7 @@ Azure 可为你维护云服务基础结构，以便执行日常维护、修补�
 
 -   **云服务部署：**云服务部署是部署到 Azure 过渡环境或生产环境的云服务的实例。你可以同时在过渡环境和生产环境中维护部署。
 
--   <b>部署环境：</b>Azure 提供两种云服务部署环境：*过渡环境*：在该环境中，你可以在将部署升级到*生产环境* 之前，测试该部署。只能通过用于访问云服务的虚拟 IP 地址 (VIP) 来区分这两个环境。在过渡环境中，使用云服务的全局唯一标识符 (GUID) 在 URL 中标识该服务 (*GUID*.cloudapp.net)。在生产环境中，URL 基于分配给云服务的更加友好的 DNS 前缀（例如，*myservice*.cloudapp.net）。
+-   <b>部署环境：</b>Azure 提供两种云服务部署环境：*过渡环境*：在该环境中，你可以在将部署升级到*生产环境* 之前，测试该部署。只能通过用于访问云服务的虚拟 IP 地址 (VIP) 来区分这两个环境。在过渡环境中，使用云服务的全局唯一标识符 (GUID) 在 URL 中标识该服务 (*GUID*.chinacloudapp.cn)。在生产环境中，URL 基于分配给云服务的更加友好的 DNS 前缀（例如，*myservice*.chinacloudapp.cn）。
 
 -   **交换部署：**若要将 Azure 过渡环境中的部署升级到生产环境，你可以通过交换用于访问这两个部署的 VIP 来“交换”这些部署。在部署后，云服务的 DNS 名称将指向曾经位于过渡环境中的部署。
 
@@ -46,5 +46,5 @@ Azure 可为你维护云服务基础结构，以便执行日常维护、修补�
 
 -   <b>Azure 服务级别协议 (SLA)：</b>Azure 计算 SLA 保证，当你为每个角色部署两个或两个以上角色实例时，将至少在 99.95 % 的时间内确保他人可以访问你的云服务。此外，当某角色实例过程未运行时，可确保在 99.9% 的情况下可启动检测和纠正操作。有关详细信息，请参阅[服务级别协议][服务级别协议]。
 
-  [如何监视云服务]: https://www.windowsazure.com/zh-cn/manage/services/cloud-services/how-to-monitor-a-cloud-service/
-  [服务级别协议]: https://www.windowsazure.com/zh-cn/support/legal/sla/
+  [如何监视云服务]: https://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-monitor-a-cloud-service/
+  [服务级别协议]: https://www.windowsazure.cn/zh-cn/support/legal/sla/

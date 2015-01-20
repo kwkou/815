@@ -110,7 +110,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 
 通过执行下列步骤可在 Azure 上部署 SharePoint 2010：
 
-1.  通过您的帐户登录到 [Azure 管理门户][Azure 管理门户]。 <!--- <ul>  <li>If you do not have an Azure account, <a href="http://www.windowsazure.com/zh-cn/pricing/free-trial/">sign up for a free trial of Azure</a>.</li> </ul> </li> --->
+1.  通过您的帐户登录到 [Azure 管理门户][Azure 管理门户]。 <!--- <ul>  <li>If you do not have an Azure account, <a href="http://www.windowsazure.cn/zh-cn/pricing/free-trial/">sign up for a free trial of Azure</a>.</li> </ul> </li> --->
 2.  使用基本操作系统创建 VM：在 Azure 管理门户上，依次单击“+新建”、“虚拟机”和“从库中”。 ![azure-sharepoint-wp-4](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-4.png)
 3.  这将显示“VM OS 选择”对话框。单击“平台映像”，选择“Windows Server 2008 R2 SP1”平台映像。![azure-sharepoint-wp-5](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-5.png)
 4.  这将显示“*VM 配置*”对话框。提供以下信息：
@@ -394,11 +394,11 @@ Azure 虚拟机提供了 SharePoint 部署的完整连续。它完全受支持�
 
 -   针对不同的操作系统的命令行工具和 PowerShell Cmdlet
 
-    [https://www.windowsazure.com/zh-cn/manage/downloads/][https://www.windowsazure.com/zh-cn/manage/downloads/]
+    [https://www.windowsazure.cn/zh-cn/manage/downloads/][https://www.windowsazure.cn/zh-cn/manage/downloads/]
 
 -   操作方法指南和最佳实践文档
 
-    [https://www.windowsazure.com/zh-cn/manage/windows/][https://www.windowsazure.com/zh-cn/manage/windows/]
+    [https://www.windowsazure.cn/zh-cn/manage/windows/][https://www.windowsazure.cn/zh-cn/manage/windows/]
 
   [azure-sharepoint-wp-1]: ./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-1.png
   [Azure 定价详细信息]: /zh-cn/pricing/details/
@@ -442,5 +442,5 @@ Azure 虚拟机提供了 SharePoint 部署的完整连续。它完全受支持�
   [TechEd North America 2012 视频]: http://channel9.msdn.com/Events/TechEd/NorthAmerica/2012/AZR327
   [http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156055]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156055
   [http://msdn.microsoft.com/zh-cn/library/windowsazure/jj152841]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj152841
-  [https://www.windowsazure.com/zh-cn/manage/downloads/]: /zh-cn/manage/downloads/
-  [https://www.windowsazure.com/zh-cn/manage/windows/]: /zh-cn/manage/windows/
+  [https://www.windowsazure.cn/zh-cn/manage/downloads/]: /zh-cn/manage/downloads/
+  [https://www.windowsazure.cn/zh-cn/manage/windows/]: /zh-cn/manage/windows/

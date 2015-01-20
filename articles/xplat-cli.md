@@ -258,7 +258,7 @@ xplat-cli 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
 
         azure site create mywebsite
 
-    系统将提示您指定用于创建网站的区域。请选择在地理位置上接近您的区域。此命令完成后，将在 http://mywebsite.azurewebsites.net （将 **mywebsite** 替换为您指定的名称）上提供网站。
+    系统将提示您指定用于创建网站的区域。请选择在地理位置上接近您的区域。此命令完成后，将在 http://mywebsite.chinacloudsites.cn （将 **mywebsite** 替换为您指定的名称）上提供网站。
 
     > [WACOM.NOTE] 如果您使用 Git 进行项目源代码管理，则可以指定 `--git` 参数以便在 Azure 上为此网站创建一个 Git 存储库。这还将在该命令从其运行的目录中创建一个 Git 存储库，如果该存储库尚不存在。它还将创建一个名为 **azure** 的 Git remote，用于通过 `git push azure master` 命令将部署推送到 Azure 网站。
 

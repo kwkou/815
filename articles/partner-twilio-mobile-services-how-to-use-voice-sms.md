@@ -217,8 +217,8 @@ Twilio 提供了可包装 Twilio 各个方面的 Node.js 库，使你能够以�
   [Twilio 帐户页]: https://www.twilio.com/user/account
   [管理号码（可能为英文页面）]: https://www.twilio.com/user/account/phone-numbers/verified#
   [Twilio 电话号码帮助]: https://www.twilio.com/help/faq/phone-numbers
-  [移动服务入门]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/get-started/
-  [在源代码管理中存储脚本]: http://www.windowsazure.com/zh-cn/develop/mobile/tutorials/store-scripts-in-source-control/
+  [移动服务入门]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started/
+  [在源代码管理中存储脚本]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/store-scripts-in-source-control/
   [移动服务控制台]: ./media/partner-twilio-mobile-services-how-to-use-voice-sms/twilio-kuduconsole.png
   []: http://www.twilio.com/docs/api/rest/making-calls
   [如何：从你自己的网站提供 TwiML 响应]: #howto_provide_twiml_responses

@@ -17,7 +17,7 @@
 1. 使用[如何创建自定义虚拟机] [How to create a custom virtual machine]中的步骤创建虚拟机。
 
 
-2. 创建第一台自定义虚拟机后，在[管理门户](http://manage.windowsazure.com)命令栏上，单击“新建”。
+2. 创建第一台自定义虚拟机后，在[管理门户](http://manage.windowsazure.cn)命令栏上，单击“新建”。
 
 
 	![新建虚拟机](./media/howto-connect-vm-cloud-service/Create.png)
@@ -63,7 +63,7 @@
 15. 单击复选标记以创建连接的虚拟机。
 
 
-[How to create a custom virtual machine]: http://windowsazure.com/zh-cn/documentation/articles/virtual-machines-create-custom/
-[Load balancing virtual machines]: http://windowsazure.com/zh-cn/documentation/articles/load-balance-virtual-machines/
-[Manage the availability of virtual machines]: http://windowsazure.com/zh-cn/documentation/articles/virtual-machines-manage-availability/
+[How to create a custom virtual machine]: /zh-cn/documentation/articles/virtual-machines-create-custom/
+[Load balancing virtual machines]: /zh-cn/documentation/articles/load-balance-virtual-machines/
+[Manage the availability of virtual machines]: /zh-cn/documentation/articles/virtual-machines-manage-availability/
 

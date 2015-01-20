@@ -40,7 +40,7 @@
 
     <div class="dev-callout">
 <strong>说明</strong>
-<p>如果你以前未导入 Azure 订阅的发布设置，则在尝试发布时会收到错误。有关下载和导入订阅的发布设置的信息，请参阅<a href="https://www.windowsazure.com/zh-cn/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings">如何对 Node.js 使用 Azure PowerShell</a></p>
+<p>如果你以前未导入 Azure 订阅的发布设置，则在尝试发布时会收到错误。有关下载和导入订阅的发布设置的信息，请参阅<a href="https://www.windowsazure.cn/zh-cn/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings">如何对 Node.js 使用 Azure PowerShell</a></p>
 </div>
 
 **Publish-AzureServiceProject** cmdlet 返回的“创建的网站 URL”值包含你的托管应用程序的完全限定域名。你将需要为此特定的完全限定域名获取一个 SSL 证书，并将其部署到 Azure。
@@ -54,9 +54,9 @@
 -   证书必须包含私钥。
 -   必须为密钥交换创建证书（.pfx 文件）。
 -   证书的使用者名称必须与用于访问
-    云服务的域匹配。由于你无法为 cloudapp.net 域
+    云服务的域匹配。由于你无法为 chinacloudapp.cn 域
     获取 SSL 证书，因此，该证书的使用者名称
-    必须与用于访问应用程序的自定义域名匹配。例如 **mysecuresite.cloudapp.net**。
+    必须与用于访问应用程序的自定义域名匹配。例如 **mysecuresite.chinacloudapp.cn**。
 -   该证书必须使用至少 2048 位加密。
 
 ## <a name="step3"> </a>步骤 3：导入 SSL 证书
@@ -170,7 +170,7 @@
   []: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-01.png
   [1]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-02.png
   [2]: ./media/cloud-services-nodejs-configure-ssl-certificate/enable-ssl-03.png
-  [如何对 Node.js 使用 Azure PowerShell]: https://www.windowsazure.com/zh-cn/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings
+  [如何对 Node.js 使用 Azure PowerShell]: https://www.windowsazure.cn/zh-cn/develop/nodejs/how-to-guides/powershell-cmdlets/#ImportPubSettings
   [证书向导]: ./media/cloud-services-nodejs-configure-ssl-certificate/certificateimport.png
   [私钥保护]: ./media/cloud-services-nodejs-configure-ssl-certificate/exportable.png
   [如何将证书与服务关联]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg465718.aspx

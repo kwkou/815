@@ -485,7 +485,7 @@ AzureResourceManager 模块包括帮助您防止错误的 cmdlet。
   [Switch-AzureMode]: http://go.microsoft.com/fwlink/?LinkID=394398
   [1]: http://go.microsoft.com/fwlink/?LinkID=394765&clcid=0x409
   [使用资源组管理 Azure 资源]: /zh-cn/documentation/articles/azure-preview-portal-using-resource-groups
-  [将 Azure 跨平台命令行界面与资源管理器一起使用]: http://www.windowsazure.com/zh-cn/documentation/articles/xplat-cli-azure-resource-manager/
+  [将 Azure 跨平台命令行界面与资源管理器一起使用]: http://www.windowsazure.cn/zh-cn/documentation/articles/xplat-cli-azure-resource-manager/
   [Azure 博客]: http://blogs.msdn.com/windowsazure
   [Windows PowerShell 博客]: http://blogs.msdn.com/powershell
   [“您好，脚本编写专家！”博客]: http://blogs.technet.com/b/heyscriptingguy/

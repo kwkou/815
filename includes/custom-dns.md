@@ -1,6 +1,6 @@
 # Configuring a custom domain name for an Azure cloud service
 
-When you create an application in Azure, Azure provides a subdomain on the cloudapp.net domain so your users can access your application on a URL like http://&lt;*myapp*>.cloudapp.net. However, you can also expose your application on your own domain name, such as contoso.com.
+When you create an application in Azure, Azure provides a subdomain on the chinacloudapp.cn domain so your users can access your application on a URL like http://&lt;*myapp*>.chinacloudapp.cn. However, you can also expose your application on your own domain name, such as contoso.com.
 
 > [WACOM.NOTE] 
 > The procedures in this task apply to Azure Cloud Services. For storage accounts, see [Configuring a Custom Domain Name for an Azure Storage Account](../storage-custom-domain-name/). For Web Sites, see [Configuring a Custom Domain Name for an Azure Web Site](../web-sites-custom-domain-name/).
@@ -17,7 +17,7 @@ CNAME (or alias records) and A records both allow you to associate a domain name
 
 ###CNAME or Alias record
 
-A CNAME record maps a *specific* domain, such as **contoso.com** or **www.contoso.com**, to a canonical domain name. In this case, the canonical domain name is the **&lt;myapp>.cloudapp.net** domain name of your Azure hosted application. Once created, the CNAME creates an alias for the **&lt;myapp>.cloudapp.net**. The CNAME entry will resolve to the IP address of your **&lt;myapp>.cloudapp.net** service automatically, so if the IP address of the cloud service changes, you do not have to take any action.
+A CNAME record maps a *specific* domain, such as **contoso.com** or **www.contoso.com**, to a canonical domain name. In this case, the canonical domain name is the **&lt;myapp>.chinacloudapp.cn** domain name of your Azure hosted application. Once created, the CNAME creates an alias for the **&lt;myapp>.chinacloudapp.cn**. The CNAME entry will resolve to the IP address of your **&lt;myapp>.chinacloudapp.cn** service automatically, so if the IP address of the cloud service changes, you do not have to take any action.
 
 > [WACOM.NOTE] 
 > Some domain registrars only allow you to map subdomains when using a CNAME record, such as www.contoso.com, and not root names, such as contoso.com. For more information on CNAME records, see the documentation provided by your registrar, <a href="http://en.wikipedia.org/wiki/CNAME_record">the Wikipedia entry on CNAME record</a>, or the <a href="http://tools.ietf.org/html/rfc1035">IETF Domain Names - Implementation and Specification</a> document.
@@ -36,7 +36,7 @@ An A record maps a domain, such as **contoso.com** or **www.contoso.com**, *or a
 
 To create a CNAME record, you must add a new entry in the DNS table for your custom domain by using the tools provided by your registrar. Each registrar has a similar but slightly different method of specifying a CNAME record, but the concepts are the same.
 
-1. Use one of these methods to find the **.cloudapp.net** domain name assigned to your cloud service.
+1. Use one of these methods to find the **.chinacloudapp.cn** domain name assigned to your cloud service.
 
   * Login to the [Azure Management Portal], select your cloud service, select **Dashboard**, and then find the **Site URL** entry in the **quick glance** section.
 
@@ -54,9 +54,9 @@ To create a CNAME record, you must add a new entry in the DNS table for your cus
 
 3.  You must also provide the domain or subdomain alias for the CNAME, such as **www** if you want to create an alias for **www.customdomain.com**. If you want to create an alias for the root domain, it may be listed as the '**@**' symbol in your registrar's DNS tools.
 
-4. Then, you must provide a canonical host name, which is your application's **cloudapp.net** domain in this case.
+4. Then, you must provide a canonical host name, which is your application's **chinacloudapp.cn** domain in this case.
 
-For example, the following CNAME record forwards all traffic from **www.contoso.com** to **contoso.cloudapp.net**, the custom domain name of your deployed application:
+For example, the following CNAME record forwards all traffic from **www.contoso.com** to **contoso.chinacloudapp.cn**, the custom domain name of your deployed application:
 
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 <tr>
@@ -65,16 +65,16 @@ For example, the following CNAME record forwards all traffic from **www.contoso.
 </tr>
 <tr>
 <td>www</td>
-<td>contoso.cloudapp.net</td>
+<td>contoso.chinacloudapp.cn</td>
 </tr>
 </table>
 
 A visitor of **www.contoso.com** will never see the true host
-(contoso.cloudapp.net), so the forwarding process is invisible to the
+(contoso.chinacloudapp.cn), so the forwarding process is invisible to the
 end user.
 
 > [WACOM.NOTE]
-> The example above only applies to traffic at the <strong>www</strong> subdomain. Since you cannot use wildcards with CNAME records, you must create one CNAME for each domain/subdomain. If you want to direct  traffic from subdomains, such as *.contoso.com, to your cloudapp.net address, you can configure a <strong>URL Redirect</strong> or <strong>URL Forward</strong> entry in your DNS settings, or create an A record.
+> The example above only applies to traffic at the <strong>www</strong> subdomain. Since you cannot use wildcards with CNAME records, you must create one CNAME for each domain/subdomain. If you want to direct  traffic from subdomains, such as *.contoso.com, to your chinacloudapp.cn address, you can configure a <strong>URL Redirect</strong> or <strong>URL Forward</strong> entry in your DNS settings, or create an A record.
 
 
 <h2><a name="add-aname"></a>Add an A record for your custom domain</h2>

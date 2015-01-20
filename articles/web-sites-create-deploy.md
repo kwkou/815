@@ -17,7 +17,7 @@
 
 按照下列步骤操作可在 Windows Azure 中创建网站。
 	
-1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.com/)。
+1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.cn/)。
 
 2. 单击该管理门户左下角的“新建”图标。
 

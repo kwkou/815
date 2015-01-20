@@ -271,10 +271,10 @@ New Relic 网站代理作为 NuGet 程序包分发，可使用 Visual Studio 或
 -   [寻求帮助（可能为英文页面）][寻求帮助（可能为英文页面）]:通过 New Relic 的联机帮助中心提供的资源
 
   [使用 New Relic]: #using-new-relic
-  [Azure 应用商店中的 New Relic 页]: http://www.windowsazure.com/zh-cn/gallery/store/new-relic/new-relic/
+  [Azure 应用商店中的 New Relic 页]: http://www.windowsazure.cn/zh-cn/gallery/store/new-relic/new-relic/
   [Azure 管理门户]: https://manage.windowsazure.cn
-  [使用 Visual Studio 将 ASP.NET Web 应用程序部署到 Azure 网站（可能为英文页面）]: http://www.windowsazure.com/zh-cn/develop/net/tutorials/get-started/
-  [使用 Microsoft WebMatrix 开发和部署网站（可能为英文页面）]: http://www.windowsazure.com/zh-cn/develop/net/tutorials/website-with-webmatrix/
+  [使用 Visual Studio 将 ASP.NET Web 应用程序部署到 Azure 网站（可能为英文页面）]: http://www.windowsazure.cn/zh-cn/develop/net/tutorials/get-started/
+  [使用 Microsoft WebMatrix 开发和部署网站（可能为英文页面）]: http://www.windowsazure.cn/zh-cn/develop/net/tutorials/website-with-webmatrix/
   [程序包管理器控制台]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/NewRelicAzureNuget04.png
   [输入许可证密钥]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrvslicensekey.png
   [“主页”选项卡上的“NuGet”按钮]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png

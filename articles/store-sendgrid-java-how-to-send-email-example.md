@@ -197,7 +197,7 @@
 提供这段代码是为了向你演示如何在 Azure 上通过 Java 使用 SendGrid。在生产中部署到 Azure 之前，你可能希望添加更多错误处理功能或其他功能。例如：
 
 -   你可能会使用 Azure 存储 Blob 或 SQL数据库 存储电子邮件地址和电子邮件，而不使用 Web 窗体。有关在 Java 中使用 Azure 存储 Blob 的信息，请参阅[如何从 Java 使用 Blob 存储服务][如何从 Java 使用 Blob 存储服务]。有关在 Java 中使用 SQL数据库 的信息，请参阅[在 Java 中使用 SQL数据库][在 Java 中使用 SQL数据库]。
--   你可能会使用`RoleEnvironment.getConfigurationSettings` 从部署的配置设置中检索 SendGrid 用户名和密码，而不使用 Web 窗体检索这些值。有关`RoleEnvironment` 类的信息，请参阅[在 JSP 中使用 Azure 服务运行时库][在 JSP 中使用 Azure 服务运行时库]以及 <http://dl.windowsazure.com/javadoc> 上的 Azure 服务运行时程序包文档。
+-   你可能会使用`RoleEnvironment.getConfigurationSettings` 从部署的配置设置中检索 SendGrid 用户名和密码，而不使用 Web 窗体检索这些值。有关`RoleEnvironment` 类的信息，请参阅[在 JSP 中使用 Azure 服务运行时库][在 JSP 中使用 Azure 服务运行时库]以及 <http://dl.windowsazure.cn/javadoc> 上的 Azure 服务运行时程序包文档。
 -   有关在 Java 中使用 SendGrid 的详细信息，请参阅[如何通过 Java 使用 SendGrid 发送电子邮件][如何通过 Java 使用 SendGrid 发送电子邮件]。
 
   [“电子邮件”窗体]: ./media/store-sendgrid-java-how-to-send-email-example/SendGridJavaEmailform.jpg
@@ -205,6 +205,6 @@
   [如何通过 Java 使用 SendGrid 发送电子邮件]: ../store-sendgrid-java-how-to-send-email
   [在 Eclipse 中创建用于 Azure 的 Hello World 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690944
   [发送邮件结果]: ./media/store-sendgrid-java-how-to-send-email-example/SendGridJavaResult.jpg
-  [如何从 Java 使用 Blob 存储服务]: http://www.windowsazure.com/zh-cn/develop/java/how-to-guides/blob-storage/
-  [在 Java 中使用 SQL数据库]: http://www.windowsazure.com/zh-cn/develop/java/how-to-guides/using-sql-azure-in-java/
+  [如何从 Java 使用 Blob 存储服务]: http://www.windowsazure.cn/zh-cn/develop/java/how-to-guides/blob-storage/
+  [在 Java 中使用 SQL数据库]: http://www.windowsazure.cn/zh-cn/develop/java/how-to-guides/using-sql-azure-in-java/
   [在 JSP 中使用 Azure 服务运行时库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690948

@@ -335,7 +335,7 @@ Azure 资源的应用程序在云中启动并运行。
           </extensions>
           <services>
              <service name="ProductsServer.ProductsService">
-               <endpoint address="sb://yourServiceNamespace.servicebus.windows.net/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts"
+               <endpoint address="sb://yourServiceNamespace.servicebus.chinacloudapi.cn/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts"
         behaviorConfiguration="products"/>
              </service>
           </services>
@@ -570,7 +570,7 @@ Azure 资源的应用程序在云中启动并运行。
                     {
                         // Create shared secret token credentials for authentication 
                         channelFactory = new ChannelFactory<IProductsChannel>(new NetTcpRelayBinding(), 
-                            "sb://yourServiceNamespace.servicebus.windows.net/products");
+                            "sb://yourServiceNamespace.servicebus.chinacloudapi.cn/products");
                         channelFactory.Endpoint.Behaviors.Add(new TransportClientEndpointBehavior { 
                             TokenProvider = TokenProvider.CreateSharedSecretTokenProvider(
                                 "owner", "yourIssuerSecret") });
@@ -756,8 +756,8 @@ Azure 将按使用的服务器小时数对 Web 角色
   [20]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-multi-tier-40.png
   [21]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-web-11.png
   [22]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/App1.png
-  [Azure 执行模型]: http://www.windowsazure.com/zh-cn/develop/net/fundamentals/compute/
-  [将 ASP.NET Web 应用程序部署到 Azure 网站]: http://www.windowsazure.com/zh-cn/develop/net/tutorials/get-started/
+  [Azure 执行模型]: http://www.windowsazure.cn/zh-cn/develop/net/fundamentals/compute/
+  [将 ASP.NET Web 应用程序部署到 Azure 网站]: http://www.windowsazure.cn/zh-cn/develop/net/tutorials/get-started/
   [23]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-21.png
   [24]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/getting-started-hybrid-22.png
   [25]: ./media/cloud-services-dotnet-hybrid-app-using-service-bus-relay/hy-web-12.png

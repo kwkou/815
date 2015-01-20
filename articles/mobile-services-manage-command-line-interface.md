@@ -161,7 +161,7 @@
   [删除现有表]: #delete-table
   [列出移动服务]: #list-services
   [删除现有移动服务]: #delete-service
-  [Azure 免费试用]: http://www.windowsazure.com/zh-cn/pricing/free-trial/
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [启用 Azure 预览功能]: /zh-cn/documentation/articles/php-create-account/#enable
   [Azure 命令行工具文档]: /zh-cn/manage/linux/other-resources/command-line-tools/#Commands_to_manage_mobile_services
   [Azure 命令行工具安装程序]: http://go.microsoft.com/fwlink/p?LinkID=275464

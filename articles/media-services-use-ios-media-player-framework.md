@@ -87,7 +87,7 @@ SDK 包含一个 SamplePlayer 应用程序，它演示了如何生成一个 iOS 
 ### 不同的情况：如果你在播放两个主要内容剪辑，则也可以使用以下代码将第二个剪辑排在第一个剪辑的后面：
 
     //Schedule second content
-    NSString *secondContent=@"http://wamsblureg001orig-hs.cloudapp.net/6651424c-a9d1-419b-895c-6993f0f48a26/The%20making%20of%20Microsoft%20Surface-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+    NSString *secondContent=@"http://wamsblureg001orig-hs.chinacloudapp.cn/6651424c-a9d1-419b-895c-6993f0f48a26/The%20making%20of%20Microsoft%20Surface-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
     mediaTime.currentPlaybackPosition = 0;
     mediaTime.clipBeginMediaTime = 30;
     mediaTime.clipEndMediaTime = 80;
@@ -116,7 +116,7 @@ SDK 包含一个 SamplePlayer 应用程序，它演示了如何生成一个 iOS 
 #### 排定正片开始前的广告
 
     LinearTime *adLinearTime = [[[LinearTime alloc] init] autorelease];
-    NSString *adURLString = @"http://smoothstreamingdemo.blob.core.windows.net/videoasset/WA-BumpShort_120530-1.mp4";
+    NSString *adURLString = @"http://smoothstreamingdemo.blob.core.chinacloudapi.cn/videoasset/WA-BumpShort_120530-1.mp4";
     AdInfo *adInfo = [[[AdInfo alloc] init] autorelease];
     adInfo.clipURL = [NSURL URLWithString:adURLString];
     adInfo.mediaTime = [[[MediaTime alloc] init] autorelease];
@@ -140,7 +140,7 @@ SDK 包含一个 SamplePlayer 应用程序，它演示了如何生成一个 iOS 
 #### 排定正片结束后的广告
 
     //Schedule Post Roll Ad
-    NSString *postAdURLString=@"http://wamsblureg001orig-hs.cloudapp.net/aa152d7f-3c54-487b-ba07-a58e0e33280b/wp-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+    NSString *postAdURLString=@"http://wamsblureg001orig-hs.chinacloudapp.cn/aa152d7f-3c54-487b-ba07-a58e0e33280b/wp-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
     AdInfo *postAdInfo = [[[AdInfo alloc] init] autorelease];
     postAdInfo.clipURL = [NSURL URLWithString:postAdURLString];
     postAdInfo.mediaTime = [[[MediaTime alloc] init] autorelease];
@@ -160,7 +160,7 @@ SDK 包含一个 SamplePlayer 应用程序，它演示了如何生成一个 iOS 
 
 广告组合是连续插播的多则广告。以下代码将两则广告排定为一个广告组合。
 
-    NSString *adpodSt1=@"https://portalvhdsq3m25bf47d15c.blob.core.windows.net/asset-e47b43fd-05dc-4587-ac87-5916439ad07f/Windows%208_%20Cliffjumpers.mp4
+    NSString *adpodSt1=@"https://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/asset-e47b43fd-05dc-4587-ac87-5916439ad07f/Windows%208_%20Cliffjumpers.mp4
         st=2012-11-28T16%3A31%3A57Z&se=2014-11-28T16%3A31%3A57Z&sr=c&si=2a6dbb1e-f906-4187-a3d3-7e517192cbd0&sig=qrXYZBekqlbbYKqwovxzaVZNLv9cgyINgMazSCbdrfU%3D";
     AdInfo *adpodInfo1 = [[[AdInfo alloc] init] autorelease];
     adpodInfo1.clipURL = [NSURL URLWithString:adpodSt1];
@@ -176,7 +176,7 @@ SDK 包含一个 SamplePlayer 应用程序，它演示了如何生成一个 iOS 
     [self logFrameworkError];
     }
         
-    NSString *adpodSt2=@"https://portalvhdsq3m25bf47d15c.blob.core.windows.net/asset-532531b8-fca4-4c15-86f6-45f9f45ec980/Windows%208_%20Sign%20in%20with%20a%20Smile.mp4
+    NSString *adpodSt2=@"https://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/asset-532531b8-fca4-4c15-86f6-45f9f45ec980/Windows%208_%20Sign%20in%20with%20a%20Smile.mp4
         st=2012-11-28T16%3A35%3A26Z&se=2014-11-28T16%3A35%3A26Z&sr=c&si=c6ede35c-f212-4ccd-84da-805c4ebf64be&sig=zcWsj1JOHJB6TsiQL5ZbRmCSsEIsOJOcPDRvFVI0zwA%3D";
     AdInfo *adpodInfo2 = [[[AdInfo alloc] init] autorelease];
     adpodInfo2.clipURL = [NSURL URLWithString:adpodSt2];

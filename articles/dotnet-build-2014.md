@@ -105,7 +105,7 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
 -   [版本 2014：Azure 资源组模型：适合现代云的现代管理（视频）][版本 2014：Azure 资源组模型：适合现代云的现代管理（视频）]
 
   [Visual Studio 2013 Update 2 RC]: http://aka.ms/vs2013update2rc
-  [Azure SDK 2.3]: http://www.windowsazure.com/zh-cn/downloads/
+  [Azure SDK 2.3]: http://www.windowsazure.cn/zh-cn/downloads/
   [Azure PowerShell]: http://go.microsoft.com/?linkid=9811175
   [Azure 跨平台命令行界面]: http://go.microsoft.com/?linkid=9828653
   [Azure SDK for.NET 2.3 发行说明]: http://go.microsoft.com/fwlink/p/?LinkId=393548
@@ -124,12 +124,12 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
   [版本 2014：Visual Studio 2013 Update 2 及更高版本中针对 ASP.NET 和 Web 的新功能（视频）]: http://channel9.msdn.com/Events/Build/2014/3-602
   [在 Visual Studio 中调试云服务或虚拟机]: http://msdn.microsoft.com/zh-cn/library/azure/ff683670.aspx
   [使用 Emulator Express 来运行和调试云服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn339018.aspx
-  [在 Visual Studio 中对 Azure 网站进行故障排除]: http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio
+  [在 Visual Studio 中对 Azure 网站进行故障排除]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio
   [从服务器资源管理器创建虚拟机]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn569263.aspx
   [从服务器资源管理器访问 Azure 虚拟机]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj131259.aspx
   [使用 Visual Studio 服务器资源管理器浏览 服务总线 资源]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj149828.aspx
   [使用服务器资源管理器浏览存储资源]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff683677.aspx
-  [如何安装和配置 Azure PowerShell]: http://www.windowsazure.com/zh-cn/documentation/articles/install-configure-powershell/
+  [如何安装和配置 Azure PowerShell]: http://www.windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/
   [Azure PowerShell 文档]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156055.aspx
   [版本 2014：在 Azure 中通过新的 SDK、工具和服务实现无处不在的自动化（视频）]: http://channel9.msdn.com/Events/Build/2014/3-621
   [使用 Windows PowerShell 脚本发布到开发和测试环境]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn642480.aspx

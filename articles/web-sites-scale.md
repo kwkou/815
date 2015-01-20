@@ -184,34 +184,28 @@
 
     [数据传输定价详细信息][数据传输定价详细信息]
 
-<!--     [Windows Azure Support Plans](http://azure.microsoft.com/zh-cn/support/plans/) -->
+-   [Windows Azure Support Plans](/support/plans/) 
 
-    [Service Level Agreements](http://www.windowsazure.cn/zh-cn/support/legal/sla/)
+    [Service Level Agreements](/support/legal/sla/)
 
-    [SQL数据库 Pricing Details](http://www.windowsazure.cn/zh-cn/pricing/overview/#sql_database)
+    [SQL数据库 Pricing Details](/pricing/details/sql-database/)
 
     [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
 
-    [Web Sites Pricing Details](http://azure.microsoft.com/zh-cn/pricing/details/web-sites/)
+    [Web Sites Pricing Details](/pricing/details/web-sites/)
 
-    [Web Sites Pricing Details - SSL Connections](http://azure.microsoft.com/zh-cn/pricing/details/web-sites/#ssl-connections)
+    [Web Sites Pricing Details - SSL Connections](/pricing/details/web-sites/#ssl)
 
 -   有关 Azure 网站最佳实践（包括构建可扩展、有弹性的体系结构）的信息，请参阅[最佳实践：Windows Azure 网站 (WAWS)][最佳实践：Windows Azure 网站 (WAWS)]。
 
--   缩放 Azure 网站相关视频：
 
-    [什么时候缩放 Azure 网站 - 和 Stefan Schackow 一起][什么时候缩放 Azure 网站 - 和 Stefan Schackow 一起]
-
-    [基于 CPU 或计划自动缩放 Azure 网站 - 和 Stefan Schackow 一起][基于 CPU 或计划自动缩放 Azure 网站 - 和 Stefan Schackow 一起]
-
-    [Azure 网站如何缩放 - 和 Stefan Schackow 一起][Azure 网站如何缩放 - 和 Stefan Schackow 一起]
 
 <!-- LINKS --> <!-- IMAGES -->
 
   [什么是 Web 托管计划？]: /zh-cn/documentation/articles/web-sites-web-hosting-plan-overview/
-  [Azure 网站 Web 托管计划深入概述]: http://www.azure.microsoft.com/zh-cn/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/
-  [网站定价详细信息]: http://azure.microsoft.com/zh-cn/pricing/details/web-sites/
-  [Windows Azure 订阅]: http://go.microsoft.com/fwlink/?LinkID=235288
+  [Azure 网站 Web 托管计划深入概述]: /zh-cn/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/
+  [网站定价详细信息]: /pricing/details/web-sites/
+  [Windows Azure 订阅]: http://manage.windowsazure.cn/
   [缩放到“共享”或“基本”计划模式]: #scalingsharedorbasic
   [缩放到“标准”计划模式]: #scalingstandard
   [缩放连接到您的网站的 SQL Server 数据库]: #ScalingSQLServer
@@ -237,11 +231,9 @@
   [目标 CPU]: ./media/web-sites-scale/15TargetCPU.png
   [链接的数据库]: ./media/web-sites-scale/16LinkedResources.png
   [缩放 SQL Server 数据库]: ./media/web-sites-scale/17ScaleDatabase.png
-  [Windows Azure SQL数据库 中的帐户和结算]: http://go.microsoft.com/fwlink/?LinkId=234930
-  [如何监视网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/
-  [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
-  [数据传输定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/overview/#data_transfer
+  [Windows Azure SQL数据库 中的帐户和结算]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
+  [如何监视网站]: /zh-cn/documentation/articles/web-sites-monitor/
+  [Windows Azure 免费试用版]: /pricing/1rm-trial/
+  [数据传输定价详细信息]: /pricing/details/data-transfer
   [最佳实践：Windows Azure 网站 (WAWS)]: http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx
-  [什么时候缩放 Azure 网站 - 和 Stefan Schackow 一起]: http://www.windowsazure.com/zh-cn/documentation/videos/azure-web-sites-free-vs-standard-scaling/
-  [基于 CPU 或计划自动缩放 Azure 网站 - 和 Stefan Schackow 一起]: http://www.windowsazure.com/zh-cn/documentation/videos/auto-scaling-azure-web-sites/
-  [Azure 网站如何缩放 - 和 Stefan Schackow 一起]: http://www.windowsazure.com/zh-cn/documentation/videos/how-azure-web-sites-scale/
+  

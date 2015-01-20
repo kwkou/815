@@ -33,7 +33,7 @@
         // Get storage account settings from app settings. 
         var accountName = appSettings.STORAGE_ACCOUNT_NAME;
         var accountKey = appSettings.STORAGE_ACCOUNT_ACCESS_KEY;
-        var host = accountName + '.blob.core.windows.net';
+        var host = accountName + '.blob.core.chinacloudapi.cn';
 
         if ((typeof item.containerName !== "undefined") && (
         item.containerName !== null)) {

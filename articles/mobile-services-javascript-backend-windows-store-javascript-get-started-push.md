@@ -35,7 +35,7 @@
 1.  打开文件 default.js，并在创建 "MobileServiceClient" 实例的代码后面插入以下代码：
 
         // Request a push notification channel.
-        Windows.Networking.PushNotifications
+        chinacloudapi.cnworking.PushNotifications
         .PushNotificationChannelManager
         .createPushNotificationChannelForApplicationAsync()
         .then(function (channel) {

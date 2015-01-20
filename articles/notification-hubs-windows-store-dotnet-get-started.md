@@ -111,7 +111,7 @@
 
 2.  打开文件 App.xaml.cs 并添加以下 `using` 语句：
 
-        using Windows.Networking.PushNotifications;
+        using chinacloudapi.cnworking.PushNotifications;
         using Microsoft.WindowsAzure.Messaging;
         using Windows.UI.Popups;
 

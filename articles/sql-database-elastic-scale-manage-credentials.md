@@ -16,7 +16,7 @@
 
     变量 **smmAdminConnectionString** 是包含管理凭据的连接字符串。用户 ID 和密码提供对分片映射数据库和单独的分片的读/写访问权限。管理连接字符串还包括服务器名称和数据库名称，以标识全局分片映射数据库。下面是用于实现此目的的典型连接字符串：
 
-        "Server=<yourserver>.database.windows.net;Database=<yourdatabase>;User ID=<yourmgmtusername>;Password=<yourmgmtpassword>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;” 
+        "Server=<yourserver>.database.chinacloudapi.cn;Database=<yourdatabase>;User ID=<yourmgmtusername>;Password=<yourmgmtpassword>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;” 
 
 -   **用于分片映射管理器访问的用户凭据**：在不用于管理分片映射的应用程序中实例化分片映射管理器时，使用在全局分片映射上具有只读权限的凭据。在这些凭据下从全局分片映射检索的信息可用于[数据依赖路由][数据依赖路由]，并且用于在客户端上填充分片映射缓存。通过与如上所示的 **GetSqlShardMapManager** 相同的调用模式提供凭据：
 

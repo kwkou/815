@@ -80,8 +80,8 @@
 
 4. 在“访问连接信息”对话框中，找到“默认颁发者”和“默认密钥”条目。记下这些值，因为您将在下面使用此信息来对命名空间执行操作。
 
-  [Windows Azure 管理门户]: http://manage.windowsazure.com
-  [Windows Azure 管理门户]: http://manage.windowsazure.com
+  [Windows Azure 管理门户]: http://manage.windowsazure.cn
+  [Windows Azure 管理门户]: http://manage.windowsazure.cn
 
 
 

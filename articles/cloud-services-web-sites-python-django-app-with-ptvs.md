@@ -406,7 +406,7 @@ Python Tools for Visual Studio 具有用于调试 Django 模板的特别支持�
                 'NAME': '<database name>',
                 'USER': '<user name>@<server name>',
                 'PASSWORD': '<user password>',
-                'HOST': '<server name>.database.windows.net',
+                'HOST': '<server name>.database.chinacloudapi.cn',
                 'PORT': '',
                 'OPTIONS': {
                     'driver': 'SQL Server Native Client 11.0',
@@ -586,12 +586,12 @@ Python Tools for Visual Studio 具有向 Azure 网站和云服务进行发布的
   [1]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-013-solution-explorer.png
   [2]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-014-detail-styled.png
   [3]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-015-debugging.png
-  [此处]: http://www.windowsazure.com/zh-cn/manage/linux/common-tasks/mysql-on-a-linux-vm/
+  [此处]: http://www.windowsazure.cn/zh-cn/manage/linux/common-tasks/mysql-on-a-linux-vm/
   [Django Shell 添加轮询]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-018-shell-add-poll.png
   [Django Shell 查询轮询]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-019-shell-query.png
-  [网站]: http://www.windowsazure.com/zh-cn/services/web-sites/
-  [云服务]: http://www.windowsazure.com/zh-cn/services/cloud-services/
-  [虚拟机]: http://www.windowsazure.com/zh-cn/services/virtual-machines/
+  [网站]: http://www.windowsazure.cn/zh-cn/services/web-sites/
+  [云服务]: http://www.windowsazure.cn/zh-cn/services/cloud-services/
+  [虚拟机]: http://www.windowsazure.cn/zh-cn/services/virtual-machines/
   [网站下载配置文件]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-020-website-download-profile.png
   [网站发布]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-020-website-publish.png
   [网站浏览器]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-020-website.png

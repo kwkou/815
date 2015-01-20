@@ -135,7 +135,7 @@
 5.  单击“确定”（复选标记）。
 
   [免责声明]: ../includes/disclaimer.md
-  [服务级别协议]: https://www.windowsazure.com/zh-cn/support/legal/sla/
+  [服务级别协议]: https://www.windowsazure.cn/zh-cn/support/legal/sla/
   [如何：更新云服务配置]: #update
   [如何：配置对角色实例的远程访问]: #remoteaccess
   [Azure 管理门户]: http://manage.windowsazure.cn/
@@ -143,7 +143,7 @@
   [如何监视云服务]: ../how-to-monitor-a-cloud-service/
   [操作系统设置]: ./media/cloud-services-how-to-configure/CloudServices_ConfigurePage_OSSettings.png
   [上载配置]: ./media/cloud-services-how-to-configure/CloudServices_UploadConfigFile.png
-  [1]: http://www.windowsazure.com/zh-cn/support/legal/sla/
+  [1]: http://www.windowsazure.cn/zh-cn/support/legal/sla/
   [在 Azure 中为角色设置远程桌面连接]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
   [云服务远程]: ./media/cloud-services-how-to-configure/CloudServices_Remote.png
   [CloudServices\_CreateNewCertDropDown]: ./media/cloud-services-how-to-configure/CloudServices_CreateNewCertDropDown.png

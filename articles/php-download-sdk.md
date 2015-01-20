@@ -57,11 +57,11 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 1.  [安装 PEAR][安装 PEAR]。
 2.  设置 Azure PEAR 通道：
 
-        pear channel-discover pear.windowsazure.com
+        pear channel-discover pear.windowsazure.cn
 
 3.  安装 PEAR 包：
 
-        pear install pear.windowsazure.com/WindowsAzure-0.3.1
+        pear install pear.windowsazure.cn/WindowsAzure-0.3.1
 
 安装完成后，你可以从应用程序中引用类库。
 

@@ -1,7 +1,7 @@
 ﻿
 ### 注册 Blitline 帐户
 
-1. 登录到 [Windows Azure 管理门户](https://manage.windowsazure.com/)。
+1. 登录到 [Windows Azure 管理门户](https://manage.windowsazure.cn/)。
 
 2. 在该管理门户的下方窗格中，单击“新建”。
 

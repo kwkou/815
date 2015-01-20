@@ -91,7 +91,7 @@ Sencha |
 
 ###参考
 
-####[iOS 客户端库](http://dl.windowsazure.com/iosdocs/)
+####[iOS 客户端库](http://dl.windowsazure.cn/iosdocs/)
 
 Azure 移动服务 SDK 包括支持进行 Windows 应用商店和 iOS 应用程序开发的客户端库。本节提供了有关使用这些客户端库的详细信息。
 
