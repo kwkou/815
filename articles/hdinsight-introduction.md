@@ -166,4 +166,4 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
   [Microsoft BI PowerPivot]: http://office.microsoft.com/zh-cn/excel/HA101959985.aspx
   [Apache Hadoop]: http://hadoop.apache.org/
   [HDFS]: http://hadoop.apache.org/docs/r0.18.1/hdfs_design.html
-  [MapReduce]: http://mapreduce.org/
+  [MapReduce]: http://wiki.apache.org/hadoop/MapReduce
