@@ -10,7 +10,7 @@
 
 ##开发文档
 
-<table width="80%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td><a href="/zh-cn/develop/net/">.Net</a></a></td>
     <td><a href="/zh-cn/develop/nodejs/">Node.js</a></a></td>
@@ -27,7 +27,7 @@
 
 ##服务文档
 
-<table width="80%" border="1" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <th scope="col">计算</th>
     <th scope="col">数据服务</th>
