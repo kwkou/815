@@ -2,11 +2,6 @@
 
 #文档中心
 
-使用任何语言或开发平台**构建**解决方案。
-
-**针对**任何浏览器、客户端或设备。
-
-**运行**在 Windows 或 Linux 上。
 
 ##开发文档
 
@@ -29,10 +24,10 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <th scope="col">计算</th>
-    <th scope="col">数据服务</th>
-    <th scope="col">应用服务</th>
-    <th scope="col">网络服务</th>
+    <th align="left" scope="col">计算</th>
+    <th align="left" scope="col">数据服务</th>
+    <th align="left" scope="col">应用服务</th>
+    <th align="left" scope="col">网络服务</th>
   </tr>
   <tr>
     <td><a href="/zh-cn/documentation/services/virtual-machines/">虚拟机</a></td>
