@@ -34,7 +34,7 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
 -   使用[自动任务][自动任务]的命令行工具。
 -   使用流行的语言，如 [.Net][.Net]、[PHP][PHP]、[Node.js][Node.js] 和 [Python][Python]。
 -   选择向上扩展到超高容量的三个不同的扩展级别。
--   与其他 Azure 服务集成，例如 [SQL 数据库][SQL 数据库]、[服务总线][服务总线]和[存储][存储]，或者来自 [Azure 应用商店][Azure 应用商店]的合作伙伴产品，如 MySQL 和 MongoDB。
+-   与其他 Azure 服务集成，例如 [SQL 数据库][SQL 数据库]、[服务总线][服务总线]和[存储][存储]。
 -   与工具集成，例如 Visual Studio、Git、WebMatrix、WebDeploy、TFS 和 FTP。
 
 ### 我要将带有 web 前端的多层应用程序迁移到云
@@ -275,10 +275,10 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
   [服务摘要]: #services
   [功能比较]: #features
   [自动任务]: /zh-cn/documentation/scripts/?services=web-sites
-  [.Net]: http://azure.microsoft.com/zh-cn/develop/net/
-  [PHP]: http://azure.microsoft.com/zh-cn/develop/php/
-  [Node.js]: http://azure.microsoft.com/zh-cn/develop/nodejs/
-  [Python]: http://azure.microsoft.com/zh-cn/develop/python/
+  [.Net]: /zh-cn/develop/net/
+  [PHP]: /zh-cn/develop/php/
+  [Node.js]: /zh-cn/develop/nodejs/
+  [Python]: /zh-cn/develop/python/
   [SQL 数据库]: /zh-cn/documentation/services/sql-database/
   [服务总线]: /zh-cn/documentation/services/service-bus/
   [存储]: /zh-cn/documentation/services/storage/
