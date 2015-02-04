@@ -16,7 +16,7 @@ HDInsight 能够适用于 Azure 上的"大数据"，让您可以在云上设置 
 <object type="image/svg+xml" data="./media/hdinsight-learn-map/HDI-Content-Flow.svg" width="100%" height="100%">
 </object>
 
-<!--center><iframe width="780" height="1407" src="https://mysstorage.blob.core.chinacloudapi.cn/picture/HDI.Content.Flow.svg" frameborder="0"></iframe></center-->
+<iframe width="780" height="1407" src="./media/hdinsight-learn-map/HDI-Content-Flow.svg" frameborder="0"></iframe></center>
 
 <!--center><img src = "https://mysstorage.blob.core.chinacloudapi.cn/picture/HDI.ContentFlow.png" title = "" usemap="#imagemap">
 	<map name="imagemap">
