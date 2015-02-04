@@ -6,22 +6,7 @@
 # HDInsight 学习计划图
 HDInsight 能够适用于 Azure 上的"大数据"，让您可以在云上设置 Hadoop 和 HBase 群集。 本页面为您开始学习 HDInsight 所需的全部资源提供相关链接。 使用示图中建议的流程是最有效的学习途径。
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 <object type="image/svg+xml" data="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" width="100%" height="100%">
-=======
-<!--object type="image/svg+xml" data="http://wacnstoragestaging.blob.core.chinacloudapi.cn/tech-content/articles/media/hdinsight-learn-map/Wacn.HDI.Content.Flow.svg" width="100%" height="100%">
-</object-->
-
-<!--
-![Wacn.HDI.Content.Flow](./media/hdinsight-learn-map/HDI-Content-Flow.svg)
--->
-
-<object type="image/svg+xml" data="./media/hdinsight-learn-map/HDI-Content-Flow.svg" width="100%" height="100%">
->>>>>>> origin/stage
-=======
-<object type="image/svg+xml" data="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" width="100%" height="100%">
->>>>>>> origin/stage
 </object>
 
 <!--center><iframe width="780" height="1407" src="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" frameborder="0"></iframe></center-->
