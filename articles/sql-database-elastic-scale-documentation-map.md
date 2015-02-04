@@ -13,6 +13,6 @@ Azure SQL数据库 灵活扩展（在预览版中）支持应用程序的数据�
 ![sql-database-elastic-scale-documentation-map](./media/sql-database-elastic-scale-documentation-map/Wacn-ElasticScaleMapcoded.svg)
 -->
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/ElasticScaleMapcoded.svg" width="100%" height="100%">
+<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.chinacloudapi.cn/documentation/ElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
 
