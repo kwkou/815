@@ -13,7 +13,7 @@ HDInsight 能够适用于 Azure 上的"大数据"，让您可以在云上设置 
 ![Wacn.HDI.Content.Flow](./media/hdinsight-learn-map/HDI-Content-Flow.svg)
 -->
 
-<object type="image/svg+xml" data="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" width="100%" height="100%">
+<object type="image/svg+xml" data="./media/hdinsight-learn-map/HDI-Content-Flow.svg" width="100%" height="100%">
 </object>
 
 <!--center><iframe width="780" height="1407" src="https://mysstorage.blob.core.chinacloudapi.cn/picture/HDI.Content.Flow.svg" frameborder="0"></iframe></center-->
