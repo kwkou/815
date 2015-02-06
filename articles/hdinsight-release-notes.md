@@ -65,13 +65,8 @@
 ## 2014/7/28 版本发行说明 
 
 * **HDInsight 已在新区域推出**：随着此版本的发行，我们已将 HDInsight 的地理覆盖范围扩大到了三个新区域。现在，HDInsight 客户可以在这些区域创建群集。 
-	* 亚洲东部 
-	* 美国中北部 
-	* 美国中南部。 
-
-<!--
-* 随着此版本的发行，HDInsight v1.6（HDP1.1、Hadoop 1.0.3）和 HDInsight v2.1（HDP1.3、Hadoop 1.2）即将从 Azure 管理门户中删除。你可以继续使用 HDInsight PowerShell cmdlet ([New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx)) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 为这些版本创建 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本](/zh-cn/documentation/articles/hdinsight-component-versioning/)页。
--->
+	* 中国东部 
+	* 中国北部 
 
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改： 
 
@@ -127,23 +122,7 @@ HDInsight 3.0 和 3.1 群集仅支持"wasb://"语法。较早的"asv://"语法�
 
 **端口**：HDInsight 服务使用的端口已更改。以前所用的端口号在 Windows OS 临时端口范围内。端口是从预定义的临时范围自动分配的，该范围适用于基于 Internet 协议的短期通信。新的一组允许的 Hortonworks 数据平台 (HDP) 服务端口号现已在此范围外，目的是避免遇到头节点上运行的服务所使用的端口时出现冲突。新端口号不会导致任何重大更改。现在使用的端口号如下所示：
 
-<!--
- **HDInsight 1.6 (HDP 1.1)**
-<table border="1">
-<tr><th>Name</th><th>Value</th></tr>
-<tr><td>dfs.http.address</td><td>namenodehost:30070</td></tr>
-<tr><td>dfs.datanode.address</td><td>0.0.0.0:30010</td></tr>
-<tr><td>dfs.datanode.http.address</td><td>0.0.0.0:30075</td></tr>
-<tr><td>dfs.datanode.ipc.address</td><td>0.0.0.0:30020</td></tr>
-<tr><td>dfs.secondary.http.address</td><td>0.0.0.0:30090</td></tr>
-<tr><td>mapred.job.tracker.http.address</td><td>jobtrackerhost:30030</td></tr>
-<tr><td>mapred.task.tracker.http.address</td><td>0.0.0.0:30060</td></tr>
-<tr><td>mapreduce.history.server.http.address</td><td>0.0.0.0:31111</td></tr>
-<tr><td>templeton.port</td><td>30111</td></tr>
-</table><br>
--->
-
- **HDInsight 3.0 and 3.1 (HDP 2.0 and 2.1)**
+**HDInsight 3.0 and 3.1 (HDP 2.0 and 2.1)**
 <table border="1">
 <tr><th>Name</th><th>Value</th></tr>
 <tr><td>dfs.namenode.http-address</td><td>namenodehost:30070</td></tr>
