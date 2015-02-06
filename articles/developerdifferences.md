@@ -122,7 +122,7 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 :--|:--|:--
 Windows Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Windows Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
-Windows Azure - 存储 | \*.blob.core.windows.net <br /> \*.queue.core.windows.net <br /> \*.table.core.windows.net | \*.blob.core.chinacloudapi.cn <br /> \*.queue.core.chinacloudapi.cn <br /> \*.table.core.chinacloudapi.cn
+Windows Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
 Windows Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 SQL数据库 | *.database.windows.net | *.database.chinacloudapi.cn
 Windows Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
