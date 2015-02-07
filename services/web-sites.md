@@ -124,6 +124,10 @@ Windows PowerShell for Azure 提供用于通过 Windows PowerShell cmdlet 开发
 
 了解如何使用 Azure 门户在 Azure 中管理网站的各个方面。
 
+####[中国区Azure网站公网IP地址信息](http://www.waws.cn/170)
+
+介绍中国区Azure网站公网IP地址的配置方法。
+
 ####[通过 Azure 门户管理网站](/zh-cn/documentation/articles/web-sites-manage/)
 
 在 Azure 门户中使用一组页面或“选项卡”管理你的网站。介绍了每个网站管理页面。
