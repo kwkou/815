@@ -1,4 +1,4 @@
-﻿<properties linkid="service-bus-event-hubs-csharp-storm-getstarted" pageTitle="事件中心入门" metaKeywords="Azure 服务总线, 事件中心, 事件中心入门" description="Follow this tutorial to get started using Azure Event Hubs sending events with Java and receiving in C# using EventProcessorHost" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+﻿<properties pageTitle="事件中心入门" metaKeywords="Azure Service Bus, Event Hub, getting started Event Hubs" description="遵循本教程开始使用 Azure 事件中心，以通过 Java 发送事件，并使用 EventProcessorHost 通过 C# 接收事件" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
 
 
 # <a name="getting-started"> </a>事件中心入门
@@ -9,25 +9,25 @@
 
 有关详细信息，请参阅[事件中心概述]。
 
-在本教程中，你将学习如何使用用 Java 编写的控制台应用程序将消息引入事件中心，以及如何使用 C# [事件处理程序主机]库并行检索这些消息。
+在本教程中，你将学习如何使用用 Java 编写的控制台应用程序将消息引入事件中心，以及如何使用 C# [事件处理器主机]库并行检索这些消息。
 
 为了完成本教程，你将需要以下内容：
 
-+ Java 开发环境。对于本教程，我们将假定 [Eclipse](https://www.eclipse.org/)。
++ Java 开发环境。本教程将使用 [Eclipse](https://www.eclipse.org/)。
 
 + Microsoft Visual Studio Express 2013 for Windows
 
-+ 有效的 Azure 订阅。<br/>如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。
++ 有效的 Azure 订阅。 <br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。
 
 ## 创建事件中心
 
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的**"新建"**。
+1. 登录到 [Azure 管理门户]，然后单击屏幕底部的"新建"****。
 
-2. 依次单击**"应用服务"**、**服务总线**、**"事件中心"**、**"快速创建"**。
+2. 依次单击"应用服务"、"Service Bus"、"事件中心"、"快速创建"****************。
 
    	![][1]
 
-3. 为你的事件中心键入名称，选择所需区域，然后单击**"创建新事件中心"**。
+3. 为你的事件中心键入名称，选择所需区域，然后单击"创建新事件中心"****。
 
    	![][2]
 
@@ -35,11 +35,11 @@
 
    	![][3]
 
-5. 单击页面顶部的**"事件中心"**选项卡，然后单击你刚创建的事件中心。
+5. 单击页面顶部的"事件中心"****选项卡，然后单击你刚创建的事件中心。
 
    	![][4]
 
-6. 单击页面顶部的**"配置"**选项卡，添加具有"发送"权限的名为**"SendRule"**的规则，添加另一具有"管理、发送、侦听"权限的名为**"ReceiveRule"**的规则，然后单击**"保存"**。
+6. 单击页面顶部的"配置"****选项卡，添加名为 **SendRule**、具有 *Send*权限的规则，添加名为 **ReceiveRule**、具有 *Manage, Send, Listen*权限的另一个规则，然后单击"保存"****。
 
    	![][5]
 
@@ -47,7 +47,7 @@
 
    	![][6b]
 
-8. 单击页面顶部的**"仪表板"**选项卡，然后单击**"连接信息"**。记下两个连接字符串。
+8. 单击页面顶部的"仪表板"****选项卡，然后单击"连接信息"****。记下两个连接字符串。
 
    	![][6]
 
@@ -66,7 +66,7 @@
 
    	![][21]
 
-2.	运行 **Sender** 项目，在控制台窗口中按 **Enter** 键，然后会看到事件出现在接收方窗口中。
+2.	运行 **Sender** 项目，在控制台窗口中按 **Enter**，然后会看到事件出现在接收方窗口中。
 
    	![][22]
 
@@ -85,6 +85,5 @@
 
 <!-- Links -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
+[事件处理器主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
-

@@ -1,4 +1,4 @@
-﻿<properties linkid="service-bus-event-hubs-java-storm-getstarted" pageTitle="事件中心入门" metaKeywords="Azure 服务总线, Event Hub, getting started Event Hubs" description="Follow this tutorial to get started using Azure Event Hubs sending events with Java and receiving them in an Apache Storm cluster" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+<properties pageTitle="事件中心入门" metaKeywords="Azure Service Bus, Event Hub, getting started Event Hubs" description="遵循本教程开始使用 Azure 事件中心，以通过 Java 发送事件，并在 Apache Storm 群集中接收事件" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
 
 
 # <a name="getting-started"> </a>事件中心入门
@@ -13,19 +13,19 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将假定 [Eclipse](https://www.eclipse.org/)。
++ 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。本教程将使用 [Eclipse](https://www.eclipse.org/)。
 
-+ 有效的 Azure 订阅。<br/>如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。
++ 有效的 Azure 订阅。 <br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。
 
 ## 创建事件中心
 
-1. 登录到 [Azure 管理门户]，然后单击屏幕底部的**"新建"**。
+1. 登录到 [Azure 管理门户]，然后单击屏幕底部的"新建"****。
 
-2. 依次单击**"应用服务"**、**服务总线**、**"事件中心"**、**"快速创建"**。
+2. 依次单击"应用服务"、"Service Bus"、"事件中心"、"快速创建"****************。
 
    	![][1]
 
-3. 为你的事件中心键入名称，选择所需区域，然后单击**"创建新事件中心"**。
+3. 为你的事件中心键入名称，选择所需区域，然后单击"创建新事件中心"****。
 
    	![][2]
 
@@ -33,11 +33,11 @@
 
    	![][3]
 
-5. 单击页面顶部的**"事件中心"**选项卡，然后单击你刚创建的事件中心。
+5. 单击页面顶部的"事件中心"****选项卡，然后单击你刚创建的事件中心。
 
    	![][4]
 
-6. 单击页面顶部的**"配置"**选项卡，添加具有"发送"权限的名为**"SendRule"**的规则，添加另一具有"侦听"权限的名为**"ReceiveRule"**的规则，然后单击**"保存"**。
+6. 单击页面顶部的"配置"****选项卡，添加名为 **SendRule**、具有 *Send*权限的规则，添加名为 **ReceiveRule**、具有 *Listen*权限的另一个规则，然后单击"保存"****。
 
    	![][5]
 
@@ -58,7 +58,7 @@
 
 1.	从 Eclipse 中运行 **LogTopology** 类，然后等待它为所有分区启动接收方。
 
-2.	运行 **Sender** 项目，在控制台窗口中按 **Enter** 键，然后会看到事件出现在接收方窗口中。
+2.	运行 **Sender** 项目，在控制台窗口中按 **Enter**，然后会看到事件出现在接收方窗口中。
 
    	![][22]
 
@@ -67,7 +67,7 @@
 ## 后续步骤
 以下资源可用于开发集成事件中心和 Storm 的应用程序。
 
-- [用 Storm 和 HDInsight 分析传感器数据]是一个完整方案教程，它用到了事件中心、Storm 和 HBase，以在 Hadoop 群集中引入传感器数据。
+- [使用 Storm 和 HDInsight 分析传感器数据]是一个完整方案教程，它用到了事件中心、Storm 和 HBase，以在 Hadoop 群集中引入传感器数据。
 - [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]是有关使用 C# 编写 Storm 管道的教程。
 
 <!-- Images. -->
@@ -83,10 +83,10 @@
 
 <!-- Links -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
+[事件处理器主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
 
 [Apache Storm]: https://storm.incubator.apache.org
-[HDInsight Storm 概述]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-overview/
-[使用 Storm 和 HDInsight 分析传感器数据]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis/
-[使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
+[HDInsight Storm 概述]: /zh-cn/documentation/articles/hdinsight-storm-overview/
+[使用 Storm 和 HDInsight 分析传感器数据]: /zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis/
+[使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /zh-cn/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
