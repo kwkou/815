@@ -30,14 +30,14 @@ Service Bus **NuGet** 包是获取 Service Bus API 和使用所有 Service Bus �
 
 Service Bus 使用连接字符串来存储终结点和凭据。你可以将连接字符串置于配置文件中，而不是在代码中对其进行硬编码：
 
-- 使用 Azure 云服务时，建议使用 Azure 服务配置系统（\*.csdef 和 \*.cscfg 文件）来存储连接字符串。
-- 使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 **"web.config"** 文件）来存储连接字符串。
+- 使用 Azure 云服务时，建议使用 Azure 服务配置系统（`*.csdef` 和 `*.cscfg` 文件）来存储连接字符串。
+- 使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 `web.config` 文件）来存储连接字符串。
 
-在上述两种情况下，你都可以使用 **"CloudConfigurationManager.GetSetting"** 方法检索连接字符串，本指南稍后将对此进行介绍。
+在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本指南稍后将对此进行介绍。
 
 ### <a name="config-connstring"> </a>在使用云服务时配置连接字符串
 
-该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需部署你的应用程序。例如，向你的服务定义 ("*.csdef") 文件中添加设置，如下所示：
+该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需部署你的应用程序。例如，向你的服务定义 ( `*.csdef` ) 文件中添加设置，如下所示：
 
 	<ServiceDefinition name="WindowsAzure1">
 	...
@@ -68,7 +68,7 @@ Service Bus 使用连接字符串来存储终结点和凭据。你可以将连�
 
 ### 在使用网站或虚拟机时配置连接字符串
 
-在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 "web.config"）。你可以使用\<appSettings>元素存储连接字符串：
+在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 `web.config` ）。你可以使用 `<appSettings>` 元素存储连接字符串：
 
 	<configuration>
 		<appSettings>
