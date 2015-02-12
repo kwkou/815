@@ -30,14 +30,14 @@ Service Bus **NuGet** 包是获取 Service Bus API 和使用所有 Service Bus �
 
 Service Bus 使用连接字符串来存储终结点和凭据。你可以将连接字符串置于配置文件中，而不是在代码中对其进行硬编码：
 
-- 使用 Azure 云服务时，建议使用 Azure 服务配置系统（`*.csdef` 和 `*.cscfg` 文件）来存储连接字符串。
-- 使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 `web.config` 文件）来存储连接字符串。
+- 使用 Azure 云服务时，建议使用 Azure 服务配置系统（** *.csdef **和** *.cscfg **文件）来存储连接字符串。
+- 使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 web.config 文件）来存储连接字符串。
 
-在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本指南稍后将对此进行介绍。
+在上述两种情况下，你都可以使用 **CloudConfigurationManager.GetSetting** 方法检索连接字符串，本指南稍后将对此进行介绍。
 
 ### <a name="config-connstring"> </a>在使用云服务时配置连接字符串
 
-该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需部署你的应用程序。例如，向你的服务定义 (`*.csdef`) 文件中添加设置，如下所示：
+该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需部署你的应用程序。例如，向你的服务定义 (*.csdef) 文件中添加设置，如下所示：
 
 	<ServiceDefinition name="WindowsAzure1">
 	...
@@ -55,8 +55,11 @@ Service Bus 使用连接字符串来存储终结点和凭据。你可以将连�
 	...
 		<Role name="MyRole">
 			<ConfigurationSettings>
-				<Setting name="Microsoft.ServiceBus.ConnectionString" 
-						 value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
+				<Setting
+				name="Microsoft.ServiceBus.ConnectionString" 
+				value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;
+          SharedSecretIssuer=[issuerName];
+          SharedSecretValue=[yourDefaultKey]" />
 			</ConfigurationSettings>
 		</Role>
 	...
@@ -66,33 +69,36 @@ Service Bus 使用连接字符串来存储终结点和凭据。你可以将连�
 
 ### 在使用网站或虚拟机时配置连接字符串
 
-在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 `web.config`）。你可以使用 `<appSettings>` 元素存储连接字符串：
+在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 web.config）。你可以使用``<appSettings>``元素存储连接字符串：
 
 	<configuration>
 	    <appSettings>
 		    <add key="Microsoft.ServiceBus.ConnectionString"
-			     value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]" />
+			 value="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;
+         SharedSecretIssuer=[issuerName];
+         SharedSecretValue=[yourDefaultKey]" />
 		</appSettings>
 	</configuration>
 
 使用从管理门户检索到的颁发者和密钥值，如上一节中所述。
 
-##如何创建队列
+##<a name="create-queue"></a>如何创建队列
 
 你可以通过 **NamespaceManager** 类对 Service Bus 队列执行管理操作。**NamespaceManager** 类提供了创建、枚举和删除队列的方法。 
 
 此示例使用带连接字符串的 Azure **CloudConfigurationManager** 类构造 **NamespaceManager** 对象，此连接字符串包含 Service Bus 服务命名空间的基址和有权管理该命名空间的相应凭据。此连接字符串的形式为 
 
-	Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]
+	Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;
+    SharedSecretIssuer=[issuerName];
+    SharedSecretValue=[yourDefaultKey]
 
 例如，考虑上一节中的配置设置：
 
 	// Create the queue if it does not exist already
 	string connectionString = 
-	    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
+	CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-	var namespaceManager = 
-		NamespaceManager.CreateFromConnectionString(connectionString);
+	var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
 
     if (!namespaceManager.QueueExists("TestQueue"))
     {
@@ -120,7 +126,7 @@ Service Bus 使用连接字符串来存储终结点和凭据。你可以将连�
 
 **注意：**你可以对 **NamespaceManager** 对象使用 **QueueExists** 方法，以检查具有指定名称的队列是否已位于服务命名空间中。
 
-##如何向队列发送消息
+##<a name="send-messages"></a>如何向队列发送消息
 
 若要向 Service Bus 队列发送消息，你的应用程序需要使用连接字符串创建 **QueueClient** 对象。
 
@@ -153,7 +159,7 @@ Service Bus 使用连接字符串来存储终结点和凭据。你可以将连�
 
 Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
 
-##如何从队列接收消息
+##<a name="receive-messages"></a>如何从队列接收消息
 
 从队列接收消息的最简单方法是使用 **QueueClient** 对象。这些对象可在两种不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。
 
@@ -190,7 +196,7 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
        }
     } 
 
-##如何处理应用程序崩溃和不可读消息
+##<a name="handle-crashes"></a>如何处理应用程序崩溃和不可读消息
 
 Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，它可以对收到的消息调用"Abandon"方法（而不是 **Complete** 方法）。这会导致 Service Bus 在队列中将该消息解锁，使之再次可供同一使用方应用程序或其他使用方应用程序接收。
 
@@ -198,7 +204,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 如果在处理消息之后但在发出 **Complete** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
-##后续步骤
+##<a name="next-steps"></a>后续步骤
 
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 
