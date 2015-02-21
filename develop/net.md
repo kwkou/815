@@ -18,7 +18,9 @@ editor="Eric Chen" />
 ##特色
 
 ####网站入门
+
 ####ASP.NET 入门
+
 ###[入门教程](/zh-cn/documentation/articles/web-sites-dotnet-get-started/)
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -44,5 +46,5 @@ editor="Eric Chen" />
       </tr>
 </table>
 
-###[虚拟机](/zh-cn/develop/net/virtual-macines/) | [网站](/zh-cn/develop/net/websites/) | [云服务](/zh-cn/develop/net/cloud-services/) | [移动](/zh-cn/develop/net/mobile/)    
+###[虚拟机](/zh-cn/documentation/develop/net/virtual-macines/) | [网站](/zh-cn/documentation/develop/net/websites/) | [云服务](/zh-cn/documentation/develop/net/cloud-services/) | [移动](/zh-cn/documentation/develop/net/mobile/)    
     
