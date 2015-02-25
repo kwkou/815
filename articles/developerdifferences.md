@@ -38,7 +38,7 @@
 - [使用 Node.js 的 Windows Azure SDK](#nodejs)
 - [附录：Windows Azure 的内容库](#appendix)
 
-#[关于本文档](id:about)
+#[关于本文档]<a name="about"></a>
 
 Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球服务的云应用程序。
 
@@ -48,7 +48,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 有关中国服务功能可用性的最新更新，请访问中国[Windows Azure 门户](http://www.windowsazure.cn/)。有关 Windows Azure 上当前内容资产的列表，请参阅本文档的附录。
  
-#[为开发人员提供指导](id:dev-guide)
+#[为开发人员提供指导]<a name="dev-guide"></a>
 
 由于 Microsoft 提供的大部分英文技术内容当前均假定应用程序是针对全球服务而开发，而非中国服务，因此务必确保开发人员了解为托管于中国而开发的应用程序的主要区别。
 首先，功能上的差异，意即全球服务中的某些功能在中国不提供。
@@ -354,7 +354,7 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 <tbody>
 <tr style="mso-yfti-irow: 3;">
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-servicebus.chinacloudapi.cn
+servicebus.windows.net
 </td>
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
 servicebus. chinacloudapi.cn
@@ -362,7 +362,7 @@ servicebus. chinacloudapi.cn
 </tr>
 <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-accesscontrol.chinacloudapi.cn
+accesscontrol.windows.net
 </td>
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
 accesscontrol. chinacloudapi.cn
