@@ -2,7 +2,7 @@
 
 #中国 Windows Azure 应用程序开发人员说明
 ####Microsoft Corporation
-####更新时间：2015年1月
+####更新时间：2015年2月
 
 - [关于本文档](#about)
 - [为开发人员提供指导](#dev-guide)
@@ -38,7 +38,7 @@
 - [使用 Node.js 的 Windows Azure SDK](#nodejs)
 - [附录：Windows Azure 的内容库](#appendix)
 
-#[关于本文档](id:about)
+#[关于本文档]<a name="about"></a>
 
 Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球服务的云应用程序。
 
@@ -48,13 +48,13 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 有关中国服务功能可用性的最新更新，请访问中国[Windows Azure 门户](http://www.windowsazure.cn/)。有关 Windows Azure 上当前内容资产的列表，请参阅本文档的附录。
  
-#[为开发人员提供指导](id:dev-guide)
+#[为开发人员提供指导]<a name="dev-guide"></a>
 
 由于 Microsoft 提供的大部分英文技术内容当前均假定应用程序是针对全球服务而开发，而非中国服务，因此务必确保开发人员了解为托管于中国而开发的应用程序的主要区别。
 首先，功能上的差异，意即全球服务中的某些功能在中国不提供。
 其次，在中国提供的功能具有运营差异，意即如需使用公共英文内容（针对全球服务而撰写），则必须自定义任何示例代码和步骤。
 
-#[中国服务当前提供的功能](id:readyonwacn)
+#[中国服务当前提供的功能]<a name="readyonwacn"></a>
 
 中国服务当前包含以下的 Windows Azure 功能。
 
@@ -86,7 +86,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 * 应用服务 – 媒体服务 
 * 应用服务 – 通知中心
 
-#[中国服务当前未提供的功能](id:notonwacn)
+#[中国服务当前未提供的功能]<a name="notonwacn"></a>
 
 中国服务当前不包含以下的 Windows Azure 功能。
 
@@ -96,7 +96,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 * 数据服务 – SQL 数据同步
 * SQL 数据库管理门户
 
-#[在中国服务上创建应用程序时的区别概述](id:cndiffoverview)
+#[在中国服务上创建应用程序时的区别概述]<a name=""></a>cndiffoverview)
 
 Windows Azure 中的托管服务由一个设计为在托管服务中运行的应用程序和多个定义托管服务如何运行的 XML 配置文件组成。托管服务同时使用服务定义文件 (.csdef) 和配置文件 (.cscfg)。有关详细信息，请参阅[创建 Windows Azure 托管服务概述](http://msdn.microsoft.com/zh-cn/library/gg432976.aspx)。
 在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的 URI。例如，Windows Azure 和 SQL 数据库的 URI 通常以chinacloudapi.cn结尾。中国服务的开发人员必须能够识别 URI 端点的不同之处，然后将其使用的工具以及开发的应用程序配置为使用这些不同端点的对应 URI。
@@ -113,7 +113,7 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 * 使用设计为在 Windows Azure 上运行的工具和服务（这些工具和服务具有其自己的配置文件或服务定义文件）时
 * 使用 CSUPLOAD 工具为 VM 角色上传映像
 
-##[端点映射](id:endpointmap)
+##[端点映射]<a name="endpointmap"></a>
 
 将 Windows Azure 和 SQL 数据库公共端点映射到中国特定的端点时，请参照下表。
  
@@ -133,22 +133,22 @@ HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
 SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
 
 
-#[中国的数据中心](id:cncenter)
+#[中国的数据中心]<a name="cncenter"></a>
 
 中国服务当前运营着两个数据中心。这两个数据中心在location字段中显示为“China North”和“China East”。
  
 
-#[数据备份](id:databackup)
+#[数据备份]<a name="databackup"></a>
 
 所有数据和设置（包括所有类型的配置、存储和数据库）均与“全球服务”相同的方式进行备份。中国两个数据中心中的所有数据进行复制，但并不会自动备份到全球的其他位置。
 
 如果整个系统出现灾难性故障，数据可能会丢失。为确保数据的连续性，开发人员应创建数据快照，并将其存储到 Windows Azure 之外的位置。
  
 
-#[设置用于开发的计算机](id:confdevcomp)
+#[设置用于开发的计算机]<a name="confdevcomp"></a>
 
 准备发布应用程序时，请打开 Windows Azure 项目的快捷菜单，然后选择Publish。下图显示了 Publish Windows Azure Application 向导
-###[配置订阅](id:confsub)
+###[配置订阅]<a name="confsub"></a>
 1. 从“Publish Windows Azure Application”向导的“Choose your subscription”下，选择 &lt;Manage…&gt;，然后再选择“New”。<br />
 ![developerdifferences-001](./media/developerdifferences/developerdifferences-001.png)
  
@@ -163,7 +163,7 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 	![developerdifferences-002](./media/developerdifferences/developerdifferences-002.png)
  
 
-###[配置设置](id:confpref)
+###[配置设置]<a name="confpref"></a>
 1. 在 Cloud service 列表中，请执行以下两组步骤之一：
 
 	o 选择一项现有服务。此时将显示此云服务的数据中心的位置。记下这一位置并确保您的存储帐户位置与该数据中心位置相同。
@@ -184,18 +184,18 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。<br />
 当更新部署失败后，如果您希望自动执行完整部署，应选中复选框 *if deployment can't be updated, do a full deployment*。完整部署将重置云服务的虚拟 IP (VIP) 地址。有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614593.aspx">如何：为云服务保留固定的虚拟 IP 地址</a>。
 
-###[发布项目](id:pubproj)
+###[发布项目]<a name="pubproj"></a>
 1. 您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择Save图标。此向导将创建配置文件并将其保存在 Visual Studio 项目中。<br />
 ![developerdifferences-006](./media/developerdifferences/developerdifferences-006.png)<br />
 发布配置文件会显示在 Visual Studio 的 Solution Explorer 中，配置文件设置将被写入扩展名为 .azurePubxml 的文件中。这些设置均保存为 XML 标记的属性。
 
 2. 选择 Publish 以发布应用程序。您可以在 Visual Studio 中 Output 窗格中监控流程状态。
 
-#[修改中国服务的配置和服务定义文件](id:modifycnconf)
+#[修改中国服务的配置和服务定义文件]<a name="modifycnconf"></a>
 
 修改现有项目时，请在指向 Windows Azure、SQL 数据库 URI 的服务定义文件或配置文件中搜索您的项目，以获取端点 URI。对于中国，应将指向 *.chinacloudapi.cn 的端点重定向至新的 URI。以下列出了几个示例。
 
-##[存储端点](id:storagendpoint)
+##[存储端点]<a name="storagendpoint"></a>
 
 您必须使用自定义存储端点。默认设置指向 *.core.chinacloudapi.cn，其中 * 基于您的应用程序和存储位置而发生变更。
 
@@ -238,7 +238,7 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
     CloudBlobClient BlobClient = Account.CreateCloudBlobClient();
     )
     
-##[Windows Azure 计算中的端口绑定](id:waport)
+##[Windows Azure 计算中的端口绑定]<a name="waport"></a>
 
 端口绑定还使用以 *.chinacloudapp.cn* 结尾的 DNS 名称。您必须更改这些名称以指向 *.chinacloudapp.cn*。以下显示了包括端口说明的部分服务定义文件。
 
@@ -256,7 +256,7 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
     </Sites>
 有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/hh180158.aspx">如何配置Windows Azure 端口。
 
-##[与 SQL 数据库服务器的连接](id:sqlcon)
+##[与 SQL 数据库服务器的连接]<a name="sqlcon"></a>
 
 SQL 数据库服务器名称将从 *.database.chinacloudapi.cn* 更改为 *.devdatabase.chinacloudapi.cn*。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该新名称。对于未在中国服务中运行的应用程序，对 SQL 数据库服务器的引用可以是服务定义文件中的 DataConnectionString 值或其他 .NET 配置文件中的值。例如：
 
@@ -268,9 +268,9 @@ SQL 数据库服务器名称将从 *.database.chinacloudapi.cn* 更改为 *.devd
     </connectionStrings>
     </configuration>
 
-##[服务总线和Active Directory](id:srvbus-ad)
+##[服务总线和Active Directory]<a name="srvbus-ad"></a>
  
-###[Active Directory](id:ad)
+###[Active Directory]<a name="ad"></a>
 
 Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问功能，可用于内部部署和云应用。开发人员可以使用Windows Azure AD功能为企业应用和软件作为服务（SaaS）的供应商实现单点登录和登出，使用图形API来查询和管理云的目录对象，整合内部部署来将Active Directory的目录数据同步到云端。
 
@@ -284,7 +284,7 @@ Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问�
 注意：在公共预览期间创建的访问控制命名空间将不可操作或访问。然而，类似的功能可在Windows Azure管理门户的Active Directory使用。
 
 
-<!--- ###[ACS 配置](id:acsconf)
+<!--- ###[ACS 配置]<a name=""></a>acsconf)
 
 要创建使用 ACS 的应用程序，开发人员应阅读[有关 Codeplex 的访问控制服务示例和文档](http://acs.codeplex.com/)中的文档和代码示例。要在中国使用 Windows Azure 中的这些示例，请在 \Management\ManagementService\Common\SamplesConfiguration.cs 文件中将 AcsHostUrl 端点 *.accesscontrol.chinacloudapi.cn*替换为 *.accesscontrol.chinacloudapi.cn*。
 例如，要使用 Acs2WindowsPhoneSample 示例，请另外进行以下更改：
@@ -330,7 +330,7 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 <p class="TableSpacing"> 
 
 
-###[服务总线配置](id:srvbusconf)
+###[服务总线配置]<a name="srvbusconf"></a>
 
 您可以通过以下方法之一将使用服务总线的应用程序重定向至特定端口：
 
@@ -354,7 +354,7 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 <tbody>
 <tr style="mso-yfti-irow: 3;">
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-servicebus.chinacloudapi.cn
+servicebus.windows.net
 </td>
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
 servicebus. chinacloudapi.cn
@@ -362,7 +362,7 @@ servicebus. chinacloudapi.cn
 </tr>
 <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-accesscontrol.chinacloudapi.cn
+accesscontrol.windows.net
 </td>
 <td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
 accesscontrol. chinacloudapi.cn
@@ -479,7 +479,7 @@ Microsoft .NET Framework 版本
 	for /f %%i in ('dir /s /b config') do copy /y %~dp0servicebus.config %%~fi
 	popd
 
-#[使用服务管理 API](id:srvapi)
+#[使用服务管理 API]<a name="srvapi"></a>
 
 通过服务管理 API，开发人员可以对 Windows Azure 中运行的托管服务进行部署管理。事实上，全球服务和中国服务的管理门户都使用服务管理 API。
 全球服务使用的路径为<a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic">
@@ -488,41 +488,41 @@ Microsoft .NET Framework 版本
 有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/ee460786.aspx">访问服务管理资源</a>和<a href="http://msdn.microsoft.com/zh-cn/library/ee460807.aspx">关于服务管理 API</a>。
  
 
-#[将自定义域名重定向到中国服务中的托管服务](id:dnsred)
+#[将自定义域名重定向到中国服务中的托管服务]<a name="dnsred"></a>
 
 如果您使用的自定义域名转发到在全球服务中运行的托管服务，并将该托管服务移动到中国服务中，则必须更新转发的域以指向中国的新特定端点。
 例如，如果将 www.contoso.com 重定向到在 contoso.chinacloudapp.cn 运行的 Web 角色，现在必须将其重定向到 contoso.chinacloudapp.cn。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/gg981933.aspx">如何为 Windows Azure 托管服务配置自定义域</a> 
 组织可以使用其 DNS 服务器上的 CNAME 条目转发域。中国服务不包括允许自定义域名注册或转发的功能。
  
 
-#[对中国服务使用 VM 角色](id:usecnvm)
+#[对中国服务使用 VM 角色]<a name="usecnvm"></a>
 
-##[使用 VM 角色和 CSUpload](id:usevm)
+##[使用 VM 角色和 CSUpload]<a name="usevm"></a>
 
 使用 VM 角色时，请更改 CSUpload 端点以便使用特定于中国的 URI。例如：
 csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;</span>;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;</span>;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
  
 
-#[修改代码示例和工具](id:codetool)
+#[修改代码示例和工具]<a name="codetool"></a>
 
 下面列出了部分工具和示例及其要在世纪互联服务上运行所需的更改。
 
-##[常规工具](id:nomaltool)
+##[常规工具]<a name="nomaltool"></a>
 
 开发人员应该识别引用全球服务计算 (*.chinacloudapp.cn) 或存储端点 (*.core.chinacloudapi.cn) 的内部工具或应用程序，并对其进行更新以便使用特定于中国的端点。按照端点映射中的表，替换可在配置文件或这些工具的代码中找到的各个字符串。
 其中的示例包括存储资源管理器工具以及存储上传和下载工具。本节中列出了一些工具，但该列表并不完整。
 
-##[Visual Studio 服务器资源管理器](id:vsexplorer)
+##[Visual Studio 服务器资源管理器]<a name="vsexplorer"></a>
 
 可以使用 Visual Studio 中的服务器资源管理器浏览适用于所有中国订阅的计算、服务总线、存储以及虚拟机资源。用户导入发布设置文件时，Visual Studio 将获取中国存储端点。
 <a href="http://msdn.microsoft.com/zh-cn/library/ff687127.aspx">Windows Azure Tools for Visual Studio 入门</a><a name="_Hlt357777468"></a><a name="_Hlt357777469"></a>中逐步介绍了使用服务器资源管理器创建、编译、调试、上传以及查看 Windows Azure Hello World 应用程序的完整过程。将中国订阅导入 Visual Studio 后，这些说明即可在中国安装上使用。
 还可以查看已经在中国服务上但未使用 Visual Studio 部署的计算、服务总线、存储或虚拟机资源。按照<a href="http://msdn.microsoft.com/zh-cn/library/ff683675.aspx">使用 Windows Azure 计算资源管理器查看 Azure 应用程序的状态</a>中的说明查看已经在世纪互联服务上运行的一个或多个托管服务的状态。按照<a href="http://msdn.microsoft.com/zh-cn/library/ff683677.aspx">使用 Windows Azure 存储资源管理器浏览存储资源</a>中的说明查看中国服务上运行的现有存储帐户中的对象。
 
-##[CSManage - Windows Azure 服务管理示例](id:csmanage)
+##[CSManage - Windows Azure 服务管理示例]<a name="csmanage"></a>
 
 CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="http://code.msdn.microsoft.com/Windows-Azure-CSManage-e3f1882c/sourcecode?fileId=21328&amp;pathId=1293677472">服务管理示例</a>中下载 CSManage 示例。
 
-##[为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例](id:plainhttp)
+##[为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例]<a name="plainhttp"></a>
 
 当在中国运行时，需要对 PlainHttp 示例中的 URL 进行多项更新。按照以下步骤更新该示例。
 1.打开此示例的根文件夹：WindowsAzureAppFabricSDKSamples_V1.0-CS\ServiceBus\ExploringFeatures\MessageBuffer\PlainHttp 
@@ -530,7 +530,7 @@ CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用
 chinacloudapi.cn实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 行。
  
 
-#[使用 Windows Azure 诊断](id:wadig)
+#[使用 Windows Azure 诊断]<a name="wadig"></a>
 
 Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户来存储诊断信息。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/gg433048.aspx">使用 Windows Azure 诊断收集日志记录数据</a>
 例如，您的代码可能包含以下行
@@ -544,16 +544,16 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 	</ConfigurationSettings>
 `<YourStorageString>`的值为自定义端点并包括世纪互联服务的 URI。
 
-#[重新颁发 HTTPS 端点的证书](id:http-cert)
+#[重新颁发 HTTPS 端点的证书]<a name="http-cert"></a>
 
 使用自定义域名时无需对证书进行更改。
 如果任何现有应用程序使用 HTTPS 端点并将证书绑定到**https://*.chinacloudapp.cn**（其中 ** * **为您的服务名称），则必须为 ***.chinacloudapp.cn** 重新颁发这些证书。在中国部署该服务时，必须使用这些新证书。
  
-#[使用 Windows Azure PowerShell](id:powershell)
+#[使用 Windows Azure PowerShell]<a name="powershell"></a>
 
 要对中国服务使用*Windows Azure PowerShell*，请运行**Get-AzurePublishSettingsFile -Environment "AzureChinaCloud"** 来获取正确的*publish settings*文件。然后使用**Import-AzurePublishSettingsFile**导入。
 
-#[使用 Node.js 的 Windows Azure SDK](id:nodejs)
+#[使用 Node.js 的 Windows Azure SDK]<a name="nodejs"></a>
 
 要对中国服务使用 SDK，需要从门户或通过 CLI 提供连接字符串。
 **存储、服务总线和通知总线**
@@ -570,7 +570,7 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 	var sqlManagementService = azure.createSqlManagementService(subscriptionId, authentication, hostOptions);
  
 
-#[附录：Windows Azure 的内容库](id:appendix)
+#[附录：Windows Azure 的内容库]<a name="appendix"></a>
 
 下面列出了目前可用于 Windows Azure 的所有内容资产，并指出该资产是否专门针对中国服务。
  
