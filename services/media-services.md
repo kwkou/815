@@ -7,7 +7,7 @@ authors=""
 manager="Tiffena" 
 editor="Eric Chen" />
 
-#媒体服务 开发人员中心
+#媒体服务
 
 ##快速链接
 
@@ -21,7 +21,7 @@ editor="Eric Chen" />
 - [设置您的计算机](/zh-cn/documentation/articles/media-services-set-up-computer/)
 - [加密和上载资产](/zh-cn/documentation/articles/media-services-create-encrypted-asset-upload-storage/)
 - [批量上载内容](http://msdn.microsoft.com/zh-cn/library/azure/jj853022.aspx)
-- [全部显示](/zh-cn/develop/media-services/resources/)
+- [全部显示](/zh-cn/documentation/develop/media-services/resources/)
 
 ###编码
 
