@@ -1,5 +1,5 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：Media Services" 
+pageTitle="Windows Azure 开发人员中心：媒体服务" 
 description="" 
 services="Media Services" 
 documentationCenter="Develop" 
@@ -21,7 +21,7 @@ editor="Eric Chen" />
 - [设置您的计算机](/zh-cn/documentation/articles/media-services-set-up-computer/)
 - [加密和上载资产](/zh-cn/documentation/articles/media-services-create-encrypted-asset-upload-storage/)
 - [批量上载内容](http://msdn.microsoft.com/zh-cn/library/azure/jj853022.aspx)
-- [全部显示](/zh-cn/documentation/develop/media-services/resources/)
+
 
 ###编码
 
@@ -30,7 +30,6 @@ editor="Eric Chen" />
 - [检查作业进度](/zh-cn/documentation/articles/media-services-check-job-progress/)
 - [在门户中进行监视](/zh-cn/documentation/articles/media-services-monitor-services-account/)
 - [管理门户中的内容](/zh-cn/documentation/articles/media-services-manage-content/)
-- [全部显示](/zh-cn/develop/media-services/resources/)
 
 ###传送
 
@@ -38,7 +37,6 @@ editor="Eric Chen" />
 - [通过下载传送资产](/zh-cn/documentation/articles/media-services-deliver-asset-download/)
 - [传送流式处理内容](/zh-cn/documentation/articles/media-services-deliver-streaming-content/)
 - [动态包装内容](https://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx)
-- [全部显示](/zh-cn/develop/media-services/resources/)
 
 ###使用
 
@@ -46,7 +44,6 @@ editor="Eric Chen" />
 - [开发 Windows 8 播放器](/zh-cn/documentation/articles/media-services-build-smooth-streaming-apps/)
 - [开发 Flash 播放器](/zh-cn/documentation/articles/media-services-use-osmf-smooth-streaming-client-plugin/)
 - [开发 iOS 播放器](/zh-cn/documentation/articles/media-services-use-ios-media-player-framework/)
-- [全部显示](/zh-cn/develop/media-services/resources/)
 
 ##更多资源
 
