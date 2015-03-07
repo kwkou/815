@@ -1,7 +1,7 @@
-After the records for your domain name have propagated, you should be able to use your browser to verify that your custom domain name can be used to access your web site.
+在您的域名的记录已传播后，您应该能够使用浏览器验证您的自定义域名是否可用于访问您的网站。
 
-> [WACOM.NOTE] It can take some time for your CNAME to propagate through the DNS system. You can use a service such as <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> to verify that the CNAME is available.
+> [WACOM.NOTE] CNAME 通过 DNS 系统向外传播可能需要一段时间。可使用 <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> 之类的服务确认该 CNAME 是否可用。
 
-If you have not already added your web site as a 流量管理器 endpoint, you must do this before name resolution will work, as the custom domain name routes to 流量管理器. 流量管理器 then routes to your web site. Use the information in [Add or Delete Endpoints](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh744839.aspx) to add your web site as an endpoint in your 流量管理器 profile.
+如果尚未将您的网站添加为 Traffic Manager 终结点，则必须在名称解析工作前执行此操作，因为自定义域名将路由到 Traffic Manager。然后，Traffic Manager 将路由到的您网站。使用[添加或删除终结点](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh744839.aspx)中的信息在 Traffic Manager 配置文件中将你的网站添加为终结点。
 
-> [WACOM.NOTE] If your web site is not listed when adding an endpoint, verify that it is configured for Standard mode. You must use Standard mode for your web site in order to work with 流量管理器.
+> [WACOM.NOTE] 如果在添加终结点时您的网站未列出，请验证是否已将其配置为标准模式。必须将网站配置为标准模式，Traffic Manager 才起作用。<!--HONumber=41-->

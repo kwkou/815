@@ -1,238 +1,166 @@
-#Create a Virtual Machine Running Linux 
+<!---
+不要使用此文件。它已被弃用，并且将被删除。请改用 virtual-machines-Linux-tutorial-log-on-attach-disk.md
+-->
 
-Creating a virtual machine that is running the Linux operating system is easy when you use the Image Gallery in the Azure Management Portal. This guide assumes that you have no prior experience using Azure. You can create a virtual machine running the Linux operating system in the cloud that you can access and customize.
+## <a id="logon"> </a>虚拟机创建后如何进行登录 ##
 
-You will learn:
+若要管理虚拟机的设置以及在其上运行的应用程序，可以使用 SSH 客户端。为此，您必须在计算机上安装要用于访问虚拟机的 SSH 客户端。您可以选择很多 SSH 客户端程序。以下是可能的选择：
 
-- [About virtual machines in Azure] []
-- [How to create the virtual machine] []
-- [How to log on to the virtual machine after you create it] []
-- [How to attach a data disk to the new virtual machine] []
+- 如果您要使用运行 Windows 操作系统的计算机，则可能希望使用 PuTTY 等 SSH 客户端。有关详细信息，请参阅 [PuTTY 下载](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
+- 如果您要使用运行 Linux 操作系统的计算机，则可能希望使用 OpenSSH 等 SSH 客户端。有关详细信息，请参阅 [OpenSSH](http://www.openssh.org/)。
 
-**Note**: This tutorial creates a virtual machine that is not connected to a virtual network. If you want a virtual machine to use a virtual network, you must specify the virtual network when you create the virtual machine. For more information about virtual networks, see [Azure Virtual Network Overview](http://msdn.microsoft.com/library/azure/jj156007.aspx).
+此教程将向您演示如何使用 PuTTY 程序访问虚拟机。
 
-## <a id="virtualmachine"> </a>About virtual machines in Azure ##
+1. 请从"管理门户"查找"主机名"和"端口信息"。您可以从虚拟机的仪表板中找到所需信息。单击虚拟机名称并查看仪表板"速览"部分的"SSH 详细信息"。
 
-A virtual machine in Azure is a server in the cloud that you can control and manage. After you create a virtual machine in Azure, you can delete and recreate it whenever you need to, and you can access the virtual machine just as you do with a server in your office. Virtual hard disk (VHD) files are used to create a virtual machine. The following types of VHDs are used for a virtual machine:
+	![查找 SSH 详细信息](./media/CreateVirtualMachineLinuxTutorial/SSHdetails.png)
 
-- **Image** - A VHD that is used as a template to create a new virtual machine. An image is a template because it doesn't have specific settings like a running virtual machine, such as the computer name and user account settings. If you create a virtual machine using an image, an operating system disk is automatically created for the new virtual machine.
-- **Disk** - A disk is a VHD that you can boot and mount as a running version of an operating system. After an image is provisioned, it becomes a disk. A disk is always created when you use an image to create a virtual machine. Any VHD that is attached to virtualized hardware and that is running as part of a service is a disk
+2. 打开 PuTTY 程序。
 
-The following options are available for using images to create a virtual machine:
+3. 输入您从仪表板收集到的"主机名"和"端口信息"，然后单击"打开"。
 
-- Create a virtual machine by using an image that is provided in the Image Gallery of the Azure Management Portal.
-- Create and upload a .vhd file that contains an image to Azure, and then create a virtual machine using the image. For more information about creating and uploading a custom image, see [Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System](/zh-cn/manage/linux/common-tasks/upload-a-vhd/).
+	![输入主机名和端口信息](./media/CreateVirtualMachineLinuxTutorial/putty.png)
 
-Each virtual machine resides in a cloud service, either by itself, or grouped with other virtual machines. You can place virtual machines in the same cloud service to enable the virtual machines to communicate with each other, to load-balance network traffic among virtual machines, and to maintain high availability of the machines. For more information about cloud services and virtual machines, see the "Execution Models" section in [Introducing Azure](/zh-cn/documentation/articles/fundamentals-introduction-to-azure/).
+4. 使用您在创建虚拟机时指定的 NewUser1 帐户登录到虚拟机。
 
-## <a id="custommachine"> </a>How to create the virtual machine ##
+	![登录到新虚拟机](./media/CreateVirtualMachineLinuxTutorial/sshlogin.png)
 
-You use the **From Gallery** method to create a custom virtual machine in the Management Portal. This method provides more options for configuring the virtual machine when you create it, such as the connected resources, the DNS name, and the network connectivity if needed.
-
-1. Sign in to the Azure [Management Portal](http://manage.windowsazure.cn).
-On the command bar, click **New**.
-
-2. Click **Virtual Machine**, and then click **From Gallery**.
-
-3. From **Choose an Image**, select an image from one of the lists. (The available images may differ depending on the subscription you're using.) Click the arrow to continue.
-
-4. If multiple versions of the image are available, in **Version Release Date**, pick the version you want to use.
-
-5. In **Virtual Machine Name**, type the name that you want to use. For this virtual machine, type **MyTestVM1**.
-
-6. In **Size**, select the size that you want to use for the virtual machine. The size that you choose depends on the number of cores that are needed for your application.  For this virtual machine, choose the smallest available size.
-
-7. In **New User Name**, type the name of the account that you will use to administer the virtual machine. You cannot use root for the user name. For this virtual machine, type **NewUser1**.
-
-8. Under Authentication, check **Provide a Password**. Then, provide the required information and click the arrow to continue.
-
-9. You can place virtual machines together in the cloud service, but for this tutorial, you're only creating a single virtual machine. To do this, select **Create a new cloud service**.
-
-10. In **Cloud Service DNS Name**, type a name that uses between 3 and 24 lowercase letters and numbers. This name becomes part of the URI that is used to contact the virtual machine through the cloud service. For this virtual machine, type **MyService1**.
-
-11. In **Region/Affinity Group/Virtual Network**, select where you want to locate the virtual machine.
-
-12. You can select a storage account where the VHD file is stored. For this tutorial, accept the default setting of **Use an Automatically Generated Storage Account**.
-
-13. Under **Availability Set**, for the purposes of this tutorial use the default setting of **None**. Click the check mark to create the virtual machine, and then click the arrow to continue.
-
-14.  Under **VM Agent**, decide whether to install the VM Agent. This agent provides the environment for you to install extensions that can help you interact with the virtual machine. For details, see [Using Extensions](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx).
-
-15. Under **Endpoints**, review the endpoint that's automatically created to allow Secure Shell (SSH) connections to the virtual machine. (Endpoints allow resources on the Internet or other virtual networks to communicate with a virtual machine.) You can add more endpoints now, or create them later. For instructions on creating them later, see [How to Set Up Communication with a Virtual Machine](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/).
-  
-After the virtual machine and cloud service are created, the Management Portal lists the new virtual machine under **Virtual Machines** and lists the cloud service under **Cloud Services**. Both the virtual machine and the cloud service are started automatically.
-
-## <a id="logon"> </a>How to log on to the virtual machine after you create it ##
-
-To manage the settings of the virtual machine and the applications that run on the machine, you can use an SSH client. To do this, you must install an SSH client on your computer that you want to use to access the virtual machine. There are many SSH client programs that you can choose from. The following are possible choices:
-
-- If you are using a computer that is running a Windows operating system, you might want to use an SSH client such as PuTTY. For more information, see [PuTTY Download](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
-- If you are using a computer that is running a Linux operating system, you might want to use an SSH client such as OpenSSH. For more information, see [OpenSSH](http://www.openssh.org/).
-
-This tutorial shows you how to use the PuTTY program to access the virtual machine.
-
-1. Find the **Host Name** and **Port information** from the Management Portal. You can find the information that you need from the dashboard of the virtual machine. Click the virtual machine name and look for the **SSH Details** in the **Quick Glance** section of the dashboard.
-
-	![Find SSH details](./media/CreateVirtualMachineLinuxTutorial/SSHdetails.png)
-
-2. Open the PuTTY program.
-
-3. Enter the **Host Name** and the **Port information** that you collected from the dashboard, and then click **Open**.
-
-	![Enter the host name and port information](./media/CreateVirtualMachineLinuxTutorial/putty.png)
-
-4. Log on to the virtual machine using the NewUser1 account that you specified when the machine was created.
-
-	![Log on to the new virtual machine](./media/CreateVirtualMachineLinuxTutorial/sshlogin.png)
-
-	You can now work with the virtual machine just as you would with any other server.
+	您现在可以像使用任何其他服务器一样使用该虚拟机。
 
 
-## <a id="attachdisk"> </a>How to attach a data disk to the new virtual machine ##
+## <a id="attachdisk"> </a>如何将数据磁盘附加到新虚拟机 ##
 
-Your application may need to store data. To set this up, you attach a data disk to the virtual machine that you previously created. The easiest way to do this is to attach an empty data disk to the machine.
+您的应用程序可能需要存储数据。若要执行此操作，您可以将数据磁盘附加到之前创建的虚拟机。执行此操作的最简单方法是将空数据磁盘附加到计算机。
 
-**Note: Data Disk vs. Resource Disk**  
-Data Disks reside on Azure Storage and can be used for persistent storage of files and application data.
+**注意：数据磁盘与资源磁盘的对比**  
+数据磁盘驻留在 Azure 存储空间中并且可以用于持久存储文件和应用程序数据。
 
-Each virtual machine created also has a temporary local *Resource Disk* attached. Because data on a resource disk may not be durable across reboots, it is often used by applications and processes running in the virtual machine for transient and temporary storage of data. It is also used to store page or swap files for the operating system.
+每个所创建的虚拟机还附加有一个临时的本地  *Resource Disk*。因为资源磁盘上的数据可能不能在重新引导后持久存在，因此它通常由在虚拟机中运行的应用程序和进程用于数据的短暂和临时存储。它还用来为操作系统存储页面文件或交换文件。
 
-On Linux, the Resource Disk is typically managed by the Azure Linux Agent and automatically mounted to **/mnt/resource** (or **/mnt** on Ubuntu images). Please see the [Azure Linux Agent User Guide](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/) for more information.
+在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请注意，资源磁盘是  *temporary* 磁盘，并且可能在 VM 取消设置时清空。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。请参阅 [Azure Linux 代理用户指南（Azure Linux 代理用户指南）](http://www.windowsazure.com/zh-cn/manage/linux/how-to-guides/linux-agent-guide/)。
 
 
-1. If you have not already done so, sign in to the Azure Management Portal.
 
-2. Click **Virtual Machines**, and then select the **MyTestVM1** virtual machine that you previously created.
+1. 如果您尚未这么做，请登录到 Azure 管理门户。
 
-3. On the command bar, click **Attach**, and then click **Attach Empty Disk**.
+2. 单击"虚拟机"，然后选择您之前创建的 **MyTestVM1** 虚拟机。
+
+3. 在命令栏上，单击"附加"，然后单击"附加空磁盘"。
 	
-	The **Attach Empty Disk** dialog box appears.
+	将显示"附加空磁盘"对话框。
 
-	![Define disk details](./media/CreateVirtualMachineLinuxTutorial/attachnewdisklinux.png)
+	![定义磁盘详细信息](./media/CreateVirtualMachineLinuxTutorial/attachnewdisklinux.png)
 
-4. The **Virtual Machine Name**, **Storage Location**, and **File Name** are already defined for you. All you have to do is enter the size that you want for the disk. Type **5** in the **Size** field.
+4. 已经为您定义了"虚拟机名称"、"存储位置"和"文件名"。您只需要输入所需的磁盘大小。在"大小"字段中键入 **5**。
 
-	**Note:** All disks are created from a VHD file in Azure storage. You can provide a name for the VHD file that is added to storage, but the name of the disk is automatically generated.
+	**注意：**所有的磁盘都是从 Azure 存储中的 VHD 文件创建的。您可以为已添加到该存储的 VHD 文件提供名称，但是磁盘的名称是自动生成的。
 
-5. Click the check mark to attach the data disk to the virtual machine.
+5. 单击复选标记以将数据磁盘附加到虚拟机。
 
-6. You can verify that the data disk is successfully attached to the virtual machine by looking at the dashboard. Click the name of the virtual machine to display the dashboard.
+6. 您可以通过查看仪表板验证数据磁盘是否已成功附加到虚拟机。单击虚拟机的名称以显示仪表板。
 
-	The number of disks is now 2 for the virtual machine and the disk that you attached is listed in the **Disks** table.
+	现在虚拟机的磁盘数是 2 个，您附加的磁盘列在"磁盘"表中。
 
-	![Attach disk success](./media/CreateVirtualMachineLinuxTutorial/attachemptysuccess.png)
-
-
-The data disk that you just attached to the virtual machine is offline and not initialized after you add it. You must log on to the machine and initialize the disk to use it for storing data.
-
-1. Connect to the virtual machine by using the steps listed above in **How to log on to the virtual machine after you create it**.
+	![附加磁盘成功](./media/CreateVirtualMachineLinuxTutorial/attachemptysuccess.png)
 
 
-2. In the SSH window, type the following command, and then enter the account password:
+您刚刚添加到虚拟机中的数据磁盘在您添加它后处于脱机和未初始化状态。您必须先登录到虚拟机并初始化磁盘，然后才能使用该磁盘存储数据。
+
+1. 使用在上面的"创建虚拟机后如何登录"中列出的步骤连接到虚拟机。
+
+
+2. 在 SSH 窗口中，键入以下命令，然后输入帐户密码：
 
 	`sudo grep SCSI /var/log/messages`
 
-	You can find the identifier of the last data disk that was added in the messages that are displayed.
+	您可以在所示消息中找到最后添加的数据磁盘的标识符。
 
-	![Identify disk](./media/CreateVirtualMachineLinuxTutorial/diskmessages.png)
+	![标识磁盘](./media/CreateVirtualMachineLinuxTutorial/diskmessages.png)
 
 
-3. In the SSH window, type the following command to create a new device, and then enter the account password:
+3. 在 SSH 窗口中，键入下面的命令以新建设备，然后输入帐户密码：
 
 	`sudo fdisk /dev/sdc`
 
-	>[WACOM.NOTE] In this example you may need to use `sudo -i` on some distributions if /sbin or /usr/sbin are not in your `$PATH`.
+	>[WACOM.NOTE] 此示例中，如果 /sbin 或 /usr/sbin 不在您的 `$PATH` 中，您在某些分发上可能需要使用  `sudo -i`。
 
 
-4. Type **n** to create a new partition.
+4. 键入 **n** 以创建新分区。
 
-	![Create new device](./media/CreateVirtualMachineLinuxTutorial/diskpartition.png)
-
-
-5. Type **p** to make the partition the primary partition, type **1** to make it the first partition, and then type enter to accept the default value for the cylinder.
-
-	![Create partition](./media/CreateVirtualMachineLinuxTutorial/diskcylinder.png)
+	![创建新设备](./media/CreateVirtualMachineLinuxTutorial/diskpartition.png)
 
 
-6. Type **p** to see the details about the disk that is being partitioned.
+5. 键入 **p** 将该分区设置为主分区，键入 **1** 将其设置为第一分区，然后键入 Enter 以接受柱面的默认值。
 
-	![List disk information](./media/CreateVirtualMachineLinuxTutorial/diskinfo.png)
-
-
-7. Type **w** to write the settings for the disk.
-
-	![Write the disk changes](./media/CreateVirtualMachineLinuxTutorial/diskwrite.png)
+	![创建分区](./media/CreateVirtualMachineLinuxTutorial/diskcylinder.png)
 
 
-8. You must create the file system on the new partition. As an example, type the following command to create the file system, and then enter the account password:
+6. 键入 **p** 以查看有关分区磁盘的详细信息。
+
+	![列出磁盘信息](./media/CreateVirtualMachineLinuxTutorial/diskinfo.png)
+
+
+7. 键入 **w** 以写入磁盘的设置。
+
+	![写入磁盘更改](./media/CreateVirtualMachineLinuxTutorial/diskwrite.png)
+
+
+8. 您必须在新分区上创建文件系统。例如，键入下面的命令以创建文件系统，然后输入帐户密码：
 
 	`sudo mkfs -t ext4 /dev/sdc1`
 
-	![Create file system](./media/CreateVirtualMachineLinuxTutorial/diskfilesystem.png)
+	![创建文件系统](./media/CreateVirtualMachineLinuxTutorial/diskfilesystem.png)
 
-	>[WACOM.NOTE] Note that on SUSE Linux Enterprise 11 systems provide only read-only access for ext4 file systems.  For these systems it is recommended to format the new file system as ext3 rather than ext4.
+	>[WACOM.NOTE] 注意，在 SUSE Linux Enterprise 11 系统上，对于 ext4 文件系统仅提供了只读访问权限。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
 
 
-9. Next you must have a directory available to mount the new file system. As an example, type the following command to make a new directory for mounting the drive, and then enter the account password:
+9. 接下来，您必须有一个目录可用于装载新文件系统。例如，键入下面的命令来创建一个用于装载驱动器的新目录，然后输入帐户密码：
 
 	`sudo mkdir /datadrive`
 
 
-10. Type the following command to mount the drive:
+10. 键入下面的命令以安装驱动器：
 
 	`sudo mount /dev/sdc1 /datadrive`
 
-	The data disk is now ready to use as **/datadrive**.
+	数据磁盘现在可以作为 **/datadrive** 使用。
 
 
-11. Add the new drive to /etc/fstab:
+11. 将新驱动器添加到 /etc/fstab：
 
-	To ensure the drive is re-mounted automatically after a reboot it must be added to the /etc/fstab file. In addition, it is highly recommended that the UUID (Universally Unique IDentifier) is used in /etc/fstab to refer to the drive rather than just the device name (i.e. /dev/sdc1). To find the UUID of the new drive you can use the **blkid** utility:
+	若要确保在重新引导后自动重新装载驱动器，必须将其添加到 /etc/fstab 文件。此外，强烈建议在 /etc/fstab 中使用 UUID（全局唯一标识符）来引用驱动器而不是只使用设备名称（即 /dev/sdc1）。若要查找新驱动器的 UUID，可以使用 **blkid** 实用程序：
 	
 		`sudo -i blkid`
 
-	The output will look similar to the following:
+	输出与以下内容类似：
 
 		`/dev/sda1: UUID="11111111-1b1b-1c1c-1d1d-1e1e1e1e1e1e" TYPE="ext4"`
 		`/dev/sdb1: UUID="22222222-2b2b-2c2c-2d2d-2e2e2e2e2e2e" TYPE="ext4"`
 		`/dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"`
 
-	>[WACOM.NOTE] blkid may not require sudo access in all cases, however, it may be easier to run with `sudo -i` on some distributions if /sbin or /usr/sbin are not in your `$PATH`.
+	>[WACOM.NOTE] blkid 可能不是在所有情况下都需要 sudo 访问权限，不过，如果 /sbin 或 /usr/sbin 不在您的 `$PATH` 中，则在某些分发上使用  `sudo -i` 运行可能更为容易。
 
-	**Caution:** Improperly editing the /etc/fstab file could result in an unbootable system. If unsure, please refer to the distribution's documentation for information on how to properly edit this file. It is also recommended that a backup of the /etc/fstab file is created before editing.
+	**注意：**错误地编辑 /etc/fstab 文件可能会导致系统无法启动。如果无法确定，请参阅该分发的文档以获取有关如何正确编辑此文件的信息。此外，建议在编辑前先创建 /etc/fstab 文件的备份。
 
-	Using a text editor, enter the information about the new file system at the end of the /etc/fstab file.  In this example we will use the UUID value for the new **/dev/sdc1** device that was created in the previous steps, and the mountpoint **/datadrive**:
+	使用文本编辑器，在 /etc/fstab 文件的末尾输入有关新文件系统的信息。在此示例中，我们将使用在之前的步骤中创建的新 **/dev/sdc1** 设备的 UUID 值并使用装载点 **/datadrive**：
 
 		`UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults   1   2`
 
-	Or, on systems based on SUSE Linux you may need to use a slightly different format:
+	另外，在基于 SUSE Linux 的系统上，您可能需要使用稍微不同的格式：
 
 		`/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /   ext3   defaults   1   2`
 
-	If additional data drives or partitions are created you will need to enter them into /etc/fstab separately as well.
+	如果还创建了其他数据驱动器或分区，您同样也需要分别将其输入到 /etc/fstab 中。
 
-	You can now test that the file system is mounted properly by simply unmounting and then re-mounting the file system, i.e. using the example mount point `/datadrive` created in the earlier steps: 
+	现在，您可以通过简单地卸载并重新装载文件系统（即使用在之前的步骤中创建的示例装载点 `/datadrive`）来测试文件系统是否已正确装载： 
 
 		`sudo umount /datadrive`
 		`sudo mount /datadrive`
 
-	If the second command produces an error, check the /etc/fstab file for correct syntax.
+	如果第二个命令产生错误，请检查 /etc/fstab 文件的语法是否正确。
 
 
-	>[WACOM.NOTE] Subsequently removing a data disk without editing fstab could cause the VM to fail to boot. If this is a common occurrence, then most distributions provide either the `nofail` and/or `nobootwait` fstab options that will allow a system to boot even if the disk is not present. Please consult your distribution's documentation for more information on these parameters.
+	>[WACOM.NOTE] 之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法引导。如果这是一种常见情况，则请注意，大多数分发都提供了  `nofail` 和/或  `nobootwait` fstab 选项，这些选项使系统在磁盘不存在时也能引导。有关这些参数的详细信息，请查阅您的分发文档。
 
 
-##Next Steps 
-
-To learn more about Linux on Azure, see the following articles:
-
-- [Introduction to Linux on Azure](/zh-cn/documentation/articles/introduction-linux/)
-
-- [How to use the Azure Command-Line Tools for Mac and Linux](/zh-cn/documentation/articles/xplat-cli/)
-
-
-[Next Steps]: #next
-[About virtual machines in Azure]: #virtualmachine
-[How to create the virtual machine]: #custommachine
-[How to log on to the virtual machine after you create it]: #logon
-[How to attach a data disk to the new virtual machine]: #attachdisk
+<!--HONumber=41-->

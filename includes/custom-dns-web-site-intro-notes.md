@@ -1,10 +1,7 @@
-> [WACOM.NOTE] The procedures in this task apply to Web Sites; for Cloud Services, see <a href="/en-us/develop/net/common-tasks/custom-dns/">Configuring a Custom Domain Name in Azure</a>.
+﻿> [WACOM.NOTE] **本文适用于 Azure 网站**；对于云服务，请参阅<a href="/zh-cn/develop/net/common-tasks/custom-dns/">在 Azure 中配置自定义域名</a>。
 
 
-> [WACOM.NOTE] The steps in this task are specific to Web Sites that do not use 流量管理器 to load balance traffic. If your web site uses 流量管理器, use the selector at the top of this article to select the 流量管理器 specific steps.
+> [WACOM.NOTE] **有关使用 Traffic Manager 使到网站的流量实现负载平衡的说明**，请使用本文顶部的选择器选择特定于 Traffic Manager 的步骤。
 
 
-> [WACOM.NOTE] The steps in this task require you to configure your web sites for Shared, Basic, or Standard mode, which may change how much you are billed for your subscription. See <a href=/en-us/pricing/details/web-sites/">Web Sites Pricing Details</a> for more information.
-
-
-
+> [WACOM.NOTE] **自定义域名不能用于免费网站**。您必须将网站配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href=/zh-cn/pricing/details/web-sites/">网站定价详细信息</a>。<!--HONumber=41-->

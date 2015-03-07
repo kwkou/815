@@ -10,15 +10,15 @@ hosted service application model.<a id="compare" name="compare"></a>
 
 ## Table of Contents<a id="_GoBack" name="_GoBack"></a>
 
--   [Azure Application Model Benefits][]
--   [Hosted Service Core Concepts][]
--   [Hosted Service Design Considerations][]
--   [Designing your Application for Scale][]
--   [Hosted Service Definition and Configuration][]
--   [The Service Definition File][]
--   [The Service Configuration File][]
--   [Creating and Deploying a Hosted Service][]
--   [References][]
+-   [Azure Application Model Benefits][Azure Application Model Benefits]
+-   [Hosted Service Core Concepts][Hosted Service Core Concepts]
+-   [Hosted Service Design Considerations][Hosted Service Design Considerations]
+-   [Designing your Application for Scale][Designing your Application for Scale]
+-   [Hosted Service Definition and Configuration][Hosted Service Definition and Configuration]
+-   [The Service Definition File][The Service Definition File]
+-   [The Service Configuration File][The Service Configuration File]
+-   [Creating and Deploying a Hosted Service][Creating and Deploying a Hosted Service]
+-   [References][References]
 
 ## <a id="benefits"> </a>Azure Application Model Benefits
 
@@ -108,7 +108,7 @@ URL. Usually, you will not distribute or publish the Azure
 *prefix*.chinacloudapp.cn URL. Instead, you will purchase a DNS name from
 your DNS registrar of choice and configure your DNS name to redirect
 client requests to the Azure URL. For more details, see
-[Configuring a Custom Domain Name in Azure][].
+[Configuring a Custom Domain Name in Azure][Configuring a Custom Domain Name in Azure].
 
 ## <a id="considerations"> </a>Hosted Service Design Considerations
 
@@ -156,8 +156,8 @@ location in which you want your code to execute.
 To achieve high availability and scalability, it is critically important
 that your application's data be kept in a central repository accessible
 to multiple role instances. To help with this, Azure offers
-several storage options such as blobs, tables, and SQL数据库. Please see
-the [Data Storage Offerings in Azure][] article for more
+several storage options such as blobs, tables, and SQL Database. Please see
+the [Data Storage Offerings in Azure][Data Storage Offerings in Azure] article for more
 information about these storage technologies. The figure below shows how
 the load balancer inside the Azure data center distributes
 client requests to different role instances all of which have access to
@@ -204,7 +204,7 @@ customer's order but then it offloads the order processing to the Order
 Processing role instances. The best way to pass work form one set of
 role instances to another set of instances is using the queuing
 technology provided by Azure, either the Queue Service or
-服务总线 Queues. The use of a queue is a critical part of the story
+Service Bus Queues. The use of a queue is a critical part of the story
 here. The queue allows the hosted service to scale its roles
 independently allowing you to balance the workload against cost. If the
 number of messages in the queue increases over time, then you can scale
@@ -249,7 +249,7 @@ instance.
 As I mentioned earlier, the service definition (CSDEF) file is an XML
 file that describes the various roles that make up your complete
 application. The complete schema for the XML file can be found here:
-[http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx][].
+[http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx][http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx].
 The CSDEF file contains a WebRole or WorkerRole element for each role
 that you want in your application. Deploying a role as a web role (using
 the WebRole element) means that the code will run on a role instance
@@ -409,7 +409,7 @@ Network I/O**
 You are charged hourly for each VM you use as a role instance and you
 are also charged for any data that your role instances send outside the
 data center. You are not charged for data entering the data center. For
-more information, see [Azure Pricing][]. In general, it is
+more information, see [Azure Pricing][Azure Pricing]. In general, it is
 advisable to use many small role instances as opposed to a few large
 instances so that your application is more resilient to failure. After
 all, the fewer role instances you have, the more disastrous a failure in
@@ -424,7 +424,8 @@ more useful items available to you:
 -   **Certificates**. You use certificates for encrypting data or if
     your web service supports SSL. Any certificates need to be uploaded
     to Azure. For more information, see [Managing Certificates
-    in Azure][]. This XML setting installs previously-uploaded
+    in Azure][Managing Certificates
+    in Azure]. This XML setting installs previously-uploaded
     certificates into the role instance's certificate store so that they
     are usable by your application code.
 
@@ -455,7 +456,7 @@ more useful items available to you:
 
 -   **Local Storage**. This allocates a subdirectory on the role
     instance for your application to use. It is described in more detail
-    in the [Data Storage Offerings in Azure][] article.
+    in the [Data Storage Offerings in Azure][Data Storage Offerings in Azure] article.
 
 -   **Startup Tasks**. Startup tasks give you a way to install
     prerequisite components on a role instance as it boots up. The tasks
@@ -466,7 +467,7 @@ more useful items available to you:
 The service configuration (CSCFG) file is an XML file that describes
 settings that can be changed without redeploying your application. The
 complete schema for the XML file can be found here:
-[http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx][].
+[http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx][http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx].
 The CSCFG file contains a Role element for each role in your
 application. Here are some of the items you can specify in the CSCFG
 file:
@@ -483,7 +484,7 @@ file:
     setting the osVersion attribute to a value of
     "WA-GUEST-OS-2.8\_201109-01" causes all your role instances to get
     what is described on this web page:
-    [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx][]. For more
+    [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx][http://msdn.microsoft.com/zh-cn/library/hh560567.aspx]. For more
     information about guest OS versions, see [Managing Upgrades to the
     Azure Guests OS].
 
@@ -500,7 +501,7 @@ file:
 -   **Configuration Setting Values**. This element indicates values for
     settings (as defined in the CSDEF file). Your role can read these
     values while it is running. These configuration settings values are
-    typically used for connection strings to SQL数据库 or to 
+    typically used for connection strings to SQL Database or to 
     Azure Storage, but they can be used for any purpose you desire.
 
 ## <a id="hostedservices"> </a>Creating and Deploying a Hosted Service
@@ -528,18 +529,18 @@ instances of Role \#2.
 ![image][5]
 
 For more information about deploying, upgrading, and reconfiguring your
-roles, see the [Deploying and Updating Azure Applications][]
+roles, see the [Deploying and Updating Azure Applications][Deploying and Updating Azure Applications]
 article.<a id="Ref" name="Ref"></a>
 
 ## <a id="references"> </a>References
 
--   [Creating a Hosted Service for Azure][]
+-   [Creating a Hosted Service for Azure][Creating a Hosted Service for Azure]
 
--   [Managing Hosted Services in Azure][]
+-   [Managing Hosted Services in Azure][Managing Hosted Services in Azure]
 
--   [Migrating Applications to Azure][]
+-   [Migrating Applications to Azure][Migrating Applications to Azure]
 
--   [Configuring an Azure Application][]
+-   [Configuring an Azure Application][Configuring an Azure Application]
 
 <div style="width: 700px; border-top: solid; margin-top: 5px; padding-top: 5px; border-top-width: 1px;">
 
@@ -559,19 +560,17 @@ article.<a id="Ref" name="Ref"></a>
   [0]: ./media/application-model/application-model-3.jpg
   [1]: ./media/application-model/application-model-4.jpg
   [2]: ./media/application-model/application-model-5.jpg
-  [Configuring a Custom Domain Name in Azure]: /zh-cn/documentation/articles/cloud-services-custom-domain-name/
+  [Configuring a Custom Domain Name in Azure]: http://windowsazure.cn/zh-cn/documentation/articles/cloud-services-custom-domain-name/
   [Data Storage Offerings in Azure]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/blob-storage-v17/
   [3]: ./media/application-model/application-model-6.jpg
   [4]: ./media/application-model/application-model-7.jpg
   
   [Azure Pricing]: http://www.windowsazure.cn/zh-cn/pricing/overview/
-  [Managing Certificates in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx
   [http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx]: http://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx
   [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx]: http://msdn.microsoft.com/zh-cn/library/hh560567.aspx
-  [Managing Upgrades to the Azure Guests OS]: http://msdn.microsoft.com/zh-cn/library/ee924680.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
   [5]: ./media/application-model/application-model-8.jpg
-  [Deploying and Updating Azure Applications]: http://www.windowsazure.cn/en-us/develop/net/fundamentals/deploying-applications/
+  [Deploying and Updating Azure Applications]: http://www.windowsazure.com/zh-cn/develop/net/fundamentals/deploying-applications/
   [Creating a Hosted Service for Azure]: http://msdn.microsoft.com/zh-cn/library/gg432967.aspx
   [Managing Hosted Services in Azure]: http://msdn.microsoft.com/zh-cn/library/gg433038.aspx
   [Migrating Applications to Azure]: http://msdn.microsoft.com/zh-cn/library/gg186051.aspx

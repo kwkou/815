@@ -1,13 +1,13 @@
-﻿## 将消息发送到事件中心
-在本节中，我们将编写用于将事件发送到事件中心的 C 应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org/)中利用 Proton AMQP 库。这类似于从 C 中将 服务总线 队列和主题与 AMQP 配合使用，如[此处](https://code.msdn.microsoft.com/windowsazure/Using-Apache-Qpid-Proton-C-afd76504)所示。有关详细信息，请参阅 [Qpid Proton 文档](http://qpid.apache.org/proton/index.html)。
+## 将消息发送到事件中心
+在本节中，我们将编写用于将事件发送到事件中心的 C 应用。我们将从 [Apache Qpid 项目]中利用 Proton AMQP 库(http://qpid.apache.org/)。这类似于从 C 中将服务总线队列和主题与 AMQP 配合使用，如[此处](https://code.msdn.microsoft.com/windowsazure/Using-Apache-Qpid-Proton-C-afd76504)所示。有关详细信息，请参阅 [Qpid Proton 文档](http://qpid.apache.org/proton/index.html)。
 
-1. 从 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/messenger/index.html)中，单击**安装 Qpid Proton** 链接，并根据环境按照说明操作。我们将假定一个 Linux 环境，例如，使用 Ubuntu 14.04 的 [Azure Linux VM](http://www.windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-tutorial/)。
+1. 从 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/messenger/index.html)中，单击 **Installing Qpid Proton**  链接，并根据环境按照说明操作。 我们将假定一个 Linux 环境，例如，使用 Ubuntu 14.04 的  [Azure Linux VM](http://www.windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-tutorial/)。
 
 2. 若要编译 Proton 库，请安装以下程序包：
 
 		sudo apt-get install build-essential cmake uuid-dev openssl libssl-dev
 
-3. 下载 [Qpid Proton 库](http://qpid.apache.org/proton/index.html)，并提取它，例如：
+3. 下载 [Qpid Proton 库](http://qpid.apache.org/proton/index.html) ，并提取它，例如：
 		
 		wget http://apache.fastbull.org/qpid/proton/0.7/qpid-proton-0.7.tar.gz
 		tar xvfz qpid-proton-0.6.tar.gz
@@ -19,7 +19,7 @@
 		cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 		sudo make install
 
-5. 在工作目录中，创建一个具有以下内容的名为 **sender.c** 的新文件。请记得替换事件中心名称和命名空间名称（后者通常为"{事件中心名称}-ns"）的值。还必须为早先创建的 **SendRule** 替换密钥的 URL 编码版本。可以在[此处](http://www.w3schools.com/tags/ref_urlencode.asp)对它进行 URL 编码。
+5. 在工作目录中，创建一个具有以下内容的名为 **sender.c** 的新文件。请记得替换事件中心名称和命名空间名称（后者通常为"{事件中心名称}-ns"）的值。还必须为之前创建的 **SendRule** 替换密钥的 URL 编码版本。可以在[此处](http://www.w3schools.com/tags/ref_urlencode.asp)对它进行 URL 编码。
 
 		#include "proton/message.h"
 		#include "proton/messenger.h"
@@ -104,4 +104,5 @@
 
 		gcc sender.c -o sender -lqpid-proton
 
-> [AZURE.NOTE]在上面的代码中，我们使用 1 的传出窗口尽快强制发出消息。通常，你的应用程序应尝试批处理消息，以提高吞吐量。请参阅 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/messenger/index.html)，以详细了解如何在此环境及其他环境中以及从为其提供了绑定的平台（目前为 Perl、PHP、Python 和 Ruby）中使用 Qpid Proton 库。
+> [AZURE.NOTE] 在上面的代码中，我们使用 1 的传出窗口尽快强制发出消息。通常，您的应用程序应尝试批处理消息，以提高吞吐量。请参阅 [Qpid AMQP Messenger 页](http://qpid.apache.org/components/messenger/index.html) 以获取有关如何在此环境及其他环境中以及从为其提供了绑定的平台（目前为 Perl、PHP、Python 和 Ruby）中使用 Qpid Proton 库的详细信息。
+<!--HONumber=41-->

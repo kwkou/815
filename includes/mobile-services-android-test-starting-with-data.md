@@ -12,7 +12,7 @@
 
 3.  在 Azure 管理门户中，单击与你的移动服务关联的数据库对应的“管理”。
 
-    ![][]
+    ![][0]
 
 4.  在管理门户中，执行一个查询以查看 Windows 应用商店应用程序所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 `todolist`.
 
@@ -22,5 +22,5 @@
 
 针对 Android 的**数据处理入门**教程到此结束。
 
-  []: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png
+  [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png
   [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/sql-azure-query.png
