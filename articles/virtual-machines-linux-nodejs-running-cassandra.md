@@ -1,602 +1,718 @@
-<properties linkid="services-linux-cassandra-with-linux" urlDisplayName="Cassandra with Linux" pageTitle="Run Cassandra with Linux on Azure" metaKeywords="" description="Explains how to run a Cassandra cluster on Linux in Azure Virtual Machines." metaCanonical="" services="virtual-machines" documentationCenter="Node.js" title="Running Cassandra with Linux on Azure and Accessing it from Node.js" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="services-linux-cassandra-with-linux" urlDisplayName="Cassandra with Linux" pageTitle="在 Azure 上通过 Linux 运行 Cassandra" metaKeywords="" description="说明如何在 Linux 在 Azure 虚拟机上运行 Cassandra 群集。" metaCanonical="" services="virtual-machines" documentationCenter="Node.js" title="Running Cassandra with Linux on Azure and Accessing it from Node.js" authors="" solutions="" manager="" editor="" />
 
-# <span></span></a>在 Azure 上通过 Linux 运行 Cassandra 并从 Node.js 访问 Cassandra
 
+
+
+
+<h1><a id = ""></a>在 Azure 上通过 Linux 运行 Cassandra 并从 Node.js 访问 Cassandra </h1>
 **作者：** Hanu Kommalapati
 
-## 目录
+## 表的内容 # #
 
--   [概述][概述]
--   [Cassandra 部署示意][Cassandra 部署示意]
--   [复合部署][复合部署]
--   [Azure 虚拟机部署][Azure 虚拟机部署]
--   [任务 1：部署 Linux 群集][任务 1：部署 Linux 群集]
--   [任务 2：在每台虚拟机上设置 Cassandra][任务 2：在每台虚拟机上设置 Cassandra]
--   [任务 3：从 Node.js 访问 Cassandra 群集][任务 3：从 Node.js 访问 Cassandra 群集]
--   [结束语][结束语]
+- [概述][]
+- [单区域部署][]
+- [测试单个区域 Cassandra 群集][]
+- [多区域部署][]
+- [测试多区域 Cassandra 群集][]
+- [测试从 Node.js 的 Cassandra 群集][]
+- [结论][]
 
-## <span id="overview"></span> </a>概述
+##<a id="overview"> </a>概述 # #
+Windows Azure 是一个打开的云平台，它也为非 Microsoft 软件，其中包括操作系统、应用程序服务器、消息传递的中间件的链接，以及从这两种商业和开源模型的 SQL 和 NoSQL 数据库作为运行这两个 Microsoft。他们能够构建可复原服务包括 Azure 公有云上的需要进行仔细的规划和故意的体系结构对于这两个应用程序服务器为也存储层。Cassandra 的分布式的存储体系结构自然会有助于构建高度可用的群集故障的容错的系统。Cassandra 是云小数位数由 Apache Software Foundation cassandra.apache.org ； 在维护的 NoSQL 数据库Cassandra 用 Java 编写，并因此在 Windows 和 Linux 上运行的平台。 
 
-Azure 通过允许对业务对象进行无模式存储的 Azure 表存储提供一个 NoSQL 数据库。可通过 Node.JS、.NET、Java 以及任何其他可使用 HTTP 和 REST 的语言使用此服务。不过，还存在一些其他的常用 NoSQL 数据库（如 Cassandra 和 Couchbase），这些数据库因其无状态云服务模型而无法在 Azure PaaS 上运行。Azure 虚拟机现在允许在 Azure 上运行这些 NoSQL 数据库，而无需更改代码库。本文旨在说明如何在虚拟机上运行 Cassandra 群集以及如何从 Node.js 访问该群集。本文未介绍适用于实际生产操作的 Cassandra 部署，其中用户需要使用关联的备份和恢复策略来查看多数据中心 Cassandra 群集。在本练习中，我们将使用 Ubuntu 12.04 版的 Linux 和 Cassandra 1.0.10；不过，可以针对任何 Linux 发行版调整此过程。
+本文的重点是作为单个和多数据中心群集利用 Windows Azure 虚拟机和虚拟网络在 Ubuntu 上显示 Cassandra 部署。超出本文讨论范围内的优化的生产工作负荷的群集部署了，因为它需要多个磁盘节点配置、 适当环形拓扑设计和数据建模以支持所需的复制、 数据一致性、 吞吐量和高可用性要求。 
 
-## <span id="schematic"></span> </a>Cassandra 部署示意
+此操作的文章将一种基本的方法，以显示什么参与构建 Cassandra 群集比较 Docker、 Chef 或傀儡，这会使基础结构部署简单得多。  
 
-利用 Azure 虚拟机功能，可以在 Microsoft 公有云上运行 NoSQL 数据库（如 [Cassandra][Cassandra]），这就像在私有云环境中运行它们一样轻松，只不过特定于 Azure 虚拟机基础结构的虚拟网络配置不同。在撰写本文时，Cassandra 尚未作为 Azure 上的托管服务提供，因此在本文中，我们将着眼于如何在虚拟机上设置 Cassandra 群集以及如何从虚拟机中托管的其他 Linux 实例访问该群集。还可以从 PaaS 托管的 Web 应用程序或 Web 服务中使用显示的 node.js 代码段。Azure 的一个核心优势是，允许充分利用 PaaS 和 IaaS 的复合应用程序模型。
+##<a id="depmodels"> </a>部署模型 # #
+Windows Azure 联网允许的访问可以限制即可获得细化的网络安全的独立专用的群集的部署。由于这篇文章是关于显示在基本级别的 Cassandra 部署，我们将不专注于的一致性级别和吞吐量的最佳存储设计。下面是网络我们假设群集的要求的列表：
 
-有两种适用于 Cassandra 应用程序环境的部署模型：独立虚拟机部署和复合部署。在复合部署中，将通过负载平衡器使用 Thrift 接口来从 PaaS 托管的 Azure Web 应用程序（或 Web 服务）使用虚拟机托管的 Cassandra 群集。即使每个 Cassandra 节点在出现密钥空间故障时将代理向其他对等节点发出的请求，负载平衡器也会帮助实现这些请求的入门级别的负载平衡。此外，负载平衡还会创建一个受防火墙保护的沙盒以便更好地控制数据。
+- 外部系统无法访问 Cassandra 数据库从 Azure 内外
+- 不必为 thrift 通信在负载平衡器后面的 Cassandra 群集的
+- 部署中的增强的群集可用性的每个数据中心的两个组中的 Cassandra 节点 
+- 锁定群集因此，只有应用程序服务器场直接具有对数据库的访问
+- SSH 以外没有公共网络终结点
+- 每个 Cassandra 节点需要固定的内部 IP 地址
 
-## <span id="composite"></span> </a>复合部署
+可以部署 Cassandra，到单个 Azure 区域或基于工作负荷的分布式特性的多个区域。可以利用多区域部署模型，以提供最终用户更接近通过相同的 Cassandra 基础结构特定的地理位置。Cassandra 的内置节点复制采用负责的多主机同步写入来自多个数据中心，并提供了对应用程序数据的一致视图。多区域部署还有助于与更广泛的 Azure 服务中断风险缓解。Cassandra 的可优化一致性和复制拓扑将帮助在满足不同的应用程序的 RPO 需求。 
 
-复合部署的目标是，最大程度地利用 PaaS 并将虚拟机的占用率保持绝对最小值，以便节省因对虚拟机进行基础结构管理所产生的开销。由于服务器管理开销，因此仅部署那些需要有状态的行为的组件，这些行为出于各种原因（包括上市时间、缺少对源代码的可见性以及对操作系统的较低级别的访问权）而无法轻易修改。
 
-![复合部署图][复合部署图]
+###<a id="oneregion"> </a>单区域部署 # # #
+我们将开始单区域部署，去总结教训中创建多区域模型。Azure 虚拟网络将用于创建独立的子网，以便可以满足上面提到的网络安全要求。创建单区域部署中所述的过程使用 Ubuntu 14.04 LTS 和 Cassandra 2.08 ；但是，可以轻松地采用此过程，到其他 Linux 变体。以下是一些单区域部署的系统的特征。  
 
-## <span id="deployment"></span> </a>Azure 虚拟机部署
+**高可用性：**图 1 所示的 Cassandra 节点部署到两个可用性集中，以便获得高可用性的多个故障域之间分布节点。Vm 带批注的每个可用性集与映射到 2 的容错域中。Windows Azure 使用这一概念的容错域来管理未计划的宕机时间 （例如硬件或软件故障），同时升级域 （例如，主机或来宾操作系统修补/升级、 应用程序升级） 的概念适用于管理计划内停机时间。请参阅[灾难恢复和高可用性 Azure 应用程序](http://msdn.microsoft.com/zh-cn/library/dn251004.aspx)容错域和升级域中获得高可用性的角色。
 
-![虚拟机部署][虚拟机部署]
+![Single region deployment](./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux1.png)
 
-在上面显示的图中，将一个四节点 Cassandra 群集部署在配置为允许 Thrift 通信的负载平衡器后面的虚拟机中。Azure 托管的 PaaS 应用程序使用语言特定的 Thrift 库访问群集。存在针对各种语言（包括 Java、C\#、Node.js、Python 和 C++）的库。第二个图中显示的独立虚拟机部署通过在虚拟机上托管的其他云服务中运行的应用程序来使用数据。
+图 1：单区域部署
 
-## <span id="task1"></span> </a>任务 1：部署 Linux 群集
+请注意在撰写本文时，Azure 不允许对特定故障域 ； 一组 Vm 的显式映射因此，即使使用图 1 中所示的部署模型，则统计上可能的所有虚拟机可以将都映射到两个故障域，而不是四个。 
 
-在虚拟机预览版发行期间，为了使 Linux VM 成为同一虚拟网络的一部分，必须将所有计算机部署到相同的云服务中。创建群集的典型顺序为：
+**负载平衡 Thrift 通信：** Thrift 客户端库内的 web 服务器连接到内部负载平衡器通过群集。这要求将内部负载平衡器添加到"数据"子网的过程 （请参阅图 1） 中托管的 Cassandra 群集的云服务的上下文。一旦定义内部负载平衡器，则每个节点要求要以前定义的负载平衡器名称的负载平衡集中将批注添加的负载平衡终结点。请参阅[Azure 内部负载平衡](http://msdn.microsoft.com/zh-cn/library/azure/dn690121.aspx)有关详细信息。
 
-![有关创建群集的顺序图][有关创建群集的顺序图]
+**群集的种子：**务必选择种子的大多数高度可用节点，如新节点将与要发现的群集拓扑的种子节点通信。从每个可用性集中的一个节点被指定为种子节点，以避免单点故障。
 
-**步骤 1：生成 SSH 密钥对**
+**复制因子和一致性级别：** Cassandra 的内置高可用性和数据耐用性表征复制因子 (RF-存储在群集上每个行的副本数） 和一致性级别 （多个副本，以便将结果返回到调用方之前，来读/写）。而在发出 CRUD 查询程序指定的一致性级别，将在 KEYSPACE （类似于关系数据库） 创建期间指定复制系数。尽管一致性级别指定发出查询时，将在 KEYSPACE 创建期间指定复制系数。请参阅位于 Cassandra 文档[的一致性配置](http://www.datastax.com/documentation/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html)有关一致性的详细信息和仲裁计算的公式。
 
-Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照[如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）][如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）]上的说明进行操作来生成公/私钥对。如果你打算在 Windows 或 Linux 上将 putty.exe 用作 SSH 客户端，则必须使用 puttygen.exe 将 PEM 编码的 RSA 私钥转换为 PPK 格式。可在[在 Azure 上为 Linux VM 部署生成 SSH 密钥对（可能为英文页面）][在 Azure 上为 Linux VM 部署生成 SSH 密钥对（可能为英文页面）]上找到有关此操作的说明。
+Cassandra 支持两种类型的数据完整性模型 - 一致性和最终一致性 ；复制因子和一致性级别将在一起确定是否数据都将保持一致，只要写入操作已完成，否则它将最终一致。例如，指定仲裁，如一致性级别将始终可确保数据一致性，而任何一致性级别，下面的按需获得要写入的副本数目仲裁 （例如一个） 将导致最终确保一致的数据。 
 
-**步骤 2：创建 Ubuntu VM**
+如上所示） 复制因子为 3 和仲裁 8 节点群集 （2 个节点是读取或写入的一致性） 读/写一致性级别，可以经受得住理论上的每个应用程序开始注意到失败之前的复制组在最 1 节点丢失。此操作假定所有的密钥空间具有均衡读/写请求。以下是我们将为已部署的群集使用的参数： 
 
-若要创建第一个 Ubuntu VM，请登录到 Azure 预览版门户，依次单击“新建”、“虚拟机”、“从库中”、“Unbuntu Server 12.xx”和右箭头。有关介绍如何创建 Linux VM 的教程，请参阅[创建运行 Linux 的虚拟机（可能为英文页面）][创建运行 Linux 的虚拟机（可能为英文页面）]。
-
-然后，在“VM 配置”屏幕上输入下列信息：
-
-<table>
-    <tr>
-<th>字段名称</th>
-<th>字段值</th>
-<th>备注</th>
-    </tr>
-    <tr>
-<td>虚拟机名称</td>
-<td>hk-cas1</td>
-<td>这是 VM 的主机名</td>
-    </tr>
-    <tr>
-<td>新用户名</td>
-<td>localadmin</td>
-<td>&ldquo;admin&rdquo;是 Ubuntu 12.xx 中保留的用户名</td>
-    </tr>
-    <tr>
-<td>新密码</td>
-<td><i>强密码</i></td>
-        <td></td>
-    </tr>
-    <tr>
-<td>确认密码</td>
-<td><i>强密码</i></td>
-        <td></td>
-    </tr>
-    <tr>
-<td>大小</td>
-<td>小型</td>
-<td>根据 IO 需求选择 VM。 </td>
-    </tr>
-    <tr>
-<td>使用用于身份验证的 SSH 密钥进行保护</td>
-<td>单击复选框</td>
-<td>检查是否要使用 SSH 密钥进行保护</td>
-    </tr>
-    <tr>
-<td>证书</td>
-<td><i>公钥证书的文件名</i></td>
-<td>使用 OpenSSL 或其他工具生成的 DER 或 PEM 编码的 SSH 公钥</td>
-    </tr>
-</table>
-
-在“VM 模式”屏幕上输入下列信息：
+单个区域 Cassandra 群集配置：
 
 <table>
-    <tr>
-<th>字段名称</th>
-<th>字段值</th>
-<th>备注</th>
-    </tr>
-    <tr>
-<td>独立 VM</td>
-<td>&ldquo;选中&rdquo;单选框</td>
-<td>此选项适用于第一个 VM，对于后续 VM，我们将使用&ldquo;连接到现有 VM&rdquo;选项</td>
-    </tr>
-    <tr>
-<td>DNS 名称</td>
-<td><i>唯一名称</i>.chinacloudapp.cn</td>
-<td>为计算机提供不可知的负载平衡器名称</td>
-    </tr>
-    <tr>
-<td>存储帐户</td>
-<td><i>默认存储帐户</i></td>
-<td>使用你创建的默认存储帐户</td>
-    </tr>
-    <tr>
-<td>区域/地缘组/虚拟网络</td>
-<td>美国西部</td>
-<td>选择你的 Web 应用程序从中访问 Cassandra 群集的区域</td>
-    </tr>
-</table>
+<tr>
 
-为将作为 Cassandra 群集的一部分的所有虚拟机重复上述过程。此时，所有计算机将成为同一网络的一部分，并可相互进行 ping 操作。如果 ping 操作无法执行，请检查 VM 的防火墙（例如 iptables）配置以确保允许 ICMP。确保在成功测试网络连接后禁用 ICMP 以减小攻击向量。
+<th>群集参数</th><th>值</th><th>备注</th></tr>
+<tr><td>Number of Nodes (N) </td><td>8</td><td>群集中节点的总数</td></tr>
+<tr><td>复制因子 (RF)</td><td>	3 </td><td>	某一给定行的副本数 </td></tr>
+<tr><td>一致性级别 （写入）</td><td>	仲裁[(RF/2) + 1) = 2][公式的结果向下舍入] </td><td> 将最多 2 个副本写入之前将响应发送给调用方 ；第三个副本以最终一致的方式编写。 </td></tr>
+<tr><td>一致性级别 （读取）	</td><td>仲裁[(RF/2) + 1 = 2][公式的结果向下舍入]</td><td>	在发送给调用方的响应前读取 2 个副本。</td></tr>
+<tr><td>复制策略 </td><td>	NetworkTopologyStrategy[请参阅[数据复制](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html)的详细信息的 Cassandra 文档中]</td><td>	了解部署拓扑，并将副本放置在节点上，以便所有副本不在同一机架上都结束</td></tr>
+<tr><td>Snitch	</td><td>GossipingPropertyFileSnitch[请参阅[Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html)的详细信息的 Cassandra 文档中]</td><td>	NetworkTopologyStrategy 使用 snitch 的概念来理解拓扑。GossipingPropertyFileSnitch 能更好地控制以将每个节点映射到数据中心和机架。然后，该群集使用小道消息传播此信息。这是在相对于 PropertyFileSnitch 的动态 IP 设置要简单得多 </td></tr>
+</TABLE>
 
-**步骤 3：添加负载平衡 Thrift 终结点**
+**Cassandra 群集的 azure 注意事项：** Windows Azure 虚拟机功能将 Azure Blob 存储用于磁盘持久性 ；Azure 存储空间将保存每个磁盘为实现高耐用性 3 的副本。这意味着每行插入到 Cassandra 表中的数据已经存储在 3 的副本，因此数据一致性是已经被注意了即使复制因子 (RF) 为 1。复制因子为 1 的主要问题是该应用程序将会经历的停机，即使单个的 Cassandra 节点出现故障。但是，如果由 Azure 结构控制器识别的问题 （例如硬件、 系统软件故障） 的情况下，一个节点已关闭状态，它将设置一个新的节点在其位置使用同一个存储驱动器。设置要替换旧的新节点，则可能需要几分钟的时间。与此类似的计划内的维护活动 （如来宾操作系统变化等方面，Cassandra 升级和应用程序更改 Azure 结构控制器执行滚动升级的节点的群集中。滚动升级还可能需要几个节点下一次，并且因此群集可能会遇到的几个分区短暂的停机。但是，数据将不会由于内置的 Azure 存储冗余而丢失。
 
-完成步骤 1 和步骤 2 后，每个 VM 应具有已定义的 SSH 终结点。现在，我们使用公用端口 9160 添加负载平衡 Thrift 终结点。顺序如下：
+对于系统部署到不需要高可用性的 Azure （例如大约 99.9 这等同于 8.76 的小时年 ； 请参阅[高可用性](http://en.wikipedia.org/wiki/High_availability)有关详细信息） 您可能能够运行与 RF = 1 且一致性级别 = ONE。对于具有高可用性要求，RF 应用程序 = 3 和一致性级别 = 仲裁将承受的节点之一副本之一的停机时间。RF = 1 在传统部署 （例如本地） 都不能使用由于因诸如磁盘故障之类的问题的可能的数据丢失。   
 
-a. 从第一个 VM 的详细信息视图中，单击“添加终结点”
+## 多区域部署 # #
+Cassandra 的数据中心意识的复制和上面所述的一致性模型有助于与在初始状态下无需任何外部工具的多区域部署。这是非常不同于传统的关系数据库为数据库镜像对多主机写入安装程序可能会十分复杂。在多区域设置中的 Cassandra 可帮助完成使用方案包括： 
 
-b. 在“将终结点添加到虚拟机”屏幕上，选择“添加终结点”单选按钮
+**邻近基于部署：**具有清晰的映射的租户用户多租户应用程序-到-区域中，可以获益了多区域群集的低延迟的影响。有关示例学习管理教育机构的系统可以部署在美国东部和美国西部区域，用于为各自的大学校园中的分布式的群集以及分析事务。数据可以在时间读取和写入本地一致，并可以跨这两个区域是最终一致。还有其他示例，如媒体分发、 电子商务和任何内容，并提供集中的地域用户基的所有内容都是这种部署模型的一个很好的用例。
 
-c. 单击右箭头
+**高可用性：**冗余是如何达到最大的软件和硬件 ； 高可用性的关键因素有关详细信息，请参阅 Windows Azure 一构建可靠的云系统。在 Windows Azure 上实现真正的冗余的唯一可靠的方式是通过部署多区域群集。应用程序可以部署在主动-主动或主动-被动模式下，并且如果某个区域已关闭，Azure Traffic Manager 可以将流量重定向到活动的区域。与单区域部署中，如果可用性 99.9，两个区域部署可用来实现 99.9999 由公式计算的可用性： (1-(1-0.999) * (1-0.999)) * 100) ；请参阅上述的文章，有关详细信息。
 
-d. 在“指定终结点详细信息”屏幕上，输入以下内容
+**灾难恢复：**多区域 Cassandra 群集中，如果设计正确，可以会承受灾难性的数据中心服务中断。如果一个区域已关闭，部署到其他区域的应用程序可以启动为最终用户提供服务。像任何其他业务连续性实施，该应用程序必须是异步的管道中的数据对于因某些数据丢失容错。但是，Cassandra 使得恢复比传统的数据库恢复过程所花费的时间更快速。图 2 显示在每个区域中具有八个节点的典型的多区域部署模型。这两个区域是对称性的相互 ； 同一的镜像映像现实世界的设计取决于工作负荷类型 （例如事务性或分析）、 RPO、 RTO、 数据一致性和可用性要求。
+
+![Multi region deployment](./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux2.png)
+
+图 2：多区域 Cassandra 部署
+
+### 网络集成 # # #
+与使用 VPN 隧道相互进行通信的虚拟机部署到位于两个区域的专用网络的集。VPN 隧道连接两个网络部署过程中设置的软件网关。这两个区域都有相似的网络体系结构，在"web"和"数据"的子网 ； 方面Azure 网络允许的尽可能多子网，根据需要创建，并应用所需的网络安全 Acl。在群集拓扑之间的设计时数据中心的通信延迟和网络流量的经济影响需要考虑。 
+
+### 用于多数据中心部署的数据一致性 # # #
+分布式部署需要意识到的对吞吐量和高可用性的群集拓扑影响。RF 和一致性级别必须选择仲裁不依赖于所有数据中心的可用性这种方式。 
+对于需要高一致性的系统，一致性级别 （用于读取和写入) LOCAL_QUORUM 将确保本地读取和写入都满足从本地节点时数据将以异步方式复制到远程数据中心。表 2 总结了向上写后面所述的多区域群集的配置详细信息。 
+
+**两个区域 Cassandra 群集配置**
 
 <table>
-
-<tr>
-
-<th>
-字段名称
-
-</th>
-
-<th>
-字段值
-
-</th>
-
-<th>
-备注
-
-</th>
-
-</tr>
-
-<tr>
-
-<td>
-名称
-
-</td>
-
-<td>
-cassandra
-
-</td>
-
-<td>
-任何唯一的终结点名称都适用
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-协议
-
-</td>
-
-<td>
-TCP
-
-</td>
-
-<td>
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-公用端口
-
-</td>
-
-<td>
-9160
-
-</td>
-
-<td>
-默认 Thrift 端口。
-
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-专用端口
-
-</td>
-
-<td>
-9160
-
-</td>
-
-<td>
-除非你在 cassandra.yaml 中更改此端口
-
-</td>
-
-</tr>
-
-</table>
-完成上述操作后，第一个 VM 将显示 LOAD BALANCED 字段为“NO”的 cassandra 终结点。请暂时将其忽略，因为在将此终结点添加到后续 VM 后，该字段将变为“YES”
-
-</p>
-e. 此时选择第二个 VM，并通过重复上述过程添加终结点，唯一的细微差异是，你将选择“现有终结点上的负载平衡流量”并使用下拉框中的“cassandra-960”。在此阶段，映射到这两个 VM 的终结点会将状态从 LOAD BALANCED 状态“NO”更改为“YES”。
-
-对群集中的后续节点重复“e”。
-
-现在，我们已拥有 VM，可以开始在每个 VM 上设置 Cassandra 了。由于 Cassandra 不是许多 Linux 分发的标准部分，因此我们采用手动部署过程。
-
-[请注意，我们在每个 VM 上使用的是手动安装软件的方法。不过，可通过设置一个功能完备的 Cassandra VM 加快此过程，将该 VM 作为基本映像捕获并从此基本映像创建其他实例。有关捕获 Linux 映像的说明，请参阅[如何捕获运行 Linux 的虚拟机的映像（可能为英文页面）][请注意，我们在每个 VM 上使用的是手动安装软件的方法。不过，可通过设置一个功能完备的 Cassandra VM 加快此过程，将该 VM 作为基本映像捕获并从此基本映像创建其他实例。有关捕获 Linux 映像的说明，请参阅[如何捕获运行 Linux 的虚拟机的映像（可能为英文页面）]。]
-
-## <span id="task2"></span> </a>任务 2：在每台虚拟机上设置 Cassandra
-
-**步骤 1：安装必备组件**
-
-Cassandra 需要 Java 虚拟机，因此使用适用于 Debian 衍生工具（包括 Ubuntu）的以下命令安装最新的 JRE：
-
-    sudo add-apt-repository ppa:webupd8team/java
-    sudo apt-get update
-    sudo apt-get install oracle-java7-installer
-
-**步骤 2：Cassandra 安装**
-
-1.  使用 SSH 登录到 Linux (Ubuntu) VM 实例。
-
-2.  使用 wget 将 Cassandra 组件作为 apache-cassandra-bin.tar.gz 从 (<http://cassandra.apache.org/download/>)[<http://cassandra.apache.org/download/>] 处建议的镜像中下载到“~/downloads”目录。请注意，未将版本号包含在下载的文件中以确保发布活动不需了解具体的版本。
-
-3.  通过执行以下命令将 tar 文件提取到默认登录目录：
-
-        tar -zxvf downloads/apache-cassandra-bin.tar.gz
-
-    上述操作会将存档展开到 apache-cassandra- [version] 目录。
-
-4.  创建以下两个默认目录以保存日志和数据：
-
-        $ sudo chown -R /var/lib/cassandra
-        $ sudo chown -R /var/log/cassandra
-
-5.  向 Cassandra 在其下运行的用户标识授予写入权限
-
-        a.  sudo chown -R <user>:<group> /var/lib/cassandra
-        b.  sudo chown -R <user>:<group> /var/log/cassandra
-        To use current user context, replace the <user> and <group> with $USER and $GROUP
-
-6.  使用以下命令从 apache-cassandra-[version]/bin 目录启动 Cassandra：
-
-        $ ./cassandra
-
-上述操作会将 Cassandra 节点作为后台进程启动。使用“cassandra –f”在前台模式中启动该进程。
-
-日志可能会显示 mx4j 错误。Cassandra 不需要 mx4j 即可正常运行，但有必要管理 Cassandra 安装。先终止 Cassandra 进程，然后再继续下一步。
-
-**步骤 3：安装 mx4j**
-
-    a)  Download mx4j: wget [http://sourceforge.net/projects/mx4j/files/MX4J%20Binary/3.0.2/mx4j-3.0.2.tar.gz/download](http://sourceforge.net/projects/mx4j/files/MX4J%20Binary/3.0.2/mx4j-3.0.2.tar.gz/download) -O mx4j.tar.gz
-    b)  tar -zxvf mx4j.tar.gz
-    c)  cp mx4j-23.0.2/lib/*.jar ~/apache-cassandra-<version>/lib
-    d)  rm -rf mx4j-23.0.2
-    e)  rm mx4j.tar.gz
-
-在此阶段重新启动 Cassandra 进程
-
-**步骤 4：测试 Cassandra 安装**
-
-从 Cassandra 的 bin 目录中执行以下命令以便使用 Thrift 客户端进行连接：
-
-    cassandra-cli -h localhost -p 9160
-
-**步骤 5：为外部连接启用 Cassandra**
-
-默认情况下，Cassandra 仅设置为侦听环回地址，因此对于外部连接而言，此更改是强制性的。
-
-编辑“conf/cassandra.yaml”以将 **listen\_address** 和 **rpc\_address** 更改为服务器的 IP 地址或主机名，使当前节点对其他节点和外部负载平衡器可见。
-
-对群集中的所有节点重复步骤 1 到步骤 5。
-
-此时，所有单独的 VM 已配备了必要软件，可以通过种子配置在节点之间建立通信了。有关多节点群集配置的详细信息，请查看 [][]<http://wiki.apache.org/cassandra/MultinodeCluster></a> 上的信息。
-
-**步骤 6：设置多节点群集**
-
-编辑 cassandra.yaml 以更改所有 VM 中的下列属性：
-
-**a) cluster\_name**
-
-默认群集名称设置为“Test Cluster”；将其更改为可反映你的应用程序的名称。示例：“AppStore”。如果你已在安装期间启动用于测试的带“Test Cluster”的群集，则将收到群集名称不匹配错误。若要纠正此错误，请删除 /var/lib/cassandra/data/system 目录下的所有文件。
-
-**b) seeds**
-
-新节点将使用此处指定的 IP 地址来了解环形拓扑。采用逗号分隔的形式将最可靠的节点设置为你的种子："*host1*,*host2*”。示例设置：“hk-ub1,hk-ub2”。
-
-由于此内容不是本练习的重心，因此我们将接受种子服务器提供的默认令牌。若要优化令牌生成情况，请查看位于以下位置的 python 脚本：
-[][1]<http://wiki.apache.org/cassandra/GettingStarted></a>。
-
-在所有节点上重新启动 Cassandra 可应用上述更改。
-
-**步骤 7：测试多节点群集**
-
-已安装到 Cassandra 的 bin 目录中的 Nodetool 将有助于进行群集操作。我们将使用 nodetool 通过以下命令格式验证群集设置：
-
-    $ bin/nodetool -h <hostname> -p 7199 ring
-
-如果配置正确，则应显示三节点群集的信息，如下所示：
+<tr><th>群集参数 </th><th>值	</th><th>备注 </th></tr>
+<tr><td>Number of Nodes (N) </td><td>	8 + 8	</td><td> 群集中节点的总数 </td></tr>
+<tr><td>复制因子 (RF)</td><td>	3 	</td><td>数量的某一给定行的副本 </td></tr>
+<tr><td>一致性级别 （写入）	</td><td>LOCAL_QUORUM [(sum(RF)/2) + 1) = 4][公式的结果向下舍入]	</td><td>2 个节点将被写入到的第一个数据中心以同步方式 ；仲裁所需的其他 2 节点将以异步方式写入到第二个数据中心。 </td></tr>
+<tr><td>一致性级别 （读取）</td><td>	LOCAL_QUORUM [((RF/2) + 1) = 2][公式的结果向下舍入]	</td><td>读取请求满足从只有一个区域 ；将响应发送回客户端之前，将读取 2 个节点。  </td></tr>
+<tr><td>复制策略 </td><td>	NetworkTopologyStrategy[请参阅[数据复制](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureDataDistributeReplication_c.html)的详细信息的 Cassandra 文档中] </td><td>	了解部署拓扑，并将副本放置在节点上，以便所有副本不在同一机架上都结束  </td></tr>
+<tr><td>Snitch</td><td> GossipingPropertyFileSnitch[请参阅[Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html)的详细信息的 Cassandra 文档中] </td><td>NetworkTopologyStrategy 使用 snitch 的概念来理解拓扑。GossipingPropertyFileSnitch 能更好地控制以将每个节点映射到数据中心和机架。然后，该群集使用小道消息传播此信息。这是在相对于 PropertyFileSnitch 的动态 IP 设置要简单得多 </td></tr> 
+</table> 
+
+##软件配置 # #
+在部署过程中使用以下软件版本：
 
 <table>
-<colgroup>
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">地址</td>
-<td align="left">DC</td>
-<td align="left">机架</td>
-<td align="left">状态</td>
-<td align="left">状况</td>
-<td align="left">加载</td>
-<td align="left">所有</td>
-<td align="left">令牌</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">149463697837832744402916220269706844972</td>
-</tr>
-<tr class="odd">
-<td align="left">10.26.196.68</td>
-<td align="left">datacenter1</td>
-<td align="left">rack1</td>
-<td align="left">正常</td>
-<td align="left">一般</td>
-<td align="left">15.69 KB</td>
-<td align="left">25.98%</td>
-<td align="left">114445918355431753244435008039926455424</td>
-</tr>
-<tr class="even">
-<td align="left">10.26.198.81</td>
-<td align="left">datacenter1</td>
-<td align="left">rack1</td>
-<td align="left">正常</td>
-<td align="left">一般</td>
-<td align="left">15.69 KB</td>
-<td align="left">53.44%</td>
-<td align="left">70239176883275351288292106998553981501</td>
-</tr>
-<tr class="odd">
-<td align="left">10.26.198.84</td>
-<td align="left">datacenter1</td>
-<td align="left">rack1</td>
-<td align="left">正常</td>
-<td align="left">一般</td>
-<td align="left">18.35 KB</td>
-<td align="left">25.98%</td>
-<td align="left">149463697837832744402916220269706844972</td>
-</tr>
-</tbody>
+<tr><th>软件</th><th>源</th><th>版本</th></tr>
+<tr><td>JRE	</td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
+<tr><td>JNA	</td><td>[JNA](https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
+<tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)</td><td> 2.0.8</td></tr>
+<tr><td>Ubuntu	</td><td>[Azure Portal](http://www.windowsazure.cn) </td><td>14.04 LTS</td></tr>
 </table>
 
-在此阶段，群集通过在“部署 Linux 群集”任务执行期间创建的云服务 URL（创建第一个 VM 时提供的 DNS 名称）为 Thrift 客户端做好了准备。
+由于下载的 JRE 需要手动接受 Oracle 许可证，来简化部署，下载所需的所有软件到更高版本将上载到我们将创建为群集部署的前提 Ubuntu 模板映像的桌面。 
 
-## <span id="task3"></span> </a>任务 3：从 Node.js 访问 Cassandra 群集
+将上述软件下载到在本地桌面上的 （例如在 Windows 上的 %TEMP%/downloads 或 ~/downloads Linux 或 Mac 上的） 的已知下载目录。 
 
-使用前面的任务所描述的过程在 Azure 上创建 Linux VM。确保此 VM 是独立 VM，因为我们会将此 VM 用作访问 Cassandra 群集的客户端。我们将先从 github 中安装 Node.js、NPM 和 [cassandra-client][cassandra-client]，然后从该 VM 连接到 Cassandra 群集：
+### 创建 UBUNTU VM # # #
+在此步骤中在过程中我们将使用必备的软件创建 Ubuntu 映像，以便可以重用该映像设置几个 Cassandra 节点。  
+####步骤 1：生成 SSH 密钥对 # # #
+Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生成一个公钥/私钥密钥对在如何使用 SSH 与 Linux 一起在 Azure 上的说明进行操作。如果您计划将 putty.exe 用作 SSH 客户端在 Windows 或 Linux 上，则必须将 PEM 编码转换为 PPK 格式使用 puttygen.exe ； 的 RSA 私钥可以在上面的网页中找到的说明。 
 
-**步骤 1：安装 Node.js 和 NPM**
+####步骤 2：创建 Ubuntu 模板 VM # # #
+若要创建虚拟机的模板，请登录到 azure.microsoft.com 门户，并使用以下顺序：单击新建、 计算、 虚拟机、 从库、 UBUNTU、 Ubuntu Server 14.04 LTS，，然后单击向右箭头。描述如何创建 Linux 虚拟机的教程，请参阅创建运行 Linux 的虚拟机。
 
-a) 安装必备组件
+在"虚拟机配置"屏幕 #1 上输入以下信息： 
 
-    sudo apt-get install g++ libssl-dev apache2-utils make
+<table>
+<tr><th>字段名称              </td><td>       字段值               </td><td>         备注                </td><tr>
+<tr><td>VERSION RELEASE DATE    </td><td> 向下选择从 drow 日期</td><td></td><tr>
+<tr><td>VIRTUAL MACHINE NAME    </td><td> cass 模板	               </td><td> 这是 VM 的主机名 </td><tr>
+<tr><td>TIER	                 </td><td> 标准	                       </td><td> 保留默认值              </td><tr>
+<tr><td>SIZE	                 </td><td> A1                              </td><td>选择虚拟机根据 IO 需求 ；为此目的保留默认值 </td><tr>
+<tr><td> NEW USER NAME	         </td><td> localadmin	                   </td><td> "admin"是 Ubuntu 12.xx 中和之后的保留的用户名称</td><tr>
+<tr><td> AUTHENTICATION	     </td><td> 单击复选框                 </td><td>检查是否要使用 SSH 密钥进行保护 </td><tr>
+<tr><td> CERTIFICATE	         </td><td> 公钥证书的文件名 </td><td> 使用以前生成的公钥</td><tr>
+<tr><td> New Password	</td><td> 强密码 </td><td> </td><tr>
+<tr><td> Confirm Password	</td><td> 强密码 </td><td></td><tr>
+</table>
 
-b) 我们将使用 GitHub 中的源进行编译和安装；我们需要先安装 git 核心运行时，然后才能克隆存储库：
+在"虚拟机配置"屏幕 #2 上输入以下信息： 
 
-    sudo apt-get install git-core
+<table>
+<tr><th>字段名称             </th><th> 字段值	                   </th><th> 备注                                 </th></tr>
+<tr><td> CLOUD SERVICE	</td><td> 创建新的云服务	</td><td>云服务是容器计算资源 （如虚拟机</td></tr>
+<tr><td> CLOUD SERVICE DNS NAME	</td><td>ubuntu template.cloudapp.net	</td><td>为计算机提供不可知的负载平衡器名称</td></tr>
+<tr><td> REGION/AFFINITY GROUP/VIRTUAL NETWORK </td><td>	美国西部	</td><td> 选择你的 Web 应用程序从中访问 Cassandra 群集的区域</td></tr>
+<tr><td>STORAGE ACCOUNT </td><td>	使用默认值	</td><td>在某一特定区域中使用的默认存储帐户或预创建的存储帐户</td></tr>
+<tr><td>AVAILABILITY SET </td><td>	无 </td><td>	将保留为空</td></tr>
+<tr><td>ENDPOINTS	</td><td>使用默认值 </td><td>	使用默认的 SSH 配置 </td></tr>
+</table>
 
-c) 克隆节点存储库
+单击右箭头，在屏幕上的 #3 中保留默认设置，单击"检查"按钮，以完成 VM 设置过程。几分钟后与名称"ubuntu 的模板"虚拟机应处于"正在运行"状态。 
 
-    git clone git://github.com/joyent/node.git
+###安装必要软件 # # #
+####步骤 1：上载 tarballs # # #
+使用 scp 或 pscp，将以前下载的软件复制到使用以下命令格式的 ~/downloads 目录中： 
 
-d) 上述操作将创建名为“node”的目录。执行以下命令序列可编译安装 node.js：
+#####pscp 服务器-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.cloudapp.net:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz # # #
 
-    cd node
-    ./configure
-    make
-    sudo make install
+至于 Cassandra bits 对 JRE 以及重复上面的命令。 
 
-e) 通过执行以下命令从稳定的二进制文件安装 NPM
+####步骤 2：准备目录结构和提取存档 # # #
+登录到虚拟机和创建目录结构作为超级用户使用下面的 bash 脚本提取软件：
 
-    curl http://npmjs.org/install.sh | sh
+	#!/bin/bash
+	CASS_INSTALL_DIR="/opt/cassandra"
+	JRE_INSTALL_DIR="/opt/java"
+	CASS_DATA_DIR="/var/lib/cassandra"
+	CASS_LOG_DIR="/var/log/cassandra"
+	DOWNLOADS_DIR="~/downloads"
+	JRE_TARBALL="server-jre-8u5-linux-x64.tar.gz"
+	CASS_TARBALL="apache-cassandra-2.0.8-bin.tar.gz"
+	SVC_USER="localadmin"
+	
+	RESET_ERROR=1
+	MKDIR_ERROR=2
+	
+	reset_installation ()
+	{
+	   rm -rf $CASS_INSTALL_DIR 2> /dev/null
+	   rm -rf $JRE_INSTALL_DIR 2> /dev/null
+	   rm -rf $CASS_DATA_DIR 2> /dev/null
+	   rm -rf $CASS_LOG_DIR 2> /dev/null
+	}
+	make_dir ()
+	{
+	   if [ -z "$1" ]
+	   then
+	      echo "make_dir: invalid directory name"
+	      exit $MKDIR_ERROR
+	   fi
+	   
+	   if [ -d "$1" ]
+	   then
+	      echo "make_dir: directory already exists"
+	      exit $MKDIR_ERROR
+	   fi
+	
+	   mkdir $1 2>/dev/null
+	   if [ $? != 0 ]
+	   then
+	      echo "directory creation failed"
+	      exit $MKDIR_ERROR
+	   fi
+	}
+	
+	unzip()
+	{
+	   if [ $# == 2 ]
+	   then
+	      tar xzf $1 -C $2
+	   else
+	      echo "archive error"
+	   fi
+	   
+	}
+	
+	if [ -n "$1" ]
+	then
+	   SVC_USER=$1
+	fi
+	
+	reset_installation 
+	make_dir $CASS_INSTALL_DIR
+	make_dir $JRE_INSTALL_DIR
+	make_dir $CASS_DATA_DIR
+	make_dir $CASS_LOG_DIR
+	
+	#unzip JRE and Cassandra 
+	unzip $HOME/downloads/$JRE_TARBALL $JRE_INSTALL_DIR
+	unzip $HOME/downloads/$CASS_TARBALL $CASS_INSTALL_DIR
+	
+	#Change the ownership to the service credentials
+	
+	chown -R $SVC_USER:$GROUP $CASS_DATA_DIR
+	chown -R $SVC_USER:$GROUP $CASS_LOG_DIR
+	echo "edit /etc/profile to add JRE to the PATH"
+	echo "installation is complete"
 
-**步骤 2：安装 cassandra-client 包**
 
-    npm cassandra-client 
+如果此脚本粘贴到 vim 窗口时，请确保要删除的 carriage return （\r"） 使用以下命令：
 
-**步骤 3：准备 Cassandra 存储**
+	tr -d '\r' <infile.sh >outfile.sh
 
-Cassandra 存储使用 KEYSPACE 和 COLUMNFAMILY 的概念，二者大致相当于 RDBMS 行话中的 DATABASE 和 TABLE 结构。KEYSAPCE 将包含一组 COLUMNFAMILY 定义。每个 COLUMNFAMILY 将包含一组行，而每个行又包含多个列，如下面的复合视图中所示：
+####步骤 3：编辑等 / 配置文件 # # #
+将在结束以下内容追加： 
 
-![行和列][行和列]
+	JAVA_HOME=/opt/java/jdk1.8.0_05 
+	CASS_HOME= /opt/cassandra/apache-cassandra-2.0.8
+	PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$CASS_HOME/bin
+	export JAVA_HOME
+	export CASS_HOME
+	export PATH
 
-我们将使用之前部署的 Cassandra 群集来通过创建并查询上述数据结构演示 node.js 访问。我们将创建一个简单的 node.js 脚本，该脚本执行群集的基本准备工作以便存储客户数据。可在 node.js Web 应用程序或 Web 服务中轻松使用脚本中显示的方法。请记住，代码段仅说明了所有项目的工作方式，而对于实际解决方案，显示的代码还有很大的改进空间（例如，安全性、日志记录、可伸缩性等）。
+####步骤 4：为生产系统 # # # 安装 JNA
+使用以下命令序列： 
+以下命令将安装到 /usr/share.java 目录 jna 3.2.7.jar 和 jna 平台-3.2.7.jar
+sudo apt get 安装 libjna java 
 
-下面我们在脚本范围内定义所需的变量以包含 cassandra-client 模块中的 PooledConnection、常用密钥空间名称和密钥空间连接参数：
+$CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以找到这些 jar：
 
-    casdemo.js: 
-    var pooledCon = require('cassandra-client').PooledConnection;
-    var ksName = "custsupport_ks";
-    var ksConOptions = { hosts: ['<azure_svc_name>.chinacloudapp.cn:9160'], 
-                         keyspace: ksName, use_bigints: false };
+	ln -s /usr/share/java/jna-3.2.7.jar $CASS_HOME/lib/jna.jar
 
-为了准备好存储客户数据，我们需要先使用以下脚本示例创建 KEYSPACE：
+	ln -s /usr/share/java/jna-platrom-3.2.7.jar $CASS_HOME/lib/jna-platform.jar
 
-    casdemo.js: 
-    function createKeyspace(callback){
-       var cql = 'CREATE KEYSPACE ' + ksName + ' WITH 
-       strategy_class=SimpleStrategy AND strategy_options:replication_factor=1';
-       var sysConOptions = { hosts: ['<azure_svc_name>.chinacloudapp.cn:9160'],  
-                             keyspace: 'system', use_bigints: false };
-       var con = new pooledCon(sysConOptions);
-       con.execute(cql,[],function(err) {
-       if (err) {
-         console.log("Failed to create Keyspace: " + ksName);
-         console.log(err);
-       }
-       else {
-         console.log("Created Keyspace: " + ksName);
-         callback(ksConOptions, populateCustomerData);
-       }
-       });
-       con.shutdown();
-    } 
+####步骤 5：配置 cassandra.yaml###
+编辑 cassandra.yaml 以反映所需的所有虚拟机的配置每个虚拟机上[我们将在实际设置期间调整此]： 
 
-createKeysapce 函数会将一个回调函数用作参数，这意味着，将 COLUMNFAMILY 创建函数作为 KEYSPACE 执行是创建列系列的先决条件。请注意，我们需要连接到应用程序 KEYSPACE 定义的“system”KEYSPACE。[Cassandra 查询语言 (CQL)][Cassandra 查询语言 (CQL)] 一直用于与所有这些代码段中的群集进行交互。由于上述脚本中组合的 CQL 没有任何参数标记，因此我们在使用 PooledConnection.execute() 方法时将使用空参数集合（“[]”）。
+<table>
+<tr><th>字段名称   </th><th> 值  </th><th>	备注 </th></tr>
+<tr><td>cluster_name </td><td>	""CustomerService	</td><td> 使用反映您的部署的名称</td></tr> 
+<tr><td>listen_address	</td><td>[将保留为空]	</td><td> 删除"localhost" </td></tr>
+<tr><td>rpc_addres   </td><td>[将保留为空]	</td><td> 删除"localhost" </td></tr>
+<tr><td>seeds	</td><td>"10.1.2.4、 10.1.2.6，10.1.2.8"	</td><td>它被指定为种子的 IP 地址的列表。</td></tr>
+<tr><td>endpoint_snitch </td><td> org.apache.cassandra.locator.GossipingPropertyFileSnitch </td><td> 这用于通过 NetworkTopologyStrateg 推断数据中心和 VM 的机架</td></tr>
+</table>
 
-密钥空间创建成功后，将执行下面的代码段中显示的函数 createColumnFamily() 以创建所需的 COLUMNFAMILY 定义：
+####步骤 6：捕获 VM 映像 # # #
+登录到虚拟机使用主机名 (hk ca template.cloudapp.net) 和先前创建的 SSH 私钥。请参阅如何使用 SSH 与 Linux on Azure 有关如何使用命令 ssh 或 putty.exe 中记录的详细信息。 
 
-    casdemo.js: 
-    //Creates COLUMNFAMILY
-    function createColumnFamily(ksConOptions, callback){
-      var params = ['customers_cf','custid','varint','custname',
-                    'text','custaddress','text'];
-      var cql = 'CREATE COLUMNFAMILY ? (? ? PRIMARY KEY,? ?, ? ?)';
-    var con =  new pooledCon(ksConOptions);
-      con.execute(cql,params,function(err) {
-          if (err) {
-             console.log("Failed to create column family: " + params[0]);
-             console.log(err);
-          }
-          else {
-             console.log("Created column family: " + params[0]);
-             callback();
-          }
-      });
-      con.shutdown();
-    } 
+执行以下一系列操作，以捕获映像：
+#####1.取消设置 # # #
+使用命令"sudo waagent-deprovision + user"若要删除虚拟机实例的特定信息。有关，请参阅[如何捕获 Linux 虚拟机](/zh-cn/documentation/articles/virtual-machines-linux-capture-image/) 若要将用作模板更多详细信息在映像捕获进程上。 
 
-Parameterized CQL 模板将与 params 对象结合使用以便为 COLUMNFAMILY 创建生成有效的 CQL。成功创建 COLUMNFAMILY 后，提供的回调（本示例中为 populateCustomerData()）将作为异步调用链的一部分调用。
+#####2：关闭虚拟机 # # #
+请确保虚拟机将突出显示，然后单击底部命令栏中的关闭链接。
 
-    casdemo.js: 
-    //populate Data
-    function populateCustomerData() {
-       var params = ['John','Infinity Dr, TX', 1];
-       updateCustomer(ksConOptions,params);
+#####3：捕获映像 # # #
+请确保虚拟机将突出显示，然后单击底部命令栏中的捕获链接。在下一步的屏幕中，提供映像名称 （例如 hk-cas-2-08-ub-14-04-2014071)，、 相应的图像的描述，然后单击"检查"标记，以完成捕获过程。
 
-       params = ['Tom','Fermat Ln, WA', 2];
-       updateCustomer(ksConOptions,params);
-    }
+这将需要几秒钟时间，并且图像应在映像库的我的映像部分中可用。源虚拟机将自动 delated 后成功捕获映像。 
 
-    //update will also insert the record if none exists
-    function updateCustomer(ksConOptions,params)
-    {
-      var cql = 'UPDATE customers_cf SET custname=?,custaddress=? where 
-                 custid=?';
-      var con = new pooledCon(ksConOptions);
-      con.execute(cql,params,function(err) {
-          if (err) console.log(err);
-          else console.log("Inserted customer : " + params[0]);
-      });
-      con.shutdown();
-    }
+##单区域部署过程 # #
+**步骤 1：创建虚拟网络**
+登录到管理门户，然后使用在表中的属性节目中创建虚拟网络。请参阅[在管理门户中配置仅限云的虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/dn631643.aspx)有关过程的详细步骤。      
 
-populateCustomerData() 将两个行插入名为 customers\_cf 的 COLUMNFAMILY 中。在 Cassandra 查询语言中，如果记录未在生成 INSERT CQL 语句冗余的过程中显示，则 UPDATE 将插入记录。
+<table>
+<tr><th>虚拟机属性名称</th><th>值</th><th>备注</th></tr>
+<tr><td>名称</td><td>虚拟网络-cass-西-我们</td><td></td></tr>	
+<tr><td>区域</td><td>美国西部</td><td></td></tr>	
+<tr><td>DNS 服务器	</td><td>无</td><td>将其忽略，因为我们不使用了 DNS 服务器</td></tr>
+<tr><td>配置点到站点 VPN</td><td>无</td><td> 忽略此警告</td></tr>
+<tr><td>配置站点到站点 VPN</td><td>无</td><td> 忽略此警告</td></tr>
+<tr><td>地址空间</td><td>10.1.0.0/16</td><td></td></tr>	
+<tr><td>起始 IP</td><td>10.1.0.0</td><td></td></tr>	
+<tr><td>CIDR </td><td>/16 (65531)</td><td></td></tr>
+</table>
 
-目前，我们连接了回调链：createKeyspace() 到 createColumnFamily() 再到 populateCustomerData()。现在，可以通过以下代码段执行此代码：
+添加下面的子网： 
 
-    casdemo.js:
-    var pooledCon = require('cassandra-client').PooledConnection;
-    var ksName = "custsupport_ks";
-    var ksConOptions = { hosts: ['<azure_svc_name>.chinacloudapp.cn:9160'], 
-                         keyspace: ksName, use_bigints: false };
+<table>
+<tr><th>名称</th><th>起始 IP</th><th>CIDR</th><th>备注</th></tr>
+<tr><td>web</td><td>10.1.1.0</td><td>/ 24 (251)</td><td>对 web 场的子网</td></tr>
+<tr><td>数据</td><td>10.1.2.0</td><td>/ 24 (251)</td><td>数据库节点的子网</td></tr>
+</table>
 
-    createKeyspace(createColumnFamily);
-    //rest of the not shown
+通过网络安全组的覆盖率是不在本文的范围内，可以保护数据和 Web 子网。  
 
-从外壳程序提示符处执行以下命令来执行该脚本：
+**步骤 2：设置虚拟机** 
+使用以前创建的映像，我们将在云服务器"hk-c-svc-西"中创建以下虚拟机并将其绑定到各自的子网中，如下所示： 
 
-    //the following command will create the KEYSPACE, COLUMNFAMILY and //inserts two customer records
-    $ node casdemo.js
+<table>
+<tr><th>计算机名称    </th><th>子网	</th><th>IP 地址	</th><th>可用性集</th><th>DC/机架</th><th>种子？</th></tr>
+<tr><td>hk-c1-west-us	</td><td>data	</td><td>10.1.2.4	</td><td>hk-c-aset-1	</td><td>dc =WESTUS rack =rack1 </td><td>是</td></tr>
+<tr><td>hk-c2-west-us	</td><td>data	</td><td>10.1.2.5	</td><td>hk-c-aset-1	</td><td>dc =WESTUS rack =rack1	</td><td>否 </td></tr>
+<tr><td>hk-c3-west-us	</td><td>data	</td><td>10.1.2.6	</td><td>hk-c-aset-1	</td><td>dc =WESTUS rack =rack2	</td><td>是</td></tr>
+<tr><td>hk-c4-west-us	</td><td>data	</td><td>10.1.2.7	</td><td>hk-c-aset-1	</td><td>dc =WESTUS rack =rack2	</td><td>否 </td></tr>
+<tr><td>hk-c5-west-us	</td><td>data	</td><td>10.1.2.8	</td><td>hk-c-aset-2	</td><td>dc =WESTUS rack =rack3	</td><td>是</td></tr>
+<tr><td>hk-c6-west-us	</td><td>data	</td><td>10.1.2.9	</td><td>hk-c-aset-2	</td><td>dc =WESTUS rack =rack3	</td><td>否 </td></tr>
+<tr><td>hk-c7-west-us	</td><td>data	</td><td>10.1.2.10	</td><td>hk-c-aset-2	</td><td>dc =WESTUS rack =rack4	</td><td>是</td></tr>
+<tr><td>hk-c8-west-us	</td><td>data	</td><td>10.1.2.11	</td><td>hk-c-aset-2	</td><td>dc =WESTUS rack =rack4	</td><td>否 </td></tr>
+<tr><td>hk-w1-west-us	</td><td>web	</td><td>10.1.1.4	</td><td>hk-w-aset-1	</td><td>                       </td><td>不适用</td></tr>
+<tr><td>hk-w2-west-us	</td><td>web	</td><td>10.1.1.5	</td><td>hk-w-aset-1	</td><td>                       </td><td>不适用</td></tr>
+</table>
 
-readCustomer() 方法将访问 Azure 托管的群集，并显示执行 CQL 查询后检索到的 JSON 代码段：
+上面的列表中的 Vm 创建需要以下过程：
 
-    casdemo.js: 
-    //read the two rows inserted above
-    function readCustomer(ksConOptions)
-    {
-      var cql = 'SELECT * FROM customers_cf WHERE custid IN (1,2)';
-      var con = new pooledCon(ksConOptions);
-      con.execute(cql,[],function(err,rows) {
-          if (err) 
-             console.log(err);
-          else 
-             for (var i=0; i<rows.length; i++)
-                console.log(JSON.stringify(rows[i]));
-        });
-       con.shutdown();
-    } 
+1.  在某一特定区域中创建空的云服务
+2.	从以前捕获的映像创建虚拟机并将其附加到虚拟网络之前 ； 创建重复此过程为所有虚拟机
+3.	将内部负载平衡器添加到云服务并将其附加到"数据"子网
+4.	对于以前创建的每台虚拟机，将添加一个负载平衡终结点，以便通过一组负载平衡连接到以前创建的内部负载平衡器的 thrift 通信
 
-修改 casdemo.js 以添加上面的函数，并在注释之前调用的 createKeyspace() 方法后调用该函数，如下所示：
+可以使用 Azure 管理门户 ； 执行上述过程使用 Windows 计算机 （如果您没有 Windows 计算机的访问权限的 Azure 上的虚拟机的使用），使用下面的 PowerShell 脚本来自动设置所有 8 的虚拟机。
 
-    casdemo.js: 
-    var pooledCon = require('cassandra-client').PooledConnection;
-    var ksName = "custsupport_ks";
-    var ksConOptions = { hosts: ['<azure_svc_name>.chinacloudapp.cn:9160'], 
-                         keyspace: ksName, use_bigints: false };
+**列表 1：用于设置虚拟机时 PowerShell 脚本**
+		
+		#Tested with Azure Powershell - November 2014	
+		#This powershell script deployes a number of VMs from an existing image inside an Azure region
+		#Import your Azure subscription into the current Powershell session before proceeding
+		#The process: 1. create Azure Storage account, 2. create virtual network, 3.create the VM template, 2. crate a list of VMs from the template
+		
+		#fundamental variables - change these to reflect your subscription
+		$country="us"; $region="west"; $vnetName = "your_vnet_name";$storageAccount="your_storage_account"
+		$numVMs=8;$prefix = "hk-cass";$ilbIP="your_ilb_ip"
+		$subscriptionName = "Azure_subscription_name"; 
+		$vmSize="ExtraSmall"; $imageName="your_linux_image_name"
+		$ilbName="ThriftInternalLB"; $thriftEndPoint="ThriftEndPoint"
+		
+		#generated variables
+		$serviceName = "$prefix-svc-$region-$country"; $azureRegion = "$region $country"
+		
+		$vmNames = @()
+		for ($i=0; $i -lt $numVMs; $i++)
+		{
+		   $vmNames+=("$prefix-vm"+($i+1) + "-$region-$country" );
+		}
+		
+		#select an Azure subscription already imported into Powershell session
+		Select-AzureSubscription -SubscriptionName $subscriptionName -Current
+		Set-AzureSubscription -SubscriptionName $subscriptionName -CurrentStorageAccountName $storageAccount
+		
+		#create an empty cloud service
+		New-AzureService -ServiceName $serviceName -Label "hkcass$region" -Location $azureRegion
+		Write-Host "Created $serviceName"
+		
+		$VMList= @()   # stores the list of azure vm configuration objects
+		#create the list of VMs
+		foreach($vmName in $vmNames)
+		{
+		   $VMList += New-AzureVMConfig -Name $vmName -InstanceSize ExtraSmall -ImageName $imageName |
+		   Add-AzureProvisioningConfig -Linux -LinuxUser "localadmin" -Password "Local123" |
+		   Set-AzureSubnet "data"
+		}
+		
+		New-AzureVM -ServiceName $serviceName -VNetName $vnetName -VMs $VMList
+		
+		#Create internal load balancer
+		Add-AzureInternalLoadBalancer -ServiceName $serviceName -InternalLoadBalancerName $ilbName -SubnetName "data" -StaticVNetIPAddress "$ilbIP"
+		Write-Host "Created $ilbName"
+		#Add add the thrift endpoint to the internal load balancer for all the VMs
+		foreach($vmName in $vmNames)
+		{
+		    Get-AzureVM -ServiceName $serviceName -Name $vmName |
+		        Add-AzureEndpoint -Name $thriftEndPoint -LBSetName "ThriftLBSet" -Protocol tcp -LocalPort 9160 -PublicPort 9160 -ProbePort 9160 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ilbName | 
+		        Update-AzureVM 
+		
+		    Write-Host "created $vmName"     
+		}
 
-    //createKeyspace(createColumnFamily);
-    readCustomer(ksConOptions)
-    //rest of the code below not shown
-        
+**步骤 3：在每台虚拟机上配置 Cassandra**
 
-## <span id="conclusion"></span> </a>结束语
+登录到虚拟机，然后执行以下： 
 
-利用 Azure 虚拟机功能可创建 Linux（由 Microsoft 合作伙伴提供的映像），利用 Windows 虚拟机可迁移现有服务器产品和应用程序而不进行任何更改。本文中讨论的 Cassandra NoSQL 数据库服务器就是这样一个示例。可通过 Windows 和 Linux 操作系统环境中的 Azure 托管的云服务、第三方公有云和私有云访问本文中设置的 Cassandra 群集。在本文中，我们将 node.js 用作客户端；但是，可以从 .NET、Java 和其他语言环境访问 Cassandra。
+* 编辑 $CASS_HOME/conf/cassandra-rackdc.properties 指定的数据中心和机架属性：
+      
+       dc =EASTUS, rack =rack1
 
-  [概述]: #overview
-  [Cassandra 部署示意]: #schematic
-  [复合部署]: #composite
-  [Azure 虚拟机部署]: #deployment
-  [任务 1：部署 Linux 群集]: #task1
-  [任务 2：在每台虚拟机上设置 Cassandra]: #task2
-  [任务 3：从 Node.js 访问 Cassandra 群集]: #task3
-  [结束语]: #conclusion
-  [Cassandra]: http://wiki.apache.org/cassandra/
-  [复合部署图]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux1.png
-  [虚拟机部署]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux2.png
-  [有关创建群集的顺序图]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux4.png
-  [如何在 Azure 上通过 Linux 使用 SSH（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/linux-use-ssh-key/
-  [在 Azure 上为 Linux VM 部署生成 SSH 密钥对（可能为英文页面）]: http://blogs.msdn.com/b/hanuk/archive/2012/06/07/generating-ssh-key-pair-for-linux-vm-deployment-on-windows-azure.aspx
-  [创建运行 Linux 的虚拟机（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-tutorial/
-  [如何捕获运行 Linux 的虚拟机的映像（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-machines-linux-capture-image/
-  []: http://wiki.apache.org/cassandra/MultinodeCluster
-  [1]: http://wiki.apache.org/cassandra/GettingStarted
-  [cassandra-client]: https://github.com/racker/node-cassandra-client
-  [行和列]: ./media/virtual-machines-linux-nodejs-running-cassandra/cassandra-linux3.png
-  [Cassandra 查询语言 (CQL)]: http://cassandra.apache.org/doc/cql/CQL.html
+* 编辑 cassandra.yaml 以将种子节点配置如下所示：
+     
+       Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10"
+
+**步骤 4：启动虚拟机和测试群集**
+
+登录到其中一个节点 （例如 hk-c1-西-美国） 并运行以下命令以查看群集的状态： 
+       
+       nodetool -h 10.1.2.4 -p 7199 status 
+
+您应该看到类似于将 8 节点群集如下显示： 
+
+<table>
+<tr><th>状态</th></th>地址	</th><th>加载	</th><th>令牌	</th><th>所有 </th><th>主机 ID	</th><th>机架</th></tr>
+<tr><th>取消	</td><td>10.1.2.4 	</td><td>87.81 KB	</td><td>256	</td><td>38.0%	</td><td>Guid （删除）</td><td>rack1</td></tr>
+<tr><th>取消	</td><td>10.1.2.5 	</td><td>41.08 KB	</td><td>256	</td><td>68.9%	</td><td>Guid （删除）</td><td>rack1</td></tr>
+<tr><th>取消	</td><td>10.1.2.6 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>rack2</td></tr>
+<tr><th>取消	</td><td>10.1.2.7 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>rack2</td></tr>
+<tr><th>取消	</td><td>10.1.2.8 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>机架 3</td></tr>
+<tr><th>取消	</td><td>10.1.2.9 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>机架 3</td></tr>
+<tr><th>取消	</td><td>10.1.2.10 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>rack4</td></tr>
+<tr><th>取消	</td><td>10.1.2.11 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>rack4</td></tr>
+</table>
+
+##<a id="testone"> </a>测试单个区域群集 # #
+使用以下步骤测试群集：
+
+1.    使用 Powershell 命令获取 AzureInternalLoadbalancer commandlet，获取内部负载平衡器的 IP 地址 （例如10.1.2.101)。该命令的语法如下所示：Get AzureLoadbalancer - ServiceName"hk-c-svc-西-us"[显示以及其 IP 地址的内部负载平衡器的详细信息]
+2.	登录到 web 场 （例如 hk-w1-西-美国） 的 VM 使用 Putty 或 ssh
+3.	执行 $CASS_HOME/bin/cqlsh 10.1.2.101 9160 
+4.	使用以下的 CQL 命令来验证该群集是否正常工作：
+
+		CREATE KEYSPACE customers_ks WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };	
+		USE customers_ks;
+		CREATE TABLE Customers(customer_id int PRIMARY KEY, firstname text, lastname text);
+		INSERT INTO Customers(customer_id, firstname, lastname) VALUES(1, 'John', 'Doe');
+		INSERT INTO Customers(customer_id, firstname, lastname) VALUES (2, 'Jane', 'Doe');
+		
+		SELECT * FROM Customers;
+
+您应该看到一个显示如下所示：
+
+<table>
+  <tr><th> customer_id </th><th> 名字 </th><th> 姓氏 </th></tr>
+  <tr><td> 1 </td><td> John </td><td> Doe </td></tr>
+  <tr><td> 2 </td><td> Jane </td><td> Doe </td></tr>
+</table>
+
+请注意在步骤 4 中创建 keyspace 就会使用 SimpleStrategy 复制因子为 3。SimpleStrategy 建议对单个数据中心部署而 NetworkTopologyStrategy 多数据中心部署。3 replication_factor 将给出节点出现故障的容差。 
+
+##<a id="tworegion"> </a>多区域部署过程 # #
+将利用单区域部署完成，并用于安装的第二个区域中重复相同的过程。单个和多个区域部署之间的主要差异是区域间通信 ； 安装程序的 VPN 隧道我们将先进行网络安装、 设置虚拟机和配置 Cassandra。 
+
+###步骤 1：在第二个区域 # # # 创建虚拟网络
+登录到管理门户，然后使用在表中的属性节目中创建虚拟网络。请参阅[在管理门户中配置仅限云的虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/dn631643.aspx)有关过程的详细步骤。      
+
+<table>
+<tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>
+<tr><td>名称	</td><td>虚拟网络-cass-东部-我们</td><td></td></tr>	
+<tr><td>区域	</td><td>美国东部</td><td></td></tr>	
+<tr><td>DNS 服务器		</td><td></td><td>将其忽略，因为我们不使用了 DNS 服务器</td></tr>
+<tr><td>配置点到站点 VPN</td><td></td><td>		忽略此警告</td></tr>
+<tr><td>配置站点到站点 VPN</td><td></td><td>		忽略此警告</td></tr>
+<tr><td>地址空间	</td><td>10.2.0.0/16</td><td></td></tr>	
+<tr><td>起始 IP	</td><td>10.2.0.0	</td><td></td></tr>
+<tr><td>CIDR	</td><td>/ 16 (65531)</td><td></td></tr>
+</table>	
+
+添加下面的子网： 
+<table>
+<tr><th>名称    </th><th>起始 IP	</th><th>CIDR	</th><th>备注</th></tr>
+<tr><td>web	</td><td>10.2.1.0	</td><td>/ 24 (251)	</td><td>对 web 场的子网</td></tr>
+<tr><td>数据	</td><td>10.2.2.0	</td><td>/24 (251)	</td><td>数据库节点的子网</td></tr>
+</table>
+
+
+###步骤 2：创建本地网络 # # #
+在 Azure 虚拟网络中的本地网络是一个映射到远程站点包括私有云或另一个 Azure 区域的代理地址空间。此代理服务器地址空间已绑定到远程网络网关路由到正确的网络目标。请参阅[配置 VNet 到 VNet 连接](http://msdn.microsoft.com/zh-cn/library/azure/dn690122.aspx)有关建立 VNET 到 VNET 连接的说明。 
+
+创建以下详细信息每两个本地网络：
+
+<table>
+<tr><th>网络名称          </th><th>VPN 网关地址	</th><th>地址空间	</th><th>备注</th></tr>
+<tr><td>hk-lnet-map-to-east-us</td><td>	23.1.1.1	</td><td>10.2.0.0/16	</td><td>在创建本地网络提供一个占位符，网关地址。创建网关后，将填充实际的网关地址。请确保地址空间与各自的远程虚拟网络 ； 完全匹配在这种情况下在美国东部区域中将创建虚拟网络。</td></tr>
+<tr><td>hk-lnet-map-to-west-us	</td><td>23.2.2.2	</td><td>10.1.0.0/16	</td><td>在创建本地网络提供一个占位符，网关地址。创建网关后，将填充实际的网关地址。请确保地址空间与各自的远程虚拟网络 ； 完全匹配在这种情况下在美国西部区域中将创建虚拟网络。</td></tr>
+</table>
+
+
+###步骤 3：将"本地"网络映射到各自 Vnet # # #
+从服务管理门户中，选择每个 vnet，单击"配置"，检查"连接到本地网络"，然后选择每个以下的详细信息的本地网络： 
+
+<table>
+<tr><th>虚拟网络 </th><th>本地网络</th></tr>
+<tr><td>hk-vnet-west-us	</td><td>hk-lnet-map-to-east-us</td></tr>
+<tr><td>hk-vnet-east-us	</td><td>hk-lnet-map-to-west-us</td></tr>
+</table>
+
+###步骤 4：VNET1 和 VNET2 # # # 创建网关
+从虚拟网络的仪表板中，单击创建网关会触发设置过程的 VPN 网关。几分钟后的每个虚拟网络仪表板应显示实际的网关地址。 
+###步骤 5：更新与各自"网关"地址 # # # 的"本地"网络
+编辑这两个本地网络将占位符网关 IP 地址替换为实际的只是设置网关的 IP 地址。使用以下映射： 
+
+<table>
+<tr><th>本地网络    </th><th>虚拟网络网关</th></tr>
+<tr><td>hk-lnet-map-to-east-us </td><td>Hk-虚拟网络-西-我们的网关</td></tr>
+<tr><td>hk-lnet-map-to-west-us </td><td>Hk-虚拟网络-东部的人的网关</td></tr>
+</table>
+
+###步骤 6：更新共享密钥 # # #
+使用下面的 Powershell 脚本来更新每个 VPN 网关的 IPSec 密钥[起见密钥用于这两个网关]： 
+集 AzureVNetGatewayKey-VNetName hk-虚拟网络-东部-我们-LocalNetworkSiteName hk-lnet-map-to-west-us-SharedKey D9E76BKK
+集 AzureVNetGatewayKey-VNetName hk-虚拟网络-西-我们-LocalNetworkSiteName hk-lnet-map-to-east-us-SharedKey D9E76BKK 
+
+###步骤 6：建立 VNET 到 VNET 连接 # # #
+从 Azure 服务管理门户中，使用这两个虚拟网络的"仪表板"菜单来建立网关到网关连接。使用在底部工具栏中的"连接"菜单项。几分钟后仪表板应以图形方式显示的连接详细信息。
+
+###步骤 7：在区域 #2 中创建虚拟机 # # #
+创建 Ubuntu 映像，如按照相同步骤或复制到 Azure 存储帐户的映像文件 VHD 位于区域 #2 中所述区域 #1 部署，并创建映像。使用此映像，然后 hk-c-svc-东部-我们到新的云服务创建以下虚拟机的列表： 
+
+<table>
+<tr></th>计算机名称 </th><th>子网</th><th>IP 地址</th><th>可用性集</th><th>DC/机架</th><th>种子？</th></tr>
+<tr><td>hk-c1-east-us	</td><td>data	</td><td>10.2.2.4	</td><td>hk-c-aset-1	</td><td>dc =EASTUS rack =rack1	</td><td>是</td></tr>
+<tr><td>hk-c2-east-us	</td><td>data	</td><td>10.2.2.5	</td><td>hk-c-aset-1	</td><td>dc =EASTUS rack =rack1	</td><td>否 </td></tr>
+<tr><td>hk-c3-east-us	</td><td>data	</td><td>10.2.2.6	</td><td>hk-c-aset-1	</td><td>dc =EASTUS rack =rack2	</td><td>是</td></tr>
+<tr><td>hk-c5-east-us	</td><td>data	</td><td>10.2.2.8	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack3	</td><td>是</td></tr>
+<tr><td>hk-c6-east-us	</td><td>data	</td><td>10.2.2.9	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack3	</td><td>否 </td></tr>
+<tr><td>hk-c7-east-us  </td><td>data	</td><td>10.2.2.10	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack4	</td><td>是</td></tr>
+<tr><td>hk-c8-east-us	</td><td>data	</td><td>10.2.2.11	</td><td>hk-c-aset-2	</td><td>dc =EASTUS rack =rack4	</td><td>否 </td></tr>
+<tr><td>hk-w1-east-us	</td><td>web	</td><td>10.2.1.4	</td><td>hk-w-aset-1	</td><td>	不适用</td><td>不适用</td></tr>
+<tr><td>hk-w2-east-us	</td><td>web	</td><td>10.2.1.5	</td><td>hk-w-aset-1	</td><td>	不适用</td><td>不适用</td></tr>
+</table>
+
+按照与区域 #1 相同的说明，但使用 10.2.xxx.xxx 地址空间。 
+###步骤 8：在每个 VM # # # 配置 Cassandra
+登录到虚拟机，然后执行以下： 
+
+1. 编辑 $CASS_HOME/conf/cassandra-rackdc.properties 以指定格式的数据中心和机架属性：
+    dc =EASTUS
+    rack =rack1
+2. 编辑 cassandra.yaml 以配置种子节点： 
+    Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10,10.2.2.4,10.2.2.6,10.2.2.8,10.2.2.10"
+###步骤 9：启动 Cassandra # # #
+登录到每台虚拟机，然后通过运行以下命令在后台启动 Cassandra：
+$CASS_HOME/bin/cassandra
+
+##<a id="testtwo"> </a>测试多区域群集 # #
+目前为止 Cassandra 已部署到每个 Azure 区域中的 8 节点的 16 个节点。这些节点都在同一个群集通过常见的群集名称和种子节点配置。使用以下过程来测试群集：
+###步骤 1：获取使用 PowerShell # # # 的两个区域的内部负载平衡器 IP 
+- Get AzureInternalLoadbalancer ServiceName"hk-c-svc-西-us"
+- Get AzureInternalLoadbalancer ServiceName"hk-c-svc-东部-us"  
+
+    请注意 IP 地址 （例如西-10.1.2.101，东-10.2.2.101） 显示。
+
+###步骤 2：在登录到 hk-w1-西-我们在西部地区中执行以下 # # #
+1.    执行 $CASS_HOME/bin/cqlsh 10.1.2.101 9160 
+2.	执行下面的 CQL 命令：
+
+		CREATE KEYSPACE customers_ks
+		WITH REPLICATION = { 'class' : 'NetworkToplogyStrategy', 'WESTUS' : 3, 'EASTUS' : 3};
+		USE customers_ks;
+		CREATE TABLE Customers(customer_id int PRIMARY KEY, firstname text, lastname text);
+		INSERT INTO Customers(customer_id, firstname, lastname) VALUES(1, 'John', 'Doe');
+		INSERT INTO Customers(customer_id, firstname, lastname) VALUES (2, 'Jane', 'Doe');
+		SELECT * FROM Customers;
+
+您应该看到一个显示如下所示：
+
+<table>
+<tr><th>customer_id </th><th>名字</th><th>姓氏</th></tr>
+<tr><td>1</td><td>John</td><td>Doe</td></tr>
+<tr><td>2</td><td>Jane</td><td>Doe</td></tr>
+</table>
+
+###步骤 3：在登录到 hk-w1-东部-我们在东部区域中执行以下： # # #
+1.    执行 $CASS_HOME/bin/cqlsh 10.2.2.101 9160 
+2.	执行下面的 CQL 命令：
+
+		USE customers_ks;
+		CREATE TABLE Customers(customer_id int PRIMARY KEY, firstname text, lastname text);
+		INSERT INTO Customers(customer_id, firstname, lastname) VALUES(1, 'John', 'Doe');
+		INSERT INTO Customers(customer_id, firstname, lastname) VALUES (2, 'Jane', 'Doe');
+		SELECT * FROM Customers;
+
+对于西部地区所示，您应该看到相同的显示：
+
+<table>
+<tr><th>customer_id </th><th>名字</th><th>姓氏</th></tr>
+<tr><td>1</td><td>John</td><td>Doe</td></tr>
+<tr><td>2</td><td>Jane</td><td>Doe</td></tr>
+</table>
+
+执行少量的多个插入并查看那些获取已复制到西-我们在群集的一部分。 
+
+##<a id="testnode"> </a>测试 Cassandra 群集，从 Node.js##
+使用其中一个文件夹中"web"创建 Linux Vm 的层 （以前，我们将执行一个简单的 Node.js 脚本来读取以前插入的数据 
+
+**步骤 1：安装 Node.js 和 Cassandra 客户端**
+
+1. 安装 Node.js 和 npm
+2. 安装节点包"cassandra-客户端"使用 npm
+3. 执行以下脚本在外壳程序提示符处，其中显示检索到的数据的 json 字符串： 
+
+		var pooledCon = require('cassandra-client').PooledConnection;
+		var ksName = "custsupport_ks";
+		var cfName = "customers_cf";
+		var hostList = ['internal_loadbalancer_ip:9160'];
+		var ksConOptions = { hosts: hostList,
+		                     keyspace: ksName, use_bigints: false };
+		
+		function createKeyspace(callback){
+		   var cql = 'CREATE KEYSPACE ' + ksName + ' WITH strategy_class=SimpleStrategy AND strategy_options:replication_factor=1';
+		   var sysConOptions = { hosts: hostList,  
+		                         keyspace: 'system', use_bigints: false };
+		   var con = new pooledCon(sysConOptions);
+		   con.execute(cql,[],function(err) {
+		   if (err) {
+		     console.log("Failed to create Keyspace: " + ksName);
+		     console.log(err);
+		   }
+		   else {
+		     console.log("Created Keyspace: " + ksName);
+		     callback(ksConOptions, populateCustomerData);
+		   }
+		   });
+		   con.shutdown();
+		} 
+		
+		function createColumnFamily(ksConOptions, callback){
+		  var params = ['customers_cf','custid','varint','custname',
+		                'text','custaddress','text'];
+		  var cql = 'CREATE COLUMNFAMILY ? (? ? PRIMARY KEY,? ?, ? ?)';
+		var con =  new pooledCon(ksConOptions);
+		  con.execute(cql,params,function(err) {
+		      if (err) {
+		         console.log("Failed to create column family: " + params[0]);
+		         console.log(err);
+		      }
+		      else {
+		         console.log("Created column family: " + params[0]);
+		         callback();
+		      }
+		  });
+		  con.shutdown();
+		} 
+		
+		//populate Data
+		function populateCustomerData() {
+		   var params = ['John','Infinity Dr, TX', 1];
+		   updateCustomer(ksConOptions,params);
+		
+		   params = ['Tom','Fermat Ln, WA', 2];
+		   updateCustomer(ksConOptions,params);
+		}
+		
+		//update will also insert the record if none exists
+		function updateCustomer(ksConOptions,params)
+		{
+		  var cql = 'UPDATE customers_cf SET custname=?,custaddress=? where custid=?';
+		  var con = new pooledCon(ksConOptions);
+		  con.execute(cql,params,function(err) {
+		      if (err) console.log(err);
+		      else console.log("Inserted customer : " + params[0]);
+		  });
+		  con.shutdown();
+		}
+		
+		//read the two rows inserted above
+		function readCustomer(ksConOptions)
+		{
+		  var cql = 'SELECT * FROM customers_cf WHERE custid IN (1,2)';
+		  var con = new pooledCon(ksConOptions);
+		  con.execute(cql,[],function(err,rows) {
+		      if (err) 
+		         console.log(err);
+		      else 
+		         for (var i=0; i<rows.length; i++)
+		            console.log(JSON.stringify(rows[i]));
+		    });
+		   con.shutdown();
+		}
+		
+		//exectue the code
+		createKeyspace(createColumnFamily);
+		readCustomer(ksConOptions)
+
+
+##<a id="conclusion"> </a>结论 # #
+Windows Azure 是一个灵活的平台，允许运行的 Microsoft 和开放源代码软件，如本练习中所示。可以在单个数据中心通过群集节点分散在多个容错域上部署高度可用的 Cassandra 群集。此外可以跨多个地理位置较远的 Azure 区域的灾难证明系统部署 Cassandra 群集。Azure 和 Cassandra 在一起，就可以构造的高度可扩展、 高可用性和灾难恢复的云服务需要通过今天的互联网缩放服务。  
+
+[概述]: #overview
+[单区域部署]: #oneregion
+[测试单个区域 Cassandra 群集]: #testone
+[多区域部署]: #tworegion
+[测试多区域 Cassandra 群集]: #testtwo
+[测试 Cassandra 群集，从 Node.js]: #testnode
+[结论]: #conclusion
+
+##引用 # #
+- [http://cassandra.apache.org](http://cassandra.apache.org)
+- [http://www.datastax.com](http://www.datastax.com) 
+- [http://www.nodejs.org](http://www.nodejs.org) 
+
