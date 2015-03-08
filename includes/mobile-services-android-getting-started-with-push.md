@@ -1,4 +1,4 @@
-﻿1. 在您的应用项目中，打开文件  `AndroidManifest.xml`。在随后两个步骤中，请将代码中的 _`**my_app_package**`_ 替换为您的项目的应用程序包名称，即  `manifest` 标签的  `package` 属性的值。 
+1. 在您的应用项目中，打开文件  `AndroidManifest.xml`。在随后两个步骤中，请将代码中的 _`**my_app_package**`_ 替换为您的项目的应用程序包名称，即  `manifest`标签的 `package`属性的值。 
 
 2. 在现有  `uses-permission` 元素之后添加以下新权限：
 
@@ -9,7 +9,7 @@
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
         <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-3. 在  `application` 开始标记之后添加以下代码： 
+3. 在 `application`打开标记之后添加以下代码： 
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             						 	android:permission="com.google.android.c2dm.permission.SEND">
@@ -157,4 +157,3 @@
 
 <!-- URLs. -->
 [移动服务 Android SDK]: http://aka.ms/Iajk6q
-<!--HONumber=41-->

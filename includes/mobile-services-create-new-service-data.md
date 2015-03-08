@@ -1,8 +1,8 @@
-﻿
+
 
 接下来，您将创建一个新移动服务以替换数据存储的内存中列表。按照下列步骤操作以创建新的移动服务。
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/). 
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)。 
 2.	在导航窗格的底部，单击"+新建"。
 
 	![plus-new](./media/mobile-services-create-new-service-data/plus-new.png)
@@ -34,4 +34,3 @@
 
 您现在已经创建了您的移动应用可以使用的新移动服务。接下来，您将添加一个在其中存储应用数据的新表。应用将使用此表而不是内存中集合。
 
-<!--HONumber=41-->

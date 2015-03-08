@@ -1,4 +1,4 @@
-﻿
+
 
 1. 登录到 [Azure 管理门户]、单击"移动服务"，然后单击您的应用。
 
@@ -10,7 +10,7 @@
 
 	这将显示"创建新的自定义 API"对话框。
 
-3. 在"API 名称"中键入 _completeall_，然后单击勾选按钮。
+3. 在 **API 名称**中键入_completeall_，然后单击勾选按钮。
 
 	![](./media/mobile-services-create-custom-api/mobile-custom-api-create-dialog2.png)
 
@@ -40,7 +40,7 @@
 	这段代码使用 [mssql 对象]来直接访问 **todoitem** 表，以在所有项上设置已完成标志。由于使用了 **exports.post** 函数，客户端发送 POST 请求以执行操作。已更改行的数量将以整数值形式返回至客户端。
 
 > [WACOM.NOTE]
-> 提供给自定义 API 函数的 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx" target="_blank">request</a> 和 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303373.aspx" target="_blank">response</a> 对象由 <a href="http://go.microsoft.com/fwlink/p/?LinkId=309046" target="_blank">Express.js 库</a>实现。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn280974.aspx" target="_blank">自定义 API</a>。 
+> 提供给自定义 API 函数的 <a href="http://msdn.microsoft.com/library/windowsazure/jj554218.aspx" target="_blank">request</a> 和 <a href="http://msdn.microsoft.com/library/windowsazure/dn303373.aspx" target="_blank">response</a> 对象由 <a href="http://go.microsoft.com/fwlink/p/?LinkId=309046" target="_blank">Express.js 库</a>实现。有关详细信息，请参阅<a href="http://msdn.microsoft.com/library/windowsazure/dn280974.aspx" target="_blank">自定义 API</a>。 
 
 接下来，您将修改快速启动应用，以添加新按钮和用于异步调用新的自定义 API 的代码。
 
@@ -50,5 +50,4 @@
 
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[mssql 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx
-<!--HONumber=41-->
+[mssql 对象]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx

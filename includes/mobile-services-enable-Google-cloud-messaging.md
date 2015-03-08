@@ -1,11 +1,11 @@
-﻿
+
 
 
 1. 导航到 <a href="http://cloud.google.com/console" target="_blank">Google Cloud Console</a> 网站、使用您的 Google 帐户凭据登录，然后单击"创建项目"。
 
    	![](./media/notification-hubs-android-get-started/mobile-services-google-new-project.png)   
 
-	>[WACOM.NOTE]如果您已拥有现成项目，则在登录后您将定向到 <strong></strong>"项目"页。若要从仪表板新建一个项目，请展开"API 项目"<strong></strong>、单击"其他项目"<strong></strong>下面的"创建..."<strong></strong>，然后输入项目名称并单击"创建项目"<strong></strong>。
+	>[WACOM.NOTE]您已拥有现成项目时，在登录后将您定向到<strong>项目</strong> 页面。要从仪表板新建项目，请展开 <strong>API 项目</strong>，单击<strong>其他项目</strong>下面的<strong>创建...</strong> ，然后输入项目名称并单击<strong>创建项目</strong>。
 
 2. 输入项目名称，接受服务条款并单击"创建"。执行请求的 SMS 验证，再次单击"创建"。
 
@@ -31,4 +31,3 @@
 
 	接下来，您将使用此 API 密钥值，让移动服务对 GCM 进行身份验证并代表您的应用发送推送通知。
 
-<!--HONumber=41-->

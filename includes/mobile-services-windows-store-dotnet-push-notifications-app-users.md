@@ -1,7 +1,7 @@
 ﻿
 接下来，需要更改注册推送通知的方式，以确保在尝试注册之前对用户进行身份验证。客户端应用更新取决于实现推送通知的方式。
 
-###使用 Visual Studio 2013 Update 2 或更高版本中的添加推送通知向导
+### 使用 Visual Studio 2013 Update 2 或更高版本中的添加推送通知向导
 
 使用这种方法时，向导会在您的项目中生成新的 push.register.cs 文件。
 
@@ -42,15 +42,15 @@
 
 	在此代码中，必须将生成的推送类名称 (`todolistPush`) 替换为向导生成的类名称，其格式通常为 <code><em>mobile_service</em>Push</code>。
 
-###手动启用推送通知		
+### 手动启用推送通知		
 
 使用此方法时，需要将本教程中的注册代码直接添加到 app.xaml.cs 项目文件。
 
-1. 在 Visual Studio 的解决方案资源管理器中，打开 app.xaml.cs 项目文件，然后在 **OnLaunched** 事件处理程序中注释掉或删除对 **InitNotificationsAsync** 的调用。 
+1. 在 Visual Studio 的 Solution Explorer 中，打开 app.xaml.cs 项目文件，然后在 **OnLaunched** 事件处理程序中注释掉或删除对 **InitNotificationsAsync** 的调用。 
  
 2. 将 **InitNotificationsAsync** 方法的可访问性从  `private` 更改为  `public`，并添加  `static` 修饰符。 
 
-3. 打开 MainPage.xaml.cs 项目文件，并将 **OnNavigatedTo** 方法重写替换为以下代码：
+3. 打开 MainPage.xaml.cs 项目文件，并将 **OnNavigatedTo** 方法覆盖替换为以下项：
 
 	    protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -58,5 +58,3 @@
             App.InitNotificationsAsync();
             RefreshTodoItems();
         }
-
-<!--HONumber=41-->

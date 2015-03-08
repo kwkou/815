@@ -1,4 +1,4 @@
-﻿##<a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
+﻿## <a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
 
 1. 在 Visual Studio 2012 中，打开 Package.appxmanifest 文件，并在"功能"选项卡中启用"网络摄像机"和"麦克风"功能。
 
@@ -118,7 +118,7 @@
 
 最后一个步骤是测试应用并验证上载是否成功。
 		
-##<a name="test"></a>测试在您的应用中上载图像
+## <a name="test"></a>测试在您的应用中上载图像
 
 1. 在 Visual Studio 中，按 F5 键运行应用。
 
@@ -140,6 +140,5 @@
 
 	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-ie.png)
 
-   	>[WACOM.NOTE]当新项的 <code>imageUri</code> 属性绑定到 <strong>Image</strong> 控件时，图像将从 Blob 存储服务自动下载。
+   	>[WACOM.NOTE]新项的 <code>imageUri</code> 属性绑定到<strong>图像</strong>控件时，将从 Blob 存储服务自动下载图像。
 
-<!--HONumber=41-->

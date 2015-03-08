@@ -1,4 +1,4 @@
-﻿注册新的插入脚本，当插入新的 Todo 项时，它可以生成 SAS。
+注册新的插入脚本，当插入新的 Todo 项时，它可以生成 SAS。
 
 0. 如果您尚未创建存储帐户，请参阅[如何创建存储帐户]。
 
@@ -93,5 +93,4 @@
 
 <!-- URLs. -->
 [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account
-[应用设置]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
-<!--HONumber=41-->
+[应用设置]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

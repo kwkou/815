@@ -1,4 +1,4 @@
-﻿
+
 
 为了能够对用户进行身份验证，您必须通过标识提供程序注册您的应用。然后，您需要向移动服务注册标识提供程序生成的客户端密钥。
 
@@ -34,4 +34,4 @@
 	您的移动服务和应用现已配置为使用您选择的身份验证提供程序。
 
 <!-- URLs. -->
-[Azure 管理门户]: https://manage.windowsazure.cn/<!--HONumber=41-->
+[Azure 管理门户]: https://manage.windowsazure.cn/

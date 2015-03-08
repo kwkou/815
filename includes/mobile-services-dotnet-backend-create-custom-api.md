@@ -1,4 +1,4 @@
-﻿
+
 
 1. 在 Visual Studio 的解决方案资源管理器中，右键单击移动服务项目的 Controllers 文件夹，展开"添加"，然后单击"新基架项"。
 
@@ -6,7 +6,7 @@
 
 2. 展开"Azure 移动服务"并单击"Azure 移动服务自定义控制器"，然后单击"添加"，提供  `CompleteAllController` 的"控制器名称"，然后再次单击"添加"。
 
-	![Web API"添加基架"对话框](./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png)
+	![Web API Add Scaffold dialog](./media/mobile-services-dotnet-backend-create-custom-api/add-custom-api-controller.png)
 
 	这样将创建新的名为 **CompleteAllController** 的空控制器类。
 
@@ -17,7 +17,7 @@
 		using System.Threading.Tasks;
 		using todolistService.Models;
 
-	在以上代码中，请将  `todolistService` 替换为您的移动服务项目的命名空间，它应该是在移动服务名称后追加  `Service`。 
+	在以上代码中，请将  `todolistService` 替换为您的移动服务项目的名称空间，它应该是在移动服务名称后追加  `Service`。 
 
 4. 在 CompleteAllController.cs 中，向命名空间中添加以下类定义。此类将包装发送给客户端的响应。
 
@@ -56,12 +56,11 @@
             }
         }
 
-	在以上代码中，将  `todolistContext` 替换为您的数据模型的 DbContext 名称，它应该是在移动服务名称后追加  `Context`。此外将 UPDATE 语句中的架构名称替换为您的移动服务名称。 
+	在以上代码中，将  `todolistContext` 替换为您的数据模型的 DbContext 名称，该名称应该是在移动服务名称后追加  `Context`。还将 UPDATE 语句中的模式名称替换为您的移动服务名称。 
 
-	这段代码使用 [Database 类](http://msdn.microsoft.com/zh-cn/library/system.data.entity.database.aspx) 直接访问 **TodoItems** 表，以在所有项上设置已完成标志。此方法支持 POST 请求，已更改行的数量将以整数值形式返回至客户端。
+	这段代码使用[数据库类](http://msdn.microsoft.com/library/system.data.entity.database.aspx)来直接访问 **TodoItems** 表，从而在所有项上设置完成标志。此方法支持 POST 请求，已更改行的数量将以整数值形式返回至客户端。
 
 	> [WACOM.NOTE] 设置了默认权限，这意味着应用的任何用户都能够调用自定义 API。但是，应用程序密钥无法安全地分发或存储，不能视为安全的凭据。出于这一原因，您应该考虑将访问权限仅限于经过身份验证的用户，仅允许这些用户执行修改数据或影响移动服务的操作。 
 
 接下来，您将修改快速启动应用，以添加新按钮和用于异步调用新的自定义 API 的代码。
 
-<!--HONumber=41-->

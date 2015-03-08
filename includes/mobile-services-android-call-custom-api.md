@@ -1,5 +1,5 @@
-﻿
-##<a name="update-app"></a>更新应用以调用自定义 API
+
+## <a name="update-app"></a>更新应用以调用自定义 API
 
 1. 我们将在现有按钮旁边添加一个标记为"Complete All"（完成全部）的按钮，并将两个按钮都下移一行。在 Eclipse 中，打开您的快速启动项目中的  *res\layout\activity_to_do.xml* 文件，找到包含名为  `buttonAddToDo` 的 **Button** 元素的 **LinearLayout** 元素。复制 **LinearLayout** 并将其紧邻着粘贴在原始元素之后。将 **Button** 元素从第一个 **LinearLayout** 中删除。
 
@@ -42,7 +42,7 @@
 
 
 
-5. 在"程序包资源管理器"的  *src* 文件夹中，右键单击项目名称 (`com.example.{your projects name}`)，然后依次选择"新建"、"类"。在对话框的类名称字段中，输入 **MarkAllResult**、选择"确定"，然后使用以下代码替代生成的类定义：
+5. 在 Package Explorer 的  *src* 文件夹中，右键单击项目名称 (`com.example.{your projects name}`)，然后依次选择**新建**、**类**。在对话框的类名称字段中，输入 **MarkAllResult**、选择"确定"，然后使用以下代码替代生成的类定义：
 
 		import com.google.gson.annotations.SerializedName;
 		
@@ -75,9 +75,9 @@
 
 8. 在 **ToDoActivity.java** 文件中，添加以下方法：
 
-	public void completeItem(View view) {
+	    public void completeItem(View view) {
 	    
-	    ListenableFuture<MarkAllResult> result = mClient.invokeApi( "completeAll2", MarkAllResult.class ); 
+	    	ListenableFuture<MarkAllResult> result = mClient.invokeApi( "completeAll2", MarkAllResult.class ); 
 	    	
 	    	Futures.addCallback(result, new FutureCallback<MarkAllResult>() {
 	    		@Override
@@ -110,4 +110,4 @@
 
   	![](./media/mobile-services-android-call-custom-api/mobile-custom-api-android-completed.png)
 
-	此时会显示一个消息框，指示标记为完成的多个项，并再次执行筛选查询，将所有项从列表中清除。<!--HONumber=41-->
+	此时会显示一个消息框，指示标记为完成的多个项，并再次执行筛选查询，将所有项从列表中清除。

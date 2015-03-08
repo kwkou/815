@@ -1,4 +1,4 @@
-﻿
+
 
 按照下列步骤操作以创建新的移动服务。
 
@@ -14,7 +14,7 @@
 
 	此时将显示"新建移动服务"对话框。
 
-4.	在"创建移动服务"页上，依次选择"创建免费的 20 MB SQL Database"、".NET"运行时，然后在"URL"文本框中键入新移动服务的子域名称，并等待名称验证。名称验证完成后，单击右箭头按钮，转到下一页。	
+4.	在"创建移动服务"页上，依次选择"创建免费的 20 MB SQL Database"、".NET"运行时，然后在"URL"文本框中键入新移动服务的子域名称，并等待名称验证。名称验证完成后，单击右箭头按钮以转到下一页。	
 
 	![](./media/mobile-services-dotnet-backend-create-new-service/mobile-create-page1.png)
 
@@ -38,4 +38,3 @@
 
 <!-- URLs. -->
 [管理门户]: https://manage.windowsazure.cn/
-<!--HONumber=41-->

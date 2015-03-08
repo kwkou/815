@@ -1,8 +1,8 @@
-﻿1. 在"程序包资源管理器"中，依次展开"GetStartedWithData"、"src"和".com.example.GetStartedWithData"，然后检查 ToDoActivity.java 文件。
+1. 在 Package Explorer 中，依次展开"GetStartedWithData"、"src"和".com.example.GetStartedWithData"，然后检查 ToDoActivity.java 文件。
 
    	![](./media/download-android-sample-code/mobile-eclipse-project.png)
 
-   	注意，有一些 `//TODO` 注释指定了将此应用用于您的移动服务时必须执行的步骤。
+   	注意，有一些  `//TODO` 注释指定了将此应用用于您的移动服务时必须执行的步骤。
 
 2. 在"运行"菜单中，单击"运行"，然后单击"Android 应用程序"以启动项目。
 
@@ -12,4 +12,4 @@
 
    	![](./media/download-android-sample-code/mobile-quickstart-startup-android.png)
 
-   	请注意，保存的文本将存储在内存中的集合中，并显示在下面的列表中。<!--HONumber=41-->
+   	请注意，保存的文本将存储在内存中的集合中，并显示在下面的列表中。

@@ -1,4 +1,4 @@
-﻿
+
 1. 登录到 [Azure 管理门户]、单击"移动服务"，然后单击您的应用。
 
 	![](./media/mobile-services-create-new-push-table/mobile-services-selection.png)
@@ -19,4 +19,3 @@
 
 <!-- URLs -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
-<!--HONumber=41-->

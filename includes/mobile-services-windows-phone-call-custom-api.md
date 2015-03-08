@@ -1,6 +1,6 @@
-##<a name="update-app"></a>更新应用以调用自定义 API
+﻿## <a name="update-app"></a>更新应用以调用自定义 API
 
-1. 在 Visual Studio 2012 Express for Windows Phone 中，打开您的快速启动项目中的 MainPage.xaml 文件，找到名为  `ButtonRefresh` 的 **Button** 元素，并将其替换为以下 XAML 代码： 
+1. 在 Visual Studio 2012 Express for Windows Phone 中，打开快速启动项目中的 MainPage.xaml 文件，找到名为  `ButtonRefresh` 的**按钮**元素，并将其替换为以下 XAML 代码： 
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button Width="225" Name="ButtonRefresh" 
@@ -9,7 +9,7 @@
                 Click="ButtonCompleteAll_Click">Complete All</Button>
         </StackPanel>
 
-	这样可将新按钮添加到页。
+	这样可将新按钮添加到页。 
 
 2. 打开 MainPage.xaml.cs 代码文件，并添加以下类定义代码：
 
@@ -63,4 +63,3 @@
   	![](./media/mobile-services-windows-phone-call-custom-api/mobile-custom-api-windows-phone-completed.png)
 
 	此时会显示一个消息框，指示标记为完成的项的数量，并再次执行筛选查询，将所有项从列表中清除。
-<!--HONumber=41-->

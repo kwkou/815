@@ -1,4 +1,4 @@
-﻿
+
 1. 在 Visual Studio 的解决方案资源管理器中，展开移动服务项目中的 **Controllers** 文件夹。打开 TodoItemController.cs 并使用以下代码更新  `PostTodoItem` 方法定义：  
 
         public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
@@ -28,9 +28,8 @@
 
     这段代码可在插入 Todo 项之后发送推送通知（包含所插入项的文本）。在发生错误的情况下，这段代码将添加一个错误日志条目，该条目可在管理门户中的移动服务的"日志"选项卡上查看。
 
-	>[WACOM.NOTE] 可以使用模板通知将一条推送通知发送到多个平台上的客户端。有关详细信息，请参阅[基于单个移动服务支持多个设备平台](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#push)。
+	>[WACOM.NOTE] 可以使用模板通知将一条推送通知发送到多个平台上的客户端。有关更多信息，请参阅[从单个移动服务支持多个设备平台](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#push)。
 
 2. 将移动服务项目重新发布到 Azure。
 
 
-<!--HONumber=41-->

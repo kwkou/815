@@ -18,4 +18,3 @@
 	 	        android:targetSdkVersion="19" />
 	
 3. 在 Eclipse 程序包资源管理器中，右键单击项目节点，选择"属性"，并在左栏中选择"Android"。确认"项目生成目标"设置为与 **targetSdkVersion** 相同的 SDK 版本。
-<!--HONumber=41-->

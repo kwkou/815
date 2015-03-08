@@ -7,9 +7,9 @@
 
    	![](./media/mobile-services-javascript-backend-push-notifications-app-users/mobile-services-push-registration-endpoint.png)
 	
-	这样，您便可以自定义推送通知注册回调函数。如果使用 Git 编辑源代码，可以在 `.\service\extensions\push.js` 中找到与此相同的注册函数。
+	这样，您便可以自定义推送通知注册回调函数。如果您使用 Git 来编辑源代码，则在 `.\service\extensions\push.js`中找到这一相同注册函数。
 
-3. 将现有的 **register** 函数替换为以下代码：
+3. 将现有**注册**函数替换为以下代码：
 
 		exports.register = function (registration, registrationContext, done) {   
 		    // Get the ID of the logged-in user.
@@ -45,4 +45,3 @@
 	这会向注册添加一个标记（已登录用户的 ID）。将验证提供的标记以防止用户注册其他用户的 ID。通知发送给该用户后，用户可在此设备和用户所注册的其他任何设备上接收通知。
 
 4. 依次单击向后箭头、"数据"选项卡、"TodoItem"、"脚本"，然后选择"插入"。 
-<!--HONumber=41-->

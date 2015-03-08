@@ -7,7 +7,7 @@
 
    	![](./media/mobile-services-ios-run-app/mobile-xcode-project.png)
 
-2. 按"运行"****按钮以生成项目，并在 iPhone 模拟器中启动应用，这是此项目的默认设置。
+2. 按"运行"按钮以生成项目，并在 iPhone 模拟器中启动应用，这是此项目的默认设置。
 
 3. 在应用中键入有意义的文本（例如 _Complete the tutorial_），然后单击加号 (**+**) 图标。
 
@@ -17,4 +17,3 @@
 
 	>[WACOM.NOTE]您可以查看访问您的移动服务以查询和插入数据的代码，这些代码在 TodoService.m 文件中。</p> 
  	</div>
-<!--HONumber=41-->

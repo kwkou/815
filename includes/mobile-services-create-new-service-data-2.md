@@ -1,4 +1,4 @@
-﻿为了能够在新移动服务中存储应用数据，必须先在关联的 SQL Database 实例中创建一个新表。
+为了能够在新移动服务中存储应用数据，必须先在关联的 SQL Database 实例中创建一个新表。
 
 1. 在管理门户中单击"移动服务"，然后单击您刚刚创建的移动服务。
 
@@ -8,7 +8,7 @@
 
    	此时将显示"创建新表"对话框。
 
-3. 在"表名"中键入 _TodoItem_，然后单击勾选按钮。
+3. 在**表名**中键入 _TodoItem_，然后单击勾选按钮。
 
  	![mobile-create-todoitem-table](./media/mobile-services-create-new-service-data-2/mobile-create-todoitem-table.png)
 
@@ -58,4 +58,3 @@
 
 现在，您可以将新移动服务用作应用的数据存储。
 
-<!--HONumber=41-->

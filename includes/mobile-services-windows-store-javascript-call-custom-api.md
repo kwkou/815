@@ -1,7 +1,7 @@
 ﻿
-##<a name="update-app"></a>更新应用以调用自定义 API
+## <a name="update-app"></a>更新应用以调用自定义 API
 
-1. 在 Visual Studio 中，打开您的快速启动项目中的 default.html 文件，找到名为  `buttonRefresh` 的 **button** 元素，然后在后面添加以下新元素： 
+1. 在 Visual Studio 中，打开快速启动项目中的 default.html 文件，找到名为  `buttonRefresh` 的**按钮**元素，然后在其后添加以下新元素： 
 
 		<button id="buttonCompleteAll" style="margin-left: 5px">Complete All</button>
 
@@ -46,7 +46,7 @@
             completeAllTodoItems();
         });
 
-	此方法可处理新按钮的 **Click** 事件。**InvokeApiAsync** 方法在客户端上调用，该客户端向新的自定义 API 发送 POST 请求。与任何错误相同，自定义 API 返回的结果也显示在消息对话框中。
+	此方法可处理新按钮的 **Click** 事件。在客户端上调用 **InvokeApiAsync** 方法，该客户端向新的自定义 API 发送 POST 请求。与任何错误相同，自定义 API 返回的结果也显示在消息对话框中。
 
 ## <a name="test-app"></a>测试应用
 
@@ -61,4 +61,3 @@
   	![](./media/mobile-services-windows-store-javascript-call-custom-api/mobile-custom-api-windows-store-completed.png)
 
 	此时会显示一个消息框，指示标记为完成的多个项，并再次执行筛选查询，将所有项从列表中清除。
-<!--HONumber=41-->

@@ -1,4 +1,4 @@
-﻿
+
 
 按照下列步骤操作以创建新的移动服务。
 
@@ -39,4 +39,3 @@
 
 <!-- URLs. -->
 [管理门户]: https://manage.windowsazure.cn/
-<!--HONumber=41-->

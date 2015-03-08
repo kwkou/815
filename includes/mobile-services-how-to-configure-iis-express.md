@@ -1,4 +1,4 @@
-﻿
+
 1. 如果移动服务当前在 IS Express 中运行，请务必停止移动服务。右键单击 IIS Express 托盘图标，然后单击移动服务的"停止"。
 
     ![](./media/mobile-services-how-to-configure-iis-express/iis-express-tray-stop-site.png)
@@ -15,7 +15,7 @@
 
 4. 配置 IIS Express 以允许向服务发出远程连接请求。为此，请在 applicationhost.config 文件中，查找您的移动服务的站点元素，并为使用您此前记下的 IP 地址的端口添加新的  `binding` 元素。然后保存 applicationhost.config 文件。 
 
-    已更新的站点元素应该如下所示：
+    Your updated site element should look similar to the following:
 
         <site name="todolist_Service(1)" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
@@ -38,4 +38,3 @@
 
 <!-- URLs. -->
 [如何添加新的 Windows 防火墙端口规则]:  http://go.microsoft.com/fwlink/?LinkId=392240
-<!--HONumber=41-->

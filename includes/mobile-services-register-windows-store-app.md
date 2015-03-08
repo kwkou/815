@@ -1,4 +1,4 @@
-﻿
+
 1. 如果尚未注册应用，请在开发人员中心内导航到 Windows 应用商店应用的["提交应用"页]，用 Microsoft 帐户登录，然后单击"应用名称"。
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-submit-win8-app.png)
@@ -29,7 +29,7 @@
 
    	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit-app.png) 
 
-8. 在"服务"页中，单击"Azure 移动服务"下的"Live 服务站点"。
+8. 在"服务"页面中，单击 **活动服务站点** **Azure Mobile Services** 下。
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-edit2-app.png) 
 
@@ -39,7 +39,7 @@
 
     >[WACOM.NOTE]客户端密钥和程序包 SID 是重要的安全凭据。请勿与任何人分享这些密钥或将密钥随应用分发。
 
-10. （可选）单击"API 设置"、启用"增强型重定向安全"、提供"重定向 URL"中 `https://<mobile_service>.azure-mobile.net/login/microsoftaccount` 的值，然后单击"保存"。
+10. （可选）单击"API 设置"，启用"增强型重定向安全"，提供"重定向 URL"中  `https://<mobile_service>.azure-mobile.cn/login/microsoftaccount` 的值，然后单击"保存"。
 
 	![](./media/mobile-services-register-windows-store-app/mobile-services-win8-app-push-auth-2.png)
 
@@ -68,4 +68,3 @@
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 ["提交应用"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure 管理门户]: https://manage.windowsazure.cn/
-<!--HONumber=41-->

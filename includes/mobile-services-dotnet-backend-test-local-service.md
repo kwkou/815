@@ -8,4 +8,4 @@
 
 	![](./media/mobile-services-dotnet-backend-test-local-service/mobile-service-startup.png)
 
-	移动服务成功启动之后，将显示一个网页。<!--HONumber=41-->
+	移动服务成功启动之后，将显示一个网页。

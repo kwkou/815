@@ -1,9 +1,9 @@
-﻿
-##<a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
+
+## <a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
 
 在本节中，您将更新来自[移动服务入门]教程的项目，以便拍摄照片并将它们上载到 Azure Blob 存储。为了捕获图像，本教程使用来自  `Microsoft.Phone.Tasks` 命名空间的 [CameraCaptureTask]。此类可在 Windows Phone 设备上启动相机 UI，以拍摄照片并自动将图像保存到 Windows Phone 设备上的"本机照片"。如果您不希望将图像保存到"本机照片"，请改用  `Microsoft.Devices` 命名空间中的 [PhotoCamera] 类。
 
-1. 在 Visual Studio 的解决方案资源管理器中，在项目下展开"属性"。然后打开 WMAppManifest.xml 文件，并通过在"功能"选项卡上单击"ID\_CAP\_ISV\_CAMERA"来启用相机。关闭文件以保存您的更改。
+1. 在 Visual Studio 的解决方案资源管理器中，在项目下展开"属性"。然后打开 WMAppManifest.xml 文件，并通过在**功能**选项卡上单击 **ID\_CAP\_ISV\_CAMERA** 来启用相机。关闭文件以保存您的更改。
 
    	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-WMAppmanifest-wp8.png)
 
@@ -150,7 +150,7 @@
 
 最后一个步骤是测试应用并验证上载是否成功。
 		
-##<a name="test"></a>测试在您的应用中上载图像
+## <a name="test"></a>测试在您的应用中上载图像
 
 1. 在 Visual Studio 中，您可以按 F5 键，在模拟器中测试应用，或使用实际目标设备进行测试。
 
@@ -176,10 +176,9 @@
 
 	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-final-wp8.png)
 
-   >[WACOM.NOTE]当新项的 <code>imageUri</code> 属性绑定到 <strong>Image</strong> 控件时，图像将从 Blob 存储服务自动下载。
+   >[WACOM.NOTE]新项的 <code>imageUri</code> 属性绑定到<strong>图像</strong>控件时，将从 Blob 存储服务自动下载图像。
 
 
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started
-[CameraCaptureTask]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
-[PhotoCamera]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
-<!--HONumber=41-->
+[CameraCaptureTask]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
+[PhotoCamera]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx

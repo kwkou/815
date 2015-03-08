@@ -1,14 +1,14 @@
-﻿以下步骤将在 Windows 应用商店中注册您的应用、配置您的移动服务以启用推送通知，并将代码添加到您的应用中以在您的通知中心注册设备通道。Visual Studio 2013 通过使用您提供的凭据连接到 Azure 和 Windows 应用商店。 
+以下步骤将在 Windows 应用商店中注册您的应用、配置您的移动服务以启用推送通知，并将代码添加到您的应用中以在您的通知中心注册设备通道。Visual Studio 2013 通过使用您提供的凭据连接到 Azure 和 Windows 应用商店。 
 
 1. 在 Visual Studio 2013 中，打开"解决方案资源管理器"、右键单击 Windows 应用商店应用项目、单击"添加"，然后单击"推送通知..."。 
 
-	![Visual Studio 2013 中的"添加推送通知"向导](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png)
+	![Add Push Notification wizard in Visual Studio 2013](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png)
 
 	这样可以启动"添加推送通知"向导。
 
 2. 单击"下一步"，登录您的 Windows 应用商店帐户，然后在"保留新名称"中提供一个名称，再单击"保留"。
 
-	![在"添加推送通知"向导中选择一个应用名称](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png) 
+	![Select an app name in the Add Push Notification wizard](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png) 
 
 	这样可以创建新的应用注册。
 
@@ -20,7 +20,7 @@
 
 	您的移动服务使用的通知中心将随 Windows 通知服务 (WNS) 注册一起更新。现在，您可以通过 Azure 通知中心使用 WNS 将通知从移动服务发送到您的应用。 
 
-	>[WACOM.NOTE]本教程演示了从移动服务后端发送通知的过程。可以使用相同的通知中心从任意后端服务来发送通知。有关详细信息，请参阅[通知中心概述](http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx).
+	>[WACOM.NOTE]本教程演示了从移动服务后端发送通知的过程。可以使用相同的通知中心从任意后端服务来发送通知。有关更多信息，请参阅[通知中心概述](http://msdn.microsoft.com/library/azure/jj927170.aspx)。
 
 5. 完成该向导后，一个新的"推送设置即将完成"页将在 Visual Studio 中打开。此页详细介绍了用于配置您的移动服务项目以发送通知的另一种方法，该方法不同于本教程中所介绍的方法。 
 
@@ -28,6 +28,5 @@
 
 <!-- URLs. -->
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
-[数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
+[开始使用数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
 [在 Visual Studio 2013 中导入发布设置文件]: /zh-cn/documentation/articles/mobile-services-windows-how-to-import-publishsettings/
-<!--HONumber=41-->

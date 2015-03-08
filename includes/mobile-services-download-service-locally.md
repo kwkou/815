@@ -6,7 +6,7 @@
 
     ![](./media/mobile-services-dotnet-backend-android-get-started-data/download-service-project.png)
 
-3. 如果您尚未安装 Visual Studio，请下载和安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934), 或更高版本。
+3. 如果你尚未安装 Visual Studio，请下载和安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) 或更高版本。
 
 4. 在"下载您的服务并将其发布到云"下面单击"下载"。
 
@@ -26,4 +26,3 @@
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
-<!--HONumber=41-->

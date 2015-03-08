@@ -1,4 +1,4 @@
-﻿1. 在 **channels** 表的 insert.js 文件中，找到以下代码行，注释掉它们或将它们从文件中删除，然后保存所做的更改。
+1. 在 **channels** 表的 insert.js 文件中，找到以下代码行，注释掉它们或将它们从文件中删除，然后保存所做的更改。
 
 		sendNotifications(item.channelUri);
 
@@ -44,4 +44,3 @@
 		}
 		
 	现在，当您插入新的 TodoItem 时，将有一个推送通知发送到所有已注册设备。
-<!--HONumber=41-->

@@ -1,10 +1,10 @@
-﻿将移动服务准备就绪后，您可以更新应用，以便在移动服务而不是本地集合中存储项。 
+将移动服务准备就绪后，您可以更新应用，以便在移动服务而不是本地集合中存储项。 
 
 1. 如果您还没有[移动服务 Android SDK]，请立即下载并展开压缩的文件。
 
-2. 将 `.jar` 文件从 SDK 的  `mobileservices` 文件夹复制到 GetStartedWithData 项目的  `libs` 文件夹中。
+2. 将  `.jar` 文件从 SDK 的  `mobileservices` 文件夹复制到 GetStartedWithData 项目的  `libs` 文件夹中。
 
-3. 在 Eclipse 中的"程序包资源管理器"中，右键单击  `libs` 文件夹，单击"刷新"，复制的 jar 文件将会出现
+3. 在 Eclipse 中的 Package Explorer 中，右键单击  `libs` 文件夹，单击**刷新**，然后复制的 jar 文件将会出现
 
   	这样可将移动服务 SDK 引用添加到工作区。
 
@@ -44,7 +44,7 @@
 		private MobileServiceClient mClient;
 		private private MobileServiceTable<ToDoItem> mToDoTable;
 
-10. 找到文件底部的  *ProgressFilter* 类，并取消其注释。当  *MobileServiceClient* 运行网络操作时，此类显示  'loading' 指示器。
+10. 找到文件底部的  *ProgressFilter* 类，并取消其注释。 *MobileServiceClient* 运行网络操作时，此类显示 '正在加载'指示器。
 
 
 11. 在管理门户中单击"移动服务"，然后单击您刚刚创建的移动服务。
@@ -99,7 +99,7 @@
 	        }
 	    }.execute();
 
-   	这会将项目更新发送到移动服务，并从适配器中删除已选中的项目。
+   	这会将项更新发送到移动服务，并从适配器中删除已选中的项。
     
 16. 取消注释 **addItem** 方法的以下行：
 	
@@ -128,7 +128,7 @@
 
 18. 取消注释 **refreshItemsFromTable** 方法的以下行：
 
-		// 获取未被标记为"完成"的项目并将其添加到适配器中
+		// Get the items that weren't marked as completed and add them in the adapter
 	    new AsyncTask<Void, Void, Void>() {
 	        @Override
 	        protected Void doInBackground(Void... params) {
@@ -151,8 +151,8 @@
 	        }
 	    }.execute();
 
-	这将查询移动服务，并返回未标记为"完成"的所有项目。这些项目将添加到用于绑定的适配器。
+	这将查询移动服务，并返回未标记为"完成"的所有项。这些项目将添加到用于绑定的适配器。
 		
 
 <!-- URLs. -->
-[移动服务 Android SDK]: http://aka.ms/Iajk6q<!--HONumber=41-->
+[移动服务 Android SDK]: http://aka.ms/Iajk6q
