@@ -1,4 +1,4 @@
-<properties linkid="manage-scenarios-choose-web-app-service" urlDisplayName="Web Options for Azure" pageTitle="Azure 网站、云服务和虚拟机比较" metaKeywords="Cloud Services, Virtual Machines, Web Sites" description="了解何时使用 Azure 网站、云服务和虚拟机来托管 Web 应用程序。查看功能比较。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title=" 云服务" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="manage-scenarios-choose-web-app-service" urlDisplayName="Web Options for Azure" pageTitle="Azure 网站、云服务和虚拟机比较" metaKeywords="Cloud Services, Virtual Machines, Web Sites, 虚拟机比较, 托管 Web 应用程序" description="了解何时使用 Azure 网站、云服务和虚拟机来托管 Web 应用程序。查看功能比较。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title=" 云服务" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 # Azure 网站、云服务和虚拟机比较
 

@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="管理虚拟机的可用性 - Azure" metaKeywords="" description="了解如何使用多个虚拟机来确保高可用性 Azure 应用程序。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
+<properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="Windows Azure 服务管理：管理虚拟机的可用性" metaKeywords="Virtual Machine,虚拟机,冗余,高可用性,负载平衡,高可用性最佳实践" description="了解如何使用多个虚拟机来确保高可用性 Azure 应用程序。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
 
 #管理虚拟机的可用性
 

@@ -5,8 +5,9 @@
 	documentationCenter=".net" 
 	authors="" 
 	manager="Tiffena" 
-	editor="Eric Chen"
-	ms.date="01/20/2015"/>
+	editor="Eric Chen"/>
+
+<tags ms.service="test" ms.date="03/12/2015"/>
 
 # Delivering Video-on-Demand with Media Services REST APIs 
 
