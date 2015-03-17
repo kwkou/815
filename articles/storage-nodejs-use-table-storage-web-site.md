@@ -38,7 +38,7 @@
 
 * Web 浏览器
 
-[WACOM.INCLUDE [create-account-and- Websites-note](../includes/create-account-and- Websites-note.md)]
+[WACOM.INCLUDE [create-account-and-Websites-note](../includes/create-account-and- Websites-note.md)]
 
 ##创建存储帐户
 
