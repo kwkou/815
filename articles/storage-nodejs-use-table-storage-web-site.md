@@ -38,7 +38,7 @@
 
 * Web 浏览器
 
-[WACOM.INCLUDE [create-account-and-Websites-note](../includes/create-account-and- Websites-note.md)]
+[WACOM.INCLUDE [create-account-and-Websites-note](../includes/create-account-and-Websites-note.md)]
 
 ##创建存储帐户
 
@@ -639,10 +639,11 @@ config.json 文件包含用于连接到 SQL Database 的连接字符串，应用
 
 ##其他资源
 
-[针对 Mac 和 Linux 的 Azure 命令行工具]    
-[创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[使用 Git 发布到 Azure 网站]: /zh-cn/documentation/articles/web-sites-publish-source-control/
-[Azure 开发人员中心]: /zh-cn/develop/nodejs/
+[针对 Mac 和 Linux 的 Azure 命令行工具]
+    
+[创建 Node.js 应用程序并将其部署到 Azure 网站]
+
+[Azure 开发人员中心](/zh-cn/develop/nodejs/)
 
 
 [节点]: http://nodejs.org
