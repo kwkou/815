@@ -1,4 +1,4 @@
-<properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="Windows Azure 服务管理：管理虚拟机的可用性" metaKeywords="Virtual Machine,虚拟机,冗余,高可用性,负载平衡,高可用性最佳实践" description="了解如何使用多个虚拟机来确保高可用性 Azure 应用程序。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
+<properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="管理虚拟机的可用性 - Azure 微软云" metaKeywords="Azure,Virtual Machine,虚拟机,冗余,高可用性,负载平衡,高可用性最佳实践,负载平衡器" description="本文首先概览了计划的和计划外的维护事件，然后介绍了多种应用程序实现高可靠性的最佳做法，包括：配置多个虚拟机中的冗余的可用性集、将多个应用层配置到不同的可用性集中、合并负载均衡器使用可用性集及避免单一实例中的可用性集中的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
 
 #管理虚拟机的可用性
 
@@ -37,7 +37,7 @@ Fd 定义共享常见的电源源与网络交换机的虚拟机的组。默认�
 
  
 ### 合并负载平衡器使用可用性集
-结合使用可用性集以获取最大应用程序复原 Azure 负载平衡器。Azure 负载平衡器分配多个虚拟机之间的流量。对于我们的标准层虚拟机，则包含 Azure 负载平衡器。请注意并非所有虚拟机层都包括 Azure 负载平衡器。有关虚拟机进行负载平衡的详细信息，请阅读[虚拟机进行负载平衡](../load-balance-virtual-machines/)。 
+结合使用可用性集以获取最大应用程序复原 Azure 负载平衡器。Azure 负载平衡器分配多个虚拟机之间的流量。对于我们的标准层虚拟机，则包含 Azure 负载平衡器。请注意并非所有虚拟机层都包括 Azure 负载平衡器。有关虚拟机进行负载平衡的详细信息，请阅读[虚拟机进行负载平衡](/documentation/articles/load-balance-virtual-machines/)。 
 
 如果未配置负载平衡器来平衡跨多个虚拟机的通信，任何计划内的维护事件将会影响仅流量提供虚拟机导致到应用层服务中断。放置在同一个负载平衡器和可用性集下，在同一层的多个虚拟机可以使流量可以不断地提供至少一个实例。 
 
