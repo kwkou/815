@@ -1,48 +1,53 @@
-The Domain Name System (DNS) is used to locate things on the internet. For example, when you enter an address in your browser, or click a link on a web page, it uses DNS to translate the domain into an IP address. The IP address is sort of like a street address, but it's not very human friendly. For example, it is much easier to remember a DNS name like **contoso.com** than it is to remember an IP address such as 192.168.1.88 or 2001:0:4137:1f67:24a2:3888:9cce:fea3.
+域名系统 (DNS) 用于在 Internet 上查找资源。例如，当您在浏览器中输入一个网站地址或单击 Web 页面上的某个链接时，它使用 DNS 将域转换为 IP 地址。IP 地址有点像街道地址，但其用户友好性并不是很好。例如，记住 **contoso.com** 这样的 DNS 名称比较容易，而记住 192.168.1.88 或 2001:0:4137:1f67:24a2:3888:9cce:fea3 这样的 IP 地址则要困难得多。
 
-The DNS system is based on *records*. Records associate a specific *name*, such as **contoso.com**, with either an IP address or another DNS name. When an application, such as a web browser, looks up a name in DNS, it finds the record, and uses whatever it points to as the address. If the value it points to is an IP address, the browser will use that value. If it points to another DNS name, then the application has to do resolution again. Ultimately, all name resolution will end in an IP address.
+DNS 系统基于 *records*。记录将特定的 *name*（例如 **contoso.com**）与一个 IP 地址或其他的 DNS 名称相关联。当某个应用程序（例如 Web 浏览器）在 DNS 中查找某个名称，它将找到该记录，并将它所指向的内容用作地址。如果它所指向的值是 IP 地址，则浏览器将使用该值。如果它指向另一个 DNS 名称，则应用程序必须再次执行解析。最终，所有名称解析都将以 IP 地址的形式结束。
 
-When you create an Azure Web Site, a DNS name is automatically assigned to the site. This name takes the form of **&lt;yoursitename&gt;.chinacloudsites.cn**. There is also an virtual IP address available for use when creating DNS records, so you can either create records that point to the **.chinacloudsites.cn**, or you can point to the IP address.
+当您创建 Azure 网站时，DNS 名称将自动分配到站点。此名称采用 **&lt;yoursitename&gt;.azurewebsites.net** 的格式。创建 DNS 记录时，还有一个虚拟 IP 地址可供使用，因此您可以创建指向 **.azurewebsites.net** 的记录，或者可以指向该 IP 地址。
 
-> [WACOM.NOTE] The IP address of your web site will change if you delete and recreate your web site, or change the web site mode to free after it has been set to basic, shared, or standard.
+> [WACOM.NOTE] 如果您删除或重新创建您的网站，或者在将网站模式已设置为基本、共享或标准后将其更改为免费，则您的网站的 IP 地址将更改。
 
-There are also multiple types of records, each with their own functions and limitations, but for web sites we only care about two, *CNAME* and *A* records.
+此外还有多种类型的记录，每种类型都有其自己的功能和限制，但是对于网站我们只关心两种，即  *A* 和  *CNAME* 记录
 
-###CNAME or Alias record
+###地址记录（A 记录）
 
-A CNAME record maps a *specific* DNS name, such as **mail.contoso.com** or **www.contoso.com**, to another (canonical) domain name. In the case of Azure Web Sites, the canonical domain name is the **&lt;myapp>.chinacloudsites.cn** domain name of your web site. Once created, the CNAME creates an alias for the **&lt;myapp>.chinacloudsites.cn** domain name. The CNAME entry will resolve to the IP address of your **&lt;myapp>.chinacloudsites.cn** domain name automatically, so if the IP address of the web site changes, you do not have to take any action.
+A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wildcard domain*（例如 **\*.contoso.com**）映射到 IP 地址。对于 Azure 网站而言，这是服务的虚拟 IP 或者您为网站购买的具体 IP 地址。
 
-> [WACOM.NOTE] Some domain registrars only allow you to map subdomains when using a CNAME record, such as **www.contoso.com**, and not root names, such as **contoso.com**. For more information on CNAME records, see the documentation provided by your registrar, <a href="http://en.wikipedia.org/wiki/CNAME_record">the Wikipedia entry on CNAME record</a>, or the <a href="http://tools.ietf.org/html/rfc1035">IETF Domain Names - Implementation and Specification</a> document.
+A 记录相比于 CNAME 记录的主要优势是：
 
-###A record
+* 您可以将根域（例如 **contoso.com**）映射到 IP 地址；许多注册机构仅允许使用 A 记录执行此操作。
 
-An A record maps a domain, such as **contoso.com** or **www.contoso.com**, *or a wildcard domain* such as **\*.contoso.com**, to an IP address. In the case of an Azure Web Site, either the virtual IP of the service or a specific IP address that you purchased for your web site.
+* 您可以有一个使用通配符的条目（例如 **\*.contoso.com**），它将处理多个子域（例如 **mail.contoso.com**、**blogs.contoso.com** 或 **www.contoso.com**）的请求。
 
-The main benefits of an A record over a CNAME record are:
+> [WACOM.NOTE] 由于 A 记录映射到静态 IP 地址，因此它无法自动解析网站的 IP 地址的更改。用于 A 记录的 IP 地址是您为网站配置自定义域名设置时提供的；但是，如果您删除并重新创建了网站或者将网站模式改回了免费，则该值可能会更改。
 
-* You can map a root domain such as **contoso.com** to an IP address; many registrars only allow this using A records
+###别名记录（CNAME 记录）
 
-* You can have one entry that uses a wildcard, such as **\*.contoso.com**, which would handle requests for multiple sub-domains such as **mail.contoso.com**, **login.contoso.com**, or **www.contso.com**.
+CNAME 记录将  *specific* DNS 名称（例如 **mail.contoso.com** 或 **www.contoso.com**）映射到另一个（规范）域名。对于 Azure 网站，规范域名是您的网站的 **&lt;yoursitename>.azurewebsites.net** 域名。创建后，CNAME 将为 **&lt;yoursitename>.azurewebsites.net** 域名创建一个别名。CNAME 条目将自动解析为您的 **&lt;yoursitename>.azurewebsites.net** 的 IP 地址，因此，如果网站的 IP 地址发生更改，您不必采取任何操作。
 
-> [WACOM.NOTE] Since an A record is mapped to a static IP address, it cannot automatically resolve changes to the IP address of your web site. An IP address for use with A records is provided when you configure custom domain name settings for your web site; however, this value may change if you delete and recreate your web site, or change the web site mode to back to free.
+> [WACOM.NOTE] 某些域注册机构只允许您在使用 CNAME 记录（例如 **www.contoso.com**）而不是根名称（例如 **contoso.com**）时映射子域。有关 CNAME 记录的详细信息，请参阅由您的注册机构提供的文档、<a href="http://en.wikipedia.org/wiki/CNAME_record">关于 CNAME 记录的 Wikipedia 条目</a>或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
 
-###Azure Web Site DNS specifics
+###Azure 网站 DNS 细节
 
-Using an A record with Azure Web Sites requires you to first create an CNAME record that maps either:
+为 Azure 网站使用 A 记录需要您首先创建以下 CNAME 记录之一：
 
-* A DNS name of **www** to your **&lt;yourwebsitename&gt;.chinacloudsites.cn**.
-OR
-* A DNS name of **awverify.www** to **awverify.&lt;yourwebsitename&gt;.chinacloudsites.cn**.
+* **对于根域或通配符子域** - **awverify** 的 DNS 名称用于 **awverify.&lt;yourwebsitename&gt;.azurewebsites.net**。
 
-This CNAME record is used to verify that you own the domain you are attempting to use. This is in addition to creating an A record pointing to the virtual IP address of your web site.
+* **对于特定子域** - **awverify.&lt;sub-domain>** 的 DNS 名称用于 **awverify.&lt;yourwebsitename&gt;.azurewebsites.net**。例如，如果 A 记录用于 **blogs.contoso.com**，则为 **awverify.blogs**。
 
-You can find the IP address, as well as the **awverify.www** name and **.chinacloudsites.cn** names for your web site by performing the following steps:
+此 CNAME 记录用于验证您正在尝试使用的您自己的域。此操作是对创建指向您的网站的虚拟 IP 地址的 A 记录的补充。
 
-1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+您可以按照以下步骤找到您的网站的 IP 地址以及 **awverify** 名称和 **.azurewebsites.net** 名称：
 
-2. In the **Web Sites** tab, click the name of your site, select **Dashboard**, and then select **Manage Domains** from the bottom of the page.
+1. 在您的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.com)。
+
+2. 在"网站"选项卡中，单击您的网站的名称，选择"仪表板"，然后从页面底部选择"管理域"。
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-6. In the **MANAGE CUSTOM DOMAINS** dialog, you will see the **awverify** information, the currently assigned **.chinacloudsites.cn** domain name, and the virtual IP address.
+	> [WACOM.NOTE] 如果未启用"管理域"，则您正在使用免费的网站。您不能为免费网站使用自定义域名，并且必须升级到共享。基本或标准模式。有关网站模式的详细信息，包括如何更改网站模式，请参阅[如何缩放网站](http://www.windowsazure.com/zh-cn/documentation/articles/web-sites-scale/)。
 
+6. 在"管理自定义域"对话框中，您将看到 **awverify** 信息、当前分配的 **.azurewebsites.net** 域名和虚拟 IP 地址。保存此信息，因为将在创建 DNS 记录时使用它。
+
+	![](./media/custom-dns-web-site/managecustomdomains.png)
+
+<!--HONumber=41-->

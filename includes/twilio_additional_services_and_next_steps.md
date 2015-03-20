@@ -1,14 +1,14 @@
-<h2><a id="AdditionalServices"></a><span class="short-header">Use additional Twilio services</span>How to: Use additional Twilio services</h2>
-In addition to the examples shown here, Twilio offers web-based APIs that you can use to leverage additional Twilio functionality from your Azure application. For full details, see the [Twilio API documentation] [twilio_api_documentation].
+﻿<h2><a id="AdditionalServices"></a><span class="short-header">使用其他 Twilio 服务</span>如何：使用其他 Twilio 服务</h2>
+除了此处所示的示例之外，Twilio 还提供了基于 Web 的 API，可通过这些 API 从 Azure 应用程序中使用其他 Twilio 功能。有关完整详细信息，请参阅 [Twilio API 文档] [twilio_api_documentation]。
 
-<h2><a id="NextSteps"></a><span class="short-header">Next steps</span>Next steps</h2>
-Now that you've learned the basics of the Twilio service, follow these links to learn more:
+<h2><a id="NextSteps"></a><span class="short-header">后续步骤</span>后续步骤</h2>
+现在，您已了解 Twilio 服务的基础知识，单击下面的链接可以了解详细信息：
 
-* [Twilio Security Guidelines] [twilio_security_guidelines]
-* [Twilio HowTos and Example Code] [twilio_howtos]
-* [Twilio Quickstart Tutorials][twilio_quickstarts] 
-* [Twilio on GitHub] [twilio_on_github]
-* [Talk to Twilio Support] [twilio_support]
+* [Twilio 安全准则] [twilio_security_guidelines]
+* [Twilio 操作方法和示例代码] [twilio_howtos]
+* [Twilio 快速入门教程][twilio_quickstarts] 
+* [GitHub 上的 Twilio] [twilio_on_github]
+* [与 Twilio 技术支持人员交流] [twilio_support]
 
 [twilio_api_documentation]: http://www.twilio.com/api
 [twilio_security_guidelines]: http://www.twilio.com/docs/security
@@ -18,3 +18,4 @@ Now that you've learned the basics of the Twilio service, follow these links to 
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 
 
+<!--HONumber=41-->

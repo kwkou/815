@@ -177,7 +177,7 @@ an Azure Virtual Machine is created from a virtual machine image (a .vhd file) t
 
 You can provision and start a virtual machine from one of the available images with the `vm create` command. The following example shows how to create a Linux virtual machine (called `myVM`) from an image in the Image Gallery (CentOS 6.2). The root user name and password for the virtual machine are `myusername` and `Mypassw0rd` respectively. (Note that the `--location` parameter specifies the data center in which the virtual machine is created. If you omit the `--location` parameter, you will be prompted to choose a location.)
 
-	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "China East"
+	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-zh-cn-30GB.vhd myusername --location "China East"
 
 You may consider passing the `--ssh` flag (Linux) or `--rdp` flag (Windows) to `vm create` to enable remote connections to the newly-created virtual machine.
 
