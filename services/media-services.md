@@ -1,5 +1,6 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：媒体服务" 
+pageTitle="媒体服务 - Azure 微软云"
+Metakeywords="媒体服务,Media Services,编码,PlayReady,流式处理,动态包装,播放器,加密,资产" 
 description="" 
 services="Media Services" 
 documentationCenter="Develop" 

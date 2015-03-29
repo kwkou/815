@@ -1,4 +1,4 @@
-<properties linkid="dev-net-Active-Directory" urlDisplayName="Windows Azure Active Directory" pageTitle="Windows Azure 服务管理：Active Directory" metaKeywords="Active Directory" description="" metaCanonical="" services="Active Directory" documentationCenter="Services" title="Manage identity and access of services and applications" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-Active-Directory" urlDisplayName="Windows Azure Active Directory" pageTitle="Active Directory - Azure 微软云" metaKeywords="Active Directory,活动目录,AAD,身份标识,身份认证,策略,目录服务,访问控制,ACS,ADDS,ADFS" description="" metaCanonical="" services="Active Directory" documentationCenter="Services" title="Manage identity and access of services and applications" authors="" solutions="" manager="" editor="" />
 
 #Azure Active Directory 文档
 

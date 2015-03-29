@@ -1,4 +1,4 @@
-<properties linkid="dev-net-Service-bus" urlDisplayName="Windows Azure 服务总线" pageTitle="Windows Azure 服务管理：服务总线" metaKeywords="服务总线" description="" metaCanonical="" services="服务总线" documentationCenter="Services" title="Learn about flexible messaging in the cloud" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-Service-bus" urlDisplayName="Windows Azure 服务总线" pageTitle="服务总线 - Azure 微软云" metaKeywords="服务总线,Service Bus,云消息,消息交换,松散耦合,扇出,扇入,中继,混合云, AMQP 1.0" description="" metaCanonical="" services="服务总线" documentationCenter="Services" title="Learn about flexible messaging in the cloud" authors="" solutions="" manager="" editor="" />
 
 #服务总线
 

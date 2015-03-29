@@ -1,6 +1,6 @@
 
 
-<properties linkid="流量管理器" urlDisplayName="Windows Azure 流量管理器" pageTitle="Windows Azure 服务管理：流量管理器" metaKeywords="Azure 流量管理器" description="" metaCanonical="" services="流量管理器" documentationCenter="Services" title="Learn how 流量管理器 distributes user traffic to hosted services within or across data centers" authors="" solutions="" manager="" editor="Eric Chen" />
+<properties linkid="流量管理器" urlDisplayName="Windows Azure 流量管理器" pageTitle="流量管理器 - Azure 微软云" metaKeywords="Azure 流量管理器,Traffic Manager,流量分发,流量控制,DNS查询," description="将用户流量分发到同一数据中心内或其他数据中心中的类似托管服务中。使用 流量管理器 作为您的整体网络解决方案的一部分 - 流量管理器 将智能策略引擎应用于您的域名上的 DNS 查询中，以便您可以出于性能、业务连续性、价格、合规性、法律或纳税目的将流量发送到最佳的数据中心。" metaCanonical="" services="流量管理器" documentationCenter="Services" title="Learn how 流量管理器 distributes user traffic to hosted services within or across data centers" authors="" solutions="" manager="" editor="Eric Chen" />
 
 
 #流量管理器
