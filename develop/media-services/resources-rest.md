@@ -1,3 +1,13 @@
+<properties 
+  pageTitle="媒体服务资源 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="media-services-resources" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
 <h1 id="menu-media-services-resources">教程和资源</h1>
 <p>了解如何用 Azure 媒体服务生成应用程序。</p>
 <div>视图 <a href="http://azure.microsoft.com/zh-cn/develop/media-services/resources/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm=".NET" ms.title=".NET" km.title=".NET" ms.interactiontype="1">.NET</a> <a href="http://azure.microsoft.com/zh-cn/develop/media-services/resources-java/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="Java" ms.title="Java" km.title="Java" ms.interactiontype="1">Java</a> <a href="http://azure.microsoft.com/zh-cn/develop/media-services/resources-rest/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="REST" ms.title="REST" km.title="REST" ms.interactiontype="1">REST</a></div>

@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Python-数据服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="python" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-python-data">数据服务</h1>
 <h2 id="header-0">关系数据</h2>
 <h3>功能指南： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/sql-database-manage-azure-ssms/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 SQL Server Management Studio 管理 Azure SQL Database" ms.title="" km.title="" ms.interactiontype="1">使用 SQL Server Management Studio 管理 Azure SQL Database</a></h3>

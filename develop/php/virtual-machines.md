@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Php-虚拟机 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="php" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-php-vmachines">虚拟机</h1>
 <h2 id="header-0">创建</h2>
 <h3>教程：<a href="http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-tutorial/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="创建运行 Linux 的虚拟机" ms.title="" km.title="" ms.interactiontype="1">创建运行 Linux 的虚拟机</a></h3>

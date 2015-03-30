@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Ruby-计算 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="ruby" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-ruby-compute">计算</h1>
 <h2 id="header-0">虚拟机</h2>
 <h3>教程： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 Linux 虚拟机托管 Ruby on Rails Web 应用程序" ms.title="" km.title="" ms.interactiontype="1">使用 Linux 虚拟机托管 Ruby on Rails Web 应用程序</a></h3>

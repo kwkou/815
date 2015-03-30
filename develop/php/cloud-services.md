@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Php-云服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="php" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-php-cloud">云服务</h1>
 <h2 id="header-0">常规</h2>
 <h3>指南： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/#CloudServices" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="什么是 Azure 云服务？" ms.title="" km.title="" ms.interactiontype="1">什么是 Azure 云服务？</a></h3>

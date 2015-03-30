@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Ruby-应用服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="ruby" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-ruby-appservices">应用程序服务</h1>
 <h2 id="header-0">Caching 和 CDN</h2>
 <h3>功能指南： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/cdn-how-to-use/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 CDN 提供高带宽内容" ms.title="" km.title="" ms.interactiontype="1">使用 CDN 提供高带宽内容</a></h3>

@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="计算 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="java-compute" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-java-compute">计算</h1>
 <h2 id="header-0">网站</h2>
 <h3>使用 Java 创建和自定义 Azure 网站。或者，上载您自己的自定义 Java 网站。</h3>

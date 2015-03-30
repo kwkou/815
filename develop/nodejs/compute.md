@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Nodejs-计算 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="nodejs" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-nodejs-compute">计算</h1>
 <h2 id="header-0">网站</h2>
 <h3>针对包含客户端标记和脚本、服务器端脚本和数据库的 Web 应用程序</h3>

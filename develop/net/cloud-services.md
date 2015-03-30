@@ -1,4 +1,12 @@
-<properties linkid="dev-net-cloud-services" urlDisplayName=".NET开发人员中心|Azure" pageTitle="Windows Azure 开发人员中心：.NET" metaKeywords=".NET" description="" metaCanonical="" services=".NET" documentationCenter="Develop" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
+<properties 
+  pageTitle=".Net-云服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter=".net" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
 
 #.NET Azure 文档
 

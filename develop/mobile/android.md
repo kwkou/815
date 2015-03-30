@@ -1,3 +1,13 @@
+<properties 
+  pageTitle="移动服务-Android - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="Android" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
 <div>
   <h1>Android 开发人员中心</h1>
   <div>

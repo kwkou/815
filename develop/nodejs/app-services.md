@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Nodejs-应用服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="nodejs" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-nodejs-appservices">应用程序服务</h1>
 <h2 id="header-0">消息传送和集成</h2>
 <h3>功能指南： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/service-bus-nodejs-how-to-use-queues/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 Service Bus 队列发送和接收消息" ms.title="" km.title="" ms.interactiontype="1">使用 Service Bus 队列发送和接收消息</a></h3>

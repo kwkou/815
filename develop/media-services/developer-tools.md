@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="媒体服务开发人员工具 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="media-services-dev-tools" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1>用于 Azure 媒体服务的开发人员工具</h1>
 <h2 id="header-0">服务开发库</h2>
 <h3><a href="http://nuget.org/packages/windowsazure.mediaservices" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="用于 .NET 的媒体服务库" ms.title="" km.title="" ms.interactiontype="1">用于 .NET 的媒体服务库</a></h3>

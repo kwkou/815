@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Php-数据管理 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="php" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-php-data">数据管理</h1>
 <h2 id="header-0">关系数据库</h2>
 <h3>功能指南：<a href="http://azure.microsoft.com/zh-cn/documentation/articles/store-php-create-mysql-database/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="MySQL–as-a-service" ms.title="" km.title="" ms.interactiontype="1">MySQL–as-a-service</a></h3>

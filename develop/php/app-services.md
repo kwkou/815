@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Php-应用服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="php" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-php-appservices">应用程序服务</h1>
 <h2 id="header-0">消息传递</h2>
 <h3>功能指南： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/storage-php-how-to-use-queues/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="队列服务" ms.title="" km.title="" ms.interactiontype="1">队列服务</a></h3>

@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Php-工具 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="php" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-php-tools">工具</h1>
 <h2 id="header-0">命令行</h2>
 <h3>功能指南： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/xplat-cli/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="针对 Mac 和 Linux 的命令行工具" ms.title="" km.title="" ms.interactiontype="1">针对 Mac 和 Linux 的命令行工具</a></h3>

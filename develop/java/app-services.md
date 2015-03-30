@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="应用服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="java-app-services" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-java-appservices">应用程序服务</h1>
 <h2 id="header-0">证书管理</h2>
 <h3>如何： <a href="http://azure.microsoft.com/zh-cn/documentation/articles/java-add-certificate-ca-store/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="将证书添加到 Java CA 证书存储" ms.title="" km.title="" ms.interactiontype="1">将证书添加到 Java CA 证书存储</a></h3>

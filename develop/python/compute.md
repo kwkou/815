@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="Python-计算 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="python" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <h1 id="menu-python-compute">计算</h1>
 <h2 id="header-0">网站</h2>
 <h3>教程：<a href="http://azure.microsoft.com/zh-cn/documentation/articles/web-sites-python-configure/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 Azure 网站配置 Python" ms.title="" km.title="" ms.interactiontype="1">使用 Azure 网站配置 Python</a></h3>

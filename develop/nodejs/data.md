@@ -1,3 +1,13 @@
+<properties 
+  pageTitle="Nodejs-数据服务 - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="nodejs" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+  
 <h1 id="menu-nodejs-data">数据服务</h1>
 <h2 id="header-0">Azure 存储空间</h2>
 <h3>功能指南：<a href="http://azure.microsoft.com/zh-cn/documentation/articles/storage-nodejs-how-to-use-blob-storage/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 Blob 存储非结构化的数据" ms.title="" km.title="" ms.interactiontype="1">使用 Blob 存储非结构化的数据</a></h3>

@@ -1,3 +1,14 @@
+<properties 
+  pageTitle="移动服务-Windows - Azure 微软云"
+  metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="Windows" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+
+
 <div>
   <h1>Windows 开发人员中心</h1>
   <div>
