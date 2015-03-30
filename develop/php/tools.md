@@ -27,5 +27,5 @@
 <h2 id="header-2">IDE</h2>
 <h3>教程： <a href="/documentation/articles/web-sites-php-mysql-use-webmatrix/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="带 MySQL 的 PHP 网站（使用 WebMatrix）" ms.title="" km.title="" ms.interactiontype="1">带 MySQL 的 PHP 网站（使用 WebMatrix）</a></h3>
 <p>实现允许检索和创建存储在 MySQL 数据库中的待办事项的简单网站。使用 WebMatrix IDE 构建和部署应用程序。</p>
-<h3>教程： <a href="/documentation/articles/web-sites-php-sql-database-use-webmatrix/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="带 SQL Database的 PHP 网站（使用 WebMatrix）" ms.title="" km.title="" ms.interactiontype="1">带 SQL Database的 PHP 网站（使用 WebMatrix）</a></h3>
-<p>实现允许检索和创建存储在 Azure SQL Database 实例中的待办事项的简单网站。使用 WebMatrix IDE 构建和部署应用程序。</p>
+<h3>教程： <a href="/documentation/articles/web-sites-php-sql-database-use-webmatrix/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="带 SQL 数据库的 PHP 网站（使用 WebMatrix）" ms.title="" km.title="" ms.interactiontype="1">带 SQL 数据库的 PHP 网站（使用 WebMatrix）</a></h3>
+<p>实现允许检索和创建存储在 Azure SQL 数据库 实例中的待办事项的简单网站。使用 WebMatrix IDE 构建和部署应用程序。</p>

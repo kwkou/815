@@ -26,8 +26,8 @@
 <h3>使用富 PaaS 环境创建高度可用的可缩放应用程序和服务。</h3>
 <h3>教程：<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690944(VS.103).aspx">在 Eclipse 中创建 Azure 的 Hello World 应用程序</a></h3>
 <p>使用 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）创建承载于 Tomcat 中的&ldquo;Hello World&rdquo;应用程序，并在计算仿真程序中测试该应用程序，最后将其部署到 Azure。</p>
-<h3>教程：<a href="http://petclinic.cloudapp.net/">将 Java Spring Framework 应用程序迁移到 Azure 和 Azure SQL Database</a></h3>
-<p>此端到端教程演示了如何将完整的 Spring Framework 应用程序（Java Pet Clinic）迁移到 Azure，包括将 Azure SQL Database 用于使用最新 SQL Server JDBC 驱动程序的 JPA/Hibernate。</p>
+<h3>教程：<a href="http://petclinic.cloudapp.net/">将 Java Spring Framework 应用程序迁移到 Azure 和 Azure SQL 数据库</a></h3>
+<p>此端到端教程演示了如何将完整的 Spring Framework 应用程序（Java Pet Clinic）迁移到 Azure，包括将 Azure SQL 数据库 用于使用最新 SQL Server JDBC 驱动程序的 JPA/Hibernate。</p>
 <h3>如何：<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690948.aspx">在 JSP 中使用 Azure 服务运行时库</a></h3>
 <p>利用 Azure 服务运行时，您的托管服务可与 Azure 环境进行通信。</p>
 <h3>如何：<a href="/documentation/articles/cloud-services-custom-domain-name/">为 Azure 云服务或存储帐户配置自定义域名</a></h3>

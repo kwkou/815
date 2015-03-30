@@ -17,8 +17,8 @@
 <h3>如何：<a href="/documentation/articles/storage-custom-domain-name/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="将自定义域用于 Blob 存储" ms.title="" km.title="" ms.interactiontype="1">将自定义域用于 Blob 存储</a></h3>
 <p>将存储帐户配置为将自定义域映射到 Blob 服务终结点，以便让用户在应用程序的 URL 中看到域名。</p>
 <h2 id="header-1">关系数据</h2>
-<h3>如何：<a href="/documentation/articles/sql-database-manage-windows-azure-SSMS/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 SQL Server Management Studio 管理 Azure SQL Database" ms.title="" km.title="" ms.interactiontype="1">使用 SQL Server Management Studio 管理 Azure SQL Database</a></h3>
-<p>您可以使用 SQL Server Management Studio 管理 SQL Database 逻辑服务器和数据库。本文包括有关创建和管理数据库、创建和管理登录，以及使用动态管理视图进行监视的详细信息。</p>
+<h3>如何：<a href="/documentation/articles/sql-database-manage-windows-azure-SSMS/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 SQL Server Management Studio 管理 Azure SQL 数据库" ms.title="" km.title="" ms.interactiontype="1">使用 SQL Server Management Studio 管理 Azure SQL 数据库</a></h3>
+<p>您可以使用 SQL Server Management Studio 管理 SQL 数据库 逻辑服务器和数据库。本文包括有关创建和管理数据库、创建和管理登录，以及使用动态管理视图进行监视的详细信息。</p>
 <h2 id="header-2">其他数据选项</h2>
 <h3>教程：<a href="/documentation/articles/documentdb-nodejs-application/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="使用 DocumentDB 构建 Node.js web 应用程序" ms.title="" km.title="" ms.interactiontype="1">使用 DocumentDB 构建 Node.js web 应用程序</a></h3>
 <p>本教程展示如何使用 Azure DocumentDB 服务存储和访问托管在 Azure 网站上的 Node.js Express 应用程序中的数据。</p>

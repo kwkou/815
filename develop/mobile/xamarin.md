@@ -39,7 +39,7 @@
   <div>
     <ul>
       <li><a href="/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-adal-sso-authentication/>使用 Active Directory 身份验证库登录至 iOS</a></li>
-      <li><a href="/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/">在 SQL Database 中使用移动服务将结构化数据存储在 Android 中</a></li>
+      <li><a href="/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/">在 SQL 数据库 中使用移动服务将结构化数据存储在 Android 中</a></li>
     </ul>
   </div>
   <div>
@@ -71,7 +71,7 @@
   </div>
   <div>
     <ul>
-      <li>在 SQL Database 中使用移动服务存储结构化数据 <a href="/documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/">iOS</a> | <a href="/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/">Android</a></li>
+      <li>在 SQL 数据库 中使用移动服务存储结构化数据 <a href="/documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/">iOS</a> | <a href="/documentation/articles/partner-xamarin-mobile-services-android-get-started-data/">Android</a></li>
     </ul>
     <p>查看服务： <a href="/documentation/services/mobile-services/">移动服务</a> | <a href="/documentation/services/storage/">存储</a></p>
   </div>

@@ -70,7 +70,7 @@
   </div>
   <div>
     <ul>
-      <li><a href="/documentation/articles/mobile-services-android-get-started-data/">在 SQL Database 中使用移动服务存储结构化数据</a></li>
+      <li><a href="/documentation/articles/mobile-services-android-get-started-data/">在 SQL 数据库 中使用移动服务存储结构化数据</a></li>
       <li><a href="/documentation/articles/storage-java-how-to-use-blob-storage/">在 Blob 存储中存储二进制数据</a></li>
       <li><a href="/documentation/articles/storage-java-how-to-use-table-storage/">使用表存储来存储简单结构化数据</a></li>
     </ul>

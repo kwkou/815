@@ -12,7 +12,7 @@
 
 - 使用 .NET 和 Visual Studio 在数秒内部署新的或现有的应用程序。
 - 从 TFS 或源代码存储库（如 GitHub）自动部署。
-- 利用存储和 SQL Database 等托管服务扩展功能。
+- 利用存储和 SQL 数据库 等托管服务扩展功能。
 - 了解如何通过使用 Azure 网站、Web 作业、云服务和 VM 在云中运行 ASP.NET Web 应用程序和 .NET 项目。
 
 ##特色
@@ -44,7 +44,7 @@
       </tr>
 </table>
 
-###虚拟机 | [网站](/zh-cn/develop/net/websites/) | [云服务](/zh-cn/develop/net/cloud-services/) | [移动](/zh-cn/develop/net/mobile/)    
+###虚拟机 | [网站](/develop/net/websites/) | [云服务](/develop/net/cloud-services/) | [移动](/develop/net/mobile/)    
     
 ##构建你的应用程序
 
@@ -95,19 +95,19 @@
 
 	文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Azure 虚拟机和云服务可通过安装的共享跨应用程序组件共享文件数据，而本地应用程序可通过文件存储 API 访问共享中的文件数据。
 
-- <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database 功能指南</a>
+- <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL 数据库 功能指南</a>
 
-	对于需要功能完备的关系型数据库即服务的应用程序，Azure 提供了 SQL Database（以前称为 SQL Azure 数据库）。SQL Database 提供高级别互操作性，允许客户利用众多主要开发框架来构建应用程序。
+	对于需要功能完备的关系型数据库即服务的应用程序，Azure 提供了 SQL 数据库（以前称为 SQL Azure 数据库）。SQL 数据库 提供高级别互操作性，允许客户利用众多主要开发框架来构建应用程序。
 
-- <a href="/documentation/articles/sql-database-manage-azure-ssms/">使用 SSMS 管理 SQL Database</a>
+- <a href="/documentation/articles/sql-database-manage-azure-ssms/">使用 SSMS 管理 SQL 数据库</a>
 
-	你可以使用 SQL Server Management Studio 管理 SQL Database 逻辑服务器和数据库。本文包括有关创建和管理数据库、创建和管理登录，以及使用动态管理视图进行监视的详细信息。
+	你可以使用 SQL Server Management Studio 管理 SQL 数据库 逻辑服务器和数据库。本文包括有关创建和管理数据库、创建和管理登录，以及使用动态管理视图进行监视的详细信息。
 
 - <a href="/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/">开发适用于 HDInsight 的 C# Hadoop Streaming 计划</a>
 
 	了解如何在 HDInsight Emulator 上开发和测试 Hadoop Streaming MapReduce 程序，并随后使用 PowerShell 脚本在 HDInsight 上运行该程序。
 
-	查看服务： [存储](/documentation/services/storage/) | [SQL Database](/documentation/services/sql-database/) | [HDInsight](/documentation/services/hdinsight/)
+	查看服务： [存储](/documentation/services/storage/) | [SQL 数据库](/documentation/services/sql-database/) | [HDInsight](/documentation/services/hdinsight/)
 
 ###应用程序服务
 
@@ -159,7 +159,7 @@
 
 	Blitline 是一项基于云计算的图像处理服务。本指南介绍如何访问 Blitline 服务以及如何将作业提交到 Blitline。
 -->
-查看服务： [Active Directory](/documentation/services/active-directory/) | [多重身份验证](/documentation/services/multi-factor-authentication/) | [Service Bus](/documentation/services/service-bus/) | [媒体服务](/zh-cn/develop/media-services/) | [计划程序](/documentation/services/scheduler/)
+查看服务： [Active Directory](/documentation/services/active-directory/) | [多重身份验证](/documentation/services/multi-factor-authentication/) | [Service Bus](/documentation/services/service-bus/) | [媒体服务](/develop/media-services/) | [计划程序](/documentation/services/scheduler/)
 
 ###云就绪
 

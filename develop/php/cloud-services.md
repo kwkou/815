@@ -25,7 +25,7 @@
 <p>您可以通过远程桌面访问在 Azure 中运行的角色实例的桌面。您可以使用远程桌面连接配置虚拟机，或者排查应用程序问题。</p>
 <h2 id="header-3">管理</h2>
 <h3>功能指南： <a href="/documentation/articles/cloud-services-how-to-scale/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="扩展云服务" ms.title="" km.title="" ms.interactiontype="1">扩展云服务</a></h3>
-<p>可以通过添加或删除角色实例来缩放云服务。如果将 SQL Database 链接到云服务，则还可以缩放数据库。</p>
+<p>可以通过添加或删除角色实例来缩放云服务。如果将 SQL 数据库 链接到云服务，则还可以缩放数据库。</p>
 <h3>功能指南： <a href="/documentation/articles/cloud-services-how-to-manage/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="管理云服务" ms.title="" km.title="" ms.interactiontype="1">管理云服务</a></h3>
 <p>本指南介绍如何更新云服务部署，如何交换部署以将过渡环境中的部署升级到生产环境中的部署，如何将资源链接到云服务，以及如何删除云服务。</p>
 <h3>功能指南： <a href="/documentation/articles/cloud-services-php-how-to-use-service-management/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="服务管理" ms.title="" km.title="" ms.interactiontype="1">服务管理</a></h3>
