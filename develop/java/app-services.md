@@ -13,8 +13,8 @@
 <h2 id="header-0">证书管理</h2>
 <h3>如何： <a href="/documentation/articles/java-add-certificate-ca-store/">将证书添加到 Java CA 证书存储</a></h3>
 <p>了解如何将证书颁发机构 (CA) 证书添加到 Java CA 证书 (cacerts) 存储。本文提供了 Twilio 服务所需的 CA 证书以及 Azure Service Bus 的 CA 证书的特定示例。</p>
-<h2 id="header-1">Caching 和 CDN</h2>
-<h3>功能指南： <a href="/documentation/articles/cdn-how-to-use/" ms.pgarea="content">使用 CDN 提供高带宽内容</a></h3>
+<h2 id="header-1">CDN</h2>
+<h3>功能指南： <a href="/documentation/articles/cdn-how-to-use/">使用 CDN 提供高带宽内容</a></h3>
 <p>通过在世界各地的物理节点缓存 blob 和静态内容，Azure 内容交付网络 (CDN) 为交付高带宽内容提供了一个全局解决方案。本文描述如何启用 CDN 以及添加、访问和删除内容。</p>
 <!--
 <h2 id="header-2">电子邮件和音频</h2>

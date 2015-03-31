@@ -1,19 +1,11 @@
 
 <properties 
-
-  pageTitle="数据服务 - Azure 微软云"
-  metakeywords="" 
-
+pageTitle="数据服务 - Azure 微软云" metakeywords="" 
   description="" 
-
   services="" 
-
   documentationCenter="java-data" 
-
   authors="" 
-
   manager="Tiffena" 
-
   editor="EricChen"/>
        
 <h1 id="menu-java-data">数据服务</h1>
