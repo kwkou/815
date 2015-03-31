@@ -22,7 +22,7 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 
 [脚本中心][1]还发布了社区和其他 Microsoft 团队提供的 Runbook。
 
-**欢迎提供反馈！**如果你正在寻求自动化 Runbook 解决方案或集成模块，请在脚本中心发布脚本请求。如果你对自动化的新功能有任何看法，请在[用户之声][用户之声]上发表你的看法。
+**欢迎提供反馈！**如果你正在寻求自动化 Runbook 解决方案或集成模块，请在脚本中心发布脚本请求。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -117,11 +117,10 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 -   [自动化论坛][自动化论坛]
 -   [使用 Azure 自动化和 PowerShell cmdlet 自动执行 Azure 操作][此处]
 
-  [自动化概述指南]: /documentation/services/automation/
+  [自动化概述指南]: /zh-cn/documentation/services/automation/
   [此处]: http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx
   [脚本中心]: http://go.microsoft.com/fwlink/p/?LinkId=393029
   [1]: http://go.microsoft.com/fwlink/?LinkID=391681
-  [用户之声]: http://feedback.windowsazure.cn/forums/34192--general-feedback
   [注册自动化预览版]: #preview
   [下载示例 Runbook]: #download-sample
   [导入、运行示例 Runbook 并查看其输出]: #import-sample
