@@ -6,7 +6,7 @@
 
 本教程将逐步引导你完成将一个示例“Hello World”Runbook 导入 Azure 自动化、执行该 Runbook 并查看其输出的步骤。
 
-> [WACOM.NOTE] 如需有关自动化入门的更多帮助，请了解如何使用[此处][此处]提供的 PowerShell cmdlet 自动执行 Azure 操作。
+> [AZURE.NOTE] 如需有关自动化入门的更多帮助，请了解如何使用[此处][此处]提供的 PowerShell cmdlet 自动执行 Azure 操作。
 
 ## 示例和实用 Runbook
 
@@ -14,7 +14,7 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 
 自动化团队还创建了实用 Runbook，你可以将其用作较为繁重的自动化任务的构造块。
 
-> [WACOM.NOTE] 最佳做法是编写小型模块化且可重复使用的 Runbook。另外，我们强烈建议你在熟悉自动化之后，针对常用的案例创建你自己的实用 Runbook。
+> [AZURE.NOTE] 最佳做法是编写小型模块化且可重复使用的 Runbook。另外，我们强烈建议你在熟悉自动化之后，针对常用的案例创建你自己的实用 Runbook。
 
 可以在[脚本中心][脚本中心]查看和下载自动化团队的示例和实用 Runbook。
 
@@ -24,7 +24,7 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 
 **欢迎提供反馈！**如果你正在寻求自动化 Runbook 解决方案或集成模块，请在脚本中心发布脚本请求。如果你对自动化的新功能有任何看法，请在[用户之声][用户之声]上发表你的看法。
 
-[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 ## 本教程的高级步骤
 
@@ -52,7 +52,7 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 
 2.  在管理门户中，单击**“创建自动化帐户”**。
 
-    > [WACOM.NOTE] 如果你已创建自动化帐户，则可以跳转到步骤 4。
+    > [AZURE.NOTE] 如果你已创建自动化帐户，则可以跳转到步骤 4。
 
     ![创建帐户][创建帐户]
 
@@ -117,7 +117,7 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 -   [自动化论坛][自动化论坛]
 -   [使用 Azure 自动化和 PowerShell cmdlet 自动执行 Azure 操作][此处]
 
-  [自动化概述指南]: http://go.microsoft.com/fwlink/p/?LinkId=392861
+  [自动化概述指南]: /documentation/services/automation/
   [此处]: http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx
   [脚本中心]: http://go.microsoft.com/fwlink/p/?LinkId=393029
   [1]: http://go.microsoft.com/fwlink/?LinkID=391681
@@ -141,6 +141,6 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
   [Runbook 参数]: ./media/automation/automation_11_RunbookParams.png
   [Runbook 状态]: ./media/automation/automation_12_RunbookStatus.png
   [Runbook 摘要]: ./media/automation/automation_13_RunbookSummary_callouts.png
-  [自动化概述]: http://go.microsoft.com/fwlink/p/?LinkId=392860
-  [Runbook 创作指南]: http://go.microsoft.com/fwlink/p/?LinkID=301740
-  [自动化论坛]: http://go.microsoft.com/fwlink/p/?LinkId=390561
+  [自动化概述]: https://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx
+  [Runbook 创作指南]: https://technet.microsoft.com/zh-cn/library/dn469262.aspx
+  [自动化论坛]: https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs
