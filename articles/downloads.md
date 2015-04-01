@@ -102,7 +102,7 @@
     <ul>
       <li><a href="http://go.microsoft.com/?linkid=9811175&clcid=0x804">安装</a></li>
       <li><a href="/documentation/articles/install-configure-powershell/">文档</a></li>
-      <!--li><a href="http://azure.microsoft.com/zh-cn/documentation/scripts/">浏览脚本中心</a></li-->
+      <!--li><a href="https://technet.microsoft.com/zh-cn/scriptcenter/bb410849.aspx">浏览脚本中心</a></li-->
     </ul>
   </div>
   <div>
