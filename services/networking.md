@@ -1,5 +1,5 @@
 
-<properties linkid="dev-net-Networking" urlDisplayName="Windows Azure Networking" pageTitle="Windows Azure 服务管理：虚拟网络" metaKeywords="Networking" description="" metaCanonical="" services="Networking" documentationCenter="Services" title="Configure and monitor virtual networks in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-Networking" urlDisplayName="Windows Azure Networking" pageTitle="虚拟网络 - Azure 微软云" metaKeywords="Networking,虚拟网络,托管应用,数据中心,虚拟机,站点到站点VPN,名称解析,Azure 门户" description="在 Azure 中配置和监视虚拟网络。使用虚拟网络可将云基础结构连接到本地数据中心、连接在混合环境中托管的云应用程序以及连接 Azure 中的开发计算机和虚拟机。" metaCanonical="" services="Networking" documentationCenter="Services" title="Configure and monitor virtual networks in Azure" authors="" solutions="" manager="" editor="" />
 
 
 

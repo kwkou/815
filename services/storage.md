@@ -1,4 +1,4 @@
-<properties linkid="dev-net-storage" urlDisplayName="Windows Azure Storage" pageTitle="Windows Azure 服务管理：存储" metaKeywords="Azure Storage" description="" metaCanonical="" services="Storage" documentationCenter="Services" title="Configure, monitor, and scale your storage account in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-storage" urlDisplayName="Windows Azure Storage" pageTitle="存储 - Azure 微软云" metaKeywords="Azure Storage,Azure存储,非结构化,非关系结构化数据,SMB文件共享,复制,身份验证,度量,日志记录,结构化数据, Azure Blob,访问签名,Azure 导入/导出服务,创建存储帐户,访问密钥" description="" metaCanonical="" services="Storage" documentationCenter="Services" title="Configure, monitor, and scale your storage account in Azure" authors="" solutions="" manager="" editor="" />
 
 #存储
 
