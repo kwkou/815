@@ -1,16 +1,9 @@
-<properties
-  pageTitle=".Net-云服务 - Azure 微软云"
-  metakeywords=""
-  description=""
-  services=""
-  documentationCenter=".net"
-  authors=""
-  manager="Tiffena"
-  editor="EricChen"/>
+<properties pageTitle=".Net-云服务 - Azure 微软云"
+metakeywords="" description="" services="" documentationCenter=".net" authors="" manager="Tiffena" editor="EricChen"/>
 
-<tag ms.service="Cloud Services"
+<tag ms.service="Cloud-Services"
 		ms.date="02/04/2015"
-		ms.date="02/04/2015"/>
+		wacn.date="02/04/2015"/>
 
 #.NET Azure 文档
 
