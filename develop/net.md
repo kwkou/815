@@ -46,5 +46,5 @@ editor="Eric Chen" />
       </tr>
 </table>
 
-###[虚拟机](/documentation/develop/net/virtual-macines/) | [网站](/documentation/develop/net/websites/) | [云服务](/documentation/develop/net/cloud-services/) | [移动](/documentation/develop/net/mobile/)    
+###[虚拟机](/develop/net/virtual-macines/) | [网站](/develop/net/websites/) | [云服务](/develop/net/cloud-services/) | [移动](/develop/net/mobile/)    
     
