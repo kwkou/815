@@ -46,72 +46,51 @@
 
 ###[虚拟机](/develop/net/virtual-machines/) | [网站](/develop/net/websites/) | [云服务](/develop/net/cloud-services/) | 移动 
 
-<div data-tab-panel-id="tab-panel">
-  <div>
-    <div>
-      <h2>带 .NET 的移动后端</h2>
-      <p>Azure 提供了多个利用 .NET 托管移动后端以便于从任何移动平台加以使用的选项。</p>
-      <p>ASP.NET Web API 是一种用于构建 HTTP 服务和 RESTful API 的开源框架。你可以将 Web API 解决方案托管在 Azure 网站上、使用 .NET 后端的 Azure 移动服务上、甚至是自托管在自定义过程中。</p>
-      <p>移动服务是一种专为移动应用程序设计的托管环境。如果将 Web API 服务托管在移动服务上，则除了数据存储外还能获得以下好处：</p>
-      <ul>
-        <li>通过社交提供程序和 Azure Active Directory 进行内置身份验证</li>
-        <li>使用设备特定的通知服务向应用程序推送通知</li>
-        <li>使用全套客户端库，可轻松地从任何应用程序访问服务</li>
-        <li>内置日志记录和诊断功能</li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div data-tab-panel-id="tab-panel">
-  <div>
-    <div>
-      <div>
-        <h3 data-jumpto-stop="true">ASP.NET</h3>
-      </div>
-      <div>
-        <ul>
-          <li><a href="/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/">使用 ASP.NET Web API 和 SQL 数据库 创建具有良好移动性的 REST 服务</a>
-              <p>ASP.NET Web API 是一个用于在 .NET Framework 之上构建 Web API 的框架。在本教程中，你将使用 Web API 创建提供存储在 SQL 数据库实例中的数据的 REST 服务。</p>
-            </div>
-          </li>
-          <li><a href="/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/">在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序</a>
-              <p>查看相关基础知识，以了解如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能，然后将你的应用程序部署到 Azure 网站。</p>
-            </div>
-          </li>
-        </ul>
-        <p>另请参阅： <a href="http://www.asp.net/web-api">ASP.NET Web API</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div data-tab-panel-id="tab-panel">
-  <div>
-    <div>
-      <div>
-        <h3 data-jumpto-stop="true">移动服务</h3>
-      </div>
-      <div>
-        <ul>
-          <li><a href="/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/">移动服务入门</a>
-              <p>了解如何使用 Azure 移动服务将基于云的后端服务快速添加到应用程序中。</p>
-            </div>
-          </li>
-          <li><a href="/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/">开始使用数据</a>
-              <p>了解如何使用移动服务从应用程序存储和检索数据。</p>
-            </div>
-          </li>
-          <li><a href="/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/">身份验证入门</a>
-              <p>了解如何通过各种标识提供者（Microsoft）在应用中对用户进行身份验证，然后利用配置文件数据添加各种功能，例如按姓名向用户进行问候。</p>
-            </div>
-          </li>
-          <li><a href="/documentation/articles/mobile-services-windows-store-dotnet-get-started-push/">推送入门</a>
-              <p>推送通知允许你通过磁贴、徽章和 toast 通知向你的应用程序用户提供信息。本系列文章显示了如何在移动服务中使用 WNS、APNS 和 GCM 等平台特定的通知服务向应用程序发送推送通知。</p>
-            </div>
-          </li>
-        </ul>
-        <p>查看服务： <a href="/documentation/services/mobile-services/">移动服务</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+
+##带 .NET 的移动后端
+Azure 提供了多个利用 .NET 托管移动后端以便于从任何移动平台加以使用的选项。
+ASP.NET Web API 是一种用于构建 HTTP 服务和 RESTful API 的开源框架。你可以将 Web API 解决方案托管在 Azure 网站上、使用 .NET 后端的 Azure 移动服务上、甚至是自托管在自定义过程中。
+移动服务是一种专为移动应用程序设计的托管环境。如果将 Web API 服务托管在移动服务上，则除了数据存储外还能获得以下好处：
+
+- 通过社交提供程序和 Azure Active Directory 进行内置身份验证
+- 使用设备特定的通知服务向应用程序推送通知
+- 使用全套客户端库，可轻松地从任何应用程序访问服务
+- 内置日志记录和诊断功能
+      
+###ASP.NET
+      
+- [使用 ASP.NET Web API 和 SQL 数据库 创建具有良好移动性的 REST 服务](/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/)
+
+	ASP.NET Web API 是一个用于在 .NET Framework 之上构建 Web API 的框架。在本教程中，你将使用 Web API 创建提供存储在 SQL 数据库实例中的数据的 REST 服务。
+            
+- [在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)
+
+	查看相关基础知识，以了解如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能，然后将你的应用程序部署到 Azure 网站。
+            
+另请参阅：[ASP.NET Web API](http://www.asp.net/web-api)
+      
+    
+###服务
+      
+- [移动服务入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/)
+
+	了解如何使用 Azure 移动服务将基于云的后端服务快速添加到应用程序中。
+            
+- [开始使用数据](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/)
+
+	了解如何使用移动服务从应用程序存储和检索数据。
+            
+- [身份验证入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)
+
+	了解如何通过各种标识提供者（Microsoft）在应用中对用户进行身份验证，然后利用配置文件数据添加各种功能，例如按姓名向用户进行问候。
+            
+- [推送入门](/documentation/articles/mobile-services-windows-store-dotnet-get-started-push/)
+
+	推送通知允许你通过磁贴、徽章和 toast 通知向你的应用程序用户提供信息。本系列文章显示了如何在移动服务中使用 WNS、APNS 和 GCM 等平台特定的通知服务向应用程序发送推送通知。
+            
+查看服务：[移动服务](/documentation/services/mobile-services/)
+      
+    
+  
+
 
