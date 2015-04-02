@@ -7,16 +7,16 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><a href="/zh-cn/develop/net/">.Net</a></a></td>
-    <td><a href="/zh-cn/develop/nodejs/">Node.js</a></a></td>
-    <td><a href="/zh-cn/develop/java/">Java</a></a></td>
-    <td><a href="/zh-cn/develop/mobile/ios/">移动服务</a></a></td>
+    <td><a href="/develop/net/">.Net</a></a></td>
+    <td><a href="/develop/nodejs/">Node.js</a></a></td>
+    <td><a href="/develop/java/">Java</a></a></td>
+    <td><a href="/develop/mobile/ios/">移动服务</a></a></td>
   </tr>
   <tr>
-    <td><a href="/zh-cn/develop/php/">PHP</a></a></td>
-    <td><a href="/zh-cn/develop/python/">Python</a></a></td>
-    <td><a href="/zh-cn/develop/ruby/">Ruby</a></a></td>
-    <td><a href="/zh-cn/develop/media-services/">媒体服务</a></a></td>
+    <td><a href="/develop/php/">PHP</a></a></td>
+    <td><a href="/develop/python/">Python</a></a></td>
+    <td><a href="/develop/ruby/">Ruby</a></a></td>
+    <td><a href="/develop/media-services/">媒体服务</a></a></td>
   </tr>
 </table>
 
@@ -30,41 +30,47 @@
     <th align="left" scope="col">网络服务</th>
   </tr>
   <tr>
-    <td><a href="/zh-cn/documentation/services/virtual-machines/">虚拟机</a></td>
-    <td><a href="/zh-cn/documentation/services/storage/">存储</a></td>
-    <td><a href="/zh-cn/documentation/services/service-bus/">服务总线</a></td>
-    <td><a href="/zh-cn/documentation/services/networking/">虚拟网络</a></td>
+    <td><a href="/documentation/services/virtual-machines/">虚拟机</a></td>
+    <td><a href="/documentation/services/storage/">存储</a></td>
+    <td><a href="/documentation/services/service-bus/">服务总线</a></td>
+    <td><a href="/documentation/services/networking/">虚拟网络</a></td>
   </tr>
   <tr>
-    <td><a href="/zh-cn/documentation/services/web-sites/">网站</a></td>
-    <td><a href="/zh-cn/documentation/services/sql-databases/">SQL数据库</a></td>
-    <td><a href="/zh-cn/documentation/services/identity/">Active Directory</a></td>
-    <td><a href="/zh-cn/documentation/services/traffic-manager/">流量管理器</a></td>
+    <td><a href="/documentation/services/web-sites/">网站</a></td>
+    <td><a href="/documentation/services/sql-databases/">SQL数据库</a></td>
+    <td><a href="/documentation/services/identity/">Active Directory</a></td>
+    <td><a href="/documentation/services/traffic-manager/">流量管理器</a></td>
   </tr>
   <tr>
-    <td><a href="/zh-cn/documentation/services/cloud-services/">云服务</a></td>
-    <td><a href="/zh-cn/documentation/services/hdinsight/">HDInsight</a></td>
-    <td><a href="/zh-cn/documentation/services/scheduler/">计划程序</a></td>
+    <td><a href="/documentation/services/cloud-services/">云服务</a></td>
+    <td><a href="/documentation/services/hdinsight/">HDInsight</a></td>
+    <td><a href="/documentation/services/scheduler/">计划程序</a></td>
     <td></td>
   </tr>
   <tr>
-    <td><a href="/zh-cn/documentation/services/mobile-services/">移动服务</a></td>
-    <td><a href="/zh-cn/documentation/services/backup/">备份</a></td>
-    <td><a href="/zh-cn/documentation/services/cdn/">CDN</a></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><a href="/zh-cn/documentation/services/site-recovery/">站点恢复</a></td>
-    <td><a href="/zh-cn/documentation/services/media-services/">媒体服务</a></td>
+    <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
+    <td><a href="/documentation/services/backup/">备份</a></td>
+    <td><a href="/documentation/services/cdn/">CDN</a></td>
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td></td>
-    <td><a href="/zh-cn/documentation/services/notification-hubs/">通知中心</a></td>
+    <td><a href="/documentation/services/site-recovery/">站点恢复</a></td>
+    <td><a href="/documentation/services/media-services/">媒体服务</a></td>
     <td></td>
   </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
+    <td></td>
+  </tr>  
+  <!--tr>
+    <td></td>
+    <td></td>
+    <td><a href="/documentation/services/automation">自动化</a></td>
+    <td></td>  
+  </tr-->
 </table>
 
 ##自动化脚本
