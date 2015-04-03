@@ -1,14 +1,8 @@
-<properties 
-  pageTitle="移动服务-Android - Azure 微软云"
-  metakeywords="" 
-  description="" 
-  services="" 
-  documentationCenter="Android" 
-  authors="" 
-  manager="Tiffena" 
-  editor="EricChen"/>
+<properties pageTitle="移动服务-Android - Azure 微软云" metakeywords="" description="" services="" documentationCenter="Android" authors="" manager="Tiffena" editor="EricChen"/>
   
 <tag ms.service="mobile service" ms.date="03/04/2015" wacn.date="03/04/2015"/>
+
+
 
 #Android 开发人员中心
 

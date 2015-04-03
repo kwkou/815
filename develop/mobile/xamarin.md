@@ -1,14 +1,7 @@
-<properties 
-  pageTitle="移动服务-xamarin - Azure 微软云"
-  metakeywords="" 
-  description="" 
-  services="" 
-  documentationCenter="xamarin" 
-  authors="" 
-  manager="Tiffena" 
-  editor="EricChen"/>
+<properties pageTitle="移动服务-xamarin - Azure 微软云" metakeywords="" description="" services="" documentationCenter="xamarin" authors="" manager="Tiffena" editor="EricChen"/>
   
 <tag ms.service="mobile service" ms.date="03/04/2015" wacn.date="03/04/2015"/>
+
 
 
 #Xamarin 开发人员中心
