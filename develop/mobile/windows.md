@@ -8,14 +8,14 @@
   manager="Tiffena" 
   editor="EricChen"/>
   
-<tag ms.service="移动服务" ms.date="03/04/2015" wacn.date="03/04/2015"/>
+<tag ms.service="mobile service" ms.date="03/04/2015" wacn.date="03/04/2015"/>
 
 
 #Windows 开发人员中心
 
-- ###使用存储在云中存储和同步数据
-- ###通过 AAD 进行身份验证
-- ###通过 WNS 发送推送通知
+###使用存储在云中存储和同步数据
+###通过 AAD 进行身份验证
+###通过 WNS 发送推送通知
 
 [入门教程](/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started/)
   

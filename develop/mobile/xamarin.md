@@ -8,23 +8,23 @@
   manager="Tiffena" 
   editor="EricChen"/>
   
-<tag ms.service="移动服务" ms.date="03/04/2015" wacn.date="03/04/2015"/>
+<tag ms.service="mobile service" ms.date="03/04/2015" wacn.date="03/04/2015"/>
 
 
 #Xamarin 开发人员中心
 
-- ###使用存储在云中存储和同步数据
-- ###通过 AAD 进行身份验证
-- ###发送推送通知至 iOS 和 Android 设备
+###使用存储在云中存储和同步数据
+###通过 AAD 进行身份验证
+###发送推送通知至 iOS 和 Android 设备
 
 ####[入门教程](/documentation/articles/partner-xamarin-mobile-services-ios-get-started/)
 开始使用 Xamarin 和移动设备
 
-[iOS 开发人员中心](/develop/mobile/ios)
+- [iOS 开发人员中心](/develop/mobile/ios)
 
-[Android 开发人员中心](/develop/mobile/android)
+- [Android 开发人员中心](/develop/mobile/android)
 
-[Windows 开发人员中心](/develop/mobile/windows)
+- [Windows 开发人员中心](/develop/mobile/windows)
 
 ##新功能
 

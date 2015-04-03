@@ -8,21 +8,21 @@
   manager="Tiffena" 
   editor="EricChen"/>
   
-<tag ms.service="移动服务" ms.date="03/04/2015" wacn.date="03/04/2015"/>
+<tag ms.service="mobile service" ms.date="03/04/2015" wacn.date="03/04/2015"/>
 
 #Android 开发人员中心
 
-- ###使用存储在云中存储和同步数据
-- ###通过 AAD 进行身份验证</h3>
-- ###通过 GCM 发送推送通知</h3>
+###使用存储在云中存储和同步数据
+###通过 AAD 进行身份验证</h3>
+###通过 GCM 发送推送通知</h3>
 
 [入门教程](/documentation/articles/mobile-services-android-get-started/)
 
 向用户发送推送通知
 
-[iOS 开发人员中心](/develop/mobile/ios)
-[iOS 开发人员中心](/develop/mobile/ios)
-[Xamarin 开发人员中心](/develop/mobile/xamarin)
+- [iOS 开发人员中心](/develop/mobile/ios)
+- [iOS 开发人员中心](/develop/mobile/ios)
+- [Xamarin 开发人员中心](/develop/mobile/xamarin)
 
 ##新功能
 
