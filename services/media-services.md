@@ -1,7 +1,7 @@
 <properties 
 pageTitle="媒体服务 - Azure 微软云"
 Metakeywords="媒体服务,Media Services,编码,PlayReady,流式处理,动态包装,播放器,加密,资产" 
-description="" 
+description="用安全的方式为您随时随地跨设备传送媒体内容、提供可伸缩的端到端媒体解决方案。" 
 services="Media Services" 
 documentationCenter="Develop" 
 authors="" 
