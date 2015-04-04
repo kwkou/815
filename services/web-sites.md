@@ -1,4 +1,4 @@
-<properties linkid="dev-net-website" urlDisplayName="Windows Azure 网站" pageTitle="网站 - Azure 微软云" metaKeywords="Azure Website,Azure 网站,ASP.NET,应用部署,Web 作业,监视,缩放,备份,故障排除,最大化性能,身份验证,WebMatrix,MongoDB,移动 Web 应用程序,部署 Azure 网站,过渡发布,New Relic,调试 Azure 网站" description="此处提供的文档可帮助你开始使用 Azure 网站和 Web 作业在云中运行 Web 应用程序和其他程序。按照教程从头或从市场创建网站，然后从 Visual Studio 或源代码管理存储库（例如 TFS 和 GitHub）部署它们。了解如何监视、缩放、备份、故障排除、最大化性能、对用户进行身份验证等。" metaCanonical="Azure Website" services="Website" documentationCenter="Services" title="开发和部署企业级Web应用程序" authors="" solutions="" manager="" editor="Eric Chen" />
+<properties linkid="dev-net-website" urlDisplayName="Windows Azure 网站" pageTitle="网站 - Azure 微软云" metaKeywords="Azure Website,Azure 网站,ASP.NET,应用部署,Web 作业,监视,缩放,备份,故障排除,最大化性能,身份验证,WebMatrix,MongoDB,移动 Web 应用程序,部署 Azure 网站,过渡发布,New Relic,调试 Azure 网站" description="此处提供的文档可帮助你开始使用 Azure 网站和 Web 作业在云中运行 Web 应用程序和其他程序。按照教程从头或从市场创建网站，然后从 Visual Studio 或源代码管理存储库（例如 TFS 和 GitHub）部署它们。了解如何监视、缩放、备份、故障排除、最大化性能、对用户进行身份验证等。" metaCanonical="" services="Website" documentationCenter="Services" title="开发和部署企业级网站" authors="" solutions="" manager="" editor="Eric Chen" />
 
 #网站和Web作业
 
