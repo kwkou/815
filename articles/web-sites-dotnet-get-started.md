@@ -23,7 +23,7 @@
 
 ![网站主页](./media/web-sites-dotnet-get-started-vs2013/GS13homepage.png)
 
-<div class="dev-callout"><strong>注意</strong><p>若要完成本教程，您需要一个 Windows Azure 帐户。如果您没有帐户，可以<a href="/zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a>或<a href="/zh-cn/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">注册以获取免费试用版</a>。</p></div>
+<div class="dev-callout"><strong>注意</strong><p>若要完成本教程，您需要一个 Windows Azure 帐户。如果您没有帐户，可以<!--a href="/zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a--><a href="/pricing/1rmb-trial/" target="_blank">注册以获取试用版</a>。</p></div>
  
 ### 教程章节
 
@@ -189,13 +189,13 @@
 
 ![管理门户仪表板选项卡](./media/web-sites-dotnet-get-started-vs2013/MPStopStartDelete.png)
 
-可以在“配置”选项卡上更改很多其他网站设置。有关更多信息，请参见[如何管理网站](/zh-cn/manage/services/web-sites/how-to-manage-websites/)。
+可以在“配置”选项卡上更改很多其他网站设置。有关更多信息，请参见[如何管理网站](/documentation/articles/web-sites-manage/)。
 
 您还可以从 Visual Studio 中的“服务器资源管理器”中执行一些网站管理功能。有关可在“服务器资源管理器”中执行的操作的信息，请参见[在 Visual Studio 中对 Windows Azure 网站进行故障排除](/zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)。
 
 
 <h3>如何缩放网站</h3>
-随着您的网站公开并开始获得更多流量，响应时间可能会增加。若要改善此情况，您可以轻松地在管理门户的“缩放”选项卡中添加服务器资源。有关更多信息，请参见[如何缩放网站](/zh-cn/manage/services/web-sites/how-to-scale-websites/)。（通过添加服务器资源来缩放网站不是免费的。）
+随着您的网站公开并开始获得更多流量，响应时间可能会增加。若要改善此情况，您可以轻松地在管理门户的“缩放”选项卡中添加服务器资源。有关更多信息，请参见[如何缩放网站](/documentation/articles/web-sites-scale/)。（通过添加服务器资源来缩放网站不是免费的。）
 
 <h3>如何对网站进行故障排除</h3>
 您可能需要查看跟踪或日志输出来寻求帮助以进行故障排除。Visual Studio 提供了内置工具，使您能够在 Windows Azure 日志生成时轻松实时查看这些日志。您还可以在 Windows Azure 中采用调试模式远程运行。有关更多信息，请参见[在 Visual Studio 中对 Windows Azure 网站进行故障排除](/zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)。

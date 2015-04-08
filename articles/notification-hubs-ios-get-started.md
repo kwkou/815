@@ -371,6 +371,6 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [移动服务入门]: /en-us/develop/mobile/tutorials/get-started-ios
   [32]: ./media/notification-hubs-ios-get-started/notification-hub-scheduler1.png
   [33]: ./media/notification-hubs-ios-get-started/notification-hub-scheduler2.png
-  [使用通知中心将通知推送到用户]: /en-us/manage/services/notification-hubs/notify-users-aspnet
-  [使用通知中心发送突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-dotnet
+  [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

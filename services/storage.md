@@ -51,7 +51,7 @@
 使用 Azure Blob、队列和表可为 Windows 应用商店应用程序存储数据。
 
 ####[如何使用共享访问签名授予对存储资源的访问权限](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-了解如何使用共享访问签名来授予对您的存储帐户中的 Blob、队列和表的受限访问权限。本教程的[第 1 部分](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/)说明了共享访问签名的重要概念并提供了最佳实践。[第 2 部分](/zh-cn/manage/services/storage/net/shared-access-signature-part-2/)将逐步引导您完成为 Blob 资源生成共享访问签名的过程，然后演示如何从客户端应用程序使用这些签名。
+了解如何使用共享访问签名来授予对您的存储帐户中的 Blob、队列和表的受限访问权限。本教程的[第 1 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)说明了共享访问签名的重要概念并提供了最佳实践。[第 2 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)将逐步引导您完成为 Blob 资源生成共享访问签名的过程，然后演示如何从客户端应用程序使用这些签名。
 
 ###管理
 

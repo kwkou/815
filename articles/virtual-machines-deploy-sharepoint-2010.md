@@ -100,7 +100,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 
 <h2>设置过程</h2>
 
-本小节讨论了 Azure 中的基本优点。Azure 中的<stong>映像库<stong>提供可用的预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到 Azure 站点上的<a href="/zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/">创建运行 Windows Server 2008 R2 的虚拟机</a>。图 2 演示了使用 Azure 管理门户创建 VM 的基本步骤：
+本小节讨论了 Azure 中的基本优点。Azure 中的<stong>映像库<stong>提供可用的预配置虚拟机的列表。用户可将 SharePoint Server、SQL Server、Windows Server 和其他 ISO/VHD 发布到映像库。若要简化虚拟机的创建，可创建基本映像并将这些映像发布到该库。授权用户可使用这些映像来生成所需的虚拟机。有关详细信息，请转到 Azure 站点上的<a href="/documentation/articles/virtual-machines-windows-tutorial/">创建运行 Windows Server 2008 R2 的虚拟机</a>。图 2 演示了使用 Azure 管理门户创建 VM 的基本步骤：
 
 <p class="caption">图 2：创建 VM 的步骤概述</p>
 ![azure-sharepoint-wp-2](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
@@ -231,9 +231,9 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 
 <ol>
 <li>创建支持 Hyper-V 的映像：使用 Hyper-V 管理器创建支持 Hyper-V 的 VHD。有关详细信息，请转到 <a href="http://technet.microsoft.com/zh-cn/library/cc742509">创建虚拟硬盘</a>。</li>
-<li>在 Azure 中创建存储帐户：需要 Azure 中的存储帐户才能上载可用于创建 VM 的 VHD 文件。可使用 Azure 管理门户创建此帐户。有关详细信息，请转到<a href="/zh-cn/manage/windows/common-tasks/upload-a-vhd/">在 Azure 中创建存储帐户</a>。</li>
+<li>在 Azure 中创建存储帐户：需要 Azure 中的存储帐户才能上载可用于创建 VM 的 VHD 文件。可使用 Azure 管理门户创建此帐户。有关详细信息，请转到<a href="/documentation/articles/virtual-machines-create-upload-vhd-windows-server/">在 Azure 中创建存储帐户</a>。</li>
 <li>准备要上载的映像：在将映像上载到 Azure 之前，必须使用 SysPrep 命令将映像一般化。有关详细信息，请转到<a href="http://technet.microsoft.com/zh-cn/library/bb457073.aspx">如何使用 SysPrep：简介</a>。</li>
-<li>向 Azure 上载映像：若要上载 VHD 文件中包含的映像，您必须创建并安装管理证书。获取证书的指纹和订阅 ID。使用 CSUpload 命令行工具设置连接并上载 VHD 文件。有关详细信息，请转到<a href="/zh-cn/manage/windows/common-tasks/upload-a-vhd/">将映像上载到 Azure</a>。</li>
+<li>向 Azure 上载映像：若要上载 VHD 文件中包含的映像，您必须创建并安装管理证书。获取证书的指纹和订阅 ID。使用 CSUpload 命令行工具设置连接并上载 VHD 文件。有关详细信息，请转到<a href="/documentation/articles/virtual-machines-create-upload-vhd-windows-server/">将映像上载到 Azure</a>。</li>
 </ol>
 
 <h2>使用方案</h2>

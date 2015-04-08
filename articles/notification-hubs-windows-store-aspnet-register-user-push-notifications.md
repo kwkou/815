@@ -175,7 +175,7 @@
 
   [Windows 应用商店 C\#]: /zh-cn/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/ "Windows 应用商店 C#"
   [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/ "iOS"
-  [使用通知中心通知用户]: /en-us/manage/services/notification-hubs/notify-users-aspnet
+  [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
 
 <!-- Images. --> 
   []: ./media/notification-hubs-windows-store-aspnet-register-user-push-notifications/notification-hub-add-nuget-package-json.png

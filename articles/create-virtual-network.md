@@ -116,7 +116,7 @@
   [2]: ./media/create-virtual-network/createVNet_03_DNSServersandVPNConnectivity.png
   [3]: ./media/create-virtual-network/createVNet_04_VirtualNetworkAddressSpaces.png
   [4]: ./media/create-virtual-network/createVNet_05_VirtualNetworkCreatedStatus.png
-  [将虚拟机添加到虚拟网络]: /zh-cn/manage/services/networking/add-a-vm-to-a-virtual-network/
+  [将虚拟机添加到虚拟网络]: /documentation/articles/virtual-machines-create-custom/
   [如何创建自定义虚拟机]: /zh-cn/manage/windows/how-to-guides/custom-create-a-vm/
   [Azure 虚拟机]: /zh-cn/manage/windows/
   [在 Azure 中安装新的 Active Directory 林]: /zh-cn/manage/services/networking/active-directory-forest/

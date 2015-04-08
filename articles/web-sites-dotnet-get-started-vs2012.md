@@ -21,7 +21,7 @@
 
 ![网站示例][网站示例]
 
-<div class="dev-callout"><p><strong>请注意</strong>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，则可以<a href="/zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a>或<a href="/zh-cn/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">注册免费试用</a>。</p></div>
+<div class="dev-callout"><p><strong>请注意</strong>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，则可以<!--a href="/zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a--><a href="/pricing/1rmb-trial/" target="_blank">注册试用</a>。</p></div>
 
 ### 教程章节
 
@@ -239,9 +239,9 @@
   [服务器资源管理器中的 Azure 网站]: ./media/web-sites-dotnet-get-started-vs2012/ServerExplorerWSSettings.png
   [Visual Studio 中的网站配置]: ./media/web-sites-dotnet-get-started-vs2012/WSConfigurationInVS.png
   [管理门户仪表板选项卡]: ./media/web-sites-dotnet-get-started-vs2012/MPStopStartDelete.png
-  [如何管理网站]: /zh-cn/manage/services/web-sites/how-to-manage-websites/
+  [如何管理网站]: /documentation/articles/web-sites-manage/
   [管理门户缩放选项卡]: ./media/web-sites-dotnet-get-started-vs2012/MPScale.png
-  [如何缩放网站]: /zh-cn/manage/services/web-sites/how-to-scale-websites/
+  [如何缩放网站]: /documentation/articles/web-sites-scale/
   [Visual Studio 中的日志]: ./media/web-sites-dotnet-get-started-vs2012/LogsInVS.png
   [在 Visual Studio 中排除 Windows Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/

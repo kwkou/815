@@ -225,7 +225,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
   [使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
   [WebMatrix 3:集成 Git 与到 Azure 的部署]: http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD
   [FileZilla]: https://filezilla-project.org/
-  [如何管理网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-manage-websites/
+  [如何管理网站]: /documentation/articles/web-sites-manage/
   [在 Azure 中持续交付云服务]: /zh-cn/develop/net/common-tasks/continuous-delivery/
   [从任何 git/hg 存储库发布到 Azure 网站]: http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html
   [将两个网站从一个 Git 存储库部署到 Azure]: http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx

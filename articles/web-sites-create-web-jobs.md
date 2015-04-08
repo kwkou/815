@@ -207,6 +207,7 @@ Windows Azure WebJobs SDK 简化了将后台处理添加到 Windows Azure 网站
 
 -   有关 WebJobs 功能的带批注的链接列表，请参阅[使用 Windows Azure 网站的 WebJobs 功能][使用 Windows Azure 网站的 WebJobs 功能]。
 
+<!--
 -   WebJobs 相关视频：
 
     [Azure WebJobs 101 – Jamie Espinosa 介绍基本 WebJobs][Azure WebJobs 101 – Jamie Espinosa 介绍基本 WebJobs]
@@ -214,6 +215,7 @@ Windows Azure WebJobs SDK 简化了将后台处理添加到 Windows Azure 网站
     [Azure WebJobs 102 – Jamie Espinosa 介绍计划 WebJobs 和 WebJobs 仪表板][Azure WebJobs 102 – Jamie Espinosa 介绍计划 WebJobs 和 WebJobs 仪表板]
 
     [Azure Scheduler 101 – Kevin Lam 介绍如何安排计划][Azure Scheduler 101 – Kevin Lam 介绍如何安排计划]
+-->
 
 ### 入门
 
@@ -263,4 +265,4 @@ Windows Azure WebJobs SDK 简化了将后台处理添加到 Windows Azure 网站
   [Azure WebJobs 101 – Jamie Espinosa 介绍基本 WebJobs]: http://www.windowsazure.cn/zh-cn/documentation/videos/azure-webjobs-basics/
   [Azure WebJobs 102 – Jamie Espinosa 介绍计划 WebJobs 和 WebJobs 仪表板]: http://www.windowsazure.cn/zh-cn/documentation/videos/azure-webjobs-schedule-and-dashboard/
   [Azure Scheduler 101 – Kevin Lam 介绍如何安排计划]: http://www.windowsazure.cn/zh-cn/documentation/videos/azure-scheduler-how-to/
-  [Windows Azure 免费试用版]: http://azure.microsoft.cn/zh-cn/pricing/free-trial/
+  [Windows Azure 免费试用版]: /pricing/1rmb-trial/

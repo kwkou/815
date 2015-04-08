@@ -127,7 +127,7 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 ### 先决条件
 
 -   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](http://go.microsoft.com/fwlink/?linkid=256662)。
--   适用于 Java 的 Azure 库，可以从 [Azure Java 开发人员中心](http://www.windowsazure.cn/zh-cn/develop/java/)安装。
+-   适用于 Java 的 Azure 库，可以从 [Azure Java 开发人员中心](/develop/java/)安装。
 
 将 Media Services 与 Java 结合使用如何：将 Media Services 与 Java 结合使用
 --------------------------------------------------------------------------

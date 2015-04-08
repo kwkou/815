@@ -7,14 +7,14 @@
 <div class="left-cont">
 <h1>设置、迁移和管理虚拟机</h1>
 <p>在您需要根据业务需求快速设置资源时，设置按需且可扩展的计算基础结构。</p>
-<a href="/zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/" class="site-arrowboxcta">入门</a></div>
+<a href="/documentation/articles/virtual-machines-windows-tutorial/" class="site-arrowboxcta">入门</a></div>
 </div>
 <div class="service-articles">
 <h2 id="header-0">探究</h2>
 <div class="article-group build-windows" style="display: block;">
 <div class="article">
 <h3>教程：</h3>
-<a href="/zh-cn/manage/windows/tutorials/virtual-machine-from-gallery/">创建您的第一台 Windows 虚拟机</a>
+<a href="/documentation/articles/virtual-machines-windows-tutorial/">创建您的第一台 Windows 虚拟机</a>
 <p>当您使用 Windows Azure 管理门户中的映像库时，创建运行 Windows Server 操作系统的虚拟机很容易。无需以前的经验，您就可以在云中创建运行 Windows Server 操作系统的虚拟机，并且可以访问和自定义该虚拟机。</p>
 </div>
 <div class="article">

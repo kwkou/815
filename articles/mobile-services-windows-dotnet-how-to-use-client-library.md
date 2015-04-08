@@ -9,7 +9,7 @@
 
 <div class="dev-center-tutorial-selector sublanding">
   <a href="/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/" title=".NET Framework" class="current">.NET framework</a>
-  	<a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/zh-cn/articles/mobile-services-ios-how-to-use-client-library/" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library" title="Xamarin">Xamarin</a>
+  	<a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/documentation/articles/mobile-services-ios-how-to-use-client-library/" title="iOS">iOS</a><a href="/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library" title="Xamarin">Xamarin</a>
 </div>
 
 
