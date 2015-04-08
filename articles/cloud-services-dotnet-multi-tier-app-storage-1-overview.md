@@ -1065,14 +1065,14 @@ $60.43
 
 有关如何使用 Azure 存储表、队列和 Blob 的其他资源的链接，请参阅[本系列最后一个教程][本系列最后一个教程]。
 
-<div><a href="/zh-cn/develop/net/tutorials/multi-tier-web-site/2-download-and-run/" class="site-arrowboxcta download-cta">教程 2</a></div>
+<div><a href="/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-2-download-run" class="site-arrowboxcta download-cta">教程 2</a></div>
 
   [下载已完成的应用程序]: http://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [电子邮件处理]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-overview/mtas-worker-roles-a-and-b.png
-  [配置和部署 Azure 电子邮件服务应用程序]: /zh-cn/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
-  [构建 Azure 电子邮件服务应用程序的 Web 角色]: /zh-cn/develop/net/tutorials/multi-tier-web-site/3-web-role/
-  [构建 Azure 电子邮件服务应用程序的辅助角色 A（电子邮件计划程序）]: /zh-cn/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
-  [构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+  [配置和部署 Azure 电子邮件服务应用程序]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-2-download-run
+  [构建 Azure 电子邮件服务应用程序的 Web 角色]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-3-web-role
+  [构建 Azure 电子邮件服务应用程序的辅助角色 A（电子邮件计划程序）]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-4-worker-role-a
+  [构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b
   [先决条件]: #prerequisites
   [为什么使用电子邮件列表]: #whyanemaillistapp
   [前端概述]: #frontend
@@ -1104,7 +1104,7 @@ $60.43
   [AppCmd]: http://www.iis.net/learn/get-started/getting-started-with-iis/getting-started-with-appcmdexe "appCmd"
   [如何在 Azure 中配置 IIS 组件]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433059.aspx
   [如何阻止特定 IP 地址访问 Web 角色]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj154098.aspx
-  [自动缩放应用程序块]: /zh-cn/develop/net/how-to-guides/autoscaling/
+  [自动缩放应用程序块]: /documentation/articles/cloud-services-dotnet-autoscaling-application-block/
   [Azure Connect]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433122.aspx
   [Azure 虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
   [虚拟 IP 交换]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee517253.aspx "VIP 交换"
@@ -1120,4 +1120,4 @@ $60.43
   [将多个 Azure 辅助角色组合成一个 Azure Web 角色]: http://www.31a2ba2a-b718-11dc-8314-0800200c9a66.com/2012/02/combining-multiple-azure-worker-roles.html
   [ASP.NET Web API 中的身份验证和授权]: http://www.asp.net/web-api/overview/security/authentication-and-authorization/authentication-and-authorization-in-aspnet-web-api
   [音乐商店第 7 部分：成员身份和授权]: http://www.asp.net/mvc/tutorials/mvc-music-store/mvc-music-store-part-7
-  [本系列最后一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps
+  [本系列最后一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b

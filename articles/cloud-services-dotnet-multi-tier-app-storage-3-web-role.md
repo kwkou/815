@@ -1611,9 +1611,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 有关如何使用 Azure 存储表、队列和 Blob 的其他资源的链接，请参阅[本系列最后一个教程][5]。
 
-<div><a href="/zh-cn/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/" class="site-arrowboxcta download-cta">教程 4</a></div>
+<div><a href="/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-4-worker-role-a" class="site-arrowboxcta download-cta">教程 4</a></div>
 
-  [本系列第一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [本系列第一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview
   [创建 Visual Studio 解决方案]: #cloudproject
   [配置跟踪]: #tracing
   [添加代码来有效地处理重新启动。]: #restarts
@@ -1639,7 +1639,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
   [\_Layout.cshtml 中的页脚]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-footer-in-layout.png
   [主页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-home-page-before-adding-controllers.png
   [系统任务栏中的计算模拟器]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-compute-emulator-icon.png
-  [第二个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
+  [第二个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-2-download-run
   [重新启动角色实例进行 OS 升级]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
   [按需传输]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433075.aspx
   [dbgview]: http://technet.microsoft.com/zh-cn/sysinternals/bb896647.aspx
@@ -1647,7 +1647,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
   [“管理 NuGet 包”对话框中的 Azure 存储包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-update-storage-nuget-pkg.png
   [在“选择项目”对话框中选择这两个项目]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-nuget-select-projects.png
   [Microsoft.WindowsAzure.Storage.Table.DataServices]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.table.dataservices.aspx
-  [本系列最后一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+  [本系列最后一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b
   [使用.NET 4.5 的异步支持以避免阻塞调用]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices#async
   [rightClick]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-4.png
   [将现有项添加到“Models”文件夹]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-add-existing-item-to-models.png
@@ -1678,5 +1678,5 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
   [取消订阅页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-unsubscribe-query-page.png
   [取消订阅已确认页]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-web-role/mtas-unsubscribe-confirmation-page.png
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [下一教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
-  [5]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps
+  [下一教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-4-worker-role-a
+  [5]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b/#nextsteps

@@ -106,11 +106,11 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 	* 登录到 [Azure 管理门户][portal]，依次选择您的网站、"仪表板"，然后在"速览"部分中查找"网站 URL"条目。
 
-	* 安装和配置 [Azure Powershell](/zh-cn/manage/install-and-configure-windows-powershell/)，然后使用以下命令：
+	* 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
 
 			get-azurewebsite yoursitename | select hostnames
 
-	* 安装和配置 [Azure 跨平台命令行接口](/zh-cn/manage/install-and-configure-cli/)，然后使用以下命令：
+	* 安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli/)，然后使用以下命令：
 
 			azure site domain list yoursitename
 
@@ -151,7 +151,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 **使用命令行工具添加域名**
 
-安装和配置 [Azure 跨平台命令行接口](/zh-cn/manage/install-and-configure-cli/)，然后使用以下命令：
+安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli/)，然后使用以下命令：
 
 	azure site domain add customdomain yoursitename
 
@@ -247,7 +247,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 **使用命令行工具添加域名**
 
-安装和配置 [Azure 跨平台命令行接口](/zh-cn/manage/install-and-configure-cli/)，然后使用以下命令：
+安装和配置 [Azure 跨平台命令行接口](/documentation/articles/xplat-cli/)，然后使用以下命令：
 
 	azure site domain add customdomain yoursitename
 
@@ -281,7 +281,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 ## 后续步骤
 
--   [如何管理网站](/zh-cn/manage/services/web-sites/how-to-manage-websites/)
+-   [如何管理网站](/documentation/articles/web-sites-manage/)
 
 -   [为网站配置 SSL 证书](/zh-cn/develop/net/common-tasks/enable-ssl-web-site/)
 

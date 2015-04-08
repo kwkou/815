@@ -215,7 +215,7 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [Azure 网站]: /en-us/documentation/services/web-sites/
   [Azure 云服务]: /en-us/documentation/services/cloud-services/
   [Azure 虚拟机]: /en-us/documentation/services/virtual-machines/
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /en-us/manage/services/web-sites/choose-web-app-service
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /documentation/articles/choose-web-site-cloud-service-vm/
   [创建 Azure 网站]: #createwebsite
   [部署网站]: #deploywebsite
   [添加自定义域]: #customdomain
@@ -243,8 +243,8 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [GlobalWebMonitor2]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor2.png
   [GlobalWebMonitor3]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor3.png
   [GlobalWebMonitor4]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor4.png
-  [1]: /en-us/manage/services/web-sites/digital-marketing-campaign-solution-overview
-  [如何监视网站]: /en-us/manage/services/web-sites/how-to-monitor-websites/
+  [1]: /documentation/articles/web-sites-digital-marketing-application-solution-overview/
+  [如何监视网站]: /documentation/articles/web-sites-monitor/
   [2]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
   [3]: /zh-cn/documentation/articles/web-sites-dotnet-get-started/
   [4]: /zh-cn/documentation/articles/web-sites-publish-source-control/

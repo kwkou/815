@@ -1,4 +1,4 @@
-<properties linkid="dev-net-backup" urlDisplayName="Backup" pageTitle="备份 - Azure 微软云" metaKeywords="Azure Backup,Azure备份,数据保护,自动化,服务器备份,配置,DPM" description="" metaCanonical="" services="Backup" documentationCenter="Services" title="Configure automated server backups" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-backup" urlDisplayName="Backup" pageTitle="备份 - Azure 微软云" metaKeywords="Azure Backup,Azure备份,数据保护,自动化,服务器备份,配置,DPM" description="配置自动服务器备份。使用备份服务保护数据和云。利用 Backup，您可以将备份移动到云中并实现其自动化。" metaCanonical="" services="Backup" documentationCenter="Services" title="Configure automated server backups" authors="" solutions="" manager="" editor="" />
 
 #备份
 

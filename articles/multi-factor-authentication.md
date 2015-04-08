@@ -53,6 +53,6 @@ SDK 支持与你的云服务的直接集成。将 Active Authentication 电话�
   [3]: http://msdn.microsoft.com/zh-cn/library/dn383636.aspx
   [4]: http://msdn.microsoft.com/zh-cn/library/dn249471.aspx
   [Azure 多因素身份验证功能比较]: ./media/multi-factor-authentication/mfacomparison1.png
-  [作为组织注册 Azure]: /en-us/manage/services/identity/organizational-account/
-  [Azure 标识]: /en-us/manage/windows/fundamentals/identity/
+  [作为组织注册 Azure]: /documentation/articles/sign-up-organization/
+  [Azure 标识]: /documentation/articles/fundamentals-identity/
   [Azure 多因素身份验证库]: http://technet.microsoft.com/en-us/library/dn249471.aspx

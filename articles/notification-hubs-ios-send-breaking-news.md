@@ -242,12 +242,12 @@
   [注册通知]: #register
   [从后端发送通知]: #send
   [运行应用程序并生成通知]: #test-app
-  [通知中心入门]: /en-us/manage/services/notification-hubs/get-started-notification-hubs-ios/
+  [通知中心入门]: /documentation/articles/notification-hubs-ios-get-started/
 
 <!-- Images. -->
   []: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios2.png
   [1]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios3.png
   [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
   [2]: ./media/notification-hubs-ios-send-breaking-news/notification-hub-breakingnews-ios1.png
-  [使用通知中心广播本地化的突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-localized-dotnet/
-  [使用通知中心通知用户]: /en-us/manage/services/notification-hubs/notify-users/
+  [使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+  [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/

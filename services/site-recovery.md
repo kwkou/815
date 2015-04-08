@@ -1,4 +1,4 @@
-<properties linkid="dev-net-site-recovery" urlDisplayName="Windows Azure 站点恢复" pageTitle="站点恢复 - Azure 微软云" metaKeywords="站点恢复,Site Recovery,数据保护,本地到本地,本地到云,管理,监视" description="" metaCanonical="" services="站点恢复" documentationCenter="Services" title="Orchestrate recovery of private clouds" authors="Eric" solutions="" manager="TK" editor="Haifeng Liu" />
+<properties linkid="dev-net-site-recovery" urlDisplayName="Windows Azure 站点恢复" pageTitle="站点恢复 - Azure 微软云" metaKeywords="站点恢复,Site Recovery,数据保护,本地到本地,本地到云,管理,监视" description="安排私有云的恢复。使用站点恢复服务可以保护数据和云。Windows Azure 站点恢复可帮助您自动保护私有云并安排私有云的恢复。" metaCanonical="" services="站点恢复" documentationCenter="Services" title="Orchestrate recovery of private clouds" authors="Eric" solutions="" manager="TK" editor="Haifeng Liu" />
 
 #站点恢复
 

@@ -230,7 +230,7 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
   [注册通知]: #register
   [从后端发送通知]: #send
   [运行应用程序并生成通知]: #test-app
-  [通知中心入门]: /en-us/manage/services/notification-hubs/get-started-notification-hubs-wp8/
+  [通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started/
   [notification-hubs-back-end]: ../includes/notification-hubs-back-end.md
 
 <!-- Images. -->

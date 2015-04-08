@@ -5,9 +5,9 @@
 ## 创建 Windows Azure 帐户
 
 1. 打开 Web 浏览器并浏览到 <a href="http://www.windowsazure.cn">http://www.windowsazure.cn</a>
-2. 如果您有 MSDN 订阅，请导航到 <a href="/zh-cn/pricing/member-offers/msdn-benefits-details/" target="_blank">MSDN 订户的 Windows Azure 权益</a>页并按相关步骤通过激活 MSDN 订户权益来创建帐户。
+2. 请导航到 <a href="/pricing/1rmb-trial/" target="_blank">创建试用帐户</a>页并按相关步骤来创建试用帐户。您将需要用于验证身份的信用卡号和移动手机号，但不会向您收取相关费用。
 
-   否则，请导航到<a href="/zh-cn/pricing/free-trial/" target="_blank">创建免费试用帐户</a>页并按相关步骤来创建试用帐户。您将需要用于验证身份的信用卡号和移动手机号，但不会向您收取相关费用。
+
 
 <h2><a id="enable"></a>启用 Windows Azure 预览功能</h2>
 

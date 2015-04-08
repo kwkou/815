@@ -249,7 +249,7 @@
 [mysqlworlddl]:http://downloads.mysql.com/docs/world.sql.zip
 
 
-[preview-portal-vm]: /en-us/manage/windows/tutorials/virtual-machine-from-gallery/
+[preview-portal-vm]: /documentation/articles/virtual-machines-windows-tutorial/
 
 [The status of the Stop-AzureService command]: ../Media/django-helloworld-ps-stop.png
 [The status of the Remove-AzureService command]: ../Media/django-helloworld-ps-remove.png

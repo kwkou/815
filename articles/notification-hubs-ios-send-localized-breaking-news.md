@@ -178,11 +178,11 @@
 
   [Windows 应用商店 C\#]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/ "Windows 应用商店 C#"
   [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-send-localized-breaking-news/ "iOS"
-  [使用通知中心发送突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-ios
+  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-send-breaking-news/
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
   [操作指南：服务总线 通知中心（iOS 应用程序）]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
   []: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
   [1]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
   [notification-hubs-localized-back-end]: ../includes/notification-hubs-localized-back-end.md
-  [使用通知中心通知用户：ASP.NET]: /en-us/manage/services/notification-hubs/notify-users-aspnet
-  [使用通知中心通知用户：移动服务]: /en-us/manage/services/notification-hubs/notify-users
+  [使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+  [使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/

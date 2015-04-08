@@ -179,10 +179,10 @@
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-push-tab.png
   [设置已经过身份验证的 Web 服务以便为 Windows Phone 发送推送通知]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
   [2]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-push/mobile-quickstart-push3-wp8.png
-  [通知中心入门]: /zh-cn/manage/services/notification-hubs/getting-started-windows-dotnet/
-  [向订户发送通知]: /zh-cn/manage/services/notification-hubs/breaking-news-dotnet/
-  [向用户发送通知]: /zh-cn/manage/services/notification-hubs/notify-users/
-  [向用户发送跨平台通知]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+  [通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+  [向订户发送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [向用户发送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+  [向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
   [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
   [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

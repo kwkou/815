@@ -1,4 +1,4 @@
-<properties linkid="dev-net-Service-bus" urlDisplayName="Windows Azure 服务总线" pageTitle="服务总线 - Azure 微软云" metaKeywords="服务总线,Service Bus,云消息,消息交换,松散耦合,扇出,扇入,中继,混合云, AMQP 1.0" description="" metaCanonical="" services="服务总线" documentationCenter="Services" title="Learn about flexible messaging in the cloud" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-Service-bus" urlDisplayName="Windows Azure 服务总线" pageTitle="服务总线 - Azure 微软云" metaKeywords="服务总线,Service Bus,云消息,消息交换,松散耦合,扇出,扇入,中继,混合云, AMQP 1.0" description="在云中进行灵活的消息传送。服务总线 是一个云消息平台。它位于您的应用程序组件之间（无论这些组件是在云中还是在本地），提供松散耦合消息交换以扩大规模并提高恢复能力。" metaCanonical="" services="服务总线" documentationCenter="Services" title="Learn about flexible messaging in the cloud" authors="" solutions="" manager="" editor="" />
 
 #服务总线
 

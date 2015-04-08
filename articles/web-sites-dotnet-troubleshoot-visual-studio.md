@@ -649,8 +649,11 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 -   [从 Azure 命令行流式传输诊断跟踪日志记录（加上 Glimpse！）][从 Azure 命令行流式传输诊断跟踪日志记录（加上 Glimpse！）]
      如何使用命令行实现本教程中通过 Visual Studio 完成的任务。[Glimpse][Glimpse] 是一个用于调试 ASP.NET 应用程序的工具。
+
+<!--
 -   [使用 Azure 网站日志记录和诊断 — 与 David Ebbo 协作完成][使用 Azure 网站日志记录和诊断 — 与 David Ebbo 协作完成]和 [从 Azure 网站流式传输日志 — 与 David Ebbo 协作完成][从 Azure 网站流式传输日志 — 与 David Ebbo 协作完成]
      由 Scott Hanselman 和 David Ebbo 提供的视频。
+-->
 
 对于错误日志记录，若不想编写自己的跟踪代码，可以使用开源日志记录框架，如 [ELMAH][ELMAH]。有关更多信息，请参见 [Scott Hanselman 有关 ELMAH 的博客文章][Scott Hanselman 有关 ELMAH 的博客文章]。
 
@@ -694,7 +697,7 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [在服务器资源管理器中查看设置]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewsettings.png
   [Azure 网站窗口]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configtab.png
   [Azure 网站：应用程序字符串和连接字符串的工作原理]: http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx
-  [如何配置网站]: /zh-cn/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig
+  [如何配置网站]: /documentation/articles/web-sites-configure/#howtochangeconfig
   [毫无用处的错误页面]: ./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror.png
   [1]: ./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror1.png
   [2]: ./media/web-sites-dotnet-troubleshoot-visual-studio/genericerror2.png

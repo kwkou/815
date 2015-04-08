@@ -293,11 +293,14 @@
 7.  （可选）重复之前的步骤以便创建第二个终结点。
 8.  单击**“保存”**。Web 终结点监视数据可能需要一段时间后才在“仪表板”和“监视器”选项卡上可用。
 
+<!--
 有关网站终结点监视的更多信息，请观看以下视频：
 
 -   [Scott Guthrie 介绍 Azure 网站并设置终结点监视][Scott Guthrie 介绍 Azure 网站并设置终结点监视]
 
 -   [保持 Azure 网站运行以及终结点监视 - Stefan Schackow][保持 Azure 网站运行以及终结点监视 - Stefan Schackow]
+-->
+
 
   [如何：添加网站度量值]: #websitemetrics
   [如何：接收来自网站度量值的警报]: #howtoreceivealerts

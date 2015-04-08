@@ -41,7 +41,7 @@
 > [WACOM.NOTE] 本教程编写完以后，Visual Studio 2013 发布，而 Azure 管理门户和 SDK 则进行了更新。如果你使用的是 Visual Studio 2013 和最新版 SDK，则必须执行不同的操作，在这种情况下，我们添加了类似这样的注释来提醒你。这些注释是在 2014 年 3 月编写的，经过修改的操作过程已使用 SDK 版本 2.3 进行测试。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。因此，你可以不支付任何费用就开始 Azure 开发。
-你可以创建一个[免费试用帐户][免费试用帐户]或[激活 MSDN 订户权益][激活 MSDN 订户权益]。
+你可以创建一个[免费试用帐户][免费试用帐户]。
 
 > [WACOM.NOTE] 在下面关于 SDK 安装的部分，正确的链接（如果你使用的是 Visual Studio 2013）为 <http://go.microsoft.com/fwlink/?LinkID=324322>。
 
@@ -566,9 +566,9 @@
 
 有关如何使用 Azure 存储表、队列和 Blob 的其他资源的链接，请参阅[本系列最后一个教程][16]。
 
-<div><a href="/zh-cn/develop/net/tutorials/multi-tier-web-site/3-web-role/" class="site-arrowboxcta download-cta">教程 3</a></div>
+<div><a href="/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-3-web-role" class="site-arrowboxcta download-cta">教程 3</a></div>
 
-  [本系列第一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [本系列第一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview
   [先决条件]: prerequisites
   [设置开发环境]: #setupdevenv
   [创建 Azure 存储帐户]: #createWASA
@@ -619,8 +619,12 @@
   [选择云项目属性]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-aesp.png
   [禁用存储模拟器的自动启动]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-1.png
   [7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png
+
+<!--
   [如何在 Azure 中使用 SendGrid 发送电子邮件]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
   [SendGridSettings]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-sg.png
+-->
+
   [必应]: http://www.bing.com/search?q=find+my+IP&qs=n&form=QBLH&pq=find+my+ip&sc=8-10&sp=-1&sk= "查找我的 IP"
   [程序包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-6.png
   [云程序包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-16.png
@@ -630,7 +634,7 @@
   [8]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-11.png
   [9]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-9.png
   [10]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c55.png
-  [Azure 免费试用帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/ "免费试用帐户"
+  [Azure 试用帐户]: /pricing/1rmb-trial/ "试用帐户"
   [11]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-19.png
   [12]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-12.png
   [13]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-c6.png
@@ -640,10 +644,10 @@
   [15]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png
   [虚拟机大小]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee814754.aspx "VM 大小"
   [异步方法]: http://www.asp.net/mvc/tutorials/mvc-4/using-asynchronous-methods-in-aspnet-mvc-4 "异步 MVC"
-  [自动缩放应用程序块]: /zh-cn/develop/net/how-to-guides/autoscaling/
-  [本系列最后一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+  [自动缩放应用程序块]: /documentation/articles/cloud-services-dotnet-autoscaling-application-block/
+  [本系列最后一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b
   [实例计数]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-instanceCnt.png
   [增加实例]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in3.png
   [查看实例]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in2.png
-  [下一教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/3-web-role/
-  [16]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/#nextsteps
+  [下一教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-3-web-role
+  [16]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b/#nextsteps

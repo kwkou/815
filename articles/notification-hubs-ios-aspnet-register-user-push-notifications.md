@@ -90,7 +90,7 @@
     这为请求设置设备标记。
 
     <div class="dev-callout"><b>说明</b>
-<p>此时，此方法中不应有任何其他代码。如果你已调用在完成<a href="/en-us/manage/services/notification-hubs/get-started-notification-hubs-ios/" target="_blank">通知中心入门</a>教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。</p>
+<p>此时，此方法中不应有任何其他代码。如果你已调用在完成<a href="/documentation/articles/notification-hubs-ios-get-started/" target="_blank">通知中心入门</a>教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。</p>
 </div>
 
 8.  在 PushToUserAppDelegate.m 文件中，添加以下处理程序方法：
@@ -211,11 +211,11 @@
 
   [Windows 应用商店 C\#]: /zh-cn/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/ "Windows 应用商店 C#"
   [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/ "iOS"
-  [使用通知中心通知用户]: /en-us/manage/services/notification-hubs/notify-users-aspnet
+  [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
 
 <!-- Images. -->
 
   []: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios1.png
   [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
   [通知中心入门]: /en-us/manage/services/notification-hubs/get-started-notification-hubs-ios
-  [2]: /en-us/manage/services/notification-hubs/get-started-notification-hubs-ios/
+  [2]: /documentation/articles/notification-hubs-ios-get-started/

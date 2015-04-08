@@ -200,11 +200,11 @@
   [1]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-insert-script-push2.png
   [2]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-quickstart-push1.png
   [3]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-quickstart-push2.png
-  [通知中心入门]: /zh-cn/manage/services/notification-hubs/getting-started-windows-dotnet/
+  [通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
   [什么是通知中心？]: /zh-cn/develop/net/how-to-guides/service-bus-notification-hubs/
-  [向订户发送通知]: /zh-cn/manage/services/notification-hubs/breaking-news-dotnet/
-  [向用户发送通知]: /zh-cn/manage/services/notification-hubs/notify-users/
-  [向用户发送跨平台通知]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+  [向订户发送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [向用户发送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+  [向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
   [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
   [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/

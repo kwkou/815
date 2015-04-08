@@ -37,7 +37,7 @@
 
 每个所创建的虚拟机还附加有一个临时的本地  *Resource Disk*。因为资源磁盘上的数据可能不能在重新引导后持久存在，因此它通常由在虚拟机中运行的应用程序和进程用于数据的短暂和临时存储。它还用来为操作系统存储页面文件或交换文件。
 
-在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请注意，资源磁盘是  *temporary* 磁盘，并且可能在 VM 取消设置时清空。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。请参阅 [Azure Linux 代理用户指南（Azure Linux 代理用户指南）](http://www.windowsazure.com/zh-cn/manage/linux/how-to-guides/linux-agent-guide/)。
+在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请注意，资源磁盘是  *temporary* 磁盘，并且可能在 VM 取消设置时清空。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。请参阅 [Azure Linux 代理用户指南（Azure Linux 代理用户指南）](/documentation/articles/virtual-machines-linux-agent-user-guide/)。
 
 
 

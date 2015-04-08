@@ -41,7 +41,7 @@
   </tbody>
 </table>
 
-以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到 Media Services](http://www.windowsazure.cn/zh-cn/develop/media-services/how-to-guides/set-up-computer-for-media-services) 部分中所述的服务器上下文。
+以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到 Media Services](/zh-cn/develop/media-services/how-to-guides/set-up-computer-for-media-services) 部分中所述的服务器上下文。
 
 ``` {}
 private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)

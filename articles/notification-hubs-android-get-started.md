@@ -352,6 +352,6 @@
   [11]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app7.png
   [12]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app8.png
   [13]: ./media/notification-hubs-android-get-started/notification-hub-android-toast.png
-  [使用通知中心将通知推送到用户]: /en-us/manage/services/notification-hubs/notify-users-aspnet
-  [使用通知中心发送突发新闻]: /en-us/manage/services/notification-hubs/breaking-news-dotnet
+  [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

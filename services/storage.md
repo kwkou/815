@@ -1,4 +1,4 @@
-<properties linkid="dev-net-storage" urlDisplayName="Windows Azure Storage" pageTitle="存储 - Azure 微软云" metaKeywords="Azure Storage,Azure存储,非结构化,非关系结构化数据,SMB文件共享,复制,身份验证,度量,日志记录,结构化数据, Azure Blob,访问签名,Azure 导入/导出服务,创建存储帐户,访问密钥" description="" metaCanonical="" services="Storage" documentationCenter="Services" title="Configure, monitor, and scale your storage account in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-storage" urlDisplayName="Windows Azure Storage" pageTitle="存储 - Azure 微软云" metaKeywords="Azure Storage,Azure存储,非结构化,非关系结构化数据,SMB文件共享,复制,身份验证,度量,日志记录,结构化数据, Azure Blob,访问签名,Azure 导入/导出服务,创建存储帐户,访问密钥" description="在 Windows Azure 中配置、监视和缩放存储帐户。使用 Azure 存储服务存储和访问数据。使用 Blob 存储非结构化的二进制和文本数据。使用队列存储客户端可访问的消息。将非关系结构化数据存储在表中。" metaCanonical="" services="Storage" documentationCenter="Services" title="Configure, monitor, and scale your storage account in Azure" authors="" solutions="" manager="" editor="" />
 
 #存储
 
@@ -51,7 +51,7 @@
 使用 Azure Blob、队列和表可为 Windows 应用商店应用程序存储数据。
 
 ####[如何使用共享访问签名授予对存储资源的访问权限](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-了解如何使用共享访问签名来授予对您的存储帐户中的 Blob、队列和表的受限访问权限。本教程的[第 1 部分](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/)说明了共享访问签名的重要概念并提供了最佳实践。[第 2 部分](/zh-cn/manage/services/storage/net/shared-access-signature-part-2/)将逐步引导您完成为 Blob 资源生成共享访问签名的过程，然后演示如何从客户端应用程序使用这些签名。
+了解如何使用共享访问签名来授予对您的存储帐户中的 Blob、队列和表的受限访问权限。本教程的[第 1 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)说明了共享访问签名的重要概念并提供了最佳实践。[第 2 部分](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)将逐步引导您完成为 Blob 资源生成共享访问签名的过程，然后演示如何从客户端应用程序使用这些签名。
 
 ###管理
 

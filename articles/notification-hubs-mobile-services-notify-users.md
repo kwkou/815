@@ -275,8 +275,8 @@
   [iOS 版本]: /zh-cn/manage/services/notification-hubs/register-users-ios
   [9]: ./media/notification-hubs-mobile-services-notify-users/mobile-portal-data-tables.png
   [10]: ./media/notification-hubs-mobile-services-notify-users/mobile-insert-script-push2.png
-  [使用通知中心向用户发送跨平台通知]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-mobile-services/
-  [11]: /zh-cn/manage/services/notification-hubs/breaking-news-dotnet
-  [12]: /zh-cn/manage/services/notification-hubs/breaking-news-ios
+  [使用通知中心向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
+  [11]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [12]: /documentation/articles/notification-hubs-ios-send-breaking-news/
   [13]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-mobile-services
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

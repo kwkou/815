@@ -352,5 +352,5 @@
   [Windows 应用商店 C# 版本]: /zh-cn/manage/services/notification-hubs/register-users-aspnet-dotnet
   [iOS 版本]: /zh-cn/manage/services/notification-hubs/howto-register-user-with-aspnet-ios
   [使用通知中心向用户发送跨平台通知]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-aspnet
-  [6]: /zh-cn/manage/services/notification-hubs/breaking-news-dotnet
+  [6]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

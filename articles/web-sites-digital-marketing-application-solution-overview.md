@@ -79,7 +79,7 @@ Azure 网站的另外一个优势是加快将过渡网站部署到 Web 的速度
 
 <div class="dev-callout">
 <strong>说明</strong>
-<p>对于选择使用云服务和 Web 角色的 Web 应用程序，还有其他可基于队列中项的长度进行缩放的选项。在云服务中，处理后端队列的角色是常见的体系结构模式。有关云服务缩放的更多信息，请参阅<a href="http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-scale-a-cloud-service/">如何缩放云服务</a>。</p>
+<p>对于选择使用云服务和 Web 角色的 Web 应用程序，还有其他可基于队列中项的长度进行缩放的选项。在云服务中，处理后端队列的角色是常见的体系结构模式。有关云服务缩放的更多信息，请参阅<a href="/documentation/articles/cloud-services-how-to-scale/">如何缩放云服务</a>。</p>
 </div>
 
 <!-- ##<a name="integrate"></a>Integrate with Other Services A digital marketing site will often incorporate rich media, such as video streaming. Hosting these sites in Azure provides close integration to related Azure services. For example, you can use Azure Media Services to encode and stream video for your web site. For more information on Media Services, see [Introduction to Azure Media Services Concepts and Scenarios][mediaservices].  Other Azure services can be used to create a more robust application. For example, Web Sites can use distributed caching provided by the new [Azure Cache Service (Preview)][caching]. Or you can use Azure Storage Services to store application data and resources. For example, graphics, videos, and other large files can be durably stored in blobs. Database services, such as Azure SQL数据库 and MySQL, are also available for relational data requirements. -->
@@ -129,7 +129,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 </tr>
 <tr>
 <td valign="middle"><strong>缩放</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-scale-websites/">如何缩放网站</a></td>
+<td valign="top">- <a href="/documentation/articles/web-sites-scale/">如何缩放网站</a></td>
 </tr>
 
 <!-- <tr>    <td valign="middle"><strong>Rich Media</strong></td>    <td valign="top">- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223282.aspx">Introduction to Azure Media Services Concepts and Scenarios</a></td> </tr>  -->
@@ -148,7 +148,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [Azure 网站]: /en-us/documentation/services/web-sites/
   [Azure 云服务]: /en-us/documentation/services/cloud-services/
   [Azure 虚拟机]: /en-us/documentation/services/virtual-machines/
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /en-us/manage/services/web-sites/choose-web-app-service
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /documentation/articles/choose-web-site-cloud-service-vm/
   [部署现有网站]: #deployexisting
   [与社交媒体相集成]: #socialmedia
   [根据用户要求进行缩放]: #scale
@@ -156,7 +156,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [监视活动]: #monitor
   [全球网络影响力]: /zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/
   [业务应用程序]: /zh-cn/documentation/articles/web-sites-business-application-solution-overview/
-  [查看该信息]: /en-us/manage/services/web-sites/global-web-presence-solution-overview/
+  [查看该信息]: /documentation/articles/web-sites-global-web-presence-solution-overview/
   [DigitalMarketingDeploy1]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy1.png
   [DigitalMarketingDeploy2]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy2.png
   [具有 Azure 网站的多个环境]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
@@ -169,10 +169,10 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [DigitalMarketingScale]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Scale.png
   [网站定价准则]: http://www.windowsazure.cn/zh-cn/pricing/overview/
   [DigitalMarketingAutoScale]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_AutoScale.png
-  [如何扩展网站]: /en-us/manage/services/web-sites/how-to-scale-websites/
-  [如何缩放云服务]: http://www.windowsazure.cn/zh-cn/manage/services/cloud-services/how-to-scale-a-cloud-service/
+  [如何扩展网站]: /documentation/articles/web-sites-scale/
+  [如何缩放云服务]: /documentation/articles/cloud-services-how-to-scale/
   [DigitalMarketingMonitor]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Monitor.png
-  [如何监视网站]: /en-us/manage/services/web-sites/how-to-monitor-websites/
+  [如何监视网站]: /documentation/articles/web-sites-monitor/
   [DigitalMarketingUsageOverview]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_UsageOverview.png
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
   [1]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
@@ -180,6 +180,6 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [如何部署 Azure 网站]: /zh-cn/documentation/articles/web-sites-deploy/
   [2]: /zh-cn/documentation/articles/web-sites-publish-source-control/
   [使用成员资格、OAuth 和 SQL数据库 部署安全的 ASP.NET MVC 应用程序]: /zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
-  [如何缩放网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-scale-websites/
+  [如何缩放网站]: /documentation/articles/web-sites-scale/
   [3]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/
   [4]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx

@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-windows-tutorial-virtual-machine-gallery" urlDisplayName="Create a virtual machine" pageTitle="创建在 Azure 中运行 Windows Server 的虚拟机" metaKeywords="Azure capture image vm, capturing vm" description="了解如何捕获运行 Windows Server 2008 R2 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="jeffg" editor="tysonn" />
+<properties linkid="manage-windows-tutorial-virtual-machine-gallery" urlDisplayName="Create a virtual machine" pageTitle="创建在 Azure 中运行 Windows Server 的虚拟机" metaKeywords="Azure capture image vm, capturing vm" description="了解如何捕获运行 Windows Server 2008 R2 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="jeffg" editor="tysonn" />
 
 
 
@@ -109,6 +109,8 @@
 
 [有关 Azure 虚拟机配置设置](http://msdn.microsoft.com/library/azure/dn763935.aspx)
 
+<!--
+
 [视频：Getting Started with Vhd-真实情况什么](/zh-cn/documentation/videos/getting-started-with-azure-virtual-machines)
 
 [视频：常见问题与 Mark Russinovich-没有 Windows Azure 中运行 Windows 吗？](/zh-cn/documentation/videos/mark-russinovich-windows-on-azure)
@@ -120,6 +122,7 @@
 [视频：Scott Guthrie 开头的虚拟机](/zh-cn/documentation/videos/virtual-machines-scottgu)
 
 [视频：存储和磁盘对于 Azure 虚拟机的基础知识](/zh-cn/documentation/videos/storage-and-disks-virtual-machines)
+-->
 
 
 
