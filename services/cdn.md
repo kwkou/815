@@ -14,6 +14,3 @@
 
 -   [开始使用 Azure CDN](/zh-cn/documentation/articles/cdn-how-to-use/)
 
-<!--
->  [AZURE.NOTE]目前如果您想使用CDN HTTPS加速服务，请通过[支持页面](/support/contact/)联系 Windows Azure 的支持团队开通 CDN HTTPS加速服务。
--->
