@@ -7,6 +7,10 @@
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 <h1 id="menu-ruby-appservices">应用程序服务</h1>

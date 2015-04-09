@@ -1,4 +1,8 @@
 <properties urlDisplayName="Table Service" pageTitle="如何使用表 storagrom .NET | Microsoft Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="了解如何使用 Microsoft Azure 表存储来创建和删除表,以及在表中插入和查询实体。services="storage" documentationCenter=".NET"" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Windows Azure Table storage" authors="tamram" manager="adinah" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

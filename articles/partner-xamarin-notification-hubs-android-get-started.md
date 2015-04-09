@@ -1,4 +1,8 @@
 <properties linkid="" urlDisplayName="" pageTitle="Get started with Notification Hubs for Xamarin.Android apps" metaKeywords="" description="Learn how to use Azure Notification Hubs to send push notifications to a Xamarin Android application." metaCanonical="" authors="elioda" solutions="" manager="" editor="" services="mobile-services,notification-hubs" documentationCenter="" title="Get started with Notification Hubs" />
+<tags ms.service="mobile-services,notification-hubs"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 通知中心入门
 

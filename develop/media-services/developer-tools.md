@@ -7,6 +7,10 @@
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 <h1>用于 Azure 媒体服务的开发人员工具</h1>

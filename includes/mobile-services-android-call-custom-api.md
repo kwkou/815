@@ -11,6 +11,10 @@
             android:layout_height="wrap_content"
             android:onClick="completeItem"
             android:text="@string/complete_button_text" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 	这样可将新按钮添加到页面中的单独一行上，位于现有按钮旁边。
 

@@ -1,4 +1,8 @@
 <properties title="How to scale a website" pageTitle="How to scale a website" description="Learn how to scale your hosting plan in Azure." authors="stepsic"  />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何缩放网站
 

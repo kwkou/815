@@ -1,4 +1,8 @@
 <properties linkid="web-sites-restore" urlDisplayName="Restore a Windows Azure web site" pageTitle="Restore a Windows Azure web site" metaKeywords="Azure Web Sites, Restore, restoring" description="Learn how to restore your Azure web sites from backup." metaCanonical="" services="web-sites" documentationCenter="" title="Restore a Windows Azure web site" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
+<tags ms.service="web-sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 还原 Windows Azure 网站
 

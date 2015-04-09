@@ -59,7 +59,11 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 	<!--![][standardmode4]-->
 
-	**注意**<br /> 
+	**注意**<br />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    /> 
 	如果收到"为网站  'website name' 配置规模失败"错误，则可使用详细信息按钮获得详细信息。 
 
 <a name="trafficmanager"></a><h2>（可选）将您的网站添加到 Traffic Manager</h2>

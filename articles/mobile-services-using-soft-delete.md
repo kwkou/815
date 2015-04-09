@@ -1,4 +1,8 @@
 <properties urlDisplayName="使用软删除" pageTitle="使用移动服务中的软删除 （Windows 应用商店）|移动开发人员中心" metaKeywords="" description="了解如何在你的应用程序中使用 Azure 移动服务软删除功能" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Using soft delete in Mobile Services" authors="wesmc" manager="dwrede" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/25/2014" ms.author="wesmc" />
 

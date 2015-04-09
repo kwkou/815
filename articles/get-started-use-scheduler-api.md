@@ -1,4 +1,8 @@
 <properties linkid="get-started-with-scheduler-API" urlDisplayName="计划程序 API 入门" pageTitle="计划程序 API 入门 | Windows Azure" metaKeywords="计划程序" description="TBD" umbracoNaviHide="0" disqusComments="1" editor="mattshel" manager="carolz" titel="Get started with the Scheduler API" authors="" title="Get started with the Scheduler API" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 #计划程序 API 入门

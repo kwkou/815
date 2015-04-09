@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-services-how-to-monitor-a-cloud-service" urlDisplayName="How to monitor" pageTitle="如何监视云服务 - Azure" metaKeywords="Azure monitoring cloud services, Azure Management Portal cloud services" description="了解如何使用 Azure 管理门户监视云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Monitor Cloud Services" authors="ryanwi" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-monitor-a-cloud-service" urlDisplayName="How to monitor" pageTitle="如何监视云服务 - Azure" metaKeywords="Azure monitoring cloud services, Azure Management Portal cloud services" description="了解如何使用 Azure 管理门户监视云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Monitor Cloud Services" authors="ryanwi" solutions="" manager="" editor="" />
+<tags ms.service="cloud-services"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 #如何监视云服务

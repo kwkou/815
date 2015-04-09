@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-sample-csharp-streaming" urlDisplayName="HDInsight Samples" pageTitle="HDInsight C# 流式处理字数统计示例 | Azure" metaKeywords="hadoop, hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to run a sample TBD." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight C# streaming wordcount sample" authors="bradsev" />
+<tags ms.service="hdinsight"
+    ms.date=""
+    wacn.date=""
+    />
 
 # HDInsight C\# 流式处理字数统计示例
 

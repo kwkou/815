@@ -1,4 +1,8 @@
 <properties linkid="manage-windows-common-tasks-install-mysql" urlDisplayName="Install MySQL" pageTitle="创建在 Azure 中运行 MySQL 的虚拟机 " metaKeywords="Azure virtual machines, Azure Windows Server, Azure installing MySQL, Azure configuring MySQL, Azure databases" description="创建 Azure 虚拟机运行 Windows Server 2008 R2，然后安装并在虚拟机上配置 MySQL 数据库。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Install MySQL on a virtual machine running Windows Server 2008 R2 in Azure" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

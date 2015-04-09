@@ -20,6 +20,10 @@
         <site name="todolist_Service(1)" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="C:\Archive\GetStartedDataWP8\C#\todolist_Service" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
             </application>
             <bindings>
                 <binding protocol="http" bindingInformation="*:58203:localhost" />

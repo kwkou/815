@@ -1,4 +1,8 @@
 <properties linkid="service-bus-manage-messaging-entitites" urlDisplayName="流量管理器" pageTitle="Manage 服务总线 Messaging Entities - Azure" metaKeywords="" description="Learn how to create and manage your 服务总线 entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Manage 服务总线 Messaging Entities" authors="sethm" solutions="" />
+<tags ms.service="service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何管理 服务总线 消息传送实体
 

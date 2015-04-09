@@ -1,4 +1,8 @@
 <properties urlDisplayName="移动分析入门" pageTitle="移动分析入门 | 移动开发人员中心" metaKeywords="" description="移动分析入门。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get Started with Mobile Analytics" authors="mahender" manager="dwrede"/>
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="10/10/2014" ms.author="mahender" />
 

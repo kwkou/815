@@ -1,4 +1,8 @@
-﻿<properties pageTitle="以缩放方式引入遥测和应用程序事件" metaKeywords="Service Bus, telemetry, events" description="了解如何在企业解决方案中以缩放方式引入遥测和应用程序事件。" services="service-bus" documentationCenter=".NET" title="Ingest Telemetry and Application Events at Scale" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<properties pageTitle="以缩放方式引入遥测和应用程序事件" metaKeywords="Service Bus, telemetry, events" description="了解如何在企业解决方案中以缩放方式引入遥测和应用程序事件。" services="service-bus" documentationCenter=".NET" title="Ingest Telemetry and Application Events at Scale" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<tags ms.service="service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 以缩放方式引入遥测和应用程序事件
  

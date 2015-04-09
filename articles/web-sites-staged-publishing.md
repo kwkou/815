@@ -1,4 +1,8 @@
 <properties linkid="web-sites-staged-publishing" urlDisplayName="How to stage sites on Windows Azure" pageTitle="在 Windows Azure 网站上过渡部署" metaKeywords="Windows Azure Web Sites, Staged Deployment, Site Slots" description="了解如何在 Windows Azure 网站上使用过渡发布。" metaCanonical="" services="web-sites" documentationCenter="" title="在 Windows Azure 网站上过渡部署" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
+<tags ms.service="web-sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 在 Windows Azure 网站上过渡部署
 

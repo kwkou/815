@@ -1,4 +1,8 @@
 <properties linkid="manage-services-add-a-vm-to-a-virtual-network" urlDisplayName="Add a VM to virtual network" pageTitle="将虚拟机添加到虚拟网络 &ndash; Azure" metaKeywords="" description="本教程将教您如何创建存储帐户和添加到 Azure 虚拟网络的虚拟机 (VM)。" metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="将虚拟机添加到虚拟网络" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines,virtual-network"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 将虚拟机添加到虚拟网络
 

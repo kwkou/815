@@ -1,4 +1,8 @@
 <properties linkid="mobile-services-html-call-custom-api" urlDisplayName="从客户端调用自定义 API" pageTitle="从 HTML 客户端调用自定义 API - 移动服务" metaKeywords="" description="了解如何定义自定义 API，然后从使用 Microsoft Azure 移动服务的 HTML 应用程序调用它。" metaCanonical="" services="" documentationCenter="" title="从客户端调用自定义 API" authors=""  solutions="" writer="jparrel" manager="" editor=""  />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

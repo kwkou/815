@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-sencha" urlDisplayName="Get Started" pageTitle="Azure 移动服务和 Sencha 入门" metaKeywords="" description="请按照本教程来开始使用移动服务和 Sencha HTML5 移动应用程序框架进行开发。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="" documentationCenter="Mobile" title="移动服务和 Sencha Touch 入门" authors="sencha" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # <a name="getting-started"> </a>移动服务和 Sencha Touch 入门
 

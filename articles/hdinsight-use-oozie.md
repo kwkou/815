@@ -1,4 +1,8 @@
 <properties linkid="hdinsight-use-oozie-with-hdinsight" urlDisplayName="Use Oozie with HDInsight" pageTitle="将 Oozie 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Use Oozie with HDInsight, a big data solution. Learn how to define an Oozie workflow, and submit an Oozie job." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Oozie with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="hdinsight"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 # 将 Oozie 与 HDInsight 配合使用

@@ -1,4 +1,8 @@
-﻿<properties pageTitle="使用移动服务将数据上载到 blob 存储 (iOS) |移动服务" metaKeywords="" description="了解如何使用移动服务将数据上载到 Azure Blob 存储。" metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload data to Azure Storage by using Mobile Services" authors="yuaxu" writer="yuaxu" manager="dwrede" services="mobile-services,storage"/>
+<properties pageTitle="使用移动服务将数据上载到 blob 存储 (iOS) |移动服务" metaKeywords="" description="了解如何使用移动服务将数据上载到 Azure Blob 存储。" metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload data to Azure Storage by using Mobile Services" authors="yuaxu" writer="yuaxu" manager="dwrede" services="mobile-services,storage"/>
+<tags ms.service="mobile-services,storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.topic="article" ms.date="09/23/2014" ms.author="yuaxu"/>
 

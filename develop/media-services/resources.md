@@ -7,6 +7,10 @@
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 <h1 id="menu-media-services-resources">教程和资源</h1>

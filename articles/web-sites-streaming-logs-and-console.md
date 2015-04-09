@@ -1,4 +1,8 @@
 <properties pageTitle="Streaming logs and console" description="Streaming logs and console overview" title="Streaming logs and console" authors="adamab" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 ## 流式传输日志和控制台
 
