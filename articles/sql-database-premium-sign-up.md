@@ -1,8 +1,4 @@
 <properties linkid="manage-services-sql-databases-premium" urlDisplayName="Premium SQL数据库" pageTitle="注册 Azure SQL数据库 高级版" metaKeywords="" description="介绍了如何注册 SQL数据库 高级预览版、请求高级版数据库配额，然后在 Azure SQL数据库 中将数据库升级到高级版。" metaCanonical="" services="cloud-services" documentationCenter="" title="注册 Azure SQL数据库 高级预览版" authors="karaman" solutions="" manager="" editor="tysonn" />
-<tags ms.service="cloud-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 注册 Azure SQL数据库 高级预览版
 

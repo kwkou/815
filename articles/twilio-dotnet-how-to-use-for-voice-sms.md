@@ -1,8 +1,4 @@
 <properties linkid="develop-net-how-to-twilio-sms-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="如何使用 Twilio 实现语音和短信功能 (.NET) &ndash; Azure" metaKeywords="Azure Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="了解如何在 Azure 中使用 Twilio API 服务发起电话呼叫和发送短信。采用 .NET 编写的代码示例。" metaCanonical="" services="" documentationCenter=".NET" title="如何在 Azure 中使用 Twilio 实现语音和短信功能" authors="" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何在 Azure 中使用 Twilio 实现语音和短信功能
 

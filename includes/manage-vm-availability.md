@@ -1,8 +1,4 @@
-<properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    /> 
+<properties writer="kathydav" editor="tysonn" manager="jeffreyg" /> 
 
 #管理虚拟机的可用性#
 

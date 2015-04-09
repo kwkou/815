@@ -7,10 +7,6 @@
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 
 <h1 id="menu-python-data">数据服务</h1>

@@ -1,8 +1,4 @@
-<properties title="Getting started using Storm with Hadoop in HDInsight" pageTitle="开始将 Apache Storm 与 Windows Azure HDInsight 配合使用 (Hadoop)" description="Learn how to use  Apache Storm to process data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
-<tags ms.service="hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Getting started using Storm with Hadoop in HDInsight" pageTitle="开始将 Apache Storm 与 Windows Azure HDInsight 配合使用 (Hadoop)" description="Learn how to use  Apache Storm to process data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/30/2014" ms.author="larryfr" />
 

@@ -1,8 +1,4 @@
 <properties linkid="migration-assistant" urlDisplayName="Azure迁移助手" pageTitle="Azure迁移助手" metaKeywords="Azure迁移助手下载和安装 Azure SDK工具" description="Azure迁移助手下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="Azure迁移助手" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
-<tags ms.service="downloads"
-    ms.date=""
-    wacn.date=""
-    />
 
 #Azure网站迁移助理
 <div>

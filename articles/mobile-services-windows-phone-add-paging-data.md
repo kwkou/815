@@ -1,8 +1,4 @@
-<properties pageTitle="将分页添加到数据 （Windows Phone） |移动开发人员中心" metaKeywords="" description="了解如何使用分页来管理移动服务返回给 Windows Phone 应用程序的数据量。" metaCanonical="" services="" documentationCenter="Mobile" title="使用分页优化移动服务查询" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties pageTitle="将分页添加到数据 （Windows Phone） |移动开发人员中心" metaKeywords="" description="了解如何使用分页来管理移动服务返回给 Windows Phone 应用程序的数据量。" metaCanonical="" services="" documentationCenter="Mobile" title="使用分页优化移动服务查询" authors="glenga" solutions="" manager="" editor="" />
 
 # 使用分页优化移动服务查询
 

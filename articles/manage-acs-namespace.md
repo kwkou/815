@@ -1,8 +1,4 @@
 <properties linkid="manage-services-manage-acs" urlDisplayName="Manage ACS" pageTitle="Access Control Service - Azure service management" metaKeywords="" description="Learn how to manage your Azure Access Control Service (ACS) using certificates and keys." metaCanonical="" services="active-directory" documentationCenter="" title="Managing Your ACS Namespace" authors="" solutions="" manager="" editor="" />
-<tags ms.service="active-directory"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 管理 ACS 命名空间
 

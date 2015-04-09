@@ -1,8 +1,4 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用部署到 Azure 网站
 

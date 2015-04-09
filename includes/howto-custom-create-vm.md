@@ -1,8 +1,4 @@
 <properties authors="kathydav" editor="tysonn" manager="jeffreyg" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 #如何创建自定义虚拟机
 

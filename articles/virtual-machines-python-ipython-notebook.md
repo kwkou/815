@@ -1,8 +1,4 @@
-<properties linkid="develop-python-ipython-notebook" urlDisplayName="IPython Notebook" pageTitle="IPython Notebook-Azure 教程" metaKeywords="" description="本教程演示如何使用 Linux 或 Windows 虚拟机 (Vm) 进行部署在 Azure 上，IPython Notebook。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="IPython Notebook on Azure" authors="" solutions="" manager="" editor="" />
-<tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="develop-python-ipython-notebook" urlDisplayName="IPython Notebook" pageTitle="IPython Notebook-Azure 教程" metaKeywords="" description="本教程演示如何使用 Linux 或 Windows 虚拟机 (Vm) 进行部署在 Azure 上，IPython Notebook。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="IPython Notebook on Azure" authors="" solutions="" manager="" editor="" />
 
 
 

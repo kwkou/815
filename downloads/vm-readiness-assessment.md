@@ -1,8 +1,4 @@
 <properties linkid="vm-readiness-assessment" urlDisplayName="Azure 虚拟机就绪评估" pageTitle="Azure 虚拟机就绪评估" metaKeywords="Azure 虚拟机就绪评估" description="Azure 虚拟机就绪评估" metaCanonical="" services="downloads" documentationCenter="downloads" title="Azure 虚拟机就绪评估" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
-<tags ms.service="downloads"
-    ms.date=""
-    wacn.date=""
-    />
 
 #放心地移到云上
 虚拟机就绪评估工具将自动检查你的本地环境（不管它是物理环境还是虚拟环境），为你提供检查列表以及将你的环境移动到云中时需要执行的步骤的详细报告。

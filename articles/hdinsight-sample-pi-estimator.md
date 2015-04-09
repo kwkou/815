@@ -1,8 +1,4 @@
 <properties linkid="manage-services-hdinsight-sample-pi-estimator" urlDisplayName="HDInsight Samples" pageTitle="HDInsight Pi estimator 示例 | Azure" metaKeywords="hdinsight, hdinsight sample,  hadoop, mapreduce" description="Learn how to run an Hadoop MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight Pi estimator sample" authors="bradsev" />
-<tags ms.service="hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
 
 # HDInsight Pi estimator 示例
 

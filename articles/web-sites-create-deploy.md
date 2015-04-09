@@ -1,8 +1,4 @@
-<properties linkid="manage-services-how-to-create-websites" urlDisplayName="如何创建" pageTitle="如何创建网站 - Windows Azure 服务管理" metaKeywords="Azure 创建网站, Azure 删除网站" description="了解如何使用 Windows Azure 管理门户创建网站。" metaCanonical="" services="web-sites" documentationCenter="" title="如何创建和部署网站" authors=""  solutions="" writer="timamm" manager="" editor=""  />
-<tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="manage-services-how-to-create-websites" urlDisplayName="如何创建" pageTitle="如何创建网站 - Windows Azure 服务管理" metaKeywords="Azure 创建网站, Azure 删除网站" description="了解如何使用 Windows Azure 管理门户创建网站。" metaCanonical="" services="web-sites" documentationCenter="" title="如何创建和部署网站" authors=""  solutions="" writer="timamm" manager="" editor=""  />
 
 #如何创建网站
 

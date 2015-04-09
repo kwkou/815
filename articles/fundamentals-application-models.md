@@ -1,8 +1,4 @@
-<properties umbracoNaviHide="0" pageTitle="应用程序模型" metaKeywords="Azure, Azure, application model, Azure application model, development model, Azure development model, hosted service, Azure hosted service, web role, worker role" description="了解 Azure 托管服务应用程序模型。了解核心概念、设计注意事项、如何定义和配置应用程序以及缩放。" linkid="dev-net-fundamentals-application-model" urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Application Model" authors="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties umbracoNaviHide="0" pageTitle="应用程序模型" metaKeywords="Azure, Azure, application model, Azure application model, development model, Azure development model, hosted service, Azure hosted service, web role, worker role" description="了解 Azure 托管服务应用程序模型。了解核心概念、设计注意事项、如何定义和配置应用程序以及缩放。" linkid="dev-net-fundamentals-application-model" urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Application Model" authors="" />
 
 
 

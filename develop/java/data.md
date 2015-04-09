@@ -6,10 +6,6 @@ pageTitle="数据服务 - Azure 微软云" metakeywords=""
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
        
 <h1 id="menu-java-data">数据服务</h1>
 <h2 id="header-0">基础</h2>

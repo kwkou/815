@@ -1,8 +1,4 @@
 <properties urlDisplayName="Get Started with authentication in Mobile Services for Xamarin iOS apps" pageTitle="用于 Xamarin iOS 应用程序的移动服务中的身份验证入门 - Azure 移动服务" metaKeywords="" description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 Xamarin iOS 应用程序的用户进行身份验证。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get Started with authentication in Mobile Services" authors="donnam" solutions="" manager="dwrede" editor="" />
-<tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="donnam" />
 

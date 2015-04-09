@@ -1,8 +1,4 @@
-<properties title="Shard Map Management" pageTitle="分片映射管理" description="如何使用 ShardMapManager（.NET 的灵活扩展 API）" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Shard Map Management" pageTitle="分片映射管理" description="如何使用 ShardMapManager（.NET 的灵活扩展 API）" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 #分片映射管理 
 在分片数据库环境中，**分片映射**将维护相关信息，以便应用程序可以根据**分片键**的值连接到相应的数据库。若要管理灵活扩展预览版中的分片，了解这些映射的构造方式至关重要。

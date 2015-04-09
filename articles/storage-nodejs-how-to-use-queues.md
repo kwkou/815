@@ -1,8 +1,4 @@
 <properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Node.js) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Node.js" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Node.js 编写的。" metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

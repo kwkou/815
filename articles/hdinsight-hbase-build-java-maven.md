@@ -1,8 +1,4 @@
 <properties title="Build an HBase application using Maven" pageTitle="借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序 | Azure" description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Azure HDInsight" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
-<tags ms.service="hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2014" ms.author="larryfr"></tags>
 

@@ -1,8 +1,4 @@
 <properties linkid="manage-services-hdinsight-develop-Java-MapReduce-programs-for-HDInsight" urlDisplayName="HDInsight Tutorials" pageTitle="为 HDInsight 开发 Java MapReduce 程序 | Azure" metaKeywords="hdinsight, hdinsight development, hadoop development, hdinsight deployment, development, deployment, tutorial, MapReduce, Java" description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight." services="hdinsight" title="Develop Java MapReduce programs for HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="jgao" />
-<tags ms.service="hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 为 HDInsight 开发 Java MapReduce 程序
 

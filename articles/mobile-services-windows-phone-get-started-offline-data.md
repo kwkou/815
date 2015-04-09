@@ -1,8 +1,4 @@
 <properties linkid="develop-mobile-tutorials-get-started-offline-data-dotnet" urlDisplayName="脱机数据处理入门" pageTitle="移动服务 （Windows Phone） 中的脱机数据入门 |移动开发人员中心" metaKeywords="" description="了解如何在 Windows Phone 应用程序中使用脱机数据。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with offline data in Mobile Services" authors="wesmc" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="12/10/2014" ms.author="wesmc" />
 

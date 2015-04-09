@@ -13,10 +13,6 @@
 
 1. 导航到 [https://account.windowsazure.cn/](https://account.windowsazure.cn/) 并使用您的 Windows Azure 帐户登录。
 2. 单击“预览功能”以查看可用预览项。<br />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
     ![打开“预览功能”选项卡][1]
 3. 向下滚动到您要启用的功能，然后单击“立即试用”。<br />
     ![选择预览功能][2]

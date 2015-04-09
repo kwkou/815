@@ -1,8 +1,4 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-html" urlDisplayName="验证数据 - HTML5" pageTitle="用于验证和修改数据的用户服务器脚本 (HTML 5) | 移动开发人员中心" metaKeywords="" description="了解如何使用服务器脚本验证和修改从 HTML 应用程序发送的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

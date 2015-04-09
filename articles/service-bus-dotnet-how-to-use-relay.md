@@ -1,8 +1,4 @@
 <properties linkid="dev-net-how-to-service-bus-relay" urlDisplayName="Service Bus Relay" pageTitle="如何使用 Service Bus 中继 (.NET) - Azure" metaKeywords="get started azure Service Bus Relay C# " description="了解如何使用 Azure Service Bus 中继服务连接两个托管于不同位置的应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
-<tags ms.service="service-bus"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何使用 Service Bus 中继服务
 

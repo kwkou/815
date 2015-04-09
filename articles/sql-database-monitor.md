@@ -1,8 +1,4 @@
 <properties linkid="manage-services-how-to-monitor-a-sqldb" urlDisplayName="How to monitor" pageTitle="How to monitor a SQL数据库 - Azure service management" metaKeywords="" description="Learn how to monitor a SQL数据库 using the Azure Management Portal." metaCanonical="" services="sql-database" documentationCenter="" title="How to Monitor Logical Servers and Database Instances" authors="" solutions="" manager="" editor="" />
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何监视逻辑服务器和数据库实例
 

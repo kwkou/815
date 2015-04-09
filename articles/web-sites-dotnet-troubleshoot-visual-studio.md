@@ -1,8 +1,4 @@
 <properties title="在 Visual Studio 中排除 Azure 网站的故障" pageTitle="在 Visual Studio 中排除 Azure 网站的故障" metaKeywords="troubleshoot debug azure web site tracing logging" description="了解如何通过内置于 Visual Studio 2013 的远程调试、 跟踪和日志记录工具排除 Azure 网站的故障。" metaCanonical="" services="web-sites" documentationCenter=".NET" authors="tdykstra" solutions="" />
-<tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 在 Visual Studio 中排除 Azure 网站的故障
 

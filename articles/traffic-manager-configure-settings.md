@@ -1,8 +1,4 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Configure 流量管理器 Settings" authors="" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何配置 流量管理器 设置
 

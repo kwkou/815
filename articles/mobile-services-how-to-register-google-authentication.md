@@ -1,8 +1,4 @@
-<properties linkid="develop-mobile-how-to-guides-register-for-google-authentication" urlDisplayName="Register for Google Authentication" pageTitle="注册以进行 Google 身份验证 - 移动服务" metaKeywords="Azure registering application, Azure authentication, Google application authenticate, authenticate mobile services" description="了解如何注册你的应用程序，以便使用 Google 在 Azure 移动服务中进行身份验证。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Google login with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="develop-mobile-how-to-guides-register-for-google-authentication" urlDisplayName="Register for Google Authentication" pageTitle="注册以进行 Google 身份验证 - 移动服务" metaKeywords="Azure registering application, Azure authentication, Google application authenticate, authenticate mobile services" description="了解如何注册你的应用程序，以便使用 Google 在 Azure 移动服务中进行身份验证。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Google login with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
 # 注册应用程序以便在移动服务中进行 Google 登录
 

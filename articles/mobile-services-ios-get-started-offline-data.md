@@ -1,8 +1,4 @@
 <properties urlDisplayName="使用脱机数据" pageTitle="使用移动服务中的脱机数据同步 (iOS) | 移动开发人员中心" metaKeywords="" description="了解如何在 iOS 应用程序中使用 Azure 移动服务缓存和同步脱机数据" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Using Offline data sync in Mobile Services" authors="krisragh" manager="dwrede" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="objective-c" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
 

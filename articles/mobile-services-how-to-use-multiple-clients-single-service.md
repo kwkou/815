@@ -1,8 +1,4 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Considerations for supporting multiple clients from a single mobile service" authors="krisragh" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 通过单个移动服务支持多个设备平台
  

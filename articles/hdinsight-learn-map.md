@@ -1,8 +1,4 @@
 <properties urlDisplayName="Learn HDInsight" pageTitle="HDInsight 学习计划图 | Azure" metaKeywords="" description="Get a suggested flow of resources to go through for learning all you need to know about HDInsight" metaCanonical="" services="hdinsight" documentationCenter="" title="Learning map for HDInsight" authors="nitinme" solutions="big-data" manager="paulettm" editor="cgronlun" />
-<tags ms.service="hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/25/2014" ms.author="nitinme" />
 

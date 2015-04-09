@@ -6,10 +6,6 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
-<tags ms.service="PHP"
-    ms.date=""
-    wacn.date=""
-    />
 
 #PHP开发人员中心
 

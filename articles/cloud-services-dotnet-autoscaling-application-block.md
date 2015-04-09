@@ -1,8 +1,4 @@
 <properties linkid="dev-net-how-to-autoscaling" urlDisplayName="Autoscaling" pageTitle="使用自动缩放应用程序块 (.NET) - Azure" metaKeywords="Azure autoscaling, Azure autoscaling C#, Azure autoscaling .NET" description="了解如何在 Azure 中使用自动缩放应用程序。代码示例用 C# 编写且使用 .NET API。" metaCanonical="" services="cloud-services" documentationCenter=".NET" title="How to Use the Autoscaling Application Block" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cloud-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

@@ -1,8 +1,4 @@
 <properties linkid="dev-net-how-to-use-queue-storage-service-java" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Java) | Microsoft Azure" metaKeywords="Azure Queue Service, Azure Queue storage service, queues peeking, queues insert messages, queues get messages, queues delete messages, create queues, delete queues, Queue service Java" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Java 编写的示例。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Queue storage service from Java" authors="" solutions="" manager="" editor="" />
-<tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

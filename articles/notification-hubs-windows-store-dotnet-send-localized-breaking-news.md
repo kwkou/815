@@ -1,8 +1,4 @@
 <properties linkid="develop-notificationhubs-tutorials-send-localized-breaking-news-windowsdotnet" urlDisplayName="Localized Breaking News" pageTitle="Notification Hubs Localized Breaking News Tutorial" metaKeywords="" description="Learn how to use Azure 服务总线 Notification Hubs to send localized breaking news notifications." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send localized breaking news" authors="ricksal" solutions="" manager="" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用通知中心发送本地化的突发新闻
 

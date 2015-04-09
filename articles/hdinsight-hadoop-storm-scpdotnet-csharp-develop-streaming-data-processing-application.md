@@ -1,8 +1,4 @@
-<properties title="Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight" pageTitle="在 Storm 上使用 SCP.NET 开发流数据处理应用程序 | Azure" description="Learn how to develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight." services="hdinsight" solutions="" documentationCenter="" authors="Qianlin Xia" videoId="" scriptId="" />
-<tags ms.service="hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight" pageTitle="在 Storm 上使用 SCP.NET 开发流数据处理应用程序 | Azure" description="Learn how to develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight." services="hdinsight" solutions="" documentationCenter="" authors="Qianlin Xia" videoId="" scriptId="" />
 
 <tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/15/2014" ms.author="qixia" />
 

@@ -1,12 +1,8 @@
-
+﻿
 以下是完整应用的截屏：
 
 ![](./media/mobile-services-windows-universal-get-started/mobile-quickstart-completed.png)
-<br/>
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />Windows Store 应用
+<br/>Windows Store 应用
 
 ![](./media/mobile-services-windows-universal-get-started/mobile-quickstart-completed-wp8.png)
 <br/>Windows Phone Store 应用

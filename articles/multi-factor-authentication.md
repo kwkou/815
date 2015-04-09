@@ -1,8 +1,4 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="What is Azure Multi-Factor Authentication?" authors="billmath" solutions="" manager="terrylan" editor="lisatoft" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 什么是 Azure 多因素身份验证？
 

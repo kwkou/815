@@ -1,8 +1,4 @@
 <properties pageTitle="Azure Spring 2014 版本亮点 - .NET 开发人员中心" metaKeywords="azure .net sdk 2.3" description="了解提供给 Azure .NET 开发人员的新工具和功能。" documentationCenter=".NET" title="Azure Spring 2014 版本亮点" authors="mollybos" solutions="" manager="carolz" editor="mollybos" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # Azure Spring 2014 版本亮点
 

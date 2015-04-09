@@ -1,8 +1,4 @@
 <properties linkid="manage-services-how-to-create-a-storage-account" urlDisplayName="How to create" pageTitle="如何创建存储帐户 | Azure" metaKeywords="" description="了解如何在 Azure 管理门户中创建存储帐户。" metaCanonical="" services="storage" documentationCenter="" title="How To Create a Storage Account" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
-<tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

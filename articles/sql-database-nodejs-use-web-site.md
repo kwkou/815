@@ -1,8 +1,4 @@
 <properties linkid="develop-nodejs-tutorials-web-site-with-sql-database" urlDisplayName="Web site with SQL数据库" pageTitle="Node.js web site with SQL数据库 - Azure tutorial" metaKeywords="" description="Learn how to create a Node.js website that accesses a SQL数据库 and is deployed to Azure" metaCanonical="" services="web-sites,sql-database" documentationCenter="Node.js" title="Node.js Web Application using the Azure SQL数据库" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="web-sites,sql-database"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用 Azure SQL数据库 创建 Node.js Web 应用程序
 

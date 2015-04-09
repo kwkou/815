@@ -1,8 +1,4 @@
-<properties title="Adding a Shard To an Elastic Scale Application" pageTitle="向弹性缩放应用程序添加分片" description="如何使用弹性缩放 API 将新分片添加到分片集。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Adding a Shard To an Elastic Scale Application" pageTitle="向弹性缩放应用程序添加分片" description="如何使用弹性缩放 API 将新分片添加到分片集。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 # 向弹性缩放应用程序添加分片 
 

@@ -1,8 +1,4 @@
 <properties pageTitle="如何启用 Apple 推送通知" metaKeywords="" description="按照本教程进行操作，创建使用 Azure 移动服务的新服务。" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="How to enable Apple push notifications" authors="glenga" solutions="" manager="dwrede" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
 

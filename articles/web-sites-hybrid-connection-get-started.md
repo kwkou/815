@@ -1,8 +1,4 @@
 <properties linkid="web-sites-hybrid-connection" title="混合连接：将 Azure 网站连接到本地资源" pageTitle="混合连接：将 Azure 网站连接到本地资源" description="在 Azure 网站和使用静态 TCP 端口的本地资源之间创建连接" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
-<tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用混合连接将 Azure 网站连接到本地资源
 

@@ -1,8 +1,4 @@
 <properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="web-sites,virtual-machines,mobile-services,cloud-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 针对 Mac 和 Linux 的 Azure 命令行工具
 

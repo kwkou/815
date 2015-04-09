@@ -1,8 +1,4 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-windowsphone" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="sethm" solutions="" manager="" editor="" />
-<tags ms.service="notification-hubs"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 通知中心入门
 

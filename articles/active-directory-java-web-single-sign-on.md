@@ -1,8 +1,4 @@
 <properties linkid="develop-java-how-to-guides-web-sso" urlDisplayName="Web SSO" pageTitle="Azure Active Directory 包含的单一登录功能 (Java)" metaKeywords="Azure Java web app, Azure single sign-on, Azure Java Active Directory" description="了解如何使用 Azure Active Directory 包含的单一登录创建 Java Web 应用程序。" metaCanonical="" services="active-directory" documentationCenter="Java" title="通过 Java 和 Azure Active Directory 实现的 Web 单一登录" authors="" solutions="" manager="" editor="" />
-<tags ms.service="active-directory"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 通过 Java 和 Azure Active Directory 实现的 Web 单一登录
 

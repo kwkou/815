@@ -1,4 +1,4 @@
-由于 Android SDK 的持续开发，安装在 Eclipse 中的 Android SDK 版本可能与您的代码中的版本不匹配。本教程中引用的 Android SDK 是版本 19，也是撰写本教程时的最新版本。随着 SDK 的新版本问世，版本号也会随之增加，我们建议使用最新版本。
+﻿由于 Android SDK 的持续开发，安装在 Eclipse 中的 Android SDK 版本可能与您的代码中的版本不匹配。本教程中引用的 Android SDK 是版本 19，也是撰写本教程时的最新版本。随着 SDK 的新版本问世，版本号也会随之增加，我们建议使用最新版本。
 
 版本不匹配的两种表现是：
 
@@ -16,9 +16,5 @@
 	 	    <uses-sdk
 	 	        android:minSdkVersion="8"
 	 	        android:targetSdkVersion="19" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 	
 3. 在 Eclipse 程序包资源管理器中，右键单击项目节点，选择"属性"，并在左栏中选择"Android"。确认"项目生成目标"设置为与 **targetSdkVersion** 相同的 SDK 版本。

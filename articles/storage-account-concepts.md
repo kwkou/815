@@ -1,8 +1,4 @@
 <properties umbracoNaviHide="0" pageTitle="存储帐户概念 | Azure" metaKeywords="Azure storage, storage service, service, storage account, account, create storage account, create account" description="了解有关存储帐户的概念。"linkid="manage-windows-how-to-guide-storage-accounts" urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" title="Storage Account Concepts" services="storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
-<tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

@@ -7,10 +7,6 @@
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <h1 id="menu-media-services-resources">教程和资源</h1>
 <p>了解如何用 Azure 媒体服务生成应用程序。</p>

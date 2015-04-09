@@ -1,8 +1,4 @@
 <properties linkid="manage-services-hdinsight-howto-upload-data-to-hdinsight" urlDisplayName="Upload Data" pageTitle="将数据上传到 HDInsight" metaKeywords="" description="Learn how to upload and access data in HDInsight using Azure Storage Explorer, the interactive console, the Hadoop command line, or Sqoop." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Upload data to HDInsight" authors="jgao" solutions="" manager="paulettm" editor="Haifeng Liu" />
-<tags ms.service="storage,hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 将数据上传到 HDInsight
 

@@ -1,8 +1,4 @@
 <properties title="How to make a phone call from Twilio (PHP) - Azure" pageTitle="How to make a phone call from Twilio (PHP) - Azure" metaKeywords="Azure PHP Twilio, Azure Twilio, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages, PHP twilio Azure" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Samples are for PHP application." documentationCenter="PHP" services="" solutions="" videoId="" scriptId="" authors="robmcm" manager="wpickett" editor="mollybos" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何在 Azure 的 PHP 应用程序中使用 Twilio 发起电话呼叫
 

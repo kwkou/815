@@ -1,8 +1,4 @@
-<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web 应用程序在 Azure 中使用 Linux 虚拟机" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="托管 Ruby on Rails 基于在 Azure 中使用 Linux 虚拟机的网站。 " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web 应用程序在 Azure 中使用 Linux 虚拟机" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="托管 Ruby on Rails 基于在 Azure 中使用 Linux 虚拟机的网站。 " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
 
 
 

@@ -1,8 +1,4 @@
 <properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create & provision" pageTitle="SQL数据库 入门 - Azure" metaKeywords="" description="开始在 Azure 中创建和管理 SQL数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="Azure SQL数据库 入门" authors=""  solutions="" writer="" manager="" editor=""  />
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
 
 # Azure SQL数据库 入门
 

@@ -1,8 +1,4 @@
-<properties title="Data Dependent Routing" pageTitle="分片灵活性" description="介绍了分片灵活性（可轻松向外扩展 Azure SQL Database 的能力）的概念并提供了相关示例。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Data Dependent Routing" pageTitle="分片灵活性" description="介绍了分片灵活性（可轻松向外扩展 Azure SQL Database 的能力）的概念并提供了相关示例。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 # 分片灵活性 
 

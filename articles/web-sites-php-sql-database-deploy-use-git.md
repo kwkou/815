@@ -1,8 +1,4 @@
 <properties linkid="develop-php-website-with-sql-database-and-git" urlDisplayName="Web w/ SQL + Git" pageTitle="PHP web site with SQL数据库 and Git - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in SQL数据库 and use Git deployment to Azure." metaCanonical="" services="web-sites,sql-database" documentationCenter="PHP" title="Create a PHP web site with a SQL数据库 and deploy using Git" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
-<tags ms.service="web-sites,sql-database"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 创建带 SQL数据库 的 PHP 网站并使用 Git 进行部署
 

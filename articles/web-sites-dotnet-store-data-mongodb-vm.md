@@ -1,8 +1,4 @@
 <properties linkid="develop-dotnet-website-with-mongodb-vm" urlDisplayName="Website with MongoDB VM" pageTitle="在虚拟机上使用 MongoDB 的 .NET 网站 - Azure" metaKeywords="Azure Git ASP.NET MongoDB, Git .NET, Git MongoDB, ASP.NET MongoDB, Azure MongoDB, Azure ASP.NET, Azure tutorial" description="本教程将向您介绍如何使用 Git 将 ASP.NET 应用程序部署到连接至虚拟机上 MongoDB 的 Azure 网站。" metaCanonical="" services="web-sites,virtual-machines" documentationCenter=".NET" title="创建连接到在 Azure 内的虚拟机上运行的 MongoDB 的 Azure 网站" authors="" solutions="" manager="" editor="" />
-<tags ms.service="web-sites,virtual-machines"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 创建连接到在 Azure 内的虚拟机上运行的 MongoDB 的 Azure 网站
 

@@ -1,8 +1,4 @@
-<properties title="Multi-Shard Querying" pageTitle="多分片查询" description="使用灵活扩展 API 在分片之间运行查询。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, multi-shard, multishard, querying" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Multi-Shard Querying" pageTitle="多分片查询" description="使用灵活扩展 API 在分片之间运行查询。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, multi-shard, multishard, querying" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 
 #多分片查询

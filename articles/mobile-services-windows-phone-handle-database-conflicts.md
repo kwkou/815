@@ -1,8 +1,4 @@
 <properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-wp8" urlDisplayName="乐观并发" pageTitle="处理与乐观并发的数据库写入冲突（Windows 应用商店）| 移动开发人员中心" metaKeywords="" description="了解如何在服务器上以及 Windows 应用商店应用程序中处理数据库写入冲突。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conlicts" authors="wesmc" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 处理数据库写入冲突
 

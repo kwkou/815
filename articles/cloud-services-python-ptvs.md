@@ -1,8 +1,4 @@
-<properties linkid="develop-python-cloud-services-with-ptvs" urlDisplayName="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" pageTitle="使用 Python Tools 2.1 for Visual Studio 创建 Python Web 角色和辅助角色" metaKeywords="Azure python, web role, worker role, PTVS, cloud service" description="概述如何使用 Python Tools for Visual Studio 创建 Azure 云服务，包括 Web 角色和辅助角色。" metaCanonical="" services="" documentationCenter="Python" title="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" authors="huvalo" solutions="" manager="wpickett" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="develop-python-cloud-services-with-ptvs" urlDisplayName="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" pageTitle="使用 Python Tools 2.1 for Visual Studio 创建 Python Web 角色和辅助角色" metaKeywords="Azure python, web role, worker role, PTVS, cloud service" description="概述如何使用 Python Tools for Visual Studio 创建 Azure 云服务，包括 Web 角色和辅助角色。" metaCanonical="" services="" documentationCenter="Python" title="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" authors="huvalo" solutions="" manager="wpickett" editor="" />
 
 # 使用 Python Tools 2.1 for Visual Studio 创建 Python Web 角色和辅助角色
 

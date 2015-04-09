@@ -1,8 +1,4 @@
-<properties linkid="manage-windows-other-resource-sharepoint-wp" urlDisplayName="SharePoint on Azure" pageTitle="Azure 虚拟机上的 SharePoint 2010 部署" metaKeywords="" description="了解用于在 Azure 虚拟机上使用 SharePoint 2010 的支持的方案。" metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint Deployment on Azure Virtual Machines" authors="" solutions="" manager="" editor="" />
-<tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="manage-windows-other-resource-sharepoint-wp" urlDisplayName="SharePoint on Azure" pageTitle="Azure 虚拟机上的 SharePoint 2010 部署" metaKeywords="" description="了解用于在 Azure 虚拟机上使用 SharePoint 2010 的支持的方案。" metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint Deployment on Azure Virtual Machines" authors="" solutions="" manager="" editor="" />
 
 
 

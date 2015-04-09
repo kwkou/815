@@ -1,8 +1,4 @@
 <properties linkid="develop-mobile-how-to-guides-register-for-active-directory-authentication" urlDisplayName="Register for Azure Active Directory Authentication" pageTitle="注册以进行 Azure Active Directory 身份验证 - 移动服务" metaKeywords="Azure registering application, Azure Active Directory authentication, application authenticate, authenticate mobile services" description="了解如何在移动服务应用程序中注册以进行 Azure Active Directory 身份验证." title="Register your account to use an Azure Active Directory account login" authors="wesmc" services="mobile-services" documentationCenter="Mobile" />
-<tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
 

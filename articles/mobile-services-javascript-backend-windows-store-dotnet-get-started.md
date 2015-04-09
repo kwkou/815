@@ -1,8 +1,4 @@
 <properties pageTitle="Windows 应用商店应用程序移动服务入门 | 移动开发人员中心" metaKeywords="" description="请按照本教程开始使用 Azure 移动服务在 C# 或 JavaScript 中进行 Windows 应用商店开发。 " metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
-<tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="hero-article" ms.date="08/18/2014" ms.author="glenga" />
 

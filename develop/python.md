@@ -6,10 +6,6 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
-<tags ms.service="PYTHON"
-    ms.date=""
-    wacn.date=""
-    />
 
 #PYTHON开发人员中心
 

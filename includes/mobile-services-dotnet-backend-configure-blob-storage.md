@@ -53,10 +53,6 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 4. 在 Visual Studio 中的 Solution Explorer 内，打开移动服务项目的 Web.config 文件并添加以下新应用设置，将占位符替换为您刚才在门户中设置的存储帐户名称和访问密钥：
 
 		<add key="STORAGE_ACCOUNT_NAME" value="**your_account_name**" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 		<add key="STORAGE_ACCOUNT_ACCESS_KEY" value="**your_access_token_secret**" />
 
 	移动服务在本地计算机上运行时将使用这些存储的设置，这让你在发布代码之前对代码进行测试。在 Azure 中运行时，移动服务将改用门户中设置的应用设置值，并忽略这些项目设置。 

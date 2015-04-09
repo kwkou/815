@@ -1,8 +1,4 @@
 <properties linkid="develop-php-website-with-mysql-and-webmatrix" urlDisplayName="Web w/ WebMatrix" pageTitle="带 MySQL 和 WebMatrix 的 PHP 网站 - Azure 教程" metaKeywords="" description="演示如何使用免费的 WebMatrix IDE 创建和部署在 MySQL 中存储数据的 PHP 网站的教程。" metaCanonical="" services="web-sites" documentationCenter="PHP" title="使用 WebMatrix 创建和部署 PHP-MySQL Azure 网站" authors="" solutions="" manager="" editor="mollybos" />
-<tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用 WebMatrix 创建和部署 PHP-MySQL Azure 网站
 

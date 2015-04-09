@@ -1,8 +1,4 @@
 <properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="了解如何使用 Microsoft Azure 文件存储创建文件共享和管理文件内容。相关示例用 PowerShell 和 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
-<tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何使用 Azure 文件存储
 

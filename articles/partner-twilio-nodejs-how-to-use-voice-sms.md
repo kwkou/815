@@ -1,8 +1,4 @@
 <properties linkid="dev-nodejs-how-to-twilio-voice-sms-service" urlDisplayName="Twilio Voice and SMS Service" pageTitle="在 Azure 中使用 Twilio for Voice、VoIP 和 SMS 消息传递" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="Node.js" title=" VoIP" authors="" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 在 Azure 中使用 Twilio for Voice、VoIP 和 SMS 消息传递
 

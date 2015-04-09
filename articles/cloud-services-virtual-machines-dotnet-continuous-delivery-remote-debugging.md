@@ -1,8 +1,4 @@
-<properties urlDisplayName="Enable remote debugging with continuous delivery" pageTitle="使用连续交付功能时启用远程调试" metaKeywords="" description="了解在使用连续交付功能部署到 Azure 时如何启用远程调试。" metaCanonical="" services="cloud-services,virtual machines" documentationCenter=".NET" title="Enable remote debugging when using continuous delivery to publish to Azure" authors="kempb" solutions="" manager="douge" editor="" />
-<tags ms.service="cloud-services,virtual machines"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties urlDisplayName="Enable remote debugging with continuous delivery" pageTitle="使用连续交付功能时启用远程调试" metaKeywords="" description="了解在使用连续交付功能部署到 Azure 时如何启用远程调试。" metaCanonical="" services="cloud-services,virtual machines" documentationCenter=".NET" title="Enable remote debugging when using continuous delivery to publish to Azure" authors="kempb" solutions="" manager="douge" editor="" />
 
 
 # 使用连续交付功能发布到 Azure 时如何启用远程调试

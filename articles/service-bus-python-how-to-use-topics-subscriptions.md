@@ -1,8 +1,4 @@
 <properties linkid="develop-python-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (Python) - Azure" metaKeywords="Get started Azure Service Bus topics publising subscribe messaging Python" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Python 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
-<tags ms.service="service-bus"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

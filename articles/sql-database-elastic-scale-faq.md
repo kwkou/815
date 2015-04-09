@@ -1,8 +1,4 @@
-<properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 灵活扩展常见问题" description="关于 Azure SQL Database 灵活扩展的常见问题。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 灵活扩展常见问题" description="关于 Azure SQL Database 灵活扩展的常见问题。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
 
 # Azure SQL Database 灵活扩展常见问题 
 

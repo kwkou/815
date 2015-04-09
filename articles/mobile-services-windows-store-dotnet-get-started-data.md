@@ -1,8 +1,4 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-dotnet-vs2013" urlDisplayName="数据处理入门" pageTitle="数据处理入门（Windows 应用商店）| 移动开发人员中心" metaKeywords="" description="了解如何开始使用移动服务来利用 Windows 应用商店应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

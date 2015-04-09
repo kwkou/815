@@ -15,10 +15,6 @@
 <p>要完成本教程，您需要一个 Azure 帐户。只需几分钟即可创建一个免费试用帐户。有关详细信息，请参阅<a href="http://www.windowsazure.cn/zh-cn/develop/php/tutorials/create-a-windows-azure-account/" target="_blank">创建 Azure 帐户</a>。</p>
 </div>
 <br />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 ## 在门户中创建网站
 

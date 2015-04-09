@@ -1,8 +1,4 @@
-<properties linkid="dev-node-remotedesktop" urlDisplayName="Enable Remote Desktop" pageTitle="对云服务启用远程桌面 (Node.js))" metaKeywords="Azure Node.js remote access, Azure Node.js remote connection, Azure Node.js VM access, Azure Node.js virtual machine access" description="了解如何对托管 Azure Node.js 应用程序的虚拟机进行远程桌面访问。 " metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Enabling Remote Desktop in Azure" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="cloud-services"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="dev-node-remotedesktop" urlDisplayName="Enable Remote Desktop" pageTitle="对云服务启用远程桌面 (Node.js))" metaKeywords="Azure Node.js remote access, Azure Node.js remote connection, Azure Node.js VM access, Azure Node.js virtual machine access" description="了解如何对托管 Azure Node.js 应用程序的虚拟机进行远程桌面访问。 " metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Enabling Remote Desktop in Azure" authors="larryfr" solutions="" manager="" editor="" />
 
 
 

@@ -1,8 +1,4 @@
 <properties linkid="develop-java-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Azure (Java) - Azure 功能指南" metaKeywords="" description="了解如何通过 Java 代码使用 Azure SQL Database。 " metaCanonical="" services="sql-database" documentationCenter="Java" title="How to Use Azure SQL Database in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何通过 Java 使用 Azure SQL Database
 

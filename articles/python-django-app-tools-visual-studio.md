@@ -1,8 +1,4 @@
 <properties linkid="develop-python-django-with-visual-studio" urlDisplayName="Django with Visual Studio" pageTitle="Django with Visual Studio (Python) - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to build a Django web application hosted in an Azure virtual machine." metaCanonical="" services="cloud-services" documentationCenter="Python" title="Creating Django applications with Python Tools for Visual Studio 1.5" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cloud-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用 Python Tools for Visual Studio 1.5 创建 Django 应用程序
 

@@ -1,8 +1,4 @@
 <properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL数据库 server and Storage account." metaCanonical="http://www.windowsazure.cn/en-us/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
-<tags ms.service="biztalk-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 使用 Azure 管理门户创建 BizTalk 服务
 

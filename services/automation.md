@@ -2,10 +2,6 @@
 <properties
     pageTitle="自动化 - Azure 微软云" 
     metakeywords="Azure,automation,微软云,技术文档,技术资源,新手入门,入门指南,文档下载,runbook" description="了解如何利用流程自动化来简化云管理.本文档可帮助你开始在 Azure 环境中创作备份自动化以及自动化资源。" services="自动化" documentationCenter="" authors="" manager="Tiffena" editor="Eric Chen"/>
-<tags ms.service="自动化"
-    ms.date=""
-    wacn.date=""
-    />
 
 #自动化文档<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag">预览</sup>
 

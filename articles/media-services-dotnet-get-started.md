@@ -1,8 +1,4 @@
 <properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor="" />
-<tags ms.service="media-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 Media Services 入门
 ===================

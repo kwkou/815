@@ -1,8 +1,4 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-js-vs2013" urlDisplayName="开始使用推送 (JS)" pageTitle="开始使用推送通知 (Android JavaScript) |移动开发人员中心" metaKeywords="" description="了解如何使用 Windows Azure 移动服务向 Android JavaScript 应用程序发送推送通知。" metaCanonical="http://www.windowsazure.cn/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal"  solutions="" writer="ricksal" manager="" editor=""  />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="10/16/2014" ms.author="ricksal" />
 

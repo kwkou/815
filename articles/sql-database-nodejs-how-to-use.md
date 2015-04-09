@@ -1,8 +1,4 @@
 <properties linkid="develop-node-how-to-sql-database" urlDisplayName="SQL数据库" pageTitle="How to use SQL数据库 (Node.js) - Azure feature guide" metaKeywords="" description="Learn how to use Azure SQL数据库 from Node.js." metaCanonical="" services="sql-database" documentationCenter="Node.js" title="How to Access Azure SQL数据库 from Node.js" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何从 Node.js 访问 Azure SQL数据库
 

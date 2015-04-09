@@ -1,8 +1,4 @@
-<properties linkid="manage-linux-howto-linux-agent" urlDisplayName="Linux Agent guide" pageTitle="Azure Linux 代理用户指南" metaKeywords="" description="了解如何安装和配置 Linux 代理 (waagent) 以管理您的虚拟机与 Azure 结构控制器的交互。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure Linux Agent User Guide" authors="" solutions="" manager="" editor="" />
-<tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="manage-linux-howto-linux-agent" urlDisplayName="Linux Agent guide" pageTitle="Azure Linux 代理用户指南" metaKeywords="" description="了解如何安装和配置 Linux 代理 (waagent) 以管理您的虚拟机与 Azure 结构控制器的交互。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure Linux Agent User Guide" authors="" solutions="" manager="" editor="" />
 
 
 

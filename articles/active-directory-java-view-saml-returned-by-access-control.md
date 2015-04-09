@@ -1,8 +1,4 @@
 <properties linkid="develop-java-how-to-guides-view-saml-returned-by-acs" urlDisplayName="View ACS SAML" pageTitle="查看 Access Control 服务返回的 SAML (Java)" metaKeywords="" description="了解如何通过 Azure 上托管的 Java 应用程序查看 Access Control 服务返回的 SAML。" metaCanonical="" services="" documentationCenter="Java" title="如何查看 Azure Access Control 服务返回的 SAML" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 # 如何查看 Azure Access Control 服务返回的 SAML
 

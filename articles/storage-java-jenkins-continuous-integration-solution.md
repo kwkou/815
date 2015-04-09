@@ -1,8 +1,4 @@
 <properties linkid="develop-java-tutorials-jenkins-continuous-integration" urlDisplayName="Jenkins Continuous Integration" pageTitle="将 Azure 存储用于 Jenkins 持续集成解决方案 | Microsoft Azure" metaKeywords="" description="本教程演示如何使用 Azure Blob 服务作为 Jenkins 持续集成解决方案创建的生成项目的存储库。" metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Jenkins Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
-<tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
-    />
 
 #将 Azure 存储空间用于 Jenkins 持续集成解决方案
 

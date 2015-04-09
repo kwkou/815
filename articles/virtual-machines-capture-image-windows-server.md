@@ -1,8 +1,4 @@
-<properties linkid="manage-windows-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="捕获运行 Windows Server 的虚拟机的映像" metaKeywords="Azure capture image vm, capturing vm" description="了解如何捕获运行 Windows Server 2008 R2 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
-<tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="manage-windows-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="捕获运行 Windows Server 的虚拟机的映像" metaKeywords="Azure capture image vm, capturing vm" description="了解如何捕获运行 Windows Server 2008 R2 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 
 #如何捕获一台要用作模板的 Windows 虚拟机#
 

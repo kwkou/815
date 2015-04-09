@@ -1,8 +1,4 @@
 <properties linkid="develop-python-service-management" urlDisplayName="Service Management" pageTitle="如何使用服务管理 API (Python) - 功能指南" metaKeywords="" description="了解如何以编程方式从 Python 执行常见服务管理任务。" metaCanonical="" services="cloud-services" documentationCenter="Python" title="How to use Service Management from Python" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cloud-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

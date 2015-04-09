@@ -7,10 +7,6 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
-<tags ms.service="Media Services"
-    ms.date=""
-    wacn.date=""
-    />
 
 #媒体服务
 

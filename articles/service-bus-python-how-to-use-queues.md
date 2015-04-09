@@ -1,8 +1,4 @@
 <properties linkid="develop-python-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (Python) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Python" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 Python 编写的。" metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Queues" authors="" solutions="" manager="" editor="" />
-<tags ms.service="service-bus"
-    ms.date=""
-    wacn.date=""
-    />
 
 
 

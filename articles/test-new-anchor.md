@@ -6,10 +6,6 @@
 	authors="" 
 	manager="Tiffena" 
 	editor="Eric Chen"/>
-<tags ms.service="media-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="test" ms.date="03/12/2015" wacn.date="03/27/2015"/>
 

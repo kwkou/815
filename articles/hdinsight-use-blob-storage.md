@@ -1,8 +1,4 @@
 <properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="将 Azure Blob 存储与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
-<tags ms.service="storage,hdinsight"
-    ms.date=""
-    wacn.date=""
-    />
 
 # 将 Azure Blob 存储与 HDInsight 配合使用
 

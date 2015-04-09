@@ -1,8 +1,4 @@
-<properties linkid="develop-mobile-tutorials-add-paging-to-data-ios" urlDisplayName="为数据添加分页" pageTitle="为数据添加分页 (iOS) | 移动开发人员中心" metaKeywords="" description="了解如何使用分页来管理从移动服务返回给 iOS 应用程序的数据量。" metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties linkid="develop-mobile-tutorials-add-paging-to-data-ios" urlDisplayName="为数据添加分页" pageTitle="为数据添加分页 (iOS) | 移动开发人员中心" metaKeywords="" description="了解如何使用分页来管理从移动服务返回给 iOS 应用程序的数据量。" metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="" solutions="" manager="" editor="" />
 
 
 

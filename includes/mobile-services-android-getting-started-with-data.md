@@ -11,10 +11,6 @@
 4. 打开 AndroidManifest.xml 文件并添加以下代码行，以便应用能够访问 Azure 中的移动服务。
 
 		<uses-permission android:name="android.permission.INTERNET" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 5. 在"程序包资源管理器"中，打开位于 com.example.getstartedwithdata 程序包中的 TodoActivity.java 文件，并且取消注释以下代码行： 
 
