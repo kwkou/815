@@ -25,7 +25,7 @@
 
 ##测试Learning Map
 
-<object type="image/svg+xml" data="http://wacnstorage.blob.core.chinacloudapi.cn/tech-content/articles/media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
+<object type="image/svg+xml" data="http://wacnstorage.blob.core.chinacloudapi.cn/tech-content/articles/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
 
 >[AZURE.NOTE]
