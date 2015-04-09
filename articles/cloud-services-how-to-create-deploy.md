@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-services-how-to-create-and-deploy-a-cloud-service" urlDisplayName="How to create and deploy" pageTitle="如何创建和部署云服务 - Azure" metaKeywords="Azure creating cloud service, deleting cloud service" description="了解如何在 Azure 中使用"快速创建"方法创建和部署云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="ryanwi" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-create-and-deploy-a-cloud-service" urlDisplayName="How to create and deploy" pageTitle="如何创建和部署云服务 - Azure" metaKeywords="Azure creating cloud service, deleting cloud service" description="了解如何在 Azure 中使用"快速创建"方法创建和部署云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="ryanwi" solutions="" manager="" editor="" />
+<tags ms.service="cloud-services"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

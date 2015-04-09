@@ -1,4 +1,8 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Use Media Services" authors="" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 如何使用 Media Services
 =======================

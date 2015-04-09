@@ -1,4 +1,8 @@
 <properties urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="piyushjo" solutions="" manager="dwrede" editor="" />
+<tags ms.service="notification-hubs"
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="mm/dd/yyyy" ms.author="piyushjo"></tags>
 

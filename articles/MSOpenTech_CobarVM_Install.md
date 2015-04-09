@@ -179,6 +179,10 @@ schema.xml 配置如下 (注意： schema.xml 包含 MySQL 的 IP、端口、用
      <!-- schema定义 -->
      <schema name="dbtest" dataNode="dnTest1">
      <table name="tb2" dataNode="dnTest2,dnTest3" rule="rule1" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
     </schema>
      
      <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->

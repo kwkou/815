@@ -1,4 +1,8 @@
 <properties linkid="develop-net-common-tasks-diagnostics-logging-and-instrumentation" urlDisplayName="Enable diagnostic logging" pageTitle="启用诊断日志记录 - Azure 网站" metaKeywords="Azure diagnostics web sites, Azure Management Portal diagnostics, Azure diagnostics, web site diagnostics, web site debug" description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="启用 Azure 网站的诊断日志记录 " authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="web-sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 启用 Azure 网站的诊断日志记录
 

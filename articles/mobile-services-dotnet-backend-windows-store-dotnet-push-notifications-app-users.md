@@ -1,4 +1,8 @@
 <properties linkid="mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users" pageTitle="向经过身份验证的用户发送推送通知" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="Learn how to send push notifications to specific " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="Haifeng liu" />
+<tags ms.service="mobile-services,notification-hubs"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 向经过身份验证的用户发送推送通知
 

@@ -1,4 +1,8 @@
 <properties linkid="video-center-index" urlDisplayName="index" pageTitle="Use ASP.NET session state with Azure Web Sites" metaKeywords="azure cache service session state" description="Learn how to use the Azure Cache Service to support ASP.NET session state caching." metaCanonical="" services="cache" documentationCenter=".NET" title="How to Use ASP.NET Session State with Azure Web Sites" authors="jroth" solutions="" manager="" editor="mollybos" />
+<tags ms.service="cache"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何将 ASP.NET 会话状态用于 Azure 网站
 

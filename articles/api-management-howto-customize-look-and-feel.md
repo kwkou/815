@@ -1,4 +1,8 @@
 <properties pageTitle="如何在 Azure API 管理中自定义开发人员门户的外观" metaKeywords="" description="如何在 Azure API 管理中自定义开发人员门户的外观。" metaCanonical="" services="" documentationCenter="API Management" title="如何在 Azure API 管理中自定义开发人员门户的外观" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何在 Azure API 管理中自定义开发人员门户的外观
 

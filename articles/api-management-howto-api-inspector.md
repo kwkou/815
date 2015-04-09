@@ -1,4 +1,8 @@
 <properties pageTitle="如何使用 API 检查器跟踪 Azure API 管理中的调用" metaKeywords="" description="了解如何使用 API 检查器跟踪 Azure API 管理中的调用。" metaCanonical="" services="" documentationCenter="API Management" title="如何使用 API 检查器跟踪 Azure API 管理中的调用" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何使用 API 检查器跟踪 Azure API 管理中的调用
 

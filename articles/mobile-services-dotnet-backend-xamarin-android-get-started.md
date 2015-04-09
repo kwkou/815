@@ -1,4 +1,8 @@
 <properties urlDisplayName="Get Started with Mobile Services for Xamarin Android apps" pageTitle="用于 Xamarin Android 应用程序的移动服务入门 - Azure 移动服务" metaKeywords="" description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin Android 开发" metaCanonical="" services="" documentationCenter="Mobile" title="Get Started with Mobile Services for Xamarin Android apps" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-android" ms.devlang="dotnet" ms.topic="article" ms.date="11/11/2014" ms.author="donnam" />
 

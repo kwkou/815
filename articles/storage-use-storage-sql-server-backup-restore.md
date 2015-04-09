@@ -1,4 +1,8 @@
 <properties linkid="manage-services-storage-SQL-Server-backup" urlDisplayName="Storage for SQL Server backups" pageTitle="如何将 Azure 存储空间用于 SQL Server 备份和还原 | Azure" metaKeywords="" description="" metaCanonical="" services="storage" documentationCenter="" title="How to Use Azure Storage for SQL Server Backup and Restore" authors="karaman" solutions="" manager="clairt" editor="tysonn" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

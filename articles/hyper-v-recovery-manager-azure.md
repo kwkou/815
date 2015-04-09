@@ -1,5 +1,9 @@
 <properties urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Azure Site Recovery 入门：使用 Hyper-V 复制提供本地到 Azure 的保护" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines located in on-premises VMM clouds to Azure." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises VMM Site to Azure protection with Hyper-V Replication
 " editor="jimbe" manager="johndaw" authors="raynew" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

@@ -1,4 +1,8 @@
 <properties linkid="develop-java-how-to-add-a-certificate" urlDisplayName="Add a Cert to the CA Store" pageTitle="Add a certificate to the Java CA store - Azure" metaKeywords="Azure Twilio Java, Twilio Java Certificate, Azure 服务总线 Certificate" description="Learn how to add a certificate authority (CA) certificate to the Java CA certificate (cacerts) store for Twilio service or Azure 服务总线." metaCanonical="" services="" documentationCenter="Java" title="Adding a Certificate to the Java CA Certificates Store" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 将证书添加到 Java CA 证书存储
 

@@ -1,4 +1,8 @@
 <properties linkid="manage-services-import-export" urlDisplayName="Azure Import/Export Service" pageTitle="使用导入/导出将数据传输到 Blob 存储 | Microsoft Azure" metaKeywords="" description="了解如何在 Azure 管理门户中创建导入和导出作业，以将数据传输到 blob 存储中。" metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Using the Azure Import/Export Service to Transfer Data to Blob Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

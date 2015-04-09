@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-js" urlDisplayName="Get Started with Data" pageTitle="Get started with data (JavaScript) - Mobile Services" metaKeywords="" description="Learn how to get started using data with Azure Mobile Services." metaCanonical="https://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/" disqusComments="1" umbracoNaviHide="1" title="Get started with data in Mobile Services using Visual Studio 2012" documentationCenter="Mobile" authors="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 # 使用 Visual Studio 2012 的移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding"> 

@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-android" urlDisplayName="Get Started with Data - Android" pageTitle="数据处理入门 (Android) | 移动开发人员中心" metaKeywords="Azure android data, Azure mobile services data, windows droid, windows android, microsoft droid, microsoft android" description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="移动服务中的数据处理入门" authors="ricksal,glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 移动服务中的数据处理入门
 

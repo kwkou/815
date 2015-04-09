@@ -1,4 +1,4 @@
-﻿## <a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
+## <a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
 
 1. 在 Visual Studio 2012 中，打开 Package.appxmanifest 文件，并在"功能"选项卡中启用"网络摄像机"和"麦克风"功能。
 
@@ -12,6 +12,10 @@
             <TextBox Name="TextInput" Margin="5" MaxHeight="40" MinWidth="300"></TextBox>
             <Button Name="btnTakePhoto" Style="{StaticResource PhotoAppBarButtonStyle}"
                     Click="OnTakePhotoClick" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
             <Button Name="ButtonSave" Style="{StaticResource UploadAppBarButtonStyle}" 
                     Click="ButtonSave_Click"/>
         </StackPanel>

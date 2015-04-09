@@ -1,4 +1,8 @@
 <properties linkid="develop-nodejs-how-to-guides-service-bus-notification-hubs" urlDisplayName="Notification Hubs" pageTitle="服务总线 Notification Hubs - Node.js Dev Center" metaKeywords="" description="Learn how to use 服务总线 Notification Hubs to send push notifications. Code samples are written for Node.js applications." metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use 服务总线 Notification Hubs" authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何使用 服务总线 通知中心
 

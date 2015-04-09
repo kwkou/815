@@ -1,4 +1,8 @@
 <properties linkid="manage-services-cross-premises-connectivity" urlDisplayName="Cross-premises Connectivity" pageTitle="Create a cross-premises virtual network - Azure" metaKeywords="" description="Learn how to create an Azure Virtual Network with cross-premises connectivity." metaCanonical="" services="virtual-network" documentationCenter="" title="Create a Virtual Network for Site-to-Site Cross-Premises Connectivity" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-network"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 创建虚拟网络进行站点到站点跨界连接
 

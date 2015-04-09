@@ -1,4 +1,8 @@
 <properties title="How to Configure PHP in Azure Web Sites" pageTitle="How to Configure PHP in Azure Web Sites" metaKeywords="Azure, Azure Web Sites, configuration, PHP" description="Learn how to configure the default PHP installation or add a custom PHP installation in Azure Web Sites." services="Web Sites" documentationCenter="PHP" authors="" />
+<tags ms.service="Web Sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何在 Azure 网站中配置 PHP
 

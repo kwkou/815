@@ -1,4 +1,8 @@
-﻿<properties linkid="develop-net-tutorials-push-notifications-to-users-ios" urlDisplayName="将通知推送到用户 (iOS)" pageTitle="将通知推送到用户 (iOS) |移动开发人员中心" metaKeywords="" description="了解如何使用移动服务向 iOS 应用程序用户推送通知。" metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-net-tutorials-push-notifications-to-users-ios" urlDisplayName="将通知推送到用户 (iOS)" pageTitle="将通知推送到用户 (iOS) |移动开发人员中心" metaKeywords="" description="了解如何使用移动服务向 iOS 应用程序用户推送通知。" metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

@@ -1,4 +1,8 @@
 <properties urlDisplayName="Build a Service Using a Non-Relational Data Store" pageTitle="使用非关系数据存储构建服务 - Azure 移动服务" metaKeywords="" description="了解如何使用非关系数据存储（如 MongoDB 或 Azure 表存储）用于基于 .NET 的移动服务" metaCanonical="" services="" documentationCenter="Mobile" title="Build a Service Using a Non-Relational Data Store" authors="yavorg, mahender" solutions="" manager="dwrede" editor="mollybos" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="mahender" />
 

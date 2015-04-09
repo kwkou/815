@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-wp8" urlDisplayName="数据处理入门" pageTitle="数据处理 (WP8) 入门 - Azure 移动服务" metaKeywords="" description="了解如何使用来自 Azure 移动服务 Windows Phone 8 应用程序的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/19/2014" ms.author="glenga" />
 

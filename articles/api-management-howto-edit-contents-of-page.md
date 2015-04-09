@@ -1,4 +1,8 @@
 <properties pageTitle="如何在 Azure API 管理中编辑应用程序的内容" metaKeywords="" description="如何在 Azure API 管理中编辑应用程序的内容。" metaCanonical="" services="" documentationCenter="API Management" title="如何在 Azure API 管理中编辑应用程序的内容" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何在 Azure API 管理中编辑应用程序的内容
 

@@ -1,4 +1,8 @@
-﻿<properties pageTitle="使用移动服务在表存储中存储数据 | 移动服务" metaKeywords="" description="了解如何使用移动服务在表存储中存储数据。" metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Store data in Azure Table Storage using Mobile Services" authors="yuaxu" writer="yuaxu" services="mobile-services,storage" manager="dwrede" />
+<properties pageTitle="使用移动服务在表存储中存储数据 | 移动服务" metaKeywords="" description="了解如何使用移动服务在表存储中存储数据。" metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Store data in Azure Table Storage using Mobile Services" authors="yuaxu" writer="yuaxu" services="mobile-services,storage" manager="dwrede" />
+<tags ms.service="mobile-services,storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="yuaxu"/>
 

@@ -7,6 +7,10 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
+<tags ms.service=".NET"
+    ms.date=""
+    wacn.date=""
+    />
 
 #.NET Azure 文档
 

@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-dotnet" urlDisplayName="Get Started with Push Notifications" pageTitle="Get started with push notifications - Mobile Services" metaKeywords="push notifications c#" description="Learn how to use push notifications with Azure Mobile Services." metaCanonical="http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet/" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services using Visual Studio 2012" authors="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 使用 Visual Studio 2012 的移动服务中的推送通知入门
 

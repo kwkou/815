@@ -1,4 +1,8 @@
 <properties linkid="dev-java-how-to-use-table-storage" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Java) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Java, table storage Java" description="了解如何在 Azure 中使用表存储服务。代码示例用 Java 代码编写。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Table storage service from Java" authors="" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 # 如何通过 Java 使用表存储服务

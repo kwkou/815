@@ -1,4 +1,8 @@
-﻿<properties linkid="dev-nodejs-worker-app-with-socketio" urlDisplayName="App Using Socket.IO" pageTitle="使用 Socket.io 生成 Node.js 应用程序 - Azure 教程" metaKeywords="Azure Node.js socket.io tutorial, Azure Node.js socket.io, Azure Node.js tutorial" description="本教程将演示如何在托管在 Azure 上的 node.js 应用程序中使用 socket.io。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-worker-app-with-socketio" urlDisplayName="App Using Socket.IO" pageTitle="使用 Socket.io 生成 Node.js 应用程序 - Azure 教程" metaKeywords="Azure Node.js socket.io tutorial, Azure Node.js socket.io, Azure Node.js tutorial" description="本教程将演示如何在托管在 Azure 上的 node.js 应用程序中使用 socket.io。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="cloud-services"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

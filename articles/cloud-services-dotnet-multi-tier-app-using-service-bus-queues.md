@@ -1,4 +1,8 @@
-﻿<properties linkid="dev-net-e2e-multi-tier" urlDisplayName="Multi-Tier Application" pageTitle=".NET 多层应用程序 - Azure 教程" metaKeywords="Azure Service Bus queue tutorial, Azure queue tutorial, Azure worker role tutorial, Azure .NET queue tutorial, Azure C# queue tutorial, Azure C# worker role tutorial" description="本教程可帮助你在 Azure 中开发使用 Service Bus 队列在各层之间进行通信的多层应用程序。相关示例使用 .NET。" metaCanonical="" services="cloud-services,service-bus" documentationCenter=".NET" title=".NET Multi-Tier Application Using Service Bus Queues" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+<properties linkid="dev-net-e2e-multi-tier" urlDisplayName="Multi-Tier Application" pageTitle=".NET 多层应用程序 - Azure 教程" metaKeywords="Azure Service Bus queue tutorial, Azure queue tutorial, Azure worker role tutorial, Azure .NET queue tutorial, Azure C# queue tutorial, Azure C# worker role tutorial" description="本教程可帮助你在 Azure 中开发使用 Service Bus 队列在各层之间进行通信的多层应用程序。相关示例使用 .NET。" metaCanonical="" services="cloud-services,service-bus" documentationCenter=".NET" title=".NET Multi-Tier Application Using Service Bus Queues" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+<tags ms.service="cloud-services,service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

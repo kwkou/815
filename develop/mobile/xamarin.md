@@ -1,4 +1,8 @@
 <properties pageTitle="移动服务-xamarin - Azure 微软云" metakeywords="" description="" services="" documentationCenter="xamarin" authors="" manager="Tiffena" editor="EricChen"/>
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
   
 <tags ms.service="mobile-service" ms.date="03/04/2015" wacn.date="03/04/2015"/>
 

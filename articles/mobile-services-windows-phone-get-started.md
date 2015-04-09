@@ -1,4 +1,8 @@
-﻿<properties pageTitle="针对 Windows Phone 应用程序的 Azure 移动服务入门" metaKeywords="" description="请按照本教程使用 Azure 移动服务进行 Windows Phone 开发。 " metaCanonical="" services="" documentationCenter="Mobile" title="移动服务入门" authors="glenga" solutions="" manager="" editor="" />
+<properties pageTitle="针对 Windows Phone 应用程序的 Azure 移动服务入门" metaKeywords="" description="请按照本教程使用 Azure 移动服务进行 Windows Phone 开发。 " metaCanonical="" services="" documentationCenter="Mobile" title="移动服务入门" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # <a name="getting-started"> </a>移动服务入门
 

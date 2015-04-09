@@ -1,4 +1,8 @@
 <properties linkid="" urlDisplayName="" pageTitle="Supported browsers and devices" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Supported browsers and devices" authors="Justin Beckwith"  solutions="" writer="" manager="" editor=""  />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 支持的浏览器和设备
 

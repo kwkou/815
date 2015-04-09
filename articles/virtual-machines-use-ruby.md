@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-services-identity-multi-factor-authentication" urlDisplayName="What is Azure Multi-Factor Authentication?" pageTitle="什么是 Azure 多因素身份验证？" metaKeywords="" description="更多地了解 Azure 多因素身份验证，需要使用多个验证方法，并且向用户登录和事务添加关键的第二个安全层的身份验证的方法。" metaCanonical="" services="active-directory,multi-factor-authentication" documentationCenter="" title="How to Manage Azure Virtual Machines using Ruby" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="manage-services-identity-multi-factor-authentication" urlDisplayName="What is Azure Multi-Factor Authentication?" pageTitle="什么是 Azure 多因素身份验证？" metaKeywords="" description="更多地了解 Azure 多因素身份验证，需要使用多个验证方法，并且向用户登录和事务添加关键的第二个安全层的身份验证的方法。" metaCanonical="" services="active-directory,multi-factor-authentication" documentationCenter="" title="How to Manage Azure Virtual Machines using Ruby" authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="active-directory,multi-factor-authentication"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

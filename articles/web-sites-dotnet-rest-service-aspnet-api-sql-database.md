@@ -1,4 +1,8 @@
 <properties linkid="develop-dotnet-rest-service-using-web-api" urlDisplayName="REST service using Web API" pageTitle="使用 Web API 的 .NET REST 服务 &mdash; Azure 教程" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="使用 ASP.NET Web API 和 SQL 数据库的 REST 服务" authors="riande" solutions="" manager="" editor="" />
+<tags ms.service="web-sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 使用 ASP.NET Web API 和 SQL 数据库的 REST 服务
 

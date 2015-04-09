@@ -1,4 +1,8 @@
 <properties umbracoNaviHide="0" pageTitle="将 Azure AD 与 Google Apps 集成" metaKeywords="Azure Google Apps Integration" description="了解有关将 Azure AD 与 Google Apps 集成的信息。" linkid="documentation-services-identity-windows-azure-ad-integration-with-google=apps" urlDisplayName="Azure AD Integration with Google Apps" headerExpose="" footerExpose="" disqusComments="0" editor="lisatoft" manager="terrylan" title="将 Azure AD 与 Google Apps 集成" authors="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 将 Azure AD 与 Google Apps 集成
 

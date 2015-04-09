@@ -1,4 +1,8 @@
 <properties linkid="develop-php-how-to-guides-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (PHP) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues PHP" description="了解如何在 Azure 中使用 Service Bus 队列。采用 PHP 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Queues" authors="" solutions="" manager="" editor="" />
+<tags ms.service="service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何使用 Service Bus 队列
 

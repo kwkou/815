@@ -1,4 +1,8 @@
 <properties urlDisplayName="" pageTitle="共享访问签名：了解 SAS 模型 | Microsoft Azure" metaKeywords="Azure blob, Azure table, Azure queue, shared access signatures" description="了解有关使用共享访问签名委托对 blob、队列和表的访问" metaCanonical="" services="storage" documentationCenter="" title="Part 1: Understanding the SAS Model" solutions="" authors="tamram" manager="adinah" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

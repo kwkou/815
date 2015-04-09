@@ -1,4 +1,8 @@
 <properties linkid="dev-ruby-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Ruby) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Ruby, table storage Ruby" description="了解如何在 Azure 中使用表存储服务。相关代码示例是使用 Ruby API 编写的。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Table Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

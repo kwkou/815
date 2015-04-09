@@ -1,4 +1,8 @@
 <properties linkid="migrating-drupal-to-azure-websites" urlDisplayName="Migrating Drupal to Azure Web Sites" pageTitle="Migrating Drupal to Azure Web Sites" metaKeywords="Drupal, PHP, Web Sites" description="Migrate a Drupal PHP site to Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Migrating Drupal to Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<tags ms.service="web-sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 将 Drupal 迁移到 Azure 网站
 

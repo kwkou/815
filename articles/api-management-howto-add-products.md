@@ -1,4 +1,8 @@
 <properties pageTitle="如何在 Azure API 管理中创建和发布产品" metaKeywords="" description="了解如何在 Azure API 管理中创建和发布产品。" metaCanonical="" services="" documentationCenter="API Management" title="如何在 Azure API 管理中创建和发布产品" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何在 Azure API 管理中创建和发布产品
 
