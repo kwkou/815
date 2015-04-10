@@ -1,8 +1,4 @@
 <properties urlDisplayName="Active Directory SSO Authentication with ADAL" pageTitle="使用 Active Directory 身份验证库单一登录对应用程序进行身份验证 (Xamarin.iOS) | 移动开发人员中心" metaKeywords="" description="了解如何在 Xamarin.iOS 应用程序中使用 ADAL 对单一登录的用户进行身份验证。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Authenticate your app with Active Directory Authentication Library Single Sign-On" authors="wesmc,mahender" manager="dwrede" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="article" ms.date="09/29/2014" ms.author="wesmc,mahender" />
 

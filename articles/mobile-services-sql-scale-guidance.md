@@ -1,8 +1,4 @@
 <properties urlDisplayName="扩展 Azure SQL Database 支持的移动服务" pageTitle="扩展 Azure SQL Database 支持的移动服务 - Azure 移动服务" metaKeywords="" description="了解如何诊断和修复 SQL Database 支持的移动服务中的可扩展性问题" metaCanonical="" services="" documentationCenter="Mobile" title="Scale mobile services backed by Azure SQL Database" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="donnam" />
 # 扩展 Azure SQL Database 支持的移动服务

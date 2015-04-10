@@ -1,8 +1,4 @@
 <properties pageTitle="通过 JavaScript 后端移动服务开始使用推送通知" metaKeywords="" description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到您的通用 Windows 应用程序。" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="mobile" manager="dwrede" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/27/2014" ms.author="glenga" />
 

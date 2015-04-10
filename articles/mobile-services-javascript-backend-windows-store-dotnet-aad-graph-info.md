@@ -1,8 +1,4 @@
 <properties urlDisplayName="访问 Azure Active Directory Graph 信息" pageTitle="访问 Azure Active Directory Graph 信息 （Windows 应用商店） |移动开发人员中心" metaKeywords="" description="了解如何使用 Windows 应用商店应用程序中的 Graph API 访问 Azure Active Directory 信息。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Accessing Azure Active Directory Graph Information" authors="wesmc" manager="dwrede" />
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/29/2014" ms.author="wesmc" />
 

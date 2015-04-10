@@ -1,8 +1,4 @@
-<properties urlDisplayName="Handle Conflicts with Offline Data" pageTitle="使用移动服务中的脱机数据处理冲突 (iOS) | 移动开发人员中心" metaKeywords="" description="了解在 iOS 应用程序中同步脱机数据时如何使用 Azure 移动服务处理冲突" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="krisragh" manager="dwrede"/>
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties urlDisplayName="Handle Conflicts with Offline Data" pageTitle="使用移动服务中的脱机数据处理冲突 (iOS) | 移动开发人员中心" metaKeywords="" description="了解在 iOS 应用程序中同步脱机数据时如何使用 Azure 移动服务处理冲突" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="krisragh" manager="dwrede"/>
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.devlang="dotnet" ms.topic="article" ms.date="10/10/2014" ms.author="krisragh" />
 

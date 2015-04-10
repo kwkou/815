@@ -1,8 +1,4 @@
 <properties urlDisplayName="Get Started with Data" pageTitle="数据处理入门 (Windows Store JavaScript) |移动开发人员中心" metaKeywords="" description="了解如何通过移动服务来利用 Windows Store JavaScript 应用程序中的数据。" metaCanonical="https://www.windowsazure.cn/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
-<tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
-    />
 
 <tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
 

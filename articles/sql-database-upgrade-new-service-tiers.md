@@ -1,8 +1,4 @@
-<properties title="Upgrade SQL Database Web/Business Databases to New Service Tiers" pageTitle="将 SQL Database Web/企业版数据库升级到新服务层" description="将 Azure SQL Database Web 版或企业版数据库升级到新的 Azure SQL Database 服务层/性能级别。" metaKeywords="Azure, SQL. DB, Service, Tier, web, business" services="Azure SQL DB" solutions="upgrade, migrate, move, monitor, t-sql, powershell" documentationCenter="" authors="Srini Acharya, Umachandar Jayachandran" manager="jeffreyg" videoId="" scriptId="" />
-<tags ms.service="Azure SQL DB"
-    ms.date=""
-    wacn.date=""
-    />
+﻿<properties title="Upgrade SQL Database Web/Business Databases to New Service Tiers" pageTitle="将 SQL Database Web/企业版数据库升级到新服务层" description="将 Azure SQL Database Web 版或企业版数据库升级到新的 Azure SQL Database 服务层/性能级别。" metaKeywords="Azure, SQL. DB, Service, Tier, web, business" services="Azure SQL DB" solutions="upgrade, migrate, move, monitor, t-sql, powershell" documentationCenter="" authors="Srini Acharya, Umachandar Jayachandran" manager="jeffreyg" videoId="" scriptId="" />
 
 <tags ms.service="sql-database" ms.date="12/3/2014" ms.author="jhubbard" />
 

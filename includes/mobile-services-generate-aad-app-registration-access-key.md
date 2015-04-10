@@ -1,4 +1,4 @@
-1. 单击 [Azure 管理门户](https://manage.windowsazure.cn/)中您的目录页面上的**应用程序**选项卡。
+﻿1. 单击 [Azure 管理门户](https://manage.windowsazure.cn/)中您的目录页面上的**应用程序**选项卡。
   
 2. 单击集成的应用程序注册。
 
@@ -29,10 +29,6 @@
     <td>AAD_TENANT_DOMAIN</td><td>您的 AAD 域名。应类似于"mydomain.onmicrosoft.com"</td>
     </tr>
     </table><br/>
-<tags ms.service=""
-    ms.date=""
-    wacn.date=""
-    />
 
  
     ![](./media/mobile-services-generate-aad-app-registration-access-key/aad-app-settings.png)
