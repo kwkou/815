@@ -1,4 +1,8 @@
 <properties linkid="dev-ruby-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Ruby) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Ruby" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Ruby 编写的相关示例。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Queue Storage Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

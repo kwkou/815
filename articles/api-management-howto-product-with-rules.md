@@ -1,4 +1,8 @@
 <properties pageTitle="如何在 Azure API 管理中创建和配置高级产品设置" metaKeywords="" description="了解如何通过配额和速率限制策略配置产品。" metaCanonical="" services="" documentationCenter="API Management" title="如何在 Azure API 管理中创建和配置高级产品设置" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何在 Azure API 管理中创建和配置高级产品设置
 

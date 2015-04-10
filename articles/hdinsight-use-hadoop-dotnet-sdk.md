@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-howto-sdk" urlDisplayName="HDInsight SDK" pageTitle="将 Hadoop .NET SDK 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to get the HDInsight NuGet packages and use them from your .NET application." metaCanonical="" services="hdinsight" documentationCenter="" title="Use the Hadoop .NET SDK with HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="hdinsight"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 将 Hadoop .NET SDK 与 HDInsight 配合使用
 

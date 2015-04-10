@@ -1,4 +1,8 @@
 <properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="如何管理网站 - Windows Azure 服务管理" metaKeywords="Azure portal website management" description="Windows Azure 中的&ldquo;门户&rdquo;网站管理页的引用。为每个网站管理页提供了详细信息。" metaCanonical="" services="web-sites" documentationCenter="" title="如何管理网站" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
+<tags ms.service="web-sites"
+    ms.date=""
+    wacn.date=""
+    />
 
 # <a name="howtomanage"></a>如何管理网站
 

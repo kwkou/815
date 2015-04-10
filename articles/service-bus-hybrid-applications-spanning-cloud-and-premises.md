@@ -1,4 +1,8 @@
 <properties pageTitle="启用跨云和本地的混合应用程序" metaKeywords="Service Bus, Cloud, Hybrid" description="了解如何构建跨云和本地的混合应用程序。" services="service-bus" documentationCenter=".NET" title="Enable Hybrid Applications Spanning Cloud and Premises" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<tags ms.service="service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 启用跨云和本地的混合应用程序
 

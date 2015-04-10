@@ -1,4 +1,8 @@
-﻿<properties urlDisplayName="AzCopy" pageTitle="如何将 AzCopy 与 Microsoft Azure 存储一起使用" metaKeywords="Get started Azure AzCopy   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure file   Azure file storage   Azure file share   AzCopy" description="了解如何使用 AzCopy 实用程序上载、下载以及复制 blob 和文件内容。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use AzCopy with Windows Azure Storage" authors="tamram" manager="adinah" editor="cgronlun" />
+<properties urlDisplayName="AzCopy" pageTitle="如何将 AzCopy 与 Microsoft Azure 存储一起使用" metaKeywords="Get started Azure AzCopy   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure file   Azure file storage   Azure file share   AzCopy" description="了解如何使用 AzCopy 实用程序上载、下载以及复制 blob 和文件内容。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use AzCopy with Windows Azure Storage" authors="tamram" manager="adinah" editor="cgronlun" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 # AzCopy 命令行实用程序入门

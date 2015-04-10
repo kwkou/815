@@ -1,4 +1,8 @@
-﻿<properties title="Azure SQL Database Elastic Scale" pageTitle="Azure SQL Database 灵活扩展" description="使用 Azure SQL Database 的灵活扩展功能，可轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Azure SQL Database Elastic Scale" pageTitle="Azure SQL Database 灵活扩展" description="使用 Azure SQL Database 的灵活扩展功能，可轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<tags ms.service="sql-database"
+    ms.date=""
+    wacn.date=""
+    />
 
 #Azure SQL Database 灵活扩展概述 
 欢迎使用 Azure SQL Database 灵活扩展公共预览版！ 

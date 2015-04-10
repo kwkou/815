@@ -1,4 +1,8 @@
 <properties linkid="manage-services-identity-what-is-windows-azure-AD" urlDisplayName="What is Azure AD?" pageTitle="什么是 Azure Active Directory？" metaKeywords="" description="使用 Azure Active Directory 将现有本地标识扩展到云中以便改进管理员和最终用户的体验，而 Microsoft 负责使 Active Directory 在云中运行时具有高缩放性、高可用性和集成灾难恢复。或者，为您的组织或其他组织开发 Azure AD 集成应用程序。" metaCanonical="" services="active-directory" documentationCenter="" title="什么是 Azure Active Directory？" authors="" solutions="" manager="" editor="" />
+<tags ms.service="active-directory"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 什么是 Azure Active Directory？
 

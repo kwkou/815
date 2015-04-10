@@ -1,4 +1,8 @@
 <properties linkid="manage-services-storage-custom-dns-storage" urlDisplayName="custom dns storage" pageTitle="配置存储帐户中 Blob 数据的域名 | Microsoft Azure" metaKeywords="" description="了解如何配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。" metaCanonical="" services="storage" documentationCenter="" title="Configure a custom domain name for blob data in a storage account" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<tags ms.service="storage"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

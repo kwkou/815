@@ -1,4 +1,8 @@
 <properties title="Managing Concurrency in Windows Azure Storage" pageTitle="必填" description="如何管理 Blob、队列、表和文件服务的并发" metaKeywords="Optional" services="Optional" solutions="Optional" documentationCenter="Optional" authors="tamram" manager="adinah" videoId="Optional" scriptId="Optional" />
+<tags ms.service="Optional"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

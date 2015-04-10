@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-windows-commontask-install-sql-server" urlDisplayName="Install SQL Server" pageTitle="设置在 Azure 中的 SQL Server 虚拟机 " metaKeywords="Azure tutorial creating SQL Server, SQL Server vm, configuring SQL Server" description="本教程演示如何创建和配置 SQL Server 虚拟机在 Azure 上。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Provisioning a SQL Server Virtual Machine on Azure" authors="selcint" solutions="" manager="clairt" editor="tyson" />
+<properties linkid="manage-windows-commontask-install-sql-server" urlDisplayName="Install SQL Server" pageTitle="设置在 Azure 中的 SQL Server 虚拟机 " metaKeywords="Azure tutorial creating SQL Server, SQL Server vm, configuring SQL Server" description="本教程演示如何创建和配置 SQL Server 虚拟机在 Azure 上。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Provisioning a SQL Server Virtual Machine on Azure" authors="selcint" solutions="" manager="clairt" editor="tyson" />
+<tags ms.service="virtual-machines"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

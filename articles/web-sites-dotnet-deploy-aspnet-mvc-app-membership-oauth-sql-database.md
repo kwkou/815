@@ -1,4 +1,8 @@
-﻿<properties linkid="dev-net-tutorials-web-app-with-sql-azure-vs2013" urlDisplayName="使用 SQL数据库 创建网站" pageTitle="使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Windows Azure 网站" metaKeywords="Azure Hello World 教程, Azure 入门教程, SQL数据库 教程, Azure .NET Hello World 教程, Azure C# Hello World 教程, SQL Azure C# 教程" description="了解如何开发带有 SQL数据库 后端的 ASP.NET MVC 5 网站并将其部署到 Windows Azure。" metaCanonical="" services="web-sites,sql-database" documentationCenter=".NET" title="OAuth" authors=""  solutions="" writer="riande" manager="wpickett" editor="mollybos"  />
+<properties linkid="dev-net-tutorials-web-app-with-sql-azure-vs2013" urlDisplayName="使用 SQL数据库 创建网站" pageTitle="使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Windows Azure 网站" metaKeywords="Azure Hello World 教程, Azure 入门教程, SQL数据库 教程, Azure .NET Hello World 教程, Azure C# Hello World 教程, SQL Azure C# 教程" description="了解如何开发带有 SQL数据库 后端的 ASP.NET MVC 5 网站并将其部署到 Windows Azure。" metaCanonical="" services="web-sites,sql-database" documentationCenter=".NET" title="OAuth" authors=""  solutions="" writer="riande" manager="wpickett" editor="mollybos"  />
+<tags ms.service="web-sites,sql-database"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

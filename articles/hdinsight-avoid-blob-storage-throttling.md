@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-avoid-WASB-throttling" urlDisplayName="HDInsight Administration" pageTitle="Avoid WASB throttling | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to avoid throttling with the Azure Storage Blob service."  services="HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="TODO: Add title of the guide, using sentence casing" authors="" />
+<tags ms.service="HDInsight"
+    ms.date=""
+    wacn.date=""
+    />
 
 # TODO：使用句子大小写添加本指南的标题
 

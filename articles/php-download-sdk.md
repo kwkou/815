@@ -1,4 +1,8 @@
 <properties title="Download the Azure SDK for PHP" pageTitle="Download the Azure SDK for PHP" metaKeywords="" description="Learn how to download and install the Azure SDK for PHP." documentationCenter="PHP" services="" solutions="web" authors="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 下载 Azure SDK for PHP
 

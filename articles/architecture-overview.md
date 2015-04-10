@@ -1,4 +1,8 @@
 <properties linkid="" urlDisplayName="" pageTitle="Architecture" metaKeywords="" description="Architecture overview that covers common design patterns" metaCanonical="" services="" documentationCenter="" videoId="" scriptId="" title="Architecture Overview" authors="robb" solutions="" manager="dongill" editor="mattshel" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 体系结构
 

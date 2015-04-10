@@ -7,6 +7,10 @@
   authors="" 
   manager="Tiffena" 
   editor="EricChen"/>
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
   
 <h1 id="menu-nodejs-data">数据服务</h1>
 <h2 id="header-0">Azure 存储空间</h2>

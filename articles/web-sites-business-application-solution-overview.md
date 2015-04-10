@@ -1,4 +1,8 @@
 <properties linkid="websites-business-application" urlDisplayName="Create a Line-of-Business Application on Azure Web Sites" pageTitle="Create a Line-of-Business Application on Azure Web Sites" metaKeywords="Web Sites" description="This guide provides a technical overview of how to use Azure Web Sites to create intranet, line-of-business applications. This includes authentication strategies, 服务总线 relay, and monitoring." umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" title="Create a Line-of-Business Application on Azure Web Sites" authors="jroth" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 在 Azure 网站上创建业务线应用程序
 

@@ -1,4 +1,8 @@
 <properties pageTitle="如何缓存 Azure API 管理中的操作结果" metaKeywords="" description="了解如何改善滞后时间、带宽消耗和 API 管理服务调用的 web 服务负载。" metaCanonical="" services="" documentationCenter="API Management" title="如何缓存 Azure API 管理中的操作结果" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 如何缓存 Azure API 管理中的操作结果
 

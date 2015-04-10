@@ -1,4 +1,8 @@
 <properties linkid="manage-linux-other-resources-endorsed-distributions" urlDisplayName="Endorsed distributions" pageTitle="Azure 中的 Linux 的认可分发" metaKeywords="" description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic 和 SUSE 的指南。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure 认可的分发中的 Linux" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date=""
+    wacn.date=""
+    />
 
 # Azure 认可的分发中的 Linux
 

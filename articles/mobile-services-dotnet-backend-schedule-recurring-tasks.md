@@ -1,4 +1,8 @@
 <properties  pageTitle="Schedule Backend Tasks with Scheduler - Mobile Services" metaKeywords="" description="Use the Windows Azure Mobile Services Scheduler to schedule jobs for your mobile app." metaCanonical="" services="" documentationCenter="Mobile" title="Schedule recurring jobs in Mobile Services" authors=""  solutions="" writer="" manager="" editor=""  />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 在移动服务中计划定期作业
 

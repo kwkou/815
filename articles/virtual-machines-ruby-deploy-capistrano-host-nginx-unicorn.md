@@ -1,4 +1,8 @@
 <properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="使用 Capistrano 将 Ruby on Rails Web 应用程序部署到 Azure 虚拟机 - 教程" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="了解如何使用 Capistrano、Unicorn 和 Nginx 向 Azure 虚拟机部署 Ruby on Rails 应用程序。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web application to an Azure VM using Capistrano" authors="larryfr" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 #使用 Capistrano 向 Azure VM 部署 Ruby on Rails Web 应用程序

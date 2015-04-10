@@ -1,4 +1,8 @@
 <properties pageTitle="开始使用 Azure API 管理" metaKeywords="" description="了解如何创建 API、操作并开始使用 API 管理。" metaCanonical="" services="" documentationCenter="API Management" title="开始使用 Azure API 管理" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 # 开始使用 Azure API 管理
 

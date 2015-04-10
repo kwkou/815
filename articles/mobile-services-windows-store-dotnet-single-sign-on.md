@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-single-sign-on-windows-8-dotnet" urlDisplayName="Authenticate with single sign-on" pageTitle="使用 Live Connect 对 Windows 应用商店应用程序进行身份验证" metaKeywords="Azure Live Connect, Azure SSO, SSO Live Connect, mobile services sso, Windows Store app sso" description="了解如何通过 Windows 应用商店应用程序在 Azure 移动服务中使用 Live Connect 单一登录。" metaCanonical="" services="" documentationCenter="" title="Authenticate your Windows Store app with Live Connect single sign-on" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

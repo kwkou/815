@@ -1,4 +1,8 @@
 <properties linkid="notification-hubs-how-to-guides-howto-notify-users-aspnet" urlDisplayName="Notify Users" pageTitle="使用通知中心通知用户 ASP.NET 服务事件" metaKeywords="" description="遵循本教程来注册到通知中心以从 ASP.NET 服务接收通知" metaCanonical="" services="notification-hubs" documentationCenter="" title="使用通知中心通知用户" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service="notification-hubs"
+    ms.date=""
+    wacn.date=""
+    />
 
 # 使用通知中心通知用户
 

@@ -1,4 +1,8 @@
 <properties linkid="dev-net-tutorials-hybrid-solution" urlDisplayName="Hybrid Application" pageTitle="本地/云混合应用程序 (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="了解如何使用 Azure Service Bus 中继创建 .NET 本地/云混合应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+<tags ms.service="service-bus"
+    ms.date=""
+    wacn.date=""
+    />
 
 
 

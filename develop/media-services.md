@@ -6,6 +6,10 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
+<tags ms.service="Media Services"
+    ms.date=""
+    wacn.date=""
+    />
 
 #Media Services开发人员中心
 

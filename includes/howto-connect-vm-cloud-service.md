@@ -1,4 +1,8 @@
-<properties authors="kathydav" editor="tysonn" manager="donaldg" /> 
+<properties authors="kathydav" editor="tysonn" manager="donaldg" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    /> 
 
 
 #如何连接云服务中的虚拟机
