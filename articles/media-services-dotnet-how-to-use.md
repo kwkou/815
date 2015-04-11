@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Use Media Services" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/02/2015"
+    wacn.date="04/11/2015"
     />
 
 如何使用 Media Services

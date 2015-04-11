@@ -1,7 +1,7 @@
 <properties linkid="manage-services-how-to-deploy-websites" pageTitle="如何部署 Azure 网站" metaKeywords="Azure deploy publish web site" description="了解可使用哪些方法将内容部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter="" title="如何部署 Azure 网站" authors="tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何部署 Azure 网站

@@ -1,7 +1,7 @@
 <properties pageTitle="Get Started with Azure Mobile Services for Android apps" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="Follow this tutorial to get started using Azure Mobile Services for Android development." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/13/2015"
+    wacn.date="04/11/2015"
     />
 
 <a name="getting-started"> </a>

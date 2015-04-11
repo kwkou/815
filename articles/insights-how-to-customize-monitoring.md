@@ -1,7 +1,7 @@
 <properties title="How to customize monitoring" pageTitle="How to customize monitoring" description="Learn how to customize monitoring charts in Azure." authors="stepsic"  />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="10/04/2014"
+    wacn.date="04/11/2015"
     />
 
 # 自定义监视

@@ -1,7 +1,7 @@
 <properties linkid="develop-media-services-how-to-guides-create-assets" urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="Create Encrypted Asset and Upload to Storage Azure" metaKeywords="" description="Learn how to get media content into Media Services by creating and uploading an encrypted asset." metaCanonical="" services="media-services" documentationCenter="" title="How to: Create an encrypted Asset and upload to storage" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
-    ms.date=""
-    wacn.date=""
+    ms.date="09/25/2014"
+    wacn.date="04/11/2015"
     />
 
 如何：创建加密的资产并上载到存储中

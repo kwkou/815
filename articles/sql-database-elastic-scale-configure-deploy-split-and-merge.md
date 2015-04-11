@@ -1,7 +1,7 @@
 <properties title="Split and Merge Service Tutorial" pageTitle="Azure SQL 拆分和合并服务教程" description="使用灵活扩展拆分和合并" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/20/2015"
+    wacn.date="04/11/2015"
     />
 
 #灵活扩展拆分和合并服务教程

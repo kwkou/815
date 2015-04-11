@@ -1,7 +1,7 @@
 <properties linkid="dev-java-compute-load" urlDisplayName="TSP on Virtual Machine" pageTitle="VM 上需要进行大量计算的 Java 应用程序 - Azure" metaKeywords="Azure virtual machine Java, Azure Java app, Azure Java application" description="了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的 Azure 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a compute-intensive task in Java on a virtual machine" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务

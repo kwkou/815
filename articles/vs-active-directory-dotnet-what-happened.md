@@ -1,6 +1,8 @@
 <properties title="Active Directory 身份验证入门 - 	发生了什么情况" pageTitle="Active Directory 身份验证入门 - 	发生了什么情况" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
 
-<tags ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/8/2014" ms.author="ghogen, kempb"></tags>
+<tags 
+wacn.date="04/11/2015"
+ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="02/02/2015" ms.author="ghogen, kempb"></tags>
 
 > [AZURE.SELECTOR]
 >

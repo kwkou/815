@@ -1,7 +1,7 @@
 <properties umbracoNaviHide="0" pageTitle="如何管理 SQL Database" metaKeywords="Azure SQL database, SQL database, manage sql database, add logins, connect to sql database" description="了解如何管理 Azure SQL Database." linkid="devnav-manage-services-cloud-services" urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="01/13/2015"
+    wacn.date="04/11/2015"
     />
 
 

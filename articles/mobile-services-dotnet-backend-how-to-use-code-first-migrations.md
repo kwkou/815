@@ -1,7 +1,7 @@
 <properties pageTitle="How to use Code First Migrations .NET backend (Mobile Services)" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Considerations for supporting multiple clients from a single mobile service" authors="glenga" solutions="" writer="glenga" manager="dwrede" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/27/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何对 .NET 后端移动服务进行数据模型更改

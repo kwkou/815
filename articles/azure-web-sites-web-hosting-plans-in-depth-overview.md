@@ -1,7 +1,7 @@
 <properties title="Azure 网站 Web 托管计划深入概述" pageTitle="Azure 网站 Web 托管计划深入概述 - Windows Azure 功能指南" description="了解 Web 托管计划为 Azure 网站的工作原理以及如何使您的管理体验的获益。" metaKeywords="Azure Web Sites, Azure Websites, WHP, Web Hosting Plan, Web Hosting Plans, Resource Groups" services="web-sites" solutions="web" documentationCenter="Infrastructure" authors="Byron Tardif and Yochay Kiryaty" videoId="" scriptId="" />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/24/2014"
+    wacn.date="04/11/2015"
     />
 
 # Azure 网站 Web 托管计划深入概述

@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-data-wp8" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Phone) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Phone app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="wesmc" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
     />
 
 # 移动服务中的数据处理入门

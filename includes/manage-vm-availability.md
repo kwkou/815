@@ -1,7 +1,7 @@
 <properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="10/28/2014"
+    wacn.date="04/11/2015"
     /> 
 
 #管理虚拟机的可用性#

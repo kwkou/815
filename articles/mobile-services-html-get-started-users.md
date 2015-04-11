@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-users-html" urlDisplayName="身份验证入门 (HTML5)" pageTitle="身份验证入门 (HTML5) | 移动开发人员中心" metaKeywords="" description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 HTML 应用程序的用户进行身份验证。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/15/2015"
+    wacn.date="04/11/2015"
     />
 
 

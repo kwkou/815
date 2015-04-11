@@ -1,7 +1,7 @@
 <properties pageTitle="如何将操作添加到 Azure API 管理中的 API" metaKeywords="" description="了解如何将操作添加到 Azure API 管理中的 API" metaCanonical="" services="" documentationCenter="API Management" title="如何将操作添加到 Azure API 管理中的 API" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="03/10/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何将操作添加到 Azure API 管理中的 API

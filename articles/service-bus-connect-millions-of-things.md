@@ -1,7 +1,7 @@
 <properties pageTitle="将无以数计的事物连接到云中" metaKeywords="Service Bus, internet of things" description="了解如何使用 Microsoft Azure 将无以数计的事物连接到云中." services="service-bus" documentationCenter=".NET" title="Connect Millions of Things to the Cloud" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 <tags ms.service="service-bus"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/18/2015"
+    wacn.date="04/11/2015"
     />
 
 # 将无以数计的"事物"连接到云中

@@ -1,7 +1,7 @@
 <properties linkid="web-site-with-webmatrix" urlDisplayName="Web site with WebMatrix" pageTitle="使用 WebMatrix 构建 Node.js 网站 - Azure 教程" metaKeywords="" description="本教程将介绍如何使用 WebMatrix 开发 Node.js 应用程序并将其部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter="Node.js" title="使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure" authors="larryf" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="02/19/2015"
+    wacn.date="04/11/2015"
     />
 
 # 使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure

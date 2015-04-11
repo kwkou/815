@@ -1,7 +1,7 @@
 <properties pageTitle="如何在 Azure API 管理中创建 API、操作和产品" metaKeywords="" description="了解如何在 API 管理中创建 API、操作和产品。" metaCanonical="" services="" documentationCenter="API Management" title="如何在 Azure API 管理中创建 API、操作和产品" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/24/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何在 Azure API 管理中创建 API、操作和产品

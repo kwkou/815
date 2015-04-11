@@ -1,7 +1,7 @@
 <properties linkid="develop-python-blob-service" urlDisplayName="Blob Service" pageTitle="如何使用 Blob 存储 (Python) | Microsoft Azure" metaKeywords="Azure blob service Python, Azure blobs Python" description="了解如何使用 Azure Blob 服务上载、列出、下载和删除 Blob。" metaCanonical="" disqusComments="1" umbracoNaviHide="0" services="storage" documentationCenter="Python" title="How to use the Blob service from Python" authors="" videoId="" scriptId="" />
 <tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/11/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何从 Python 使用 Blob 存储服务

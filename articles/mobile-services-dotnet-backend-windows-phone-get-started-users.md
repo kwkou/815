@@ -1,7 +1,7 @@
 <properties pageTitle="Get started with authentication (Windows Phone) | Mobile Dev Center" metaKeywords="authentication, FAcebook, GOogle, Twitter, Microsoft Account, login" description="Learn how to use Mobile Services to authenticate users of your Windows Phone app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="Glenn Gailey" solutions="" manager="" editor="" />
 <tags ms.service="mobile"
-    ms.date=""
-    wacn.date=""
+    ms.date="02/25/2015"
+    wacn.date="04/11/2015"
     />
 
 # 移动服务中的身份验证入门

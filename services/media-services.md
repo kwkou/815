@@ -8,8 +8,8 @@ authors=""
 manager="Tiffena" 
 editor="Eric Chen" />
 <tags ms.service="Media Services"
-    ms.date=""
-    wacn.date=""
+    ms.date="10/23/2014"
+    wacn.date="04/11/2015"
     />
 
 #媒体服务

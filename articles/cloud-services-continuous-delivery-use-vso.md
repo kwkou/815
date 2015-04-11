@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with TFS" pageTitle="使用 Visual Studio Online 在 Azure 中持续交付" metaKeywords="" description="了解如何将 Visual Studio Online 团队项目配置为自动生成并部署到 Azure 网站或云服务。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="02/17/2015"
+    wacn.date="04/11/2015"
     />
 
 

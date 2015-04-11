@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-ios" urlDisplayName="验证数据" pageTitle="使用服务器脚本验证和修改数据 (iOS) |移动开发人员中心" metaKeywords="" description="了解如何验证和修改使用服务器脚本从 iOS 应用程序发送的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="11/08/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用服务器脚本在移动服务中验证和修改数据

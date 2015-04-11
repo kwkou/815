@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-js" urlDisplayName="Get Started with Push (JS)" pageTitle="Get started with push notifications (JavaScript)" metaKeywords="" description="Learn how to use push notifications in your Windows Store app with Azure Mobile Services." metaCanonical="/develop/mobile/tutorials/get-started-with-push-dotnet/" disqusComments="1" umbracoNaviHide="1" title="Get started with push notifications in Mobile Services using Visual Studio 2012" documentationCenter="Mobile" authors="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="12/08/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Visual Studio 2012 的移动服务中的推送通知入门

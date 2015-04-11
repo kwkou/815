@@ -1,7 +1,7 @@
 <properties linkid="develop-python-web-app-with-blob-storage" urlDisplayName="Web App with Blob Storage" pageTitle="Python web app with table storage | Windows Azure" metaKeywords="Azure table storage Python, Azure Python application, Azure Python tutorial, Azure Python example" description="A tutorial that teaches you how to create a Python web application using the Azure Client Libraries. Django is used as the web framework." metaCanonical="" services="storage" documentationCenter="Python" title="Python Web Application using Table Storage" authors="" solutions="" videoId="" scriptId="" manager="" editor="mollybos" />
 <tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
+    ms.date="10/21/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用表存储创建 Python Web 应用程序

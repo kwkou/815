@@ -1,7 +1,7 @@
 <properties linkid="develop-net-tutorials-compute-intensive-task-on-a-virtual-machine" urlDisplayName="Compute Intensive .NET Task" pageTitle="虚拟机上需要进行大量计算的 .NET 任务 - Azure" metaKeywords="deploying compute .NET application, vm .NET application, Service Bus queue monitoring, remote monitoring" description="了解如何在 Azure 虚拟机上部署和运行需要进行大量计算的 .NET 应用以及如何使用服务总线队列远程监视进度。" metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="How to run a compute-intensive task in .NET on an Azure virtual machine" authors="waltpo" solutions="" manager="keboyd" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/24/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何在 Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务

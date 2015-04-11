@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-howto-linux-agent" urlDisplayName="Prepare a distribution" pageTitle="Prepare a distribution of Linux in Azure" metaKeywords="Azure Git CodePlex, Azure website CodePlex, Azure website Git" description="Learn how to use Git to publish to an Azure web site, as well as enable continuous deployment from GitHub and CodePlex." metaCanonical="" services="virtual-machines" documentationCenter="" title="Prepare a Linux Virtual Machine for Azure" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 <tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/29/2014"
+    wacn.date="04/11/2015"
     />
 
 # 为 Azure 准备 Linux 虚拟机

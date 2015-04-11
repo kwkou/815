@@ -1,7 +1,7 @@
 <properties linkid="create-vso-project-setup-continuous-deployment" urlDisplayName="How to create a VSO project and setup Continuous Deployment" pageTitle="How to create a Visual Studio Online team project and setup Continuous Deployment - Windows Azure" metaKeywords="Visual Studio Online create team project, continuous deployment to Azure" description="Learn how to create a Visual Studio Online team project and configure it for continuous deployment to Windows Azure." metaCanonical="" services="cloud-services, visual-studio-online" documentationCenter="" title="How to Create and Deploy a Cloud Service" authors="jimlamb" solutions="" writer="jimlamb" manager="" editor=""  />
 <tags ms.service="cloud-services, visual-studio-online"
-    ms.date=""
-    wacn.date=""
+    ms.date="12/27/2014"
+    wacn.date="04/11/2015"
     />
 
 # 创建 Visual Studio Online 项目并设置对 Windows Azure 的连续部署

@@ -1,7 +1,7 @@
 <properties linkid="script-xplat-intro" urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="Azure 跨平台命令行接口" title="Azure 跨平台命令行接口" metaKeywords="Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli" description="安装和配置 Azure 跨平台命令行接口以管理 Azure 服务" metaCanonical="http://www.windowsazure.cn/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="51Aspx" authors="larryfr" services="Haifeng Liu" />
 <tags ms.service="Haifeng Liu"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/10/2015"
+    wacn.date="04/11/2015"
     />
 
 # 安装和配置 Azure 跨平台命令行接口

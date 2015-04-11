@@ -1,7 +1,7 @@
 <properties linkid="web-sites-traffic-manager" urlDisplayName="Controlling Windows Azure Web Sites Traffic with Azure 流量管理器" pageTitle="Controlling Azure Web Sites Traffic with Azure 流量管理器" metaKeywords="Azure Web Sites, 流量管理器, request routing, round robin, failover, performance" description="This article provides summary information for  Azure 流量管理器 as it relates to Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="" title="Controlling Azure Web Sites Traffic with Azure 流量管理器" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Azure 流量管理器控制 Azure 网站流量

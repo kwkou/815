@@ -1,7 +1,7 @@
 <properties title="如何创建 RemoteApp 的混合部署" pageTitle="如何创建 RemoteApp 的混合部署" description="了解如何创建连接到您的内部网络的 RemoteApp 的部署。" metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo"  />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/27/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何创建 RemoteApp 的混合部署

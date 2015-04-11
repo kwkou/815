@@ -1,7 +1,7 @@
 <properties linkid="web-sites-create-web-jobs" urlDisplayName="Use WebJobs to run background tasks in Windows Azure Web Sites" pageTitle="使用 WebJobs 在 Windows Azure 网站中运行后台任务" metaKeywords="Windows Azure Web Sites, Web Jobs, background tasks" description="了解如何在 Windows Azure 网站中运行后台任务。" metaCanonical="" services="web-sites" documentationCenter="" title="使用 WebJobs 在 Windows Azure 网站中运行后台任务" authors="timamm"  solutions="" writer="timamm" manager="paulettm" editor="mollybos"  />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
     />
 
 # 使用 WebJobs 在 Windows Azure 网站中运行后台任务

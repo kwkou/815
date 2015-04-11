@@ -1,7 +1,7 @@
 <properties linkid="manage-services-web-sites-operating-system-functionality-available-to-applications" urlDisplayName="Operating System Functionality Available to Applications on Azure Web Sites" pageTitle="Operating System Functionality Available to Applications on Azure Web Sites" metaKeywords="" description="Learn about the common baseline operating system functionality that is available to all applications running on Azure Web Sites, including file access, network access, and registry access." metaCanonical="" services="notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service="notification-hubs"
-    ms.date=""
-    wacn.date=""
+    ms.date="12/03/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用通知中心发送突发新闻

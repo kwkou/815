@@ -1,7 +1,7 @@
 <properties linkid="manage-services-how-to-configure-websites" urlDisplayName="How to configure" pageTitle="How to configure web sites - Azure service management" metaKeywords="Azure websites, configuring Azure websites, Azure SQL数据库, Azure MySQL" description="Learn how to configure web sites in Azure, including how to configure a web site to use a SQL数据库 or MySQL数据库." metaCanonical="" services="web-sites" documentationCenter="" title="How to Configure Web Sites" authors="timamm" solutions="" manager="" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何配置网站

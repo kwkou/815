@@ -1,7 +1,7 @@
 <properties linkid="dev-net-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (.NET) - Azure" metaKeywords="Get started Azure Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions C# " description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 .NET 应用程序编写的。 " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 <tags ms.service="service-bus"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/18/2015"
+    wacn.date="04/11/2015"
     />
 
 

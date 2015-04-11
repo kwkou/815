@@ -1,7 +1,7 @@
 <properties linkid="develop-python-web-site-with-django" urlDisplayName="Web Sites with Django" pageTitle="Python Web Sites with Django - Azure tutorial" metaKeywords="Azure django, django website" description="A tutorial that introduces you to running a Python web site on Azure." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Web Sites with Django" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
-    ms.date=""
-    wacn.date=""
+    ms.date="02/09/2015"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Django 创建网站

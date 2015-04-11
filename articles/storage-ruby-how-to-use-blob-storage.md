@@ -1,7 +1,7 @@
 <properties linkid="dev-ruby-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="如何使用 Blob 存储 (Ruby) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Ruby" description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。用 Ruby 编写的相关示例。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Blob Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
 <tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/11/2015"
+    wacn.date="04/11/2015"
     />
 
 

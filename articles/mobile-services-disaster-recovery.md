@@ -1,7 +1,7 @@
 <properties linkid="mobile-services-recovery-disaster" urlDisplayName="Recover your mobile service in the event of a disaster" pageTitle="在发生灾难时恢复移动服务 - Azure 移动服务" metaKeywords="" description="了解在发生灾难时如何恢复移动服务。" metaCanonical="" services="" documentationCenter="Mobile" title="Recover your mobile service in the event of a disaster" authors="yavorg" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="11/11/2014"
+    wacn.date="04/11/2015"
     />
 
 # 在发生灾难时恢复移动服务

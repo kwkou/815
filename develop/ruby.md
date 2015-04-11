@@ -7,8 +7,8 @@ authors=""
 manager="Tiffena" 
 editor="Eric Chen" />
 <tags ms.service="RUBY"
-    ms.date=""
-    wacn.date=""
+    ms.date="12/26/2014"
+    wacn.date="04/11/2015"
     />
 
 #Ruby开发人员中心

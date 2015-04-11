@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-howto-attach-a-disk" urlDisplayName="Attach a disk" pageTitle="将磁盘附加到虚拟机 | Azure" metaKeywords="Azure Linux virtual machine, Azure Windows virtual machine, Azure attach disk, Azure initialize disk" description="了解如何将数据磁盘附加到 Azure 虚拟机。然后在 Windows Server 或 Linux 虚拟机中初始化该磁盘。" metaCanonical="" services="virtual-machines,storage" documentationCenter="" title="How to Attach a Data Disk to a Virtual Machine" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines,storage"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/05/2015"
+    wacn.date="04/11/2015"
     />
 
 

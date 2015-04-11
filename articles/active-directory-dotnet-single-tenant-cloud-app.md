@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Developing Single Tenant Applications with Azure Active Directory" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="10/13/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Azure Active Directory 开发单租户应用程序

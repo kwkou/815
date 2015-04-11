@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-html" urlDisplayName="数据处理入门 (HTML5)" pageTitle="数据处理入门 (HTML 5) | 移动开发人员中心" metaKeywords="" description="了解如何开始使用移动服务来利用 HTML 应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/25/2015"
+    wacn.date="04/11/2015"
     />
 
 

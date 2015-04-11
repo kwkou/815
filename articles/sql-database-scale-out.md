@@ -1,7 +1,7 @@
 <properties linkid="manage-services-how-to-scale-a-sqldb" urlDisplayName="How to scale" pageTitle="如何缩放 SQL数据库 - Azure" metaKeywords="" description="了解用于在 Azure 中缩放 SQL数据库 的选项。" metaCanonical="" services="sql-database" documentationCenter="" title="如何缩放 SQL数据库 解决方案" authors="" solutions="" manager="" editor="" />
 <tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/15/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何缩放 SQL数据库 解决方案

@@ -1,7 +1,7 @@
 <properties linkid="develop-media-services-how-to-guides-deliver-streaming-content" urlDisplayName="Deliver Streaming Content from Media Services" pageTitle="How to Deliver Streaming Content from Media Services a€“ Azure" metaKeywords="" description="Learn how to deliver streaming content from Media Services using a direct URL. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="How to: Deliver streaming content" authors="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/17/2015"
+    wacn.date="04/11/2015"
     />
 
 如何：交付流内容

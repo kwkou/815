@@ -1,7 +1,7 @@
 <properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,cloud-services"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/03/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序

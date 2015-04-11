@@ -1,7 +1,7 @@
 <properties linkid="obile-services-how-to-dotnet-client" urlDisplayName=".NET 客户端库" pageTitle="使用移动服务.NET 客户端库" metaKeywords="Azure Mobile Services, Mobile Service .NET client, .NET client" description="了解如何使用适用于 Azure 移动服务的 .NET 客户端" metaCanonical="" services="" documentationCenter="Mobile" title="How to use a .NET client for Azure Mobile Services" authors="krisragh" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/10/2015"
+    wacn.date="04/11/2015"
     />
 
  

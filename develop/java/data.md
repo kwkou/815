@@ -7,8 +7,8 @@ pageTitle="数据服务 - Azure 微软云" metakeywords=""
   manager="Tiffena" 
   editor="EricChen"/>
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="10/23/2014"
+    wacn.date="04/11/2015"
     />
        
 <h1 id="menu-java-data">数据服务</h1>

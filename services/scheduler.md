@@ -1,8 +1,8 @@
 
 <properties linkid="scheduler" urlDisplayName="Windows Azure scheduler" pageTitle="计划程序 - Azure 微软云" metaKeywords="scheduler,计划任务,计划程序配额,限制,设置,控制,计划程序API,HTTP 错误代码,消息" description="在简单或复杂的定期计划程序上运行作业。Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结点或将消息发布到存储队列。利用计划程序，可在云中创建在 Azure 内部和外部可靠调用服务的作业。您可以选择立即运行、按照定期计划日程运行或者在将来的某个时间点运行这些作业。" metaCanonical="" services="scheduler" documentationCenter="Services" title="Run jobs on simple or complex recurring schedules" authors="" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="scheduler"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/11/2014"
+    wacn.date="04/11/2015"
     />
 
 #计划程序

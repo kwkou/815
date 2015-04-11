@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="通过 .NET 和 Azure Active Directory 实现的 Web 单一登录" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="10/13/2014"
+    wacn.date="04/11/2015"
     />
 
 # 通过 .NET 和 Azure Active Directory 实现的 Web 单一登录

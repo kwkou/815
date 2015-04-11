@@ -1,7 +1,7 @@
 <properties pageTitle="使用 Azure 自动化 管理 Azure SQL 数据库" description="了解如何使用 Azure 自动化 服务来方便管理 Azure SQL 数据库。" services="automation, sql-database" documentationCenter="" authors="jodoglevy" manager="eamono" editor="Eric Chen"/>
 <tags ms.service="automation, sql-database"
-    ms.date=""
-    wacn.date=""
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Azure 自动化 管理 Azure SQL 数据库

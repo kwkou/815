@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="在 Azure 中创建和上载 Linux VHD - Azure 微软云" metaKeywords="Azure VHD, uploading Linux VHD, 创建和上载 Linux VHD, 虚拟硬盘" description="了解如何创建和上载具有 Linux 操作系统的 Azure 虚拟硬盘 (VHD)。本文演示了如何创建并上载虚拟硬盘 (VHD)，以便您可以将其用作您自己的映像以在 Azure 中创建虚拟机。您将了解如何准备操作系统，以便您可以使用它创建多个基于该映像的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 <tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/05/2015"
+    wacn.date="04/11/2015"
     />
 
 

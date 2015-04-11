@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-howto-service-management-api" urlDisplayName="Service Management API" pageTitle="How to use the service management API for VMs - Azure" metaKeywords="" description="Learn how to use the Azure Service Management API for a Linux virtual machine." metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use the Service Management API" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/29/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何使用服务管理 API

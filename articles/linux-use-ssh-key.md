@@ -1,7 +1,7 @@
 <properties linkid="article" urlDisplayName="Use SSH" pageTitle="在 Azure 中使用 SSH 连接到 Linux 虚拟机" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="了解如何在 Azure 上通过 Linux 虚拟机生成和使用 SSH 密钥。" metaCanonical="" services="virtual-machines" documentationCenter="" title="如何在 Azure 上通过 Linux 使用 SSH" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/28/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何在 Azure 上通过 Linux 使用 SSH

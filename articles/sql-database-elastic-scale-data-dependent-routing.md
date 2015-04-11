@@ -1,7 +1,7 @@
 <properties title="Data Dependent Routing" pageTitle="数据依赖路由" description="如何将 ShardMapManager 用于数据依赖路由（Azure SQL DB 灵活扩展的一项功能）" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, multi-shard, multishard, querying" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/05/2015"
+    wacn.date="04/11/2015"
     />
 
 #数据依赖路由

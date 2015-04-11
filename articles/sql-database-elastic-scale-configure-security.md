@@ -1,7 +1,7 @@
 <properties title="Elastic Scale Security Configurations" pageTitle="灵活扩展安全配置" description="使用 Azure SQL Database 灵活扩展的拆分/合并服务安全" metaKeywords="Elastic Scale Security Configurations, Azure SQL Database sharding, elastic scale " services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/05/2015"
+    wacn.date="04/11/2015"
     />
 
 # 灵活扩展安全配置  

@@ -1,7 +1,7 @@
 <properties title="什么是 RemoteApp？" pageTitle="什么是 RemoteApp？" description="了解 RemoteApp。" metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo"  />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="02/17/2015"
+    wacn.date="04/11/2015"
     />
 
 # 什么是 Azure RemoteApp？

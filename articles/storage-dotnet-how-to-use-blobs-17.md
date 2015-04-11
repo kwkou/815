@@ -1,7 +1,7 @@
 <properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service (2.0)" pageTitle="How to use blob storage in .NET | Windows Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob .NET, Azure blob C#, Azure blob C#" description="Learn how to use the Azure blob service to upload,,download, list, and delete blob content. Samples are written in C#." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Azure Blob Storage Service in .NET" authors="" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
+    ms.date="10/30/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何在 .NET 中使用 Azure Blob 存储服务

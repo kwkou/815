@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-how-to-guides-register-for-twitter-authentication" urlDisplayName="Register for Twitter Authentication" pageTitle="Register for Twitter authentication - Mobile Services" metaKeywords="Azure registering application, Azure Twitter authentication, application authenticate, authenticate mobile services, Mobile Services Twitter" description="Learn how to use Twitter authentication with your Azure Mobile Services application." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Twitter login with Mobile Services" authors="" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/21/2014"
+    wacn.date="04/11/2015"
     />
 
 # 注册应用程序以便在移动服务中进行 Twitter 登录

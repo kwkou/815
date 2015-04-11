@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="使用 Azure Active Directory 开发多租户云应用程序" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="12/16/2014"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Azure Active Directory 开发多租户云应用程序

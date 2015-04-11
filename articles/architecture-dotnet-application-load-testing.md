@@ -1,7 +1,7 @@
 <properties linkid="develop-net-architecture-load-testing" urlDisplayName="Load Testing Pattern" pageTitle="Load Testing Application Pattern - Azure Architecture Patterns" metaKeywords="" description="Find architectural overviews and design patterns that describe how to implement a load testing system on Azure." metaCanonical="" services="" documentationCenter=".NET" title="Load Testing in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="11/25/2014"
+    wacn.date="04/11/2015"
     />
 
 # Azure 中的负载测试

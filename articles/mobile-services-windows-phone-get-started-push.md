@@ -1,7 +1,7 @@
 <properties pageTitle="推送通知 （Windows Phone） 入门 |移动开发人员中心" metaKeywords="" description="了解如何使用 Azure 移动服务向 Windows Phone 应用程序发送推送通知。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="09/25/2014"
+    wacn.date="04/11/2015"
     />
 
 

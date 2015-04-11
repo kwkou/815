@@ -7,7 +7,11 @@
 	manager="Tiffena" 
 	editor="Eric Chen"/>
 
+<<<<<<< HEAD
+<tags ms.service="test" ms.date="03/12/2015" wacn.date="04/11/2015"/>
+=======
 <tags ms.service="test" ms.date="03/12/2015"/>
+>>>>>>> d37ab7772e2b361eba54cbfedfae3ab79a91ebcf
 
 # Delivering Video-on-Demand with Media Services REST APIs 
 

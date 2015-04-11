@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-how-to-guides-register-for-facebook-authentication" urlDisplayName="Register for Facebook Authentication" pageTitle="注册以进行 Facebook 身份验证 - 移动服务" metaKeywords="Azure Facebook, Azure Facebook, Azure authenticate Mobile Services" description="了解如何在 Azure 移动服务应用程序中使用 Facebook 身份验证。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Facebook authentication with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/21/2014"
+    wacn.date="04/11/2015"
     />
 
 # 注册应用程序以使用 Facebook 在移动服务中进行身份验证

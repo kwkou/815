@@ -1,7 +1,7 @@
 <properties linkid="develop-php-how-to-guides-service-management" urlDisplayName="Service Management" pageTitle="如何使用 Azure 服务管理 API (PHP)" metaKeywords="" description="了解如何使用 Azure PHP 服务管理 API 来管理云服务和其他 Azure 应用程序。" metaCanonical="" services="" documentationCenter="PHP" title="How to use Service Management from PHP" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="11/17/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何通过 PHP 使用服务管理

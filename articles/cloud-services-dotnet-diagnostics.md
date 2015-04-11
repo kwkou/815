@@ -1,7 +1,7 @@
 <properties linkid="dev-net-commons-tasks-diagnostics" urlDisplayName="Diagnostics" pageTitle="如何使用诊断 (.NET) - Azure 功能指南" metaKeywords="Azure diagnostics monitoring,logs crash dumps C#" description="了解如何在 Azure 中使用诊断数据进行调试、度量性能、进行监视以及流量分析等等。" metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Enabling Diagnostics in Azure" authors="ryanwi" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/17/2014"
+    wacn.date="04/11/2015"
     />
 
 

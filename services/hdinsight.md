@@ -1,7 +1,7 @@
 <properties linkid="dev-net-HDInsight" urlDisplayName="Windows Azure HDInsight" pageTitle="HDInsight - Azure 微软云" metaKeywords="HDInsight,大数据,Big Data,Hadoop,Storm,HBase,学习路线图,Apache,群集, HDInsight Emulator,MapReduce,Maven,Pig,Python,Hive,Sqoop,Mahout,Power Query,Ambari API" description="了解如何使用云中的 Hadoop 从大数据挖掘有用信息。此处提供的文档和视频帮助你开始通过 HDInsight 在云中使用 Hadoop。按照教程可在几分钟内生成和运行 Hadoop 群集、处理大数据以及使用 Excel 分析结果。" metaCanonical="" services="HDInsight" documentationCenter="Services" title="Learn how to get insights from big data using Hadoop in the cloud" authors="" solutions="" manager="" editor="Haifeng Liu" />
 <tags ms.service="HDInsight"
-    ms.date=""
-    wacn.date=""
+    ms.date="11/08/2014"
+    wacn.date="04/11/2015"
     />
 
 

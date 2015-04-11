@@ -1,7 +1,7 @@
 <properties linkid="develop-php-sql-database" urlDisplayName="SQL数据库" pageTitle="How to use SQL数据库 (PHP) - Azure feature guides" metaKeywords="Azure SQL数据库 PHP, SQL数据库 PHP" description="Learn how to create and connect to an Azure SQL数据库 from PHP." metaCanonical="" services="sql-database" documentationCenter="PHP" title="How to Access Azure SQL数据库 from PHP" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="sql-database"
-    ms.date=""
-    wacn.date=""
+    ms.date="03/25/2015"
+    wacn.date="04/11/2015"
     />
 
 # 如何从 PHP 访问 Azure SQL数据库

@@ -1,7 +1,7 @@
 <properties linkid="video-center-detail" urlDisplayName="details" pageTitle="Video Center Details" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Use ASP.NET Web Forms Output Caching with Azure Web Sites" authors="jroth" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="12/01/2014"
+    wacn.date="04/11/2015"
     />
 
 # 如何将 ASP.NET Web 窗体输出缓存用于 Azure 网站

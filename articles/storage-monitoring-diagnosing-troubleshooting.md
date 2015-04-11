@@ -1,7 +1,7 @@
 <properties title="Monitor, diagnose, and troubleshoot Windows Azure Storage" pageTitle="监视、诊断和排查存储空间问题 |Azure" description="使用存储分析、客户端日志记录等功能及其他第三方工具来确定、诊断和排查与 Azure 存储空间相关的问题。" metaKeywords="Azure storage  monitoring  diagnosing  logging  troubleshooting  performance  storage client library  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage  Azure file storage  Azure file  Azure file share  Azure" services="storage" solutions="" documentationCenter="" authors="v-dobett" videoId="" scriptId="" manager="adinah" />
 <tags ms.service="storage"
-    ms.date=""
-    wacn.date=""
+    ms.date="01/16/2015"
+    wacn.date="04/11/2015"
     />
 
 

@@ -1,7 +1,7 @@
 <properties title="How to debug with events" pageTitle="How to debug with events" description="Learn how to see events in Azure." authors="hanikn"  />
 <tags ms.service=""
-    ms.date=""
-    wacn.date=""
+    ms.date="11/24/2014"
+    wacn.date="04/11/2015"
     />
 
 # 监视影响 Azure 网站或资源组的事件
