@@ -23,11 +23,14 @@
 
 ##测试Learning Map
 
+<!--
 <object type="image/svg+xml" data="https://wacn.blob.core.chinacloudapi.cn/documents/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
 0000
 <object type="image/svg+xml" data="http://wacnstoragestaging.blob.core.chinacloudapi.cn/tech-content/articles/media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
+-->
+
 1111
 <object type="image/svg+xml" data="./media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
