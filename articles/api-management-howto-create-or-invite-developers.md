@@ -1,7 +1,7 @@
 <properties pageTitle="如何管理 Azure API 管理中的开发人员帐户" metaKeywords="" description="了解如何在 Azure API 管理中创建或邀请开发人员" metaCanonical="" services="" documentationCenter="API Management" title="如何管理 Azure API 管理中的开发人员帐户" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="03/10/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何管理 Azure API 管理中的开发人员帐户

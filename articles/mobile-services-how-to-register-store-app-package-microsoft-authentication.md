@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-how-to-guides-register-windows-store-app-server-auth" urlDisplayName="Shared Access Signature Part 1" pageTitle="注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证" metaKeywords="" description="了解如何在 Azure 移动服务应用程序中注册 Windows 应用商店应用程序以进行 Microsoft 身份验证" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your Windows Store app package for Microsoft authentication" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services"
     ms.date="11/21/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证

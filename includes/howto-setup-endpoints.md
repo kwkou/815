@@ -1,7 +1,7 @@
 <properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 #如何设置虚拟机的终结点

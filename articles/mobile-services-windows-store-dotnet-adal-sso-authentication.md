@@ -1,7 +1,9 @@
 
 <properties linkid="develop-mobile-tutorials-sso-with-adal" urlDisplayName="使用 ADAL 的 Active Directory SSO 身份验证" pageTitle="使用 Active Directory 身份验证库单一登录对应用程序进行身份验证 (Windows Store) | 移动开发人员中心" metaKeywords="" description="了解如何在 Windows 应用商店应用程序中使用 ADAL 对用户进行单一登录身份验证。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Authenticate your app with Active Directory Authentication Library Single Sign-On" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/14/2014" ms.author="wesmc" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="10/14/2014" ms.author="wesmc" />
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 

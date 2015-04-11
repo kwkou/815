@@ -1,7 +1,7 @@
 <properties linkid="develop-php-website-from-gallery" urlDisplayName="Web site from Gallery" pageTitle="WordPress Web site from Gallery - Azure tutorial" metaKeywords="Azure create website WordPress, Azure WordPress, WordPress blog Azure" description="A tutorial that teaches you how to create a new Azure web site for a WordPress blog, and then deploy it through the Management Portal." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a WordPress web site from the gallery in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 在 Azure 中从库中创建 WordPress 网站

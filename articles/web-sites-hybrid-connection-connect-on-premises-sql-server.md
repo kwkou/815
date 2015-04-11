@@ -1,7 +1,7 @@
 <properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Windows Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="web-sites"
     ms.date="02/12/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用混合连接从 Azure 网站连接至本地 SQL Server

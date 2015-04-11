@@ -1,7 +1,7 @@
 <properties linkid="dev-net-Notification-Hubs" urlDisplayName="Windows Azure Notification Hubs" pageTitle="通知中心 - Azure 微软云" metaKeywords="Notification Hubs,通知中心,跨平台,Xamarin iOS,Xamarin Android,推送通知,百度推送,突发新闻" description="针对消费类和企业应用程序的推送通知 - 从任何后端发送至任何设备平台。使用通知中心可轻松地从本地或云中的任何后端平台发送跨平台的个性化推送通知。通过单次 API 调用，可通过任何设备锁定单个用户或包含数百万个用户的受众细分群体。" metaCanonical="" services="Notification Hubs" documentationCenter="Services" title="Push notifications for consumer and enterprise apps—from any backend to any device platform" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Notification Hubs"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

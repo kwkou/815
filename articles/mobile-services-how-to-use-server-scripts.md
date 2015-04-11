@@ -1,7 +1,7 @@
 <properties pageTitle="使用 JavaScript 后端移动服务" metaKeywords="server scripts, mobile devices, Azure, scheduler" description="提供有关如何在 Azure 移动服务中定义、注册以及使用服务器脚本的示例。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Work with server scripts in Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services"
     ms.date="02/12/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

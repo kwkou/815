@@ -1,7 +1,7 @@
 <properties pageTitle="Call a custom API from a Windows Store client - Mobile Services" metaKeywords="" description="Learn how to define a custom API and then call it from a Windows Store app that use Windows Azure Mobile Services." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors=""  solutions="" writer="glenga" manager="" editor=""  />
 <tags ms.service="mobile-services"
     ms.date="02/26/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 从客户端调用自定义 API

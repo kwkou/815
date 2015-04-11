@@ -1,7 +1,7 @@
 <properties linkid="services-linux-user-names" urlDisplayName="User Names in Linux" pageTitle="在 Azure 上选择 Linux 的用户名" metaKeywords="" description="了解如何在 Azure 中选择 Linux 虚拟机的用户名。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Selecting User Names for Linux on Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="03/16/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

@@ -1,7 +1,7 @@
 <properties linkid="manage-services-sql-databases-datasync" urlDisplayName="How to sync data" pageTitle="Getting started with SQL数据库s Data Sync" metaKeywords="" description="" metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Data Sync" authors="" solutions="" manager="" editor="" />
 <tags ms.service="sql-database"
     ms.date="03/02/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # Azure SQL 数据同步入门

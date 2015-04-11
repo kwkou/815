@@ -1,7 +1,7 @@
 <properties title="Splitting and Merging with Elastic Scale" pageTitle="使用灵活扩展拆分和合并" description="介绍如何使用灵活扩展 API 通过自托管服务来操作分片和移动数据。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
     ms.date="03/24/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用灵活扩展拆分和合并

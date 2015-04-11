@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Getting started with SQL Server on an Azure virtual machine" authors="selcint" solutions="" manager="clairt" editor="tyson" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # Azure 虚拟机上的 SQL Server 入门

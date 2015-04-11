@@ -1,7 +1,7 @@
 <properties linkid="dev-net-Mobile-Service" urlDisplayName="Windows Azure Mobile Service" pageTitle="移动服务 - Azure 微软云" metaKeywords="Mobile Service,Azure 移动服务,iOS,Windows Phone,Android,HTML,PhoneGap,Sencha,Office 365,AD,Active Directory,.Net,Node.js,Web API,动态受众细分,推送,通知,推送通知,服务端用户授权,后端作业,移动服务SDK,REST API" description="本页面是微软Azure云服务中移动服务的入口页。通过本页面，你可以找到有关Azure移动服务的相关内容。包括：iOS、Windows Phone、Android等主流移动操作系统上如何使用Azure移动服务提供的SDK、API等，使用你熟悉的.Net、Node.js等架构开发应用程序；如何将应用程序注册到Windows应用商店；如何链接到AD、SQL Database、MongoDB、Office 365、SharePoint；如何添加身份认证，如何对客户端进行授权等。" metaCanonical="" services="Mobile Service" documentationCenter="Services" title="Add a cloud backend to your app in minutes" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Mobile Service"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />     
 
 

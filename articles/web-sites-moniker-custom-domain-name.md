@@ -1,7 +1,7 @@
 <properties title="Learn how to configure an Azure web site to use a domain name registered with Moniker" pageTitle="Configure a Moniker domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, domain name" description="Learn how to configure an Azure web site to use a domain name registered with Moniker" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
 <tags ms.service="web-sites"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 为 Azure 网站配置自定义域名 (Moniker)

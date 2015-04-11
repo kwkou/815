@@ -1,7 +1,7 @@
 <properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     /> 
 
 **重要说明**：如果您希望虚拟机使用虚拟网络，请确保在创建虚拟机时指定虚拟网络。仅当创建虚拟机后，才能将该虚拟机配置为加入虚拟网络。有关虚拟网络的更多信息，请参见 [Azure 虚拟网络概述](http://go.microsoft.com/fwlink/p/?LinkID=294063)。

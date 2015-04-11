@@ -1,7 +1,7 @@
 <properties linkid="develop-node-create-a-website-mac" urlDisplayName="Web site" pageTitle="在 Mac 上创建 Node.js 网站 - Azure 教程" metaKeywords="Azure create website Node, Azure deploy website Node, website Node.js, Node website" description="了解如何构建 Node.js 网站并在 Azure 中部署。代码示例使用 Java 编写。" metaCanonical="" services="web-sites" documentationCenter="Node.js" title="构建 Node.js 网站并部署到 Azure" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 构建 Node.js 网站并部署到 Azure

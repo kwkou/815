@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-howto-configure-raid" urlDisplayName="Configure RAID on Linux" pageTitle="在 Azure 中运行 Linux 的虚拟机上配置软件 RAID" metaKeywords="raid in Azure, madadm Azure, stripe disks in Azure" description="了解如何使用 mdadm 在 Azure 中的 Linux 上配置 RAID。" metaCanonical="/zh-cn/manage/linux/articles/virtual-machines-linux-configure-raid" services="virtual-machines" documentationCenter="" title="" authors="szark" solutions="" writer="" manager="" editor=""  />
 <tags ms.service="virtual-machines"
     ms.date="03/13/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

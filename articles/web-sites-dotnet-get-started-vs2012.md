@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Azure 网站和 ASP.NET 入门" authors="tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # Azure 网站和 ASP.NET 入门

@@ -1,7 +1,7 @@
 <properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="如何将 Hudson 用于 Azure Blob 服务 | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="介绍如何将 Hudson 与 Microsoft Azure Blob 存储一起使用作为生成项目的存储库。" metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="storage"
     ms.date="02/25/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 #将 Azure 存储空间用于 Hudson 持续集成解决方案

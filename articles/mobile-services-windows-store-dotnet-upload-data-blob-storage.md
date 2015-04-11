@@ -1,7 +1,7 @@
 <properties pageTitle="使用移动服务将图像上载到 blob 存储区（Windows 应用商店）| 移动服务" metaKeywords="" description="了解如何使用移动服务将图像上载到 Azure Blob 存储区以及从 Windows 应用商店应用程序访问图像。" metaCanonical="" services="" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="glenga" solutions="mobile" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/22/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用移动服务将图像上载到 Azure 存储空间

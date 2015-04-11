@@ -1,7 +1,7 @@
 <properties pageTitle="使用消息传送构建可靠弹性的云应用程序" metaKeywords="Service Bus, Cloud, elastic" description="了解如何使用 Microsoft Azure 中的消息传送构建可靠弹性的云应用程序。" services="service-bus" title="Build Reliable and Elastic Cloud Apps with Messaging" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 <tags ms.service="service-bus"
     ms.date="03/18/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用消息传送构建可靠弹性的云应用程序 

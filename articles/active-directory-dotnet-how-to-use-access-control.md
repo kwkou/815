@@ -1,7 +1,7 @@
 <properties linkid="dev-net-how-to-access-control" urlDisplayName="Access Control" pageTitle="如何使用 Access Control (.NET) - Azure 功能指南" metaKeywords="Azure Access Control Service authentication C#" description="了解如何在 Azure 应用程序中使用访问控制服务 (ACS) 在用户尝试获取对 Web 应用程序的访问权限时对其进行身份验证。" metaCanonical="" services="active-directory" documentationCenter=".NET" title="如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证" authors="juneb" solutions="" manager="" editor="" />
 <tags ms.service="active-directory"
     ms.date="03/04/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证

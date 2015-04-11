@@ -1,7 +1,7 @@
 <properties linkid="develop-php-website-with-mysql-and-git" urlDisplayName="Web w/ MySQL + Git" pageTitle="PHP web site with MySQL and Git - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use Git deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure web site and deploy using Git" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 创建 PHP-MySQL Azure 网站并使用 Git 进行部署

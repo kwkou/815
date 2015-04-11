@@ -1,7 +1,7 @@
 <properties linkid="get-started-with-scheduler" urlDisplayName="计划程序入门" pageTitle="计划程序入门 | Windows Azure" metaKeywords="计划程序" description="TBD" umbracoNaviHide="0" disqusComments="1" writer="krisragh" editor="mattshel" manager="carolz" title="计划程序入门" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

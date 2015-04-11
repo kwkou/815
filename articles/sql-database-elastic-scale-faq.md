@@ -1,7 +1,7 @@
 <properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 灵活扩展常见问题" description="关于 Azure SQL Database 灵活扩展的常见问题。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
 <tags ms.service="sql-database"
     ms.date="02/16/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # Azure SQL Database 灵活扩展常见问题 

@@ -1,7 +1,7 @@
 <properties linkid="configure-hyper-v-recovery-vault" urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Azure Site Recovery 入门：使用 SAN 提供本地到本地 VMM 站点的保护" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery, SAN" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines between on-premises sites using SAN replication." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises to On-Premises VMM Site Protection with SAN replication" editor="jimbe" manager="cfreeman" authors="raynew" />
 <tags ms.service=""
     ms.date="02/18/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

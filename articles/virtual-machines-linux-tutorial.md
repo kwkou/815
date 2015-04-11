@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-tutorial-vm-from-galllery" urlDisplayName="Create a virtual machine" pageTitle="在 Azure 中创建运行 Linux 的虚拟机 - Azure 微软云" metaKeywords="Azure Linux vm, Linux vm, Linux虚拟机" description="了解如何捕获运行 Linux Azure 虚拟机 (VM) 的映像。当您使用 Azure 管理门户中的映像库时，创建运行 Linux 的虚拟机很容易。本指南演示如何执行此操作，并假定您没有使用过 Azure。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 <tags ms.service="virtual-machines"
     ms.date="03/06/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

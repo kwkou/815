@@ -1,7 +1,7 @@
 <properties urlDisplayName="Visual Studio 14 CTP" pageTitle="安装 Azure SDK 2.4 for Visual Studio 14 CTP2" metaKeywords="Visual Studio, Azure SDK" description="安装 Azure SDK 2.4 和 Visual Studio 14 CTP2" metaCanonical="" services="" documentationCenter="" title="Installing Azure SDK 2.4 for Visual Studio 14 CTP" authors="ghogen" solutions="" manager="douge" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 安装 Azure SDK 2.4 for Visual Studio "14" CTP

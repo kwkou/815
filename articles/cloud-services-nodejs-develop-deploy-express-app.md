@@ -1,7 +1,7 @@
 <properties linkid="dev-nodejs-basic-web-app-with-express" urlDisplayName="Web App with Express" pageTitle="使用 Express 生成 Web 应用程序 (Node.js) - Azure 教程" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="本教程以云服务教程为基础，演示如何使用 Express 模块。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build a Node.js web application using Express on an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/25/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

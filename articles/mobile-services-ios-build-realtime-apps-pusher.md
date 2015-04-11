@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-build-realtime-apps-with-pusher-ios" urlDisplayName="使用 Pusher 生成实时应用程序" pageTitle="使用 Pusher 生成实时应用程序 (iOS) - 移动服务" metaKeywords="" description="了解如何使用 Pusher 将通知发送到 iOS 上的 Azure 媒体服务应用程序。" metaCanonical="" services="" documentationCenter="Mobile" title="Build Real-time Apps with Mobile Services and Pusher" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="10/10/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

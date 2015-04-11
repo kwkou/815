@@ -1,7 +1,7 @@
 <properties title="Azure SQL Database Elastic Scale" pageTitle="Azure SQL Database 灵活扩展" description="文档结构图，是 Azure SQL DB 的灵活扩展功能内容的可视表格" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
     ms.date="02/16/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # Azure SQL Database 灵活扩展主题

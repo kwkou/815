@@ -1,7 +1,7 @@
 <properties pageTitle="推送通知入门 (Windows 应用商店) | 移动开发人员中心" metaKeywords="" description="了解如何使用 Azure .Net 运行时移动服务和通知中心将推送通知发送到 Windows 应用商店 JavaScript 应用程序。" metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="wesmc" solutions="" manager="" editor="" />
 <tags ms.service="mobile"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

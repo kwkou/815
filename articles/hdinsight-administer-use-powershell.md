@@ -1,7 +1,7 @@
 <properties linkid="manage-services-hdinsight-administer-hdinsight-using-powershell" urlDisplayName="HDInsight Administration" pageTitle="使用 PowerShell 管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to perform administrative tasks for the HDInsight clusters using PowerShell." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using PowerShell" authors="bradsev" />
 <tags ms.service="hdinsight"
     ms.date="11/21/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用 PowerShell 管理 HDInsight

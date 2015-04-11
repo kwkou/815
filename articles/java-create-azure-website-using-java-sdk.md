@@ -8,7 +8,7 @@
 	editor="jimbe"/>
 <tags ms.service=""
     ms.date="03/18/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用 Azure SDK for Java 在 Azure 上创建一个网站

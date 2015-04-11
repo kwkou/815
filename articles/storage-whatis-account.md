@@ -1,7 +1,7 @@
 <properties linkid="manage-services-what-is-a-storage-account" urlDisplayName="What is a Storage Account" pageTitle="什么是存储帐户？| Windows Azure" metaKeywords="" description="了解 Azure 中提供的不同类型的存储帐户，并获取关键存储术语的定义。" metaCanonical="" services="storage" documentationCenter="" title="What is a Storage Account?" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

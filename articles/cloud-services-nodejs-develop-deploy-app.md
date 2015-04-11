@@ -1,7 +1,7 @@
 <properties linkid="dev-nodejs-getting-started" urlDisplayName="Cloud Service" pageTitle="Node.js 入门指南 - Azure 教程" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="一类端到端教程，可帮助你开发简单的 Node.js Web 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/24/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

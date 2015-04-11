@@ -2,7 +2,7 @@
 	documentationCenter="Mobile" title="Get started with Mobile Services" />
 <tags ms.service=""
     ms.date="11/11/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 <a name="getting-started"></a>

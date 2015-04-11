@@ -1,6 +1,8 @@
 <properties title="Load Balancing for Azure Infrastructure Services" pageTitle="Azure 基础结构服务的负载平衡介绍使用流量管理器和负载平衡器实现负载平衡的设施。" description="描述要执行负载平衡与 Traffic Manager 和负载平衡器的功能。" metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="cherylmc" videoId="" scriptId="" manager="adinah" />
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="cherylmc" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="virtual-machines" ms.workload="infrastructure-services" ms.tgt_pltfrm="" ms.devlang="na" ms.topic="article" ms.date="09/17/2014" ms.author="cherylmc" />
 
 #Azure 基础结构服务的负载平衡#
 

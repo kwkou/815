@@ -1,7 +1,7 @@
 <properties linkid="manage-services-how-to-use-appdynamics" urlDisplayName="Monitor with AppDynamics" pageTitle="How to use AppDynamics with Azure" metaKeywords="" description="Learn how to use AppDynamics for Azure." metaCanonical="" services="cloud-services" documentationCenter="" title="How To Use AppDynamics for Azure" authors="ryanwi" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何对 Azure 使用 AppDynamics

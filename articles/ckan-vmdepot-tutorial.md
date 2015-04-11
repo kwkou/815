@@ -1,7 +1,7 @@
 <properties linkid="ckan-vmdepot-tutorial" urlDisplayName="使用VMDepot镜像快速部署CKAN开放数据门户" pageTitle="使用VMDepot镜像快速部署CKAN开放数据门户" metaKeywords="使用VMDepot镜像快速部署CKAN开放数据门户" description="使用VMDepot镜像快速部署CKAN开放数据门户" metaCanonical="" services="" documentationCenter="develop"  title="使用VMDepot镜像快速部署CKAN开放数据门户" authors="" solutions="" manager="TK" editor="Haifeng Liu" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 #使用VMDepot镜像快速部署CKAN开放数据门户#

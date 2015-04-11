@@ -1,7 +1,7 @@
 <properties linkid="develop-php-how-to-guides-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (PHP) - Azure" metaKeywords="" description="了解如何通过 PHP 使用 Azure 中的 Service Bus 主题。" metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
 <tags ms.service="service-bus"
     ms.date="02/10/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

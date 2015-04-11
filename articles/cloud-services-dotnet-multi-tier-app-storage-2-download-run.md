@@ -1,7 +1,7 @@
 <properties linkid="develop-net-tutorials-multi-tier-web-site-2-download-and-run" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="riande,tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 配置和部署 Azure 电子邮件服务应用程序 - 第 2 部分（共 5 部分）

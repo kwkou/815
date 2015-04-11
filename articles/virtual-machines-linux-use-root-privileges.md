@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-common-tasks-user-root-privileges" urlDisplayName="Use root privileges" pageTitle="在 Azure 中的 Linux 虚拟机上使用根权限" metaKeywords="" description="了解如何在 Azure 中的 Linux 虚拟机上使用根权限。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Using root privileges on Linux virtual machines in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="03/16/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

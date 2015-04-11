@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-twilio-for-voice-and-sms" pageTitle="Use Twilio for Voice and SMS Capabilities | Mobile Dev Center" metaKeywords="" description="Learn how to perform common tasks using the Twilio API with Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use Twilio for voice and SMS capabilities from Mobile Services" authors="twilio" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/25/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何在移动服务中使用 Twilio 实现语音和短信功能

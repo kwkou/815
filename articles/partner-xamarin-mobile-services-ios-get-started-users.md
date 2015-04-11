@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-users-xamarin-ios" urlDisplayName="Get Started with Authentication (Xamarin.iOS)" pageTitle="Get started with authentication (Xamarin.iOS) - Mobile Services" metaKeywords="Azure registering application, Azure authentication, application authenticate, authenticate mobile services, Mobile Services Xamarin.iOS" description="Learn how to use authentication in your Azure Mobile Services app for Xamarin.iOS." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile"  title="Get started with authentication in Mobile Services" />
 <tags ms.service=""
     ms.date="09/23/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 移动服务中的身份验证入门

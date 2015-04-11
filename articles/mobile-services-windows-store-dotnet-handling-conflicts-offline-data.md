@@ -2,7 +2,9 @@
 
 <properties linkid="develop-mobile-tutorials-handle-conflcits-offline-data-dotnet" urlDisplayName="处理与脱机数据的冲突" pageTitle="在"移动服务（Windows 应用商店）"|"移动开发人员中心"中处理与脱机数据的冲突" metaKeywords="" description="了解如何处理与 Windows 应用商店应用程序中的脱机数据的冲突。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling conflicts with offline data in Mobile Services" authors="wesmc" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="wesmc" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="wesmc" />
 
 
 # 在"移动服务"中处理与脱机数据同步的冲突

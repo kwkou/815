@@ -1,7 +1,7 @@
 <properties linkid="develop-java-how-to-twilio-phone-call" urlDisplayName="How to Make a Phone Call from Twilio in Java" pageTitle="How to Make a phone call from Twilio (Java) - Azure" metaKeywords="Azure Twilio call, Twilio call website, Azure Twilio Java" description="Learn how to make a phone call from a web page using Twilio in a Java application on Azure." metaCanonical="" services="" documentationCenter="Java" title="How to Make a Phone Call Using Twilio in a Java Application on Azure" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date="11/25/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何在 Azure 的 Java 应用程序中使用 Twilio 发起电话呼叫

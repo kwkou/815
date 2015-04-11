@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="Architecture" metaKeywords="" description="Architecture overview that covers common design patterns" metaCanonical="" services="" documentationCenter="" videoId="" scriptId="" title="Architecture Overview" authors="robb" solutions="" manager="dongill" editor="mattshel" />
 <tags ms.service=""
     ms.date="03/20/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 体系结构

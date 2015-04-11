@@ -1,6 +1,8 @@
 <properties linkid="develop-mobile-tutorials-schedule-backend-tasks" urlDisplayName="计划后端任务" pageTitle="使用计划程序计划后端任务 - 移动服务" metaKeywords="" description="使用 Azure 移动服务计划程序来计划移动应用程序的作业。" metaCanonical="" services="" documentationCenter="Mobile" title="Schedule recurring jobs in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
 
 # 在移动服务中计划定期作业 
 

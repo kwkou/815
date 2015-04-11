@@ -1,7 +1,7 @@
 <properties linkId="mobile-services-dotnet-backend-windows-phone-upload-data-blob-storage" pageTitle="Use Mobile Services to upload images to blob storage (Windows Phone) | Mobile Services" metaKeywords="" description="Learn how to use Mobile Services to upload images to Azure Blob Storage." metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="glenga" writer="glenga" services="mobile-services" />
 <tags ms.service="mobile-services"
     ms.date="02/25/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用移动服务将图像上载到 Azure 存储服务

@@ -1,7 +1,7 @@
 <properties linkid="develop-python-table-service" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Python) | Microsoft Azure" metaKeywords="Azure table Python, creating table Azure, deleting table Azure, inserting table Azure, querying table Azure" description="了解如何从 Python 使用表服务来创建和删除表，以及插入、删除和查询表。" metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Table Storage Service from Python" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

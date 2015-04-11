@@ -1,7 +1,7 @@
 <properties pageTitle="使用 Azure 自动化 管理 Azure 存储空间" description="了解如何使用 Azure 自动化 服务来方便管理 Azure 存储空间。" services="automation, storage" documentationCenter="" authors="jodoglevy" manager="eamono" editor="Eric Chen"/>
 <tags ms.service="automation, storage"
     ms.date="02/20/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="Browse and Edit Your Source Code" pageTitle="浏览和编辑您的源代码 | Azure" metaKeywords="Visual Studio Online, VSO, git, tfvc, edit, code, commit" description="了解如何编辑您的源代码。" metaCanonical="" services="visual-studio-online" documentationCenter="" title="浏览和编辑您的源代码" authors="ehollow" solutions="" manager="" editor="" />
 <tags ms.service="visual-studio-online"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 浏览和编辑您的源代码

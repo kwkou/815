@@ -1,7 +1,7 @@
 <properties linkid="websites-digital-marketing" urlDisplayName="Resources" pageTitle="Create a Digital Marketing Campaign on Azure Web Sites" metaKeywords="" description="This guide provides a technical overview of how to use Azure Web Sites to create digital marketing campaigns. This includes deployment, social media integration, scaling strategies, and monitoring." metaCanonical="" services="" documentationCenter="" title="Create a Digital Marketing Campaign on Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service=""
     ms.date="02/12/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 在 Azure 网站上创建数字市场营销活动

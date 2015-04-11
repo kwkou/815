@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 <h1 id="menu-media-services-resources">教程和资源</h1>

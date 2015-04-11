@@ -1,6 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-users-wp8" urlDisplayName="身份验证入门" pageTitle="身份验证 （Windows Phone） 入门 |移动开发人员中心" metaKeywords="" description="了解如何使用移动服务通过各个身份提供平台（包括 Google、 Facebook、 Twitter 和 Microsoft）对 Windows Phone 应用程序的用户进行身份验证。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/23/2014" ms.author="glenga" />
 
 # 向移动服务应用程序添加身份验证
 

@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-push-android" urlDisplayName="Get Started with Push" pageTitle="Get started with push (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android .Net app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
 <tags ms.service=""
     ms.date="02/03/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 移动服务中的推送通知入门

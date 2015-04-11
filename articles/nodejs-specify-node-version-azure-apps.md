@@ -1,7 +1,7 @@
 <properties linkid="develop-nodejs-common-tasks-specifying-a-node-version" urlDisplayName="Specifying a Node.js Version" pageTitle="Specifying a Node.js Version" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="Node.js" title="Specifying a Node.js version in an Azure application" authors="larryfr" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service=""
     ms.date="02/19/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 在 Azure 应用程序中指定 Node.js 版本

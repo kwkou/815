@@ -1,7 +1,7 @@
 <properties pageTitle="注册以进行 Microsoft 身份验证 - 移动服务" metaKeywords="Azure registering application, Azure Microsoft authentication, application authenticate, authenticate mobile services" description="了解如何在 Azure 移动服务应用程序中注册以进行 Microsoft 身份验证。" metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Register your apps to use a Microsoft Account login" authors="glenga" services="mobile-services" documentationCenter="Mobile" />
 <tags ms.service="mobile-services"
     ms.date="11/21/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 注册应用程序以使用 Microsoft 帐户登录

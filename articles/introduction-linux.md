@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-fundamentals-intro-to-linux" urlDisplayName="Intro to Linux" pageTitle="Azure 中的 Linux 简介 - Azure 教程" metaKeywords="Azure Linux vm, Linux vm" description="了解如何在 Azure 上使用 Linux 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Azure 上的 Linux 简介" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # Azure 上的 Linux 简介

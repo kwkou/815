@@ -1,7 +1,7 @@
 <properties linkid="manage-linux-common-tasks-manage-certs" urlDisplayName="Manage certificates" pageTitle="在 Azure 中为 Linux 虚拟机管理证书" metaKeywords="Azure management certs, uploading management certs, Azure Service Management API" description="了解如何在 Azure 中为 Linux 创建和上载管理证书。如果您使用服务管理 API，则证书是必需的。" metaCanonical="" services="virtual-machines" documentationCenter="" title="在 Azure 中为 Linux 创建管理证书" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 <tags ms.service="virtual-machines"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 在 Azure 中为 Linux 创建管理证书

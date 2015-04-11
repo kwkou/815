@@ -1,7 +1,7 @@
 <properties pageTitle="使用分页优化移动服务查询 (Windows Store) | 移动开发人员中心" metaKeywords="" description="本主题说明如何使用分页来管理从移动服务返回给 Windows 应用商店应用程序的数据量。" metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

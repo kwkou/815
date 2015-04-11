@@ -1,7 +1,7 @@
 <properties linkid="manage-services-how-to-monitor-a-storage-account" urlDisplayName="How to monitor" pageTitle="如何监视存储帐户 | Microsoft Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="了解如何使用管理门户在 Azure 中监视存储帐户。" metaCanonical="" services="storage" documentationCenter="" title="How To Monitor a Storage Account" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="03/06/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

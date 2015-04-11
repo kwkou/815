@@ -1,7 +1,7 @@
 <properties linkid="develop-mobile-tutorials-get-started" urlDisplayName="Get Started" pageTitle="Get Started with Mobile Services for Windows Store apps | Mobile Dev Center" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Windows Store development in C#, VB, or JavaScript. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/21/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 <a name="getting-started"> </a>

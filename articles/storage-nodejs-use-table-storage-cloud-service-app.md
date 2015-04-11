@@ -1,7 +1,7 @@
 <properties linkid="dev-nodejs-basic-web-app-with-storage" urlDisplayName="Web App with Storage" pageTitle="使用表存储构建 Web 应用程序 (Node.js) | Microsoft Azure 教程" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="本教程以"使用 Express 构建 Web 应用程序"教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" metaCanonical="" services="cloud-services,storage" documentationCenter="Node.js" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services,storage"
     ms.date="02/25/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

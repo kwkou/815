@@ -1,7 +1,7 @@
 <properties linkid="dev-java-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (Java) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Java" description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="Java" title="How to Use Service Bus Queues" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="service-bus"
     ms.date="02/10/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何使用 Service Bus 队列

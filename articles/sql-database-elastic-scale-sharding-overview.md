@@ -1,7 +1,7 @@
 <properties title="Sharding Overview" pageTitle="分片概述" description="分片理由：扩展数据库资源以增强可用性或性能。" metaKeywords="sharding, scaling, elastic scale, Azure SQL Database" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
     ms.date="02/03/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

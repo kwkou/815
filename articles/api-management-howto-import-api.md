@@ -1,7 +1,7 @@
 <properties pageTitle="API 管理关键概念" metaKeywords="" description="了解有关 API、产品、角色、组和其他 API 管理关键概念。" metaCanonical="" services="" documentationCenter="API Management" title="API 管理关键概念" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="03/10/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何通过 Azure API 管理中的操作导入 API 的定义

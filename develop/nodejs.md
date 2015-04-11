@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="NODEJS"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 #创建您的第一个 Node.js 应用程序

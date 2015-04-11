@@ -1,7 +1,7 @@
 <properties linkid="dev-nodejs-enablessl" urlDisplayName="Enable SSL" pageTitle="为云服务配置 SSL (Node.js) - Azure" metaKeywords="Node.js Azure SSL, Node.js Azure HTTPS" description="了解如何为 Node.js Web 角色指定 HTTPS 终结点，以及如何上载 SSL 证书来保护您的应用程序。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Configuring SSL for a Node.js Application in an Azure Web Role" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/20/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

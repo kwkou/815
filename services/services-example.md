@@ -1,7 +1,7 @@
 <properties linkid="dev-net-Virtual-Machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="Windows Azure 服务管理：虚拟机" metaKeywords="虚拟机" description="" metaCanonical="" services="虚拟机" documentationCenter="Services" title="Provision, migrate, and manage your virtual machines" authors="" solutions="" manager="" editor="" />
 <tags ms.service="虚拟机"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 <div class="template-sublanding-content-wrapper">

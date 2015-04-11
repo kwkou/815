@@ -1,7 +1,7 @@
 <properties linkid="hdinsight-emulator-release-notes" urlDisplayName="HDInsight Emulator release notes" pageTitle="Release notes: Microsoft HDInsight Emulator for Azure | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Get late-breaking information about the most recent releases of the HDInsight Emulator." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Release notes: Microsoft HDInsight Emulator for Azure" authors="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="09/03/2014"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 发行说明：Microsoft HDInsight Emulator for Azure

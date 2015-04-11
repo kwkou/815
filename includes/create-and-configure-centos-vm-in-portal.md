@@ -1,7 +1,7 @@
 <properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     /> 
 
 **注意**：本文创建的是不连接到虚拟网络的虚拟机。如果您希望虚拟机使用虚拟网络，以便您能够通过主机名直接连接到虚拟机或设置

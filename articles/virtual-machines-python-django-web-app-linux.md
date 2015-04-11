@@ -1,7 +1,7 @@
 <properties linkid="develop-python-web-app-with-django-mac" urlDisplayName="Web with Django" pageTitle="Python web 应用程序使用 Django 上 Mac-Azure 教程" metaKeywords="" description="本教程演示如何托管基于 Django 的网站在 Azure 上使用 Linux 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application (mac-linux)" authors="larryf" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="02/05/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

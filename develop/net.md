@@ -9,7 +9,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service=".NET"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 #.NET Azure 文档

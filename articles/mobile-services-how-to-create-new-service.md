@@ -1,6 +1,8 @@
 <properties pageTitle="如何创建新的移动服务" metaKeywords="" description="按照本教程进行操作，创建使用 Azure 移动服务的新服务。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="How to create a new mobile service" authors="glenga" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
 
 # 如何创建新的移动服务
 

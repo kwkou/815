@@ -1,7 +1,7 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-kindle" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to send push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="sethm" solutions="" manager="dwrede" editor="" />
 <tags ms.service="notification-hubs"
     ms.date="03/16/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 通知中心入门

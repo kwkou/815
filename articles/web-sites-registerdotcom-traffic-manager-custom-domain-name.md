@@ -1,7 +1,7 @@
 <properties title="Learn how to configure an Azure web site that uses 流量管理器 to use a domain name registered with Register.com" pageTitle="Configure a Register.com domain name for an Azure web site that uses 流量管理器" metaKeywords="Windows Azure, Windows Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
 <tags ms.service="web-sites"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 使用流量管理器为 Azure 网站配置自定义域名 (Register.com)

@@ -1,7 +1,7 @@
 <properties pageTitle="将 Windows PowerShell 与资源管理器一起使用" metaKeywords="ResourceManager, PowerShell, Azure PowerShell" description="使用 Windows PowerShell 来创建资源组" metaCanonical="" services="" documentationCenter="" title="将 Windows PowerShell 与资源管理器一起使用" authors="juneb" solutions="" manager="mbaldwin" editor="mollybos" />
 <tags ms.service=""
     ms.date="03/13/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 将 Windows PowerShell 与资源管理器一起使用

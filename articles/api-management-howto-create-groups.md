@@ -1,7 +1,7 @@
 <properties pageTitle="如何创建和使用组来管理 Azure API 管理中的开发人员帐户" metaKeywords="" description="了解如何使用 Azure API 管理中的组管理开发人员帐户" metaCanonical="" services="" documentationCenter="API Management" title="如何创建和使用组来管理 Azure API 管理中的开发人员帐户" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="03/10/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 # 如何创建和使用组来管理 Azure API 管理中的开发人员帐户

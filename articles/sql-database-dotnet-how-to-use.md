@@ -1,7 +1,7 @@
 <properties linkid="dev-net-how-to-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Database (.NET) - Azure 功能指南" metaKeywords="Get started SQL Azure, Getting started SQL Azure, SQL Azure database connection, SQL Azure ADO.NET, SQL Azure ODBC, SQL Azure EntityClient" description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" metaCanonical="" services="sql-database" documentationCenter=".NET" title="How to use Azure SQL Database in .NET applications" authors="" solutions="" manager="" editor="" />
 <tags ms.service="sql-database"
     ms.date="03/16/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 

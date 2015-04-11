@@ -1,7 +1,7 @@
 <properties linkid="scripting-center-index" urlDisplayName="index" pageTitle="Scripting Center Index" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Manage Origins in a Media Services Account" authors="juliako" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="03/10/2015"
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 如何在 Media Services 帐户中管理来源

@@ -1,7 +1,7 @@
 <properties linkid="manage-windows-howto-logon" urlDisplayName="Log on to a VM" pageTitle="登录到运行 Windows Server 的虚拟机" metaKeywords="Azure logging on vm, vm portal" description="了解如何在登录到运行 Windows Server 2008 R2，通过使用 Azure 管理门户的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Log on to a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
 <tags ms.service="virtual-machines"
     ms.date=""
-    wacn.date=""
+    wacn.date="04/11/2015"
     />
 
 
