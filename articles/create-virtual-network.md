@@ -14,7 +14,7 @@
 
 <div class="dev-callout"> 
 <b>说明</b> 
-<p>本教程不演练创建跨界配置的过程。有关演练创建虚拟网络进行站点到站点跨界连接（即连接到位于你公司内的 Active Directory 或 SharePoint）的教程，请参阅<a href="/zh-cn/manage/services/networking/cross-premises-connectivity/">创建虚拟网络进行跨界连接</a>。</p> 
+<p>本教程不演练创建跨界配置的过程。有关演练创建虚拟网络进行站点到站点跨界连接（即连接到位于你公司内的 Active Directory 或 SharePoint）的教程，请参阅<a href="/manage/services/networking/cross-premises-connectivity/">创建虚拟网络进行跨界连接</a>。</p> 
 </div>
 
 有关其他虚拟网络配置过程和设置，请参阅 [Azure 虚拟网络配置任务][Azure 虚拟网络配置任务]。
@@ -109,7 +109,7 @@
 -   [Azure 名称解析概述][Azure 名称解析概述]
 
   [Azure 虚拟网络概述]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
-  [创建虚拟网络进行跨界连接]: /zh-cn/manage/services/networking/cross-premises-connectivity/
+  [创建虚拟网络进行跨界连接]: /manage/services/networking/cross-premises-connectivity/
   [Azure 虚拟网络配置任务]: http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx
   [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则]: http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn/
@@ -121,8 +121,8 @@
   [3]: ./media/create-virtual-network/createVNet_04_VirtualNetworkAddressSpaces.png
   [4]: ./media/create-virtual-network/createVNet_05_VirtualNetworkCreatedStatus.png
   [将虚拟机添加到虚拟网络]: /documentation/articles/virtual-machines-create-custom/
-  [如何创建自定义虚拟机]: /zh-cn/manage/windows/how-to-guides/custom-create-a-vm/
-  [Azure 虚拟机]: /zh-cn/manage/windows/
-  [在 Azure 中安装新的 Active Directory 林]: /zh-cn/manage/services/networking/active-directory-forest/
+  [如何创建自定义虚拟机]: /manage/windows/how-to-guides/custom-create-a-vm/
+  [Azure 虚拟机]: /manage/windows/
+  [在 Azure 中安装新的 Active Directory 林]: /manage/services/networking/active-directory-forest/
   [Azure 虚拟网络常见问题解答]: http://msdn.microsoft.com/zh-cn/library/azure/dn133803.aspx
   [使用网络配置文件配置虚拟网络（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj156097.aspx

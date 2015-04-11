@@ -221,5 +221,5 @@
 
   []: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios1.png
   [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
-  [通知中心入门]: /en-us/manage/services/notification-hubs/get-started-notification-hubs-ios
+  [通知中心入门]: /manage/services/notification-hubs/get-started-notification-hubs-ios
   [2]: /documentation/articles/notification-hubs-ios-get-started/

@@ -561,7 +561,7 @@ article.<a id="Ref" name="Ref"></a>
   [1]: ./media/application-model/application-model-4.jpg
   [2]: ./media/application-model/application-model-5.jpg
   [Configuring a Custom Domain Name in Azure]: http://windowsazure.cn/zh-cn/documentation/articles/cloud-services-custom-domain-name/
-  [Data Storage Offerings in Azure]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/blob-storage-v17/
+  [Data Storage Offerings in Azure]: /develop/net/how-to-guides/blob-storage-v17/
   [3]: ./media/application-model/application-model-6.jpg
   [4]: ./media/application-model/application-model-7.jpg
   
@@ -570,7 +570,7 @@ article.<a id="Ref" name="Ref"></a>
   [http://msdn.microsoft.com/zh-cn/library/hh560567.aspx]: http://msdn.microsoft.com/zh-cn/library/hh560567.aspx
   [Azure Management Portal]: http://manage.windowsazure.cn/
   [5]: ./media/application-model/application-model-8.jpg
-  [Deploying and Updating Azure Applications]: http://www.windowsazure.com/zh-cn/develop/net/fundamentals/deploying-applications/
+  [Deploying and Updating Azure Applications]: /develop/net/fundamentals/deploying-applications/
   [Creating a Hosted Service for Azure]: http://msdn.microsoft.com/zh-cn/library/gg432967.aspx
   [Managing Hosted Services in Azure]: http://msdn.microsoft.com/zh-cn/library/gg433038.aspx
   [Migrating Applications to Azure]: http://msdn.microsoft.com/zh-cn/library/gg186051.aspx

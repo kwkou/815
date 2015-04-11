@@ -292,7 +292,7 @@
   [Windows Phone]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ "Windows Phone"
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ ".NET 后端"
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/ "JavaScript 后端"
-  [JavaScript 后端版本]: /zh-cn/develop/mobile/tutorials/get-started-with-data-wp8
+  [JavaScript 后端版本]: /develop/mobile/tutorials/get-started-with-data-wp8
   [下载 Windows Phone 8 应用程序项目]: #download-app
   [创建新的移动服务]: #create-service
   [在本地下载移动服务]: #download-the-service-locally
@@ -332,7 +332,7 @@
   [21]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/azure-items.png
   [22]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/manage-sql-azure-database.png
   [23]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/sql-azure-query.png
-  [使用脚本验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-wp8
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-wp8
+  [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-wp8
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-wp8
   [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users/
-  [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library
+  [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library

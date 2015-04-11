@@ -16,7 +16,7 @@
 
 <div class="dev-center-tutorial-subselector">
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/" title=".NET backend" class="current">.NET 后端</a> | 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android/"  title="JavaScript backend">JavaScript 后端</a>
+	<a href="/develop/mobile/tutorials/get-started-with-data-android/"  title="JavaScript backend">JavaScript 后端</a>
 </div>
 
 本主题说明如何使用 Azure 移动服务作为 Android 应用程序的后端数据源。在本教程中，你将要创建一个新移动服务，为某个应用程序（该应用程序在内存中存储数据）下载一个 Eclipse Android 项目，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。
@@ -131,8 +131,8 @@
   [Windows Phone]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ "Windows Phone"
   [Android]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/ "Android"
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/ ".NET 后端"
-  [JavaScript 后端]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android/ "JavaScript 后端"
-  [JavaScript 后端版本]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
+  [JavaScript 后端]: /develop/mobile/tutorials/get-started-with-data-android/ "JavaScript 后端"
+  [JavaScript 后端版本]: /develop/mobile/tutorials/get-started-with-data-android
   [创建新的移动服务]: #create-service
   [在本地下载服务]: #download-the-service-locally
   [测试移动服务]: #test-the-service
@@ -151,6 +151,6 @@
   [mobile-services-android-getting-started-with-data]: ../includes/mobile-services-android-getting-started-with-data.md
   [0]: ./media/mobile-services-dotnet-backend-android-get-started-data/manage-sql-azure-database.png
   [2]: ./media/mobile-services-dotnet-backend-android-get-started-data/sql-azure-query.png
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-android
   [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

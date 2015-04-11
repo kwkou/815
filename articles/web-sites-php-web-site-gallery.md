@@ -16,5 +16,5 @@
 -   [更多 PHP 教程][更多 PHP 教程] - 使用 PHP 和 Azure 创建其他类型的应用程序
 
   [website-from-gallery]: ../includes/website-from-gallery.md
-  [创建 PHP-MySQL Azure 网站并使用 Git 进行部署]: /en-us/develop/php/tutorials/website-w-mysql-and-git/
-  [更多 PHP 教程]: /en-us/develop/php/tutorials/
+  [创建 PHP-MySQL Azure 网站并使用 Git 进行部署]: /develop/php/tutorials/website-w-mysql-and-git/
+  [更多 PHP 教程]: /develop/php/tutorials/

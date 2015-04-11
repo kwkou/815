@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-howto-attach-a-disk" urlDisplayName="Attach a disk" pageTitle="在 Azure 中将磁盘附加到运行 Linux 的虚拟机" metaKeywords="disk VM Azure, initialize new disk Azure, initialize disk Azure Linux, attaching empty disk Azure" description="了解如何在 Azure 中将磁盘附加到虚拟机。" metaCanonical="/zh-cn/manage/windows/how-to-guides/attach-a-disk/" services="virtual-machines" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-linux-howto-attach-a-disk" urlDisplayName="Attach a disk" pageTitle="在 Azure 中将磁盘附加到运行 Linux 的虚拟机" metaKeywords="disk VM Azure, initialize new disk Azure, initialize disk Azure Linux, attaching empty disk Azure" description="了解如何在 Azure 中将磁盘附加到虚拟机。" metaCanonical="/manage/windows/how-to-guides/attach-a-disk/" services="virtual-machines" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="01/26/2015"
     wacn.date="04/11/2015"

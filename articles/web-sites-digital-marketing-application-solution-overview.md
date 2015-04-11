@@ -121,7 +121,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 </tr>
 <tr>
 <td valign="middle"><strong>创建</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-create-websites/">如何创建和部署网站</a></td>
+<td valign="top">- <a href="/manage/services/web-sites/how-to-create-websites/">如何创建和部署网站</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>部署</strong></td>
@@ -140,7 +140,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
  
 <tr>
 <td valign="middle"><strong>监视</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a></td>
+<td valign="top">- <a href="/manage/services/web-sites/how-to-monitor-websites/">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a></td>
 </tr>
 </table>
 <!--   [twitter]:https://dev.twitter.com/docs/twitter-libraries#dotnet   [fbtutorial]:http://blogs.msdn.com/b/africaapps/archive/2013/02/20/creating-a-facebook-app-using-asp-net-mvc-facebook-templates-and-hosting-them-for-free-on-windows-azure-websites.aspx   [fbbirthdayapp]:http://www.asp.net/mvc/tutorials/mvc-4/aspnet-mvc-facebook-birthday-app   [fbvstemplate]:http://blogs.msdn.com/b/webdev/archive/2012/12/13/the-new-facebook-application-template-and-library-for-asp.net-mvc.aspx  -->
@@ -164,9 +164,9 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [DigitalMarketingDeploy1]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy1.png
   [DigitalMarketingDeploy2]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Deploy2.png
   [具有 Azure 网站的多个环境]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
-  [从源代码管理发布到 Azure 网站]: /en-us/develop/net/common-tasks/publishing-with-git/
+  [从源代码管理发布到 Azure 网站]: /develop/net/common-tasks/publishing-with-git/
   [DigitalMarketingFrameworkVersions]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_FrameworkVersions.png
-  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /en-us/develop/net/tutorials/web-site-with-sql-database/
+  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /develop/net/tutorials/web-site-with-sql-database/
   [Azure 管理门户]: http://manage.windowsazure.cn/
   [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
   [PowerShell 脚本编写]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -180,10 +180,10 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [DigitalMarketingUsageOverview]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_UsageOverview.png
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
   [1]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
-  [如何创建和部署网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-create-websites/
+  [如何创建和部署网站]: /manage/services/web-sites/how-to-create-websites/
   [如何部署 Azure 网站]: /zh-cn/documentation/articles/web-sites-deploy/
   [2]: /zh-cn/documentation/articles/web-sites-publish-source-control/
   [使用成员资格、OAuth 和 SQL数据库 部署安全的 ASP.NET MVC 应用程序]: /zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
   [如何缩放网站]: /documentation/articles/web-sites-scale/
-  [3]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/how-to-monitor-websites/
+  [3]: /manage/services/web-sites/how-to-monitor-websites/
   [4]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx

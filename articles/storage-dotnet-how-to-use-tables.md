@@ -49,7 +49,7 @@
 <h3>获得程序集</h3>
 你可以使用 NuGet 获取  `Microsoft.WindowsAzure.Storage.dll` 程序集。在"解决方案资源管理器"中，右键单击你的项目并选择"管理 NuGet 包"。在线搜索"MicrosoftAzure.Storage"，然后单击"安装"以安装 Azure 存储包和依赖项。
 
-Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从 <a href="/zh-cn/develop/net/">.NET 开发人员中心</a>下载该版本。程序集安装在 `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` 目录中。
+Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从 <a href="/develop/net/">.NET 开发人员中心</a>下载该版本。程序集安装在 `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` 目录中。
 
 <h3>命名空间声明</h3>
 在你希望以编程方式访问 Azure 存储的任何 C# 文件中，将以下代码命名空间声明添加到文件的顶部。
@@ -463,7 +463,7 @@ Microsoft.WindowsAzure.CloudConfigurationManager 命名空间，则可以使用 
   [如何：查询一部分实体属性]: #query-entity-properties
   [如何：删除实体]: #delete-entity
   [如何：删除表]: #delete-table
-  [下载并安装 Azure SDK for.NET]: /zh-cn/develop/net/
+  [下载并安装 Azure SDK for.NET]: /develop/net/
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   
   [Blob5]: ./media/storage-dotnet-how-to-use-table-storage/blob5.png

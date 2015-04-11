@@ -40,7 +40,7 @@
 ## <a id="create-a-ruby-application"></a>创建 Ruby 应用程序
 
 创建 Ruby 应用程序。有关说明， 
-请参阅 [在 Azure 上创建 Ruby 应用程序](/zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/)。
+请参阅 [在 Azure 上创建 Ruby 应用程序](/develop/ruby/tutorials/web-app-with-linux-vm/)。
 
 ## <a id="configure-your-application-to-access-storage"></a>配置应用程序以访问存储
 

@@ -11,11 +11,11 @@
 ***由 [Rick Anderson](https://twitter.com/RickAndMSFT) 和 Tom Dykstra 撰写。上次更新时间：2013 年 10 月 18 日。***
 
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/net/tutorials/web-site-with-sql-database/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/zh-cn/develop/net/tutorials/web-site-with-sql-database-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/net/tutorials/web-site-with-sql-database/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/develop/net/tutorials/web-site-with-sql-database-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
 
 本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用程序，以便用户能够使用 Facebook 或 Google 凭据进行登录。您还会将应用程序部署到 Windows Azure。
 
-您可以免费注册一个 Windows Azure 帐户，而且，如果您还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。您可以免费开始针对 Windows Azure 进行开发。如果您要使用 Visual Studio 2012，请参见 [上一个教程](/zh-cn/develop/net/tutorials/web-site-with-sql-database-vs2012/)。此版本的教程比上一个版本简单得多。
+您可以免费注册一个 Windows Azure 帐户，而且，如果您还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。您可以免费开始针对 Windows Azure 进行开发。如果您要使用 Visual Studio 2012，请参见 [上一个教程](/develop/net/tutorials/web-site-with-sql-database-vs2012/)。此版本的教程比上一个版本简单得多。
 
 本教程假定您之前未使用过 Windows Azure。完成本教程之后，您将能够在云中启动并运行安全的数据驱动的 Web 应用程序，以及使用云数据库。
 

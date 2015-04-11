@@ -23,12 +23,12 @@
 </div>
 <div class="article">
 <h3>如何：</h3>
-<a href="/zh-cn/manage/windows/how-to-guides/log-on-a-windows-vm/">如何登录到运行 Windows Server 的虚拟机</a>
+<a href="/manage/windows/how-to-guides/log-on-a-windows-vm/">如何登录到运行 Windows Server 的虚拟机</a>
 <p>了解如何从 Windows Azure 管理门户为运行 Windows Server 的虚拟机建立远程桌面连接。</p>
 </div>
 <div class="article">
 <h3>如何：</h3>
-<a href="/zh-cn/manage/windows/how-to-guides/capture-an-image/">如何捕获运行 Windows Server 的虚拟机的映像 </a>
+<a href="/manage/windows/how-to-guides/capture-an-image/">如何捕获运行 Windows Server 的虚拟机的映像 </a>
 <p>了解如何捕获和使用您自己的映像创建自定义虚拟机。如果您想要创建以相同方式设置的多台虚拟机，则可以捕获已配置虚拟机的映像并使用该映像作为模板。</p>
 </div>
 </div>
@@ -37,12 +37,12 @@
 <div class="article-group build-windows" style="display: block;">
 <div class="article">
 <h3>指南：</h3>
-<a href="/zh-cn/manage/windows/common-tasks/manage-vm-availability/">管理虚拟机的可用性</a>
+<a href="/manage/windows/common-tasks/manage-vm-availability/">管理虚拟机的可用性</a>
 <p>了解如何在 Windows Azure 中使用多台虚拟机，以确保在出现本地网络故障、本地磁盘硬件故障以及计划内停机时，您的应用程序仍然可用。</p>
 </div>
 <div class="article">
 <h3>指南：</h3>
-<a href="/zh-cn/manage/windows/common-tasks/how-to-load-balance-virtual-machines/">对虚拟机进行负载平衡</a>
+<a href="/manage/windows/common-tasks/how-to-load-balance-virtual-machines/">对虚拟机进行负载平衡</a>
 <p>了解如何在作为云服务一部分的多台虚拟机之间设置负载平衡。</p>
 </div>
 <div class="article">
@@ -59,17 +59,17 @@
 <div class="article-group build-windows" style="display: block;">
 <div class="article">
 <h3>教程：</h3>
-<a href="/zh-cn/develop/net/tutorials/compute-intensive-task-on-a-virtual-machine/">在 Windows Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务</a>
+<a href="/develop/net/tutorials/compute-intensive-task-on-a-virtual-machine/">在 Windows Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务</a>
 <p>虚拟机是将现有应用程序快速移动到云中的一种有效方式。本教程演示如何创建 Windows Azure 虚拟机，以及使用该虚拟机托管需要进行大量计算的 .NET 应用程序。然后演示如何通过使用服务总线队列远程监控计算任务，来使用 Windows Azure 服务扩展该应用程序。</p>
 </div>
 <div class="article">
 <h3>教程：</h3>
-<a href="/zh-cn/develop/java/tutorials/tomcat-on-a-virtual-machine/">在虚拟机上运行 Apache Tomcat 应用程序服务器 </a>
+<a href="/develop/java/tutorials/tomcat-on-a-virtual-machine/">在虚拟机上运行 Apache Tomcat 应用程序服务器 </a>
 <p>创建一台运行在 Windows Azure 上的虚拟机，然后将其配置为运行 Tomcat（一个 Java 应用程序服务器）。您将了解如何使用 Windows Azure 虚拟机托管 Java 应用程序。</p>
 </div>
 <div class="article">
 <h3>教程：</h3>
-<a href="/zh-cn/develop/python/tutorials/web-app-with-django/">在虚拟机上托管基于 Django 的网站 </a>
+<a href="/develop/python/tutorials/web-app-with-django/">在虚拟机上托管基于 Django 的网站 </a>
 <p>了解如何在 Windows Azure 中使用 Windows Server 2008 R2 虚拟机托管基于 Django 的网站。您将了解如何设置 Windows Azure 虚拟机以托管 Django，以及如何从 Windows 创建新的 Django 应用程序。</p>
 </div>
 </div>
@@ -90,7 +90,7 @@
 </div>
 <div class="article">
 <h3>指南：</h3>
-<a href="/zh-cn/manage/windows/other-resources/sharepoint-on-azure/">Windows Azure 虚拟机上的 SharePoint 2010 部署</a>
+<a href="/manage/windows/other-resources/sharepoint-on-azure/">Windows Azure 虚拟机上的 SharePoint 2010 部署</a>
 <p>此白皮书可以帮助您规划和设计 Windows Azure 上虚拟化的 Microsoft SharePoint 2010 基础结构。</p>
 </div>
 </div>

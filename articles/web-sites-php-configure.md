@@ -100,7 +100,7 @@ Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）�
 -   [下载 Azure SDK for PHP][下载 Azure SDK for PHP]
 
   [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
-  [PHP 开发中心教程]: http://azure.microsoft.com/zh-cn/develop/php/
+  [PHP 开发中心教程]: http://azure.microsoft.com/develop/php/
   [如何配置网站]: /zh-cn/documentation/articles/web-sites-configure/
   [什么是 Azure 网站？]: #WhatIs
   [如何：更改默认 PHP 配置]: #ChangeBuiltInPHP
@@ -118,5 +118,5 @@ Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）�
   []: http://windows.php.net/download/
   [1]: http://windows.php.net/downloads/releases/archives/
   [指定处理程序映射中的处理程序]: ./media/web-sites-php-configure/handler-mappings.png
-  [在 Azure 中配置、监视和缩放网站]: http://www.windowsazure.cn/zh-cn/manage/services/web-sites/
+  [在 Azure 中配置、监视和缩放网站]: /manage/services/web-sites/
   [下载 Azure SDK for PHP]: http://www.windowsazure.cn/zh-cn/downloads/?sdk=php

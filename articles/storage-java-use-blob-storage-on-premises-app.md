@@ -370,7 +370,7 @@ Azure 存储空间中的 Blob。
   [先决条件]: #bkmk_prerequisites
   [使用 Azure Blob 存储上载文件]: #bkmk_uploadfile
   [删除容器]: #bkmk_deletecontainer
-  [下载 Azure SDK for Java]: /zh-cn/develop/java/
+  [下载 Azure SDK for Java]: /develop/java/
   [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [如何管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
   [如何从 Java 使用 Blob 存储服务]: /zh-cn/documentation/articles/storage-java-how-to-use-blob-storage/

@@ -47,7 +47,7 @@
 
 
 
-[attachdisk]:/zh-cn/manage/windows/how-to-guides/attach-a-disk/
+[attachdisk]:/manage/windows/how-to-guides/attach-a-disk/
 
 [关于磁盘和映像]:http://go.microsoft.com/fwlink/p/?LinkId=263439
 <!--HONumber=41-->

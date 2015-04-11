@@ -133,6 +133,6 @@
   [5]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-quickstart-startup-ios.png
   [6]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-data-tab.png
   [7]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-data-browse.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-ios
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-ios
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios

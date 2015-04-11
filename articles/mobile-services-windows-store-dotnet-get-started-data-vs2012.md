@@ -7,7 +7,7 @@
 # 使用 Visual Studio 2012 的移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012" title="Windows Store C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js-vs2012" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
+<a href="/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012" title="Windows Store C#" class="current">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/get-started-with-data-js-vs2012" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
@@ -20,7 +20,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加移动服务功能。使用 Visual Studio 2013 包含的新功能，可以轻松将你的 Windows 应用商店应用程序连接到移动服务。有关详细信息，请参阅<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/">移动服务中的数据处理入门</a>。</p>
+<p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加移动服务功能。使用 Visual Studio 2013 包含的新功能，可以轻松将你的 Windows 应用商店应用程序连接到移动服务。有关详细信息，请参阅<a href="/develop/mobile/tutorials/get-started-with-data-dotnet/">移动服务中的数据处理入门</a>。</p>
 </div>
 
 本教程将指导你完成以下基本步骤：
@@ -208,16 +208,16 @@
 -   [移动服务 .NET 操作方法概念性参考][]
     了解有关如何将移动服务与 .NET 一起使用的详细信息。
 
-  [Windows 应用商店 C#]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet-vs2012 "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/get-started-with-data-js-vs2012 "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-data-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/get-started-with-data-html "HTML"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/get-started-with-data-dotnet-vs2012 "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-data-js-vs2012 "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/get-started-with-data-ios "iOS"
+  [Android]: /develop/mobile/tutorials/get-started-with-data-android "Android"
+  [HTML]: /develop/mobile/tutorials/get-started-with-data-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
   [观看教程]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Getting-Started-with-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services
-  [移动服务中的数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/
+  [移动服务中的数据处理入门]: /develop/mobile/tutorials/get-started-with-data-dotnet/
   [下载 Windows 应用商店应用程序项目]: #download-app
   [创建移动服务]: #create-service
   [添加用于存储的数据表]: #add-table
@@ -233,8 +233,8 @@
   [3]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2012/mobile-dashboard-tab.png
   [管理门户]: https://manage.windowsazure.cn/
   [4]: ./media/mobile-services-windows-store-dotnet-get-started-data-vs2012/mobile-todoitem-data-browse.png
-  [使用脚本验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-dotnet
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012/
-  [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library
+  [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-dotnet
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-dotnet
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-dotnet-vs2012/
+  [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library
