@@ -1,6 +1,6 @@
 <properties linkid="develop-dotnet-performance" urlDisplayName="Performance" pageTitle="Performance best practices - Azure" metaKeywords="Azure optimization, Azure best practice performance" description="Learn about best practices for performance in Azure." metaCanonical="" services="cloud-services,sql-database,storage,service-bus,virtual-network" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services,sql-database,storage,service-bus,virtual-network"
-    ms.date=""
+    ms.date="09/01/2014"
     wacn.date=""
     />
 

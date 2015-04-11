@@ -1,6 +1,6 @@
 <properties title="Python create account" pageTitle="Python create account" metaKeywords="" description="Create an account on Azure." documentationCenter="" services="" solutions="" authors="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/05/2015"
     wacn.date=""
     />
 

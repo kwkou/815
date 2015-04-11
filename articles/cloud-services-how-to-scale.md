@@ -1,6 +1,6 @@
 <properties linkid="manage-services-how-to-scale-a-cloud-service" urlDisplayName="How to scale" pageTitle="如何缩放云服务 - Azure" metaKeywords="Azure link resource, scaling cloud service" description="了解如何在 Azure 中缩放云服务和链接的资源。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Scale an Application" authors="davidmu" solutions="" manager="jeffreyg" editor="mattshel" />
 <tags ms.service="cloud-services"
-    ms.date=""
+    ms.date="03/02/2015"
     wacn.date=""
     />
 

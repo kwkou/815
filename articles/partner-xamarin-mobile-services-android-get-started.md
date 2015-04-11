@@ -1,7 +1,7 @@
 <properties pageTitle="Get Started with Mobile Services for Xamarin.Android" metaKeywords="Azure Xamarin.Android application, mobile service XamarinAndroid, getting started Azure Xamarin.Android" writer="craigd" description="Learn how to use Azure Mobile Services with your Xamarin.Android app." metaCanonical="" 
 	documentationCenter="Mobile" title="Get started with Mobile Services" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/11/2014"
     wacn.date=""
     />
 

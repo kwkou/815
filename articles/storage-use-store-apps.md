@@ -1,6 +1,6 @@
 <properties linkid="manage-services-storage-using-storage-with-windows-store-apps" urlDisplayName="Azure Storage in Windows Store apps" pageTitle="在 Windows 应用商店应用程序中使用 Azure 存储 | Azure" metaKeywords="" description="了解如何使用 Azure Blob、队列和表为 Windows 应用商店应用程序存储数据。" metaCanonical="" services="storage" documentationCenter="" title="How to use Azure Storage in Windows Store Apps" solutions="" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 <tags ms.service="storage"
-    ms.date=""
+    ms.date="03/05/2015"
     wacn.date=""
     />
 

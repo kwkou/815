@@ -1,6 +1,6 @@
 <properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="如何使用 Blob 存储 (Java) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。用 Java 编写的示例。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
-    ms.date=""
+    ms.date="03/11/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties pageTitle="Configure IIS Express for local testing of Mobile Service" metaKeywords="Azure Mobile Services, .NET Backend, IIS Express" description="Learn how to configure IIS Express to allow connections to a local mobile service project for testing." authors="glenga" title="Configure the local web server to allow connections to a local mobile service" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/20/2014"
     wacn.date=""
     />
 

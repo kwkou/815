@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用资源组管理 Azure 资源" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="使用资源组管理 Azure 资源" authors="Nafisa Bhojawala"  solutions="" writer="" manager="TK" editor="Haifeng Liu"  />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/09/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties writer="ricksal" pageTitle="Call a custom API from an Android client | Mobile Dev Center" metaKeywords="" description="Learn how to define a custom API and then call it from an Android app that uses Azure Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga"  />
 <tags ms.service="mobile-services"
-    ms.date=""
+    ms.date="02/03/2015"
     wacn.date=""
     />
 

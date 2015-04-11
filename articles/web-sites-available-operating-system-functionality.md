@@ -1,6 +1,6 @@
 <properties title="Operating System Functionality Available to Applications on Azure Web Sites" pageTitle="Operating System Functionality Available to Applications on Azure Web Sites" description="Learn about the OS functionality available to web applications on Azure Web Sites" metaKeywords="Azure,Web Sites,web applications,operating system functionality" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="11/11/2014"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties pageTitle="Azure API 管理中的策略" metaKeywords="" description="了解如何在 API 管理创建、编辑和配置策略。" metaCanonical="" services="" documentationCenter="API Management" title="Azure API 管理中的策略" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/24/2015"
     wacn.date=""
     />
 

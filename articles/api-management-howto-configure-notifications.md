@@ -1,6 +1,6 @@
 <properties pageTitle="如何在 Azure API 管理中配置通知和电子邮件模板" metaKeywords="" description="了解如何在 Azure API 管理中配置通知和电子邮件模板。" metaCanonical="" services="" documentationCenter="API Management" title="如何在 Azure API 管理中配置通知和电子邮件模板" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/10/2015"
     wacn.date=""
     />
 

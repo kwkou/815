@@ -1,6 +1,6 @@
 <properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="03/24/2015"
     wacn.date=""
     />
 

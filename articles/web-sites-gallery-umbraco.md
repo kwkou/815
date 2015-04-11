@@ -1,6 +1,6 @@
 <properties title="从 Windows Azure 中的库创建 Umbraco 网站" pageTitle="从 Windows Azure 中的库创建 Umbraco 网站" description="必需" metaKeywords="Azure, gallery, Umbraco, web site, website" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="02/25/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="manage-services-biztalk-state-chart" urlDisplayName="BizTalk Services: Service state chart" pageTitle="BizTalk Services: Service state chart | Azure" metaKeywords="" description="" metaCanonical="" services="biztalk-services" documentationCenter="" title="BizTalk Services: Service state chart" authors="mandia" solutions="integration" manager="paulettm" editor="cgronlun" />
 <tags ms.service="biztalk-services"
-    ms.date=""
+    ms.date="02/25/2015"
     wacn.date=""
     />
 

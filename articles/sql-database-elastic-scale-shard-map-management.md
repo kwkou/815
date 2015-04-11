@@ -1,6 +1,6 @@
 <properties title="Shard Map Management" pageTitle="分片映射管理" description="如何使用 ShardMapManager（.NET 的灵活扩展 API）" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
-    ms.date=""
+    ms.date="02/16/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties title="How to use end user analytics" pageTitle="How to use end user analytics" description="Learn about end user analytics in Azure." authors="vladj"  />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/26/2015"
     wacn.date=""
     />
 

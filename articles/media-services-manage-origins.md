@@ -1,6 +1,6 @@
 <properties linkid="scripting-center-index" urlDisplayName="index" pageTitle="Scripting Center Index" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Manage Origins in a Media Services Account" authors="juliako" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/10/2015"
     wacn.date=""
     />
 

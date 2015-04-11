@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-enablestaging" urlDisplayName="Staging Deployment" pageTitle="暂存云服务部署 (Node.js) - Azure" metaKeywords="Azure staging, Azure application staging, Azure test environment, Azure staging environment, Azure Virtual IP swap, Azure VIP swap" description="了解如何使用虚拟 IP (VIP) 交换将 Azure 应用程序部署到过渡环境，然后再将其部署到生产环境。" metaCanonical=" " services="cloud-services" documentationCenter="Node.js" title="Staging an Application in Azure" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
-    ms.date=""
+    ms.date="02/25/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties title="Federations Migration" pageTitle="联合迁移。" description="概述了将使用“联合”功能构建的现有应用迁移到灵活扩展模型的步骤。" metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh"/>
 <tags ms.service="sql-database"
-    ms.date=""
+    ms.date="02/16/2015"
     wacn.date=""
     />
 

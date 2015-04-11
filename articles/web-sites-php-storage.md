@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-storage" urlDisplayName="Web w/ Storage" pageTitle="PHP web site with table storage - Azure tutorial" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="This tutorial shows you how to create a PHP website and use the Azure Tables storage service in the back-end." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Web Site using Azure Storage" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,storage"
-    ms.date=""
+    ms.date="11/21/2014"
     wacn.date=""
     />
 

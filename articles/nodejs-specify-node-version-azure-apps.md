@@ -1,6 +1,6 @@
 <properties linkid="develop-nodejs-common-tasks-specifying-a-node-version" urlDisplayName="Specifying a Node.js Version" pageTitle="Specifying a Node.js Version" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="Node.js" title="Specifying a Node.js version in an Azure application" authors="larryfr" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/19/2015"
     wacn.date=""
     />
 

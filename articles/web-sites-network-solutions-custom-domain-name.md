@@ -1,6 +1,6 @@
 <properties title="Learn how to configure an Azure web site to use a domain name registered with Network Solutions" pageTitle="Configure a Network Solutions domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="09/17/2014"
     wacn.date=""
     />
 

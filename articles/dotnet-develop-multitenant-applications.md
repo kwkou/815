@@ -1,6 +1,6 @@
 <properties linkid="develop-net-architecture-multi-tenant-web-application" urlDisplayName="Multi-Tenant Web Application Pattern" pageTitle="多租户 Web 应用程序模式 - Azure 体系结构" metaKeywords="" description="查找介绍如何在 Azure 中实现多租户 Web 应用程序的体系结构概述和设计模式。" metaCanonical="" services="" documentationCenter=".NET" title="Multitenant Applications in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/19/2014"
     wacn.date=""
     />
 

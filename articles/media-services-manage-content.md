@@ -1,6 +1,6 @@
 <properties linkid="manage-services-mediaservices-manage-media-services-content" urlDisplayName="How to manage media content" pageTitle="How to manage media content - Azure Media Services" metaKeywords="" description="Learn how to manage your media content in Azure Media Services." metaCanonical="" services="media-services" documentationCenter="" title="How to Manage Content in Media Services" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
-    ms.date=""
+    ms.date="02/24/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-windowsdotnet" urlDisplayName="Get started with notification hubs" pageTitle="Get started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Getting Started with Notification Hubs" authors="sethm" solutions="" manager="" editor="" />
 <tags ms.service="notification-hubs"
-    ms.date=""
+    ms.date="03/16/2015"
     wacn.date=""
     />
 

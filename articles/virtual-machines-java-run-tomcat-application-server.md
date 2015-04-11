@@ -1,6 +1,6 @@
 <properties linkid="dev-java-vm-application-server" urlDisplayName="Tomcat on Virtual Machine" pageTitle="虚拟机上的 Tomcat - Azure 教程" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="了解如何创建 Windows 虚拟机并将其配置为运行 Apache Tomcat 应用程序服务器。" metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a Java application server on a virtual machine" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="virtual-machines"
-    ms.date=""
+    ms.date="02/20/2015"
     wacn.date=""
     />
 

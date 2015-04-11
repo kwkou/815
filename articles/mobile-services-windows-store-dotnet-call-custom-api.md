@@ -1,6 +1,6 @@
 <properties urlDisplayName="从客户端调用自定义 API" pageTitle="从 Windows 应用商店客户端调用自定义 API - 移动服务" metaKeywords="" description="了解如何定义自定义 API，然后从使用 Azure 移动服务的 Windows 应用商店应用程序中调用该 API。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services"
-    ms.date=""
+    ms.date="02/26/2015"
     wacn.date=""
     />
 

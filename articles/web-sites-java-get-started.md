@@ -1,6 +1,6 @@
 <properties linkid="develop-java-tutorials-web-site-get-started" urlDisplayName="Get started with Azure" pageTitle="Get started with Windows Azure Web Sites using Java" metaKeywords="" description="This tutorial shows you how to deploy a Java web site to Windows Azure." metaCanonical="" services="web-sites" documentationCenter="Java" title="Get started with Azure and Java" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="03/24/2015"
     wacn.date=""
     />
 

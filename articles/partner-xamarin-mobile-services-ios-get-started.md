@@ -1,6 +1,6 @@
 <properties pageTitle="Get Started with Mobile Services for Xamarin iOS apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Xamarin iOS development." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with Mobile Services" authors="craigd" solutions="" manager="" editor="" />
 <tags ms.service="mobile"
-    ms.date=""
+    ms.date="11/22/2014"
     wacn.date=""
     />
 

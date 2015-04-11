@@ -1,6 +1,6 @@
 <properties linkid="develop-nodejs-common-tasks-working-with-node-modules" urlDisplayName="Working with Node.js Modules" pageTitle="Working with Node.js Modules" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="Node.js" title="Using Node.js Modules with Azure applications" authors="larryfr" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/19/2015"
     wacn.date=""
     />
 

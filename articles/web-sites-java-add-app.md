@@ -1,6 +1,6 @@
 <properties linkid="develop-java-tutorials-web-site-add-app" urlDisplayName="Add an application to your Java web site" pageTitle="Add an application to your Java web site" metaKeywords="" description="This tutorial shows you how to add a page or application to your Java web site on Windows Azure." metaCanonical="" services="web-sites" documentationCenter="Java" title="Add an application to your Java web site" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="02/20/2015"
     wacn.date=""
     />
 

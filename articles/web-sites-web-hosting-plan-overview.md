@@ -1,6 +1,6 @@
 <properties pageTitle="What is a web hosting plan?" description="Web hosting plan overview" title="What is a web hosting plan?" services="web-sites" authors="adamab" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="11/17/2014"
     wacn.date=""
     />
 

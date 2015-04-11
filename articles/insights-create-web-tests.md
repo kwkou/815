@@ -1,6 +1,6 @@
 <properties title="How to create web test" pageTitle="How to create web test" description="Learn how to create web tests in Azure." authors="stepsic"  />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/23/2015"
     wacn.date=""
     />
 

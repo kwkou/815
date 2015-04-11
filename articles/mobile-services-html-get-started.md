@@ -1,6 +1,6 @@
 <properties pageTitle="用于 HTML 5 应用程序的 Azure 移动服务入门" metaKeywords="" description="按照本教程进行操作，开始使用 Azure 移动服务进行 HTML 开发。 " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/21/2014"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="develop-net-how-to-guides-service-bus-amqp" urlDisplayName="Service Bus AMQP" pageTitle="如何将 AMQP 1.0 用于 .NET Service Bus API - Azure" metaKeywords="" description="了解如何将高级消息队列协议 (AMQP) 1.0 用于 Azure .NET Service Bus API。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to use AMQP 1.0 with the Service Bus .NET API" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 <tags ms.service="service-bus"
-    ms.date=""
+    ms.date="02/12/2015"
     wacn.date=""
     />
 

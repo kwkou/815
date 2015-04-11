@@ -1,7 +1,7 @@
 
 <properties linkid="manage-windows-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="创建 Windows Server VHD 并将其上载到 Azure" metaKeywords="Azure VHD, uploading VHD" description="了解如何在 Azure 中创建和上载包含 Windows Server 操作系统的虚拟硬盘 (VHD)。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
 <tags ms.service="virtual-machines"
-    ms.date=""
+    ms.date="01/19/2015"
     wacn.date=""
     />
 

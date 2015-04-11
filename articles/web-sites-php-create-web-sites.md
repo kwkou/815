@@ -1,6 +1,6 @@
 <properties title="How to create a PHP web site in Azure Web Sites" pageTitle="How to create a PHP web site in Azure Web Sites" metaKeywords="PHP Azure Web Sites" description="Learn how to create a PHP web site in Azure Web Sites" documentationCenter="PHP" services="Web Sites" editor="mollybos" manager="bjsmith" authors="" />
 <tags ms.service="Web Sites"
-    ms.date=""
+    ms.date="02/05/2015"
     wacn.date=""
     />
 

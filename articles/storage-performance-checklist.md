@@ -1,6 +1,6 @@
 <properties title="Windows Azure Storage Performance and Scalability Checklist" pageTitle="Microsoft Azure 存储性能和可伸缩性清单 description="Required"" metaKeywords="Optional" services="Optional" solutions="Optional" documentationCenter="Optional" authors="Tamra Myers" videoId="Optional" scriptId="Optional" />
 <tags ms.service="Optional"
-    ms.date=""
+    ms.date="02/26/2015"
     wacn.date=""
     />
 

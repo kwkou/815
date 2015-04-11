@@ -1,6 +1,6 @@
 <properties linkid="manage-services-how-to-configure-a-sqldb" urlDisplayName="How to configure" pageTitle="如何配置 SQL Database - Azure" metaKeywords="Azure creating SQL Server, Azure configuring SQL Server" description="了解如何在 Azure 中使用 SQL Server 创建和配置逻辑服务器。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Create and Configure SQL Database" authors="" solutions="" manager="" editor="" />
 <tags ms.service="sql-database"
-    ms.date=""
+    ms.date="11/19/2014"
     wacn.date=""
     />
 

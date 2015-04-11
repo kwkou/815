@@ -1,6 +1,6 @@
 <properties linkid="manage-services-what-is-a-cloud-service" urlDisplayName="What is a Cloud Service" pageTitle="什么是云服务 - Azure 服务管理" metaKeywords="Azure cloud services intro, cloud services overview, cloud services basics" description="介绍 Azure 中的云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="What is a cloud service?" authors="ryanwi" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
-    ms.date=""
+    ms.date="03/02/2015"
     wacn.date=""
     />
 

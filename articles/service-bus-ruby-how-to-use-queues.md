@@ -1,6 +1,6 @@
 <properties linkid="dev-ruby-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (Ruby) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Ruby" description="了解如何在 Azure 中使用 Service Bus 队列。用 Ruby 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="Ruby" title="How to Use Service Bus Queues" authors="guayan" solutions="" manager="" editor="" />
 <tags ms.service="service-bus"
-    ms.date=""
+    ms.date="03/20/2015"
     wacn.date=""
     />
 

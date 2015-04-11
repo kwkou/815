@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-cloud9" urlDisplayName="Deploying with Cloud9" pageTitle="使用 Cloud9 部署 Node.js - Azure 教程" metaKeywords="Cloud9 IDE Azure, Azure node.js, Azure node apps" description="学习如何使用 Cloud9 IDE 开发、生成 Node.js 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Deploying an Azure App from Cloud9" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
-    ms.date=""
+    ms.date="02/25/2015"
     wacn.date=""
     />
 

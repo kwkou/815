@@ -1,6 +1,6 @@
 <properties linkid="manage-services-create-a-virtual-network" urlDisplayName="Create a virtual network" pageTitle="Create a virtual network - Azure service management" metaKeywords="" description="Learn how to create an Azure Virtual Network." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Create a Virtual Network in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines,virtual-network"
-    ms.date=""
+    ms.date="09/29/2014"
     wacn.date=""
     />
 

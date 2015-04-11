@@ -1,6 +1,6 @@
 <properties linkid="develop-java-tutorials-web-site-custom_upload" urlDisplayName="Upload custom Java web site" pageTitle="将自定义 Java 网站上载到 Azure" metaKeywords="" description="本教程介绍了如何将自定义 Java 网站上载到 Azure。" metaCanonical="" services="web-sites" documentationCenter="Java" title="将自定义 Java 网站上载到 Azure" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="02/20/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties pageTitle="使用 Azure Automation 管理 Azure 虚拟机" description="了解如何使用 Azure Automation 服务来方便管理 Azure 虚拟机。" services="automation, virtual-machines" documentationCenter="" authors="jodoglevy" manager="eamono" editor="Eric Chen"/>
 <tags ms.service="automation, virtual-machines"
-    ms.date=""
+    ms.date="02/20/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (Node.js) - Azure" metaKeywords="Get started Azure Service Bus topics, Get Started Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, Service Bus topic Node.js" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Node.js 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Topics/Subscriptions" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="service-bus"
-    ms.date=""
+    ms.date="02/10/2015"
     wacn.date=""
     />
 

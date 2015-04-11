@@ -1,6 +1,6 @@
 <properties linkid="manage-services-how-to-monitor-websites" urlDisplayName="How to monitor" pageTitle="How to monitor web sites - Azure service management" metaKeywords="Azure monitoring web sites, Azure Management Portal Monitor, Azure monitoring" description="Learn how to monitor Azure web sites by using the Monitor page in the Management Portal." metaCanonical="" services="web-sites" documentationCenter="" title="How to Monitor Web Sites" authors="timamm" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="03/24/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="manage-services-mediaservices-monitor-a-media-services-account" urlDisplayName="How to monitor" pageTitle="Monitor a Media Services Account - Azure" metaKeywords="" description="Describes how to configure monitoring for your Media Services account in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Monitor a Media Services Account" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
-    ms.date=""
+    ms.date="02/05/2015"
     wacn.date=""
     />
 

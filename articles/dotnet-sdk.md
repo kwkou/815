@@ -1,6 +1,6 @@
 <properties pageTitle="什么是 Azure .NET SDK" metaKeywords="azure .net sdk" description="了解 Azure .NET SDK 中包含的内容。" documentationCenter=".NET" title="What is the Azure SDK for .NET" authors="tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/19/2015"
     wacn.date=""
     />
 

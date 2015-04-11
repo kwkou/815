@@ -1,6 +1,6 @@
 <properties linkid="develop-notificationhubs-tutorials-send-breaking-news-windowsdotnet" urlDisplayName="Breaking News" pageTitle="Notification Hubs Breaking News Tutorial" metaKeywords="" description="Learn how to use Azure 服务总线 Notification Hubs to send breaking news notifications." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services,notification-hubs"
-    ms.date=""
+    ms.date="11/21/2014"
     wacn.date=""
     />
 

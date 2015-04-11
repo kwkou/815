@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName=" Website with Storage" pageTitle="使用表存储构建 Node.js 网站 | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="本教程演示如何使用 Azure 表服务在 Azure 网站上托管的 Node 应用程序中存储数据。" metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,storage"
-    ms.date=""
+    ms.date="02/25/2015"
     wacn.date=""
     />
 

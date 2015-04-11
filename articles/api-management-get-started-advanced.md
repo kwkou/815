@@ -1,6 +1,6 @@
 <properties pageTitle="高级 Azure API 管理配置入门" metaKeywords="" description="了解如何跟踪调用、配置速率限制和配额策略，以及自定义开发人员门户。" metaCanonical="" services="" documentationCenter="API Management" title="高级 Azure API 管理配置入门" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/24/2015"
     wacn.date=""
     />
 

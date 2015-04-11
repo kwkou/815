@@ -1,6 +1,6 @@
 <properties pageTitle="在 Azure API 管理中自定义开发人员门户" metaKeywords="" description="在 Azure API 管理中自定义开发人员门户。" metaCanonical="" services="" documentationCenter="API Management" title="在 Azure API 管理中自定义开发人员门户" authors="sdanie" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/10/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="develop-python-web-app-with-django" urlDisplayName="Web with Django (Windows)" pageTitle="Python web 应用程序使用 Django-Azure 教程" metaKeywords="Azure Django web app, Azure Django virtual machine" description="本教程教您如何托管基于 Django 的网站在 Azure 上使用 Windows Server 2008 R2 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
-    ms.date=""
+    ms.date="02/05/2015"
     wacn.date=""
     />
 

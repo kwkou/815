@@ -1,6 +1,6 @@
 <properties linkid="mobile-services-how-to-ios-client" urlDisplayName="iOS Client Library" pageTitle="如何使用 iOS 客户端库 - Azure 移动服务" metaKeywords="Azure Mobile Services, Mobile Service iOS client library, iOS client library" description="了解如何使用适用于 Azure 移动服务的 iOS 客户端库。" metaCanonical="" services="" documentationCenter="Mobile" title="How to use the iOS client library for Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/18/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务和 ASP.NET 入门" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序在云服务中运行，带有 Web 角色和辅助角色。它使用实体框架、SQL Database 和 Azure 存储队列与 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Get Started with Azure Cloud Services and ASP.NET" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
-    ms.date=""
+    ms.date="02/19/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties title="如何缩放网站" pageTitle="如何缩放网站" description="必填" metaKeywords="scaling Azure web sites" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="03/24/2015"
     wacn.date=""
     />
 

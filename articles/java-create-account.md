@@ -1,6 +1,6 @@
 <properties title="Java create account" pageTitle="Java create account" metaKeywords="" description="Create an account on Azure." documentationCenter="Java" services="" solutions="" manager="wpickett" editor="mollybos" authors="robmcm" videoId="" scriptId="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/25/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="develop-python-queue-service" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Python) | Microsoft Azure" metaKeywords="Azure Queue Service messaging Python" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Python 编写的。" metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
-    ms.date=""
+    ms.date="03/11/2015"
     wacn.date=""
     />
 

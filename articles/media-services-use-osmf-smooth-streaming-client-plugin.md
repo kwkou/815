@@ -1,6 +1,6 @@
 <properties linkid="develop-media-services-tutorials-smooth-streaming-plugin-for-open-source-media-framework" urlDisplayName="Smooth Streaming Plugin" pageTitle="Smooth Streaming Plugin for the Open Source Media Framework" metaKeywords="" description="Learn how to use the Azure Media Services Smooth Streaming plugin for the Adobe Open Source Media Framework." metaCanonical="" services="media-services" documentationCenter="" title="How to Use the Microsoft Smooth Streaming Plugin for the Adobe Open Source Media Framework" authors="" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
-    ms.date=""
+    ms.date="10/30/2014"
     wacn.date=""
     />
 

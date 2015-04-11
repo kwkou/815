@@ -1,6 +1,6 @@
 <properties linkid="develop-php-website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP web site with SQL数据库 and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web site that stores data in SQL数据库." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Web Site and SQL数据库 using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/17/2014"
     wacn.date=""
     />
 

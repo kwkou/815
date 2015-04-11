@@ -1,6 +1,6 @@
 <properties urlDisplayName="Get Started with Push (iOS)" pageTitle="开始使用推送通知 (iOS) |移动开发人员中心" metaKeywords="" description="了解如何使用 Azure 移动服务向 iOS 应用程序发送推送通知。" metaCanonical="http://www.windowsazure.cn/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" solutions="" manager="dwrede" editor="" authors="krisragh" />
 <tags ms.service="mobile-services,notification-hubs"
-    ms.date=""
+    ms.date="12/15/2014"
     wacn.date=""
     />
 

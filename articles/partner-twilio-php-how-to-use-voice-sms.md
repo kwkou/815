@@ -1,6 +1,6 @@
 <properties title="How to Use Twilio for Voice and SMS (PHP) - Azure" pageTitle="How to Use Twilio for Voice and SMS (PHP) - Azure" metaKeywords="Azure PHP Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in PHP." documentationCenter="PHP" services="" authors="robmcm" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/25/2014"
     wacn.date=""
     />
 

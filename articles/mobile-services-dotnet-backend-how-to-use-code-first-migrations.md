@@ -1,6 +1,6 @@
 <properties pageTitle="How to use Code First Migrations .NET backend (Mobile Services)" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Considerations for supporting multiple clients from a single mobile service" authors="glenga" solutions="" writer="glenga" manager="dwrede" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/27/2015"
     wacn.date=""
     />
 

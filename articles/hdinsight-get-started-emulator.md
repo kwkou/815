@@ -1,6 +1,6 @@
 <properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
 <tags ms.service="hdinsight"
-    ms.date=""
+    ms.date="03/03/2015"
     wacn.date=""
     />
 

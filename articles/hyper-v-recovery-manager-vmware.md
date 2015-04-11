@@ -1,6 +1,6 @@
 <properties linkid="hyper-v-recovery-manager-vmware" urlDisplayName="configure-Azure-Site-Recovery" pageTitle="Azure 站点恢复入门：两个使用 InMage 的本地 VMWare 站点之间的保护" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery, VMWare, InMage" description="InMage in Azure Site Recovery handles the replication, failover and recovery between on-premises VMWare sites." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery: On-Premises to On-Premises VMWare Site Protection with InMage" editor="jimbe" manager="cfreeman" authors="Haifeng Liu" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="02/18/2015"
     wacn.date=""
     />
 

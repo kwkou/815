@@ -1,6 +1,6 @@
 <properties linkid="develop-net-tutorials-get-started-vs2013" urlDisplayName="Windows Azure 入门" pageTitle="Windows Azure for .NET 入门" metaKeywords="" description="本教程说明如何使用 Visual Studio 2013 将 ASP.NET 网站部署到 Windows Azure。在不到 15 分钟内，您将有了在云中运行的应用程序。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Windows Azure 和 ASP.NET 入门" authors=""  solutions="" writer="tdykstra" manager="wpickett" editor="mollybos"  />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="03/24/2015"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties title="Azure Notification Hubs Notify Users" pageTitle="Azure 通知中心 - 通知用户" metaKeywords="Azure push notifications, Azure notification hubs" description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." documentationCenter="" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="glenga" manager="dwrede" services="notification-hubs" />
 <tags ms.service="notification-hubs"
-    ms.date=""
+    ms.date="03/26/2015"
     wacn.date=""
     />
 

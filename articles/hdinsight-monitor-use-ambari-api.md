@@ -1,6 +1,6 @@
 <properties linkid="manage-services-hdinsight-use-Ambari" urlDisplayName="Monitor HDInsight clusters using the Ambari API" pageTitle="使用 Ambari API 监视 HDInsight 群集 | Azure" metaKeywords="" description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Ambari’s intuitive operator tools and APIs hide the complexity of Hadoop." services="hdinsight" documentationCenter="" title="Monitor HDInsight clusters using the Ambari API" umbracoNaviHide="0" disqusComments="1" authors="jgao" editor="cgronlun" manager="paulettm" />
 <tags ms.service="hdinsight"
-    ms.date=""
+    ms.date="11/12/2014"
     wacn.date=""
     />
 

@@ -1,6 +1,6 @@
 <properties title="How to debug with events" pageTitle="How to debug with events" description="Learn how to see events in Azure." authors="hanikn"  />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/24/2014"
     wacn.date=""
     />
 

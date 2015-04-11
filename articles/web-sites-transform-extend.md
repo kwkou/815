@@ -1,6 +1,6 @@
 <properties linkid="dev-net-transform-extend-site" urlDisplayName="服务总线 Topics" pageTitle="转换和扩展站点" metaKeywords="none" description="TBD" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="timamm" writer="timamm" editor="mollybos" manager="paulettm" title="转换和扩展站点"/>
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/24/2015"
     wacn.date=""
     />
 

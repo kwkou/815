@@ -1,6 +1,6 @@
 <properties title="Using Elastic Scale with Entity Framework" pageTitle="将实体框架与灵活扩展一起使用" description="灵活扩展简化了扩展，实体框架易于在编码数据库中使用 " metaKeywords="Using Elastic Scale with Entity Framework, Azure SQL Database sharding, elastic scale, Entity Framework and Elastic Scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 <tags ms.service="sql-database"
-    ms.date=""
+    ms.date="02/03/2015"
     wacn.date=""
     />
 

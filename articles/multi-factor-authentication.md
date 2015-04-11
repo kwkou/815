@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="What is Azure Multi-Factor Authentication?" authors="billmath" solutions="" manager="terrylan" editor="lisatoft" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="03/02/2015"
     wacn.date=""
     />
 
