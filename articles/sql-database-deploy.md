@@ -583,5 +583,5 @@ School 示例数据库方便简单；其所有对象均与 SQL Database 兼容�
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
 </pre></div>
 
-[SQL Database 管理入门]: /zh-cn/manage/services/sql-databases/getting-started-w-sql-databases/  
+[SQL Database 管理入门]: /manage/services/sql-databases/getting-started-w-sql-databases/  
 

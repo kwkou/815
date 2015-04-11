@@ -454,7 +454,7 @@ Xamarin 组件应用商店中提供的 Google Cloud Messaging Client 可以简�
   [16]: ./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-create-console-app.png
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
   [17]: ./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-android-toast.png
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-xamarin-android/#create-new-service
+  [移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-android/#create-new-service
   [18]: ./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-scheduler1.png
   [19]: ./media/partner-xamarin-notification-hubs-android-get-started/notification-hub-scheduler2.png
 

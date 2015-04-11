@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-js" urlDisplayName="Validate Data" pageTitle="Use server scripts to validate and modify data (JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your Windows Store JavaScript app." metaCanonical="http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-js" urlDisplayName="Validate Data" pageTitle="Use server scripts to validate and modify data (JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="10/05/2014"
     wacn.date="04/11/2015"
@@ -7,13 +7,13 @@
 # 使用服务器脚本在移动服务中验证和修改数据
 
 <div class="dev-center-tutorial-selector sublanding"> 
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a>
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a>
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-android" title="Android">Android</a>
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-html" title="HTML">HTML</a>
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
-<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-android" title="Android">Android</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-html" title="HTML">HTML</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
 </div>
 
 
@@ -188,26 +188,26 @@
 -   [移动服务服务器脚本参考][]
     了解有关注册和使用服务器脚本的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"
+  [Android]: /develop/mobile/tutorials/validate-modify-and-augment-data-android "Android"
+  [HTML]: /develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android"
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-validate-modify-data/ ".NET 后端"
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/ "JavaScript 后端"
   [添加字符串长度验证]: #string-length-validation
   [更新客户端以支持验证]: #update-client-validation
   [在插入操作中添加时间戳]: #add-timestamp
   [更新客户端以显示时间戳]: #update-client-timestamp
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-js
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-js
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-windows-store-javascript-validate-modify-data-server-scripts/mobile-insert-script-users.png
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-js
-  [使用脚本为用户授权]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-js
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-js
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-js
+  [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-js
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-js
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293

@@ -15,7 +15,7 @@
 
 <div class="dev-center-tutorial-subselector">
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title=".NET backend" class="current">.NET 后端</a> | 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/"  title="JavaScript backend">JavaScript 后端</a>
+	<a href="/develop/mobile/tutorials/get-started-with-data-dotnet/"  title="JavaScript backend">JavaScript 后端</a>
 </div>
 
 本主题说明如何使用 Azure 移动服务作为 Windows 应用商店应用程序的后端数据源。在本教程中，你将要为某个应用程序（该应用程序在内存中存储数据）下载一个 Visual Studio 2013 项目，创建一个新的移动服务，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。
@@ -282,8 +282,8 @@
   [Windows Phone]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/ "Windows Phone"
   [Android]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/ "Android"
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/ ".NET 后端"
-  [JavaScript 后端]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/ "JavaScript 后端"
-  [JavaScript 后端版本]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet
+  [JavaScript 后端]: /develop/mobile/tutorials/get-started-with-data-dotnet/ "JavaScript 后端"
+  [JavaScript 后端版本]: /develop/mobile/tutorials/get-started-with-data-dotnet
   [下载 Windows 应用商店应用程序项目]: #download-app
   [创建新的移动服务]: #create-service
   [在本地下载移动服务]: #download-the-service-locally
@@ -319,8 +319,8 @@
   [20]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/azure-items.png
   [21]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/manage-sql-azure-database.png
   [22]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/sql-azure-query.png
-  [使用脚本验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-dotnet
+  [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-dotnet
   [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/
   [推送通知入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/
-  [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library
+  [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library

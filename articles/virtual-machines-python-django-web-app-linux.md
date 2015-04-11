@@ -10,7 +10,7 @@
 
 # Django Hello World Web 应用程序 (mac-linux)
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
 
 本教程介绍如何在 Windows 上的基于 Django 的网站中承载 
 Azure 中使用 Linux 虚拟机。本教程假定您之前未使用过 Azure。完成本指南，您将拥有基于 Django 的启动和应用程序在云中运行。

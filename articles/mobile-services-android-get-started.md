@@ -156,6 +156,6 @@
   [6]: ./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png
   [7]: ./media/mobile-services-android-get-started/mobile-data-tab.png
   [8]: ./media/mobile-services-android-get-started/mobile-data-browse.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-android

@@ -93,4 +93,4 @@
   [mobile-services-windows-dotnet-authenticate-app]: ../includes/mobile-services-windows-dotnet-authenticate-app.md
   [LoginAsync]: http://go.microsoft.com/fwlink/p/?LinkId=311594
   [移动服务用户的服务端授权]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
-  [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library
+  [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library

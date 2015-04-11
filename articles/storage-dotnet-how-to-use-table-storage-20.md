@@ -577,7 +577,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
   [Blob8]: ./media/storage-dotnet-how-to-use-table-storage-20/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-table-storage-20/blob9.png
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
-  [.NET 开发人员中心]: http://azure.microsoft.com/zh-cn/develop/net/
+  [.NET 开发人员中心]: http://azure.microsoft.com/develop/net/
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
@@ -585,5 +585,5 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
   [.NET 存储客户端库参考]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Blob 存储]: /en-us/develop/net/how-to-guides/blob-storage/
-  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/
+  [Blob 存储]: /develop/net/how-to-guides/blob-storage/
+  [SQL数据库]: /develop/net/how-to-guides/sql-database/

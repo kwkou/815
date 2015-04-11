@@ -10,7 +10,7 @@
 你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 服务的默认终结点是 https://<*mystorageaccount*>.blob.core.chinacloudapi.cn. 如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
 
 
-> [WACOM.NOTE]	此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅<a href = "/zh-cn/develop/net/common-tasks/custom-dns/">为 Azure 云服务配置自定义域名</a>；对于网站，请参阅<a href="/zh-cn/develop/net/common-tasks/custom-dns-web-site/">为 Azure 网站配置自定义域名</a>。 
+> [WACOM.NOTE]	此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅<a href = "/develop/net/common-tasks/custom-dns/">为 Azure 云服务配置自定义域名</a>；对于网站，请参阅<a href="/develop/net/common-tasks/custom-dns-web-site/">为 Azure 网站配置自定义域名</a>。 
 
 > [WACOM.NOTE]	高级存储帐户无法映射到自定义域名。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal/)，以了解有关高级存储帐户的信息。
 

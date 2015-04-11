@@ -591,7 +591,7 @@
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
   [快速创建]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-storage-quick.png
-  [如何管理存储帐户]: /zh-cn/manage/services/storage/how-to-manage-a-storage-account/
+  [如何管理存储帐户]: /manage/services/storage/how-to-manage-a-storage-account/
   [使用 URL 前缀创建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-storage-url-test.png
   [管理密钥]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-manage-keys.png
   [密钥 GUID]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-guid-keys.PNG
@@ -625,7 +625,7 @@
   [7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png
 
 <!--
-  [如何在 Azure 中使用 SendGrid 发送电子邮件]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
+  [如何在 Azure 中使用 SendGrid 发送电子邮件]: /develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
   [SendGridSettings]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-sg.png
 -->
 

@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-push-js-vs2013" urlDisplayName="Get Started with Push (JS)" pageTitle="Get started with push notifications (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Windows Store JavaScript app." metaCanonical="http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-get-started-with-push-js-vs2013" urlDisplayName="Get Started with Push (JS)" pageTitle="Get started with push notifications (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/get-started-with-push-dotnet/" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/22/2014"
     wacn.date="04/11/2015"
@@ -112,8 +112,8 @@
   [注册用于推送通知的应用程序并配置移动服务]: #register
   [更新生成的推送通知代码]: #update-scripts
   [插入数据以接收通知]: #test
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started/
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-js/
+  [移动服务入门]: /develop/mobile/tutorials/get-started/
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-js/
   [mobile-services-create-new-push-vs2013]: ../includes/mobile-services-create-new-push-vs2013.md
   [在移动服务中使用服务器脚本]: http://go.microsoft.com/fwlink/p/?LinkID=287178
   [mobile-services-create-new-push-vs2013-2]: ../includes/mobile-services-create-new-push-vs2013-2.md
@@ -123,6 +123,6 @@
   [向订户发送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [向用户发送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
   [向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-js
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-js
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
-  [移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/
+  [移动服务 HTML/JavaScript 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-html-js-client/

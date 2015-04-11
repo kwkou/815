@@ -322,5 +322,5 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。接下来，�
   [要在生产中使用的信赖方领域]: ./media/active-directory-java-authenticate-users-access-control-eclipse/RelyingPartyRealmProduction.png
   [要在生产中使用的信赖方返回 URL]: ./media/active-directory-java-authenticate-users-access-control-eclipse/RelyingPartyReturnURLProduction.png
   [用于生产部署的 Azure ACS 筛选器设置]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddACSFilterLibraryProduction.png
-  [如何查看 Azure Access Control 服务返回的 SAML]: /en-us/develop/java/how-to-guides/view-saml-returned-by-acs/
+  [如何查看 Azure Access Control 服务返回的 SAML]: /develop/java/how-to-guides/view-saml-returned-by-acs/
   [添加证书组件]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddCertificateComponent.png

@@ -156,8 +156,8 @@
   [在 Azure 中安装新 Active Directory 林]: ../active-directory-forest/
   [如何创建存储帐户]: #CreateStorageAcct
   [如何创建虚拟机并将其部署到虚拟网络]: #CreateVM
-  [在 Azure 中创建虚拟网络]: /zh-cn/manage/services/networking/create-a-virtual-network/
-  [创建虚拟网络进行跨界连接]: /zh-cn/manage/services/networking/cross-premises-connectivity/
+  [在 Azure 中创建虚拟网络]: /manage/services/networking/create-a-virtual-network/
+  [创建虚拟网络进行跨界连接]: /manage/services/networking/cross-premises-connectivity/
   [Azure 管理门户]: http://manage.windowsazure.cn/
   [NewStorAcct]: ./media/virtual-networks-add-virtual-machine/VNTut3_01_NewStorageAccount.png
   [QuickCreate]: ./media/virtual-networks-add-virtual-machine/VNTut3_02_StorageAcct_QuickCreate.png
@@ -171,5 +171,5 @@
   [VMOptions]: ./media/virtual-networks-add-virtual-machine/VNTut3_10_VMOptions.png
   [VMInstances]: ./media/virtual-networks-add-virtual-machine/VNTut3_11_VMInstances.png
   [AllTab]: ./media/virtual-networks-add-virtual-machine/VNTut3_12_AllTab.png
-  [在 Azure 虚拟网络中安装副本 Active Directory 域控制器]: /zh-cn/manage/services/networking/replica-domain-controller/
+  [在 Azure 虚拟网络中安装副本 Active Directory 域控制器]: /manage/services/networking/replica-domain-controller/
   [使用网络配置文件配置虚拟网络（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156097.aspx

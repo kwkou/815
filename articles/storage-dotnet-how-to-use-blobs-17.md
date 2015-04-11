@@ -281,8 +281,8 @@ Blob 的 **DownloadToFile**、**DownloadByteArray** 或
     -   使用[表存储][]来存储结构化数据。
     -   使用 [SQL数据库][] 来存储关系数据。
 
-  [1.7 版]: /en-us/develop/net/how-to-guides/blob-storage-v17/ "1.7 版"
-  [2.0 版]: /en-us/develop/net/how-to-guides/blob-storage/ "2.0 版"
+  [1.7 版]: /develop/net/how-to-guides/blob-storage-v17/ "1.7 版"
+  [2.0 版]: /develop/net/how-to-guides/blob-storage/ "2.0 版"
   [后续步骤]: #next-steps
   [什么是 Blob 存储]: #what-is
   [概念]: #concepts
@@ -305,5 +305,5 @@ Blob 的 **DownloadToFile**、**DownloadByteArray** 或
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wl_svchosting_mref_reference_home
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [表存储]: /en-us/develop/net/how-to-guides/table-services/
-  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/
+  [表存储]: /develop/net/how-to-guides/table-services/
+  [SQL数据库]: /develop/net/how-to-guides/sql-database/

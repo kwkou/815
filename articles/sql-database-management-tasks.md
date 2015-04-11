@@ -129,7 +129,7 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 
 [管理数据库和 SQL Database 中的登录名]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
 [使用动态管理视图监视 SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
-[使用 Management Studio 管理 SQL Database]: http://www.windowsazure.cn/zh-cn/develop/net/common-tasks/sql-azure-management/
+[使用 Management Studio 管理 SQL Database]: /develop/net/common-tasks/sql-azure-management/
 
 
 

@@ -398,12 +398,12 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
   [Blob8]: ./media/storage-dotnet-how-to-use-blobs-20/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-blobs-20/blob9.png
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
-  [.NET 开发人员中心]: http://azure.microsoft.com/zh-cn/develop/net/
+  [.NET 开发人员中心]: http://azure.microsoft.com/develop/net/
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [.NET 存储客户端库参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn495001(v=azure.10).aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [表存储]: /en-us/develop/net/how-to-guides/table-services/
-  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/
+  [表存储]: /develop/net/how-to-guides/table-services/
+  [SQL数据库]: /develop/net/how-to-guides/sql-database/

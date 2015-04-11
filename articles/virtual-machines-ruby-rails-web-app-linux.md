@@ -283,11 +283,11 @@
 <!-- WA.com links -->
 [blob]: /zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage
 
-[cdn 如何]: /zh-cn/develop/ruby/app-services/
+[cdn 如何]: /develop/ruby/app-services/
 
 [管理门户]: https://manage.windowsazure.cn/
 
-[表]: /zh-cn/develop/ruby/how-to-guides/table-service/
+[表]: /develop/ruby/how-to-guides/table-service/
 
 [unicorn-nginx capistrano]: /zh-cn/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
 

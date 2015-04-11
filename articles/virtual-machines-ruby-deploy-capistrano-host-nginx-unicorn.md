@@ -456,10 +456,10 @@ Rails 用于开发的默认数据库是 SQLite。通常，您将使用生产中�
 
 
 [rails 指南]: http://guides.rubyonrails.org/
-[blob]: /zh-cn/develop/ruby/how-to-guides/blob-storage/
-[表]: /zh-cn/develop/ruby/how-to-guides/table-service/
-[cdn 如何]: /zh-cn/develop/ruby/app-services/
-[ruby 虚拟机]: /zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/
+[blob]: /develop/ruby/how-to-guides/blob-storage/
+[表]: /develop/ruby/how-to-guides/table-service/
+[cdn 如何]: /develop/ruby/app-services/
+[ruby 虚拟机]: /develop/ruby/tutorials/web-app-with-linux-vm/
  
 [博客 rails]: ./media/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/blograilslocal.png
 [博客 rails 云]: ./media/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/blograilscloud.png 

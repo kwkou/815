@@ -181,6 +181,6 @@ Azure 不会在运行时动态安装 node-sqlserver 模块，因此你必须确�
   [查看数据库信息]: ./media/sql-database-nodejs-how-to-use/go-to-db-info.png
   [显示连接字符串]: ./media/sql-database-nodejs-how-to-use/show-connection-string.png
   [下载中心]: http://www.microsoft.com/en-us/download/details.aspx?id=29995
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /en-us/develop/nodejs/tutorials/create-a-website-(mac)/
-  [Node.js 云服务]: /en-us/develop/nodejs/tutorials/getting-started/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /develop/nodejs/tutorials/create-a-website-(mac)/
+  [Node.js 云服务]: /develop/nodejs/tutorials/getting-started/
   [Microsoft 的 Node.JS for SQL Server 驱动程序介绍]: http://blogs.msdn.com/b/sqlphp/archive/2012/06/08/introducing-the-microsoft-driver-for-node-js-for-sql-server.aspx

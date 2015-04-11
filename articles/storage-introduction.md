@@ -126,7 +126,7 @@ Azure 存储空间通过一个 [REST API](http://msdn.microsoft.com/library/wind
 
 - [.NET](http://msdn.microsoft.com/zh-cn/library/dn495001.aspx)
 - [本机代码](http://msdn.microsoft.com/zh-cn/library/dn495438.aspx)
-- [Java](/zh-cn/develop/java/)
+- [Java](/develop/java/)
 - [Node.js](../storage/#node)
 - [PHP](../storage/#php)
 - [Ruby](../storage/#ruby)
