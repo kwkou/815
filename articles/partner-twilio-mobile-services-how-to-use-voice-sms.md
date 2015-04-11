@@ -209,20 +209,20 @@ Twilio 提供了可包装 Twilio 各个方面的 Node.js 库，使你能够以�
   [特别优惠]: http://ahoy.twilio.com/azure
   [Twilio 定价]: http://www.twilio.com/pricing
   [Twilio API 库]: https://www.twilio.com/docs/libraries
-  [.NET]: /zh-cn/develop/net/how-to-guides/twilio-voice-and-sms-service/
-  [node.js]: /zh-cn/develop/nodejs/how-to-guides/twilio-voice-and-sms-service/
-  [Java]: /zh-cn/develop/java/how-to-guides/twilio-voice-and-sms-service/
-  [PHP]: /zh-cn/develop/php/how-to-guides/twilio-voice-and-sms-service/
-  [Python]: /zh-cn/develop/python/how-to-guides/twilio-voice-and-sms-service/
-  [Ruby]: /zh-cn/develop/ruby/how-to-guides/twilio-voice-and-sms-service/
+  [.NET]: /develop/net/how-to-guides/twilio-voice-and-sms-service/
+  [node.js]: /develop/nodejs/how-to-guides/twilio-voice-and-sms-service/
+  [Java]: /develop/java/how-to-guides/twilio-voice-and-sms-service/
+  [PHP]: /develop/php/how-to-guides/twilio-voice-and-sms-service/
+  [Python]: /develop/python/how-to-guides/twilio-voice-and-sms-service/
+  [Ruby]: /develop/ruby/how-to-guides/twilio-voice-and-sms-service/
   [Twilio 标记语言文档]: http://www.twilio.com/docs/api/twiml
   [Twilio API]: http://www.twilio.com/api
   [试用 Twilio]: https://www.twilio.com/try-twilio
   [Twilio 帐户页]: https://www.twilio.com/user/account
   [管理号码（可能为英文页面）]: https://www.twilio.com/user/account/phone-numbers/verified#
   [Twilio 电话号码帮助]: https://www.twilio.com/help/faq/phone-numbers
-  [移动服务入门]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started/
-  [在源代码管理中存储脚本]: http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/store-scripts-in-source-control/
+  [移动服务入门]: /develop/mobile/tutorials/get-started/
+  [在源代码管理中存储脚本]: /develop/mobile/tutorials/store-scripts-in-source-control/
   [移动服务控制台]: ./media/partner-twilio-mobile-services-how-to-use-voice-sms/twilio-kuduconsole.png
   []: http://www.twilio.com/docs/api/rest/making-calls
   [如何：从你自己的网站提供 TwiML 响应]: #howto_provide_twiml_responses

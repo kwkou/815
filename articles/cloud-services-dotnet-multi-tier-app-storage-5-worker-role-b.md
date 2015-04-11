@@ -621,7 +621,7 @@
 -   Perez Jones Tsisah
 -   Michiel van Otegem
 
-  [本系列第一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [本系列第一个教程]: /develop/net/tutorials/multi-tier-web-site/1-overview/
   [将辅助角色 B 项目添加到解决方案]: #addworkerrole
   [添加对 Web 项目的引用]: #addreference
   [向项目中添加存储客户端库 2.0 NuGet 包]: #sclpackage
@@ -637,28 +637,28 @@
   [将引用添加到 MvcWebRole]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-worker-b-reference-manager.png
   [管理 NuGet 包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-worker-b-manage-nuget.png
   [安装 Sendgrid 包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-worker-b-install-sendgrid.png
-  [第三个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/3-web-role/#configstorage
-  [第二个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
+  [第三个教程]: /develop/net/tutorials/multi-tier-web-site/3-web-role/#configstorage
+  [第二个教程]: /develop/net/tutorials/multi-tier-web-site/2-download-and-run/
   [WorkerRoleB 项目中的新设置]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-worker-b-settings.png
   [将现有项添加到辅助角色 B]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-b/mtas-worker-b-add-existing.png
-  [上一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
+  [上一个教程]: /develop/net/tutorials/multi-tier-web-site/4-worker-role-a/
   [GetMessage]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee741827.aspx
   [可见性超时]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758454.aspx
   [GetMessages]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.storageclient.cloudqueue.getmessages.aspx
   [SendGrid MultiAuth - 多个帐户凭据]: http://support.sendgrid.com/entries/21658978-sendgrid-multiauth-multiple-account-credentials
-  [Azure 网站入门教程]: /zh-cn/develop/net/tutorials/get-started
+  [Azure 网站入门教程]: /develop/net/tutorials/get-started
   [Windows Azure 存储服务基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-windows-azure-storage.aspx
   [Azure 表存储基本知识]: http://blogs.msdn.com/b/brunoterkaly/archive/2012/11/08/essential-knowledge-for-azure-table-storage.aspx
   [如何充分利用 Windows Azure 表]: http://blogs.msdn.com/b/windowsazurestorage/archive/2010/11/06/how-to-get-most-out-of-windows-azure-tables.aspx
-  [如何在 .NET 中使用表存储服务]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/table-services/
+  [如何在 .NET 中使用表存储服务]: /develop/net/how-to-guides/table-services/
   [Windows Azure 存储客户端库 2.0 表深入探讨]: http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/06/windows-azure-storage-client-library-2-0-tables-deep-dive.aspx
   [实际应用：为 Azure 表存储设计可扩展分区策略]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh508997.aspx
   [以队列为中心的工作模式（使用 Windows Azure 构建实际云应用程序)]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
   [Azure 队列和 Azure 服务总线 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx
-  [如何在 .NET 中使用队列存储服务]: /zh-cn/develop/net/how-to-guides/queue-service/
+  [如何在 .NET 中使用队列存储服务]: /develop/net/how-to-guides/queue-service/
   [非结构化 Blob 存储（使用 Windows Azure 构建实际云应用程序）]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
-  [如何在 .NET 中使用 Azure Blob 存储服务]: /zh-cn/develop/net/how-to-guides/blob-storage/
-  [如何使用自动缩放应用程序块]: /zh-cn/develop/net/how-to-guides/autoscaling/
+  [如何在 .NET 中使用 Azure Blob 存储服务]: /develop/net/how-to-guides/blob-storage/
+  [如何使用自动缩放应用程序块]: /develop/net/how-to-guides/autoscaling/
   [自动缩放和 Azure]: http://msdn.microsoft.com/zh-cn/library/hh680945(v=PandP.50).aspx
   [使用 Azure 构建弹性自动缩放解决方案]: http://channel9.msdn.com/Events/WindowsAzureConf/2012/B04
   [Rick Anderson]: http://blogs.msdn.com/b/rickandy/

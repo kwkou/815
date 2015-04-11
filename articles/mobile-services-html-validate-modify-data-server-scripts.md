@@ -201,7 +201,7 @@
 <!-- URLs. -->
 [使用服务器脚本]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-html
-<!--[Authorize users with scripts]: /zh-cn/develop/mobile/tutorials/authorize-users-html -->
+<!--[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-html -->
 [使用分页优化查询]: /zh-cn/documentation/articles/mobile-services-html-add-paging-data
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html

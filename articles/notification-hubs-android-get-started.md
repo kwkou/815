@@ -350,7 +350,7 @@
   [REST 接口]: http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx
   [8]: ./media/notification-hubs-android-get-started/notification-hub-create-console-app.png
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
-  [移动服务入门]: /en-us/develop/mobile/tutorials/get-started/#create-new-service
+  [移动服务入门]: /develop/mobile/tutorials/get-started/#create-new-service
   [9]: ./media/notification-hubs-android-get-started/notification-hub-scheduler1.png
   [10]: ./media/notification-hubs-android-get-started/notification-hub-scheduler2.png
   [11]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app7.png

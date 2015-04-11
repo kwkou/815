@@ -99,7 +99,7 @@
 
 ## 如何创建 Java 应用程序来执行需要进行大量计算的任务
 
-1. 在您的开发计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for Java](/zh-cn/develop/java/)。
+1. 在您的开发计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for Java](/develop/java/)。
 2. 使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符分别修改为使用您的服务总线"命名空间"****、"默认颁发者"****和"默认密钥"****值。
 3. 编码后，将应用程序导出至可运行的 Java 存档 (JAR)，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPSolver.jar** 作为 Java 文件名。
 

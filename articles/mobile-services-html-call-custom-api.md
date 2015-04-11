@@ -83,4 +83,4 @@
 <!-- URLs. -->
 [移动服务服务器脚本参考]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/
 ["我的应用程序"仪表板]: http://go.microsoft.com/fwlink/?LinkId=262039
-<!-- [Get started with Mobile Services]: /zh-cn/develop/mobile/tutorials/mobile-services-html-get-started -->
+<!-- [Get started with Mobile Services]: /develop/mobile/tutorials/mobile-services-html-get-started -->

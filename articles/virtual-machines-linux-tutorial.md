@@ -9,7 +9,7 @@
 
 当您使用 Azure 管理门户中的映像库时，创建运行 Linux 的虚拟机很容易。本指南演示如何执行此操作，并假定您没有使用过 Azure。
 
-> [WACOM.NOTE] 即使您不需要任何熟悉 Azure 虚拟机，若要完成本教程中，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/zh-cn/develop/php/tutorials/create-a-windows-azure-account/)。 
+> [WACOM.NOTE] 即使您不需要任何熟悉 Azure 虚拟机，若要完成本教程中，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。 
 
 本教程介绍了：
 

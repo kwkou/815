@@ -138,7 +138,7 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
   [版本 2014：在 Azure 中通过新的 SDK、工具和服务实现无处不在的自动化（视频）]: http://channel9.msdn.com/Events/Build/2014/3-621
   [使用 Windows PowerShell 脚本发布到开发和测试环境]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn642480.aspx
   [云量：Azure 移动服务 .NET 后端（视频）]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-137-The-Azure-Mobile-Services-NET-Backend-with-Yavor-Georgiev
-  [Azure 移动开发人员中心]: /zh-cn/develop/mobile/
+  [Azure 移动开发人员中心]: /develop/mobile/
   [快速入门：添加移动服务]: http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn629482.aspx
   [如何使用 Visual Studio 向运行的应用程序发送推送通知]: http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn614131.aspx
   [如何在移动服务中创建自定义 API 和计划的作业]: http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn614130.aspx

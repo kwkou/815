@@ -367,7 +367,7 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
 -   [在 Visual Studio 中排除 Azure 网站的故障][在 Visual Studio 中排除 Azure 网站的故障]
 -   [在 HDInsight 中分析网站日志][在 HDInsight 中分析网站日志]
 
-  [在 Visual Studio 中排除 Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [在 Visual Studio 中排除 Azure 网站的故障]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [网站诊断是什么？]: #whatisdiag
   [如何：启用诊断]: #enablediag
   [如何：下载日志]: #download
@@ -383,6 +383,6 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
   [如何使用 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
   [在浏览器中查看的失败的请求]: ./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png
   [Log Parser]: http://go.microsoft.com/fwlink/?LinkId=246619
-  [如何监视网站]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/
-  [教程 - 排除网站故障]: /zh-cn/develop/net/best-practices/troubleshooting-web-sites/
+  [如何监视网站]: /manage/services/web-sites/how-to-monitor-websites/
+  [教程 - 排除网站故障]: /develop/net/best-practices/troubleshooting-web-sites/
   [在 HDInsight 中分析网站日志]: http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413

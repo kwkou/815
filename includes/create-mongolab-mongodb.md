@@ -30,7 +30,7 @@
 	![MongoLab 连接信息](./media/create-mongolab-mongodb/mongolab-conn-info.png) 
 
 [MongoLab]: https://mongolab.com/home
-[waws]: /zh-cn/manage/services/web-sites/
+[waws]: /manage/services/web-sites/
 [Azure 应用商店]: /zh-cn/store/overview/
 [门户]: http://windows.azure.com/
 <!--HONumber=41-->

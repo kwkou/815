@@ -1112,7 +1112,7 @@ $60.43
   [Azure Connect]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433122.aspx
   [Azure 虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
   [虚拟 IP 交换]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee517253.aspx "VIP 交换"
-  [Azure 执行模型]: http://www.windowsazure.cn/zh-cn/manage/windows/fundamentals/compute/
+  [Azure 执行模型]: /manage/windows/fundamentals/compute/
   [Azure 价格计算器]: http://www.windowsazure.cn/zh-cn/pricing/calculator/
   [SendGrid Azure]: http://sendgrid.com/windowsazure.html
   [Azure 云服务 99.95% 服务级别协议 (SLA)]: https://www.windowsazure.cn/zh-cn/support/legal/sla/ "SLA"

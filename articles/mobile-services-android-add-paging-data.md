@@ -7,7 +7,7 @@
 # 使用分页优化移动服务查询
 
 <div class="dev-center-tutorial-selector sublanding"> 
-<a href="/en-us/develop/mobile/tutorials/add-paging-to-data-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-wp8" title="Windows Phone">Windows Phone</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-ios" title="iOS">iOS</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-android" title="Android" class="current">Android</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-html" title="HTML" class="current">HTML</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a></div>
+<a href="/develop/mobile/tutorials/add-paging-to-data-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/add-paging-to-data-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/add-paging-to-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/add-paging-to-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/add-paging-to-data-android" title="Android" class="current">Android</a><a href="/develop/mobile/tutorials/add-paging-to-data-html" title="HTML" class="current">HTML</a><a href="/develop/mobile/tutorials/add-paging-to-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/add-paging-to-data-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a></div>
 
 本主题说明如何使用分页来管理从 Azure 移动服务返回给 Android 应用程序的数据量。在本教程中，你将在客户端上使用 **top** 和 **skip** 查询方法来请求特定的数据“页”。
 
@@ -105,14 +105,14 @@
 <!-- Images. --> 
 <!-- URLs. -->
 
-  [Windows 应用商店 C\#]: /en-us/develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /en-us/develop/mobile/tutorials/add-paging-to-data-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /en-us/develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone"
-  [iOS]: /en-us/develop/mobile/tutorials/add-paging-to-data-ios "iOS"
-  [Android]: /en-us/develop/mobile/tutorials/add-paging-to-data-android "Android"
-  [HTML]: /en-us/develop/mobile/tutorials/add-paging-to-data-html "HTML"
-  [Xamarin.iOS]: /en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /en-us/develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/add-paging-to-data-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/add-paging-to-data-ios "iOS"
+  [Android]: /develop/mobile/tutorials/add-paging-to-data-android "Android"
+  [HTML]: /develop/mobile/tutorials/add-paging-to-data-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-android

@@ -7,7 +7,7 @@
 # 定义支持定期通知的自定义 API
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/create-pull-notifications-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/create-pull-notifications-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
+	<a href="/develop/mobile/tutorials/create-pull-notifications-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/create-pull-notifications-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
 </div>
 
 本主题说明如何使用自定义 API 在 Windows 应用商店应用程序中支持定期通知。启用定期通知后，Windows 将定期访问你的自定义 API 终结点，并使用返回的、采用磁贴特定格式的 XML 来更新开始菜单中的应用程序磁贴。有关详细信息，请参阅[定期通知][]。
@@ -130,11 +130,11 @@
 -   [移动服务服务器脚本参考][]
     了解有关创建自定义 API 的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/create-pull-notifications-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/create-pull-notifications-js "Windows 应用商店 JavaScript"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/create-pull-notifications-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/create-pull-notifications-js "Windows 应用商店 JavaScript"
   [定期通知]: http://msdn.microsoft.com/zh-cn/library/windows/apps/jj150587.aspx
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started/#create-new-service
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/started-with-data-js
+  [移动服务入门]: /develop/mobile/tutorials/get-started/#create-new-service
+  [数据处理入门]: /develop/mobile/tutorials/started-with-data-js
   [定义自定义 API]: #define-custom-api
   [更新应用程序以启用定期通知]: #update-app
   [测试应用程序]: #test-app
@@ -147,5 +147,5 @@
   [推送对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
   [wns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=260591
   [4]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-live-tile.png
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-js
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-js
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293

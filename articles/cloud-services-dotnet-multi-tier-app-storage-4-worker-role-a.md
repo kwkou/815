@@ -586,9 +586,9 @@
 
 有关如何使用 Azure 存储表、队列和 Blob 的其他资源的链接，请参阅[本系列最后一个教程][下一教程]结尾处的内容。
 
-<div><a href="/zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/" class="site-arrowboxcta download-cta">教程 5</a></div>
+<div><a href="/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/" class="site-arrowboxcta download-cta">教程 5</a></div>
 
-  [本系列第一个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [本系列第一个教程]: /develop/net/tutorials/multi-tier-web-site/1-overview/
   [添加对 Web 项目的引用]: #addref
   [添加对 SCL 1.7 程序集的引用]: #addref2
   [添加 SendEmail 模型]: #addmodel
@@ -601,7 +601,7 @@
   [使用 sendmail 的邮件表]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-sendMailTbl.png
   [将现有项添加到 Web 项目中的 Models 文件夹]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-add-existing-for-sendemail-model.png
   [将现有项添加到辅助角色 A]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-worker-a-add-existing.png
-  [第二个教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/2-download-and-run/
+  [第二个教程]: /develop/net/tutorials/multi-tier-web-site/2-download-and-run/
   [重新启动角色实例进行 OS 升级]: http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx
   [UnhandledException]: http://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx
   [挂起状态的新邮件]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-worker-a-test-pending.png
@@ -610,4 +610,4 @@
   [ASE 中的队列消息内容]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-worker-a-test-ase-queue-detail.png
   [ASE 中的消息表行]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-worker-a-test-ase-message-table.png
   [消息表中的 SendEmail 行]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-worker-role-a/mtas-worker-a-test-ase-sendemail-row.png
-  [下一教程]: /zh-cn/develop/net/tutorials/multi-tier-web-site/5-worker-role-b/
+  [下一教程]: /develop/net/tutorials/multi-tier-web-site/5-worker-role-b/

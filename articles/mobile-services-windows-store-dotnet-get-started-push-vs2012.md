@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-push-dotnet" urlDisplayName="Get Started with Push Notifications" pageTitle="Get started with push notifications - Mobile Services" metaKeywords="push notifications c#" description="Learn how to use push notifications with Azure Mobile Services." metaCanonical="http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet/" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services using Visual Studio 2012" authors="" />
+<properties linkid="develop-mobile-tutorials-get-started-with-push-dotnet" urlDisplayName="Get Started with Push Notifications" pageTitle="Get started with push notifications - Mobile Services" metaKeywords="push notifications c#" description="Learn how to use push notifications with Azure Mobile Services." metaCanonical="/develop/mobile/tutorials/get-started-with-push-dotnet/" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services using Visual Studio 2012" authors="" />
 <tags ms.service=""
     ms.date=""
     wacn.date=""
@@ -7,20 +7,20 @@
 # 使用 Visual Studio 2012 的移动服务中的推送通知入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-js-vs2012" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-wp8" title="Windows Phone">Windows Phone</a>
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-ios" title="iOS">iOS</a>
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-android" title="Android">Android</a>
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-js-vs2012" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-wp8" title="Windows Phone">Windows Phone</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-ios" title="iOS">iOS</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-android" title="Android">Android</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
+	<a href="/develop/mobile/tutorials/get-started-with-push-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
 </div>	
 
 本主题说明如何使用 Azure 移动服务向 Windows 应用商店应用程序发送推送通知。
 在本教程中，你将向快速入门项目添加使用 Windows 推送通知服务 (WNS) 的推送通知功能。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
 <div class="dev-callout"><b>说明</b>
-	<p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加推送通知功能。使用 Visual Studio 2013 包含的新功能，可以轻松地在使用移动服务的 Windows 应用商店应用程序中设置推送通知。有关 Visual Studio 2013 版本的信息，请参阅<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet">推送通知入门</a>。</p>
+	<p>本教程将向在 Visual Studio 2012 中创建的 Windows 应用商店应用程序添加推送通知功能。使用 Visual Studio 2013 包含的新功能，可以轻松地在使用移动服务的 Windows 应用商店应用程序中设置推送通知。有关 Visual Studio 2013 版本的信息，请参阅<a href="/develop/mobile/tutorials/get-started-with-push-dotnet">推送通知入门</a>。</p>
 </div>
 
 本教程将指导你完成启用推送通知的以下基本步骤：
@@ -183,20 +183,20 @@
 -   [移动服务 .NET 操作方法概念性参考][]
     了解有关如何将移动服务与 .NET 一起使用的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet-vs2012 "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/get-started-with-push-js-vs2012 "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-push-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android "Android"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android"
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-push-dotnet-vs2012 "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-push-js-vs2012 "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/get-started-with-push-ios "iOS"
+  [Android]: /develop/mobile/tutorials/get-started-with-push-android "Android"
+  [Xamarin.iOS]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android"
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-dotnet
   [注册用于推送通知的应用程序并配置移动服务]: #register
   [创建 Registrations 表]: #create-table
   [向应用程序添加推送通知]: #add-push
   [更新脚本以发送推送通知]: #update-scripts
   [插入数据以接收通知]: #test
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-dotnet
   [mobile-services-register-windows-store-app]: ../includes/mobile-services-register-windows-store-app.md
   [mobile-services-create-new-push-table]: ../includes/mobile-services-create-new-push-table.md
   [0]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-app-enable-toast-win8.png
@@ -205,10 +205,10 @@
   [2]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-quickstart-push1.png
   [3]: ./media/mobile-services-windows-store-dotnet-get-started-push-vs2012/mobile-quickstart-push2.png
   [通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-  [什么是通知中心？]: /zh-cn/develop/net/how-to-guides/service-bus-notification-hubs/
+  [什么是通知中心？]: /develop/net/how-to-guides/service-bus-notification-hubs/
   [向订户发送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [向用户发送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
   [向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-dotnet
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
-  [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/
+  [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library/

@@ -250,7 +250,7 @@ app.post('/sms', function(request, response) {
   [TwiML]: https://www.twilio.com/docs/api/twiml
   [Twilio 开发人员博客]: http://www.twilio.com/blog/2013/04/introduction-to-twilio-client-with-node-js.html
   [注册帐户]: http://ahoy.twilio.com/azure
-  [此处提供有关如何进行创建的正式文档]: http://www.windowsazure.cn/zh-cn/develop/nodejs/tutorials/create-a-website-(mac)/
+  [此处提供有关如何进行创建的正式文档]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [可在您的 Twilio 仪表板上找到]: https://www.twilio.com/user/account
   [Azure 管理控制台]: ./media/partner-twilio-nodejs-how-to-use-voice-sms/twilio_1.png
   [npm]: http://npmjs.org

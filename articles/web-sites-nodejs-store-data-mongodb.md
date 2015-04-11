@@ -499,7 +499,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 
   [MongoDB]: http://www.mongodb.org
   [Node]: http://nodejs.org
-  [使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序]: /zh-cn/develop/nodejs/tutorials/website-with-mongodb-mongolab/
+  [使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序]: /develop/nodejs/tutorials/website-with-mongodb-mongolab/
   [显示空白 tasklist 的网页]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_list_empty.png
   [Git]: http://git-scm.com
   [MongoDB 安装指南]: http://docs.mongodb.org/manual/installation/
@@ -516,10 +516,10 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
   [MongoDB 文档]: http://docs.mongodb.org/manual/
   [Express]: http://expressjs.com
   [Mongoose]: http://mongoosejs.com
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/develop/nodejs/tutorials/create-a-website-(mac)/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [安装和配置 Azure 跨平台命令行接口]: /zh-cn/documentation/articles/xplat-cli/
   [Git remote]: http://git-scm.com/docs/git-remote
   [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-  [使用 Azure 表服务的 Node.js Web 应用程序]: /zh-cn/develop/nodejs/tutorials/web-site-with-storage/
+  [使用 Azure 表服务的 Node.js Web 应用程序]: /develop/nodejs/tutorials/web-site-with-storage/
   [MongoDB 安全]: http://docs.mongodb.org/manual/security/
-  [使用 Git 发布到 Azure 网站]: /zh-cn/develop/nodejs/common-tasks/publishing-with-git/
+  [使用 Git 发布到 Azure 网站]: /develop/nodejs/common-tasks/publishing-with-git/

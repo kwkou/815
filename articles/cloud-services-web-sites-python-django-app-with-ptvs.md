@@ -590,7 +590,7 @@ Python Tools for Visual Studio 具有向 Azure 网站和云服务进行发布的
   [1]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-013-solution-explorer.png
   [2]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-014-detail-styled.png
   [3]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-015-debugging.png
-  [此处]: http://www.windowsazure.cn/zh-cn/manage/linux/common-tasks/mysql-on-a-linux-vm/
+  [此处]: /manage/linux/common-tasks/mysql-on-a-linux-vm/
   [Django Shell 添加轮询]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-018-shell-add-poll.png
   [Django Shell 查询轮询]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-019-shell-query.png
   [网站]: http://www.windowsazure.cn/zh-cn/services/web-sites/

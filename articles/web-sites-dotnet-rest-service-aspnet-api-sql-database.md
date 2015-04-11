@@ -815,7 +815,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 <!-- bookmarks --> <!-- links --> <!-- images-->
 
   [Rick Anderson]: https://twitter.com/RickAndMSFT
-  [本教程的上一版本]: /zh-cn/develop/net/tutorials/get-started-vs2012/
+  [本教程的上一版本]: /develop/net/tutorials/get-started-vs2012/
   [网站的屏幕快照]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/dntutmobil-intro-finished-web-app.png
   [设置开发环境]: #bkmk_setupdevenv
   [设置 Azure 环境]: #bkmk_setupwindowsazure

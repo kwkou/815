@@ -696,7 +696,7 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [查看存储日志]: #storagelogs
   [查看失败请求日志]: #failedrequestlogs
   [后续步骤]: #nextsteps
-  [Azure 和 ASP.NET 入门]: /zh-cn/develop/net/tutorials/get-started/
+  [Azure 和 ASP.NET 入门]: /develop/net/tutorials/get-started/
   [管理帐户、订阅和管理角色]: http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert
   [在服务器资源管理器中查看设置]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewsettings.png
   [Azure 网站窗口]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configtab.png
@@ -762,11 +762,11 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [打开 W3SVC 文件夹]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-w3svcfolder.png
   [W3SVC 文件夹]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-w3svcfoldercontents.png
   [浏览器中的失败请求跟踪]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-failedrequestinbrowser.png
-  [Azure 中的故障排除]: /zh-cn/develop/net/best-practices/troubleshooting/
-  [网站故障排除]: /zh-cn/develop/net/best-practices/troubleshooting-web-sites/
-  [针对 Azure 网站启用诊断日志记录]: /zh-cn/develop/net/common-tasks/diagnostics-logging-and-instrumentation/
-  [如何监视网站]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/
-  [配置诊断并下载日志]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
+  [Azure 中的故障排除]: /develop/net/best-practices/troubleshooting/
+  [网站故障排除]: /develop/net/best-practices/troubleshooting-web-sites/
+  [针对 Azure 网站启用诊断日志记录]: /develop/net/common-tasks/diagnostics-logging-and-instrumentation/
+  [如何监视网站]: /manage/services/web-sites/how-to-monitor-websites/
+  [配置诊断并下载日志]: /manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
   [ASP.NET 站点上的 Azure 论坛]: http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET
   [MSDN 上的 Azure 论坛]: http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs
   [StackOverflow.com]: http://www.stackoverflow.com

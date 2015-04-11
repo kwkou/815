@@ -10,12 +10,12 @@
 <div class="left-nav">
 <div class="static-nav">
 <ul>
-<li class="menu-nodejs-compute"><a href="/zh-cn/develop/net/compute/">计算</a></li>
-<li class="menu-nodejs-data"><a href="/zh-cn/develop/net/data/">数据服务</a></li>
-<li class="menu-nodejs-appservices"><a href="/zh-cn/develop/net/app-services/">应用程序服务</a></li>
-<li><a href="/zh-cn/develop/net/">指南</a></li>
+<li class="menu-nodejs-compute"><a href="/develop/net/compute/">计算</a></li>
+<li class="menu-nodejs-data"><a href="/develop/net/data/">数据服务</a></li>
+<li class="menu-nodejs-appservices"><a href="/develop/net/app-services/">应用程序服务</a></li>
+<li><a href="/develop/net/">指南</a></li>
 <li><a href="/zh-cn/documentation/articles/architecture-overview/">体系结构</a></li>
-<li><a href="/zh-cn/develop/net/">基于场景的教程</a></li>
+<li><a href="/develop/net/">基于场景的教程</a></li>
 </ul>
 <ul class="links">
 <li class="forum"><a href="/support/forums/">论坛</a></li>

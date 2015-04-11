@@ -383,7 +383,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [如何：删除 Blob]: #delete-blobs
   [如何：并发访问]: #concurrent-access
   [如何：使用共享访问签名]: #sas
-[创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/develop/nodejs/tutorials/create-a- Website-(mac)/
+[创建 Node.js 应用程序并将其部署到 Azure 网站]: /develop/nodejs/tutorials/create-a- Website-(mac)/
   [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
   [使用存储构建 Node.js Web 应用程序]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
  [使用 WebMatrix 构建网站]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/

@@ -469,7 +469,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [35]: ./media/partner-xamarin-notification-hubs-ios-get-started/notification-hub-create-console-app.png
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
   [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-xamarin-ios
+  [移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-ios
   [36]: ./media/partner-xamarin-notification-hubs-ios-get-started/notification-hub-scheduler1.png
   [37]: ./media/partner-xamarin-notification-hubs-ios-get-started/notification-hub-scheduler2.png
   [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/

@@ -342,10 +342,10 @@
   [创建具有身份验证功能的 ASP.NET 应用程序]: #create-application
   [更新 ASP.NET 应用程序以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
-  [Windows 应用商店 C#]: /zh-cn/manage/services/notification-hubs/getting-started-windows-dotnet
-  [iOS]: /zh-cn/manage/services/notification-hubs/get-started-notification-hubs-ios
-  [Android]: /zh-cn/manage/services/notification-hubs/get-started-notification-hubs-android
-  [使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务]: /zh-cn/develop/net/tutorials/rest-service-using-web-api/
+  [Windows 应用商店 C#]: /manage/services/notification-hubs/getting-started-windows-dotnet
+  [iOS]: /manage/services/notification-hubs/get-started-notification-hubs-ios
+  [Android]: /manage/services/notification-hubs/get-started-notification-hubs-android
+  [使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务]: /develop/net/tutorials/rest-service-using-web-api/
   [0]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-mvc-app.png
   [1]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-aspnet-class.png
   [Azure 管理门户]: https://manage.windowsazure.cn/
@@ -353,8 +353,8 @@
   [3]: ./media/notification-hubs-aspnet-notify-users/notification-hub-connection-strings.png
   [4]: ./media/notification-hubs-aspnet-notify-users/notification-hub-add-nuget-package.png
   [5]: ./media/notification-hubs-aspnet-notify-users/notification-hub-add-register-controller2.png
-  [Windows 应用商店 C# 版本]: /zh-cn/manage/services/notification-hubs/register-users-aspnet-dotnet
-  [iOS 版本]: /zh-cn/manage/services/notification-hubs/howto-register-user-with-aspnet-ios
-  [使用通知中心向用户发送跨平台通知]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-aspnet
+  [Windows 应用商店 C# 版本]: /manage/services/notification-hubs/register-users-aspnet-dotnet
+  [iOS 版本]: /manage/services/notification-hubs/howto-register-user-with-aspnet-ios
+  [使用通知中心向用户发送跨平台通知]: /manage/services/notification-hubs/notify-users-xplat-aspnet
   [6]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

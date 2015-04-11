@@ -647,7 +647,7 @@ config.json 文件包含用于连接到 SQL Database 的连接字符串，应用
     
 [创建 Node.js 应用程序并将其部署到 Azure 网站]
 
-[Azure 开发人员中心](/zh-cn/develop/nodejs/)
+[Azure 开发人员中心](/develop/nodejs/)
 
 
 [节点]: http://nodejs.org

@@ -77,6 +77,6 @@ return originLocator;
 -   [使用 Media Services SDK for .NET 生成应用程序](http://go.microsoft.com/fwlink/?linkid=247821)
 -   [使用 Azure Media Services REST API 生成应用程序](http://go.microsoft.com/fwlink/?linkid=252967)
 -   [Media Services 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/MediaServices/threads)
--   [如何监视 Media Services 帐户](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-monitor-a-media-services-account/)
--   [如何管理 Media Services 中的内容](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-manage-content-in-media-services/)
+-   [如何监视 Media Services 帐户](/manage/services/media-services/how-to-monitor-a-media-services-account/)
+-   [如何管理 Media Services 中的内容](/manage/services/media-services/how-to-manage-content-in-media-services/)
 

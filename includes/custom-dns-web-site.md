@@ -4,7 +4,7 @@
 
 另外，您可以使用 Azure Traffic Manager 对您的网站的传入流量实现负载平衡。有关 Traffic Manager 如何作用于网站的详细信息，请参阅[使用 Azure Traffic Manager 控制 Azure 网站流量][trafficmanager]。
 
-> [WACOM.NOTE] 本任务中的过程适用于 Azure 网站；对于云服务，请参阅<a href="/zh-cn/develop/net/common-tasks/custom-dns/">在 Azure 中配置自定义域名</a>。
+> [WACOM.NOTE] 本任务中的过程适用于 Azure 网站；对于云服务，请参阅<a href="/develop/net/common-tasks/custom-dns/">在 Azure 中配置自定义域名</a>。
 
 > [WACOM.NOTE] 本任务中的步骤要求您将网站配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href="/zh-cn/pricing/details/web-sites/">网站定价详细信息</a>。
 
@@ -283,7 +283,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 -   [如何管理网站](/documentation/articles/web-sites-manage/)
 
--   [为网站配置 SSL 证书](/zh-cn/develop/net/common-tasks/enable-ssl-web-site/)
+-   [为网站配置 SSL 证书](/develop/net/common-tasks/enable-ssl-web-site/)
 
 
 <!-- Bookmarks -->

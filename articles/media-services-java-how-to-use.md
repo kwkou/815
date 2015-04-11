@@ -138,7 +138,7 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 
 以下代码演示了如何创建一个资产、如何将媒体文件上载到该资产、如何使用任务运行某个作业以转换该资产，以及如何下载转换后的资产的输出文件。
 
-在使用此代码之前，需要设置一个 Media Services 帐户。有关设置帐户的信息，请参阅[如何创建 Media Services 帐户](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-create-a-media-services-account/)。
+在使用此代码之前，需要设置一个 Media Services 帐户。有关设置帐户的信息，请参阅[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account/)。
 
 将 `clientId` 和 `clientSecret` 变量替换为你自己的值。该代码还依赖于本地存储的文件 `c:/media/MPEG4-H264.mp4`。你需要提供自己的文件以供使用。该代码还需要一个输出文件夹 `c:/output`，输出文件将下载到其中。
 

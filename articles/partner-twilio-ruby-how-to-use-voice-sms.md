@@ -202,7 +202,7 @@ Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**
   [Twilio 帐户页]: https://www.twilio.com/user/account
   [管理号码（可能为英文页面）]: https://www.twilio.com/user/account/phone-numbers/verified#
   [用于 Ruby 的 Twilio 帮助程序库]: https://www.twilio.com/docs/ruby/install
-  [设置一台新的 Azure Linux 虚拟机]: http://www.windowsazure.cn/zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/
+  [设置一台新的 Azure Linux 虚拟机]: /develop/ruby/tutorials/web-app-with-linux-vm/
   [Sinatra]: http://www.sinatrarb.com/
   [Twilio 安全准则]: http://www.twilio.com/docs/security
   [Twilio 操作方法和示例代码]: http://www.twilio.com/docs/howto

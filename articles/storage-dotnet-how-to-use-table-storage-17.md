@@ -520,8 +520,8 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
     -   使用 [Blob 存储][]来存储非结构化数据。
     -   使用 [SQL数据库][] 来存储关系数据。
 
-  [1.7 版]: /en-us/develop/net/how-to-guides/table-services-v17/ "1.7 版"
-  [2.0 版]: /en-us/develop/net/how-to-guides/table-services/ "2.0 版"
+  [1.7 版]: /develop/net/how-to-guides/table-services-v17/ "1.7 版"
+  [2.0 版]: /develop/net/how-to-guides/table-services/ "2.0 版"
   [后续步骤]: #next-steps
   [什么是表服务？]: #what-is
   [概念]: #concepts
@@ -551,5 +551,5 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Blob 存储]: /en-us/develop/net/how-to-guides/blob-storage/
-  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/
+  [Blob 存储]: /develop/net/how-to-guides/blob-storage/
+  [SQL数据库]: /develop/net/how-to-guides/sql-database/

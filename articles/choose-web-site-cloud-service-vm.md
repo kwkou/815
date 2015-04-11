@@ -279,10 +279,10 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
   [服务摘要]: #services
   [功能比较]: #features
   [自动任务]: /zh-cn/documentation/scripts/?services=web-sites
-  [.Net]: /zh-cn/develop/net/
-  [PHP]: /zh-cn/develop/php/
-  [Node.js]: /zh-cn/develop/nodejs/
-  [Python]: /zh-cn/develop/python/
+  [.Net]: /develop/net/
+  [PHP]: /develop/php/
+  [Node.js]: /develop/nodejs/
+  [Python]: /develop/python/
   [SQL 数据库]: /zh-cn/documentation/services/sql-database/
   [服务总线]: /zh-cn/documentation/services/service-bus/
   [存储]: /zh-cn/documentation/services/storage/

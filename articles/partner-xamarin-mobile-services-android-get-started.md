@@ -145,6 +145,6 @@
   [6]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-quickstart-startup-android.png
   [7]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-data-tab.png
   [8]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-data-browse.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-android

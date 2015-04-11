@@ -183,7 +183,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 现在，你已了解 Service Bus 队列的基础知识，请参阅 MSDN 主题[队列、主题和订阅][]以获取更多信息。
 
-  [Azure SDK for Java]: http://www.windowsazure.cn/zh-cn/develop/java/
+  [Azure SDK for Java]: /develop/java/
   [什么是 Service Bus 队列？]: #what-are-service-bus-queues
   [创建服务命名空间]: #create-a-service-namespace
   [获取命名空间的默认管理凭据]: #obtain-default-credentials

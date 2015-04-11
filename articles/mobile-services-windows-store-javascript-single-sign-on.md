@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-single-sign-on-windows-8-js" urlDisplayName="Authenticate with single sign-on" pageTitle="Authenticate your app with Live Connect (JavaScript)" metaKeywords="Azure Live Connect, Azure SSO, SSO Live Connect, mobile services sso, Windows Store app sso, Azure Javascript SSO" description="Learn how to use Live Connect single sign-on in Azure Mobile Services from a Windows Store application." metaCanonical="http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/" services="" documentationCenter="Mobile" title="Authenticate your Windows Store app with Live Connect single sign-on" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-single-sign-on-windows-8-js" urlDisplayName="Authenticate with single sign-on" pageTitle="Authenticate your app with Live Connect (JavaScript)" metaKeywords="Azure Live Connect, Azure SSO, SSO Live Connect, mobile services sso, Windows Store app sso, Azure Javascript SSO" description="Learn how to use Live Connect single sign-on in Azure Mobile Services from a Windows Store application." metaCanonical="/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/" services="" documentationCenter="Mobile" title="Authenticate your Windows Store app with Live Connect single sign-on" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
     wacn.date=""
@@ -7,14 +7,14 @@
 # 使用 Live Connect 单一登录对 Windows 应用商店应用程序进行身份验证
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/single-sign-on-wp8" title="Windows Phone">Windows Phone</a>
+	<a href="/develop/mobile/tutorials/single-sign-on-windows-8-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/single-sign-on-windows-8-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/single-sign-on-wp8" title="Windows Phone">Windows Phone</a>
 </div>	
 
 本主题说明如何通过 Windows 应用商店应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将使用 Live Connect 向快速入门项目添加身份验证功能。成功通过 Live Connect 进行身份验证后，将使用名称欢迎已登录的用户并显示用户 ID 值。
 
 <div class="dev-callout"><b>说明</b>
 
-<p>本教程演示通过 Live Connect 为 Windows 应用商店应用程序提供单一登录体验的使用好处。这使你可以更轻松地使用移动服务对已登录的用户进行身份验证。有关支持多个身份验证提供程序的更通用的身份验证体验，请参阅<a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-js/">身份验证入门</a>主题。</p>
+<p>本教程演示通过 Live Connect 为 Windows 应用商店应用程序提供单一登录体验的使用好处。这使你可以更轻松地使用移动服务对已登录的用户进行身份验证。有关支持多个身份验证提供程序的更通用的身份验证体验，请参阅<a href="/develop/mobile/tutorials/get-started-with-users-js/">身份验证入门</a>主题。</p>
 </div>
 
 本教程将指导你完成以下启用 Live Connect 身份验证的基本步骤：
@@ -209,15 +209,15 @@
 
 在下一教程[使用脚本为用户授权][]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。有关如何使用其他标识提供者进行身份验证的信息，请参阅[身份验证入门][12]。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/single-sign-on-wp8 "Windows Phone"
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-js/
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/single-sign-on-windows-8-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/single-sign-on-wp8 "Windows Phone"
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-js/
   [注册应用程序以进行身份验证并配置移动服务]: #register
   [将表权限限制给已经过身份验证的用户]: #permissions
   [向应用程序添加身份验证]: #add-authentication
   [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
+  [移动服务入门]: /develop/mobile/tutorials/get-started
   [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
   [0]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-submit-win8-app.png
   [1]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-win8-app-name.png
@@ -233,5 +233,5 @@
   [9]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-portal-data-tables.png
   [10]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-portal-change-table-perms.png
   [11]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-add-reference-live-js.png
-  [使用脚本为用户授权]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-js
-  [12]: /zh-cn/develop/mobile/tutorials/get-started-with-users-js
+  [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-js
+  [12]: /develop/mobile/tutorials/get-started-with-users-js

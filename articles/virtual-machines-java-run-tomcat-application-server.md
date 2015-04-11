@@ -127,7 +127,7 @@
     使 Tomcat 自动启动的优势是，当虚拟机重新启动时（例如，在安装了需要重新启动的软件更新后），它将再次启动。
 
 ## 后续步骤
-* 通过查看 <http://www.windowsazure.com/zh-cn/develop/java/> 中提供的信息，了解有关其他服务（例如 Azure 存储、服务总线、SQL Database 以及您希望包含在 Java 应用程序中的其他服务）的详细信息。
+* 通过查看 </develop/java/> 中提供的信息，了解有关其他服务（例如 Azure 存储、服务总线、SQL Database 以及您希望包含在 Java 应用程序中的其他服务）的详细信息。
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 

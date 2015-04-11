@@ -176,7 +176,7 @@
   [Android]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-push/ "Android"
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-push/ ".NET 后端"
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-javascript-backend-android-get-started-push/ "JavaScript 后端"
-  [JavaScript 后端版本]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
+  [JavaScript 后端版本]: /develop/mobile/tutorials/get-started-with-data-android
   [启用 Google Cloud Messaging]: #register
   [配置移动服务以发送推送请求]: #configure
   [在本地下载服务]: #download-the-service-locally
@@ -205,6 +205,6 @@
   [向订户发送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [向用户发送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
   [向用户发送跨平台通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
   [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
   [如何使用适用于移动服务的 Android 客户端库]: /zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library
