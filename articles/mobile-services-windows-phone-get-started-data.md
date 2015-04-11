@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="09/19/2014" ms.author="glenga" />
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-phone" ms.devlang="dotnet" ms.topic="article" ms.date="02/20/2015" ms.author="glenga" />
 
 
 # 将移动服务添加到现有应用程序

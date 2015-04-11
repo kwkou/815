@@ -1,6 +1,6 @@
 <properties urlDisplayName="hyper-v-recovery-manager-configure-vault" pageTitle="Azure 站点恢复入门：使用 Hyper-V 复制的本地到本地 VMM 站点保护" metaKeywords="Azure Site Recovery, VMM, clouds, disaster recovery" description="Azure Site Recovery coordinates the replication, failover and recovery of Hyper-V virtual machines between on-premises VMM sites." metaCanonical="" umbracoNaviHide="0" disqusComments="1" title="Getting Started with Azure Site Recovery:  On-Premises to On-Premises VMM Site Protection with Hyper-V Replication" editor="jimbe" manager="johndaw" authors="Haifeng Liu" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="10/04/2014"
     wacn.date="04/11/2015"
     />
 

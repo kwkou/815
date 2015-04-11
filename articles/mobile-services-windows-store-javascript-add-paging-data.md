@@ -1,6 +1,6 @@
 <properties pageTitle="Add paging to data (JavaScript) - Azure Mobile Services" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Windows Store JavaScript app from Mobile Services." metaCanonical="http://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/add-paging-to-data-dotnet/" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="12/25/2014"
     wacn.date="04/11/2015"
     />
 

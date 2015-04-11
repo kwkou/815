@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/14/2014" ms.author="nitinme" />
+ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="03/16/2015" ms.author="nitinme" />
 
 
 # 开始在 HDInsight 中使用 Hadoop

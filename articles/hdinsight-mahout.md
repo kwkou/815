@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="larryfr"></tags>
+ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="02/23/2015" ms.author="larryfr"></tags>
 
 # 将 Apache Mahout 与 HDInsight (Hadoop) 配合使用以生成电影推荐
 

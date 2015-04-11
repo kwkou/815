@@ -1,6 +1,6 @@
 <properties title="How to scale a website" pageTitle="How to scale a website" description="Learn how to scale your hosting plan in Azure." authors="stepsic"  />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/08/2014"
     wacn.date="04/11/2015"
     />
 

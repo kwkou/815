@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="10/16/2014" ms.author="ricksal" />
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android" ms.devlang="Java" ms.topic="article" ms.date="02/03/2015" ms.author="ricksal" />
 
 # 向移动服务应用程序添加推送通知
 

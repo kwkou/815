@@ -1,6 +1,6 @@
 <properties pageTitle="服务端授权 (HTML) | 移动开发人员中心" metaKeywords="" description="了解如何在 Azure 移动服务的 JavaScript 后端中为用户授权。" metaCanonical="" services="" documentationCenter="Mobile" title="Service-side authorization of Mobile Services users" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="09/30/2014"
     wacn.date="04/11/2015"
     />
 

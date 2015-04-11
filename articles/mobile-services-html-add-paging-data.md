@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-add-paging-to-data-html" urlDisplayName="Add paging to data (HTML5)" pageTitle="为数据添加分页 (HTML 5) |移动开发人员中心" metaKeywords="" description="了解如何使用分页来管理从移动服务返回给 HTML 应用程序的数据量。" metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="09/30/2014"
     wacn.date="04/11/2015"
     />
 

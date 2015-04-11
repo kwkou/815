@@ -1,6 +1,6 @@
 <properties linkid="manage-linux-commontasks-install-software" urlDisplayName="Install software on VM" pageTitle="Install software on a Linux virtual machine - Azure" metaKeywords="" description="Learn how to install software on your Linux virtual machine in Azure by using CentOS/Red Hat or Ubuntu." metaCanonical="" services="virtual-machines" documentationCenter="" title="Install software on your Linux virtual machine in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
-    ms.date=""
+    ms.date="11/01/2014"
     wacn.date="04/11/2015"
     />
 

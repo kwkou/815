@@ -1,6 +1,6 @@
 <properties title="Learn how to configure an Azure web site that uses 流量管理器 to use a domain name registered with Moniker" pageTitle="Configure a Moniker domain name for an Azure web site using 流量管理器" metaKeywords="Windows Azure, Windows Azure Web Sites, Moniker, 流量管理器" description="Learn how to configure an Azure web site that uses 流量管理器 to use a domain name registered with Moniker" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
 <tags ms.service="web-sites"
-    ms.date=""
+    ms.date="10/18/2014"
     wacn.date="04/11/2015"
     />
 

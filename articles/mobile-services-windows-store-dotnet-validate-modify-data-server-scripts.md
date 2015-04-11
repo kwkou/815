@@ -1,6 +1,6 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-dotnet" urlDisplayName="验证和修改数据" pageTitle="使用服务器脚本验证和修改数据（Windows 应用商店）| 移动开发人员中心" metaKeywords="" description="了解如何通过 Azure 移动服务，使用服务器脚本验证、修改和扩充 Windows 应用商店应用程序的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="12/25/2014"
     wacn.date="04/11/2015"
     />
 

@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="10/07/2014"
     wacn.date="04/11/2015"
     />
 

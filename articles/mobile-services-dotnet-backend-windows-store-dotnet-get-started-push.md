@@ -1,6 +1,6 @@
 <properties pageTitle="Get started with push notification hubs using .NET runtime mobile services" metaKeywords="" description="Learn how to use Azure Mobile Services and Notification Hubs to send push notifications to your Windows Store app." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="wesmc,ricksal" solutions="" manager="" editor="" />
 <tags ms.service="mobile"
-    ms.date=""
+    ms.date="10/25/2014"
     wacn.date="04/11/2015"
     />
 

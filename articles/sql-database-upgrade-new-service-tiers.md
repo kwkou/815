@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service="sql-database" ms.date="12/3/2014" ms.author="jhubbard" />
+ms.service="sql-database" ms.date="03/23/2015" ms.author="jhubbard" />
 
 
 #将 SQL Database Web/企业版数据库升级到新服务层

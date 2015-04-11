@@ -1,6 +1,6 @@
 <properties linkid="dev-net-white-papers" urlDisplayName="White Papers" pageTitle="白皮书，- Azure 资源" metaKeywords="Azure whitepapers" description="下载受欢迎的 Azure 白皮书。" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="12/11/2014"
     wacn.date="04/11/2015"
     />
 

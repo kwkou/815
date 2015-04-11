@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="Learn how to use Microsoft HPC Pack and Azure to set up a small, hybrid high performance computing (HPC) cluster" metaCanonical="" services="" documentationCenter="" title="Set up a Hybrid Cluster with Microsoft HPC Pack" authors="danlep" solutions="" manager="dongill" editor="mattshel" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="12/30/2014"
     wacn.date="04/11/2015"
     />
 

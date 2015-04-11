@@ -1,6 +1,6 @@
 <properties umbracoNaviHide="0" pageTitle="How To Configure Cloud Services" metaKeywords="Azure cloud services, cloud service, configure cloud service" description="Learn how to configure Azure cloud services." linkid="manage-windows-how-to-guide-storage-accounts" urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" title="Sign up for Azure as an organization" authors="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="12/07/2014"
     wacn.date="04/11/2015"
     />
 

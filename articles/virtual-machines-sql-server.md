@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Getting started with SQL Server on an Azure virtual machine" authors="selcint" solutions="" manager="clairt" editor="tyson" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="10/16/2014"
     wacn.date="04/11/2015"
     />
 

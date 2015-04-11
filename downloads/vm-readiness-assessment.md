@@ -1,6 +1,6 @@
 <properties linkid="vm-readiness-assessment" urlDisplayName="Azure 虚拟机就绪评估" pageTitle="Azure 虚拟机就绪评估" metaKeywords="Azure 虚拟机就绪评估" description="Azure 虚拟机就绪评估" metaCanonical="" services="downloads" documentationCenter="downloads" title="Azure 虚拟机就绪评估" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
 <tags ms.service="downloads"
-    ms.date=""
+    ms.date="11/22/2014"
     wacn.date="04/11/2015"
     />
 

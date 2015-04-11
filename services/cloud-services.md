@@ -1,6 +1,6 @@
 <properties linkid="dev-net-Cloud-Service" urlDisplayName="Windows Azure Cloud Service" pageTitle="云服务 - Azure 微软云" metaKeywords="Cloud Service,Azure 云服务,资源链接,存储账户,Blob,表,队列,部署,缩放,配置,监视,诊断,可用性,负载平衡" description="在 Azure 中配置、监视和缩放云服务。使用云服务部署和管理功能强大的应用程序和服务。上载应用程序，Azure 将处理部署细节（从设置和负载平衡到运行状况监视）以实现持续可用性。" metaCanonical="" services="Cloud Service" documentationCenter="Services" title="Configure, monitor, and scale your cloud services in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Cloud Service"
-    ms.date=""
+    ms.date="11/08/2014"
     wacn.date="04/11/2015"
     />
 

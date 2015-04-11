@@ -1,6 +1,6 @@
 <properties linkid="notification-hubs-how-to-guides-howto-notify-users-mobileservices" urlDisplayName="Notify Users" pageTitle="使用通知中心通知用户移动服务事件" metaKeywords="" description="遵循本教程来注册到通知中心以从移动服务接收通知" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="使用通知中心通知用户" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services,notification-hubs"
-    ms.date=""
+    ms.date="10/25/2014"
     wacn.date="04/11/2015"
     />
 

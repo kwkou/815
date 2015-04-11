@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="01/01/1900" ms.author="starra"></tags>
+ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="03/04/2015" ms.author="starra"></tags>
 
 # <span id="configure-a-backup-vault-tutorial"></span></a>配置 Azure 备份以便快速轻松地备份 Windows Server
 

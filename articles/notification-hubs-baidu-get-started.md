@@ -2,7 +2,7 @@
 
 <tags 
 wacn.date="04/11/2015"
-ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="mm/dd/yyyy" ms.author="piyushjo"></tags>
+ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="03/16/2015" ms.author="piyushjo"></tags>
 
 # 通知中心入门
 

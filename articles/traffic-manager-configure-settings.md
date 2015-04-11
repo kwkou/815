@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Configure 流量管理器 Settings" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
-    ms.date=""
+    ms.date="11/26/2014"
     wacn.date="04/11/2015"
     />
 
