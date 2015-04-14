@@ -7,8 +7,8 @@ authors=""
 manager="Tiffena" 
 editor="Eric Chen" />
 <tags ms.service="JAVA"
-    ms.date="12/07/2014"
-    wacn.date="04/11/2015"
+    ms.date=""
+    wacn.date=""
     />
 
 #Java 开发人员中心
@@ -42,9 +42,9 @@ editor="Eric Chen" />
 
 - [应用程序之间的消息](/documentation/articles/service-bus-java-how-to-use-queues/)
 - [对用户进行身份验证](/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/)
-- [使用 SendGrid 发送电子邮件](/documentation/articles/store-sendgrid-java-how-to-send-email/)
 - [将 Twilio 用于音频和 SMS](/documentation/articles/partner-twilio-java-how-to-use-voice-sms/)
 - [全部显示](/develop/java/app-services/)
+<!--- [使用 SendGrid 发送电子邮件](/documentation/articles/store-sendgrid-java-how-to-send-email/)-->
     
 ###参考文档
 

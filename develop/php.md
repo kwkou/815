@@ -7,8 +7,8 @@ authors=""
 manager="Tiffena" 
 editor="Eric Chen" />
 <tags ms.service="PHP"
-    ms.date="12/26/2014"
-    wacn.date="04/11/2015"
+    ms.date=""
+    wacn.date=""
     />
 
 #PHP开发人员中心
@@ -27,7 +27,7 @@ editor="Eric Chen" />
 - [创建 PHP 网站](/documentation/articles/web-sites-php-create-web-sites/)
 - [配置 PHP](/documentation/articles/web-sites-php-configure/)
 - [使用 XDT 进行转换](/documentation/articles/web-sites-transform-extend/)
-- [创建 PHP-MySQL 网站](/documentation/articles/web-sites-php-mysql-deploy-use-git/)
+<!--- [创建 PHP-MySQL 网站](/documentation/articles/web-sites-php-mysql-deploy-use-git/)-->
 - **[全部显示](/develop/php/websites/)**
 
 ###虚拟机
@@ -48,8 +48,8 @@ editor="Eric Chen" />
 
 ###数据管理
 
-- [创建 MySQL 数据库](/documentation/articles/store-php-create-mysql-database/)
-- [创建 MongoDB 数据库](/documentation/articles/store-mongolab-php-create-mongodb/)
+<!--- [创建 MySQL 数据库](/documentation/articles/store-php-create-mysql-database/)-->
+<!--- [创建 MongoDB 数据库](/documentation/articles/store-mongolab-php-create-mongodb/)-->
 - [使用 Blob 服务](/documentation/articles/storage-php-how-to-use-blobs/)
 - [使用表服务](/documentation/articles/storage-php-how-to-use-table-storage/)
 - [创建 SQL 数据库](/documentation/articles/sql-database-php-how-to-use/)
