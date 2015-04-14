@@ -1,7 +1,7 @@
 <properties linkid="dev-net-Active-Directory" urlDisplayName="Windows Azure Active Directory" pageTitle="Active Directory - Azure 微软云" metaKeywords="Active Directory,活动目录,AAD,身份标识,身份认证,策略,目录服务,访问控制,ACS,ADDS,ADFS" description="管理服务和应用程序的标识和访问。Azure Active Directory 是一个全面的标识和访问管理云解决方案。它将核心目录服务、高级标识监管、安全防护和应用程序访问管理相结合。Azure AD 还为开发人员提供了标识管理平台，以便基于集中的策略和规则为应用程序提供访问控制。" metaCanonical="" services="Active Directory" documentationCenter="Services" title="Manage identity and access of services and applications" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Active Directory"
-    ms.date="10/23/2014"
-    wacn.date="04/11/2015"
+    ms.date=""
+    wacn.date=""
     />
 
 #Azure Active Directory 文档
