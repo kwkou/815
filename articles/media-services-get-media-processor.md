@@ -1,4 +1,8 @@
 <properties linkid="develop-media-services-how-to-guides-create-media-processor" urlDisplayName="Create a Media Processor" pageTitle="How to Create a Media Processor - Azure" metaKeywords="" description="Learn how to create a media processor component to encode, convert format, encrypt, or decrypt media content for Azure Media Services. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Get a Media Processor Instance" authors="migree" solutions="" manager="" editor="" />
+<tags ms.service="media-services"
+    ms.date="02/10/2015"
+    wacn.date="04/11/2015"
+    />
 
 如何：获取媒体处理器实例
 ========================
@@ -41,7 +45,7 @@
   </tbody>
 </table>
 
-以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到 Media Services](/zh-cn/develop/media-services/how-to-guides/set-up-computer-for-media-services) 部分中所述的服务器上下文。
+以下方法演示了如何获取媒体处理器实例。该代码示例假设使用名为 **\_context** 的模块级变量来引用[如何：以编程方式连接到 Media Services](/develop/media-services/how-to-guides/set-up-computer-for-media-services) 部分中所述的服务器上下文。
 
 ``` {}
 private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)

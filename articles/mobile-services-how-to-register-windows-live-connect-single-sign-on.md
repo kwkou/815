@@ -1,4 +1,8 @@
 <properties pageTitle="注册以进行单一登录 - Azure 移动服务" metaKeywords="" description="了解如何在 Azure 移动服务应用程序中注册以进行单一登录身份验证。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your Windows Store apps to use Windows Live Connect single sign-on" authors="" solutions="" manager="" editor="" />
+<tags ms.service="mobile-services"
+    ms.date="11/21/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 注册 Windows 应用商店应用程序以使用 Windows Live Connect 单一登录
 

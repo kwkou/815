@@ -1,4 +1,8 @@
 <properties pageTitle="Get Started with Azure Mobile Services for iOS apps" metaKeywords="Azure iOS application, mobile service iOS, getting started Azure iOS" description="Follow this tutorial to get started using Azure Mobile Services for iOS development. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/11/2015"
+    wacn.date="04/11/2015"
+    />
 
 # <a name="getting-started"> </a>移动服务入门
 

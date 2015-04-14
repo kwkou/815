@@ -1,4 +1,8 @@
 <properties pageTitle="Azure API Management Policy Reference" metaKeywords="" description="Learn about the policies available to configure API Management." metaCanonical="" services="" documentationCenter="API Management" title="Azure API Management Policy Reference" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="03/05/2015"
+    wacn.date="04/11/2015"
+    />
 
 # Azure API 管理策略参考
 

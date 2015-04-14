@@ -1,4 +1,8 @@
 <properties pageTitle="Get Started with Azure Mobile Services for Android apps" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="Follow this tutorial to get started using Azure Mobile Services for Android development." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/03/2015"
+    wacn.date="04/11/2015"
+    />
 
 # <a name="getting-started"> </a>移动服务入门
 
@@ -152,6 +156,6 @@
   [6]: ./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png
   [7]: ./media/mobile-services-android-get-started/mobile-data-tab.png
   [8]: ./media/mobile-services-android-get-started/mobile-data-browse.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-android

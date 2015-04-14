@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-howto-administer-hdinsight" urlDisplayName="Administration" pageTitle="使用管理门户管理 HDInsight 群集 | Azure" metaKeywords="" description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console." metaCanonical="" services="hdinsight" documentationCenter="" title="Administer HDInsight clusters using Management Portal" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="hdinsight"
+    ms.date="03/12/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 使用管理门户管理 HDInsight 群集
 

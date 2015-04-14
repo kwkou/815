@@ -1,4 +1,8 @@
 <properties linkid="automation-create-runbook-from-samples" urlDisplayName="Get Started with Azure Automation" pageTitle="Get Started with Azure Automation" metaKeywords="" description="Learn how to import and run an automation job in Azure." metaCanonical="" services="automation" documentationCenter="" title="Get Started with Azure Automation" authors="" solutions="" manager="" editor="" />
+<tags ms.service="automation"
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
+    />
 
 # Azure 自动化入门
 

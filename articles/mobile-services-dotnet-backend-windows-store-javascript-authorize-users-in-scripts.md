@@ -1,4 +1,8 @@
 <properties pageTitle="Service-side authorization (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to authorize users in the .NET backend of Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Service-side authorization of Mobile Services users" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="10/09/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务用户的服务端授权
 

@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="为 HDInsight 开发 C# Hadoop 流程序 | Azure" metaKeywords="hdinsight hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="hdinsight"
+    ms.date="09/25/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 为 HDInsight 开发 C\# Hadoop 流程序
 

@@ -1,4 +1,8 @@
 <properties pageTitle="从 iOS 应用程序调用自定义 API | 移动服务" metaKeywords="" description="了解如何定义自定义 API，然后从使用 Azure 移动服务的 iOS 应用程序调用它。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="从客户端调用自定义 API" authors="krisragh"  solutions="" writer="krisragh" manager="" editor=""  />
+<tags ms.service="mobile-services"
+    ms.date="03/03/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 从客户端调用自定义 API
 

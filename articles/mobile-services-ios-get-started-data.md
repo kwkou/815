@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-ios" urlDisplayName="数据处理入门" pageTitle="数据处理入门 (iOS) | 移动开发人员中心" metaKeywords="Azure iOS data, Azure mobile services data, " description="了解如何开始使用移动服务来利用 iOS 应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="03/12/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 

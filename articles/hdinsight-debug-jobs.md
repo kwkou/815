@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-debug-error-messages" urlDisplayName="Debug HDInsight Errors" pageTitle="调试 HDInsight：错误消息 | Azure" metaKeywords="dinsight, hdinsight service, hdinsight azure, debug, error messages, errors" description="Learn about the error messages you might receive when administering HDInsight using PowerShell, and steps you can take to recover." services="hdinsight" title="Debug HDInsight: Error messages" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="bradsev" />
+<tags ms.service="hdinsight"
+    ms.date="11/10/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 调试 HDInsight：错误消息
 

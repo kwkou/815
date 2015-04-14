@@ -1,4 +1,8 @@
 <properties linkid="develop-media-services-how-to-guides-deliver-apple-live-streaming" urlDisplayName="Deliver Apple HTTP Live Streaming (HLS)" pageTitle="How to Deliver Apple HTTP Live Streaming (HLS) - Azure" metaKeywords="" description="Learn how to create a locator to Apple HTTP Live Stream (HLS) content on Media Services origin server. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Deliver Apple HLS streaming content" authors="migree" solutions="" manager="" editor="" />
+<tags ms.service="media-services"
+    ms.date="10/30/2014"
+    wacn.date="04/11/2015"
+    />
 
 如何：交付 Apple HLS 流内容
 ===========================
@@ -73,6 +77,6 @@ return originLocator;
 -   [使用 Media Services SDK for .NET 生成应用程序](http://go.microsoft.com/fwlink/?linkid=247821)
 -   [使用 Azure Media Services REST API 生成应用程序](http://go.microsoft.com/fwlink/?linkid=252967)
 -   [Media Services 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/MediaServices/threads)
--   [如何监视 Media Services 帐户](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-monitor-a-media-services-account/)
--   [如何管理 Media Services 中的内容](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-manage-content-in-media-services/)
+-   [如何监视 Media Services 帐户](/manage/services/media-services/how-to-monitor-a-media-services-account/)
+-   [如何管理 Media Services 中的内容](/manage/services/media-services/how-to-manage-content-in-media-services/)
 

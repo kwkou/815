@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-sample-wordcount" urlDisplayName="HDInsight Samples" pageTitle="HDInsight WordCount 示例 | Azure" metaKeywords="hdinsight, hdinsight sample, hadoop, mapreduce" description="Learn how to run a simple MapReduce sample on HDInsight." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The HDInsight WordCount sample" authors="bradsev" />
+<tags ms.service="hdinsight"
+    ms.date="11/10/2014"
+    wacn.date="04/11/2015"
+    />
 
 # HDInsight WordCount 示例
 

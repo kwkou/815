@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-html" urlDisplayName="验证数据 - HTML5" pageTitle="用于验证和修改数据的用户服务器脚本 (HTML 5) | 移动开发人员中心" metaKeywords="" description="了解如何使用服务器脚本验证和修改从 HTML 应用程序发送的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="11/05/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -197,7 +201,7 @@
 <!-- URLs. -->
 [使用服务器脚本]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-html
-<!--[Authorize users with scripts]: /zh-cn/develop/mobile/tutorials/authorize-users-html -->
+<!--[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-html -->
 [使用分页优化查询]: /zh-cn/documentation/articles/mobile-services-html-add-paging-data
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html

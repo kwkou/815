@@ -1,4 +1,8 @@
 <properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor="" />
+<tags ms.service="media-services"
+    ms.date="02/24/2015"
+    wacn.date="04/11/2015"
+    />
 
 Media Services 入门
 ===================
@@ -648,6 +652,6 @@ File download path:C:\supportFiles\outputfiles\interview2_metadata.xml
 
 本演练演示了生成简单 Media Services 应用程序所要执行的编程任务序列。你已学习了基本的 Media Services 编程任务，包括获取服务器上下文、创建资产、为资产编码，以及下载或访问服务器上的资产。有关后续步骤和其他高级开发任务，请参阅以下主题：
 
--   [如何使用 Media Services](/zh-cn/develop/net/how-to-guides/media-services/)
+-   [如何使用 Media Services](/develop/net/how-to-guides/media-services/)
 -   [使用 Media Services REST API 生成应用程序](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh973618.aspx)
 

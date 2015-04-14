@@ -1,9 +1,13 @@
 <properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-android" urlDisplayName="Validate Data - Android" pageTitle="Use server scripts to validate and modify data (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="ricksal" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="10/14/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 使用服务器脚本在移动服务中验证和修改数据
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet" title="Windows Store C#">Windows Store C#</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-js" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-android" title="Android" class="current">Android</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+	<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet" title="Windows Store C#">Windows Store C#</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-js" title="Windows Store JavaScript">Windows Store JavaScript</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-android" title="Android" class="current">Android</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
 </div>
 
 本主题说明如何在 Azure 移动服务中利用服务器脚本。你可以在移动服务中注册服务器脚本，然后使用这些脚本对所要插入和更新的数据执行各种操作，包括验证和数据修改。在本教程中，你将要定义并注册用于验证和修改数据的服务器脚本。由于服务器端脚本的行为往往会影响到客户端，因此你还要更新 Android 应用程序以利用这些新行为。
@@ -218,24 +222,24 @@
 -   [移动服务服务器脚本参考][]
     了解有关注册和使用服务器脚本的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"
+  [Android]: /develop/mobile/tutorials/validate-modify-and-augment-data-android "Android"
+  [HTML]: /develop/mobile/tutorials/validate-modify-and-augment-data-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android "Xamarin.Android"
   [添加字符串长度验证]: #string-length-validation
   [更新客户端以支持验证]: #update-client-validation
   [在插入操作中添加时间戳]: #add-timestamp
   [更新客户端以显示时间戳]: #update-client-timestamp
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-android-validate-modify-data-server-scripts/mobile-insert-script-users.png
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-android
-  [使用脚本为用户授权]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-android
+  [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-android
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293

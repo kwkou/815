@@ -1,4 +1,8 @@
 <properties linkid="manage-services-integration-hybrid-connection" urlDisplayName="Integration Hybrid Connection" pageTitle="集成和网站中的混合连接 | Azure" metaKeywords="BizTalk Services, BizTalk, web sites, hybrid connection, Azure" description="了解如何创建混合连接、管理连接以及安装混合连接管理器。" metaCanonical="" services="integration-services" documentationCenter="" title="混合连接" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="integration-services"
+    ms.date="03/03/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 混合连接
 

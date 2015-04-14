@@ -1,6 +1,8 @@
 <properties title="Analyzing sensor data with Storm and HDInsight" pageTitle="使用 Apache Storm 和 Windows Azure HDInsight (Hadoop) 分析传感器数据" description="Learn how to use  Apache Storm to process sensor data in realtime with HDInsight (Hadoop)" metaKeywords="Azure hdinsight storm, Azure hdinsight realtime, azure hadoop storm, azure hadoop realtime, azure hadoop real-time, azure hdinsight real-time" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/30/2014" ms.author="larryfr" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="03/20/2015" ms.author="larryfr" />
 
 # 使用 HDInsight (Hadoop) 中的 Storm 和 HBase 分析传感器数据
 

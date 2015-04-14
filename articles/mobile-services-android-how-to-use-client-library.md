@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-how-to-guides/work-with-android-client-library" urlDisplayName="Android Client Library" pageTitle="Working with the Mobile Services Android Client Library" metaKeywords="" description="Learn how to use an Android client for Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use the Android client library for Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/03/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何使用适用于移动服务的 Android 客户端库
 
@@ -822,12 +826,12 @@
 
 [][]<http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/package-summary.html>提供了 Android 客户端 API 的 Javadocs 参考
 
-  [.NET Framework]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
-  [HTML/JavaScript]: /zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
-  [iOS]: /zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
-  [Android]: /zh-cn/develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
-  [Xamarin]: /zh-cn/develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
-  [移动服务快速入门]: /zh-cn/develop/mobile/tutorials/get-started-android/
+  [.NET Framework]: /develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
+  [HTML/JavaScript]: /develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
+  [iOS]: /develop/mobile/how-to-guides/work-with-ios-client-library/ "iOS"
+  [Android]: /develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
+  [Xamarin]: /develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
+  [移动服务快速入门]: /develop/mobile/tutorials/get-started-android/
   [移动服务 SDK]: http://go.microsoft.com/fwlink/p/?linkid=280126
   [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125&clcid=0x409
   [什么是移动服务]: #what-is
@@ -914,7 +918,7 @@
   ["insert"]: http://go.microsoft.com/fwlink/p/?LinkId=296862
   ["TableOperationCallback\<ToDoItem\>"]: http://go.microsoft.com/fwlink/p/?LinkId=296865
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-  [用于管理移动服务表的 CLI]: http://www.windowsazure.cn/zh-cn/manage/linux/other-resources/command-line-tools/#Mobile_Tables
+  [用于管理移动服务表的 CLI]: /manage/linux/other-resources/command-line-tools/#Mobile_Tables
   ["TableDeleteCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=296858
   [MobileServicesJsonTable]: http://go.microsoft.com/fwlink/p/?LinkId=298733
   [getTable()]: http://go.microsoft.com/fwlink/p/?LinkId=298734
@@ -924,6 +928,6 @@
   ["TableJsonQueryCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=298543
   [身份验证入门]: http://go.microsoft.com/fwlink/p/?LinkId=296316
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [此处]: https://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
+  [此处]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
   [在移动服务 Android 客户端中使用]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
   []: http://go.microsoft.com/fwlink/p/?LinkId=298735 "此处"

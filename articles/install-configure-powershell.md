@@ -1,4 +1,8 @@
 <properties linkid="Install-Config-Windows-Azure-PowerShell" urlDisplayName="Windows Azure PowerShell" pageTitle="如何安装和配置 Windows Azure PowerShell" description="了解如何安装和配置 Windows Azure PowerShell。" umbracoNaviHide="0" disqusComments="1" writer="kathydav" editor="tysonn" manager="jeffreyg" documentationCenter="" services="" solutions="" authors="" title="如何安装和配置 Windows Azure PowerShell" />
+<tags ms.service=""
+    ms.date="11/08/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何安装和配置 Windows Azure PowerShell#
 

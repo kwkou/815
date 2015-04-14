@@ -1,4 +1,8 @@
 <properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor="" />
+<tags ms.service="web-sites,cloud-services"
+    ms.date="11/03/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序
 
@@ -586,7 +590,7 @@ Python Tools for Visual Studio 具有向 Azure 网站和云服务进行发布的
   [1]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-013-solution-explorer.png
   [2]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-014-detail-styled.png
   [3]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-015-debugging.png
-  [此处]: http://www.windowsazure.cn/zh-cn/manage/linux/common-tasks/mysql-on-a-linux-vm/
+  [此处]: /manage/linux/common-tasks/mysql-on-a-linux-vm/
   [Django Shell 添加轮询]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-018-shell-add-poll.png
   [Django Shell 查询轮询]: ./media/cloud-services-python-create-deploy-django-app/django-tutorial-019-shell-query.png
   [网站]: http://www.windowsazure.cn/zh-cn/services/web-sites/
