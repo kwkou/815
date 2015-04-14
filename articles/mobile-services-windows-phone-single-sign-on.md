@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-single-sign-on-windows-8-wp8" urlDisplayName="使用单一登录进行身份验证" pageTitle="使用 Live Connect 进行应用程序身份验证 (Windows Phone) | 移动开发人员中心" metaKeywords="" description="了解如何通过 Windows Phone 应用程序在 Azure 移动服务中使用 Live Connect 单一登录。" metaCanonical="" services="" documentationCenter="Mobile" title="Authenticate your Windows Phone 8 app with Live Connect single sign-on" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="11/22/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 

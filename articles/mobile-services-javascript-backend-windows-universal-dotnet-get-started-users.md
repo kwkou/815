@@ -1,6 +1,8 @@
 <properties pageTitle="身份验证入门（Windows 应用商店）| 移动开发人员中心" metaKeywords="authentication, Facebook, Google, Twitter, Microsoft Account, login" description="了解如何使用移动服务通过各种身份提供商（包括 Google、Facebook、 Twitter 和 Microsoft）验证 Windows 应用商店应用程序用户的身份。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="Glenn Gailey" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/18/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="02/26/2015" ms.author="glenga" />
 
 # 向移动服务应用程序添加身份验证
 

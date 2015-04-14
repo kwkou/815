@@ -1,4 +1,8 @@
 <properties linkid="manage-services-how-to-deploy-websites" pageTitle="如何部署 Azure 网站" metaKeywords="Azure deploy publish web site" description="了解可使用哪些方法将内容部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter="" title="如何部署 Azure 网站" authors="tdykstra" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service="web-sites"
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何部署 Azure 网站
 
@@ -216,8 +220,8 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
   [1]: #vso
   [Team Foundation Server]: #tfs
   [Git 存储库]: #git
-  [Azure 和 ASP.NET 入门]: /zh-cn/develop/net/tutorials/get-started/
-  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/
+  [Azure 和 ASP.NET 入门]: /develop/net/tutorials/get-started/
+  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 5 应用部署到 Azure 网站]: /develop/net/tutorials/web-site-with-sql-database/
   [Visual Studio 和 ASP.NET 的 Web 部署概述]: http://msdn.microsoft.com/zh-cn/library/dd394698.aspx
   [使用 Visual Studio 的 ASP.NET Web 部署]: http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction
   [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure]: http://www.dotnetcurry.com/ShowArticle.aspx?ID=881
@@ -226,7 +230,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
   [WebMatrix 3:集成 Git 与到 Azure 的部署]: http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD
   [FileZilla]: https://filezilla-project.org/
   [如何管理网站]: /documentation/articles/web-sites-manage/
-  [在 Azure 中持续交付云服务]: /zh-cn/develop/net/common-tasks/continuous-delivery/
+  [在 Azure 中持续交付云服务]: /develop/net/common-tasks/continuous-delivery/
   [从任何 git/hg 存储库发布到 Azure 网站]: http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html
   [将两个网站从一个 Git 存储库部署到 Azure]: http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx
   [Visual Studio IDE]: #vs

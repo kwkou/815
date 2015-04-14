@@ -1,4 +1,8 @@
 <properties linkid="develop-net-how-to-twilio-phone-call" urlDisplayName="Twilio Phone Call" pageTitle="How to make a phone call from Twilio (.NET) - Azure" metaKeywords="Azure .NET Twilio, Azure Twilio, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages, ASP.NET twilio Azure" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in .NET." metaCanonical="" services="" documentationCenter=".NET" title="How to make a phone call using Twilio in a web role on Azure" authors="larryf" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="11/25/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何在 Azure 的 Web 角色中使用 Twilio 发起电话呼叫
 
@@ -175,9 +179,9 @@
   [使用 Twilio 和 ASP.NET 的 Azure 呼叫响应]: ./media/partner-twilio-cloud-services-dotnet-phone-call-web-role/WA_twilio_dotnet_basic_form_output.png
   [4]: http://www.twilio.com/docs/api/twiml
   [5]: http://www.twilio.com/docs/api/twiml/say
-  [如何在 .NET 中使用 Azure Blob 存储服务]: https://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/blob-storage/
-  [如何在 .NET 应用程序中使用 Azure SQL数据库]: https://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/sql-database/
+  [如何在 .NET 中使用 Azure Blob 存储服务]: /develop/net/how-to-guides/blob-storage/
+  [如何在 .NET 应用程序中使用 Azure SQL数据库]: /develop/net/how-to-guides/sql-database/
   [Microsoft.WindowsAzure.ServiceRuntime 命名空间]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
   [6]: http://www.twilio.com/docs/security
   [7]: http://www.twilio.com/docs
-  [如何使用 Twilio 在 Web 角色中实现语音和短信功能（可能为英文页面）]: /zh-cn/develop/net/how-to-guides/twilio/
+  [如何使用 Twilio 在 Web 角色中实现语音和短信功能（可能为英文页面）]: /develop/net/how-to-guides/twilio/

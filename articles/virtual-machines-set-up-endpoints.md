@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-windows-howto-setup-endpoints" urlDisplayName="Set up endpoints" pageTitle="设置在 Azure 中的虚拟机上的终结点" metaKeywords="Azure config setup, configuring vm connection" description="了解如何设置与在 Azure 中虚拟机的通信。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-windows-howto-setup-endpoints" urlDisplayName="Set up endpoints" pageTitle="设置在 Azure 中的虚拟机上的终结点" metaKeywords="Azure config setup, configuring vm connection" description="了解如何设置与在 Azure 中虚拟机的通信。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="02/12/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 #如何设置虚拟机的终结点

@@ -1,4 +1,8 @@
 <properties linkid="dev-net-2-how-to-queue-service" urlDisplayName="Queue Service (2.0)" pageTitle="How to use the queue storage service | Windows Azure" metaKeywords="Get started Azure queue, Azure asynchronous processing, Azure queue, Azure queue storage, Azure queue .NET, Azure queue storage .NET, Azure queue C#, Azure queue storage C#" description="Learn how to use the Azure queue storage service to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Queue Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="storage"
+    ms.date="12/05/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何使用队列存储服务
 
@@ -321,8 +325,8 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
     -   使用 [Blob 存储][]来存储非结构化数据。
     -   使用 [SQL数据库][] 来存储关系数据。
 
-  [1.7 版]: /en-us/develop/net/how-to-guides/queue-service-v17/ "1.7 版"
-  [2.0 版]: /en-us/develop/net/how-to-guides/queue-service/ "2.0 版"
+  [1.7 版]: /develop/net/how-to-guides/queue-service-v17/ "1.7 版"
+  [2.0 版]: /develop/net/how-to-guides/queue-service/ "2.0 版"
   [后续步骤]: #next-steps
   [什么是队列存储]: #what-is
   [概念]: #concepts
@@ -349,6 +353,6 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wl_svchosting_mref_reference_home
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [表存储]: /en-us/develop/net/how-to-guides/table-services/
-  [Blob 存储]: /en-us/develop/net/how-to-guides/blob-storage/
-  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/
+  [表存储]: /develop/net/how-to-guides/table-services/
+  [Blob 存储]: /develop/net/how-to-guides/blob-storage/
+  [SQL数据库]: /develop/net/how-to-guides/sql-database/

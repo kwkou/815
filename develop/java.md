@@ -6,6 +6,10 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
+<tags ms.service="JAVA"
+    ms.date=""
+    wacn.date=""
+    />
 
 #Java 开发人员中心
 

@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-linux-howto-logon-linux-vm" urlDisplayName="Log on to a VM" pageTitle="在 Azure 中登录到运行 Linux 的虚拟机" metaKeywords="Azure Linux vm, Linux SSH" description="了解如何使用安全外壳 (SSH) 客户端登录到运行 Linux 的 Azure 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Log on to a Virtual Machine Running Linux" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-linux-howto-logon-linux-vm" urlDisplayName="Log on to a VM" pageTitle="在 Azure 中登录到运行 Linux 的虚拟机" metaKeywords="Azure Linux vm, Linux SSH" description="了解如何使用安全外壳 (SSH) 客户端登录到运行 Linux 的 Azure 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Log on to a Virtual Machine Running Linux" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="03/16/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 

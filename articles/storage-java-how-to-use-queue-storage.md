@@ -1,4 +1,8 @@
 <properties linkid="dev-net-how-to-use-queue-storage-service-java" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Java) | Microsoft Azure" metaKeywords="Azure Queue Service, Azure Queue storage service, queues peeking, queues insert messages, queues get messages, queues delete messages, create queues, delete queues, Queue service Java" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Java 编写的示例。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use the Queue storage service from Java" authors="" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date="03/11/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -387,7 +391,7 @@ Alternatively, the following code sample updates just the first visible message 
 - [Azure 存储 REST API]
 - [Azure 存储团队博客]
 
-[Azure SDK for Java]: /zh-cn/develop/java/
+[Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/

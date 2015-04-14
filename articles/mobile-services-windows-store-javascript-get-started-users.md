@@ -1,4 +1,8 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-users-js" urlDisplayName="Get Started with Authentication" pageTitle="Get started with authentication (JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to authenticate users of your Windows Store JavaScript app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="http://www.windowsazure.cn/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-get-started-with-users-js" urlDisplayName="Get Started with Authentication" pageTitle="Get started with authentication (JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to authenticate users of your Windows Store JavaScript app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="/develop/mobile/tutorials/get-started-with-users-dotnet/" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/26/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务中的身份验证入门
 
@@ -17,7 +21,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>本教程演示了移动服务为了让你使用各种标识提供者对用户进行身份验证而提供的基本方法。此方法易于配置，并支持多个提供者。但是，此方法还要求用户在每次启动你的应用程序时登录。若要改用 Live Connect 在 Windows 应用商店应用程序中提供单一登录体验，请参阅主题<a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-js">使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录</a>。</p>
+<p>本教程演示了移动服务为了让你使用各种标识提供者对用户进行身份验证而提供的基本方法。此方法易于配置，并支持多个提供者。但是，此方法还要求用户在每次启动你的应用程序时登录。若要改用 Live Connect 在 Windows 应用商店应用程序中提供单一登录体验，请参阅主题<a href="/develop/mobile/tutorials/single-sign-on-windows-8-js">使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录</a>。</p>
 </div>
 
 <a name="register"></a>
@@ -77,10 +81,10 @@
   [将表权限限制给已经过身份验证的用户]: #permissions
   [向应用程序添加身份验证]: #add-authentication
   [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started/
-  [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /en-us/develop/mobile/tutorials/single-sign-on-windows-8-js
+  [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /develop/mobile/tutorials/single-sign-on-windows-8-js
   [mobile-services-register-authentication]: ../includes/mobile-services-register-authentication.md
   [注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证]: /zh-cn/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/
   [mobile-services-restrict-permissions-javascript-backend]: ../includes/mobile-services-restrict-permissions-javascript-backend.md
-  [1]: /en-us/develop/mobile/tutorials/get-started/
+  [1]: /develop/mobile/tutorials/get-started/
   [mobile-services-windows-store-javascript-authenticate-app]: ../includes/mobile-services-windows-store-javascript-authenticate-app.md
   [移动服务用户的服务端授权]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts

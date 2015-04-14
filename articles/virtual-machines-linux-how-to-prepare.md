@@ -1,4 +1,8 @@
 <properties linkid="manage-linux-howto-linux-agent" urlDisplayName="Prepare a distribution" pageTitle="Prepare a distribution of Linux in Azure" metaKeywords="Azure Git CodePlex, Azure website CodePlex, Azure website Git" description="Learn how to use Git to publish to an Azure web site, as well as enable continuous deployment from GitHub and CodePlex." metaCanonical="" services="virtual-machines" documentationCenter="" title="Prepare a Linux Virtual Machine for Azure" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="11/29/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 为 Azure 准备 Linux 虚拟机
 
@@ -600,14 +604,14 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 12. 然后需要关闭虚拟机并继续上载。
 
   [管理磁盘和映像（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
-  [如何创建自定义虚拟机]: /en-us/manage/windows/how-to-guides/custom-create-a-vm/
+  [如何创建自定义虚拟机]: /manage/windows/how-to-guides/custom-create-a-vm/
   [本文]: http://support.microsoft.com/kb/2805216
   [为 Azure 创建管理证书（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
   [安装 Hyper-V 角色和配置虚拟机]: http://technet.microsoft.com/zh-cn/library/hh846766.aspx
   [Azure 认可的分发中的 Linux]: ../linux-endorsed-distributions
   [非认可分发的信息]: #nonendorsed
   [针对 Mac 和 Linux 的 Azure 命令行工具]: http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409
-  [Azure 下载（可能为英文页面）]: /en-us/develop/downloads/
+  [Azure 下载（可能为英文页面）]: /develop/downloads/
   [Add-AzureVhd（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx
   [Microsoft 网站（可能为英文页面）]: http://go.microsoft.com/fwlink/?LinkID=253692&clcid=0x409
   [步骤 1：准备要上载的映像]: #prepimage

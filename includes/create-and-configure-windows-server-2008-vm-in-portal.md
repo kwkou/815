@@ -1,4 +1,8 @@
-﻿<properties writer="kathydav" editor="tysonn" manager="jeffreyg" /> 
+<properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
+<tags ms.service=""
+    ms.date="12/12/2014"
+    wacn.date="04/11/2015"
+    /> 
 
 **注意**：本文创建的是不连接到虚拟网络的虚拟机。如果您希望您的虚拟机使用虚拟网络，以便可以按主机名直接连接到它或设置跨界连接，请在创建虚拟机时使用“从库中”方法并指定虚拟网络。有关虚拟网络的更多信息，请参见 [Windows Azure 虚拟网络概述](http://go.microsoft.com/fwlink/p/?LinkID=294063)。
 

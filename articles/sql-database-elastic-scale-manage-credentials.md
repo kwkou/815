@@ -1,4 +1,8 @@
 <properties title="Managing Elastic Scale Credentials" pageTitle="管理灵活扩展凭据" description="如何为灵活扩展应用设置正确的凭据级别（从管理员到只读权限）。" metaKeywords="Azure SQL Database, elastic scale, about user credentials in elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<tags ms.service="sql-database"
+    ms.date="02/16/2015"
+    wacn.date="04/11/2015"
+    />
 
 #管理灵活扩展凭据  
 

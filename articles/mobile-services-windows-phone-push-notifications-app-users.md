@@ -1,4 +1,8 @@
-﻿<properties linkid="develop-net-tutorials-push-notifications-to-users-wp8" urlDisplayName="将通知推送给用户 (WP8)" pageTitle="将通知推送给用户 (Windows Phone) | 移动开发人员中心" metaKeywords="" description="了解如何使用移动服务将通知推送给 Windows Phone 应用程序的用户。" metaCanonical="" services="" documentationCenter="" title="Push notifications to users by using Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<properties linkid="develop-net-tutorials-push-notifications-to-users-wp8" urlDisplayName="将通知推送给用户 (WP8)" pageTitle="将通知推送给用户 (Windows Phone) | 移动开发人员中心" metaKeywords="" description="了解如何使用移动服务将通知推送给 Windows Phone 应用程序的用户。" metaCanonical="" services="" documentationCenter="" title="Push notifications to users by using Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="10/07/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 

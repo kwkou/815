@@ -7,12 +7,16 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
+<tags ms.service="Media Services"
+    ms.date=""
+    wacn.date=""
+    />
 
 #媒体服务
 
 ##快速链接
 
-- [了解 SDK](/zh-cn/develop/media-services/developer-tools/)
+- [了解 SDK](/develop/media-services/developer-tools/)
 - [在论坛上获取帮助](https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs)
 
 ##教程和资源

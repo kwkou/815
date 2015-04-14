@@ -1,4 +1,8 @@
 <properties linkid="dev-java-how-to-on-premise-application-with-blob-storage" urlDisplayName="Image Gallery w/ Storage" pageTitle="使用 Blob 存储的本地应用程序 (Java) | Microsoft Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="了解如何创建将图像上载到 Azure 并在浏览器中显示图像的控制台应用程序。使用 Java 的代码示例。" metaCanonical="" services="storage" documentationCenter="Java" title="On-Premises Application with Blob Storage" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<tags ms.service="storage"
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 使用 Blob 存储的本地应用程序
 
@@ -366,7 +370,7 @@ Azure 存储空间中的 Blob。
   [先决条件]: #bkmk_prerequisites
   [使用 Azure Blob 存储上载文件]: #bkmk_uploadfile
   [删除容器]: #bkmk_deletecontainer
-  [下载 Azure SDK for Java]: /zh-cn/develop/java/
+  [下载 Azure SDK for Java]: /develop/java/
   [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [如何管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
   [如何从 Java 使用 Blob 存储服务]: /zh-cn/documentation/articles/storage-java-how-to-use-blob-storage/

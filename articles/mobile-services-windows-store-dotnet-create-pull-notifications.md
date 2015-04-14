@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-create-pull-notifications-dotnet" urlDisplayName="定义支持拉取通知的自定义 API" pageTitle="定义支持拉取通知的自定义 API - Azure 移动服务" metaKeywords="" description="了解如何定义在使用 Azure 移动服务的 Windows 应用商店应用程序中支持定期通知的自定义 API。" metaCanonical="" services="" documentationCenter="" title="Define a custom API that supports periodic notifications" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="11/22/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 

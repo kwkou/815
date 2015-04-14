@@ -1,4 +1,8 @@
 <properties linkid="service-bus-monitor-messaging-entitites" urlDisplayName="流量管理器" pageTitle="Monitor 服务总线 Messaging Entities - Azure" metaKeywords="" description="Learn how to monitor your 服务总线 entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Monitor 服务总线 Messaging Entities" authors="sethm" solutions="" />
+<tags ms.service="service-bus"
+    ms.date="11/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何监视 服务总线 消息传送实体
 

@@ -1,4 +1,8 @@
 <properties linkid="manage-windows-tutorial-virtual-machine-gallery" urlDisplayName="Create a virtual machine" pageTitle="创建在 Azure 中运行 Windows Server 的虚拟机" metaKeywords="Azure capture image vm, capturing vm" description="了解如何捕获运行 Windows Server 2008 R2 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="jeffg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="03/04/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -9,7 +13,7 @@
 
 本教程演示创建 Azure 虚拟机 (VM) 运行 Windows，例如使用 Windows Server 映像在 Azure 管理门户的映像库是多么容易。映像库提供了各种各样的映像，包括 Windows 操作系统、基于 Linux 的操作系统和应用程序映像。 
 
-> [WACOM.NOTE] 您不需要使用 Azure 虚拟机，若要完成本教程中的任何经验。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/zh-cn/develop/php/tutorials/create-a-windows-azure-account/). 
+> [WACOM.NOTE] 您不需要使用 Azure 虚拟机，若要完成本教程中的任何经验。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/). 
 
 本教程演示：
 

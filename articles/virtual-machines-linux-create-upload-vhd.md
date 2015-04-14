@@ -1,4 +1,8 @@
 <properties linkid="manage-linux-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="在 Azure 中创建和上载 Linux VHD - Azure 微软云" metaKeywords="Azure VHD, uploading Linux VHD, 创建和上载 Linux VHD, 虚拟硬盘" description="了解如何创建和上载具有 Linux 操作系统的 Azure 虚拟硬盘 (VHD)。本文演示了如何创建并上载虚拟硬盘 (VHD)，以便您可以将其用作您自己的映像以在 Azure 中创建虚拟机。您将了解如何准备操作系统，以便您可以使用它创建多个基于该映像的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="03/05/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -8,7 +12,7 @@
 
 本文演示了如何创建并上载虚拟硬盘 (VHD)，以便您可以将其用作您自己的映像以在 Azure 中创建虚拟机。您将了解如何准备操作系统，以便您可以使用它创建多个基于该映像的虚拟机。  
 
-> [WACOM.NOTE] 您不需要任何 Azure VM 的相关经验便可完成本文中的步骤。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/zh-cn/develop/php/tutorials/create-a-windows-azure-account/)。 
+> [WACOM.NOTE] 您不需要任何 Azure VM 的相关经验便可完成本文中的步骤。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。 
 
 Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操作系统。您的映像以 VHD 格式存储在存储帐户的 .vhd 文件中。有关 Azure 中的磁盘和映像的详细信息，请参阅[管理磁盘和映像](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj672979.aspx)。
 
@@ -30,7 +34,7 @@ Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操�
 
 - **Linux Azure 命令行工具。**如果您使用 Linux 操作系统创建映像，则使用此工具上载 VHD 文件。若要下载该工具，请参阅[适用于 Mac 和 Linux 的 Azure 命令行工具](http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409)。
 
-- **Add-AzureVhd cmdlet**，是 Azure PowerShell 模块的一部分。若要下载该模块，请参阅 [Azure 下载](/zh-cn/develop/downloads/)。有关参考信息，请参阅 [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)。
+- **Add-AzureVhd cmdlet**，是 Azure PowerShell 模块的一部分。若要下载该模块，请参阅 [Azure 下载](/develop/downloads/)。有关参考信息，请参阅 [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)。
 
 
 此任务包括以下步骤：

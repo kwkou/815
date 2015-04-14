@@ -1,4 +1,8 @@
 <properties writer="kathydav" editor="tysonn" manager="timlt" />
+<tags ms.service=""
+    ms.date="12/31/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -43,7 +47,7 @@
 
 
 
-[attachdisk]:/zh-cn/manage/windows/how-to-guides/attach-a-disk/
+[attachdisk]:/manage/windows/how-to-guides/attach-a-disk/
 
 [关于磁盘和映像]:http://go.microsoft.com/fwlink/p/?LinkId=263439
 <!--HONumber=41-->

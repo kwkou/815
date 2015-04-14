@@ -1,10 +1,14 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Azure 网站和 ASP.NET 入门" authors="tdykstra" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service=""
+    ms.date="12/30/2014"
+    wacn.date="04/11/2015"
+    />
 
 # Azure 网站和 ASP.NET 入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/net/tutorials/get-started/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/zh-cn/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/net/tutorials/get-started/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
 
-<div class="dev-callout"><strong>说明</strong><p><a href="/zh-cn/develop/net/tutorials/get-started/">本教程较新版本</a>现已推出。如果您使用的是 Visual Studio 2012，则仍可按本版教程进行学习，但其中不会介绍所有最新的 Azure SDK 功能。</p></div>
+<div class="dev-callout"><strong>说明</strong><p><a href="/develop/net/tutorials/get-started/">本教程较新版本</a>现已推出。如果您使用的是 Visual Studio 2012，则仍可按本版教程进行学习，但其中不会介绍所有最新的 Azure SDK 功能。</p></div>
 
 本教程将向您介绍如何使用 Visual Studio 2012 或 Visual Studio 2012 for Web Express 中的“发布 Web”向导将 ASP.NET Web 应用程序部署到 Azure 网站。如果您愿意，可以使用 Visual Studio 2010 或 Visual Web Developer Express 2010 按照教程中的步骤进行操作。
 
@@ -243,8 +247,8 @@
   [管理门户缩放选项卡]: ./media/web-sites-dotnet-get-started-vs2012/MPScale.png
   [如何缩放网站]: /documentation/articles/web-sites-scale/
   [Visual Studio 中的日志]: ./media/web-sites-dotnet-get-started-vs2012/LogsInVS.png
-  [在 Visual Studio 中排除 Windows Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
-  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /zh-cn/develop/net/tutorials/web-site-with-sql-database/
-  [Azure 执行模型]: /zh-cn/develop/net/fundamentals/compute/
+  [在 Visual Studio 中排除 Windows Azure 网站的故障]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /develop/net/tutorials/web-site-with-sql-database/
+  [Azure 执行模型]: /develop/net/fundamentals/compute/
   [Azure 网站、 云服务和虚拟机比较]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
-  [使用存储表、队列和 Blob 的 .NET 多层应用程序]: /zh-cn/develop/net/tutorials/multi-tier-web-site/1-overview/
+  [使用存储表、队列和 Blob 的 .NET 多层应用程序]: /develop/net/tutorials/multi-tier-web-site/1-overview/

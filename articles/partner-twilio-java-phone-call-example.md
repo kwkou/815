@@ -1,4 +1,8 @@
 <properties linkid="develop-java-how-to-twilio-phone-call" urlDisplayName="How to Make a Phone Call from Twilio in Java" pageTitle="How to Make a phone call from Twilio (Java) - Azure" metaKeywords="Azure Twilio call, Twilio call website, Azure Twilio Java" description="Learn how to make a phone call from a web page using Twilio in a Java application on Azure." metaCanonical="" services="" documentationCenter="Java" title="How to Make a Phone Call Using Twilio in a Java Application on Azure" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service=""
+    ms.date="11/25/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何在 Azure 的 Java 应用程序中使用 Twilio 发起电话呼叫
 
@@ -184,7 +188,7 @@
   [将证书添加到 Java CA 证书存储]: ../java-add-certificate-ca-store
   [使用 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）创建 Hello World 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690944.aspx
   [使用 Twilio 和 Java 的 Azure 呼叫响应]: ./media/partner-twilio-java-phone-call-example/WA_TwilioJavaMakeCall.jpg
-  [如何从 Java 使用 Blob 存储服务]: http://www.windowsazure.cn/zh-cn/develop/java/how-to-guides/blob-storage/
+  [如何从 Java 使用 Blob 存储服务]: /develop/java/how-to-guides/blob-storage/
   [在 Java 中使用 SQL数据库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh749029.aspx
   [在 JSP 中使用 Azure 服务运行时库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690948.aspx
   [如何通过 Java 使用 Twilio 实现语音和短信功能]: ../partner-twilio-java-how-to-use-voice-sms
@@ -200,7 +204,7 @@
   [add_ca_cert]: ../java-add-certificate-ca-store
   [azure_java_eclipse_hello_world]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690944.aspx
   [howto_twilio_voice_sms_java]: ../partner-twilio-java-how-to-use-voice-sms
-  [howto_blob_storage_java]: http://www.windowsazure.cn/zh-cn/develop/java/how-to-guides/blob-storage/
+  [howto_blob_storage_java]: /develop/java/how-to-guides/blob-storage/
   [howto_sql_azure_java]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh749029.aspx
   [azure_runtime_jsp]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690948.aspx
   [azure_javadoc]: http://dl.windowsazure.cn/javadoc

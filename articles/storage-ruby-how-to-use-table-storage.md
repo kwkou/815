@@ -1,4 +1,8 @@
 <properties linkid="dev-ruby-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Ruby) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Ruby, table storage Ruby" description="了解如何在 Azure 中使用表存储服务。相关代码示例是使用 Ruby API 编写的。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Table Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date="03/11/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -36,7 +40,7 @@
 ## <a id="create-a-ruby-application"></a>创建 Ruby 应用程序
 
 创建 Ruby 应用程序。有关说明， 
-请参阅 [在 Azure 上创建 Ruby 应用程序](/zh-cn/develop/ruby/tutorials/web-app-with-linux-vm/)。
+请参阅 [在 Azure 上创建 Ruby 应用程序](/develop/ruby/tutorials/web-app-with-linux-vm/)。
 
 ## <a id="configure-your-application-to-access-storage"></a>配置应用程序以访问存储
 

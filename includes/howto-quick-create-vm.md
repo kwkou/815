@@ -1,4 +1,8 @@
-﻿<properties writer="kathydav" editor="tysonn" manager="jeffreyg" /> 
+<properties writer="kathydav" editor="tysonn" manager="jeffreyg" />
+<tags ms.service=""
+    ms.date="12/31/2014"
+    wacn.date="04/11/2015"
+    /> 
 
 #如何快速创建虚拟机
 

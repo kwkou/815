@@ -1,4 +1,8 @@
 <properties linkid="develop-java-how-to-guides-service-bus-amqp" urlDisplayName="Service Bus AMQP" pageTitle="如何将 AMQP 1.0 用于 Java Service Bus API - Azure" metaKeywords="ava Messsage AMQP, Service Bus AMQP, download AMQP JMS library" description="了解如何将 Java 消息服务 (JMS) 用于 Azure Service Bus 和高级消息队列协议 (AMQP) 1.0。" metaCanonical="" services="service-bus" documentationCenter="Java" title="How to use the Java Message Service (JMS) API with Service Bus & AMQP 1.0" authors=""  solutions="" writer="sethm" manager="dwrede" editor="mattshel"  />
+<tags ms.service="service-bus"
+    ms.date="02/10/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何将 Java 消息服务 (JMS) API 用于 Service Bus 和 AMQP 1.0
 

@@ -1,4 +1,8 @@
 <properties linkid="develop-notificationhubs-tutorials-send-breaking-news-ios" urlDisplayName="Breaking News" pageTitle="Notification Hubs Breaking News Tutorial - iOS" metaKeywords="" description="Learn how to use Azure 服务总线 Notification Hubs to send breaking news notifications to iOS devices." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="" editor="" />
+<tags ms.service="mobile-services,notification-hubs"
+    ms.date="02/26/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 使用通知中心发送突发新闻
 

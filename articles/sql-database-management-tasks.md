@@ -1,4 +1,8 @@
-﻿<properties umbracoNaviHide="0" pageTitle="如何管理 SQL Database" metaKeywords="Azure SQL database, SQL database, manage sql database, add logins, connect to sql database" description="了解如何管理 Azure SQL Database." linkid="devnav-manage-services-cloud-services" urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="" />
+<properties umbracoNaviHide="0" pageTitle="如何管理 SQL Database" metaKeywords="Azure SQL database, SQL database, manage sql database, add logins, connect to sql database" description="了解如何管理 Azure SQL Database." linkid="devnav-manage-services-cloud-services" urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors="" />
+<tags ms.service=""
+    ms.date="01/13/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 <h1><a id="swap"></a>如何管理 SQL Database</h1>
@@ -125,7 +129,7 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 
 [管理数据库和 SQL Database 中的登录名]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
 [使用动态管理视图监视 SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
-[使用 Management Studio 管理 SQL Database]: http://www.windowsazure.cn/zh-cn/develop/net/common-tasks/sql-azure-management/
+[使用 Management Studio 管理 SQL Database]: /develop/net/common-tasks/sql-azure-management/
 
 
 

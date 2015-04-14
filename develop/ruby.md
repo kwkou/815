@@ -6,6 +6,10 @@ documentationCenter="Develop"
 authors="" 
 manager="Tiffena" 
 editor="Eric Chen" />
+<tags ms.service="RUBY"
+    ms.date=""
+    wacn.date=""
+    />
 
 #Ruby开发人员中心
 

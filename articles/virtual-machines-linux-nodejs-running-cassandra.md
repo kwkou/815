@@ -1,4 +1,8 @@
-﻿<properties linkid="services-linux-cassandra-with-linux" urlDisplayName="Cassandra with Linux" pageTitle="在 Azure 上通过 Linux 运行 Cassandra" metaKeywords="" description="说明如何在 Linux 在 Azure 虚拟机上运行 Cassandra 群集。" metaCanonical="" services="virtual-machines" documentationCenter="Node.js" title="Running Cassandra with Linux on Azure and Accessing it from Node.js" authors="" solutions="" manager="" editor="" />
+<properties linkid="services-linux-cassandra-with-linux" urlDisplayName="Cassandra with Linux" pageTitle="在 Azure 上通过 Linux 运行 Cassandra" metaKeywords="" description="说明如何在 Linux 在 Azure 虚拟机上运行 Cassandra 群集。" metaCanonical="" services="virtual-machines" documentationCenter="Node.js" title="Running Cassandra with Linux on Azure and Accessing it from Node.js" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="12/01/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 

@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-windows-other-resource-sharepoint-wp" urlDisplayName="SharePoint on Azure" pageTitle="Azure 虚拟机上的 SharePoint 2010 部署" metaKeywords="" description="了解用于在 Azure 虚拟机上使用 SharePoint 2010 的支持的方案。" metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint Deployment on Azure Virtual Machines" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-windows-other-resource-sharepoint-wp" urlDisplayName="SharePoint on Azure" pageTitle="Azure 虚拟机上的 SharePoint 2010 部署" metaKeywords="" description="了解用于在 Azure 虚拟机上使用 SharePoint 2010 的支持的方案。" metaCanonical="" services="virtual-machines" documentationCenter="" title="SharePoint Deployment on Azure Virtual Machines" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="01/16/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -175,7 +179,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 </li>
 <li>使用下列任一选项构建 SQL Server VM：
 <ul>
-<li>按照上述的步骤 1 到步骤 7（<stong>步骤 3<stong> 除外）创建 SQL Server 2012 VM，使用 SQL Server 2012 映像，而不是 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到<a href="/zh-cn/manage/windows/common-tasks/install-sql-server/">在 Azure 上设置 SQL Server 虚拟机</a>。
+<li>按照上述的步骤 1 到步骤 7（<stong>步骤 3<stong> 除外）创建 SQL Server 2012 VM，使用 SQL Server 2012 映像，而不是 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到<a href="/manage/windows/common-tasks/install-sql-server/">在 Azure 上设置 SQL Server 虚拟机</a>。
 <ul>
 <li>当您选择此选项时，设置过程会在 <em>C:\SQLServer_11.0_Full</em> 目录路径中保留 SQL Server 2012 设置文件的副本，以便您可以自定义安装。例如，您可通过使用许可证密钥将 SQL Server 2012 的评估版安装转换为许可版本。</li>
 </ul>

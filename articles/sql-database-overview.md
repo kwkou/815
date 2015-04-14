@@ -805,7 +805,7 @@ GRANT VIEW DATABASE STATE to 'sqlops';
   [监视逻辑服务器和数据库实例]: #HowTo3
   [后续步骤]: #NextSteps
   [使用 Management Studio 管理 SQL数据库]: /zh-cn/documentation/articles/sql-database-manage-azure-ssms/
-  [SQL数据库 管理入门]: http://www.windowsazure.cn/zh-cn/manage/services/sql-databases/how-to-manage-a-sqldb/
+  [SQL数据库 管理入门]: /manage/services/sql-databases/how-to-manage-a-sqldb/
   [在 SQL数据库 中管理数据库和登录]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
   [使用动态管理视图监视 SQL数据库]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
   [SQL数据库 中的联合]: http://msdn.microsoft.com/zh-cn/library/azure/hh597452.aspx

@@ -1,4 +1,8 @@
 <properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="如何使用 Blob 存储 (Java) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。用 Java 编写的示例。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date="03/11/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -255,7 +259,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 - [Azure 存储 REST API]
 - [Azure 存储团队博客]
 
-[Azure SDK for Java]: /zh-cn/develop/java/
+[Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/

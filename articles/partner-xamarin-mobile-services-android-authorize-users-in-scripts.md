@@ -1,9 +1,13 @@
 <properties linkid="develop-mobile-tutorials-authorize-users-in-scripts-xamarin-android" urlDisplayName="Authorize Users in Scripts (Xamarin.Android)" pageTitle="Authorize users in scripts (Xamarin.Android) - Azure Mobile Services" metaKeywords="Azure authorizing user, Xamarin.Android scripts authorization, authorize mobile services" description="Learn how to authorize users with scripts in your Azure Mobile Services app for Xamarin.Android." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Use scripts to authorize users in Mobile Services" authors="" />
+<tags ms.service=""
+    ms.date="09/27/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 使用脚本为移动服务的用户授权
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios" title="Xamarin.iOS">iOS C#</a><a href="/zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android" title="Xamarin.Android" class="current">Android C#</a>
+	<a href="/develop/mobile/tutorials/authorize-users-in-scripts-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-android" title="Android">Android</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios" title="Xamarin.iOS">iOS C#</a><a href="/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android" title="Xamarin.Android" class="current">Android C#</a>
 </div>
 
 本主题说明如何使用服务器脚本为已经过身份验证的用户授权，使其能够从 Xamarin.Android 应用程序访问 Azure 移动服务中的数据。在本教程中，你将要在移动服务中注册脚本，以基于经过身份验证的用户的 userId 筛选查询，确保每个用户只会看到他们自己的数据。
@@ -79,19 +83,19 @@
 -   [移动服务服务器脚本参考][]
     了解有关注册和使用服务器脚本的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-html "HTML"
-  [iOS C\#]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios "Xamarin.iOS"
-  [Android C\#]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android "Xamarin.Android"
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-android
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/authorize-users-in-scripts-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/authorize-users-in-scripts-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/authorize-users-in-scripts-ios "iOS"
+  [Android]: /develop/mobile/tutorials/authorize-users-in-scripts-android "Android"
+  [HTML]: /develop/mobile/tutorials/authorize-users-in-scripts-html "HTML"
+  [iOS C\#]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios "Xamarin.iOS"
+  [Android C\#]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android "Xamarin.Android"
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/partner-xamarin-mobile-services-android-authorize-users-in-scripts/mobile-services-selection.png
   [1]: ./media/partner-xamarin-mobile-services-android-authorize-users-in-scripts/mobile-portal-data-tables.png
   [2]: ./media/partner-xamarin-mobile-services-android-authorize-users-in-scripts/mobile-insert-script-users.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-android
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/p/?LinkId=262293

@@ -1,4 +1,8 @@
 <properties linkid="manage-services-identity-organization-account" urlDisplayName="Organization accounts" pageTitle="Sign up for Azure as an organization" metaKeywords="" description="Learn how you can use an organizational account to leverage the existing user accounts, policies, settings, or on-premise server deployments you already have improve efficiencies between your organization's on-premises identity infrastructure and Azure AD." metaCanonical="" services="active-directory" documentationCenter="" title="Sign up for Azure as an organization" authors="" solutions="" manager="" editor="" />
+<tags ms.service="active-directory"
+    ms.date="12/01/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 作为组织注册 Azure
 

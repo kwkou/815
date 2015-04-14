@@ -1,11 +1,15 @@
 <properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-javascript" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" writer="wesmc" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conflicts" authors="wesmc" />
+<tags ms.service=""
+    ms.date="10/05/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 处理数据库写入冲突
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows 应用商店 C\#</a>
+<a href="/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows 应用商店 C\#</a>
 <a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
-<a href="/zh-cn/develop/mobile/tutorials/handle-database-write-conflicts-wp8/" title="Windows Phone">Windows Phone</a></div>	
+<a href="/develop/mobile/tutorials/handle-database-write-conflicts-wp8/" title="Windows Phone">Windows Phone</a></div>	
 
 本教程旨在帮助你更好地理解在两个或两个以上客户端写入 Windows 应用商店应用程序中的同一条数据库记录时，如何处理发生的冲突。在某些情况下，两个或两个以上客户端可能会同时将更改写入同一项目。如果没有任何冲突检测，则最后一次写入会覆盖任何以前的更新，即使这并不是所需要的结果。Azure 移动服务为检测和解决这些冲突提供支持。本主题将指导你完成用于处理服务器上和应用程序中数据库写入冲突的步骤。
 
@@ -272,14 +276,14 @@ Azure 移动服务通过使用添加到每个表的 `__version` 系统属性列�
 -   [推送通知入门][]
     了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows 应用商店 C#"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/ "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone"
+  [Windows Phone]: /develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone"
   [更新应用程序以允许更新]: #uiupdate
   [在应用程序中启用冲突检测]: #enableOC
   [测试应用程序中的数据库写入冲突]: #test-app
   [使用服务器脚本自动解决冲突]: #scriptsexample
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
+  [移动服务入门]: /develop/mobile/tutorials/get-started
   [Azure 帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [0]: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png
   [系统属性]: http://go.microsoft.com/fwlink/?LinkId=331143

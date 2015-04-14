@@ -1,4 +1,8 @@
 <properties linkid="manage-services-notification-hubs-notify-users-xplat-mobile-services" urlDisplayName="notify users xplat mobile services" pageTitle="Send cross-platform notifications to users with Notification Hubs (Mobile Services)" metaKeywords="" description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Send cross-platform notifications to users with Notification Hubs" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service="mobile-services,notification-hubs"
+    ms.date="12/03/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 使用通知中心向用户发送跨平台通知
 

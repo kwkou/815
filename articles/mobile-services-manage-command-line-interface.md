@@ -1,6 +1,8 @@
 <properties linkid="develop-mobile-tutorials-command-line-administration" urlDisplayName="命令行管理" pageTitle="在命令行管理移动服务 - Azure 教程" metaKeywords="" description="了解如何使用命令行工具创建、 部署和管理您的 Azure 移动服务。" metaCanonical="" services="" documentationCenter="Mobile" title="Automate mobile services with command-line tools" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="glenga" />
 
 # 使用命令行工具自动操作移动服务 
 

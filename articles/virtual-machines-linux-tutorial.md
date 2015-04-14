@@ -1,11 +1,15 @@
 <properties linkid="manage-linux-tutorial-vm-from-galllery" urlDisplayName="Create a virtual machine" pageTitle="在 Azure 中创建运行 Linux 的虚拟机 - Azure 微软云" metaKeywords="Azure Linux vm, Linux vm, Linux虚拟机" description="了解如何捕获运行 Linux Azure 虚拟机 (VM) 的映像。当您使用 Azure 管理门户中的映像库时，创建运行 Linux 的虚拟机很容易。本指南演示如何执行此操作，并假定您没有使用过 Azure。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="03/06/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 #创建运行 Linux 的虚拟机 
 
 当您使用 Azure 管理门户中的映像库时，创建运行 Linux 的虚拟机很容易。本指南演示如何执行此操作，并假定您没有使用过 Azure。
 
-> [WACOM.NOTE] 即使您不需要任何熟悉 Azure 虚拟机，若要完成本教程中，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/zh-cn/develop/php/tutorials/create-a-windows-azure-account/)。 
+> [WACOM.NOTE] 即使您不需要任何熟悉 Azure 虚拟机，若要完成本教程中，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。 
 
 本教程介绍了：
 

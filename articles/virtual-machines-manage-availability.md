@@ -1,4 +1,8 @@
 <properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="管理虚拟机的可用性 - Azure 微软云" metaKeywords="Azure,Virtual Machine,虚拟机,冗余,高可用性,负载平衡,高可用性最佳实践,负载平衡器" description="本文首先概览了计划的和计划外的维护事件，然后介绍了多种应用程序实现高可靠性的最佳做法，包括：配置多个虚拟机中的冗余的可用性集、将多个应用层配置到不同的可用性集中、合并负载均衡器使用可用性集及避免单一实例中的可用性集中的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="03/13/2015"
+    wacn.date="04/11/2015"
+    />
 
 #管理虚拟机的可用性
 

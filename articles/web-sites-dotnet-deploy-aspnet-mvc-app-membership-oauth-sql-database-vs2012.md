@@ -1,4 +1,8 @@
 <properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service=""
+    ms.date="10/07/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用部署到 Azure 网站
 
@@ -6,7 +10,7 @@
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
 
-<div class="dev-callout"><strong>说明</strong><p>已提供<a href="/zh-cn/develop/net/tutorials/web-site-with-sql-database/">本教程的较新版本</a>。如果您想要使用 Visual Studio 2012，则仍可以执行此版本，但较新版本更加易于执行。</p></div>
+<div class="dev-callout"><strong>说明</strong><p>已提供<a href="/develop/net/tutorials/web-site-with-sql-database/">本教程的较新版本</a>。如果您想要使用 Visual Studio 2012，则仍可以执行此版本，但较新版本更加易于执行。</p></div>
 
 本教程演示如何构建安全的 ASP.NET MVC 4 Web 应用程序，以便用户能够使用 Yahoo 凭据进行登录。您还会将应用程序部署到 Azure。
 
@@ -799,8 +803,8 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
   [ASP.NET MVC 4 简介]: http://www.asp.net/mvc/tutorials/mvc-4/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
   [使用 MVC 的 Entity Framework 入门]: http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
   [OAuth 2.0 与登录]: http://blogs.msdn.com/b/vbertocci/archive/2013/01/02/oauth-2-0-and-sign-in.aspx
-  [常见任务]: http://www.windowsazure.cn/zh-cn/develop/net/common-tasks/
-  [在 Visual Studio 中对 Azure 网站进行故障排除]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [常见任务]: /develop/net/common-tasks/
+  [在 Visual Studio 中对 Azure 网站进行故障排除]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [本教程中的云服务版本]: /zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/
   [使用 Azure 开发 Web 应用程序]: http://msdn.microsoft.com/zh-cn/library/Hh674484
   [Azure 上的数据存储产品/服务]: http://social.technet.microsoft.com/wiki/contents/articles/data-storage-offerings-on-the-windows-azure-platform.aspx
