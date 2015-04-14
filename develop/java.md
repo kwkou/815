@@ -7,8 +7,8 @@ authors=""
 manager="Tiffena" 
 editor="Eric Chen" />
 <tags ms.service="JAVA"
-    ms.date="12/07/2014"
-    wacn.date="04/11/2015"
+    ms.date=""
+    wacn.date=""
     />
 
 #Java 开发人员中心
