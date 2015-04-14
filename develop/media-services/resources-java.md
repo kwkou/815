@@ -8,7 +8,7 @@
   manager="Tiffena" 
   editor="EricChen"/>
 <tags ms.service=""
-    ms.date="10/07/2014"
+    ms.date=""
     wacn.date="04/11/2015"
     />
 

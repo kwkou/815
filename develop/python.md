@@ -24,7 +24,7 @@ editor="Eric Chen" />
 
 - [配置 Python](/documentation/articles/web-sites-python-configure/)
 - [创建 Django 网站](/documentation/articles/web-sites-python-create-deploy-django-app/)
-- [从 Visual Studio 部署](/documentation/articles/web-sites-python-ptvs-django-mysql/)
+<!--- [从 Visual Studio 部署](/documentation/articles/web-sites-python-ptvs-django-mysql/)-->
 - [承载 IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook/)
 - [自定义域名](/documentation/articles/web-sites-custom-domain-name/)
 - [全部显示](/develop/python/compute/)
@@ -33,8 +33,8 @@ editor="Eric Chen" />
 
 - [在 Blob 中存储数据](/documentation/articles/storage-python-how-to-use-blob-storage/)
 - [在表中存储数据](/documentation/articles/storage-python-how-to-use-table-storage/)
-- [将 Python 与 HDInsight 配合使用](zh-cn/documentation/articles/hdinsight-python/)
-- [全部显示](zh-cn/develop/python/data-services/)
+<!--- [将 Python 与 HDInsight 配合使用](zh-cn/documentation/articles/hdinsight-python/)-->
+- [全部显示](/develop/python/data-services/)
 
 ###应用服务
 
@@ -49,10 +49,10 @@ editor="Eric Chen" />
 - [队列服务](/documentation/articles/storage-python-how-to-use-queue-storage/) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [Service Bus 队列](zh-cn/documentation/articles/service-bus-python-how-to-use-queues/) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
 - [Service Bus 主题](/documentation/articles/service-bus-python-how-to-use-topics-subscriptions/) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
-- [服务管理](zh-cn/documentation/articles/cloud-services-python-how-to-use-service-management/) / http://msdn.microsoft.com/zh-cn/library/azure/ee460799
+- [服务管理](/documentation/articles/cloud-services-python-how-to-use-service-management/) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/ee460799)
 - [表服务](/documentation/articles/storage-python-how-to-use-table-storage/) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/documentation/articles/xplat-cli/)
-- [PowerShell](/documentation/articles/install-configure-powershell/) Cmdlet
+- [PowerShell](/documentation/articles/install-configure-powershell/) 
 
 ##更多资源
 
