@@ -1,4 +1,8 @@
 <properties linkid="websites-global-web-presence" urlDisplayName="Create a Global Web Presence on Azure Web Sites" pageTitle="Create a Global Web Presence on Azure Web Sites" metaKeywords="" description="This guide provides a technical overview of how to host your organization's (.COM) site on Azure Web Sites. This includes deployment, custom domains, SSL, and monitoring." metaCanonical="http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-global-web-presence-solution-overview/" services="" documentationCenter="" title="Create a Global Web Presence on Azure Web Sites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<tags ms.service=""
+    ms.date="02/12/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Azure 网站上打造全球网络影响力
 
@@ -228,12 +232,12 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [WebMatrix]: http://www.microsoft.com/web/webmatrix/
   [GlobalWebQuickGlance]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_QuickGlance.png
   [GlobalWebFTPSettings]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_FTPSettings.png
-  [从源代码管理发布到 Azure 网站]: /en-us/develop/net/common-tasks/publishing-with-git/
+  [从源代码管理发布到 Azure 网站]: /develop/net/common-tasks/publishing-with-git/
   [GlobalWebVSPublish]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_VS_Publish.png
   [GlobalWebWebMatrix]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_WebMatrix.png
-  [使用 Microsoft WebMatrix 开发和部署网站]: /en-us/develop/net/tutorials/get-started/
-  [为 Azure 网站配置自定义域名]: /en-us/develop/net/common-tasks/custom-dns-web-site/
-  [为 Azure 网站配置 SSL 证书]: /en-us/develop/net/common-tasks/enable-ssl-web-site/
+  [使用 Microsoft WebMatrix 开发和部署网站]: /develop/net/tutorials/get-started/
+  [为 Azure 网站配置自定义域名]: /develop/net/common-tasks/custom-dns-web-site/
+  [为 Azure 网站配置 SSL 证书]: /develop/net/common-tasks/enable-ssl-web-site/
   [OpenSSL 网站]: http://www.openssl.org/
   [GlobalWebUplodateCert]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Uplodate_Cert.png
   [GlobalWebSSLBindings]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_SSL_Bindings.png

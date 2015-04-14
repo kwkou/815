@@ -1,4 +1,8 @@
 <properties linkid="develop-php-website-with-mysql-and-ftp" urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP web site with MySQL and FTP - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use FTP deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Web Site and Deploy Using FTP" authors="" solutions="" manager="" editor="" />
+<tags ms.service="web-sites"
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 创建 PHP-MySQL Azure 网站并使用 FTP 进行部署
 

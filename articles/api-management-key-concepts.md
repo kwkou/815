@@ -1,4 +1,8 @@
 <properties pageTitle="API 管理关键概念" metaKeywords="" description="了解有关 API、产品、角色、组和其他 API 管理关键概念。" metaCanonical="" services="" documentationCenter="API Management" title="API 管理关键概念" authors="sdanie" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/24/2015"
+    wacn.date="04/11/2015"
+    />
 
 # API 管理关键概念
 

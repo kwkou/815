@@ -1,4 +1,8 @@
 <properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service (2.0)" pageTitle="How to use table storage | Windows Azure" metaKeywords="Get started Azure table, Azure nosql, Azure large structured data store, Azure table, Azure table storage, Azure table .NET, Azure table storage .NET, Azure table C#, Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Table Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
+<tags ms.service="storage"
+    ms.date="10/02/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何使用表存储服务
 
@@ -516,8 +520,8 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
     -   使用 [Blob 存储][]来存储非结构化数据。
     -   使用 [SQL数据库][] 来存储关系数据。
 
-  [1.7 版]: /en-us/develop/net/how-to-guides/table-services-v17/ "1.7 版"
-  [2.0 版]: /en-us/develop/net/how-to-guides/table-services/ "2.0 版"
+  [1.7 版]: /develop/net/how-to-guides/table-services-v17/ "1.7 版"
+  [2.0 版]: /develop/net/how-to-guides/table-services/ "2.0 版"
   [后续步骤]: #next-steps
   [什么是表服务？]: #what-is
   [概念]: #concepts
@@ -547,5 +551,5 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Blob 存储]: /en-us/develop/net/how-to-guides/blob-storage/
-  [SQL数据库]: /en-us/develop/net/how-to-guides/sql-database/
+  [Blob 存储]: /develop/net/how-to-guides/blob-storage/
+  [SQL数据库]: /develop/net/how-to-guides/sql-database/

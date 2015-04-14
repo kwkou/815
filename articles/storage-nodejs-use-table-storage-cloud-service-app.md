@@ -1,4 +1,8 @@
 <properties linkid="dev-nodejs-basic-web-app-with-storage" urlDisplayName="Web App with Storage" pageTitle="使用表存储构建 Web 应用程序 (Node.js) | Microsoft Azure 教程" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="本教程以"使用 Express 构建 Web 应用程序"教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" metaCanonical="" services="cloud-services,storage" documentationCenter="Node.js" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="cloud-services,storage"
+    ms.date="02/25/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -395,8 +399,8 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。
 
 	删除服务可能需要花费几分钟时间。删除服务后，你将收到一条指示服务已被删除的消息。
 
-  [使用 Express 的 Node.js Web 应用程序]: /zh-cn/develop/nodejs/tutorials/web-app-with-express/
+  [使用 Express 的 Node.js Web 应用程序]: /develop/nodejs/tutorials/web-app-with-express/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx
-  [Node.js Web 应用程序]: /zh-cn/develop/nodejs/tutorials/getting-started/
+  [Node.js Web 应用程序]: /develop/nodejs/tutorials/getting-started/
  
 <!--HONumber=41-->

@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-how-to-guides-register-for-microsoft-waad-authentication" urlDisplayName="Register for Azure Active Directory Authentication" pageTitle="Register for Azure Active Directory authentication - Mobile Services" metaKeywords="Azure registering application, Azure Active Directory authentication, application authenticate, authenticate mobile services" description="Learn how to register for Azure Active Directory authentication in your Azure Mobile Services application." metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Register your apps to use an Azure Active Directory Account login" authors="" />
+<tags ms.service=""
+    ms.date="11/19/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
@@ -7,7 +11,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>如果你还希望从 Windows 应用商店应用程序提供用于单一登录 (SSO) 或推送通知的客户端驱动的身份验证，请考虑同时将你的应用程序注册到 Windows 应用商店。有关详细信息，请参阅<a href="/zh-cn/develop/mobile/how-to-guides/register-for-single-sign-on">注册 Windows 应用商店应用程序以进行 Windows Live Connect 身份验证</a>。</p>
+<p>如果你还希望从 Windows 应用商店应用程序提供用于单一登录 (SSO) 或推送通知的客户端驱动的身份验证，请考虑同时将你的应用程序注册到 Windows 应用商店。有关详细信息，请参阅<a href="/develop/mobile/how-to-guides/register-for-single-sign-on">注册 Windows 应用商店应用程序以进行 Windows Live Connect 身份验证</a>。</p>
 </div>
 
 1. 登录到 [Azure 管理门户][]。
@@ -28,7 +32,7 @@
 
 现在，你可以通过向移动服务提供客户端 ID 和客户端密钥值，使用 Azure Active Directory 在应用程序中进行身份验证。
 
-  [注册 Windows 应用商店应用程序以进行 Windows Live Connect 身份验证]: /zh-cn/develop/mobile/how-to-guides/register-for-single-sign-on
+  [注册 Windows 应用商店应用程序以进行 Windows Live Connect 身份验证]: /develop/mobile/how-to-guides/register-for-single-sign-on
   [Azure 管理门户]: https://manage.windowsazure.cn/
 [1]: ./media/mobile-services-app-active-directory-login/mobile-services-live-connect-add-app.png
 [2]: ./media/mobile-services-app-active-directory-login/mobile-live-connect-app-api-settings.png

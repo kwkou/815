@@ -1,4 +1,8 @@
 <properties title="Learn how to configure an Azure web site to use a domain name registered with Directnic" pageTitle="Configure a Directnic domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, Directnic" description="Learn how to configure an Azure web site to use a domain name registered with Directnic" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
+<tags ms.service="web-sites"
+    ms.date="12/10/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 为 Azure 网站配置自定义域名 (Directnic)
 

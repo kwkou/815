@@ -1,5 +1,9 @@
 <properties pageTitle="Get Started with Mobile Services for Xamarin.Android" metaKeywords="Azure Xamarin.Android application, mobile service XamarinAndroid, getting started Azure Xamarin.Android" writer="craigd" description="Learn how to use Azure Mobile Services with your Xamarin.Android app." metaCanonical="" 
 	documentationCenter="Mobile" title="Get started with Mobile Services" />
+<tags ms.service=""
+    ms.date="11/11/2014"
+    wacn.date="04/11/2015"
+    />
 
 <a name="getting-started"></a>
 # 移动服务入门
@@ -141,6 +145,6 @@
   [6]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-quickstart-startup-android.png
   [7]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-data-tab.png
   [8]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-data-browse.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-android

@@ -1,6 +1,8 @@
 <properties urlDisplayName="Python with HDInsight" pageTitle="在 Azure HDInsight 中将 Python 与 Hive 和 Pig 配合使用" metaKeywords="" description="Learn how to use Python User Defined Functions (UDF) from Hive and Pig in Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Python with Hive and Pig in HDInsight" authors="larryfr" solutions="" manager="paulettm" editor="cgronlun" />
 
-<tags ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="09/17/2014" ms.author="larryfr" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="python" ms.topic="article" ms.date="02/20/2015" ms.author="larryfr" />
 
 # 在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 

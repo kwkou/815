@@ -1,4 +1,8 @@
-﻿<properties linkid="dev-java-vm-application-server" urlDisplayName="Tomcat on Virtual Machine" pageTitle="虚拟机上的 Tomcat - Azure 教程" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="了解如何创建 Windows 虚拟机并将其配置为运行 Apache Tomcat 应用程序服务器。" metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a Java application server on a virtual machine" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="dev-java-vm-application-server" urlDisplayName="Tomcat on Virtual Machine" pageTitle="虚拟机上的 Tomcat - Azure 教程" metaKeywords="Azure vm, creating vm Tomcat, configuring vm Tomcat" description="了解如何创建 Windows 虚拟机并将其配置为运行 Apache Tomcat 应用程序服务器。" metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a Java application server on a virtual machine" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+<tags ms.service="virtual-machines"
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何在虚拟机上运行 Java 应用程序服务器
 
@@ -123,7 +127,7 @@
     使 Tomcat 自动启动的优势是，当虚拟机重新启动时（例如，在安装了需要重新启动的软件更新后），它将再次启动。
 
 ## 后续步骤
-* 通过查看 <http://www.windowsazure.com/zh-cn/develop/java/> 中提供的信息，了解有关其他服务（例如 Azure 存储、服务总线、SQL Database 以及您希望包含在 Java 应用程序中的其他服务）的详细信息。
+* 通过查看 </develop/java/> 中提供的信息，了解有关其他服务（例如 Azure 存储、服务总线、SQL Database 以及您希望包含在 Java 应用程序中的其他服务）的详细信息。
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 

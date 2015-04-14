@@ -1,4 +1,8 @@
 <properties title="Learn how to configure an Azure web site to use a domain name registered with GoDaddy" pageTitle="Configure a GoDaddy domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
+<tags ms.service="web-sites"
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 为 Azure 网站配置自定义域名 (GoDaddy)
 

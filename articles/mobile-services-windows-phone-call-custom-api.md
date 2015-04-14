@@ -1,4 +1,8 @@
-﻿<properties linkid="mobile-services-call-custom-api-wp8" urlDisplayName="从客户端调用自定义 API" pageTitle="从 Windows Phone 客户端调用自定义 API - 移动服务" metaKeywords="" description="了解如何定义自定义 API 以及如何从使用 Azure 移动服务的 Windows Phone 应用程序调用它。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" solutions="" manager="" editor="" />
+<properties linkid="mobile-services-call-custom-api-wp8" urlDisplayName="从客户端调用自定义 API" pageTitle="从 Windows Phone 客户端调用自定义 API - 移动服务" metaKeywords="" description="了解如何定义自定义 API 以及如何从使用 Azure 移动服务的 Windows Phone 应用程序调用它。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Call a custom API from the client" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service="mobile-services"
+    ms.date="02/28/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 

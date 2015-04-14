@@ -1,4 +1,8 @@
 <properties title="Learn how to configure an Azure web site that uses 流量管理器 to use a custom domain name" pageTitle="Configure a custom domain name for an Azure web site that uses 流量管理器" metaKeywords="Windows Azure, Windows Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
+<tags ms.service="web-sites"
+    ms.date="02/18/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 使用流量管理器为 Azure 网站配置自定义域名
 

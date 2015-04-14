@@ -1,11 +1,15 @@
 <properties linkid="mobile-services-how-to-html-client" urlDisplayName="HTML 客户端" pageTitle="如何使用 HTML 客户端 - Azure 移动服务" metaKeywords="Azure Mobile Services, Mobile Service HTML client, HTML client" description="了解如何使用适用于 Azure 移动服务的 HTML 客户端。" metaCanonical="" services="" documentationCenter="Mobile" title="How to use an HTML/JavaScript client for Azure Mobile Services" authors="krisragh" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/11/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
 # 如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端
 
 <div class="dev-center-tutorial-selector sublanding">
-  <a href="/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/" title=".NET Framework">.NET Framework</a><a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript" class="current">HTML/JavaScript</a><a href="/zh-cn/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/" title="Xamarin">Xamarin</a>
+  <a href="/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/" title=".NET Framework">.NET Framework</a><a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript" class="current">HTML/JavaScript</a><a href="/develop/mobile/how-to-guides/work-with-ios-client-library/" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/" title="Xamarin">Xamarin</a>
 </div>
 
 

@@ -1,4 +1,8 @@
-﻿<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web 应用程序在 Azure 中使用 Linux 虚拟机" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="托管 Ruby on Rails 基于在 Azure 中使用 Linux 虚拟机的网站。 " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-ruby-web-app-with-linux-vm" urlDisplayName="Ruby on Rails Web App on Azure using Linux VM" pageTitle="Ruby on Rails Web 应用程序在 Azure 中使用 Linux 虚拟机" metaKeywords="Azure Ruby web application, Azure Ruby application, Ruby app Azure, Ruby azure vm, ruby virthal machine, ruby linux vm" description="托管 Ruby on Rails 基于在 Azure 中使用 Linux 虚拟机的网站。 " metaCanonical="" services="virtual-machines" documentationCenter="Ruby" title="Ruby on Rails Web application on an Azure VM" authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="02/19/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -279,11 +283,11 @@
 <!-- WA.com links -->
 [blob]: /zh-cn/documentation/articles/storage-ruby-how-to-use-blob-storage
 
-[cdn 如何]: /zh-cn/develop/ruby/app-services/
+[cdn 如何]: /develop/ruby/app-services/
 
 [管理门户]: https://manage.windowsazure.cn/
 
-[表]: /zh-cn/develop/ruby/how-to-guides/table-service/
+[表]: /develop/ruby/how-to-guides/table-service/
 
 [unicorn-nginx capistrano]: /zh-cn/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/
 

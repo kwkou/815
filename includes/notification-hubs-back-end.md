@@ -96,7 +96,7 @@
 <!-- URLs. -->
 [get-started]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [使用通知中心向用户发送通知]: ../notificationhubs/tutorial-notify-users-mobileservices.md
-[移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started/#create-new-service
+[移动服务入门]: /develop/mobile/tutorials/get-started/#create-new-service
 [Azure 管理门户]: https://manage.windowsazure.com/
 [wns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

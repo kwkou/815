@@ -1,4 +1,8 @@
 <properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="在 VM 上使用 MongoDB 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="本教程将介绍如何使用 MongoDB 在托管在 Azure 上的 Node 应用程序中存储和访问数据。" metaCanonical="/zh-cn/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="使用 MongoDB 中的存储的 Node.js Web 应用程序（虚拟机）" authors="larryfr"  solutions="" writer="" manager="" editor=""  />
+<tags ms.service="web-sites,virtual-machines"
+    ms.date="02/19/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 在虚拟机中使用 MongoDB 在 Azure 上创建 Node.js 应用程序
 
@@ -495,7 +499,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 
   [MongoDB]: http://www.mongodb.org
   [Node]: http://nodejs.org
-  [使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序]: /zh-cn/develop/nodejs/tutorials/website-with-mongodb-mongolab/
+  [使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序]: /develop/nodejs/tutorials/website-with-mongodb-mongolab/
   [显示空白 tasklist 的网页]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_list_empty.png
   [Git]: http://git-scm.com
   [MongoDB 安装指南]: http://docs.mongodb.org/manual/installation/
@@ -512,10 +516,10 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
   [MongoDB 文档]: http://docs.mongodb.org/manual/
   [Express]: http://expressjs.com
   [Mongoose]: http://mongoosejs.com
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/develop/nodejs/tutorials/create-a-website-(mac)/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /develop/nodejs/tutorials/create-a-website-(mac)/
   [安装和配置 Azure 跨平台命令行接口]: /zh-cn/documentation/articles/xplat-cli/
   [Git remote]: http://git-scm.com/docs/git-remote
   [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-  [使用 Azure 表服务的 Node.js Web 应用程序]: /zh-cn/develop/nodejs/tutorials/web-site-with-storage/
+  [使用 Azure 表服务的 Node.js Web 应用程序]: /develop/nodejs/tutorials/web-site-with-storage/
   [MongoDB 安全]: http://docs.mongodb.org/manual/security/
-  [使用 Git 发布到 Azure 网站]: /zh-cn/develop/nodejs/common-tasks/publishing-with-git/
+  [使用 Git 发布到 Azure 网站]: /develop/nodejs/common-tasks/publishing-with-git/

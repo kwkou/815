@@ -1,21 +1,25 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-android" urlDisplayName="Get Started with Data - Android" pageTitle="数据处理入门 (Android) | 移动开发人员中心" metaKeywords="Azure android data, Azure mobile services data, windows droid, windows android, microsoft droid, microsoft android" description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="移动服务中的数据处理入门" authors="ricksal,glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/03/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding">    
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android" class="current">Android</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a> 
+<a href="/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-android" title="Android" class="current">Android</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a> 
 </div>
 
 <div class="dev-center-tutorial-subselector">
 <a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/" title=".NET 后端">.NET 后端</a> |  
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android/"  title="JavaScript 后端" class="current">JavaScript 后端</a>
+<a href="/develop/mobile/tutorials/get-started-with-data-android/"  title="JavaScript 后端" class="current">JavaScript 后端</a>
 </div>
 
 <div class="dev-onpage-video-clear clearfix">
@@ -30,7 +34,7 @@
 </div>
 
 <div class="dev-callout"><b>说明</b>
-<p>本教程旨在帮助您更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导您完成的许多步骤已在移动服务快速入门中代您完成。如果这是您第一次体验移动服务，请考虑首先完成<a href="/zh-cn/develop/mobile/tutorials/get-started-android">移动服务入门</a>教程。</p>
+<p>本教程旨在帮助您更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导您完成的许多步骤已在移动服务快速入门中代您完成。如果这是您第一次体验移动服务，请考虑首先完成<a href="/develop/mobile/tutorials/get-started-android">移动服务入门</a>教程。</p>
 </div>
 
 本教程将指导您完成以下基本步骤：
@@ -128,7 +132,7 @@
   [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
   [管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/mobile-services-android-get-started-data/mobile-todoitem-data-browse.png
-  [使用脚本验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-android

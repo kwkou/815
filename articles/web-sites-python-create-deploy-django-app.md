@@ -1,4 +1,8 @@
 <properties linkid="develop-python-web-site-with-django" urlDisplayName="Web Sites with Django" pageTitle="Python Web Sites with Django - Azure tutorial" metaKeywords="Azure django, django website" description="A tutorial that introduces you to running a Python web site on Azure." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Web Sites with Django" authors="" solutions="" manager="" editor="" />
+<tags ms.service="web-sites"
+    ms.date="02/09/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 使用 Django 创建网站
 
@@ -8,7 +12,7 @@
 
 [WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
 
-本教程使用 Python 2.7 和 Django 1.4。你可以自行获取这些软件，也可以通过使用 [][]<http://azure.microsoft.com/zh-cn/develop/python/></a> 上的 Windows Installer 链接来快速轻松地安装这些软件。
+本教程使用 Python 2.7 和 Django 1.4。你可以自行获取这些软件，也可以通过使用 [][]<http://azure.microsoft.com/develop/python/></a> 上的 Windows Installer 链接来快速轻松地安装这些软件。
 
 **注意**：Azure 网站现在预安装了 Python 2.7 和 wfastcgi 处理程序。不过，未包括 Web 框架，例如 Django。如果愿意，你仍可以使用其他 Python 解释程序。你只需将它包括在 Git 存储库中，并将网站配置为使用该解释程序而非已安装的 Python 2.7 解释程序。
 
@@ -118,7 +122,7 @@
 
 从这里，你可以通过使用已使用的工具继续开发 Django 应用程序。如果你使用 [Python Tools for Visual Studio][Python Tools for Visual Studio] 进行开发，则你将很可能需要安装 [VisualGit][VisualGit] 来获取 Visual Studio 中的源代码管理集成。
 
-你的应用程序可能具有除 Python 和 Django 以外的其他依赖项。如果你通过使用 [][]<http://azure.microsoft.com/zh-cn/develop/python/></a> 中的安装程序安装了 Python，表明你已安装 PIP，并可以使用它来快速添加新依赖项。例如，若要安装自然语言工具包及其所有依赖项，请键入：
+你的应用程序可能具有除 Python 和 Django 以外的其他依赖项。如果你通过使用 [][]<http://azure.microsoft.com/develop/python/></a> 中的安装程序安装了 Python，表明你已安装 PIP，并可以使用它来快速添加新依赖项。例如，若要安装自然语言工具包及其所有依赖项，请键入：
 
     pip install nltk
 
@@ -129,7 +133,7 @@
 现在你可以像通常一样转到 DjangoApplication 目录并使用 manage.py 来开始将新应用程序添加到 Django 项目中。
 
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
-  []: http://azure.microsoft.com/zh-cn/develop/python/
+  []: http://azure.microsoft.com/develop/python/
   [msysgit]: http://code.google.com/p/msysgit/
   []: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png
   [1]: ./media/web-sites-python-create-deploy-django-app/django-ws-004.png

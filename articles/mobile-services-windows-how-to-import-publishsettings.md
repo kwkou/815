@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-how-to-guides-import-publish-settings" urlDisplayName="在 Visual Studio 2013 中导入订阅发布设置文件" pageTitle="在 Visual Studio 2013 导入发布设置文件 | 移动服务" metaKeywords="Azure import publishsettings, mobile services" description="了解如何在 Visual Studio 2013 中为 Azure 移动服务应用程序导入订阅发布设置文件。" title="在 Visual Studio 2013 中导入订阅发布设置文件" documentationCenter="Mobile" services="" solutions="" manager="" editor="" videoId="" scriptId="" authors="" />
+<tags ms.service=""
+    ms.date="11/21/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Visual Studio 2013 中导入订阅发布设置文件
 

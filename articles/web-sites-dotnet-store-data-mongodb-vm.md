@@ -1,4 +1,8 @@
 <properties linkid="develop-dotnet-website-with-mongodb-vm" urlDisplayName="Website with MongoDB VM" pageTitle="在虚拟机上使用 MongoDB 的 .NET 网站 - Azure" metaKeywords="Azure Git ASP.NET MongoDB, Git .NET, Git MongoDB, ASP.NET MongoDB, Azure MongoDB, Azure ASP.NET, Azure tutorial" description="本教程将向您介绍如何使用 Git 将 ASP.NET 应用程序部署到连接至虚拟机上 MongoDB 的 Azure 网站。" metaCanonical="" services="web-sites,virtual-machines" documentationCenter=".NET" title="创建连接到在 Azure 内的虚拟机上运行的 MongoDB 的 Azure 网站" authors="" solutions="" manager="" editor="" />
+<tags ms.service="web-sites,virtual-machines"
+    ms.date="11/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 创建连接到在 Azure 内的虚拟机上运行的 MongoDB 的 Azure 网站
 
@@ -490,8 +494,8 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Driver.dll** 和 **MongoDB.B
   [ASP.net 网站]: http://www.asp.net/
   [ASP.NET MVC 网站]: http://www.asp.net/mvc
   [Azure]: http://www.windowsazure.cn
-  [在 Azure 中，在运行 Windows Server 的虚拟机上安装 MongoDB]: /zh-cn/manage/windows/common-tasks/install-mongodb/
-  [在 Azure 中，在运行 CentOS 的虚拟机上安装 MongoDB]: /zh-cn/manage/linux/common-tasks/mongodb-on-a-linux-vm/
+  [在 Azure 中，在运行 Windows Server 的虚拟机上安装 MongoDB]: /manage/windows/common-tasks/install-mongodb/
+  [在 Azure 中，在运行 CentOS 的虚拟机上安装 MongoDB]: /manage/linux/common-tasks/mongodb-on-a-linux-vm/
   [Visual Studio Express 2013 for Web]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
   [新项目开始页面]: ./media/web-sites-dotnet-store-data-mongodb-vm/NewProject.png
   [新建项目对话框]: ./media/web-sites-dotnet-store-data-mongodb-vm/NewProjectMyTaskListApp.png

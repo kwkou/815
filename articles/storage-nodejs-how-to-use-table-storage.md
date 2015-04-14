@@ -1,4 +1,8 @@
 <properties linkid="dev-nodejs-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="了解如何在 Azure 中使用表存储服务。代码示例使用 Node.js API 编写。" metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="storage"
+    ms.date="03/11/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 

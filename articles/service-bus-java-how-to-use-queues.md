@@ -1,4 +1,8 @@
 <properties linkid="dev-java-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (Java) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Java" description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="Java" title="How to Use Service Bus Queues" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<tags ms.service="service-bus"
+    ms.date="02/10/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何使用 Service Bus 队列
 
@@ -179,7 +183,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 现在，你已了解 Service Bus 队列的基础知识，请参阅 MSDN 主题[队列、主题和订阅][]以获取更多信息。
 
-  [Azure SDK for Java]: http://www.windowsazure.cn/zh-cn/develop/java/
+  [Azure SDK for Java]: /develop/java/
   [什么是 Service Bus 队列？]: #what-are-service-bus-queues
   [创建服务命名空间]: #create-a-service-namespace
   [获取命名空间的默认管理凭据]: #obtain-default-credentials

@@ -1,4 +1,8 @@
 <properties linkid="manage-linux-common-tasks-lampstack" urlDisplayName="Install LAMP stack" pageTitle="在 Linux 虚拟机上安装 LAMP 堆栈" metaKeywords="" description="了解如何在 Azure 中的 Linux 虚拟机 (VM) 上安装 LAMP 堆栈。您可以在 Ubuntu 或 CentOS 上进行安装。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Install the LAMP Stack on a Linux virtual machine in Azure" authors="" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="02/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 

@@ -1,4 +1,8 @@
 <properties linkid="manage-services-storage-SQL-Server-backup" urlDisplayName="Storage for SQL Server backups" pageTitle="如何将 Azure 存储空间用于 SQL Server 备份和还原 | Azure" metaKeywords="" description="" metaCanonical="" services="storage" documentationCenter="" title="How to Use Azure Storage for SQL Server Backup and Restore" authors="karaman" solutions="" manager="clairt" editor="tysonn" />
+<tags ms.service="storage"
+    ms.date="03/06/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -28,7 +32,7 @@ SQL Server 2012 SP1 CU2 中发布了可将 SQL Server 备份写入 Azure Blob �
 ## Azure Blob 存储服务组件 
 
 * 存储帐户：存储帐户是所有存储服务的起点。若要访问 Azure Blob 存储服务，请先创建一个 Azure 存储帐户。存储帐户名及其访问密钥属性是对 Azure Blob 存储服务及其组件进行身份验证所必需的。 
-有关 Azure Blob 存储服务的详细信息，请参阅[如何使用 Azure Blob 存储服务](/zh-cn/develop/net/how-to-guides/blob-storage-v17/)。
+有关 Azure Blob 存储服务的详细信息，请参阅[如何使用 Azure Blob 存储服务](/develop/net/how-to-guides/blob-storage-v17/)。
 
 * 容器：容器提供一组 Blob 集，并且可存储无限数量的 Blob。若要将 SQL Server 备份写入到 Azure Blob 服务，你必须至少创建一个根容器。 
 

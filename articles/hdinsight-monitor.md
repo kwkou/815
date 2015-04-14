@@ -1,4 +1,8 @@
 <properties linkid="manage-services-hdinsight-howto-monitor-hdinsight" urlDisplayName="Monitor" pageTitle="如何监视 HDInsight | Azure" metaKeywords="" description="Learn how to monitor an HDInsight cluster and view Hadoop job history through the Azure management portal." metaCanonical="" services="hdinsight" documentationCenter="" title="How to Monitor HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
+<tags ms.service="hdinsight"
+    ms.date="12/08/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何监视 HDInsight
 
@@ -46,5 +50,5 @@
   [HDI.JobHistoryPage]: ./media/hdinsight-monitor/HDI.JobHistoryPage.PNG
   [如何：管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/
   [如何：以编程方式部署 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-deploy-cluster/
-  [如何：定期在你的 HDInsight 群集上执行远程作业]: /en-us/manage/services/hdinsight/howto-execute-jobs-programmatically/
+  [如何：定期在你的 HDInsight 群集上执行远程作业]: /manage/services/hdinsight/howto-execute-jobs-programmatically/
   [教程：Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/

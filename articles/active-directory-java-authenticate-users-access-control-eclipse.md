@@ -1,4 +1,8 @@
 <properties linkid="develop-java-how-to-guides-access-control" urlDisplayName="Access Control" pageTitle="How to use Access Control (Java) - Azure feature guide" metaKeywords="" description="Learn how to develop and use Access Control with Java in Azure." metaCanonical="" services="active-directory" documentationCenter="Java" title="How to Authenticate Web Users with Azure Access Control Service Using Eclipse" videoId="" scriptId="" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service="active-directory"
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证
 
@@ -318,5 +322,5 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。接下来，�
   [要在生产中使用的信赖方领域]: ./media/active-directory-java-authenticate-users-access-control-eclipse/RelyingPartyRealmProduction.png
   [要在生产中使用的信赖方返回 URL]: ./media/active-directory-java-authenticate-users-access-control-eclipse/RelyingPartyReturnURLProduction.png
   [用于生产部署的 Azure ACS 筛选器设置]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddACSFilterLibraryProduction.png
-  [如何查看 Azure Access Control 服务返回的 SAML]: /en-us/develop/java/how-to-guides/view-saml-returned-by-acs/
+  [如何查看 Azure Access Control 服务返回的 SAML]: /develop/java/how-to-guides/view-saml-returned-by-acs/
   [添加证书组件]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddCertificateComponent.png

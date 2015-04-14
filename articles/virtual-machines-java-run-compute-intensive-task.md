@@ -1,4 +1,8 @@
-﻿<properties linkid="dev-java-compute-load" urlDisplayName="TSP on Virtual Machine" pageTitle="VM 上需要进行大量计算的 Java 应用程序 - Azure" metaKeywords="Azure virtual machine Java, Azure Java app, Azure Java application" description="了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的 Azure 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a compute-intensive task in Java on a virtual machine" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+<properties linkid="dev-java-compute-load" urlDisplayName="TSP on Virtual Machine" pageTitle="VM 上需要进行大量计算的 Java 应用程序 - Azure" metaKeywords="Azure virtual machine Java, Azure Java app, Azure Java application" description="了解如何创建运行可由其他 Java 应用程序监视的、需要进行大量计算的 Java 应用程序的 Azure 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Java" title="How to run a compute-intensive task in Java on a virtual machine" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service="virtual-machines"
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务
 
@@ -95,7 +99,7 @@
 
 ## 如何创建 Java 应用程序来执行需要进行大量计算的任务
 
-1. 在您的开发计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for Java](/zh-cn/develop/java/)。
+1. 在您的开发计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for Java](/develop/java/)。
 2. 使用本节末尾的示例代码创建 Java 控制台应用程序。在本教程中，我们将使用 **TSPSolver.java** 作为 Java 文件名。将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符分别修改为使用您的服务总线"命名空间"****、"默认颁发者"****和"默认密钥"****值。
 3. 编码后，将应用程序导出至可运行的 Java 存档 (JAR)，并将所需的库打包到生成的 JAR 中。在本教程中，我们将使用 **TSPSolver.jar** 作为 Java 文件名。
 

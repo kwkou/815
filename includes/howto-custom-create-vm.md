@@ -1,4 +1,8 @@
 <properties authors="kathydav" editor="tysonn" manager="jeffreyg" />
+<tags ms.service=""
+    ms.date="10/09/2014"
+    wacn.date="04/11/2015"
+    />
 
 #如何创建自定义虚拟机
 
@@ -36,7 +40,7 @@
 	- 如果这是云服务中的第一台虚拟机或唯一的一台虚拟机，请选择"新建云服务"。然后，在"云服务 DNS 名称"中，键入使用 3 到 24 个小写字母和数字的名称。此名称将成为用于通过云服务联系虚拟机的 URI 的一部分。
 	- 如果要将此虚拟机添加到云服务，请在列表中选择它。
 
-	**注意**：有关在相同云服务中放置虚拟机的更多信息，请参阅[如何连接云服务中的虚拟机](/zh-cn/manage/windows/how-to-guides/connect-to-a-cloud-service/)。
+	**注意**：有关在相同云服务中放置虚拟机的更多信息，请参阅[如何连接云服务中的虚拟机](/manage/windows/how-to-guides/connect-to-a-cloud-service/)。
 
 12. 在"区域/地缘组/虚拟网络"中，选择要用于该虚拟机的区域、地缘组或虚拟网络。有关地缘组的详细信息，请参阅[关于虚拟网络的地缘组](http://msdn.microsoft.com/zh-cn/library/azure/jj156085.aspx)。
 

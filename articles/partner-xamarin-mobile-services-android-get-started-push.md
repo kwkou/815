@@ -1,9 +1,13 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-push-xamarin-android" urlDisplayName="Get Started with Push Notifications" pageTitle="Get started with push notifications - Mobile Services" metaKeywords="" description="Learn how to use push notifications in Xamarin.Android apps with Azure Mobile Services." metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Get started with push notifications in Mobile Services" documentationCenter="Mobile" authors="" />
+<tags ms.service=""
+    ms.date="03/12/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务中的推送通知入门
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a></div>
+<a href="/develop/mobile/tutorials/get-started-with-push-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/get-started-with-push-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-push-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-push-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-push-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-push-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-push-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a></div>
 
 本主题说明如何使用 Azure 移动服务向 Xamarin.Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 服务向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
@@ -218,19 +222,19 @@
 
 在这个简单的示例中，用户将会收到包含刚刚插入的数据的推送通知。在下一教程[向应用程序用户推送通知][]中，你将要创建一个单独的 Devices 表，该表用于存储设备标记，以及在发生插入操作时向所有存储的通道发出推送通知。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/get-started-with-push-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/get-started-with-push-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-push-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android "Android"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-push-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-push-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/get-started-with-push-ios "iOS"
+  [Android]: /develop/mobile/tutorials/get-started-with-push-android "Android"
+  [Xamarin.iOS]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/get-started-with-push-xamarin-android "Xamarin.Android"
   [为推送通知注册应用程序]: #register
   [配置移动服务]: #configure
   [向应用程序添加推送通知]: #add-push
   [更新脚本以发送推送通知]: #update-scripts
   [插入数据以接收通知]: #test
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-xamarin-android
+  [移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-android
   [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
   [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
   [0]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-services-google-developers.png
@@ -245,4 +249,4 @@
   [7]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-insert-script-push2.png
   [GCM 对象]: http://go.microsoft.com/fwlink/p/?LinkId=282645
   [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331303
-  [向应用程序用户推送通知]: /zh-cn/develop/mobile/tutorials/push-notifications-to-users-android
+  [向应用程序用户推送通知]: /develop/mobile/tutorials/push-notifications-to-users-android

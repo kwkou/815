@@ -1,4 +1,8 @@
 <properties linkid="develop-mobile-tutorials-store-scripts-in-source-control" urlDisplayName="在源代码管理中存储服务器脚本" pageTitle="在源代码管理中存储服务器脚本 - Azure 移动服务" metaKeywords="" description="了解如何在您的计算机本地 Git 存储库中存储您的服务器脚本文件和模块。" metaCanonical="" services="" documentationCenter="Mobile" title="Store server scripts in source control" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="11/21/2014"
+    wacn.date="04/11/2015"
+    />
 
 
 <div class="dev-center-tutorial-subselector">

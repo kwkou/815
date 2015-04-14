@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+=======
+<properties 
+pageTitle="数据服务 - Azure 微软云" metakeywords="" 
+  description="" 
+  services="" 
+  documentationCenter="java-data" 
+  authors="" 
+  manager="Tiffena" 
+  editor="EricChen"/>
+<tags ms.service=""
+    ms.date="10/23/2014"
+    wacn.date="04/11/2015"
+    />
+       
+>>>>>>> origin/stage
 <h1 id="menu-java-data">数据服务</h1>
 <h2 id="header-0">基础</h2>
 <h3>指南：<a href="http://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-data-management-business-analytics/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="数据管理和业务分析" ms.title="" km.title="" ms.interactiontype="1">数据管理和业务分析</a></h3>

@@ -1,4 +1,8 @@
 <properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
+<tags ms.service="media-services"
+    ms.date="10/30/2014"
+    wacn.date="04/11/2015"
+    />
 
 如何生成平滑流式处理 Windows 应用商店应用程序
 =============================================

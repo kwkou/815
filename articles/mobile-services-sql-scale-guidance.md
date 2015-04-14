@@ -1,6 +1,8 @@
 <properties urlDisplayName="扩展 Azure SQL Database 支持的移动服务" pageTitle="扩展 Azure SQL Database 支持的移动服务 - Azure 移动服务" metaKeywords="" description="了解如何诊断和修复 SQL Database 支持的移动服务中的可扩展性问题" metaCanonical="" services="" documentationCenter="Mobile" title="Scale mobile services backed by Azure SQL Database" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="donnam" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="donnam" />
 # 扩展 Azure SQL Database 支持的移动服务
 
 Azure 移动服务可轻松启动和构建连接云托管后端的应用，从而将数据存储在 SQL database 中。随着应用的增长，服务示例的扩展与在门户中的调整扩展设置一样简单，可轻松提高计算和网络容量。然而，扩展支持服务的 SQL Database 要求在服务接收更多负载的同时进行主动规划和监控。本文档将指导您实行一组最佳实践，以确保 SQL 支持的移动服务能够持续提供最佳性能。

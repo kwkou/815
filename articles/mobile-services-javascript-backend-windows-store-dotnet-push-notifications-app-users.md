@@ -1,4 +1,8 @@
-﻿<properties pageTitle="向经过身份验证的用户发送推送通知" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="了解如何将推送通知发送到特定 " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="" />
+<properties pageTitle="向经过身份验证的用户发送推送通知" metaKeywords="push notifications, authentication, users, Notification Hubs, Mobile Services" description="了解如何将推送通知发送到特定 " metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="glenga" solutions="Mobile" manager="dwrede" editor="" />
+<tags ms.service="mobile-services,notification-hubs"
+    ms.date="02/28/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 # 向经过身份验证的用户发送推送通知

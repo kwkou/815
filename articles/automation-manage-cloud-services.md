@@ -1,4 +1,8 @@
 <properties pageTitle="使用 Azure 自动化 管理 Azure 云服务" description="了解如何使用 Azure 自动化 服务来方便管理 Azure 云服务。" services="automation, cloud-services" documentationCenter="" authors="jodoglevy" manager="eamono" editor="Eric Chen"/>
+<tags ms.service="automation, cloud-services"
+    ms.date="02/20/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 使用 Azure 自动化 管理 Azure 云服务
 

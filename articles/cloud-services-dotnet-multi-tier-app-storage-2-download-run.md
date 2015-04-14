@@ -1,4 +1,8 @@
 <properties linkid="develop-net-tutorials-multi-tier-web-site-2-download-and-run" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="riande,tdykstra" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service="cloud-services,storage"
+    ms.date="12/23/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 配置和部署 Azure 电子邮件服务应用程序 - 第 2 部分（共 5 部分）
 
@@ -587,7 +591,7 @@
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
   [快速创建]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-storage-quick.png
-  [如何管理存储帐户]: /zh-cn/manage/services/storage/how-to-manage-a-storage-account/
+  [如何管理存储帐户]: /manage/services/storage/how-to-manage-a-storage-account/
   [使用 URL 前缀创建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-storage-url-test.png
   [管理密钥]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-manage-keys.png
   [密钥 GUID]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-guid-keys.PNG
@@ -621,7 +625,7 @@
   [7]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-se4.png
 
 <!--
-  [如何在 Azure 中使用 SendGrid 发送电子邮件]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
+  [如何在 Azure 中使用 SendGrid 发送电子邮件]: /develop/net/how-to-guides/sendgrid-email-service/ "SendGrid"
   [SendGridSettings]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-sg.png
 -->
 

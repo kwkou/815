@@ -1,5 +1,9 @@
 
 <properties linkid="manage-windows-common-task-upload-vhd" urlDisplayName="Upload a VHD" pageTitle="创建 Windows Server VHD 并将其上载到 Azure" metaKeywords="Azure VHD, uploading VHD" description="了解如何在 Azure 中创建和上载包含 Windows Server 操作系统的虚拟硬盘 (VHD)。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="01/19/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -13,7 +17,7 @@
 ##先决条件##
 本文假定您拥有以下项目：
 
-**Azure 订阅** - 如果没有帐户，只需花费几分钟就能创建一个免费试用帐户有关详细信息，请参阅[创建 Azure 帐户](/zh-cn/develop/php/tutorials/create-a-windows-azure-account/)。  
+**Azure 订阅** - 如果没有帐户，只需花费几分钟就能创建一个免费试用帐户有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。  
 
 **Windows Azure PowerShell** - 您已经安装了 Windows Azure PowerShell 模块。若要下载该模块，请参阅 [Windows Azure 下载](/zh-cn/downloads/)。在[此处](/zh-cn/documentation/articles/install-configure-powershell/)可找到使用 Azure 订阅来安装和配置 PowerShell 的教程。
 

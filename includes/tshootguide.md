@@ -768,7 +768,7 @@ For more information on quota-related errors, see [Understanding Quotas].
 
 [IntelliTrace to debug Azure Cloud Services]: http://blogs.msdn.com/b/jnak/archive/2010/06/07/using-intellitrace-to-debug-windows-azure-cloud-services.aspx
 
-[Troubleshooting an Azure web site]: /zh-cn/develop/net/best-practices/troubleshooting-web-sites/
+[Troubleshooting an Azure web site]: /develop/net/best-practices/troubleshooting-web-sites/
 [W3C extended log file format]: http://go.microsoft.com/fwlink/?LinkID=90561
 [Log Parser]: http://go.microsoft.com/fwlink/?LinkId=246619
 [Log Parser Plus]: http://logparserplus.com/Examples

@@ -1,6 +1,8 @@
-﻿<properties urlDisplayName="移动服务概述" pageTitle="移动服务概述 |移动开发人员中心" metaKeywords="" description="了解移动服务。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Mobile Services Overview" authors="mahender"  manager="dwrede" services="mobile-services"/>
+<properties urlDisplayName="移动服务概述" pageTitle="移动服务概述 |移动开发人员中心" metaKeywords="" description="了解移动服务。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Mobile Services Overview" authors="mahender"  manager="dwrede" services="mobile-services"/>
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="08/19/2014" ms.author="mahender" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="08/19/2014" ms.author="mahender" />
 
 # 移动服务概述
 

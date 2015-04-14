@@ -1,4 +1,8 @@
 <properties linkid="fundamentals-data-management-choose-technology" urlDisplayName="Storage" pageTitle="数据管理：做出正确的选择 | Azure" metaKeywords="Azure Storage, Azure Storage, Azure cloud database, Azure managing data, Azure analytics" description="Azure 提供了用于数据存储和管理的选项：SQL数据库、VM 中的 SQL Server、Blob 存储和表存储。阅读使用每个选项的方案。" metaCanonical="" services="sql-database,storage" documentationCenter=".NET" title="Azure 数据管理：做出正确的选择" authors="David Chappell" solutions="" manager="" editor="cgronlun" />
+<tags ms.service="sql-database,storage"
+    ms.date="11/14/2014"
+    wacn.date="04/11/2015"
+    />
 
 # Azure 数据管理：做出正确的选择
 

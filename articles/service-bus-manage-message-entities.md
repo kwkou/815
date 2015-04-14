@@ -1,4 +1,8 @@
 <properties linkid="service-bus-manage-messaging-entitites" urlDisplayName="流量管理器" pageTitle="Manage 服务总线 Messaging Entities - Azure" metaKeywords="" description="Learn how to create and manage your 服务总线 entities using the Azure Management Portal." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="service-bus" documentationCenter="" title="How to Manage 服务总线 Messaging Entities" authors="sethm" solutions="" />
+<tags ms.service="service-bus"
+    ms.date="11/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何管理 服务总线 消息传送实体
 
@@ -109,7 +113,7 @@ Azure 网站上的 [.NET 开发人员中心][.NET 开发人员中心]。
   [如何：禁用或启用 服务总线 实体]: #disableenable
   [其他资源]: #seealso
   [0]: ./media/service-bus-manage-message-entities/QueueQuickCreate.png
-  [服务总线 文档]: http://www.windowsazure.cn/zh-cn/develop/net/how-to-guides/service-bus-relay/
+  [服务总线 文档]: /develop/net/how-to-guides/service-bus-relay/
   [1]: ./media/service-bus-manage-message-entities/AddQueue1.png
   [2]: ./media/service-bus-manage-message-entities/ConfigureQueue.png
   [3]: ./media/service-bus-manage-message-entities/DeleteEntity.png

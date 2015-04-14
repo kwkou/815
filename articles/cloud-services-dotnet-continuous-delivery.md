@@ -1,4 +1,8 @@
 <properties linkid="dev-net-common-tasks-continuous-delivery" urlDisplayName="Continuous Delivery" pageTitle="在 Azure 中使用 TFS 持续交付云服务" metaKeywords="Azure continuous delivery, continuous delivery sample code, continuous deliver PowerShell" description="了解如何设置 Azure 云应用程序的持续交付。MSBuild 命令行语句和 PowerShell 脚本的代码示例。" metaCanonical="" services="" documentationCenter="" title="Continuous Delivery for Cloud Services in Azure" authors="ghogen" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/18/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 

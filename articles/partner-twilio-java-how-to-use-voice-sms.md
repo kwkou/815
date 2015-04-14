@@ -1,4 +1,8 @@
 <properties linkid="develop-java-how-to-twilio-sms-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="How to Use Twilio for Voice and SMS (Java) - Azure" metaKeywords="Twilio, Twilio API, phone calls, SMS message, TwiML responses, Azure Twilio Java" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in Java." metaCanonical="" services="" videoId="" scriptId="" documentationCenter="Java" title="How to Use Twilio for Voice and SMS Capabilities in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+<tags ms.service=""
+    ms.date="11/25/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何通过 Java 使用 Twilio 实现语音和短信功能
 

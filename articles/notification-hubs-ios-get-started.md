@@ -1,4 +1,8 @@
 <properties linkid="develop-notificationhubs-tutorials-get-started-ios" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="sethm" solutions="" manager="" editor="" />
+<tags ms.service="notification-hubs"
+    ms.date="03/16/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 通知中心入门
 
@@ -368,7 +372,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [31]: ./media/notification-hubs-ios-get-started/notification-hub-create-console-app.png
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
   [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
-  [移动服务入门]: /en-us/develop/mobile/tutorials/get-started-ios
+  [移动服务入门]: /develop/mobile/tutorials/get-started-ios
   [32]: ./media/notification-hubs-ios-get-started/notification-hub-scheduler1.png
   [33]: ./media/notification-hubs-ios-get-started/notification-hub-scheduler2.png
   [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/

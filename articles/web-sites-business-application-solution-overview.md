@@ -1,4 +1,8 @@
 <properties linkid="websites-business-application" urlDisplayName="Create a Line-of-Business Application on Azure Web Sites" pageTitle="Create a Line-of-Business Application on Azure Web Sites" metaKeywords="Web Sites" description="This guide provides a technical overview of how to use Azure Web Sites to create intranet, line-of-business applications. This includes authentication strategies, 服务总线 relay, and monitoring." umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" title="Create a Line-of-Business Application on Azure Web Sites" authors="jroth" />
+<tags ms.service=""
+    ms.date="02/02/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Azure 网站上创建业务线应用程序
 
@@ -141,7 +145,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 </tr>
 <tr>
 <td valign="middle"><strong>创建和部署</strong></td>
-<td valign="top">- <a href ="http://www.windowsazure.cn/en-us/develop/net/tutorials/get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="http://www.windowsazure.cn/en-us/develop/net/tutorials/web-site-with-sql-database/">将安全的 ASP.NET MVC 应用程序部署到 Azure</a></td>
+<td valign="top">- <a href ="/develop/net/tutorials/get-started/">将 ASP.NET Web 应用程序部署到 Azure 网站</a><br/>- <a href="/develop/net/tutorials/web-site-with-sql-database/">将安全的 ASP.NET MVC 应用程序部署到 Azure</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>身份验证</strong></td>
@@ -149,7 +153,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 </tr>
 <tr>
 <td valign="middle"><strong>服务总线 中继</strong></td>
-<td valign="top">- <a href="http://www.windowsazure.cn/en-us/develop/net/how-to-guides/service-bus-relay/">如何使用 服务总线 中继服务</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx">服务总线 中继消息传送教程</a></td>
+<td valign="top">- <a href="/develop/net/how-to-guides/service-bus-relay/">如何使用 服务总线 中继服务</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx">服务总线 中继消息传送教程</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>监视</strong></td>
@@ -160,7 +164,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [Azure 网站]: /zh-cn/documentation/services/web-sites/
   [Azure 云服务]: /zh-cn/documentation/services/cloud-services/
   [Azure 虚拟机]: /zh-cn/documentation/services/virtual-machines/
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /zh-cn/manage/services/web-sites/choose-web-app-service
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /manage/services/web-sites/choose-web-app-service
   [考虑利益]: #benefits
   [选择身份验证策略]: #authentication
   [创建支持身份验证的 Azure 网站]: #createintranetsite
@@ -179,7 +183,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [BusinessApplicationsADUsers]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AD_Users.png
   [使用 Azure AD 将登录名添加到 Web 应用程序中]: http://msdn.microsoft.com/library/windowsazure/dn151790.aspx
   [目录集成]: http://technet.microsoft.com/zh-cn/library/jj573653.aspx
-  [查看该信息]: /zh-cn/manage/services/web-sites/global-web-presence-solution-overview/
+  [查看该信息]: /manage/services/web-sites/global-web-presence-solution-overview/
   [BusinessApplicationsVSIntranetApp]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_IntranetApp.png
   [BusinessApplicationsVSProperties]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_Properties.png
   [针对 Visual Studio 的身份认证和访问工具]: #identityandaccessforvs
@@ -196,24 +200,24 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [Azure 信任中心]: /zh-cn/support/trust-center/
   [Azure 服务总线 中继服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860549.aspx
   [BusinessApplicationsServiceBusRelay]: ./media/web-sites-business-application-solution-overview/BusinessApplications_ServiceBusRelay.png
-  [如何使用 服务总线 中继服务]: /zh-cn/develop/net/how-to-guides/service-bus-relay/
+  [如何使用 服务总线 中继服务]: /develop/net/how-to-guides/service-bus-relay/
   [服务总线 中继消息传送教程]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
   [Enterprise Pizza - 使用 服务总线 将网站连接到本地]: http://code.msdn.microsoft.com/windowsazure/Enterprise-Pizza-e2d8f2fa
   [2]: /documentation/articles/web-sites-digital-marketing-application-solution-overview/
   [New Relic]: http://newrelic.com/azure
   [BusinessApplicationsDiagnostics]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diagnostics.png
   [BusinessApplicationsDiagRetention]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diag_Retention.png
-  [如何：为网站配置诊断和下载日志]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
-  [在 Visual Studio 中排除 Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [如何：为网站配置诊断和下载日志]: /manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
+  [在 Visual Studio 中排除 Azure 网站的故障]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [3]: /documentation/articles/choose-web-site-cloud-service-vm/
-  [将 ASP.NET Web 应用程序部署到 Azure 网站]: http://www.windowsazure.cn/en-us/develop/net/tutorials/get-started/
-  [将安全的 ASP.NET MVC 应用程序部署到 Azure]: http://www.windowsazure.cn/en-us/develop/net/tutorials/web-site-with-sql-database/
+  [将 ASP.NET Web 应用程序部署到 Azure 网站]: /develop/net/tutorials/get-started/
+  [将安全的 ASP.NET MVC 应用程序部署到 Azure]: /develop/net/tutorials/web-site-with-sql-database/
   [了解 Azure 标识选项]: /documentation/articles/fundamentals-identity/
   [4]: http://www.windowsazure.cn/en-us/documentation/services/active-directory/
   [什么是 Azure AD 租户？]: http://technet.microsoft.com/en-us/library/jj573650.aspx
-  [5]: http://www.windowsazure.cn/en-us/develop/net/how-to-guides/service-bus-relay/
+  [5]: /develop/net/how-to-guides/service-bus-relay/
   [6]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
   [如何监视网站]: /documentation/articles/web-sites-monitor/
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
   [7]: /documentation/articles/web-sites-monitor/#howtoconfigdiagnostics
-  [8]: http://www.windowsazure.cn/en-us/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [8]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/

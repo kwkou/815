@@ -1,13 +1,17 @@
 <properties linkid="" urlDisplayName="" pageTitle="Push notifications to users (Android ) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to push notifications to users of your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="10/07/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 使用移动服务向用户推送通知
 
 <div class="dev-center-tutorial-selector sublanding">
-	<a href="/zh-cn/develop/mobile/tutorials/push-notifications-to-users-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/push-notifications-to-users-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/push-notifications-to-users-android" title="Android" class="current">Android</a>
+	<a href="/develop/mobile/tutorials/push-notifications-to-users-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/push-notifications-to-users-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/push-notifications-to-users-android" title="Android" class="current">Android</a>
 </div>
 
 <div class="dev-onpage-left-content">
-<p>本主题是<a href="/zh-cn/develop/mobile/tutorials/get-started-with-push-android">前面的推送通知教程</a>的引伸，其中添加了一个用于存储 Google Cloud Messaging (GCM) 注册 URI 的新表，你可以使用这些 URI 向 Android 应用程序的多个用户发送推送通知。在本教程中，每当在 ToDoList 表中完成插入后，执行一次更新就能生成发送到所有已注册设备的推送通知。在前面的教程中，通知只会发送到执行插入的设备。</p>
+<p>本主题是<a href="/develop/mobile/tutorials/get-started-with-push-android">前面的推送通知教程</a>的引伸，其中添加了一个用于存储 Google Cloud Messaging (GCM) 注册 URI 的新表，你可以使用这些 URI 向 Android 应用程序的多个用户发送推送通知。在本教程中，每当在 ToDoList 表中完成插入后，执行一次更新就能生成发送到所有已注册设备的推送通知。在前面的教程中，通知只会发送到执行插入的设备。</p>
 </div>
 
 本教程将指导你完成在应用程序中更新推送通知的以下步骤：
@@ -237,10 +241,10 @@
 -   [如何使用适用于移动服务的 Android 客户端库][]
     了解有关如何将移动服务与 .NET 一起使用的详细信息。
 
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/push-notifications-to-users-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/push-notifications-to-users-android "Android"
-  [前面的推送通知教程]: /zh-cn/develop/mobile/tutorials/get-started-with-push-android
+  [Windows Phone]: /develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/push-notifications-to-users-ios "iOS"
+  [Android]: /develop/mobile/tutorials/push-notifications-to-users-android "Android"
+  [前面的推送通知教程]: /develop/mobile/tutorials/get-started-with-push-android
   [创建 Registration 表]: #create-table
   [更新应用程序]: #update-app
   [更新服务器脚本]: #update-scripts
@@ -254,7 +258,7 @@
   [5]: ./media/mobile-services-android-push-notifications-app-users/mobile-insert-script-registration.png
   [6]: ./media/mobile-services-android-push-notifications-app-users/mobile-insert-script-push2.png
   [7]: ./media/mobile-services-android-push-notifications-app-users/mobile-push-icon.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
   [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
-  [如何使用适用于移动服务的 Android 客户端库]: /zh-cn/develop/mobile/how-to-guides/work-with-android-client-library
+  [如何使用适用于移动服务的 Android 客户端库]: /develop/mobile/how-to-guides/work-with-android-client-library

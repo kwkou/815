@@ -1,4 +1,8 @@
 <properties linkid="develop-php-how-to-guides-web-sso" urlDisplayName="Web SSO" pageTitle="Single sign-on with Azure Active Directory (PHP)" metaKeywords="Azure PHP web app, Azure single sign-on, Azure PHP Active Directory" description="Learn how to create a PHP web application that uses single sign-on with Azure Active Directory." metaCanonical="" services="active-directory" documentationCenter="PHP" title="Web Single Sign-On with PHP and Azure Active Directory" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<tags ms.service="active-directory"
+    ms.date="11/21/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 通过 PHP 和 Azure Active Directory 实现的 Web 单一登录
 

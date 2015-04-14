@@ -1,4 +1,8 @@
 <properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="存储简介 | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="Microsoft Azure 存储空间概述。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Windows Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<tags ms.service="storage"
+    ms.date="03/03/2015"
+    wacn.date="04/11/2015"
+    />
 
 # Microsoft Azure 存储空间简介
 
@@ -122,7 +126,7 @@ Azure 存储空间通过一个 [REST API](http://msdn.microsoft.com/library/wind
 
 - [.NET](http://msdn.microsoft.com/zh-cn/library/dn495001.aspx)
 - [本机代码](http://msdn.microsoft.com/zh-cn/library/dn495438.aspx)
-- [Java](/zh-cn/develop/java/)
+- [Java](/develop/java/)
 - [Node.js](../storage/#node)
 - [PHP](../storage/#php)
 - [Ruby](../storage/#ruby)

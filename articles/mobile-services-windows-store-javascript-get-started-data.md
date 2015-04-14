@@ -1,9 +1,13 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-data-js-vs2013" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store JavaScript app." metaCanonical="https://www.windowsazure.cn/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet/" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<properties linkid="develop-mobile-tutorials-get-started-with-data-js-vs2013" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/get-started-with-data-dotnet/" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/26/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+	<a href="/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
 </div>	
 
 
@@ -16,7 +20,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>本教程需要 Visual Studio 2013，使用它可以轻松地将 Windows 应用商店应用程序连接到移动服务。若要使用 Visual Studio 2012 完成同一基本过程，请按照<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js-vs2012/">使用 Visual Studio 2012 的移动服务中的数据处理入门</a>主题中的步骤进行操作。</p>
+<p>本教程需要 Visual Studio 2013，使用它可以轻松地将 Windows 应用商店应用程序连接到移动服务。若要使用 Visual Studio 2012 完成同一基本过程，请按照<a href="/develop/mobile/tutorials/get-started-with-data-js-vs2012/">使用 Visual Studio 2012 的移动服务中的数据处理入门</a>主题中的步骤进行操作。</p>
 </div>
 
 本教程将指导你完成以下基本步骤：
@@ -181,17 +185,17 @@
 -   [移动服务 HTML/JavaScript 操作方法概念性参考][]
     了解有关如何将移动服务与 HTML 和 JavaScript 一起使用的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/get-started-with-data-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-data-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/get-started-with-data-html "HTML"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-data-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/get-started-with-data-ios "iOS"
+  [Android]: /develop/mobile/tutorials/get-started-with-data-android "Android"
+  [HTML]: /develop/mobile/tutorials/get-started-with-data-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
   [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/ ".NET 后端"
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-data/ "JavaScript 后端"
-  [使用 Visual Studio 2012 的移动服务中的数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-js-vs2012/
+  [使用 Visual Studio 2012 的移动服务中的数据处理入门]: /develop/mobile/tutorials/get-started-with-data-js-vs2012/
   [下载 Windows 应用商店应用程序项目]: #download-app
   [创建移动服务]: #create-service
   [添加用于存储的数据表]: #add-table
@@ -206,8 +210,8 @@
   [动态架构]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193175.aspx
   [管理门户]: https://manage.windowsazure.cn/
   [2]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2013/mobile-todoitem-data-browse.png
-  [使用脚本验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-js
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-js
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-js
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-js
-  [移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-html-js-client/
+  [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-js
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-js
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-js
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-js
+  [移动服务 HTML/JavaScript 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-html-js-client/

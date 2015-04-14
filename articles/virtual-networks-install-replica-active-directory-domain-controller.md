@@ -1,4 +1,8 @@
 <properties linkid="manage-services-networking-replica-domain-controller" urlDisplayName="Replica domain controller" pageTitle="Install a replica domain controller in Azure" metaKeywords="" description="A tutorial that teaches you how to install a domain controller from your Corp Active Directory forest on your Azure virtual machine." metaCanonical="" services="virtual-network" documentationCenter="" title="Install a Replica Active Directory Domain Controller in Azure Virtual Networks" authors="Justinha" solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft" />
+<tags ms.service="virtual-network"
+    ms.date="03/18/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Azure 虚拟网络中安装 Active Directory 域控制器副本
 
@@ -38,7 +42,7 @@
 
 <div class="dev-callout"> 
 <b>说明</b>
-<p>如果你已完成<a href="/en-us/manage/services/networking/active-directory-forest/">在 Azure 中安装新的 Active Directory 林</a>中的步骤，则在开始本教程前，你可能需要从 Azure 虚拟网络上的域控制器中删除 AD DS。有关如何删除 AD DS 的详细信息，请参阅<a href="http://technet.microsoft.com/en-us/library/cc771844(v=WS.10).aspx">从域中删除域控制器</a>。</p>
+<p>如果你已完成<a href="/manage/services/networking/active-directory-forest/">在 Azure 中安装新的 Active Directory 林</a>中的步骤，则在开始本教程前，你可能需要从 Azure 虚拟网络上的域控制器中删除 AD DS。有关如何删除 AD DS 的详细信息，请参阅<a href="http://technet.microsoft.com/en-us/library/cc771844(v=WS.10).aspx">从域中删除域控制器</a>。</p>
 </div>
 
 ## <span id="verifystaticip"></span></a>步骤 1：验证 YourPrimaryDC 的静态 IP 地址
@@ -296,7 +300,7 @@
   [在管理门户中配置站点到站点的 VPN]: http://msdn.microsoft.com/zh-cn/library/dn133795.aspx
   [将虚拟机添加到虚拟网络（可能为英文页面）]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-networks-add-virtual-machine/
   [创建区域委派]: http://technet.microsoft.com/library/cc753500.aspx
-  [在 Azure 中安装新的 Active Directory 林]: /en-us/manage/services/networking/active-directory-forest/
+  [在 Azure 中安装新的 Active Directory 林]: /manage/services/networking/active-directory-forest/
   [从域中删除域控制器]: http://technet.microsoft.com/en-us/library/cc771844(v=WS.10).aspx
   [VerifystaticIPaddressyourPrimaryDC1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/VerifystaticIP.png
   [InstallCorpForest1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/InstallCorpForest1.png

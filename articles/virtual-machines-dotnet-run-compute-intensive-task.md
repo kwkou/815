@@ -1,4 +1,8 @@
-﻿<properties linkid="develop-net-tutorials-compute-intensive-task-on-a-virtual-machine" urlDisplayName="Compute Intensive .NET Task" pageTitle="虚拟机上需要进行大量计算的 .NET 任务 - Azure" metaKeywords="deploying compute .NET application, vm .NET application, Service Bus queue monitoring, remote monitoring" description="了解如何在 Azure 虚拟机上部署和运行需要进行大量计算的 .NET 应用以及如何使用服务总线队列远程监视进度。" metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="How to run a compute-intensive task in .NET on an Azure virtual machine" authors="waltpo" solutions="" manager="keboyd" editor="mollybos" scriptId="" videoId="" />
+<properties linkid="develop-net-tutorials-compute-intensive-task-on-a-virtual-machine" urlDisplayName="Compute Intensive .NET Task" pageTitle="虚拟机上需要进行大量计算的 .NET 任务 - Azure" metaKeywords="deploying compute .NET application, vm .NET application, Service Bus queue monitoring, remote monitoring" description="了解如何在 Azure 虚拟机上部署和运行需要进行大量计算的 .NET 应用以及如何使用服务总线队列远程监视进度。" metaCanonical="" services="virtual-machines" documentationCenter=".NET" title="How to run a compute-intensive task in .NET on an Azure virtual machine" authors="waltpo" solutions="" manager="keboyd" editor="mollybos" scriptId="" videoId="" />
+<tags ms.service="virtual-machines"
+    ms.date="11/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 如何在 Azure 虚拟机上的 .NET 中运行需要进行大量计算的任务
 
@@ -87,7 +91,7 @@
 
 <h2>如何创建 .NET 应用程序来执行需要进行大量计算的任务</h2>
 
-1. 在您的部署计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for .NET](/zh-cn/develop/net/)。
+1. 在您的部署计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for .NET](/develop/net/)。
 2. 使用名为 **TSPSolver** 的项目创建 .NET 控制台应用程序。确保目标框架设置为用于 .**NET Framework 4**（而不是 **.NET Framework 4 Client Profile**）。可在创建项目后设置目标框架，具体方法如下：在 Visual Studio 的菜单中，依次单击"项目"****、"属性"****、"应用程序"****选项卡，然后设置"目标框架"****的值。
 3. 加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击"浏览"****选项卡、浏览到 **C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\2012-06\ref**，然后选择"Microsoft.ServiceBus.dll"****作为引用。
 4. 加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击".NET"****选项卡，然后选择"System.Runtime.Serialization"****作为引用。

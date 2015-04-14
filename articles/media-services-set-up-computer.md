@@ -1,4 +1,8 @@
 <properties linkid="develop-media-services-how-to-guides-set-up-computer" urlDisplayName="Set Up Computer for Media Services" pageTitle="How to Set Up Computer for Media Services - Azure" metaKeywords="" description="Learn about the prerequisites for Media Services using the Media Services SDK for .NET. Also learn how to create a Visual Studio app." metaCanonical="" services="media-services" documentationCenter="" title="Setting up your computer for Media Services development" authors="migree" solutions="" manager="" editor="" />
+<tags ms.service="media-services"
+    ms.date="02/18/2015"
+    wacn.date="04/11/2015"
+    />
 
 设置计算机以进行 Media Services 开发
 ====================================
@@ -7,7 +11,7 @@
 
 ### 先决条件
 
--   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](http://www.windowsazure.cn/zh-cn/manage/services/media-services/how-to-create-a-media-services-account/)。
+-   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account/)。
 -   操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 -   .NET Framework 4.5 或 .NET Framework 4。
 -   Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）。

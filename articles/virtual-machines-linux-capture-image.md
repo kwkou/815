@@ -1,4 +1,8 @@
-﻿<properties linkid="manage-linux-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="捕获运行 Linux 的虚拟机的映像" metaKeywords="Azure Linux vm, Linux vm" description="了解如何捕获运行 Linux 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Linux" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<properties linkid="manage-linux-howto-capture-an-image" urlDisplayName="Capture an image" pageTitle="捕获运行 Linux 的虚拟机的映像" metaKeywords="Azure Linux vm, Linux vm" description="了解如何捕获运行 Linux 的 Azure 虚拟机 (VM) 的映像。 " metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Capture an Image of a Virtual Machine Running Linux" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<tags ms.service="virtual-machines"
+    ms.date="03/16/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 

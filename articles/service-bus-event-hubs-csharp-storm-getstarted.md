@@ -1,4 +1,8 @@
-﻿<properties pageTitle="事件中心入门" metaKeywords="Azure Service Bus, Event Hub, getting started Event Hubs" description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并在 Apache Storm 群集中接收事件" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+<properties pageTitle="事件中心入门" metaKeywords="Azure Service Bus, Event Hub, getting started Event Hubs" description="遵循本教程开始使用 Azure 事件中心，以通过 C 发送事件，并在 Apache Storm 群集中接收事件" metaCanonical="" services="" documentationCenter="" title="Get Started with Event Hubs" authors="elioda" solutions="" manager="timlt" editor="" />
+<tags ms.service=""
+    ms.date="02/10/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 # <a name="getting-started"> </a>事件中心入门

@@ -1,6 +1,8 @@
 <properties pageTitle="推送通知入门（Windows 应用商店）| 移动开发人员中心" metaKeywords="" description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到您的 Windows 应用商店应用程序。" metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="javascript" ms.topic="article" ms.date="09/23/2014" ms.author="glenga" />
 
 
 # 向移动服务应用程序添加推送通知

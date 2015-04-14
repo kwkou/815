@@ -1,4 +1,8 @@
 <properties linkid="develop-media-services-how-to-guides-check-job-progress" urlDisplayName="Check Job Progress" pageTitle="How to Check Job Progress in Media Services - Azure" metaKeywords="" description="Learn how to use event handler code to track job progress and send status updates. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Check Job Progress" authors="migree" solutions="" manager="" editor="" />
+<tags ms.service="media-services"
+    ms.date="02/10/2015"
+    wacn.date="04/11/2015"
+    />
 
 如何：检查作业进度
 ==================

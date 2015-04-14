@@ -1,4 +1,8 @@
-﻿<properties linkid="virtual-machines-linux-mysql-use-opensuse" urlDisplayName="Install MongoDB" pageTitle="在 Azure 中运行 CentOS Linux 的虚拟机上安装 MongoDB" metaKeywords="Azure, MongoDB" description="了解如何在 Azure 中的虚拟机上安装 Mongo DB。" metaCanonical="" services="" documentationCenter="" title="Install MongoDB on a virtual machine running CentOS Linux in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="virtual-machines-linux-mysql-use-opensuse" urlDisplayName="Install MongoDB" pageTitle="在 Azure 中运行 CentOS Linux 的虚拟机上安装 MongoDB" metaKeywords="Azure, MongoDB" description="了解如何在 Azure 中的虚拟机上安装 Mongo DB。" metaCanonical="" services="" documentationCenter="" title="Install MongoDB on a virtual machine running CentOS Linux in Azure" authors="" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="12/12/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Azure 中运行 OpenSUSE Linux 的虚拟机上安装 MySQL
 

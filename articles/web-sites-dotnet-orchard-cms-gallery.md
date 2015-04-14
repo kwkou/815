@@ -1,4 +1,8 @@
 <properties linkid="develop-dotnet-website-from-gallery" urlDisplayName="Web Site from Gallery" pageTitle="Create an Orchard CMS web site from the gallery in Azure" metaKeywords="Azure build website, manage website Azure" description="A tutorial that teaches you how to create a new web site in Azure. Also learn how to launch and manage your site using the Management Portal." metaCanonical="" services="web-sites" documentationCenter=".NET" title="Create an Orchard CMS web site from the gallery in Azure" authors="" solutions="" manager="" editor="" />
+<tags ms.service="web-sites"
+    ms.date="02/05/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Azure 中从库中创建 Orchard CMS 网站
 
@@ -80,5 +84,5 @@ Azure 将发起构建和部署操作。在构建和部署网站的同时，网�
   [“浏览”按钮]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-12.png
   [登录到 Orchard]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-07.png
   [Orchard 文档]: http://docs.orchardproject.net/
-  [使用 Microsoft WebMatrix 开发和部署网站]: /en-us/develop/net/tutorials/website-with-webmatrix/
-  [使用成员资格、OAuth 和 SQL数据库 将安全 ASP.NET MVC 应用程序部署到 Azure 网站]: /en-us/develop/net/tutorials/web-site-with-sql-database/
+  [使用 Microsoft WebMatrix 开发和部署网站]: /develop/net/tutorials/website-with-webmatrix/
+  [使用成员资格、OAuth 和 SQL数据库 将安全 ASP.NET MVC 应用程序部署到 Azure 网站]: /develop/net/tutorials/web-site-with-sql-database/

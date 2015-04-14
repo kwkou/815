@@ -1,4 +1,8 @@
 <properties linkid="manage-scenarios-choose-web-app-service" urlDisplayName="Web Options for Azure" pageTitle="Azure 网站、云服务和虚拟机比较 - Azure 微软云" metaKeywords="Cloud Services, Virtual Machines, Web Sites, 虚拟机比较, 托管 Web 应用程序,方案" description="了解何时使用 Azure 网站、云服务和虚拟机来托管 Web 应用程序。查看功能比较。本文还从不同角度给出了多种方案，包括：要求低成本的小型企业，设计师，带有web前端的应用迁移，开源软件使用者。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title=" 云服务" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<tags ms.service="web-sites,virtual-machines,cloud-services"
+    ms.date="09/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 # Azure 网站、云服务和虚拟机比较
 
@@ -275,10 +279,10 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
   [服务摘要]: #services
   [功能比较]: #features
   [自动任务]: /zh-cn/documentation/scripts/?services=web-sites
-  [.Net]: /zh-cn/develop/net/
-  [PHP]: /zh-cn/develop/php/
-  [Node.js]: /zh-cn/develop/nodejs/
-  [Python]: /zh-cn/develop/python/
+  [.Net]: /develop/net/
+  [PHP]: /develop/php/
+  [Node.js]: /develop/nodejs/
+  [Python]: /develop/python/
   [SQL 数据库]: /zh-cn/documentation/services/sql-database/
   [服务总线]: /zh-cn/documentation/services/service-bus/
   [存储]: /zh-cn/documentation/services/storage/

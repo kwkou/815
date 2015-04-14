@@ -1,6 +1,8 @@
 <properties urlDisplayName="Get Started with Data" pageTitle="数据处理入门（Windows 通用） |移动开发人员中心" metaKeywords="" description="了解如何通过移动服务来利用 Android 应用程序中的数据。" metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
 
-<tags ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="09/26/2014" ms.author="glenga" />
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="03/06/2015" ms.author="glenga" />
 
 # 将移动服务添加到现有应用程序
 

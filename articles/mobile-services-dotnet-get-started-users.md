@@ -1,8 +1,12 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-users-dotnet" urlDisplayName="Get Started with Users" pageTitle="Get started with authentication (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to authenticate users of your Windows Store app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="12/03/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务中的身份验证入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet" title="Windows Store C#" class="current">Windows 应用商店 C\#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/mobile/tutorials/get-started-with-users-dotnet" title="Windows Store C#" class="current">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/get-started-with-users-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-users-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-users-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-users-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-users-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/get-started-with-users-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-users-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
@@ -25,7 +29,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>本教程演示了移动服务为了让你使用各种标识提供者对用户进行身份验证而提供的基本方法。此方法易于配置，并支持多个提供者。但是，此方法还要求用户在每次启动你的应用程序时登录。若要改用 Live Connect 在 Windows 应用商店应用程序中提供单一登录体验，请参阅主题<a href="/zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-dotnet">使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录</a>。</p>
+<p>本教程演示了移动服务为了让你使用各种标识提供者对用户进行身份验证而提供的基本方法。此方法易于配置，并支持多个提供者。但是，此方法还要求用户在每次启动你的应用程序时登录。若要改用 Live Connect 在 Windows 应用商店应用程序中提供单一登录体验，请参阅主题<a href="/develop/mobile/tutorials/single-sign-on-windows-8-dotnet">使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录</a>。</p>
 </div>
 
 <a name="register"></a>
@@ -147,33 +151,33 @@
 
 在下一教程[使用脚本为用户授权][]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。请在[移动服务 .NET 操作方法概念性参考][]中了解有关如何将移动服务与 .NET 一起使用的详细信息。
 
-  [Windows 应用商店 C\#]: /zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/get-started-with-users-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/get-started-with-users-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-users-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/get-started-with-users-html "HTML"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-android "Xamarin.Android"
+  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-users-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-users-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/get-started-with-users-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/get-started-with-users-ios "iOS"
+  [Android]: /develop/mobile/tutorials/get-started-with-users-android "Android"
+  [HTML]: /develop/mobile/tutorials/get-started-with-users-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/get-started-with-users-xamarin-android "Xamarin.Android"
   [观看教程]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Introduction-to-Windows-Azure-Mobile-Services
   [播放视频]: http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Windows-Store-app-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services
   [注册应用程序以进行身份验证并配置移动服务]: #register
   [将表权限限制给已经过身份验证的用户]: #permissions
   [向应用程序添加身份验证]: #add-authentication
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started
-  [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /zh-cn/develop/mobile/tutorials/single-sign-on-windows-8-dotnet
+  [移动服务入门]: /develop/mobile/tutorials/get-started
+  [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/mobile-services-dotnet-get-started-users/mobile-services-selection.png
   [1]: ./media/mobile-services-dotnet-get-started-users/mobile-service-uri.png
-  [Microsoft 帐户]: /zh-cn/develop/mobile/how-to-guides/register-for-microsoft-authentication/
-  [Facebook 登录]: /zh-cn/develop/mobile/how-to-guides/register-for-facebook-authentication/
-  [Twitter 登录]: /zh-cn/develop/mobile/how-to-guides/register-for-twitter-authentication/
-  [Google 登录]: /zh-cn/develop/mobile/how-to-guides/register-for-google-authentication/
+  [Microsoft 帐户]: /develop/mobile/how-to-guides/register-for-microsoft-authentication/
+  [Facebook 登录]: /develop/mobile/how-to-guides/register-for-facebook-authentication/
+  [Twitter 登录]: /develop/mobile/how-to-guides/register-for-twitter-authentication/
+  [Google 登录]: /develop/mobile/how-to-guides/register-for-google-authentication/
   [Azure Active Directory]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
   [2]: ./media/mobile-services-dotnet-get-started-users/mobile-identity-tab.png
-  [注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证]: /zh-cn/develop/mobile/how-to-guides/register-windows-store-app-package
+  [注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证]: /develop/mobile/how-to-guides/register-windows-store-app-package
   [3]: ./media/mobile-services-dotnet-get-started-users/mobile-portal-data-tables.png
   [4]: ./media/mobile-services-dotnet-get-started-users/mobile-portal-change-table-perms.png
   [LoginAsync]: http://go.microsoft.com/fwlink/p/?LinkId=311594
-  [使用脚本为用户授权]: /zh-cn/develop/mobile/tutorials/authorize-users-in-scripts-dotnet
-  [移动服务 .NET 操作方法概念性参考]: /zh-cn/develop/mobile/how-to-guides/work-with-net-client-library
+  [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
+  [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library

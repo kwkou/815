@@ -1,4 +1,8 @@
 <properties linkid="develop-python-install-python" urlDisplayName="Install Python" pageTitle="Install Python and the SDK - Azure" metaKeywords="Azure Python SDK" description="Learn how to install Python and the SDK to use with Azure." metaCanonical="" services="" documentationCenter="Python" title="Installing Python and the SDK" authors="" solutions="" manager="" editor="" />
+<tags ms.service=""
+    ms.date="02/05/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 安装 Python 和 SDK
 
@@ -153,7 +157,7 @@ Python 很可能已安装在你的开发计算机上。你可以通过输入以�
   [Virtualenv]: http://pypi.python.org/pypi/virtualenv
   [MacOS site-packages]: ./media/python-how-to-install/how-to-install-python-mac-site.png
   [IPython]: http://ipython.org
-  [Linux 管理]: /en-us/manage/linux/
+  [Linux 管理]: /manage/linux/
   [Enthought Python 分发]: http://www.enthought.com
   [ActiveState Python 分发]: http://www.activestate.com
   [SciPy - Scientific Python 库套件]: http://www.scipy.org

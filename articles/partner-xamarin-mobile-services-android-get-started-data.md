@@ -1,16 +1,20 @@
 <properties linkid="develop-mobile-tutorials-get-started-with-data-xamarin-android" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Xamarin.Android) - Azure Mobile Services" metaKeywords="Azure Xamarin.Android data, Azure mobile services data" description="Learn how to store and access data from your Azure Mobile Services Xamarin.Android app." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Get started with data in Mobile Services" documentationCenter="Mobile" authors="" />
+<tags ms.service=""
+    ms.date="09/24/2014"
+    wacn.date="04/11/2015"
+    />
 
 # 移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding">    
-	<a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a>
+	<a href="/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/get-started-with-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-data-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a>
 </div>	
 
 <p>此主题说明如何通过 Azure 移动服务来利用 Xamarin.Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。</p>
 
 <div class="dev-callout"><b>说明</b>
 
-<p>本教程旨在帮助你更好地了解如何使用移动服务通过 Azure 来存储数据以及从 Xamarin.Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成<a href="/zh-cn/develop/mobile/tutorials/get-started-xamarin-android">移动服务入门</a>教程。</p>
+<p>本教程旨在帮助你更好地了解如何使用移动服务通过 Azure 来存储数据以及从 Xamarin.Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成<a href="/develop/mobile/tutorials/get-started-xamarin-android">移动服务入门</a>教程。</p>
 </div>
 
 本教程将指导你完成以下基本步骤：
@@ -258,15 +262,15 @@
 -   [推送通知入门][]
     了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
-  [Windows 应用商店 C#]: /zh-cn/develop/mobile/tutorials/get-started-with-data-dotnet "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/develop/mobile/tutorials/get-started-with-data-js "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
-  [iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-data-ios "iOS"
-  [Android]: /zh-cn/develop/mobile/tutorials/get-started-with-data-android "Android"
-  [HTML]: /zh-cn/develop/mobile/tutorials/get-started-with-data-html "HTML"
-  [Xamarin.iOS]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
-  [移动服务入门]: /zh-cn/develop/mobile/tutorials/get-started-xamarin-android
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/get-started-with-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-data-js "Windows 应用商店 JavaScript"
+  [Windows Phone]: /develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
+  [iOS]: /develop/mobile/tutorials/get-started-with-data-ios "iOS"
+  [Android]: /develop/mobile/tutorials/get-started-with-data-android "Android"
+  [HTML]: /develop/mobile/tutorials/get-started-with-data-html "HTML"
+  [Xamarin.iOS]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios "Xamarin.iOS"
+  [Xamarin.Android]: /develop/mobile/tutorials/get-started-with-data-xamarin-android "Xamarin.Android"
+  [移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-android
   [下载 Xamarin.Android 应用程序项目]: http://go.microsoft.com/fwlink/p/?LinkId=331302
   [创建移动服务]: #create-service
   [添加用于存储的数据表]: #add-table
@@ -281,7 +285,7 @@
   [3]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-dashboard-tab.png
   [管理门户]: https://manage.windowsazure.cn/
   [4]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-todoitem-data-browse.png
-  [使用脚本验证和修改数据]: /zh-cn/develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android
-  [使用分页优化查询]: /zh-cn/develop/mobile/tutorials/add-paging-to-data-xamarin-android
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-android
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-android
+  [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android
+  [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-android

@@ -1,4 +1,8 @@
 <properties pageTitle="Get Started with Mobile Services for Xamarin iOS apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Xamarin iOS development." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with Mobile Services" authors="craigd" solutions="" manager="" editor="" />
+<tags ms.service="mobile"
+    ms.date="11/22/2014"
+    wacn.date="04/11/2015"
+    />
 
 # <a name="getting-started"> </a>移动服务入门
 
@@ -129,6 +133,6 @@
   [5]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-quickstart-startup-ios.png
   [6]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-data-tab.png
   [7]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-data-browse.png
-  [数据处理入门]: /zh-cn/develop/mobile/tutorials/get-started-with-data-xamarin-ios
-  [身份验证入门]: /zh-cn/develop/mobile/tutorials/get-started-with-users-xamarin-ios
-  [推送通知入门]: /zh-cn/develop/mobile/tutorials/get-started-with-push-xamarin-ios
+  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
+  [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios

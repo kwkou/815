@@ -1,4 +1,8 @@
 <properties linkid="biztalk-troubleshoot-using-ops-logs" urlDisplayName="BizTalk Services: Troubleshoot using operation logs" pageTitle="BizTalk Services: Troubleshoot using ops logs | Azure" metaKeywords="" description="BizTalk Services: Troubleshoot using ops logs" metaCanonical="" services="" documentationCenter="" title="BizTalk Services: Troubleshoot using ops logs" authors="mandia"  solutions="" writer="nitinme" manager="paulettm" editor="cgronlun"  />
+<tags ms.service=""
+    ms.date="02/25/2015"
+    wacn.date="04/11/2015"
+    />
 
 # BizTalk 服务：使用操作日志进行故障排除
 

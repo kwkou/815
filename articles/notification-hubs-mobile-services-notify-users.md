@@ -1,4 +1,8 @@
 <properties linkid="notification-hubs-how-to-guides-howto-notify-users-mobileservices" urlDisplayName="Notify Users" pageTitle="使用通知中心通知用户移动服务事件" metaKeywords="" description="遵循本教程来注册到通知中心以从移动服务接收通知" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="使用通知中心通知用户" authors="glenga" solutions="" manager="" editor="" />
+<tags ms.service="mobile-services,notification-hubs"
+    ms.date="10/25/2014"
+    wacn.date="04/11/2015"
+    />
 
 # <a name="getting-started"> </a>使用通知中心通知用户
 
@@ -258,12 +262,12 @@
   [更新移动服务以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
   [更新移动服务以发送通知]: #send-notifications
-  [Windows 应用商店 C#]: /zh-cn/manage/services/notification-hubs/getting-started-windows-dotnet
-  [iOS]: /zh-cn/manage/services/notification-hubs/get-started-notification-hubs-ios
-  [Android]: /zh-cn/manage/services/notification-hubs/get-started-notification-hubs-android
-  [1]: /zh-cn/develop/mobile/tutorials/get-started-with-users-dotnet/
-  [2]: /zh-cn/develop/mobile/tutorials/get-started-with-users-ios/
-  [3]: /zh-cn/develop/mobile/tutorials/get-started-with-users-android/
+  [Windows 应用商店 C#]: /manage/services/notification-hubs/getting-started-windows-dotnet
+  [iOS]: /manage/services/notification-hubs/get-started-notification-hubs-ios
+  [Android]: /manage/services/notification-hubs/get-started-notification-hubs-android
+  [1]: /develop/mobile/tutorials/get-started-with-users-dotnet/
+  [2]: /develop/mobile/tutorials/get-started-with-users-ios/
+  [3]: /develop/mobile/tutorials/get-started-with-users-android/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/notification-hubs-mobile-services-notify-users/notification-hub-select-hub-connection.png
   [4]: ./media/notification-hubs-mobile-services-notify-users/notification-hub-connection-strings.png
@@ -271,12 +275,12 @@
   [6]: ./media/notification-hubs-mobile-services-notify-users/mobile-custom-api-create.png
   [7]: ./media/notification-hubs-mobile-services-notify-users/mobile-custom-api-create2.png
   [8]: ./media/notification-hubs-mobile-services-notify-users/mobile-custom-api-select.png
-  [Windows 应用商店 C# 版本]: /zh-cn/manage/services/notification-hubs/register-users-mobile-services-dotnet
-  [iOS 版本]: /zh-cn/manage/services/notification-hubs/register-users-ios
+  [Windows 应用商店 C# 版本]: /manage/services/notification-hubs/register-users-mobile-services-dotnet
+  [iOS 版本]: /manage/services/notification-hubs/register-users-ios
   [9]: ./media/notification-hubs-mobile-services-notify-users/mobile-portal-data-tables.png
   [10]: ./media/notification-hubs-mobile-services-notify-users/mobile-insert-script-push2.png
   [使用通知中心向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
   [11]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [12]: /documentation/articles/notification-hubs-ios-send-breaking-news/
-  [13]: /zh-cn/manage/services/notification-hubs/notify-users-xplat-mobile-services
+  [13]: /manage/services/notification-hubs/notify-users-xplat-mobile-services
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

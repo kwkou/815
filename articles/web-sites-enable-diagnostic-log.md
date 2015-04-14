@@ -1,4 +1,8 @@
 <properties linkid="develop-net-common-tasks-diagnostics-logging-and-instrumentation" urlDisplayName="Enable diagnostic logging" pageTitle="启用诊断日志记录 - Azure 网站" metaKeywords="Azure diagnostics web sites, Azure Management Portal diagnostics, Azure diagnostics, web site diagnostics, web site debug" description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="启用 Azure 网站的诊断日志记录 " authors="larryfr" solutions="" manager="" editor="" />
+<tags ms.service="web-sites"
+    ms.date="03/24/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 启用 Azure 网站的诊断日志记录
 
@@ -363,7 +367,7 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
 -   [在 Visual Studio 中排除 Azure 网站的故障][在 Visual Studio 中排除 Azure 网站的故障]
 -   [在 HDInsight 中分析网站日志][在 HDInsight 中分析网站日志]
 
-  [在 Visual Studio 中排除 Azure 网站的故障]: /zh-cn/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
+  [在 Visual Studio 中排除 Azure 网站的故障]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [网站诊断是什么？]: #whatisdiag
   [如何：启用诊断]: #enablediag
   [如何：下载日志]: #download
@@ -379,6 +383,6 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
   [如何使用 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
   [在浏览器中查看的失败的请求]: ./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png
   [Log Parser]: http://go.microsoft.com/fwlink/?LinkId=246619
-  [如何监视网站]: /zh-cn/manage/services/web-sites/how-to-monitor-websites/
-  [教程 - 排除网站故障]: /zh-cn/develop/net/best-practices/troubleshooting-web-sites/
+  [如何监视网站]: /manage/services/web-sites/how-to-monitor-websites/
+  [教程 - 排除网站故障]: /develop/net/best-practices/troubleshooting-web-sites/
   [在 HDInsight 中分析网站日志]: http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413

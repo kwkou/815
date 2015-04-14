@@ -1,4 +1,8 @@
 <properties linkid="vm-optimization-assessment" urlDisplayName="虚拟机优化评估工具" pageTitle="虚拟机优化评估工具" metaKeywords="虚拟机优化评估工具" description="虚拟机优化评估工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="虚拟机优化评估工具" authors="ACom" solutions="" manager="" editor="Haifeng Liu" />
+<tags ms.service="downloads"
+    ms.date="11/22/2014"
+    wacn.date="04/11/2015"
+    />
 
 <div>
   <H1>虚拟机优化评估工具</H1>

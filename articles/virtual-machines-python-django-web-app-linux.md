@@ -1,4 +1,8 @@
-﻿<properties linkid="develop-python-web-app-with-django-mac" urlDisplayName="Web with Django" pageTitle="Python web 应用程序使用 Django 上 Mac-Azure 教程" metaKeywords="" description="本教程演示如何托管基于 Django 的网站在 Azure 上使用 Linux 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application (mac-linux)" authors="larryf" solutions="" manager="" editor="" />
+<properties linkid="develop-python-web-app-with-django-mac" urlDisplayName="Web with Django" pageTitle="Python web 应用程序使用 Django 上 Mac-Azure 教程" metaKeywords="" description="本教程演示如何托管基于 Django 的网站在 Azure 上使用 Linux 虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World Web Application (mac-linux)" authors="larryf" solutions="" manager="" editor="" />
+<tags ms.service="virtual-machines"
+    ms.date="02/05/2015"
+    wacn.date="04/11/2015"
+    />
 
 
 
@@ -6,7 +10,7 @@
 
 # Django Hello World Web 应用程序 (mac-linux)
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/zh-cn/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
+<div class="dev-center-tutorial-selector sublanding"><a href="/develop/python/tutorials/web-app-with-django/" title="Windows">Windows</a><a href="/develop/python/tutorials/django-hello-world-(maclinux)/" title="Mac/Linux" class="current">Mac/Linux</a></div>
 
 本教程介绍如何在 Windows 上的基于 Django 的网站中承载 
 Azure 中使用 Linux 虚拟机。本教程假定您之前未使用过 Azure。完成本指南，您将拥有基于 Django 的启动和应用程序在云中运行。
