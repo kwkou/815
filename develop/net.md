@@ -50,9 +50,4 @@ editor="Eric Chen" />
       </tr>
 </table>
 
-<<<<<<< HEAD
-###[虚拟机](/zh-cn/documentation/develop/net/virtual-macines/) | [网站](/zh-cn/documentation/develop/net/websites/) | [云服务](/zh-cn/documentation/develop/net/cloud-services/) | [移动](/zh-cn/documentation/develop/net/mobile/)    
-=======
-   
->>>>>>> origin/stage
     
