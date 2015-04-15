@@ -147,7 +147,7 @@
 =======
 <properties pageTitle="移动服务-iOS - Azure 微软云" metakeywords="" description="" services="" documentationCenter="iOS" authors="" manager="Tiffena" editor="EricChen"/>
   
-<tags ms.service="mobile-service" ms.date="03/04/2015" wacn.date="04/11/2015"/>
+<tags ms.service="mobile-service" ms.date="" wacn.date="04/11/2015"/>
 
 
 #iOS 开发人员中心
@@ -168,9 +168,9 @@
 
 - [通过移动分析深入了解应用程序](/documentation/articles/mobile-services-ios-get-started-mobile-analytics/)
 - [使用移动服务同步脱机数据](/documentation/articles/mobile-services-ios-get-started-offline-data/)
-- [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication/)
+<!--- [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication/)-->
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
--  [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push/)
+<!---  [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push/)-->
 - [通过媒体服务使用视频和音频流](/documentation/articles/media-services-use-ios-media-player-framework/)
 
 ##教程
@@ -178,8 +178,8 @@
 ###用户
 
 - [登录 Microsoft 帐户](/documentation/articles/mobile-services-ios-get-started-users/)
-- [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication/)
-- [代表用户访问 SharePoint](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)
+<!--- [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication/)-->
+<!--- [代表用户访问 SharePoint](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)-->
 
 查看服务：[Active Directory](https://github.com/AzureAD)
 
@@ -208,7 +208,7 @@
 ###分析
 
 - [通过移动分析深入了解应用程序](/documentation/articles/mobile-services-ios-get-started-mobile-analytics/)
-- [使用 New Relic 监视移动服务](/documentation/articles/store-new-relic-mobile-services-monitor/)
+<!--- [使用 New Relic 监视移动服务](/documentation/articles/store-new-relic-mobile-services-monitor/)-->
 
 查看服务：[Capptain](http://www.capptain.com/)
 
@@ -220,7 +220,7 @@
 
 ##资源
 
-- [iOS 参考查找针对客户端库和服务器脚本的文档](/develop/mobile/reference-ios/)
+<!--- [iOS 参考查找针对客户端库和服务器脚本的文档](/develop/mobile/reference-ios/)-->
 
 <!--
 - [iOS 示例了解丰富的可下载示例应用程序](/develop/mobile/ios-samples/)
