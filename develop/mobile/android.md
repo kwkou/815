@@ -122,7 +122,7 @@
 =======
 <properties pageTitle="移动服务-Android - Azure 微软云" metakeywords="" description="" services="" documentationCenter="Android" authors="" manager="Tiffena" editor="EricChen"/>
   
-<tags ms.service="mobile-service" ms.date="03/04/2015" wacn.date="04/11/2015"/>
+<tags ms.service="mobile-service" ms.date="" wacn.date="04/11/2015"/>
 
 
 
@@ -137,12 +137,12 @@
 向用户发送推送通知
 
 - [iOS 开发人员中心](/develop/mobile/ios)
-- [iOS 开发人员中心](/develop/mobile/ios)
+- [Windows 开发人员中心](/develop/mobile/windows)
 - [Xamarin 开发人员中心](/develop/mobile/xamarin)
 
 ##新功能
 
-- [使用 Active Directory 登录和访问资源](/documentation/articles/mobile-services-dotnet-backend-android-ad-authentication)
+<!--- [使用 Active Directory 登录和访问资源](/documentation/articles/mobile-services-dotnet-backend-android-ad-authentication)-->
 - [使用通知中心发送推送通知](/documentation/articles/notification-hubs-android-get-started/)
 - [移动服务用户入门](/documentation/articles/mobile-services-android-get-started-users/)
 
@@ -155,8 +155,8 @@
 ###用户
 
 - [登录 Microsoft 帐户](/documentation/articles/mobile-services-android-get-started-users/)
-- [使用 Active Directory 登录和访问资源](/documentation/articles/mobile-services-dotnet-backend-android-ad-authentication)
-- [代表用户访问 SharePoint](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)
+<!--- [使用 Active Directory 登录和访问资源](/documentation/articles/mobile-services-dotnet-backend-android-ad-authentication)-->
+<!--- [代表用户访问 SharePoint](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)-->
 
 查看服务：[Active Directory](https://github.com/AzureAD)
 
@@ -171,7 +171,7 @@
 ###推送
 
 - [使用通知中心发送推送通知](/documentation/articles/notification-hubs-android-get-started/)
-- [使用通知中心广播通知](/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/)
+<!--- [使用通知中心广播通知](/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news/)-->
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users/)
 
 查看服务： [通知中心](/documentation/services/notification-hubs/)
