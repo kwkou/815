@@ -1,3 +1,15 @@
+<properties 
+pageTitle="Windows Azure 开发人员中心：开源软件" 
+description="" 
+services="" 
+documentationCenter="Develop" 
+authors="" 
+manager="Tiffena" 
+editor="Eric Chen" />
+<tags ms.service=""
+    ms.date=""
+    wacn.date=""
+    />
 
 #开源软件 
 
@@ -226,38 +238,36 @@ SpringSource 是企业 Java 开发人员常用的一个编程模型和应用程�
 
 SLES (SUSE Linux Enterprise Server) 是由 Novell 开发的 Linux 发行版，它具有出色的稳定性。它是 Windows Azure 虚拟机支持的操作系统之一。
 
-<p><a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253781&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a> <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253813&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a></p>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253781&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a> <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253813&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
-###<a id="Symfony"></a>Symfony</h3>
+###<a id="Symfony"></a>Symfony
 
-<p>Symfony 是面向 PHP 开发人员的开源模型视图控制器 (MVC) Web 应用程序框架。它可与许多其他框架一起使用，并且它通常与 Doctrine 结合使用。</p>
+Symfony 是面向 PHP 开发人员的开源模型视图控制器 (MVC) Web 应用程序框架。它可与许多其他框架一起使用，并且它通常与 Doctrine 结合使用。
 
-<p><a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253312&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253814&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a></p>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253312&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253814&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
-###<a id="Tomcat"></a>Tomcat</h3>
+###<a id="Tomcat"></a>Tomcat
 
-<p>Tomcat 是 Java Servlet 和 JavaServer Pages 技术的开放源代码实现，可提供用于执行 JAVA 代码的 HTTP Web 服务器环境。</p>
+Tomcat 是 Java Servlet 和 JavaServer Pages 技术的开放源代码实现，可提供用于执行 JAVA 代码的 HTTP Web 服务器环境。
 
-<p><a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253313&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253815&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a></p>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253313&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253815&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
-###<a id="Ubuntu"></a>Ubuntu</h3>
+###<a id="Ubuntu"></a>Ubuntu
 
-<p>Ubuntu 是 Canonical Ltd. 赞助的基于 Debian 的开放源代码 Linux 发行版本。它受 Windows Azure 虚拟机支持。</p>
+Ubuntu 是 Canonical Ltd. 赞助的基于 Debian 的开放源代码 Linux 发行版本。它受 Windows Azure 虚拟机支持。
 
-<p><a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253314&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253816&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a></p>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253314&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253816&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
-###<a id="Umbraco"></a>Umbraco</h3>
+###<a id="Umbraco"></a>Umbraco
 
-<p>Umbraco 是使用 C# 编写的常用的开放源代码 CMS，它可通过 ASP.NET 母版页、XSLT 和C#/.NET 开发进行自定义。它可从 Windows Azure 网站库中立即进行安装。</p>
+Umbraco 是使用 C# 编写的常用的开放源代码 CMS，它可通过 ASP.NET 母版页、XSLT 和C#/.NET 开发进行自定义。它可从 Windows Azure 网站库中立即进行安装。
 
-<p><a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253315&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a></p>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253315&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
-###<a id="WordPress"></a>WordPress</h3>
+###<a id="WordPress"></a>WordPress
 
-<p>WordPress 是基于 PHP 和 MySQL 的受欢迎的开源博客创建平台和 CMS。它可从 Windows Azure 网站库中立即进行安装。</p>
+WordPress 是基于 PHP 和 MySQL 的受欢迎的开源博客创建平台和 CMS。它可从 Windows Azure 网站库中立即进行安装。
 
-<p><a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253316&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a></p>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253316&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
-<h1 class="_banner-h1">Windows Azure 开源软件</h1>
 
-</div>]]></headerText><forbidPublish>0</forbidPublish></umbTextpage></localize>
