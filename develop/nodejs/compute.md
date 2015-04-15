@@ -21,7 +21,7 @@
 <h3>是使用 Web 角色和辅助角色将逻辑分为多层的应用程序的理想之选</h3>
 <h3>教程：<a href="/documentation/articles/cloud-services-nodejs-develop-deploy-app/">创建和部署云服务</a></h3>
 <p>了解如何使用 Azure PowerShell cmdlet 创建 Node.js 应用程序，在 Azure 仿真程序中测试该应用程序，然后将其部署为 Azure 云服务。</p>
-<h3>如何：<a href="/documentation/articles/cloud-services-nodejs-stage-application/>暂存云服务</a></h3>
+<h3>如何：<a href="/documentation/articles/cloud-services-nodejs-stage-application/">暂存云服务</a></h3>
 <p>了解如何将新版应用程序暂存到 Azure 云服务，然后将其从暂存环境部署到生产环境。</p>
 <h3>如何：<a href="/documentation/articles/cloud-services-custom-domain-name/">为 Azure 云服务或存储帐户配置自定义域名</a></h3>
 <p>默认情况下，可以通过友好子域访问 Azure 应用程序和存储帐户，例如 http://&lt;myapp&gt;.chinacloudapp.cn 和 https://&lt;mydata&gt;.blob.core.chinacloudapi.cn. 本文演示如何在你自己的自定义域中公开你的应用程序和数据，例如 http://&lt;myapp&gt;.com。</p>

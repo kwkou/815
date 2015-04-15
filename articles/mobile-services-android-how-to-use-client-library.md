@@ -6,9 +6,9 @@
 
 # 如何使用适用于移动服务的 Android 客户端库
 
-<div class="dev-center-tutorial-selector sublanding"> 
-  <a href="/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/" title=".NET Framework">.NET Framework</a><a href="/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/" title="HTML/JavaScript">HTML/JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-ios-how-to-use-client-library/" title="iOS" class="current">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/" title="Xamarin">Xamarin</a>
-</div>
+ 
+<a href="/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/">.NET Framework</a><a href="/documentation/articles/mobile-services-html-how-to-use-client-library/">HTML/JavaScript</a><a href="/documentation/articles/mobile-services-ios-how-to-use-client-library/">iOS</a><a href="/documentation/articles/mobile-services-android-how-to-use-client-library/">Android</a><a href="/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/">Xamarin</a>
+
 
 本指南说明如何使用适用于 Azure 移动服务的 Android 客户端执行常见任务。所述的任务包括：查询数据；插入、更新和删除数据；对用户进行身份验证；处理错误；自定义客户端。如果你是第一次使用移动服务，最好先完成[移动服务快速入门][]。快速入门教程可帮助你配置帐户并创建第一个移动服务。
 
@@ -866,7 +866,7 @@
   [创建表]: http://go.microsoft.com/fwlink/p/?LinkId=298592
   [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
   [MobileServiceClient]: http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html
-  [gson]: %20http://go.microsoft.com/fwlink/p/?LinkId=290801
+  [gson]: http://go.microsoft.com/fwlink/p/?LinkId=290801
   [MobileServiceTable]: http://go.microsoft.com/fwlink/p/?LinkId=296835
   [第一个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296839
   [第二个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296840
