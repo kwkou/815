@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
-    ms.date="12/21/2014"
-    wacn.date="04/11/2015"
+    ms.date=""
+    wacn.date=""
     />
 
 #文档中心

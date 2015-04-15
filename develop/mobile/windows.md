@@ -1,6 +1,6 @@
 <properties pageTitle="移动服务-Windows - Azure 微软云" metakeywords="" description="" services="" documentationCenter="Windows" authors="" manager="Tiffena" editor="EricChen"/>
   
-<tags ms.service="mobile-service" ms.date="03/04/2015" wacn.date="04/11/2015"/>
+<tags ms.service="mobile-service" ms.date="" wacn.date="04/11/2015"/>
 
 
 
@@ -31,7 +31,7 @@
 
 - [登录 Microsoft 帐户](/documentation/articles/mobile-services-windows-phone-get-started-users/)
 - [使用 Active Directory 身份验证库登录](https://github.com/AzureADSamples/NativeClient-WindowsPhone8.1)
-- [代表用户访问 SharePoint](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)
+<!--- [代表用户访问 SharePoint](/documentation/articles/mobile-services-dotnet-backend-calling-sharepoint-on-behalf-of-user/)-->
 
 查看服务：[Active Directory](https://github.com/AzureAD)
 
@@ -65,6 +65,6 @@
 查看服务：[媒体服务](/develop/media-services/)
 
 ##资源
-- [Windows 参考查找针对客户端库和服务器脚本的文档](/develop/mobile/reference-wp8/)
-- [Windows 示例了解丰富的可下载示例应用程序](/develop/mobile/wp8-samples/)
+<!--- [Windows 参考查找针对客户端库和服务器脚本的文档](/develop/mobile/reference-wp8/)-->
+<!--- [Windows 示例了解丰富的可下载示例应用程序](/develop/mobile/wp8-samples/)-->
 - [论坛询问问题、分享见解和讨论平台](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)

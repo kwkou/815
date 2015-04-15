@@ -1,7 +1,7 @@
 <properties linkid="dev-net-storage" urlDisplayName="Windows Azure Storage" pageTitle="存储 - Azure 微软云" metaKeywords="Azure Storage,Azure存储,非结构化,非关系结构化数据,SMB文件共享,复制,身份验证,度量,日志记录,结构化数据, Azure Blob,访问签名,Azure 导入/导出服务,创建存储帐户,访问密钥" description="在 Windows Azure 中配置、监视和缩放存储帐户。使用 Azure 存储服务存储和访问数据。使用 Blob 存储非结构化的二进制和文本数据。使用队列存储客户端可访问的消息。将非关系结构化数据存储在表中。" metaCanonical="" services="Storage" documentationCenter="Services" title="Configure, monitor, and scale your storage account in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Storage"
-    ms.date="10/14/2014"
-    wacn.date="04/11/2015"
+    ms.date=""
+    wacn.date=""
     />
 
 #存储

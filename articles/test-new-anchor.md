@@ -7,11 +7,17 @@
 	manager="Tiffena" 
 	editor="Eric Chen"/>
 
-<<<<<<< HEAD
+<tags 
+	ms.service="active-directory" 
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="hero-article" 
+	ms.date=""
+	wacn.date="04/11/2015" 
+	ms.author="justinha"/>
 <tags ms.service="test" ms.date="03/12/2015" wacn.date="04/11/2015"/>
-=======
-<tags ms.service="test" ms.date="03/12/2015"/>
->>>>>>> d37ab7772e2b361eba54cbfedfae3ab79a91ebcf
+
 
 # Delivering Video-on-Demand with Media Services REST APIs 
 
@@ -25,7 +31,15 @@
 
 ##测试Learning Map
 
+
 <object type="image/svg+xml" data="https://wacn.blob.core.chinacloudapi.cn/documents/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
+</object>
+0000
+<object type="image/svg+xml" data="http://wacnstoragestaging.blob.core.chinacloudapi.cn/tech-content/articles/media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
+</object
+
+1111
+<object type="image/svg+xml" data="./media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
 
 >[AZURE.NOTE]
