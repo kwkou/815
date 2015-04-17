@@ -10,7 +10,7 @@
 ####快速链接
 
 -   [服务概述](/home/features/caching/)
--   [定价详细信息](/pricing/details/cdn/)
+-   [定价详细信息](/home/features/caching/#home_cdn_pri)
 
 ####特色
 
