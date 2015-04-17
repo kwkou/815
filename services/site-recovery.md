@@ -12,7 +12,7 @@
 ####快速链接
 -   [服务概述](/home/features/site-recovery/)
 -   [可交付的解决方案](/zh-cn/solutions/storage-backup-recovery/)
--   [**站点恢复**定价详细信息](/pricing/details/site-recovery/)
+-   [**站点恢复**定价详细信息](/home/features/site-recovery/#home_rec_pri)
   
 ####特色
 

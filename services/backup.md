@@ -12,8 +12,8 @@
 ####快速链接
 
 -   [服务概述](/home/features/back-up)
--   [可交付的解决方案](/zh-cn/solutions/storage-backup-recovery/)
--   [备份定价详细信息](/pricing/details/backup/)
+-   [可交付的解决方案](/solutions/storage-backup-recovery/)
+-   [备份定价详细信息](/home/features/back-up/#home_back_pri)
 
 ####特色
 

@@ -13,7 +13,7 @@
 ####快速链接
 -   [服务概述](/home/features/storage)
 -   [可交付的解决方案](/zh-cn/solutions/data-management/)
--   [定价详细信息](/zh-cn/pricing/details/storage/)
+-   [定价详细信息](/home/features/storage/#home_stor_pri)
 
 ####特色
 -   [Azure存储简介](/zh-cn/documentation/articles/storage-introduction/)

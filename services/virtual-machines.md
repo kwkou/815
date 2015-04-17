@@ -13,7 +13,7 @@
 ##快速链接
 
 -   [技术概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
--   [定价详细信息](/pricing/details/virtual-machines/)
+-   [定价详细信息](/home/features/virtual-machines/#home_virtual_pri)
 
 ##Azure VM 新手？
 

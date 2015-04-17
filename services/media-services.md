@@ -16,6 +16,8 @@ editor="Eric Chen" />
 
 ##快速链接
 
+- [服务概述](/home/features/media-services/)
+- [定价详细信息](/home/features/media-services/#home_media_pri)
 - [了解 SDK](/develop/media-services/developer-tools/)
 - [在论坛上获取帮助](https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs)
 

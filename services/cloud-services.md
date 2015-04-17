@@ -13,8 +13,7 @@
 ####快速链接
 
 -   [服务概述](/home/features/cloud-services/)
--   [可交付的解决方案](/solutions/web/)
--   [定价信息](/pricing/details/cloud-services/)
+-   [定价信息](/home/features/cloud-services/#home_cloud_pri)
 
 ####特色
 

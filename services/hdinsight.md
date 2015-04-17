@@ -15,7 +15,7 @@
 
 -   [服务概述](/home/features/hdinsight/)
 -   [可交付的解决方案](/solutions/data-management/)
--   [定价详细信息](/pricing/details/hdinsight/)
+-   [定价详细信息](/home/features/hdinsight/#home_hdinsight_pri)
 
 ####特色
 

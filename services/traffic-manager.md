@@ -16,6 +16,7 @@
 ####快速链接
 
 -   [服务概述](/home/features/traffic-manager/)
+-   [定价详细信息](/home/features/traffic-manager/#home_traf_pri)
 
 
 ####特色

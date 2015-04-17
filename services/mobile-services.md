@@ -16,6 +16,12 @@
 -   访问本地系统、Office 365 和 SharePoint
 -   使用基于云的同步构建可以脱机运行的应用程序
 
+####快速链接
+
+-   [服务概述](/home/features/mobile-services/)
+-   [可交付的解决方案](/solutions/mobile/)
+-   [定价详细信息](/home/features/mobile-services/#home_mobile_pri)
+
 ####创建您的第一个移动服务
 
 -   [iOS 入门教程][iOS getstarted]

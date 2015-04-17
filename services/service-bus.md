@@ -11,7 +11,7 @@
 
 ####快速链接
 -   [服务概述](/home/features/messaging/)
--   [定价详细信息](/pricing/details/service-bus/)
+-   [定价详细信息](/home/features/messaging/#home_message_pri)
      
 ##教程和指南
 
