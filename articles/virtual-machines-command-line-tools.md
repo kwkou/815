@@ -1,59 +1,57 @@
 <properties
-	pageTitle="������ Mac �� Linux �� Azure �����й���"
-	description="�˽������ Azure ��ʹ�������� Mac �� Linux �������й��ߡ�"
+	pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具"
+	description="了解如何在 Azure 中使用适用于 Mac 和 Linux 的命令行工具。"
 	services="web-sites, virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"
 	editor="tysonn"/>
-<tags ms.service="web-sites, virtual-machines, mobile-services, cloud-services"
-    ms.date="03/10/2015"
-    wacn.date="04/15/2015"
-    />
 
-# ������ Mac �� Linux �� Azure �����й���
+<tags ms.service="virtual-machines" ms.date="03/10/2015" wacn.date="04/15/2015"/>
 
-�˹����ṩ�����ڴ� Mac �� Linux ���洴��������͹���������Ĺ��ܡ��˹��������������� .NET��Node.JS �� PHP �� Azure SDK һ��װ�� Windows PowerShell cmdlet ���ṩ�Ĺ��ܡ�
+# 适用于 Mac 和 Linux 的 Azure 命令行工具
 
-��Ҫ�� Mac �ϰ�װ�ù��ߣ������ز����� [Azure SDK ��װ����](http://az412849.vo.msecnd.net/downloads04/azure-cli.0.8.17.dmg)��
+此工具提供了用于从 Mac 和 Linux 桌面创建、部署和管理虚拟机的功能。此功能类似于随面向 .NET、Node.JS 和 PHP 的 Azure SDK 一起安装的 Windows PowerShell cmdlet 所提供的功能。
 
-��Ҫ�� Linux �ϰ�װ�ù��ߣ��밲װ���°汾�� Node.JS��Ȼ��ʹ�� NPM ���а�װ��
+若要在 Mac 上安装该工具，请下载并运行 [Azure SDK 安装程序](http://go.microsoft.com/fwlink/?LinkId=252249)。
+
+若要在 Linux 上安装该工具，请安装最新版本的 Node.JS，然后使用 NPM 进行安装：
 
     npm install azure-cli -g
 
-��ѡ������ʾ�ڷ������У����磬[����]�����������в������Ǳ���ġ�
+可选参数显示在方括号中（例如，[参数]）。其他所有参数都是必需的。
 
-���˴˴���¼���ض�������Ŀ�ѡ�����⣬����������������ʾ��ϸ�������������ѡ���״̬���룩�Ŀ�ѡ������-v �����ṩ��ϸ������� -vv �����ṩ����ϸ�������--json ѡ���ԭʼ�� json ��ʽ��������
+除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。-v 参数提供详细输出，而 -vv 参数提供更详细的输出。--json 选项将以原始的 json 格式输出结果。
 
-**Ŀ¼��**
+**目录：**
 
-* [�����ʻ���Ϣ�ͷ�������](#Manage_your_account_information_and_publish_settings)
-* [���ڹ��� Azure �����������](#Commands_to_manage_your_Azure_virtual_machines)
-* [���ڹ��� Azure ������ս�������](#Commands_to_manage_your_Azure_virtual_machine_endpoints)
-* [���ڹ��� Azure �����ӳ�������](#Commands_to_manage_your_Azure_virtual_machine_images)
-* [���ڹ��� Azure ��������ݴ��̵�����](#Commands_to_manage_your_Azure_virtual_machine_data_disks)
-* [���ڹ��� Azure �Ʒ��������](#Commands_to_manage_your_Azure_cloud_services)
-* [���ڹ��� Azure ֤�������](#Commands_to_manage_your_Azure_certificates)
-* [���ڹ�����վ������](#Commands_to_manage_your_web_sites)
-* [���ڹ��� Azure �ƶ����������](#Commands_to_manage_mobile_services)
-* [������߱�������](#Manage_tool_local_settings)
-* [���ڹ��� Service Bus ������](#Commands_to_manage_service_bus)
-* [���ڹ���洢���������](#Commands_to_manage_your_Storage_objects)
-* [���ڹ��� SQL ���ݿ������](#Commands_to_manage_sql)
-* [���ڹ����������������](#Commands_to_manage_vnet)
+* [管理帐户信息和发布设置](#Manage_your_account_information_and_publish_settings)
+* [用于管理 Azure 虚拟机的命令](#Commands_to_manage_your_Azure_virtual_machines)
+* [用于管理 Azure 虚拟机终结点的命令](#Commands_to_manage_your_Azure_virtual_machine_endpoints)
+* [用于管理 Azure 虚拟机映像的命令](#Commands_to_manage_your_Azure_virtual_machine_images)
+* [用于管理 Azure 虚拟机数据磁盘的命令](#Commands_to_manage_your_Azure_virtual_machine_data_disks)
+* [用于管理 Azure 云服务的命令](#Commands_to_manage_your_Azure_cloud_services)
+* [用于管理 Azure 证书的命令](#Commands_to_manage_your_Azure_certificates)
+* [用于管理网站的命令](#Commands_to_manage_your_web_sites)
+* [用于管理 Azure 移动服务的命令](#Commands_to_manage_mobile_services)
+* [管理工具本地设置](#Manage_tool_local_settings)
+* [用于管理 Service Bus 的命令](#Commands_to_manage_service_bus)
+* [用于管理存储对象的命令](#Commands_to_manage_your_Storage_objects)
+* [用于管理 SQL 数据库的命令](#Commands_to_manage_sql)
+* [用于管理虚拟网络的命令](#Commands_to_manage_vnet)
 
-## <a name="Manage_your_account_information_and_publish_settings"></a>�����ʻ���Ϣ�ͷ�������
-�ù���ʹ����� Azure ������Ϣ���ӵ�����ʻ������Դ� Azure �Ż��еķ��������ļ��л�ȡ����Ϣ���������������Ե��뷢�������ļ���Ϊ�����Ա����������ã��ù��߻Ὣ���������ں�����������ֻ�赼����ķ�������һ�Ρ�
+## <a name="Manage_your_account_information_and_publish_settings"></a>管理帐户信息和发布设置
+该工具使用你的 Azure 订阅信息连接到你的帐户。可以从 Azure 门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，该工具会将此设置用于后续操作。你只需导入你的发布设置一次。
 
 **account download [options]** 
 
-������������ <a href="https://manage.windowsazure.cn/publishsettings/index?client=xplat">https://manage.windowsazure.cn/publishsettings</a>
-���������ص��ļ���
+将浏览器启动到 <a href="http://go.microsoft.com/fwlink/?LinkID=301774">https://manage.windowsazure.cn/publishsettings</a>
+保存所下载的文件。
 
 **account import [options] &lt;file>**
 
 
-������� publishsettings �ļ���֤���Ա��պ���Թ��ù���ʹ�á�
+此命令导入 publishsettings 文件或证书以便日后可以供该工具使用。
 
 	~$ azure account import publishsettings.publishsettings
 	info:   Importing publish settings file publishsettings.publishsettings
@@ -64,12 +62,12 @@
 	warn:   Remember to delete it now that it has been imported.
 	info:   Account publish settings imported successfully
 
-> [AZURE.NOTE] publishsettings �ļ����԰����йض�����ĵ���ϸ��Ϣ�������������ƺ� ID�������㵼�� publishsettings �ļ�ʱ����һ�����Ľ�����Ĭ�϶��ġ���Ҫʹ���������ģ��������������
+> [AZURE.NOTE] publishsettings 文件可以包含有关多个订阅的详细信息（即，订阅名称和 ID）。当你导入 publishsettings 文件时，第一个订阅将用作默认订阅。若要使用其他订阅，请运行以下命令。
 <code>~$ azure config set subscription &lt;other-subscription-id&gt;</code>
 
 **account clear [options]**
 
-������ɾ��������Ѵ洢�������á�������ڴ˼������ʹ����ù��ߣ�����ϣ��ȷ���պ���ͨ������ʻ�ʹ�øù��ߣ���ʹ�ô����
+此命令删除导入的已存储发布设置。如果你在此计算机上使用完该工具，并且希望确保日后不能通过你的帐户使用该工具，则使用此命令。
 
 	~$ azure account clear
 	Clearing account info.
@@ -77,7 +75,7 @@
 
 **account list [options]**
 
-�г�����Ķ���
+列出导入的订阅
 
 	~$ azure account list
 	info:    Executing command account list
@@ -91,15 +89,15 @@
 
 **account set [options] &lt;subscription&gt;**
 
-���õ�ǰ����
+设置当前订阅
 
-### ���ڹ����Ե�������
+### 用于管理地缘组的命令
 
 **account affinity-group list [options]**
 
-�������г���� Azure ��Ե�顣
+此命令列出你的 Azure 地缘组。
 
-������һ���������Խ��̨��������ʱ���õ�Ե�顣��Ե��ָ����������Ӧ�����ܱ˴˽ӽ����Ӷ����������ӳ١�
+可以在一组虚拟机跨越多台物理计算机时设置地缘组。地缘组指定物理计算机应尽可能彼此接近，从而减少网络延迟。
 
 	~$ azure account affinity-group list
 	+ Fetching affinity groups
@@ -110,7 +108,7 @@
 
 **account affinity-group create [options] &lt;name&gt;**
 
-��������µĵ�Ե��
+此命令创建新的地缘组
 
 	~$ azure account affinity-group create opentec -l "China North"
 	info:    Executing command account affinity-group create
@@ -119,7 +117,7 @@
 
 **account affinity-group show [options] &lt;name&gt;**
 
-��������ʾ��Ե�����ϸ��Ϣ
+此命令显示地缘组的详细信息
 
 	~$ azure account affinity-group show opentec
 	info:    Executing command account affinity-group show
@@ -138,7 +136,7 @@
 
 **account affinity-group delete [options] &lt;name&gt;**
 
-������ɾ��ָ���ĵ�Ե��
+此命令删除指定的地缘组
 
 	~$ azure account affinity-group delete opentec
 	info:    Executing command account affinity-group delete
@@ -146,11 +144,11 @@
 	+ Deleting affinity group
 	info:    account affinity-group delete command OK
 
-### ���ڹ����ʻ�����������
+### 用于管理帐户环境的命令
 
 **account env list [options]**
 
-�ʻ������б�
+帐户环境列表
 
 	C:\windows\system32>azure account env list
 	info:    Executing command account env list
@@ -162,7 +160,7 @@
 
 **account env show [options] [environment]**
 
-��ʾ�ʻ�������ϸ��Ϣ
+显示帐户环境详细信息
 
 	~$ azure account env show AzureChinaCloud
 	info:    Executing command account env show
@@ -173,8 +171,8 @@
 	data:    galleryEndpointUrl:
 	data:    isPublicEnvironment:        true
 	data:    managementEndpointUrl:      https://management.core.chinacloudapi.cn
-	data:    portalUrl:                  https://manage.windowsazure.cn/
-	data:    publishingProfileUrl:       https://manage.windowsazure.cn/publishsettings/index?client=xplat
+	data:    portalUrl:                  http://go.microsoft.com/fwlink/?LinkId=301902
+	data:    publishingProfileUrl:       http://go.microsoft.com/fwlink/?LinkID=301774
 	data:    resourceManagerEndpointUrl:
 	data:    sqlManagementEndpointUrl:
 	data:    sqlServerHostnameSuffix:    .database.chinacloudapi.cn
@@ -182,55 +180,55 @@
 
 **account env add [options] [environment]**
 
-�����һ��������ӵ��ʻ�
+此命令将一个环境添加到帐户
 
 **account env set [options] [environment]**
 
-�����������ʻ�����
+此命令设置帐户环境
 
 **account env delete [options] [environment]**
 
-��������ʻ���ɾ��ָ���Ļ���
+此命令从帐户中删除指定的环境
 
-## <a name="Commands_to_manage_your_Azure_virtual_machines"></a>���ڹ��� Azure �����������
-��ͼ��ʾ������� Azure �Ʒ�����������𻷾����й� Azure �������
+## <a name="Commands_to_manage_your_Azure_virtual_machines"></a>用于管理 Azure 虚拟机的命令
+下图显示了如何在 Azure 云服务的生产部署环境中托管 Azure 虚拟机。
 
 ![Azure Technical Diagram](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
 
-**create-new** �� Blob �洢�д���������������ͼ�е� e:\����**attach** �Ὣ�Ѵ�����δ���ӵĴ��̸��ӵ��������
+**create-new** 在 Blob 存储中创建驱动器（即，图中的 e:\）；**attach** 会将已创建但未附加的磁盘附加到虚拟机。
 
 **vm create [options] &lt;dns-name> &lt;image> &lt;userName> [password]**
 
-��������µ� Azure �������Ĭ������£���������ÿ̨����� (vm) ��λ�����Լ����Ʒ����У����ǣ������ʹ�ô˴��ἰ�� -c ѡ��ָ�����������ӵ������Ʒ����С�
+此命令创建新的 Azure 虚拟机。默认情况下，所创建的每台虚拟机 (vm) 都位于其自己的云服务中；但是，你可以使用此处提及的 -c 选项指定将虚拟机添加到现有云服务中。
 
-vm create ������ Azure �Ż�һ����ֻ�����������𻷾��д����������Ŀǰû���������Ʒ���Ĺ��ɲ��𻷾��д����������ѡ������Ķ���û�����е� Azure �洢�ʻ������������һ����
+vm create 命令与 Azure 门户一样，只会在生产部署环境中创建虚拟机。目前没有用于在云服务的过渡部署环境中创建虚拟机的选项。如果你的订阅没有现有的 Azure 存储帐户，此命令将创建一个。
 
-�����ͨ�� --location ����ָ��λ�ã�Ҳ����ͨ�� --affinity-group ����ָ����Ե�顣��������������κ�һ����û���ṩ��ϵͳ����ʾ�����Чλ���б����ṩһ����
+你可以通过 --location 参数指定位置，也可以通过 --affinity-group 参数指定地缘组。如果这两个参数任何一个都没有提供，系统将提示你从有效位置列表中提供一个。
 
-���ṩ����ĳ��ȱ���Ϊ 8-123 ���ַ�������������Ҫ���ڴ�������Ĳ���ϵͳ�����븴�Ӷ�Ҫ��
+所提供密码的长度必须为 8-123 个字符，并且满足你要用于此虚拟机的操作系统的密码复杂度要求。
 
-�����Ԥ����Ҫʹ�� SSH ���������� Linux �������ͨ��������ˣ���������ڴ��������ʱͨ�� -e ѡ������ SSH���ڴ�������������޷����� SSH��
+如果你预计需要使用 SSH 来管理部署的 Linux 虚拟机（通常都是如此），则必须在创建虚拟机时通过 -e 选项启用 SSH。在创建该虚拟机后无法启用 SSH。
 
-Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս�������� RDP��
+Windows 虚拟机以后可以通过添加端口 3389 作为终结点来启用 RDP。
 
-������֧�����¿�ѡ������
+此命令支持以下可选参数：
 
-**-c, --connect** ���йܷ������Ѵ����Ĳ����д�������������δ�� -vmname ���ѡ��һ��ʹ�ã����Զ�����������������ơ�<br />
-**-n, --vm-name** ָ������������ơ�Ĭ������£��˲��������йܷ������ơ����δָ�� -vmname�������� &lt;service-name>&lt;id> ��ʽ������������ƣ����� &lt;id> �Ƿ������������������������ 1�����磬�����ʹ�ô�������ӵ��һ̨������������йܷ��� MyService �����һ̨�����������Ὣ�����������Ϊ MyService2��<br />
-**-u, --blob-url** ָ�����д��������ϵͳ���̵�Ŀ�� Blob �洢 URL��
-<br>**-z, --vm-size** ָ��������Ĵ�С����ЧΪ"extrasmall"��"small"��"medium"��"large"��"extralarge"��Ĭ��ֵΪ "small"��
-**-r** ����� Windows ������� RDP ���ӡ�
-<br>**-e, --ssh** ����� Windows ������� SSH ���ӡ�
-<br>**-t, --ssh-cert** ָ�� SSH ֤�顣
-<br>**-s** ����
-<br>**-o, --community** ָ����ӳ����һ������ӳ��
-**-w** ������������ <br/>
-**-l, --location** ָ��λ�ã����� "North Central US"����
-<br>**-a, --affinity-group** ָ����Ե�顣<br />
-**-w, --virtual-network-name** ָ��Ҫ�������������������������硣�ɴ� Azure �Ż����ú͹����������硣<br />
-**-b, --subnet-names** ָ��Ҫ������������������ơ�
+**-c, --connect** 在托管服务中已创建的部署中创建虚拟机。如果未将 -vmname 与此选项一起使用，则将自动生成新虚拟机的名称。<br />
+**-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一台现有虚拟机的托管服务 MyService 中添加一台新虚拟机，则会将新虚拟机命名为 MyService2。<br />
+**-u, --blob-url** 指定从中创建虚拟机系统磁盘的目标 Blob 存储 URL。
+<br>**-z, --vm-size** 指定虚拟机的大小。有效为"extrasmall"、"small"、"medium"、"large"、"extralarge"。默认值为 "small"。
+**-r** 添加与 Windows 虚拟机的 RDP 连接。
+<br>**-e, --ssh** 添加与 Windows 虚拟机的 SSH 连接。
+<br>**-t, --ssh-cert** 指定 SSH 证书。
+<br>**-s** 订阅
+<br>**-o, --community** 指定的映像是一个社区映像
+**-w** 虚拟网络名称 <br/>
+**-l, --location** 指定位置（例如 "North Central US"）。
+<br>**-a, --affinity-group** 指定地缘组。<br />
+**-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br />
+**-b, --subnet-names** 指定要分配虚拟机的子网名称。
 
-�ڴ�ʾ���У�55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd ����ƽ̨�ṩ��һ��ӳ���йز���ϵͳӳ�����ϸ��Ϣ������� VM ӳ���б��
+在此示例中，55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd 是由平台提供的一个映像。有关操作系统映像的详细信息，请参阅 VM 映像列表。
 
 	~$ azure vm create my-vm-name 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd username --location "China North" -r
 	info:   Executing command vm create
@@ -239,14 +237,14 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm create-from &lt;dns-name> &lt;role-file>**
 
-������� JSON ��ɫ�ļ������µ� Azure �������
+此命令从 JSON 角色文件创建新的 Azure 虚拟机。
 
 	~$ azure vm create-from my-vm example.json
 	info:   OK
 
 **vm list [options]**
 
-�������г� Azure �������-json ѡ��ָ����ԭʼ JSON ��ʽ���ؽ����
+此命令列出 Azure 虚拟机。-json 选项指定以原始 JSON 格式返回结果。
 
 	~$ azure vm list
 	info:   Executing command vm list
@@ -258,7 +256,7 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm location list [options]**
 
-�������г����п��õ� Azure �ʻ�λ�á�
+此命令列出所有可用的 Azure 帐户位置。
 
 	~$ azure vm location list
 	info:    Executing command vm location list
@@ -270,7 +268,7 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm show [options] &lt;name>**
 
-��������ʾ�й� Azure ���������ϸ��Ϣ��--json ѡ��ָ����ԭʼ JSON ��ʽ���ؽ����
+此命令显示有关 Azure 虚拟机的详细信息。--json 选项指定以原始 JSON 格式返回结果。
 
 	~$ azure vm show my-vm
 	info:   Executing command vm show
@@ -300,7 +298,7 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm delete [options] &lt;name>**
 
-������ɾ�� Azure �������Ĭ������£������ɾ�����д�������ϵͳ���̺����ݴ��̵� Azure Blob����Ҫɾ���� Blob �Լ���Ϊ����������������ָ�� -b ѡ�
+此命令删除 Azure 虚拟机。默认情况下，此命令不删除从中创建操作系统磁盘和数据磁盘的 Azure Blob。若要删除该 Blob 以及作为其基础的虚拟机，请指定 -b 选项。
 
 	~$ azure vm delete my-vm
 	info:   Executing command vm delete
@@ -308,7 +306,7 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm start [options] &lt;name>**
 
-��������� Azure �������
+此命令启动 Azure 虚拟机。
 
 	~$ azure vm start my-vm
 	info:   Executing command vm start
@@ -316,7 +314,7 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm restart [options] &lt;name>**
 
-������������� Azure �������
+此命令重新启动 Azure 虚拟机。
 
 	~$ azure vm restart my-vm
 	info:   Executing command vm restart
@@ -324,7 +322,7 @@ Windows ������Ժ����ͨ����Ӷ˿� 3389 ��Ϊ�ս
 
 **vm shutdown [options] &lt;name>**
 
-������ر� Azure �����������ʹ�� -p ѡ��ָ���ڹر�ʱ���ͷż�����Դ��
+此命令关闭 Azure 虚拟机。可以使用 -p 选项指定在关闭时不释放计算资源。
 
 ```
 ~$ azure vm shutdown my-vm
@@ -334,9 +332,9 @@ info:   vm shutdown command OK
 
 **vm capture &lt;vm-name> &lt;target-image-name>**
 
-������� Azure �����ӳ��
+此命令捕获 Azure 虚拟机映像。
 
-ֻ�е������״̬Ϊ**��ֹͣ**ʱ�����ܲ��������ӳ����ر��������Ȼ���ټ���������
+只有当虚拟机状态为**已停止**时，才能捕获虚拟机映像。请关闭虚拟机，然后再继续操作。
 
 	~$ azure.cmd vm capture my-vm mycaptureimagename --delete
 	info:   Executing command vm capture
@@ -346,7 +344,7 @@ info:   vm shutdown command OK
 
 **vm export [options] &lt;vm-name> &lt;file-path>**
 
-�����һ�� Azure �����ӳ�񵼳����ļ�
+此命令将一个 Azure 虚拟机映像导出到文件
 
 	~$ azure vm export "myvm" "C:\"
 	info:    Executing command vm export
@@ -354,16 +352,16 @@ info:   vm shutdown command OK
 	+ Exporting the VM
 	info:   vm export command OK
 
-## <a name="Commands_to_manage_your_Azure_virtual_machine_endpoints"></a>���ڹ��� Azure ������ս�������
-��ͼ��ʾ�˰�����������ʵ���ĵ��Ͳ������ϵ�ṹ����ע�⣬�ڴ�ʾ���У��˿� 3389 ��ÿ̨������Ͼ�Ϊ��״̬�����ڽ��� RDP ���ʣ������Ҹ���ƽ�������ڽ�����·�ɵ��������ÿ̨������ϻ���һ���ڲ� IP ��ַ������ 168.55.11.1�������ڲ� IP ��ַҲ�����������֮���ͨ�š�
+## <a name="Commands_to_manage_your_Azure_virtual_machine_endpoints"></a>用于管理 Azure 虚拟机终结点的命令
+下图显示了包含多个虚拟机实例的典型部署的体系结构。请注意，在此示例中，端口 3389 在每台虚拟机上均为打开状态（用于进行 RDP 访问），并且负载平衡器用于将流量路由到虚拟机的每台虚拟机上还有一个内部 IP 地址（例如 168.55.11.1）。此内部 IP 地址也可用于虚拟机之间的通信。
 
 ![azurenetworkdiagram](./media/virtual-machines-command-line-tools/networkdiagram.jpg)
 
-����������ⲿ����ͨ������ƽ��������ˣ�������԰�����̨������Ĳ����е��ض������ָ�����󡣶��ڰ�����̨������Ĳ��𣬱���������� (vm-port) �븺��ƽ���� (lb-port) ֮�����ö˿�ӳ�䡣
+到虚拟机的外部请求将通过负载平衡器。因此，不能针对包含多台虚拟机的部署中的特定虚拟机指定请求。对于包含多台虚拟机的部署，必须在虚拟机 (vm-port) 与负载平衡器 (lb-port) 之间配置端口映射。
 
 **vm endpoint create &lt;vm-name> &lt;lb-port> [vm-port]**
 
-�������������ս�㡣�㻹����ʹ�� -u �� --enable-direct-server-return ��ָ���Ƿ��ڴ��ս��������ֱ�ӷ��������أ�Ĭ�������Ϊ���á�
+此命令创建虚拟机终结点。你还可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下为禁用。
 
 	~$ azure vm endpoint create my-vm 8888 8888
 	azure vm endpoint create my-vm 8888 8888
@@ -375,11 +373,11 @@ info:   vm shutdown command OK
 
 **vm endpoint create-multiple [options] &lt;vm-name> &lt;lb-port>[:&lt;vm-port>[:&lt;protocol>[:&lt;lb-set-name>[:&lt;prob-protocol>:&lt;lb-prob-port>[:&lt;prob-path>]]]]] ]{1-*}**
 
-������� VM �ս�㡣�㻹����ʹ�� -u �� --enable-direct-server-return ��ָ���Ƿ��ڴ��ս��������ֱ�ӷ��������أ�Ĭ�������Ϊ���á�
+创建多个 VM 终结点。你还可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下为禁用。
 
 **vm endpoint delete &lt;vm-name> &lt;lb-port>**
 
-������ɾ��������ս�㡣
+此命令删除虚拟机终结点。
 
 	~$ azure vm endpoint delete my-vm 8888
 	azure vm endpoint delete my-vm 8888
@@ -391,7 +389,7 @@ info:   vm shutdown command OK
 
 **vm endpoint list &lt;vm-name>**
 
-�������г�����������ս�㡣-json ѡ��ָ����ԭʼ JSON ��ʽ���ؽ����
+此命令列出所有虚拟机终结点。-json 选项指定以原始 JSON 格式返回结果。
 
 	~$ azure vm endpoint list my-linux-vm
 	data:   Name  External Port  Local Port
@@ -400,7 +398,7 @@ info:   vm shutdown command OK
 
 **vm endpoint update [options] &lt;vm-name> &lt;endpoint-name>**
 
-������ʹ����Щѡ� VM �ս�����Ϊ��ֵ��
+此命令使用这些选项将 VM 终结点更新为新值。
 
     -n, --endpoint-name <name>          the new endpoint name
     -lo, --lb-port <port>                the new load balancer port
@@ -409,7 +407,7 @@ info:   vm shutdown command OK
 
 **vm endpoint show [options] &lt;vm-name>**
 
-��������ʾ VM ���ս�����ϸ��Ϣ
+此命令显示 VM 上终结点的详细信息
 
 	~$ azure vm endpoint show "mycouchvm"
 	info:    Executing command vm endpoint show
@@ -433,14 +431,14 @@ info:   vm shutdown command OK
 	data:    Network Endpoints 2 Vip "168.61.9.97"
 	info:    vm endpoint show command OK
 
-## <a name="Commands_to_manage_your_Azure_virtual_machine_images"></a>���ڹ��� Azure �����ӳ�������
+## <a name="Commands_to_manage_your_Azure_virtual_machine_images"></a>用于管理 Azure 虚拟机映像的命令
 
-�����ӳ����������ġ��ɸ�����Ҫ���и��Ƶ��������������
+虚拟机映像是所捕获的、可根据需要进行复制的已配置虚拟机。
 
 **vm image list [options]**
 
-�������ȡ�����ӳ����б�����������͵�ӳ��Microsoft ������ӳ����"MSFT"��Ϊǰ׺����������������ӳ��ͨ���Թ�Ӧ�̵�������Ϊǰ׺���Լ��㴴����ӳ����Ҫ����ӳ������Բ������������������ص� Blob �洢���Զ��� .vhd ����ӳ���й�ʹ���Զ��� .vhd ����ϸ��Ϣ������� vm image create��
--json ѡ��ָ����ԭʼ JSON ��ʽ���ؽ����
+此命令获取虚拟机映像的列表。有三种类型的映像：Microsoft 创建的映像（以"MSFT"作为前缀）、第三方创建的映像（通常以供应商的名称作为前缀）以及你创建的映像。若要创建映像，你可以捕获现有虚拟机或从上载到 Blob 存储的自定义 .vhd 创建映像。有关使用自定义 .vhd 的详细信息，请参阅 vm image create。
+-json 选项指定以原始 JSON 格式返回结果。
 
 	~$ azure vm image list
 	data:   Name                                                                   Category   OS
@@ -459,7 +457,7 @@ info:   vm shutdown command OK
 
 **vm image show [options] &lt;name>**
 
-��������ʾ�����ӳ�����ϸ��Ϣ��
+此命令显示虚拟机映像的详细信息。
 
 	~$ azure vm image show 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd 
 	+ Fetching VM image
@@ -480,7 +478,7 @@ info:   vm shutdown command OK
 
 **vm image delete [options] &lt;name>**
 
-������ɾ�������ӳ��
+此命令删除虚拟机映像。
 
 	~$ azure vm image delete my-vm-image
 	info:   Executing command vm image delete
@@ -489,9 +487,9 @@ info:   vm shutdown command OK
 
 **vm image create &lt;name> [source-path]**
 
-������������ӳ������Զ��� .vhd �ļ������ص� Blob �洢��Ȼ��Ӹ�λ�ô��������ӳ��Ȼ���ʹ�ô������ӳ�񴴽��������Location �� OS �����Ǳ���ġ�
+此命令创建虚拟机映像。你的自定义 .vhd 文件将上载到 Blob 存储，然后从该位置创建虚拟机映像。然后可使用此虚拟机映像创建虚拟机。Location 和 OS 参数是必需的。
 
-ĳЩϵͳ��ʩ��ÿ�����ļ����������ơ�������������ƣ����߽���ʾ�ļ����������ƴ��������ʹ�� -p &lt;number> �����ٴ����д�����Լ�С�������������Ĭ�ϵ������������Ϊ 96��
+某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上载数。默认的最大并行上载数为 96。
 
 	~$ azure vm image create mytestimage ./Sample.vhd -o windows -l "China North"
 	info:   Executing command vm image create
@@ -502,19 +500,19 @@ info:   vm shutdown command OK
 	info:   http://myaccount.blob.core.chinacloudapi.cn/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
-## <a name="Commands_to_manage_your_Azure_virtual_machine_data_disks"></a>���ڹ��� Azure ��������ݴ��̵�����
+## <a name="Commands_to_manage_your_Azure_virtual_machine_data_disks"></a>用于管理 Azure 虚拟机数据磁盘的命令
 
-���ݴ����� Blob �洢�пɹ������ʹ�õ� .vhd �ļ����й���ν����ݴ��̲��� Blob �洢����ϸ��Ϣ�������ǰ����ʾ�� Azure ����ͼ���
+数据磁盘是 Blob 存储中可供虚拟机使用的 .vhd 文件。有关如何将数据磁盘部署到 Blob 存储的详细信息，请参阅前面所示的 Azure 技术图表。
 
-���ڸ������ݴ��̵����azure vm disk attach �� azure vm disk attach-new������� SCSI Э���Ҫ���򸽼ӵ����ݴ��̷����߼���Ԫ�� (LUN)�����򸽼ӵ�������ĵ�һ�����ݴ��̷��� LUN 0������һ������ LUN 1���������ơ�
+用于附加数据磁盘的命令（azure vm disk attach 和 azure vm disk attach-new）会根据 SCSI 协议的要求向附加的数据磁盘分配逻辑单元号 (LUN)。将向附加到虚拟机的第一个数据磁盘分配 LUN 0，向下一个分配 LUN 1，依此类推。
 
-��ʹ�� azure vm disk detach ����������ݴ���ʱ����ʹ�� &lt;lun&gt; ����ָ��Ҫ����Ĵ��̡�
+当使用 azure vm disk detach 命令分离数据磁盘时，请使用 &lt;lun&gt; 参数指明要分离的磁盘。
 
-> [AZURE>NOTE] ��ע�⣬Ӧʼ�հ��෴��˳��������ݴ��̣��������ѷ���ı����ߵ� LUN ��ʼ��Linux SCSI �㲻֧�����Ը����б�Žϸߵ� LUN ʱ�����Žϵ͵� LUN�����磬��Ӧ���Ը����� LUN 1 ������·��� LUN 0��
+> [AZURE>NOTE] 请注意，应始终按相反的顺序分离数据磁盘，即，从已分配的编号最高的 LUN 开始。Linux SCSI 层不支持在仍附加有编号较高的 LUN 时分离编号较低的 LUN。例如，不应在仍附加有 LUN 1 的情况下分离 LUN 0。
 
 **vm disk show [options] &lt;name>**
 
-��������ʾ�й� Azure ���̵���ϸ��Ϣ��
+此命令显示有关 Azure 磁盘的详细信息。
 
 	~$ azure vm disk show anucentos-anucentos-0-20120524070008
 	info:   Executing command vm disk show
@@ -531,7 +529,7 @@ info:   vm shutdown command OK
 
 **vm disk list [options] [vm-name]**
 
-�������г� Azure ���̣����߸��ӵ�ָ��������Ĵ��̡�������д�����ʱʹ������������Ʋ����������ظ��ӵ�������������д��̡�Lun 1 ��������������ģ����г����κ��������̶��ǵ������ӵġ�
+此命令列出 Azure 磁盘，或者附加到指定虚拟机的磁盘。如果运行此命令时使用了虚拟机名称参数，将返回附加到该虚拟机的所有磁盘。Lun 1 是随虚拟机创建的，而列出的任何其他磁盘都是单独附加的。
 
 	~$ azure vm disk list mycentos
 	info:   Executing command vm disk list
@@ -541,7 +539,7 @@ info:   vm shutdown command OK
 	data:   2    10        mycentos-e3f0d717950bb78d.vhd
 	info:   vm disk list command OK
 
-�ڲ�ʹ����������Ʋ����������ִ�д�����������д��̡�
+在不使用虚拟机名称参数的情况下执行此命令将返回所有磁盘。
 
 	~$ azure vm disk list
 	data:   Name                                        OS
@@ -553,7 +551,7 @@ info:   vm shutdown command OK
 
 **vm disk delete [options] &lt;name>**
 
-������Ӹ��˴洢����ɾ�� Azure ���̡���ɾ������֮ǰ�����������з���ô��̡�
+此命令从个人存储库中删除 Azure 磁盘。在删除磁盘之前必须从虚拟机中分离该磁盘。
 
 	~$ azure vm disk delete mycentos-mycentos-2-20120525055052
 	info:   Executing command vm disk delete
@@ -562,9 +560,9 @@ info:   vm shutdown command OK
 
 **vm disk create &lt;name> [source-path]**
 
-���������غ�ע�� Azure ���̡�����ָ�� --blob-url��--location �� --affinity-group��������������� [source-path] ���ʹ�ã�������ָ���� .vhd �ļ���������ӳ��Ȼ�������ʹ�� vm disk attach ����ӳ�񸽼ӵ��������
+此命令上载和注册 Azure 磁盘。必须指定 --blob-url、--location 或 --affinity-group。如果将此命令与 [source-path] 结合使用，则将上载指定的 .vhd 文件并创建新映像。然后你可以使用 vm disk attach 将此映像附加到虚拟机。
 
-ĳЩϵͳ��ʩ��ÿ�����ļ����������ơ�������������ƣ����߽���ʾ�ļ����������ƴ��������ʹ�� -p &lt;number> �����ٴ����д�����Լ�С�������������Ĭ�ϵ������������Ϊ 96��
+某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上载数。默认的最大并行上载数为 96。
 
 	~$ azure vm disk create my-data-disk ~/test.vhd --location "China North"
 	info:   Executing command vm disk create
@@ -576,7 +574,7 @@ info:   vm shutdown command OK
 
 **vm disk upload [options] &lt;source-path> &lt;blob-url> &lt;storage-account-key>**
 
-�������������� vm ����
+此命令用来上载 vm 磁盘
 
 	~$ azure vm disk upload "http://sourcestorage.blob.core.chinacloudapi.cn/vhds/sample.vhd" "http://destinationstorage.blob.core.chinacloudapi.cn/vhds/sample.vhd" "DESTINATIONSTORAGEACCOUNTKEY"
 	info:   Executing command vm disk upload
@@ -585,7 +583,7 @@ info:   vm shutdown command OK
 
 **vm disk attach &lt;vm-name> &lt;disk-image-name>**
 
-����� Blob �洢�е����д��̸��ӵ��Ʒ����в���������������
+此命令将 Blob 存储中的现有磁盘附加到云服务中部署的现有虚拟机。
 
 	~$ azure vm disk attach my-vm my-vm-my-vm-2-201242418259
 	info:   Executing command vm disk attach
@@ -593,7 +591,7 @@ info:   vm shutdown command OK
 
 **vm disk attach-new &lt;vm-name> &lt;size-in-gb> [blob-url]**
 
-��������ݴ��̸��ӵ� Azure ��������ڴ�ʾ���У�20 ��Ҫ���ӵ��´��̵Ĵ�С���� GB Ϊ��λ���������ѡ��ʹ�� Blob URL ��Ϊ���һ����������ʽָ��Ҫ������Ŀ�� Blob�������ָ�� Blob URL�����Զ�����һ�� Blob ����
+此命令将数据磁盘附加到 Azure 虚拟机。在此示例中，20 是要附加的新磁盘的大小（以 GB 为单位）。你可以选择使用 Blob URL 作为最后一个参数来显式指定要创建的目标 Blob。如果不指定 Blob URL，将自动生成一个 Blob 对象。
 
 	~$ azure vm disk attach-new nick-test36 20 http://nghinazz.blob.core.chinacloudapi.cn/vhds/vmdisk1.vhd
 	info:   Executing command vm disk attach-new
@@ -601,19 +599,19 @@ info:   vm shutdown command OK
 
 **vm disk detach &lt;vm-name> &lt;lun>**
 
-��������븽�ӵ� Azure ����������ݴ��̡�&lt;lun> ���ڱ�ʶҪ����Ĵ��̡�Ҫ�ڷ���ĳ������֮ǰ��ȡ��ô��̹����Ĵ��̵��б����ʹ�� vm disk-list &lt;vm-name>��
+此命令分离附加到 Azure 虚拟机的数据磁盘。&lt;lun> 用于标识要分离的磁盘。要在分离某个磁盘之前获取与该磁盘关联的磁盘的列表，请使用 vm disk-list &lt;vm-name>。
 
 	~$ azure vm disk detach my-vm 2
 	info:   Executing command vm disk detach
 	info:   vm disk detach command OK
 
-## <a name="Commands_to_manage_your_Azure_cloud_services"></a>���ڹ��� Azure �Ʒ��������
+## <a name="Commands_to_manage_your_Azure_cloud_services"></a>用于管理 Azure 云服务的命令
 
-Azure �Ʒ������й��� Web ��ɫ�͸�����ɫ�ϵ�Ӧ�ó���ͷ���������������ڹ��� Azure �Ʒ���
+Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务。以下命令可用于管理 Azure 云服务。
 
 **service create [options] &lt;serviceName>**
 
-��������µ��Ʒ���
+此命令创建新的云服务
 
 	~$ azure service create newservicemsopentech
 	info:    Executing command service create
@@ -628,7 +626,7 @@ Azure �Ʒ������й��� Web ��ɫ�͸�����ɫ�ϵ
 
 **service show [options] &lt;serviceName>**
 
-��������ʾ Azure �Ʒ������ϸ��Ϣ
+此命令显示 Azure 云服务的详细信息
 
 	~$ azure service show newservicemsopentech
 	info:    Executing command service show
@@ -644,7 +642,7 @@ Azure �Ʒ������й��� Web ��ɫ�͸�����ɫ�ϵ
 
 **service list [options]**
 
-�������г� Azure �Ʒ���
+此命令列出 Azure 云服务。
 
 	~$ azure service list
 	info:   Executing command service list
@@ -656,22 +654,22 @@ Azure �Ʒ������й��� Web ��ɫ�͸�����ɫ�ϵ
 
 **service delete [options] &lt;name>**
 
-������ɾ�� Azure �Ʒ���
+此命令删除 Azure 云服务。
 
 	~$ azure service delete myservice
 	info:   Executing command service delete myservice
 	info:   cloud-service delete command OK
 
-��Ҫǿ��ɾ������ʹ��"-q"������
+若要强制删除，请使用"-q"参数。
 
 
-## <a name="Commands_to_manage_your_Azure_certificates"></a>���ڹ��� Azure ֤�������
+## <a name="Commands_to_manage_your_Azure_certificates"></a>用于管理 Azure 证书的命令
 
-Azure ����֤�������ӵ���� Azure �ʻ��� SSL ֤�顣�й� Azure ֤�����ϸ��Ϣ�������[����֤��](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)��
+Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。有关 Azure 证书的详细信息，请参阅[管理证书](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)。
 
 **service cert list [options]**
 
-�������г� Azure ֤�顣
+此命令列出 Azure 证书。
 
 	~$ azure service cert list
 	info:   Executing command service cert list
@@ -684,7 +682,7 @@ Azure ����֤�������ӵ���� Azure �ʻ��� SSL
 
 **service cert create &lt;dns-prefix> &lt;file> [password]**
 
-����������֤�顣����û�����뱣����֤�飬�뽫������ʾ����Ϊ�ա�
+此命令上载证书。对于没有密码保护的证书，请将密码提示保留为空。
 
 	~$ azure service cert create nghinazz ~/publishSet.pfx
 	info:   Executing command service cert create
@@ -694,7 +692,7 @@ Azure ����֤�������ӵ���� Azure �ʻ��� SSL
 
 **service cert delete [options] &lt;thumbprint>**
 
-������ɾ��֤�顣
+此命令删除证书。
 
 	~$ azure service cert delete 262DBF95B5E61375FA27F1E74AC7D9EAE842916C
 	info:   Executing command service cert delete
@@ -703,13 +701,13 @@ Azure ����֤�������ӵ���� Azure �ʻ��� SSL
 	info:   service cert delete command OK
 
 
-## <a name="Commands_to_manage_your_web_sites"></a>���ڹ�����վ������
+## <a name="Commands_to_manage_your_web_sites"></a>用于管理网站的命令
 
-Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ�й���������У����������Լ����Ǵ����Ͳ������������ϸ���衣��Щ��ϸ���轫�� Azure Ϊ����ɡ�
+Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中，但你无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
 
 **site list [options]**
 
-�������г������վ��
+此命令列出你的网站。
 
 	~$ azure site list
 	info:   Executing command site list
@@ -722,7 +720,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site set [options] [name]**
 
-��������������վ [name] ������ѡ��
+此命令将设置你的网站 [name] 的配置选项
 
 	~$ azure site set
 	info:    Executing command site set
@@ -733,7 +731,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site deploymentscript [options]**
 
-���������һ���Զ��岿��ű�
+此命令将生成一个自定义部署脚本
 
 	~$ azure site deploymentscript --node
 	info:    Executing command site deploymentscript
@@ -743,7 +741,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site create [options] [name]**
 
-��������µ���վ�ͱ���Ŀ¼��
+此命令创建新的网站和本地目录。
 
 	~$ azure site create mysite
 	info:   Executing command site create
@@ -754,11 +752,11 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 	info:   Repository initialized
 	info:   site create command OK
 
-> [AZURE.NOTE] վ�����Ʊ�����Ψһ�ġ����޷�����������վ�������ͬ DNS ���Ƶ�վ�㡣
+> [AZURE.NOTE] 站点名称必须是唯一的。你无法创建与现有站点具有相同 DNS 名称的站点。
 
 **site browse [options] [name]**
 
-��������������д������վ��
+此命令在浏览器中打开你的网站。
 
 	~$ azure site browse mysite
 	info:   Executing command site browse
@@ -767,7 +765,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site show [options] [name]**
 
-��������ʾ��վ����ϸ��Ϣ��
+此命令显示网站的详细信息。
 
 	~$ azure site show mysite
 	info:   Executing command site show
@@ -797,7 +795,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site delete [options] [name]**
 
-������ɾ��ĳ����վ��
+此命令删除某个网站。
 
 	~$ azure site delete mysite
 	info:   Executing command site delete
@@ -807,16 +805,16 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
  **site swap [options] [name]**
 
-�������������վ��ۡ�
+此命令交换两个网站插槽。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-**-q �� **--quiet**������ʾȷ�ϡ����Զ����ű���ʹ�ô�ѡ�
+**-q 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
 
 
 **site start [options] [name]**
 
-���������ĳ����վ��
+此命令启动某个网站。
 
 	~$ azure site start mysite
 	info:   Executing command site start
@@ -826,7 +824,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site stop [options] [name]**
 
-������ֹͣĳ����վ��
+此命令停止某个网站。
 
 	~$ azure site stop mysite
 	info:   Executing command site stop
@@ -836,16 +834,16 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site restart [options] [name]
 
-������ֹͣȻ�����ָ������վ��
+此命令停止然后启动指定的网站。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-**--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
+**--slot** &lt;slot>：要重新启动的插槽的名称。
 
 
 **site location list [options]**
 
-�������г������վλ�á�
+此命令列出你的网站位置。
 
 	~$ azure site location list
 	info:    Executing command site location list
@@ -856,11 +854,11 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 	data:    China East
 	info:    site location list command OK
 
-### ���ڹ��������վӦ�ó������õ�����
+### 用于管理你的网站应用程序设置的命令
 
 **site appsetting list [options] [name]**
 
-�������г���ӵ���վ��Ӧ�ó������á�
+此命令列出添加到网站的应用程序设置。
 
 	~$ azure site appsetting list
 	info:    Executing command site appsetting list
@@ -874,7 +872,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site appsetting add [options] &lt;keyvaluepair> [name]**
 
-�����Ӧ�ó���������Ϊ��ֵ����ӵ������վ��
+此命令将应用程序设置作为键值对添加到你的网站。
 
 	~$ azure site appsetting add test=value
 	info:    Executing command site appsetting add
@@ -886,7 +884,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site appsetting delete [options] &lt;key> [name]**
 
-���������վ��ɾ��ָ����Ӧ�ó������á�
+此命令从网站中删除指定的应用程序设置。
 
 	~$ azure site appsetting delete test
 	info:    Executing command site appsetting delete
@@ -899,7 +897,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site appsetting show [options] &lt;key> [name]**
 
-��������ʾָ��Ӧ�ó������õ���ϸ��Ϣ
+此命令显示指定应用程序设置的详细信息
 
 	~$ azure site appsetting show test
 	info:    Executing command site appsetting show
@@ -909,11 +907,11 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 	data:    Value:  value
 	info:    site appsetting show command OK
 
-### ���ڹ�����վ֤�������
+### 用于管理网站证书的命令
 
 **site cert list [options] [name]**
 
-��������ʾ��վ֤����б��
+此命令显示网站证书的列表。
 
 	~$ azure site cert list
 	info:    Executing command site cert list
@@ -933,7 +931,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site cert show [options] &lt;thumbprint> [name]**
 
-��������ʾ֤����ϸ��Ϣ
+此命令显示证书详细信息
 
 	~$ azure site cert show CE1CD65852B38DC32001C2E0E8F7A526A29B541F
 	info:    Executing command site cert show
@@ -949,7 +947,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 	data:    Certificate thumbprint CE1CD65852B38DC32001C2E0E8F7A526A29B541F
 	info:    site cert show command OK
 
-### ���ڹ�����վ�����ַ���������
+### 用于管理网站连接字符串的命令
 
 **site connectionstring list [options] [name]**
 
@@ -959,7 +957,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site connectionstring show [options] &lt;connectionname> [name]**
 
-### ���ڹ�����վĬ���ĵ�������
+### 用于管理网站默认文档的命令
 
 **site defaultdocument list [options] [name]**
 
@@ -967,7 +965,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site defaultdocument delete [options] &lt;document> [name]**
 
-### ���ڹ�����վ���������
+### 用于管理网站部署的命令
 
 **site deployment list [options] [name]**
 
@@ -979,7 +977,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site deployment user set [options] [username] [pass]**
 
-### ���ڹ�����վ�������
+### 用于管理网站域的命令
 
 **site domain list [options] [name]**
 
@@ -987,7 +985,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site domain delete [options] &lt;dn> [name]**
 
-### ���ڹ�����վ�������ӳ�������
+### 用于管理网站处理程序映射的命令
 
 **site handler list [options] [name]**
 
@@ -995,95 +993,95 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site handler delete [options] &lt;extension> [name]**
 
-### ���ڹ�����վ Web ��ҵ������
+### 用于管理网站 Web 作业的命令
 
 **site job list [options] [name]**
 
-�������г�ĳ����վ�µ����� web ��ҵ��
+此命令列出某个网站下的所有 web 作业。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-type** &lt;job-type>����ѡ��web ��ҵ�����͡���ЧֵΪ"triggered"��"continuous"��Ĭ������·���
-�������͵� web ��ҵ��
-+ **--slot** &lt;slot>:Ҫ��������Ĳ�۵����ơ�
++ **--job-type** &lt;job-type>：可选。web 作业的类型。有效值为"triggered"或"continuous"。默认情况下返回
+所有类型的 web 作业。
++ **--slot** &lt;slot>:要重新启动的插槽的名称。
 
 **site job show [options] &lt;jobName> &lt;jobType> [name]**
 
-��������ʾ�ض� web ��ҵ����ϸ��Ϣ��
+此命令显示特定 web 作业的详细信息。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>�����衣web ��ҵ�����ơ�
-+ **--job-type** &lt;job-type>�����衣web ��ҵ�����͡���ЧֵΪ"triggered"��"continuous"��
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>：必需。web 作业的名称。
++ **--job-type** &lt;job-type>：必需。web 作业的类型。有效值为"triggered"或"continuous"。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
 **site job delete [options] &lt;jobName> &lt;jobType> [name]**
 
-������ɾ��ָ���� web ��ҵ��
+此命令删除指定的 web 作业。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>    ���衣web ��ҵ�����ơ�
-+ **--job-type** &lt;job-type>    ���衣web ��ҵ�����͡���ЧֵΪ"triggered"��"continuous"��
-+ **-q** �� **--quiet**������ʾȷ�ϡ����Զ����ű���ʹ�ô�ѡ�
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>    必需。web 作业的名称。
++ **--job-type** &lt;job-type>    必需。web 作业的类型。有效值为"triggered"或"continuous"。
++ **-q** 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
 **site job upload [options] &lt;jobName> &lt;jobType> <jobFile> [name]**
 
-������ɾ��ָ���� web ��ҵ��
+此命令删除指定的 web 作业。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>�����衣web ��ҵ�����ơ�
-+ **--job-type** &lt;job-type>�����衣web ��ҵ�����͡���ЧֵΪ"triggered"��"continuous"��
-+ **--job-file** &lt;job-file>�����衣��ҵ�ļ���
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>：必需。web 作业的名称。
++ **--job-type** &lt;job-type>：必需。web 作业的类型。有效值为"triggered"或"continuous"。
++ **--job-file** &lt;job-file>：必需。作业文件。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
 **site job start [options] &lt;jobName> &lt;jobType> [name]**
 
-���������ָ���� web ��ҵ��
+此命令启动指定的 web 作业。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>�����衣web ��ҵ�����ơ�
-+ **--job-type** &lt;job-type>�����衣web ��ҵ�����͡���ЧֵΪ"triggered"��"continuous"��
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>：必需。web 作业的名称。
++ **--job-type** &lt;job-type>：必需。web 作业的类型。有效值为"triggered"或"continuous"。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
 **site job stop [options] &lt;jobName> &lt;jobType> [name]**
 
-������ָֹͣ���� web ��ҵ��ֻ��������ҵ����ֹͣ��
+此命令停止指定的 web 作业。只有连续作业可以停止。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>�����衣web ��ҵ�����ơ�
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>：必需。web 作业的名称。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
-### ���ڹ�����վ Web ��ҵ��ʷ��¼������
+### 用于管理网站 Web 作业历史记录的命令
 
 **site job history list [options] [jobName] [name]**
 
-��������ʾָ���� web ��ҵ��������ʷ��¼��
+此命令显示指定的 web 作业的运行历史记录。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>�����衣web ��ҵ�����ơ�
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>：必需。web 作业的名称。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
 **site job history show [options] [jobName] [runId] [name]**
 
-�������ȡΪָ���� web ��ҵ���е���ҵ����ϸ��Ϣ��
+此命令获取为指定的 web 作业运行的作业的详细信息。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--job-name** &lt;job-name>�����衣web ��ҵ�����ơ�
-+ **--run-id** &lt;run-id>����ѡ��������ʷ��¼�� id�����δָ��������ʾ�������С�
-+ **--slot** &lt;slot>��Ҫ��������Ĳ�۵����ơ�
++ **--job-name** &lt;job-name>：必需。web 作业的名称。
++ **--run-id** &lt;run-id>：可选。运行历史记录的 id。如果未指定，则显示最新运行。
++ **--slot** &lt;slot>：要重新启动的插槽的名称。
 
-### ���ڹ�����վ��ϵ�����
+### 用于管理网站诊断的命令
 
 **site log download [options] [name]**
 
-���ذ��������վ��ϵ� .zip �ļ���
+下载包含你的网站诊断的 .zip 文件。
 
 	~$ azure site log download
 	info:    Executing command site log download
@@ -1095,7 +1093,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site log tail [options] [name]**
 
-���������ն����ӵ���־��ʽ�������
+此命令将你的终端连接到日志流式处理服务。
 
 	~$ azure site log tail
 	info:    Executing command site log tail
@@ -1106,7 +1104,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site log set [options] [name]**
 
-���������������վ�����ѡ�
+此命令配置你的网站的诊断选项。
 
 	~$ azure site log set -a
 	info:    Executing command site log set
@@ -1123,7 +1121,7 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 	+ Updating diagnostic settings
 	info:    site log set command OK
 
-### ���ڹ�����վ�洢�������
+### 用于管理网站存储库的命令
 
 **site repository branch [options] &lt;branch> [name]**
 
@@ -1131,36 +1129,36 @@ Azure ��վ�ǿ�ͨ�� URI ���ʵ� Web ���á���վ��
 
 **site repository sync [options] [name]**
 
-### ���ڹ�����վ���ŵ�����
+### 用于管理网站缩放的命令
 
 **site scale mode [options] &lt;mode> [name]**
 
 **site scale instances [options] &lt;instances> [name]**
 
 
-## <a name="Commands_to_manage_mobile_services"></a>���ڹ��� Azure �ƶ����������
+## <a name="Commands_to_manage_mobile_services"></a>用于管理 Azure 移动服务的命令
 
-Azure �ƶ���������һϵ��֧�����Ӧ�ó���ĺ�˹��ܵ� Azure �����ƶ����������Ϊ���¼��ࣺ
+Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 Azure 服务。移动服务命令分为以下几类：
 
-+ [���ڹ����ƶ�����ʵ��������](#Mobile_Services)
-+ [���ڹ����ƶ��������õ�����](#Mobile_Configuration)
-+ [���ڹ����ƶ�����������](#Mobile_Tables)
-+ [���ڹ����ƶ�����ű�������](#Mobile_Scripts)
-+ [���ڹ���ƻ�����ҵ������](#Mobile_Jobs)
-+ [���������ƶ����������](#Mobile_Scale)
++ [用于管理移动服务实例的命令](#Mobile_Services)
++ [用于管理移动服务配置的命令](#Mobile_Configuration)
++ [用于管理移动服务表的命令](#Mobile_Tables)
++ [用于管理移动服务脚本的命令](#Mobile_Scripts)
++ [用于管理计划的作业的命令](#Mobile_Jobs)
++ [用于缩放移动服务的命令](#Mobile_Scale)
 
-����ѡ�������ڶ����ƶ��������
+以下选项适用于多数移动服务命令：
 
-+ **-h** �� **--help**����ʾ����÷���Ϣ��
-+ **-s `<id>`** �� **--subscription `<id>`**��ʹ��ָ��Ϊ `<id>` ���ض����ġ�
-+ **-v** �� **--verbose**��д����ϸ�����
-+ **--json**��д�� JSON �����
++ **-h** 或 **--help**：显示输出用法信息。
++ **-s `<id>`** 或 **--subscription `<id>`**：使用指定为 `<id>` 的特定订阅。
++ **-v** 或 **--verbose**：写入详细输出。
++ **--json**：写入 JSON 输出。
 
-### <a name="Mobile_Services"></a>���ڹ����ƶ�����ʵ��������
+### <a name="Mobile_Services"></a>用于管理移动服务实例的命令
 
 **mobile locations [options]**
 
-�������г��ƶ�����֧�ֵĵ���λ�á�
+此命令列出移动服务支持的地理位置。
 
 	~$ azure mobile locations
 	+ Getting mobile service locations
@@ -1169,7 +1167,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
 
-��������ƶ������Լ� SQL ���ݿ�ͷ�������
+此命令创建移动服务以及 SQL 数据库和服务器。
 
 	~$ azure mobile create todolist your_login_name Secure$Password
 	info:    Executing command mobile create
@@ -1180,16 +1178,16 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    SQL server (e96ean1c6v) state: ProvisionConfigured
 	info:    mobile create command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-r `<sqlServer>`** �� **--sqlServer `<sqlServer>`**��ʹ��ָ��Ϊ `<sqlServer>` ������ SQL ���ݿ��������
-+ **-d `<sqlDb>`** �� **--sqlDb `<sqlDb>`**��ʹ��ָ��Ϊ `<sqlDb>` ������ SQL ���ݿ⡣
-+ **-l `<location>`** �� **--location `<location>`**����ָ��Ϊ `<location>` ���ض�λ���д��������������� azure mobile locations �ɻ�ȡ����λ�á�
-+ **--sqlLocation `<location>`**�����ض��� `<location>` �д��� SQL ��������Ĭ��Ϊ�ƶ������λ�á�
++ **-r `<sqlServer>`** 或 **--sqlServer `<sqlServer>`**：使用指定为 `<sqlServer>` 的现有 SQL 数据库服务器。
++ **-d `<sqlDb>`** 或 **--sqlDb `<sqlDb>`**：使用指定为 `<sqlDb>` 的现有 SQL 数据库。
++ **-l `<location>`** 或 **--location `<location>`**：在指定为 `<location>` 的特定位置中创建服务器。运行 azure mobile locations 可获取可用位置。
++ **--sqlLocation `<location>`**：在特定的 `<location>` 中创建 SQL 服务器；默认为移动服务的位置。
 
 **mobile delete [options] [servicename]**
 
-������ɾ���ƶ������� SQL ���ݿ�ͷ�������
+此命令删除移动服务及其 SQL 数据库和服务器。
 
 	~$ azure mobile delete todolist -a -q
 	info:    Executing command mobile delete
@@ -1204,27 +1202,27 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    Deleted mobile application
 	info:    mobile delete command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-d** �� **--deleteData**���Ӵ��ƶ���������ݿ���ɾ���������ݡ�
-+ **-a** �� **--deleteAll**��ɾ�� SQL ���ݿ�ͷ�������
-+ **-q** �� **--quiet**������ʾȷ�ϡ����Զ����ű���ʹ�ô�ѡ�
++ **-d** 或 **--deleteData**：从此移动服务的数据库中删除所有数据。
++ **-a** 或 **--deleteAll**：删除 SQL 数据库和服务器。
++ **-q** 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
 
 **mobile list [options]**
 
-�������г�����ƶ�����
+此命令列出你的移动服务。
 
 	~$ azure mobile list
 	info:    Executing command mobile list
 	data:    Name          State  URL
 	data:    ------------  -----  --------------------------------------
-	data:    todolist      Ready  https://todolist.azure-mobile.cn/
-	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.cn/
+	data:    todolist      Ready  https://todolist.azure-mobile.net/
+	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.net/
 	info:    mobile list command OK
 
 **mobile show [options] [servicename]**
 
-��������ʾ�й��ƶ��������ϸ��Ϣ��
+此命令显示有关移动服务的详细信息。
 
 	~$ azure mobile show todolist
 	info:    Executing command mobile show
@@ -1240,7 +1238,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    Mobile service
 	data:    name todolist
 	data:    state Ready
-	data:    applicationUrl https://todolist.azure-mobile.cn/
+	data:    applicationUrl https://todolist.azure-mobile.net/
 	data:    applicationKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	data:    masterKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	data:    webspace WESTUSWEBSPACE
@@ -1250,7 +1248,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile restart [options] [servicename]**
 
-��������������ƶ�����ʵ����
+此命令重新启动移动服务实例。
 
 	~$ azure mobile restart todolist
 	info:    Executing command mobile restart
@@ -1260,7 +1258,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile log [options] [servicename]**
 
-��������ƶ�������־��ɸѡ���  `error` ֮���������־���͡�
+此命令返回移动服务日志，筛选掉除  `error` 之外的所有日志类型。
 
 	~$ azure mobile log todolist -t error
 	info:    Executing command mobile log
@@ -1272,46 +1270,46 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	data:
 	info:    mobile log command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-r `<query>`** �� **--query `<query>`**��ִ��ָ������־��ѯ��
-+ **-t `<type>`** �� **--type `<type>`**������Ŀ `<type>`��������  `information`�� `warning` ��  `error`��ɸѡ���ص���־��
-+ **-k `<skip>`** �� **--skip `<skip>`**�������� `<skip>` ָ����������
-+ **-p `<top>`** �� **--top `<top>`**�������� `<top>` ָ�����ض�������
++ **-r `<query>`** 或 **--query `<query>`**：执行指定的日志查询。
++ **-t `<type>`** 或 **--type `<type>`**：按条目 `<type>`（可能是  `information`、 `warning` 或  `error`）筛选返回的日志。
++ **-k `<skip>`** 或 **--skip `<skip>`**：跳过由 `<skip>` 指定的行数。
++ **-p `<top>`** 或 **--top `<top>`**：返回由 `<top>` 指定的特定行数。
 
-> [AZURE.NOTE] **--query** ���������� **--type**��**--skip** �� **--top**��
+> [AZURE.NOTE] **--query** 参数优先于 **--type**、**--skip** 和 **--top**。
 
 **mobile recover [options] [unhealthyservicename] [healthyservicename]**
 
-������ͨ�������������ƶ������ƶ�����ͬ�����е������ƶ�����������ָ���
+此命令通过将不正常的移动服务移动到不同区域中的正常移动服务来将其恢复。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-**-q** �� **--quiet**������ʾȷ�ϻָ���
+**-q** 或 **--quiet**：不提示确认恢复。
 
 **mobile key regenerate [options] [servicename] [type]**
 
-���������������ƶ�����Ӧ�ó�����Կ��
+此命令重新生成移动服务应用程序密钥。
 
 	~$ azure mobile key regenerate todolist application
 	info:    Executing command mobile key regenerate
 	info:    New application key is SmLorAWVfslMcOKWSsuJvuzdJkfUpt40
 	info:    mobile key regenerate command OK
 
-��Կ����Ϊ  `master` ��  `application`��
+密钥类型为  `master` 和  `application`。
 
-> [AZURE.NOTE] ������������Կʱ��ʹ�þ���Կ�Ŀͻ��˿����޷���������ƶ����񡣵���������Ӧ�ó�����Կʱ��Ӧʹ������Կֵ�������Ӧ�ó���
+> [AZURE.NOTE] 当重新生成密钥时，使用旧密钥的客户端可能无法访问你的移动服务。当重新生成应用程序密钥时，应使用新密钥值更新你的应用程序。
 
 **mobile key set [options] [servicename] [type] [value]**
 
-������ƶ�������Կ����Ϊһ���ض�ֵ��
+此命令将移动服务密钥设置为一个特定值。
 
 
-### <a name="Mobile_Configuration"></a>���ڹ����ƶ��������õ�����
+### <a name="Mobile_Configuration"></a>用于管理移动服务配置的命令
 
 **mobile config list [options] [servicename]**
 
-�������г��ƶ����������ѡ�
+此命令列出移动服务的配置选项。
 
 	~$ azure mobile config list todolist
 	info:    Executing command mobile config list
@@ -1333,7 +1331,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile config get [options] [servicename] [key]**
 
-�������ȡ�ƶ�������ض�����ѡ��ڴ�ʾ����Ϊ��̬�ܹ���
+此命令获取移动服务的特定配置选项，在此示例中为动态架构。
 
 	~$ azure mobile config get todolist dynamicSchemaEnabled
 	info:    Executing command mobile config get
@@ -1342,18 +1340,18 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile config set [options] [servicename] [key] [value]**
 
-�����������ƶ�������ض�����ѡ��ڴ�ʾ����Ϊ��̬�ܹ���
+此命令设置移动服务的特定配置选项，在此示例中为动态架构。
 
 	~$ azure mobile config set todolist dynamicSchemaEnabled false
 	info:    Executing command mobile config set
 	info:    mobile config set command OK
 
 
-### <a name="Mobile_Tables"></a>���ڹ����ƶ�����������
+### <a name="Mobile_Tables"></a>用于管理移动服务表的命令
 
 **mobile table list [options] [servicename]**
 
-�������г�����ƶ������е����б��
+此命令列出你的移动服务中的所有表。
 
 	~$azure mobile table list todolist
 	info:    Executing command mobile table list
@@ -1365,7 +1363,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile table show [options] [servicename] [tablename]**
 
-��������ʾ�й��ض���ķ������ݵ���ϸ��Ϣ��
+此命令显示有关特定表的返回内容的详细信息。
 
 	~$azure mobile table show todolist
 	info:    Executing command mobile table show
@@ -1389,20 +1387,20 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile table create [options] [servicename] [tablename]**
 
-����������
+此命令创建表。
 
 	~$azure mobile table create todolist Channels
 	info:    Executing command mobile table create
 	+ Creating table
 	info:    mobile table create command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-p `&lt;permissions>`** �� **--permissions `&lt;permissions>`**���Զ��ŷָ�� `<operation>`=`<permission>` �Ե��б�����У�`<operation>`  ��  `insert`�� `read`�� `update` ��  `delete`��`&lt;permissions>` ��  `public`�� `application`��Ĭ��ֵ�� `user` ��  `admin`��
++ **-p `&lt;permissions>`** 或 **--permissions `&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对的列表，其中，`<operation>`  是  `insert`、 `read`、 `update` 或  `delete`，`&lt;permissions>` 是  `public`、 `application`（默认值） `user` 或  `admin`。
 
 **mobile data read [options] [servicename] [tablename] [query]**
 
-�������ȡ���е����ݡ�
+此命令读取表中的数据。
 
 	~$azure mobile data read todolist TodoItem
 	info:    Executing command mobile data read
@@ -1414,15 +1412,15 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	data:    4   item #4  true
 	info:    mobile data read command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-k `<skip>`** �� **--skip `<skip>`**�������� `<skip>` ָ����������
-+ **-t `<top>`** �� **--top `<top>`**�������� `<top>` ָ�����ض�������
-+ **-l** �� **--list**�����б��ʽ�������ݡ�
++ **-k `<skip>`** 或 **--skip `<skip>`**：跳过由 `<skip>` 指定的行数。
++ **-t `<top>`** 或 **--top `<top>`**：返回由 `<top>` 指定的特定行数。
++ **-l** 或 **--list**：以列表格式返回数据。
 
 **mobile table update [options] [servicename] [tablename]**
 
-������ֻ���Ĺ���Ա�Ա��ɾ��Ȩ�ޡ�
+此命令只更改管理员对表的删除权限。
 
 	~$azure mobile table update todolist Channels -p delete=admin
 	info:    Executing command mobile table update
@@ -1430,17 +1428,17 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    Updated permissions
 	info:    mobile table update command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-p `&lt;permissions>`** �� **--permissions `&lt;permissions>`**���Զ��ŷָ�� `<operation>`=`<permission>` �Ե��б�����У�`<operation>` ��  `insert`�� `read`�� `update` ��  `delete`��`&lt;permissions>` �� `public`�� `application`��Ĭ��ֵ���� `user` ��  `admin`��
-+ **--deleteColumn `<columns>`**���Զ��ŷָ��Ҫɾ�����У�ָ��Ϊ `<columns>`�����б��
-+ **-q** �� **--quiet**��ɾ���ж�����ʾȷ��
-+ **--addIndex `<columns>`**��Ҫ�����������е��еĶ��ŷָ��б��
-+ **--deleteIndex `<columns>`**��Ҫ���������ų����еĶ��ŷָ��б��
++ **-p `&lt;permissions>`** 或 **--permissions `&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对的列表，其中，`<operation>` 是  `insert`、 `read`、 `update` 或  `delete`，`&lt;permissions>` 是 `public`、 `application`（默认值）、 `user` 或  `admin`。
++ **--deleteColumn `<columns>`**：以逗号分隔的要删除的列（指定为 `<columns>`）的列表。
++ **-q** 或 **--quiet**：删除列而不提示确认
++ **--addIndex `<columns>`**：要包含在索引中的列的逗号分隔列表。
++ **--deleteIndex `<columns>`**：要从索引中排除的列的逗号分隔列表。
 
 **mobile table delete [options] [servicename] [tablename]**
 
-������ɾ��ĳ�����
+此命令删除某个表。
 
 	~$azure mobile table delete todolist Channels
 	info:    Executing command mobile table delete
@@ -1448,11 +1446,11 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	+ Deleting table
 	info:    mobile table delete command OK
 
-ָ�� -q �������ڲ���ʾȷ�ϵ������ɾ�����ִ�д˲������Է�ֹ��ֹ�Զ����ű���
+指定 -q 参数可在不提示确认的情况下删除表。执行此操作可以防止阻止自动化脚本。
 
 **mobile data truncate [options] [servicename] [tablename]**
 
-������ӱ���ɾ�����������С�
+此命令从表中删除所有数据行。
 
 	~$azure mobile data truncate todolist TodoItem
 	info:    Executing command mobile data truncate
@@ -1462,13 +1460,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    mobile data truncate command OK
 
 
-### <a name="Mobile_Scripts"></a>���ڹ���ű�������
+### <a name="Mobile_Scripts"></a>用于管理脚本的命令
 
-�������е��������ڹ��������ƶ�����ķ������ű����й���ϸ��Ϣ�������[ʹ���ƶ������еķ������ű�](/documentation/articles/mobile-services-how-to-use-server-scripts/)��
+本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts/)。
 
 **mobile script list [options] [servicename]**
 
-�������г���ע��Ľű���������ͼƻ�����ű���
+此命令列出已注册的脚本，包括表和计划程序脚本。
 
 	~$azure mobile script list todolist
 	info:    Executing command mobile script list
@@ -1488,46 +1486,46 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile script download [options] [servicename] [scriptname]**
 
-���������ű��� TodoItem �����ص�  `table` ���ļ�������Ϊ  `todoitem.insert.js` ���ļ��С�
+此命令将插入脚本从 TodoItem 表下载到  `table` 子文件夹中名为  `todoitem.insert.js` 的文件中。
 
 	~$azure mobile script download todolist table/todoitem.insert.js
 	info:    Executing command mobile script download
 	info:    Saved script to ./table/todoitem.insert.js
 	info:    mobile script download command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-p `<path>`** �� **--path `<path>`**���ļ������ڱ���ű���λ�ã����е�ǰ����Ŀ¼��Ĭ��ֵ��
-+ **-f `<file>`** �� **--file `<file>`**��Ҫ���ű����������е��ļ������ơ�
-+ **-o** �� **--override**�����������ļ���
-+ **-c** �� **--console**�����ű�д�뵽����̨�������ļ���
++ **-p `<path>`** 或 **--path `<path>`**：文件中用于保存脚本的位置，其中当前工作目录是默认值。
++ **-f `<file>`** 或 **--file `<file>`**：要将脚本保存在其中的文件的名称。
++ **-o** 或 **--override**：覆盖现有文件。
++ **-c** 或 **--console**：将脚本写入到控制台而不是文件。
 
 **mobile script upload [options] [servicename] [scriptname]**
 
-�������  `table` ���ļ���������Ϊ  `todoitem.insert.js` ���½ű���
+此命令从  `table` 子文件夹上载名为  `todoitem.insert.js` 的新脚本。
 
 	~$azure mobile script upload todolist table/todoitem.insert.js
 	info:    Executing command mobile script upload
 	info:    mobile script upload command OK
 
-���ļ������Ʊ����ɱ�Ͳ���������ɣ����Ҹ��ļ�����λ�����������ִ��λ�õ� table ���ļ����С��㻹����ʹ�� **-f `<file>`** �� **--file `<file>`** ����ָ����������Ҫע��Ľű����ļ����ļ�����·����
+该文件的名称必须由表和操作名称组成，并且该文件必须位于相对于命令执行位置的 table 子文件夹中。你还可以使用 **-f `<file>`** 或 **--file `<file>`** 参数指定其他包含要注册的脚本的文件的文件名和路径。
 
 
 **mobile script delete [options] [servicename] [scriptname]**
 
-������� TodoItem ����ɾ�����в���ű���
+此命令从 TodoItem 表中删除现有插入脚本。
 
 	~$azure mobile script delete todolist table/todoitem.insert.js
 	info:    Executing command mobile script delete
 	info:    mobile script delete command OK
 
-### <a name="Mobile_Jobs"></a>���ڹ����Ѽƻ���ҵ������
+### <a name="Mobile_Jobs"></a>用于管理已计划作业的命令
 
-�������е��������ڹ��������ƶ�������Ѽƻ���ҵ���й���ϸ��Ϣ�������[�ƻ���ҵ](https://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx)��
+本部分中的命令用于管理属于移动服务的已计划作业。有关详细信息，请参阅[计划作业](https://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx)。
 
 **mobile job list [options] [servicename]**
 
-�������г��Ѽƻ���ҵ��
+此命令列出已计划作业。
 
 	~$azure mobile job list todolist
 	info:    Executing command mobile job list
@@ -1540,7 +1538,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile job create [options] [servicename] [jobname]**
 
-��������ƻ�ΪÿСʱ���е���Ϊ  `getUpdates` ������ҵ��
+此命令创建计划为每小时运行的名为  `getUpdates` 的新作业。
 
 	~$azure mobile job create -i 1 -u hour todolist getUpdates
 	info:    Executing command mobile job create
@@ -1548,56 +1546,56 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    You can manipulate the scheduled job script using the 'azure mobile script' command.
 	info:    mobile job create command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-i `<number>`** �� **--interval `<number>`**����ҵʱ�������ֵ����Ϊ������Ĭ��ֵΪ `15`��
-+ **-u `<unit>`** �� **--intervalUnit `<unit>`**��_ʱ����_�ĵ�λ������������ֵ֮һ��
-	+ **minute**��Ĭ��ֵ��
++ **-i `<number>`** 或 **--interval `<number>`**：作业时间间隔，数值类型为整数；默认值为 `15`。
++ **-u `<unit>`** 或 **--intervalUnit `<unit>`**：_时间间隔_的单位，可以是以下值之一：
+	+ **minute**（默认值）
 	+ **hour**
 	+ **day**
 	+ **month**
-	+ **none**��������ҵ��
-+ **-t `<time>`** **--startTime `<time>`**�ű����״����п�ʼʱ�䣬���� ISO ��ʽ��Ĭ��ֵΪ  `now`��
+	+ **none**（按需作业）
++ **-t `<time>`** **--startTime `<time>`**脚本的首次运行开始时间，采用 ISO 格式；默认值为  `now`。
 
-> [AZURE.NOTE] ����������ҵ���ڽ���״̬����Ϊ���������ؽű�����ʹ�� **mobile script upload** �������ؽű���ʹ�� **mobile job update** ����������ҵ��
+> [AZURE.NOTE] 创建的新作业处于禁用状态，因为还必须上载脚本。请使用 **mobile script upload** 命令上载脚本并使用 **mobile job update** 命令启用作业。
 
 **mobile job update [options] [servicename] [jobname]**
 
-�������������ѽ��õ�  `getUpdates` ��ҵ��
+以下命令启用已禁用的  `getUpdates` 作业。
 
 	~$azure mobile job update -a enabled todolist getUpdates
 	info:    Executing command mobile job update
 	info:    mobile job update command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-i `<number>`** �� **--interval `<number>`**����ҵʱ�������ֵ����Ϊ������Ĭ��ֵΪ"15"��
-+ **-u `<unit>`** �� **--intervalUnit `<unit>`**��_ʱ����_�ĵ�λ������������ֵ֮һ��
-	+ **minute**��Ĭ��ֵ��
++ **-i `<number>`** 或 **--interval `<number>`**：作业时间间隔，数值类型为整数；默认值为"15"。
++ **-u `<unit>`** 或 **--intervalUnit `<unit>`**：_时间间隔_的单位，可以是以下值之一：
+	+ **minute**（默认值）
 	+ **hour**
 	+ **day**
 	+ **month**
-	+ **none**��������ҵ��
-+ **-t `<time>`** **--startTime `<time>`**�ű����״����п�ʼʱ�䣬���� ISO ��ʽ��Ĭ��ֵΪ  `now`��
-+ **-a `<status>`** �� **--status `<status>`**����ҵ״̬��������  `enabled` ��  `disabled`��
+	+ **none**（按需作业）
++ **-t `<time>`** **--startTime `<time>`**脚本的首次运行开始时间，采用 ISO 格式；默认值为  `now`。
++ **-a `<status>`** 或 **--status `<status>`**：作业状态，可以是  `enabled` 或  `disabled`。
 
 **mobile job delete [options] [servicename] [jobname]**
 
-������� TodoList ��������ɾ�� getUpdates �Ѽƻ���ҵ��
+此命令从 TodoList 服务器中删除 getUpdates 已计划作业。
 
 	~$azure mobile job delete todolist getUpdates
 	info:    Executing command mobile job delete
 	info:    mobile job delete command OK
 
-> [AZURE.NOTE] ɾ����ҵҲ��ɾ�������صĽű���
+> [AZURE.NOTE] 删除作业也将删除已上载的脚本。
 
-### <a name="Mobile_Scale"></a>���������ƶ����������
+### <a name="Mobile_Scale"></a>用于缩放移动服务的命令
 
-�������е��������������ƶ������й���ϸ��Ϣ�������[�����ƶ�����](https://msdn.microsoft.com/zh-cn/library/azure/jj193178.aspx)��
+本部分中的命令用于缩放移动服务。有关详细信息，请参阅[缩放移动服务](https://msdn.microsoft.com/zh-cn/library/azure/jj193178.aspx)。
 
 **mobile scale show [options] [servicename]**
 
-��������ʾ������Ϣ��������ǰ����ģʽ��ʵ������
+此命令显示缩放信息，包括当前计算模式和实例数。
 
 	~$azure mobile scale show todolist
 	info:    Executing command mobile scale show
@@ -1608,26 +1606,26 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile scale change [options] [servicename]**
 
-������ƶ�����Ĺ�ģ�����ģʽ����Ϊ�߼�ģʽ��
+此命令将移动服务的规模从免费模式更改为高级模式。
 
 	~$azure mobile scale change -c Reserved -i 1 todolist
 	info:    Executing command mobile scale change
 	+ Rescaling the mobile service
 	info:    mobile scale change command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-c `<mode>`** �� **--computeMode `<mode>`**������ģʽ����Ϊ  `Free` ��  `Reserved`��
-+ **-i `<count>`** �� **--numberOfInstances `<count>`**���ڱ���ģʽ������ʱʹ�õ�ʵ������
++ **-c `<mode>`** 或 **--computeMode `<mode>`**：计算模式必须为  `Free` 或  `Reserved`。
++ **-i `<count>`** 或 **--numberOfInstances `<count>`**：在保留模式下运行时使用的实例数。
 
-> [AZURE.NOTE] ������ģʽ����Ϊ  `Reserved` ʱ��ͬһ�����е������ƶ����񶼽��ڸ߼�ģʽ�����С�
+> [AZURE.NOTE] 将计算模式设置为  `Reserved` 时，同一区域中的所有移动服务都将在高级模式下运行。
 
 
-### ����Ϊ�ƶ���������Ԥ���湦�ܵ�����
+### 用于为移动服务启用预览版功能的命令
 
 **mobile preview list [options] [servicename]**
 
-��������ʾ��ָ���ķ����Ͽ��õ�Ԥ���湦�ܣ��Լ������Ƿ������á�
+此命令显示在指定的服务上可用的预览版功能，以及它们是否已启用。
 
 	~$ azure mobile preview list mysite
 	info:    Executing command mobile preview list
@@ -1641,13 +1639,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile preview enable [options] [servicename] [featurename]**
 
-������Ϊ�ƶ���������ָ����Ԥ���湦�ܡ���ע�⣬һ�����ã����޷�Ϊ�ƶ��������Ԥ���湦�ܡ�
+此命令为移动服务启用指定的预览版功能。请注意，一旦启用，将无法为移动服务禁用预览版功能。
 
-### ���ڹ����ƶ����� API ������
+### 用于管理移动服务 API 的命令
 
 **mobile api list [options] [servicename]**
 
-�������г���Ϊ����ƶ����񴴽����ƶ������Զ��� API��
+此命令列出你为你的移动服务创建的移动服务自定义 API。
 
 	~$ azure mobile api list mysite
 	info:    Executing command mobile api list
@@ -1661,7 +1659,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile api create [options] [servicename] [apiname]**
 
-�����ƶ������Զ��� API
+创建移动服务自定义 API
 
 	~$ azure mobile api create mysite myCustomRetrieveAPI
 	info:    Executing command mobile api create
@@ -1669,20 +1667,20 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    API was created successfully. You can modify the API using the 'azure mobile script' command.
 	info:    mobile api create command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-**-p** �� **--permissions** &lt;permissions>��  �Զ��ŷָ�� &lt;method>=&lt;permission> �Ե��б��
+**-p** 或 **--permissions** &lt;permissions>：  以逗号分隔的 &lt;method>=&lt;permission> 对的列表。
 
 **mobile api update [options] [servicename] [apiname]**
 
-���������ָ�����ƶ������Զ��� API��
+此命令更新指定的移动服务自定义 API。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-p** �� **--permissions** &lt;permissions>���Զ��ŷָ�� &lt;method>=&lt;permission>  �Ե��б��
-+ **-f** �� **--force**�����Ƕ�Ȩ��Ԫ�����ļ����κ��Զ�����ġ�
++ **-p** 或 **--permissions** &lt;permissions>：以逗号分隔的 &lt;method>=&lt;permission>  对的列表。
++ **-f** 或 **--force**：覆盖对权限元数据文件的任何自定义更改。
 
 **mobile api delete [options] [servicename] [apiname]**
 
@@ -1691,13 +1689,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	+ Deleting API: 'myCustomRetrieveAPI'
 	info:    mobile api delete command OK
 
-������ɾ��ָ�����ƶ������Զ��� API��
+此命令删除指定的移动服务自定义 API。
 
-### ���ڹ����ƶ�Ӧ�ó����Ӧ�ó������õ�����
+### 用于管理移动应用程序的应用程序设置的命令
 
 **mobile appsetting list [options] [servicename]**
 
-��������ʾָ���ķ�����ƶ�Ӧ�ó����Ӧ�ó������á�
+此命令显示指定的服务的移动应用程序的应用程序设置。
 
 	~$ azure mobile appsetting list mysite
 	info:    Executing command mobile appsetting list
@@ -1709,7 +1707,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile appsetting add [options] [servicename] [name] [value]**
 
-������Ϊ�ƶ���������Զ���Ӧ�ó������á�
+此命令为移动服务添加自定义应用程序设置。
 
 	~$ azure mobile appsetting add mysite enablebetacontent true
 	info:    Executing command mobile appsetting add
@@ -1719,7 +1717,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile appsetting delete [options] [servicename] [name]**
 
-������Ϊ�ƶ�����ɾ��ָ����Ӧ�ó������á�
+此命令为移动服务删除指定的应用程序设置。
 
 	~$ azure mobile appsetting delete mysite enablebetacontent
 	info:    Executing command mobile appsetting delete
@@ -1729,7 +1727,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **mobile appsetting show [options] [servicename] [name]**
 
-������Ϊ�ƶ�����ɾ��ָ����Ӧ�ó������á�
+此命令为移动服务删除指定的应用程序设置。
 
 	~$ azure mobile appsetting show mysite enablebetacontent
 	info:    Executing command mobile appsetting show
@@ -1737,13 +1735,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	info:    enablebetacontent: true
 	info:    mobile appsetting show command OK
 
-## <a name="Manage_tool_local_settings"></a>������߱�������
+## <a name="Manage_tool_local_settings"></a>管理工具本地设置
 
-����������ָ��Ķ��� ID ��Ĭ�ϴ洢�ʻ����ơ�
+本地设置是指你的订阅 ID 和默认存储帐户名称。
 
 **config list [options]**
 
-��������ʾ�������á�
+此命令显示配置设置。
 
 	~$ azure config list
 	info:   Displaying config settings
@@ -1754,23 +1752,23 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **config set [options] &lt;name&gt;,&lt;value&gt;**
 
-����������������á�
+此命令更改配置设置。
 
 	~$ azure config set defaultStorageAccount myname
 	info:   Setting 'defaultStorageAccount' to value 'myname'
 	info:   Changes saved.
 
-## <a name ="Commands_to_manage_service_bus"></a>���ڹ��� Service Bus ������
+## <a name ="Commands_to_manage_service_bus"></a>用于管理 Service Bus 的命令
 
-ʹ����Щ������������� Service Bus �ʻ�
+使用这些命令来管理你的 Service Bus 帐户
 
 **sb namespace check [options] &lt;name>**
 
-���ĳ�� service bus �����ռ��Ƿ�Ϸ������á�
+检查某个 service bus 命名空间是否合法并可用。
 
 **sb namespace create &lt;name> &lt;location>**
 
-�����µ� Service Bus �����ռ䡣
+创建新的 Service Bus 命名空间。
 
 	~$ azure sb namespace create mysbnamespacea-test "China North"
 	info:    Executing command sb namespace create
@@ -1778,7 +1776,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	data:    name: mysbnamespacea-test
 	data:    region: China North
 	data:    status: Activating
-	data:    createdAt: Fri Mar 20 2015 11:07:22 GMT+0800 (�й���׼ʱ��)
+	data:    createdAt: Fri Mar 20 2015 11:07:22 GMT+0800 (中国标准时间)
 	data:    acsManagementEndpoint: https://mysbnamespacea-test-sb.accesscontrol.chinacloudapi.cn/
 	data:    serviceBusEndpoint: https://mysbnamespacea-test.servicebus.chinacloudapi.cn/
 	data:    subscriptionId: c333413ef84b4cc2944efe29b05c237f
@@ -1788,7 +1786,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sb namespace delete &lt;name>**
 
-ɾ��ĳ�������ռ䡣
+删除某个命名空间。
 
 	~$ azure sb namespace delete mysbnamespacea-test
 	info:    Executing command sb namespace delete
@@ -1798,7 +1796,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sb namespace list**
 
-�г�Ϊ����ʻ����������������ռ䡣
+列出为你的帐户创建的所有命名空间。
 
 	~$ azure sb namespace list
 	info:    Executing command sb namespace list
@@ -1811,7 +1809,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sb namespace location list**
 
-��ʾ���п��õ������ռ�λ�õ��б��
+显示所有可用的命名空间位置的列表。
 
 	~$ azure sb namespace location list
 	info:    Executing command sb namespace location list
@@ -1824,7 +1822,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sb namespace show &lt;name>**
 
-��ʾ�й��ض������ռ����ϸ��Ϣ��
+显示有关特定命名空间的详细信息。
 
 	~$ azure sb namespace show mysbnamespacea-test
 	info:    Executing command sb namespace show
@@ -1832,7 +1830,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	data:    Name: mysbnamespacea-test
 	data:    region: China North
 	data:    status: Activating
-	data:    createdAt: Fri Mar 20 2015 11:10:07 GMT+0800 (�й���׼ʱ��)
+	data:    createdAt: Fri Mar 20 2015 11:10:07 GMT+0800 (中国标准时间)
 	data:    acsManagementEndpoint: https://mysbnamespacea-test-sb.accesscontrol.chinacloudapi.cn/
 	data:    serviceBusEndpoint: https://mysbnamespacea-test.servicebus.chinacloudapi.cn/
 	data:    subscriptionId: c333413ef84b4cc2944efe29b05c237f
@@ -1841,15 +1839,15 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sb namespace verify &lt;name>**
 
-��������ռ��Ƿ���á�
+检查命名空间是否可用。
 
-## <a name="Commands_to_manage_your_Storage_objects"></a>���ڹ���洢���������
+## <a name="Commands_to_manage_your_Storage_objects"></a>用于管理存储对象的命令
 
-### ���ڹ���洢�ʻ�������
+### 用于管理存储帐户的命令
 
 **storage account list [options]**
 
-��������ʾ��Ķ����ϵĴ洢�ʻ���
+此命令显示你的订阅上的存储帐户。
 
 	~$ azure storage account list
 	info:    Executing command storage account list
@@ -1861,199 +1859,199 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **storage account show [options] <name>**
 
-��������ʾ�й�ָ���Ĵ洢�ʻ�����Ϣ������ URI ���ʻ����ԡ�
+此命令显示有关指定的存储帐户的信息，包括 URI 和帐户属性。
 
 **storage account create [options] <name>**
 
-����������ṩ��ѡ����洢�ʻ���
+此命令根据提供的选项创建存储帐户。
 
 	~$ azure storage account create mybasestorage --label PrimaryStorage --location "China North"
 	info:    Executing command storage account create
 	+ Creating storage account
 	info:    storage account create command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-e** �� **--label** &lt;label>���洢�ʻ��ı�ǩ��
-+ **-d** �� **--description** &lt;description>���洢�ʻ���˵����
-+ **-l** �� **--location** &lt;name>��Ҫ�����д����洢�ʻ��ĵ�������
-+ **-a** �� **--affinity-group** &lt;name>��Ҫ��洢�ʻ������ĵ�Ե�顣
-+ **--geoReplication**��ָʾ�Ƿ����õ����ơ�
-+ **--disable-geoReplication**��ָʾ�Ƿ���õ����ơ�
++ **-e** 或 **--label** &lt;label>：存储帐户的标签。
++ **-d** 或 **--description** &lt;description>：存储帐户的说明。
++ **-l** 或 **--location** &lt;name>：要在其中创建存储帐户的地理区域。
++ **-a** 或 **--affinity-group** &lt;name>：要与存储帐户关联的地缘组。
++ **--geoReplication**：指示是否启用地域复制。
++ **--disable-geoReplication**：指示是否禁用地域复制。
 
 **storage account set [options] <name>**
 
-���������ָ���Ĵ洢�ʻ���
+此命令更新指定的存储帐户。
 
 	~$ azure storage account set mybasestorage --geoReplication
 	info:    Executing command storage account set
 	+ Updating storage account
 	info:    storage account set command OK
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-e** or **--label** &lt;label>���洢�ʻ��ı�ǩ��
-+ **-d** �� **--description** &lt;description>���洢�ʻ���˵����
-+ **-l** �� **--location** &lt;name>��Ҫ�����д����洢�ʻ��ĵ�������
-+ **--geoReplication**��ָʾ�Ƿ����õ����ơ�
-+ **--disable-geoReplication**��ָʾ�Ƿ���õ����ơ�
++ **-e** or **--label** &lt;label>：存储帐户的标签。
++ **-d** 或 **--description** &lt;description>：存储帐户的说明。
++ **-l** 或 **--location** &lt;name>：要在其中创建存储帐户的地理区域。
++ **--geoReplication**：指示是否启用地域复制。
++ **--disable-geoReplication**：指示是否禁用地域复制。
 
 **storage account delete [options] <name>**
 
-������ɾ��ָ���Ĵ洢�ʻ���
+此命令删除指定的存储帐户。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-**-q** �� **--quiet**������ʾȷ�ϡ����Զ����ű���ʹ�ô�ѡ�
+**-q** 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
 
-### ���ڹ���洢�ʻ���Կ������
+### 用于管理存储帐户密钥的命令
 
 **storage account keys list [options] <name>**
 
-�������г�ָ���Ĵ洢�ʻ�����Ҫ�͸�����Կ��
+此命令列出指定的存储帐户的主要和辅助密钥。
 
 **storage account keys renew [options] <name>**
 
-### ���ڹ���洢����������
+### 用于管理存储容器的命令
 
 **storage container list [options] [prefix]**
 
-��������ʾָ���Ĵ洢�ʻ��Ĵ洢�����б���洢�ʻ���ͨ�������ַ������ߴ洢�ʻ����ƺ��ʻ���Կָ���ġ�
+此命令显示指定的存储帐户的存储容器列表。存储帐户是通过连接字符串或者存储帐户名称和帐户密钥指定的。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **-p** �� **-prefix** &lt;prefix>���洢��������ǰ׺��
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **-p** 或 **-prefix** &lt;prefix>：存储容器名称前缀。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage container show [options] [container]**
 **storage container create [options] [container]**
 
-������Ϊָ���Ĵ洢�ʻ������洢�������洢�ʻ���ͨ�������ַ������ߴ洢�ʻ����ƺ��ʻ���Կָ���ġ�
+此命令为指定的存储帐户创建存储容器。存储帐户是通过连接字符串或者存储帐户名称和帐户密钥指定的。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-p** �� **-prefix** &lt;prefix>���洢��������ǰ׺��
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ�����
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ���
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-p** 或 **-prefix** &lt;prefix>：存储容器名称前缀。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage container delete [options] [container]**
 
-������ɾ��ָ���Ĵ洢�������洢�ʻ���ͨ�������ַ������ߴ洢�ʻ����ƺ��ʻ���Կָ���ġ�
+此命令删除指定的存储容器。存储帐户是通过连接字符串或者存储帐户名称和帐户密钥指定的。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-p** �� **-prefix** &lt;prefix>���洢��������ǰ׺��
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-p** 或 **-prefix** &lt;prefix>：存储容器名称前缀。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage container set [options] [container]**
 
-���������ô洢�����ķ��ʿ����б���洢�ʻ���ͨ�������ַ������ߴ洢�ʻ����ƺ��ʻ���Կָ���ġ�
+此命令设置存储容器的访问控制列表。存储帐户是通过连接字符串或者存储帐户名称和帐户密钥指定的。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-p** �� **-prefix** &lt;prefix>���洢��������ǰ׺��
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-p** 或 **-prefix** &lt;prefix>：存储容器名称前缀。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
-### ���ڹ���洢 blob ������
+### 用于管理存储 blob 的命令
 
 **storage blob list [options] [container] [prefix]**
 
-�������ָ���Ĵ洢�����еĴ洢 blob ���б��
+此命令返回指定的存储容器中的存储 blob 的列表。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-p** �� **-prefix** &lt;prefix>���洢��������ǰ׺��
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-p** 或 **-prefix** &lt;prefix>：存储容器名称前缀。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage blob show [options] [container] [blob]**
 
-��������ʾָ���Ĵ洢 blob ����ϸ��Ϣ��
+此命令显示指定的存储 blob 的详细信息。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-p** �� **-prefix** &lt;prefix>���洢��������ǰ׺��
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-p** 或 **-prefix** &lt;prefix>：存储容器名称前缀。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage blob delete [options] [container] [blob]**
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-b** �� **--blob** &lt;blobName>��Ҫɾ���Ĵ洢 blob �����ơ�
-+ **-q** �� **--quiet**��ɾ��ָ���Ĵ洢 blob �Ҳ�ȷ�ϡ�
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-b** 或 **--blob** &lt;blobName>：要删除的存储 blob 的名称。
++ **-q** 或 **--quiet**：删除指定的存储 blob 且不确认。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage blob upload [options] [file] [container] [blob]**
 
-�����ָ�����ļ����ص�ָ���Ĵ洢 blob��
+此命令将指定的文件上载到指定的存储 blob。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-b** �� **--blob** &lt;blobName>��Ҫ���صĴ洢 blob �����ơ�
-+ **-t** �� **--blobtype** &lt;blobtype>���洢 blob ���ͣ�Page �� Block��
-+ **-p** �� **--properties** &lt;properties>�����ص��ļ��Ĵ洢 blob ���ԡ��������Էֺ� (;) �ָ��"��=ֵ"�ԡ����õ������� contentType��contentEncoding��contentLanguage �� cacheControl��
-+ **-m** �� **--metadata** &lt;metadata>�����ص��ļ��Ĵ洢 blob Ԫ���ݡ�Ԫ�������Էֺ� (;) �ָ��"��=ֵ"�ԡ�
-+ **--concurrenttaskcount** &lt;concurrenttaskcount>��������������������Ŀ��
-+ **-q** �� **--quiet**������ָ���Ĵ洢 blob �Ҳ�ȷ�ϡ�
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-b** 或 **--blob** &lt;blobName>：要上载的存储 blob 的名称。
++ **-t** 或 **--blobtype** &lt;blobtype>：存储 blob 类型：Page 或 Block。
++ **-p** 或 **--properties** &lt;properties>：上载的文件的存储 blob 属性。属性是以分号 (;) 分隔的"键=值"对。可用的属性有 contentType、contentEncoding、contentLanguage 和 cacheControl。
++ **-m** 或 **--metadata** &lt;metadata>：上载的文件的存储 blob 元数据。元数据是以分号 (;) 分隔的"键=值"对。
++ **--concurrenttaskcount** &lt;concurrenttaskcount>：并发上载请求的最大数目。
++ **-q** 或 **--quiet**：覆盖指定的存储 blob 且不确认。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
 **storage blob download [options] [container] [blob] [destination]**
 
-����������ָ���Ĵ洢 blob��
+此命令下载指定的存储 blob。
 
-������֧�����¸���ѡ�
+此命令支持以下附加选项：
 
-+ **--container** &lt;container>��Ҫ�����Ĵ洢���������ơ�
-+ **-b** �� **--blob** &lt;blobName>���洢 blob ���ơ�
-+ **-d** �� **--destination** [destination]������Ŀ����ļ���Ŀ¼·����
-+ **-m** �� **--checkmd5**�����ص��ļ���У�� md5sum��
-+ **--concurrenttaskcount** &lt;concurrenttaskcount>  ������������������Ŀ
-+ **-q** �� **--quiet**������Ŀ���ļ��Ҳ�ȷ�ϡ�
-+ **-a** �� **--account-name** &lt;accountName>���洢�ʻ����ơ�
-+ **-k** �� **--account-key** &lt;accountKey>���洢�ʻ���Կ��
-+ **-c** �� **--connection-string** &lt;connectionString>���洢�����ַ�����
-+ **--debug**���ڵ���ģʽ������ storage ���
++ **--container** &lt;container>：要创建的存储容器的名称。
++ **-b** 或 **--blob** &lt;blobName>：存储 blob 名称。
++ **-d** 或 **--destination** [destination]：下载目标的文件或目录路径。
++ **-m** 或 **--checkmd5**：下载的文件的校验 md5sum。
++ **--concurrenttaskcount** &lt;concurrenttaskcount>  并发上载请求的最大数目
++ **-q** 或 **--quiet**：覆盖目标文件且不确认。
++ **-a** 或 **--account-name** &lt;accountName>：存储帐户名称。
++ **-k** 或 **--account-key** &lt;accountKey>：存储帐户密钥。
++ **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
++ **--debug**：在调试模式下运行 storage 命令。
 
-## <a name ="Commands_to_manage_sql"></a>���ڹ��� SQL ���ݿ������
+## <a name ="Commands_to_manage_sql"></a>用于管理 SQL 数据库的命令
 
-ʹ����Щ������������� Azure SQL ���ݿ�
+使用这些命令来管理你的 Azure SQL 数据库
 
-### ���ڹ��� SQL Server �����ݿ�
+### 用于管理 SQL Server 的数据库
 
-ʹ����Щ������������� SQL Server
+使用这些命令来管理你的 SQL Server
 
 **sql server create &lt;administratorLogin> &lt;administratorPassword> &lt;location>**
 
-�����µ����ݿ������
+创建新的数据库服务器
 
 	~$ azure sql server create test T3stte$t "China North"
 	info:    Executing command sql server create
@@ -2063,7 +2061,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql server show &lt;name>**
 
-��ʾ��������ϸ��Ϣ��
+显示服务器详细信息。
 
 	~$ azure sql server show xclfgcndfg
 	info:    Executing command sql server show
@@ -2076,7 +2074,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql server list**
 
-��ȡ���������б��
+获取服务器的列表。
 
 	~$ azure sql server list
 	info:    Executing command sql server list
@@ -2088,7 +2086,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql server delete &lt;name>**
 
-ɾ��������
+删除服务器
 
 	~$ azure sql server delete i1qwc540ts
 	info:    Executing command sql server delete
@@ -2096,13 +2094,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	+ Removing SQL Server
 	info:    sql server delete command OK
 
-### ���ڹ��� SQL ���ݿ������
+### 用于管理 SQL 数据库的命令
 
-ʹ����Щ������������� SQL ���ݿ⡣
+使用这些命令来管理你的 SQL 数据库。
 
 **sql db create [options] &lt;serverName> &lt;databaseName> &lt;administratorPassword>**
 
-�����µ����ݿ�ʵ��
+创建新的数据库实例
 
 	~$ azure sql db create fr8aelne00 newdb test
 	info:    Executing command sql db create
@@ -2112,7 +2110,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql db show [options] &lt;serverName> &lt;databaseName> &lt;administratorPassword>**
 
-��ʾ���ݿ���ϸ��Ϣ��
+显示数据库详细信息。
 
 	C:\windows\system32>azure sql db show fr8aelne00 newdb test
 	info:    Executing command sql db show
@@ -2165,7 +2163,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql db list [options] &lt;serverName> &lt;administratorPassword>**
 
-�г����ݿ⡣
+列出数据库。
 
 	~$ azure sql db list fr8aelne00 test
 	info:    Executing command sql db list
@@ -2178,7 +2176,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql db delete [options] &lt;serverName> &lt;databaseName> &lt;administratorPassword>**
 
-ɾ�����ݿ⡣
+删除数据库。
 
 	~$ azure sql db delete fr8aelne00 newdb test
 	info:    Executing command sql db delete
@@ -2188,13 +2186,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	+ Removing database
 	info:    sql db delete command OK
 
-### ���ڹ��� SQL Server ����ǽ���������
+### 用于管理 SQL Server 防火墙规则的命令
 
-ʹ����Щ���������� SQL Server ����ǽ����
+使用这些命令来管理 SQL Server 防火墙规则
 
 **sql firewallrule create [options] &lt;serverName> &lt;ruleName> &lt;startIPAddress> &lt;endIPAddress>**
 
-Ϊ SQL Server �����µķ���ǽ����
+为 SQL Server 创建新的防火墙规则。
 
 	~$ azure sql firewallrule create fr8aelne00 allowed 131.107.0.0 131.107.255.255
 	info:    Executing command sql firewallrule create
@@ -2203,7 +2201,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql firewallrule show [options] &lt;serverName> &lt;ruleName>**
 
-��ʾ����ǽ������ϸ��Ϣ��
+显示防火墙规则详细信息。
 
 	~$ azure sql firewallrule show fr8aelne00 allowed
 	info:    Executing command sql firewallrule show
@@ -2221,7 +2219,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql firewallrule list [options] &lt;serverName>**
 
-�г�����ǽ����
+列出防火墙规则。
 
 	~$ azure sql firewallrule list fr8aelne00
 	info:    Executing command sql firewallrule list
@@ -2233,7 +2231,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **sql firewallrule delete [options] &lt;serverName> &lt;ruleName>**
 
-�����ɾ������ǽ����
+此命令将删除防火墙规则。
 
 	~$ azure sql firewallrule delete fr8aelne00 allowed
 	info:    Executing command sql firewallrule delete
@@ -2241,13 +2239,13 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 	+ Removing firewall rule
 	info:    sql firewallrule delete command OK
 
-## <a name ="Commands_to_manage_vnet"></a>���ڹ����������������
+## <a name ="Commands_to_manage_vnet"></a>用于管理虚拟网络的命令
 
-ʹ����Щ���������������������
+使用这些命令来管理你的虚拟网络
 
 **network vnet create [options] &lt;location>**
 
-�����µ��������硣
+创建新的虚拟网络。
 
 	~$ azure network vnet create vnet1 --location "China North" -v
 	info:    Executing command network vnet create
@@ -2268,7 +2266,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **network vnet show &lt;name>**
 
-��ʾ�����������ϸ��Ϣ��
+显示虚拟网络的详细信息。
 
 	~$ azure network vnet show vnet1
 	info:    Executing command network vnet show
@@ -2284,7 +2282,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **vnet list**
 
-�г��������е��������硣
+列出所有现有的虚拟网络。
 
 	~$ azure network vnet list
 	info:    Executing command network vnet list
@@ -2300,7 +2298,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **network vnet delete &lt;name>**
 
-ɾ��ָ�����������硣
+删除指定的虚拟网络。
 
 	~$ azure network vnet delete opentechvn1
 	info:    Executing command network vnet delete
@@ -2311,15 +2309,15 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **network export [file-path]**
 
-��Ҫ���и߼��������ã����ڱ��ص�������������á�ע�⣬�������������ð��� DNS ���������á������������á���������վ�����ú��������á�
+若要进行高级网络配置，请在本地导出你的网络配置。注意，导出的网络配置包括 DNS 服务器设置、虚拟网络设置、本地网络站点设置和其他设置。
 
 **network import [file-path]**
 
-���뱾���������á�
+导入本地网络配置。
 
 **network dnsserver register [options] &lt;dnsIP>**
 
-ע����ƻ������������������������ƽ����� DNS ��������
+注册你计划在网络配置中用来进行名称解析的 DNS 服务器。
 
 	~$ azure network dnsserver register 98.138.253.109 --dns-id FrontEndDnsServer
 	info:    Executing command network dnsserver register
@@ -2329,7 +2327,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **network dnsserver list**
 
-�г����������������ע������� DNS ��������
+列出在你的网络配置中注册的所有 DNS 服务器。
 
 	~$ azure network dnsserver list
 	info:    Executing command network dnsserver list
@@ -2342,7 +2340,7 @@ Azure �ƶ���������һϵ��֧�����Ӧ�ó���
 
 **network dnsserver unregister [options] &lt;dnsIP>**
 
-������������ɾ�� DNS ��������Ŀ��
+从网络配置中删除 DNS 服务器条目。
 
 	~$ azure network dnsserver unregister 77.88.99.11
 	info:    Executing command network dnsserver unregister

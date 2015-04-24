@@ -1,15 +1,12 @@
-<properties 
-   pageTitle=\"配置"故障转移"负载平衡"
-   description=\"本文将帮助你在流量管理器中配置"故障转移"负载平衡"
+<properties
+   pageTitle="配置故障转移负载平衡"
+   description="本文将帮助你在流量管理器中配置故障转移负载平衡"
    services="traffic-manager"
    documentationCenter=""
    authors="cherylmc"
    manager="adinah"
    editor="tysonn" />
-<tags ms.service="traffic-manager"
-    ms.date="02/27/2015"
-    wacn.date="04/15/2015"
-    />
+<tags ms.service="traffic-manager" ms.date="02/27/2015" wacn.date="04/15/2015" />
 
 # 配置"故障转移"负载平衡
 

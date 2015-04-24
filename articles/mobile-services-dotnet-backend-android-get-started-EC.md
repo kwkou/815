@@ -1,22 +1,13 @@
-<properties 
-	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门 
-	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门
+	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。"
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-wacn.date="04/15/2015"
-
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="02/13/2015" 
-	ms.author="ricksal"/>
+<tags ms.service="mobile-services" ms.date="02/13/2015" wacn.date="04/15/2015"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
@@ -28,7 +19,7 @@ wacn.date="04/15/2015"
 
 ![][0]
 
-完成本教程需要你安装 [Android 开发人员工具][Android SDK]，其中包含 Eclipse 集成开发环境 (IDE)、Android 开发人员工具 (ADT) 插件和最新的 Android 平台。需要使用 Android 4.2 或更高版本。 
+完成本教程需要你安装 [Android 开发人员工具][Android SDK]，其中包含 Eclipse 集成开发环境 (IDE)、Android 开发人员工具 (ADT) 插件和最新的 Android 平台。需要使用 Android 4.2 或更高版本。
 
 下载的快速入门项目包含适用于 Android 的移动服务 SDK。尽管此项目需要 Android 4.2 或更高版本，但移动服务 SDK 只需要 Android 2.2 或更高版本。
 
@@ -68,13 +59,13 @@ wacn.date="04/15/2015"
 
 1. 在[管理门户]中单击"移动服务"，然后单击你刚刚创建的移动服务。
 
-2. 在快速入门选项卡中，单击"选择平台"下的"Android"，然后展开"创建新的 Android 应用程序"。 
- 
+2. 在快速入门选项卡中，单击"选择平台"下的"Android"，然后展开"创建新的 Android 应用程序"。
+
 	![][2]  
 
 3. 在本地计算机或虚拟机上下载并安装 [Android 开发人员工具][Android SDK]（如果尚未这么做）。
 
-4. 在"下载并运行应用程序"下面单击"下载"。 
+4. 在"下载并运行应用程序"下面单击"下载"。
 
   	随即将会下载已连接到移动服务的示例待办事项列表应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
 
@@ -84,11 +75,11 @@ wacn.date="04/15/2015"
 
 1. 浏览到压缩的项目文件所保存到的位置，然后在计算机上展开这些文件。
 
-2. 在 Eclipse 中，依次单击"文件"、"导入"，展开"Android"，单击"工作区中的现有 Android 代码"，然后单击"下一步"。 
+2. 在 Eclipse 中，依次单击"文件"、"导入"，展开"Android"，单击"工作区中的现有 Android 代码"，然后单击"下一步"。
 
  	![][14]
 
-3. 单击"浏览"，浏览到已展开项目文件所在的位置，单击"确定"，并确认 TodoActivity 项目已选中，然后单击"完成"。 
+3. 单击"浏览"，浏览到已展开项目文件所在的位置，单击"确定"，并确认 TodoActivity 项目已选中，然后单击"完成"。
 
  	![][15]
 
@@ -111,7 +102,7 @@ wacn.date="04/15/2015"
 <!--This shows how to run your new client app against the mobile service running in Azure. Before you can test the Android app with the mobile service running on a local computer, you must configure the Web server and firewall to allow access from your Android development computer. For more information, see [Configure the local web server to allow connections to a local mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express).-->
 
 ## <a name="next-steps"> </a>后续步骤
-完成快速入门后，请了解如何在移动服务中执行其他重要任务： 
+完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
 * [数据处理入门]
   <br/>了解有关使用移动服务存储和查询数据的详细信息。
@@ -123,7 +114,7 @@ wacn.date="04/15/2015"
   <br/>了解如何向应用程序发送一条非常简单的推送通知。
 
 * [移动服务 .NET 后端故障排除]
-  <br/> 了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。 
+  <br/> 了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
 <!-- Anchors. -->
 [移动服务入门]:#getting-started

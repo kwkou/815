@@ -1,15 +1,13 @@
 <properties
-   pageTitle=\"配置流量管理器"循环"负载平衡"
-   description=\"本文将帮助你为流量管理器终结点配置"循环"负载平衡。"
+   pageTitle="配置流量管理器循环负载平衡"
+   description="本文将帮助你为流量管理器终结点配置循环负载平衡。"
    services="traffic-manager"
    documentationCenter=""
    authors="cherylmc"
    manager="adinah"
    editor="tysonn" />
-<tags ms.service="traffic-manager"
-    ms.date="02/27/2015"
-    wacn.date="04/15/2015"
-    />
+   
+<tags ms.service="traffic-manager" ms.date="02/27/2015" wacn.date="04/15/2015"/>
 
 # 配置"循环"负载平衡
 

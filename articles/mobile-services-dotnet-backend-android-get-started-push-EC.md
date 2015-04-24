@@ -1,28 +1,19 @@
-<properties 
-	pageTitle="推送通知入门 (Android) | 移动开发人员中心 
-	description="了解如何使用 Azure 移动服务将推送通知发送到 Android .Net 应用程序。" 
-	services="mobile-services, notification-hubs" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="推送通知入门 (Android) | 移动开发人员中心
+	description="了解如何使用 Azure 移动服务将推送通知发送到 Android .Net 应用程序。"
+	services="mobile-services, notification-hubs"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-wacn.date="04/15/2015"
-
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="02/06/2015" 
-	ms.author="ricksal"/>
+<tags ms.service="mobile-services" ms.date="02/06/2015" wacn.date="04/15/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push-EC.md)]
 
-本主题说明如何使用 Azure 移动服务向 Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。 
+本主题说明如何使用 Azure 移动服务向 Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
 本教程将指导你完成以下步骤：
 
@@ -34,9 +25,9 @@ wacn.date="04/15/2015"
 9. [针对发布的移动服务测试应用程序](#test-app)
 
 
-本教程基于移动服务快速入门。在开始学习本教程之前，必须先完成[移动服务入门]或[数据处理入门]，以将项目连接到移动服务。因此，本教程还需要 Visual Studio 2013。 
+本教程基于移动服务快速入门。在开始学习本教程之前，必须先完成[移动服务入门]或[数据处理入门]，以将项目连接到移动服务。因此，本教程还需要 Visual Studio 2013。
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。 
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 
 ## <a id="register"></a>启用 Google Cloud Messaging
@@ -115,7 +106,7 @@ wacn.date="04/15/2015"
 [AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../includes/mobile-services-verify-android-sdk-version-EC.md)]
 
 
-下一步就是安装 Google Play Services。Google Cloud Messaging 对开发和测试提出了一些最低的 API 级别要求，清单中的 **minSdkVersion** 属性必须符合这些要求。 
+下一步就是安装 Google Play Services。Google Cloud Messaging 对开发和测试提出了一些最低的 API 级别要求，清单中的 **minSdkVersion** 属性必须符合这些要求。
 
 如果你要对某台较旧的设备进行测试，请查阅[设置 Google Play Services SDK]，以确定此值可设置到的最小值，并相应地进行设置。
 
@@ -189,11 +180,11 @@ wacn.date="04/15/2015"
   <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
 * [调试通知中心应用程序](https://msdn.microsoft.com/zh-cn/library/dn530751.aspx)
-  </br>获取故障排除和调试通知中心解决方案的指南。 
+  </br>获取故障排除和调试通知中心解决方案的指南。
 
 * [如何使用适用于移动服务的 Android 客户端库]
   <br/>详细了解如何将移动服务与 Android 一起使用。  
-  
+
 <!-- Anchors. -->
 
 [创建新的移动服务]: #create-service
