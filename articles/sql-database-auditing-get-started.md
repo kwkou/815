@@ -1,21 +1,21 @@
-<properties 
-	pageTitle="SQL Database 审核入门 - Azure 
-	description="SQL Database 审核入门" 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="jeffgoll" 
-	manager="jeffreyg" 
+<properties
+	pageTitle="SQL Database 审核入门 - Azure"
+	description="SQL Database 审核入门"
+	services="sql-database"
+	documentationCenter=""
+	authors="jeffgoll"
+	manager="jeffreyg"
 	editor=""/>
 <tags ms.service="sql-database"
     ms.date="02/23/2015"
     wacn.date="04/15/2015"
     />
 
- 
-#SQL Database 审核入门 
+
+#SQL Database 审核入门
 Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
 
-审核可帮助你一直保持遵从法规、了解数据库活动，以及深入了解可以指明业务考量因素或疑似安全违规的偏差和异常。 
+审核可帮助你一直保持遵从法规、了解数据库活动，以及深入了解可以指明业务考量因素或疑似安全违规的偏差和异常。
 
 审核工具有助于遵从法规标准，但不能保证遵从法规。有关可帮助你遵从标准的 Azure 计划的详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/support/trust-center/compliance/" target="_blank">Azure 信任中心</a>。
 
@@ -39,7 +39,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 - **帐户、角色和权限 (DCL)**
 - **安全异常**
 
-有关记录的活动和事件的更多详细信息，请参阅<a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/03-Azure%20SQL%20DB%20Audit%20Logs%20Format%20Specification.docx" target="_blank">审核日志格式参考（doc 文件下载）</a>。 
+有关记录的活动和事件的更多详细信息，请参阅<a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/03-Azure%20SQL%20DB%20Audit%20Logs%20Format%20Specification.docx" target="_blank">审核日志格式参考（doc 文件下载）</a>。
 
 你还可以选择要将审核日志保存到的存储帐户。
 
@@ -66,7 +66,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 	![][3]
 
-5. 如果你要将这些设置应用到服务器上的所有未来数据库以及尚未设置审核的数据库，请选中"将这些设置保存为服务器默认值"。以后可以遵循相同的步骤覆盖每个数据库的这些设置。 
+5. 如果你要将这些设置应用到服务器上的所有未来数据库以及尚未设置审核的数据库，请选中"将这些设置保存为服务器默认值"。以后可以遵循相同的步骤覆盖每个数据库的这些设置。
 
 6. 单击"显示数据库连接字符串"，然后复制或记下应用程序的已启用安全性的相应连接字符串。在任何你想审核其活动的客户端应用程序中使用此字符串。
 
@@ -80,9 +80,9 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 审核日志将在安装期间选择的 Azure 存储帐户中名为 **AuditLogs** 的单个 Azure 存储表内进行聚合。你可以使用工具（例如 <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure 存储资源管理器</a>）查看日志文件。
 
-预配置的仪表板报告模板作为<a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx" target="_blank">可下载的 Excel 电子表格</a>提供，可让你快速分析日志数据。若要对审核日志使用模板，需要安装可从<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=39379">此处</a>下载的 Excel 2013 或更高版本以及 Power Query。 
+预配置的仪表板报告模板作为<a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/01-Azure%20SQL%20DB%20Audit%20Logs%20Report%20Template.xlsx" target="_blank">可下载的 Excel 电子表格</a>提供，可让你快速分析日志数据。若要对审核日志使用模板，需要安装可从<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=39379">此处</a>下载的 Excel 2013 或更高版本以及 Power Query。
 
-该模板包含虚构的示例数据，你可以将 Power Query 设置为直接从 Azure 存储帐户导入审核日志。 
+该模板包含虚构的示例数据，你可以将 Power Query 设置为直接从 Azure 存储帐户导入审核日志。
 
 有关使用报告模板的详细说明，请阅读<a href="http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/02-Azure%20SQL%20DB%20Audit%20Logs%20Excel%20Report%20How-To.docx">操作指南（文档下载）</a>。
 
@@ -91,7 +91,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 ##<a id="subheading-4"></a>使用经典 Azure 门户为数据库设置审核
 
-1. 启动<a href= "https://manage.windowsazure.cn/" target="_bank">经典 Azure 门户</a> ( https://manage.windowsazure.cn/ )。 
+1. 启动<a href= "https://manage.windowsazure.cn/" target="_bank">经典 Azure 门户</a> ( https://manage.windowsazure.cn/ )。
 2. 单击要审核的数据库，然后单击"审核与安全性预览"选项卡。
 3. 在审核部分中，单击"启用"。
 
@@ -108,7 +108,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 ##<a id="subheading-3">生产环境中的用法实践</a>
 本部分中的说明与以上屏幕截图相关。使用<a href= "https://manage.windowsazure.cn/" target="_bank">Azure 门户</a>。
- 
+
 
 ##<a id="subheading-4"></a>已启用安全性的访问
 
@@ -130,7 +130,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 3. 返回审核配置边栏，将"存储访问密钥"从"辅助"切换为"主要"，然后单击"保存"。
 
 4. 返回存储 UI 并**重新生成** *辅助访问密钥*（为下一个密钥刷新周期做好准备）。
-  
+
 ##<a id="subheading-4"></a>自动化
 可以使用多个 PowerShell cmdlet 来配置 Azure SQL Database 中的审核。若要访问审核 cmdlet，你必须以 Azure 资源管理器模式运行 PowerShell。
 
