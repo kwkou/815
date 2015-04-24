@@ -12,7 +12,7 @@
     />
 
  
-# SQL Database 审核入门 
+#SQL Database 审核入门 
 Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
 
 审核可帮助你一直保持遵从法规、了解数据库活动，以及深入了解可以指明业务考量因素或疑似安全违规的偏差和异常。 
@@ -23,7 +23,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 + [为数据库设置审核]
 + [分析审核日志和报告]
 
-## <a id="subheading-1"></a>Azure SQL Database 审核基础知识
+##<a id="subheading-1"></a>Azure SQL Database 审核基础知识
 
 可以在 Azure 预览版门户中设置审核，但是，不管数据库是使用 Azure 门户还是 Azure 预览版门户创建的，这种设置都没有差别。SQL Database 审核可让你：
 
@@ -43,7 +43,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 你还可以选择要将审核日志保存到的存储帐户。
 
-### 已启用安全性的连接字符串
+###已启用安全性的连接字符串
 当你设置审核时，Azure 将为你提供已启用安全性的数据库连接字符串。系统只会记录使用此连接字符串的客户端应用程序的活动和事件，因此，你需要更新现有的客户端应用程序才能使用新的字符串格式。
 
 传统的连接字符串格式：<*服务器名称*>.database.chinacloudapi.cn
@@ -51,7 +51,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 已启用安全性的连接字符串：<*服务器名称*>.database.**secure**.chinacloudapi.cn
 
 
-## <a id="subheading-2"></a>为数据库设置审核
+##<a id="subheading-2"></a>为数据库设置审核
 
 1. 启动 Azure 门户</a> ( https://manage.windowsazure.cn/ )。 请参考以下详细信息。
 2. 导航到你要审核的数据库配置边栏。向下滚动到"操作"部分，然后单击"审核"以启用审核并启动审核配置边栏。
@@ -76,7 +76,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 
 
-## <a id="subheading-3">分析审核日志和报告</a>
+##<a id="subheading-3">分析审核日志和报告</a>
 
 审核日志将在安装期间选择的 Azure 存储帐户中名为 **AuditLogs** 的单个 Azure 存储表内进行聚合。你可以使用工具（例如 <a href="http://azurestorageexplorer.codeplex.com/" target="_blank">Azure 存储资源管理器</a>）查看日志文件。
 
@@ -89,7 +89,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 ![][6]
 
 
-## <a id="subheading-4"></a>使用经典 Azure 门户为数据库设置审核
+##<a id="subheading-4"></a>使用经典 Azure 门户为数据库设置审核
 
 1. 启动<a href= "https://manage.windowsazure.cn/" target="_bank">经典 Azure 门户</a> ( https://manage.windowsazure.cn/ )。 
 2. 单击要审核的数据库，然后单击"审核与安全性预览"选项卡。
@@ -106,11 +106,11 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 7. 单击连接字符串对应的"显示受保护的连接字符串"。
 
 
-## <a id="subheading-3">生产环境中的用法实践</a>
+##<a id="subheading-3">生产环境中的用法实践</a>
 本部分中的说明与以上屏幕截图相关。使用<a href= "https://manage.windowsazure.cn/" target="_bank">Azure 门户</a>。
  
 
-## <a id="subheading-4"></a>已启用安全性的访问
+##<a id="subheading-4"></a>已启用安全性的访问
 
 在生产环境中，你可能需要审核从所有应用程序和工具传往数据库的所有流量。为此，请将"已启用安全性的访问"从"可选"修改为"必需"，然后保存策略。配置为"必需"后，用户将无法选择通过原始连接字符串访问数据库，而只能通过已启用安全性的连接字符串进行访问。
 
@@ -118,7 +118,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 ![][9]
 
 
-## <a id="subheading-4"></a>重新生成存储密钥
+##<a id="subheading-4"></a>重新生成存储密钥
 
 在生产环境中，你可能会定期刷新存储密钥。审核服务不会保留你的存储帐户密钥。保存后，系统会针对审核表生成一个只写共享访问签名 (SAS) 密钥（只有客户能够读取审核日志）。因此，刷新密钥时，你需要重新保存策略。过程如下：
 
@@ -131,7 +131,7 @@ Azure SQL Database 审核可以跟踪数据库事件，并将审核的事件写�
 
 4. 返回存储 UI 并**重新生成** *辅助访问密钥*（为下一个密钥刷新周期做好准备）。
   
-## <a id="subheading-4"></a>自动化
+##<a id="subheading-4"></a>自动化
 可以使用多个 PowerShell cmdlet 来配置 Azure SQL Database 中的审核。若要访问审核 cmdlet，你必须以 Azure 资源管理器模式运行 PowerShell。
 
 > [WACOM.NOTE] AzureResourceManager 模块目前以预览版提供。它可能未提供与 Azure 模块相同的管理功能。
