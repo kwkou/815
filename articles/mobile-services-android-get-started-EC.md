@@ -1,19 +1,33 @@
-<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date="04/09/2015"
-    wacn.date="04/15/2015"
-    />
+<properties 
+	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" 
+	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" 
+	services="mobile-services" 
+	documentationCenter="android" 
+	authors="RickSaling" 
+	manager="dwrede" 
+	editor=""/>
+
+<tags 
+wacn.date="04/15/2015"
+
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="mobile-android" 
+	ms.devlang="java" 
+	ms.topic="hero-article" 
+	ms.date="02/13/2015" 
+	ms.author="ricksal,glenga"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
-[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started-EC.md)]
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 <p>本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 <em>待办事项列表</em> 应用程序，该应用程序将应用程序数据存储在新的移动服务中。</p>
 <p>以下是完成的应用程序的屏幕截图：</p>
 </div>
-<div class="dev-onpage-video-wrapper" style="display:none"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">7:26</span></div>
+<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">7:26</span></div>
 </div>
 
 ![][0]
@@ -22,13 +36,15 @@
 
 下载的快速入门项目包含适用于 Android 的移动服务 SDK。尽管此项目需要 Android 4.2 或更高版本，但移动服务 SDK 只需要 Android 2.2 或更高版本。
 
-<div class="dev-callout"><strong>注意</strong> <p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 免费试用</a>。</p></div>
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+
+<!-- -->
 
 >[AZURE.NOTE] 如果要查看已完成应用程序的源代码，请转到<a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStarted/Android" target="_blank">此处</a>。
 
 ## <a name="create-new-service"> </a>创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## <h2>创建新的 Android 应用程序</h2>
 
@@ -54,7 +70,7 @@
 5. 现在请下载你的应用程序：
 	- 最新的应用程序版本使用移动服务 Android SDK 2.0。可以从<a href="https://github.com/RickSaling/mobile-services-samples/tree/futures">此处</a>下载该版本。单击"下载 Zip"，并将该项目解压缩到 GettingStarted 中的 Android 文件夹下。
 	 
-	- 较低的应用程序版本使用早期版本的 SDK。若要使用它，请在"下载并运行应用程序"下面单击"下载"。随即将会下载已连接到移动服务的示例 _待办事项列表_ 应用程序的项目。项目文件已压缩，因此请浏览到它们所在的位置，并在计算机上展开这些文件。
+	- 较低的应用程序版本使用早期版本的 SDK。若要使用它，请在"下载并运行应用程序"下面单击"下载"。随即将会下载已连接到移动服务的示例 _待办事项列表_应用程序的项目。项目文件已压缩，因此请浏览到它们所在的位置，并在计算机上展开这些文件。
 
 
 ## 运行 Android 应用程序
@@ -83,7 +99,7 @@
 
 4. 在"运行"菜单中，单击"运行"，以便在 Android 模拟器中启动项目。
 
-	<div class="dev-callout"><strong>注意</strong> <p>若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。</p></div>
+	> [AZURE.NOTE] 若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。
 
 5. 在应用程序中键入有意义的文本（例如 _Complete the tutorial_），然后单击"添加"。
 
@@ -91,9 +107,7 @@
 
    	这样可向在 Azure 中托管的新移动服务发送 POST 请求。请求中的数据将插入到 TodoItem 表中。移动服务返回存储在表中的项，数据显示在列表中。
 
-	<div class="dev-callout"><strong>注意</strong>
-   	<p>你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。</p>
- 	</div>
+	> [AZURE.NOTE] 你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。
 
 6. 返回管理门户，单击"数据"选项卡，然后单击 **TodoItem** 表。
 
@@ -113,7 +127,7 @@
   <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
 * [推送通知入门]
-  <br/>了解如何向应用程序发送一条非常简单的推送通知。
+  <br/>了解如何将非常简单的推送通知发送到你的应用程序。
 
 <!-- Anchors. -->
 [移动服务入门]:#getting-started
@@ -129,7 +143,7 @@
 
 
 [6]: ./media/mobile-services-android-get-started/mobile-portal-quickstart-android.png
-[7]: ./media/mobile-services-android-get-started/mobile-quickstart-steps-android.png
+[7]: ./media/mobile-services-android-get-started/mobile-quickstart-steps-android-EC.png
 [8]: ./media/mobile-services-android-get-started/mobile-eclipse-quickstart.png
 
 [10]: ./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png
@@ -140,9 +154,9 @@
 [15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[数据处理入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
-[身份验证入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
-[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
+[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data/
+[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users/
+[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push/
 [Android SDK]: http://developer.android.com/sdk/
 [移动服务 Android SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios.md#sdk-downloads
 
