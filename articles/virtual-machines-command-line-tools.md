@@ -1,7 +1,7 @@
 <properties
 	pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具"
 	description="了解如何在 Azure 中使用适用于 Mac 和 Linux 的命令行工具。"
-	services="web-sites, virtual-machines, mobile-services, cloud-services"
+	services="virtual-machines"
 	documentationCenter=""
 	authors="squillace"
 	manager="timlt"

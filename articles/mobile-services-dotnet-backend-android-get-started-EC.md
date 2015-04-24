@@ -1,11 +1,4 @@
-<properties
-	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门
-	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。"
-	services="mobile-services"
-	documentationCenter="android"
-	authors="RickSaling"
-	manager="dwrede"
-	editor=""/>
+<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" services="mobile-services" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
 
 <tags ms.service="mobile-services" ms.date="02/13/2015" wacn.date="04/15/2015"/>
 
