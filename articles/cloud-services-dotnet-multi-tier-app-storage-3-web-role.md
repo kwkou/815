@@ -83,9 +83,9 @@
 
     ![解决方案资源管理器中的 \_Layout.cshtml][解决方案资源管理器中的 \_Layout.cshtml]
 
-2.  在 **\<title\>** 元素中，将“我的 ASP.NET MVC 应用程序”更改为“Azure 电子邮件服务”。
+2.  在 **`<title>`** 元素中，将“我的 ASP.NET MVC 应用程序”更改为“Azure 电子邮件服务”。
 
-3.  在类为“site-title”的 **\<p\>** 元素中，将“在此处显示你的徽标”更改为“Azure 电子邮件服务”，将“主页”更改为“MailingList”。
+3.  在类为“site-title”的 **`<p>`** 元素中，将“在此处显示你的徽标”更改为“Azure 电子邮件服务”，将“主页”更改为“MailingList”。
 
     ![\_Layout.cshtml 中的标题和页眉][\_Layout.cshtml 中的标题和页眉]
 
@@ -101,7 +101,7 @@
             <li>@Html.ActionLink("Subscribers", "Index", "Subscriber")</li>
         </ul>
 
-6.  在 **\<footer\>** 元素中，将“我的 ASP.NET MVC 应用程序”更改为“Azure 电子邮件服务”。
+6.  在 **`<footer>`** 元素中，将“我的 ASP.NET MVC 应用程序”更改为“Azure 电子邮件服务”。
 
     ![\_Layout.cshtml 中的页脚][\_Layout.cshtml 中的页脚]
 
