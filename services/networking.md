@@ -16,7 +16,7 @@
 ####快速链接
 
 -   [服务概述](/home/features/networking/)
--   [定价详细信息](/home/features/networking/#home_net_pri)
+-   [定价详细信息](/home/features/networking/#price)
       
 ####特色
 

@@ -13,7 +13,7 @@
 ####快速链接
 
 -   [服务概述](/home/features/cloud-services/)
--   [定价信息](/home/features/cloud-services/#home_cloud_pri)
+-   [定价信息](/home/features/cloud-services/#price)
 
 ####特色
 

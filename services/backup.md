@@ -13,7 +13,7 @@
 
 -   [服务概述](/home/features/back-up)
 -   [可交付的解决方案](/solutions/storage-backup-recovery/)
--   [备份定价详细信息](/home/features/back-up/#home_back_pri)
+-   [备份定价详细信息](/home/features/back-up/#price)
 
 ####特色
 

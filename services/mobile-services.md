@@ -20,7 +20,7 @@
 
 -   [服务概述](/home/features/mobile-services/)
 -   [可交付的解决方案](/solutions/mobile/)
--   [定价详细信息](/home/features/mobile-services/#home_mobile_pri)
+-   [定价详细信息](/home/features/mobile-services/#price)
 
 ####创建您的第一个移动服务
 

@@ -14,7 +14,7 @@
 
 -   [服务概述](/home/features/web-site/)
 -   [可交付的解决方案](/solutions/web/)
--   [定价详细信息](/home/features/web-site/#page_body_price)
+-   [定价详细信息](/home/features/web-site/#price)
 
 ####特色
 

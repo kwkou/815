@@ -12,7 +12,7 @@
 ####快速链接
 
 * [服务概述](/home/features/automation/)
-* [定价详细信息](/home/features/automation/#home_automation_pri)
+* [定价详细信息](/home/features/automation/#price)
   
 ####特色
 

@@ -14,7 +14,7 @@
 ####快速链接
 
 -   [服务概述](/home/features/notification-hubs/)
--   [定价详细信息](/home/features/notification-hubs/#home_hubs_pri)
+-   [定价详细信息](/home/features/notification-hubs/#price)
 
 
 ####开始使用

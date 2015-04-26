@@ -15,7 +15,7 @@
 
 -   [服务概述](/home/features/sql-database/)
 -   [可交付的解决方案](/zh-cn/solutions/data-management/)
--   [定价详细信息](/home/features/sql-database/#home_database_pri)
+-   [定价详细信息](/home/features/sql-database/#price)
 
 ####特色
 
