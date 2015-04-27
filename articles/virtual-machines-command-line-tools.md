@@ -2015,7 +2015,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **--container** &lt;container>：要创建的存储容器的名称。
 + **-b** 或 **--blob** &lt;blobName>：要上载的存储 blob 的名称。
 + **-t** 或 **--blobtype** &lt;blobtype>：存储 blob 类型：Page 或 Block。
-+ **-p** 或 **--properties** &lt;properties>：上载的文件的存储 blob 属性。属性是以分号 (;) 分隔的"键=值"对。可用的属性有 contentType、contentEncoding、contentLanguage 和 cacheControl。
++ **-p** 或 **--properties** `<properties>`：上载的文件的存储 blob 属性。属性是以分号 (;) 分隔的"键=值"对。可用的属性有 contentType、contentEncoding、contentLanguage 和 cacheControl。
 + **-m** 或 **--metadata** &lt;metadata>：上载的文件的存储 blob 元数据。元数据是以分号 (;) 分隔的"键=值"对。
 + **--concurrenttaskcount** &lt;concurrenttaskcount>：并发上载请求的最大数目。
 + **-q** 或 **--quiet**：覆盖指定的存储 blob 且不确认。
