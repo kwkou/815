@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="了解服务层和版本 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,性能,ASDB基准" description="针对服务层和不同版本的性能介绍,为您选择MySQL Database on Azure提供了详细的参考。我们按照ASDB基准,提供了不同版本的测试数据供您参考。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date=""/>
+<tags ms.service="mysql" ms.date="" wacn.date="04/29/2015"/>
 
 #了解服务层和版本
 ##ASDB (Azure SQL Database Benchmark)测试结果参考 ASDB（Azure SQL Database Benchmark）是Microsoft为了量化提高云计算资源配置如何转换为更高数据库性能而设计的一种数据库测试基准。该基准包括了几乎所有在线事务处理（OLTP）工作负载中发生的基本操作。尽管该基准是基于云计算设计的，但数据库架构、数据填充和事务在设计上广泛代表了 OLTP 工作负载中最常用的基本元素。

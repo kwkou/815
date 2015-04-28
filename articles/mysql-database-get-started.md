@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL Database on Azure数据库入门 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南" description="快速入门指南帮助您迅速了解MySQL Database on Azure,让您几分钟内轻松创建,连接,迁移,监控管理您的MySQL数据库。您根据入门指南中的步骤操作,将成功建立使用属于您的MySQL数据库。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date=""/>
+<tags ms.service="mysql" ms.date="" wacn.date="04/29/2015"/>
 
 #MySQL Database on Azure数据库入门在本教程帮助您将了解如何使用Azure管理门户迅速创建，连接，配置MySQL Database on Azure。完成本教程后，您将在Azure上拥有一个示例MySQL数据库服务器，并了解如何使用管理门户执行基本管理任务。
 ###目录- [步骤一：登陆Azure管理门户，创建MySQL服务器](#step1)- [步骤二：配置防火墙](#step2)- [步骤三：设置备份时间](#step3)- [步骤四：创建数据库](#step4)- [步骤五：连接数据库](#step5)- [步骤六：数据迁移(可选)](#step6)- [后续步骤](#nextstep)##<a id="step1"></a>步骤一：登陆Azure管理门户，创建MySQL服务器
