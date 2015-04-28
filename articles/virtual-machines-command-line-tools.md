@@ -508,7 +508,7 @@ info:   vm shutdown command OK
 
 当使用 azure vm disk detach 命令分离数据磁盘时，请使用 &lt;lun&gt; 参数指明要分离的磁盘。
 
-> [AZURE>NOTE] 请注意，应始终按相反的顺序分离数据磁盘，即，从已分配的编号最高的 LUN 开始。Linux SCSI 层不支持在仍附加有编号较高的 LUN 时分离编号较低的 LUN。例如，不应在仍附加有 LUN 1 的情况下分离 LUN 0。
+> [AZURE.NOTE] 请注意，应始终按相反的顺序分离数据磁盘，即，从已分配的编号最高的 LUN 开始。Linux SCSI 层不支持在仍附加有编号较高的 LUN 时分离编号较低的 LUN。例如，不应在仍附加有 LUN 1 的情况下分离 LUN 0。
 
 **vm disk show [options] &lt;name>**
 
@@ -1396,7 +1396,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 此命令支持以下附加选项：
 
-+ **-p `&lt;permissions>`** 或 **--permissions `&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对的列表，其中，`<operation>`  是  `insert`、 `read`、 `update` 或  `delete`，`&lt;permissions>` 是  `public`、 `application`（默认值） `user` 或  `admin`。
++ **-p `<permissions>`** 或 **--permissions `<permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对的列表，其中，`<operation>`  是  `insert`、 `read`、 `update` 或  `delete`，`&lt;permissions>` 是  `public`、 `application`（默认值） `user` 或  `admin`。
 
 **mobile data read [options] [servicename] [tablename] [query]**
 
@@ -1430,7 +1430,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 此命令支持以下附加选项：
 
-+ **-p `&lt;permissions>`** 或 **--permissions `&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对的列表，其中，`<operation>` 是  `insert`、 `read`、 `update` 或  `delete`，`&lt;permissions>` 是 `public`、 `application`（默认值）、 `user` 或  `admin`。
++ **-p `<permissions>`** 或 **--permissions `<permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对的列表，其中，`<operation>` 是  `insert`、 `read`、 `update` 或  `delete`，`<permissions>` 是 `public`、 `application`（默认值）、 `user` 或  `admin`。
 + **--deleteColumn `<columns>`**：以逗号分隔的要删除的列（指定为 `<columns>`）的列表。
 + **-q** 或 **--quiet**：删除列而不提示确认
 + **--addIndex `<columns>`**：要包含在索引中的列的逗号分隔列表。
@@ -2015,7 +2015,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **--container** &lt;container>：要创建的存储容器的名称。
 + **-b** 或 **--blob** &lt;blobName>：要上载的存储 blob 的名称。
 + **-t** 或 **--blobtype** &lt;blobtype>：存储 blob 类型：Page 或 Block。
-+ **-p** 或 **--properties** `<properties>`：上载的文件的存储 blob 属性。属性是以分号 (;) 分隔的"键=值"对。可用的属性有 contentType、contentEncoding、contentLanguage 和 cacheControl。
++ **-p** 或 **--properties** `<属性值>`：上载的文件的存储 blob 属性。属性是以分号 (;) 分隔的"键=值"对。可用的属性有 contentType、contentEncoding、contentLanguage 和 cacheControl。
 + **-m** 或 **--metadata** &lt;metadata>：上载的文件的存储 blob 元数据。元数据是以分号 (;) 分隔的"键=值"对。
 + **--concurrenttaskcount** &lt;concurrenttaskcount>：并发上载请求的最大数目。
 + **-q** 或 **--quiet**：覆盖指定的存储 blob 且不确认。
