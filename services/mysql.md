@@ -18,22 +18,17 @@ MySQL Database on Azure 是 Windows Azure 提供的一种关系型数据库服�
 
 ##教程和指南
 
-- [了解服务层和版本](/documentation/articles/mysql-database-performance-guidance-asdb-test-result/)
-
+####[了解服务层和版本](/documentation/articles/mysql-database-performance-guidance-asdb-test-result/)
 了解 MySQL Database on Azure的不同版本。
 
-- [MySQL Database on Azure数据库入门](/documentation/articles/mysql-database-get-started/)
-
+####[MySQL Database on Azure数据库入门](/documentation/articles/mysql-database-get-started/)
 帮助您快速了解和使用 MySQL Database on Azure。
 
-- [了解MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation/)
-
+####[了解MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation/)
 了解MySQL Database on Azure有哪些限制。
 
-- [监控 MySQL Database on Azure数据库](/documentation/articles/mysql-database-operation-monitoring-metrics/)
-
+####[监控 MySQL Database on Azure数据库](/documentation/articles/mysql-database-operation-monitoring-metrics/)
 了解如何使用数据管理视图来监视数据容量、查询问题和当前连接。
 
-- [定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)
-
+####[定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)
 MySQL Database on Azure支持您根据需求定制化服务器部分参数，帮您了解不同参数的设置范围和区间。

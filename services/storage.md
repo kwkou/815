@@ -41,6 +41,9 @@
 ####[通过文件存储在 Azure 中创建一个 SMB 文件](/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/)
 就像桌面应用程序会安装一个典型的 SMB 共享一样，在 Azure 虚拟机或云服务中运行的应用程序可安装一个文件存储共享来访问文件数据。在本教程中了解使用文件存储的基础知识。
 
+####[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal/)
+Azure 高级存储为在 Azure 虚拟机上运行的 I/O 密集型工作负荷提供高性能、低延迟的磁盘支持。
+
 ###计划
   
 ####[使用表、队列和 Blob 创建 .NET 多层应用程序](/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/)
