@@ -110,7 +110,7 @@ Azure SQL数据库 已发布了新服务 SQL数据库 高级版的有限预览�
   [图像 1]: ./media/sql-database-premium-sign-up/AccountSignup-Figure1.png
   [图像 2]: ./media/sql-database-premium-sign-up/AccountSignupButton-Figure2.png
   [图像 3]: ./media/sql-database-premium-sign-up/Subscription-Figure3.png
-  [SQL数据库 定价页]: http://www.windowsazure.cn/zh-cn/pricing/details/sql-database/
+  [SQL数据库 定价页]: /home/features/sql-database/#price
   [图像 4]: ./media/sql-database-premium-sign-up/Status-Figure4.png
   [Azure 管理门户]: https://manage.windowsazure.cn
   [图像 6]: ./media/sql-database-premium-sign-up/RequestQuota-Figure6.png

@@ -121,7 +121,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 * 群集具有高可用性和可靠性。有关详细信息，请参阅[ HDInsight 中的 Hadoop 群集的可用性和可靠性](/zh-cn/documentation/articles/hdinsight-high-availability/)。
 * 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-blob-storage/)。
 * 与其他 Azure 服务集成，包括[网站](/zh-cn/documentation/services/web-sites/) 和 [SQL数据库](/zh-cn/documentation/services/sql-databases/)。
-* 进入成本低。开始[免费试用](/zh-cn/pricing/1rmb-trial/) 或咨询 [HDInsight 定价详细信息](../pricing/details/hdinsight/)。
+* 进入成本低。开始[免费试用](/pricing/1rmb-trial/) 或咨询 [HDInsight 定价详细信息](/home/features/hdinsight/#price)。
 
 若要详细了解 HDInsight 中的 Hadoop 的优势，请参阅 [HDInsight 的 Azure 功能页面][营销页面]。
 

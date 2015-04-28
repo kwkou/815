@@ -60,13 +60,13 @@
 
 ## 成本
 
-请注意，执行 PowerShell 示例脚本将会导致创建数据库，因而对订阅所有者引发实际成本。基础 Azure SQL DB 的[计费费率](/pricing/details/sql-database/) 和其他 Azure SQL DB 数据库相同。从 11 月 1 日开始的成本是： 
+请注意，执行 PowerShell 示例脚本将会导致创建数据库，因而对订阅所有者引发实际成本。基础 Azure SQL DB 的[计费费率](/home/features/sql-database/#price) 和其他 Azure SQL DB 数据库相同。从 11 月 1 日开始的成本是： 
 
 * SetupShardedEnvironment Runbook 会在基本数据库上创建分片映射管理器（$0.0069/小时），并在基本数据库上设置第一个分片（$0.0069/小时）。 
 
 * ProvisionBySize 和 ProvisionByDate Runbook 都会设置标准 S0 数据库（$0.0208/小时）。为了抵销这些成本，如果搭配 ReduceServiceTier Runbook 执行，则新设置的数据库的服务层在经过一天之后，将会从标准 S0（$0.0208/小时）降低到基本版（$0.0069/小时） 
 
-最后，在所提供示例的范围内，使用 [Azure Automation](/documentation/services/automation/) 当前不会对订阅拥有者引发任何费用。  请参阅 [Azure Automation 定价页](/pricing/details/automation/) 以了解更多详细信息。 
+最后，在所提供示例的范围内，使用 [Azure Automation](/documentation/services/automation/) 当前不会对订阅拥有者引发任何费用。  请参阅 [Azure Automation 定价页](/home/features/automation/#price) 以了解更多详细信息。 
 
 ## 加载 Runbook 
 

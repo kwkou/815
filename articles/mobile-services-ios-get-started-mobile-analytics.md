@@ -87,4 +87,4 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 
 <!-- URLs. -->
 [Capptain]: http://www.capptain.com
-[移动服务标准层]: /zh-cn/pricing/details/mobile-services/
+[移动服务标准层]: /home/features/mobile-services/#price

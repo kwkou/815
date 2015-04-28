@@ -11,7 +11,7 @@
 
 ## 探究
 - [事件中心](http://msdn.microsoft.com/zh-cn/library/dn789973.aspx)
-- [事件中心定价详细信息](/pricing/details/event-hubs/)
+- [事件中心定价详细信息](/home/features/event-hubs/#price)
 - [事件寻源模式](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
  
 ## 构建

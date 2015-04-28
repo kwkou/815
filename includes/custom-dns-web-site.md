@@ -6,7 +6,7 @@
 
 > [WACOM.NOTE] 本任务中的过程适用于 Azure 网站；对于云服务，请参阅<a href="/develop/net/common-tasks/custom-dns/">在 Azure 中配置自定义域名</a>。
 
-> [WACOM.NOTE] 本任务中的步骤要求您将网站配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href="/zh-cn/pricing/details/web-sites/">网站定价详细信息</a>。
+> [WACOM.NOTE] 本任务中的步骤要求您将网站配置为共享或标准模式，这可能会更改对您的订阅的计费量。有关详细信息，请参阅<a href="/home/features/web-site/#price">网站定价详细信息</a>。
 
 本文内容：
 
@@ -296,8 +296,8 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 <!-- Links -->
 
-[PricingDetails]: /zh-cn/pricing/details/
-[portal]: http://manage.windowsazure.com
+[PricingDetails]: /pricing/overview/
+[portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
 [cloudservicedns]: ../custom-dns/
 [trafficmanager]: /zh-cn/documentation/articles/web-sites-traffic-manager/

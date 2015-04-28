@@ -31,7 +31,7 @@
 <P>开始使用本教程之前，请确保做好了一切准备工作。</P>
 
 <UL>
-<LI><b>Azure 帐户</b> - 你需要一个 Azure 帐户。如果没有帐户，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。可在 <a href="http://www.windowsazure.cn/pricing/details/site-recovery/">Azure Site Recovery Manager 定价详细信息</a>中获取订阅定价信息。</LI>
+<LI><b>Azure 帐户</b> - 你需要一个 Azure 帐户。如果没有帐户，请参阅 <a href="/pricing/1rmb-trial/">Azure 免费试用版</a>。可在 <a href="/home/features/site-recovery/#price">Azure Site Recovery Manager 定价详细信息</a>中获取订阅定价信息。</LI>
 
 <LI><b>Azure 存储帐户</b> - 你需要使用一个 Azure 存储帐户将复制的数据存储到 Azure。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关如何设置 Azure 存储服务的详细信息，请参阅 <a href="/zh-cn/documentation/articles/storage-introduction/">Windows Azure 存储服务简介</a>。</LI><LI><b>VMM 服务器</b> - 在 System Center 2012 R2 上运行的 VMM 服务器。</LI>
 <LI><b>VMM 云</b> - VMM 服务器上至少有一个云。云应包含：

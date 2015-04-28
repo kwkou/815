@@ -242,7 +242,7 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [GlobalWebUplodateCert]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Uplodate_Cert.png
   [GlobalWebSSLBindings]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_SSL_Bindings.png
   [针对 SNI SSL 的 Wikipedia 条目]: http://en.wikipedia.org/wiki/Server_Name_Indication
-  [网站定价详细信息]: /en-us/pricing/details/web-sites/#service-ssl
+  [网站定价详细信息]: /home/features/web-site/#price
   [GlobalWebMonitor1]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor1.png
   [GlobalWebMonitor2]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor2.png
   [GlobalWebMonitor3]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Monitor3.png

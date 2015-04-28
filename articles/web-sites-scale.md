@@ -192,13 +192,13 @@
 
     [Service Level Agreements](/support/legal/sla/)
 
-    [SQL数据库 Pricing Details](/pricing/details/sql-database/)
+    [SQL数据库 Pricing Details](/home/features/sql-database/#price)
 
     [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
 
-    [Web Sites Pricing Details](/pricing/details/web-sites/)
+    [Web Sites Pricing Details](/home/features/web-site/#price)
 
-    [Web Sites Pricing Details - SSL Connections](/pricing/details/web-sites/#ssl)
+    [Web Sites Pricing Details - SSL Connections](/home/features/web-site/#SSL)
 
 -   有关 Azure 网站最佳实践（包括构建可扩展、有弹性的体系结构）的信息，请参阅[最佳实践：Windows Azure 网站 (WAWS)][最佳实践：Windows Azure 网站 (WAWS)]。
 
@@ -208,7 +208,7 @@
 
   [什么是 Web 托管计划？]: /zh-cn/documentation/articles/web-sites-web-hosting-plan-overview/
   [Azure 网站 Web 托管计划深入概述]: /zh-cn/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/
-  [网站定价详细信息]: /pricing/details/web-sites/
+  [网站定价详细信息]: /home/features/web-site/#price
   [Windows Azure 订阅]: http://manage.windowsazure.cn/
   [缩放到“共享”或“基本”计划模式]: #scalingsharedorbasic
   [缩放到“标准”计划模式]: #scalingstandard

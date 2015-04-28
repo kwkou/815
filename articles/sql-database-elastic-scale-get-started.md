@@ -75,7 +75,7 @@ Azure SQL Database 灵活扩展（在预览版中）支持应用程序的数据�
 
 例如，示例应用程序创建了新的数据库。成本取决于您选择的 Azure SQL DB 数据库版本以及您的应用程序的 Azure 使用情况。
 
-有关定价信息，请参阅 [SQL Database 定价详细信息](/pricing/details/sql-database/)。
+有关定价信息，请参阅 [SQL 数据库 定价详细信息](/home/features/sql-database/#price)。
 
 ## 后续步骤
 有关灵活扩展功能的详细信息，请参阅：

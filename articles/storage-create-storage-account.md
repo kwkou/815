@@ -23,7 +23,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 - 事务指的是对 Azure 存储空间的所有读取和写入操作。 
 - 数据流出量指的是传出某个 Azure 区域的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将你的数据和服务通过分组分到相同的数据中心内，从而降低或避免数据流出量费用。）  
 
-[存储定价详细信息](/zh-cn/pricing/details/#storage)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers/)提供了针对数据流出量的详细定价信息。
+[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers/)提供了针对数据流出量的详细定价信息。
 
 有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx).
 
