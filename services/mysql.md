@@ -20,4 +20,5 @@
 
 	了解如何使用数据管理视图来监视数据容量、查询问题和当前连接。
 - [定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)
+
   MySQL Database on Azure支持您根据需求定制化服务器部分参数，帮您了解不同参数的设置范围和区间。
