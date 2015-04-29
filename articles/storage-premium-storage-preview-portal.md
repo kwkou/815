@@ -15,7 +15,7 @@
 
 欢迎使用 **Azure高级存储磁盘**！
 
-随着新的高级存储的推出，Microsoft Azure 现在提供两种类型的持久性存储：**高级存储**和**标准存储**。高级存储将数据存储在采用最新技术的固态硬盘 (SSD) 上，而标准存储将数据存储在硬盘驱动器 (HDD) 上。 
+随着新的高级存储的推出，Windows Azure 现在提供两种类型的持久性存储：**高级存储**和**标准存储**。高级存储将数据存储在采用最新技术的固态硬盘 (SSD) 上，而标准存储将数据存储在硬盘驱动器 (HDD) 上。 
 
 高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。可以将多个高级存储磁盘附加到虚拟机 (VM)。使用高级存储，每个 VM 的应用程序最多拥有 32 TB 的存储，每个 VM 可达到 50,000 IOPS（每秒输入/输出操作次数），读取操作的延迟极低。高级存储目前只能在 Azure 虚拟机使用的磁盘上存储数据。 
 
@@ -240,7 +240,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 - 如果高级存储上的复制 Blob 操作会覆盖目标上现有的 Blob，则所覆盖的 Blob 不得含有任何快照。若要在高级存储帐户内部或之间进行复制，在初始化复制时，目标 Blob 不得含有快照。
 - 单个 Blob 的快照数限制为 100。每 10 分钟最多可获取一个快照。
 - 10 TB 是每个高级存储帐户的最大快照容量。请注意，快照容量是快照中存在的唯一数据。换句话说，快照容量不包括基础 Blob 大小。
-- 可以使用 AzCopy 或"复制 Blob"将高级存储帐户中的快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/) 和[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)。
+- 可以使用 AzCopy 或"复制 Blob"将高级存储帐户中的快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅[如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/) 和[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)。
 - 有关对高级存储帐户中的页 Blob 执行 REST 操作的详细信息，请参阅 MSDN 库中的[对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)。
 
 ## 在高级存储中使用 Linux VM
