@@ -1,4 +1,4 @@
-<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="如何部署 SQL Database - Azure" metaKeywords="" description="了解如何将 SQL Server 数据库部署到 Azure。您将使用"将数据库部署到 SQL Database"向导来上载示例数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="如何部署 SQL Database - Azure" metaKeywords="" description="了解如何将 SQL Server 数据库部署到 Azure。您将使用将数据库部署到 SQL Database向导来上载示例数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="sql-database"
     ms.date="02/25/2015"
     wacn.date="04/11/2015"

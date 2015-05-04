@@ -1,4 +1,4 @@
-	<properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="如何使用表存储 (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。" metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="如何使用表存储 (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。" metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -474,7 +474,7 @@ TableRestProxy 类提供了用于插入实体的两个替代方法：insertOrMer
 - 查看 MSDN 参考：[在 Azure 中存储和访问数据] []
 - 访问 Azure 存储空间团队博客：<http://blogs.msdn.com/b/windowsazurestorage/>
 
-[download]: http://azure.microsoft.com/zh-cn/documentation/articles/php-download-sdk/?fb=zh-cn
+[download]: /documentation/articles/php-download-sdk/
 [Storing and Accessing Data in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [require_once]: http://php.net/require_once
 [table-service-timeouts]: http://msdn.microsoft.com/zh-cn/library/azure/dd894042.aspx
