@@ -44,7 +44,7 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 
 1.  如果尚未打开 Azure PowerShell，请通过在"开始"菜单中展开"所有程序"、"Azure"，右键单击"Azure PowerShell"，然后选择"以管理员身份运行"启动 Azure PowerShell。
 
-2.  将目录更改到包含你的应用程序的文件夹。例如 C:\\node\\tasklist\\WebRole1。
+2.  将目录更改到包含你的应用程序的文件夹。例如 C:\node\tasklist\WebRole1。
 
 3.  从 Azure Powershell 窗口中，输入以下 cmdlet 以检索存储帐户信息：
 

@@ -3,7 +3,7 @@
 > [WACOM.NOTE]
 > 快速入门 - 使用全新的 Azure [操作实例指南](http://support.microsoft.com/kb/2990804)!它可使自定义域名快速地与 Azure 云服务或 Azure 网站相关联，并确保通信安全 (SSL)。
 
-当您在 Azure 中创建应用程序时，Azure 会在 cloudapp.net 域上提供一个子域，以便您的用户可以使用以下 URL 访问您的应用程序，如 http://&lt;*myapp*>.cloudapp.net. 但是，您还可以在自己的域名（例如 contoso.com）上公开应用程序。
+当您在 Azure 中创建应用程序时，Azure 会在 chinacloudapp.cn 域上提供一个子域，以便您的用户可以使用以下 URL 访问您的应用程序，如 http://&lt;*myapp*>.chinacloudapp.cn. 但是，您还可以在自己的域名（例如 contoso.com）上公开应用程序。
 
 > [WACOM.NOTE] 
 > 本任务中的过程适用于 Azure 云服务。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](../storage-custom-domain-name/)。有关网站，请参阅[为 Azure 网站配置自定义域名](../web-sites-custom-domain-name/)。
@@ -20,7 +20,7 @@ CNAME（即别名记录）和 A 记录都允许您将域名与特定服务器（
 
 ###CNAME 或别名记录
 
-CNAME 记录将  *specific* 域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是您的 Azure 托管应用程序的 **&lt;myapp>.cloudapp.net** 域名。创建映射后，CNAME 将为 **&lt;myapp>.cloudapp.net** 创建一个别名。CNAME 条目将自动解析为您的 **&lt;myapp>.cloudapp.net** 服务的 IP 地址，因此，如果该云服务的 IP 地址发生更改，您无需采取任何措施。
+CNAME 记录将  *specific* 域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是您的 Azure 托管应用程序的 **&lt;myapp>.chinacloudapp.cn** 域名。创建映射后，CNAME 将为 **&lt;myapp>.chinacloudapp.cn** 创建一个别名。CNAME 条目将自动解析为您的 **&lt;myapp>.chinacloudapp.cn** 服务的 IP 地址，因此，如果该云服务的 IP 地址发生更改，您无需采取任何措施。
 
 > [WACOM.NOTE] 
 > 某些域注册机构只允许您在使用 CNAME 记录（例如 www.contoso.com）和非根名称（例如 contoso.com）时映射子域。有关 CNAME 记录的详细信息，请参阅由您的注册机构提供的文档、<a href="http://en.wikipedia.org/wiki/CNAME_record">关于 CNAME 记录的 Wikipedia 条目</a>或 <a href="http://tools.ietf.org/html/rfc1035">IETF 域名 - 实现和规范</a>文档。
@@ -39,7 +39,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 若要创建 CNAME 记录，必须使用您的注册机构提供的工具在 DNS 表中为您的自定义域添加一个新条目。每个注册机构指定 CNAME 记录的方法类似但略有不同，但概念是相同的。
 
-1. 使用下列方法之一查找分配给您的云服务的 **.cloudapp.net** 域名。
+1. 使用下列方法之一查找分配给您的云服务的 **.chinacloudapp.cn** 域名。
 
   * 登录到 [Azure 管理门户]，依次选择您的云服务、"仪表板"，然后在"速览"部分中查找"网站 URL"条目。
 
@@ -57,9 +57,9 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 3.  如果希望为 **www.customdomain.com** 创建别名，还必须为 CNAME 提供域或子域别名，例如 **www**。如果希望为根域创建别名，它可能在注册机构的 DNS 工具中以符号"@"的形式列出。
 
-4. 然后，您必须提供一个规范主机名，在此示例中它是您的应用程序的 **cloudapp.net** 域。
+4. 然后，您必须提供一个规范主机名，在此示例中它是您的应用程序的 **chinacloudapp.cn** 域。
 
-例如，以下 CNAME 记录会将 **www.contoso.com** 的全部流量都转发至 **contoso.cloudapp.net**（您已部署的应用程序的自定义域名）：
+例如，以下 CNAME 记录会将 **www.contoso.com** 的全部流量都转发至 **contoso.chinacloudapp.cn**（您已部署的应用程序的自定义域名）：
 
 <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
 <tr>
@@ -68,16 +68,16 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 </tr>
 <tr>
 <td>www</td>
-<td>contoso.cloudapp.net</td>
+<td>contoso.chinacloudapp.cn</td>
 </tr>
 </table>
 
 **www.contoso.com** 的访问者将永远看不到真正的主机 
-(contoso.cloudapp.net)，因此转发过程对
+(contoso.chinacloudapp.cn)，因此转发过程对
 最终用户不可见。
 
 > [WACOM.NOTE]
-> 上述示例仅适用于 <strong>www</strong> 子域的流量。因为无法为 CNAME 记录使用通配符，所以必须为每个域/子域创建一个 CNAME。如果希望将子域（例如 *.contoso.com）的流量定向到您的 cloudapp.net 地址，则可以在 DNS 设置中配置"URL 重定向"<strong></strong>或"URL 转发"<strong></strong>条目，或者创建一个 A 记录。
+> 上述示例仅适用于 <strong>www</strong> 子域的流量。因为无法为 CNAME 记录使用通配符，所以必须为每个域/子域创建一个 CNAME。如果希望将子域（例如 *.contoso.com）的流量定向到您的 chinacloudapp.cn 地址，则可以在 DNS 设置中配置"URL 重定向"<strong></strong>或"URL 转发"<strong></strong>条目，或者创建一个 A 记录。
 
 
 <h2><a name="add-aname"></a>为自定义域添加记录</h2>
@@ -137,4 +137,6 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
   ["验证自定义域"对话框]: http://i.msdn.microsoft.com/dynimg/IC544437.jpg
   [如何将 CDN 内容映射到自定义域]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg680307.aspx
   [vip]: ./media/custom-dns/csvip.png
-  [csurl]: ./media/custom-dns/csurl.png<!--HONumber=41-->
+  [csurl]: ./media/custom-dns/csurl.png
+  
+  <!--HONumber=41-->
