@@ -16,10 +16,15 @@
 	ms.date=""
 	wacn.date="04/11/2015" 
 	ms.author="justinha"/>
-<tags ms.service="test" ms.date="03/12/2015" wacn.date="04/11/2015"/>
+<tags ms.service="test" ms.date="03/12/2015" wacn.date="05/05/2015"/>
 
 
 # Delivering Video-on-Demand with Media Services REST APIs 
+
+> [AZURE.SELECTOR]
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/cloud-storage.md)]
 
