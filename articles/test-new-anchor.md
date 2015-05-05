@@ -7,15 +7,6 @@
 	manager="Tiffena" 
 	editor="Eric Chen"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
-	ms.date=""
-	wacn.date="04/11/2015" 
-	ms.author="justinha"/>
 <tags ms.service="test" ms.date="03/12/2015" wacn.date="05/05/2015"/>
 
 
