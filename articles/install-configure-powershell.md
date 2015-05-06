@@ -66,7 +66,7 @@ cmdlet 要求您的订阅信息，以便可以使用它来管理您的服务。�
 
 2. 输入以下命令：
 
-    `Add-AzureAccount`
+    `Add-AzureAccount -e AzureChinaCloud`
 
 3. 在窗口中，键入与您的帐户相关联的电子邮件地址和密码。
 
@@ -76,7 +76,7 @@ cmdlet 要求您的订阅信息，以便可以使用它来管理您的服务。�
 
 Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet。
 
-- Get-AzurePublishSettingsFile 会在 Windows Azure 管理门户
+- Get-AzurePublishSettingsFile -e AzureChinaCloud 会在 Windows Azure 管理门户
 中打开一个网页，您可以从中
 下载订阅信息。信息包含在 .publishsettings 文件中。
 
@@ -85,7 +85,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 <div class="dev-callout"> 
 <b>重要说明</b>
 <p>我们建议在您导入发布设置后，
-删除使用 <b>Get-AzurePublishSettingsFile</b> 下载的
+删除使用 <b>Get-AzurePublishSettingsFile -e AzureChinaCloud</b> 下载的
 发布配置文件。因为管理证书包含安全凭据，
 所以不应由未授权用户访问。如果您需要
 有关您的订阅的信息，可以从 <a href="http://manage.windowsazure.cn/">Windows Azure 管理门户</a>获得。</p>
@@ -97,7 +97,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 3. 输入以下命令：
 
-    `Get-AzurePublishSettingsFile`
+    `Get-AzurePublishSettingsFile -e AzureChinaCloud`
 
 4. 当系统提示时，下载并保存发布配置文件，并记下 .publishsettings 文件的路径和名称。当您运行 Import-AzurePublishSettingsFile cmdlet 导入设置时，
 必须提供此信息。默认的

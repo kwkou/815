@@ -108,7 +108,7 @@ xplat-cli 有两种安装方法：使用适用于 Windows 和 OS X 的安装程�
 
 要使用组织帐户登录，请使用以下命令：
 
-    azure login [username] [password]
+    azure login -u [username] -p [password] -e AzureChinaCloud
 
 > [WACOM.NOTE] 如果这是您首次使用这些凭据登录，您将收到一个提示，要求您确认是否要缓存身份验证令牌。如果您之前使用过如下所述的 `azure logout` 命令，也会出现此提示。要使自动化方案绕过此提示，请使用带有 `azure login` 命令的 `-q` 参数。
 
@@ -132,7 +132,7 @@ xplat-cli 有两种安装方法：使用适用于 Windows 和 OS X 的安装程�
 
 若要下载针对您的帐户的发布设置，请使用以下命令：
 
-    azure account download
+    azure account download -e AzureChinaCloud
 
 此操作将打开默认浏览器，并提示您登录到 Azure 管理门户。登录后，将会下载一个 `.publishsettings` 文件。记下此文件的保存位置。
 
