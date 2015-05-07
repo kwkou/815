@@ -11,9 +11,9 @@
 
 - [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index)
 - [事件和演示：Microsoft Openness CEE](http://www.opennessatcee.com/)
-- [操作指南：上载自己的发行版映像](/documentation/articles/virtual-machines-linux-create-upload-vhd/) （并且还包含使用[经 Azure 认可的发行版的说明](/documentation/articles/virtual-machines-linux-endorsed-distributions/))
-- [说明：在 Azure 中运行时的一般 Linux 要求](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic/)
-- [说明：Azure 上的 Linux 的一般简介](/documentation/articles/virtual-machines-linux-introduction/)
+- [操作指南：上载自己的发行版映像](/documentation/articles/virtual-machines-linux-create-upload-vhd/) <!--（并且还包含使用[经 Azure 认可的发行版的说明](/documentation/articles/virtual-machines-linux-endorsed-distributions/))-->
+<!--- [说明：在 Azure 中运行时的一般 Linux 要求](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic/)-->
+<!--- [说明：Azure 上的 Linux 的一般简介](/documentation/articles/virtual-machines-linux-introduction/)-->
 
 <!--
 - [Distros](#distros) &mdash; Topics to do with a specific distro.
@@ -34,12 +34,12 @@ Linux 有大量的发行版，通常按包管理系统进行划分：有些是�
 
 Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管理系统的 Linux 发行版。
 
-1. [操作指南：上载自己的 Ubuntu 映像](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu/)
+<!--1. [操作指南：上载自己的 Ubuntu 映像](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu/)-->
 2. [操作指南：Ubuntu LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack/)
-3. [操作指南：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster/)
 4. [操作指南：Node.js 和 Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra/)
 5. [操作指南：IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook/)
-6. [钻研：使用 Docker 容器在 Linux 上运行 ASP.NET 5](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
+<!--6. [钻研：使用 Docker 容器在 Linux 上运行 ASP.NET 5](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)-->
+<!--3. [操作指南：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster/)-->
 
 ### [Debian](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=Debian)
 
@@ -50,22 +50,22 @@ Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管
 CentOS Linux 发行版是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的一个稳定的、可预测、可管理且可重现的平台。
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=centos)
-3. [操作指南：为 Azure 准备自定义的基于 CentOS 的 VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos/)
 4. [博客：如何从 OpenLogic 部署 CentOS VM 映像](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [操作指南：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx)
+<!--3. [操作指南：为 Azure 准备自定义的基于 CentOS 的 VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos/)-->
 
 ### SUSE Enterprise Linux 和 OpenSUSE
 
 9. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=OpenSUSE)
-11. [操作指南：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse/)
-12. [操作指南：准备自定义 SLES 或 openSUSE VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse/)  
-13. [SUSE 论坛](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)操作指南：移动到新的修补程序服务器
+11. [操作指南：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse/) 
+13. [SUSE 论坛](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure) 操作指南：移动到新的修补程序服务器
+<!--12. [操作指南：准备自定义 SLES 或 openSUSE VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse/) -->
 
 ### CoreOS
 
 CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定义控制的纯计算规模。
 
-11. [操作指南：在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to/)
+<!--11. [操作指南：在 Azure 上使用 CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to/)-->
 12. [博客：TechEd Europe -- Windows Docker 客户端和 Linux 容器](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
 13. [博客：Azure 正在变得更大、更快、更加开放](http://azure.microsoft.com/blog/2014/10/20/azures-getting-bigger-faster-and-more-open/)
 14. [Github：在 Azure 上部署 CoreOS 快速入门](https://github.com/timfpark/coreos-azure)
@@ -88,8 +88,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 4. [基础知识：证书的使用和管理](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)
 5. [基础知识：选择 Linux 用户名](/documentation/articles/virtual-machines-linux-usernames/)
 6. [基础知识：使用 Azure 门户登录到 Linux VM](/documentation/articles/virtual-machines-linux-how-to-log-on/)
-7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key/)
-8. [基础知识：如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/)
 9. [基础知识：使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 10. [基础知识：将数据磁盘附加到 Linux VM](/documentation/articles/virtual-machines-linux-how-to-attach-disk/)
 11. [基础知识：从 Linux VM 分离数据磁盘](/documentation/articles/virtual-machines-linux-how-to-detach-disk/)
@@ -98,30 +96,35 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 14. [基础知识：捕获 Linux VM 来创建模板](/documentation/articles/virtual-machines-linux-capture-image/)
 15. [基础知识：Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)
 16. [基础知识：Azure VM 扩展和功能](http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx)
-17. [基础知识：将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-how-to-inject-custom-data/)
 18. [博客中的基础知识：通过 12 个步骤在 Azure 上构建具有高可用性的 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [博客中的基础知识：使用 xplat、node.js、jhawk 在 Azure 上自动设置 Linux](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
 19. [使用 Azure x-plat cli 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli/)
-20. [基础知识：Azure Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension/)
 23. [Azure 服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 参考
 24. [Azure 上的 GlusterFS](http://dastouri.azurewebsites.net/gluster-on-azure-part-1/)
+
+<!--7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key/)
+8. [基础知识：如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/)
+17. [基础知识：将自定义数据注入到 VM 中以用于 Cloud-init](/documentation/articles/virtual-machines-how-to-inject-custom-data/)
+20. [基础知识：Azure Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension/)
+-->
 
 ## 社区映像和存储库
 3. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index) &mdash; 适用于社区提供的虚拟机映像。
 4. [Github](https://github.com/Azure/) &mdash; 适用于 xplat-cli 以及许多其他工具和项目。
-5. [Docker Hub 注册表](https://registry.hub.docker.com/) &mdash; Docker 容器映像的注册表。
+<!--5. [Docker Hub 注册表](https://registry.hub.docker.com/) &mdash; Docker 容器映像的注册表。-->
 
 ## 语言和平台
 ### [Azure Java 开发人员中心](/develop/java/)
 
 1. [映像](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=java)
 2. [操作指南：使用 AMQP 1.0 通过 Java 使用 Service Bus](http://msdn.microsoft.com/zh-cn/library/azure/jj841073.aspx)
-3. [操作指南：使用 Azure 门户在 Linux 上设置 Tomcat7](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux/)
 5. [博客：适用于 Java 的 Azure 管理库入门](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [Github 存储库：适用于 Eclipse with Java 的 Azure 工具包](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)
 6. [参考：适用于 Eclipse with Java 的 Azure 工具](http://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx)
 7. [Github 存储库：适用于 IntelliJ IDEA 和 Android Studio 的 MS Open Tech Tools 插件](https://github.com/MSOpenTech/msopentech-tools-for-intellij)
 7. [博客：MSOpenTech 对 OpenJDK 做出了贡献](http://msopentech.com/blog/2014/10/21/ms-open-techs-first-contribution-openjdk/)
+<!--3. [操作指南：使用 Azure 门户在 Linux 上设置 Tomcat7](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux/)
+-->
 
 ### JVM 语言：
 
@@ -160,9 +163,10 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
     - [博客：使用 node.js、CORS 和 Grunt 运行 CouchDB 即服务](http://msopentech.com/blog/2013/12/19/tutorial-building-multi-tier-windows-azure-web-application-use-cloudants-couchdb-service-node-js-cors-grunt-2/)
 4. Cassandra
     - [操作指南：在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra/)
-5. Redis
+    
+<!--5. Redis
     - [博客：Azure Redis 缓存服务中 Windows 上的 Redis](http://msopentech.com/blog/2014/05/12/redis-on-windows/)
-    - [博客：宣布推出适用于 Redis 预览版的 ASP.NET 会话状态提供程序](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)
+    - [博客：宣布推出适用于 Redis 预览版的 ASP.NET 会话状态提供程序](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)-->
 
 ### 大数据
 2. Hadoop/Cloudera  
@@ -173,15 +177,18 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 ### 关系型数据
 2. MySQL
     - [操作指南：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse/)
-    - [操作指南：优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-optimize-mysql-perf/)
-    - [操作指南：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster/)
-    - [操作指南：具有 Python 和 Visual Studio 的 Azure 网站上的 Django 和 MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql/)
     - [如何：具有 WebMatrix 的 Azure 网站上的 PHP 和 MySQL](/documentation/articles/web-sites-php-mysql-use-webmatrix/)
-7. MariaDB
-    - [操作指南：创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-mariadb-cluster/)
+        
 7. PostgreSQL
     - [操作指南：使用 Capistrano、Nginx、Unicorn 和 PostgreSQL 在 Rails 上安装 Ruby](/documentation/articles/virtual-machines-ruby-deploy-capistrano-host-nginx-unicorn/)
 8. [使用 ILB 通过 corosync、pg_bouncer 安装 Postgres](https://github.com/chgeuer/postgres-azure)
+
+<!--- [操作指南：优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-optimize-mysql-perf/)
+    - [操作指南：MySQL 群集](/documentation/articles/virtual-machines-linux-mysql-cluster/)
+    - [操作指南：具有 Python 和 Visual Studio 的 Azure 网站上的 Django 和 MySQL](/documentation/articles/web-sites-python-ptvs-django-mysql/)-->
+<!--7. MariaDB
+    - [操作指南：创建多主的 MariaDb 群集](/documentation/articles/virtual-machines-mariadb-cluster/)-->
+
 
 
 ## <a id='security'>身份验证和加密</a>
@@ -189,21 +196,14 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 身份验证和加密是软件开发中的重要主题，并且网上有很多很多主题介绍了如何针对这两者使用合适的安全技术。我们将介绍一些基本的用法来快速启动和运行 Linux 和开源工作负荷，并指出用来重置或删除 Azure 上的远程安全功能的工具。这些是基本过程，我们很快将添加更复杂的方案。 
 
 4. [基础知识：证书的使用和管理](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)
-7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key/)
-8. [基础知识：如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/)
 9. [基础知识：使用 Root](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 
-## 开发运营、管理和优化
+<!--7. [基础知识：SSH](/documentation/articles/virtual-machines-linux-use-ssh-key/)
+8. [基础知识：如何为 Linux 重置密码或 SSH 属性](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/)-->
 
-1. Docker
-	- [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension/)
-	- [从 Azure 跨平台命令行界面 (xplat-cli) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli/)
-	- [从 Azure 预览版门户使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-portal/)
-	- [在 Azure Marketplace 中使用 Docker 快速入门](/documentation/articles/virtual-machines-docker-ubuntu-quickstart/)
-	- [如何在 Azure 上使用 docker-machine]
-	- [如何在 Azure 上将 docker 与 swarm 一起使用]
+
+## 开发运营、管理和优化
 	
-2. [Fleet with CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to/)
 3. Deis
 	- [GitHub 存储库：
 在 Azure 中的 CoreOS 群集上安装 Deis](https://github.com/chanezon/azure-linux/tree/master/coreos/deis)
@@ -214,14 +214,25 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 	- [GitHub 存储库：适用于 Azure 的 Jenkins Storage 插件](https://github.com/jenkinsci/windows-azure-storage-plugin)
 	- [第三方：适用于 Azure 的 Hudson Slave 插件](http://wiki.hudson-ci.org/display/HUDSON/Azure+Slave+Plugin)
 	- [第三方：适用于 Azure 的 Hudson Storage 插件](https://github.com/hudson3-plugins/windows-azure-storage-plugin)
-10. Chef
-	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-install-chef-client/)
-
 13. Powershell DSC for Linux
     - [博客：如何执行 Powershell DSC for Linux](http://blogs.technet.com/b/privatecloud/archive/2014/05/19/powershell-dsc-for-linux-step-by-step.aspx)
     - [Github：Docker 客户端 DSC](https://github.com/anweiss/DockerClientDSC)
 13. [Ubuntu Juju](https://juju.ubuntu.com/docs/config-azure.html)
 14. [适用于 Azure 的打包程序插件](https://github.com/msopentech/packer-azure)
+
+<!--1. Docker
+	- [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension/)
+	- [从 Azure 跨平台命令行界面 (xplat-cli) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli/)
+	- [从 Azure 预览版门户使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-portal/)
+	- [在 Azure Marketplace 中使用 Docker 快速入门](/documentation/articles/virtual-machines-docker-ubuntu-quickstart/)
+	- [如何在 Azure 上使用 docker-machine]
+	- [如何在 Azure 上将 docker 与 swarm 一起使用]
+2. [Fleet with CoreOS](/documentation/articles/virtual-machines-linux-coreos-how-to/)
+10. Chef
+	- [Chef 和虚拟机](/documentation/articles/virtual-machines-windows-install-chef-client/)
+
+	-->
+
 
 <!--Anchors-->
 [发行版]: #distros
