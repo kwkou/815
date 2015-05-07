@@ -7,11 +7,11 @@
 本文档尝试在一个位置列出由 Microsoft 及其合作伙伴编写的关于在 Microsoft Azure 上运行基于 Linux 的虚拟机以及其他开源计算环境和应用程序的所有主题。因为 Azure 和开源计算都是快速发展的目标，所以几乎可以肯定地说，本文档已过时了， *尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。
 
 ## 一般说明
-在本页的右侧对各个部分进行了拆分。（链接可能会出现在多个部分中，因为主题可能是关于多个概念、发行版或技术的）。此外，有多个主题介绍了各种 Linux 选项、映像存储库、案例研究以及关于如何上载你自己的自定义映像的操作指南主题： 
+在本页中对各个部分进行了拆分。（链接可能会出现在多个部分中，因为主题可能是关于多个概念、发行版或技术的）。此外，有多个主题介绍了各种 Linux 选项、映像存储库、案例研究以及关于如何上载你自己的自定义映像的操作指南主题： 
 
 - [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index)
 - [事件和演示：Microsoft Openness CEE](http://www.opennessatcee.com/)
-- [操作指南：上载自己的发行版映像](/documentation/articles/virtual-machines-linux-create-upload-vhd/) （并且还包含使用[经 Azure 认可的分发的说明](/documentation/articles/virtual-machines-linux-endorsed-distributions/))
+- [操作指南：上载自己的发行版映像](/documentation/articles/virtual-machines-linux-create-upload-vhd/) （并且还包含使用[经 Azure 认可的发行版的说明](/documentation/articles/virtual-machines-linux-endorsed-distributions/))
 - [说明：在 Azure 中运行时的一般 Linux 要求](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic/)
 - [说明：Azure 上的 Linux 的一般简介](/documentation/articles/virtual-machines-linux-introduction/)
 
@@ -28,11 +28,11 @@
 
 ## 发行版
 
-Linux 有大量的分发，通常按包管理系统进行划分：有些是基于 dpgk 的，例如 Debian 和 Ubuntu；另一些是基于 rpm 的，例如 CentOS、SUSE 和 RedHat。有些公司作为 Microsoft 的正式合作伙伴也提供了发行版映像并且是经认可的。其他一些是由社区提供的。本部分中的发行版具有关于它们的正式文章，即使它们只是在其他技术的示例中使用也是如此。
+Linux 有大量的发行版，通常按包管理系统进行划分：有些是基于 dpgk 的，例如 Debian 和 Ubuntu；另一些是基于 rpm 的，例如 CentOS、SUSE 和 RedHat。有些公司作为 Microsoft 的正式合作伙伴也提供了发行版映像并且是经认可的。其他一些是由社区提供的。本部分中的发行版具有关于它们的正式文章，即使它们只是在其他技术的示例中使用也是如此。
 
 ### Ubuntu
 
-Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管理系统的 Linux 分发。
+Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管理系统的 Linux 发行版。
 
 1. [操作指南：上载自己的 Ubuntu 映像](/documentation/articles/virtual-machines-linux-create-upload-vhd-ubuntu/)
 2. [操作指南：Ubuntu LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack/)
@@ -43,11 +43,11 @@ Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管
 
 ### [Debian](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=Debian)
 
-对于 Linux 和基于 dpgk 和 apt-get 包管理系统的开源世界来说，Debian 是一个重要的分发。MSOpenTech VM Depot 有多个可使用的映像。
+对于 Linux 和基于 dpgk 和 apt-get 包管理系统的开源世界来说，Debian 是一个重要的发行版。MSOpenTech VM Depot 有多个可使用的映像。
 
 ### CentOS
 
-CentOS Linux 分发是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的一个稳定的、可预测、可管理且可重现的平台。
+CentOS Linux 发行版是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的一个稳定的、可预测、可管理且可重现的平台。
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=centos)
 3. [操作指南：为 Azure 准备自定义的基于 CentOS 的 VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos/)
@@ -71,15 +71,15 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 14. [Github：在 Azure 上部署 CoreOS 快速入门](https://github.com/timfpark/coreos-azure)
 15. [Github：使用 Spring Boot、MongoDB 和 CoreOS 部署 Java 应用程序](https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init)
 
-#### [Oracle Linux](http://azure.microsoft.com/marketplace/?term=Oracle+Linux)
+### Oracle Linux
   2. [为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle/)
 
 ### FreeBSD
 
 12. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=FreeBSD )
 13. [在 Azure 中运行 FreeBSD](/documentation/articles/virtual-machines-freebsd-create-upload-vhd/)
-14. [博客：轻松部署 FreeBSD](http://blog.csdn.net/azurechina/article/details/41956673#comments)
-15. [博客：部署自定义的 FreeBSD 映像](http://blog.csdn.net/azurechina/article/details/41956673#comments)
+14. [博客：轻松部署 FreeBSD](http://blog.csdn.net/azurechina/article/details/41956673)
+15. [博客：部署自定义的 FreeBSD 映像](http://blog.csdn.net/azurechina/article/details/41956673)
 17. [操作指南：安装 Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)
 
 ## 基础知识
