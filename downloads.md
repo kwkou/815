@@ -136,7 +136,7 @@
     <h3>虚拟机评估工具</h3>
     <ul>
       <li><a href="/downloads/vm-readiness-assessment/">虚拟机就绪评估工具</a></li>
-      <li><a href="downloads/vm-optimization-assessment/">虚拟机优化评估</a></li>
+      <li><a href="/downloads/vm-optimization-assessment/">虚拟机优化评估</a></li>
     </ul>
   </div>
   <div>

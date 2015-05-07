@@ -1,4 +1,4 @@
-<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="10GB GraySort 示例 | Azure "metaKeywords="hdinsight, hadoop, hdinsight 管理, hdinsight 管理 azure" description="Learn how to run a general purpose GraySort on Hadoop with HDInsight using Azure PowerShell." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="The 10GB GraySort sample" authors="bradsev" />
+<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="10GB GraySort 示例 | Azure " metaKeywords="hdinsight, hadoop, hdinsight 管理, hdinsight 管理 azure" description="Learn how to run a general purpose GraySort on Hadoop with HDInsight using Azure PowerShell." disqusComments="1" editor="cgronlun"  manager="paulettm" services="hdinsight"  documentationCenter="" title="The 10GB GraySort sample" authors="bradsev" />
 
 <tags 
 wacn.date="04/11/2015"

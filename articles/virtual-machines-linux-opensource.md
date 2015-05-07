@@ -1,14 +1,5 @@
-<properties
-  pageTitle="Azure 上的 Linux 和开源计算"
-  description="本主题包含 Azure 上的 Linux 和开源计算的列表，包括基本的 Linux 用法、一些关于在 Azure 上运行或上载 Linux 映像的基础知识，以及关于特定技术或优化的其他内容。"
-  documentationCenter=""
-  authors="squillace"
-  manager="timlt"
-  editor="tysonn"/>
-<tags ms.service=""
-    ms.date="03/23/2015"
-    wacn.date="04/15/2015"
-    />
+<properties pageTitle="Azure 上的 Linux 和开源计算" description="本主题包含 Azure 上的 Linux 和开源计算的列表，包括基本的 Linux 用法、一些关于在 Azure 上运行或上载 Linux 映像的基础知识，以及关于特定技术或优化的其他内容。" documentationCenter="" authors="squillace" manager="timlt" editor="tysonn"/>
+<tags ms.service="" ms.date="03/23/2015" wacn.date="04/15/2015"/>
 
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Azure 上的 Linux 和开源计算
@@ -18,7 +9,7 @@
 ## 一般说明
 在本页的右侧对各个部分进行了拆分。（链接可能会出现在多个部分中，因为主题可能是关于多个概念、发行版或技术的）。此外，有多个主题介绍了各种 Linux 选项、映像存储库、案例研究以及关于如何上载你自己的自定义映像的操作指南主题： 
 
-- [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index)
+- [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index)
 - [事件和演示：Microsoft Openness CEE](http://www.opennessatcee.com/)
 - [操作指南：上载自己的发行版映像](/documentation/articles/virtual-machines-linux-create-upload-vhd/) （并且还包含使用[经 Azure 认可的分发的说明](/documentation/articles/virtual-machines-linux-endorsed-distributions/))
 - [说明：在 Azure 中运行时的一般 Linux 要求](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic/)
@@ -50,7 +41,7 @@ Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管
 5. [操作指南：IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook/)
 6. [钻研：使用 Docker 容器在 Linux 上运行 ASP.NET 5](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
 
-### [Debian](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=Debian)
+### [Debian](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=Debian)
 
 对于 Linux 和基于 dpgk 和 apt-get 包管理系统的开源世界来说，Debian 是一个重要的分发。MSOpenTech VM Depot 有多个可使用的映像。
 
@@ -58,14 +49,14 @@ Ubuntu 是一种非常流行的经 Azure 认可的基于 dkpg 和 apt-get 包管
 
 CentOS Linux 分发是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的一个稳定的、可预测、可管理且可重现的平台。
 
-1. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=centos)
+1. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=centos)
 3. [操作指南：为 Azure 准备自定义的基于 CentOS 的 VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-centos/)
 4. [博客：如何从 OpenLogic 部署 CentOS VM 映像](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [操作指南：为 AMQP 和 Service Bus 安装 Apache Qpid Proton-C](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx)
 
 ### SUSE Enterprise Linux 和 OpenSUSE
 
-9. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=OpenSUSE)
+9. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=OpenSUSE)
 11. [操作指南：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse/)
 12. [操作指南：准备自定义 SLES 或 openSUSE VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse/)  
 13. [SUSE 论坛](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)操作指南：移动到新的修补程序服务器
@@ -85,10 +76,10 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 
 ### FreeBSD
 
-12. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Date&search=FreeBSD)
-13. [博客：在 Azure 中运行 FreeBSD](http://azure.microsoft.com/blog/2014/05/22/running-freebsd-in-azure/)
-14. [博客：轻松部署 FreeBSD](http://msopentech.com/blog/2014/10/24/easy-deploy-freebsd-microsoft-azure-vm-depot/)
-15. [博客：部署自定义的 FreeBSD 映像](http://msopentech.com/blog/2014/05/14/deploy-customize-freebsd-virtual-machine-image-microsoft-azure/)
+12. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=FreeBSD )
+13. [在 Azure 中运行 FreeBSD](/documentation/articles/virtual-machines-freebsd-create-upload-vhd/)
+14. [博客：轻松部署 FreeBSD](http://blog.csdn.net/azurechina/article/details/41956673#comments)
+15. [博客：部署自定义的 FreeBSD 映像](http://blog.csdn.net/azurechina/article/details/41956673#comments)
 17. [操作指南：安装 Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/)
 
 ## 基础知识
@@ -116,14 +107,14 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 24. [Azure 上的 GlusterFS](http://dastouri.azurewebsites.net/gluster-on-azure-part-1/)
 
 ## 社区映像和存储库
-3. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index) &mdash; 适用于社区提供的虚拟机映像。
+3. [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index) &mdash; 适用于社区提供的虚拟机映像。
 4. [Github](https://github.com/Azure/) &mdash; 适用于 xplat-cli 以及许多其他工具和项目。
 5. [Docker Hub 注册表](https://registry.hub.docker.com/) &mdash; Docker 容器映像的注册表。
 
 ## 语言和平台
 ### [Azure Java 开发人员中心](/develop/java/)
 
-1. [映像](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=java)
+1. [映像](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=java)
 2. [操作指南：使用 AMQP 1.0 通过 Java 使用 Service Bus](http://msdn.microsoft.com/zh-cn/library/azure/jj841073.aspx)
 3. [操作指南：使用 Azure 门户在 Linux 上设置 Tomcat7](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux/)
 5. [博客：适用于 Java 的 Azure 管理库入门](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
