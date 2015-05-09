@@ -164,7 +164,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [Azure 网站]: /zh-cn/documentation/services/web-sites/
   [Azure 云服务]: /zh-cn/documentation/services/cloud-services/
   [Azure 虚拟机]: /zh-cn/documentation/services/virtual-machines/
-  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /manage/services/web-sites/choose-web-app-service
+  [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /documentation/articles/choose-web-site-cloud-service-vm/
   [考虑利益]: #benefits
   [选择身份验证策略]: #authentication
   [创建支持身份验证的 Azure 网站]: #createintranetsite
@@ -183,7 +183,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [BusinessApplicationsADUsers]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AD_Users.png
   [使用 Azure AD 将登录名添加到 Web 应用程序中]: http://msdn.microsoft.com/library/windowsazure/dn151790.aspx
   [目录集成]: http://technet.microsoft.com/zh-cn/library/jj573653.aspx
-  [查看该信息]: /manage/services/web-sites/global-web-presence-solution-overview/
+  [查看该信息]: /documentation/articles/web-sites-global-web-presence-solution-overview/
   [BusinessApplicationsVSIntranetApp]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_IntranetApp.png
   [BusinessApplicationsVSProperties]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_Properties.png
   [针对 Visual Studio 的身份认证和访问工具]: #identityandaccessforvs
@@ -207,7 +207,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [New Relic]: http://newrelic.com/azure
   [BusinessApplicationsDiagnostics]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diagnostics.png
   [BusinessApplicationsDiagRetention]: ./media/web-sites-business-application-solution-overview/BusinessApplications_Diag_Retention.png
-  [如何：为网站配置诊断和下载日志]: /manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
+  [如何：为网站配置诊断和下载日志]: /documentation/articles/web-sites-monitor/#howtoconfigdiagnostics
   [在 Visual Studio 中排除 Azure 网站的故障]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [3]: /documentation/articles/choose-web-site-cloud-service-vm/
   [将 ASP.NET Web 应用程序部署到 Azure 网站]: /develop/net/tutorials/get-started/

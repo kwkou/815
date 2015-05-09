@@ -765,8 +765,8 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [Azure 中的故障排除]: /develop/net/best-practices/troubleshooting/
   [网站故障排除]: /develop/net/best-practices/troubleshooting-web-sites/
   [针对 Azure 网站启用诊断日志记录]: /develop/net/common-tasks/diagnostics-logging-and-instrumentation/
-  [如何监视网站]: /manage/services/web-sites/how-to-monitor-websites/
-  [配置诊断并下载日志]: /manage/services/web-sites/how-to-monitor-websites/#howtoconfigdiagnostics
+  [如何监视网站]: /documentation/articles/web-sites-monitor/
+  [配置诊断并下载日志]: /documentation/articles/web-sites-monitor/#howtoconfigdiagnostics
   [ASP.NET 站点上的 Azure 论坛]: http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET
   [MSDN 上的 Azure 论坛]: http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs
   [StackOverflow.com]: http://www.stackoverflow.com
