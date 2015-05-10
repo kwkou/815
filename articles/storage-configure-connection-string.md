@@ -40,7 +40,8 @@
 
 例如，你的连接字符串将类似于以下示例连接字符串：
 
-```        DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn
+```        
+	DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn
 ```
 
 > [AZURE.NOTE] Azure 存储空间连接字符串同时支持 HTTP 和 HTTPS，但强烈建议使用 HTTPS。
@@ -55,7 +56,7 @@
 若要创建指定显式 Blob 终结点的连接字符串，请使用以下格式为每个服务指定完整的服务终结点，包括协议规范（HTTP 或 HTTPS）：
 
 ``` 
-BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;FileEndpoint=myFileEndpoint;EndpointSuffix=core.chinacloudapi.cn;[credentials]
+	BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;FileEndpoint=myFileEndpoint;EndpointSuffix=core.chinacloudapi.cn;[credentials]
 ```
 
 你必须至少指定一个服务终结点，但无需指定所有终结点。例如，如果要创建一个连接字符串以用于自定义 Blob 终结点，则可以选择指定队列和表终结点。请注意，如果你选择在连接字符串中省略队列和表终结点，则将无法使用该连接字符串从代码访问队列和表服务。
@@ -72,7 +73,7 @@ BlobEndpoint=myBlobEndpoint;QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableE
 例如，自定义域上的 Blob 终结点的连接字符串可能类似于：
 
 ```
-DefaultEndpointsProtocol=https;BlobEndpoint=www.mydomain.com;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn
+	DefaultEndpointsProtocol=https;BlobEndpoint=www.mydomain.com;AccountName=storagesample;AccountKey=KWPLd0rpW2T0U7K2pVpF8rYr1BgYtB7wYQw33AYiXeUoquiaY6o0TWqduxmPHlqeCNZ3LU0DHptbeIAy5l/Yhg==;EndpointSuffix=core.chinacloudapi.cn
 ```
 
 ### 使用共享访问签名指定 Blob 终结点 
@@ -81,7 +82,9 @@ DefaultEndpointsProtocol=https;BlobEndpoint=www.mydomain.com;AccountName=storage
 
 若要创建包含共享访问签名的连接字符串，请按以下格式指定该字符串：
 
+```
     BlobEndpoint=myBlobEndpoint; QueueEndpoint=myQueueEndpoint;TableEndpoint=myTableEndpoint;SharedAccessSignature=base64Signature;EndpointSuffix=core.chinacloudapi.cn
+```
 
 终结点可以是默认服务终结点或自定义终结点。 `base64Signature` 与共享访问签名的签名部分对应。该签名是利用 SHA256 算法通过有效的"字符串到签名"和密钥计算的 HMAC，计算结果随后进行 Base64 编码。
 

@@ -299,8 +299,11 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 * [HPC Pack 2012 R2 和 HPC Pack 2012](https://technet.microsoft.com/zh-CN/library/jj899572.aspx)
 * [使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-CN/library/gg481749.aspx)
 * [Azure VM 中的 Microsoft HPC Pack](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn518135.aspx)
+
+<!--
 * [Azure Big Compute：HPC 和 Batch](/solutions/big-compute/)
 * [Azure Big Compute：HPC 和 Batch 技术文档](https://msdn.microsoft.com/zh-CN/library/azure/dn482128.aspx)
+-->
 
 
 [Overview]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/hybrid_cluster_overview.png

@@ -7,7 +7,7 @@
 	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags ms.service="hdinsight" ms.date="03/13/2015" wacn.date="04/11/2015"
+<tags ms.service="hdinsight" ms.date="03/13/2015" wacn.date="04/11/2015"/>
 
 # 在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用
 

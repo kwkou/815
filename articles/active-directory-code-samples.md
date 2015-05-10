@@ -112,8 +112,8 @@
 | C#/.NET | [ADAL - 服务器到服务器身份验证](http://code.msdn.microsoft.com/AAL-Server-to-Server-9aafccc1) | 使用 [Azure AD 身份验证库 (ADAL)](https://msdn.microsoft.com/zh-CN/library/jj573266) 保护从服务器端进程到 MVC4 Web API REST 服务的服务调用。
 | C#/.NET | [使用 Azure AD 向应用程序添加登录功能](https://msdn.microsoft.com/zh-CN/library/azure/dn151790.aspx) | 将 .NET 应用程序配置为根据你的 Azure AD 企业目录执行 web 单一登录。
 | C#/.NET | [使用 Azure AD 开发多租户 Web 应用程序](https://msdn.microsoft.com/zh-CN/library/azure/dn151789.aspx) | 使用 Azure AD 向一个 .NET 应用程序添加单一登录和目录访问功能以便在多个组织中工作。
-JAVA | [使用了 Azure AD Graph API 的 Java 示例应用程序](http://code.msdn.microsoft.com/Java-Sample-App-for-30d36d54) | 使用 Graph API 访问 Azure AD 中的目录数据。
-PHP | [使用了 Azure AD Graph API 的 PHP 示例应用程序](http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb) | 使用 Graph API 访问 Azure AD 中的目录数据。
+|JAVA | [使用了 Azure AD Graph API 的 Java 示例应用程序](http://code.msdn.microsoft.com/Java-Sample-App-for-30d36d54) | 使用 Graph API 访问 Azure AD 中的目录数据。
+|PHP | [使用了 Azure AD Graph API 的 PHP 示例应用程序](http://code.msdn.microsoft.com/PHP-Sample-App-For-Windows-228c6ddb) | 使用 Graph API 访问 Azure AD 中的目录数据。
 | C#/.NET | [使用了 Azure AD Graph API 的示例应用程序](http://code.msdn.microsoft.com/Write-Sample-App-for-79e55502) | 使用 Graph API 访问 Azure AD 中的目录数据。
 | C#/.NET | [使用了 Azure AD Graph 差异查询的示例应用程序](http://code.msdn.microsoft.com/Sample-App-for-Windows-97eaec90) | 使用 Graph API 中的差异查询获取对 Azure AD 中的用户对象的定期更改。
 | C#/.NET | [用于为 Azure AD 集成多租户云应用程序的示例应用程序](http://code.msdn.microsoft.com/Multi-Tenant-Cloud-8015b84b) | 将一个多租户应用程序集成到 Azure AD 中。

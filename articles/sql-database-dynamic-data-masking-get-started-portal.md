@@ -53,12 +53,12 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 | 屏蔽函数 | 屏蔽逻辑 |
 |----------|---------------|
-| **默认** |**根据指定字段的数据类型完全屏蔽**<br/><br/>• 对于字符串数据类型（nchar、ntext、nvarchar），将使用 XXXXXXXX；如果字段大小小于 8 个字符，则使用更少的 X。<br/>• 对于数字数据类型（bigint、bit、decimal、int、money、numeric、smallint、smallmoney、tinyint、float、real），将使用零值。<br/>• 对于日期/时间数据类型（date、datetime2、datetime、datetimeoffset、smalldatetime、time），将使用当前时间。<br/>• 对于 SQL 变量，将使用当前类型的默认值。<br/>• 对于 XML，将使用文档 <masked/>。<br/>• 对于特殊数据类型（timestamp、table、hierarchyid、GUID、binary、image、varbinary 空间类型），将使用空值。
-| **信用卡** |**公开指定字段的最后四位数，并添加一个信用卡格式的常量字符串作为前缀的屏蔽方法**。<br/><br/>XXXX-XXXX-XXXX-1234|
-| **身份证号** |**公开指定字段的最后两位数，并添加一个美国身份证号格式的常量字符串作为前缀的屏蔽方法**。<br/><br/>XXX-XX-XX12 |
-| **电子邮件** | **公开第一个字母和域，并使用一个电子邮件地址格式的常量字符串作为前缀的屏蔽方法**。<br/><br/>aXX@XXXX.com |
-| **随机数** | **根据选定边界和实际数据类型生成随机数的屏蔽方法**。如果指定的边界相等，则屏蔽函数将是常数。<br/><br/>![Navigation pane][Image1] |
-| **自定义文本** | **公开第一个和最后一个字母，并在中间添加一个自定义填充字符串的屏蔽方法**。<br/>前缀[填充字符]后缀<br/><br/>![Navigation pane][Image2] |
+| **默认** |**根据指定字段的数据类型完全屏蔽**<br/>• 对于字符串数据类型（nchar、ntext、nvarchar），将使用 XXXXXXXX；如果字段大小小于 8 个字符，则使用更少的 X。<br/>• 对于数字数据类型（bigint、bit、decimal、int、money、numeric、smallint、smallmoney、tinyint、float、real），将使用零值。<br/>• 对于日期/时间数据类型（date、datetime2、datetime、datetimeoffset、smalldatetime、time），将使用当前时间。<br/>• 对于 SQL 变量，将使用当前类型的默认值。<br/>• 对于 XML，将使用文档 <masked/>。<br/>• 对于特殊数据类型（timestamp、table、hierarchyid、GUID、binary、image、varbinary 空间类型），将使用空值。
+| **信用卡** |**公开指定字段的最后四位数，并添加一个信用卡格式的常量字符串作为前缀的屏蔽方法**。<br/>XXXX-XXXX-XXXX-1234|
+| **身份证号** |**公开指定字段的最后两位数，并添加一个身份证号格式的常量字符串作为前缀的屏蔽方法**。<br/>XXX-XX-XX12 |
+| **电子邮件** | **公开第一个字母和域，并使用一个电子邮件地址格式的常量字符串作为前缀的屏蔽方法**。<br/>aXX@XXXX.com |
+| **随机数** | **根据选定边界和实际数据类型生成随机数的屏蔽方法**。如果指定的边界相等，则屏蔽函数将是常数。<br/>![Navigation pane][Image1] |
+| **自定义文本** | **公开第一个和最后一个字母，并在中间添加一个自定义填充字符串的屏蔽方法**。<br/>前缀[填充字符]后缀<br/>![Navigation pane][Image2] |
 
   
 <a name="Anchor1"></a>
