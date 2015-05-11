@@ -12,7 +12,7 @@
 当你运行作业时，通常需要采用某种方式来跟踪作业进度。以下代码示例定义了 StateChanged 事件处理程序。此事件处理程序将跟踪作业进度，并根据现状提供更新的状态。该代码还定义了 LogJobStop 方法。此帮助器方法将记录错误详细信息。
 
 
-``` 
+ 
 
 	{}
 	private static void StateChanged(object sender, JobStateChangedEventArgs e)
@@ -22,7 +22,7 @@
 	Console.WriteLine("  Current state:" + e.CurrentState);
 
 	switch (e.CurrentState)
-    {
+    	{
 	case JobState.Finished:
 	Console.WriteLine();
 	Console.WriteLine("********************");
@@ -90,7 +90,7 @@
 	{
 	return jobID.Replace(":", "_");
 	}
-```
+
 
 后续步骤
 ========
