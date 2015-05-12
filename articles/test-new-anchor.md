@@ -19,7 +19,7 @@
 
 ##test direct reference of md file
 
-See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples.md)
+See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples)
 
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 
@@ -33,12 +33,15 @@ See the Azure Automation [Getting Started Tutorial](automation-create-runbook-fr
 <object type="image/svg+xml" data="https://wacn.blob.core.chinacloudapi.cn/documents/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
 0000
+
+<!--
 <object type="image/svg+xml" data="http://wacnstoragestaging.blob.core.chinacloudapi.cn/tech-content/articles/media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
 
 1111
 <object type="image/svg+xml" data="./media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
+-->
 
 >[AZURE.NOTE]
 > To complete this tutorial, you need an Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see <a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure Free Trial</a>.
