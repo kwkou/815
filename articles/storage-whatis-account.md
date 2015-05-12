@@ -14,7 +14,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 有两种类型的存储帐户：
 
 - 标准存储帐户包括 Blob、表和队列存储。文件存储可通过 ["Azure 门户"页](http://www.windowsazure.cn) 请求提供.
-- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。Azure 高级存储可通过 ["Azure 门户"页](/zh-cn/) 请求提供。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal)，以了解有关高级存储的深入概述。
+- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal)，以了解有关高级存储的深入概述。
 
 我们将根据你的存储帐户，针对你的 Azure 存储空间使用情况收费。存储成本取决于四个因素：存储容量、复制方案、存储事务和数据流出量。 
 
@@ -23,7 +23,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 - 事务指的是对 Azure 存储空间的所有读取和写入操作。 
 - 数据流出量指的是传出某个 Azure 区域的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将你的数据和服务通过分组分到相同的数据中心内，从而降低或避免数据流出量费用。）  
 
-[存储定价详细信息](/zh-cn/pricing/overview/#storage) 页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/overview/#data_transfer) 提供了针对数据流出量的详细定价信息。
+[存储定价详细信息](/home/features/storage/#price) 页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfer/) 提供了针对数据流出量的详细定价信息。
 
 有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx).
 
@@ -84,7 +84,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：: http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*.
 
-此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](../storage-custom-domain-name/) 以了解详细信息。
+此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name/) 以了解详细信息。
 
 ### <a id="affinity-group"></a>服务与地缘组的归置 
 
@@ -102,7 +102,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-> [WACOM.NOTE] 我们建议你避免与其他人共享你的存储帐户访问密钥。若要在不提供你的访问密钥的情况下允许他人访问存储资源，你可以使用 *shared access signature*。共享访问签名可用于访问你帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](../storage-dotnet-shared-access-signature-part-1/)，以了解详细信息。
+> [WACOM.NOTE] 我们建议你避免与其他人共享你的存储帐户访问密钥。若要在不提供你的访问密钥的情况下允许他人访问存储资源，你可以使用 *shared access signature*。共享访问签名可用于访问你帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)，以了解详细信息。
 
 在[管理门户]中操作(http://manage.windowsazure.cn在管理门户中，可使用仪表板或"存储"页上的"管理密钥"查看、复制和重新生成用于访问 Blob、表和队列服务的存储访问密钥。 
 
@@ -173,7 +173,7 @@ Media Services - 如果你的 Media Services 依赖于存储帐户，则必须�
 
 ## <a id="next"></a>后续步骤
 
-- 若要了解有关 Azure 存储空间的详细信息，请参阅 [azure.com](/zh-cn/documentation/services/storage/) 和 [MSDN](http://msdn.microsoft.com/zh-cn/library/gg433040.aspx) 上的 Azure 存储空间文档. 
+- 若要了解有关 Azure 存储空间的详细信息，请参阅 [www.windowsazure.cn](/documentation/services/storage/) 和 [MSDN](http://msdn.microsoft.com/zh-cn/library/gg433040.aspx) 上的 Azure 存储空间文档. 
 
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/).
 
