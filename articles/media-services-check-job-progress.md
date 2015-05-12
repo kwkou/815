@@ -95,5 +95,5 @@
 后续步骤
 ========
 
-了解如何创建作业并跟踪其进度后，下一步就是保护资产。有关详细信息，请参阅[如何使用 Azure Media Services 保护资产](http://go.microsoft.com/fwlink/?LinkID=301813&clcid=0x409)。
+了解如何创建作业并跟踪其进度后，下一步就是保护资产。有关详细信息，请参阅[如何使用 Azure Media Services 保护资产](/documentation/articles/media-services-protect-asset/)。
 
