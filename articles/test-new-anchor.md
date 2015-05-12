@@ -17,7 +17,9 @@
 - [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
 
-[AZURE.INCLUDE [media-services-selector-get-started](../includes/cloud-storage.md)]
+##test direct reference of md file
+
+See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples.md)
 
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 
