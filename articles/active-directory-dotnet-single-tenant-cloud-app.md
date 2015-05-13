@@ -220,7 +220,7 @@
   [ASP.NET MVC 3]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4211
   [Windows Identity Foundation 1.0 运行时]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
   [Windows Identity Foundation 3.5 SDK]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4451
-  [WCF Data Services for OData V3]: http://www.microsoft.com/download/en/details.aspx?id=29306
+  [WCF Data Services for OData V3]: https://www.microsoft.com/zh-CN/download/en/details.aspx?id=29306
   [Office 365 PowerShell Commandlets]: http://onlinehelp.microsoft.com/zh-cn/office365-enterprises/ff652560.aspx
   [介绍]: #introduction
   [步骤 1：创建 ASP.NET MVC 应用程序]: #createapp

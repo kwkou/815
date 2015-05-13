@@ -137,7 +137,7 @@
   [“混合连接”选项卡]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionTab.png
   [BizTalk 服务：版本图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
   [本地安装]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionOnPremSetup.png
-  [REST API]: http://msdn.microsoft.com/library/azure/dn232347.aspx
+  [REST API]: https://msdn.microsoft.com/zh-CN/library/azure/dn232347.aspx
   [管理选项]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionManageConn.png
   [分步混合连接：从 Azure 网站连接到本地 SQL Server]: http://go.microsoft.com/fwlink/?LinkID=397979
   [使用 Azure 管理门户创建 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=302280

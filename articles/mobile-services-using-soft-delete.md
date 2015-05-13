@@ -8,7 +8,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 使用 JavaScript 或.NET 后端创建的表可根据需要启用软删除。当使用软删除时，一个被称为*\__deleted*的 [SQL 位类型]的新列被添加到数据库。启用软删除后，删除操作不会以物理方式删除来自数据库的行，而是将已删除的列的值设置为 TRUE。
 
-启用软删除后再查询表的记录时，默认情况下，已删除的行不会返回在查询中。如欲请求查看这些行，你必须在[ REST 查询操作](http://msdn.microsoft.com/library/azure/jj677199.aspx)中传递一个查询参数*\__includeDeleted=true*。在.NET 客户端 SDK 中，你还可以使用帮助程序方法 `IMobileServiceTable.IncludeDeleted()`。
+启用软删除后再查询表的记录时，默认情况下，已删除的行不会返回在查询中。如欲请求查看这些行，你必须在[ REST 查询操作](https://msdn.microsoft.com/zh-CN/library/azure/jj677199.aspx)中传递一个查询参数*\__includeDeleted=true*。在.NET 客户端 SDK 中，你还可以使用帮助程序方法 `IMobileServiceTable.IncludeDeleted()`。
 
 软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。最新的 NuGet 程序包可以在这里获取， [Microsoft Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)。
 
@@ -155,7 +155,7 @@ To include deleted records in query result in a script, set the "includeDeleted"
 [2]: ./media/mobile-services-using-soft-delete/enable-soft-delete-new-table.png
 
 <!-- URLs. -->
-[SQL 位类型]: http://msdn.microsoft.com/library/ms177603.aspx
+[SQL 位类型]: https://msdn.microsoft.com/zh-CN/library/ms177603.aspx
 [移动服务中的离线数据同步]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/
 [管理门户]: https://manage.windowsazure.cn/
 

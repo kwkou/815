@@ -39,7 +39,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 <ol start="3">
 <li><p>在 Visual Studio 中，右键单击 TodoList 应用程序的 Windows 应用商店项目，然后单击 <strong>"设置启动项目"</strong>。</p></li>
-<li><p>在共享项目中，打开 App.xaml.cs 项目文件，找到 <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a>，并确保将其配置为连接到 Azure 中正在运行的移动服务。</p>
+<li><p>在共享项目中，打开 App.xaml.cs 项目文件，找到 <a href="https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a>，并确保将其配置为连接到 Azure 中正在运行的移动服务。</p>
 <p>请注意，当您使用 Visual Studio 工具将您的应用程序连接到移动服务时，该工具生成两组 <strong>MobileServiceClient</strong> 定义，每个客户端平台都具有一个定义。这是简化生成的代码的好时机，具体操作为将 <code>#if...#endif</code> 打包 <strong>MobileServiceClient</strong> 定义统一为供两个应用版本使用的非打包定义。当你从 Azure 管理门户下载快速入门应用程序时无需执行此操作。</p>
 </li> 
 <li><p>按 F5 键运行该 Windows 应用商店应用程序；验证启动该应用程序后，是否会引发状态代码为 401（"未授权"）的未处理异常。</p>

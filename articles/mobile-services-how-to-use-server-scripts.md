@@ -948,37 +948,37 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 [4]: ./media/mobile-services-how-to-use-server-scripts/4-mobile-source-local-cli.png
 
 <!-- URLs. -->
-[移动服务服务器脚本参考]: http://msdn.microsoft.com/library/windowsazure/jj554226.aspx
+[移动服务服务器脚本参考]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554226.aspx
 [在移动服务中计划后端作业]: /zh-cn/documentation/articles/mobile-services-schedule-recurring-tasks/
-[request 对象]: http://msdn.microsoft.com/library/windowsazure/jj554218.aspx
-[请求对象]: http://msdn.microsoft.com/library/windowsazure/jj554218.aspx
-[response 对象]: http://msdn.microsoft.com/library/windowsazure/dn303373.aspx
-[user 对象]: http://msdn.microsoft.com/library/windowsazure/jj554220.aspx
-[用户对象]: http://msdn.microsoft.com/library/windowsazure/jj554220.aspx
-[push 对象]: http://msdn.microsoft.com/library/windowsazure/jj554217.aspx
-[insert 函数]: http://msdn.microsoft.com/library/windowsazure/jj554229.aspx
-[插入]: http://msdn.microsoft.com/library/windowsazure/jj554229.aspx
-[update 函数]: http://msdn.microsoft.com/library/windowsazure/jj554214.aspx
-[delete 函数]: http://msdn.microsoft.com/library/windowsazure/jj554215.aspx
-[read 函数]: http://msdn.microsoft.com/library/windowsazure/jj554224.aspx
-[更新]: http://msdn.microsoft.com/library/windowsazure/jj554214.aspx
-[删除]: http://msdn.microsoft.com/library/windowsazure/jj554215.aspx
-[读取]: http://msdn.microsoft.com/library/windowsazure/jj554224.aspx
-[query 对象]: http://msdn.microsoft.com/library/windowsazure/jj613353.aspx
-[查询对象]: http://msdn.microsoft.com/library/windowsazure/jj613353.aspx
-[apns 对象]: http://msdn.microsoft.com/library/windowsazure/jj839711.aspx
-[mpns 对象]: http://msdn.microsoft.com/library/windowsazure/jj871025.aspx
-[wns 对象]: http://msdn.microsoft.com/library/windowsazure/jj860484.aspx
-[表对象]: http://msdn.microsoft.com/library/windowsazure/jj554210.aspx
-[tables 对象]: http://msdn.microsoft.com/library/windowsazure/jj614364.aspx
-[mssql 对象]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx
-[控制台对象]: http://msdn.microsoft.com/library/windowsazure/jj554209.aspx
-[读取和写入数据]: http://msdn.microsoft.com/library/windowsazure/jj631640.aspx
-[验证数据]: http://msdn.microsoft.com/library/windowsazure/jj631638.aspx
-[修改请求]: http://msdn.microsoft.com/library/windowsazure/jj631635.aspx
-[修改响应]: http://msdn.microsoft.com/library/windowsazure/jj631631.aspx
+[request 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554218.aspx
+[请求对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554218.aspx
+[response 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn303373.aspx
+[user 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554220.aspx
+[用户对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554220.aspx
+[push 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554217.aspx
+[insert 函数]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554229.aspx
+[插入]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554229.aspx
+[update 函数]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554214.aspx
+[delete 函数]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554215.aspx
+[read 函数]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554224.aspx
+[更新]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554214.aspx
+[删除]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554215.aspx
+[读取]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554224.aspx
+[query 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj613353.aspx
+[查询对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj613353.aspx
+[apns 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj839711.aspx
+[mpns 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj871025.aspx
+[wns 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj860484.aspx
+[表对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554210.aspx
+[tables 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj614364.aspx
+[mssql 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554212.aspx
+[控制台对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554209.aspx
+[读取和写入数据]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj631640.aspx
+[验证数据]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj631638.aspx
+[修改请求]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj631635.aspx
+[修改响应]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj631631.aspx
 [管理门户]: https://manage.windowsazure.cn/
-[计划作业]: http://msdn.microsoft.com/library/windowsazure/jj860528.aspx
+[计划作业]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj860528.aspx
 [使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
 [管理 Azure 移动服务的命令]: /zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts
 [Windows 应用商店推送]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
@@ -986,7 +986,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 [iOS 推送]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [Android 推送]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
-[发送 HTTP 请求]: http://msdn.microsoft.com/library/windowsazure/jj631641.aspx
+[发送 HTTP 请求]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj631641.aspx
 [使用 SendGrid 从移动服务发送电子邮件]: /zh-cn/documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
@@ -995,14 +995,14 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 [url API]: http://go.microsoft.com/fwlink/p/?LinkId=288805
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
-[自定义 API]: http://msdn.microsoft.com/library/windowsazure/dn280974.aspx
+[自定义 API]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn280974.aspx
 [从客户端调用自定义 API]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api
 [express.js 库]: http://go.microsoft.com/fwlink/p/?LinkId=309046
 [定义支持定期通知的自定义 API]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/
 [express.js 中的 express 对象]: http://expressjs.com/api.html#express
 [在源代码管理中存储服务器脚本]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/
 [在服务器脚本中利用共享代码和 Node.js 模块。]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/#use-npm
-[服务对象]: http://msdn.microsoft.com/library/windowsazure/dn303371.aspx
-[应用设置]: http://msdn.microsoft.com/library/dn529070.aspx
-[配置模块]: http://msdn.microsoft.com/library/dn508125.aspx
+[服务对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn303371.aspx
+[应用设置]: https://msdn.microsoft.com/zh-CN/library/dn529070.aspx
+[配置模块]: https://msdn.microsoft.com/zh-CN/library/dn508125.aspx
 [Azure 移动服务中对 package.json 的支持]: http://go.microsoft.com/fwlink/p/?LinkId=391036

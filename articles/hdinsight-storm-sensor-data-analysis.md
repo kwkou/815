@@ -537,7 +537,7 @@ Event Hub 用于从传感器中接收消息（事件）。 按照下列步骤创
 	- **地址空间**：为虚拟网络选择一个地址空间，该空间必须足够大以便为群集中的所有节点提供地址。 否则，设置将失败。
 	- **最大虚拟机数**： 选择以下最大虚拟机数。
 	- **位置**： 该位置必须与要创建的 HBase 群集相同。
-	- **DNS 服务器**： 本文使用 Azure 提供的内部 DNS 服务器，因此，您可以选择**无**。此外，也支持使用自定义 DNS 服务器的高级网络配置。 有关详细指南，请参见 [http://msdn.microsoft.com/library/azure/jj156088.aspx](http://msdn.microsoft.com/library/azure/jj156088.aspx)。
+	- **DNS 服务器**： 本文使用 Azure 提供的内部 DNS 服务器，因此，您可以选择**无**。此外，也支持使用自定义 DNS 服务器的高级网络配置。 有关详细指南，请参见 [https://msdn.microsoft.com/zh-CN/library/azure/jj156088.aspx](https://msdn.microsoft.com/zh-CN/library/azure/jj156088.aspx)。
 
 4.  单击**创建虚拟网络**。新虚拟网络名称将显示在列表中。 等到"状态"列显示**已创建**。
 

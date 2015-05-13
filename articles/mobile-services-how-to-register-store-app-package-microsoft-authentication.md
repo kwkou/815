@@ -8,7 +8,7 @@
 
 Azure 移动服务支持客户端驱动的和服务器驱动的身份验证方法。服务器驱动的身份验证使用标识提供程序（包括 Microsoft 帐户）。如果你将 Microsoft 帐户用于服务器驱动的身份验证但未将应用程序注册到移动服务，则每次请求身份验证时，系统都将提示用户提供凭据。如果你注册了应用程序，则 Microsoft 帐户登录凭据将被缓存并可用于身份验证，并且系统不会再次提示用户提供凭据。本主题说明如何注册你的 Windows 应用商店应用程序包，以便在使用 Azure 移动服务进行身份验证时获得更好的 Microsoft 帐户登录体验。 
 
->[WACOM.NOTE]使用 Visual Studio 2013 可以轻松地将 Windows 应用商店应用程序包注册到移动服务。有关详细信息，请参阅<a href="http://msdn.microsoft.com/library/windows/apps/xaml/dn263182.aspx">快速入门：为移动服务添加推送通知</a>（位于 Windows 开发中心）。
+>[WACOM.NOTE]使用 Visual Studio 2013 可以轻松地将 Windows 应用商店应用程序包注册到移动服务。有关详细信息，请参阅<a href="https://msdn.microsoft.com/zh-CN/library/windows/apps/xaml/dn263182.aspx">快速入门：为移动服务添加推送通知</a>（位于 Windows 开发中心）。
 
 使用客户端管理的身份验证可以通过 Live Connect 在 Windows 设备上提供单一登录体验。如果你使用 Live Connect API，则不需要完成本主题中的步骤。有关详细信息，请参阅[使用 Live Connect 单一登录对 Windows 应用商店应用程序进行身份验证]。   
 

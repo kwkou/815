@@ -132,7 +132,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 	![][5]
 
-	>[WACOM.NOTE]当应用程序处于打开状态时，您不会收到通知。若要在应用程序处于活动状态时接收 toast 通知，必须处理[ShellToastNotificationReceived](http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx） 事件。
+	>[WACOM.NOTE]当应用程序处于打开状态时，您不会收到通知。若要在应用程序处于活动状态时接收 toast 通知，必须处理[ShellToastNotificationReceived](https://msdn.microsoft.com/zh-CN/library/windowsphone/develop/microsoft.phone.notification.httpnotificationchannel.shelltoastnotificationreceived(v=vs.105).aspx） 事件。
 
 
 
@@ -185,7 +185,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-users
 
-[设置已经过身份验证的 Web 服务以便为 Windows Phone 发送推送通知]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx
+[设置已经过身份验证的 Web 服务以便为 Windows Phone 发送推送通知]: https://msdn.microsoft.com/zh-CN/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
 [移动服务服务器脚本参考]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/
 [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

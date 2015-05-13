@@ -191,4 +191,4 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [注册应用以便在移动服务中进行 Twitter 登录]: /zh-cn/documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter 开发人员]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[应用程序设置]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[应用程序设置]: https://msdn.microsoft.com/zh-CN/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

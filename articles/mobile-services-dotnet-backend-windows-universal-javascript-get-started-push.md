@@ -56,7 +56,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 <ol start="5">
 <li><p>浏览到 <code>\services\mobileServices\settings</code> 项目文件夹，将生成的 &lt;<em>your_service_name</em>&gt;.js 脚本文件复制到共享的 <code>\js</code> 项目文件夹，然后从这两个单独的 Windows 和 WindowsPhone 应用程序项目中删除此文件。同时，从每个应用程序项目的 <code>\services\mobileServices\scripts</code> 文件夹中删除此文件（如果在该处也存在）。</p></li> 
-<li><p>在共享的 <code>\js</code> 项目文件夹中打开此脚本文件，然后注释掉定义用于访问 Azure 中运行的移动服务的 <a href="http://msdn.microsoft.com/library/azure/jj554219.aspx">MobileServiceClient 对象</a>的现有代码。</p></li>
+<li><p>在共享的 <code>\js</code> 项目文件夹中打开此脚本文件，然后注释掉定义用于访问 Azure 中运行的移动服务的 <a href="https://msdn.microsoft.com/zh-CN/library/azure/jj554219.aspx">MobileServiceClient 对象</a>的现有代码。</p></li>
 <li><p>添加新的同名但在构造函数中使用本地主机 URL 的 <strong>MobileServiceClient</strong> 对象定义，类似于如下代码：</p>
 <pre><code>// This MobileServiceClient has been configured to communicate with your local
 // test project for debugging purposes.

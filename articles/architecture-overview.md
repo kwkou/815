@@ -50,7 +50,7 @@
 
 有关 Azure 中其他常见设计模式的信息，请参阅[云设计模式][云设计模式]。
 
-  [下载 Azure 符号/图标集]: http://www.microsoft.com/en-us/download/details.aspx?id=41937
+  [下载 Azure 符号/图标集]: http://www.microsoft.com/zh-CN/download/details.aspx?id=41937
   [Azure 符号/图标集]: ./media/architecture-overview/AzureSymbols.png
   [让使用者竞争]: http://msdn.microsoft.com/zh-cn/library/dn568101.aspx
   [1]: ./media/architecture-overview/CompetingConsumers.png

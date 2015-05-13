@@ -274,9 +274,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [如何向 Azure Active Directory 注册]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[目录同步方案]: http://msdn.microsoft.com/library/azure/jj573653.aspx
+[目录同步方案]: https://msdn.microsoft.com/zh-CN/library/azure/jj573653.aspx
 [存储服务器脚本]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/
 [注册以使用 Azure Active Directory Login]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
-[Graph API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
-[Graph API 错误参考]: http://msdn.microsoft.com/library/azure/hh974480.aspx
-[IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
+[Graph API]: https://msdn.microsoft.com/zh-CN/library/azure/hh974478.aspx
+[Graph API 错误参考]: https://msdn.microsoft.com/zh-CN/library/azure/hh974480.aspx
+[IsMemberOf]: https://msdn.microsoft.com/zh-CN/library/azure/dn151601.aspx

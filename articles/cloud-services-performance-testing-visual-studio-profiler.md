@@ -182,7 +182,7 @@ Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，�
 [后续步骤]: #nextSteps
 
 [1]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh369930.aspx
-[2]: http://msdn.microsoft.com/library/azure/hh411542.aspx
+[2]: https://msdn.microsoft.com/zh-CN/library/azure/hh411542.aspx
 [3]: http://blogs.msdn.com/b/habibh/archive/2009/06/30/walkthrough-using-the-tier-interaction-profiler-in-visual-studio-team-system-2010.aspx
 [4]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally09.png
 [5]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally10.png

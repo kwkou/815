@@ -586,7 +586,7 @@
   [将应用程序配置为使用 SendGrid]: #sendGrid
   [配置和查看跟踪数据]: #trace
   [添加另一个辅助角色实例来处理增加的负载]: #addRole
-  [免费试用帐户]: /zh-cn/pricing/free-trial/
+  [免费试用帐户]: /zh-cn/pricing/1rmb-trial/
   [激活 MSDN 订户权益]: /zh-cn/pricing/member-offers/msdn-benefits/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
@@ -633,7 +633,7 @@
   [程序包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-6.png
   [云程序包]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-16.png
   [仪表板]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-7.png
-  [发布 Azure 应用程序向导]: http://msdn.microsoft.com/library/windowsazure/hh535756.aspx "发布向导"
+  [发布 Azure 应用程序向导]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh535756.aspx "发布向导"
   [发布]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-8.png
   [8]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-11.png
   [9]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-9.png

@@ -246,7 +246,7 @@ Web 托管计划 (WHP) 表示一组可在你的网站间共享的功能和容量
   [Get the detailed configuration for website pstest2]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview13.png
   [Create a hash table for a hosting plan]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview14.png
   [Use a Hash Table to set the Web Hosting Plan property of the site]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview15.png
-  [此文章]: http://msdn.microsoft.com/library/azure/jj156055.aspx
+  [此文章]: https://msdn.microsoft.com/zh-CN/library/azure/jj156055.aspx
   [The Web Hosting Plan blade and the Pricing Tier]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview16.png
   [Changing the instance count of a hosting plan]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview17.png
   [Changing the instance count of a hosting plan in the existing portal]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview18.png

@@ -39,11 +39,11 @@
 
 ### .NET 后端
 
-在 .NET 后端移动服务中，通过调用从 [ApiServices.Push](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) 属性获取的 [PushClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) 对象的 [SendAsync] 方法发送通知。发送的推送通知（本机或模板）取决于传递给 [SendAsync] 方法的特定 [IPushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx) 派生的对象，如下表所示： 
+在 .NET 后端移动服务中，通过调用从 [ApiServices.Push](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) 属性获取的 [PushClient](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) 对象的 [SendAsync] 方法发送通知。发送的推送通知（本机或模板）取决于传递给 [SendAsync] 方法的特定 [IPushMessage](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx) 派生的对象，如下表所示： 
 
 |平台 |[APNS](/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push)|[GCM](/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-push) |[WNS](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) |[MPNS](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
-|本机|[ApplePushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx)   |[GooglePushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx)     |[WindowsPushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
+|本机|[ApplePushMessage](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx)   |[GooglePushMessage](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx)     |[WindowsPushMessage](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
 
 下面的代码从 .NET 后端服务将推送通知发送到所有 iOS 和 Windows 应用商店设备注册： 
 
@@ -78,7 +78,7 @@
 
 |平台 |[APNS](/zh-cn/documentation/articles/mobile-services-javascript-backend-ios-get-started-push)|[GCM](/zh-cn/documentation/articles/mobile-services-javascript-backend-android-get-started-push) |[WNS](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
-|本机|[apns 对象](http://msdn.microsoft.com/library/azure/jj839711.aspx)   |[gcm 对象](http://msdn.microsoft.com/library/azure/dn126137.aspx)     |[wns 对象](http://msdn.microsoft.com/library/azure/jj860484.aspx) | [mpns 对象](http://msdn.microsoft.com/library/azure/jj871025.aspx) |
+|本机|[apns 对象](https://msdn.microsoft.com/zh-CN/library/azure/jj839711.aspx)   |[gcm 对象](https://msdn.microsoft.com/zh-CN/library/azure/dn126137.aspx)     |[wns 对象](https://msdn.microsoft.com/zh-CN/library/azure/jj860484.aspx) | [mpns 对象](https://msdn.microsoft.com/zh-CN/library/azure/jj871025.aspx) |
 
 下面的代码将向所有 Android 和 Windows Phone 注册发送推送通知： 
 
@@ -136,22 +136,22 @@
  
 + [**PhoneGap**](https://go.microsoft.com/fwLink/p/?LinkID=390707)**/**[**Cordova**](http://cordova.apache.org/)<br/>PhoneGap（Apache Cordova 项目的分发产品）是一个免费的开源框架，它允许你使用标准 Web API、HTML 和 JavaScript 开发可在 Android、iOS 和 Windows 设备上运行的单个应用程序。PhoneGap 提供了基于 Web 视图的 UI，但通过允许访问设备上的本机资源增强了用户体验，这些资源包括推送通知、加速计、相机、存储、地理位置和应用程序内浏览器。有关详细信息，请参阅 [PhoneGap 快速入门教程][PhoneGap]。 
 	
-	现在 Visual Studio 还允许你使用用于 Visual Studio 的多设备混合应用程序扩展（它是预发行软件）构建跨平台的 Cordova 应用程序。有关详细信息，请参阅[使用 HTML 和 JavaScript 的多设备混合应用程序入门](http://msdn.microsoft.com/library/dn771545.aspx)。 
+	现在 Visual Studio 还允许你使用用于 Visual Studio 的多设备混合应用程序扩展（它是预发行软件）构建跨平台的 Cordova 应用程序。有关详细信息，请参阅[使用 HTML 和 JavaScript 的多设备混合应用程序入门](https://msdn.microsoft.com/zh-CN/library/dn771545.aspx)。 
 
 + [**Sencha Touch**](http://go.microsoft.com/fwlink/p/?LinkId=509988)<br/>Sencha Touch 提供了一组针对触摸屏优化的控件，这些控件使用单个 HTML 和 JavaScript 代码库在各种移动设备上提供类似本机的体验。Sencha Touch 可与 PhoneGap 或 Cordova 库一起使用，为用户提供对本机设备资源的访问权限。有关详细信息，请参阅 [Sencha Touch 快速入门教程][Sencha]。
 
 + [**Xamarin**](https://go.microsoft.com/fwLink/p/?LinkID=330242)<br/>使用 Xamarin 可以为 iOS 和 Android 设备创建完全本机应用程序，这些应用程序具有完全本机 UI 并可访问所有设备资源。Xamarin 应用程序使用 C#（而不是 Objective-C 和 Java）编码。这使 .NET 开发人员能够将应用程序发布到 iOS 和 Android 并共享 Windows 项目中的代码。Xamarin 通过 C# 代码在 iOS 和 Android 设备上提供完全本机用户体验。这使你能够在 iOS 和 Android 设备上重用 Windows 应用程序中的某些移动服务代码。有关详细信息，请参阅下面的 [Xamarin 开发](#xamarin) 。 
 
-	你可以使用 Xamarin Studio 或 Visual Studio 2013 构建 Xamarin 应用程序。有关详细信息，请参阅 [Visual Studio 中的跨平台开发](http://msdn.microsoft.com/library/dn771552.aspx)。
+	你可以使用 Xamarin Studio 或 Visual Studio 2013 构建 Xamarin 应用程序。有关详细信息，请参阅 [Visual Studio 中的跨平台开发](https://msdn.microsoft.com/zh-CN/library/dn771552.aspx)。
 
 
 ## <a id="shared-vs"></a>共享和重用 Visual Studio 项目中的代码
 
 移动服务包括 .NET 客户端库，它是支持在所有 Windows 平台上开发的 .NET Framework 可移植类库 (PCL)。有关详细信息，请参阅[如何将 .NET 客户端用于移动服务]。这样，可轻松地在多个 C# 项目中重用相同的移动服务代码，例如用于数据访问或身份验证的代码。
 
-在项目之间共享和重用 C# 代码的一个常规方法是实现模型-视图-视图模型 (MVVM) 模式，并在多个平台之间共享程序集。你可以在 Visual Studio 中的可移植类库项目内实现模型和视图模型类，然后创建针对不同平台自定义的视图。例如，在平台之间共用的模型代码能够以平台未知的方式从移动服务等源中检索数据。MSDN 库提供了<a href="http://msdn.microsoft.com/library/gg597391(v=vs.110)">概述和示例</a>、<a href="http://msdn.microsoft.com/library/gg597392(v=vs.110)">API 差异</a>介绍、有关<a href="http://msdn.microsoft.com/library/hh563947(v=vs.110)">使用可移植类库实现 MVVM 模式</a>的示例、其他<a href="http://msdn.microsoft.com/library/windowsphone/develop/jj714086(v=vs.105).aspx">说明性指导</a>，以及有关在可移植类库项目中<a href="http://msdn.microsoft.com/library/hh871422(v=vs.110)">管理资源</a>的信息。
+在项目之间共享和重用 C# 代码的一个常规方法是实现模型-视图-视图模型 (MVVM) 模式，并在多个平台之间共享程序集。你可以在 Visual Studio 中的可移植类库项目内实现模型和视图模型类，然后创建针对不同平台自定义的视图。例如，在平台之间共用的模型代码能够以平台未知的方式从移动服务等源中检索数据。MSDN 库提供了<a href="https://msdn.microsoft.com/zh-CN/library/gg597391(v=vs.110)">概述和示例</a>、<a href="https://msdn.microsoft.com/zh-CN/library/gg597392(v=vs.110)">API 差异</a>介绍、有关<a href="https://msdn.microsoft.com/zh-CN/library/hh563947(v=vs.110)">使用可移植类库实现 MVVM 模式</a>的示例、其他<a href="https://msdn.microsoft.com/zh-CN/library/windowsphone/develop/jj714086(v=vs.105).aspx">说明性指导</a>，以及有关在可移植类库项目中<a href="https://msdn.microsoft.com/zh-CN/library/hh871422(v=vs.110)">管理资源</a>的信息。
 
-除了此一般指南外，Visual Studio 还提供了特定工具，用于在多个客户端应用程序项目中重用移动服务代码，这些工具将在以下各节中讨论。有关使用 Visual Studio 2013 构建跨平台应用程序的更多常规信息，请参阅 [Visual Studio 中的跨平台开发](http://msdn.microsoft.com/library/dn771552.aspx)。  
+除了此一般指南外，Visual Studio 还提供了特定工具，用于在多个客户端应用程序项目中重用移动服务代码，这些工具将在以下各节中讨论。有关使用 Visual Studio 2013 构建跨平台应用程序的更多常规信息，请参阅 [Visual Studio 中的跨平台开发](https://msdn.microsoft.com/zh-CN/library/dn771552.aspx)。  
 
 ### 通用 Windows 应用程序
 
@@ -163,7 +163,7 @@ Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支�
 
 ### <a id="xamarin"></a>Xamarin 开发
 
-通过使用 Xamarin 和 Visual Studio 或 Xamarin Studio，你可以利用 Visual Studio 和 C# 开发体验开发适用于 iOS 和 Android 的应用程序。Xamarin 使用 .NET Framework 的跨平台实现，让你使用 C# 代码开发 iOS 和 Android 应用程序。通过使用 Xamarin，你可以利用 Windows 项目中使用移动服务 .NET 客户端库的现有代码来访问移动服务。有关详细信息，请参阅 [Visual Studio 中的跨平台开发](http://msdn.microsoft.com/library/dn771552.aspx)。
+通过使用 Xamarin 和 Visual Studio 或 Xamarin Studio，你可以利用 Visual Studio 和 C# 开发体验开发适用于 iOS 和 Android 的应用程序。Xamarin 使用 .NET Framework 的跨平台实现，让你使用 C# 代码开发 iOS 和 Android 应用程序。通过使用 Xamarin，你可以利用 Windows 项目中使用移动服务 .NET 客户端库的现有代码来访问移动服务。有关详细信息，请参阅 [Visual Studio 中的跨平台开发](https://msdn.microsoft.com/zh-CN/library/dn771552.aspx)。
 
 若要开始构建使用移动服务的 Xamarin 应用程序，请参阅 Xamarin 快速入门教程 ([iOS](/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started)/[Android](/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started))。
 
@@ -190,14 +190,14 @@ Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支�
 [推送 Windows Phone 入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
 [推送 iOS 入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [推送 Android 入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
-[动态架构]: http://msdn.microsoft.com/library/windowsazure/jj193175.aspx
+[动态架构]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193175.aspx
 [如何将 .NET 客户端用于移动服务]: zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
-[push 对象]: http://msdn.microsoft.com/library/windowsazure/jj554217.aspx
-[TemplatePushMessage]:http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
+[push 对象]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554217.aspx
+[TemplatePushMessage]:https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
 [PhoneGap]: /zh-cn/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/
 [Sencha]: /zh-cn/documentation/articles/partner-sencha-mobile-services-get-started/
 [Appcelerator]: /zh-cn/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
-[SendAsync]: http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
-[Windows Phone 8 开发人员下一步要做什么]: http://msdn.microsoft.com/library/windows/apps/dn655121(v=vs.105).aspx
+[SendAsync]: https://msdn.microsoft.com/zh-CN/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
+[Windows Phone 8 开发人员下一步要做什么]: https://msdn.microsoft.com/zh-CN/library/windows/apps/dn655121(v=vs.105).aspx
 [构建适用于所有 Windows 设备的通用 Windows 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=509905
 [使用 MVVM 的 Azure 移动服务的通用 Windows 应用程序项目]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de

@@ -36,7 +36,7 @@
 
 3. 在"名称"中输入目录名称。
 
-4. 在"域"中输入域名。这是默认情况下你的目录附带的基本域名，它采用 `<域名>.onmicrosoft.com` 格式。可以根据目录名称或你拥有的其他域名将它命名。以后，可以添加你的组织已在使用的其他域名。有关 AD 的详细信息，请参阅[什么是 Azure AD 目录？](http://technet.microsoft.com/library/jj573650.aspx)。
+4. 在"域"中输入域名。这是默认情况下你的目录附带的基本域名，它采用 `<域名>.onmicrosoft.com` 格式。可以根据目录名称或你拥有的其他域名将它命名。以后，可以添加你的组织已在使用的其他域名。有关 AD 的详细信息，请参阅[什么是 Azure AD 目录？](https://technet.microsoft.com/zh-CN/library/jj573650.aspx)。
 
 
 ## 创建 Azure 的管理证书
@@ -51,7 +51,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 - 将 PFX 文件转换为 JKS，因为 Java 以这种格式来使用证书进行身份验证。
 - 编写引用本地 JKS 文件的应用程序身份验证代码。
 
-完成此过程后，CER 证书将驻留在 Azure 订阅中，JKS 证书将驻留在本地驱动器中。有关管理证书的详细信息，请参阅[创建并上载 Azure 的管理证书](http://msdn.microsoft.com/library/azure/gg551722.aspx)。
+完成此过程后，CER 证书将驻留在 Azure 订阅中，JKS 证书将驻留在本地驱动器中。有关管理证书的详细信息，请参阅[创建并上载 Azure 的管理证书](https://msdn.microsoft.com/zh-CN/library/azure/gg551722.aspx)。
 
 
 ### 创建证书
@@ -82,7 +82,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 - `<password>` 是选择用于保护证书的密码；它的长度必须至少为 6 个字符。可以不输入密码，但不建议这样做。
 - `<dname>` 是要与别名关联的 X.500 可分辨名称，它用作自签名证书中的颁发者和使用者字段。
 
-有关详细信息，请参阅[创建并上载 Azure 的管理证书](http://msdn.microsoft.com/library/azure/gg551722.aspx)。
+有关详细信息，请参阅[创建并上载 Azure 的管理证书](https://msdn.microsoft.com/zh-CN/library/azure/gg551722.aspx)。
 
 
 ### 上载证书
@@ -376,7 +376,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 选择第三方 FTP 客户端来发布应用程序。此过程将介绍两个选项：Azure 中内置的 Kudu 控制台；FileZilla，这是一个带有便捷式图形 UI 的常用工具。
 
-> **注意：**Azure Plugin for Eclipse with Java 2.4 支持部署到存储帐户和云服务，但当前不支持部署到网站。你可以根据[在 Eclipse 中创建 Azure 的 Hello World 应用程序](http://msdn.microsoft.com/library/azure/hh690944.aspx)中所述，使用 Azure 部署项目来部署到存储帐户和云服务。但是，该插件提供的"部署到 Azure"工具当前不支持网站。使用其他方法（例如 FTP 或 GitHub）将文件传输到网站。
+> **注意：**Azure Plugin for Eclipse with Java 2.4 支持部署到存储帐户和云服务，但当前不支持部署到网站。你可以根据[在 Eclipse 中创建 Azure 的 Hello World 应用程序](https://msdn.microsoft.com/zh-CN/library/azure/hh690944.aspx)中所述，使用 Azure 部署项目来部署到存储帐户和云服务。但是，该插件提供的"部署到 Azure"工具当前不支持网站。使用其他方法（例如 FTP 或 GitHub）将文件传输到网站。
 
 > **注意：**不建议从 Windows 命令提示符使用 FTP（Windows 随附的 FTP.EXE 命令行实用工具）。使用活动 FTP 的 FTP 客户端（例如 FTP.EXE）往往无法穿过防火墙工作。活动 FTP 会指定一个基于 LAN 的内部地址，而 FTP 服务器有可能无法连接到该地址。
 

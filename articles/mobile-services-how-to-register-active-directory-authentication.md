@@ -9,7 +9,7 @@
 本主题说明如何注册你的应用程序，以便能够使用 Azure Active Directory 作为 Azure 移动服务的身份验证提供程序。 
 
 
->[AZURE.NOTE] 本主题中所述的步骤应在你想要对应用程序使用[服务定向的登录操作](http://msdn.microsoft.com/library/azure/dn283952.aspx)时与[向移动服务应用程序添加身份验证](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)教程一起使用。此外，如果你的应用程序对于 Azure Active Directory 需要[客户端定向的登录操作](http://msdn.microsoft.com/library/azure/jj710106.aspx)和 .NET 后端移动服务，应首先阅读[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/)教程。
+>[AZURE.NOTE] 本主题中所述的步骤应在你想要对应用程序使用[服务定向的登录操作](https://msdn.microsoft.com/zh-CN/library/azure/dn283952.aspx)时与[向移动服务应用程序添加身份验证](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)教程一起使用。此外，如果你的应用程序对于 Azure Active Directory 需要[客户端定向的登录操作](https://msdn.microsoft.com/zh-CN/library/azure/jj710106.aspx)和 .NET 后端移动服务，应首先阅读[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/)教程。
 
 
 1. 登录到 [Azure 管理门户]、单击"移动服务"，然后单击您的移动服务。

@@ -173,7 +173,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [自定义 API 教程]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/
 [存储服务器脚本]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/
 [注册以使用 Azure Active Directory Login]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
-[Graph API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
-[Graph REST API]: http://msdn.microsoft.com/library/azure/hh974478.aspx
-[获取用户]: http://msdn.microsoft.com/library/azure/dn151678.aspx
+[Graph API]: https://msdn.microsoft.com/zh-CN/library/azure/hh974478.aspx
+[Graph REST API]: https://msdn.microsoft.com/zh-CN/library/azure/hh974478.aspx
+[获取用户]: https://msdn.microsoft.com/zh-CN/library/azure/dn151678.aspx
 [移动服务中 AAD 提供的基于角色的访问控制]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/

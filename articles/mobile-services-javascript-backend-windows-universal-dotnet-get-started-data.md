@@ -8,7 +8,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 [WACOM.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
-此主题说明如何通过 Azure 移动服务来利用通用 Windows 应用程序中的数据。通用 Windows 应用程序解决方案包括面向 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目以及常见的共享项目。有关详细信息，请参阅[构建面向 Windows 和 Windows Phone 的通用 Windows 应用程序](http://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx)。
+此主题说明如何通过 Azure 移动服务来利用通用 Windows 应用程序中的数据。通用 Windows 应用程序解决方案包括面向 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目以及常见的共享项目。有关详细信息，请参阅[构建面向 Windows 和 Windows Phone 的通用 Windows 应用程序](https://msdn.microsoft.com/zh-CN/library/windows/apps/xaml/dn609832.aspx)。
 
 在本教程中，你将要下载一个可在内存中存储数据的 Visual Studio 2013 应用程序项目，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 
@@ -60,7 +60,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 [WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
->[AZURE.NOTE]将使用 Id、__createdAt、__updatedAt 和 __version 列创建新表。启用动态架构后，移动服务将基于插入或更新请求中的 JSON 对象自动生成新列。有关详细信息，请参阅[动态架构](http://msdn.microsoft.com/library/windowsazure/jj193175.aspx)。
+>[AZURE.NOTE]将使用 Id、__createdAt、__updatedAt 和 __version 列创建新表。启用动态架构后，移动服务将基于插入或更新请求中的 JSON 对象自动生成新列。有关详细信息，请参阅[动态架构](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193175.aspx)。
 
 #<a name="update-app"></a>更新应用程序以使用移动服务
 

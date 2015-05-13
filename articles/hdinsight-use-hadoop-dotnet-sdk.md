@@ -193,7 +193,7 @@ LOAD DATA INPATH 操作是一个移动操作，它将 Actors.txt 数据移入由
   [Azure 订阅]: /pricing/1rmb-trial/
   [Azure 存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [如何管理存储服务帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
-  [Actors.txt]: http://www.microsoft.com/en-us/download/details.aspx?id=37003
+  [Actors.txt]: http://www.microsoft.com/zh-CN/download/details.aspx?id=37003
   [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [HDI.HadoopSDKOutput]: ./media/hdinsight-use-hadoop-dotnet-sdk/HDI.HadoopSDKOutput.PNG "控制台应用程序"
   [Hive 入门]: https://cwiki.apache.org/confluence/display/Hive/GettingStarted#GettingStarted-DMLOperations

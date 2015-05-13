@@ -22,7 +22,7 @@
 ========
 
 -   Windows 8 32 位或 64 位。你可以从 MSDN 获取 [Windows 8 企业评估版](http://msdn.microsoft.com/zh-cn/evalcenter/jj554510.aspx)。
--   已在 Windows 8 上安装适用于 Windows 8 的 Visual Studio 2012 或 Visual Studio Express 2012。你可以从[此处](http://www.microsoft.com/visualstudio/11/en-us/downloads)获取试用版。
+-   已在 Windows 8 上安装适用于 Windows 8 的 Visual Studio 2012 或 Visual Studio Express 2012。你可以从[此处](http://www.microsoft.com/visualstudio/11/zh-CN/downloads)获取试用版。
 -   [适用于 Windows 8 的 Microsoft 平滑流式处理客户端 SDK](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)。
 
 可从 MSDN 开发人员代码示例（代码库）下载每一课后生成的解决方案：[第 1 课](http://code.msdn.microsoft.com/Smooth-Streaming-Client-0bb1471f "简单的 Windows 8 平滑流式处理媒体播放器")、[第 2 课](http://code.msdn.microsoft.com/A-simple-Windows-8-Smooth-ee98f63a "带滚动条控件的简单 Windows 8 平滑流式处理媒体播放器")、[第 3 课](http://code.msdn.microsoft.com/A-Windows-8-Smooth-883c3b44 "支持流选择的 Windows 8 平滑流式处理媒体播放器")和[第 4 课](http://code.msdn.microsoft.com/A-Windows-8-Smooth-aa9e4907 "支持曲目选择的 Windows 8 平滑流式处理媒体播放器")。

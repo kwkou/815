@@ -10,7 +10,7 @@
 
 <div class="dev-callout"><b>说明</b>
 <p>此功能只会捕获对 BizTalk 服务执行的管理操作日志，例如，服务的启动时间、备份时间，等等。不管此类操作是从 Azure 管理门户执行的，还是使用 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn232347.aspx">BizTalk 服务 REST API</a> 执行的，都会受到跟踪。有关使用管理服务跟踪的操作的完整列表，请参阅<a href="#bizops">使用 Azure 管理服务跟踪的操作</a>。</p>
-<p>此功能不会捕获与 BizTalk 服务运行时相关的活动（例如桥处理的消息等）的日志。若要查看此类日志，必须使用 BizTalk 服务门户中的&ldquo;跟踪&rdquo;视图。有关详细信息，请参阅<a HREF="http://msdn.microsoft.com/library/windowsazure/hh949805.aspx">跟踪消息</a>。</p>
+<p>此功能不会捕获与 BizTalk 服务运行时相关的活动（例如桥处理的消息等）的日志。若要查看此类日志，必须使用 BizTalk 服务门户中的&ldquo;跟踪&rdquo;视图。有关详细信息，请参阅<a HREF="https://msdn.microsoft.com/zh-CN/library/windowsazure/hh949805.aspx">跟踪消息</a>。</p>
 </div>
 
 ## <a name="viewlogs"></a>查看 BizTalk 服务操作日志
@@ -105,7 +105,7 @@
 
   [BizTalk 服务 REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn232347.aspx
   [使用 Azure 管理服务跟踪的操作]: #bizops
-  [跟踪消息]: http://msdn.microsoft.com/library/windowsazure/hh949805.aspx
+  [跟踪消息]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh949805.aspx
   [查看操作日志]: ./media/biztalk-troubleshoot-using-ops-logs/Operation-Logs.png
   [备份 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=325584
   [从备份还原 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=325582
