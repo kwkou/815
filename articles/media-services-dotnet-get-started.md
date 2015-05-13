@@ -31,7 +31,7 @@ Media Services 入门
 
 **说明**
 
-若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/en-us/pricing/free-trial/?WT.mc_id=A8A8397B5)。
+若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/?WT.mc_id=A8A8397B5)。
 
 设置项目
 --------
@@ -188,7 +188,7 @@ return asset;
 
     -   声明新作业。
     -   声明用于处理该作业的媒体处理器。媒体处理器是处理编码、加密、格式转换和其他相关处理作业的组件。有多种类型的媒体处理器可用（你可以使用 \_context.MediaProcessors 逐一查看所有这些处理器）。本演练稍后所示的 GetLatestMediaProcessorByName 方法将返回 Azure 媒体编码器处理器。
-    -   声明新任务。每个作业有一个或多个任务。请注意，对于任务，可为其指定一个友好名称、媒体处理器实例、任务配置字符串和任务创建选项。配置字符串指定编码设置。本示例使用 **H264 Broadband 720p** 设置。此预设将生成单个 MP4 文件。有关此预设和其他预设的详细信息，请参阅 [Azure 媒体编码器的任务预设字符串](http://msdn.microsoft.com/library/windowsazure/jj129582.aspx)。
+    -   声明新任务。每个作业有一个或多个任务。请注意，对于任务，可为其指定一个友好名称、媒体处理器实例、任务配置字符串和任务创建选项。配置字符串指定编码设置。本示例使用 **H264 Broadband 720p** 设置。此预设将生成单个 MP4 文件。有关此预设和其他预设的详细信息，请参阅 [Azure 媒体编码器的任务预设字符串](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj129582.aspx)。
     -   将输入资产添加到任务。在本例中，输入资产是你在前一部分中创建的资产。
     -   将输出资产添加到任务。为输出资产指定一个友好名称、一个布尔值（指示是否在完成作业后将输出保存在服务器上）和一个 **AssetCreationOptions.None** 值（指示不加密要存储和传输的输出）。
     -   提交作业。

@@ -685,7 +685,7 @@ Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储�
 
 
 ## <a name="gov"></a>如何在美国政府部门和 Azure 中国区使用 Azure 存储空间
-Azure 环境的部署独立于 Microsoft Azure，其示例包括[面向美国政府的 Azure Government](http://azure.microsoft.com/features/gov/)、[面向全球 Azure 的 AzureCloud](https://manage.windowsazure.com)，以及[由中国 21Vianet 运营的 AzureChinaCloud](http://www.windowsazure.cn/)。你可以为美国政府和 Azure 中国区部署新的 Azure 环境。 
+Azure 环境的部署独立于 Microsoft Azure，其示例包括[面向美国政府的 Azure Government](http://azure.microsoft.com/features/gov/)、[面向全球 Azure 的 AzureCloud](https://manage.windowsazure.cn)，以及[由中国 21Vianet 运营的 AzureChinaCloud](http://www.windowsazure.cn/)。你可以为美国政府和 Azure 中国区部署新的 Azure 环境。 
 
 若要将 Azure 存储空间用于 AzureChinaCloud，需要创建与 AzureChinaCloud 关联的存储上下文。请按照以下步骤开始：
 

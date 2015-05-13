@@ -149,7 +149,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 </tr>
 <tr>
 <td valign="middle"><strong>身份验证</strong></td>
-<td valign="top">- <a href ="/documentation/articles/fundamentals-identity/">了解 Azure 标识选项</a><br/>- <a href="http://www.windowsazure.cn/en-us/documentation/services/active-directory/">Azure Active Directory 服务</a><br/>- <a href="http://technet.microsoft.com/en-us/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn151790.aspx">使用 Azure AD 将登录名添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
+<td valign="top">- <a href ="/documentation/articles/fundamentals-identity/">了解 Azure 标识选项</a><br/>- <a href="http://www.windowsazure.cn/zh-CN/documentation/services/active-directory/">Azure Active Directory 服务</a><br/>- <a href="http://technet.microsoft.com/zh-CN/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/dn151790.aspx">使用 Azure AD 将登录名添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>服务总线 中继</strong></td>
@@ -157,7 +157,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 </tr>
 <tr>
 <td valign="middle"><strong>监视</strong></td>
-<td valign="top">- <a href ="/documentation/articles/web-sites-monitor/">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a><br/>- <a href="/documentation/articles/web-sites-monitor/#howtoconfigdiagnostics">如何：为网站配置诊断和下载日志</a><br/>- <a href="/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/">在 Visual Studio 中排除 Azure 网站的故障</a></td>
+<td valign="top">- <a href ="/documentation/articles/web-sites-monitor/">如何监视网站</a><br/>- <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a><br/>- <a href="/documentation/articles/web-sites-monitor/#howtoconfigdiagnostics">如何：为网站配置诊断和下载日志</a><br/>- <a href="/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/">在 Visual Studio 中排除 Azure 网站的故障</a></td>
 </tr>
 </table>
 
@@ -176,12 +176,12 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [使用 Azure Active Directory]: /documentation/articles/fundamentals-identity/#ad
   [在虚拟机中运行 Windows Server Active Directory]: /documentation/articles/fundamentals-identity/#adinvm
   [在 Azure 虚拟机上部署 Windows Server Active Directory 的指南]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx
-  [Azure 访问控制服务]: http://msdn.microsoft.com/library/windowsazure/hh147631.aspx
+  [Azure 访问控制服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh147631.aspx
   [使用 Azure Active Directory 访问控制]: /documentation/articles/fundamentals-identity/#ac
   [Azure AD 租户是什么？]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
   [BusinessApplicationsAzureAD]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AzureAD.png
   [BusinessApplicationsADUsers]: ./media/web-sites-business-application-solution-overview/BusinessApplications_AD_Users.png
-  [使用 Azure AD 将登录名添加到 Web 应用程序中]: http://msdn.microsoft.com/library/windowsazure/dn151790.aspx
+  [使用 Azure AD 将登录名添加到 Web 应用程序中]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn151790.aspx
   [目录集成]: http://technet.microsoft.com/zh-cn/library/jj573653.aspx
   [查看该信息]: /documentation/articles/web-sites-global-web-presence-solution-overview/
   [BusinessApplicationsVSIntranetApp]: ./media/web-sites-business-application-solution-overview/BusinessApplications_VS_IntranetApp.png
@@ -213,11 +213,11 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [将 ASP.NET Web 应用程序部署到 Azure 网站]: /develop/net/tutorials/get-started/
   [将安全的 ASP.NET MVC 应用程序部署到 Azure]: /develop/net/tutorials/web-site-with-sql-database/
   [了解 Azure 标识选项]: /documentation/articles/fundamentals-identity/
-  [4]: http://www.windowsazure.cn/en-us/documentation/services/active-directory/
-  [什么是 Azure AD 租户？]: http://technet.microsoft.com/en-us/library/jj573650.aspx
+  [4]: http://www.windowsazure.cn/zh-CN/documentation/services/active-directory/
+  [什么是 Azure AD 租户？]: http://technet.microsoft.com/zh-CN/library/jj573650.aspx
   [5]: /develop/net/how-to-guides/service-bus-relay/
   [6]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
   [如何监视网站]: /documentation/articles/web-sites-monitor/
-  [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
+  [如何：在 Azure 中接收警报通知和管理警报规则]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn306638.aspx
   [7]: /documentation/articles/web-sites-monitor/#howtoconfigdiagnostics
   [8]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/

@@ -11,7 +11,7 @@
 
 对于运行 Windows Server 操作系统的虚拟机，您使用连接按钮在管理门户中启动远程桌面连接。 
 
->[WACOM.NOTE] 如果您需要重置用户名或密码时，或在虚拟机中启用 RDP，则可以使用 [VMAccess](http://msdn.microsoft.com/library/azure/dn606308.aspx) 扩展插件以执行此操作。有关要求和故障排除提示，请参阅[连接到 Azure 虚拟机使用 RDP 或 SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx)。
+>[WACOM.NOTE] 如果您需要重置用户名或密码时，或在虚拟机中启用 RDP，则可以使用 [VMAccess](https://msdn.microsoft.com/zh-CN/library/azure/dn606308.aspx) 扩展插件以执行此操作。有关要求和故障排除提示，请参阅[连接到 Azure 虚拟机使用 RDP 或 SSH](https://msdn.microsoft.com/zh-CN/library/azure/dn535788.aspx)。
 
 1. 如果尚未这样做，登录到[Azure 管理门户](http://manage.windowsazure.cn)。
 

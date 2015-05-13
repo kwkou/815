@@ -28,8 +28,8 @@ Azure Active Directory 是一项在云中提供标识和访问管理功能的服
 -   [TechNet 上的 Azure AD 库][TechNet 上的 Azure AD 库]
 -   [MSDN 上的 Azure AD 库][MSDN 上的 Azure AD 库]
 
-  [了解详细信息]: http://technet.microsoft.com/library/hh967611.aspx
-  [1]: http://technet.microsoft.com/library/jj573653
+  [了解详细信息]: https://technet.microsoft.com/zh-CN/library/hh967611.aspx
+  [1]: https://technet.microsoft.com/zh-CN/library/jj573653
   [2]: http://go.microsoft.com/fwlink/?LinkID=290817&clcid=0x409
   [作为组织注册 Azure]: /documentation/articles/sign-up-organization/
   [Azure 标识]: /documentation/articles/fundamentals-identity/

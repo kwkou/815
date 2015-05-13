@@ -11,7 +11,7 @@ ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.d
  
 <p>若要完成本教程，你需要一个 Azure 帐户。本教程将指导你完成启用 Azure 备份功能的整个过程。以前，若要注册备份服务器，你需要创建或获取一个 X.509 v3 证书。证书目前仍受支持，但是，为了简化将服务器注册到 Azure 保管库，你现在可以直接通过&ldquo;快速启动&rdquo;页生成保管库凭据。 </p>
 <ul> 
-<li>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/zh-cn/pricing/free-trial/">Azure 免费试用</a>。</li> 
+<li>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/">Azure 免费试用</a>。</li> 
  
 
 </ul>
@@ -93,7 +93,7 @@ ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.d
 
 -   访问 [Azure 备份论坛][Azure 备份论坛]。
 
-  [Azure 免费试用]: /zh-cn/pricing/free-trial/
+  [Azure 免费试用]: /zh-cn/pricing/1rmb-trial/
   [管理门户]: https://manage.windowsazure.cn
   [新备份保管库]: http://i.imgur.com/506c7ch.png
   [创建备份保管库]: http://i.imgur.com/grtLcKM.png

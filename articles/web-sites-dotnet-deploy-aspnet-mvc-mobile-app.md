@@ -585,7 +585,7 @@ else
   [Apple Safari]: http://www.apple.com/cn/safari/
   [如何让 Safari 模拟 IE]: http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html
   [FireFox]: http://www.bing.com/search?q=firefox+download
-  [FireFox 用户代理切换器]: https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/
+  [FireFox 用户代理切换器]: https://addons.mozilla.org/zh-CN/firefox/addon/user-agent-switcher/
   [初学者项目下载]: http://go.microsoft.com/fwlink/?LinkId=228307
   [已完成项目下载]: http://go.microsoft.com/fwlink/?LinkId=228306
   [创建 Azure 网站]: #bkmk_CreateWebSite

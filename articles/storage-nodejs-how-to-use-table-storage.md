@@ -125,7 +125,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 * **RowKey** -唯一标识分区内的实体。
 
-**PartitionKey** 和 **RowKey** 都必须是字符串值。有关详细信息，请参阅 [了解表服务数据模型](http://msdn.microsoft.com/library/azure/dd179338.aspx).
+**PartitionKey** 和 **RowKey** 都必须是字符串值。有关详细信息，请参阅 [了解表服务数据模型](https://msdn.microsoft.com/zh-CN/library/azure/dd179338.aspx).
 
 下面是如何定义实体的示例。请注意，**dueDate** 被定义为一种类型的 **Edm.DateTime**。可以选择性地指定类型。如果未指定类型，系统会进行推断。
 

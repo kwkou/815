@@ -70,7 +70,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 ## 步骤 1：创建一个 Site Recovery 保管库
 
-1. 从你要注册的 VMM 服务器登录到[管理门户](https://manage.windowsazure.com)。
+1. 从你要注册的 VMM 服务器登录到[管理门户](https://manage.windowsazure.cn)。
 
 2. 展开"数据服务">"恢复服务"并单击"Site Recovery 保管库"。
 

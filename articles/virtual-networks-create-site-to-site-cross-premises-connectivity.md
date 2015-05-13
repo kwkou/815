@@ -256,7 +256,7 @@
   [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx
   [Azure 虚拟网络配置任务]: http://go.microsoft.com/fwlink/?LinkId=296652
   [关于用于虚拟网络的 VPN 设备]: http://go.microsoft.com/fwlink/?LinkID=248098
-  [路由和远程访问服务模板]: http://msdn.microsoft.com/library/windowsazure/dn133801.aspx
+  [路由和远程访问服务模板]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn133801.aspx
   [创建虚拟网络]: #CreateVN
   [启动网关并为网络管理员收集信息]: #StartGateway
   [配置 VPN 设备]: #ConfigVPN
@@ -277,7 +277,7 @@
   [11]: http://go.microsoft.com/fwlink/?LinkId=248098
   [在管理门户中配置虚拟网络网关]: http://go.microsoft.com/fwlink/?LinkId=299878
   [将虚拟网络设置导出到网络配置文件]: http://go.microsoft.com/fwlink/?LinkID=299880
-  [虚拟网络常见问题解答]: http://msdn.microsoft.com/library/windowsazure/dn133803.aspx
+  [虚拟网络常见问题解答]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn133803.aspx
   [使用网络配置文件配置虚拟网络（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156097.aspx
   [将虚拟机添加到虚拟网络]: /documentation/articles/virtual-machines-create-custom/
   [Azure 名称解析概述]: http://go.microsoft.com/fwlink/?LinkId=248097

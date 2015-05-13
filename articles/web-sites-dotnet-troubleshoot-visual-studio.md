@@ -683,7 +683,7 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
 如果您希望调试 Azure 云服务而不是网站，请参见[调试云服务][调试云服务]。
 
   [运行在调试模式下]: http://www.visualstudio.com/zh-cn/get-started/debug-your-app-vs.aspx
-  [IntelliTrace]: http://msdn.microsoft.com/library/vstudio/dd264915.aspx
+  [IntelliTrace]: https://msdn.microsoft.com/zh-CN/library/vstudio/dd264915.aspx
   [先决条件]: #prerequisites
   [站点配置和管理]: #sitemanagement
   [远程视图]: #remoteview
@@ -788,6 +788,6 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [LogParser]: http://www.microsoft.com/zh-cn/download/details.aspx?id=24659
   [使用 LogParser 解决 IIS 性能问题或应用程序错误]: http://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser
   [Robert McMurray 有关 LogParser 使用的博客文章]: http://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/
-  [IIS 7.0、IIS 7.5 以及 IIS 8.0 中的 HTTP 状态代码]: http://support.microsoft.com/kb/943891
+  [IIS 7.0、IIS 7.5 以及 IIS 8.0 中的 HTTP 状态代码]: https://support.microsoft.com/zh-CN/kb/943891
   [使用失败请求跟踪]: http://www.iis.net/learn/troubleshoot/using-failed-request-tracing
   [调试云服务]: http://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx

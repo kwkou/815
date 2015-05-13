@@ -99,7 +99,7 @@ Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）�
 -   [在 Azure 中配置、监视和缩放网站][在 Azure 中配置、监视和缩放网站]
 -   [下载 Azure SDK for PHP][下载 Azure SDK for PHP]
 
-  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [PHP 开发中心教程]: http://azure.microsoft.com/develop/php/
   [如何配置网站]: /zh-cn/documentation/articles/web-sites-configure/
   [什么是 Azure 网站？]: #WhatIs

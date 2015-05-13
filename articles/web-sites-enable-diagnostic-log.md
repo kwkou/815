@@ -374,7 +374,7 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
   [如何：流式传输日志]: #streamlogs
   [如何：了解诊断日志]: #understandlogs
   [后续步骤]: #nextsteps
-  [W3C 扩展日志文件格式]: http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx
+  [W3C 扩展日志文件格式]: https://msdn.microsoft.com/zh-CN/library/windows/desktop/aa814385.aspx
   [System.Diagnostics.Trace]: http://msdn.microsoft.com/zh-cn/library/36hhw2t6.aspx
   [1]: /zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/
   [Azure 管理门户]: https://manage.microsoft.cn

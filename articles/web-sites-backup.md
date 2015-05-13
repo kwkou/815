@@ -172,7 +172,7 @@ Azure 网站备份以下信息：
   [选择开始时间]: ./media/web-sites-backup/09StartTime.png
   [“保存”按钮]: ./media/web-sites-backup/10SaveIcon.png
   [1]: http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-restore/
-  [Windows Azure 免费试用版]: http://azure.microsoft.com/en-us/pricing/free-trial/
+  [Windows Azure 免费试用版]: http://azure.microsoft.com/zh-CN/pricing/1rmb-trial/
   [什么是存储帐户？]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-whatis-account/
   [如何：创建存储帐户]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-create-storage-account/
   [如何监视存储帐户]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-monitor-storage-account/

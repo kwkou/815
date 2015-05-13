@@ -509,11 +509,11 @@ _(Optional) 本部分演示如何使用属性自定义数据序列化的方式�
 
 [处理过期的令牌]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
-[权限]: http://msdn.microsoft.com/library/windowsazure/jj193161.aspx
+[权限]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193161.aspx
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-ios-authorize-users-in-scripts
 [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
 [如何： 访问自定义参数]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
-[创建表]: http://msdn.microsoft.com/library/windowsazure/jj193162.aspx
+[创建表]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193162.aspx
 [NSDictionary 对象]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [用于管理移动服务表的 CLI]: http://www.windowsazure.cn/zh-cn/documentation/articles/command-line-tools/#Mobile_Tables

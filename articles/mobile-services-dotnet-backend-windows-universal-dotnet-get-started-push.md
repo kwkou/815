@@ -35,7 +35,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 <li><p>打开共享的 App.xaml.cs 代码文件，可以看到已在 <strong>OnLaunched</strong> 事件处理程序中添加了对新的 <strong>UploadChannel</strong> 方法的调用。</p> <p>这可确保每次启动应用程序时都尝试注册设备。</p></li>
 <li><p>重复执行前面的步骤为 Windows Phone 应用商店应用程序项目添加推送通知，然后在共享的 App.xaml.cs 文件中，删除对 <strong>UploadChannel</strong> 的额外调用和剩余的 <code>#if...#endif</code> 条件包装。</p> <p>现在，这两个项目可以共用对 <strong>UploadChannel</strong> 的单一调用。</p>
 
-> [AZURE.NOTE] 此外，你还可以通过将 <code>#if...#endif</code> 包装的 [MobileServiceClient](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。
+> [AZURE.NOTE] 此外，你还可以通过将 <code>#if...#endif</code> 包装的 [MobileServiceClient](https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。
 
 </li>
 </ol>
@@ -57,14 +57,14 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 >[AZURE.NOTE]永远不要使用生产用移动服务进行测试和开发工作。始终将你的移动服务项目发布到单独的临时服务进行测试。
 
 <ol start="5">
-<li><p>打开共享的 App.xaml.cs 项目文件，找到创建 <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 类的新实例以访问 Azure 中运行的移动服务的代码行。</p></li>
-<li><p>注释掉此代码，并添加创建新的同名但在构造函数中使用本地主机 URL 的 <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 的代码，类似于如下代码：</p>
+<li><p>打开共享的 App.xaml.cs 项目文件，找到创建 <a href="https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 类的新实例以访问 Azure 中运行的移动服务的代码行。</p></li>
+<li><p>注释掉此代码，并添加创建新的同名但在构造函数中使用本地主机 URL 的 <a href="https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 的代码，类似于如下代码：</p>
 <pre><code>// This MobileServiceClient has been configured to communicate with your local
 // test project for debugging purposes.
 public static MobileServiceClient todolistClient = new MobileServiceClient(
 	"http://localhost:4584"
 );
-</code></pre><p>使用此 <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a>，应用程序将连接到本地服务（而不是 Azure 中托管的版本）。当你想要切换回来并针对 Azure 中托管的移动服务运行应用程序时，请更改回原始 <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 定义。</p></li>
+</code></pre><p>使用此 <a href="https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a>，应用程序将连接到本地服务（而不是 Azure 中托管的版本）。当你想要切换回来并针对 Azure 中托管的移动服务运行应用程序时，请更改回原始 <a href="https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 定义。</p></li>
 </ol>
 
 ## <a id="test"></a>在应用程序中测试推送通知

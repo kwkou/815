@@ -213,11 +213,11 @@
 
 -   [测试实验室指南：Azure 中的 Windows Server 2012 R2 基本配置][测试实验室指南：Azure 中的 Windows Server 2012 R2 基本配置]
 
-  [Azure 虚拟网络]: http://msdn.microsoft.com/library/azure/jj156007.aspx
-  [使用管理门户向导配置站点到站点 VPN]: http://msdn.microsoft.com/library/azure/dn133795.aspx
+  [Azure 虚拟网络]: https://msdn.microsoft.com/zh-CN/library/azure/jj156007.aspx
+  [使用管理门户向导配置站点到站点 VPN]: https://msdn.microsoft.com/zh-CN/library/azure/dn133795.aspx
   [在 Azure 虚拟网络中安装副本 Active Directory 域控制器]: http://windowsazure.cn/zh-cn/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/?fb=zh-cn
-  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则]: http://msdn.microsoft.com/library/azure/jj156090.aspx
-  [测试实验室指南：Azure 中的 Windows Server 2012 R2 基本配置]: http://www.microsoft.com/en-us/download/details.aspx?id=41684
+  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则]: https://msdn.microsoft.com/zh-CN/library/azure/jj156090.aspx
+  [测试实验室指南：Azure 中的 Windows Server 2012 R2 基本配置]: http://www.microsoft.com/zh-CN/download/details.aspx?id=41684
   [在 Azure 上安装与在本地安装有什么不同？]: #differ
   [步骤 1. 创建 Azure 虚拟网络]: #createvnet
   [步骤 2：创建 VM 以运行域控制器和 DNS 服务器角色]: #createvm
@@ -225,16 +225,16 @@
   [步骤 4：为 Azure 虚拟网络设置 DNS 服务器]: #dns
   [步骤 5：为域成员创建 VM 并加入到域中]: #domainmembers
   [Azure 管理门户]: https://manage.windowsazure.cn
-  [运行 Set-AzureStaticVNetIP Azure PowerShell cmdlet]: http://msdn.microsoft.com/library/azure/dn630228.aspx
-  [安装 AD DS]: http://technet.microsoft.com/library/jj574166.aspx
-  [在管理门户中配置只使用云的虚拟机]: http://msdn.microsoft.com/library/dn631643.aspx
-  [在管理门户中配置站点到站点 VPN]: http://msdn.microsoft.com/library/dn133795.aspx
+  [运行 Set-AzureStaticVNetIP Azure PowerShell cmdlet]: https://msdn.microsoft.com/zh-CN/library/azure/dn630228.aspx
+  [安装 AD DS]: https://technet.microsoft.com/zh-CN/library/jj574166.aspx
+  [在管理门户中配置只使用云的虚拟机]: https://msdn.microsoft.com/zh-CN/library/dn631643.aspx
+  [在管理门户中配置站点到站点 VPN]: https://msdn.microsoft.com/zh-CN/library/dn133795.aspx
   [Windows Azure IT Pro IaaS：(01) 虚拟机基础知识]: http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01
   [Windows Azure IT Pro IaaS：(05) 创建虚拟网络和跨界连接]: http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05
-  [1]: http://msdn.microsoft.com/library/windowsazure/jj156007.aspx
+  [1]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj156007.aspx
   [如何安装和配置 Azure PowerShell]: http://windowsazure.cn/zh-cn/documentation/articles/install-configure-powershell/?fb=zh-cn
-  [Azure PowerShell]: http://msdn.microsoft.com/library/azure/jj156055.aspx
-  [Azure 管理 Cmdlet]: http://msdn.microsoft.com/library/azure/jj152841
+  [Azure PowerShell]: https://msdn.microsoft.com/zh-CN/library/azure/jj156055.aspx
+  [Azure 管理 Cmdlet]: https://msdn.microsoft.com/zh-CN/library/azure/jj152841
   [设置 Azure VM 静态 IP 地址]: http://windowsitpro.com/windows-azure/set-azure-vm-static-ip-address
   [如何向 Azure VM 分配静态 IP]: http://www.bhargavs.com/index.php/2014/03/13/how-to-assign-static-ip-to-azure-vm/
   [介绍 Active Directory 域服务 (AD DS) 虚拟化（级别 100）]: http://technet.microsoft.com/zh-cn/library/hh831734.aspx

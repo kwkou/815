@@ -79,7 +79,7 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-[SQL Database 业务连续性指南]: http://msdn.microsoft.com/library/windowsazure/hh852669.aspx
+[SQL Database 业务连续性指南]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
 [源代码管理功能]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/

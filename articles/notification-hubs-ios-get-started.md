@@ -29,7 +29,7 @@
 
 <div class="dev-callout"><b>说明</b><br /> <p>由于推送通知配置要求，你必须在支持 iOS 的设备（iPhone 或 iPad），而不是在模拟器上部署和测试推送通知。</p><br /> </div>
 </p> 完成本教程是学习有关 iOS 应用程序的所有其他通知中心教程的先决条件。
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/free-trial/" target="_blank">Azure 免费试用</a>。</p></div>
+<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。</p></div>
 
 Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照以下说明创建必要的证书并将其上载到你的移动服务。有关正式的 APNS 功能文档，请参阅 [Apple 推送通知服务]。
 
@@ -332,7 +332,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [从后端发送通知]: #send
   [移动服务 iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
   [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
 
 <!-- Images. -->
   []: ./media/notification-hubs-ios-get-started/mobile-services-ios-push-step5.png

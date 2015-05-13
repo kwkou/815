@@ -34,7 +34,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 <li><p>浏览到 <code>\Services\MobileServices\your_service_name</code> 项目文件夹，打开生成的 push.register.cs 代码文件，并检查 <strong>UploadChannel</strong> 方法是否注册设备的通道 URL 和通知中心。</p></li> 
 <li><p>打开共享的 App.xaml.cs 代码文件，然后请注意，对新的 <strong>UploadChannel</strong> 方法的调用 <strong>OnLaunched</strong> 事件处理程序中。</p> <p>这可确保每次启动应用程序时都尝试注册设备。</p></li>
 <li><p>重复前面的步骤，向 Windows Phone 应用商店应用程序项目添加推送通知，然后在共享的 App.xaml.cs 文件中取消 <strong>UploadChannel</strong> 和其余 <code>#if...#endif</code> 条件包装的额外调用。</p> <p>现在，这两个项目可以共享 <strong>UploadChannel</strong>。</p>
-<p>请注意，您还可以简化生成的代码，具体的操作是将 <code>#if...#endif</code> 打包 <a href="http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 定义统一为供两个应用版本使用的非打包定义。</p></li>
+<p>请注意，您还可以简化生成的代码，具体的操作是将 <code>#if...#endif</code> 打包 <a href="https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 定义统一为供两个应用版本使用的非打包定义。</p></li>
 </ol>
 
 现在可以在应用程序中启用推送通知，你必须更新移动服务以发送推送通知。 

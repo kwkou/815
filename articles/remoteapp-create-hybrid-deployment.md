@@ -106,5 +106,5 @@ RemoteApp 程序是您为用户提供的应用程序或程序。它位于您为�
   [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [在企业中部署 Azure RemoteApp]: http://go.microsoft.com/fwlink/?LinkId=397721
   [Windows Azure 管理门户]: http://manage.windowsazure.cn
-  [在管理门户中配置站点到站点 VPN]: http://msdn.microsoft.com/library/azure/dn133795.aspx
+  [在管理门户中配置站点到站点 VPN]: https://msdn.microsoft.com/zh-CN/library/azure/dn133795.aspx
   [目录同步路线图]: http://msdn.microsoft.com/zh-cn/library/azure/hh967642.aspx

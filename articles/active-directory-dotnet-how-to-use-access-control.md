@@ -391,7 +391,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
   [13]: ./media/active-directory-dotnet-how-to-use-access-control/acsMSFTAcct.png
   [14]: ./media/active-directory-dotnet-how-to-use-access-control/rzAv.png
   [15]: ./media/active-directory-dotnet-how-to-use-access-control/rzCl.png
-  [Windows Identity Foundation 库]: http://msdn.microsoft.com/library/hh377151.aspx
+  [Windows Identity Foundation 库]: https://msdn.microsoft.com/zh-CN/library/hh377151.aspx
   [16]: ./media/active-directory-dotnet-how-to-use-access-control/acsACSPortal.png
   [17]: ./media/active-directory-dotnet-how-to-use-access-control/acsRPPage.png
   [18]: ./media/active-directory-dotnet-how-to-use-access-control/acsEdit-RP.png

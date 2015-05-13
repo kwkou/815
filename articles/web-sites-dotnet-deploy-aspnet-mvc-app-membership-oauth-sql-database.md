@@ -30,7 +30,7 @@
 
 ![登录页面][rxb]
 
-<div class="dev-callout"><p><strong>注意</strong> 若要完成本教程，您需要一个 Windows Azure 帐户。如果您没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关更多信息，请参见 <a href="http://www.windowsazure.cn/zh-cn/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">Windows Azure 免费试用</a>。</p></div>
+<div class="dev-callout"><p><strong>注意</strong> 若要完成本教程，您需要一个 Windows Azure 帐户。如果您没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关更多信息，请参见 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">Windows Azure 免费试用</a>。</p></div>
 
 
 在本教程中：
@@ -254,7 +254,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ## 启用迁移、创建数据库、添加示例数据和数据初始值设定项 ##
 
-接下来的任务是启用[代码优先迁移](http://msdn.microsoft.com/library/hh770484.aspx) 功能以便基于您创建的数据模型创建数据库。
+接下来的任务是启用[代码优先迁移](https://msdn.microsoft.com/zh-CN/library/hh770484.aspx) 功能以便基于您创建的数据模型创建数据库。
 
 1. 在“工具”菜单中，依次选择“库程序包管理器”和“程序包管理器控制台”。
 	![“工具”菜单中的“程序包管理器控制台”][addcode008]

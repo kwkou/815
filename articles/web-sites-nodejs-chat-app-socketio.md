@@ -289,6 +289,7 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 [版本]: https://github.com/Automattic/socket.io/releases
 [cloudservice]: /documentation/articles/cloud-services-nodejs-chat-app-socketio/
 
+
 [chat-example-view]: ./media/web-sites-nodejs-chat-app-socketio/socketio-2.png
 [npm-output]: ./media/web-sites-nodejs-chat-app-socketio/socketio-7.png
 [定价]: /home/features/web-site/#price

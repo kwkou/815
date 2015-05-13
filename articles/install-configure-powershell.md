@@ -225,7 +225,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 - 有关什么是脚本以及如何在 Windows PowerShell 中运行脚本的信息，请参见[运行脚本](http://technet.microsoft.com/zh-cn/library/bb978526.aspx)。本文包含有关如何创建脚本和将计算机配置为运行脚本的基本信息。
 
-- 有关针对 Windows Azure AD 的 cmdlet 的信息，请参见[使用 Windows PowerShell 管理 Windows Azure AD](http://technet.microsoft.com/library/jj151815.aspx)。
+- 有关针对 Windows Azure AD 的 cmdlet 的信息，请参见[使用 Windows PowerShell 管理 Windows Azure AD](https://technet.microsoft.com/zh-CN/library/jj151815.aspx)。
 
 
 

@@ -100,7 +100,7 @@
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
 -->
 [使用 Git 发布 Azure 网站]:/documentation/articles/web-sites-publish-source-control/
-[免费]: /pricing/free-trial
+[免费]: /pricing/1rmb-trial
 [webmatrix-node-completed]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-complete.png
 [webmatrix-templates]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-templates.png
 [webmatrix-node-publishpreview]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-publishpreview.png

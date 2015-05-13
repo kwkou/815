@@ -166,7 +166,7 @@
 
 有关 流量管理器 提供的各种负载平衡方法的详细信息，请参阅 [Azure 流量管理器 概述](http://msdn.microsoft.com/zh-cn/library/azure/hh744833.aspx)并滚动到“Azure 流量管理器 中的负载平衡方法”一节。
 
-1.  **将托管服务部署到生产环境中**。有关开发和部署托管服务的信息，请参阅 [Azure 托管服务](http://msdn.microsoft.com/library/gg432967.aspx)。
+1.  **将托管服务部署到生产环境中**。有关开发和部署托管服务的信息，请参阅 [Azure 托管服务](https://msdn.microsoft.com/zh-CN/library/gg432967.aspx)。
 
 2.  **登录管理门户中的 流量管理器 区域**，网址为 [http://manage.windowsazure.cn](http://manage.windowsazure.cn)。单击门户页左下角的**虚拟网络**，然后从左侧窗格中的选项中选择**流量管理器**。
 
@@ -203,7 +203,7 @@
 
 有关 流量管理器 提供的各种负载平衡方法的详细信息，请参阅 [Azure 流量管理器 概述](http://msdn.microsoft.com/zh-cn/library/azure/hh744833.aspx)并滚动到“Azure 流量管理器 中的负载平衡方法”一节。
 
-1.  **将托管服务部署到生产环境中**。有关开发和部署托管服务的信息，请参阅 [Azure 托管服务](http://msdn.microsoft.com/library/gg432967.aspx)。
+1.  **将托管服务部署到生产环境中**。有关开发和部署托管服务的信息，请参阅 [Azure 托管服务](https://msdn.microsoft.com/zh-CN/library/gg432967.aspx)。
 
 2.  **登录管理门户中的 流量管理器 区域**，网址为 [http://manage.windowsazure.cn](http://manage.windowsazure.cn)。单击门户页左下角的**虚拟网络**，然后从左侧窗格中的选项中选择 **流量管理器**。
 

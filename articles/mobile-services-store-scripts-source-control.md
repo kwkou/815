@@ -158,7 +158,7 @@
 
 <!-- URLs. -->
 [Git 网站]: http://git-scm.com
-[源代码管理]: http://msdn.microsoft.com/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
+[源代码管理]: https://msdn.microsoft.com/zh-CN/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [将移动服务添加到现有应用程序]: /zh-cn/documentation/articles/mobile-services-ios-get-started-data/

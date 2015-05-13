@@ -99,7 +99,7 @@ Umbraco CMS 是一种功能齐备的开源内容管理系统，可用于创建�
 
 <!-- IMAGES -->
 
-  [Windows Azure 管理门户]: https://portal.azure.com/
+  [Windows Azure 管理门户]: https://manage.windowsazure.cn/
   [选择 Web 库]: ./media/web-sites-gallery-umbraco/01Startboard.PNG
   [在 Web 库中选择 Umbraco]: ./media/web-sites-gallery-umbraco/02WebGallery.PNG
   [单击创建]: ./media/web-sites-gallery-umbraco/03UmbracoCMS.PNG

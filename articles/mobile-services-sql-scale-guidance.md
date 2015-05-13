@@ -33,7 +33,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 - Web 版和业务版（已停用）
 - 基础版、标准版和高级版 
 
-尽管 Web 版和业务版完全受支持，但["Web 版和业务版停用常见问题"](http://msdn.microsoft.com/library/azure/dn741330.aspx)显示，这两个版本将于 2015 年 4 月 25 日前停用。我们鼓励新客户开始使用基础版、标准版和高级版，以为此更改做好准备。新版本将提供广泛的最新层级和监控功能，有助于更加轻松地了解和解决数据库性能问题。所有全新移动服务均使用新版本创建而成。
+尽管 Web 版和业务版完全受支持，但["Web 版和业务版停用常见问题"](https://msdn.microsoft.com/zh-CN/library/azure/dn741330.aspx)显示，这两个版本将于 2015 年 4 月 25 日前停用。我们鼓励新客户开始使用基础版、标准版和高级版，以为此更改做好准备。新版本将提供广泛的最新层级和监控功能，有助于更加轻松地了解和解决数据库性能问题。所有全新移动服务均使用新版本创建而成。
 
 若要将使用的 Web 版和业务版的移动服务转换成使用基础版、标准版和高级版的移动服务，请遵循下列步骤。
 
@@ -49,7 +49,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 - **标准层** - 用于预计进行多次并发数据库查询的生产服务
 - **高级层** - 用于并发查询数量较多、高峰值负载，以及每次请求的预计延迟较低的大型生产服务。
 
-如欲了解更多关于各层使用时机的详细信息，请参阅[使用新服务层的原因](http://msdn.microsoft.com/library/azure/dn369873.aspx#Reasons)
+如欲了解更多关于各层使用时机的详细信息，请参阅[使用新服务层的原因](https://msdn.microsoft.com/zh-CN/library/azure/dn369873.aspx#Reasons)
 
 ### 分析数据库指标
 
@@ -69,7 +69,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
     ![Azure Management Portal - SQL Database Metrics][PortalSqlMetrics]
 
-如果指标超出了时间延长期 80% 的利用率，说明存在性能问题。如欲获取关于了解数据库利用率的更多详情，请参阅[了解资源使用](http://msdn.microsoft.com/library/azure/dn369873.aspx#Resource)。
+如果指标超出了时间延长期 80% 的利用率，说明存在性能问题。如欲获取关于了解数据库利用率的更多详情，请参阅[了解资源使用](https://msdn.microsoft.com/zh-CN/library/azure/dn369873.aspx#Resource)。
 
 如果指标显示数据库的利用率较高，请考虑**将数据库纵向扩展至更高的服务层，**这是缓解问题的第一步。为尽快解决问题，请考虑使用数据库的**扩展 (Scale)** 选项卡，对数据库进行扩展。这样一来可能导致成本上升。
 ![Azure Management Portal - SQL Database Scale][PortalSqlScale]
@@ -175,10 +175,10 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 - **通常在数据库中执行联接操作。**您需要经常组合两个或多个表中的记录，以共享一个公共字段（亦称 *join*)。如果执行不当，该操作的效率将非常低，因为它可能涉及从两个表中下拉并迭代所有实体。这种操作最好交给数据库执行，但有时容易在客户端上或移动服务代码中错误地执行此操作。
     - 请不要在应用程序代码中执行联接
-    - 请不要在移动服务代码中执行联接。在使用 JavaScript 后端时，请注意，[表对象](http://msdn.microsoft.com/library/windowsazure/jj554210.aspx)不处理联接。请务必直接使用[mssql 对象](http://msdn.microsoft.com/library/windowsazure/jj554212.aspx)，以确保在数据库中执行联接。更多相关信息，请参阅[联接关系表](/zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/#joins)。如果使用 .NET 后端，并且通过 LINQ 查询，实体框架将在数据库级别自动处理联接。
+    - 请不要在移动服务代码中执行联接。在使用 JavaScript 后端时，请注意，[表对象](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554210.aspx)不处理联接。请务必直接使用[mssql 对象](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554212.aspx)，以确保在数据库中执行联接。更多相关信息，请参阅[联接关系表](/zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/#joins)。如果使用 .NET 后端，并且通过 LINQ 查询，实体框架将在数据库级别自动处理联接。
 - **实现分页。**查询数据库有时可能导致大量记录返回到客户端。为了尽量降低操作规模与延迟，请考虑实现分页。
     - 默认情况下，你的移动服务将所有传入的查询限制在大小为 50 的页面中，但您可以手动请求多达 1000 条记录。如欲了解更多详情，请参阅关于[Windows 应用商店](/zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging)， [iOS](/zh-cn/documentation/articles/mobile-services-ios-how-to-use-client-library/#paging)， [Android](/zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library/#paging)， [HTML/JavaScript](/zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/#paging)，和[Xamarin](/zh-cn/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/#paging)的"页面返回数据"。
-    - 通过移动服务代码进行的查询没有默认页面大小。如果您的应用不实现分页，也不用作防御措施，请考虑将默认限制应用于您的查询。在 JavaScript 后端，使用**提取**[查询对象](http://msdn.microsoft.com/library/azure/jj613353.aspx)上的运算符。如果使用 .NET 后端，请考虑使用[将方法](http://msdn.microsoft.com/library/vstudio/bb503062(v=vs.110).aspx)作为 LINQ 查询的一部分。  
+    - 通过移动服务代码进行的查询没有默认页面大小。如果您的应用不实现分页，也不用作防御措施，请考虑将默认限制应用于您的查询。在 JavaScript 后端，使用**提取**[查询对象](https://msdn.microsoft.com/zh-CN/library/azure/jj613353.aspx)上的运算符。如果使用 .NET 后端，请考虑使用[将方法](https://msdn.microsoft.com/zh-CN/library/vstudio/bb503062(v=vs.110).aspx)作为 LINQ 查询的一部分。  
 
 请参阅本文末尾的[高级查询设计]，(#AdvancedQuery) 了解更多关于诊断 SQL 问题的详细信息。
 
@@ -210,7 +210,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 3. 选择**配置 (Configure) **选项卡。
 4. 在**数据库设置 (Database Settings) **部分选择**SQL Database**名称。这样可导航到门户中的 Azure SQL Database 选项卡。
 5. 选择**设置关于此 IP 地址的 Windows Azure 防火墙规则**。
-6. 记下**连接到您数据库**部分的服务器地址，例如： *mcml4otbb9.database.windows.net*。
+6. 记下**连接到您数据库**部分的服务器地址，例如： *mcml4otbb9.database.chinacloudapi.cn*。
 
 #### SQL Server Management Studio
 1. 导航到[SQL Server 版本-Express](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server-editions/sql-server-express.aspx)
@@ -256,7 +256,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 #### 高级指标
 
-如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。但如果使用 Web 层和业务层，门户仅提供存储指标。幸运的是，无论使用哪种数据库层，使用**[sys.resource\_stats](http://msdn.microsoft.com/library/dn269979.aspx)**管理视图可轻松获取所有指标。请考虑下列查询：
+如果使用基础层、标准层和高级层，管理门户可随时提供部分指标。但如果使用 Web 层和业务层，门户仅提供存储指标。幸运的是，无论使用哪种数据库层，使用**[sys.resource\_stats](https://msdn.microsoft.com/zh-CN/library/dn269979.aspx)**管理视图可轻松获取所有指标。请考虑下列查询：
 
     SELECT TOP 10 * 
     FROM sys.resource_stats 
@@ -270,7 +270,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 #### SQL 连接事件
 
-**[Sys.event\_log](http://msdn.microsoft.com/library/azure/jj819229.aspx)**视图包含与连接相关的事件的详细信息。
+**[Sys.event\_log](https://msdn.microsoft.com/zh-CN/library/azure/jj819229.aspx)**视图包含与连接相关的事件的详细信息。
 
     select * from sys.event_log 
     where database_name = 'todoitem_db'
@@ -446,21 +446,21 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 [使用 SQL Server Management Studio 管理 SQL Database]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
 [使用动态管理视图监控 SQL Database]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
 [Azure SQL Database 性能与扩展]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
-[Azure SQL Database 故障排除]: http://msdn.microsoft.com/library/azure/ee730906.aspx
+[Azure SQL Database 故障排除]: https://msdn.microsoft.com/zh-CN/library/azure/ee730906.aspx
 
 <!-- MSDN -->
-[创建和修改主键约束]: http://technet.microsoft.com/library/ms181043(v=sql.105).aspx
-[创建聚集索引]: http://technet.microsoft.com/library/ms186342(v=sql.120).aspx
-[创建唯一索引]: http://technet.microsoft.com/library/ms187019.aspx
-[创建非聚集索引]: http://technet.microsoft.com/library/ms189280.aspx
+[创建和修改主键约束]: https://technet.microsoft.com/zh-CN/library/ms181043(v=sql.105).aspx
+[创建聚集索引]: https://technet.microsoft.com/zh-CN/library/ms186342(v=sql.120).aspx
+[创建唯一索引]: https://technet.microsoft.com/zh-CN/library/ms187019.aspx
+[创建非聚集索引]: https://technet.microsoft.com/zh-CN/library/ms189280.aspx
 
-[主键和外键约束]: http://msdn.microsoft.com/library/ms179610(v=sql.120).aspx
-[索引基础知识]: http://technet.microsoft.com/library/ms190457(v=sql.105).aspx
-[总索引设计指南]: http://technet.microsoft.com/library/ms191195(v=sql.105).aspx 
-[唯一索引设计指南]: http://technet.microsoft.com/library/ms187019(v=sql.105).aspx
-[聚集索引设计指南]: http://technet.microsoft.com/library/ms190639(v=sql.105).aspx
+[主键和外键约束]: https://msdn.microsoft.com/zh-CN/library/ms179610(v=sql.120).aspx
+[索引基础知识]: https://technet.microsoft.com/zh-CN/library/ms190457(v=sql.105).aspx
+[总索引设计指南]: https://technet.microsoft.com/zh-CN/library/ms191195(v=sql.105).aspx 
+[唯一索引设计指南]: https://technet.microsoft.com/zh-CN/library/ms187019(v=sql.105).aspx
+[聚集索引设计指南]: https://technet.microsoft.com/zh-CN/library/ms190639(v=sql.105).aspx
 
-[sys-missing-index-stats]: http://technet.microsoft.com/library/ms345421.aspx
+[sys-missing-index-stats]: https://technet.microsoft.com/zh-CN/library/ms345421.aspx
 
 <!-- EF -->
 [实体框架 5 性能注意事项]: http://msdn.microsoft.com/data/hh949853

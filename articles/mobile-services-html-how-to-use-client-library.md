@@ -622,16 +622,16 @@
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html
 [Windows 应用商店身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-js
-[then]: http://msdn.microsoft.com/library/windows/apps/br229728.aspx
-[done]: http://msdn.microsoft.com/library/windows/apps/hh701079.aspx
-[详细了解 then 和 done 之间的差别]: http://msdn.microsoft.com/library/windows/apps/hh700334.aspx
-[如何处理约定中的错误]: http://msdn.microsoft.com/library/windows/apps/hh700337.aspx
+[then]: https://msdn.microsoft.com/zh-CN/library/windows/apps/br229728.aspx
+[done]: https://msdn.microsoft.com/zh-CN/library/windows/apps/hh701079.aspx
+[详细了解 then 和 done 之间的差别]: https://msdn.microsoft.com/zh-CN/library/windows/apps/hh700334.aspx
+[如何处理约定中的错误]: https://msdn.microsoft.com/zh-CN/library/windows/apps/hh700337.aspx
 
-[sessionStorage]: http://msdn.microsoft.com/library/cc197062(v=vs.85).aspx
-[localStorage]: http://msdn.microsoft.com/library/cc197062(v=vs.85).aspx
+[sessionStorage]: https://msdn.microsoft.com/zh-CN/library/cc197062(v=vs.85).aspx
+[localStorage]: https://msdn.microsoft.com/zh-CN/library/cc197062(v=vs.85).aspx
 
-[ListView]: http://msdn.microsoft.com/library/windows/apps/br211837.aspx
-[数据绑定（使用 JavaScript 和 HTML 的 Windows 应用商店应用程序）]: http://msdn.microsoft.com/library/windows/apps/hh758311.aspx
+[ListView]: https://msdn.microsoft.com/zh-CN/library/windows/apps/br211837.aspx
+[数据绑定（使用 JavaScript 和 HTML 的 Windows 应用商店应用程序）]: https://msdn.microsoft.com/zh-CN/library/windows/apps/hh758311.aspx
 [Windows 应用商店 JavaScript 快速入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [HTML 快速入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-html
 [Windows 应用商店 JavaScript 中的数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-js
@@ -641,7 +641,7 @@
 [使用脚本验证和修改数据]: /zh-cn/documentation/articles/mobile-services-html-validate-modify-data-server-scripts
 [使用分页优化查询]: /zh-cn/documentation/articles/mobile-services-html-add-paging-data
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-html-authorize-users-in-scripts
-[login]: http://msdn.microsoft.com/library/windowsazure/jj554236.aspx
+[login]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554236.aspx
 [使用单一登录对应用程序进行身份验证]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
 [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [用于管理移动服务表的 CLI]: /zh-cn/documentation/articles/command-line-tools/#Mobile_Tables

@@ -215,7 +215,7 @@ wacn.date="04/15/2015"
 <!-- URLs. -->
 [提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
 [我的应用程序]: https://account.live.com/developers/applications/index
-[Live SDK for Windows]: http://www.microsoft.com/en-us/download/details.aspx?id=42552
+[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
 [移动服务入门]: /documentation/articles/mobile-services-android-get-started/
 [数据处理入门]: /documentation/articles/mobile-services-android-get-started-data/
 [身份验证入门]: /documentation/articles/mobile-services-android-get-started-users

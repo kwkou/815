@@ -169,7 +169,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 **下载 Microsoft Power Query for Excel**
 
--   从 [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=39379)下载 Microsoft Power Query for Excel 并安装它。
+-   从 [Microsoft 下载中心](http://www.microsoft.com/zh-CN/download/details.aspx?id=39379)下载 Microsoft Power Query for Excel 并安装它。
 
 **导入 HDInsight 数据**
 
