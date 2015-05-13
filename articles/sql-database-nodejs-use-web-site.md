@@ -495,7 +495,7 @@
   [表设计已完成]: ./media/sql-database-nodejs-use-web-site/table-columns.png
   [express]: http://expressjs.com
   [node-sqlserver]: https://github.com/WindowsAzure/node-sqlserver
-  [下载中心]: http://www.microsoft.com/en-us/download/details.aspx?id=29995
+  [下载中心]: http://www.microsoft.com/zh-CN/download/details.aspx?id=29995
   [Twitter Bootstrap]: https://github.com/twbs/bootstrap
   [1]: http://getbootstrap.com/
   [2]: ./media/sql-database-nodejs-use-web-site/sql_todo_empty.png

@@ -168,7 +168,7 @@
 
   [Azure 门户]: https://manage.windowsazure.cn
   [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274
-  [Azure 免费使用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Azure 免费使用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [使用混合连接从 Azure 网站连接到本地 SQL Server]: http://go.microsoft.com/fwlink/?LinkID=397979
   [在 Azure 预览版门户中创建网站]: #CreateSite
   [创建混合连接和 BizTalk 服务]: #CreateHC

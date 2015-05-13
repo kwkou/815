@@ -18,7 +18,7 @@
 - [如何登录到虚拟机创建表后][]
 - [如何将数据磁盘附加到新的虚拟机][]
 
-**重要**：本教程创建的是不连接到虚拟网络的虚拟机。如果您希望虚拟机使用虚拟网络，必须指定虚拟网络，当您创建虚拟机。有关虚拟网络的详细信息，请参阅[Azure 虚拟网络概述](http://msdn.microsoft.com/library/azure/jj156007.aspx)。
+**重要**：本教程创建的是不连接到虚拟网络的虚拟机。如果您希望虚拟机使用虚拟网络，必须指定虚拟网络，当您创建虚拟机。有关虚拟网络的详细信息，请参阅[Azure 虚拟网络概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156007.aspx)。
 
 ## <a id="virtualmachine"> </a>有关在 Azure 中的虚拟机 # #
 
@@ -51,7 +51,7 @@ Azure 中的虚拟机是云中，您可以控制和管理的服务器。在 Azur
 
 - [如何使用针对 Mac 和 Linux 的 Azure 命令行工具](/zh-cn/documentation/articles/xplat-cli/)
 
-- [有关 Azure 虚拟机配置设置](http://msdn.microsoft.com/library/azure/dn763935.aspx)
+- [有关 Azure 虚拟机配置设置](https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx)
 
 
 [下一步行动]: #next

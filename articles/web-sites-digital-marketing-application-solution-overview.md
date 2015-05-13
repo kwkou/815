@@ -140,7 +140,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
  
 <tr>
 <td valign="middle"><strong>监视</strong></td>
-<td valign="top">- <a href="/documentation/articles/web-sites-monitor/">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a></td>
+<td valign="top">- <a href="/documentation/articles/web-sites-monitor/">如何监视网站</a><br/>- <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/dn306638.aspx">如何：在 Azure 中接收警报通知和管理警报规则</a></td>
 </tr>
 </table>
 <!--   [twitter]:https://dev.twitter.com/docs/twitter-libraries#dotnet   [fbtutorial]:http://blogs.msdn.com/b/africaapps/archive/2013/02/20/creating-a-facebook-app-using-asp-net-mvc-facebook-templates-and-hosting-them-for-free-on-windows-azure-websites.aspx   [fbbirthdayapp]:http://www.asp.net/mvc/tutorials/mvc-4/aspnet-mvc-facebook-birthday-app   [fbvstemplate]:http://blogs.msdn.com/b/webdev/archive/2012/12/13/the-new-facebook-application-template-and-library-for-asp.net-mvc.aspx  -->
@@ -149,9 +149,9 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 
 <!--[DigitalMarketingFacebook]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_Facebook.png -->
 
-  [Azure 网站]: /en-us/documentation/services/web-sites/
-  [Azure 云服务]: /en-us/documentation/services/cloud-services/
-  [Azure 虚拟机]: /en-us/documentation/services/virtual-machines/
+  [Azure 网站]: /zh-CN/documentation/services/web-sites/
+  [Azure 云服务]: /zh-CN/documentation/services/cloud-services/
+  [Azure 虚拟机]: /zh-CN/documentation/services/virtual-machines/
   [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /documentation/articles/choose-web-site-cloud-service-vm/
   [部署现有网站]: #deployexisting
   [与社交媒体相集成]: #socialmedia
@@ -186,4 +186,4 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [使用成员资格、OAuth 和 SQL数据库 部署安全的 ASP.NET MVC 应用程序]: /zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
   [如何缩放网站]: /documentation/articles/web-sites-scale/
   [3]: /documentation/articles/web-sites-monitor/
-  [4]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
+  [4]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn306638.aspx

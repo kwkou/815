@@ -745,7 +745,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
   [“添加控制器”对话框]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-controller-add-controller-dialog.png
   [3]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxNewCtx.png
   [“添加控制器”消息框]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxOverwrite.png
-  [代码优先迁移]: http://msdn.microsoft.com/library/hh770484.aspx
+  [代码优先迁移]: https://msdn.microsoft.com/zh-CN/library/hh770484.aspx
   [“工具”菜单中的“程序包管理器控制台”]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/dntutmobile-migrations-package-manager-menu.png
   [enable-migrations]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2012/rxE.png
   [DbContext]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext(v=VS.103).aspx

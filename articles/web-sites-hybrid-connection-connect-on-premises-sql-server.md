@@ -377,7 +377,7 @@
 
   [Azure 预览版门户]: https://portal.azure.com
   [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [Visual Studio 下载]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
   [Microsoft 下载中心]: http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=22
   [Microsoft Web 平台数据库页]: http://www.microsoft.com/web/platform/database.aspx
@@ -425,7 +425,7 @@
   [自述页面]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/E04HCVSReadmePage.png
   [Web.config]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/E05HCVSChooseWebConfig.png
   [连接字符串]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/E06HCVSConnectionString.png
-  [如何配置 SQL Server 以在特定端口上进行侦听]: http://support.microsoft.com/kb/823938
+  [如何配置 SQL Server 以在特定端口上进行侦听]: https://support.microsoft.com/zh-CN/kb/823938
   [运行项目]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/E06HCVSRunProject.png
   [注册新帐户]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/E07HCVSRegisterLocally.png
   [输入用户名和密码]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/E08HCVSCreateNewAccount.png

@@ -752,7 +752,7 @@ AzCopy 将使用以下命名约定在本地文件夹或 blob 容器中生成一�
 
 	<account name>_<table name>_<timestamp>_<volume index>_<CRC>.json
 
-生成的 JSON 数据文件遵循最少元数据负载格式。有关此负载格式的详细信息，请参阅[表服务操作的负载格式](http://msdn.microsoft.com/library/azure/dn535600.aspx).
+生成的 JSON 数据文件遵循最少元数据负载格式。有关此负载格式的详细信息，请参阅[表服务操作的负载格式](https://msdn.microsoft.com/zh-CN/library/azure/dn535600.aspx).
 
 ### 拆分导出文件
 

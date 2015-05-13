@@ -216,9 +216,9 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
 
 <!--   [drupal]:https://drupal.org/   [umbraco]:http://umbraco.com/  -->
 
-  [Azure 网站]: /en-us/documentation/services/web-sites/
-  [Azure 云服务]: /en-us/documentation/services/cloud-services/
-  [Azure 虚拟机]: /en-us/documentation/services/virtual-machines/
+  [Azure 网站]: /zh-CN/documentation/services/web-sites/
+  [Azure 云服务]: /zh-CN/documentation/services/cloud-services/
+  [Azure 虚拟机]: /zh-CN/documentation/services/virtual-machines/
   [Azure 网站、云服务和虚拟机：何时使用何种产品？]: /documentation/articles/choose-web-site-cloud-service-vm/
   [创建 Azure 网站]: #createwebsite
   [部署网站]: #deploywebsite

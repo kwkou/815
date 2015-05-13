@@ -605,7 +605,6 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 
   [管理磁盘和映像（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx
   [如何创建自定义虚拟机]: /manage/windows/how-to-guides/custom-create-a-vm/
-  [本文]: http://support.microsoft.com/kb/2805216
   [为 Azure 创建管理证书（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
   [安装 Hyper-V 角色和配置虚拟机]: http://technet.microsoft.com/zh-cn/library/hh846766.aspx
   [Azure 认可的分发中的 Linux]: ../linux-endorsed-distributions

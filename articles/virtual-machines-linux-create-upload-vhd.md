@@ -24,9 +24,9 @@ Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操�
 ##先决条件##
 本文假定您拥有以下项目：
 
-- **管理证书** - 您已为要为其上载 VHD 的订阅创建一个管理证书，并且已将该证书导出到 .cer 文件。有关创建证书的详细信息，请参阅[为 Azure 创建管理证书](http://msdn.microsoft.com/library/windowsazure/gg551722.aspx)。 
+- **管理证书** - 您已为要为其上载 VHD 的订阅创建一个管理证书，并且已将该证书导出到 .cer 文件。有关创建证书的详细信息，请参阅[为 Azure 创建管理证书](https://msdn.microsoft.com/zh-CN/library/windowsazure/gg551722.aspx)。 
 
-- **安装在 .vhd 文件中的 Linux 操作系统** - 您已将受支持的 Linux 操作系统安装到虚拟硬盘。存在多种工具用于创建 .vhd 文件，例如您可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。 
+- **安装在 .vhd 文件中的 Linux 操作系统** - 您已将受支持的 Linux 操作系统安装到虚拟硬盘。存在多种工具用于创建 .vhd 文件，例如您可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](https://technet.microsoft.com/zh-CN/library/hh846766.aspx)。 
 
 	**重要说明**：Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 

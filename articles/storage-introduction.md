@@ -54,7 +54,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 <!--
 - 文件存储（预览版）使用标准 SMB 2.1 协议为旧版应用程序提供共享存储。Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件服务 REST API 来访问共享中的文件数据。文件存储可通过["Azure 预览版"页](/zh-cn/services/preview/)请求提供。 
 -->
-每个标准存储帐户可以容纳高达 500 TB 混合的 Blob、队列、表和文件数据。请参阅 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx) for details about standard storage account capacity.
+每个标准存储帐户可以容纳高达 500 TB 混合的 Blob、队列、表和文件数据。请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn249410.aspx) for details about standard storage account capacity.
 
 下图显示了标准存储帐户中各种 Azure 存储资源之间的关系：
 
@@ -122,7 +122,7 @@ Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。�
 
 ## 针对存储进行开发 ##
 
-Azure 存储空间通过一个 [REST API](http://msdn.microsoft.com/library/windowsazure/dd179355.aspx)  来公开存储资源，任何可以发出 HTTP/HTTPS 请求的语言都可以调用该 REST API。另外，Azure 存储空间还为多种主流语言提供了编程库。这些库通过对细节进行处理简化了使用 Azure 存储空间的许多方面，这些细节包括同步和异步调用、操作的批处理、异常管理、自动重试、操作行为，等等。这些库当前可供下列语言和平台以及正在筹备的其他语言和平台使用：
+Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/library/windowsazure/dd179355.aspx)  来公开存储资源，任何可以发出 HTTP/HTTPS 请求的语言都可以调用该 REST API。另外，Azure 存储空间还为多种主流语言提供了编程库。这些库通过对细节进行处理简化了使用 Azure 存储空间的许多方面，这些细节包括同步和异步调用、操作的批处理、异常管理、自动重试、操作行为，等等。这些库当前可供下列语言和平台以及正在筹备的其他语言和平台使用：
 
 - [.NET](http://msdn.microsoft.com/zh-cn/library/dn495001.aspx)
 - [本机代码](http://msdn.microsoft.com/zh-cn/library/dn495438.aspx)

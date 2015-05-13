@@ -21,7 +21,7 @@
 - [如何登录到虚拟机创建表后](#logon)
 - [如何将数据磁盘附加到新的虚拟机](#attachdisk)
 
-如果您想要了解详细信息，请参阅[虚拟机](http://msdn.microsoft.com/library/azure/jj156003.aspx)。
+如果您想要了解详细信息，请参阅[虚拟机](https://msdn.microsoft.com/zh-CN/library/azure/jj156003.aspx)。
 
 
 ##<a id="createvirtualmachine"> </a>如何创建虚拟机 # #
@@ -30,7 +30,7 @@
 
 > [WACOM.NOTE] 多少和什么样的映像库中有取决于您所拥有的订阅的类型。本教程使用的 Windows Server 映像，但 MSDN 订阅可以具有可用的包括桌面映像的其他图像。 
 <!--
-> 您还可以尝试更丰富、 可自定义[Azure 预览版门户](https://portal.azure.com)若要创建虚拟机时，自动部署多台计算机的应用程序模板，使用增强型 VM 监视和诊断功能，以及更多内容。两个门户网站中可用的虚拟机配置选项大体上重叠，但并不完全相同。  
+> 您还可以尝试更丰富、 可自定义[Azure 预览版门户](https://manage.windowsazure.cn)若要创建虚拟机时，自动部署多台计算机的应用程序模板，使用增强型 VM 监视和诊断功能，以及更多内容。两个门户网站中可用的虚拟机配置选项大体上重叠，但并不完全相同。  
 -->
 [WACOM.INCLUDE [虚拟-机-创建-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
@@ -111,7 +111,7 @@
 
 [管理虚拟机的可用性](/zh-cn/documentation/articles/manage-availability-virtual-machines/)
 
-[有关 Azure 虚拟机配置设置](http://msdn.microsoft.com/library/azure/dn763935.aspx)
+[有关 Azure 虚拟机配置设置](https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx)
 
 <!--
 

@@ -25,7 +25,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 [存储定价详细信息](/home/features/storage/#price) 页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfer/) 提供了针对数据流出量的详细定价信息。
 
-有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/library/windowsazure/dn249410.aspx).
+有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn249410.aspx).
 
 > [WACOM.NOTE] 当你创建 Azure 虚拟机时，如果在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。因此，没有必要按照下面的步骤来创建虚拟机磁盘的存储帐户。存储帐户名称将基于虚拟机名称。请参阅 [Azure 虚拟机文档](/zh-cn/documentation/services/virtual-machines/)以了解更多详细信息。<br />
 

@@ -40,7 +40,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 - 了解有关设置 VMM 云的更多信息：
 	- 阅读 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)中有关私有 VMM 云的更多信息。 
 	- 了解有关[配置 VMM 云结构](https://msdn.microsoft.com/zh-CN/library/azure/dn469075.aspx#BKMK_Fabric)的更多信息
-	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](http://technet.microsoft.com/en-us/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)了解有关创建私有云的更多信息。
+	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](http://technet.microsoft.com/zh-CN/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)了解有关创建私有云的更多信息。
 
 ### Hyper-V 先决条件
 

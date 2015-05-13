@@ -20,7 +20,7 @@
 高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。可以将多个高级存储磁盘附加到虚拟机 (VM)。使用高级存储，每个 VM 的应用程序最多拥有 32 TB 的存储，每个 VM 可达到 50,000 IOPS（每秒输入/输出操作次数），读取操作的延迟极低。高级存储目前只能在 Azure 虚拟机使用的磁盘上存储数据。 
 
 <!--
-若要注册 Azure 高级存储预览版，请访问 [Azure 预览版](http://azure.microsoft.com/services/preview/)页面。
+若要注册 Azure 高级存储预览版，请访问 [Azure 预览版](/services/preview/)页面。
 -->
 
 本文提供 Azure 高级存储的深入概述。
@@ -279,7 +279,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 ### 在 Azure 预览版门户中创建高级存储帐户
 本部分说明如何使用 Azure 预览版门户创建高级存储帐户。
 
-1.	登录 [Azure 预览版门户](https://portal.azure.com/)。如果你尚未订阅，请查看[免费试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)优惠产品。 
+1.	登录 [Azure 预览版门户](https://manage.windowsazure.cn/)。如果你尚未订阅，请查看[免费试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)优惠产品。 
 
 
     > [AZURE.NOTE] 登录 Azure 管理门户时，请在门户右上角单击你的用户帐户名。然后单击"切换到新门户"。
@@ -296,7 +296,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 	
 5.	在"存储帐户"边栏中，保留"资源组"、"订阅"、"位置"和"诊断"的默认值。单击"创建"。
 
-有关在 Azure 环境中的完整演练，请参阅[在 Azure 预览版门户中创建运行 Windows 的虚拟机](http://www.windowsazure.cn/documentation/articles/virtual-machines-windows-tutorial-azure-preview/)。
+有关在 Azure 环境中的完整演练，请参阅[在 Azure 预览版门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-azure-preview/)。
 -->
 
 ### <a id="create-a-premium-storage-account-with-azure-powershell"></a>使用 Azure PowerShell 创建高级存储帐户

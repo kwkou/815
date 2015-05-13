@@ -17,7 +17,7 @@
 
 ![Azure PHP 网站][Azure PHP 网站]
 
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/free-trial/">Azure 免费试用</a>。</p> </div>
+<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/">Azure 免费试用</a>。</p> </div>
 
 ## 设置开发环境
 
@@ -244,7 +244,7 @@
   [PHP]: http://www.php.net/manual/en/install.php
   [Git]: http://git-scm.com/
   [Azure PHP 网站]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [Azure SDK for PHP]: http://www.windowsazure.cn/zh-cn/downloads/?sdk=php
   [Azure 管理门户]: https://manage.windowsazure.cn
   [创建新的 Azure 网站]: ./media/web-sites-php-mysql-deploy-use-git/new_website.jpg

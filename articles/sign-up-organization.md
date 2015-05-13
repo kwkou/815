@@ -30,4 +30,4 @@
   [**立即注册**]: https://account.windowsazure.cn/organization
   [Azure AD 是什么？]: /documentation/articles/active-directory-whatis/
   [TechNet 上的 Azure AD 库]: http://technet.microsoft.com/zh-cn/library/hh967619.aspx
-  [MSDN 上的 Azure AD 库]: http://msdn.microsoft.com/library/windowsazure/jj673460.aspx
+  [MSDN 上的 Azure AD 库]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj673460.aspx
