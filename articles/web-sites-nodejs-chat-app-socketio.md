@@ -197,7 +197,7 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 - **尝试限制传输到该 Websocket**
 
 
-	为了使 Socket.IO 使用 Websocket 进行消息传输，服务器和客户端必须支持 Websocket。如果其中任一个不支持，则 Socket.IO 将协商其他传输，如长轮询。Socket.IO 使用的默认传输列表为`websocket, htmlfile, xhr-polling, jsonp-polling`。您可以在包含`, nicknames = {};` 的行后面将以下代码添加到**app.js**文件，以强制其仅使用 WebSocket。
+为了使 Socket.IO 使用 Websocket 进行消息传输，服务器和客户端必须支持 Websocket。如果其中任一个不支持，则 Socket.IO 将协商其他传输，如长轮询。Socket.IO 使用的默认传输列表为`websocket, htmlfile, xhr-polling, jsonp-polling`。您可以在包含`, nicknames = {};` 的行后面将以下代码添加到**app.js**文件，以强制其仅使用 WebSocket。
 
 		io.configure(function() {
 		  io.set('transports', ['websocket']);
