@@ -125,68 +125,6 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 
 > [AZURE.NOTE] 为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 Azure SDK for Node.js GitHub 存储库 <a href="https://github.com/WindowsAzure/azure-sdk-for-node">中的 Service Bus 队列和主题使用情况示例</a>。
 
-<!--
-## 向外扩展
-
-Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应用程序实例之间发布消息和事件。尽管有几个适配器可用，[socket.io redis](https://github.com/automattic/socket.io-redis)适配器可轻松与 Azure Redis Cache 功能一同使用。
-
-> [AZURE.NOTE] 向外扩展 Socket.IO 解决方案还要求支持粘滞会话。默认情况下，可以通过 Azure 请求路由为 Azure 网站启用粘滞会话。更多详细信息，请参阅[Azure 网站中的实例关联](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
--->
-
-<!--
-### 创建 Redis 缓存
-
-执行[在 Azure Redis Cache 中创建缓存](http://go.microsoft.com/fwlink/p/?linkid=398592&clcid=0x409)中的步骤，以创建新的缓存。
-
-> [AZURE.NOTE] 保存适用于缓存的__主机名称__和__主键__，因为接下来的步骤需要这些信息。
-
-### 添加 redis 和 socket.io redis 模块
-
-1. 从命令行中，更改为__\\node\\chat__目录，并使用以下命令。
-
-		npm install socket.io-redis@0.1.3 redis@0.11.0 --save
-
-	> [AZURE.NOTE] 此命令中指定的版本是测试本文时使用的版本。
--->
-
-<!--
-2. 修改__app.js__文件以立即在`var io = require('socket.io')(server)；`后添加下列行
-
-		var pub = require('redis').createClient(6379,'redishostname', {auth_pass: 'rediskey', return_buffers: true});
-		var sub = require('redis').createClient(6379,'redishostname', {auth_pass: 'rediskey', return_buffers: true});
-
-		var redis = require('socket.io-redis');
-		io.adapter(redis({pubClient: pub, subClient: sub}));
--->
-<!--
-用适用于您的 Redis 缓存的主机名称和键替换__redishostname__和__rediskey__。
-
-这将创建到之前创建的 Redis 缓存的发布和订阅客户端。客户端然后与适配器一同使用，以配置 Socket.IO 将 Redis 缓存用于在应用程序的实例之间传递消息和事件
-
-> [AZURE.NOTE] 尽管__socket.io redis__适配器能够与 Redis 直接通信，但（自 2014 年 7 月 14 日起的）当前版本不支持 Azure Redis cache 所需的身份验证。因此需使用__redis__模块创建初始连接，将客户端传递至__socket.io redis__适配器。
->
-> 尽管 Azure Redis Cache 支持使用端口 6380 进行安全连接，但此示例中使用的模块不支持自 2014 年 7 月 14 日起的安全连接。上述代码使用默认的 6380 非安全端口。
--->
-<!--
-3. 保存已修改的__app.js__
-
-### 提交更改并重新部署
-
-从__\\node\\chat__目录中的命令行中，使用以下命令提交更改，并重新部署该应用程序。
-
-	git add .
-	git commit -m "implementing scale out"
-	git push azure master
-
-将所做的更改推送到服务器后，您可以使用以下命令跨多个实例缩放您的网站。
-
-	azure site scale instances --instances #
-
-其中__#__是要创建的实例数。
-
-可以从多个浏览器或计算机连接到您的网站，以验证消息是否已正确发送给所有客户端。
--->
-
 ## <a id="tshooting"></a>故障排除
 
 ### 连接限制
