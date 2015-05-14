@@ -7,10 +7,10 @@
 	manager="Tiffena" 
 	editor="Eric Chen"/>
 
-<tags ms.service="test" ms.date="03/12/2015" wacn.date="05/05/2015"/>
+<tags ms.service="test" ms.date="03/12/2015" wacn.date="05/14/2015"/>
 
 
-# Delivering Video-on-Demand with Media Services REST APIs 
+# 这是一个测试文档用于测试新标签的网页渲染支持 
 
 > [AZURE.SELECTOR]
 - [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
@@ -46,52 +46,8 @@ See the Azure Automation [Getting Started Tutorial](automation-create-runbook-fr
 >[AZURE.NOTE]
 > To complete this tutorial, you need an Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see <a href="http://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure Free Trial</a>.
 
-This tutorial walks you through the steps of implementing a Video-on-Demand (VoD) content delivery application using Azure Media Services (AMS) REST APIs. 
-
-The tutorial introduces the basic Media Services workflow and the most common programming objects and tasks required for Media Services development. At the completion of the tutorial, you will be able to stream or progressively download a sample media file that you uploaded, encoded, and downloaded.  
-
-To implement a VoD content delivery application, you can use different technologies (for example, .NET, REST, or Java) or tools (Azure Management Portal or Azure Media Services Explorer) or a combination of two. 
-
-This tutorial uses Azure Management Portal and Media Services REST APIs to achieve the following tasks:     
-
-
-1.  [Create a Media Services account using Portal](#create_ams).
-1.  [Connect to the Media Services account with REST API](#connect).
-1.  [Create a new asset and upload a video file with REST API](#upload).
-1.  [Configure streaming units with REST API](#configure_streaming_units).
-2.  [Encode the source file into a set of adaptive bitrate MP4 files with REST API](#encode).
-1.  [Configure delivery policy for the encoded asset with REST API](#configure_delivery_method).
-1.  [Publish the asset and get streaming and progressive download URLs with REST API](#publish_get_urls). 
-1.  [Play your content](#play). 
-
-## Prerequisites
-The following prerequisites are required to start developing with Media Services with REST APIs.
-
-- Understanding of how to develop with Media Services REST API. For more information, see [media-services-rest-overview](https://msdn.microsoft.com/zh-CN/library/azure/hh973616.aspx).
-- An application of your choice that can send HTTP requests and responses. This tutorial uses [Fiddler](http://www.telerik.com/download/fiddler). 
-
-
-## <a id="create_ams"></a>Create a Media Services account using Portal
-
-1. In the [Management Portal][], click **New**, click **Media Service**, and then click **Quick Create**.
-   
-	![Media Services Quick Create](./media/media-services-create-account/wams-QuickCreate.png)
-
-2. In **NAME**, enter the name of the new account. A Media Services account name is all lower-case numbers or letters with no spaces, and is 3 - 24 characters in length. 
-
-3. In **REGION**, select the geographic region that will be used to store the metadata records for your Media Services account. Only the available Media Services regions appear in the dropdown. 
-
-4. In **STORAGE ACCOUNT**, select a storage account to provide blob storage of the media content from your Media Services account. You can select an existing storage account in the same geographic region as your Media Services account, or you can create a new storage account. A new storage account is created in the same region. 
-
-5. If you created a new storage account, in **NEW STORAGE ACCOUNT NAME**, enter a name for the storage account. The rules for storage account names are the same as for Media Services accounts.
-
-6. Click **Quick Create** at the bottom of the form.
-
-	You can monitor the status of the process in the message area at the bottom of the window.
-
-	Once account is successfully created, the status changes to Active. 
-	
-	At the bottom of the page, the **MANAGE KEYS** button appears. When you click on this button, a dialog with the Media Services account name and the primary and secondary keys is displayed. You will need the account name and the primary key information to programmatically access the Media Services account. 
+<!--	
+At the bottom of the page, the **MANAGE KEYS** button appears. When you click on this button, a dialog with the Media Services account name and the primary and secondary keys is displayed. You will need the account name and the primary key information to programmatically access the Media Services account. 
 
 	
 	![Media Services Page](./media/media-services-create-account/wams-mediaservices-page.png)
@@ -237,7 +193,7 @@ The following example demonstrates HTTP request to the Media Services root URI (
 	Date: Sat, 17 Jan 2015 07:44:52 GMT
 	
 	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata","value":[{"name":"AccessPolicies","url":"AccessPolicies"},{"name":"Locators","url":"Locators"},{"name":"ContentKeys","url":"ContentKeys"},{"name":"ContentKeyAuthorizationPolicyOptions","url":"ContentKeyAuthorizationPolicyOptions"},{"name":"ContentKeyAuthorizationPolicies","url":"ContentKeyAuthorizationPolicies"},{"name":"Files","url":"Files"},{"name":"Assets","url":"Assets"},{"name":"AssetDeliveryPolicies","url":"AssetDeliveryPolicies"},{"name":"IngestManifestFiles","url":"IngestManifestFiles"},{"name":"IngestManifestAssets","url":"IngestManifestAssets"},{"name":"IngestManifests","url":"IngestManifests"},{"name":"StorageAccounts","url":"StorageAccounts"},{"name":"Tasks","url":"Tasks"},{"name":"NotificationEndPoints","url":"NotificationEndPoints"},{"name":"Jobs","url":"Jobs"},{"name":"TaskTemplates","url":"TaskTemplates"},{"name":"JobTemplates","url":"JobTemplates"},{"name":"MediaProcessors","url":"MediaProcessors"},{"name":"EncodingReservedUnitTypes","url":"EncodingReservedUnitTypes"},{"name":"Operations","url":"Operations"},{"name":"StreamingEndpoints","url":"StreamingEndpoints"},{"name":"Channels","url":"Channels"},{"name":"Programs","url":"Programs"}]}
-	 
+-->	 
 
 
 >[AZURE.NOTE] From now on the new URI will be used in this tutorial.
