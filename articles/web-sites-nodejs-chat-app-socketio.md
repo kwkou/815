@@ -189,29 +189,27 @@ Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应
 
 Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资源。包括允许的 WebSocket 连接数。更多详细信息，请参阅[网站定价页][定价]。
 
-
 ### 未使用 WebSocket 发送消息
 
 如果客户端浏览器一直回退到长轮询而不是使用 Websocket，可能有以下几种原因。
 
 - **尝试限制传输到该 Websocket**
 
-
 为了使 Socket.IO 使用 Websocket 进行消息传输，服务器和客户端必须支持 Websocket。如果其中任一个不支持，则 Socket.IO 将协商其他传输，如长轮询。Socket.IO 使用的默认传输列表为`websocket, htmlfile, xhr-polling, jsonp-polling`。您可以在包含`, nicknames = {};` 的行后面将以下代码添加到**app.js**文件，以强制其仅使用 WebSocket。
 
 		io.configure(function() {
-		  io.set('transports', ['websocket']);
+		 	io.set('transports', ['websocket']);
 		});
 
 	> [AZURE.NOTE] 注意，上述代码为活动状态时，不支持 Websocket 的低版本浏览器将无法连接到站点，因为此代码将通信限制为仅支持 Websocket 通信。
 
 - **使用 SSL**
 
-	Websocket 依赖于某些较少使用的 HTTP 标头，如**升级**标头。某些中间网络设备（例如 Web 代理）可能会删除这些标头。为避免发生此问题，可以建立基于 SSL 的 WebSocket 连接。
+Websocket 依赖于某些较少使用的 HTTP 标头，如**升级**标头。某些中间网络设备（例如 Web 代理）可能会删除这些标头。为避免发生此问题，可以建立基于 SSL 的 WebSocket 连接。
 
-	完成此操作的简单方法是将 Socket.IO 配置到 `match origin protocol`。这会指示 Socket.IO 保护 Websocket 通信，使之和网页原始 HTTP/HTTPS 请求一样。如果浏览器使用 HTTPS URL 访问您的网站，将基于 SSL 保护通过 Socket.IO 的后续 WebSocket 通信。
+完成此操作的简单方法是将 Socket.IO 配置到 `match origin protocol`。这会指示 Socket.IO 保护 Websocket 通信，使之和网页原始 HTTP/HTTPS 请求一样。如果浏览器使用 HTTPS URL 访问您的网站，将基于 SSL 保护通过 Socket.IO 的后续 WebSocket 通信。
 
-	要将此示例修改为启用此配置，请在包含`, nicknames = {};`的行后面将下列代码添加到**app.js**文件。
+要将此示例修改为启用此配置，请在包含`, nicknames = {};`的行后面将下列代码添加到**app.js**文件。
 
 		io.configure(function() {
 		  io.set('match origin protocol', true);
@@ -219,17 +217,17 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 
 - **验证 web.config 设置**
 
-	托管 Node.js 应用程序的 Azure 网站使用**web.config**文件，以将传入请求路由到 Node.js 应用程序。为了使 Websocket 对 Node.js 应用程序正常运行，**web.config**必须包含以下条目。
+托管 Node.js 应用程序的 Azure 网站使用**web.config**文件，以将传入请求路由到 Node.js 应用程序。为了使 Websocket 对 Node.js 应用程序正常运行，**web.config**必须包含以下条目。
 
 		<webSocket enabled="false"/>
 
-	这将禁用 IIS Websocket 模块，其中包括自身的 Websocket 实施以及与 Node.js 特定 WebSocket 模块（如 Socket.IO）的冲突。如果此行不存在，或者设置为 `true`，其原因主要是 WebSocket 传输不适用于您的应用程序。
+这将禁用 IIS Websocket 模块，其中包括自身的 Websocket 实施以及与 Node.js 特定 WebSocket 模块（如 Socket.IO）的冲突。如果此行不存在，或者设置为 `true`，其原因主要是 WebSocket 传输不适用于您的应用程序。
 
-	Node.js 应用程序通常不包括**web.config**文件，因此 Azure 网站将在部署 Node.js 应用程序时自动生成一个。由于此文件是在服务器上自动生成的，因此必须使用网站的 FTP 或 FTPS URL 来查看此文件。您可以通过选择您的网站，然后选择**仪表板**链接，在 Azure 管理门户中查找网站的 FTP 和 FTPS URL。URL 将显示在**速览**部分。
+Node.js 应用程序通常不包括**web.config**文件，因此 Azure 网站将在部署 Node.js 应用程序时自动生成一个。由于此文件是在服务器上自动生成的，因此必须使用网站的 FTP 或 FTPS URL 来查看此文件。您可以通过选择您的网站，然后选择**仪表板**链接，在 Azure 管理门户中查找网站的 FTP 和 FTPS URL。URL 将显示在**速览**部分。
 
 	> [AZURE.NOTE] 如果应用程序未提供**Web.config**文件，则该文件将仅由 Azure 网站生成。如果在应用程序项目的根目录下提供了**web.config**文件，则 Azure 网站将使用该文件。
 
-	如果该条目不存在，或者设置为 `true`的值，那么您应在 Node.js 应用程序的根目录中创建**web.config**，并将值指定为 `false`。例如，使用**app.js**作为入口点的应用程序的默认**web.config**，如下所示。
+如果该条目不存在，或者设置为 `true`的值，那么您应在 Node.js 应用程序的根目录中创建**web.config**，并将值指定为 `false`。例如，使用**app.js**作为入口点的应用程序的默认**web.config**，如下所示。
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<!--
