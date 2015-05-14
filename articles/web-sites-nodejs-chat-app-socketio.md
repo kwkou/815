@@ -22,7 +22,7 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 
 
 3.  提取存档并将**examples\\chat**
-    目录复制到新位置。例如， 
+    目录复制到新位置。例如，
     **\\node\\chat**。
 
 ## <a id="Modify"></a>修改 App.js 并安装模块
@@ -113,9 +113,9 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 	> 'azure site set -w'命令将仅使用 Windows Azure 的跨平台命令行接口 0.7.4 版或更高版本。您还可以使用 Azure 管理门户启用 WebSocket 支持。
 	>
 	>若要使用[Azure 管理门户](https://manage.windowsazure.cn)启用 WebSocket，请选择您的网站的"配置"页，对于 Web 套接字条目选择"ON"，然后单击"保存"。
-	>	
+	>
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
-	
+
 5. 若要查看 Azure 上的网站，请使用以下命令启动您的 Web 浏览器并导航到托管的网站：
 
 		azure site browse
@@ -125,13 +125,14 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 
 > [AZURE.NOTE] 为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 Azure SDK for Node.js GitHub 存储库 <a href="https://github.com/WindowsAzure/azure-sdk-for-node">中的 Service Bus 队列和主题使用情况示例</a>。
 
+<!--
 ## 向外扩展
 
 Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应用程序实例之间发布消息和事件。尽管有几个适配器可用，[socket.io redis](https://github.com/automattic/socket.io-redis)适配器可轻松与 Azure Redis Cache 功能一同使用。
 
 > [AZURE.NOTE] 向外扩展 Socket.IO 解决方案还要求支持粘滞会话。默认情况下，可以通过 Azure 请求路由为 Azure 网站启用粘滞会话。更多详细信息，请参阅[Azure 网站中的实例关联](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
 
-<!--
+
 ### 创建 Redis 缓存
 
 执行[在 Azure Redis Cache 中创建缓存](http://go.microsoft.com/fwlink/p/?linkid=398592&clcid=0x409)中的步骤，以创建新的缓存。
@@ -150,7 +151,7 @@ Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应
 
 		var pub = require('redis').createClient(6379,'redishostname', {auth_pass: 'rediskey', return_buffers: true});
 		var sub = require('redis').createClient(6379,'redishostname', {auth_pass: 'rediskey', return_buffers: true});
-		
+
 		var redis = require('socket.io-redis');
 		io.adapter(redis({pubClient: pub, subClient: sub}));
 
@@ -160,7 +161,7 @@ Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应
 这将创建到之前创建的 Redis 缓存的发布和订阅客户端。客户端然后与适配器一同使用，以配置 Socket.IO 将 Redis 缓存用于在应用程序的实例之间传递消息和事件
 
 > [AZURE.NOTE] 尽管__socket.io redis__适配器能够与 Redis 直接通信，但（自 2014 年 7 月 14 日起的）当前版本不支持 Azure Redis cache 所需的身份验证。因此需使用__redis__模块创建初始连接，将客户端传递至__socket.io redis__适配器。
-> 
+>
 > 尽管 Azure Redis Cache 支持使用端口 6380 进行安全连接，但此示例中使用的模块不支持自 2014 年 7 月 14 日起的安全连接。上述代码使用默认的 6380 非安全端口。
 
 3. 保存已修改的__app.js__
@@ -177,7 +178,7 @@ Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应
 
 	azure site scale instances --instances #
 
-其中__#__是要创建的实例数。 
+其中__#__是要创建的实例数。
 
 可以从多个浏览器或计算机连接到您的网站，以验证消息是否已正确发送给所有客户端。
 -->
@@ -188,11 +189,13 @@ Socket.IO 应用程序可通过__适配器__实现横向扩展，以在多个应
 
 Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资源。包括允许的 WebSocket 连接数。更多详细信息，请参阅[网站定价页][定价]。
 
+
 ### 未使用 WebSocket 发送消息
 
 如果客户端浏览器一直回退到长轮询而不是使用 Websocket，可能有以下几种原因。
 
-* **尝试限制传输到该 Websocket**
+- **尝试限制传输到该 Websocket**
+
 
 	为了使 Socket.IO 使用 Websocket 进行消息传输，服务器和客户端必须支持 Websocket。如果其中任一个不支持，则 Socket.IO 将协商其他传输，如长轮询。Socket.IO 使用的默认传输列表为`websocket, htmlfile, xhr-polling, jsonp-polling`。您可以在包含`, nicknames = {};` 的行后面将以下代码添加到**app.js**文件，以强制其仅使用 WebSocket。
 
@@ -202,7 +205,7 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 
 	> [AZURE.NOTE] 注意，上述代码为活动状态时，不支持 Websocket 的低版本浏览器将无法连接到站点，因为此代码将通信限制为仅支持 Websocket 通信。
 
-* **使用 SSL**
+- **使用 SSL**
 
 	Websocket 依赖于某些较少使用的 HTTP 标头，如**升级**标头。某些中间网络设备（例如 Web 代理）可能会删除这些标头。为避免发生此问题，可以建立基于 SSL 的 WebSocket 连接。
 
@@ -214,7 +217,7 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 		  io.set('match origin protocol', true);
 		});
 
-* **验证 web.config 设置**
+- **验证 web.config 设置**
 
 	托管 Node.js 应用程序的 Azure 网站使用**web.config**文件，以将传入请求路由到 Node.js 应用程序。为了使 Websocket 对 Node.js 应用程序正常运行，**web.config**必须包含以下条目。
 
@@ -232,10 +235,10 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 		<!--
 		     This configuration file is required if iisnode is used to run node processes behind
 		     IIS or IIS Express.  For more information, visit:
-		
+
 		     https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/web.config
 		-->
-		
+
 		<configuration>
 		  <system.webServer>
 		    <!-- Visit http://blogs.msdn.com/b/windowsazure/archive/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites.aspx for more information on WebSocket support -->
@@ -250,12 +253,12 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 		        <rule name="NodeInspector" patternSyntax="ECMAScript" stopProcessing="true">
 		          <match url="^app.js\/debug[\/]?" />
 		        </rule>
-		
+
 		        <!-- First we consider whether the incoming URL matches a physical file in the /public folder -->
 		        <rule name="StaticContent">
 		          <action type="Rewrite" url="public{REQUEST_URI}"/>
 		        </rule>
-		
+
 		        <!-- All other URLs are mapped to the node.js site entry point -->
 		        <rule name="DynamicContent">
 		          <conditions>
@@ -270,7 +273,7 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 		        * watchedFiles: semi-colon separated list of files that will be watched for changes to restart the server
 		        * node_env: will be propagated to node as NODE_ENV environment variable
 		        * debuggingEnabled - controls whether the built-in debugger is enabled
-		
+
 		      See https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/web.config for a full list of options
 		    -->
 		    <!--<iisnode watchedFiles="web.config;*.js"/>-->
