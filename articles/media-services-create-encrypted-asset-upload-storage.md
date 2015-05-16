@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-create-assets" urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="Create Encrypted Asset and Upload to Storage Azure" metaKeywords="" description="Learn how to get media content into Media Services by creating and uploading an encrypted asset." metaCanonical="" services="media-services" documentationCenter="" title="How to: Create an encrypted Asset and upload to storage" authors="migree" solutions="" manager="" editor="" />
+<properties linkid="develop-media-services-how-to-guides-create-assets" urlDisplayName="Create Encrypted Asset and Upload to Storage" pageTitle="创建加密的资产并上载到存储中 - Azure" metaKeywords="" description="Learn how to get media content into Media Services by creating and uploading an encrypted asset." metaCanonical="" services="media-services" documentationCenter="" title="How to: Create an encrypted Asset and upload to storage" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="09/25/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 如何：创建加密的资产并上载到存储中
 ==================================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[针对 Media Services 设置计算机](http://go.microsoft.com/fwlink/?LinkID=301751&clcid=0x409)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[针对 Media Services 设置计算机](/documentation/articles/media-services-set-up-computer/)。
 
 若要将媒体内容添加到 Media Services 中，请先创建一个资产并在其中添加文件，然后上载该资产。此过程称为引入内容。
 
@@ -119,5 +119,5 @@ Console.WriteLine("{0}% upload competed for {1}.", e.ProgressPercentage, e.Local
 后续步骤
 --------
 
-将资产上载到 Media Services 后，请转到[如何获取媒体处理器](http://go.microsoft.com/fwlink/?LinkID=301732&clcid=0x409)主题。
+将资产上载到 Media Services 后，请转到[如何获取媒体处理器](/documentation/articles/media-services-get-media-processor)主题。
 
