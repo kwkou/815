@@ -68,5 +68,5 @@ using System;
 后续步骤
 --------
 
-你已经完成计算机设置并创建了进行 Media Services 编程所需的 Visual Studio 解决方案，现在可转到 [如何创建加密的资产并上载到存储中][] 主题。[如何创建 Media Services 帐户]:http://go.microsoft.com/fwlink/?linkid=256662 [如何创建加密的资产并上载到存储中]:http://go.microsoft.com/fwlink/?LinkID=301733&clcid=0x409
+你已经完成计算机设置并创建了进行 Media Services 编程所需的 Visual Studio 解决方案，现在可转到 [如何创建加密的资产并上载到存储中][] 主题。[如何创建 Media Services 帐户]:http://www.windowsazure.com/zh-CN/manage/services/media-services/how-to-create-a-media-services-account/ [如何创建加密的资产并上载到存储中]:http://go.microsoft.com/fwlink/?LinkID=301733&clcid=0x409
 

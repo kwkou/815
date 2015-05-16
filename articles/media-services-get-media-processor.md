@@ -63,5 +63,5 @@ return processor;
 后续步骤
 --------
 
-了解如何获取媒体处理器实例后，请转到[如何为资产编码](http://go.microsoft.com/fwlink/?LinkId=301753)主题，其中说明了如何使用 Azure 媒体编码器对资产进行编码。
+了解如何获取媒体处理器实例后，请转到[如何为资产编码](/develop/media-services/how-to-guides/encode-an-asset/)主题，其中说明了如何使用 Azure 媒体编码器对资产进行编码。
 

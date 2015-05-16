@@ -83,7 +83,7 @@
 
 <h2><a name="instantiating"></a>如何：创建表引用</h2>
 
-访问或修改移动服务表中数据的所有代码都将对  `MobileServiceTable` 对象调用函数。对  `MobileServiceClient` 的实例调用 [GetTable](http://msdn.microsoft.com/library/windowsazure/jj554275.aspx) 函数可获取对表的引用。 
+访问或修改移动服务表中数据的所有代码都将对  `MobileServiceTable` 对象调用函数。对  `MobileServiceClient` 的实例调用 [GetTable](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554275.aspx) 函数可获取对表的引用。 
 
     IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
@@ -425,7 +425,7 @@
 	ListBox lb = new ListBox();
 	lb.ItemsSource = items;
 
-Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](http://msdn.microsoft.com/library/windows/apps/Hh701916) 的接口。当用户滚动浏览时，此接口允许控件请求更多的数据。系统通过  `MobileServiceIncrementalLoadingCollection` （可自动处理来自控件的调用）为这个适用于 Windows 应用商店应用程序的接口提供内置支持。若要在 Windows 应用商店应用程序中使用  `MobileServiceIncrementalLoadingCollection`，请执行以下代码：
+Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](https://msdn.microsoft.com/zh-CN/library/windows/apps/Hh701916) 的接口。当用户滚动浏览时，此接口允许控件请求更多的数据。系统通过  `MobileServiceIncrementalLoadingCollection` （可自动处理来自控件的调用）为这个适用于 Windows 应用商店应用程序的接口提供内置支持。若要在 Windows 应用商店应用程序中使用  `MobileServiceIncrementalLoadingCollection`，请执行以下代码：
 
 			MobileServiceIncrementalLoadingCollection<TodoItem,TodoItem> items;
 		items =  todoTable.Where(todoItem => todoItem.Complete == false)
@@ -645,7 +645,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 ### <a name="serialization"></a>如何：自定义序列化
 
-[MobileServiceClient](http://msdn.microsoft.com/library/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 类公开[JsonSerializerSettings](http://james.newtonking.com/projects/json/help/?topic=html/T_Newtonsoft_Json_JsonSerializerSettings.htm) 的  `SerializerSettings` 属性
+[MobileServiceClient](https://msdn.microsoft.com/zh-CN/library/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx) 类公开[JsonSerializerSettings](http://james.newtonking.com/projects/json/help/?topic=html/T_Newtonsoft_Json_JsonSerializerSettings.htm) 的  `SerializerSettings` 属性
 
 使用此属性可以设置 Json.NET 属性（这样的属性有很多），其中包括一个用于将所有属性转换为小写的属性，例如：
 

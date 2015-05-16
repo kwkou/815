@@ -8,6 +8,7 @@
 ====================
 
 本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：获取媒体处理器](http://go.microsoft.com/fwlink/?LinkID=301732&ampclcid=0x409)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：获取媒体处理器](/develop/media-services/how-to-guides/create-media-processor/?ampclcid=0x409)。
 
 对于服务器上的媒体内容，你可以通过 Azure 媒体编码器使用许多的媒体编码和格式对这些内容进行编码。你也可以使用 Media Services 合作伙伴提供的编码器；可通过 [Azure Marketplace](https://datamarket.azure.com/) 获取第三方编码器。可以使用[编码器预设](http://msdn.microsoft.com/zh-cn/library/hh973610.aspx)字符串或配置文件指定编码任务的详细信息。
 
@@ -163,5 +164,5 @@ return job;
 后续步骤
 --------
 
-了解如何创建一个对资产进行编码的作业后，请转到[如何使用 Media Services 检查作业进度](http://go.microsoft.com/fwlink/?LinkID=301737&ampclcid=0x409)主题。
+了解如何创建一个对资产进行编码的作业后，请转到[如何使用 Media Services 检查作业进度](/develop/media-services/how-to-guides/check-job-progress/?ampclcid=0x409)主题。
 

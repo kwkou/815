@@ -9,7 +9,7 @@
 
 本指南说明如何开始使用 Azure Media Services 进行编程。本指南由几篇文章组成，并提供 Media Services 的技术概述、针对 Media Services 配置 Azure 帐户的步骤、开发设置指南，以及介绍如何完成典型编程任务的主题。演示的方案包括：上载资产、加密资产、为资产编码和交付资产。示例以 C\# 编写，并使用 Media Services SDK for .NET。有关 Azure Media Services 的详细信息，请参阅[后续步骤](#next-steps)主题。
 
-也可以使用基于 OData 的 REST API 为 Media Services 编程。通过 .NET 语言或其他编程语言对 Media Services 执行 REST API 调用便可生成应用程序。有关使用 Media Services REST API 进行编程的完整文档系列，请参阅[使用 Azure Media Services REST API 生成应用程序](http://go.microsoft.com/fwlink/?linkid=252967)。
+也可以使用基于 OData 的 REST API 为 Media Services 编程。通过 .NET 语言或其他编程语言对 Media Services 执行 REST API 调用便可生成应用程序。有关使用 Media Services REST API 进行编程的完整文档系列，请参阅[使用 Azure Media Services REST API 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973618)。
 
 若要使用 Media Services REST API 或 Media Services SDK 开始编程，请先根据[针对 Media Services 设置 Azure 帐户](#setup-account)部分中所述，启用用于 Media Services 的 Azure 帐户。
 
@@ -118,5 +118,5 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 后续步骤
 --------
 
-了解 Media Services 的概况后，请转到[针对 Media Services 设置计算机](http://go.microsoft.com/fwlink/?LinkId=301751)主题。
+了解 Media Services 的概况后，请转到[针对 Media Services 设置计算机](/develop/media-services/how-to-guides/set-up-computer-for-media-services/)主题。
 

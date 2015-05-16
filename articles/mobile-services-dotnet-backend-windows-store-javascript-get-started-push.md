@@ -87,7 +87,7 @@
 * [什么是通知中心？]
   <br/>详细了解通知中心如何将通知传送到各个主要客户端平台中的应用程序。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [调试通知中心应用程序](https://msdn.microsoft.com/zh-CN/library/dn530751.aspx)
   </br>获取有关对通知中心解决方案进行故障排除和调试的指导。 
 
 * [移动服务 HTML/JavaScript 操作方法概念性参考]

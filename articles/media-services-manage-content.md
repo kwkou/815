@@ -21,7 +21,7 @@
 如何：上载内容
 --------------
 
-1.  在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
+1.  在[管理门户](https://manage.windowsazure.cn)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
 2.  选择“内容”页。
 3.  单击该页上或者门户底部的**“上载”**按钮。
 4.  在**“上载内容”**对话框中，浏览到所需的资产文件。单击该文件，然后单击**“打开”**或按 **Enter**。
@@ -40,7 +40,7 @@
 如何：对内容进行编码
 --------------------
 
-1.  在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
+1.  在[管理门户](https://manage.windowsazure.cn)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
 2.  单击页顶部的“内容”页。
 3.  单击编码作业所需的源视频，然后单击页底部的**“编码”**。
 4.  在“Azure 媒体编码器”对话框中，选择常用或高级编码预设之一。
@@ -53,11 +53,11 @@
 
     **高级预置**
 
-    -   [Azure 媒体编码器的任务预设字符串](http://go.microsoft.com/fwlink/?LinkId=270865)主题说明了“高级预设”列表中每个预设的含义。
+    -   [Azure 媒体编码器的任务预设字符串](https://msdn.microsoft.com/zh-CN/library/jj129582.aspx)主题说明了“高级预设”列表中每个预设的含义。
 
     ![EncoderDialog](./media/media-services-manage-content/EncoderDialog2.png)
 
-    当前，该门户不支持媒体编码器所支持的所有编码格式，也不支持媒体资产加密\\解密。你可以以编程方式执行这些任务。有关详细信息，请参阅[使用 Media Services SDK for .NET 生成应用程序](http://go.microsoft.com/fwlink/?LinkId=270866)和 [Azure Media Encoder 的任务预设字符串](http://go.microsoft.com/fwlink/?LinkId=270865)。
+    当前，该门户不支持媒体编码器所支持的所有编码格式，也不支持媒体资产加密\\解密。你可以以编程方式执行这些任务。有关详细信息，请参阅[使用 Media Services SDK for .NET 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973613.aspx)和 [Azure Media Encoder 的任务预设字符串](https://msdn.microsoft.com/zh-CN/library/jj129582.aspx)。
 
 5.  在“Azure 媒体编码器”对话框中，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
 
@@ -70,7 +70,7 @@
 如何：发布内容
 --------------
 
-1.  在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
+1.  在[管理门户](https://manage.windowsazure.cn)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
 2.  单击页顶部的“内容”页。
 3.  单击未发布的资产。然后单击“发布”按钮以发布到公共 URL。在将内容发布到某个 URL 后，可通过能够呈现编码内容的客户端播放器打开该 URL。
 
@@ -79,7 +79,7 @@
 如何：从门户播放内容
 --------------------
 
-1.  在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
+1.  在[管理门户](https://manage.windowsazure.cn)中，单击**“Media Services”**，然后单击 Media Services 帐户名。
 2.  单击页顶部的“内容”页。
 3.  单击所需的视频内容，然后单击门户底部的**“播放”**按钮。只有已发布的内容才能从门户播放。此外，你的浏览器必须支持该编码。
 

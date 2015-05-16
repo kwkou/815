@@ -189,7 +189,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 - **随着时间的推移分散负载。**如果您控制某些预计生成需求峰值的事件（例如，广播推送通知）的时间，并且这些事件的时间无关紧要，请考虑随时间的推移分散这些负载。在上面的示例中，也许您的应用客户能够接受在一天之内（而不是几乎同时）成批接收新应用内容的通知。请考虑将客户分成不同小组，让各批次的客户交错接收信息。如果使用通知中心，可运用其他标记跟踪该批次，然后向该标记发送推送通知，从而轻松执行该策略。有关标记的详细信息，请参阅[使用通知中心发送即时新闻](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)。
 - **在适当的时候使用 Blob 和表存储。**客户将在峰值期间查看的内容通常是静态的，并且不需要存储在 SQL Database 中，因为您不大可能需要关系查询功能查看该内容。在这种情况下，请考虑将内容存储在 Blob 或表存储中。您可以直接通过设备访问公共 blob 在 Blob 存储。若要以安全方式访问 blob 或使用表存储，您需要仔细检查移动服务自定义 API 以保护您的存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上传到 Azure 存储](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage/)。
-- **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure Cache](http://azure.microsoft.com/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
+- **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure Cache](/services/cache/)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
 
 <a name="Advanced"></a>
 ## 高级故障排除

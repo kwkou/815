@@ -148,4 +148,4 @@
 [Microsoft Web 平台安装程序]:  http://go.microsoft.com/fwlink/p/?LinkId=286333
 [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
 [移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library
-[跨域资源共享]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
+[跨域资源共享]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn155871.aspx

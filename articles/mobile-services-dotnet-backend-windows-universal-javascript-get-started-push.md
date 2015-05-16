@@ -84,7 +84,7 @@ var todolistClient = new WindowsAzure.MobileServiceClient(
 * [什么是通知中心？]
   <br/>了解有关通知中心将通知传递到所有主要客户端平台上的应用程序的工作方式的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [调试通知中心应用程序](https://msdn.microsoft.com/zh-CN/library/dn530751.aspx)
   </br>获取故障排除和调试通知中心解决方案的指南。 
 
 * [如何将 HTML/JavaScript 客户端用于 Azure 移动服务]

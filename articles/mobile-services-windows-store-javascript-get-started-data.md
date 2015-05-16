@@ -201,7 +201,7 @@
   [添加用于存储的数据表]: #add-table
   [更新应用程序以使用移动服务]: #update-app
   [针对移动服务测试应用程序]: #test-app
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-js%2F
+  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A756A2826&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-js%2F
   [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=328660
   [0]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2013/mobile-data-sample-download-js-vs12.png
   [1]: ./media/mobile-services-windows-store-javascript-get-started-data-vs2013/mobile-quickstart-startup.png

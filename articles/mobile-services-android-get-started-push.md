@@ -267,7 +267,7 @@
   [2]: ./media/mobile-services-android-get-started-push/mobile-services-android-create-class.png
   [3]: ./media/mobile-services-android-get-started-push/mobile-portal-data-tables.png
   [4]: ./media/mobile-services-android-get-started-push/mobile-insert-script-push2.png
-  [GCM 对象]: http://go.microsoft.com/fwlink/p/?LinkId=282645
+  [GCM 对象]: https://msdn.microsoft.com/zh-CN/library/dn126137.aspx
   [5]: ./media/mobile-services-android-get-started-push/mobile-services-import-android-properties.png
   [6]: ./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager.png
   [7]: ./media/mobile-services-android-get-started-push/mobile-services-android-virtual-device-manager-edit.png

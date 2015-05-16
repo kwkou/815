@@ -7,7 +7,7 @@
 如何：使用 PlayReady 保护功能保护资产
 =====================================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：检查作业进度](http://go.microsoft.com/fwlink/?LinkID=301737&clcid=0x409)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：检查作业进度](/develop/media-services/how-to-guides/check-job-progress/)。
 
 在 Azure Media Services 中，你可以提交一个与 Microsoft PlayReady 保护集成的作业来加密资产。本部分中的代码使用输入文件夹中的多个流文件，在创建一个任务后，将使用 PlayReady 保护将这些文件加密。
 
@@ -114,5 +114,5 @@ return job;
 后续步骤
 --------
 
-了解如何使用 Media Services 保护资产后，请转到[如何管理资产](http://go.microsoft.com/fwlink/?LinkID=301943&clcid=0x409)主题。
+了解如何使用 Media Services 保护资产后，请转到[如何管理资产](http://www.windowsazure.com/zh-CN/manage/services/media-services/how-to-manage-content-in-media-services/)主题。
 

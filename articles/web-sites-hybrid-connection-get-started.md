@@ -167,9 +167,9 @@
 <!-- IMAGES -->
 
   [Azure 门户]: https://manage.windowsazure.cn
-  [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274
+  [混合连接]: /documentation/articles/integration-hybrid-connection-overview
   [Azure 免费使用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
-  [使用混合连接从 Azure 网站连接到本地 SQL Server]: http://go.microsoft.com/fwlink/?LinkID=397979
+  [使用混合连接从 Azure 网站连接到本地 SQL Server]: /documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server
   [在 Azure 预览版门户中创建网站]: #CreateSite
   [创建混合连接和 BizTalk 服务]: #CreateHC
   [安装本地混合连接管理器以完成连接]: #InstallHCM

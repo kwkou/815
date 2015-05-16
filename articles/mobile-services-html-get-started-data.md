@@ -312,5 +312,5 @@
 
 [移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library
 
-[跨域资源共享]: http://msdn.microsoft.com/library/windowsazure/dn155871.aspx
+[跨域资源共享]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn155871.aspx
 

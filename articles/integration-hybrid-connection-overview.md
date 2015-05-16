@@ -130,15 +130,15 @@
   [创建混合连接]: #CreateHybridConnection
   [本地安装混合连接管理器]: #InstallHCM
   [管理混合连接]: #ManageHybridConnection
-  [将 Azure 网站连接到本地资源]: http://go.microsoft.com/fwlink/p/?LinkId=397538
+  [将 Azure 网站连接到本地资源]: /documentation/articles/web-sites-hybrid-connection-get-started
   [Azure 移动服务和混合连接]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
-  [Azure 管理门户]: http://go.microsoft.com/fwlink/p/?LinkID=213885
-  [创建 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=329870
+  [Azure 管理门户]: http://manage.windowsazure.cn
+  [创建 BizTalk 服务]: /documentation/articles/biztalk-service-state-chart/
   [“混合连接”选项卡]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionTab.png
-  [BizTalk 服务：版本图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
+  [BizTalk 服务：版本图表]: /documentation/articles/biztalk-editions-feature-chart/
   [本地安装]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionOnPremSetup.png
   [REST API]: https://msdn.microsoft.com/zh-CN/library/azure/dn232347.aspx
   [管理选项]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionManageConn.png
-  [分步混合连接：从 Azure 网站连接到本地 SQL Server]: http://go.microsoft.com/fwlink/?LinkID=397979
-  [使用 Azure 管理门户创建 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
+  [分步混合连接：从 Azure 网站连接到本地 SQL Server]: /documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server
+  [使用 Azure 管理门户创建 BizTalk 服务]: /documentation/articles/biztalk-provision-services/
+  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
