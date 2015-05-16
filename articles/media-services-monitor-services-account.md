@@ -16,7 +16,7 @@ Azure Media Services 仪表板显示了可用于管理 Media Services 帐户的�
 如何：监视 Media Services 帐户
 ------------------------------
 
-1.  在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666)中，单击**“Media Services”**，然后单击 Media Services 帐户名以打开仪表板。
+1.  在[管理门户](https://manage.windowsazure.cn)中，单击**“Media Services”**，然后单击 Media Services 帐户名以打开仪表板。
 
     ![MediaServices\_Dashboard](./media/media-services-monitor-services-account/media-services-dashboard.png)
 

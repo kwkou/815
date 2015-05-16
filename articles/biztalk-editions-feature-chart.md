@@ -42,11 +42,11 @@ Azure BizTalk 服务提供以下版本：“免费”、“开发人员”、“
 <tbody>
 <tr class="odd">
 <td align="left"><strong>起价</strong></td>
-<td align="left">请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=304011">Azure BizTalk 服务定价</a>。</td>
-<td align="left">请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=304011">Azure BizTalk 服务定价</a>。</td>
-<td align="left">请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=304011">Azure BizTalk 服务定价</a>。</td>
-<td align="left">请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=304011">Azure BizTalk 服务定价</a>。</td>
-<td align="left">请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=304011">Azure BizTalk 服务定价</a>。</td>
+<td align="left">请参阅 <a href="/pricing/details/biztalk-services/">Azure BizTalk 服务定价</a>。</td>
+<td align="left">请参阅 <a href="/pricing/details/biztalk-services/">Azure BizTalk 服务定价</a>。</td>
+<td align="left">请参阅 <a href="/pricing/details/biztalk-services/">Azure BizTalk 服务定价</a>。</td>
+<td align="left">请参阅 <a href="/pricing/details/biztalk-services/">Azure BizTalk 服务定价</a>。</td>
+<td align="left">请参阅 <a href="/pricing/details/biztalk-services/">Azure BizTalk 服务定价</a>。</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>默认最低配置</strong></td>
@@ -131,7 +131,7 @@ Azure BizTalk 服务提供以下版本：“免费”、“开发人员”、“
 <td align="left">包括</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>高可用性</strong><br /><br /> 有关服务级别协议 (SLA)，请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=304011">Azure BizTalk 服务定价</a>。</td>
+<td align="left"><strong>高可用性</strong><br /><br /> 有关服务级别协议 (SLA)，请参阅 <a href="/pricing/details/biztalk-services/">Azure BizTalk 服务定价</a>。</td>
 <td align="left">不包括</td>
 <td align="left">不包括</td>
 <td align="left">包括</td>
@@ -236,13 +236,13 @@ BizTalk 适配器服务由 Azure BizTalk 服务使用。BizTalk 适配器服务�
 -   [BizTalk 服务：颁发者名称和颁发者密钥][BizTalk 服务：颁发者名称和颁发者密钥]
 -   [如何开始使用 Azure BizTalk 服务 SDK][如何开始使用 Azure BizTalk 服务 SDK]
 
-  [Azure BizTalk 服务定价]: http://go.microsoft.com/fwlink/p/?LinkID=304011
-  [BizTalk 服务：备份和还原]: http://go.microsoft.com/fwlink/p/?LinkID=329873
+  [Azure BizTalk 服务定价]: /pricing/details/biztalk-services/
+  [BizTalk 服务：备份和还原]: /documentation/articles/biztalk-backup-restore/
   [下载]: https://www.microsoft.com/zh-CN/download/details.aspx?id=39087
-  [BizTalk 服务：使用 Azure 管理门户进行设置]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=235197
-  [BizTalk 服务：设置状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
-  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
-  [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
-  [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
+  [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/
+  [Azure BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689864.aspx
+  [BizTalk 服务：设置状态图表]: /documentation/articles/biztalk-service-state-chart/
+  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：限制]: /documentation/articles/biztalk-throttling-thresholds/
+  [BizTalk 服务：颁发者名称和颁发者密钥]: /documentation/articles/biztalk-issuer-name-issuer-key/
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx

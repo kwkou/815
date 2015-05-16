@@ -372,7 +372,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
   [在 ACS 管理门户中查看应用程序]: #bkmk_VP
   [添加标识提供程序]: #add-IP
   [后续步骤]: #whats-next
-  [Access Control 服务 2.0]: http://go.microsoft.com/fwlink/?LinkID=212360
+  [Access Control 服务 2.0]: https://msdn.microsoft.com/zh-CN/library/hh147631.aspx
   [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
   [身份验证和访问工具]: http://go.microsoft.com/fwlink/?LinkID=245849
   [Azure 管理门户]: http://manage.WindowsAzure.cn

@@ -58,7 +58,7 @@ cmdlet 要求您的订阅信息，以便可以使用它来管理您的服务。�
 - Windows Azure AD 方法可便于管理对订阅的访问，但可能会中断自动化。这些凭据可供 Windows Azure PowerShell 使用 12 小时。在它们到期后，您将需要再次登录。
 - 在您使用证书方法时，只要订阅和证书有效，订阅信息就可用。该方法可便于将自动化用于长时间运行的任务。在您下载并导入信息后，无需再次提供它。但是，此方法使得管理对共享订阅的访问更加困难，例如在授权多人可以访问帐户时。
 
-有关 Windows Azure 中的身份验证和订阅管理的更多信息，请参见 [管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796)。
+有关 Windows Azure 中的身份验证和订阅管理的更多信息，请参见 [管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-CN/library/windowsazure/hh531793.aspx)。
 
 <h3>使用 Windows Azure AD 方法</h3>
 

@@ -86,5 +86,5 @@ asset.Delete();
 后续步骤
 --------
 
-了解如何管理资产后，请转到[如何通过下载交付资产](http://go.microsoft.com/fwlink/?LinkID=301734&clcid=0x409)主题。
+了解如何管理资产后，请转到[如何通过下载交付资产](/develop/media-services/how-to-guides/deliver-media-assets/)主题。
 
