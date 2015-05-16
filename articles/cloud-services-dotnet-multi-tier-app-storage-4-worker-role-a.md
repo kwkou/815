@@ -120,7 +120,6 @@
                 ServicePointManager.DefaultConnectionLimit = 12;
 
                 // For information on handling configuration changes
-                // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
                 // see the MSDN topic at https://msdn.microsoft.com/zh-CN/library/windowsazure/hh180152.aspx.
 
                 return base.OnStart();
