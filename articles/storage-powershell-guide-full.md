@@ -73,7 +73,7 @@
 
 **创建 Microsoft Azure 订阅和帐户之后：**
 
-1.	在本地计算机中下载并安装 [Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409)。
+1.	在本地计算机中下载并安装 [Azure PowerShell](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409)。
 2.	启动 Windows PowerShell 集成脚本环境 (ISE)：在本地计算机中，转到"开始"菜单。键入"管理工具"，并单击以运行它。在"管理工具"窗口中，右键单击"Windows PowerShell ISE"，然后单击"以管理员身份运行"。 
 3.	在"Windows PowerShell ISE"中，单击"文件">新建以创建新的脚本文件。 
 4.	现在，我们将提供一个简单的脚本，演示用于访问 Azure 存储空间的基本 PowerShell 命令。该脚本首先会请求提供你的 Azure 帐户凭据，以将你的 Azure 帐户添加到本地 PowerShell 环境。然后，该脚本将设置默认 Azure 订阅，并在 Azure 中创建新的存储帐户。接下来，该脚本将在此新存储帐户中创建新容器，并将现有图像文件 (Blob) 上载到该容器。在脚本列出该容器中的所有 Blob 后，它将在本地计算机中创建新的目标目录，并下载图像文件。
@@ -653,7 +653,7 @@ Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储�
 
 有关详细信息，请参阅[共享访问签名](./storage-dotnet-shared-access-signature-part-1.md/)，[第 1 部分：了解 SAS 模型](./storage-dotnet-shared-access-signature-part-1.md/)，以及[管理对 Azure 存储资源的访问](http://msdn.microsoft.com/zh-cn/library/azure/ee393343.aspx)。
 
-在下一部分中，你将学习如何为 Azure 表创建共享访问签名令牌和存储访问策略。Azure PowerShell 为容器、Blob 和队列提供了类似的 cmdlet。若要运行本部分中的脚本，请下载 [Azure PowerShell 版本 0.8.14](http://go.microsoft.com/?linkid=9811175&clcid=0x409) 或更高版本。
+在下一部分中，你将学习如何为 Azure 表创建共享访问签名令牌和存储访问策略。Azure PowerShell 为容器、Blob 和队列提供了类似的 cmdlet。若要运行本部分中的脚本，请下载 [Azure PowerShell 版本 0.8.14](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409) 或更高版本。
 
 ### <a name="sub1"></a>如何创建基于共享访问签名令牌的策略
 使用 New-AzureStorageTableStoredAccessPolicy cmdlet 创建新的存储访问策略。然后，调用 [New-AzureStorageTableSASToken](http://msdn.microsoft.com/zh-cn/library/azure/dn806400.aspx) cmdlet 为 Azure 存储表创建新的基于策略的共享访问签名令牌。

@@ -29,7 +29,7 @@
 若要完成本教程，你需要以下各项：
 
 * 有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-javascript-get-started-data%2F)。
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>。可以使用免费试用版。
+* <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8" target="_blank">Visual Studio Professional 2013</a>。可以使用免费试用版。
 
 ## <a name="download-app"></a>下载 GetStartedWithData 项目
 
@@ -291,7 +291,7 @@
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
-[移动服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
-[开发人员代码示例站点]:  http://go.microsoft.com/fwlink/p/?LinkId=328660
+[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
+[开发人员代码示例站点]:  http://code.msdn.microsoft.com/Connect-to-Windows-Azure-3a8fc1ee
 [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library/
-[MobileServiceClient 类]: http://go.microsoft.com/fwlink/p/?LinkId=302030
+[MobileServiceClient 类]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx

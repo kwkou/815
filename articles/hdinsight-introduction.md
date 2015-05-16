@@ -152,8 +152,8 @@ HDInsight（通常还有 Hadoop 技术）最适合于处理大量已记录或存
   [JSON]: http://www.json.org
   [Apache Avro 规范]: http://avro.apache.org/docs/current/spec.html
   [使用 Microsoft Avro Library 序列化数据]: /documentation/articles/hdinsight-dotnet-avro-serialization/
-  [Microsoft 下载中心]: http://go.microsoft.com/fwlink/?LinkID=286689
-  [下载网站]: http://go.microsoft.com/fwlink/?LinkID=286698
+  [Microsoft 下载中心]: http://www.microsoft.com/zh-CN/download/details.aspx?id=39379
+  [下载网站]: http://www.microsoft.com/zh-CN/download/details.aspx?id=40886
   [SQL Server 2012 Analysis Services]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/analysis.aspx#fbid=9ZH5wGSDgf0
   [SQL Server 2012 Reporting]: http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/dashboards-reports.aspx#fbid=9ZH5wGSDgf0
   [HDInsight 文档]: /documentation/services/hdinsight/

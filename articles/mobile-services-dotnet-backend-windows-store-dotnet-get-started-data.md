@@ -292,7 +292,7 @@
   [将移动服务发布到 Azure]: #publish-mobile-service
   [针对 Azure 中托管的服务测试 Windows 应用商店应用程序]: #test-azure-hosted
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
-  [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=328660
+  [GetStartedWithMobileServices 应用程序]: http://code.msdn.microsoft.com/Connect-to-Windows-Azure-3a8fc1ee
   [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/mobile-data-sample-download-dotnet-vs13.png
   [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/app-view.png
   [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md

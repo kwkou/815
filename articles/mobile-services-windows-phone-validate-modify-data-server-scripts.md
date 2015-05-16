@@ -117,7 +117,7 @@ public DateTime createdAt { set; get; }
 
     在通过调用 **request**.**execute** 插入对象之前，此函数会将一个新的 **createdAt** 时间戳属性添加到该对象，从而扩展前面的 insert 脚本。 
 
-    > [AZURE.IMPORTANT] 首次运行此 insert 脚本时，必须启用动态架构。启用动态架构后，移动服务在首次执行时会自动将 **createdAt** 列添加到 **TodoItem** 表。默认情况下，将为新的移动服务启用动态架构，将应用程序发布到 Windows Phone 应用商店之前，应该禁用动态架构。
+    > [AZURE.NOTE] 首次运行此 insert 脚本时，必须启用动态架构。启用动态架构后，移动服务在首次执行时会自动将 **createdAt** 列添加到 **TodoItem** 表。默认情况下，将为新的移动服务启用动态架构，将应用程序发布到 Windows Phone 应用商店之前，应该禁用动态架构。
 
 2. 在 Visual Studio 中，按 **F5** 键运行应用程序，然后在文本框中键入文本（少于 10 个字符），然后单击"保存"。
 

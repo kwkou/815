@@ -7,7 +7,7 @@
 如何：交付流内容
 ================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：通过下载交付资产](http://go.microsoft.com/fwlink/?LinkID=301734&clcid=0x409)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：通过下载交付资产](/develop/media-services/how-to-guides/deliver-media-assets/)。
 
 除了可从 Media Services 下载媒体内容外，你还可以使用自适应位速率流式处理来交付内容。例如，你可以创建一个定向 URL（称为定位器），以流式传输 Media Services 来源服务器上的内容。Microsoft Silverlight 等客户端应用程序可以直接从定位器播放流内容。
 
@@ -80,5 +80,5 @@ return originLocator;
 后续步骤
 --------
 
-到目前为止，我们已介绍如何通过从 Azure 存储服务下载内容以及使用平滑流式处理来交付媒体。下一主题[如何交付 HLS 内容](http://go.microsoft.com/fwlink/?LinkId=301817)将介绍如何使用 Apple HTTP 实时流 (HLS) 交付流内容。
+到目前为止，我们已介绍如何通过从 Azure 存储服务下载内容以及使用平滑流式处理来交付媒体。下一主题[如何交付 HLS 内容](/develop/media-services/how-to-guides/deliver-apple-http-live-streaming/)将介绍如何使用 Apple HTTP 实时流 (HLS) 交付流内容。
 

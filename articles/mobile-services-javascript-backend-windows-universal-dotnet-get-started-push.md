@@ -23,7 +23,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 若要完成本教程，您需要以下各项：
 
-* 活动[Microsoft 应用商店帐户](http://go.microsoft.com/fwlink/p/?LinkId=280045)。
+* 活动[Microsoft 应用商店帐户](https://appdev.microsoft.com/StorePortals/zh-CN/account/signup/start)。
 * [Visual Studio 2013 Express for Windows](http://go.microsoft.com/fwlink/?LinkId=257546)，Update 3 或更高版本
 
 ##<a id="register"></a>为推送通知注册应用程序
@@ -65,7 +65,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 * [什么是通知中心？]
   <br/>了解有关通知中心跨所有主要的客户端平台向您的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [调试通知中心应用程序](https://msdn.microsoft.com/zh-CN/library/dn530751.aspx)
   </br>获取故障排除和调试通知中心解决方案的指南。 
 
 * [如何使用适用于 Azure 移动服务的 .NET 客户端]
@@ -76,9 +76,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 <!-- Images. -->
 
 <!-- URLs. -->
-[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+[我的应用程序]: https://account.live.com/developers/applications/index
+[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users

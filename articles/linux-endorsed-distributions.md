@@ -181,8 +181,8 @@ OpenSUSE 13.1+
 </table>
 
   [仅需要 12.04 或 12.04.01]: http://go.microsoft.com/fwlink/?LinkID=275152&clcid=0x409
-  [GITHUB]: http://go.microsoft.com/fwlink/p/?LinkID=250998
-  [LIS 驱动程序]: http://go.microsoft.com/fwlink/p/?LinkID=254263
-  [仅需要 6.3]: http://go.microsoft.com/fwlink/?LinkID=275153&clcid=0x409
+  [GITHUB]: https://github.com/windows-azure/walinuxagent
+  [LIS 驱动程序]: http://www.microsoft.com/zh-CN/download/search.aspx?q=linux%20integration%20services
+  [仅需要 6.3]: http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/
   [Open Logic 包存储库]: http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/
   [Cloud:Tools]: https://build.opensuse.org/project/show/Cloud:Tools

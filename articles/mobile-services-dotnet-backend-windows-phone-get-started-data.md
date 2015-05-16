@@ -300,11 +300,11 @@
   [针对本地托管的服务测试 Windows Phone 应用程序]: #test-locally-hosted
   [将移动服务发布到 Azure]: #publish-mobile-service
   [针对 Azure 中托管的服务测试 Windows Phone 应用程序]: #test-azure-hosted
-  [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
+  [Windows Phone 8 SDK]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
-  [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?linkid=271146
+  [GetStartedWithMobileServices 应用程序]: http://code.msdn.microsoft.com/Get-Started-with-Data-in-5d10271f
   [0]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/mobile-data-sample-download-wp8-vs12.png
-  [Windows Phone 应用商店应用程序版本]: http://go.microsoft.com/fwlink/p/?LinkId=397372
+  [Windows Phone 应用商店应用程序版本]: http://code.msdn.microsoft.com/Get-Started-with-Data-in-fac27cfd
   [1]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/vs-deployment-target.png
   [2]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/app-view.png
   [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md

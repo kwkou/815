@@ -188,5 +188,5 @@
   [向用户发送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
   [向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
   [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
-  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
+  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/
   [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library

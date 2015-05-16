@@ -21,7 +21,7 @@
 <UL>
 <LI>如需详细了解完整部署，请阅读<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">规划</a>和<a href="http://msdn.microsoft.com/zh-cn/library/dn788903.aspx">部署</a>指南。</LI>
 <LI>若要了解其他 Azure Site Recovery 部署方案，请参阅 <a href="/zh-cn/documentation/articles/hyper-v-recovery-manager-overview/">Azure Site Recovery 概述</a>。</LI>
-<LI>如果在使用本教程期间遇到问题，请查阅 Wiki 文章 <a href="http://go.microsoft.com/fwlink/?LinkId=389879">Azure Site Recovery：常见错误情况和解决方法</a>，或者在 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>上发布你的问题。</LI>
+<LI>如果在使用本教程期间遇到问题，请查阅 Wiki 文章 <a href="http://social.technet.microsoft.com/wiki/contents/articles/21619.hyper-v-recovery-manager-common-error-scenarios-and-resolutions.aspx">Azure Site Recovery：常见错误情况和解决方法</a>，或者在 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>上发布你的问题。</LI>
 </UL>
 </div>
 
@@ -242,5 +242,5 @@
 <LI>若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">Azure Site Recovery 规划指南</a>和 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">Azure Site Recovery 部署指南</a>。</LI>
 
 
-<LI style="display:none">如有问题，请访问 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>。</LI> 
+<LI style="display:none">如有问题，请访问 <a href="http://social.msdn.microsoft.com/Forums/windowsazure/zh-CN/home?forum=hypervrecovmgr">Azure 恢复服务论坛</a>。</LI> 
 </UL>

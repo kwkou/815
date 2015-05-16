@@ -22,8 +22,8 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 
 <!-- URLs. -->
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-phonegap-get-started/
-[Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
-[移动服务 SDK]: https://go.microsoft.com/fwLink/p/?LinkID=268375
+[Visual Studio 2012 Express for Windows Phone]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
+[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
 
 [Management Portal]: https://manage.windowsazure.cn/
 [.NET 后端版本]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started

@@ -131,7 +131,7 @@
 
     <div class="dev-callout"><b>说明</b>
 
-    <p>如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 <em>useSingleSignOn</em> 参数提供 <b>true</b> 值以调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> 方法。如果你不执行此操作，则每次调用 login 方法时，系统仍会向你的用户提供登录提示。</p>
+    <p>如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 <em>useSingleSignOn</em> 参数提供 <b>true</b> 值以调用 <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.singlesignonextensions.loginasync.aspx" target="_blank">LoginAsync</a> 方法。如果你不执行此操作，则每次调用 login 方法时，系统仍会向你的用户提供登录提示。</p>
 	</div>
 
 3.  将现有的 "OnNavigatedTo" 方法覆盖替换为以下方法，以便调用新的 "Authenticate" 方法：
@@ -178,6 +178,6 @@
   [注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证]: /develop/mobile/how-to-guides/register-windows-store-app-package
   [3]: ./media/mobile-services-dotnet-get-started-users/mobile-portal-data-tables.png
   [4]: ./media/mobile-services-dotnet-get-started-users/mobile-portal-change-table-perms.png
-  [LoginAsync]: http://go.microsoft.com/fwlink/p/?LinkId=311594
+  [LoginAsync]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.singlesignonextensions.loginasync.aspx
   [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
   [移动服务 .NET 操作方法概念性参考]: /develop/mobile/how-to-guides/work-with-net-client-library

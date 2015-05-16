@@ -63,7 +63,7 @@
   [将自定义 Java 网站上载到 Azure]: ../web-sites-java-custom-upload
   
 <!--
-  [激活 MSDN 订户权益]: /en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
+  [激活 MSDN 订户权益]: /zh-CN/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F
 -->
 
   [注册试用]: /pricing/1rmb-trial/

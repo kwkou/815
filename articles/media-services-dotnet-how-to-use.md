@@ -76,13 +76,13 @@ Media Services 支持下表中所述的多种常见媒体开发方案。
 
 -   [适用于 Silverlight 的平滑流式处理客户端](http://www.microsoft.com/zh-cn/download/details.aspx?id=29940)
 -   [Microsoft Media Platform：适用于 Silverlight 的播放器框架](http://smf.codeplex.com/documentation)
--   [适用于 OSMF 2.0 的平滑流式处理插件](http://go.microsoft.com/fwlink/?LinkId=275022)。有关如何使用此插件的信息，请参阅[如何使用适用于 Adobe Open Source Media Framework 的平滑流式处理插件](http://go.microsoft.com/fwlink/?LinkId=275034)。
+-   [适用于 OSMF 2.0 的平滑流式处理插件](http://www.microsoft.com/zh-CN/download/details.aspx?id=36057)。有关如何使用此插件的信息，请参阅[如何使用适用于 Adobe Open Source Media Framework 的平滑流式处理插件](/develop/net/tutorials/smooth-streaming-plugin-for-open-source-media-framework/)。
 
 #### Windows 8 应用程序
 
 对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C\# 和 C+）生成 Windows 应用商店应用程序。
 
--   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://go.microsoft.com/fwlink/?LinkID=246146)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](http://go.microsoft.com/fwlink/?LinkId=271647)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/zh-cn/library/jj573656(v=vs.90).aspx)。
+-   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](/develop/net/tutorials/smooth-streaming-windows-store-app/)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/zh-cn/library/jj573656(v=vs.90).aspx)。
 
 -   [Microsoft Media Platform：适用于 Windows 8 Windows 应用商店应用程序的播放器框架](http://playerframework.codeplex.com/wikipage?title=Player%20Framework%20for%20Windows%208%20Metro%20Style%20Apps&referringTitle=Home)
 

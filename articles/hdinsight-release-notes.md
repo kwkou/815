@@ -59,7 +59,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 由于 SDK/PowerShell 和群集之间的版本不同，可能遇到 HDInsight PowerShell/SDK 错误，附带消息"群集 <clustername> 没有配置 HTTP 服务访问权限"（或者根据操作，遇到其他错误消息，如："无法连接群集"）。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。旧版本 SDK/PowerShell 无法正确解释此功能，导致提交作业操作失败。如果使用 SDK API 或 PowerShell cmdlet 提交作业（如 Use-AzureHDInsightCluster 或 Invoke-AzureHDInsightHiveJob），则那些操作可能失败，并附加一条上述错误消息。
 
-在最新版 SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.HDInsight/) 访问最新版 HDInsight SDK，还可以使用 [Microsoft Web PI](http://go.microsoft.com/?linkid=9811175&clcid=0x409) 访问 Azure PowerShell 工具。
+在最新版 SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.HDInsight/) 访问最新版 HDInsight SDK，还可以使用 [Microsoft Web PI](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409) 访问 Azure PowerShell 工具。
 
 你可以期待，只要群集版本保持不变，SDK 和 PowerShell 就将可以继续与群集新更新配合使用。例如，群集版本 3.1 将始终与 SDK/PowerShell 当前版本 1.3.1.6 和 0.8.8 兼容。
 

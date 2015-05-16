@@ -32,7 +32,7 @@
 1. 创建 Azure 虚拟机。请参阅[创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/) 或[在 Visual Studio 中创建 Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn569263.aspx)。
 2. 在 [Azure 门户页](http://manage.windowsazure.cn)上的虚拟机仪表板中，查看虚拟机的"RDP 证书指纹"。扩展配置中的 ServerThumbprint 值将使用此指纹。
 3. 根据[为 Azure 创建服务证书](https://msdn.microsoft.com/zh-CN/library/azure/gg432987.aspx)中所述创建客户端证书（保留 .pfx 和 RDP 证书指纹）。
-4. 从 Microsoft 下载中心安装 [Azure Powershell](http://go.microsoft.com/?linkid=9811175&clcid=0x409)（0.7.4 或更高版本）。
+4. 从 Microsoft 下载中心安装 [Azure Powershell](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409)（0.7.4 或更高版本）。
 5. 运行以下脚本以启用 RemoteDebug 扩展。将个人数据替换为你自己的数据，例如，你的订阅名称、服务名称和指纹。（注意：此脚本是针对 Visual Studio 2013 配置的。如果你使用的是 Visual Studio 2012，请为 ReferenceName 和 ExtensionName 使用"RemoteDebugVS2013"。）
 
 	<pre>

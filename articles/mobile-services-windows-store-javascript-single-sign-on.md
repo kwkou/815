@@ -216,9 +216,9 @@
   [注册应用程序以进行身份验证并配置移动服务]: #register
   [将表权限限制给已经过身份验证的用户]: #permissions
   [向应用程序添加身份验证]: #add-authentication
-  [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+  [Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
   [移动服务入门]: /develop/mobile/tutorials/get-started
-  [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+  [“提交应用程序”页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
   [0]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-submit-win8-app.png
   [1]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-win8-app-name.png
   [2]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-store-association.png
@@ -226,7 +226,7 @@
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [4]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-services-selection.png
   [5]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-service-uri.png
-  [我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+  [我的应用程序]: https://account.live.com/developers/applications/index
   [6]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-live-connect-apps-list.png
   [7]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-live-connect-app-api-settings.png
   [8]: ./media/mobile-services-windows-store-javascript-single-sign-on/mobile-identity-tab-ma-only.png

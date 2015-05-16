@@ -697,7 +697,7 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪][使用失败请求�
   [查看失败请求日志]: #failedrequestlogs
   [后续步骤]: #nextsteps
   [Azure 和 ASP.NET 入门]: /develop/net/tutorials/get-started/
-  [管理帐户、订阅和管理角色]: http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert
+  [管理帐户、订阅和管理角色]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
   [在服务器资源管理器中查看设置]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewsettings.png
   [Azure 网站窗口]: ./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configtab.png
   [Azure 网站：应用程序字符串和连接字符串的工作原理]: http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx

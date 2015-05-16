@@ -281,5 +281,5 @@ Cloud9 侧重提供 IDE，而不提供在应用程序部署到 Azure 后直接�
   [创建 Azure 托管服务概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
   [如何配置虚拟机大小]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee814754.aspx
   [在 Azure 中管理部署概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433027.aspx
-  [Cloud9 文档]: http://go.microsoft.com/fwlink/?LinkId=241421&clcid=0x409
+  [Cloud9 文档]: http://cloud9ide.posterous.com/
 <!--HONumber=39-->

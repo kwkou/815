@@ -151,7 +151,7 @@
   [步骤 3：将应用程序修改为使用 SSL 证书]: #step3
   [步骤 4：修改服务定义文件]: #step4
   [步骤 5：使用 HTTPS 连接到角色实例]: #step5
-  [**Azure PowerShell**]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
+  [**Azure PowerShell**]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=azurenodesdk&mode=new&clcid=0x409
   
   
   

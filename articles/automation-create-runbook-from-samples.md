@@ -123,8 +123,8 @@ Azure 自动化团队创建了许多 Runbook 示例以帮助你开始使用自�
 
   [自动化概述指南]: /zh-cn/documentation/services/automation/
   [此处]: http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx
-  [脚本中心]: http://go.microsoft.com/fwlink/p/?LinkId=393029
-  [1]: http://go.microsoft.com/fwlink/?LinkID=391681
+  [脚本中心]: http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC Automation Product Team&f[0].Text=SC Automation Product Team&f[1].Type=RootCategory&f[1].Value=WindowsAzure&f[1].Text=Windows Azure
+  [1]: http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[0].Text=Windows Azure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation
   [注册自动化预览版]: #preview
   [下载示例 Runbook]: #download-sample
   [导入、运行示例 Runbook 并查看其输出]: #import-sample

@@ -393,7 +393,7 @@ xplat-cli 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
   [如何撰写 Azure 跨平台命令行接口脚本]: #script
   [其他资源]: #additional-resources
   [Windows 安装程序]: http://go.microsoft.com/fwlink/?LinkID=275464&clcid=0x409
-  [OS X 安装程序]: http://go.microsoft.com/fwlink/?LinkId=252249
+  [OS X 安装程序]: http://az412849.vo.msecnd.net/downloads04/azure-cli.0.9.2.dmg
   []: https://manage.windowsazure.cn
   [以组织身份注册 Windows Azure]: /zh-cn/documentation/articles/sign-up-organization/
   [“基于帐户的身份验证和基于证书的身份验证之间的区别是什么”]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531793.aspx#BKMK_AccountVCert

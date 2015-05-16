@@ -89,9 +89,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-
 
 
 <!-- URLs. -->
-["提交应用"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+["提交应用"页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+[我的应用程序]: https://account.live.com/developers/applications/index
+[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users/
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push/

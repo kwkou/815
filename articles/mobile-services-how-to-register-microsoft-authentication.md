@@ -10,7 +10,7 @@
 
 >[WACOM.NOTE]若要为通用 Windows 应用程序配置 Microsoft 帐户身份验证或者为 Windows 应用商店应用程序提供单一登录体验，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/zh-cn/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication)。
 
-1. 在 Live Connect 开发人员中心内导航到<a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">我的应用程序</a>页，然后根据需要使用你的 Microsoft 帐户登录。 
+1. 在 Live Connect 开发人员中心内导航到<a href="https://account.live.com/developers/applications/index" target="_blank">我的应用程序</a>页，然后根据需要使用你的 Microsoft 帐户登录。 
 
 2. 单击**"创建应用程序"**，然后键入**"应用程序名称"**并单击**"我接受"**。
 
@@ -45,7 +45,7 @@
 
 <!-- URLs. -->
 
-["提交应用程序"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+["提交应用程序"页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+[我的应用程序]: https://account.live.com/developers/applications/index
 
 [Azure 管理门户]: https://manage.windowsazure.cn/

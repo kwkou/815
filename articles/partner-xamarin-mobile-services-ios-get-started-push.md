@@ -361,7 +361,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [向应用程序添加推送通知]: #add-push
   [更新脚本以发送推送通知]: #update-scripts
   [插入数据以接收通知]: #test
-  [XCode 5.0]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+  [XCode 5.0]: https://developer.apple.com/xcode/
   [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
   [移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-ios
   [Apple 推送通知服务]: http://go.microsoft.com/fwlink/p/?LinkId=272584

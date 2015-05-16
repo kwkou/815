@@ -20,7 +20,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.
 
 <!-- URLs. -->
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-ios-get-started-push/
-[移动服务 SDK]: https://go.microsoft.com/fwLink/p/?LinkID=268375
+[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
 
 [Management Portal]: https://manage.windowsazure.cn/
 

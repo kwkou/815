@@ -374,7 +374,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
   [后续步骤]: #whats-next
   [Access Control 服务 2.0]: https://msdn.microsoft.com/zh-CN/library/hh147631.aspx
   [0]: ./media/active-directory-dotnet-how-to-use-access-control/acs-01.png
-  [身份验证和访问工具]: http://go.microsoft.com/fwlink/?LinkID=245849
+  [身份验证和访问工具]: http://visualstudiogallery.msdn.microsoft.com/e21bf653-dfe1-4d81-b3d3-795cb104066e
   [Azure 管理门户]: http://manage.WindowsAzure.cn
   [1]: ./media/active-directory-dotnet-how-to-use-access-control/acsCreateNamespace.png
   [2]: ./media/active-directory-dotnet-how-to-use-access-control/acsQuickCreate.png

@@ -10,9 +10,9 @@
 
 >[WACOM.NOTE] 本教程有关 [Azure 移动服务](/zh-cn/services/mobile-services/)，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持<a href="/zh-cn/documentation/articles/mobile-services-ios-get-started-users/">身份验证入门</a>教程，该教程演示如何将用户登录到你的应用程序。如果这是你第一次体验移动服务，请先完成<a href="/zh-cn/documentation/articles/mobile-services-ios-get-started/">移动服务入门教程</a>。
 
-若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。
+若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="https://accounts.google.com/SignUp" target="_blank">accounts.google.com</a>。
 
-1. 导航到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268303" target="_blank">Google API</a> 网站，使用 Google 帐户凭据登录，单击**"创建项目"**，提供**"项目名称"**，然后单击**"创建"**。
+1. 导航到 <a href="https://code.google.com/apis/console/" target="_blank">Google API</a> 网站，使用 Google 帐户凭据登录，单击**"创建项目"**，提供**"项目名称"**，然后单击**"创建"**。
 
    	![][1]
 
@@ -45,7 +45,7 @@
 
 <!-- URLs. -->
 
-[Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
+[Google API]: https://code.google.com/apis/console/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 
 [Azure 管理门户]: https://manage.windowsazure.cn/

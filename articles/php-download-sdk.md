@@ -92,7 +92,7 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
 
 适用于 Mac 和 Linux 的 Azure 命令行工具是一组用于部署和管理 Azure 服务（例如，Azure 网站和 Azure 虚拟机）的命令行工具。以下列表说明如何根据你的操作系统安装工具：
 
--   **Mac**：在此处下载 Azure SDK 安装程序：[][]<http://go.microsoft.com/fwlink/?LinkId=252249></a>。打开已下载的 .pkg 文件并按照系统提示完成安装步骤。
+-   **Mac**：在此处下载 Azure SDK 安装程序：[][]<http://az412849.vo.msecnd.net/downloads04/azure-cli.0.9.2.dmg></a>。打开已下载的 .pkg 文件并按照系统提示完成安装步骤。
 
 -   **Linux**：安装最新版本的 [Node.js][Node.js]（请参阅[通过程序包管理器安装 Node.js][通过程序包管理器安装 Node.js]），然后运行以下命令：
 
@@ -117,7 +117,7 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
   [PEAR 包管理器]: http://pear.php.net/manual/en/installation.php
   [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/?LinkId=253447
   [如何使用 Azure PowerShell]: http://go.microsoft.com/fwlink/?LinkId=252718
-  []: http://go.microsoft.com/fwlink/?LinkId=252249
+  []: http://az412849.vo.msecnd.net/downloads04/azure-cli.0.9.2.dmg
   [Node.js]: http://nodejs.org/
   [通过程序包管理器安装 Node.js]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
   [如何使用适用于 Mac 和 Linux 的命令行工具]: http://go.microsoft.com/fwlink/?LinkId=252717

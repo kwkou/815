@@ -101,7 +101,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 * [什么是通知中心？]
   <br/>了解有关通知中心跨所有主要的客户端平台向您的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [调试通知中心应用程序](https://msdn.microsoft.com/zh-CN/library/dn530751.aspx)
   </br>获取故障排除和调试通知中心解决方案的指南。 
 
 * [移动服务 .NET 操作方法概念性参考]
@@ -119,9 +119,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 
 <!-- URLs. -->
-[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+[我的应用程序]: https://account.live.com/developers/applications/index
+[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users

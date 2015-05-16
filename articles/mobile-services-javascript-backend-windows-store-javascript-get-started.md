@@ -81,5 +81,5 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-users
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
-[移动服务 SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
+[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
 [管理门户]: https://manage.windowsazure.cn/

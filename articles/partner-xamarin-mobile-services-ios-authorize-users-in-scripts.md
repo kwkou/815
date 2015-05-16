@@ -101,4 +101,4 @@
   [3]: ./media/partner-xamarin-mobile-services-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
   [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
   [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-ios
-  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/p/?LinkId=262293
+  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/

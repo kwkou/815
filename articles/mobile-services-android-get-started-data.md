@@ -128,8 +128,8 @@
   [添加用于存储的数据表]: #add-table
   [更新应用程序以使用移动服务]: #update-app
   [针对移动服务测试应用程序]: #test-app
-  [移动服务 Android SDK]: http://go.microsoft.com/fwlink/p/?LinkID=280126
-  [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+  [移动服务 Android SDK]: http://zumo.blob.core.windows.net/sdk/azuresdk-android-1.1.5.zip
+  [Android SDK]: http://developer.android.com/sdk/
   [管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/mobile-services-android-get-started-data/mobile-todoitem-data-browse.png
   [使用脚本验证和修改数据]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet

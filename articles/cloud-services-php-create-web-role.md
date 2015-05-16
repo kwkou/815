@@ -210,14 +210,14 @@ Azure 计算和存储模拟器提供了一个本地环境，可在将 Azure 应�
 [执行模型-vms]: /zh-cn/documentation/articles/fundamentals-application-models/#VMachine
 [执行模型-云服务]: /zh-cn/documentation/articles/fundamentals-application-models/#CloudServices
 [Azure SDK for PHP]: /zh-cn/documentation/articles/php-download-sdk/
-[安装 ps 和模拟器]: http://go.microsoft.com/fwlink/?LinkId=253447&clcid=0x409
+[安装 ps 和模拟器]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid= azurephpsdk&mode=new
 [什么是云服务？]: /zh-cn/documentation/articles/cloud-services-what-is/
 [服务定义 (.csdef)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx
 [服务配置 (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx
 [iis.net]: http://www.iis.net/
 [sql 本机客户端]: http://msdn.microsoft.com/zh-cn/sqlserver/aa937733.aspx
 [sqlsrv 驱动程序]: http://php.net/sqlsrv
-[sqlncli.msi x64 安装程序]: http://go.microsoft.com/fwlink/?LinkID=239648
+[sqlncli.msi x64 安装程序]: http://download.microsoft.com/download/F/E/D/FEDB200F-DE2A-46D8-B661-D019DFE9D470/ENU/x64/sqlncli.msi
 [如何：导入发布设置]: /zh-cn/documentation/articles/install-configure-powershell/#ImportPubSettings
 [如何：将云服务部署到 Azure]: /zh-cn/documentation/articles/install-configure-powershell/#Deploy
 <!--HONumber=39-->

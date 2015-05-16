@@ -148,4 +148,4 @@
   [wns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=260591
   [4]: ./media/mobile-services-windows-store-javascript-create-pull-notifications/mobile-custom-api-live-tile.png
   [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-js
-  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
+  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/

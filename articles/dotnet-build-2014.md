@@ -108,13 +108,13 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
 -   [将 Azure 跨平台命令行界面用于资源管理器][将 Azure 跨平台命令行界面用于资源管理器]
 -   [版本 2014：Azure 资源组模型：适合现代云的现代管理（视频）][版本 2014：Azure 资源组模型：适合现代云的现代管理（视频）]
 
-  [Visual Studio 2013 Update 2 RC]: http://aka.ms/vs2013update2rc
+  [Visual Studio 2013 Update 2 RC]: http://www.visualstudio.com/zh-CN/downloads/prerelease-software-downloads-vs
   [Azure SDK 2.3]: http://www.windowsazure.cn/zh-cn/downloads/
-  [Azure PowerShell]: http://go.microsoft.com/?linkid=9811175
-  [Azure 跨平台命令行界面]: http://go.microsoft.com/?linkid=9828653
-  [Azure SDK for.NET 2.3 发行说明]: http://go.microsoft.com/fwlink/p/?LinkId=393548
-  [Visual Studio 2013 产品更新页面]: http://go.microsoft.com/fwlink/?LinkId=272487
-  [观看 Build 视频]: http://go.microsoft.com/fwlink/?LinkId=394377&clcid=0x409
+  [Azure PowerShell]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new
+  [Azure 跨平台命令行界面]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzureXPlatCLI&mode=new
+  [Azure SDK for.NET 2.3 发行说明]: https://msdn.microsoft.com/zh-CN/library/azure/dn655054.aspx
+  [Visual Studio 2013 产品更新页面]: http://www.visualstudio.com/zh-CN/news/news-overview-vs
+  [观看 Build 视频]: http://channel9.msdn.com/events/build/2014
   [Web 开发和发布]: #webdeploy
   [诊断和调试]: #diagnostics
   [管理 Visual Studio 中的 Azure 服务]: #service-management

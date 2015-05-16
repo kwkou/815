@@ -16,7 +16,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
     
 
 ### 迁移示例工具
-为协助此过程，我们已创建[联合迁移实用工具](http://go.microsoft.com/?linkid=9862613)。该工具将完成步骤 1 和 3。 
+为协助此过程，我们已创建[联合迁移实用工具](http://code.msdn.microsoft.com/vstudio/Federations-Migration-ce61e9c1)。该工具将完成步骤 1 和 3。 
 
 ## <a name="create-shard-map-manager"></a>从联合根创建分片映射管理器
 迁移联合应用程序的第一步是将联合根的元数据克隆到分片映射管理器的结构中。 

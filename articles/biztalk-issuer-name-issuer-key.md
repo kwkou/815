@@ -63,7 +63,7 @@ Access Control 颁发者名称和颁发者密钥由以下各项使用：
 <div class="dev-callout"> 
 <b>重要说明</b> 
 <p>在使用<b>“Active Directory”</b>创建 Access Control 命名空间时，<strong>不</strong>自动创建服务标识。在你设置某一 BizTalk 服务时，将自动创建 Access Control 命名空间、名为&ldquo;所有者&rdquo;的服务标识（颁发者名称）、密码（颁发者密钥）和对称密钥。</p> 
-<p><a href="http://go.microsoft.com/fwlink/p/?LinkID=303942">如何：使用 ACS 管理服务配置服务标识</a>提供了有关 Access Control 服务标识的详细信息。</p>
+<p><a href="https://msdn.microsoft.com/zh-CN/library/azure/hh135148.aspx">如何：使用 ACS 管理服务配置服务标识</a>提供了有关 Access Control 服务标识的详细信息。</p>
 </div>
 
 ## 服务总线 颁发者名称和颁发者密钥
@@ -98,15 +98,15 @@ Access Control 颁发者名称和颁发者密钥由以下各项使用：
 -   [BizTalk 服务：备份和还原][BizTalk 服务：备份和还原]
 -   [BizTalk 服务：限制][BizTalk 服务：限制]
 
-  [Azure 管理门户]: http://go.microsoft.com/fwlink/p/?LinkID=213885
-  [如何：使用 ACS 管理服务配置服务标识]: http://go.microsoft.com/fwlink/p/?LinkID=303942
-  [安装 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=241589
-  [教程：Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=236944
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
-  [Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=303664
-  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
-  [BizTalk 服务：使用 Azure 管理门户进行设置]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [BizTalk 服务：设置状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
-  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
-  [BizTalk 服务：备份和还原]: http://go.microsoft.com/fwlink/p/?LinkID=329873
-  [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
+  [Azure 管理门户]: http://manage.windowsazure.cn
+  [如何：使用 ACS 管理服务配置服务标识]: https://msdn.microsoft.com/zh-CN/library/azure/hh135148.aspx
+  [安装 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689760.aspx
+  [教程：Azure BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689895.aspx
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx
+  [Azure BizTalk 服务]: http://azure.microsoft.com/zh-CN/documentation/services/biztalk-services/
+  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: /documentation/articles/biztalk-editions-feature-chart/
+  [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/
+  [BizTalk 服务：设置状态图表]: /documentation/articles/biztalk-service-state-chart/
+  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：备份和还原]: /documentation/articles/biztalk-backup-restore/
+  [BizTalk 服务：限制]: /documentation/articles/biztalk-throttling-thresholds/

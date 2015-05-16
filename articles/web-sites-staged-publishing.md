@@ -159,7 +159,7 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 您可以通过使用 **New-AzureWebsite** cmdlet 并指定站点和槽的名称，为“标准”模式下的任何网站创建站点槽。还表示与用于创建部署槽的站点相同的区域，如以下示例所示。
 
-`New-AzureWebsite siteslotstest –Slot staging –Location “West US”`
+`New-AzureWebsite siteslotstest –Slot staging –Location “China North”`
 
 ------------------------------------------------------------------------
 

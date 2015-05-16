@@ -30,7 +30,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。</p>
+<p>若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="https://accounts.google.com/SignUp" target="_blank">accounts.google.com</a>。</p>
 </div>
 
 1.  导航到 [Google API][] 网站，使用你的 Google 帐户凭据登录，然后单击“Create project...”（创建项目...） 。
@@ -235,8 +235,8 @@
   [更新脚本以发送推送通知]: #update-scripts
   [插入数据以接收通知]: #test
   [移动服务入门]: /develop/mobile/tutorials/get-started-xamarin-android
-  [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
-  [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
+  [accounts.google.com]: https://accounts.google.com/SignUp
+  [Google API]: https://code.google.com/apis/console/
   [0]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-services-google-developers.png
   [1]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-services-google-create-server.png
   [2]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-services-google-create-server2.png
@@ -247,6 +247,6 @@
   [PushSharp Github 页]: https://github.com/Redth/PushSharp
   [6]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-portal-data-tables.png
   [7]: ./media/partner-xamarin-mobile-services-android-get-started-push/mobile-insert-script-push2.png
-  [GCM 对象]: http://go.microsoft.com/fwlink/p/?LinkId=282645
+  [GCM 对象]: https://msdn.microsoft.com/zh-CN/library/dn126137.aspx
   [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331303
   [向应用程序用户推送通知]: /develop/mobile/tutorials/push-notifications-to-users-android

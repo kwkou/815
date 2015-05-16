@@ -331,7 +331,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [将你的应用程序连接到通知中心]: #connecting-app
   [从后端发送通知]: #send
   [移动服务 iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
-  [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+  [XCode 4.5]: https://developer.apple.com/xcode/
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
 
 <!-- Images. -->

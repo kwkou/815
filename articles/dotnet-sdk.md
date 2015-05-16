@@ -8,7 +8,7 @@
 
 Azure SDK for .NET 是一套应用程序，其中包括 Visual Studio 工具、命令行工具、运行时二进制文件和客户端库，可帮助你开发、测试和部署在 Azure 中运行的应用程序。本文详细介绍了安装 SDK 时获得的内容。你可以从 ["Azure 下载"页](/downloads/) 下载 SDK。 
 
-Azure SDK for .NET 还包含使用 Azure 服务所需的客户端库。这些库使用 [NuGet](http://go.microsoft.com/fwlink/?LinkId=510472) 单独进行安装。
+Azure SDK for .NET 还包含使用 Azure 服务所需的客户端库。这些库使用 [NuGet](http://www.nuget.org/packages?q=windowsazureofficial) 单独进行安装。
 
 ## 目录
 
@@ -96,13 +96,13 @@ Azure SDK for .NET 将安装以下产品：
 
 有几项功能需要用于 Azure 开发，但却未包括在 SDK 安装内容中。这其中，最重要的是下列功能：
 
-* [客户端库](http://go.microsoft.com/fwlink/?LinkId=510472)。
+* [客户端库](http://www.nuget.org/packages?q=windowsazureofficial)。
 
-	Azure SDK 包括使用 Azure 服务时所需的客户端库，但你在安装 SDK 时并未安装所有这些库。如果你的应用程序需要的客户端库 SDK 并没有安装，你可以从 [NuGet.org](http://go.microsoft.com/fwlink/?LinkId=510472) 获取。如果你的应用程序使用的客户端库是 SDK 安装的，则最好是使用 NuGet.org 上的最新版本对其进行更新。
+	Azure SDK 包括使用 Azure 服务时所需的客户端库，但你在安装 SDK 时并未安装所有这些库。如果你的应用程序需要的客户端库 SDK 并没有安装，你可以从 [NuGet.org](http://www.nuget.org/packages?q=windowsazureofficial) 获取。如果你的应用程序使用的客户端库是 SDK 安装的，则最好是使用 NuGet.org 上的最新版本对其进行更新。
 
   	**客户端库的本地副本。**Azure SDK for .NET 会将某些 Azure客户端库（如存储、Service Bus 和 Caching）的 NuGet 包复制到你的计算机。这些客户端库会自动包括在新的云服务项目中，因此即使没有连接到 Internet，你也可以使用本地 NuGet 包通过 Visual Studio 来创建项目。与发布新的 SDK 版本相比，客户端库通常会进行更频繁的更新，因此 NuGet.org 上的客户端库通常要比你通过 SDK 获取的新。
 
-	**包含客户端库的项目模板。**仅 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/) 和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/) 项目模板会自动包括某些客户端库。若需其他库或其他模板，请安装所需的 [客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
+	**包含客户端库的项目模板。**仅 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/) 和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/) 项目模板会自动包括某些客户端库。若需其他库或其他模板，请安装所需的 [客户端库 NuGet 包](http://www.nuget.org/packages?q=windowsazureofficial)。
 
 * [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
 
@@ -130,7 +130,7 @@ Azure SDK for .NET 将安装以下产品：
 
 ###<a id="clientlib"></a>我想要一个客户端库。我必须安装 Azure SDK for .NET 才能获取它吗？
 
-该 SDK 仅安装客户端库，因此在没有连接到 Internet 的情况下，你也可以创建云服务项目。最新客户端库在 [NuGet.org](http://go.microsoft.com/fwlink/?LinkId=510472) 上的 NuGet 包中提供。有关详细信息，请参阅 [在安装 Azure SDK for .NET 时未获得的内容]，(#notincluded) 位于本文档前面。
+该 SDK 仅安装客户端库，因此在没有连接到 Internet 的情况下，你也可以创建云服务项目。最新客户端库在 [NuGet.org](http://www.nuget.org/packages?q=windowsazureofficial) 上的 NuGet 包中提供。有关详细信息，请参阅 [在安装 Azure SDK for .NET 时未获得的内容]，(#notincluded) 位于本文档前面。
 
 ###<a id="olderversions"></a>哪里可以找到较旧版本的 Azure SDK for .NET？
 
@@ -138,7 +138,7 @@ Azure SDK for .NET 将安装以下产品：
 
 ###<a id="lifecycle"></a>Azure SDK for .NET 版本的生命周期策略是什么？
 
-请参阅 [Microsoft Azure 云服务支持生命周期策略](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq)。
+请参阅 [Microsoft Azure 云服务支持生命周期策略](https://support.microsoft.com/gp/azure-cloud-lifecycle-faq)。
 
 ###<a id="guestos"></a>哪些来宾操作系统版本是 Azure SDK for .NET 兼容的？
 

@@ -595,7 +595,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 
 [hdinsight-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
 
-[hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
+[hdinsight-cmdlets-download]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409
 [hdinsight-storage]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
 
 [hdinsight-emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
@@ -614,7 +614,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
 [powershell-download]: http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools
-[powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
+[powershell-about-profiles]: https://technet.microsoft.com/zh-CN/library/hh847857.aspx
 [powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx

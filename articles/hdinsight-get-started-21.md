@@ -203,7 +203,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 -   [为 HDInsight 开发 C\# Hadoop 流程序][hdinsight-develop-streaming]
 -   [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
-<!-- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ -->
+<!-- [azure-member-offers]: http://azure.microsoft.com/zh-CN/pricing/member-offers/ -->
 
 [hdinsight-versions]: ../hdinsight-component-versioning/
 
@@ -222,7 +222,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 <!--
-[azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/
+[azure-member-offers]: http://azure.microsoft.com/zh-CN/pricing/member-offers/
 -->
 [azure-free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
@@ -230,7 +230,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 [apache-hadoop]: http://hadoop.apache.org/
 
-[powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
+[powershell-download]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409
 [powershell-install-configure]: ../install-configure-powershell/
 [powershell-open]: ../install-configure-powershell/#Install
 

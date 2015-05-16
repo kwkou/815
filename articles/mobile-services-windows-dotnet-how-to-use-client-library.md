@@ -485,7 +485,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 在此情况下，移动服务将通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成移动服务身份验证令牌。[LoginAsync 方法]将返回 [MobileServiceUser]]，该类将提供已经过身份验证的用户的 [userId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌]。
 
 > [AZURE.NOTE] **Windows 应用商店应用程序**
-当你使用 Microsoft 帐户登录提供程序对 Windows 应用商店应用程序的用户进行身份验证时，还应该将应用程序包注册到移动服务。将 Windows 应用商店应用程序包信息注册到移动服务后，客户端可以重复使用 Microsoft 帐户登录凭据来提供单一登录体验。如果你不执行此操作，则每次调用 login 方法时，系统都会向 Microsoft 帐户登录用户显示登录提示。若要了解如何注册 Windows 应用商店应用程序包，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/develop/mobile/how-to-guides/register-windows-store-app-package/%20target="_blank")。将程序包信息注册到移动服务后，请为 _useSingleSignOn_ 参数提供 **true** 值以重复使用凭据，方便调用 [LoginAsync](http://go.microsoft.com/fwlink/p/?LinkId=311594%20target="_blank") 方法。
+当你使用 Microsoft 帐户登录提供程序对 Windows 应用商店应用程序的用户进行身份验证时，还应该将应用程序包注册到移动服务。将 Windows 应用商店应用程序包信息注册到移动服务后，客户端可以重复使用 Microsoft 帐户登录凭据来提供单一登录体验。如果你不执行此操作，则每次调用 login 方法时，系统都会向 Microsoft 帐户登录用户显示登录提示。若要了解如何注册 Windows 应用商店应用程序包，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/develop/mobile/how-to-guides/register-windows-store-app-package/%20target="_blank")。将程序包信息注册到移动服务后，请为 _useSingleSignOn_ 参数提供 **true** 值以重复使用凭据，方便调用 [LoginAsync](https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.singlesignonextensions.loginasync.aspx%20target="_blank") 方法。
 
 <h3>客户端流</h3>
 
@@ -709,36 +709,36 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 <!-- URLs. -->
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[移动服务 SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
+[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
 [Windows 应用商店快速入门教程]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [Windows Phone 快速入门教程]:/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-wp8/
 [Windows 应用商店数据处理入门教程]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
 [Windows Phone 数据处理入门教程]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-wp8/
 [Windows 应用商店身份验证]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [Windows Phone 身份验证]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-wp8/
-[PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
-[移动服务 SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[ProtectedData]: http://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
+[PasswordVault]: https://msdn.microsoft.com/zh-CN/library/windows/apps/windows.security.credentials.passwordvault.aspx
+[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
+[ProtectedData]: https://msdn.microsoft.com/zh-CN/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [移动服务 SDK]: http://nuget.org/packages/WindowsAzure.MobileServices/
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [使用脚本验证和修改数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
 [使用分页优化查询]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
-[LoginAsync 方法]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
-[MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider.aspx
-[MobileServiceUser]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
-[UserID]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
-[MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
+[LoginAsync 方法]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
+[MobileServiceAuthenticationProvider]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider.aspx
+[MobileServiceUser]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
+[UserID]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
+[MobileServiceAuthenticationToken]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [用于管理移动服务表的 CLI]: /zh-cn/documentation/articles/command-line-tools/#Mobile_Tables
 [管理移动服务表的 CLI]: /zh-cn/documentation/articles/command-line-tools/#Mobile_Tables
 [乐观并发教程]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/
 
-[IncludeTotalCount]: http://msdn.microsoft.com/library/windowsazure/dn250560.aspx 
-[Skip]: http://msdn.microsoft.com/library/windowsazure/dn250573.aspx
-[Take]: http://msdn.microsoft.com/library/windowsazure/dn250574.aspx 
+[IncludeTotalCount]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn250560.aspx 
+[Skip]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn250573.aspx
+[Take]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn250574.aspx 
 [Fiddler]: http://www.telerik.com/fiddler
 [在 Azure 移动服务客户端 SDK 中自定义 API]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [从客户端调用自定义 API]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api/
-[InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
+[InvokeApiAsync]: https://msdn.microsoft.com/zh-CN/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx

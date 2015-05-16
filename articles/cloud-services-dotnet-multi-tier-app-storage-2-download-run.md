@@ -47,7 +47,7 @@
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。因此，你可以不支付任何费用就开始 Azure 开发。
 你可以创建一个[免费试用帐户][免费试用帐户]。
 
-> [WACOM.NOTE] 在下面关于 SDK 安装的部分，正确的链接（如果你使用的是 Visual Studio 2013）为 <http://go.microsoft.com/fwlink/?LinkID=324322>。
+> [WACOM.NOTE] 在下面关于 SDK 安装的部分，正确的链接（如果你使用的是 Visual Studio 2013）为 <https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids>。
 
 [WACOM.INCLUDE [install-sdk-2012-only](../includes/install-sdk-2012-only.md)]
 

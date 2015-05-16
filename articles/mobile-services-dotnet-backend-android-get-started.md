@@ -125,11 +125,11 @@
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-android-get-started/ "JavaScript 后端"
   [JavaScript 后端版本]: /zh-cn/documentation/articles/mobile-services-android-get-started/
   [0]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png
-  [Android 开发人员工具]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+  [Android 开发人员工具]: http://developer.android.com/sdk/
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28
   [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md
   [1]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-vs.png
-  [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=391934
+  [Visual Studio Professional 2013]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-professional
   [mobile-services-dotnet-backend-test-local-service]: ../includes/mobile-services-dotnet-backend-test-local-service.md
   [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
   [管理门户]: https://manage.windowsazure.cn/

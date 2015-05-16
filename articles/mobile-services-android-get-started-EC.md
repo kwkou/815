@@ -158,7 +158,7 @@ wacn.date="04/15/2015"
 [身份验证入门]: /documentation/articles/mobile-services-android-get-started-users/
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push/
 [Android SDK]: http://developer.android.com/sdk/
-[移动服务 Android SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios.md#sdk-downloads
+[移动服务 Android SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
 
 [管理门户]: https://manage.windowsazure.cn/
 

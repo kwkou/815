@@ -47,7 +47,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 [WACOM.INCLUDE [mobile-services-windows-universal-dotnet-authenticate-app](../includes/mobile-services-windows-universal-dotnet-authenticate-app.md)] 
 
-[AZURE.NOTE]如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 <em>useSingleSignOn</em> 参数提供 <strong>true</strong> 值以调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> 方法。如果你不执行此操作，则每次调用 login 方法时，系统将继续向你的用户显示登录提示。
+[AZURE.NOTE]如果已将 Windows 应用商店应用程序包信息注册到移动服务，则应该为 <em>useSingleSignOn</em> 参数提供 <strong>true</strong> 值以调用 <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.singlesignonextensions.loginasync.aspx" target="_blank">LoginAsync</a> 方法。如果你不执行此操作，则每次调用 login 方法时，系统将继续向你的用户显示登录提示。
 
 ##<a name="tokens"></a>在客户端上存储授权令牌
 
@@ -67,9 +67,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 
 <!-- URLs. -->
-["提交应用"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+["提交应用"页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+[我的应用程序]: https://account.live.com/developers/applications/index
+[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
 [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/

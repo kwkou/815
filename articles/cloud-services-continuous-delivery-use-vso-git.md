@@ -18,7 +18,7 @@
 <div class="wa-note">
   <span class="wa-icon-bulb"></span>
   <h5><a name="note"></a>你需要使用一个 Visual Studio Online 帐户来完成本教程：</h5>
-<p>你可以 <a href="http://go.microsoft.com/fwlink/p/?LinkId=512979">免费建立一个 Visual Studio Online 帐户</a>。</p>
+<p>你可以 <a href="http://www.visualstudio.com/get-started/sign-up-for-visual-studio-online">免费建立一个 Visual Studio Online 帐户</a>。</p>
 </div>
 
 若要使用 Visual Studio Online 将云服务设置为自动生成并部署到 Azure，请执行下列步骤：
@@ -40,7 +40,7 @@
 <h2> <a name="step1"></a>步骤 1：创建 Git 存储库</h2>
 
 
-1. 如果还没有 Visual Studio Online 帐户，请按照[此处](http://go.microsoft.com/fwlink/?LinkId=397665)的说明操作。创建团队项目时，请选择 Git 作为源代码管理系统。按照说明将 Visual Studio 连接到你的团队项目。
+1. 如果还没有 Visual Studio Online 帐户，请按照[此处](http://www.visualstudio.com/get-started/connect-to-vs)的说明操作。创建团队项目时，请选择 Git 作为源代码管理系统。按照说明将 Visual Studio 连接到你的团队项目。
 
 2. 在团队资源管理器中，选择"克隆此存储库"链接。**** 
 ![][3]
@@ -199,7 +199,7 @@
 
 11. 导航到"生成"视图并查找刚刚为工作分支触发的生成****。
 
-有关详细信息，请参阅 [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861)。有关使用 Git 和 Visual Studio Online 的其他提示，请参阅[在 Git 中共享你的代码](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx)，有关使用不受 Visual Studio Online 管理可发布到 Azure 的 Git 存储库的信息，请参阅[从到 Azure 网站的源代码控制发布]。(/zh-cn/documentation/articles/web-sites-publish-source-control)。
+有关详细信息，请参阅 [Visual Studio Online](https://www.visualstudio.com/)。有关使用 Git 和 Visual Studio Online 的其他提示，请参阅[在 Git 中共享你的代码](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx)，有关使用不受 Visual Studio Online 管理可发布到 Azure 的 Git 存储库的信息，请参阅[从到 Azure 网站的源代码控制发布]。(/zh-cn/documentation/articles/web-sites-publish-source-control)。
 
 [步骤 1：创建 Git 存储库。]: #step1
 [步骤 2：创建一个项目并将其推送到 Git 存储库。]: #step2

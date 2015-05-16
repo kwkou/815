@@ -33,4 +33,4 @@
 
 下载： [“了解 Azure 上的 NoSQL 技术”PDF 文件][]
 
-  [“了解 Azure 上的 NoSQL 技术”PDF 文件]: http://go.microsoft.com/fwlink/p/?LinkId=330292&clcid=0x804
+  [“了解 Azure 上的 NoSQL 技术”PDF 文件]: http://download.microsoft.com/download/6/2/9/629DE0C3-73C4-49CD-8BF2-CCF189D0EA6B/Azure%20NoSQL%20Technologies-Chappell-v2.pdf

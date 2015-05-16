@@ -9,7 +9,7 @@ Media Services 入门
 
 本教程说明如何开始使用 Azure Media Services 进行开发。其中介绍了基本的 Media Services 工作流，以及进行 Media Services 开发需要用到的最常见编程对象和任务。完成本教程后，你就能够播放你上载、编码和下载的示例媒体文件。你还可以通过浏览找到编码的资产并在服务器上播放。
 
-可从以下位置获取包含本教程中所述代码的 C\# Visual Studio 项目：[下载](http://go.microsoft.com/fwlink/?linkid=253275)。
+可从以下位置获取包含本教程中所述代码的 C\# Visual Studio 项目：[下载](http://code.msdn.microsoft.com/Windows-Azure-Media-040435f8)。
 
 本教程将指导你完成以下基本步骤：
 
@@ -23,7 +23,7 @@ Media Services 入门
 
 若要完成演练并基于 Azure Media Services SDK 进行开发，必须满足以下先决条件。
 
--   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。有关详细信息，请参阅[如何创建 Media Services 帐户](http://go.microsoft.com/fwlink/?LinkId=256662)。
+-   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。有关详细信息，请参阅[如何创建 Media Services 帐户](http://www.windowsazure.com/zh-CN/manage/services/media-services/how-to-create-a-media-services-account/)。
 -   操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 -   .NET Framework 4.5 或 .NET Framework 4。
 -   Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）。
@@ -61,7 +61,7 @@ Media Services 入门
      
     ```
 
-5.  在本地计算机上创建一个新的文件夹并将其命名为 supportFiles（在本例中，supportFiles 在 MediaServicesGettingStarted 项目目录的下面。）本演练随附的[项目](http://go.microsoft.com/fwlink/?linkid=253275)包含 supportFiles 目录。你可以将此目录的内容复制到你的 supportFiles 文件夹中。
+5.  在本地计算机上创建一个新的文件夹并将其命名为 supportFiles（在本例中，supportFiles 在 MediaServicesGettingStarted 项目目录的下面。）本演练随附的[项目](http://code.msdn.microsoft.com/Windows-Azure-Media-040435f8)包含 supportFiles 目录。你可以将此目录的内容复制到你的 supportFiles 文件夹中。
 
 6.  使用以下代码覆盖位于 Program.cs 文件开头的现有 using 语句。
 

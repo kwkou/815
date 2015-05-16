@@ -37,7 +37,7 @@
 
     在将项插入到 TodoItem 表之前，此脚本将向该项添加一个 userId 值（经过身份验证的用户的 ID）。 
 
-    > [AZURE.IMPORTANT] 首次运行此 insert 脚本时，必须启用动态架构。启用动态架构后，移动服务在首次执行时会自动将 **userId** 列添加到 **TodoItem** 表。默认情况下，将为新的移动服务启用动态架构，发布应用程序之前应该禁用动态架构。
+    > [AZURE.NOTE] 首次运行此 insert 脚本时，必须启用动态架构。启用动态架构后，移动服务在首次执行时会自动将 **userId** 列添加到 **TodoItem** 表。默认情况下，将为新的移动服务启用动态架构，发布应用程序之前应该禁用动态架构。
 
 5. 重复步骤 3 和 4，以将现有 **Read** 操作替换为以下函数：
 
@@ -90,7 +90,7 @@
 <!-- URLs. -->
 
 [移动服务服务器脚本参考]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts
-["我的应用程序"仪表板]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+["我的应用程序"仪表板]: https://account.live.com/developers/applications/index
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-html
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html

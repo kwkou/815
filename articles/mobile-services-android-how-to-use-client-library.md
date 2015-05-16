@@ -832,8 +832,8 @@
   [Android]: /develop/mobile/how-to-guides/work-with-android-client-library/ "Android"
   [Xamarin]: /develop/mobile/how-to-guides/work-with-xamarin-client-library/ "Xamarin"
   [移动服务快速入门]: /develop/mobile/tutorials/get-started-android/
-  [移动服务 SDK]: http://go.microsoft.com/fwlink/p/?linkid=280126
-  [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125&clcid=0x409
+  [移动服务 SDK]: http://zumo.blob.core.windows.net/sdk/azuresdk-android-1.1.5.zip
+  [Android SDK]: http://developer.android.com/sdk/&clcid=0x409
   [什么是移动服务]: #what-is
   [概念]: #concepts
   [安装与先决条件]: #setup
@@ -863,71 +863,71 @@
   [自定义序列化]: #serialization
   [后续步骤]: #next-steps
   [mobile-services-concepts]: ../includes/mobile-services-concepts.md
-  [创建表]: http://go.microsoft.com/fwlink/p/?LinkId=298592
-  [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
+  [创建表]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193162.aspx
+  [动态架构]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193175.aspx
   [MobileServiceClient]: http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html
   [gson]: http://go.microsoft.com/fwlink/p/?LinkId=290801
-  [MobileServiceTable]: http://go.microsoft.com/fwlink/p/?LinkId=296835
-  [第一个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296839
-  [第二个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296840
-  ["TableQueryCallback\<E\>"]: http://go.microsoft.com/fwlink/p/?LinkId=296849
-  ["where"]: http://go.microsoft.com/fwlink/p/?LinkId=296867
-  ["field"]: http://go.microsoft.com/fwlink/p/?LinkId=296869
-  ["eq"]: http://go.microsoft.com/fwlink/p/?LinkId=298461
-  ["ne"]: http://go.microsoft.com/fwlink/p/?LinkId=298462
-  ["gt"]: http://go.microsoft.com/fwlink/p/?LinkId=298463
-  ["ge"]: http://go.microsoft.com/fwlink/p/?LinkId=298464
-  ["lt"]: http://go.microsoft.com/fwlink/p/?LinkId=298465
-  ["le"]: http://go.microsoft.com/fwlink/p/?LinkId=298466
-  ["year"]: http://go.microsoft.com/fwlink/p/?LinkId=298467
-  ["month"]: http://go.microsoft.com/fwlink/p/?LinkId=298468
-  ["day"]: http://go.microsoft.com/fwlink/p/?LinkId=298469
-  ["hour"]: http://go.microsoft.com/fwlink/p/?LinkId=298470
-  ["minute"]: http://go.microsoft.com/fwlink/p/?LinkId=298471
-  ["second"]: http://go.microsoft.com/fwlink/p/?LinkId=298472
-  ["startsWith"]: http://go.microsoft.com/fwlink/p/?LinkId=298473
-  ["endsWith"]: http://go.microsoft.com/fwlink/p/?LinkId=298474
-  ["concat"]: http://go.microsoft.com/fwlink/p/?LinkId=298475
-  ["subString"]: http://go.microsoft.com/fwlink/p/?LinkId=298477
-  ["indexOf"]: http://go.microsoft.com/fwlink/p/?LinkId=298488
-  ["replace"]: http://go.microsoft.com/fwlink/p/?LinkId=298491
-  ["toLower"]: http://go.microsoft.com/fwlink/p/?LinkId=298492
-  ["toUpper"]: http://go.microsoft.com/fwlink/p/?LinkId=298493
-  ["trim"]: http://go.microsoft.com/fwlink/p/?LinkId=298495
-  ["length"]: http://go.microsoft.com/fwlink/p/?LinkId=298496
-  ["add"]: http://go.microsoft.com/fwlink/p/?LinkId=298497
-  ["sub"]: http://go.microsoft.com/fwlink/p/?LinkId=298499
-  ["mul"]: http://go.microsoft.com/fwlink/p/?LinkId=298500
-  ["div"]: http://go.microsoft.com/fwlink/p/?LinkId=298502
-  ["mod"]: http://go.microsoft.com/fwlink/p/?LinkId=298503
-  ["floor"]: http://go.microsoft.com/fwlink/p/?LinkId=298505
-  ["ceiling"]: http://go.microsoft.com/fwlink/p/?LinkId=298506
-  ["round"]: http://go.microsoft.com/fwlink/p/?LinkId=298507
-  ["and"]: http://go.microsoft.com/fwlink/p/?LinkId=298512
-  ["or"]: http://go.microsoft.com/fwlink/p/?LinkId=298514
-  ["not"]: http://go.microsoft.com/fwlink/p/?LinkId=298515
+  [MobileServiceTable]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html
+  [第一个重载]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html#getTable(java.lang.Class)
+  [第二个重载]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html#getTable(java.lang.String, java.lang.Class)
+  ["TableQueryCallback\<E\>"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/TableQueryCallback.html
+  ["where"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#where()
+  ["field"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#field(java.lang.String)
+  ["eq"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#eq()
+  ["ne"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#ne()
+  ["gt"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#gt()
+  ["ge"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#ge()
+  ["lt"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#lt()
+  ["le"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#le()
+  ["year"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#year(java.lang.String)
+  ["month"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#month(java.lang.String)
+  ["day"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#day(java.lang.String)
+  ["hour"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#hour(java.lang.String)
+  ["minute"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#minute(java.lang.String)
+  ["second"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#second(java.lang.String)
+  ["startsWith"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#startsWith(java.lang.String, java.lang.String)
+  ["endsWith"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#endsWith(java.lang.String, java.lang.String)
+  ["concat"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#concat(com.microsoft.windowsazure.mobileservices.MobileServiceQuery, com.microsoft.windowsazure.mobileservices.MobileServiceQuery)
+  ["subString"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#subString(java.lang.String, int, int)
+  ["indexOf"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#indexOf(java.lang.String, java.lang.String)
+  ["replace"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#replace(java.lang.String, java.lang.String, java.lang.String)
+  ["toLower"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#toLower(java.lang.String)
+  ["toUpper"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#toUpper(java.lang.String)
+  ["trim"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#trim(java.lang.String)
+  ["length"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#length(java.lang.String)
+  ["add"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#add(java.lang.Number)
+  ["sub"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#sub(java.lang.Number)
+  ["mul"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#mul(java.lang.Number)
+  ["div"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#div(java.lang.Number)
+  ["mod"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#mod(java.lang.Number)
+  ["floor"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#floor(com.microsoft.windowsazure.mobileservices.MobileServiceQuery)
+  ["ceiling"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#ceiling(com.microsoft.windowsazure.mobileservices.MobileServiceQuery)
+  ["round"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#round(com.microsoft.windowsazure.mobileservices.MobileServiceQuery)
+  ["and"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#and()
+  ["or"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#or()
+  ["not"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#not()
   [了解移动服务 Android 客户端查询模型的丰富功能]: http://hashtagfail.com/post/46493261719/mobile-services-android-querying
-  ["orderBy"]: http://go.microsoft.com/fwlink/p/?LinkId=298519
-  ["QueryOrder"]: http://go.microsoft.com/fwlink/p/?LinkId=298521
-  ["select"]: http://go.microsoft.com/fwlink/p/?LinkId=290689
-  [1]: http://go.microsoft.com/fwlink/p/?LinkId=296296
-  [2]: http://go.microsoft.com/fwlink/p/?LinkId=296313
-  ["top"]: http://go.microsoft.com/fwlink/p/?LinkId=298731
-  ["MobileServiceQuery\<T\>"]: http://go.microsoft.com/fwlink/p/?LinkId=298551
-  ["execute"]: http://go.microsoft.com/fwlink/p/?LinkId=298554
-  ["insert"]: http://go.microsoft.com/fwlink/p/?LinkId=296862
-  ["TableOperationCallback\<ToDoItem\>"]: http://go.microsoft.com/fwlink/p/?LinkId=296865
+  ["orderBy"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#orderBy(java.lang.String, com.microsoft.windowsazure.mobileservices.QueryOrder)
+  ["QueryOrder"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/QueryOrder.html
+  ["select"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#select(java.lang.String...)
+  [1]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#where()
+  [2]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#orderBy(java.lang.String, com.microsoft.windowsazure.mobileservices.QueryOrder)
+  ["top"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#top(int)
+  ["MobileServiceQuery\<T\>"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html
+  ["execute"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceQuery.html#execute(E)
+  ["insert"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceTable.html#insert(E, com.microsoft.windowsazure.mobileservices.TableOperationCallback)
+  ["TableOperationCallback\<ToDoItem\>"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/TableOperationCallback.html
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
   [用于管理移动服务表的 CLI]: /manage/linux/other-resources/command-line-tools/#Mobile_Tables
-  ["TableDeleteCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=296858
-  [MobileServicesJsonTable]: http://go.microsoft.com/fwlink/p/?LinkId=298733
-  [getTable()]: http://go.microsoft.com/fwlink/p/?LinkId=298734
+  ["TableDeleteCallback"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/TableDeleteCallback.html
+  [MobileServicesJsonTable]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceJsonTable.html
+  [getTable()]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html#getTable(java.lang.String)
   ["JsonObject"]: http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html
-  [3]: http://go.microsoft.com/fwlink/p/?LinkId=298535
-  ["TableJsonOperationCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=298532
-  ["TableJsonQueryCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=298543
-  [身份验证入门]: http://go.microsoft.com/fwlink/p/?LinkId=296316
+  [3]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceJsonTable.html#insert(com.google.gson.JsonObject, com.microsoft.windowsazure.mobileservices.TableJsonOperationCallback)
+  ["TableJsonOperationCallback"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/TableJsonOperationCallback.html
+  ["TableJsonQueryCallback"]: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/TableJsonQueryCallback.html
+  [身份验证入门]: https://www.windowsazure.com/zh-CN/develop/mobile/tutorials/get-started-with-users-android/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [此处]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
   [在移动服务 Android 客户端中使用]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
-  []: http://go.microsoft.com/fwlink/p/?LinkId=298735 "此处"
+  []: http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/package-summary.html "此处"

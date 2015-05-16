@@ -254,7 +254,7 @@
   [向应用程序添加推送通知]: #add-push
   [更新脚本以发送推送通知]: #update-scripts
   [插入数据以接收通知]: #test
-  [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
+  [移动服务 Android SDK]: http://zumo.blob.core.windows.net/sdk/azuresdk-android-1.1.5.zip
   [移动服务入门]: /develop/mobile/tutorials/get-started-android
   [启用 GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Azure 管理门户]: https://manage.windowsazure.cn/
@@ -263,7 +263,7 @@
   []: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
   [1]: ./media/mobile-services-android-get-started-push/mobile-push-tab-android.png
   [添加 Play Services]: ../includes/mobile-services-add-Google-play-services.md
-  [设置 Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
+  [设置 Google Play Services SDK]: http://developer.android.com/google/play-services/setup.html
   [2]: ./media/mobile-services-android-get-started-push/mobile-services-android-create-class.png
   [3]: ./media/mobile-services-android-get-started-push/mobile-portal-data-tables.png
   [4]: ./media/mobile-services-android-get-started-push/mobile-insert-script-push2.png

@@ -17,11 +17,11 @@
 2. 安装 Azure SDK 的每个组件，使用以下列表中的链接，并遵循相应的顺序。选择以下每个组件的 x86 或 x64 版本。
 
 <ul>
-   <li>Azure 创作工具：<a href="http://go.microsoft.com/fwlink/p/?LinkId=400892">MicrosoftAzureAuthoringTools-x86.msi</a> 或 <a href="http://go.microsoft.com/fwlink/p/?LinkId=400893">MicrosoftAzureAuthoringTools-x64.msi</a>。</li>
-   <li>Azure 计算模拟器：<a href="http://go.microsoft.com/fwlink/p/?LinkId=400894">MicrosoftAzureEmulator-x86.exe</a> 或 <a href="http://go.microsoft.com/fwlink/p/?LinkId=400895">MicrosoftAzureEmulator-x64.exe</a>。</li>
-   <li>Azure 客户端库：<a href="http://go.microsoft.com/fwlink/p/?LinkId=400896">MicrosoftAzureLibsForNet-x86.msi</a> 或 <a href="http://go.microsoft.com/fwlink/p/?LinkId=400897">MicrosoftAzureLibsForNet-x64.msi</a>。</li>
-   <li>存储模拟器：<a href="http://go.microsoft.com/fwlink/p/?LinkId=400904">MicrosoftAzureStorageEmulator.msi</a>。                            如果你收到有关本地 SQL 数据库的警告，请在安装 SQL Server LocalDB 11.0 时从<a href="http://go.microsoft.com/fwlink/p/?LinkId=400778">此位置</a>选择 x86 版本的，或从<a href="http://go.microsoft.com/fwlink/p/?LinkId=400779">此位置</a>选择 x64 版本的。</li>
-   <li> Azure Tools for Visual Studio：<a href="http://go.microsoft.com/fwlink/p/?LinkId=400903">WindowsAzureTools.vs140.exe</a>。</li>
+   <li>Azure 创作工具：<a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/MicrosoftAzureAuthoringTools-x86.msi">MicrosoftAzureAuthoringTools-x86.msi</a> 或 <a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/MicrosoftAzureAuthoringTools-x64.msi">MicrosoftAzureAuthoringTools-x64.msi</a>。</li>
+   <li>Azure 计算模拟器：<a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/MicrosoftAzureComputeEmulator-x86.exe">MicrosoftAzureEmulator-x86.exe</a> 或 <a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/MicrosoftAzureComputeEmulator-x64.exe">MicrosoftAzureEmulator-x64.exe</a>。</li>
+   <li>Azure 客户端库：<a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/MicrosoftAzureLibsForNet-x86.msi">MicrosoftAzureLibsForNet-x86.msi</a> 或 <a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/MicrosoftAzureLibsForNet-x64.msi">MicrosoftAzureLibsForNet-x64.msi</a>。</li>
+   <li>存储模拟器：<a href="http://download.microsoft.com/download/B/4/6/B46F46EF-4264-479A-A568-BB0AFC396964/WindowsAzureStorageEmulator.msi">MicrosoftAzureStorageEmulator.msi</a>。                            如果你收到有关本地 SQL 数据库的警告，请在安装 SQL Server LocalDB 11.0 时从<a href="http://download.microsoft.com/download/5/2/9/529FEF7B-2EFB-439E-A2D1-A1533227CD69/ENU/x86/SqlLocalDB.msi">此位置</a>选择 x86 版本的，或从<a href="http://download.microsoft.com/download/5/2/9/529FEF7B-2EFB-439E-A2D1-A1533227CD69/ENU/x64/SqlLocalDB.msi">此位置</a>选择 x64 版本的。</li>
+   <li> Azure Tools for Visual Studio：<a href="http://download.microsoft.com/download/8/D/8/8D857095-3379-4279-B35E-124BF94D5864/WindowsAzureTools.vs140.exe">WindowsAzureTools.vs140.exe</a>。</li>
 </ul>
 
 ## 已知问题

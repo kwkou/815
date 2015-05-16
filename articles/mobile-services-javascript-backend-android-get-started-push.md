@@ -27,7 +27,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android"
 
 ##<a id="register"></a>启用 Google Cloud Messaging
 
->[WACOM.NOTE]若要完成此过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。
+>[WACOM.NOTE]若要完成此过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="https://accounts.google.com/SignUp" target="_blank">accounts.google.com</a>。
 
 [WACOM.INCLUDE [Enable GCM](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
@@ -178,7 +178,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android"
 * [什么是通知中心？]
   <br/>了解有关通知中心跨所有主要的客户端平台向您的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [调试通知中心应用程序](https://msdn.microsoft.com/zh-CN/library/dn530751.aspx)
   </br>获取故障排除和调试通知中心解决方案的指南。 
 
 * [如何使用适用于移动服务的 Android 客户端库]
@@ -200,9 +200,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android"
 
 
 <!-- URLs. -->
-[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+[我的应用程序]: https://account.live.com/developers/applications/index
+[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-android-get-started/
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-android-get-started-data/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-android-get-started-users
@@ -210,10 +210,10 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="Mobile-Android"
 [向应用程序用户推送通知]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts
 [JavaScript 和 HTML]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
-[设置 Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
+[设置 Google Play Services SDK]: http://developer.android.com/google/play-services/setup.html
 [Windows Azure 管理门户]: https://manage.windowsazure.cn/
 [如何使用适用于移动服务的 Android 客户端库]: /zh-cn/documentation/articles/mobile-services-android-how-to-use-client-library
-[gcm 对象]: http://go.microsoft.com/fwlink/p/?LinkId=282645
+[gcm 对象]: https://msdn.microsoft.com/zh-CN/library/dn126137.aspx
 [移动服务服务器脚本参考]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/
 [通知中心入门]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started
 

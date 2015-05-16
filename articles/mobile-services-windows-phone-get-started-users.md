@@ -72,7 +72,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [5]: ./media/mobile-services-wp8-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
 [Azure 管理门户]: https://manage.windowsazure.cn/

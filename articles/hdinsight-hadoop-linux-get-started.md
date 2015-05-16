@@ -254,7 +254,7 @@ HDInsight 使用 Azure Blob 存储来存储数据。该 Blob 称为 *WASB* 或 *
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
-[powershell-download]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
+[powershell-download]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409
 [powershell-install-configure]: /documentation/articles/install-configure-powershell/
 [powershell-open]: /documentation/articles/install-configure-powershell/#Install
 

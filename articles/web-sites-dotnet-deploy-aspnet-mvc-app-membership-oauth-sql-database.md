@@ -179,7 +179,7 @@ Windows Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关�
 		> [WACOM.NOTE]
 		> 将此订阅文件下载到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除您的 Windows Azure 服务。
 
-		有关更多信息，请参见[如何通过 Visual Studio 连接到 Windows Azure](http://go.microsoft.com/fwlink/?LinkId=324796)。
+		有关更多信息，请参见[如何通过 Visual Studio 连接到 Windows Azure](https://msdn.microsoft.com/zh-CN/library/windowsazure/hh531793.aspx)。
 
 7. 在“导入发布配置文件”对话框中，从下拉列表中选择网站，然后单击“确定”。
 
