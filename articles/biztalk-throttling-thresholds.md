@@ -110,7 +110,7 @@ RoleInstanceA 正在进行限制。RoleInstanceB 未进行限制。在这种情�
   [安装 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689760.aspx
   [教程：Azure BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689895.aspx
   [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx
-  [Azure BizTalk 服务]: http://azure.microsoft.com/zh-CN/documentation/services/biztalk-services/
+  [Azure BizTalk 服务]: /documentation/services/biztalk-services/
   [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: /documentation/articles/biztalk-editions-feature-chart/
   [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/
   [BizTalk 服务：设置状态图表]: /documentation/articles/biztalk-service-state-chart/

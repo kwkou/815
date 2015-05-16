@@ -26,7 +26,7 @@
 
 ## 准备工作
 
-你将需要一个 Azure 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial/)。你还可以阅读[关于 Azure 备份定价](/home/features/back-up/#home_back_pri)。
+你将需要一个 Azure 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial/)。你还可以阅读[关于 Azure 备份定价](/home/features/back-up/#price)。
 
 
 ## 创建保管库

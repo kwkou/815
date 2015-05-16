@@ -237,7 +237,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
   [MSBuild]: http://msbuildbook.com/
   [2]: #webdeploy
   [使用 Visual Studio 的 ASP.NET Web 部署：命令行部署]: http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment
-  [使用 FTP 批处理脚本]: http://support.microsoft.com/kb/96269
+  [使用 FTP 批处理脚本]: https://support.microsoft.com/zh-CN/kb/96269
   [Windows PowerShell]: http://msdn.microsoft.com/zh-cn/library/dd835506.aspx
   [使用 Azure 构建真实世界云应用 – 使一切自动化]: http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
   [资源]: http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources

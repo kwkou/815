@@ -16,7 +16,6 @@
 <div class="dev-callout"> 
 <b>提示</b> 
 <p>若要登录到 Azure 管理门户，你需要使用 Azure 帐户和 Azure 订阅。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。请参阅 <a href="http://go.microsoft.com/fwlink/p/?LinkID=239738">Azure 免费试用</a>。</p> 
-<p>若要登录到 Azure 管理门户，你需要使用 Azure 帐户和 Azure 订阅。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。请参阅 <a href="http://www.windowsazure.com/zh-CN/pricing/1rmb-trial/">Azure 免费试用</a>。</p> 
 </div>
 
 ## <a name="BizTalk"></a>创建 BizTalk 服务
@@ -330,7 +329,6 @@ SSL 专用证书
   [设置后的步骤]: #PostProv
   [要求说明]: #Requirements
   [混合连接 - 新增功能！]: #HC
-  [Azure 免费试用]: http://www.windowsazure.com/zh-CN/pricing/1rmb-trial/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [选择“新建”按钮]: ./media/biztalk-provision-services/WABS_New.png
   [依次选择“BizTalk 服务”和“自定义创建”]: ./media/biztalk-provision-services/WABS_NewBizTalkService.png

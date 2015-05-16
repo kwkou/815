@@ -48,7 +48,7 @@ ZRS 提供比 LRS 更高级别的持久性；不过，为获得最大持久性�
 |在单独的节点上维护的数据副本数|3|6|6
  
 
-有关存储帐户复制的定价信息，请参阅[存储定价详细信息](/home/features/storage/#home_stor_pri)
+有关存储帐户复制的定价信息，请参阅[存储定价详细信息](/home/features/storage/#price)
 
 ## 本地冗余存储 (LRS)
 

@@ -67,7 +67,7 @@
 
 请注意，当你退出门户时，图表的时间范围和选择的度量值将会重置。
 
-  [Azure 门户预览版]: https://portal.azure.com/
+  [Azure 门户预览版]: https://manage.windowsazure.cn/
   [Web 测试]: http://go.microsoft.com/fwlink/?LinkID=394528&clcid=0x409
   [分析]: http://go.microsoft.com/fwlink/?LinkID=394529&clcid=0x409
   [“监视”小视窗]: ./media/insights-how-to-customize-monitoring/Insights_MonitoringChart.png

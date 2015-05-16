@@ -323,6 +323,6 @@ Azure 明显减少了容量规划所涉及的工作，因为许多旧活动（�
   [Cerebrata]: http://go.microsoft.com/fwlink/?LinkId=252880
   [SQL Server 和 SQL数据库 性能测试：Enzo SQL 基线（可能为英文页面）]: http://enzosqlbaseline.codeplex.com/
   [SQL数据库]: http://azure.microsoft.com/zh-cn/services/sql-database/
-  [存储]: http://azure.microsoft.com/zh-CN/documentation/services/storage/
-  [联网]: http://azure.microsoft.com/zh-CN/documentation/services/virtual-network/
-  [服务总线]: http://azure.microsoft.com/zh-CN/documentation/services/service-bus/
+  [存储]: /documentation/services/storage/
+  [联网]: /documentation/services/virtual-network/
+  [服务总线]: /documentation/services/service-bus/

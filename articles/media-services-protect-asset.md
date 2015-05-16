@@ -114,5 +114,5 @@ return job;
 后续步骤
 --------
 
-了解如何使用 Media Services 保护资产后，请转到[如何管理资产](http://www.windowsazure.com/zh-CN/manage/services/media-services/how-to-manage-content-in-media-services/)主题。
+了解如何使用 Media Services 保护资产后，请转到[如何管理资产](http://www.windowsazure.com/manage/services/media-services/how-to-manage-content-in-media-services/)主题。
 

@@ -19,7 +19,7 @@
 <div class="dev-callout"> 
 
 <UL>
-<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="http://www.windowsazure.com/zh-CN/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
+<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
 </UL>
 
 
@@ -37,7 +37,7 @@
 4. 在<b>"名称"</b>中，输入一个友好名称以标识此保管库。
 
 5. 在<b>"区域"</b>中，为保管库选择地理区域。 
-<div  style="display:none">Get subscription pricing information at <a href="http://www.windowsazure.com/zh-CN/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div>
+<div  style="display:none">Get subscription pricing information at <a href="/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div>
 6. 单击<b>"创建保管库"</b>。 
 
 	![New Vault](./media/hyper-v-recovery-manager-configure-vault/SRSAN_HvVault.png)

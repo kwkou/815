@@ -34,7 +34,7 @@
 
     **注意：**当前，将按需流式处理单位的任何正值设置回“无”可将按需流式处理功能禁用最多 1 小时。
 
-    **注意：**计算成本时将使用为 24 小时期限指定的最大单位数。有关定价详细信息，请参阅 [Media Services 定价详细信息](http://www.windowsazure.com/zh-CN/pricing/details/#header-9)。
+    **注意：**计算成本时将使用为 24 小时期限指定的最大单位数。有关定价详细信息，请参阅 [Media Services 定价详细信息](/pricing/details/#header-9)。
 
 编码保留单位
 ------------

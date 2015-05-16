@@ -33,6 +33,6 @@
 
     ![配置来源](./media/media-services-manage-origins/media-services-origins-configure.png)
 
-    此页上的配置仅适用于至少具有一个保留单元的来源。若要保留按需流式处理保留单位，请转到“缩放”选项卡。有关保留单位的详细信息，请参阅[缩放 Media Services](http://www.windowsazure.com/zh-CN/manage/services/media-services/how-to-scale-a-media-service//)。
+    此页上的配置仅适用于至少具有一个保留单元的来源。若要保留按需流式处理保留单位，请转到“缩放”选项卡。有关保留单位的详细信息，请参阅[缩放 Media Services](http://www.windowsazure.com/manage/services/media-services/how-to-scale-a-media-service//)。
 
 
