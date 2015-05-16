@@ -29,7 +29,7 @@
 <UL>
 <LI>如需详细了解完整部署，请阅读<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">规划</a>和<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn872852.aspx">Deployment</a>指南。</LI>
 <LI>若要了解其他 Azure Site Recovery 部署方案，请参阅 <a href="/zh-cn/documentation/articles/hyper-v-recovery-manager-overview/">Azure Site Recovery 概述</a>。</LI>
-<LI>在使用本教程过程中如果遇到问题，请查阅 wiki 文章 <a href="http://social.technet.microsoft.com/wiki/contents/articles/21619.hyper-v-recovery-manager-common-error-scenarios-and-resolutions.aspx">Azure Site Recovery：常见错误情况和解决方法</a>，或者在 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>上发布你的问题。</LI>
+<LI>在使用本教程过程中如果遇到问题，请查阅 wiki 文章 <a href="http://go.microsoft.com/fwlink/?LinkId=389879">Azure Site Recovery：常见错误情况和解决方法</a>，或者在 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>上发布你的问题。</LI>
 </UL>
 
 
@@ -55,7 +55,7 @@
 	<LI>需要设置两个 SAN 阵列，一个主站点中，一个辅助站点中。</LI>
 	<LI>应该在阵列之间设置网络基础结构。应该配置对等互连和复制。应该根据存储阵列要求设置复制许可证。</LI>
 	<LI>应该在 Hyper-V 主机服务器与存储阵列之间设置网络，使主机能够使用 ISCSI 或光纤通道与存储 LUN 通信。</LI>
-	<LI>在<a href="http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx">使用 VMM 和 SAN 部署 Azure Site Recovery - 支持的存储阵列</a>中查看支持的存储阵列中的列表。</LI>
+	<LI>在<a href="http://go.microsoft.com/fwlink/?LinkId=518669">使用 VMM 和 SAN 部署 Azure Site Recovery - 支持的存储阵列</a>中查看支持的存储阵列中的列表。</LI>
 	<LI>应安装 EMC 和 NetApp 提供的 SMI-S 提供程序，并且 SAN 阵列应由提供程序管理。根据提供程序的文档设置提供程序。</LI>
 	<LI>确保阵列的 SMI-S 提供程序在 VMM 服务器可以使用 IP 地址或 FQDN 通过网络访问的服务器上。</LI>
 	<LI>每个 SAN 阵列应有一个或多个可在此部署中使用的存储池。</LI>
@@ -381,6 +381,6 @@ Set-DnsServerResourceRecord -zonename com -OldInputObject $record -NewInputObjec
 	
 <h2><a id="next"></a>后续步骤</h2>
 <UL>
-<LI>若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 <a href="https://msdn.microsoft.com/zh-CN/library/azure/dn469074.aspx">Azure Site Recovery 规划指南</a>和 <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/dn168841.aspx">Azure Site Recovery 部署指南</a>。</LI>
-<LI style="display:none">如有问题，请访问 <a href="http://social.msdn.microsoft.com/Forums/windowsazure/zh-CN/home?forum=hypervrecovmgr">Azure 恢复服务论坛</a>。</LI> 
+<LI>若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 <a href="http://go.microsoft.com/fwlink/?LinkId=321294">Azure Site Recovery 规划指南</a>和 <a href="http://go.microsoft.com/fwlink/?LinkId=321295">Azure Site Recovery 部署指南</a>。</LI>
+<LI style="display:none">如有问题，请访问 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>。</LI> 
 </UL>

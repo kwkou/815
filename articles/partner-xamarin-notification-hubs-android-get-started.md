@@ -33,7 +33,7 @@
 ## <a name="register"></a><span class="short-header">启用 Google Cloud Messaging</span>启用 Google Cloud Messaging
 
 <div class="dev-callout"><b>说明</b>
-<p>若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="https://accounts.google.com/SignUp" target="_blank">accounts.google.com</a>。</p>
+<p>若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。</p>
 </div>
 
 1.  导航到 [Google API][Google API] 网站，使用你的 Google 帐户凭据登录，然后单击“Create project...”（创建项目...）。
@@ -424,8 +424,8 @@ Xamarin 组件应用商店中提供的 Google Cloud Messaging Client 可以简�
   [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
   [Google Cloud Messaging 组件]: http://components.xamarin.com/view/GCMClient/
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
-  [accounts.google.com]: https://accounts.google.com/SignUp
-  [Google API]: https://code.google.com/apis/console/
+  [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
+  [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
 
   [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/t
   [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/

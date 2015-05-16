@@ -401,7 +401,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 与 Azure AD 集成可以让您的客户注册应用程序，并通过他们所维系的标识管理系统登录，以便减少或消除您的应用程序执行单独标识管理任务的需要。此功能为您的客户在使用应用程序时提供更加无缝的体验，解放管理任务所花费的时间。
 
   [标识页]: http://azure.microsoft.com/zh-cn/services/multi-factor-authentication/
-  [此处下载]: http://code.msdn.microsoft.com/windowsazure/Multi-Tenant-Cloud-8015b84b
+  [此处下载]: http://go.microsoft.com/fwlink/?LinkId=271213
   [Visual Studio 中的端口分配]: http://msdn.microsoft.com/zh-cn/library/ms178109(v=vs.100).aspx
   [Visual Studio 2012]: http://www.visualstudio.com/downloads/download-visual-studio-vs
   [WCF Data Services for OData]: http://www.microsoft.com/zh-cn/download/details.aspx?id=29306

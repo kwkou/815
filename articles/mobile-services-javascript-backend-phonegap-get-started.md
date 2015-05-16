@@ -20,7 +20,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-phonegap
 
 PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以外，还必须为你所要针对的每个平台安装工具：
 
-- Windows Phone:安装 [Visual Studio 2012 Express for Windows Phone](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone)
+- Windows Phone:安装 [Visual Studio 2012 Express for Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
 - iOS：安装 [Xcode] (v4.4+ required)
 - Android：安装 [Android 开发人员工具][Android SDK]
 	<br/>(用于 Android 的移动服务 SDK 支持用于 Android 2.2 或更高版本的应用程序。运行快速入门应用程序需要安装 Android 4.2 或更高版本。)
@@ -94,7 +94,7 @@ PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以�
 
 	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 **TodoItem** 表。移动服务返回存储在表中的项，数据显示在列表中。
 
-	> [AZURE.NOTE] 如果使用 PhoneGap 工具重新生成主项目，将会覆盖对此平台项目所做的更改。请根据以下部分中所述，在项目的 www 根目录中进行更改。
+	> [AZURE.IMPORTANT] 如果使用 PhoneGap 工具重新生成主项目，将会覆盖对此平台项目所做的更改。请根据以下部分中所述，在项目的 www 根目录中进行更改。
 
 4. 返回管理门户中，单击 <strong>数据</strong> 选项卡，然后单击 <strong>"TodoItems"</strong> 表。
 
@@ -158,8 +158,8 @@ PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以�
 <!-- broken link
 [Get started with push notifications]: /zh-cn/
 -->
-[Android SDK]: http://developer.android.com/sdk/
+[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [管理门户]: https://manage.windowsazure.cn/
-[Xcode]: https://developer.apple.com/xcode/
-[Visual Studio 2012 Express for Windows Phone]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
+[Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+[Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 

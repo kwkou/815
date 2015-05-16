@@ -503,7 +503,7 @@ _(Optional) 本部分演示如何使用属性自定义数据序列化的方式�
 <!-- URLs. -->
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
 [使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-ios-validate-modify-data-server-scripts
-[移动服务 SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
+[移动服务 SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [iOS SDK]: https://developer.apple.com/xcode
 
@@ -511,7 +511,7 @@ _(Optional) 本部分演示如何使用属性自定义数据序列化的方式�
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
 [权限]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193161.aspx
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-ios-authorize-users-in-scripts
-[动态架构]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193175.aspx
+[动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
 [如何： 访问自定义参数]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
 [创建表]: https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193162.aspx
 [NSDictionary 对象]: http://go.microsoft.com/fwlink/p/?LinkId=301965

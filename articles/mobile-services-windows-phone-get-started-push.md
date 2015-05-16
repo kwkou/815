@@ -221,8 +221,8 @@
 
 
 <!-- URLs. -->
-[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
-[Visual Studio 2012 Express for Windows Phone]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
+[移动服务 SDK]: https://go.microsoft.com/fwLink/p/?LinkID=268375
+[Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-wp8
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-wp8
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-wp8

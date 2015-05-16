@@ -16,7 +16,7 @@
 <div class="wa-note">
   <span class="wa-icon-bulb"></span>
   <h5><a name="note"></a>你需要使用一个 Visual Studio Online 帐户来完成本教程：</h5>
-<p>你可以<a href="http://www.visualstudio.com/get-started/sign-up-for-visual-studio-online">免费建立一个 Visual Studio Online 帐户</a>。</p>
+<p>你可以<a href="http://go.microsoft.com/fwlink/p/?LinkId=512979">免费建立一个 Visual Studio Online 帐户</a>。</p>
 </div>
 
 若要使用 Visual Studio Online 将云服务设置为自动生成并部署到 Azure，请执行下列步骤：
@@ -37,7 +37,7 @@
 
 <h2> <a name="step1"></a>步骤 1：创建团队项目</h2>
 
-按照[此处](http://www.visualstudio.com/get-started/connect-to-vs)的说明创建团队项目，并将其链接到 Visual Studio。本演练假定你使用 Team Foundation 版本控制 (TFVC) 作为源代码管理解决方案。如果你要使用 Git 进行版本控制，请参阅[本演练的 Git 版本](/zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso-git/)。
+按照[此处](http://go.microsoft.com/fwlink/?LinkId=512980)的说明创建团队项目，并将其链接到 Visual Studio。本演练假定你使用 Team Foundation 版本控制 (TFVC) 作为源代码管理解决方案。如果你要使用 Git 进行版本控制，请参阅[本演练的 Git 版本](/zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso-git/)。
 
 <h2><a name="step2"> </a>步骤 2：将项目签入到源代码管理</h2>
 
@@ -233,9 +233,9 @@
 <br/>
 ![][50]
 
-有关 Visual Studio Online 中的单元测试的详细信息，请参阅[在生成中运行单元测试](https://msdn.microsoft.com/zh-CN/library/ms253138.aspx)。
+有关 Visual Studio Online 中的单元测试的详细信息，请参阅[在生成中运行单元测试](http://go.microsoft.com/fwlink/p/?LinkId=510474)。
 
-有关详细信息，请参阅 [Visual Studio Online](https://www.visualstudio.com/)。如果使用的是 Git，请参阅[在 Git 中共享代码](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx)和[从源代码管理发布到 Azure 网站]。(/zh-cn/documentation/articles/web-sites-publish-source-control)。
+有关详细信息，请参阅 [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861)。如果使用的是 Git，请参阅[在 Git 中共享代码](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx)和[从源代码管理发布到 Azure 网站]。(/zh-cn/documentation/articles/web-sites-publish-source-control)。
 
 [步骤 1：创建团队项目。]: #step1
 [步骤 2：将项目签入到源代码管理。]: #step2

@@ -45,7 +45,7 @@ Azure Linux 代理 (waagent) 管理虚拟机和 Azure 结构控制器之间的�
 ###获取 Linux 代理
 可从以下位置直接获取最新的 Linux 代理：
 
-- [认可 Linux on Azure 的其他分发提供商](https://support.microsoft.com/zh-cn/kb/2805216)
+- [认可 Linux on Azure 的其他分发提供商](https://support.microsoft.com/zh-CN/kb/2805216)
 - 或 [Azure Linux 代理的 Github 开放源存储库](https://github.com/WindowsAzure/WALinuxAgent)
 
 

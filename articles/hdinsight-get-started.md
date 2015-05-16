@@ -19,7 +19,7 @@ HDInsight 使 Apache Hadoop（一种 MapReduce 软件框架）可用于更简单
 
 Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HDInsight 开发者预览版*），与 Azure HDInsight 的通用版本结合使用。Emulator 针对开发人员方案，仅支持单节点部署。有关如何使用 HDInsight Emulator 的信息，请参见 [HDInsight Emulator 入门][hdinsight-emulator]。
 
-> [WACOM.NOTE]有关如何设置 HBase 群集的说明，请参阅[在 HDInsight 中设置 HBase 群集][hdinsight-hbase-custom-provision]。请参阅 <a href="http://hbase.apache.org/book/architecture.html#arch.overview.hbasehdfs">Hadoop 与 HBase 之间的差别</a>，以了解为何要选择其中的某一种群集。   
+> [WACOM.NOTE]有关如何设置 HBase 群集的说明，请参阅[在 HDInsight 中设置 HBase 群集][hdinsight-hbase-custom-provision]。请参阅 <a href="http://go.microsoft.com/fwlink/?LinkId=510237">Hadoop 与 HBase 之间的差别</a>，以了解为何要选择其中的某一种群集。   
 
 ## 本教程实现的目标是什么？ ##
 
@@ -254,14 +254,14 @@ HDInsight 使用 Azure Blob 存储来存储数据。它称为 *WASB* 或 *Azure 
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /zh-cn/documentation/articles/storage-create-storage-account/ 
 
-[apache-hadoop]: http://hadoop.apache.org/
-[apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
-[apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
-[apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
+[apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
+[apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
+[apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
+[apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
 [hdinsight-hbase-custom-provision]: /zh-cn/documentation/articles/hdinsight-hbase-get-started/
 
 
-[powershell-download]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409
+[powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
 [powershell-open]: /zh-cn/documentation/articles/install-configure-powershell/#Install
 

@@ -129,7 +129,7 @@
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
-[安装 Xcode]: https://developer.apple.com/xcode/
-[移动服务 iOS SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
+[安装 Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
+[移动服务 iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [GitHub]:  http://go.microsoft.com/fwlink/p/?LinkId=268622
 [GitHub 存储库]: http://go.microsoft.com/fwlink/p/?LinkId=268784

@@ -14,7 +14,7 @@ Azure 移动服务支持客户端驱动的和服务器驱动的身份验证方�
 
 [WACOM.INCLUDE [mobile-services-register-windows-store-app](../includes/mobile-services-register-windows-store-app.md)]
 
-注册应用程序包后，在调用 <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.singlesignonextensions.loginasync.aspx" target="_blank">LoginAsync</a> 方法时，请记得为 <em>useSingleSignOn</em> 提供 <strong>true</strong> 值。这样，你的用户在使用 Microsoft 帐户时可以获得更好的登录体验。
+注册应用程序包后，在调用 <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a> 方法时，请记得为 <em>useSingleSignOn</em> 提供 <strong>true</strong> 值。这样，你的用户在使用 Microsoft 帐户时可以获得更好的登录体验。
 
 <!-- Anchors. -->
 <!-- Images. -->

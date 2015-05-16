@@ -151,9 +151,9 @@
 [16]: ./media/mobile-services-windows-store-dotnet-single-sign-on/mobile-add-reference-live-dotnet.png
 
 <!-- URLs. -->
-[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
-[我的应用程序]: https://account.live.com/developers/applications/index
-[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
+[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [将移动服务添加到现有应用程序]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/

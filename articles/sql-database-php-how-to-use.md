@@ -121,7 +121,7 @@ Azure SQL数据库 为 Azure 提供关系数据库管理系统并且基于 SQL S
   [如何：获取 SQL数据库 连接信息]: #ConnectionInfo
   [如何：连接到 SQL数据库 实例]: #Connect
   [指导原则和限制 (SQL数据库)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394102.aspx
-  [Microsoft Drivers for PHP for SQL Server]: https://www.microsoft.com/zh-CN/download/en/details.aspx?id=20098
+  [Microsoft Drivers for PHP for SQL Server]: http://www.microsoft.com/download/en/details.aspx?id=20098
   [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/?LinkId=253447
   []: http://php.net/manual/zh/install.windows.iis7.php
   [1]: http://www.microsoft.com/zh-cn/download/details.aspx?id=29062

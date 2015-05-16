@@ -359,7 +359,7 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 
 部署完成后，你将看到如下响应：
 
-	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "China North"
+	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "West US"
 	WARNING: Publishing tasklist to Windows Azure. This may take several minutes...
 	WARNING: 2:18:42 PM - Preparing runtime deployment for service 'tasklist'
 	WARNING: 2:18:42 PM - Verifying storage account 'tasklist'...

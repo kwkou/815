@@ -421,7 +421,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
   [NotificationHubs 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=331329
 
-  [XCode 5.0]: https://developer.apple.com/xcode/
+  [XCode 5.0]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [1]: http://xamarin.com/download
   [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/

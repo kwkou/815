@@ -128,9 +128,9 @@ Windows Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Windows Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn
 Windows Azure - 存储 | *.blob.core.windows.net <br /> *.queue.core.windows.net <br /> *.table.core.windows.net | *.blob.core.chinacloudapi.cn <br /> *.queue.core.chinacloudapi.cn <br /> *.table.core.chinacloudapi.cn
 Windows Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
-SQL数据库 | *.database.chinacloudapi.cn | *.database.chinacloudapi.cn
-Windows Azure - 管理门户 | http://manage.windowsazure.cn | http://manage.windowsazure.cn
-SQL Azure数据库管理API | https://management.database.chinacloudapi.cn | https://management.database.chinacloudapi.cn
+SQL数据库 | *.database.windows.net | *.database.chinacloudapi.cn
+Windows Azure - 管理门户 | http://manage.windowsazure.com | http://manage.windowsazure.cn
+SQL Azure数据库管理API | https://management.database.windows.net | https://management.database.chinacloudapi.cn
 服务总线 | *.servicebus.windows.net | *.servicebus.chinacloudapi.cn
 ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
 HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
@@ -283,7 +283,7 @@ Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问�
 * 不包含Access Control (访问控制)命名空间。如果您需要集成应用程序和与Windows Azure的身份验证服务同步企业目录，请使用Windows Azure中的Active Directory。在 Windows Azure管理门户中，单击“Active Directory"。
 *  ACS管理门户仅适用于服务总线命名空间。
 *  授权。对于本地应用程序和服务器到服务器案例，目前尚不支持 OAuth 2.0 授权代码授予类型的预览功能。
-除了这些基于设计的差异之外，中国服务中的 Windows Azure AD 设计与全球服务相同。有关世纪互联服务中的 Windows Azure AD 的信息，请参见<a href="/develop/net/how-to-guides/access-control/">如何使用 Windows Azure Active Directory 访问控制对 Web 用户进行身份验证</a>。
+除了这些基于设计的差异之外，中国服务中的 Windows Azure AD 设计与全球服务相同。有关世纪互联服务中的 Windows Azure AD 的信息，请参见<a href="http://go.microsoft.com/fwlink/?LinkId=306710">如何使用 Windows Azure Active Directory 访问控制对 Web 用户进行身份验证</a>。
 
 注意：在公共预览期间创建的访问控制命名空间将不可操作或访问。然而，类似的功能可在Windows Azure管理门户的Active Directory使用。
 

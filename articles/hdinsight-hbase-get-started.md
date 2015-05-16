@@ -192,7 +192,7 @@ HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量
 [在 Azure 虚拟网络上设置 HBase 群集][]:
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
 
-<!--- [azure-member-offers]: http://azure.microsoft.com/zh-CN/pricing/member-offers/ --->
+<!--- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ --->
 
   [在 Azure 门户中设置 HBase 群集]: #create-hbase-cluster
   [从 HBase shell 创建 HBase 示例表]: #create-sample-table

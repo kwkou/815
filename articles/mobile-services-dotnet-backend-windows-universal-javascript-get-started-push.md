@@ -22,8 +22,8 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 若要完成本教程，你需要以下项：
 
-* 有效的 [Microsoft 商店帐户](https://appdev.microsoft.com/StorePortals/zh-CN/account/signup/start)。
-* <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-professional" target="_blank">Visual Studio Professional 2013</a>（Update 3 或更高版本）。 <br/>可以使用免费试用版。 
+* 有效的 [Microsoft 商店帐户](http://go.microsoft.com/fwlink/p/?LinkId=280045)。
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Professional 2013</a>（Update 3 或更高版本）。 <br/>可以使用免费试用版。 
 
 ## <a id="register"></a>为推送通知注册应用程序
 
@@ -95,9 +95,9 @@ var todolistClient = new WindowsAzure.MobileServiceClient(
 <!-- Images. -->
 
 <!-- URLs. -->
-["提交应用"页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
-[我的应用程序]: https://account.live.com/developers/applications/index
-[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
+["提交应用"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-universal-javascript-get-started-data
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-universal-javascript-get-started-users

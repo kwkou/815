@@ -326,7 +326,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
   [跨群集运行命令]: #BKMK_RunCommand
   [运行测试作业]: #BKMK_RunJob
   [停止 Azure 节点]: #BKMK_stop
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/
+  [Azure 免费试用]: http://www.windowsazure.cn/en-us/pricing/free-trial/
   [评估版]: http://technet.microsoft.com/evalcenter/dn205286.aspx
   [下载]: http://go.microsoft.com/fwlink/p/?linkid=389557
   [HPC Pack 2012 安装]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/install_hpc1.png
@@ -351,7 +351,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
   [添加节点]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/add_node1.png
   [添加 Azure 节点]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/add_node1_1.png
   [指定节点]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/add_node2.png
-  [Azure 的虚拟机和云服务大小]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn197896.aspx
+  [Azure 的虚拟机和云服务大小]: http://msdn.microsoft.com/library/windowsazure/dn197896.aspx
   [已添加节点]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/add_node3.png
   [启动节点]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/add_node4.png
   [3]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/add_node5.png

@@ -90,7 +90,7 @@
   [步骤 1：使用 Azure PowerShell 配置远程桌面访问服务]: #step1
   [步骤 2：连接到角色实例]: #step2
   [步骤 3：使用 Azure PowerShell 配置禁用远程桌面访问的服务]: #step3
-  [Azure PowerShell]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=azurenodesdk&mode=new&clcid=0x409
+  [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
 
 [Azure 管理门户]: http://manage.windowsazure.cn
 [powershell-menu]: ./media/cloud-services-nodejs-enable-remote-desktop/azure-powershell-menu.png

@@ -155,7 +155,7 @@
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[定期通知]: https://msdn.microsoft.com/zh-CN/library/windows/apps/jj150587.aspx
+[定期通知]: http://msdn.microsoft.com/library/windows/apps/jj150587.aspx
 
 [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 

@@ -6,7 +6,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 # 使用自定义选项在 HDInsight 中设置 Hadoop 群集
 
-在本文中，你将了解如何通过下述不同方法，使用自定义选项在 Azure HDInsight 上设置 Hadoop 群集 - 使用 Azure 管理门户、PowerShell、命令行工具或 HDInsight .NET SDK。本文将会介绍 Hadoop 群集的设置。有关如何设置 HBase 群集的说明，请参阅[在 HDInsight 中设置 HBase 群集][hdinsight-hbase-custom-provision]。请参阅 <a href="http://hbase.apache.org/book/architecture.html#arch.overview.hbasehdfs">Hadoop 与 HBase 之间的差别</a>，以了解为何要选择其中的某一种群集。
+在本文中，你将了解如何通过下述不同方法，使用自定义选项在 Azure HDInsight 上设置 Hadoop 群集 - 使用 Azure 管理门户、PowerShell、命令行工具或 HDInsight .NET SDK。本文将会介绍 Hadoop 群集的设置。有关如何设置 HBase 群集的说明，请参阅[在 HDInsight 中设置 HBase 群集][hdinsight-hbase-custom-provision]。请参阅 <a href="http://go.microsoft.com/fwlink/?LinkId=510237">Hadoop 与 HBase 之间的差别</a>，以了解为何要选择其中的某一种群集。
 
 ## 什么是 HDInsight 群集？
 
@@ -114,7 +114,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 	<table border="1">
 	<tr><th>名称</th><th>值</th></tr>
 	<tr><td>数据节点</td><td>要部署的数据节点的数目。出于测试目的，请创建单节点群集。<br />群集大小限制因 Azure 订阅而异。若要提高限制的大小，请联系 Azure 计费支持。</td></tr>
-	<tr><td>区域/虚拟网络</td><td><p>选择与上一个过程中创建的存储帐户相同的区域。HDInsight 要求存储帐户位于同一区域。在以后的配置中，你只能选择你在此处指定的区域中的存储帐户。</p><p>可以选择的区域为： <strong>China East</strong>, <strong>China North</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, <strong>North Europe</strong>, <strong>West Europe</strong>, <strong>East US</strong>, <strong>China North</strong>, <strong>North Central US</strong>, <strong>South Central US</strong><br/>If you have created an Azure Virtual Network, you can select the network that the HDInsight cluster will be configured to use.</p><p>For more information on creating an Azure Virtual Network, see [Virtual Network configuration tasks](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx).</p></td></tr>
+	<tr><td>区域/虚拟网络</td><td><p>选择与上一个过程中创建的存储帐户相同的区域。HDInsight 要求存储帐户位于同一区域。在以后的配置中，你只能选择你在此处指定的区域中的存储帐户。</p><p>可以选择的区域为： <strong>China East</strong>, <strong>China North</strong>, <strong>East Asia</strong>, <strong>Southeast Asia</strong>, <strong>North Europe</strong>, <strong>West Europe</strong>, <strong>East US</strong>, <strong>West US</strong>, <strong>North Central US</strong>, <strong>South Central US</strong><br/>If you have created an Azure Virtual Network, you can select the network that the HDInsight cluster will be configured to use.</p><p>For more information on creating an Azure Virtual Network, see [Virtual Network configuration tasks](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx).</p></td></tr>
 	</table>
 
 
@@ -616,7 +616,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 [azure-command-line-tool]: /zh-cn/documentation/articles/command-line-tools/
 [azure-manage-storageaccount]: /zh-cn/documentation/articles/storage-manage-storage-account/
 
-[apache-hadoop]: http://hadoop.apache.org/
+[apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 
 [azure-free-trial]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial-full/

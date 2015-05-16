@@ -94,7 +94,7 @@
 
 [Windows 推送通知和 Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
 [移动服务服务器脚本参考]:/zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts
-["我的应用程序"仪表板]: https://account.live.com/developers/applications/index
+["我的应用程序"仪表板]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios

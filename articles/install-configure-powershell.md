@@ -34,7 +34,7 @@ Windows Azure 是基于订阅的平台。这意味着需要订阅才能使用平
 
 <h2> <a id="Install"></a>如何安装 Windows Azure PowerShell</h2>
 
-您可以通过运行 [Microsoft Web 平台安装程序](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409)下载并安装 Windows Azure PowerShell 模块。系统提示后，单击“运行”。Microsoft Web 平台安装程序将加载，同时还加载可供安装的 Windows Azure PowerShell 模块。Web 平台安装程序将安装 Windows Azure PowerShell cmdlet 的所有依赖项。按照提示完成安装。
+您可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?LinkId=320376)下载并安装 Windows Azure PowerShell 模块。系统提示后，单击“运行”。Microsoft Web 平台安装程序将加载，同时还加载可供安装的 Windows Azure PowerShell 模块。Web 平台安装程序将安装 Windows Azure PowerShell cmdlet 的所有依赖项。按照提示完成安装。
 
 有关可用于 Windows Azure 的命令行工具的更多信息，请参见[命令行工具]( http://www.windowsazure.cn/downloads/#cmd-line-tools)。
 
@@ -210,7 +210,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 要获得社区中的帮助信息，请尝试以下常见论坛：
 
 - [MSDN 上的 Windows Azure]( https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs)
-- [堆栈溢出](http://stackoverflow.com/questions/tagged/azure)
+- [堆栈溢出](http://go.microsoft.com/fwlink/?LinkId=320213)
 
 
 ## <a id="Resources"></a>其他资源##

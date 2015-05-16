@@ -174,7 +174,7 @@
   [Kindle]: /zh-cn/documentation/articles/notification-hubs-kindle-get-started/ "Kindle"
   [Xamarin.iOS]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
   [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
-  [Visual Studio 2012 Express for Windows Phone]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
+  [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
   [Azure 免费试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/

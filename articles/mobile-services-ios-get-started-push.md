@@ -236,9 +236,9 @@
 [117]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
 <!-- URLs. -->
-[安装 Xcode]: https://developer.apple.com/xcode/
+[安装 Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS 设置门户]: http://go.microsoft.com/fwlink/p/?LinkId=272456
-[移动服务 iOS SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
+[移动服务 iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple 推送通知服务]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios

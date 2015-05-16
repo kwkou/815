@@ -64,7 +64,7 @@
 		        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		</code></pre>
 
-	<p>此代码通过使用 MobileServiceClient 类的一个实例提供对应用程序中新移动服务的访问权限。 <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient 类</a>。客户端是通过提供新移动服务的 URI 和应用程序密钥来创建的。此静态字段可用于你的应用程序中的所有页面。</p>
+	<p>此代码通过使用 MobileServiceClient 类的一个实例提供对应用程序中新移动服务的访问权限。 <a href="http://go.microsoft.com/fwlink/p/?LinkId=302030">MobileServiceClient 类</a>。客户端是通过提供新移动服务的 URI 和应用程序密钥来创建的。此静态字段可用于你的应用程序中的所有页面。</p>
 </li>
 </ol>
 
@@ -72,7 +72,7 @@
 
 [WACOM.INCLUDE [mobile-services-create-new-table-vs2013](../includes/mobile-services-create-new-table-vs2013.md)]
 
->[WACOM.NOTE]将使用 Id、__createdAt、__updatedAt 和 __version 列创建新表。启用动态架构后，移动服务将基于插入或更新请求中的 JSON 对象自动生成新列。有关详细信息，请参阅[动态架构](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193175.aspx)。
+>[WACOM.NOTE]将使用 Id、__createdAt、__updatedAt 和 __version 列创建新表。启用动态架构后，移动服务将基于插入或更新请求中的 JSON 对象自动生成新列。有关详细信息，请参阅[动态架构](http://msdn.microsoft.com/library/windowsazure/jj193175.aspx)。
 
 #<a name="update-app"></a>更新应用程序以使用移动服务
 
@@ -164,7 +164,7 @@
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
-[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
-[开发人员代码示例站点]:  http://code.msdn.microsoft.com/Connect-to-Windows-Azure-3a8fc1ee
+[移动服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
+[开发人员代码示例站点]:  http://go.microsoft.com/fwlink/p/?LinkId=328660
 
-[MobileServiceClient 类]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
+[MobileServiceClient 类]: http://go.microsoft.com/fwlink/p/?LinkId=302030

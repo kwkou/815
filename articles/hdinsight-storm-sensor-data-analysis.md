@@ -87,7 +87,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 		    {
 		        public void Configuration(IAppBuilder app)
 		        {
-		            // For more information on how to configure your application, visit http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana
+		            // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
 		            app.MapSignalR();
 		        }
 		    }

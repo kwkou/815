@@ -190,4 +190,4 @@
   [使用分页优化查询]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android
   [使用脚本为用户授权]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android
   [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-android
-  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/
+  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293

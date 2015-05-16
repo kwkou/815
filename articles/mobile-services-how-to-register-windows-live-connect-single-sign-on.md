@@ -8,7 +8,7 @@
 
 本主题说明如何将应用程序注册到 Windows 应用商店，以便将单一登录所用的 Live Connect 用作 Azure 移动服务的标识提供程序。若要使用推送通知，也需要完成此步骤。
 
-> [AZURE.NOTE] 你无需将应用程序注册到 Windows 应用商店，便可以在发布应用程序之前使用 Microsoft 帐户进行身份验证。如果你的 Windows 应用商店应用程序不需要单一登录或推送通知，则只需将应用程序注册到 Live Connect 即可使用 Microsoft 帐户登录。有关详细信息，请参阅[注册 Windows 应用商店应用程序以使用 Microsoft 帐户登录](/zh-cn/documentation/articles/mobile-services-how-to-register-microsoft-authentication)。
+> [AZURE.IMPORTANT] 你无需将应用程序注册到 Windows 应用商店，便可以在发布应用程序之前使用 Microsoft 帐户进行身份验证。如果你的 Windows 应用商店应用程序不需要单一登录或推送通知，则只需将应用程序注册到 Live Connect 即可使用 Microsoft 帐户登录。有关详细信息，请参阅[注册 Windows 应用商店应用程序以使用 Microsoft 帐户登录](/zh-cn/documentation/articles/mobile-services-how-to-register-microsoft-authentication)。
 
 1. 如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用的["提交应用程序"页]，用 Microsoft 帐户登录，然后单击**"应用程序名称"**。
 
@@ -70,8 +70,8 @@
 
 <!-- URLs. -->
 [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
-["提交应用程序"页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
-[我的应用程序]: https://account.live.com/developers/applications/index
+["提交应用程序"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/

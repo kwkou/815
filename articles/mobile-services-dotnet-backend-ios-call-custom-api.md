@@ -51,8 +51,8 @@
   [定义自定义 API]: #define-custom-api
   [更新应用程序以调用自定义 API]: #update-app
   [测试应用程序]: #test-app
-  [移动服务 iOS SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
-  [XCode 4.5]: https://developer.apple.com/xcode/
+  [移动服务 iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
+  [XCode 4.5]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [mobile-services-dotnet-backend-create-custom-api]: ../includes/mobile-services-dotnet-backend-create-custom-api.md
   [mobile-services-ios-call-custom-api]: ../includes/mobile-services-ios-call-custom-api.md
   [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/

@@ -284,7 +284,7 @@ Azure 移动服务通过使用添加到每个表的 `__version` 系统属性列�
   [测试应用程序中的数据库写入冲突]: #test-app
   [使用服务器脚本自动解决冲突]: #scriptsexample
   [移动服务入门]: /develop/mobile/tutorials/get-started
-  [Azure 帐户]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [Azure 帐户]: http://www.windowsazure.cn/zh-cn/pricing/free-trial/
   [0]: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/mobile-manage-nuget-packages-dialog.png
   [系统属性]: http://go.microsoft.com/fwlink/?LinkId=331143
   [1]: ./media/mobile-services-windows-store-javascript-handle-database-conflicts/Mobile-oc-store-create-app-package1.png

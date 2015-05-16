@@ -18,7 +18,7 @@ Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操�
 
 **注意**：创建虚拟机时，您可以自定义操作系统设置以快速运行您的应用程序。您设置的配置存储在该虚拟机的磁盘上。有关说明，请参阅[如何创建自定义虚拟机](/zh-cn/documentation/articles/virtual-machines-create-custom/)。
 
-**重要说明**：只有在使用某个认可的分发的时候也使用[本文](https://support.microsoft.com/zh-CN/kb/2805216)中指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要说明**：只有在使用某个认可的分发的时候也使用[本文](http://support.microsoft.com/kb/2805216)中指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
 
 
 ##先决条件##

@@ -137,7 +137,7 @@
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Android SDK]: http://developer.android.com/sdk/
-[移动服务 Android SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
+[移动服务 Android SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios.md#sdk-downloads
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot/
 
 [管理门户]: https://manage.windowsazure.cn/

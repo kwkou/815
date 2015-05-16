@@ -252,7 +252,7 @@
   [将你的应用程序连接到通知中心]: #connecting-app
   [从后端发送通知]: #send
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
-  [“提交应用程序”页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
+  [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 
   [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761494.aspx
   [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761491.aspx

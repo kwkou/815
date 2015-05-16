@@ -574,9 +574,9 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
   [步骤 3：使用 TFS Team Build 生成包（可选）]: #step3
   [步骤 4：使用 PowerShell 脚本发布包]: #step4
   [步骤 5：使用 TFS Team Build 发布包（可选）]: #step5
-  [Team Foundation 生成服务]: https://msdn.microsoft.com/zh-CN/library/ee259687.aspx
-  [.NET Framework 4]: http://msdn.microsoft.com/netframework/aa569263
-  [.NET Framework 4.5]: http://www.microsoft.com/zh-CN/download/details.aspx?id=30653
+  [Team Foundation 生成服务]: http://go.microsoft.com/fwlink/p/?LinkId=239963
+  [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
+  [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
   [.NET Framework 4.5.2]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42643
   [Azure 创作工具]: http://www.microsoft.com/zh-CN/download/details.aspx?id=44938
   [Azure 库]: http://www.windowsazure.cn/downloads/?sdk=net
@@ -587,7 +587,7 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
   [配置生成计算机]: https://msdn.microsoft.com/zh-CN/library/ms181712.aspx
   [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
   [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
-  [Azure PowerShell cmdlet]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409
+  [Azure PowerShell cmdlet]: http://go.microsoft.com/fwlink/?LinkId=256262
   [.publishsettings 文件]: https://manage.windowsazure.cn/download/publishprofile.aspx?wa=wsignin1.0
   [本文结束]: #script
   

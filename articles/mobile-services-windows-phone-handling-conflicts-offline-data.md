@@ -245,6 +245,6 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [脱机数据入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-offline-data
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [处理数据库冲突]: /zh-cn/documentation/articles/mobile-services-windows-phone-handle-database-conflicts/#test-app
-[Windows Phone 8 SDK]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
+[Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/

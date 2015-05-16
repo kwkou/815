@@ -219,7 +219,7 @@
   [选择网站]: ./media/web-sites-scale/01SelectWebSite.png
   [“缩放”选项卡]: ./media/web-sites-scale/02SelectScaleTab.png
   [选择 Web 托管计划]: ./media/web-sites-scale/03aChooseWHP.png
-  [Windows Azure 虚拟机和云服务大小]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn197896.aspx
+  [Windows Azure 虚拟机和云服务大小]: http://go.microsoft.com/fwlink/?LinkId=309169
   [“基本”模式的实例大小]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
   [“基本”模式的实例数]: ./media/web-sites-scale/04ChooseBasicInstanceCount.png
   [“保存”按钮]: ./media/web-sites-scale/05SaveButton.png

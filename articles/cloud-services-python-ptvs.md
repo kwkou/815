@@ -128,9 +128,9 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 [Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation 
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 
-[Python Tools 2.1 for Visual Studio]: https://pytools.codeplex.com/releases/view/109707
-[Azure SDK Tools for VS 2013]: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids
-[Azure SDK Tools for VS 2012]: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs11AzurePack.appids
-[Python 2.7 32 位]: https://www.python.org/ftp/python/2.7.9/python-2.7.9.msi 
-[Python 3.4 32 位]: https://www.python.org/ftp/python/3.4.2/python-3.4.2.msi
+[Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
+[Azure SDK Tools for VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
+[Python 2.7 32 位]: http://go.microsoft.com/fwlink/?LinkId=517190 
+[Python 3.4 32 位]: http://go.microsoft.com/fwlink/?LinkId=517191
 <!--HONumber=39-->

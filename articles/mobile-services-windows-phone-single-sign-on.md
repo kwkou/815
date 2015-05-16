@@ -43,7 +43,7 @@
 
     你将使用此值来定义重定向域。
 
-3. 导航到你的本地 Git 存储库的 <a href="https://account.live.com/developers/applications/index" target="_blank">我的应用程序</a> 页（在 Live Connect 开发人员中心中），然后使用您的 Microsoft 帐户登录（如果需要）。 
+3. 导航到你的本地 Git 存储库的 <a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">我的应用程序</a> 页（在 Live Connect 开发人员中心中），然后使用您的 Microsoft 帐户登录（如果需要）。 
 
 4. 单击"创建应用程序"，然后键入"应用程序名称"并单击"我接受"。
 
@@ -85,7 +85,7 @@
 
 <h2><a name="add-authentication"></a>向应用程序添加身份验证</h2>
 
-1. 下载并安装用于 [Windows 和 Windows Phone 的 Live SDK](http://www.microsoft.com/zh-CN/download/details.aspx?id=42552)。
+1. 下载并安装用于 [Windows 和 Windows Phone 的 Live SDK](http://go.microsoft.com/fwlink/p/?LinkId=262253)。
 
 2. 在 Visual Studio 的"项目"菜单上，单击"添加引用"，然后展开"程序集"，单击"扩展"，选中"Microsoft.Live"，然后单击"确定"。 
 
@@ -180,8 +180,8 @@
 [16]: ./media/mobile-services-windows-phone-single-sign-on/mobile-add-reference-live-wp8.png
 
 <!-- URLs. -->
-[我的应用程序]: https://account.live.com/developers/applications/index
-[用于 Windows 和 Windows Phone 的 Live SDK]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
+[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[用于 Windows 和 Windows Phone 的 Live SDK]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [将移动服务添加到现有应用程序]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-users
 [使用脚本为用户授权]: /zh-cn/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts/

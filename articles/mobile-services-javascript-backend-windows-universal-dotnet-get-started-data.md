@@ -28,7 +28,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 若要完成本教程，您需要以下各项：
 
 * 有效的 Azure 帐户。如果没有帐户，则可创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 免费试用](/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-dotnet-get-started-data%2F)。
-* <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8" target="_blank">Visual Studio Express 2013 for Windows</a> （update 2 或更高版本）。 
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Express 2013 for Windows</a> （update 2 或更高版本）。 
 
 
 ##<a name="download-app"></a>下载 GetStartedWithData 项目
@@ -48,7 +48,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 		        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		</code></pre>
 
-	<p>此代码通过使用 MobileServiceClient 类的一个实例提供对应用程序中新移动服务的访问权限。 <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient 类</a>。客户端是通过提供新移动服务的 URI 和应用程序密钥来创建的。此静态字段可用于你的应用程序中的所有页面。</p>
+	<p>此代码通过使用 MobileServiceClient 类的一个实例提供对应用程序中新移动服务的访问权限。 <a href="http://go.microsoft.com/fwlink/p/?LinkId=302030">MobileServiceClient 类</a>。客户端是通过提供新移动服务的 URI 和应用程序密钥来创建的。此静态字段可用于你的应用程序中的所有页面。</p>
 </li>
 <li><p>右键单击 Windows Phone 应用程序项目，单击 <strong>将</strong>，单击 <strong>"连接的服务..."</strong>，选择您刚创建的移动服务，然后单击 <strong>确定</strong>。 </p>
 <p>相同的代码将添加到共享的 App.xaml.cs 文件中，但这一次在 Windows Phone 应用程序的条件编译块内。</p></li>
@@ -126,7 +126,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
-[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
-[开发人员代码示例网站]:  http://code.msdn.microsoft.com/Get-Started-with-Data-in-0e863e57
+[移动服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
+[开发人员代码示例网站]:  http://go.microsoft.com/fwlink/p/?LinkID=510826
 
-[MobileServiceClient 类]: https://msdn.microsoft.com/zh-CN/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
+[MobileServiceClient 类]: http://go.microsoft.com/fwlink/p/?LinkId=302030

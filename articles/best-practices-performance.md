@@ -154,7 +154,7 @@ Azure 可提供以下数据存储选择，因此，能否做出正确的选择�
 
 根据你的应用程序，你可以对其他资源应用类似推论。
 
-<!-- #### Caching ####  The Azure Caching Service provides distributed elastic memory for caching things like ASP.net session state, or commonly referenced values from SQL数据库 reference tables. Because the objects are in distributed memory, there is a considerable performance gain possible. Because Azure handles the caching infrastructure, there is little development cost in implementing it.   Plan to provide enough caching capacity so that you can cache frequently accessed objects. In SQL数据库 there are frequently reference tables used to convert numeric codes into longer descriptive character strings. These tables often include data such as Country and City names, valid Postal Code values, names of Departments within your company, etc. For smaller tables it may make sense to store the entire table in cache, for others you might only store the most frequently used values. The performance gain comes in multi-join queries that involve this data: for each value that is found in the cache, several disk accesses are saved. A good introduction and discussion of performance and caching in Azure is [Introducing the Azure Caching Service](http://msdn.microsoft.com/zh-CN/magazine/gg983488.aspx). A more recent blog post on the subject is at [Windows #Azure Caching Performance Considerations](http://blogs.msdn.com/b/davidmcg/archive/2012/02/08/windows-azure-caching-performance-considerations.aspx). -->
+<!-- #### Caching ####  The Azure Caching Service provides distributed elastic memory for caching things like ASP.net session state, or commonly referenced values from SQL数据库 reference tables. Because the objects are in distributed memory, there is a considerable performance gain possible. Because Azure handles the caching infrastructure, there is little development cost in implementing it.   Plan to provide enough caching capacity so that you can cache frequently accessed objects. In SQL数据库 there are frequently reference tables used to convert numeric codes into longer descriptive character strings. These tables often include data such as Country and City names, valid Postal Code values, names of Departments within your company, etc. For smaller tables it may make sense to store the entire table in cache, for others you might only store the most frequently used values. The performance gain comes in multi-join queries that involve this data: for each value that is found in the cache, several disk accesses are saved. A good introduction and discussion of performance and caching in Azure is [Introducing the Azure Caching Service](http://go.microsoft.com/fwlink/?LinkId=252680). A more recent blog post on the subject is at [Windows #Azure Caching Performance Considerations](http://go.microsoft.com/fwlink/?LinkId=252681). -->
 
 #### 场景：在 Azure 应用程序中使用队列
 
@@ -169,7 +169,7 @@ Azure 存储队列提供了大队列大小、进度跟踪等功能。服务总�
 有关这两种技术的更完整的详细比较，请参阅 [Azure 队列和 Azure 服务总线 队列 - 比较与对照][Azure 队列和 Azure 服务总线 队列 - 比较与对照]。
 
 有关 服务总线 性能的讨论，请参阅[使用 服务总线 中转消息传送改善性能的最佳实践][使用 服务总线 中转消息传送改善性能的最佳实践]。
-<!-- #### Scenario: "Big Data" Applications ####  "Big Data" is often found as a by-product of another system or application. Examples include:   * Web logs   * Other diagnostic, audit, and monitoring files   * Oil company seismic logs   * Click-data and other information left by people traversing the Internet   "Big Data" can be identified by the following criteria:   * Size (typically, hundreds of terabytes or larger)   * Type: non-relational, variable schema, files in a file system   The data is generally not suited for processing in a relational database.   There are four major kinds of non-SQL data storage:   * Key-value   * Document   * Graph   * Column-Family   Azure provides direct support for Hadoop, and also enables use of other technologies. For information about Azure HDInsight Service, see:   * [Big Data](/zh-CN/solutions/big-data/)  * [Azure HDInsight Service](/zh-cn/documentation/services/hdinsight/) * [Getting Started with Azure HDInsight Service](/zh-cn/documentation/articles/hdinsight-get-started/)  For some discussion of issues involved with various noSQL storage methods, see:   * [Getting Acquainted with NoSQL on Azure](http://blogs.msdn.com/b/usisvde/archive/2012/04/05/getting-acquainted-with-nosql-on-windows-azure.aspx)  * [AggregateOrientedDatabase](http://martinfowler.com/bliki/AggregateOrientedDatabase.html) * [PolyglotPersistence](http://martinfowler.com/bliki/PolyglotPersistence.html)  -->
+<!-- #### Scenario: "Big Data" Applications ####  "Big Data" is often found as a by-product of another system or application. Examples include:   * Web logs   * Other diagnostic, audit, and monitoring files   * Oil company seismic logs   * Click-data and other information left by people traversing the Internet   "Big Data" can be identified by the following criteria:   * Size (typically, hundreds of terabytes or larger)   * Type: non-relational, variable schema, files in a file system   The data is generally not suited for processing in a relational database.   There are four major kinds of non-SQL data storage:   * Key-value   * Document   * Graph   * Column-Family   Azure provides direct support for Hadoop, and also enables use of other technologies. For information about Azure HDInsight Service, see:   * [Big Data](/zh-CN/solutions/big-data/)  * [Azure HDInsight Service](/zh-cn/documentation/services/hdinsight/) * [Getting Started with Azure HDInsight Service](/zh-cn/documentation/articles/hdinsight-get-started/)  For some discussion of issues involved with various noSQL storage methods, see:   * [Getting Acquainted with NoSQL on Azure](http://go.microsoft.com/fwlink/?LinkId=252729)  * [AggregateOrientedDatabase](http://go.microsoft.com/fwlink/?LinkID=252731) * [PolyglotPersistence](http://go.microsoft.com/fwlink/?LinkId=252732)  -->
 
 #### 其他 Azure 单个服务性能优化
 
@@ -290,36 +290,36 @@ Azure 明显减少了容量规划所涉及的工作，因为许多旧活动（�
 
 <!-- * [Azure Planning - A Post-decision Guide to Integrate Azure in Your Environment](http://go.microsoft.com/fwlink/?LinkId=252884)  -->
 
-  [“完成的有用工作量与使用的时间和资源的比较”]: http://en.wikipedia.org/wiki/Computer_performance
+  [“完成的有用工作量与使用的时间和资源的比较”]: http://go.microsoft.com/fwlink/?LinkId=252650
   [Azure 中的 Visual Studio 负载测试概述]: http://www.visualstudio.com/get-started/load-test-your-app-vs
-  [数据库设计和建模基础]: http://www.sqlteam.com/article/database-design-and-modeling-fundamentals
-  [数据库设计方法]: http://www.sqlservercentral.com/stairway/72400/
-  [数据库设计]: http://databases.about.com/od/specificproducts/Database_Design.htm
+  [数据库设计和建模基础]: http://go.microsoft.com/fwlink/?LinkId=252675
+  [数据库设计方法]: http://go.microsoft.com/fwlink/?LinkId=252676
+  [数据库设计]: http://go.microsoft.com/fwlink/?LinkId=252677
   [Azure 表存储和 Azure SQL数据库 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/jj553018.aspx
-  [Azure 表存储性能注意事项]: http://codebetter.com/dariosolera/2011/10/14/azure-table-storage-performace-considerations/
-  [SQL数据库 和 Azure 表存储]: http://msdn.microsoft.com/zh-CN/magazine/gg309178.aspx
-  [通过批处理 Azure 表存储插入操作来改进性能（可能为英文页面）]: http://blogs.msdn.com/b/silverlining/archive/2012/01/25/improving-performance-by-batching-azure-table-storage-inserts.aspx
-  [SQL数据库 性能和弹性指南]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-performance-and-elasticity-guide.aspx
-  [SQL数据库 中的联合]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh597452.aspx
-  [使用联合完成数据库设计的优先扩展方法：第 1 部分 – 选择联合和联合键]: http://blogs.msdn.com/b/cbiyikoglu/archive/2012/02/29/database-design-with-federations-part-1-picking-federations-and-picking-the-federation-key.aspx
+  [Azure 表存储性能注意事项]: http://go.microsoft.com/fwlink/?LinkId=252663
+  [SQL数据库 和 Azure 表存储]: http://go.microsoft.com/fwlink/?LinkId=252664
+  [通过批处理 Azure 表存储插入操作来改进性能（可能为英文页面）]: http://go.microsoft.com/fwlink/?LinkID=252665
+  [SQL数据库 性能和弹性指南]: http://go.microsoft.com/fwlink/?LinkId=221876
+  [SQL数据库 中的联合]: http://go.microsoft.com/fwlink/?LinkId=252668
+  [使用联合完成数据库设计的优先扩展方法：第 1 部分 – 选择联合和联合键]: http://go.microsoft.com/fwlink/?LinkId=252671
   [使用联合完成数据库设计的优先扩展方法：第 2 部分 – 为联合添加批注并部署架构]: http://blogs.msdn.com/b/cbiyikoglu/archive/2012/04/12/scale-first-approach-to-database-design-with-federations-part-2-annotating-schema-for-federations.aspx
   [第 2 部分]: http://blogs.msdn.com/b/cbiyikoglu/archive/2012/01/19/fan-out-querying-in-federations-part-ii-summary-queries-fanout-queries-with-top-ordering-and-aggregates.aspx
-  [如何使用 SQL数据库 进行分片]: http://social.technet.microsoft.com/wiki/contents/articles/sharding-with-sql-azure/rss.aspx
-  [SQL Server 和 SQL数据库 分片库]: http://enzosqlshard.codeplex.com/
+  [如何使用 SQL数据库 进行分片]: http://go.microsoft.com/fwlink/?LinkId=252678
+  [SQL Server 和 SQL数据库 分片库]: http://go.microsoft.com/fwlink/?LinkId=252679
   [Azure 队列和 Azure 服务总线 队列 - 比较与对照]: http://msdn.microsoft.com/zh-cn/library/hh767287.aspx
   [使用 服务总线 中转消息传送改善性能的最佳实践]: http://msdn.microsoft.com/zh-cn/library/hh528527.aspx
-  [Azure Web 应用程序和序列化]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh674483%28v=vs.103%29.aspx
-  []: http://mysql.com
-  [1]: http://forums.mysql.com/list.php?24
-  [SQL数据库 性能和弹性指南（可能为英文页面）]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-performance-and-elasticity-guide.aspx
-  [瞬时故障处理应用程序块（可能为英文页面）]: https://msdn.microsoft.com/zh-CN/library/hh680934(PandP.50).aspx
-  [自动缩放应用程序块]: https://msdn.microsoft.com/zh-CN/library/hh680892(PandP.50).aspx
-  [针对 服务总线 队列和主题的容量规划]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh694235(v=vs.103)
-  [有关开发 Azure 应用程序的问题排查最佳实践]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh771389.aspx
-  [了解 SQL数据库 的性能]: http://social.technet.microsoft.com/wiki/contents/articles/gaining-performance-insight-into-sql-azure.aspx
-  [SQL数据库 和本地 SQL Server]: http://www.keepitsimpleandfast.com/2012/01/analyze-performance-between-sql-azure.html
-  [使用动态管理视图监视 SQL数据库]: https://msdn.microsoft.com/zh-CN/library/windowsazure/ff394114.aspx
-  [SQL数据库 可使用 DMV 分析你是否缺少 SQL 事件探查器]: http://www.keepitsimpleandfast.com/2011/05/usefull-dmvs-for-sql-azure-to-analyze.html
+  [Azure Web 应用程序和序列化]: http://go.microsoft.com/fwlink/?LinkId=252749
+  []: http://go.microsoft.com/fwlink/?LinkId=252775
+  [1]: http://go.microsoft.com/fwlink/?LinkId=252776
+  [SQL数据库 性能和弹性指南（可能为英文页面）]: http://go.microsoft.com/fwlink/?LinkID=252666
+  [瞬时故障处理应用程序块（可能为英文页面）]: http://go.microsoft.com/fwlink/?LinkID=236901
+  [自动缩放应用程序块]: http://go.microsoft.com/fwlink/?LinkId=252873
+  [针对 服务总线 队列和主题的容量规划]: http://go.microsoft.com/fwlink/?LinkId=252875
+  [有关开发 Azure 应用程序的问题排查最佳实践]: http://go.microsoft.com/fwlink/?LinkID=252876
+  [了解 SQL数据库 的性能]: http://go.microsoft.com/fwlink/?LinkId=252877
+  [SQL数据库 和本地 SQL Server]: http://go.microsoft.com/fwlink/?LinkId=252878
+  [使用动态管理视图监视 SQL数据库]: http://go.microsoft.com/fwlink/?LinkId=236195
+  [SQL数据库 可使用 DMV 分析你是否缺少 SQL 事件探查器]: http://go.microsoft.com/fwlink/?LinkId=252879
   [Cerebrata]: http://go.microsoft.com/fwlink/?LinkId=252880
   [SQL Server 和 SQL数据库 性能测试：Enzo SQL 基线（可能为英文页面）]: http://enzosqlbaseline.codeplex.com/
   [SQL数据库]: http://azure.microsoft.com/zh-cn/services/sql-database/

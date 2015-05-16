@@ -15,7 +15,7 @@
 <UL>
 <LI>如需详细了解完整部署，请阅读<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">规划</a>和<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">部署</a>指南。</LI>
 <LI>要了解有关其他 Azure 站点恢复部署情形，请参阅 <a href="http://www.windowsazure.cn/zh-cn/documentation/articles/hyper-v-recovery-manager-overview/">Azure 站点恢复概述</a>。</LI>
-<LI style="display:none">在使用本教程过程中如果遇到问题，请查阅 wiki 文章 <a href="http://social.technet.microsoft.com/wiki/contents/articles/21619.hyper-v-recovery-manager-common-error-scenarios-and-resolutions.aspx">Azure 站点恢复：常见错误情形和解决方案</a>，或在 <a href="http://social.msdn.microsoft.com/Forums/windowsazure/zh-CN/home?forum=hypervrecovmgr">Azure 恢复服务论坛</a>上发布你的问题。</li>
+<LI style="display:none">在使用本教程过程中如果遇到问题，请查阅 wiki 文章 <a href="http://go.microsoft.com/fwlink/?LinkId=389879">Azure 站点恢复：常见错误情形和解决方案</a>，或在 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>上发布你的问题。</li>
 </UL>
 
 </div>
@@ -67,7 +67,7 @@
 4. 在<b>"名称"</b>中，输入一个友好名称以标识此保管库。
 
 5. 在<b>"区域"</b>中，为保管库选择地理区域。 
-<div  style="display:none">Get subscription pricing information at <a href="http://www.windowsazure.com/zh-CN/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div>
+<div  style="display:none">Get subscription pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。</div>
 6. 单击<b>"创建保管库"</b>。 
 
 	![New Vault](./media/hyper-v-recovery-manager-configure-vault/SR_HvVault.png)
@@ -209,5 +209,5 @@
 <h2><a id="next"></a>后续步骤</h2>
 <UL>
 <LI>若要在完全的生产环境中规划和部署 Azure 站点恢复，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx">Azure 站点恢复规划指南</a>和 <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn168841.aspx">Azure 站点恢复部署指南</a>。</LI>
-<LI style="display:none">如有问题，请访问 <a href="http://social.msdn.microsoft.com/Forums/windowsazure/zh-CN/home?forum=hypervrecovmgr">Azure 恢复服务论坛</a>。</LI>
+<LI style="display:none">如有问题，请访问 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>。</LI>
 </UL>

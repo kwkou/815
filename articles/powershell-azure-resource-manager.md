@@ -250,18 +250,18 @@ Save-AzureResourceGroupGalleryTemplate 将保存模板，并返回 JSON 模板�
 
     Name                                 Locations
     ----                                 ---------
-    ResourceGroup                        East Asia, South East Asia, East US, China North, North Central US,
+    ResourceGroup                        East Asia, South East Asia, East US, West US, North Central US,
                                          South Central US, Central US, North Europe, West Europe
 
     Microsoft.Sql/servers/databases      Brazil South, Central US, East Asia, East US, East US 2, Japan
                                          East, Japan West, North Central US, North Europe, South Central US,
-                                         Southeast Asia, West Europe, China North
+                                         Southeast Asia, West Europe, West US
 
     Microsoft.Web/serverFarms            Brazil South, East Asia, East US, Japan East, Japan West, North
-                                         Central US, North Europe, West Europe, China North
+                                         Central US, North Europe, West Europe, West US
 
     Microsoft.Web/sites                  Brazil South, East Asia, East US, Japan East, Japan West, North
-                                         Central US, North Europe, West Europe, China North
+                                         Central US, North Europe, West Europe, West US
 
 现在，我们有了需要创建资源组的信息。
 

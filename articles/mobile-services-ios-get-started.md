@@ -108,7 +108,7 @@
 [脱机数据同步入门]: /zh-cn/documentation/articles/mobile-services-ios-get-started-offline-data
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 
-[移动服务 iOS SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
+[移动服务 iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [管理门户]: https://manage.windowsazure.cn/
-[XCode]: https://developer.apple.com/xcode/
+[XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET 后端版本]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started

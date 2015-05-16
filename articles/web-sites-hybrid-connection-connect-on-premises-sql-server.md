@@ -375,8 +375,8 @@
 
 <!-- IMAGES -->
 
-  [Azure 预览版门户]: https://manage.windowsazure.cn
-  [混合连接]: /documentation/articles/integration-hybrid-connection-overview
+  [Azure 预览版门户]: https://portal.azure.com
+  [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [Visual Studio 下载]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
   [Microsoft 下载中心]: http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=22

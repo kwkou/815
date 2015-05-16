@@ -98,6 +98,6 @@
   [1]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-quickstart-steps-vs.png
   [mobile-services-dotnet-backend-test-local-service]: ../includes/mobile-services-dotnet-backend-test-local-service.md
   [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
-  [Xcode]: https://developer.apple.com/xcode/
+  [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [mobile-services-ios-run-app]: ../includes/mobile-services-ios-run-app.md
   [配置本地 Web 服务器以允许连接到本地移动服务]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express

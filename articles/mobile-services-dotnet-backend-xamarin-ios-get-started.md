@@ -19,7 +19,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-
 
 只有在完成本教程后，才可以学习有关 Xamarin iOS 应用程序的所有其他移动服务教程。 
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取最多 10 个免费移动服务，这些移动服务即使在你的试用期结束后也可以继续使用。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-ios-get-started" target="_blank">Azure 免费试用</a>。<br />本教程需要安装 <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8" target="_blank">Visual Studio Professional 2013</a>。可以使用免费试用版。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取最多 10 个免费移动服务，这些移动服务即使在你的试用期结束后也可以继续使用。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-ios-get-started" target="_blank">Azure 免费试用</a>。<br />本教程需要安装 <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>。可以使用免费试用版。
 
 ## 创建新的移动服务
 
@@ -41,7 +41,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-
 
   	![][7]
 
-3. 在本地计算机或虚拟机上下载并安装 <a href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8" target="_blank">Visual Studio Professional 2013</a>（如果尚未这么做）。  
+3. 在本地计算机或虚拟机上下载并安装 <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>（如果尚未这么做）。  
 
 4. 下载并安装 [Xcode] v4.4 或更高版本以及 [Xamarin Studio]。还可以使用 Xamarin for Visual Studio。
 
@@ -114,8 +114,8 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-
 [脱机数据同步入门]: /zh-cn/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-users
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-push
-[Visual Studio Professional 2013]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8
-[移动服务 SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-win8-v0.2.5.msi
+[Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
+[移动服务 SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [管理门户]: https://manage.windowsazure.cn/
 [JavaScript 后端版本]: /zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started
 [使用 Visual Studio 2012 的移动服务中的数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012
@@ -123,5 +123,5 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-
 
 
 [Xamarin Studio]: http://xamarin.com/download
-[Xcode]: https://developer.apple.com/xcode/
-[用于 Windows 的 Xamarin]: http://xamarin.com/download
+[Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
+[用于 Windows 的 Xamarin]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409

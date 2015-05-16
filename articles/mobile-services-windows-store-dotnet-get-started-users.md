@@ -76,9 +76,9 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 
 <!-- URLs. -->
-[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
-[我的应用程序]: https://account.live.com/developers/applications/index
-[Live SDK for Windows]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42552
+[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started/
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/

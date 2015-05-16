@@ -271,7 +271,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started/
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/
 [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
-[Windows Phone 8 SDK]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-phone
+[Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [软删除]: /zh-cn/documentation/articles/mobile-services-using-soft-delete/
 
 [移动服务 SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0

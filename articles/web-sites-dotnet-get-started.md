@@ -116,7 +116,7 @@
 
 		> [WACOM.NOTE] 将此订阅文件下载到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除您的 Windows Azure 服务。
 
-		有关更多信息，请参见[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-CN/library/windowsazure/hh531793.aspx#BKMK_AccountVCert)。
+		有关更多信息，请参见[管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert)。
 
 2. 在“导入发布设置”对话框中，选择“从 Windows Azure 网站导入”单选按钮，然后单击“新建”。
 

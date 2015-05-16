@@ -331,7 +331,7 @@
   [如何向应用程序发送通知]: #send
   [测试应用程序]: #run-app
   [此处]: http://go.microsoft.com/fwlink/?LinkId=389797
-  [移动服务 Android SDK]: http://zumo.blob.core.windows.net/sdk/azuresdk-android-1.1.5.zip
+  [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
   [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [启用 GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
   [Azure 管理门户]: https://manage.windowsazure.cn/

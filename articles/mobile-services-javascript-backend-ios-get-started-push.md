@@ -173,7 +173,7 @@
 * [什么是通知中心？]
   <br/>了解有关通知中心跨所有主要的客户端平台向您的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](https://msdn.microsoft.com/zh-CN/library/dn530751.aspx)
+* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
   </br>获取故障排除和调试通知中心解决方案的指南。 
 
 * [移动服务 Objective-C 操作方法概念性参考]
@@ -223,9 +223,9 @@
 [117]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
 <!-- URLs.   -->
-[安装 Xcode]: https://developer.apple.com/xcode/
+[安装 Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS 设置门户]: http://go.microsoft.com/fwlink/p/?LinkId=272456
-[移动服务 iOS SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads
+[移动服务 iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple 推送通知服务]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-ios-get-started
 [数据处理入门]: /zh-cn/documentation/articles/mobile-services-ios-get-started-data

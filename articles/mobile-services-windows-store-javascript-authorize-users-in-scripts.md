@@ -102,4 +102,4 @@
   [3]: ./media/mobile-services-windows-store-javascript-authorize-users-in-scripts/mobile-quickstart-startup.png
   [数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-data/
   [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-js
-  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/
+  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/p/?LinkId=262293

@@ -111,7 +111,7 @@ Microsoft 的大型数据解决方案的一大功能是，将 Microsoft 商业�
   [创建 Hive ODBC 数据源]: #CreateHiveODBCDataSource
   [将数据从 HDInsight 群集导入到 Excel 中]: #ImportData
   [后续步骤]: #nextsteps
-  [下载中心]: http://www.microsoft.com/zh-CN/download/details.aspx?id=40886
+  [下载中心]: http://go.microsoft.com/fwlink/?LinkID=286698
   [ODBC 数据源管理器]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.DataSourceAdmin1.png
   [高级选项]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.HiveOdbc.DataSource.AdvancedOptions1.png
   [打开数据连接向导]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.Excel.DataConnection1.png

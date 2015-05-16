@@ -242,14 +242,14 @@ BizTalk 服务设置
   [创建备份]: #createbu
   [还原备份]: #restore
   [备份的内容]: #budata
-  [BizTalk 服务 REST API]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn232427.aspx
+  [BizTalk 服务 REST API]: http://go.microsoft.com/fwlink/p/?LinkID=325584
   [BizTalk 服务：版本图表]: /zh-cn/documentation/articles/biztalk-editions-feature-chart/
   [按需备份]: #backupnow
   [计划备份]: #backupschedule
   [0]: ./media/biztalk-backup-restore/AutomaticBU.png
   [上一次计划的备份状态]: ./media/biztalk-backup-restore/status-last-backup.png
-  [BizTalk 服务：使用操作日志进行故障排除]: http://www.windowsazure.com/zh-CN/documentation/articles/biztalk-troubleshoot-using-ops-logs/
-  [还原 BizTalk 服务 REST API]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn232344.aspx
+  [BizTalk 服务：使用操作日志进行故障排除]: http://go.microsoft.com/fwlink/?LinkId=391211
+  [还原 BizTalk 服务 REST API]: http://go.microsoft.com/fwlink/p/?LinkID=325582
   [1]: ./media/biztalk-backup-restore/restore-ui.png
   [2]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
   [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/

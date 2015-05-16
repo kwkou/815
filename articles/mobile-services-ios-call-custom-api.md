@@ -18,7 +18,7 @@
 2. [更新应用程序以调用自定义 API]
 3. [测试应用程序]
 
-本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。本教程需要安装[移动服务 iOS SDK](https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios#sdk-downloads) 和 [XCode 4.5](https://developer.apple.com/xcode/) 以及 iOS 5.0 或更高版本。
+本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。本教程需要安装[移动服务 iOS SDK](https://go.microsoft.com/fwLink/p/?LinkID=266533) 和 [XCode 4.5](https://go.microsoft.com/fwLink/p/?LinkID=266532) 以及 iOS 5.0 或更高版本。
 
 ## <a name="define-custom-api"></a>定义自定义 API
 

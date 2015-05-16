@@ -39,8 +39,8 @@
 [2]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-live-connect-app-api-settings.png
 <!-- URLs. -->
 [使用 Live Connect 实现对 Windows 应用商店应用程序的单一登录]: /zh-cn/documentation/articles/mobile-services-how-to-register-windows-live-connect-single-sign-on/
-[提交应用程序页]: https://appdev.microsoft.com/StorePortals/zh-CN/Developer/Catalog/ReleaseAnchor
-[我的应用程序]: https://account.live.com/developers/applications/index
+[提交应用程序页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/

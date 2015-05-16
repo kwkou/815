@@ -40,7 +40,7 @@ ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.d
 
 <tr>
 <td>保管库要求</td>
-<td><p>你将需要一个 Azure 帐户来以设置 Azure 站点恢复保管库。请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<!--Get pricing information at <a href="http://www.windowsazure.com/zh-CN/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。--></p></td>
+<td><p>你将需要一个 Azure 帐户来以设置 Azure 站点恢复保管库。请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<!--Get pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。--></p></td>
 <td><p>启用了 Azure 站点恢复的 Azure 帐户。</p>
 </td><td><p>启用了 Azure 站点恢复的 Azure 帐户。</p></td>
 </tr>
@@ -131,4 +131,4 @@ ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.d
 
 </table>
 
-<!--p>如有问题，请访问 <a href="http://social.msdn.microsoft.com/Forums/windowsazure/zh-CN/home?forum=hypervrecovmgr">Azure 恢复服务论坛</a>。</p-->
+<!--p>如有问题，请访问 <a href="http://go.microsoft.com/fwlink/?LinkId=313628">Azure 恢复服务论坛</a>。</p-->

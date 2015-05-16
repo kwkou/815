@@ -13,7 +13,7 @@
 
 此工具提供了用于从 Mac 和 Linux 桌面创建、部署和管理虚拟机的功能。此功能类似于随面向 .NET、Node.JS 和 PHP 的 Azure SDK 一起安装的 Windows PowerShell cmdlet 所提供的功能。
 
-若要在 Mac 上安装该工具，请下载并运行 [Azure SDK 安装程序](http://az412849.vo.msecnd.net/downloads04/azure-cli.0.9.2.dmg)。
+若要在 Mac 上安装该工具，请下载并运行 [Azure SDK 安装程序](http://go.microsoft.com/fwlink/?LinkId=252249)。
 
 若要在 Linux 上安装该工具，请安装最新版本的 Node.JS，然后使用 NPM 进行安装：
 
@@ -171,7 +171,7 @@
 	data:    galleryEndpointUrl:
 	data:    isPublicEnvironment:        true
 	data:    managementEndpointUrl:      https://management.core.chinacloudapi.cn
-	data:    portalUrl:                  https://manage.windowsazure.cn/
+	data:    portalUrl:                  http://go.microsoft.com/fwlink/?LinkId=301902
 	data:    publishingProfileUrl:       http://go.microsoft.com/fwlink/?LinkID=301774
 	data:    resourceManagerEndpointUrl:
 	data:    sqlManagementEndpointUrl:

@@ -114,7 +114,7 @@
  
 + **respond 函数**：已返回自定义响应。
 
-> [AZURE.NOTE] 如果在脚本的某个代码路径中 **execute** 和 **respond** 均未调用，则该操作可能不返回响应。
+> [AZURE.IMPORTANT] 如果在脚本的某个代码路径中 **execute** 和 **respond** 均未调用，则该操作可能不返回响应。
 
 以下脚本将调用 **execute** 函数来完成客户端请求的数据操作： 
 

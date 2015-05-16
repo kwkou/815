@@ -26,7 +26,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
 
 ##<a id="install"></a> 下载并安装 AzCopy
 
-1. 下载[最新版本的 AzCopy](http://aka.ms/downloadazcopy), or the [latest preview version](http://xdmrelease.blob.core.windows.net/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi).
+1. 下载[最新版本的 AzCopy](http://aka.ms/downloadazcopy), or the [latest preview version](http://aka.ms/downloadazcopypr).
 2. 运行安装。默认情况下，AzCopy 安装会在 `%ProgramFiles(x86)%\Microsoft SDKs\Azure\`（在运行 64 位 Windows 的计算机上）或 `%ProgramFiles%\Microsoft SDKs\Azure\`（在运行 32 位 Windows 的计算机上）中创建一个名为  `AzCopy` 的文件夹。不过，你可以通过安装向导更改安装路径。
 3. 如果需要，你可以将 AzCopy 安装路径添加到系统路径。
 

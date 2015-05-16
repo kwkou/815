@@ -289,7 +289,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
   [运行 WordCount MapReduce 程序]: #sample
   [连接到 Microsoft 商业智能工具]: #powerquery
   [后续步骤]: #nextsteps
-  [Microsoft Web 平台安装程序]: https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=WindowsAzurePowerShell&mode=new&clcid=0x409
+  [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [如何：安装 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/#install
   [Azure 管理门户]: https://manage.windowsazure.cn/
