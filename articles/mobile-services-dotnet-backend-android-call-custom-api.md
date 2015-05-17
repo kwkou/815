@@ -53,5 +53,5 @@
   [测试应用程序]: #test-app
   [mobile-services-dotnet-backend-create-custom-api]: ../includes/mobile-services-dotnet-backend-create-custom-api.md
   [mobile-services-android-call-custom-api]: ../includes/mobile-services-android-call-custom-api.md
-  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
+  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/
   [在源代码管理中存储服务器脚本]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control

@@ -175,7 +175,7 @@
   [Microsoft Web 平台数据库页]: http://www.microsoft.com/web/platform/database.aspx
   [1]: /zh-cn/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server#InstallSQL
   [在本地创建 SQL Server 数据库]: /zh-cn/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server#CreateSQLDB
-  [Azure 管理门户]: http://go.microsoft.com/fwlink/p/?linkid=213885&clcid=0x409
+  [Azure 管理门户]: http://manage.windowsazure.cn
   [创建 BizTalk 服务]: ./media/mobile-services-dotnet-backend-hybrid-connections-get-started/1.png
   [配置新的 BizTalk 服务]: ./media/mobile-services-dotnet-backend-hybrid-connections-get-started/2.png
   [添加混合连接]: ./media/mobile-services-dotnet-backend-hybrid-connections-get-started/3.png
@@ -191,5 +191,5 @@
   [连接字符串的应用程序设置]: ./media/mobile-services-dotnet-backend-hybrid-connections-get-started/11.png
   [SQL Management Studio]: ./media/mobile-services-dotnet-backend-hybrid-connections-get-started/12.png
   [混合连接网站]: http://azure.microsoft.com/zh-cn/services/biztalk-services/
-  [混合连接概述]: http://go.microsoft.com/fwlink/p/?LinkID=397274
+  [混合连接概述]: /documentation/articles/integration-hybrid-connection-overview
   [BizTalk 服务：“仪表板”、“监视”、“缩放”、“配置”和“混合连接”选项卡]: /zh-cn/documentation/articles/biztalk-dashboard-monitor-scale-tabs/

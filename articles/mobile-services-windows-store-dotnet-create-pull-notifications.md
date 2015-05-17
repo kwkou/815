@@ -87,7 +87,7 @@
 
 	使用 **exports.get** 函数是因为客户端将发送 GET 请求以访问磁贴模板。
 
-   	> [AZURE.NOTE] 此自定义 API 脚本使用 Node.js [wns 模块](http://go.microsoft.com/fwlink/p/?LinkId=306750)，后者通过 **require** 函数进行引用。此模块不同于用于从服务器脚本发送推送通知的[推送对象](http://msdn.microsoft.com/library/windowsazure/jj554217.aspx)返回的 [wns 对象](http://go.microsoft.com/fwlink/p/?LinkId=260591)。
+   	> [AZURE.NOTE] 此自定义 API 脚本使用 Node.js [wns 模块](http://go.microsoft.com/fwlink/p/?LinkId=306750)，后者通过 **require** 函数进行引用。此模块不同于用于从服务器脚本发送推送通知的[推送对象](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554217.aspx)返回的 [wns 对象](http://go.microsoft.com/fwlink/p/?LinkId=260591)。
 
 接下来，你将修改快速入门应用程序以启动定期通知，这些通知通过请求新的自定义 API 来更新动态磁贴。
 
@@ -155,7 +155,7 @@
 [推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[定期通知]: http://msdn.microsoft.com/library/windows/apps/jj150587.aspx
+[定期通知]: https://msdn.microsoft.com/zh-CN/library/windows/apps/jj150587.aspx
 
 [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 

@@ -84,7 +84,7 @@ Azure 门户预览版的一项新功能是，你可以基于除“CPU 百分比�
 
 启用这条附加规则后，如果在执行缩放操作之前负载超出 85%，你将会看到两个附加实例而不是一个。
 
-  [Azure 门户预览版]: https://portal.azure.com/
+  [Azure 门户预览版]: https://manage.windowsazure.cn/
   [“缩放”部件]: ./media/insights-how-to-scale/Insights_ScalePartOff.png
   [“缩放”分页]: ./media/insights-how-to-scale/Insights_ScaleBladeDayZero.png
   [显示了 CPU 百分比的“缩放”分页]: ./media/insights-how-to-scale/Insights_ScaleBladeCPU.png

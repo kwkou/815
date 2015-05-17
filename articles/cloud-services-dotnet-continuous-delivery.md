@@ -582,9 +582,9 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
   [Azure 库]: http://www.windowsazure.cn/downloads/?sdk=net
   [Azure Tools for Visual Studio]: http://www.windowsazure.cn/downloads/?sdk=net
   [MSBuild 命令行参考]: http://msdn.microsoft.com/zh-cn/library/ms164311(v=VS.90).aspx
-  [1]: http://go.microsoft.com/fwlink/p/?LinkId=239966
-  [了解 Team Foundation 生成系统]: http://go.microsoft.com/fwlink/?LinkId=238798
-  [配置生成计算机]: http://go.microsoft.com/fwlink/?LinkId=238799
+  [1]: https://msdn.microsoft.com/zh-CN/library/ms164311.aspx
+  [了解 Team Foundation 生成系统]: https://msdn.microsoft.com/zh-CN/library/dd793166.aspx
+  [配置生成计算机]: https://msdn.microsoft.com/zh-CN/library/ms181712.aspx
   [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
   [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
   [Azure PowerShell cmdlet]: http://go.microsoft.com/fwlink/?LinkId=256262

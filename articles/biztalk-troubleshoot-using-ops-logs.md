@@ -107,12 +107,12 @@
   [使用 Azure 管理服务跟踪的操作]: #bizops
   [跟踪消息]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh949805.aspx
   [查看操作日志]: ./media/biztalk-troubleshoot-using-ops-logs/Operation-Logs.png
-  [备份 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=325584
-  [从备份还原 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=325582
-  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
-  [BizTalk 服务：使用 Azure 管理门户进行设置]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [BizTalk 服务：设置状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
-  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
-  [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
-  [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
+  [备份 BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn232427.aspx
+  [从备份还原 BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/dn232344.aspx
+  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: /documentation/articles/biztalk-editions-feature-chart/
+  [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/
+  [BizTalk 服务：设置状态图表]: /documentation/articles/biztalk-service-state-chart/
+  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：限制]: /documentation/articles/biztalk-throttling-thresholds/
+  [BizTalk 服务：颁发者名称和颁发者密钥]: /documentation/articles/biztalk-issuer-name-issuer-key/
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx

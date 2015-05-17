@@ -368,7 +368,7 @@
 -   [Sage 如何使用自动缩放降低 Azure 托管成本][]
 -   [使用 Azure 中的自动缩放降低 TechNet 和 MSDN 托管成本并减少环境影响][]
 
-  [用于 Azure 的 Microsoft Enterprise Library 5.0 集成包]: http://go.microsoft.com/fwlink/?LinkID=235134
+  [用于 Azure 的 Microsoft Enterprise Library 5.0 集成包]: https://msdn.microsoft.com/zh-CN/library/hh680918(v=pandp.50).aspx
   [后续步骤]: #NextSteps
   [什么是自动缩放应用程序块？]: #WhatIs
   [概念]: #Concepts

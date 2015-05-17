@@ -182,7 +182,7 @@ Azure 存储队列提供了大队列大小、进度跟踪等功能。服务总�
 ##### 本地存储
 
 虽然本地存储在计算机发生故障时不具有持久性，但它可用于保存经常访问的信息，或保存将在其他地方使用的中间结果。这种方式经济高效，因为无需支付任何费用。
-<!-- ##### Azure Access Control Service (ACS) #####  The two main factors affecting ACS resource usage, and thus performance, are the token size, and encryption. Further discussion is at [ACS Performance Guidelines](http://go.microsoft.com/fwlink/?LinkId=252747).  -->
+<!-- ##### Azure Access Control Service (ACS) #####  The two main factors affecting ACS resource usage, and thus performance, are the token size, and encryption. Further discussion is at [ACS Performance Guidelines](https://msdn.microsoft.com/zh-CN/library/windowsazure/hh531494.aspx).  -->
 
 ##### 序列化
 
@@ -323,6 +323,6 @@ Azure 明显减少了容量规划所涉及的工作，因为许多旧活动（�
   [Cerebrata]: http://go.microsoft.com/fwlink/?LinkId=252880
   [SQL Server 和 SQL数据库 性能测试：Enzo SQL 基线（可能为英文页面）]: http://enzosqlbaseline.codeplex.com/
   [SQL数据库]: http://azure.microsoft.com/zh-cn/services/sql-database/
-  [存储]: http://go.microsoft.com/fwlink/?LinkId=246933
-  [联网]: http://go.microsoft.com/fwlink/?LinkId=252882
-  [服务总线]: http://go.microsoft.com/fwlink/?LinkId=246934
+  [存储]: /documentation/services/storage/
+  [联网]: /documentation/services/virtual-network/
+  [服务总线]: /documentation/services/service-bus/

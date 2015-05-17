@@ -260,5 +260,5 @@
   [7]: ./media/mobile-services-android-push-notifications-app-users/mobile-push-icon.png
   [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
   [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
-  [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
+  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/
   [如何使用适用于移动服务的 Android 客户端库]: /develop/mobile/how-to-guides/work-with-android-client-library

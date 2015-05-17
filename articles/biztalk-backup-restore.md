@@ -252,11 +252,11 @@ BizTalk 服务设置
   [还原 BizTalk 服务 REST API]: http://go.microsoft.com/fwlink/p/?LinkID=325582
   [1]: ./media/biztalk-backup-restore/restore-ui.png
   [2]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
-  [BizTalk 服务：使用 Azure 管理门户进行设置]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=235197
-  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
-  [BizTalk 服务：设置状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
-  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
-  [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
-  [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
+  [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/
+  [Azure BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689864.aspx
+  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: /documentation/articles/biztalk-editions-feature-chart/
+  [BizTalk 服务：设置状态图表]: /documentation/articles/biztalk-service-state-chart/
+  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：限制]: /documentation/articles/biztalk-throttling-thresholds/
+  [BizTalk 服务：颁发者名称和颁发者密钥]: /documentation/articles/biztalk-issuer-name-issuer-key/
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx

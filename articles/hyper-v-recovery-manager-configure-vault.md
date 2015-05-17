@@ -26,7 +26,7 @@
 <P>开始使用本教程之前，要确保一切准备工作就绪。</P>
 
 <UL>
-<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
+<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
 <LI><b>VMM 服务器</b>-你至少需要有一台在 System Center 2012 SP1 或 System Center 2012 R2 上运行的 VMM 服务器。</LI>
 <LI><b>VMM 云</b>-你应该至少在要保护的源 VMM 服务器上有一个云，在目标 VMM 服务器上也要有一个。如果你正在运行一台 VMM 服务器，那就会需要两个云。要保护的主云必须包含以下各项：<UL>
 	<LI>一个或多个 VMM 主机组</LI>

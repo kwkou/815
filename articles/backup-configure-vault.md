@@ -101,5 +101,5 @@ ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.d
   [安装 Azure Backup Agent for Windows Server 2012 Essentials]: http://technet.microsoft.com/zh-cn/library/jj884318.aspx
   [受保护的项]: ./media/backup-configure-vault/RS_protecteditems.png
   [删除的服务器]: ./media/backup-configure-vault/RS_deletedserver.png
-  [Azure 备份概述]: http://go.microsoft.com/fwlink/p/?LinkId=222425
-  [Azure 备份论坛]: http://go.microsoft.com/fwlink/p/?LinkId=290933
+  [Azure 备份概述]: https://technet.microsoft.com/zh-CN/library/hh831419.aspx
+  [Azure 备份论坛]: http://social.msdn.microsoft.com/Forums/zh-CN/windowsazureonlinebackup/threads

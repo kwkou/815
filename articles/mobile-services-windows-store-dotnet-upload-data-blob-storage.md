@@ -91,4 +91,4 @@
 [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account
 [应用商店应用程序的 Azure 存储客户端库]: http://go.microsoft.com/fwlink/p/?LinkId=276866 
 [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[应用程序设置]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[应用程序设置]: https://msdn.microsoft.com/zh-CN/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

@@ -9,12 +9,12 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 [WACOM.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
-在本教程中，您将使用 Active Directory 身份验证库将身份验证添加到快速入门项目，以支持使用 Azure Active Directory 进行[客户端主导的登录操作](http://msdn.microsoft.com/library/azure/jj710106.aspx)。若要支持使用 Azure Active Directory 进行[服务主导的登录操作](http://msdn.microsoft.com/library/azure/dn283952.aspx)，请从[将身份验证添加到移动服务应用程序](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)教程入手。
+在本教程中，您将使用 Active Directory 身份验证库将身份验证添加到快速入门项目，以支持使用 Azure Active Directory 进行[客户端主导的登录操作](https://msdn.microsoft.com/zh-CN/library/azure/jj710106.aspx)。若要支持使用 Azure Active Directory 进行[服务主导的登录操作](https://msdn.microsoft.com/zh-CN/library/azure/dn283952.aspx)，请从[将身份验证添加到移动服务应用程序](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)教程入手。
 
 若要能够对用户进行身份验证，必须向 Azure Active Directory (AAD) 注册你的应用程序。此过程分为两个步骤。首先，你必须注册你的移动服务，并公开其上的权限。其次，你必须注册你的 Windows 应用商店应用程序，并授予它对这些权限的访问权限
 
 
->[AZURE.NOTE] 本教程旨在帮助您更好地了解如何通过移动服务，使用[客户端主导的登录操作](http://msdn.microsoft.com/library/azure/jj710106.aspx)对 Windows 应用商店应用程序进行单一登录 Azure Active Directory 身份验证。如果这是你第一次体验移动服务，请先完成[移动服务入门]教程。
+>[AZURE.NOTE] 本教程旨在帮助您更好地了解如何通过移动服务，使用[客户端主导的登录操作](https://msdn.microsoft.com/zh-CN/library/azure/jj710106.aspx)对 Windows 应用商店应用程序进行单一登录 Azure Active Directory 身份验证。如果这是你第一次体验移动服务，请先完成[移动服务入门]教程。
 
 本教程将指导您完成以下基本步骤：
 

@@ -45,7 +45,7 @@
 	</tr>
 	<tr>
 	<td><strong>版本</strong></td>
-	<td>如果你处在开发/测试阶段，则选择<strong>“开发人员版”</strong>。如果你正处于生产阶段，请选择<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302279">BizTalk 服务:版本图表</a>以确定<strong>“高级”</strong>、<strong>“标准”</strong>或<strong>“基本”</strong>选项中哪一项适合你的业务方案。	 
+	<td>如果你处在开发/测试阶段，则选择<strong>“开发人员版”</strong>。如果你正处于生产阶段，请选择<a HREF="/documentation/articles/biztalk-editions-feature-chart/">BizTalk 服务:版本图表</a>以确定<strong>“高级”</strong>、<strong>“标准”</strong>或<strong>“基本”</strong>选项中哪一项适合你的业务方案。	 
 	</td>
 	</tr>
 	<tr>
@@ -206,7 +206,7 @@ Azure 订阅
 <br/><br/>
 Azure 帐户可以有多个订阅，并且可由获得许可的任何用户管理。例如，你的 Azure 帐户持有人创建一个名为 <em>BizTalkServiceSubscription</em> 的订阅，并向贵公司内的 BizTalk 管理员（如 <ContosoBTSAdmins@live.com>）授予对此订阅的访问权限。在这种情况下，BizTalk 管理员登录到 Azure 管理门户，并对订阅中的所有托管服务（包括 Azure BizTalk 服务）拥有完全管理员权限。BizTalk 管理员不是 Azure 帐户持有人，因此无法访问任何结算信息。
 <br/><br/>
-<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=267577"> 在 Azure 管理门户中管理订阅和存储帐户</a>提供了详细信息。
+<a HREF="https://msdn.microsoft.com/zh-CN/library/azure/hh531793.aspx"> 在 Azure 管理门户中管理订阅和存储帐户</a>提供了详细信息。
 
 </td>
 
@@ -224,7 +224,7 @@ Azure SQL数据库
 <br/><br/>
 创建 BizTalk 服务时，你可以使用现有的 Azure SQL Server、Azure SQL数据库，或者自动创建新的服务器或数据库。
 <br/><br/>
-SQL数据库 的规模是自动配置的。通常，默认的规模就足以满足 BizTalk 服务的需要。更改规模会影响定价。请参阅 <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=234930"> Azure SQL数据库 中的帐户和计费</a>
+SQL数据库 的规模是自动配置的。通常，默认的规模就足以满足 BizTalk 服务的需要。更改规模会影响定价。请参阅 <a HREF="https://msdn.microsoft.com/zh-CN/library/windowsazure/ee621788.aspx"> Azure SQL数据库 中的帐户和计费</a>
 <br/><br/>
 <b>注意</b>
 <br/>
@@ -269,7 +269,7 @@ Azure 存储帐户
 <br/><br/>
  当你创建存储帐户时，将自动创建主密钥和辅助密钥。这些密钥控制对存储帐户的访问。BizTalk 服务自动使用主密钥。
 <br/><br/>
- 有关详细信息，请参阅<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285671">存储</a>。
+ 有关详细信息，请参阅<a HREF="http://azure.microsoft.com/documentation/services/storage/">存储</a>。
 
 </td>
 </tr>
@@ -329,29 +329,28 @@ SSL 专用证书
   [设置后的步骤]: #PostProv
   [要求说明]: #Requirements
   [混合连接 - 新增功能！]: #HC
-  [Azure 免费试用]: http://go.microsoft.com/fwlink/p/?LinkID=239738
-  [Azure 管理门户]: http://go.microsoft.com/fwlink/p/?LinkID=213885
+  [Azure 管理门户]: http://manage.windowsazure.cn
   [选择“新建”按钮]: ./media/biztalk-provision-services/WABS_New.png
   [依次选择“BizTalk 服务”和“自定义创建”]: ./media/biztalk-provision-services/WABS_NewBizTalkService.png
-  []: http://go.microsoft.com/fwlink/p/?LinkID=302279
+  []: /documentation/articles/biztalk-editions-feature-chart/
   [完成时显示进度图标]: ./media/biztalk-provision-services/WABS_ProgressComplete.png
-  [“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
-  [BizTalk 服务状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
+  [“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务状态图表]: /documentation/articles/biztalk-service-state-chart/
   [添加生产就绪证书]: #AddCert
   [获取 Access Control 命名空间]: #ACS
   [修改 SSL 证书]: ./media/biztalk-provision-services/WABS_QuickGlance.png
   [选择连接信息]: ./media/biztalk-provision-services/WABS_ACSConnectInformation.png
   [Access Control 管理门户中的 ACS 服务标识]: ./media/biztalk-provision-services/WABS_ACSServiceIdentities.png
-  [管理 ACS 命名空间]: http://go.microsoft.com/fwlink/p/?LinkID=285670
+  [管理 ACS 命名空间]: https://msdn.microsoft.com/zh-CN/library/azure/hh674478.aspx
   [Azure 订阅]: https://account.windowsazure.cn/Subscriptions
-  [在 Azure 管理门户中管理订阅和存储帐户]: http://go.microsoft.com/fwlink/p/?LinkID=267577
-  [Azure SQL数据库 中的帐户和计费]: http://go.microsoft.com/fwlink/p/?LinkID=234930
-  [存储]: http://go.microsoft.com/fwlink/p/?LinkID=285671
+  [在 Azure 管理门户中管理订阅和存储帐户]: https://msdn.microsoft.com/zh-CN/library/azure/hh531793.aspx
+  [Azure SQL数据库 中的帐户和计费]: https://msdn.microsoft.com/zh-CN/library/windowsazure/ee621788.aspx
+  [存储]: http://azure.microsoft.com/documentation/services/storage/
   [混合连接选项卡]: ./media/biztalk-provision-services/WABS_HybridConnectionTab.png
-  [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274
-  [Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=235197
-  [BizTalk 服务：备份和还原]: http://go.microsoft.com/fwlink/p/?LinkID=329873
-  [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
-  [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
-  [BizTalk 服务：版本图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
+  [混合连接]: /documentation/articles/integration-hybrid-connection-overview
+  [Azure BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689864.aspx
+  [BizTalk 服务：备份和还原]: /documentation/articles/biztalk-backup-restore/
+  [BizTalk 服务：限制]: /documentation/articles/biztalk-throttling-thresholds/
+  [BizTalk 服务：颁发者名称和颁发者密钥]: /documentation/articles/biztalk-issuer-name-issuer-key/
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx
+  [BizTalk 服务：版本图表]: /documentation/articles/biztalk-editions-feature-chart/

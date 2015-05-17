@@ -35,7 +35,7 @@
 
         <td>下载 BizTalk 服务 SDK 以在你的本地开发计算机上安装 Visual Studio 项目模板。这些模板创建将部署到你的 BizTalk 服务的 <strong>BizTalk 服务</strong>（桥接）和 <strong>BizTalk Service 项目</strong>（转换）Visual Studio 项目。
         <br/><br/>
-		<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302335">我如何开始使用 Azure BizTalk 服务 SDK </a> 和<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=241589">安装 Azure BizTalk 服务 SDK</a> 列出了要开始的步骤。
+		<a HREF="https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx">我如何开始使用 Azure BizTalk 服务 SDK </a> 和<a HREF="https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689760.aspx">安装 Azure BizTalk 服务 SDK</a> 列出了要开始的步骤。
         </td>
     </tr>
 
@@ -44,7 +44,7 @@
 
         <td>打开在添加合作伙伴和创建 X12 和 AS2 EDI 协议的 Azure 上托管的 Azure BizTalk 服务门户。
         <br/><br/>
-        <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">在 BizTalk 服务门户上配置适用于 EDI 消息传递的组件</a>列出了要开始的步骤。
+        <a HREF="https://msdn.microsoft.com/zh-CN/library/azure/hh689853.aspx">在 BizTalk 服务门户上配置适用于 EDI 消息传递的组件</a>列出了要开始的步骤。
         </td>
     </tr>
 
@@ -62,11 +62,11 @@
 
 <tr>
 <td><strong>管理</strong></td>
-<td>打开 Azure BizTalk 服务门户。BizTalk 服务门户是进行 EDI 配置的入口，包括添加合作伙伴和创建 X12 和 AS2 协议。<br /><br /> 这与<strong>“快速启动”</strong>选项卡上的<strong>“创建合作伙伴协议”</strong>相同。<br /><br /> <a href="http://go.microsoft.com/fwlink/p/?LinkID=303653">在 BizTalk 服务门户上配置 EDI 消息传送的组件</a>提供了有关 BizTalk 服务门户的详细信息。</td>
+<td>打开 Azure BizTalk 服务门户。BizTalk 服务门户是进行 EDI 配置的入口，包括添加合作伙伴和创建 X12 和 AS2 协议。<br /><br /> 这与<strong>“快速启动”</strong>选项卡上的<strong>“创建合作伙伴协议”</strong>相同。<br /><br /> <a href="https://msdn.microsoft.com/zh-CN/library/azure/hh689853.aspx">在 BizTalk 服务门户上配置 EDI 消息传送的组件</a>提供了有关 BizTalk 服务门户的详细信息。</td>
 </tr>
 <tr class="even">
 <td><strong>连接信息</strong></td>
-<td>在你选择“连接信息”时，将显示“访问控制命名空间”、“默认颁发者”和“默认密钥”。你可以复制这些值。<br /><br /> 你还可以打开访问控制管理门户。此访问控制管理门户与在左导航窗格中打开使用<strong>“Active Directory”</strong>选项相同。<br /><br /> <a href="http://go.microsoft.com/fwlink/p/?LinkID=285670">管理 ACS 命名空间</a>提供与访问控制管理门户有关的详细信息。</td>
+<td>在你选择“连接信息”时，将显示“访问控制命名空间”、“默认颁发者”和“默认密钥”。你可以复制这些值。<br /><br /> 你还可以打开访问控制管理门户。此访问控制管理门户与在左导航窗格中打开使用<strong>“Active Directory”</strong>选项相同。<br /><br /> <a href="https://msdn.microsoft.com/zh-CN/library/azure/hh674478.aspx">管理 ACS 命名空间</a>提供与访问控制管理门户有关的详细信息。</td>
 </tr>
 
 <td><strong>同步密钥</strong></td>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
 <td><strong>更新 SSL 证书</strong></td>
-<td>可以修改 BizTalk 服务以使用不同的 SSL 证书。当你<a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">创建 BizTalk 服务</a>时，系统将自动创建一个自签名 SSL 证书。</td>
+<td>可以修改 BizTalk 服务以使用不同的 SSL 证书。当你<a HREF="/documentation/articles/biztalk-provision-services/">创建 BizTalk 服务</a>时，系统将自动创建一个自签名 SSL 证书。</td>
 </tr>
 <tr>
 <td><strong>下载证书</strong></td>
@@ -121,7 +121,7 @@
 </tr>
 <tr>
 <td><strong>状态</strong></td>
-<td>显示 BizTalk 服务的当前状态。请参阅 <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=329870">BizTalk 服务：服务状态图表</a>。 </td>
+<td>显示 BizTalk 服务的当前状态。请参阅 <a HREF="/documentation/articles/biztalk-service-state-chart/">BizTalk 服务：服务状态图表</a>。 </td>
 </tr>
 <tr>
 <td><strong>服务 URL</strong></td>
@@ -177,11 +177,11 @@
 <tbody>
 <tr class="odd">
 <td align="left"><strong>管理</strong></td>
-<td align="left">打开 Azure BizTalk 服务门户。BizTalk 服务门户是进行 EDI 配置的入口，包括添加合作伙伴和创建 X12 和 AS2 协议。<br /><br /> 这与<strong>“快速启动”</strong>选项卡上的<strong>“创建合作伙伴协议”</strong>相同。<br /><br /> <a href="http://go.microsoft.com/fwlink/p/?LinkID=303653">在 BizTalk 服务门户上配置 EDI 消息传送的组件</a>提供了有关 BizTalk 服务门户的详细信息。</td>
+<td align="left">打开 Azure BizTalk 服务门户。BizTalk 服务门户是进行 EDI 配置的入口，包括添加合作伙伴和创建 X12 和 AS2 协议。<br /><br /> 这与<strong>“快速启动”</strong>选项卡上的<strong>“创建合作伙伴协议”</strong>相同。<br /><br /> <a href="https://msdn.microsoft.com/zh-CN/library/azure/hh689853.aspx">在 BizTalk 服务门户上配置 EDI 消息传送的组件</a>提供了有关 BizTalk 服务门户的详细信息。</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>连接信息</strong></td>
-<td align="left">显示“Access Control 命名空间”、“默认颁发者”和“默认密钥”值；可以复制这些值。<br /><br /> 你还可以打开访问控制管理门户。此访问控制管理门户与在左导航窗格中打开使用 Active Directory 选项相同。<br /><br /> <a href="http://go.microsoft.com/fwlink/p/?LinkID=285670">管理 ACS 命名空间</a>提供与访问控制管理门户有关的详细信息。</td>
+<td align="left">显示“Access Control 命名空间”、“默认颁发者”和“默认密钥”值；可以复制这些值。<br /><br /> 你还可以打开访问控制管理门户。此访问控制管理门户与在左导航窗格中打开使用 Active Directory 选项相同。<br /><br /> <a href="https://msdn.microsoft.com/zh-CN/library/azure/hh674478.aspx">管理 ACS 命名空间</a>提供与访问控制管理门户有关的详细信息。</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>同步密钥</strong></td>
@@ -342,19 +342,19 @@
   [缩放]: #Scale
   [配置]: #Configure
   [混合连接]: #HybridConnections
-  [在 BizTalk 服务门户上配置 EDI 消息传送的组件]: http://go.microsoft.com/fwlink/p/?LinkID=303653
-  [管理 ACS 命名空间]: http://go.microsoft.com/fwlink/p/?LinkID=285670
+  [在 BizTalk 服务门户上配置 EDI 消息传送的组件]: https://msdn.microsoft.com/zh-CN/library/azure/hh689853.aspx
+  [管理 ACS 命名空间]: https://msdn.microsoft.com/zh-CN/library/azure/hh674478.aspx
   [可用度量值]: #Metrics
-  [创建 BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [BizTalk 服务：服务状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
+  [创建 BizTalk 服务]: /documentation/articles/biztalk-provision-services/
+  [BizTalk 服务：服务状态图表]: /documentation/articles/biztalk-service-state-chart/
   [选择“添加度量值”]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_AddMetrics.png
   [“CPU 使用率”度量值是灰显的]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_GrayedMetric.png
   [已启用“CPU 使用率”度量值]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
-  [BizTalk 服务：版本图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
-  [BizTalk 服务：备份和还原]: http://go.microsoft.com/fwlink/p/?LinkID=329873
-  [混合连接：将 Azure 网站连接到本地资源]: http://go.microsoft.com/fwlink/p/?LinkId=397538
+  [BizTalk 服务：版本图表]: /documentation/articles/biztalk-editions-feature-chart/
+  [BizTalk 服务：备份和还原]: /documentation/articles/biztalk-backup-restore/
+  [混合连接：将 Azure 网站连接到本地资源]: /documentation/articles/web-sites-hybrid-connection-get-started
   [Azure 移动服务和混合连接]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started
-  [1]: http://go.microsoft.com/fwlink/p/?LinkID=397274
-  [BizTalk 服务：限制]: http://go.microsoft.com/fwlink/p/?LinkID=302282
-  [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
+  [1]: /documentation/articles/integration-hybrid-connection-overview
+  [BizTalk 服务：限制]: /documentation/articles/biztalk-throttling-thresholds/
+  [BizTalk 服务：颁发者名称和颁发者密钥]: /documentation/articles/biztalk-issuer-name-issuer-key/
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx

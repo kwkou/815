@@ -107,13 +107,13 @@ RoleInstanceA 正在进行限制。RoleInstanceB 未进行限制。在这种情�
 -   [BizTalk 服务：备份和还原][BizTalk 服务：备份和还原]
 -   [BizTalk 服务：颁发者名称和颁发者密钥][BizTalk 服务：颁发者名称和颁发者密钥]
 
-  [安装 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=241589
-  [教程：Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=236944
-  [如何开始使用 Azure BizTalk 服务 SDK]: http://go.microsoft.com/fwlink/p/?LinkID=302335
-  [Azure BizTalk 服务]: http://go.microsoft.com/fwlink/p/?LinkID=303664
-  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: http://go.microsoft.com/fwlink/p/?LinkID=302279
-  [BizTalk 服务：使用 Azure 管理门户进行设置]: http://go.microsoft.com/fwlink/p/?LinkID=302280
-  [BizTalk 服务：设置状态图表]: http://go.microsoft.com/fwlink/p/?LinkID=329870
-  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: http://go.microsoft.com/fwlink/p/?LinkID=302281
-  [BizTalk 服务：备份和还原]: http://go.microsoft.com/fwlink/p/?LinkID=329873
-  [BizTalk 服务：颁发者名称和颁发者密钥]: http://go.microsoft.com/fwlink/p/?LinkID=303941
+  [安装 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689760.aspx
+  [教程：Azure BizTalk 服务]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689895.aspx
+  [如何开始使用 Azure BizTalk 服务 SDK]: https://msdn.microsoft.com/zh-CN/library/windowsazure/hh689811.aspx
+  [Azure BizTalk 服务]: /documentation/services/biztalk-services/
+  [BizTalk 服务：开发人员版、基本版、标准版和高级版图表]: /documentation/articles/biztalk-editions-feature-chart/
+  [BizTalk 服务：使用 Azure 管理门户进行设置]: /documentation/articles/biztalk-provision-services/
+  [BizTalk 服务：设置状态图表]: /documentation/articles/biztalk-service-state-chart/
+  [BizTalk 服务：“仪表板”、“监视”和“缩放”选项卡]: /documentation/articles/biztalk-dashboard-monitor-scale-tabs/
+  [BizTalk 服务：备份和还原]: /documentation/articles/biztalk-backup-restore/
+  [BizTalk 服务：颁发者名称和颁发者密钥]: /documentation/articles/biztalk-issuer-name-issuer-key/

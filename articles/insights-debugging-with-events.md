@@ -32,7 +32,7 @@
 
 将会打开一个新分页，其中包含有关该事件的许多详细信息。对于**失败的**事件，此页通常会显示“子状态”和“属性”部分，其中包含了可用于调试的详细信息。
 
-  [Azure 门户预览版]: https://portal.azure.com/
+  [Azure 门户预览版]: https://manage.windowsazure.cn/
   [浏览中心]: ./media/insights-debugging-with-events/Insights_Browse.png
   [资源组]: ./media/insights-debugging-with-events/Insights_SelectRG.png
   [1]: ./media/insights-debugging-with-events/Insights_RGBlade.png

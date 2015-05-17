@@ -11,12 +11,12 @@ Azure Media Services 仪表板显示了可用于管理 Media Services 帐户的�
 
 你可以监视由编码器中的输入和输出数据表示的已排队编码作业数、失败的编码任务数、活动的编码作业数，以及与 Media Services 帐户关联的 Blob 存储使用率。此外，如果要将内容流式传输给客户，你可以检索各种流式处理度量值。你可以选择监视过去 6 小时、24 小时或 7 天的数据。
 
-**注意** 在 Azure 管理门户中监视存储数据会产生相关的额外费用。有关详细信息，请参阅[存储分析和计费](http://go.microsoft.com/fwlink/?LinkId=256667)。
+**注意** 在 Azure 管理门户中监视存储数据会产生相关的额外费用。有关详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-CN/library/windowsazure/hh360997.aspx)。
 
 如何：监视 Media Services 帐户
 ------------------------------
 
-1.  在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666)中，单击**“Media Services”**，然后单击 Media Services 帐户名以打开仪表板。
+1.  在[管理门户](https://manage.windowsazure.cn)中，单击**“Media Services”**，然后单击 Media Services 帐户名以打开仪表板。
 
     ![MediaServices\_Dashboard](./media/media-services-monitor-services-account/media-services-dashboard.png)
 
@@ -44,5 +44,5 @@ Azure Media Services 仪表板显示了可用于管理 Media Services 帐户的�
 
 -   若要设置数据保留策略，请在**“保留期(天)”**中，键入要保留数据的天数，范围介于 1 到 365 天之间。如果不需要设置保留策略，请输入零。如果没有保留策略，则是否删除监视数据由你自己决定。建议你根据要将帐户的存储分析数据保留多长时间来设置保留策略，以便可以由系统免费删除旧数据和未使用的分析数据。
 
-1.  完成监视配置后，单击**“保存”**。与 Media Services 度量值类似，大约一小时后，仪表板上会显示监视数据。度量值存储在存储帐户中的以下 4 个表中：\$MetricsTransactionsBlob、\$MetricsTransactionsTable、\$MetricsTransactionsQueue 和 \$MetricsCapacityBlob。有关详细信息，请参阅[存储分析度量值](http://go.microsoft.com/fwlink/?LinkId=256668)。
+1.  完成监视配置后，单击**“保存”**。与 Media Services 度量值类似，大约一小时后，仪表板上会显示监视数据。度量值存储在存储帐户中的以下 4 个表中：\$MetricsTransactionsBlob、\$MetricsTransactionsTable、\$MetricsTransactionsQueue 和 \$MetricsCapacityBlob。有关详细信息，请参阅[存储分析度量值](https://msdn.microsoft.com/zh-CN/library/windowsazure/hh343258.aspx)。
 

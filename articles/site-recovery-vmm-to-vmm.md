@@ -27,7 +27,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 确保已满足以下先决条件：
 ### Azure 先决条件
 
-- 你将需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial/)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#home_rec_pri)。
+- 你将需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial/)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
 - 若要了解信息和数据是如何使用的，请阅读 [Azure 隐私声明](/support/legal/privacy-statement/)和本主题底部的其他 <a href="#privacy">Site Recovery 隐私信息</a>。
 
 ### VMM 先决条件
@@ -79,7 +79,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 4. 在"名称"中，输入一个友好名称以标识此保管库。
 
-5. 在"区域"中，为保管库选择地理区域。若要查看支持的区域，请参阅 [Azure Site Recovery 定价详细信息](/home/features/site-recovery/#home_rec_pri)中的"区域可用性"。</a>
+5. 在"区域"中，为保管库选择地理区域。若要查看支持的区域，请参阅 [Azure Site Recovery 定价详细信息](/home/features/site-recovery/#price)中的"区域可用性"。</a>
 
 6. 单击"创建保管库"。
 
