@@ -13,7 +13,9 @@
 <div class="dev-onpage-left-content">
 <p>本教程说明如何使用 Azure 移动服务向 HTML 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 <em>待办事项列表</em> 应用程序，该应用程序将应用程序数据存储在新的移动服务中。单击右侧的剪辑可观看本教程的视频版本。</p>
 </div>
-<div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-html-get-started-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a> <span class="time">3:51</span></div>
+
+<!--div class="dev-onpage-video-wrapper"><a href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-html-get-started-180x120.png') !important;" href="http://go.microsoft.com/fwlink/?LinkId=287040" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a> <span class="time">3:51</span></div-->
+
 </div>
  
 以下是完成的应用程序的屏幕截图：
