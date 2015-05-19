@@ -143,7 +143,7 @@ Azure 网站提供多个 SKU，这些 SKU 用于确定您的站点可用的资�
 		 	io.set('transports', ['websocket']);
 		});
 
-	> [AZURE.NOTE] 注意，上述代码为活动状态时，不支持 Websocket 的低版本浏览器将无法连接到站点，因为此代码将通信限制为仅支持 Websocket 通信。
+> [AZURE.NOTE] 注意，上述代码为活动状态时，不支持 Websocket 的低版本浏览器将无法连接到站点，因为此代码将通信限制为仅支持 Websocket 通信。
 
 - **使用 SSL**
 
