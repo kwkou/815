@@ -1,6 +1,7 @@
-<properties pageTitle="使用 Maven 开发 Scalding MapReduce 作业 - Azure 教程" description="了解如何使用 Maven 创建 Scalding MapReduce 作业，然后在 Hadoop on HDInsight 群集上部署并运行该作业。" services="hdinsight" documentationCenter="" authors="Blackmist" manager="paulettm" editor="cgronlun"/>
+<properties pageTitle="使用 Maven 开发 Scalding MapReduce 作业 - Azure 教程" description="了解如何使用 Maven 创建 Scalding MapReduce 作业,然后在 Hadoop on HDInsight 群集上部署并运行该作业." services="hdinsight" documentationCenter="" authors="Blackmist" manager="paulettm" editor="cgronlun"/>
 
 <tags ms.service="hdinsight" ms.date="04/17/2015" wacn.date="05/15/2015"/>
+
 
 # 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
 
