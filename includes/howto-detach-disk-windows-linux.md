@@ -22,7 +22,7 @@
 
 > [WACOM.NOTE] 当您附加磁盘时，Azure 自动将一个名称分配给该磁盘。该名称由云服务名称、虚拟机名称和数字组成。
 
-1. 如果您尚未执行此操作，请登录到 Azure [管理门户](http://manage.windowsazure.com)。
+1. 如果您尚未执行此操作，请登录到 Azure [管理门户](https://manage.windowsazure.cn)。
 
 2. 单击"虚拟机"，然后选择相应的虚拟机。虚拟机的仪表板将打开。
 

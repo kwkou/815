@@ -133,7 +133,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
   [在自定义域中公开应用程序]: #access-data
   [VIP 交换]: http://msdn.microsoft.com/zh-cn/library/ee517253.aspx
   [创建将子域与存储帐户相关联的 CNAME 记录]: #create-cname
-  [Azure 管理门户]: https://manage.windowsazure.com
+  [Azure 管理门户]: https://manage.windowsazure.cn
   ["验证自定义域"对话框]: http://i.msdn.microsoft.com/dynimg/IC544437.jpg
   [如何将 CDN 内容映射到自定义域]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg680307.aspx
   [vip]: ./media/custom-dns/csvip.png

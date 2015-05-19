@@ -65,7 +65,7 @@
 
 <!--Links-->
 
-[Azure 管理门户]: https://manage.windowsazure.com
+[Azure 管理门户]: https://manage.windowsazure.cn
 [了解 Pusher]: http://pusher.com/docs
 
 <!--HONumber=41-->

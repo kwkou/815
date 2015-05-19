@@ -4,7 +4,7 @@
 > 
 > 可使用 <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> 之类的服务确认该 CNAME 是否可用。
 
-1. 在您的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.com)。
+1. 在您的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
 
 2. 在"网站"选项卡中，单击您的网站的名称、选择"仪表板"，然后从页面底部选择"管理域"。
 

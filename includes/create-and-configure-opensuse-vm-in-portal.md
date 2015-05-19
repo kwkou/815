@@ -7,7 +7,7 @@
 **重要说明**：如果您希望虚拟机使用虚拟网络，请确保在创建虚拟机时指定虚拟网络。仅当创建虚拟机后，才能将该虚拟机配置为加入虚拟网络。有关虚拟网络的更多信息，请参见 [Azure 虚拟网络概述](http://go.microsoft.com/fwlink/p/?LinkID=294063)。
 
 
-1. 使用您的 Azure 帐户登录 [Azure 管理门户][AzurePreviewPortal]。
+1. 使用您的 Azure 帐户登录 [Azure 管理门户][AzurePortal]。
 
 2. 在管理门户中，在网页的左下角依次单击"+新建"、"虚拟机"，然后单击"从库中"。
 
@@ -72,7 +72,7 @@
 3. 安装完成后，请选择"完成"。您的系统现在已为最新。
 
 [PuTTYDownload]: http://www.puttyssh.org/download.html
-[AzurePreviewPortal]: http://manage.windowsazure.com
+[AzurePortal]: http://manage.windowsazure.cn
 
 [Image1]: ./media/create-and-configure-opensuse-vm-in-portal/CreateVM.png
 

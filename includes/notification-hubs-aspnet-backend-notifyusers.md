@@ -51,7 +51,7 @@
 
 		using Microsoft.ServiceBus.Notifications;
 
-11. 在  `Notifications()` 方法中，将以下代码行中的两个占位符分别替换为通知中心的连接字符串（具有完全访问权限）和通知中心名称。可以从 [Azure 管理门户](http://manage.windowsazure.com)中获取这些值:
+11. 在  `Notifications()` 方法中，将以下代码行中的两个占位符分别替换为通知中心的连接字符串（具有完全访问权限）和通知中心名称。可以从 [Azure 管理门户](http://manage.windowsazure.cn)中获取这些值:
 
 		Hub = NotificationHubClient.CreateClientFromConnectionString("{conn string with full access}", "{hub name}");
 

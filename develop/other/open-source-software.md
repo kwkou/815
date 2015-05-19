@@ -42,7 +42,7 @@ BlogEngine.NET 是使用 ASP.NET 开发的一个创新的开放源博客平台�
 
 CentOS 是派生自著名北美企业 Linux 供应商免费提供给公众的源代码的企业级 Linux 发行版本。它受 Windows Azure 虚拟机的支持。
 
-<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253287&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://www.windowsazure.com/en-us/manage/linux/how-to-guides/prepare-a-linux-distribution/" target="_blank" class="_know-more-link">如何使用</a>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253287&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="/manage/linux/how-to-guides/prepare-a-linux-distribution/" target="_blank" class="_know-more-link">如何使用</a>
 
 
 ###Chef

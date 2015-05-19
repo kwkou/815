@@ -10,7 +10,7 @@
 
 **注意**：本文创建的是不连接到虚拟网络的虚拟机。如果您希望虚拟机使用虚拟网络，请改用“从库中”方法并在创建虚拟机时指定虚拟网络。有关虚拟网络的更多信息，请参见 [Windows Azure 虚拟网络概述](http://go.microsoft.com/fwlink/p/?LinkID=294063)。
 
-1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.com)。
+1. 登录到 [Windows Azure 管理门户](https://manage.windowsazure.cn)。
 
 2. 在命令栏上，单击“新建”。
 

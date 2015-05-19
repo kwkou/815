@@ -48,7 +48,7 @@
 	![初始化成功][Image7]
 
 
-[AzurePreviewPortal]: http://manage.windowsazure.com
+[AzurePreviewPortal]: https://manage.windowsazure.cn
 
 [Image2]: ./media/attach-data-disk-windows-server-2008-vm-in-portal/AttachDataDiskWinVM2.png
 [Image3]: ./media/attach-data-disk-windows-server-2008-vm-in-portal/AttachDataDiskWinVM3.png

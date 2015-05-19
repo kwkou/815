@@ -62,7 +62,7 @@
 ![][34]
 
  
-  [Azure 管理门户]: http://manage.windowsazure.com
+  [Azure 管理门户]: http://manage.windowsazure.cn
   [0]: ./media/howto-service-bus-topics/sb-queues-13.png
   [2]: ./media/howto-service-bus-topics/sb-queues-04.png
   [3]: ./media/howto-service-bus-topics/sb-queues-09.png

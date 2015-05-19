@@ -79,7 +79,7 @@
 15. 您已成功配置 MySQL、创建数据库和新用户。有关 MySQL 的详细信息，请参阅 [MySQL 文档][MySQLDocs]。	
 
 [MySQLDocs]: http://dev.mysql.com/doc/
-[AzurePreviewPortal]: http://manage.windowsazure.com
+[AzurePreviewPortal]: https://manage.windowsazure.cn
 [Image7]: ./media/install-and-run-mysql-on-opensuse-vm/LinuxVmAddEndpoint.png
 [Image8]: ./media/install-and-run-mysql-on-opensuse-vm/LinuxVmAddEndpoint2.png
 [Image9]: ./media/install-and-run-mysql-on-opensuse-vm/LinuxVmAddEndpointMySQL.png

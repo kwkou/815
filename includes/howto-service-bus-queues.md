@@ -68,8 +68,7 @@
 
 ![][34]
 
-  [Azure 管理门户]: http://manage.windowsazure.com
-  [Azure 管理门户]: http://manage.windowsazure.com
+  [Azure 管理门户]: https://manage.windowsazure.cn
 
   [34]: ./media/howto-service-bus-queues/VSProperties.png
 <!--HONumber=41-->

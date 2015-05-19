@@ -123,9 +123,9 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	- 如果希望使用自定义代理，则应当在安装该提供程序之前设置它。当配置自定义代理设置时，会运行测试来检查代理连接。
 	- 如果你确实使用自定义代理，或者你的默认代理要求进行身份验证，则需要输入代理详细信息，包括代理地址和端口。
 	- 你应当豁免以下地址通过代理进行路由：
-		- 用于连接到 Azure Site Recovery 的 URL：*.hypervrecoverymanager.windowsazure.com
+		- 用于连接到 Azure Site Recovery 的 URL：*.hypervrecoverymanager.windowsazure.cn
 		- *.accesscontrol.chinacloudapi.cn
-		- *.backup.windowsazure.com
+		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn 
 		- *.store.core.chinacloudapi.cn 
 	- 如果你需要允许到 Azure 域控制器的出站连接，请允许 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-CN/library/azure/dn175718.aspx)中描述的 IP 地址，并允许 HTTP (80) 和 HTTPS (443) 协议。 
