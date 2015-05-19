@@ -9,13 +9,9 @@
  
 <tags
  ms.service="hdinsight"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="big-data"
  ms.date="04/17/2015"
  wacn.date="05/15/2015"
- ms.author="larryfr"/>
+ />
 
 # 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
 
