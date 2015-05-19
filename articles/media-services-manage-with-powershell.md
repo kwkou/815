@@ -20,7 +20,7 @@
 
 # 使用 PowerShell 管理 Azure Media Services 帐户
 
-> [AZURE.SELECTOR]
+
 - [门户](/documentation/articles/media-services-create-account)
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-CN/library/azure/dn167014.aspx)
