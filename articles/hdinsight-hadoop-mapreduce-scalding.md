@@ -24,7 +24,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
         mvn archetype:generate -DgroupId=com.microsoft.example -DartifactId=scaldingwordcount -DarchetypeGroupId=org.scala-tools.archetypes -DarchetypeArtifactId=scala-archetype-simple -DinteractiveMode=false
 
-    此命令将创建一个名为 **scaldingwordcount** 的新目录，并创建 Scala 应用程序的基架。
+   此命令将创建一个名为 **scaldingwordcount** 的新目录，并创建 Scala 应用程序的基架。
 
 2. 在 **scaldingwordcount** 目录中，打开 **pom.xml** 文件并将其内容替换为以下内容：
 
