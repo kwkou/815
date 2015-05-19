@@ -86,11 +86,11 @@ Twilio 提供了可包装 Twilio 各个方面的 Node.js 库，使你能够以�
 
 例如，将
 
-    https://twilioSample.scm.azure-mobile.net/twilioSample.git
+    https://twilioSample.scm.azure-mobile.cn/twilioSample.git
 
 更改为
 
-    https://twilioSample.scm.azure-mobile.net/DebugConsole/index.html
+    https://twilioSample.scm.azure-mobile.cn/DebugConsole/index.html
 
 出现提示时，请输入你为服务设置源代码管理时使用的凭据。登录后，你将会看到 Azure 移动服务控制台。
 
@@ -195,7 +195,7 @@ Twilio 提供了可包装 Twilio 各个方面的 Node.js 库，使你能够以�
         client.makeCall({
             to:'+16515556677', 
             from: '+14506667788',
-            url: 'http://<your_mobile_service>.azure-mobile.net/api/makeCall' 
+            url: 'http://<your_mobile_service>.azure-mobile.cn/api/makeCall' 
 
         }, function(err, responseData) {
 

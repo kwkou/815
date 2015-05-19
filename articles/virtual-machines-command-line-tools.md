@@ -1216,8 +1216,8 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	info:    Executing command mobile list
 	data:    Name          State  URL
 	data:    ------------  -----  --------------------------------------
-	data:    todolist      Ready  https://todolist.azure-mobile.net/
-	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.net/
+	data:    todolist      Ready  https://todolist.azure-mobile.cn/
+	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.cn/
 	info:    mobile list command OK
 
 **mobile show [options] [servicename]**
@@ -1238,7 +1238,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	info:    Mobile service
 	data:    name todolist
 	data:    state Ready
-	data:    applicationUrl https://todolist.azure-mobile.net/
+	data:    applicationUrl https://todolist.azure-mobile.cn/
 	data:    applicationKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	data:    masterKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	data:    webspace WESTUSWEBSPACE

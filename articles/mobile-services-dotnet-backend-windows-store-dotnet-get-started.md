@@ -77,7 +77,7 @@
 <li><p>在 Windows 应用商店应用程序项目中，打开 App.xaml.cs 文件，找到创建 [MobileServiceClient][] 实例的代码，注释掉使用 *localhost* 创建此客户端的代码，然后取消注释使用如下所示远程移动服务 URL 创建客户端的代码：<p>
 
         <pre><code>public static MobileServiceClient MobileService = new MobileServiceClient(
-            "https://todolist.azure-mobile.net/",
+            "https://todolist.azure-mobile.cn/",
             "XXXX-APPLICATION-KEY-XXXXX");</code></pre>
 
     <p>现在，客户端将会访问已发布到 Azure 的移动服务。</p></li>

@@ -185,7 +185,7 @@
 
             azure: {
                 appKey: 'myazureservice-access-key',
-                appUrl: 'myazure-service.azure-mobile.net'
+                appUrl: 'myazure-service.azure-mobile.cn'
             },
 
             launch: function() {
@@ -612,7 +612,7 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
         ],
 
         azure : {
-            appUrl : 'YOUR_APP_URL.azure-mobile.net',
+            appUrl : 'YOUR_APP_URL.azure-mobile.cn',
             appKey : 'YOUR_APP_KEY'
         },
 

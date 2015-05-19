@@ -198,7 +198,7 @@
     <p>在可能情况下，此代码强制注销以确保每次应用程序运行时都提示用户提供凭据。这样便于使用不同 Microsoft 帐户测试应用程序以确保身份验证正常执行。此机制仅在已登录用户没有已连接的 Microsoft 帐户时正常工作。</p>
 	</div>
 
-6.  使用在 Live Connect 中设置应用程序时指定的重定向域（采用 "<https://_service-name_.azure-mobile.net/>" 格式）更新上一步中的 *\<\< INSERT REDIRECT DOMAIN HERE \>\>* 字符串。
+6.  使用在 Live Connect 中设置应用程序时指定的重定向域（采用 "<https://_service-name_.azure-mobile.cn/>" 格式）更新上一步中的 *\<\< INSERT REDIRECT DOMAIN HERE \>\>* 字符串。
 
 7.  按 F5 键运行应用程序，并使用 Microsoft 帐户登录 Live Connect。
 

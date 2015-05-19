@@ -21,7 +21,7 @@
 
     ![][1]
 
-    > [WACOM.NOTE] 对于使用 Visual Studio 发布到 Azure 的 .NET 后端移动服务，重定向 URL 是移动服务的 URL，后接用作 .NET 服务的移动服务的路径 *signin-twitter*，例如 `https://todolist.azure-mobile.net/signin-twitter`。
+    > [WACOM.NOTE] 对于使用 Visual Studio 发布到 Azure 的 .NET 后端移动服务，重定向 URL 是移动服务的 URL，后接用作 .NET 服务的移动服务的路径 *signin-twitter*，例如 `https://todolist.azure-mobile.cn/signin-twitter`。
     > “Web Site”（网站）值是必填的，但并不会使用该值 。
 
 3.  在页的底部，阅读并接受条款，键入正确的 CAPTCHA 字，然后单击“Create your Twitter application”（创建 Twitter 应用程序） 。

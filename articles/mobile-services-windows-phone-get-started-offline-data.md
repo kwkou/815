@@ -166,7 +166,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 请注意，在本节中，应用程序不应连接到任何移动服务。因此，如果你测试**推送**和**拉取**按钮将引发异常。在下一节中，你会将此客户端应用程序重新连接到移动服务来测试**推送**和**拉取**操作，以便将存储与移动服务数据库进行同步。
 
 
-1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。将你 URL 中的"**azure-mobile.net**"替换为"**azure-mobile.xxx**"，以将 **MobileServiceClient** 的初始化更改为无效地址。然后，保存文件。
+1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。将你 URL 中的"**azure-mobile.cn**"替换为"**azure-mobile.xxx**"，以将 **MobileServiceClient** 的初始化更改为无效地址。然后，保存文件。
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://your-mobile-service.azure-mobile.xxx/",
@@ -184,7 +184,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 在本节中，你会将应用程序重新连接到移动服务。这模拟的是通过移动服务从脱机状态转为联机状态的应用程序。
 
 
-1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。将你 URL 中的"**azure-mobile.xxx**"替换为"**azure-mobile.net**"，以将 **MobileServiceClient** 的初始化恢复为正确的地址。然后，保存文件。
+1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。将你 URL 中的"**azure-mobile.xxx**"替换为"**azure-mobile.cn**"，以将 **MobileServiceClient** 的初始化恢复为正确的地址。然后，保存文件。
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://your-mobile-service.azure-mobile.cn/",

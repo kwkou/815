@@ -66,7 +66,7 @@
 <li><p>在解决方案资源管理器中，展开 \*\*services\*\*、\*\*mobile services\*\*、\*\*\<your\_service\>\*\* 文件夹，打开 service.js 脚本文件，并留意新的全局变量，如以下示例所示：</p>
 
 		<pre><code>var todolistClient = new WindowsAzure.MobileServiceClient(
-                "https://todolist.azure-mobile.net/",
+                "https://todolist.azure-mobile.cn/",
 		        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");</code></pre>
 
     <p>此代码通过使用一个全局变量提供对应用程序中新移动服务的访问权限。客户端是通过提供新移动服务的 URI 和应用程序密钥来创建的。由于对此脚本的引用已添加到 default.html 文件中，因此该变量可用于也从此页引用的所有脚本文件。</p>

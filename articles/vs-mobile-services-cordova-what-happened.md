@@ -22,7 +22,7 @@ ms.service="mobile-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na
     var mobileServiceClient;
     document.addEventListener("deviceready", function() {
             mobileServiceClient = new WindowsAzure.MobileServiceClient(
-            "<your mobile service name>.azure-mobile.net",
+            "<your mobile service name>.azure-mobile.cn",
             "<insert your key>"
         );
 

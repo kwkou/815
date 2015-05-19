@@ -222,7 +222,7 @@
 		    	// Create the Mobile Service Client instance, using the provided
 		    	// Mobile Service URL and key
 		    	mClient = new MobileServiceClient(
-		    			"https://<YOUR MOBILE SERVICE>.azure-mobile.net/",
+		    			"https://<YOUR MOBILE SERVICE>.azure-mobile.cn/",
 		    			"<YOUR MOBILE SERVICE KEY>", this)
                            .withFilter(new ProgressFilter())
                            .withFilter(new RefreshTokenCacheFilter());
