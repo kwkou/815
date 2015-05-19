@@ -175,7 +175,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 ## 步骤 2：创建保管库
 
 
-1. 登录到[管理门户](https://portal.azure.com)。
+1. 登录到[管理门户](https://manage.windowsazure.cn)。
 
 
 2. 展开"数据服务">"恢复服务"并单击"Site Recovery 保管库"。

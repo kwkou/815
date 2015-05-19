@@ -70,7 +70,7 @@
 
   	![][9]
 
-	> [AZURE.IMPORTANT] 如果将快速入门应用程序部署到除 localhost 以外的 Web 服务器，则必须将该 Web 服务器的主机名添加到**"允许来自以下主机名的请求"**列表中。有关详细信息，请参阅[跨域资源共享](http://msdn.microsoft.com/library/windowsazure/dn155871.aspx"%20target="_blank)。
+	> [AZURE.IMPORTANT] 如果将快速入门应用程序部署到除 localhost 以外的 Web 服务器，则必须将该 Web 服务器的主机名添加到**"允许来自以下主机名的请求"**列表中。有关详细信息，请参阅[跨域资源共享](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn155871.aspx"%20target="_blank)。
 
 ## 托管和运行 HTML 应用程序
 
