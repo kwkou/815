@@ -66,11 +66,11 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
         function getAADToken(callback) {
             var req = require("request");
             var options = {
-                url: "https://login.windows.net/" + tenant_domain + "/oauth2/token?api-version=1.0",
+                url: "https://login.chinacloudapi.cn/" + tenant_domain + "/oauth2/token?api-version=1.0",
                 method: 'POST',
                 form: {
                     grant_type: "client_credentials",
-                    resource: "https://graph.windows.net",
+                    resource: "https://graph.chinacloudapi.cn",
                     client_id: clientID,
                     client_secret: key
                 }
@@ -88,7 +88,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
         function getUser(access_token, objectId, callback) {
             var req = require("request");
             var options = {
-                url: "https://graph.windows.net/" + tenant_domain + "/users/" + objectId + "?api-version=1.0",
+                url: "https://graph.chinacloudapi.cn/" + tenant_domain + "/users/" + objectId + "?api-version=1.0",
                 method: 'GET',
                 headers: {
                     "Authorization": "Bearer " + access_token

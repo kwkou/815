@@ -18,7 +18,7 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
 
 -   **URL 格式：**代码使用此地址格式对帐户中的表
     进行寻址：   
-    http://`<storage account>`.table.core.windows.net/`<table>`  
+    http://`<storage account>`.table.core.chinacloudapi.cn/`<table>`  
       
     您可以直接使用此地址和 OData 协议来访问 Azure 表。有关详细信息，请参阅 [OData.org][]
 

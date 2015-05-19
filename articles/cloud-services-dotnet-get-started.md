@@ -201,7 +201,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。
 
 	![New storage account](./media/cloud-services-dotnet-get-started/newstorage.png)	
 
-	在图中，使用 URL"contosoads.core.windows.net"创建一个存储帐户。
+	在图中，使用 URL"contosoads.core.chinacloudapi.cn"创建一个存储帐户。
 
 ### 配置解决方案，以便在 Azure 中运行时使用你的 Azure SQL 数据库
 

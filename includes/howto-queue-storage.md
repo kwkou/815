@@ -20,10 +20,10 @@ Azure 队列存储是一项用于存储大量消息的服务，
 
 
 - **URL 格式：**可使用以下 URL 格式对队列进行寻址：   
-	http://`<storage account>`.queue.core.windows.net/`<queue>` 
+	http://`<storage account>`.queue.core.chinacloudapi.cn/`<queue>` 
       
 可使用以下 URL 访问示意图中的某个队列：  
-	http://myaccount.queue.core.windows.net/imagesToDownload
+	http://myaccount.queue.core.chinacloudapi.cn/imagesToDownload
 
 -**Storage 帐户：**对 Azure 存储空间进行的所有访问都要通过存储帐户完成。请参阅 [Azure 存储的可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/dn249410.aspx)。
 

@@ -124,10 +124,10 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	- 如果你确实使用自定义代理，或者你的默认代理要求进行身份验证，则需要输入代理详细信息，包括代理地址和端口。
 	- 你应当豁免以下地址通过代理进行路由：
 		- 用于连接到 Azure Site Recovery 的 URL：*.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
+		- *.accesscontrol.chinacloudapi.cn
 		- *.backup.windowsazure.com
-		- *.blob.core.windows.net 
-		- *.store.core.windows.net 
+		- *.blob.core.chinacloudapi.cn 
+		- *.store.core.chinacloudapi.cn 
 	- 如果你需要允许到 Azure 域控制器的出站连接，请允许 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-CN/library/azure/dn175718.aspx)中描述的 IP 地址，并允许 HTTP (80) 和 HTTPS (443) 协议。 
 	- 如果你使用自定义代理，则将使用指定的代理凭据自动创建一个 VMM 运行身份帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以成功通过身份验证。可以在 VMM 控制台中修改 VMM 运行身份帐户设置。若要执行此操作，请打开"设置"工作区，展开"安全性"，单击"运行身份帐户"，然后修改 DRAProxyAccount 的密码。你将需要重新启动 VMM 服务以使此设置生效。
 6. 在"注册密钥"中，选择你从 Azure Site Recovery 下载并复制到 VMM 服务器的密钥。
