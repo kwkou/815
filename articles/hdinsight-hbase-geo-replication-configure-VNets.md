@@ -46,7 +46,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 ## 先决条件
 在开始阅读本教程前，你必须具有：
 
-- **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]、[试用][azure-free-trial]。
+- **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[试用][azure-free-trial]。
 
 - **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install]。 
 
@@ -66,7 +66,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
 
 
-**在 North-CNrope 创建名为 Contoso-VNet-CN 的虚拟网络**
+**在 中国北部 创建名为 Contoso-VNet-CN 的虚拟网络**
 
 1.	登录到 [Azure 门户][azure-portal]。
 2.	单击"新建"、"网络服务"、"虚拟网络"、"自定义创建"。
@@ -88,7 +88,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 
  	- **配置站点到站点 VPN**：（取消选中）
  	
-		你将要与美国东部数据中心的 Azure 虚拟网络配置站点到站点 VPN 连接。
+		你将要与中国北部数据中心的 Azure 虚拟网络配置站点到站点 VPN 连接。
 5.	输入：
 
 	- 	**地址空间起始 IP**：10.1.0.0
@@ -96,9 +96,9 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 	- 	**子网 1 起始 IP**：10.1.0.0
 	- 	**子网 1 CIDR**：/24
 
-	地址空间不能与美国虚拟网络重叠。  
+	地址空间不能与中国东部虚拟网络重叠。  
 
-**在 West-CNrope 创建名为 Contoso-VNet-CN 的虚拟网络**
+**在 中国东部 创建名为 Contoso-VNet-CE 的虚拟网络**
 
 - 使用以下值重复上一过程：
 
@@ -113,20 +113,6 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 	- **地址空间 CIDR**：/16
 	- **子网 1 起始 IP**：10.2.0.0
 	- **子网 1 CIDR**：/24
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -232,7 +218,6 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 在未将任何 VM 部署到 VNet 的情况下，你可以在 Azure 门户中使用"VNet 仪表板"页上的虚拟网络可视示意图检查连接状态：
 
 ![HDInsight HBase replication virtual network VPN connection status][img-vpn-status]
-  
 
 
 
@@ -250,7 +235,7 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 
 [azure-free-trial]: /pricing/1rmb-trial/
-[azure-portal]: http://manage.windowsazure.cn
+[azure-portal]: https://manage.windowsazure.cn
 
 
 [powershell-install]: /documentation/articles/install-configure-powershell

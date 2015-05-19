@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD 的工作原理" 
+	pageTitle="Azure AD 的工作原理 - Azure 教程" 
 	description="Azure AD 可在云中创建属于你的标识布局。它可以连接到你的本地标识系统，你也可以单独使用它。" 
 	services="active-directory" 
 	documentationCenter="" 

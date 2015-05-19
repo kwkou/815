@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure 管理门户开始传送视频点播 (VoD)" 
+	pageTitle="使用 Azure 管理门户开始传送视频点播 (VoD) - Azure 教程" 
 	description="本教程将引导你完成使用 Azure Media Services 和 Azure 管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
@@ -24,7 +24,7 @@ wacn.date="05/15/2015"
 
 
 >[AZURE.NOTE]
-> 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
+> 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅[Azure 试用](/pricing/1rmb-trial/)。
 
 本教程将引导你完成使用 Azure 管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。 
 
@@ -242,7 +242,7 @@ SAS URL 采用以下格式：
 
 
 <!-- URLs. -->
-[管理门户]: http://manage.windowsazure.cn/
+[管理门户]: https://manage.windowsazure.cn/
 
 
 <!-- Images -->

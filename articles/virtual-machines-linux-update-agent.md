@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="如何从 Github 将 Azure Linux 代理更新到最新版本"
 	description="了解如何从 Github 为 Azure 中的 Linux VM 更新 Azure Linux 代理。"
 	services="virtual-machines"
@@ -31,13 +31,11 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
 对于 Ubuntu，只需键入：
      
-    #sudo apt-get install waagent
+	sudo apt-get install waagent
 
 在 CentOS 和 Oracle Linux 上，键入：
 
-    #sudo yum install waagent
-
-通常，你只需要这样做，但是如果出于某种原因，你需要从 https://github.com directly, use the following steps 安装它。 
+	sudo yum install waagent
 
 
 ## 安装 wget
@@ -51,41 +49,41 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
 在网页中打开 [Github 中的 Azure Linux 代理版本](https://github.com/Azure/WALinuxAgent/releases)，并找到最新的版本号，如下所示：2.0.12。（可以通过键入 `#waagent --version` 查明你的当前版本。）
 
-    #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-[version]/waagent  
+    wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-[version]/waagent  
 
 以下行使用版本 2.0.12 作为示例：
 
-    #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.12/waagent  
+    wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.12/waagent  
 
 ## Make waagent executable
 
-    #chmod +x waagent
+    chmod +x waagent
 
 ## Copy new executable to /usr/sbin/
     
-    #sudo cp waagent /usr/sbin
+    sudo cp waagent /usr/sbin
 
 对于 CoreOS，使用：
 
-    #sudo cp waagent /usr/share/oem/bin/
+    sudo cp waagent /usr/share/oem/bin/
  
 ## Restart waagent service
 
 对于大多数 linux 发行版：
 
-    #sudo service waagent restart
+    sudo service waagent restart
 
 对于 Ubuntu，使用：
 
-    #sudo service walinuxagent restart
+    sudo service walinuxagent restart
 
 对于 CoreOS，使用：
 
-    #sudo systemctl restart waagent 
+    sudo systemctl restart waagent 
 
 ## 确认 Azure Linux 代理版本
    
-    #waagent -version
+    waagent -version
 
 对于 CoreOS，上面的命令可能无法工作。
 

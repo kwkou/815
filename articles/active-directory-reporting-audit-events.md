@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure Active Directory 审核报告事件" 
+   pageTitle="Azure Active Directory 审核报告事件 - Azure 教程" 
    description="可从 Azure Active Directory 查看和下载的已审核事件" 
    services="active-directory" 
    documentationCenter="" 

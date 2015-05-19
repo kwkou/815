@@ -1,5 +1,5 @@
 <properties 
- pageTitle="Azure 计划程序中的计划和计费方式" 
+ pageTitle="Azure 计划程序中的计划和计费方式 - Azure 教程" 
  description="" 
  services="scheduler" 
  documentationCenter=".NET" 

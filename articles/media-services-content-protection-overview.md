@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="保护内容概述" 
+	pageTitle="保护内容概述 - Azure 教程" 
 	description="本文概述了如何使用 Media Services 来保护内容。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 

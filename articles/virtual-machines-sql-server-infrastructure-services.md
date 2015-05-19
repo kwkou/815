@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services" 
 	ms.date="04/17/2015"
-  wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.author="jroth"/>
 
 # Azure 虚拟机中的 SQL Server
@@ -22,7 +22,8 @@
 ## 概述
 你可以使用各种配置（从单个数据库服务器到多计算机配置）通过 AlwaysOn 可用性组和 Azure 虚拟网络托管 [Azure 虚拟机中的 SQL Server][sqlvmlanding]。
 
-> [AZURE.NOTE] 在 Azure VM 中运行 SQL Server 是在 Azure 中存储关系数据的一个选项。此外，还可以使用 Azure SQL Database 服务。 <!--For more information, see [Understanding Azure SQL Database and SQL Server in Azure VMs][sqldbcompared].-->
+> [AZURE.NOTE] 在 Azure VM 中运行 SQL Server 是在 Azure 中存储关系数据的一个选项。此外，还可以使用 Azure SQL Database 服务。 
+ <!-- For more information, see [Understanding Azure SQL Database and SQL Server in Azure VMs][sqldbcompared]. -->
  
 ## 在单个 VM 上部署 SQL Server 实例
 [使用 Azure 门户创建 Azure 虚拟机][createvmportal] 或自动安装后，可以安装你有其许可证的 SQL Server 的任何实例。但是，你必须采取其他步骤在 SQL Server 计算机和其他客户端计算机之间[设置连接][setupconnectivity]。

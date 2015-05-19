@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用管理门户创建从本地编码器接收多比特率实时流的通道" 
+	pageTitle="使用管理门户创建从本地编码器接收多比特率实时流的通道 - Azure 教程" 
 	description="本教程将指导你完成实施一个基本 Media Services 实时流式处理应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
@@ -52,7 +52,7 @@ wacn.date="05/15/2015"
 
 ## 创建 Media Services 帐户
 
-1. 在[管理门户][]中，依次单击"新建"、"Media Services"和"快速创建"。
+1. 在[管理门户](https://manage.windowsazure.cn/)中，依次单击"新建"、"Media Services"和"快速创建"。
    
 	![Media Services Quick Create](./media/media-services-create-account/wams-QuickCreate.png)
 
@@ -94,7 +94,7 @@ wacn.date="05/15/2015"
 
 3. 若要指定流式处理单位数，请选择"缩放"选项卡并移动"保留容量"滑块。
 
-	![Scale page](./media/media-services-how-to-scale/media-services-origin-scale.png)
+![Scale page](./media/media-services-how-to-scale/media-services-origin-scale.png)
 
 4. 按"保存"按钮保存更改。
 
@@ -234,12 +234,5 @@ wacn.date="05/15/2015"
 
 了解有关生成实时流式处理应用程序的详细信息[生成实时流式处理应用程序](/documentation/articles/media-services-live-streaming-workflow)
 
-<!-- Anchors. -->
-
-
-<!-- URLs. -->
-[管理门户]: http://manage.windowsazure.cn/
-
-<!-- Images -->
 
 <!--HONumber=53-->

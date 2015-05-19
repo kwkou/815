@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure AD 的后续用途有哪些？" 
+	pageTitle="Azure AD 的后续用途有哪些？ - Azure 教程" 
 	description="介绍使用 Azure AD 可以完成的高级任务。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="active-directory" 
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 

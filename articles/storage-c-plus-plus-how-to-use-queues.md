@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="如何使用队列存储 (C++) | Microsoft Azure" 
+    pageTitle="如何使用队列存储 (C++) Azure - 教程" 
     description="了解如何在 Azure 中使用队列存储服务。示例用 C++ 编写。" 
     services="storage" 
     documentationCenter=".net" 

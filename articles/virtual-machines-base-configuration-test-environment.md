@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="na" 
@@ -47,7 +47,7 @@ wacn.date="05/15/2015"
 3.	配置 APP1。 
 4.	配置 CLIENT1。
 
-如果你还没有 Azure 帐户，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。<!--如果你有 MSDN 订阅，请参阅 [MSDN 订户的 Azure 权益](/pricing/member-offers/msdn-benefits-details/)。-->
+如果你还没有 Azure 帐户，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个试用版。
 
 > [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的免费试用版本、MSDN 订阅或付费订阅的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](/pricing/calculator/)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
 
@@ -127,7 +127,7 @@ DC1 是 corp.contoso.com Active Directory 域服务 (AD DS) 域的域控制器�
 3.	当系统提示你打开 DC1.rdp 时，单击**"打开"**。
 4.	遇到远程桌面连接消息框提示时，单击**"连接"**。
 5.	当系统提示你输入凭据时，请使用以下凭据：
-- 名称：`**DC1\\**[本地管理员帐户名称]`
+- 名称：`**DC1\**[本地管理员帐户名称]`
 - 密码:[本地管理员帐户密码]
 6.	当系统使用指向凭据的远程桌面连接消息框提示你时，单击**"是"**。
 
@@ -156,7 +156,7 @@ DC1 是 corp.contoso.com Active Directory 域服务 (AD DS) 域的域控制器�
 3.	当系统提示你打开 DC1.rdp 时，单击**"打开"**。
 4.	遇到远程桌面连接消息框提示时，单击**"连接"**。
 5.	当系统提示你输入凭据时，请使用以下凭据：
-- 名称：`**CORP\\**[本地管理员帐户名称]`
+- 名称：`CORP\[本地管理员帐户名称]`
 - 密码:[本地管理员帐户密码]
 6.	当系统使用引用证书的远程桌面连接消息框提示你时，单击**"是"**。
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 SAN 在本地 VMM 站点之间设置保护" 
+	pageTitle="使用 SAN 在本地 VMM 站点之间设置保护 - Azure 教程" 
 	description="Azure Site Recovery 可以使用 SAN 复制在本地 VMM 站点之间协调 Hyper-V 虚拟机的复制、故障转移和恢复。" 
 	services="site-recovery" 
 	documentationCenter="" 

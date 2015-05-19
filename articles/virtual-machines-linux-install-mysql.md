@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="如何在 Azure 上安装 MySQL "
 	description="了解如何在 Azure 中的 Linux 虚拟机 (VM) 上安装 MySQL 堆栈。可以在 Ubuntu 或 CentOS 上进行安装。"
 	services="virtual-machines"
@@ -20,13 +20,11 @@
 
 # 如何在 Azure 上安装 MySQL
 
-
-在本主题中，tt 假定读者已拥有 Azure 帐户。如果没有，建议通过访问 [Azure](http://www.windowsazure.cn) 进行注册。
-
+在本主题中，假定读者已拥有 Azure 帐户。如果没有，建议通过访问 [Azure](http://www.windowsazure.cn) 进行注册。
 
 
 ## 在 Microsoft Azure 中创建 VM 映像。
-这里我们将从 Microsoft Azure 管理门户创建新的 VM。
+这里我们将从 Azure 管理门户创建新的 VM。
 ### 生成"SSH 身份验证密钥"
 我们将需要 SSH 密钥才能访问 Azure 门户。 
 
@@ -47,7 +45,7 @@
 
 ### 登录 Azure 门户
 
-转到   https://manage.windowsazure.cn 并登录。
+转到 [https://manage.windowsazure.cn]() 并登录。
 
 ### 创建 Linux VM
 
@@ -78,9 +76,9 @@ Microsoft Azure 中的终结点包含协议以及公用和专用端口。专用�
 - 下载 Putty 后，单击可执行文件"PUTTY.EXE"。按如下所示设置。
 
 
-     "主机名(或 IP 地址)"是创建映像时作为"DNS 名称"的 URL。
+   "主机名(或 IP 地址)"是创建映像时作为"DNS 名称"的 URL。
      
-     "端口"我们可以选择 22。这是 SSH 服务的默认端口。
+   "端口"我们可以选择 22。这是 SSH 服务的默认端口。
 
    ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p06.png)
  
@@ -107,61 +105,61 @@ MySQL 支持三种安装方法：二进制文件包、rpm 包和源包。
 
 - 步骤 1：安装 MySQL Server 5.6
 
-    使用 apt-get 命令安装 mysql-server 5.6
+   使用 apt-get 命令安装 mysql-server 5.6
 
-              # azureuser@mysqlnode1:~$ sudo apt-get update
-              # azureuser@mysqlnode1:~$ sudo apt-get -y install mysql-server-5.6
+          azureuser@mysqlnode1:~$ sudo apt-get update
+          azureuser@mysqlnode1:~$ sudo apt-get -y install mysql-server-5.6
 
-    在安装期间，你将看到一个弹出对话框，要求你设置 MySQL 根密码。你将需要指定新的 MySQL 用户根密码。
-    下面是屏幕截图。
+   在安装期间，你将看到一个弹出对话框，要求你设置 MySQL 密码。你将需要指定新的 MySQL 用户名和密码。
+   下面是屏幕截图。
 
  ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p10.png)
 
-    按照要求再次确认密码。
+   按照要求再次确认密码。
 
  ![image](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p11.png)
  
 - 步骤 2：登录到 MySQL Server
 
-    在 MySQL Server 安装完成后，自动启动 MySQL 服务。你可以使用用户 root 登录 MySQL Server。
-    若要登录 MySQL Server，请使用以下命令。它将要求输入在 MySQL Server 安装过程中设置的 mysql 根密码。
+   在 MySQL Server 安装完成后，自动启动 MySQL 服务。你可以使用用户 root 登录 MySQL Server。
+   若要登录 MySQL Server，请使用以下命令。它将要求输入在 MySQL Server 安装过程中设置的 mysql 根密码。
 
-             # azureuser@mysqlnode1:~$ mysql -uroot -p
+       azureuser@mysqlnode1:~$ mysql -uroot -p
 
 - 步骤 3：在 VM 上查看 MySQL 服务
     
-    登录之后，请确保 MySQL 服务正在运行，你可以使用以下命令启动/重新启动该服务。
+   登录之后，请确保 MySQL 服务正在运行，你可以使用以下命令启动/重新启动该服务。
 
-    (a) 获取 MySQL 服务的状态
+   (a) 获取 MySQL 服务的状态
 
-             #sudo service mysql status
+           sudo service mysql status
 
-    (b) 启动 MySQL 服务
+   (b) 启动 MySQL 服务
 
-             #sudo service mysql start
+           sudo service mysql start
 
-    (c) 停止 MySQL 服务
+   (c) 停止 MySQL 服务
 
-             #sudo service mysql stop
+           sudo service mysql stop
 
-    (d) 重新启动 MySQL 服务
+   (d) 重新启动 MySQL 服务
 
-             #sudo service mysql restart
+           sudo service mysql restart
 
 
 ### 如何在 Redhat OS 系列或 Oracle Linux 上安装 MySQL
 - 步骤 1：添加 MySQL Yum 存储库
-    若要获取根权限，请运行命令： 
+   若要获取根权限，请运行命令： 
 
-            #sudo su -
-            #[root@azureuser ~]# wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm 
-            #[root@azureuser ~]# yum localinstall -y mysql-community-release-el6-5.noarch.rpm 
+            sudo su -
+            [root@azureuser ~]# wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm 
+            [root@azureuser ~]# yum localinstall -y mysql-community-release-el6-5.noarch.rpm 
 
 - 步骤 2：选择一个版本系列
  
-            #[root@azureuser ~]# vim /etc/yum.repos.d/mysql-community.repo
+            [root@azureuser ~]# vim /etc/yum.repos.d/mysql-community.repo
 
-    这是文件中版本系列的子存储库的典型条目：
+   这是文件中版本系列的子存储库的典型条目：
 
         \# *Enable to use MySQL 5.6*
 
@@ -177,73 +175,73 @@ MySQL 支持三种安装方法：二进制文件包、rpm 包和源包。
         gpgkey=file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql
 
 - 步骤 3：使用 Yum 安装 MySQL
-    使用以下命令安装 MySQL：
+   使用以下命令安装 MySQL：
 
-           #[root@azureuser ~]#yum install mysql-community-server 
+           [root@azureuser ~]#yum install mysql-community-server 
 
-    这将安装 MySQL Server 包，以及其他所需的包。
+   这将安装 MySQL Server 包，以及其他所需的包。
 
 - 步骤 4：查看 MySQL 运行状态
 
-    你可以使用以下命令查看 MySQL Server 的状态：
+   你可以使用以下命令查看 MySQL Server 的状态：
    
-           #[root@azureuser ~]#service mysqld status
+           [root@azureuser ~]#service mysqld status
 
-    你可以检查 MySQL Server 的默认端口是否正在运行：
+   你可以检查 MySQL Server 的默认端口是否正在运行：
 
-           #[root@azureuser ~]#netstat  -tunlp|grep 3306
+           [root@azureuser ~]#netstat  -tunlp|grep 3306
 
 - 步骤 5：启动和停止 MySQL Server
 
-    使用以下命令启动 MySQL Server：
+   使用以下命令启动 MySQL Server：
 
-           #[root@azureuser ~]#service mysqld start
+           [root@azureuser ~]#service mysqld start
 
-    使用以下命令停止 MySQL Server：
+   使用以下命令停止 MySQL Server：
 
-           #[root@azureuser ~]#service mysqld stop
+           [root@azureuser ~]#service mysqld stop
 
-    若要将 MySQL 设置为在系统启动时启动，请执行以下命令：
+   若要将 MySQL 设置为在系统启动时启动，请执行以下命令：
 
-           #[root@azureuser ~]#chkconfig mysqld on
+           [root@azureuser ~]#chkconfig mysqld on
 
 
 ### 如何在 Suse Linux 上安装 MySQL
 
 - 步骤 1：安装 MySQL Server
 
-    若要提升权限，请运行命令： 
+   若要提升权限，请运行命令： 
 
-           #sudo su -
+           sudo su -
 
-    使用以下命令安装 MySQL：
+   使用以下命令安装 MySQL：
 
-           #mysql-test:~ # zypper update
+           mysql-test:~ # zypper update
 
-           #mysql-test:~ # zypper install mysql-server mysql-devel mysql
+           mysql-test:~ # zypper install mysql-server mysql-devel mysql
 
 - 步骤 2：查看 MySQL 运行状态
 
-    你可以使用以下命令查看 MySQL Server 的状态：
+   你可以使用以下命令查看 MySQL Server 的状态：
 
-           #mysql-test:~ # rcmysql status
+           mysql-test:~ # rcmysql status
 
-    你可以检查 MySQL Server 的默认端口是否正在运行；
+   你可以检查 MySQL Server 的默认端口是否正在运行；
 
-           #mysql-test:~ # netstat  -tunlp|grep 3306
+           mysql-test:~ # netstat  -tunlp|grep 3306
 
 - 步骤 3：启动和停止 MySQL Server
 
-    使用以下命令启动 MySQL Server：
+   使用以下命令启动 MySQL Server：
 
-           #mysql-test:~ # rcmysql start
+           mysql-test:~ # rcmysql start
 
-    使用以下命令停止 MySQL Server：
+   使用以下命令停止 MySQL Server：
 
-           #mysql-test:~ # rcmysql stop
+           mysql-test:~ # rcmysql stop
 
-    若要将 MySQL 设置为在系统启动时启动，请执行以下命令：
+   若要将 MySQL 设置为在系统启动时启动，请执行以下命令：
 
-           #mysql-test:~ # insserv mysql
+           mysql-test:~ # insserv mysql
 
 <!--HONumber=53-->

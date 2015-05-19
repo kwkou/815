@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="保护内容" 
+	pageTitle="保护内容 - Azure 教程" 
 	description="本主题概述如何使用 Media Services 保护你的内容。" 
 	authors="Juliako" 
 	manager="dwrede" 

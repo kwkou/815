@@ -1,5 +1,5 @@
 <properties 
- pageTitle="计划程序的限制、默认值和错误代码" 
+ pageTitle="计划程序的限制、默认值和错误代码 - Azure 教程" 
  description="" 
  services="scheduler" 
  documentationCenter=".NET" 
@@ -7,7 +7,7 @@
  manager="dwrede" 
  editor=""/>
 <tags 
-wacn.date="05/15/2015"
+ wacn.date="05/15/2015"
  ms.service="scheduler" 
  ms.workload="infrastructure-services" 
  ms.tgt_pltfrm="na" 

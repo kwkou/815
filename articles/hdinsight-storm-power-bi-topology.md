@@ -1,5 +1,5 @@
 <properties
- pageTitle="将数据从 Apache Storm 写入 Power BI"
+ pageTitle="将数据从 Apache Storm 写入 Power BI - Azure 教程"
  description="介绍如何将数据从 HDInsight 群集上 Apache Storm 运行的 CSharp 拓扑写入 Power BI 的示例。在写入数据之后，你将学习如何使用 Power BI 创建报告和实时仪表板。"
  services="hdinsight"
  documentationCenter=""

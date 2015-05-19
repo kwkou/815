@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs- Website-with-socketio" urlDisplayName=" Website Using Socket.IO" pageTitle="使用 Socket.io 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure Node.js socket.io tutorial, Azure Node.js socket.io, Azure Node.js tutorial" description="本教程将演示如何在托管在 Azure 上的 node.js 网站中使用 socket.io。" metaCanonical="" services="web-sites" documentationCenter="Node.js" title="Build a Node.js Chat Application with Socket.IO on an Azure Website" authors="larryfr" solutions="" videoId="" scriptId="" manager="paulettm" editor="mollybos" />
+<properties linkid="dev-nodejs-Website-with-socketio" urlDisplayName="Website Using Socket.IO" pageTitle="使用 Socket.io 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure Node.js socket.io 教程, Azure Node.js socket.io, Azure Node.js 教程" description="本教程将演示如何在托管在 Azure 上的 node.js 网站中使用 socket.io。" metaCanonical="" services="web-sites" documentationCenter="Node.js" title="Build a Node.js Chat Application with Socket.IO on an Azure Website" authors="larryfr" solutions="" videoId="" scriptId="" manager="paulettm" editor="mollybos" />
 
 <tags ms.serive="website" ms.date="03/24/2015" wacn.date="04/11/2015"/>
 
@@ -9,13 +9,12 @@
 
 Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时通信。还支持回退到使用低版本浏览器的其他传输（如长轮询）。本教程将指导您将基于 Socket.IO 的聊天应用程序作为 Azure 网站托管。有关 Socket.IO 的详细信息，请参阅 [http://socket.io/][socketio]。
 
-> [AZURE.NOTE] 在本任务中的过程适用于 Azure 网站；关于云服务，请参阅 <a href="/documentation/articles/cloud-services-nodejs-chat-app-socketio/">在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序</a>。
+> [AZURE.NOTE] 在本任务中的过程适用于 Azure 网站；关于云服务，请参阅[在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/cloud-services-nodejs-chat-app-socketio/)。
 
 
 ## <a id="Download"></a>下载聊天示例
 
-对于此项目，我们将使用[Socket.IO
-GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步骤，
+对于此项目，我们将使用[Socket.IO GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步骤，
 并将其添加到之前创建的项目。
 
 1.  下载 Socket.IO 项目的[ZIP 或 GZ 存档版本][版本] （版本 1.0.6 已用于本文档）
@@ -27,8 +26,7 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 
 ## <a id="Modify"></a>修改 App.js 并安装模块
 
-在应用程序部署到 Azure 之前，我们必须
-进行一些小改动。
+在应用程序部署到 Azure 之前，我们必须进行一些小改动。
 
 1.  将**index.js**文件重命名为**app.js**。这可支持 Azure 检测它是否为 Node.js 应用程序。
 
@@ -76,7 +74,7 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 
         npm install socket.io@1.0.6 -save
 
-	> [AZURE.NOTE] 尽管 Socket.IO 的最新版本可能适用于本文中的步骤中，版本 1.0.6 已对其进行测试。
+> [AZURE.NOTE] 尽管 Socket.IO 的最新版本可能适用于本文中的步骤中，版本 1.0.6 已对其进行测试。
 
 ## <a id="Publish"></a>创建 Azure 网站
 
@@ -123,7 +121,7 @@ GitHub 存储库]中的聊天示例。若要下载该示例，请执行以下步
 您的应用程序现正在 Azure 上运行，并可以
 使用 Socket.IO 在不同客户端之间传递聊天消息。
 
-> [AZURE.NOTE] 为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 Azure SDK for Node.js GitHub 存储库 <a href="https://github.com/WindowsAzure/azure-sdk-for-node">中的 Service Bus 队列和主题使用情况示例</a>。
+> [AZURE.NOTE] 为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 Azure SDK for Node.js GitHub 存储库中的[Service Bus 队列和主题使用情况示例](https://github.com/WindowsAzure/azure-sdk-for-node)。
 
 ## <a id="tshooting"></a>故障排除
 
@@ -167,7 +165,7 @@ Websocket 依赖于某些较少使用的 HTTP 标头，如**升级**标头。某
 
 Node.js 应用程序通常不包括**web.config**文件，因此 Azure 网站将在部署 Node.js 应用程序时自动生成一个。由于此文件是在服务器上自动生成的，因此必须使用网站的 FTP 或 FTPS URL 来查看此文件。您可以通过选择您的网站，然后选择**仪表板**链接，在 Azure 管理门户中查找网站的 FTP 和 FTPS URL。URL 将显示在**速览**部分。
 
-	> [AZURE.NOTE] 如果应用程序未提供**Web.config**文件，则该文件将仅由 Azure 网站生成。如果在应用程序项目的根目录下提供了**web.config**文件，则 Azure 网站将使用该文件。
+> [AZURE.NOTE] 如果应用程序未提供**Web.config**文件，则该文件将仅由 Azure 网站生成。如果在应用程序项目的根目录下提供了**web.config**文件，则 Azure 网站将使用该文件。
 
 如果该条目不存在，或者设置为 `true`的值，那么您应在 Node.js 应用程序的根目录中创建**web.config**，并将值指定为 `false`。例如，使用**app.js**作为入口点的应用程序的默认**web.config**，如下所示。
 

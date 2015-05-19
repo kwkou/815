@@ -8,7 +8,7 @@
     editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
     ms.service="storage" 
     ms.workload="storage" 
     ms.tgt_pltfrm="na" 
@@ -153,21 +153,21 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	azure::storage::continuation_token token;
 	do
 	{
-   		azure::storage::blob_result_segment result = container.list_blobs_segmented(token);
-   		std::vector<azure::storage::cloud_blob> blobs = result.blobs();
+		azure::storage::blob_result_segment result = container.list_blobs_segmented(token);
+		std::vector<azure::storage::cloud_blob> blobs = result.blobs();
 
-   		for (std::vector<azure::storage::cloud_blob>::const_iterator it = blobs.cbegin(); it != blobs.cend(); ++it)
-   		{
+		for (std::vector<azure::storage::cloud_blob>::const_iterator it = blobs.cbegin(); it != blobs.cend(); ++it)
+		{
 			std::wcout << U("Blob: ") << it->uri().primary_uri().to_string() << std::endl;
-   		}
+		}
 
-   		std::vector<azure::storage::cloud_blob_directory> directories = result.directories();
+		std::vector<azure::storage::cloud_blob_directory> directories = result.directories();
 
-   		for (std::vector<azure::storage::cloud_blob_directory>::const_iterator it = directories.cbegin(); it != directories.cend(); ++it)
-  		{
+		for (std::vector<azure::storage::cloud_blob_directory>::const_iterator it = directories.cbegin(); it != directories.cend(); ++it)
+		{
 			std::wcout << U("Directory: ") << it->uri().primary_uri().to_string() << std::endl;
-  		}
-  		token = result.continuation_token();
+		}
+		token = result.continuation_token();
 	} while (!token.empty());  
 
 

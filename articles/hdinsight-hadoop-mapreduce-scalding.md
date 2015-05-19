@@ -1,5 +1,5 @@
 <properties
- pageTitle="使用 Maven 开发 Scalding MapReduce 作业"
+ pageTitle="使用 Maven 开发 Scalding MapReduce 作业 - Azure 教程"
  description="了解如何使用 Maven 创建 Scalding MapReduce 作业，然后在 Hadoop on HDInsight 群集上部署并运行该作业。"
  services="hdinsight"
  documentationCenter=""

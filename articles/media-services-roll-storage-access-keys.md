@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="轮转存储访问密钥后更新 Media Services" 
+	pageTitle="轮转存储访问密钥后更新 Media Services - Azure 教程" 
 	description="此文将提供有关在轮转存储访问密钥后如何更新 Media Services 的指导。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 

@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="如何使用表存储 (C++) | Microsoft Azure" 
+    pageTitle="如何使用表存储 (C++) - Azure 教程" 
     description="了解如何在 Azure 中使用表存储服务。相关示例用 C++ 编写。" 
     services="storage" 
     documentationCenter=".net" 
@@ -8,7 +8,7 @@
     editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
     ms.service="storage" 
     ms.workload="storage" 
     ms.tgt_pltfrm="na" 
@@ -24,7 +24,7 @@ wacn.date="05/15/2015"
 ## 概述  
 本指南将演示如何使用 Azure 表存储服务执行常见方案。示例是用 C++ 编写的并使用了[用于 C++ 的 Azure 存储客户端库](https://github.com/Azure/azure-storage-cpp/blob/v0.5.0-preview/README.md)。涉及的方案包括**创建和删除表**，以及**使用表实体**。
 
->[AZURE.NOTE] 本指南针对 C++ 0.5.0 版及更高版本的 Azure 存储客户端库。建议使用的版本是存储客户端库 0.5.0，可通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/) 获得。 
+>[AZURE.NOTE] 本指南针对 C++ 0.5.0 版及更高版本的 Azure 存储客户端库。建议使用的版本是存储客户端库 0.5.0，可通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 GitHub 获得。 
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
@@ -87,7 +87,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	table.create_if_not_exists();  
 
 ## 如何：将实体添加到表
-若要将实体添加到表，请创建一个新的 **table_entity** 对象并将其传递到 **table_operation::insert_entity**。以下代码使用客户的名字作为行键，并使用姓氏作为分区键。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。有关详细信息，请参阅 [Microsoft Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)。 
+若要将实体添加到表，请创建一个新的 **table_entity** 对象并将其传递到 **table_operation::insert_entity**。以下代码使用客户的名字作为行键，并使用姓氏作为分区键。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。有关详细信息，请参阅 [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)。 
 
 以下代码创建了包含要存储的某些客户数据的 **table_entity** 类的新实例。接下来，该代码调用 **table_operation::insert_entity** 以创建一个 **table_operation** 对象，以便将实体插入表中，并将新的表实体与之关联。最后，该代码调用 **cloud_table** 对象的 execute 方法。并且新的 **table_operation** 向存储服务发送请求，以将新的客户实体插入"people"表中。  
 

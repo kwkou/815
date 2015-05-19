@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 PowerShell 管理 Azure Media Services 帐户" 
+	pageTitle="使用 PowerShell 管理 Azure Media Services 帐户 - Azure 教程" 
 	description="了解如何使用 PowerShell cmdlet 管理 Azure Media Services 帐户。" 
 	authors="Juliako" 
 	manager="dwrede" 
@@ -8,7 +8,7 @@
 	documentationCenter=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 

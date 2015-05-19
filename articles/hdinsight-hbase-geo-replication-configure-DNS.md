@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在两个 Azure 虚拟网络之间配置 DNS | Azure" 
+   pageTitle="在两个 Azure 虚拟网络之间配置 DNS - Azure 教程" 
    description="了解如何在两个 Azure 虚拟网络之间配置 VPN 连接，如何在两个虚拟网络之间配置域名解析，以及如何配置 HBase 地域复制" 
    services="hdinsight" 
    documentationCenter="" 

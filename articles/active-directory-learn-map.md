@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="了解有关 Azure AD 的详细信息" 
+	pageTitle="了解有关 Azure AD 的详细信息 - Azure 教程" 
 	description="Azure AD 内容集的学习路线图。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="active-directory" 
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将内容传送到客户概述" 
+	pageTitle="将内容传送到客户概述 - Azure 教程" 
 	description="本主题概述了在使用 Azure Media Services 传送内容时涉及到的操作。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 

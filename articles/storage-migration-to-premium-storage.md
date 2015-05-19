@@ -1,4 +1,5 @@
-﻿<properties pageTitle="迁移到 Azure 高级存储 | Microsoft Azure"
+<properties 
+			pageTitle="迁移到 Azure 高级存储 - Auzre 教程"
             description="迁移到 Azure 高级存储，以便为 Azure 虚拟机上运行的 I/O 密集型工作负荷提供高性能、低延迟磁盘支持。 "
             services="storage"
             documentationCenter="na"
@@ -7,14 +8,14 @@
             editor="" />
 
 <tags 
-wacn.date="05/15/2015"
-ms.service="storage"
-      ms.workload="storage"
-      ms.tgt_pltfrm="na"
-      ms.devlang="na"
-      ms.topic="article"
-      ms.date="04/14/2015"
-      ms.author="tamram" />
+	wacn.date="05/15/2015"
+	ms.service="storage"
+     ms.workload="storage"
+     ms.tgt_pltfrm="na"
+     ms.devlang="na"
+     ms.topic="article"
+     ms.date="04/14/2015"
+     ms.author="tamram" />
 
 
 # 迁移到 Azure 高级存储

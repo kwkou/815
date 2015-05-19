@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用 InMage 进行保护时从 Azure 故障回复到 VMware 的步骤" 
+   pageTitle="使用 InMage 进行保护时从 Azure 故障回复到 VMware 的步骤 - Azure 教程" 
    description="本文介绍了如何使用 Azure Site Recovery 和 vContinuum 工具将虚拟机故障回复到 VMware。" 
    services="site-recovery" 
    documentationCenter="" 
@@ -190,54 +190,50 @@ f. 如果不存在该行，请单击"添加行"。
 \# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
 
 上述命令将从 CentOS 6.6 存储库下载并安装下面提到的 15 个程序包。
-
-bc-1.06.95-1.el6.x86\_64.rpm
-
-busybox-1.15.1-20.el6.x86\_64.rpm
-
-elfutils-libs-0.158-3.2.el6.x86\_64.rpm
-
-kexec-tools-2.0.0-280.el6.x86\_64.rpm
-
-lsscsi-0.23-2.el6.x86\_64.rpm
-
-lzo-2.03-3.1.el6\_5.1.x86\_64.rpm
-
-perl-5.10.1-136.el6\_6.1.x86\_64.rpm
-
-perl-Module-Pluggable-3.90-136.el6\_6.1.x86\_64.rpm
-
-perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
-
-perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
-
-perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
-
-perl-version-0.77-136.el6\_6.1.x86\_64.rpm
-
-rsync-3.0.6-12.el6.x86\_64.rpm
-
-snappy-1.1.0-1.el6.x86\_64.rpm
-
-wget-1.12-5.el6\_6.1.x86\_64.rpm
+	
+	bc-1.06.95-1.el6.x86\_64.rpm
+	
+	busybox-1.15.1-20.el6.x86\_64.rpm
+	
+	elfutils-libs-0.158-3.2.el6.x86\_64.rpm
+	
+	kexec-tools-2.0.0-280.el6.x86\_64.rpm
+	
+	lsscsi-0.23-2.el6.x86\_64.rpm
+	
+	lzo-2.03-3.1.el6\_5.1.x86\_64.rpm
+	
+	perl-5.10.1-136.el6\_6.1.x86\_64.rpm
+	
+	perl-Module-Pluggable-3.90-136.el6\_6.1.x86\_64.rpm
+	
+	perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
+	
+	perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
+	
+	perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
+	
+	perl-version-0.77-136.el6\_6.1.x86\_64.rpm
+	
+	rsync-3.0.6-12.el6.x86\_64.rpm
+	
+	snappy-1.1.0-1.el6.x86\_64.rpm
+	
+	wget-1.12-5.el6\_6.1.x86\_64.rpm
 
 注意：如果源计算机为根设备或引导设备使用了 Reiser 或 XFS 文件系统，则应该在保护之前，在 Linux 主目标中下载并安装以下程序包。
 
-\# cd /usr/local
+	cd /usr/local
 
-\# wget
-<http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
+	wget http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm
+		
+	wget http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm
 
-\# wget
-<http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
+	rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm
+	reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm
-reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
-
-\# wget
-<http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
-
-\# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
+	wget http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm
+	pm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
 #### 应用自定义配置更改
 

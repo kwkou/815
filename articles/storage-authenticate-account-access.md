@@ -8,7 +8,7 @@
     editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
     ms.service="storage" 
     ms.workload="storage" 
     ms.tgt_pltfrm="na" 

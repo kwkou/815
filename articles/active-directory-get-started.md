@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何开始使用 Azure AD" 
+	pageTitle="如何开始使用 Azure AD - Azure 教程" 
 	description="介绍如何注册 Azure，以及尝试使用 Azure AD 之前所要完成的最先几个步骤。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
+	wacn.date="05/15/2015"
 	ms.service="active-directory" 
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
@@ -32,7 +32,7 @@ wacn.date="05/15/2015"
 
 ## 如何判断要使用哪个目录来测试、过渡或生产？
 
-如果你有 Microsoft 云服务的现有订阅（例如 Office 365），则你已经在 Azure AD 中拥有了一个目录，直接使用该目录即可。该目录会对登录 Office 365 的用户进行身份验证。
+如果你有云服务的现有订阅（例如 Office 365），则你已经在 Azure AD 中拥有了一个目录，直接使用该目录即可。该目录会对登录 Office 365 的用户进行身份验证。
  
 你只需使用登录 Office 365 时所用的同一个工作帐户或学校帐户来注册 Azure。然后，你可以在 Azure 管理门户管理目录，并根据需要添加用于测试等目的的目录。[了解有关如何在 Azure 中管理 Office 365 订阅目录的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn629580.aspx)。
 

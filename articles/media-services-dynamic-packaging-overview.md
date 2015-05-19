@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="动态打包概述" 
+	pageTitle="动态打包概述 - Azure 教程" 
 	description="主题提供动态打包的概述。" 
 	authors="Juliako" 
 	manager="dwrede" 
