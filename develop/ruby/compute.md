@@ -25,7 +25,7 @@
 <h3>指南： <a href="/documentation/articles/best-practices-performance/">有关 Azure 应用程序性能的最佳实践</a></h3>
 <p>该主题概述了有关基于云的应用程序的性能注意事项，并围绕如何监控应用程序性能提供相关指导。它还提供指向其他内容的链接，以帮助并指导您完成设计和部署应用程序的所有阶段。</p>
 <h3>如何： <a href="/documentation/articles/cloud-services-custom-domain-name/">为 Azure 云服务或存储帐户配置自定义域名</a></h3>
-<p>默认情况下，可通过友好子域（例如 http://&lt;myapp&gt;.cloudapp.net 和 https://&lt;mydata&gt;.blob.core.windows.net）访问 Azure 应用程序和存储帐户。本文演示如何在您自己的自定义域（如 http://&lt;myapp&gt;.com）中公开您的应用程序和数据。</p>
+<p>默认情况下，可通过友好子域（例如 http://<myapp>.chinacloudapp.cn 和 https://<mydata>.blob.core.windows.net）访问 Azure 应用程序和存储帐户。本文演示如何在您自己的自定义域（如 http://&lt;myapp&gt;.com）中公开您的应用程序和数据。</p>
 <h3>指南： <a href="/documentation/articles/fundamentals-service-bus-hybrid-solutions/">用于混合解决方案的 Azure Service Bus</a></h3>
 <p>本主题概述如何使用 Azure Service Bus 在云中和本地部署中的应用程序之间通信。</p>
 <h2 id="header-2">工具</h2>

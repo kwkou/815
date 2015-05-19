@@ -52,7 +52,7 @@
 	full address:s:tailspin-azdatatier.chinacloudapp.cn:55919
 	prompt for credentials:i:1
 
-地址部分由包含虚拟机（在此示例中为 tailspin-azdatatier.cloudapp.net）的云服务的完全限定域名和远程桌面通信 (55919) 终结点的外部 TCP 端口组成。
+地址部分由包含虚拟机（在此示例中为 tailspin-azdatatier.chinacloudapp.cn）的云服务的完全限定域名和远程桌面通信 (55919) 终结点的外部 TCP 端口组成。
 
 此问题的可能解决方案：
 
@@ -197,7 +197,7 @@
 
 你可以从 **Get-AzureSubscription** 命令显示的 SubscriptionName 属性获取正确的订阅名称。可以从 **Get-AzureVM** 命令显示的 ServiceName 列中获取虚拟机的云服务名称。
 
-为了证明你拥有此新证书，请打开侧重于当前用户的"证书"管理单元，然后在**"受信任的根证书颁发机构\证书"**文件夹中查找。你应看到在"颁发给"列中具有你的云服务的 DNS 名称的证书（示例：cloudservice4testing.cloudapp.net）。
+为了证明你拥有此新证书，请打开侧重于当前用户的"证书"管理单元，然后在**"受信任的根证书颁发机构\证书"**文件夹中查找。你应看到在"颁发给"列中具有你的云服务的 DNS 名称的证书（示例：cloudservice4testing.chinacloudapp.cn）。
 
 接下来，使用以下命令启动远程 PowerShell 会话。
 
@@ -207,9 +207,9 @@
 
 输入有效的管理员凭据之后，你应看到如下内容作为 Azure PowerShell 提示符：
 
-	[cloudservice4testing.cloudapp.net]: PS C:\Users\User1\Documents>
+	[cloudservice4testing.chinacloudapp.cn]: PS C:\Users\User1\Documents>
 
-提示符的第一部分指示你现在正在对包含目标虚拟机的云服务发出 PowerShell 命令。你的云服务名称将是不同于"cloudservice4testing.cloudapp.net"的内容。 
+提示符的第一部分指示你现在正在对包含目标虚拟机的云服务发出 PowerShell 命令。你的云服务名称将是不同于"cloudservice4testing.chinacloudapp.cn"的内容。 
 
 现在，你可以发出 PowerShell 命令，以调查上面提到的其他问题，并进行配置更正。
 

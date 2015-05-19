@@ -86,7 +86,7 @@ API 管理（预览版）提供了一个 API 检查器工具，帮助您进行�
             "configuration":{
               "api":{
                 "from":"echo",
-                "to":"http://echoapi.cloudapp.net/api"
+                "to":"http://echoapi.chinacloudapp.cn/api"
               },
               "operation":{
                 "method":"GET",
@@ -111,7 +111,7 @@ API 管理（预览版）提供了一个 API 检查器工具，帮助您进行�
             "message":"Sending request to the service.",
             "request":{
               "method":"GET",
-              "url":"http://echoapi.cloudapp.net/api/resource?param1=sample&subscription-key=...",
+              "url":"http://echoapi.chinacloudapp.cn/api/resource?param1=sample&subscription-key=...",
               "headers":[
                 {
                   "name":"X-Forwarded-For",
@@ -140,7 +140,7 @@ API 管理（预览版）提供了一个 API 检查器工具，帮助您进行�
               },
               {
                 "name":"Host",
-                "value":"echoapi.cloudapp.net"
+                "value":"echoapi.chinacloudapp.cn"
               },
               {
                 "name":"X-Forwarded-For",

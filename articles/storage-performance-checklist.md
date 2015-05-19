@@ -128,7 +128,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ###<a name="subheading6"></a>使用 SAS 和 CORS
 当你需要在用户的 Web 浏览器或移动电话应用程序中对 JavaScript 之类的代码授权以访问 Azure 存储空间中的数据时，一种方法是使用代理形式的 Web 角色应用程序：用户的设备通过 Web 角色进行身份验证，而 Web 角色则通过存储服务进行身份验证。这样，你就可以避免在不安全的设备上公开存储帐户密钥。但是，这会大大增加 Web 角色的开销，因为在用户设备和存储服务之间传输的所有数据都必须通过 Web 角色。你可以避免使用 Web 角色作为存储服务的代理，只需使用共享访问签名 (SAS) 即可，有时候还需结合使用跨域资源共享标头 (CORS)。使用 SAS，你可以让用户的设备通过受限访问令牌直接向存储服务提出请求。例如，如果某个用户想要将照片上载到你的应用程序，你的 Web 角色就会生成一个 SAS 令牌并将其发送到用户的设备，这样用户就可以获得在随后的 30 分钟内（此时间过后 SAS 令牌会失效）向特定 Blob 或容器执行写入操作的权限。   
 
-通常情况下，浏览器不会允许某个域上的网站所托管的页面中的 JavaScript 执行特定的操作，例如针对其他域的"PUT"操作。例如，如果你在"contosomarketing.cloudapp.net"上托管了一个 Web 角色，同时想要使用客户端 JavaScript 将一个 Blob 上载到"contosoproducts.blob.core.chinacloudapi.cn"上的存储帐户，则浏览器的"同源策略"会禁止该操作。CORS 是一种浏览器功能，该功能允许目标域（在本示例中为存储帐户）向所信任的浏览器进行针对源域（在本示例中为 Web 角色）发出的请求的通信。  
+通常情况下，浏览器不会允许某个域上的网站所托管的页面中的 JavaScript 执行特定的操作，例如针对其他域的"PUT"操作。例如，如果你在"contosomarketing.chinacloudapp.cn"上托管了一个 Web 角色，同时想要使用客户端 JavaScript 将一个 Blob 上载到"contosoproducts.blob.core.chinacloudapi.cn"上的存储帐户，则浏览器的"同源策略"会禁止该操作。CORS 是一种浏览器功能，该功能允许目标域（在本示例中为存储帐户）向所信任的浏览器进行针对源域（在本示例中为 Web 角色）发出的请求的通信。  
 
 这两种技术都可以帮助你避免在 Web 应用程序上出现不必要的负载（和瓶颈）。  
 

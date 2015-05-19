@@ -128,7 +128,7 @@
 ## <a name=bkmk_TrafficManagerBestPracticesProfile>最佳实践</a>
 
 - **使前缀唯一并易于理解 -** 流量管理器配置文件的 DNS 名称必须唯一。你只能控制 DNS 名称的第一部分。流量管理器域名仅用于标识及定向客户端请求。客户端计算机将永远不会向最终用户显示这些名称。但是，配置文件由此域名予以标识，因此，你必须能够快速地将此域名与管理门户中列出的其他域名区分开来。
-- **使用点号来增强唯一性或使域名易读 -** 也可以使用句点来分隔域名前缀部分。如果计划在流量管理器中创建多个策略，请使用一致的层次结构来区分服务。例如，Contoso 拥有针对 Web、计费和实用工具管理的全局服务。这三个策略应为 web.contoso.trafficmanager.cn、bill.contoso.trafficmanager.cn 和 util.contoso.trafficmanager.cn。设置云服务或网站时，请使用包含位置的名称。例如，web-us-contoso.cloudapp.net 和 web-asia-contoso.cloudapp.net。你将受限于 DNS 施加的各种限制。假定一个域名是一个点号分隔的标签序列（"标签.标签.标签.标签.等等"）。截至本文档撰写时，流量管理器中对域名的限制如下：
+- **使用点号来增强唯一性或使域名易读 -** 也可以使用句点来分隔域名前缀部分。如果计划在流量管理器中创建多个策略，请使用一致的层次结构来区分服务。例如，Contoso 拥有针对 Web、计费和实用工具管理的全局服务。这三个策略应为 web.contoso.trafficmanager.cn、bill.contoso.trafficmanager.cn 和 util.contoso.trafficmanager.cn。设置云服务或网站时，请使用包含位置的名称。例如，web-us-contoso.chinacloudapp.cn 和 web-asia-contoso.chinacloudapp.cn。你将受限于 DNS 施加的各种限制。假定一个域名是一个点号分隔的标签序列（"标签.标签.标签.标签.等等"）。截至本文档撰写时，流量管理器中对域名的限制如下：
 	- 每个标签最多可以包含 63 个字符。
 	- 标签总数不能超过 40 个。因为 trafficmanager.cn 占用两个标签，所以前缀可以使用 38 个。
 	- 整个域名最多只能包含 253 个字符。请注意，trafficmanager.cn 占用了这些字符中的 19 个。

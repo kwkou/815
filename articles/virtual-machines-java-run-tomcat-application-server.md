@@ -37,7 +37,7 @@
     5. 单击"下一步"****。
 6. 在下一个"虚拟机配置"<strong></strong>对话框中：
     1. 对于"云服务"****，请使用默认的"创建新云服务"****。
-    2. "云服务 DNS 名称"****的值在 cloudapp.net 上必须是唯一的。如果需要，请修改此值，以使 Azure 指示它是唯一的。
+    2. "云服务 DNS 名称"****的值在 chinacloudapp.cn 上必须是唯一的。如果需要，请修改此值，以使 Azure 指示它是唯一的。
     2. 指定区域、地缘组或虚拟网络。在本教程中，请指定一个区域，如"美国西部"****。
     2. 对于"存储帐户"****，选择"使用自动生成的存储帐户"****。
     3. 对于"可用性集"****，请选择"(无)"****。
@@ -116,7 +116,7 @@
 
  ![New inbound rule name][NewRuleName]
 
-此时，您的 Tomcat 网站现在应该可使用 **http://*your\_DNS\_name*.cloudapp.net** 形式的 URL 从外部浏览器查看，其中 ***your\_DNS\_name*** 是您在创建虚拟机时指定的 DNS 名称。
+此时，您的 Tomcat 网站现在应该可使用 **http://*your\_DNS\_name*.chinacloudapp.cn** 形式的 URL 从外部浏览器查看，其中 ***your\_DNS\_name*** 是您在创建虚拟机时指定的 DNS 名称。
 
 ## 应用程序生命周期注意事项
 * 您可以创建您自己的应用程序 Web 存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件、将该 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。

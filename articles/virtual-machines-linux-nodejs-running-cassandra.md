@@ -83,7 +83,7 @@ Cassandra 支持两种类型的数据完整性模型 - 一致性和最终一致�
 ## 多区域部署 # #
 Cassandra 的数据中心意识的复制和上面所述的一致性模型有助于与在初始状态下无需任何外部工具的多区域部署。这是非常不同于传统的关系数据库为数据库镜像对多主机写入安装程序可能会十分复杂。在多区域设置中的 Cassandra 可帮助完成使用方案包括： 
 
-**邻近基于部署：**具有清晰的映射的租户用户多租户应用程序-到-区域中，可以获益了多区域群集的低延迟的影响。有关示例学习管理教育机构的系统可以部署在美国东部和美国西部区域，用于为各自的大学校园中的分布式的群集以及分析事务。数据可以在时间读取和写入本地一致，并可以跨这两个区域是最终一致。还有其他示例，如媒体分发、 电子商务和任何内容，并提供集中的地域用户基的所有内容都是这种部署模型的一个很好的用例。
+**邻近基于部署：**具有清晰的映射的租户用户多租户应用程序-到-区域中，可以获益了多区域群集的低延迟的影响。有关示例学习管理教育机构的系统可以部署在中国东部和中国北部区域，用于为各自的大学校园中的分布式的群集以及分析事务。数据可以在时间读取和写入本地一致，并可以跨这两个区域是最终一致。还有其他示例，如媒体分发、 电子商务和任何内容，并提供集中的地域用户基的所有内容都是这种部署模型的一个很好的用例。
 
 **高可用性：**冗余是如何达到最大的软件和硬件 ； 高可用性的关键因素有关详细信息，请参阅 Windows Azure 一构建可靠的云系统。在 Windows Azure 上实现真正的冗余的唯一可靠的方式是通过部署多区域群集。应用程序可以部署在主动-主动或主动-被动模式下，并且如果某个区域已关闭，Azure Traffic Manager 可以将流量重定向到活动的区域。与单区域部署中，如果可用性 99.9，两个区域部署可用来实现 99.9999 由公式计算的可用性： (1-(1-0.999) * (1-0.999)) * 100) ；请参阅上述的文章，有关详细信息。
 
@@ -155,8 +155,8 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生�
 <table>
 <tr><th>字段名称             </th><th> 字段值	                   </th><th> 备注                                 </th></tr>
 <tr><td> CLOUD SERVICE	</td><td> 创建新的云服务	</td><td>云服务是容器计算资源 （如虚拟机</td></tr>
-<tr><td> CLOUD SERVICE DNS NAME	</td><td>ubuntu template.cloudapp.net	</td><td>为计算机提供不可知的负载平衡器名称</td></tr>
-<tr><td> REGION/AFFINITY GROUP/VIRTUAL NETWORK </td><td>	美国西部	</td><td> 选择你的 Web 应用程序从中访问 Cassandra 群集的区域</td></tr>
+<tr><td> CLOUD SERVICE DNS NAME	</td><td>ubuntu template.chinacloudapp.cn	</td><td>为计算机提供不可知的负载平衡器名称</td></tr>
+<tr><td> REGION/AFFINITY GROUP/VIRTUAL NETWORK </td><td>	中国北部	</td><td> 选择你的 Web 应用程序从中访问 Cassandra 群集的区域</td></tr>
 <tr><td>STORAGE ACCOUNT </td><td>	使用默认值	</td><td>在某一特定区域中使用的默认存储帐户或预创建的存储帐户</td></tr>
 <tr><td>AVAILABILITY SET </td><td>	无 </td><td>	将保留为空</td></tr>
 <tr><td>ENDPOINTS	</td><td>使用默认值 </td><td>	使用默认的 SSH 配置 </td></tr>
@@ -168,7 +168,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生�
 ####步骤 1：上载 tarballs # # #
 使用 scp 或 pscp，将以前下载的软件复制到使用以下命令格式的 ~/downloads 目录中： 
 
-#####pscp 服务器-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.cloudapp.net:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz # # #
+#####pscp 服务器-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.chinacloudapp.cn:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz # # #
 
 至于 Cassandra bits 对 JRE 以及重复上面的命令。 
 
@@ -289,7 +289,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 </table>
 
 ####步骤 6：捕获 VM 映像 # # #
-登录到虚拟机使用主机名 (hk ca template.cloudapp.net) 和先前创建的 SSH 私钥。请参阅如何使用 SSH 与 Linux on Azure 有关如何使用命令 ssh 或 putty.exe 中记录的详细信息。 
+登录到虚拟机使用主机名 (hk ca template.chinacloudapp.cn) 和先前创建的 SSH 私钥。请参阅如何使用 SSH 与 Linux on Azure 有关如何使用命令 ssh 或 putty.exe 中记录的详细信息。 
 
 执行以下一系列操作，以捕获映像：
 #####1.取消设置 # # #
@@ -310,7 +310,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 <table>
 <tr><th>虚拟机属性名称</th><th>值</th><th>备注</th></tr>
 <tr><td>名称</td><td>虚拟网络-cass-西-我们</td><td></td></tr>	
-<tr><td>区域</td><td>美国西部</td><td></td></tr>	
+<tr><td>区域</td><td>中国北部</td><td></td></tr>	
 <tr><td>DNS 服务器	</td><td>无</td><td>将其忽略，因为我们不使用了 DNS 服务器</td></tr>
 <tr><td>配置点到站点 VPN</td><td>无</td><td> 忽略此警告</td></tr>
 <tr><td>配置站点到站点 VPN</td><td>无</td><td> 忽略此警告</td></tr>
@@ -477,7 +477,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 <table>
 <tr><th>属性名称    </th><th>值	</th><th>备注</th></tr>
 <tr><td>名称	</td><td>虚拟网络-cass-东部-我们</td><td></td></tr>	
-<tr><td>区域	</td><td>美国东部</td><td></td></tr>	
+<tr><td>区域	</td><td>中国东部</td><td></td></tr>	
 <tr><td>DNS 服务器		</td><td></td><td>将其忽略，因为我们不使用了 DNS 服务器</td></tr>
 <tr><td>配置点到站点 VPN</td><td></td><td>		忽略此警告</td></tr>
 <tr><td>配置站点到站点 VPN</td><td></td><td>		忽略此警告</td></tr>
@@ -501,8 +501,8 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 
 <table>
 <tr><th>网络名称          </th><th>VPN 网关地址	</th><th>地址空间	</th><th>备注</th></tr>
-<tr><td>hk-lnet-map-to-east-us</td><td>	23.1.1.1	</td><td>10.2.0.0/16	</td><td>在创建本地网络提供一个占位符，网关地址。创建网关后，将填充实际的网关地址。请确保地址空间与各自的远程虚拟网络 ； 完全匹配在这种情况下在美国东部区域中将创建虚拟网络。</td></tr>
-<tr><td>hk-lnet-map-to-west-us	</td><td>23.2.2.2	</td><td>10.1.0.0/16	</td><td>在创建本地网络提供一个占位符，网关地址。创建网关后，将填充实际的网关地址。请确保地址空间与各自的远程虚拟网络 ； 完全匹配在这种情况下在美国西部区域中将创建虚拟网络。</td></tr>
+<tr><td>hk-lnet-map-to-east-us</td><td>	23.1.1.1	</td><td>10.2.0.0/16	</td><td>在创建本地网络提供一个占位符，网关地址。创建网关后，将填充实际的网关地址。请确保地址空间与各自的远程虚拟网络 ； 完全匹配在这种情况下在中国东部区域中将创建虚拟网络。</td></tr>
+<tr><td>hk-lnet-map-to-west-us	</td><td>23.2.2.2	</td><td>10.1.0.0/16	</td><td>在创建本地网络提供一个占位符，网关地址。创建网关后，将填充实际的网关地址。请确保地址空间与各自的远程虚拟网络 ； 完全匹配在这种情况下在中国北部区域中将创建虚拟网络。</td></tr>
 </table>
 
 

@@ -370,7 +370,7 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 	WARNING: 2:22:48 PM - Created Deployment ID: b7134ab29b1249ff84ada2bd157f296a.
 	WARNING: 2:22:48 PM - Initializing...
 	WARNING: 2:22:49 PM - Instance WebRole1_IN_0 of role WebRole1 is ready.
-	WARNING: 2:22:50 PM - Created  Website URL: http://tasklist.cloudapp.net/.
+	WARNING: 2:22:50 PM - Created  Website URL: http://tasklist.chinacloudapp.cn/.
 
 	与先前一样，由于你指定了 -launch 选项，因此在发布完成后，浏览器将打开并显示正在 Azure 中运行的应用程序。
 

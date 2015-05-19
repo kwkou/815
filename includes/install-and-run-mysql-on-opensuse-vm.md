@@ -70,11 +70,11 @@
 
 14. 若要在 Azure 中远程连接到在您的 OpenSUSE 虚拟机上运行的 MySQL，请在您的本地计算机上运行以下命令：
 
-		mysql -u mysqluser -p -h <yourservicename>.cloudapp.net
+		mysql -u mysqluser -p -h <yourservicename>.chinacloudapp.cn
 
 	例如，使用我们在本教程中创建的虚拟机时该命令应为：
 
-		mysql -u mysqluser -p -h testlinuxvm.cloudapp.net
+		mysql -u mysqluser -p -h testlinuxvm.chinacloudapp.cn
 
 15. 您已成功配置 MySQL、创建数据库和新用户。有关 MySQL 的详细信息，请参阅 [MySQL 文档][MySQLDocs]。	
 

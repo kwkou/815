@@ -51,7 +51,7 @@ API 包含一组可以从客户端应用程序调用的操作。API 操作代理
 
 每个 API 管理服务实例都通过示例 Echo API 预先配置，它返回发送给它的输入。要使用它，您可以调用任何 HTTP 谓词，并且返回值将等于为标头和您发送的正文。
 
-本教程使用 http://echoapi.cloudapp.net/api web 服务，在调用 **My Echo Service** 的 API 管理中创建新的 API。
+本教程使用 http://echoapi.chinacloudapp.cn/api web 服务，在调用 **My Echo Service** 的 API 管理中创建新的 API。
 
 从 API 管理控制台创建和配置 API，通过 Azure 管理门户访问。要访问 API 管理控制台，请为 API 管理服务单击 Azure 门户中的**管理控制台**。
 
@@ -66,7 +66,7 @@ API 包含一组可以从客户端应用程序调用的操作。API 操作代理
 以下三个字段用于配置新的 API。
 
 -   将 **My Echo API** 键入 **Web API 标题**文本框。**Web API 标题**为 API 提供唯一并且描述性的名称。它显示在开发人员和管理门户中。
--   将 **http://echoapi.cloudapp.net/api** 键入 **Web 服务 URL**。**Web 服务 URL** 引用执行该 API 的 HTTP 服务。API 管理将请求转发到此地址。
+-   将 **http://echoapi.chinacloudapp.cn/api** 键入 **Web 服务 URL**。**Web 服务 URL** 引用执行该 API 的 HTTP 服务。API 管理将请求转发到此地址。
 -   将 **myecho** 键入 **Web API URL 后缀**。**Web API URL 后缀**附加到 API 管理服务的基础 URL。您的 API 将共享一个公共基础 URL，并通过基础后面附加的独特后缀进行区分。
 
 单击**保存**创建 API。一旦创建新的 API，该 API 的摘要页显示在管理门户中。

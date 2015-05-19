@@ -53,7 +53,7 @@ xplat-cli 是从任何平台管理 Azure 基础结构的很好方式。
 
     若要选择位置，可以使用  `vm location list` 命令来选取你附近的区域。
 
-  你选择的 DNS 名称必须是唯一的（它将映射到  `dnsname.cloudapp.net`），并且将与计算机名称相同（如果你未在命令行上单独指定计算机名称）。  
+  你选择的 DNS 名称必须是唯一的（它将映射到  `dnsname.chinacloudapp.cn`），并且将与计算机名称相同（如果你未在命令行上单独指定计算机名称）。  
 
    下面的 Linux 示例将在中国北部创建 VM，打开默认 SSH 端口 22（-e 参数），并创建名为  `myadminuser` 的用户：
 

@@ -9,7 +9,7 @@
 
 可按照以下步骤创建虚拟机：
 
-1. 使用您的 Windows Azure 帐户登录 [Windows Azure 管理门户](http://manage.windowsazure.com)。
+1. 使用您的 Windows Azure 帐户登录 [Windows Azure 管理门户](https://manage.windowsazure.cn)。
 
 2. 在管理门户中，在网页的左下角依次单击“+新建”、“虚拟机”，然后单击“从库中”。
 	![新建虚拟机][Image1]
@@ -30,7 +30,7 @@
 5. 在“虚拟机模式”页上，提供下列信息：
 
 - 选择“独立虚拟机”。
-- 在“DNS 名称”框中，按照格式 testwinvm.cloudapp.net 键入一个有效子域
+- 在“DNS 名称”框中，按照格式 testwinvm.chinacloudapp.cn 键入一个有效子域
 - 在“区域/地缘组/虚拟网络”框中，选择将承载此虚拟映像的区域。
 
    单击下一步箭头以继续。

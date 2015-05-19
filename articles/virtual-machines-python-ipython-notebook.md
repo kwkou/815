@@ -195,7 +195,7 @@
     ipython notebook --profile=nbserver
 
 您现在应能够访问您的地址的 IPython Notebook
-https://[你所选择的名称 （此处]。 cloudapp.net。
+https://<你所选择的名称>.chinacloudapp.cn 。
 
 当您首次访问您的 notebook 时，登录页会询问您的密码：
 
