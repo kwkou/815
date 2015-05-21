@@ -1,10 +1,10 @@
-<properties linkid="" urlDisplayName="" pageTitle="MySQL Database on Azure数据库入门 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南" description="快速入门指南帮助您迅速了解MySQL Database on Azure,让您几分钟内轻松创建,连接,迁移,监控管理您的MySQL数据库。您根据入门指南中的步骤操作,将成功建立使用属于您的MySQL数据库。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="MySQL Database on Azure数据库入门 - Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，入门指南" description="快速入门指南帮助您迅速了解MySQL Database on Azure，让您几分钟内轻松创建、连接、迁移、监控管理您的MySQL数据库。您根据入门指南中的步骤操作，将成功建立使用属于您的MySQL数据库。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="" wacn.date="04/29/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="05/21/2015"/>
 
 #MySQL Database on Azure数据库入门在本教程帮助您将了解如何使用Azure管理门户迅速创建，连接，配置MySQL Database on Azure。完成本教程后，您将在Azure上拥有一个示例MySQL数据库服务器，并了解如何使用管理门户执行基本管理任务。
 ###目录- [步骤一：登陆Azure管理门户，创建MySQL服务器](#step1)- [步骤二：配置防火墙](#step2)- [步骤三：设置备份时间](#step3)- [步骤四：创建数据库](#step4)- [步骤五：连接数据库](#step5)- [步骤六：数据迁移(可选)](#step6)- [后续步骤](#nextstep)##<a id="step1"></a>步骤一：登陆Azure管理门户，创建MySQL服务器
-1.	登陆到Azure 管理门户, 在右侧导航条选中MySQL Database on Azure。 2.	单击页面底部的“新建”，单击“新建”后，屏幕上将会出现一个显示可创建内容的列表。3.	单击“MySQL Database on Azure”, 点击快速创建 ![创建MySQL服务器](./media/mysql-database-get-started/create-mysql-server.png)输入创建一个新的服务器需要的参数然后点击创建。一两分钟后您就有了一个新的MySQL服务器。>[AZURE.NOTE]**强烈建议您将Azure服务放在同一个区域，选择一个最靠近您的位置。**##<a id="step2"></a>步骤步骤二：配置防火墙
+1.	登陆到Azure 管理门户, 在右侧导航条选中MySQL Database on Azure。 2.	单击页面底部的“新建”，单击“新建”后，屏幕上将会出现一个显示可创建内容的列表。3.	单击“MySQL Database on Azure”, 点击快速创建 ![创建MySQL服务器](./media/mysql-database-get-started/create-mysql-server.png)>[AZURE.NOTE]**您的用户名称是以“服务器名称%用户名”组成，当您连接数据库时请注意填写用户名全称。**输入创建一个新的服务器需要的参数然后点击创建。一两分钟后您就有了一个新的MySQL服务器。>[AZURE.NOTE]**强烈建议您将Azure服务放在同一个区域，选择一个最靠近您的位置。**##<a id="step2"></a>步骤步骤二：配置防火墙
 首次从您的客户端连MySQL Database on Azure之前你需要配置防火墙，将您的客户端公网IP地址（也可以是IP地址段）加入到白名单中。在管理门户上，点击您的实例，然后点击“配置”，可以通过以下界面完成IP地址添加。![配置MySQL服务器](./media/mysql-database-get-started/config-mysql-server.png) 默认您在Azure上的其他服务（包括在Azure上的VM）允许访问您的MySQL数据库，您无需再手动添加IP地址。您也可以更改此默认功能，在“允许的服务”中，“Windows Azure 服务”一项选择“否”##<a id="step3"></a>步骤步骤三：设置备份时间
 MySQL Database on Azure支持两种备份形式：按需备份和每日定时备份。您可以选中您的MySQL服务器，点击“配置”进行每日备份时间的设置。您可以通过下拉菜单选择自动备份时间。
 
