@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="使用地域还原和 REST API 恢复 Azure SQL 数据库" 
    description="地域还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, REST API" 
    services="sql-database" 
@@ -6,10 +6,16 @@
    authors="elfisher" 
    manager="jeffreyg" 
    editor="v-romcal"/>
-<tags ms.service="sql-database"
-    ms.date="03/17/2015"
-    wacn.date="04/15/2015"
-    />
+
+<tags
+   ms.service="sql-database"
+   ms.date="03/17/2015"
+   wacn.date="05/25/2015"/>
+
+
+
+
+
 
 
 
@@ -49,8 +55,8 @@
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)-->
+[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
 
 [服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
-<!--HONumber=50-->
+<!--HONumber=55-->

@@ -5,18 +5,16 @@
 	documentationCenter="" 
 	manager="stuartozer" 
 	authors="torsteng"/>
-<tags ms.service="sql-database"
-    ms.date="02/01/2015"
-    wacn.date="04/15/2015"
-    />
 
-
-
+<tags
+   ms.service="sql-database"
+   ms.date="02/01/2015"
+   wacn.date="05/25/2015"/>
 
 
 # 将弹性缩放与 Dapper 配合使用 
 
-本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用 [Azure SQL Database 弹性缩放](/documentation/articles/sql-database-elastic-scale-introduction/) 通过分片和向外缩放其应用程序，以弹性方式扩大和缩小容量的开发人员。本文档演示了与当前弹性缩放功能集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性缩放分片管理和数据相关的路由。 
+本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用 [Azure SQL Database 弹性缩放](/documentation/articles/sql-database-elastic-scale-introduction/)通过分片和向外缩放其应用程序，以弹性方式扩大和缩小容量的开发人员。本文档演示了与当前弹性缩放功能集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性缩放分片管理和数据相关的路由。 
 
 **示例代码**：[Azure SQL Database 弹性缩放与 Dapper 集成](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f)。
  
@@ -31,11 +29,11 @@ Dapper 中的映射器功能对数据库连接提供扩展方法，可以简化�
  
 Dapper 和 DapperExtensions 的另一个优点在于，应用程序可以控制数据库连接的创建。这有助于与弹性缩放交互，从而可以通过将 shardlet 映射到数据库来中转数据库连接。
 
-<!--To get the Dapper assemblies, see [Dapper dot net](http://www.nuget.org/packages/Dapper/). For the Dapper extensions, see [DapperExtensions](http://www.nuget.org/packages/DapperExtensions).-->
+<!--若要获取 Dapper 程序集，请参阅 [Dapper .Net](http://www.nuget.org/packages/Dapper/)。有关 Dapper 扩展的信息，请参阅 [DapperExtensions](http://www.nuget.org/packages/DapperExtensions)。-->
 
 ## 弹性缩放概览
 
-使用 Azure SQL Database 弹性缩放，你可以定义应用程序数据的分区（称为 *shardlet*），将它们映射到数据库，并根据*分片键*来识别这些分区。你可以根据需要创建任意数目的数据库，并在这些数据库之间分布 shardlet。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为**分片映射管理**。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为**数据相关的路由**。
+使用 Azure SQL Database 弹性缩放，你可以定义应用程序数据的分区（称为  *shardlet*），将它们映射到数据库，并根据 *分片键* 来识别这些分区。你可以根据需要创建任意数目的数据库，并在这些数据库之间分布 shardlet。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为**分片映射管理**。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为**数据相关的路由**。
 
 ![Shard maps and data dependent routing][1]
 
@@ -120,7 +118,7 @@ Dapper 随附了可以在开发数据库应用程序时提供更大方便性和�
            sqlconn.Insert(blog);
     }
 
-下面是查询的代码示例： 
+下面是查询的代码示例：
 
     using (SqlConnection sqlconn = shardingLayer.ShardMap.OpenConnectionForKey(
                     key: tenantId2, 
@@ -170,4 +168,4 @@ Microsoft 模式和实践团队发布了[暂时性故障处理应用程序块](h
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-working-with-dapper/dapperimage1.png
 
-<!--HONumber=50-->
+<!--HONumber=55-->

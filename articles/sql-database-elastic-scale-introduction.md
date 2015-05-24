@@ -1,64 +1,65 @@
-<properties title="Azure SQL Database Elastic Scale" pageTitle="Azure SQL Database 灵活扩展" description="使用 Azure SQL Database 的灵活扩展功能，可轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
-<tags ms.service="sql-database"
-    ms.date="02/16/2015"
-    wacn.date="04/11/2015"
-    />
+﻿<properties title="Azure SQL Database Elastic Scale" pageTitle="Azure SQL Database 弹性缩放" description="使用 Azure SQL Database 的弹性缩放功能，轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
-#Azure SQL Database 灵活扩展概述 
-欢迎使用 Azure SQL Database 灵活扩展公共预览版！ 
+<tags
+   ms.service="sql-database"
+   ms.date="02/16/2015"
+   wacn.date="05/25/2015"/>
 
-###约定和挑战
-Azure SQL Database 灵活扩展将交付云计算约定，并在 Azure SQL DB 平台上同时实现几乎无限制的容量以及灵活性。到目前为止，云服务提供程序已经能够在无限计算容量和 Blob 存储等多个方面进行交付。但是，当灵活性涉及云中有状态的数据处理（特别是关系数据库处理）时，灵活性仍然是一个挑战。我们发现这些挑战主要出现在以下两种情况中： 
+# Azure SQL Database 弹性缩放概述 
+欢迎使用 Azure SQL Database 弹性缩放公共预览版！ 
 
-* 增加和缩小您的工作负载的关系数据库部分的容量。
+### 约定和挑战
+Azure SQL Database 弹性缩放将交付云计算约定，并在 Azure SQL DB 平台上同时实现几乎无限制的容量以及弹性。到目前为止，云服务提供程序已经能够在无限计算容量和 Blob 存储等大多数方面进行交付。但是，当弹性涉及云中有状态的数据处理（特别是关系数据库处理）时，弹性仍然是一个挑战。我们发现这些挑战主要出现在以下两种情况中： 
+
+* 增加和缩小你的工作负载的关系数据库部分的容量。
 * 管理有状态的数据库工作负载及其数据的利用率热点。
 
-通常，通过购买更多可托管应用程序数据层的硬件来处理这些情况。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。就成本和灵活性而言，出于容量原因而在几个扩展单元上进行分片（或分发数据）和处理，可提供一种出色的替代方法来代替传统的向上扩展方法。在过去的几年中，我们发现客户必须实现他们自己的向外扩展方法（Azure SQL DB 除外），才能成功进行分片。对于某些客户，这意味着需要管理成百上千的 Azure SQL Database。这意味着其数据层中有大量代码，该数据层用于处理分片的复杂性，而不是应用程序的业务逻辑。 
+通常，通过购买更多可托管应用程序数据层的硬件来处理这些情况。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。就成本和弹性而言，出于容量原因而在几个扩展单元上进行分片（或分发数据）和处理，可提供一种出色的替代方法来代替传统的向上扩展方法。在过去的几年中，我们发现客户必须在 Azure SQL DB 顶部实现他们自己的向外扩展方法，才能成功进行分片。对于某些客户，这意味着要管理数百或数千个 Azure SQL Database。这意味着其数据层中有大量代码，该数据层用于处理分片的复杂性，而不是应用程序的业务逻辑。 
 
-经过多年与客户直接合作，我们从这些项目中发现了几种可供分片的模式。Azure SQL Database 灵活扩展围绕这些模式提供了客户端库和服务产品。通过灵活扩展，您可以更轻松地开发、扩展和管理您的 Azure 应用程序的有状态数据层。
+经过多年与客户直接合作，我们从这些项目中发现了几种可供分片的模式。Azure SQL Database 弹性缩放围绕这些模式提供了客户端库和服务产品。通过弹性缩放，你可以更轻松地开发、扩展和管理你的 Azure 应用程序的有状态数据层。
 
-然后，您可以侧重于您的应用程序的业务逻辑，而不是构建分片的基础结构。
-## 水平向外扩展与垂直向外扩展
-下图显示了水平和垂直向外扩展之间的差异。可使用这两种方法扩展分片的解决方案。 
+然后，你可以侧重于你的应用程序的业务逻辑，而不是构建分片的基础结构。
+## 横向向外扩展与纵向向外扩展
+下图显示了横向和纵向向外扩展之间的差异。可使用这两种方法扩展分片的解决方案。 
 ![Horizontal versus Vertical Scaleout][4]
 
-使用水平向外扩展可增加容量。例如，在税务期限临近时，您将需要增加空间来存储传入文档。
+使用横向向外扩展可增加容量。例如，在纳税期限临近时，你需要增加空间来存储传入文档。
 
-使用垂直向外扩展可增加分片的性能。这将在处理大量数据时发生，并且可能会使分片成为系统中的热点。例如，您可以创建一个新的分片来处理月末时大量流入的数据。分片会随着新数据的流入而向上扩展，随着流入数据的减少而向下扩展。
+使用纵向向外扩展可增加分片的性能。这将在处理大量数据时发生，并且可能会使分片成为系统中的热点。例如，你可以创建一个新的分片来处理月末时大量流入的数据。分片会随着新数据的流入而向上扩展，随着流入数据的减少而向下扩展。
 
-有关扩展方案的详细信息，请参阅[使用灵活扩展拆分和合并](/zh-cn/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。
+有关扩展方案的详细信息，请参阅[使用弹性缩放拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。
 
 
-##功能 
+## 功能 
 
-无论是开发人员还是管理员，使用分片在开发、扩展和管理向外扩展的应用程序时都存在挑战。对于这两种角色，Azure SQL DB 灵活扩展可使生活更加轻松。图形中的数字概述了随该公共预览版本一同提供的主要功能。 
+无论是开发人员还是管理员，使用分片在开发、扩展和管理向外扩展的应用程序时都存在挑战。对于这两种角色，Azure SQL DB 弹性缩放可使生活更加轻松。图形中的数字概述了随该公共预览版本一同提供的主要功能。 
 下半部分显示了应用程序的数据层及其数据在多个数据库之间的分布（称为分片）。假定使用多个数据库存储多个分片的数据。 
 
-有关此处使用的术语的定义，请参阅[灵活扩展词汇表](/zh-cn/documentation/articles/sql-database-elastic-scale-glossary/)。
+有关此处使用的术语的定义，请参阅[弹性缩放词汇表](/documentation/articles/sql-database-elastic-scale-glossary/)。
 
-###通过分片灵活扩展 
-借助**分片灵活性**这一功能，管理员可以通过 PowerShell 脚本以及通过 Azure 自动化服务，自动垂直（上拨和下拨单个分片版本）和水平（从分片映射添加或删除分片）扩展其分片的环境。有关详细信息，请参阅[分片灵活性](/zh-cn/documentation/articles/sql-database-elastic-scale-elasticity/)。
+### 通过分片弹性缩放 
+借助**分片弹性**这一功能，管理员可以通过 PowerShell 脚本以及通过 Azure 自动化服务，自动纵向（上拨和下拨单个分片版本）和横向（从分片映射添加或删除分片）扩展其分片的环境。有关详细信息，请参阅[分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity/)。
 
 
 
 下图在左侧和右侧显示开发人员和管理员。当客户提交具有其自己的语义的局部分片操作（与跨分片操作相对）时，可获取完整的 T-SQL 功能。 
-Azure SQL Database 灵活扩展的公共预览版本借助以下特定功能，使开发分片 Azure SQL DB 应用程序更为轻松： 
+Azure SQL Database 弹性缩放的公共预览版本借助以下特定功能，使开发分片 Azure SQL DB 应用程序更为轻松： 
 
 ![Elastic Scale Capabilities][1]
 
-1.  **分片映射管理**：分片映射管理是使应用程序能够管理有关其分片的各种元数据的功能。分片映射管理是灵活扩展客户端库的一项功能。开发人员可以使用此功能来注册分片、介绍如何将单独的分片键或键范围映射到分片，以及在数据层中的分片布局发生变化时维护此元数据以反映容量更改。分片映射管理组成大量重复代码，当客户自行实现分片时，他们必须在其应用程序中编写这些代码。有关详细信息，请参阅[分片映射管理](/zh-cn/documentation/articles/sql-database-elastic-scale-shard-map-management/)
+1.  **分片映射管理**：分片映射管理是使应用程序能够管理有关其分片的各种元数据的功能。分片映射管理是弹性缩放客户端库的一项功能。开发人员可以使用此功能来注册分片、介绍如何将单独的分片键或键范围映射到分片，以及在数据层中的分片布局发生变化时维护此元数据以反映容量更改。分片映射管理组成大量重复代码，当客户自行实现分片时，他们必须在其应用程序中编写这些代码。有关详细信息，请参阅[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)
  
-* **数据依赖路由**：假设将一个请求传入应用程序。基于该请求的分片键值，应用程序需要确定为此分片键值保存数据的正确分片，然后打开到此分片的连接以处理该请求。借助数据依赖路由，您可以通过对应用程序的分片映射的单个简单调用打开连接。数据依赖路由是基础结构代码的另一个区域，它现由灵活扩展客户端库中的功能覆盖。有关详细信息，请参阅[数据依赖路由](/zh-cn/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)
+* **数据相关的路由**：假设将一个请求传入应用程序。基于该请求的分片键值，应用程序需要确定为此分片键值保存数据的正确分片，然后打开到此分片的连接以处理该请求。借助数据相关的路由，你能够通过对应用程序的分片映射的单个简单调用打开连接。数据相关的路由是基础结构代码的另一个区域，现在它由弹性缩放客户端库中的功能所覆盖。有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)
 
-* **多分片查询 (MSQ)**：当一个请求涉及多个（或所有）分片时，多分片查询将生效。多分片查询在所有分片或一组分片上执行相同的 T-SQL 代码。使用 UNION ALL 语义，将参与分片中的结果合并到一个总结果集中。该功能是通过该客户端库处理多个任务公开的，其中包括连接管理、线程管理、错误处理和中间结果的处理。MSQ 最多可以查询数百个分片。有关详细信息，请参阅[多分片查询](/zh-cn/documentation/articles/sql-database-elastic-scale-multishard-querying/)。
-
-
-* **拆分/合并服务**：当容量需求随着业务发展趋势而前后波动时，应用程序也需要在多个数据库上灵活地重新分发数据。灵活扩展可为增加和缩小数据层容量，以及在还要移动数据的情况下管理分片应用程序的热点，提供客户托管的服务体验。它构建于在不同分片之间按需移动 shardlet 的基础功能之上，并与分片映射管理集成，以维护一致的映射和准确的数据依赖路由连接。有关详细信息，请参阅[使用灵活扩展拆分和合并](/zh-cn/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
+* **多分片查询 (MSQ)**：当一个请求涉及多个（或所有）分片时，多分片查询将生效。多分片查询在所有分片或一组分片上执行相同的 T-SQL 代码。使用 UNION ALL 语义，将参与分片中的结果合并到一个整体结果集中。该功能是通过该客户端库处理多个任务公开的，其中包括连接管理、线程管理、错误处理和中间结果的处理。MSQ 最多可以查询数百个分片。有关详细信息，请参阅[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)。
 
 
+* **拆分/合并服务**：当容量需求随着业务发展趋势而前后波动时，应用程序也需要在多个数据库上灵活地重新分发数据。弹性缩放可为增加和缩小数据层容量，以及在还要移动数据的情况下管理分片应用程序的热点，提供客户托管的服务体验。它构建于在不同分片之间按需移动 shardlet 的基础功能之上，并与分片映射管理集成，以维护一致的映射和准确的数据相关路由连接。有关详细信息，请参阅[通过弹性缩放拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
 
 
-##常见分片模式
+
+
+## 常见分片模式
 
 **分片**是一项可跨许多独立的数据库分发大量相同结构数据的技术。这项技术尤其受到为最终客户或企业创建软件即服务 (SaaS) 产品的云开发人员的欢迎。这些最终客户通常称为"租户"。需要分片的原因有很多： 
 
@@ -71,7 +72,7 @@ Azure SQL Database 灵活扩展的公共预览版本借助以下特定功能，�
  
 当应用程序中的每个事务均受限于分片键的单个值时，分片效果最佳。这将确保所有事务都将本地放置在特定数据库中。 
 
-某些应用程序使用最简单的方法为每个租户创建一个单独的数据库。这就是**单租户分片模式**，该模式提供了隔离、备份/还原功能以及根据租户粒度进行的资源缩放。借助单租户分片，每个数据库都将与特定租户 ID 值（或客户键值）关联，而该键无需始终出现在数据本身中。应用程序负责将每个请求路由到相应的数据库。 
+某些应用程序使用最简单的方法为每个租户创建一个单独的数据库。这就是**单租户分片模式**，它提供了隔离、备份/还原功能以及根据租户粒度进行的资源缩放。借助单租户分片，每个数据库都将与特定租户 ID 值（或客户键值）关联，而该键无需始终出现在数据本身中。应用程序负责将每个请求路由到相应的数据库。 
 
 ![Single tenant versus multi-tenant][3]
 
@@ -85,3 +86,5 @@ Azure SQL Database 灵活扩展的公共预览版本借助以下特定功能，�
 [2]:./media/sql-database-elastic-scale-intro/tenancy.png
 [3]:./media/sql-database-elastic-scale-intro/single_v_multi_tenant.png
 [4]:./media/sql-database-elastic-scale-intro/h_versus_vert.png
+
+<!--HONumber=55-->

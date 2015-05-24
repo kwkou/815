@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="在 Azure PowerShell 中使用地域还原恢复 Azure SQL 数据库" 
    description="地域还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, Azure PowerShell" 
    services="sql-database" 
@@ -6,22 +6,22 @@
    authors="elfisher" 
    manager="jeffreyg" 
    editor="v-romcal"/>
-<tags ms.service="sql-database"
-    ms.date="03/18/2015"
-    wacn.date="04/15/2015"
-    />
 
+<tags
+   ms.service="sql-database"
+   ms.date="03/18/2015"
+   wacn.date="05/25/2015"/>
 
 
 # 在 Azure PowerShell 中使用地域还原恢复 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
 - [地域还原 - 门户](/documentation/articles/sql-database-geo-restore-tutorial-management-portal/)
-- [地域还原 - REST API](/documentation/articles/sql-database-geo-restore-tutorial-rest/)   
+- [地域还原 - REST API](/documentation/articles/sql-database-geo-restore-tutorial-rest/)
 
 ## 概述
 
-本教程说明如何在 [Azure PowerShell](/documentation/articles/install-configure-powershell/) 中使用地域还原恢复 Azure SQL 数据库。地域还原是针对所有基本、标准和高级 Azure SQL Database 服务层提供的核心灾难恢复保护。
+本教程说明如何在 [Azure PowerShell](/documentation/articles/install-configure-powershell/) 中使用地域还原恢复 Azure SQL 数据库地域还原是针对所有基本、标准和高级 Azure SQL Database 服务层提供的核心灾难恢复保护。
 
 ## 限制和安全性
 
@@ -29,9 +29,8 @@
 
 ## 如何：在 Azure PowerShell 中使用地域还原恢复 Azure SQL 数据库
 
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Geo-Restore-With-Microsoft-Azure-PowerShell/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
-必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/#use-the-certificate-method) 中的*使用证书方法*。
+必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/#use-the-certificate-method) 中的 *使用证书方法*。
 
 1. 使用 [Get-AzureSqlRecoverableDatabase](http://msdn.microsoft.com/zh-cn/library/azure/dn720219.aspx) cmdlet 获取可恢复的数据库列表。指定以下参数：
 	* 数据库所在的 **ServerName**。	
@@ -74,8 +73,8 @@
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)-->
+[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
 
 [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 
-<!--HONumber=50-->
+<!--HONumber=55-->

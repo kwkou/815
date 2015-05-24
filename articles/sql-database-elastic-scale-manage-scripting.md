@@ -6,12 +6,11 @@
 	manager="stuartozer" 
 	authors="Joseidz" 
 	editor=""/>
-<tags ms.service="sql-database"
-    ms.date="02/03/2015"
-    wacn.date="04/15/2015"
-    />
 
-
+<tags
+   ms.service="sql-database"
+   ms.date="02/03/2015"
+   wacn.date="05/25/2015"/>
 
 
 # 使用脚本管理弹性缩放
@@ -33,7 +32,7 @@
 
 ## 先决条件
 
-[熟悉](/documentation/articles/automation-create-runbook-from-samples/) Microsoft Azure Automation 预览版服务。 
+[熟悉](/documentation/articles/automation-create-runbook-from-samples/) Microsoft Azure Automation 预览版服务。
 
 
 ## 分片弹性 PowerShell 文件
@@ -60,23 +59,23 @@
 
 ## 成本
 
-请注意，执行 PowerShell 示例脚本将会导致创建数据库，因而对订阅所有者引发实际成本。基础 Azure SQL DB 的[计费费率](/home/features/sql-database/#price) 和其他 Azure SQL DB 数据库相同。从 11 月 1 日开始的成本是： 
+请注意，执行 PowerShell 示例脚本将会导致创建数据库，因而对订阅所有者引发实际成本。基础 Azure SQL DB 的[费率](/home/features/sql-database/#price)与其他 Azure SQL DB 数据库相同。从 11 月 1 日开始的成本是： 
 
 * SetupShardedEnvironment Runbook 会在基本数据库上创建分片映射管理器（$0.0069/小时），并在基本数据库上设置第一个分片（$0.0069/小时）。 
 
 * ProvisionBySize 和 ProvisionByDate Runbook 都会设置标准 S0 数据库（$0.0208/小时）。为了抵销这些成本，如果搭配 ReduceServiceTier Runbook 执行，则新设置的数据库的服务层在经过一天之后，将会从标准 S0（$0.0208/小时）降低到基本版（$0.0069/小时） 
 
-最后，在所提供示例的范围内，使用 [Azure Automation](/documentation/services/automation/) 当前不会对订阅拥有者引发任何费用。  请参阅 [Azure Automation 定价页](/home/features/automation/#price) 以了解更多详细信息。 
+最后，在所提供示例的范围内，使用 [Azure Automation](/documentation/services/automation/) 当前不会对订阅拥有者引发任何费用。有关详细信息，请参阅 [Azure Automation 定价页](/home/features/automation/#price)。 
 
 ## 加载 Runbook 
 
 1. 下载 **ShardElasticity.zip** 文件，并解压缩其内容。
-2. [使用 NuGet 添加对弹性缩放二进制文件的引用](/documentation/articles/sql-database-elastic-scale-add-references-visual-studio.md)
+2. [使用 NuGet 添加对弹性缩放二进制文件的引用](/documentation/articles/sql-database-elastic-scale-add-references-visual-studio)
 3. 查找弹性缩放客户端库 (**Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll**)。
 4. 将 DLL 放入 ShardElasticityModule 文件夹，并压缩该文件夹。 
 3. 在 Azure Automation 帐户中，上载 ShardElasticityModule.zip 文件作为**资产**。 
-4. 在 Azure Automation 中，创建名为 *ElasticScaleCredential* 的**资产凭据**，其中包含 Azure SQL Database 服务器的用户名和密码。 
-5. 创建名为 *SqlServerName* 的**资产变量**，作为完整的 Azure SQL Database 服务器名称。 
+4. 在 Azure Automation 中，创建名为  *ElasticScaleCredential* 的**资产凭据**，其中包含 Azure SQL Database 服务器的用户名和密码。 
+5. 创建名为  *SqlServerName* 的**资产变量**，作为完整的 Azure SQL Database 服务器名称。 
 5. 上载 **SetupShardedEnvironment.ps1**、**ProvisionBySize.ps1**、**ProvisionByDate.ps1** 和 **ProvisionByDate.ps1** 作为 Runbook。 
 6. 以一次性操作形式测试 **SetupShardedEnvironment.ps1** Runbook，以设置分片环境。 
 7. 发布剩余的一个或多个 Runbook，并将 Runbook 链接到计划。 
@@ -105,7 +104,7 @@
 2. 解压缩所有的内容。
 
     ![Extract all][1]
-3. 获取弹性缩放客户端 DLL（即 Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll），并将以下文件复制到你在步骤 1 中下载的本地"ShardElasticityModule"文件夹 1.  可以通过两种方法实现此目的： 1) 通过弹性缩放 NuGet 包[链接] 下载 DLL，或者 2) 从弹性缩放初学者工具包项目[链接] (必须已生成) ，转到 \bin\Debug\ 以获取该 DLL。
+3. 获取弹性缩放客户端 DLL（即 Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll），并将以下文件复制到你在步骤 1 中下载的本地"ShardElasticityModule"文件夹可以通过两种方法实现此目的：1) 通过弹性缩放 NuGet 包[链接]下载 DLL，或者 2) 从弹性缩放初学者工具包项目（必须已生成）[链接]，转到 \bin\Debug\ 以获取该 DLL。
 
     ![Obtain Dll][2]
 
@@ -117,26 +116,6 @@
 
     ![dll][3]
 
-
-## 注册 Azure 自动化预览版
-
-1. 转到 [Azure 预览版功能](/home/features/preview/)。
-    
-2. 单击"试用"。
-
-    ![Click Try It][8]
-
-2. 转到 [Microsoft Azure 门户](https://manage.windowsazure.cn/microsoft.onmicrosoft.com)。
-3. 单击"自动化"。
-
-    ![Automation][4]
-4. 在屏幕的底部单击"创建"。 
-5. 在如下所示的提示中，输入有效的帐户名，然后单击框右下角的复选标记。
-
-    ![Prompt][5] 
-5. 继续下一步。成功时的情况如下图所示。
-
-    ![success][6]
 
 ## 将 PowerShell 模块上载到 Azure Automation 作为资产 
 
@@ -243,4 +222,4 @@ Azure Automation 可以分别创建凭据和变量资产，供许多 Runbook 引
 [9]: ./media/sql-database-elastic-scale-scripting/add-credential.png
 [10]: ./media/sql-database-elastic-scale-scripting/assets.png
 
-<!--HONumber=50-->
+<!--HONumber=55-->

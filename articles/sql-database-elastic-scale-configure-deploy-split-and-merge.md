@@ -1,10 +1,11 @@
-<properties title="Split and Merge Service Tutorial" pageTitle="Azure SQL 拆分和合并服务教程" description="使用灵活扩展拆分和合并" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
-<tags ms.service="sql-database"
-    ms.date="03/20/2015"
-    wacn.date="04/11/2015"
-    />
+<properties title="Split and Merge Service Tutorial" pageTitle="Azure SQL 拆分和合并服务教程" description="使用弹性缩放拆分和合并" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
-#灵活扩展拆分和合并服务教程
+<tags
+   ms.service="sql-database"
+   ms.date="04/01/2015"
+   wacn.date="05/25/2015"/>
+
+# 弹性缩放拆分和合并服务教程
 
 ## 下载拆分/合并包 
 1. 从 [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) 下载最新的 NuGet 版本。 
@@ -12,46 +13,46 @@
 3. 使用以下命令将最新的拆分/合并包下载到当前目录中： 
 `nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge`  
 
-上面的步骤可将拆分/合并文件下载到当前目录。文件放置在名为 **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** 的目录中，其中"x.x.xxx.x"反映了版本号。拆分/合并服务文件可在 **content\splitmerge\service** 子目录中找到；拆分/合并 PowerShell 脚本（和所需的客户端 .dll）可在 **content\splitmerge\powershell** 子目录中找到。
+上面的步骤可将拆分/合并文件下载到当前目录。文件放置在名为 **Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge.x.x.xxx.x** 的目录中，其中 *x.x.xxx.x* 反映了版本号。拆分/合并服务文件可在 **content\splitmerge\service** 子目录中找到；拆分/合并 PowerShell 脚本（和所需的客户端 .dll）可在 **content\splitmerge\powershell** 子目录中找到。
 
-##先决条件 
+## 先决条件 
 
-1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后单击"数据服务"->"SQL Database"->"自定义创建"****************。填写数据库名称并创建新的用户和密码。确保记录该名称和密码以供日后使用。
+1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后单击"数据服务"->"SQL Database"->"自定义创建"。填写数据库名称并创建新的用户和密码。确保记录该名称和密码以供日后使用。
 
-2. 确保您的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。转到 [Azure 管理门户](https://manage.windowsazure.cn)，在左侧窗格上，单击"SQL Database"****。然后，在屏幕顶部的功能区上单击"服务器"****，并选择你的服务器。然后，在顶部单击"配置"并确保将"Microsoft Azure 服务"设置设置为"是"************。
+2. 确保你的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。转到 [Azure 管理门户](https://manage.windowsazure.cn)，在左侧窗格上，单击"SQL Database"。然后，在屏幕顶部的功能区上单击"服务器"，并选择你的服务器。然后，在顶部单击"配置"并确保将"Microsoft Azure 服务"设置设置为"是"。
 
     ![Allowed services][1]
 
-3. 创建将用于诊断输出的 Azure 存储帐户。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后依次单击"数据服务"、"存储"和"快速创建"****************。 
+3. 创建将用于诊断输出的 Azure 存储帐户。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后依次单击"数据服务"、"存储"和"快速创建"。 
 
-4. 创建将包含拆分/合并服务的 Azure 云服务。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后依次单击"计算"、"云服务"和"快速创建"****************。 
+4. 创建将包含拆分/合并服务的 Azure 云服务。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后依次单击"计算"、"云服务"和"快速创建"。 
 
 
-## 配置您的拆分/合并服务 
+## 配置你的拆分/合并服务 
 
 ### 拆分/合并服务配置 
 
 1. 在你下载拆分/合并组件的文件夹中，创建 **SplitMergeService.cspkg** 随附的 **ServiceConfiguration.Template.cscfg** 文件的副本，并将其命名为 **ServiceConfiguration.cscfg**。
 
-2. 在您喜欢的文本编辑器中打开 ServiceConfiguration.cscfg。我们建议使用 Visual Studio，因为它将验证输入（例如，证书指纹的格式）。 
+2. 在你喜欢的文本编辑器中打开 ServiceConfiguration.cscfg。我们建议使用 Visual Studio，因为它将验证输入（例如，证书指纹的格式）。 
 
 3. 创建新的数据库或选择现有的数据库，以将其用作拆分/合并操作的状态数据库并检索该数据库的连接字符串。在 Azure SQL DB 中，连接字符串通常采用以下形式：
 
         "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 4.    同时在 ElasticScaleMetadata 设置的 **SplitMergeWeb** 和 **SplitMergeWorker** 角色部分中，在 cscfg 文件内输入此连接字符串。
 
-5.    配置诊断日志的目标需要 Azure 中的一个存储帐户。配置拆分/合并需要指向 Azure 存储帐户的连接字符串。此连接字符串应采用以下形式：
+5.    配置诊断日志的目标需要 Azure 中的一个存储帐户。配置拆分/合并需要指向 Azure 存储帐户的连接字符串。此连接字符串应采用以下格式：
 
         "DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccessKey" 
     
-若要确定访问密钥，请转到 [Azure 管理门户](https://manage.windowsazure.cn)、单击左侧的"存储"选项卡、选择与你的存储帐户对应的名称，然后在底部单击"管理访问密钥"********。单击"主访问密钥"的"复制"********按钮。
+若要确定访问密钥，请转到 [Azure 管理门户](https://manage.windowsazure.cn)、单击左侧的"存储"选项卡、选择与你的存储帐户对应的名称，然后在底部单击"管理访问密钥"。单击"主访问密钥"的"复制"按钮。
 
 ![manage access keys][2]
 
-6.    输入存储帐户的名称和在存储连接字符串的占位符内提供的访问密钥之一。此连接字符串将同时在 **Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString** 设置的 **SplitMergeWeb** 和 **SplitMergeWorker** 角色部分下使用。您可以对不同的角色使用不同的存储帐户。 
+6.    输入存储帐户的名称和在存储连接字符串的占位符内提供的访问密钥之一。此连接字符串将同时在 **Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString** 设置的 **SplitMergeWeb** 和 **SplitMergeWorker** 角色部分下使用。你可以对不同的角色使用不同的存储帐户。 
 
 ### 配置安全 
-有关配置服务安全的详细说明，请参阅[弹性缩放安全配置](/zh-cn/documentation/articles/sql-database-elastic-scale-configure-security/)。
+有关配置服务安全的详细说明，请参阅[弹性缩放安全配置](/documentation/articles/sql-database-elastic-scale-configure-security/)。
 
 为了简单地测试部署是否适用于完成此教程，将执行一组步数最少的配置步骤来使服务正常工作。仅一个计算机/帐户可以执行这些步骤，以便与服务进行通信。
 
@@ -66,30 +67,30 @@
     -sr currentuser -ss root ^
     -sv MyCert.pvk MyCert.cer
 
-将要求您提供密码以保护私钥。输入强密码并进行确认。之后，系统将提示你再次输入该密码。在完成后单击"是"****，以将证书导入到"受信任的根证书颁发机构"存储中。
+将要求你提供密码以保护私钥。输入强密码并进行确认。之后，系统将提示你再次输入该密码。在完成后单击"是"，以将证书导入到"受信任的根证书颁发机构"存储中。
 
-###    创建 PFX 文件 
+### 创建 PFX 文件 
 
 从执行 makecert 的相同窗口中执行以下命令；使用你用于创建证书的相同密码：
 
     pvk2pfx -pvk MyCert.pvk -spc MyCert.cer -pfx MyCert.pfx -pi <password>
 
 ### 将客户端证书导入到个人存储中
-1. 在 Windows 资源管理器中，双击"MyCert.pfx"****。
-2. 在"证书导入向导"中，选择"当前用户"，然后单击"下一步"************。
-3. 确认文件路径，然后单击"下一步"****。
-4. 键入密码、保持选中"包括所有扩展属性"，然后单击"下一步"********。
-5. 保持选中"自动选择证书存储**[...]**"，然后单击"下一步"****。
-6. 依次单击"完成"和"确定"********。
+1. 在 Windows 资源管理器中，双击"MyCert.pfx"。
+2. 在"证书导入向导"中，选择"当前用户"，然后单击"下一步"。
+3. 确认文件路径，然后单击"下一步"。
+4. 键入密码、保持选中"包括所有扩展属性"，然后单击"下一步"。
+5. 保持选中"自动选择证书存储**[...]**"，然后单击"下一步"。
+6. 依次单击"完成"和"确定"。
 
 ### 将 PFX 文件上载到云服务
 
 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
-1. 选择"云服务"****。
-2. 选择您之前为拆分/合并服务创建的云服务。
-3. 单击顶部菜单栏上的"证书"****。
-4. 单击底部栏中的"上载"****。
+1. 选择"云服务"。
+2. 选择你之前为拆分/合并服务创建的云服务。
+3. 单击顶部菜单栏上的"证书"。
+4. 单击底部栏中的"上载"。
 5. 选择 PFX 文件并输入上面所述的相同密码。
 6. 完成操作后，从列表中的新条目复制证书指纹。
 
@@ -104,16 +105,16 @@
 
 请注意，对于生产部署，应针对 CA 使用单独的证书（服务器证书和客户端证书）。有关此内容的详细说明，请参阅[安全配置](/zh-cn/documentation/articles/sql-database-elastic-scale-configure-security/)。
 
-### 部署您的拆分/合并服务
+### 部署你的拆分/合并服务
 1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击左侧的"云服务"****选项卡，然后选择你之前创建的云服务。 
-3. 单击"仪表板"****。 
-4. 选择过渡环境，然后单击"上载新的过渡部署"****。
+2. 单击左侧的"云服务"选项卡，然后选择你之前创建的云服务。 
+3. 单击"仪表板"。 
+4. 选择过渡环境，然后单击"上载新的过渡部署"。
 
     ![Staging][3]
 
-5. 在对话框中，输入一个部署标签。对于 'Package' 和 'Configuration'，请单击 'From Local'，然后选择"SplitMergeService.cspkg"文件和你之前配置的 .cscfg 文件****。
-6. 确保选中标记为"即使一个或多个角色包含单个实例也部署"****的复选框。
+5. 在对话框中，输入一个部署标签。对于"程序包"和"配置"，单击"从本地"，然后选择"SplitMergeService.cspkg"文件和你之前配置的 .cscfg 文件 '' '' '。
+6. 确保选中标记为"即使一个或多个角色包含单个实例也部署"的复选框。
 7. 点击右下角的勾选按钮以开始部署。它预计需要几分钟的时间才能完成。
 
 ![Upload][4]
@@ -124,29 +125,29 @@
 
 如果你的辅助角色无法联机，但是你的 Web 角色已成功，很可能是在连接到你之前创建的状态数据库时出现了问题。 
 
-* 确保您的 .cscfg 中的连接字符串正确。 
+* 确保你的 .cscfg 中的连接字符串正确。 
 * 检查服务器和数据库是否存在，以及用户 ID 和密码是否正确。
 * 对于 Azure SQL DB，连接字符串应采用以下形式： 
 
         "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * 确保服务器名称不以 **https://** 开头。
-* 确保您的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 https://manage.windowsazure.cn，依次单击左侧的"SQL Databases"和顶部的"服务器"，然后选择你的服务器。在顶部单击"配置"并确保将"Microsoft Azure 服务"设置设置为"是"********。（请参阅此文章顶部的"先决条件"部分）。
+* 确保你的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 https://manage.windowsazure.cn，依次单击左侧的"SQL Databases"和顶部的"服务器"，然后选择你的服务器。在顶部单击"配置"并确保将"Microsoft Azure 服务"设置设置为"是"。（请参阅此文章顶部的"先决条件"部分）。
 
-* 查看您的拆分/合并服务实例的诊断日志。打开 Visual Studio 实例，然后在菜单栏中，依次单击"视图"和"服务器资源管理器"********。单击"Microsoft Azure"图标以连接到你的 Azure 订阅****。然后，导航到"Microsoft Azure"->"<你的存储帐户>"->"表"->"WADLogsTable"。有关详细信息，请参阅[使用服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx) 
+* 查看你的拆分/合并服务实例的诊断日志。打开 Visual Studio 实例，然后在菜单栏中，依次单击"视图"和"服务器资源管理器"。单击"Microsoft Azure"图标以连接到你的 Azure 订阅。然后，导航到"Microsoft Azure"->"<你的存储帐户>"->"表"->"WADLogsTable"。有关详细信息，请参阅[使用服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx) 
 
     ![][5]
 
     ![][6]
 
-## 测试您的拆分/合并服务部署
+## 测试你的拆分/合并服务部署
 ### 与 Web 浏览器连接
 
-确定您的拆分/合并服务的 Web 终结点。通过转到云服务的"仪表板"并在右侧的"站点 URL"下查找，你可以在 Azure 管理门户中找到此内容********。由于默认的安全设置将禁用 HTTP 终结点，因此请将"http://"替换为"https://"********。将此 URL 的页面加载到您的浏览器中。
+确定你的拆分/合并服务的 Web 终结点。通过转到云服务的"仪表板"并在右侧的"站点 URL"下查找，你可以在 Azure 管理门户中找到此内容。由于默认的安全设置将禁用 HTTP 终结点，因此请将"http://"替换为"https://"。将此 URL 的页面加载到你的浏览器中。
 
 ### 使用 PowerShell 脚本进行测试
 
-可以通过运行包含的示例 PowerShell 脚本测试部署和您的环境。
+可以通过运行包含的示例 PowerShell 脚本测试部署和你的环境。
 
 包含的脚本文件为：
 
@@ -200,12 +201,12 @@
   </tr>
 </table>
 
-##使用 PowerShell 验证您的部署
+## 使用 PowerShell 验证你的部署
 
 1.    打开新的 PowerShell 窗口并导航到你下载拆分/合并包的目录，然后导航到"powershell"目录中。
 2.    创建将在其中创建分片映射管理器和分片的 Azure SQL Database 服务器（或选择现有服务器）。 
 
-    注意:在默认情况下，SetupSampleSplitMergeEnvironment.ps1 脚本将在相同的服务器上创建所有这些数据库以简化脚本。这并不表示拆分/合并服务本身存在限制。
+    注意：在默认情况下，SetupSampleSplitMergeEnvironment.ps1 脚本将在相同的服务器上创建所有这些数据库以简化脚本。这并不表示拆分/合并服务本身存在限制。
 
     拆分/合并服务将需要具有数据库读/写访问权限的 SQL 身份验证登录，才能移动数据并更新分片映射。由于拆分/合并服务在云中运行，因此它当前不支持集成的身份验证。
 
@@ -240,7 +241,7 @@
             -SplitMergeServiceEndpoint 'https://mysplitmergeservice.chinacloudapp.cn' `
             -CertificateThumbprint '0123456789abcdef0123456789abcdef01234567'
 
-    如果你收到以下错误，很有可能是你的 Web 终结点证书出现了问题。尝试使用您最喜欢的 Web 浏览器连接到 Web 终结点并检查是否存在证书错误。
+    如果你收到以下错误，很有可能是你的 Web 终结点证书出现了问题。尝试使用你最喜欢的 Web 浏览器连接到 Web 终结点并检查是否存在证书错误。
 
         Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLSsecure channel.
 
@@ -280,7 +281,7 @@
 
 6.    试用其他数据类型！所有这些脚本均采取可选的 -ShardKeyType 参数，该参数允许你指定密钥类型。默认值为 Int32，但你也可以指定 Int64、Guid 或 Binary。 
 
-## 创建您自己的请求 
+## 创建你自己的请求 
 
 可以通过 Web UI 或通过导入并使用 SplitMerge.psm1 PowerShell 模块使用该服务。
 
@@ -302,9 +303,9 @@
 ## 故障排除
 在运行示例 powershell 脚本时，你可能会看到下面的消息：
 
-    Invoke-WebRequest:基础连接已关闭:无法为 SSL/TLS 安全通道建立信任关系。
+    Invoke-WebRequest : The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel.
 
-此错误表示您的 SSL 证书未正确配置。遵照'Connecting with a web browser'部分中的说明操作。
+此错误表示你的 SSL 证书未正确配置。请按照 '与 Web 浏览器连接'部分中的说明进行操作。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
  
@@ -315,3 +316,5 @@
 [4]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/upload.png
 [5]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/storage.png
 [6]: ./media/sql-database-elastic-scale-split-and-merge-tutorial/logs.png
+
+<!--HONumber=55-->

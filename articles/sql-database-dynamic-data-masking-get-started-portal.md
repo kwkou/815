@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="SQL Database 动态数据屏蔽（Azure 门户）入门" 
    description="如何开始在 Azure 门户中使用 SQL Database 动态数据屏蔽" 
    services="sql-database" 
@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="03/25/2015"
-   wacn.date="04/13/2015"
+   wacn.date="05/25/2015"
    />
 
 # SQL Database 动态数据屏蔽（Azure 门户）入门
@@ -47,18 +47,18 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
   
 * **扩展限制** - 限制敏感数据的透露，但可能会对某些应用程序的功能产生负面影响。
 
->[AZURE.TIP] 使用**"扩展限制"**选项可以限制直接访问数据库并运行 SQL 查询以进行故障排除的开发人员的访问权限。
+>[AZURE.TIP] 使用"扩展限制"选项可以限制直接访问数据库并运行 SQL 查询以进行故障排除的开发人员的访问权限。
 
 * **屏蔽函数** - 一组方法，用于控制不同情况下的数据透露。
 
 | 屏蔽函数 | 屏蔽逻辑 |
 |----------|---------------|
-| **默认** |**根据指定字段的数据类型完全屏蔽**<br/>• 对于字符串数据类型（nchar、ntext、nvarchar），将使用 XXXXXXXX；如果字段大小小于 8 个字符，则使用更少的 X。<br/>• 对于数字数据类型（bigint、bit、decimal、int、money、numeric、smallint、smallmoney、tinyint、float、real），将使用零值。<br/>• 对于日期/时间数据类型（date、datetime2、datetime、datetimeoffset、smalldatetime、time），将使用当前时间。<br/>• 对于 SQL 变量，将使用当前类型的默认值。<br/>• 对于 XML，将使用文档 <masked/>。<br/>• 对于特殊数据类型（timestamp、table、hierarchyid、GUID、binary、image、varbinary 空间类型），将使用空值。
-| **信用卡** |**公开指定字段的最后四位数，并添加一个信用卡格式的常量字符串作为前缀的屏蔽方法**。<br/>XXXX-XXXX-XXXX-1234|
-| **身份证号** |**公开指定字段的最后两位数，并添加一个身份证号格式的常量字符串作为前缀的屏蔽方法**。<br/>XXX-XX-XX12 |
-| **电子邮件** | **公开第一个字母和域，并使用一个电子邮件地址格式的常量字符串作为前缀的屏蔽方法**。<br/>aXX@XXXX.com |
-| **随机数** | **根据选定边界和实际数据类型生成随机数的屏蔽方法**。如果指定的边界相等，则屏蔽函数将是常数。<br/>![Navigation pane][Image1] |
-| **自定义文本** | **公开第一个和最后一个字母，并在中间添加一个自定义填充字符串的屏蔽方法**。<br/>前缀[填充字符]后缀<br/>![Navigation pane][Image2] |
+| **默认**  |**根据指定字段的数据类型完全屏蔽**<br/><br/>• 对于字符串数据类型（nchar、ntext、nvarchar），将使用 XXXXXXXX；如果字段大小小于 8 个字符，则使用更少的 X。<br/>• 对于数字数据类型（bigint、bit、decimal、int、money、numeric、smallint、smallmoney、tinyint、float、real），将使用零值。<br/>• 对于日期/时间数据类型（date、datetime2、datetime、datetimeoffset、smalldatetime、time），将使用当前时间。<br/>• 对于 SQL 变体，将使用当前类型的默认值。<br/>• 对于 XML，将使用文档 <masked/>。<br/>• 对于特殊数据类型（timestamp、table、hierarchyid、GUID、binary、image、varbinary 空间类型），将使用空值。
+| **信用卡** |**公开指定字段的最后四位数，** 并添加一个信用卡格式的常量字符串作为前缀的屏蔽方法。<br/><br/>XXXX-XXXX-XXXX-1234|
+| **身份证号** |**公开指定字段的最后两位数，**并添加一个身份证号格式的常量字符串作为前缀的屏蔽方法。<br/><br/>XXX-XXX-XXXXXXXX-XX12 |
+| **电子邮件** | **公开第一个字母和域，**并使用一个电子邮件地址格式的常量字符串作为前缀的屏蔽方法<br/><br/>aXX@XXXX.com |
+| **随机数** | **根据选定边界和实际数据类型**生成随机数的屏蔽方法。如果指定的边界相等，则屏蔽函数将是常数。<br/><br/>![Navigation pane][Image1] |
+| **自定义文本** | **公开第一个和最后一个字母，**并在中间添加一个自定义填充字符串的屏蔽方法。<br/>前缀[填充字符]后缀<br/><br/>![Navigation pane][Image2] |
 
   
 <a name="Anchor1"></a>
@@ -83,13 +83,13 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 4. 键入有权访问非屏蔽敏感数据的特权登录名。
 
-	>[AZURE.TIP] 要使应用程序层可以向应用程序特权用户显示敏感数据，请添加用于查询的应用程序登录名和数据库。强烈建议在此列表中包含最少量的登录名，以最大程度地降低透露敏感数据的风险。
+	>[AZURE.TIP] 要使应用程序层向应用程序特权用户显示敏感数据，请添加用于查询的应用程序登录名和数据库。强烈建议在此列表中包含最少量的登录名，以最大程度地降低透露敏感数据的风险。
 
 	![Navigation pane][Image4]
 
 5. 在页面底部的菜单栏中，单击"添加屏蔽"打开屏蔽规则配置窗口。
 
-6. 选择"屏蔽依据"以指定是要在源级别还是目标级别进行屏蔽。可以通过标识**表**名称和**列**名称在源级别配置屏蔽，或者通过标识查询中使用的**别名**在结果级别配置屏蔽。如果你熟悉数据库的数据体系结构并想要限制所有查询结果的透露，你可能会偏向于使用源屏蔽规则。如果你想要限制查询结果的透露，且不分析数据库数据体系结构或者可能来自不同源的字段，则你可以添加结果屏蔽规则。
+6. 选择"屏蔽依据"以指定是要在源级别还是目标级别进行屏蔽。可以通过标识**表**名称和**列** 名称在源级别配置屏蔽，或者通过标识查询中使用的**别名**在结果级别配置屏蔽。如果你熟悉数据库的数据体系结构并想要限制所有查询结果的透露，你可能会偏向于使用源屏蔽规则。如果你想要限制查询结果的透露，且不分析数据库数据体系结构或者可能来自不同源的字段，则你可以添加结果屏蔽规则。
 
 7. 键入"表名称"和"列名称"或"别名"，以定义要屏蔽的指定字段。
 
@@ -113,4 +113,4 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 [Image4]: ./media/sql-database-dynamic-data-masking-get-started-portal/4_DMM_Policy_Classic_Portal.png
 [Image5]: ./media/sql-database-dynamic-data-masking-get-started-portal/5_DDM_Add_Masking_Rule_Classic_Portal.png
 
-<!--HONumber=51-->
+<!--HONumber=55-->

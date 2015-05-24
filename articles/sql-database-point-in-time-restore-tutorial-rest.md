@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="使用时间还原和 REST API 还原 Azure SQL 数据库" 
    description="时间点还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, REST API" 
    services="sql-database" 
@@ -6,17 +6,18 @@
    authors="elfisher" 
    manager="jeffreyg" 
    editor="v-romcal"/>
-<tags ms.service="sql-database"
-    ms.date="03/17/2015"
-    wacn.date="04/15/2015"
-    />
+
+<tags
+   ms.service="sql-database" 
+   ms.date="03/17/2015"
+   wacn.date="05/25/2015"/>
 
 
 # 使用时间还原和 REST API 还原 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
 - [时间点还原 - 门户](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal/)
-- [时间点还原 - PowerShell](/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell/) 
+- [时间点还原 - PowerShell](/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell/)
 
 ## 概述
 
@@ -44,8 +45,8 @@
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)-->
+[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
 
 [服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
-<!--HONumber=50-->
+<!--HONumber=55-->
