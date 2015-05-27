@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="MySQL Database on Azure 数据库 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,技术指南,Azure MySQL,MySQL PaaS,Azure MySQL PaaS,Azure MySQL Service,Azure RDS" description="MySQL Database on Azure的技术帮助让您迅速了解当前业务,选择适合您的性能层级,轻松入门使用,并帮助您监视管理使用数据库,随时查看性能情况。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
+<properties linkid="" urlDisplayName="" pageTitle="MySQL Database on Azure 数据库 - Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，技术指南" description="MySQL Database on Azure的技术帮助让您迅速了解当前业务，选择适合您的性能层级，轻松入门使用，并帮助您监视管理使用数据库，随时查看性能情况。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
 <tags ms.service="mysql" ms.date="" wacn.date=""/>
 
@@ -12,23 +12,39 @@ MySQL Database on Azure 是 Windows Azure 提供的一种关系型数据库服�
 ###特色
 
 - [MySQL Database on Azure数据库入门](/documentation/articles/mysql-database-get-started/)
-- [了解服务层和版本](/documentation/articles/mysql-database-performance-guidance-asdb-test-result/)
+- [了解服务层和版本(ASDB基准测试数据)](/documentation/articles/mysql-database-performance-guidance-asdb-test-result/)
 - [了解MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation/)
-- [技术FAQ](/documentation/articles/mysql-database-tech-faq/)
+- [技术常见问题](/documentation/articles/mysql-database-tech-faq/)
+- [监视MySQL Database on Azure数据库](/documentation/articles/mysql-database-operation-monitoring-metrics/)
+- [定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)
+
 
 ##教程和指南
 
-####[了解服务层和版本](/documentation/articles/mysql-database-performance-guidance-asdb-test-result/)
-了解 MySQL Database on Azure的不同版本。
+- [了解服务层和版本](/documentation/articles/mysql-database-performance-guidance-asdb-test-result/)
 
-####[MySQL Database on Azure数据库入门](/documentation/articles/mysql-database-get-started/)
-帮助您快速了解和使用 MySQL Database on Azure。
+	基于ASDB基准的测试数据，了解 MySQL Database on Azure的不同版本。
 
-####[了解MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation/)
-了解MySQL Database on Azure有哪些限制。
+- [MySQL Database on Azure数据库入门](/documentation/articles/mysql-database-get-started/)
 
-####[监控 MySQL Database on Azure数据库](/documentation/articles/mysql-database-operation-monitoring-metrics/)
-了解如何使用数据管理视图来监视数据容量、查询问题和当前连接。
+	帮助您快速了解和使用 MySQL Database on Azure。
+	
+- [了解MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation/)
 
-####[定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)
-MySQL Database on Azure支持您根据需求定制化服务器部分参数，帮您了解不同参数的设置范围和区间。
+	了解MySQL Database on Azure有哪些限制。
+	
+- [监控 MySQL Database on Azure数据库](/documentation/articles/mysql-database-operation-monitoring-metrics/)
+
+	了解如何使用数据管理视图来监视数据容量、查询问题和当前连接。
+
+- [定制MySQL Database on Azure服务器参数](/documentation/articles/mysql-database-advanced-settings)  
+
+	MySQL Database on Azure支持您根据需求定制化服务器部分参数，帮您了解不同参数的设置范围和区间。
+
+- [使用MySQL Database on Azure来部署WordPress](/documentation/articles/mysql-database-wordpress-setup)  
+
+	了解如何使用MySQL Database on Azure来连接部署MySQL Database on Azure. 
+
+- [技术常见问题](/documentation/articles/mysql-database-tech-faq/)  
+
+	了解SLA保障，存储空间限额，服务限制等问题。
