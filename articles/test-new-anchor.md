@@ -12,10 +12,12 @@
 
 # 这是一个测试文档用于测试新标签的网页渲染支持 
 
+V.0601
+
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
-- [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication) 
+- [Configure VPN connectivity](../articles/hdinsight-hbase-geo-replication-configure-VNETs)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS.md)
+- [Configure HBase replication](../articles/hdinsight-hbase-geo-replication.md) 
 
 ##test direct reference of md file
 
@@ -37,11 +39,11 @@ See the Azure Automation [Getting Started Tutorial](automation-create-runbook-fr
 <!--
 <object type="image/svg+xml" data="http://wacnstoragestaging.blob.core.chinacloudapi.cn/tech-content/articles/media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
+-->
 
 1111
 <object type="image/svg+xml" data="./media/test-new-anchor/WacnElasticScaleMapcoded.svg" width="100%" height="100%">
 </object>
--->
 
 >[AZURE.NOTE]
 > To complete this tutorial, you need an Azure account. If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see <a href="/pricing/1rmb-trial/" target="_blank">Azure Trial</a>.
