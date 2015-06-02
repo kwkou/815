@@ -12,7 +12,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 
 在开始阅读本文前，你必须具有：
 
--   Azure 订阅。Azure 是基于订阅的平台。HDInsight PowerShell cmdlet 通过订阅执行任务。有关获取订阅的详细信息，请参阅[购买选项][]、[成员优惠][azure-member-offers] 或[免费试用][]。
+-   Azure 订阅。Azure 是基于订阅的平台。HDInsight PowerShell cmdlet 通过订阅执行任务。有关获取订阅的详细信息，请参阅[购买选项][],[试用][]。
 
 -   配备 Azure PowerShell 的工作站。有关说明，请参阅[安装和配置 Azure PowerShell][]。
 
@@ -216,7 +216,7 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [试用]: /pricing/1rmb-trial/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [设置群集]: #provision
   [列出并显示群集]: #listshow

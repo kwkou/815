@@ -25,7 +25,7 @@
 
 本教程要求在 Windows 8 上运行 Visual Studio 2012 和 [Windows Phone 8 SDK][]。若要完成本教程以创建 Windows Phone 8.1 应用程序，必须使用 Visual Studio 2013 Update 2 或更高版本。
 
-> [WACOM.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][]。
+> [WACOM.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][]。
 
 <a name="download-app"></a>
 ## 下载 GetStartedWithData 项目
@@ -301,7 +301,7 @@
   [将移动服务发布到 Azure]: #publish-mobile-service
   [针对 Azure 中托管的服务测试 Windows Phone 应用程序]: #test-azure-hosted
   [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started-data%2F
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [GetStartedWithMobileServices 应用程序]: http://go.microsoft.com/fwlink/p/?linkid=271146
   [0]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/mobile-data-sample-download-wp8-vs12.png
   [Windows Phone 应用商店应用程序版本]: http://go.microsoft.com/fwlink/p/?LinkId=397372

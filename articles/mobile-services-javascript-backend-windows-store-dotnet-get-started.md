@@ -20,7 +20,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 若要完成本教程，您需要以下各项：
 
-* 有效的 Azure 帐户。如果您没有帐户，可以注册 Azure 试用版并获取最多 10 项免费移动服务（在试用结束后也可继续使用）。有关详细信息，请参阅 [Azure 免费试用](/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F)。
+* 有效的 Azure 帐户。如果您没有帐户，可以注册 Azure 试用版并获取最多 10 项免费移动服务（在试用结束后也可继续使用）。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 * [Visual Studio 2013 Express for Windows] 
 
 ## 创建新的移动服务

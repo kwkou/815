@@ -25,7 +25,7 @@
 
 完成本教程是学习有关 Windows 应用商店应用程序的所有其他通知中心教程的先决条件。
 
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。</p></div>
+<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p></div>
 
 ## <a name="register"></a><span class="short-header">注册应用程序</span>向 Windows 应用商店注册应用程序
 
@@ -251,7 +251,7 @@
   [配置通知中心]: #configure-hub
   [将你的应用程序连接到通知中心]: #connecting-app
   [从后端发送通知]: #send
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [“提交应用程序”页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 
   [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761494.aspx

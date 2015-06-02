@@ -1,6 +1,6 @@
 # 创建 Windows Azure 帐户并启用预览功能
 
-若要将应用程序部署到 Windows Azure，您需要一个帐户。本文介绍如何创建免费试用帐户，以及如何为该帐户启用 Windows Azure 预览功能（包括 BizTalk 服务、HDInsight 和 Windows Azure Back）。
+若要将应用程序部署到 Windows Azure，您需要一个帐户。本文介绍如何创建试用帐户，以及如何为该帐户启用 Windows Azure 预览功能（包括 HDInsight 和 Windows Azure Back）。
 
 ## 创建 Windows Azure 帐户
 

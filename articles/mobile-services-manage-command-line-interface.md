@@ -20,7 +20,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 
 若要使用 Azure 命令行工具来管理移动服务，你需要有一个启用了 Azure 移动服务功能的 Azure 帐户。
 
-+ 如果没有帐户，则可创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅： <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用版</a>。
++ 如果没有帐户，则可创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅： <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用版</a>。
 
 + 如果您已有帐户但需要启用 Azure 移动服务预览，请参阅 <a href="/zh-cn/documentation/articles/php-create-account/#enable" target="_blank">启用 Azure 预览功能</a>。
 

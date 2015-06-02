@@ -19,7 +19,7 @@
 <div class="dev-callout"> 
 
 <UL>
-<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
+<LI><b>Azure 帐户</b>-你将需要有一个 Azure 帐户。如果还没有，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 试用版</a>。<div  style="display:none">Get subscription pricing information at <a href="/pricing/details/recovery-manager/">Azure 站点恢复管理器定价详细信息</a>。</div></LI>
 </UL>
 
 

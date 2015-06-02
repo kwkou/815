@@ -15,7 +15,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.
 
 本主题演示在使用 Azure 移动服务的脱机功能时如何同步数据和处理冲突。本教程以前一教程[脱机数据入门]中的步骤和示例应用程序为基础。在开始本教程之前，必须先完成[脱机数据入门]。
 
->[AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 免费试用</a>。
+>[AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
 ## 完成"脱机入门"教程
 

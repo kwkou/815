@@ -25,7 +25,7 @@
 ## 流行
 - [Service Bus 定价常见问题](http://msdn.microsoft.com/zh-cn/library/azure/Hh667438.aspx)
 - [Service Bus REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
-- [注册 Azure 免费试用版](/pricing/1rmb-trial/)
+- [注册 Azure 试用版](/pricing/1rmb-trial/)
  
 ## Related services
 - [移动服务](/home/features/mobile-services/)

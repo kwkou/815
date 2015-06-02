@@ -32,7 +32,7 @@
 在开始阅读本教程前，你必须具有：
 
 
-- Azure 订阅。有关获取订阅的详细信息，请参阅<a href="/pricing/overview/" target="_blank">购买选项</a>或<a href="/pricing/1rmb-trial/" target="_blank">免费试用</a>。
+- Azure 订阅。有关获取订阅的详细信息，请参阅<a href="/pricing/overview/" target="_blank">购买选项</a>或<a href="/pricing/1rmb-trial/" target="_blank">试用</a>。
 
 **预计完成时间：**30 分钟
 

@@ -23,7 +23,7 @@ Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Jav
 
 **先决条件**：
 
--   你必须具有 Azure 帐户。有关注册帐户的选项，请参阅[免费试用 Azure][] 页。
+-   你必须具有 Azure 帐户。有关注册帐户的选项，请参阅[试用 Azure][] 页。
 
 -   你必须已经设置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集][]。
 
@@ -166,7 +166,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][] 对象从 cat.exe 映�
 
   [stdin]: http://msdn.microsoft.com/zh-cn/library/3x292kth(v=vs.110).aspx
   [Hadoop 流]: http://wiki.apache.org/hadoop/HadoopStreaming
-  [免费试用 Azure]: /pricing/1rmb-trial/
+  [试用 Azure]: /pricing/1rmb-trial/
   [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [使用 Azure PowerShell 运行示例]: #run-sample

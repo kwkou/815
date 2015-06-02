@@ -105,7 +105,7 @@
 
 ## 创建 Azure 帐户
 
-若要将应用程序部署到 Azure，你需要一个帐户。如果你还没有 Azure 帐户，可以执行下列步骤注册一个免费试用帐户：
+若要将应用程序部署到 Azure，你需要一个帐户。如果你还没有 Azure 帐户，可以执行下列步骤注册一个试用帐户：
 
 [WACOM.INCLUDE [create-azure-account](../includes/create-azure-account.md)]
 

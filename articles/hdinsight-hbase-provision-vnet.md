@@ -26,7 +26,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 在开始阅读本教程前，你必须具有：
 
--   **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][]或[免费试用][]。
+-   **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][]或[试用][]。
 
 -   **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell][]。若要执行 PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为“RemoteSigned”。请参阅[运行 Windows PowerShell 脚本][]。
 
@@ -184,7 +184,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
   [使用 PowerShell 设置 HBase 群集]: #powershell
   [后续步骤]: #nextsteps
   [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [试用]: /pricing/1rmb-trial/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn

@@ -25,7 +25,7 @@
 本教程需要以下项：
 
 + [移动服务 iOS SDK] 和 [XCode 4.5][安装 Xcode] 以及 iOS 5.0 或更高版本。
-+ Microsoft Azure 帐户。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-ios%2F" target="_blank">Azure 免费试用</a>。</p></div>
++ Microsoft Azure 帐户。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p></div>
 
 ## <a name="download-app"></a>下载 GetStartedWithData 项目
 

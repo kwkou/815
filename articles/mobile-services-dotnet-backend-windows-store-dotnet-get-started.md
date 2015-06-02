@@ -32,7 +32,7 @@
 
 只有在完成本教程后，才可以学习有关 Windows 应用商店应用程序的所有其他移动服务教程。
 
-> [WACOM.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][]。
+> [WACOM.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][]。
 > 本教程需要安装 [Visual Studio Professional 2013][]。可以使用免费试用版。
 
 ## 创建新的移动服务
@@ -115,7 +115,7 @@
   [JavaScript 后端版本]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started
   [快速入门：添加移动服务（.NET 后端）]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn629482.aspx
   [0]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started/mobile-quickstart-completed.png
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-get-started%2F
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
   [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md
   [1]: ./media/mobile-services-dotnet-backend-windows-store-dotnet-get-started/mobile-portal-quickstart.png

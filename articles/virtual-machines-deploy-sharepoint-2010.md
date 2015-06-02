@@ -122,7 +122,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 <li>Log on to the <a href="http://manage.windowsazure.cn/">通过您的帐户登录 Azure 管理门户</a>。
 <ul>
 
-<li>如果您没有 Azure 帐户，请<a href="http://www.windowsazure.cn/pricing/1rmb-trial">注册 Azure 免费试用版</a>。</li>
+<li>如果您没有 Azure 帐户，请<a href="http://www.windowsazure.cn/pricing/1rmb-trial">注册 Azure 试用版</a>。</li>
 </ul>
 
 
