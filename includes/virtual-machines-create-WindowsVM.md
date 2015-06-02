@@ -1,4 +1,4 @@
-﻿1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。签出[免费试用版](/pricing/1rmb-trial/) 提供了如果您不具有尚未订阅。
+﻿1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。签出[试用版](/pricing/1rmb-trial/) 提供了如果您不具有尚未订阅。
 
 2. 在在窗口底部的命令栏中，单击**新建**。
 

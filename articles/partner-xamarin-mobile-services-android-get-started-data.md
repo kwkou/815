@@ -27,7 +27,7 @@
 
 <div class="dev-callout"><b>说明</b>
 
-<p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A9C9624B5" target="_blank">Azure 免费试用</a>。</p>
+<p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p>
 </div>
 
 本教程需要 [Azure 移动服务组件][]、[Xamarin.Android] 和 Android SDK 4.2 或更高版本。
@@ -276,7 +276,7 @@
   [添加用于存储的数据表]: #add-table
   [更新应用程序以使用移动服务]: #update-app
   [针对移动服务测试应用程序]: #test-app
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A9C9624B5
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
   [0]: ./media/partner-xamarin-mobile-services-android-get-started-data/mobile-quickstart-startup-android.png
   [mobile-services-create-new-service-data]: ../includes/mobile-services-create-new-service-data.md

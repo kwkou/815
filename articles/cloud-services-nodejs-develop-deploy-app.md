@@ -212,7 +212,7 @@ Azure 计算模拟器是 Azure SDK 所安装的工具之一，你可以使用此
 [创建 Azure 托管服务概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
 [WebRole1 文件夹目录列表]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
 [在任务栏中右键单击 Azure 仿真程序时显示的菜单。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
-[显示 http://www.windowsazure.com/ 的浏览器窗口（"免费试用"链接已突出显示）]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
+[显示 http://www.windowsazure.cn/ 的浏览器窗口（"试用"链接已突出显示）]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
 [显示 liveID 登录页的浏览器窗口]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
 [显示 publishSettings 文件另存为对话框的 Internet Explorer。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
 

@@ -40,7 +40,7 @@ ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.d
 
 <tr>
 <td>保管库要求</td>
-<td><p>你将需要一个 Azure 帐户来以设置 Azure 站点恢复保管库。请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 免费试用版</a>。<!--Get pricing information at <a href="http://go.microsoft.com/fwlink/?LinkId=378268">Azure 站点恢复管理器定价详细信息</a>。--></p></td>
+<td><p>你将需要一个 Azure 帐户来以设置 Azure 站点恢复保管库。请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/">Azure 试用版</a>。可在 <a href="/home/features/site-recovery/#price">Azure 站点恢复 定价详细信息</a>中获取订阅定价信息。</p></td>
 <td><p>启用了 Azure 站点恢复的 Azure 帐户。</p>
 </td><td><p>启用了 Azure 站点恢复的 Azure 帐户。</p></td>
 </tr>

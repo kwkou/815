@@ -28,7 +28,7 @@
 
 只有在完成本教程后，才能完成有关 Xamarin.Android 应用程序通知中心的其他所有教程。
 
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。</p></div>
+<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p></div>
 
 ## <a name="register"></a><span class="short-header">启用 Google Cloud Messaging</span>启用 Google Cloud Messaging
 
@@ -423,7 +423,7 @@ Xamarin 组件应用商店中提供的 Google Cloud Messaging Client 可以简�
   [1]: http://xamarin.com/download/
   [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
   [Google Cloud Messaging 组件]: http://components.xamarin.com/view/GCMClient/
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [accounts.google.com]: http://go.microsoft.com/fwlink/p/?LinkId=268302
   [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
 

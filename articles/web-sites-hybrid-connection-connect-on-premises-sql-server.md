@@ -18,7 +18,7 @@
 
 若要完成本教程，你需要安装以下产品。所有这些产品都提供了免费版，方便你开始针对 Azure 进行开发且无需支付任何费用。
 
--   **Azure 订阅** — 有关免费订阅，请参见 [Azure 免费试用][Azure 免费试用]。
+-   **Azure 订阅** — 有关免费订阅，请参见 [Azure 试用][Azure 试用]。
 
 -   **Visual Studio 2013** - 若要下载 Visual Studio 2013 免费试用版，请参阅 [Visual Studio 下载][Visual Studio 下载]。请先安装此产品，然后继续。
 
@@ -377,7 +377,7 @@
 
   [Azure 预览版门户]: https://manage.windowsazure.cn
   [混合连接]: http://go.microsoft.com/fwlink/p/?LinkID=397274
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [Azure 试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
   [Visual Studio 下载]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
   [Microsoft 下载中心]: http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=22
   [Microsoft Web 平台数据库页]: http://www.microsoft.com/web/platform/database.aspx

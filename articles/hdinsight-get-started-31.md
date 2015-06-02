@@ -26,7 +26,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 在开始阅读本教程前，你必须具有：
 
--   Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]或[免费试用][azure-free-trial]。
+-   Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]或[试用][azure-free-trial]。
 
 <!--  [Member Offers][azure-member-offers]  -->
 

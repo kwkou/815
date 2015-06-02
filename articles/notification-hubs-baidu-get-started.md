@@ -16,7 +16,7 @@ ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="03/1
 -   [移动服务 Android SDK][]
 -   [百度推送 Android SDK][]
 
-> [WACOM.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][]。
+> [WACOM.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][]。
 
 本教程将指导你完成启用推送通知的以下基本步骤：
 
@@ -447,7 +447,7 @@ import com.baidu.android.pushservice.PushConstants;
   [此处]: http://go.microsoft.com/fwlink/?LinkId=389797
   [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
   [百度推送 Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fen-us%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [创建百度帐户]: #createBaiduAccount
   [注册为百度开发者]: #registerBaiduDeveloper
   [创建百度云推送项目]: #createBaiduPushProject

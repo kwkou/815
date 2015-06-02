@@ -16,7 +16,7 @@
 
 在开始阅读本文前，你必须具有：
 
--   **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][]、[成员优惠][购买选项]或[免费试用][]。
+-   **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][]，[试用][]。
 
 ## 本文内容
 
@@ -172,7 +172,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
   [针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/command-line-tools/
   [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [试用]: /pricing/1rmb-trial/
   [安装]: #installation
   [下载和导入 Azure 帐户 publishsettings]: #importsettings
   [设置群集]: #provision

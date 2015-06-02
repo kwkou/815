@@ -89,7 +89,7 @@ Azure 诊断可以收集以下类型的遥测数据：
 本演练介绍如何实现使用 .NET EventSource 类发出遥测数据的 Azure 辅助角色。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。创建辅助角色时，Visual Studio 将在适用于 .NET 2.4 和更低版本的 Azure SDK 中，自动启用 Diagnostics 1.0 作为解决方案的一部分。以下说明介绍了创建辅助角色、从解决方案禁用 Diagnostics 1.0，以及在辅助角色中部署 Diagnostics 1.2 或 1.3 的过程。
 
 ###先决条件
-本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[免费试用版][]。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
+本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ###步骤 1：创建辅助角色###
 1.	启动 Visual Studio 2013。
@@ -246,7 +246,7 @@ Azure 诊断可以收集以下类型的遥测数据：
 本演练介绍如何从开发计算机将 Diagnostics 远程安装到 Azure 虚拟机。你还将了解如何实施在该 Azure 虚拟机上运行的应用程序，并使用 .NET [EventSource 类][]发出遥测数据。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。
 
 ###先决条件###
-本演练假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[免费试用版][]。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
+本演练假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ###步骤 1：创建虚拟机###
 1.	在开发计算机上启动 Visual Studio 2013。
@@ -776,7 +776,7 @@ Diagnostics 由两个组件构成：来宾代理插件和监视代理。来宾�
 [调试 Azure 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee405479.aspx   
 [使用 Azure Diagnostics 收集日志记录数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433048.aspx
 [有关开发 Azure 应用程序的故障排除最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
-[免费试用版]： /pricing/1rmb-trial/?trial_button=A
+[免费试用版]： /pricing/1rmb-trial/
 [安装并配置 Azure PowerShell 0.8.7 或更高版本]： /zh-cn/documentation/articles/install-configure-powershell/
 [Azure Diagnostics 1.2 配置架构]: http://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495270.aspx

@@ -24,7 +24,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 >[AZURE.NOTE] 本教程旨在帮助你更好地了解如何使用移动服务通过 Azure 在 Windows 应用商店应用程序中存储和检索数据。如果这是你第一次体验移动服务，则应先完成[移动服务入门]教程。
 >
->若要完成本教程，您需要一个 Azure 帐户。如果您没有帐户，可以注册 Azure 试用版并获取最多 10 项免费移动服务（在试用结束后也可继续使用）。有关详细信息，请参阅： <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 免费试用版</a>。 
+>若要完成本教程，您需要一个 Azure 帐户。如果您没有帐户，可以注册 Azure 试用版并获取最多 10 项免费移动服务（在试用结束后也可继续使用）。有关详细信息，请参阅： <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用版</a>。 
 >
 >此处仍提供了适用于 Visual Studio 2012 的较旧的 Windows Phone 8 教程：[适用于 Visual Studio 2012 的 Windows Phone 8 教程]。
 
@@ -43,7 +43,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 * [Azure Mobile Services SQLite Store 版本 1.0.0（或更高版本）][SQLite Store Nuget]
 * [SQLite for Windows 8.1](www.sqlite.org/downloads)
 
->[AZURE.NOTE] 若要完成本教程，您需要一个 Azure 帐户。如果没有帐户，则可创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅： <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 免费试用版</a>。 
+>[AZURE.NOTE] 若要完成本教程，您需要一个 Azure 帐户。如果没有帐户，则可创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅： <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用版</a>。 
 
 ## <a name="enable-offline-app"></a>更新应用程序以支持脱机功能
 

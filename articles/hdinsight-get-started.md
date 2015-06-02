@@ -41,7 +41,7 @@ You can also watch a demo video of this tutorial:
 在开始阅读本教程前，你必须具有：
 
 
-- Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]或[免费试用][azure-free-trial]。
+- Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]或[试用][azure-free-trial]。
 - 装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的计算机。
 
 **估计完成时间：** 30 分钟

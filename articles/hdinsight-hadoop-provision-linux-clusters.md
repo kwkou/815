@@ -30,7 +30,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 在开始阅读本文前，你必须具有：
 
-- Azure 订阅。Azure 是基于订阅的平台。HDInsight PowerShell cmdlet 通过订阅执行任务。有关获取订阅的详细信息，请参阅<a href="/pricing/overview/" target="_blank">购买选项</a>或<a href="/pricing/1rmb-trial/" target="_blank">免费试用</a>。
+- Azure 订阅。Azure 是基于订阅的平台。HDInsight PowerShell cmdlet 通过订阅执行任务。有关获取订阅的详细信息，请参阅<a href="/pricing/overview/" target="_blank">购买选项</a>或<a href="/pricing/1rmb-trial/" target="_blank">试用</a>。
 - SSH 密钥。如果你想要使用 SSH 和密钥而不是密码远程登录到 Linux 群集。建议使用密钥登录方法，因为它更安全。有关如何生成 SSH 密钥的说明，请参阅以下文章
 	-  在 Linux 计算机中 - [从 Linux、Unix 或 OS X 搭配使用 SSH 与基于 Linux 的 HDInsight (Hadoop)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)。
 	-  在 Windows 计算机中 - [从 Windows 搭配使用 SSH 与基于 Linux 的 HDInsight (Hadoop)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)。

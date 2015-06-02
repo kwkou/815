@@ -22,7 +22,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 在开始阅读本文前，你必须具有：
 
-- Azure 订阅。Azure 是基于订阅的平台。HDInsight PowerShell cmdlet 通过订阅执行任务。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]或[免费试用][azure-free-trial]。
+- Azure 订阅。Azure 是基于订阅的平台。HDInsight PowerShell cmdlet 通过订阅执行任务。有关获取订阅的详细信息，请参阅[购买选项][azure-purchase-options]或[试用][azure-free-trial]。
 
 <!-- [Member Offers][azure-member-offers],--> 
 

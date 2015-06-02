@@ -33,7 +33,7 @@
 </p>
 只有在完成本教程后，才能完成有关 Xamarin.iOS 应用程序通知中心的其他所有教程。
 
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。</p></div>
+<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p></div>
 
 Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照以下说明创建必要的证书并将其上载到你的移动服务。有关正式的 APNS 功能文档，请参阅 [Apple 推送通知服务][Apple 推送通知服务]。
 
@@ -424,7 +424,7 @@ Apple 推送通知服务 (APNS) 使用证书来验证你的移动服务。按照
   [XCode 5.0]: https://go.microsoft.com/fwLink/p/?LinkID=266532
   [1]: http://xamarin.com/download
   [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [Apple 推送通知服务]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 
 <!-- Images. -->

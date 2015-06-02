@@ -17,7 +17,7 @@ Hadoop MapReduce 程序读取该文本文件并统计每个单词出现的频率
 
 **先决条件**：
 
--   你必须具有 Azure 帐户。有关注册帐户的选项，请参阅[免费试用 Azure][] 页。
+-   你必须具有 Azure 帐户。有关注册帐户的选项，请参阅[试用 Azure][] 页。
 
 -   你必须已经设置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅 [Azure HDInsight 入门][]或[设置 HDInsight 群集][]。
 
@@ -193,7 +193,7 @@ WordCount 脚本的输出应出现在 cmd 窗口中：
 -   [Hive 与 HDInsight 配合使用][]
 -   [Azure HDInsight SDK 文档][]
 
-  [免费试用 Azure]: /pricing/1rmb-trial/
+  [试用 Azure]: /pricing/1rmb-trial/
   [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/

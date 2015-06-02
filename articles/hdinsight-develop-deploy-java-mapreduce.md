@@ -14,7 +14,7 @@
 
 -   安装 Azure HDInsight Emulator。有关说明，请参阅[开始使用 HDInsight Emulator][]。
 -   在模拟器计算机上安装 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell][]。
--   获取 Azure 订阅。有关说明，请参阅[购买选项][]、[免费试用][]。
+-   获取 Azure 订阅。有关说明，请参阅[购买选项][]、[试用][]。
 
 ## 本文内容
 
@@ -495,7 +495,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
   [开始使用 HDInsight Emulator]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [试用]: /pricing/1rmb-trial/
   [使用 Java 开发单词计数 MapReduce 程序]: #develop
   [在模拟器中测试该程序]: #test
   [将数据文件及应用程序上载到 Azure Blob 存储]: #upload

@@ -24,7 +24,7 @@
 
 完成本教程需要安装 XCode 4.5 和 iOS 5.0 或更高版本。
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取最多 10 个免费移动服务，这些移动服务即使在你的试用期结束后也可以继续使用。有关详细信息，请参阅 [Azure 免费试用](/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20 target="_blank")。
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取最多 10 个免费移动服务，这些移动服务即使在你的试用期结束后也可以继续使用。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 ## <a name="create-new-service"> </a>创建新的移动服务
 

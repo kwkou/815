@@ -9,7 +9,7 @@
 ## 先决条件##
 本文假定您拥有以下项目：
 
-- **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/documentation/articles/php-create-account)。 
+- **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/documentation/articles/php-create-account)。 
 
 - **Azure PowerShell 工具** - 已安装 Microsoft Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 来上载 VHD。
 

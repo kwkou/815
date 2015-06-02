@@ -45,7 +45,7 @@
 > [WACOM.NOTE] 本教程编写完以后，Visual Studio 2013 发布，而 Azure 管理门户和 SDK 则进行了更新。如果你使用的是 Visual Studio 2013 和最新版 SDK，则必须执行不同的操作，在这种情况下，我们添加了类似这样的注释来提醒你。这些注释是在 2014 年 3 月编写的，经过修改的操作过程已使用 SDK 版本 2.3 进行测试。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。因此，你可以不支付任何费用就开始 Azure 开发。
-你可以创建一个[免费试用帐户][免费试用帐户]。
+你可以创建一个[试用帐户][试用帐户]。
 
 > [WACOM.NOTE] 在下面关于 SDK 安装的部分，正确的链接（如果你使用的是 Visual Studio 2013）为 <http://go.microsoft.com/fwlink/?LinkID=324322>。
 
@@ -465,7 +465,7 @@
 
 3.  在**“邮件列表”**、**“订户”**和**“邮件”**网页中输入一些数据，以便测试应用程序。
 
-    **注意**：完成对应用程序的测试后，请删除该应用程序，避免为不使用的资源付费。如果你使用的是[Azure 免费试用帐户][Azure 免费试用帐户]，三个已部署的角色会在几周内用光你的每月配额限制。若要使用 Azure 管理门户删除某个部署，请选择云服务，单击页面底部的“删除”，然后选择生产部署或过渡部署。
+    **注意**：完成对应用程序的测试后，请删除该应用程序，避免为不使用的资源付费。如果你使用的是[Azure 试用帐户][Azure 试用帐户]，三个已部署的角色会在几周内用光你的每月配额限制。若要使用 Azure 管理门户删除某个部署，请选择云服务，单击页面底部的“删除”，然后选择生产部署或过渡部署。
 
     ![发布][11]
 
@@ -586,7 +586,7 @@
   [将应用程序配置为使用 SendGrid]: #sendGrid
   [配置和查看跟踪数据]: #trace
   [添加另一个辅助角色实例来处理增加的负载]: #addRole
-  [免费试用帐户]: /zh-cn/pricing/1rmb-trial/
+  [免费试用帐户]: /pricing/1rmb-trial/
   [激活 MSDN 订户权益]: /zh-cn/pricing/member-offers/msdn-benefits/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png

@@ -33,7 +33,7 @@
 
 本教程假定你了解[有关 Azure 云服务的基本概念](/zh-cn/documentation/articles/fundamentals-application-models/#CloudServices)，例如"Web 角色"和"辅助角色"术语。它还假定你知道如何处理 Visual Studio 中的 [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) 或 [Web 窗体](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)项目。示例应用程序使用 MVC，但在本教程的大部分也适用于 Web 窗体。 
 
-你可以本地运行该应用程序，无需订阅 Azure，但要将应用程序部署到云则需要订阅。如果你没有帐户，可以[注册免费试用版](/pricing/1rmb-trial/?trial_button=A)。
+你可以本地运行该应用程序，无需订阅 Azure，但要将应用程序部署到云则需要订阅。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/)。
 
 教程说明使用以下产品之一：
 

@@ -22,7 +22,7 @@
 
 请按照以下步骤创建 Azure 网站。
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。 <br /> 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+> [AZURE.NOTE] 若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。 <br /> 如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 
 1. 启动 WebMatrix

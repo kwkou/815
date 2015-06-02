@@ -19,7 +19,7 @@
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。本教程将使用 [Eclipse](https://www.eclipse.org/)。
 
-+ 有效的 Azure 订阅。 <br/>如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。
++ 有效的 Azure 订阅。 <br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
 ## 创建事件中心
 

@@ -22,7 +22,7 @@ Web 上具有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 
 
 **先决条件**：	
 
-- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[免费试用 Azure](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/) 页。
+- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[试用 Azure](http://www.windowsazure.cn/pricing/1rmb-trial/) 页。
 
 - 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters/)。
 

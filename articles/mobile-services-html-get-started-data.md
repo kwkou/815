@@ -22,7 +22,7 @@
 4. [更新应用程序以使用移动服务]
 5. [针对移动服务测试应用程序]
 
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，您需要一个 Azure 帐户。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A756A2826&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-with-data-html%2F" target="_blank">Azure 免费试用</a>。</p></div> 
+<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，您需要一个 Azure 帐户。如果你没有帐户，则可以创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p></div> 
 
 ### 其他要求
 

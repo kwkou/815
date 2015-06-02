@@ -6,7 +6,7 @@
 
 # 如何在 Azure 网站中配置 PHP
 
-本指南将向你演示如何执行以下操作：在 Azure 网站中配置内置 PHP 运行时，提供自定义 PHP 运行时以及在 Azure 网站中启用扩展。若要使用 Azure 网站，请注册以[免费试用][免费试用]。若要充分利用本指南，你应先在 Azure 网站中创建一个 PHP 站点（请参阅 [PHP 开发中心教程][PHP 开发中心教程]）。有关在 Azure 网站中配置站点的常规信息，请参阅[如何配置网站][如何配置网站]。
+本指南将向你演示如何执行以下操作：在 Azure 网站中配置内置 PHP 运行时，提供自定义 PHP 运行时以及在 Azure 网站中启用扩展。若要使用 Azure 网站，请注册以[试用][试用]。若要充分利用本指南，你应先在 Azure 网站中创建一个 PHP 站点（请参阅 [PHP 开发中心教程][PHP 开发中心教程]）。有关在 Azure 网站中配置站点的常规信息，请参阅[如何配置网站][如何配置网站]。
 
 ## 目录
 
@@ -99,7 +99,7 @@ Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）�
 -   [在 Azure 中配置、监视和缩放网站][在 Azure 中配置、监视和缩放网站]
 -   [下载 Azure SDK for PHP][下载 Azure SDK for PHP]
 
-  [免费试用]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [PHP 开发中心教程]: http://azure.microsoft.com/develop/php/
   [如何配置网站]: /zh-cn/documentation/articles/web-sites-configure/
   [什么是 Azure 网站？]: #WhatIs

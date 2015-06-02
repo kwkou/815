@@ -32,7 +32,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 * [Azure Mobile Services SQLite Store 版本 1.0.0（或更高版本）][SQLite store nuget]
 * [SQLite for Windows Phone 8]
 
->[AZURE.NOTE] 若要完成本教程，您需要一个 Azure 帐户。如果没有帐户，则可创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅： <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=AE564AB28" target="_blank">Azure 免费试用版</a>。 
+>[AZURE.NOTE] 若要完成本教程，您需要一个 Azure 帐户。如果没有帐户，则可创建一个免费的试用帐户，只需几分钟即可完成。有关详细信息，请参阅： <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用版</a>。 
 
 ## <a name="enable-offline-app"></a>更新应用程序以支持脱机功能
 

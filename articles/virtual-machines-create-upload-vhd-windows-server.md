@@ -17,7 +17,7 @@
 ##先决条件##
 本文假定您拥有以下项目：
 
-**Azure 订阅** - 如果没有帐户，只需花费几分钟就能创建一个免费试用帐户有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。  
+**Azure 订阅** - 如果没有帐户，只需花费几分钟就能创建一个试用帐户有关详细信息，请参阅[创建 Azure 帐户](/documentation/articles/php-create-account/)。  
 
 **Windows Azure PowerShell** - 您已经安装了 Windows Azure PowerShell 模块。若要下载该模块，请参阅 [Windows Azure 下载](/zh-cn/downloads/)。在[此处](/zh-cn/documentation/articles/install-configure-powershell/)可找到使用 Azure 订阅来安装和配置 PowerShell 的教程。
 

@@ -30,7 +30,7 @@
 
 ## 先决条件
 
-> [WACOM.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用][Azure 免费试用]。
+> [WACOM.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][Azure 试用]。
 
 此外，对于本教程，你还需要以下方面。
 
@@ -326,7 +326,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
   [跨群集运行命令]: #BKMK_RunCommand
   [运行测试作业]: #BKMK_RunJob
   [停止 Azure 节点]: #BKMK_stop
-  [Azure 免费试用]: http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/
+  [Azure 试用]: http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/
   [评估版]: http://technet.microsoft.com/evalcenter/dn205286.aspx
   [下载]: http://go.microsoft.com/fwlink/p/?linkid=389557
   [HPC Pack 2012 安装]: ./media/set-up-hybrid-cluster-microsoft-hpc-pack-2012-sp1/install_hpc1.png

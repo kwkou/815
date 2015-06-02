@@ -247,7 +247,7 @@ Azure 跨平台命令行接口 (xplat-cli) 提供了用于与 Azure 结合使用
 
 ## 后续步骤
 
-若要开始使用 Azure，请参阅 [Windows Azure 免费试用版][Windows Azure 免费试用版]。
+若要开始使用 Azure，请参阅 [Windows Azure 试用版][Windows Azure 试用版]。
 
 <!-- IMAGES -->
 
@@ -268,4 +268,4 @@ Azure 跨平台命令行接口 (xplat-cli) 提供了用于与 Azure 结合使用
   [删除站点槽]: ./media/web-sites-staged-publishing/DeleteStagingSiteButton.png
   [如何安装和配置 Windows Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [安装和配置 Azure 跨平台命令行接口]: /zh-cn/documentation/articles/xplat-cli/
-  [Windows Azure 免费试用版]: http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/
+  [Windows Azure 试用版]: http://www.windowsazure.cn/pricing/1rmb-trial/

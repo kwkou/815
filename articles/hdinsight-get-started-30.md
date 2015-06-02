@@ -20,7 +20,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 Microsoft HDI
 
 在开始阅读本教程前，你必须具有：
 
--   Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][]、[免费试用][]。
+-   Azure 订阅。有关获取订阅的详细信息，请参阅[购买选项][]、[试用][]。
 -   运行 Windows 8、Windows 7、Windows Server 2012 或 Windows Server 2008 R2 的计算机。此计算机将用于提交 MapReduce 作业。
 -   Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus。
 
@@ -283,7 +283,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
   [开始使用 Azure HDInsight]: /zh-cn/documentation/articles/hdinsight-get-started/
   [HDInsight Emulator 入门]: /zh-cn/documentation/articles/hdinsight-get-started-emulator/
   [购买选项]: /pricing/overview/
-  [免费试用]: /pricing/1rmb-trial/
+  [试用]: /pricing/1rmb-trial/
   [为运行的 PowerShell 设置本地环境]: #setup
   [设置 HDInsight 群集]: #provision
   [运行 WordCount MapReduce 程序]: #sample
