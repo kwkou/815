@@ -22,19 +22,12 @@
 <a href="/develop/mobile/tutorials/get-started-with-data-android/"  title="JavaScript 后端" class="current">JavaScript 后端</a>
 </div>
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
 
-<p>本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，您将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。</p>
+本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，您将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 
-</div>
-
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">15:32:00</span></div>
-
-</div>
 
 <div class="dev-callout"><b>说明</b>
-<p>本教程旨在帮助您更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导您完成的许多步骤已在移动服务快速入门中代您完成。如果这是您第一次体验移动服务，请考虑首先完成<a href="/develop/mobile/tutorials/get-started-android">移动服务入门</a>教程。</p>
+<p>本教程旨在帮助您更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导您完成的许多步骤已在移动服务快速入门中代您完成。如果这是您第一次体验移动服务，请考虑首先完成<a href="/documentation/articles/mobile-services-android-get-started">移动服务入门</a>教程。</p>
 </div>
 
 本教程将指导您完成以下基本步骤：
