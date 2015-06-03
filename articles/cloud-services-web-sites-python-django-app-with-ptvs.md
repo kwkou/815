@@ -1,8 +1,8 @@
-<properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor=""/>  
+
 <tags ms.service="web-sites,cloud-services"
     ms.date="11/03/2014"
-    wacn.date="04/11/2015"
-    />
+    wacn.date="04/11/2015"/>
 
 # 使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序
 
@@ -12,9 +12,6 @@
 <p>如果你更愿意观看视频，右侧的视频片段提供了与本教程相同的步骤。</p>
 </div>
 
-<div class="dev-onpage-video-wrapper"><a href="http://www.youtube.com/watch?v=wkqjafvvU5w" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/python/videos/django-tutorial-180x120.png') !important;" href="http://www.youtube.com/watch?v=wkqjafvvU5w" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a> <span class="time">33:08</span></div>
-
-</div>
 
 本教程重点介绍 Python Tools for Visual Studio 和 Python Tools for Azure。有关在本教程中内置的 Django 和轮询应用程序的更详细信息，请参阅 <https://www.djangoproject.com/>。
 

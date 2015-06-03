@@ -179,6 +179,6 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 
 [marketing-page]: /zh-cn/documentation/services/hdinsight/
-[component-versioning]: /zh-cn/documentation/articles/hdinsight-component-versioning/
+[组件版本]: /zh-cn/documentation/articles/hdinsight-component-versioning/
 
 [zookeeper]: http://zookeeper.apache.org/ 

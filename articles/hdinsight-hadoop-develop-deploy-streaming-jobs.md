@@ -1,12 +1,12 @@
-<properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="为 HDInsight 开发 C# Hadoop 流程序 | Azure" metaKeywords="hdinsight hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-develop-hadoop-streaming-programs-for-hdinsight" urlDisplayName="" pageTitle="为 HDInsight 开发 C# Hadoop 流程序 | Azure" metaKeywords="hdinsight,hdinsight development, hadoop development, dhinsight deployment, development, deployment, tutorial, MapReduce" description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight." metaCanonical="" services="hdinsight" documentationCenter="" title="Develop C# Hadoop streaming programs for HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun"/>
 <tags ms.service="hdinsight"
     ms.date="09/25/2014"
     wacn.date="04/11/2015"
     />
 
-# 为 HDInsight 开发 C\# Hadoop 流程序
+# 为 HDInsight 开发 CSharp Hadoop 流程序
 
-Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Java 之外的其他语言来编写映射函数和化简函数。本教程指导你完成端到端方案：从在 HDInsight Emulator 上使用 C\# 开发/测试 Hadoop 流 MapReduce 程序，到在 Azure HDInsight 上运行 MapReduce 作业并检索结果。
+Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Java 之外的其他语言来编写映射函数和化简函数。本教程指导你完成端到端方案：从在 HDInsight Emulator 上使用 CSharp 开发/测试 Hadoop 流 MapReduce 程序，到在 Azure HDInsight 上运行 MapReduce 作业并检索结果。
 
 **先决条件：**
 
@@ -18,18 +18,18 @@ Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Jav
 
 ## 本文内容
 
--   [使用 C\# 开发单词计数 Hadoop 流程序][]
+-   [使用 CSharp 开发单词计数 Hadoop 流程序][]
 -   [在模拟器中测试该程序][]
 -   [将数据和应用程序上载到 Azure Blob 存储][]
 -   [在 Azure HDInsight 中运行 MapReduce 程序][]
 -   [检索 MapReduce 结果][]
 -   [后续步骤][]
 
-## <a id="develop"></a>使用 C\# 开发单词计数 Hadoop 流程序
+## <a id="develop"></a>使用 CSharp 开发单词计数 Hadoop 流程序
 
 单词计数解决方案包含两个控制台应用程序项目：映射器和化简器。映射器应用程序将每个单词流式传输到控制台，化简器应用程序对从文档流式传输的单词进行计数。映射器和化简器都从标准输入流 (stdin) 逐行读取字符，并写入到标准输出流 (stdout)。
 
-**创建 C\# 控制台应用程序**
+**创建 CSharp 控制台应用程序**
 
 1.  打开 Visual Studio 2013。
 2.  依次单击“文件” 、“新建” 和“项目” 。
@@ -528,7 +528,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [购买选项]: /pricing/overview/
   [试用]: /pricing/1rmb-trial/
-  [使用 C\# 开发单词计数 Hadoop 流程序]: #develop
+  [使用 CSharp 开发单词计数 Hadoop 流程序]: #develop
   [在模拟器中测试该程序]: #test
   [将数据和应用程序上载到 Azure Blob 存储]: #upload
   [在 Azure HDInsight 中运行 MapReduce 程序]: #run

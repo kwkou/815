@@ -60,11 +60,10 @@ HDInsight 提供在 Azure 上设置 Linux 群集的选项。如果你熟悉 Linu
 
 你可以从 Linux 计算机以及 Windows 计算机设置 HDInsight Hadoop Linux 群集。下表提供了不同操作系统中可用设置选项的相关信息，以及每个选项说明的链接。
 
-从运行此操作系统的计算机设置 Linux 群集 | 使用 Azure 管理门户 | 使用跨平台 CLI | 使用 .NET SDK | 使用 PowerShell
-
----------- | ---------- | ---------- | ---------- | ----------
-Linux |单击[此处](#portal) | 单击[此处](#cli) | 不适用 | 即将推出
-Windows | 单击[此处](#portal) | 单击[此处](#cli) | 单击[此处](#sdk) | 即将推出
+从运行此操作系统的计算机设置 Linux 群集 | 使用 Azure 管理门户 | 使用跨平台 CLI | 使用 .NET SDK | 使用 PowerShell  
+---------- | ---------- | ---------- | ---------- | ----------  
+Linux |单击[此处](#portal) | 单击[此处](#cli) | 不适用 | 即将推出  
+Windows | 单击[此处](#portal) | 单击[此处](#cli) | 单击[此处](#sdk) | 即将推出  
 
 ### <a id="portal"></a> 使用 Azure 管理门户
 
