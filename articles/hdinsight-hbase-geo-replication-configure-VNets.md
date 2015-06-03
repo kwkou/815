@@ -20,9 +20,9 @@
 # 在两个 Azure 虚拟网络之间配置 VPN 连接  
 
 > [AZURE.SELECTOR]
-- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
-- [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
-- [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)
+- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets.md)
+- [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS.md)
+- [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication.md)
 
 Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提供安全隧道。VNet 可在不同的订阅和不同的区域中。甚至可以使用多站点配置来整合 VNet 到 VNet 的通信。建立 VNet 到 VNet 连接的原因有多方面：
 

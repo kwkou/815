@@ -15,15 +15,15 @@
 V.0603.2
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNETs.md)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+- [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNets.md)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS.md)
 - [Configure HBase replication](hdinsight-hbase-geo-replication.md)
-- [test no path no md](hdinsight-hbase-geo-replication) 
+- [test no path no md](hdinsight-hbase-geo-replication.md) 
  
 
 ##test direct reference of md file
 
-See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples)
+See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples.md)
 
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 
