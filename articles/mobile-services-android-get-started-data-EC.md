@@ -1,37 +1,16 @@
-<properties 
-	pageTitle="数据处理入门 (Android) | 移动开发人员中心" 
-	description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
-	editor=""/>
+<properties pageTitle="数据处理入门 (Android) | 移动开发人员中心" description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" services="mobile-services" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
 
-<tags 
-wacn.date="04/15/2015"
-
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="02/06/2015" 
-	ms.author="ricksal,glenga"/>
+<tags wacn.date="04/15/2015" ms.service="mobile-services" ms.date="02/06/2015"/>
 
 # 将移动服务添加到现有应用程序
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data-EC.md)]
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
 
-<p>本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。</p>
 
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">15:32</span></div>
-</div>
+本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 
-> [AZURE.NOTE] 本教程旨在帮助你更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/develop/mobile/tutorials/get-started-android-EC)教程。
+> [AZURE.NOTE] 本教程旨在帮助你更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/documentation/articles/mobile-services-android-get-started)教程。
 > 
 > 如果要查看已完成应用程序的源代码，请转到[此处](https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithData/Android/GetStartedWithData)。
 

@@ -1,20 +1,15 @@
-<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date="04/09/2015"
-    wacn.date="04/15/2015"
-    />
+<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor=""/>  
+
+<tags ms.service="" ms.date="04/09/2015" wacn.date="04/15/2015"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
 [WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<p>本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 <em>待办事项列表</em> 应用程序，该应用程序将应用程序数据存储在新的移动服务中。</p>
-<p>以下是完成的应用程序的屏幕截图：</p>
-</div>
-<div class="dev-onpage-video-wrapper" style="display:none"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">7:26</span></div>
-</div>
+
+本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 <em>待办事项列表</em> 应用程序，该应用程序将应用程序数据存储在新的移动服务中。
+以下是完成的应用程序的屏幕截图：
+
 
 ![][0]
 
@@ -106,32 +101,29 @@
 ## <a name="next-steps"> </a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务： 
 
-* [数据处理入门]
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [数据处理入门](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android)  
 
-* [身份验证入门]
-  <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+  了解有关使用移动服务存储和查询数据的详细信息。
 
-* [推送通知入门]
-  <br/>了解如何向应用程序发送一条非常简单的推送通知。
+* [身份验证入门](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android)  
+
+  了解如何使用标识提供程序对应用程序的用户进行身份验证。
+
+* [推送通知入门](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android)  
+
+  了解如何向应用程序发送一条非常简单的推送通知。  
 
 <!-- Anchors. -->
-[移动服务入门]:#getting-started
-[创建新的移动服务]:#create-new-service
-[定义移动服务实例]:#define-mobile-service-instance
-[后续步骤]:#next-steps
+[移动服务入门]: #getting-started
+[创建新的移动服务]: #create-new-service
+[定义移动服务实例]: #define-mobile-service-instance
+[后续步骤]: #next-steps
 
 <!-- Images. -->
 [0]: ./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png
-
-
-
-
-
 [6]: ./media/mobile-services-android-get-started/mobile-portal-quickstart-android.png
 [7]: ./media/mobile-services-android-get-started/mobile-quickstart-steps-android.png
 [8]: ./media/mobile-services-android-get-started/mobile-eclipse-quickstart.png
-
 [10]: ./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png
 [11]: ./media/mobile-services-android-get-started/mobile-data-tab.png
 [12]: ./media/mobile-services-android-get-started/mobile-data-browse.png

@@ -1,34 +1,14 @@
-<properties 
-	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" 
-	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
-	editor=""/>
+<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" services="mobile-services" documentationCenter="android" authors="RickSaling" manager="dwrede" editor=""/>
 
-<tags 
-wacn.date="04/15/2015"
-
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="hero-article" 
-	ms.date="02/13/2015" 
-	ms.author="ricksal,glenga"/>
+<tags wacn.date="04/15/2015" ms.service="mobile-services" ms.date="02/13/2015"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started-EC.md)]
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<p>本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 <em>待办事项列表</em> 应用程序，该应用程序将应用程序数据存储在新的移动服务中。</p>
-<p>以下是完成的应用程序的屏幕截图：</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">7:26</span></div>
-</div>
+
+本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 **待办事项列表** 应用程序，该应用程序将应用程序数据存储在新的移动服务中。以下是完成的应用程序的屏幕截图：</p>
+
 
 ![][0]
 
@@ -36,10 +16,9 @@ wacn.date="04/15/2015"
 
 下载的快速入门项目包含适用于 Android 的移动服务 SDK。尽管此项目需要 Android 4.2 或更高版本，但移动服务 SDK 只需要 Android 2.2 或更高版本。
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
-
-<!-- -->
-
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。  
+  
+  
 >[AZURE.NOTE] 如果要查看已完成应用程序的源代码，请转到<a href="https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStarted/Android" target="_blank">此处</a>。
 
 ## <a name="create-new-service"> </a>创建新的移动服务
