@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Get Started with Azure Media Services REST APIs - Azure" 
+	pageTitle="测试文档" 
 	description="This tutorial walks you through the steps of implementing a Video-on-Demand (VoD) content delivery application with Azure Media Services using REST APIs." 
 	services="media-services" 
 	documentationCenter=".net" 
@@ -7,12 +7,12 @@
 	manager="Tiffena" 
 	editor="Eric Chen"/>
 
-<tags ms.service="test" ms.date="03/12/2015" wacn.date="06/01/2015"/>
+<tags ms.service="test" ms.date="03/12/2015" wacn.date="06/03/2015"/>
 
 
 # 这是一个测试文档用于测试新标签的网页渲染支持 
 
-V.0603.1
+V.0603.2
 
 > [AZURE.SELECTOR]
 - [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNETs.md)
