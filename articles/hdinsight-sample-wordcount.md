@@ -188,7 +188,7 @@ WordCount 脚本的输出应出现在 cmd 窗口中：
 -   [Azure HDInsight 入门][]
 -   [示例：10GB GraySort][]
 -   [示例：Pi Estimator][]
--   [示例：C\# Steaming][]
+-   [示例：C# Steaming][]
 -   [Pig 与 HDInsight 配合使用][]
 -   [Hive 与 HDInsight 配合使用][]
 -   [Azure HDInsight SDK 文档][]
@@ -204,7 +204,7 @@ WordCount 脚本的输出应出现在 cmd 窗口中：
   [HDI.Sample.WordCount.Output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png
   [示例：10GB GraySort]: /zh-cn/documentation/articles/hdinsight-sample-10gb-graysort/
   [示例：Pi Estimator]: /zh-cn/documentation/articles/hdinsight-sample-pi-estimator/
-  [示例：C\# Steaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
+  [示例：C# Steaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
   [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
   [Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
   [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx

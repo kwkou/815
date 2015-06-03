@@ -50,21 +50,20 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
     -   "地址空间"：为虚拟网络选择一个地址空间，该空间必须足够大以便为群集中的所有节点提供地址。否则，设置将失败。
     -   "最大虚拟机数"：选择以下最大虚拟机数。
     -   "位置"：该位置必须与要创建的 HBase 群集相同。
-    -   "DNS 服务器"：本文使用 Azure 提供的内部 DNS 服务器，因此，您可以选择"无"。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指南，请参见 [http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx](http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)。
-
+    -   "DNS 服务器"：本文使用 Azure 提供的内部 DNS 服务器，因此，您可以选择"无"。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指南，请参见 [http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx](http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)。  
 4.  单击“创建虚拟网络”。新虚拟网络名称将显示在列表中。等到“状态”列显示“已创建”。
 5.  在主窗格中，单击刚创建的虚拟网络。
 6.  在页面顶部，单击“仪表板”。
 7.  在“速览”下，记住“虚拟网络 ID”。在设置 HBase 群集时将要用到它。
 8.  在页面顶部，单击“配置”。
-9.  在页面底部，默认子网名称为 **Subnet-1**。你可以选择重命名子网或者向 HBase 群集添加一个新子网。记下子网名称，设置群集时将会用到它。
+9.  在页面底部，默认子网名称为 **Subnet-1**。你可以选择重命名子网或者向 HBase 群集添加一个新子网。记下子网名称，设置群集时将会用到它。  
 10. 验证将用于该群集的子网的“CIDR（地址数）”。地址数必须大于工作节点数加上七（网关：2，头节点：2，ZooKeeper：3). 例如，如果需要一个 10 节点 HBase 群集，子网的地址数必须大于 17 (10+7)。否则，部署将失败。
 
     > [WACOM.NOTE] 强烈建议为一个群集指定一个子网。
 
 11. 如果更新了子网值，请单击页面底部的“保存”。
 
-> [WACOM.NOTE] HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用][]。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
+	> [WACOM.NOTE] HDInsight 群集使用 Azure Blob 存储来存储数据。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用][]。你需要存储帐户和 Blob 存储容器。存储帐户位置必须与虚拟网络位置和群集位置匹配。
 
 **要创建 Azure 存储帐户和 Blob 存储容器：**
 
@@ -188,7 +187,6 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn
-  []: http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx
   [将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [群集名称和版本字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png
   [节点数和区域字段]: ./media/hdinsight-hbase-provision-vnet/hbasewizard2.png

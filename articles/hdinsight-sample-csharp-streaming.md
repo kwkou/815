@@ -4,9 +4,9 @@
     wacn.date="04/11/2015"
     />
 
-# HDInsight C\# 流式处理字数统计示例
+# HDInsight C# 流式处理字数统计示例
 
-Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Java 之外的其他语言来编写映射函数和化简函数。本教程介绍了如何用 C\# 编写使用 Hadoop 流式传输接口的 MapReduce 程序，以及如何使用 Azure PowerShell cmdlet 在 Azure HDInsight 上运行程序。
+Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Java 之外的其他语言来编写映射函数和化简函数。本教程介绍了如何用 C# 编写使用 Hadoop 流式传输接口的 MapReduce 程序，以及如何使用 Azure PowerShell cmdlet 在 Azure HDInsight 上运行程序。
 
 在示例中，映射器和化简器都是可执行的，它们从 [stdin][] 读取输入（逐行）并将输出结果发送到 [stdout][stdin]。程序计算文本中所有单词的数量。
 
@@ -18,8 +18,8 @@ Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Jav
 
 **你将了解到以下内容：**
 
--   如何使用 Azure PowerShell 在 HDInsight 上运行 C\# 流式传输程序以分析文件中包含的数据。
--   如何编写使用 Hadoop 流接口的 C\# 代码。
+-   如何使用 Azure PowerShell 在 HDInsight 上运行 C# 流式传输程序以分析文件中包含的数据。
+-   如何编写使用 Hadoop 流接口的 C# 代码。
 
 **先决条件**：
 
@@ -34,7 +34,7 @@ Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Jav
 本主题说明了如何运行该示例，展示了 MapReduce 程序的 Java 代码，总结了你已经学习到的内容，并概括了一些后续步骤。本文包括以下各节。
 
 1.  [使用 Azure PowerShell 运行示例][]
-2.  [Hadoop 流式传输的 C\# 代码][]
+2.  [Hadoop 流式传输的 C# 代码][]
 3.  [摘要][]
 4.  [后续步骤][]
 
@@ -88,7 +88,7 @@ Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Jav
 
     请注意，MapReduce 作业的输出文件是不可变的。所以，如果你重新运行此示例，将需要更改输出文件的名称。
 
-## Hadoop 流式传输的 C\# 代码
+## Hadoop 流式传输的 C# 代码
 
 MapReduce 程序使用 cat.exe 应用程序作为映射接口将文本流式传送到控制台，并使用 wc.exe 应用程序作为化简接口来统计从文档中流式传送的字数。映射器和化简器都从标准输入流 (stdin) 逐行读取字符，并写入到标准输出流 (stdout)。
 
@@ -170,7 +170,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][] 对象从 cat.exe 映�
   [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
   [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [使用 Azure PowerShell 运行示例]: #run-sample
-  [Hadoop 流式传输的 C\# 代码]: #java-code
+  [Hadoop 流式传输的 C# 代码]: #java-code
   [摘要]: #summary
   [后续步骤]: #next-steps
   [StreamReader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx

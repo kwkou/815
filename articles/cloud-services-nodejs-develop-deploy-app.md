@@ -14,23 +14,20 @@
 
 完成本指南时，你将在 Azure 云服务中运行一个简单的 Node.js 应用程序。云服务是 Azure 中可扩展的云应用程序的构造块。它们允许进行单独且独立的管理，并允许横向扩展应用程序的前端和后端组件。云服务为可靠托管每个角色提供强大的专用虚拟机。
 
-有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的详细信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/)。
+有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的详细信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
 
 <p />
 
 <div class="dev-callout"><strong>想要构建一个简单的网站？</strong>
-<p>如果你的方案只涉及一个简单的网站前端，可以考虑 <a href="/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/">使用轻型 Azure 网站。</a> 随着你的网站的不断扩大和你的需求的变化，你可以轻松升级到云服务。</p>
+<p>如果你的方案只涉及一个简单的网站前端，可以考虑 <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">使用轻型 Azure 网站。</a> 随着你的网站的不断扩大和你的需求的变化，你可以轻松升级到云服务。</p>
 </div>
 <br />
 
 通过学习本教程，你将可以生成一个托管在 Web 角色中的简单 Web 应用程序。你将使用计算仿真程序在本地测试你的应用程序，然后使用 PowerShell 命令行工具来部署该应用程序。
 
-以下是已完成应用程序的屏幕快照：
+以下是已完成应用程序的屏幕快照：  
 
-<p><img src="https://wacomdpsstablestorage.blob.core.windows.net/articlesmedia/demo-ppe.windowsazure.com/zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/20140107035927/node21.png" alt="浏览器窗口中显示"Hello World"页面。URL 指示该页面托管在 Azure 上。">
-</p>
-
-
+![浏览器窗口中显示"Hello World"页面。URL 指示该页面托管在 Azure 上。](./media/cloud-services-nodejs-develop-deploy-app/node21.png)
 
 ## 创建新的 Node 应用程序
 
@@ -199,24 +196,40 @@ Azure 计算模拟器是 Azure SDK 所安装的工具之一，你可以使用此
 
 	![The status of the Remove-AzureService command](./media/cloud-services-nodejs-develop-deploy-app/node49.png)
 
-	<div class="dev-callout">
-	<strong>说明</strong>
-	<p>删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531562.aspx">如何从 Azure 订阅中删除存储帐户</a>的第一个参数。</p>
-</div>
+	
+**说明**  
+
+删除服务不会删除最初发布服务时所创建的存储帐户，并且你仍需为使用的存储付费。有关删除存储帐户的详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531562.aspx">如何从 Azure 订阅中删除存储帐户</a>的第一个参数。  
+  
 
 
-[已展开了 Azure SDK Node.js 条目的 Windows"开始"菜单]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-menu.png
-[mkdir]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png
-[nodejs.org]: http://nodejs.org/
-[helloworld 文件夹目录列表。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-7.png
-[创建 Azure 托管服务概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
-[WebRole1 文件夹目录列表]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png
-[在任务栏中右键单击 Azure 仿真程序时显示的菜单。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png
-[显示 http://www.windowsazure.cn/ 的浏览器窗口（"试用"链接已突出显示）]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png
-[显示 liveID 登录页的浏览器窗口]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png
-[显示 publishSettings 文件另存为对话框的 Internet Explorer。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png
+[已展开了Azure SDK Node.js条目的Windows"开始"菜单]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-menu.png 
+ 
+[mkdir]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-6.png  
 
-[Publish-AzureService 命令的完整状态输出]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png
-[如何从 Azure 订阅中删除存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
-[powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
+[nodejs.org]: http://nodejs.org/  
+
+[helloworld 文件夹目录列表。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-7.png  
+
+[创建 Azure 托管服务概述]: http://msdn.microsoft.com/zh-cn/library/azure/jj155995.aspx  
+
+[WebRole1 文件夹目录列表]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-8.png  
+
+[在任务栏中右键单击 Azure 仿真程序时显示的菜单。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-11.png  
+
+[显示 http://www.windowsazure.cn/ 的浏览器窗口("试用"链接已突出显示)]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-12.png  
+
+[显示 liveID 登录页的浏览器窗口]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-13.png  
+
+[显示 publishSettings 文件另存为对话框的 Internet Explorer。]: ./media/cloud-services-nodejs-develop-deploy-app/getting-started-14.png  
+
+[Publish-AzureService 命令的完整状态输出]: ./media/cloud-services-nodejs-develop-deploy-app/node20.png  
+
+[如何从 Azure 订阅中删除存储帐户]: /documentation/articles/storage-manage-storage-account/  
+
+[powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png 
+
+
+ 
+
 <!--HONumber=39-->

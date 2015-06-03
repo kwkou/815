@@ -586,7 +586,7 @@
   [将应用程序配置为使用 SendGrid]: #sendGrid
   [配置和查看跟踪数据]: #trace
   [添加另一个辅助角色实例来处理增加的负载]: #addRole
-  [免费试用帐户]: /pricing/1rmb-trial/
+  [试用帐户]: /pricing/1rmb-trial/
   [激活 MSDN 订户权益]: /zh-cn/pricing/member-offers/msdn-benefits/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
