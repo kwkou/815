@@ -12,11 +12,11 @@
 
 # 这是一个测试文档用于测试新标签的网页渲染支持 
 
-V.0602.1
+V.0603.1
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](../articles/hdinsight-hbase-geo-replication-configure-VNETs.md)
-- [Configure DNS](../articles/hdinsight-hbase-geo-replication-configure-DNS.md)
+- [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNETs.md)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
 - [Configure HBase replication](hdinsight-hbase-geo-replication.md)
 - [test no path no md](hdinsight-hbase-geo-replication) 
  
