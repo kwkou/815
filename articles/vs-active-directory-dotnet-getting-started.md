@@ -6,8 +6,8 @@ ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="n
 
 > [AZURE.SELECTOR]
 >
-> -   [入门][入门]
-> -   [发生了什么情况][发生了什么情况]
+> -   [入门](/documentation/articles/vs-active-directory-dotnet-getting-started.md)
+> -   [发生了什么情况](/documentation/articles/vs-active-directory-dotnet-what-happened.md)
 
 ## Azure Active Directory 入门（.NET 项目）
 
