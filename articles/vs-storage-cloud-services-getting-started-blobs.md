@@ -36,9 +36,9 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 [WACOM.INCLUDE [vs-storage-getting-started-blobs-include](../includes/vs-storage-getting-started-blobs-include.md)]
 
-  [入门]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/
-  [发生了什么情况]: /zh-cn/documentation/articles/vs-storage-cloud-services-what-happened/
-  [队列]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-queues/
-  [表]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-tables/
-  [如何通过 .NET 使用 Blob 存储]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/ "如何通过 .NET 使用 Blob 存储"
+  [入门]: /documentation/articles/vs-storage-cloud-services-getting-started-blobs/
+  [发生了什么情况]: /documentation/articles/vs-storage-cloud-services-what-happened/
+  [队列]: /documentation/articles/vs-storage-cloud-services-getting-started-queues/
+  [表]: /documentation/articles/vs-storage-cloud-services-getting-started-tables/
+  [如何通过 .NET 使用 Blob 存储]: /documentation/articles/storage-dotnet-how-to-use-blobs/ "如何通过 .NET 使用 Blob 存储"
   [vs-storage-getting-started-blobs-include]: ../includes/vs-storage-getting-started-blobs-include.md

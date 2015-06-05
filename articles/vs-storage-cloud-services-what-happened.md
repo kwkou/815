@@ -33,5 +33,5 @@ Azure 存储 NuGet 包已添加到您的 Visual Studio 项目。
 -   `ServiceConfiguration.Cloud.cscfg`
 -   `ServiceConfiguration.Local.cscfg`
 
-  [入门]: /zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/
-  [发生了什么情况]: /zh-cn/documentation/articles/vs-storage-cloud-services-what-happened/
+  [入门]: /documentation/articles/vs-storage-cloud-services-getting-started-blobs/
+  [发生了什么情况]: /documentation/articles/vs-storage-cloud-services-what-happened/

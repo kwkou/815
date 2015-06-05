@@ -79,8 +79,8 @@ ms.service="mobile-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na
 
 [详细了解移动服务][详细了解移动服务]
 
-  [入门]: /zh-cn/documentation/articles/vs-mobile-services-javascript-getting-started/
-  [发生了什么情况]: /zh-cn/documentation/articles/vs-mobile-services-javascript-what-happened/
+  [入门]: /documentation/articles/vs-mobile-services-javascript-getting-started/
+  [发生了什么情况]: /documentation/articles/vs-mobile-services-javascript-what-happened/
   [查询对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
   [splice]: http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx
   [Promise]: 

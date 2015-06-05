@@ -22,8 +22,8 @@
 # 在 Azure 门户中还原已删除的 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [还原已删除的数据库 - PowerShell](/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell.md)
-- [还原已删除的数据库 - REST API](/documentation/articles/sql-database-restore-deleted-database-tutorial-rest.md)
+- [还原已删除的数据库 - PowerShell](/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell)
+- [还原已删除的数据库 - REST API](/documentation/articles/sql-database-restore-deleted-database-tutorial-rest)
 
 ## 概述
 

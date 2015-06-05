@@ -20,12 +20,12 @@
 # 确认已恢复的 Azure SQL Database
 
 > [AZURE.SELECTOR]
-- [时间点还原 - 门户](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal.md)
-- [时间点还原 - PowerShell](/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell.md)
-- [时间点还原 - REST API](/documentation/articles/sql-database-point-in-time-restore-tutorial-rest.md)
-- [地域还原 - 门户](/documentation/articles/sql-database-geo-restore-tutorial-management-portal.md)
-- [地域还原 - PowerShell](/documentation/articles/sql-database-geo-restore-tutorial-powershell.md)
-- [地域还原 - REST API](/documentation/articles/sql-database-geo-restore-tutorial-rest.md)
+- [时间点还原 - 门户](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal)
+- [时间点还原 - PowerShell](/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell)
+- [时间点还原 - REST API](/documentation/articles/sql-database-point-in-time-restore-tutorial-rest)
+- [地域还原 - 门户](/documentation/articles/sql-database-geo-restore-tutorial-management-portal)
+- [地域还原 - PowerShell](/documentation/articles/sql-database-geo-restore-tutorial-powershell)
+- [地域还原 - REST API](/documentation/articles/sql-database-geo-restore-tutorial-rest)
 
 ## 概述
 

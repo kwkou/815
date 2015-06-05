@@ -17,7 +17,7 @@
 
 <!--
 > [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure Preview portal](/documentation/articles/sql-database-dynamic-data-masking-get-started.md)
+- [Dynamic Data Masking - Azure Preview portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 -->
 
 ## 概述

@@ -17,8 +17,8 @@
 # 在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [时间点还原 - PowerShell](/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell.md)
-- [时间点还原 - REST API](/documentation/articles/sql-database-point-in-time-restore-tutorial-rest.md)
+- [时间点还原 - PowerShell](/documentation/articles/sql-database-point-in-time-restore-tutorial-powershell)
+- [时间点还原 - REST API](/documentation/articles/sql-database-point-in-time-restore-tutorial-rest)
 
 ## 概述
 

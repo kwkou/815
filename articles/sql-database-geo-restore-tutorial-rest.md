@@ -22,8 +22,8 @@
 # 使用地域还原和 REST API 恢复 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [地域还原 - 门户](/documentation/articles/sql-database-geo-restore-tutorial-management-portal.md)
-- [地域还原 - PowerShell](/documentation/articles/sql-database-geo-restore-tutorial-powershell.md)
+- [地域还原 - 门户](/documentation/articles/sql-database-geo-restore-tutorial-management-portal)
+- [地域还原 - PowerShell](/documentation/articles/sql-database-geo-restore-tutorial-powershell)
 
 ## 概述
 
