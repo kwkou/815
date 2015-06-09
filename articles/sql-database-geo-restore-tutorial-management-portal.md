@@ -6,10 +6,15 @@
    authors="elfisher" 
    manager="jeffreyg" 
    editor="v-romcal"/>
-<tags ms.service="sql-database"
-    ms.date="03/18/2015"
-    wacn.date="04/15/2015"
-    />
+
+<tags
+   ms.service="sql-database"
+   ms.date="03/18/2015"
+   wacn.date="05/25/2015"/>
+
+
+
+
 
 
 
@@ -41,8 +46,6 @@
 	* Web 和企业版将在 2015 年 9 月停用。有关详细信息，请参阅 [Web 和企业版停用常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
 
 ## 如何：在 Azure 门户中使用地域还原恢复 Azure SQL 数据库
-
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Geo-Restore/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
 1. 使用你的 Microsoft 帐户登录到 Azure 门户，然后选择"SQL Database"。
 
@@ -78,4 +81,4 @@
 
 <!--[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)-->
 
-<!--HONumber=50-->
+<!--HONumber=55-->
