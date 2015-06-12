@@ -7,15 +7,7 @@
    manager="jeffreyg" 
    editor=""/>
 
-<tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="data-management" 
-   ms.date="04/29/2015"
-   wacn.date="05/29/2015 
-   ms.author="adamkr; sstein"/>
+<tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="05/29/2015"/>
 
 # 使用 PowerShell 创建和管理 SQL Database 弹性池（预览版）
 
@@ -40,7 +32,7 @@
 
 若要使用 PowerShell 创建弹性池，你需要安装和运行 Azure PowerShell，并将其切换到资源管理器模式下，以便访问 Azure Resource Manager PowerShell Cmdlet。 
 
-你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装 Azure PowerShell 模块。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure)。
+你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装 Azure PowerShell 模块。<!--有关详细信息，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure)。-->
 
 用于创建和管理 Azure SQL Database 和弹性池的 cmdlet 位于 Azure 资源管理器模块中。启动 Azure PowerShell 时，默认情况下将导入 Azure 模块中的 cmdlet。若要切换到 Azure 资源管理器模块，请使用 Switch-AzureMode cmdlet。
 
@@ -95,7 +87,7 @@
 
 ## 创建弹性池和弹性数据库
 
-现在，你已经有了一个资源组、一个服务器，并且配置了防火墙规则，因此可以访问服务器。以下命令将创建弹出池。该命令将创建一个池，可以共享总共 400 DTU。可以确保池中的每个数据库始终有 10 DTU (DatabaseDtuMin) 可用。池中的各个数据库最多可以耗用 100 DTU (DatabaseDtuMax)。有关详细的参数说明，请参阅 [Azure SQL Database 弹性池](sql-database-elastic-pool)。 
+现在，你已经有了一个资源组、一个服务器，并且配置了防火墙规则，因此可以访问服务器。以下命令将创建弹性池。该命令将创建一个池，可以共享总共 400 DTU。可以确保池中的每个数据库始终有 10 DTU (DatabaseDtuMin) 可用。池中的各个数据库最多可以耗用 100 DTU (DatabaseDtuMax)。有关详细的参数说明，请参阅 [Azure SQL Database 弹性池](sql-database-elastic-pool)。 
 
 
 	PS C:\>New-AzureSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
@@ -230,7 +222,7 @@
 
 创建弹性池后，你可以通过创建弹性作业来管理池中的弹性数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。
 
-有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。
+<!--有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。-->
 
 
 ## 弹性数据库参考

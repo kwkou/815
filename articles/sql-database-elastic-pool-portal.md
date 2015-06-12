@@ -7,15 +7,7 @@
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags 
-	ms.service="sql-database"
-	ms.devlang="NA"
-	ms.date="04/29/2015"
-	wacn.date="05/29/2015  
-	ms.author="sstein" 
-	ms.workload="data-management" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="NA"/>
+<tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="05/29/2015"/>
 
 
 # 创建和管理 SQL Database 弹性池（预览版）
@@ -111,7 +103,7 @@
 创建一个池之后，你可以：
 
 - 选择"配置池"来更改池 DTU 和单数据库 DTU 设置。
-- 通过创建弹性作业来选择"创建作业"并管理池中的数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。
+- 通过创建弹性作业来选择"创建作业"并管理池中的数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。<!--有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。-->
 - 选择"管理作业"可管理现有弹性作业。
 
 
@@ -143,7 +135,7 @@
 ## 后续步骤
 创建后弹性池后，可以通过创建弹性作业来管理池中的数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。
 
-有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。
+<!--有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。-->
 
 
 
@@ -155,6 +147,7 @@
 
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-pool-portal/new-elastic-pool.png
 [2]: ./media/sql-database-elastic-pool-portal/configure-elastic-pool.png
 [3]: ./media/sql-database-elastic-pool-portal/configure-performance.png

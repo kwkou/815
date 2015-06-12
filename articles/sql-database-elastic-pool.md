@@ -1,21 +1,7 @@
-﻿<properties 
-	pageTitle="Azure SQL Database 弹性数据库池（预览版）" 
-	description="弹性数据库池是由一组弹性数据库共享的可用资源的集合。" 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
-	editor=""/>
+<properties pageTitle="Azure SQL Database 弹性数据库池（预览版）" description="弹性数据库池是由一组弹性数据库共享的可用资源的集合。" services="sql-database" documentationCenter="" authors="stevestein" manager="jeffreyg" editor=""/>
 
-<tags 
-	ms.service="sql-database"
-	ms.devlang="NA"
-	ms.date="05/11/2015"
-	wacn.date="05/29/2015  
-	ms.author="sstein" 
-	ms.workload="data-management" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="NA"/>
+<tags ms.service="sql-database" ms.date="05/11/2015" wacn.date="05/29/2015"/>
+
 
 
 # SQL Database 弹性池（预览版）
@@ -32,16 +18,16 @@ Microsoft 创建弹性池就是专门帮你解决这个问题。
 
 并非所有数据库都符合此模式。有的数据库对资源的需求较为稳定，这些数据库更适合"基本"、"标准"和"高级"服务层级，这些层级的资源是单独分配的。
 
-你可以在几分钟内使用 Microsoft Azure 门户或 PowerShell 创建弹性池。有关详细信息，请参阅[创建和管理弹性池](sql-database-elastic-pool-portal)。有关弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库参考](sql-database-elastic-pool-reference)。
+你可以在几分钟内使用 Windows Azure 门户或 PowerShell 创建弹性池。有关详细信息，请参阅[创建和管理弹性池](sql-database-elastic-pool-portal)。有关弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库参考](sql-database-elastic-pool-reference)。
 
 
 > [AZURE.NOTE] 弹性池目前为预览版，仅适用于 SQL Database V12 Servers。
 
 ## 使用弹性工具轻松管理大量数据库
 
-除了提供更高效的资源利用率和可预测的性能，弹性池还可以使 SaaS 应用程序开发更容易，其提供的工具可以简化数据层的构建和管理。跨大型数据库集执行维护任务和实施更改在以往都是既耗时又复杂的流程，但现在只需在弹性作业中运行脚本就可以了。创建和运行弹性作业功能消除了几乎所有在管理数百甚至数千数据库时需要完成的繁重任务。有关用于跨池中所有弹性数据库运行 T-SQL 脚本的弹性作业服务的信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。
+除了提供更高效的资源利用率和可预测的性能，弹性池还可以使 SaaS 应用程序开发更容易，其提供的工具可以简化数据层的构建和管理。跨大型数据库集执行维护任务和实施更改在以往都是既耗时又复杂的流程，但现在只需在弹性作业中运行脚本就可以了。创建和运行弹性作业功能消除了几乎所有在管理数百甚至数千数据库时需要完成的繁重任务。<!--有关用于跨池中所有弹性数据库运行 T-SQL 脚本的弹性作业服务的信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。-->
 
-此外还提供一组功能丰富且强大的开发人员工具，用于实施弹性数据库应用模式。对于分片数据库，可以使用其他工具（例如拆分-合并工具）来拆分某个分片的数据，然后将其与其他分片合并到一起。这极大地减少了管理大规模分片数据库的工作。有关详细信息，请参阅[弹性数据库工具主题映射](sql-database-elastic-scale-documentation-map)。
+此外还提供一组功能丰富且强大的开发人员工具，用于实施弹性数据库应用模式。对于分片数据库，可以使用其他工具（例如拆分-合并工具）来拆分某个分片的数据，然后将其与其他分片合并到一起。这极大地减少了管理大规模分片数据库的工作。<!--有关详细信息，请参阅[弹性数据库工具主题映射](sql-database-elastic-scale-documentation-map)。-->
 
 ## 弹性数据库的业务连续性功能
 
