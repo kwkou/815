@@ -1,16 +1,17 @@
-<properties 
-    title="灵活扩展安全配置" 
-    pageTitle="灵活扩展安全配置" 
-    description="使用 Azure SQL Database 灵活扩展的拆分/合并服务安全" 
+﻿<properties 
+    title="Elastic Scale Security Configurations" 
+    pageTitle="弹性缩放安全配置" 
+    description="使用 Azure SQL Database 弹性缩放的拆分/合并服务安全" 
     metaKeywords="Elastic Scale Security Configurations, Azure SQL Database sharding, elastic scale " 
     services="sql-database" documentationCenter="" 
     manager="jhubbard" 
     authors="torsteng@microsoft.com"/>
-<tags ms.service="sql-database" ms.date="03/20/2015" wacn.date="04/11/2015"/>
+    
+<tags ms.service="sql-database" ms.date="03/20/2015" wacn.date="05/25/2015"/>
 
 # 拆分合并安全配置  
 
-若要使用拆分/合并服务，必须正确配置安全性。该服务是 Microsoft Azure SQL Database 弹性扩展功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
+若要使用拆分/合并服务，必须正确配置安全性。该服务是 Microsoft Azure SQL Database 弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
 ## 配置证书
 
@@ -192,7 +193,7 @@
 自定义：
 
 *    -n，带有服务 URL。通配符 ("CN=*.chinacloudapp.cn") 和替代名称 ("CN=myservice1.chinacloudapp.cn, CN=myservice2.chinacloudapp.cn") 均受支持。
-*    -e，带有证书到期日期
+*    -e，带有证书过期日期
 创建强密码并在出现提示时指定它。
 
 ## <a name="create-pfx-for-self-signed-cert"></a>为自签名 SSL 证书创建 PFX 文件
@@ -208,7 +209,7 @@
 ## <a name="export-ssl-from-store"></a>从证书存储中导出 SSL 证书
 
 * 查找证书
-* 依次单击"操作"->"所有任务"->"导出..."
+* 单击"操作"->"所有任务"->"导出..."
 * 使用以下选项将证书导出到 .PFX 文件中：
     * 是，导出私钥
     * 包括证书路径中的所有证书（如果可能）
@@ -278,7 +279,7 @@
 * 关闭"证书"对话框
 * 查找证书
     * 搜索前面记下的 CA
-* 依次单击"操作"->"所有任务"->"导出..."
+* 单击"操作"->"所有任务"->"导出..."
 * 使用以下选项将证书导出到 .CER 中：
     * 否，不导出私钥
     * 包括证书路径中的所有证书（如果可能）
@@ -315,7 +316,7 @@
 自定义：
 
 * -n，带有将使用此证书进行身份验证的客户端的 ID
-* -e，带有证书到期日期
+* -e，带有证书过期日期
 * MyID.pvk 和 MyID.cer，带有用于此客户端证书的唯一文件名
 
 此命令将提示创建密码，然后使用一次该密码。使用强密码。
@@ -386,7 +387,7 @@
 ## <a name="export-encryption-from-store"></a>从证书存储中导出加密证书
 
 *    查找证书
-*    依次单击"操作"->"所有任务"->"导出..."
+*    单击"操作"->"所有任务"->"导出..."
 *    使用以下选项将证书导出到 .PFX 文件中： 
   *    是，导出私钥
   *    包括证书路径中的所有证书（如果可能） 
@@ -478,9 +479,9 @@
 
     <Setting name="ElasticScaleMetadata" value="Server=..." />
 
-对此数据库中存储的凭据进行加密。但是，最佳做法是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。 
+对此数据库中存储的凭据进行加密。但是，最佳实践是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。 
 
-[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 [配置证书]:#configuring-certificates
 [允许的 IP 地址]:#allowed-ip-addresses
@@ -513,5 +514,4 @@
 [在服务配置文件中更新加密证书]:#update-encryption-in-csft
 [从证书存储中导出加密证书]:#export-encryption-from-store
 
-
-<!--HONumber=51-->
+<!--HONumber=55-->

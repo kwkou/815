@@ -7,26 +7,16 @@
 	manager="jeffreyg" 
 	editor=""/>
 	
-<tags ms.service="sql-database" ms.date="03/19/2015" wacn.date="04/11/2015"/>
+<tags ms.service="sql-database" ms.date="03/19/2015" wacn.date="05/25/2015"/>
 
 
 
 # 到 SQL 数据库的连接中心建议
 
-
-<!--
-GeneMi , 2015-March-19 Thursday 15:41pm
-sql-database-connect-central-recommendations.md
-sql-database-connect-*.md
-
-Re SqlException, not .HResult, rather .Number.
--->
-
-
 本主题提供了你可以用来连接到 Azure SQL 数据库以及与之进行交互的各种技术的代码示例的链接。这些技术包括企业库、JDBC 和 PHP。提供的建议是普遍适用的，与具体的连接技术无关。
 
 
-## 独立于技术的建议
+## 与技术无关的建议
 
 
 无论你连接到 SQL 数据库时使用哪种具体技术，本部分中的信息都适用。
@@ -95,7 +85,7 @@ Re SqlException, not .HResult, rather .Number.
 
 
 - [错误消息（Azure SQL 数据库）](https://msdn.microsoft.com/zh-CN/library/azure/ff394106.aspx) - 它的**Connection-Loss Errors** 部分是证明需要重试的暂时性错误的列表。
- - 例如，如果出现错误编号 40613，则应当重试，这表示类似于<br/>*服务器  'theserver' 上的数据库  'mydatabase' 当前不可用之类的消息。*
+ - 例如，如果出现错误编号 40613，则应当重试，这表示类似于<br/>服务器  'theserver' 上的*数据库 'mydatabase' 当前不可用之类的消息。*
 
 
 如果在遇到连接错误（不管是持久的还是暂时的）时需要进一步的帮助，请参阅：
@@ -122,8 +112,8 @@ Re SqlException, not .HResult, rather .Number.
 对于 Elastic Scale，请参阅：
 
 
-- [Azure SQL Database Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
-- [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
+- [Azure SQL Database 弹性缩放预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
+- [数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
 
 
 ## 未完成的或过时的帖子
@@ -134,6 +124,4 @@ Re SqlException, not .HResult, rather .Number.
 
 - [针对 Microsoft Azure SQL 数据库中的暂时性错误的重试逻辑](https://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-windows-azure-sql-database.aspx)
 
-
-
-<!--HONumber=51-->
+<!--HONumber=55-->

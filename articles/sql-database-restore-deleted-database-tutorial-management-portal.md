@@ -6,24 +6,30 @@
    authors="elfisher" 
    manager="jeffreyg" 
    editor="v-romcal"/>
-<tags ms.service="sql-database"
-    ms.date="03/18/2015"
-    wacn.date="04/15/2015"
-    />
+
+<tags
+   ms.service="sql-database"
+   ms.date="03/18/2015"
+   wacn.date="05/25/2015"/>
+
+
+
+
+
 
 
 
 # 在 Azure 门户中还原已删除的 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [还原已删除的数据库 - PowerShell](/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell/)
-- [还原已删除的数据库 - REST API](/documentation/articles/sql-database-restore-deleted-database-tutorial-rest/)
+- [还原已删除的数据库 - PowerShell](/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell)
+- [还原已删除的数据库 - REST API](/documentation/articles/sql-database-restore-deleted-database-tutorial-rest)
 
 ## 概述
 
 本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn/)中还原已删除的 Azure SQL 数据库。你可以将保留期内删除的数据库还原到删除该数据库时的时间点。保留期由数据库的服务层确定。
 
-还原已删除的 Azure SQL 数据库会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/zh-cn/support/contact/)。
+还原已删除的 Azure SQL 数据库会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact/)。
 
 ## 限制和安全性
 
@@ -42,7 +48,6 @@
 
 ## 如何：在 Azure 门户中还原已删除的 Azure SQL 数据库
 
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-Deleted-SQL-Database/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
 1. 使用你的 Microsoft 帐户登录到 Azure 门户。
 
@@ -70,4 +75,4 @@
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--HONumber=50-->
+<!--HONumber=55-->

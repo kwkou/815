@@ -31,6 +31,6 @@ Azure 存储 NuGet 包已添加到您的 Visual Studio 项目。
 
 有关详细信息，请参阅 [ASP.NET][ASP.NET]。
 
-  [入门]: /zh-cn/documentation/articles/vs-storage-aspnet-getting-started-blobs/
-  [发生了什么情况]: /zh-cn/documentation/articles/vs-storage-aspnet-what-happened/
+  [入门]: /documentation/articles/vs-storage-aspnet-getting-started-blobs/
+  [发生了什么情况]: /documentation/articles/vs-storage-aspnet-what-happened/
   [ASP.NET]: http://www.asp.net

@@ -17,8 +17,8 @@
 # 移动服务中的用户服务端授权
 
 > [AZURE.SELECTOR-LIST（平台 | 后端）]
-- [（任何 | .NET）](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization/)
-- [（任何 | Javascript）](/documentation/articles/mobile-services-javascript-backend-service-side-authorization/)
+- [（任何 | .NET）](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
+- [（任何 | Javascript）](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
 本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将在 .NET 中修改数据访问方法，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。
 

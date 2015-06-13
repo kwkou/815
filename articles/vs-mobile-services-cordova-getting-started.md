@@ -80,9 +80,9 @@ ms.service="mobile-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na
 
 [详细了解移动服务][详细了解移动服务]
 
-  [入门]: /zh-cn/documentation/articles/vs-mobile-services-cordova-getting-started/
-  [发生了什么情况]: /zh-cn/documentation/articles/vs-mobile-services-cordova-what-happened/
-  [身份验证入门]: /zh-cn/documentation/articles/mobile-services-html-get-started-users/
+  [入门]: /documentation/articles/vs-mobile-services-cordova-getting-started/
+  [发生了什么情况]: /documentation/articles/vs-mobile-services-cordova-what-happened/
+  [身份验证入门]: /documentation/articles/mobile-services-html-get-started-users/
   [Promise]: 
   [查询]: (http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx)
   [详细了解移动服务]: http://www.windowsazure.cn/manage/services/mobile-services/

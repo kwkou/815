@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="在 Azure PowerShell 中使用时间还原来还原 Azure SQL 数据库" 
    description="时间点还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, Azure PowerShell" 
    services="sql-database" 
@@ -6,31 +6,24 @@
    authors="elfisher" 
    manager="jeffreyg" 
    editor="v-romcal"/>
-<tags ms.service="sql-database"
-    ms.date="03/18/2015"
-    wacn.date="04/15/2015"
-    />
 
-
-
-
-
-
-
-
+<tags
+   ms.service="sql-database" 
+   ms.date="03/18/2015"
+   wacn.date="05/25/2015"/>
 
 
 # 在 Azure PowerShell 中使用时间还原来还原 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [时间点还原 - 门户](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal/)
-- [时间点还原 - REST API](/documentation/articles/sql-database-point-in-time-restore-tutorial-rest/) 
+- [时间点还原 - 门户](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal)
+- [时间点还原 - REST API](/documentation/articles/sql-database-point-in-time-restore-tutorial-rest)
 
 ## 概述
 
-本教程说明如何在 [Azure PowerShell](/documentation/articles/install-configure-powershell/)中使用时间点还原来还原 Azure SQL 数据库。Azure SQL Database 针对基本、标准和高级服务层提供内置备份，以支持自助时间点还原。
+本教程说明如何在 [Azure PowerShell](/documentation/articles/install-configure-powershell/) 中使用时间点还原来还原 Azure SQL 数据库。Azure SQL Database 针对基本、标准和高级服务层提供内置备份，以支持自助时间点还原。
 
-时间点还原会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/zh-cn/support/contact/)。
+时间点还原会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact/)。
 
 ## 限制和安全性
 
@@ -38,9 +31,8 @@
 
 ## 如何：在 Azure PowerShell 中使用时间还原来还原 Azure SQL 数据库
 
-<!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Point-in-Time-Restore-With-Microsoft-Azure-PowerShell/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
-必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/#use-the-certificate-method) 中的*使用证书方法*。
+必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/#use-the-certificate-method) 中的 *使用证书方法*。
 
 1. 使用 [Get-AzureSqlDatabase](http://msdn.microsoft.com/zh-cn/library/azure/dn546735.aspx) cmdlet 获取你要还原的数据库。指定以下参数：
 	* 数据库所在的 **ServerName**。
@@ -74,8 +66,8 @@
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)-->
+[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
 
 [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 
-<!--HONumber=50-->
+<!--HONumber=55-->

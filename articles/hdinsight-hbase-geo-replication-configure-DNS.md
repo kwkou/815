@@ -20,9 +20,9 @@
 # 在两个 Azure 虚拟网络之间配置 DNS
 
 > [AZURE.SELECTOR]
-- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets.md)
-- [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS.md)
-- [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication.md) 
+- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
+- [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+- [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication) 
 
 
 了解如何向 Azure 虚拟网络添加和配置 DNS 服务器，以处理虚拟机内部和跨虚拟网络的名称解析。
