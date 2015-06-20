@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="10/30/2014"
     wacn.date="04/11/2015"
@@ -44,10 +44,10 @@
 **创建 Windows 应用商店项目**
 
 1.  运行 Visual Studio 2012
-2.  在“文件”****菜单中，单击“新建”****，然后单击“项目”****。
+2.  在**文件**菜单中，单击**新建**，然后单击**项目**。
 3.  在“新建项目”对话框中，键入或选择以下值：
 
-    <table data-morhtml="true" border="1">
+<table data-morhtml="true" border="1">
 <tr data-morhtml="true">
 <th data-morhtml="true">名称</th>
 <th data-morhtml="true">值</th>
@@ -85,7 +85,7 @@
 1.  在解决方案资源管理器中，右键单击“SSPlayer”****，然后单击“添加引用”****。
 2.  键入或选择以下值：
 
-    <table data-morhtml="true" border="1">
+<table data-morhtml="true" border="1">
 <tr data-morhtml="true">
 <th data-morhtml="true">名称</th>
 <th data-morhtml="true">值</th>
@@ -97,7 +97,7 @@
 <tr data-morhtml="true">
 <td data-morhtml="true">引用</td>
 <td data-morhtml="true">选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK
-    </td>
+</td>
 </tr>
 </table>
 
@@ -506,7 +506,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 1.  按 **F6** 编译项目。
 2.  按 **F5** 运行应用程序。
 3.  在应用程序的顶部，你可以使用默认的平滑流式处理 URL，或输入一个不同的 URL。
-4.  单击“设置源”****。
+4.  单击**“设置源”**。
 5.  测试滚动条。
 
 第 2 课到此结束。在本课中，你已向应用程序添加了一个滚动条。
@@ -564,8 +564,9 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改代码隐藏文件**
 
 1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，**然后单击“查看代码”**。
-2.  在 SSPlayer 命名空间中添加一个新类：\#region class Stream
+2.  在 SSPlayer 命名空间中添加一个新类：
 
+		#region class Stream
          public class Stream
          {
         private IManifestStream stream;
@@ -611,14 +612,14 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 3.  在 MainPage 类的开头，添加以下变量定义：
 
-         private List<Stream> availableStreams;
+        private List<Stream> availableStreams;
         private List<Stream> availableAudioStreams;
         private List<Stream> availableTextStreams;
         private List<Stream> availableVideoStreams;
 
 4.  在 MainPage 类中，添加以下区域：
 
-         #region stream selection
+        #region stream selection
         ///<summary>
         ///Functionality to select streams from IManifestStream available streams
         /// </summary>
@@ -756,7 +757,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 5.  找到 mediaElement\_ManifestReady 方法，并在函数的末尾追加以下代码：
 
-         getStreams(manifestObject);
+        getStreams(manifestObject);
         refreshAvailableStreamsListBoxItemSource();
 
     因此，当 MediaElement 清单准备就绪时，该代码将获取可用流的列表，并将该列表的内容填充到 UI 列表框。
@@ -817,10 +818,10 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **修改代码隐藏文件**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击**“查看代码”**。
 2.  在 SSPlayer 命名空间中添加一个新类：
 
-         #region class Track
+        #region class Track
         public class Track
          {
         private IManifestTrack trackInfo;
@@ -863,7 +864,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 4.  在 MainPage 类中，添加以下区域：
 
-         #region track selection
+        #region track selection
         ///<summary>
         /// Functionality to select video streams
         /// </summary>
@@ -962,7 +963,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 5.  找到 mediaElement\_ManifestReady 方法，并在函数的末尾追加以下代码：
 
-         getTracks(manifestObject);
+        getTracks(manifestObject);
         refreshAvailableTracksListBoxItemSource();
 
 6.  在 MainPage 类中，找到 UI 按钮单击事件区域，然后添加以下函数定义：

@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="将 Azure Blob 存储与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
+﻿<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="将 Azure Blob 存储与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service="storage,hdinsight"
     ms.date="03/16/2015"
     wacn.date="04/11/2015"
@@ -48,7 +48,7 @@ Hadoop 支持默认文件系统的概念。默认文件系统意指默认方案�
 -   **没有连接到群集的存储帐户中的公共容器或公共 Blob：**你对容器中的 Blob 具有只读权限。
 
     > [WACOM.NOTE]
-    >  \> 利用公共容器，你可以获得该容器中所有可用 Blob 的列表以及容器元数据。利用公共 Blob，你仅在知道正确 URL 时才可访问 Blob。有关详细信息，请参阅[限制对容器和 Blob 的访问][]。
+    > 利用公共容器，你可以获得该容器中所有可用 Blob 的列表以及容器元数据。利用公共 Blob，你仅在知道正确 URL 时才可访问 Blob。有关详细信息，请参阅[限制对容器和 Blob 的访问][]。
 
 -   **没有连接到群集的存储帐户中的私有容器：**你不能访问容器中的这些 Blob，除非在提交 WebHCat 作业时定义存储帐户。本文后面对此进行了解释。
 
@@ -58,7 +58,7 @@ Hadoop 支持默认文件系统的概念。默认文件系统意指默认方案�
 
 Blob 存储容器将数据存储为键值对，没有目录层次结构。不过，可在键名称中使用“/”字符，使其看起来像存储在目录结构中的文件。例如，Blob 的键可以是 *input/log1.txt*。不存在实际的 *input* 目录，但由于键名称中包含“/”字符，因此使其看起来像一个文件路径。
 
-##<a id="benefits"></a>Azure Blob 存储的优点
+## <a id="benefits"></a>Azure Blob 存储的优点
 
 通过在 Azure 数据中心的存储帐户资源附近设置计算群集，使计算节点能够通过高速网络非常高效地访问 Blob 存储中的数据，从而减少了不并置计算和存储所产生的隐含性能成本。
 
@@ -72,8 +72,7 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
 
 某些 MapReduce 作业和包可能会产生中间结果，你并不想在 Blob 存储容器中存储这些结果。在此情况下，你仍可以选择将数据存储在本地 HDFS 中。实际上，HDInsight 在 Hive 作业和其他过程中会为其中某些中间结果使用 DFS。
 
-##<a id="preparingblobstorage
-"></a>为 Blob 存储准备容器
+## <a id="preparingblobstorage"></a>为 Blob 存储准备容器
 
 若要使用 blob，必须先创建 [Azure 存储帐户][]。创建过程中，你要指定 Azure 数据中心，它将存储你使用此帐户创建的对象。群集和存储帐户都必须承载于同一数据中心（Hive 元存储 SQL 数据库和 Oozie 元存储 SQL 数据库也必须位于同一数据中心）。无论所创建的每个 blob 位于何处，它都属于存储帐户中的某个容器。此容器可以是在 HDInsight 外部创建的现有的 Blob 存储容器，也可以是为 HDInsight 群集创建的容器。
 
