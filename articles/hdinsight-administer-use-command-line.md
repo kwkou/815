@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="使用跨平台命令行界面管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
+﻿<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="使用跨平台命令行界面管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="11/21/2014"
     wacn.date="04/11/2015"
@@ -41,7 +41,7 @@
 
         npm install -g azure-cli
 
-    > [WACOM.NOTE] 如果收到“未找到 NPM 命令”的错误消息，请验证以下路径是否在 PATH 环境变量中：*C:\\Program Files (x86)\\nodejs;C:\\Users[username]\\AppData\\Roaming\\npm* 或 *C:\\Program Files\\nodejs;C:\\Users[username]\\AppData\\Roaming\\npm*
+    > [WACOM.NOTE] 如果收到“未找到 NPM 命令”的错误消息，请验证以下路径是否在 PATH 环境变量中：*C:\Program Files (x86)\nodejs;C:\Users[username]\AppData\Roaming\npm* 或 *C:\Program Files\nodejs;C:\Users\[username]\AppData\Roaming\npm*
 
 5.  运行以下命令以验证安装：
 
