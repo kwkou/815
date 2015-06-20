@@ -1,6 +1,6 @@
-<properties 
-	pageTitle="使用"Azure 备份"来备份 Azure 虚拟机" 
-	description="使用此演练部署"Azure 备份"来备份虚拟机。" 
+﻿<properties 
+	pageTitle="使用Azure 备份来备份 Azure 虚拟机" 
+	description="使用此演练部署Azure 备份"来备份虚拟机。" 
 	services="backup" 
 	documentationCenter="" 
 	authors="raynew" 
