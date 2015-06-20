@@ -1,4 +1,4 @@
-<properties linkid="develop-python-cloud-services-with-ptvs" urlDisplayName="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" pageTitle="使用 Python Tools 2.1 for Visual Studio 创建 Python Web 角色和辅助角色" metaKeywords="Azure python, web role, worker role, PTVS, cloud service" description="概述如何使用 Python Tools for Visual Studio 创建 Azure 云服务，包括 Web 角色和辅助角色。" metaCanonical="" services="" documentationCenter="Python" title="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" authors="huvalo" solutions="" manager="wpickett" editor="" />
+﻿<properties linkid="develop-python-cloud-services-with-ptvs" urlDisplayName="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" pageTitle="使用 Python Tools 2.1 for Visual Studio 创建 Python Web 角色和辅助角色" metaKeywords="Azure python, web role, worker role, PTVS, cloud service" description="概述如何使用 Python Tools for Visual Studio 创建 Azure 云服务，包括 Web 角色和辅助角色。" metaCanonical="" services="" documentationCenter="Python" title="Python Web and Worker Roles with Python Tools 2.1 for Visual Studio" authors="huvalo" solutions="" manager="wpickett" editor="" />
 <tags ms.service=""
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -38,7 +38,7 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 
 ##<a name="project-creation"></a>创建项目
 
-可以在 Visual Studio 中，在"新建项目"对话框中的"Python"下面选择"Azure 云服务"************。 
+可以在 Visual Studio 中，在**"新建项目"**对话框中的**"Python"**下面选择**"Azure 云服务"**。 
 
 ![New Project Dialog](./media/cloud-services-python-ptvs/new-project-cloud-service.png)
 
@@ -62,13 +62,13 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 
 虽然 PTVS 支持在仿真程序中启动，但调试（断点等）将无法工作。
 
-若要调试 Web 和辅助角色，可以将角色项目设置为启动项目，然后调试该项目。还可以设置多个启动项目。右键单击解决方案并选择"设置启动项目"****。
+若要调试 Web 和辅助角色，可以将角色项目设置为启动项目，然后调试该项目。还可以设置多个启动项目。右键单击解决方案并选择**"设置启动项目"**。
 
 ![Solution Startup Project Properties](./media/cloud-services-python-ptvs/startup.png)
 
 ##<a name="publish-to-azure"></a>发布到 Azure
 
-若要发布，请右键单击解决方案中的云服务项目，然后选择"发布"****。
+若要发布，请右键单击解决方案中的云服务项目，然后选择**"发布"**。
 
 ![Microsoft Azure Publish Sign In](./media/cloud-services-python-ptvs/publish-sign-in.png)
 
@@ -84,7 +84,7 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 
 ![Remote Desktop Configuration Dialog](./media/cloud-services-python-ptvs/publish-remote-desktop-configuration.png)
 
-完成配置设置后，单击"发布"****。
+完成配置设置后，单击**"发布"**。
 
 输出窗口中会显示部分进度信息，然后你将看到"Microsoft Azure 活动日志"窗口。
 
