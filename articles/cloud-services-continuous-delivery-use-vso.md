@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with TFS" pageTitle="使用 Visual Studio Online 在 Azure 中持续交付" metaKeywords="" description="了解如何将 Visual Studio Online 团队项目配置为自动生成并部署到 Azure 网站或云服务。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with TFS" pageTitle="使用 Visual Studio Online 在 Azure 中持续交付" metaKeywords="" description="了解如何将 Visual Studio Online 团队项目配置为自动生成并部署到 Azure 网站或云服务。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/17/2015"
     wacn.date="04/11/2015"
@@ -235,7 +235,7 @@
 
 有关 Visual Studio Online 中的单元测试的详细信息，请参阅[在生成中运行单元测试](http://go.microsoft.com/fwlink/p/?LinkId=510474)。
 
-有关详细信息，请参阅 [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861)。如果使用的是 Git，请参阅[在 Git 中共享代码](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx)和[从源代码管理发布到 Azure 网站]。(/zh-cn/documentation/articles/web-sites-publish-source-control)。
+有关详细信息，请参阅 [Visual Studio Online](http://go.microsoft.com/fwlink/?LinkId=253861)。如果使用的是 Git，请参阅[在 Git 中共享代码](http://www.visualstudio.com/get-started/share-your-code-in-git-vs.aspx)和[从源代码管理发布到 Azure 网站](/zh-cn/documentation/articles/web-sites-publish-source-control)。
 
 [步骤 1：创建团队项目。]: #step1
 [步骤 2：将项目签入到源代码管理。]: #step2
