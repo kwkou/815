@@ -1,4 +1,4 @@
-<properties umbracoNaviHide="0" pageTitle="应用程序模型" metaKeywords="Azure, Azure, application model, Azure application model, development model, Azure development model, hosted service, Azure hosted service, web role, worker role" description="了解 Azure 托管服务应用程序模型。了解核心概念、设计注意事项、如何定义和配置应用程序以及缩放。" linkid="dev-net-fundamentals-application-model" urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Application Model" authors="" />
+﻿<properties umbracoNaviHide="0" pageTitle="应用程序模型" metaKeywords="Azure, Azure, application model, Azure application model, development model, Azure development model, hosted service, Azure hosted service, web role, worker role" description="了解 Azure 托管服务应用程序模型。了解核心概念、设计注意事项、如何定义和配置应用程序以及缩放。" linkid="dev-net-fundamentals-application-model" urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Application Model" authors="" />
 <tags ms.service=""
     ms.date="01/20/2015"
     wacn.date="04/11/2015"
@@ -13,7 +13,7 @@ Azure 提供了用于运行应用程序的不同执行模型。每种模型提�
 ##目录
 
 - [虚拟机](#VMachine)
-- [网站](# Websites)
+- [网站](#Websites)
 - [云服务](#CloudServices)
 - [我该使用哪一种？做出选择](#WhatShouldIUse)
 
@@ -45,13 +45,13 @@ Azure 提供了用于运行应用程序的不同执行模型。每种模型提�
 
 除了 VHD 以外，你还要指定你的新 VM 的大小。[Azure 库](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx) 中列出了每个大小的完整统计信息。
 
--	特小，共享内核，768MB 内存。****
--	小，单核，1.75GB 内存。****
--	中，双核，3.5GB 内存。****
--	大，4 核，7GB 内存。****
--	特大，8 核，14GB 内存。****
--	A6，4 核，28GB 内存。****
--	A7，8 核，56GB 内存。****
+-	特小，共享内核，768MB 内存。
+-	小，单核，1.75GB 内存。
+-	中，双核，3.5GB 内存。
+-	大，4 核，7GB 内存。
+-	特大，8 核，14GB 内存。
+-	A6，4 核，28GB 内存。
+-	A7，8 核，56GB 内存。
 
 
 最后，选择你的新 VM 应在其中运行的 Azure 数据中心（无论是在美国、欧洲还是亚洲）。 
@@ -128,7 +128,7 @@ SharePoint 场有几个组件，每个组件在从不同 VHD 创建的 Azure VM 
 可以使用 Azure 虚拟机完成所有这些操作。但是创建和管理原始 VM 需要一些技巧和花一点功夫。如果你需要实现一个网站或 Web 应用程序，这里有一个更容易（也更便宜）的解决方案，这种方法通常称为"平台即服务"(PaaS)。如图 5 所示，Azure 可为此提供网站。
 
 
-<a name="Fig5"></a>![05_ Websites][05_ Websites]
+<a name="Fig5"></a>![05_Websites][05_Websites]
  
 **图 5：Azure 网站支持通过各种技术构建的静态网站、常用 Web 应用程序和自定义 Web 应用程序。** 
 
@@ -197,7 +197,7 @@ Azure 虚拟机提供 IaaS，而 Azure 网站提供 Web 宿主。第三个计算
 [02_CloudServices]: ./media/fundamentals-application-models/ExecModels_02_CloudServices.png
 [03_AppUsingSQLServer]: ./media/fundamentals-application-models/ExecModels_03_AppUsingSQLServer.png
 [04_SharePointFarm]: ./media/fundamentals-application-models/ExecModels_04_SharePointFarm.png
-[05_ Websites]: ./media/fundamentals-application-models/ExecModels_05_ Websites.png
+[05_Websites]: ./media/fundamentals-application-models/ExecModels_05_Websites.png
 [06_CloudServices2]: ./media/fundamentals-application-models/ExecModels_06_CloudServices2.png
 [07_CombineTechnologies]: ./media/fundamentals-application-models/ExecModels_07_CombineTechnologies.png
 
