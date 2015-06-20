@@ -1,28 +1,8 @@
-<properties linkid="develop-net-architecture-multi-tenant-web-application" urlDisplayName="Multi-Tenant Web Application Pattern" pageTitle="多租户 Web 应用程序模式 - Azure 体系结构" metaKeywords="" description="查找介绍如何在 Azure 中实现多租户 Web 应用程序的体系结构概述和设计模式。" metaCanonical="" services="" documentationCenter=".NET" title="Multitenant Applications in Azure" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-net-architecture-multi-tenant-web-application" urlDisplayName="Multi-Tenant Web Application Pattern" pageTitle="多租户 Web 应用程序模式 - Azure 体系结构" metaKeywords="" description="查找介绍如何在 Azure 中实现多租户 Web 应用程序的体系结构概述和设计模式。" metaCanonical="" services="" documentationCenter=".NET" title="Multitenant Applications in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/19/2014"
     wacn.date="04/11/2015"
     />
-
-
-
-<div>
-<div class="left-nav">
-<div class="static-nav">
-<ul>
-<li class="menu-nodejs-compute"><a href="/develop/net/compute/">计算</a></li>
-<li class="menu-nodejs-data"><a href="/develop/net/data/">数据服务</a></li>
-<li class="menu-nodejs-appservices"><a href="/develop/net/app-services/">应用程序服务</a></li>
-<li><a href="/develop/net/">指南</a></li>
-<li><a href="/zh-cn/documentation/articles/architecture-overview/">体系结构</a></li>
-<li><a href="/develop/net/">基于场景的教程</a></li>
-</ul>
-<ul class="links">
-<li class="forum"><a href="/support/forums/">论坛</a></li>
-</ul>
-</div>
-</div>
-</div>
 
 # Azure 中的多租户应用程序
 
