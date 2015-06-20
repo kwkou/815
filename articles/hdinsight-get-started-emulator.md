@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
+﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="03/03/2015"
     wacn.date="04/11/2015"
@@ -68,13 +68,13 @@ Microsoft HDInsight Emulator 可通过 Microsoft Web 平台安装程序进行安
 
     ![HDI.Emulator.Services][]
 
-    有关安装和运行 HDInsight Server 的已知问题，请参阅 [HDInsight Emulator 发行说明][]。安装日志位于 **C:\\HadoopFeaturePackSetup\\HadoopFeaturePackSetupTools\\gettingStarted.winpkg.install.log**。
+    有关安装和运行 HDInsight Server 的已知问题，请参阅 [HDInsight Emulator 发行说明][]。安装日志位于 **C:\HadoopFeaturePackSetup\\HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**。
 
 ##<a id="runwordcount"></a> 运行单词计数 MapReduce 作业
 
 现在你已在工作站上配置了 HDInsight Emulator。你可以运行 MapReduce 作业以便测试安装。你将首先将某些文本文件上载到 HDFS，然后运行单词计数 MapReduce 作业以便计算该单词在这些文件中出现的频率。
 
-单词计数 MapReduce 程序已打包到 *hadoop-examples.jar* 中。jar 文件位于 *C:\\Hadoop\\hadoop-1.1.0-SNAPSHOT* 文件夹中。
+单词计数 MapReduce 程序已打包到 *hadoop-examples.jar* 中。jar 文件位于 *C:\Hadoop\hadoop-1.1.0-SNAPSHOT* 文件夹中。
 
 jar 命令的语法是：
 
@@ -458,8 +458,8 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信�
 
 **配置与 Azure 存储帐户的连接**
 
-1.  在记事本中打开 **C:\\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf\\core-site.xml**。
-2.  将以下 \<property\> 标记添加到其他 \<property\> 标记旁：
+1.  在记事本中打开 **C:\Hadoop\hadoop-1.1.0-SNAPSHOT\conf\core-site.xml**。
+2.  将以下```<property>```标记添加到其他```<property>```标记旁：
 
         <property>
         <name>fs.azure.account.key.<StorageAccountName>.blob.core.chinacloudapi.cn</name>
@@ -484,8 +484,8 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信�
 
 **使用 Azure Blob 存储容器配置默认文件系统**
 
-1.  在记事本中打开 **C:\\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf\\core-site.xml**。
-2.  找到以下 \<property\> 标记：
+1.  在记事本中打开 **C:\Hadoop\hadoop-1.1.0-SNAPSHOT\conf\core-site.xml**。
+2.  找到以下```<property>```标记：
 
         <property>
         <name>fs.default.name</name>
@@ -495,7 +495,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信�
         <final>true</final>
         </property>
 
-3.  用以下两个 \<property\> 标记替换它：
+3.  用以下两个```<property>```标记替换它：
 
         <property>
         <name>fs.default.name</name>
@@ -566,7 +566,7 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
 
 -   [开始使用 Azure HDInsight][]
 -   [为 HDInsight 开发 Java MapReduce 程序][]
--   [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序][]
+-   [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序][]
 -   [HDInsight Emulator 发行说明][]
 -   [用于讨论 HDInsight 的 MSDN 论坛][]
 
@@ -596,5 +596,5 @@ HDInsight Emulator 支持某些 HDInsight PowerShell cmdlet。这些 cmdlet 包�
   [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
   [HDInsight cmdlet 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
   [为 HDInsight 开发 Java MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-  [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
   [用于讨论 HDInsight 的 MSDN 论坛]: http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=windowsazurezhchs
