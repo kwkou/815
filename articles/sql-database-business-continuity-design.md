@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="SQL Database 的业务连续性设计" 
    description="选择指南本部分将提供有关如何选择要使用的 BCDR 功能以及何时使用这些功能的指南。这包括使用 SQL DB 自动获取的内容的说明。"
    services="sql-database" 
@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
    ms.date="04/13/2015"
-   wacn.date="05/25/2015"
-   ms.author="elfish"/>
+   wacn.date="05/25/2015"/>
 
 # 业务连续性设计
 

@@ -1,4 +1,4 @@
-
+﻿
 <properties 
 	pageTitle="使用 CSharp 连接和查询 SQL Database" 
 	description="使用 ADO.NET 连接到 Azure SQL Database 云服务上的 AdventureWorks 数据库并与其交互的 CSharp 客户端代码示例。"
@@ -118,7 +118,7 @@
 
 
 ![Portal](./media/sql-database-connect-query/ConnectandQuery_portal.png)
-
+> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户
 
 在数据库连接字符串边栏选项卡上，你将看到 ADO.NET、ODBC、PHP 和 JDBC 的相应连接字符串。
 

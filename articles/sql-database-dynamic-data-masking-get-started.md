@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="SQL Database 动态数据屏蔽入门" 
    description="如何开始使用 SQL Database 动态数据屏蔽" 
    services="sql-database" 
@@ -8,9 +8,9 @@
    editor="v-romcal"/>
 
 <tags
-   ms.service="sql-database"    
-   ms.date="03/25/2015"
-   wacn.date="05/25.2015"/>
+	ms.service="sql-database"
+	ms.date="03/25/2015"
+	wacn.date="05/25.2015"/>
 
 # SQL Database 动态数据屏蔽入门 
 

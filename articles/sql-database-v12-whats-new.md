@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="SQL Database V12 的新增功能" 
 	description="介绍 Azure SQL Database 中添加的最新功能。" 
 	services="sql-database" 
@@ -66,7 +66,6 @@ Azure SQL Database 版本 V12（[在某些区域以预览版提供](sql-database
 
 | 功能 | 说明 |
 | :--- | :--- |
-| . | ***2014 年 12 月：*** |
 | <a name="UsersInContainedDatabases" id="UsersInContainedDatabases"></a>包含的数据库中的用户 | 现在，你可以在包含的数据库中创建用户，而无需在 master 数据库中创建相应的登录名。这样，将数据库迁移到另一台服务器就要方便得多。无论你是否使用包含的数据库用户，客户端应用程序中的连接代码都会相同。<br/><br/>使用此功能是受益于更高的、有保证的服务级别协议的极佳途径。<br/><br/>一般情况下，我们建议你考虑使用此功能。但是，在你的某些方案中，传统的 *登录名+用户*对形式可能暂时更适合你。<br/><br/>有关详细信息，请参阅：<br/>- [Azure SQL Database 安全指导原则和限制](http://msdn.microsoft.com/zh-cn/library/azure/ff394108.aspx)<br/>- [在 Azure SQL Database 中管理数据库和登录名](http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx)<br/>- [包含的数据库](http://msdn.microsoft.com/zh-cn/library/azure/ff929071.aspx) |
 | 表分区 | 以前对[表分区](http://msdn.microsoft.com/zh-cn/library/ms190787.aspx)的限制现已去除。|
 | 更大的事务 | 使用 V12 时，你不再受限于最多只能在一个事务中进行 2 GB 的数据修改。 <br/><br/> 该版本的优势之一在于，重建大型索引不再受限于 2 GB 事务大小限制。有关一般信息，请参阅 [Azure SQL Database 资源限制](http://msdn.microsoft.com/zh-cn/library/azure/dn338081.aspx)。 |
@@ -83,11 +82,8 @@ Azure SQL Database 版本 V12（[在某些区域以预览版提供](sql-database
 
 | 功能 | 说明 |
 | :--- | :--- |
-| . | ***2015 年 2 月：*** |
 | <a name="DynamicDataMasking" id="DynamicDataMasking"></a> 动态数据屏蔽预览版 | 在基于查询生成行集时，建立的数据屏蔽策略可将部分数据替换为"X"字符，以覆盖和保护敏感信息。在完成屏蔽操作后，会将修改的行集发送到客户端。<br/><br/>示例用法之一是屏蔽信用卡号中除最后几位数以外的所有数字。<br/><br/>**注意：**此功能处于预览状态，尚未宣布可在生产环境中使用的正式版。<br/><br/>有关详细信息，请参阅 [SQL Database 动态数据屏蔽入门](sql-database-dynamic-data-masking-get-started)。 |
-| . | ***2015 年 1 月：*** |
 | <a name="RowLevelSecurity" id="RowLevelSecurity"></a> 行级安全性 (RLS) 预览版 | 你可以使用 Transact-SQL 中新的 [CREATE SECURITY POLICY](http://msdn.microsoft.com/zh-cn/library/dn765135.aspx) 命令来实现 RLS。数据库服务器可通过 RLS 添加条件，以便在将行集返回给调用方之前筛选掉某些数据行。<br/><br/>在行业中，RLS 有时也称为精细访问控制。<br/><br/>**注意：**此功能处于预览状态，尚未宣布可在生产环境中使用的正式版。<br/><br/>有关代码示例和详细信息，请参阅[行级别安全性预览版](http://msdn.microsoft.com/zh-cn/library/7221fa4e-ca4a-4d5c-9f93-1b8a4af7b9e8.aspx)。 |
-| . | ***2014 年 12 月：*** |
 | Transact-SQL 查询中的开窗函数 | 可以使用 [OVER 子句](http://msdn.microsoft.com/zh-cn/library/ms189461.aspx)访问 ANSI 开窗函数。 <br/><br/> Itzik Ben-Gan 发表了一篇很好的[博客文章](http://sqlmag.com/sql-server-2012/how-use-microsoft-sql-server-2012s-window-functions-part-1)，其中对开窗函数和 OVER 子句做了深层解释。 |
 | .NET CLR 集成 | .NET framework 的 CLR（公共语言运行时）已集成到 V12。 <br/><br/> 仅支持已完全编译到二进制代码中的 SAFE 程序集。有关详细信息，请参阅 [CLR 集成编程模型限制](http://msdn.microsoft.com/zh-cn/library/ms403273.aspx)。 <br/><br/> 可在以下主题中找到有关此功能的信息： <br/> * [SQL Server CLR 集成简介](http://msdn.microsoft.com/zh-cn/library/ms254498.aspx) <br/> * [CREATE ASSEMBLY (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms189524.aspx)。 |
 | 数据更改跟踪 | 现在，可以在数据库或表级别配置数据更改跟踪。 <br/><br/> 有关更改跟踪的信息，请参阅[关于更改跟踪 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/bb933875.aspx)。 |
@@ -101,7 +97,6 @@ Azure SQL Database 版本 V12（[在某些区域以预览版提供](sql-database
 
 | 功能 | 说明 |
 | :--- | :--- |
-| . | ***2014 年 12 月：*** |
 | DMV（动态管理视图） | V12 中增加了多个 DMV。有关详细信息，请参阅 [Azure SQL Database Transact-SQL 参考](http://msdn.microsoft.com/zh-cn/library/azure/ee336281.aspx)。 |
 | 更改跟踪 | V12 完全支持更改跟踪。 <br/><br/> 有关此功能的详细信息，请参阅[启用和禁用更改跟踪 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/bb964713.aspx)。 |
 | 列存储索引 | 当索引列包含相同值的重复条目时，列存储索引可以改进数据仓库的系统性能。[列存储索引将压缩](http://msdn.microsoft.com/zh-cn/library/gg492088.aspx)重复值，以减少查询期间必须访问的物理行数。 |
@@ -115,7 +110,6 @@ Azure SQL Database 版本 V12（[在某些区域以预览版提供](sql-database
 
 | 功能 | 说明 |
 | :--- | :--- |
-| . | ***2014 年 12 月：*** |
 | 查询的并行处理 | 对于可从并行度受益的查询，V12 提供更高的并行度。|
 | 更短的 I/O 延迟 | V12 明显缩短了输入/输出操作的延迟时间。|
 | 提高了 IOPS | V12 可以处理更大的每秒输入/输出数量 (IOPS)。|
@@ -129,41 +123,6 @@ V12 增强了 SQL Database，使其功能几乎完全与我们的 SQL Server 产
 
 
 此外，高级层 V12 为性能带来了重大改进。某些应用程序的查询速度将会得到极大提高。工作负载较重的应用程序可以提供可靠稳定的吞吐量。
-
-
-## <a name="V12AzureSqlDbPreviewGaTable"></a>各区域的 V12 正式版 (GA) 发布状态
-
-
-> [AZURE.NOTE]
-> 预览版期间的[价格](/home/features/sql-database/#price)是折扣价。从 2015 年 3 月 31 日星期二开始，价格将回归到正式版的价位。
-
-
-| Azure 区域 | V12 当前<br/>发行状态 | 升级到正式版的<br/>日期 |
-| :--- | :--- | :--- |
-| 美国中南部 | 正式版 (GA) | 2015 年 2 月 9 日 |
-| 美国中部 | 正式版 (GA) | 2015 年 2 月 9 日 |
-| 美国中北部 | 正式版 (GA) | 2015 年 2 月 9 日 |
-| 美国西部 | 正式版 (GA) | 2015 年 2 月 9 日 |
-| 美国东部 | 正式版 (GA) | 2015 年 2 月 9 日 |
-| 美国东部 2 区 | 正式版 (GA) | 2015 年 2 月 9 日 |
-| 亚洲东部 | 正式版 (GA) | 2015 年 2 月 24 日 |
-| 亚洲东南部 | 正式版 (GA) | 2015 年 2 月 24 日 |
-| 日本西部 | 正式版 (GA) | 2015 年 2 月 24 日 |
-| 日本东部 | 正式版 (GA) | 2015 年 2 月 24 日 |
-| 欧洲北部 | 正式版 (GA) | 2015 年 2 月 29 日 |
-| 欧洲西部 | 正式版 (GA) | 2015 年 2 月 29 日 |
-| 巴西南部 |正式版 (GA) | 2015 年 4 月 21 日 |
-| 澳大利亚东部 | 预览版 | 2015 年第二季度（预计）|
-| 澳大利亚东南部 | 预览版 | 2015 年第二季度（预计）|
-
-
-在已经推出正式版的任何区域，所有新订阅及其后续数据库将使用 V12 服务体系结构，因此可以访问最新功能。本文列出的是 V12 附带的新功能。
-
-
-在推行预览版、尚未发布正式版的任何区域，必须[激活使用 V12 数据库的选项](sql-database-v12-sign-up)。
-
-
-在正式版推出后，如果你使用的是低于 V12 版的服务器和数据库，你可以选择将数据库升级（或迁移）到 V12 服务体系结构。然后，你便可以在生产环境中使用新功能。V12 数据库必须位于基本、标准版或高级[定价层](sql-database-upgrade-new-service-tiers)。
 
 
 ## 如何继续下一步
@@ -187,12 +146,3 @@ V12 增强了 SQL Database，使其功能几乎完全与我们的 SQL Server 产
 
 
 在将 V11 数据库升级到 V12 期间和之后，需要了解一些有关限制的重要事项。你可以通过这个指向 *规划和准备升级到 Azure SQL Database V12* 主题[中间部分](sql-database-v12-plan-prepare-upgrade#limitations)的链接来了解详细信息。
-
-
-
-
-
-
-[各区域的 V12 正式版 (GA) 发布状态]:#V12AzureSqlDbPreviewGaTable
-
-<!--HONumber=55-->

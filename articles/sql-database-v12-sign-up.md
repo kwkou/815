@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="演练：激活最新的 SQL Database Update V12"
 	description="介绍使用新的 Windows Azure 门户 UI 试用 Azure SQL Database 版本 V12 的步骤。"
 	services="sql-database"
@@ -18,10 +18,11 @@
 	wacn.date="05/25/2015"
 	ms.author="genemi"/>
 
+> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户
 
 # 演练：激活最新的 SQL Database Update V12
 
-本主题介绍你可以遵循哪些步骤来激活 Microsoft 在 2014 年 12 月首次发布的 Azure SQL Database V12 选项。
+本主题介绍你可以遵循哪些步骤来在2015年6月首次发布的 Azure SQL Database V12 选项。
 
 若要试用最新的 V12，首先需要订阅 Windows Azure，或者至少获得了一个[试用](/pricing/1rmb-trial/)订阅。
 
@@ -45,6 +46,8 @@
 有关 Azure 帐户的详细信息，请参阅[管理帐户、订阅和管理角色](http://msdn.microsoft.com/zh-cn/library/hh531793.aspx)。
 
 ## B. 门户 UI 中的步骤
+
+> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户
 
 本部分介绍在激活 V12 选项时，你可以在 Azure 门户 UI 中执行一次的单击序列。在激活该选项后，你仍可以使用此操作。
 
