@@ -1,9 +1,8 @@
 <properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="11/22/2014" wacn.date="04/11/2015"/>
+<tags ms.service="" ms.date="" wacn.date="06/24/2015"/>
 
 #中国 Windows Azure 应用程序开发人员说明
-####Microsoft Corporation
-####更新时间：2015年2月
+
 
 - [关于本文档](#about)
 - [为开发人员提供指导](#dev-guide)
