@@ -32,7 +32,7 @@
 
 若要使用 PowerShell 创建弹性池，你需要安装和运行 Azure PowerShell，并将其切换到资源管理器模式下，以便访问 Azure Resource Manager PowerShell Cmdlet。 
 
-你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装 Azure PowerShell 模块。<!--有关详细信息，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure)。-->
+你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装 Azure PowerShell 模块。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure)。
 
 用于创建和管理 Azure SQL Database 和弹性池的 cmdlet 位于 Azure 资源管理器模块中。启动 Azure PowerShell 时，默认情况下将导入 Azure 模块中的 cmdlet。若要切换到 Azure 资源管理器模块，请使用 Switch-AzureMode cmdlet。
 
@@ -222,7 +222,7 @@
 
 创建弹性池后，你可以通过创建弹性作业来管理池中的弹性数据库。弹性作业可以用来根据池中数据库的数目来运行 T-SQL 脚本。
 
-<!--有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。-->
+有关详细信息，请参阅[弹性数据库作业概述](sql-database-elastic-jobs-overview)。
 
 
 ## 弹性数据库参考

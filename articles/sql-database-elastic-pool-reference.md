@@ -45,10 +45,10 @@
 | [SQL Database 弹性池](sql-database-elastic-pool) | 弹性池概述 |
 | [使用 Azure 门户创建和管理 SQL Database 弹性池](sql-database-elastic-pool-portal) | 如何使用 Azure 门户创建和管理弹性池 |
 | [使用 PowerShell 创建和管理 SQL Database 弹性池](sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性池 |
-<!--| [弹性数据库作业概述](sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
+| [弹性数据库作业概述](sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
 | [安装弹性数据库作业组件](sql-database-elastic-jobs-service-installation) | 如何安装弹性数据库作业服务 |
 | [创建弹性作业服务所需的用户](sql-database-elastic-jobs-add-logins-to-dbs) | 若要运行弹性数据库作业脚本，必须将具有适当权限的用户添加到池中的每个数据库。|
-| [如何卸载弹性数据库作业组件](sql-database-elastic-jobs-uninstall) | 尝试安装弹性数据库作业服务时从故障中进行恢复 |-->
+| [如何卸载弹性数据库作业组件](sql-database-elastic-jobs-uninstall) | 尝试安装弹性数据库作业服务时从故障中进行恢复 |
 
 
 

@@ -15,10 +15,10 @@
 
 # SQL Database 动态数据屏蔽（Azure 门户）入门
 
-<!--
+
 > [AZURE.SELECTOR]
 - [Dynamic Data Masking - Azure Preview portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
--->
+
 
 ## 概述
 
