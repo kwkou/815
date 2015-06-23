@@ -1,8 +1,5 @@
-<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Haifeng Liu" />
-<tags ms.service=""
-    ms.date="11/22/2014"
-    wacn.date="04/11/2015"
-    />
+<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
+<tags ms.service="" ms.date="11/22/2014" wacn.date="04/11/2015"/>
 
 #中国 Windows Azure 应用程序开发人员说明
 ####Microsoft Corporation
@@ -42,7 +39,7 @@
 - [使用 Node.js 的 Windows Azure SDK](#nodejs)
 - [附录：Windows Azure 的内容库](#appendix)
 
-#[关于本文档]<a name="about"></a>
+#<a name="about"></a>关于本文档
 
 Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球服务的云应用程序。
 
@@ -52,13 +49,13 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 有关中国服务功能可用性的最新更新，请访问中国[Windows Azure 门户](http://www.windowsazure.cn/)。有关 Windows Azure 上当前内容资产的列表，请参阅本文档的附录。
  
-#[为开发人员提供指导]<a name="dev-guide"></a>
+#<a name="dev-guide"></a>为开发人员提供指导
 
 由于 Microsoft 提供的大部分英文技术内容当前均假定应用程序是针对全球服务而开发，而非中国服务，因此务必确保开发人员了解为托管于中国而开发的应用程序的主要区别。
 首先，功能上的差异，意即全球服务中的某些功能在中国不提供。
 其次，在中国提供的功能具有运营差异，意即如需使用公共英文内容（针对全球服务而撰写），则必须自定义任何示例代码和步骤。
 
-#[中国服务当前提供的功能]<a name="readyonwacn"></a>
+#<a name="readyonwacn"></a>中国服务当前提供的功能
 
 中国服务当前包含以下的 Windows Azure 功能。
 
@@ -69,7 +66,8 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 	-Windows Server 2012 R2 Data Center
 	
 	-SQL Server (包含 SQL Server 2014, SQL Server 2012, SQL Server 2008 R2 各版本)
-	 
+
+* 计算 – 虚拟机	 
 * 计算 – 云服务（适用于 PaaS 服务）
 * 计算 – 网站
 * 计算 – 移动服务
@@ -79,8 +77,8 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 * 数据服务 – HDInsight 
 * 数据服务 – 备份
 * 数据服务 - 站点恢复
+* 数据服务 - MySQL Database on Azure
 * 访问控制服务 – 拥有其自己的 UI 和命名空间
-* 缓存 – 仅支持专用缓存
 * 网络服务 – 虚拟网络（通过本地网络在云服务之间进行通信）
 * 网络服务 – 流量管理器
 * 应用服务 – 服务总线(服务总线) 
@@ -89,18 +87,33 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 * 应用服务 – CDN 
 * 应用服务 – 媒体服务 
 * 应用服务 – 通知中心
+* 应用服务 – 自动化
 
-#[中国服务当前未提供的功能]<a name="notonwacn"></a>
+#<a name="notonwacn"></a>中国服务当前未提供的功能
 
 中国服务当前不包含以下的 Windows Azure 功能。
 
 * 计算 – 在中国服务中，辅助角色实例不能作为计算资源添加到由 Microsoft HPC Pack 2008 R2 或 Microsoft HPC Pack 2012 创建的本地高性能计算 (HPC) 群集中。HPC Pack 仅支持在全球服务中添加辅助角色实例。
+* 计算 - Batch
+* 计算 - RemoteApp
+* 计算 - Service Febric
 * Access Control Service(访问控制服务)命名空间
 * 数据服务 – SQL Reporting
 * 数据服务 – SQL 数据同步
+* 数据服务 – DocumentDB
+* 数据服务 - Redis 缓存
+* 数据服务 - Azure搜索
+* 数据服务 - 机器学习
+* 数据服务 - 流分析
+* 数据服务 - 数据工厂
+* 网络服务 - ExpressRoute
+* 应用服务 - BizTalk 服务
+* 应用服务 - 多重身份认证（Multi-Factor Authentication）
 * SQL 数据库管理门户
+* 秘钥保管库
+* Visual Studio Online
 
-#[在中国服务上创建应用程序时的区别概述]<a name=""></a>cndiffoverview)
+#<a name="cndiffoverview"></a>在中国服务上创建应用程序时的区别概述
 
 Windows Azure 中的托管服务由一个设计为在托管服务中运行的应用程序和多个定义托管服务如何运行的 XML 配置文件组成。托管服务同时使用服务定义文件 (.csdef) 和配置文件 (.cscfg)。有关详细信息，请参阅[创建 Windows Azure 托管服务概述](http://msdn.microsoft.com/zh-cn/library/gg432976.aspx)。
 在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的 URI。例如，Windows Azure 和 SQL 数据库的 URI 通常以chinacloudapi.cn结尾。中国服务的开发人员必须能够识别 URI 端点的不同之处，然后将其使用的工具以及开发的应用程序配置为使用这些不同端点的对应 URI。
@@ -117,7 +130,7 @@ Windows Azure 中的托管服务由一个设计为在托管服务中运行的应
 * 使用设计为在 Windows Azure 上运行的工具和服务（这些工具和服务具有其自己的配置文件或服务定义文件）时
 * 使用 CSUPLOAD 工具为 VM 角色上传映像
 
-##[端点映射]<a name="endpointmap"></a>
+##<a name="endpointmap"></a>端点映射<a name="endpointmap"></a>
 
 将 Windows Azure 和 SQL 数据库公共端点映射到中国特定的端点时，请参照下表。
  
@@ -137,22 +150,22 @@ HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
 SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) <br /> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)
 
 
-#[中国的数据中心]<a name="cncenter"></a>
+#<a name="cncenter"></a>中国的数据中心
 
 中国服务当前运营着两个数据中心。这两个数据中心在location字段中显示为“China North”和“China East”。
  
 
-#[数据备份]<a name="databackup"></a>
+#<a name="databackup"></a>数据备份
 
 所有数据和设置（包括所有类型的配置、存储和数据库）均与“全球服务”相同的方式进行备份。中国两个数据中心中的所有数据进行复制，但并不会自动备份到全球的其他位置。
 
 如果整个系统出现灾难性故障，数据可能会丢失。为确保数据的连续性，开发人员应创建数据快照，并将其存储到 Windows Azure 之外的位置。
  
 
-#[设置用于开发的计算机]<a name="confdevcomp"></a>
+#<a name="confdevcomp"></a>设置用于开发的计算机
 
 准备发布应用程序时，请打开 Windows Azure 项目的快捷菜单，然后选择Publish。下图显示了 Publish Windows Azure Application 向导
-###[配置订阅]<a name="confsub"></a>
+###<a name="confsub"></a>配置订阅
 1. 从“Publish Windows Azure Application”向导的“Choose your subscription”下，选择 &lt;Manage…&gt;，然后再选择“New”。<br />
 ![developerdifferences-001](./media/developerdifferences/developerdifferences-001.png)
  
@@ -167,7 +180,7 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 	![developerdifferences-002](./media/developerdifferences/developerdifferences-002.png)
  
 
-###[配置设置]<a name="confpref"></a>
+###<a name="confpref"></a>配置设置
 1. 在 Cloud service 列表中，请执行以下两组步骤之一：
 
 	o 选择一项现有服务。此时将显示此云服务的数据中心的位置。记下这一位置并确保您的存储帐户位置与该数据中心位置相同。
@@ -188,18 +201,18 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 您可以选择两个更新部署选项（增量或同时）中的任意一个。增量部署一次更新一个已部署的实例，以使您的应用程序保持在线状态并可供用户使用。同时部署会一次性更新所有已部署的实例。同时更新的速度快于增量更新，但是如果选择此选项，您的应用程序在更新过程中可能会不可用。<br />
 当更新部署失败后，如果您希望自动执行完整部署，应选中复选框 *if deployment can't be updated, do a full deployment*。完整部署将重置云服务的虚拟 IP (VIP) 地址。有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614593.aspx">如何：为云服务保留固定的虚拟 IP 地址</a>。
 
-###[发布项目]<a name="pubproj"></a>
+###<a name="pubproj"></a>发布项目
 1. 您可以用所选的设置创建发布配置文件。例如，对于测试环境，您可能具有一个置文件，而对于生产则有另一个配置文件。要保存此配置文件，请选择Save图标。此向导将创建配置文件并将其保存在 Visual Studio 项目中。<br />
 ![developerdifferences-006](./media/developerdifferences/developerdifferences-006.png)<br />
 发布配置文件会显示在 Visual Studio 的 Solution Explorer 中，配置文件设置将被写入扩展名为 .azurePubxml 的文件中。这些设置均保存为 XML 标记的属性。
 
 2. 选择 Publish 以发布应用程序。您可以在 Visual Studio 中 Output 窗格中监控流程状态。
 
-#[修改中国服务的配置和服务定义文件]<a name="modifycnconf"></a>
+#<a name="modifycnconf"></a>修改中国服务的配置和服务定义文件
 
 修改现有项目时，请在指向 Windows Azure、SQL 数据库 URI 的服务定义文件或配置文件中搜索您的项目，以获取端点 URI。对于中国，应将指向 *.chinacloudapi.cn 的端点重定向至新的 URI。以下列出了几个示例。
 
-##[存储端点]<a name="storagendpoint"></a>
+##<a name="storagendpoint"></a>存储端点
 
 您必须使用自定义存储端点。默认设置指向 *.core.chinacloudapi.cn，其中 * 基于您的应用程序和存储位置而发生变更。
 
@@ -242,7 +255,7 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
     CloudBlobClient BlobClient = Account.CreateCloudBlobClient();
     )
     
-##[Windows Azure 计算中的端口绑定]<a name="waport"></a>
+##<a name="waport"></a>Windows Azure 计算中的端口绑定
 
 端口绑定还使用以 *.chinacloudapp.cn* 结尾的 DNS 名称。您必须更改这些名称以指向 *.chinacloudapp.cn*。以下显示了包括端口说明的部分服务定义文件。
 
@@ -260,7 +273,7 @@ Visual Studio 将在您的服务配置文件中创建一个自定义存储端点
     </Sites>
 有关详细信息，请参见<a href="http://msdn.microsoft.com/zh-cn/library/hh180158.aspx">如何配置Windows Azure 端口。
 
-##[与 SQL 数据库服务器的连接]<a name="sqlcon"></a>
+##<a name="sqlcon"></a>与 SQL 数据库服务器的连接
 
 SQL 数据库服务器名称将从 *.database.chinacloudapi.cn* 更改为 *.devdatabase.chinacloudapi.cn*。任何要连接到数据库的客户端应用程序或工具都必须对其连接字符串使用该新名称。对于未在中国服务中运行的应用程序，对 SQL 数据库服务器的引用可以是服务定义文件中的 DataConnectionString 值或其他 .NET 配置文件中的值。例如：
 
@@ -272,9 +285,9 @@ SQL 数据库服务器名称将从 *.database.chinacloudapi.cn* 更改为 *.devd
     </connectionStrings>
     </configuration>
 
-##[服务总线和Active Directory]<a name="srvbus-ad"></a>
+##<a name="srvbus-ad"></a>服务总线和Active Directory
  
-###[Active Directory]<a name="ad"></a>
+###<a name="ad"></a>Active Directory
 
 Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问功能，可用于内部部署和云应用。开发人员可以使用Windows Azure AD功能为企业应用和软件作为服务（SaaS）的供应商实现单点登录和登出，使用图形API来查询和管理云的目录对象，整合内部部署来将Active Directory的目录数据同步到云端。
 
@@ -331,10 +344,10 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 </tr>
 </tbody>
 </table--->
-<p class="TableSpacing"> 
+ 
 
 
-###[服务总线配置]<a name="srvbusconf"></a>
+###<a name="srvbusconf"></a>服务总线配置
 
 您可以通过以下方法之一将使用服务总线的应用程序重定向至特定端口：
 
@@ -344,35 +357,23 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 
 如果您运行的是 EXE 文件或辅助角色，则所有选项都将可用。如果您运行的是 Web 角色，则仅选项 3 可用。
 无论方法如何，端点名称都会更改，如下表所示。
-<table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; border-collapse: collapse; mso-border-alt: solid gray 1.5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0in 4.3pt 0in 4.3pt; mso-border-insideh: .75pt solid gray; mso-border-insidev: .75pt solid gray;">
-<thead>
-<tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
-<td width="295" valign="top" style="width: 221.4pt; border-top: 1.5pt; border-left: 1.5pt; border-bottom: 1.0pt; border-right: 1.0pt; border-color: gray; border-style: solid; mso-border-top-alt: 1.5pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-服务总线端点
-</td>
-<td width="295" valign="top" style="width: 221.4pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: 1.5pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-等效的中国 Windows Azure 服务总线端点
-</td>
-</tr>
-</thead>
-<tbody>
-<tr style="mso-yfti-irow: 3;">
-<td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-servicebus.windows.net
-</td>
-<td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-servicebus. chinacloudapi.cn
-</td>
-</tr>
-<tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
-<td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-accesscontrol.windows.net
-</td>
-<td width="295" valign="top" style="width: 221.4pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-accesscontrol. chinacloudapi.cn
-</td>
-</tr>
-</tbody>
+<table border="1" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <td width="295" valign="top" bgcolor="#D9D9D9"> 服务总线端点 </td>
+      <td width="295" valign="top" bgcolor="#D9D9D9"> 等效的中国 Windows Azure 服务总线端点 </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="295" valign="top"> servicebus.windows.net </td>
+      <td width="295" valign="top"> servicebus. chinacloudapi.cn </td>
+    </tr>
+    <tr>
+      <td width="295" valign="top"> accesscontrol.windows.net </td>
+      <td width="295" valign="top"> accesscontrol. chinacloudapi.cn </td>
+    </tr>
+  </tbody>
 </table>
 
 **选项 1：**要使用环境变量进行重定向，请执行以下操作：
@@ -407,70 +408,39 @@ accesscontrol. chinacloudapi.cn
 
 **选项 3：**要使用 ServiceBus.config 文件重定向所有应用程序，请执行以下操作：
 
-
 1. 在 .NET Framework 配置目录中查找现有 ServiceBus.config 文件。.NET Framework 配置目录取决于 32 位或 64 位的操作系统版本和已安装的框架版本，以下为常用位置。
 
-<table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; margin-left: 0.25in; border-collapse: collapse; mso-border-alt: solid gray 1.5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0in 4.3pt 0in 4.3pt; mso-border-insideh: .75pt solid gray; mso-border-insidev: .75pt solid gray;">
-<thead>
-<tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes;">
-<td width="199" valign="top" style="width: 149.25pt; border-top: 1.5pt; border-left: 1.5pt; border-bottom: 1.0pt; border-right: 1.0pt; border-color: gray; border-style: solid; mso-border-top-alt: 1.5pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-Microsoft .NET Framework 版本
-</td>
-<td width="178" valign="top" style="width: 133.15pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-操作系统版本
-</td>
-<td width="188" valign="top" style="width: 140.9pt; border-top: solid gray 1.5pt; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-left-alt: .75pt; mso-border-top-alt: 1.5pt; mso-border-bottom-alt: .5pt; mso-border-right-alt: 1.5pt; mso-border-color-alt: gray; mso-border-style-alt: solid; background: #D9D9D9; padding: 0in 4.3pt 0in 4.3pt;">
-目录
-</td>
-</tr>
-</thead>
-<tbody>
-<tr style="mso-yfti-irow: 1;">
-<td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-left-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-2.0 至 3.5
-</td>
-<td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-32 位
-</td>
-<td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-right-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-%Windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG
-</td>
-</tr>
-<tr style="mso-yfti-irow: 2;">
-<td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-left-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-2.0 至 3.5
-</td>
-<td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-64 位
-</td>
-<td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-right-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-%Windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG
-</td>
-</tr>
-<tr style="mso-yfti-irow: 3;">
-<td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-left-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-4.0
-</td>
-<td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-32 位
-</td>
-<td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.0pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-right-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-%Windir%\Microsoft.NET\Framework\v4.0.30319\Config
-</td>
-</tr>
-<tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes;">
-<td width="199" valign="top" style="width: 149.25pt; border-top: none; border-left: solid gray 1.5pt; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: .75pt; mso-border-left-alt: 1.5pt; mso-border-bottom-alt: 1.5pt; mso-border-right-alt: .75pt; mso-border-color-alt: gray; mso-border-style-alt: solid; padding: 0in 4.3pt 0in 4.3pt;">
-4.0
-</td>
-<td width="178" valign="top" style="width: 133.15pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.0pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; mso-border-alt: solid gray .75pt; mso-border-bottom-alt: solid gray 1.5pt; padding: 0in 4.3pt 0in 4.3pt;">
-64 位
-</td>
-<td width="188" valign="top" style="width: 140.9pt; border-top: none; border-left: none; border-bottom: solid gray 1.5pt; border-right: solid gray 1.5pt; mso-border-top-alt: solid gray .75pt; mso-border-left-alt: solid gray .75pt; padding: 0in 4.3pt 0in 4.3pt;">
-%Windir%\Microsoft.NET\Framework64\v4.0.30319\Config
-</td>
-</tr>
-</tbody>
-</table>
+<table border="1" cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <td width="199" valign="top" bgcolor="#D9D9D9"> Microsoft .NET Framework 版本 </td>
+      <td width="178" valign="top" bgcolor="#D9D9D9"> 操作系统版本 </td>
+      <td width="188" valign="top" bgcolor="#D9D9D9"> 目录 </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="199" valign="top"> 2.0 至 3.5 </td>
+      <td width="178" valign="top"> 32 位 </td>
+      <td width="188" valign="top"> %Windir%\Microsoft.NET\Framework\v2.0.50727\CONFIG </td>
+    </tr>
+    <tr>
+      <td width="199" valign="top"> 2.0 至 3.5 </td>
+      <td width="178" valign="top"> 64 位 </td>
+      <td width="188" valign="top"> %Windir%\Microsoft.NET\Framework64\v2.0.50727\CONFIG </td>
+    </tr>
+    <tr>
+      <td width="199" valign="top"> 4.0 </td>
+      <td width="178" valign="top"> 32 位 </td>
+      <td width="188" valign="top"> %Windir%\Microsoft.NET\Framework\v4.0.30319\Config </td>
+    </tr>
+    <tr>
+      <td width="199" valign="top"> 4.0 </td>
+      <td width="178" valign="top"> 64 位 </td>
+      <td width="188" valign="top"> %Windir%\Microsoft.NET\Framework64\v4.0.30319\Config </td>
+    </tr>
+  </tbody>
+</table>  
 
 2. 如果目录中存在现有 ServiceBus.config 文件，则必须编辑该文件以添加选项 2 中概述的 XML 配置（使用 ServiceBus.config 的单个重定向）。如果添加该配置会与现有 ServiceBus.config 文件中已存在的信息冲突，则不能使用此选项。必须使用选项 1 或 2。
 
@@ -483,7 +453,7 @@ Microsoft .NET Framework 版本
 	for /f %%i in ('dir /s /b config') do copy /y %~dp0servicebus.config %%~fi
 	popd
 
-#[使用服务管理 API]<a name="srvapi"></a>
+#<a name="srvapi"></a>使用服务管理 API
 
 通过服务管理 API，开发人员可以对 Windows Azure 中运行的托管服务进行部署管理。事实上，全球服务和中国服务的管理门户都使用服务管理 API。
 全球服务使用的路径为<a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic">
@@ -492,41 +462,41 @@ Microsoft .NET Framework 版本
 有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/ee460786.aspx">访问服务管理资源</a>和<a href="http://msdn.microsoft.com/zh-cn/library/ee460807.aspx">关于服务管理 API</a>。
  
 
-#[将自定义域名重定向到中国服务中的托管服务]<a name="dnsred"></a>
+#<a name="dnsred"></a>将自定义域名重定向到中国服务中的托管服务
 
 如果您使用的自定义域名转发到在全球服务中运行的托管服务，并将该托管服务移动到中国服务中，则必须更新转发的域以指向中国的新特定端点。
 例如，如果将 www.contoso.com 重定向到在 contoso.chinacloudapp.cn 运行的 Web 角色，现在必须将其重定向到 contoso.chinacloudapp.cn。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/gg981933.aspx">如何为 Windows Azure 托管服务配置自定义域</a> 
 组织可以使用其 DNS 服务器上的 CNAME 条目转发域。中国服务不包括允许自定义域名注册或转发的功能。
  
 
-#[对中国服务使用 VM 角色]<a name="usecnvm"></a>
+#<a name="usecnvm"></a>对中国服务使用 VM 角色
 
-##[使用 VM 角色和 CSUpload]<a name="usevm"></a>
+##<a name="usevm"></a>使用 VM 角色和 CSUpload
 
 使用 VM 角色时，请更改 CSUpload 端点以便使用特定于中国的 URI。例如：
 csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt;</span>;CertificateThumbprint=<span class="Italic">&lt;certThumbprint&gt;</span>;<br />ServiceManagementEndpoint=https://management.core.chinacloudapi.cn"
  
 
-#[修改代码示例和工具]<a name="codetool"></a>
+#<a name="codetool"></a>修改代码示例和工具
 
 下面列出了部分工具和示例及其要在世纪互联服务上运行所需的更改。
 
-##[常规工具]<a name="nomaltool"></a>
+##<a name="nomaltool"></a>常规工具
 
 开发人员应该识别引用全球服务计算 (*.chinacloudapp.cn) 或存储端点 (*.core.chinacloudapi.cn) 的内部工具或应用程序，并对其进行更新以便使用特定于中国的端点。按照端点映射中的表，替换可在配置文件或这些工具的代码中找到的各个字符串。
 其中的示例包括存储资源管理器工具以及存储上传和下载工具。本节中列出了一些工具，但该列表并不完整。
 
-##[Visual Studio 服务器资源管理器]<a name="vsexplorer"></a>
+##<a name="vsexplorer"></a>Visual Studio 服务器资源管理器
 
 可以使用 Visual Studio 中的服务器资源管理器浏览适用于所有中国订阅的计算、服务总线、存储以及虚拟机资源。用户导入发布设置文件时，Visual Studio 将获取中国存储端点。
 <a href="http://msdn.microsoft.com/zh-cn/library/ff687127.aspx">Windows Azure Tools for Visual Studio 入门</a><a name="_Hlt357777468"></a><a name="_Hlt357777469"></a>中逐步介绍了使用服务器资源管理器创建、编译、调试、上传以及查看 Windows Azure Hello World 应用程序的完整过程。将中国订阅导入 Visual Studio 后，这些说明即可在中国安装上使用。
 还可以查看已经在中国服务上但未使用 Visual Studio 部署的计算、服务总线、存储或虚拟机资源。按照<a href="http://msdn.microsoft.com/zh-cn/library/ff683675.aspx">使用 Windows Azure 计算资源管理器查看 Azure 应用程序的状态</a>中的说明查看已经在世纪互联服务上运行的一个或多个托管服务的状态。按照<a href="http://msdn.microsoft.com/zh-cn/library/ff683677.aspx">使用 Windows Azure 存储资源管理器浏览存储资源</a>中的说明查看中国服务上运行的现有存储帐户中的对象。
 
-##[CSManage - Windows Azure 服务管理示例]<a name="csmanage"></a>
+##<a name="csmanage"></a>CSManage - Windows Azure 服务管理示例
 
 CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="http://code.msdn.microsoft.com/Windows-Azure-CSManage-e3f1882c/sourcecode?fileId=21328&amp;pathId=1293677472">服务管理示例</a>中下载 CSManage 示例。
 
-##[为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例]<a name="plainhttp"></a>
+##<a name="plainhttp"></a>为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例
 
 当在中国运行时，需要对 PlainHttp 示例中的 URL 进行多项更新。按照以下步骤更新该示例。
 1.打开此示例的根文件夹：WindowsAzureAppFabricSDKSamples_V1.0-CS\ServiceBus\ExploringFeatures\MessageBuffer\PlainHttp 
@@ -534,7 +504,7 @@ CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用
 chinacloudapi.cn实例更改为 *.chinacloudapi.cn。参见第 31、77 和 98 行。
  
 
-#[使用 Windows Azure 诊断]<a name="wadig"></a>
+#<a name="wadig"></a>使用 Windows Azure 诊断
 
 Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储帐户来存储诊断信息。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/gg433048.aspx">使用 Windows Azure 诊断收集日志记录数据</a>
 例如，您的代码可能包含以下行
@@ -548,16 +518,16 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 	</ConfigurationSettings>
 `<YourStorageString>`的值为自定义端点并包括世纪互联服务的 URI。
 
-#[重新颁发 HTTPS 端点的证书]<a name="http-cert"></a>
+#<a name="http-cert"></a>重新颁发 HTTPS 端点的证书
 
 使用自定义域名时无需对证书进行更改。
 如果任何现有应用程序使用 HTTPS 端点并将证书绑定到**https://*.chinacloudapp.cn**（其中 ** * **为您的服务名称），则必须为 ***.chinacloudapp.cn** 重新颁发这些证书。在中国部署该服务时，必须使用这些新证书。
  
-#[使用 Windows Azure PowerShell]<a name="powershell"></a>
+#<a name="powershell"></a>使用 Windows Azure PowerShell
 
 要对中国服务使用*Windows Azure PowerShell*，请运行**Get-AzurePublishSettingsFile -Environment "AzureChinaCloud"** 来获取正确的*publish settings*文件。然后使用**Import-AzurePublishSettingsFile**导入。
 
-#[使用 Node.js 的 Windows Azure SDK]<a name="nodejs"></a>
+#<a name="nodejs"></a>使用 Node.js 的 Windows Azure SDK
 
 要对中国服务使用 SDK，需要从门户或通过 CLI 提供连接字符串。
 **存储、服务总线和通知总线**
@@ -574,184 +544,94 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
 	var sqlManagementService = azure.createSqlManagementService(subscriptionId, authentication, hostOptions);
  
 
-#[附录：Windows Azure 的内容库]<a name="appendix"></a>
+#<a name="appendix"></a>附录：Windows Azure 的内容库
 
 下面列出了目前可用于 Windows Azure 的所有内容资产，并指出该资产是否专门针对中国服务。
  
-<table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border: currentColor; border-image: none; width: 850px; margin-left: 0.9pt; border-collapse: collapse;">
-<tbody>
-<tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 15.0pt;">
-<td width="130" valign="top" style="width: 97.45pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<strong>资产</strong>
-</td>
-<td width="180" valign="top" style="width: 135.0pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<strong>内容是否专为中国创建</strong>
-</td>
-<td width="794" valign="top" style="width: 595.45pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 5.4pt 0in 5.4pt; height: 15.0pt;">
-<strong>说明</strong>
-</td>
-</tr>
-<tr style="mso-yfti-irow: 1; height: 15.0pt;">
-<td width="130" valign="top">
-windowsazure.cn
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-Windows Azure 的全球门户。
-</td>
-</tr>
-<tr style="mso-yfti-irow: 2; height: 15.0pt;">
-<td width="130" valign="top">
-windowsazure.cn
-</td>
-<td width="180" valign="top">
-是
-</td>
-<td width="794" valign="top">
-专为在中国运营的 Windows Azure 构建的门户
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-Windows Azure 案例研究
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-<a href="http://azure.microsoft.com/zh-cn/case-studies/">http://azure.microsoft.com/zh-cn/case-studies/</a>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-中国案例研究
-</td>
-<td width="180" valign="top">
-是
-</td>
-<td>
-<a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-P&amp;P 丛书
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-<ul style="margin-top: 0in;">
-<li><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
-<li><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
-<li><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure" target="_blank">云应用开发(第2版) </a></li>
-</ul>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-MVP 的著作
-</td>
-<td width="180" valign="top">
-否
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-MSDN 库
-</td>
-<td width="180" valign="top">
-一定
-</td>
-<td width="794" valign="top">
-<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx">http://msdn.microsoft.com/zh-cn/library/windowsazure/dd179367.aspx</a>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-Windows Azure 团队的博客
-</td>
-<td width="180" valign="top">
-不一定
-</td>
-<td width="794" valign="top">
-<a href="http://blogs.msdn.com/b/azchina/">http://blogs.msdn.com/b/azchina/</a>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-MSDN Azure 门户
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-<a href="http://msdn.microsoft.com/zh-cn/ff380142">http://msdn.microsoft.com/zh-cn/ff380142</a><a name="_Hlt358907713"></a><a name="_Hlt358907714"></a>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-MSDN 杂志
-</td>
-<td width="180" valign="top">
-否
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-虚拟实验室
-</td>
-<td width="180" valign="top">
-否
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-视频
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-第 9 频道的视频讨论全球服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同
-</td>
-</tr>
-<tr style="mso-yfti-irow: 13; height: 15.0pt;">
-<td width="130" valign="top">
-Windows Azure 培训包
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-Github 中的本地化培训包用于全球服务
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-MSDN 代码库
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-<a href="http://code.msdn.microsoft.com/windowsazure/">http://code.msdn.microsoft.com/windowsazure/</a>
-</td>
-</tr>
-<tr>
-<td width="130" valign="top">
-Github
-</td>
-<td width="180" valign="top">
-否
-</td>
-<td width="794" valign="top">
-我们仅在此处托管 windowsazure.cn 的英文内容，不提供本地化内容
-</td>
-</tr>
-</tbody>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td width="130" valign="top"><strong>资产</strong></td>
+      <td width="180" valign="top"><strong>内容是否专为中国创建</strong></td>
+      <td width="794" valign="top"><strong>说明</strong></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top">azure.microsoft.com</td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"> Windows Azure 的全球门户。 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> windowsazure.cn </td>
+      <td width="180" valign="top"> 是 </td>
+      <td width="794" valign="top"> 专为在中国运营的 Windows Azure 构建的门户 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> Windows Azure 案例研究 </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"><a href="http://azure.microsoft.com/zh-cn/case-studies/">http://azure.microsoft.com/zh-cn/case-studies/</a></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> 中国案例研究 </td>
+      <td width="180" valign="top"> 是 </td>
+      <td><a href="http://www.windowsazure.cn/zh-cn/home/case-studies/">http://www.windowsazure.cn/zh-cn/home/case-studies/</a></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> P&amp;P 丛书 </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"><ul>
+          <li><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
+          <li><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
+          <li><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure" target="_blank">云应用开发(第2版) </a></li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> MVP 的著作 </td>
+      <td width="180" valign="top"> 否 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> MSDN 库 </td>
+      <td width="180" valign="top"> 一定 </td>
+      <td width="794" valign="top"><a href="https://msdn.microsoft.com/library/azure/">https://msdn.microsoft.com/library/azure/</a></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> Windows Azure 团队的博客 </td>
+      <td width="180" valign="top"> 不一定 </td>
+      <td width="794" valign="top"><a href="http://blogs.msdn.com/b/azchina/">http://blogs.msdn.com/b/azchina/</a></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> MSDN Azure 门户 </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"><a href="http://msdn.microsoft.com/zh-cn/ff380142">http://msdn.microsoft.com/zh-cn/ff380142</a><a name="_Hlt358907713"></a><a name="_Hlt358907714"></a></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> MSDN 杂志 </td>
+      <td width="180" valign="top"> 否 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> 虚拟实验室 </td>
+      <td width="180" valign="top"> 否 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> 视频 </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"> 第 9 频道的视频讨论全球服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> Windows Azure 培训包 </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"> Github 中的本地化培训包用于全球服务 </td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> MSDN 代码库 </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"><a href="http://code.msdn.microsoft.com/windowsazure/">http://code.msdn.microsoft.com/windowsazure/</a></td>
+    </tr>
+    <tr>
+      <td width="130" valign="top"> Github </td>
+      <td width="180" valign="top"> 否 </td>
+      <td width="794" valign="top"> 我们仅在此处托管 windowsazure.cn 的英文内容，不提供本地化内容 </td>
+    </tr>
+  </tbody>
 </table>
  
  
