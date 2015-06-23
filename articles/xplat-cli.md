@@ -394,7 +394,7 @@ xplat-cli 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
   [其他资源]: #additional-resources
   [Windows 安装程序]: http://go.microsoft.com/fwlink/?LinkID=275464&clcid=0x409
   [OS X 安装程序]: http://go.microsoft.com/fwlink/?LinkId=252249
-  []: https://manage.windowsazure.cn
+  
   [以组织身份注册 Windows Azure]: /zh-cn/documentation/articles/sign-up-organization/
   [“基于帐户的身份验证和基于证书的身份验证之间的区别是什么”]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
   [结合使用 Azure 跨平台命令行接口和 Resource Manager]: /zh-cn/documentation/articles/xplat-cli-azure-resource-manager/
