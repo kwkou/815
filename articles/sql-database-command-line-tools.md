@@ -32,7 +32,8 @@
 
 1. 将以下 PowerShell cmdlet 块复制到文本编辑器中。
 ```powershell
-		Add-AzureAccount #Only needed if you have not been authenicated yet. For Azure Automation, you will need to set up a Service Principal.
+		Add-AzureAccount 
+#Only needed if you have not been authenicated yet. For Azure Automation, you will need to set up a Service Principal.
 		Switch-AzureMode -Name AzureServiceManagement
 		$AzureServer = New-AzureSqlDatabaseServer -AdministratorLogin "<Service Admin Login>" -AdministratorLoginPassword "<ServerLoginPassword>" -Location "<Location>" -Version "12.0" -verbose
 		New-AzureSqlDatabase -ServerName $AzureServer.ServerName -DatabaseName  "<Database1>" -Edition "Standard" -verbose
@@ -59,7 +60,8 @@
 
 此 PowerShell 脚本将在中国北部创建资源 
 ```powershell
-		Add-AzureAccount #Needed if you have not been authenicated yet. For Azure Automation, you will need to set up a Service Principal.
+		Add-AzureAccount 
+#Needed if you have not been authenicated yet. For Azure Automation, you will need to set up a Service Principal.
 		Switch-AzureMode -Name AzureServiceManagement
 		$AzureServer = New-AzureSqlDatabaseServer -AdministratorLogin "admin" -AdministratorLoginPassword "P@ssword" -Location "China North" -Version "12.0" -verbose
 		New-AzureSqlDatabase -ServerName $AzureServer.ServerName -DatabaseName  "Database1" -Edition "Standard" -verbose
