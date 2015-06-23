@@ -1,4 +1,4 @@
-<properties linkid="develop-node-how-to-sql-database" urlDisplayName="SQL数据库" pageTitle="How to use SQL数据库 (Node.js) - Azure feature guide" metaKeywords="" description="Learn how to use Azure SQL数据库 from Node.js." metaCanonical="" services="sql-database" documentationCenter="Node.js" title="How to Access Azure SQL数据库 from Node.js" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-node-how-to-sql-database" urlDisplayName="SQL数据库" pageTitle="How to use SQL数据库 (Node.js) - Azure feature guide" metaKeywords="" description="Learn how to use Azure SQL数据库 from Node.js." metaCanonical="" services="sql-database" documentationCenter="Node.js" title="How to Access Azure SQL数据库 from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="sql-database"
     ms.date="10/11/2014"
     wacn.date="04/11/2015"
@@ -46,7 +46,7 @@ Microsoft 的 Node.JS for SQL Server 驱动程序允许开发人员从 Node.js �
 
 ### 安装 Node.js
 
-可以从 [][]<http://nodejs.org/#download></a> 安装 Node.js。如果安装包不适用于你的操作系统，你可以从源代码生成 Node.js。
+可以从 [nodejs][nodejs]<http://nodejs.org/#download></a> 安装 Node.js。如果安装包不适用于你的操作系统，你可以从源代码生成 Node.js。
 
 ## <span id="CreateServer"></span></a>如何：创建 SQL数据库
 
@@ -172,7 +172,7 @@ Azure 不会在运行时动态安装 node-sqlserver 模块，因此你必须确�
   [Github 页面]: https://github.com/WindowsAzure/node-sqlserver
   [维基]: https://github.com/WindowsAzure/node-sqlserver/wiki
   [Microsoft SQL Server 2012 功能包]: http://www.microsoft.com/zh-cn/download/details.aspx?id=29065
-  []: http://nodejs.org/#download
+  [nodejs]: http://nodejs.org/#download
   [创建新的 Azure 网站]: ./media/sql-database-nodejs-how-to-use/new_website.jpg
   [自定义创建新的 SQL数据库]: ./media/sql-database-nodejs-how-to-use/create_custom_sql_db.jpg
   [填写 SQL数据库 设置]: ./media/sql-database-nodejs-how-to-use/new-sql-db.png

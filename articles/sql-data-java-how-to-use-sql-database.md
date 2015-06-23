@@ -1,4 +1,4 @@
-<properties linkid="develop-java-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Azure (Java) - Azure 功能指南" metaKeywords="" description="了解如何通过 Java 代码使用 Azure SQL Database。 " metaCanonical="" services="sql-database" documentationCenter="Java" title="How to Use Azure SQL Database in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+﻿<properties linkid="develop-java-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Azure (Java) - Azure 功能指南" metaKeywords="" description="了解如何通过 Java 代码使用 Azure SQL Database。 " metaCanonical="" services="sql-database" documentationCenter="Java" title="How to Use Azure SQL Database in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="sql-database"
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -54,21 +54,21 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并以 SQL Server 
 通过 Java 代码使用 Azure SQL Database 之前，需要创建 Azure SQL Database 服务器。
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击"新建"****。
+2. 单击**"新建"**。
 
     ![Create new SQL database][create_new]
 
-3. 单击"SQL database"****，然后单击"自定义创建"****。
+3. 单击**"SQL database"**，然后单击**"自定义创建"**。
 
     ![Create custom SQL database][create_new_sql_db]
 
-4. 在"数据库设置"****对话框中，指定数据库名称。在本指南中，使用 **gettingstarted** 作为数据库名称。
-5. 对于"服务器"****，选择"新建 SQL Database 服务器"****。对其他字段使用默认值。
+4. 在**"数据库设置"**对话框中，指定数据库名称。在本指南中，使用 **gettingstarted** 作为数据库名称。
+5. 对于**"服务器"**，选择**"新建 SQL Database 服务器"**。对其他字段使用默认值。
 
     ![SQL database settings][create_database_settings]
 
 6. 单击"下一步"箭头。	
-7. 在"服务器设置"****对话框中，指定 SQL Server 登录名。在本指南中，使用了 **MySQLAdmin**。指定并确认密码。指定一个区域，并确保选中了"允许 Azure 服务访问服务器"****。
+7. 在**"服务器设置"**对话框中，指定 SQL Server 登录名。在本指南中，使用了 **MySQLAdmin**。指定并确认密码。指定一个区域，并确保选中了**"允许 Azure 服务访问服务器"**。
 
     ![SQL server settings][create_server_settings]
 
@@ -77,14 +77,14 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并以 SQL Server 
 <h2><a id="determine_connection_string"></a>确定 SQL Database 连接字符串</h2>
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击"SQL Database"****。
+2. 单击**"SQL Database"**。
 3. 单击要使用的数据库。
-4. 单击"显示连接字符串"****。
-5. 突出显示"JDBC"****连接字符串的内容。
+4. 单击**"显示连接字符串"**。
+5. 突出显示**"JDBC"**连接字符串的内容。
 
     ![Determine JDBC connection string][get_jdbc_connection_string]
 
-6. 右键单击"JDBC"****连接字符串的突出显示内容，然后单击"复制"****。
+6. 右键单击**"JDBC"**连接字符串的突出显示内容，然后单击**"复制"**。
 7. 您现在可以将此值粘贴到代码文件中以创建以下形式的连接字符串。将 *your_server*（在两个位置中）替换为在上一步中复制的文本，并将 *your_password* 替换为创建 SQL Database 帐户时指定的密码值。（如果未使用 **gettingstarted** 和 **MySQLAdmin**，则还要分别替换分配给 **database=** 和 **user=** 的值。） 
 
 		String connectionString =
@@ -100,12 +100,12 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并以 SQL Server 
 
 <h2><a id="specify_allowed_ips"></a>允许访问一系列 IP 地址</h2>
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
-2. 单击"SQL Database"****。
-3. 单击"服务器"****。
+2. 单击**"SQL Database"**。
+3. 单击**"服务器"**。
 4. 单击要使用的服务器。
-5. 单击"管理"****。
-6. 单击"配置"****。
-7. 在"允许的 IP 地址"****下，输入新 IP 规则的名称。指定 IP 地址的开始和结束范围。为方便起见，将会显示当前的客户端 IP 地址。以下示例允许使用单个客户端 IP 地址（您的 IP 将与此不同）。
+5. 单击**"管理"**。
+6. 单击**"配置"**。
+7. 在**"允许的 IP 地址"**下，输入新 IP 规则的名称。指定 IP 地址的开始和结束范围。为方便起见，将会显示当前的客户端 IP 地址。以下示例允许使用单个客户端 IP 地址（您的 IP 将与此不同）。
 
     ![Allowed IP addresses dialog][allowed_ips_dialog]
 
@@ -119,15 +119,15 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并以 SQL Server 
 
    如果使用了 Eclipse：
 
-    1. 在 Eclipse 的"项目资源管理器"中，右键单击"HelloSQLAzure"****项目并单击"属性"****。
-    2. 在"属性"****对话框的左侧窗格中，单击"Java 生成路径"****。
-    3. 单击"库"****选项卡，然后单击"添加库"****。
-    4. 在"添加库"****对话框中，选择"Microsoft JDBC Driver 4.0 for SQL Server"****、单击"下一步"****，然后单击"完成"****。
-    5. 单击"确定"****以关闭"属性"****对话框。
+    1. 在 Eclipse 的"项目资源管理器"中，右键单击**"HelloSQLAzure"**项目并单击**"属性"**。
+    2. 在**"属性"**对话框的左侧窗格中，单击**"Java 生成路径"**。
+    3. 单击**"库"**选项卡，然后单击**"添加库"**。
+    4. 在**"添加库"**对话框中，选择**"Microsoft JDBC Driver 4.0 for SQL Server"**、单击**"下一步"**，然后单击**"完成"**。
+    5. 单击**"确定"**以关闭**"属性"**对话框。
 
     如果您使用的不是 Eclipse，请将 Microsoft JDBC Driver 4.0 for SQL Server JAR 添加到您的类路径。若要了解相关信息，请参阅[使用 JDBC Driver](http://msdn.microsoft.com/zh-cn/library/ms378526.aspx)。
 
-4. 在"HelloSQLAzure.java"****代码中，添加"import"语句，如下所示：
+4. 在**"HelloSQLAzure.java"**代码中，添加"import"语句，如下所示：
 
         import java.sql.*;
         import com.microsoft.sqlserver.jdbc.*;
@@ -698,11 +698,11 @@ Azure SQL Database 为 Azure 提供关系数据库管理系统并以 SQL Server 
 
 **在使用 Eclipse 的情况下打包 Microsoft JDBC Driver 4.0 SQL Server**
 
-1. 在 Eclipse 的"项目资源管理器"中，右键单击您的项目并单击"属性"****。
-2. 在"属性"****对话框的左侧窗格中，单击"部署程序集"****，然后单击"添加"****。
-3. 在"新建程序集指令"****对话框中，单击"Java 生成路径项"****，然后单击"下一步"****。
-4. 选择"Microsoft JDBC Driver 4.0 SQL Server"****，然后单击"完成"****。
-5. 单击"确定"****以关闭"属性"****对话框。
+1. 在 Eclipse 的"项目资源管理器"中，右键单击您的项目并单击**"属性"**。
+2. 在**"属性"**对话框的左侧窗格中，单击**"部署程序集"**，然后单击**"添加"**。
+3. 在**"新建程序集指令"**对话框中，单击**"Java 生成路径项"**，然后单击**"下一步"**。
+4. 选择**"Microsoft JDBC Driver 4.0 SQL Server"**，然后单击**"完成"**。
+5. 单击**"确定"**以关闭**"属性"**对话框。
 6. 按照[使用 Azure Plugin for Eclipse with Java（由 Microsoft Open Technologies 提供）创建 Hello World 应用程序](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx)中所记录的步骤，将项目的 WAR 文件导出到 approot 文件夹，然后重新生成 Azure 项目。本主题还介绍了如何在计算仿真程序和 Azure 中运行应用程序。
 
 **在未使用 Eclipse 的情况下打包 Microsoft JDBC Driver 4.0 SQL Server**

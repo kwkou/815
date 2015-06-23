@@ -1,4 +1,4 @@
-<properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create & provision" pageTitle="SQL数据库 入门 - Azure" metaKeywords="" description="开始在 Azure 中创建和管理 SQL数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="Azure SQL数据库 入门" authors=""  solutions="" writer="" manager="" editor=""  />
+﻿<properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create & provision" pageTitle="SQL数据库 入门 - Azure" metaKeywords="" description="开始在 Azure 中创建和管理 SQL数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="Azure SQL数据库 入门" authors=""  solutions="" writer="" manager="" editor=""  />
 <tags ms.service="sql-database"
     ms.date="10/11/2014"
     wacn.date="04/11/2015"
@@ -765,7 +765,7 @@ SQL Server 身份验证登录名用于建立服务器连接。访问 SQL数据�
 
 输入 SQL Server 身份验证登录名。出于测试目的，您可以使用在设置服务器时创建的管理员登录名。若要进行常规数据访问，请使用与您刚创建的数据库用户登录名类似的登录名。
 
-    ![Image16](./media/sql-database-get-started/16ExcelConnect_SQLTut.png)
+![Image16](./media/sql-database-get-started/16ExcelConnect_SQLTut.png)
 
 1.  在下一页上，选择 **School** 数据库，然后选择 **Course**。单击“完成”。
 
