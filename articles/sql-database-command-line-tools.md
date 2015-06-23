@@ -14,8 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/13/2015"
-	wacn.date="05/25/2015"  
-	ms.author="vinsonyu"/>
+	wacn.date="05/25/2015"/>
 
 # 使用 PowerShell 管理 SQL Azure 资源
 
