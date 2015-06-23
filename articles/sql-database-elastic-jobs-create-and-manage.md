@@ -7,10 +7,7 @@
 	authors="sidneyh"
 	editor=""/>
 
-<tags
-	ms.service="sql-database"  
-	ms.date="04/29/2015"
-	wacn.date="06/23/2015"/>
+<tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="06/23/2015"/>
 
 # 创建和管理弹性数据库作业
 
@@ -95,6 +92,7 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-jobs-create-and-manage/screen-1.png
 [2]: ./media/sql-database-elastic-jobs-create-and-manage/click-manage-jobs.png
 [3]: ./media/sql-database-elastic-jobs-create-and-manage/running-jobs.png

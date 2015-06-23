@@ -7,10 +7,7 @@
 	manager="jeffreyg"
 	authors="sidneyh"/>
 
-<tags
-	ms.service="sql-database"  
-	ms.date="04/23/2015"
-	wacn.date="06/23/2015"/>
+<tags ms.service="sql-database" ms.date="04/23/2015" wacn.date="06/23/2015"/>
 
 # 弹性数据库作业概述
 
@@ -57,6 +54,7 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
