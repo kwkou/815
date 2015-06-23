@@ -7,10 +7,7 @@
 	authors="sidneyh"
 	editor=""/>
 
-<tags
-	ms.service="sql-database"  
-	ms.date="04/20/2015"
-	wacn.date="06/23/2015"/>
+<tags ms.service="sql-database" ms.date="04/20/2015" wacn.date="06/23/2015"/>
 
 # 如何卸载弹性数据库作业组件
 

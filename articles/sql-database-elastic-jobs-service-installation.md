@@ -7,10 +7,7 @@
 	authors="sidneyh"
 	editor=""/>
 
-<tags
-	ms.service="sql-database"  
-	ms.date="04/29/2015"
-	wacn.date="06/23/2015"/>
+<tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="06/23/2015"/>
 
 # 安装弹性数据库作业服务
 
@@ -54,6 +51,7 @@
 若要了解作业创建过程，请参阅[创建和管理弹性数据库作业](sql-database-elastic-jobs-create-and-manage)。
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png
 [2]: ./media/sql-database-elastic-jobs-service-installation/credentials.png
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png

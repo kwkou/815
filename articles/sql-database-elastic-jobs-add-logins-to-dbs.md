@@ -7,10 +7,7 @@
 	manager="jeffreyg"
 	authors="sidneyh"/>
 
-<tags
-	ms.service="sql-database"  
-	ms.date="04/20/2015"
-	wacn.date="06/23/2015"/>
+<tags ms.service="sql-database" ms.date="04/20/2015" wacn.date="06/23/2015"/>
 
 # 如何将用户添加到弹性数据库池
 
@@ -39,6 +36,7 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
