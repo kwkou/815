@@ -32,14 +32,13 @@
 
 
 1. 将以下 PowerShell cmdlet 块复制到文本编辑器中。
-		
-		
+```powershell
 		Add-AzureAccount #Only needed if you have not been authenicated yet. For Azure Automation, you will need to set up a Service Principal.
 		Switch-AzureMode -Name AzureServiceManagement
 		$AzureServer = New-AzureSqlDatabaseServer -AdministratorLogin "<Service Admin Login>" -AdministratorLoginPassword "<ServerLoginPassword>" -Location "<Location>" -Version "12.0" -verbose
 		New-AzureSqlDatabase -ServerName $AzureServer.ServerName -DatabaseName  "<Database1>" -Edition "Standard" -verbose
 		New-AzureSqlDatabaseServerFirewallRule -ServerName $AzureServer.ServerName -RuleName "<FirewallRuleName>" -StartIpAddress "<IP4StartRange>" -EndIpAddress "<IP4EndRange>" -verbose
-
+```
 2. 将 < > 内的所有内容替换为所需值。如需有效 Azure SQL Server 位置的列表，可以在 Azure Powershell 命令提示符下运行以下 cmdlet
 
 		Switch-AzureMode -Name AzureResourceManager
@@ -59,14 +58,14 @@
 
 ## 示例
 
-此 PowerShell 脚本将在美国西部创建资源 
-
+此 PowerShell 脚本将在中国北部创建资源 
+```powershell
 		Add-AzureAccount #Needed if you have not been authenicated yet. For Azure Automation, you will need to set up a Service Principal.
 		Switch-AzureMode -Name AzureServiceManagement
-		$AzureServer = New-AzureSqlDatabaseServer -AdministratorLogin "admin" -AdministratorLoginPassword "P@ssword" -Location "West US" -Version "12.0" -verbose
+		$AzureServer = New-AzureSqlDatabaseServer -AdministratorLogin "admin" -AdministratorLoginPassword "P@ssword" -Location "China North" -Version "12.0" -verbose
 		New-AzureSqlDatabase -ServerName $AzureServer.ServerName -DatabaseName  "Database1" -Edition "Standard" -verbose
 		New-AzureSqlDatabaseServerFirewallRule -ServerName $AzureServer.ServerName -RuleName "MyFirewallRule" -StartIpAddress "192.168.1.1" -EndIpAddress "192.168.1.1" -verbose
-
+```
 ## 资源
 
 有关 Azure SQL PowerShell Cmdlet 的详细信息，请[单击此处](https://msdn.microsoft.com/zh-cn/library/dn546726.aspx)
