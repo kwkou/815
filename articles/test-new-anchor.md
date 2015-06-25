@@ -12,7 +12,7 @@
 
 # 这是一个测试文档用于测试新标签的网页渲染支持 
 
-V.0609.1
+V.0625.1
 
 > [AZURE.SELECTOR]
 - [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNets)
@@ -22,7 +22,7 @@ V.0609.1
 
 ##test direct reference of md file
 
-See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples.md)
+See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples)
 
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 
