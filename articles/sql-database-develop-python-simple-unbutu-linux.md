@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 Ubuntu 上使用 Python 和 pymssql 连接到 SQL Database" 
 	description="演示了一个可以用来连接到 Azure SQL Database 的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。"
 	services="sql-database" 
@@ -33,7 +33,7 @@ Original author of content is Meet Bhagdev. GeneMi edited and first published.
 ## 要求
 
 
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/)。
+- [Python 2.7.6](https://www.python.org/download/releases/2.7.6)。
 
 
 ### 安装所需的模块

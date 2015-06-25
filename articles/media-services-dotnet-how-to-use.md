@@ -118,5 +118,5 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 后续步骤
 --------
 
-了解 Media Services 的概况后，请转到[针对 Media Services 设置计算机](/develop/media-services/how-to-guides/set-up-computer-for-media-services/)主题。
+了解 Media Services 的概况后，请转到[针对 Media Services 设置计算机](/develop/media-services/how-to-guides/set-up-computer-for-media-services)主题。
 

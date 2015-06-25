@@ -7,7 +7,7 @@
 如何：通过下载交付资产
 ======================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：管理资产](/develop/media-services/how-to-guides/manage-assets/)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：管理资产](/develop/media-services/how-to-guides/manage-assets)。
 
 本主题介绍已上载到 Media Services 的媒体资产的交付选项。你可以采用众多的应用程序方案来交付 Media Services 内容。你可以下载媒体资产，或使用定位器访问媒体资产。你可以将媒体内容发送到其他应用程序或其他内容提供商。为了提高性能和可伸缩性，你还可以使用 Azure CDN 等内容交付网络 (CDN) 来交付内容。
 

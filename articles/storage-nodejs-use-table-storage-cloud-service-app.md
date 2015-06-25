@@ -318,7 +318,7 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 
 views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。在此步骤中，你需要修改它以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap), which is a toolkit that makes it easy to design a nice looking  Website.
 
-1. 下载并提取 [Twitter Bootstrap] 的文件。(http://getbootstrap.com/). Copy the **bootstrap.min.css** file from the **bootstrap\\dist\\css** folder to the **public\\stylesheets** directory of your tasklist application.
+1. 下载并提取 [Twitter Bootstrap] 的文件。(http://getbootstrap.com). Copy the **bootstrap.min.css** file from the **bootstrap\\dist\\css** folder to the **public\\stylesheets** directory of your tasklist application.
 
 2. 从 views 文件夹中，用文本编辑器打开 layout.jade 并将其内容替换为以下代码：
 

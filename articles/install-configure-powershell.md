@@ -28,7 +28,7 @@
 
 Windows Azure 是基于订阅的平台。这意味着需要订阅才能使用平台。在大多数情况下，这还意味着 cmdlet 需要订阅信息以便执行与您的订阅有关的任务。（可以在没有此信息的情况下使用与存储相关的 cmdlet。）您通过配置计算机以便连接到您的订阅来提供此信息。在本文中的“如何连接到订阅”下提供了说明。
 
-> [WACOM.NOTE] 提供多种订阅选项。有关信息，请参见 [Windows Azure 入门](http://www.windowsazure.cn/pricing/overview/)。
+> [WACOM.NOTE] 提供多种订阅选项。有关信息，请参见 [Windows Azure 入门](http://www.windowsazure.cn/pricing/overview)。
 
 当您安装此模块时，安装程序将检查系统是否具备必需的软件并安装所有依赖项，如 Windows PowerShell 和 .NET Framework 的正确版本。
 
@@ -49,7 +49,7 @@ Windows Azure 是基于订阅的平台。这意味着需要订阅才能使用平
 
 <h2><a id="Connect"></a>如何连接到订阅</h2>
 
-使用 Windows Azure 要求订阅。如果您不具有订阅，请参见 [Windows Azure 入门](/pricing/overview/)。
+使用 Windows Azure 要求订阅。如果您不具有订阅，请参见 [Windows Azure 入门](/pricing/overview)。
 
 cmdlet 要求您的订阅信息，以便可以使用它来管理您的服务。截至该模块的 .0.7 版本，有两种提供此信息的方法。您可以下载和使用包含该信息的管理证书，或者可以使用您的 Microsoft 帐户或组织 ID 登录到 Windows Azure。在您登录时，Windows Azure Active Directory (Windows Azure AD) 将对凭据进行身份验证。
 

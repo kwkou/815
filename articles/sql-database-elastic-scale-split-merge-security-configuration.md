@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
     title="Elastic Scale Security Configurations" 
     pageTitle="弹性缩放安全配置" 
     description="使用 Azure SQL Database 弹性缩放的拆分/合并服务安全" 
@@ -463,7 +463,7 @@
 
 ## <a name="upload-certificate"></a>上载证书
 
-在 [Azure 管理门户](http://manage.windowsazure.cn/)中，
+在 [Azure 管理门户](http://manage.windowsazure.cn)中，
 
 1. 选择"云服务"
 2. 选择云服务

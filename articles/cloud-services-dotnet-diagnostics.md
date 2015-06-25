@@ -90,7 +90,7 @@ Azure 诊断可以收集以下类型的遥测数据：
 
 ###先决条件  
 
-本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版](/pricing/1rmb-trial/)。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
+本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版](/pricing/1rmb-trial)。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ###步骤 1：创建辅助角色###
 1.	启动 Visual Studio 2013。

@@ -52,7 +52,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-若要在本地 Windows 计算机中测试你的应用程序，可以使用随 [Azure SDK](/downloads/) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一个实用工具，用于在本地开发计算机上模拟 Azure 中提供的 Blob、队列和表服务。以下示例演示如何声明一个静态字段来保存本地存储模拟器的连接字符串：  
+若要在本地 Windows 计算机中测试你的应用程序，可以使用随 [Azure SDK](/downloads) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一个实用工具，用于在本地开发计算机上模拟 Azure 中提供的 Blob、队列和表服务。以下示例演示如何声明一个静态字段来保存本地存储模拟器的连接字符串：  
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
@@ -87,7 +87,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	table.create_if_not_exists();  
 
 ## 如何：将实体添加到表
-若要将实体添加到表，请创建一个新的 **table_entity** 对象并将其传递到 **table_operation::insert_entity**。以下代码使用客户的名字作为行键，并使用姓氏作为分区键。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。有关详细信息，请参阅 [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)。 
+若要将实体添加到表，请创建一个新的 **table_entity** 对象并将其传递到 **table_operation::insert_entity**。以下代码使用客户的名字作为行键，并使用姓氏作为分区键。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。有关详细信息，请参阅 [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist)。 
 
 以下代码创建了包含要存储的某些客户数据的 **table_entity** 类的新实例。接下来，该代码调用 **table_operation::insert_entity** 以创建一个 **table_operation** 对象，以便将实体插入表中，并将新的表实体与之关联。最后，该代码调用 **cloud_table** 对象的 execute 方法。并且新的 **table_operation** 向存储服务发送请求，以将新的客户实体插入"people"表中。  
 
@@ -402,6 +402,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 -	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
 -	[用于 C++ 的存储客户端库](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx)
 -	[Azure 存储空间 MSDN 参考](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx)
--	[Azure 存储空间文档](/documentation/services/storage/)
+-	[Azure 存储空间文档](/documentation/services/storage)
 
 <!--HONumber=53-->

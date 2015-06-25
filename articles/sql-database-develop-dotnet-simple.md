@@ -10,7 +10,7 @@
 
 ### .NET Framework
 
-已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com/)下载 .NET Framework。
+已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com)下载 .NET Framework。
 
 ### SQL Database
 

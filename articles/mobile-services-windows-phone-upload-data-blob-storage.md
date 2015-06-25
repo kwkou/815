@@ -12,7 +12,7 @@
 
 无法使用客户端应用程序安全地分发所需的凭据，因此无法安全地将数据上载到 Blob 存储服务。必须将这些凭据存储在移动服务中，并使用它们来生成用于上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用程序安全返回&mdash;SAS（一个凭据，其过期时间较短 - 在本例中为 5 分钟）。然后，应用程序将使用此临时凭据来上载图像。在此示例中，公众可以从 Blob 服务下载。
 
-在本教程中，你将要向 [GetStartedWithData 示例应用程序项目](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/)添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。本教程将指导完成以下基本步骤，可以更新简单的 TodoList 应用程序以将图像上载到 Blob 存储服务：
+在本教程中，你将要向 [GetStartedWithData 示例应用程序项目](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。本教程将指导完成以下基本步骤，可以更新简单的 TodoList 应用程序以将图像上载到 Blob 存储服务：
 
 1. [安装存储客户端库]
 2. [更新插入脚本以生成 SAS]
@@ -25,7 +25,7 @@
 + [Windows Phone SDK 8.0] 或更高版本
 + 为 Microsoft Visual Studio 安装 Nuget 包管理器。
 + [Azure 存储帐户][如何创建存储帐户]
-+ 完成教程[将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/)  
++ 完成教程[将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)  
 
 
 ##<a name="install-storage-client"></a>安装 Windows Phone 应用程序的存储客户端

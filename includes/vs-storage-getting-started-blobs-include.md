@@ -1,4 +1,4 @@
-﻿#####创建容器
+#####创建容器
 正如文件位于文件夹中一样，存储 Blob 位于容器中。您可以使用 **CloudBlobClient** 对象引用现有容器，也可以调用 CreateCloudBlobClient() 方法创建一个新容器。
 
 以下代码将演示如何新建一个 Blob 存储容器。该代码将首先创建一个 **BlobClient** 对象（例如创建一个存储容器），以便您可以访问该对象的功能。然后，该代码将尝试引用名为"mycontainer"的存储容器。如果找不到该名称的容器，它将创建一个。
@@ -91,5 +91,5 @@
 	// Delete the blob.
 	blockBlob.Delete();
 
-[了解有关 Azure 存储的详细信息](/zh-cn/documentation/services/storage/)
+[了解有关 Azure 存储的详细信息](/zh-cn/documentation/services/storage)
 另请参阅[在服务器资源管理器中浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx).<!--HONumber=41-->

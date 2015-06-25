@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="10/30/2014"
     wacn.date="04/11/2015"
@@ -9,7 +9,7 @@
 
 借助适用于 Windows 8 的平滑流式处理客户端 SDK，开发人员可以生成支持按需付费、直播平滑流式处理内容的 Windows 应用商店应用程序。除了播放平滑流式处理内容这一基本功能以外，该 SDK 还提供其他丰富功能，例如 Microsoft PlayReady 保护、质量级别限制、实时 DVR、音频流切换、收听状态更新（如质量级别更改）和错误事件，等等。有关支持的功能的详细信息，请参阅[发行说明](http://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes)。
 
-本教程介绍 API。对于播放器开发，Microsoft 强烈建议使用 [Windows 8 播放器框架](http://playerframework.codeplex.com/)。使用播放器框架可以更轻松地生成应用程序及提供多种附加功能。
+本教程介绍 API。对于播放器开发，Microsoft 强烈建议使用 [Windows 8 播放器框架](http://playerframework.codeplex.com)。使用播放器框架可以更轻松地生成应用程序及提供多种附加功能。
 
 本教程包含四个课时：
 

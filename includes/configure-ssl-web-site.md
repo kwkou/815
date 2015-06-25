@@ -2,7 +2,7 @@
 
 当有人使用 HTTPS 访问您的网站时，将使用安全套接字层 (SSL) 加密保护网站和浏览器之间的通信的安全。这是保护通过 Internet 发送的数据安全的最常用方法，并且可确保对访问者而言，他们与您的网站的事务是安全的。本文讨论如何为 Azure 网站启用 HTTPS。 
 
-> [WACOM.NOTE] 为了为自定义域名启用 HTTPS，您必须将网站配置为标准模式。如果您当前使用的是免费模式或共享模式，则这可能会产生额外成本。有关共享和标准模式定价的详细信息，请参阅[定价详细信息](http://www.windowsazure.cn/zh-cn/pricing/overview/). 要开始使用 Azure，请参阅  [Microsoft Azure Free Trial](http://www.windowsazure.cn/zh-cn/pricing/free-trial/)。
+> [WACOM.NOTE] 为了为自定义域名启用 HTTPS，您必须将网站配置为标准模式。如果您当前使用的是免费模式或共享模式，则这可能会产生额外成本。有关共享和标准模式定价的详细信息，请参阅[定价详细信息](http://www.windowsazure.cn/zh-cn/pricing/overview). 要开始使用 Azure，请参阅  [Microsoft Azure Free Trial](http://www.windowsazure.cn/zh-cn/pricing/free-trial)。
 
 <a href="bkmk_azurewebsites"></a><h2>\*.chinacloudsites.cn 域</h2>
 
@@ -12,7 +12,7 @@
 
 <a href="bkmk_domainname"></a><h2>自定义域名</h2>
 
-若要为自定义域名启用 HTTPS（例如 **contoso.com**），您必须使用域名注册机构注册自定义域名。有关如何配置 Azure 网站的域名的详细信息，请参阅[为 Azure 网站配置自定义域名](/develop/net/common-tasks/custom-dns-web-site/)。注册自定义域名并配置您的网站以响应自定义名称后，您必须为该域请求 SSL 证书。 
+若要为自定义域名启用 HTTPS（例如 **contoso.com**），您必须使用域名注册机构注册自定义域名。有关如何配置 Azure 网站的域名的详细信息，请参阅[为 Azure 网站配置自定义域名](/develop/net/common-tasks/custom-dns-web-site)。注册自定义域名并配置您的网站以响应自定义名称后，您必须为该域请求 SSL 证书。 
 
 通过注册域名，您还能够创建子域，例如 **www.contoso.com** 或 **mail.contoso.com**。请求 SSL 证书之前，必须先确定将受证书保护的域名。这将确定必须获取的证书类型。如果您只需保护单个域名（例如 **contoso.com** 或 **www.contoso.com**）的安全，则基本证书可能就足够了。如果您需要保护多个域名（例如 **contoso.com**、**www.contoso.com** 和 **mail.contoso.com**）的安全，将需要使用通配符证书或者带有使用者备用名称 (subjectAltName、SAN) 的证书。
 
@@ -217,7 +217,7 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 
 5. 单击"保存"。在系统提示后，单击"是"。
 
-	> [WACOM.NOTE] 如果出现"为网站 '&lt;site name&gt;' 配置规模失败"错误，则可使用详细信息按钮获得详细信息。可能会出现"可用的标准实例服务器不足，无法满足此请求。"错误。如果收到此错误，请联系 [Azure 支持人员](http://www.windowsazure.cn/zh-cn/support/contact/).
+	> [WACOM.NOTE] 如果出现"为网站 '&lt;site name&gt;' 配置规模失败"错误，则可使用详细信息按钮获得详细信息。可能会出现"可用的标准实例服务器不足，无法满足此请求。"错误。如果收到此错误，请联系 [Azure 支持人员](http://www.windowsazure.cn/zh-cn/support/contact).
 
 <a href="bkmk_configuressl"></a><h2>配置 SSL</h2>
 

@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-how-to-monitor-a-cloud-service" urlDisplayName="How to monitor" pageTitle="如何监视云服务 - Azure" metaKeywords="Azure monitoring cloud services, Azure Management Portal cloud services" description="了解如何使用 Azure 管理门户监视云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Monitor Cloud Services" authors="ryanwi" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-monitor-a-cloud-service" urlDisplayName="How to monitor" pageTitle="如何监视云服务 - Azure" metaKeywords="Azure monitoring cloud services, Azure Management Portal cloud services" description="了解如何使用 Azure 管理门户监视云服务。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Monitor Cloud Services" authors="ryanwi" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="10/23/2014"
     wacn.date="04/11/2015"
@@ -41,16 +41,16 @@
 
 ###开始之前###
 
-- 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。有关详细信息，请参阅**"存储帐户"**帮助，或者参阅[如何创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account/)。
+- 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。有关详细信息，请参阅**"存储帐户"**帮助，或者参阅[如何创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account)。
 
 
-- 为你的云服务角色启用 Azure 诊断。< b / >< b / >有关详细信息，请参阅[在 Azure 云服务和虚拟机中启用 Diagnostics](/zh-cn/documentation/articles/cloud-services-dotnet-diagnostics/)。
+- 为你的云服务角色启用 Azure 诊断。< b / >< b / >有关详细信息，请参阅[在 Azure 云服务和虚拟机中启用 Diagnostics](/zh-cn/documentation/articles/cloud-services-dotnet-diagnostics)。
 
 在管理门户中，你可以添加或修改 Azure Diagnostics 用于访问存储详细监视数据的存储帐户的诊断连接字符串，你还可以将监视级别设置为"详细监视"或"最少监视"。由于详细监视将数据存储在存储帐户中，因此你必须首先配置诊断连接字符串，然后才能将监视级别设置为"详细监视"。
 
 ###为详细监视配置诊断连接字符串###
 
-1. 复制你将用于存储详细监视数据的存储帐户的存储访问密钥。在 [Azure 管理门户](https://manage.windowsazure.cn/)中，你可以使用**"存储帐户"**页上的**"管理密钥"**。有关详细信息，请参阅[如何管理云服务](/zh-cn/documentation/articles/cloud-services-how-to-manage/)，或者查看**"存储帐户"页的帮助**。 
+1. 复制你将用于存储详细监视数据的存储帐户的存储访问密钥。在 [Azure 管理门户](https://manage.windowsazure.cn)中，你可以使用**"存储帐户"**页上的**"管理密钥"**。有关详细信息，请参阅[如何管理云服务](/zh-cn/documentation/articles/cloud-services-how-to-manage)，或者查看**"存储帐户"页的帮助**。 
 
 2. 打开**"云服务"**。随后，若要打开仪表板，请单击要配置的云服务的名称。
 
@@ -75,7 +75,7 @@
 
 ###将监视级别更改为详细监视或最少监视###
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中，打开云服务部署的**"配置"**页。
+1. 在[管理门户](https://manage.windowsazure.cn)中，打开云服务部署的**"配置"**页。
 
 2. 在**"级别"**中，单击**"详细"**或**"最少"**。 
 
@@ -91,7 +91,7 @@
 
 ##<a id="addmetrics"></a>如何：向度量值表中添加度量值##
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中，打开云服务的**"监视"页**。
+1. 在[管理门户](http://manage.windowsazure.cn)中，打开云服务的**"监视"页**。
 
 	默认情况下，度量值表显示可用度量值的子集。下图中显示云服务的默认详细监视度量值，该度量值仅由 Memory\Available MBytes 性能计数器提供，并且数据在角色级别汇总。使用"添加度量值"可选择要在管理门户中监视的其他汇总和角色级别的度量值。
 

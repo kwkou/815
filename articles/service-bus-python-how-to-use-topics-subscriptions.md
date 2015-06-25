@@ -27,7 +27,7 @@
 
 [WACOM.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
-**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](/zh-cn/documentation/articles/python-how-to-install/)。
+**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](/zh-cn/documentation/articles/python-how-to-install)。
 
 
 ##<a name="How_to_Create_a_Topic"></a>如何创建主题

@@ -188,9 +188,9 @@
 
     [数据传输定价详细信息][数据传输定价详细信息]
 
--   [Windows Azure Support Plans](/support/plans/) 
+-   [Windows Azure Support Plans](/support/plans) 
 
-    [Service Level Agreements](/support/legal/sla/)
+    [Service Level Agreements](/support/legal/sla)
 
     [SQL数据库 Pricing Details](/home/features/sql-database/#price)
 

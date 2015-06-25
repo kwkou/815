@@ -243,7 +243,7 @@ PortNumber 属性显示当前端口号。如果需要，可使用此命令将远
 
 如果无法重新创建虚拟机，则可能是提出 Azure 支持事件的时候了。
 
-若要提出事件，请转到 [Azure 支持站点](/support/) ，然后单击**"获取支持"**。
+若要提出事件，请转到 [Azure 支持站点](/support) ，然后单击**"获取支持"**。
 
 
 ## 其他资源
@@ -254,7 +254,7 @@ PortNumber 属性显示当前端口号。如果需要，可使用此命令将远
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-[虚拟机文档](/documentation/services/virtual-machines/)
+[虚拟机文档](/documentation/services/virtual-machines)
 
 [Azure 虚拟机常见问题](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
 

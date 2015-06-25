@@ -18,13 +18,13 @@
 
 ## Azure Automation 服务 
 
-[Azure Automation](/documentation/services/automation/) 为 Azure 平台提供一个功能强大、极有必要的 PowerShell 工作流执行服务。现在，你可以将常见 Azure 门户体验内难以执行的维护任务自动化。你只需创作一个 PowerShell 工作流（在 Azure Automation 中称为 **Runbook**），将它上载到云，然后计划执行 Runbook 的时间。本文档针对一些分片弹性示例提供 Azure Automation 的端到端设置。有关详细信息，请参阅[预览版通告](http://blogs.technet.com/b/in_the_cloud/archive/2014/04/15/announcing-the-microsoft-azure-automation-preview.aspx)。
+[Azure Automation](/documentation/services/automation) 为 Azure 平台提供一个功能强大、极有必要的 PowerShell 工作流执行服务。现在，你可以将常见 Azure 门户体验内难以执行的维护任务自动化。你只需创作一个 PowerShell 工作流（在 Azure Automation 中称为 **Runbook**），将它上载到云，然后计划执行 Runbook 的时间。本文档针对一些分片弹性示例提供 Azure Automation 的端到端设置。有关详细信息，请参阅[预览版通告](http://blogs.technet.com/b/in_the_cloud/archive/2014/04/15/announcing-the-microsoft-azure-automation-preview.aspx)。
 
-在本示例中，Azure Automation 用架计划和工作负载执行框架。可将 Azure Automation 视为[云中的 SQL 代理](http://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/)。 
+在本示例中，Azure Automation 用架计划和工作负载执行框架。可将 Azure Automation 视为[云中的 SQL 代理](http://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud)。 
 
 除了本文档外，还可以参考以下附加资源：
 
-* [Azure Automation 入门](/documentation/articles/automation-create-runbook-from-samples/)
+* [Azure Automation 入门](/documentation/articles/automation-create-runbook-from-samples)
 * [分步指南：Microsoft Azure Automation 预览版新增功能入门](http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx)
 * [Microsoft Azure Automation](http://blogs.technet.com/b/cbernier/archive/2014/04/08/microsoft-azure-automation.aspx)
 * 在 [Automation 论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)咨询具体的 Azure Automation 问题。  
@@ -32,7 +32,7 @@
 
 ## 先决条件
 
-[熟悉](/documentation/articles/automation-create-runbook-from-samples/) Microsoft Azure Automation 预览版服务。
+[熟悉](/documentation/articles/automation-create-runbook-from-samples) Microsoft Azure Automation 预览版服务。
 
 
 ## 分片弹性 PowerShell 文件
@@ -65,7 +65,7 @@
 
 * ProvisionBySize 和 ProvisionByDate Runbook 都会设置标准 S0 数据库（$0.0208/小时）。为了抵销这些成本，如果搭配 ReduceServiceTier Runbook 执行，则新设置的数据库的服务层在经过一天之后，将会从标准 S0（$0.0208/小时）降低到基本版（$0.0069/小时） 
 
-最后，在所提供示例的范围内，使用 [Azure Automation](/documentation/services/automation/) 当前不会对订阅拥有者引发任何费用。有关详细信息，请参阅 [Azure Automation 定价页](/home/features/automation/#price)。 
+最后，在所提供示例的范围内，使用 [Azure Automation](/documentation/services/automation) 当前不会对订阅拥有者引发任何费用。有关详细信息，请参阅 [Azure Automation 定价页](/home/features/automation/#price)。 
 
 ## 加载 Runbook 
 

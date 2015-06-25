@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-sql-databases-datasync" urlDisplayName="如何同步数据" pageTitle="SQL Database 数据同步入门" metaKeywords="" description="" metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Data Sync" authors="" solutions="" manager="" editor=""/>
+<properties linkid="manage-services-sql-databases-datasync" urlDisplayName="如何同步数据" pageTitle="SQL Database 数据同步入门" metaKeywords="" description="" metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Data Sync" authors="" solutions="" manager="" editor=""/>
 
 <tags
    ms.service="sql-database"
@@ -178,9 +178,9 @@
 <h2><a id="NextSteps"></a>后续步骤</h2>
 有关 SQL Database 和 SQL 数据同步的其他信息，请参阅：
 
-* [注册 SQL Database 高级版产品](../sign-up-for-sql-database-premium/)
+* [注册 SQL Database 高级版产品](../sign-up-for-sql-database-premium)
 * [SQL 数据同步（WA 门户）](http://msdn.microsoft.com/zh-cn/library/azure/jj856263.aspx)
-* [Azure SQL Database 入门](/documentation/articles/sql-database-get-started/)
+* [Azure SQL Database 入门](/documentation/articles/sql-database-get-started)
 * [SQL Server 数据库生命周期](http://msdn.microsoft.com/zh-cn/library/hh213416.aspx)
 
 <!--HONumber=55-->

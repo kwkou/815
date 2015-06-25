@@ -7,7 +7,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 # 在 HDInsight 中的 Storm 上使用 SCP.NET 和 C# 开发流式数据处理应用程序
  
 ## SCP 简介
-SCP 是一个用于构建实时、可靠、一致和高性能的数据处理应用程序的平台。它在 Storm (http://storm.incubator.apache.org/) 的基础上构建而成 -- Storm 是开源软件 (OSS) 社区设计的一个流处理系统。Storm 由 Nathan Marz 设计，在 Twitter 上进行开源。其利用 ZooKeeper (http://zookeeper.apache.org/)（另一个 Apache 项目）来实现高可靠性的分布式协调和状态管理。   
+SCP 是一个用于构建实时、可靠、一致和高性能的数据处理应用程序的平台。它在 Storm (http://storm.incubator.apache.org) 的基础上构建而成 -- Storm 是开源软件 (OSS) 社区设计的一个流处理系统。Storm 由 Nathan Marz 设计，在 Twitter 上进行开源。其利用 ZooKeeper (http://zookeeper.apache.org)（另一个 Apache 项目）来实现高可靠性的分布式协调和状态管理。   
 
 SCP 项目不仅已移植到 Windows 的 Storm 中，还为 Windows 生态系统增加了扩展和自定义。扩展包括 .NET 开发人员经验和库；自定义包括基于 Windows 的部署。   
 

@@ -7,7 +7,7 @@
 如何：检查作业进度
 ==================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：对资产进行编码](/develop/media-services/how-to-guides/encode-an-asset/)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：对资产进行编码](/develop/media-services/how-to-guides/encode-an-asset)。
 
 当你运行作业时，通常需要采用某种方式来跟踪作业进度。以下代码示例定义了 StateChanged 事件处理程序。此事件处理程序将跟踪作业进度，并根据现状提供更新的状态。该代码还定义了 LogJobStop 方法。此帮助器方法将记录错误详细信息。
 
@@ -95,5 +95,5 @@
 后续步骤
 ========
 
-了解如何创建作业并跟踪其进度后，下一步就是保护资产。有关详细信息，请参阅[如何使用 Azure Media Services 保护资产](/documentation/articles/media-services-protect-asset/)。
+了解如何创建作业并跟踪其进度后，下一步就是保护资产。有关详细信息，请参阅[如何使用 Azure Media Services 保护资产](/documentation/articles/media-services-protect-asset)。
 

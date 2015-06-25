@@ -137,7 +137,7 @@ HDInsight 还包含 Jython，它是使用 Java 编写的 Python 实现。Pig 无
 
 ## <a name="running"></a>运行示例
 
-下面的步骤使用了 Windows Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
+下面的步骤使用了 Windows Azure PowerShell。如果尚未在开发计算机上安装并配置 Azure PowerShell，请在使用以下步骤之前参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell)。
 
 
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [jython.py](#jythonpy) 创建开发计算机上的文件的本地副本。
@@ -159,7 +159,7 @@ HDInsight 还包含 Jython，它是使用 Java 编写的 Python 实现。Pig 无
 
 	此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上载到容器的根目录。
 
-	> [WACOM.NOTE][在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data/)文档中介绍了上载脚本的其他方法。
+	> [WACOM.NOTE][在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data)文档中介绍了上载脚本的其他方法。
 
 ###使用 Hive 仪表板（仅提供 Hive 示例）
 

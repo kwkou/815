@@ -13,7 +13,7 @@
 **环境准备**
 
 JDK： [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  
-Tomcat： [http://tomcat.apache.org/](http://tomcat.apache.org/)
+Tomcat： [http://tomcat.apache.org/](http://tomcat.apache.org)
 
 *安装 JDK*
 

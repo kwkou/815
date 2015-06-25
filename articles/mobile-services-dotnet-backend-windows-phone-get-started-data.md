@@ -202,7 +202,7 @@
         //public static MobileServiceClient MobileService = new MobileServiceClient(
         //    "https://todolist.preview.azure-mobile-preview.net/",
         //    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-        //);        
+        /);        
 
 2.  在 Visual Studio 中，按 F7 键或者在“生成”菜单中单击“生成解决方案”，以同时生成 Windows Phone 应用程序和移动服务 。在 Visual Studio 的输出窗口中确认是否已生成这两个项目且未出错
 

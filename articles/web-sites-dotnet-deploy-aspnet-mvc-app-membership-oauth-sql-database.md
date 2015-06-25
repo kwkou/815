@@ -15,14 +15,14 @@
 
 本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用程序，以便用户能够使用 Facebook 或 Google 凭据进行登录。您还会将应用程序部署到 Windows Azure。
 
-您可以免费注册一个 Windows Azure 帐户，而且，如果您还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。您可以免费开始针对 Windows Azure 进行开发。如果您要使用 Visual Studio 2012，请参见 [上一个教程](/develop/net/tutorials/web-site-with-sql-database-vs2012/)。此版本的教程比上一个版本简单得多。
+您可以免费注册一个 Windows Azure 帐户，而且，如果您还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。您可以免费开始针对 Windows Azure 进行开发。如果您要使用 Visual Studio 2012，请参见 [上一个教程](/develop/net/tutorials/web-site-with-sql-database-vs2012)。此版本的教程比上一个版本简单得多。
 
 本教程假定您之前未使用过 Windows Azure。完成本教程之后，您将能够在云中启动并运行安全的数据驱动的 Web 应用程序，以及使用云数据库。
 
 您将了解到以下内容：
 
 * 如何创建安全的 ASP.NET MVC 5 项目并将其发布到 Windows Azure 网站。
-* 如何使用 [OAuth](http://oauth.net/ "http://oauth.net/")、[OpenID](http://openid.net/) 和 ASP.NET 成员资格数据库保护您的应用程序。
+* 如何使用 [OAuth](http://oauth.net/ "http://oauth.net/")、[OpenID](http://openid.net) 和 ASP.NET 成员资格数据库保护您的应用程序。
 * 如何使用新成员资格 API 添加用户和角色。
 * 如何使用 SQL数据库 在 Windows Azure 中存储数据。
 
@@ -349,7 +349,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 <h2><a name="addOauth"></a><span class="short-header">OAuth</span>添加 OAuth2 和 OpenID 提供程序</h2>
 
-[OAuth](http://oauth.net/ "http://oauth.net/") 是一种开放协议，允许以一种简单而标准的方法从 Web、移动和桌面应用程序进行安全授权。ASP.NET MVC Internet 模板使用 OAuth 和 [OpenID](http://openid.net/) 公开 Facebook、Twitter、Google 和 Microsoft 以作为身份验证提供程序。虽然本教程仅使用 Google 作为身份验证提供程序，但您可轻松修改代码以使用任何提供程序。实施其他提供程序的步骤与您将在本教程中看到的步骤非常类似。若要将 Facebook 用作身份验证提供程序，请参见我的教程[使用 Facebook 和 Google 的 OAuth2 和 OpenID 登录名创建 ASP.NET MVC 5 应用程序](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)。
+[OAuth](http://oauth.net/ "http://oauth.net/") 是一种开放协议，允许以一种简单而标准的方法从 Web、移动和桌面应用程序进行安全授权。ASP.NET MVC Internet 模板使用 OAuth 和 [OpenID](http://openid.net) 公开 Facebook、Twitter、Google 和 Microsoft 以作为身份验证提供程序。虽然本教程仅使用 Google 作为身份验证提供程序，但您可轻松修改代码以使用任何提供程序。实施其他提供程序的步骤与您将在本教程中看到的步骤非常类似。若要将 Facebook 用作身份验证提供程序，请参见我的教程[使用 Facebook 和 Google 的 OAuth2 和 OpenID 登录名创建 ASP.NET MVC 5 应用程序](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on)。
 
 除了身份验证外，本教程还将使用角色实施授权。只有您添加到 *canEdit* 角色中的用户将能更改数据（即，创建、编辑或删除联系人）。
 
@@ -666,12 +666,12 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 若要了解有关 ASP.NET MVC 的更多信息，可以阅读我的 [ASP.NET MVC 5 入门](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)教程。Tom Dykstra 的绝佳的 [EF 和 MVC 入门](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)将更详细地说明高级 EF 编程。
 
-本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写。
+本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写。
 
 请提供有关您喜欢的内容或者您希望看到改善的内容的反馈，不仅关于教程本身，也关于它所演示的产品。您的反馈将帮助我们确定优先改进哪些方面。
 
 <!--
-To get the colorful Facebook, Google and Yahoo log on buttons, see the blog post [Customizing External Login Buttons in ASP.NET MVC 5](http://www.beabigrockstar.com/customizing-external-login-buttons-in-asp-net-mvc-4/). 
+To get the colorful Facebook, Google and Yahoo log on buttons, see the blog post [Customizing External Login Buttons in ASP.NET MVC 5](http://www.beabigrockstar.com/customizing-external-login-buttons-in-asp-net-mvc-4). 
  -->
 <!-- bookmarks -->
 [添加 OAuth 提供程序]: #addOauth

@@ -530,7 +530,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 	user = await client
 		.LoginWithMicrosoftAccountAsync(authentication_token_value);
 
-有关如何使用 Microsoft 帐户提供单一登录体验的示例，请参阅"使用单一登录对应用程序进行身份验证"教程（[Windows 应用商店](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/)/[Windows Phone](/zh-cn/documentation/articles/mobile-services-windows-phone-single-sign-on/)）。
+有关如何使用 Microsoft 帐户提供单一登录体验的示例，请参阅"使用单一登录对应用程序进行身份验证"教程（[Windows 应用商店](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on)/[Windows Phone](/zh-cn/documentation/articles/mobile-services-windows-phone-single-sign-on)）。
 
 <h3><a name="caching"></a>缓存身份验证令牌</h3>
 在某些情况下，完成首次用户身份验证后，可以避免调用 login 方法。你可以使用适用于 Windows 应用商店应用程序的 [PasswordVault] 来缓存当前用户首次登录时使用的标识，以后每次该用户登录时，系统都会检查缓存中是否存在该用户标识。如果缓存为空，则用户仍然需要完成整个登录过程。
@@ -607,7 +607,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 	// Lookup untyped data using OData
 	JToken untypedItems = await untypedTodoTable.ReadAsync("$filter=complete eq 0&$orderby=text");
 
-此时，你将获取一些可以像属性包一样使用的 JSON 值。有关 JToken 和 Json.NET 的详细信息，请参阅 [Json.NET](http://json.codeplex.com/)
+此时，你将获取一些可以像属性包一样使用的 JSON 值。有关 JToken 和 Json.NET 的详细信息，请参阅 [Json.NET](http://json.codeplex.com)
 
 <h2><a name="unit-testing"></a>如何：设计单元测试</h2>
 

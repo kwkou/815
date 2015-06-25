@@ -11,7 +11,7 @@
 
 # 如何将用户添加到弹性数据库池
 
-使用弹性数据库作业可针对[弹性数据库池](sql-database-elastic-pool)中的每个数据库运行同一个脚本。若要运行脚本，必须将具有相应权限的用户添加到池中的每个数据库。此用户可以安装**弹性数据库作业**时创建的相同服务器级主体，并且是提供用来管理**控制**数据库中元数据的**作业凭据**。有关详细信息，请参阅[在 Azure SQL Database 中管理数据库和登录名](https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx?f=255&MSPPError=-2147217396)或[将用户添加到 SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database/)
+使用弹性数据库作业可针对[弹性数据库池](sql-database-elastic-pool)中的每个数据库运行同一个脚本。若要运行脚本，必须将具有相应权限的用户添加到池中的每个数据库。此用户可以安装**弹性数据库作业**时创建的相同服务器级主体，并且是提供用来管理**控制**数据库中元数据的**作业凭据**。有关详细信息，请参阅[在 Azure SQL Database 中管理数据库和登录名](https://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx?f=255&MSPPError=-2147217396)或[将用户添加到 SQL Azure Database](http://azure.microsoft.com/blog/2010/06/21/adding-users-to-your-sql-azure-database)
 
 ## 先决条件
 * [创建弹性数据库池（预览版）](sql-database-elastic-pool-portal)

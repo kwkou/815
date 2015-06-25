@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create & provision" pageTitle="SQL Database 入门 - Azure" metaKeywords="" description="开始在 Azure 中创建和管理 SQL Database。" metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Database" authors="louisb"  solutions="" writer="" manager="jeffreyg" editor="tysonn"/>
+<properties linkid="manage-services-getting-started-with-sqldbs" urlDisplayName="How to create & provision" pageTitle="SQL Database 入门 - Azure" metaKeywords="" description="开始在 Azure 中创建和管理 SQL Database。" metaCanonical="" services="sql-database" documentationCenter="" title="Getting Started with Azure SQL Database" authors="louisb"  solutions="" writer="" manager="jeffreyg" editor="tysonn"/>
 
 <tags
    ms.service="sql-database"
@@ -649,7 +649,7 @@ SQL Server 身份验证登录名用于建立服务器连接。访问 SQL Databas
 
 现在，你已了解 SQL Database 和管理门户，接下来，你可以尝试 SQL Server 数据库管理员使用的其他一些工具和方法。
 
-若要主动管理新数据库，请考虑安装和使用 SQL Server Management Studio。Management Studio 是用于管理 SQL Server 数据库（包括在 Azure 上运行的数据库）的主要数据库管理工具。使用 Management Studio，你可以保存查询以供将来使用、添加新表和存储过程，以及磨练你在丰富脚本环境（包括语法检查程序、智能感知和模板）中掌握的 Transact-SQL 技能。若要开始操作，请按照[使用 SQL Server Management Studio 管理 SQL Database](/documentation/articles/sql-database-manage-azure-ssms/) 中的说明操作。
+若要主动管理新数据库，请考虑安装和使用 SQL Server Management Studio。Management Studio 是用于管理 SQL Server 数据库（包括在 Azure 上运行的数据库）的主要数据库管理工具。使用 Management Studio，你可以保存查询以供将来使用、添加新表和存储过程，以及磨练你在丰富脚本环境（包括语法检查程序、智能感知和模板）中掌握的 Transact-SQL 技能。若要开始操作，请按照[使用 SQL Server Management Studio 管理 SQL Database](/documentation/articles/sql-database-manage-azure-ssms) 中的说明操作。
 
 流利使用 Transact-SQL 查询和数据定义语言对数据库管理员而言至关重要。如果你是第一次使用 Transact-SQL，请从[教程：编写 Transact-SQL 语句](http://msdn.microsoft.com/zh-cn/library/ms365303.aspx)开始以了解一些基本技能。
 

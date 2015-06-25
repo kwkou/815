@@ -40,7 +40,7 @@ wacn.date="04/15/2015"
 5. [针对发布的移动服务测试应用程序]
 
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[Azure 试用](/pricing/1rmb-trial/)。 
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[Azure 试用](/pricing/1rmb-trial)。 
 
 
 <h2><a name="create-service"></a>创建新的移动服务</h2>

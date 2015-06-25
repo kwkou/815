@@ -86,7 +86,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 		//public static MobileServiceClient MobileService = new MobileServiceClient( 
         //    "AppUrl", 
         //    "AppKey" 
-        //); 
+        /); 
 
   	这将创建用于访问移动服务的 **MobileServiceClient** 的新实例。
 

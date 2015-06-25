@@ -53,7 +53,7 @@
 
 图 2
 
-1. **将 Azure 云服务、Azure 网站或其他终结点部署到生产环境。**在创建流量管理器配置文件时，必须将其与某个订阅关联。然后，在生产环境中为云服务和"标准"层网站添加属于同一订阅的终结点。如果某一终结点位于过渡环境中而不在 Azure 生产环境中或同一订阅中，则不能将其添加为外部终结点。有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关网站的详细信息，请参阅[网站](/home/features/web-sites/)。
+1. **将 Azure 云服务、Azure 网站或其他终结点部署到生产环境。**在创建流量管理器配置文件时，必须将其与某个订阅关联。然后，在生产环境中为云服务和"标准"层网站添加属于同一订阅的终结点。如果某一终结点位于过渡环境中而不在 Azure 生产环境中或同一订阅中，则不能将其添加为外部终结点。有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关网站的详细信息，请参阅[网站](/home/features/web-sites)。
 1. **确定流量管理器域的名称。**考虑为域使用带有唯一前缀的名称。域的后半部分（即 trafficmanager.net）是固定的。有关详细信息，请参阅[最佳实践](#bkmk_TrafficManagerBestPracticesProfile)。
 1. **确定要使用的监视配置。**无论使用哪种负载平衡方法，流量管理器都会监视终结点以确保它们联机。在你配置监视设置之后，流量管理器不会将流量定向到监视系统判定为脱机的终结点，除非它检测到所有终结点均已脱机，或无法检测配置文件中包含的任一终结点的状态。有关监视的详细信息，请参阅[关于流量管理器监视](https://msdn.microsoft.com/zh-CN/library/azure/dn339013.aspx)。
 1. **确定要使用的负载平衡方法。**有三种不同的负载平衡方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关负载平衡方法的信息，请参阅[关于流量管理器负载平衡方法](https://msdn.microsoft.com/zh-CN/library/azure/dn339010.aspx)。
@@ -194,7 +194,7 @@
 
 [云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
-[网站](/home/features/web-sites/)
+[网站](/home/features/web-sites)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 

@@ -108,9 +108,9 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 
 [如何在 Azure Media Services 中调用 AES 加密流](http://mingfeiy.com/debug-aes-encrypted-stream-azure-media-services)
 
-[JWT 令牌身份验证](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/)
+[JWT 令牌身份验证](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption)
 
-[将基于 Azure Media Services OWIN MVC 的应用程序与 Azure Active Directory 相集成，并基于 JWT 声明限制内容密钥传送](http://www.gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/)。
+[将基于 Azure Media Services OWIN MVC 的应用程序与 Azure Active Directory 相集成，并基于 JWT 声明限制内容密钥传送](http://www.gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration)。
 
 [使用 Azure ACS 颁发令牌](http://mingfeiy.com/acs-with-key-services)。
 

@@ -500,7 +500,7 @@ Azure 支持一组托管 API，提供了跨 Microsoft 云服务创建 Azure 服�
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
 
-若要了解如何将前端部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started/).若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+若要了解如何将前端部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started).若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png

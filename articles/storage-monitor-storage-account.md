@@ -14,7 +14,7 @@
 
 > [WACOM.NOTE] Azure 文件服务当前不支持存储分析。
 
-> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Microsoft Azure 存储空间问题](../storage-monitoring-diagnosing-troubleshooting/)。
+> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Microsoft Azure 存储空间问题](../storage-monitoring-diagnosing-troubleshooting)。
 
 
 ##目录##
@@ -29,7 +29,7 @@
 
 <h2><a id="configurestoragemonitoring"></a>如何：为存储帐户配置监视</h2>
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中操作, click **Storage**, and then click the storage account name to open the dashboard.
+1. 在[管理门户](https://manage.windowsazure.cn)中操作, click **Storage**, and then click the storage account name to open the dashboard.
 
 2. 单击"配置"，然后向下滚动到 Blob、表和队列服务的"监视"设置，如下所示。
 
@@ -62,7 +62,7 @@
 
 在仪表板上，您可以从 9 个可用度量值中最多选择 6 个要显示在度量值图表上的度量值。对于每项服务（Blob、表和队列），"可用性"、"成功百分比"和"请求总数"均可供选择。对于最少监视或详细监视，仪表板上提供的度量值是相同的。
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中操作, click **Storage**, and then click the name of the storage account to open the dashboard.
+1. 在[管理门户](https://manage.windowsazure.cn)中操作, click **Storage**, and then click the name of the storage account to open the dashboard.
 
 2. 若要更改显示在图表上的度量值，请执行以下操作之一：
 
@@ -90,7 +90,7 @@
 <h2><a id="addmonitoringmetrics"></a>如何：向度量值表中添加度量值</h2>
 
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中操作, click **Storage**, and then click the name of the storage account to open the dashboard.
+1. 在[管理门户](https://manage.windowsazure.cn)中操作, click **Storage**, and then click the name of the storage account to open the dashboard.
 
 2. 单击"监视"。
 
@@ -142,7 +142,7 @@
 
 对于你的存储帐户中提供的每项存储服务（Blob、表和队列），你可以保存"读取请求"、"写入请求"和/或"删除请求"的诊断日志，并且可以为其中每项服务设置数据保留策略。
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中操作, click **Storage**, and then click the name of the storage account to open the dashboard.
+1. 在[管理门户](https://manage.windowsazure.cn)中操作, click **Storage**, and then click the name of the storage account to open the dashboard.
 
 2. 单击"配置"，然后使用键盘上的向下箭头向下滚动到"日志记录"（如下所示）。
 

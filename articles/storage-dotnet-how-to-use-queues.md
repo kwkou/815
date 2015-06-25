@@ -8,7 +8,7 @@
 
 本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例是用 C\# 代码编写的并使用了 Azure .NET 存储客户端库。介绍的方案包括插入、查看、获取和删除队列消息以及创建和删除队列。有关队列的详细信息，请参阅[后续步骤][]部分。
 
-> [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是存储客户端库 4.x，可通过 [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) 或 [Azure SDK for .NET](/zh-cn/downloads/) 获得。请参阅[如何：以编程方式访问队列存储][]下面有关获得存储客户端库的详细信息。
+> [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是存储客户端库 4.x，可通过 [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage) 或 [Azure SDK for .NET](/zh-cn/downloads) 获得。请参阅[如何：以编程方式访问队列存储][]下面有关获得存储客户端库的详细信息。
 
 <h2>目录</h2>
 

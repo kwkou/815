@@ -69,7 +69,7 @@
 ## 创建和使用共享访问签名
 共享访问签名是一个在特定时间间隔内授予对容器、Blob、队列和表的受限访问权限的 URI。通过为客户端提供共享访问签名，可使客户端能够访问存储帐户中的资源，而无需与客户端共享你的帐户密钥。
 
->[AZURE.NOTE]有关深入的概念概述，以及有关共享访问签名的教程，请参阅[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+>[AZURE.NOTE]有关深入的概念概述，以及有关共享访问签名的教程，请参阅[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
 
 使用共享访问签名的受支持的操作包括：
 

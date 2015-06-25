@@ -16,7 +16,7 @@
 
 基于 Linux 的 HDInsight 群集提供了使用密码或 SSH 密钥保护 SSH 访问的选项。本文档提供有关使用 PuTTY SSH 客户端从 Windows 客户端连接到 HDInsight 的信息。
 
-> [AZURE.NOTE] 本文中的步骤假设你使用的是 Windows 客户端。如果使用的是 Linux、Unix 或 OS X 客户端，请参阅[在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 密钥与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。
+> [AZURE.NOTE] 本文中的步骤假设你使用的是 Windows 客户端。如果使用的是 Linux、Unix 或 OS X 客户端，请参阅[在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 密钥与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)。
 
 ## 先决条件
 
@@ -220,11 +220,11 @@ SSH 是用于登录远程服务器以及在其上远程执行命令的实用工�
 
 现在，你已了解如何使用 SSH 密钥进行身份验证，以及如何将 MapReduce 与 HDInsight 上的 Hadoop 配合使用。
 
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 
-* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
  
 
 <!--HONumber=50-->

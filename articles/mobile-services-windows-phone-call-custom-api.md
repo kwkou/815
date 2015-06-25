@@ -15,13 +15,13 @@
 
 使用本主题中创建的自定义 API，你可以发送单个 POST 请求，用于将表中所有 todo 项的 completed 标志设置为 `true`。如果没有此自定义 API，客户端必须逐个地发送请求，以更新表中每个 todo 项的该标志。
 
-将此功能添加到您在完成 [将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/)教程后创建的应用程序。为此，需要完成以下步骤：
+将此功能添加到您在完成 [将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)教程后创建的应用程序。为此，需要完成以下步骤：
 
 1. [定义自定义 API]
 2. [更新应用以调用自定义 API]
 3. [测试应用] 
 
-本教程是在 GetStartedWithData 示例的基础上制作的，后者是一个简单的 TodoList 应用程序。在开始本教程之前，您必须先完成 [将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/)。
+本教程是在 GetStartedWithData 示例的基础上制作的，后者是一个简单的 TodoList 应用程序。在开始本教程之前，您必须先完成 [将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)。
 
 ## <a name="define-custom-api"></a>定义自定义 API
 

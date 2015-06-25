@@ -24,7 +24,7 @@ wacn.date="05/15/2015"
 ## 概述
 本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储客户端库](https://github.com/Azure/azure-storage-cpp/blob/v0.5.0-preview/README.md)。介绍的方案包括插入、查看、获取和删除队列消息以及创建和删除队列。  
 
->[AZURE.NOTE] 本指南主要面向适用于 C++ 版本 0.5.0 及其更高版本的 Azure 存储客户端库。建议的版本是存储客户端库 0.5.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/) 获得。 
+>[AZURE.NOTE] 本指南主要面向适用于 C++ 版本 0.5.0 及其更高版本的 Azure 存储客户端库。建议的版本是存储客户端库 0.5.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com) 获得。 
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
@@ -54,7 +54,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-若要在本地 Windows 计算机中测试你的应用程序，可以使用随同 [Azure SDK](/downloads/) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：  
+若要在本地 Windows 计算机中测试你的应用程序，可以使用随同 [Azure SDK](/downloads) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：  
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
@@ -236,7 +236,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 -	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables)
 -	[适用于 C++ 的存储客户端库](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx) 
 -	[Azure 存储 MSDN 参考](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx)
--	[Azure 存储文档](/documentation/services/storage/)
+-	[Azure 存储文档](/documentation/services/storage)
 
 
 <!--HONumber=53-->

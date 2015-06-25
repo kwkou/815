@@ -15,7 +15,7 @@
 
 ## 概述
 
-本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources/)部署到 Azure 网站。部署 Web 作业的另一个方法是使用 Azure 管理门户，具体请参阅[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs/)。
+本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources)部署到 Azure 网站。部署 Web 作业的另一个方法是使用 Azure 管理门户，具体请参阅[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
 
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
@@ -24,7 +24,7 @@
 
 已启用 Web 作业的项目中添加了以下项：
 
-* [Microsoft.Web.WebJobs.Publish](http://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) NuGet 包。
+* [Microsoft.Web.WebJobs.Publish](http://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish) NuGet 包。
 * 一个 [webjob-publish-settings.json](#publishsettings) 文件，其中包含部署和计划程序设置。 
 
 ![Diagram showing what is added to a Console App to enable deployment as a WebJob](./media/websites-dotnet-deploy-webjobs/convert.png)
@@ -122,22 +122,22 @@
 
 !["添加 Azure Web 作业"对话框](./media/websites-dotnet-deploy-webjobs/aaw2.png)
 
-此对话框中的字段对应于 Azure 管理门户中"新建作业"对话框上的字段。有关详细信息，请参阅[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs/)。
+此对话框中的字段对应于 Azure 管理门户中"新建作业"对话框上的字段。有关详细信息，请参阅[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
 
-对于计划的 Web 作业（而不是连续 Web 作业），Visual Studio 将创建 [Azure 计划程序](/home/features/scheduler/) 作业集合（如果尚不存在），然后在该集合中创建一个作业：
+对于计划的 Web 作业（而不是连续 Web 作业），Visual Studio 将创建 [Azure 计划程序](/home/features/scheduler) 作业集合（如果尚不存在），然后在该集合中创建一个作业：
 
 * 计划程序作业集合命名为  *WebJobs-{regionname}*，其中的 *{regionname}* 表示托管网站的区域。例如：WebJobs-WestUS。
 * 计划程序作业命名为 *{websitename}-{webjobname}*。例如：MyWebSite-MyWebJob。 
  
 >[AZURE.NOTE]
 > 
->* 有关命令行部署的信息，请参阅[启用 Azure Web 作业的命令行或连续传送](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)。
+>* 有关命令行部署的信息，请参阅[启用 Azure Web 作业的命令行或连续传送](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs)。
 >* 如果你配置了"定期作业"，并将周期频率设置为某个分钟数，则 Azure 计划程序不是免费的。其他频率（小时数、天数等）是免费的。
 >* 如果你部署了某个 Web 作业，并随后将运行模式从连续更改为非连续（或相反），则在你重新部署时，Visual Studio 将在 Azure 中创建新的 Web 作业。如果更改了其他计划设置但保持运行模式不变，或在计划模式与按需模式之间切换，则 Visual Studio 会更新现有的作业，而不是创建新的作业。
 
 ## <a id="publishsettings"></a>webjob-publish-settings.json
 
-当你设置 Web 作业部署的控制台应用程序时，Visual Studio 将会安装 [Microsoft.Web.WebJobs.Publish](http://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish/) NuGet 包， 
+当你设置 Web 作业部署的控制台应用程序时，Visual Studio 将会安装 [Microsoft.Web.WebJobs.Publish](http://www.nuget.org/packages/Microsoft.Web.WebJobs.Publish) NuGet 包， 
 并将计划信息存储在 Web 作业项目的项目 *Properties* 文件夹中的 *webjob-publish-settings.json* 文件内。以下是该文件的示例：
 
 		{
@@ -176,7 +176,7 @@
   
 ## <a id="deploy"></a>部署 Web 作业项目
 
-已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署 Azure 网站](/documentation/articles/websites-dotnet-deploy/)。
+已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署 Azure 网站](/documentation/articles/websites-dotnet-deploy)。
 
 若要自动部署某个 Web 作业项目，请在"解决方案资源管理器"中右键单击该项目，然后单击"发布为 Azure Web 作业"。 
 

@@ -25,7 +25,7 @@ editor="Eric Chen" />
 
 ####ASP.NET 入门
 
-###[入门教程](/zh-cn/documentation/articles/web-sites-dotnet-get-started/)
+###[入门教程](/zh-cn/documentation/articles/web-sites-dotnet-get-started)
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>

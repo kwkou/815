@@ -78,7 +78,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 在实际情况中，当一个应用程序将更新推送到数据库中的一条记录，然后另一个应用程序尝试使用该记录中过时的版本字段将更新推送到同一条记录时，会发生同步冲突。如[脱机数据处理入门]中所述，支持脱机同步功能需要版本系统属性。通过每次数据库更新检查此版本信息。如果应用程序的实例尝试使用过时版本更新记录，则将发生冲突，并且会在应用程序捕获为 `MobileServicePreconditionFailedException`。如果应用程序不捕获 `MobileServicePreconditionFailedException`,则最终将引发 `MobileServicePushFailedException`，描述遇到了多少同步错误。
 
->[AZURE.NOTE] 若要支持通过脱机数据同步来同步已删除记录，应启用[软删除](/zh-cn/documentation/articles/mobile-services-using-soft-delete/)。否则，必须手动删除本地存储区中的记录，或者调用 `IMobileServiceSyncTable::PurgeAsync()` 以清除本地存储区。
+>[AZURE.NOTE] 若要支持通过脱机数据同步来同步已删除记录，应启用[软删除](/zh-cn/documentation/articles/mobile-services-using-soft-delete)。否则，必须手动删除本地存储区中的记录，或者调用 `IMobileServiceSyncTable::PurgeAsync()` 以清除本地存储区。
 
 
 下面的步骤演示使用示例同时运行 Windows Phone 8.1 和 Windows 应用商店 8.1 客户端以引发冲突并解决冲突。

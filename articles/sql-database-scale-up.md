@@ -211,7 +211,7 @@
 若要使用本主题中描述的 Azure PowerShell cmdlet，你必须在运行 PowerShell 的计算机上安装以下软件。
 1. 从 http://www.microsoft.com/zh-cn/download/details.aspx?id=34595 下载最低 3.0 的 Windows PowerShell 版本。
 
-2. 从 [Azure SDK 和工具下载](/downloads/)的"命令行工具"部分下载 Azure PowerShell。
+2. 从 [Azure SDK 和工具下载](/downloads)的"命令行工具"部分下载 Azure PowerShell。
 
 执行以下操作：
 从"开始"屏幕或"开始"菜单，导航到 Azure PowerShell 并将其启动。

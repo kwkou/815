@@ -6,7 +6,7 @@
 
 本教程使用 [HDInsight Storm] 安装，该安装带有已经可用的事件中心喷管。
 
-1. 请遵循 [HDInsight Storm - 入门](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-getting-started/) 过程创建新 HDInsight 群集，并通过远程桌面连接该群集。
+1. 请遵循 [HDInsight Storm - 入门](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-getting-started) 过程创建新 HDInsight 群集，并通过远程桌面连接该群集。
 
 2. 将`%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar`文件复制到本地开发环境。其中包含 events-storm-spout。
 

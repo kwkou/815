@@ -25,7 +25,7 @@
 3. [在插入操作中添加时间戳]
 4. [更新客户端以显示时间戳]
 
-本教程以前一教程[将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/)中的步骤和示例应用程序为基础。在开始本教程之前，必须先完成此教程。  
+本教程以前一教程[将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)中的步骤和示例应用程序为基础。在开始本教程之前，必须先完成此教程。  
 
 ## <a name="string-length-validation"></a>添加验证
 

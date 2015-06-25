@@ -44,9 +44,9 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 中国 Windows Azure 是由中国公司世纪互联从位于中国人民共和国（不包括香港特别行政区、澳门特别行政区和中国台湾地区）的数据中心运营并提供的独立 Windows Azure 平台。因此，创建和部署Windows Azure 服务—由世纪互联运营（“中国服务”），而不是由全球服务运营的应用程序时，开发人员需要先了解这两项服务之间的主要区别，然后再设置自己的编程环境、编写应用程序并将其部署为在中国托管的服务。
 
-本文档概要说明了这些区别并为中国 [Windows Azure 门户](http://www.windowsazure.cn/)及 [MSDN 上的 Windows Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多其他地方发布，如 Windows Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
+本文档概要说明了这些区别并为中国 [Windows Azure 门户](http://www.windowsazure.cn)及 [MSDN 上的 Windows Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。官方信息也会在许多其他地方发布，如 Windows Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及 Microsoft 员工发表的各种博客文章。本内容专门针对将在中国部署托管于中国的数据中心的合作伙伴及开发人员。
 
-有关中国服务功能可用性的最新更新，请访问中国[Windows Azure 门户](http://www.windowsazure.cn/)。有关 Windows Azure 上当前内容资产的列表，请参阅本文档的附录。
+有关中国服务功能可用性的最新更新，请访问中国[Windows Azure 门户](http://www.windowsazure.cn)。有关 Windows Azure 上当前内容资产的列表，请参阅本文档的附录。
  
 #<a name="dev-guide"></a>为开发人员提供指导
 
@@ -302,7 +302,7 @@ Windows Azure Active Directory（“Windows Azure AD”）提供身份和访问�
 
 <!--- ###[ACS 配置]<a name=""></a>acsconf)
 
-要创建使用 ACS 的应用程序，开发人员应阅读[有关 Codeplex 的访问控制服务示例和文档](http://acs.codeplex.com/)中的文档和代码示例。要在中国使用 Windows Azure 中的这些示例，请在 \Management\ManagementService\Common\SamplesConfiguration.cs 文件中将 AcsHostUrl 端点 *.accesscontrol.chinacloudapi.cn*替换为 *.accesscontrol.chinacloudapi.cn*。
+要创建使用 ACS 的应用程序，开发人员应阅读[有关 Codeplex 的访问控制服务示例和文档](http://acs.codeplex.com)中的文档和代码示例。要在中国使用 Windows Azure 中的这些示例，请在 \Management\ManagementService\Common\SamplesConfiguration.cs 文件中将 AcsHostUrl 端点 *.accesscontrol.chinacloudapi.cn*替换为 *.accesscontrol.chinacloudapi.cn*。
 例如，要使用 Acs2WindowsPhoneSample 示例，请另外进行以下更改：
 <table border="1" cellspacing="0" cellpadding="0" class="MsoNormalTable" style="border-collapse: collapse; border: none; mso-border-alt: solid gray 1.5pt; mso-yfti-tbllook: 480; mso-padding-alt: 0in 4.3pt 0in 4.3pt; mso-border-insideh: .75pt solid gray; mso-border-insidev: .75pt solid gray;">
 <thead>

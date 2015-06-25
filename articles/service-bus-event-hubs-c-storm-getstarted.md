@@ -17,9 +17,9 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ C 语言开发环境。对于本教程，我们将假定 gcc 堆栈在使用 Ubuntu 14.04 的 [Azure Linux 虚拟机](/zh-cn/documentation/articles/virtual-machines-linux-tutorial/)上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们将假定 gcc 堆栈在使用 Ubuntu 14.04 的 [Azure Linux 虚拟机](/zh-cn/documentation/articles/virtual-machines-linux-tutorial)上。有关其他环境的说明，将在外部链接中提供。
 
-+ 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。本教程将使用 [Eclipse](https://www.eclipse.org/)。
++ 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org)。本教程将使用 [Eclipse](https://www.eclipse.org)。
 
 + 有效的 Azure 订阅。 <br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 

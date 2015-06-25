@@ -26,7 +26,7 @@
 
 存储分析可存储一些度量值，这些度量值包括有关存储服务请求的聚合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。度量值数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题以及提高使用服务的应用程序的性能。
 
-若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.cn/)启用它；有关详细信息，请参阅[如何监视存储帐户](http://www.windowsazure.cn/manage/services/storage/how-to-monitor-a-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。[使用"获取 Blob 服务属性"、"获取队列服务属性"](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)和["获取表服务属性"操作为每个服务启用存储分析](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)。
+若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.cn)启用它；有关详细信息，请参阅[如何监视存储帐户](http://www.windowsazure.cn/manage/services/storage/how-to-monitor-a-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。[使用"获取 Blob 服务属性"、"获取队列服务属性"](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)和["获取表服务属性"操作为每个服务启用存储分析](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)。
 
 ## 事务度量值
 
@@ -86,6 +86,6 @@
 
 ### 其他资源
 
-[如何监视存储帐户](http://www.windowsazure.cn/manage/services/storage/how-to-monitor-a-storage-account/)
+[如何监视存储帐户](http://www.windowsazure.cn/manage/services/storage/how-to-monitor-a-storage-account)
 
 <!--HONumber=50-->

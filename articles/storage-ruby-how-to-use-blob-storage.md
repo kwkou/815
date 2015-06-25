@@ -39,7 +39,7 @@ Azure Blob 服务。相关示例是使用 Ruby API 编写的。
 
 ## <a id="CreateRubyApp"></a>创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅 [在 Azure 上创建 Ruby 应用程序](/develop/ruby/tutorials/web-app-with-linux-vm/)。
+创建 Ruby 应用程序。有关说明，请参阅 [在 Azure 上创建 Ruby 应用程序](/develop/ruby/tutorials/web-app-with-linux-vm)。
 
 ## <a id="ConfigAccessStorage"></a>配置应用程序以访问存储
 
@@ -67,7 +67,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 获取这些值：
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/).
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn).
 2. 导航到要使用的存储帐户
 3. 单击导航窗格底部的"管理密钥"。
 4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，你可以使用主访问密钥，也可以使用辅助访问密钥。
@@ -150,6 +150,6 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解如何执行更复杂的存储任务。
 
 -   查看 MSDN 参考：[在 Azure 中存储和访问数据](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
--   访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
+-   访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage)
 -   访问 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) repository on GitHub
 <!--HONumber=41-->

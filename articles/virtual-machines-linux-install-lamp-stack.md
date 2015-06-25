@@ -90,7 +90,7 @@ LAMP 堆栈包含以下不同元素：
 
 		- CentOS & Oracle: `sudo service httpd restart`
 
-	- 默认情况下，Apache 在端口 80 上进行侦听。您可能需要打开终结点以远程访问您的 Apache 服务器。请参阅有关[配置终结点](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/)的文档 以获取更多详细说明。
+	- 默认情况下，Apache 在端口 80 上进行侦听。您可能需要打开终结点以远程访问您的 Apache 服务器。请参阅有关[配置终结点](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints)的文档 以获取更多详细说明。
 
 	- 您现在可以查看 Apache 是否正在运行以及是否提供内容。将您的浏览器指向 `http://[MYSERVICE].chinacloudapp.cn`，其中 **[MYSERVICE]** 是您的虚拟机所在的云服务的名称。在某些分发上，只声明"它有用！"的默认网页可能是欢迎网页。在其他分发上，您可能会看到一个更完整的网页，该网页带有指向其他文档和用于配置 Apache 服务器的内容的链接。
 

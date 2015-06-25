@@ -11,7 +11,7 @@ Azure Active Directory 是一个全面的标识和访问管理云解决方案。
 
 ####快速链接
 
--   [服务概述](/home/features/identity/)
+-   [服务概述](/home/features/identity)
 -   [定价详细信息](/home/features/identity/#price)
 
 ####特色
@@ -22,7 +22,7 @@ Azure Active Directory 是一个全面的标识和访问管理云解决方案。
 
 ###探究
 
-####[什么是 Azure Active Directory？](/zh-cn/documentation/articles/active-directory-whatis/)
+####[什么是 Azure Active Directory？](/zh-cn/documentation/articles/active-directory-whatis)
 
 Azure AD 的快速概述。
 

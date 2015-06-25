@@ -39,7 +39,7 @@ Azure 管理门户为你提供两种创建和部署云服务的方法：**"快�
 ##<a id="prepare"></a>准备应用程序##
 在可以部署云服务之前，必须根据你的应用程序代码创建云服务包 (.cspkg)，并创建云服务配置文件 (.cscfg)。每个云服务包都包含应用程序文件和配置。服务配置文件提供了配置设置。
 
-Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以从 [Azure 下载](http://www.windowsazure.cn/downloads/)页安装你选择用于开发应用程序代码的相应语言的 SDK。
+Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以从 [Azure 下载](http://www.windowsazure.cn/downloads)页安装你选择用于开发应用程序代码的相应语言的 SDK。
 
 在你导出服务包之前，三种云服务功能需要特殊的配置：
 
@@ -47,13 +47,13 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 - 如果要配置与角色实例的远程桌面连接，请为这些角色配置远程桌面。有关为远程访问准备服务定义文件的详细信息，请参阅[在 Azure 中为角色设置远程桌面连接](http://msdn.microsoft.com/zh-cn/library/hh124107.aspx)。
 
-- 如果要为云服务配置详细监视，请为云服务启用 Azure Diagnostics。"最少监视"（默认监视级别）使用从角色实例（虚拟机）的主机操作系统中收集到的性能计数器数据。"详细监视"根据角色实例中的性能数据收集其他度量信息，以便对处理应用程序期间出现的问题进行进一步分析。若要了解如何启用 Azure Diagnostics，请参阅[在 Azure 中启用 Diagnostics](/zh-cn/documentation/articles/cloud-services-dotnet-diagnostics/)。
+- 如果要为云服务配置详细监视，请为云服务启用 Azure Diagnostics。"最少监视"（默认监视级别）使用从角色实例（虚拟机）的主机操作系统中收集到的性能计数器数据。"详细监视"根据角色实例中的性能数据收集其他度量信息，以便对处理应用程序期间出现的问题进行进一步分析。若要了解如何启用 Azure Diagnostics，请参阅[在 Azure 中启用 Diagnostics](/zh-cn/documentation/articles/cloud-services-dotnet-diagnostics)。
 
 - 若要创建包含 Web 角色或辅助角色部署的云服务，必须创建服务包。如需与包相关的文件的详细信息，请参阅[为 Azure 设置云服务](http://msdn.microsoft.com/zh-cn/library/hh124108.aspx)。若要创建包文件，请参阅[将 Microsoft Azure 应用程序打包](http://msdn.microsoft.com/zh-cn/library/hh403979.aspx)。如果使用 Visual Studio 开发应用程序，请参阅[使用 Azure Tools 发布云服务](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx)。
 
 ##<a id="begin"></a>开始之前##
 
-- 如果你尚未安装 Azure SDK，请单击****"安装 Azure SDK"以打开 [Azure 下载页](http://www.windowsazure.cn/downloads/)，然后下载你选择用于开发代码的相应语言的 SDK。（你也可以稍后执行此操作。）
+- 如果你尚未安装 Azure SDK，请单击****"安装 Azure SDK"以打开 [Azure 下载页](http://www.windowsazure.cn/downloads)，然后下载你选择用于开发代码的相应语言的 SDK。（你也可以稍后执行此操作。）
 
 - 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。你可以在创建和部署云服务时将这些证书上载到 Azure。有关证书的信息，请参阅[管理证书](http://msdn.microsoft.com/zh-cn/library/gg981929.aspx)。
 
@@ -62,7 +62,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 ##<a id="quick"></a>如何：使用"快速创建"创建云服务##
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中，单击"新建"****>"计算"****>"云服务"****>"快速创建"****。
+1. 在[管理门户](http://manage.windowsazure.cn)中，单击"新建"****>"计算"****>"云服务"****>"快速创建"****。
 
 	![CloudServices_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png)
 
@@ -83,7 +83,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 ##<a id="uploadcertificate"></a>如何：为云服务上载证书##
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中，依次单击"云服务"、云服务的名称、"证书"********。
+1. 在[管理门户](http://manage.windowsazure.cn)中，依次单击"云服务"、云服务的名称、"证书"********。
 
 	![CloudServices_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png)
 
@@ -104,7 +104,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 ##<a id="deploy"></a>如何：部署云服务##
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中，依次单击"云服务"、云服务的名称、"仪表板"********。
+1. 在[管理门户](http://manage.windowsazure.cn)中，依次单击"云服务"、云服务的名称、"仪表板"********。
 
 	仪表板将在生产环境中打开，此时，你可以选择"过渡"以在过渡环境中部署应用程序。有关详细信息，请参阅[在 Azure 中管理部署](http://msdn.microsoft.com/zh-cn/library/gg433027.aspx)。
 
@@ -119,7 +119,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 5. 如果云服务将包括只具有一个实例的任何角色，请选中"即使一个或多个角色包含单个实例也进行部署"****复选框以使部署继续进行。
 
- 如果每个角色至少具有两个实例，那么 Azure 在维护和服务更新期间只能保证他人可访问云服务的概率是 99.95%。如果需要，你可以在部署云服务后，在"缩放"****页上添加其他角色实例。有关详细信息，请参阅[服务级别协议](/support/legal/sla/)。
+ 如果每个角色至少具有两个实例，那么 Azure 在维护和服务更新期间只能保证他人可访问云服务的概率是 99.95%。如果需要，你可以在部署云服务后，在"缩放"****页上添加其他角色实例。有关详细信息，请参阅[服务级别协议](/support/legal/sla)。
 
 6. 单击"确定"（复选标记）以开始云服务部署****。
 

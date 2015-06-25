@@ -18,7 +18,7 @@
 
 ### 替代体系结构：网站和 Web 作业
 
-本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/zh-cn/services/web-sites/)中运行前端，并为后端使用 [Web 作业](/zh-cn/documentation/articles/websites-webjobs-resources/)功能(currently in preview)。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/)。
+本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/zh-cn/services/web-sites)中运行前端，并为后端使用 [Web 作业](/zh-cn/documentation/articles/websites-webjobs-resources)功能(currently in preview)。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm)。
 
 ### 学习内容
 
@@ -33,7 +33,7 @@
 
 本教程假定你了解[有关 Azure 云服务的基本概念](/zh-cn/documentation/articles/fundamentals-application-models/#CloudServices)，例如"Web 角色"和"辅助角色"术语。它还假定你知道如何处理 Visual Studio 中的 [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) 或 [Web 窗体](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)项目。示例应用程序使用 MVC，但在本教程的大部分也适用于 Web 窗体。 
 
-你可以本地运行该应用程序，无需订阅 Azure，但要将应用程序部署到云则需要订阅。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/)。
+你可以本地运行该应用程序，无需订阅 Azure，但要将应用程序部署到云则需要订阅。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial)。
 
 教程说明使用以下产品之一：
 
@@ -791,7 +791,7 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 下面是演示更实际编码方法的一些云服务示例应用程序，从不太复杂到更复杂排列：
 
 * [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31)。在概念上与 Contoso 广告类似，但实施更多的功能和详细的实际编码做法。
-* [带有表、队列和 Blob 的 Azure 云服务多层应用程序](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36)。介绍 Azure 存储表以及 blob 和队列，并附带[分步教程系列](/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview/)。
+* [带有表、队列和 Blob 的 Azure 云服务多层应用程序](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36)。介绍 Azure 存储表以及 blob 和队列，并附带[分步教程系列](/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview)。
 * [Microsoft Azure 中的云服务基础知识](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。一个综合示例，演示各种最佳实践，由 Microsoft 模式和实践组生产。
 
 有关云开发的常规信息，请参阅[使用 Microsoft Azure 构建实际的云应用程序](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction)。
@@ -799,9 +799,9 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 
 有关详细信息，请参阅以下资源：
 
-* [Azure 云服务第 1 部分：简介](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
-* [Azure 云服务](/zh-cn/documentation/services/cloud-services/)
-* [Azure 存储空间](/zh-cn/documentation/services/storage/)
-* [如何通过 .NET 使用 Blob 存储](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/)
-* [如何通过 .NET 使用队列存储](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/)
+* [Azure 云服务第 1 部分：简介](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction)
+* [Azure 云服务](/zh-cn/documentation/services/cloud-services)
+* [Azure 存储空间](/zh-cn/documentation/services/storage)
+* [如何通过 .NET 使用 Blob 存储](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)
+* [如何通过 .NET 使用队列存储](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)
 <!--HONumber=39-->

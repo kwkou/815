@@ -12,19 +12,19 @@
 ####快速链接
 
 -   [服务概述](/home/features/back-up)
--   [可交付的解决方案](/solutions/storage-backup-recovery/)
+-   [可交付的解决方案](/solutions/storage-backup-recovery)
 -   [备份定价详细信息](/home/features/back-up/#price)
 
 ####特色
 
--   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault/)
+-   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault)
 -   [使用备份保管库保护项目](http://msdn.microsoft.com/zh-cn/library/azure/dn168843.aspx)
 
 ##教程和指南
 
 ###探究
 
--   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault/)
+-   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault)
 
 ###管理
 

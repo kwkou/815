@@ -40,7 +40,7 @@
 
 
 6. 单击"虚拟网络地址空间"页右下角的复选标记，此时将开始创建你的虚拟网络。创建虚拟网络后，在管理门户的网络页上，你将看到"状态"下面列出了"已创建"。
-7. 创建虚拟网络后，便可以部署到你的虚拟网络。例如，如果要将 VM 部署到虚拟网络，请参阅[将虚拟机添加到虚拟网络](/documentation/articles/virtual-machines-create-custom/)。在创建新 VM 时请务必选择**"从库中"**，以便显示选择虚拟网络的选项。请注意，如果你已部署现有 VM 和 PaaS 实例，则不能直接将它们移到新的虚拟网络。这是因为在部署过程中已为它们配置网络配置设置。你必须重新将它们部署到新的虚拟网络。
+7. 创建虚拟网络后，便可以部署到你的虚拟网络。例如，如果要将 VM 部署到虚拟网络，请参阅[将虚拟机添加到虚拟网络](/documentation/articles/virtual-machines-create-custom)。在创建新 VM 时请务必选择**"从库中"**，以便显示选择虚拟网络的选项。请注意，如果你已部署现有 VM 和 PaaS 实例，则不能直接将它们移到新的虚拟网络。这是因为在部署过程中已为它们配置网络配置设置。你必须重新将它们部署到新的虚拟网络。
 
 
 
@@ -48,11 +48,11 @@
 -  [虚拟网络技术概述](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx)
 
  
--  [将虚拟机添加到虚拟网络](/documentation/articles/virtual-machines-create-custom/)
+-  [将虚拟机添加到虚拟网络](/documentation/articles/virtual-machines-create-custom)
 
 -  [虚拟网络常见问题解答](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn133803.aspx)
 
--  [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)
+-  [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)
 
 -  [Azure 名称解析概述](https://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)
  

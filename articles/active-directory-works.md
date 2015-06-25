@@ -31,7 +31,7 @@ Azure AD 可在云中创建属于你的标识布局。它可以连接到你的�
 
 你可以将 Azure AD 中的帐户看作是云中的驾照：它是你用来访问联机服务的唯一 ID。从这种意义上讲，Azure AD 类似于云中颁发这些驾照的私用注册机构。它可以实现在云中任何位置使用相应的标识，并可提高访问本地资源的用户的移动性。 
 
-> [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册 Azure 试用帐户](/pricing/1rmb-trial/)。
+> [AZURE.NOTE] 若要使用 Azure Active Directory，你需要一个 Azure 帐户。如果你没有帐户，可以[注册 Azure 试用帐户](/pricing/1rmb-trial)。
 
 ## Azure AD 如何为 Office 365、Microsoft Intune 和其他 Azure 服务提供支持？
 

@@ -36,7 +36,7 @@ HDInsight 支持可随时部署的多个 Hadoop 群集版本。每个版本选�
 
 **发行说明**	
 
-请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes/)，了解 HDInsight 最新版本的更多发行说明。
+请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes)，了解 HDInsight 最新版本的更多发行说明。
 
 ### 设置 HDInsight 群集时选择一个版本
 

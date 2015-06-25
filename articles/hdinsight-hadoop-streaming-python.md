@@ -16,7 +16,7 @@
 
 Hadoop 为 MapReduce 提供了一个流式处理 API，使你能够以 Java 之外的其他语言来编写映射和化简函数。在本文档中，你将学习如何使用 Python 执行 MapReduce 操作。
 
-> [AZURE.NOTE] 本文是根据 Michael Noll 在 [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/) 上发布的信息和示例所编写的。
+> [AZURE.NOTE] 本文是根据 Michael Noll 在 [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python) 上发布的信息和示例所编写的。
 
 ## 要求
 
@@ -192,8 +192,8 @@ Python 可以使用 **sys** 模块从 STDIN 读取数据，并使用 **print** �
 
 现在，你已了解如何将流式处理 MapRedcue 作业与 HDInsight 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
 <!--HONumber=50-->

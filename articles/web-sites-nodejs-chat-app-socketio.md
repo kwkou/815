@@ -9,7 +9,7 @@
 
 Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时通信。还支持回退到使用低版本浏览器的其他传输（如长轮询）。本教程将指导您将基于 Socket.IO 的聊天应用程序作为 Azure 网站托管。有关 Socket.IO 的详细信息，请参阅 [http://socket.io/][socketio]。
 
-> [AZURE.NOTE] 在本任务中的过程适用于 Azure 网站；关于云服务，请参阅[在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/cloud-services-nodejs-chat-app-socketio/)。
+> [AZURE.NOTE] 在本任务中的过程适用于 Azure 网站；关于云服务，请参阅[在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序](/documentation/articles/cloud-services-nodejs-chat-app-socketio)。
 
 
 ## <a id="Download"></a>下载聊天示例

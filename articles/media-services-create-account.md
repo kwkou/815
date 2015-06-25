@@ -29,7 +29,7 @@
 如何：使用“快速创建”创建 Media Services 帐户
 --------------------------------------------
 
-1.  在[管理门户](http://manage.windowsazure.cn/)中，依次单击“新建”****、“Media Services”****和“快速创建”****。
+1.  在[管理门户](http://manage.windowsazure.cn)中，依次单击“新建”****、“Media Services”****和“快速创建”****。
 
     ![Media Services 快速创建](./media/media-services-create-account/wams-QuickCreate.png)
 

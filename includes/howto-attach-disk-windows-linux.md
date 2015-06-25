@@ -29,7 +29,7 @@
 
 每个虚拟机还附加有一个临时的本地  *resource disk*。由于资源磁盘上的数据可能不能在重新引导后持久存在，因此它通常由在虚拟机中运行的应用程序和进程用于数据的短暂和临时存储。它还用来为操作系统存储页面文件或交换文件。
 
-在 Windows 上，资源磁盘被标记为 **D:** 驱动器。在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请参阅 [Azure Linux 代理用户指南](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/) 获取详细信息。
+在 Windows 上，资源磁盘被标记为 **D:** 驱动器。在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请参阅 [Azure Linux 代理用户指南](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide) 获取详细信息。
 
 有关使用数据磁盘的更多信息，请参阅[管理磁盘和映像](http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx)。
 

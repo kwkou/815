@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with TFS" pageTitle="使用 Visual Studio Online 在 Azure 中持续交付" metaKeywords="" description="了解如何将 Visual Studio Online 团队项目配置为自动生成并部署到 Azure 网站或云服务。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-publishing-with-vso" urlDisplayName="Publishing with TFS" pageTitle="使用 Visual Studio Online 在 Azure 中持续交付" metaKeywords="" description="了解如何将 Visual Studio Online 团队项目配置为自动生成并部署到 Azure 网站或云服务。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Continuous delivery to Azure using Visual Studio Online" authors="ghogen" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/17/2015"
     wacn.date="04/11/2015"
@@ -11,7 +11,7 @@
 
   你可以将 Visual Studio Online 团队项目配置为自动生成并部署到 Azure 网站或云服务。（有关如何使用本地 Team Foundation Server 设置持续生成和部署系统的信息，请参阅[在 Azure 中持续传送云服务](../cloud-services-dotnet-continuous-delivery)。）
 
-本教程假设你已安装 Visual Studio 2013 和 Azure SDK。如果你尚未安装 Visual Studio 2013，请在 [www.visualstudio.com](http://www.visualstudio.com) 上选择**免费试用**链接以下载该软件。从[此处](http://www.windowsazure.cn/downloads/)安装 Azure SDK。
+本教程假设你已安装 Visual Studio 2013 和 Azure SDK。如果你尚未安装 Visual Studio 2013，请在 [www.visualstudio.com](http://www.visualstudio.com) 上选择**免费试用**链接以下载该软件。从[此处](http://www.windowsazure.cn/downloads)安装 Azure SDK。
 
 <div class="wa-note">
   <span class="wa-icon-bulb"></span>
@@ -37,14 +37,14 @@
 
 <h2> <a name="step1"></a>步骤 1：创建团队项目</h2>
 
-按照[此处](http://go.microsoft.com/fwlink/?LinkId=512980)的说明创建团队项目，并将其链接到 Visual Studio。本演练假定你使用 Team Foundation 版本控制 (TFVC) 作为源代码管理解决方案。如果你要使用 Git 进行版本控制，请参阅[本演练的 Git 版本](/zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso-git/)。
+按照[此处](http://go.microsoft.com/fwlink/?LinkId=512980)的说明创建团队项目，并将其链接到 Visual Studio。本演练假定你使用 Team Foundation 版本控制 (TFVC) 作为源代码管理解决方案。如果你要使用 Git 进行版本控制，请参阅[本演练的 Git 版本](/zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso-git)。
 
 <h2><a name="step2"> </a>步骤 2：将项目签入到源代码管理</h2>
 
 1. 在 Visual Studio 中，打开要部署的解决方案或创建一个新的解决方案。
 你可以通过执行本演练中的步骤来部署网站或云服务（Azure 应用程序）。
 若要创建新的解决方案，请创建新的 Azure 云服务项目或新的 ASP.NET MVC 项目。确保项目以 .NET Framework 4 或 4.5 为目标。如果你要创建云服务项目，请添加 ASP.NET MVC Web 角色和辅助角色，并为 Web 角色选择 Internet 应用程序。系统提示时，请选择"Internet 应用程序"****。
-如果你想要创建网站，请选择 ASP.NET Web 应用程序项目模板，然后选择 MVC。请参阅 [Azure 和 ASP.NET 入门](/zh-cn/documentation/articles/web-sites-dotnet-get-started/)。
+如果你想要创建网站，请选择 ASP.NET Web 应用程序项目模板，然后选择 MVC。请参阅 [Azure 和 ASP.NET 入门](/zh-cn/documentation/articles/web-sites-dotnet-get-started)。
 
 2. 打开解决方案的上下文菜单，然后选择"将解决方案添加到源代码管理"
 ****。<br/>

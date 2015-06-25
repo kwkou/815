@@ -35,7 +35,7 @@
 2.	配置 SQL Server 计算机 (SQL1)。
 3.	配置 LOB 服务器 (LOB1)。
 
-如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 免费注册。
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial) 免费注册。
 
 ## 阶段 1：设置混合云环境
 

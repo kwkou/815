@@ -17,7 +17,7 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ Java 开发环境。本教程将使用 [Eclipse](https://www.eclipse.org/)。
++ Java 开发环境。本教程将使用 [Eclipse](https://www.eclipse.org)。
 
 + Microsoft Visual Studio Express 2013 for Windows
 

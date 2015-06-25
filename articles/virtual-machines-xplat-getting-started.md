@@ -15,7 +15,7 @@
 # 使用 Azure 跨平台命令行界面 (xplat-cli) 创建 VM
 xplat-cli 是从任何平台管理 Azure 基础结构的很好方式。
 
-仅安装 xplat-cli 并拥有 Azure 订阅将阻止你立即创建 VM，因此让我们注意这些步骤。如果你没有 Azure 帐户，请[转去获取试用版](/pricing/1rmb-trial/)。
+仅安装 xplat-cli 并拥有 Azure 订阅将阻止你立即创建 VM，因此让我们注意这些步骤。如果你没有 Azure 帐户，请[转去获取试用版](/pricing/1rmb-trial)。
 
 ## 安装 xplat-cli
 
@@ -67,7 +67,7 @@ xplat-cli 是从任何平台管理 Azure 基础结构的很好方式。
 
     ssh myadminuser@my-new-cli-vm.chinacloudapp.cn
 
-查看有关使用 xplat-cli 来管理 Azure 基础结构的更多示例的一个很好的选择是[针对 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/virtual-machines-command-line-tools/)
+查看有关使用 xplat-cli 来管理 Azure 基础结构的更多示例的一个很好的选择是[针对 Mac 和 Linux 的 Azure 命令行工具](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png

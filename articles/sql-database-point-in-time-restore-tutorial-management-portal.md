@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库" 
    description="时间点还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户" 
    services="sql-database" 
@@ -22,9 +22,9 @@
 
 ## 概述
 
-本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn/)中使用时间点还原来还原 Azure SQL 数据库。Azure SQL Database 针对基本、标准和高级服务层提供内置备份，以支持自助时间点还原。
+本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn)中使用时间点还原来还原 Azure SQL 数据库。Azure SQL Database 针对基本、标准和高级服务层提供内置备份，以支持自助时间点还原。
 
-时间点还原会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact/)。
+时间点还原会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact)。
 
 ## 限制和安全性
 
@@ -69,6 +69,6 @@
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore/)
+[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore)
 
 <!--HONumber=55-->

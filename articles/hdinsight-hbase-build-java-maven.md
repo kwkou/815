@@ -6,7 +6,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 ## 借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序
 
-了解如何使用 Apache Maven 创建并生成一个 [Apache HBase](http://hbase.apache.org/) Java 应用程序。然后，在 Azure HDInsight (Hadoop) 上使用该应用程序。
+了解如何使用 Apache Maven 创建并生成一个 [Apache HBase](http://hbase.apache.org) Java 应用程序。然后，在 Azure HDInsight (Hadoop) 上使用该应用程序。
 
 [Maven][] 是一个软件项目管理和分析工具，可让你生成 Java 项目的软件、文档和报告。在本文中，你将要了解如何使用 Maven 创建一个基本的 Java 应用程序，该应用程序可在 Azure HDInsight 群集中创建、查询和删除 HBase 表。
 
@@ -14,7 +14,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 -   [Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本
 
--   [Maven](http://maven.apache.org/)
+-   [Maven](http://maven.apache.org)
 
 -   [一个包含 HBase 的 Azure HDInsight 群集](/zh-cn/documentation/articles/hdinsight-hbase-get-started/#create-hbase-cluster)
 
@@ -86,7 +86,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
     > [WACOM.NOTE] 你也可以通过代码设置配置值。请参阅以下 **CreateTable** 示例中的注释，以了解如何操作。
 
-    这还会配置 [maven-shade-plugin](http://maven.apache.org/plugins/maven-shade-plugin/)，用于防止 Maven 生成的 JAR 中发生许可证重复。使用此插件的原因在于，重复的许可证文件会导致 HDInsight 群集在运行时出错。将 maven-shade-plugin 与 `ApacheLicenseResourceTransformer` 实现一起使用可防止此错误。
+    这还会配置 [maven-shade-plugin](http://maven.apache.org/plugins/maven-shade-plugin)，用于防止 Maven 生成的 JAR 中发生许可证重复。使用此插件的原因在于，重复的许可证文件会导致 HDInsight 群集在运行时出错。将 maven-shade-plugin 与 `ApacheLicenseResourceTransformer` 实现一起使用可防止此错误。
 
     maven-shade-plugin 还将生成 uberjar（或 fatjar），其中包含应用程序所需的所有依赖项。
 
@@ -325,9 +325,9 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 ## 上载 JAR 并启动作业
 
-> [WACOM.NOTE] 可以根据[在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data/)中所述，通过许多方式将文件上载到 HDInsight 群集。下面的步骤使用了 [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
+> [WACOM.NOTE] 可以根据[在 HDInsight 中上载 Hadoop 作业的数据](/zh-cn/documentation/articles/hdinsight-upload-data)中所述，通过许多方式将文件上载到 HDInsight 群集。下面的步骤使用了 [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell)。
 
-1.  安装并配置 [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/) 后，请创建名为 **hbase-runner.psm1** 的新文件。在此文件中使用以下内容。
+1.  安装并配置 [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell) 后，请创建名为 **hbase-runner.psm1** 的新文件。在此文件中使用以下内容。
 
         <#
         .SYNOPSIS

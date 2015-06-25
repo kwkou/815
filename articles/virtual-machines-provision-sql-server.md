@@ -31,7 +31,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。您可以�
     
     > - 您可以通过按分钟付费的库中的 SQL Server 版本中创建新的虚拟机，并通过遵循的步骤，将数据库文件迁移到这个新的虚拟机[如何使用数据磁盘在 Azure 中的虚拟机之间迁移 SQL Server 数据库文件和架构](http://msdn.microsoft.com/zh-cn/library/azure/jj898505.aspx)。**Or**,
 
-    > - 可以将 SQL Server 评估版的现有实例升级到另一版本的 SQL Server 下[Azure 上通过软件保障许可移动性](/zh-cn/pricing/license-mobility/) 通过遵循的步骤的协议[升级到不同版本的 SQL Server 2014](http://msdn.microsoft.com/zh-cn/library/cc707783(v=sql.120).aspx)。有关如何购买 SQL Server 的许可的副本的信息，请参阅[如何购买 SQL Server](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server/buy.aspx#fbid=t8CT8yhDl9X)。
+    > - 可以将 SQL Server 评估版的现有实例升级到另一版本的 SQL Server 下[Azure 上通过软件保障许可移动性](/zh-cn/pricing/license-mobility) 通过遵循的步骤的协议[升级到不同版本的 SQL Server 2014](http://msdn.microsoft.com/zh-cn/library/cc707783(v=sql.120).aspx)。有关如何购买 SQL Server 的许可的副本的信息，请参阅[如何购买 SQL Server](http://www.microsoft.com/zh-cn/server-cloud/products/sql-server/buy.aspx#fbid=t8CT8yhDl9X)。
    
 
 4. 在第一天**虚拟机配置**页上，提供以下信息：
@@ -352,7 +352,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。您可以�
 
 [Azure 虚拟机中的 SQL Server 技术文章](http://msdn.microsoft.com/zh-cn/library/azure/dn248435.aspx)
 
-- [白皮书：了解 Azure SQL Database 和 Azure 虚拟机中的 SQL Server](/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/)
+- [白皮书：了解 Azure SQL Database 和 Azure 虚拟机中的 SQL Server](/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)
 
 - [白皮书：应用程序模式和 Azure 虚拟机中的 SQL Server 的开发策略](https://msdn.microsoft.com/zh-CN/library/azure/dn574746.aspx)
 

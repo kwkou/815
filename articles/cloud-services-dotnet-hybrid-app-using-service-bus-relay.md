@@ -399,7 +399,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
     ##准备好将应用程序部署到 AZURE###
 
-    你可以将应用程序部署到 Azure 云服务或 Azure 网站。若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。若要了解如何将应用程序部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started/).本部分包含有关如何将应用程序部署到 Azure 云服务的详细步骤。
+    你可以将应用程序部署到 Azure 云服务或 Azure 网站。若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。若要了解如何将应用程序部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started).本部分包含有关如何将应用程序部署到 Azure 云服务的详细步骤。
 
     若要将应用程序部署到云服务，需要在解决方案中添加一个云服务项目部署项目。该部署项目包含在云中正常运行应用程序所需的配置信息。
 

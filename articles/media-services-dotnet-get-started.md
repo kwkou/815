@@ -31,7 +31,7 @@ Media Services 入门
 
 **说明**
 
-若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/)。
+若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial)。
 
 设置项目
 --------
@@ -645,6 +645,6 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 
 本演练演示了生成简单 Media Services 应用程序所要执行的编程任务序列。你已学习了基本的 Media Services 编程任务，包括获取服务器上下文、创建资产、为资产编码，以及下载或访问服务器上的资产。有关后续步骤和其他高级开发任务，请参阅以下主题：
 
--   [如何使用 Media Services](/documentation/articles/media-services-set-up-computer/)
+-   [如何使用 Media Services](/documentation/articles/media-services-set-up-computer)
 -   [使用 Media Services REST API 生成应用程序](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh973618.aspx)
 

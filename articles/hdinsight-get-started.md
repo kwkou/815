@@ -85,7 +85,7 @@ HDInsight 使用 Azure Blob 存储来存储数据。它称为 *WASB* 或 *Azure 
 	
 ## <a name="provision"></a>设置 HDInsight 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在此部分中，设置基于 Hadoop 版本 2.4 的 HDInsight 群集版本 3.1。你还可以使用 Azure 门户、HDInsight PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/zh-cn/documentation/articles/hdinsight-component-versioning/)页面。
+当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在此部分中，设置基于 Hadoop 版本 2.4 的 HDInsight 群集版本 3.1。你还可以使用 Azure 门户、HDInsight PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/zh-cn/documentation/articles/hdinsight-component-versioning)页面。
 
 [WACOM.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 

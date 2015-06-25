@@ -16,13 +16,13 @@
 
 此外，只有在学习本教程后，才可以学习**安全推送**教程。完成本**通知用户**教程中的步骤后，你可以继续学习**安全推送**教程，其中说明了如何修改**通知用户**代码以安全地发送推送通知。 
 
-> [AZURE.NOTE]本教程假设你已根据[通知中心入门（Windows 应用商店）](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)中所述创建并配置了通知中心。
-> 如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/)。
+> [AZURE.NOTE]本教程假设你已根据[通知中心入门（Windows 应用商店）](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中所述创建并配置了通知中心。
+> 如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)。
 >另请注意，在本教程中，你将要创建一个 Windows Phone 应用商店 8.1 应用程序。可以使用相同的代码来创建 Windows 应用商店和 Windows Universal 应用程序。所有这些应用程序都必须使用 Windows（而不是 Windows Phone）凭据。
 
 ## 创建并配置通知中心
 
-在开始本教程之前，你必须保留一个应用程序名称，然后创建 Azure 通知中心并将其连接到该应用程序。请遵循[通知中心入门（Windows 应用商店）](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用程序](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#register)和[配置通知中心](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub)部分中的步骤。请务必确保已在门户中你的通知中心的**"配置"**选项卡上输入了**"程序包 SID"**和**"客户端机密"**值。[配置通知中心](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
+在开始本教程之前，你必须保留一个应用程序名称，然后创建 Azure 通知中心并将其连接到该应用程序。请遵循[通知中心入门（Windows 应用商店）](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用程序](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#register)和[配置通知中心](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub)部分中的步骤。请务必确保已在门户中你的通知中心的**"配置"**选项卡上输入了**"程序包 SID"**和**"客户端机密"**值。[配置通知中心](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/#configure-hub)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
 
 [WACOM.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 

@@ -15,7 +15,7 @@
 
 ####快速链接
 
--   [服务概述](/home/features/networking/)
+-   [服务概述](/home/features/networking)
 -   [定价详细信息](/home/features/networking/#price)
       
 ####特色
@@ -23,7 +23,7 @@
 -   [配置仅在云中的虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/dn631643.aspx)
 -   [使用管理门户向导配置站点到站点 VPN](http://msdn.microsoft.com/zh-cn/library/azure/dn133795.aspx)
 -   [虚拟网络技术概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
--   [Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits/)
+-   [Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits)
 
 ##教程和指南
 

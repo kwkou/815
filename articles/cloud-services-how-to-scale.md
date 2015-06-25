@@ -18,11 +18,11 @@
 
 在配置应用程序的缩放之前，应考虑以下信息：
 
-- 你必须将你创建的虚拟机添加到可用性集，才能缩放使用它们的应用程序。你添加的虚拟机最初可能处于打开或关闭状态，但它们在扩展操作中将打开，在缩减操作中将关闭。有关虚拟机和可用性集的详细信息，请参阅[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability/)。
+- 你必须将你创建的虚拟机添加到可用性集，才能缩放使用它们的应用程序。你添加的虚拟机最初可能处于打开或关闭状态，但它们在扩展操作中将打开，在缩减操作中将关闭。有关虚拟机和可用性集的详细信息，请参阅[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability)。
 - 缩放受内核使用情况影响。较大的角色实例或虚拟机使用更多内核。你只能在你的订阅的内核限制内缩放应用程序。例如，如果你的订阅的上限是二十个内核，并且你通过两个中等规模的虚拟机（一共四个内核）运行某个应用程序，则对于订阅中的其他云服务部署，你只能扩展十六个内核。可用性集中用于缩放应用程序的所有虚拟机必须具有相同大小。有关内核使用情况和虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx)。
-- 你必须先创建队列并使其与角色或可用性集关联，然后才能基于消息阈值缩放应用程序。有关详细信息，请参阅[如何使用队列存储服务]。(/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/)。
+- 你必须先创建队列并使其与角色或可用性集关联，然后才能基于消息阈值缩放应用程序。有关详细信息，请参阅[如何使用队列存储服务]。(/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)。
 - 你可以缩放链接到云服务的资源。有关链接资源的更多信息，请参见[如何：将资源链接到云服务](/zh-cn/documentation/articles/cloud-services-how-to-manage/#linkresources).
-- To enable high availability of your application, you should ensure that it is deployed with two or more role instances or Virtual Machines. For more information, see [Service Level Agreements](/support/legal/sla/)。
+- To enable high availability of your application, you should ensure that it is deployed with two or more role instances or Virtual Machines. For more information, see [Service Level Agreements](/support/legal/sla)。
 
 你可以对云服务执行下列缩放操作：
 
@@ -36,7 +36,7 @@
 
 在"缩放"页上，你可以手动增加或减少云服务中正在运行的实例数。
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"云服务"****，然后单击云服务名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
 
 2. 单击"缩放"****。默认情况下，对所有角色启用自动缩放，这意味着你可以手动更改应用程序使用的实例数。
 
@@ -65,7 +65,7 @@
 
 <h3><a id="averagecpu"></a>平均 CPU 使用率</h3>
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"云服务"****，然后单击云服务名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
 2. 单击"缩放"****。
 3. 滚动到角色或可用性集部分，然后单击"CPU"****。这样，你就可以根据应用程序使用的 CPU 资源的平均百分比来自动缩放应用程序。
 
@@ -112,7 +112,7 @@
 
 <h3><a id="queuemessages"></a>队列消息数</h3>
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"云服务"****，然后单击云服务名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
 2. 单击"缩放"****。
 3. 滚动到角色或可用性集部分，然后单击"队列"****。这样，你就可以根据队列消息的目标数目来自动缩放应用程序。
 
@@ -166,7 +166,7 @@
 
 通常当你缩放角色时，最好同时缩放应用程序正在使用的数据库。如果将数据库链接到云服务，则可更改 SQL Database 版本并在"缩放"页上调整数据库的大小。
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"云服务"****，然后单击云服务名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
 2. 单击"缩放"****。
 3. 在"链接的资源"部分中，选择用于此数据库的版本。
 
@@ -185,7 +185,7 @@
 
 **注意：**计划目前不可用于使用虚拟机的应用程序。
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"云服务"****，然后单击云服务名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
 2. 单击"缩放"****。
 3. 在"缩放"页上，单击"设置计划时间"****。
 

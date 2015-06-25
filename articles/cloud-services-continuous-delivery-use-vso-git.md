@@ -12,7 +12,7 @@
 
 可以使用 Visual Studio Online 团队项目为你的源代码托管 Git 存储库，并在将提交推送到存储库时自动生成并部署到 Azure 网站或云服务。
 
-你将需要安装 Visual Studio 2013 和 Azure SDK。如果你尚未安装 Visual Studio 2013，请在 [www.visualstudio.com](http://www.visualstudio.com) 上选择**免费试用**链接以下载该软件。从[此处](http://www.windowsazure.cn/downloads/)安装 Azure SDK。
+你将需要安装 Visual Studio 2013 和 Azure SDK。如果你尚未安装 Visual Studio 2013，请在 [www.visualstudio.com](http://www.visualstudio.com) 上选择**免费试用**链接以下载该软件。从[此处](http://www.windowsazure.cn/downloads)安装 Azure SDK。
 
 
 <div class="wa-note">
@@ -55,7 +55,7 @@
 
 2. 你可以通过执行本演练中的步骤来部署网站或云服务（Azure 应用程序）。
 创建新的 Microsoft Azure 云服务项目或新的 ASP.NET MVC 项目。确保项目以 .NET Framework 4 或 4.5 为目标。如果你要创建云服务项目，请添加 ASP.NET MVC Web 角色和辅助角色。
-如果你想要创建网站，请选择 ASP.NET Web 应用程序项目模板，然后选择 MVC。请参阅 [Azure 和 ASP.NET 入门](/zh-cn/documentation/articles/web-sites-dotnet-get-started/)。
+如果你想要创建网站，请选择 ASP.NET Web 应用程序项目模板，然后选择 MVC。请参阅 [Azure 和 ASP.NET 入门](/zh-cn/documentation/articles/web-sites-dotnet-get-started)。
 
 3. 打开解决方案的快捷菜单，然后选择"提交"。****<br/>
 ![][7]

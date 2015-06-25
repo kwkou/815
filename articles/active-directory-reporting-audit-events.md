@@ -19,7 +19,7 @@
 
 # Azure Active Directory 审核报告事件
 
-Azure Active Directory 审核报告可帮助客户识别其 Azure Active Directory 中发生的特权操作。特权操作包括提升更改（例如，创建角色或密码重置）、更改策略配置（例如密码策略）或更改目录配置（例如，对域联合身份验证设置的更改）。报告提供了事件名称的审核记录、操作执行者、更改影响的目标资源，以及日期和时间 (UTC)。客户可通过 [Azure 管理门户](https://manage.windowsazure.cn/)检索其 Azure Active Directory 的审核事件列表。  
+Azure Active Directory 审核报告可帮助客户识别其 Azure Active Directory 中发生的特权操作。特权操作包括提升更改（例如，创建角色或密码重置）、更改策略配置（例如密码策略）或更改目录配置（例如，对域联合身份验证设置的更改）。报告提供了事件名称的审核记录、操作执行者、更改影响的目标资源，以及日期和时间 (UTC)。客户可通过 [Azure 管理门户](https://manage.windowsazure.cn)检索其 Azure Active Directory 的审核事件列表。  
 
 ## 每个审核事件随附的属性
 

@@ -21,7 +21,7 @@
 
 请遵照这些步骤使用 RDP 或 SSH 连接到您的新虚拟机。其中包括有关排查连接问题的提示。
 
-####[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability/)
+####[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability)
 
 由于计划或非计划维护而重新启动 VM 时如何避免出现问题 - 这些有关可用性集的最佳实践可帮助您应对维护事件带来的影响。
 
@@ -67,17 +67,17 @@
 
 ###指南
 
-####[Azure 网站、云服务和虚拟机对比](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/)
+####[Azure 网站、云服务和虚拟机对比](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm)
 
 Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
 
-####[使用 Azure 虚拟机进行自动测试](http://justazure.com/automated-testing-in-microsoft-azure/)
+####[使用 Azure 虚拟机进行自动测试](http://justazure.com/automated-testing-in-microsoft-azure)
 
 Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行自动性能测试
 
 ###参考
 
--   [SDK 下载](http://www.windowsazure.cn/downloads/)
+-   [SDK 下载](http://www.windowsazure.cn/downloads)
 -   [管理库 (NuGet)](http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Libraries)
 -   [服务管理 (REST)：虚拟机操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157206.aspx)
 -   [服务管理 (REST)：虚拟机磁盘操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157188.aspx)

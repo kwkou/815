@@ -22,7 +22,7 @@
 
 ![HDInsight Cluster][img-hdi-cluster]
 
-HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心如何与不同的群集节点通信。当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。有关详细信息，请参阅 [HDInsight 中的 Hadoop 简介](/documentation/articles/hdinsight-hadoop-introduction/)。要改动的数据存储在 Azure Blob 存储中，其在 HDInsight 的上下文中又称为  *Azure 存储空间 - Blob*（或 WASB）。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage/)。
+HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心如何与不同的群集节点通信。当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。有关详细信息，请参阅 [HDInsight 中的 Hadoop 简介](/documentation/articles/hdinsight-hadoop-introduction)。要改动的数据存储在 Azure Blob 存储中，其在 HDInsight 的上下文中又称为  *Azure 存储空间 - Blob*（或 WASB）。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
 本文提供有关群集的不同设置方法的说明。如果你正在寻求通过一种快捷的方法设置群集，请参阅 [Linux 上的 Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-get-started)。
 
@@ -45,7 +45,7 @@ HDInsight 提供在 Azure 上设置 Linux 群集的选项。如果你熟悉 Linu
 
 在配置期间，你必须指定一个 Azure Blob 存储帐户和一个默认容器。该容器被集群用作默认存储位置。或者，你也可以指定也会与集群相关联的其他 Blob。
 
-有关使用 Hive 的更多信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage/)。
+有关使用 Hive 的更多信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
 ### 元存储
 
@@ -67,7 +67,7 @@ Windows | 单击[此处](#portal) | 单击[此处](#cli) | 单击[此处](#sdk) 
 
 ### <a id="portal"></a> 使用 Azure 管理门户
 
-HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 HDInsight 群集前，要先具有位于同一数据中心的 Azure 存储帐户。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用] (/documentation/articles/hdinsight-use-blob-storage/)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
+HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 HDInsight 群集前，要先具有位于同一数据中心的 Azure 存储帐户。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用] (/documentation/articles/hdinsight-use-blob-storage)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
 
 
 > [AZURE.NOTE] 目前，只有**中国东部**和**中国北部**地区可以托管 HDInsight 群集。

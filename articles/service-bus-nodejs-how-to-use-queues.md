@@ -27,7 +27,7 @@
 
 ## <a name="create-app"> </a>创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/)、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 构建网站]。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac)、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 构建网站]。
 
 ## <a name="configure-app"> </a>配置应用程序以使用 Service Bus
 

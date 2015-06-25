@@ -9,7 +9,7 @@
 
 **ShardMapManager** 类使 ADO.NET 应用程序能够轻松地将数据库查询和命令指向分片环境中的相应物理数据库。这称为**数据相关的路由**，在使用分片数据库时，它是一种基础模式。将应用程序中使用数据相关路由的每个特定查询和事务限制为针对每个请求访问单个数据库。  
 
-通过使用数据相关的路由，应用程序无需在分片环境中跟踪与不同的数据片相关联的各种连接字符串或数据库位置。但是，[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)有责任在需要时基于分片映射中的数据以及作为应用程序请求目标的分片键值，将开放连接分发给正确的数据库。（该键通常为 *customer_id*、 *tenant_id*、 *date_key* 或一些作为数据库请求的基础参数的其他特定标识符）。 
+通过使用数据相关的路由，应用程序无需在分片环境中跟踪与不同的数据片相关联的各种连接字符串或数据库位置。但是，[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)有责任在需要时基于分片映射中的数据以及作为应用程序请求目标的分片键值，将开放连接分发给正确的数据库。（该键通常为 *customer_id*、 *tenant_id*、 *date_key* 或一些作为数据库请求的基础参数的其他特定标识符）。 
 
 ## 在数据相关的路由应用程序中使用 ShardMapManager 
 
@@ -21,7 +21,7 @@
 
 在本示例中，将同时初始化 **ShardMapManager** 以及它所包含的特定 **ShardMap**。 
 
-对于本身不操作分片映射的应用程序，在工厂方法中用于获取 **ShardMapManager**（在上面的示例中为 *smmConnectionString*）的凭据在由连接字符串引用的 **全局分片映射**数据库上，应仅具有只读权限。这些凭据通常与用于到分片映射管理器的开放连接的凭据不同。另请参阅[管理弹性缩放凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials/)。 
+对于本身不操作分片映射的应用程序，在工厂方法中用于获取 **ShardMapManager**（在上面的示例中为 *smmConnectionString*）的凭据在由连接字符串引用的 **全局分片映射**数据库上，应仅具有只读权限。这些凭据通常与用于到分片映射管理器的开放连接的凭据不同。另请参阅[管理弹性缩放凭据](/documentation/articles/sql-database-elastic-scale-manage-credentials)。 
 
 ## 调用数据相关的路由 
 
@@ -95,7 +95,7 @@ int newPersonId = 4321;
 </code></pre>
 
 
-当你构建 Elastic Scale Starter Kit 应用程序时，将自动下载需要实现暂时性故障处理的程序包。[Enterprise Library - 暂时性故障处理应用程序块](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)也将单独提供程序包。使用版本 6.0 或更高版本。 
+当你构建 Elastic Scale Starter Kit 应用程序时，将自动下载需要实现暂时性故障处理的程序包。[Enterprise Library - 暂时性故障处理应用程序块](http://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling)也将单独提供程序包。使用版本 6.0 或更高版本。 
 
 ## 事务一致性 
 

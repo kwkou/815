@@ -17,7 +17,7 @@
 
 了解如何使用 Ambari 管理和监视基于 Linux 的 HDInsight 群集。
 
-> [AZURE.NOTE] 本文中的许多信息仅适用于基于 Linux 的 HDInsight 群集。对于基于 Windows 的 HDInsight 群集，只能通过 Ambari REST API 进行监视。请参阅[使用 Ambari API 监视 HDInsight 上的基于 Windows 的 Hadoop](/documentation/articles/hdinsight-monitor-use-ambari-api/)。
+> [AZURE.NOTE] 本文中的许多信息仅适用于基于 Linux 的 HDInsight 群集。对于基于 Windows 的 HDInsight 群集，只能通过 Ambari REST API 进行监视。请参阅[使用 Ambari API 监视 HDInsight 上的基于 Windows 的 Hadoop](/documentation/articles/hdinsight-monitor-use-ambari-api)。
 
 ## <a id="whatis"></a>什么是 Ambari？
 

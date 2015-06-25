@@ -414,7 +414,7 @@ Azure Marketplace。
 请参见以下资源来实施此方案：
 
 -   [下载应用发布工具包](http://go.microsoft.com/fwlink/?LinkId=221323)
--   [面向应用程序的 Azure Marketplace 简介](https://datamarket.azure.com/)
+-   [面向应用程序的 Azure Marketplace 简介](https://datamarket.azure.com)
 
 ##安全设置
 
@@ -472,9 +472,9 @@ Azure AD 访问控制的安全设置。在设计并部署您的应用程序时�
 -   [SDL Threat Modeling Tool 3.1.8](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=2955)
 -   [安全和隐私博客](http://www.microsoft.com/about/twc/en/us/blogs.aspx)
 -   [安全响应中心](http://www.microsoft.com/security/msrc/default.aspx)
--   [安全智能报告](http://www.microsoft.com/security/sir/)
+-   [安全智能报告](http://www.microsoft.com/security/sir)
 -   [安全开发生命周期](http://www.microsoft.com/security/sdl/default.aspx)
--   [安全开发人员中心 (MSDN)](http://msdn.microsoft.com/security/)
+-   [安全开发人员中心 (MSDN)](http://msdn.microsoft.com/security)
 
 
 [01]:./media/SecurityRX/01_SecuringTheApplication.gif

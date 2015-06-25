@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Enable remote debugging with continuous delivery" pageTitle="使用连续交付功能时启用远程调试" metaKeywords="" description="了解在使用连续交付功能部署到 Azure 时如何启用远程调试。" metaCanonical="" services="cloud-services,virtual machines" documentationCenter=".NET" title="Enable remote debugging when using continuous delivery to publish to Azure" authors="kempb" solutions="" manager="douge" editor="" />
+<properties urlDisplayName="Enable remote debugging with continuous delivery" pageTitle="使用连续交付功能时启用远程调试" metaKeywords="" description="了解在使用连续交付功能部署到 Azure 时如何启用远程调试。" metaCanonical="" services="cloud-services,virtual machines" documentationCenter=".NET" title="Enable remote debugging when using continuous delivery to publish to Azure" authors="kempb" solutions="" manager="douge" editor="" />
 <tags ms.service="cloud-services,virtual machines"
     ms.date="02/18/2015"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 
 # 使用连续交付功能发布到 Azure 时如何启用远程调试
 
-使用[连续交付](/zh-cn/documentation/articles/cloud-services-dotnet-continuous-delivery/)发布到 Azure 时，可通过执行以下步骤， 在 Azure 中启用远程调试。
+使用[连续交付](/zh-cn/documentation/articles/cloud-services-dotnet-continuous-delivery)发布到 Azure 时，可通过执行以下步骤， 在 Azure 中启用远程调试。
 
 本主题内容：
 
@@ -29,7 +29,7 @@
 
 ## <a name="virtualmachine"></a>为虚拟机启用远程调试##
 
-1. 创建 Azure 虚拟机。请参阅[创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/) 或[在 Visual Studio 中创建 Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn569263.aspx)。
+1. 创建 Azure 虚拟机。请参阅[创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial) 或[在 Visual Studio 中创建 Azure 虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/dn569263.aspx)。
 2. 在 [Azure 门户页](http://manage.windowsazure.cn)上的虚拟机仪表板中，查看虚拟机的"RDP 证书指纹"。扩展配置中的 ServerThumbprint 值将使用此指纹。
 3. 根据[为 Azure 创建服务证书](https://msdn.microsoft.com/zh-CN/library/azure/gg432987.aspx)中所述创建客户端证书（保留 .pfx 和 RDP 证书指纹）。
 4. 从 Microsoft 下载中心安装 [Azure Powershell](http://go.microsoft.com/?linkid=9811175&clcid=0x409)（0.7.4 或更高版本）。

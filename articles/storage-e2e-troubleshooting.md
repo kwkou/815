@@ -27,7 +27,7 @@
 
 在本教程中，我们将演示如何识别某些会影响性能的错误，并使用 Microsoft 和 Azure 存储空间提供的工具以点对点的方式排查这些错误，以优化客户端应用程序。 
 
-本教程提供了点对点故障排除方案的实践分析。有关排查 Azure 存储应用程序问题的深入化概念指南，请参阅[监视、诊断和排查存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。 
+本教程提供了点对点故障排除方案的实践分析。有关排查 Azure 存储应用程序问题的深入化概念指南，请参阅[监视、诊断和排查存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。 
 
 ## Azure 存储应用程序故障排除工具
 
@@ -40,10 +40,10 @@
 
 - **Azure 管理门户**。可以在门户中配置存储帐户的度量值和日志记录。还可以在门户中查看显示应用程序在各时间段执行情况的图表和图形，以及配置警报，以便在应用程序的特定度量值不同于预期时接收通知。 
 	
-	本教程说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)监视存储帐户。请参阅[如何监视存储帐户](/documentation/articles/storage-monitor-storage-account/) 以了解有关在门户中配置监视的信息。
+	本教程说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn)监视存储帐户。请参阅[如何监视存储帐户](/documentation/articles/storage-monitor-storage-account) 以了解有关在门户中配置监视的信息。
  
 
-- **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/) 以了解有关 AzCopy 的详细信息。
+- **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy) 以了解有关 AzCopy 的详细信息。
 
 - **Microsoft Message Analyzer**。Message Analyzer 是一个工具，它使用日志文件并以可视格式显示日志数据，方便你筛选、搜索日志数据，以及将日志数据组合成有用的集，用于分析错误和性能问题。有关 Message Analyzer 的详细信息，请参阅 [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)。
 
@@ -95,7 +95,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 **通过管理门户**
 
-若要使用门户配置存储帐户的日志记录和度量值，请遵循[如何监视存储帐户](/documentation/articles/storage-monitor-storage-account/)中的说明。
+若要使用门户配置存储帐户的日志记录和度量值，请遵循[如何监视存储帐户](/documentation/articles/storage-monitor-storage-account)中的说明。
 
 > [AZURE.NOTE] 无法使用 Azure 管理门户设置分钟度量值。但是，对于本教程，我们建议你设置分钟度量值，它还可以调查应用程序的性能问题。可以使用 PowerShell（如下所示）、以编程方式或通过 Azure 预览版门户设置分钟度量值。
 >
@@ -103,7 +103,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 **通过 PowerShell**
 
-若要开始使用 PowerShell for Azure，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+若要开始使用 PowerShell for Azure，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
 1. 使用 [Add-AzureAccount](http://msdn.microsoft.com/zh-cn/library/azure/dn722528.aspx) cmdlet 将 Azure 用户帐户添加到 PowerShell 窗口中：
 
@@ -197,7 +197,7 @@ Azure 存储空间将服务器日志数据写入 Blob，将度量值写入表。
 
 	AzCopy.exe /Source:http://<storageaccountname>.blob.core.chinacloudapi.cn/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
 
-可以从 [Azure 下载](http://www.windowsazure.cn/zh-cn/downloads/)页下载 AzCopy。有关使用 AzCopy 的详细信息，请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/)。
+可以从 [Azure 下载](http://www.windowsazure.cn/zh-cn/downloads)页下载 AzCopy。有关使用 AzCopy 的详细信息，请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)。
 
 有关下载服务器端日志的其他信息，请参阅[启用存储日志记录和访问日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#DownloadingStorageLogginglogdata)。 
 
@@ -371,10 +371,10 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 
 有关在 Azure 存储空间中执行点对点故障排除方案的详细信息，请参阅以下资源：
 
-- [监视、诊断和排查存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)
+- [监视、诊断和排查存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 - [存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)
-- [如何监视存储帐户](/documentation/articles/storage-monitor-storage-account/)
-- [如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/)
+- [如何监视存储帐户](/documentation/articles/storage-monitor-storage-account)
+- [如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
  
 

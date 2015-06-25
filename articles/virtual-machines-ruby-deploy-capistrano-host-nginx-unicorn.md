@@ -7,7 +7,7 @@
 
 #使用 Capistrano 向 Azure VM 部署 Ruby on Rails Web 应用程序
 
-本教程介绍如何将 Ruby on Rails 的网站部署到 Azure 虚拟机使用[Capistrano 3](https://github.com/capistrano/capistrano/)。部署完成后，您将使用[Nginx](http://nginx.org/)和[Unicorn](https://github.com/blog/517-unicorn)来承载网站。[PostgreSQL](https://www.postgresql.org)将存储的已部署的应用程序的应用程序数据。
+本教程介绍如何将 Ruby on Rails 的网站部署到 Azure 虚拟机使用[Capistrano 3](https://github.com/capistrano/capistrano)。部署完成后，您将使用[Nginx](http://nginx.org)和[Unicorn](https://github.com/blog/517-unicorn)来承载网站。[PostgreSQL](https://www.postgresql.org)将存储的已部署的应用程序的应用程序数据。
 
 本教程假定您之前未过使用 Azure 中，但假定您熟悉 Ruby、Rails、Git 和 Linux。完成本教程之后，您将能够在云中启动和运行基于 Ruby on Rails 的应用程序。
 
@@ -55,11 +55,11 @@
 
 1. 在开发环境中安装 Ruby。具体步骤因操作系统而异。
 
-	* **Apple OS X** -有多个有关 OS X 的 Ruby 版本。本教程使用在 OS X 上验证[Homebrew](http://brew.sh/)安装**rbenv**， **ruby 生成**，和**Ruby 2.0.0-p451**。在找不到安装信息[https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/)。
+	* **Apple OS X** -有多个有关 OS X 的 Ruby 版本。本教程使用在 OS X 上验证[Homebrew](http://brew.sh)安装**rbenv**， **ruby 生成**，和**Ruby 2.0.0-p451**。在找不到安装信息[https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv)。
 
 	* **Linux** -使用您分发的包管理系统。本教程已验证在 Ubuntu 12.10 上使用**rbenv**， **ruby 生成**，和**Ruby 2.0.0-p451**。
 
-	* **Windows** -有多个针对 Windows 的 Ruby 版本。本教程使用验证[RubyInstaller](http://RubyInstaller.org/)安装**Ruby 2.0.0-p451**。使用发出命令**GitBash**命令行可用于[Git for Windows](http://git-scm.com/download/win)。
+	* **Windows** -有多个针对 Windows 的 Ruby 版本。本教程使用验证[RubyInstaller](http://RubyInstaller.org)安装**Ruby 2.0.0-p451**。使用发出命令**GitBash**命令行可用于[Git for Windows](http://git-scm.com/download/win)。
 
 2. 打开一个新命令行或终端会话并输入以下命令以安装 Ruby on Rails：
 
@@ -73,7 +73,7 @@
 
 3. 您还必须安装 JavaScript 解释程序，Rails 将使用它来编译您的 Rails 应用程序使用的 CoffeeScript 资产。在提供了支持的解释程序的列表[https://github.com/sstephenson/execjs#readme](https://github.com/sstephenson/execjs#readme)。
 	
-	> [WACOM.NOTE] [Node.js](http://nodejs.org/)用于本教程中，因为它是适用于 OS X、 Linux 和 Windows 操作系统。
+	> [WACOM.NOTE] [Node.js](http://nodejs.org)用于本教程中，因为它是适用于 OS X、 Linux 和 Windows 操作系统。
 
 ##<a id="create"></a>创建 Rails 应用程序
 
@@ -127,9 +127,9 @@
 
 ##<a id="repository"></a>创建源存储库
 
-在部署使用 Capistrano 的应用程序时，其文件是从存储库中提取的。对于本教程中，我们将使用[Git](http://git-scm.com/)进行版本控制和[GitHub](https://github.com/)的存储库。
+在部署使用 Capistrano 的应用程序时，其文件是从存储库中提取的。对于本教程中，我们将使用[Git](http://git-scm.com)进行版本控制和[GitHub](https://github.com)的存储库。
 
-1.	在创建新的存储库[GitHub](https://github.com/)。如果您没有 GitHub 帐户，则可以免费注册一个帐户。下面的步骤假定存储库的名称是**blog_app**。
+1.	在创建新的存储库[GitHub](https://github.com)。如果您没有 GitHub 帐户，则可以免费注册一个帐户。下面的步骤假定存储库的名称是**blog_app**。
 
 	> [WACOM.NOTE] 若要支持您的应用程序的自动的部署，应使用 SSH 密钥进行身份验证到 GitHub。详细信息，请参阅 GitHub 文档上[生成 SSH 密钥](https://help.github.com/articles/generating-ssh-keys)。
 
@@ -438,7 +438,7 @@ Rails 用于开发的默认数据库是 SQLite。通常，您将使用生产中�
 
 * [Capistranorb.com](http://capistranorb.com) -Capistrano 站点。
 * [Azure，Ruby on Rails、 Capistrano 3 和 PostgreSQL](http://wootstudio.ca/articles/tutorial-windows-azure-ruby-on-rails-capistrano-3-postgresql) -一种方法来将部署到 Azure 涉及自定义部署脚本。
-* [Capistrano 3 教程](http://www.talkingquickly.co.uk/2014/01/deploying-rails-apps-to-a-vps-with-capistrano-v3/) -使用 Capistrano 3 的教程。
+* [Capistrano 3 教程](http://www.talkingquickly.co.uk/2014/01/deploying-rails-apps-to-a-vps-with-capistrano-v3) -使用 Capistrano 3 的教程。
 
 有关创建和部署到 Azure VM 仅使用 SSH 的 Rails 应用程序的更基本示例，请参阅[托管 Ruby on Rails Web 应用程序中使用 Linux 虚拟机][ruby vm]。
 

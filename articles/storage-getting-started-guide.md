@@ -61,7 +61,7 @@
 3.	在"调试"菜单中，按 **F11** 逐步运行该解决方案，或按 **F5** 运行该解决方案。
 
 ## 在 Azure 存储服务上运行你的第一个 Azure 存储空间应用程序
-本部分演示如何通过开发一个访问 [Azure 存储服务](/documentation/services/storage/)的示例应用程序，对 **Azure 存储 Blob**、**表**和**队列**进行编程。.
+本部分演示如何通过开发一个访问 [Azure 存储服务](/documentation/services/storage)的示例应用程序，对 **Azure 存储 Blob**、**表**和**队列**进行编程。.
 
 若要完成本部分，请确保先执行以下必要任务：
 
@@ -69,7 +69,7 @@
 2. 请确保计算机上已安装了 [Azure SDK 2.5 for Visual Studio 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)  或更高版本，因为它包含 Azure 快速入门示例项目和[用于 .NET 的 Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)。  
 3. 检查计算机上是否安装了 [.NET Framework 4.5](http://www.microsoft.com/zh-CN/download/details.aspx?id=30653) ，因为 Azure 快速入门示例项目需要用到它。如果你不确定计算机上安装了哪个版本的 .NET Framework，请参阅[如何：确定安装的 .NET Framework 版本](https://msdn.microsoft.com/zh-cn/vstudio/hh925568.aspx)。或者，按"开始"按钮或 Windows 键，并键入"控制面板"。然后，单击"程序">"程序和功能"。查看所有已安装程序的列表中是否包含 .NET Framework 4.5。
 4.	获取 Azure 订阅（如果尚未获取），同时请创建一个**标准存储**帐户：
-	- 若要获取 Azure 订阅，请参阅[免费试用](/pricing/1rmb-trial/)，[购买选项](/pricing/overview/)。
+	- 若要获取 Azure 订阅，请参阅[免费试用](/pricing/1rmb-trial)，[购买选项](/pricing/overview)。
 	- 若要在 Azure 中创建**标准存储**帐户，请参阅[如何创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account.md)。**注意：**Azure 中有两种类型的存储帐户：标准存储帐户和高级存储帐户。标准存储帐户提供对 Azure Blob、表和队列存储的访问。高级存储帐户当前只可用于在 Azure 虚拟机使用的磁盘上存储数据。有关详细信息，请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/documentation/articles/storage-premium-storage-preview-portal.md)。
 
 现在，让我们在 Visual Studio 中使用 Azure 快速入门示例项目之一创建一个简单的 Azure 存储空间应用程序。本教程重点介绍 **Azure Blob 存储**、**Azure 表存储**和 **Azure 存储队列**示例项目。对于每个示例项目，都可以遵循以下说明，但如果在步骤 3.a 中选择了不同的模板时则例外：

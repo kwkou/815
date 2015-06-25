@@ -19,12 +19,12 @@
 
 # 在 HDInsight 中使用 Apache Phoenix 和 SQuirrel  
 
-了解如何在 HDInsight 中使用 [Apache Phoenix](http://phoenix.apache.org/)，以及如何在工作站上安装和配置 SQuirrel 以连接到 HDInsight 中的 HBase 群集。有关 Phoenix 的详细信息，请参阅[在 15 分钟或更短时间内了解 Phoenix](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html)。
+了解如何在 HDInsight 中使用 [Apache Phoenix](http://phoenix.apache.org)，以及如何在工作站上安装和配置 SQuirrel 以连接到 HDInsight 中的 HBase 群集。有关 Phoenix 的详细信息，请参阅[在 15 分钟或更短时间内了解 Phoenix](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html)。
 
 >[AZURE.NOTE] 有关 HDInsight 中的 Phoenix 版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][hdinsight-versions]
 
 ## 使用 SQLLine
-[SQLLine](http://sqlline.sourceforge.net/) 是用于执行 SQL 的命令行实用工具。
+[SQLLine](http://sqlline.sourceforge.net) 是用于执行 SQL 的命令行实用工具。
 
 ### 先决条件
 在使用 SQLLine 之前，必须先准备好以下各项：
@@ -72,7 +72,7 @@
 
 ## 使用 SQuirrel
 
-[SQuirreL SQL 客户端](http://squirrel-sql.sourceforge.net/)是一种图形 Java 程序，可让你查看 JDBC 兼容数据库的结构，浏览表中的数据，发出 SQL 命令，等等。
+[SQuirreL SQL 客户端](http://squirrel-sql.sourceforge.net)是一种图形 Java 程序，可让你查看 JDBC 兼容数据库的结构，浏览表中的数据，发出 SQL 命令，等等。
 
 本部分说明了如何在工作站上安装和配置 Squirrel，以通过 VPN 连接到 HDInsight 中的 HBase 群集。 
 

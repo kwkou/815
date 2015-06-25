@@ -15,7 +15,7 @@
 需要在用于登录到虚拟机的计算机上安装 SSH 客户端。您可以选择很多 SSH 客户端程序。以下是可能的选项：
 
 - 在运行 Windows 操作系统的计算机上，您可能希望使用 PuTTY 之类的 SSH 客户端。有关详细信息，请参阅 [PuTTY 下载页](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
-- 在运行 Linux 操作系统的计算机上，您可能希望使用 OpenSSH 之类的 SSH 客户端。有关详细信息，请参阅 [OpenSSH](http://www.openssh.org/)。
+- 在运行 Linux 操作系统的计算机上，您可能希望使用 OpenSSH 之类的 SSH 客户端。有关详细信息，请参阅 [OpenSSH](http://www.openssh.org)。
 
 >[WACOM.NOTE] 有关更多要求和疑难解答提示，请参阅[使用 RDP 或 SSH 连接到 Azure 虚拟机](http://go.microsoft.com/fwlink/p/?LinkId=398294)。 
 

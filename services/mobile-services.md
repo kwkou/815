@@ -18,8 +18,8 @@
 
 ####快速链接
 
--   [服务概述](/home/features/mobile-services/)
--   [可交付的解决方案](/solutions/mobile/)
+-   [服务概述](/home/features/mobile-services)
+-   [可交付的解决方案](/solutions/mobile)
 -   [定价详细信息](/home/features/mobile-services/#price)
 
 ####创建您的第一个移动服务
@@ -53,49 +53,49 @@ Sencha |
 
 ###开始使用      
 
-####[移动服务入门](/documentation/articles/mobile-services-dotnet-backend-ios-get-started/)
+####[移动服务入门](/documentation/articles/mobile-services-dotnet-backend-ios-get-started)
 
 了解如何使用 Azure 移动服务将基于云的后端服务快速添加到应用程序中。
 
-####[如何将移动服务客户端库用于 iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library/)
+####[如何将移动服务客户端库用于 iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library)
 
 了解如何使用 iOS 客户端库执行常见方案，包括查询数据，插入、更新和删除数据，对用户进行身份验证，处理错误，以及将数据上载到 Blob 存储。
 
 ###用户
 
-####[向应用程序添加身份验证](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/)
+####[向应用程序添加身份验证](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users)
 
 了解如何通过各种标识提供者（包括 Microsoft）在应用中对用户进行身份验证，然后利用配置文件数据添加各种功能，例如按姓名向用户进行问候。
 
-####[其他第三方身份认证服务](/documentation/articles/mobile-services-sinasdk/)
+####[其他第三方身份认证服务](/documentation/articles/mobile-services-sinasdk)
 
 本主题将说明如何注册你的应用程序，以便能够使用新浪微博作为 Azure Mobile Service 的身份验证提供程序。
 
-####[在服务端对用户进行授权](/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/)
+####[在服务端对用户进行授权](/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts)
 
 本主题演示如何对经过身份验证的用户进行授权，使其有权访问你的移动服务中的数据。在本教程中，你将向控制器中的数据访问方法添加代码，从而根据经过身份验证的用户的 userID 筛选查询，确保每位用户都只可以看到自己的数据。
 
 ###服务
         
-####[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/)
+####[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)
 
 了解如何使用混合连接安全地连接到本地资源。
 
-####[从客户端调用自定义 API](/documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api/)
+####[从客户端调用自定义 API](/documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api)
 
 了解如何从 Windows 应用商店应用程序调用自定义 API。
 
-####[在移动服务中安排后端作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/)
+####[在移动服务中安排后端作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 
 了解如何使用移动服务作业计划程序功能定义按您所设定的计划执行的服务器端代码
 
-####[在发生灾难情形时恢复](/documentation/articles/mobile-services-disaster-recovery/)
+####[在发生灾难情形时恢复](/documentation/articles/mobile-services-disaster-recovery)
 
 了解如何使用 Azure 内置功能在出现可用性问题时确保业务连续性。            
 
 ###工具
 
-####[使用命令行工具自动实施移动服务](/documentation/articles/mobile-services-manage-command-line-interface/)
+####[使用命令行工具自动实施移动服务](/documentation/articles/mobile-services-manage-command-line-interface)
 
 本主题演示如何使用 Azure 命令行工具来自动创建和管理移动服务。其中介绍如何安装工具以及如何执行常规任务（包括新建移动服务、创建表、注册表操作脚本、删除表和现有移动服务）。
 
@@ -105,11 +105,11 @@ Sencha |
 
 ###参考
 
-####[iOS 客户端库](http://dl.windowsazure.cn/iosdocs/)
+####[iOS 客户端库](http://dl.windowsazure.cn/iosdocs)
 
 Azure 移动服务 SDK 包括支持进行 Windows 应用商店和 iOS 应用程序开发的客户端库。本节提供了有关使用这些客户端库的详细信息。
 
-####[如何将移动服务客户端库用于 iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library/)
+####[如何将移动服务客户端库用于 iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library)
 
 了解如何使用 iOS 客户端库执行常见方案，包括查询数据，插入、更新和删除数据，对用户进行身份验证，处理错误，以及将数据上载到 Blob 存储。
 

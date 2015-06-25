@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 Windows 上使用 NodeJS 连接到 SQL Database" 
 	description="演示了一个可以用来连接到 Azure SQL Database 的 NodeJS 代码示例。该示例在 Windows 客户端计算机上运行。"
 	services="sql-database" 
@@ -43,13 +43,13 @@ Is the Python 2.7.6 download truly necessary for the NodeJS sample to work, or w
 .
 2015-04-18 12:33pm, I (GeneMi) am taking an educated chance and am removing the Python download lines. Should they be re-added to the live text?
 .
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/), the installer for either x86 or x64. 
+- [Python 2.7.6](https://www.python.org/download/releases/2.7.6), the installer for either x86 or x64. 
  - The x64 version is probably preferable. You want the "Installer" link, not the "program database" link.
 -->
 
 
--  Node.js -[版本 0.8.9（32 位版本）](http://blog.nodejs.org/2012/09/11/node-v0-8-9-stable/)。滚动页面，然后单击 32 位 x86 Windows 安装程序（而不是 64 位 x86 Windows 安装程序）对应的"下载"链接。
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/) - 适用于 x86 或 x64 的安装程序。
+-  Node.js -[版本 0.8.9（32 位版本）](http://blog.nodejs.org/2012/09/11/node-v0-8-9-stable)。滚动页面，然后单击 32 位 x86 Windows 安装程序（而不是 64 位 x86 Windows 安装程序）对应的"下载"链接。
+- [Python 2.7.6](https://www.python.org/download/releases/2.7.6) - 适用于 x86 或 x64 的安装程序。
 - [Visual C++ 2010](https://app.vssps.visualstudio.com/profile/review?download=true&family=VisualStudioCExpress&release=VisualStudio2010&type=web&slcid=0x409&context=eyJwZSI6MSwicGMiOjEsImljIjoxLCJhbyI6MCwiYW0iOjEsIm9wIjpudWxsLCJhZCI6bnVsbCwiZmEiOjAsImF1IjpudWxsLCJjdiI6OTY4OTg2MzU1LCJmcyI6MCwic3UiOjAsImVyIjoxfQ2) - 可从 Microsoft 下载免费的 Express 版本。
 - SQL Server Native Client 11.0 - 在 [SQL Server 2012 Feature Pack](http://www.microsoft.com/zh-CN/download/details.aspx?id=29065) 中作为 Microsoft SQL Server 2012 Native Client 提供。
 

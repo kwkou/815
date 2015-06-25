@@ -58,7 +58,7 @@ Service Bus 队列是一种可用于各种应用场景的
 ## <a id="obtain-default-credentials"></a>获取命名空间的默认管理凭据
 若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn/)。
+1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
 
 2. 选择你创建的 Service Bus 命名空间。
 
@@ -74,7 +74,7 @@ Service Bus 队列是一种可用于各种应用场景的
 
 ## <a id="create-a-ruby-application"></a>创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/)。
+创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
 
 ## <a id="configure-your-application-to-use-service-bus"></a>配置应用程序以使用 Service Bus
 
@@ -163,4 +163,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 -   参阅 MSDN 参考：[队列、主题和订阅](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh367516.aspx)
 -   访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-有关本文所述的 Azure Service Bus 队列与[如何使用 Azure 队列服务](/zh-cn/documentation/articles/storage-ruby-how-to-use-queue-storage/) 一文中所述 Azure 队列之间的比较，请参阅 [Azure 队列和 Azure Service Bus 队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx)
+有关本文所述的 Azure Service Bus 队列与[如何使用 Azure 队列服务](/zh-cn/documentation/articles/storage-ruby-how-to-use-queue-storage) 一文中所述 Azure 队列之间的比较，请参阅 [Azure 队列和 Azure Service Bus 队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx)

@@ -1,4 +1,4 @@
-﻿<properties umbracoNaviHide="0" pageTitle="应用程序模型" metaKeywords="Azure, Azure, application model, Azure application model, development model, Azure development model, hosted service, Azure hosted service, web role, worker role" description="了解 Azure 托管服务应用程序模型。了解核心概念、设计注意事项、如何定义和配置应用程序以及缩放。" linkid="dev-net-fundamentals-application-model" urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Application Model" authors="" />
+<properties umbracoNaviHide="0" pageTitle="应用程序模型" metaKeywords="Azure, Azure, application model, Azure application model, development model, Azure development model, hosted service, Azure hosted service, web role, worker role" description="了解 Azure 托管服务应用程序模型。了解核心概念、设计注意事项、如何定义和配置应用程序以及缩放。" linkid="dev-net-fundamentals-application-model" urlDisplayName="Application Model" headerExpose="" footerExpose="" disqusComments="1" title="Application Model" authors="" />
 <tags ms.service=""
     ms.date="01/20/2015"
     wacn.date="04/11/2015"
@@ -31,7 +31,7 @@ Azure 提供了用于运行应用程序的不同执行模型。每种模型提�
 有两种选项可供您开始操作 
 
 1. 上载您自己的 VHD 
-2. 使用由 Microsoft 及其合作伙伴在 Azure 虚拟机库中或 Microsoft 开放源 [VMDepot](http://vmdepot.msopentech.com/) 网站上提供的 VHD。 
+2. 使用由 Microsoft 及其合作伙伴在 Azure 虚拟机库中或 Microsoft 开放源 [VMDepot](http://vmdepot.msopentech.com) 网站上提供的 VHD。 
 
 库中以及 VMDepot 上的 VHD 包含全新的 Microsoft 和 Linux 操作系统映像，以及包含安装在其上的 Microsoft 和其他第三方产品的映像。选项一直都在增长。示例包含以下产品的各个版本和配置：
  

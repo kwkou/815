@@ -369,7 +369,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
     `<project-path>/JSPHello/src/JSPHello.war`
 
-有关部署 WAR 文件的详细信息，请参阅[将应用程序添加到 Azure 上的 Java 网站](/documentation/articles/web-sites-java-add-app/)。
+有关部署 WAR 文件的详细信息，请参阅[将应用程序添加到 Azure 上的 Java 网站](/documentation/articles/web-sites-java-add-app)。
 
 
 ## 使用 FTP 部署 Hello World 应用程序
@@ -481,7 +481,7 @@ JSPHello.war 自身首先会显示在目录区域中：
 
 ### 使用 FileZilla 将应用程序发布到网站（可选）
 
-可用于发布应用程序的另一个工具是 FileZilla，这是一个带有便捷式图形 UI 的常用第三方 FTP 客户端。你可以从 [http://filezilla-project.org/](http://filezilla-project.org/) 下载并安装 FileZilla， 如果尚未安装的话。有关使用该客户端的详细信息，请参阅 [FileZilla 文档](https://wiki.filezilla-project.org/Documentation) 以及此博客文章 [FTP 客户端 - 第 4 部分：FileZilla](http://blogs.msdn.com/b/robert_mcmurray/archive/2008/12/17/ftp-clients-part-4-filezilla.aspx)。
+可用于发布应用程序的另一个工具是 FileZilla，这是一个带有便捷式图形 UI 的常用第三方 FTP 客户端。你可以从 [http://filezilla-project.org/](http://filezilla-project.org) 下载并安装 FileZilla， 如果尚未安装的话。有关使用该客户端的详细信息，请参阅 [FileZilla 文档](https://wiki.filezilla-project.org/Documentation) 以及此博客文章 [FTP 客户端 - 第 4 部分：FileZilla](http://blogs.msdn.com/b/robert_mcmurray/archive/2008/12/17/ftp-clients-part-4-filezilla.aspx)。
 
 1. 在 FileZilla 中，单击"文件 > 站点管理器"。
 2. 在"站点管理器"对话框中，单击"新建站点"。随后，一个新的空白 FTP 站点将出现在"选择条目"中，其中会提示你提供一个名称。对于此过程，请将它命名为 `AzureWebDemo FTP`。

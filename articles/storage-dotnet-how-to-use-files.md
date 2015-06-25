@@ -10,7 +10,7 @@
 
 对于可能想要从本地应用程序以及 Azure 虚拟机或云服务访问共享中的文件的用户，我们将演示如何使用 Azure .NET 存储客户端库通过桌面应用程序处理文件共享。
 
-> [WACOM.NOTE] 运行本指南中的 .NET 代码示例需要 Azure .NET 存储客户端库 4.x 或更高版本。存储客户端库可通过以下方式获得：[NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/)。
+> [WACOM.NOTE] 运行本指南中的 .NET 代码示例需要 Azure .NET 存储客户端库 4.x 或更高版本。存储客户端库可通过以下方式获得：[NuGet](https://www.nuget.org/packages/WindowsAzure.Storage)。
 
 
 ##目录
@@ -66,7 +66,7 @@ For 有关如何命名共享、目录和文件的详细信息，请参阅[命名
 
 ##<a name="create-account"></a>创建 Azure 存储帐户
 <!--
-Azure 文件存储目前发布了预览版。若要请求访问预览版，请导航到["Microsoft Azure 预览版"页](/zh-cn/services/preview/)，然后请求访问"Azure 文件"。你的请求得到批准后，系统就会通知你，然后你就可以访问文件存储预览版。然后，你就可以创建用于访问文件存储的存储帐户。
+Azure 文件存储目前发布了预览版。若要请求访问预览版，请导航到["Microsoft Azure 预览版"页](/zh-cn/services/preview)，然后请求访问"Azure 文件"。你的请求得到批准后，系统就会通知你，然后你就可以访问文件存储预览版。然后，你就可以创建用于访问文件存储的存储帐户。
 -->
 > [WACOM.NOTE] 文件存储目前仅提供给新的存储帐户使用。你的订阅获得访问文件存储的授权后，可创建一个新的用于本指南的存储帐户。
 
@@ -76,7 +76,7 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 
 ###为 Azure 存储空间安装 PowerShell cmdlet
 
-若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
+若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell)。
 
 > [WACOM.NOTE] 文件服务的 PowerShell cmdlet 只在最新的 0.8.5 版及更高版本的 Azure PowerShell 模块中提供。建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
@@ -124,7 +124,7 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 为了演示如何装载 Azure 文件共享，现在我们将创建一个 Azure 虚拟机，并远程登录到它内部以装载共享。 
 
 1. 首先，按照 [创建运行 Windows Server 的虚拟机] 中的说明创建一个新的 Azure 虚拟机。
-2. 然后，按照 [如何登录到运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/) 中的说明远程登录到该虚拟机内部。
+2. 然后，按照 [如何登录到运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-log-on-windows-server) 中的说明远程登录到该虚拟机内部。
 3. 在该虚拟机上打开 PowerShell 窗口。 
 
 ###保存虚拟机的存储帐户凭据

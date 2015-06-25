@@ -25,7 +25,7 @@
 
 本教程介绍 Azure Site Recovery 如何与 Azure Automation 集成以便为恢复计划提供可扩展性。恢复计划可以协调使用 Azure Site Recovery 保护的虚拟机的恢复，以便复制到辅助云和 Azure 方案。它们还可帮助实现恢复的**一致准确性**、**可重复性**和**自动化**。如果你要将虚拟机故障转移到 Azure，则与 Azure Automation 集成可扩展恢复计划，并使你能够执行 Runbook，从而可以执行强大的自动化任务。
 
-如果你从未听说过 Azure Automation，请在[此处](/home/features/automation/)注册并下载其示例脚本。阅读有关 [Azure Site Recovery](/home/features/site-recovery/) 的详细信息
+如果你从未听说过 Azure Automation，请在[此处](/home/features/automation)注册并下载其示例脚本。阅读有关 [Azure Site Recovery](/home/features/site-recovery) 的详细信息
 
 在本教程中，我们将了解如何将 Azure Automation Runbook 集成到恢复计划。我们将自动执行以前需要手动干预的简单任务，并了解如何将多步骤恢复转换成单击恢复操作。我们还将了解如何解决已出错的简单脚本。
 

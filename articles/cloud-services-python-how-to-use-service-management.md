@@ -37,7 +37,7 @@
 ## <a name="WhatIs"> </a>什么是服务管理
 利用服务管理 API，可以编程方式访问通过[管理门户][management-portal]提供的众多服务管理功能。Azure SDK for Python 允许你管理云服务、存储帐户和地缘组。
 
-若要使用服务管理 API，你需要[创建 Azure 帐户](/pricing/1rmb-trial/)。 
+若要使用服务管理 API，你需要[创建 Azure 帐户](/pricing/1rmb-trial)。 
 
 ## <a name="Concepts"> </a>概念
 Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后者是一种 REST API。所有 API 操作都是通过 SSL 执行的，并且使用 X.509 v3 证书互相进行身份验证。可以从在 Azure 中运行的服务访问管理服务，或直接通过 Internet 从可发送 HTTPS 请求和接收 HTTPS 响应的任意应用程序访问管理服务。
@@ -70,7 +70,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 在上面的示例中，"sms"是一个 **ServiceManagementService** 对象。**ServiceManagementService** 类是用于管理 Azure 服务的主类。 
 
 ### Mac/Linux 上的管理证书
-你可以使用 [OpenSSL](http://www.openssl.org/) 创建管理证书。你实际上需要创建两个证书，一个用于服务器（.cer 文件），一个用于客户端（.pem 文件）。若要创建 .pem 文件，请执行以下代码：
+你可以使用 [OpenSSL](http://www.openssl.org) 创建管理证书。你实际上需要创建两个证书，一个用于服务器（.cer 文件），一个用于客户端（.pem 文件）。若要创建 .pem 文件，请执行以下代码：
 
 	`openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem`
 

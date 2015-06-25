@@ -262,7 +262,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 当前的 Mahout 实现与加州大学欧文分校 (UCI) 的存储库格式兼容 [为什么这很重要？此格式是什么格式？]
 
-1. 从 [http://nsl.cs.unb.ca/NSL-KDD/](http://nsl.cs.unb.ca/NSL-KDD/) 下载以下文件。
+1. 从 [http://nsl.cs.unb.ca/NSL-KDD/](http://nsl.cs.unb.ca/NSL-KDD) 下载以下文件。
  - [KDDTrain+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff) - 训练文件
  - [KDDTest+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff) - 测试数据
 

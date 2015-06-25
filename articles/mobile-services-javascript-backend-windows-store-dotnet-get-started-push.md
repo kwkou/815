@@ -12,7 +12,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 本主题说明如何使用 Azure 移动服务向通用 Windows 应用程序发送推送通知。 
 在本教程中，你将要使用 Azure 通知中心为快速入门项目启用推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会使用通知中心发送一条推送通知。创建的通知中心可在移动服务中任意使用，可独立于移动服务进行管理，并可供其他应用程序和服务使用。
 
->[WACOM.NOTE]本主题将演示如何使用 Windows 应用商店项目中的移动服务来手动配置推送通知。您可以使用 Visual Studio 2013 向 Windows 应用商店应用程序项目添加相同的推送通知。有关详细信息，请参阅本教程的[通用 Windows 应用程序版本](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push/)部分。 
+>[WACOM.NOTE]本主题将演示如何使用 Windows 应用商店项目中的移动服务来手动配置推送通知。您可以使用 Visual Studio 2013 向 Windows 应用商店应用程序项目添加相同的推送通知。有关详细信息，请参阅本教程的[通用 Windows 应用程序版本](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-push)部分。 
 
 本教程将指导你完成启用推送通知的以下基本步骤：
 

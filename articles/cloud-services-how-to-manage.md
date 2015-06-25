@@ -25,7 +25,7 @@
 
 如果你需要更新云服务的应用程序代码，请使用仪表板、"云服务"页或"实例"页上的"更新"************。你可以更新一个角色或所有角色。你将需要上载新的服务包和服务配置文件。
 
-1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中的仪表板的"云服务"页或"实例"页上，单击"更新"************。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中的仪表板的"云服务"页或"实例"页上，单击"更新"************。
 
 	![UpdateDeployment](./media/cloud-services-how-to-manage/CloudServices_UpdateDeployment.png)
 
@@ -55,7 +55,7 @@
 
 可以通过"云服务"****页或仪表板交换部署。
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"云服务"****。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****。
 
 2. 在云服务列表中，单击相应云服务以将其选中。
 
@@ -75,7 +75,7 @@
 
 若要揭示云服务对其他资源的依赖性，你可以将 Azure SQL Database 实例或存储帐户链接到云服务。可以在"链接的资源"页上链接和取消链接资源，然后在云服务仪表板上监视其使用情况****。如果链接的存储帐户启用了监视，你可以在云服务仪表板上监视"请求总数"。
 
-使用"链接"****可将新的或现有的 SQL Database 实例或存储帐户链接到云服务。然后，你可以在"缩放"****页上缩放数据库以及正使用它的云服务角色。（存储帐户可在使用率增加时自动缩放。）有关详细信息，请参阅[如何缩放云服务和链接的资源](/zh-cn/documentation/articles/cloud-services-how-to-scale/)。 
+使用"链接"****可将新的或现有的 SQL Database 实例或存储帐户链接到云服务。然后，你可以在"缩放"****页上缩放数据库以及正使用它的云服务角色。（存储帐户可在使用率增加时自动缩放。）有关详细信息，请参阅[如何缩放云服务和链接的资源](/zh-cn/documentation/articles/cloud-services-how-to-scale)。 
 
 你还可以在管理门户的"数据库"****节点中监视、管理和缩放数据库。 
 
@@ -85,7 +85,7 @@
 
 ###将 SQL Database 实例链接到云服务###
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中单击"云服务"****。然后单击云服务的名称以打开仪表板。
+1. 在[管理门户](http://manage.windowsazure.cn)中单击"云服务"****。然后单击云服务的名称以打开仪表板。
 
 2. 单击"链接的资源"****。
 
@@ -101,7 +101,7 @@
 
 4. 单击"创建新资源"或"链接现有资源"********。
 
-5. 选择要链接的资源类型。在[管理门户](http://manage.windowsazure.cn/)中，单击"SQL Database"****。（预览版管理门户不支持将存储帐户链接到云服务。）
+5. 选择要链接的资源类型。在[管理门户](http://manage.windowsazure.cn)中，单击"SQL Database"****。（预览版管理门户不支持将存储帐户链接到云服务。）
 
 6. 若要完成数据库配置，请按照管理门户的"SQL Database"****区域的帮助中的说明操作。
 
@@ -109,11 +109,11 @@
 
 	![Link Progress](./media/cloud-services-how-to-manage/CloudServices_LinkedResources_LinkProgress.png)
 
-	链接完成时，你可以在云服务仪表板上监视链接的资源的状态。有关缩放链接的 SQL Database 的信息，请参阅[如何缩放云服务和链接的资源](/zh-cn/documentation/articles/cloud-services-how-to-scale/)。
+	链接完成时，你可以在云服务仪表板上监视链接的资源的状态。有关缩放链接的 SQL Database 的信息，请参阅[如何缩放云服务和链接的资源](/zh-cn/documentation/articles/cloud-services-how-to-scale)。
 
 ###取消链接链接的资源###
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中单击"云服务"****。然后单击云服务的名称以打开仪表板。
+1. 在[管理门户](http://manage.windowsazure.cn)中单击"云服务"****。然后单击云服务的名称以打开仪表板。
 
 2. 单击"链接的资源"****，然后选择相应资源。
 
@@ -131,7 +131,7 @@
 
 可使用以下过程删除部署或云服务。 
 
-1. 在[管理门户](http://manage.windowsazure.cn/)中单击"云服务"****。
+1. 在[管理门户](http://manage.windowsazure.cn)中单击"云服务"****。
 
 2. 选择云服务，然后单击"删除"****。（若要选择云服务而不打开仪表板，请单击除云服务条目中名称之外的任何位置。）
 

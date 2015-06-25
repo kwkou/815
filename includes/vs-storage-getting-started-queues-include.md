@@ -1,4 +1,4 @@
-﻿#####创建队列
+#####创建队列
 利用 **CloudQueueClient** 对象，可以获取队列的引用对象。以下代码将创建 **CloudQueueClient** 对象。本主题中的所有代码都使用存储在 Azure 应用程序的服务配置中的存储连接字符串。还可采用其他方法创建 **CloudStorageAccount** 对象。请参阅 [CloudStorageAccount](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx "CloudStorageAccount") documentation for details.
 
 	// Create the queue client.
@@ -45,5 +45,5 @@
 	// Process the message in less than 30 seconds, and then delete the message.
 	queue.DeleteMessage(retrievedMessage);
 
-[了解有关 Azure 存储的详细信息](/zh-cn/documentation/services/storage/)
+[了解有关 Azure 存储的详细信息](/zh-cn/documentation/services/storage)
 另请参阅[在服务器资源管理器中浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx).<!--HONumber=41-->

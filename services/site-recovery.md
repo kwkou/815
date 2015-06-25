@@ -10,21 +10,21 @@
 使用**站点恢复**服务可以保护数据和云。Windows Azure 站点恢复可帮助您自动保护私有云并安排私有云的恢复。
 
 ####快速链接
--   [服务概述](/home/features/site-recovery/)
--   [可交付的解决方案](/zh-cn/solutions/storage-backup-recovery/)
+-   [服务概述](/home/features/site-recovery)
+-   [可交付的解决方案](/zh-cn/solutions/storage-backup-recovery)
 -   [**站点恢复**定价详细信息](/home/features/site-recovery/#price)
   
 ####特色
 
--   [开始使用 Azure 站点恢复：本地到本地](/zh-cn/documentation/articles/hyper-v-recovery-manager-configure-vault/)
--   [开始使用 Azure 站点恢复：本地到 Azure](/zh-cn/documentation/articles/hyper-v-recovery-manager-azure/)  
+-   [开始使用 Azure 站点恢复：本地到本地](/zh-cn/documentation/articles/hyper-v-recovery-manager-configure-vault)
+-   [开始使用 Azure 站点恢复：本地到 Azure](/zh-cn/documentation/articles/hyper-v-recovery-manager-azure)  
 
 ##教程和指南
 
 ###探究
 
--   [开始使用 Azure 站点恢复：本地到本地](/zh-cn/documentation/articles/hyper-v-recovery-manager-configure-vault/)
--   [开始使用 Azure 站点恢复：本地到 Azure](/zh-cn/documentation/articles/hyper-v-recovery-manager-azure/)
+-   [开始使用 Azure 站点恢复：本地到本地](/zh-cn/documentation/articles/hyper-v-recovery-manager-configure-vault)
+-   [开始使用 Azure 站点恢复：本地到 Azure](/zh-cn/documentation/articles/hyper-v-recovery-manager-azure)
 
 ###管理
 

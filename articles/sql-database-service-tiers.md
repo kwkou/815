@@ -1,4 +1,4 @@
-﻿<properties
+<properties
    pageTitle="SQL Database 服务层"
    description="比较 Azure SQL Database 服务层的性能和业务连续性功能，以便在成本与功能之间找到适当的平衡点，既能根据需要进行缩放，又不会造成停机。"
    services="sql-database"
@@ -19,7 +19,7 @@
 
 # 服务层
 
-[SQL Database](sql-database-technical-overview) 采用基本、标准和高级服务层。这三个服务层都提供 99.99% 的运行时间 [SLA](/support/legal/sla/) 和可预测的性能、灵活的业务连续性选项、安全功能和按小时计费。由于每个服务层包含多个性能级别，你可以灵活选择最适合工作负载需求的级别。如果你需要向上或向下缩放，可以在 Azure 门户中轻松更改数据库层，且不会给应用程序造成任何中断。有关详细信息，请参阅[更改数据库服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx)。
+[SQL Database](sql-database-technical-overview) 采用基本、标准和高级服务层。这三个服务层都提供 99.99% 的运行时间 [SLA](/support/legal/sla) 和可预测的性能、灵活的业务连续性选项、安全功能和按小时计费。由于每个服务层包含多个性能级别，你可以灵活选择最适合工作负载需求的级别。如果你需要向上或向下缩放，可以在 Azure 门户中轻松更改数据库层，且不会给应用程序造成任何中断。有关详细信息，请参阅[更改数据库服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx)。
 
 > [AZURE.IMPORTANT] Web 和企业版即将停用。了解如何[升级 Web 和企业版](sql-database-upgrade-new-service-tiers)。
 
@@ -87,6 +87,6 @@
 
 [SQL Database 定价](/home/features/sql-database/#price)中提供了有关这些层的价格详细信息。
 
-现在，你已了解有关 SQL Database 层的信息，欢迎单击[试用](/pricing/1rmb-trial/)来试用这些层，并了解[如何创建第一个 SQL 数据库](sql-database-get-started)！
+现在，你已了解有关 SQL Database 层的信息，欢迎单击[试用](/pricing/1rmb-trial)来试用这些层，并了解[如何创建第一个 SQL 数据库](sql-database-get-started)！
 
 <!--HONumber=55-->

@@ -22,7 +22,7 @@
 
 <h2 id="BKMK_Prereq">先决条件</h2>
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account)。
 
 此外，对于本教程，你还需要以下项。
 
@@ -301,7 +301,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 * [Azure VM 中的 Microsoft HPC Pack](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn518135.aspx)
 
 <!--
-* [Azure Big Compute：HPC 和 Batch](/solutions/big-compute/)
+* [Azure Big Compute：HPC 和 Batch](/solutions/big-compute)
 * [Azure Big Compute：HPC 和 Batch 技术文档](https://msdn.microsoft.com/zh-CN/library/azure/dn482128.aspx)
 -->
 

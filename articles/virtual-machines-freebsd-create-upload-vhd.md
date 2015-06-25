@@ -11,7 +11,7 @@
 
 - **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/documentation/articles/php-create-account)。 
 
-- **Azure PowerShell 工具** - 已安装 Microsoft Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads/)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads/) cmdlet 来上载 VHD。
+- **Azure PowerShell 工具** - 已安装 Microsoft Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Azure 下载](/downloads)。可在此处获取安装和配置该模块的教程。你将使用 [Azure 下载](/downloads) cmdlet 来上载 VHD。
 
 - **安装在 .vhd 文件中的 FreeBSD 操作系统** - 你已将受支持的 FreeBSD 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](https://technet.microsoft.com/zh-CN/library/hh846766.aspx)。 
 

@@ -123,7 +123,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ###<a name="subheading5"></a>内容分发
 有时候，应用程序需要向位于同一区域或多个区域的许多用户提供相同的内容（例如网站主页中使用的产品演示视频）。在这种情况下，你应该使用内容交付网络 (CDN)，例如 Azure CDN，该 CDN 会使用 Azure 存储空间作为数据的源。与存在于一个区域且无法以低延迟向其他区域交付内容的 Azure 存储帐户不同，Azure CDN 使用位于全世界多个数据中心的服务器。此外，与单个存储帐户相比，CDN 通常可以支持更高的出口限制。  
 
-关于 Azure CDN 的详细信息，请参阅 [Azure CDN](/home/features/caching/)。  
+关于 Azure CDN 的详细信息，请参阅 [Azure CDN](/home/features/caching)。  
 
 ###<a name="subheading6"></a>使用 SAS 和 CORS
 当你需要在用户的 Web 浏览器或移动电话应用程序中对 JavaScript 之类的代码授权以访问 Azure 存储空间中的数据时，一种方法是使用代理形式的 Web 角色应用程序：用户的设备通过 Web 角色进行身份验证，而 Web 角色则通过存储服务进行身份验证。这样，你就可以避免在不安全的设备上公开存储帐户密钥。但是，这会大大增加 Web 角色的开销，因为在用户设备和存储服务之间传输的所有数据都必须通过 Web 角色。你可以避免使用 Web 角色作为存储服务的代理，只需使用共享访问签名 (SAS) 即可，有时候还需结合使用跨域资源共享标头 (CORS)。使用 SAS，你可以让用户的设备通过受限访问令牌直接向存储服务提出请求。例如，如果某个用户想要将照片上载到你的应用程序，你的 Web 角色就会生成一个 SAS 令牌并将其发送到用户的设备，这样用户就可以获得在随后的 30 分钟内（此时间过后 SAS 令牌会失效）向特定 Blob 或容器执行写入操作的权限。   
@@ -133,7 +133,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 这两种技术都可以帮助你避免在 Web 应用程序上出现不必要的负载（和瓶颈）。  
 
 ####有用的资源
-有关 SAS 的详细信息，请参阅[共享访问签名第 1 部分：了解 SAS 模型](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。  
+有关 SAS 的详细信息，请参阅[共享访问签名第 1 部分：了解 SAS 模型](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1)。  
 
 有关 CORS 的详细信息，请参阅 [MSDN 上的 Azure 存储服务的跨域资源共享 (CORS) 支持](http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx).  
 
@@ -214,10 +214,10 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 有关详细信息，请参阅 [MSDN 上的复制 Blob](http://msdn.microsoft.com/zh-cn/library/dd894037.aspx).  
 
 ####<a name="subheading18"></a>使用 AzCopy
-Azure 存储团队发布了命令行工具"AzCopy"，该工具用于通过存储帐户来回批量传输多个 Blob，以及跨多个存储帐户进行批量传输。该工具已针对这种情况进行了优化，可以实现较高的传输速率。建议将其用于需要批量上载、批量下载和批量复制的情况。你可以在[此处](/zh-cn/documentation/articles/storage-use-azcopy/)了解它的详情并下载它。  
+Azure 存储团队发布了命令行工具"AzCopy"，该工具用于通过存储帐户来回批量传输多个 Blob，以及跨多个存储帐户进行批量传输。该工具已针对这种情况进行了优化，可以实现较高的传输速率。建议将其用于需要批量上载、批量下载和批量复制的情况。你可以在[此处](/zh-cn/documentation/articles/storage-use-azcopy)了解它的详情并下载它。  
 
 ####<a name="subheading19"></a>Azure 导入/导出服务
-对于超大量的数据（大于 1TB），Azure 存储空间提供了导入/导出服务，允许用户通过寄送硬盘驱动器的方式从 Blob 存储上载和下载数据。你可以将数据置于硬盘驱动器上，然后将其寄送到 Microsoft 进行上载，也可以将空的硬盘驱动器寄给 Microsoft 来下载数据。你可以在[此处](/zh-cn/documentation/articles/storage-import-export-service/)阅读详细内容。对于这种大小的数据，此方式可能比通过网络上载/下载要高效得多。  
+对于超大量的数据（大于 1TB），Azure 存储空间提供了导入/导出服务，允许用户通过寄送硬盘驱动器的方式从 Blob 存储上载和下载数据。你可以将数据置于硬盘驱动器上，然后将其寄送到 Microsoft 进行上载，也可以将空的硬盘驱动器寄给 Microsoft 来下载数据。你可以在[此处](/zh-cn/documentation/articles/storage-import-export-service)阅读详细内容。对于这种大小的数据，此方式可能比通过网络上载/下载要高效得多。  
 
 ###<a name="subheading20"></a>使用元数据
 该 Blob 服务支持 head 请求，这其中可能包含有关 Blob 的元数据。例如，如果你的应用程序需要某张照片中的 EXIF 数据，则可以检索该照片，然后从中提取数据。为了节省带宽并改进性能，你的应用程序可能会在上载照片时将 EXIF 数据存储在 Blob 的元数据中：你可以随后检索元数据中的 EXIF 数据，只需使用 HEAD 请求即可，这样就可以在每次读取 Blob 时，显著节省带宽和提取 EXIF 数据所需的处理时间。在只需元数据而不需要 Blob 的完整内容时，这种方法很有用。请注意，每个 Blob 只能存储 8KB 的元数据（该服务不会接受数据大小超过此要求的存储请求），因此如果数据大小不符合该要求，则可能无法使用这种方法。  

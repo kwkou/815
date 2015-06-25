@@ -9,7 +9,7 @@
 
 # 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务
 
-本教程的[第 1 部分](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/) 介绍了共享访问签名 (SAS) 并且说明了有关使用共享访问签名的最佳实践。第 2 部分将演示如何生成共享访问签名以及如何将共享访问签名用于 Azure Blob 服务。示例是用 C# 编写的并使用了 Azure .NET 存储客户端库。涉及的任务包括使用共享访问签名的以下方面：
+本教程的[第 1 部分](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1) 介绍了共享访问签名 (SAS) 并且说明了有关使用共享访问签名的最佳实践。第 2 部分将演示如何生成共享访问签名以及如何将共享访问签名用于 Azure Blob 服务。示例是用 C# 编写的并使用了 Azure .NET 存储客户端库。涉及的任务包括使用共享访问签名的以下方面：
 
 - 在容器上生成共享访问签名
 - 在 Blob 上生成共享访问签名
@@ -21,7 +21,7 @@
 
 # 第 1 部分：创建控制台应用程序以便生成共享访问签名 #
 
-首先，确保你安装了 Azure .NET 存储客户端库。你可以安装包含该客户端库的最新程序集的 [NuGet 程序包](http://nuget.org/packages/WindowsAzure.Storage/ "NuGet package") ；这是确保你具有最新修补程序的建议方法。你还可以通过下载包含该客户端库的最新 [Azure SDK for .NET](/zh-cn/downloads/) 版本来下载该客户端库。
+首先，确保你安装了 Azure .NET 存储客户端库。你可以安装包含该客户端库的最新程序集的 [NuGet 程序包](http://nuget.org/packages/WindowsAzure.Storage/ "NuGet package") ；这是确保你具有最新修补程序的建议方法。你还可以通过下载包含该客户端库的最新 [Azure SDK for .NET](/zh-cn/downloads) 版本来下载该客户端库。
 
 在 Visual Studio 中，创建一个新的 Windows 控制台应用程序并将其命名为 GenerateSharedAccessSignatures。使用以下方法之一添加对 Microsoft.WindowsAzure.Configuration.dll 和 Microsoft.WindowsAzure.Storage.dll 的引用：
 
@@ -523,7 +523,7 @@ https://storageaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=20
 
 # 后续步骤 #
 
-[共享访问签名，第 1 部分：了解 SAS 模型](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
+[共享访问签名，第 1 部分：了解 SAS 模型](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 
 [管理对 Azure 存储资源的访问](http://msdn.microsoft.com/zh-cn/library/azure/ee393343.aspx)
 

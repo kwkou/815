@@ -31,7 +31,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 <!--  [Member Offers][azure-member-offers]  -->
 
 -   装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的计算机。
--   有关最新 HDInsight 版本的说明，请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes/)。
+-   有关最新 HDInsight 版本的说明，请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes)。
 
 **估计完成时间：**30 分钟
 

@@ -227,7 +227,7 @@
 
 请注意，这些应用程序（使用通过具有只读权限的凭据打开的 **ShardMapManager**）将无法更改映射。为了满足这些需求，请创建特定于管理的应用程序或 PowerShell 脚本，以提供如前所述的更高级别权限的凭据。   
 
-有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)。 
+有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。 
 
 ## 修改分片映射 
 
@@ -259,9 +259,9 @@
 
 对于已经存在的分片映射，应用程序通常仅需要添加新分片，以处理预期的新键或键范围数据。例如，由租户 ID 分片的应用程序可能需要为新的租户设置新分片，或者在每个新的月份开始之前，每月分片的数据可能需要设置新分片。 
 
-如果新的键值范围还不是现有映射的组成部分且无需移动数据，则添加新分片以及将新的键或范围关联到该分片非常简单。有关添加新分片的详细信息，请参阅[添加新分片](/documentation/articles/sql-database-elastic-scale-add-a-shard/)。
+如果新的键值范围还不是现有映射的组成部分且无需移动数据，则添加新分片以及将新的键或范围关联到该分片非常简单。有关添加新分片的详细信息，请参阅[添加新分片](/documentation/articles/sql-database-elastic-scale-add-a-shard)。
 
-但是，在需要移动数据的情况下，需要拆分/合并服务并结合使用必要的分片映射更新，才能安排在分片之间移动数据。有关使用拆分/合并服务的详细信息，请参阅[拆分/合并概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/) 
+但是，在需要移动数据的情况下，需要拆分/合并服务并结合使用必要的分片映射更新，才能安排在分片之间移动数据。有关使用拆分/合并服务的详细信息，请参阅[拆分/合并概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge) 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

@@ -464,9 +464,9 @@
 
    [适用于 Mac 和 Linux 的 Azure 命令行工具][适用于 Mac 和 Linux 的 Azure 命令行工具] 
    [创建 Node.js 应用程序并将其部署到 Azure 网站](/develop/nodejs/tutorials/create-a-website-(mac))
-   [使用 Git 发布到 Azure 网站](/develop/nodejs/common-tasks/publishing-with-git/)
-   [Azure 开发人员中心](/develop/nodejs/)
-   [使用表存储构建 Node.js Web 应用程序](/develop/nodejs/tutorials/web-site-with-storage/)
+   [使用 Git 发布到 Azure 网站](/develop/nodejs/common-tasks/publishing-with-git)
+   [Azure 开发人员中心](/develop/nodejs)
+   [使用表存储构建 Node.js Web 应用程序](/develop/nodejs/tutorials/web-site-with-storage)
 
 
 <!-- URLs. -->

@@ -6,7 +6,7 @@
 
 # 什么是 Azure SDK for .NET？
 
-Azure SDK for .NET 是一套应用程序，其中包括 Visual Studio 工具、命令行工具、运行时二进制文件和客户端库，可帮助你开发、测试和部署在 Azure 中运行的应用程序。本文详细介绍了安装 SDK 时获得的内容。你可以从 ["Azure 下载"页](/downloads/) 下载 SDK。 
+Azure SDK for .NET 是一套应用程序，其中包括 Visual Studio 工具、命令行工具、运行时二进制文件和客户端库，可帮助你开发、测试和部署在 Azure 中运行的应用程序。本文详细介绍了安装 SDK 时获得的内容。你可以从 ["Azure 下载"页](/downloads) 下载 SDK。 
 
 Azure SDK for .NET 还包含使用 Azure 服务所需的客户端库。这些库使用 [NuGet](http://go.microsoft.com/fwlink/?LinkId=510472) 单独进行安装。
 
@@ -40,9 +40,9 @@ Azure SDK for .NET 将安装以下产品：
 
 这使你可以使用 Azure 网站：
 
-* [将 Web 项目发布到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started/)。
-* [将控制台应用程序项目发布到 Azure WebJobs](/zh-cn/documentation/articles/websites-dotnet-deploy-webjobs/)。
-* [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL Database 资源](/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。
+* [将 Web 项目发布到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started)。
+* [将控制台应用程序项目发布到 Azure WebJobs](/zh-cn/documentation/articles/websites-dotnet-deploy-webjobs)。
+* [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL Database 资源](/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 * [在创建新网站时创建 PowerShell 部署脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
 * [在服务器资源管理器中管理和故障诊断 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#sitemanagement)。
 * [在调试模式下针对网站和 WebJobs 远程运行](/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)。
@@ -53,9 +53,9 @@ Azure SDK for .NET 将安装以下产品：
 
 这使你可以使用 Azure 云服务和虚拟机：
 
-* [创建、打开和发布云服务项目](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/)。
+* [创建、打开和发布云服务项目](/zh-cn/documentation/articles/cloud-services-dotnet-get-started)。
 * [创建云服务项目的部署包](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx)。
-* [在创建新的 Web 项目时创建 Azure 虚拟机](/zh-cn/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/)。
+* [在创建新的 Web 项目时创建 Azure 虚拟机](/zh-cn/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell)。
 * [在创建新的虚拟机时创建 PowerShell 脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
 * [查看和管理 Visual Studio 项目属性窗口中的云服务项目设置](http://msdn.microsoft.com/zh-cn/library/ee405486.aspx)。
 * 在服务器资源管理器中查看和管理 [云服务](http://msdn.microsoft.com/zh-cn/library/ff683675.aspx)、[虚拟机](http://msdn.microsoft.com/zh-cn/library/jj131259.aspx) 和 [Service Bus](http://msdn.microsoft.com/zh-cn/library/jj149828.aspx)。 
@@ -79,7 +79,7 @@ Azure SDK for .NET 将安装以下产品：
 
 ###<a id="stgtools"></a>Microsoft Azure 存储工具
 
-这将安装命令行工具 [AzCopy](/zh-cn/documentation/articles/storage-use-azcopy/)，以便将数据传入和传出 Azure 存储帐户。
+这将安装命令行工具 [AzCopy](/zh-cn/documentation/articles/storage-use-azcopy)，以便将数据传入和传出 Azure 存储帐户。
 
 ###<a id="libraries"></a>用于 .NET 的 Microsoft Azure 库
 
@@ -102,13 +102,13 @@ Azure SDK for .NET 将安装以下产品：
 
   	**客户端库的本地副本。**Azure SDK for .NET 会将某些 Azure客户端库（如存储、Service Bus 和 Caching）的 NuGet 包复制到你的计算机。这些客户端库会自动包括在新的云服务项目中，因此即使没有连接到 Internet，你也可以使用本地 NuGet 包通过 Visual Studio 来创建项目。与发布新的 SDK 版本相比，客户端库通常会进行更频繁的更新，因此 NuGet.org 上的客户端库通常要比你通过 SDK 获取的新。
 
-	**包含客户端库的项目模板。**仅 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/) 和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/) 项目模板会自动包括某些客户端库。若需其他库或其他模板，请安装所需的 [客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
+	**包含客户端库的项目模板。**仅 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started) 和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard) 项目模板会自动包括某些客户端库。若需其他库或其他模板，请安装所需的 [客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
 
-* [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
+* [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell)。
 
 	使用 Azure PowerShell，你可以 [自动化 Azure 环境的创建和部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything)。
 
-* [Azure 移动服务项目模板](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
+* [Azure 移动服务项目模板](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard)。
 
 	移动服务模板仅在 Visual Studio 2013 Update 2 及更高版本中提供。这些模板在 Visual Studio 2012 或更早的版本中不提供，在 Visual Studio 2013 Update 1 或更早的版本中也不提供，即使你安装了 Azure SDK for .NET。
 
@@ -150,8 +150,8 @@ Azure SDK for .NET 将安装以下产品：
 
 ##<a id="resources"></a>资源
 
-若要下载最新的 Azure SDK for .NET 或客户端库，请参阅 ["Azure 下载"页](/downloads/)。
+若要下载最新的 Azure SDK for .NET 或客户端库，请参阅 ["Azure 下载"页](/downloads)。
 
-如需 Azure SDK for .NET 源代码，包括客户端库，请参阅 [GitHub.com/Azure](https://github.com/azure/)。
+如需 Azure SDK for .NET 源代码，包括客户端库，请参阅 [GitHub.com/Azure](https://github.com/azure)。
  
 <!--HONumber=43--> 

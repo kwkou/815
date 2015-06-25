@@ -44,7 +44,7 @@ CNAME 记录将  *specific* DNS 名称（例如 **mail.contoso.com** 或 **www.c
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-	> [WACOM.NOTE] 如果未启用"管理域"，则您正在使用免费的网站。您不能为免费网站使用自定义域名，并且必须升级到共享。基本或标准模式。有关网站模式的详细信息，包括如何更改网站模式，请参阅[如何缩放网站](/documentation/articles/web-sites-scale/)。
+	> [WACOM.NOTE] 如果未启用"管理域"，则您正在使用免费的网站。您不能为免费网站使用自定义域名，并且必须升级到共享。基本或标准模式。有关网站模式的详细信息，包括如何更改网站模式，请参阅[如何缩放网站](/documentation/articles/web-sites-scale)。
 
 6. 在"管理自定义域"对话框中，您将看到 **awverify** 信息、当前分配的 **.azurewebsites.net** 域名和虚拟 IP 地址。保存此信息，因为将在创建 DNS 记录时使用它。
 

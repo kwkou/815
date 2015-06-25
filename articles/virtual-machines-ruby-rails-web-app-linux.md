@@ -46,11 +46,11 @@
 
 1. 在开发环境中安装 Ruby。具体步骤因操作系统而异。
 
-	* **Apple OS X** -有多个有关 OS X 的 Ruby 版本。本教程使用在 OS X 上验证[Homebrew](http://brew.sh/)安装**rbenv**和**ruby 生成**。在找不到安装信息 [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv/).
+	* **Apple OS X** -有多个有关 OS X 的 Ruby 版本。本教程使用在 OS X 上验证[Homebrew](http://brew.sh)安装**rbenv**和**ruby 生成**。在找不到安装信息 [https://github.com/sstephenson/rbenv/](https://github.com/sstephenson/rbenv).
 
 	* **Linux** -使用您分发的包管理系统。本教程使用 ruby1.9.1 和 ruby1.9.1-dev 程序包在 Ubuntu 12.10 上进行了验证。
 
-	* **Windows** -有多个针对 Windows 的 Ruby 版本。本教程使用验证[RailsInstaller](http://railsinstaller.org/) 1.9.3-p392。
+	* **Windows** -有多个针对 Windows 的 Ruby 版本。本教程使用验证[RailsInstaller](http://railsinstaller.org) 1.9.3-p392。
 
 2. 打开一个新命令行或终端会话并输入以下命令以安装 Ruby on Rails：
 
@@ -70,7 +70,7 @@
 
 3. 您还必须安装 JavaScript 解释程序，Rails 将使用它来编译您的 Rails 应用程序使用的 CoffeeScript 资产。在提供了支持的解释程序的列表[https://github.com/sstephenson/execjs#readme](https://github.com/sstephenson/execjs#readme)。
 	
-	[Node.js](http://nodejs.org/)已使用的本教程中，验证过程中，因为它是适用于 OS X、 Linux 和 Windows 操作系统。
+	[Node.js](http://nodejs.org)已使用的本教程中，验证过程中，因为它是适用于 OS X、 Linux 和 Windows 操作系统。
 
 ##<a id="create"></a>创建 Rails 应用程序
 

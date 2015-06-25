@@ -1,4 +1,4 @@
-﻿1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。
+1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。
 在命令栏中，单击**新建**。
 
 2. 单击**虚拟机**，然后单击**从库**。
@@ -25,7 +25,7 @@
 
 13. 在下**可用性集**，对于本教程的目的，请使用默认设置为**None**。 
 
-14.	在下**终结点**，查看自动创建以允许安全外壳 (SSH) 连接到虚拟机的终结点。（终结点允许与虚拟机进行通信的 Internet 或其他虚拟网络上的资源。）您可以现在，添加更多终结点或以后创建它们。有关更高版本创建它们的说明，请参阅[如何设置终结点到虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/)。
+14.	在下**终结点**，查看自动创建以允许安全外壳 (SSH) 连接到虚拟机的终结点。（终结点允许与虚拟机进行通信的 Internet 或其他虚拟网络上的资源。）您可以现在，添加更多终结点或以后创建它们。有关更高版本创建它们的说明，请参阅[如何设置终结点到虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints)。
 
 15.  在下**VM 代理**，查看可用的扩展。这些扩展提供更加轻松地使用和管理虚拟机的各种功能。有关详细信息，请参阅[Azure VM 扩展](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。 
 

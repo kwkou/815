@@ -1,4 +1,4 @@
-﻿<properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 弹性缩放常见问题" description="有关 Azure SQL Database 弹性缩放的常见问题。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
+<properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 弹性缩放常见问题" description="有关 Azure SQL Database 弹性缩放的常见问题。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
 
 <tags
    ms.service="sql-database"
@@ -11,7 +11,7 @@
 架构信息对象仅用于"拆分合并"方案。如果某个应用程序本质上是单租户的，则它不需要"拆分合并"服务，因此你无需填充架构信息对象。
 
 #### 我已经置了一个数据库，并且已安装分片映射管理器，我应如何将此新数据库注册为分片？  
-请参阅**[将分片添加到弹性缩放应用程序](/documentation/articles/sql-database-elastic-scale-add-a-shard/)**。 
+请参阅**[将分片添加到弹性缩放应用程序](/documentation/articles/sql-database-elastic-scale-add-a-shard)**。 
 
 #### 弹性缩放的费用如何？  
 使用弹性缩放库不会产生任何费用。只有你为分片使用的 Azure SQL 数据库和分片映射管理器，以及为"拆分合并"服务设置的 Web/辅助角色才会产生费用。

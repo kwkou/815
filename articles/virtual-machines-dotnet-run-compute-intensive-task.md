@@ -91,7 +91,7 @@
 
 <h2>如何创建 .NET 应用程序来执行需要进行大量计算的任务</h2>
 
-1. 在您的部署计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for .NET](/develop/net/)。
+1. 在您的部署计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for .NET](/develop/net)。
 2. 使用名为 **TSPSolver** 的项目创建 .NET 控制台应用程序。确保目标框架设置为用于 .**NET Framework 4**（而不是 **.NET Framework 4 Client Profile**）。可在创建项目后设置目标框架，具体方法如下：在 Visual Studio 的菜单中，依次单击"项目"****、"属性"****、"应用程序"****选项卡，然后设置"目标框架"****的值。
 3. 加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击"浏览"****选项卡、浏览到 **C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\2012-06\ref**，然后选择"Microsoft.ServiceBus.dll"****作为引用。
 4. 加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击".NET"****选项卡，然后选择"System.Runtime.Serialization"****作为引用。

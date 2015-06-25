@@ -246,7 +246,7 @@
 
 ## 其他资源
 
-[虚拟机文档](/documentation/services/virtual-machines/)
+[虚拟机文档](/documentation/services/virtual-machines)
 
 [Azure 虚拟机常见问题](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
 

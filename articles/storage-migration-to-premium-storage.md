@@ -29,8 +29,8 @@ Microsoft Azure 高级存储将数据存储在采用最新技术的固态硬盘 
 将应用程序迁移到高级存储之前，请确保已满足如下所述的先决条件，并使自己熟悉可用于你的应用程序的不同性能选项。
 
 ### 先决条件
-- 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial/)订阅或访问 [Azure 定价](/pricing/)以获得更多选项。
-- 若要执行 PowerShell cmdlet，你将需要 Microsoft Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads/)。
+- 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial)订阅或访问 [Azure 定价](/pricing)以获得更多选项。
+- 若要执行 PowerShell cmdlet，你将需要 Microsoft Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads)。
 - 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列 VM。你可以将标准和高级存储磁盘用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。
 
 ### 设计注意事项
@@ -313,8 +313,8 @@ Add-AzureDataDisk -ImportFrom -DiskName "DataDisk" -LUN 0 -HostCaching ReadOnly 
 
 另请参阅以下资源，以了解有关 Azure 存储空间和 Azure 虚拟机的详细信息：
 
-- [Azure 存储空间](/documentation/services/storage/)
-- [Azure 虚拟机](/documentation/services/virtual-machines/)
+- [Azure 存储空间](/documentation/services/storage)
+- [Azure 虚拟机](/documentation/services/virtual-machines)
 - [高级存储：适用于 Azure 虚拟机工作负载的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)
 
 

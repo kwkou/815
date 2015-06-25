@@ -9,7 +9,7 @@
 
 当您使用 Azure 管理门户中的映像库时，创建运行 Linux 的虚拟机很容易。本指南演示如何执行此操作，并假定您没有使用过 Azure。
 
-> [WACOM.NOTE] 即使您不需要任何熟悉 Azure 虚拟机，若要完成本教程中，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。 
+> [WACOM.NOTE] 即使您不需要任何熟悉 Azure 虚拟机，若要完成本教程中，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account)。 
 
 本教程介绍了：
 
@@ -30,7 +30,7 @@ Azure 中的虚拟机是云中，您可以控制和管理的服务器。在 Azur
 使用映像创建虚拟机时可采用以下方法：
 
 - 通过使用 Azure 管理门户的映像库中提供的映像创建虚拟机。
-- 创建和上载包含到 Azure，映像的.vhd 文件，然后创建虚拟机使用的映像。有关创建和上载自定义映像的详细信息，请参阅[创建和上载包含 Linux 操作系统的虚拟硬盘](/zh-cn/documentation/articles/virtual-machines-linux-create-upload-vhd/).
+- 创建和上载包含到 Azure，映像的.vhd 文件，然后创建虚拟机使用的映像。有关创建和上载自定义映像的详细信息，请参阅[创建和上载包含 Linux 操作系统的虚拟硬盘](/zh-cn/documentation/articles/virtual-machines-linux-create-upload-vhd).
 
 每个虚拟机驻留在云服务中，通过本身，或与其他虚拟机组合在一起。可以将虚拟机放在相同的云服务，以使虚拟机到虚拟机之间的负载平衡网络流量与彼此、 通信和维护高可用性的计算机中。有关云服务和虚拟机的详细信息，请参阅中的"执行模型"一节[Azure 简介](http://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-introduction-to-azure/?fb=zh-cn#models)。
 
@@ -47,9 +47,9 @@ Azure 中的虚拟机是云中，您可以控制和管理的服务器。在 Azur
 
 若要了解有关在 Azure 上 Linux 的详细信息，请参阅以下文章：
 
-- [在 Azure 上的 Linux 简介](/zh-cn/documentation/articles/introduction-linux/)
+- [在 Azure 上的 Linux 简介](/zh-cn/documentation/articles/introduction-linux)
 
-- [如何使用针对 Mac 和 Linux 的 Azure 命令行工具](/zh-cn/documentation/articles/xplat-cli/)
+- [如何使用针对 Mac 和 Linux 的 Azure 命令行工具](/zh-cn/documentation/articles/xplat-cli)
 
 - [有关 Azure 虚拟机配置设置](https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx)
 

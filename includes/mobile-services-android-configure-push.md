@@ -1,5 +1,5 @@
-﻿
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)，单击"移动服务"，然后单击你的应用。
+
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)，单击"移动服务"，然后单击你的应用。
 
 2. 单击推送"选项卡，输入你在执行前一过程时从 GCM 获取的 **API 密钥**值，然后单击"保存"。
 

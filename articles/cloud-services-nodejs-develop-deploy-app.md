@@ -12,7 +12,7 @@
 
 完成本指南时，你将在 Azure 云服务中运行一个简单的 Node.js 应用程序。云服务是 Azure 中可扩展的云应用程序的构造块。它们允许进行单独且独立的管理，并允许横向扩展应用程序的前端和后端组件。云服务为可靠托管每个角色提供强大的专用虚拟机。
 
-有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的详细信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
+有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的详细信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
 <p />
 

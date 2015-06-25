@@ -25,7 +25,7 @@
 ## 概述
 存储分析记录成功和失败的存储服务请求的详细信息。可以使用该信息监视各个请求和诊断存储服务问题。将最大程度地记录请求。
 
-若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.cn/)启用它；有关详细信息，请参阅[如何监视存储帐户](http://www.windowsazure.cn/manage/services/storage/how-to-monitor-a-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用"获取 Blob 服务属性"、"获取队列服务属性"和"获取表服务属性"操作为每个服务启用存储分析。
+若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.cn)启用它；有关详细信息，请参阅[如何监视存储帐户](http://www.windowsazure.cn/manage/services/storage/how-to-monitor-a-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用"获取 Blob 服务属性"、"获取队列服务属性"和"获取表服务属性"操作为每个服务启用存储分析。
 
 仅当存在存储服务活动时，才会创建日志项。例如，如果存储帐户的 BLOB 服务中存在活动，而表或队列服务中没有活动，则仅创建与 BLOB 服务有关的日志。
 

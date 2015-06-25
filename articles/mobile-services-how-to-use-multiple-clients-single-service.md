@@ -12,7 +12,7 @@
 + [跨平台应用程序开发](#xplat-app-dev)
 + [共享 Visual Studio 项目中的代码](#shared-vs)
 
-有关移动服务的更多常规信息，请参阅[移动服务开发人员中心](/zh-cn/documentation/services/mobile-services/)。
+有关移动服务的更多常规信息，请参阅[移动服务开发人员中心](/zh-cn/documentation/services/mobile-services)。
 
 ## <a id="push"></a>跨平台推送通知
 
@@ -134,7 +134,7 @@
 
 + [**Appcelerator**](http://go.microsoft.com/fwlink/p/?LinkId=509987)<br/>Appcelerator 允许你使用 JavaScript 开发编译后可在所有移动设备平台上作为本机应用程序运行的单个应用程序。它在 UI 中提供了丰富的用户体验、对所有本机设备资源的访问权限以及本机应用程序性能。有关详细信息，请参阅 [Appcelerator 教程][Appcelerator]。
  
-+ [**PhoneGap**](https://go.microsoft.com/fwLink/p/?LinkID=390707)**/**[**Cordova**](http://cordova.apache.org/)<br/>PhoneGap（Apache Cordova 项目的分发产品）是一个免费的开源框架，它允许你使用标准 Web API、HTML 和 JavaScript 开发可在 Android、iOS 和 Windows 设备上运行的单个应用程序。PhoneGap 提供了基于 Web 视图的 UI，但通过允许访问设备上的本机资源增强了用户体验，这些资源包括推送通知、加速计、相机、存储、地理位置和应用程序内浏览器。有关详细信息，请参阅 [PhoneGap 快速入门教程][PhoneGap]。 
++ [**PhoneGap**](https://go.microsoft.com/fwLink/p/?LinkID=390707)**/**[**Cordova**](http://cordova.apache.org)<br/>PhoneGap（Apache Cordova 项目的分发产品）是一个免费的开源框架，它允许你使用标准 Web API、HTML 和 JavaScript 开发可在 Android、iOS 和 Windows 设备上运行的单个应用程序。PhoneGap 提供了基于 Web 视图的 UI，但通过允许访问设备上的本机资源增强了用户体验，这些资源包括推送通知、加速计、相机、存储、地理位置和应用程序内浏览器。有关详细信息，请参阅 [PhoneGap 快速入门教程][PhoneGap]。 
 	
 	现在 Visual Studio 还允许你使用用于 Visual Studio 的多设备混合应用程序扩展（它是预发行软件）构建跨平台的 Cordova 应用程序。有关详细信息，请参阅[使用 HTML 和 JavaScript 的多设备混合应用程序入门](https://msdn.microsoft.com/zh-CN/library/dn771545.aspx)。 
 
@@ -157,7 +157,7 @@
 
 Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支持。通用应用程序是包括 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序项目，以及共享的代码项目的解决方案。在这种项目中，共享的代码将视为是 Windows 应用商店和 Windows Phone 项目的一部分。有关详细信息，请参阅[构建适用于所有 Windows 设备的通用 Windows 应用程序]。可以使用 C#/XAML 和 JavaScript/HTML 编写通用 Windows 应用程序。 
 
-默认情况下，[Azure 管理门户]的"移动服务快速入门"选项卡可生成 TodoList 示例应用程序的通用 Windows 应用程序版本以帮助你入门。你可以选择下载该项目的 C#/XAML 或 JavaScript/HTML 版本。有关详细信息，请参阅[移动服务入门](/zh-cn/documentation/articles/mobile-services-windows-store-get-started/)。 
+默认情况下，[Azure 管理门户]的"移动服务快速入门"选项卡可生成 TodoList 示例应用程序的通用 Windows 应用程序版本以帮助你入门。你可以选择下载该项目的 C#/XAML 或 JavaScript/HTML 版本。有关详细信息，请参阅[移动服务入门](/zh-cn/documentation/articles/mobile-services-windows-store-get-started)。 
 
 >[WACOM.NOTE]该门户提供的快速入门应用程序项目的 C# 版本共享 MainPage.xaml.cs 代码隐藏页，但未使用视图模型。有关作为用 C# 编写使用 MVVM 的通用 Windows 应用程序项目的 TodoList 应用程序示例，请参阅[使用 MVVM 的 Azure 移动服务的通用 Windows 应用程序项目]。 
 

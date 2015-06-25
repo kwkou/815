@@ -13,8 +13,8 @@ Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结
 
 ####快速链接
 
--   [可交付的解决方案](/solutions/web/)
--   [服务概述](/home/features/scheduler/)
+-   [可交付的解决方案](/solutions/web)
+-   [服务概述](/home/features/scheduler)
 -   [定价详细信息](/home/features/scheduler/#price)
 
 

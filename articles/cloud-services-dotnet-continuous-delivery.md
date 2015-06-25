@@ -566,7 +566,7 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
 
 ## 后续步骤
 
-若要在使用持续交付时启用远程调试，请参阅[这些说明](/zh-cn/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging/). 
+若要在使用持续交付时启用远程调试，请参阅[这些说明](/zh-cn/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging). 
 
   [使用 Visual Studio Online 向 Azure 持续交付]: /zh-cn/documentation/articles/cloud-services-continuous-delivery-use-vso/
   [步骤 1：配置生成服务器]: #step1

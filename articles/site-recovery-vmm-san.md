@@ -56,7 +56,7 @@ Azure Site Recovery 可以协调虚拟机和物理服务器的复制、故障转
 
 ### Azure 先决条件
 
-- 你需要一个 [Azure](http://www.windowsazure.cn/) 帐户。你可以从[试用](/pricing/1rmb-trial)帐户开始。可在 [Azure Site Recovery Manager 定价详细信息](/home/features/site-recovery/#price)中获取定价信息。
+- 你需要一个 [Azure](http://www.windowsazure.cn) 帐户。你可以从[试用](/pricing/1rmb-trial)帐户开始。可在 [Azure Site Recovery Manager 定价详细信息](/home/features/site-recovery/#price)中获取定价信息。
 
 ### VMM 先决条件
 

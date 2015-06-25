@@ -16,7 +16,7 @@
 
 ##Service Bus 入门
 
-此指南假定你已具有包含名为"queue1"的队列的 Service Bus 命名空间。如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建 Service Bus 命名空间和队列的详细信息，请参阅名为[如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/)的操作方法指南。
+此指南假定你已具有包含名为"queue1"的队列的 Service Bus 命名空间。如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建 Service Bus 命名空间和队列的详细信息，请参阅名为[如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues)的操作方法指南。
 
 ##下载 AMQP 1.0 JMS 客户端库
 
@@ -346,5 +346,5 @@ JNDI 环境是通过将配置信息的哈希表传入到 javax.naming.InitialCon
 * [Azure Service Bus 中的 AMQP 1.0 支持](http://aka.ms/pgr3dp)
 * [如何将 AMQP 1.0 与 Service Bus .NET API 一起使用](http://aka.ms/lym3vk)
 * [Service Bus AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/azure/jj841071.aspx)
-* [如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/)
+* [如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues)
 

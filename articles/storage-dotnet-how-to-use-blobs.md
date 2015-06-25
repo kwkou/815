@@ -10,7 +10,7 @@
 执行常见方案。示例是用 C\# 编写的并使用了 Azure .NET 存储客户端库。涉及的方案包括
 上载、列出、下载和删除 Blob。有关 Blob 的详细信息，请参阅[后续步骤][]部分。
 
-> [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是 Storage Client Library 4.x，可通过 [NuGet] 获取(https://www.nuget.org/packages/WindowsAzure.Storage/) or as part of the [Azure SDK for .NET](/zh-cn/downloads/). See [How to: Programmatically access Blob storage][] below for more details on obtaining the Storage Client Library.
+> [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是 Storage Client Library 4.x，可通过 [NuGet] 获取(https://www.nuget.org/packages/WindowsAzure.Storage) or as part of the [Azure SDK for .NET](/zh-cn/downloads). See [How to: Programmatically access Blob storage][] below for more details on obtaining the Storage Client Library.
 
 ##目录
 

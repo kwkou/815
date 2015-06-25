@@ -18,7 +18,7 @@
 
 若要更改按需流式处理保留单位数，请执行以下操作：
 
-1.  在[管理门户](https://manage.windowsazure.cn/)中单击**“Media Services”**。然后，单击媒体服务的名称。
+1.  在[管理门户](https://manage.windowsazure.cn)中单击**“Media Services”**。然后，单击媒体服务的名称。
 
 2.  选择“来源”页。然后，单击要修改的来源。
 
@@ -43,7 +43,7 @@
 
 若要更改编码保留单位数，请执行以下操作：
 
-1.  在[管理门户](https://manage.windowsazure.cn/)中单击**“Media Services”**。然后，单击媒体服务的名称。
+1.  在[管理门户](https://manage.windowsazure.cn)中单击**“Media Services”**。然后，单击媒体服务的名称。
 
 2.  选择“处理器”页。
 
@@ -63,7 +63,7 @@
 若要创建支持票证，请执行以下操作：
 
 1.  在[管理门户](http://manage.windowsazure.cn)中登录到你的 Azure 帐户。
-2.  转到[支持](http://www.windowsazure.cn/zh-cn/support/contact/)。
+2.  转到[支持](http://www.windowsazure.cn/zh-cn/support/contact)。
 3.  单击“获取支持”。
 4.  选择你的订阅。
 5.  在支持类型下选择“技术”。

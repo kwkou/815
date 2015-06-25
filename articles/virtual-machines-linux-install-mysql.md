@@ -97,7 +97,7 @@ Microsoft Azure 中的终结点包含协议以及公用和专用端口。专用�
 
 ## 在虚拟机上安装 MySQL
 MySQL 支持三种安装方法：二进制文件包、rpm 包和源包。
-出于性能考虑，我们将使用 MySQL 5.6 的 rpm 包，作为本文的示例。相对 MySQL5.5 而言，MySQL5.6 性能已显著改进。更多信息可在[此处](http://www.mysqlperformanceblog.com/2013/02/18/is-mysql-5-6-slower-than-mysql-5-5/)找到。
+出于性能考虑，我们将使用 MySQL 5.6 的 rpm 包，作为本文的示例。相对 MySQL5.5 而言，MySQL5.6 性能已显著改进。更多信息可在[此处](http://www.mysqlperformanceblog.com/2013/02/18/is-mysql-5-6-slower-than-mysql-5-5)找到。
 
 
 ### 如何在 Ubuntu 或 Debian 上安装 MySQL5.6

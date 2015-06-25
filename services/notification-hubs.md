@@ -13,7 +13,7 @@
 
 ####快速链接
 
--   [服务概述](/home/features/notification-hubs/)
+-   [服务概述](/home/features/notification-hubs)
 -   [定价详细信息](/home/features/notification-hubs/#price)
 
 
@@ -38,11 +38,11 @@
 
 了解通知中心如何简化从本地或云中的任何后端向任何设备平台发送跨平台的个性化推送通知。
 
-####[通知中心入门](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
+####[通知中心入门](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started)
 
 快速设置移动应用程序（Windows 应用商店、Windows Phone 8、Android、iOS）以接收推送通知。
 
-####[百度推送通知服务](/zh-cn/documentation/articles/notification-hubs-baidu-get-started/)
+####[百度推送通知服务](/zh-cn/documentation/articles/notification-hubs-baidu-get-started)
 
 ###开发
 
@@ -50,23 +50,23 @@
 
 了解通知中心的主要功能，获取关于设计和部署云或本地解决方案的指导。
 
-####[向经过身份验证的用户发送通知（移动服务）](zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/)
+####[向经过身份验证的用户发送通知（移动服务）](zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)
 
 使用应用程序后端向用户发送通知，以便将用户设备注册到您的通知中心。
 
-####[向经过身份验证的用户发送通知 (ASP.NET)](/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/)
+####[向经过身份验证的用户发送通知 (ASP.NET)](/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users)
 
 使用应用程序后端向用户发送通知，以便将用户设备注册到您的通知中心。
 
-####[使用标记发送突发新闻](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/)
+####[使用标记发送突发新闻](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)
 
 构建支持选择新闻类别的移动应用程序，并接收基于用户所做选择的推送通知。移动应用程序代码可用于 Windows 应用商店、Windows Phone 8 和 iOS。
 
-####[使用模板对突发新闻进行本地化](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/)
+####[使用模板对突发新闻进行本地化](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news)
 
 扩展突发新闻应用程序以使用模板发送本地化新闻。移动应用程序代码可用于 Windows 应用商店、Windows Phone 8 和 iOS。
 
-####[使用模板向经过身份验证的用户发送跨平台通知](/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/)
+####[使用模板向经过身份验证的用户发送跨平台通知](/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)
 
 使用模板从某一移动服务或 ASP.NET 应用程序发送推送通知，而不会在您的后端中产生特定于平台的负载。
 

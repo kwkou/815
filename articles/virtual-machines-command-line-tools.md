@@ -1462,7 +1462,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ### <a name="Mobile_Scripts"></a>用于管理脚本的命令
 
-本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts/)。
+本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts)。
 
 **mobile script list [options] [servicename]**
 

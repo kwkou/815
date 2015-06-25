@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="演练：激活最新的 SQL Database Update V12"
 	description="介绍使用新的 Windows Azure 门户 UI 试用 Azure SQL Database 版本 V12 的步骤。"
 	services="sql-database"
@@ -24,7 +24,7 @@
 
 本主题介绍你可以遵循哪些步骤来在2015年6月首次发布的 Azure SQL Database V12 选项。
 
-若要试用最新的 V12，首先需要订阅 Windows Azure，或者至少获得了一个[试用](/pricing/1rmb-trial/)订阅。
+若要试用最新的 V12，首先需要订阅 Windows Azure，或者至少获得了一个[试用](/pricing/1rmb-trial)订阅。
 
 在为订阅激活 V12 后，V12 的创建和升级选项将在 Azure 门户中解锁。然后，用户可以从服务器或数据库边栏选项卡启动[创建](sql-database-create) 工作流。
 

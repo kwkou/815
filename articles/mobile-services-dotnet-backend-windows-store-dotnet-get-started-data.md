@@ -227,7 +227,7 @@
         {
         //public static MobileServiceClient MobileService = new MobileServiceClient(
         //          "http://localhost:59226"
-            //);
+            /);
         // Use this constructor instead after publishing to the cloud
         public static MobileServiceClient MobileService = new MobileServiceClient(
         "https://todolist.preview.azure-mobile-preview.net/",

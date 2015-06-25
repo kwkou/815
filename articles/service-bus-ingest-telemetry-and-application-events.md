@@ -19,5 +19,5 @@
 - [事件中心代码示例](http://go.microsoft.com/fwlink/?LinkID=402449)
  
 ## 相关服务
-- [存储](/zh-cn/documentation/services/storage/)
-- [HDInsight](/zh-cn/documentation/services/hdinsight/)
+- [存储](/zh-cn/documentation/services/storage)
+- [HDInsight](/zh-cn/documentation/services/hdinsight)
