@@ -1,4 +1,4 @@
-﻿<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL数据库, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL数据库, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service="web-sites,virtual-machines,cloud-services"
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -70,7 +70,7 @@
 </tr>
 <tr class="even">
 <td align="left"><p>每个订阅的保留的 IP</p></td>
-<td align="left"><p>5</p></td>
+<td align="left"><p>20</p></td>
 <td align="left"><p>100</p></td>
 </tr>
 </tbody>
