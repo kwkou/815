@@ -70,7 +70,7 @@
 3. 检查计算机上是否安装了 [.NET Framework 4.5](http://www.microsoft.com/zh-CN/download/details.aspx?id=30653) ，因为 Azure 快速入门示例项目需要用到它。如果你不确定计算机上安装了哪个版本的 .NET Framework，请参阅[如何：确定安装的 .NET Framework 版本](https://msdn.microsoft.com/zh-cn/vstudio/hh925568.aspx)。或者，按"开始"按钮或 Windows 键，并键入"控制面板"。然后，单击"程序">"程序和功能"。查看所有已安装程序的列表中是否包含 .NET Framework 4.5。
 4.	获取 Azure 订阅（如果尚未获取），同时请创建一个**标准存储**帐户：
 	- 若要获取 Azure 订阅，请参阅[免费试用](/pricing/1rmb-trial)，[购买选项](/pricing/overview)。
-	- 若要在 Azure 中创建**标准存储**帐户，请参阅[如何创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account.md)。**注意：**Azure 中有两种类型的存储帐户：标准存储帐户和高级存储帐户。标准存储帐户提供对 Azure Blob、表和队列存储的访问。高级存储帐户当前只可用于在 Azure 虚拟机使用的磁盘上存储数据。有关详细信息，请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/documentation/articles/storage-premium-storage-preview-portal.md)。
+	- 若要在 Azure 中创建**标准存储**帐户，请参阅[如何创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)。**注意：**Azure 中有两种类型的存储帐户：标准存储帐户和高级存储帐户。标准存储帐户提供对 Azure Blob、表和队列存储的访问。高级存储帐户当前只可用于在 Azure 虚拟机使用的磁盘上存储数据。有关详细信息，请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
 
 现在，让我们在 Visual Studio 中使用 Azure 快速入门示例项目之一创建一个简单的 Azure 存储空间应用程序。本教程重点介绍 **Azure Blob 存储**、**Azure 表存储**和 **Azure 存储队列**示例项目。对于每个示例项目，都可以遵循以下说明，但如果在步骤 3.a 中选择了不同的模板时则例外：
 
@@ -92,7 +92,7 @@
 2.	取消注释 Azure 存储服务的连接字符串，并在 App.config 文件中提供存储帐户名称和访问密钥：
 	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey]"` 
 
-	若要查找存储帐户名称和访问密钥，请参阅[什么是存储帐户](/documentation/articles/storage-whatis-account.md)。 
+	若要查找存储帐户名称和访问密钥，请参阅[什么是存储帐户](/documentation/articles/storage-whatis-account)。 
 
 3.	在 App.config 文件中提供存储帐户名称和访问密钥后,在"文件"菜单中，单击"全部保存"以保存所有项目文件。 
 4.	在"生成"菜单中，单击"生成解决方案"。 
@@ -104,10 +104,10 @@
 
 如果你想要了解有关这些服务的详细信息，请访问以下链接：
 
-* [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction.md)
-* [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs.md)
-* [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables.md)
-* [如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues.md)
+* [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)
+* [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
+* [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
+* [如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)
 * [Azure 存储文档](/documentation/services/storage)
 * [Azure 存储空间 MSDN 参考](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 * [Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
