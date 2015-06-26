@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-getting-started" urlDisplayName="Cloud Service" pageTitle="Node.js 入门指南 - Azure 教程" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="一类端到端教程，可帮助你开发简单的 Node.js Web 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-nodejs-getting-started" urlDisplayName="Cloud Service" pageTitle="Node.js 入门指南 - Azure 教程" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="一类端到端教程，可帮助你开发简单的 Node.js Web 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
 
 <tags ms.service="cloud-services" ms.date="02/24/2015" wacn.date="04/11/2015"/>
 
@@ -38,9 +38,9 @@
 	[WACOM.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
 
-2.  在 C 盘新建一个 **node** 目录，然后切换到 c:\\node 目录：
+2.  在 C 盘新建一个 **node** 目录，然后切换到 c:\node 目录：
 	
-	![A command prompt displaying the commands 'mkdir c:\\node' and 'cd node'.][mkdir]
+	![A command prompt displaying the commands 'mkdir c:\node' and 'cd node'.][mkdir]
 
 3.  输入以下 cmdlet 以创建新的解决方案：
 
@@ -78,7 +78,7 @@
 
 5.  使用以下命令导航到 **WebRole1** 目录，然后在记事本中打开 **server.js** 文件。 
 
-	PS C:\\node\\helloworld> cd WebRole1
+	PS C:\node\helloworld> cd WebRole1
         PS C:\node\helloworld\WebRole1> notepad server.js
 
 	**server.js** 文件是使用 **Add-AzureNodeWebRole** cmdlet 创建的，并且包含以下起始代码。此代码与 [nodejs.org][] 网站上的"Hello World"示例类似，只不过：
@@ -107,7 +107,7 @@ Azure 计算模拟器是 Azure SDK 所安装的工具之一，你可以使用此
 
 ## 将应用程序部署到 Azure
 
-	[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 
 
