@@ -1,4 +1,4 @@
-<properties linkid="manage-services-how-to-scale-a-cloud-service" urlDisplayName="How to scale" pageTitle="如何缩放云服务 - Azure" metaKeywords="Azure link resource, scaling cloud service" description="了解如何在 Azure 中缩放云服务和链接的资源。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Scale an Application" authors="davidmu" solutions="" manager="jeffreyg" editor="mattshel" />
+﻿<properties linkid="manage-services-how-to-scale-a-cloud-service" urlDisplayName="How to scale" pageTitle="如何缩放云服务 - Azure" metaKeywords="Azure link resource, scaling cloud service" description="了解如何在 Azure 中缩放云服务和链接的资源。" metaCanonical="" services="cloud-services" documentationCenter="" title="How to Scale an Application" authors="davidmu" solutions="" manager="jeffreyg" editor="mattshel" />
 <tags ms.service="cloud-services"
     ms.date="03/02/2015"
     wacn.date="04/11/2015"
@@ -20,7 +20,7 @@
 
 - 你必须将你创建的虚拟机添加到可用性集，才能缩放使用它们的应用程序。你添加的虚拟机最初可能处于打开或关闭状态，但它们在扩展操作中将打开，在缩减操作中将关闭。有关虚拟机和可用性集的详细信息，请参阅[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability)。
 - 缩放受内核使用情况影响。较大的角色实例或虚拟机使用更多内核。你只能在你的订阅的内核限制内缩放应用程序。例如，如果你的订阅的上限是二十个内核，并且你通过两个中等规模的虚拟机（一共四个内核）运行某个应用程序，则对于订阅中的其他云服务部署，你只能扩展十六个内核。可用性集中用于缩放应用程序的所有虚拟机必须具有相同大小。有关内核使用情况和虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx)。
-- 你必须先创建队列并使其与角色或可用性集关联，然后才能基于消息阈值缩放应用程序。有关详细信息，请参阅[如何使用队列存储服务]。(/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)。
+- 你必须先创建队列并使其与角色或可用性集关联，然后才能基于消息阈值缩放应用程序。有关详细信息，请参阅[如何使用队列存储服务](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)。
 - 你可以缩放链接到云服务的资源。有关链接资源的更多信息，请参见[如何：将资源链接到云服务](/zh-cn/documentation/articles/cloud-services-how-to-manage/#linkresources).
 - To enable high availability of your application, you should ensure that it is deployed with two or more role instances or Virtual Machines. For more information, see [Service Level Agreements](/support/legal/sla)。
 
@@ -32,13 +32,13 @@
 - [计划应用程序的缩放](#schedule)
 
 
-##<a id="manualscale"></a>手动缩放运行 Web 角色或辅助角色的应用程序##
+##<a id="manualscale"></a>手动缩放运行 Web 角色或辅助角色的应用程序
 
 在"缩放"页上，你可以手动增加或减少云服务中正在运行的实例数。
 
-1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击**"云服务"**，然后单击云服务名称以打开仪表板。
 
-2. 单击"缩放"****。默认情况下，对所有角色启用自动缩放，这意味着你可以手动更改应用程序使用的实例数。
+2. 单击**"缩放"**。默认情况下，对所有角色启用自动缩放，这意味着你可以手动更改应用程序使用的实例数。
 
 	![Scale page][manual_scale]
 
@@ -54,9 +54,9 @@
 	- 浅灰色表示可用来进行缩放的内核数目
 	- 粉红色表示尚未保存的更改
 
-4. 单击"保存"****。将基于你的选择添加或删除角色实例。
+4. 单击**"保存"**。将基于你的选择添加或删除角色实例。
 
-##<a id="autoscale"></a>自动缩放运行 Web 角色、辅助角色或虚拟机的应用程序##
+##<a id="autoscale"></a>自动缩放运行 Web 角色、辅助角色或虚拟机的应用程序
 
 在"缩放"页上，你可以将云服务配置为自动增加或减少应用程序使用的实例或虚拟机的数目。你可以基于以下参数配置扩展：
 
@@ -65,15 +65,15 @@
 
 <h3><a id="averagecpu"></a>平均 CPU 使用率</h3>
 
-1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
-2. 单击"缩放"****。
-3. 滚动到角色或可用性集部分，然后单击"CPU"****。这样，你就可以根据应用程序使用的 CPU 资源的平均百分比来自动缩放应用程序。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击**"云服务"**，然后单击云服务名称以打开仪表板。
+2. 单击**"缩放"**。
+3. 滚动到角色或可用性集部分，然后单击**"CPU"**。这样，你就可以根据应用程序使用的 CPU 资源的平均百分比来自动缩放应用程序。
 
 	![Autoscale on][autoscale_on]
 
 4. 每个角色或可用性集都包含一个滑块，用于更改可以使用的实例数。要设置可以使用的最大实例数，请向右拖动右侧的竖线。若要设置可以使用的最小实例数，请向左拖动左侧的竖线。
 
-	**注意：**在"缩放"页上，"实例"****表示角色实例或虚拟机实例。
+	**注意：**在**"缩放"**页上，**"实例"**表示角色实例或虚拟机实例。
 
 	![Instance range][instance_range]
 
@@ -108,13 +108,13 @@
 
 	![Down time][scale_downtime]
 
-10. 单击"保存"****。缩放操作可能需要长达五分钟才能完成。
+10. 单击**"保存"**。缩放操作可能需要长达五分钟才能完成。
 
 <h3><a id="queuemessages"></a>队列消息数</h3>
 
-1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
-2. 单击"缩放"****。
-3. 滚动到角色或可用性集部分，然后单击"队列"****。这样，你就可以根据队列消息的目标数目来自动缩放应用程序。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击**"云服务"**，然后单击云服务名称以打开仪表板。
+2. 单击**"缩放"**。
+3. 滚动到角色或可用性集部分，然后单击**"队列"**。这样，你就可以根据队列消息的目标数目来自动缩放应用程序。
 
 	![Scale queue][scale_queue]
 
@@ -122,7 +122,7 @@
 
 	![Queue range][queue_range]
 
-	**注意：**在"缩放"页上，"实例"****表示角色实例或虚拟机实例。
+	**注意：**在"缩放"页上，**"实例"**表示角色实例或虚拟机实例。
 	
 	最大实例数量受订阅中可用的内核数目限制。滑块的颜色表示订阅中使用的内核数和可用的内核数：
 	- 蓝色表示角色可以使用的最大内核数目。
@@ -160,22 +160,22 @@
 
 	![Down time][scale_downtime]
 
-12. 单击"保存"****。缩放操作可能需要长达五分钟才能完成。
+12. 单击**"保存"**。缩放操作可能需要长达五分钟才能完成。
 
-##<a id="scalelink"></a>缩放链接的资源##
+##<a id="scalelink"></a>缩放链接的资源
 
 通常当你缩放角色时，最好同时缩放应用程序正在使用的数据库。如果将数据库链接到云服务，则可更改 SQL Database 版本并在"缩放"页上调整数据库的大小。
 
-1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
-2. 单击"缩放"****。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击**"云服务"**，然后单击云服务名称以打开仪表板。
+2. 单击**"缩放"**。
 3. 在"链接的资源"部分中，选择用于此数据库的版本。
 
 	![Linked resources][linked_resources]
 
 4. 选择数据库的大小。
-5. 单击"保存"****以更新链接的资源。
+5. 单击**"保存"**以更新链接的资源。
 
-##<a id="schedule"></a>计划应用程序的缩放##
+##<a id="schedule"></a>计划应用程序的缩放
 
 你可以通过配置针对不同时间的计划，计划你的应用程序的自动缩放。你可以使用以下选项进行自动缩放：
 
@@ -185,9 +185,9 @@
 
 **注意：**计划目前不可用于使用虚拟机的应用程序。
 
-1. 在[管理门户](https://manage.windowsazure.cn)中单击"云服务"****，然后单击云服务名称以打开仪表板。
-2. 单击"缩放"****。
-3. 在"缩放"页上，单击"设置计划时间"****。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击**"云服务"**，然后单击云服务名称以打开仪表板。
+2. 单击**"缩放"**。
+3. 在"缩放"页上，单击**"设置计划时间"**。
 
 	![Schedule scaling][scale_schedule]
 
@@ -197,7 +197,7 @@
 
 6. 单击页面底部的复选标记可保存计划。
 
-7. 在保存计划后，它们将出现在列表中。你可以选择要使用的时间表，然后修改你的缩放设置。缩放设置仅在你选择的计划过程中适用。你可以通过单击"设置计划时间"****编辑计划。
+7. 在保存计划后，它们将出现在列表中。你可以选择要使用的时间表，然后修改你的缩放设置。缩放设置仅在你选择的计划过程中适用。你可以通过单击**"设置计划时间"**编辑计划。
 
 [manual_scale]: ./media/cloud-services-how-to-scale/CloudServices_ManualScaleRoles.png
 [slider_role]: ./media/cloud-services-how-to-scale/CloudServices_SliderRole.png
