@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-enablessl" urlDisplayName="Enable SSL" pageTitle="为云服务配置 SSL (Node.js) - Azure" metaKeywords="Node.js Azure SSL, Node.js Azure HTTPS" description="了解如何为 Node.js Web 角色指定 HTTPS 终结点，以及如何上载 SSL 证书来保护您的应用程序。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Configuring SSL for a Node.js Application in an Azure Web Role" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-nodejs-enablessl" urlDisplayName="Enable SSL" pageTitle="为云服务配置 SSL (Node.js) - Azure" metaKeywords="Node.js Azure SSL, Node.js Azure HTTPS" description="了解如何为 Node.js Web 角色指定 HTTPS 终结点，以及如何上载 SSL 证书来保护您的应用程序。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Configuring SSL for a Node.js Application in an Azure Web Role" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -27,7 +27,7 @@
 
 将 Node.js 应用程序部署到 Azure Web 角色后，服务器证书和 SSL 连接将由 Internet Information Services (IIS) 进行管理，以便能够像 http 服务一样编写 Node.js 服务。你可以采用以下步骤通过 Azure PowerShell 创建一个简单的 Node.js"hello world"服务：
 
-1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"********。
+1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击**"Azure PowerShell"**并选择**"以管理员身份运行"**。
 
 	![Azure PowerShell icon][powershell-menu]
 
@@ -51,7 +51,7 @@
 	<p>如果你以前未导入 Azure 订阅的发布设置，则在尝试发布时会收到错误。有关下载和导入订阅的发布设置的信息，请参阅<a href="/zh-cn/documentation/articles/install-configure-powershell/#ImportPubSettings">如何对 Node.js 使用 Azure PowerShell</a></p>
 	</div>
 
-**Publish-AzureServiceProject** cmdlet 返回的"创建的网站 URL"****值包含你的托管应用程序的完全限定域名。你将需要为此特定的完全限定域名获取一个 SSL 证书，并将其部署到 Azure。
+**Publish-AzureServiceProject** cmdlet 返回的**"创建的网站 URL"**值包含你的托管应用程序的完全限定域名。你将需要为此特定的完全限定域名获取一个 SSL 证书，并将其部署到 Azure。
 
 ## <a name="step2"> </a>步骤 2：获取 SSL 证书
 
@@ -79,9 +79,9 @@
 	
 	![certificate wizard][cert-wizard]
 
-2.   在"存储位置"部分，选择"当前用户"，然后单击"下一步"************。这会将证书安装在你的用户帐户的证书存储中。
+2.   在**"存储位置"**部分，选择**"当前用户"**，然后单击**"下一步"**。这会将证书安装在你的用户帐户的证书存储中。
 
-3.   继续向导中的操作，接受默认值，直至转到"私钥保护"屏幕****。你必须在这里输入证书的密码（如果有）。还必须选择"将此密钥标记为可导出"****。最后，单击"下一步"****。
+3.   继续向导中的操作，接受默认值，直至转到**"私钥保护"**屏幕。你必须在这里输入证书的密码（如果有）。还必须选择**"将此密钥标记为可导出"**。最后，单击**"下一步"**。
 
 	![private key protection][key-protection]
 
@@ -119,7 +119,7 @@
 
     对服务定义文件进行的所有必需更改已完成，但您仍需要将证书信息添加到服务配置文件中。
 
-3.  在你的服务配置文件（**ServiceConfiguration.Cloud.cscfg** 和 **ServiceConfiguration.Local.cscfg**）中，将证书添加到"角色"********部分中的空白"证书"部分，并将下面的指纹值示例替换为证书的指纹值：
+3.  在你的服务配置文件（**ServiceConfiguration.Cloud.cscfg** 和 **ServiceConfiguration.Local.cscfg**）中，将证书添加到**"角色"**部分中的空白**"证书"**部分，并将下面的指纹值示例替换为证书的指纹值：
 
         <Role name="WebRole1">
         ...
@@ -139,9 +139,9 @@
 
 在 Azure 中启动并运行部署后，可以使用 HTTPS 连接到该部署。
 
-1.  在管理门户中，选择你的云服务，然后单击"仪表板"****。
+1.  在管理门户中，选择你的云服务，然后单击**"仪表板"**。
 
-2. 向下滚动并单击显示为"站点 URL"的链接****：
+2. 向下滚动并单击显示为**"站点 URL"**的链接：
 
     ![the site url][site-url]
 
