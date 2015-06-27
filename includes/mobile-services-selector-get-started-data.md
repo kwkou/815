@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST（平台 | 后端）]
+> [AZURE.SELECTOR-LIST(平台 | 后端)]
 - [(iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-data)
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-get-started-data)
 - [(Windows universal C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data)

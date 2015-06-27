@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="在装有 .NET 后端的移动服务中进行用户服务端授权 | 移动开发人员中心"
 	description="了解如何在 Azure 移动服务的 .NET 后端中为用户授权"
 	services="mobile-services"
@@ -16,7 +16,7 @@
 
 # 移动服务中的用户服务端授权
 
-> [AZURE.SELECTOR-LIST（平台 | 后端）]
+> [AZURE.SELECTOR-LIST(平台 | 后端)]
 - [（任何 | .NET）](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [（任何 | Javascript）](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 

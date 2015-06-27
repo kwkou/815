@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST（平台 | 后端）]
+> [AZURE.SELECTOR-LIST(平台 | 后端)]
 - [（iOS |任何)](/documentation/articles/mobile-services-ios-get-started-offline-data)
 - [（Windows Universal C# | 任何）](/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data)
 - [（Windows Phone | 任何)](/documentation/articles/mobile-services-windows-phone-get-started-offline-data)
