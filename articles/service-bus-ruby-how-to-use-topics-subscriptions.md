@@ -63,7 +63,7 @@ Service Bus 主题和订阅支持**发布/订阅消息通信**模型。在使用
 
      ![Select namespace](./media/service-bus-ruby-how-to-use-topics-subscriptions/selectns.png)
 
-3. 在底部选择"连接信息"****。
+3. 在底部选择"连接信息"。
 
       ![Select connection](./media/service-bus-ruby-how-to-use-topics-subscriptions/selectconnection.png)
 

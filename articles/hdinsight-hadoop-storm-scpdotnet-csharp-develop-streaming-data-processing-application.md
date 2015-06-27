@@ -346,7 +346,7 @@ SCP 拓扑规范是一种特定于域的语言，用于描述和配置 SCP 拓�
 |新函数|	参数|	说明
 |-------------|-----------|-----------
 |**tx-topolopy**|	topology-name<br> spout-map<br> bolt-map|	 使用拓扑名称、Spout 定义图和 Bolts 定义图来定义事务性拓扑
-|**scp-tx-spout**|	exec-name<br> args<br>字段|	定义事务性 Spout。它将会使用 ****args** 运行带有 ***exec-name** 的应用程序*。<br><br>***字段*** 是用于 Spout 的输出字段
+|**scp-tx-spout**|	exec-name<br> args<br>字段|	定义事务性 Spout。它将会使用 args** 运行带有 ***exec-name** 的应用程序*。<br><br>***字段*** 是用于 Spout 的输出字段
 |**scp-tx-batch-bolt**|	exec-name<br> args<br>字段|	定义事务性批处理 Bolt。它将会使用 ***args** 运行带有 ***exec-name***的应用程序*。<br><br>字段是用于 Bolt 的输出字段。
 |**scp-tx-commit-bolt**|	exec-name<br>args<br>字段|	定义事务性 Committer Bolt。它将会使用 args 运行带有 ***exec-name*** 的应用程序。<br><br>***字段*** 是用于 Bolt 的输出字段	
 |**nontx-topolopy**|	topology-name<br> spout-map<br>bolt-map|	使用拓扑名称、Spout 定义图和 Bolts 定义图来定义非事务性拓扑

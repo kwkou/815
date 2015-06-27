@@ -64,7 +64,7 @@ Service Bus 队列是一种可用于各种应用场景的
 
      ![Select namespace](./media/service-bus-ruby-how-to-use-queues/selectns.png)
 
-3. 在底部选择"连接信息"****。
+3. 在底部选择"连接信息"。
 
       ![Select connection](./media/service-bus-ruby-how-to-use-queues/selectconnection.png)
 

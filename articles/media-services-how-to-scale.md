@@ -24,7 +24,7 @@
 
     ![“来源”页](./media/media-services-how-to-scale/media-services-origin-page.png)
 
-3.  若要指定保留单位数，请选择“缩放”选项卡并移动“保留容量”****滑块。
+3.  若要指定保留单位数，请选择“缩放”选项卡并移动“保留容量”滑块。
 
     ![“缩放”页](./media/media-services-how-to-scale/media-services-origin-scale.png)
 

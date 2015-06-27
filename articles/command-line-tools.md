@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,virtual-machines,mobile-services,cloud-services"
     ms.date="10/17/2014"
     wacn.date="04/11/2015"
@@ -229,7 +229,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
     ~$ azure vm create my-vm-name MSFT__Windows-Server-2008-R2-SP1.11-29-2011 username --location "East China" -r
     info:   Executing command vm create
-    Enter VM 'my-vm-name' password: ************                                     
+    Enter VM 'my-vm-name' password:                                      
     info:   vm create command OK
 
 **vm create-from \<dns-name\> \<role-file\>**
@@ -1209,7 +1209,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
     ~$ azure sql db create fr8aelne00 newdb test
     info:    Executing command sql db create
-    Administrator password: ********
+    Administrator password: 
     + Creating SQL Server Database
     info:    sql db create command OK
 
@@ -1219,7 +1219,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
     C:\windows\system32>azure sql db show fr8aelne00 newdb test
     info:    Executing command sql db show
-    Administrator password: ********
+    Administrator password: 
     + Getting SQL server databases
     data:    Database _ ContentRootElement=m:properties, id=https://fr8aelne00.datab
     ase.chinacloudapi.cn/v1/ManagementService.svc/Server2('fr8aelne00')/Databases(4), ter
@@ -1272,7 +1272,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
     ~$ azure sql db list fr8aelne00 test
     info:    Executing command sql db list
-    Administrator password: ********
+    Administrator password: 
     + Getting SQL server databases
     data:    Name    Edition  Collation                     MaxSizeInGB
     data:    ------  -------  ----------------------------  -----------
@@ -1285,7 +1285,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
     ~$ azure sql db delete fr8aelne00 newdb test
     info:    Executing command sql db delete
-    Administrator password: ********
+    Administrator password: 
     Delete database newdb? [y/n] y
     + Getting SQL server databases
     + Removing database

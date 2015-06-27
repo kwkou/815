@@ -233,12 +233,12 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
     	Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
     	progressJobTask.Wait();
 
-        // **********
+        // **
     	// Optional code.Code after this point is not required for 
     	// an encoding job, but shows how to access the assets that 
     	// are the output of a job, either by creating URLs to the 
     	// asset on the server, or by downloading. 
-        // **********
+        // **
 
     	// Get an updated job reference.
     	job = GetJob(job.Id);
@@ -336,10 +336,10 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
             {
         	case JobState.Finished:
         	Console.WriteLine();
-        	Console.WriteLine("********************");
+        	Console.WriteLine("");
         	Console.WriteLine("Job is finished.");
         	Console.WriteLine("Please wait while local tasks or downloads complete...");
-        	Console.WriteLine("********************");
+        	Console.WriteLine("");
         	Console.WriteLine();
         	Console.WriteLine();
         	break;
@@ -367,7 +367,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
         	IJob job = GetJob(jobId);
 
         	builder.AppendLine("\nThe job stopped due to cancellation or an error.");
-        	builder.AppendLine("***************************");
+        	builder.AppendLine("***");
         	builder.AppendLine("Job ID:" + job.Id);
         	builder.AppendLine("Job Name:" + job.Name);
         	builder.AppendLine("Job State:" + job.State.ToString());
@@ -387,7 +387,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
                     }
                 }
             }
-        	builder.AppendLine("***************************\n");
+        	builder.AppendLine("***\n");
         	// Write the output to a local file and to the console.The template 
         	// for an error output file is:JobStop-{JobId}.txt
         	string outputFile = _outputFilesFolder + @"\JobStop-" + JobIdAsFileName(job.Id) + ".txt";
@@ -581,10 +581,10 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 	Job(My encoding job) state:Processing.
 	Please wait...
 
-	********************
+	
 	Job(My encoding job) is finished.
 	Please wait while local tasks or downloads complete...
-	********************
+	
 
 	Locator path:
 	https://mediasvcd08mtz29tcpws.blob.core.windows-int.net/asset-4f5b42f4-3ade-4c2c

@@ -53,7 +53,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
     makecert -sky exchange -r -n "CN=AzureCertificate" -pe -a sha1 -len 2048 -ss My "AzureCertificate.cer"
 
-该命令将创建".cer"文件，然后将该文件安装到"个人"****证书存储区中。有关详细信息，请参阅[创建并上载 Azure 管理证书]。(http://msdn.microsoft.com/zh-cn/library/windowsazure/gg551722.aspx)。
+该命令将创建".cer"文件，然后将该文件安装到"个人"证书存储区中。有关详细信息，请参阅[创建并上载 Azure 管理证书]。(http://msdn.microsoft.com/zh-cn/library/windowsazure/gg551722.aspx)。
 
 在你创建了证书后，需要通过[管理门户][management-portal]的"设置"选项卡的"上载"操作，将".cer"文件上载到 Azure。
 

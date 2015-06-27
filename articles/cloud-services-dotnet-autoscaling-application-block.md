@@ -67,7 +67,7 @@
 
 在安装 NuGet 程序包管理器后，若要在您的应用程序中安装自动缩放 NuGet 程序包，请执行以下操作：
 
-1.  打开"NuGet Package Manager Console"窗口****。在"工具"菜单中，依次选择"Library Package Manager"和"Package Manager Console"************。
+1.  打开"NuGet Package Manager Console"窗口。在"工具"菜单中，依次选择"Library Package Manager"和"Package Manager Console"。
 
 2.  在"NuGet 程序包管理器控制台"窗口中，输入以下命令：
 
@@ -82,9 +82,9 @@
 
 你的项目必须以 .NET Framework 4 为目标。若要更改或验证目标框架，请执行以下操作：
 
-1.  在"解决方案资源管理器"中，右键单击项目名称并选择"属性"****。
+1.  在"解决方案资源管理器"中，右键单击项目名称并选择"属性"。
 
-2.  在"属性"窗口的"应用程序"选项卡中，确保"目标框架"设置为".NET Framework 4"********。
+2.  在"属性"窗口的"应用程序"选项卡中，确保"目标框架"设置为".NET Framework 4"。
 
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling03.png)
 
@@ -112,9 +112,9 @@
 
 在 Visual Studio 中，你必须确保已将该服务模型文件复制到输出文件夹。为此，请按以下步骤操作：
 
-1.  右键单击该文件并选择"属性"****。
+1.  右键单击该文件并选择"属性"。
 
-2.  在"属性"窗格中，将"复制到输出目录"值设置为"始终复制"********。
+2.  在"属性"窗格中，将"复制到输出目录"值设置为"始终复制"。
 
     ![Set Copy to Output Directory value](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling04.png)
 
@@ -155,46 +155,46 @@
 
 -   **[subscriptionid]：**包含要在其中使用自动缩放的应用程序的 Azure 订阅的唯一 ID。
 
-    1.  在 Azure 管理门户中单击****"云服务"。
+    1.  在 Azure 管理门户中单击"云服务"。
 
-    2.  在"云服务"列表中，单击托管要在其中使用自动缩放的应用程序的服务。右侧的"速览"窗格将显示****"订阅 ID"。
+    2.  在"云服务"列表中，单击托管要在其中使用自动缩放的应用程序的服务。右侧的"速览"窗格将显示"订阅 ID"。
 
     ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling05.png)
 
   
 	-   **[hostedservicednsprefix]：**要在其中使用自动缩放的托管服务的 DNS 前缀。
 
-    1.  在 Azure 管理门户中单击****"云服务"。
+    1.  在 Azure 管理门户中单击"云服务"。
 
-    2.  在"云服务"列表中，单击托管要在其中使用自动缩放的应用程序的服务。云服务的名称。单击"DNS 前缀"****。
+    2.  在"云服务"列表中，单击托管要在其中使用自动缩放的应用程序的服务。云服务的名称。单击"DNS 前缀"。
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling06.png)
  
 	-   **[targetrolename]：**自动缩放规则的目标角色的名称。
 
-    1.  在 Azure 管理门户中单击****"云服务"。
+    1.  在 Azure 管理门户中单击"云服务"。
 
-    2.  在"云服务"列表中，单击托管要在其中使用自动缩放的应用程序的服务，然后单击****"实例"。**Role* 列显示目标角色的名称。
+    2.  在"云服务"列表中，单击托管要在其中使用自动缩放的应用程序的服务，然后单击"实例"。**Role* 列显示目标角色的名称。
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling07.png)
 
 
 	-   **[storageaccountname]** 和 **[storageaccountkey]：**你将用于目标 Azure 应用程序的 Azure 存储帐户的名称。
 
-    1.  在 Azure 管理门户中，单击****"存储"。
+    1.  在 Azure 管理门户中，单击"存储"。
 
-    2.  在"存储帐户"列表中，选择将使用的存储帐户。****"名称"列将显示该名称****。
+    2.  在"存储帐户"列表中，选择将使用的存储帐户。"名称"列将显示该名称。
 
-    3.  单击屏幕底部的"管理密钥"按钮以获取主访问密钥。****
+    3.  单击屏幕底部的"管理密钥"按钮以获取主访问密钥。
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling08.png)
   
  
 	-   **[managementcertificatethumbprint]：**应用程序块将用于保护目标应用程序缩放请求的管理证书的**指纹**。
 
-    1.  在 Azure 管理门户中，单击****"设置"。
+    1.  在 Azure 管理门户中，单击"设置"。
 
-    2.  "指纹"列将显示该指纹********。
+    2.  "指纹"列将显示该指纹。
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling09.png)
  
@@ -210,9 +210,9 @@
 
 在 Visual Studio 中，你必须确保已将规则文件复制到输出文件夹。为此，请按以下步骤操作：
 
-1.  右键单击该文件并选择"属性"****。
+1.  右键单击该文件并选择"属性"。
 
-2.  在"属性"窗格中，将"复制到输出目录"值设置为"始终复制"********。
+2.  在"属性"窗格中，将"复制到输出目录"值设置为"始终复制"。
 
 以下代码示例显示 **rules.xml** 文件中的一个规则集示例：
 
@@ -273,37 +273,37 @@
 
 ### 在宿主应用程序中配置自动缩放应用程序块
 
-1.  在"解决方案资源管理器"中，右键单击"App.config"文件，然后单击"编辑配置文件"********。
+1.  在"解决方案资源管理器"中，右键单击"App.config"文件，然后单击"编辑配置文件"。
 
-2.  在"块"菜单中，单击"添加自动缩放设置"********：  
+2.  在"块"菜单中，单击"添加自动缩放设置"：  
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
   
-3.  展开"自动缩放设置"，然后单击"数据点存储存储帐户"旁的省略号 (...)，添加应用程序块将在其中存储所收集的数据点的 Azure 存储帐户的"帐户名称"和"帐户密钥"，（如果你不确定在何处查找这些值，请参阅 [如何****************：定义服务模型][]），然后单击"确定"：****  
+3.  展开"自动缩放设置"，然后单击"数据点存储存储帐户"旁的省略号 (...)，添加应用程序块将在其中存储所收集的数据点的 Azure 存储帐户的"帐户名称"和"帐户密钥"，（如果你不确定在何处查找这些值，请参阅 [如何：定义服务模型][]），然后单击"确定"：  
 
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling11.png)
 
-4.  展开"自动缩放设置"部分以显示"规则存储"和"服务信息存储"部分************。默认情况下，它们配置为使用 Azure Blob 存储：  
+4.  展开"自动缩放设置"部分以显示"规则存储"和"服务信息存储"部分。默认情况下，它们配置为使用 Azure Blob 存储：  
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
 
 
-5.  单击"规则存储"旁的加号 (+)，指向"设置规则存储"，然后单击"使用本地文件规则存储"，然后单击"是"****************。 
-6.  在"文件名"****框中，键入 **rules.xml**。这是包含你的自动缩放规则的文件的名称：  
+5.  单击"规则存储"旁的加号 (+)，指向"设置规则存储"，然后单击"使用本地文件规则存储"，然后单击"是"。 
+6.  在"文件名"框中，键入 **rules.xml**。这是包含你的自动缩放规则的文件的名称：  
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
 
 
-7.  单击"服务信息存储"旁的加号 (+)，指向"设置服务信息存储"，然后单击"使用本地文件服务信息存储"，然后单击"是"****************。
+7.  单击"服务信息存储"旁的加号 (+)，指向"设置服务信息存储"，然后单击"使用本地文件服务信息存储"，然后单击"是"。
 
-8.  在"文件名"****框中，键入 **services.xml**。这是包含你的自动缩放规则的文件的名称：  
+8.  在"文件名"框中，键入 **services.xml**。这是包含你的自动缩放规则的文件的名称：  
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
 
 
-9.  在"企业库配置"窗口中的"文件"菜单上，单击"保存"以保存你的配置更改********。然后在"企业库配置"窗口中的"文件"菜单上，单击"退出"********。
+9.  在"企业库配置"窗口中的"文件"菜单上，单击"保存"以保存你的配置更改。然后在"企业库配置"窗口中的"文件"菜单上，单击"退出"。
 
 若要获取有关自动缩放应用程序块正在执行操作的更多信息，你需要捕获它写入的日志消息。例如，如果您在控制台应用程序中托管应用程序块，则可在 Visual Studio 中的"输出"窗口中查看日志消息。以下部分演示如何配置此行为。
 
 ### 在自动缩放应用程序块宿主应用程序中配置日志记录
 
-1.  在 Visual Studio 中，在"解决方案资源管理器"中双击"App.config"文件以在编辑器中将其打开****。然后添加 **system.diagnostics** 节，如以下示例所示：
+1.  在 Visual Studio 中，在"解决方案资源管理器"中双击"App.config"文件以在编辑器中将其打开。然后添加 **system.diagnostics** 节，如以下示例所示：
 
         <?xml version="1.0" encoding="utf-8" ?>
         <configuration>

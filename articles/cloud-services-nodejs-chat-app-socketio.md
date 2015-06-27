@@ -20,7 +20,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 以下步骤创建将托管 Socket.IO 应用程序的云服务项目。
 
-1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"********。
+1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"。
 
 	![Azure PowerShell icon][powershell-menu]
 
@@ -42,7 +42,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 对于此项目，我们将使用 [Socket.IO 
 GitHub 存储库]中的聊天示例。执行以下步骤下载该示例并将其添加到你先前创建的项目中。
 
-1.  使用"克隆"****按钮创建存储库的本地副本。你还可以使用"ZIP"****按钮下载项目。
+1.  使用"克隆"按钮创建存储库的本地副本。你还可以使用"ZIP"按钮下载项目。
 
     ![A browser window viewing https://github.com/LearnBoost/socket.io/tree/master/examples/chat, with the ZIP download icon highlighted][chat-example-view]
 

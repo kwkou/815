@@ -25,10 +25,10 @@
     	{
 	case JobState.Finished:
 	Console.WriteLine();
-	Console.WriteLine("********************");
+	Console.WriteLine("");
 	Console.WriteLine("Job is finished.");
 	Console.WriteLine("Please wait while local tasks or downloads complete...");
-	Console.WriteLine("********************");
+	Console.WriteLine("");
 	Console.WriteLine();
 	Console.WriteLine();
 	break;
@@ -56,7 +56,7 @@
 	IJob job = GetJob(jobId);
 
 	builder.AppendLine("\nThe job stopped due to cancellation or an error.");
-	builder.AppendLine("***************************");
+	builder.AppendLine("***");
 	builder.AppendLine("Job ID:" + job.Id);
 	builder.AppendLine("Job Name:" + job.Name);
 	builder.AppendLine("Job State:" + job.State.ToString());
@@ -78,7 +78,7 @@
 		  }
 		 }
   	  
-	builder.AppendLine("***************************\n");
+	builder.AppendLine("***\n");
 	// Write the output to a local file and to the console.The template 
 	// for an error output file is:JobStop-{JobId}.txt
 	string outputFile = _outputFilesFolder + @"\JobStop-" + JobIdAsFileName(job.Id) + ".txt";

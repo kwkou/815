@@ -47,18 +47,18 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
     [获取工具和 SDK][]
 
-2. 	单击"安装 SDK"****。
+2. 	单击"安装 SDK"。
 
 3. 	选择要使用的 Visual Studio 版本的链接。本教程中的步骤使用 Visual Studio 2013：
 
 	![][42]
 
 4.  当系统提示你运行或保存 **WindowsAzureSDKForNet.exe** 时，请单击
-    "运行"****：
+    "运行"：
 
     ![][2]
 
-5.  在 Web 平台安装程序中，单击"安装"****，然后继续安装：
+5.  在 Web 平台安装程序中，单击"安装"，然后继续安装：
 
     ![][3]
 
@@ -74,11 +74,11 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
 1.  登录到 [Azure 管理门户][]。
 
-2.  在该管理门户的左侧导航窗格中，单击"Service Bus"****。
+2.  在该管理门户的左侧导航窗格中，单击"Service Bus"。
 
-3.  在管理门户的下方窗格中，单击"创建"****. 。![][5]
+3.  在管理门户的下方窗格中，单击"创建". 。![][5]
 
-4.  在"添加新命名空间"对话框中，输入命名空间名称****。系统会立即检查该名称是否可用。 ![][6]
+4.  在"添加新命名空间"对话框中，输入命名空间名称。系统会立即检查该名称是否可用。 ![][6]
 
 5.  在确保命名空间名称可用后，选择应托管你的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
@@ -88,7 +88,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
 	![][38]
 
-您创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为"活动"****后再继续。
+您创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为"活动"后再继续。
 
 ##获得命名空间的默认管理凭据##
 
@@ -99,19 +99,19 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 	![][39]
   
 
-2.  单击"连接信息"****。   
+2.  单击"连接信息"。   
 
 	![][40]
 
 
-3.  在"访问连接信息"面板中，找到"默认颁发者"和"默认密钥"条目************。   
+3.  在"访问连接信息"面板中，找到"默认颁发者"和"默认密钥"条目。   
     
 
 4.  记下该密钥或将其复制到剪贴板。
 
 ###使用 Visual Studio 服务器资源管理器管理服务命名空间：
 
-若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中 **Microsoft Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击"属性"****，此时就会看到在 Visual Studio 的"属性"****窗格中显示与该命名空间关联的连接字符串和其他元数据。 
+若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中 **Microsoft Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击"属性"，此时就会看到在 Visual Studio 的"属性"窗格中显示与该命名空间关联的连接字符串和其他元数据。 
 
 ![][44]
 
@@ -125,39 +125,39 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 此项目将作为 Visual Studio 控制台应用程序启动。此项目使用 Service Bus NuGet 包，其中包含 Service Bus 库和配置设置。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。Service Bus NuGet 包是获取 Service Bus API 和使用所有 Service Bus 依赖项配置应用程序的最简单的方法。有关使用 NuGet 和 Service Bus 包的详细信息，请参阅[使用 NuGet Service Bus 包][]。
 创建项目
 
-1.  使用管理员权限启动 Microsoft Visual Studio 2013 或 Microsoft Visual Studio Express。若要使用管理员权限启动 Visual Studio，请右键单击"Microsoft Visual Studio 2013"（或"Microsoft Visual Studio Express"），然后单击"以管理员身份运行"********。
-2.  在 Visual Studio 的"文件"****菜单中，单击"新建"****，然后单击"项目"****。
+1.  使用管理员权限启动 Microsoft Visual Studio 2013 或 Microsoft Visual Studio Express。若要使用管理员权限启动 Visual Studio，请右键单击"Microsoft Visual Studio 2013"（或"Microsoft Visual Studio Express"），然后单击"以管理员身份运行"。
+2.  在 Visual Studio 的"文件"菜单中，单击"新建"，然后单击"项目"。
 
     ![][10]
 
-3.  从"已安装的模板"的"Visual C#"下单击"控制台应用程序"************。在"名称"****框中，键入名称 **ProductsServer**：
+3.  从"已安装的模板"的"Visual C#"下单击"控制台应用程序"。在"名称"框中，键入名称 **ProductsServer**：
 
     ![][11]
 
-4.  单击"确定"****以创建 **ProductsServer** 项目。
+4.  单击"确定"以创建 **ProductsServer** 项目。
 
-5.  在"解决方案资源管理器"中，右键单击"ProductsServer"，然后单击"属性"************。
-6.  单击左侧的"应用程序"选项卡，然后确保".NET Framework 4"或".NET Framework 4.5"显示在"目标框架:"下拉列表中****************。如果未显示，请从下拉列表中选择它，然后在提示你重新加载项目时单击"是"****。
+5.  在"解决方案资源管理器"中，右键单击"ProductsServer"，然后单击"属性"。
+6.  单击左侧的"应用程序"选项卡，然后确保".NET Framework 4"或".NET Framework 4.5"显示在"目标框架:"下拉列表中。如果未显示，请从下拉列表中选择它，然后在提示你重新加载项目时单击"是"。
 
     ![][12]
 
 7.  如果你已为 Visual Studio 安装 NuGet 包管理器，请跳到下一步骤。否则，请访问 [NuGet][]，然后单击"安装 NuGet"[](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)。按照提示操作以安装 NuGet 包管理器，然后重新启动 Visual Studio。
 
-7.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"************。
-8.  在 NuGet 对话框的左栏中，单击"联机"****。
+7.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
+8.  在 NuGet 对话框的左栏中，单击"联机"。
 
-9. 	在右栏中，单击"搜索"框，键入"MicrosoftAzure"，并选择"Microsoft Azure Service Bus"************项。单击"安装"****以完成安装，然后关闭此对话框。
+9. 	在右栏中，单击"搜索"框，键入"MicrosoftAzure"，并选择"Microsoft Azure Service Bus"项。单击"安装"以完成安装，然后关闭此对话框。
 
     ![][13]
 
     请注意，现已引用所需的客户端程序集。
 
-9.  为产品协定添加新类。在"解决方案资源管理器"中，右键单击"ProductsServer"项目，单击"添加"，然后单击"类"****************。
+9.  为产品协定添加新类。在"解决方案资源管理器"中，右键单击"ProductsServer"项目，单击"添加"，然后单击"类"。
 
     ![][14]
 
-10. 在"名称"****框中，键入名称 **ProductsContract.cs**。然后单击"添加"****。
-11. 在"ProductsContract.cs"中，将命名空间定义替换为以下代码（用于定义服务的协定）****：
+10. 在"名称"框中，键入名称 **ProductsContract.cs**。然后单击"添加"。
+11. 在"ProductsContract.cs"中，将命名空间定义替换为以下代码（用于定义服务的协定）：
 
         namespace ProductsServer
         {
@@ -245,7 +245,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
             }
         }
 
-13. 在"解决方案资源管理器"中，双击 **app.config** 文件以在 **Visual Studio** 编辑器中将其打开****。将 **&lt;system.ServiceModel>** 的内容替换为以下 XML 代码。确保将"yourServiceNamespace"替换为你的服务命名空间的名称，并将"yourIssuerSecret"替换为之前从 Azure 管理门户中检索到的密钥：
+13. 在"解决方案资源管理器"中，双击 **app.config** 文件以在 **Visual Studio** 编辑器中将其打开。将 **&lt;system.ServiceModel>** 的内容替换为以下 XML 代码。确保将"yourServiceNamespace"替换为你的服务命名空间的名称，并将"yourIssuerSecret"替换为之前从 Azure 管理门户中检索到的密钥：
 
         <system.serviceModel>
           <extensions>
@@ -275,25 +275,25 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
           </behaviors>
         </system.serviceModel>
 
-14. 按 **F6** 或从"构建"菜单中单击"构建解决方案"********生成该应用程序，以验证你目前工作的准确性。
+14. 按 **F6** 或从"构建"菜单中单击"构建解决方案"生成该应用程序，以验证你目前工作的准确性。
 
 ##创建 ASP.NET MVC 应用程序##
 
 在本部分中，你将生成一个简单的 MVC 4 应用程序，以便显示你的产品服务中检索到的数据。
 创建项目
 
-1.  确保使用管理员权限运行 Microsoft Visual Studio 2013。否则，请右键单击"Microsoft Visual Studio 2013"（或"Microsoft Visual Studio Express"），然后单击"以管理员身份运行"，以便使用管理员权限启动 Visual Studio********。Microsoft Azure 计算模拟器（本指南后面会讨论）要求使用管理员权限启动 Visual Studio。
+1.  确保使用管理员权限运行 Microsoft Visual Studio 2013。否则，请右键单击"Microsoft Visual Studio 2013"（或"Microsoft Visual Studio Express"），然后单击"以管理员身份运行"，以便使用管理员权限启动 Visual Studio。Microsoft Azure 计算模拟器（本指南后面会讨论）要求使用管理员权限启动 Visual Studio。
 
-2.  在 Visual Studio 的"文件"****菜单中，单击"新建"****，然后单击"项目"****。
+2.  在 Visual Studio 的"文件"菜单中，单击"新建"，然后单击"项目"。
 
-3.  从"已安装的模板"的"Visual C#"下单击"ASP.NET Web 应用程序"************。将项目命名为 **ProductsPortal**。然后，单击"确定"****。
+3.  从"已安装的模板"的"Visual C#"下单击"ASP.NET Web 应用程序"。将项目命名为 **ProductsPortal**。然后，单击"确定"。
 
     ![][15]
 
-4.  从"选择模板"列表中，单击"MVC"，然后单击"确定"************。 
+4.  从"选择模板"列表中，单击"MVC"，然后单击"确定"。 
     ![][16]
 
-5.  在"解决方案资源管理器"中，右键单击"模型"，单击"添加"，然后单击"类"****************。在"名称"****框中，键入名称 **Product.cs**。然后单击"添加"****。
+5.  在"解决方案资源管理器"中，右键单击"模型"，单击"添加"，然后单击"类"。在"名称"框中，键入名称 **Product.cs**。然后单击"添加"。
 
     ![][17]
 
@@ -333,7 +333,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
             }
         }
 
-3.  在"解决方案资源管理器"****中，展开 Views\Shared：
+3.  在"解决方案资源管理器"中，展开 Views\Shared：
 
     ![][18]
 
@@ -341,11 +341,11 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
 5.  将每一处 **My ASP.NET Application** 更改为 **LITWARE'S Products**。
 
-6. 删除"Home"、"About"和"Contact"链接************。删除突出显示的代码：
+6. 删除"Home"、"About"和"Contact"链接。删除突出显示的代码：
 
 	![][41]
 
-7.  在"解决方案资源管理器"****中，展开 Views\Home：
+7.  在"解决方案资源管理器"中，展开 Views\Home：
 
     ![][20]
 
@@ -391,7 +391,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
 运行应用程序以验证其是否正常运行。
 
-1.  确保"ProductsPortal"****是活动项目。右键单击"解决方案资源管理器"中的项目名称，然后选择"设为启动项目"********
+1.  确保"ProductsPortal"是活动项目。右键单击"解决方案资源管理器"中的项目名称，然后选择"设为启动项目"
 2.  在 **Visual Studio** 中按 **F5**。
 3.  你的应用程序应在浏览器中显示为正在运行：
 
@@ -403,7 +403,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
     若要将应用程序部署到云服务，需要在解决方案中添加一个云服务项目部署项目。该部署项目包含在云中正常运行应用程序所需的配置信息。
 
-    1.  若要使应用程序能够部署到云中，请右键单击"解决方案资源管理器"中的 ProductsPortal 项目，单击"转换"，然后单击"转换为 Azure 云服务项目"****************。
+    1.  若要使应用程序能够部署到云中，请右键单击"解决方案资源管理器"中的 ProductsPortal 项目，单击"转换"，然后单击"转换为 Azure 云服务项目"。
 
         ![][22]
 
@@ -420,13 +420,13 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
     1.  如果尚未打开在"创建 ASP.NET MVC 应用程序"部分中创建的 **ProductsPortal** 项目，请在 Visual Studio 中重新打开该项目。
 
-    2.  采用与"创建本地服务器"部分类似的步骤，将 NuGet 包添加到项目"引用"中。在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"********。
+    2.  采用与"创建本地服务器"部分类似的步骤，将 NuGet 包添加到项目"引用"中。在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
 
-    3.  搜索"MicrosoftAzure.ServiceBus"，然后选择"Microsoft Azure Service Bus"****项。然后，完成安装过程并关闭此对话框。
+    3.  搜索"MicrosoftAzure.ServiceBus"，然后选择"Microsoft Azure Service Bus"项。然后，完成安装过程并关闭此对话框。
 
-    4.  在"解决方案资源管理器"中，右键单击"ProductsPortal"项目，单击"添加"，然后单击"现有项"************。
+    4.  在"解决方案资源管理器"中，右键单击"ProductsPortal"项目，单击"添加"，然后单击"现有项"。
 
-    5.  从 **ProductsServer** 控制台项目导航到 **ProductsContract.cs** 文件。单击以突出显示 ProductsContract.cs。单击"添加"旁边的向下箭头，然后单击"添加为链接"********。
+    5.  从 **ProductsServer** 控制台项目导航到 **ProductsContract.cs** 文件。单击以突出显示 ProductsContract.cs。单击"添加"旁边的向下箭头，然后单击"添加为链接"。
 
         ![][24]
 
@@ -470,26 +470,26 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
                 }
             }
 
-    7.  在"解决方案资源管理器"中，右键单击"ProductsPortal"解决方案，单击"添加"，然后单击"现有项目"************。
+    7.  在"解决方案资源管理器"中，右键单击"ProductsPortal"解决方案，单击"添加"，然后单击"现有项目"。
 
     8.  导航到 **ProductsServer** 项目，然后双击 **ProductsServer.csproj** 解决方案文件以添加它。
 
-    9.  在"解决方案资源管理器"中，右键单击"ProductsPortal"解决方案并单击"属性"********。
+    9.  在"解决方案资源管理器"中，右键单击"ProductsPortal"解决方案并单击"属性"。
 
-    10. 在左侧，单击"启动项目"****。在右侧单击"多个启动项目"****。确保 **ProductsServer**、**ProductsPortal.Azure** 和 **ProductsPortal** 按这样的顺序显示，并且将"启动"****设置为针对 **ProductsServer** 和 **ProductsPortal.Azure** 的操作，将"无"****设置为针对 **ProductsPortal** 的操作。例如：
+    10. 在左侧，单击"启动项目"。在右侧单击"多个启动项目"。确保 **ProductsServer**、**ProductsPortal.Azure** 和 **ProductsPortal** 按这样的顺序显示，并且将"启动"设置为针对 **ProductsServer** 和 **ProductsPortal.Azure** 的操作，将"无"设置为针对 **ProductsPortal** 的操作。例如：
 
         ![][25]
 
-    11. 仍在"属性"对话框中，单击左侧的"ProjectDependencies"****
+    11. 仍在"属性"对话框中，单击左侧的"ProjectDependencies"
         。
 
-    12. 在"项目"下拉列表中，单击"ProductsServer"********。确保取消选中"ProductsPortal"并选中"ProductsPortal.Azure"********。然后，单击"确定"****：
+    12. 在"项目"下拉列表中，单击"ProductsServer"。确保取消选中"ProductsPortal"并选中"ProductsPortal.Azure"。然后，单击"确定"：
 
         ![][26]
 
     ##运行应用程序##
 
-    1.  从 Visual Studio 的"文件"菜单中，单击"全部保存"********。
+    1.  从 Visual Studio 的"文件"菜单中，单击"全部保存"。
 
     2.  按 **F5** 生成并运行应用程序。应先启动本地服务器（**ProductsServer** 控制台应用程序），再在浏览器窗口中启动 **ProductsWeb** 应用程序，如下面的屏幕快照中所示。这次，你将看到产品库存列出了从产品服务本地系统中检索到的数据。
 
@@ -497,35 +497,35 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
     ##将应用程序部署到 AZURE##
 
-    1.  在"解决方案资源管理器"中右键单击"ProductsPortal"项目，然后单击"发布到 Azure"************。
+    1.  在"解决方案资源管理器"中右键单击"ProductsPortal"项目，然后单击"发布到 Azure"。
 
     2.  你可能必须登录才能查看你的所有订阅。
 
-        单击"登录以查看更多订阅"****：
+        单击"登录以查看更多订阅"：
 
         ![][27]
 
     3.  使用 Microsoft 帐户登录。
 
 
-    8.  单击"下一步"****。如果你的订阅尚未包含任何托管服务，则系统将要求你创建一个托管服务。托管服务在 Microsoft Azure 订阅中充当应用程序的容器。输入标识应用程序的名称，然后选择应为其优化应用程序的区域。（用户从此区域访问应用程序所花的加载时间会更少。）
+    8.  单击"下一步"。如果你的订阅尚未包含任何托管服务，则系统将要求你创建一个托管服务。托管服务在 Microsoft Azure 订阅中充当应用程序的容器。输入标识应用程序的名称，然后选择应为其优化应用程序的区域。（用户从此区域访问应用程序所花的加载时间会更少。）
 
         ![][32]
 
-    9.  选择要将应用程序发布到的托管服务。为其余设置保留以下所示的默认值。单击"下一步"****：
+    9.  选择要将应用程序发布到的托管服务。为其余设置保留以下所示的默认值。单击"下一步"：
 
         ![][33]
 
-    10. 在最后一页上，单击"发布"以开始部署过程****： 
+    10. 在最后一页上，单击"发布"以开始部署过程： 
         ![][34]
 
         此过程花费的时间约为 5 到 7 分钟。由于这是你首次发布，因此 Azure 会依次执行以下操作以便公开应用程序：设置一台虚拟机 (VM)，执行安全强化，在 VM 上创建一个 Web 角色以托管应用程序，将代码部署到该 Web 角色以及配置负载平衡器和网络。
 
-    11. 当发布正在进行时，你可以在"Azure 活动日志"窗口中监视活动，该窗口通常位于 Visual Studio 或 Visual Web Developer 的底部****：
+    11. 当发布正在进行时，你可以在"Azure 活动日志"窗口中监视活动，该窗口通常位于 Visual Studio 或 Visual Web Developer 的底部：
 
         ![][35]
 
-    12. 部署完成后，你可以通过单击监视窗口中的"网站 URL"****链接来查看网站。
+    12. 部署完成后，你可以通过单击监视窗口中的"网站 URL"链接来查看网站。
 
         ![][36]
 
@@ -545,7 +545,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 1.  登录 [Azure 管理门户]，单击"云服务"，然后单击服务的名称。
 
-2.  单击"仪表板"选项卡，然后单击"停止"以暂时挂起应用程序********。只需单击"启动"即可重新启动应用程序。单击"删除"即可从 Azure 中完全删除应用程序，但无法还原它****。
+2.  单击"仪表板"选项卡，然后单击"停止"以暂时挂起应用程序。只需单击"启动"即可重新启动应用程序。单击"删除"即可从 Azure 中完全删除应用程序，但无法还原它。
 
 	![][43]
 

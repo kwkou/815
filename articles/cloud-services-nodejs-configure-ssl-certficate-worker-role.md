@@ -29,7 +29,7 @@
 
 你可以采用以下步骤通过 Azure PowerShell 创建一个简单的 Node.js"hello world"服务：
 
-1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"********。
+1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"。
 
 	![Azure PowerShell icon][powershell-menu]
 
@@ -52,7 +52,7 @@
 	<p>如果你以前未导入 Azure 订阅的发布设置，则在尝试发布时会收到错误。有关下载和导入订阅发布设置的信息，请参阅 <a href="/zh-cn/documentation/articles/install-configure-powershell/#ImportPubSettings">如何使用 Azure PowerShell for Node.js</a></p>
 	</div>
 
-**Publish-AzureServiceProject** cmdlet 返回的"创建的网站 URL"****值包含你的托管应用程序的完全限定域名。你将需要为此特定的完全限定域名获取一个 SSL 证书，并将其部署到 Azure。
+**Publish-AzureServiceProject** cmdlet 返回的"创建的网站 URL"值包含你的托管应用程序的完全限定域名。你将需要为此特定的完全限定域名获取一个 SSL 证书，并将其部署到 Azure。
 
 ## <a name="step2"> </a>步骤 2：获取 SSL 证书
 
@@ -121,9 +121,9 @@
 
 在 Azure 中启动并运行部署后，可以使用 HTTPS 连接到该部署。
 
-1.  在管理门户中，选择你的云服务，然后单击"仪表板"****。
+1.  在管理门户中，选择你的云服务，然后单击"仪表板"。
 
-2. 向下滚动并单击显示为"站点 URL"的链接****：
+2. 向下滚动并单击显示为"站点 URL"的链接：
 
     ![the site url][site-url]
 

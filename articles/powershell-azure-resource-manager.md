@@ -318,7 +318,7 @@ Windows PowerShell 会完成参数名称。若要循环显示参数名称，请�
     cmdlet New-AzureResourceGroup at command pipeline position 1
     Supply values for the following parameters:
     (Type !? for Help.)
-    administratorLoginPassword: **********
+    administratorLoginPassword: **
 
 **New-AzureResourcGroup** 返回其创建和部署的资源组。下面是命令的输出，包括详细输出。
 

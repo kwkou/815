@@ -402,7 +402,7 @@ Azure 允许你创建 Blob 的快照。快照是在某一时间点拍摄的只�
 ## <a name="managetables"></a>如何管理 Azure 表和表实体
 Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大量的结构化非关系型数据。该服务的主要组件包括表、实体和属性。表是实体的集合。实体是一组属性。每个实体最多可以有 252 个属性（都是一些名称-值对）。本部分假设你已熟悉 Azure 表存储服务的概念。有关详细信息，请参阅[了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
 
-在以下小节中，你将了解如何使用 Azure PowerShell 管理 Azure 表存储服务。涉及的情景包括**创建**、**删除** 和 **检索****表** ，以及 **添加**、**查询** 和 **删除表实体**。
+在以下小节中，你将了解如何使用 Azure PowerShell 管理 Azure 表存储服务。涉及的情景包括**创建**、**删除** 和 **检索表** ，以及 **添加**、**查询** 和 **删除表实体**。
 
 ### <a name="createtable"></a>如何创建表
 每个表必须驻留在 Azure 存储帐户中。以下示例演示如何在 Azure 存储空间中创建一个表。该示例首先使用存储帐户上下文（包括存储帐户名称及其访问密钥）与 Azure 存储空间建立连接。接下来，它将使用 [New-AzureStorageTable](http://msdn.microsoft.com/zh-cn/library/azure/dn806417.aspx) cmdlet 在 Azure 存储空间中创建表。 

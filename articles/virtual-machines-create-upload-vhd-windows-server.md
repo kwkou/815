@@ -78,12 +78,12 @@
 
 	![Open Command Prompt window](./media/virtual-machines-create-upload-vhd-windows-server/sysprep_commandprompt.png)
 
-3.	将显示"系统准备工具"****对话框。
+3.	将显示"系统准备工具"对话框。
 
 	![Start Sysprep](./media/virtual-machines-create-upload-vhd-windows-server/sysprepgeneral.png)
-4.  在"系统准备工具"****中，选择"进入系统全新体验 (OOBE)"****并确保选中"通用化"。
-5.  在"关机选项"****中，选择"关机"****。
-6.  单击"确定"****。 
+4.  在"系统准备工具"中，选择"进入系统全新体验 (OOBE)"并确保选中"通用化"。
+5.  在"关机选项"中，选择"关机"。
+6.  单击"确定"。 
 
 
 
@@ -94,9 +94,9 @@
 
 1. 登录到 Azure 管理门户。
 
-2. 在命令栏上，单击"新建"****。
+2. 在命令栏上，单击"新建"。
 
-3. 单击"存储帐户"****，然后单击"快速创建"****。
+3. 单击"存储帐户"，然后单击"快速创建"。
 
 	![Quick create a storage account](./media/virtual-machines-create-upload-vhd-windows-server/Storage-quick-create.png)
 
@@ -104,7 +104,7 @@
 
 	
 	
-- 在"URL"****下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
+- 在"URL"下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
 			
 - 选择存储帐户的**位置或地缘组**。通过指定地缘组，可将同一数据中心内的云服务与您的存储放置在一起。
 		 
@@ -112,21 +112,21 @@
 
 	![Enter storage account details](./media/virtual-machines-create-upload-vhd-windows-server/Storage-create-account.png)
 
-5. 单击"创建存储帐户"****。
+5. 单击"创建存储帐户"。
 
-	该帐户现在会出现在"存储帐户"****下。
+	该帐户现在会出现在"存储帐户"下。
 
 	![Storage account successfully created](./media/virtual-machines-create-upload-vhd-windows-server/Storagenewaccount.png)
 
-6. 接下来，为您上载的 VHD 创建一个容器。单击"存储帐户名称"****，然后单击"容器"****。
+6. 接下来，为您上载的 VHD 创建一个容器。单击"存储帐户名称"，然后单击"容器"。
 
 	![Storage account detail](./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_detail.png)
 
-7. 单击"创建容器"****。
+7. 单击"创建容器"。
 
 	![Storage account detail](./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_container.png)
 
-8. 为您的容器键入"名称"****并选择"访问策略"****。
+8. 为您的容器键入"名称"并选择"访问策略"。
 
 	![Container name](./media/virtual-machines-create-upload-vhd-windows-server/storageaccount_containervalues.png)
 
@@ -190,23 +190,23 @@
 ##将映像添加到自定义映像列表 ##
 上载 .vhd 后，将其作为映像添加到与订阅关联的自定义映像列表。
 
-1. 从管理门户中的"所有项目"****下，单击"虚拟机"****。
+1. 从管理门户中的"所有项目"下，单击"虚拟机"。
 
-2. 在"虚拟机"下，单击"映像"****。
+2. 在"虚拟机"下，单击"映像"。
 
-3. 然后单击"创建映像"****。
+3. 然后单击"创建映像"。
 
 	![PowerShell Add-AzureVHD](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image.png)
 
-4. 在"从 VHD 创建映像"****中，执行以下操作：
+4. 在"从 VHD 创建映像"中，执行以下操作：
  	
-	- 指定"名称"****
-	- 指定"说明"****
-	- 若要指定"VHD 的 URL"****，请单击文件夹按钮，以启动下面的对话框 
+	- 指定"名称"
+	- 指定"说明"
+	- 若要指定"VHD 的 URL"，请单击文件夹按钮，以启动下面的对话框 
 	![Select VHD](./media/virtual-machines-create-upload-vhd-windows-server/Select_VHD.png)
-	- 选中您的 VHD 所在的存储帐户并单击"打开"****。这样您会回到"从 VHD 创建映像"****窗口。
-	- 返回到"从 VHD 创建映像"****窗口后，请选择"操作系统系列"。
-	- 选中"我已在虚拟机上运行与此 VHD 关联的 Sysprep"****来确认您已在步骤 1 中对操作系统进行通用化，然后单击"确定"****。 
+	- 选中您的 VHD 所在的存储帐户并单击"打开"。这样您会回到"从 VHD 创建映像"窗口。
+	- 返回到"从 VHD 创建映像"窗口后，请选择"操作系统系列"。
+	- 选中"我已在虚拟机上运行与此 VHD 关联的 Sysprep"来确认您已在步骤 1 中对操作系统进行通用化，然后单击"确定"。 
 
 	![Add Image](./media/virtual-machines-create-upload-vhd-windows-server/Create_Image_From_VHD.png)
 
@@ -218,12 +218,12 @@
 	
 	![PowerShell Add-AzureVMImage](./media/virtual-machines-create-upload-vhd-windows-server/add_azureimage_powershell.png)
 
-6. 完成前面的步骤后，当您选择"映像"****选项卡时，新的映像将列出。 
+6. 完成前面的步骤后，当您选择"映像"选项卡时，新的映像将列出。 
 
 
 	![custom image](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
 
-	创建新虚拟机后，现在您可以使用此新映像。选择"我的映像"****以显示新映像。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial)。
+	创建新虚拟机后，现在您可以使用此新映像。选择"我的映像"以显示新映像。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial)。
 
 	![create VM from custom image](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 

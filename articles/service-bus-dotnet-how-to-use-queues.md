@@ -22,8 +22,8 @@ Service Bus **NuGet** 包是获取 Service Bus API 和使用所有 Service Bus �
 
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
-1.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"********。
-2.  搜索"WindowsAzure"，然后选择"Azure Service Bus"****项。单击"安装"****以完成安装，然后关闭此对话框。
+1.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
+2.  搜索"WindowsAzure"，然后选择"Azure Service Bus"项。单击"安装"以完成安装，然后关闭此对话框。
 
     ![][7]
 

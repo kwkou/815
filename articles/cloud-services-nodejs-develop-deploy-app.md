@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-nodejs-getting-started" urlDisplayName="Cloud Service" pageTitle="Node.js 入门指南 - Azure 教程" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="一类端到端教程，可帮助你开发简单的 Node.js Web 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-getting-started" urlDisplayName="Cloud Service" pageTitle="Node.js 入门指南 - Azure 教程" metaKeywords="Azure node.js getting started, Azure Node.js tutorial, Azure Node.js tutorial" description="一类端到端教程，可帮助你开发简单的 Node.js Web 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build and deploy a Node.js application to an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
 
 <tags ms.service="cloud-services" ms.date="02/24/2015" wacn.date="04/11/2015"/>
 
@@ -31,7 +31,7 @@
 
 执行以下任务可创建一个新的 Azure 云服务项目以及基本的 Node.js 基架：
 
-1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"********。
+1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"。
 
 	![Azure PowerShell icon][powershell-menu]
 

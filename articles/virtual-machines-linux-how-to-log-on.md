@@ -21,13 +21,13 @@
 
 此过程将向您演示如何使用 PuTTY 程序访问虚拟机。
 
-1. 从[管理门户](http://manage.windowsazure.cn)中查找**主机名**和**端口信息**。您可以从虚拟机的仪表板中找到所需信息。单击虚拟机名称并查看仪表板"速览"****部分中的"SSH 详细信息"****。
+1. 从[管理门户](http://manage.windowsazure.cn)中查找**主机名**和**端口信息**。您可以从虚拟机的仪表板中找到所需信息。单击虚拟机名称并查看仪表板"速览"部分中的"SSH 详细信息"。
 
 	![Obtain SSH details](./media/virtual-machines-linux-how-to-log-on/sshdetails.png)
 
 2. 打开 PuTTY 程序。
 
-3. 输入您从仪表板中收集到的主机名和端口信息，然后单击"打开"****。
+3. 输入您从仪表板中收集到的主机名和端口信息，然后单击"打开"。
 
 	![Open PuTTY](./media/virtual-machines-linux-how-to-log-on/putty.png)
 

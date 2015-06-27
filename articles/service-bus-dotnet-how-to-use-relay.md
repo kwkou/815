@@ -28,13 +28,13 @@ Service Bus 中继使你能够在现有企业环境中托管 WCF 服务。然后
 
 1.  登录到 [Azure 管理门户][]。
 
-2.  在该管理门户的左侧导航窗格中，单击"Service Bus"****。
+2.  在该管理门户的左侧导航窗格中，单击"Service Bus"。
 
-3.  在管理门户的下方窗格中，单击"创建"****。   
+3.  在管理门户的下方窗格中，单击"创建"。   
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
-4.  在"添加新命名空间"对话框中，输入命名空间名称****。系统会立即检查该名称是否可用。   
+4.  在"添加新命名空间"对话框中，输入命名空间名称。系统会立即检查该名称是否可用。   
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-04.png)
 
@@ -47,13 +47,13 @@ Service Bus 中继使你能够在现有企业环境中托管 WCF 服务。然后
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
-	你创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为"活动"****后再继续。
+	你创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为"活动"后再继续。
 
 ##获得命名空间的默认管理凭据
 
 若要对新的命名空间执行管理操作（如创建中继连接），必须为该命名空间配置共享访问签名 (SAS) 授权规则。有关 SAS 的详细信息，请参阅[对 Service Bus 进行共享访问签名身份验证][]。
 
-1.  在左侧导航窗格中，单击"Service Bus"****节点以显示可用命名空间的列表：   
+1.  在左侧导航窗格中，单击"Service Bus"节点以显示可用命名空间的列表：   
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
 
@@ -61,7 +61,7 @@ Service Bus 中继使你能够在现有企业环境中托管 WCF 服务。然后
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
 
 
-3.  单击页面顶部的"配置"选项卡****。   
+3.  单击页面顶部的"配置"选项卡。   
  
 4.  如果设置了 Service Bus 命名空间，则已按默认创建了 **KeyName** 设置为 **RootManageSharedAccessKey** 的 **SharedAccessAuthorizationRule**。此页将显示该密钥，以及默认规则的主密钥和辅助密钥。 
 
@@ -71,8 +71,8 @@ Service Bus **NuGet** 包是获取 Service Bus API 和使用所有 Service Bus �
 
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
-1.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"********。
-2.  搜索"WindowsAzure"，然后选择"Azure Service Bus"****项。单击"安装"****以完成安装，然后关闭此对话框。
+1.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
+2.  搜索"WindowsAzure"，然后选择"Azure Service Bus"项。单击"安装"以完成安装，然后关闭此对话框。
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-13.png)
   

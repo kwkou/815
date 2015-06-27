@@ -63,11 +63,11 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可分发](../linux-endor
 
 1. 登录到 Azure 管理门户。
 
-2. 在命令栏上，单击"新建"****。
+2. 在命令栏上，单击"新建"。
 
 	![Create storage account](./media/virtual-machines-linux-create-upload-vhd/create.png)
 
-3. 单击"存储帐户"****，然后单击"快速创建"****。
+3. 单击"存储帐户"，然后单击"快速创建"。
 
 	![Quick create a storage account](./media/virtual-machines-linux-create-upload-vhd/storage-quick-create.png)
 
@@ -75,15 +75,15 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可分发](../linux-endor
 
 	![Enter storage account details](./media/virtual-machines-linux-create-upload-vhd/storage-create-account.png)
 
-- 在"URL"****下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
+- 在"URL"下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
 	
 - 选择存储帐户的位置或地缘组。通过指定地缘组，可将同一数据中心内的云服务与您的存储放置在一起。
  
 - 决定是否使用存储帐户的地域复制。默认情况下启用地域复制。此选项会将您的数据免费复制到辅助位置，以便在发生无法在主要位置进行处理的严重故障时将您的存储故障转移到辅助位置。将自动分配辅助位置，并且无法对其进行更改。如果法律要求或组织政策要求更加严格地控制基于云的存储的位置，则您可以关闭地域复制。但是，请注意，如果稍后您打开地域复制，则将现有数据复制到辅助位置时将向您收取一次性数据传输费用。不具有地域复制的存储服务将以优惠价提供。
 
-5. 单击"创建存储帐户"****。
+5. 单击"创建存储帐户"。
 
-	帐户现在列在"存储帐户"****下。
+	帐户现在列在"存储帐户"下。
 
 	![Storage account successfully created](./media/virtual-machines-linux-create-upload-vhd/Storagenewaccount.png)
 

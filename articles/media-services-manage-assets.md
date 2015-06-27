@@ -49,11 +49,11 @@ foreach (IAsset asset in _context.Assets)
     {
 // Display the collection of assets.
 builder.AppendLine("");
-builder.AppendLine("******ASSET******");
+builder.AppendLine("**ASSET**");
 builder.AppendLine("Asset ID:" + asset.Id);
 builder.AppendLine("Name:" + asset.Name);
 builder.AppendLine("==============");
-builder.AppendLine("******ASSET FILES******");
+builder.AppendLine("**ASSET FILES**");
 
 // Display the files associated with each asset. 
 foreach (IAssetFile fileItem in asset.AssetFiles)

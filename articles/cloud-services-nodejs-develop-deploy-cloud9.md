@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-nodejs-cloud9" urlDisplayName="Deploying with Cloud9" pageTitle="使用 Cloud9 部署 Node.js - Azure 教程" metaKeywords="Cloud9 IDE Azure, Azure node.js, Azure node apps" description="学习如何使用 Cloud9 IDE 开发、生成 Node.js 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Deploying an Azure App from Cloud9" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-cloud9" urlDisplayName="Deploying with Cloud9" pageTitle="使用 Cloud9 部署 Node.js - Azure 教程" metaKeywords="Cloud9 IDE Azure, Azure node.js, Azure node apps" description="学习如何使用 Cloud9 IDE 开发、生成 Node.js 应用程序并将其部署到 Azure。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Deploying an Azure App from Cloud9" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/25/2015"
     wacn.date="04/11/2015"
@@ -34,7 +34,7 @@
 
 	![create new Cloud9 project](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_create_project.png)
 
-2.  在**"Create a new project"（创建新项目）**对话框中，输入项目名称、访问类型和项目类型。单击**"Create"（创建）****以创建项目。
+2.  在**"Create a new project"（创建新项目）**对话框中，输入项目名称、访问类型和项目类型。单击**"Create"（创建）以创建项目。
 
 	![create new project dialog Cloud9](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_new_project.png)
 
@@ -165,7 +165,7 @@
 	
 	![no web.config file found message](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_no_web_config.png)
 
-5.  如果这是你第一次将此项目部署到 Azure，将会收到**"'csdef'文件不存在"**错误。选择"是"****创建 .csdef 文件。这会将"ServiceDefinition.csdef"文件添加到你的项目中。    ServiceDefinition.csdef 是发布应用程序时必需的 Azure 特定文件。有关详细信息，请参阅[创建 Azure 托管服务概述][]。
+5.  如果这是你第一次将此项目部署到 Azure，将会收到**"'csdef'文件不存在"**错误。选择"是"创建 .csdef 文件。这会将"ServiceDefinition.csdef"文件添加到你的项目中。    ServiceDefinition.csdef 是发布应用程序时必需的 Azure 特定文件。有关详细信息，请参阅[创建 Azure 托管服务概述][]。
 
 6.  系统会提示你为此应用程序选择实例大小。选择**"小型"**，然后单击"**创建"**。有关 Azure VM 大小的详细信息，请参阅[如何配置虚拟机大小][]。
 

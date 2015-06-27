@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-net-how-to-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Database (.NET) - Azure 功能指南" metaKeywords="Get started SQL Azure, Getting started SQL Azure, SQL Azure database connection, SQL Azure ADO.NET, SQL Azure ODBC, SQL Azure EntityClient" description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" metaCanonical="" services="sql-database" documentationCenter=".NET" title="How to use Azure SQL Database in .NET applications" authors="" solutions="" manager="" editor=""/>
+<properties linkid="dev-net-how-to-sql-azure" urlDisplayName="SQL Database" pageTitle="如何使用 SQL Database (.NET) - Azure 功能指南" metaKeywords="Get started SQL Azure, Getting started SQL Azure, SQL Azure database connection, SQL Azure ADO.NET, SQL Azure ODBC, SQL Azure EntityClient" description="SQL Database 入门。了解如何创建 SQL Database 实例，以及如何使用 ADO.NET、ODBC 和 EntityClient Provider 与该实例建立连接。" metaCanonical="" services="sql-database" documentationCenter=".NET" title="How to use Azure SQL Database in .NET applications" authors="" solutions="" manager="" editor=""/>
 
 <tags
    ms.service="sql-database"    
@@ -205,7 +205,7 @@ SQL Database 在 Azure 上提供关系数据存储、访问和管理服务。若
 
 下面是一个连接字符串示例：
 
-    metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.chinacloudapi.cn;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***********"
+    metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.chinacloudapi.cn;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***"
 
 有关详细信息，请参阅[适用于 Entity Framework 的
 EntityClient Provider][]。

@@ -8,7 +8,7 @@
 
 	![+new][plus-new]
 
-3.  依次单击"数据服务"****、"存储"和"快速创建"。
+3.  依次单击"数据服务"、"存储"和"快速创建"。
 
 	![Quick create dialog][quick-create-storage]
 
