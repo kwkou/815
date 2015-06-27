@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-other-resources-partners" urlDisplayName="Partner solutions" pageTitle="Linux partners for Azure" metaKeywords="" description="Learn about the endorsed Linux images available for Azure virtual machines, including Ubuntu, OpenLogic, and SUSE." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Partner solutions for Linux in Azure" authors="" />
+﻿<properties linkid="manage-linux-other-resources-partners" urlDisplayName="Partner solutions" pageTitle="Linux partners for Azure" metaKeywords="" description="Learn about the endorsed Linux images available for Azure virtual machines, including Ubuntu, OpenLogic, and SUSE." metaCanonical="" disqusComments="1" umbracoNaviHide="0" title="Partner solutions for Linux in Azure" authors="" />
 <tags ms.service=""
     ms.date="11/28/2014"
     wacn.date="04/11/2015"
@@ -10,7 +10,7 @@
 
 ## Bitnami
 
-![Bitnami][Bitnami][]
+![Bitnami][Bitnami]
 
 <http://bitnami.org/azure/get-started>
 
@@ -18,9 +18,9 @@ BitNami 提供了常用 Web 应用程序的完全配置的映像，只需一次�
 
 ## Opscode Chef
 
-![Opscode][Opscode][]
+![Opscode][Opscode]
 
-www.opscode.com/partners/microsoft
+http://www.opscode.com/partners/microsoft
 
 Opscode 是开发 Chef 的公司，Chef 是由数以千计的组织（从小型创业公司到财富 100 强企业）使用的快速发展的云基础结构自动化框架。利用 Chef 的灵活且可重用的模板（“cookbooks”），你可以轻松管理、缩放和重新生成 Azure 环境。
 
@@ -34,7 +34,7 @@ RightScale® Inc. 云管理使组织能够轻松部署和管理跨公有云、�
 
 ## ScaleXtreme
 
-![ScaleXtreme][ScaleXtreme][]
+![ScaleXtreme][ScaleXtreme]
 
 [www.scalextreme.com/partners-windows-azure](http://www.scalextreme.com/partners-windows-azure)
 
@@ -44,7 +44,7 @@ ScaleXtreme 使客户能够在 Windows Azure 上生成、启动、监视、修�
 
 ## SUSE Studio
 
-![SUSE][SUSE][]
+![SUSE][SUSE]
 
 [www.susestudio.com](http://www.susestudio.com)
 
@@ -52,7 +52,7 @@ ScaleXtreme 使客户能够在 Windows Azure 上生成、启动、监视、修�
 
 ## Ubuntu Juju
 
-![Juju][Juju][]
+![Juju][Juju]
 
 [http://www.ubuntu.com/cloud/azure](http://www.ubuntu.com/cloud/azure)
 

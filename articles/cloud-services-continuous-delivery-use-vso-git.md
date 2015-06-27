@@ -54,7 +54,7 @@
 ![][4]
 
 2. 你可以通过执行本演练中的步骤来部署网站或云服务（Azure 应用程序）。
-创建新的 Microsoft Azure 云服务项目或新的 ASP.NET MVC 项目。确保项目以 .NET Framework 4 或 4.5 为目标。如果你要创建云服务项目，请添加 ASP.NET MVC Web 角色和辅助角色。
+创建新的 Windows Azure 云服务项目或新的 ASP.NET MVC 项目。确保项目以 .NET Framework 4 或 4.5 为目标。如果你要创建云服务项目，请添加 ASP.NET MVC Web 角色和辅助角色。
 如果你想要创建网站，请选择 ASP.NET Web 应用程序项目模板，然后选择 MVC。请参阅 [Azure 和 ASP.NET 入门](/zh-cn/documentation/articles/web-sites-dotnet-get-started)。
 
 3. 打开解决方案的快捷菜单，然后选择"提交"。****<br/>

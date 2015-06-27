@@ -49,7 +49,7 @@ Azure SDK 提供了用于准备这些必需的部署文件的工具。你可以�
 
 - 如果要为云服务配置详细监视，请为云服务启用 Azure Diagnostics。"最少监视"（默认监视级别）使用从角色实例（虚拟机）的主机操作系统中收集到的性能计数器数据。"详细监视"根据角色实例中的性能数据收集其他度量信息，以便对处理应用程序期间出现的问题进行进一步分析。若要了解如何启用 Azure Diagnostics，请参阅[在 Azure 中启用 Diagnostics](/zh-cn/documentation/articles/cloud-services-dotnet-diagnostics)。
 
-- 若要创建包含 Web 角色或辅助角色部署的云服务，必须创建服务包。如需与包相关的文件的详细信息，请参阅[为 Azure 设置云服务](http://msdn.microsoft.com/zh-cn/library/hh124108.aspx)。若要创建包文件，请参阅[将 Microsoft Azure 应用程序打包](http://msdn.microsoft.com/zh-cn/library/hh403979.aspx)。如果使用 Visual Studio 开发应用程序，请参阅[使用 Azure Tools 发布云服务](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx)。
+- 若要创建包含 Web 角色或辅助角色部署的云服务，必须创建服务包。如需与包相关的文件的详细信息，请参阅[为 Azure 设置云服务](http://msdn.microsoft.com/zh-cn/library/hh124108.aspx)。若要创建包文件，请参阅[将 Windows Azure 应用程序打包](http://msdn.microsoft.com/zh-cn/library/hh403979.aspx)。如果使用 Visual Studio 开发应用程序，请参阅[使用 Azure Tools 发布云服务](http://msdn.microsoft.com/zh-cn/library/ff683672.aspx)。
 
 ##<a id="begin"></a>开始之前##
 

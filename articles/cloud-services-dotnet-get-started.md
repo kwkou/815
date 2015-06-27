@@ -311,7 +311,7 @@ Web 角色项目和辅助角色项目的 Azure 存储帐户连接字符串存储
 
 	![Publish menu](./media/cloud-services-dotnet-get-started/pubmenu.png)	
 
-2. 在"发布 Microsoft Azure 应用程序"****向导的"登录"****步骤中，单击"下一步"****。
+2. 在"发布 Windows Azure 应用程序"****向导的"登录"****步骤中，单击"下一步"****。
 
 	![Sign in step](./media/cloud-services-dotnet-get-started/pubsignin.png)	
 
@@ -792,9 +792,9 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 
 * [PhluffyFotos](http://code.msdn.microsoft.com/PhluffyFotos-Sample-7ecffd31)。在概念上与 Contoso 广告类似，但实施更多的功能和详细的实际编码做法。
 * [带有表、队列和 Blob 的 Azure 云服务多层应用程序](http://code.msdn.microsoft.com/windowsazure/Windows-Azure-Multi-Tier-eadceb36)。介绍 Azure 存储表以及 blob 和队列，并附带[分步教程系列](/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview)。
-* [Microsoft Azure 中的云服务基础知识](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。一个综合示例，演示各种最佳实践，由 Microsoft 模式和实践组生产。
+* [Windows Azure 中的云服务基础知识](http://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。一个综合示例，演示各种最佳实践，由 Microsoft 模式和实践组生产。
 
-有关云开发的常规信息，请参阅[使用 Microsoft Azure 构建实际的云应用程序](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction)。
+有关云开发的常规信息，请参阅[使用 Windows Azure 构建实际的云应用程序](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction)。
 
 
 有关详细信息，请参阅以下资源：

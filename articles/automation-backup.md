@@ -18,7 +18,7 @@ wacn.date="05/15/2015"
 
 # 备份 Azure Automation
 
-当你删除 Microsoft Azure 中的某个 Automation 帐户时，该帐户中的所有对象都将被删除，包括 Runbook、模块、设置、作业和资产。在删除帐户后，这些对象不可恢复。在删除 Automation 帐户之前，你可以参考以下信息来备份该帐户的内容。 
+当你删除 Azure 中的某个 Automation 帐户时，该帐户中的所有对象都将被删除，包括 Runbook、模块、设置、作业和资产。在删除帐户后，这些对象不可恢复。在删除 Automation 帐户之前，你可以参考以下信息来备份该帐户的内容。 
 
 ## Runbook
 

@@ -106,7 +106,7 @@
 
 ## <a id="DefineServiceModel"> </a>如何：定义服务模型
 
-通常，可将你的服务模型（你的 Microsoft Azure 环境的描述，其中包括有关订阅、托管服务、角色和存储帐户的信息）存储在 XML 文件中。你可以在项目中的 **AutoscalingServiceModel.xsd** 文件中找到此 XML 文件架构的副本。在 Visual Studio 中，此架构可在你编辑服务模型 XML 文件时提供 Intellisense 和验证功能。
+通常，可将你的服务模型（你的 Windows Azure 环境的描述，其中包括有关订阅、托管服务、角色和存储帐户的信息）存储在 XML 文件中。你可以在项目中的 **AutoscalingServiceModel.xsd** 文件中找到此 XML 文件架构的副本。在 Visual Studio 中，此架构可在你编辑服务模型 XML 文件时提供 Intellisense 和验证功能。
 
 在你的项目中创建名为 **services.xml** 的新 XML 文件。
 

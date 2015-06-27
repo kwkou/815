@@ -5,11 +5,11 @@
 
 # Azure Active Directory 代码示例 
 
-你可以使用 Microsoft Azure Active Directory (Azure AD) 向你的 web 应用程序和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
+你可以使用 Azure Active Directory (Azure AD) 向你的 web 应用程序和 web API 添加身份验证和授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，你可以找到在要求、安装和设置方面提供了帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
 
 若要了解每个示例类型的基本方案，请参阅"Azure AD 的身份验证方案"。
 
-为我们在 GitHub 上的示例做贡献：[Microsoft Azure Active Directory 示例和文档](https://github.com/AzureADSamples)。
+为我们在 GitHub 上的示例做贡献：[ Azure Active Directory 示例和文档](https://github.com/AzureADSamples)。
 
 ## Web 浏览器到 Web 应用程序 
 

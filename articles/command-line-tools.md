@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,virtual-machines,mobile-services,cloud-services"
     ms.date="10/17/2014"
     wacn.date="04/11/2015"
@@ -48,7 +48,7 @@
     help:   account import <file>
     info:   account download command OK
 
-**account import [options] \<file\>**
+**account import [options] file**
 
 此命令导入 publishsettings 文件或证书以便日后可以供该工具使用。
 
@@ -92,7 +92,7 @@ publishsettings 文件可以包含有关多个订阅的详细信息（即，订�
     data:    Evangelism Team Subscription            9e672699-1055-41ae-9c36  false
     data:    MSOpenTech-Prod                         c13e6a92-706e-4cf5-94b6  false
 
-**account set [options] \<subscription\>**
+**account set [options] subscription**
 
 设置当前订阅
 
@@ -111,7 +111,7 @@ publishsettings 文件可以包含有关多个订阅的详细信息（即，订�
     data:   535EBAED-BF8B-4B18-A2E9-8755FB9D733F  opentec China East
     info:   account affinity-group list command OK
 
-**account affinity-group create [options] \<name\>**
+**account affinity-group create [options] name**
 
 此命令创建新的地缘组
 
@@ -120,7 +120,7 @@ publishsettings 文件可以包含有关多个订阅的详细信息（即，订�
     + Creating affinity group
     info:    account affinity-group create command OK
 
-**account affinity-group show [options] \<name\>**
+**account affinity-group show [options] name**
 
 此命令显示地缘组的详细信息
 
@@ -139,7 +139,7 @@ publishsettings 文件可以包含有关多个订阅的详细信息（即，订�
     data:    Capabilities Capability 1 "HighMemory"
     info:    account affinity-group show command OK
 
-**account affinity-group delete [options] \<name\>**
+**account affinity-group delete [options] name**
 
 此命令将删除指定的地缘组
 

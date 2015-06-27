@@ -12,7 +12,7 @@
 
 # 设置用于测试的混合云环境
 
-本主题将指导你一步步创建用于 Microsoft Azure 的混合云环境，以便进行测试。这是生成的配置。
+本主题将指导你一步步创建用于 Windows Azure 的混合云环境，以便进行测试。这是生成的配置。
 
 ![](./media/virtual-networks-set-up-hybrid-cloud-environment-for-testing/CreateHybridCloudVNet_5.png)
 
