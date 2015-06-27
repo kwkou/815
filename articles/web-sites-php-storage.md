@@ -1,4 +1,4 @@
-<properties linkid="develop-php-website-with-storage" urlDisplayName="Web w/ Storage" pageTitle="PHP web site with table storage - Azure tutorial" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="This tutorial shows you how to create a PHP website and use the Azure Tables storage service in the back-end." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Web Site using Azure Storage" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-php-website-with-storage" urlDisplayName="Web w/ Storage" pageTitle="PHP web site with table storage - Azure tutorial" metaKeywords="Azure table storage PHP, Azure PHP website, Azure PHP web site, Azure PHP tutorial, Azure PHP example" description="This tutorial shows you how to create a PHP website and use the Azure Tables storage service in the back-end." metaCanonical="" services="web-sites,storage" documentationCenter="PHP" title="Create a PHP Web Site using Azure Storage" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,storage"
     ms.date="11/21/2014"
     wacn.date="04/11/2015"
@@ -110,7 +110,7 @@
         }
         ?>
 
-    可在此处找到错误代码和消息：[][]<http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx></a>
+    可在此处找到错误代码和消息：[][0]<http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx></a>
 
 ## 查询表
 
@@ -422,7 +422,7 @@ Tasklist 应用程序的主页应列出所有现有任务并允许插入新任�
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
   [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
   [composer.phar]: http://getcomposer.org/composer.phar
-  []: http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
+  [0]: http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
   [此处]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
   [Azure 管理门户]: https://manage.windowsazure.cn
   [创建新的 Azure 网站]: ./media/web-sites-php-storage/new_website.jpg
@@ -437,4 +437,3 @@ Tasklist 应用程序的主页应列出所有现有任务并允许插入新任�
   [你的源代码在哪里]: ./media/web-sites-php-storage/where_is_code.png
   [创建发布凭据]: ./media/web-sites-php-storage/git-deployment-credentials.png
   [为网站创建存储库后返回的 Git 部署说明。]: ./media/web-sites-php-storage/git-instructions.png
-  [http://[你的]: http://[your

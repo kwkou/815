@@ -1,4 +1,4 @@
-<properties linkid="develop-php-website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP web site with SQL数据库 and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web site that stores data in SQL数据库." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Web Site and SQL数据库 using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
+﻿<properties linkid="develop-php-website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP web site with SQL数据库 and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web site that stores data in SQL数据库." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP Web Site and SQL数据库 using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
 <tags ms.service=""
     ms.date="11/17/2014"
     wacn.date="04/11/2015"
@@ -46,7 +46,7 @@
 
 ## 创建网站和 SQL数据库
 
-1.  登录到 [管理门户][预览门户]。
+1.  登录到 [管理门户](https://manage.windowsazure.cn)。
 2.  单击该门户左下角的“+ 新建”图标。
 
     ![创建新的 Azure 网站][创建新的 Azure 网站]
@@ -77,7 +77,7 @@
 
 ## 安装 WebMatrix
 
-你可以从 [管理门户][预览门户] 安装 WebMatrix。
+你可以从 [管理门户](https://manage.windowsazure.cn) 安装 WebMatrix。
 
 1.  登录后，导航到网站的“快速启动”页面，并单击该页底部的“WebMatrix”图标：
 
@@ -145,9 +145,9 @@
 
     ![WebMatrix - 发布][WebMatrix - 发布]
 
-3.  导航到 [http://[你的][http://[你的]网站名].chinacloudsites.cn/createtable.php 以创建`items` 表。
+3.  导航到 http://[你的网站名].chinacloudsites.cn/createtable.php 以创建`items` 表。
 
-4.  最后，导航到 [http://[你的][http://[你的]网站名].chinacloudsites.cn/index.php 以便启动该应用程序。
+4.  最后，导航到 http://[你的网站名].chinacloudsites.cn/index.php 以便启动该应用程序。
 
 ## 修改并重新发布应用程序
 
@@ -191,7 +191,6 @@
   [WebMatrix - 在浏览器中启动 createtable.php]: ./media/web-sites-php-sql-database-use-webmatrix/edit_run.png
   [创建 Azure 网站和 SQL数据库]: #CreateWebsite
   [WebMatrix - 发布]: ./media/web-sites-php-sql-database-use-webmatrix/edit_publish.png
-  [http://[你的]: http://[your
   [WebMatrix - 打开远程视图]: ./media/web-sites-php-sql-database-use-webmatrix/OpenRemoteView.png
   [WebMatrix - 打开索引文件]: ./media/web-sites-php-sql-database-use-webmatrix/Remote_editIndex.png
   [WebMatrix - 远程启动网站]: ./media/web-sites-php-sql-database-use-webmatrix/Remote_run.png

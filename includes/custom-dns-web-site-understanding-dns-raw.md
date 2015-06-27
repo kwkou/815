@@ -1,4 +1,4 @@
-域名系统 (DNS) 用于在 Internet 上查找资源。例如，当您在浏览器中输入一个网站地址或单击 Web 页面上的某个链接时，它使用 DNS 将域转换为 IP 地址。IP 地址有点像街道地址，但其用户友好性并不是很好。例如，记住 **contoso.com** 这样的 DNS 名称比较容易，而记住 192.168.1.88 或 2001:0:4137:1f67:24a2:3888:9cce:fea3 这样的 IP 地址则要困难得多。
+﻿域名系统 (DNS) 用于在 Internet 上查找资源。例如，当您在浏览器中输入一个网站地址或单击 Web 页面上的某个链接时，它使用 DNS 将域转换为 IP 地址。IP 地址有点像街道地址，但其用户友好性并不是很好。例如，记住 **contoso.com** 这样的 DNS 名称比较容易，而记住 192.168.1.88 或 2001:0:4137:1f67:24a2:3888:9cce:fea3 这样的 IP 地址则要困难得多。
 
 DNS 系统基于 *records*。记录将特定的 *name*（例如 **contoso.com**）与一个 IP 地址或其他的 DNS 名称相关联。当某个应用程序（例如 Web 浏览器）在 DNS 中查找某个名称，它将找到该记录，并将它所指向的内容用作地址。如果它所指向的值是 IP 地址，则浏览器将使用该值。如果它指向另一个 DNS 名称，则应用程序必须再次执行解析。最终，所有名称解析都将以 IP 地址的形式结束。
 
@@ -10,13 +10,13 @@ DNS 系统基于 *records*。记录将特定的 *name*（例如 **contoso.com**�
 
 ###地址记录（A 记录）
 
-A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wildcard domain*（例如 **\*.contoso.com**）映射到 IP 地址。对于 Azure 网站而言，这是服务的虚拟 IP 或者您为网站购买的具体 IP 地址。
+A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wildcard domain*（例如 \*.contoso.com）映射到 IP 地址。对于 Azure 网站而言，这是服务的虚拟 IP 或者您为网站购买的具体 IP 地址。
 
 A 记录相比于 CNAME 记录的主要优势是：
 
 * 您可以将根域（例如 **contoso.com**）映射到 IP 地址；许多注册机构仅允许使用 A 记录执行此操作。
 
-* 您可以有一个使用通配符的条目（例如 **\*.contoso.com**），它将处理多个子域（例如 **mail.contoso.com**、**blogs.contoso.com** 或 **www.contoso.com**）的请求。
+* 您可以有一个使用通配符的条目（例如 \*.contoso.com），它将处理多个子域（例如 **mail.contoso.com**、**blogs.contoso.com** 或 **www.contoso.com**）的请求。
 
 > [WACOM.NOTE] 由于 A 记录映射到静态 IP 地址，因此它无法自动解析网站的 IP 地址的更改。用于 A 记录的 IP 地址是您为网站配置自定义域名设置时提供的；但是，如果您删除并重新创建了网站或者将网站模式改回了免费，则该值可能会更改。
 

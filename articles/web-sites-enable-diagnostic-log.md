@@ -1,4 +1,4 @@
-<properties linkid="develop-net-common-tasks-diagnostics-logging-and-instrumentation" urlDisplayName="Enable diagnostic logging" pageTitle="启用诊断日志记录 - Azure 网站" metaKeywords="Azure diagnostics web sites, Azure Management Portal diagnostics, Azure diagnostics, web site diagnostics, web site debug" description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="启用 Azure 网站的诊断日志记录 " authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-net-common-tasks-diagnostics-logging-and-instrumentation" urlDisplayName="Enable diagnostic logging" pageTitle="启用诊断日志记录 - Azure 网站" metaKeywords="Azure diagnostics web sites, Azure Management Portal diagnostics, Azure diagnostics, web site diagnostics, web site debug" description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="启用 Azure 网站的诊断日志记录 " authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -328,8 +328,7 @@ Tid
 | ApplicationName | 网站名称                                   |
 | InstanceId      | 其上发生事件的网站实例                     |
 | EventTickCount  | 事件发生的日期和时间，刻度格式（精度更高） |
-| EventId         | 此事件的事件 ID                            
-                   如果未指定，默认为 0                        |
+| EventId         | 此事件的事件 ID 如果未指定，默认为 0  |
 | Pid             | 进程 ID                                    |
 | Tid             | 产生事件的线程的线程 ID                    |
 | 消息            | 事件详细消息                               |
@@ -358,10 +357,8 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
 > [WACOM.NOTE] Azure 网站生成的日志不支持 **s-computername**、**s-ip** 或 **cs-version** 字段。
 
 <a name="nextsteps"></a>
-
 ## 后续步骤
 
-</p>
 -   [如何监视网站][如何监视网站]
 -   [教程 - 排除网站故障][教程 - 排除网站故障]
 -   [在 Visual Studio 中排除 Azure 网站的故障][在 Visual Studio 中排除 Azure 网站的故障]

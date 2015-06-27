@@ -1,1 +1,1 @@
-如果还没有 Traffic Manager 配置文件，请根据[使用"快速创建"创建 Traffic Manager 配置文件](/zh-cn/library/windowsazure/dn339012.aspx)中的信息创建一个。记下与您的 Traffic Manager 配置文件关联的 **.trafficmanager.net** 域名，因为该域名将在本文档的后续步骤中使用。<!--HONumber=41-->
+如果还没有 Traffic Manager 配置文件，请根据[使用"快速创建"创建 Traffic Manager 配置文件](/zh-cn/library/windowsazure/dn339012.aspx)中的信息创建一个。记下与您的 Traffic Manager 配置文件关联的 **.trafficmanager.cn** 域名，因为该域名将在本文档的后续步骤中使用。<!--HONumber=41-->

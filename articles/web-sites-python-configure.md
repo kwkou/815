@@ -1,4 +1,4 @@
-<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -8,8 +8,7 @@
 
 本教程介绍用于在 Azure 网站上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的各种方法。Azure 网站的使用很简单，并且你的 Python 应用程序将有缩放和扩展到其他 Azure 服务的空间。Azure 网站平台包括 Python 2.7 和 Python 的常规 wfastcgi.py FastCGI 处理程序。你只需将网站配置为使用 Python 处理程序即可。
 
-有关在 Azure 网站上配置 Django 框架的更复杂示例，请参阅以下教程：
-[][]</zh-cn/documentation/articles/web-sites-python-create-deploy-django-app/></a>。
+有关在 Azure 网站上配置 Django 框架的更复杂示例，请参阅[教程](/documentation/articles/web-sites-python-create-deploy-django-app)。
 
 ## WSGI 支持
 
@@ -21,7 +20,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 简言之，如果你没有现成的网站，则可以从 Azure 管理门户创建一个。选择“网站”功能并使用“快速创建”选项，然后为你的网站指定 URL。
 
-![][]
+![][0]
 
 ## Git 发布
 
@@ -131,10 +130,9 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 ![][5]
 
-  []: /zh-cn/documentation/articles/web-sites-python-create-deploy-django-app/
   [PEP 3333]: http://www.python.org/dev/peps/pep-3333/
-  [1]: /manage/services/web-sites/how-to-create-websites/
-  []: ./media/web-sites-python-configure/configure-python-create-website.png
+  [1]: /manage/services/web-sites/how-to-create-websites
+  [0]: ./media/web-sites-python-configure/configure-python-create-website.png
   [2]: ./media/web-sites-python-configure/configure-python-git.png
   [3]: ./media/web-sites-python-configure/configure-python-handler-mapping.png
   [4]: ./media/web-sites-python-configure/configure-python-app-settings.png

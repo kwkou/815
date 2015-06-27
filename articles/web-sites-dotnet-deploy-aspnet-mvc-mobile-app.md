@@ -1,12 +1,10 @@
-<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
     />
 
 # 在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序
-
-***由 [Rick Anderson][Rick Anderson] 撰写，更新时间：2013 年 6 月 26 日。***
 
 本教程介绍将 Web 应用程序部署到 Azure 网站的基础知识。在本教程中，我们将使用 ASP.NET MVC 4 Web 应用程序中的移动功能。若要执行本教程中的步骤，可以使用 Microsoft Visual Studio 2012。也可以使用 [Visual Studio Express 2012][Visual Studio Express 2012]，这是 Microsoft Visual Studio 的免费版本。
 

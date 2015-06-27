@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-get-started-vs2013" urlDisplayName="Windows Azure 入门" pageTitle="Windows Azure for .NET 入门" metaKeywords="" description="本教程说明如何使用 Visual Studio 2013 将 ASP.NET 网站部署到 Windows Azure。在不到 15 分钟内，您将有了在云中运行的应用程序。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Windows Azure 和 ASP.NET 入门" authors=""  solutions="" writer="tdykstra" manager="wpickett" editor="mollybos"  />
+﻿<properties linkid="develop-net-tutorials-get-started-vs2013" urlDisplayName="Windows Azure 入门" pageTitle="Windows Azure for .NET 入门" metaKeywords="" description="本教程说明如何使用 Visual Studio 2013 将 ASP.NET 网站部署到 Windows Azure。在不到 15 分钟内，您将有了在云中运行的应用程序。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="Windows Azure 和 ASP.NET 入门" authors=""  solutions="" writer="tdykstra" manager="wpickett" editor="mollybos"  />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -187,7 +187,7 @@
 在本教程中，您已了解如何将简单的 Web 应用程序部署到 Windows Azure 网站。还提供了其他资源，旨在向您说明如何管理和缩放网站并对网站进行故障排除，如何添加数据库、身份验证和授权功能以及如何决定是否应在 Windows Azure 云服务中而不是 Windows Azure 网站中运行您的应用程序。
 
 <h3>如何管理网站</h3>
-[Windows Azure 管理门户][Portal]是可用于管理和监视所有 Windows Azure 服务的 Web 界面。
+[Windows Azure 管理门户](https://manage.windowsazure.cn)是可用于管理和监视所有 Windows Azure 服务的 Web 界面。
 
 您可以创建新网站、云服务、虚拟机和数据库等，可以从库中创建开放源应用程序。还可以管理已创建的服务。例如，以下屏幕快照显示了管理门户的“仪表板”选项卡中的 Windows Azure 网站的“停止”、“重新启动”和“删除”按钮。“仪表板”还显示了性能统计信息，如使用的 CPU 时间、请求数、传入和传出的数据以及可能已发生的任何错误。
 
@@ -210,5 +210,4 @@
 <h3>如何决定应用程序是否应在云服务中运行</h3>
 在某些方案中，您可能需要在 Windows Azure 云服务中而不是 Windows Azure 网站中运行应用程序。有关更多信息，请参见 [Windows Azure 执行模型](/zh-cn/documentation/articles/fundamentals-application-models)以及 [Windows Azure 网站、云服务和 VM：何时使用何种产品？](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm)。有关说明如何创建多层 ASP.NET Web 应用程序并将其部署到云服务的系列教程，请参见[使用存储表、队列和 Blob 的 .NET 多层应用程序](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)。
 
-[门户]: http://manage.windowsazure.cn
 
