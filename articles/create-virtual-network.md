@@ -1,4 +1,4 @@
-<properties linkid="manage-services-create-a-virtual-network" urlDisplayName="Create a virtual network" pageTitle="Create a virtual network - Azure service management" metaKeywords="" description="Learn how to create an Azure Virtual Network." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="Create a Virtual Network in Azure" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="manage-services-create-a-virtual-network" urlDisplayName="Create a virtual network" pageTitle="Create a virtual network - Azure service management" metaKeywords="" description="Learn how to create an Azure Virtual Network." metaCanonical="" services="virtual-machines,virtual-network" documentationCenter="" title="在 Azure 中创建虚拟网络" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines,virtual-network"
     ms.date="09/29/2014"
     wacn.date="04/11/2015"
@@ -62,9 +62,9 @@
 <p>若要使用公共 DNS 服务，你可以在此屏幕上输入该信息。否则，名称解析将默认为 Azure 服务。有关详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx">Azure 名称解析概述</a>。</p>
 </div>
 
-    -   **请勿选中对应于点到站点连接或站点到站点连接的复选框**。在本教程中创建的虚拟网络并不用于进行跨界连接。
+**请勿选中对应于点到站点连接或站点到站点连接的复选框**。在本教程中创建的虚拟网络并不用于进行跨界连接。
 
-    ![][2]
+![][2]
 
 2.  在“虚拟网络地址空间”页上，输入以下信息，然后单击右下角的复选框以配置网络。地址空间必须为用 CIDR 表示法指定的专用地址范围：10.0.0.0/8、172.16.0.0/12 或 192.168.0.0/16（由 RFC 1918 指定）。有关此页面上各项设置的详细信息，请参阅[关于使用管理门户配置虚拟网络][关于使用管理门户配置虚拟网络]中的“虚拟网络地址空间”页。
 
