@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-profiling-in-compute-emulator" urldisplayname="Team Foundation Service" headerexpose="" pageTitle="在计算模拟器中本地分析云服务" metakeywords="" footerexpose="" description="" umbraconavihide="0" disquscomments="1" title="Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler" authors="" />
+﻿<properties linkid="dev-net-common-tasks-profiling-in-compute-emulator" urldisplayname="Team Foundation Service" headerexpose="" pageTitle="在计算模拟器中本地分析云服务" metakeywords="" footerexpose="" description="" umbraconavihide="0" disquscomments="1" title="Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler" authors="" />
 <tags ms.service=""
     ms.date="02/18/2015"
     wacn.date="04/11/2015"
@@ -34,15 +34,15 @@
 
 ## <a name="step1"> </a> 步骤 1：配置 Visual Studio 以进行分析
 
-首先，提供了几个 Visual Studio 配置选项，这些选项在分析时可能会有用。若要使分析报告变得有意义，你将需要应用程序的符号（.pdb 文件）与系统库的符号。你将需要确保引用可用的符号服务器。为此，请在 Visual Studio 中的"工具"菜单上，依次选择"选项"、"调试"和"符号"****************。确保"符号文件(.pdb)位置"****下列出了 Microsoft 符号服务器。你也可参考 http://referencesource.microsoft.com/symbols，其上可能提供了其他符号文件。
+首先，提供了几个 Visual Studio 配置选项，这些选项在分析时可能会有用。若要使分析报告变得有意义，你将需要应用程序的符号（.pdb 文件）与系统库的符号。你将需要确保引用可用的符号服务器。为此，请在 Visual Studio 中的**"工具"**菜单上，依次选择**"选项"**、**"调试"**和**"符号"**。确保**"符号文件(.pdb)位置"**下列出了 Microsoft 符号服务器。你也可参考 http://referencesource.microsoft.com/symbols，其上可能提供了其他符号文件。
 
 ![][4]
 
-如果需要，可通过设置"仅我的代码"来简化探查器生成的报告。通过启用"仅我的代码"，可简化函数调用堆栈，以便从报告中隐藏对库和 .NET Framework 的完全内部调用。在"工具"菜单上，选择"选项"********。然后展开"性能工具"节点，并选择"常规"********。选中"为探查器报告启用'仅我的代码'"的复选框****。
+如果需要，可通过设置"仅我的代码"来简化探查器生成的报告。通过启用"仅我的代码"，可简化函数调用堆栈，以便从报告中隐藏对库和 .NET Framework 的完全内部调用。在"工具"菜单上，选择**"选项"**。然后展开"性能工具"节点，并选择**"常规"**。选中**"为探查器报告启用'仅我的代码'"的复选框**。
 
 ![][17]
 
-你可以在现有项目或新项目中使用这些说明。如果你创建新的项目来尝试下面描述的技术，请选择 C# **Azure 云服务**项目，并选择"Web 角色"和"辅助角色"********。
+你可以在现有项目或新项目中使用这些说明。如果你创建新的项目来尝试下面描述的技术，请选择 C# **Azure 云服务**项目，并选择**"Web 角色"**和**"辅助角色"**。
 
 ![][5]
 
@@ -80,7 +80,7 @@
 
 你必须将探查器附加到正在运行的进程，而不是通过从 Visual Studio 2010 IDE 中启动应用程序来分析该应用程序。 
 
-若要将探查器附加到进程，请在"分析"菜单上选择"探查器"和"附加/分离"************。
+若要将探查器附加到进程，请在**"分析"**菜单上选择**"探查器"**和**"附加/分离"**。
 
 ![][6]
 
@@ -107,7 +107,7 @@
 
 完成附加后，请在应用程序的 UI 中执行这些步骤（如果需要）来复制方案。
 
-如果想要停止分析，请选择"停止分析"****链接。
+如果想要停止分析，请选择**"停止分析"**链接。
 
 ![][10]
 
@@ -145,7 +145,7 @@
 	    return builder.ToString();
 	}
 
-执行其他性能运行，然后比较性能。在性能资源管理器中，如果运行位于同一会话中，则只需选择两个报告，打开快捷菜单，并选择"比较性能报告"****。若要与其他性能会话中的运行进行比较，请打开"分析"菜单，并选择"比较性能报告"********。在显示的对话框中指定这两个文件。
+执行其他性能运行，然后比较性能。在性能资源管理器中，如果运行位于同一会话中，则只需选择两个报告，打开快捷菜单，并选择**"比较性能报告"**。若要与其他性能会话中的运行进行比较，请打开**"分析"**菜单，并选择**"比较性能报告"**。在显示的对话框中指定这两个文件。
 
 ![][15]
 
