@@ -9,13 +9,8 @@
 
 <tags
    ms.service="site-recovery"
-   ms.devlang="powershell"
-   ms.tgt_pltfrm="na"
-   ms.topic="article"
-   ms.workload="required" 
    ms.date="03/31/2015"
-   wacn.date="05/15/2015"
-   ms.author="ruturajd@microsoft.com"/>
+   wacn.date="05/15/2015"/>
 
   
    
@@ -160,54 +155,50 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
 1.  在 Azure Automation 帐户中使用名称 **OpenPort80** 创建一个新的 Runbook
 
-![](./media/site-recovery-runbook-automation/14.png)
+    ![](./media/site-recovery-runbook-automation/14.png)
 
 2.  导航到 Runbook 的"创作"视图，并进入草稿模式。
 
-3.  首先指定要用作恢复计划上下文的变量
+3.  首先指定要用作恢复计划上下文的变量  
 
-```
-	param (
-		[Object]$RecoveryPlanContext
-	)
+		param (
+			[Object]$RecoveryPlanContext
+		)
 
-```
   
 
 4.  接下来，使用凭据和订阅名称连接到订阅
 
-```
-	$Cred = Get-AutomationPSCredential -Name 'AzureCredential'
+		
+		$Cred = Get-AutomationPSCredential -Name 'AzureCredential'
 	
-	# Connect to Azure
-	$AzureAccount = Add-AzureAccount -Credential $Cred
-	$AzureSubscriptionName = Get-AutomationVariable -Name 'AzureSubscriptionName'
-	Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
-```
+		# Connect to Azure
+		$AzureAccount = Add-AzureAccount -Credential $Cred
+		$AzureSubscriptionName = Get-AutomationVariable -Name 	'AzureSubscriptionName'
+		Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
+		
 
-> 请注意，此处使用了 Azure 资产 - **AzureCredential** 和 **AzureSubscriptionName**。
+    >   请注意，此处使用了 Azure 资产 - **AzureCredential** 和 **AzureSubscriptionName**。
 
 5.  现在，请指定终结点详细信息和你要公开其终结点（在本例中为前端虚拟机）的虚拟机的 GUID。
 
-```
-	# Specify the parameters to be used by the script
-	$AEProtocol = "TCP"
-	$AELocalPort = 80
-	$AEPublicPort = 80
-	$AEName = "Port 80 for HTTP"
-	$VMGUID = "7a1069c6-c1d6-49c5-8c5d-33bfce8dd183"
-```
+		# Specify the parameters to be used by the script
+		$AEProtocol = "TCP"
+		$AELocalPort = 80
+		$AEPublicPort = 80
+		$AEName = "Port 80 for HTTP"
+		$VMGUID = "7a1069c6-c1d6-49c5-8c5d-33bfce8dd183"
 
-这将指定 Azure 终结点协议、VM 上的本地端口及其映射的公共端口。这些变量是向 VM 添加终结点的 Azure 命令所需的参数。VMGUID 包含你要对其执行操作的虚拟机的 GUID。 
+    这将指定 Azure 终结点协议、VM 上的本地端口及其映射的公共端口。这些变量是向 VM 添加终结点的 Azure 命令所需的参数。VMGUID 包含你要对其执行操作的虚拟机的 GUID。 
 
 6.  现在，脚本提取给定 VM GUID 的上下文，并在它引用的虚拟机上创建终结点。
 
-```
-	#Read the VM GUID from the context
-	$VM = $RecoveryPlanContext.VmMap.$VMGUID
+		
+		#Read the VM GUID from the context
+		$VM = $RecoveryPlanContext.VmMap.$VMGUID
 
-	if ($VM -ne $null)
-	{
+		if ($VM -ne $null)
+		{
 		# Invoke pipeline commands within an InlineScript
 
 		$EndpointStatus = InlineScript {
@@ -219,16 +210,16 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 				Update-AzureVM
 			Write-Output $Status
 		}
-	}
-```
+		}
+		
 
 7. 完成此操作后，点击"发布" ![](./media/site-recovery-runbook-automation/20.png) 使脚本可执行。 
 
 下面提供了完整脚本供你参考
 
-```
-  workflow OpenPort80
-  {
+	
+	workflow OpenPort80
+	{
 	param (
 		[Object]$RecoveryPlanContext
 	)
@@ -264,14 +255,15 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 			Write-Output $Status
 		}
 	}
-  }
-```
+	}  
+	
 
 ## 将脚本添加到恢复计划
 
 脚本准备就绪后，你可以将它添加到先前创建的恢复计划。
 
-1.  在创建的恢复计划中，选择在组 2 后面添加脚本。 ![](./media/site-recovery-runbook-automation/15.png)
+1.  在创建的恢复计划中，选择在组 2 后面添加脚本。  
+![](./media/site-recovery-runbook-automation/15.png)
 
 2.  指定脚本名称。这只是此恢复计划的友好名称，将在恢复计划中显示。
 
@@ -279,7 +271,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
 4.  在 Azure Runbook 中，选择你创作的 Runbook。
 
-![](./media/site-recovery-runbook-automation/16.png)
+    ![](./media/site-recovery-runbook-automation/16.png)
 
 ## 测试恢复计划
 
@@ -297,7 +289,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
 4.  在故障转移完成后，除了 Runbook 执行结果以外，你还可以通过访问 Azure 虚拟机页并查看终结点，来了解执行是否成功。 
 
-![](./media/site-recovery-runbook-automation/19.png)
+    ![](./media/site-recovery-runbook-automation/19.png)
 
 ## 示例脚本
 

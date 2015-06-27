@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/01/2015"
-	wacn.date="05/15/2015"
-	ms.author="raynew"/>
+	wacn.date="05/15/2015"/>
 
 
 # 在本地 VMware 虚拟机或物理服务器与 Azure 之间设置保护
