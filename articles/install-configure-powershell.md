@@ -66,7 +66,7 @@ cmdlet 要求您的订阅信息，以便可以使用它来管理您的服务。�
 
 2. 输入以下命令：
 
-    `Add-AzureAccount -Environment AzureChinaCloud`
+		Add-AzureAccount -Environment AzureChinaCloud
 
 3. 在窗口中，键入与您的帐户相关联的电子邮件地址和密码。
 
@@ -97,7 +97,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 3. 输入以下命令：
 
-    `Get-AzurePublishSettingsFile -Environment AzureChinaCloud`
+		Get-AzurePublishSettingsFile -Environment AzureChinaCloud
 
 4. 当系统提示时，下载并保存发布配置文件，并记下 .publishsettings 文件的路径和名称。当您运行 Import-AzurePublishSettingsFile cmdlet 导入设置时，
 必须提供此信息。默认的
@@ -118,11 +118,11 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 若要查看可用帐户，请键入：
 
-	`Get-AzureAccount`
+	Get-AzureAccount
 
 若要查看订阅信息，请键入：
 
-	`Get-AzureSubscription`
+	Get-AzureSubscription
 
 ## <a id="Ex"></a>如何使用 cmdlet：示例##
 
@@ -134,13 +134,13 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 	在选择某一名称后，键入如下命令。例如，若要使用您的帐户和编号创建一个网站，以便可以多次使用此约定，请键入以下内容，并且以您的帐户名称替代：
 
-	`New-AzureWebsite my-site-name-1`
+		New-AzureWebsite my-site-name-1
 
 	该 cmdlet 将创建该网站，然后列出与其有关的信息。
 
 3. 若要查看该网站的状态，请键入：
 
-	`Get-AzureWebsite`
+		Get-AzureWebsite	
 
 	该 cmdlet 将列出名称和状态，以及新网站的宿主名称。
 
@@ -148,13 +148,13 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 4. 网站将在创建后启动。若要停止网站运行，请键入：
 
-	`Stop-AzureWebsite -Name account-name-1`
+		Stop-AzureWebsite -Name account-name-1
 
 5. 再次运行 Get-AzureWebsite 命令以便确认该网站的状态为“已停止”。
   
-5. 若要完成此测试，您可以删除该网站。类型：
+6. 若要完成此测试，您可以删除该网站。类型：
 
-	`Remove-AzureWebsite -Name account-name-1`
+		Remove-AzureWebsite -Name account-name-1
 
 	确认删除以便完成该任务。
 
