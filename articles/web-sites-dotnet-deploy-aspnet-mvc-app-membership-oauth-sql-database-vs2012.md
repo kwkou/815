@@ -1,12 +1,10 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date="10/07/2014"
     wacn.date="04/11/2015"
     />
 
 # 使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用部署到 Azure 网站
-
-***由 [Rick Anderson][Rick Anderson] 和 Tom Dykstra 撰写。上次更新时间：2013 年 10 月 15 日。***
 
 <div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
 
@@ -71,41 +69,24 @@
 Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL数据库。
 
 1.  在 [Azure 管理门户][Azure 管理门户]中，单击左侧选项卡中的“网站”，然后单击“新建”。
-
 ![管理门户中的“新建”按钮][管理门户中的“新建”按钮]
-
-1.  单击“自定义创建”。
-
-    ![管理门户中的“与数据库一起创建”链接][管理门户中的“与数据库一起创建”链接]
-
+1.  单击“自定义创建”。  
+![管理门户中的“与数据库一起创建”链接][管理门户中的“与数据库一起创建”链接]  
 “新网站 – 自定义创建”向导将打开。
-
-1.  在该向导的“新建网站”步骤中，在“URL”框中输入将用作您的应用程序的唯一 URL 的字符串。完整的 URL 将包含您在此处输入的内容和您在文本框旁边看到的后缀。图中显示“contactmgr2”，但可能已有人使用了该 URL，因此必须另外选择一个。
-
-    ![管理门户中的“与数据库一起创建”链接][1]
-
-2.  在“数据库”下拉列表中，选择“创建新的 SQL 数据库”。
-
-3.  在“区域”下拉列表中，选择您为网站所选的同一区域。此设置指定将运行您的 VM 的数据中心。在“数据库连接字符串名称”中，输入 *connectionString1*。
-
-    ![“新建网站 - 与数据库一起创建”向导的“创建新网站”步骤][1]
-
-4.  单击对话框底部的向右箭头。该向导将前进到“数据库设置”步骤。
-
-5.  在“名称”框中，输入 *ContactDB*。
-
-6.  在“服务器”框中，选择“新建 SQL数据库 服务器”。或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
-
-7.  输入管理员“登录名”和“密码”。如果您选择了“新建 SQL数据库 服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，您现在定义的名称和密码将在您以后访问数据库时使用。如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。您可以使用“高级”框设置数据库大小（默认为 1 GB，但您可以将其增加到 150 GB）和排序规则。
-
-8.  单击对话框底部的复选标记以指示您已完成操作。
-
-    ![“新建网站 - 与数据库一起创建”向导的“数据库设置”步骤][“新建网站 - 与数据库一起创建”向导的“数据库设置”步骤]
-
-    下图指示使用的是现有 SQL Server 和登录名。
-    ![“新建网站 – 与数据库一起创建”向导的“数据库设置”步骤][“新建网站 – 与数据库一起创建”向导的“数据库设置”步骤]
-
-    管理门户返回到“网站”页面，“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，您的帐户中拥有的网站的数量将会显示在“网站”图标旁边，而数据库的数量将会显示在“SQL数据库”图标旁边。
+1.  在该向导的“新建网站”步骤中，在“URL”框中输入将用作您的应用程序的唯一 URL 的字符串。完整的 URL 将包含您在此处输入的内容和您在文本框旁边看到的后缀。图中显示“contactmgr2”，但可能已有人使用了该 URL，因此必须另外选择一个。  
+![管理门户中的“与数据库一起创建”链接][1]  
+1.  在“数据库”下拉列表中，选择“创建新的 SQL 数据库”。  
+1.  在“区域”下拉列表中，选择您为网站所选的同一区域。此设置指定将运行您的 VM 的数据中心。在“数据库连接字符串名称”中，输入 *connectionString1*。  
+![“新建网站 - 与数据库一起创建”向导的“创建新网站”步骤][1]
+1.  单击对话框底部的向右箭头。该向导将前进到“数据库设置”步骤。
+1.  在“名称”框中，输入 *ContactDB*。
+1.  在“服务器”框中，选择“新建 SQL数据库 服务器”。或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
+1.  输入管理员“登录名”和“密码”。如果您选择了“新建 SQL数据库 服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，您现在定义的名称和密码将在您以后访问数据库时使用。如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。您可以使用“高级”框设置数据库大小（默认为 1 GB，但您可以将其增加到 150 GB）和排序规则。
+1.  单击对话框底部的复选标记以指示您已完成操作。    
+![“新建网站 - 与数据库一起创建”向导的“数据库设置”步骤][“新建网站 - 与数据库一起创建”向导的“数据库设置”步骤]  
+下图指示使用的是现有 SQL Server 和登录名。  
+![“新建网站 – 与数据库一起创建”向导的“数据库设置”步骤][“新建网站 – 与数据库一起创建”向导的“数据库设置”步骤]  
+管理门户返回到“网站”页面，“状态”列显示正在创建网站。稍后（通常不到一分钟），“状态”列会显示已成功创建网站。在左侧的导航栏中，您的帐户中拥有的网站的数量将会显示在“网站”图标旁边，而数据库的数量将会显示在“SQL数据库”图标旁边。
 
 ## <a name="bkmk_createmvc4app"></a>创建 ASP.NET MVC 4 应用程序
 
@@ -115,12 +96,10 @@ Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据�
 
 1.  启动 Visual Studio 2012。
 2.  在“文件”菜单中，单击“新建项目”。
-3.  在“新建项目”对话框中，展开“Visual C#”并在“已安装的模板”下选择“Web”，然后选择“ASP.NET MVC 4 Web 应用程序。保持默认值 **.NET Framework 4.5**。将该应用程序命名为 **ContactManager**，然后单击“确定”。
-
+3.  在“新建项目”对话框中，展开“Visual C#”并在“已安装的模板”下选择“Web”，然后选择“ASP.NET MVC 4 Web 应用程序。保持默认值 **.NET Framework 4.5**。将该应用程序命名为 **ContactManager**，然后单击“确定”。  
     ![“新建项目”对话框][“新建项目”对话框]
 
 4.  在“新建 ASP.NET MVC 4 项目”对话框中，选择“Internet 应用程序”模板。保留默认值 Razor“视图引擎”，然后单击“确定”。
-
     ![“新建 ASP.NET MVC 4 项目”对话框][“新建 ASP.NET MVC 4 项目”对话框]
 
 ### 设置页眉和页脚
@@ -134,8 +113,8 @@ Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据�
 
 ### 在本地运行应用程序
 
-1.  按 Ctrl+F5 运行应用程序。应用程序主页将显示在默认浏览器中。
-    ![“待办事项列表”主页][“待办事项列表”主页]
+1.  按 Ctrl+F5 运行应用程序。应用程序主页将显示在默认浏览器中。  
+![“待办事项列表”主页][“待办事项列表”主页]
 
 这就是您创建将要部署到 Azure 的应用程序目前所需的全部操作。稍后您将添加数据库功能。
 
@@ -143,34 +122,22 @@ Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据�
 
 1.  在浏览器中，打开[Azure 管理门户][2]。
 
-2.  在“网站”选项卡中，单击先前创建的网站的名称。
+2.  在“网站”选项卡中，单击先前创建的网站的名称。  
+ ![管理门户的“网站”选项卡中的“联系人管理器”应用程序][管理门户的“网站”选项卡中的“联系人管理器”应用程序]
 
-    ![管理门户的“网站”选项卡中的“联系人管理器”应用程序][管理门户的“网站”选项卡中的“联系人管理器”应用程序]
-
-3.  在窗口右侧，单击“下载发布配置文件”。
-
-    ![“快速启动”选项卡和“下载发布配置文件”按钮][“快速启动”选项卡和“下载发布配置文件”按钮]
-
-    此步骤将下载一个文件，其中包含将应用程序部署到您的网站所需的全部设置。您将此文件导入到 Visual Studio 中，这样您就不必手动输入此信息。
+3.  在窗口右侧，单击“下载发布配置文件”。  
+![“快速启动”选项卡和“下载发布配置文件”按钮][“快速启动”选项卡和“下载发布配置文件”按钮]  
+此步骤将下载一个文件，其中包含将应用程序部署到您的网站所需的全部设置。您将此文件导入到 Visual Studio 中，这样您就不必手动输入此信息。
 
 4.  将 .*publishsettings* 文件保存到您可以从 Visual Studio 访问的文件夹中。
-
-    ![保存 .publishsettings 文件][保存 .publishsettings 文件]
-
-    [WACOM.INCLUDE [publishsettingsfilewarningchunk](../includes/publishsettingsfilewarningchunk.md)]
-
-5.  在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
-
-    ![项目上下文菜单中的“发布”][项目上下文菜单中的“发布”]
-
-    “发布 Web”向导将打开。
-
-6.  在“发布 Web”向导的“配置文件”选项卡中，单击“导入”。
-
-    ![导入发布设置][导入发布设置]
-
-    “导入发布配置文件”对话框随即出现。
-
+![保存 .publishsettings 文件][保存 .publishsettings 文件]
+[WACOM.INCLUDE [publishsettingsfilewarningchunk](../includes/publishsettingsfilewarningchunk.md)]
+5.  在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。  
+![项目上下文菜单中的“发布”][项目上下文菜单中的“发布”]  
+“发布 Web”向导将打开。  
+6.  在“发布 Web”向导的“配置文件”选项卡中，单击“导入”。  
+![导入发布设置][导入发布设置]  
+“导入发布配置文件”对话框随即出现。  
 7.  如果您之前未在 Visual Studio 中添加 Azure 订阅，请执行下列步骤。在这些步骤中，您将添加订阅，以便“从 Azure 网站导入”下的下拉列表中包含您的网站。
 
     a. 在“导入发布配置文件”对话框中，单击“添加 Azure 订阅”。
@@ -273,33 +240,21 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
 接下来的任务是启用[代码优先迁移][代码优先迁移] 功能以便基于您创建的数据模型创建数据库。
 
 1.  在“工具”菜单中，依次选择“库程序包管理器”和“程序包管理器控制台”。
-
     ![“工具”菜单中的“程序包管理器控制台”][“工具”菜单中的“程序包管理器控制台”]
-
 2.  在“程序包管理器控制台”窗口中，输入以下命令：
-
-        enable-migrations -ContextTypeName ContactManagerContext
-
-    ![enable-migrations][enable-migrations]
-    您必须指定上下文类型名称 (**ContactManagerContext**)，因为项目包含两个 [DbContext][DbContext] 派生类，即我们刚添加的 **ContactManagerContext** 和用于成员资格数据库的 **UsersContext**。**ContactManagerContext** 类由 Visual Studio 支架向导添加。
-
-    **enable-migrations** 命令将创建一个 *Migrations* 文件夹，并在该文件夹中放入一个可编辑以配置 Migrations 的 *Configuration.cs* 文件。
-
+    enable-migrations -ContextTypeName ContactManagerContext
+ ![enable-migrations][enable-migrations]
+您必须指定上下文类型名称 (**ContactManagerContext**)，因为项目包含两个 [DbContext][DbContext] 派生类，即我们刚添加的 **ContactManagerContext** 和用于成员资格数据库的 **UsersContext**。**ContactManagerContext** 类由 Visual Studio 支架向导添加。  
+**enable-migrations** 命令将创建一个 *Migrations* 文件夹，并在该文件夹中放入一个可编辑以配置 Migrations 的 *Configuration.cs* 文件。
 3.  在“程序包管理器控制台”窗口中，输入以下命令：
-
         add-migration Initial
-
     **add-migration Initial** 命令将在创建数据库的 *Migrations* 文件夹中生成一个名为 **\<date\_stamp\>Initial** 的文件。第一个参数 (**Initial**) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
-
     在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在您想要返回到以前的状态时使用）用于删除该表。
-
 4.  打开 *Migrations\\Configuration.cs* 文件。
 5.  添加以下命名空间。
-
-         using ContactManager.Models;
-
+    using ContactManager.Models;
 6.  将 *Seed* 方法替换为以下代码：
-
+```csharp
         protected override void Seed(ContactManager.Models.ContactManagerContext context)
         {
             context.Contacts.AddOrUpdate(p => p.Name,
@@ -350,19 +305,13 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
                 }
                 );
         }
-
-    上面这段代码将用联系信息初始化数据库。有关对数据库进行种子设定的更多信息，请参见[对 Entity Framework (EF) 数据库进行种子设定和调试][对 Entity Framework (EF) 数据库进行种子设定和调试]。
-
+```
+上面这段代码将用联系信息初始化数据库。有关对数据库进行种子设定的更多信息，请参见[对 Entity Framework (EF) 数据库进行种子设定和调试][对 Entity Framework (EF) 数据库进行种子设定和调试]。
 7.  在“程序包管理器控制台”中输入以下命令：
-
         update-database
-
     ![“程序包管理器控制台”命令][“程序包管理器控制台”命令]
-
     **update-database** 用于运行将创建数据库的初始迁移。默认情况下，将以 SQL Server Express LocalDB 数据库的形式创建数据库。（除非您已安装 SQL Server Express，在这种情况下，将使用 SQL Server Express 实例创建数据库。）
-
 8.  按 Ctrl+F5 运行应用程序。
-
 应用程序将显示种子数据并提供编辑、详细信息和删除链接。
 
 ![数据的 MVC 视图][数据的 MVC 视图]
@@ -383,19 +332,16 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
 -   [Microsoft][Microsoft]
 -   [Twitter][Twitter]
 
-导航到 [https://developers.facebook.com/apps][https://developers.facebook.com/apps] 页面并进行登录（如有必要）。单击“以开发人员身份进行注册”按钮并完成注册过程。在完成注册后，请单击“新建应用程序”。输入应用程序的名称。您无需输入应用程序命名空间。
-
+导航到 [https://developers.facebook.com/apps][https://developers.facebook.com/apps] 页面并进行登录（如有必要）。单击“以开发人员身份进行注册”按钮并完成注册过程。在完成注册后，请单击“新建应用程序”。输入应用程序的名称。您无需输入应用程序命名空间。  
 ![新建 FB 应用程序][新建 FB 应用程序]
 
-在“应用程序域”中输入 localhost 并在“网站 URL”中输入 http://localhost/。对“沙盒模式”单击“启用”，然后单击“保存更改”。
-
-您将需要“应用程序 ID”和“应用程序密码”以在此应用程序中实现 OAuth。
+在“应用程序域”中输入 localhost 并在“网站 URL”中输入 http://localhost/。对“沙盒模式”单击“启用”，然后单击“保存更改”。  
+您将需要“应用程序 ID”和“应用程序密码”以在此应用程序中实现 OAuth。  
 ![新建 FB 应用程序][4]
 
 ## 创建测试用户
 
-在“设置”下的左窗格中，单击“开发人员角色”。单击“测试用户”行（而不是“测试人员”行）中的“创建”链接。
-
+在“设置”下的左窗格中，单击“开发人员角色”。单击“测试用户”行（而不是“测试人员”行）中的“创建”链接。  
 ![FB 测试人员][FB 测试人员]
 
 单击“修改”链接以获取测试用户电子邮件（将用于登录到应用程序）。单击“查看更多”链接，然后单击“编辑”以设置测试用户密码。
@@ -571,33 +517,28 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 
 ## <a name="bkmk_deploytowindowsazure11"></a>将应用部署到 Azure
 
-1.  打开应用程序根 *Web.config* 文件。查找 *DefaultConnection* 标记，然后将其复制并粘贴到 *DefaultConnection* 标记行下。重命名已复制元素 *DefaultConnectionDeploy*。您将需要此连接字符串以在成员资格数据库中部署用户数据。
+1.  打开应用程序根 *Web.config* 文件。查找 *DefaultConnection* 标记，然后将其复制并粘贴到 *DefaultConnection* 标记行下。重命名已复制元素 *DefaultConnectionDeploy*。您将需要此连接字符串以在成员资格数据库中部署用户数据。  
     ![3 个连接字符串][3 个连接字符串]
 
 2.  构建应用程序。
-3.  在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
-
-    ![项目上下文菜单中的“发布”][8]
-
+3.  在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。  
+![项目上下文菜单中的“发布”][8]
 “发布 Web”向导将打开。
-
-1.  单击“设置”选项卡。单击“v”图标为 **ContactManagerContext** 和 **DefaultConnectionDeploy** 选择“远程连接字符串”。列出的三个数据库全部将使用相同的连接字符串。**ContactManagerContext** 数据库用于存储联系人，**DefaultConnectionDeploy** 仅用于将用户帐户数据部署到成员资格数据库，而 **UsersContext** 数据库是成员资格数据库。
-
+1.  单击“设置”选项卡。单击“v”图标为 **ContactManagerContext** 和 **DefaultConnectionDeploy** 选择“远程连接字符串”。列出的三个数据库全部将使用相同的连接字符串。**ContactManagerContext** 数据库用于存储联系人，**DefaultConnectionDeploy** 仅用于将用户帐户数据部署到成员资格数据库，而 **UsersContext** 数据库是成员资格数据库。  
     ![设置][设置]
 
-2.  在 **ContactManagerContext** 下，选中“执行 Code First 迁移”。
-
+2.  在 **ContactManagerContext** 下，选中“执行 Code First 迁移”。  
     ![设置][9]
 
 3.  在 **DefaultConnectionDeploy** 下，选中“更新数据库”，然后单击“配置数据库更新”链接。
-4.  单击“添加 SQL 脚本”链接，然后导航到 *aspnet-data-membership.sql* 文件。您只需执行此操作一次。下次部署取时可取消选中“更新数据库”，因为您无需向成员资格表中添加用户数据。
+4.  单击“添加 SQL 脚本”链接，然后导航到 *aspnet-data-membership.sql* 文件。您只需执行此操作一次。下次部署取时可取消选中“更新数据库”，因为您无需向成员资格表中添加用户数据。  
 
     ![添加 sql][添加 sql]
 
 5.  单击“发布”。
 6.  导航到 [https://developers.facebook.com/apps][https://developers.facebook.com/apps] 页面，并将“应用程序域”和“站点 URL”设置更改为 Azure URL。
 7.  测试应用程序。确认只有具有 *canEdit* 角色的用户可以更改数据。确认匿名用户只能查看主页。确认经过身份验证的用户可以导航到不会更改数据的所有链接。
-8.  下次发布应用程序时，请确保取消选中 **DefaultConnectionDeploy** 下的“更新数据库”。
+8.  下次发布应用程序时，请确保取消选中 **DefaultConnectionDeploy** 下的“更新数据库”。  
 
     ![设置][9]
 
@@ -607,7 +548,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 
 ![设置][9]
 
-1.  在“解决方案资源管理器”中，右键单击该项目并单击“发布”。
+1.  在“解决方案资源管理器”中，右键单击该项目并单击“发布”。    
     ![发布][发布]
 
 2.  单击“设置”选项卡。
@@ -617,11 +558,10 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 4.  关闭“发布”对话框。
 5.  在“视图”菜单中，单击“服务器资源管理器”。
 
-6.  单击“连接到数据库”图标。
-
+6.  单击“连接到数据库”图标。  
     ![发布][10]
 
-7.  如果提示您选择数据源，请单击“Microsoft SQL Server”。
+7.  如果提示您选择数据源，请单击“Microsoft SQL Server”。  
     ![发布][11]
 
 8.  复制并粘贴“服务器名称”，该名称以 *tcp* 开头（参见下图）。
@@ -657,7 +597,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
     ![数据库服务器][数据库服务器]
 
 3.  单击页面顶部的“配置”。
-4.  添加规则名称、起始和结束 IP 地址。
+4.  添加规则名称、起始和结束 IP 地址。  
     ![IP 范围][IP 范围]
 
 5.  在页面底部，单击“保存”。
