@@ -1,4 +1,4 @@
-<properties pageTitle="Service-side authorization (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to authorize users in the JavaScript backend of Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Service-side authorization of Mobile Services users" authors="glenga" solutions="" manager="" editor="" />
+﻿<properties pageTitle="Service-side authorization (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to authorize users in the JavaScript backend of Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Service-side authorization of Mobile Services users" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="09/29/2014"
     wacn.date="04/11/2015"
@@ -20,7 +20,7 @@
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]，单击“移动服务”，然后单击你的应用程序。
 
-    ![][]
+    ![][0]
 
 2.  单击“数据”选项卡，然后单击 TodoItem 表。
 
@@ -99,7 +99,7 @@
   [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-android-authorize-users-in-scripts/ "JavaScript 后端"
   [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: ./media/mobile-services-android-authorize-users-in-scripts/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-authorize-users-in-scripts/mobile-services-selection.png
   [1]: ./media/mobile-services-android-authorize-users-in-scripts/mobile-portal-data-tables.png
   [2]: ./media/mobile-services-android-authorize-users-in-scripts/mobile-insert-script-users.png
   [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android

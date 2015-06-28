@@ -1,21 +1,10 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-data-android" urlDisplayName="Get Started with Data - Android" pageTitle="数据处理入门 (Android) | 移动开发人员中心" metaKeywords="Azure android data, Azure mobile services data, windows droid, windows android, microsoft droid, microsoft android" description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="移动服务中的数据处理入门" authors="ricksal,glenga" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-get-started-with-data-android" urlDisplayName="Get Started with Data - Android" pageTitle="数据处理入门 (Android) | 移动开发人员中心" metaKeywords="Azure android data, Azure mobile services data, windows droid, windows android, microsoft droid, microsoft android" description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" metaCanonical="" services="" documentationCenter="Mobile" title="移动服务中的数据处理入门" authors="ricksal,glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/03/2015"
     wacn.date="04/11/2015"
     />
 
 # 移动服务中的数据处理入门
-
-<div class="dev-center-tutorial-selector sublanding">    
-<a href="/develop/mobile/tutorials/get-started-with-data-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-wp8" title="Windows Phone">Windows Phone</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-ios" title="iOS">iOS</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-android" title="Android" class="current">Android</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-html" title="HTML">HTML</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a>
-<a href="/develop/mobile/tutorials/get-started-with-data-xamarin-android" title="Xamarin.Android">Xamarin.Android</a> 
-</div>
 
 <div class="dev-center-tutorial-subselector">
 <a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/" title=".NET 后端">.NET 后端</a> |  

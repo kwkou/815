@@ -1,14 +1,10 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-push-android" urlDisplayName="Get Started with Push (Android)" pageTitle="Get started with push notifications (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-get-started-with-push-android" urlDisplayName="Get Started with Push (Android)" pageTitle="Get started with push notifications (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use Azure Mobile Services to send push notifications to your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with push notifications in Mobile Services" authors="ricksal" solutions="" manager="dwrede" editor="" />
 <tags ms.service=""
     ms.date="12/17/2014"
     wacn.date="04/11/2015"
     />
 
 # 移动服务中的推送通知入门
-
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/develop/mobile/tutorials/get-started-with-push-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/get-started-with-push-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-push-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-push-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-push-android" title="Android" class="current">Android</a><a href="/develop/mobile/tutorials/get-started-with-push-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-push-xamarin-android" title="Xamarin.Android" class="current">Xamarin.Android</a>
-</div>
 
 本主题说明如何使用 Azure 移动服务向 Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 服务向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
@@ -39,7 +35,7 @@
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]，单击“移动服务”，然后单击你的应用程序。
 
-    ![][]
+    ![][0]
 
 2.  单击“推送”选项卡，输入你在执行前一过程时从 GCM 获取的“API 密钥”值，然后单击“保存”。
 
@@ -260,7 +256,7 @@
   [Azure 管理门户]: https://manage.windowsazure.cn/
 
 <!-- Images. --> 
-  []: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
+  [0]: ./media/mobile-services-android-get-started-push/mobile-services-selection.png
   [1]: ./media/mobile-services-android-get-started-push/mobile-push-tab-android.png
   [添加 Play Services]: ../includes/mobile-services-add-Google-play-services.md
   [设置 Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801

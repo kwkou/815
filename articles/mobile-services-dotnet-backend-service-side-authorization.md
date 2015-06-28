@@ -8,11 +8,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm=""
-	ms.topic="article"
 	ms.date="02/18/2015"
-	ms.author="krisragh"/>
+	wacn.date="06/25/2015"/>
 
 # 移动服务中的用户服务端授权
 

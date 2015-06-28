@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑 | Azure"
    description="了解如何通过使用 HDInsight Tools for Visual Studio 创建一个简单的字数统计拓扑，来以 C# 语言创建一个 Storm 拓扑。"
    services="hdinsight"
@@ -46,7 +46,7 @@
 
 3. 从"新建项目"对话框中，依次展开"已安装"和"模板"，然后选择"HDInsight"。从模板列表中，选择"Storm 应用程序"。在对话框底部，输入 **WordCount** 作为应用程序名称。
 
-	![image](./media/hdinsight-storm-develop-csharp-visual-studio/new-project.png)
+	![image](./media/hdinsight-storm-develop-csharp-visual-studio-topology/new-project.png)
 
 4. 创建项目后，你应该会获得以下文件：
 
@@ -249,7 +249,7 @@
 
 Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流动方式。此拓扑的图形如下。
 
-![image of how components are arranged](./media/hdinsight-storm-develop-csharp-visual-studio/wordcount-topology.png)
+![image of how components are arranged](./media/hdinsight-storm-develop-csharp-visual-studio-topology/wordcount-topology.png)
 
 句子从 Spout 发出，并分布到 Splitter Bolt 的实例。Splitter Bolt 将句子分割成多个单词，并将这些单词分布到 Counter Bolt。
 

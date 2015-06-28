@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-deliver-media-assets" urlDisplayName="Delivering Media Assets" pageTitle="How to Deliver Media Assets - Azure" metaKeywords="" description="Learn about options for delivering media assets that have been uploaded to Media Services in Azure. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Deliver an Asset by Download" authors="migree" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-media-services-how-to-guides-deliver-media-assets" urlDisplayName="Delivering Media Assets" pageTitle="How to Deliver Media Assets - Azure" metaKeywords="" description="Learn about options for delivering media assets that have been uploaded to Media Services in Azure. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Deliver an Asset by Download" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/15/2015"
     wacn.date="04/11/2015"
@@ -13,8 +13,7 @@
 
 此示例演示如何从 Media Services 下载媒体资产。该代码将按作业 ID 查询与 Media Services 帐户关联的作业，并访问其 **OutputMediaAssets** 集合（运行作业后生成的、包含一个或多个输出媒体资产的集）。此示例演示如何通过作业下载输出媒体资产，但你可以运用相同的方法来下载其他资产。
 
-``` {}
- 
+```csharp  
 // Download the output asset of the specified job to a local folder.
 static IAsset DownloadAssetToLocal(string jobId, string outputFolder)
 {
@@ -29,7 +28,7 @@ IJob job = GetJob(jobId);
 // output media assets you could iterate and handle each one.
 IAsset outputAsset = job.OutputMediaAssets[0];
 
-    // Create a SAS locator to download the asset
+   // Create a SAS locator to download the asset
 IAccessPolicy accessPolicy = _context.AccessPolicies.Create("File Download Policy", TimeSpan.FromDays(30), AccessPermissions.Read);
 ILocator locator = _context.Locators.CreateSasLocator(outputAsset, accessPolicy);
 
@@ -62,7 +61,7 @@ return outputAsset;
 static void DownloadProgress(object sender, DownloadProgressChangedEventArgs e)
 {
 Console.WriteLine(string.Format("{0} % download progress.", e.Progress));
-}
+}  
 ```
 
 有关交付资产的详细信息，请参阅：

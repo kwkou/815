@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-media-services-tutorials-smooth-streaming-windows-store-app" urlDisplayName="Smooth Streaming Windows Store App" pageTitle="Smooth Streaming Windows Store App - Azure .NET tutorials" metaKeywords="" description="Learn how to use Azure Media Services to create a C# Windows Store application with a XML MediaElement control to playback Smooth Stream content." metaCanonical="" services="media-services" documentationCenter="" title="How to Build a Smooth Streaming Windows Store Application" authors="" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="10/30/2014"
     wacn.date="04/11/2015"
@@ -47,36 +47,14 @@
 2.  在**文件**菜单中，单击**新建**，然后单击**项目**。
 3.  在“新建项目”对话框中，键入或选择以下值：
 
-<table data-morhtml="true" border="1">
-<tr data-morhtml="true">
-<th data-morhtml="true">名称</th>
-<th data-morhtml="true">值</th>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">模板组</td>
-<td data-morhtml="true">已安装/模板/Visual C#/Windows 应用商店</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">模板</td>
-<td data-morhtml="true">空白应用程序(XAML)</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">名称</td>
-<td data-morhtml="true">SSPlayer</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">位置</td>
-<td data-morhtml="true">C:\SSTutorials</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">解决方案名称</td>
-<td data-morhtml="true">SSPlayer</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">创建解决方案的目录</td>
-<td data-morhtml="true">(选定)</td>
-</tr>
-</table>
+|名称|值|
+|----|----|
+|模板组|已安装/模板/Visual C#/Windows 应用商店|
+|模板|空白应用程序(XAML)|
+|名称|SSPlayer|
+|位置|C:\SSTutorials|
+|解决方案名称|SSPlayer|
+|创建解决方案的目录|(选定)|
 
 4.  单击**“确定”**。
 
@@ -85,21 +63,12 @@
 1.  在解决方案资源管理器中，右键单击“SSPlayer”，然后单击“添加引用”。
 2.  键入或选择以下值：
 
-<table data-morhtml="true" border="1">
-<tr data-morhtml="true">
-<th data-morhtml="true">名称</th>
-<th data-morhtml="true">值</th>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">引用组</td>
-<td data-morhtml="true">Windows/扩展</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">引用</td>
-<td data-morhtml="true">选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK
-</td>
-</tr>
-</table>
+
+|名称|值|
+|----|----|
+|引用组|Windows扩展|
+|引用|选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK|
+
 
 3.  单击**“确定”**。
 

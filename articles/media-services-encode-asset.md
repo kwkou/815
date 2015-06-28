@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-encode-an-asset" urlDisplayName="How to Encode an Asset" pageTitle="How to Encode an Asset for Media Services - Azure" metaKeywords="" description="Learn how to use the Azure Media Encoder to encode media content on Media Services. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Encode an Asset" authors="migree" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-media-services-how-to-guides-encode-an-asset" urlDisplayName="How to Encode an Asset" pageTitle="How to Encode an Asset for Media Services - Azure" metaKeywords="" description="Learn how to use the Azure Media Encoder to encode media content on Media Services. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Encode an Asset" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="03/05/2015"
     wacn.date="04/11/2015"
@@ -17,7 +17,7 @@
 
 以下方法将上载单个资产，并创建一个作业以使用“H264 Broadband 720p”预设将该资产编码为 MP4，该预设将创建编码为 H264、分辨率为 720p 的单个 MP4 媒体。
 
-``` {}
+```csharp  
     static IJob CreateEncodingJob(string inputMediaFilePath, string outputFolder)
     {
     //Create an encrypted asset and upload to storage.
@@ -118,7 +118,7 @@
 
 若要将 MP4 转换为平滑流式处理，请使用 Azure 媒体包装器。Azure 媒体包装器不支持字符串预设，因此你必须在 XML 中指定配置选项。在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh973635.aspx)中可以找到将 MP4 转换为平滑流式处理所需的 XML。将该 XML 复制并粘贴到项目中名为 MediaPackager\_MP4ToSmooth.xml 的文件。以下代码演示了如何将 MP4 资产转换为平滑流式处理。下面的方法采用现有某个资产并对其进行转换。
 
-``` {}
+```csharp  
 private static IJob ConvertMP4toSmooth(IAsset assetToConvert, string configFilePath)
  {
     // Declare a new job to contain the tasks

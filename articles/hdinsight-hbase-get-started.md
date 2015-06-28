@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-hbase-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="在 HDInsight 中将 HBase 与 Hadoop 配合使用 | Azure" metaKeywords="" description="Get started using HBase with Hadoop in HDInsight. learn how to created HBase tables and query them with Hive." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using HBase with Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-hbase-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="在 HDInsight 中将 HBase 与 Hadoop 配合使用 | Azure" metaKeywords="" description="Get started using HBase with Hadoop in HDInsight. learn how to created HBase tables and query them with Hive." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using HBase with Hadoop in HDInsight" authors="bradsev" solutions="big-data" manager="paulettm" editor="cgronlun" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -38,7 +38,7 @@ HBase 是一种低延迟的 NoSQL 数据库，可用于对大数据进行联机�
 
 2.  单击左侧的“HDInsight”以列出你的帐户中群集的状态，然后单击左下角的“+新建”图标。
 
-    ![][]
+    ![][0]
 
 3.  在左侧单击第二列中的“HDInsight”图标，然后单击下一列中的“HBase”选项。指定“群集名称”和“群集大小”的值、存储帐户的名称以及新 HBase 群集的密码。
 
@@ -202,7 +202,7 @@ HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量
   [后续步骤]: #next
   [provisioningnote]: ../includes/hdinsight-provisioning.md
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  []: http://i.imgur.com/PmGynKZ.jpg
+  [0]: http://i.imgur.com/PmGynKZ.jpg
   [1]: http://i.imgur.com/ecxbB9K.jpg
   [2]: http://i.imgur.com/tMwXlj9.jpg
   [Marlin 的项目页]: https://github.com/thomasjungblut/marlin
