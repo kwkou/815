@@ -75,7 +75,7 @@ Sqoop 是一种用于在 Hadoop 和关系数据库（如 SQL）或其他结构�
 
 ### Microsoft Avro Library
 
-Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C\#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
+Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
 
 Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hadoop 环境中。Avro 提供了简便的方法来表示 Hadoop MapReduce 作业内的复杂数据结构。Avro 文件格式已设计为支持分布式 MapReduce 编程模型。实现分布的关键是文件必须是“可拆分的”，也就是说，用户可以在文件中随机设置一个点，然后即可从某一特定块开始读取。有关其他信息，请参阅[使用 Microsoft Avro Library 序列化数据][]。
 

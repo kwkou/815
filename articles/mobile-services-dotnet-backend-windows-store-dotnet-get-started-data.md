@@ -7,7 +7,7 @@
 # 移动服务中的数据处理入门
 
 <div class="dev-center-tutorial-selector sublanding">
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title="Windows Store C#" class="current">Windows 应用商店 C\#</a>
+	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-data/" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data/" title="Windows Phone">Windows Phone</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started-data/" title="Android">Android</a>
@@ -87,7 +87,7 @@
 
     ![][4]
 
-4.  解压缩你下载的个性化服务初学者项目。将 zip 文件中的文件夹复制到“数据处理入门”解决方案文件 (.sln) 所在的同一个 "C\#" 目录。这样可以方便 NuGet 包管理器将所有程序包保持同步。
+4.  解压缩你下载的个性化服务初学者项目。将 zip 文件中的文件夹复制到“数据处理入门”解决方案文件 (.sln) 所在的同一个 "C#" 目录。这样可以方便 NuGet 包管理器将所有程序包保持同步。
 
     ![][5]
 
@@ -95,7 +95,7 @@
 
     ![][6]
 
-6.  在“添加现有项目”对话框中，导航到你已移到 "C\#" 目录中的移动服务项目文件夹。在服务子目录中选择 C# 项目文件 (.csproj)。单击“打开” 将该项目添加到你的解决方案。
+6.  在“添加现有项目”对话框中，导航到你已移到 "C#" 目录中的移动服务项目文件夹。在服务子目录中选择 C# 项目文件 (.csproj)。单击“打开” 将该项目添加到你的解决方案。
 
     ![][7]
 
@@ -128,7 +128,7 @@
 
     ![][13]
 
-3.  返回到 Azure 管理门户，找到标签为“连接你的应用程序并存储服务中的数据”的步骤 。确保已选择 "C\#" 语言。复制用于创建 `MobileServiceClient` 连接的代码段。
+3.  返回到 Azure 管理门户，找到标签为“连接你的应用程序并存储服务中的数据”的步骤 。确保已选择 "C#" 语言。复制用于创建 `MobileServiceClient` 连接的代码段。
 
     ![][14]
 

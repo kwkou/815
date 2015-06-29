@@ -7,7 +7,7 @@
 # 使用分页优化移动服务查询
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/develop/mobile/tutorials/add-paging-to-data-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/add-paging-to-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/add-paging-to-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/add-paging-to-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/add-paging-to-data-android" title="Android">Android</a><a href="/develop/mobile/tutorials/add-paging-to-data-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/add-paging-to-data-xamarin-ios" title="Xamarin.iOS">iOS C#</a><a href="/develop/mobile/tutorials/add-paging-to-data-xamarin-android" title="Xamarin.Android" class="current">Android C#</a>
+	<a href="/develop/mobile/tutorials/add-paging-to-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/add-paging-to-data-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/add-paging-to-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/add-paging-to-data-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/add-paging-to-data-android" title="Android">Android</a><a href="/develop/mobile/tutorials/add-paging-to-data-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/add-paging-to-data-xamarin-ios" title="Xamarin.iOS">iOS C#</a><a href="/develop/mobile/tutorials/add-paging-to-data-xamarin-android" title="Xamarin.Android" class="current">Android C#</a>
 </div>
 
 本主题说明如何使用分页来管理从 Azure 移动服务返回给 Xamarin.Android 应用程序的数据量。在本教程中，你将在客户端上使用 "Take" 和 "Skip" 查询方法来请求特定的数据“页”。

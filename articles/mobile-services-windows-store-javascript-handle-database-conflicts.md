@@ -7,7 +7,7 @@
 # 处理数据库写入冲突
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows 应用商店 C\#</a>
+<a href="/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows 应用商店 C#</a>
 <a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
 <a href="/develop/mobile/tutorials/handle-database-write-conflicts-wp8/" title="Windows Phone">Windows Phone</a></div>	
 

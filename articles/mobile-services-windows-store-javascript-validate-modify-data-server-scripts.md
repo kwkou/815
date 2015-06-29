@@ -7,7 +7,7 @@
 # 使用服务器脚本在移动服务中验证和修改数据
 
 <div class="dev-center-tutorial-selector sublanding"> 
-<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a>
+<a href="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet" title="Windows Store C#">Windows 应用商店 C#</a>
 <a href="/develop/mobile/tutorials/validate-modify-and-augment-data-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
 <a href="/develop/mobile/tutorials/validate-modify-and-augment-data-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/validate-modify-and-augment-data-ios" title="iOS">iOS</a>
 <a href="/develop/mobile/tutorials/validate-modify-and-augment-data-android" title="Android">Android</a>

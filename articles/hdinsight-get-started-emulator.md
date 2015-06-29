@@ -152,7 +152,7 @@ HDInsight Emulator 安装提供了一些示例，以便新用户能够快速地�
 
 ### IIS w3c 日志数据方案
 
-w3c 方案生成以下三种大小的 IIS W3C 日志数据并且将这些数据导入到 HDFS 或 WASB 中：1MB、500MB 和 2GB。它提供三种作业类型并且分别在 C\#、Java、Pig 和 Hive 中实现它们。
+w3c 方案生成以下三种大小的 IIS W3C 日志数据并且将这些数据导入到 HDFS 或 WASB 中：1MB、500MB 和 2GB。它提供三种作业类型并且分别在 C#、Java、Pig 和 Hive 中实现它们。
 
 -   **totalhits**：计算针对某一给定页的请求总数
 -   **avgtime**：计算每页某一请求所用的平均时间（单位为秒）

@@ -12,7 +12,7 @@
 
 ### Apache Avro
 
-Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C\#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
+Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
 
 Avro 系统中的对象的序列化表示形式由两部分组成：架构和实际值。Avro 架构使用 JSON 描述已序列化数据的与语言无关的数据模型。它与数据的二进制表示形式并排显示。将架构与二进制表示形式分离，使写入每个对象时没有针对值的开销，从而实现快速序列化和较小的表示形式。
 

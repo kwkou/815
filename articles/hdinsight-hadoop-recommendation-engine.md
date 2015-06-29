@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-recommendation-engine-using-mahout" urlDisplayName="Hadoop Recommendation Engine" pageTitle="使用 Apache Mahout 的简单推荐引擎 (.NET) | Azure" metaKeywords="Azure Apache Mahout, Azure recommendation example, Azure recommendation tutorial, Azure recommendation engine" description="A tutorial that teaches how to use the Apache Mahout recommendation engine with Azure to create song suggestions based on listening habits." disqusComments="1" umbracoNaviHide="1" title="Simple recommendation engine using Apache Mahout" authors="jgao" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-recommendation-engine-using-mahout" urlDisplayName="Hadoop Recommendation Engine" pageTitle="使用 Apache Mahout 的简单推荐引擎 (.NET) | Azure" metaKeywords="Azure Apache Mahout, Azure recommendation example, Azure recommendation tutorial, Azure recommendation engine" description="A tutorial that teaches how to use the Apache Mahout recommendation engine with Azure to create song suggestions based on listening habits." disqusComments="1" umbracoNaviHide="1" title="Simple recommendation engine using Apache Mahout" authors="jgao" manager="paulettm" editor="cgronlun" />
 <tags ms.service=""
     ms.date="12/17/2014"
     wacn.date="04/11/2015"
@@ -42,7 +42,7 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
 如果你未安装 Visual Studio 2010，请跳过此步骤并转到“运行 Mahout 作业”一节，以获取预生成的版本。
 
-首先启动 Visual Studio 2010。在 Visual Studio 中，选择“文件”-\>“新建”-\>“项目” 。在“已安装的模板” 窗格中的 **Visual C\#** 节点内，选择“窗口” 类别，然后从列表中选择“控制台应用程序” 。将项目命名为“ConvertToMahoutInput”，然后单击“确定” 按钮。
+首先启动 Visual Studio 2010。在 Visual Studio 中，选择“文件”-\>“新建”-\>“项目” 。在“已安装的模板” 窗格中的 **Visual C#** 节点内，选择“窗口” 类别，然后从列表中选择“控制台应用程序” 。将项目命名为“ConvertToMahoutInput”，然后单击“确定” 按钮。
 
 ![创建控制台应用程序][]
 

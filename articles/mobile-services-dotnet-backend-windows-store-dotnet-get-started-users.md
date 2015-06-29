@@ -7,7 +7,7 @@
 # 移动服务中的身份验证入门
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users" title="Windows Store C#" class="current">Windows 应用商店 C\#</a>
+	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users" title="Windows Store C#" class="current">Windows 应用商店 C#</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
 	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users" title="Windows Phone">Windows Phone</a>
 	<!--<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users" title="iOS">iOS</a>

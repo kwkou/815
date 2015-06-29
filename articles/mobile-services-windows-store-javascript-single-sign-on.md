@@ -7,7 +7,7 @@
 # 使用 Live Connect 单一登录对 Windows 应用商店应用程序进行身份验证
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/develop/mobile/tutorials/single-sign-on-windows-8-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/single-sign-on-windows-8-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/single-sign-on-wp8" title="Windows Phone">Windows Phone</a>
+	<a href="/develop/mobile/tutorials/single-sign-on-windows-8-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/single-sign-on-windows-8-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/single-sign-on-wp8" title="Windows Phone">Windows Phone</a>
 </div>	
 
 本主题说明如何通过 Windows 应用商店应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将使用 Live Connect 向快速入门项目添加身份验证功能。成功通过 Live Connect 进行身份验证后，将使用名称欢迎已登录的用户并显示用户 ID 值。
