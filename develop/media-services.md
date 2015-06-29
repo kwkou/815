@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 pageTitle="Windows Azure 开发人员中心：Media Services" 
 description="" 
 services="Media Services" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="Media Services"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #Media Services开发人员中心

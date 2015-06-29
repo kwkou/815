@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 pageTitle="Windows Azure 开发人员中心：PYTHON" 
 description="" 
 services="PYTHON" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="PYTHON"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #PYTHON开发人员中心

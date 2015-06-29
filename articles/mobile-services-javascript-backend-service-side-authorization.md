@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="在装有 JavaScript 后端的移动服务中进行用户服务端授权 | 移动开发人员中心"
 	description="了解如何在 Azure 移动服务的 JavaScript 后端对用户授权。"
 	services="mobile-services"
@@ -6,7 +6,7 @@
 	manager="dwrede"
 	editor=""/>
 
-<tags
+<tags wacn.date="06/29/2015" 
 	ms.service="mobile-services"
 	ms.workload="mobile"
 	ms.tgt_pltfrm=""

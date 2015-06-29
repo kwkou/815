@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 pageTitle="Windows Azure 开发人员中心：开源软件" 
 description="" 
 services="" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #开源软件 

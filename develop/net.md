@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 pageTitle="Windows Azure 开发人员中心：.NET" 
 metaKeywords=".NET" 
 description="" 
@@ -9,7 +9,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service=".NET"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #.NET Azure 文档

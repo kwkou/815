@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 pageTitle="Windows Azure 开发人员中心：NODEJS" 
 description="" 
 services="NODEJS" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="NODEJS"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #创建您的第一个 Node.js 应用程序
