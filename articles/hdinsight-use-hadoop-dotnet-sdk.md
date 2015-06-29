@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-sdk" urlDisplayName="HDInsight SDK" pageTitle="将 Hadoop .NET SDK 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to get the HDInsight NuGet packages and use them from your .NET application." metaCanonical="" services="hdinsight" documentationCenter="" title="Use the Hadoop .NET SDK with HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-howto-sdk" urlDisplayName="HDInsight SDK" pageTitle="将 Hadoop .NET SDK 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to get the HDInsight NuGet packages and use them from your .NET application." metaCanonical="" services="hdinsight" documentationCenter="" title="Use the Hadoop .NET SDK with HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="10/20/2014"
     wacn.date="04/11/2015"
@@ -24,7 +24,7 @@ Hadoop .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 Hadoop �
 
 -   **MapReduce 库** - 使用 Hadoop 流接口简化用 .NET 语言编写 MapReduce 作业的过程。
 
--   **LINQ to Hive 客户端库** - 将 C\# 或 F\# LINQ 查询转换为 HiveQL 查询，并在 Hadoop 群集上执行这些查询。此库还可从 .NET 应用程序执行任意 HiveQL 查询。
+-   **LINQ to Hive 客户端库** - 将 C# 或 F\# LINQ 查询转换为 HiveQL 查询，并在 Hadoop 群集上执行这些查询。此库还可从 .NET 应用程序执行任意 HiveQL 查询。
 
 -   **WebClient 库** - 包含用于 *WebHDFS* 和 *WebHCat* 的客户端库。
 

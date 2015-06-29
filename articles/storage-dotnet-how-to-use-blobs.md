@@ -1,4 +1,4 @@
-<properties urlDisplayName="Blob Service" pageTitle="如何通过 .NET 使用 Blob 存储 | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="了解如何使用 Microsoft Azure Blob 存储上载、下载、列出和删除 Blob 内容。相关示例用 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Blob storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Blob Service" pageTitle="如何通过 .NET 使用 Blob 存储 | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="了解如何使用 Microsoft Azure Blob 存储上载、下载、列出和删除 Blob 内容。相关示例用 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Blob storage in .NET" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/12/2015"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 如何通过 .NET 使用 Blob 存储
 
 本指南将演示如何使用 Azure Blob 存储服务
-执行常见方案。示例是用 C\# 编写的并使用了 Azure .NET 存储客户端库。涉及的方案包括
+执行常见方案。示例是用 C# 编写的并使用了 Azure .NET 存储客户端库。涉及的方案包括
 上载、列出、下载和删除 Blob。有关 Blob 的详细信息，请参阅[后续步骤][]部分。
 
 > [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是 Storage Client Library 4.x，可通过 [NuGet] 获取(https://www.nuget.org/packages/WindowsAzure.Storage) or as part of the [Azure SDK for .NET](/zh-cn/downloads). See [How to: Programmatically access Blob storage][] below for more details on obtaining the Storage Client Library.

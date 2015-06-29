@@ -1,4 +1,4 @@
-<properties linkid="hdinsight-dotnet-avro-serialization" urlDisplayName="HDInsight Microsoft Avro Library Serialization" pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Avro to serialize big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialize data with Microsoft Avro Library " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="hdinsight-dotnet-avro-serialization" urlDisplayName="HDInsight Microsoft Avro Library Serialization" pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Avro to serialize big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialize data with Microsoft Avro Library " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/10/2014"
     wacn.date="04/11/2015"
@@ -68,7 +68,7 @@ Microsoft Avro Library 设计为可处理任何流。在这些示例中，为保
 
 ## <a id="Scenario1"></a>通过反射进行序列化
 
-Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer**][] 以标识要序列化的字段。
+Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer**][] 以标识要序列化的字段。
 
 在此示例中，将对象（具有成员 **Location** 结构的 **SensorData** 类）序列化到内存流，继而又将此流反序列化。然后，将结果与初始实例进行比较，以确认恢复的 **SensorData** 对象与原始对象相同。
 
@@ -192,7 +192,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
 
 ## <a id="Scenario2"></a>通过通用记录进行序列化
 
-当数据无法使用具有数据协定的 .NET 类表示而导致不能使用反射时，可以在通用记录中显式指定 JSON 架构。此方法通常比使用反射和用于特定 C\# 类的序列化程序速度慢。在这种情况下，数据架构也可能是动态的，因为在编译之前它是未知的。以逗号分隔值 (CSV) 文件表示的数据（在运行时转换为 Avro 格式之前，其架构一直是未知的）是这种动态方案的一个示例。
+当数据无法使用具有数据协定的 .NET 类表示而导致不能使用反射时，可以在通用记录中显式指定 JSON 架构。此方法通常比使用反射和用于特定 C# 类的序列化程序速度慢。在这种情况下，数据架构也可能是动态的，因为在编译之前它是未知的。以逗号分隔值 (CSV) 文件表示的数据（在运行时转换为 Avro 格式之前，其架构一直是未知的）是这种动态方案的一个示例。
 
 此示例演示如何创建 [**AvroRecord**][2] 并使用它显式指定 JSON 架构，如何为其填充数据，然后对其进行序列化和反序列化。然后，将结果与初始实例进行比较，以确认恢复的记录与原始记录相同。
 

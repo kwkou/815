@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-queue-service" urlDisplayName="Queue Service" pageTitle="How to use queue storage from .NET | Windows Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Learn how to use the Windows Azure queue storage service to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use the Queue Storage Service" authors="tamram" />
+﻿<properties linkid="dev-net-2-how-to-queue-service" urlDisplayName="Queue Service" pageTitle="How to use queue storage from .NET | Windows Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="Learn how to use the Windows Azure queue storage service to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use the Queue Storage Service" authors="tamram" />
 <tags ms.service="storage"
     ms.date="12/05/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 如何通过 .NET 使用队列存储
 
 本指南将演示如何使用 Azure 队列存储服务执行常见方案。
-示例是用 C\# 代码编写的并
+示例是用 C# 代码编写的并
 使用了 Azure .NET 存储客户端库。涉及的方案包括**插入**、
 **查看**、
 **获取**和
@@ -106,7 +106,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 
 ### 命名空间声明
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure.Storage;

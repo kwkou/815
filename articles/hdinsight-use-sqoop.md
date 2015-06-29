@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-use-sqoop" urlDisplayName="Use Sqoop with HDInsight Samples" pageTitle="将 Sqoop 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use Azure PowerShell from a workstation to run Sqoop import and export between an HDInsight cluster and an Azure SQL数据库." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Use Sqoop with HDInsight" authors="jgao" />
+﻿<properties linkid="manage-services-hdinsight-use-sqoop" urlDisplayName="Use Sqoop with HDInsight Samples" pageTitle="将 Sqoop 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use Azure PowerShell from a workstation to run Sqoop import and export between an HDInsight cluster and an Azure SQL数据库." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Use Sqoop with HDInsight" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="11/12/2014"
     wacn.date="04/11/2015"
@@ -377,7 +377,7 @@ WASB 语法是：
 
 ## <a id="export-sdk"></a>使用 HDInsight .NET SDK 来运行 Sqoop 导出
 
-下面是一个使用 HDInsight .NET SDK 运行 Sqoop 导出的 C\# 示例。有关使用 HDInsight .NET SDK 的常规信息，请参阅[以编程方式提交 Hadoop 作业][]。
+下面是一个使用 HDInsight .NET SDK 运行 Sqoop 导出的 C# 示例。有关使用 HDInsight .NET SDK 的常规信息，请参阅[以编程方式提交 Hadoop 作业][]。
 
     using System;
     using System.Collections.Generic;

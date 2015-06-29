@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="将 Hadoop 2.2 群集与 HDInsight 配合使用入门 | Azure" metaKeywords="" description="Get started using Hadoop 2.2 clusters with HDInsight, a big data solution. Learn how to provision clusters, run MapReduce jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Azure HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="将 Hadoop 2.2 群集与 HDInsight 配合使用入门 | Azure" metaKeywords="" description="Get started using Hadoop 2.2 clusters with HDInsight, a big data solution. Learn how to provision clusters, run MapReduce jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Azure HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/28/2014"
     wacn.date="04/11/2015"
@@ -276,7 +276,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
 -   [将 Hive 与 HDInsight 配合使用][]
 -   [将 Pig 与 HDInsight 配合使用][]
 -   [将 Oozie 与 HDInsight 配合使用][]
--   [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序][]
+-   [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序][]
 -   [为 HDInsight 开发 Java MapReduce 程序][]
 
   [Apache Hadoop]: http://hadoop.apache.org/
@@ -311,4 +311,4 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
   [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
   [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
   [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/
-  [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/

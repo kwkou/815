@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Windows Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use the Windows Azure blob service to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use the Windows Azure Blob Storage Service in .NET" authors="tamram" />
+﻿<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Windows Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use the Windows Azure blob service to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use the Windows Azure Blob Storage Service in .NET" authors="tamram" />
 <tags ms.service="storage"
     ms.date="12/05/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 如何通过 .NET 使用 Blob 存储
 
 本指南将演示如何使用 Azure Blob 存储服务执行常见方案。
-示例是用 C\# 编写的并
+示例是用 C# 编写的并
 使用了 Azure .NET 存储客户端库。涉及的任务包括
 **上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的
 详细信息，请参阅[后续步骤][]部分。
@@ -106,7 +106,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 
 ### 命名空间声明
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure.Storage;

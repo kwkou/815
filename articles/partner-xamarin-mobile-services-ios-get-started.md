@@ -1,4 +1,4 @@
-<properties pageTitle="Get Started with Mobile Services for Xamarin iOS apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Xamarin iOS development." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with Mobile Services" authors="craigd" solutions="" manager="" editor="" />
+﻿<properties pageTitle="Get Started with Mobile Services for Xamarin iOS apps" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Xamarin iOS development." metaCanonical="" services="mobile" documentationCenter="Mobile" title="Get started with Mobile Services" authors="craigd" solutions="" manager="" editor="" />
 <tags ms.service="mobile"
     ms.date="11/22/2014"
     wacn.date="04/11/2015"
@@ -88,7 +88,7 @@
 
 	<div class="dev-callout"><b>说明</b>
 
-    <p>你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 TodoService.cs C\# 文件中。</p>
+    <p>你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 TodoService.cs C# 文件中。</p>
 	</div>
 
 4.  返回管理门户，单击“数据” 选项卡，然后单击“TodoItems” 表。

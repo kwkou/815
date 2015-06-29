@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
+﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="03/03/2015"
     wacn.date="04/11/2015"
@@ -200,7 +200,7 @@ w3c 方案生成以下三种大小的 IIS W3C 日志数据并且将这些数据�
 
 ### 运行 Java MapReduce 作业
 
-MapReduce 是针对 Hadoop 的基本计算引擎。默认情况下，它是在 Java 中实现的，但也有利用采用 C\# 的 .NET 和 Hadoop Streaming 的示例。运行 MapReduce 作业的语法是：
+MapReduce 是针对 Hadoop 的基本计算引擎。默认情况下，它是在 Java 中实现的，但也有利用采用 C# 的 .NET 和 Hadoop Streaming 的示例。运行 MapReduce 作业的语法是：
 
     hadoop jar <jarFileName>.jar <className> <inputFiles> <outputFolder>
 

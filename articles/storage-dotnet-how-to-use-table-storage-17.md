@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service (2.0)" pageTitle="How to use table storage | Windows Azure" metaKeywords="Get started Azure table, Azure nosql, Azure large structured data store, Azure table, Azure table storage, Azure table .NET, Azure table storage .NET, Azure table C#, Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Table Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service (2.0)" pageTitle="How to use table storage | Windows Azure" metaKeywords="Get started Azure table, Azure nosql, Azure large structured data store, Azure table, Azure table storage, Azure table .NET, Azure table storage .NET, Azure table C#, Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Table Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="10/02/2014"
     wacn.date="04/11/2015"
@@ -9,7 +9,7 @@
 [1.7 版][] [2.0 版][]
 
 本指南将演示如何使用 Azure 表存储服务执行常见方案。
-示例是用 C\# 代码编写的且使用了 .NET API。
+示例是用 C# 代码编写的且使用了 .NET API。
 涉及的方案包括**创建和删除表、在表中插入和查询实体**
 。有关表的详细信息，请参阅
 [后续步骤][]部分。
@@ -107,7 +107,7 @@ Azure .NET 存储 API 支持
 
 ## 以编程方式访问如何：以编程方式访问表存储
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure;
@@ -143,7 +143,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 ## 将实体添加到表如何：将实体添加到表
 
 实体将映射到使用派生自 **TableServiceEntity** 的
-自定义类的 C\# 对象。若要将实体添加到表，请先创建用于
+自定义类的 C# 对象。若要将实体添加到表，请先创建用于
 定义实体的属性的类。以下代码定义了
 将客户的名字和姓氏分别用作行键和分区键的
 实体类。实体的分区键和行键共同唯一地标识

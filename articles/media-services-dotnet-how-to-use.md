@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Use Media Services" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Use Media Services" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/02/2015"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 如何使用 Media Services
 =======================
 
-本指南说明如何开始使用 Azure Media Services 进行编程。本指南由几篇文章组成，并提供 Media Services 的技术概述、针对 Media Services 配置 Azure 帐户的步骤、开发设置指南，以及介绍如何完成典型编程任务的主题。演示的方案包括：上载资产、加密资产、为资产编码和交付资产。示例以 C\# 编写，并使用 Media Services SDK for .NET。有关 Azure Media Services 的详细信息，请参阅[后续步骤](#next-steps)主题。
+本指南说明如何开始使用 Azure Media Services 进行编程。本指南由几篇文章组成，并提供 Media Services 的技术概述、针对 Media Services 配置 Azure 帐户的步骤、开发设置指南，以及介绍如何完成典型编程任务的主题。演示的方案包括：上载资产、加密资产、为资产编码和交付资产。示例以 C# 编写，并使用 Media Services SDK for .NET。有关 Azure Media Services 的详细信息，请参阅[后续步骤](#next-steps)主题。
 
 也可以使用基于 OData 的 REST API 为 Media Services 编程。通过 .NET 语言或其他编程语言对 Media Services 执行 REST API 调用便可生成应用程序。有关使用 Media Services REST API 进行编程的完整文档系列，请参阅[使用 Azure Media Services REST API 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973618)。
 
@@ -80,7 +80,7 @@ Media Services 支持下表中所述的多种常见媒体开发方案。
 
 #### Windows 8 应用程序
 
-对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C\# 和 C+）生成 Windows 应用商店应用程序。
+对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C# 和 C+）生成 Windows 应用商店应用程序。
 
 -   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://go.microsoft.com/fwlink/?LinkID=246146)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](http://go.microsoft.com/fwlink/?LinkId=271647)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/zh-cn/library/jj573656(v=vs.90).aspx)。
 

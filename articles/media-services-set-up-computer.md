@@ -24,9 +24,9 @@
 
 ### 在 Visual Studio 中创建应用程序
 
-本部分演示如何在 Visual Studio 中创建项目，以及如何将该项目设置为进行 Media Services 开发。在本示例中，该项目为 C\# Windows 控制台应用程序，但此处所示的设置步骤同样适用于针对 Media Services 应用程序（例如，Windows 窗体应用程序或 ASP.NET Web 应用程序）创建的其他类型的项目。
+本部分演示如何在 Visual Studio 中创建项目，以及如何将该项目设置为进行 Media Services 开发。在本示例中，该项目为 C# Windows 控制台应用程序，但此处所示的设置步骤同样适用于针对 Media Services 应用程序（例如，Windows 窗体应用程序或 ASP.NET Web 应用程序）创建的其他类型的项目。
 
-1.  在 Visual Studio 2012 或 Visual Studio 2010 SP1 中创建一个新的 C\# **控制台应用程序**。输入“名称”、“位置”和“解决方案名称”，然后单击**“确定”**。
+1.  在 Visual Studio 2012 或 Visual Studio 2010 SP1 中创建一个新的 C# **控制台应用程序**。输入“名称”、“位置”和“解决方案名称”，然后单击**“确定”**。
 2.  添加对 **System.Configuration** 程序集的引用。若要添加对 **System.Configuration** 的引用，请在**解决方案资源管理器**中，右键单击**“引用”**节点，然后选择**“添加引用...”**。在“管理引用”对话框中，**选择** **“System.Configuration”**，然后单击**“确定”**。
 3.  添加对 **Azure SDK for .NET**(Microsoft.WindowsAzure.StorageClient.dll)、**Azure Media Services SDK for .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) 和 **WCF Data Services 5.0 for OData V3** (Microsoft.Data.OData.dll) 库的引用，只需通过 [windowsazure.mediaservices Nuget](http://nuget.org/packages/windowsazure.mediaservices) 程序包进行操作即可。
 

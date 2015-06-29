@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-data-wp8" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Phone) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Phone app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="wesmc" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-dotnet-backend-get-started-with-data-wp8" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Phone) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Phone app." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="wesmc" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -32,7 +32,7 @@
 
 本教程是在 [GetStartedWithMobileServices 应用程序][]的基础上制作的，该应用程序是一个 Windows Phone Silverlight 8 应用程序项目。此应用程序的 UI 与移动服务快速入门中生成的应用程序类似，不过，前者的一些新增项本地存储在内存中。
 
-1.  从[开发人员代码示例站点][GetStartedWithMobileServices 应用程序]下载 GetStartedWithMobileServices 示例应用程序的 C\# 版本。
+1.  从[开发人员代码示例站点][GetStartedWithMobileServices 应用程序]下载 GetStartedWithMobileServices 示例应用程序的 C# 版本。
 
     ![][0]
 
@@ -86,7 +86,7 @@
 
     ![][7]
 
-6.  在“添加现有项目”对话框中，导航到你已移到 "C\#" 目录中的移动服务项目文件夹。在服务子目录中选择 C\# 项目文件 (.csproj)。单击“打开” 将该项目添加到你的解决方案。
+6.  在“添加现有项目”对话框中，导航到你已移到 "C\#" 目录中的移动服务项目文件夹。在服务子目录中选择 C# 项目文件 (.csproj)。单击“打开” 将该项目添加到你的解决方案。
 
     ![][8]
 

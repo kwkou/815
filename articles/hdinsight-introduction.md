@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-introduction-hdinsight" urlDisplayName="HDInsight Introduction" pageTitle="Azure HDInsight 简介 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Apache Hadoop clusters in the cloud, to provide a software framework to manage, analyze, and report on big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Introduction to Azure HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-introduction-hdinsight" urlDisplayName="HDInsight Introduction" pageTitle="Azure HDInsight 简介 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Apache Hadoop clusters in the cloud, to provide a software framework to manage, analyze, and report on big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Introduction to Azure HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/02/2014"
     wacn.date="04/11/2015"
@@ -63,7 +63,7 @@ HDInsight 提供了对 Hive 和 Pig 的实现以集成数据处理和仓库功�
 
 ### Pig
 
-Pig 是一个高级别平台，用于在 Hadoop 群集上处理大数据。Pig 包含一种称作 Pig Latin 的数据流语言（该语言支持对大型数据集编写查询）和一个从控制台运行程序的执行环境。Pig Latin 程序包含在后台转换为 MapReduce 程序系列的数据集转换系列。Pig Latin 抽象提供了比 MapReduce 更丰富的数据结构，并为 Hadoop 执行 SQL 对关系数据库管理系统 (RDBMS) 执行的操作。Pig Latin 可完全扩展。在整理分析时，可调用用 Java、Python、Ruby、C\# 或 JavaScript 编写的用户定义的函数 (UDF) 来自定义每个处理路径阶段。有关其他信息，请参阅[欢迎使用 Apache Pig！（可能为英文页面）][]
+Pig 是一个高级别平台，用于在 Hadoop 群集上处理大数据。Pig 包含一种称作 Pig Latin 的数据流语言（该语言支持对大型数据集编写查询）和一个从控制台运行程序的执行环境。Pig Latin 程序包含在后台转换为 MapReduce 程序系列的数据集转换系列。Pig Latin 抽象提供了比 MapReduce 更丰富的数据结构，并为 Hadoop 执行 SQL 对关系数据库管理系统 (RDBMS) 执行的操作。Pig Latin 可完全扩展。在整理分析时，可调用用 Java、Python、Ruby、C# 或 JavaScript 编写的用户定义的函数 (UDF) 来自定义每个处理路径阶段。有关其他信息，请参阅[欢迎使用 Apache Pig！（可能为英文页面）][]
 
 ### Hive
 

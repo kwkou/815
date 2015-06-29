@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="Get started using Hadoop in HDInsight | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop" urlDisplayName="Get Started" pageTitle="Get started using Hadoop in HDInsight | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -199,7 +199,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 -   [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 -   [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 -   [将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]
--   [为 HDInsight 开发 C\# Hadoop 流程序][hdinsight-develop-streaming]
+-   [为 HDInsight 开发 C# Hadoop 流程序][hdinsight-develop-streaming]
 -   [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 <!-- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ -->

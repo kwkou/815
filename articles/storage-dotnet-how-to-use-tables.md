@@ -1,4 +1,4 @@
-<properties urlDisplayName="Table Service" pageTitle="如何使用表 storagrom .NET | Microsoft Azure" metaKeywords="Get started Azure table,Azure nosql,Azure large structured data store,Azure table,Azure table storage,Azure table .NET,Azure table storage .NET,Azure table C#,Azure table storage C#" description="了解如何使用 Microsoft Azure 表存储来创建和删除表,以及在表中插入和查询实体。" services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Windows Azure Table storage" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Table Service" pageTitle="如何使用表 storagrom .NET | Microsoft Azure" metaKeywords="Get started Azure table,Azure nosql,Azure large structured data store,Azure table,Azure table storage,Azure table .NET,Azure table storage .NET,Azure table C#,Azure table storage C#" description="了解如何使用 Microsoft Azure 表存储来创建和删除表,以及在表中插入和查询实体。" services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Windows Azure Table storage" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -10,7 +10,7 @@
 
 
 本指南将演示如何使用 Azure 表存储服务 
-执行常见方案。示例是用 C\# 代码编写的并使用了Azure .NET 存储客户端库。涉及的任务包括创建和删除表，以及使用表实体。有关表的详细信息，请参阅[后续步骤][]部分。
+执行常见方案。示例是用 C# 代码编写的并使用了Azure .NET 存储客户端库。涉及的任务包括创建和删除表，以及使用表实体。有关表的详细信息，请参阅[后续步骤][]部分。
 
 > [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是 Storage Client Library 4.x，可通过 [NuGet] 获取(https://www.nuget.org/packages/WindowsAzure.Storage) or as part of the [Azure SDK for .NET](/zh-cn/downloads/?sdk=net). See [How to: Programmatically access Table storage][] below for more details on obtaining the Storage Client Library.
 
@@ -96,7 +96,7 @@ Microsoft.WindowsAzure.CloudConfigurationManager 命名空间，则可以使用 
 <h2><a name="add-entity"></a>如何：将实体添加到表</h2>
 
 实体将映射到使用派生自
-**TableEntity** 的自定义类的 C\# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开  `get` 和  `set` 的受支持类型的公共属性。
+**TableEntity** 的自定义类的 C# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。查询分区键相同的实体的速度快于查询分区键不同的实体的速度，但使用不同的分区键可实现更高的并行操作可伸缩性。对于应存储在表服务中的任何属性，该属性必须是公开  `get` 和  `set` 的受支持类型的公共属性。
 此外，你的实体类型 *must*公开不带参数的构造函数。
 
     public class CustomerEntity : TableEntity

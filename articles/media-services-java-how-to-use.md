@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-media-services-java" urlDisplayName="Media Services" pageTitle="How to use Media Services (Java) - Azure feature guide" metaKeywords="Azure Media Services, Azure media, Azure streaming, azure media, azure streaming, azure encoding" description="Describes how to use Azure Media Services to perform common tasks including encoding, encrypting, and streaming resources." metaCanonical="" services="media-services" documentationCenter="Java" title="How to Use Media Services" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties linkid="develop-media-services-how-to-guides-media-services-java" urlDisplayName="Media Services" pageTitle="How to use Media Services (Java) - Azure feature guide" metaKeywords="Azure Media Services, Azure media, Azure streaming, azure media, azure streaming, azure encoding" description="Describes how to use Azure Media Services to perform common tasks including encoding, encrypting, and streaming resources." metaCanonical="" services="media-services" documentationCenter="Java" title="How to Use Media Services" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="media-services"
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -83,7 +83,7 @@ Media Services 支持下表中所述的多种常见媒体开发方案。
 
 #### Windows 8 应用程序
 
-对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C\# 和 C+）生成 Windows 应用商店应用程序。
+对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C# 和 C+）生成 Windows 应用商店应用程序。
 
 -   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://go.microsoft.com/fwlink/?LinkID=246146)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](http://go.microsoft.com/fwlink/?LinkId=271647)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/zh-cn/library/jj573656.aspx)。
 

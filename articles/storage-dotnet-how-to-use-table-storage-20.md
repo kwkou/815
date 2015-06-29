@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage  from .NET | Windows Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use the Table Storage Service" authors="tamram" />
+﻿<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage  from .NET | Windows Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use the Table Storage Service" authors="tamram" />
 <tags ms.service="storage"
     ms.date="10/02/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 如何通过 .NET 使用表存储服务
 
 本指南将演示如何使用 Azure 表存储服务执行常见方案。
-示例是用 C\# 代码编写的并使用了
+示例是用 C# 代码编写的并使用了
 Azure .NET 存储客户端库。涉及的方案包括**创建和删除表**
 ，以及**使用表实体**。有关表的详细信息，请参阅
 [后续步骤][]部分。
@@ -112,7 +112,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 
 ### 命名空间声明
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure.Storage;
@@ -167,7 +167,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 ## 将实体添加到表如何：将实体添加到表
 
 实体将映射到使用派生自 **TableEntity** 的
-自定义类的 C\# 对象。若要将实体添加到表，请创建用于定义
+自定义类的 C# 对象。若要将实体添加到表，请创建用于定义
 实体的属性的类。以下代码定义了
 将客户的名字和姓氏分别用作行键和分区键的
 实体类。实体的分区键和行键共同唯一地标识

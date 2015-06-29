@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-queue-service" urlDisplayName="Queue Service (2.0)" pageTitle="How to use the queue storage service | Windows Azure" metaKeywords="Get started Azure queue, Azure asynchronous processing, Azure queue, Azure queue storage, Azure queue .NET, Azure queue storage .NET, Azure queue C#, Azure queue storage C#" description="Learn how to use the Azure queue storage service to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Queue Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="dev-net-2-how-to-queue-service" urlDisplayName="Queue Service (2.0)" pageTitle="How to use the queue storage service | Windows Azure" metaKeywords="Get started Azure queue, Azure asynchronous processing, Azure queue, Azure queue storage, Azure queue .NET, Azure queue storage .NET, Azure queue C#, Azure queue storage C#" description="Learn how to use the Azure queue storage service to create and delete queues and insert, peek, get, and delete queue messages." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Queue Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="12/05/2014"
     wacn.date="04/11/2015"
@@ -9,7 +9,7 @@
 [1.7 版][] [2.0 版][]
 
 本指南将演示如何使用 Azure 队列存储服务执行常见方案。
-示例是用 C\# 代码编写的且使用了 .NET API。
+示例是用 C# 代码编写的且使用了 .NET API。
 涉及的方案包括**插入**、
 **查看**、
 **获取**和
@@ -98,7 +98,7 @@ Azure .NET 存储 API 支持
 
 ## 以编程方式访问如何：使用 .NET 以编程方式访问队列
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure;

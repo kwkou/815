@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL数据库 using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL数据库 using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="12/04/2014"
     wacn.date="04/11/2015"
@@ -611,7 +611,7 @@ HiveQL 脚本将执行以下操作：
 -   [将 Sqoop 与 HDInsight 配合使用][]
 -   [将 Pig 与 HDInsight 配合使用][]
 -   [为 HDInsight 开发 Java MapReduce 程序][]
--   [为 HDInsight 开发 C\# Hadoop 流程序][]
+-   [为 HDInsight 开发 C# Hadoop 流程序][]
 
   [HiveQL]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
   [HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
@@ -632,4 +632,4 @@ HiveQL 脚本将执行以下操作：
   [将 Sqoop 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
   [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
   [为 HDInsight 开发 Java MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-  [为 HDInsight 开发 C\# Hadoop 流程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [为 HDInsight 开发 C# Hadoop 流程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
