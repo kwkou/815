@@ -18,7 +18,7 @@
 -   除单个 HTTP 侦听程序以外的所有其他侦听端口都应禁用。在 Tomcat 中，这些端口包括 Shutdown、HTTPS 和 AJP 端口。
 -   容器仅应针对 IPv4 流量进行配置。
 -   需要在配置中设置应用程序的 **startup** 命令。
--   需要目录具有写入权限的应用程序应位于 Azure 网站的内容目录中，即 **D:\\home**。
+-   需要目录具有写入权限的应用程序应位于 Azure 网站的内容目录中，即 **D:&#92;home**。
 
 您可以在 web.config 文件中根据需要设置环境变量。
 
@@ -57,7 +57,7 @@
 
 **stdoutLogEnabled**（默认值="true"。）如果为 true，**processPath** 设置中指定的进程的 **stdout** 和 **stderr** 将重定向到 **stdoutLogFile** 中指定的文件（请参阅 **stdoutLogFile** 部分）。
 
-**stdoutLogFile**（默认值="d:\\home\\LogFiles\\httpPlatformStdout.log"。）记录 **processPath** 中指定的进程的 **stdout** 和 **stderr** 的绝对文件路径。
+**stdoutLogFile**（默认值="d:&#92;home&#92;LogFiles&#92;httpPlatformStdout.log"。）记录 **processPath** 中指定的进程的 **stdout** 和 **stderr** 的绝对文件路径。
 
 > [WACOM.NOTE] `%HTTP_PLATFORM_PORT%` 是一个特殊的占位符，需要指定为 **arguments** 的一部分或 **httpPlatform** **environmentVariables** 列表的一部分。其将会被替换为 **HttpPlatformHandler** 内部生成的端口，以便 **processPath** 指定的进程可以侦听此端口。
 
@@ -126,9 +126,9 @@ Azure 网站上不支持 Direct3d 调用。要禁用这些调用，添加以下 
 
 我们的测试使用 Hudson 3.1.2 war 和默认 Tomcat 7.0.50 实例，但没有使用 UI 来进行设置。由于 Hudson 为软件构建工具，因此建议将其安装在可在站点上设置 **AlwaysOn** 标志的专用实例上。
 
-1.  在您的 Azure 网站的站点根目录（即 **d:\\home\\site\\wwwroot**）中，创建 **webapps** 目录（如果尚不存在），并将 Hudson.war 放在 **d:\\home\\site\\wwwroot\\webapps** 中。
-2.  下载 Apache Maven 3.0.5（与 Hudson 兼容），并将其放在 **d:\\home\\site\\wwwroot** 中。
-3.  在 **d:\\home\\site\\wwwroot** 中创建 web.config，并在其中粘贴以下内容：
+1.  在您的 Azure 网站的站点根目录（即 **d:&#92;home&#92;site&#92;wwwroot**）中，创建 **webapps** 目录（如果尚不存在），并将 Hudson.war 放在 **d:&#92;home&#92;site&#92;wwwroot&#92;webapps** 中。
+2.  下载 Apache Maven 3.0.5（与 Hudson 兼容），并将其放在 **d:&#92;home&#92;site&#92;wwwroot** 中。
+3.  在 **d:&#92;home&#92;site&#92;wwwroot** 中创建 web.config，并在其中粘贴以下内容：
 
         <?xml version="1.0" encoding="UTF-8"?>
         <configuration>
@@ -182,7 +182,7 @@ Azure 网站支持 Liferay。由于 Liferay 可能需要大量内存，因此站
      `<Connector port="${port.http}" protocol="HTTP/1.1" connectionTimeout="600000" address="127.0.0.1" URIEncoding="UTF-8" />`
 -   注释掉 AJP 连接器。
 
-在 **liferay\\tomcat-7.0.40\\webapps\\ROOT\\WEB-INF\\classes** 文件夹中，创建文件 **portal-ext.properties**。此文件应包含一行如下所示的内容：
+在 **liferay&#92;tomcat-7.0.40&#92;webapps&#92;ROOT&#92;WEB-INF&#92;classes** 文件夹中，创建文件 **portal-ext.properties**。此文件应包含一行如下所示的内容：
 
     liferay.home=d:/home/site/wwwroot/liferay
 

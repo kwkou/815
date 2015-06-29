@@ -324,7 +324,7 @@ WASB 语法是：
         Write-Host "Standard Output" -BackgroundColor Green
         Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
-    请注意，字段分隔符为 **\\0x20**，它是空格。该分隔符在 sample.log 文件预处理 PowerShell 脚本中定义。若要了解有关 **-m 1** 的信息，请参阅 [Sqoop 用户指南][Sqoop]。
+    请注意，字段分隔符为 **&#92;0x20**，它是空格。该分隔符在 sample.log 文件预处理 PowerShell 脚本中定义。若要了解有关 **-m 1** 的信息，请参阅 [Sqoop 用户指南][Sqoop]。
 
 5.  单击“运行脚本” 或按 **F5** 键以运行该脚本。
 6.  使用 [Azure 管理门户][]检查导出的数据。

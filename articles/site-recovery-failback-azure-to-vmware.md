@@ -63,7 +63,7 @@ vContinuum 安装将在http://go.microsoft.com/fwlink/?linkid=526305进行
 
     ![](./media/site-recovery-failback-azure-to-vmware/image5.png)
 
-3.  指定 CS 通行短语。在 CS 注册期间，你应该已记下了通行短语。在 MT 和 PS 部署期间，你也会使用通行短语。如果你不记得通行短语，可以在 Azure 上进入 CS 服务器并找到  下存储的通行短语 C:\\Program Files (x86)\\InMage Systems\\private\\connection.passphrase
+3.  指定 CS 通行短语。在 CS 注册期间，你应该已记下了通行短语。在 MT 和 PS 部署期间，你也会使用通行短语。如果你不记得通行短语，可以在 Azure 上进入 CS 服务器并找到  下存储的通行短语 C:&#92;Program Files (x86)&#92;InMage Systems&#92;private&#92;connection.passphrase
 
     ![](./media/site-recovery-failback-azure-to-vmware/image6.png)
 

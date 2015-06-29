@@ -79,7 +79,7 @@
 
 在本部分中，你将更新显示在管理员 Web UI 每一页上的页眉、页脚和菜单项。该应用程序将提供三组管理员网页：一组用于邮件列表，一组用于邮件列表的订户，一组用于邮件。
 
-1.  在**解决方案资源管理器**中，展开 Views\\Shared 文件夹并打开 \_Layout.cshtml 文件。
+1.  在**解决方案资源管理器**中，展开 Views&#92;Shared 文件夹并打开 \_Layout.cshtml 文件。
 
     ![解决方案资源管理器中的 \_Layout.cshtml][解决方案资源管理器中的 \_Layout.cshtml]
 
@@ -534,11 +534,11 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 *MailingList*。
 
-2.  右键单击新的*“Views\\MailingList”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;MailingList”*文件夹，然后选择**“添加现有项”**。
 
     ![将现有项添加到 Views 文件夹][将现有项添加到 Views 文件夹]
 
-3.  导航到已下载示例应用程序的文件夹，选择 *Views\\MailingList* 文件夹中的所有四个 .cshtml 文件，然后单击“添加”。
+3.  导航到已下载示例应用程序的文件夹，选择 *Views&#92;MailingList* 文件夹中的所有四个 .cshtml 文件，然后单击“添加”。
 
 4.  打开 *Edit.cshtml* 文件并检查代码。
 
@@ -905,9 +905,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 *Subscriber*。
 
-2.  右键单击新的*“Views\\Subscriber”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;Subscriber”*文件夹，然后选择**“添加现有项”**。
 
-3.  导航到已下载示例应用程序的文件夹，选择 *Views\\Subscriber* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
+3.  导航到已下载示例应用程序的文件夹，选择 *Views&#92;Subscriber* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
 
 4.  打开 *Edit.cshtml* 文件并检查代码。
 
@@ -1229,9 +1229,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 `Message`。
 
-2.  右键单击新的*“Views\\Message”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;Message”*文件夹，然后选择**“添加现有项”**。
 
-3.  导航到已下载示例应用程序的文件夹，选择 *Views\\Message* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
+3.  导航到已下载示例应用程序的文件夹，选择 *Views&#92;Message* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
 
 4.  打开 *Edit.cshtml* 文件并检查代码。
 
@@ -1489,9 +1489,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 *Unsubscribe*。
 
-2.  右键单击新的*“Views\\Unsubscribe”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;Unsubscribe”*文件夹，然后选择**“添加现有项”**。
 
-3.  导航到你在其中下载了示例应用程序的文件夹，选择 *Views\\Unsubscribe* 文件夹中的 *Index.cshtml* 文件，然后单击“添加”。
+3.  导航到你在其中下载了示例应用程序的文件夹，选择 *Views&#92;Unsubscribe* 文件夹中的 *Index.cshtml* 文件，然后单击“添加”。
 
 4.  打开 *Index.cshtml* 文件并检查代码。
 
@@ -1603,13 +1603,13 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 适用于 ASP.NET Web API 服务方法：
 
--   Controllers\\SubscribeAPI.cs
+-   Controllers&#92;SubscribeAPI.cs
 
 适用于订户在单击电子邮件中通过服务方法生成的“确认”链接后获取的网页：
 
--   Models\\SubscribeVM.cs
--   Controllers\\SubscribeController.cs
--   Views\\Subscribe\\Index.cshtml
+-   Models&#92;SubscribeVM.cs
+-   Controllers&#92;SubscribeController.cs
+-   Views&#92;Subscribe&#92;Index.cshtml
 
 在[下一教程][下一教程]中，你将对辅助角色 A 这个用于计划电子邮件发送的辅助角色执行配置和编程操作。
 

@@ -119,7 +119,7 @@ SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服�
 
 ### 设置页眉和页脚
 
-1.  在“解决方案资源管理器”中，展开 *Views\\Shared* 文件夹并打开 \*\_Layout.cshtml\* 文件。
+1.  在“解决方案资源管理器”中，展开 *Views&#92;Shared* 文件夹并打开 \*\_Layout.cshtml\* 文件。
 
     ![解决方案资源管理器中的 \_Layout.cshtml][解决方案资源管理器中的 \_Layout.cshtml]
 
@@ -313,7 +313,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
     在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在您想要返回到以前的状态时使用）用于删除该表。
 
-4.  打开 *Migrations\\Configuration.cs* 文件。
+4.  打开 *Migrations&#92;Configuration.cs* 文件。
 
 5.  添加以下命名空间。
 
@@ -395,7 +395,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ## <a name="bkmk_addview"></a>编辑视图
 
-1.  打开 *Views\\Home\\Index.cshtml* 文件。在下一步中，我们将生成的标记替换为使用 [jQuery][jQuery] 和 [Knockout.js][Knockout.js] 的代码。此新代码将使用 Web API 和 JSON 检索联系人列表，然后使用 knockout.js 将联系人数据绑定至 UI。有关更多信息，请参见本教程结尾部分的[后续步骤][后续步骤]。
+1.  打开 *Views&#92;Home&#92;Index.cshtml* 文件。在下一步中，我们将生成的标记替换为使用 [jQuery][jQuery] 和 [Knockout.js][Knockout.js] 的代码。此新代码将使用 Web API 和 JSON 检索联系人列表，然后使用 knockout.js 将联系人数据绑定至 UI。有关更多信息，请参见本教程结尾部分的[后续步骤][后续步骤]。
 
 2.  将文件的内容替换为以下代码。
 
@@ -552,7 +552,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
     该样式表将用作联系人管理器应用程序的布局、颜色和样式。
 
-6.  打开 *App\_Start\\BundleConfig.cs* 文件。
+6.  打开 *App\_Start&#92;BundleConfig.cs* 文件。
 
 7.  添加以下代码以注册 [Knockout][Knockout] 插件。
 
@@ -708,7 +708,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
      public IHttpActionResult PutContact(int id, Contact contact)
      {
 
-5.  更新 *Views\\Home\\Index.cshtml* 文件的 *Scripts* 部分以包含代码，从而获取 XSRF 令牌。
+5.  更新 *Views&#92;Home&#92;Index.cshtml* 文件的 *Scripts* 部分以包含代码，从而获取 XSRF 令牌。
 
          @section Scripts {
             @Scripts.Render("~/bundles/knockout")

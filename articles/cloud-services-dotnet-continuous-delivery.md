@@ -33,7 +33,7 @@
 1.  在生成服务器上，安装包含 MSBuild 的 [.NET Framework 4][]、[.NET Framework 4.5][] 或 [.NET Framework 4.5.2][]。
 2.  安装 [Azure 创作工具][]（根据你的生成服务器的处理器，查找 WindowsAzureAuthoringTools-x86.msi 或 WindowsAzureAuthoringTools-x64.msi）。旧版文件的文件名可能包含 WindowsAzure。
 3. 安装 [Azure 库][]（查找 MicrosoftAzureLibsForNet-x86.msi 或 MicrosoftAzureLibsForNet-x64.msi)。
-4.  将 Microsoft.WebApplication.targets 文件从 Visual Studio 安装复制到生成服务器中。在装有 Visual Studio 的计算机上，该文件位于目录 C:\\Program Files(x86)\\MSBuild\\Microsoft\\VisualStudio\\v11.0\\WebApplications（对于 Visual Studio 2013，为 v12.0）中。你应将该文件复制到生成服务器上的同一目录中。
+4.  将 Microsoft.WebApplication.targets 文件从 Visual Studio 安装复制到生成服务器中。在装有 Visual Studio 的计算机上，该文件位于目录 C:&#92;Program Files(x86)&#92;MSBuild&#92;Microsoft&#92;VisualStudio&#92;v11.0&#92;WebApplications（对于 Visual Studio 2013，为 v12.0）中。你应将该文件复制到生成服务器上的同一目录中。
 5.  安装 [Azure Tools for Visual Studio][]。查找用于生成 Visual Studio 2012 项目的 MicrosoftAzureTools.VS110.exe，用于生成 Visual Studio 2013 项目的 MicrosoftAzureTools.VS120.exe，和用于生成 Visual Studio 2015 预览项目的 MicrosoftAzureTools.VS140.exe。
 
 <h2><a name="step2"> </a>步骤 2：使用 MSBuild 命令生成包</h2>
@@ -42,7 +42,7 @@
 
 1.  如果在生成服务器上安装了 Visual Studio，请单击"开始"，单击"所有程序"，然后在"Visual Studio 工具"文件夹中找到并单击"Visual Studio 命令提示符"。
 
-    如果未在生成服务器上安装 Visual Studio，则请打开命令提示符并确保可按相应的路径访问 MSBuild.exe。MSBuild 与 .NET Framework 一起安装在路径 %WINDIR%\\Microsoft.NET\\Framework\\*版本* 中。例如，若要在已安装 .NET Framework 4 的情况下将 MSBuild.exe 添加到 PATH 环境变量，请在命令提示符处键入以下命令：
+    如果未在生成服务器上安装 Visual Studio，则请打开命令提示符并确保可按相应的路径访问 MSBuild.exe。MSBuild 与 .NET Framework 一起安装在路径 %WINDIR%&#92;Microsoft.NET&#92;Framework&#92;*版本* 中。例如，若要在已安装 .NET Framework 4 的情况下将 MSBuild.exe 添加到 PATH 环境变量，请在命令提示符处键入以下命令：
 
         set PATH=%PATH%;"C:\Windows\Microsoft.NET\Framework\v4.0.30319"
 
@@ -56,7 +56,7 @@
 
     你也可以将项目名称指定为 MSBuild 参数。如果未指定，则将使用当前目录。有关 MSBuild 命令行选项的详细信息，请参阅 [MSBuild 命令行参考][1]。
 
-4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*\\bin\\*Configuration*\\app.publish\\。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
+4.  查找输出。默认情况下，此命令将创建与项目的根文件夹相关的目录，例如 *ProjectDir*&#92;bin&#92;*Configuration*&#92;app.publish&#92;。在生成 Azure 项目时，将生成两个文件，即包文件本身和附带的配置文件：
 
     -   Project.cspkg
     -   ServiceConfiguration.*TargetProfile*.cscfg
@@ -67,9 +67,9 @@
 
         MSBuild /t:Publish /p:TargetProfile=Cloud
 
-6.  指定输出的位置。使用 /p:PublishDir=*Directory*\\ 选项设置路径，包含尾随反斜杠分隔符，如以下示例所示：
+6.  指定输出的位置。使用 /p:PublishDir=*Directory*&#92; 选项设置路径，包含尾随反斜杠分隔符，如以下示例所示：
 
-        MSBuild /target:Publish /p:PublishDir=\\myserver\drops\
+        MSBuild /target:Publish /p:PublishDir=&#92;myserver\drops\
 
     构造并测试相应的 MSBuild 命令行以生成项目并将其并入一个 Azure 包后，你可将此命令行添加到生成脚本中。如果生成服务器使用自定义脚本，则此过程将依赖自定义生成过程的细节。如果你要将 TFS 用作生成环境，则可按照下一步中的说明操作来将 Azure 包生成添加到生成过程中。
 
@@ -79,7 +79,7 @@
 
 若要将 TFS 配置为生成 Azure 包，请执行下列步骤：
 
-1.  在开发计算机上的 Visual Studio 中，从"视图"菜单中选择"团队资源管理器"，或选择 Ctrl+\\、Ctrl+M。在"团队资源管理器"窗口中，展开"生成"节点，或者选择"生成"
+1.  在开发计算机上的 Visual Studio 中，从"视图"菜单中选择"团队资源管理器"，或选择 Ctrl+&#92;、Ctrl+M。在"团队资源管理器"窗口中，展开"生成"节点，或者选择"生成"
     页，然后选择"新建生成定义"。
 
     ![][0]
@@ -92,8 +92,8 @@
 4.  选择"生成默认值"选项卡，并在生成控制器下检查生成服务器的名称。此外，选择"将生成输出复制到以下放置文件夹"选项并指定所需的放置位置。 
 5.  单击"进程"选项卡。在"进程"选项卡上选择默认模板，在"生成"下选择项目（如果尚未选择），然后展开网格"生成"部分中的"高级"部分。 
 
-6.  选择"MSBuild 参数"，并按上面步骤 2 中所述设置相应的 MSBuild 命令行参数。例如，输入 **/t:Publish /p:PublishDir=\\\\myserver\\drops\\** 以生成一个包并将包文件复制到位置
-    \\\\myserver\\drops\\：
+6.  选择"MSBuild 参数"，并按上面步骤 2 中所述设置相应的 MSBuild 命令行参数。例如，输入 **/t:Publish /p:PublishDir=&#92;&#92;myserver&#92;drops&#92;** 以生成一个包并将包文件复制到位置
+    &#92;&#92;myserver&#92;drops&#92;：
 
     ![][2]
 
@@ -123,7 +123,7 @@
 
     这将显示有关你的订阅的信息。确认所有内容正确。
 
-4.  将[本文末尾][]提供的脚本模板保存到脚本文件夹，路径为 c:\\scripts\\WindowsAzure\\**PublishCloudService.ps1**。
+4.  将[本文末尾][]提供的脚本模板保存到脚本文件夹，路径为 c:&#92;scripts&#92;WindowsAzure&#92;**PublishCloudService.ps1**。
 
 5.  查看脚本的参数部分。添加或修改任何默认值。始终可通过传入显式参数来覆盖这些值。
 
@@ -332,14 +332,14 @@
 
 9.  在"杂项"部分中设置参数属性，如下所示：
 
-    1.  CloudConfigLocation ='c:\\drops\\app.publish\\ServiceConfiguration.Cloud.cscfg'   
+    1.  CloudConfigLocation ='c:&#92;drops&#92;app.publish&#92;ServiceConfiguration.Cloud.cscfg'   
         *此值派生自：
         ($PublishDir)ServiceConfiguration.Cloud.cscfg*
 
-    2.  PackageLocation = 'c:\\drops\\app.publish\\ContactManager.Azure.cspkg'   
+    2.  PackageLocation = 'c:&#92;drops&#92;app.publish&#92;ContactManager.Azure.cspkg'   
         *此值派生自： ($PublishDir)($ProjectName).cspkg*
 
-    3.  PublishScriptLocation = 'c:\\scripts\\WindowsAzure\\PublishCloudService.ps1'
+    3.  PublishScriptLocation = 'c:&#92;scripts&#92;WindowsAzure&#92;PublishCloudService.ps1'
 
     4.  ServiceName = 'mycloudservicename'   
         *在此处使用适当的云服务名称*
@@ -350,7 +350,7 @@
         *在此处使用适当的存储帐户名称*
 
     7.  SubscriptionDataFileLocation =
-        'c:\\scripts\\WindowsAzure\\Subscription.xml'
+        'c:&#92;scripts&#92;WindowsAzure&#92;Subscription.xml'
 
     8.  SubscriptionName = 'default'
 

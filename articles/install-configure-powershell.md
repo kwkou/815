@@ -103,7 +103,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 必须提供此信息。默认的
 位置和文件名格式为：
 
-	C:\\Users\&lt;UserProfile&gt;\\Download\\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
+	C:&#92;Users\&lt;UserProfile&gt;&#92;Download&#92;[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
 
 5. 键入如下命令，用您的 Windows 帐户名称和路径以及文件名替换占位符：
 

@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
+<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="HDInsight Emulator 入门 | Azure" metaKeywords="hdinsight, Azure hdinsight, hdinsight azure, get started hdinsight, emulator, hdinsight emulator" description="Learn how to use HDInsight Emulator for Azure." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" title="Get started with the HDInsight Emulator" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="03/03/2015"
     wacn.date="04/11/2015"
@@ -68,7 +68,7 @@ Microsoft HDInsight Emulator 可通过 Microsoft Web 平台安装程序进行安
 
     ![HDI.Emulator.Services][]
 
-    有关安装和运行 HDInsight Server 的已知问题，请参阅 [HDInsight Emulator 发行说明][]。安装日志位于 **C:\HadoopFeaturePackSetup\\HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**。
+    有关安装和运行 HDInsight Server 的已知问题，请参阅 [HDInsight Emulator 发行说明][]。安装日志位于 **C:\HadoopFeaturePackSetup&#92;HadoopFeaturePackSetupTools\gettingStarted.winpkg.install.log**。
 
 ##<a id="runwordcount"></a> 运行单词计数 MapReduce 作业
 
@@ -167,7 +167,7 @@ w3c 方案生成以下三种大小的 IIS W3C 日志数据并且将这些数据�
 **导入示例 w3c 日志数据：**
 
 1.  从桌面打开 Hadoop 命令行。
-2.  运行以下命令以便将目录更改为 **C:\\Hadoop\\GettingStarted**：
+2.  运行以下命令以便将目录更改为 **C:&#92;Hadoop&#92;GettingStarted**：
 
         cd \Hadoop\GettingStarted
 
@@ -204,12 +204,12 @@ MapReduce 是针对 Hadoop 的基本计算引擎。默认情况下，它是在 J
 
     hadoop jar <jarFileName>.jar <className> <inputFiles> <outputFolder>
 
-jar 文件和源文件位于 C:\\Hadoop\\GettingStarted\\Java 文件夹中。
+jar 文件和源文件位于 C:&#92;Hadoop&#92;GettingStarted&#92;Java 文件夹中。
 
 **运行 MapReduce 作业以便计算网页点击数**
 
 1.  打开 Hadoop 命令行。
-2.  运行以下命令以便将目录更改为 **C:\\Hadoop\\GettingStarted**：
+2.  运行以下命令以便将目录更改为 **C:&#92;Hadoop&#92;GettingStarted**：
 
         cd \Hadoop\GettingStarted
 
@@ -229,7 +229,7 @@ jar 文件和源文件位于 C:\\Hadoop\\GettingStarted\\Java 文件夹中。
 
     w3c\_scenarios.jar
 
-    jar 文件位于 C:\\Hadoop\\GettingStarted\\Java 文件夹中。
+    jar 文件位于 C:&#92;Hadoop&#92;GettingStarted&#92;Java 文件夹中。
 
     microsoft.hadoop.w3c.TotalHitsForPage
 
@@ -269,7 +269,7 @@ jar 文件和源文件位于 C:\\Hadoop\\GettingStarted\\Java 文件夹中。
 **运行 Hive 作业**
 
 1.  打开 Hadoop 命令行。
-2.  将目录更改到 **C:\\Hadoop\\GettingStarted** 文件夹
+2.  将目录更改到 **C:&#92;Hadoop&#92;GettingStarted** 文件夹
 3.  运行以下命令以便在 **/w3c/hive/input** 文件夹存在时删除该文件夹。如果该文件夹存在，则 hive 作业将失败。
 
         hadoop fs -rmr /w3c/hive/input
@@ -364,7 +364,7 @@ Pig 处理使用称作 *Pig Latin* 的数据流语言。Pig Latin 抽象提供�
 **运行 pig 作业：**
 
 1.  打开 Hadoop 命令行。
-2.  将目录更改到 C:\\Hadoop\\GettingStarted 文件夹。
+2.  将目录更改到 C:&#92;Hadoop&#92;GettingStarted 文件夹。
 3.  运行以下命令来提交 Pig 作业：
 
         C:\Hadoop\pig-0.9.3-SNAPSHOT\bin\pig.cmd -f ".\Pig\w3c\TotalHitsForPage.pig" -p "input=/w3c/input/small/data_w3c_small.txt"

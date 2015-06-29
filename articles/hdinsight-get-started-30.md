@@ -190,12 +190,12 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
 **检索 MapReduce 作业的结果**
 
 1.  打开 **Azure PowerShell**。
-2.  运行以下命令创建 C:\\Tutorials 文件夹，并将目录更改为该文件夹：
+2.  运行以下命令创建 C:&#92;Tutorials 文件夹，并将目录更改为该文件夹：
 
         mkdir \Tutorials
         cd \Tutorials
 
-    默认 Azure Powershell 目录是 *C:\\Windows\\System32\\WindowsPowerShell\\v1.0*。默认情况下，你对此文件夹没有写入权限。必须将目录更改为你有写入权限的文件夹。
+    默认 Azure Powershell 目录是 *C:&#92;Windows&#92;System32&#92;WindowsPowerShell&#92;v1.0*。默认情况下，你对此文件夹没有写入权限。必须将目录更改为你有写入权限的文件夹。
 
 3.  在以下命令中设置三个变量，然后运行它们：
 
@@ -219,7 +219,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
         # 将作业输出下载到工作站
         Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force
 
-    *example/data/WordCountOutput* 文件夹是你在运行 MapReduce 作业时指定的输出文件夹。*part-r-00000* 是 MapReduce 作业输出的默认文件名。此文件将下载到本地文件夹上的相同文件夹结构。例如，在以下屏幕快照中，当前文件是 C 根文件夹。此文件将下载到 *C:\\example\\data\\WordCountOutput\\* 文件夹。
+    *example/data/WordCountOutput* 文件夹是你在运行 MapReduce 作业时指定的输出文件夹。*part-r-00000* 是 MapReduce 作业输出的默认文件名。此文件将下载到本地文件夹上的相同文件夹结构。例如，在以下屏幕快照中，当前文件是 C 根文件夹。此文件将下载到 *C:&#92;example&#92;data&#92;WordCountOutput&#92;* 文件夹。
 
 6.  运行以下命令来打印 MapReduce 作业输出文件：
 

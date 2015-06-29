@@ -22,7 +22,7 @@
 3. 根据[为 Azure 创建服务证书](https://msdn.microsoft.com/zh-CN/library/azure/gg432987.aspx)中所述创建证书。保留 .pfx 和 RDP 证书指纹，并将证书上载到目标云服务。
 4. 在 MSBuild 命令行中使用以下选项生成一个已启用远程调试的包。（更新系统和项目文件的路径。）
 ```
-	/TARGET:PUBLISH /PROPERTY:Configuration=Debug;EnableRemoteDebugger=true;VSX64RemoteDebuggerPath="C:\Remote Debugger\x64\\";RemoteDebuggerConnectorCertificateThumbprint="56D7D1B25B472268E332F7FC0C87286458BFB6B2";RemoteDebuggerConnectorVersion="2.4" "C:\Users\yourusername\Documents\visual studio 2013\Projects\WindowsAzure1\WindowsAzure1.sln"
+	/TARGET:PUBLISH /PROPERTY:Configuration=Debug;EnableRemoteDebugger=true;VSX64RemoteDebuggerPath="C:\Remote Debugger\x64&#92;";RemoteDebuggerConnectorCertificateThumbprint="56D7D1B25B472268E332F7FC0C87286458BFB6B2";RemoteDebuggerConnectorVersion="2.4" "C:\Users\yourusername\Documents\visual studio 2013\Projects\WindowsAzure1\WindowsAzure1.sln"
 ```
 5. 使用上一步中生成的包和 .cscfg 文件发布到目标云服务。
 6. 将证书（.pfx 文件）导入到装有 Visual Studio 和 Azure SDK 2.4 的计算机。

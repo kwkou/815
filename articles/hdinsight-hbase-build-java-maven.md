@@ -30,9 +30,9 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
     -   **pom.xml** - 项目对象模型 ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) 包含用于生成项目的信息和配置详细信息
 
-    -   **src** - 包含 **main\\java\\com\\microsoft\\examples** 目录的目录，你将在其中创作应用程序。
+    -   **src** - 包含 **main&#92;java&#92;com&#92;microsoft&#92;examples** 目录的目录，你将在其中创作应用程序。
 
-3.  删除 **src\\test\\java\\com\\microsoft\\examples\\apptest.java** 文件，因为本示例用不到该文件。
+3.  删除 **src&#92;test&#92;java&#92;com&#92;microsoft&#92;examples&#92;apptest.java** 文件，因为本示例用不到该文件。
 
 ## 更新项目对象模型
 
@@ -82,7 +82,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
           </plugins>
         </build>
 
-    这将会配置一个包含 HBase 配置信息的资源 (**conf\\hbase-site.xml**)。
+    这将会配置一个包含 HBase 配置信息的资源 (**conf&#92;hbase-site.xml**)。
 
     > [WACOM.NOTE] 你也可以通过代码设置配置值。请参阅以下 **CreateTable** 示例中的注释，以了解如何操作。
 
@@ -130,13 +130,13 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
     此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-    > [WACOM.NOTE] 这是一个非常精简的 hbase-site.xml 文件，它只包含 HDInsight 群集的最少量设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用远程桌面连接到 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-\<版本号\>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
+    > [WACOM.NOTE] 这是一个非常精简的 hbase-site.xml 文件，它只包含 HDInsight 群集的最少量设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用远程桌面连接到 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp)。hbase-site.xml 文件位于 C:&#92;apps&#92;dist&#92;hbase-\<版本号\>-hadoop2&#92;conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
 
 5.  保存 **hbase-site.xml** 文件。
 
 ## 创建应用程序
 
-1.  转到 **hbaseapp\\src\\com\\microsoft\\examples** 目录，然后将 app.java\_\_ 文件重命名为 **CreateTable.java**。
+1.  转到 **hbaseapp&#92;src&#92;com&#92;microsoft&#92;examples** 目录，然后将 app.java\_\_ 文件重命名为 **CreateTable.java**。
 
 2.  打开 **CreateTable.java** 文件，并将现有内容替换为以下内容。
 
@@ -206,7 +206,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 3.  保存 **CreateTable.java** 文件。
 
-4.  在 **hbaseapp\\com\\microsoft\\examples** 目录中，创建名为 **SearchByEmail.java** 的新文件。在此文件中使用以下内容。
+4.  在 **hbaseapp&#92;com&#92;microsoft&#92;examples** 目录中，创建名为 **SearchByEmail.java** 的新文件。在此文件中使用以下内容。
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -283,7 +283,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 5.  保存 **SearchByEmail.java** 文件。
 
-6.  在 **hbaseapp\\com\\microsoft\\examples** 目录中，创建名为 **DeleteTable.java** 的新文件。在此文件中使用以下内容。
+6.  在 **hbaseapp&#92;com&#92;microsoft&#92;examples** 目录中，创建名为 **DeleteTable.java** 的新文件。在此文件中使用以下内容。
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -319,7 +319,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
     这将会清除以前的所有生成项目，下载尚未安装的所有依赖项，然后生成并打包应用程序。
 
-3.  完成该命令后，**hbaseapp\\target** 目录将包含名为 **hbaseapp-1.0-SNAPSHOT.jar** 的文件。
+3.  完成该命令后，**hbaseapp&#92;target** 目录将包含名为 **hbaseapp-1.0-SNAPSHOT.jar** 的文件。
 
     > [WACOM.NOTE] **hbaseapp-1.0-SNAPSHOT.jar** 文件是一个 uberjar（有时称为 fatjar），其中包含运行应用程序所需的所有依赖项。
 

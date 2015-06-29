@@ -43,7 +43,7 @@ Hive 最适合批处理大量不可变数据（例如 Web 日志）。但它不�
 
 HDInsight 使用 Azure Blob 存储容器作为默认文件系统。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
-在本文中，你要使用一个 log4j 示例文件，它是随 *\\example\\data\\sample.log* 中存储的 HDInsight 群集分发的。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，可显示类型和严重性。例如：
+在本文中，你要使用一个 log4j 示例文件，它是随 *&#92;example&#92;data&#92;sample.log* 中存储的 HDInsight 群集分发的。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，可显示类型和严重性。例如：
 
     2012-02-03 20:26:41 SampleClass3 [ERROR] verbose detail for id 1527353937 
 
@@ -105,7 +105,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。有关详细�
         "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb://$containerName@$storageAccountName.blob.core.chinacloudapi.cn/example/data/';" +
         "SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;"
 
-    LOAD DATA HiveQL 命令将导致数据文件移动到 \\hive\\warehouse\\ 文件夹。DROP TABLE 命令将用于删除表和数据文件。如果你使用内部表选项并要再次运行脚本，必须再次上传 sample.log 文件。如果想保留数据文件，必须按该脚本中显示的那样使用 CREATE EXTERNAL TABLE 命令。
+    LOAD DATA HiveQL 命令将导致数据文件移动到 &#92;hive&#92;warehouse&#92; 文件夹。DROP TABLE 命令将用于删除表和数据文件。如果你使用内部表选项并要再次运行脚本，必须再次上传 sample.log 文件。如果想保留数据文件，必须按该脚本中显示的那样使用 CREATE EXTERNAL TABLE 命令。
 
     对于数据文件位于不同容器或存储帐户的情况，还可以使用外部表。
 

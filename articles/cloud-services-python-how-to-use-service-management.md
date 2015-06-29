@@ -63,7 +63,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 	from azure.servicemanagement import *
 
 	subscription_id = '<your_subscription_id>'
-	certificate_path = 'CURRENT_USER\\my\\AzureCertificate'
+	certificate_path = 'CURRENT_USER&#92;my&#92;AzureCertificate'
 
 	sms = ServiceManagementService(subscription_id, certificate_path)
 

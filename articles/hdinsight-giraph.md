@@ -66,7 +66,7 @@ Giraph 未作为 HDInsight 群集的一部分提供，因此必须从源生成�
 
             mvn package -Phadoop_0.23 -DskipTests
 
-    完成生成操作后，**\\giraph\\giraph-examples\\target** 中会出现示例 JAR 文件。
+    完成生成操作后，**&#92;giraph&#92;giraph-examples&#92;target** 中会出现示例 JAR 文件。
 
 6.  使用 [Azure PowerShell][aps] 和 [HDInsight-Tools][tools] 将该示例 JAR 文件上载到 HDInsight 群集的主存储。
 

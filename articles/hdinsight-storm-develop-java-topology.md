@@ -282,7 +282,7 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
           //get the word
           String word=sentence.substring(start,end);
           //If a word is whitespace characters, replace it with empty
-          word=word.replaceAll("\\s+","");
+          word=word.replaceAll("&#92;s+","");
           //if it's an actual word, emit it
           if (!word.equals("")) {
             collector.emit(new Values(word));

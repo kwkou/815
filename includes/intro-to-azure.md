@@ -198,9 +198,9 @@ Blob 存储可用于许多其他的 Azure 功能（包括虚拟机），因此�
 <!--
 ###Azure 文件服务###
 ![Azure File Service](./media/intro-to-azure/FileServiceIntroNew.png)    
-**图：Azure 文件服务为云中运行的应用程序提供 SMB \\\\server\share 路径。** 
+**图：Azure 文件服务为云中运行的应用程序提供 SMB &#92;&#92;server\share 路径。** 
 
-进行本地部署时，通常会允许通过服务器消息块 (SMB) 协议使用 \\\\Server\share 格式来访问大量的文件存储。Azure 现在提供的一种服务允许你在云中使用该协议。在 Azure 中运行的应用程序可以使用它通过熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，还可以通过 REST 界面同时访问这些文件，该界面允许你在也设置了虚拟网络的情况下，从本地访问共享。Azure 文件基于 Blob 服务，因此会继承 Azure 存储空间中内置的可用性、持续性、可伸缩性和地域冗余。 
+进行本地部署时，通常会允许通过服务器消息块 (SMB) 协议使用 &#92;&#92;Server\share 格式来访问大量的文件存储。Azure 现在提供的一种服务允许你在云中使用该协议。在 Azure 中运行的应用程序可以使用它通过熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，还可以通过 REST 界面同时访问这些文件，该界面允许你在也设置了虚拟网络的情况下，从本地访问共享。Azure 文件基于 Blob 服务，因此会继承 Azure 存储空间中内置的可用性、持续性、可伸缩性和地域冗余。 
 
 **Azure 文件方案**
 

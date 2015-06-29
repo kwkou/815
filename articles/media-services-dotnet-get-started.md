@@ -630,7 +630,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 
 3.  然后，使用 **Azure 媒体编码器**的 **H264 Broadband 720p** 预设来为该文件编码。
 
-4.  FileSasUrlList.txt 文件在 \\supportFiles\\outputFiles 文件夹中创建。该文件包含所编码资产的 URL。
+4.  FileSasUrlList.txt 文件在 &#92;supportFiles&#92;outputFiles 文件夹中创建。该文件包含所编码资产的 URL。
 
     若要播放媒体文件，请从文本文件中复制资产的 URL，然后将它粘贴到浏览器中。
 

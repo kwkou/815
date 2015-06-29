@@ -59,7 +59,7 @@
 
 8.  在“在 Google Apps 中配置单一登录”对话框页上，执行以下步骤，然后单击“完成”按钮。
 
-    -   单击“下载证书”，然后将证书另存为“c:\\googleapps.cer”。
+    -   单击“下载证书”，然后将证书另存为“c:&#92;googleapps.cer”。
     -   打开 Google Apps 登录页，然后登录
 
     ![Google\_Tutorial\_04][Google\_Tutorial\_04]

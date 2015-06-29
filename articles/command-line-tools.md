@@ -192,7 +192,7 @@ publishsettings 文件可以包含有关多个订阅的详细信息（即，订�
 
 ![Azure 技术图表][Azure 技术图表]
 
-**create-new** 在 Blob 存储中创建驱动器（即图中的 e:\\）；**attach** 会将已创建但未附加的磁盘附加到虚拟机。
+**create-new** 在 Blob 存储中创建驱动器（即图中的 e:&#92;）；**attach** 会将已创建但未附加的磁盘附加到虚拟机。
 
 **vm create [options] \<dns-name\> \<image\> \<userName\> [password]**
 

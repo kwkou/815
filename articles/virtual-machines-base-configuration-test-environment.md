@@ -237,7 +237,7 @@ CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台
 4.	在"开始"屏幕中，单击**"Internet Explorer"**，然后单击**"确定"**。
 5.	在地址栏中，键入 **http://app1.corp.contoso.com/**，然后按 Enter。你应看到 APP1 的默认 Internet 信息服务网页。
 6.	在桌面任务栏上，单击"文件资源管理器"图标。
-7.	在地址栏中，键入 **\\\app1\Files**，然后按 Enter。
+7.	在地址栏中，键入 **&#92;\app1\Files**，然后按 Enter。
 8.	你应看到显示文件共享文件夹的内容的文件夹窗口。
 9.	在**"文件"**共享文件夹窗口中，双击 **Example.txt** 文件。你应看到 Example.txt 文件的内容。
 10.	关闭**"example.txt - 记事本"**和**"文件"**共享文件夹窗口。

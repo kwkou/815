@@ -71,9 +71,9 @@
 
 如果 Node.js 应用程序已部署到辅助角色，则服务器证书和 SSL 连接将由 Node.exe 管理。若要处理 SSL 通信，必须使用"https"而不是"http"模块。执行以下步骤将 SSL 证书添加到你的项目，然后将应用程序修改为使用该证书。
 
-1.   将证书颁发机构 (CA) 提供给你的 **.pfx** 文件保存到包含你的应用程序的目录。例如，**c:\\node\\securesite\\workerrole1** 是包含本文中使用的应用程序的目录。
+1.   将证书颁发机构 (CA) 提供给你的 **.pfx** 文件保存到包含你的应用程序的目录。例如，**c:&#92;node&#92;securesite&#92;workerrole1** 是包含本文中使用的应用程序的目录。
 
-2.   使用 Notepad.exe 打开 **c:\\node\\securesite\\workerrole1\server.js** 文件，并将文件内容替换为以下内容：
+2.   使用 Notepad.exe 打开 **c:&#92;node&#92;securesite&#92;workerrole1\server.js** 文件，并将文件内容替换为以下内容：
 
 		var https = require('https');
 		var fs = require('fs');

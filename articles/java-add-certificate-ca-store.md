@@ -12,13 +12,13 @@
 
 ## 将证书添加到 cacerts 存储
 
-1.  在设置为 JDK 的 **jdk\\jre\\lib\\security** 文件夹的命令提示符下，运行以下命令可查看将安装的证书：
+1.  在设置为 JDK 的 **jdk&#92;jre&#92;lib&#92;security** 文件夹的命令提示符下，运行以下命令可查看将安装的证书：
 
     `keytool -list -keystore cacerts`
 
     系统将提示你输入存储密码。默认密码为 **changeit**。（若要更改该密码，请参阅 <http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html> 上的 keytool 文档。）此示例假定 MD5 指纹为 67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4 的证书未列出，并且你想要导入该证书（这是 Twilio API 服务所需的特定证书）。
 
-2.  获取 [GeoTrust 根证书][GeoTrust 根证书]上列出的证书列表中的证书。右键单击序列号为 35:DE:F4:CF 的证书的链接，并将该证书保存到 **jdk\\jre\\lib\\security** 文件夹。在此示例中，该证书已保存到名为 **Equifax\_Secure\_Certificate\_Authority.cer** 的文件。
+2.  获取 [GeoTrust 根证书][GeoTrust 根证书]上列出的证书列表中的证书。右键单击序列号为 35:DE:F4:CF 的证书的链接，并将该证书保存到 **jdk&#92;jre&#92;lib&#92;security** 文件夹。在此示例中，该证书已保存到名为 **Equifax\_Secure\_Certificate\_Authority.cer** 的文件。
 3.  通过以下命令导入证书：
 
     `keytool -keystore cacerts -importcert -alias equifaxsecureca -file Equifax_Secure_Certificate_Authority.cer`

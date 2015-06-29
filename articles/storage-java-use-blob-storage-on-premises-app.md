@@ -105,7 +105,7 @@ Azure 存储空间中的 Blob。
 
 使用 File 构造函数获取对你将上载的在本地创建的文件的引用。（确保在运行代码之前已创建此文件。）
 
-    File fileReference = new File ("c:\\myimages\\image1.jpg");
+    File fileReference = new File ("c:&#92;myimages&#92;image1.jpg");
 
 通过调用 CloudBlockBlob.upload 方法上载该本地文件。**CloudBlockBlob.upload** 方法的第一个参数为
 **FileInputStream**对象，它表示将上载到 Azure 存储空间的本地文件。第二个参数是此文件的大小（以字节为单位）。
@@ -243,7 +243,7 @@ Azure 存储空间中的 Blob。
 
                 // Upload an image file.
                 blob = container.getBlockBlobReference("image1.jpg");
-                File fileReference = new File ("c:\\myimages\\image1.jpg");
+                File fileReference = new File ("c:&#92;myimages&#92;image1.jpg");
                 blob.upload(new FileInputStream(fileReference), fileReference.length());
 
                 // At this point the image is uploaded.

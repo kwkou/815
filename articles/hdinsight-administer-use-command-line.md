@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="使用跨平台命令行界面管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
+<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="使用跨平台命令行界面管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="11/21/2014"
     wacn.date="04/11/2015"
@@ -82,7 +82,7 @@
 
         azure account import <文件>
 
-    在上一屏幕快照中，publishsettings 文件已保存到工作站上的 C:\\HDInsight 文件夹。
+    在上一屏幕快照中，publishsettings 文件已保存到工作站上的 C:&#92;HDInsight 文件夹。
 
 ## <a id="provision"></a>设置 HDInsight 群集
 

@@ -28,7 +28,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 
 
-2. 将目录更改为 **c:\\node** 目录，然后输入以下命令创建一个名为 **chatapp** 的新解决方案和一个名为 **WorkerRole1** 的辅助角色：
+2. 将目录更改为 **c:&#92;node** 目录，然后输入以下命令创建一个名为 **chatapp** 的新解决方案和一个名为 **WorkerRole1** 的辅助角色：
 
 		PS C:\node> New-AzureServiceProject chatapp
 		PS C:\Node> Add-AzureNodeWorkerRole
@@ -46,13 +46,13 @@ GitHub 存储库]中的聊天示例。执行以下步骤下载该示例并将其
 
     ![A browser window viewing https://github.com/LearnBoost/socket.io/tree/master/examples/chat, with the ZIP download icon highlighted][chat-example-view]
 
-3.  浏览本地存储库的目录结构，找到 **examples\\chat** 目录。将此目录的内容复制到前面创建的 **C:\\node\\chatapp\\WorkerRole1** 目录。
+3.  浏览本地存储库的目录结构，找到 **examples&#92;chat** 目录。将此目录的内容复制到前面创建的 **C:&#92;node&#92;chatapp&#92;WorkerRole1** 目录。
 
-    ![Explorer, displaying the contents of the examples\\chat directory extracted from the archive][chat-contents]
+    ![Explorer, displaying the contents of the examples&#92;chat directory extracted from the archive][chat-contents]
 
-    上面的屏幕截图中突出显示的项目是从 **examples\\chat** 目录复制的文件
+    上面的屏幕截图中突出显示的项目是从 **examples&#92;chat** 目录复制的文件
 
-4.  在 **C:\\node\\chatapp\\WorkerRole1** 目录中，删除 **server.js** 文件，然后将 **app.js** 文件重命名为 **server.js**。这将删除前面由 **Add-AzureNodeWorkerRole** cmdlet 创建的默认 **server.js** 文件并用聊天示例中的应用程序文件取代。
+4.  在 **C:&#92;node&#92;chatapp&#92;WorkerRole1** 目录中，删除 **server.js** 文件，然后将 **app.js** 文件重命名为 **server.js**。这将删除前面由 **Add-AzureNodeWorkerRole** cmdlet 创建的默认 **server.js** 文件并用聊天示例中的应用程序文件取代。
 
 ### 修改 Server.js 并安装模块
 
@@ -78,7 +78,7 @@ GitHub 存储库]中的聊天示例。执行以下步骤下载该示例并将其
 
 保存对 server.js 所做更改后，使用以下步骤安装所需的模块，然后在 Azure 模拟器中测试应用程序：
 
-1.  使用 **Azure PowerShell**，将目录切换到 **C:\\node\\chatapp\\WorkerRole1** 目录，然后使用以下命令安装此应用程序所需的模块：
+1.  使用 **Azure PowerShell**，将目录切换到 **C:&#92;node&#92;chatapp&#92;WorkerRole1** 目录，然后使用以下命令安装此应用程序所需的模块：
 
         PS C:\node\chatapp\WorkerRole1> npm install
 

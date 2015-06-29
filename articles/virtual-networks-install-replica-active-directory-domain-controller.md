@@ -158,7 +158,7 @@
 
     ![AddDC4][AddDC4]
 
-5.  在“网络凭据”页上，确保你正在 **corp.contoso.com** 域中安装域控制器，并键入 Domain Admins 组的成员的凭据（或使用 corp\\administrator 凭据）。
+5.  在“网络凭据”页上，确保你正在 **corp.contoso.com** 域中安装域控制器，并键入 Domain Admins 组的成员的凭据（或使用 corp&#92;administrator 凭据）。
 
     ![AddDC5][AddDC5]
 

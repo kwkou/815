@@ -81,7 +81,7 @@ WASB 语法是：
 
     example/data/sample.log
 
-在本文中，你将使用一个 log4j 示例文件，它是 *\\example\\data\\sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][将数据上载到 HDInsight]。
+在本文中，你将使用一个 log4j 示例文件，它是 *&#92;example&#92;data&#92;sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][将数据上载到 HDInsight]。
 
 ##<a id="understand"></a>了解 Pig Latin
 

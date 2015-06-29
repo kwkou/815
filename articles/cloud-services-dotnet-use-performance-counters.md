@@ -93,7 +93,7 @@
 
 除了预定义的性能计数器外，你还可以添加自己的自定义性能计数器来监视 Web 角色或辅助角色。自定义性能计数器可用于跟踪和监视特定于应用程序的行为，并且可使用提升的权限在启动任务、Web 角色或辅助角色中创建或删除该计数器。
 
-执行下列步骤来创建一个名为“\\MyCustomCounterCategory\\MyButton1Counter”的简单的自定义性能计数器：
+执行下列步骤来创建一个名为“&#92;MyCustomCounterCategory&#92;MyButton1Counter”的简单的自定义性能计数器：
 
 1.  打开应用程序的服务定义文件 (CSDEF)。
 2.  将 **Runtime** 元素添加到 **WebRole** 或 **WorkerRole**元素可允许使用提升的权限执行：
@@ -160,7 +160,7 @@
 
 在应用程序部署完成并运行后，诊断监视器将开始收集性能计数器并将该数据保存到 Azure 存储服务。你使用 Cerebrata 提供的工具（例如 **Visual Studio 中的服务器资源管理器**、[Azure 存储资源管理器][Azure 存储资源管理器]或 [Azure 诊断管理器][Azure 诊断管理器]）查看 **WADPerformanceCountersTable** 表中的性能计数器数据。你还可以使用 [C\#][C\#]、[Java][Java]、[Node.js][Node.js]、[Python][Python] 或 [PHP][PHP] 以编程方式查询表服务。
 
-以下 C# 示例显示针对 **WADPerformanceCountersTable** 表的简单查询并将诊断数据保存到 CSV 文件中。将性能计数器保存到 CSV 文件后，你可以使用 Microsoft Excel 中的图形功能或使用其他一些工具来使数据可视化。请务必添加对 Microsoft.WindowsAzure.Storage.dll（它包含在 2012 年 10 月版的 Azure SDK for .NET 和更高版本中）的引用。程序集安装在 %Program Files%\\Microsoft SDKs\\Azure.NET SDK\\version-num\\ref\\ 目录中。
+以下 C# 示例显示针对 **WADPerformanceCountersTable** 表的简单查询并将诊断数据保存到 CSV 文件中。将性能计数器保存到 CSV 文件后，你可以使用 Microsoft Excel 中的图形功能或使用其他一些工具来使数据可视化。请务必添加对 Microsoft.WindowsAzure.Storage.dll（它包含在 2012 年 10 月版的 Azure SDK for .NET 和更高版本中）的引用。程序集安装在 %Program Files%&#92;Microsoft SDKs&#92;Azure.NET SDK&#92;version-num&#92;ref&#92; 目录中。
 
         using Microsoft.WindowsAzure.Storage;
         using Microsoft.WindowsAzure.Storage.Auth;

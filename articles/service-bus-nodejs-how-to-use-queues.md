@@ -36,7 +36,7 @@ Node.js azure 包。其中包括一组便于与 Service Bus REST 服务进行通
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\\node\\sbqueues\\WebRole1** 文件夹。
+1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:&#92;node&#92;sbqueues&#92;WebRole1** 文件夹。
 
 2.  在命令窗口中键入 **npm install azure**，这应该产生类似如下的输出：
 

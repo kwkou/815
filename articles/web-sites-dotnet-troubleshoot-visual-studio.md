@@ -106,7 +106,7 @@
 
     ![详细的错误消息][详细的错误消息]
 
-    （通过将以红色显示的行添加到 *Views\\Home\\Index.cshtml* 创建显示的错误。）
+    （通过将以红色显示的行添加到 *Views&#92;Home&#92;Index.cshtml* 创建显示的错误。）
 
 编辑 Web.config 文件示例向您演示了能够读取并编辑 Azure 网站上的文件使得故障排除变得更加简单，而这仅仅只是其中之一。
 
@@ -120,7 +120,7 @@
 
 1.  打开在 [Azure 和 ASP.NET 入门][Azure 和 ASP.NET 入门]中创建的 Web 项目。
 
-2.  打开 *Controllers\\HomeController.cs*。
+2.  打开 *Controllers&#92;HomeController.cs*。
 
 3.  删除 `About()` 方法并在其位置插入以下代码。
 
@@ -237,7 +237,7 @@
 
 ### 向应用程序添加跟踪语句
 
-1.  打开 *Controllers\\HomeController.cs* 并使用以下代码替换文件内容，以便为 `System.Diagnostics` 添加 `Trace` 语句和 `using` 语句：
+1.  打开 *Controllers&#92;HomeController.cs* 并使用以下代码替换文件内容，以便为 `System.Diagnostics` 添加 `Trace` 语句和 `using` 语句：
 
         using System;
         using System.Collections.Generic;
@@ -455,9 +455,9 @@ Web 服务器日志记录了站点上所有的 HTTP 活动。若要在“输出�
 
     ![下载的文件][6]
 
-    -   应用程序跟踪日志位于 *LogFiles\\Application* 文件夹的 *.txt* 文件中。
-    -   Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser][Log Parser] 之类的工具查看并处理这些文件。
-    -   详细的错误消息日志位于 *LogFiles\\DetailedErrors* 文件夹的 *.html* 文件中。
+    -   应用程序跟踪日志位于 *LogFiles&#92;Application* 文件夹的 *.txt* 文件中。
+    -   Web 服务器位于 *LogFiles&#92;http&#92;RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser][Log Parser] 之类的工具查看并处理这些文件。
+    -   详细的错误消息日志位于 *LogFiles&#92;DetailedErrors* 文件夹的 *.html* 文件中。
 
     （*deployments* 文件夹内是由源代码管理发布创建的文件；其中没有任何有关 Visual Studio 发布的内容。*Git* 文件夹内是与源代码管理发布以及日志文件流式传输服务相关的跟踪。）
 
@@ -661,7 +661,7 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 对于错误日志记录，若不想编写自己的跟踪代码，可以使用开源日志记录框架，如 [ELMAH][ELMAH]。有关更多信息，请参见 [Scott Hanselman 有关 ELMAH 的博客文章][Scott Hanselman 有关 ELMAH 的博客文章]。
 
-此外，请注意，如果希望从 Azure 获得流式传输日志，则不必使用 ASP.NET 或 System.Diagnostics 跟踪。Azure 网站流式传输日志服务会将其在 *LogFiles* 文件中找到的所有 *.txt*、*.html* 或 *.log* 文件进行流式传输。因此，您可以创建自己的日志记录系统以写入网站的文件系统，您的文件将自动进行流式传输和下载。您所要做的就是编写在 *d:\\home\\logfiles* 文件夹中创建文件的应用程序代码。
+此外，请注意，如果希望从 Azure 获得流式传输日志，则不必使用 ASP.NET 或 System.Diagnostics 跟踪。Azure 网站流式传输日志服务会将其在 *LogFiles* 文件中找到的所有 *.txt*、*.html* 或 *.log* 文件进行流式传输。因此，您可以创建自己的日志记录系统以写入网站的文件系统，您的文件将自动进行流式传输和下载。您所要做的就是编写在 *d:&#92;home&#92;logfiles* 文件夹中创建文件的应用程序代码。
 
 ### 分析 Web 服务器日志
 

@@ -56,7 +56,7 @@
 
 ![GlobalWebFTPSettings][GlobalWebFTPSettings]
 
-请注意，部署/FTP 用户名是你提供的网站名称和用户名的组合。因此，如果你的网站是“<http://contoso.chinacloudsites.cn>”并且你的用户名是“myuser”，则部署和 FTP 的用户名将是“contoso\\myuser”。
+请注意，部署/FTP 用户名是你提供的网站名称和用户名的组合。因此，如果你的网站是“<http://contoso.chinacloudsites.cn>”并且你的用户名是“myuser”，则部署和 FTP 的用户名将是“contoso&#92;myuser”。
 
 还可以选择通过源代码管理服务（例如 GitHub 或 TFS Online）进行部署。单击针对“从源代码管理设置部署”的选项。然后，按照针对你选择的源代码管理系统或服务的说明执行。有关从本地 Git 存储库进行发布的分步说明，请参见[从源代码管理发布到 Azure 网站][从源代码管理发布到 Azure 网站]。
 

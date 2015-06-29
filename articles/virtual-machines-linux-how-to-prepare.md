@@ -272,7 +272,7 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 
     a) 打开 /etc/grub.d/00\_header 文件。
 
-    b) 在 **make\_timeout()** 函数中，搜索 **if [“\\${recordfail}” = 1 ]; then**
+    b) 在 **make\_timeout()** 函数中，搜索 **if [“&#92;${recordfail}” = 1 ]; then**
 
     c) 将该行下的语句更改为 **set timeout=5**。
 

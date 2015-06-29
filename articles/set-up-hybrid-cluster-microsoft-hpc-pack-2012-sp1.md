@@ -108,7 +108,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
     ![证书设置][证书设置]
 
-4.  在头节点上浏览文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer。然后，单击“检查”按钮。
+4.  在头节点上浏览文件 C:&#92;Program Files&#92;Microsoft HPC Pack 2012&#92;Bin&#92;hpccert.cer。然后，单击“检查”按钮。
 
     ![上载证书][上载证书]
 

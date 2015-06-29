@@ -82,7 +82,7 @@
 
 ### 添加代码
 
-1.  从[此处][移动服务 Android SDK]下载通知中心 Android SDK。解压缩 .zip 文件并在包资源管理器中将 notificationhubs\\notification-hubs-0.1.jar 文件复制到你项目的 \\libs 目录。
+1.  从[此处][移动服务 Android SDK]下载通知中心 Android SDK。解压缩 .zip 文件并在包资源管理器中将 notificationhubs&#92;notification-hubs-0.1.jar 文件复制到你项目的 &#92;libs 目录。
 
 2.  下载和解压缩[移动服务 Android SDK][移动服务 Android SDK]，打开 **notifications** 文件夹，将 **notifications-1.0.1.jar** 文件复制到 Eclipse 项目的 *libs* 文件夹，并刷新 *libs* 文件夹。
 

@@ -92,7 +92,7 @@
 
 5.  将 MonoForAndroid PushSharp 客户端示例中的以下文件复制到 Xamarin.Android 项目文件夹中新创建的 \*\*\_external\*\* 文件夹：
 
-    "\\bin\\Release\\PushSharp.Client.MonoForAndroid.dll"
+    "&#92;bin&#92;Release&#92;PushSharp.Client.MonoForAndroid.dll"
 
 6.  在 Xamarin Studio（或者 Visual Studio）中打开你的 Xamarin.Android 项目。
 

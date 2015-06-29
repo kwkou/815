@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -58,15 +58,15 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 1.1. 通过门户中的“配置”选项卡注册 FastCGI 处理程序。
 在本示例中，我们使用随 Azure 网站提供的 Python 的 FastCGI 处理程序。若要执行相同操作，请对你的脚本处理器和 FastCGI 处理程序参数使用以下路径：
 
--   Python 脚本处理器路径：D:\\python27\\python.exe
--   Python FastCGI 处理程序路径：D:\\python27\\scripts\\wfastcgi.py
+-   Python 脚本处理器路径：D:&#92;python27&#92;python.exe
+-   Python FastCGI 处理程序路径：D:&#92;python27&#92;scripts&#92;wfastcgi.py
 
 ![][3]
 
 1.2. 通过门户中的同一“配置”选项卡配置应用程序设置。
 应用程序设置将转换为环境变量。这是可用于 Python 应用程序所需的配置值的机制。对于此基本示例应用程序，我们配置了以下值：
 
--   PYTHONPATH 通知 Python 要在其中搜索模块的目录。Azure 网站提供 D:\\home\\site\\wwwroot 作为指向你的网站的根的语法糖。
+-   PYTHONPATH 通知 Python 要在其中搜索模块的目录。Azure 网站提供 D:&#92;home&#92;site&#92;wwwroot 作为指向你的网站的根的语法糖。
 -   WSGI\_HANDLER 记录模块或包名称以及要使用的属性。
 
 ![][4]
@@ -77,7 +77,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 2.1. 指定 PYTHONPATH 变量。
 
-> 这会通知 Python 在哪里查找应用程序代码。在这里，也使用 D:\\home\\site\\wwwroot 作为网站的绝对路径。
+> 这会通知 Python 在哪里查找应用程序代码。在这里，也使用 D:&#92;home&#92;site&#92;wwwroot 作为网站的绝对路径。
 
 2.2. 设置 WSGI\_HANDLER 变量。
 
@@ -120,7 +120,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 网站根下的示例文件夹结构如下（Python 文件夹和文件名称的大小写很重要并反映在 web.config 中）：
 
--   ConfigurePython\\ConfigurePython.py
+-   ConfigurePython&#92;ConfigurePython.py
 -   web.config
 -   handler.fcgi
 

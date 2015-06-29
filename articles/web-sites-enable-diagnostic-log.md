@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-net-common-tasks-diagnostics-logging-and-instrumentation" urlDisplayName="Enable diagnostic logging" pageTitle="启用诊断日志记录 - Azure 网站" metaKeywords="Azure diagnostics web sites, Azure Management Portal diagnostics, Azure diagnostics, web site diagnostics, web site debug" description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="启用 Azure 网站的诊断日志记录 " authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="develop-net-common-tasks-diagnostics-logging-and-instrumentation" urlDisplayName="Enable diagnostic logging" pageTitle="启用诊断日志记录 - Azure 网站" metaKeywords="Azure diagnostics web sites, Azure Management Portal diagnostics, Azure diagnostics, web site diagnostics, web site debug" description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="启用 Azure 网站的诊断日志记录 " authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -127,7 +127,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 > [WACOM.NOTE] 某些类型的日志记录缓冲区会对日志文件进行写入操作，这可能导致流中的事件无序。例如，用户访问页面时出现的应用程序日志项可能显示在该页面请求所对应的 HTTP 日志项的前面。
 
-> [WACOM.NOTE] 日志流式输出还会流式传输写入任何存储在 **D:\\home\\LogFiles\\** 文件夹中的文本文件的信息。
+> [WACOM.NOTE] 日志流式输出还会流式传输写入任何存储在 **D:&#92;home&#92;LogFiles&#92;** 文件夹中的文本文件的信息。
 
 ### 使用 Azure PowerShell 进行流式传输
 

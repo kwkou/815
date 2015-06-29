@@ -263,7 +263,7 @@
 	                restCities.add(i);
 	            distances = new double[numCities][numCities];
 	            cityNames = new String[numCities];
-	            buildDistances("c:\\TSP\\cities.txt", numCities);
+	            buildDistances("c:&#92;TSP&#92;cities.txt", numCities);
 	            minDistance = -1;
 	            bestOrder = new int[numCities];
 	            permutation(startCities, 0, restCities);

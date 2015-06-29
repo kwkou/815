@@ -400,7 +400,7 @@
 
     你可以在[必应][必应]或其他搜索引擎中通过搜索“查找我的 IP”来查找你的 IP 地址。
 
-    发布应用程序时，将应用在 *Web.release.config* 文件中指定的转换，并更新已部署到云的 *web.config* 文件中的 IP 限制元素。创建程序包后，你可以查看 *AzureEmailService\\MvcWebRole\\obj\\Release\\TransformWebConfig\\transformed* 文件夹中的已转换 *web.config* 文件。
+    发布应用程序时，将应用在 *Web.release.config* 文件中指定的转换，并更新已部署到云的 *web.config* 文件中的 IP 限制元素。创建程序包后，你可以查看 *AzureEmailService&#92;MvcWebRole&#92;obj&#92;Release&#92;TransformWebConfig&#92;transformed* 文件夹中的已转换 *web.config* 文件。
 
 ### 配置应用程序，以便应用程序在云中运行时使用你的存储帐户
 

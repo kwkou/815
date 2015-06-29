@@ -20,9 +20,9 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 1.  下载 Socket.IO 项目的[ZIP 或 GZ 存档版本][版本] （版本 1.0.6 已用于本文档）
 
 
-3.  提取存档并将**examples\\chat**
+3.  提取存档并将**examples&#92;chat**
     目录复制到新位置。例如，
-    **\\node\\chat**。
+    **&#92;node&#92;chat**。
 
 ## <a id="Modify"></a>修改 App.js 并安装模块
 
@@ -45,7 +45,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 在保存对 app.js 的更改后，使用以下步骤
 安装所需模块：
 
-1.  在命令行中，将目录更改为**\\node\\chat**目录，然后使用以下命令安装此应用程序所需的模块：
+1.  在命令行中，将目录更改为**&#92;node&#92;chat**目录，然后使用以下命令安装此应用程序所需的模块：
 
         npm install
 
@@ -82,7 +82,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 > [AZURE.NOTE] 要完成本教程，您需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅： <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用版</a>。
 
-1. 从命令行，将目录更改为**\\node\chat**目录，然后使用下面的命令创建一个新的 Windows Azure 网站并且为该网站和本地目录启用 Git 存储库。这还将创建一个名为 'azure'的 Git remote。
+1. 从命令行，将目录更改为**&#92;node\chat**目录，然后使用下面的命令创建一个新的 Windows Azure 网站并且为该网站和本地目录启用 Git 存储库。这还将创建一个名为 'azure'的 Git remote。
 
 		azure site create mysitename --git
 

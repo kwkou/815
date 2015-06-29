@@ -17,7 +17,7 @@
 
 ### 新增功能
 
--   已添加脚本以简化将所有 Apache Hadoop 服务都设为自动启动或手动启动的操作。默认设置与以前一样仍为“自动”，但现在可以使用安装在 C:\\Hadoop 中的 set-onebox-manualstart.cmd 或 set-onebox-autostart.cmd 脚本更改所有服务。
+-   已添加脚本以简化将所有 Apache Hadoop 服务都设为自动启动或手动启动的操作。默认设置与以前一样仍为“自动”，但现在可以使用安装在 C:&#92;Hadoop 中的 set-onebox-manualstart.cmd 或 set-onebox-autostart.cmd 脚本更改所有服务。
 
 -   必需的安装依赖项的数量已显著减少，因此可以更快地进行安装。
 
@@ -95,7 +95,7 @@
 
     在仪表板中，你将看到名为“本地(hdfs)”的默认本地群集。如果想让 ASV 作为本地安装的存储，请执行以下操作：
 
-    1.  在 C:\\Hadoop\\hadoop-1.1.0-SNAPSHOT\\conf 中找到的 core-site.xml 中添加帐户标记：
+    1.  在 C:&#92;Hadoop&#92;hadoop-1.1.0-SNAPSHOT&#92;conf 中找到的 core-site.xml 中添加帐户标记：
 
             <property>
             <name>fs.azure.account.key.{AccountName}</name>
@@ -227,7 +227,7 @@
 
 -   Temp 目录\>
 
-    hadoop.tmp.dir 指向错误的位置：不是指向 C:\\hadoop\\hdfs，而是指向 c:\\hdfs。此 Bug 将在下一个 HDP 位的更新中修复。
+    hadoop.tmp.dir 指向错误的位置：不是指向 C:&#92;hadoop&#92;hdfs，而是指向 c:&#92;hdfs。此 Bug 将在下一个 HDP 位的更新中修复。
 
 -   OS 限制
 

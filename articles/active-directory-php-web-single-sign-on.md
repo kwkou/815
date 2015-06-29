@@ -135,7 +135,7 @@
 
 5.  在**“新建 PHP 文件”**对话框中，将文件命名为 **secureResource.php**，然后单击**“完成”**。
 
-6.  在新 **secureResource.php** 文件中，输入以下代码，并将 **c:\\phpLibraries** 路径替换为已下载示例代码的根位置。根位置应包含 **simpleSAML.php** 文件和 **federation** 文件夹：
+6.  在新 **secureResource.php** 文件中，输入以下代码，并将 **c:&#92;phpLibraries** 路径替换为已下载示例代码的根位置。根位置应包含 **simpleSAML.php** 文件和 **federation** 文件夹：
 
         <?php
         ini_set('include_path', ini_get('include_path').';c:\phpLibraries\;');

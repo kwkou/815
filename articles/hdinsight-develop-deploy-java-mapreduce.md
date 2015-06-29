@@ -105,14 +105,14 @@
 
     请注意，包名为 **org.apache.hadoop.examples**，类名为 **WordCount**。提交 MapReduce 作业时，将使用这些名称。
 
-3.  将该文件另存为 **c:\\Tutorials\\WordCountJava\\WordCount.java**。创建文件夹结构（如果不存在）。
+3.  将该文件另存为 **c:&#92;Tutorials&#92;WordCountJava&#92;WordCount.java**。创建文件夹结构（如果不存在）。
 
 HDInsight Emulator 附带了 *javac* 编译器。
 
 **编译 MapReduce 程序**
 
 1.  打开命令提示符。
-2.  将目录更改为 **c:\\Tutorials\\WordCountJava**。这是单词计数 MapReduce 程序所在的文件夹。
+2.  将目录更改为 **c:&#92;Tutorials&#92;WordCountJava**。这是单词计数 MapReduce 程序所在的文件夹。
 3.  运行以下命令以检查两个 jar 文件是否存在：
 
         dir %hadoop_home%\hadoop-core-1.1.0-SNAPSHOT.jar
@@ -122,7 +122,7 @@ HDInsight Emulator 附带了 *javac* 编译器。
 
         C:\Hadoop\java\bin\javac -classpath %hadoop_home%\hadoop-core-1.1.0-SNAPSHOT.jar;%hadoop_home%\lib\commons-cli-1.2.jar WordCount.java
 
-    javac 位于 C:\\Hadoop\\java\\bin 文件夹中。最后一个参数是当前文件夹中的 java 程序。编译器将在当前文件夹中创建 3 个类文件。
+    javac 位于 C:&#92;Hadoop&#92;java&#92;bin 文件夹中。最后一个参数是当前文件夹中的 java 程序。编译器将在当前文件夹中创建 3 个类文件。
 
 5.  运行以下命令以创建 jar 文件：
 
@@ -266,7 +266,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 
     **\$storageAccountName\_Data** 和 **\$containerName\_Data** 与你在上一个过程中定义的一样。
 
-    请注意，源文件文件夹是 **c:\\Hadoop\\hadoop-1.1.0-SNAPSHOT**，目标文件夹是 **WordCount/Input**。
+    请注意，源文件文件夹是 **c:&#92;Hadoop&#92;hadoop-1.1.0-SNAPSHOT**，目标文件夹是 **WordCount/Input**。
 
 3.  运行以下命令以获取源文件文件夹中的 txt 文件的列表：
 
@@ -456,7 +456,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 **检索输出**
 
 1.  打开 Azure PowerShell 窗口。
-2.  将目录更改为 **C:\\Tutorials\\WordCountJava**。默认 Azure PowerShell 文件夹是 **C:\\Windows\\System32\\WindowsPowerShell\\v1.0**。你将运行的 cmdlet 会将输出文件下载到当前文件夹。你无权将文件下载到系统文件夹。
+2.  将目录更改为 **C:&#92;Tutorials&#92;WordCountJava**。默认 Azure PowerShell 文件夹是 **C:&#92;Windows&#92;System32&#92;WindowsPowerShell&#92;v1.0**。你将运行的 cmdlet 会将输出文件下载到当前文件夹。你无权将文件下载到系统文件夹。
 3.  运行以下命令以设置值：
 
         $subscriptionName = "<AzureSubscriptionName>"

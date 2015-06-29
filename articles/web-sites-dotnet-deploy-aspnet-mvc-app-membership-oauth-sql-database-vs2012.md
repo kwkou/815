@@ -1,4 +1,4 @@
-﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
+<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date="10/07/2014"
     wacn.date="04/11/2015"
@@ -104,7 +104,7 @@ Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据�
 
 ### 设置页眉和页脚
 
-1.  在“解决方案资源管理器”中，展开 Views\\Shared 文件夹，然后打开 \*\_Layout.cshtml\* 文件。
+1.  在“解决方案资源管理器”中，展开 Views&#92;Shared 文件夹，然后打开 \*\_Layout.cshtml\* 文件。
 
     ![解决方案资源管理器中的 \_Layout.cshtml][解决方案资源管理器中的 \_Layout.cshtml]
 
@@ -153,7 +153,7 @@ Azure SQL数据库 是根据 SQL Server 技术构建的基于云的关系数据�
     ![下载发布文件][下载发布文件]
 
     > [WACOM.NOTE]
-    > .publishsettings 文件中包含您的凭据（未编码），这些凭据用来管理您的 Azure 订阅和服务。确保此文件安全的最佳做法是，将其暂时存储在您的源目录的外部（例如存储在 Libraries\\Documents 文件夹中），然后在完成导入后将其删除。获得了 publishsettings 文件访问权的恶意用户可以编辑、创建和删除您的 Azure 服务。
+    > .publishsettings 文件中包含您的凭据（未编码），这些凭据用来管理您的 Azure 订阅和服务。确保此文件安全的最佳做法是，将其暂时存储在您的源目录的外部（例如存储在 Libraries&#92;Documents 文件夹中），然后在完成导入后将其删除。获得了 publishsettings 文件访问权的恶意用户可以编辑、创建和删除您的 Azure 服务。
 
     d. 在“导入 Azure 订阅”对话框中，单击“浏览”并导航到 *.publishsettings* 文件。
 
@@ -250,7 +250,7 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
         add-migration Initial
     **add-migration Initial** 命令将在创建数据库的 *Migrations* 文件夹中生成一个名为 **\<date\_stamp\>Initial** 的文件。第一个参数 (**Initial**) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
     在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在您想要返回到以前的状态时使用）用于删除该表。
-4.  打开 *Migrations\\Configuration.cs* 文件。
+4.  打开 *Migrations&#92;Configuration.cs* 文件。
 5.  添加以下命名空间。
     using ContactManager.Models;
 6.  将 *Seed* 方法替换为以下代码：
@@ -348,7 +348,7 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
 
 ## 从提供程序中添加应用程序 ID 和密码
 
-打开 *App\_Start\\AuthConfig.cs* 文件。删除 *RegisterFacebookClient* 方法中的注释字符并添加应用程序 ID 和应用程序密码。使用您获取的值，下面显示的值将不起作用。删除 *OAuthWebSecurity.RegisterGoogleClient* 调用中的注释字符，并添加如下所示的 *OAuthWebSecurity.RegisterYahooClient*。Google 和 Yahoo 提供程序不需要您注册和获取密钥。
+打开 *App\_Start&#92;AuthConfig.cs* 文件。删除 *RegisterFacebookClient* 方法中的注释字符并添加应用程序 ID 和应用程序密码。使用您获取的值，下面显示的值将不起作用。删除 *OAuthWebSecurity.RegisterGoogleClient* 调用中的注释字符，并添加如下所示的 *OAuthWebSecurity.RegisterYahooClient*。Google 和 Yahoo 提供程序不需要您注册和获取密钥。
 警告：确保您的应用程序 ID 和密码安全可靠。拥有您的应用程序 ID 和密码的恶意用户可以假扮为您的应用程序。
 
      public static void RegisterAuth()
@@ -401,7 +401,7 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
 
 在本节中，我们将应用 [Authorize][Authorize] 特性限制对操作方法的访问。匿名用户将只能查看主页。已注册用户将能查看联系人详细信息、关于页面和联系人页面。只有具有 *canEdit* 角色的用户才能访问可更改数据的操作方法。
 
-1.  向应用程序中添加 [Authorize][Authorize] 筛选器和 [RequireHttps][RequireHttps] 筛选器。替代方法是向每个控制器中添加 [Authorize][Authorize] 和 [RequireHttps][RequireHttps] 属性，但最安全的做法是将这些属性应用于整个应用程序。通过全局添加这两个属性，您添加的每个新控制器和操作方法都将自动受到保护，您将无需记住应用它们。有关更多信息，请参见[保护 ASP.NET MVC 4 应用程序和新 AllowAnonymous 属性][保护 ASP.NET MVC 4 应用程序和新 AllowAnonymous 属性]。打开 *App\_Start\\FilterConfig.cs* 文件并将 *RegisterGlobalFilters* 方法替换为以下内容。
+1.  向应用程序中添加 [Authorize][Authorize] 筛选器和 [RequireHttps][RequireHttps] 筛选器。替代方法是向每个控制器中添加 [Authorize][Authorize] 和 [RequireHttps][RequireHttps] 属性，但最安全的做法是将这些属性应用于整个应用程序。通过全局添加这两个属性，您添加的每个新控制器和操作方法都将自动受到保护，您将无需记住应用它们。有关更多信息，请参见[保护 ASP.NET MVC 4 应用程序和新 AllowAnonymous 属性][保护 ASP.NET MVC 4 应用程序和新 AllowAnonymous 属性]。打开 *App\_Start&#92;FilterConfig.cs* 文件并将 *RegisterGlobalFilters* 方法替换为以下内容。
 
         public static void
         RegisterGlobalFilters(GlobalFilterCollection filters)
@@ -443,7 +443,7 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
         }
 
 5.  取消 ASP.NET 成员身份注册。项目中当前的 ASP.NET 成员身份注册不提供密码重置支持，并且不会验证用户是否正在注册（例如，使用 [CAPTCHA][CAPTCHA]）。在使用某个第三方提供程序验证用户身份后，该用户即可进行注册。在 AccountController 中，从 GET 和 POST *Register* 方法中删除 *[AllowAnonymous]*。这将防止机器人和匿名用户进行注册。
-6.  在 *Views\\Shared\_LoginPartial.cshtml* 中，删除“注册”操作链接。
+6.  在 *Views&#92;Shared\_LoginPartial.cshtml* 中，删除“注册”操作链接。
 7.  启用 SSL。在“解决方案资源管理器”中，单击 **ContactManager** 项目，然后单击 F4 以显示属性对话框。将“已启用 SSL”更改为 true。复制 **SSL URL**。
 
     ![启用 SSL][启用 SSL]
@@ -486,7 +486,7 @@ Azure 网站包含有效的安全证书，因此在部署到 Azure 时，将不�
 ### 创建开发数据库脚本
 
 1.  运行 SSMS。
-2.  在“连接到服务器”对话框中，输入 *(localdb)\\v11.0* 作为服务器名称，保持“身份验证”设置为“Windows 身份验证”，然后单击“连接”。如果您已安装 SQL Express，请输入 **.\\SQLEXPRESS**。
+2.  在“连接到服务器”对话框中，输入 *(localdb)&#92;v11.0* 作为服务器名称，保持“身份验证”设置为“Windows 身份验证”，然后单击“连接”。如果您已安装 SQL Express，请输入 **.&#92;SQLEXPRESS**。
 
     ![“连接到服务器”对话框][“连接到服务器”对话框]
 

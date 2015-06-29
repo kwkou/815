@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-how-to-monitor-websites" urlDisplayName="How to monitor" pageTitle="How to monitor web sites - Azure service management" metaKeywords="Azure monitoring web sites, Azure Management Portal Monitor, Azure monitoring" description="Learn how to monitor Azure web sites by using the Monitor page in the Management Portal." metaCanonical="" services="web-sites" documentationCenter="" title="How to Monitor Web Sites" authors="timamm" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="manage-services-how-to-monitor-websites" urlDisplayName="How to monitor" pageTitle="How to monitor web sites - Azure service management" metaKeywords="Azure monitoring web sites, Azure Management Portal Monitor, Azure monitoring" description="Learn how to monitor Azure web sites by using the Monitor page in the Management Portal." metaCanonical="" services="web-sites" documentationCenter="" title="How to Monitor Web Sites" authors="timamm" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -173,7 +173,7 @@
 
 -   将用于保存应用程序日志的位置，该位置是相对于 Web 根的。
 
--   默认值：..\\..\\LogFiles\\Application
+-   默认值：..&#92;..&#92;LogFiles&#92;Application
 
 **DIAGNOSTICS\_TEXTTRACEMAXBUFFERSIZEBYTES**
 

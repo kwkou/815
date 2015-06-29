@@ -47,9 +47,9 @@ Hadoop .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 Hadoop �
 
 你还必须下载本教程中使用的 Actors.txt 文件。执行以下步骤将此文件下载到你的开发环境中：
 
-1.  在本地计算机上创建 C:\\Tutorials 文件夹。
+1.  在本地计算机上创建 C:&#92;Tutorials 文件夹。
 
-2.  下载 [Actors.txt][]，并将该文件保存到 C:\\Tutorials 文件夹。
+2.  下载 [Actors.txt][]，并将该文件保存到 C:&#92;Tutorials 文件夹。
 
 ## 创建应用程序
 
@@ -156,7 +156,7 @@ Hadoop .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 Hadoop �
 
 10. 更新应用程序中的常量。Azure HDInsight 服务使用 Azure Blob 存储作为默认文件系统。在 HDInsight 设置过程中，必须将一个 Blob 指定为默认文件系统。你可以选择使用默认文件系统容器，也可以选择使用其他 Blob 存储中的容器。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
-    如果你选择使用默认文件系统容器，可通过远程连接到该群集从 *c:\\apps\\dist\\hadoop-1.1.0-SNAPSHOT\\conf\>core-site.xml* 配置文件中找到存储帐户名、存储密钥和容器名。通过搜索 *fs.default.name* 可找到用作默认文件系统的容器；通过搜索 *fs.azure.account.key* 可找到存储帐户名和帐户密钥。
+    如果你选择使用默认文件系统容器，可通过远程连接到该群集从 *c:&#92;apps&#92;dist&#92;hadoop-1.1.0-SNAPSHOT&#92;conf\>core-site.xml* 配置文件中找到存储帐户名、存储密钥和容器名。通过搜索 *fs.default.name* 可找到用作默认文件系统的容器；通过搜索 *fs.azure.account.key* 可找到存储帐户名和帐户密钥。
 
 ## 运行应用程序
 

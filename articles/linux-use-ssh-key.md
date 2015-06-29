@@ -66,7 +66,7 @@ OpenSSH 私钥可通过 `openssl` 实用程序直接读取。以下命令将采�
 ### 使用 msysgit
 
 1.  从以下位置下载和安装 msysgit：<http://msysgit.github.com/>
-2.  从安装的目录运行 `msys`（示例：c:\\msysgit\\msys.exe）
+2.  从安装的目录运行 `msys`（示例：c:&#92;msysgit&#92;msys.exe）
 3.  通过键入 `cd bin` 更改为 `bin` 目录
 
 ### 使用针对 Windows 的 GitHub
