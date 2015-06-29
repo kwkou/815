@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-users-dotnet" urlDisplayName="Get Started with Users" pageTitle="Get started with authentication (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to authenticate users of your Windows Store app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-get-started-with-users-dotnet" urlDisplayName="Get Started with Users" pageTitle="Get started with authentication (Windows Store) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to authenticate users of your Windows Store app through a variety of identity providers, including Google, Facebook, Twitter, and Microsoft." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with authentication in Mobile Services" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="12/03/2014"
     wacn.date="04/11/2015"
@@ -151,7 +151,7 @@
 
 在下一教程[使用脚本为用户授权][]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。请在[移动服务 .NET 操作方法概念性参考][]中了解有关如何将移动服务与 .NET 一起使用的详细信息。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-users-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/get-started-with-users-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-users-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/get-started-with-users-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/get-started-with-users-ios "iOS"

@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-data-js-vs2013" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/get-started-with-data-dotnet/" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-get-started-with-data-js-vs2013" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Windows Store JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to get started using Mobile Services to leverage data in your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/get-started-with-data-dotnet/" services="" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/26/2015"
     wacn.date="04/11/2015"
@@ -185,7 +185,7 @@
 -   [移动服务 HTML/JavaScript 操作方法概念性参考][]
     了解有关如何将移动服务与 HTML 和 JavaScript 一起使用的详细信息。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/get-started-with-data-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-data-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/get-started-with-data-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/get-started-with-data-ios "iOS"

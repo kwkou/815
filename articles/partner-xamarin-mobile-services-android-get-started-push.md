@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-push-xamarin-android" urlDisplayName="Get Started with Push Notifications" pageTitle="Get started with push notifications - Mobile Services" metaKeywords="" description="Learn how to use push notifications in Xamarin.Android apps with Azure Mobile Services." metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Get started with push notifications in Mobile Services" documentationCenter="Mobile" authors="" />
+﻿<properties linkid="develop-mobile-tutorials-get-started-with-push-xamarin-android" urlDisplayName="Get Started with Push Notifications" pageTitle="Get started with push notifications - Mobile Services" metaKeywords="" description="Learn how to use push notifications in Xamarin.Android apps with Azure Mobile Services." metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Get started with push notifications in Mobile Services" documentationCenter="Mobile" authors="" />
 <tags ms.service=""
     ms.date="03/12/2015"
     wacn.date="04/11/2015"
@@ -222,7 +222,7 @@
 
 在这个简单的示例中，用户将会收到包含刚刚插入的数据的推送通知。在下一教程[向应用程序用户推送通知][]中，你将要创建一个单独的 Devices 表，该表用于存储设备标记，以及在发生插入操作时向所有存储的通道发出推送通知。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-push-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/get-started-with-push-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-push-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/get-started-with-push-ios "iOS"

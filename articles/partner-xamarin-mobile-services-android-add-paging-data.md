@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-add-paging-to-data-xamarin-android" urlDisplayName="Add paging to data" pageTitle="Add paging to data (Xamarin Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Xamarin Android app from Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="" />
+﻿<properties linkid="develop-mobile-tutorials-add-paging-to-data-xamarin-android" urlDisplayName="Add paging to data" pageTitle="Add paging to data (Xamarin Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Xamarin Android app from Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="" />
 <tags ms.service=""
     ms.date="11/30/2014"
     wacn.date="04/11/2015"
@@ -70,14 +70,14 @@
 -   [推送通知入门][]
     了解如何向应用程序发送一条非常简单的推送通知。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/add-paging-to-data-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/add-paging-to-data-ios "iOS"
   [Android]: /develop/mobile/tutorials/add-paging-to-data-android "Android"
   [HTML]: /develop/mobile/tutorials/add-paging-to-data-html "HTML"
-  [iOS C\#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
-  [Android C\#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
+  [iOS C#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
+  [Android C#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
   [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
   [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
   [推送通知入门]: /develop/mobile/tutorials/get-started-with-push-xamarin-android

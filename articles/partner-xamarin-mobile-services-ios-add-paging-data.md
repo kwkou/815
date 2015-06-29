@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="Add paging to data (Xamarin iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Xamarin iOS app from Mobile Services." metaCanonical="" services="" authors="" solutions="" manager="" editor="" title="Refine Mobile Services queries with paging" documentationCenter="Mobile" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="Add paging to data (Xamarin iOS) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Xamarin iOS app from Mobile Services." metaCanonical="" services="" authors="" solutions="" manager="" editor="" title="Refine Mobile Services queries with paging" documentationCenter="Mobile" />
 <tags ms.service=""
     ms.date="12/19/2014"
     wacn.date="04/11/2015"
@@ -63,13 +63,13 @@
 -   [身份验证入门][]
     了解如何使用 Windows 帐户对应用程序用户进行身份验证。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/add-paging-to-data-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/add-paging-to-data-ios "iOS"
   [Android]: /develop/mobile/tutorials/add-paging-to-data-android "Android"
   [HTML]: /develop/mobile/tutorials/add-paging-to-data-html "HTML"
-  [iOS C\#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
-  [Android C\#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
+  [iOS C#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios "Xamarin.iOS"
+  [Android C#]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android "Xamarin.Android"
   [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
   [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios

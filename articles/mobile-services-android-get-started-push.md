@@ -237,7 +237,7 @@
 
 <!-- URLs. -->
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/get-started-with-push-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/get-started-with-push-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/get-started-with-push-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/get-started-with-push-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/get-started-with-push-ios "iOS"

@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-js" urlDisplayName="Validate Data" pageTitle="Use server scripts to validate and modify data (JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-js" urlDisplayName="Validate Data" pageTitle="Use server scripts to validate and modify data (JavaScript) | Mobile Dev Center" metaKeywords="" description="Learn how to validate and modify data sent using server scripts from your Windows Store JavaScript app." metaCanonical="/develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/" services="" documentationCenter="Mobile" title="Validate and modify data in Mobile Services by using server scripts" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="10/05/2014"
     wacn.date="04/11/2015"
@@ -188,7 +188,7 @@
 -   [移动服务服务器脚本参考][]
     了解有关注册和使用服务器脚本的详细信息。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/validate-modify-and-augment-data-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/validate-modify-and-augment-data-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/validate-modify-and-augment-data-ios "iOS"

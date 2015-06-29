@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-javascript" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" writer="wesmc" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conflicts" authors="wesmc" />
+﻿<properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-javascript" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" writer="wesmc" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conflicts" authors="wesmc" />
 <tags ms.service=""
     ms.date="10/05/2014"
     wacn.date="04/11/2015"
@@ -276,7 +276,7 @@ Azure 移动服务通过使用添加到每个表的 `__version` 系统属性列�
 -   [推送通知入门][]
     了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/ "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone"
   [更新应用程序以允许更新]: #uiupdate
