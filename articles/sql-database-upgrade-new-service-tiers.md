@@ -92,7 +92,7 @@ Azure SQL Database 服务在 sys.resource_stats 视图中提供 Web/企业数据
 - [服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx)
 - Transact-SQL 
 
-要进行 Web/企业数据库即席迁移，请使用 [Azure 管理门户](https://manage.windowsazure.com)。请参阅[更改数据库服务层和性能级别](http://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx)一文中的"升级到更高的服务层"部分，以了解使用 Azure 管理门户进行升级的步骤。
+要进行 Web/企业数据库即席迁移，请使用 [Azure 管理门户](https://manage.windowsazure.cn)。请参阅[更改数据库服务层和性能级别](http://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx)一文中的"升级到更高的服务层"部分，以了解使用 Azure 管理门户进行升级的步骤。
 
 若要对服务器/订阅中的多个数据库执行操作或者要自动化过程，请使用 PowerShell 或 Transact-SQL 命令。
 

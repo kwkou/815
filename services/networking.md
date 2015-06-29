@@ -43,7 +43,7 @@
 
 了解如何通过此相关技术使用 Azure 提供的名称解析服务，直接按照主机名连接到云服务中的虚拟机和角色实例。
 
-####[Azure 架构参考](http://msdn.microsoft.com/library/azure/dd179398)      
+####[Azure 架构参考](https://msdn.microsoft.com/zh-CN/library/azure/dd179398)      
 
 网络配置文件中使用的架构的文档，可用于指定虚拟网络配置设置。</p>
 

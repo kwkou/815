@@ -5,7 +5,7 @@
     />
 
 
->[WACOM.NOTE] 有关要求和故障排除提示，请参阅[连接到 Azure 虚拟机使用 RDP 或 SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx)。
+>[WACOM.NOTE] 有关要求和故障排除提示，请参阅[连接到 Azure 虚拟机使用 RDP 或 SSH](https://msdn.microsoft.com/zh-CN/library/azure/dn535788.aspx)。
 
 1. 如果尚未这样做，登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
 

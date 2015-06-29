@@ -20,7 +20,7 @@ Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结
 
 ####特色
 
--   [开始在管理门户中使用计划程序](http://msdn.microsoft.com/library/zh-cn/azure/dn479785.aspx)
+-   [开始在管理门户中使用计划程序](https://msdn.microsoft.com/zh-CN/library/zh-cn/azure/dn479785.aspx)
 -   [计划程序实体层次结构、概念和术语](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn528941.aspx)
 -   [计划程序 REST API 参考](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn528946.aspx)
 
@@ -28,7 +28,7 @@ Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结
 
 ###探究
 
-####[开始在管理门户中使用计划程序](http://msdn.microsoft.com/library/zh-cn/azure/dn479785.aspx)
+####[开始在管理门户中使用计划程序](https://msdn.microsoft.com/zh-CN/library/zh-cn/azure/dn479785.aspx)
 
 开始利用历史记录和定期计划等高级概念在管理门户中创建 Azure 计划程序作业和作业集合。
 

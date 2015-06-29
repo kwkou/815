@@ -49,7 +49,7 @@
 
 ## 排查连接问题
 
-在出现问题时，请参阅[排查 Azure SQL Database 连接问题](https://support.microsoft.com/kb/2980233)。有关可能出现的问题与解答列表，请参阅[排查 Microsoft Azure SQL Database 连接问题](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1)。
+在出现问题时，请参阅[排查 Azure SQL Database 连接问题](https://support.microsoft.com/zh-CN/kb/2980233)。有关可能出现的问题与解答列表，请参阅[排查 Microsoft Azure SQL Database 连接问题](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1)。
 
 
 ## 后续步骤

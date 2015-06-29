@@ -178,6 +178,6 @@ Windows Azure 定期更新承载应用程序实例的操作系统。在应用更
 
 <!-- LINKS -->
 [对虚拟机进行负载平衡]:../load-balance-virtual-machines
-[关于虚拟网络的地缘组]:http://msdn.microsoft.com/library/windowsazure/jj156085.aspx
+[关于虚拟网络的地缘组]:https://msdn.microsoft.com/zh-CN/library/windowsazure/jj156085.aspx
 [如何连接云服务中的虚拟机]:../virtual-machines-connect-cloud-service
 

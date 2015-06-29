@@ -24,7 +24,7 @@
 
 ###创建终结点###
 
-1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.com)（如果您尚未这么做）。
+1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.cn)（如果您尚未这么做）。
 
 2. 单击“虚拟机”，然后选择您要配置的虚拟机。
 

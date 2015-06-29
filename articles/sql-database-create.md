@@ -20,7 +20,7 @@
 
 # 在 SQL Database V12 中创建数据库
 
-[注册](https://manage.windowsazure.cn) SQL Database V12[（在某些区域以预览版提供）](sql-database-v12-whats-new#V12AzureSqlDbPreviewGaTable)，以利用 Microsoft Azure 上的下一代 SQL Database。若要开始，你需要订阅 Microsoft Azure。注册 [Azure 免费试用版](http://azure.microsoft.com/pricing/free-trial)并查看[价格](/home/features/sql-database/#price)信息。 
+[注册](https://manage.windowsazure.cn) SQL Database V12[（在某些区域以预览版提供）](sql-database-v12-whats-new#V12AzureSqlDbPreviewGaTable)，以利用 Microsoft Azure 上的下一代 SQL Database。若要开始，你需要订阅 Microsoft Azure。注册 [Azure 免费试用版](/pricing/1rmb-trial)并查看[价格](/home/features/sql-database/#price)信息。 
 
 
 | 创建数据库 | 屏幕截图 |

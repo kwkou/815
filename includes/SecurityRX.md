@@ -84,7 +84,7 @@ Azure AD 访问控制是一项云服务，用于提供安全令牌
 Windows Live ID/Microsoft 帐户、Facebook、Google、Yahoo! 和 Open
 ID 2.0 标识提供程序）进行联合。以下资源提供有关 Azure AD 访问控制的详细信息：
 
--   [访问控制服务 2.0](http://msdn.microsoft.com/library/gg429786.aspx) 
+-   [访问控制服务 2.0](https://msdn.microsoft.com/zh-CN/library/gg429786.aspx) 
 -   [使用 ACS 的方案和解决方案](http://msdn.microsoft.com/zh-cn/library/gg185920.aspx)
 -   [ACS 操作指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
 -   [基于声明的身份识别和访问控制指南](http://msdn.microsoft.com/zh-cn/library/ff423674.aspx)

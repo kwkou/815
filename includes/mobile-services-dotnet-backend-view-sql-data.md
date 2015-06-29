@@ -11,4 +11,4 @@
 
     ![query SQL Database for stored items](./media/mobile-services-dotnet-backend-view-sql-data/sql-azure-query.png)
 
-	请注意，该表包含 Id、\__createdAt、\__updatedAt 和\__ Version 列。这些列支持脱机数据同步并在 [EntityData](http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.entitydata.aspx) 基类中实施。有关更多信息，请参阅[脱机数据同步入门]。
+	请注意，该表包含 Id、\__createdAt、\__updatedAt 和\__ Version 列。这些列支持脱机数据同步并在 [EntityData](https://msdn.microsoft.com/zh-CN/library/microsoft.windowsazure.mobile.service.entitydata.aspx) 基类中实施。有关更多信息，请参阅[脱机数据同步入门]。

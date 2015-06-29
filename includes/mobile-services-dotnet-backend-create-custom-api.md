@@ -58,7 +58,7 @@
 
 	在以上代码中，将  `todolistContext` 替换为您的数据模型的 DbContext 名称，该名称应该是在移动服务名称后追加  `Context`。还将 UPDATE 语句中的模式名称替换为您的移动服务名称。 
 
-	这段代码使用[数据库类](http://msdn.microsoft.com/library/system.data.entity.database.aspx)来直接访问 **TodoItems** 表，从而在所有项上设置完成标志。此方法支持 POST 请求，已更改行的数量将以整数值形式返回至客户端。
+	这段代码使用[数据库类](https://msdn.microsoft.com/zh-CN/library/system.data.entity.database.aspx)来直接访问 **TodoItems** 表，从而在所有项上设置完成标志。此方法支持 POST 请求，已更改行的数量将以整数值形式返回至客户端。
 
 	> [WACOM.NOTE] 设置了默认权限，这意味着应用的任何用户都能够调用自定义 API。但是，应用程序密钥无法安全地分发或存储，不能视为安全的凭据。出于这一原因，您应该考虑将访问权限仅限于经过身份验证的用户，仅允许这些用户执行修改数据或影响移动服务的操作。 
 

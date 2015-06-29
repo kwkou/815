@@ -202,7 +202,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 -   [为 HDInsight 开发 C# Hadoop 流程序][hdinsight-develop-streaming]
 -   [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
-<!-- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ -->
+<!-- [azure-member-offers]: http://azure.microsoft.com/zh-CN/pricing/member-offers/ -->
 
 [hdinsight-versions]: ../hdinsight-component-versioning/
 

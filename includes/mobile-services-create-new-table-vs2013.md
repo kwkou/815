@@ -13,7 +13,7 @@
 
 	这样可在服务器上创建 TodoItem 表，具有应用程序密钥的任何人都可以访问和更改该表中的数据，而无需首先进行身份验证。 
 
-	<div class="dev-callout"><strong>注意</strong><p>应用程序密钥随应用程序一同分发。由于此密钥没有安全分发，不能将其视为安全令牌。若要保护对移动服务数据的访问，您必须在用户访问数据之前对用户进行身份验证。有关详细信息，请参阅<a href="http://msdn.microsoft.com/library/windowsazure/jj193161.aspx">权限</a>。</p></div>
+	<div class="dev-callout"><strong>注意</strong><p>应用程序密钥随应用程序一同分发。由于此密钥没有安全分发，不能将其视为安全令牌。若要保护对移动服务数据的访问，您必须在用户访问数据之前对用户进行身份验证。有关详细信息，请参阅<a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/jj193161.aspx">权限</a>。</p></div>
 
 
 

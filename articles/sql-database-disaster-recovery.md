@@ -42,7 +42,7 @@ Azure SQL Database 提供了许多的中断恢复功能：
 
 
 ### Azure 门户
-1. 登录到 [Azure 门户](https://portal.Azure.com)
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
 2. 在屏幕左侧选择"浏览"，然后选择"SQL Database"。
 3. 导航到你的数据库并选择它。 
 4. 在数据库边栏选项卡底部选择"地域复制映射"。

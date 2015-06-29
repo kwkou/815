@@ -136,7 +136,7 @@ Azure SQL Database 管理门户：
 在旧版 Azure 管理门户上的数据库页中，可以单击"在 Visual Studio 中打开"，以便在计算机上启动 VS2013，从而与 Azure SQL Database 建立连接。
 
 
-另一种方法是使用装有 [CU6](http://support.microsoft.com/kb/3031047) 的 SQL Server Management Studio (SSMS) 2014 来连接到 Azure SQL Database。以下博客文章提供了更多详细信息：<br/>[Azure SQL Database 的客户端工具更新](http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database)。
+另一种方法是使用装有 [CU6](https://support.microsoft.com/zh-CN/kb/3031047) 的 SQL Server Management Studio (SSMS) 2014 来连接到 Azure SQL Database。以下博客文章提供了更多详细信息：<br/>[Azure SQL Database 的客户端工具更新](http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database)。
 
 
 ### 升级到 V12  *期间*的限制

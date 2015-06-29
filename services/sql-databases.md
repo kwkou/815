@@ -109,7 +109,7 @@ Azure SQL数据库 Elastic Scale（预览版）使数据级别的应用程序可
 
 了解如何将登录名和用户添加到 SQL数据库。
 
-####[使用动态管理视图监视 SQL数据库](http://msdn.microsoft.com/library/azure/ff394114.aspx?amp;clcid=0x804)
+####[使用动态管理视图监视 SQL数据库](https://msdn.microsoft.com/zh-CN/library/azure/ff394114.aspx?amp;clcid=0x804)
 
 了解如何使用数据管理视图 (DMV) 来监视数据容量、查询问题和当前连接。
 

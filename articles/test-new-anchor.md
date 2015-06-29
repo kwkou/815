@@ -384,7 +384,7 @@ The following example shows how to create an AccessPolicy:
 
 ### Get the Upload URL
 
-To receive the actual upload URL, create a SAS Locator. Locators define the start time and type of connection endpoint for clients that want to access Files in an Asset. You can create multiple Locator entities for a given AccessPolicy and Asset pair to handle different client requests and needs. Each of these Locators use the StartTime value plus the DurationInMinutes value of the AccessPolicy to determine the length of time a URL can be used. For more information, see [Locator](http://msdn.microsoft.com/en-us/library/azure/hh974308.aspx).
+To receive the actual upload URL, create a SAS Locator. Locators define the start time and type of connection endpoint for clients that want to access Files in an Asset. You can create multiple Locator entities for a given AccessPolicy and Asset pair to handle different client requests and needs. Each of these Locators use the StartTime value plus the DurationInMinutes value of the AccessPolicy to determine the length of time a URL can be used. For more information, see [Locator](https://msdn.microsoft.com/zh-CN/library/azure/hh974308.aspx).
 
 
 A SAS URL has the following format:
