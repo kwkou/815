@@ -17,7 +17,6 @@
 # 在 Ubuntu Linux 上使用 Python 连接到 SQL 数据库
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库 数据库的 Python 代码示例。
