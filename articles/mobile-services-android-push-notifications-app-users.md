@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="Push notifications to users (Android ) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to push notifications to users of your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="Push notifications to users (Android ) | Mobile Dev Center" metaKeywords="" description="Learn how to use Mobile Services to push notifications to users of your Android app." metaCanonical="" services="" documentationCenter="Mobile" title="Push notifications to users by using Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="10/07/2014"
     wacn.date="04/11/2015"
@@ -225,21 +225,6 @@
 
 你已成功完成本教程。
 
-## 后续步骤
-
-演示推送通知操作基础知识的教程到此结束。建议你了解有关以下移动服务主题的详细信息：
-
--   [数据处理入门][]
-    了解有关使用移动服务存储和查询数据的详细信息。
-
--   [身份验证入门][]
-    了解如何使用 Windows 帐户对应用程序用户进行身份验证。
-
--   [移动服务服务器脚本参考][]
-    了解有关注册和使用服务器脚本的详细信息。
-
--   [如何使用适用于移动服务的 Android 客户端库][]
-    了解有关如何将移动服务与 .NET 一起使用的详细信息。
 
   [Windows Phone]: /develop/mobile/tutorials/push-notifications-to-users-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/push-notifications-to-users-ios "iOS"
@@ -258,7 +243,3 @@
   [5]: ./media/mobile-services-android-push-notifications-app-users/mobile-insert-script-registration.png
   [6]: ./media/mobile-services-android-push-notifications-app-users/mobile-insert-script-push2.png
   [7]: ./media/mobile-services-android-push-notifications-app-users/mobile-push-icon.png
-  [数据处理入门]: /develop/mobile/tutorials/get-started-with-data-android
-  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-android
-  [移动服务服务器脚本参考]: /develop/mobile/how-to-guides/work-with-server-scripts/
-  [如何使用适用于移动服务的 Android 客户端库]: /develop/mobile/how-to-guides/work-with-android-client-library

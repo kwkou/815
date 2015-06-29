@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="数据处理入门 (Android) | 移动开发人员中心" 
 	description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" 
 	services="mobile-services" 
@@ -7,16 +7,9 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-wacn.date="04/15/2015"
-
+<tags wacn.date="04/15/2015"
 	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="02/06/2015" 
-	ms.author="ricksal"/>
+	ms.date="02/06/2015" />
 
 # 将移动服务添加到现有应用程序
 

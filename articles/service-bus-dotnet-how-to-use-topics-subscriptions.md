@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (.NET) - Azure" metaKeywords="Get started Azure Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions C# " description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 .NET 应用程序编写的。 " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+﻿<properties linkid="dev-net-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (.NET) - Azure" metaKeywords="Get started Azure Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions C# " description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 .NET 应用程序编写的。 " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 <tags ms.service="service-bus"
     ms.date="03/18/2015"
     wacn.date="04/11/2015"
@@ -6,7 +6,7 @@
 
 
 # 如何使用 Service Bus 主题/订阅
-本指南说明如何使用 Service Bus 主题和订阅。相关示例用 C# 编写且使用 .NET API。涉及的应用场景包括创建主题和订阅、创建订阅筛选器、将消息发送到**主题、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][]部分。 
+本指南说明如何使用 Service Bus 主题和订阅。相关示例用 C# 编写且使用 .NET API。涉及的应用场景包括创建主题和订阅、创建订阅筛选器、将消息发送到**主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][]部分。 
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -309,4 +309,5 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   
   [队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/hh367516.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sqlfilter.aspx
+  [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Service Bus 中转消息传送 .NET 教程]: http://msdn.microsoft.com/zh-cn/library/hh367512.aspx

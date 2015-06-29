@@ -1,4 +1,4 @@
-<properties linkid="develop-python-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (Python) - Azure" metaKeywords="Get started Azure Service Bus topics publising subscribe messaging Python" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Python 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (Python) - Azure" metaKeywords="Get started Azure Service Bus topics publising subscribe messaging Python" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Python 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
 <tags ms.service="service-bus"
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -175,3 +175,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [Azure 管理门户]: http://manage.windowsazure.cn
   [队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/hh367516.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
+  [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx

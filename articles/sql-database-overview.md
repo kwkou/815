@@ -1,3 +1,5 @@
+﻿<properties title="如何管理 Azure 上的 SQL数据库" pageTitle="如何管理 Azure 上的 SQL数据库" description="本指南演示了如何针对 Azure SQL数据库 上的逻辑服务器和数据库实例执行管理任务。" metaKeywords="Azure SQL" services="sql-database" />
+
 # 如何管理 Azure 上的 SQL数据库
 
 本指南演示了如何针对 Azure SQL数据库 上的逻辑服务器和数据库实例执行管理任务。
