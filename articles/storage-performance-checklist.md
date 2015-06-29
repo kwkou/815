@@ -1,12 +1,12 @@
-<properties title="Windows Azure Storage Performance and Scalability Checklist" pageTitle="Microsoft Azure 存储性能和可伸缩性清单 description="Required"" metaKeywords="Optional" services="Optional" solutions="Optional" documentationCenter="Optional" authors="Tamra Myers" videoId="Optional" scriptId="Optional" />
-<tags ms.service="Optional"
+﻿<properties title="Windows Azure 存储性能和可伸缩性清单" pageTitle="Windows Azure 存储性能和可伸缩性清单" services="storage" authors="Tamra Myers"/>
+<tags ms.service="storage"
     ms.date="02/26/2015"
     wacn.date="04/11/2015"
     />
 
 
 
-#Microsoft Azure 存储性能和可伸缩性清单
+#Windows Azure 存储性能和可伸缩性清单
 ##介绍
 自从 Microsoft Azure 存储服务发布以来，Microsoft 已经形成了大量的经过验证的做法，目的是提高这些服务的使用效率。本文将其中最重要的一些做法进行了总结，并以"清单"形式列出。本文的目的是确保应用程序开发人员在使用 Azure 存储空间时，采用的是经过验证的做法，并帮助他们确认其他经过验证的、可以考虑采用的做法。本文不会全盘介绍所有可能的性能与伸缩性优化内容，那些影响不大或适用范围不广的内容不在本文讲解之列。必须在设计过程中确保应用程序的行为是可预测到的，因此应早些了解这些经过验证的做法，避免进行那些会引发性能问题的设计。  
 

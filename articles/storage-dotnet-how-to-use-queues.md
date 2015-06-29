@@ -278,7 +278,7 @@ Microsoft.WindowsAzure.CloudConfigurationManager，则可以使用 **CloudConfig
   [如何：使用其他方法取消对消息的排队]: #advanced-get
   [如何：获取队列长度]: #get-queue-length
   [如何：删除队列]: #delete-queue
- <!-- [下载并安装 Azure SDK for.NET]：/develop/net/
+  [下载并安装 Azure SDK for.NET]：/develop/net/
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
   [CloudStorageAccount]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
