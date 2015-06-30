@@ -126,7 +126,14 @@
 
 ### <a name="monitoring-availability"></a>监视可用性
 
-你应通过监视以下每小时或每分钟度量值表中的 **Availability** 列中的值来监视存储帐户中存储服务的可用性：**$MetricsHourPrimaryTransactionsBlob**、**$MetricsHourPrimaryTransactionsTable**、**$MetricsHourPrimaryTransactionsQueue**、**$MetricsMinutePrimaryTransactionsBlob**、**$MetricsMinutePrimaryTransactionsTable**、**$MetricsMinutePrimaryTransactionsQueue**、**$MetricsCapacityBlob**。**Availability** 列包含一个百分比值，指示该服务的可用性或该行所表示的 API 操作的可用性（**RowKey** 显示行是包含整体服务的度量值还是包含特定 API 操作的度量值）。 
+你应通过监视以下每小时或每分钟度量值表中的 **Availability** 列中的值来监视存储帐户中存储服务的可用性：
+**$MetricsHourPrimaryTransactionsBlob**、
+**$MetricsHourPrimaryTransactionsTable**、
+**$MetricsHourPrimaryTransactionsQueue**、
+**$MetricsMinutePrimaryTransactionsBlob**、
+**$MetricsMinutePrimaryTransactionsTable**、
+**$MetricsMinutePrimaryTransactionsQueue**、
+**$MetricsCapacityBlob**。**Availability** 列包含一个百分比值，指示该服务的可用性或该行所表示的 API 操作的可用性（**RowKey** 显示行是包含整体服务的度量值还是包含特定 API 操作的度量值）。 
 
 任何小于 100% 的值指示某些存储请求将失败。你可以通过检查度量值数据中显示具有不同错误类型（如 **ServerTimeoutError**）的请求数的其他列来了解失败原因。由于以下原因你应该会看到 **Availability** 暂时低于 100%：比如在该服务移动分区以更好地负载平衡请求时，出现暂时性服务器超时；客户端应用程序中的重试逻辑应处理此类间歇性情况。页面 <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx" target="_blank"></a> 列出了存储度量值在其**可用性**计算中包括的事务类型。
 

@@ -50,18 +50,18 @@
 
 在方案 1 中，基本 Blob 自拍摄快照后未进行更新，因此仅唯一块 1、2、3 会产生费用。
 
-![Azure Storage Resources](./media/storage-blob-snapshots-billing/storage-blob-snapshots-billing-scenario-1.png)
+![Azure Storage Resources](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-1.png)
 
 在方案 2 中，已更新基本 Blob，但未更新快照。已更新块 3，即使它包含相同的数据和 ID，它也与快照中的块 3 不同。因此，帐户需要为四个块支付费用。
 
-![Azure Storage Resources](./media/storage-blob-snapshots-billing/storage-blob-snapshots-billing-scenario-2.png)
+![Azure Storage Resources](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-2.png)
 
 在方案 3 中，已更新基本 Blob，但未更新快照。块 3 已替换为基础 Blob 中的块 4，但快照仍反映块 3。因此，帐户需要为四个块支付费用。
  
-![Azure Storage Resources](./media/storage-blob-snapshots-billing/storage-blob-snapshots-billing-scenario-3.png)
+![Azure Storage Resources](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-3.png)
 
 在方案 4 中，已完全更新基本 Blob，并且其中不包含任何原始块。因此，帐户需要为所有八个唯一块支付费用。如果你使用如 UploadFile、UploadText、UploadFromStream 或 UploadByteArray 之类的更新方法，则会出现此情况，因为这些方法将替换 Blob 的所有内容。
 
-![Azure Storage Resources](./media/storage-blob-snapshots-billing/storage-blob-snapshots-billing-scenario-4.png)
+![Azure Storage Resources](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
 <!--HONumber=50-->

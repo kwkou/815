@@ -1,4 +1,4 @@
-﻿## 什么是表服务？
+## 什么是表服务？
 
 Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。表服务的常见用途包括：
 
@@ -30,7 +30,7 @@ Azure 表存储服务可存储大量结构化数据。该服务是一个 NoSQL �
 
 
   
-  [表 1]: ./media/storage-table-concepts-include/table1.png
+  [Table1]: ./media/storage-table-concepts-include/table1.png
   [OData.org]: http://www.odata.org/
 
 <!--HONumber=50-->

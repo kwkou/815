@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Windows Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use the Windows Azure blob service to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use the Windows Azure Blob Storage Service in .NET" authors="tamram" />
+<properties linkid="dev-net-2-how-to-blob-storage" urlDisplayName="Blob Service" pageTitle="How to use blob storage from .NET | Windows Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="Learn how to use the Windows Azure blob service to upload,  download, list, and delete blob content. Samples are written in C#." metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use the Windows Azure Blob Storage Service in .NET" authors="tamram" />
 <tags ms.service="storage"
     ms.date="12/05/2014"
     wacn.date="04/11/2015"
@@ -146,7 +146,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 
 .NET 存储客户端库中的 ODataLib 依赖项可通过在 NuGet （而非 WCF 数据服务）上获得的 ODataLib（5.0.2 版）包来解析。ODataLib 库可直接下载或者通过 NuGet 由代码项目引用。特定的 ODataLib 包为 [OData][]、[Edm][] 和 [Spatial][]。
 
-## 创建容器如何：创建容器
+## <a name="create-container"> </a>如何：创建容器
 
 所有存储 Blob 都驻留在一个容器中。你可以使用
 **CloudBlobClient** 对象来获取对你要使用的容器的引用。
@@ -178,7 +178,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 Internet 上的所有人都可以查看公共容器中的 Blob，但必须
 提供相应的访问密钥时才能修改或删除它们。
 
-## 上载到容器如何：将 Blob 上载到容器中
+## <a name="upload-blob"> </a>如何：将 Blob 上载到容器中
 
 Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Blob。
 
@@ -206,7 +206,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     blockBlob.UploadFromStream(fileStream);
     } 
 
-## 列出容器中的 Blob如何：列出容器中的 Blob
+##<a name="list-blob"> </a>如何：列出容器中的 Blob
 
 若要列出容器中的 Blob，首先需要获取容器引用。然后，
 你可以使用容器的 **ListBlobs** 方法来检索其中的 Blob 和/或目录。
@@ -297,7 +297,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 有关详细信息，请参阅 [CloudBlobContainer.ListBlobs][]。
 
-## 下载 Blob如何：下载 Blob
+## <a name="download-blobs"> </a>如何：下载 Blob
 
 若要下载 Blob，请首先检索 Blob 引用，然后调用 **DownloadToStream** 方法。以下示例
 使用 **DownloadToStream** 方法将 Blob 内容传输到一个流对象，然后
@@ -344,7 +344,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     text = System.Text.Encoding.UTF8.GetString(memoryStream.ToArray());
     }
 
-## 删除 Blob如何：删除 Blob
+##<a name="delete-blobs"> </a>如何：删除 Blob
 
 若要删除 Blob，请首先获取 Blob 引用，然后对其
 调用 **Delete** 方法。
@@ -365,7 +365,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     // 删除 Blob。
     blockBlob.Delete(); 
 
-## 后续步骤后续步骤
+## <a name="next-steps"></a>后续步骤
 
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解
 如何执行更复杂的存储任务。

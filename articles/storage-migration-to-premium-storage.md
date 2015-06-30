@@ -22,7 +22,7 @@
 
 ## 概述
 
-Microsoft Azure 高级存储将数据存储在采用最新技术的固态硬盘 (SSD) 上，为 Azure 虚拟机上运行的 I/O 密集型工作负荷提供高性能、低延迟磁盘支持。使用高级存储，每个 VM 的应用程序最多拥有 32 TB 的存储，每个 VM 可达到 50,000 IOPS（每秒输入/输出操作次数），读取操作的延迟极低。本文提供有关如何将你的磁盘、虚拟机 (VM) 从本地或标准存储或不同云平台迁移到 Azure 高级存储的准则。若要获取 Azure 高级存储产品的详细概述，请查看[高级存储：适用于 Azure 虚拟机工作负载的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
+Windows Azure 高级存储将数据存储在采用最新技术的固态硬盘 (SSD) 上，为 Azure 虚拟机上运行的 I/O 密集型工作负荷提供高性能、低延迟磁盘支持。使用高级存储，每个 VM 的应用程序最多拥有 32 TB 的存储，每个 VM 可达到 50,000 IOPS（每秒输入/输出操作次数），读取操作的延迟极低。本文提供有关如何将你的磁盘、虚拟机 (VM) 从本地或标准存储或不同云平台迁移到 Azure 高级存储的准则。若要获取 Azure 高级存储产品的详细概述，请查看[高级存储：适用于 Azure 虚拟机工作负载的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
 
 ## 开始之前
 
@@ -30,7 +30,7 @@ Microsoft Azure 高级存储将数据存储在采用最新技术的固态硬盘 
 
 ### 先决条件
 - 你将需要 Azure 订阅。如果你没有，则可以创建一个月的[试用](/pricing/1rmb-trial)订阅或访问 [Azure 定价](/pricing)以获得更多选项。
-- 若要执行 PowerShell cmdlet，你将需要 Microsoft Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads)。
+- 若要执行 PowerShell cmdlet，你将需要 Windows Azure PowerShell 模块。若要下载该模块，请参阅 [Azure 下载](/downloads)。
 - 当你计划使用在高级存储上运行的 Azure VM 时，你需要使用 DS 系列 VM。你可以将标准和高级存储磁盘用于 DS 系列 VM。在将来更多 VM 类型将提供高级存储磁盘。有关所有可用 Azure VM 磁盘类型和大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。
 
 ### 设计注意事项
@@ -94,9 +94,9 @@ Microsoft Azure 高级存储将数据存储在采用最新技术的固态硬盘 
 ### 先决条件
 
 - Azure 订阅、存储帐户以及你将在其中复制 VHD 的存储帐户中的容器。请注意，目标存储帐户可以是标准或高级存储帐户，具体取决于你的需求。
-- 用于通用化 VHD 的工具（如果你计划从中创建多个 VM 实例）。例如，sysprep for Windows 或 virt-sysprep for Ubuntu。用于将 VHD 文件上载到存储帐户的工具。例如，[AzCopy](/documentation/articles/storage-use-azcopy) 或 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。本指南介绍使用 AzCopy 工具的步骤。对于大量带宽有限的数据，可以考虑通过将硬盘驱动器运送到 Azure 数据中心来使用 [Microsoft Azure 导入/导出服务](/documentation/articles/storage-import-export-service)来传输数据。使用导入/导出服务可以仅将数据复制到标准存储帐户。当数据在标准存储帐户后，你将使用[复制 Blob API](https://msdn.microsoft.com/zh-CN/library/azure/dd894037.aspx) 或 AzCopy 将数据传输到高级存储帐户。
+- 用于通用化 VHD 的工具（如果你计划从中创建多个 VM 实例）。例如，sysprep for Windows 或 virt-sysprep for Ubuntu。用于将 VHD 文件上载到存储帐户的工具。例如，[AzCopy](/documentation/articles/storage-use-azcopy) 或 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。本指南介绍使用 AzCopy 工具的步骤。对于大量带宽有限的数据，可以考虑通过将硬盘驱动器运送到 Azure 数据中心来使用 [Windows Azure 导入/导出服务](/documentation/articles/storage-import-export-service)来传输数据。使用导入/导出服务可以仅将数据复制到标准存储帐户。当数据在标准存储帐户后，你将使用[复制 Blob API](https://msdn.microsoft.com/zh-CN/library/azure/dd894037.aspx) 或 AzCopy 将数据传输到高级存储帐户。
 - 用于复制 VHD 的工具可以在与 VHD 在同一区域中的 Azure VM 上运行。
-- Microsoft Azure 仅支持固定大小的 VHD 文件。不支持 VHDX 文件或动态 VHD。如果你有动态 VHD，可以使用 [Convert-VHD](https://technet.microsoft.com/zh-CN/library/hh848454.aspx) cmdlet 将其转换为固定大小。
+- Windows Azure 仅支持固定大小的 VHD 文件。不支持 VHDX 文件或动态 VHD。如果你有动态 VHD，可以使用 [Convert-VHD](https://technet.microsoft.com/zh-CN/library/hh848454.aspx) cmdlet 将其转换为固定大小。
 
 ### 准备 VHD
 
