@@ -1,10 +1,8 @@
-<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor=""/>  
+﻿<properties pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor=""/>  
 
 <tags ms.service="" ms.date="04/09/2015" wacn.date="04/15/2015"/>
 
 # <a name="getting-started"> </a>移动服务入门
-
-[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
 
 本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 <em>待办事项列表</em> 应用程序，该应用程序将应用程序数据存储在新的移动服务中。

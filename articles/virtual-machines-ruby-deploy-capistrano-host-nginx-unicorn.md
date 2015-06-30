@@ -1,4 +1,4 @@
-<properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="使用 Capistrano 将 Ruby on Rails Web 应用程序部署到 Azure 虚拟机 - 教程" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="了解如何使用 Capistrano、Unicorn 和 Nginx 向 Azure 虚拟机部署 Ruby on Rails 应用程序。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web application to an Azure VM using Capistrano" authors="larryfr" />
+﻿<properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="使用 Capistrano 将 Ruby on Rails Web 应用程序部署到 Azure 虚拟机 - 教程" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="了解如何使用 Capistrano、Unicorn 和 Nginx 向 Azure 虚拟机部署 Ruby on Rails 应用程序。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web application to an Azure VM using Capistrano" authors="larryfr" />
 <tags ms.service=""
     ms.date="02/19/2015"
     wacn.date="04/11/2015"
@@ -22,10 +22,6 @@
 * 新建 Rails 应用程序
 
 * 创建 Capistrano 部署并使用它来部署应用程序
-
-下面是已完成应用程序的屏幕快照：
-
-![a browser displaying Listing Posts][rails 指南]
 
 > [WACOM.NOTE] 本教程中使用的应用程序包括本机二进制组件。如果您的开发环境不是基于 Linux 的部署到 VM 时，可能会遇到错误。在部署过程中使用的 Gemfile.lock 文件将包含特定于平台的 gem，其中可能不包括虚拟机上所需的本机 Linux 版本的 gem 的条目。
 > 
@@ -119,7 +115,7 @@
 		[2013-03-12 19:11:31] INFO  ruby 2.0.0 (2014-02-24) [x86_64-linux]
 		[2013-03-12 19:11:31] INFO  WEBrick::HTTPServer#start: pid=9789 port=3000
 
-2. 打开您的浏览器并导航到http://localhost:3000/ /。您应看到与下图类似的页面。
+2. 打开您的浏览器并导航到http://localhost:3000/ 。您应看到与下图类似的页面。
 
 	![a page listing posts][博客 rails]
 
@@ -426,7 +422,7 @@ Rails 用于开发的默认数据库是 SQLite。通常，您将使用生产中�
 
 	> [WACOM.NOTE] 在某些系统中，您可能会遇到其中 SSH 代理不能向远程 VM 转发凭据，到 GitHub 进行身份验证时的情况。如果发生这种情况，您可以通过修改变通解决此错误**config/deploy.rb**文件并且更改`set :repo_url`行时要使用 HTTPS 访问 Github。在使用 HTTPS 时，您必须指定作为 URL 的一部分的 GitHub 用户名和密码（或身份验证令牌）。例如：
 	> 
-	> `set :repo_url, 'https://you:yourpassword@github.com/You/yourrepository.git'
+	> `set :repo_url, 'https://you:yourpassword@github.com/You/yourrepository.git'`
 	> 
 	> 虽然这应允许您绕过该错误并完成本教程中，这不推荐使用此解决方案对于生产部署，因为它将身份验证凭据以纯文本格式存储为应用程序的一部分。您在使用 SSH 代理进行转发时应该参考适用于您的操作系统的文档
 

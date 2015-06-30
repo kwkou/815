@@ -824,7 +824,7 @@
 <a name="next-steps"></a>
 ## 后续步骤
 
-[][]<http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/package-summary.html>提供了 Android 客户端 API 的 Javadocs 参考
+<http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/package-summary.html>提供了 Android 客户端 API 的 Javadocs 参考
 
   [.NET Framework]: /develop/mobile/how-to-guides/work-with-net-client-library/ ".NET Framework"
   [HTML/JavaScript]: /develop/mobile/how-to-guides/work-with-html-js-client/ "HTML/JavaScript"
@@ -928,6 +928,5 @@
   ["TableJsonQueryCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=298543
   [身份验证入门]: http://go.microsoft.com/fwlink/p/?LinkId=296316
   [Azure 管理门户]: https://manage.windowsazure.cn/
-  [此处]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
+  [此处]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#errors
   [在移动服务 Android 客户端中使用]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
-  []: http://go.microsoft.com/fwlink/p/?LinkId=298735 "此处"

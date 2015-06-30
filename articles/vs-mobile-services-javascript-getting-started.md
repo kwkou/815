@@ -1,13 +1,9 @@
-<properties title="移动服务入门" pageTitle="" metaKeywords="Azure, Getting Started, Mobile Services" description="" services="mobile-services" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties title="移动服务入门" pageTitle="移动服务入门" metaKeywords="Azure, Getting Started, Mobile Services" description="" services="mobile-services" documentationCenter="" authors="ghogen, kempb" />
 
-<tags 
-wacn.date="04/11/2015"
-ms.service="mobile-services" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="02/02/2015" ms.author="ghogen, kempb"></tags>
+<tags wacn.date="04/11/2015" ms.service="mobile-services" ms.date="02/02/2015" />
 
-> [AZURE.SELECTOR]
->
-> -   [入门][入门]
-> -   [发生了什么情况][发生了什么情况]
+ [入门][入门]
+ [发生了什么情况][发生了什么情况]
 
 ## 移动服务入门
 

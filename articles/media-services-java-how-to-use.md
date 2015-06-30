@@ -44,28 +44,11 @@ Azure Media Services 构成了一个可扩展的媒体平台，它在 Azure 中�
 
 Media Services 支持下表中所述的多种常见媒体开发方案。
 
-<table data-morhtml="true" border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
-  <th data-morhtml="true">
-    <tr data-morhtml="true">
-<th data-morhtml="true">方案</th>
-<th data-morhtml="true">说明</th>
-    </tr>
-  </th>
-  <tbody data-morhtml="true">
-    <tr data-morhtml="true">
-<td data-morhtml="true">生成端到端工作流</td>
-<td data-morhtml="true">完全在云中生成综合性的媒体工作流。从上载媒体到分发内容，Media Services 提供一系列组件，将这些组件相结合可以处理特定的应用工作流。当前功能包括上载、存储、编码、格式转换、内容保护和点播流交付。</td>
-    </tr>
-    <tr data-morhtml="true">
-<td data-morhtml="true">生成混合工作流</td>
-<td data-morhtml="true">你可以将 Media Services 与现有工具和过程相集成。例如，在现场为内容编码，再将其上载到 Media Services 以转码为多种格式，然后通过 Azure CDN 或第三方 CDN 交付内容。可以通过标准 REST API 单独调用 Media Services，以将它与外部应用程序和服务相集成。</td>
-    </tr>
-    <tr data-morhtml="true">
-<td data-morhtml="true">为媒体播放器提供云支持</td>
-<td data-morhtml="true">你可以跨多个设备（包括 iOS、Android 和 Windows 设备）与平台创建、管理和交付媒体。</td>
-    </tr>
-  </tbody>
-</table>
+|方案|说明|  
+|----|----|  
+|生成端到端工作流|完全在云中生成综合性的媒体工作流。从上载媒体到分发内容，Media Services 提供一系列组件，将这些组件相结合可以处理特定的应用工作流。当前功能包括上载、存储、编码、格式转换、内容保护和点播流交付。|  
+|生成混合工作流|你可以将 Media Services 与现有工具和过程相集成。例如，在现场为内容编码，再将其上载到 Media Services 以转码为多种格式，然后通过 Azure CDN 或第三方 CDN 交付内容。可以通过标准 REST API 单独调用 Media Services，以将它与外部应用程序和服务相集成。|  
+|为媒体播放器提供云支持|你可以跨多个设备（包括 iOS、Android 和 Windows 设备）与平台创建、管理和交付媒体。|  
 
 ### Media Services 客户端开发
 
