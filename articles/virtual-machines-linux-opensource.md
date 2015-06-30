@@ -139,18 +139,6 @@ CentOS Linux 发行版是从 Red Hat Enterprise Linux (RHEL) 的源代码派生�
 
 本部分包含几种不同的存储方法和技术（包括 NoSQL、关系型和大数据）的相关信息。
 
-### NoSQL
-
-1. [博客：8 适用于 Azure 的开源 NoSQL 数据库](http://openness.microsoft.com/blog/2014/11/03/open-source-nosql-databases-microsoft-azure)
-2. Couchdb
-    - [Slideshare (MSOpenTech)：在 Azure 上体验 CouchDb](http://www.slideshare.net/brianbenz/experiences-using-couchdb-inside-microsofts-azure-team)
-    - [博客：使用 node.js、CORS 和 Grunt 运行 CouchDB 即服务](http://msopentech.com/blog/2013/12/19/tutorial-building-multi-tier-windows-azure-web-application-use-cloudants-couchdb-service-node-js-cors-grunt-2)
-3. Cassandra
-    - [操作指南：在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问](virtual-machines-linux-nodejs-running-cassandra)
-    
-<!--5. Redis
-    - [博客：Azure Redis 缓存服务中 Windows 上的 Redis](http://msopentech.com/blog/2014/05/12/redis-on-windows)
-    - [博客：宣布推出适用于 Redis 预览版的 ASP.NET 会话状态提供程序](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)-->
 
 ### 大数据  
 
