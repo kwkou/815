@@ -6,12 +6,8 @@
 
 # 使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<p>在本教程中，我们将使用 Python Tools 2.0 for Visual Studio 创建一个简单的 Django 应用程序。该应用程序将允许用户对轮询投票。首先我们将使用本地 sqlite3 数据库，然后移到 Azure 上的 SQL Server 或 MySQL 数据库。我们将演示如何实现 Django 管理界面，并使用该界面向我们的数据库添加轮询。我们还将使用在 Visual Studio 中集成的 Django shell。最后，我们将应用程序部署到一个 Azure 网站和 Azure 云服务。</p>
-<p>如果你更愿意观看视频，右侧的视频片段提供了与本教程相同的步骤。</p>
-</div>
 
+<p>在本教程中，我们将使用 Python Tools 2.0 for Visual Studio 创建一个简单的 Django 应用程序。该应用程序将允许用户对轮询投票。首先我们将使用本地 sqlite3 数据库，然后移到 Azure 上的 SQL Server 或 MySQL 数据库。我们将演示如何实现 Django 管理界面，并使用该界面向我们的数据库添加轮询。我们还将使用在 Visual Studio 中集成的 Django shell。最后，我们将应用程序部署到一个 Azure 网站和 Azure 云服务。</p>
 
 本教程重点介绍 Python Tools for Visual Studio 和 Python Tools for Azure。有关在本教程中内置的 Django 和轮询应用程序的更详细信息，请参阅 <https://www.djangoproject.com/>。
 
