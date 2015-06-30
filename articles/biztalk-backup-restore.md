@@ -1,4 +1,4 @@
-﻿<properties linkid="biztalk-backup-restore" urlDisplayName="BizTalk Services: Backup and Restore" pageTitle="BizTalk 服务：备份和还原 | Azure" metaKeywords="" description="BizTalk 服务包括备份和还原功能。在创建备份时，将拍下 BizTalk 服务配置的快照。" metaCanonical="" services="" documentationCenter="" title="BizTalk 服务：备份和还原" authors="mandia"  solutions="" writer="mandia" manager="paulettm" editor="cgronlun"  />
+<properties linkid="biztalk-backup-restore" urlDisplayName="BizTalk Services: Backup and Restore" pageTitle="BizTalk 服务：备份和还原 | Azure" metaKeywords="" description="BizTalk 服务包括备份和还原功能。在创建备份时，将拍下 BizTalk 服务配置的快照。" metaCanonical="" services="" documentationCenter="" title="BizTalk 服务：备份和还原" authors="mandia"  solutions="" writer="mandia" manager="paulettm" editor="cgronlun"  />
 <tags ms.service=""
     ms.date="02/25/2015"
     wacn.date="04/11/2015"
@@ -91,7 +91,7 @@ Azure BizTalk 服务包括备份和还原功能。本主题介绍如何使用 Az
 
 #### 还原备份
 
-1.  在 Azure 管理门户中，选择**新建** > **应用程序服务** > **BizTalk 服务** > **还原**：
+1.  在 Azure 管理门户中，选择**新建** \> **应用程序服务** \> **BizTalk 服务** \> **还原**：
 
     ![还原备份][1]
 
