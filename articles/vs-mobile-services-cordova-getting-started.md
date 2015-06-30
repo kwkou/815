@@ -1,4 +1,4 @@
-<properties title="移动服务入门" pageTitle="" metaKeywords="Azure, Getting Started, Mobile Services" description="" services="mobile-services" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties title="移动服务入门" pageTitle="移动服务入门（Cordova 项目）" metaKeywords="Azure, Getting Started, Mobile Services" description="" services="mobile-services" documentationCenter="" authors="ghogen, kempb" />
 
 <tags 
 wacn.date="04/11/2015"

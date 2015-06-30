@@ -1,4 +1,4 @@
-<properties title="Active Directory 身份验证入门" pageTitle="" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
+﻿<properties title="Active Directory 身份验证入门" pageTitle="我的项目发生了什么情况" metaKeywords="Azure, Getting Started, Active Directory" description="" services="active-directory" documentationCenter="" authors="ghogen, kempb" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -48,10 +48,11 @@ ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="n
 ##### 您的 app.config 或 web.config 文件具有新的配置值。
 
 已添加以下配置条目。
-
-     <appSettings>              <add key="ida:ClientId" value="ClientId from the new Azure AD App" />              <add key="ida:Tenant" value="Your selected Azure AD Tenant" />              <add key="ida:Audience" value="The App ID Uri from the wizard" />      </appSettings> 
-
-</p>
+```xml
+<appSettings> 
+<add key="ida:ClientId" value="ClientId from the new Azure AD App" />              <add key="ida:Tenant" value="Your selected Azure AD Tenant" />              <add key="ida:Audience" value="The App ID Uri from the wizard" />
+</appSettings> 
+```
 ### 已创建 Azure AD 应用
 
 已在您在向导中选定的目录内创建一个 Azure AD 应用程序。
