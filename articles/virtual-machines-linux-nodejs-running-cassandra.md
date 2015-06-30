@@ -11,24 +11,24 @@
 <h1><a id = ""></a>在 Azure 上通过 Linux 运行 Cassandra 并从 Node.js 访问 Cassandra </h1>
 **作者：** Hanu Kommalapati
 
-## 表的内容 # #
+## 表的内容 ##
 
 - [概述][]
 - [单区域部署][]
 - [测试单个区域 Cassandra 群集][]
 - [多区域部署][]
 - [测试多区域 Cassandra 群集][]
-- [测试从 Node.js 的 Cassandra 群集][]
+- [测试从Node.js的Cassandra群集][]
 - [结论][]
 
-##<a id="overview"> </a>概述 # #
+##<a id="overview"> </a>概述 ##
 Windows Azure 是一个打开的云平台，它也为非 Microsoft 软件，其中包括操作系统、应用程序服务器、消息传递的中间件的链接，以及从这两种商业和开源模型的 SQL 和 NoSQL 数据库作为运行这两个 Microsoft。他们能够构建可复原服务包括 Azure 公有云上的需要进行仔细的规划和故意的体系结构对于这两个应用程序服务器为也存储层。Cassandra 的分布式的存储体系结构自然会有助于构建高度可用的群集故障的容错的系统。Cassandra 是云小数位数由 Apache Software Foundation cassandra.apache.org ； 在维护的 NoSQL 数据库Cassandra 用 Java 编写，并因此在 Windows 和 Linux 上运行的平台。 
 
 本文的重点是作为单个和多数据中心群集利用 Windows Azure 虚拟机和虚拟网络在 Ubuntu 上显示 Cassandra 部署。超出本文讨论范围内的优化的生产工作负荷的群集部署了，因为它需要多个磁盘节点配置、 适当环形拓扑设计和数据建模以支持所需的复制、 数据一致性、 吞吐量和高可用性要求。 
 
 此操作的文章将一种基本的方法，以显示什么参与构建 Cassandra 群集比较 Docker、 Chef 或傀儡，这会使基础结构部署简单得多。  
 
-##<a id="depmodels"> </a>部署模型 # #
+##<a id="depmodels"> </a>部署模型 ##
 Windows Azure 联网允许的访问可以限制即可获得细化的网络安全的独立专用的群集的部署。由于这篇文章是关于显示在基本级别的 Cassandra 部署，我们将不专注于的一致性级别和吞吐量的最佳存储设计。下面是网络我们假设群集的要求的列表：
 
 - 外部系统无法访问 Cassandra 数据库从 Azure 内外
@@ -41,7 +41,7 @@ Windows Azure 联网允许的访问可以限制即可获得细化的网络安全
 可以部署 Cassandra，到单个 Azure 区域或基于工作负荷的分布式特性的多个区域。可以利用多区域部署模型，以提供最终用户更接近通过相同的 Cassandra 基础结构特定的地理位置。Cassandra 的内置节点复制采用负责的多主机同步写入来自多个数据中心，并提供了对应用程序数据的一致视图。多区域部署还有助于与更广泛的 Azure 服务中断风险缓解。Cassandra 的可优化一致性和复制拓扑将帮助在满足不同的应用程序的 RPO 需求。 
 
 
-###<a id="oneregion"> </a>单区域部署 # # #
+###<a id="oneregion"> </a>单区域部署 ###
 我们将开始单区域部署，去总结教训中创建多区域模型。Azure 虚拟网络将用于创建独立的子网，以便可以满足上面提到的网络安全要求。创建单区域部署中所述的过程使用 Ubuntu 14.04 LTS 和 Cassandra 2.08 ；但是，可以轻松地采用此过程，到其他 Linux 变体。以下是一些单区域部署的系统的特征。  
 
 **高可用性：**图 1 所示的 Cassandra 节点部署到两个可用性集中，以便获得高可用性的多个故障域之间分布节点。Vm 带批注的每个可用性集与映射到 2 的容错域中。Windows Azure 使用这一概念的容错域来管理未计划的宕机时间 （例如硬件或软件故障），同时升级域 （例如，主机或来宾操作系统修补/升级、 应用程序升级） 的概念适用于管理计划内停机时间。请参阅[灾难恢复和高可用性 Azure 应用程序](http://msdn.microsoft.com/zh-cn/library/dn251004.aspx)容错域和升级域中获得高可用性的角色。
@@ -80,7 +80,7 @@ Cassandra 支持两种类型的数据完整性模型 - 一致性和最终一致�
 
 对于系统部署到不需要高可用性的 Azure （例如大约 99.9 这等同于 8.76 的小时年 ； 请参阅[高可用性](http://en.wikipedia.org/wiki/High_availability)有关详细信息） 您可能能够运行与 RF = 1 且一致性级别 = ONE。对于具有高可用性要求，RF 应用程序 = 3 和一致性级别 = 仲裁将承受的节点之一副本之一的停机时间。RF = 1 在传统部署 （例如本地） 都不能使用由于因诸如磁盘故障之类的问题的可能的数据丢失。   
 
-## 多区域部署 # #
+## 多区域部署 ##
 Cassandra 的数据中心意识的复制和上面所述的一致性模型有助于与在初始状态下无需任何外部工具的多区域部署。这是非常不同于传统的关系数据库为数据库镜像对多主机写入安装程序可能会十分复杂。在多区域设置中的 Cassandra 可帮助完成使用方案包括： 
 
 **邻近基于部署：**具有清晰的映射的租户用户多租户应用程序-到-区域中，可以获益了多区域群集的低延迟的影响。有关示例学习管理教育机构的系统可以部署在中国东部和中国北部区域，用于为各自的大学校园中的分布式的群集以及分析事务。数据可以在时间读取和写入本地一致，并可以跨这两个区域是最终一致。还有其他示例，如媒体分发、 电子商务和任何内容，并提供集中的地域用户基的所有内容都是这种部署模型的一个很好的用例。
@@ -93,10 +93,10 @@ Cassandra 的数据中心意识的复制和上面所述的一致性模型有助�
 
 图 2：多区域 Cassandra 部署
 
-### 网络集成 # # #
+### 网络集成 ###
 与使用 VPN 隧道相互进行通信的虚拟机部署到位于两个区域的专用网络的集。VPN 隧道连接两个网络部署过程中设置的软件网关。这两个区域都有相似的网络体系结构，在"web"和"数据"的子网 ； 方面Azure 网络允许的尽可能多子网，根据需要创建，并应用所需的网络安全 Acl。在群集拓扑之间的设计时数据中心的通信延迟和网络流量的经济影响需要考虑。 
 
-### 用于多数据中心部署的数据一致性 # # #
+### 用于多数据中心部署的数据一致性 ###
 分布式部署需要意识到的对吞吐量和高可用性的群集拓扑影响。RF 和一致性级别必须选择仲裁不依赖于所有数据中心的可用性这种方式。 
 对于需要高一致性的系统，一致性级别 （用于读取和写入) LOCAL_QUORUM 将确保本地读取和写入都满足从本地节点时数据将以异步方式复制到远程数据中心。表 2 总结了向上写后面所述的多区域群集的配置详细信息。 
 
@@ -112,7 +112,7 @@ Cassandra 的数据中心意识的复制和上面所述的一致性模型有助�
 <tr><td>Snitch</td><td> GossipingPropertyFileSnitch[请参阅[Snitches](http://www.datastax.com/documentation/cassandra/2.0/cassandra/architecture/architectureSnitchesAbout_c.html)的详细信息的 Cassandra 文档中] </td><td>NetworkTopologyStrategy 使用 snitch 的概念来理解拓扑。GossipingPropertyFileSnitch 能更好地控制以将每个节点映射到数据中心和机架。然后，该群集使用小道消息传播此信息。这是在相对于 PropertyFileSnitch 的动态 IP 设置要简单得多 </td></tr> 
 </table> 
 
-##软件配置 # #
+##软件配置 ##
 在部署过程中使用以下软件版本：
 
 <table>
@@ -127,12 +127,12 @@ Cassandra 的数据中心意识的复制和上面所述的一致性模型有助�
 
 将上述软件下载到在本地桌面上的 （例如在 Windows 上的 %TEMP%/downloads 或 ~/downloads Linux 或 Mac 上的） 的已知下载目录。 
 
-### 创建 UBUNTU VM # # #
+### 创建 UBUNTU VM ###
 在此步骤中在过程中我们将使用必备的软件创建 Ubuntu 映像，以便可以重用该映像设置几个 Cassandra 节点。  
-####步骤 1：生成 SSH 密钥对 # # #
+####步骤 1：生成 SSH 密钥对 ###
 Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生成一个公钥/私钥密钥对在如何使用 SSH 与 Linux 一起在 Azure 上的说明进行操作。如果您计划将 putty.exe 用作 SSH 客户端在 Windows 或 Linux 上，则必须将 PEM 编码转换为 PPK 格式使用 puttygen.exe ； 的 RSA 私钥可以在上面的网页中找到的说明。 
 
-####步骤 2：创建 Ubuntu 模板 VM # # #
+####步骤 2：创建 Ubuntu 模板 VM ###
 若要创建虚拟机的模板，请登录到 azure.microsoft.com 门户，并使用以下顺序：单击新建、 计算、 虚拟机、 从库、 UBUNTU、 Ubuntu Server 14.04 LTS，，然后单击向右箭头。描述如何创建 Linux 虚拟机的教程，请参阅创建运行 Linux 的虚拟机。
 
 在"虚拟机配置"屏幕 #1 上输入以下信息： 
@@ -164,15 +164,15 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生�
 
 单击右箭头，在屏幕上的 #3 中保留默认设置，单击"检查"按钮，以完成 VM 设置过程。几分钟后与名称"ubuntu 的模板"虚拟机应处于"正在运行"状态。 
 
-###安装必要软件 # # #
-####步骤 1：上载 tarballs # # #
+###安装必要软件 ###
+####步骤 1：上载 tarballs ###
 使用 scp 或 pscp，将以前下载的软件复制到使用以下命令格式的 ~/downloads 目录中： 
 
-#####pscp 服务器-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.chinacloudapp.cn:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz # # #
+#####pscp 服务器-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.chinacloudapp.cn:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz ###
 
 至于 Cassandra bits 对 JRE 以及重复上面的命令。 
 
-####步骤 2：准备目录结构和提取存档 # # #
+####步骤 2：准备目录结构和提取存档 ###
 登录到虚拟机和创建目录结构作为超级用户使用下面的 bash 脚本提取软件：
 
 	#!/bin/bash
@@ -255,7 +255,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生�
 
 	tr -d '\r' <infile.sh >outfile.sh
 
-####步骤 3：编辑等 / 配置文件 # # #
+####步骤 3：编辑等 / 配置文件 ###
 将在结束以下内容追加： 
 
 	JAVA_HOME=/opt/java/jdk1.8.0_05 
@@ -265,7 +265,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。使用生�
 	export CASS_HOME
 	export PATH
 
-####步骤 4：为生产系统 # # # 安装 JNA
+####步骤 4：为生产系统安装 JNA####
 使用以下命令序列： 
 以下命令将安装到 /usr/share.java 目录 jna 3.2.7.jar 和 jna 平台-3.2.7.jar
 sudo apt get 安装 libjna java 
@@ -288,22 +288,22 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 <tr><td>endpoint_snitch </td><td> org.apache.cassandra.locator.GossipingPropertyFileSnitch </td><td> 这用于通过 NetworkTopologyStrateg 推断数据中心和 VM 的机架</td></tr>
 </table>
 
-####步骤 6：捕获 VM 映像 # # #
+####步骤 6：捕获 VM 映像 ###
 登录到虚拟机使用主机名 (hk ca template.chinacloudapp.cn) 和先前创建的 SSH 私钥。请参阅如何使用 SSH 与 Linux on Azure 有关如何使用命令 ssh 或 putty.exe 中记录的详细信息。 
 
 执行以下一系列操作，以捕获映像：
-#####1.取消设置 # # #
+#####1.取消设置 ###
 使用命令"sudo waagent-deprovision + user"若要删除虚拟机实例的特定信息。有关，请参阅[如何捕获 Linux 虚拟机](/zh-cn/documentation/articles/virtual-machines-linux-capture-image) 若要将用作模板更多详细信息在映像捕获进程上。 
 
-#####2：关闭虚拟机 # # #
+#####2：关闭虚拟机 ###
 请确保虚拟机将突出显示，然后单击底部命令栏中的关闭链接。
 
-#####3：捕获映像 # # #
+#####3：捕获映像 ###
 请确保虚拟机将突出显示，然后单击底部命令栏中的捕获链接。在下一步的屏幕中，提供映像名称 （例如 hk-cas-2-08-ub-14-04-2014071)，、 相应的图像的描述，然后单击"检查"标记，以完成捕获过程。
 
 这将需要几秒钟时间，并且图像应在映像库的我的映像部分中可用。源虚拟机将自动 delated 后成功捕获映像。 
 
-##单区域部署过程 # #
+##单区域部署过程 ##
 **步骤 1：创建虚拟网络**
 登录到管理门户，然后使用在表中的属性节目中创建虚拟网络。请参阅[在管理门户中配置仅限云的虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/dn631643.aspx)有关过程的详细步骤。      
 
@@ -442,7 +442,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 <tr><th>取消	</td><td>10.1.2.11 	</td><td>55.29 KB	</td><td>256	</td><td>68.8%	</td><td>Guid （删除）</td><td>rack4</td></tr>
 </table>
 
-##<a id="testone"> </a>测试单个区域群集 # #
+##<a id="testone"> </a>测试单个区域群集 ##
 使用以下步骤测试群集：
 
 1.    使用 Powershell 命令获取 AzureInternalLoadbalancer commandlet，获取内部负载平衡器的 IP 地址 （例如10.1.2.101)。该命令的语法如下所示：Get AzureLoadbalancer - ServiceName"hk-c-svc-西-us"[显示以及其 IP 地址的内部负载平衡器的详细信息]
@@ -468,10 +468,10 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 
 请注意在步骤 4 中创建 keyspace 就会使用 SimpleStrategy 复制因子为 3。SimpleStrategy 建议对单个数据中心部署而 NetworkTopologyStrategy 多数据中心部署。3 replication_factor 将给出节点出现故障的容差。 
 
-##<a id="tworegion"> </a>多区域部署过程 # #
+##<a id="tworegion"> </a>多区域部署过程 ##
 将利用单区域部署完成，并用于安装的第二个区域中重复相同的过程。单个和多个区域部署之间的主要差异是区域间通信 ； 安装程序的 VPN 隧道我们将先进行网络安装、 设置虚拟机和配置 Cassandra。 
 
-###步骤 1：在第二个区域 # # # 创建虚拟网络
+###步骤 1：在第二个区域创建虚拟网络###
 登录到管理门户，然后使用在表中的属性节目中创建虚拟网络。请参阅[在管理门户中配置仅限云的虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/dn631643.aspx)有关过程的详细步骤。      
 
 <table>
@@ -494,7 +494,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 </table>
 
 
-###步骤 2：创建本地网络 # # #
+###步骤 2：创建本地网络 ###
 在 Azure 虚拟网络中的本地网络是一个映射到远程站点包括私有云或另一个 Azure 区域的代理地址空间。此代理服务器地址空间已绑定到远程网络网关路由到正确的网络目标。请参阅[配置 VNet 到 VNet 连接](http://msdn.microsoft.com/zh-cn/library/azure/dn690122.aspx)有关建立 VNET 到 VNET 连接的说明。 
 
 创建以下详细信息每两个本地网络：
@@ -506,7 +506,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 </table>
 
 
-###步骤 3：将"本地"网络映射到各自 Vnet # # #
+###步骤 3：将"本地"网络映射到各自 Vnet ###
 从服务管理门户中，选择每个 vnet，单击"配置"，检查"连接到本地网络"，然后选择每个以下的详细信息的本地网络： 
 
 <table>
@@ -515,9 +515,9 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 <tr><td>hk-vnet-east-us	</td><td>hk-lnet-map-to-west-us</td></tr>
 </table>
 
-###步骤 4：VNET1 和 VNET2 # # # 创建网关
+###步骤 4：VNET1 和 VNET2 创建网关###
 从虚拟网络的仪表板中，单击创建网关会触发设置过程的 VPN 网关。几分钟后的每个虚拟网络仪表板应显示实际的网关地址。 
-###步骤 5：更新与各自"网关"地址 # # # 的"本地"网络
+###步骤 5：更新与各自"网关"地址的"本地"网络###
 编辑这两个本地网络将占位符网关 IP 地址替换为实际的只是设置网关的 IP 地址。使用以下映射： 
 
 <table>
@@ -526,15 +526,15 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 <tr><td>hk-lnet-map-to-west-us </td><td>Hk-虚拟网络-东部的人的网关</td></tr>
 </table>
 
-###步骤 6：更新共享密钥 # # #
+###步骤 6：更新共享密钥 ###
 使用下面的 Powershell 脚本来更新每个 VPN 网关的 IPSec 密钥[起见密钥用于这两个网关]： 
 集 AzureVNetGatewayKey-VNetName hk-虚拟网络-东部-我们-LocalNetworkSiteName hk-lnet-map-to-west-us-SharedKey D9E76BKK
 集 AzureVNetGatewayKey-VNetName hk-虚拟网络-西-我们-LocalNetworkSiteName hk-lnet-map-to-east-us-SharedKey D9E76BKK 
 
-###步骤 6：建立 VNET 到 VNET 连接 # # #
+###步骤 6：建立 VNET 到 VNET 连接 ###
 从 Azure 服务管理门户中，使用这两个虚拟网络的"仪表板"菜单来建立网关到网关连接。使用在底部工具栏中的"连接"菜单项。几分钟后仪表板应以图形方式显示的连接详细信息。
 
-###步骤 7：在区域 #2 中创建虚拟机 # # #
+###步骤 7：在区域 #2 中创建虚拟机 ###
 创建 Ubuntu 映像，如按照相同步骤或复制到 Azure 存储帐户的映像文件 VHD 位于区域 #2 中所述区域 #1 部署，并创建映像。使用此映像，然后 hk-c-svc-东部-我们到新的云服务创建以下虚拟机的列表： 
 
 <table>
@@ -551,7 +551,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 </table>
 
 按照与区域 #1 相同的说明，但使用 10.2.xxx.xxx 地址空间。 
-###步骤 8：在每个 VM # # # 配置 Cassandra
+###步骤 8：在每个 VM 配置 Cassandra###
 登录到虚拟机，然后执行以下： 
 
 1. 编辑 $CASS_HOME/conf/cassandra-rackdc.properties 以指定格式的数据中心和机架属性：
@@ -559,11 +559,11 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
     rack =rack1
 2. 编辑 cassandra.yaml 以配置种子节点： 
     Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10,10.2.2.4,10.2.2.6,10.2.2.8,10.2.2.10"
-###步骤 9：启动 Cassandra # # #
+###步骤 9：启动 Cassandra ###
 登录到每台虚拟机，然后通过运行以下命令在后台启动 Cassandra：
 $CASS_HOME/bin/cassandra
 
-##<a id="testtwo"> </a>测试多区域群集 # #
+##<a id="testtwo"> </a>测试多区域群集 ##
 目前为止 Cassandra 已部署到每个 Azure 区域中的 8 节点的 16 个节点。这些节点都在同一个群集通过常见的群集名称和种子节点配置。使用以下过程来测试群集：
 ###步骤 1：获取使用 PowerShell # # # 的两个区域的内部负载平衡器 IP 
 - Get AzureInternalLoadbalancer ServiceName"hk-c-svc-西-us"
@@ -704,7 +704,7 @@ $CASS_HOME/bin/cassandra
 		readCustomer(ksConOptions)
 
 
-##<a id="conclusion"> </a>结论 # #
+##<a id="conclusion"> </a>结论 ##
 Windows Azure 是一个灵活的平台，允许运行的 Microsoft 和开放源代码软件，如本练习中所示。可以在单个数据中心通过群集节点分散在多个容错域上部署高度可用的 Cassandra 群集。此外可以跨多个地理位置较远的 Azure 区域的灾难证明系统部署 Cassandra 群集。Azure 和 Cassandra 在一起，就可以构造的高度可扩展、 高可用性和灾难恢复的云服务需要通过今天的互联网缩放服务。  
 
 [概述]: #overview
@@ -715,7 +715,7 @@ Windows Azure 是一个灵活的平台，允许运行的 Microsoft 和开放源�
 [测试 Cassandra 群集，从 Node.js]: #testnode
 [结论]: #conclusion
 
-##引用 # #
+##引用 ##
 - [http://cassandra.apache.org](http://cassandra.apache.org)
 - [http://www.datastax.com](http://www.datastax.com) 
 - [http://www.nodejs.org](http://www.nodejs.org) 

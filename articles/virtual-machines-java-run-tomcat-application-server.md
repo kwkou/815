@@ -96,23 +96,23 @@
 
  ![New inbound rule][NewIBRule]
 
-6. 对于新规则，请为"规则类型"选择"端口"，然后单击"下一步"。
+6 . 对于新规则，请为"规则类型"选择"端口"，然后单击"下一步"。
 
  ![New inbound rule port][NewRulePort]
 
-7. 选择"TCP"作为协议，并指定"8080"作为端口，然后单击"下一步"。
+7 . 选择"TCP"作为协议，并指定"8080"作为端口，然后单击"下一步"。
 
  ![New inbound rule ][NewRuleProtocol]
 
-8. 选择"允许连接"，然后单击"下一步"。
+8 . 选择"允许连接"，然后单击"下一步"。
 
  ![New inbound rule action][NewRuleAction]
 
-9. 确保为配置文件选中"域"、"专用"和"公用"，然后单击"下一步"。
+9 . 确保为配置文件选中"域"、"专用"和"公用"，然后单击"下一步"。
 
  ![New inbound rule profile][NewRuleProfile]
 
-10. 为规则指定一个名称，例如 **HttpIn**（但是，规则名称无需与终结点名称匹配），然后单击"完成"。  
+10 . 为规则指定一个名称，例如 **HttpIn**（但是，规则名称无需与终结点名称匹配），然后单击"完成"。  
 
  ![New inbound rule name][NewRuleName]
 

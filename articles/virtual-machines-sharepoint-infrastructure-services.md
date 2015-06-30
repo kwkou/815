@@ -19,7 +19,7 @@
 
 # Azure 基础结构服务中托管的 SharePoint 场
 
-在 Microsoft Azure 基础结构服务中设置你的第一个或下一个开发/测试或生产 SharePoint 场，在其中你可以利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。 
+在 Windows Azure 基础结构服务中设置你的第一个或下一个开发/测试或生产 SharePoint 场，在其中你可以利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。 
 
 ## 基本 SharePoint 开发/测试场 
 
@@ -47,7 +47,7 @@
 
 [在 Azure 基础结构服务上规划 SharePoint 2013](https://msdn.microsoft.com/zh-CN/library/dn275958.aspx)
 
-[适用于 SharePoint 2013 的 Microsoft Azure 体系结构](https://technet.microsoft.com/zh-CN/library/dn635309.aspx)
+[适用于 SharePoint 2013 的 Windows Azure 体系结构](https://technet.microsoft.com/zh-CN/library/dn635309.aspx)
 
 
 <!--HONumber=53-->

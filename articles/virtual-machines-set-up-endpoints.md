@@ -23,7 +23,7 @@
 
 **重要**：防火墙配置为端口关联的 Windows PowerShell 远程处理的使用远程桌面和安全外壳 (SSH)，并且在大多数情况下，自动完成。对于为所有其他终结点指定的端口，将不会为来宾操作系统的防火墙中自动进行任何配置。创建终结点时，您将需要在防火墙中配置相应的端口才能允许您计划通过终结点路由的流量。
 
-###创建终结点 # # #
+###创建终结点 ###
 
 1. 如果尚未这样做，登录到[Azure 管理门户](http://manage.windowsazure.cn)。
 
@@ -51,7 +51,7 @@
 
 	![Endpoint creation successful](./media/virtual-machines-set-up-endpoints/endpointwindowsnew.png)
 
-###管理终结点 # # # 上的 ACL
+###管理终结点上的ACL###
 
 按照下列步骤在终结点上添加、修改或删除 ACL。
 

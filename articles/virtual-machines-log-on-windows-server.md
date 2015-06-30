@@ -7,7 +7,7 @@
 
 
 
-#如何登录到运行 Windows Server # 的虚拟机
+#如何登录到运行 Windows Server 的虚拟机#
 
 对于运行 Windows Server 操作系统的虚拟机，您使用连接按钮在管理门户中启动远程桌面连接。 
 

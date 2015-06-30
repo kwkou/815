@@ -10,7 +10,7 @@ Azure 中的虚拟机运行你在创建虚拟机时选择的操作系统。Azure
 
 **注意**：创建虚拟机时，你可以自定义操作系统设置以快速运行你的应用程序。你设置的配置存储在该虚拟机的磁盘上。有关说明，请参阅[如何创建自定义虚拟机][如何创建自定义虚拟机]。
 
-**重要说明**：只有在使用某个认可的分发的时候也使用[本文][本文]中指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要说明**：只有在使用某个认可的发行版的时候也使用[本文][本文]中指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 发行版都是具有所需配置的认可的发行版。
 
 ## 先决条件
 
@@ -22,13 +22,13 @@ Azure 中的虚拟机运行你在创建虚拟机时选择的操作系统。Azure
 
     **重要说明**：Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
-    有关认可分发的列表，请参阅 [Azure 认可的分发中的 Linux][Azure 认可的分发中的 Linux]。或者，请参阅本文最后一节中的[非认可分发的信息][非认可分发的信息]。
+    有关认可发行版的列表，请参阅 [Azure 认可的发行版中的 Linux][Azure 认可的发行版中的 Linux]。或者，请参阅本文最后一节中的[非认可发行版的信息][非认可发行版的信息]。
 
 -   **Linux Azure 命令行工具。**如果你正在使用 Linux 操作系统创建映像，请使用此工具上载 VHD 文件。若要下载此工具，请参阅[针对 Mac 和 Linux 的 Azure 命令行工具][针对 Mac 和 Linux 的 Azure 命令行工具]。
 
 -   **Add-AzureVhd cmdlet**，它是 Azure PowerShell 模块的一部分。若要下载该模块，请参阅 [Azure 下载（可能为英文页面）][Azure 下载（可能为英文页面）]。有关详细信息，请参阅 [Add-AzureVhd（可能为英文页面）][Add-AzureVhd（可能为英文页面）]。
 
-对于所有分发，请注意以下几点：
+对于所有发行版，请注意以下几点：
 
 Azure Linux 代理 (Waagent) 与 NetworkManager 不兼容。网络配置应使用 ifcfg-eth0 文件并且可通过 ifup/ifdown 脚本进行控制。如果检测到 NetworkManager 包，则 Waagent 将拒绝安装。
 
@@ -36,7 +36,7 @@ NUMA 不受支持，因为 2.6.37 版之前的 Linux 内核版本有 Bug。Waage
 
 Azure Linux 代理需要安装 python-pyasn1 包。
 
-建议你在安装时不要创建 SWAP 分区。可以通过使用 Azure Linux 代理配置 SWAP 空间。此外，建议不要将主流 Linux 内核用于不带 [Microsoft 网站（可能为英文页面）][Microsoft 网站（可能为英文页面）]上提供的修补程序（许多当前分发/内核可能已包含此修补程序）的 Azure 虚拟机。
+建议你在安装时不要创建 SWAP 分区。可以通过使用 Azure Linux 代理配置 SWAP 空间。此外，建议不要将主流 Linux 内核用于不带 [Microsoft 网站（可能为英文页面）][Microsoft 网站（可能为英文页面）]上提供的修补程序（许多当前发行版/内核可能已包含此修补程序）的 Azure 虚拟机。
 
 所有 VHD 的大小必须是 1 MB 的倍数。
 
@@ -119,34 +119,34 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 
         [openlogic]
         name=CentOS-$releasever - openlogic packages for $basearch
-        baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
+        baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
         enabled=1
         gpgcheck=0
 
         [base]
         name=CentOS-$releasever - Base
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
+        baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
         gpgcheck=1
         gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
         #released updates
         [updates]
         name=CentOS-$releasever - Updates
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
+        baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
         gpgcheck=1
         gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
         #additional packages that may be useful
         [extras]
         name=CentOS-$releasever - Extras
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
+        baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
         gpgcheck=1
         gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
         #additional packages that extend functionality of existing packages
         [centosplus]
         name=CentOS-$releasever - Plus
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
+        baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/centosplus/$basearch/
         gpgcheck=1
         enabled=0
         gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
@@ -154,7 +154,7 @@ Azure Linux 代理需要安装 python-pyasn1 包。
         #contrib - packages by Centos Users
         [contrib]
         name=CentOS-$releasever - Contrib
-        baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
+        baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/contrib/$basearch/
         gpgcheck=1
         enabled=0
         gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
@@ -553,11 +553,11 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 
         Azure vm image create <image name> --location <Location of the data center> --OS Linux <Sourcepath to the vhd>
 
-## <span id="nonendorsed"></span> </a>有关未认可分发的信息
+## <span id="nonendorsed"></span> </a>有关未认可发行版的信息
 
-从本质上说，所有正在 Azure 上运行的分发都需要满足以下先决条件才能在平台上正常运行。
+从本质上说，所有正在 Azure 上运行的发行版都需要满足以下先决条件才能在平台上正常运行。
 
-此列表并未涵盖所有信息，因为每个分发都是不同的；即使你满足以下所有条件，你也可能仍需显著调整你的映像以确保其在平台上正常运行。
+此列表并未涵盖所有信息，因为每个发行版都是不同的；即使你满足以下所有条件，你也可能仍需显著调整你的映像以确保其在平台上正常运行。
 
 正是出于这个原因，建议你从某个我们的[合作伙伴认可的映像][合作伙伴认可的映像]开始操作。
 
@@ -607,8 +607,8 @@ Azure Linux 代理需要安装 python-pyasn1 包。
   [如何创建自定义虚拟机]: /manage/windows/how-to-guides/custom-create-a-vm/
   [为 Azure 创建管理证书（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
   [安装 Hyper-V 角色和配置虚拟机]: http://technet.microsoft.com/zh-cn/library/hh846766.aspx
-  [Azure 认可的分发中的 Linux]: ../linux-endorsed-distributions
-  [非认可分发的信息]: #nonendorsed
+  [Azure 认可的发行版中的 Linux]: ../linux-endorsed-distributions
+  [非认可发行版的信息]: #nonendorsed
   [针对 Mac 和 Linux 的 Azure 命令行工具]: http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409
   [Azure 下载（可能为英文页面）]: /develop/downloads/
   [Add-AzureVhd（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/dn205185.aspx

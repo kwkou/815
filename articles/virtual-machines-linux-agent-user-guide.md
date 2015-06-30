@@ -45,12 +45,12 @@ Azure Linux 代理 (waagent) 管理虚拟机和 Azure 结构控制器之间的�
 ###获取 Linux 代理
 可从以下位置直接获取最新的 Linux 代理：
 
-- [认可 Linux on Azure 的其他分发提供商](https://support.microsoft.com/zh-CN/kb/2805216)
+- [认可 Linux on Azure 的其他发行版提供商](https://support.microsoft.com/zh-CN/kb/2805216)
 - 或 [Azure Linux 代理的 Github 开放源存储库](https://github.com/WindowsAzure/WALinuxAgent)
 
 
-###支持的 Linux 分发
-* CoreOS
+###支持的 Linux 发行版
+
 * CentOS 6.2+
 * Debian 7.0+
 * Ubuntu 12.04+
@@ -131,7 +131,7 @@ Waagent 依赖一些系统程序包才能正常运行：
 
  * 将主机名重置为 localhost.localdomain
 
- **警告：**取消设置无法保证清除映像中的所有敏感信息且适用于重新分发。
+ **警告：**取消设置无法保证清除映像中的所有敏感信息且适用于重新发行版。
 
 - deprovision+user:执行 -deprovision（上述）下面的所有操作，还将删除最后设置的用户帐户（从 /var/lib/waagent 中获得）和关联数据。此参数是取消对以前在 Azure 中设置的映像的设置以便捕获并重新使用该映像时的参数。
 
@@ -242,7 +242,7 @@ Waagent 依赖一些系统程序包才能正常运行：
 类型：字符串  
 默认值：ext4
 
-这将指定资源磁盘的 filesystem 类型。支持的值随 Linux 分发的不同而不同。如果字符串为 X，则 mkfs.X 应呈现在 Linux 映像上。SLES 11 映像通常应使用"ext3"。FreeBSD 映像在此处应使用"ufs2"。
+这将指定资源磁盘的 filesystem 类型。支持的值随 Linux 发行版的不同而不同。如果字符串为 X，则 mkfs.X 应呈现在 Linux 映像上。SLES 11 映像通常应使用"ext3"。FreeBSD 映像在此处应使用"ufs2"。
 
 **ResourceDisk.MountPoint：**
 

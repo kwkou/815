@@ -20,7 +20,7 @@
 
 **重要**：本教程创建的是不连接到虚拟网络的虚拟机。如果您希望虚拟机使用虚拟网络，必须指定虚拟网络，当您创建虚拟机。有关虚拟网络的详细信息，请参阅[Azure 虚拟网络概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156007.aspx)。
 
-## <a id="virtualmachine"> </a>有关在 Azure 中的虚拟机 # #
+## <a id="virtualmachine"> </a>有关在 Azure 中的虚拟机 ##
 
 Azure 中的虚拟机是云中，您可以控制和管理的服务器。在 Azure 中创建虚拟机后，可以删除并重新创建它，只要需要，并且可以访问虚拟机，就像您办公室中执行与服务器。可使用虚拟硬盘 (VHD) 文件创建虚拟机。以下类型的 Vhd 用于虚拟机：
 
@@ -34,7 +34,7 @@ Azure 中的虚拟机是云中，您可以控制和管理的服务器。在 Azur
 
 每个虚拟机驻留在云服务中，通过本身，或与其他虚拟机组合在一起。可以将虚拟机放在相同的云服务，以使虚拟机到虚拟机之间的负载平衡网络流量与彼此、 通信和维护高可用性的计算机中。有关云服务和虚拟机的详细信息，请参阅中的"执行模型"一节[Azure 简介](http://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-introduction-to-azure/?fb=zh-cn#models)。
 
-## <a id="custommachine"> </a>如何创建虚拟机 # #
+## <a id="custommachine"> </a>如何创建虚拟机 ##
 
 本教程使用**从库**方法来创建虚拟机，因为它使您更多选项比**快速创建**方法。如果需要，您可以选择连接的资源、 DNS 名称和网络连接。
 

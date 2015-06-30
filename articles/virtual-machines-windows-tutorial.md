@@ -24,7 +24,7 @@
 如果您想要了解详细信息，请参阅[虚拟机](https://msdn.microsoft.com/zh-CN/library/azure/jj156003.aspx)。
 
 
-##<a id="createvirtualmachine"> </a>如何创建虚拟机 # #
+##<a id="createvirtualmachine"> </a>如何创建虚拟机 ##
 
 本部分演示如何使用**从库**在管理门户中的选项创建虚拟机。此选项提供更多的配置选项比**快速创建**选项。例如，如果您想要将虚拟机加入到虚拟网络，您将需要使用**从库**选项。
 
@@ -34,13 +34,13 @@
 -->
 [WACOM.INCLUDE [虚拟-机-创建-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
-## <a id="logon"> </a>如何登录到虚拟机创建表后 # #
+## <a id="logon"> </a>如何登录到虚拟机创建表后 ##
 
 本部分演示了如何登录到虚拟机以便您可以管理其设置和应用程序将在其上运行。
 
 [WACOM.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
 
-## <a id="attachdisk"> </a>如何将数据磁盘附加到新的虚拟机 # #
+## <a id="attachdisk"> </a>如何将数据磁盘附加到新的虚拟机 ##
 
 本部分演示了如何将空数据磁盘附加到虚拟机。请参阅[附加数据磁盘教程](/zh-cn/documentation/articles/storage-windows-attach-disk) 有关附加空磁盘以及如何附加现有磁盘的详细信息。
 

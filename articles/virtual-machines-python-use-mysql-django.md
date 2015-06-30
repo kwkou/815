@@ -78,7 +78,7 @@
 
   ![][2]
 
-8.  在你开始开发你的 Django 应用程序之前，我们当然需要在虚拟机上安装 Python+Django。通过 [Web 平台安装程序](http://www.microsoft.com/web/downloads/platform.aspx)可以完成这一步。在安装 Web PI 后，使用它搜索“Django”并且安装 Django (Python) 产品。
+8 .  在你开始开发你的 Django 应用程序之前，我们当然需要在虚拟机上安装 Python+Django。通过 [Web 平台安装程序](http://www.microsoft.com/web/downloads/platform.aspx)可以完成这一步。在安装 Web PI 后，使用它搜索“Django”并且安装 Django (Python) 产品。
 
   **注意：**你只需从 WebPI 安装 *Django* 产品即可使用本教程。你**无**需安装 *Python Tools for Visual Studio* 或 Azure Python SDK 即可实现所需目的。
 
@@ -117,14 +117,14 @@
 
   在你修改 *HOST* 以匹配 MySQL VM 的 IP 地址之后，请保存此文件并关闭它。
 
-1.  现在，我们已引用 *djangoazure* 数据库，让我们使用它执行一些有用的操作！为此，我们将为一个简单的 *counter* 应用程序创建模型。若要指示 Django 创建该模型，请运行以下命令：
+3 .  现在，我们已引用 *djangoazure* 数据库，让我们使用它执行一些有用的操作！为此，我们将为一个简单的 *counter* 应用程序创建模型。若要指示 Django 创建该模型，请运行以下命令：
 
         cd C:\django\helloworld
         C:\Python27\python.exe manage.py startapp counter
 
   如果 Django 没有从上面最后一个命令报告任何输出，则它成功了。
 
-1.  将以下文本附加到 **C:&#92;django&#92;helloworld&#92;counter&#92;models.py** 中：
+4 .  将以下文本附加到 **C:&#92;django&#92;helloworld&#92;counter&#92;models.py** 中：
 
         class Counter(models.Model):
             count = models.IntegerField()
@@ -133,7 +133,7 @@
 
   我们在此处只是使用单个整数字段 *count* 定义 Django 的 *Model* 类的名为 *Counter* 的子类。此简单的 counter 模型将最终记录我们的 Django 应用程序的点击数。
 
-1.  接下来，我们使 Django 知道 *Counter* 的存在：
+5 .  接下来，我们使 Django 知道 *Counter* 的存在：
 
  * 再次编辑 **C:&#92;django&#92;helloworld&#92;helloworld&#92;settings.py**。将“counter”添加到 *INSTALLED\_APPS* 元组中。
  * 从命令提示符处，请运行：
@@ -172,7 +172,7 @@
         Installing indexes ...
         Installed 0 object(s) from 0 fixture(s)
 
-1.  替换 **C:&#92;django&#92;helloworld&#92;helloworld&#92;views.py** 的内容。下面新实现的 *hello* 函数将我们的 *Counter* 模型与我们以前安装的单独示例数据库 *world* 结合使用来生成“World”字符串的合适替换项：
+6 .  替换 **C:&#92;django&#92;helloworld&#92;helloworld&#92;views.py** 的内容。下面新实现的 *hello* 函数将我们的 *Counter* 模型与我们以前安装的单独示例数据库 *world* 结合使用来生成“World”字符串的合适替换项：
 
         from django.http import HttpResponse
         import django.db
@@ -230,7 +230,7 @@
 
   刷新 Web 浏览器几次，你应该看到消息从*“Hello **&lt;country abc&gt;**”*更改为*“Hello **&lt;some other country&gt;**”*。
 
-1.  若要停止 Django 托管网站，只需切换到 PowerShell 窗口并按 **Ctrl-C**。
+3 .  若要停止 Django 托管网站，只需切换到 PowerShell 窗口并按 **Ctrl-C**。
 
 ## 关闭你的 Azure 虚拟机
 

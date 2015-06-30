@@ -18,10 +18,10 @@
 
 若要解决创建远程桌面连接时遇到的许多常见问题，Microsoft 已创建 [Azure IaaS (Windows) 诊断程序包](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)。 
 
-1.	单击此页上的**"Microsoft Azure IaaS (Windows) 诊断程序包"**以创建新的诊断会话。
+1.	单击此页上的**"Windows Azure IaaS (Windows) 诊断程序包"**以创建新的诊断会话。
 2.	在**"你遇到 Azure VM 的以下哪些问题?"**页上，选择**"与 Azure VM 的 RDP 连接(需要重启)"**问题。 
 
-有关详细信息，请参阅 [Microsoft Azure IaaS (Windows) 诊断程序包知识库文章](https://support.microsoft.com/zh-CN/kb/2976864)。 
+有关详细信息，请参阅 [Windows Azure IaaS (Windows) 诊断程序包知识库文章](https://support.microsoft.com/zh-CN/kb/2976864)。 
 
 如果运行 Azure IaaS 诊断程序包未解决此问题，或者你无法运行诊断程序包，则可能需要以下步骤中所述的更详细的疑难解答。
 

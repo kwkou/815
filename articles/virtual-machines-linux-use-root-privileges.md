@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-common-tasks-user-root-privileges" urlDisplayName="Use root privileges" pageTitle="在 Azure 中的 Linux 虚拟机上使用根权限" metaKeywords="" description="了解如何在 Azure 中的 Linux 虚拟机上使用根权限。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Using root privileges on Linux virtual machines in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-linux-common-tasks-user-root-privileges" urlDisplayName="Use root privileges" pageTitle="在 Azure 中的 Linux 虚拟机上使用root权限" metaKeywords="" description="了解如何在 Azure 中的 Linux 虚拟机上使用root权限。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Using root privileges on Linux virtual machines in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="03/16/2015"
     wacn.date="04/11/2015"
@@ -8,7 +8,7 @@
 
 
 
-# 在 Azure 中使用 Linux 虚拟机的根权限
+# 在 Azure 中使用 Linux 虚拟机的root权限
 
 默认情况下，`root`用户已在 Azure 中的 Linux 虚拟机上被禁用。用户可以通过使用提升的权限运行命令`sudo`命令。但是，体验可能因系统如何设置。
 

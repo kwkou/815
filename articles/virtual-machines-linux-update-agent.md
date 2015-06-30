@@ -63,9 +63,9 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
     
     sudo cp waagent /usr/sbin
 
-对于 CoreOS，使用：
+<!--对于 CoreOS，使用：
 
-    sudo cp waagent /usr/share/oem/bin/
+    sudo cp waagent /usr/share/oem/bin/ -->
  
 ## Restart waagent service
 
@@ -77,15 +77,15 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
     sudo service walinuxagent restart
 
-对于 CoreOS，使用：
+<!--对于 CoreOS，使用：
 
-    sudo systemctl restart waagent 
+    sudo systemctl restart waagent -->
 
 ## 确认 Azure Linux 代理版本
    
     waagent -version
 
-对于 CoreOS，上面的命令可能无法工作。
+<!--对于 CoreOS，上面的命令可能无法工作。-->
 
 你将看到 Linux 代理版本已更新为新版本。
 

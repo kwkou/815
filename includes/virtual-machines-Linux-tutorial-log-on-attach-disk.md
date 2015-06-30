@@ -1,6 +1,6 @@
 
 
-## <a id="logon"> </a>如何登录到虚拟机创建表后 # #
+## <a id="logon"> </a>如何登录到虚拟机创建表后 ##
 
 若要管理的虚拟机和在计算机运行的应用程序的设置，可以使用 SSH 客户端。为此，您必须在计算机上安装要用于访问虚拟机的 SSH 客户端。你可以选择很多 SSH 客户端程序。以下是可能的选项：
 
@@ -26,7 +26,7 @@
 	你现在可以像使用任何其他服务器一样使用该虚拟机。
 
 
-## <a id="attachdisk"> </a>如何将数据磁盘附加到新的虚拟机 # #
+## <a id="attachdisk"> </a>如何将数据磁盘附加到新的虚拟机 ##
 
 您的应用程序可能需要将数据存储。若要执行此操作，您可以将数据磁盘附加到之前创建的虚拟机。若要这样做的最简单方法是将空数据磁盘附加到计算机。
 
@@ -100,7 +100,7 @@
 
 8. 你必须在新分区上创建文件系统。例如，键入以下命令以创建文件系统中，然后输入帐户密码：
 
-	`sudo mkfs -t ext4 /dev/sdc1`
+	sudo mkfs -t ext4 /dev/sdc1
 
 	![Create file system](./media/virtual-machines-Linux-tutorial-log-on-attach-disk/diskfilesystem.png)
 
@@ -114,7 +114,7 @@
 
 10. 键入以下命令以安装驱动器：
 
-	`sudo mount /dev/sdc1 /datadrive`
+	sudo mount /dev/sdc1 /datadrive
 
 	数据磁盘现在就可以用作**/datadrive**。
 
@@ -123,13 +123,13 @@
 
 	若要确保此驱动器处于重新装载自动重新启动后它必须添加到 /etc/fstab 文件。此外，强烈建议的 UUID （通用唯一标识符） 用于在 /etc/fstab 中引用该驱动器，而不只是设备名称 （即 /dev/sdc1)。若要查找的新的驱动器可以使用 UUID **blkid**实用程序：
 	
-		`sudo -i blkid`
+		sudo -i blkid
 
 	输出将类似于以下形式：
 
-		`/dev/sda1: UUID="11111111-1b1b-1c1c-1d1d-1e1e1e1e1e1e" TYPE="ext4"`
-		`/dev/sdb1: UUID="22222222-2b2b-2c2c-2d2d-2e2e2e2e2e2e" TYPE="ext4"`
-		`/dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"`
+		/dev/sda1: UUID="11111111-1b1b-1c1c-1d1d-1e1e1e1e1e1e" TYPE="ext4"
+		/dev/sdb1: UUID="22222222-2b2b-2c2c-2d2d-2e2e2e2e2e2e" TYPE="ext4"
+		/dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"
 
 	>[WACOM.NOTE] blkid 可能不需要在所有情况下的 sudo 访问权限，但是，则可能是更轻松地使用运行 sudo-i 在某些分发，如果 /sbin 或 /usr/sbin 不在您 $PATH 上。
 
@@ -137,18 +137,18 @@
 
 	使用文本编辑器中，输入 /etc/fstab 文件的结尾处的新文件系统有关的信息。在此示例中我们将使用新的 UUID 值**/dev/sdc1**在前面步骤中，并使用装载点中创建的设备**/datadrive**：
 
-		`UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults   1   2`
+		UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults   1   2
 
 	或者，在基于 SUSE Linux 上的系统上，您可能需要使用稍有不同的格式：
 
-		`/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /   ext3   defaults   1   2`
+		/dev/disk/by-uuid/33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /   ext3   defaults   1   2
 
 	如果创建其他数据驱动器或分区将需要其输入到单独以及 fstab/等 /。
 
 	現在，您可以測試檔案系統是否適當掛接，方法是取消掛接檔案系統，再重新掛接，例如使用先前步驟中建立的範例掛接點 `/datadrive`在前面的步骤中创建：
 
-		`sudo umount /datadrive`
-		`sudo mount /datadrive`
+		sudo umount /datadrive
+		sudo mount /datadrive
 
 	如果第二个命令产生错误，请检查 /etc/fstab 文件的语法正确。
 
