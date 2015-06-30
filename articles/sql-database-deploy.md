@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="如何部署 SQL Database - Azure" metaKeywords="" description="了解如何将 SQL Server 数据库部署到 Azure。你将使用将数据库部署到 SQL Database"向导来上载示例数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="如何部署 SQL 数据库 - Azure" metaKeywords="" description="了解如何将 SQL Server 数据库部署到 Azure。你将使用将数据库部署到 SQL 数据库 向导来上载示例数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
 
 <tags 
 	ms.service="sql-database" 	 
@@ -8,20 +8,20 @@
 
 <h1><a id="howtodeploySQLdb"></a>如何将数据库部署到 Azure</h1>
 
-可通过几种不同的方法将本地 SQL Server 数据库移动到 Azure。在此任务中，你将使用"将数据库部署到 SQL Database"向导来上载示例数据库。
+可通过几种不同的方法将本地 SQL Server 数据库移动到 Azure。在此任务中，你将使用"将数据库部署到 SQL 数据库"向导来上载示例数据库。
 
-School 示例数据库方便简单；其所有对象均与 SQL Database 兼容，因此不需要修改或准备要迁移的数据库。作为新的管理员，请在使用你自己的数据库之前先尝试部署简单的数据库，以了解相关步骤。 
+School 示例数据库方便简单；其所有对象均与 SQL 数据库 兼容，因此不需要修改或准备要迁移的数据库。作为新的管理员，请在使用你自己的数据库之前先尝试部署简单的数据库，以了解相关步骤。 
 
-**注意：**请查看《Azure SQL Database 迁移指南》，以了解有关如何准备将本地数据库迁移到 Azure 的详细说明。此外，请考虑下载 Azure 培训工具包，其中包含的实验教程演示了迁移本地数据库的备选方法。
+**注意：**请查看《Azure SQL 数据库 迁移指南》，以了解有关如何准备将本地数据库迁移到 Azure 的详细说明。此外，请考虑下载 Azure 培训工具包，其中包含的实验教程演示了迁移本地数据库的备选方法。
 
 ## 目录##
 * [如何：在本地服务器上创建 school 数据库](#schooldb)
-* [如何：部署到 SQL Database](#deploydb)
+* [如何：部署到 SQL 数据库](#deploydb)
 * [如何：验证数据库部署](#verify)
 
 <h2><a id="schooldb"></a>如何：在本地服务器上创建 school 数据库</h2>
 
-可在 [SQL Database 管理入门][]中找到用于创建此数据库的脚本。在本指南中，你将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
+可在 [SQL 数据库 管理入门][]中找到用于创建此数据库的脚本。在本指南中，你将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
 
 1. 在 Management Studio 中，连接到本地服务器。右键单击"数据库"、单击"新建数据库"，然后输入 *school*。
 
@@ -521,10 +521,10 @@ School 示例数据库方便简单；其所有对象均与 SQL Database 兼容�
 	GO
 </pre></div>
 
-   现在，你拥有了一个可导出到 Azure 的本地数据库。接下来，你将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL Database 中的向导。
+   现在，你拥有了一个可导出到 Azure 的本地数据库。接下来，你将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL 数据库 中的向导。
 
 
-<h2><a id="deploydb"></a>如何：部署到 SQL Database</h2>
+<h2><a id="deploydb"></a>如何：部署到 SQL 数据库</h2>
 
 1. 在 Management Studio 中，连接到包含你要迁移的数据库的本地 SQL Server 实例。
 
@@ -538,7 +538,7 @@ School 示例数据库方便简单；其所有对象均与 SQL Database 兼容�
 
 6. 在"身份验证"中，选择"SQL Server 身份验证"。
 
-7. 输入你在创建 SQL Database 逻辑服务器时设置的管理员登录名和密码。
+7. 输入你在创建 SQL 数据库 逻辑服务器时设置的管理员登录名和密码。
 
 8. 单击"选项"。
 
@@ -580,6 +580,6 @@ School 示例数据库方便简单；其所有对象均与 SQL Database 兼容�
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
 </pre></div>
 
-[SQL Database 管理入门]: /documentation/articles/sql-database-get-started/  
+[SQL 数据库 管理入门]: /documentation/articles/sql-database-get-started/  
 
 <!--HONumber=55-->
