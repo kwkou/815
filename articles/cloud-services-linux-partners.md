@@ -20,7 +20,7 @@ BitNami 提供了常用 Web 应用程序的完全配置的映像，只需一次�
 
 ![Opscode][Opscode]
 
-http://www.opscode.com/partners/microsoft
+<http://www.opscode.com/partners/microsoft>
 
 Opscode 是开发 Chef 的公司，Chef 是由数以千计的组织（从小型创业公司到财富 100 强企业）使用的快速发展的云基础结构自动化框架。利用 Chef 的灵活且可重用的模板（“cookbooks”），你可以轻松管理、缩放和重新生成 Azure 环境。
 
@@ -63,14 +63,8 @@ Juju 超级按钮是用于部署云服务的预编写指令的集合。已提供
 Juju 与设置紧密结合，但独立于基础结构层。可在公有云、私有云或硬件上安装基础平台，并为服务做好准备以便使用 Juju 进行部署、控制和缩放。
 
   [Bitnami]: ./media/cloud-services-linux-partners/bitnami.png
-  []: http://bitnami.org/azure/get-started
   [Opscode]: ./media/cloud-services-linux-partners/opscode.png
-  [Opscode]: http://www.opscode.com/partners/microsoft
   [Rightscale]: ./media/cloud-services-linux-partners/rightscale-tagline-white-bg.png
   [ScaleXtreme]: ./media/cloud-services-linux-partners/scaleXtreme.png
-  []: http://www.scalextreme.com/partners-windows-azure
   [SUSE]: ./media/cloud-services-linux-partners/suse.png
-  []: http://www.susestudio.com
   [Juju]: ./media/cloud-services-linux-partners/juju.png
-  []: https://juju.ubuntu.com/
-  []: http://www.ubuntu.com/cloud/azure
