@@ -1,4 +1,4 @@
-<properties linkid="dev-net-tutorials-hybrid-solution" urlDisplayName="Hybrid Application" pageTitle="本地/云混合应用程序 (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="了解如何使用 Azure Service Bus 中继创建 .NET 本地/云混合应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+﻿<properties linkid="dev-net-tutorials-hybrid-solution" urlDisplayName="Hybrid Application" pageTitle="本地/云混合应用程序 (.NET) - Azure" metaKeywords="Azure Service Bus tutorial,hybrid .NET" description="了解如何使用 Azure Service Bus 中继创建 .NET 本地/云混合应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title=".NET On-Premises/Cloud Hybrid Application Using Service Bus Relay" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 <tags ms.service="service-bus"
     ms.date="03/17/2015"
     wacn.date="04/11/2015"
@@ -549,7 +549,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 	![][43]
 
-##<a name="nextsteps"></a>后续步骤##  
+##<a name="nextsteps"></a>后续步骤
 
 若要了解有关 Service Bus 的详细信息，请参阅以下资源：  
   
