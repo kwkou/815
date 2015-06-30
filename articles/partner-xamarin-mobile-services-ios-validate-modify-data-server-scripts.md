@@ -39,7 +39,7 @@
 4.  将现有脚本替换为以下函数，然后单击“保存” 。
 
     function insert(item, user, request) {
-     if (item.text.length \> 10) {
+     if (item.text.length &gt; 10) {
      request.respond(statusCodes.BAD\_REQUEST, 'Text length must be 10 characters or less.');
      } else {
      request.execute();

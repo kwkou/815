@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="使用 InMage 进行保护时从 Azure 故障回复到 VMware 的步骤 - Azure 教程" 
    description="本文介绍了如何使用 Azure Site Recovery 和 vContinuum 工具将虚拟机故障回复到 VMware。" 
    services="site-recovery" 
@@ -237,7 +237,7 @@ f. 如果不存在该行，请单击"添加行"。
 
 2. 运行以下命令来解压缩二进制文件。
 
-	**tar -zxvf \<文件名\>**
+	**tar -zxvf &lt;文件名&gt;**
 
 3. 执行以下命令来指定权限。
 

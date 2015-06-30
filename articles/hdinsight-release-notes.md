@@ -1,4 +1,4 @@
-<properties title="HDInsight Release Notes" pageTitle="HDInsight 发行说明 | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
+﻿<properties title="HDInsight Release Notes" pageTitle="HDInsight 发行说明 | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -216,23 +216,23 @@ HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
 在 HDInsight 2.x (HDP1.x) 与 HDInsight 3.x (HDP2.x) 之间发生了以下版本更改：
 
--   metrics-core： ['2.1.2'] -\> ['3.0.0']
--   derbynet： ['10.4.2.0'] -\> ['10.10.1.1']
--   datanucleus：['rdbms-3.0.8'] -\> ['rdbms-3.2.9']
--   jasper-compiler： ['5.5.12'] -\> ['5.5.23']
--   log4j： ['1.2.15', '1.2.16'] -\> ['1.2.16', '1.2.17']
--   derbyclient： ['10.4.2.0'] -\> ['10.10.1.1']
--   httpcore： ['4.2.4'] -\> ['4.2.5']
--   hsqldb： ['1.8.0.10'] -\> ['2.0.0']
--   jets3t： ['0.6.1'] -\> ['0.9.0']
--   protobuf-java： ['2.4.1'] -\> ['2.5.0']
--   derby： ['10.4.2.0'] -\> ['10.10.1.1']
--   jasper：['runtime-5.5.12'] -\> ['runtime-5.5.23']
--   commons-daemon： ['1.0.1'] -\> ['1.0.13']
--   datanucleus-core： ['3.0.9'] -\> ['3.2.10']
--   datanucleus-api-jdo： ['3.0.7'] -\> ['3.2.6']
--   zookeeper： ['3.4.5.1.3.9.0-01320'] -\> ['3.4.5.2.1.3.0-1948']
--   bonecp：['0.7.1.RELEASE'] -\> ['0.8.0.RELEASE']
+-   metrics-core： ['2.1.2'] -&gt; ['3.0.0']
+-   derbynet： ['10.4.2.0'] -&gt; ['10.10.1.1']
+-   datanucleus：['rdbms-3.0.8'] -&gt; ['rdbms-3.2.9']
+-   jasper-compiler： ['5.5.12'] -&gt; ['5.5.23']
+-   log4j： ['1.2.15', '1.2.16'] -&gt; ['1.2.16', '1.2.17']
+-   derbyclient： ['10.4.2.0'] -&gt; ['10.10.1.1']
+-   httpcore： ['4.2.4'] -&gt; ['4.2.5']
+-   hsqldb： ['1.8.0.10'] -&gt; ['2.0.0']
+-   jets3t： ['0.6.1'] -&gt; ['0.9.0']
+-   protobuf-java： ['2.4.1'] -&gt; ['2.5.0']
+-   derby： ['10.4.2.0'] -&gt; ['10.10.1.1']
+-   jasper：['runtime-5.5.12'] -&gt; ['runtime-5.5.23']
+-   commons-daemon： ['1.0.1'] -&gt; ['1.0.13']
+-   datanucleus-core： ['3.0.9'] -&gt; ['3.2.10']
+-   datanucleus-api-jdo： ['3.0.7'] -&gt; ['3.2.6']
+-   zookeeper： ['3.4.5.1.3.9.0-01320'] -&gt; ['3.4.5.2.1.3.0-1948']
+-   bonecp：['0.7.1.RELEASE'] -&gt; ['0.8.0.RELEASE']
 
 ### 驱动程序
 

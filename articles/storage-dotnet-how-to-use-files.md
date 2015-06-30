@@ -1,4 +1,4 @@
-<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="了解如何使用 Microsoft Azure 文件存储创建文件共享和管理文件内容。相关示例用 PowerShell 和 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="了解如何使用 Microsoft Azure 文件存储创建文件共享和管理文件内容。相关示例用 PowerShell 和 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/06/2015"
     wacn.date="04/11/2015"
@@ -139,11 +139,11 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 
 建立与虚拟机的远程连接后，便可以使用以下语法执行  `net use` 命令来装载文件共享了。请将"<storage-account>"替换为你的存储帐户名称，将"<share-name>"替换为你的文件存储共享名称。
 
-	net use z: &#92;<storage-account>.file.core.chinacloudapi.cn\<share-name>
+	net use z: &#92;<storage-account>.file.core.chinacloudapi.cn&lt;share-name>
 
 > [WACOM.NOTE] 由于你已在上一步中保存了存储帐户凭据，因此你无需为  `net use` 命令提供这些凭据。如果你尚未保存凭据，请提供凭据作为传递给  `net use` 命令的参数。请将 `<storage-account>` 替换为你的存储帐户名称，将 `<share-name>` 替换为你的文件存储共享名称，将 `<account-key>` 替换为你的存储帐户密钥：
 	   
-	net use z: &#92;<storage-account>.file.core.chinacloudapi.cn\<share-name> /u:<storage-account> <account-key>
+	net use z: &#92;<storage-account>.file.core.chinacloudapi.cn&lt;share-name> /u:<storage-account> <account-key>
 
 现在，你可以使用虚拟机中的文件存储共享，就像使用任何其他驱动器一样。你可以从命令提示符发出标准文件命令，也可以从文件资源管理器查看已装载的共享及其内容。你也可以在虚拟机中运行代码，以便访问使用标准 Windows 文件 I/O API（例如由 [System.IO 命名空间](http://msdn.microsoft.com/zh-cn/library/gg145019(v=vs.110).aspx)提供的 API）的文件共享 in the .NET Framework。 
 

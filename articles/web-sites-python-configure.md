@@ -1,4 +1,4 @@
-<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -85,7 +85,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 2.3. 添加 Python 的处理程序。
 
-> 这会通知 Azure 网站 Python 应处理对路径 handler.fcgi 发出的请求。处理程序语法与以下示例中的 \<handlers\> 标记内的内容完全相同很重要，除非你具有自己的 FastCGI 处理程序或 Python 开发堆栈。
+> 这会通知 Azure 网站 Python 应处理对路径 handler.fcgi 发出的请求。处理程序语法与以下示例中的 &lt;handlers&gt; 标记内的内容完全相同很重要，除非你具有自己的 FastCGI 处理程序或 Python 开发堆栈。
 
 2.4. 重写到 handler.fcgi 的 URL。
 

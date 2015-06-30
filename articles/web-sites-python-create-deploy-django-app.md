@@ -71,7 +71,7 @@
 ![][6]
 
 **选项 2：**
-你还可以使用 Python Tools for Visual Studio 创建新网站。启动安装了 Python Tools for Visual Studio 的 Visual Studio，然后选择“文件”-\>“新建项目”。钻取到“其他语言”下的“Python”项目，然后选择“Django 应用程序”。输入“DjangoApplication”作为项目名称，并确保未选中“创建解决方案的目录”以获得与从命令行创建 Django 应用程序时完全相同的目录结构。此选项可以为你配备好 Visual Studio 解决方案和项目文件，从而为你提供优质的本地开发体验，包括模板调试和智能感知。
+你还可以使用 Python Tools for Visual Studio 创建新网站。启动安装了 Python Tools for Visual Studio 的 Visual Studio，然后选择“文件”-&gt;“新建项目”。钻取到“其他语言”下的“Python”项目，然后选择“Django 应用程序”。输入“DjangoApplication”作为项目名称，并确保未选中“创建解决方案的目录”以获得与从命令行创建 Django 应用程序时完全相同的目录结构。此选项可以为你配备好 Visual Studio 解决方案和项目文件，从而为你提供优质的本地开发体验，包括模板调试和智能感知。
 
 ![][7]
 

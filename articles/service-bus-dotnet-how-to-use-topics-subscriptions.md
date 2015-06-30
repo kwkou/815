@@ -220,7 +220,7 @@ Service Bus 主题支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 在 **PeekLock** 模式（这是默认模式）下，接收过程变成了一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找要使用的下一条消息，将其锁定以防其他使用方接收它，然后将该消息返回给应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Complete** 完成接收过程的第二个阶段。当 Service Bus 发现 **Complete** 调用时，它会将消息标记为正在使用并将其从订阅中删除。
 
-下面的示例演示如何使用默认的 **PeekLock** 模式接收和处理消息。若要指定不同的 **ReceiveMode** 值，可以使用 **CreateFromConnectionString** 的另一个重载。此示例创建一个无限循环并在消息到达"HighMessages"订阅时处理消息。请注意，"HighMessages"订阅的路径以 "<*topic path*\>/subscriptions/<*subscription name*\>" 的形式提供。
+下面的示例演示如何使用默认的 **PeekLock** 模式接收和处理消息。若要指定不同的 **ReceiveMode** 值，可以使用 **CreateFromConnectionString** 的另一个重载。此示例创建一个无限循环并在消息到达"HighMessages"订阅时处理消息。请注意，"HighMessages"订阅的路径以 "<*topic path*&gt;/subscriptions/<*subscription name*&gt;" 的形式提供。
 
 	string connectionString = 
 	    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");

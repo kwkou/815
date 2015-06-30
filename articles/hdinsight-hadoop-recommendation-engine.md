@@ -42,7 +42,7 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
 如果你未安装 Visual Studio 2010，请跳过此步骤并转到“运行 Mahout 作业”一节，以获取预生成的版本。
 
-首先启动 Visual Studio 2010。在 Visual Studio 中，选择“文件”-\>“新建”-\>“项目” 。在“已安装的模板” 窗格中的 **Visual C#** 节点内，选择“窗口” 类别，然后从列表中选择“控制台应用程序” 。将项目命名为“ConvertToMahoutInput”，然后单击“确定” 按钮。
+首先启动 Visual Studio 2010。在 Visual Studio 中，选择“文件”-&gt;“新建”-&gt;“项目” 。在“已安装的模板” 窗格中的 **Visual C#** 节点内，选择“窗口” 类别，然后从列表中选择“控制台应用程序” 。将项目命名为“ConvertToMahoutInput”，然后单击“确定” 按钮。
 
 ![创建控制台应用程序][]
 
@@ -132,7 +132,7 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
 5.  从[此链接][数据集]下载示例数据。下载完成后，打开 **train\_triplets.txt.zip** 并提取 **train\_triplets.txt**。
 
-    运行此实用程序时，在 **train\_triplets.txt** 的位置附带一个命令行参数。为此，请右键单击**解决方案资源管理器**中的 **ConvertToMahoutInput** 项目节点，然后选择“属性” 。在项目属性页上，选择左侧的“调试” 选项卡，并将 \<localpath\>train\_triplets.txt 的路径添加到“命令行参数” 文本框中：
+    运行此实用程序时，在 **train\_triplets.txt** 的位置附带一个命令行参数。为此，请右键单击**解决方案资源管理器**中的 **ConvertToMahoutInput** 项目节点，然后选择“属性” 。在项目属性页上，选择左侧的“调试” 选项卡，并将 &lt;localpath&gt;train\_triplets.txt 的路径添加到“命令行参数” 文本框中：
 
     ![设置命令行参数][]
 

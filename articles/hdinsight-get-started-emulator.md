@@ -466,7 +466,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信�
         <value><StorageAccountKey></value>
         </property>
 
-    你必须使用与你的存储帐户信息匹配的值替代 \<StorageAccountName\> 和 \<StorageAccountKey\>。
+    你必须使用与你的存储帐户信息匹配的值替代 &lt;StorageAccountName&gt; 和 &lt;StorageAccountKey&gt;。
 
 3.  保存更改。你无需重新启动 Hadoop 服务。
 
@@ -512,7 +512,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。有关详细信�
         <description>其他临时目录的基址。</description>
         </property>
 
-    你必须使用与你的存储帐户信息匹配的值替代 \<StorageAccountName\> 和 \<StorageAccountKey\>。
+    你必须使用与你的存储帐户信息匹配的值替代 &lt;StorageAccountName&gt; 和 &lt;StorageAccountKey&gt;。
 
 4.  保存更改。
 5.  在你的桌面上以提升的模式打开 Hadoop 命令行（以管理员身份运行）

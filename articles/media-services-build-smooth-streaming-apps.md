@@ -77,7 +77,7 @@
 **设计播放器用户界面**
 
 1.  在解决方案资源管理器中，双击“MainPage.xaml”**以在设计视图中将它打开**。
-2.  在该 XAML 文件中找到 **&lt;Grid\>** 和 **&lt;/Grid\>** 标记，并在这两个标记之间粘贴以下代码：
+2.  在该 XAML 文件中找到 **&lt;Grid&gt;** 和 **&lt;/Grid&gt;** 标记，并在这两个标记之间粘贴以下代码：
 
         <Grid.RowDefinitions>
         <RowDefinition Height="20"/>    <!-- spacer -->
@@ -492,7 +492,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改 XAML 文件**
 
 1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，**然后单击“查看设计器”**。
-2.  找到 &lt;Grid.RowDefinitions\>，并按如下所示修改 RowDefinitions：
+2.  找到 &lt;Grid.RowDefinitions&gt;，并按如下所示修改 RowDefinitions：
 
         <Grid.RowDefinitions>            
         <RowDefinition Height="20"/>
@@ -502,7 +502,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
         <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-3.  在 &lt;Grid\>&lt;/Grid\> 标记中，添加以下代码以定义一个列表框控件，使用户能够看到可用流的列表及选择流：
+3.  在 &lt;Grid&gt;&lt;/Grid&gt; 标记中，添加以下代码以定义一个列表框控件，使用户能够看到可用流的列表及选择流：
 
          <Grid Name="gridStreamAndBitrateSelection" Grid.Row="3">
         <Grid.RowDefinitions>
@@ -766,7 +766,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改 XAML 文件**
 
 1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看设计器”。
-2.  找到名为 **gridStreamAndBitrateSelection** 的 &lt;Grid\> 标记，并在该标记的末尾追加以下代码：
+2.  找到名为 **gridStreamAndBitrateSelection** 的 &lt;Grid&gt; 标记，并在该标记的末尾追加以下代码：
 
          <StackPanel Name="spBitRateSelection" Grid.Row="1" Grid.Column="1">
         <StackPanel Orientation="Horizontal">

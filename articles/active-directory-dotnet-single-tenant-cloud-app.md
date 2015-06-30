@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Developing Single Tenant Applications with Azure Active Directory" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="Developing Single Tenant Applications with Azure Active Directory" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="10/13/2014"
     wacn.date="04/11/2015"
@@ -195,7 +195,7 @@
 
 5.  将角色添加到服务主体后，请启动 Visual Studio 并打开示例应用程序的 **Web.config** 根文件。
 
-6.  在 **Web.config** 中找到 *\<configuration\>* 节，然后导航到 *\<appSettings\>* 节。将 *TenantDomainName*、*AppPrincipalId* 和 *SymmetricKey* 键的值更改为服务主体使用的值。例如：
+6.  在 **Web.config** 中找到 *&lt;configuration&gt;* 节，然后导航到 *&lt;appSettings&gt;* 节。将 *TenantDomainName*、*AppPrincipalId* 和 *SymmetricKey* 键的值更改为服务主体使用的值。例如：
 
         <appSettings> 
             ...

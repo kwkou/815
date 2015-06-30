@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-how-to-guides/work-with-android-client-library" urlDisplayName="Android Client Library" pageTitle="Working with the Mobile Services Android Client Library" metaKeywords="" description="Learn how to use an Android client for Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use the Android client library for Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-how-to-guides/work-with-android-client-library" urlDisplayName="Android Client Library" pageTitle="Working with the Mobile Services Android Client Library" metaKeywords="" description="Learn how to use an Android client for Azure Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="How to use the Android client library for Mobile Services" authors="ricksal" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/03/2015"
     wacn.date="04/11/2015"
@@ -136,7 +136,7 @@
                 }
             });
 
-类似于这样的查询将使用 ["TableQueryCallback\<E\>"][] 回调对象。
+类似于这样的查询将使用 ["TableQueryCallback&lt;E&gt;"][] 回调对象。
 
 *result* 参数返回查询后生成的结果集，*exception* 测试的成功分支中的代码显示了如何分析各个行。
 
@@ -250,7 +250,7 @@
 
 可以连接用于查询移动服务表的方法。这样，你便可以执行多种操作，例如，选择已排序并分页的筛选行的特定列。你可以创建相当复杂的逻辑筛选器。
 
-这种操作的工作原理是通过使用的查询方法返回 ["MobileServiceQuery\<T\>"][] 对象，随之又对这些对象调用更多的方法。若要结束方法序列并真正运行查询，你可以调用 ["execute"][] 方法。
+这种操作的工作原理是通过使用的查询方法返回 ["MobileServiceQuery&lt;T&gt;"][] 对象，随之又对这些对象调用更多的方法。若要结束方法序列并真正运行查询，你可以调用 ["execute"][] 方法。
 
 在以下代码示例中，*mToDoTable* 是对移动服务 *ToDoItem* 表的引用。
 
@@ -290,7 +290,7 @@
             }
         });
 
-对于 "insert" 操作，回调对象为 ["TableOperationCallback\<ToDoItem\>"][]。
+对于 "insert" 操作，回调对象为 ["TableOperationCallback&lt;ToDoItem&gt;"][]。
 
 "onCompleted" 方法的 entity 参数包含新插入的对象。成功代码显示了如何访问所插入行的 *id*。
 
@@ -496,7 +496,7 @@
 
 代码将指定屏幕布局，用于定义设备中显示的数据视图。
 
-数据源和屏幕布局通过适配器绑定在一起，在此代码中，该适配器是 *ArrayAdapter\<ToDoItem\>* 类的扩展。
+数据源和屏幕布局通过适配器绑定在一起，在此代码中，该适配器是 *ArrayAdapter&lt;ToDoItem&gt;* 类的扩展。
 
 <a name="layout"></a>
 ### 如何：定义布局
@@ -527,9 +527,9 @@
 <a name="adapter"></a>
 ### 如何：定义适配器
 
-由于此处视图的数据源是一个 *ToDoItem* 数组，因此我们需要基于 *ArrayAdapter\<ToDoItem\>* 类子类化适配器。此子类将使用 *row\_list\_to\_do* 布局为每个 *ToDoItem* 生成一个视图。
+由于此处视图的数据源是一个 *ToDoItem* 数组，因此我们需要基于 *ArrayAdapter&lt;ToDoItem&gt;* 类子类化适配器。此子类将使用 *row\_list\_to\_do* 布局为每个 *ToDoItem* 生成一个视图。
 
-在代码中，我们可以定义以下类作为 *ArrayAdapter\<E\>* 类的扩展：
+在代码中，我们可以定义以下类作为 *ArrayAdapter&lt;E&gt;* 类的扩展：
 
         public class ToDoItemAdapter extends ArrayAdapter<ToDoItem> {
 
@@ -870,7 +870,7 @@
   [MobileServiceTable]: http://go.microsoft.com/fwlink/p/?LinkId=296835
   [第一个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296839
   [第二个重载]: http://go.microsoft.com/fwlink/p/?LinkId=296840
-  ["TableQueryCallback\<E\>"]: http://go.microsoft.com/fwlink/p/?LinkId=296849
+  ["TableQueryCallback&lt;E&gt;"]: http://go.microsoft.com/fwlink/p/?LinkId=296849
   ["where"]: http://go.microsoft.com/fwlink/p/?LinkId=296867
   ["field"]: http://go.microsoft.com/fwlink/p/?LinkId=296869
   ["eq"]: http://go.microsoft.com/fwlink/p/?LinkId=298461
@@ -913,10 +913,10 @@
   [1]: http://go.microsoft.com/fwlink/p/?LinkId=296296
   [2]: http://go.microsoft.com/fwlink/p/?LinkId=296313
   ["top"]: http://go.microsoft.com/fwlink/p/?LinkId=298731
-  ["MobileServiceQuery\<T\>"]: http://go.microsoft.com/fwlink/p/?LinkId=298551
+  ["MobileServiceQuery&lt;T&gt;"]: http://go.microsoft.com/fwlink/p/?LinkId=298551
   ["execute"]: http://go.microsoft.com/fwlink/p/?LinkId=298554
   ["insert"]: http://go.microsoft.com/fwlink/p/?LinkId=296862
-  ["TableOperationCallback\<ToDoItem\>"]: http://go.microsoft.com/fwlink/p/?LinkId=296865
+  ["TableOperationCallback&lt;ToDoItem&gt;"]: http://go.microsoft.com/fwlink/p/?LinkId=296865
   [ASCII 控制代码 C0 和 C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
   [用于管理移动服务表的 CLI]: /manage/linux/other-resources/command-line-tools/#Mobile_Tables
   ["TableDeleteCallback"]: http://go.microsoft.com/fwlink/p/?LinkId=296858

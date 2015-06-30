@@ -1,4 +1,4 @@
-<properties linkid="develop-dotnet-rest-service-using-web-api" urlDisplayName="REST service using Web API" pageTitle="使用 Web API 的 .NET REST 服务 &mdash; Azure 教程" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="使用 ASP.NET Web API 和 SQL 数据库的 REST 服务" authors="riande" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-dotnet-rest-service-using-web-api" urlDisplayName="REST service using Web API" pageTitle="使用 Web API 的 .NET REST 服务 &mdash; Azure 教程" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="使用 ASP.NET Web API 和 SQL 数据库的 REST 服务" authors="riande" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -309,7 +309,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
         add-migration Initial
 
-    **add-migration Initial** 命令将生成一个创建数据库的名为 **\<date\_stamp\>Initial** 的类。第一个参数 (*Initial*) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
+    **add-migration Initial** 命令将生成一个创建数据库的名为 **&lt;date\_stamp&gt;Initial** 的类。第一个参数 (*Initial*) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
 
     在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在您想要返回到以前的状态时使用）用于删除该表。
 

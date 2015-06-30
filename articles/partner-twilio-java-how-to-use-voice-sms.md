@@ -1,4 +1,4 @@
-<properties linkid="develop-java-how-to-twilio-sms-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="How to Use Twilio for Voice and SMS (Java) - Azure" metaKeywords="Twilio, Twilio API, phone calls, SMS message, TwiML responses, Azure Twilio Java" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in Java." metaCanonical="" services="" videoId="" scriptId="" documentationCenter="Java" title="How to Use Twilio for Voice and SMS Capabilities in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-java-how-to-twilio-sms-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="How to Use Twilio for Voice and SMS (Java) - Azure" metaKeywords="Twilio, Twilio API, phone calls, SMS message, TwiML responses, Azure Twilio Java" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in Java." metaCanonical="" services="" videoId="" scriptId="" documentationCenter="Java" title="How to Use Twilio for Voice and SMS Capabilities in Java" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date="11/25/2014"
     wacn.date="04/11/2015"
@@ -41,20 +41,20 @@ Twilio API 的关键方面是 Twilio 谓词和 Twilio 标记语言 (TwiML)。
 
 ### <span id="Verbs"></span></a>Twilio 谓词
 
-API 利用了 Twilio 谓词；例如，**\<Say\>** 谓词指示 Twilio 在呼叫时传递语音消息。
+API 利用了 Twilio 谓词；例如，**&lt;Say&gt;** 谓词指示 Twilio 在呼叫时传递语音消息。
 
 下面是 Twilio 谓词的列表。
 
--   **\<Dial\>**：将呼叫方连接到其他电话。
--   **\<Gather\>**：收集通过电话按键输入的数字。
--   **\<Hangup\>**：结束呼叫。
--   **\<Play\>**：播放音频文件。
--   **\<Pause\>**：安静地等待指定时间（以秒为单位）。
--   **\<Record\>**：录制呼叫方的声音并返回包含该录音的文件的 URL。
--   **\<Redirect\>**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
--   **\<Reject\>**：拒绝对 Twilio 号码的传入呼叫而不向你收费
--   **\<Say\>**：将文本转换为呼叫中生成的语音。
--   **\<Sms\>**：发送 SMS 消息。
+-   **&lt;Dial&gt;**：将呼叫方连接到其他电话。
+-   **&lt;Gather&gt;**：收集通过电话按键输入的数字。
+-   **&lt;Hangup&gt;**：结束呼叫。
+-   **&lt;Play&gt;**：播放音频文件。
+-   **&lt;Pause&gt;**：安静地等待指定时间（以秒为单位）。
+-   **&lt;Record&gt;**：录制呼叫方的声音并返回包含该录音的文件的 URL。
+-   **&lt;Redirect&gt;**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
+-   **&lt;Reject&gt;**：拒绝对 Twilio 号码的传入呼叫而不向你收费
+-   **&lt;Say&gt;**：将文本转换为呼叫中生成的语音。
+-   **&lt;Sms&gt;**：发送 SMS 消息。
 
 ### <span id="TwiML"></span></a>TwiML
 
@@ -180,7 +180,7 @@ TwiML 是一组基于 XML 的指令，这些指令以用于指示 Twilio 如何�
 
 ## <span id="howto_provide_twiml_responses"></span></a>如何：从你自己的网站提供 TwiML 响应
 
-当你的应用程序启动对 Twilio API 的调用时（例如通过 **CallFactory.create** 方法），Twilio 会将你的请求发送到应该返回 TwiML 响应的 URL。上面的示例使用 Twilio 提供的 URL [][5]<http://twimlets.com/message></a>。（虽然 TwiML 专供 Web 服务使用，但你可以在浏览器中查看 TwiML。例如，单击 [][5]<http://twimlets.com/message></a> 可查看空 **\<Response\>** 元素；又如，单击 [][6]<http://twimlets.com/message?Message%5B0%5D=Hello%20World></a> 可查看包含 **\<Say\>** 元素的 **\<Response\>** 元素。）
+当你的应用程序启动对 Twilio API 的调用时（例如通过 **CallFactory.create** 方法），Twilio 会将你的请求发送到应该返回 TwiML 响应的 URL。上面的示例使用 Twilio 提供的 URL [][5]<http://twimlets.com/message></a>。（虽然 TwiML 专供 Web 服务使用，但你可以在浏览器中查看 TwiML。例如，单击 [][5]<http://twimlets.com/message></a> 可查看空 **&lt;Response&gt;** 元素；又如，单击 [][6]<http://twimlets.com/message?Message%5B0%5D=Hello%20World></a> 可查看包含 **&lt;Say&gt;** 元素的 **&lt;Response&gt;** 元素。）
 
 你可以创建自己的返回 HTTP 响应的 URL 网站，而不用依赖 Twilio 提供的 URL。你可以用任何语言创建返回 HTTP 响应的网站；本主题假定你将在 JSP 页面中托管 URL。
 

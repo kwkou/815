@@ -1,4 +1,4 @@
-<properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL数据库 server and Storage account." metaCanonical="/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="provisioning-biztalk-service" urlDisplayName="Provision BizTalk Services in management portal" pageTitle="Create BizTalk Services in management portal | Azure" metaKeywords="Get started Azure biztalk services, provision, Azure unstructured data" description="Learn how to provision a BizTalk service in the Azure Management Portal, as well as create an optional SQL数据库 server and Storage account." metaCanonical="/manage/services/biztalk-services/provisioning-biztalk-service" services="biztalk-services" documentationCenter="" title="BizTalk Services: Provisioning Using Azure Management Portal" authors="mandia" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="biztalk-services"
     ms.date="02/25/2015"
     wacn.date="04/11/2015"
@@ -27,7 +27,7 @@
 
     ![选择“新建”按钮][选择“新建”按钮]
 
-3.  选择**“应用程序服务”**\>**“BIZTALK 服务”**\>**“自定义创建”**：
+3.  选择**“应用程序服务”**&gt;**“BIZTALK 服务”**&gt;**“自定义创建”**：
 
     ![依次选择“BizTalk 服务”和“自定义创建”][依次选择“BizTalk 服务”和“自定义创建”]
 

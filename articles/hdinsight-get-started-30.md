@@ -144,7 +144,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
     ● /example/jars/hadoop-mapreduce-examples.jar
                 
 
-前缀 *wasb://* 在这些文件的路径中的使用。需要指出 Azure Blob 存储正用于输入和输出文件。输出目录假定一个相对于 *wasb:///user/\<username\>* 文件夹的默认路径。
+前缀 *wasb://* 在这些文件的路径中的使用。需要指出 Azure Blob 存储正用于输入和输出文件。输出目录假定一个相对于 *wasb:///user/&lt;username&gt;* 文件夹的默认路径。
 
 有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 

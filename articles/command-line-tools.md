@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="manage-linux-other-resources-command-line-tools" urlDisplayName="Command-Line Tools" pageTitle="适用于 Mac 和 Linux 的 Azure 命令行工具" metaKeywords="Azure command-line, Azure tools Mac, Azure tools Linux" description="了解如何在 Azure 中使用针对 Mac 和 Linux 的命令行工具。" metaCanonical="" services="web-sites,virtual-machines,mobile-services,cloud-services" documentationCenter="" title="" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,virtual-machines,mobile-services,cloud-services"
     ms.date="10/17/2014"
     wacn.date="04/11/2015"
@@ -194,7 +194,7 @@ publishsettings 文件可以包含有关多个订阅的详细信息（即，订�
 
 **create-new** 在 Blob 存储中创建驱动器（即图中的 e:&#92;）；**attach** 会将已创建但未附加的磁盘附加到虚拟机。
 
-**vm create [options] \<dns-name\> \<image\> \<userName\> [password]**
+**vm create [options] &lt;dns-name&gt; &lt;image&gt; &lt;userName&gt; [password]**
 
 此命令创建新的 Azure 虚拟机。默认情况下，所创建的每台虚拟机位于其自己的云服务中；但是，你可以使用此处提及的 -c 选项指定将虚拟机添加到现有云服务。
 
@@ -211,7 +211,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 此命令支持以下可选参数：
 
 **-c, --connect** 可在托管服务中已创建的部署中创建虚拟机。如果此选项中未使用 -vmname，将自动生成新虚拟机的名称。
-**-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 \<service-name\>\<id\> 形式的新虚拟机名称，其中 \<id\> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一台现有虚拟机的托管服务 MyService 中添加一台新虚拟机，则会将新虚拟机命名为 MyService2。
+**-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name&gt;&lt;id&gt; 形式的新虚拟机名称，其中 &lt;id&gt; 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一台现有虚拟机的托管服务 MyService 中添加一台新虚拟机，则会将新虚拟机命名为 MyService2。
 **-u --blob-url** 指定从中创建虚拟机系统磁盘的 Blob 存储 URL。
 **-z, --vm-size** 指定虚拟机的大小。有效值为“特小型”、“小型”、“中型”、“大型”和“特大型”。默认值为“小型”。
 **-r** 添加与 Windows 虚拟机的 RDP 连接。
@@ -232,7 +232,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     Enter VM 'my-vm-name' password:                                      
     info:   vm create command OK
 
-**vm create-from \<dns-name\> \<role-file\>**
+**vm create-from &lt;dns-name&gt; &lt;role-file&gt;**
 
 此命令从 JSON 角色文件创建新的 Azure 虚拟机。
 
@@ -261,7 +261,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     data:   Azure         China East     
     info:   account location list command OK
 
-**vm show [options] \<name\>**
+**vm show [options] &lt;name&gt;**
 
 此命令显示有关 Azure 虚拟机的详细信息。-json 选项指定以原始 JSON 格式返回结果。
 
@@ -291,7 +291,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     data:   } 
     info:   vm show command OK
 
-**vm delete [options] \<name\>**
+**vm delete [options] &lt;name&gt;**
 
 此命令删除 Azure 虚拟机。默认情况下，此命令不删除从中创建操作系统磁盘和数据磁盘的 Azure Blob。若要删除 Blob 以及作为其基础的虚拟机，请指定 -b 选项。
 
@@ -299,7 +299,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Executing command vm delete
     info:   vm delete command OK
 
-**vm start [options] \<name\>**
+**vm start [options] &lt;name&gt;**
 
 此命令启动 Azure 虚拟机。
 
@@ -307,7 +307,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Executing command vm start
     info:   vm start command OK
 
-**vm restart [options] \<name\>**
+**vm restart [options] &lt;name&gt;**
 
 此命令重新启动 Azure 虚拟机。
 
@@ -315,7 +315,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Executing command vm restart
     info:   vm restart command OK
 
-**vm shutdown [options] \<name\>**
+**vm shutdown [options] &lt;name&gt;**
 
 此命令关闭 Azure 虚拟机。可以使用 -p 选项，以指定在关闭时不释放计算资源。
 
@@ -323,7 +323,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Executing command vm shutdown
     info:   vm shutdown command OK  
 
-**vm capture \<vm-name\> \<target-image-name\>**
+**vm capture &lt;vm-name&gt; &lt;target-image-name&gt;**
 
 此命令捕获 Azure 虚拟机映像。
 
@@ -335,7 +335,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     + Capturing VM
     info:   vm capture command OK
 
-**vm export [options] \<vm-name\> \<file-path\>**
+**vm export [options] &lt;vm-name&gt; &lt;file-path&gt;**
 
 此命令将一个 Azure 虚拟机映像导出到文件
 
@@ -353,7 +353,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 虚拟机的外部请求将通过负载平衡器。因此，不能针对包含多台虚拟机的部署中的特定虚拟机指定请求。对于包含多台虚拟机的部署，必须在虚拟机 (vm-port) 与负载平衡器 (lb-port) 之间配置端口映射。
 
-**vm endpoint create \<vm-name\> \<lb-port\> [vm-port]**
+**vm endpoint create &lt;vm-name&gt; &lt;lb-port&gt; [vm-port]**
 
 此命令创建虚拟机终结点。你可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下禁用。
 
@@ -365,11 +365,11 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     + Updating network configuration
     info:   vm endpoint create command OK
 
-\*\*vm endpoint create-multiple [options] \<vm-name\> \<lb-port\>[:\<vm-port\>[:\<protocol\>[:\<lb-set-name\>[:\<prob-protocol\>:\<lb-prob-port\>[:\<prob-path\>]]]]] ]{1-\*}\*\*
+\*\*vm endpoint create-multiple [options] &lt;vm-name&gt; &lt;lb-port&gt;[:&lt;vm-port&gt;[:&lt;protocol&gt;[:&lt;lb-set-name&gt;[:&lt;prob-protocol&gt;:&lt;lb-prob-port&gt;[:&lt;prob-path&gt;]]]]] ]{1-\*}\*\*
 
 创建多个 VM 终结点。你可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下禁用。
 
-**vm endpoint delete \<vm-name\> \<lb-port\>**
+**vm endpoint delete &lt;vm-name&gt; &lt;lb-port&gt;**
 
 此命令删除虚拟机终结点。
 
@@ -381,7 +381,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     + Updating network configuration
     info:   vm endpoint delete command OK
 
-**vm endpoint list \<vm-name\>**
+**vm endpoint list &lt;vm-name&gt;**
 
 此命令列出所有虚拟机终结点。-json 选项指定以原始 JSON 格式返回结果。
 
@@ -390,7 +390,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     data:   ----  -------------  ----------
     data:   ssh   22             22
 
-**vm endpoint update [options] \<vm-name\> \<endpoint-name\>**
+**vm endpoint update [options] &lt;vm-name&gt; &lt;endpoint-name&gt;**
 
 此命令使用这些选项将 VM 终结点更新为新值。
 
@@ -399,7 +399,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     -t, --vm-port <port>                the new local port port
     -o, --endpoint-protocol <protocol>  the new transport layer protocol for port (tcp or udp) 
 
-**vm endpoint show [options] \<vm-name\>**
+**vm endpoint show [options] &lt;vm-name&gt;**
 
 此命令显示 VM 上终结点的详细信息
 
@@ -449,7 +449,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     data:   WIN2K8-R2-WINRM                                                        User       Windows
     info:   vm image list command OK   
 
-**vm image show [options] \<name\>**
+**vm image show [options] &lt;name&gt;**
 
 此命令显示虚拟机映像的详细信息。
 
@@ -468,7 +468,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     data:   }
     info:   vm image show command OK 
 
-**vm image delete [options] \<name\>**
+**vm image delete [options] &lt;name&gt;**
 
 此命令删除虚拟机映像。
 
@@ -477,11 +477,11 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   VM image deleted: my-vm-image                                         
     info:   vm image delete command OK
 
-**vm image create \<name\> [source-path]**
+**vm image create &lt;name&gt; [source-path]**
 
 此命令创建虚拟机映像。你的自定义 .vhd 文件将上载到 Blob 存储，然后从该位置创建虚拟机映像。然后可使用此虚拟机映像创建虚拟机。Location 和 OS 参数是必需的。
 
-某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p \<number\> 参数再次运行该命令，以减少最大并行上载数。默认的最大并行上载数为 96。
+某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number&gt; 参数再次运行该命令，以减少最大并行上载数。默认的最大并行上载数为 96。
 
     ~$ azure vm image create mytestimage ./Sample.vhd -o windows -l "China North"
     info:   Executing command vm image create
@@ -498,7 +498,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 用于附加数据磁盘的命令（azure vm disk attach 和 azure vm disk attach-new）会根据 SCSI 协议的要求向附加的数据磁盘分配逻辑单元号 (LUN)。将向附加到虚拟机的第一个数据磁盘分配 LUN 0，向下一个分配 LUN 1，依此类推。
 
-当你使用 azure vm disk detach 命令分离数据磁盘时，请使用 \<lun\> 参数指明要分离的磁盘。
+当你使用 azure vm disk detach 命令分离数据磁盘时，请使用 &lt;lun&gt; 参数指明要分离的磁盘。
 
 <div class="dev-callout">
 
@@ -507,7 +507,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 </div>
 
-**vm disk show [options] \<name\>**
+**vm disk show [options] &lt;name&gt;**
 
 此命令显示有关 Azure 磁盘的详细信息。
 
@@ -546,7 +546,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     data:   mywindows-winvm-20120522223119              Windows
     info:   vm disk list command OK
 
-**vm disk delete [options] \<name\>**
+**vm disk delete [options] &lt;name&gt;**
 
 此命令从个人存储库中删除 Azure 磁盘。在删除磁盘之前必须从虚拟机中分离该磁盘。
 
@@ -555,11 +555,11 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Disk deleted: mycentos-mycentos-2-20120525055052                  
     info:   vm disk delete command OK
 
-**vm disk create \<name\> [source-path]**
+**vm disk create &lt;name&gt; [source-path]**
 
 此命令上载和注册 Azure 磁盘。必须指定 --blob-url、--location 或 --affinity-group。如果将此命令与 [source-path] 结合使用，将上载指定的 .vhd 文件并创建新映像。然后你可以使用 vm disk attach 将此映像附加到虚拟机。
 
-某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p \<number\> 参数再次运行该命令，以减少最大并行上载数。默认的最大并行上载数为 96。
+某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number&gt; 参数再次运行该命令，以减少最大并行上载数。默认的最大并行上载数为 96。
 
     ~$ azure vm disk create my-data-disk ~/test.vhd --location "Western US"
     info:   Executing command vm disk create
@@ -569,7 +569,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   http://account.blob.core.chinacloudapi.cn/disks/test.vhd is uploaded successfully
     info:   vm disk create command OK
 
-**vm disk upload [options] \<source-path\> \<blob-url\> \<storage-account-key\>**
+**vm disk upload [options] &lt;source-path&gt; &lt;blob-url&gt; &lt;storage-account-key&gt;**
 
 此命令允许你上载 VM 磁盘
 
@@ -578,7 +578,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Uploading 12351.5 KB
     info:   vm disk upload command OK
 
-**vm disk attach \<vm-name\> \<disk-image-name\>**
+**vm disk attach &lt;vm-name&gt; &lt;disk-image-name&gt;**
 
 此命令将 Blob 存储中的现有磁盘附加到云服务中部署的现有虚拟机。
 
@@ -586,7 +586,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Executing command vm disk attach
     info:   vm disk attach command OK
 
-**vm disk attach-new \<vm-name\> \<size-in-gb\> [blob-url]**
+**vm disk attach-new &lt;vm-name&gt; &lt;size-in-gb&gt; [blob-url]**
 
 此命令将数据磁盘附加到 Azure 虚拟机。在本示例中，20 GB 是要附加的新磁盘的大小。你可以选择使用 Blob URL 作为显式指定要创建的目标 Blob 的最后一个参数。如果你不指定 Blob URL，将自动生成一个 Blob 对象。
 
@@ -594,9 +594,9 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
     info:   Executing command vm disk attach-new
     info:   vm disk attach-new command OK  
 
-**vm disk detach \<vm-name\> \<lun\>**
+**vm disk detach &lt;vm-name&gt; &lt;lun&gt;**
 
-此命令将数据磁盘与 Azure 虚拟机分离。\<lun\> 用于标识要分离的磁盘。若要获取在分离某个磁盘之前与该磁盘关联的磁盘的列表，请使用 vm disk-list \<vm-name\>。
+此命令将数据磁盘与 Azure 虚拟机分离。&lt;lun&gt; 用于标识要分离的磁盘。若要获取在分离某个磁盘之前与该磁盘关联的磁盘的列表，请使用 vm disk-list &lt;vm-name&gt;。
 
     ~$ azure vm disk detach my-vm 2
     info:   Executing command vm disk detach
@@ -606,7 +606,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务。以下命令可用于管理 Azure 云服务。
 
-**service create [options] \<serviceName\>**
+**service create [options] &lt;serviceName&gt;**
 
 此命令创建新的云服务
 
@@ -621,7 +621,7 @@ Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务
     data:    Cloud service name newservicemsopentech
     info:    service create command OK
 
-**service show [options] \<serviceName\>**
+**service show [options] &lt;serviceName&gt;**
 
 此命令显示 Azure 云服务的详细信息
 
@@ -649,7 +649,7 @@ Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务
     data:   service2     Created
     info:   service list command OK
 
-**service delete [options] \<name\>**
+**service delete [options] &lt;name&gt;**
 
 此命令删除 Azure 云服务。
 
@@ -674,7 +674,7 @@ Azure 证书是已连接到你的 Azure 帐户的证书（即 SSL 证书）。
     data:   myservice  262DBF95B5E61375FA27F1E74AC7D9EAE842916C  sha1     
     info:   service cert list command OK
 
-**service cert create \<dns-prefix\> \<file\> [password]**
+**service cert create &lt;dns-prefix&gt; &lt;file&gt; [password]**
 
 此命令上载证书。将没有密码保护的证书的密码提示保留为空。
 
@@ -684,7 +684,7 @@ Azure 证书是已连接到你的 Azure 帐户的证书（即 SSL 证书）。
     + Creating certificate                                                         
     info:   service cert create command OK
 
-**service cert delete [options] \<thumbprint\>**
+**service cert delete [options] &lt;thumbprint&gt;**
 
 此命令删除证书。
 
@@ -859,7 +859,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    test  value
     info:    site appsetting list command OK
 
-**site appsetting add [options] \<keyvaluepair\> [name]**
+**site appsetting add [options] &lt;keyvaluepair&gt; [name]**
 
 此命令将应用程序设置作为键值对添加到你的网站
 
@@ -871,7 +871,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     + Updating site config information
     info:    site appsetting add command OK
 
-**site appsetting delete [options] \<key\> [name]**
+**site appsetting delete [options] &lt;key&gt; [name]**
 
 此命令从网站中删除指定应用程序设置
 
@@ -884,7 +884,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     + Updating site config information
     info:    site appsetting delete command OK
 
-**site appsetting show [options] \<key\> [name]**
+**site appsetting show [options] &lt;key&gt; [name]**
 
 此命令显示指定应用程序设置的详细信息
 
@@ -914,11 +914,11 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    msopentech.azurewebsites.net  Fri Jun 19 2015 11:57:32 GMT-0700 (Pacific Daylight Time)  CE1CD6538852BF7A5DC32001C2E26A29B541F0E8
     info:    site cert list command OK
 
-**site cert add [options] \<certificate-path\> [name]**
+**site cert add [options] &lt;certificate-path&gt; [name]**
 
-**site cert delete [options] \<thumbprint\> [name]**
+**site cert delete [options] &lt;thumbprint&gt; [name]**
 
-**site cert show [options] \<thumbprint\> [name]**
+**site cert show [options] &lt;thumbprint&gt; [name]**
 
 此命令显示证书详细信息
 
@@ -940,27 +940,27 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 **site connectionstring list [options] [name]**
 
-**site connectionstring add [options] \<connectionname\> \<value\> \<type\> [name]**
+**site connectionstring add [options] &lt;connectionname&gt; &lt;value&gt; &lt;type&gt; [name]**
 
-**site connectionstring delete [options] \<connectionname\> [name]**
+**site connectionstring delete [options] &lt;connectionname&gt; [name]**
 
-**site connectionstring show [options] \<connectionname\> [name]**
+**site connectionstring show [options] &lt;connectionname&gt; [name]**
 
 ### 管理网站默认文档的命令
 
 **site defaultdocument list [options] [name]**
 
-**site defaultdocument add [options] \<document\> [name]**
+**site defaultdocument add [options] &lt;document&gt; [name]**
 
-**site defaultdocument delete [options] \<document\> [name]**
+**site defaultdocument delete [options] &lt;document&gt; [name]**
 
 ### 管理网站部署的命令
 
 **site deployment list [options] [name]**
 
-**site deployment show [options] \<commitId\> [name]**
+**site deployment show [options] &lt;commitId&gt; [name]**
 
-**site deployment redeploy [options] \<commitId\> [name]**
+**site deployment redeploy [options] &lt;commitId&gt; [name]**
 
 **site deployment github [options] [name]**
 
@@ -970,17 +970,17 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 **site domain list [options] [name]**
 
-**site domain add [options] \<dn\> [name]**
+**site domain add [options] &lt;dn&gt; [name]**
 
-**site domain delete [options] \<dn\> [name]**
+**site domain delete [options] &lt;dn&gt; [name]**
 
 ### 管理网站处理程序映射的命令
 
 **site handler list [options] [name]**
 
-**site handler add [options] \<extension\> \<processor\> [name]**
+**site handler add [options] &lt;extension&gt; &lt;processor&gt; [name]**
 
-**site handler delete [options] \<extension\> [name]**
+**site handler delete [options] &lt;extension&gt; [name]**
 
 ### 管理网站诊断的命令
 
@@ -1028,7 +1028,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 ### 管理网站存储库的命令
 
-**site repository branch [options] \<branch\> [name]**
+**site repository branch [options] &lt;branch&gt; [name]**
 
 **site repository delete [options] [name]**
 
@@ -1036,9 +1036,9 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 ### 管理网站缩放的命令
 
-**site scale mode [options] \<mode\> [name]**
+**site scale mode [options] &lt;mode&gt; [name]**
 
-**site scale instances [options] \<instances\> [name]**
+**site scale instances [options] &lt;instances&gt; [name]**
 
 <!-- ##<a name="Commands_to_manage_mobile_services"></a>Commands to manage Azure Mobile Services  Azure Mobile Services brings together a set of Azure services that enable backend capabilities for your apps. Mobile Services commands are divided into the following categories:  + [Commands to manage mobile service instances](#Mobile_Services) + [Commands to manage mobile service configuration](#Mobile_Configuration) + [Commands to manage mobile service tables](#Mobile_Tables) + [Commands to manage mobile service scripts](#Mobile_Scripts) + [Commands to manage scheduled jobs](#Mobile_Jobs) + [Commands to scale a mobile service](#Mobile_Scale)  The following options apply to most Mobile Services commands:  + **-h** or **--help**: Display output usage information. + **-s `<id>`** or **--subscription `<id>`**: Use a specific subscription, specified as `<id>`. + **-v** or **--verbose**: Write verbose output. + **--json**: Write JSON output.  ###<a name="Mobile_Services"></a>Commands to manage mobile service instances  **mobile locations [options]**  This command lists geographic locations supported by Mobile Services.      ~$ azure mobile locations     info:    Executing command mobile locations     info:    East US (default)     info:    China North             info:    China East  **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**  This command creates a mobile service along with a SQL数据库 and server.      ~$ azure mobile create todolist your_login_name Secure$Password     info:    Executing command mobile create     + Creating mobile service     info:    Overall application state: Healthy     info:    Mobile service (todolist) state: ProvisionConfigured     info:    SQL数据库 (todolist_db) state: Provisioned     info:    SQL server (e96ean1c6v) state: ProvisionConfigured     info:    mobile create command OK  This command supports the following additional options:  + **-r `<sqlServer>`**  or **--sqlServer `<sqlServer>`**:  Use an existing SQL数据库 server, specified as `<sqlServer>`. + **-d `<sqlDb>`** or **--sqlDb `<sqlDb>`**: Use existing SQL数据库, specified as `<sqlDb>`. + **-l `<location>`** or **--location `<location>`**: Create the service in a specific location, specified as `<location>`. Run azure mobile locations to get available locations.   + **--sqlLocation `<location>`**: Create the SQL server in a specific `<location>`; defaults to the location of the mobile service.  **mobile delete [options] [servicename]**  This command deletes a mobile service along with its SQL数据库 and server.      ~$ azure mobile delete todolist -a -q     info:    Executing command mobile delete     data:    Mobile service todolist     data:    SQL数据库 todolistAwrhcL60azo1C401     data:    SQL server fh1kvbc7la     + Deleting mobile service     info:    Deleted mobile service     + Deleting SQL server     info:    Deleted SQL server     + Deleting mobile application     info:    Deleted mobile application     info:    mobile delete command OK  This command supports the following additional options:  + **-d** or **--deleteData**: Delete all data from this mobile service from the database. + **-a** or **--deleteAll**: Delete the SQL数据库 and server. + **-q or **--quiet**: Do not prompt for confirmation. Use this option in automated scripts.  **mobile list [options]**  This command lists your mobile services.      ~$ azure mobile list     info:    Executing command mobile list     data:    Name          State  URL     data:    ------------  -----  --------------------------------------     data:    todolist      Ready  https://todolist.azure-mobile.net/     data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.net/     info:    mobile list command OK  **mobile show [options] [servicename]**  This command displays details about a mobile service.      ~$ azure mobile show todolist     info:    Executing command mobile show     + Getting information     info:    Mobile application     data:    status Healthy     data:    Mobile service name todolist     data:    Mobile service status ProvisionConfigured     data:    SQL数据库 name todolistAwrhcL60azo1C401     data:    SQL数据库 status Linked     data:    SQL server name fh1kvbc7la     data:    SQL server status Linked     info:    Mobile service     data:    name todolist     data:    state Ready     data:    applicationUrl https://todolist.azure-mobile.net/     data:    applicationKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     data:    masterKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     data:    webspace WESTUSWEBSPACE     data:    region China North     data:    tables TodoItem     info:    mobile show command OK   **mobile restart [options] [servicename]**  This command restarts a mobile service instance.      ~$ azure mobile restart todolist     info:    Executing command mobile restart     + Restarting mobile service     info:    Service was restarted.     info:    mobile restart command OK  **mobile log [options] [servicename]**  This command returns mobile service logs, filtering out all log types but `error`.      ~$ azure mobile log todolist -t error     info:    Executing command mobile log     data:     data:    timeCreated 2013-01-07T16:04:43.351Z     data:    type error     data:    source /scheduler/TestingLogs.js     data:    message This is an error.     data:     info:    mobile log command OK  This command supports the following additional options:  + **-r `<query>`** or **--query `<query>`**: Executes the specified log query. + **-t `<type>`** or **--type `<type>`**:  Filter the returned logs by entry `<type>`, which can be `information`, `warning`, or `error`. + **-k `<skip>`** or **--skip `<skip>`**: Skips the number of rows specified by `<skip>`. + **-p `<top>`** or **--top `<top>`**: Returns a specific number of rows, specified by `<top>`.  <div class="dev-callout"><b>Note</b>    <p>The **--query** parameter takes precedence over **--type**, **--skip**, and **--top**.</p> </div>  **mobile key regenerate [options] [servicename] [type]**  This command regenerates the mobile service application key.      ~$ azure mobile key regenerate todolist application     info:    Executing command mobile key regenerate     info:    New application key is SmLorAWVfslMcOKWSsuJvuzdJkfUpt40     info:    mobile key regenerate command OK  Key types are `master` and `application`.  <div class="dev-callout"><b>Note</b>    <p>When you regenerate keys, clients that use the old key may be unable to access your mobile service. When you regenerate the application key, you should update your app with the new key value. </p> </div>   ###<a name="Mobile_Configuration"></a>Commands to manage mobile service configuration  **mobile config list [options] [servicename]**  This command lists configuration options for a mobile service.      ~$ azure mobile config list todolist     info:    Executing command mobile config list     + Getting mobile service configuration     data:    dynamicSchemaEnabled true     data:    microsoftAccountClientSecret Not configured     data:    microsoftAccountClientId Not configured     data:    microsoftAccountPackageSID Not configured     data:    facebookClientId Not configured     data:    facebookClientSecret Not configured     data:    twitterClientId Not configured     data:    twitterClientSecret Not configured     data:    googleClientId Not configured     data:    googleClientSecret Not configured     data:    apnsMode none     data:    apnsPassword Not configured     data:    apnsCertifcate Not configured     info:    mobile config list command OK  **mobile config get [options] [servicename] [key]**  This command gets a specific configuration option for a mobile service, in this case dynamic schema.      ~$ azure mobile config get todolist dynamicSchemaEnabled     info:    Executing command mobile config get     data:    dynamicSchemaEnabled true     info:    mobile config get command OK  **mobile config set [options] [servicename] [key] [value]**  This command sets a specific configuration option for a mobile service, in this case dynamic schema.      ~$ azure mobile config set todolist dynamicSchemaEnabled false     info:    Executing command mobile config set     info:    mobile config set command OK   ###<a name="Mobile_Tables"></a>Commands to manage mobile service tables  **mobile table list [options] [servicename]**  This command lists all tables in your mobile service.      ~$azure mobile table list todolist     info:    Executing command mobile table list     data:    Name      Indexes  Rows     data:    --------  -------  ----     data:    Channel   1        0     data:    TodoItem  1        0     info:    mobile table list command OK  **mobile table show [options] [servicename] [tablename]**  This command shows returns details about a specific table.      ~$azure mobile table show todolist     info:    Executing command mobile table show     + Getting table information     info:    Table statistics:     data:    Number of records 5     info:    Table operations:     data:    Operation  Script       Permissions     data:    ---------  -----------  -----------     data:    insert     1900 bytes   user     data:    read       Not defined  user     data:    update     Not defined  user     data:    delete     Not defined  user     info:    Table columns:     data:    Name  Type           Indexed     data:    ----  -------------  -------     data:    id    bigint(MSSQL)  Yes     data:    text      string     data:    complete  boolean     info:    mobile table show command OK  **mobile table create [options] [servicename] [tablename]**  This command creates a table.      ~$azure mobile table create todolist Channels     info:    Executing command mobile table create     + Creating table     info:    mobile table create command OK  This command supports the following additional option:  + **-p `<permissions>`** or **--permissions `<permissions>`**: Comma-delimited list of `<operation>`=`<permission>` pairs, where `<operation>` is `insert`, `read`, `update`, or `delete` and `<permissions>` is `public`, `application` (default), `user`, or `admin`. + **--integerId**: Create a table with an integer id column.  **mobile data read [options] [servicename] [tablename] [query]**  This command reads data from a table.      ~$azure mobile data read todolist TodoItem     info:    Executing command mobile data read     data:    id  text     complete     data:    --  -------  --------     data:    1   item #1  false     data:    2   item #2  true     data:    3   item #3  false     data:    4   item #4  true     info:    mobile data read command OK  This command supports the following additional options:  + **-k `<skip>`** or **--skip `<skip>`**: Skips the number of rows specified by `<skip>`. + **-t `<top>`** or **--top `<top>`**: Returns a specific number of rows, specified by `<top>`. + **-l** or **--list**: Returns data in a list format.  **mobile table update [options] [servicename] [tablename]**  This command changes delete permissions on a table to administrators only.      ~$azure mobile table update todolist Channels -p delete=admin     info:    Executing command mobile table update     + Updating permissions     info:    Updated permissions     info:    mobile table update command OK  This command supports the following additional options:  + **-p `<permissions>`** or **--permissions `<permissions>`**: Comma-delimited list of `<operation>`=`<permission>` pairs, where `<operation>` is `insert`, `read`, `update`, or `delete` and `<permissions>` is `public`, `application` (default), `user`, or `admin`. + **--deleteColumn `<columns>`**: Comma-delimited list of columns to delete, as `<columns>`. + **-q** or **--quiet**: Deletes columns without prompting for confirmation. + **--addIndex `<columns>`**: Comma-delimited list of columns to include in the index. + **--deleteIndex `<columns>`**: Comma-delimited list of columns to exclude from the index.  **mobile table delete [options] [servicename] [tablename]**  This command deletes a table.      ~$azure mobile table delete todolist Channels     info:    Executing command mobile table delete     Do you really want to delete the table (yes/no): yes     + Deleting table     info:    mobile table delete command OK  Specify the -q parameter to delete the table without confirmation. Do this to prevent blocking of automation scripts.  **mobile data truncate [options] [servicename] [tablename]**  This commands removes all rows of data from the table.      ~$azure mobile data truncate todolist TodoItem     info:    Executing command mobile data truncate     info:    There are 7 data rows in the table.     Do you really want to delete all data from the table? (y/n): y     info:    Deleted 7 rows.     info:    mobile data truncate command OK   ###<a name="Mobile_Scripts"></a>Commands to manage scripts  Commands in this section are used to manage the server scripts that belong to a mobile service. For more information, see [Work with server scripts in Mobile Services](/develop/mobile/how-to-guides/work-with-server-scripts).  **mobile script list [options] [servicename]**  This command lists registered scripts, including both table and scheduler scripts.      ~$azure mobile script list todolist     info:    Executing command mobile script list     + Getting script information     info:    Table scripts     data:    Name                   Size     data:    ---------------------  ----     data:    table/TodoItem.delete  256     data:    table/Devices.insert   1660     error:   Unable to get shared scripts     info:    Scheduler scripts     data:    Name                 Status     Interval   Last run   Next run     data:    -------------------  ---------  ---------  ---------  ---------     data:    scheduler/undefined  undefined  undefined  undefined  undefined     data:    scheduler/undefined  undefined  undefined  undefined  undefined     info:    mobile script list command OK  **mobile script upload [options] [servicename] [scriptname]**  This command uploads a new script named `todoitem.insert.js` from the `table` subfolder.      ~$azure mobile script upload todolist table/todoitem.insert.js     info:    Executing command mobile script upload     info:    mobile script upload command OK  The name of the file must be composed from the table and operation names, and it must be located in the table subfolder relative to the location where the command is executed. You can also use the **-f `<file>`** or **--file `<file>`** parameter to specify a different filename and path to the file that contains the script to register.  **mobile script download [options] [servicename] [scriptname]**  This command downloads the insert script from the TodoItem table to a file named `todoitem.insert.js` in the `table` subfolder.      ~$azure mobile script download todolist table/todoitem.insert.js     info:    Executing command mobile script download     info:    Saved script to ./table/todoitem.insert.js     info:    mobile script download command OK  This command supports the following additional options:  + **-p `<path>`** or **--path `<path>`**: The location in the file in which to save the script, where the current working directory is the default. + **-f `<file>`** or **--file `<file>`**: The name of the file in which to save the script. + **-o** or **--override**: Overwrite an existing file. + **-c** or **--console**: Write the script to the console instead of to a file.  **mobile script delete [options] [servicename] [scriptname]**  This command removes the existing insert script from the TodoItem table.      ~$azure mobile script delete todolist table/todoitem.insert.js     info:    Executing command mobile script delete     info:    mobile script delete command OK  ###<a name="Mobile_Jobs"></a>Commands to manage scheduled jobs  Commands in this section are used to manage scheduled jobs that belong to a mobile service. For more information, see [Schedule jobs](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860528.aspx).  **mobile job list [options] [servicename]**  This command lists scheduled jobs.      ~$azure mobile job list todolist     info:    Executing command mobile job list     info:    Scheduled jobs     data:    Job name    Script name           Status    Interval     Last run              Next run     data:    ----------  --------------------  --------  -----------  --------------------  --------------------     data:    getUpdates  scheduler/getUpdates  enabled   15 [minute]  2013-01-14T16:15:00Z  2013-01-14T16:30:00Z     info:    You can manipulate scheduled job scripts using the 'azure mobile script' command.     info:    mobile job list command OK  **mobile job create [options] [servicename] [jobname]**  This command creates a new job named `getUpdates` that is scheduled to run hourly.      ~$azure mobile job create -i 1 -u hour todolist getUpdates      info:    Executing command mobile job create     info:    Job was created in disabled state. You can enable the job using the 'azure mobile job update' command.     info:    You can manipulate the scheduled job script using the 'azure mobile script' command.     info:    mobile job create command OK  This command supports the following additional options:  + **-i `<number>`** or **--interval `<number>`**: The job interval, as an integer; the default value is `15`. + **-u `<unit>`** or **--intervalUnit `<unit>`**: The unit for the _interval_, which can be one of the following values:      + **minute** (default)     + **hour**     + **day**     + **month**      + **none** (on-demand jobs) + **-t `<time>`** **--startTime `<time>`** The start time of the first run for the script, in ISO format; the default value is `now`.  <div class="dev-callout"><b>Note</b>    <p>New jobs are created in a disabled state because a script must still be uploaded. Use the <strong>mobile script upload</strong> command to upload a script and the <strong>mobile job update</strong> command to enable the job.</p> </div>   **mobile job update [options] [servicename] [jobname]**  The following command enables the disabled `getUpdates` job.      ~$azure mobile job update -a enabled todolist getUpdates      info:    Executing command mobile job update     info:    mobile job update command OK  This command supports the following additional options:  + **-i `<number>`** or **--interval `<number>`**: The job interval, as an integer; the default value is `15`. + **-u `<unit>`** or **--intervalUnit `<unit>`**: The unit for the _interval_, which can be one of the following values:      + **minute** (default)     + **hour**     + **day**     + **month**      + **none** (on-demand jobs) + **-t `<time>`** **--startTime `<time>`** The start time of the first run for the script, in ISO format; the default value is `now`. + **-a `<status>`** or **--status `<status>`**: The job status, which can be either `enabled` or `disabled`.  **mobile job delete [options] [servicename] [jobname]**  This command removes the getUpdates scheduled job from the TodoList server.      ~$azure mobile job delete todolist getUpdates     info:    Executing command mobile job delete     info:    mobile job delete command OK  <div class="dev-callout"><b>Note</b>    <p>Deleting a job also deletes the uploaded script.</p> </div>   ###<a name="Mobile_Scale"></a>Commands to scale a mobile service  Commands in this section are used to scale a mobile service. For more information, see [Scaling a mobile service](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193178.aspx).  **mobile scale show [options] [servicename]**  This command displays scale information, including current compute mode and number of instances.      ~$azure mobile scale show todolist     info:    Executing command mobile scale show     data:    webspace WESTUSWEBSPACE     data:    computeMode Free     data:    numberOfInstances 1     info:    mobile scale show command OK  **mobile scale change [options] [servicename]**  This command changes the scale of the mobile service from free to premium mode.      ~$azure mobile scale change -c Reserved -i 1 todolist     info:    Executing command mobile scale change     + Rescaling the mobile service     info:    mobile scale change command OK  This command supports the following additional options:  + **-c `<mode>`** or **--computeMode `<mode>`**: The compute mode must be either `Free` or `Reserved`. + **-i `<count>` or **--numberOfInstances `<count>`**: The number of instances used when running in reserved mode.  <div class="dev-callout"><b>Note</b>    <p>When you set compute mode to `Reserved`, all of your mobile services in the same region run in premium mode.</p> </div>   -->
 
@@ -1057,7 +1057,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:   subscription           32-digit-subscription-key
     data:   defaultStorageAccount  name
 
-**config set [options] \<name\>,\<value\>**
+**config set [options] &lt;name&gt;,&lt;value&gt;**
 
 此命令更改配置设置。
 
@@ -1069,7 +1069,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 使用这些命令来管理你的 服务总线 帐户
 
-**sb namespace create \<name\> \<location\>**
+**sb namespace create &lt;name&gt; &lt;location&gt;**
 
 创建一个新的 服务总线 命名空间
 
@@ -1087,7 +1087,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    Enabled: true
     info:    sb namespace create command OK
 
-**sb namespace show \<name\>**
+**sb namespace show &lt;name&gt;**
 
 显示有关特定命名空间的详细信息
 
@@ -1119,7 +1119,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    mysbnamespacea-test  China East  Active
     info:    sb namespace list command OK
 
-**sb namespace delete \<name\>**
+**sb namespace delete &lt;name&gt;**
 
 删除命名空间
 
@@ -1142,7 +1142,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    China North       China North
     info:    sb namespace location list command OK
 
-**sb namespace verify \<name\>**
+**sb namespace verify &lt;name&gt;**
 
 检查命名空间是否可用
 
@@ -1154,7 +1154,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 使用这些命令来管理你的 SQL Server
 
-**sql server create \<administratorLogin\> \<administratorPassword\> \<location\>**
+**sql server create &lt;administratorLogin&gt; &lt;administratorPassword&gt; &lt;location&gt;**
 
 创建新的数据库服务器
 
@@ -1164,7 +1164,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    Server Name i1qwc540ts
     info:    sql server create command OK
 
-**sql server show \<name\>**
+**sql server show &lt;name&gt;**
 
 显示服务器详细信息
 
@@ -1189,7 +1189,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    xclfgcndfg  China East
     info:    sql server list command OK
 
-**sql server delete \<name\>**
+**sql server delete &lt;name&gt;**
 
 删除服务器
 
@@ -1203,7 +1203,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 使用这些命令来管理你的 SQL数据库
 
-**sql db create [options] \<serverName\> \<databaseName\> \<administratorPassword\>**
+**sql db create [options] &lt;serverName&gt; &lt;databaseName&gt; &lt;administratorPassword&gt;**
 
 创建一个新的数据库实例
 
@@ -1213,7 +1213,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     + Creating SQL Server Database
     info:    sql db create command OK
 
-**sql db show [options] \<serverName\> \<databaseName\> \<administratorPassword\>**
+**sql db show [options] &lt;serverName&gt; &lt;databaseName&gt; &lt;administratorPassword&gt;**
 
 显示数据库详细信息
 
@@ -1266,7 +1266,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    Database QueryStoreStaleQueryThresholdDays
     info:    sql db show command OK
 
-**sql db list [options] \<serverName\> \<administratorPassword\>**
+**sql db list [options] &lt;serverName&gt; &lt;administratorPassword&gt;**
 
 列出数据库
 
@@ -1279,7 +1279,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    master  Web      SQL_Latin1_General_CP1_CI_AS  5
     info:    sql db list command OK
 
-**sql db delete [options] \<serverName\> \<databaseName\> \<administratorPassword\>**
+**sql db delete [options] &lt;serverName&gt; &lt;databaseName&gt; &lt;administratorPassword&gt;**
 
 删除数据库
 
@@ -1295,7 +1295,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 使用这些命令来管理 SQL Server 防火墙规则
 
-**sql firewallrule create [options] \<serverName\> \<ruleName\> \<startIPAddress\> \<endIPAddress\>**
+**sql firewallrule create [options] &lt;serverName&gt; &lt;ruleName&gt; &lt;startIPAddress&gt; &lt;endIPAddress&gt;**
 
 为 SQL Server 创建新的防火墙规则
 
@@ -1304,7 +1304,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     + Creating Firewall Rule
     info:    sql firewallrule create command OK
 
-**sql firewallrule show [options] \<serverName\> \<ruleName\>**
+**sql firewallrule show [options] &lt;serverName&gt; &lt;ruleName&gt;**
 
 显示防火墙规则详细信息
 
@@ -1322,7 +1322,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    Firewall rule EndIPAddress 131.107.255.255
     info:    sql firewallrule show command OK
 
-**sql firewallrule list [options] \<serverName\>**
+**sql firewallrule list [options] &lt;serverName&gt;**
 
 列出防火墙规则
 
@@ -1334,7 +1334,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     +
     info:    sql firewallrule list command OK
 
-**sql firewallrule delete [options] \<serverName\> \<ruleName\>**
+**sql firewallrule delete [options] &lt;serverName&gt; &lt;ruleName&gt;**
 
 此命令将删除防火墙规则
 
@@ -1348,7 +1348,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 使用这些命令来管理你的虚拟网络
 
-**network vnet create [options] \<location\>**
+**network vnet create [options] &lt;location&gt;**
 
 创建新的虚拟网络
 
@@ -1369,7 +1369,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     verbose: Updating Network Configuration
     info:    network vnet create command OK
 
-**network vnet show \<name\>**
+**network vnet show &lt;name&gt;**
 
 显示虚拟网络的详细信息
 
@@ -1400,7 +1400,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    vnet4      Created  AG1-CLI-22814b5a4049ca4d
     info:    network vnet list command OK
 
-**network vnet show \<name\>**
+**network vnet show &lt;name&gt;**
 
 显示指定虚拟网络的详细信息
 
@@ -1416,7 +1416,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    Subnets 0 AddressPrefix "10.100.23.224/29"
     info:    network vnet show command OK
 
-**network vnet delete \<name\>**
+**network vnet delete &lt;name&gt;**
 
 删除指定的虚拟网络
 
@@ -1435,7 +1435,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
 
 导入本地网络配置。
 
-**network dnsserver register [options] \<dnsIP\>**
+**network dnsserver register [options] &lt;dnsIP&gt;**
 
 注册你计划在网络配置中用来进行名称解析的 DNS 服务器
 
@@ -1458,7 +1458,7 @@ Azure 网站是可通过 URI 访问的 Web 配置。网站托管在虚拟机中�
     data:    FrontEndDnsServer     98.138.253.109
     info:    network dnsserver list command OK
 
-**network dnsserver unregister [options] \<dnsIP\>**
+**network dnsserver unregister [options] &lt;dnsIP&gt;**
 
 从网络配置中删除 DNS 服务器条目
 

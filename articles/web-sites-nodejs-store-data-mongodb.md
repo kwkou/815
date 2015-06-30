@@ -1,4 +1,4 @@
-<properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="在 VM 上使用 MongoDB 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="本教程将介绍如何使用 MongoDB 在托管在 Azure 上的 Node 应用程序中存储和访问数据。" metaCanonical="/zh-cn/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="使用 MongoDB 中的存储的 Node.js Web 应用程序（虚拟机）" authors="larryfr"  solutions="" writer="" manager="" editor=""  />
+﻿<properties linkid="develop-node-website-with-mongodb-mac" urlDisplayName="Web site with MongoDB" pageTitle="在 VM 上使用 MongoDB 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure tutorial MongoDB, MongoDB store data, access data MongoDB Node, Azure Node app" description="本教程将介绍如何使用 MongoDB 在托管在 Azure 上的 Node 应用程序中存储和访问数据。" metaCanonical="/zh-cn/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/" services="web-sites,virtual-machines" documentationCenter="Node.js" title="使用 MongoDB 中的存储的 Node.js Web 应用程序（虚拟机）" authors="larryfr"  solutions="" writer="" manager="" editor=""  />
 <tags ms.service="web-sites,virtual-machines"
     ms.date="02/19/2015"
     wacn.date="04/11/2015"
@@ -94,7 +94,7 @@
 
     ![终结点配置的屏幕截图][终结点配置的屏幕截图]
 
-9.  虚拟机的状态更改为“正在运行”之后，您应该可以打开 Web 浏览器并访问 **http://\<您的 VM DNS 名称\>.chinacloudapp.cn:28017/**，以确认 MongoDB 正在运行。该页面底部的日志将显示服务相关信息，类似于以下内容：
+9.  虚拟机的状态更改为“正在运行”之后，您应该可以打开 Web 浏览器并访问 **http://&lt;您的 VM DNS 名称&gt;.chinacloudapp.cn:28017/**，以确认 MongoDB 正在运行。该页面底部的日志将显示服务相关信息，类似于以下内容：
 
         Fri Mar  7 18:57:16 [initandlisten] MongoDB starting : pid=1019 port=27017 dbpath=/var/lib/mongodb 64-bit host=localhost.localdomain
            18:57:16 [initandlisten] db version v2.2.3, pdfile version 4.5

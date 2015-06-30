@@ -40,11 +40,11 @@ Microsoft Avro Library 支持通过两种方式序列化对象：
 
 Microsoft .NET Library for Avro 以 NuGet 包的形式分发，可以使用以下过程从 Visual Studio 安装：
 
--   选择“项目” 选项卡 -\>“管理 NuGet 包...” 
+-   选择“项目” 选项卡 -&gt;“管理 NuGet 包...” 
 -   在“联机搜索” 框中，搜索“Microsoft.Hadoop.Avro”。
 -   单击 **Microsoft .NET Library for Avro** 旁边的“安装” 按钮。
 
-请注意，Newtonsoft.Json.dll (\>= .5.0.5) 依赖项也将随 Microsoft Avro Library 一起自动下载。
+请注意，Newtonsoft.Json.dll (&gt;= .5.0.5) 依赖项也将随 Microsoft Avro Library 一起自动下载。
 
 ## 示例指南
 

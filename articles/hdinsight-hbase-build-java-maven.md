@@ -1,4 +1,4 @@
-<properties title="Build an HBase application using Maven" pageTitle="借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序 | Azure" description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Azure HDInsight" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
+﻿<properties title="Build an HBase application using Maven" pageTitle="借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序 | Azure" description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to Azure HDInsight" metaKeywords="Maven hbase hadoop, hbase hadoop, maven java hbase, maven java hbase hadoop, maven java hadoop, hbase hdinsight, hbase java hdinsight, maven hdinsight, maven java hdinsight, hadoop database, hdinsight database" services="hdinsight" solutions="big-data" documentationCenter="" authors="larryfr" videoId="" scriptId="" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -130,7 +130,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
     此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-    > [WACOM.NOTE] 这是一个非常精简的 hbase-site.xml 文件，它只包含 HDInsight 群集的最少量设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用远程桌面连接到 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp)。hbase-site.xml 文件位于 C:&#92;apps&#92;dist&#92;hbase-\<版本号\>-hadoop2&#92;conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
+    > [WACOM.NOTE] 这是一个非常精简的 hbase-site.xml 文件，它只包含 HDInsight 群集的最少量设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[使用远程桌面连接到 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-administer-use-management-portal/#rdp)。hbase-site.xml 文件位于 C:&#92;apps&#92;dist&#92;hbase-&lt;版本号&gt;-hadoop2&#92;conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
 
 5.  保存 **hbase-site.xml** 文件。
 

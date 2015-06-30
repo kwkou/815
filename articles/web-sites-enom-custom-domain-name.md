@@ -1,4 +1,4 @@
-<properties title="Learn how to configure an Azure web site to use a domain name registered with eNom" pageTitle="Configure an eNom domain name for an Azure web site" metaKeywords="Windows Azure, Windows Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
+﻿<properties title="Learn how to configure an Azure web site to use a domain name registered with eNom" pageTitle="Configure an eNom domain name for an Azure web site" metaKeywords="Windows Azure, Windows Azure Web Sites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
 <tags ms.service="web-sites"
     ms.date="12/21/2014"
     wacn.date="04/11/2015"
@@ -54,17 +54,17 @@
 
         > [WACOM.NOTE] 如果你要使用 A 记录，则还必须使用以下配置之一添加 CNAME 记录：
         >
-        > -   “别名”值 **www** 以及“其他主机”值 **\<yourwebsitename\>.chinacloudsites.cn**。
+        > -   “别名”值 **www** 以及“其他主机”值 **&lt;yourwebsitename&gt;.chinacloudsites.cn**。
         >
         > 或者
         >
-        > -   “别名”值 **awverify.www** 以及“其他主机”值 **awverify.\<yourwebsitename\>.chinacloudsites.cn**。
+        > -   “别名”值 **awverify.www** 以及“其他主机”值 **awverify.&lt;yourwebsitename&gt;.chinacloudsites.cn**。
         >
         > 此 CNAME 记录由 Azure 用来验证你拥有 A 记录所描述的域。
 
     -   在添加 A 记录时，必须将“主机名称”字段设置为 <**@**>（代表根域名，如 **contoso.com**）、\*（用于匹配多个子域的通配符），或者是你要使用的某特定子域（例如 **www**）。必须将“地址”字段设置为你的 Azure 网站的 IP 地址。
 
-        > [WACOM.NOTE] 在添加 A 记录时，也必须添加一个主机为 **awverify** 的 CNAME 记录，以及一个 \*\*awverify.\<yourwebsitename\>.chinacloudsites.cn 的“指向”。
+        > [WACOM.NOTE] 在添加 A 记录时，也必须添加一个主机为 **awverify** 的 CNAME 记录，以及一个 \*\*awverify.&lt;yourwebsitename&gt;.chinacloudsites.cn 的“指向”。
 
 4.  完成添加或修改记录之后，请单击“保存”，以保存这些更改。
 

@@ -1,4 +1,4 @@
-<properties urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="piyushjo" solutions="" manager="dwrede" editor="" />
+﻿<properties urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="piyushjo" solutions="" manager="dwrede" editor="" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -51,7 +51,7 @@ ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="03/1
 
 ## <span id="registerBaiduDeveloper"></span></a>注册为百度开发者
 
-1.  登录到[百度门户][]后，请单击“更多\>\>”。
+1.  登录到[百度门户][]后，请单击“更多&gt;&gt;”。
 
     ![][4]
 
@@ -85,7 +85,7 @@ ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="03/1
 
 在创建百度云推送项目时，你将收到应用程序 ID、API 密钥和密钥。
 
-1.  登录到[百度门户][]后，请单击“更多\>\>”。
+1.  登录到[百度门户][]后，请单击“更多&gt;&gt;”。
 
     ![][4]
 
@@ -163,7 +163,7 @@ ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="03/1
 
 ## <span id="connecting-app"></span></a>将你的应用程序连接到通知中心
 
-1.  在 Eclipse ADT 中，创建新的 Android 项目（“文件”-\>“新建”-\>“Android 应用程序”）。
+1.  在 Eclipse ADT 中，创建新的 Android 项目（“文件”-&gt;“新建”-&gt;“Android 应用程序”）。
 
     ![][25]
 

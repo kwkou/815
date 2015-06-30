@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="在 Azure PowerShell 中使用时间还原来还原 Azure SQL 数据库" 
    description="时间点还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, Azure PowerShell" 
    services="sql-database" 
@@ -38,7 +38,7 @@
 	* 数据库所在的 **ServerName**。
 	* 要还原的数据库的 **DatabaseName**。	
 
-	`PS C:\>$Database = Get-AzureSqlDatabase -ServerName "myserver" -DatabaseName "mydb"`
+	`PS C:&gt;$Database = Get-AzureSqlDatabase -ServerName "myserver" -DatabaseName "mydb"`
 
 2. 使用 [Start-AzureSqlDatabaseRestore](http://msdn.microsoft.com/zh-cn/library/azure/dn720218.aspx) cmdlet 开始还原。指定以下参数：	
 	* 要从中还原的 **SourceDatabase**。
@@ -47,14 +47,14 @@
 
 	将返回的结果存储在名为 **$RestoreRequest** 的变量中。此变量包含用于监视还原状态的还原请求 ID。 
 
-	`PS C:\>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database -TargetDatabaseName "myrestoredDB" -PointInTime "2015-01-01 06:00:00"`
+	`PS C:&gt;$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceDatabase $Database -TargetDatabaseName "myrestoredDB" -PointInTime "2015-01-01 06:00:00"`
 
 还原可能需要一段时间才能完成。若要监视还原状态，请使用 [Get-AzureSqlDatabaseOperation](http://msdn.microsoft.com/zh-cn/library/azure/dn546738.aspx) cmdlet 并指定以下参数：
 
 * 要还原到的数据库的 **ServerName**。
 * **OperationGuid**，即执行步骤 2 时存储在 **$RestoreRequest** 变量中的还原请求 ID。
 
-	`PS C:\>Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
+	`PS C:&gt;Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
 
 **State** 和 **PercentComplete** 字段显示还原状态。 
 

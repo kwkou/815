@@ -1,4 +1,4 @@
-<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -146,7 +146,7 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
         </div>
     </body>
 
-将 *Views&#92;Home&#92;AllTags.cshtml* 文件复制到 *Views&#92;Home&#92;AllTags.Mobile.cshtml*。打开此新文件，将 \<h2\> 元素从“Tags”更改为“Tags (M)”：
+将 *Views&#92;Home&#92;AllTags.cshtml* 文件复制到 *Views&#92;Home&#92;AllTags.Mobile.cshtml*。打开此新文件，将 &lt;h2&gt; 元素从“Tags”更改为“Tags (M)”：
 
      <h2>Tags (M)</h2>
 
@@ -267,7 +267,7 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 
 <!--![Display desktop view][jquery4]-->
 
-桌面视图不提供直接导航回移动视图的途径。现在来修复此问题。打开 \*Views&#92;Shared&#92;\_Layout.cshtml\* 文件。在 \<body\> 元素紧下方，添加以下代码来呈现视图切换器小组件：
+桌面视图不提供直接导航回移动视图的途径。现在来修复此问题。打开 \*Views&#92;Shared&#92;\_Layout.cshtml\* 文件。在 &lt;body&gt; 元素紧下方，添加以下代码来呈现视图切换器小组件：
 
     @Html.Partial("_ViewSwitcher")
 
@@ -338,8 +338,8 @@ else
 
 正如您刚才看到的，“发言人”视图虽然可读，但链接字迹小，不易在移动设备上点击。在本节中，您将创建一个移动特定“发言人”视图，它看起来像一个现代移动应用程序，链接字迹大、易于点击，而且包含可快速查找发言人的搜索框。
 
-1.  将 *AllSpeakers.cshtml* 复制到 *AllSpeakers.Mobile.cshtml。*打开 *AllSpeakers.Mobile.cshtml* 文件，移除 \<h2\> 标题元素。
-2.  在 **\<ul\>** 标签中，添加 data-role 属性，将其值设置为 *listview*。同其他 \*data-\*\* 属性一样，*data-role="listview"* 可使大的列表项更易于点击。完成的标记如下所示：
+1.  将 *AllSpeakers.cshtml* 复制到 *AllSpeakers.Mobile.cshtml。*打开 *AllSpeakers.Mobile.cshtml* 文件，移除 &lt;h2&gt; 标题元素。
+2.  在 **&lt;ul&gt;** 标签中，添加 data-role 属性，将其值设置为 *listview*。同其他 \*data-\*\* 属性一样，*data-role="listview"* 可使大的列表项更易于点击。完成的标记如下所示：
 
         @model IEnumerable<string>
         @{
@@ -355,7 +355,7 @@ else
 
     ![][6]
 
-4.  在 **\<ul\>** 标签中，添加 data-filter 属性，将其值设置为 true。下面的代码显示 ul 标记。
+4.  在 **&lt;ul&gt;** 标签中，添加 data-filter 属性，将其值设置为 true。下面的代码显示 ul 标记。
 
         <ul data-role="listview" data-filter="true">
 
@@ -371,9 +371,9 @@ else
 
 与默认“发言人”视图一样，“标签”视图虽然可读，但链接字迹小，不易在移动设备上点击。在本节中，您将像修正“发言人”视图那样修正“标签”视图。
 
-1.  将 *Views&#92;Home&#92;AllTags.Mobile.cshtml.hide* 文件重命名为 *Views&#92;Home&#92;AllTags.Mobile.cshtml*。打开重命名的文件，移除 **\<h2\>** 元素。
+1.  将 *Views&#92;Home&#92;AllTags.Mobile.cshtml.hide* 文件重命名为 *Views&#92;Home&#92;AllTags.Mobile.cshtml*。打开重命名的文件，移除 **&lt;h2&gt;** 元素。
 
-2.  将 data-role 和 data-filter 属性添加到 **\<ul\>** 标签中，如下所示：
+2.  将 data-role 和 data-filter 属性添加到 **&lt;ul&gt;** 标签中，如下所示：
 
         <ul data-role="listview" data-filter="true">
 
@@ -386,8 +386,8 @@ else
 您可以像改进“发言人”和“标签”视图那样改进“日期”视图，以使其更容易在移动设备上使用。
 
 1.  将 *Views&#92;Home&#92;AllDates.Mobile.cshtml* 文件复制到 *Views&#92;Home&#92;AllDates.Mobile.cshtml*。
-2.  打开新文件，移除 **\<h2\>** 元素。
-3.  将 *data-role="listview"* 添加到 \<ul\> 标签中，如下所示：
+2.  打开新文件，移除 **&lt;h2&gt;** 元素。
+3.  将 *data-role="listview"* 添加到 &lt;ul&gt; 标签中，如下所示：
 
         <ul data-role="listview">
 

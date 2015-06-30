@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="在 Azure PowerShell 中还原已删除的 Azure SQL 数据库" 
    description="Microsoft Azure SQL Database, 还原已删除的数据库, 恢复已删除的数据库, Azure PowerShell" 
    services="sql-database" 
@@ -39,13 +39,13 @@
 	* 使用 **RestorableDropped** 开关，并指定从中删除了数据库的服务器的 **ServerName**。
 	* 运行以下命令可将结果存储在名为 **$RecoverableDBs** 的变量中。
 	
-	`PS C:\>$RecoverableDBs = Get-AzureSqlDatabase -ServerName "myserver" -RestorableDropped`
+	`PS C:&gt;$RecoverableDBs = Get-AzureSqlDatabase -ServerName "myserver" -RestorableDropped`
 
 2. 从已删除数据库列表中选择你要还原的数据库。
 
 	* 键入 **$RecoverableDBs** 列表中已删除数据库的编号。  
 
-	`PS C:\>$Database = $RecoverableDBs[<deleted database number>]`
+	`PS C:&gt;$Database = $RecoverableDBs[<deleted database number>]`
 
 	* 有关如何获取可还原的已删除数据库对象的详细信息，请参阅 [Get-AzureSqlDatabase](http://msdn.microsoft.com/zh-cn/library/dn546735.aspx)。
 
@@ -55,14 +55,14 @@
 
 	将返回的结果存储在名为 **$RestoreRequest** 的变量中。此变量包含用于监视还原状态的还原请求 ID。
 	
-	`PS C:\>$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database -TargetDatabaseName "myrestoredDB"`
+	`PS C:&gt;$RestoreRequest = Start-AzureSqlDatabaseRestore -SourceRestorableDroppedDatabase $Database -TargetDatabaseName "myrestoredDB"`
 
 还原可能需要一段时间才能完成。若要监视还原状态，请使用 [Get-AzureSqlDatabaseOperation](http://msdn.microsoft.com/zh-cn/library/azure/dn546738.aspx) cmdlet 并指定以下参数：
 
 * 要还原到的数据库的 **ServerName**。
 * **OperationGuid**，即执行步骤 3 时存储在 **$RestoreRequest** 变量中的还原请求 ID。
 
-	`PS C:\>Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
+	`PS C:&gt;Get-AzureSqlDatabaseOperation -ServerName "myserver" -OperationGuid $RestoreRequest.RequestID`
 
 **State** 和 **PercentComplete** 字段显示还原状态。
 

@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor=""/>
+﻿<properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor=""/>
 <tags ms.service="media-services"
     ms.date="02/24/2015"
     wacn.date="04/11/2015"
@@ -44,7 +44,7 @@ Media Services 入门
 
 3.  （如果尚未这样做）使用 [windowsazure.mediaservices Nuget](http://nuget.org/packages/windowsazure.mediaservices) 程序包添加对 **Azure SDK for .NET.** (Microsoft.WindowsAzure.StorageClient.dll)、**Azure Media Services SDK for .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) 和 **WCF Data Services 5.0 for OData V3** (Microsoft.Data.OData.dll) 库的引用。
 
-    若要使用 Nuget 添加引用，请执行以下操作。在 Visual Studio 主菜单中，选择“工具”-\>“库程序包管理器”-\>“程序包管理器控制台”。在控制台窗口中，键入 *Install-Package [程序包名称]*，然后按 Enter（在本例中，应使用以下命令：*Install-Package windowsazure.mediaservices*。）
+    若要使用 Nuget 添加引用，请执行以下操作。在 Visual Studio 主菜单中，选择“工具”-&gt;“库程序包管理器”-&gt;“程序包管理器控制台”。在控制台窗口中，键入 *Install-Package [程序包名称]*，然后按 Enter（在本例中，应使用以下命令：*Install-Package windowsazure.mediaservices*。）
 
 4.  在 **app.config** 文件中添加一个 *appSettings* 部分，并设置 Azure Media Services 帐户名和帐户密钥的值。在设置帐户期间，你已获取 Media Services 帐户名和帐户密钥。在 Visual Studio 项目中，将这些值添加到 app.config 文件中每项设置的值属性。
 

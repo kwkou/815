@@ -498,7 +498,7 @@ HDInsight Tools for Visual Studio 还可用于创建混合拓扑，其中，有�
 
 3. 保存更改，然后按 **F5**，或者依次选择"调试"、"开始调试"以启动项目。随后应会出现一个控制台窗口，并记录测试进行的状态。出现"测试已完成"后，请按任意键关闭窗口。
 
-4. 使用"资源管理器"转到包含项目的目录。例如，**C:\Users\<your_user_name>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**。在此目录中，依次打开 **Bin** 和 **Debug**。你应会看到运行测试时生成的文本文件：sentences.txt、counter.txt 和 splitter.txt。打开每个文本文件并检查数据。
+4. 使用"资源管理器"转到包含项目的目录。例如，**C:\Users&lt;your_user_name>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**。在此目录中，依次打开 **Bin** 和 **Debug**。你应会看到运行测试时生成的文本文件：sentences.txt、counter.txt 和 splitter.txt。打开每个文本文件并检查数据。
 
 	> [AZURE.NOTE] 字符串数据会保存为这些文件中的十进制值数组。例如，**splitter.txt** 文件中的 [[97,103,111]] 是单词"and"。
 

@@ -1,4 +1,4 @@
-<properties linkid="develop-java-how-to-guides-web-sso" urlDisplayName="Web SSO" pageTitle="Azure Active Directory 包含的单一登录功能 (Java)" metaKeywords="Azure Java web app, Azure single sign-on, Azure Java Active Directory" description="了解如何使用 Azure Active Directory 包含的单一登录创建 Java Web 应用程序。" metaCanonical="" services="active-directory" documentationCenter="Java" title="通过 Java 和 Azure Active Directory 实现的 Web 单一登录" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-java-how-to-guides-web-sso" urlDisplayName="Web SSO" pageTitle="Azure Active Directory 包含的单一登录功能 (Java)" metaKeywords="Azure Java web app, Azure single sign-on, Azure Java Active Directory" description="了解如何使用 Azure Active Directory 包含的单一登录创建 Java Web 应用程序。" metaCanonical="" services="active-directory" documentationCenter="Java" title="通过 Java 和 Azure Active Directory 实现的 Web 单一登录" authors="" solutions="" manager="" editor="" />
 <tags ms.service="active-directory"
     ms.date="09/26/2014"
     wacn.date="04/11/2015"
@@ -43,7 +43,7 @@
 4.  在**新建 Maven 项目”**对话框中，选中**创建简单项目(跳过 archetype 选择)**，然后单击**下一步**。
 5.  在**新建 Maven 项目**对话框的下一页上，在**组 ID** 和 **项目 ID** 文本框中键入 *sample*。然后，从**打包**下拉菜单中选择 **war**，然后单击**完成**。
 6.  将创建新的 Maven 项目。在左侧的**项目资源管理器**菜单中，展开 **sample** 项目，右键单击 **pom.xml** 文件，单击**打开方式**，然后单击**文本编辑器**。
-7.  在 **pom.xml** 文件中，在 *\<project\>* 节中添加以下 XML：
+7.  在 **pom.xml** 文件中，在 *&lt;project&gt;* 节中添加以下 XML：
 
         <repositories>
             <repository>
@@ -175,7 +175,7 @@
 
 4.  展开 **sample** 项目，右键单击 **pom.xml** 文件，单击**“打开方式”**，然后单击**“文本编辑器”**。
 
-5.  在 **pom.xml** 文件中，在 *\<project\>* 节中添加以下 XML，然后保存文件：
+5.  在 **pom.xml** 文件中，在 *&lt;project&gt;* 节中添加以下 XML，然后保存文件：
 
         <dependencies>
             <dependency>
@@ -240,7 +240,7 @@
 
 10. 在**“项目资源管理器”**中，依次展开 **src**、**main** 和 **webapp** 文件夹。右键单击 **web.xml** 文件，单击**“打开方式”**，然后单击**“文本编辑器”**。
 
-11. 在 **web.xml** 文件中，您将添加一个筛选器来处理受保护和未受保护的页面，它会将未经过身份验证的用户重定向到登录页（作为 **login-page-url** 筛选器参数）。但是，如果 URL 与 **allowed-regex** 筛选器参数中指定的正则表达式匹配，则不会被筛选掉。在 *\<web-app\>* 节中添加以下 XML，然后保存 **web.xml** 文件。
+11. 在 **web.xml** 文件中，您将添加一个筛选器来处理受保护和未受保护的页面，它会将未经过身份验证的用户重定向到登录页（作为 **login-page-url** 筛选器参数）。但是，如果 URL 与 **allowed-regex** 筛选器参数中指定的正则表达式匹配，则不会被筛选掉。在 *&lt;web-app&gt;* 节中添加以下 XML，然后保存 **web.xml** 文件。
 
         <filter>
             <filter-name>FederationFilter</filter-name>
@@ -345,7 +345,7 @@
 
 23. 在**“项目资源管理器”**中，展开 **src/main/webapp/WEB-INF** 文件夹。右键单击 **web.xml** 文件，单击**“打开方式”**，然后单击**“文本编辑器”**。
 
-24. 在 **web.xml** 文件中，将 *\<url-pattern\>* 节中的 **/FederationServlet** 设置替换为 **/ws-saml**。例如：
+24. 在 **web.xml** 文件中，将 *&lt;url-pattern&gt;* 节中的 **/FederationServlet** 设置替换为 **/ws-saml**。例如：
 
         <servlet>
             <description></description>
@@ -383,7 +383,7 @@
 
 27. 在**“项目资源管理器”**中，展开 **src/main/webapp/WEB-INF** 文件夹。右键单击 **web.xml** 文件，单击**“打开方式”**，然后单击**“文本编辑器”**。
 
-28. 我们现在将为应用程序启用 SSL。在 **web.xml** 文件中，在 *\<web-app\>* 节中插入以下 *\<security-constraint\>* 部分，然后保存文件：
+28. 我们现在将为应用程序启用 SSL。在 **web.xml** 文件中，在 *&lt;web-app&gt;* 节中插入以下 *&lt;security-constraint&gt;* 部分，然后保存文件：
 
         <security-constraint>
             <web-resource-collection>

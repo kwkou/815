@@ -1,4 +1,4 @@
-<properties linkid="develop-php-tutorials-convert-wordpress-to-multisite" urlDisplayName="Convert a WordPress Site to a Multisite" pageTitle="Convert a WordPress Site to a Multisite" metaKeywords="WordPress, Multisite" description="Learn how to take an existing WordPress web site created through the gallery in Azure and convert it to WordPress Multisite" metaCanonical="" services="web-sites" documentationCenter="PHP" title="Convert a WordPress Site to a Multisite" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-php-tutorials-convert-wordpress-to-multisite" urlDisplayName="Convert a WordPress Site to a Multisite" pageTitle="Convert a WordPress Site to a Multisite" metaKeywords="WordPress, Multisite" description="Learn how to take an existing WordPress web site created through the gallery in Azure and convert it to WordPress Multisite" metaCanonical="" services="web-sites" documentationCenter="PHP" title="Convert a WordPress Site to a Multisite" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -103,11 +103,11 @@
 
 WordPress Multisite 当前没有用于映射自定义域的内置方法。但是，你可以利用一个名为 [WordPress MU 域映射][WordPress MU 域映射]的插件来为你添加该功能。登录到你网站的“网络管理员”部分，并安装“WordPress MU 域映射”插件。
 
-安装并激活该插件后，请访问“设置”\>“域映射”来配置插件。在第一个文本框“服务器 IP 地址”中，输入用于设置域的 A 记录的 IP 地址。设置所需的任何“域选项”（通常使用默认值即可）并单击“保存”。
+安装并激活该插件后，请访问“设置”&gt;“域映射”来配置插件。在第一个文本框“服务器 IP 地址”中，输入用于设置域的 A 记录的 IP 地址。设置所需的任何“域选项”（通常使用默认值即可）并单击“保存”。
 
 ## 映射域
 
-访问你希望将域映射到的网站的**仪表板**。单击“工具”\>“域映射”，在文本框中键入新域，然后单击“添加”。
+访问你希望将域映射到的网站的**仪表板**。单击“工具”&gt;“域映射”，在文本框中键入新域，然后单击“添加”。
 
 默认情况下，新域将重写到自动生成的站点域。若要将所有流量发送到新域，请在保存前选中“此博客的主域”框。可以向一个站点添加无数个域，但只有一个域可作为主域。
 

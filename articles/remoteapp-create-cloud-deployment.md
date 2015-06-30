@@ -1,4 +1,4 @@
-<properties title="如何创建 RemoteApp 的混合部署" pageTitle="如何创建 RemoteApp 的混合部署" description="了解如何创建连接到您的内部网络的 RemoteApp 的部署。" metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo"  />
+﻿<properties title="如何创建 RemoteApp 的混合部署" pageTitle="如何创建 RemoteApp 的混合部署" description="了解如何创建连接到您的内部网络的 RemoteApp 的部署。" metaKeywords="" services="" solutions="" documentationCenter="" authors="elizapo"  />
 <tags ms.service=""
     ms.date="03/06/2015"
     wacn.date="04/11/2015"
@@ -27,7 +27,7 @@
 ## **步骤 1：创建 RemoteApp 服务**
 
 1.  在 [Windows Azure 管理门户][Windows Azure 管理门户]中，请转到 RemoteApp 页上。
-2.  单击“新建”\>“快速创建”。
+2.  单击“新建”&gt;“快速创建”。
 
 3.  输入您的服务的名称并选择您所在的区域。
 4.  选择您想要用于创建此服务的订阅。

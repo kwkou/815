@@ -42,7 +42,7 @@
 
 3.  在 Visual Studio 中打开下载的项目，然后检查 MainPage.xaml.cs 文件。
 
-    请注意添加的 "TodoItem" 对象存储在内存中的 "ObservableCollection\<TodoItem\>" 内。
+    请注意添加的 "TodoItem" 对象存储在内存中的 "ObservableCollection&lt;TodoItem&gt;" 内。
 
 4.  在 Visual Studio 中，选择应用程序的部署目标。你可以部署到 Windows Phone 设备，或者 Windows Phone SDK 随附的模拟器之一。在本教程中，我们将演示如何部署到模拟器。
 

@@ -1,4 +1,4 @@
-<properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Windows Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
+﻿<properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Windows Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="web-sites"
     ms.date="02/12/2015"
     wacn.date="04/11/2015"
@@ -22,7 +22,7 @@
 
 -   **Visual Studio 2013** - 若要下载 Visual Studio 2013 免费试用版，请参阅 [Visual Studio 下载][Visual Studio 下载]。请先安装此产品，然后继续。
 
--   **Microsoft .NET Framework 3.5 Service Pack 1** — 如果您的操作系统是 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7 或 Windows Server 2008 R2，可通过“控制面板”\>“程序和功能”\> 打开或关闭 Windows 功能来启用它。另外，您可以从 [Microsoft 下载中心][Microsoft 下载中心]进行下载。
+-   **Microsoft .NET Framework 3.5 Service Pack 1** — 如果您的操作系统是 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7 或 Windows Server 2008 R2，可通过“控制面板”&gt;“程序和功能”&gt; 打开或关闭 Windows 功能来启用它。另外，您可以从 [Microsoft 下载中心][Microsoft 下载中心]进行下载。
 
 -   **SQL Server 2014 Express with Tools** - 从 [Microsoft Web 平台数据库页][Microsoft Web 平台数据库页]免费下载 Microsoft SQL Server Express。选择 **Express**（而不是 LocalDB）版本。**Express with Tools** 版本包含本教程中将要使用的 SQL Server Management Studio。
 

@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title=" OAuth" authors="riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date="10/07/2014"
     wacn.date="04/11/2015"
@@ -221,7 +221,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 3.  在“添加控制器”对话框中，输入“HomeController”作为控制器名称。
 4.  将“基架选项”模板设置为“包含读/写操作和视图的 MVC 控制器(使用 Entity Framework)”。
-5.  选择“联系人”作为模型类和“\<新建数据上下文...\>”作为您的数据上下文类。
+5.  选择“联系人”作为模型类和“&lt;新建数据上下文...&gt;”作为您的数据上下文类。
 
     ![“添加控制器”对话框][“添加控制器”对话框]
 
@@ -248,7 +248,7 @@ Visual Studio 将创建一个控制器方法并为 **Contact** 对象的 CRUD �
 **enable-migrations** 命令将创建一个 *Migrations* 文件夹，并在该文件夹中放入一个可编辑以配置 Migrations 的 *Configuration.cs* 文件。
 3.  在“程序包管理器控制台”窗口中，输入以下命令：
         add-migration Initial
-    **add-migration Initial** 命令将在创建数据库的 *Migrations* 文件夹中生成一个名为 **\<date\_stamp\>Initial** 的文件。第一个参数 (**Initial**) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
+    **add-migration Initial** 命令将在创建数据库的 *Migrations* 文件夹中生成一个名为 **&lt;date\_stamp&gt;Initial** 的文件。第一个参数 (**Initial**) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
     在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在您想要返回到以前的状态时使用）用于删除该表。
 4.  打开 *Migrations&#92;Configuration.cs* 文件。
 5.  添加以下命名空间。

@@ -47,7 +47,7 @@
 
 2.  在 Visual Studio 2012 Express for Windows 8 中打开下载的项目，然后检查 MainPage.xaml.cs 文件。
 
-    请注意添加的 "TodoItem" 对象存储在内存中的 "ObservableCollection\<TodoItem\>" 内。
+    请注意添加的 "TodoItem" 对象存储在内存中的 "ObservableCollection&lt;TodoItem&gt;" 内。
 
 3.  按 "F5" 键重新生成项目并启动应用程序。
 

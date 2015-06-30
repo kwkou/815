@@ -1,11 +1,11 @@
-## 将消息发送到事件中心
+﻿## 将消息发送到事件中心
 在本节中，我们将编写用于将事件发送到事件中心的 Java 控制台应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org)中利用 JMS AMQP 提供程序。这类似于通过 Java 将服务总线队列和主题与 AMQP 配合使用，如[此处](http://www.windowsazure.cn/zh-cn/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)所示。有关详细信息，请参阅 [Qpid JMS 文档](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html)和 [Java 消息服务](http://www.oracle.com/technetwork/java/jms/index.html)。
 
 1. 在 Eclipse 中，创建一个名为 **Sender** 的新 Java 项目。
 
 2. 从[此处](http://qpid.apache.org/components/qpid-jms/index.html)下载 **Qpid JMS AMQP 1.0** 库的最新版本。
 
-3. 从存档中提取文件，并将以下 jar 从存档  `qpid-amqp-1-0-client-jms\<version>\lib` 目录复制到您的 Eclipse **Sender** 项目。
+3. 从存档中提取文件，并将以下 jar 从存档  `qpid-amqp-1-0-client-jms&lt;version>\lib` 目录复制到您的 Eclipse **Sender** 项目。
 
 4. 在 Eclipse 程序包资源管理器中，右键单击 **Sender** 项目，然后选择"属性"。在对话框的左侧窗格中，依次单击"Java 生成路径"、"库"选项卡和"添加 JAR"按钮。选择以前已复制的所有 jar，然后单击"确定"。
 

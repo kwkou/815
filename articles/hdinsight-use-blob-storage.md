@@ -120,15 +120,15 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
     wasb[s]://<BlobStorageContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/<path>
 
 > [WACOM.NOTE] 用于在存储模拟器上确定文件地址的语法（在 HDInsight 模拟器上运行）是 *wasb:*
-> //\<ContainerName\>@storageemulator (//\<ContainerName\> at storageemulator)
+> //&lt;ContainerName&gt;@storageemulator (//&lt;ContainerName&gt; at storageemulator)
 > .
 
 URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 SSL 加密访问。建议尽量使用 *wasbs*，即使在访问位于同一 Azure 数据中心内的数据时也是如此。
 
-\<BlobStorageContainerName\> 标识 Blob 存储容器的名称。
-\<StorageAccountName\> 标识 Azure 存储帐户名。完全限定域名 (FQDN) 是必需的。
+&lt;BlobStorageContainerName&gt; 标识 Blob 存储容器的名称。
+&lt;StorageAccountName&gt; 标识 Azure 存储帐户名。完全限定域名 (FQDN) 是必需的。
 
-如果既没有指定 \<BlobStorageContainerName\> 也没有指定 \<StorageAccountName\>，则会使用默认文件系统。对于默认文件系统中的文件，你可以使用相对路径或绝对路径。例如，可以使用以下任一方式引用随 HDInsight 群集提供的 hadoop-mapreduce-examples.jar 文件：
+如果既没有指定 &lt;BlobStorageContainerName&gt; 也没有指定 &lt;StorageAccountName&gt;，则会使用默认文件系统。对于默认文件系统中的文件，你可以使用相对路径或绝对路径。例如，可以使用以下任一方式引用随 HDInsight 群集提供的 hadoop-mapreduce-examples.jar 文件：
 
     wasb://mycontainer@myaccount.blob.core.chinacloudapi.cn/example/jars/hadoop-mapreduce-examples.jar
     wasb:///example/jars/hadoop-mapreduce-examples.jar
@@ -136,7 +136,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 
 > [WACOM.NOTE] 在 HDInsight 群集版本 1.6 和 2.1 上，文件名是 *hadoop-examples.jar*。
 
-\<path\> 是文件或目录 HDFS 路径名。由于 Blob 存储容器只是键值存储，因此没有真正的分层文件系统。Blob 键中的“/”解释为目录分隔符。例如，*hadoop-mapreduce-examples.jar* 的 Blob 名称是：
+&lt;path&gt; 是文件或目录 HDFS 路径名。由于 Blob 存储容器只是键值存储，因此没有真正的分层文件系统。Blob 键中的“/”解释为目录分隔符。例如，*hadoop-mapreduce-examples.jar* 的 Blob 名称是：
 
     example/jars/hadoop-mapreduce-examples.jar
 

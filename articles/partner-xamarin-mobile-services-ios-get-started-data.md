@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-get-started-with-data-xamarin-ios" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Xamarin.iOS) - Azure Mobile Services" metaKeywords="Azure Xamarin.iOS data, Azure mobile services data, " description="Learn how to store and access data from your Azure Mobile Services Xamarin.iOS app." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="" />
+﻿<properties linkid="develop-mobile-tutorials-get-started-with-data-xamarin-ios" urlDisplayName="Get Started with Data" pageTitle="Get started with data (Xamarin.iOS) - Azure Mobile Services" metaKeywords="Azure Xamarin.iOS data, Azure mobile services data, " description="Learn how to store and access data from your Azure Mobile Services Xamarin.iOS app." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Get started with data in Mobile Services" authors="" />
 <tags ms.service=""
     ms.date="09/24/2014"
     wacn.date="04/11/2015"
@@ -146,7 +146,7 @@
      // This code refreshes the entries in the list view by querying the TodoItems table.
     // The query excludes completed TodoItems
      Items = await todoTable
-     .Where (todoItem =\> todoItem.Complete == false).ToListAsync();
+     .Where (todoItem =&gt; todoItem.Complete == false).ToListAsync();
      }
      catch (MobileServiceInvalidOperationException e)
      {

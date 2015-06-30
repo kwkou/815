@@ -1,4 +1,4 @@
-<properties title="Generate movie recommendations using Mahout" pageTitle="将 Apache Mahout 与 HDInsight (Hadoop) 配合使用以生成电影推荐" description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with HDInsight (Hadoop)" metaKeywords="Azure hdinsight mahout, Azure hdinsight machine learning, azure hadoop mahout, azure hadoop machine learning" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
+﻿<properties title="Generate movie recommendations using Mahout" pageTitle="将 Apache Mahout 与 HDInsight (Hadoop) 配合使用以生成电影推荐" description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with HDInsight (Hadoop)" metaKeywords="Azure hdinsight mahout, Azure hdinsight machine learning, azure hadoop mahout, azure hadoop machine learning" services="hdinsight" solutions="" documentationCenter="big-data" authors="larryfr" videoId="" scriptId="" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -60,7 +60,7 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 3. 将 **u.data** 文件上载到 HDInsight 群集上的 **example/data/u.data**。如果你安装了 [Azure PowerShell][aps]，则可以使用 [HDInsight-Tools][tools] PowerShell 模块上载该文件。有关上载文件的其他方法，请参阅[在 HDInsight 中上载 Hadoop 作业的数据][upload]。下面演示了如何使用 `Add-HDInsightFile` 上载文件
 
-        PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
+        PS C:&gt; Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
 
     这样就会将 **u.data** 文件上载到群集的默认存储中的 **example/data/u.data**。然后，我们可以使用 **wasb:///example/data/u.data** URI 从 HDInsight 作业访问此数据。
 
@@ -219,7 +219,7 @@ Mahout 作业不会向 STDOUT 返回输出，而是将输出作为 **part-r-0000
 
 若要使用此脚本，你必须事先提取 **ml-100k** 文件夹，以及 Mahout 作业生成的 **part-r-00000** 输出文件的本地副本。以下示例演示了如何运行该脚本。
 
-    PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
+    PS C:&gt; show-recommendation.ps1 -userId 4 -userDataFile .\ml-100k\u.data -movieFile .\ml-100k\u.item -recommendationFile .\output.txt
 
 > [WACOM.NOTE] 示例 Python 脚本 **show_recommendations.py** 使用相同的参数。
 
@@ -297,7 +297,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 		hadoop jar c:/apps/dist/mahout-0.9.0.2.1.3.0-1887/examples/target/mahout-examples-0.9.0.2.1.3.0-1887-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasb:///example/data/KDDTrain+.arff -ds wasb:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
 
-    此操作的输出将存储在 **nsl-forest** 目录中，该目录位于 HDInsight 群集存储中的 \_\_wasb://user/\<username\>/nsl-forest/nsl-forest.seq 下。\<username\> 表示用于远程桌面会话的用户名。用户不可读取此文件。
+    此操作的输出将存储在 **nsl-forest** 目录中，该目录位于 HDInsight 群集存储中的 \_\_wasb://user/&lt;username&gt;/nsl-forest/nsl-forest.seq 下。&lt;username&gt; 表示用于远程桌面会话的用户名。用户不可读取此文件。
 
 6. 通过使用以下命令为 **KDDTest+.arff** 数据集分类来测试该林。
 
@@ -341,7 +341,7 @@ Mahout 已安装在 HDInsight 3.1 群集上，你可以使用以下步骤手动�
 
 1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。可以在 [Azure PowerShell][aps] 中使用以下命令找到群集版本：
 
-        PS C:\> Get-AzureHDInsightCluster -Name YourClusterName | Select version
+        PS C:&gt; Get-AzureHDInsightCluster -Name YourClusterName | Select version
 
 
 - **对于 HDInsight 3.0**，必须[从源生成 Mahout][build] 并指定 HDInsight 提供的 Hadoop 版本。安装生成页上列出的必备组件，下载源，然后使用以下命令创建 Mahout jar 文件。
@@ -354,7 +354,7 @@ Mahout 已安装在 HDInsight 3.1 群集上，你可以使用以下步骤手动�
 
 1. 将该 jar 文件上载到群集默认存储的 **example/jars** 中。以下示例使用 [send-hdinsight][sendhdinsight] 脚本上载该文件。
 
-        PS C:\> .\Send-HDInsight -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
+        PS C:&gt; .\Send-HDInsight -LocalPath "path\to\mahout-core-0.9-job.jar" -DestinationPath "example/jars/mahout-core-0.9-job.jar" -ClusterName "your cluster name"
 
 ### 无法覆盖文件
 

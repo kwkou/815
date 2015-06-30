@@ -255,7 +255,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 若要查询表以获取分区中的实体，可以使用 LINQ 查询。
 可以调用 **serviceContext.CreateQuery** 从你的数据源
 创建查询。以下代码指定了一个筛选器，用于筛选分区键是“Smith”
-的实体。对 LINQ 查询的结果调用 **AsTableServiceQuery\<CustomerEntity\>**
+的实体。对 LINQ 查询的结果调用 **AsTableServiceQuery&lt;CustomerEntity&gt;**
 以完成创建 **CloudTableQuery** 对象。
 然后你可以使用在 **foreach** 循环中创建的
 **partitionQuery** 对象来使用结果。此代码会将查询结果中每个
@@ -288,7 +288,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 
 如果不想查询分区中的所有实体，则可以使
 用 **CompareTo** 方法，而不是使用常见的
-大于 (\>) 和小于 (\<) 运算符来指定一个范围。这是因为
+大于 (&gt;) 和小于 (&lt;) 运算符来指定一个范围。这是因为
 后者将导致不适当的查询构造。以下代码使用
 两个筛选器来获取分区“Smith”中行键（名字）以字母表中字母
 “E”及其前面的字母开头的所有实体。然后，

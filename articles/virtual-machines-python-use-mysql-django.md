@@ -1,4 +1,4 @@
-<properties linkid="develop-python-web-app-with-django-and-mysql" urlDisplayName="Web with Django + MySQL" pageTitle="Python web app with Django and MySQL - Azure tutorial" metaKeywords="Azure django web app, Azure Django MySQL, Azure django Python" description="A tutorial that teaches you how to use MySQL in with Django on an Azure virtual machine. Code samples written in Python." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World - MySQL Windows Edition" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-web-app-with-django-and-mysql" urlDisplayName="Web with Django + MySQL" pageTitle="Python web app with Django and MySQL - Azure tutorial" metaKeywords="Azure django web app, Azure Django MySQL, Azure django Python" description="A tutorial that teaches you how to use MySQL in with Django on an Azure virtual machine. Code samples written in Python." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World - MySQL Windows Edition" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="11/01/2014"
     wacn.date="04/11/2015"
@@ -228,7 +228,7 @@
 
     ![][5]
 
-  刷新 Web 浏览器几次，你应该看到消息从*“Hello **\<country abc\>**”*更改为*“Hello **\<some other country\>**”*。
+  刷新 Web 浏览器几次，你应该看到消息从*“Hello **&lt;country abc&gt;**”*更改为*“Hello **&lt;some other country&gt;**”*。
 
 1.  若要停止 Django 托管网站，只需切换到 PowerShell 窗口并按 **Ctrl-C**。
 

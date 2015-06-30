@@ -1,4 +1,4 @@
-<properties linkid="develop-net-how-to-twilio-sms-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="如何使用 Twilio 实现语音和短信功能 (.NET) &ndash; Azure" metaKeywords="Azure Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="了解如何在 Azure 中使用 Twilio API 服务发起电话呼叫和发送短信。采用 .NET 编写的代码示例。" metaCanonical="" services="" documentationCenter=".NET" title="如何在 Azure 中使用 Twilio 实现语音和短信功能" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-net-how-to-twilio-sms-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="如何使用 Twilio 实现语音和短信功能 (.NET) &ndash; Azure" metaKeywords="Azure Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="了解如何在 Azure 中使用 Twilio API 服务发起电话呼叫和发送短信。采用 .NET 编写的代码示例。" metaCanonical="" services="" documentationCenter=".NET" title="如何在 Azure 中使用 Twilio 实现语音和短信功能" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/24/2015"
     wacn.date="04/11/2015"
@@ -43,20 +43,20 @@ Twilio API 的关键方面是 Twilio 谓词和 Twilio 标记语言 (TwiML)。
 
 ### <span id="Verbs"></span></a>Twilio 谓词
 
-API 利用了 Twilio 谓词；例如，**\<Say\>** 谓词指示 Twilio 在呼叫时传递语音消息。
+API 利用了 Twilio 谓词；例如，**&lt;Say&gt;** 谓词指示 Twilio 在呼叫时传递语音消息。
 
 下面是 Twilio 谓词的列表。通过 [Twilio 标记语言文档][Twilio 标记语言文档]了解其他谓词和功能。
 
--   **\<Dial\>**：将呼叫方连接到其他电话。
--   **\<Gather\>**：收集通过电话按键输入的数字。
--   **\<Hangup\>**：结束呼叫。
--   **\<Play\>**：播放音频文件。
--   **\<Pause\>**：安静地等待指定时间（以秒为单位）。
--   **\<Record\>**：录制呼叫方的声音并返回包含该录音的文件的 URL。
--   **\<Redirect\>**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
--   **\<Reject\>**：拒绝对 Twilio 号码的传入呼叫而不向您收费
--   **\<Say\>**：将文本转换为呼叫中生成的语音。
--   **\<Sms\>**：发送 SMS 消息。
+-   **&lt;Dial&gt;**：将呼叫方连接到其他电话。
+-   **&lt;Gather&gt;**：收集通过电话按键输入的数字。
+-   **&lt;Hangup&gt;**：结束呼叫。
+-   **&lt;Play&gt;**：播放音频文件。
+-   **&lt;Pause&gt;**：安静地等待指定时间（以秒为单位）。
+-   **&lt;Record&gt;**：录制呼叫方的声音并返回包含该录音的文件的 URL。
+-   **&lt;Redirect&gt;**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
+-   **&lt;Reject&gt;**：拒绝对 Twilio 号码的传入呼叫而不向您收费
+-   **&lt;Say&gt;**：将文本转换为呼叫中生成的语音。
+-   **&lt;Sms&gt;**：发送 SMS 消息。
 
 ### <span id="TwiML"></span></a>TwiML
 

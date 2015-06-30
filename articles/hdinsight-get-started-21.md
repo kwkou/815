@@ -127,7 +127,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
     顶部有多个选项卡。默认选项卡为“Hive 编辑器”，其他选项卡包括“作业”和“文件”。使用仪表板可以提交 Hive 查询、检查 Hadoop 作业日志，以及浏览 WASB 文件。
 
-> [WACOM.NOTE] 请注意，URL 为 *\<群集名称\>.hdinsightservices.cn*。如果不从管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
+> [WACOM.NOTE] 请注意，URL 为 *&lt;群集名称&gt;.hdinsightservices.cn*。如果不从管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
 
 **运行 Hive 查询**
 

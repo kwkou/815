@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="配置 VNet 到 VNet 连接"
    description="VNet 到 VNet 通信支持连接 Azure 虚拟网络。它不支持连接不在虚拟网络中的虚拟机或云服务。"
    services="virtual-network"
@@ -171,11 +171,11 @@ VNet2：Address Space = 10.2.0.0/16；Region=China East
 
 对于 VNet1
 
-````PS C:\> Set-AzureVNetGatewayKey -VNetName VNet1 -LocalNetworkSiteName VNet2 -SharedKey A1b2C3D4````
+````PS C:&gt; Set-AzureVNetGatewayKey -VNetName VNet1 -LocalNetworkSiteName VNet2 -SharedKey A1b2C3D4````
 
 对于 VNet2
 
-````PS C:\> Set-AzureVNetGatewayKey -VNetName VNet2 -LocalNetworkSiteName VNet1 -SharedKey A1b2C3D4````
+````PS C:&gt; Set-AzureVNetGatewayKey -VNetName VNet2 -LocalNetworkSiteName VNet1 -SharedKey A1b2C3D4````
 
 等待连接初始化。初始化网关后，该网关将与下图类似，此时你的虚拟网络已连接。
 

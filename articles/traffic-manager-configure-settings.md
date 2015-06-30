@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Configure 流量管理器 Settings" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="How to Configure 流量管理器 Settings" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/26/2014"
     wacn.date="04/11/2015"
@@ -48,7 +48,7 @@
 
 > **使用 nslookup 检查 流量管理器 策略**
 
->1. 单击“开始”-\>**运行**并键入 **CMD** 以启动 CMD 窗口。
+>1. 单击“开始”-&gt;**运行**并键入 **CMD** 以启动 CMD 窗口。
 
 >2.  键入 `ipconfig /flushdns` 以便刷新 DNS 解析器缓存。
 

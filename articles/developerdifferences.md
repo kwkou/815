@@ -1,4 +1,4 @@
-<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
+﻿<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
 <tags ms.service="" ms.date="" wacn.date="06/24/2015"/>
 
 #中国 Windows Azure 应用程序开发人员说明
@@ -215,7 +215,7 @@ SQL数据库导入/导出服务映射端点 | 1. 中国东部：[https://sh1prod
 
 您必须使用自定义存储端点。默认设置指向 *.core.chinacloudapi.cn，其中 * 基于您的应用程序和存储位置而发生变更。
 
-在 Windows Azure 应用程序的 Windows Azure 服务配置文件 (.cscfg) 中，设置自定义数据连接字符串以指向中国服务中的 blob、队列和表存储 URI。以下代码显示了自定义端点的示例，其中\<AccountKey\>是一个变量，该变量必须由特定的存储帐户密钥替换。字符串 mystorageaccount 是在订阅下创建的存储账户的一个示例。
+在 Windows Azure 应用程序的 Windows Azure 服务配置文件 (.cscfg) 中，设置自定义数据连接字符串以指向中国服务中的 blob、队列和表存储 URI。以下代码显示了自定义端点的示例，其中&lt;AccountKey&gt;是一个变量，该变量必须由特定的存储帐户密钥替换。字符串 mystorageaccount 是在订阅下创建的存储账户的一个示例。
 
 		
 		<Setting name="DataConnectionString" 

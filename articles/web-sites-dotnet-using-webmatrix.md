@@ -104,7 +104,7 @@
 
 1.  打开 *Order.cshtml* 页。
 
-2.  找到“shiping”类窗体定义。紧接 \<li\> 块后插入以下代码。
+2.  找到“shiping”类窗体定义。紧接 &lt;li&gt; 块后插入以下代码。
 
         <li class="gift">
             <div class="fieldcontainer" data-role="fieldcontain">

@@ -1,4 +1,4 @@
-<properties linkid="develop-python-django-with-visual-studio" urlDisplayName="Django with Visual Studio" pageTitle="Django with Visual Studio (Python) - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to build a Django web application hosted in an Azure virtual machine." metaCanonical="" services="cloud-services" documentationCenter="Python" title="Creating Django applications with Python Tools for Visual Studio 1.5" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-django-with-visual-studio" urlDisplayName="Django with Visual Studio" pageTitle="Django with Visual Studio (Python) - Azure tutorial" metaKeywords="Azure Django web app, Azure Django virtual machine" description="A tutorial that teaches you how to build a Django web application hosted in an Azure virtual machine." metaCanonical="" services="cloud-services" documentationCenter="Python" title="Creating Django applications with Python Tools for Visual Studio 1.5" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="10/16/2014"
     wacn.date="04/11/2015"
@@ -39,7 +39,7 @@
 
 ## 创建新的 Django 应用程序
 
-若要创建新的 Django 应用程序，请首先启动 Visual Studio，然后使用“文件”-\>“新建项目”来创建新项目。找到“Python”选项卡（位于顶级或“其他语言”区域中），然后选择“Django 应用程序”模板：
+若要创建新的 Django 应用程序，请首先启动 Visual Studio，然后使用“文件”-&gt;“新建项目”来创建新项目。找到“Python”选项卡（位于顶级或“其他语言”区域中），然后选择“Django 应用程序”模板：
 
 ![新 Python 项目模板][新 Python 项目模板]
 

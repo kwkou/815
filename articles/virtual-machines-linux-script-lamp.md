@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="使用 Azure CustomScript Extension 部署 Linux 应用程序"
 	description="了解如何使用 Azure CustomScript 扩展在 Linux 虚拟机上部署应用程序"
 	editor="tysonn"
@@ -51,8 +51,8 @@
 	apt-get -y install apache2 mysql-server php5 php5-mysql  
 
 	# write some PHP
-	echo \<center\>\<h1\>My Demo App\</h1\>\<br/\>\</center\> > /var/www/html/phpinfo.php
-	echo \<\?php phpinfo\(\)\; \?\> >> /var/www/html/phpinfo.php
+	echo &lt;center&gt;&lt;h1&gt;My Demo App&lt;/h1&gt;&lt;br/&gt;&lt;/center&gt; > /var/www/html/phpinfo.php
+	echo &lt;\?php phpinfo\(\)\; \?&gt; >> /var/www/html/phpinfo.php
 
 	# restart Apache
 	apachectl restart

@@ -1,4 +1,4 @@
-<properties pageTitle="如何安装和配置 Azure PowerShell" description="了解如何安装和配置 Azure PowerShell。" editor="tysonn" manager="stevenka" documentationCenter="" services="" authors="coreyp-at-msft"/>
+﻿<properties pageTitle="如何安装和配置 Azure PowerShell" description="了解如何安装和配置 Azure PowerShell。" editor="tysonn" manager="stevenka" documentationCenter="" services="" authors="coreyp-at-msft"/>
 
 <tags ms.service="multiple" ms.date="02/20/2015" wacn.date="06/23/2015"/>
 
@@ -107,11 +107,11 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 4. 当系统提示时，下载并保存发布配置文件，并记下 .publishsettings 文件的路径和名称。当你运行 **Import-AzurePublishSettingsFile** cmdlet 导入设置时，必须提供此信息。默认的位置和文件名格式为：
 
-		C:\Users\<UserProfile>\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
+		C:\Users&lt;UserProfile>\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
 
 5. 键入类似于下面的命令，用你的 Windows 帐户名称和路径以及文件名替换占位符：
 
-		Import-AzurePublishSettingsFile C:\Users\<UserProfile>\Downloads<SubscriptionName>-credentials.publishsettings
+		Import-AzurePublishSettingsFile C:\Users&lt;UserProfile>\Downloads<SubscriptionName>-credentials.publishsettings
 
 > [AZURE.NOTE]如果在您导入发布设置后，将您添加到其他订阅中作为共同管理员，则您将需要重复此过程来下载新的 .publishsettings 文件，然后导入这些设置。有关添加共同管理员来帮助管理订阅服务的信息，请参阅[为 Azure 订阅添加和删除协同管理员](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg456328.aspx)。
 

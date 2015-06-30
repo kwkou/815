@@ -63,7 +63,7 @@
 [WACOM.INCLUDE [mobile-services-create-new-service-vs2013](../includes/mobile-services-create-new-service-vs2013.md)]
 
 <ol start="7">
-<li><p>在解决方案资源管理器中，展开 \*\*services\*\*、\*\*mobile services\*\*、\*\*\<your\_service\>\*\* 文件夹，打开 service.js 脚本文件，并留意新的全局变量，如以下示例所示：</p>
+<li><p>在解决方案资源管理器中，展开 \*\*services\*\*、\*\*mobile services\*\*、\*\*&lt;your\_service&gt;\*\* 文件夹，打开 service.js 脚本文件，并留意新的全局变量，如以下示例所示：</p>
 
 		<pre><code>var todolistClient = new WindowsAzure.MobileServiceClient(
                 "https://todolist.azure-mobile.cn/",

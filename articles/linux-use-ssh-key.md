@@ -1,4 +1,4 @@
-<properties linkid="article" urlDisplayName="Use SSH" pageTitle="在 Azure 中使用 SSH 连接到 Linux 虚拟机" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="了解如何在 Azure 上通过 Linux 虚拟机生成和使用 SSH 密钥。" metaCanonical="" services="virtual-machines" documentationCenter="" title="如何在 Azure 上通过 Linux 使用 SSH" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="article" urlDisplayName="Use SSH" pageTitle="在 Azure 中使用 SSH 连接到 Linux 虚拟机" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="了解如何在 Azure 上通过 Linux 虚拟机生成和使用 SSH 密钥。" metaCanonical="" services="virtual-machines" documentationCenter="" title="如何在 Azure 上通过 Linux 使用 SSH" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="11/28/2014"
     wacn.date="04/11/2015"
@@ -72,7 +72,7 @@ OpenSSH 私钥可通过 `openssl` 实用程序直接读取。以下命令将采�
 ### 使用针对 Windows 的 GitHub
 
 1.  从以下位置下载和安装针对 Windows 的 GitHub：<http://windows.github.com/>
-2.  从“开始”菜单 \>“所有程序”\>“GitHub, Inc”运行 Git Shell
+2.  从“开始”菜单 &gt;“所有程序”&gt;“GitHub, Inc”运行 Git Shell
 
 ### 使用 cygwin
 
@@ -101,7 +101,7 @@ OpenSSH 私钥可通过 `openssl` 实用程序直接读取。以下命令将采�
 
 1.  从以下位置下载和安装 puttygen：<http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>
 2.  运行 `puttygen.exe`
-3.  单击菜单：“文件”\>“加载私钥”
+3.  单击菜单：“文件”&gt;“加载私钥”
 4.  查找名为 `myPrivateKey.key` 的私钥。您将需要更改文件筛选器以显示“所有文件 (\*.\*)”
 5.  单击“打开”。您将收到与如下所示的提示：
 
@@ -122,7 +122,7 @@ OpenSSH 私钥可通过 `openssl` 实用程序直接读取。以下命令将采�
 
     ![linuxputtyconfig][linuxputtyconfig]
 
-4.  在选择“打开”之前，依次单击“连接”\>“SSH”\>“Auth”选项卡以选择您的密钥。在下面的屏幕快照中查看要填充的字段。
+4.  在选择“打开”之前，依次单击“连接”&gt;“SSH”&gt;“Auth”选项卡以选择您的密钥。在下面的屏幕快照中查看要填充的字段。
 
     ![linuxputtyprivatekey][1]
 
