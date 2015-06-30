@@ -6,8 +6,6 @@
 
 
 
-
-
 # 在 Azure 中持续交付云服务
 
 本文中所述过程向你演示如何设置对 Azure 云应用程序的持续交付。利用此过程，你可在每次代码签入后自动创建包并将包部署到 Azure。本文中介绍的包生成过程与 Visual Studio 中的 Package 命令等效，而发布步骤与 Visual Studio 中的 Publish 命令等效。本文包含用于创建生成服务器的方法以及 MSBuild 命令行语句和 Windows PowerShell 脚本，并演示了如何选择性地配置 Visual Studio Team Foundation Server - Team Build 定义以使用 MSBuild 命令和 PowerShell 脚本。可针对你的生成环境和 Azure 目标环境自定义此过程。
@@ -31,10 +29,10 @@
  无需在生成服务器上安装 Visual Studio。若要使用 Team Foundation 生成服务管理生成服务器，请按照 [Team Foundation 生成服务文档][]中的说明操作。
 
 1.  在生成服务器上，安装包含 MSBuild 的 [.NET Framework 4][]、[.NET Framework 4.5][] 或 [.NET Framework 4.5.2][]。
-2.  安装 [Azure 创作工具][]（根据你的生成服务器的处理器，查找 WindowsAzureAuthoringTools-x86.msi 或 WindowsAzureAuthoringTools-x64.msi）。旧版文件的文件名可能包含 WindowsAzure。
-3. 安装 [Azure 库][]（查找 MicrosoftAzureLibsForNet-x86.msi 或 MicrosoftAzureLibsForNet-x64.msi)。
-4.  将 Microsoft.WebApplication.targets 文件从 Visual Studio 安装复制到生成服务器中。在装有 Visual Studio 的计算机上，该文件位于目录 C:&#92;Program Files(x86)&#92;MSBuild&#92;Microsoft&#92;VisualStudio&#92;v11.0&#92;WebApplications（对于 Visual Studio 2013，为 v12.0）中。你应将该文件复制到生成服务器上的同一目录中。
-5.  安装 [Azure Tools for Visual Studio][]。查找用于生成 Visual Studio 2012 项目的 MicrosoftAzureTools.VS110.exe，用于生成 Visual Studio 2013 项目的 MicrosoftAzureTools.VS120.exe，和用于生成 Visual Studio 2015 预览项目的 MicrosoftAzureTools.VS140.exe。
+2.  安装 [Azure 创作工具][]（根据你的生成服务器的处理器，查找 `WindowsAzureAuthoringTools-x86.msi` 或 `WindowsAzureAuthoringTools-x64.msi`）。旧版文件的文件名可能包含 WindowsAzure。
+3. 安装 [Azure 库][]（查找 ```MicrosoftAzureLibsForNet-x86.msi``` 或 ```MicrosoftAzureLibsForNet-x64.msi```)。
+4.  将 `Microsoft.WebApplication.targets` 文件从 Visual Studio 安装复制到生成服务器中。在装有 Visual Studio 的计算机上，该文件位于目录 C:&#92;Program Files(x86)&#92;MSBuild&#92;Microsoft&#92;VisualStudio&#92;v11.0&#92;WebApplications（对于 Visual Studio 2013，为 v12.0）中。你应将该文件复制到生成服务器上的同一目录中。
+5.  安装 [Azure Tools for Visual Studio][]。查找用于生成 Visual Studio 2012 项目的 `MicrosoftAzureTools.VS110.exe`，用于生成 Visual Studio 2013 项目的 `MicrosoftAzureTools.VS120.exe`，和用于生成 Visual Studio 2015 预览项目的 `MicrosoftAzureTools.VS140.exe`。
 
 <h2><a name="step2"> </a>步骤 2：使用 MSBuild 命令生成包</h2>
 
@@ -169,8 +167,7 @@
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    或者，可以导出带私钥的证书文件 PFX，并使用Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解更多信息：
-    [http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][].
+    或者，可以导出带私钥的证书文件 PFX，并使用Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解[更多信息](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx).
 
     **升级部署与删除部署 -&gt; 新建部署**
 
@@ -253,27 +250,22 @@
     2.在 If 语句的 Then 事例中，添加一个新的 Sequence 活动。将显示名称设置为"Start publish"
 
     3.在 Start publish 序列仍处于选定状态的情况下，在工作流设计器的变量选项卡中将以下一系列新变量作为单独的行项添加。所有变量应具有 Variable type =String 和 Scope=Start publish。这两个值将用于将参数从生成定义流入工作流中，然后用于调用发布脚本。
+        - String 类型的 SubscriptionDataFilePath
+        - String 类型的 PublishScriptFilePath
+   ![][4]
+    4.  如果你使用的是 TFS 2012 或更低版本，请在新序列的开头添加一个 `ConvertWorkspaceItem` 活动。如果你使用的是 TFS 2013 或更高版本，请在新序列的开头添加一个 `GetLocalPath` 活动。对于 ConvertWorkspaceItem，请按如下所示设置属性：`Direction=ServerToLocal, DisplayName='Convert publish script filename', Input=' PublishScriptLocation', Result='PublishScriptFilePath', Workspace='Workspace'`。对于 `GetLocalPath` 活动，请将属性 IncomingPath 设置为"PublishScriptLocation"，将 Result 设置为"PublishScriptFilePath"。此活动将发布脚本的路径从 TFS 服务器位置（如果适用）转换为标准本地磁盘路径。
 
-        -   String 类型的 SubscriptionDataFilePath
-
-        -   String 类型的 PublishScriptFilePath
-
-            ![][4]
-
-    4.  如果你使用的是 TFS 2012 或更低版本，请在新序列的开头添加一个 ConvertWorkspaceItem 活动。如果你使用的是 TFS 2013 或更高版本，请在新序列的开头添加一个 GetLocalPath 活动。对于 ConvertWorkspaceItem，请按如下所示设置属性：Direction=ServerToLocal, DisplayName='Convert publish script filename', Input=' PublishScriptLocation', Result='PublishScriptFilePath', Workspace='Workspace'。对于 GetLocalPath 活动，请将属性 IncomingPath 设置为"PublishScriptLocation"，将 Result 设置为"PublishScriptFilePath"。此活动将发布脚本的路径从 TFS 服务器位置（如果适用）转换为标准本地磁盘路径。
-
-    5.  如果你使用的是 TFS 2012 或更低版本，请在新序列的末尾添加另一个 ConvertWorkspaceItem 活动。Direction=ServerToLocal，DisplayName='Convert subscription filename'，Input=' SubscriptionDataFileLocation'，Result= 'SubscriptionDataFilePath'，Workspace='Workspace'。如果你使用的是 TFS 2013 或更高版本，请添加另一个 GetLocalPath。IncomingPath='SubscriptionDataFileLocation' 和 Result='SubscriptionDataFilePath'。
+    5.  如果你使用的是 TFS 2012 或更低版本，请在新序列的末尾添加另一个 ConvertWorkspaceItem 活动。`Direction=ServerToLocal，DisplayName='Convert subscription filename'，Input=' SubscriptionDataFileLocation'，Result= 'SubscriptionDataFilePath'，Workspace='Workspace'`。如果你使用的是 TFS 2013 或更高版本，请添加另一个 `GetLocalPath`。`IncomingPath='SubscriptionDataFileLocation'` 和 `Result='SubscriptionDataFilePath'`。
 
     6.  在新序列的末尾添加一个 InvokeProcess 活动。此活动使用生成定义传入的参数调用 PowerShell.exe。
 
-        1.  Arguments = String.Format(" -File ""{0}"" -serviceName {1} -storageAccountName {2} -packageLocation ""{3}"" -cloudConfigLocation ""{4}"" -subscriptionDataFile ""{5}"" -selectedSubscription {6} -environment ""{7}""", PublishScriptFilePath, ServiceName, StorageAccountName, PackageLocation, CloudConfigLocation, SubscriptionDataFilePath, SubscriptionName, Environment)
+        1.  `Arguments = String.Format(" -File ""{0}"" -serviceName {1} -storageAccountName {2} -packageLocation ""{3}"" -cloudConfigLocation ""{4}"" -subscriptionDataFile ""{5}"" -selectedSubscription {6} -environment ""{7}""", PublishScriptFilePath, ServiceName, StorageAccountName, PackageLocation, CloudConfigLocation, SubscriptionDataFilePath, SubscriptionName, Environment)`
 
-        2.  DisplayName = Execute publish script
+        2.  `DisplayName = Execute publish script`
 
-        3.  FileName = "PowerShell" (include the quotes)
+        3.  `FileName = "PowerShell" (include the quotes)`
 
-        4.  OutputEncoding=
-    System.Text.Encoding.GetEncoding(System.Globalization.CultureInfo.InstalledUICulture.TextInfo.OEMCodePage)
+        4.  `OutputEncoding=System.Text.Encoding.GetEncoding(System.Globalization.CultureInfo.InstalledUICulture.TextInfo.OEMCodePage)`
 
     7.  在 InvokeProcess 的"处理标准输出"部分文本框中，将文本框值设置为"data"。这是一个用于存储标准输出数据的变量。
 
@@ -362,7 +354,7 @@
 
 ### <a name="script"> </a>PublishCloudService.ps1 脚本模板
 
-<pre>
+```powershell
 Param(  $serviceName = "",
         $storageAccountName = "",
         $packageLocation = "",
@@ -562,7 +554,7 @@ $deploymentUrl = $deployment.Url
 
 Write-Output "$(Get-Date -f $timeStampFormat) - Created Cloud Service with URL $deploymentUrl."
 Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy script finished."
-</pre>
+```
 
 ## 后续步骤
 
