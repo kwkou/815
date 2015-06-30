@@ -1,4 +1,4 @@
-<properties linkid="script-xplat-intro" urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="Azure 跨平台命令行接口" title="Azure 跨平台命令行接口" metaKeywords="Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli" description="安装和配置 Azure 跨平台命令行接口以管理 Azure 服务" metaCanonical="http://www.windowsazure.cn/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="51Aspx" authors="larryfr" services="Haifeng Liu" />
+﻿<properties linkid="script-xplat-intro" urlDisplayName="Azure Cross-Platform Command-Line Interface" pageTitle="Azure 跨平台命令行接口" title="Azure 跨平台命令行接口" metaKeywords="Azure cross-platform command-line interface, Azure command-line, azure command-line, azure cli" description="安装和配置 Azure 跨平台命令行接口以管理 Azure 服务" metaCanonical="http://www.windowsazure.cn/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="51Aspx" authors="larryfr" services="Haifeng Liu" />
 <tags ms.service="Haifeng Liu"
     ms.date="03/10/2015"
     wacn.date="04/11/2015"
@@ -84,7 +84,7 @@ xplat-cli 有两种安装方法：使用适用于 Windows 和 OS X 的安装程�
 
     > [WACOM.NOTE] login 方法仅适用于组织帐户。组织帐户是指受组织管理、并在组织 Azure Active Directory 租户中定义的用户。如果您当前没有组织帐户，且已使用 Microsoft 帐户登录到 Azure 订阅，则您可以按照以下步骤轻松地创建一个组织帐户。
     >
-    > 1.  登录到“Azure 管理门户”[][]，然后单击“Active Directory”。
+    > 1.  登录到“Azure 管理门户”，然后单击“Active Directory”。
     >
     > 2.  如果目录不存在，请选择“创建目录”，并提供所需的信息。
     >
@@ -394,7 +394,6 @@ xplat-cli 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
   [其他资源]: #additional-resources
   [Windows 安装程序]: http://go.microsoft.com/fwlink/?LinkID=275464&clcid=0x409
   [OS X 安装程序]: http://go.microsoft.com/fwlink/?LinkId=252249
-  
   [以组织身份注册 Windows Azure]: /zh-cn/documentation/articles/sign-up-organization/
   [“基于帐户的身份验证和基于证书的身份验证之间的区别是什么”]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh531793.aspx#BKMK_AccountVCert
   [结合使用 Azure 跨平台命令行接口和 Resource Manager]: /zh-cn/documentation/articles/xplat-cli-azure-resource-manager/

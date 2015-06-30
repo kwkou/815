@@ -47,9 +47,9 @@
 
     **常用预置**
 
-    -   在 PC/Mac 上(通过 Flash/Silverlight)播放\*\*。此预设将生成具有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种位速率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
-    -   通过 HTML5 (IE/Chrome/Safari)播放\*\*。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
-    -   在 iOS 设备和 PC/Mac 上播放\*\*。此预设将生成具有与平滑流式处理资产相同特征的资产（如上所述），但该资产采用的是可用于将 Apple HLS 流传递到 iOS 设备的格式。
+    -   在 PC/Mac 上(通过 Flash/Silverlight)播放。此预设将生成具有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种位速率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
+    -   通过 HTML5 (IE/Chrome/Safari)播放。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
+    -   在 iOS 设备和 PC/Mac 上播放。此预设将生成具有与平滑流式处理资产相同特征的资产（如上所述），但该资产采用的是可用于将 Apple HLS 流传递到 iOS 设备的格式。
 
     **高级预置**
 
@@ -63,7 +63,7 @@
 
 在完成编码后，你的视图应类似于以下屏幕截图。
 
-![PortalViewUploadCompleted][portaloverview]
+![PortalViewUploadCompleted](./media/media-services-manage-content/media-services-encrypt-content)
 
 如果在完成编码后未更新文件大小值，请按“同步元数据”按钮。这会将输出资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
 
