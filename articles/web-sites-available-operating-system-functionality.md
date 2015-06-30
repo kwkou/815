@@ -142,4 +142,4 @@ Web 应用程序可以生成和运行任意代码。允许 Web 应用程序执�
   [代码执行、处理和内存]: #Code
   [诊断日志和事件]: #Diagnostics
   [注册表访问]: #RegistryAccess
-  []: http://www.iis.net/learn/manage/configuring-security/application-pool-identities
+  [ ]: http://www.iis.net/learn/manage/configuring-security/application-pool-identities

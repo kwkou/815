@@ -1,4 +1,4 @@
-﻿<properties pageTitle="流式传输日志和控制台" description="Streaming logs and console overview" title="流式传输日志和控制台" authors="adamab" />
+<properties pageTitle="流式传输日志和控制台" description="Streaming logs and console overview" title="流式传输日志和控制台" authors="adamab" />
 <tags ms.service=""
     ms.date="11/17/2014"
     wacn.date="04/11/2015"

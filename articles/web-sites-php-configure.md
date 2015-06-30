@@ -75,7 +75,7 @@ PHP 5.5 也可用，但它在默认情况下不启用。若要启用它，请执
 
 Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。你提供的运行时可由同样是你提供的`php.ini` 文件来配置。若要在 Azure 网站中使用自定义 PHP 运行时，请执行下列步骤。
 
-1.  获取非线程安全、VC9 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[][]<http://windows.php.net/download/></a>。可在此处的存档中找到旧版本：[][1]<http://windows.php.net/downloads/releases/archives/></a>。
+1.  获取非线程安全、VC9 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[http://windows.php.net/download/][ ]。可在此处的存档中找到旧版本：[http://windows.php.net/downloads/releases/archives/][1]。
 2.  修改用于你的运行时的`php.ini` 文件。请注意，Azure 网站将忽略作为任何仅在系统级别使用的指令的配置设置。（有关仅在系统级别使用的指令的信息，请参阅 [php.ini 指令的列表][php.ini 指令的列表]）。
 3.  （可选）将扩展添加到 PHP 运行时并在`php.ini` 文件中启用这些扩展。
 4.  将`bin` 目录添加到根目录，并将包含 PHP 运行时的目录置于根目录中（例如， `bin\php`）。
@@ -115,7 +115,7 @@ Azure 网站可以使用提供的 PHP 运行时（而非默认 PHP 运行时）�
   [.user.ini]: http://www.php.net/manual/en/configuration.file.per-user.php
   [ini\_set()]: http://www.php.net/manual/en/function.ini-set.php
   [启用应用程序设置中的扩展]: ./media/web-sites-php-configure/app-settings.png
-  []: http://windows.php.net/download/
+  [ ]: http://windows.php.net/download/
   [1]: http://windows.php.net/downloads/releases/archives/
   [指定处理程序映射中的处理程序]: ./media/web-sites-php-configure/handler-mappings.png
   [在 Azure 中配置、监视和缩放网站]: /manage/services/web-sites/

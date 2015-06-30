@@ -25,7 +25,6 @@
 -   [其他功能][其他功能]
 
 <a name="scalingsharedorbasic"></a>
-<!-- ===================================== -->
 
 ## 缩放到“共享”或“基本”计划模式
 
@@ -204,7 +203,8 @@
 
 
 
-<!-- LINKS --> <!-- IMAGES -->
+
+
 
   [什么是 Web 托管计划？]: /zh-cn/documentation/articles/web-sites-web-hosting-plan-overview/
   [Azure 网站 Web 托管计划深入概述]: /zh-cn/Documentation/Articles/azure-web-sites-web-hosting-plans-in-depth-overview/
@@ -214,8 +214,9 @@
   [缩放到“标准”计划模式]: #scalingstandard
   [缩放连接到您的网站的 SQL Server 数据库]: #ScalingSQLServer
   [开发人员功能]: #devfeatures
-  [其他功能]: #OtherFeatures
-  []: https://manage.windowsazure.cn/
+  [其他功能]: #OtherFeatures  
+  
+  [ ]: https://manage.windowsazure.cn/
   [选择网站]: ./media/web-sites-scale/01SelectWebSite.png
   [“缩放”选项卡]: ./media/web-sites-scale/02SelectScaleTab.png
   [选择 Web 托管计划]: ./media/web-sites-scale/03aChooseWHP.png

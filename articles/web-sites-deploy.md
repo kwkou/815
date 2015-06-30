@@ -8,12 +8,6 @@
 
 您具有许多可用于将自己的内容部署到 Azure 网站的选项。本主题将提供每个选项的简要概述和指向详细信息的链接。
 
--   [从云托管的源代码管理系统进行部署][从云托管的源代码管理系统进行部署]
-
-    -   Visual Studio Online (VSO)
-
-<!--     * Repository web sites using Git     * Repository web sites using Mercurial     * Dropbox  -->
-
 -   [从 IDE 进行部署][从 IDE 进行部署]
 
     -   Visual Studio
@@ -23,8 +17,6 @@
 
     -   Team Foundation Server (TFS)
 
-<!--     * On-premises Git or Mercurial repositories  -->
-
 -   [使用命令行工具和 Azure REST 管理 API][使用命令行工具和 Azure REST 管理 API]
 
     -   MSBuild
@@ -33,41 +25,6 @@
     -   .NET 管理 API
     -   跨平台命令行 (xpat-cli)
     -   Web 部署命令行
-
-## <a name="cloud"></a>从云托管的源代码管理系统进行部署
-
-部署网站的最佳方法是设置与[源代码管理系统][源代码管理系统]集成的[持续交付工作流][持续交付工作流]。自动化不仅使开发过程更高效，还可以使您的备份和还原流程更可控、更可靠。
-
-如果您尚未设置源代码管理，最简单的方法是从使用云托管的源代码管理系统开始。
-
-### <a name="vso"></a>Visual Studio Online (VSO)
-
-[Visual Studio Online][Visual Studio Online]（以前称为 Team Foundation Service）是 Microsoft 针对源代码管理和团队协作的基于云的解决方案。该服务对最多 5 个开发人员的团队免费。您可以设置 VSO 以向 Azure 网站持续交付，并且您的存储库可以使用 [Git 或 TFVC][Visual Studio Online]。
-
-有关详细信息，请参阅以下资源：
-
--   [使用 VSO 和 TFVC 向 Azure 持续交付][使用 VSO 和 TFVC 向 Azure 持续交付]。分步教程演示如何使用 TFVC 设置从 VSO 到 Azure 网站的持续交付。TFVC 是 VSO 中的集中式源代码管理选项，与分布式源代码管理选项 Git 截然相反。
--   [使用 VSO 与 TFVC 向 Azure 持续交付][使用 VSO 与 TFVC 向 Azure 持续交付]。所介绍的方案类似于前面的教程，但本教程还遍历了注册 VSO 帐户和将项目签入到源代码管理的步骤。本教程主要针对云服务所编写，因此它的部分内容不适用于网站。
-
-### <a name="git"></a>使用 Git 的存储库网站
-
-[Git][Visual Studio Online] 是一种流行的分布式源代码管理系统。Azure 具有的内置功能可轻松实现从流行的基于 Web 的存储库网站（存储 Git 存储库，包括 [GitHub][GitHub]）自动部署到 Azure 网站。使用 Git 进行部署的一个优点是比较容易回滚到以前的部署（一旦有必要）。
-
-有关详细信息，请参阅以下资源：
-
--   [从源代码管理发布到 Azure 网站][从源代码管理发布到 Azure 网站]。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub 进行 Git 存储库的连续部署。
--   [Git、Mercurial 的 Azure 论坛][Git、Mercurial 的 Azure 论坛]。
-
-### <a name="mercurial"></a>使用 Mercurial 的存储库网站
-
-如果将 [Mercurial][Mercurial] 用作源代码管理系统，并将存储库存储在 [CodePlex][CodePlex] 或 [BitBucket][BitBucket] 中，则可以使用 Azure 网站中的内置功能来自动部署内容。
-
-有关如何使用 Mercurial 进行部署的信息，请参阅以下资源：
-
--   [从源代码管理发布到 Azure 网站][从源代码管理发布到 Azure 网站]。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
--   [Git、Mercurial 的 Azure 论坛][Git、Mercurial 的 Azure 论坛]。
-
-<!-- ###<a name="dropbox"></a>DropBox  [DropBox](https://www.dropbox.com) is not a source control system, but if you store your source code in DropBox you can automate deployment from your DropBox account.  * [Deploy To Windows Azure Using Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). How to use the Azure Management Portal to set up DropBox deployment. * [DropBox and Azure Web Sites](http://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Dropbox-Deployment-to-Windows-Azure-Web-Sites). This video walks through the process of connecting a DropBox folder to an Azure Web Site, and shows how quickly you can get a web site up and running or maintain it using simple drag-and-drop deployment. * [Azure Forum for Git, Mercurial, and DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azuregit). -->
 
 ## <a name="ide"></a>从 IDE 进行部署
 

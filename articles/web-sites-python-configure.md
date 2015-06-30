@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-tutorials-web-sites-configuration" urlDisplayName="Configuring Python with Azure Web Sites" pageTitle="Configuring Python with Azure Web Sites" metaKeywords="" description="This tutorial describes options for authoring and configuring a basic Web server Gateway Interface (WSGI) compliant Python application on Azure Web Sites." metaCanonical="" services="web-sites" documentationCenter="Python" title="Configuring Python with Azure Web Sites" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -16,7 +16,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 
 ## 网站创建
 
-本教程使用现有 Azure 订阅以及对 Azure 管理门户的访问权限。[][1]</manage/services/web-sites/how-to-create-websites/></a> 上提供了有关创建网站的详细指南。
+本教程使用现有 Azure 订阅以及对 Azure 管理门户的访问权限。  
 
 简言之，如果你没有现成的网站，则可以从 Azure 管理门户创建一个。选择“网站”功能并使用“快速创建”选项，然后为你的网站指定 URL。
 
@@ -131,7 +131,7 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 ![][5]
 
   [PEP 3333]: http://www.python.org/dev/peps/pep-3333/
-  [1]: /manage/services/web-sites/how-to-create-websites
+  [1]: /documentation/articles/web-sites-php-web-site-gallery
   [0]: ./media/web-sites-python-configure/configure-python-create-website.png
   [2]: ./media/web-sites-python-configure/configure-python-git.png
   [3]: ./media/web-sites-python-configure/configure-python-handler-mapping.png

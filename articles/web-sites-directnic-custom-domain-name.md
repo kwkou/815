@@ -1,4 +1,4 @@
-﻿<properties title="Learn how to configure an Azure web site to use a domain name registered with Directnic" pageTitle="Configure a Directnic domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, Directnic" description="Learn how to configure an Azure web site to use a domain name registered with Directnic" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
+<properties title="Learn how to configure an Azure web site to use a domain name registered with Directnic" pageTitle="Configure a Directnic domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, Directnic" description="Learn how to configure an Azure web site to use a domain name registered with Directnic" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
 <tags ms.service="web-sites"
     ms.date="12/10/2014"
     wacn.date="04/11/2015"
@@ -50,7 +50,7 @@
 
 4.  通过填写“类型”、“名称”和“数据”字段，添加 DNS 记录。完成时，单击“添加记录”按钮。
 
-    ![][]
+    ![][ ]
 
     -   添加 CNAME 记录时，必须将“名称”字段设置为你要使用的子域。例如，**www**。必须将“数据”字段设置为你的 Azure 网站的 **.chinacloudsites.cn** 域名。例如 **contoso.chinacloudsites.cn**。
 
@@ -92,5 +92,5 @@
   [modes]: ../includes/custom-dns-web-site-modes.md
   [Directnic 服务菜单]: .\media\web-sites-directnic-custom-domain-name\Directnic_DomainMenu.png
   [服务面板]: .\media\web-sites-directnic-custom-domain-name\Directnic_DomainManagement.png
-  []: .\media\web-sites-directnic-custom-domain-name\Directnic_DNS.png
+  [ ]: .\media\web-sites-directnic-custom-domain-name\Directnic_DNS.png
   [1]: ../includes/custom-dns-web-site-enable-on-web-site.md

@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
+<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -172,7 +172,7 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
     a. 从“工具”菜单中选择“程序包管理器”控制台，然后选择“库程序包管理器”。
 
-        ![Library package manager][jquery1]
+		![Library package manager][jquery1]
 
     b. 在“程序包管理器控制台”中，输入 *Install-Package jQuery.Mobile.MVC -version 1.0.0*
 

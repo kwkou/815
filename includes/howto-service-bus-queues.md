@@ -62,7 +62,7 @@
 
 ###从服务器资源管理器中获取管理凭据
 
-若要使用 Visual Studio 而不是管理门户获取连接信息，请按照[此处](http://http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)描述的过程进行操作, 所述过程进行操作，详见 **从 Visual Studio 连接到 Azure**这一节。 当你登录到 Azure 时，服务器资源管理器中 **Microsoft Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。 右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
+若要使用 Visual Studio 而不是管理门户获取连接信息，请按照[此处](http://http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)描述的过程进行操作, 所述过程进行操作，详见 **从 Visual Studio 连接到 Azure**这一节。 当你登录到 Azure 时，服务器资源管理器中 **Windows Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。 右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
 
 记下 **SharedAccessKey** 值，或将其复制到剪贴板：
 
