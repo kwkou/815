@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-multi-tier-web-site-4-worker-role-a" pageTitle="Azure 云服务教程：辅助角色和 Azure 存储表、队列、Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-4-worker-role-a" pageTitle="Azure 云服务教程：辅助角色和 Azure 存储表、队列、Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="12/07/2014"
     wacn.date="04/11/2015"
@@ -28,7 +28,7 @@
 -   [测试辅助角色 A][测试辅助角色 A]
 -   [后续步骤][后续步骤]
 
-## <a name="addref"></a><span class="short-header">添加项目引用</span>添加对 Web 项目的引用
+## <a name="addref"></a>添加对 Web 项目的引用
 
 你需要对 Web 项目的引用，因为实体类是在该项目中定义的。你需要在辅助角色 B 中使用相同的实体类在应用程序所使用的 Azure 表中进行数据读写操作。
 
@@ -42,7 +42,7 @@
 
     ![将引用添加到 MvcWebRole][将引用添加到 MvcWebRole]
 
-## <a name="addref2"></a><span class="short-header">添加 SCL 1.7 引用</span>添加对 SCL 1.7 程序集的引用
+## <a name="addref2"></a>添加对 SCL 1.7 程序集的引用
 
 > [WACOM.NOTE] 如果你已安装 SDK 2.3 或更高版本，请跳过此步骤。
 
@@ -60,7 +60,7 @@
 
 5.  在**“引用管理器”**对话框中，单击**“确定”**。
 
-## <a name="addmodel"></a><span class="short-header">添加 SendEmail 模型</span>添加 SendEmail 模型
+## <a name="addmodel"></a>添加 SendEmail 模型
 
 辅助角色 A 在 `Message` 表中创建 `SendEmail` 行，辅助角色 B 则读取这些行，以便获取发送电子邮件所需的信息。下图显示了 `Message` 表中两个 `Message` 行和三个 `SendEmail` 行的部分属性。
 
@@ -96,7 +96,7 @@
 
     此处的代码类似于其他模型类，只是没有包括 DataAnnotations 属性，因为没有与该模型关联的 UI -- 它不用在 MVC 控制器中。
 
-## <a name="addcode"></a><span class="short-header">添加辅助角色代码</span>添加辅助角色启动时运行的代码
+## <a name="addcode"></a>添加辅助角色启动时运行的代码
 
 1.  在 WorkerRoleA 项目中，打开 *WorkerRole.cs* 并检查代码。
 
@@ -512,7 +512,7 @@
             messageTable.Execute(deleteOperation);
         }
 
-## <a name="configure"></a><span class="short-header">配置存储</span>配置存储服务连接字符串
+## <a name="configure"></a><span class="short-header">配置存储服务连接字符串</span>
 
 如果你在为 Web 角色配置存储帐户凭据的时候尚未为辅助角色 A 这样做，则请现在就这样做。
 
@@ -534,7 +534,7 @@
 
 9.  设置诊断连接字符串。你可以将相同的存储帐户用于诊断连接字符串，但最好是将不同的存储帐户用于跟踪（诊断）信息。
 
-## <a name="testing"></a><span class="short-header">测试</span>测试辅助角色 A
+## <a name="testing"></a><span class="short-header">测试辅助角色 A</span>
 
 1.  通过按 F5 运行应用程序。
 
@@ -580,7 +580,7 @@
 
     ![消息表中的 SendEmail 行][消息表中的 SendEmail 行]
 
-## <a name="nextsteps"></a><span class="short-header">后续步骤</span>后续步骤
+## <a name="nextsteps"></a><span class="short-header">后续步骤</span>
 
 你现在已构建辅助角色 A 并已验证它创建了辅助角色 B 发送电子邮件所需的队列消息和表行。在[下一教程][下一教程]中，你将构建和测试辅助角色 B。
 
