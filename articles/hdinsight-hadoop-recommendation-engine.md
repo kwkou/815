@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-recommendation-engine-using-mahout" urlDisplayName="Hadoop Recommendation Engine" pageTitle="使用 Apache Mahout 的简单推荐引擎 (.NET) | Azure" metaKeywords="Azure Apache Mahout, Azure recommendation example, Azure recommendation tutorial, Azure recommendation engine" description="A tutorial that teaches how to use the Apache Mahout recommendation engine with Azure to create song suggestions based on listening habits." disqusComments="1" umbracoNaviHide="1" title="Simple recommendation engine using Apache Mahout" authors="jgao" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-recommendation-engine-using-mahout" urlDisplayName="Hadoop Recommendation Engine" pageTitle="使用 Apache Mahout 的简单推荐引擎 (.NET) | Azure" metaKeywords="Azure Apache Mahout, Azure recommendation example, Azure recommendation tutorial, Azure recommendation engine" description="A tutorial that teaches how to use the Apache Mahout recommendation engine with Azure to create song suggestions based on listening habits." disqusComments="1" umbracoNaviHide="1" title="Simple recommendation engine using Apache Mahout" authors="jgao" manager="paulettm" editor="cgronlun" />
 <tags ms.service=""
     ms.date="12/17/2014"
     wacn.date="04/11/2015"
@@ -42,7 +42,7 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
 如果你未安装 Visual Studio 2010，请跳过此步骤并转到“运行 Mahout 作业”一节，以获取预生成的版本。
 
-首先启动 Visual Studio 2010。在 Visual Studio 中，选择“文件”-\>“新建”-\>“项目” 。在“已安装的模板” 窗格中的 **Visual C\#** 节点内，选择“窗口” 类别，然后从列表中选择“控制台应用程序” 。将项目命名为“ConvertToMahoutInput”，然后单击“确定” 按钮。
+首先启动 Visual Studio 2010。在 Visual Studio 中，选择“文件”-&gt;“新建”-&gt;“项目” 。在“已安装的模板” 窗格中的 **Visual C#** 节点内，选择“窗口” 类别，然后从列表中选择“控制台应用程序” 。将项目命名为“ConvertToMahoutInput”，然后单击“确定” 按钮。
 
 ![创建控制台应用程序][]
 
@@ -132,13 +132,13 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
 5.  从[此链接][数据集]下载示例数据。下载完成后，打开 **train\_triplets.txt.zip** 并提取 **train\_triplets.txt**。
 
-    运行此实用程序时，在 **train\_triplets.txt** 的位置附带一个命令行参数。为此，请右键单击**解决方案资源管理器**中的 **ConvertToMahoutInput** 项目节点，然后选择“属性” 。在项目属性页上，选择左侧的“调试” 选项卡，并将 \<localpath\>train\_triplets.txt 的路径添加到“命令行参数” 文本框中：
+    运行此实用程序时，在 **train\_triplets.txt** 的位置附带一个命令行参数。为此，请右键单击**解决方案资源管理器**中的 **ConvertToMahoutInput** 项目节点，然后选择“属性” 。在项目属性页上，选择左侧的“调试” 选项卡，并将 &lt;localpath&gt;train\_triplets.txt 的路径添加到“命令行参数” 文本框中：
 
     ![设置命令行参数][]
 
 ### 设置命令行参数
 
--   按 **F5** 运行程序。完成后，从此项目的保存位置打开 **bin\\Debug** 文件夹并查看该实用程序的输出。你会找到 users.txt 和 mInput.txt
+-   按 **F5** 运行程序。完成后，从此项目的保存位置打开 **bin&#92;Debug** 文件夹并查看该实用程序的输出。你会找到 users.txt 和 mInput.txt
 
 ## 安装 Mahout
 
@@ -158,19 +158,19 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
 ### 将 Mahout 复制到头节点
 
-1.  最后，在复制过程完成后右键单击 zip 文件，将 Mahout 分发提取到 C:\\apps\\dist。现在你已将 Mahout 安装在 C:\\apps\\dist\\mahout-distriution-0.7 中。
+1.  最后，在复制过程完成后右键单击 zip 文件，将 Mahout 分发提取到 C:&#92;apps&#92;dist。现在你已将 Mahout 安装在 C:&#92;apps&#92;dist&#92;mahout-distriution-0.7 中。
 
-2.  为简单起见，将该文件夹重命名为 c:\\apps\\dist\\mahout-0.7。
+2.  为简单起见，将该文件夹重命名为 c:&#92;apps&#92;dist&#92;mahout-0.7。
 
 ### 运行 Mahout 作业
 
-1.  将 **bin\\Debug** 文件夹中的 **mInput.txt** 文件复制到远程群集上的 **c:\\**。复制该文件后，将其解压缩。按上一节所述，将文件复制到远程 RDP 会话，方法是：在本地计算机上选择文件后按 control-C，然后在“RDP 会话”窗口上按 control-v。
+1.  将 **bin&#92;Debug** 文件夹中的 **mInput.txt** 文件复制到远程群集上的 **c:&#92;**。复制该文件后，将其解压缩。按上一节所述，将文件复制到远程 RDP 会话，方法是：在本地计算机上选择文件后按 control-C，然后在“RDP 会话”窗口上按 control-v。
 
-2.  创建一个文件，其中包含你将为其生成推荐的用户的 ID。为此，只需在 **c:\\** 中创建一个名为 **users.txt** 的文本文件，其中包含单个用户的 ID。
+2.  创建一个文件，其中包含你将为其生成推荐的用户的 ID。为此，只需在 **c:&#92;** 中创建一个名为 **users.txt** 的文本文件，其中包含单个用户的 ID。
 
 **说明**
 
-你可以通过将每个用户的 ID 放在单独的行上来为更多的用户生成推荐。如果你在生成 mInput.txt 和 users.txt 时遇到问题，可以在此 github [存储库][]中下载预生成的版本。 将所有内容下载为一个 [zip 文件][]是最方便的。找到 users.txt 和 mInput.txt，并将它们复制到远程群集上的文件夹 c:\\ 中
+你可以通过将每个用户的 ID 放在单独的行上来为更多的用户生成推荐。如果你在生成 mInput.txt 和 users.txt 时遇到问题，可以在此 github [存储库][]中下载预生成的版本。 将所有内容下载为一个 [zip 文件][]是最方便的。找到 users.txt 和 mInput.txt，并将它们复制到远程群集上的文件夹 c:&#92; 中
 
 此时，你应打开 Hadoop 终端窗口，并导航到包含 users.txt 和 mInput.txt 的文件夹。
 
@@ -203,7 +203,7 @@ Apache Mahout 提供基于项目的协作筛选的内置实现。此方法广泛
 
         hadoop fs -copyToLocal output/part-r-00000 c:\output.txt
 
-5.  从 **c:\\** 根目录文件夹打开 **output.txt** 文件并检查其内容。文件的结构如下所示：
+5.  从 **c:&#92;** 根目录文件夹打开 **output.txt** 文件并检查其内容。文件的结构如下所示：
 
         user    [song:rating,song:rating, ...]
 

@@ -47,9 +47,9 @@
 3.	配置 APP1。 
 4.	配置 CLIENT1。
 
-如果你还没有 Azure 帐户，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个试用版。
+如果你还没有 Azure 帐户，可以在[试用 Azure](/pricing/1rmb-trial) 中注册一个试用版。
 
-> [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的试用版本、MSDN 订阅或付费订阅的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](/pricing/calculator/)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
+> [AZURE.NOTE] Azure 中的虚拟机在运行时会持续产生货币成本。此成本是针对你的试用版本、MSDN 订阅或付费订阅的。有关正在运行的 Azure 虚拟机的成本的详细信息，请参阅[虚拟机定价详细信息](/home/features/virtual-machines/#price)和 [Azure 定价计算器](/pricing/calculator)。若要控制成本，请参阅[将 Azure 中的测试环境虚拟机的成本降至最低](#costs)。
 
 ## 阶段 1：创建 Azure 虚拟网络
 
@@ -237,7 +237,7 @@ CLIENT1 在 Contoso Intranet 中充当典型笔记本电脑、平板电脑或台
 4.	在"开始"屏幕中，单击**"Internet Explorer"**，然后单击**"确定"**。
 5.	在地址栏中，键入 **http://app1.corp.contoso.com/**，然后按 Enter。你应看到 APP1 的默认 Internet 信息服务网页。
 6.	在桌面任务栏上，单击"文件资源管理器"图标。
-7.	在地址栏中，键入 **\\\app1\Files**，然后按 Enter。
+7.	在地址栏中，键入 **&#92;\app1\Files**，然后按 Enter。
 8.	你应看到显示文件共享文件夹的内容的文件夹窗口。
 9.	在**"文件"**共享文件夹窗口中，双击 **Example.txt** 文件。你应看到 Example.txt 文件的内容。
 10.	关闭**"example.txt - 记事本"**和**"文件"**共享文件夹窗口。

@@ -8,7 +8,7 @@
 
 本主题说明如何从库或通过使用管理门户创建网站。
 
-有关如何将内容部署到您创建的 Windows Azure 网站的信息，请参见 [Windows Azure 网站](/zh-cn/documentation/services/web-sites/) 中的“部署”部分。
+有关如何将内容部署到您创建的 Windows Azure 网站的信息，请参见 [Windows Azure 网站](/zh-cn/documentation/services/web-sites) 中的“部署”部分。
 
 ## 目录##
 
@@ -21,7 +21,7 @@
 
 按照下列步骤操作可在 Windows Azure 中创建网站。
 	
-1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.cn/)。
+1. 登录到 [Windows Azure 管理门户](http://manage.windowsazure.cn)。
 
 2. 单击该管理门户左下角的“新建”图标。
 
@@ -68,5 +68,5 @@
 
 ##<a name="nextsteps"></a>后续步骤
 
-有关更多信息，请参见 [Windows Azure 网站](/zh-cn/documentation/services/web-sites/)。
+有关更多信息，请参见 [Windows Azure 网站](/zh-cn/documentation/services/web-sites)。
 

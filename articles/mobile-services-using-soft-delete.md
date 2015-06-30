@@ -97,7 +97,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
         }
     }
 
-若要了解有关使用.NET 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期的作业](/zh-cn/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/) 
+若要了解有关使用.NET 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期的作业](/zh-cn/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks) 
 
 
 
@@ -138,7 +138,7 @@ To include deleted records in query result in a script, set the "includeDeleted"
         }});
     }
 
-若要了解有关使用 JavaScript 后端移动服务的计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](/zh-cn/documentation/articles/mobile-services-schedule-recurring-tasks/)。
+若要了解有关使用 JavaScript 后端移动服务的计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](/zh-cn/documentation/articles/mobile-services-schedule-recurring-tasks)。
 
 
 

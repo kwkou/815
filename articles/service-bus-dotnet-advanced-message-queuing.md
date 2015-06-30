@@ -16,11 +16,11 @@
 
 <h2>Service Bus 入门</h2>
 
-此指南假定你已具有包含名为"queue1"的队列的 Service Bus 命名空间。如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建 Service Bus 命名空间和队列的详细信息，请参阅名为[如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/)的操作方法指南。
+此指南假定你已具有包含名为"queue1"的队列的 Service Bus 命名空间。如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建 Service Bus 命名空间和队列的详细信息，请参阅名为[如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues)的操作方法指南。
 
 <h2>下载 Service Bus SDK。</h2>
 
-AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以下位置的 NuGet 中下载最新的 SDK：[http://nuget.org/packages/WindowsAzure.ServiceBus/](http://nuget.org/packages/WindowsAzure.ServiceBus/)。
+AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以下位置的 NuGet 中下载最新的 SDK：[http://nuget.org/packages/WindowsAzure.ServiceBus/](http://nuget.org/packages/WindowsAzure.ServiceBus)。
 
 <h2>为 .NET 应用程序编码</h2>
 
@@ -300,6 +300,6 @@ AMQP 1.0 支持在 Service Bus SDK 2.1 版或更高版本中提供。可从以�
 * [Azure Service Bus 中的 AMQP 1.0 支持](http://aka.ms/pgr3dp)
 * [如何将 Java 消息服务 (JMS) API 用于 Service Bus 和 AMQP 1.0](http://aka.ms/ll1fm3)
 * [Service Bus AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/azure/jj841071.aspx)
-* [如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/)
+* [如何使用 Service Bus 队列](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues)
 
 [如何使用 Service Bus 队列]: /zh-cn/documentation/articles/service-bus-dotnet-how-to-use-queues/

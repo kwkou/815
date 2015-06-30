@@ -22,7 +22,7 @@
 
 # 对 Azure 存储服务的跨域资源共享 (CORS) 支持
 
-从版本 2013-08-15 开始，Azure 存储服务支持 Blob、表和队列服务的跨域资源共享 (CORS)。CORS 是一项 HTTP 功能，使在一个域中运行的 Web 应用程序能够访问另一个域中的资源。Web 浏览器实施一种称为[同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)的安全限制，以防止网页调用另一个域中的 API；CORS 提供了一种安全的方法来允许一个域（源域）调用另一个域中的 API。有关 CORS 的详细信息，请参阅 [CORS 规范](http://www.w3.org/TR/cors/)。
+从版本 2013-08-15 开始，Azure 存储服务支持 Blob、表和队列服务的跨域资源共享 (CORS)。CORS 是一项 HTTP 功能，使在一个域中运行的 Web 应用程序能够访问另一个域中的资源。Web 浏览器实施一种称为[同源策略](http://www.w3.org/Security/wiki/Same_Origin_Policy)的安全限制，以防止网页调用另一个域中的 API；CORS 提供了一种安全的方法来允许一个域（源域）调用另一个域中的 API。有关 CORS 的详细信息，请参阅 [CORS 规范](http://www.w3.org/TR/cors)。
 
 可以通过调用[设置 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452235.aspx)、[设置队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452232.aspx)和[设置表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx)，分别为每个存储服务设置 CORS 规则。为服务设置 CORS 规则后，将会对从另一个域对服务发出的经过正确身份验证的请求进行评估，以根据你指定的规则确定是否允许该请求。
 
@@ -32,7 +32,7 @@
 
 来自源域的 CORS 请求可能由两个单独的请求组成：
 
-- 预检请求，它查询服务施加的 CORS 限制。仅当请求方法是[简单方法](http://www.w3.org/TR/cors/)（即 GET、HEAD 或 POST）时，才需要预检请求。
+- 预检请求，它查询服务施加的 CORS 限制。仅当请求方法是[简单方法](http://www.w3.org/TR/cors)（即 GET、HEAD 或 POST）时，才需要预检请求。
 
 - 实际请求，它针对所需资源发出。
 
@@ -293,6 +293,6 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 [设置表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452240.aspx)
 
-[W3C 跨域资源共享规范](http://www.w3.org/TR/cors/)
+[W3C 跨域资源共享规范](http://www.w3.org/TR/cors)
 
 <!--HONumber=50-->

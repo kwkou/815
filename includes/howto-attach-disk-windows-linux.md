@@ -17,9 +17,9 @@
 
 您可以将数据磁盘附加到虚拟机以存储应用程序数据。数据磁盘是您可以使用自己的计算机在本地创建，或者使用 Azure 在云中创建的虚拟硬盘 (VHD)。您管理虚拟机中数据磁盘的方式与管理办公室中服务器的方式相同。
 
-您可以使用管理门户将包含数据的数据磁盘上载和附加到虚拟机，还可以从虚拟机使用的同一存储帐户添加空磁盘。本文介绍了这些过程。若要附加位于其他存储帐户中的空磁盘，请使用 Azure PowerShell 模块中提供的 [Add-AzureDataDisk](http://msdn.microsoft.com/library/azure/dn495298.aspx) cmdlet。 若要下载该模块，请参阅 [下载](http://www.windowsazure.cn/zh-cn/downloads/?sdk=net)页。
+您可以使用管理门户将包含数据的数据磁盘上载和附加到虚拟机，还可以从虚拟机使用的同一存储帐户添加空磁盘。本文介绍了这些过程。若要附加位于其他存储帐户中的空磁盘，请使用 Azure PowerShell 模块中提供的 [Add-AzureDataDisk](https://msdn.microsoft.com/zh-CN/library/azure/dn495298.aspx) cmdlet。 若要下载该模块，请参阅 [下载](http://www.windowsazure.cn/zh-cn/downloads/?sdk=net)页。
 
-添加磁盘时不会停止虚拟机。您可以附加到虚拟机中的磁盘数量是根据虚拟机的大小确定的。有关虚拟机和磁盘大小的信息，请参阅[针对 Azure 的虚拟机大小](http://msdn.microsoft.com/library/azure/dn197896.aspx)。
+添加磁盘时不会停止虚拟机。您可以附加到虚拟机中的磁盘数量是根据虚拟机的大小确定的。有关虚拟机和磁盘大小的信息，请参阅[针对 Azure 的虚拟机大小](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。
 
 > [WACOM.NOTE]
 > Azure 存储空间支持最大为 1 TB 的 Blob，其中可容纳最大虚拟大小为 999 GB 的 VHD。但是，如果您使用 Hyper-V 创建新的 VHD，则您指定的大小表示虚拟大小。若要在 Azure 中使用 VHD，请指定不超过 999 GB 的大小。
@@ -29,7 +29,7 @@
 
 每个虚拟机还附加有一个临时的本地  *resource disk*。由于资源磁盘上的数据可能不能在重新引导后持久存在，因此它通常由在虚拟机中运行的应用程序和进程用于数据的短暂和临时存储。它还用来为操作系统存储页面文件或交换文件。
 
-在 Windows 上，资源磁盘被标记为 **D:** 驱动器。在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请参阅 [Azure Linux 代理用户指南](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/) 获取详细信息。
+在 Windows 上，资源磁盘被标记为 **D:** 驱动器。在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请参阅 [Azure Linux 代理用户指南](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide) 获取详细信息。
 
 有关使用数据磁盘的更多信息，请参阅[管理磁盘和映像](http://msdn.microsoft.com/zh-cn/library/azure/jj672979.aspx)。
 

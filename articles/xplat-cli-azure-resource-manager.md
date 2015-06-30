@@ -1,4 +1,4 @@
-<properties linkid="script-xplat-intro" urlDisplayName="Windows Azure Cross-Platform Command-Line Interface" pageTitle="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" title="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" metaKeywords="windows azure cross-platform command-line interface Resource Manager, windows azure command-line resource manager, azure command-line resource manager, azure cli resource manager" description="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" metaCanonical="http://www.windowsazure.cn/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="Haifeng Liu" />
+﻿<properties linkid="script-xplat-intro" urlDisplayName="Windows Azure Cross-Platform Command-Line Interface" pageTitle="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" title="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" metaKeywords="windows azure cross-platform command-line interface Resource Manager, windows azure command-line resource manager, azure command-line resource manager, azure cli resource manager" description="结合使用 Windows Azure 跨平台命令行接口和 Resource Manager" metaCanonical="http://www.windowsazure.cn/zh-cn/script/xplat-cli-intro" umbracoNaviHide="0" disqusComments="1" editor="mollybos" manager="paulettm" documentationCenter="" solutions="" authors="larryfr" services="Haifeng Liu" />
 <tags ms.service="Haifeng Liu"
     ms.date="03/10/2015"
     wacn.date="04/11/2015"
@@ -145,7 +145,7 @@
 
         azure resource show MyGroupName MyWebSite Microsoft.Web/sites -o "2014-04-01" --json
 
-    > [WACOM.NOTE] 您可以通过使用 \> 字符将输出传输到文件，将 JSON 数据保存到文件。例如：
+    > [WACOM.NOTE] 您可以通过使用 &gt; 字符将输出传输到文件，将 JSON 数据保存到文件。例如：
     >
     > `azure resource show MyGroupName MyWebSite Micrsoft.Web/sites --json > myfile.json`
 

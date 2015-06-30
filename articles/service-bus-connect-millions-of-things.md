@@ -12,16 +12,16 @@
 - [事件中心](http://msdn.microsoft.com/zh-cn/library/dn789973.aspx)
 - [分片模式](http://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
 - [Service Bus 和 AMQP 1.0](http://msdn.microsoft.com/zh-cn/library/azure/jj841071.aspx)
-- [Service Bus 简介](/zh-cn/documentation/services/service-bus/)
+- [Service Bus 简介](/zh-cn/documentation/services/service-bus)
  
 ## 构建
 - [分区消息实体](http://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx)
-- [Service Bus 主题](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)
+- [Service Bus 主题](/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions)
 - [在 Linux 和 Windows 上将 Apache Qpid Proton C 与 Azure Service Bus 结合使用](http://msdn.microsoft.com/zh-cn/library/azure/dn235560.aspx)
  
 ## 流行
 - [互连设备的服务辅助通信](http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx)
 
 ## 相关服务
-- [Azure Active Directory](/zh-cn/documentation/services/identity/)
-- [云服务](/zh-cn/documentation/services/cloud-services/) 
+- [Azure Active Directory](/zh-cn/documentation/services/identity)
+- [云服务](/zh-cn/documentation/services/cloud-services) 

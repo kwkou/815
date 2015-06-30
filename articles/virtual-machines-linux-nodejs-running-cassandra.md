@@ -293,7 +293,7 @@ $CASS_HOME/lib 目录中创建符号链接，以便 Cassandra 启动脚本可以
 
 执行以下一系列操作，以捕获映像：
 #####1.取消设置 # # #
-使用命令"sudo waagent-deprovision + user"若要删除虚拟机实例的特定信息。有关，请参阅[如何捕获 Linux 虚拟机](/zh-cn/documentation/articles/virtual-machines-linux-capture-image/) 若要将用作模板更多详细信息在映像捕获进程上。 
+使用命令"sudo waagent-deprovision + user"若要删除虚拟机实例的特定信息。有关，请参阅[如何捕获 Linux 虚拟机](/zh-cn/documentation/articles/virtual-machines-linux-capture-image) 若要将用作模板更多详细信息在映像捕获进程上。 
 
 #####2：关闭虚拟机 # # #
 请确保虚拟机将突出显示，然后单击底部命令栏中的关闭链接。

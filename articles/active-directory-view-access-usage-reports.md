@@ -150,9 +150,9 @@
 
 | 事件类型										| 是否包括？		|
 | ----------------------								| ---------		|
-| 登录[访问面板](http://myapps.microsoft.com/)				| 是			|
-| 登录 [Azure 管理门户](https://manage.windowsazure.cn/)		| 是			|
-| 登录 [Microsoft Azure 门户](https://manage.windowsazure.cn/)			| 是			|
+| 登录[访问面板](http://myapps.microsoft.com)				| 是			|
+| 登录 [Azure 管理门户](https://manage.windowsazure.cn)		| 是			|
+| 登录 [Azure 门户](https://manage.windowsazure.cn)			| 是			|
 | 登录 [Office 365 门户](https://login.partner.microsoftonline.cn)			| 是			|
 | 登录本机应用程序，例如 Outlook（参阅以下例外情况）			| 是			|
 | 通过访问面板登录联合/设置的应用程序，例如 Salesforce	| 是			|

@@ -1,4 +1,4 @@
-﻿<properties title="Data Dependent Routing" pageTitle="分片弹性" description="介绍了分片弹性（可轻松向外缩放 Azure SQL Database 的能力）的概念并提供了相关示例。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Data Dependent Routing" pageTitle="分片弹性" description="介绍了分片弹性（可轻松向外缩放 Azure SQL Database 的能力）的概念并提供了相关示例。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, elasticity" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -7,7 +7,7 @@
 
 # 分片弹性 
 
-**分片弹性**允许应用程序开发人员根据需求动态增加和缩减数据库资源，使开发人员能够优化其应用程序的性能并最大程度地降低成本。Azure SQL Database 的弹性缩放与[基本、标准和高级服务层](http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx)的组合提供了非常有说服力的弹性方案。弹性缩放支持**横向缩放** - 一种设计模式，在该模式中，通过从**分片集**添加或删除数据库（在[弹性缩放术语](/documentation/articles/sql-database-elastic-scale-glossary/)中称为"分片"）来增加或缩减容量。类似地，SQL Database 服务层提供了**纵向缩放**功能，其中单个数据库的资源可以向上或向下缩放以相应地满足需求。单个分片的纵向缩放和多个分片的横向缩放共同向应用程序开发人员提供了非常灵活的环境，可对该环境进行缩放以满足性能、容量和成本优化需求。
+**分片弹性**允许应用程序开发人员根据需求动态增加和缩减数据库资源，使开发人员能够优化其应用程序的性能并最大程度地降低成本。Azure SQL Database 的弹性缩放与[基本、标准和高级服务层](http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx)的组合提供了非常有说服力的弹性方案。弹性缩放支持**横向缩放** - 一种设计模式，在该模式中，通过从**分片集**添加或删除数据库（在[弹性缩放术语](/documentation/articles/sql-database-elastic-scale-glossary)中称为"分片"）来增加或缩减容量。类似地，SQL Database 服务层提供了**纵向缩放**功能，其中单个数据库的资源可以向上或向下缩放以相应地满足需求。单个分片的纵向缩放和多个分片的横向缩放共同向应用程序开发人员提供了非常灵活的环境，可对该环境进行缩放以满足性能、容量和成本优化需求。
 
 ### 横向缩放示例：Concert Spike
 

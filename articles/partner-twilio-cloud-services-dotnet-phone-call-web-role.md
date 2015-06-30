@@ -1,4 +1,4 @@
-<properties linkid="develop-net-how-to-twilio-phone-call" urlDisplayName="Twilio Phone Call" pageTitle="How to make a phone call from Twilio (.NET) - Azure" metaKeywords="Azure .NET Twilio, Azure Twilio, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages, ASP.NET twilio Azure" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in .NET." metaCanonical="" services="" documentationCenter=".NET" title="How to make a phone call using Twilio in a web role on Azure" authors="larryf" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-net-how-to-twilio-phone-call" urlDisplayName="Twilio Phone Call" pageTitle="How to make a phone call from Twilio (.NET) - Azure" metaKeywords="Azure .NET Twilio, Azure Twilio, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages, ASP.NET twilio Azure" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in .NET." metaCanonical="" services="" documentationCenter=".NET" title="How to make a phone call using Twilio in a web role on Azure" authors="larryf" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/25/2014"
     wacn.date="04/11/2015"
@@ -151,7 +151,7 @@
 
 ![使用 Twilio 和 ASP.NET 的 Azure 呼叫响应][使用 Twilio 和 ASP.NET 的 Azure 呼叫响应]
 
-有关 TwiML 的详细信息可在 [][4]<http://www.twilio.com/docs/api/twiml></a> 中找到。有关 \<Say\> 和其他 Twilio 谓词的详细信息可在 [][5]<http://www.twilio.com/docs/api/twiml/say></a> 中找到。
+有关 TwiML 的详细信息可在 [][4]<http://www.twilio.com/docs/api/twiml></a> 中找到。有关 &lt;Say&gt; 和其他 Twilio 谓词的详细信息可在 [][5]<http://www.twilio.com/docs/api/twiml/say></a> 中找到。
 
 ## <span id="nextsteps"></span></a>后续步骤
 

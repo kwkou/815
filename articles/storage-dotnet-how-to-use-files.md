@@ -1,4 +1,4 @@
-<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="了解如何使用 Microsoft Azure 文件存储创建文件共享和管理文件内容。相关示例用 PowerShell 和 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="File Service" pageTitle="如何使用 Azure 文件存储 | Microsoft Azure" metaKeywords="Get started Azure file  Azure file share  Azure file shares  Azure file   Azure file storage   Azure file .NET   Azure file C#   Azure file PowerShell" description="了解如何使用 Microsoft Azure 文件存储创建文件共享和管理文件内容。相关示例用 PowerShell 和 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure File storage in .NET" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/06/2015"
     wacn.date="04/11/2015"
@@ -10,7 +10,7 @@
 
 对于可能想要从本地应用程序以及 Azure 虚拟机或云服务访问共享中的文件的用户，我们将演示如何使用 Azure .NET 存储客户端库通过桌面应用程序处理文件共享。
 
-> [WACOM.NOTE] 运行本指南中的 .NET 代码示例需要 Azure .NET 存储客户端库 4.x 或更高版本。存储客户端库可通过以下方式获得：[NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/)。
+> [WACOM.NOTE] 运行本指南中的 .NET 代码示例需要 Azure .NET 存储客户端库 4.x 或更高版本。存储客户端库可通过以下方式获得：[NuGet](https://www.nuget.org/packages/WindowsAzure.Storage)。
 
 
 ##目录
@@ -66,7 +66,7 @@ For 有关如何命名共享、目录和文件的详细信息，请参阅[命名
 
 ##<a name="create-account"></a>创建 Azure 存储帐户
 <!--
-Azure 文件存储目前发布了预览版。若要请求访问预览版，请导航到["Microsoft Azure 预览版"页](/zh-cn/services/preview/)，然后请求访问"Azure 文件"。你的请求得到批准后，系统就会通知你，然后你就可以访问文件存储预览版。然后，你就可以创建用于访问文件存储的存储帐户。
+Azure 文件存储目前发布了预览版。若要请求访问预览版，请导航到["Microsoft Azure 预览版"页](/zh-cn/services/preview)，然后请求访问"Azure 文件"。你的请求得到批准后，系统就会通知你，然后你就可以访问文件存储预览版。然后，你就可以创建用于访问文件存储的存储帐户。
 -->
 > [WACOM.NOTE] 文件存储目前仅提供给新的存储帐户使用。你的订阅获得访问文件存储的授权后，可创建一个新的用于本指南的存储帐户。
 
@@ -76,7 +76,7 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 
 ###为 Azure 存储空间安装 PowerShell cmdlet
 
-若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)。
+若要准备使用 PowerShell，请下载并安装 Azure PowerShell cmdlet。有关安装点和安装说明，请参阅[如何安装和配置 Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell)。
 
 > [WACOM.NOTE] 文件服务的 PowerShell cmdlet 只在最新的 0.8.5 版及更高版本的 Azure PowerShell 模块中提供。建议你下载并安装最新的 Azure PowerShell 模块或升级到最新模块。
 
@@ -124,7 +124,7 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 为了演示如何装载 Azure 文件共享，现在我们将创建一个 Azure 虚拟机，并远程登录到它内部以装载共享。 
 
 1. 首先，按照 [创建运行 Windows Server 的虚拟机] 中的说明创建一个新的 Azure 虚拟机。
-2. 然后，按照 [如何登录到运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-log-on-windows-server/) 中的说明远程登录到该虚拟机内部。
+2. 然后，按照 [如何登录到运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-log-on-windows-server) 中的说明远程登录到该虚拟机内部。
 3. 在该虚拟机上打开 PowerShell 窗口。 
 
 ###保存虚拟机的存储帐户凭据
@@ -139,11 +139,11 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 
 建立与虚拟机的远程连接后，便可以使用以下语法执行  `net use` 命令来装载文件共享了。请将"<storage-account>"替换为你的存储帐户名称，将"<share-name>"替换为你的文件存储共享名称。
 
-	net use z: \\<storage-account>.file.core.chinacloudapi.cn\<share-name>
+	net use z: &#92;<storage-account>.file.core.chinacloudapi.cn&lt;share-name>
 
 > [WACOM.NOTE] 由于你已在上一步中保存了存储帐户凭据，因此你无需为  `net use` 命令提供这些凭据。如果你尚未保存凭据，请提供凭据作为传递给  `net use` 命令的参数。请将 `<storage-account>` 替换为你的存储帐户名称，将 `<share-name>` 替换为你的文件存储共享名称，将 `<account-key>` 替换为你的存储帐户密钥：
 	   
-	net use z: \\<storage-account>.file.core.chinacloudapi.cn\<share-name> /u:<storage-account> <account-key>
+	net use z: &#92;<storage-account>.file.core.chinacloudapi.cn&lt;share-name> /u:<storage-account> <account-key>
 
 现在，你可以使用虚拟机中的文件存储共享，就像使用任何其他驱动器一样。你可以从命令提示符发出标准文件命令，也可以从文件资源管理器查看已装载的共享及其内容。你也可以在虚拟机中运行代码，以便访问使用标准 Windows 文件 I/O API（例如由 [System.IO 命名空间](http://msdn.microsoft.com/zh-cn/library/gg145019(v=vs.110).aspx)提供的 API）的文件共享 in the .NET Framework。 
 

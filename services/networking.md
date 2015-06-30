@@ -1,8 +1,8 @@
-
+﻿
 <properties linkid="dev-net-Networking" urlDisplayName="Windows Azure Networking" pageTitle="虚拟网络 - Azure 微软云" metaKeywords="Networking,虚拟网络,托管应用,数据中心,虚拟机,站点到站点VPN,名称解析,Azure 门户" description="在 Azure 中配置和监视虚拟网络。使用虚拟网络可将云基础结构连接到本地数据中心、连接在混合环境中托管的云应用程序以及连接 Azure 中的开发计算机和虚拟机。" metaCanonical="" services="Networking" documentationCenter="Services" title="Configure and monitor virtual networks in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Networking"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 
@@ -15,7 +15,7 @@
 
 ####快速链接
 
--   [服务概述](/home/features/networking/)
+-   [服务概述](/home/features/networking)
 -   [定价详细信息](/home/features/networking/#price)
       
 ####特色
@@ -23,7 +23,7 @@
 -   [配置仅在云中的虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/dn631643.aspx)
 -   [使用管理门户向导配置站点到站点 VPN](http://msdn.microsoft.com/zh-cn/library/azure/dn133795.aspx)
 -   [虚拟网络技术概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
--   [Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits/)
+-   [Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits)
 
 ##教程和指南
 
@@ -43,7 +43,7 @@
 
 了解如何通过此相关技术使用 Azure 提供的名称解析服务，直接按照主机名连接到云服务中的虚拟机和角色实例。
 
-####[Azure 架构参考](http://msdn.microsoft.com/library/azure/dd179398)      
+####[Azure 架构参考](https://msdn.microsoft.com/zh-CN/library/azure/dd179398)      
 
 网络配置文件中使用的架构的文档，可用于指定虚拟网络配置设置。</p>
 

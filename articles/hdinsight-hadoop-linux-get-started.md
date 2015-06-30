@@ -17,7 +17,7 @@
 本教程演示如何在 Linux 上设置 HDInsight Hadoop 群集并运行 Hive 查询以从非结构化数据中提取有用的信息，让你快速地在 Linux 上开始使用 HDInsight。然后，你将在商业智能 (BI) 工具（例如 Tableau）中分析结果。
 
 
-> [AZURE.NOTE] 如果你是 Hadoop 和大数据的新手，可以进一步了解这些术语：<a href="http://hadoop.apache.org/" target="_blank">Apache Hadoop</a>、<a href="http://wiki.apache.org/hadoop/MapReduce" target="_blank">MapReduce</a>、<a href="http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html" target="_blank">HDFS</a> 和 <a href="https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072" target="_blank">Hive</a>。若要了解 HDInsight 如何在 Azure 中启用 Hadoop，请参阅 [HDInsight 中的 Hadoop 简介](/documentation/articles/hdinsight-hadoop-introduction/)。
+> [AZURE.NOTE] 如果你是 Hadoop 和大数据的新手，可以进一步了解这些术语：<a href="http://hadoop.apache.org/" target="_blank">Apache Hadoop</a>、<a href="http://wiki.apache.org/hadoop/MapReduce" target="_blank">MapReduce</a>、<a href="http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html" target="_blank">HDFS</a> 和 <a href="https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072" target="_blank">Hive</a>。若要了解 HDInsight 如何在 Azure 中启用 Hadoop，请参阅 [HDInsight 中的 Hadoop 简介](/documentation/articles/hdinsight-hadoop-introduction)。
 
 
 ## 本教程的目标是什么？ ##
@@ -45,7 +45,7 @@
 
 ## <a name="storage"></a>创建 Azure 存储帐户
 
-HDInsight 使用 Azure Blob 存储来存储数据。该 Blob 称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage/)。
+HDInsight 使用 Azure Blob 存储来存储数据。该 Blob 称为 *WASB* 或 *Azure 存储空间 - Blob*。WASB 是 Microsoft 在 Azure Blob 存储上的 HDFS 实现。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
 你设置 HDInsight 群集时，指定 Azure 存储帐户。将该帐户的一个特定 Blob 存储容器指定为默认文件系统，如同在 HDFS 中一样。默认情况下，HDInsight 群集与你指定的存储帐户设置在同一数据中心内。
 
@@ -69,13 +69,13 @@ HDInsight 使用 Azure Blob 存储来存储数据。该 Blob 称为 *WASB* 或 *
 7. 记下"存储帐户名称"和"主访问密钥"（或"辅助访问密钥"。任一密钥都有效）。本教程后面的步骤中将会用到它们。
 
 
-有关详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/) 和[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage/)。
+有关详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account) 和[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 	
 ## <a name="provision"></a>在 Linux 上设置 HDInsight 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在本部分中，你将使用快速创建选项在 Linux 上设置 HDInsight 群集。此选项使用默认用户名和 Azure 存储容器，并使用在 Ubuntu 12.04 LTS 上运行的 HDInsight 3.2 版（Hadoop 2.5 版、HDP 2.2 版）配置群集。有关不同 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning/) 页面。
+当你设置 HDInsight 群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在本部分中，你将使用快速创建选项在 Linux 上设置 HDInsight 群集。此选项使用默认用户名和 Azure 存储容器，并使用在 Ubuntu 12.04 LTS 上运行的 HDInsight 3.2 版（Hadoop 2.5 版、HDP 2.2 版）配置群集。有关不同 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning) 页面。
 
->[AZURE.NOTE]  你还可以创建运行 Windows Server 操作系统的 Hadoop 群集。有关说明，请参阅 [Windows 上的 HDInsight 入门](/documentation/articles/hdinsight-get-started/)。
+>[AZURE.NOTE]  你还可以创建运行 Windows Server 操作系统的 Hadoop 群集。有关说明，请参阅 [Windows 上的 HDInsight 入门](/documentation/articles/hdinsight-get-started)。
 
 
 **设置 HDInsight 群集**

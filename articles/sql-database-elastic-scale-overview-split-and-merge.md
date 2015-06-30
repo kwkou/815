@@ -11,7 +11,7 @@
 
 对拆分/合并服务的这一讨论将通过更改 Azure DB Database 的数量并平衡 **shardlet** 在其中的分布来管理向内扩展和向外扩展。有关术语定义，请参阅[弹性缩放术语库](/documentation/articles/sql-database-elastic-scale-glossary))。 
 
-通过当前在 Azure SQL DB 版本之间进行选择，也可以通过向上扩展或向下扩展单个 Azure SQL DB 的容量来管理容量。拆分/合并不包含灵活容量管理的向上扩展/向下扩展大小 - 请参阅"分片弹性"而不是[弹性缩放分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity/)。 
+通过当前在 Azure SQL DB 版本之间进行选择，也可以通过向上扩展或向下扩展单个 Azure SQL DB 的容量来管理容量。拆分/合并不包含灵活容量管理的向上扩展/向下扩展大小 - 请参阅"分片弹性"而不是[弹性缩放分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity)。 
 
 ## 拆分/合并方案 
 应用程序需要灵活伸展到超出单个 Azure SQL DB 的限制，如以下方案所示： 
@@ -35,7 +35,7 @@
 
 ## 概念和主要功能
 
-**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Microsoft Azure 订阅中部署并托管该服务。你从 NuGet 下载的程序包将包含一个要使用你的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。由于服务在你的 Azure 订阅中运行，因此你可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、DoS 防护和 IP 限制。你可以在以下[弹性缩放安全注意事项](/documentation/articles/sql-database-elastic-scale-configure-security/)文档中找到有关安全设置的详细信息。
+**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Microsoft Azure 订阅中部署并托管该服务。你从 NuGet 下载的程序包将包含一个要使用你的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在你的 Azure 订阅中运行，因此你可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、DoS 防护和 IP 限制。你可以在以下[弹性缩放安全注意事项](/documentation/articles/sql-database-elastic-scale-configure-security)文档中找到有关安全设置的详细信息。
 
 默认部署的服务可与一个辅助角色和一个 Web 角色同时运行。在 Azure 云服务中，每个角色都使用 A1 VM 大小。虽然你无法在部署程序包时修改这些设置，但是你可以在运行的云服务中成功进行部署之后更改它们（通过 Azure 门户）。请注意，出于技术方面的原因，不得为多个实例配置辅助角色。 
 
@@ -79,7 +79,7 @@
 
 ## 获取服务二进制文件
 
-拆分/合并的服务二进制文件通过 [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) 提供。有关下载二进制文件的详细信息，请参阅循序渐进式[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。
+拆分/合并的服务二进制文件通过 [Nuget](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge) 提供。有关下载二进制文件的详细信息，请参阅循序渐进式[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。
 
 ## 拆分/合并用户界面
 
@@ -153,7 +153,7 @@
 
 
 对话框中的不同选项卡控制不同的日志类型 - 每个选项卡都有其自己的传输期设置。 
-在出现拆分/合并服务部署问题的情况下，Microsoft 团队通常需要能够查看 WAD 中的日志和计数器。可以使用一些工具（例如 [Azure 存储资源管理器](http://azurestorageexplorer.codeplex.com/)）来将 WAD 日志导入可轻松共享的 CSV 文件中。 
+在出现拆分/合并服务部署问题的情况下，Microsoft 团队通常需要能够查看 WAD 中的日志和计数器。可以使用一些工具（例如 [Azure 存储资源管理器](http://azurestorageexplorer.codeplex.com)）来将 WAD 日志导入可轻松共享的 CSV 文件中。 
 
 ## 性能
 
@@ -174,9 +174,9 @@
 
 ## 参考 
 
-* [拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)
+* [拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
-* [弹性缩放安全注意事项](/documentation/articles/sql-database-elastic-scale-configure-security/)
+* [弹性缩放安全注意事项](/documentation/articles/sql-database-elastic-scale-configure-security)
 
 
 <!--Anchors-->

@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="使用 Azure CustomScript Extension 部署 Linux 应用程序"
 	description="了解如何使用 Azure CustomScript 扩展在 Linux 虚拟机上部署应用程序"
 	editor="tysonn"
@@ -25,11 +25,11 @@
 
 你还可能需要 Azure 存储帐户和密钥（可以从服务门户来获取此信息）来访问它。
 
-如果你在 Azure 上创建 Linux VM 时需要帮助，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial/)。
+如果你在 Azure 上创建 Linux VM 时需要帮助，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)。
 
 虽然特定的安装命令将采用 Ubuntu，但你可以针对任何受支持的发行版改编一般步骤。
 
- *script-vm* VM 需要使用与 Azure 之间的有效链接安装 xplat-cli。有关这方面的帮助，请参阅[安装和配置 Azure 跨平台命令行界面](/documentation/articles/xplat-cli/)。
+ *script-vm* VM 需要使用与 Azure 之间的有效链接安装 xplat-cli。有关这方面的帮助，请参阅[安装和配置 Azure 跨平台命令行界面](/documentation/articles/xplat-cli)。
 
 ## 上载脚本
 
@@ -51,8 +51,8 @@
 	apt-get -y install apache2 mysql-server php5 php5-mysql  
 
 	# write some PHP
-	echo \<center\>\<h1\>My Demo App\</h1\>\<br/\>\</center\> > /var/www/html/phpinfo.php
-	echo \<\?php phpinfo\(\)\; \?\> >> /var/www/html/phpinfo.php
+	echo &lt;center&gt;&lt;h1&gt;My Demo App&lt;/h1&gt;&lt;br/&gt;&lt;/center&gt; > /var/www/html/phpinfo.php
+	echo &lt;\?php phpinfo\(\)\; \?&gt; >> /var/www/html/phpinfo.php
 
 	# restart Apache
 	apachectl restart
@@ -95,10 +95,10 @@
 
 下面是针对 xplat-cli、Linux 和 CustomScript 扩展的一些其他资源：
 
-[使用 CustomScript 扩展自动执行 Linux VM 自定义任务](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/)
+[使用 CustomScript 扩展自动执行 Linux VM 自定义任务](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension)
 
 [Azure Linux 扩展 (GitHub)](https://github.com/Azure/azure-linux-extensions)
 
-[Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource/)
+[Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource)
 
 <!--HONumber=50-->

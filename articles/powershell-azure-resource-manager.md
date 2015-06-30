@@ -1,4 +1,4 @@
-<properties pageTitle="将 Windows PowerShell 与资源管理器一起使用" metaKeywords="ResourceManager, PowerShell, Azure PowerShell" description="使用 Windows PowerShell 来创建资源组" metaCanonical="" services="" documentationCenter="" title="将 Windows PowerShell 与资源管理器一起使用" authors="juneb" solutions="" manager="mbaldwin" editor="mollybos" />
+﻿<properties pageTitle="将 Windows PowerShell 与资源管理器一起使用" metaKeywords="ResourceManager, PowerShell, Azure PowerShell" description="使用 Windows PowerShell 来创建资源组" metaCanonical="" services="" documentationCenter="" title="将 Windows PowerShell 与资源管理器一起使用" authors="juneb" solutions="" manager="mbaldwin" editor="mollybos" />
 <tags ms.service=""
     ms.date="03/13/2015"
     wacn.date="04/11/2015"
@@ -58,11 +58,11 @@ Azure 模块和 Azure 资源管理器模块不能在同一 Windows PowerShell �
 
 若要切换到 AzureResoureManager 模块，请键入：
 
-    PS C:PS C:\> Switch-AzureMode -Name AzureResourceManagergt; Switch-AzureMode -Name AzureResourceManager
+    PS C:PS C:&gt; Switch-AzureMode -Name AzureResourceManagergt; Switch-AzureMode -Name AzureResourceManager
 
 若要切换回 Azure 模块，请键入：
 
-    PS C:PS C:\> Switch-AzureMode -Name AzureServiceManagementgt; Switch-AzureMode -Name AzureServiceManagement
+    PS C:PS C:&gt; Switch-AzureMode -Name AzureServiceManagementgt; Switch-AzureMode -Name AzureServiceManagement
 
 默认情况下，Switch-AzureMode 只影响当前会话。若要使切换在所有 Windows PowerShell 会话中生效，请使用 Switch-AzureMode 的 **Global** 参数。
 
@@ -70,7 +70,7 @@ Azure 模块和 Azure 资源管理器模块不能在同一 Windows PowerShell �
 
 若要获取带有帮助摘要的 AzureResourceManager 模块中的 cmdlet 列表，请键入：
 
-    PS C:\> Get-Command -Module AzureResourceManager | Get-Help | Format-Table Name, Synopsis
+    PS C:&gt; Get-Command -Module AzureResourceManager | Get-Help | Format-Table Name, Synopsis
 
     Name                                   Synopsis
     ----                                   --------
@@ -110,11 +110,11 @@ Azure 模块和 Azure 资源管理器模块不能在同一 Windows PowerShell �
 
 2.  使用 **Switch-AzureMode** cmdlet 导入 AzureResourceManager 和 AzureProfile 模块中的 cmdlet。
 
-    `PS C:PS C:\>Switch-AzureMode AzureResourceManager`gt;Switch-AzureMode AzureResourceManager</code>
+    `PS C:PS C:&gt;Switch-AzureMode AzureResourceManager`gt;Switch-AzureMode AzureResourceManager</code>
 
 3.  若要将您的 Azure 帐户添加到 Windows PowerShell 会话中，请使用 **Add-AzureAccount** cmdlet。
 
-    `PS C:PS C:\> Add-AzureAccount`gt; Add-AzureAccount</code>
+    `PS C:PS C:&gt; Add-AzureAccount`gt; Add-AzureAccount</code>
 
 该 cmdlet 会提示您输入电子邮件地址和密码。然后它会下载您的帐户设置，以便这些信息可供 Windows PowerShell 使用。
 
@@ -132,7 +132,7 @@ Azure 托管资源组模板库，而且可以从头开始创建您自己的模�
 
 在 Windows Powershell 提示符处，键入：
 
-    PS C:PS C:\> Get-AzureResourceGroupGalleryTemplategt; Get-AzureResourceGroupGalleryTemplate
+    PS C:PS C:&gt; Get-AzureResourceGroupGalleryTemplategt; Get-AzureResourceGroupGalleryTemplate
 
 该 cmdlet 返回具有发布服务器和标识属性的库模板的列表。使用 **Identity** 属性来确定命令中的模板。
 
@@ -150,7 +150,7 @@ Azure 托管资源组模板库，而且可以从头开始创建您自己的模�
 
 Microsoft.WebSiteSQLDatabase.0.1.0-preview1 模板看起来很有趣。若要获取有关库模板的详细信息，请使用 **Identity** 参数。Identity 参数的值是该模板的标识。
 
-    PS C:PS C:\> Get-AzureResourceGroupGalleryTemplate -Identity Microsoft.WebSiteSQLDatabase.0.1.0-preview1gt; Get-AzureResourceGroupGalleryTemplate -Identity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
+    PS C:PS C:&gt; Get-AzureResourceGroupGalleryTemplate -Identity Microsoft.WebSiteSQLDatabase.0.1.0-preview1gt; Get-AzureResourceGroupGalleryTemplate -Identity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
 
 该 cmdlet 返回一个包含有关该模板的详细信息（包括描述）的对象。
 
@@ -167,7 +167,7 @@ Microsoft.WebSiteSQLDatabase.0.1.0-preview1 模板看起来很有趣。若要获
 
 Save-AzureResourceGroupGalleryTemplate 将保存模板，并返回 JSON 模板文件的文件名的路径。
 
-    PS C:\> Save-AzureResourceGroupGalleryTemplate -Identity Microsoft.WebSiteSQLDatabase.0.1.0-preview1 -Path D:\Azure\Templates
+    PS C:&gt; Save-AzureResourceGroupGalleryTemplate -Identity Microsoft.WebSiteSQLDatabase.0.1.0-preview1 -Path D:\Azure\Templates
 
     Path
     ----
@@ -265,7 +265,7 @@ Save-AzureResourceGroupGalleryTemplate 将保存模板，并返回 JSON 模板�
 
 该命令使用 **Name** 参数来指定资源组的名称，并使用 **Location** 参数来指定其位置。使用 **Get-AzureLocation** 的输出来选择资源组的位置。它使用 **GalleryTemplateIdentity** 参数来指定库模板。
 
-    PS C:\> New-AzureResourceGroup ` 
+    PS C:&gt; New-AzureResourceGroup ` 
             -Name TestRG1 `
             -Location "China East" `
             -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1 `
@@ -277,30 +277,30 @@ Save-AzureResourceGroupGalleryTemplate 将保存模板，并返回 JSON 模板�
 
 若要获取这些参数，请键入减号 (-) 指示参数名称，然后按 TAB 键。或者，键入参数名称的前几个字母，例如“siteName”，然后按 TAB 键。
 
-        PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
+        PS C:&gt; New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
         -si<TAB>
 
 Windows PowerShell 会完成参数名称。若要循环显示参数名称，请重复按 TAB。
 
-        PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
+        PS C:&gt; New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
         -siteName 
 
 输入网站的名称，并为每个参数重复 TAB 过程。具有默认值的参数是可选的。若要接受默认值，请在命令中省略此参数。
 
 当模板参数具有枚举值（如此模板中的 sku 参数）以循环显示这些参数值时，请按 TAB 键。
 
-        PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
+        PS C:&gt; New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
         -siteName TestSite -sku <TAB>
 
-        PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
+        PS C:&gt; New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
         -siteName TestSite -sku Free<TAB>
 
-        PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
+        PS C:&gt; New-AzureResourceGroup -Name TestRG1 -Location "China East" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1
         -siteName TestSite -sku Basic<TAB>
 
 下面是 New-AzureResourceGroup 命令的示例，此命令仅指定所需模板参数和 **Verbose** 通用参数。请注意，省略了 **administratorLoginPassword**。（反引号 (\`) 是 Windows PowerShell 行继续符。）
 
-    PS C:\> New-AzureResourceGroup 
+    PS C:&gt; New-AzureResourceGroup 
     -Name TestRG `
     -Location "China East" `
     -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.1.0-preview1 `
@@ -318,7 +318,7 @@ Windows PowerShell 会完成参数名称。若要循环显示参数名称，请�
     cmdlet New-AzureResourceGroup at command pipeline position 1
     Supply values for the following parameters:
     (Type !? for Help.)
-    administratorLoginPassword: **********
+    administratorLoginPassword: **
 
 **New-AzureResourcGroup** 返回其创建和部署的资源组。下面是命令的输出，包括详细输出。
 
@@ -383,7 +383,7 @@ Windows PowerShell 会完成参数名称。若要循环显示参数名称，请�
 
 -   若要获取资源组中的资源，请使用 **GetAzureResource** cmdlet 及其 ResourceGroupName 参数。若不带参数，则 Get-AzureResource 获取在您的 Azure 订阅中的所有资源。
 
-        PS C:\> Get-AzureResource -ResourceGroupName TestRG
+        PS C:&gt; Get-AzureResource -ResourceGroupName TestRG
 
         Name                   ResourceType                          Location
         ----                   ------------                          --------
@@ -397,7 +397,7 @@ Windows PowerShell 会完成参数名称。若要循环显示参数名称，请�
 
 -   若要将资源添加到资源组，请使用 **New-AzureResource** cmdlet。此命令将新的网站添加到 TestRG 资源组。此命令稍微有些复杂，因为它不使用模板。
 
-        PS C:\>New-AzureResource -Name TestSite2 `
+        PS C:&gt;New-AzureResource -Name TestSite2 `
         -Location "China East" `
         -ResourceGroupName TestRG `
         -ResourceType "Microsoft.Web/sites" `
@@ -406,7 +406,7 @@ Windows PowerShell 会完成参数名称。若要循环显示参数名称，请�
 
 -   若要将新的基于模板的部署添加到资源组，请使用 **New-AzureResourceGroupDeployment** 命令。
 
-        PS C:\>New-AzureResourceGroupDeployment ` 
+        PS C:&gt;New-AzureResourceGroupDeployment ` 
         -ResourceGroupName TestRG `
         -GalleryTemplateIdentity Microsoft.WebSite.0.1.0-preview1 `
         -siteName TestWeb2 `

@@ -42,7 +42,7 @@ Azure 虚拟机作为云服务中的角色实现。每个云服务可以包含�
 
 在执行服务管理操作，如那些通过公开**azure:: virtualmachineservice**类，则必须提供您的 Azure 订阅 ID 和包含您的订阅的管理证书的文件。同时使用 SDK 时对 Azure REST API 进行身份验证。
 
-你可以通过使用 Azure 跨平台命令行界面 (xplat-cli) 获取订阅 ID 和管理证书。请参阅[安装和配置 Azure 跨平台命令行界面](/zh-cn/documentation/articles/xplat-cli/) 有关安装和配置 xplat-cli 的信息。
+你可以通过使用 Azure 跨平台命令行界面 (xplat-cli) 获取订阅 ID 和管理证书。请参阅[安装和配置 Azure 跨平台命令行界面](/zh-cn/documentation/articles/xplat-cli) 有关安装和配置 xplat-cli 的信息。
 
 一旦配置了 xplat-cli 后，您可以执行以下步骤以检索您的 Azure 订阅 ID 和导出管理证书：
 
@@ -354,6 +354,6 @@ Azure 虚拟机作为云服务中的角色实现。每个云服务可以包含�
 
 既然您已了解以编程方式创建 Azure 虚拟机的基础知识，请按照下面的链接可了解如何执行更多有关使用虚拟机。
 
-* 请访问[虚拟机](/zh-cn/documentation/services/virtual-machines/) 功能页
+* 请访问[虚拟机](/zh-cn/documentation/services/virtual-machines) 功能页
 *  请参阅 MSDN 参考：[虚拟机](http://msdn.microsoft.com/zh-cn/library/azure/jj156003.aspx)
-* 了解如何托管[Ruby on Rails 应用程序在虚拟机上](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/)
+* 了解如何托管[Ruby on Rails 应用程序在虚拟机上](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux)

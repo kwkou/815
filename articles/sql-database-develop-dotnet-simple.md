@@ -10,7 +10,7 @@
 
 ### .NET Framework
 
-已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com/)下载 .NET Framework。
+已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com)下载 .NET Framework。
 
 ### SQL Database
 
@@ -27,7 +27,7 @@
 		{   		
  	 	  static void Main()
   		  {
-	  		  using(var conn = new SqlConnection("Server=tcp:yourserver.database.windows.net,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={your_password_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+	  		  using(var conn = new SqlConnection("Server=tcp:yourserver.database.chinacloudapi.cn,1433;Database=yourdatabase;User ID=yourlogin@yourserver;Password={your_password_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
 	  		  {
 		 		   conn.Open();	
 	  		  }

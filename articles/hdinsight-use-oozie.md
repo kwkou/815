@@ -1,4 +1,4 @@
-<properties linkid="hdinsight-use-oozie-with-hdinsight" urlDisplayName="Use Oozie with HDInsight" pageTitle="将 Oozie 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Use Oozie with HDInsight, a big data solution. Learn how to define an Oozie workflow, and submit an Oozie job." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Oozie with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="hdinsight-use-oozie-with-hdinsight" urlDisplayName="Use Oozie with HDInsight" pageTitle="将 Oozie 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Use Oozie with HDInsight, a big data solution. Learn how to define an Oozie workflow, and submit an Oozie job." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Oozie with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/12/2014"
     wacn.date="04/11/2015"
@@ -569,7 +569,7 @@ Invoke-RestMethod PowerShell cmdlet 来调用 Oozie Web 服务。Oozie Web 服�
 - [将 Sqoop 与 HDInsight 配合使用][hdinsight-sqoop]
 - [Hive 与 HDInsight 配合使用][hdinsight-hive]
 - [Pig 与 HDInsight 配合使用][hdinsight-pig]
-- [为 HDInsight 开发 C\# Hadoop 流作业][hdinsight-develop-streaming]
+- [为 HDInsight 开发 C# Hadoop 流作业][hdinsight-develop-streaming]
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 

@@ -133,8 +133,8 @@ Hadoop 向 MapReduce 提供了一个流式 API，利用它，你可以采用 Jav
 
 映射器和化简器可执行文件位于：
 
--   C:\\Tutorials\\WordCount\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
--   C:\\Tutorials\\WordCount\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
+-   C:&#92;Tutorials&#92;WordCount&#92;WordCountMapper&#92;bin&#92;Debug&#92;WordCountMapper.exe
+-   C:&#92;Tutorials&#92;WordCount&#92;WordCountReducer&#92;bin&#92;Debug&#92;WordCountReducer.exe
 
 ## <a id="test"></a>在模拟器中测试该程序
 
@@ -305,7 +305,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
         $localFolder = "c:\Hadoop\hadoop-1.1.0-SNAPSHOT"
         $destFolder = "WordCount/Input"
 
-    请注意，源文件文件夹是 **c:\\Hadoop\\hadoop-1.1.0-SNAPSHOT**，目标文件夹是 **WordCount/Input**。
+    请注意，源文件文件夹是 **c:&#92;Hadoop&#92;hadoop-1.1.0-SNAPSHOT**，目标文件夹是 **WordCount/Input**。
 
 3.  运行以下命令以获取源文件文件夹中的 txt 文件的列表：
 

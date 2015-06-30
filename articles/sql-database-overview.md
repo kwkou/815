@@ -1,3 +1,5 @@
+﻿<properties title="如何管理 Azure 上的 SQL数据库" pageTitle="如何管理 Azure 上的 SQL数据库" description="本指南演示了如何针对 Azure SQL数据库 上的逻辑服务器和数据库实例执行管理任务。" metaKeywords="Azure SQL" services="sql-database" />
+
 # 如何管理 Azure 上的 SQL数据库
 
 本指南演示了如何针对 Azure SQL数据库 上的逻辑服务器和数据库实例执行管理任务。
@@ -111,7 +113,7 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 
 ### <span id="premise"></span></a>连接到本地服务器
 
-1.  在 Management Studio 的“连接到服务器”中，确认“数据库引擎”处于选中状态，然后按以下格式输入本地实例的名称：*servername*\\*instancename*。如果服务器是本地的，而且是默认实例，请输入 *localhost*。
+1.  在 Management Studio 的“连接到服务器”中，确认“数据库引擎”处于选中状态，然后按以下格式输入本地实例的名称：*servername*&#92;*instancename*。如果服务器是本地的，而且是默认实例，请输入 *localhost*。
 
 2.  在“身份验证”中，选择“Windows 身份验证”，然后输入作为 sysadmin 角色成员的 Windows 帐户。
 

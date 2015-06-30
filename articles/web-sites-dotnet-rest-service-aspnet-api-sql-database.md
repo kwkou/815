@@ -1,4 +1,4 @@
-<properties linkid="develop-dotnet-rest-service-using-web-api" urlDisplayName="REST service using Web API" pageTitle="使用 Web API 的 .NET REST 服务 &mdash; Azure 教程" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="使用 ASP.NET Web API 和 SQL 数据库的 REST 服务" authors="riande" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-dotnet-rest-service-using-web-api" urlDisplayName="REST service using Web API" pageTitle="使用 Web API 的 .NET REST 服务 &mdash; Azure 教程" metaKeywords="Azure tutorial web site, ASP.NET API web site, Azure VS" description="本教程将向您介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="使用 ASP.NET Web API 和 SQL 数据库的 REST 服务" authors="riande" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -65,7 +65,7 @@ SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服�
 
 4.  在“区域”下拉列表中，选择离您最近的区域。
 
-5.  在“数据库”下拉列表中，选择“创建免费的 20 MB SQL 数据库”。 **** ****
+5.  在“数据库”下拉列表中，选择“创建免费的 20 MB SQL 数据库”。  
 
     ![“新建网站 - 与数据库一起创建”向导的“创建新网站”步骤][“新建网站 - 与数据库一起创建”向导的“创建新网站”步骤]
 
@@ -75,11 +75,11 @@ SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服�
 
 7.  在“名称”框中，输入 *ContactDB*。
 
-8.  在“服务器”框中，选择“新建 SQL 数据库服务器”。 **** **** 或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
+8.  在“服务器”框中，选择“新建 SQL 数据库服务器”。   或者，如果您之前创建了 SQL Server 数据库，则可从下拉列表控件中选择 SQL Server。
 
 9.  单击对话框底部的向右箭头。
 
-10. 输入管理员“登录名”和“密码”。如果您选择了“新建 SQL 数据库服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，现在定义的名称和密码将在您以后访问数据库时使用。 **** 如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。您可以使用“高级”框设置数据库大小（默认为 1 GB，但您可以将其增加到 150 GB）和排序规则。
+10. 输入管理员“登录名”和“密码”。如果您选择了“新建 SQL 数据库服务器”，则在此处不要输入现有名称和密码。您应输入新的名称和密码，现在定义的名称和密码将在您以后访问数据库时使用。  如果您选择了之前创建的 SQL Server，系统将提示您输入之前创建的 SQL Server 帐户名称的密码。在本教程中，我们不选中“高级”框。您可以使用“高级”框设置数据库大小（默认为 1 GB，但您可以将其增加到 150 GB）和排序规则。
 
 11. 单击对话框底部的复选标记以指示您已完成操作。
 
@@ -119,7 +119,7 @@ SQL 数据库是根据 SQL Server 技术构建的基于云的关系数据库服�
 
 ### 设置页眉和页脚
 
-1.  在“解决方案资源管理器”中，展开 *Views\\Shared* 文件夹并打开 \*\_Layout.cshtml\* 文件。
+1.  在“解决方案资源管理器”中，展开 *Views&#92;Shared* 文件夹并打开 \*\_Layout.cshtml\* 文件。
 
     ![解决方案资源管理器中的 \_Layout.cshtml][解决方案资源管理器中的 \_Layout.cshtml]
 
@@ -309,11 +309,11 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
         add-migration Initial
 
-    **add-migration Initial** 命令将生成一个创建数据库的名为 **\<date\_stamp\>Initial** 的类。第一个参数 (*Initial*) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
+    **add-migration Initial** 命令将生成一个创建数据库的名为 **&lt;date\_stamp&gt;Initial** 的类。第一个参数 (*Initial*) 是任意参数并将用于创建文件名称。您可以在“解决方案资源管理器”中查看新的类文件。
 
     在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在您想要返回到以前的状态时使用）用于删除该表。
 
-4.  打开 *Migrations\\Configuration.cs* 文件。
+4.  打开 *Migrations&#92;Configuration.cs* 文件。
 
 5.  添加以下命名空间。
 
@@ -395,7 +395,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ## <a name="bkmk_addview"></a>编辑视图
 
-1.  打开 *Views\\Home\\Index.cshtml* 文件。在下一步中，我们将生成的标记替换为使用 [jQuery][jQuery] 和 [Knockout.js][Knockout.js] 的代码。此新代码将使用 Web API 和 JSON 检索联系人列表，然后使用 knockout.js 将联系人数据绑定至 UI。有关更多信息，请参见本教程结尾部分的[后续步骤][后续步骤]。
+1.  打开 *Views&#92;Home&#92;Index.cshtml* 文件。在下一步中，我们将生成的标记替换为使用 [jQuery][jQuery] 和 [Knockout.js][Knockout.js] 的代码。此新代码将使用 Web API 和 JSON 检索联系人列表，然后使用 knockout.js 将联系人数据绑定至 UI。有关更多信息，请参见本教程结尾部分的[后续步骤][后续步骤]。
 
 2.  将文件的内容替换为以下代码。
 
@@ -552,7 +552,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
     该样式表将用作联系人管理器应用程序的布局、颜色和样式。
 
-6.  打开 *App\_Start\\BundleConfig.cs* 文件。
+6.  打开 *App\_Start&#92;BundleConfig.cs* 文件。
 
 7.  添加以下代码以注册 [Knockout][Knockout] 插件。
 
@@ -708,7 +708,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
      public IHttpActionResult PutContact(int id, Contact contact)
      {
 
-5.  更新 *Views\\Home\\Index.cshtml* 文件的 *Scripts* 部分以包含代码，从而获取 XSRF 令牌。
+5.  更新 *Views&#92;Home&#92;Index.cshtml* 文件的 *Scripts* 部分以包含代码，从而获取 XSRF 令牌。
 
          @section Scripts {
             @Scripts.Render("~/bundles/knockout")

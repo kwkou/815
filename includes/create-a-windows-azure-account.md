@@ -11,7 +11,7 @@
 
 <h2><a id="enable"></a>启用 Windows Azure 预览功能</h2>
 
-1. 导航到 [https://account.windowsazure.cn/](https://account.windowsazure.cn/) 并使用您的 Windows Azure 帐户登录。
+1. 导航到 [https://account.windowsazure.cn/](https://account.windowsazure.cn) 并使用您的 Windows Azure 帐户登录。
 2. 单击“预览功能”以查看可用预览项。<br />
     ![打开“预览功能”选项卡][1]
 3. 向下滚动到您要启用的功能，然后单击“立即试用”。<br />

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Azure 订阅与 Azure AD 的关联方式" 
-	description="本主题介绍有关登录 Microsoft Azure 及相关问题（例如，Azure 订阅与 Azure AD 之间的关系）的信息。" 
+	description="本主题介绍有关登录 Azure 及相关问题（例如，Azure 订阅与 Azure AD 之间的关系）的信息。" 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="Justinha" 
@@ -19,7 +19,7 @@
 
 # Azure 订阅与 Azure AD 的关联方式
 
-本主题介绍有关登录 Microsoft Azure 及相关问题（例如，Azure 订阅与 Azure Active Directory (AD) 之间的关系）的信息。 
+本主题介绍有关登录 Azure 及相关问题（例如，Azure 订阅与 Azure Active Directory (AD) 之间的关系）的信息。 
 
 ## 可用于登录的帐户
 首先，让我们了解可用于登录的帐户。有两种类型的帐户：Microsoft 帐户（以前称为 Microsoft Live ID）和工作或学校帐户，后一种类型的帐户存储在 Azure AD 中。 

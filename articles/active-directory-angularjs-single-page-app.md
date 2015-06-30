@@ -23,7 +23,7 @@ editor="LisaToft"/>
 
 - Visual Studio 2013
 - Internet 连接
-- Azure 订阅（[1rmb 试用版](/pricing/1rmb-trial/) 足够了）
+- Azure 订阅（[1rmb 试用版](/pricing/1rmb-trial) 足够了）
 
 每个 Azure 订阅都有一个关联的 Azure Active Directory (Azure AD) 租户。此示例使用的所有 Azure AD 功能都可免费使用。
 
@@ -34,7 +34,7 @@ editor="LisaToft"/>
 
 ## 向你的 Azure Active Directory 租户注册"待去地点 API"服务
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/).
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn).
 2. 在左侧的导航栏中单击"Active Directory"。
 3. 单击你希望在其中注册示例应用程序的目录。
 4. 单击"应用程序"选项卡。

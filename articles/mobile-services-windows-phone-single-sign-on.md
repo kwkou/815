@@ -131,7 +131,7 @@
 
 7. 使用向 Live Connect 注册应用程序时生成的客户端 ID 值更新上一步中的 _<< INSERT CLIENT ID HERE >>_ 字符串。
 
-    > [AZURE.NOTE] 在 Windows Phone 8 应用程序中，通过将客户端 ID 值传递给类构造函数创建 **LiveAuthClient** 类的一个实例。在 [Windows 应用商店应用程序](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/)中，通过传递重定向域 URI 实例化同一个类。
+    > [AZURE.NOTE] 在 Windows Phone 8 应用程序中，通过将客户端 ID 值传递给类构造函数创建 **LiveAuthClient** 类的一个实例。在 [Windows 应用商店应用程序](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on)中，通过传递重定向域 URI 实例化同一个类。
 
 8. 删除或注释掉现有的 **OnNavigatedTo** 方法覆盖，并将其替换为以下方法，用于处理页的 **Loaded** 事件。 
 

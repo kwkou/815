@@ -52,7 +52,7 @@
 6.    输入存储帐户的名称和在存储连接字符串的占位符内提供的访问密钥之一。此连接字符串将同时在 **Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString** 设置的 **SplitMergeWeb** 和 **SplitMergeWorker** 角色部分下使用。你可以对不同的角色使用不同的存储帐户。 
 
 ### 配置安全 
-有关配置服务安全的详细说明，请参阅[弹性缩放安全配置](/documentation/articles/sql-database-elastic-scale-configure-security/)。
+有关配置服务安全的详细说明，请参阅[弹性缩放安全配置](/documentation/articles/sql-database-elastic-scale-configure-security)。
 
 为了简单地测试部署是否适用于完成此教程，将执行一组步数最少的配置步骤来使服务正常工作。仅一个计算机/帐户可以执行这些步骤，以便与服务进行通信。
 
@@ -103,7 +103,7 @@
     <Certificate name="SSL" thumbprint="" thumbprintAlgorithm="sha1" />
     <Certificate name="CA" thumbprint="" thumbprintAlgorithm="sha1" />
 
-请注意，对于生产部署，应针对 CA 使用单独的证书（服务器证书和客户端证书）。有关此内容的详细说明，请参阅[安全配置](/zh-cn/documentation/articles/sql-database-elastic-scale-configure-security/)。
+请注意，对于生产部署，应针对 CA 使用单独的证书（服务器证书和客户端证书）。有关此内容的详细说明，请参阅[安全配置](/zh-cn/documentation/articles/sql-database-elastic-scale-configure-security)。
 
 ### 部署你的拆分/合并服务
 1. 转到 [Azure 管理门户](https://manage.windowsazure.cn)。

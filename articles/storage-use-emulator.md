@@ -110,7 +110,7 @@ Microsoft Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表�
     
 也可以使用以下命令，该命令指示模拟器使用默认 SQL Server 实例：
 
-    WAStorageEmulator init /server .\\ 
+    WAStorageEmulator init /server .&#92; 
 
 或者，可以使用以下命令来重新初始化数据库：
 

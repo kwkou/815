@@ -21,7 +21,7 @@
 
 Azure Active Directory 是在云中提供全面标识和访问管理功能的服务。它整合了目录服务、高级标识管理和应用程序访问管理，并为开发人员提供一个丰富的基于标准的平台。有关详细信息，请观看此视频。
 
-Active Directory 高级版和基本版是在 Microsoft Azure Active Directory 中的大量免费功能的基础上构建的，它提供一组更高级的功能来帮助企业满足更加严苛的标识和访问管理需求。当你订阅 Azure 时，可以选择 Azure Active Directory 的以下免费和付费版本：
+Active Directory 高级版和基本版是在 Azure Active Directory 中的大量免费功能的基础上构建的，它提供一组更高级的功能来帮助企业满足更加严苛的标识和访问管理需求。当你订阅 Azure 时，可以选择 Azure Active Directory 的以下免费和付费版本：
 
 - **免费版** - 使用 Azure Active Directory 免费版，你可以管理用户帐户、与本地目录同步，以及在 Azure、Office 365 和数千种主流 SaaS 应用程序（如 Salesforce、Workday、Concur、DocuSign、Box、ServiceNow 等）上单一登录。
 - **基本版** - Azure Active Directory 基本版向具有应用程序访问和自助标识管理需求的任务工作者提供了云优先需求。使用 Azure AD 基本版，你可以获得 Azure Active Directory 免费版必然会提供的所有功能，加上基于组的访问管理、用于云应用程序的自助密码重置、Azure Active Directory 应用程序代理（用于通过 Azure Active Directory 发布本地 Web 应用程序）、用于启动企业和消费者云应用程序的可自定义环境，以及 99.9％ 正常运行时间的企业级 SLA。

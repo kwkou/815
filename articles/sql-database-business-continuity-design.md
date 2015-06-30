@@ -55,7 +55,7 @@
 
 ### Azure 门户
 
-1. 登录到 [Azure 门户](https://portal.Azure.com)
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
 2. 在屏幕左侧选择"浏览"，然后选择"SQL Database"。
 3. 导航到数据库边栏选项卡，选择"地域复制"映射，然后单击"配置地域复制"。
 4. 导航到"地域复制"边栏选项卡。选择目标区域。 

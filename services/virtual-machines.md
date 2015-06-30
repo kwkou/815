@@ -1,7 +1,7 @@
-<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="虚拟机技术 - Azure 微软云" metaKeywords="Virtual Machine,虚拟机,设置,迁移,管理,Visual Studio,映像,镜像,image,VHD,磁盘管理,镜像管理,面向开发,面向企业,SQL Server,sharepoint,SDK下载,虚拟机常见问题,开发,测试,.Net,NuGet,虚拟机可用性,SDK下载" description="本文是用户了解微软云提供的虚拟机服务的入口页面，无论是虚拟机新手、开发人员，还是企业用户，都可以在本文中找到如何设置、迁移和管理虚拟机的相关文档链接。还可以透过本页下载微软提供的丰富的SDK供开发者使用。使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的映像以便创建自定义虚拟机。" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="虚拟机技术的相关指南" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="虚拟机技术 - Azure 微软云" metaKeywords="Virtual Machine,虚拟机,设置,迁移,管理,Visual Studio,映像,镜像,image,VHD,磁盘管理,镜像管理,面向开发,面向企业,SQL Server,sharepoint,SDK下载,虚拟机常见问题,开发,测试,.Net,NuGet,虚拟机可用性,SDK下载" description="本文是用户了解微软云提供的虚拟机服务的入口页面，无论是虚拟机新手、开发人员，还是企业用户，都可以在本文中找到如何设置、迁移和管理虚拟机的相关文档链接。还可以透过本页下载微软提供的丰富的SDK供开发者使用。使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的映像以便创建自定义虚拟机。" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="虚拟机技术的相关指南" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Virtual Machine"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #虚拟机
@@ -21,7 +21,7 @@
 
 请遵照这些步骤使用 RDP 或 SSH 连接到您的新虚拟机。其中包括有关排查连接问题的提示。
 
-####[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability/)
+####[管理虚拟机的可用性](/zh-cn/documentation/articles/virtual-machines-manage-availability)
 
 由于计划或非计划维护而重新启动 VM 时如何避免出现问题 - 这些有关可用性集的最佳实践可帮助您应对维护事件带来的影响。
 
@@ -67,17 +67,17 @@
 
 ###指南
 
-####[Azure 网站、云服务和虚拟机对比](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/)
+####[Azure 网站、云服务和虚拟机对比](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm)
 
 Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
 
-####[使用 Azure 虚拟机进行自动测试](http://justazure.com/automated-testing-in-microsoft-azure/)
+####[使用 Azure 虚拟机进行自动测试](http://justazure.com/automated-testing-in-microsoft-azure)
 
 Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行自动性能测试
 
 ###参考
 
--   [SDK 下载](http://www.windowsazure.cn/downloads/)
+-   [SDK 下载](http://www.windowsazure.cn/downloads)
 -   [管理库 (NuGet)](http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Libraries)
 -   [服务管理 (REST)：虚拟机操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157206.aspx)
 -   [服务管理 (REST)：虚拟机磁盘操作](http://msdn.microsoft.com/zh-cn/library/azure/jj157188.aspx)

@@ -29,7 +29,7 @@ Azure 存储空间使用了一个自动分区系统，它可以根据流量自�
 Azure 存储空间支持使用各种操作系统（包括 Windows 和 Linux）及各种编程语言（包括 .NET、Java 和 C++）的客户端以方便开发。Azure 存储空间还通过简单的 REST API 公开数据资源，这些 REST API 可供能够通过 HTTP/HTTPS 发送和接收数据的任何客户端使用。
 
 <!--
-Azure 高级存储现在发布了预览版。Azure 高级存储提供高性能、低延迟的磁盘支持，适合在 Azure 虚拟机上运行的 I/O 密集型工作负载。有了 Azure 高级存储，你就可以将多个持久性数据磁盘附加到虚拟机，并根据性能要求对其进行配置。每个数据磁盘在 Azure 高级存储中都有一个后备 SSD 磁盘，以确保最高的 I/O 性能。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal/)，以了解更多详细信息。 
+Azure 高级存储现在发布了预览版。Azure 高级存储提供高性能、低延迟的磁盘支持，适合在 Azure 虚拟机上运行的 I/O 密集型工作负载。有了 Azure 高级存储，你就可以将多个持久性数据磁盘附加到虚拟机，并根据性能要求对其进行配置。每个数据磁盘在 Azure 高级存储中都有一个后备 SSD 磁盘，以确保最高的 I/O 性能。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal)，以了解更多详细信息。 
 -->
 ## Azure 存储服务介绍 ##
 
@@ -37,12 +37,12 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 - 标准存储帐户包括 Blob、表、队列和文件存储。
 <!--
-- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。Azure 高级存储可通过["Azure 预览版"页](/zh-cn/services/preview/)请求提供。
+- 高级存储帐户当前仅支持 Azure 虚拟机磁盘。Azure 高级存储可通过["Azure 预览版"页](/zh-cn/services/preview)请求提供。
 -->
 你必须具有 Azure 订阅（这是允许你访问各种 Azure 服务的计划），然后才能创建存储帐户。通过单个订阅，你最多可以创建 100 个唯一的命名存储帐户。请参阅[存储定价详细信息](/home/features/storage/#price)，了解有关批量定价的信息。
 <!--
-你可以从[免费试用版](/zh-cn/pricing/1rmb-trial/)开始使用 Azure。 
-一旦决定购买某个计划，你可以从各种[购买选项](/zh-cn/pricing/purchase-options/)进行选择。如果你是 [MSDN 订户](/zh-cn/pricing/member-offers/msdn-benefits-details/)，则可以获得免费的月度信用，你可以将其用于各种 Azure 服务，包括 Azure 存储空间。
+你可以从[免费试用版](/zh-cn/pricing/1rmb-trial)开始使用 Azure。 
+一旦决定购买某个计划，你可以从各种[购买选项](/zh-cn/pricing/purchase-options)进行选择。如果你是 [MSDN 订户](/zh-cn/pricing/member-offers/msdn-benefits-details)，则可以获得免费的月度信用，你可以将其用于各种 Azure 服务，包括 Azure 存储空间。
 -->
 ### 标准存储帐户
 
@@ -52,7 +52,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 - 表存储用于存储结构化数据集。表存储是一个 NoSQL"键-属性"数据存储，可以用于实现快速开发以及快速访问大量数据。
 - 队列存储为云服务的各个组件之间的工作流处理和通信提供可靠的消息传送。
 <!--
-- 文件存储（预览版）使用标准 SMB 2.1 协议为旧版应用程序提供共享存储。Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件服务 REST API 来访问共享中的文件数据。文件存储可通过["Azure 预览版"页](/zh-cn/services/preview/)请求提供。 
+- 文件存储（预览版）使用标准 SMB 2.1 协议为旧版应用程序提供共享存储。Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件服务 REST API 来访问共享中的文件数据。文件存储可通过["Azure 预览版"页](/zh-cn/services/preview)请求提供。 
 -->
 每个标准存储帐户可以容纳高达 500 TB 混合的 Blob、队列、表和文件数据。请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn249410.aspx) for details about standard storage account capacity.
 
@@ -60,7 +60,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 ![Azure 存储资源](./media/storage-introduction/storage-concepts.png)
 
-当你准备好创建标准存储帐户时，请参阅[创建、管理或删除存储帐户](../storage-create-storage-account/) 以了解更多详细信息。
+当你准备好创建标准存储帐户时，请参阅[创建、管理或删除存储帐户](../storage-create-storage-account) 以了解更多详细信息。
 
 
 ## Blob 存储 ##
@@ -78,7 +78,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。块 Blob 进行了相应的优化来流化和存储云对象，并且是用于存储文档、介质文件和备份等对象的不错选择。块 Blob 最大可以为 200 GB。页 Blob 进行了相应的优化来表示 IaaS 磁盘和支持随机写入，并且最大可以为 1 TB。Azure 虚拟机网络连接的 IaaS 磁盘是一个 VHD，存储为页 Blob。
 
-对于网络限制使得通过线缆向 Blob 存储上载或从其下载数据不可行的每个大型数据集，你可以将硬盘驱动器发运到 Microsoft 以使用 [Azure 导入/导出服务](/zh-cn/documentation/articles/storage-import-export-service/) 直接通过数据中心导入或导出数据。你还可以在存储帐户内或者在存储帐户之间复制 Blob 数据。
+对于网络限制使得通过线缆向 Blob 存储上载或从其下载数据不可行的每个大型数据集，你可以将硬盘驱动器发运到 Microsoft 以使用 [Azure 导入/导出服务](/zh-cn/documentation/articles/storage-import-export-service) 直接通过数据中心导入或导出数据。你还可以在存储帐户内或者在存储帐户之间复制 Blob 数据。
 
 ## 表存储 ##
 
@@ -104,7 +104,7 @@ Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。�
 
 在创建你的存储帐户时为其分配了两个用于身份验证的私有访问密钥。设置两个密钥可以确保你的应用程序在你定期重新生成密钥（这是一种常用的安全密钥管理做法）时仍然保持可用。
 
-如果你不需要为你的存储资源实施用户受控访问，则可以创建一个[共享访问签名](../storage-dotnet-shared-access-signature-part-1/)。共享访问签名是一个可以附加到 URL 的令牌，可以实现对容器、Blob、表或队列的委托访问。持有令牌的任何人都可以在令牌有效期间使用它指定的权限访问它指向的资源。请注意，当前不支持 Azure 文件存储共享访问签名。
+如果你不需要为你的存储资源实施用户受控访问，则可以创建一个[共享访问签名](../storage-dotnet-shared-access-signature-part-1)。共享访问签名是一个可以附加到 URL 的令牌，可以实现对容器、Blob、表或队列的委托访问。持有令牌的任何人都可以在令牌有效期间使用它指定的权限访问它指向的资源。请注意，当前不支持 Azure 文件存储共享访问签名。
 
 最后，你可以指定一个容器及其 Blob 或某个特定的 Blob 可供公开访问。当你指定某个容器或 Blob 为公用的时，任何人都可以匿名读取它，不需要进行身份验证。公用容器和 Blob 非常适用于公开在网站上托管的资源，例如媒体和文档。若要降低全球受众的网络延迟，你可以通过 Azure CDN 来缓存网站使用的 Blob 数据。
 
@@ -118,7 +118,7 @@ Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。�
 
 存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储空间的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Windows Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Microsoft Azure 服务，你可以采取措施将数据和服务通过分组分到相同的数据中心内，从而降低或避免进程和数据流出量费用。） 
 
-[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers/)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储空间定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
+[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储空间定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
 
 ## 针对存储进行开发 ##
 
@@ -126,7 +126,7 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 
 - [.NET](http://msdn.microsoft.com/zh-cn/library/dn495001.aspx)
 - [本机代码](http://msdn.microsoft.com/zh-cn/library/dn495438.aspx)
-- [Java](/develop/java/)
+- [Java](/develop/java)
 - [Node.js](../storage/#node)
 - [PHP](../storage/#php)
 - [Ruby](../storage/#ruby)
@@ -139,8 +139,8 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 
 ### 下载
 
-- [Azure 存储 NuGet 包 - 适用于 .NET、Windows Phone 和 Windows 运行时的客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)
-- [Azure SDK 和工具](/zh-cn/downloads/)
+- [Azure 存储 NuGet 包 - 适用于 .NET、Windows Phone 和 Windows 运行时的客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)
+- [Azure SDK 和工具](/zh-cn/downloads)
 - [Azure 存储模拟器](http://www.microsoft.com/zh-cn/download/details.aspx?id=43709)
 
 ### 源代码
@@ -149,9 +149,9 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 
 ### 文档
 
-- [Azure 存储文档](/zh-cn/documentation/services/storage/)
+- [Azure 存储文档](/zh-cn/documentation/services/storage)
 - [Azure 存储服务 REST API 参考](http://msdn.microsoft.com/zh-cn/library/dd179355.aspx)
-- [AzCopy 命令行工具参考](/zh-cn/documentation/articles/storage-use-azcopy/)
+- [AzCopy 命令行工具参考](/zh-cn/documentation/articles/storage-use-azcopy)
 
 <h3>面向 PowerShell 用户</h3>
 - [Azure 存储 Cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/dn806401.aspx)
@@ -159,38 +159,38 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 <h3>面向 .NET 开发人员</h3>
 
 - [.NET 客户端库引用](http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx)
-- [如何通过 .NET 使用 Blob 存储](../storage-dotnet-how-to-use-blobs/)
-- [如何通过 .NET 使用表存储](../storage-dotnet-how-to-use-tables/)
-- [如何通过 .NET 使用队列存储](../storage-dotnet-how-to-use-queues/)
+- [如何通过 .NET 使用 Blob 存储](../storage-dotnet-how-to-use-blobs)
+- [如何通过 .NET 使用表存储](../storage-dotnet-how-to-use-tables)
+- [如何通过 .NET 使用队列存储](../storage-dotnet-how-to-use-queues)
 
 <h3>面向 Java/Android 开发人员</h3>
 
 - [Java 客户端库参考]()
-- [如何通过 Java/Android 使用 Blob 存储](../storage-java-how-to-use-blob-storage/)
-- [如何通过 Java/Android 使用表存储](../storage-java-how-to-use-table-storage/)
-- [如何通过 Java/Android 使用队列存储](../storage-java-how-to-use-queue-storage/)
+- [如何通过 Java/Android 使用 Blob 存储](../storage-java-how-to-use-blob-storage)
+- [如何通过 Java/Android 使用表存储](../storage-java-how-to-use-table-storage)
+- [如何通过 Java/Android 使用队列存储](../storage-java-how-to-use-queue-storage)
 
 <h3>面向 Node.js 开发人员</h3>
 
-- [如何通过 Node.js 使用 Blob 存储](../storage-nodejs-how-to-use-blob-storage/)
-- [如何通过 Node.js 使用表存储](../storage-nodejs-how-to-use-table-storage/)
-- [如何通过 Node.js 使用队列存储](../storage-nodejs-how-to-use-queues/)
+- [如何通过 Node.js 使用 Blob 存储](../storage-nodejs-how-to-use-blob-storage)
+- [如何通过 Node.js 使用表存储](../storage-nodejs-how-to-use-table-storage)
+- [如何通过 Node.js 使用队列存储](../storage-nodejs-how-to-use-queues)
 
 <h3>面向 PHP 开发人员</h3>
 
-- [如何通过 PHP 使用 Blob 存储](../storage-php-how-to-use-blobs/)
-- [如何通过 PHP 使用表存储](../storage-php-how-to-use-table-storage/)
-- [如何通过 PHP 使用队列存储](../storage-php-how-to-use-queues/)
+- [如何通过 PHP 使用 Blob 存储](../storage-php-how-to-use-blobs)
+- [如何通过 PHP 使用表存储](../storage-php-how-to-use-table-storage)
+- [如何通过 PHP 使用队列存储](../storage-php-how-to-use-queues)
 
 <h3>面向 Ruby 开发人员</h3>
 
-- [如何通过 Ruby 使用 Blob 存储](../storage-ruby-how-to-use-blob-storage/)
-- [如何通过 Ruby 使用表存储](../storage-ruby-how-to-use-table-storage/)
-- [如何通过 Ruby 使用队列存储](../storage-ruby-how-to-use-queue-storage/)
+- [如何通过 Ruby 使用 Blob 存储](../storage-ruby-how-to-use-blob-storage)
+- [如何通过 Ruby 使用表存储](../storage-ruby-how-to-use-table-storage)
+- [如何通过 Ruby 使用队列存储](../storage-ruby-how-to-use-queue-storage)
 
 <h3>面向 Python 开发人员</h3>
 
-- [如何通过 Python 使用 Blob 存储](../storage-python-how-to-use-blob-storage/)
-- [如何通过 Python 使用表存储](../storage-python-how-to-use-table-storage/)
-- [如何通过 Python 使用队列存储](../storage-python-how-to-use-queue-storage/)
+- [如何通过 Python 使用 Blob 存储](../storage-python-how-to-use-blob-storage)
+- [如何通过 Python 使用表存储](../storage-python-how-to-use-table-storage)
+- [如何通过 Python 使用队列存储](../storage-python-how-to-use-queue-storage)
 <!--HONumber=41-->

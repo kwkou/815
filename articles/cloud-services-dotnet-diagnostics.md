@@ -1,4 +1,4 @@
-<properties linkid="dev-net-commons-tasks-diagnostics" urlDisplayName="Diagnostics" pageTitle="如何使用诊断 (.NET) - Azure 功能指南" metaKeywords="Azure diagnostics monitoring,logs crash dumps C#" description="了解如何在 Azure 中使用诊断数据进行调试、度量性能、进行监视以及流量分析等等。" metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Enabling Diagnostics in Azure" authors="ryanwi" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-net-commons-tasks-diagnostics" urlDisplayName="Diagnostics" pageTitle="如何使用诊断 (.NET) - Azure 功能指南" metaKeywords="Azure diagnostics monitoring,logs crash dumps C#" description="了解如何在 Azure 中使用诊断数据进行调试、度量性能、进行监视以及流量分析等等。" metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Enabling Diagnostics in Azure" authors="ryanwi" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="03/17/2014"
     wacn.date="04/11/2015"
@@ -90,7 +90,7 @@ Azure 诊断可以收集以下类型的遥测数据：
 
 ###先决条件  
 
-本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版](/pricing/1rmb-trial/)。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
+本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版](/pricing/1rmb-trial)。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ###步骤 1：创建辅助角色###
 1.	启动 Visual Studio 2013。
@@ -232,7 +232,7 @@ Azure 诊断可以收集以下类型的遥测数据：
 
 		$storage_name = "wadexample"
 		$key = "<StorageAccountKey>"
-		$config_path="c:\users\<user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
+		$config_path="c:\users&lt;user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
 		$service_name="wadexample"
 		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
 		Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Staging -Role WorkerRole1
@@ -379,7 +379,7 @@ Azure 诊断可以收集以下类型的遥测数据：
 
 		$storage_name = "wadexamplevm"
 		$key = "<StorageAccountKey>"
-		$config_path="c:\users\<user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
+		$config_path="c:\users&lt;user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
 		$service_name="wadexamplevm"
 		$vm_name="WadExample"
 		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
@@ -401,7 +401,7 @@ Diagnostics 配置文件定义启动诊断监视器时用于初始化诊断配�
 ###Azure Diagnostics 不启动###
 Diagnostics 由两个组件构成：来宾代理插件和监视代理。来宾代理插件的日志文件位于以下文件中： 
 
-*%SystemDrive%\ WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<DiagnosticsVersion>*\CommandExecution.log
+*%SystemDrive%\ WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics&lt;DiagnosticsVersion>*\CommandExecution.log
 
 该插件会返回以下错误代码：
 

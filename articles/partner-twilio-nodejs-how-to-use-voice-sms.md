@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-how-to-twilio-voice-sms-service" urlDisplayName="Twilio Voice and SMS Service" pageTitle="在 Azure 中使用 Twilio for Voice、VoIP 和 SMS 消息传递" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="Node.js" title=" VoIP" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-nodejs-how-to-twilio-voice-sms-service" urlDisplayName="Twilio Voice and SMS Service" pageTitle="在 Azure 中使用 Twilio for Voice、VoIP 和 SMS 消息传递" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="Node.js" title=" VoIP" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/25/2014"
     wacn.date="04/11/2015"
@@ -168,23 +168,23 @@ Twilio 提供一个客户端 SDK，它可以将任何桌面 Web 浏览器、iOS 
 
 接下来，创建名为“views”的目录 - 在该目录内，创建包含以下内容的名为“index.ejs”的文件：
 
-\<!DOCTYPE html\>
- \<html\>
- \<head\>
- \<title\>Twilio Test\</title\>
- \<style\>
+&lt;!DOCTYPE html&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Twilio Test&lt;/title&gt;
+ &lt;style&gt;
  input { height:20px; width:300px; font-size:18px; margin:5px; padding:5px; }
- \</style\>
- \</head\>
- \<body\>
- \<h1\>Twilio Test\</h1\>
- \<form action="/call" method="POST"\>
- \<input placeholder="Enter a phone number" name="number"/\>
- \<br/\>
- \<input type="submit" value="Call the number above"/\>
- \</form\>
- \</body\>
- \</html\>
+ &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;h1&gt;Twilio Test&lt;/h1&gt;
+ &lt;form action="/call" method="POST"&gt;
+ &lt;input placeholder="Enter a phone number" name="number"/&gt;
+ &lt;br/&gt;
+ &lt;input type="submit" value="Call the number above"/&gt;
+ &lt;/form&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
 
 现在，将您的网站部署到 Azure 并且打开您的主页。您应该能够在文本字段中输入电话号码，并收到来自您的 Twilio 号码的呼叫！
 
@@ -216,13 +216,13 @@ app.post('/sms', function(request, response) {
 
 在“views/index.ejs”中，在第一个表单下添加另一个表单，以便提交一个号码和一个短信：
 
-\<form action="/sms" method="POST"\>
- \<input placeholder="Enter a phone number" name="number"/\>
- \<br/\>
- \<input placeholder="Enter a message to send" name="message"/\>
- \<br/\>
- \<input type="submit" value="Send text to the number above"/\>
- \</form\>
+&lt;form action="/sms" method="POST"&gt;
+ &lt;input placeholder="Enter a phone number" name="number"/&gt;
+ &lt;br/&gt;
+ &lt;input placeholder="Enter a message to send" name="message"/&gt;
+ &lt;br/&gt;
+ &lt;input type="submit" value="Send text to the number above"/&gt;
+ &lt;/form&gt;
 
 将您的应用程序重新部署到 Azure，现在您应该能够提交该表单并且亲自（或者您的任何好朋友）发送短信了！
 

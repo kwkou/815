@@ -1,4 +1,4 @@
-﻿<properties title="Upgrade SQL Database Web/Business Databases to New Service Tiers" pageTitle="将 SQL Database Web/企业数据库升级到新服务层" description="将 Azure SQL Database Web 或企业数据库升级到新的 Azure SQL Database 服务层/性能级别。" metaKeywords="Azure, SQL. DB, Service, Tier, web, business" services="Azure SQL DB" solutions="upgrade, migrate, move, monitor, t-sql, powershell" documentationCenter="" authors="Srini Acharya, Umachandar Jayachandran" manager="jeffreyg" videoId="" scriptId="" />
+<properties title="Upgrade SQL Database Web/Business Databases to New Service Tiers" pageTitle="将 SQL Database Web/企业数据库升级到新服务层" description="将 Azure SQL Database Web 或企业数据库升级到新的 Azure SQL Database 服务层/性能级别。" metaKeywords="Azure, SQL. DB, Service, Tier, web, business" services="Azure SQL DB" solutions="upgrade, migrate, move, monitor, t-sql, powershell" documentationCenter="" authors="Srini Acharya, Umachandar Jayachandran" manager="jeffreyg" videoId="" scriptId="" />
 
 <tags ms.service="sql-database" ms.date="03/23/2014" wacn.date="05/25/2015" ms.author="jhubbard" />
 
@@ -7,7 +7,7 @@
 
 Azure Web 角色和企业 SQL 数据库在共享的多租户环境中运行，这种环境没有为数据库提供任何保留的资源容量。群集中其他数据库的活动可能会影响你的性能。资源在任意给定时间点的可用性很大程度上取决于系统中运行的其他并发工作负载。这可能会导致数据库应用程序性能出现很大的变化和不可预测性。客户反映，这种不可预测的性能很难管理，他们更希望性能可预测。 
 
-为了迎合这种需求，Azure SQL Database 服务引入了新的数据库服务层[(基本、标准和高级)](http://azure.microsoft.com/blog/2014/08/26/new-azure-sql-database-service-tiers-generally-available-in-september-with-reduced-pricing-and-enhanced-sla/)，这些版本提供可预测的性能和丰富的新功能，可实现业务连续性和安全性。这些新服务层旨在为数据库工作负载提供指定级别的资源，而不考虑该环境中运行的其他客户工作负载。这样，便使得性能行为高度可预测。随着此版本的发布，Web 和企业服务层即将弃用，最终会在 2015 年 9 月停用。 
+为了迎合这种需求，Azure SQL Database 服务引入了新的数据库服务层[(基本、标准和高级)](http://azure.microsoft.com/blog/2014/08/26/new-azure-sql-database-service-tiers-generally-available-in-september-with-reduced-pricing-and-enhanced-sla)，这些版本提供可预测的性能和丰富的新功能，可实现业务连续性和安全性。这些新服务层旨在为数据库工作负载提供指定级别的资源，而不考虑该环境中运行的其他客户工作负载。这样，便使得性能行为高度可预测。随着此版本的发布，Web 和企业服务层即将弃用，最终会在 2015 年 9 月停用。 
 
 这些变化为客户带来了这样的问题：如何评估新的服务层，哪个新的服务层最适合他们目前的 Web 和企业 (W/B) 数据库，以及如何运作实际升级流程自身。本文以引导式的方法介绍了如何将 Web/企业数据库升级到新的服务层/性能级别。
 
@@ -20,7 +20,7 @@ Azure Web 角色和企业 SQL 数据库在共享的多租户环境中运行，�
 
 ## 1. 根据功能确定服务层
 
-确定哪个服务层可以提供满足应用程序或业务要求的最低功能级别。例如，考虑备份的保留期限、需要标准功能还是活动地域复制功能、是否需要最大的数据库大小等要求。这些要求将会影响最小服务层的选择（请参阅[服务层通告博客）。 ](http://azure.microsoft.com/blog/2014/08/26/new-azure-sql-database-service-tiers-generally-available-in-september-with-reduced-pricing-and-enhanced-sla/) 
+确定哪个服务层可以提供满足应用程序或业务要求的最低功能级别。例如，考虑备份的保留期限、需要标准功能还是活动地域复制功能、是否需要最大的数据库大小等要求。这些要求将会影响最小服务层的选择（请参阅[服务层通告博客）。 ](http://azure.microsoft.com/blog/2014/08/26/new-azure-sql-database-service-tiers-generally-available-in-september-with-reduced-pricing-and-enhanced-sla) 
 
 "基本"层主要用于活动较少的极小型数据库。因此，如果要升级的话，在选择服务层时，你通常会根据功能要求从"标准"或"高级"层开始。有关并发请求/会话的服务层/性能级别特定限制，请参阅 [Azure 文档](http://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)。
 
@@ -92,7 +92,7 @@ Azure SQL Database 服务在 sys.resource_stats 视图中提供 Web/企业数据
 - [服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx)
 - Transact-SQL 
 
-要进行 Web/企业数据库即席迁移，请使用 [Azure 管理门户](https://manage.windowsazure.com/)。请参阅[更改数据库服务层和性能级别](http://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx)一文中的"升级到更高的服务层"部分，以了解使用 Azure 管理门户进行升级的步骤。
+要进行 Web/企业数据库即席迁移，请使用 [Azure 管理门户](https://manage.windowsazure.cn)。请参阅[更改数据库服务层和性能级别](http://msdn.microsoft.com/zh-cn/library/azure/dn369872.aspx)一文中的"升级到更高的服务层"部分，以了解使用 Azure 管理门户进行升级的步骤。
 
 若要对服务器/订阅中的多个数据库执行操作或者要自动化过程，请使用 PowerShell 或 Transact-SQL 命令。
 

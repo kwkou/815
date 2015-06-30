@@ -15,7 +15,7 @@
 
 ## 先决条件
 
-* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial/)。
+* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
 * 一个弹性数据库池。请参阅关于[弹性数据库池](sql-database-elastic-pool)
 * 安装弹性数据库作业服务组件。请参阅[安装弹性数据库作业服务](vsql-database-elastic-jobs-service-installation)。
 

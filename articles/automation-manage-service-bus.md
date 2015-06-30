@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="使用 Azure Automation 管理 Azure Service Bus"
 	description="了解如何使用 Azure Automation 服务来管理 Azure Service Bus。"
 	services="service-bus, automation"
@@ -25,7 +25,7 @@
 
 ## 什么是 Azure Automation？
 
-[Azure Automation](/home/features/automation/) 是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure Automation 可以自动完成那些人工操作、经常重复、长时间运行且易出错的任务，从而改善组织的可靠性、效率和价值生成时间。
+[Azure Automation](/home/features/automation) 是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure Automation 可以自动完成那些人工操作、经常重复、长时间运行且易出错的任务，从而改善组织的可靠性、效率和价值生成时间。
 
 Azure Automation 提供了具有高可靠性和高可用性的工作流执行引擎，该引擎可以根据你的需求进行扩展。在 Azure Automation 中，流程可以手动、通过第三方系统或按计划的间隔启动，使任务能够完全根据需求进行。
 

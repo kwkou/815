@@ -817,9 +817,9 @@ AzCopy 在已拆分数据文件名称中使用卷索引 ( *volume index*) 来区
 
 ### Azure 存储文档：
 
-- [Azure 存储简介](/zh-cn/documentation/articles/storage-introduction/)
-- [将文件存储在 Blob 存储中](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/)
-- [在具有文件存储的 Azure 中创建 SMB 文件共享](/zh-cn/documentation/articles/storage-dotnet-how-to-use-files/)
+- [Azure 存储简介](/zh-cn/documentation/articles/storage-introduction)
+- [将文件存储在 Blob 存储中](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [在具有文件存储的 Azure 中创建 SMB 文件共享](/zh-cn/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### Azure 存储博客文章：
 

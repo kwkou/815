@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-connect-excel-with-power-query" urlDisplayName="HDInsight and Excel" pageTitle="利用 Power Query 将 Excel 连接到 HDInsight | Azure" metaKeywords="hdinsight, excel, data explorer, hive excel, hdinsight excel, power query" description="Learn how to take advantage of business intelligence components and use Excel to access data stored in Azure HDInsight using Power Query." metaCanonical="" services="hdinsight" documentationCenter="" title="Connect Excel to Azure HDInsight with Power Query" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-connect-excel-with-power-query" urlDisplayName="HDInsight and Excel" pageTitle="利用 Power Query 将 Excel 连接到 HDInsight | Azure" metaKeywords="hdinsight, excel, data explorer, hive excel, hdinsight excel, power query" description="Learn how to take advantage of business intelligence components and use Excel to access data stored in Azure HDInsight using Power Query." metaCanonical="" services="hdinsight" documentationCenter="" title="Connect Excel to Azure HDInsight with Power Query" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -42,7 +42,7 @@ Microsoft 的大型数据解决方案的一个关键功能是，将 Microsoft �
 
     ![HDI.PowerQuery.SelectHdiSource][image-hdi-powerquery-hdi-source]
 
-    注意：如果未显示“Power Query” 菜单，请转到“文件” \>“选项” \>“外接程序” ，从页面底部的下拉“管理器” 框中选择“COM 外接程序” 。选择“转到...” 按钮，并且确认已选中 Microsoft Office Power Query for Excel 外接程序所对应的框。
+    注意：如果未显示“Power Query” 菜单，请转到“文件” &gt;“选项” &gt;“外接程序” ，从页面底部的下拉“管理器” 框中选择“COM 外接程序” 。选择“转到...” 按钮，并且确认已选中 Microsoft Office Power Query for Excel 外接程序所对应的框。
 
 4.  输入与你的群集关联的 Azure Blob 存储帐户的**帐户名称**，然后单击“确定” 。
 

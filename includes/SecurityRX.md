@@ -84,7 +84,7 @@ Azure AD 访问控制是一项云服务，用于提供安全令牌
 Windows Live ID/Microsoft 帐户、Facebook、Google、Yahoo! 和 Open
 ID 2.0 标识提供程序）进行联合。以下资源提供有关 Azure AD 访问控制的详细信息：
 
--   [访问控制服务 2.0](http://msdn.microsoft.com/library/gg429786.aspx) 
+-   [访问控制服务 2.0](https://msdn.microsoft.com/zh-CN/library/gg429786.aspx) 
 -   [使用 ACS 的方案和解决方案](http://msdn.microsoft.com/zh-cn/library/gg185920.aspx)
 -   [ACS 操作指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
 -   [基于声明的身份识别和访问控制指南](http://msdn.microsoft.com/zh-cn/library/ff423674.aspx)
@@ -414,7 +414,7 @@ Azure Marketplace。
 请参见以下资源来实施此方案：
 
 -   [下载应用发布工具包](http://go.microsoft.com/fwlink/?LinkId=221323)
--   [面向应用程序的 Azure Marketplace 简介](https://datamarket.azure.com/)
+-   [面向应用程序的 Azure Marketplace 简介](https://datamarket.azure.com)
 
 ##安全设置
 
@@ -472,9 +472,9 @@ Azure AD 访问控制的安全设置。在设计并部署您的应用程序时�
 -   [SDL Threat Modeling Tool 3.1.8](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=2955)
 -   [安全和隐私博客](http://www.microsoft.com/about/twc/en/us/blogs.aspx)
 -   [安全响应中心](http://www.microsoft.com/security/msrc/default.aspx)
--   [安全智能报告](http://www.microsoft.com/security/sir/)
+-   [安全智能报告](http://www.microsoft.com/security/sir)
 -   [安全开发生命周期](http://www.microsoft.com/security/sdl/default.aspx)
--   [安全开发人员中心 (MSDN)](http://msdn.microsoft.com/security/)
+-   [安全开发人员中心 (MSDN)](http://msdn.microsoft.com/security)
 
 
 [01]:./media/SecurityRX/01_SecuringTheApplication.gif

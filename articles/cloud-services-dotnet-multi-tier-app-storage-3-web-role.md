@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-multi-tier-web-site-3-web-role" pageTitle="Azure 云服务教程：ASP.NET Web 角色和 Azure 存储表、队列、Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, ASP.NET MVC tutorial, Azure web role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-3-web-role" pageTitle="Azure 云服务教程：ASP.NET Web 角色和 Azure 存储表、队列、Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, ASP.NET MVC tutorial, Azure web role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="12/07/2014"
     wacn.date="04/11/2015"
@@ -31,7 +31,7 @@
 -   [（可选）构建替代体系结构][（可选）构建替代体系结构]
 -   [后续步骤][后续步骤]
 
-## <a name="cloudproject"></a><span class="short-header">创建解决方案</span>创建 Visual Studio 解决方案
+## <a name="cloudproject"></a>创建 Visual Studio 解决方案
 
 你首先创建一个 Visual Studio 解决方案，其中包含一个针对 Web 前端的项目，以及一个针对后端 Azure 辅助角色之一的项目。随后你将添加第二个辅助角色。
 
@@ -79,7 +79,7 @@
 
 在本部分中，你将更新显示在管理员 Web UI 每一页上的页眉、页脚和菜单项。该应用程序将提供三组管理员网页：一组用于邮件列表，一组用于邮件列表的订户，一组用于邮件。
 
-1.  在**解决方案资源管理器**中，展开 Views\\Shared 文件夹并打开 \_Layout.cshtml 文件。
+1.  在**解决方案资源管理器**中，展开 Views&#92;Shared 文件夹并打开 \_Layout.cshtml 文件。
 
     ![解决方案资源管理器中的 \_Layout.cshtml][解决方案资源管理器中的 \_Layout.cshtml]
 
@@ -117,7 +117,7 @@
 
     ![系统任务栏中的计算模拟器][系统任务栏中的计算模拟器]
 
-## <a name="tracing"></a><span class="short-header">配置跟踪</span>配置跟踪
+## <a name="tracing"></a>配置跟踪
 
 若要保存跟踪数据，请打开 *WebRole.cs* 文件，添加以下 `ConfigureDiagnostics` 方法。添加可在 `OnStart` 方法中调用新方法的代码。
 
@@ -143,7 +143,7 @@
 
 `ConfigureDiagnostics` 方法在[第二个教程][第二个教程]中介绍。
 
-## <a name="restarts"></a><span class="short-header">重新启动</span>添加代码来有效地处理重新启动。
+## <a name="restarts"></a>添加代码来有效地处理重新启动。
 
 Azure 云服务应用程序大约每月重新启动两次，以便进行操作系统更新。（有关 OS 更新的详细信息，请参阅[重新启动角色实例进行 OS 升级][重新启动角色实例进行 OS 升级]。）当 Web 应用程序将要关闭时，将引发 `OnStop` 事件。Visual Studio 创建的 Web 角色样板不覆盖 `OnStop` 方法，因此应用程序只有几秒钟的时间在关闭之前完成 HTTP 请求的处理操作。你可以添加代码来覆盖 `OnStop` 方法，以确保正常处理应用程序的关闭操作。
 
@@ -172,7 +172,7 @@ Azure 云服务应用程序大约每月重新启动两次，以便进行操作�
 
 从 `OnStop` 方法调用而不执行[按需传输][按需传输]时，不会保存跟踪数据。你可以使用 [dbgview][dbgview] 实用程序通过远程桌面连接实时查看 `OnStop` 跟踪信息。
 
-## <a name="updatescl"></a><span class="short-header">更新存储客户端库</span>更新存储客户端库 NuGet 包
+## <a name="updatescl"></a>更新存储客户端库 NuGet 包
 
 > [WACOM.NOTE] 此步骤可能不是必需的。如果 Azure 存储 NuGet 包未显示在“更新”列表中，则已安装的版本是最新的。
 
@@ -200,7 +200,7 @@ Azure 云服务应用程序大约每月重新启动两次，以便进行操作�
 
 > [WACOM.NOTE] 存储客户端库 2.1 添加了后端 LINQ 支持，不过本教程不使用 LINQ 进行存储表查询。当前的 SCL 还支持异步编程，但本教程中不显示异步代码。有关异步编程以及对 Azure SCL 使用异步编程的示例代码的详细信息，请参阅下面的电子书籍章节及其随附的可下载项目：[使用.NET 4.5 的异步支持以避免阻塞调用][使用.NET 4.5 的异步支持以避免阻塞调用]。
 
-## <a name="addref2"></a><span class="short-header">添加 SCL 1.7 引用</span>添加对 SCL 1.7 程序集的引用
+## <a name="addref2"></a>添加对 SCL 1.7 程序集的引用
 
 > [WACOM.NOTE] 如果你使用的是 SCL 2.1 或更高版本（带有最新 SDK 的 Visual Studio 2013），请跳过本部分。
 
@@ -220,7 +220,7 @@ Azure 云服务应用程序大约每月重新启动两次，以便进行操作�
 
 6.  对 WorkerRoleA 项目重复此过程。
 
-## <a name="createifnotexists"></a><span class="short-header">App\_Start 代码</span>添加可在 Application\_Start 方法中创建表、队列和 Blob 容器的代码
+## <a name="createifnotexists"></a>添加可在 Application\_Start 方法中创建表、队列和 Blob 容器的代码
 
 Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscribequeue` 队列和 `azuremailblobcontainer` Blob 容器。你可以使用 Azure 存储资源管理器之类的工具手动创建这些项目，但创建完以后，每次通过新的存储帐户使用该应用程序时，你仍然必须手动执行这些操作。在本部分中，你要添加的代码会在应用程序启动时运行，会查看所需表、队列和 Blob 容器是否存在，并且会在这些项目不存在时创建它们。
 
@@ -276,7 +276,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 在以下各部分，你将生成 Web 应用程序的组件，并且可以使用开发存储或存储帐户对其进行测试，不需首先手动创建表、队列或 Blob 容器。
 
-## <a name="mailinglist"></a><span class="short-header">邮件列表</span>创建和测试邮件列表控制器和视图
+## <a name="mailinglist"></a>创建和测试邮件列表控制器和视图
 
 **“邮件列表”**Web UI 可供管理员用来创建、编辑和显示邮件列表，例如“Contoso 大学历史系公告”和“Fabrikam 工程招聘广告”。
 
@@ -534,11 +534,11 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 *MailingList*。
 
-2.  右键单击新的*“Views\\MailingList”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;MailingList”*文件夹，然后选择**“添加现有项”**。
 
     ![将现有项添加到 Views 文件夹][将现有项添加到 Views 文件夹]
 
-3.  导航到已下载示例应用程序的文件夹，选择 *Views\\MailingList* 文件夹中的所有四个 .cshtml 文件，然后单击“添加”。
+3.  导航到已下载示例应用程序的文件夹，选择 *Views&#92;MailingList* 文件夹中的所有四个 .cshtml 文件，然后单击“添加”。
 
 4.  打开 *Edit.cshtml* 文件并检查代码。
 
@@ -644,7 +644,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
              url: "{controller}/{action}/{id}",
              defaults: new { controller = "MailingList", action = "Index", id = UrlParameter.Optional }
 
-## <a name="configurestorage"></a><span class="short-header">配置存储</span>配置 Web 角色，以使用你的 Azure 存储测试帐户
+## <a name="configurestorage"></a>配置 Web 角色，以使用你的 Azure 存储测试帐户
 
 你需要输入在本地运行项目时要使用的测试存储帐户的设置。若要添加新的设置，你必须在云中和本地都添加它，不过你可以稍后更改云中设置的值。你可以在以后为辅助角色 A 添加相同的设置。
 
@@ -722,7 +722,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
     ![包含行的 MailingList 索引页][包含行的 MailingList 索引页]
 
-## <a name="subscriber"></a><span class="short-header">订户</span>创建和测试“订户”控制器和视图
+## <a name="subscriber"></a>创建和测试“订户”控制器和视图
 
 **“订户”**Web UI 由管理员用来向邮件列表添加新订户，以及编辑、显示和删除现有订户。
 
@@ -905,9 +905,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 *Subscriber*。
 
-2.  右键单击新的*“Views\\Subscriber”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;Subscriber”*文件夹，然后选择**“添加现有项”**。
 
-3.  导航到已下载示例应用程序的文件夹，选择 *Views\\Subscriber* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
+3.  导航到已下载示例应用程序的文件夹，选择 *Views&#92;Subscriber* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
 
 4.  打开 *Edit.cshtml* 文件并检查代码。
 
@@ -974,7 +974,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
     ![包含行的订户索引页][包含行的订户索引页]
 
-## <a name="message"></a><span class="short-header">邮件</span>创建和测试“邮件”控制器和视图
+## <a name="message"></a>创建和测试“邮件”控制器和视图
 
 **“邮件”**Web UI 由管理员用于创建、编辑和显示计划要发送到邮件列表的邮件的相关信息。
 
@@ -1229,9 +1229,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 `Message`。
 
-2.  右键单击新的*“Views\\Message”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;Message”*文件夹，然后选择**“添加现有项”**。
 
-3.  导航到已下载示例应用程序的文件夹，选择 *Views\\Message* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
+3.  导航到已下载示例应用程序的文件夹，选择 *Views&#92;Message* 文件夹中的所有五个 .cshtml 文件，然后单击“添加”。
 
 4.  打开 *Edit.cshtml* 文件并检查代码。
 
@@ -1389,7 +1389,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
     ![包含行的订户索引页][3]
 
-## <a name="unsubscribe"></a><span class="short-header">取消订阅</span>创建和测试“取消订阅”控制器和视图
+## <a name="unsubscribe"></a>创建和测试“取消订阅”控制器和视图
 
 接下来，你将实现用于取消订阅过程的 UI。
 
@@ -1489,9 +1489,9 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 1.  在**解决方案资源管理器**中，在 MVC 项目的 *Views* 文件夹中创建一个新的文件夹，然后将其命名为 *Unsubscribe*。
 
-2.  右键单击新的*“Views\\Unsubscribe”*文件夹，然后选择**“添加现有项”**。
+2.  右键单击新的*“Views&#92;Unsubscribe”*文件夹，然后选择**“添加现有项”**。
 
-3.  导航到你在其中下载了示例应用程序的文件夹，选择 *Views\\Unsubscribe* 文件夹中的 *Index.cshtml* 文件，然后单击“添加”。
+3.  导航到你在其中下载了示例应用程序的文件夹，选择 *Views&#92;Unsubscribe* 文件夹中的 *Index.cshtml* 文件，然后单击“添加”。
 
 4.  打开 *Index.cshtml* 文件并检查代码。
 
@@ -1578,7 +1578,7 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 9.  返回到“订户索引”页，验证订户行是否已不再存在。
 
-## <a name="alternativearchitecture"></a><span class="short-header">替代体系结构</span>（可选）构建替代体系结构
+## <a name="alternativearchitecture"></a>（可选）构建替代体系结构
 
 如果你希望构建替代体系结构，也就是说，在 Azure 网站而非 Azure 云服务 Web 角色中运行 Web UI，则应对说明进行以下更改。
 
@@ -1597,19 +1597,19 @@ Web 应用程序将使用 `MailingList` 表、`Message` 表、`azuremailsubscrib
 
 -   当你看到代码中存在 `RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString")` 时，将其替换为 `ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString`。
 
-## <a name="nextsteps"></a><span class="short -header">后续步骤</span>后续步骤
+## <a name="nextsteps"></a>后续步骤
 
 如[本系列第一个教程][本系列第一个教程]所述，在本教程中，在我们实施共享机密来确保 ASP.NET Web API 服务方法的安全之前，我们不会详细讲述如何构建订阅过程。不过，使用 IP 限制也可以保护服务方法，而且你可以通过复制已下载项目中的以下文件来添加订阅功能。
 
 适用于 ASP.NET Web API 服务方法：
 
--   Controllers\\SubscribeAPI.cs
+-   Controllers&#92;SubscribeAPI.cs
 
 适用于订户在单击电子邮件中通过服务方法生成的“确认”链接后获取的网页：
 
--   Models\\SubscribeVM.cs
--   Controllers\\SubscribeController.cs
--   Views\\Subscribe\\Index.cshtml
+-   Models&#92;SubscribeVM.cs
+-   Controllers&#92;SubscribeController.cs
+-   Views&#92;Subscribe&#92;Index.cshtml
 
 在[下一教程][下一教程]中，你将对辅助角色 A 这个用于计划电子邮件发送的辅助角色执行配置和编程操作。
 

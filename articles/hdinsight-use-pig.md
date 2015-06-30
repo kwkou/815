@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-howto-pig" urlDisplayName="Use Pig with HDInsight" pageTitle="Use Pig with HDInsight | Azure" metaKeywords="" description="Learn how to use Pig with HDInsight. Write Pig Latin statements to analyze an application log file, and run queries on the data to generate output for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Pig with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-howto-pig" urlDisplayName="Use Pig with HDInsight" pageTitle="Use Pig with HDInsight | Azure" metaKeywords="" description="Learn how to use Pig with HDInsight. Write Pig Latin statements to analyze an application log file, and run queries on the data to generate output for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Pig with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="02/18/2015"
     wacn.date="04/11/2015"
@@ -81,7 +81,7 @@ WASB 语法是：
 
     example/data/sample.log
 
-在本文中，你将使用一个 log4j 示例文件，它是 *\\example\\data\\sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][将数据上载到 HDInsight]。
+在本文中，你将使用一个 log4j 示例文件，它是 *&#92;example&#92;data&#92;sample.log* 中存储的 HDInsight 群集附带的。有关上载自己的数据文件的信息，请参阅[将数据上载到 HDInsight][将数据上载到 HDInsight]。
 
 ##<a id="understand"></a>了解 Pig Latin
 
@@ -246,7 +246,7 @@ WASB 语法是：
 
 ##<a id="sdk"></a>使用 HDInsight .NET SDK 提交 Pig 作业
 
-下面是使用 HDInsight .NET SDK 提交 Pig 作业的示例。有关创建 C\# 应用程序以提交 Hadoop 作业的说明，请参阅[以编程方式提交 Hadoop 作业][以编程方式提交 Hadoop 作业]。
+下面是使用 HDInsight .NET SDK 提交 Pig 作业的示例。有关创建 C# 应用程序以提交 Hadoop 作业的说明，请参阅[以编程方式提交 Hadoop 作业][以编程方式提交 Hadoop 作业]。
 
     using System;
     using System.Collections.Generic;

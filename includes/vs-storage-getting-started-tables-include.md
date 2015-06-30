@@ -1,4 +1,4 @@
-﻿#####创建表
+#####创建表
 利用 **CloudTableClient** 对象，您可以获得表和实体的引用对象。以下代码将创建 **CloudTableClient** 对象并使用它创建新表。该代码将尝试引用名为"people"的表。如果找不到该名称的表，它将创建一个。
 
 **注意：**指南中的所有代码假定将构建的应用程序是 Azure 云服务项目，并且使用存储在 Azure 应用程序的服务配置中的存储连接字符串。
@@ -133,5 +133,5 @@
 	else
 	   Console.WriteLine("Couldn't delete the entity.");
 
-[了解有关 Azure 存储的详细信息](/zh-cn/documentation/services/storage/)
+[了解有关 Azure 存储的详细信息](/zh-cn/documentation/services/storage)
 另请参阅[在服务器资源管理器中浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx).<!--HONumber=41-->

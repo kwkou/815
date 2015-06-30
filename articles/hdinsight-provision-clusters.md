@@ -43,7 +43,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 在配置期间，你必须指定一个 Azure Blob 存储帐户和一个默认容器。该容器被集群用作默认存储位置。或者，你也可以指定也会与集群相关联的其他 Blob。
 
-有关使用 Hive 的更多信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-use-blob-storage/)。
+有关使用 Hive 的更多信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-use-blob-storage)。
 
 ### 元存储
 
@@ -53,7 +53,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 ### 虚拟网络
 
-[使用 Azure 虚拟网络](http://www.windowsazure.cn/manage/services/networking/)，你可以创建一个安全的永久性网络，包含你的解决方案所需的资源。通过虚拟网络，你可以：
+[使用 Azure 虚拟网络](http://www.windowsazure.cn/manage/services/networking)，你可以创建一个安全的永久性网络，包含你的解决方案所需的资源。通过虚拟网络，你可以：
 
 * 在专用网络（仅包含云）中将云资源连接在一起
 

@@ -1,4 +1,4 @@
-<properties linkid="develop-php-website-with-mysql-and-ftp" urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP web site with MySQL and FTP - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use FTP deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Web Site and Deploy Using FTP" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-php-website-with-mysql-and-ftp" urlDisplayName="Web w/ MySQL + FTP" pageTitle="PHP web site with MySQL and FTP - Azure tutorial" metaKeywords="" description="A tutorial that demonstrates how to create a PHP web site that stores data in MySQL and use FTP deployment to Azure." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Create a PHP-MySQL Azure Web Site and Deploy Using FTP" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
@@ -97,7 +97,7 @@
     > [WACOM.NOTE]
     > 你将需要使用本地 MySQL 用户名和密码更新`$user` 和 `$pwd` 的值。
 
-4.  打开 Web 浏览器并浏览到 [][]<http://localhost/registration/createtable.php></a>。这样将在该数据库中创建`registration_tbl` 表。
+4.  打开 Web 浏览器并浏览到 [][0]<http://localhost/registration/createtable.php></a>。这样将在该数据库中创建`registration_tbl` 表。
 
 5.  在文本编辑器或 IDE 中打开 **index.php** 文件，并为页面添加基本 HTML 和 CSS 代码（将在后续步骤中添加 PHP 代码）。
 
@@ -257,7 +257,7 @@
   [重置部署凭据]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
   [创建发布凭据]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
   [MySQL 的 PDO 扩展]: http://www.php.net/manual/en/ref.pdo-mysql.php
-  []: http://localhost/tasklist/createtable.php
+  [0]: http://localhost/tasklist/createtable.php
   [1]: http://localhost/tasklist/index.php
   [获取数据库连接信息]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
   [下载发布配置文件]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/download_publish_profile_2.png

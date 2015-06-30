@@ -47,7 +47,7 @@ LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、�
 
 ### 检索终结点负载平衡器分发模式配置
 
-    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
+    PS C:&gt; Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet

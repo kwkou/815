@@ -52,7 +52,7 @@
 
 ## 创建 Media Services 帐户
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中，依次单击"新建"、"Media Services"和"快速创建"。
+1. 在[管理门户](https://manage.windowsazure.cn)中，依次单击"新建"、"Media Services"和"快速创建"。
    
 	![Media Services Quick Create](./media/media-services-create-account/wams-QuickCreate.png)
 
@@ -88,7 +88,7 @@
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"Media Services"。然后，单击 Media Services 的名称。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"Media Services"。然后，单击 Media Services 的名称。
 
 2. 选择"流式处理终结点"页。然后，单击要修改的流式处理终结点。
 

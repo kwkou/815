@@ -1,4 +1,4 @@
-<properties title="How to Use Twilio for Voice and SMS (PHP) - Azure" pageTitle="How to Use Twilio for Voice and SMS (PHP) - Azure" metaKeywords="Azure PHP Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in PHP." documentationCenter="PHP" services="" authors="robmcm" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+﻿<properties title="How to Use Twilio for Voice and SMS (PHP) - Azure" pageTitle="How to Use Twilio for Voice and SMS (PHP) - Azure" metaKeywords="Azure PHP Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in PHP." documentationCenter="PHP" services="" authors="robmcm" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service=""
     ms.date="11/25/2014"
     wacn.date="04/11/2015"
@@ -41,20 +41,20 @@ Twilio API 的关键方面是 Twilio 谓词和 Twilio 标记语言 (TwiML)。
 
 ### <span id="Verbs"></span></a>Twilio 谓词
 
-API 利用了 Twilio 谓词；例如，**\<Say\>** 谓词指示 Twilio 在呼叫时传递语音消息。
+API 利用了 Twilio 谓词；例如，**&lt;Say&gt;** 谓词指示 Twilio 在呼叫时传递语音消息。
 
 下面是 Twilio 谓词的列表。请通过 [Twilio 标记语言文档][<http://www.twilio.com/docs/api/twiml>] 了解其他谓词和功能。
 
--   **\<Dial\>**：将呼叫方连接到其他电话。
--   **\<Gather\>**：收集通过电话按键输入的数字。
--   **\<Hangup\>**：结束呼叫。
--   **\<Play\>**：播放音频文件。
--   **\<Pause\>**：安静地等待指定时间（以秒为单位）。
--   **\<Record\>**：录制呼叫方的声音并返回包含该录音的文件的 URL。
--   **\<Redirect\>**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
--   **\<Reject\>**：拒绝对 Twilio 号码的传入呼叫而不向你收费
--   **\<Say\>**：将文本转换为呼叫中生成的语音。
--   **\<Sms\>**：发送 SMS 消息。
+-   **&lt;Dial&gt;**：将呼叫方连接到其他电话。
+-   **&lt;Gather&gt;**：收集通过电话按键输入的数字。
+-   **&lt;Hangup&gt;**：结束呼叫。
+-   **&lt;Play&gt;**：播放音频文件。
+-   **&lt;Pause&gt;**：安静地等待指定时间（以秒为单位）。
+-   **&lt;Record&gt;**：录制呼叫方的声音并返回包含该录音的文件的 URL。
+-   **&lt;Redirect&gt;**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
+-   **&lt;Reject&gt;**：拒绝对 Twilio 号码的传入呼叫而不向你收费
+-   **&lt;Say&gt;**：将文本转换为呼叫中生成的语音。
+-   **&lt;Sms&gt;**：发送 SMS 消息。
 
 ### <span id="TwiML"></span></a>TwiML
 
@@ -214,7 +214,7 @@ TwiML 是一组基于 XML 的指令，这些指令以用于指示 Twilio 如何�
 
 有关 TwiML 的详细信息，请参阅 [][7]<https://www.twilio.com/docs/api/twiml></a>。
 
-将 PHP 页面设置为提供 TwiML 响应后，请使用 PHP 页面的 URL 作为传入到 `Services_Twilio->account->calls->create` 方法中的 URL。例如，如果已将名为 **MyTwiML** 的 Web 应用程序部署到 Azure 托管服务，且 PHP 页面的名称将为 **mytwiml.php**，则可将 URL 传递到 **Services\_Twilio-\>account-\>calls-\>create**，如以下示例所示：
+将 PHP 页面设置为提供 TwiML 响应后，请使用 PHP 页面的 URL 作为传入到 `Services_Twilio->account->calls->create` 方法中的 URL。例如，如果已将名为 **MyTwiML** 的 Web 应用程序部署到 Azure 托管服务，且 PHP 页面的名称将为 **mytwiml.php**，则可将 URL 传递到 **Services\_Twilio-&gt;account-&gt;calls-&gt;create**，如以下示例所示：
 
     require_once 'Services/Twilio.php';
 

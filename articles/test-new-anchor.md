@@ -12,7 +12,7 @@
 
 # 这是一个测试文档用于测试新标签的网页渲染支持 
 
-V.0609.1
+V.0625.1
 
 > [AZURE.SELECTOR]
 - [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNets)
@@ -22,7 +22,7 @@ V.0609.1
 
 ##test direct reference of md file
 
-See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples.md)
+See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples)
 
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 
@@ -143,7 +143,7 @@ The root URI for Media Services is https://media.windows.net/. You should initia
 
 Note that the root URI for uploading and downloading Asset files is https://yourstorageaccount.blob.core.windows.net/ where the storage account name is the same one you used during your Media Services account setup.
 
-The following example demonstrates HTTP request to the Media Services root URI (https://media.windows.net/). The request gets a 301 redirect back in response. The subsequent request is using the new URI (https://wamsbayclus001rest-hs.cloudapp.net/api/).     
+The following example demonstrates HTTP request to the Media Services root URI (https://media.windows.net). The request gets a 301 redirect back in response. The subsequent request is using the new URI (https://wamsbayclus001rest-hs.cloudapp.net/api).     
 
 **HTTP Request**:
 	
@@ -384,7 +384,7 @@ The following example shows how to create an AccessPolicy:
 
 ### Get the Upload URL
 
-To receive the actual upload URL, create a SAS Locator. Locators define the start time and type of connection endpoint for clients that want to access Files in an Asset. You can create multiple Locator entities for a given AccessPolicy and Asset pair to handle different client requests and needs. Each of these Locators use the StartTime value plus the DurationInMinutes value of the AccessPolicy to determine the length of time a URL can be used. For more information, see [Locator](http://msdn.microsoft.com/en-us/library/azure/hh974308.aspx).
+To receive the actual upload URL, create a SAS Locator. Locators define the start time and type of connection endpoint for clients that want to access Files in an Asset. You can create multiple Locator entities for a given AccessPolicy and Asset pair to handle different client requests and needs. Each of these Locators use the StartTime value plus the DurationInMinutes value of the AccessPolicy to determine the length of time a URL can be used. For more information, see [Locator](https://msdn.microsoft.com/zh-CN/library/azure/hh974308.aspx).
 
 
 A SAS URL has the following format:
@@ -712,7 +712,7 @@ The following code requests the encoder's id.
 
 ### Create a job
 
-Each Job can have one or more Tasks depending on the type of processing that you want to accomplish. Through the REST API, you can create Jobs and their related Tasks in one of two ways: Tasks can be defined inline through the Tasks navigation property on Job entities, or through OData batch processing. The Media Services SDK uses batch processing; however, for the readability of the code examples in this topic, tasks are defined inline. For information on batch processing, see [Open Data Protocol (OData) Batch Processing](http://www.odata.org/documentation/odata-version-3-0/batch-processing/).
+Each Job can have one or more Tasks depending on the type of processing that you want to accomplish. Through the REST API, you can create Jobs and their related Tasks in one of two ways: Tasks can be defined inline through the Tasks navigation property on Job entities, or through OData batch processing. The Media Services SDK uses batch processing; however, for the readability of the code examples in this topic, tasks are defined inline. For information on batch processing, see [Open Data Protocol (OData) Batch Processing](http://www.odata.org/documentation/odata-version-3-0/batch-processing).
 
 The following example shows you how to create and post a Job with one Task set to encode a video at a specific resolution and quality. The following documentation section contains the list of all the [task presets](https://msdn.microsoft.com/zh-CN/library/azure/dn619392.aspx) supported by the Azure Media Processor.  
 
@@ -1270,9 +1270,9 @@ Once you have SAS URLs, you can progressively download your MP4 files by pasting
 
 To test adaptive streaming URLs use the following players:
 
-To test smooth streaming, use [http://amsplayer.azurewebsites.net/](http://amsplayer.azurewebsites.net/), or [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor).
+To test smooth streaming, use [http://amsplayer.azurewebsites.net/](http://amsplayer.azurewebsites.net), or [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor).
 
-To test MPEG DASH, use [http://dashif.org](http://dashif.org/reference/players/javascript/).
+To test MPEG DASH, use [http://dashif.org](http://dashif.org/reference/players/javascript).
 
 To test HLS, use iOS or Safari devices, or [3ivx-hls-player](http://apps.microsoft.com/windows/zh-CN/app/3ivx-hls-player/f79ce7d0-2993-4658-bc4e-83dc182a0614). 
 

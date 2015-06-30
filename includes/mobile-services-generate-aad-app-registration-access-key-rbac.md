@@ -1,4 +1,4 @@
-﻿1. 单击 [Azure 管理门户](https://manage.windowsazure.cn/)中您的目录页面上的**应用程序**选项卡。
+1. 单击 [Azure 管理门户](https://manage.windowsazure.cn)中您的目录页面上的**应用程序**选项卡。
   
 2. 单击集成的应用程序注册。
 
@@ -13,7 +13,7 @@
     ![](./media/mobile-services-generate-aad-app-registration-access-key-rbac/app-perms.png)
 
 
-7. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中，浏览回到您的移动服务，然后单击**配置**选项卡。向下滚动到**应用设置**部分并添加以下应用设置，然后单击**保存**。 
+7. 在 [Azure 管理门户](https://manage.windowsazure.cn)中，浏览回到您的移动服务，然后单击**配置**选项卡。向下滚动到**应用设置**部分并添加以下应用设置，然后单击**保存**。 
 
     <table border="1">
     <tr>

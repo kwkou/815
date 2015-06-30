@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor=""/>
+﻿<properties linkid="develop-media-services-tutorials-get-started" urlDisplayName="Get Started with Media Services" pageTitle="Get Started with Media Services - Azure" metaKeywords="Azure media services" description="An introduction to using Media Services with Azure." metaCanonical="" services="media-services" documentationCenter="" title="Get started with Media Services" authors="" solutions="" manager="" editor=""/>
 <tags ms.service="media-services"
     ms.date="02/24/2015"
     wacn.date="04/11/2015"
@@ -31,7 +31,7 @@ Media Services 入门
 
 **说明**
 
-若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial/)。
+若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](http://www.windowsazure.cn/zh-CN/pricing/1rmb-trial)。
 
 设置项目
 --------
@@ -44,7 +44,7 @@ Media Services 入门
 
 3.  （如果尚未这样做）使用 [windowsazure.mediaservices Nuget](http://nuget.org/packages/windowsazure.mediaservices) 程序包添加对 **Azure SDK for .NET.** (Microsoft.WindowsAzure.StorageClient.dll)、**Azure Media Services SDK for .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) 和 **WCF Data Services 5.0 for OData V3** (Microsoft.Data.OData.dll) 库的引用。
 
-    若要使用 Nuget 添加引用，请执行以下操作。在 Visual Studio 主菜单中，选择“工具”-\>“库程序包管理器”-\>“程序包管理器控制台”。在控制台窗口中，键入 *Install-Package [程序包名称]*，然后按 Enter（在本例中，应使用以下命令：*Install-Package windowsazure.mediaservices*。）
+    若要使用 Nuget 添加引用，请执行以下操作。在 Visual Studio 主菜单中，选择“工具”-&gt;“库程序包管理器”-&gt;“程序包管理器控制台”。在控制台窗口中，键入 *Install-Package [程序包名称]*，然后按 Enter（在本例中，应使用以下命令：*Install-Package windowsazure.mediaservices*。）
 
 4.  在 **app.config** 文件中添加一个 *appSettings* 部分，并设置 Azure Media Services 帐户名和帐户密钥的值。在设置帐户期间，你已获取 Media Services 帐户名和帐户密钥。在 Visual Studio 项目中，将这些值添加到 app.config 文件中每项设置的值属性。
 
@@ -233,12 +233,12 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
     	Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
     	progressJobTask.Wait();
 
-        // **********
+        // **
     	// Optional code.Code after this point is not required for 
     	// an encoding job, but shows how to access the assets that 
     	// are the output of a job, either by creating URLs to the 
     	// asset on the server, or by downloading. 
-        // **********
+        // **
 
     	// Get an updated job reference.
     	job = GetJob(job.Id);
@@ -336,10 +336,10 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
             {
         	case JobState.Finished:
         	Console.WriteLine();
-        	Console.WriteLine("********************");
+        	Console.WriteLine("");
         	Console.WriteLine("Job is finished.");
         	Console.WriteLine("Please wait while local tasks or downloads complete...");
-        	Console.WriteLine("********************");
+        	Console.WriteLine("");
         	Console.WriteLine();
         	Console.WriteLine();
         	break;
@@ -367,7 +367,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
         	IJob job = GetJob(jobId);
 
         	builder.AppendLine("\nThe job stopped due to cancellation or an error.");
-        	builder.AppendLine("***************************");
+        	builder.AppendLine("***");
         	builder.AppendLine("Job ID:" + job.Id);
         	builder.AppendLine("Job Name:" + job.Name);
         	builder.AppendLine("Job State:" + job.State.ToString());
@@ -387,7 +387,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
                     }
                 }
             }
-        	builder.AppendLine("***************************\n");
+        	builder.AppendLine("***\n");
         	// Write the output to a local file and to the console.The template 
         	// for an error output file is:JobStop-{JobId}.txt
         	string outputFile = _outputFilesFolder + @"\JobStop-" + JobIdAsFileName(job.Id) + ".txt";
@@ -581,10 +581,10 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 	Job(My encoding job) state:Processing.
 	Please wait...
 
-	********************
+	
 	Job(My encoding job) is finished.
 	Please wait while local tasks or downloads complete...
-	********************
+	
 
 	Locator path:
 	https://mediasvcd08mtz29tcpws.blob.core.windows-int.net/asset-4f5b42f4-3ade-4c2c
@@ -630,7 +630,7 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 
 3.  然后，使用 **Azure 媒体编码器**的 **H264 Broadband 720p** 预设来为该文件编码。
 
-4.  FileSasUrlList.txt 文件在 \\supportFiles\\outputFiles 文件夹中创建。该文件包含所编码资产的 URL。
+4.  FileSasUrlList.txt 文件在 &#92;supportFiles&#92;outputFiles 文件夹中创建。该文件包含所编码资产的 URL。
 
     若要播放媒体文件，请从文本文件中复制资产的 URL，然后将它粘贴到浏览器中。
 
@@ -645,6 +645,6 @@ Media Services 上下文对象包含 Media Services 编程时需要访问的所�
 
 本演练演示了生成简单 Media Services 应用程序所要执行的编程任务序列。你已学习了基本的 Media Services 编程任务，包括获取服务器上下文、创建资产、为资产编码，以及下载或访问服务器上的资产。有关后续步骤和其他高级开发任务，请参阅以下主题：
 
--   [如何使用 Media Services](/documentation/articles/media-services-set-up-computer/)
+-   [如何使用 Media Services](/documentation/articles/media-services-set-up-computer)
 -   [使用 Media Services REST API 生成应用程序](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh973618.aspx)
 

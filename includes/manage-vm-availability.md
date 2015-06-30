@@ -6,7 +6,7 @@
 
 #管理虚拟机的可用性#
 
-为了帮助确保您的应用程序的可用性，我们强烈建议使用可提供冗余的多台虚拟机。若要提供冗余，请配置多台虚拟机来执行相同的功能或角色。获得有保证的水平的服务需要此冗余。另请确保考虑依赖关系。例如，如果虚拟机“IIS1”依赖虚拟机“SQL1”提供的服务，“SQL2”将提供虚拟机“SQL1”的冗余来帮助避免服务中断。有关服务级别协议要求的更多信息，请参见[服务级别协议](http://www.windowsazure.cn/zh-cn/support/legal/sla/)中的“云服务、虚拟机和虚拟网络”一节。
+为了帮助确保您的应用程序的可用性，我们强烈建议使用可提供冗余的多台虚拟机。若要提供冗余，请配置多台虚拟机来执行相同的功能或角色。获得有保证的水平的服务需要此冗余。另请确保考虑依赖关系。例如，如果虚拟机“IIS1”依赖虚拟机“SQL1”提供的服务，“SQL2”将提供虚拟机“SQL1”的冗余来帮助避免服务中断。有关服务级别协议要求的更多信息，请参见[服务级别协议](http://www.windowsazure.cn/zh-cn/support/legal/sla)中的“云服务、虚拟机和虚拟网络”一节。
 
 此方法可帮助确保在出现本地网络故障、本地磁盘硬件故障以及平台可能需要的任何计划内停机时，应用程序仍然可用。
 
@@ -178,6 +178,6 @@ Windows Azure 定期更新承载应用程序实例的操作系统。在应用更
 
 <!-- LINKS -->
 [对虚拟机进行负载平衡]:../load-balance-virtual-machines
-[关于虚拟网络的地缘组]:http://msdn.microsoft.com/library/windowsazure/jj156085.aspx
+[关于虚拟网络的地缘组]:https://msdn.microsoft.com/zh-CN/library/windowsazure/jj156085.aspx
 [如何连接云服务中的虚拟机]:../virtual-machines-connect-cloud-service
 

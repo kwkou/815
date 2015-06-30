@@ -1,4 +1,4 @@
-<properties linkid="manage-services-mediaservices-create-a-media-services-account" urlDisplayName="How to create" pageTitle="Create a Media Services Account - Azure" metaKeywords="" description="Describes how to create a new Media Services account in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Create a Media Services Account" authors="migree" solutions="" manager="" editor="" />
+﻿<properties linkid="manage-services-mediaservices-create-a-media-services-account" urlDisplayName="How to create" pageTitle="Create a Media Services Account - Azure" metaKeywords="" description="Describes how to create a new Media Services account in Azure." metaCanonical="" services="media-services" documentationCenter="" title="How to Create a Media Services Account" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/15/2015"
     wacn.date="04/11/2015"
@@ -23,13 +23,13 @@
 访问 Media Services 需要两个关联的帐户：
 
 -   **Media Services 帐户**。你可以使用你的帐户访问 Azure 中可用的一组基于云的 Media Services。Media Services 帐户不会存储实际媒体内容，而是存储有关你帐户中的媒体内容和媒体处理作业的元数据。创建该帐户时，需要选择一个可用的 Media Services 区域。所选的区域是存储你帐户的元数据记录的数据中心。
-    -   **注意** 可用 Media Services 区域包括：**西欧**、**东南亚**、**东亚**、**北欧**、**美国西部**、**美国东部**。Media Services 不使用地缘组。
+    -   **注意** 可用 Media Services 区域包括：**中国东部**、**中国北部**。Media Services 不使用地缘组。
 -   **关联的存储帐户**。你的存储帐户是一个与你的 Media Services 帐户关联的 Azure 存储帐户。该存储帐户为媒体文件提供了 Blob 存储，并且必须位于 Media Services 帐户所在的地理区域内。创建 Media Services 帐户时，你可以选择位于同一区域内的现有存储帐户，也可以在同一区域内创建新的存储帐户。如果你删除 Media Services 帐户，相关存储帐户中的 Blob 不会被删除。
 
 如何：使用“快速创建”创建 Media Services 帐户
 --------------------------------------------
 
-1.  在[管理门户](http://manage.windowsazure.cn/)中，依次单击“新建”****、“Media Services”****和“快速创建”****。
+1.  在[管理门户](http://manage.windowsazure.cn)中，依次单击“新建”、“Media Services”和“快速创建”。
 
     ![Media Services 快速创建](./media/media-services-create-account/wams-QuickCreate.png)
 

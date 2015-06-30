@@ -1,4 +1,4 @@
-<properties linkid="manage-services-notification-hubs-notify-users-xplat-mobile-services" urlDisplayName="notify users xplat mobile services" pageTitle="Send cross-platform notifications to users with Notification Hubs (Mobile Services)" metaKeywords="" description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Send cross-platform notifications to users with Notification Hubs" authors="glenga" solutions="" manager="" editor="" />
+﻿<properties linkid="manage-services-notification-hubs-notify-users-xplat-mobile-services" urlDisplayName="notify users xplat mobile services" pageTitle="Send cross-platform notifications to users with Notification Hubs (Mobile Services)" metaKeywords="" description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Send cross-platform notifications to users with Notification Hubs" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services,notification-hubs"
     ms.date="12/03/2014"
     wacn.date="04/11/2015"
@@ -103,7 +103,7 @@
 
 现在，你已完成本教程，可以查看以下主题了解有关通知中心和模板的更多信息：
 
--   **使用通知中心发送突发新闻（[Windows 应用商店 C\#][Windows 应用商店 C\#] / [iOS][iOS]）**
+-   **使用通知中心发送突发新闻（[Windows 应用商店 C#][Windows 应用商店 C#] / [iOS][iOS]）**
     演示使用模板的另一方案
 
 -   **[Azure 通知中心概述][Azure 通知中心概述]**
@@ -127,6 +127,6 @@
   [3]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-insert-script-push2.png
 
 <!-- URLs. --> 
-  [Windows 应用商店 C\#]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [Windows 应用商店 C#]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [iOS]: /documentation/articles/notification-hubs-ios-send-breaking-news/
   [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx

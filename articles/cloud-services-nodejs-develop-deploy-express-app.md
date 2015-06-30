@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-basic-web-app-with-express" urlDisplayName="Web App with Express" pageTitle="使用 Express 生成 Web 应用程序 (Node.js) - Azure 教程" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="本教程以云服务教程为基础，演示如何使用 Express 模块。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build a Node.js web application using Express on an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-nodejs-basic-web-app-with-express" urlDisplayName="Web App with Express" pageTitle="使用 Express 生成 Web 应用程序 (Node.js) - Azure 教程" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="本教程以云服务教程为基础，演示如何使用 Express 模块。" metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Build a Node.js web application using Express on an Azure Cloud Service" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/25/2015"
     wacn.date="04/11/2015"
@@ -21,13 +21,13 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 执行下列步骤可新建一个名为"expressapp"的云服务项目：
 
-1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"********。
+1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击**"Azure PowerShell"**并选择**"以管理员身份运行"**。
 
 	![Azure PowerShell icon](./media/cloud-services-nodejs-develop-deploy-express-app/azure-powershell-start.png)
 
 	[WACOM.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
-2. 将目录切换到 **c:\\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
+2. 将目录切换到 ```c:\node``` 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
 
 		PS C:\node> New-AzureServiceProject expressapp
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
@@ -76,7 +76,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 	之所以需要进行此更改，是因为我们已将文件（以前的 **bin/www**）移到了所需应用程序文件所在的同一个目录。完成此更改后，请保存 **server.js** 文件。
 
-8.  使用以下命令以在 Microsoft Azure 模拟器中运行应用程序：
+8.  使用以下命令以在 Windows Azure 模拟器中运行应用程序：
 
         PS C:\node\expressapp\WebRole1> Start-AzureEmulator -launch
 

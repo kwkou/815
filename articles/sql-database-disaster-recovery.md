@@ -21,9 +21,9 @@
 
 Azure SQL Database 提供了许多的中断恢复功能：
 
-- 活动地域复制[（博客）](http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/)
-- 标准地域复制[（博客）](http://azure.microsoft.com/blog/2014/09/03/azure-sql-database-standard-geo-replication/)
-- 地域还原[（博客）](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
+- 活动地域复制[（博客）](http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication)
+- 标准地域复制[（博客）](http://azure.microsoft.com/blog/2014/09/03/azure-sql-database-standard-geo-replication)
+- 地域还原[（博客）](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)
 
 若要了解有关应对灾难以及何时恢复数据库的信息，请访问[业务连续性设计](sql-database-business-continuity-design)页。 
 
@@ -42,7 +42,7 @@ Azure SQL Database 提供了许多的中断恢复功能：
 
 
 ### Azure 门户
-1. 登录到 [Azure 门户](https://portal.Azure.com)
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
 2. 在屏幕左侧选择"浏览"，然后选择"SQL Database"。
 3. 导航到你的数据库并选择它。 
 4. 在数据库边栏选项卡底部选择"地域复制映射"。
@@ -81,7 +81,7 @@ Azure SQL Database 提供了许多的中断恢复功能：
 ### PowerShell 
 使用 PowerShell 以编程方式执行数据库恢复。
 
-若要启动地域还原请求，请使用 [Start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet。有关详细演练，请参阅[操作方法视频](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell/)。
+若要启动地域还原请求，请使用 [Start-AzureSqlDatabaseRecovery](https://msdn.microsoft.com/zh-cn/library/azure/dn720224.aspx) cmdlet。有关详细演练，请参阅[操作方法视频](http://azure.microsoft.com/documentation/videos/restore-a-sql-database-using-geo-restore-with-microsoft-azure-powershell)。
 
 		$Database = Get-AzureSqlRecoverableDatabase -ServerName "ServerName" -DatabaseName "DatabaseToBeRecovered"
 		$RecoveryRequest = Start-AzureSqlDatabaseRecovery -SourceDatabase $Database -TargetDatabaseName "NewDatabaseName" -TargetServerName "TargetServerName"

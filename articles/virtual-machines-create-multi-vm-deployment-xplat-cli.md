@@ -58,7 +58,7 @@
 ## 后续步骤
 
  
-* [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource/)
-* [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on/)
+* [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource)
+* [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)
 
 <!--HONumber=50-->

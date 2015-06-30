@@ -1,4 +1,4 @@
-<properties linkid="develop-python-web-app-with-django-and-mysql" urlDisplayName="Web with Django + MySQL" pageTitle="Python web app with Django and MySQL - Azure tutorial" metaKeywords="Azure django web app, Azure Django MySQL, Azure django Python" description="A tutorial that teaches you how to use MySQL in with Django on an Azure virtual machine. Code samples written in Python." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World - MySQL Windows Edition" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-web-app-with-django-and-mysql" urlDisplayName="Web with Django + MySQL" pageTitle="Python web app with Django and MySQL - Azure tutorial" metaKeywords="Azure django web app, Azure Django MySQL, Azure django Python" description="A tutorial that teaches you how to use MySQL in with Django on an Azure virtual machine. Code samples written in Python." metaCanonical="" services="virtual-machines" documentationCenter="Python" title="Django Hello World - MySQL Windows Edition" authors="" solutions="" manager="" editor="" />
 <tags ms.service="virtual-machines"
     ms.date="11/01/2014"
     wacn.date="04/11/2015"
@@ -18,7 +18,7 @@
 
 通过利用托管在 Azure VM 中的 MySQL 数据库，你将扩展 [Django Hello World][djangohelloworld] 示例以查找所需的 *World* 替换项。将通过支持 MySQL 的 Django *counter* 应用程序来决定此替换项。如同 Hello World 示例一样，此 Django 应用程序仍将托管在 Azure 虚拟机中。
 
-本教程中的项目文件将存储在 **C:\\django\\helloworld** 中，并且已完成的应用程序将类似于下图：
+本教程中的项目文件将存储在 **C:&#92;django&#92;helloworld** 中，并且已完成的应用程序将类似于下图：
 
 ![][0]
 
@@ -61,7 +61,7 @@
  * 安装[“world”数据库][“world”数据库]示例（MyISAM 版本）：
 
     -   将[此][mysqlworlddl] zip 文件下载到 Azure 虚拟机上。
-    -   **将它解压缩到 *C:\\Users\\Administrator\\Desktop\\world.sql*。**
+    -   **将它解压缩到 *C:&#92;Users&#92;Administrator&#92;Desktop&#92;world.sql*。**
 
 1.  安装 MySQL 之后，单击 Windows“开始”菜单，然后运行刚才安装的“MySQL 5.5 Command Line Client”。发出以下命令：
 
@@ -90,7 +90,7 @@
 
 1.  按照 [Django Hello World][djangohelloworld] 教程中提供的说明在 Django 中创建一个简单的“Hello World”Web 应用程序。
 
-2.  在你喜欢的文本编辑器中打开 **C:\\django\\helloworld\\helloworld\\settings.py**。修改 **DATABASES** 全局字典以读取以下内容：
+2.  在你喜欢的文本编辑器中打开 **C:&#92;django&#92;helloworld&#92;helloworld&#92;settings.py**。修改 **DATABASES** 全局字典以读取以下内容：
 
         DATABASES = {
             'default': {
@@ -124,7 +124,7 @@
 
   如果 Django 没有从上面最后一个命令报告任何输出，则它成功了。
 
-1.  将以下文本附加到 **C:\\django\\helloworld\\counter\\models.py** 中：
+1.  将以下文本附加到 **C:&#92;django&#92;helloworld&#92;counter&#92;models.py** 中：
 
         class Counter(models.Model):
             count = models.IntegerField()
@@ -135,7 +135,7 @@
 
 1.  接下来，我们使 Django 知道 *Counter* 的存在：
 
- * 再次编辑 **C:\\django\\helloworld\\helloworld\\settings.py**。将“counter”添加到 *INSTALLED\_APPS* 元组中。
+ * 再次编辑 **C:&#92;django&#92;helloworld&#92;helloworld&#92;settings.py**。将“counter”添加到 *INSTALLED\_APPS* 元组中。
  * 从命令提示符处，请运行：
 
             cd C:\django\helloworld
@@ -172,7 +172,7 @@
         Installing indexes ...
         Installed 0 object(s) from 0 fixture(s)
 
-1.  替换 **C:\\django\\helloworld\\helloworld\\views.py** 的内容。下面新实现的 *hello* 函数将我们的 *Counter* 模型与我们以前安装的单独示例数据库 *world* 结合使用来生成“World”字符串的合适替换项：
+1.  替换 **C:&#92;django&#92;helloworld&#92;helloworld&#92;views.py** 的内容。下面新实现的 *hello* 函数将我们的 *Counter* 模型与我们以前安装的单独示例数据库 *world* 结合使用来生成“World”字符串的合适替换项：
 
         from django.http import HttpResponse
         import django.db
@@ -228,7 +228,7 @@
 
     ![][5]
 
-  刷新 Web 浏览器几次，你应该看到消息从*“Hello **\<country abc\>**”*更改为*“Hello **\<some other country\>**”*。
+  刷新 Web 浏览器几次，你应该看到消息从*“Hello **&lt;country abc&gt;**”*更改为*“Hello **&lt;some other country&gt;**”*。
 
 1.  若要停止 Django 托管网站，只需切换到 PowerShell 窗口并按 **Ctrl-C**。
 

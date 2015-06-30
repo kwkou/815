@@ -1,4 +1,4 @@
-<properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="如何将 Hudson 用于 Azure Blob 服务 | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="介绍如何将 Hudson 与 Microsoft Azure Blob 存储一起使用作为生成项目的存储库。" metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties linkid="develop-java-how-to-hudson-ci" urlDisplayName="Hudson Continuous Integration" pageTitle="如何将 Hudson 用于 Azure Blob 服务 | Microsoft Azure" metaKeywords="Hudson, Azure storage, Azure Blob service, Azure storage, Azure hudson" description="介绍如何将 Hudson 与 Microsoft Azure Blob 存储一起使用作为生成项目的存储库。" metaCanonical="" services="storage" documentationCenter="Java" title="Using Azure Storage with a Hudson Continuous Integration solution" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="storage"
     ms.date="02/25/2015"
     wacn.date="04/11/2015"
@@ -169,7 +169,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
   [如何创建将你的生成项目上载到存储帐户的后期生成操作]: #howtocreatepostbuild
   [如何创建从 Azure blob 存储下载的生成步骤]: #howtocreatebuildstep
   [Blob 服务使用的组件]: #components
-  [如何创建存储帐户]： /zh-cn/documentation/articles/storage-create-storage-account/
+  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
   [Hudson 概览]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
   [ms-open-tech]: http://msopentech.com
 

@@ -63,7 +63,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 下载示例
 
-下载 [HDInsight C# Storm Power BI 示例](https://github.com/Blackmist/hdinsight-csharp-storm-powerbi)。若要下载该示例，请使用 [git](http://git-scm.com/) 复制/克隆它，或使用**下载**链接下载 .zip 存档。
+下载 [HDInsight C# Storm Power BI 示例](https://github.com/Blackmist/hdinsight-csharp-storm-powerbi)。若要下载该示例，请使用 [git](http://git-scm.com) 复制/克隆它，或使用**下载**链接下载 .zip 存档。
 
 ## 配置示例
 
@@ -139,6 +139,6 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 * [从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)
 
-* [HDInsight Storm 示例](https://github.com/hdinsight/hdinsight-storm-examples/)：此项目包含有关从 Storm 拓扑使用 Azure 服务的 C# 和 Java 示例
+* [HDInsight Storm 示例](https://github.com/hdinsight/hdinsight-storm-examples)：此项目包含有关从 Storm 拓扑使用 Azure 服务的 C# 和 Java 示例
 
 <!--HONumber=53-->

@@ -70,6 +70,6 @@
 	![alt text](./media/sql-database-migrate-ssms/08MigrateusingSSMS.png)
  
 ## 备选方法
-你也可以使用命令行实用工具 sqlpackage.exe 来部署数据库，或者导出并导入 BACPAC。Sqlpackage.exe 使用的 DAC 技术与 SSMS 相同，因此结果是相同的。有关详细信息，请转到[此处](https://msdn.microsoft.com/library/hh550080.aspx)。
+你也可以使用命令行实用工具 sqlpackage.exe 来部署数据库，或者导出并导入 BACPAC。Sqlpackage.exe 使用的 DAC 技术与 SSMS 相同，因此结果是相同的。有关详细信息，请转到[此处](https://msdn.microsoft.com/zh-CN/library/hh550080.aspx)。
 
 <!--HONumber=55-->

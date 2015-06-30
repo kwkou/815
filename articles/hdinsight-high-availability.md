@@ -34,7 +34,7 @@ HDInsight 通过添加辅助头节点 (Head Node1) 去除了此单点故障。 [
 
 使用 Azure PowerShell cmdlet 或 HDInsight SDK 均可配置特大型 VM。
 
-使用 PowerShell 创建和设置群集的内容记录在[使用 PowerShell 管理 HDInsight](/zh-cn/documentation/articles/hdinsight-administer-use-powershell/) 中。 配置特大型头节点需要将"-HeadNodeVMSize ExtraLarge"参数添加到此代码中使用的"New-AzureHDInsightcluster"cmdlet。
+使用 PowerShell 创建和设置群集的内容记录在[使用 PowerShell 管理 HDInsight](/zh-cn/documentation/articles/hdinsight-administer-use-powershell) 中。 配置特大型头节点需要将"-HeadNodeVMSize ExtraLarge"参数添加到此代码中使用的"New-AzureHDInsightcluster"cmdlet。
 
     # 在 Azure PowerShell 中创建新的 HDInsight 群集
 	# 已配置特大型头节点 VM

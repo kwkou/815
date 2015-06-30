@@ -180,5 +180,5 @@
 
 
 [移动服务入门]: /zh-cn/documentation/articles/mobile-services-windows-phone-get-started
-[CameraCaptureTask]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
-[PhotoCamera]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
+[CameraCaptureTask]: https://msdn.microsoft.com/zh-CN/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
+[PhotoCamera]: https://msdn.microsoft.com/zh-CN/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx

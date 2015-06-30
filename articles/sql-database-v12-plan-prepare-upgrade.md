@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="规划和准备升级到 SQL Database V12"
 	description="介绍升级到 Azure SQL Database V12 版本所涉及的准备工作和限制。"
 	services="sql-database"
@@ -112,7 +112,7 @@ V12 不支持 Web 和企业服务定价层。
 Azure 有两个门户，每个门户针对 SQL Database V12 提供不同的功能。
 
 
-- [http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)。<br/>此门户：
+- [http://manage.windowsazure.cn/](http://manage.windowsazure.cn)。<br/>此门户：
  - 可以管理 V12 服务器和数据库。
  -  *无法*将 V11 数据库升级到 V12。
 
@@ -130,13 +130,13 @@ Azure SQL Database 管理门户：
 - 联机或脱机开发数据库。
 
 
-你可以改为使用 [Visual Studio Community 2013](https://www.visualstudio.com/zh-cn/news/vs2013-community-vs.aspx/)（免费但具有完整功能的 VS2013 版本）进行连接。
+你可以改为使用 [Visual Studio Community 2013](https://www.visualstudio.com/zh-cn/news/vs2013-community-vs.aspx)（免费但具有完整功能的 VS2013 版本）进行连接。
 
 
 在旧版 Azure 管理门户上的数据库页中，可以单击"在 Visual Studio 中打开"，以便在计算机上启动 VS2013，从而与 Azure SQL Database 建立连接。
 
 
-另一种方法是使用装有 [CU6](http://support.microsoft.com/kb/3031047/) 的 SQL Server Management Studio (SSMS) 2014 来连接到 Azure SQL Database。以下博客文章提供了更多详细信息：<br/>[Azure SQL Database 的客户端工具更新](http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/)。
+另一种方法是使用装有 [CU6](https://support.microsoft.com/zh-CN/kb/3031047) 的 SQL Server Management Studio (SSMS) 2014 来连接到 Azure SQL Database。以下博客文章提供了更多详细信息：<br/>[Azure SQL Database 的客户端工具更新](http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database)。
 
 
 ### 升级到 V12  *期间*的限制

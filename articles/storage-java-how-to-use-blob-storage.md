@@ -123,7 +123,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
     	CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
 			
         // Define the path to a local file.
-        final String filePath = "C:\\myimages\\myimage.jpg";
+        final String filePath = "C:&#92;myimages&#92;myimage.jpg";
 
     	// Create or overwrite the "myimage.jpg" blob with contents from a local file.
     	CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
@@ -189,7 +189,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	       if (blobItem instanceof CloudBlob) {
 	           // Download the item and save it to a file with the same name.
     	        CloudBlob blob = (CloudBlob) blobItem;
-    	        blob.download(new FileOutputStream("C:\\mydownloads\\" + blob.getName()));
+    	        blob.download(new FileOutputStream("C:&#92;mydownloads&#92;" + blob.getName()));
     	    }
     	}
     }

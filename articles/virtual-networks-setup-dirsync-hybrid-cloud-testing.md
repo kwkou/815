@@ -35,7 +35,7 @@
 2.	配置 Office 365 FastTrack 试用版。
 3.	配置 DirSync 服务器 (DS1)。
 
-如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 免费注册。 
+如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial) 免费注册。 
 
 > [AZURE.NOTE] 以 $ 开头的命令行用于设置 PowerShell 变量，这些变量随后用于 PowerShell 命令。[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
 

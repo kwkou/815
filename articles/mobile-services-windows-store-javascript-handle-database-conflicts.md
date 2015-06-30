@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-javascript" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" writer="wesmc" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conflicts" authors="wesmc" />
+﻿<properties linkid="develop-mobile-tutorials-optimistic-concurrent-data-javascript" urlDisplayName="Optimistic concurrency" pageTitle="Handle database write conflicts with optimistic concurrency (Windows Store) | Mobile Dev Center" metaKeywords="" writer="wesmc" description="Learn how to handle database write conflicts on both the server and in your Windows Store application." metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Handling database write conflicts" authors="wesmc" />
 <tags ms.service=""
     ms.date="10/05/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 处理数据库写入冲突
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows 应用商店 C\#</a>
+<a href="/develop/mobile/tutorials/handle-database-write-conflicts-dotnet/" title="Windows Store C#">Windows 应用商店 C#</a>
 <a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
 <a href="/develop/mobile/tutorials/handle-database-write-conflicts-wp8/" title="Windows Phone">Windows Phone</a></div>	
 
@@ -125,7 +125,7 @@ Azure 移动服务通过使用添加到每个表的 `__version` 系统属性列�
 
 在本节中，你将生成 Windows 应用商店应用程序包，以便在第二台计算机或虚拟机上安装应用程序。然后，你将在这两台计算机上运行应用程序，并生成写入冲突以测试代码。应用程序的两个实例将尝试更新同一项目的 `text` 属性，因此需要用户解决该冲突。
 
-1.  创建 Windows 应用商店应用程序包，以便在第二台计算机或虚拟机上进行安装。为此，请在 Visual Studio 中单击“项目” -\>“存储” -\>“创建应用程序包” 。
+1.  创建 Windows 应用商店应用程序包，以便在第二台计算机或虚拟机上进行安装。为此，请在 Visual Studio 中单击“项目” -&gt;“存储” -&gt;“创建应用程序包” 。
 
     ![][1]
 
@@ -145,7 +145,7 @@ Azure 移动服务通过使用添加到每个表的 `__version` 系统属性列�
 
     ![][5]
 
-6.  通过单击“调试” -\>“启动调试” 在 Visual Studio 中运行应用程序的第 1 个实例。在第二台计算机的“开始”屏幕上，单击向下箭头以查看“按名称排列的应用程序”。然后单击“Todolist” 应用程序以运行应用程序的第 2 个实例。
+6.  通过单击“调试” -&gt;“启动调试” 在 Visual Studio 中运行应用程序的第 1 个实例。在第二台计算机的“开始”屏幕上，单击向下箭头以查看“按名称排列的应用程序”。然后单击“Todolist” 应用程序以运行应用程序的第 2 个实例。
 
     应用程序实例 1
     ![][6]
@@ -276,7 +276,7 @@ Azure 移动服务通过使用添加到每个表的 `__version` 系统属性列�
 -   [推送通知入门][]
     了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/handle-database-write-conflicts-dotnet/ "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-handle-database-conflicts/ "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/handle-database-write-conflicts-wp8/ "Windows Phone"
   [更新应用程序以允许更新]: #uiupdate

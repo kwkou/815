@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 pageTitle="Windows Azure 开发人员中心：.NET" 
 metaKeywords=".NET" 
 description="" 
@@ -9,7 +9,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service=".NET"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #.NET Azure 文档
@@ -25,7 +25,7 @@ editor="Eric Chen" />
 
 ####ASP.NET 入门
 
-###[入门教程](/zh-cn/documentation/articles/web-sites-dotnet-get-started/)
+###[入门教程](/zh-cn/documentation/articles/web-sites-dotnet-get-started)
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>

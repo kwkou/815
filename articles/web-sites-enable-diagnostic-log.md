@@ -127,7 +127,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 > [WACOM.NOTE] 某些类型的日志记录缓冲区会对日志文件进行写入操作，这可能导致流中的事件无序。例如，用户访问页面时出现的应用程序日志项可能显示在该页面请求所对应的 HTTP 日志项的前面。
 
-> [WACOM.NOTE] 日志流式输出还会流式传输写入任何存储在 **D:\\home\\LogFiles\\** 文件夹中的文本文件的信息。
+> [WACOM.NOTE] 日志流式输出还会流式传输写入任何存储在 **D:&#92;home&#92;LogFiles&#92;** 文件夹中的文本文件的信息。
 
 ### 使用 Azure PowerShell 进行流式传输
 
@@ -328,8 +328,7 @@ Tid
 | ApplicationName | 网站名称                                   |
 | InstanceId      | 其上发生事件的网站实例                     |
 | EventTickCount  | 事件发生的日期和时间，刻度格式（精度更高） |
-| EventId         | 此事件的事件 ID                            
-                   如果未指定，默认为 0                        |
+| EventId         | 此事件的事件 ID 如果未指定，默认为 0  |
 | Pid             | 进程 ID                                    |
 | Tid             | 产生事件的线程的线程 ID                    |
 | 消息            | 事件详细消息                               |
@@ -358,10 +357,8 @@ Web 服务器日志使用 [W3C 扩展日志文件格式][W3C 扩展日志文件�
 > [WACOM.NOTE] Azure 网站生成的日志不支持 **s-computername**、**s-ip** 或 **cs-version** 字段。
 
 <a name="nextsteps"></a>
-
 ## 后续步骤
 
-</p>
 -   [如何监视网站][如何监视网站]
 -   [教程 - 排除网站故障][教程 - 排除网站故障]
 -   [在 Visual Studio 中排除 Azure 网站的故障][在 Visual Studio 中排除 Azure 网站的故障]

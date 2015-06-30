@@ -1,6 +1,6 @@
-﻿
 
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn/)，然后单击屏幕底部的"+新建"。
+
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)，然后单击屏幕底部的"+新建"。
 
 2. 依次单击"应用服务"、**Service Bus**、"通知中心"和"快速创建"。
 

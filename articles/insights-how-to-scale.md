@@ -1,4 +1,4 @@
-<properties title="How to scale a website" pageTitle="How to scale a website" description="Learn how to scale your hosting plan in Azure." authors="stepsic"  />
+﻿<properties title="How to scale a website" pageTitle="How to scale a website" description="Learn how to scale your hosting plan in Azure." authors="stepsic"  />
 <tags ms.service=""
     ms.date="11/08/2014"
     wacn.date="04/11/2015"
@@ -52,7 +52,7 @@ Azure 门户预览版的一项新功能是，你可以基于除“CPU 百分比�
 -   平均内存 - 如果实例上使用的平均内存百分比高于或低于指定的阈值，则会添加或删除实例。
 -   HTTP 队列深度或磁盘队列深度 - 如果 HTTP 请求队列或磁盘队列中的消息数高于或低于指定的阈值，则会添加或删除实例。
 
-可以使用两种不同的方式来根据另一个度量值进行缩放。如果只想要按一个度量值进行缩放，请选择“CPU 百分比”滑块旁边的 \> 标记。随后将会打开“度量值详细信息”分页：
+可以使用两种不同的方式来根据另一个度量值进行缩放。如果只想要按一个度量值进行缩放，请选择“CPU 百分比”滑块旁边的 &gt; 标记。随后将会打开“度量值详细信息”分页：
 
 ![缩放度量值的入口点][缩放度量值的入口点]
 

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="使用地域还原和 REST API 恢复 Azure SQL 数据库" 
    description="地域还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, REST API" 
    services="sql-database" 
@@ -31,7 +31,7 @@
 
 ## 限制和安全性
 
-请参阅[在 Azure 门户中使用地域还原恢复 Azure SQL 数据库](/documentation/articles/sql-database-geo-restore-tutorial-management-portal/)。
+请参阅[在 Azure 门户中使用地域还原恢复 Azure SQL 数据库](/documentation/articles/sql-database-geo-restore-tutorial-management-portal)。
 
 ## 如何：使用 REST API 恢复 Azure SQL 数据库
 
@@ -47,15 +47,15 @@
 
 有关详细信息，请参阅以下主题：
 
-[在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal/)
+[在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal)
 
-[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/)
+[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)
 
 [Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
+[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)
 
 [服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 

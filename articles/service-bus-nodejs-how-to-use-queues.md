@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (Node.js) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Node.js" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例用 Node.js 编写。" metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Queues" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (Node.js) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Node.js" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例用 Node.js 编写。" metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Queues" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="service-bus"
     ms.date="02/10/2015"
     wacn.date="04/11/2015"
@@ -27,7 +27,7 @@
 
 ## <a name="create-app"> </a>创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/)、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 构建网站]。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站](/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac)、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 构建网站]。
 
 ## <a name="configure-app"> </a>配置应用程序以使用 Service Bus
 
@@ -36,7 +36,7 @@ Node.js azure 包。其中包括一组便于与 Service Bus REST 服务进行通
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\\node\\sbqueues\\WebRole1** 文件夹。
+1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:&#92;node&#92;sbqueues&#92;WebRole1** 文件夹。
 
 2.  在命令窗口中键入 **npm install azure**，这应该产生类似如下的输出：
 
@@ -173,7 +173,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 
 -   参阅 MSDN 参考：[队列、主题和订阅。][]
--   访问 GitHub 上的 [Azure SDK for Node] 存储库。
+-   访问 GitHub 上的 [Azure SDK for Node][] 存储库。
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
   [后续步骤]: #next-steps
@@ -186,7 +186,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [如何：向队列发送消息]: #send-messages
   [如何：从队列接收消息]: #receive-messages
   [如何：处理应用程序崩溃和不可读消息]: #handle-crashes
-  [队列概念]: ../../dotNet/Media/sb-queues-08.png
   [Azure 管理门户]: http://manage.windowsazure.cn
   
   
@@ -196,7 +195,5 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [队列、主题和订阅。]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh367516.aspx
   [使用 WebMatrix 构建网站]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
-  [以前的管理门户]: ../../Shared/Media/previous-portal.png
-  
   [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
   [使用存储构建 Node.js Web 应用程序]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/

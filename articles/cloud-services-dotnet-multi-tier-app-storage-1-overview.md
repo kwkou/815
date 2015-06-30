@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="12/23/2014"
     wacn.date="04/11/2015"
@@ -61,7 +61,7 @@
 > [WACOM.NOTE] 本教程编写完以后，Visual Studio 2013 发布，而 Azure 管理门户和 SDK 则进行了更新。如果你使用的是 Visual Studio 2013 和最新版 SDK，则必须执行不同的操作，在这种情况下，我们添加了类似这样的注释来提醒你。这些注释是在 2014 年 3 月编写的，经过修改的操作过程已使用 SDK 版本 2.3 进行测试。本教程的主要文本和屏幕快照将在以后进行更新。
 > [TechNet 电子书库][TechNet 电子书库]提供免费的电子书，其中包含本教程的内容，不含 Visual Studio 2013 的最新更新。
 
-## <a name="whyanemaillistapp"></a><span class="short-header">为什么使用本应用程序</span>为什么使用电子邮件列表服务应用程序
+## <a name="whyanemaillistapp"></a>为什么使用电子邮件列表服务应用程序
 
 我们之所以为本示例应用程序选择电子邮件列表服务，是因为它是那种需要弹性和可伸缩性的应用程序，这两种特性使得它尤其适合 Azure。
 
@@ -101,7 +101,7 @@
 
 ![取消订阅已确认页][取消订阅已确认页]
 
-## <a name="backend"></a><span class="short-header">后端概述</span>后端概述
+## <a name="backend"></a>后端概述
 
 前端存储电子邮件列表以及要在 Azure 表中发送给这些列表的邮件。当管理员计划发送某封邮件时，就会向 `message` 表添加一个表行，其中包含计划的日期和其他数据，例如主题行。一个辅助角色会定期扫描 `message` 表，看其中是否存在需要发送的邮件（我们将该角色称为辅助角色 A）。
 
@@ -123,7 +123,7 @@
 
 ![订阅队列邮件处理][订阅队列邮件处理]
 
-## <a name="tables"></a><span class="short-header">表</span>Azure 表
+## <a name="tables"></a>Azure 表
 
 Azure 电子邮件服务应用程序在 Azure 存储表中存储数据。Azure 表是一种 NoSQL 数据存储形式，不同于 [Azure SQL数据库][Azure SQL数据库] 这样的关系数据库。因此，当效率和可伸缩性比数据规范化和关系完整性更重要时，不妨选择这种存储形式。例如，在本应用程序中，一个辅助角色会在每次创建一个队列工作项时创建一个行，而另一个辅助角色会在每次发送一封电子邮件时检索并更新一个行，这在使用关系数据库的情况下，可能会造成性能瓶颈。此外，Azure 表比 Azure SQL 更廉价。有关 Azure 表的详细信息，请参阅[本系列最后一个教程][构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]结尾处列出的资源。
 
@@ -839,7 +839,7 @@ fabrikam
 
 `messagearchive` 表的行架构与 `message` 表相同。通过减少为每个行存储的属性数以及删除存在时间长于某个特定值的行，你可以限制此存档数据的大小和开销，具体取决于你想要如何利用这些存档数据。
 
-## <a name="queues"></a><span class="short-header">队列</span>Azure 队列
+## <a name="queues"></a>Azure 队列
 
 Azure 队列可用于加强此多层应用程序各层之间以及后端层中辅助角色之间的通信。
 可以使用队列在辅助角色 A 和辅助角色 B 之间进行通信，使应用程序具有可伸缩性。辅助角色 A 可以在邮件表中为每封电子邮件创建一个行，而辅助角色 B 则可以扫描表中是否存在代表未发送电子邮件的行，不过你无法添加额外的辅助角色 B 实例来对工作进行划分。使用表行来协调辅助角色 A 与辅助角色 B 的工作的一个问题是，你无法确保只有一个辅助角色实例会选取任何给定的表行来进行处理。队列为你提供这种保障。当某个辅助角色实例从队列中拉取一个工作项时，队列服务会确保其他辅助角色实例无法拉取同一个工作项。Azure 队列的这种排他性的租约功能有助于在一个辅助角色的多个实例之间共享工作负载。
@@ -866,13 +866,13 @@ Azure 电子邮件服务应用程序使用名为 `AzureMailQueue` 和 `AzureMail
 
 队列工作项包含订户 GUID。此值用于唯一标识电子邮件地址以及通过电子邮件地址订阅的列表，辅助角色 B 据此即可发送确认电子邮件。如前所述，这需要对既不在 `PartitionKey` 中，也不在 `RowKey` 中的字段进行查询，仅有这两个条件是不够的。若要使应用程序更具可伸缩性，必须重新构建 `mailinglist` 表，使 `RowKey` 中包含订户 GUID。
 
-## <a name="datadiagram"></a><span class="short-header">数据图</span>Azure 电子邮件服务数据图
+## <a name="datadiagram"></a>Azure 电子邮件服务数据图
 
 下图显示表和队列及其关系。
 
 ![Azure 电子邮件服务应用程序的数据图][Azure 电子邮件服务应用程序的数据图]
 
-## <a name="blobs"></a><span class="short-header">Blob</span>Azure Blob
+## <a name="blobs"></a>Azure Blob
 
 Blob 是指“二进制大型对象”。Azure Blob 服务是一种上载文件到云中以及在云中存储文件的方法。有关 Azure Blob 的详细信息，请参阅[本系列最后一个教程][构建 Azure 电子邮件服务应用程序的辅助角色 B（电子邮件发件人）]结尾处列出的资源。
 
@@ -883,7 +883,7 @@ Blob 存储在 Blob 容器中，就像文件存储在文件夹中一样。Azure 
 
 由于 HTML 和纯文本邮件实质上都是字符串，因此我们本来也可以将应用程序设计为将电子邮件正文存储在 `Message` 表的字符串属性中而非 Blob 中。不过，表行中属性的大小存在 64K 的限制，因此使用 Blob 可以避免对电子邮件正文大小设置的该限制。（64K 是该属性的最大总大小，而考虑到编码开销，你能够存储在属性中的最大字符串的大小实际上约为 48K。）
 
-## <a name="wawsvswacs"></a><span class="short-header">云服务与网站</span>Azure 云服务与 Azure 网站
+## <a name="wawsvswacs"></a>Azure 云服务与 Azure 网站
 
 但你下载 Azure 电子邮件服务时，该服务已配置为让前端和后端都在单个 Azure 云服务中运行。
 
@@ -907,7 +907,7 @@ Blob 存储在 Blob 容器中，就像文件存储在文件夹中一样。Azure 
 
 有关如何在 Azure 网站和 Azure 云服务之间进行抉择的详细信息，请参阅 [Azure 执行模型][Azure 执行模型]。
 
-## <a name="cost"></a><span class="short-header">成本</span>成本
+## <a name="cost"></a>成本
 
 本部分概述了在 Azure 中运行此示例应用程序的成本，采用的是本教程在 2012 年 12 月发布时的实际费率。在基于成本进行业务决策时，请确保查看以下网页上提供的最新费率：
 
@@ -1052,7 +1052,7 @@ $60.43
 
 未来版本的 Azure 可能会提供一个针对计划的重启的通知机制，让你只需启动一个额外的针对重启时间窗口的 Web 角色实例。虽然你没有资格获得 99.95% SLA，但你可以减少大约一半的成本，并且可以确保 Web 应用程序在重启过程中始终可用。
 
-## <a name="auth"></a><span class="short-header">身份验证和授权</span>身份验证和授权
+## <a name="auth"></a>身份验证和授权
 
 在生产应用程序中，你会实施一个身份验证或授权机制，例如一个针对 ASP.NET MVC Web 前端的 ASP.NET 成员身份系统，其中包括 ASP.NET Web API 服务方法。此外还可以使用其他选项（例如使用共享机密）来确保 Web API 服务方法的安全性。本示例应用程序去除了身份验证和授权功能，目的是简化安装和部署过程。（本系列的第二个教程讲述如何实施 IP 限制，使得未经授权的人员无法使用你部署到云中的应用程序。）
 
@@ -1063,7 +1063,7 @@ $60.43
 
 **注意**：我们曾计划提供一个使用共享机密来确保 Web API 服务方法安全性的机制，但未能赶在初始发布之前及时完成任务。因此，第三个教程不讲述如何生成针对订阅过程的 Web API 控制器。我们希望在本教程的下一版本中，能够提供有关如何实施安全订阅过程的说明。而现在，你可以使用管理员网页将电子邮件地址订阅到列表中，通过这种方式测试应用程序。
 
-## <a name="nextsteps"></a><span class="short-header">后续步骤</span>后续步骤
+## <a name="nextsteps"></a>后续步骤
 
 在[下一教程][配置和部署 Azure 电子邮件服务应用程序]中，你需要下载示例项目、配置开发环境、针对环境来配置项目，以及在本地和云中对项目进行测试。在以下教程中，你将了解如何从头开始生成项目。
 

@@ -20,7 +20,7 @@
 
 # 在 SQL Database V12 中创建数据库
 
-[注册](https://manage.windowsazure.cn) SQL Database V12[（在某些区域以预览版提供）](sql-database-v12-whats-new#V12AzureSqlDbPreviewGaTable)，以利用 Microsoft Azure 上的下一代 SQL Database。若要开始，你需要订阅 Microsoft Azure。注册 [Azure 免费试用版](http://azure.microsoft.com/pricing/free-trial)并查看[价格](/home/features/sql-database/#price)信息。 
+[注册](https://manage.windowsazure.cn) SQL Database V12[（在某些区域以预览版提供）](sql-database-v12-whats-new#V12AzureSqlDbPreviewGaTable)，以利用 Microsoft Azure 上的下一代 SQL Database。若要开始，你需要订阅 Microsoft Azure。注册 [Azure 免费试用版](/pricing/1rmb-trial)并查看[价格](/home/features/sql-database/#price)信息。 
 
 
 | 创建数据库 | 屏幕截图 |
@@ -35,7 +35,7 @@
 |5c."新建服务器"边栏选项卡中提供了相应的选项让你创建包含 V12 更新的新服务器。若要了解有关 V12 服务器功能的详细信息，请查看 [SQL Database V12 的新增功能](sql-database-v12-whats-new)。| ![Select V12 server][6]|
 |5d. 在"新建服务器"边栏选项卡上做出选择，然后单击"确定"。随后，你将会转到"SQL Database"边栏选项卡，请完成创建数据库所要执行的余下操作。 | ![Complete New Server blade actions][8]|
 |6. 单击"选择源"。可选择从中创建数据库的各种源类型包括：空白数据库、示例数据库或数据库的备份。| ![Select the source for the database][10]|
-|7. 接下来，请在"SQL Database"边栏选项卡中单击"定价层"。你可以选择推荐的某个定价层，或者**查看所有**可用定价层。做出选择后，请单击"选择"。 <p> 有关定价层的详细信息，请参阅[将 SQL Database Web/企业数据库升级到新服务层](./sql-database-upgrade-new-service-tiers/)与[Azure SQL Database 服务层和性能级别](http://msdn.microsoft.com/library/azure/dn741336.aspx)。 |![Select a pricing tier][7]
+|7. 接下来，请在"SQL Database"边栏选项卡中单击"定价层"。你可以选择推荐的某个定价层，或者**查看所有**可用定价层。做出选择后，请单击"选择"。 <p> 有关定价层的详细信息，请参阅[将 SQL Database Web/企业数据库升级到新服务层](./sql-database-upgrade-new-service-tiers)与[Azure SQL Database 服务层和性能级别](http://msdn.microsoft.com/library/azure/dn741336.aspx)。 |![Select a pricing tier][7]
 | 8. 接下来，请在"SQL Database"边栏选项卡中，单击"可选配置"，做出选择，然后单击"确定"。 
 | 9. 如果你选择现有的服务器，则会预先选择"资源组"和"订阅"。在"SQL Database"边栏选项卡中，"资源组"和"订阅"的旁边会出现一个锁定图标。如果你要创建新的服务器，则需要选择或创建一个资源组。有关详细信息，请查看[使用资源组管理你的 Azure 资源](azure-preview-portal-using-resource-groups)。|![Specify Resource group][11]
 | 10. 单击"创建"。随即会创建一个包含 SQL Database V12 功能的新数据库。 |![Creates a new database][12]

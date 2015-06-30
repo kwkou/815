@@ -1,12 +1,10 @@
-<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-dotnet-aspnet-mvc-4-mobile-website" urlDisplayName="ASP.NET MVC 4 mobile website" pageTitle=".NET ASP.NET MVC 4 移动网站 &ndash; Azure 教程" metaKeywords="Azure tutorial, Azure web app tutorial, Azure mobile app, Azure ASP.NET MVC 4,,ASP.NET MVC" description="本教程说明如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能将 Web 应用程序部署到 Azure 网站。" metaCanonical="" services="web-sites" documentationCenter=".NET" title="在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序" authors="tdykstra" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="03/24/2015"
     wacn.date="04/11/2015"
     />
 
 # 在 Azure 网站上部署 ASP.NET MVC 移动 Web 应用程序
-
-***由 [Rick Anderson][Rick Anderson] 撰写，更新时间：2013 年 6 月 26 日。***
 
 本教程介绍将 Web 应用程序部署到 Azure 网站的基础知识。在本教程中，我们将使用 ASP.NET MVC 4 Web 应用程序中的移动功能。若要执行本教程中的步骤，可以使用 Microsoft Visual Studio 2012。也可以使用 [Visual Studio Express 2012][Visual Studio Express 2012]，这是 Microsoft Visual Studio 的免费版本。
 
@@ -118,9 +116,9 @@ ASP.NET 标签视图显示非常混乱。例如，“日期”列很难阅读。
 
 在本节中，您将创建一个移动特定布局文件。
 
-ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏览器、单个移动浏览器或任何特定浏览器重写任何视图（包括布局和分部视图）的简单机制。要提供移动特定视图，您可以复制视图文件并在文件名中添加 .Mobile。例如，若要创建移动索引视图，可将 *Views\\Home\\Index.cshtml* 复制到 *Views\\Home\\Index.Mobile.cshtml*。
+ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏览器、单个移动浏览器或任何特定浏览器重写任何视图（包括布局和分部视图）的简单机制。要提供移动特定视图，您可以复制视图文件并在文件名中添加 .Mobile。例如，若要创建移动索引视图，可将 *Views&#92;Home&#92;Index.cshtml* 复制到 *Views&#92;Home&#92;Index.Mobile.cshtml*。
 
-若要开始，请将 \*Views\\Shared\\\_Layout.cshtml\* 复制到 \*Views\\Shared\\\_Layout.Mobile.cshtml*。打开* \_Layout.Mobile.cshtml\*，将标题从 **MVC4 Conference** 更改为 **Conference (Mobile)**。
+若要开始，请将 \*Views&#92;Shared&#92;\_Layout.cshtml\* 复制到 \*Views&#92;Shared&#92;\_Layout.Mobile.cshtml*。打开* \_Layout.Mobile.cshtml\*，将标题从 **MVC4 Conference** 更改为 **Conference (Mobile)**。
 
 在每次 **Html.ActionLink** 调用中，删除每个链接 ActionLink 中的“Browse by”。以下代码显示已完成的移动布局文件主体部分。
 
@@ -148,7 +146,7 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
         </div>
     </body>
 
-将 *Views\\Home\\AllTags.cshtml* 文件复制到 *Views\\Home\\AllTags.Mobile.cshtml*。打开此新文件，将 \<h2\> 元素从“Tags”更改为“Tags (M)”：
+将 *Views&#92;Home&#92;AllTags.cshtml* 文件复制到 *Views&#92;Home&#92;AllTags.Mobile.cshtml*。打开此新文件，将 &lt;h2&gt; 元素从“Tags”更改为“Tags (M)”：
 
      <h2>Tags (M)</h2>
 
@@ -166,9 +164,9 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 [jQuery Mobile][jQuery Mobile] 库提供一个可在所有主要移动浏览器上使用的用户界面框架。jQuery Mobile 可对支持 CSS 和 JavaScript 的移动浏览器应用渐进增强。渐进增强允许所有浏览器显示网页的基本内容，同时允许更强大的浏览器和设备拥有更丰富的显示。jQuery Mobile 中包括的 JavaScript 和 CSS 文件为众多元素设定了样式来适应移动浏览器，无需对标记做任何更改。
 
-1.  删除先前创建的 \*Shared\\\_Layout.Mobile.cshtml\* 文件。
+1.  删除先前创建的 \*Shared&#92;\_Layout.Mobile.cshtml\* 文件。
 
-2.  将 *Views\\Home\\AllTags.Mobile.cshtml* 重命名为 *Views\\Home\\AllTags.Mobile.cshtml.hide*（之后还会再次用到该文件。）因为该文件不再具有 .cshtml 扩展名，所以 ASP.NET MVC 运行时不会使用它来呈现 *AllTags* 视图。
+2.  将 *Views&#92;Home&#92;AllTags.Mobile.cshtml* 重命名为 *Views&#92;Home&#92;AllTags.Mobile.cshtml.hide*（之后还会再次用到该文件。）因为该文件不再具有 .cshtml 扩展名，所以 ASP.NET MVC 运行时不会使用它来呈现 *AllTags* 视图。
 
 3.  执行以下操作安装 jQuery.Mobile.MVC NuGet 程序包：
 
@@ -182,13 +180,13 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 
--   *App\_Start\\BundleMobileConfig.cs* 文件，引用添加的 jQuery JavaScript 和 CSS 文件时需要此文件。必须按照下面的说明并引用该文件中定义的移动捆绑。
+-   *App\_Start&#92;BundleMobileConfig.cs* 文件，引用添加的 jQuery JavaScript 和 CSS 文件时需要此文件。必须按照下面的说明并引用该文件中定义的移动捆绑。
 -   jQuery Mobile CSS 文件。
--   一个 ViewSwitcher 控制器小组件 (*Controllers\\ViewSwitcherController.cs)*。
+-   一个 ViewSwitcher 控制器小组件 (*Controllers&#92;ViewSwitcherController.cs)*。
 -   jQuery Mobile JavaScript 文件。
--   jQuery Mobile 样式的布局文件 (*Views\\Shared\_Layout.Mobile.cshtml*)。
--   视图切换器分部视图 (*MvcMobile\\Views\\Shared\_ViewSwitcher.cshtml*)，它在每个页面的顶部提供一个可在桌面视图和移动视图之间切换的链接。
--   Content\\images 文件夹中的几个 .png 和 .gif 图像文件。
+-   jQuery Mobile 样式的布局文件 (*Views&#92;Shared\_Layout.Mobile.cshtml*)。
+-   视图切换器分部视图 (*MvcMobile&#92;Views&#92;Shared\_ViewSwitcher.cshtml*)，它在每个页面的顶部提供一个可在桌面视图和移动视图之间切换的链接。
+-   Content&#92;images 文件夹中的几个 .png 和 .gif 图像文件。
 
 打开 *Global.asax* 文件，添加以下代码作为 Application\_Start 方法的最后一行。
 
@@ -226,7 +224,7 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
         } 
     }
 
-打开 \*MvcMobile\\Views\\Shared\\\_Layout.Mobile.cshtml\* 文件，直接在 *Html.Partial* 调用后添加以下标记：
+打开 \*MvcMobile&#92;Views&#92;Shared&#92;\_Layout.Mobile.cshtml\* 文件，直接在 *Html.Partial* 调用后添加以下标记：
 
     <div data-role="header" align="center">
         @Html.ActionLink("Home", "Index", "Home")
@@ -269,7 +267,7 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 
 <!--![Display desktop view][jquery4]-->
 
-桌面视图不提供直接导航回移动视图的途径。现在来修复此问题。打开 \*Views\\Shared\\\_Layout.cshtml\* 文件。在 \<body\> 元素紧下方，添加以下代码来呈现视图切换器小组件：
+桌面视图不提供直接导航回移动视图的途径。现在来修复此问题。打开 \*Views&#92;Shared&#92;\_Layout.cshtml\* 文件。在 &lt;body&gt; 元素紧下方，添加以下代码来呈现视图切换器小组件：
 
     @Html.Partial("_ViewSwitcher")
 
@@ -328,7 +326,7 @@ else
 
 ![][5]
 
-您可以通过在视图文件中将 *RequireConsistentDisplayMode* 设置为 false 来禁用视图中一致的显示模式。*Views\\Home\\AllSpeakers.cshtml* 文件中的以下标记将 *RequireConsistentDisplayMode* 设置为 false：
+您可以通过在视图文件中将 *RequireConsistentDisplayMode* 设置为 false 来禁用视图中一致的显示模式。*Views&#92;Home&#92;AllSpeakers.cshtml* 文件中的以下标记将 *RequireConsistentDisplayMode* 设置为 false：
 
     @model IEnumerable<string>
     @{
@@ -340,8 +338,8 @@ else
 
 正如您刚才看到的，“发言人”视图虽然可读，但链接字迹小，不易在移动设备上点击。在本节中，您将创建一个移动特定“发言人”视图，它看起来像一个现代移动应用程序，链接字迹大、易于点击，而且包含可快速查找发言人的搜索框。
 
-1.  将 *AllSpeakers.cshtml* 复制到 *AllSpeakers.Mobile.cshtml。*打开 *AllSpeakers.Mobile.cshtml* 文件，移除 \<h2\> 标题元素。
-2.  在 **\<ul\>** 标签中，添加 data-role 属性，将其值设置为 *listview*。同其他 \*data-\*\* 属性一样，*data-role="listview"* 可使大的列表项更易于点击。完成的标记如下所示：
+1.  将 *AllSpeakers.cshtml* 复制到 *AllSpeakers.Mobile.cshtml。*打开 *AllSpeakers.Mobile.cshtml* 文件，移除 &lt;h2&gt; 标题元素。
+2.  在 **&lt;ul&gt;** 标签中，添加 data-role 属性，将其值设置为 *listview*。同其他 \*data-\*\* 属性一样，*data-role="listview"* 可使大的列表项更易于点击。完成的标记如下所示：
 
         @model IEnumerable<string>
         @{
@@ -357,7 +355,7 @@ else
 
     ![][6]
 
-4.  在 **\<ul\>** 标签中，添加 data-filter 属性，将其值设置为 true。下面的代码显示 ul 标记。
+4.  在 **&lt;ul&gt;** 标签中，添加 data-filter 属性，将其值设置为 true。下面的代码显示 ul 标记。
 
         <ul data-role="listview" data-filter="true">
 
@@ -373,9 +371,9 @@ else
 
 与默认“发言人”视图一样，“标签”视图虽然可读，但链接字迹小，不易在移动设备上点击。在本节中，您将像修正“发言人”视图那样修正“标签”视图。
 
-1.  将 *Views\\Home\\AllTags.Mobile.cshtml.hide* 文件重命名为 *Views\\Home\\AllTags.Mobile.cshtml*。打开重命名的文件，移除 **\<h2\>** 元素。
+1.  将 *Views&#92;Home&#92;AllTags.Mobile.cshtml.hide* 文件重命名为 *Views&#92;Home&#92;AllTags.Mobile.cshtml*。打开重命名的文件，移除 **&lt;h2&gt;** 元素。
 
-2.  将 data-role 和 data-filter 属性添加到 **\<ul\>** 标签中，如下所示：
+2.  将 data-role 和 data-filter 属性添加到 **&lt;ul&gt;** 标签中，如下所示：
 
         <ul data-role="listview" data-filter="true">
 
@@ -387,9 +385,9 @@ else
 
 您可以像改进“发言人”和“标签”视图那样改进“日期”视图，以使其更容易在移动设备上使用。
 
-1.  将 *Views\\Home\\AllDates.Mobile.cshtml* 文件复制到 *Views\\Home\\AllDates.Mobile.cshtml*。
-2.  打开新文件，移除 **\<h2\>** 元素。
-3.  将 *data-role="listview"* 添加到 \<ul\> 标签中，如下所示：
+1.  将 *Views&#92;Home&#92;AllDates.Mobile.cshtml* 文件复制到 *Views&#92;Home&#92;AllDates.Mobile.cshtml*。
+2.  打开新文件，移除 **&lt;h2&gt;** 元素。
+3.  将 *data-role="listview"* 添加到 &lt;ul&gt; 标签中，如下所示：
 
         <ul data-role="listview">
 
@@ -397,7 +395,7 @@ else
 
 ![][9]
 
-将 *Views\\Home\\AllDates.Mobile.cshtml* 文件的内容替换为下列代码：
+将 *Views&#92;Home&#92;AllDates.Mobile.cshtml* 文件的内容替换为下列代码：
 
     @model IEnumerable<DateTime>
     @{
@@ -430,7 +428,7 @@ else
 
 ![][12]
 
-正如您所看到的，显示的内容难以在移动浏览器上阅读。日期列难于阅读，标签列也超出了视图。为解决这些问题，可将 Views\*Home\\SessionsTable.cshtml\* 复制到 *Views\\Home\\SessionsTable.Mobile.cshtml*，然后用以下代码替换文件的内容：
+正如您所看到的，显示的内容难以在移动浏览器上阅读。日期列难于阅读，标签列也超出了视图。为解决这些问题，可将 Views\*Home&#92;SessionsTable.cshtml\* 复制到 *Views&#92;Home&#92;SessionsTable.Mobile.cshtml*，然后用以下代码替换文件的内容：
 
     @using MvcMobile.Models
     @model IEnumerable<Session>
@@ -467,7 +465,7 @@ else
 
 默认桌面视图虽然不错，但仍可以改进。
 
-将 *Views\\Home\\SessionByCode.cshtml* 复制到 *Views\\Home\\SessionByCode.Mobile.cshtml*，用以下标记替换 *Views\\Home\\SessionByCode.Mobile.cshtml* 文件的内容：
+将 *Views&#92;Home&#92;SessionByCode.cshtml* 复制到 *Views&#92;Home&#92;SessionByCode.Mobile.cshtml*，用以下标记替换 *Views&#92;Home&#92;SessionByCode.Mobile.cshtml* 文件的内容：
 
     @model MvcMobile.Models.Session
 

@@ -1,4 +1,4 @@
-﻿<properties title="Multi-Shard Querying" pageTitle="多分片查询" description="Run 使用弹性缩放 API 跨分片查询。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, multi-shard, multishard, querying" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Multi-Shard Querying" pageTitle="多分片查询" description="Run 使用弹性缩放 API 跨分片查询。" metaKeywords="sharding scaling, Azure SQL DB sharding, elastic scale, multi-shard, multishard, querying" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -6,7 +6,7 @@
    wacn.date="05/25/2015"/>
 
 # 多分片查询
-**多分片查询**用于诸如数据收集/报告等需要跨多个分片运行查询的任务。（相比之下，[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)会在单个分片上执行所有操作。） 
+**多分片查询**用于诸如数据收集/报告等需要跨多个分片运行查询的任务。（相比之下，[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)会在单个分片上执行所有操作。） 
 
 弹性缩放客户端库引入了名为 **Microsoft.Azure.SqlDatabase.ElasticScale.Query** 的新命名空间，以提供使用单个查询及结果查询多个分片的功能。它提供对分片集合进行查询抽象的功能。它还提供了备用执行策略，尤其是部分结果，以处理在对多个分片进行查询时所出现的故障。  
 

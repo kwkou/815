@@ -33,22 +33,22 @@
 <h2>创建虚拟机</h2>
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击"新建"****。
-3. 单击"虚拟机"****。
-4. 单击"快速创建"****。
-5. 在"创建虚拟机"****屏幕中，为"DNS 名称"****输入一个值。
-6. 从"映像"****下拉列表中，选择一个映像，例如"Windows Server 2012"****。
-7. 在"用户名"****字段中为管理员输入一个名称。记住您下次要输入的此名称和密码，远程登录虚拟机时您将使用它们。
-8. 在"新密码"****字段中输入一个密码，然后在"确认"****字段中重新输入一次。
-9. 从"位置"****下拉列表中，选择虚拟机的数据中心位置。
-10. 单击"创建虚拟机"****。即会开始创建虚拟机。您可以在管理门户的"虚拟机"****部分中监视状态。当其状态显示为"活动"****时，您可以登录该虚拟机。
+2. 单击"新建"。
+3. 单击"虚拟机"。
+4. 单击"快速创建"。
+5. 在"创建虚拟机"屏幕中，为"DNS 名称"输入一个值。
+6. 从"映像"下拉列表中，选择一个映像，例如"Windows Server 2012"。
+7. 在"用户名"字段中为管理员输入一个名称。记住您下次要输入的此名称和密码，远程登录虚拟机时您将使用它们。
+8. 在"新密码"字段中输入一个密码，然后在"确认"字段中重新输入一次。
+9. 从"位置"下拉列表中，选择虚拟机的数据中心位置。
+10. 单击"创建虚拟机"。即会开始创建虚拟机。您可以在管理门户的"虚拟机"部分中监视状态。当其状态显示为"活动"时，您可以登录该虚拟机。
 
 <h2>远程登录到虚拟机</h2>
 
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
-2. 单击"虚拟机"****。
+2. 单击"虚拟机"。
 3. 单击您要登录的虚拟机名称。
-4. 单击"连接"****。
+4. 单击"连接"。
 5. 根据需要响应提示以连接到虚拟机。提示需要管理员名称和密码时，请使用您创建虚拟机时提供的值。
 
 <h2>如何创建服务总线命名空间</h2>
@@ -58,11 +58,11 @@
 创建服务命名空间：
 
 1.  登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2.  在管理门户的左侧导航窗格中，单击"服务总线"****。
-3.  在管理门户的下方窗格中，单击"创建"****。
+2.  在管理门户的左侧导航窗格中，单击"服务总线"。
+3.  在管理门户的下方窗格中，单击"创建"。
 
     ![Create new service bus][create_service_bus]
-4.  在"创建命名空间"****对话框中，输入命名空间名称。系统会立即检查该名称是否可用，因为该名称必须是唯一名称。
+4.  在"创建命名空间"对话框中，输入命名空间名称。系统会立即检查该名称是否可用，因为该名称必须是唯一名称。
 
     ![Create a namespace dialog][create_namespace_dialog]
 5.  在确保命名空间名称可用后，选择应该托管您的命名空间的区域（确保使用您托管虚拟机的相同区域）。
@@ -75,28 +75,28 @@
 
 	![Click create screenshot][click_create]
 
-您创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为"活动"****后再继续下一步。
+您创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为"活动"后再继续下一步。
 
 <h2>获取命名空间的默认管理凭据</h2>
 
 为了在新的命名空间上执行管理操作（例如创建队列），您需要获取该命名空间的管理凭据。
 
-1.  在左侧导航窗格中，单击"服务总线"****节点以显示可用命名空间列表：   
+1.  在左侧导航窗格中，单击"服务总线"节点以显示可用命名空间列表：   
     ![Available namespaces screenshot][available_namespaces]
 2.  从显示的列表中选择刚刚创建的命名空间：   
     ![Namespace list screenshot][namespace_list]
-3. 单击"访问密钥"****。   
+3. 单击"访问密钥"。   
     ![Access key button][access_key_button]
-4.  在对话框中，查找"默认颁发者"****和"默认密钥"****条目。记下这些值，因为您将在下面使用此信息来对命名空间执行操作。 
+4.  在对话框中，查找"默认颁发者"和"默认密钥"条目。记下这些值，因为您将在下面使用此信息来对命名空间执行操作。 
 
 <h2>如何创建 .NET 应用程序来执行需要进行大量计算的任务</h2>
 
-1. 在您的部署计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for .NET](/develop/net/)。
-2. 使用名为 **TSPSolver** 的项目创建 .NET 控制台应用程序。确保目标框架设置为用于 .**NET Framework 4**（而不是 **.NET Framework 4 Client Profile**）。可在创建项目后设置目标框架，具体方法如下：在 Visual Studio 的菜单中，依次单击"项目"****、"属性"****、"应用程序"****选项卡，然后设置"目标框架"****的值。
-3. 加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击"浏览"****选项卡、浏览到 **C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\2012-06\ref**，然后选择"Microsoft.ServiceBus.dll"****作为引用。
-4. 加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击".NET"****选项卡，然后选择"System.Runtime.Serialization"****作为引用。
+1. 在您的部署计算机（无需是您创建的虚拟机）上，下载 [Azure SDK for .NET](/develop/net)。
+2. 使用名为 **TSPSolver** 的项目创建 .NET 控制台应用程序。确保目标框架设置为用于 .**NET Framework 4**（而不是 **.NET Framework 4 Client Profile**）。可在创建项目后设置目标框架，具体方法如下：在 Visual Studio 的菜单中，依次单击"项目"、"属性"、"应用程序"选项卡，然后设置"目标框架"的值。
+3. 加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"、单击"添加引用"、单击"浏览"选项卡、浏览到 **C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\2012-06\ref**，然后选择"Microsoft.ServiceBus.dll"作为引用。
+4. 加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"、单击"添加引用"、单击".NET"选项卡，然后选择"System.Runtime.Serialization"作为引用。
 5. 将本节末尾的示例代码用于 **Program.cs** 的内容。
-6. 将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符分别修改为使用您的服务总线"命名空间"****、"默认颁发者"****和"默认密钥"****值。
+6. 将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符分别修改为使用您的服务总线"命名空间"、"默认颁发者"和"默认密钥"值。
 7. 编译应用程序。这将在您的项目的 **bin** 文件夹中（**bin\release** 或 **bin\debug**，具体取决于您针对发布版本还是调试版本）创建 **TSPSolver.exe**。稍后您会将此可执行文件和 Microsoft.ServiceBus.dll 复制到您的虚拟机。
 
 <p/>
@@ -324,11 +324,11 @@
 
 <h2>如何创建 .NET 应用程序来监视需要进行大量计算的任务的进度</h2>
 
-1. 在您的开发计算机上，使用 **TSPClient** 作为项目名称创建 .NET 控制台应用程序。确保目标框架设置为用于 .**NET Framework 4** 或更高版本（而不是 **.NET Framework 4 Client Profile**）。可在创建项目后设置目标框架，具体方法如下：在 Visual Studio 的菜单中，依次单击"项目"****、"属性"****、"应用程序"****选项卡，然后设置"目标框架"****的值。
-2. 加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"****、单击"添加引用"****、单击"浏览"****选项卡、浏览到 Azure .NET SDK（例如在位置 **C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.5\ToolsRef** 中），然后选择"Microsoft.ServiceBus.dll"****作为引用。
-3. 加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPClient"****、单击"添加引用"****、单击".NET"****选项卡，然后选择"System.Runtime.Serialization"****作为引用。
+1. 在您的开发计算机上，使用 **TSPClient** 作为项目名称创建 .NET 控制台应用程序。确保目标框架设置为用于 .**NET Framework 4** 或更高版本（而不是 **.NET Framework 4 Client Profile**）。可在创建项目后设置目标框架，具体方法如下：在 Visual Studio 的菜单中，依次单击"项目"、"属性"、"应用程序"选项卡，然后设置"目标框架"的值。
+2. 加入 Microsoft ServiceBus 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPSolver"、单击"添加引用"、单击"浏览"选项卡、浏览到 Azure .NET SDK（例如在位置 **C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.5\ToolsRef** 中），然后选择"Microsoft.ServiceBus.dll"作为引用。
+3. 加入 System Runtime Serialization 库。在 Visual Studio 解决方案资源管理器中，右键单击"TSPClient"、单击"添加引用"、单击".NET"选项卡，然后选择"System.Runtime.Serialization"作为引用。
 4. 将本节末尾的示例代码用于 **Program.cs** 的内容。
-5. 将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符分别修改为使用您的服务总线"命名空间"****、"默认颁发者"****和"默认密钥"****值。
+5. 将 **your\_service\_bus\_namespace**、**your\_service\_bus\_owner** 和 **your\_service\_bus\_key** 占位符分别修改为使用您的服务总线"命名空间"、"默认颁发者"和"默认密钥"值。
 5. 编译应用程序。这将在您的项目的 **bin** 文件夹中（**bin\release** 或 **bin\debug**，具体取决于您针对发布版本还是调试版本）创建 **TSPClient.exe**。您可以从开发计算机上运行此代码，或将此可执行文件和 Microsoft.ServiceBus.dll 复制到将要运行该客户端应用程序的计算计上（不需要放置于您的虚拟机上）。
 
 <p/>

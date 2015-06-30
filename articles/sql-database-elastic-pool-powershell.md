@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="使用 PowerShell 创建和管理 SQL Database 弹性数据库池" 
    description="使用 PowerShell 创建和管理 Azure SQL Database 弹性数据库池" 
    services="sql-database" 
@@ -36,7 +36,7 @@
 
 用于创建和管理 Azure SQL Database 和弹性池的 cmdlet 位于 Azure 资源管理器模块中。启动 Azure PowerShell 时，默认情况下将导入 Azure 模块中的 cmdlet。若要切换到 Azure 资源管理器模块，请使用 Switch-AzureMode cmdlet。
 
-	PS C:\>Switch-AzureMode -Name AzureResourceManager
+	PS C:&gt;Switch-AzureMode -Name AzureResourceManager
 
 有关详细信息，请参阅[通过资源管理器使用 Windows PowerShell](powershell-azure-resource-manager)。
 
@@ -45,7 +45,7 @@
 
 现在，你已经运行 Azure 资源管理器模块，因此可以访问创建和配置弹性池所需的所有 cmdlet。首先，你必须能够访问 Azure 帐户。运行以下项目，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
-	PS C:\>Add-AzureAccount
+	PS C:&gt;Add-AzureAccount
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -54,7 +54,7 @@
 
 若要选择订阅，你需要提供订阅 ID 或订阅名称 (**-SubscriptionName**)。你可以从前面的步骤中复制该信息，或者，如果你有多个订阅，你可以运行 **Get-Subscription** cmdlet，然后从结果集中复制所需的订阅信息。获得订阅以后，你可以运行以下 cmdlet：
 
-	PS C:\>Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
+	PS C:&gt;Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
 
 ## 创建资源组、服务器和防火墙规则
@@ -63,13 +63,13 @@
 
 如果你已经有了一个资源组，则可转到下一步，也可运行以下命令来创建新的资源组：
 
-	PS C:\>New-AzureResourceGroup -Name "resourcegroup1" -Location "China North"
+	PS C:&gt;New-AzureResourceGroup -Name "resourcegroup1" -Location "China North"
 
 ### 创建服务器 
 
 弹性池在 Azure SQL Server 中创建。如果你已经有了一个服务器，则可转到下一步，也可运行以下命令来创建新的 V12 服务器。将 ServerName 替换为你的服务器的名称。该服务器名称必须对于 Azure SQL Server 来说是唯一的，因此如果名称已被使用，你可能会在此处获得一个错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。成功创建服务器后，会显示服务器详细信息和 PowerShell 提示。你可以编辑该命令，以便使用所选的任何有效位置。
 
-	PS C:\>New-AzureSqlServer -ResourceGroupName "resourcegroup1" -ServerName "server1" -Location "China North" -ServerVersion "12.0"
+	PS C:&gt;New-AzureSqlServer -ResourceGroupName "resourcegroup1" -ServerName "server1" -Location "China North" -ServerVersion "12.0"
 
 当你运行此命令时，会打开一个窗口，要求你提供用户名和密码。这不是你的 Azure 凭据，请输入用户名和密码，将其作为你要为新服务器创建的管理员凭据。  
 
@@ -80,7 +80,7 @@
 
 如果你的服务器需要允许到其他 Azure 服务的访问，请添加 **-AllowAllAzureIPs** 开关，以便添加一个特殊的防火墙规则，允许到服务器的所有 Azure 流量访问。
 
-	PS C:\>New-AzureSqlServerFirewallRule -ResourceGroupName "resourcegroup1" -ServerName "server1" -FirewallRuleName "rule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
+	PS C:&gt;New-AzureSqlServerFirewallRule -ResourceGroupName "resourcegroup1" -ServerName "server1" -FirewallRuleName "rule1" -StartIpAddress "192.168.0.198" -EndIpAddress "192.168.0.199"
 
 有关详细信息，请参阅 [Azure SQL Database 防火墙](https://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx)。
 
@@ -90,7 +90,7 @@
 现在，你已经有了一个资源组、一个服务器，并且配置了防火墙规则，因此可以访问服务器。以下命令将创建弹性池。该命令将创建一个池，可以共享总共 400 DTU。可以确保池中的每个数据库始终有 10 DTU (DatabaseDtuMin) 可用。池中的各个数据库最多可以耗用 100 DTU (DatabaseDtuMax)。有关详细的参数说明，请参阅 [Azure SQL Database 弹性池](sql-database-elastic-pool)。 
 
 
-	PS C:\>New-AzureSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
+	PS C:&gt;New-AzureSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
 
 
 ### 创建弹性数据库或将其添加到池中
@@ -103,7 +103,7 @@
 若要直接在弹性池中创建新的数据库，请使用 **New-AzureSqlDatabase** cmdlet 并设置 **ElasticPoolName** 参数。
 
 
-	PS C:\>New-AzureSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
+	PS C:&gt;New-AzureSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 
 
@@ -114,11 +114,11 @@
 
 为了演示，请创建一个不在弹性池中的数据库。
 
-	PS C:\>New-AzureSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -Edition "Standard"
+	PS C:&gt;New-AzureSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -Edition "Standard"
 
 将现有数据库移到弹性池中。
 
-	PS C:\>Set-AzureSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
+	PS C:&gt;Set-AzureSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 ## 监视弹性数据库和弹性池
 
@@ -126,12 +126,12 @@
 
 你可以跟踪弹性池操作（包括创建和更新）的状态。 
 
-	PS C:\> Get-AzureSqlElasticPoolActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" 
+	PS C:&gt; Get-AzureSqlElasticPoolActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" 
 
 
 ### 获取将弹性数据库移入和移出弹性池的状态
 
-	PS C:\>Get-AzureSqlElasticPoolDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
+	PS C:&gt;Get-AzureSqlElasticPoolDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 ### 获取弹性池的资源消耗指标
 
@@ -158,19 +158,19 @@
 
 检索指标：
 
-	PS C:\> $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
+	PS C:&gt; $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
 通过重复调用和追加数据来获取更多天数：
 
-	PS C:\> $metrics = $metrics + (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/21/2015" -EndTime "4/24/2015") 
+	PS C:&gt; $metrics = $metrics + (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/21/2015" -EndTime "4/24/2015") 
  
 设置表的格式：
 
-    PS C:\> $table = Format-MetricsAsTable $metrics 
+    PS C:&gt; $table = Format-MetricsAsTable $metrics 
 
 导出到 CSV 文件：
 
-    PS C:\> foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation} 
+    PS C:&gt; foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation} 
 
 ### 获取弹性数据库的资源消耗指标
 
@@ -180,19 +180,19 @@
 
 获取指标：
 
-    PS C:\> $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
+    PS C:&gt; $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
 重复进行调用并追加数据，以便根据需要获取更多天数：
 
-    PS C:\> $metrics = $metrics + (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/21/2015" -EndTime "4/24/2015") 
+    PS C:&gt; $metrics = $metrics + (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/21/2015" -EndTime "4/24/2015") 
 
 设置表的格式：
 
-    PS C:\> $table = Format-MetricsAsTable $metrics 
+    PS C:&gt; $table = Format-MetricsAsTable $metrics 
 
 导出到 CSV 文件：
 
-    PS C:\> foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation}
+    PS C:&gt; foreach($e in $table) { Export-csv -Path c:\temp\metrics.csv -input $e -Append -NoTypeInformation}
 
 
 ## 汇总

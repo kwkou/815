@@ -13,7 +13,7 @@
 
 # 使用 Azure PowerShell 管理虚拟机
 
-在开始之前，你需要确保你已安装了 Azure PowerShell。为此，请访问[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/)
+在开始之前，你需要确保你已安装了 Azure PowerShell。为此，请访问[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
 ## 获取映像
 

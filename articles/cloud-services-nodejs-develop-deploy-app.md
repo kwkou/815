@@ -12,7 +12,7 @@
 
 完成本指南时，你将在 Azure 云服务中运行一个简单的 Node.js 应用程序。云服务是 Azure 中可扩展的云应用程序的构造块。它们允许进行单独且独立的管理，并允许横向扩展应用程序的前端和后端组件。云服务为可靠托管每个角色提供强大的专用虚拟机。
 
-有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的详细信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
+有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的详细信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
 <p />
 
@@ -31,16 +31,16 @@
 
 执行以下任务可创建一个新的 Azure 云服务项目以及基本的 Node.js 基架：
 
-1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"********。
+1. 在**开始菜单**或**开始屏幕**中，搜索 **Azure PowerShell**。最后，右键单击"Azure PowerShell"并选择"以管理员身份运行"。
 
 	![Azure PowerShell icon][powershell-menu]
 
 	[WACOM.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
 
-2.  在 C 盘新建一个 **node** 目录，然后切换到 c:\\node 目录：
+2.  在 C 盘新建一个 **node** 目录，然后切换到 c:\node 目录：
 	
-	![A command prompt displaying the commands 'mkdir c:\\node' and 'cd node'.][mkdir]
+	![A command prompt displaying the commands 'mkdir c:\node' and 'cd node'.][mkdir]
 
 3.  输入以下 cmdlet 以创建新的解决方案：
 
@@ -78,7 +78,7 @@
 
 5.  使用以下命令导航到 **WebRole1** 目录，然后在记事本中打开 **server.js** 文件。 
 
-	PS C:\\node\\helloworld> cd WebRole1
+	PS C:\node\helloworld> cd WebRole1
         PS C:\node\helloworld\WebRole1> notepad server.js
 
 	**server.js** 文件是使用 **Add-AzureNodeWebRole** cmdlet 创建的，并且包含以下起始代码。此代码与 [nodejs.org][] 网站上的"Hello World"示例类似，只不过：
@@ -107,7 +107,7 @@ Azure 计算模拟器是 Azure SDK 所安装的工具之一，你可以使用此
 
 ## 将应用程序部署到 Azure
 
-	[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
+[WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 
 

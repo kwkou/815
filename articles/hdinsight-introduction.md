@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-introduction-hdinsight" urlDisplayName="HDInsight Introduction" pageTitle="Azure HDInsight 简介 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Apache Hadoop clusters in the cloud, to provide a software framework to manage, analyze, and report on big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Introduction to Azure HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-introduction-hdinsight" urlDisplayName="HDInsight Introduction" pageTitle="Azure HDInsight 简介 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Apache Hadoop clusters in the cloud, to provide a software framework to manage, analyze, and report on big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Introduction to Azure HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/02/2014"
     wacn.date="04/11/2015"
@@ -63,7 +63,7 @@ HDInsight 提供了对 Hive 和 Pig 的实现以集成数据处理和仓库功�
 
 ### Pig
 
-Pig 是一个高级别平台，用于在 Hadoop 群集上处理大数据。Pig 包含一种称作 Pig Latin 的数据流语言（该语言支持对大型数据集编写查询）和一个从控制台运行程序的执行环境。Pig Latin 程序包含在后台转换为 MapReduce 程序系列的数据集转换系列。Pig Latin 抽象提供了比 MapReduce 更丰富的数据结构，并为 Hadoop 执行 SQL 对关系数据库管理系统 (RDBMS) 执行的操作。Pig Latin 可完全扩展。在整理分析时，可调用用 Java、Python、Ruby、C\# 或 JavaScript 编写的用户定义的函数 (UDF) 来自定义每个处理路径阶段。有关其他信息，请参阅[欢迎使用 Apache Pig！（可能为英文页面）][]
+Pig 是一个高级别平台，用于在 Hadoop 群集上处理大数据。Pig 包含一种称作 Pig Latin 的数据流语言（该语言支持对大型数据集编写查询）和一个从控制台运行程序的执行环境。Pig Latin 程序包含在后台转换为 MapReduce 程序系列的数据集转换系列。Pig Latin 抽象提供了比 MapReduce 更丰富的数据结构，并为 Hadoop 执行 SQL 对关系数据库管理系统 (RDBMS) 执行的操作。Pig Latin 可完全扩展。在整理分析时，可调用用 Java、Python、Ruby、C# 或 JavaScript 编写的用户定义的函数 (UDF) 来自定义每个处理路径阶段。有关其他信息，请参阅[欢迎使用 Apache Pig！（可能为英文页面）][]
 
 ### Hive
 
@@ -75,7 +75,7 @@ Sqoop 是一种用于在 Hadoop 和关系数据库（如 SQL）或其他结构�
 
 ### Microsoft Avro Library
 
-Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C\#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
+Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
 
 Apache Avro 序列化格式广泛应用于 Azure HDInsight 及其他 Apache Hadoop 环境中。Avro 提供了简便的方法来表示 Hadoop MapReduce 作业内的复杂数据结构。Avro 文件格式已设计为支持分布式 MapReduce 编程模型。实现分布的关键是文件必须是“可拆分的”，也就是说，用户可以在文件中随机设置一个点，然后即可从某一特定块开始读取。有关其他信息，请参阅[使用 Microsoft Avro Library 序列化数据][]。
 

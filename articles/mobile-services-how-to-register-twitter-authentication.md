@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-how-to-guides-register-for-twitter-authentication" urlDisplayName="Register for Twitter Authentication" pageTitle="Register for Twitter authentication - Mobile Services" metaKeywords="Azure registering application, Azure Twitter authentication, application authenticate, authenticate mobile services, Mobile Services Twitter" description="Learn how to use Twitter authentication with your Azure Mobile Services application." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Twitter login with Mobile Services" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-how-to-guides-register-for-twitter-authentication" urlDisplayName="Register for Twitter Authentication" pageTitle="Register for Twitter authentication - Mobile Services" metaKeywords="Azure registering application, Azure Twitter authentication, application authenticate, authenticate mobile services, Mobile Services Twitter" description="Learn how to use Twitter authentication with your Azure Mobile Services application." metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Register your apps for Twitter login with Mobile Services" authors="" solutions="" manager="" editor="" />
 <tags ms.service="mobile-services"
     ms.date="11/21/2014"
     wacn.date="04/11/2015"
@@ -15,7 +15,7 @@
 
 1.  导航到 [Twitter 开发人员][]网站，使用你的 Twitter 帐户凭据登录，然后单击“Create a new application”（创建新应用程序） 。
 
-    ![][]
+    ![][0]
 
 2.  键入应用程序的“Name”（名称）、“Description”（说明）和“Web Site”（网站）值，然后在“Callback URL”（回调 URL）中键入移动服务的 URL 。
 

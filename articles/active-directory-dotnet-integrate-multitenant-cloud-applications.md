@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="使用 Azure Active Directory 开发多租户云应用程序" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="使用 Azure Active Directory 开发多租户云应用程序" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="12/16/2014"
     wacn.date="04/11/2015"
@@ -59,7 +59,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 
 **应用域**：应用程序的主机名，例如 "contoso.com"。此属性不得包含任何端口号。在开发期间，此属性应设置为 "localhost"。
 
-**应用程序重定向 URL**：用户登录后并当一个组织已授权您的应用程序时，Azure AD 将发送响应的重定向 URL，例如："https://contoso.com/"。在开发期间，此属性应设置为 "https://localhost: \< 端口号 \>"
+**应用程序重定向 URL**：用户登录后并当一个组织已授权您的应用程序时，Azure AD 将发送响应的重定向 URL，例如："https://contoso.com/"。在开发期间，此属性应设置为 "https://localhost: &lt; 端口号 &gt;"
 
 ### 步骤 3：配置应用程序以使用客户端 ID 和客户端机密
 

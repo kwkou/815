@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop-3.0" urlDisplayName="Get Started" pageTitle="开始在 HDInsight 中使用 Hadoop 2.4 | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight-hadoop-3.0" urlDisplayName="Get Started" pageTitle="开始在 HDInsight 中使用 Hadoop 2.4 | Azure" metaKeywords="" description="Get started using Hadoop in HDInsight, a big data solution. Learn how to provision clusters, run hive jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Hadoop in HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -31,7 +31,7 @@ Microsoft 还发布了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 <!--  [Member Offers][azure-member-offers]  -->
 
 -   装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的计算机。
--   有关最新 HDInsight 版本的说明，请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes/)。
+-   有关最新 HDInsight 版本的说明，请参阅 [HDInsight 发行说明](/zh-cn/documentation/articles/hdinsight-release-notes)。
 
 **估计完成时间：**30 分钟
 
@@ -124,7 +124,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
     顶部有多个选项卡。默认选项卡为“Hive 编辑器”，其他选项卡包括“作业”和“文件”。使用仪表板可以提交 Hive 查询、检查 Hadoop 作业日志，以及浏览 WASB 文件。
 
-> [WACOM.NOTE] 请注意，URL 为 *\<群集名称\>.azurehdinsight.cn*。如果不从管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
+> [WACOM.NOTE] 请注意，URL 为 *&lt;群集名称&gt;.azurehdinsight.cn*。如果不从管理门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
 
 **运行 Hive 查询**
 
@@ -196,7 +196,7 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 -   [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 -   [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 -   [将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]
--   [为 HDInsight 开发 C\# Hadoop 流程序][hdinsight-develop-streaming]
+-   [为 HDInsight 开发 C# Hadoop 流程序][hdinsight-develop-streaming]
 -   [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 <!-- [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/ -->

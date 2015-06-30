@@ -86,9 +86,9 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 
 完成配置设置后，单击**"发布"**。
 
-输出窗口中会显示部分进度信息，然后你将看到"Microsoft Azure 活动日志"窗口。
+输出窗口中会显示部分进度信息，然后你将看到"Windows Azure 活动日志"窗口。
 
-![Microsoft Azure Activity Log Window](./media/cloud-services-python-ptvs/publish-activity-log.png)
+![Windows Azure Activity Log Window](./media/cloud-services-python-ptvs/publish-activity-log.png)
 
 部署需要几分钟才能完成，然后，你的 Web 角色和/或辅助角色将在 Azure 上运行！
 

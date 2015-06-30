@@ -1,4 +1,4 @@
-<properties linkid="dev-node-remotedesktop" urlDisplayName="Enable Remote Desktop" pageTitle="对云服务启用远程桌面 (Node.js))" metaKeywords="Azure Node.js remote access, Azure Node.js remote connection, Azure Node.js VM access, Azure Node.js virtual machine access" description="了解如何对托管 Azure Node.js 应用程序的虚拟机进行远程桌面访问。 " metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Enabling Remote Desktop in Azure" authors="larryfr" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-node-remotedesktop" urlDisplayName="Enable Remote Desktop" pageTitle="对云服务启用远程桌面 (Node.js))" metaKeywords="Azure Node.js remote access, Azure Node.js remote connection, Azure Node.js VM access, Azure Node.js virtual machine access" description="了解如何对托管 Azure Node.js 应用程序的虚拟机进行远程桌面访问。 " metaCanonical="" services="cloud-services" documentationCenter="Node.js" title="Enabling Remote Desktop in Azure" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="02/24/2015"
     wacn.date="04/11/2015"
@@ -22,8 +22,7 @@
 
 -   [步骤 1：使用 Azure PowerShell 配置远程桌面访问服务]
 -   [步骤 2：连接到角色实例]
--   [步骤 3：使用 Azure PowerShell配置禁用
-    远程桌面访问的服务]
+-   [步骤 3：使用 Azure PowerShell 配置禁用远程桌面访问的服务]
 
 ## <a name="step1"> </a>步骤 1：使用 Azure PowerShell 配置远程桌面访问服务
 
@@ -31,7 +30,7 @@
 
 在创建服务定义的计算机上执行以下步骤。
 
-1.  从"开始"菜单中，选择"Azure PowerShell"********。
+1.  从**开始**菜单中，选择**Azure PowerShell**。
 
 	![Azure PowerShell start menu entry][powershell-menu]
 
@@ -49,22 +48,22 @@
 
 当你的部署在 Azure 中启动并运行后，便可以连接到角色实例。
 
-1.  在 [Azure 管理门户]中，选择"云服务"****，然后选择在上面的步骤 1 中部署的服务
+1.  在 [Azure 管理门户]中，选择**"云服务"**，然后选择在上面的[步骤 1](#step1) 中部署的服务
 
 	![azure management portal][cloud-services]
 
-2.  单击"实例"，然后单击"生产"或"过渡"查看你的服务实例************。选择一个实例，然后单击页面底部的"连接"****。
+2.  单击**实例**，然后单击**生产**或**过渡**查看你的服务实例。选择一个实例，然后单击页面底部的**连接**。
 
     ![The instances page][3]
 
-2.  单击"连接"后，Web 浏览器会提示你保存 .rdp 文件****。如果你使用的是 Internet Explorer，请单击"打开"。 
+2.  单击"连接"后，Web 浏览器会提示你保存 **.rdp 文件**。如果你使用的是 Internet Explorer，请单击"打开"。 
     ![prompt to open or save the .rdp file][4]
 
 3.  打开该文件时，会显示以下安全提示：
 
     ![Windows security prompt][5]
 
-4.  单击"连接"，将显示一个安全提示，要求输入访问该实例的凭据****。输入在[步骤 1][Step 1: Configure the service for Remote Desktop access using Azure PowerShell] 中创建的密码，然后单击"确定"****。
+4.  单击"连接"，将显示一个安全提示，要求输入访问该实例的**凭据**。输入在[步骤 1](#step1)中创建的密码，然后单击**确定**。
 
     ![username/password prompt][6]
 
@@ -76,7 +75,7 @@
 
 当你不再需要与云中角色实例的远程桌面连接时，可使用 [Azure PowerShell] 禁用远程桌面访问
 
-1.  从"开始"菜单中，选择"Azure PowerShell"********。
+1.  从**开始**菜单中，选择**"Azure PowerShell"**。
 
 2.  将目录切换到服务目录，并键入 **Disable-AzureServiceProjectRemoteDesktop**：
 

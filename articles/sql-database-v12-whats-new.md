@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="SQL Database V12 的新增功能" 
 	description="介绍 Azure SQL Database 中添加的最新功能。" 
 	services="sql-database" 
@@ -34,7 +34,7 @@ Azure SQL Database 版本 V12（[在某些区域以预览版提供](sql-database
 ## 产品亮点
 
 
-- 可以[使用](http://manage.windowsazure.cn/) **Windows Azure 门户**创建可在版本 12（有时还包括早期版本）上运行的 SQL Database 数据库和服务器。在 Azure 门户中，请指定你的 SQL Database 数据库，然后继续指定用于托管该数据库的 SQL Database 服务器。目前也支持早期的 [Windows Azure 经典门户](http://manage.windowsazure.com/)。
+- 可以[使用](http://manage.windowsazure.cn) **Windows Azure 门户**创建可在版本 12（有时还包括早期版本）上运行的 SQL Database 数据库和服务器。在 Azure 门户中，请指定你的 SQL Database 数据库，然后继续指定用于托管该数据库的 SQL Database 服务器。目前也支持早期的 [Windows Azure 经典门户](http://manage.windowsazure.cn)。
 
 
 - 在使用 Azure 门户创建新数据库时，请**选择 SQL Database 服务器的版本**。默认版本为 V12，不过，你也可以选择以前的 SQL Database 服务器版本。

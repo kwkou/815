@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 Windows 上使用 Python 连接到 SQL Database" 
 	description="演示了一个可用于从 Windows 客户端连接到 Azure SQL Database 的 Python 代码示例。该示例使用了 pyodbc 驱动程序。"
 	services="sql-database" 
@@ -34,7 +34,7 @@ Original content written by Meet Bhagdev, then edited by GeneMi.
 ## 要求
 
 
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/)
+- [Python 2.7.6](https://www.python.org/download/releases/2.7.6)
 
 
 ### 安装所需的模块

@@ -1,4 +1,4 @@
-<properties title="Learn how to configure an Azure web site to use a domain name registered with DomainDiscover - TierraNet" pageTitle="Configure a DomainDiscover domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, DomainDiscover, TierraNet" description="Learn how to configure an Azure web site to use a domain name registered with DomainDiscover - TierraNet" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
+﻿<properties title="Learn how to configure an Azure web site to use a domain name registered with DomainDiscover - TierraNet" pageTitle="Configure a DomainDiscover domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, DomainDiscover, TierraNet" description="Learn how to configure an Azure web site to use a domain name registered with DomainDiscover - TierraNet" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
 <tags ms.service="web-sites"
     ms.date="10/07/2014"
     wacn.date="04/11/2015"
@@ -64,11 +64,11 @@
 
         > [WACOM.NOTE] 如果你要使用 A 记录，则还必须使用以下配置之一添加 CNAME 记录：
         >
-        > -   “主机”值 **www** 以及“主机别名”值 **\<yourwebsitename\>.chinacloudsites.cn**。
+        > -   “主机”值 **www** 以及“主机别名”值 **&lt;yourwebsitename&gt;.chinacloudsites.cn**。
         >
         > 或者
         >
-        > -   “主机”值 **awverify.www** 以及“主机别名”值 **awverify.\<yourwebsitename\>.chinacloudsites.cn**。
+        > -   “主机”值 **awverify.www** 以及“主机别名”值 **awverify.&lt;yourwebsitename&gt;.chinacloudsites.cn**。
         >
         > 此 CNAME 记录由 Azure 用来验证你拥有 A 记录所描述的域
 

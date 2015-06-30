@@ -232,7 +232,7 @@ Windows 虚拟机以后可以通过添加端口 3389 作为终结点来启用 RD
 
 	~$ azure vm create my-vm-name 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd username --location "China North" -r
 	info:   Executing command vm create
-	Enter VM 'my-vm-name' password: ************
+	Enter VM 'my-vm-name' password: 
 	info:   vm create command OK
 
 **vm create-from &lt;dns-name> &lt;role-file>**
@@ -1462,7 +1462,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ### <a name="Mobile_Scripts"></a>用于管理脚本的命令
 
-本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts/)。
+本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts)。
 
 **mobile script list [options] [servicename]**
 
@@ -2104,7 +2104,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	~$ azure sql db create fr8aelne00 newdb test
 	info:    Executing command sql db create
-	Administrator password: ********
+	Administrator password: 
 	+ Creating SQL Server Database
 	info:    sql db create command OK
 
@@ -2114,7 +2114,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	C:\windows\system32>azure sql db show fr8aelne00 newdb test
 	info:    Executing command sql db show
-	Administrator password: ********
+	Administrator password: 
 	+ Getting SQL server databases
 	data:    Database _ ContentRootElement=m:properties, id=https://fr8aelne00.datab
 	ase.chinacloudapi.cn/v1/ManagementService.svc/Server2('fr8aelne00')/Databases(4), ter
@@ -2167,7 +2167,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	~$ azure sql db list fr8aelne00 test
 	info:    Executing command sql db list
-	Administrator password: ********
+	Administrator password: 
 	+ Getting SQL server databases
 	data:    Name    Edition  Collation                     MaxSizeInGB
 	data:    ------  -------  ----------------------------  -----------
@@ -2180,7 +2180,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	~$ azure sql db delete fr8aelne00 newdb test
 	info:    Executing command sql db delete
-	Administrator password: ********
+	Administrator password: 
 	Delete database newdb? [y/n] y
 	+ Getting SQL server databases
 	+ Removing database

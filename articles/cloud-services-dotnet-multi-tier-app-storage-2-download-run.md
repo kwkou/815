@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-multi-tier-web-site-2-download-and-run" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="riande,tdykstra" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-2-download-and-run" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="riande,tdykstra" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="12/23/2014"
     wacn.date="04/11/2015"
@@ -51,7 +51,7 @@
 
 [WACOM.INCLUDE [install-sdk-2012-only](../includes/install-sdk-2012-only.md)]
 
-## <a name="createWASA"></a><span class="short-header">创建存储帐户</span>创建 Azure 存储帐户
+## <a name="createWASA"></a>创建 Azure 存储帐户
 
 在 Visual Studio 中运行示例应用程序时，你可以访问云端 Azure 开发存储或 Azure 存储帐户中的表、队列和 Blob。开发存储使用 SQL Server Express LocalDB 数据库来模拟云中 Azure 存储服务的工作方式。在本教程中，你一开始将使用开发存储，然后学习在 Visual Studio 中运行应用程序时如何配置应用程序以使用云存储帐户。在教程的这一部分，你需要创建一个 Azure 存储帐户，以便配置在教程后面要用到的 Visual Studio。
 
@@ -95,7 +95,7 @@
 
 6.  请将其中一个密钥复制到剪贴板中，以便在下一部分使用。
 
-## <a name="installASE"></a><span class="short-header">安装 ASE</span>安装 Azure 存储资源管理器
+## <a name="installASE"></a>安装 Azure 存储资源管理器
 
 **Azure 存储资源管理器** (ASE) 是一个工具，可用于查询和更新 Azure 存储表、队列和 Blob。你将在这一系列教程中使用它来验证这些数据是否已正确更新，以及使用它来创建测试数据。
 
@@ -115,7 +115,7 @@
 
 也可以使用其他适用于 Azure 存储服务的工具。有关详细信息，请参阅 [Windows Azure 存储资源管理器 (2014)][Windows Azure 存储资源管理器 (2014)]。
 
-## <a name="createcloudsvc"></a><span class="short-header">创建云服务</span>创建云服务
+## <a name="createcloudsvc"></a>创建云服务
 
 1.  在浏览器中，打开 [Azure 管理门户][Azure 管理门户]。
 
@@ -143,7 +143,7 @@
 
     你可以继续执行下一步而无需等待此步骤完成。
 
-## <a name="downloadcnfg"></a><span class="short-header">下载并运行</span>下载并运行已完成的解决方案
+## <a name="downloadcnfg"></a>下载并运行已完成的解决方案
 
 1.  下载并解压缩[已完成的解决方案][已完成的解决方案]。
 
@@ -204,7 +204,7 @@
 
 你已输入并查看的数据将存储在 Azure 开发存储中。开发存储使用 SQL Server Express LocalDB 数据库来模拟云中 Azure 存储服务的工作方式。应用程序使用开发存储是因为，那是你在下载项目时项目根据配置可以使用的东西。该设置存储在 **AzureEmailService** 项目的 *.cscfg* 文件中。*ServiceConfiguration.Local.cscfg* 文件用于确定当你在 Visual Studio 中本地运行应用程序时应使用什么，而 *ServiceConfiguration.Cloud.cscfg* 文件则用于确定当你将应用程序部署到云中时应使用什么。稍后你将了解如何配置应用程序，以便使用以前创建的 Azure 存储帐户。
 
-## <a name="StorageExpVS"></a><span class="short-header">开发人员存储</span>在 Visual Studio 中查看开发人员存储
+## <a name="StorageExpVS"></a>在 Visual Studio 中查看开发人员存储
 
 **服务器资源管理器**中的 **Azure 存储服务**浏览器提供针对 Azure 存储资源的很方便的只读视图。
 
@@ -228,7 +228,7 @@
 
 > [WACOM.NOTE] 使用最新的 SDK 时，你可以更新并读取**服务器资源管理器**中的开发存储。
 
-## <a name="conf4azureStorage"></a><span class="short-header">使用你的存储帐户</span>将应用程序配置为使用 Azure 存储帐户
+## <a name="conf4azureStorage"></a>将应用程序配置为使用 Azure 存储帐户
 
 接下来，你将了解如何配置应用程序，以便它在 Visual Studio 中运行时使用你的 Azure 存储帐户而不是开发存储。在 Visual Studio 中，可以采用比这更新的方式来这样做，这种方式是在 SDK 的 1.8 版中引入的；较旧的方式则是从 Azure 管理门户复制并粘贴设置。下面的步骤演示了用于配置存储帐户设置的较新方法。
 
@@ -362,7 +362,7 @@
 
     ![ASE][7]
 
-## <a name="sendGrid"></a><span class="short-header">SendGrid</span>将应用程序配置为使用 SendGrid
+## <a name="sendGrid"></a>将应用程序配置为使用 SendGrid
 
 示例应用程序使用 SendGrid 发送电子邮件。若要使用 SendGrid 发送电子邮件，你需要设置 SendGrid 帐户，然后需要使用 SendGrid 凭据更新配置文件。
 
@@ -386,7 +386,7 @@
 
 通过更新云配置文件，你可以配置应用程序在云中运行时将使用的设置。如果你想要应用程序在本地运行时发送电子邮件，则还需更新 *ServiceConfiguration.Local.cscfg* 文件。
 
-## <a name="deployAz"></a><span class="short-header">部署到 Azure</span>将应用程序部署到 Azure
+## <a name="deployAz"></a>将应用程序部署到 Azure
 
 若要部署应用程序，你可以在 Visual Studio 中创建一个程序包，然后通过 Azure 管理门户将其上载，也可以直接通过 Visual Studio 进行发布。在本教程中，你将使用发布方法。
 
@@ -400,7 +400,7 @@
 
     你可以在[必应][必应]或其他搜索引擎中通过搜索“查找我的 IP”来查找你的 IP 地址。
 
-    发布应用程序时，将应用在 *Web.release.config* 文件中指定的转换，并更新已部署到云的 *web.config* 文件中的 IP 限制元素。创建程序包后，你可以查看 *AzureEmailService\\MvcWebRole\\obj\\Release\\TransformWebConfig\\transformed* 文件夹中的已转换 *web.config* 文件。
+    发布应用程序时，将应用在 *Web.release.config* 文件中指定的转换，并更新已部署到云的 *web.config* 文件中的 IP 限制元素。创建程序包后，你可以查看 *AzureEmailService&#92;MvcWebRole&#92;obj&#92;Release&#92;TransformWebConfig&#92;transformed* 文件夹中的已转换 *web.config* 文件。
 
 ### 配置应用程序，以便应用程序在云中运行时使用你的存储帐户
 
@@ -475,7 +475,7 @@
 
     ![发布][12]
 
-## <a name="swap"></a><span class="short-header">生产</span>将应用程序从过渡型升级到生产型
+## <a name="swap"></a>将应用程序从过渡型升级到生产型
 
 1.  在 [Azure 管理门户][Azure 管理门户]中，单击左窗格中的“云服务”图标，然后选择你的云服务。
 
@@ -495,7 +495,7 @@
 
     如果尚未更改存储帐户设置，则当你在云中运行应用程序时，将显示你在测试过渡版应用程序时输入的数据。
 
-## <a name="trace"></a><span class="short-header">跟踪</span>配置和查看跟踪数据
+## <a name="trace"></a>配置和查看跟踪数据
 
 跟踪是一种很重要的工具，可用于调试云应用程序。在本部分教程中，你将了解如何查看跟踪数据。
 
@@ -528,7 +528,7 @@
 
     ![仪表板][15]
 
-## <a name="addRole"></a><span class="short-header">添加角色实例</span>添加另一个辅助角色实例来处理增加的负载
+## <a name="addRole"></a>添加另一个辅助角色实例来处理增加的负载
 
 有两种方法可用于缩放 Azure 角色中的计算资源，一种方法是指定[虚拟机大小][虚拟机大小]，另一种方法是指定运行的虚拟机的实例计数。
 
@@ -564,7 +564,7 @@
 
     ![查看实例][查看实例]
 
-## <a name="nextsteps"></a><span class="short-header">后续步骤</span>后续步骤
+## <a name="nextsteps"></a>后续步骤
 
 你现在已经了解如何配置、部署和缩放已完成的应用程序。以下教程介绍了如何从头构建应用程序。在[下一教程][下一教程]中，你将构建 Web 角色。
 

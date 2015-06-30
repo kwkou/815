@@ -22,9 +22,9 @@
 
 本主题说明如何通过 Visual Studio 2013 使用 Azure 移动服务向 Windows 应用商店应用程序发送推送通知。在本教程中，你将直接通过 Visual Studio 使用 Windows 推送通知服务 (WNS) 向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
->[WACOM.NOTE]本主题支持 <em>现有的</em> 尚未升级的 <em>移动服务</em> 使用通知中心集成。在创建 <em>新的</em> 移动服务时，会自动启用此集成功能。有关新建移动服务，请参阅[推送通知入门](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/)。
+>[WACOM.NOTE]本主题支持 <em>现有的</em> 尚未升级的 <em>移动服务</em> 使用通知中心集成。在创建 <em>新的</em> 移动服务时，会自动启用此集成功能。有关新建移动服务，请参阅[推送通知入门](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push)。
 >
->移动服务将与 Azure 通知中心集成，以支持附加的推送通知功能，如模板、多个平台和改进的规模。 <em>您应升级现有的移动服务以便在可能的情况下使用通知中心</em>。升级之后，请参阅此版本的[推送通知入门](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/)。
+>移动服务将与 Azure 通知中心集成，以支持附加的推送通知功能，如模板、多个平台和改进的规模。 <em>您应升级现有的移动服务以便在可能的情况下使用通知中心</em>。升级之后，请参阅此版本的[推送通知入门](/zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push)。
 
 本教程将指导你完成启用推送通知的以下基本步骤：
 

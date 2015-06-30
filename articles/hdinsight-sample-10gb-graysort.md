@@ -8,7 +8,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
  
 此示例主题介绍如何使用 Azure PowerShell 在 Azure HDInsight 上运行常规用途的 GraySort Hadoop MapReduce 程序。GraySort 是一个基准排序，其指标为在给非常大量的数据（通常至少 100 TB）排序时达到的排序速率（TB/分钟）。 
 
-此示例使用适中的 10 GB 数据，以便较快地运行排序。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578 TB/分钟（100 TB 用时 173 分钟）的速率赢得了 2009 年年度常用（"daytona"）TB 级排序基准。有关这一排序基准和其他排序基准的更多信息，请参见 [Sortbenchmark](http://sortbenchmark.org/) 网站。
+此示例使用适中的 10 GB 数据，以便较快地运行排序。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578 TB/分钟（100 TB 用时 173 分钟）的速率赢得了 2009 年年度常用（"daytona"）TB 级排序基准。有关这一排序基准和其他排序基准的更多信息，请参见 [Sortbenchmark](http://sortbenchmark.org) 网站。
 
 此示例使用三组 MapReduce 程序：	
  
@@ -26,9 +26,9 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 **先决条件**：	
 
-- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[试用 Azure](http://www.windowsazure.cn/pricing/1rmb-trial/) 页。
+- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[试用 Azure](http://www.windowsazure.cn/pricing/1rmb-trial) 页。
 
-- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters/)。
+- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters)。
 
 - 您必须已经安装了 Azure PowerShell，并且已将其配置为可用于您的帐户。 有关如何进行此安装的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 

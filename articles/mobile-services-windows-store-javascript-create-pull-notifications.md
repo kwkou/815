@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-create-pull-notifications-js" urlDisplayName="Define a custom API that supports pull notifications" pageTitle="Define a custom API that supports pull notifications - Azure Mobile Services" metaKeywords="" description="Learn how to Define a custom API that supports periodic notifications in Windows Store apps that use Azure Mobile Services." metaCanonical="" services="" documentationCenter="" title="Define a custom API that supports periodic notifications" authors="glenga" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-create-pull-notifications-js" urlDisplayName="Define a custom API that supports pull notifications" pageTitle="Define a custom API that supports pull notifications - Azure Mobile Services" metaKeywords="" description="Learn how to Define a custom API that supports periodic notifications in Windows Store apps that use Azure Mobile Services." metaCanonical="" services="" documentationCenter="" title="Define a custom API that supports periodic notifications" authors="glenga" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/22/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 定义支持定期通知的自定义 API
 
 <div class="dev-center-tutorial-selector sublanding"> 
-	<a href="/develop/mobile/tutorials/create-pull-notifications-dotnet" title="Windows Store C#">Windows 应用商店 C\#</a><a href="/develop/mobile/tutorials/create-pull-notifications-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
+	<a href="/develop/mobile/tutorials/create-pull-notifications-dotnet" title="Windows Store C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/create-pull-notifications-js" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a>
 </div>
 
 本主题说明如何使用自定义 API 在 Windows 应用商店应用程序中支持定期通知。启用定期通知后，Windows 将定期访问你的自定义 API 终结点，并使用返回的、采用磁贴特定格式的 XML 来更新开始菜单中的应用程序磁贴。有关详细信息，请参阅[定期通知][]。
@@ -130,7 +130,7 @@
 -   [移动服务服务器脚本参考][]
     了解有关创建自定义 API 的详细信息。
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/create-pull-notifications-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/create-pull-notifications-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/create-pull-notifications-js "Windows 应用商店 JavaScript"
   [定期通知]: http://msdn.microsoft.com/zh-cn/library/windows/apps/jj150587.aspx
   [移动服务入门]: /develop/mobile/tutorials/get-started/#create-new-service

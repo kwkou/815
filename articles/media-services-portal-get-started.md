@@ -24,7 +24,7 @@
 
 
 >[AZURE.NOTE]
-> 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[Azure 试用](/pricing/1rmb-trial/)。
+> 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[Azure 试用](/pricing/1rmb-trial)。
 
 本教程将引导你完成使用 Azure 管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。 
 
@@ -81,7 +81,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击"Media Services"。然后，单击 Media Services 的名称。
+1. 在[管理门户](https://manage.windowsazure.cn)中单击"Media Services"。然后，单击 Media Services 的名称。
 
 2. 选择"流式处理终结点"页。然后，单击要修改的流式处理终结点。
 
@@ -96,12 +96,12 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 	 
 	>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回"无"可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [Media Services 定价详细信息](/home/features/media-services/#home_media_pri)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [Media Services 定价详细信息](/home/features/media-services/#price)。
 
 ## 上载内容 
 
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中，单击"Media Services"，然后单击 Media Services 帐户名。
+1. 在[管理门户](https://manage.windowsazure.cn)中，单击"Media Services"，然后单击 Media Services 帐户名。
 2. 选择"内容"页。 
 3. 单击该页上或者门户底部的"上载"按钮。 
 4. 在"上载内容"对话框中，浏览到所需的资产文件。单击该文件，然后单击"打开"或按 **Enter**。
@@ -132,7 +132,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放点播流保留单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放点播流保留单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，Media Services 将会根据客户端的要求创建并提供适当的响应。 
 

@@ -1,4 +1,4 @@
-<properties linkid="manage-services-networking-active-directory-forest" urlDisplayName="Active Directory forest" pageTitle="Install an Active Directory forest on an Azure virtual network" metaKeywords="" description="A tutorial that explains how to create a new Active Directory forest on a virtual machine (VM) on an Azure Virtual Network." metaCanonical="" services="active-directory,virtual-network" documentationCenter="" title="Install a new Active Directory forest in Azure" authors="Justinha"  solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft"  />
+﻿<properties linkid="manage-services-networking-active-directory-forest" urlDisplayName="Active Directory forest" pageTitle="Install an Active Directory forest on an Azure virtual network" metaKeywords="" description="A tutorial that explains how to create a new Active Directory forest on a virtual machine (VM) on an Azure Virtual Network." metaCanonical="" services="active-directory,virtual-network" documentationCenter="" title="Install a new Active Directory forest in Azure" authors="Justinha"  solutions="" writer="Justinha" manager="TerryLan" editor="LisaToft"  />
 <tags ms.service="active-directory,virtual-network"
     ms.date="03/18/2015"
     wacn.date="04/11/2015"
@@ -31,12 +31,12 @@
 |---------------------------------|---------------------------------------------------------|------------------------------------------------------------------------------------|
 | **域控制器的 IP 地址**          | 在网络适配器属性中分配静态 IP 地址                      | 通过 DHCP 获取 IP 地址，然后运行 Set-AzureStaticVNetIP cmdlet 使其成为静态 IP 地址 |
 | **DNS 客户端解析器**            | 在域成员的网络适配器属性中设置首选和备用 DNS 服务器地址 | 在虚拟网络属性中设置 DNS 服务器地址                                                |
-| **Active Directory 数据库存储** | 选择性地更改默认存储位置 C:\\                           | 你需要更改默认存储位置 C:\\                                                        |
+| **Active Directory 数据库存储** | 选择性地更改默认存储位置 C:&#92;                           | 你需要更改默认存储位置 C:&#92;                                                        |
 
 ## <span id="createvnet"></span></a>步骤 1：创建 Azure 虚拟网络
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]。
-2.  创建虚拟网络。单击**“网络”**\>**“创建虚拟网络”**。使用下表中的值来完成向导操作。
+2.  创建虚拟网络。单击**“网络”**&gt;**“创建虚拟网络”**。使用下表中的值来完成向导操作。
 
     <table>
     <colgroup>
@@ -73,7 +73,7 @@
 
 ## <span id="createvm"></span></a>步骤 2：创建 VM 以运行域控制器和 DNS 服务器角色
 
-1.  单击**“新建”**\>**“计算”**\>**“虚拟机”**\>**“从库中”**。
+1.  单击**“新建”**&gt;**“计算”**&gt;**“虚拟机”**&gt;**“从库中”**。
 2.  使用下表中的值来完成向导操作。
 
     <table>
@@ -126,12 +126,12 @@
 
 3.  按默认分配给 VM 的动态 IP 地址在云服务的工作持续时间内有效。但是，如果关闭 VM，该地址将发生更改。你可以通过[运行 Set-AzureStaticVNetIP Azure PowerShell cmdlet][运行 Set-AzureStaticVNetIP Azure PowerShell cmdlet] 来分配静态 IP 地址，这样，即使你关闭了 VM，该 IP 地址也会保留。
 4.  将额外的磁盘附加到 VM，以便存储 Active Directory 数据库、日志和 SYSVOL。
-  5.  单击**“VM”**\>**“附加”**\>**“附加空磁盘”**。
+  5.  单击**“VM”**&gt;**“附加”**&gt;**“附加空磁盘”**。
   6.  指定大小（例如 10 GB）并接受所有其他默认值。
 7.  登录到 VM 并格式化该附加磁盘。
   8.  单击**“连接”**以登录到 VM，单击**“打开”**以创建 RDP 会话，然后再次单击**“连接”**。
   9.  将凭据更改为你指定的新用户名和密码。
-  10. 在服务器管理器中，单击**“工具”**\>**“计算机管理”**。
+  10. 在服务器管理器中，单击**“工具”**&gt;**“计算机管理”**。
   11. 单击**“磁盘管理”**，然后单击**“确定”**以初始化新磁盘。
   12. 右键单击磁盘名称，然后单击**“新建简单卷”**。完成向导操作以格式化新驱动器。
 

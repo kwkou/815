@@ -1,8 +1,8 @@
-
+﻿
 <properties linkid="scheduler" urlDisplayName="Windows Azure scheduler" pageTitle="计划程序 - Azure 微软云" metaKeywords="scheduler,计划任务,计划程序配额,限制,设置,控制,计划程序API,HTTP 错误代码,消息" description="在简单或复杂的定期计划程序上运行作业。Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结点或将消息发布到存储队列。利用计划程序，可在云中创建在 Azure 内部和外部可靠调用服务的作业。您可以选择立即运行、按照定期计划日程运行或者在将来的某个时间点运行这些作业。" metaCanonical="" services="scheduler" documentationCenter="Services" title="Run jobs on simple or complex recurring schedules" authors="" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="scheduler"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #计划程序
@@ -13,14 +13,14 @@ Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结
 
 ####快速链接
 
--   [可交付的解决方案](/solutions/web/)
--   [服务概述](/home/features/scheduler/)
+-   [可交付的解决方案](/solutions/web)
+-   [服务概述](/home/features/scheduler)
 -   [定价详细信息](/home/features/scheduler/#price)
 
 
 ####特色
 
--   [开始在管理门户中使用计划程序](http://msdn.microsoft.com/library/zh-cn/azure/dn479785.aspx)
+-   [开始在管理门户中使用计划程序](https://msdn.microsoft.com/zh-CN/library/zh-cn/azure/dn479785.aspx)
 -   [计划程序实体层次结构、概念和术语](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn528941.aspx)
 -   [计划程序 REST API 参考](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn528946.aspx)
 
@@ -28,7 +28,7 @@ Azure 计划程序允许你按任意计划调用操作，如调用 HTTP/S 终结
 
 ###探究
 
-####[开始在管理门户中使用计划程序](http://msdn.microsoft.com/library/zh-cn/azure/dn479785.aspx)
+####[开始在管理门户中使用计划程序](https://msdn.microsoft.com/zh-CN/library/zh-cn/azure/dn479785.aspx)
 
 开始利用历史记录和定期计划等高级概念在管理门户中创建 Azure 计划程序作业和作业集合。
 

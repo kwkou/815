@@ -1,7 +1,7 @@
-<properties linkid="dev-net-backup" urlDisplayName="Backup" pageTitle="备份 - Azure 微软云" metaKeywords="Azure Backup,Azure备份,数据保护,自动化,服务器备份,配置,DPM" description="配置自动服务器备份。使用备份服务保护数据和云。利用 Backup，您可以将备份移动到云中并实现其自动化。" metaCanonical="" services="Backup" documentationCenter="Services" title="Configure automated server backups" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-net-backup" urlDisplayName="Backup" pageTitle="备份 - Azure 微软云" metaKeywords="Azure Backup,Azure备份,数据保护,自动化,服务器备份,配置,DPM" description="配置自动服务器备份。使用备份服务保护数据和云。利用 Backup，您可以将备份移动到云中并实现其自动化。" metaCanonical="" services="Backup" documentationCenter="Services" title="Configure automated server backups" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Backup"
     ms.date=""
-    wacn.date=""
+    wacn.date="06/29/2015"
     />
 
 #备份
@@ -12,19 +12,19 @@
 ####快速链接
 
 -   [服务概述](/home/features/back-up)
--   [可交付的解决方案](/solutions/storage-backup-recovery/)
+-   [可交付的解决方案](/solutions/storage-backup-recovery)
 -   [备份定价详细信息](/home/features/back-up/#price)
 
 ####特色
 
--   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault/)
+-   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault)
 -   [使用备份保管库保护项目](http://msdn.microsoft.com/zh-cn/library/azure/dn168843.aspx)
 
 ##教程和指南
 
 ###探究
 
--   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault/)
+-   [配置 Azure 备份以便快速轻松地备份 Windows Server](/zh-cn/documentation/articles/backup-configure-vault)
 
 ###管理
 

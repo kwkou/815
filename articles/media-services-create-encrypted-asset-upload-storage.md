@@ -7,7 +7,7 @@
 如何：创建加密的资产并上载到存储中
 ==================================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[针对 Media Services 设置计算机](/documentation/articles/media-services-set-up-computer/)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[针对 Media Services 设置计算机](/documentation/articles/media-services-set-up-computer)。
 
 若要将媒体内容添加到 Media Services 中，请先创建一个资产并在其中添加文件，然后上载该资产。此过程称为引入内容。
 

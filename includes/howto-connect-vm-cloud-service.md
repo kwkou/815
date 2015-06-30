@@ -11,17 +11,17 @@
 
 当您创建一台虚拟机后，会自动创建一项云服务来包含该虚拟机。您可以在同一云服务下创建多台虚拟机，然后使虚拟机之间能够相互通信，在虚拟机之间进行平衡负载，维护虚拟机的高可用性。 
 
-有关对虚拟机进行负载平衡的更多信息，请参阅[对虚拟机进行负载平衡](../../articles/load-balance-virtual-machines/)。有关管理应用程序可用性的更多信息，请参阅[管理虚拟机的可用性](../../articles/manage-availability-virtual-machines/)。 
+有关对虚拟机进行负载平衡的更多信息，请参阅[对虚拟机进行负载平衡](../../articles/load-balance-virtual-machines)。有关管理应用程序可用性的更多信息，请参阅[管理虚拟机的可用性](../../articles/manage-availability-virtual-machines)。 
 
 
 首先，您将需要创建一台虚拟机和新的云服务，然后在该云服务下将其他虚拟机与第一台虚拟机相连接。 
 
 
 
-1. 使用[如何创建自定义虚拟机](../../articles/virtual-machines-create-custom/)中的步骤创建虚拟机。
+1. 使用[如何创建自定义虚拟机](../../articles/virtual-machines-create-custom)中的步骤创建虚拟机。
 
 
-2. 创建第一个自定义虚拟机后，在[管理门户](http://manage.windowsazure.com)命令栏上，单击“新建”.
+2. 创建第一个自定义虚拟机后，在[管理门户](http://manage.windowsazure.cn)命令栏上，单击“新建”.
 
 
 	![新建虚拟机](./media/howto-connect-vm-cloud-service/Create.png)

@@ -50,14 +50,14 @@
 
 **图 2**
 
-1. **将 Azure 云服务、Azure 网站或其他终结点部署到生产环境**。在创建流量管理器配置文件时，必须将其与某个订阅关联。然后，在生产环境中为云服务和"标准"层网站添加属于同一订阅的终结点。如果某一终结点位于过渡环境中而不在 Azure 生产环境中或同一订阅中，则不能将其添加为外部终结点。有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关网站的详细信息，请参阅[网站](/home/features/web-sites/)。
+1. **将 Azure 云服务、Azure 网站或其他终结点部署到生产环境**。在创建流量管理器配置文件时，必须将其与某个订阅关联。然后，在生产环境中为云服务和"标准"层网站添加属于同一订阅的终结点。如果某一终结点位于过渡环境中而不在 Azure 生产环境中或同一订阅中，则不能将其添加为外部终结点。有关云服务的详细信息，请参阅[云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)。有关网站的详细信息，请参阅[网站](/home/features/web-sites)。
 2. **确定流量管理器域的名称**。考虑为域使用带有唯一前缀的名称。域的后半部分（即 trafficmanager.cn）是固定的。有关详细信息，请参阅[最佳实践](#best-practices)。
 3. **确定要使用的监视配置**。无论使用哪种负载平衡方法，流量管理器都会监视终结点以确保它们联机。在你配置监视设置之后，流量管理器不会将流量定向到监视系统判定为脱机的终结点，除非它检测到所有终结点均已脱机，或无法检测配置文件中包含的任一终结点的状态。有关监视的详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring).
 4. **确定要使用的负载平衡方法**。有三种不同的负载平衡方法。请花一些时间了解哪种方法最适合你的要求。如果你以后需要更改方法，随时可以更改。另请注意，每种方法都需要稍微不同的配置步骤。有关负载平衡方法的信息，请参阅[关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)。
 5. **创建配置文件并配置设置**。可以使用 REST API、Windows PowerShell 或管理门户来创建流量管理器配置文件并配置设置。有关详细信息，请参阅[如何配置流量管理器设置](#how-to-configure-traffic-manager-settings)。以下步骤假定你将使用管理门户中的**快速创建**。 
    - **创建流量管理器配置文件** - 若要使用管理门户中的"快速创建"创建配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles)。
    - **配置负载平衡方法设置** - 在"快速创建"期间，你必须为配置文件选择负载平衡方法。在完成"快速创建"步骤之后，可以随时更改此设置。有关配置步骤，请参阅与负载平衡方法对应的主题：[配置"性能"负载平衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)、[配置"故障转移"负载平衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)、[配置"循环"负载平衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)。
-   >[AZURE.NOTE] "循环"负载平衡方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权循环法](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
+   >[AZURE.NOTE] "循环"负载平衡方法现在支持将网络流量进行加权分布。但是，目前必须使用 REST API 或 Windows PowerShell 配置权重。有关详细信息和示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权循环法](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell)。
 
    - **配置终结点** - 在"快速创建"期间无法配置终结点。在创建配置文件并指定负载平衡方法后，必须让流量管理器知道相应的终结点。有关配置终结点的步骤，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints)
 
@@ -163,7 +163,7 @@
 
 [云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
-[网站](/home/features/web-sites/)
+[网站](/home/features/web-sites)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 

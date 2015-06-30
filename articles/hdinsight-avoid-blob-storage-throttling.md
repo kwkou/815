@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-avoid-WASB-throttling" urlDisplayName="HDInsight Administration" pageTitle="Avoid WASB throttling | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to avoid throttling with the Azure Storage Blob service."  services="HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="TODO: Add title of the guide, using sentence casing" authors="" />
+﻿<properties linkid="manage-services-hdinsight-avoid-WASB-throttling" urlDisplayName="HDInsight Administration" pageTitle="Avoid WASB throttling | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to avoid throttling with the Azure Storage Blob service."  services="HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="TODO: Add title of the guide, using sentence casing" authors="" />
 <tags ms.service="HDInsight"
     ms.date="10/03/2014"
     wacn.date="04/11/2015"
@@ -10,7 +10,7 @@ TODO：提供文章的简短描述，以及通过执行本指南中的步骤将�
 
 ## 目录
 
--   [什么是 \<FeatureName\>？][]
+-   [什么是 &lt;FeatureName&gt;？][]
 -   [概念][]
 -   [TODO：插入 Prereq1 名称][]
 -   [TODO：插入 Prereq2 名称][]
@@ -18,7 +18,7 @@ TODO：提供文章的简短描述，以及通过执行本指南中的步骤将�
 -   [TODO：插入 HowTo2 名称][]
 -   [后续步骤][]
 
-## 什么是 \<FeatureName\>？什么是 \<FeatureName\>？
+## 什么是 &lt;FeatureName&gt;？什么是 &lt;FeatureName&gt;？
 
 TODO：考虑到这可能是客户第一次遇到有关某一功能的信息，本指南应提供有关该功能/服务领域内容的简短描述。对于第三方服务，这也适合向 Azure 客户提及特别优惠。
 
@@ -49,7 +49,7 @@ TODO：提供简短摘要，然后列出相关文章，并详述为什么这些�
 -   （TODO：链接 1 的短句子）：[（TODO：输入链接 1 文本）][]
 -   （TODO：链接 2 的短句子）：[（TODO：输入链接 2 文本）][]
 
-  [什么是 \<FeatureName\>？]: #whatis
+  [什么是 &lt;FeatureName&gt;？]: #whatis
   [概念]: #Concepts
   [TODO：插入 Prereq1 名称]: #PreReq1
   [TODO：插入 Prereq2 名称]: #PreReq2

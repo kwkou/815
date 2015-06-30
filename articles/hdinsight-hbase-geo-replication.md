@@ -285,7 +285,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 在本教程中，你已学习如何跨两个数据中心配置 HBase 复制。若要了解有关 HDInsight 和 HBase 的详细信息，请参阅：
 
-- [HDInsight 服务页](/home/features/hdinsight/)
+- [HDInsight 服务页](/home/features/hdinsight)
 - [HDInsight 中的 Apache HBase 入门][hdinsight-hbase-get-started]
 - [HDInsight HBase 概述][hdinsight-hbase-overview]
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]

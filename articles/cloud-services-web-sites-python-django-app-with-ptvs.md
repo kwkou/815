@@ -1,4 +1,4 @@
-<properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor=""/>  
+﻿<properties linkid="develop-python-tutorials-django-with-python-tools-for-visual-studio" urlDisplayName="Django with Python Tools for Visual Studio 2.0" pageTitle="使用 Python Tools for Visual Studio 2.0 创建 Django 应用程序" metaKeywords="" description="了解如何使用 Python Tools for Visual Studio 创建一个 Django 应用程序，该应用程序在 SQL数据库 或 MySQL 数据库实例中存储数据并且可被部署到某一网站或云服务。" metaCanonical="" services="web-sites,cloud-services" documentationCenter="Python" title="使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序" authors="" solutions="" manager="" editor=""/>  
 
 <tags ms.service="web-sites,cloud-services"
     ms.date="11/03/2014"
@@ -6,12 +6,8 @@
 
 # 使用 Python Tools 2.0 for Visual Studio 创建 Django 应用程序
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
-<p>在本教程中，我们将使用 Python Tools 2.0 for Visual Studio 创建一个简单的 Django 应用程序。该应用程序将允许用户对轮询投票。首先我们将使用本地 sqlite3 数据库，然后移到 Azure 上的 SQL Server 或 MySQL 数据库。我们将演示如何实现 Django 管理界面，并使用该界面向我们的数据库添加轮询。我们还将使用在 Visual Studio 中集成的 Django shell。最后，我们将应用程序部署到一个 Azure 网站和 Azure 云服务。</p>
-<p>如果你更愿意观看视频，右侧的视频片段提供了与本教程相同的步骤。</p>
-</div>
 
+<p>在本教程中，我们将使用 Python Tools 2.0 for Visual Studio 创建一个简单的 Django 应用程序。该应用程序将允许用户对轮询投票。首先我们将使用本地 sqlite3 数据库，然后移到 Azure 上的 SQL Server 或 MySQL 数据库。我们将演示如何实现 Django 管理界面，并使用该界面向我们的数据库添加轮询。我们还将使用在 Visual Studio 中集成的 Django shell。最后，我们将应用程序部署到一个 Azure 网站和 Azure 云服务。</p>
 
 本教程重点介绍 Python Tools for Visual Studio 和 Python Tools for Azure。有关在本教程中内置的 Django 和轮询应用程序的更详细信息，请参阅 <https://www.djangoproject.com/>。
 
@@ -88,7 +84,7 @@ Python Tools for Visual Studio 支持 Python 虚拟环境。我们将创建一�
 
 一个 Django 项目可以有多个应用程序。在本教程中，我们的项目名称是“教程”并且与 Visual Studio 项目相对应。我们正添加的应用程序的名称是“轮询”，并且将是我们的项目节点下的文件夹。
 
-1.  依次选择“项目节点”、“添加-\>Django 应用程序”，名称为“轮询”。这将为该应用程序创建一个文件夹，其中包含针对常用应用程序文件的 boilerplate 代码。
+1.  依次选择“项目节点”、“添加-&gt;Django 应用程序”，名称为“轮询”。这将为该应用程序创建一个文件夹，其中包含针对常用应用程序文件的 boilerplate 代码。
 
     ![添加 Django 应用程序][添加 Django 应用程序]
 
@@ -287,7 +283,7 @@ Python Tools for Visual Studio 支持 Python 虚拟环境。我们将创建一�
             }
         }
 
-4.  右键单击项目节点并且选择“Django-\>Django 同步数据库”。Django 管理交互式窗口将出现。因为该数据库尚不存在，系统将提示你创建管理员凭据。输入用户名和密码。电子邮件是可选的。
+4.  右键单击项目节点并且选择“Django-&gt;Django 同步数据库”。Django 管理交互式窗口将出现。因为该数据库尚不存在，系统将提示你创建管理员凭据。输入用户名和密码。电子邮件是可选的。
 
     ![Django 同步数据库][Django 同步数据库]
 
@@ -363,7 +359,7 @@ Python Tools for Visual Studio 具有用于调试 Django 模板的特别支持�
 
 2.  使用 **F5** 启动调试。Visual Studio 将在该模板文件上中断。
 
-3.  从“调试-\>窗口-\>本地”打开“本地窗口”，你将会看到 **latest\_poll\_list** 变量和其值。
+3.  从“调试-&gt;窗口-&gt;本地”打开“本地窗口”，你将会看到 **latest\_poll\_list** 变量和其值。
 
 4.  你可以按 **F10**，像在常规 Python 代码中一样分步调试。在 for 循环内，你可以查看 **poll** 的值：
 
@@ -430,7 +426,7 @@ Python Tools for Visual Studio 具有用于调试 Django 模板的特别支持�
 
 在 Azure 应用商店中，你可以将不同的服务（包括 MySQL 数据库）添加到你的帐户中。我们可以创建一个试用帐户，并且小数据库在某个大小以下是免费的。
 
-1.  在 Azure 管理门户中，依次选择**“新建”**-\>**“应用商店”**-\>**“应用服务”**-\>**“ClearDB MySQL 数据库”**。创建具有免费计划的数据库。
+1.  在 Azure 管理门户中，依次选择**“新建”**-&gt;**“应用商店”**-&gt;**“应用服务”**-&gt;**“ClearDB MySQL 数据库”**。创建具有免费计划的数据库。
 
 2.  接下来，我们将从 Django 访问 MySQL 数据库所需的包安装到我们的虚拟环境中。右键单击 **env** 和“安装 Python 包”：使用 **easy\_install** 的 **mysql-python**。
 
@@ -451,7 +447,7 @@ Python Tools for Visual Studio 具有用于调试 Django 模板的特别支持�
 
 ## 使用 Django Shell
 
-1.  右键单击项目节点并且选择“Django-\>打开 Django Shell”。
+1.  右键单击项目节点并且选择“Django-&gt;打开 Django Shell”。
 
 2.  在此交互式窗口中，我们可以使用我们的模型访问数据库。输入以下代码以便向该数据库添加轮询：
 
@@ -503,7 +499,7 @@ Python Tools for Visual Studio 具有向 Azure 网站和云服务进行发布的
 
 ### Azure 网站
 
-1.  首先我们将需要创建网站。使用 Azure 管理门户，依次单击**“新建”**-\>**“计算”**-\>**“网站”**-\>**“快速创建”**。选择任何可用名称。
+1.  首先我们将需要创建网站。使用 Azure 管理门户，依次单击**“新建”**-&gt;**“计算”**-&gt;**“网站”**-&gt;**“快速创建”**。选择任何可用名称。
 
 2.  在创建后，下载网站的发布配置文件。
 
@@ -523,7 +519,7 @@ Python Tools for Visual Studio 具有向 Azure 网站和云服务进行发布的
 
 ### Azure 云服务
 
-1.  右键单击项目节点并且选择“添加 Azure 云服务项目”或“转换 -\> 转换为 Azure 云服务项目”（根据你的 Visual Studio 版本，你看到的可能与此不同）。这将向解决方案添加一个新项目，该项目具有 .Azure 后缀。此新项目在解决方案中标记为启动项目。
+1.  右键单击项目节点并且选择“添加 Azure 云服务项目”或“转换 -&gt; 转换为 Azure 云服务项目”（根据你的 Visual Studio 版本，你看到的可能与此不同）。这将向解决方案添加一个新项目，该项目具有 .Azure 后缀。此新项目在解决方案中标记为启动项目。
 
     **注意：**如果你在项目上下文菜单中未看到用于创建 Azure 云服务项目的命令，则需要安装 Azure Tools for Visual Studio。它们作为 Azure SDK for .NET 的一部分安装。请参见本教程开始处的要求部分。
 

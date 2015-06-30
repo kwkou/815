@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="使用 InMage 进行保护时从 Azure 故障回复到 VMware 的步骤 - Azure 教程" 
    description="本文介绍了如何使用 Azure Site Recovery 和 vContinuum 工具将虚拟机故障回复到 VMware。" 
    services="site-recovery" 
@@ -9,13 +9,8 @@
 
 <tags
    ms.service="site-recovery"
-   ms.devlang="powershell"
-   ms.tgt_pltfrm="na"
-   ms.topic="article"
-   ms.workload="required" 
    ms.date="04/23/2015"
-   wacn.date="05/15/2015"
-   ms.author="ruturajd@microsoft.com"/>
+   wacn.date="05/15/2015"/>
 
 # 使用 InMage 进行保护时从 Azure 故障回复到 VMware 的步骤
 
@@ -56,21 +51,19 @@ vContinuum 安装将在http://go.microsoft.com/fwlink/?linkid=526305进行
 
 1.  启动安装程序以开始安装 vContinuum。在显示欢迎屏幕后，请单击"下一步"开始指定设置
 
-![](./media/site-recovery-failback-azure-to-vmware/image2.png)
+    ![](./media/site-recovery-failback-azure-to-vmware/image2.png)
 
 2.  指定 CX 服务器 IP 地址和 CX 服务器端口。确保在复选框中选中 HTTP。
 
-![](./media/site-recovery-failback-azure-to-vmware/image3.png)
+    ![](./media/site-recovery-failback-azure-to-vmware/image3.png)
 
     a.  若要发现 CX IP，请在 Azure 上转到 CS 部署并查看其仪表板。公共 IP 地址将显示在"公共虚拟 IP 地址"下。
-
-![](./media/site-recovery-failback-azure-to-vmware/image4.png)
-
+    ![](./media/site-recovery-failback-azure-to-vmware/image4.png)
     b.  若要发现 CX 公用端口，请转到 VM 页中的终结点选项卡，并找到 HTTP 终结点公用端口
 
-![](./media/site-recovery-failback-azure-to-vmware/image5.png)
+    ![](./media/site-recovery-failback-azure-to-vmware/image5.png)
 
-3.  指定 CS 通行短语。在 CS 注册期间，你应该已记下了通行短语。在 MT 和 PS 部署期间，你也会使用通行短语。如果你不记得通行短语，可以在 Azure 上进入 CS 服务器并找到  下存储的通行短语 C:\\Program Files (x86)\\InMage Systems\\private\\connection.passphrase
+3.  指定 CS 通行短语。在 CS 注册期间，你应该已记下了通行短语。在 MT 和 PS 部署期间，你也会使用通行短语。如果你不记得通行短语，可以在 Azure 上进入 CS 服务器并找到  下存储的通行短语 C:&#92;Program Files (x86)&#92;InMage Systems&#92;private&#92;connection.passphrase
 
     ![](./media/site-recovery-failback-azure-to-vmware/image6.png)
 
@@ -86,8 +79,10 @@ vContinuum 安装将在http://go.microsoft.com/fwlink/?linkid=526305进行
 
 需要在 Azure 上安装进程服务器，以便 Azure 中的 VM 可以将数据发回到本地 MT需要将 PS 部署在 Azure 上与配置服务器所在的同一网络中。
 
-1.  在 Azure 中的"配置服务器"页上，选择添加新的进程服务器 ![](./media/site-recovery-failback-azure-to-vmware/image9.png)
-
+1.  在 Azure 中的"配置服务器"页上，选择添加新的进程服务器
+ 
+    ![](./media/site-recovery-failback-azure-to-vmware/image9.png)  
+  
 2.  在进程服务器上配置以下设置以部署新服务器
 
     a.  为进程服务器指定一个名称
@@ -103,20 +98,19 @@ vContinuum 安装将在http://go.microsoft.com/fwlink/?linkid=526305进行
     f.  指定选定子网中的某个唯一 IP 地址。
 
     g.  开始部署进程服务器。
+ ![](./media/site-recovery-failback-azure-to-vmware/image10.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image10.png)
+3.  将触发一个用于部署进程服务器的作业
 
-1.  将触发一个用于部署进程服务器的作业
+    ![](./media/site-recovery-failback-azure-to-vmware/image11.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image11.png)
+    在 Azure 上部署进程服务器后，你可以使用指定的凭据登录到该服务器。使用正向定向保护时所用的相同步骤来注册 PS。
 
-在 Azure 上部署进程服务器后，你可以使用指定的凭据登录到该服务器。使用正向定向保护时所用的相同步骤来注册 PS。
+    ![](./media/site-recovery-failback-azure-to-vmware/image12.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image12.png)
+    在 VM 属性下，故障回复期间注册的服务器将不可见。它们只会在它们注册到的配置服务器中的"服务器"选项卡下可见。
 
-在 VM 属性下，故障回复期间注册的服务器将不可见。它们只会在它们注册到的配置服务器中的"服务器"选项卡下可见。
-
-可能需要在大约 10-15 分钟后，PS 才会列在 CS 下。
+    可能需要在大约 10-15 分钟后，PS 才会列在 CS 下。
 
 ## 在本地安装 MT 服务器
 
@@ -162,16 +156,14 @@ b. 在左侧面板中右键单击 VM 对应的条目，然后选择"编辑设置
 c. 单击"选项"选项卡。
 
 d. 在左侧选择"高级""常规"项，然后单击右侧显示的"配置参数"。
+ ![](./media/site-recovery-failback-azure-to-vmware/image14.png)
+ 当计算机正在运行时，"配置参数"选项将处于停用状态。若要使此选项卡处于活动状态，请关闭计算机。
 
-![](./media/site-recovery-failback-azure-to-vmware/image14.png)
+e. 查看是否存在包含 **disk.EnableUUID** 的行。  
 
-当计算机正在运行时，"配置参数"选项将处于停用状态。若要使此选项卡处于活动状态，请关闭计算机。
-
-e. 查看是否存在包含 **disk.EnableUUID** 的行。
-
-如果存在该行并且其值设置为 False，请将该值覆盖为True（True 和 False 值不区分大小写）。
-
-如果存在该行并且其值设置为 true，请单击"取消"，然后在启动来宾操作系统后，在来宾操作系统中测试 SCSI 命令。
+	如果存在该行并且其值设置为 False，请将该值覆盖为True（True 和 False 值不区分大小写）。  
+ 
+ 	如果存在该行并且其值设置为 true，请单击"取消"，然后在启动来宾操作系统后，在来宾操作系统中测试 SCSI 命令。
 
 f. 如果不存在该行，请单击"添加行"。
 
@@ -245,15 +237,15 @@ f. 如果不存在该行，请单击"添加行"。
 
 2. 运行以下命令来解压缩二进制文件。
 
-**tar -zxvf \<文件名\>**
+	**tar -zxvf &lt;文件名&gt;**
 
 3. 执行以下命令来指定权限。
 
-\# **chmod 755 ./ApplyCustomChanges.sh**
+	\# **chmod 755 ./ApplyCustomChanges.sh**
 
 4. 执行以下命令来运行脚本。
 
-**\# ./ApplyCustomChanges.sh**
+	**\# ./ApplyCustomChanges.sh**
 
 注意：仅在服务器上执行该脚本一次。成功执行上述脚本后，**重新启动**服务器。
 
@@ -342,13 +334,13 @@ f. 如果不存在该行，请单击"添加行"。
 
 1.  在计算机上启动 vContinuum
 
-![](./media/site-recovery-failback-azure-to-vmware/image8.png)
+	![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
-1.  在"选择应用程序"设置中选择"P2V"
+2.  在"选择应用程序"设置中选择"P2V"
 
-2.  单击"新建保护"选项以开始操作
+3.  单击"新建保护"选项以开始操作
 
-3.  在打开的新窗口中，你可以开始保护要故障回复到本地的虚拟机。
+4.  在打开的新窗口中，你可以开始保护要故障回复到本地的虚拟机。
 
     a.  根据你要故障回复的 VM 选择 OS 类型，然后单击"获取详细信息"
 
@@ -360,62 +352,72 @@ f. 如果不存在该行，请单击"添加行"。
 
     e.  在确定想要保护的虚拟机后，你可以逐个选择这些 VM。
 
-4.  在选择要保护的虚拟机时（该虚拟机已故障转移到 Azure），你将会看到一个弹出窗口，其中提供了该虚拟机的两个条目。这是因为，CS 已检测到其中注册的虚拟机的两个实例。你需要删除本地 VM 的条目，以便可以保护正确的 VM。请注意，你将会看到按计算机主机名列出的条目。
-
+5.  在选择要保护的虚拟机时（该虚拟机已故障转移到 Azure），你将会看到一个弹出窗口，其中提供了该虚拟机的两个条目。这是因为，CS 已检测到其中注册的虚拟机的两个实例。你需要删除本地 VM 的条目，以便可以保护正确的 VM。请注意，你将会看到按计算机主机名列出的条目。
 ![](./media/site-recovery-failback-azure-to-vmware/image22.png)
 
-    a.  若要选择正确的 VM，你可以参考其 IP 地址。本地 IP 地址范围将是本地 VM。
+    a. 若要选择正确的 VM，你可以参考其 IP 地址。本地 IP 地址范围将是本地 VM。
 
-    b.  单击"删除"以删除该条目
+    b. 单击"删除"以删除该条目
+ ![](./media/site-recovery-failback-azure-to-vmware/image23.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image23.png)
-
-    c.  转到 vCenter，然后在 vCenter 上停止虚拟机
-
-    d.  接下来，你还可以删除本地虚拟机
-
-5.  然后，需要指定要在其上保护 VM 的本地 MT 服务器。
+    c. 转到 vCenter，然后在 vCenter 上停止虚拟机  
+   
+    d. 接下来，你还可以删除本地虚拟机
+   
+6. 然后，需要指定要在其上保护 VM 的本地 MT 服务器。
 
     a.  连接到要故障回复到的 vCenter
-
 ![](./media/site-recovery-failback-azure-to-vmware/image24.png)
 
-a.  根据要将虚拟机恢复到的主机选择MT服务器
+    b.  根据要将虚拟机恢复到的主机选择MT服务器
+![](./media/site-recovery-failback-azure-to-vmware/image24.png)  
 
-![](./media/site-recovery-failback-azure-to-vmware/image24.png)
-
-1.  接下来，提供每个虚拟机的复制选项
-
+7.  接下来，提供每个虚拟机的复制选项
 ![](./media/site-recovery-failback-azure-to-vmware/image25.png)
 
-a.  需要选择恢复端"数据存储"- 这是 VM 要恢复到的数据存储
+    a.  需要选择恢复端"数据存储"- 这是 VM 要恢复到的数据存储
 
-要为每个 VM 提供的不同选项包括
-
+    要为每个 VM 提供的不同选项包括
 <table>
-<tr><td>选项</td><td>选项建议值</td></tr>
-<tr><td>进程服务器 IP</td><td>选择在 Azure 上部署的 PS</td></tr>
-<tr><td>保留大小 (MB)</td><td></td></tr>
-<tr><td>保留值</td><td>1</td></tr>
-<tr><td>天/小时</td><td>天</td></tr>
-<tr><td>一致性间隔</td><td>1</td></tr>
-<tr><td>选择目标数据存储</td><td>在恢复端上可用的数据存储。此数据存储应有足够的空间，并且可用于要在其上识别虚拟机的 ESX 主机。</td></tr>
+  <tr>
+  <td>选项</td>
+  <td>选项建议值</td>
+  </tr>
+  <tr>
+  <td>进程服务器 IP</td>
+  <td>选择在 Azure 上部署的 PS</td>
+  </tr>
+  <tr>
+  <td>保留大小 (MB)</td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>保留值</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>天/小时</td>
+  <td>天</td>
+  </tr>
+  <tr>
+  <td>一致性间隔</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>选择目标数据存储</td>
+  <td>在恢复端上可用的数据存储。此数据存储应有足够的空间，并且可用于要在其上识别虚拟机的 ESX 主机。</td>
+  </tr>
 </table>
 
+8.接下来，可以配置故障转移到本地站点后虚拟机要获取的属性。可配置的不同属性如下
 
-1.  接下来，可以配置故障转移到本地站点后虚拟机要获取的属性。可配置的不同属性如下
+![](./media/site-recovery-failback-azure-to-vmware/image26.png)  
 
-![](./media/site-recovery-failback-azure-to-vmware/image26.png)
-
-
-  <table>
+<table>
 <tr><td>属性</td><td>如何配置</td></tr>
 <tr><td>网络配置</td><td>对于检测到的每个 NIC，配置虚拟机的故障回复 IP 地址。选择"NIC"，然后单击"更改"指定 IP 地址详细信息。
-
 </td></tr>
-<tr><td>硬件配置</td><td>可以指定 VM 的"CPU"和"内存"值。可向你正在尝试保护的所有 VM 应用此设置。
-
-若要确定"CPU"和"内存"的正确值，可以参考 IAAS VM 角色大小，并查看分配的核心数和内存。
+<tr><td>硬件配置</td><td>可以指定 VM 的"CPU"和"内存"值。可向你正在尝试保护的所有 VM 应用此设置。若要确定"CPU"和"内存"的正确值，可以参考 IAAS VM 角色大小，并查看分配的核心数和内存。
 </td></tr>
 <tr><td>显示名称</td><td>在故障转移回到本地后，你可以选择重命名要在 vCenter 清单中显示的虚拟机。请注意，此处看到的默认值是虚拟机主机名。若要确定 VM 名称，可以参考保护组中的 VM 列表。</td></tr>
 <tr><td>NAT 配置</td><td>下面将详细讨论</td></tr>
@@ -459,37 +461,34 @@ a.  需要选择恢复端"数据存储"- 这是 VM 要恢复到的数据存储
 >
 > ![](./media/site-recovery-failback-azure-to-vmware/image30.png)
 
-1.  如果未按步骤 5.d 中的指定删除本地虚拟机，并且步骤 7.a 中选择的、要故障回复到的数据存储仍然包含旧 VMDK，则你还需要确保在新位置创建故障回复 VM。为此，你可以选择"高级设置"，然后在"高级设置"的"文件夹名称设置"部分中指定要还原到的备用文件夹。
+9.如果未按步骤 5.d 中的指定删除本地虚拟机，并且步骤 7.a 中选择的、要故障回复到的数据存储仍然包含旧 VMDK，则你还需要确保在新位置创建故障回复 VM。为此，你可以选择"高级设置"，然后在"高级设置"的"文件夹名称设置"部分中指定要还原到的备用文件夹。
 
 ![](./media/site-recovery-failback-azure-to-vmware/image31.png)
 
-"高级设置"中的其他选项可保留默认值。
-请确保将文件夹名称设置应用到所有服务器。
+"高级设置"中的其他选项可保留默认值。请确保将文件夹名称设置应用到所有服务器。
 
-1.  接下来，转到保护的最后一个阶段。此时，你需要运行就绪状态检查，以确保虚拟机已准备好在本地受到保护。
+10.接下来，转到保护的最后一个阶段。此时，你需要运行就绪状态检查，以确保虚拟机已准备好在本地受到保护。
 
-![](./media/site-recovery-failback-azure-to-vmware/image32.png)
+ ![](./media/site-recovery-failback-azure-to-vmware/image32.png)
 
-	a.  单击"就绪状态检查"并等待检查完成。
+   a.  单击"就绪状态检查"并等待检查完成。
 
-	b.  如果所有虚拟机都已准备就绪，则"就绪报告"选项卡将会显示相应的信息。
+   b.  如果所有虚拟机都已准备就绪，则"就绪报告"选项卡将会显示相应的信息。
 
-	c.  如果对所有虚拟机的就绪报告为成功，则你可以指定保护计划的名称
+   c.  如果对所有虚拟机的就绪报告为成功，则你可以指定保护计划的名称
+ ![](./media/site-recovery-failback-azure-to-vmware/image33.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image33.png)
-
-	d.  为计划指定新名称，然后单击下面的按钮开始保护。
+   d.  为计划指定新名称，然后单击下面的按钮开始保护。
 
 
-1.  随后将开始保护。
+11.随后将开始保护。
 
-    a.  可以在 vContinuum 中查看保护进度
-
+   a.  可以在 vContinuum 中查看保护进度
 ![](./media/site-recovery-failback-azure-to-vmware/image34.png)
 
-	b.  完成**激活保护计划**步骤后，你可以通过 ASR 门户监视虚拟机的保护。
+   b.  完成**激活保护计划**步骤后，你可以通过 ASR 门户监视虚拟机的保护。
 
-	c.  也可以通过 Azure Site Recovery 来监视保护。
+   c.  也可以通过 Azure Site Recovery 来监视保护。
 
 ![](./media/site-recovery-failback-azure-to-vmware/image35.png)
 
@@ -504,42 +503,37 @@ a.  需要选择恢复端"数据存储"- 这是 VM 要恢复到的数据存储
 1.  启动 vContinuum 并选择"管理计划"选项。
 
 2.  使用子选项选择"恢复"。
+ ![](./media/site-recovery-failback-azure-to-vmware/image37.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image37.png)
+3.  你可以查看已用于保护虚拟机的所有计划列表。这是可用于恢复的相同计划。
 
-1.  你可以查看已用于保护虚拟机的所有计划列表。这是可用于恢复的相同计划。
-
-2.  选择"保护计划"，然后选择要在其中恢复的所有 VM。
+4.  选择"保护计划"，然后选择要在其中恢复的所有 VM。
 
     a.  在选择每个 VM 时，你可以查看有关源 VM、VM 要恢复到的目标 ESX 服务器和源 VM 磁盘的详细信息
 
-3.  单击"下一步"启动"恢复"向导
+5.  单击"下一步"启动"恢复"向导
 
-4.  选择要恢复的虚拟机
+6.  选择要恢复的虚拟机
 
     a.  查看可恢复的所有虚拟机的列表
-
 ![](./media/site-recovery-failback-azure-to-vmware/image38.png)
 
-	b.  你可以基于多个选项进行恢复，不过，我们建议使用"最新标记"这可以确保使用虚拟机中的最新数据。
+    b.  你可以基于多个选项进行恢复，不过，我们建议使用"最新标记"这可以确保使用虚拟机中的最新数据。
 
-	c.  选择"对所有 VM 应用"以确保为所有虚拟机选择最新标记。
+    c.  选择"对所有 VM 应用"以确保为所有虚拟机选择最新标记。
 
 
-1.  运行"就绪状态检查"。这将会告知是否配置了正确的参数来启用虚拟机的最新标记恢复。如果所有检查都已成功，请单击"下一步"，否则请查看日志并解决错误。
-
+7.  运行"就绪状态检查"。这将会告知是否配置了正确的参数来启用虚拟机的最新标记恢复。如果所有检查都已成功，请单击"下一步"，否则请查看日志并解决错误。
 ![](./media/site-recovery-failback-azure-to-vmware/image39.png)
 
-2.  在向导的"VM 配置"步骤中，确保恢复设置正确。如果 VM 设置不符合需要，你可以选择对其进行更改。由于我们已在保护期间完成此操作，因此现在你可以选择将其忽略。
-
+8.  在向导的"VM 配置"步骤中，确保恢复设置正确。如果 VM 设置不符合需要，你可以选择对其进行更改。由于我们已在保护期间完成此操作，因此现在你可以选择将其忽略。
 ![](./media/site-recovery-failback-azure-to-vmware/image40.png)
 
-1.  最后，查看要恢复的虚拟机列表。
+9.  最后，查看要恢复的虚拟机列表。
 
     a.  指定虚拟机的恢复顺序。
 
 注意：虚拟机是使用计算机主机名列出的。可能很难将计算机主机名映射到虚拟机。若要映射名称，可以转到 Azure IAAS 中的虚拟机仪表板，然后查看虚拟机的主机名。
-
 ![](./media/site-recovery-failback-azure-to-vmware/image41.png)
 
 1.  指定"恢复计划名称"，然后在"恢复选项"中选择"以后恢复"。
@@ -551,12 +545,10 @@ a.  需要选择恢复端"数据存储"- 这是 VM 要恢复到的数据存储
     c.  最后单击"恢复"按钮，以保存计划或者根据"恢复选项"触发恢复。
 
 2.  你可以查看恢复状态，并了解该计划是否已成功保存。
-
 ![](./media/site-recovery-failback-azure-to-vmware/image42.png)
 
-1.  如果你选择了以后恢复，系统会通知你已创建计划，并且你可以在以后恢复。
-
-![](./media/site-recovery-failback-azure-to-vmware/image43.png)
+3.  如果你选择了以后恢复，系统会通知你已创建计划，并且你可以在以后恢复。
+ ![](./media/site-recovery-failback-azure-to-vmware/image43.png)
 
 ## 恢复虚拟机
 
@@ -573,21 +565,18 @@ a.  需要选择恢复端"数据存储"- 这是 VM 要恢复到的数据存储
 1.  在 VContinuum 上选择**监视**计划。
 
 2.  向导将列出到目前已执行的计划。
+ ![](./media/site-recovery-failback-azure-to-vmware/image45.png)
 
-![](./media/site-recovery-failback-azure-to-vmware/image45.png)
-
-1.  选择"恢复"节点，然后选择要恢复的计划。
+3.  选择"恢复"节点，然后选择要恢复的计划。
 
     a.  系统将通知你该计划尚未启动。
 
-2.  单击"启动"以开始恢复。
+4.  单击"启动"以开始恢复。
 
-3.  你可以监视虚拟机的恢复
-
-
+5.  你可以监视虚拟机的恢复
 ![](./media/site-recovery-failback-azure-to-vmware/image46.png)
 
-4. 在打开 VM 后，你可以在 vCenter 上连接到虚拟机。
+6. 在打开 VM 后，你可以在 vCenter 上连接到虚拟机。
 
 ## 故障回复后在 Azure 上重新保护
 

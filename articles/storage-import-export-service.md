@@ -39,7 +39,7 @@
 
 <h3>要求和范围</h3>
 
-1.	**订阅和存储帐户：**必须拥有现有 Azure 订阅以及一个或多个存储帐户，才能使用导入/导出服务。每个作业均可用于将数据传输到仅一个存储帐户,或从仅一个存储帐户传输数据。换言之，作业不能跨多个存储帐户。有关创建新的存储帐户的信息，请参阅[如何创建存储帐户](../storage-create-storage-account/)。
+1.	**订阅和存储帐户：**必须拥有现有 Azure 订阅以及一个或多个存储帐户，才能使用导入/导出服务。每个作业均可用于将数据传输到仅一个存储帐户,或从仅一个存储帐户传输数据。换言之，作业不能跨多个存储帐户。有关创建新的存储帐户的信息，请参阅[如何创建存储帐户](../storage-create-storage-account)。
 2.	**硬盘：**仅支持将 3.5 英寸 SATA II/III 硬盘驱动器用于导入/导出服务。不支持大于 4TB 的硬盘驱动器。对于导入作业，只会处理驱动器上的第一个数据卷。必须使用 NTFS 格式化数据卷。可以使用 SATA II/III USB 适配器在外部将 SATA II/III 磁盘附加到大多数计算机。
 3.	**BitLocker 加密：**必须使用 BitLocker 通过用数字密码保护的加密密钥对硬盘驱动器上存储的所有数据进行加密。
 4.	**Blob 存储目标：**可以将数据上载到块 Blob 和页 Blob 或者从块 Blob 和页 Blob 下载数据。
@@ -213,7 +213,7 @@
 
 **导入/导出服务的定价是什么？**
 
-- 有关定价信息，请参阅[定价页](/zh-cn/pricing/overview/)。
+- 有关定价信息，请参阅[定价页](/zh-cn/pricing/overview)。
 
 **导入或导出我的数据将会用多长时间？**
 
@@ -262,9 +262,9 @@
 
 **支持哪些快递服务？**
 
-- 对于美国和欧洲的区域，仅支持 [Federal Express](http://www.fedex.com/us/oadr/) (FedEx)。所有包裹都将通过 FedEx Ground 或 FedEx International Economy 返还。
+- 对于美国和欧洲的区域，仅支持 [Federal Express](http://www.fedex.com/us/oadr) (FedEx)。所有包裹都将通过 FedEx Ground 或 FedEx International Economy 返还。
 
-- 对于亚洲的区域，仅支持 [DHL](http://www.dhl-welcome.com/Tutorial/)。所有包裹都将通过 DHL Express Worldwide 返还。
+- 对于亚洲的区域，仅支持 [DHL](http://www.dhl-welcome.com/Tutorial)。所有包裹都将通过 DHL Express Worldwide 返还。
 
 	<div class="dev-callout">
 	<strong>重要说明</strong>
@@ -273,7 +273,7 @@
 
 **是否存在与退还装运相关联的任何成本？**
 
-- Microsoft 在创建作业以将驱动器从数据中心发运到你的返回地址时，将使用你提供的承运人帐号。请确保提供数据中心区域内的受支持承运人的承运人帐号。如果你没有承运人帐号，可以创建一个 [FedEx](http://www.fedex.com/us/oadr/) （对于美国和欧洲区域）或 [DHL](http://www.dhl-welcome.com/Tutorial/) （对于亚洲区域）承运人帐户。
+- Microsoft 在创建作业以将驱动器从数据中心发运到你的返回地址时，将使用你提供的承运人帐号。请确保提供数据中心区域内的受支持承运人的承运人帐号。如果你没有承运人帐号，可以创建一个 [FedEx](http://www.fedex.com/us/oadr) （对于美国和欧洲区域）或 [DHL](http://www.dhl-welcome.com/Tutorial) （对于亚洲区域）承运人帐户。
 
 - 返还物品的运费将记到你的承运人帐户，具体取决于承运人。
 
@@ -296,7 +296,7 @@
 	<p>请注意，你发运的物理介质可能需要穿越国界。你应当负责确保你的物理介质和数据是遵照适用的法律导入和/或导出的。在发运物理介质之前，请咨询你的顾问以验证你的介质和数据是否可以合法地发运到所确定的数据中心。这将有助于确保它可以及时到达 Microsoft。</p>
 	</div>
 
-- 在发运你的包裹时，必须遵守 [Microsoft Azure 服务条款](/zh-cn/support/legal/services-terms/)和 [Microsoft Azure 预览功能补充使用条款](http://azure.microsoft.com/zh-cn/support/legal/preview-supplemental-terms/).上的条款。 
+- 在发运你的包裹时，必须遵守 [Microsoft Azure 服务条款](/zh-cn/support/legal/services-terms)和 [Microsoft Azure 预览功能补充使用条款](http://azure.microsoft.com/zh-cn/support/legal/preview-supplemental-terms).上的条款。 
 
 **我是否可为导入/导出作业从 Microsoft 购买驱动器？**
 

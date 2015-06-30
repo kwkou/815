@@ -83,7 +83,7 @@
 		git init
 
 	> [AZURE.NOTE] **Git 命令不可用？**
-	[Git](http://git-scm.com/) 是一个分布式版本控制系统，可用来部署 Azure 网站。有关针对您的平台的安装说明，请参阅[Git 下载页](http://git-scm.com/download/)。
+	[Git](http://git-scm.com) 是一个分布式版本控制系统，可用来部署 Azure 网站。有关针对您的平台的安装说明，请参阅[Git 下载页](http://git-scm.com/download)。
 
 2. 使用以下命令将文件添加到存储库中：
 
@@ -146,11 +146,11 @@
 
 虽然本文中的步骤使用 Azure 门户来创建网站，但您也可以使用[适用于 Mac 和 Linux 的 Windows Azure 命令行工具][适用于 Mac 和 Linux 的 Azure 命令行工具]执行同样的操作。
 
-Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若要了解 Azure 网站是如何使用模块的，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)。
+Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若要了解 Azure 网站是如何使用模块的，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps)。
 
-若要了解随 Azure 一起提供的 Node.js 的版本以及如何指定与您的应用程序一起使用的版本，请参见[在 Windows Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)。
+若要了解随 Azure 一起提供的 Node.js 的版本以及如何指定与您的应用程序一起使用的版本，请参见[在 Windows Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps)。
 
-如果您在将应用程序部署到 Azure 后遇到与应用程序有关的问题，请参见[如何在 Azure 中调试 Node.js 应用程序  网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug/)，了解有关诊断问题的信息。
+如果您在将应用程序部署到 Azure 后遇到与应用程序有关的问题，请参见[如何在 Azure 中调试 Node.js 应用程序  网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)，了解有关诊断问题的信息。
 
 
 ## 其他资源

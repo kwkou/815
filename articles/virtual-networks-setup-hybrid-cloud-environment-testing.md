@@ -12,7 +12,7 @@
 
 # 设置用于测试的混合云环境
 
-本主题将指导你一步步创建用于 Microsoft Azure 的混合云环境，以便进行测试。这是生成的配置。
+本主题将指导你一步步创建用于 Windows Azure 的混合云环境，以便进行测试。这是生成的配置。
 
 ![](./media/virtual-networks-set-up-hybrid-cloud-environment-for-testing/CreateHybridCloudVNet_5.png)
 
@@ -36,7 +36,7 @@
 4.	创建站点到站点 VPN 连接。
 5.	配置 DC2。 
 
-如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个试用版。
+如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial) 中注册一个试用版。
 
 >[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的试用版本或付费订阅的。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs) 以获取更多信息。
 
@@ -99,7 +99,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 
 ## 阶段 3：创建跨界 Azure 虚拟网络。
 
-首先，使用 Azure 订阅凭据登录到 [Azure 管理门户](https://manage.windowsazure.cn/)，然后创建名为 TestVNET 的虚拟网络。
+首先，使用 Azure 订阅凭据登录到 [Azure 管理门户](https://manage.windowsazure.cn)，然后创建名为 TestVNET 的虚拟网络。
 
 1.	在 Azure 管理门户的任务栏中，单击**"新建">"网络服务">"虚拟网络">"自定义创建"**。
 2.	在"虚拟网络详细信息"页的**"名称"**中键入**"TestVNET"**。
@@ -232,7 +232,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 3.	当系统提示你打开 DC2.rdp 时，单击**"打开"**。
 4.	遇到远程桌面连接消息框提示时，单击**"连接"**。
 5.	当系统提示你输入凭据时，请使用以下凭据：
-	- 名称：**DC2\\**[本地管理员帐户名称]
+	- 名称：**DC2&#92;**[本地管理员帐户名称]
 	- 密码:[本地管理员帐户密码]
 6.	当系统使用指向凭据的远程桌面连接消息框提示你时，单击**"是"**。
 

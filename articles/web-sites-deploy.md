@@ -67,7 +67,7 @@
 -   [从源代码管理发布到 Azure 网站][从源代码管理发布到 Azure 网站]。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
 -   [Git、Mercurial 的 Azure 论坛][Git、Mercurial 的 Azure 论坛]。
 
-<!-- ###<a name="dropbox"></a>DropBox  [DropBox](https://www.dropbox.com/) is not a source control system, but if you store your source code in DropBox you can automate deployment from your DropBox account.  * [Deploy To Windows Azure Using Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). How to use the Azure Management Portal to set up DropBox deployment. * [DropBox and Azure Web Sites](http://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Dropbox-Deployment-to-Windows-Azure-Web-Sites). This video walks through the process of connecting a DropBox folder to an Azure Web Site, and shows how quickly you can get a web site up and running or maintain it using simple drag-and-drop deployment. * [Azure Forum for Git, Mercurial, and DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azuregit). -->
+<!-- ###<a name="dropbox"></a>DropBox  [DropBox](https://www.dropbox.com) is not a source control system, but if you store your source code in DropBox you can automate deployment from your DropBox account.  * [Deploy To Windows Azure Using Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). How to use the Azure Management Portal to set up DropBox deployment. * [DropBox and Azure Web Sites](http://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Dropbox-Deployment-to-Windows-Azure-Web-Sites). This video walks through the process of connecting a DropBox folder to an Azure Web Site, and shows how quickly you can get a web site up and running or maintain it using simple drag-and-drop deployment. * [Azure Forum for Git, Mercurial, and DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azuregit). -->
 
 ## <a name="ide"></a>从 IDE 进行部署
 
@@ -92,7 +92,7 @@ WebMatrix 可快速安装且易于学习，但 Visual Studio 提供了更多用�
 -   [使用 Microsoft WebMatrix 开发和部署网站][使用 Microsoft WebMatrix 开发和部署网站]。如何使用 WebMatrix 模板创建简单的 ASP.NET 网站，并使用 WebMatrix 和 Web 部署将其部署到 Azure 网站。
 -   [使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure][使用 WebMatrix 构建 Node.js 网站并将其部署到 Azure]。
 
-<!-- * [Create and deploy a PHP-MySQL Azure Web Site using WebMatrix](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-php-mysql-use-webmatrix/).  -->
+<!-- * [Create and deploy a PHP-MySQL Azure Web Site using WebMatrix](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-php-mysql-use-webmatrix).  -->
 
 -   [WebMatrix 3:集成 Git 与到 Azure 的部署][WebMatrix 3:集成 Git 与到 Azure 的部署]。如何使用 WebMatrix 从 Git 源代码管理存储库进行部署。
 
@@ -104,7 +104,7 @@ WebMatrix 可快速安装且易于学习，但 Visual Studio 提供了更多用�
 
 有关详细信息，请参阅以下资源：
 
-<!-- * [Create a PHP-MySQL Azure Web Site and Deploy Using FTP](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-ftp/).   -->
+<!-- * [Create a PHP-MySQL Azure Web Site and Deploy Using FTP](/zh-cn/documentation/articles/web-sites-php-mysql-deploy-use-ftp).   -->
 
 -   [如何管理网站][如何管理网站]。包括 PHP 教程中未包括的有关如何设置 FTP 凭据的其他信息。有关文档本身缺少的有关如何获取凭据的信息，请参阅页面底部的注释。
 

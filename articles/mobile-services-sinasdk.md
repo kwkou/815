@@ -39,7 +39,7 @@
 	![][9]	点击发布来部署应用程序：
 	![][10]**这一微博认证SDK证明了微软云平台的开放性，同时也表明中国开发者在微软平台上使用中国本土提供商的需求。所以这个SDK将是中国本土云服务提供商和DX为微软云平台带来更多三方服务的合作开端**。##相关资源
 1.	[新浪官方SDK页面的链接](http://open.weibo.com/wiki/SDK)
-2.	[Github上的源代码](https://github.com/SinaWeiBoAuth/MobileServiceAppsUsingSinaweiboAccountAuthorize/)
+2.	[Github上的源代码](https://github.com/SinaWeiBoAuth/MobileServiceAppsUsingSinaweiboAccountAuthorize)
 3.	[Nuget 程序包](https://www.nuget.org/packages/SinaWeiboAuthenticationSDK_AzureMobileService/1.0.0)
 4.	[该SDK具体实现过程的指导博客](http://www.cnblogs.com/sonic1abc/p/4308994.html )
 <!-- images -->

@@ -15,7 +15,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 * 基于 Windows 或 Linux 的 Hadoop on HDInsight 群集 - 有关详细信息，请参阅[设置基于 Linux 的 Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters) 或[设置基于 Windows 的 Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters)。
 
-* [Maven](http://maven.apache.org/)
+* [Maven](http://maven.apache.org)
 
 * [Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本
 
@@ -159,7 +159,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
           //Tokenizer to split sentance into words
           def tokenize(text : String) : Array[String] = {
-            text.toLowerCase.replaceAll("[^a-zA-Z0-9\\s]", "").split("\\s+")
+            text.toLowerCase.replaceAll("[^a-zA-Z0-9&#92;s]", "").split("&#92;s+")
           }
         }
 

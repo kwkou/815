@@ -34,7 +34,7 @@ Python API 编写的。涉及的方案包括创建和删除表、在表中插入
 ## <a name="create-account"> </a>创建 Azure 存储帐户
 [WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
 
-**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](../python-how-to-install/)。
+**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](../python-how-to-install)。
 
 
 ## <a name="create-table"> </a>如何创建表

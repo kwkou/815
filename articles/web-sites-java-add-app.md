@@ -10,8 +10,8 @@
 
 **webapps** 文件夹的导航路径因你设置网站的方式不同而异。
 
--   如果是通过使用 Azure 应用程序库来设置网站，**webapps** 文件夹的路径就会是 **d:\\home\\site\\wwwroot\\bin\\application\_server\\webapps** 这样的形式，其中 **application\_server** 是对你的网站起作用的应用程序服务器的名称。
--   如果是通过使用 Azure 配置 UI 来设置网站，**webapps** 文件夹的路径就会是 **d:\\home\\site\\wwwroot\\webapps** 这样的形式。
+-   如果是通过使用 Azure 应用程序库来设置网站，**webapps** 文件夹的路径就会是 **d:&#92;home&#92;site&#92;wwwroot&#92;bin&#92;application\_server&#92;webapps** 这样的形式，其中 **application\_server** 是对你的网站起作用的应用程序服务器的名称。
+-   如果是通过使用 Azure 配置 UI 来设置网站，**webapps** 文件夹的路径就会是 **d:&#92;home&#92;site&#92;wwwroot&#92;webapps** 这样的形式。
 
 请注意，你可以使用源代码管理来上载你的应用程序或网页，包括在连续集成方案中也这样做。有关源代码管理与你的网站配合使用的说明，请参阅[从源代码管理发布到 Azure 网站][从源代码管理发布到 Azure 网站]。对于上载应用程序或网页，FTP 也是一种可选择的方式。
 

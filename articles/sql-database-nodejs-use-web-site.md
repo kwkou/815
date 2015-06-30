@@ -220,9 +220,9 @@
 
 3.  接下来，从[下载中心][下载中心]下载 Microsoft Driver for Node.JS for SQL Server 的二进制版本。
 
-4.  将存档解压缩到 **tasklist\\node\_modules** 目录。
+4.  将存档解压缩到 **tasklist&#92;node\_modules** 目录。
 
-5.  运行 **tasklist\\node\_modules** 目录中的 **msnodesql-install.cmd** 文件。这将在 **node\_modules** 下创建 **msnodesql** 子目录，并将驱动程序文件移到此新的目录结构中。
+5.  运行 **tasklist&#92;node\_modules** 目录中的 **msnodesql-install.cmd** 文件。这将在 **node\_modules** 下创建 **msnodesql** 子目录，并将驱动程序文件移到此新的目录结构中。
 
 6.  如果不再需要 **msnodesql-install.cmd** 文件，则将其删除。
 
@@ -339,7 +339,7 @@
 
 **views** 目录中的 **layout.jade** 文件用作其他 **.jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap][Twitter Bootstrap]（一个可以轻松设计美观网站的工具包）。
 
-1.  下载并提取 [Twitter Bootstrap][1] 的文件。将 **bootstrap.min.css** 文件从 **bootstrap\\css** 文件夹复制到你的 tasklist 应用程序的 **public\\stylesheets** 目录中。
+1.  下载并提取 [Twitter Bootstrap][1] 的文件。将 **bootstrap.min.css** 文件从 **bootstrap&#92;css** 文件夹复制到你的 tasklist 应用程序的 **public&#92;stylesheets** 目录中。
 
 2.  从 **views** 文件夹中，用文本编辑器打开 **layout.jade** 并将其内容替换为以下代码：
 
@@ -464,9 +464,9 @@
 
    [适用于 Mac 和 Linux 的 Azure 命令行工具][适用于 Mac 和 Linux 的 Azure 命令行工具] 
    [创建 Node.js 应用程序并将其部署到 Azure 网站](/develop/nodejs/tutorials/create-a-website-(mac))
-   [使用 Git 发布到 Azure 网站](/develop/nodejs/common-tasks/publishing-with-git/)
-   [Azure 开发人员中心](/develop/nodejs/)
-   [使用表存储构建 Node.js Web 应用程序](/develop/nodejs/tutorials/web-site-with-storage/)
+   [使用 Git 发布到 Azure 网站](/develop/nodejs/common-tasks/publishing-with-git)
+   [Azure 开发人员中心](/develop/nodejs)
+   [使用表存储构建 Node.js Web 应用程序](/develop/nodejs/tutorials/web-site-with-storage)
 
 
 <!-- URLs. -->

@@ -57,16 +57,16 @@ Apache Hadoop 是一个用于大数据管理和分析的软件框架。Apache Ha
 
 ### <a name="ambari"></a>Ambari
 
-Apache Ambari 用于设置、管理和监视 Apache Hadoop 群集。它包括一系列直观的操作员工具和一组隐藏 Hadoop 复杂性的可靠 API，可简化群集操作。请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/zh-cn/documentation/articles/hdinsight-monitor-use-ambari-api/)和 <a target="_blank" href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md">Apache Ambari API 参考</a>。
+Apache Ambari 用于设置、管理和监视 Apache Hadoop 群集。它包括一系列直观的操作员工具和一组隐藏 Hadoop 复杂性的可靠 API，可简化群集操作。请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/zh-cn/documentation/articles/hdinsight-monitor-use-ambari-api)和 <a target="_blank" href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md">Apache Ambari API 参考</a>。
 
 ### <a name="avro"></a>Avro (Microsoft .NET Library for Avro)
 
 Microsoft .NET Library for Avro 针对 Microsoft.NET 环境序列化实现了 Apache Avro 紧凑的二进制数据交换格式。它使用 <a target="_blank" href="http://www.json.org/">JSON</a> 定义与语言无关的架构，以支持语言互操作性，这意味着以一种语言序列化的数据可以用另一种语言读取。有关格式的详细信息可以在 <a target=_"blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro 规范</a>中找到。 
-Avro 文件格式支持分布式 MapReduce 编程模型。文件是"可拆分的"，也就是说，您可以在文件中任意设置一个点，然后即可从某一特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 将数据序列化](/zh-cn/documentation/articles/hdinsight-dotnet-avro-serialization/)。
+Avro 文件格式支持分布式 MapReduce 编程模型。文件是"可拆分的"，也就是说，您可以在文件中任意设置一个点，然后即可从某一特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 将数据序列化](/zh-cn/documentation/articles/hdinsight-dotnet-avro-serialization)。
 
 ### <a name="hbase"></a>HBase
 
-<a target="_blank" href="http://hbase.apache.org/">Apache HBase</a> 是构建于 Hadoop 上的一个非关系数据库，专为海量非结构化和半结构化数据而设计，这类数据可能是几十亿行乘几百万列。HDInsight 上的 HBase 群集已配置为将数据直接存储在 Azure Blob 存储中，既减少了延迟又提高了灵活性。请参阅 [HDInsight 上的 HBase 概述](/zh-cn/documentation/articles/hdinsight-hbase-overview/)。
+<a target="_blank" href="http://hbase.apache.org/">Apache HBase</a> 是构建于 Hadoop 上的一个非关系数据库，专为海量非结构化和半结构化数据而设计，这类数据可能是几十亿行乘几百万列。HDInsight 上的 HBase 群集已配置为将数据直接存储在 Azure Blob 存储中，既减少了延迟又提高了灵活性。请参阅 [HDInsight 上的 HBase 概述](/zh-cn/documentation/articles/hdinsight-hbase-overview)。
 
 ### <a name="hdfs"></a>HDFS
 
@@ -74,11 +74,11 @@ Hadoop 分布式文件系统 (HDFS) 是一种分布式文件系统，采用 MapR
 
 ### <a name="hive"></a>Hive
 
-<a target="_blank" href="http://hive.apache.org/">Apache Hive</a> 是构建于 Hadoop 上的一个数据仓库软件，允许使用类似于 SQL 的语言调用 HiveQL 来查询和管理分布式存储中的大型数据集。Hive（类似于 Pig）是一种基于 MapReduce 的抽象，它在运行时会将查询转换为一系列 MapReduce 作业。Hive 比 Pig 在概念上更接近于关系数据库管理系统，因此适用于结构化程度更高的数据。对于非结构化数据，Pig 是更佳的选择。请参阅[将 Hive 与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-hive/)
+<a target="_blank" href="http://hive.apache.org/">Apache Hive</a> 是构建于 Hadoop 上的一个数据仓库软件，允许使用类似于 SQL 的语言调用 HiveQL 来查询和管理分布式存储中的大型数据集。Hive（类似于 Pig）是一种基于 MapReduce 的抽象，它在运行时会将查询转换为一系列 MapReduce 作业。Hive 比 Pig 在概念上更接近于关系数据库管理系统，因此适用于结构化程度更高的数据。对于非结构化数据，Pig 是更佳的选择。请参阅[将 Hive 与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-hive)
 
 ### <a name="mahout"></a>Mahout
 
-<a target="_blank" href="https://mahout.apache.org/">Apache Mahout</a> 是在 Hadoop 上运行的一种可扩展的计算机学习算法库。计算机学习应用程序采用统计学原理，使系统学习数据并使用以往的结果来确定将来的行为。请参阅[使用 Hadoop 上的 Mahout 生成电影推荐](/zh-cn/documentation/articles/hdinsight-mahout/)。
+<a target="_blank" href="https://mahout.apache.org/">Apache Mahout</a> 是在 Hadoop 上运行的一种可扩展的计算机学习算法库。计算机学习应用程序采用统计学原理，使系统学习数据并使用以往的结果来确定将来的行为。请参阅[使用 Hadoop 上的 Mahout 生成电影推荐](/zh-cn/documentation/articles/hdinsight-mahout)。
 
 ### <a name="mapreduce"></a>MapReduce 和 YARN
 Hadoop MapReduce 是一个用于编写并行处理大数据集的应用程序的软件框架。MapReduce 作业将分割大型数据集并将数据组织成键值对进行处理。 
@@ -88,17 +88,17 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 有关 MapReduce 的更多信息，请参阅 Hadoop Wiki 中的 <a target="_blank" href="http://wiki.apache.org/hadoop/MapReduce">MapReduce</a>。若要了解 YARN，请参阅 <a target="_blank" href="http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">Apache Hadoop 下一代 MapReduce (YARN)</a>。
 
 ### <a name="oozie"></a>Oozie
-<a target="_blank" href="http://oozie.apache.org/">Apache Oozie</a> 是一个管理 Hadoop 作业的工作流协调系统。它与 Hadoop 堆栈集成，支持 MapReduce、Pig、Hive 和 Sqoop 的 Hadoop 作业。它也能用于安排特定于某系统的作业，例如 Java 程序或 shell 脚本。请参阅[将基于时间的 Oozie 协调器与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-oozie-coordinator-time/)。
+<a target="_blank" href="http://oozie.apache.org/">Apache Oozie</a> 是一个管理 Hadoop 作业的工作流协调系统。它与 Hadoop 堆栈集成，支持 MapReduce、Pig、Hive 和 Sqoop 的 Hadoop 作业。它也能用于安排特定于某系统的作业，例如 Java 程序或 shell 脚本。请参阅[将基于时间的 Oozie 协调器与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-oozie-coordinator-time)。
 
 ### <a name="pig"></a>Pig
 
-<a  target="_blank" href="http://pig.apache.org/">Apache Pig</a> 是一个高级平台，可以使用一种简单脚本语言 Pig Latin 对超大型数据集执行复杂的 MapReduce 转换。Pig 转换 Pig Latin 脚本，使其可以在 Hadoop 内运行。可以创建用户定义的函数 (UDF) 来扩展 Pig Latin。请参阅[将 Pig 与 Hadoop 配合使用来分析 Apache 日志文件](/zh-cn/documentation/articles/hdinsight-use-pig/)。
+<a  target="_blank" href="http://pig.apache.org/">Apache Pig</a> 是一个高级平台，可以使用一种简单脚本语言 Pig Latin 对超大型数据集执行复杂的 MapReduce 转换。Pig 转换 Pig Latin 脚本，使其可以在 Hadoop 内运行。可以创建用户定义的函数 (UDF) 来扩展 Pig Latin。请参阅[将 Pig 与 Hadoop 配合使用来分析 Apache 日志文件](/zh-cn/documentation/articles/hdinsight-use-pig)。
 
 ### <a name="sqoop"></a>Sqoop
-<a  target="_blank" href="http://sqoop.apache.org/">Apache Sqoop</a>是一种用于在 Hadoop 和关系数据库（如 SQL）或其他结构化数据存储之间尽可能高效地传输批量数据的工具。请参阅[将 Sqoop 与 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-sqoop/)。
+<a  target="_blank" href="http://sqoop.apache.org/">Apache Sqoop</a>是一种用于在 Hadoop 和关系数据库（如 SQL）或其他结构化数据存储之间尽可能高效地传输批量数据的工具。请参阅[将 Sqoop 与 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-sqoop)。
 
 ### <a name="storm"></a>Storm
-<a  target="_blank" href="https://storm.incubator.apache.org/">Apache Storm</a> 是一个分布式实时计算系统，用于快速处理大型数据流。Storm 以 HDInsight 中的托管群集形式提供。请参阅[使用 Storm 和 Hadoop 分析实时传感器数据](/zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis/)。
+<a  target="_blank" href="https://storm.incubator.apache.org/">Apache Storm</a> 是一个分布式实时计算系统，用于快速处理大型数据流。Storm 以 HDInsight 中的托管群集形式提供。请参阅[使用 Storm 和 Hadoop 分析实时传感器数据](/zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis)。
 
 ### <a name="zookeeper"></a>Zookeeper
 <a  target="_blank" href="http://zookeeper.apache.org/">Apache Zookeeper</a> 通过数据寄存器的共享层次结构命名空间 (znode) 协调大型分布式系统中的流程。Znode 包含协调流程所需的少量元数据信息：状态、位置、配置等等。 
@@ -118,10 +118,10 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 作为 Azure 云生态系统的一部分，HDInsight 中的 Hadoop 具有很多优势，其中包括：
 
 * 最先进的 Hadoop 组件。有关详细信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][组件版本]
-* 群集具有高可用性和可靠性。有关详细信息，请参阅[ HDInsight 中的 Hadoop 群集的可用性和可靠性](/zh-cn/documentation/articles/hdinsight-high-availability/)。
-* 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-blob-storage/)。
-* 与其他 Azure 服务集成，包括[网站](/zh-cn/documentation/services/web-sites/) 和 [SQL数据库](/zh-cn/documentation/services/sql-databases/)。
-* 进入成本低。开始[试用](/pricing/1rmb-trial/) 或咨询 [HDInsight 定价详细信息](/home/features/hdinsight/#price)。
+* 群集具有高可用性和可靠性。有关详细信息，请参阅[ HDInsight 中的 Hadoop 群集的可用性和可靠性](/zh-cn/documentation/articles/hdinsight-high-availability)。
+* 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/zh-cn/documentation/articles/hdinsight-use-blob-storage)。
+* 与其他 Azure 服务集成，包括[网站](/zh-cn/documentation/services/web-sites) 和 [SQL数据库](/zh-cn/documentation/services/sql-databases)。
+* 进入成本低。开始[试用](/pricing/1rmb-trial) 或咨询 [HDInsight 定价详细信息](/home/features/hdinsight/#price)。
 
 若要详细了解 HDInsight 中的 Hadoop 的优势，请参阅 [HDInsight 的 Azure 功能页面][营销页面]。
 
@@ -129,11 +129,11 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 分析组织的数据，获得业务的深度见解。下面是一些示例： 
 
-* [分析 HVAC 传感器数据](/zh-cn/documentation/articles/hdinsight-hive-analyze-sensor-data/)：了解如何通过将 Hive 与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后在 Microsoft Excel 中实现数据的可视化。在此例中，您将使用 Hive 处理 HVAC 系统生成的历史数据，从而了解哪些系统无法可靠地维持设定的温度。
-* [将 Hive 与 HDInsight 配合使用来分析网站日志](/zh-cn/documentation/articles/hdinsight-hive-analyze-website-log/)：了解如何使用 HDInsight 中的 HiveQL 来分析网站日志，从而了解来自外部网站的一天访问次数以及用户遇到的网站错误汇总。
-* [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 分析实时传感器数据](/zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis/)：了解如何构建一个解决方案，使用 HDInsight 中的 Storm 群集处理 Azure 事件中心的传感器数据，然后将处理后的传感器数据以近乎实时的信息显示在基于 Web 的仪表板上。
+* [分析 HVAC 传感器数据](/zh-cn/documentation/articles/hdinsight-hive-analyze-sensor-data)：了解如何通过将 Hive 与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后在 Microsoft Excel 中实现数据的可视化。在此例中，您将使用 Hive 处理 HVAC 系统生成的历史数据，从而了解哪些系统无法可靠地维持设定的温度。
+* [将 Hive 与 HDInsight 配合使用来分析网站日志](/zh-cn/documentation/articles/hdinsight-hive-analyze-website-log)：了解如何使用 HDInsight 中的 HiveQL 来分析网站日志，从而了解来自外部网站的一天访问次数以及用户遇到的网站错误汇总。
+* [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 分析实时传感器数据](/zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis)：了解如何构建一个解决方案，使用 HDInsight 中的 Storm 群集处理 Azure 事件中心的传感器数据，然后将处理后的传感器数据以近乎实时的信息显示在基于 Web 的仪表板上。
 
-若要试用 HDInsight 上的 Hadoop，请参阅 [HDInsight 文档页](/zh-cn/documentation/services/hdinsight/) 上"探究"部分的"入门"文章。若要尝试更高级的示例，请向下滚动到"分析"部分。
+若要试用 HDInsight 上的 Hadoop，请参阅 [HDInsight 文档页](/zh-cn/documentation/services/hdinsight) 上"探究"部分的"入门"文章。若要尝试更高级的示例，请向下滚动到"分析"部分。
 
 
 
@@ -141,13 +141,13 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 ### HDInsight 中的 Hadoop	
 
-* [HDInsight 文档](/zh-cn/documentation/services/hdinsight/)：Azure HDInsight 的文档页，带有文章、视频及其他资源的链接。
+* [HDInsight 文档](/zh-cn/documentation/services/hdinsight)：Azure HDInsight 的文档页，带有文章、视频及其他资源的链接。
 
 * [HDInsight 中的 Hadoop 的学习计划图](/zh-cn/documentation/articles/hdinsight-learn-map)：HDInsight 的 Hadoop 文档导航。
 
-* [Azure HDInsight 入门](/zh-cn/documentation/articles/hdinsight-get-started/)：关于使用 HDInsight 中的 Hadoop 的快速入门教程。
+* [Azure HDInsight 入门](/zh-cn/documentation/articles/hdinsight-get-started)：关于使用 HDInsight 中的 Hadoop 的快速入门教程。
 
-* [运行 HDInsight 示例](/zh-cn/documentation/articles/hdinsight-run-samples/)：有关如何运行随 HDInsight 提供的示例的教程。
+* [运行 HDInsight 示例](/zh-cn/documentation/articles/hdinsight-run-samples)：有关如何运行随 HDInsight 提供的示例的教程。
 	
 * [Azure HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/dn479185.aspx)：HDinsight SDK 的参考文档。
 
@@ -162,9 +162,9 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 ### Microsoft 商业智能		
 
-* [利用 Power Query 将 Excel 连接到 Hadoop](/zh-cn/documentation/articles/hdinsight-connect-excel-power-query/)：了解如何使用 Microsoft Power Query for Excel，将 Excel 连接到存储 HDInsight 群集关联数据的 Azure 存储帐户。 
+* [利用 Power Query 将 Excel 连接到 Hadoop](/zh-cn/documentation/articles/hdinsight-connect-excel-power-query)：了解如何使用 Microsoft Power Query for Excel，将 Excel 连接到存储 HDInsight 群集关联数据的 Azure 存储帐户。 
 
-* [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop](/zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/)：了解如何使用 Microsoft Hive ODBC 驱动程序从 HDInsight 导入数据。
+* [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop](/zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver)：了解如何使用 Microsoft Hive ODBC 驱动程序从 HDInsight 导入数据。
 
 * [Microsoft 商业智能 (BI)](http://www.microsoft.com/zh-cn/server-cloud/solutions/business-intelligence/default.aspx)：了解适用于 Office 365 的 Power BI，下载 SQL Server 试用版，以及设置 SharePoint Server 2013 和 SQL Server BI。
 			

@@ -57,13 +57,13 @@ Service Bus 主题和订阅支持**发布/订阅消息通信**模型。在使用
 
 若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。
 
-1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn/)。
+1. 登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
 
 2. 选择你创建的 Service Bus 命名空间。
 
      ![Select namespace](./media/service-bus-ruby-how-to-use-topics-subscriptions/selectns.png)
 
-3. 在底部选择"连接信息"****。
+3. 在底部选择"连接信息"。
 
       ![Select connection](./media/service-bus-ruby-how-to-use-topics-subscriptions/selectconnection.png)
 
@@ -73,7 +73,7 @@ Service Bus 主题和订阅支持**发布/订阅消息通信**模型。在使用
 
 ## <a id="create-a-ruby-application"></a>创建 Ruby 应用程序
 
-创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux/)。
+创建 Ruby 应用程序。有关说明，请参阅[在 Azure 上创建 Ruby 应用程序](/zh-cn/documentation/articles/virtual-machines-ruby-rails-web-app-linux)。
 
 ## <a id="configure-your-application-to-use-service-bus"></a>配置应用程序以使用 Service Bus
 

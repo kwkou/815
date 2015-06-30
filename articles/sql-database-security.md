@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="SQL Database 安全性概述" 
    description="了解有关 Azure SQL Database 和 SQL Server 安全性的信息，包括云与本地 SQL Server 在身份验证、授权、连接安全性、加密和合规性方面的差异。" 
    services="sql-database" 
@@ -78,6 +78,6 @@ ALTER ROLE db_datawriter ADD MEMBER ApplicationUser; -- allows ApplicationUser t
 审核和跟踪数据库事件可帮助你保持合规性，以及识别可疑活动。SQL Database 审核可让你将数据库中的事件记录到 Azure 存储帐户中的审核日志。SQL Database 审核还与 Microsoft Power BI 集成，以帮助向下钻取报告和分析数据。有关详细信息，请参阅 [SQL Database 审核入门](sql-database-auditing-get-started)。
 
 ## 合规性
-除了上述可帮助应用程序符合各项安全法规要求的特性和功能以外，Azure SQL Database 还定期参与审核，并已通过许多法规标准的认证。有关详细信息，请参阅 [Microsoft Azure 信任中心](/support/trust-center/)。
+除了上述可帮助应用程序符合各项安全法规要求的特性和功能以外，Azure SQL Database 还定期参与审核，并已通过许多法规标准的认证。有关详细信息，请参阅 [Microsoft Azure 信任中心](/support/trust-center)。
 
 <!--HONumber=55-->

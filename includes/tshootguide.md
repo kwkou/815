@@ -461,8 +461,8 @@ with the operating systems and platforms in use. For example:
     available for troubleshooting applications on Suse Linux, both in
     the [Suse Linux documentation] and on the internet.
 -   Ubuntu Linux. Again, a large amount of information exists. To
-    start with the product documentation, see [https://help.ubuntu.com/](https://help.ubuntu.com/).
--   CentOS Linux. For more information, see [http://centos.org/](http://centos.org/).
+    start with the product documentation, see [https://help.ubuntu.com/](https://help.ubuntu.com).
+-   CentOS Linux. For more information, see [http://centos.org/](http://centos.org).
 
 <h2><a id="PlatformServices"></a>Troubleshooting Azure Services</h2>
 
@@ -691,7 +691,7 @@ environment and tools available. In many ways the risks have been
 mediated by the database being in the Microsoft data centers. The tools
 that we have today cover the other risk factors, however better tools
 are coming to make the job much easier. Red-gate recently published a
-free tool for SQL数据库 backup and restore which can be found here: [http://www.red-gate.com/products/dba/sql-azure-backup/](http://www.red-gate.com/products/dba/sql-azure-backup/).
+free tool for SQL数据库 backup and restore which can be found here: [http://www.red-gate.com/products/dba/sql-azure-backup/](http://www.red-gate.com/products/dba/sql-azure-backup).
 
 SQL Data Sync enables you to easily create and schedule
 bi-directional synchronizations from within the Data Sync web site

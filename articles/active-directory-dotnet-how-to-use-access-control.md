@@ -121,7 +121,7 @@ Azure 将创建并激活该命名空间。
 
 4.  在**名称**中，键入**MvcACS**，然后单击**确定**。
 5.  在下一个对话框中，选择**Internet 应用程序**，然后单击**确定**。
-6.  编辑 *Views\\Shared\_LoginPartial.cshtml* 文件，并将内容替换为下列代码：
+6.  编辑 *Views&#92;Shared\_LoginPartial.cshtml* 文件，并将内容替换为下列代码：
 
         @if (Request.IsAuthenticated)
         {
@@ -211,7 +211,7 @@ Azure 将创建并激活该命名空间。
 
 在本节中，我们将修改应用程序以查看 ACS 发送的声明。身份验证和访问工具已创建一个将 IP 中的所有声明传递给应用程序的规则组。请注意，不同的标识提供程序会发送不同的声明。
 
-1.  打开 *Controllers\\HomeController.cs* 文件。为 **System.Threading** 添加 **using** 语句：
+1.  打开 *Controllers&#92;HomeController.cs* 文件。为 **System.Threading** 添加 **using** 语句：
 
     using System.Threading;
 
@@ -233,7 +233,7 @@ Azure 将创建并激活该命名空间。
 
 1.  单击“添加”。
 
-2.  将 *Views\\Home\\Claims.cshtml* 文件的内容替换为下列代码：
+2.  将 *Views&#92;Home&#92;Claims.cshtml* 文件的内容替换为下列代码：
 
         @{
             ViewBag.Title = "Claims";

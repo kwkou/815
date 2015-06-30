@@ -122,7 +122,7 @@ Azure 网站允许创建这种 web 应用程序，但有一些约束。例如，
 
 ####选择计算模型###  
 
-[Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/) 页面提供了有关如何选择计算模型的更多详细信息。
+[Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm) 页面提供了有关如何选择计算模型的更多详细信息。
 
 
 
@@ -198,9 +198,9 @@ Blob 存储可用于许多其他的 Azure 功能（包括虚拟机），因此�
 <!--
 ###Azure 文件服务###
 ![Azure File Service](./media/intro-to-azure/FileServiceIntroNew.png)    
-**图：Azure 文件服务为云中运行的应用程序提供 SMB \\\\server\share 路径。** 
+**图：Azure 文件服务为云中运行的应用程序提供 SMB &#92;&#92;server\share 路径。** 
 
-进行本地部署时，通常会允许通过服务器消息块 (SMB) 协议使用 \\\\Server\share 格式来访问大量的文件存储。Azure 现在提供的一种服务允许你在云中使用该协议。在 Azure 中运行的应用程序可以使用它通过熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，还可以通过 REST 界面同时访问这些文件，该界面允许你在也设置了虚拟网络的情况下，从本地访问共享。Azure 文件基于 Blob 服务，因此会继承 Azure 存储空间中内置的可用性、持续性、可伸缩性和地域冗余。 
+进行本地部署时，通常会允许通过服务器消息块 (SMB) 协议使用 &#92;&#92;Server\share 格式来访问大量的文件存储。Azure 现在提供的一种服务允许你在云中使用该协议。在 Azure 中运行的应用程序可以使用它通过熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，还可以通过 REST 界面同时访问这些文件，该界面允许你在也设置了虚拟网络的情况下，从本地访问共享。Azure 文件基于 Blob 服务，因此会继承 Azure 存储空间中内置的可用性、持续性、可伸缩性和地域冗余。 
 
 **Azure 文件方案**
 
@@ -265,7 +265,7 @@ Azure 提供了多种工具，可以帮助开发人员和 IT 专业人员创建�
 ###Azure SDK###
 早在 2008 年，Azure 的第一个预发行版本仅支持 .NET 开发。而现今，你几乎可以使用任何语言创建 Azure 应用程序。Microsoft 目前为 .NET、Java、PHP、Node.js、Ruby 和 Python 提供了特定于语言的 SDK。还有一个为任何语言（例如 C++）提供基本支持的常规 Azure SDK。  
 
-这些 SDK 可帮助你构建、部署和管理 Azure 应用程序。可从 [www.microsoftazure.com](/downloads/) 或 GitHub 获得它们，并且它们可以与 Visual Studio 和 Eclipse 结合使用。Azure 还提供了开发人员可以将其与任何编辑器或开发环境结合使用的命令行工具，包括用于从 Linux 和 Macintosh 系统将应用程序部署到 Azure 的工具。 
+这些 SDK 可帮助你构建、部署和管理 Azure 应用程序。可从 [www.microsoftazure.com](/downloads) 或 GitHub 获得它们，并且它们可以与 Visual Studio 和 Eclipse 结合使用。Azure 还提供了开发人员可以将其与任何编辑器或开发环境结合使用的命令行工具，包括用于从 Linux 和 Macintosh 系统将应用程序部署到 Azure 的工具。 
 
 除了帮助你构建 Azure 应用程序以外，这些 SDK 还提供了客户端库，可帮助你创建使用 Azure 服务的软件。例如，你可以构建用于读取和写入 Azure Blob 的应用程序，或创建通过 Azure 管理界面部署 Azure 应用程序的工具。 
 
@@ -596,7 +596,7 @@ Azure Media Services 解决了此问题。它提供了一组云组件，从而�
 <div style="display:none">
 <h2><a id="commerce"></a>商务</h2>
 
-"软件即服务"的出现正在改变我们创建应用程序的方式。它还改变了我们销售应用程序的方式。由于 SaaS 应用程序位于云中，因此其潜在客户应联机查找解决方案。并且此更改适用于数据和应用程序。为什么人们不寻求通过云来寻找市场上销售的数据集？Microsoft 通过 [Azure Marketplace](http://datamarket.azure.com/) 和 [Azure 应用商店](/zh-cn/store/overview/) 解决了这两个问题。
+"软件即服务"的出现正在改变我们创建应用程序的方式。它还改变了我们销售应用程序的方式。由于 SaaS 应用程序位于云中，因此其潜在客户应联机查找解决方案。并且此更改适用于数据和应用程序。为什么人们不寻求通过云来寻找市场上销售的数据集？Microsoft 通过 [Azure Marketplace](http://datamarket.azure.com) 和 [Azure 应用商店](/zh-cn/store/overview) 解决了这两个问题。
 
 ![Azure Commerce](./media/intro-to-azure/CommerceIntroNew.png)   
  **图：Azure Marketplace 和 Azure 应用商店允许你查找和购买 Azure 应用程序和商业数据集，并将它们用作 Azure 应用程序的一部分。**
@@ -612,7 +612,7 @@ SendGrid 是 Azure 应用商店中的应用程序，用于发送电子邮件。�
 
 <h2><a id="start"></a>入门</h2>
 
-现在，你已了解大体情况，下一步是编写你的第一个 Azure 应用程序。选择你的语言，[获得适当的 SDK](/downloads/)，然后继续下一步。云计算是新的默认计算模式 -- 立即开始。
+现在，你已了解大体情况，下一步是编写你的第一个 Azure 应用程序。选择你的语言，[获得适当的 SDK](/downloads)，然后继续下一步。云计算是新的默认计算模式 -- 立即开始。
 
 
 

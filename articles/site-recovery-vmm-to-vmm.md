@@ -27,8 +27,8 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 确保已满足以下先决条件：
 ### Azure 先决条件
 
-- 你将需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial/)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
-- 若要了解信息和数据是如何使用的，请阅读 [Azure 隐私声明](/support/legal/privacy-statement/)和本主题底部的其他 <a href="#privacy">Site Recovery 隐私信息</a>。
+- 你将需要一个 [Microsoft Azure](http://www.windowsazure.cn) 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
+- 若要了解信息和数据是如何使用的，请阅读 [Azure 隐私声明](/support/legal/privacy-statement)和本主题底部的其他 <a href="#privacy">Site Recovery 隐私信息</a>。
 
 ### VMM 先决条件
 - 你将需要至少一台 VMM 服务器。
@@ -299,7 +299,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 <a name="privacy"></a><h2>Site Recovery 的隐私信息</h2>
 
 本部分提供了 Microsoft Azure Site Recovery 服务（"服务"）的更多隐私信息。若要查看 Microsoft Azure 服务的隐私声明，请参阅 
-[Azure 隐私声明](/support/legal/privacy-statement/)
+[Azure 隐私声明](/support/legal/privacy-statement)
 
 **功能：注册**
 

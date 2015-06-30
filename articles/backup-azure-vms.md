@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="使用Azure 备份来备份Azure 虚拟机" 
 	description="使用此演练部署Azure备份来备份虚拟机。" 
 	services="backup" 
@@ -26,12 +26,12 @@
 
 ## 准备工作
 
-你将需要一个 Azure 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial/)。你还可以阅读[关于 Azure 备份定价](/home/features/back-up/#price)。
+你将需要一个 Azure 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial)。你还可以阅读[关于 Azure 备份定价](/home/features/back-up/#price)。
 
 
 ## 创建保管库
 
-1. 登录到[管理门户](https://manage.windowsazure.cn/)。
+1. 登录到[管理门户](https://manage.windowsazure.cn)。
 2. 单击"恢复服务">"新建">"数据服务">"恢复服务">"备份保管库">"快速创建"。如果有多个订阅与你的组织帐户相关联，请选择要与备份保管库关联的正确订阅。
 3. 在"名称"中，输入一个友好名称以标识此保管库。
 4. 在"区域"中，为保管库选择地理区域。请注意，保管库应当与你要保护的虚拟机位于同一区域中。如果你的虚拟机位于不同的区域中，请在每个区域中创建一个保管库。

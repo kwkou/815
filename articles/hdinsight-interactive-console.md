@@ -64,7 +64,7 @@ Pig 和 Hive 提供编译成 MapReduce 程序的更高级别的语言，这些�
 
 13. 将以下参数输入“上载文件” 窗口：
 
-    -   **源：** \_..\\downloads\\Wordcount.js
+    -   **源：** \_..&#92;downloads&#92;Wordcount.js
     -   **目标：** ./WordCount.js/
 
     ![HDI.JsConsole.UploadJs][hdi-jsconsole-upload]

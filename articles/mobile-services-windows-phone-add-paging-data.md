@@ -12,7 +12,7 @@
 
 >[WACOM.NOTE]为了防止移动设备客户端上发生数据溢出，移动服务实施了自动页限制，该限制默认为每个响应中最多 50 个项。通过指定页大小，你最多可以在响应中显式请求 1,000 个项。
 
-本教程以前面的教程[将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data/)中的步骤和示例应用程序为基础。在开始本教程之前，必须先完成以上所提教程。  
+本教程以前面的教程[将移动服务添加到现有应用程序](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)中的步骤和示例应用程序为基础。在开始本教程之前，必须先完成以上所提教程。  
 
 [WACOM.INCLUDE [mobile-services-windows-dotnet-paging](../includes/mobile-services-windows-dotnet-paging.md)]
 

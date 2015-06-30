@@ -1,4 +1,4 @@
-<properties urlDisplayName="Blob Service" pageTitle="如何通过 .NET 使用 Blob 存储 | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="了解如何使用 Microsoft Azure Blob 存储上载、下载、列出和删除 Blob 内容。相关示例用 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Blob storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Blob Service" pageTitle="如何通过 .NET 使用 Blob 存储 | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="了解如何使用 Microsoft Azure Blob 存储上载、下载、列出和删除 Blob 内容。相关示例用 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Blob storage in .NET" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/12/2015"
     wacn.date="04/11/2015"
@@ -7,10 +7,10 @@
 # 如何通过 .NET 使用 Blob 存储
 
 本指南将演示如何使用 Azure Blob 存储服务
-执行常见方案。示例是用 C\# 编写的并使用了 Azure .NET 存储客户端库。涉及的方案包括
+执行常见方案。示例是用 C# 编写的并使用了 Azure .NET 存储客户端库。涉及的方案包括
 上载、列出、下载和删除 Blob。有关 Blob 的详细信息，请参阅[后续步骤][]部分。
 
-> [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是 Storage Client Library 4.x，可通过 [NuGet] 获取(https://www.nuget.org/packages/WindowsAzure.Storage/) or as part of the [Azure SDK for .NET](/zh-cn/downloads/). See [How to: Programmatically access Blob storage][] below for more details on obtaining the Storage Client Library.
+> [WACOM.NOTE] 本指南适用于 Azure .NET 存储客户端库 2.x 及更高版本。建议使用的版本是 Storage Client Library 4.x，可通过 [NuGet] 获取(https://www.nuget.org/packages/WindowsAzure.Storage) or as part of the [Azure SDK for .NET](/zh-cn/downloads). See [How to: Programmatically access Blob storage][] below for more details on obtaining the Storage Client Library.
 
 ##目录
 
@@ -41,7 +41,7 @@
 ###获得程序集
 我们建议你使用 NuGet 获取  `Microsoft.WindowsAzure.Storage.dll` 程序集。在"解决方案资源管理器"中，右键单击你的项目并选择"管理 NuGet 包"。在线搜索"MicrosoftAzure.Storage"，然后单击"安装"以安装 Azure 存储包和依赖项。
 
-Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从 <a href="/zh-cn/downloads/?sdk=net">.NET 开发人员中心</a>下载该版本。程序集安装在 `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` 目录中。
+Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从 <a href="/zh-cn/downloads/?sdk=net">.NET 开发人员中心</a>下载该版本。程序集安装在 `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK&lt;sdk-version>\ref\` 目录中。
 
 ###命名空间声明
 在你希望在其中以编程方式访问 Azure 存储空间的任何 C# 文件中，将以下命名空间声明添加到文件的顶部：

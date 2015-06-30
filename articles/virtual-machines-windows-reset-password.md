@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="如何为 Windows 虚拟机重置密码或远程桌面服务" 
 	description="使用 PowerShell 命令快速为 Windows 虚拟机重置本地管理员密码或远程桌面服务。" 
 	services="virtual-machines" 
@@ -18,7 +18,7 @@
 
 在开始之前，你需要具备以下项：
 
-- Azure PowerShell 模块 0.8.5 版或更高版本。可以使用 **Get-Module azure | format-table version** 命令查看已安装的 Azure PowerShell 的版本。有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。 
+- Azure PowerShell 模块 0.8.5 版或更高版本。可以使用 **Get-Module azure | format-table version** 命令查看已安装的 Azure PowerShell 的版本。有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。 
 - 新的本地管理员帐户密码。如果要重置远程桌面服务配置，则不需要此项。 
 - VM 代理。 
 
@@ -33,7 +33,7 @@ VMAccess 扩展无需安装就可使用它。当你运行使用 **Set-AzureVMExt
 
 如果你不知道云服务和虚拟机名称，运行 **Get-AzureVM** 可显示当前订阅中所有虚拟机的该信息。
 
-如果 **write-host** 命令显示 **True**，则已安装 VM 代理。如果该命令显示 **False**，请参阅 Azure 博客文章 [VM 代理和扩展 - 第 2 部分](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/)中的说明和下载链接。
+如果 **write-host** 命令显示 **True**，则已安装 VM 代理。如果该命令显示 **False**，请参阅 Azure 博客文章 [VM 代理和扩展 - 第 2 部分](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2)中的说明和下载链接。
 
 如果你使用 Azure 管理门户创建了虚拟机，请运行以下附加命令：
 

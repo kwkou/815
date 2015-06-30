@@ -1,4 +1,4 @@
-<properties linkid="develop-ruby-how-to-twilio-sms-voice-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="How to Use Twilio for Voice and SMS (Ruby) - Azure" metaKeywords="Azure Ruby Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in Ruby." metaCanonical="" services="" documentationCenter="Ruby" title="How to Use Twilio for Voice and SMS Capabilities in PHP" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-ruby-how-to-twilio-sms-voice-service" urlDisplayName="Twilio Voice/SMS Service" pageTitle="How to Use Twilio for Voice and SMS (Ruby) - Azure" metaKeywords="Azure Ruby Twilio, Azure phone calls, Azure phone calls, Azure twilio, Azure SMS, Azure SMS, Azure voice calls, azure voice calls, Azure text messages, Azure text messages" description="Learn how to make a phone call and send a SMS message with the Twilio API service on Azure. Code samples written in Ruby." metaCanonical="" services="" documentationCenter="Ruby" title="How to Use Twilio for Voice and SMS Capabilities in PHP" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="11/25/2014"
     wacn.date="04/11/2015"
@@ -50,20 +50,20 @@ TwiML 是一组基于 XML 的指令，可指示 Twilio 如何处理呼叫或短�
 
 ### <span id="Verbs"></span></a>Twilio 谓词
 
-Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**\<Say\>** 谓词指示 Twilio 在呼叫时传递语音消息。
+Twilio 谓词是指示 Twilio 执行哪些**操作**的 XML 标记。例如，**&lt;Say&gt;** 谓词指示 Twilio 在呼叫时传递语音消息。
 
 下面是 Twilio 谓词的列表。
 
--   **\<Dial\>**：将呼叫方连接到其他电话。
--   **\<Gather\>**：收集通过电话按键输入的数字。
--   **\<Hangup\>**：结束呼叫。
--   **\<Play\>**：播放音频文件。
--   **\<Pause\>**：安静地等待指定时间（以秒为单位）。
--   **\<Record\>**：录制呼叫方的声音并返回包含该录音的文件的 URL。
--   **\<Redirect\>**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
--   **\<Reject\>**：拒绝对 Twilio 号码的传入呼叫而不向你收费
--   **\<Say\>**：将文本转换为呼叫中生成的语音。
--   **\<Sms\>**：发送 SMS 消息。
+-   **&lt;Dial&gt;**：将呼叫方连接到其他电话。
+-   **&lt;Gather&gt;**：收集通过电话按键输入的数字。
+-   **&lt;Hangup&gt;**：结束呼叫。
+-   **&lt;Play&gt;**：播放音频文件。
+-   **&lt;Pause&gt;**：安静地等待指定时间（以秒为单位）。
+-   **&lt;Record&gt;**：录制呼叫方的声音并返回包含该录音的文件的 URL。
+-   **&lt;Redirect&gt;**：将对呼叫或 SMS 的控制转移到其他 URL 上的 TwiML。
+-   **&lt;Reject&gt;**：拒绝对 Twilio 号码的传入呼叫而不向你收费
+-   **&lt;Say&gt;**：将文本转换为呼叫中生成的语音。
+-   **&lt;Sms&gt;**：发送 SMS 消息。
 
 有关 Twilio 谓词、其属性和 TwiML 的详细信息，请参阅 [TwiML][TwiML]。有关 Twilio API 的其他信息，请参阅 [Twilio API][Twilio API]。
 

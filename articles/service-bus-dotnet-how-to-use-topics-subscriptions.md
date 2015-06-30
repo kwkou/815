@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (.NET) - Azure" metaKeywords="Get started Azure Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions C# " description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 .NET 应用程序编写的。 " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
+﻿<properties linkid="dev-net-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (.NET) - Azure" metaKeywords="Get started Azure Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions C# " description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 .NET 应用程序编写的。 " metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Topics/Subscriptions" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 <tags ms.service="service-bus"
     ms.date="03/18/2015"
     wacn.date="04/11/2015"
@@ -6,7 +6,7 @@
 
 
 # 如何使用 Service Bus 主题/订阅
-本指南说明如何使用 Service Bus 主题和订阅。相关示例用 C# 编写且使用 .NET API。涉及的应用场景包括创建主题和订阅、创建订阅筛选器、将消息发送到**主题、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][]部分。 
+本指南说明如何使用 Service Bus 主题和订阅。相关示例用 C# 编写且使用 .NET API。涉及的应用场景包括创建主题和订阅、创建订阅筛选器、将消息发送到**主题**、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤][]部分。 
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -21,8 +21,8 @@ Service Bus **NuGet** 包是获取 Service Bus API 和使用所有 Service Bus �
 
 若要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
-1.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"********。
-2.  搜索"WindowsAzure"，然后选择"Azure Service Bus"****项。单击"安装"****以完成安装，然后关闭此对话框。
+1.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
+2.  搜索"WindowsAzure"，然后选择"Azure Service Bus"项。单击"安装"以完成安装，然后关闭此对话框。
 
     ![][7]
 
@@ -220,7 +220,7 @@ Service Bus 主题支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 在 **PeekLock** 模式（这是默认模式）下，接收过程变成了一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找要使用的下一条消息，将其锁定以防其他使用方接收它，然后将该消息返回给应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Complete** 完成接收过程的第二个阶段。当 Service Bus 发现 **Complete** 调用时，它会将消息标记为正在使用并将其从订阅中删除。
 
-下面的示例演示如何使用默认的 **PeekLock** 模式接收和处理消息。若要指定不同的 **ReceiveMode** 值，可以使用 **CreateFromConnectionString** 的另一个重载。此示例创建一个无限循环并在消息到达"HighMessages"订阅时处理消息。请注意，"HighMessages"订阅的路径以 "<*topic path*\>/subscriptions/<*subscription name*\>" 的形式提供。
+下面的示例演示如何使用默认的 **PeekLock** 模式接收和处理消息。若要指定不同的 **ReceiveMode** 值，可以使用 **CreateFromConnectionString** 的另一个重载。此示例创建一个无限循环并在消息到达"HighMessages"订阅时处理消息。请注意，"HighMessages"订阅的路径以 "<*topic path*&gt;/subscriptions/<*subscription name*&gt;" 的形式提供。
 
 	string connectionString = 
 	    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
@@ -309,4 +309,5 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   
   [队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/hh367516.aspx
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sqlfilter.aspx
+  [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Service Bus 中转消息传送 .NET 教程]: http://msdn.microsoft.com/zh-cn/library/hh367512.aspx

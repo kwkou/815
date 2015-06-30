@@ -24,7 +24,7 @@
 
 ##附加数据磁盘
 
-创建虚拟机后，将附加数据磁盘。此磁盘提供了安装 MySQL 时需要的数据存储。请参阅[如何将数据磁盘附加到 Windows 虚拟机](/zh-cn/documentation/articles/storage-windows-attach-disk/) 然后按照用于附加空磁盘的说明进行操作。
+创建虚拟机后，将附加数据磁盘。此磁盘提供了安装 MySQL 时需要的数据存储。请参阅[如何将数据磁盘附加到 Windows 虚拟机](/zh-cn/documentation/articles/storage-windows-attach-disk) 然后按照用于附加空磁盘的说明进行操作。
 
 ##登录到虚拟机
 接下来，您将登录到虚拟机以便可以安装 MySQL。
@@ -134,7 +134,7 @@
 		mysql -u mysqluser -p -h testwinvm.chinacloudapp.cn
 
 ##资源
-有关 MySQL 的信息，请参阅[MySQL 文档](http://dev.mysql.com/doc/)。
+有关 MySQL 的信息，请参阅[MySQL 文档](http://dev.mysql.com/doc)。
 
 [AzurePortal]: http://manage.windowsazure.cn
 [MySQLDownloads]: http://www.mysql.com/downloads/mysql/

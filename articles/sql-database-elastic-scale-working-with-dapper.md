@@ -14,7 +14,7 @@
 
 # 将弹性缩放与 Dapper 配合使用 
 
-本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用 [Azure SQL Database 弹性缩放](/documentation/articles/sql-database-elastic-scale-introduction/)通过分片和向外缩放其应用程序，以弹性方式扩大和缩小容量的开发人员。本文档演示了与当前弹性缩放功能集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性缩放分片管理和数据相关的路由。 
+本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用 [Azure SQL Database 弹性缩放](/documentation/articles/sql-database-elastic-scale-introduction)通过分片和向外缩放其应用程序，以弹性方式扩大和缩小容量的开发人员。本文档演示了与当前弹性缩放功能集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性缩放分片管理和数据相关的路由。 
 
 **示例代码**：[Azure SQL Database 弹性缩放与 Dapper 集成](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f)。
  
@@ -29,7 +29,7 @@ Dapper 中的映射器功能对数据库连接提供扩展方法，可以简化�
  
 Dapper 和 DapperExtensions 的另一个优点在于，应用程序可以控制数据库连接的创建。这有助于与弹性缩放交互，从而可以通过将 shardlet 映射到数据库来中转数据库连接。
 
-<!--若要获取 Dapper 程序集，请参阅 [Dapper .Net](http://www.nuget.org/packages/Dapper/)。有关 Dapper 扩展的信息，请参阅 [DapperExtensions](http://www.nuget.org/packages/DapperExtensions)。-->
+<!--若要获取 Dapper 程序集，请参阅 [Dapper .Net](http://www.nuget.org/packages/Dapper)。有关 Dapper 扩展的信息，请参阅 [DapperExtensions](http://www.nuget.org/packages/DapperExtensions)。-->
 
 ## 弹性缩放概览
 

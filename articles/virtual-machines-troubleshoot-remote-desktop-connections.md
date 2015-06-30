@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除" 
 	description="了解如何使用诊断和隔离问题源的步骤来还原与 Azure 虚拟机的远程桌面 (RDP) 连接。"
 	services="virtual-machines" 
@@ -65,8 +65,8 @@
 
 基于 Windows 的计算机可以验证本地帐户或基于域的帐户的凭据。 
 
-- 对于本地帐户，请使用 <计算机名>\<帐户名称> 语法（示例：SQL1\Admin4798）。 
-- 对于域帐户，请使用 <域名>\<帐户名称> 语法（示例：CONTOSO\johndoe）。
+- 对于本地帐户，请使用 <计算机名>&lt;帐户名称> 语法（示例：SQL1\Admin4798）。 
+- 对于域帐户，请使用 <域名>&lt;帐户名称> 语法（示例：CONTOSO\johndoe）。
 
 对于提升为新的 AD 林中的域控制器的计算机，你执行提升时登录到的本地管理员帐户将转换为新的林和域中具有相同密码的等效帐户。以前的本地管理员帐户将被删除。例如，如果你使用本地管理员帐户 DC1\DCAdmin 登录并将虚拟机提升为 corp.contoso.com 域的新林中的域控制器，则将删除 DC1\DCAdmin 本地帐户并使用同一密码创建新的域帐户 CORP\DCAdmin。
 
@@ -243,7 +243,7 @@ PortNumber 属性显示当前端口号。如果需要，可使用此命令将远
 
 如果无法重新创建虚拟机，则可能是提出 Azure 支持事件的时候了。
 
-若要提出事件，请转到 [Azure 支持站点](/support/) ，然后单击**"获取支持"**。
+若要提出事件，请转到 [Azure 支持站点](/support) ，然后单击**"获取支持"**。
 
 
 ## 其他资源
@@ -254,7 +254,7 @@ PortNumber 属性显示当前端口号。如果需要，可使用此命令将远
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-[虚拟机文档](/documentation/services/virtual-machines/)
+[虚拟机文档](/documentation/services/virtual-machines)
 
 [Azure 虚拟机常见问题](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
 

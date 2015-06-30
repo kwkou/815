@@ -1,4 +1,4 @@
-<properties linkid="develop-net-tutorials-multi-tier-web-site-5-worker-role-b" pageTitle="Azure 云服务教程：辅助角色和 Azure 存储表、队列、Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-5-worker-role-b" pageTitle="Azure 云服务教程：辅助角色和 Azure 存储表、队列、Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="10/03/2014"
     wacn.date="04/11/2015"
@@ -28,7 +28,7 @@
 -   [测试辅助角色 B][测试辅助角色 B]
 -   [后续步骤][后续步骤]
 
-## <a name="addworkerrole"></a><span class="short-header">添加辅助角色 B</span>将辅助角色 B 项目添加到解决方案
+## <a name="addworkerrole"></a>将辅助角色 B 项目添加到解决方案
 
 1.  在解决方案资源管理器中右键单击云服务项目，然后选择**“新建辅助角色项目”**。
 
@@ -38,7 +38,7 @@
 
     ![“新建角色项目”对话框][“新建角色项目”对话框]
 
-## <a name="addreference"></a><span class="short-header">添加引用</span>添加对 Web 项目的引用
+## <a name="addreference"></a>添加对 Web 项目的引用
 
 你需要对 Web 项目的引用，因为实体类是在该项目中定义的。你需要在辅助角色 B 中使用实体类在应用程序所使用的 Azure 表中进行数据读写操作。
 
@@ -50,7 +50,7 @@
 
     ![将引用添加到 MvcWebRole][将引用添加到 MvcWebRole]
 
-## <a name="sclpackage"></a><span class="short-header">添加 SCL 2.0 包</span>向项目中添加存储客户端库 2.0 NuGet 包
+## <a name="sclpackage"></a>向项目中添加存储客户端库 2.0 NuGet 包
 
 > [WACOM.NOTE] 使用 Visual Studio 2013 时，你可以跳过此部分，因为当前的 Azure 存储包安装在新辅助角色项目中。
 
@@ -78,7 +78,7 @@
 
 7.  请选中 WorkerRoleA 的复选框，然后单击**“确定”**。
 
-## <a name="addref2"></a><span class="short-header">添加 SCL 1.7 引用</span>添加对 SCL 1.7 程序集的引用
+## <a name="addref2"></a>添加对 SCL 1.7 程序集的引用
 
 > [WACOM.NOTE] 如果你已安装最新 SDK 并且使用的是 Visual Studio 2013，请跳过此部分
 
@@ -112,7 +112,7 @@
 
 4.  关闭该对话框。
 
-## <a name="addsettings"></a><span class="short-header">添加项目设置</span>添加项目设置
+## <a name="addsettings"></a>添加项目设置
 
 像辅助角色 A 一样，辅助角色 B 需要用于表、队列和 Blob 的存储帐户凭据。此外，辅助角色需要具有凭据才能嵌入针对 SendGrid 服务的调用，以便发送电子邮件。为了构建取消订阅链接以包括所要发送的电子邮件，辅助角色需要知道应用程序的 URL。这些值存储在项目设置中。
 
@@ -554,7 +554,7 @@
             transportREST.Deliver(email);
         }
 
-## <a name="testing"></a><span class="short-header">测试</span>测试辅助角色 B
+## <a name="testing"></a>测试辅助角色 B
 
 1.  通过按 F5 运行应用程序。
 
@@ -562,7 +562,7 @@
 
 3.  检查你希望在其中收到电子邮件的电子邮件收件箱。请注意，通过 SendGrid 发送电子邮件或将其传送到电子邮件客户端时，可能会存在延迟，因此可能需要等待一段时间才能看到电子邮件。你可能还需要检查垃圾邮件文件夹。
 
-## <a name="nextsteps"></a><span class="short-header">后续步骤</span>后续步骤
+## <a name="nextsteps"></a><span class="short-header">后续步骤</span>
 
 你现在已从头开始生成了 Azure 电子邮件服务应用程序，你所拥有的项目与所下载的完整项目是相同的。若要部署到云中、在云中进行测试以及提升到生产环境，你可以使用与你在[第二个教程][第二个教程]中看到的过程一样的过程。如果你选择构建替代体系结构，请参阅 [Azure 网站入门教程][Azure 网站入门教程]，了解如何将 MVC 项目部署到 Azure 网站。
 
@@ -595,7 +595,7 @@
 -   [自动缩放和 Azure][自动缩放和 Azure]
 -   [使用 Azure 构建弹性自动缩放解决方案][使用 Azure 构建弹性自动缩放解决方案]（MSDN 第 9 频道视频）
 
-## <a name="Acknowledgments"></a><span class="short-header">致谢</span>致谢
+## <a name="Acknowledgments"></a><span class="short-header">致谢</span>
 
 这些教程和示例应用程序是由 [Rick Anderson][Rick Anderson] 和 Tom Dykstra 编写的。我们真诚地感谢以下人员，感谢他们提供帮助：
 

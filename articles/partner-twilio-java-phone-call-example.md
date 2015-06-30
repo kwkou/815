@@ -1,4 +1,4 @@
-<properties linkid="develop-java-how-to-twilio-phone-call" urlDisplayName="How to Make a Phone Call from Twilio in Java" pageTitle="How to Make a phone call from Twilio (Java) - Azure" metaKeywords="Azure Twilio call, Twilio call website, Azure Twilio Java" description="Learn how to make a phone call from a web page using Twilio in a Java application on Azure." metaCanonical="" services="" documentationCenter="Java" title="How to Make a Phone Call Using Twilio in a Java Application on Azure" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-java-how-to-twilio-phone-call" urlDisplayName="How to Make a Phone Call from Twilio in Java" pageTitle="How to Make a phone call from Twilio (Java) - Azure" metaKeywords="Azure Twilio call, Twilio call website, Azure Twilio Java" description="Learn how to make a phone call from a web page using Twilio in a Java application on Azure." metaCanonical="" services="" documentationCenter="Java" title="How to Make a Phone Call Using Twilio in a Java Application on Azure" authors="robmcm" videoId="" scriptId="" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service=""
     ms.date="11/25/2014"
     wacn.date="04/11/2015"
@@ -173,7 +173,7 @@
 
 -   你可以使用 Azure 存储 Blob 或 SQL数据库 存储电话号码和呼叫文本，而不使用 Web 窗体。有关在 Java 中使用 Azure 存储 Blob 的信息，请参阅[如何从 Java 使用 Blob 存储服务][如何从 Java 使用 Blob 存储服务]。有关在 Java 中使用 SQL数据库 的信息，请参阅[在 Java 中使用 SQL数据库][在 Java 中使用 SQL数据库]。
 -   你可以使用 **RoleEnvironment.getConfigurationSettings** 从部署的配置设置中检索 Twilio 帐户 ID 和身份验证令牌，而不用对 makecall.jsp 中的值进行硬编码。有关 **RoleEnvironment** 类的信息，请参阅[在 JSP 中使用 Azure 服务运行时库][在 JSP 中使用 Azure 服务运行时库]和 [http://dl.windowsazure.cn/javadoc][azure_javadoc] 上的 Azure 服务运行时包文档。
--   makecall.jsp 代码将 Twilio 提供的 URL [http://twimlets.com/message][twimlet_message_url]<http://twimlets.com/message></a> 分配给 **Url** 变量。此 URL 提供了一个 Twilio 标记语言 (TwiML) 响应，指示 Twilio 如何继续进行呼叫。例如，返回的 TwiML 可能包含 **\<Say\>** 谓词，该谓词生成了与呼叫接收人的谈话的文本。你可以生成自己的服务来响应 Twilio 的请求，而不使用 Twilio 提供的 URL；有关详细信息，请参阅[如何通过 Java 使用 Twilio 实现语音和短信功能][如何通过 Java 使用 Twilio 实现语音和短信功能]。有关 TwiML 的详细信息可在 [http://www.twilio.com/docs/api/twiml][twiml] 上找到，有关 **\<Say\>** 和其他 Twilio 谓词的信息可在 [http://www.twilio.com/docs/api/twiml/say][twilio_say] 上找到。
+-   makecall.jsp 代码将 Twilio 提供的 URL [http://twimlets.com/message][twimlet_message_url]<http://twimlets.com/message></a> 分配给 **Url** 变量。此 URL 提供了一个 Twilio 标记语言 (TwiML) 响应，指示 Twilio 如何继续进行呼叫。例如，返回的 TwiML 可能包含 **&lt;Say&gt;** 谓词，该谓词生成了与呼叫接收人的谈话的文本。你可以生成自己的服务来响应 Twilio 的请求，而不使用 Twilio 提供的 URL；有关详细信息，请参阅[如何通过 Java 使用 Twilio 实现语音和短信功能][如何通过 Java 使用 Twilio 实现语音和短信功能]。有关 TwiML 的详细信息可在 [http://www.twilio.com/docs/api/twiml][twiml] 上找到，有关 **&lt;Say&gt;** 和其他 Twilio 谓词的信息可在 [http://www.twilio.com/docs/api/twiml/say][twilio_say] 上找到。
 -   阅读 [https://www.twilio.com/docs/security][twilio_docs_security] 上的 Twilio 安全准则。
 
 有关 Twilio 的更多信息，请参阅 [https://www.twilio.com/docs][twilio_docs]。

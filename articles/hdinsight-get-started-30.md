@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="将 Hadoop 2.2 群集与 HDInsight 配合使用入门 | Azure" metaKeywords="" description="Get started using Hadoop 2.2 clusters with HDInsight, a big data solution. Learn how to provision clusters, run MapReduce jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Azure HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="manage-services-hdinsight-get-started-hdinsight" urlDisplayName="Get Started" pageTitle="将 Hadoop 2.2 群集与 HDInsight 配合使用入门 | Azure" metaKeywords="" description="Get started using Hadoop 2.2 clusters with HDInsight, a big data solution. Learn how to provision clusters, run MapReduce jobs, and output data to Excel for analysis." metaCanonical="" services="hdinsight" documentationCenter="" title="Get started using Azure HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/28/2014"
     wacn.date="04/11/2015"
@@ -144,7 +144,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
     ● /example/jars/hadoop-mapreduce-examples.jar
                 
 
-前缀 *wasb://* 在这些文件的路径中的使用。需要指出 Azure Blob 存储正用于输入和输出文件。输出目录假定一个相对于 *wasb:///user/\<username\>* 文件夹的默认路径。
+前缀 *wasb://* 在这些文件的路径中的使用。需要指出 Azure Blob 存储正用于输入和输出文件。输出目录假定一个相对于 *wasb:///user/&lt;username&gt;* 文件夹的默认路径。
 
 有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
 
@@ -190,12 +190,12 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
 **检索 MapReduce 作业的结果**
 
 1.  打开 **Azure PowerShell**。
-2.  运行以下命令创建 C:\\Tutorials 文件夹，并将目录更改为该文件夹：
+2.  运行以下命令创建 C:&#92;Tutorials 文件夹，并将目录更改为该文件夹：
 
         mkdir \Tutorials
         cd \Tutorials
 
-    默认 Azure Powershell 目录是 *C:\\Windows\\System32\\WindowsPowerShell\\v1.0*。默认情况下，你对此文件夹没有写入权限。必须将目录更改为你有写入权限的文件夹。
+    默认 Azure Powershell 目录是 *C:&#92;Windows&#92;System32&#92;WindowsPowerShell&#92;v1.0*。默认情况下，你对此文件夹没有写入权限。必须将目录更改为你有写入权限的文件夹。
 
 3.  在以下命令中设置三个变量，然后运行它们：
 
@@ -219,7 +219,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
         # 将作业输出下载到工作站
         Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force
 
-    *example/data/WordCountOutput* 文件夹是你在运行 MapReduce 作业时指定的输出文件夹。*part-r-00000* 是 MapReduce 作业输出的默认文件名。此文件将下载到本地文件夹上的相同文件夹结构。例如，在以下屏幕快照中，当前文件是 C 根文件夹。此文件将下载到 *C:\\example\\data\\WordCountOutput\\* 文件夹。
+    *example/data/WordCountOutput* 文件夹是你在运行 MapReduce 作业时指定的输出文件夹。*part-r-00000* 是 MapReduce 作业输出的默认文件名。此文件将下载到本地文件夹上的相同文件夹结构。例如，在以下屏幕快照中，当前文件是 C 根文件夹。此文件将下载到 *C:&#92;example&#92;data&#92;WordCountOutput&#92;* 文件夹。
 
 6.  运行以下命令来打印 MapReduce 作业输出文件：
 
@@ -276,7 +276,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
 -   [将 Hive 与 HDInsight 配合使用][]
 -   [将 Pig 与 HDInsight 配合使用][]
 -   [将 Oozie 与 HDInsight 配合使用][]
--   [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序][]
+-   [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序][]
 -   [为 HDInsight 开发 Java MapReduce 程序][]
 
   [Apache Hadoop]: http://hadoop.apache.org/
@@ -311,4 +311,4 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
   [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
   [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
   [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/
-  [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/

@@ -135,6 +135,6 @@ HBase 类型的群集目前不支持群集缩放操作。
 	}
 
 
-请参阅[使用自定义选项在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/) 主题，以了解有关如何使用 HDInsight .NET SDK 的详细信息。
+请参阅[使用自定义选项在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters) 主题，以了解有关如何使用 HDInsight .NET SDK 的详细信息。
 
 <!--HONumber=50-->

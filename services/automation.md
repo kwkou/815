@@ -11,19 +11,19 @@
 
 ####快速链接
 
-* [服务概述](/home/features/automation/)
+* [服务概述](/home/features/automation)
 * [定价详细信息](/home/features/automation/#price)
   
 ####特色
 
-* [Azure自动化入门](/documentation/articles/automation-create-runbook-from-samples/)
+* [Azure自动化入门](/documentation/articles/automation-create-runbook-from-samples)
 * [自动化库](https://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx)
     
 ##教程和指南
 
 ###探究
 
-* [Azure自动化入门](/documentation/articles/automation-create-runbook-from-samples/)
+* [Azure自动化入门](/documentation/articles/automation-create-runbook-from-samples)
 * [自动化库](https://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx)
 * [创作Runbook](https://technet.microsoft.com/zh-cn/library/dn469262.aspx)
 * [备份 Azure 自动化](https://msdn.microsoft.com/zh-cn/library/azure/dn643635.aspx)

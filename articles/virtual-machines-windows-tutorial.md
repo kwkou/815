@@ -13,7 +13,7 @@
 
 本教程演示创建 Azure 虚拟机 (VM) 运行 Windows，例如使用 Windows Server 映像在 Azure 管理门户的映像库是多么容易。映像库提供了各种各样的映像，包括 Windows 操作系统、基于 Linux 的操作系统和应用程序映像。 
 
-> [WACOM.NOTE] 您不需要使用 Azure 虚拟机，若要完成本教程中的任何经验。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/). 
+> [WACOM.NOTE] 您不需要使用 Azure 虚拟机，若要完成本教程中的任何经验。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account). 
 
 本教程演示：
 
@@ -42,7 +42,7 @@
 
 ## <a id="attachdisk"> </a>如何将数据磁盘附加到新的虚拟机 # #
 
-本部分演示了如何将空数据磁盘附加到虚拟机。请参阅[附加数据磁盘教程](/zh-cn/documentation/articles/storage-windows-attach-disk/) 有关附加空磁盘以及如何附加现有磁盘的详细信息。
+本部分演示了如何将空数据磁盘附加到虚拟机。请参阅[附加数据磁盘教程](/zh-cn/documentation/articles/storage-windows-attach-disk) 有关附加空磁盘以及如何附加现有磁盘的详细信息。
 
 1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。
 
@@ -105,11 +105,11 @@
 
 若要了解有关在 Azure 上配置 Windows 虚拟机的详细信息，请参阅这些文章：
 
-[如何连接云服务中的虚拟机](/zh-cn/documentation/articles/cloud-services-connect-virtual-machine/)
+[如何连接云服务中的虚拟机](/zh-cn/documentation/articles/cloud-services-connect-virtual-machine)
 
-[如何创建和上载您自己包含 Windows Server 操作系统的虚拟硬盘](/zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server/)
+[如何创建和上载您自己包含 Windows Server 操作系统的虚拟硬盘](/zh-cn/documentation/articles/virtual-machines-create-upload-vhd-windows-server)
 
-[管理虚拟机的可用性](/zh-cn/documentation/articles/manage-availability-virtual-machines/)
+[管理虚拟机的可用性](/zh-cn/documentation/articles/manage-availability-virtual-machines)
 
 [有关 Azure 虚拟机配置设置](https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx)
 

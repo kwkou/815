@@ -7,7 +7,7 @@
 
 # 将实体框架与弹性缩放一起使用 
  
-你可以将 Azure SQL Database 弹性缩放与 Microsoft 的实体框架 (EF) 一起用于构建应用程序。弹性缩放使你可以通过应用程序的数据层的分片和向外缩放来增加和缩小容量。此文档介绍与弹性缩放功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[弹性缩放分片管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)和[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)。EF 的[代码优先 - 新数据库](http://msdn.microsoft.com/zh-cn/data/jj193542.aspx)教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中弹性缩放示例的一部分。
+你可以将 Azure SQL Database 弹性缩放与 Microsoft 的实体框架 (EF) 一起用于构建应用程序。弹性缩放使你可以通过应用程序的数据层的分片和向外缩放来增加和缩小容量。此文档介绍与弹性缩放功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[弹性缩放分片管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)和[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。EF 的[代码优先 - 新数据库](http://msdn.microsoft.com/zh-cn/data/jj193542.aspx)教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中弹性缩放示例的一部分。
   
 ## 下载和运行示例代码
 若要下载本文的代码：
@@ -42,7 +42,7 @@
 
 ## 弹性缩放假设 
 
-有关术语定义，请参阅[弹性缩放术语库](/documentation/articles/sql-database-elastic-scale-glossary/)。
+有关术语定义，请参阅[弹性缩放术语库](/documentation/articles/sql-database-elastic-scale-glossary)。
 
 借助 Azure SQL Database 弹性缩放，你可以定义称为 shardlet 的应用程序数据分区。Shardlet 由分片键标识，并且映射到特定数据库。应用程序可以具有任意所需数量的数据库，并根据当前业务需求分发 shardlet 以提供足够的容量或性能。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为分片映射管理或简称为 SMM。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为数据相关路由。 
  
@@ -91,7 +91,7 @@
         // separation of c'tors into the data-dependent routing case (this c'tor) and the internal c'tor for new shards.
         public ElasticScaleContext(ShardMap shardMap, T shardingKey, string connectionStr)
             : base(CreateDDRConnection(shardMap, shardingKey, connectionStr), 
-            true /* contextOwnsConnection */)
+            true /* contextOwnsConnection *)
         {
         }
 

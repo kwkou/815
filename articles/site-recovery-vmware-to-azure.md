@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/01/2015"
-	wacn.date="05/15/2015"
-	ms.author="raynew"/>
+	wacn.date="05/15/2015"/>
 
 
 # 在本地 VMware 虚拟机或物理服务器与 Azure 之间设置保护
@@ -88,8 +83,8 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 ### Azure 先决条件
 
-- 你将需要 [Azure](http://www.windowsazure.cn/) 帐户。你可以开始[试用](/pricing/1rmb-trial)。
-- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Microsoft Azure 存储简介](/documentation/articles/storage-introduction/)。
+- 你将需要 [Azure](http://www.windowsazure.cn) 帐户。你可以开始[试用](/pricing/1rmb-trial)。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Microsoft Azure 存储简介](/documentation/articles/storage-introduction)。
 - 你将需要 Azure 虚拟网络，配置服务器和主目标服务器将部署在该网络上。它应该位于 Azure Site Recovery 保管库所在的订阅和区域中。
 - 确保你有足够的 Azure 资源用于部署所有组件。在 [Azure 订阅限制](/documentation/articles/azure-subscription-service-limits)中阅读更多内容。
 - 检查你要保护的计算机是否符合 Azure 虚拟机要求。

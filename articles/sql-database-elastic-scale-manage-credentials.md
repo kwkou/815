@@ -1,4 +1,4 @@
-﻿<properties title="Managing Elastic Scale Credentials" pageTitle="管理弹性缩放凭据" description="如何为弹性缩放应用程序设置正确的凭据级别（从管理员到只读权限）。" metaKeywords="Azure SQL Database, elastic scale, about user credentials in elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Managing Elastic Scale Credentials" pageTitle="管理弹性缩放凭据" description="如何为弹性缩放应用程序设置正确的凭据级别（从管理员到只读权限）。" metaKeywords="Azure SQL Database, elastic scale, about user credentials in elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -7,7 +7,7 @@
 
 # 管理弹性缩放凭据  
 
-[弹性缩放客户端 API](http://go.microsoft.com/?linkid=9862605) 将凭据用于不同类型的操作 - 在创建或操作[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)、引用现有的分片映射管理器获取有关分片的信息，以及连接到分片时尤其如此。下面讨论了用于这些类型的操作的凭据。 
+[弹性缩放客户端 API](http://go.microsoft.com/?linkid=9862605) 将凭据用于不同类型的操作 - 在创建或操作[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)、引用现有的分片映射管理器获取有关分片的信息，以及连接到分片时尤其如此。下面讨论了用于这些类型的操作的凭据。 
 
 
 * **用于分片映射访问的管理凭据**：在针对操作分片映射的应用程序实例化 **ShardMapManager** 对象时，使用管理凭据。弹性缩放 API 的用户必须创建必需的 SQL 用户和 SQL 登录，并确保在全局分片映射数据库以及所有分片数据库上授予他们读/写权限。对分片映射执行更改时，这些凭据将用于维护全局分片映射和局部分片映射。例如，使用管理凭据实例化分片映射管理器对象，如以下代码所示： 
@@ -25,7 +25,7 @@
 
      请不要使用"用户名@服务器"格式的用户 ID 值 - 只需使用"用户名"。这是因为凭据必须同时适用于分片映射管理器数据库和各个分片，它们可能位于不同的服务器上。
      
-* **用于分片映射管理器访问的用户凭据**：在不用于管理分片映射的应用程序中实例化分片映射管理器时，使用在全局分片映射上具有只读权限的凭据。在这些凭据下从全局分片映射检索的信息可用于[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)，并且用于在客户端上填充分片映射缓存。通过与如上所示的 **GetSqlShardMapManager** 相同的调用模式提供凭据： 
+* **用于分片映射管理器访问的用户凭据**：在不用于管理分片映射的应用程序中实例化分片映射管理器时，使用在全局分片映射上具有只读权限的凭据。在这些凭据下从全局分片映射检索的信息可用于[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)，并且用于在客户端上填充分片映射缓存。通过与如上所示的 **GetSqlShardMapManager** 相同的调用模式提供凭据： 
  
         // Obtain shard map manager. 
         ShardMapManager shardMapManager = ShardMapManagerFactory.GetSqlShardMapManager( 

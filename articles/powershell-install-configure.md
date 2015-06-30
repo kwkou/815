@@ -1,4 +1,4 @@
-<properties pageTitle="如何安装和配置 Azure PowerShell" description="了解如何安装和配置 Azure PowerShell。" editor="tysonn" manager="stevenka" documentationCenter="" services="" authors="coreyp-at-msft"/>
+﻿<properties pageTitle="如何安装和配置 Azure PowerShell" description="了解如何安装和配置 Azure PowerShell。" editor="tysonn" manager="stevenka" documentationCenter="" services="" authors="coreyp-at-msft"/>
 
 <tags ms.service="multiple" ms.date="02/20/2015" wacn.date="06/23/2015"/>
 
@@ -26,7 +26,7 @@ Azure 是基于订阅的平台。这意味着需要订阅才能使用平台。�
 
 > [AZURE.NOTE]如果你只想要下载 PowerShell 安装程序，请访问 https://github.com/Azure/azure-powershell/releases。也可以在此存储库中找到 PowerShell Cmdlet 的源代码
 
-有关可用于 Azure 的命令行工具的详细信息，请参阅[命令行工具](/downloads/)。
+有关可用于 Azure 的命令行工具的详细信息，请参阅[命令行工具](/downloads)。
 
 安装此模块还会安装 Azure PowerShell 的自定义控制台。你可以通过标准的 Windows PowerShell 控制台或 Azure PowerShell 控制台运行 cmdlet。
 
@@ -95,7 +95,7 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 - **Import-AzurePublishSettingsFile** 导入 .publishsettings 文件以供模块使用。此文件包含一个管理证书，其中具有安全凭据。
 
-> [AZURE.IMPORTANT]我们建议在你导入发布设置后，删除使用 <b>Get-AzurePublishSettingsFile</b> 下载的发布配置文件。因为管理证书包含安全凭据，所以不应由未授权用户访问。如需有关订阅的信息，可以从 [Azure 管理门户](http://manage.windowsazure.cn/)获得。
+> [AZURE.IMPORTANT]我们建议在你导入发布设置后，删除使用 <b>Get-AzurePublishSettingsFile</b> 下载的发布配置文件。因为管理证书包含安全凭据，所以不应由未授权用户访问。如需有关订阅的信息，可以从 [Azure 管理门户](http://manage.windowsazure.cn)获得。
 
 1. 使用你的 Azure 帐户的凭据登录 [Azure 管理门户](http://manage.windowsazure.cn)。
 
@@ -107,11 +107,11 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 4. 当系统提示时，下载并保存发布配置文件，并记下 .publishsettings 文件的路径和名称。当你运行 **Import-AzurePublishSettingsFile** cmdlet 导入设置时，必须提供此信息。默认的位置和文件名格式为：
 
-		C:\Users\<UserProfile>\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
+		C:\Users&lt;UserProfile>\Download\[*MySubscription*-...]-*downloadDate*-credentials.publishsettings
 
 5. 键入类似于下面的命令，用你的 Windows 帐户名称和路径以及文件名替换占位符：
 
-		Import-AzurePublishSettingsFile C:\Users\<UserProfile>\Downloads<SubscriptionName>-credentials.publishsettings
+		Import-AzurePublishSettingsFile C:\Users&lt;UserProfile>\Downloads<SubscriptionName>-credentials.publishsettings
 
 > [AZURE.NOTE]如果在您导入发布设置后，将您添加到其他订阅中作为共同管理员，则您将需要重复此过程来下载新的 .publishsettings 文件，然后导入这些设置。有关添加共同管理员来帮助管理订阅服务的信息，请参阅[为 Azure 订阅添加和删除协同管理员](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg456328.aspx)。
 

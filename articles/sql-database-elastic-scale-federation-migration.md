@@ -1,4 +1,4 @@
-﻿<properties title="Federations Migration" pageTitle="联合迁移" description="概述了将使用联合功能构建的现有应用迁移到弹性缩放模型的步骤。" metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh"/>
+<properties title="Federations Migration" pageTitle="联合迁移" description="概述了将使用联合功能构建的现有应用迁移到弹性缩放模型的步骤。" metaKeywords="sharding scaling, federations, Azure SQL DB sharding, Elastic Scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh"/>
 
 <tags
    ms.service="sql-database"
@@ -7,7 +7,7 @@
 
 # 联合迁移 
 
-Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用。到那时，使用联合功能的应用程序将停止工作。为了确保迁移成功，强烈建议你尽快开始迁移工作，以便充分计划和执行。本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到 [Azure SQL DB 弹性缩放预览版 API](/documentation/articles/sql-database-elastic-scale-introduction/)。该文档的目标是引导你完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
+Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用。到那时，使用联合功能的应用程序将停止工作。为了确保迁移成功，强烈建议你尽快开始迁移工作，以便充分计划和执行。本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到 [Azure SQL DB 弹性缩放预览版 API](/documentation/articles/sql-database-elastic-scale-introduction)。该文档的目标是引导你完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
 
 将现有联合应用程序迁移到使用弹性缩放 API 的应用程序需要三个主要步骤。
 
@@ -26,7 +26,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
  
 在测试环境中，从现有的联合应用程序开始。
  
-使用**联合迁移实用工具**将联合根元数据克隆到弹性缩放[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)的结构中。与联合根类似，分片映射管理器数据库是独立数据库，它包含了分片映射（即联合）、对分片的引用（即联合成员）以及各自的范围映射。 
+使用**联合迁移实用工具**将联合根元数据克隆到弹性缩放[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)的结构中。与联合根类似，分片映射管理器数据库是独立数据库，它包含了分片映射（即联合）、对分片的引用（即联合成员）以及各自的范围映射。 
 
 从联合根到分片映射管理器的克隆是元数据的复制和转换。不会在联合根上更改任何元数据。请注意，使用联合迁移实用工具克隆联合根是一项时间点操作，并且对联合根或分片映射进行的任何更改将不会反映在其他相应的数据存储中。如果在测试新 API 期间对联合根进行了更改，则联合迁移实用工具可用于刷新分片映射以表示当前状态。 
 
@@ -54,7 +54,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
 
     USE FEDERATION CustomerFederation(cid=100) WITH RESET, FILTERING=OFF`
 
-对于弹性缩放 API，将使用 **RangeShardMap** 类中的 **OpenConnectionForKey** 方法，通过[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)建立与特定分片的连接。 
+对于弹性缩放 API，将使用 **RangeShardMap** 类中的 **OpenConnectionForKey** 方法，通过[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)建立与特定分片的连接。 
 
     //Connect and issue queries on the shard with key=100 
     using (SqlConnection conn = rangeShardMap.OpenConnectionForKey(100, csb))  
@@ -71,7 +71,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
         } 
     }
 
-本部分中的这些步骤是必要的，但是可能不适用于出现的所有迁移方案。有关详细信息，请参阅[弹性缩放的概念性概述](/documentation/articles/sql-database-elastic-scale-introduction/)和 [API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx)。
+本部分中的这些步骤是必要的，但是可能不适用于出现的所有迁移方案。有关详细信息，请参阅[弹性缩放的概念性概述](/documentation/articles/sql-database-elastic-scale-introduction)和 [API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx)。
 
 ## 断开现有联合成员 
 
@@ -91,7 +91,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
 
 
 ## 功能比较  
-虽然弹性缩放提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)、[分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity/)、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management/)等等），但是有几个在弹性缩放中不受支持的联合功能值得注意。
+虽然弹性缩放提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、[分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity)、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management)等等），但是有几个在弹性缩放中不受支持的联合功能值得注意。
   
 
 - **FILTERING=ON** 的使用。弹性缩放当前不支持行级筛选。一种解决方法是将筛选逻辑构建到针对分片发出的查询中，如下所示： 

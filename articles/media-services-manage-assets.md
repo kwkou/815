@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-manage-assets" urlDisplayName="Manage Assets in Media Services" pageTitle="How to Manage Assets in Media Services - Azure" metaKeywords="" description="Learn how to manage assets on Media Services. You can also manage jobs, tasks, access policies, locators, and more. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Manage Assets in storage" authors="migree" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-media-services-how-to-guides-manage-assets" urlDisplayName="Manage Assets in Media Services" pageTitle="How to Manage Assets in Media Services - Azure" metaKeywords="" description="Learn how to manage assets on Media Services. You can also manage jobs, tasks, access policies, locators, and more. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Manage Assets in storage" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/15/2015"
     wacn.date="04/11/2015"
@@ -13,7 +13,7 @@
 
 以下示例演示如何按 assetId 查询资产。
 
-``` {}
+```csharp
 static IAsset GetAsset(string assetId)
 {
 // Use a LINQ Select query to get an asset.
@@ -28,10 +28,8 @@ return asset;
 }
 ```
 
-若要列出服务器上的所有可用资产，你可以使用以下方法，该方法将循环访问资产集合并显示有关每个资产的详细信息。
-
-``` {}
- 
+若要列出服务器上的所有可用资产，你可以使用以下方法，该方法将循环访问资产集合并显示有关每个资产的详细信息。  
+```csharp  
 static void ListAssets()
 {
 string waitMessage = "Building the list.This may take a few "
@@ -49,11 +47,11 @@ foreach (IAsset asset in _context.Assets)
     {
 // Display the collection of assets.
 builder.AppendLine("");
-builder.AppendLine("******ASSET******");
+builder.AppendLine("**ASSET**");
 builder.AppendLine("Asset ID:" + asset.Id);
 builder.AppendLine("Name:" + asset.Name);
 builder.AppendLine("==============");
-builder.AppendLine("******ASSET FILES******");
+builder.AppendLine("**ASSET FILES**");
 
 // Display the files associated with each asset. 
 foreach (IAssetFile fileItem in asset.AssetFiles)
@@ -71,7 +69,7 @@ Console.Write(builder.ToString());
 
 以下代码段将从 Media Services 帐户中删除所有资产。
 
-``` {}
+```csharp  
 foreach (IAsset asset in _context.Assets)
 {
 asset.Delete();
@@ -86,5 +84,5 @@ asset.Delete();
 后续步骤
 --------
 
-了解如何管理资产后，请转到[如何通过下载交付资产](/develop/media-services/how-to-guides/deliver-media-assets/)主题。
+了解如何管理资产后，请转到[如何通过下载交付资产](/develop/media-services/how-to-guides/deliver-media-assets)主题。
 

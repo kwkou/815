@@ -22,7 +22,7 @@
 
 请按照以下步骤创建 Azure 网站。
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。 <br /> 如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+> [AZURE.NOTE] 若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。 <br /> 如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
 
 
 1. 启动 WebMatrix
@@ -89,9 +89,9 @@
 
 ## 后续步骤
 
-若要了解随 Azure 一起提供的 Node.js 的版本以及如何指定与您的应用程序一起使用的版本，请参见[在 Windows Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)。
+若要了解随 Azure 一起提供的 Node.js 的版本以及如何指定与您的应用程序一起使用的版本，请参见[在 Windows Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps)。
 
-如果您在将应用程序部署到 Azure 后遇到与应用程序有关的问题，请参见[如何在 Azure 中调试 Node.js 应用程序 Website](/documentation/articles/web-sites-nodejs-debug/)，了解有关诊断问题的信息。
+如果您在将应用程序部署到 Azure 后遇到与应用程序有关的问题，请参见[如何在 Azure 中调试 Node.js 应用程序 Website](/documentation/articles/web-sites-nodejs-debug)，了解有关诊断问题的信息。
 
 
 [Azure 管理门户]: http://manage.windowsazure.cn

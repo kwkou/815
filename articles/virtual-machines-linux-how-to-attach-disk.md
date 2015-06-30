@@ -10,7 +10,7 @@
 您可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是位于 Azure 存储帐户中的 .vhd 文件。此外在这两种情况下，在您附加磁盘后，您将需要初始化磁盘以使其可供使用。 
 
 > [WACOM.NOTE] 它是使用一个或多个独立的磁盘来存储虚拟机的数据的最佳做法。当您创建 Azure 虚拟机时，它有一个操作系统和一个临时磁盘。**请不要使用临时磁盘存储数据。**顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不位于 Azure 存储中。 
-> 临时磁盘通常由 Azure Linux 代理管理并自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，在 Linux 上，数据磁盘可能由内核命名为 `/dev/sdc`。如果是这种情况，您将需要对该资源进行分区、格式化和装载。请参阅 [Azure Linux 代理用户指南](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/) 有关详细信息。
+> 临时磁盘通常由 Azure Linux 代理管理并自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，在 Linux 上，数据磁盘可能由内核命名为 `/dev/sdc`。如果是这种情况，您将需要对该资源进行分区、格式化和装载。请参阅 [Azure Linux 代理用户指南](/zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide) 有关详细信息。
 
 - [如何：附加空磁盘](#attachempty)
 - [如何：附加现有磁盘](#attachexisting)

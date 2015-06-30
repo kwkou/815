@@ -23,7 +23,7 @@
 
 [WACOM.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
-**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](/zh-cn/documentation/articles/python-how-to-install/)。
+**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](/zh-cn/documentation/articles/python-how-to-install)。
 
 
 ## <a name="create-queue"> </a>如何创建队列

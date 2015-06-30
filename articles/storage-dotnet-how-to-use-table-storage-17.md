@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service (2.0)" pageTitle="How to use table storage | Windows Azure" metaKeywords="Get started Azure table, Azure nosql, Azure large structured data store, Azure table, Azure table storage, Azure table .NET, Azure table storage .NET, Azure table C#, Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Table Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service (2.0)" pageTitle="How to use table storage | Windows Azure" metaKeywords="Get started Azure table, Azure nosql, Azure large structured data store, Azure table, Azure table storage, Azure table .NET, Azure table storage .NET, Azure table C#, Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." metaCanonical="" services="storage" documentationCenter=".NET" title="How to use the Table Storage Service" authors="" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="10/02/2014"
     wacn.date="04/11/2015"
@@ -9,7 +9,7 @@
 [1.7 版][] [2.0 版][]
 
 本指南将演示如何使用 Azure 表存储服务执行常见方案。
-示例是用 C\# 代码编写的且使用了 .NET API。
+示例是用 C# 代码编写的且使用了 .NET API。
 涉及的方案包括**创建和删除表、在表中插入和查询实体**
 。有关表的详细信息，请参阅
 [后续步骤][]部分。
@@ -61,17 +61,16 @@ Azure .NET 存储 API 支持
 在 Azure 服务配置中配置连接字符串：
 
 1.  在 Visual Studio 解决方案资源管理器内 Azure 部署
-    项目的**“角色”**文件夹中，右键单击你的 Web 角色或辅助角色，
-    然后单击**“属性”**。
+    项目的**“角色”**文件夹中，右键单击你的 Web 角色或辅助角色，然后单击**“属性”**。  
     ![Blob5][]
 
-2.  单击**“设置”**选项卡并按**“添加设置”**按钮。
+2.  单击**“设置”**选项卡并按**“添加设置”**按钮。  
     ![Blob6][]
 
     新的 **Setting1** 条目稍后将显示在设置网格中。
 
 3.  在新的 **Setting1** 条目的**“类型”**下拉列表中，选择
-    **“连接字符串”**。
+    **“连接字符串”**。  
     ![Blob7][]
 
 4.  单击 **Setting1** 条目最右侧的 **...** 按钮。
@@ -82,12 +81,12 @@ Azure .NET 存储 API 支持
     本指南中的代码适用于其中任一方式。
     如果你希望使用我们之前在 Azure 中创建的存储帐户
     来存储 Blob 数据，请输入从本教程前面的步骤中
-    复制的**“主访问密钥”**值。
+    复制的**“主访问密钥”**值。  
     ![Blob8][]
 
 6.  将条目**“名称”**从 **Setting1** 更改为更友好的名称，
     例如 **StorageConnectionString**。在本指南后面的
-    代码中你将引用此连接字符串。
+    代码中你将引用此连接字符串。  
     ![Blob9][]
 
 ### 在使用网站或虚拟机时配置连接字符串
@@ -107,7 +106,7 @@ Azure .NET 存储 API 支持
 
 ## 以编程方式访问如何：以编程方式访问表存储
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure;
@@ -143,7 +142,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 ## 将实体添加到表如何：将实体添加到表
 
 实体将映射到使用派生自 **TableServiceEntity** 的
-自定义类的 C\# 对象。若要将实体添加到表，请先创建用于
+自定义类的 C# 对象。若要将实体添加到表，请先创建用于
 定义实体的属性的类。以下代码定义了
 将客户的名字和姓氏分别用作行键和分区键的
 实体类。实体的分区键和行键共同唯一地标识
@@ -256,7 +255,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 若要查询表以获取分区中的实体，可以使用 LINQ 查询。
 可以调用 **serviceContext.CreateQuery** 从你的数据源
 创建查询。以下代码指定了一个筛选器，用于筛选分区键是“Smith”
-的实体。对 LINQ 查询的结果调用 **AsTableServiceQuery\<CustomerEntity\>**
+的实体。对 LINQ 查询的结果调用 **AsTableServiceQuery&lt;CustomerEntity&gt;**
 以完成创建 **CloudTableQuery** 对象。
 然后你可以使用在 **foreach** 循环中创建的
 **partitionQuery** 对象来使用结果。此代码会将查询结果中每个
@@ -289,7 +288,7 @@ Azure 服务配置中检索你的存储连接字符串和存储帐户信息：
 
 如果不想查询分区中的所有实体，则可以使
 用 **CompareTo** 方法，而不是使用常见的
-大于 (\>) 和小于 (\<) 运算符来指定一个范围。这是因为
+大于 (&gt;) 和小于 (&lt;) 运算符来指定一个范围。这是因为
 后者将导致不适当的查询构造。以下代码使用
 两个筛选器来获取分区“Smith”中行键（名字）以字母表中字母
 “E”及其前面的字母开头的所有实体。然后，

@@ -31,7 +31,7 @@
 
 若要完成本教程，您需要以下各项：
 
-* 有效的 Azure 帐户。如果没有帐户，则可创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+* 有效的 Azure 帐户。如果没有帐户，则可创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
 * Visual Studio 2013，使用它可以轻松地将 Windows 应用商店应用程序连接到移动服务。 
 
 ##<a name="download-app"></a>下载 GetStartedWithData 项目

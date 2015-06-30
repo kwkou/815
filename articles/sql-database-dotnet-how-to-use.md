@@ -67,8 +67,7 @@ SQL Database 在 Azure 上提供关系数据存储、访问和管理服务。若
 
 	在 Azure 上创建的每个 SQL Database 实际上都
 具有三个副本。这样做是为了确保实现高可用性。
-故障转移是透明的并且是该服务的一部分。[服务级别
-协议][]为 SQL Database 提供 99.9% 的运行时间。
+故障转移是透明的并且是该服务的一部分。[服务级别协议][]为 SQL Database 提供 99.9% 的运行时间。
 
 8. 在"服务器"中，选择"新建 SQL Database 服务器"。 
 
@@ -205,7 +204,7 @@ SQL Database 在 Azure 上提供关系数据存储、访问和管理服务。若
 
 下面是一个连接字符串示例：
 
-    metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.chinacloudapi.cn;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***********"
+    metadata=res://*/SchoolModel.csdl|res://*/SchoolModel.ssdl|res://*/SchoolModel.msl;provider=System.Data.SqlClient;provider connection string="Data Source=xxxxxxxxxx.database.chinacloudapi.cn;Initial Catalog=School;Persist Security Info=True;User ID=MyAdmin;Password=***"
 
 有关详细信息，请参阅[适用于 Entity Framework 的
 EntityClient Provider][]。
@@ -233,7 +232,7 @@ EntityClient Provider][]。
   [SQL Database 防火墙]: http://social.technet.microsoft.com/wiki/contents/articles/sql-azure-firewall.aspx
   [工具和实用工具支持 (SQL Database)]: http://msdn.microsoft.com/zh-cn/library/azure/ee621784.aspx
   [如何在 Azure 上创建 SQL Database]: http://social.technet.microsoft.com/wiki/contents/articles/how-to-create-a-sql-azure-database.aspx
-  [服务级别协议]: {localLink:1132} "SLA"
+  [服务级别协议]: /support/contact
   [适用于 Entity Framework 的 EntityClient Provider]: http://msdn.microsoft.com/zh-cn/library/bb738561.aspx
   [开发：操作方法主题 (SQL Database)]: http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx
   [SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx

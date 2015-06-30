@@ -1,4 +1,4 @@
-<properties pageTitle="Get Started with Mobile Services for Xamarin.Android" metaKeywords="Azure Xamarin.Android application, mobile service XamarinAndroid, getting started Azure Xamarin.Android" writer="craigd" description="Learn how to use Azure Mobile Services with your Xamarin.Android app." metaCanonical="" 
+﻿<properties pageTitle="Get Started with Mobile Services for Xamarin.Android" metaKeywords="Azure Xamarin.Android application, mobile service XamarinAndroid, getting started Azure Xamarin.Android" writer="craigd" description="Learn how to use Azure Mobile Services with your Xamarin.Android app." metaCanonical="" 
 	documentationCenter="Mobile" title="Get started with Mobile Services" />
 <tags ms.service=""
     ms.date="11/11/2014"
@@ -100,7 +100,7 @@
     这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
 
     > [WACOM.NOTE]
-    > 你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C\# 文件中。
+    > 你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
 
 5.  返回管理门户，单击“数据” 选项卡，然后单击“TodoItems” 表。
 

@@ -1,4 +1,4 @@
-<properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Windows Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
+﻿<properties linkid="web-sites-hybrid-connection-getting-started" title="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" pageTitle="混合连接分步指南：从 Azure 网站连接至本地 SQL Server" description="在 Windows Azure 上创建一个网站并将其连接至本地 SQL Server 数据库" metaKeywords="" services="web-sites" solutions="web" documentationCenter="" authors="timamm" manager="paulettm" editor="mollybos" videoId="" scriptId="" />
 <tags ms.service="web-sites"
     ms.date="02/12/2015"
     wacn.date="04/11/2015"
@@ -22,7 +22,7 @@
 
 -   **Visual Studio 2013** - 若要下载 Visual Studio 2013 免费试用版，请参阅 [Visual Studio 下载][Visual Studio 下载]。请先安装此产品，然后继续。
 
--   **Microsoft .NET Framework 3.5 Service Pack 1** — 如果您的操作系统是 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7 或 Windows Server 2008 R2，可通过“控制面板”\>“程序和功能”\> 打开或关闭 Windows 功能来启用它。另外，您可以从 [Microsoft 下载中心][Microsoft 下载中心]进行下载。
+-   **Microsoft .NET Framework 3.5 Service Pack 1** — 如果您的操作系统是 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7 或 Windows Server 2008 R2，可通过“控制面板”&gt;“程序和功能”&gt; 打开或关闭 Windows 功能来启用它。另外，您可以从 [Microsoft 下载中心][Microsoft 下载中心]进行下载。
 
 -   **SQL Server 2014 Express with Tools** - 从 [Microsoft Web 平台数据库页][Microsoft Web 平台数据库页]免费下载 Microsoft SQL Server Express。选择 **Express**（而不是 LocalDB）版本。**Express with Tools** 版本包含本教程中将要使用的 SQL Server Management Studio。
 
@@ -271,7 +271,7 @@
 
     撰写连接字符串时，请记住：
 
-    -   如果连接至命名实例而不是默认实例（例如 YourServer\\SQLEXPRESS），必须对 SQL Server 进行配置以使用静态端口。有关配置静态端口的信息，请参见[如何配置 SQL Server 以在特定端口上进行侦听][如何配置 SQL Server 以在特定端口上进行侦听]。默认情况下，命名实例使用 UDP 和动态端口，而混合连接对此不支持。
+    -   如果连接至命名实例而不是默认实例（例如 YourServer&#92;SQLEXPRESS），必须对 SQL Server 进行配置以使用静态端口。有关配置静态端口的信息，请参见[如何配置 SQL Server 以在特定端口上进行侦听][如何配置 SQL Server 以在特定端口上进行侦听]。默认情况下，命名实例使用 UDP 和动态端口，而混合连接对此不支持。
 
     -   建议指定端口（默认为 1433，如示例中所示）和连接字符串，以便可确保本地 SQL Server 启用了 TCP 并使用的是正确的端口。
 

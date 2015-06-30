@@ -7,7 +7,7 @@
 若要管理虚拟机的设置以及在其上运行的应用程序，可以使用 SSH 客户端。为此，您必须在计算机上安装要用于访问虚拟机的 SSH 客户端。您可以选择很多 SSH 客户端程序。以下是可能的选择：
 
 - 如果您要使用运行 Windows 操作系统的计算机，则可能希望使用 PuTTY 等 SSH 客户端。有关详细信息，请参阅 [PuTTY 下载](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
-- 如果您要使用运行 Linux 操作系统的计算机，则可能希望使用 OpenSSH 等 SSH 客户端。有关详细信息，请参阅 [OpenSSH](http://www.openssh.org/)。
+- 如果您要使用运行 Linux 操作系统的计算机，则可能希望使用 OpenSSH 等 SSH 客户端。有关详细信息，请参阅 [OpenSSH](http://www.openssh.org)。
 
 此教程将向您演示如何使用 PuTTY 程序访问虚拟机。
 
@@ -37,7 +37,7 @@
 
 每个所创建的虚拟机还附加有一个临时的本地  *Resource Disk*。因为资源磁盘上的数据可能不能在重新引导后持久存在，因此它通常由在虚拟机中运行的应用程序和进程用于数据的短暂和临时存储。它还用来为操作系统存储页面文件或交换文件。
 
-在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请注意，资源磁盘是  *temporary* 磁盘，并且可能在 VM 取消设置时清空。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。请参阅 [Azure Linux 代理用户指南（Azure Linux 代理用户指南）](/documentation/articles/virtual-machines-linux-agent-user-guide/)。
+在 Linux 上，资源磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。请注意，资源磁盘是  *temporary* 磁盘，并且可能在 VM 取消设置时清空。另一方面，在 Linux 上，数据磁盘由内核命名为 `/dev/sdc`，并且用户将需要对该资源进行分区、格式化和安装。请参阅 [Azure Linux 代理用户指南（Azure Linux 代理用户指南）](/documentation/articles/virtual-machines-linux-agent-user-guide)。
 
 
 

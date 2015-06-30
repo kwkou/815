@@ -28,7 +28,7 @@
 [了解详细信息](/documentation/articles/active-directory-learn-map)
 
 
-已准备就绪？Azure AD 免费提供给任何人使用。你现在就可以注册 Azure 试用订阅，然后我们会准备好你的目录。不管你是否购买了任何服务，该目录始终归你所有。[立即试用 Azure AD](/home/features/identity/) 
+已准备就绪？Azure AD 免费提供给任何人使用。你现在就可以注册 Azure 试用订阅，然后我们会准备好你的目录。不管你是否购买了任何服务，该目录始终归你所有。[立即试用 Azure AD](/home/features/identity) 
 
 ## 如何判断要使用哪个目录来测试、过渡或生产？
 

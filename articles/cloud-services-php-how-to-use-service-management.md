@@ -47,7 +47,7 @@ Azure SDK for PHP 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后者
 
 ##<a id="Connect"></a>如何：连接到服务管理
 
-若要连接到服务管理终结点，你需要 Azure 订阅 ID 和有效管理证书的路径。你可以通过[管理门户][management-portal]获取订阅 ID，并且可以采用多种方式创建管理证书。在本指南中将使用 [OpenSSL](http://www.openssl.org/)，你可以[为 Windows 下载](http://www.openssl.org/related/binaries.html)并在控制台中运行它。
+若要连接到服务管理终结点，你需要 Azure 订阅 ID 和有效管理证书的路径。你可以通过[管理门户][management-portal]获取订阅 ID，并且可以采用多种方式创建管理证书。在本指南中将使用 [OpenSSL](http://www.openssl.org)，你可以[为 Windows 下载](http://www.openssl.org/related/binaries.html)并在控制台中运行它。
 
 你实际上需要创建两个证书，一个用于服务器（.cer 文件），一个用于客户端（.pem 文件）。若要创建 .pem 文件，请执行以下代码：
 

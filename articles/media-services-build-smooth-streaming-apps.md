@@ -9,7 +9,7 @@
 
 借助适用于 Windows 8 的平滑流式处理客户端 SDK，开发人员可以生成支持按需付费、直播平滑流式处理内容的 Windows 应用商店应用程序。除了播放平滑流式处理内容这一基本功能以外，该 SDK 还提供其他丰富功能，例如 Microsoft PlayReady 保护、质量级别限制、实时 DVR、音频流切换、收听状态更新（如质量级别更改）和错误事件，等等。有关支持的功能的详细信息，请参阅[发行说明](http://www.iis.net/learn/media/smooth-streaming/smooth-streaming-client-sdk-for-windows-8-release-notes)。
 
-本教程介绍 API。对于播放器开发，Microsoft 强烈建议使用 [Windows 8 播放器框架](http://playerframework.codeplex.com/)。使用播放器框架可以更轻松地生成应用程序及提供多种附加功能。
+本教程介绍 API。对于播放器开发，Microsoft 强烈建议使用 [Windows 8 播放器框架](http://playerframework.codeplex.com)。使用播放器框架可以更轻松地生成应用程序及提供多种附加功能。
 
 本教程包含四个课时：
 
@@ -47,59 +47,28 @@
 2.  在**文件**菜单中，单击**新建**，然后单击**项目**。
 3.  在“新建项目”对话框中，键入或选择以下值：
 
-<table data-morhtml="true" border="1">
-<tr data-morhtml="true">
-<th data-morhtml="true">名称</th>
-<th data-morhtml="true">值</th>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">模板组</td>
-<td data-morhtml="true">已安装/模板/Visual C#/Windows 应用商店</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">模板</td>
-<td data-morhtml="true">空白应用程序(XAML)</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">名称</td>
-<td data-morhtml="true">SSPlayer</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">位置</td>
-<td data-morhtml="true">C:\SSTutorials</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">解决方案名称</td>
-<td data-morhtml="true">SSPlayer</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">创建解决方案的目录</td>
-<td data-morhtml="true">(选定)</td>
-</tr>
-</table>
+|名称|值|
+|----|----|
+|模板组|已安装/模板/Visual C#/Windows 应用商店|
+|模板|空白应用程序(XAML)|
+|名称|SSPlayer|
+|位置|C:\SSTutorials|
+|解决方案名称|SSPlayer|
+|创建解决方案的目录|(选定)|
 
 4.  单击**“确定”**。
 
 **添加对平滑流式处理客户端 SDK 的引用**
 
-1.  在解决方案资源管理器中，右键单击“SSPlayer”****，然后单击“添加引用”****。
+1.  在解决方案资源管理器中，右键单击“SSPlayer”，然后单击“添加引用”。
 2.  键入或选择以下值：
 
-<table data-morhtml="true" border="1">
-<tr data-morhtml="true">
-<th data-morhtml="true">名称</th>
-<th data-morhtml="true">值</th>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">引用组</td>
-<td data-morhtml="true">Windows/扩展</td>
-</tr>
-<tr data-morhtml="true">
-<td data-morhtml="true">引用</td>
-<td data-morhtml="true">选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK
-</td>
-</tr>
-</table>
+
+|名称|值|
+|----|----|
+|引用组|Windows扩展|
+|引用|选择适用于 Windows 8 和 Microsoft Visual C++ 运行时程序包的 Microsoft 平滑流式处理客户端 SDK|
+
 
 3.  单击**“确定”**。
 
@@ -108,7 +77,7 @@
 **设计播放器用户界面**
 
 1.  在解决方案资源管理器中，双击“MainPage.xaml”**以在设计视图中将它打开**。
-2.  在该 XAML 文件中找到 **&lt;Grid\>** 和 **&lt;/Grid\>** 标记，并在这两个标记之间粘贴以下代码：
+2.  在该 XAML 文件中找到 **&lt;Grid&gt;** 和 **&lt;/Grid&gt;** 标记，并在这两个标记之间粘贴以下代码：
 
         <Grid.RowDefinitions>
         <RowDefinition Height="20"/>    <!-- spacer -->
@@ -162,7 +131,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **修改代码隐藏文件**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2.  在该文件的顶部，添加以下 using 语句：
 
         using Windows.Media;
@@ -234,7 +203,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 3.  按 **F6** 编译项目。
 4.  按 **F5** 运行应用程序。
 5.  在应用程序的顶部，你可以使用默认的平滑流式处理 URL，或输入一个不同的 URL。
-6.  **单击“设置源”**。由于已按默认启用“自动播放”，因此媒体会自动播放****。你可以使用“播放”、“暂停”和“停止”**按钮控制媒体**。可以使用垂直滚动条控制媒体音量。但是，用于控制媒体进度的水平滚动条功能尚未完全实现。
+6.  **单击“设置源”**。由于已按默认启用“自动播放”，因此媒体会自动播放。你可以使用“播放”、“暂停”和“停止”**按钮控制媒体**。可以使用垂直滚动条控制媒体音量。但是，用于控制媒体进度的水平滚动条功能尚未完全实现。
 
 第 1 课到此结束。在本课中，你已学习如何使用 MediaElement 控件来播放平滑流式处理内容。在下一课，你将要添加一个滚动条，用于控制平滑流式处理内容的进度。
 
@@ -258,7 +227,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **注册平滑流式处理字节流处理程序并传递属性集**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2.  在该文件的开头，添加以下 using 语句：
 
         using Microsoft.Media.AdaptiveStreaming;
@@ -297,7 +266,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **添加自适应源管理器级别事件处理程序**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2.  在 **MainPage** 类中，添加以下数据成员：
 
         private AdaptiveSource adaptiveSource = null;
@@ -319,7 +288,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **添加自适应源级别事件处理程序**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2.  在 **MainPage** 类中，添加以下数据成员：
 
         private AdaptiveSourceStatusUpdatedEventArgs adaptiveSourceStatusUpdate; 
@@ -360,7 +329,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **添加媒体元素事件处理程序**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2.  在 **MainPage** 类的末尾，添加以下事件处理程序：
 
         #region Media Element Event Handlers 
@@ -390,7 +359,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **添加滚动条相关的代码**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”****。
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
 2.  在该文件的开头，添加以下 using 语句：
 
         using Windows.UI.Core;
@@ -523,7 +492,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改 XAML 文件**
 
 1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，**然后单击“查看设计器”**。
-2.  找到 &lt;Grid.RowDefinitions\>，并按如下所示修改 RowDefinitions：
+2.  找到 &lt;Grid.RowDefinitions&gt;，并按如下所示修改 RowDefinitions：
 
         <Grid.RowDefinitions>            
         <RowDefinition Height="20"/>
@@ -533,7 +502,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
         <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-3.  在 &lt;Grid\>&lt;/Grid\> 标记中，添加以下代码以定义一个列表框控件，使用户能够看到可用流的列表及选择流：
+3.  在 &lt;Grid&gt;&lt;/Grid&gt; 标记中，添加以下代码以定义一个列表框控件，使用户能够看到可用流的列表及选择流：
 
          <Grid Name="gridStreamAndBitrateSelection" Grid.Row="3">
         <Grid.RowDefinitions>
@@ -796,8 +765,8 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 **修改 XAML 文件**
 
-1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看设计器”****。
-2.  找到名为 **gridStreamAndBitrateSelection** 的 &lt;Grid\> 标记，并在该标记的末尾追加以下代码：
+1.  在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看设计器”。
+2.  找到名为 **gridStreamAndBitrateSelection** 的 &lt;Grid&gt; 标记，并在该标记的末尾追加以下代码：
 
          <StackPanel Name="spBitRateSelection" Grid.Row="1" Grid.Column="1">
         <StackPanel Orientation="Horizontal">

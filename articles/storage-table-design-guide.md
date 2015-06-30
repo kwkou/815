@@ -21,7 +21,7 @@
 
 ## 关于 Azure 表服务
 
-本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，请先阅读 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction/) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)，然后再阅读本文的剩余部分。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
+本部分重点介绍表服务的一些主要功能，这些功能尤其与设计性能和可伸缩性相关。如果你不熟悉 Azure 存储和表服务，请先阅读 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction) 和[如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)，然后再阅读本文的剩余部分。尽管本指南的重点是介绍表服务，但它也将包括 Azure 队列和 Blob 服务的一些讨论，并介绍如何在解决方案中将这些 Azure 队列和 Blob 服务与表服务一起使用。  
  
 什么是表服务？从名称可以推测出，表服务将使用表格格式来存储数据。在标准术语中，表的每一行表示一个实体，而列存储该实体的各种属性。每个实体都有一对密钥来唯一标识它，并具有一个时间戳列，表服务使用该列来跟踪上次更新实体的时间（此操作是自动发生的，无法手动使用任意值来覆盖时间戳）。表服务使用此上次修改时间戳 (LMT) 来管理开放式并发。  
 
@@ -1129,7 +1129,7 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 
 #### 管理并发  
 
-默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Microsoft Azure 网站上的[在 Microsoft Azure 存储空间中管理并发](/documentation/articles/storage-concurrency/) 。  
+默认情况下，表服务在单个实体级别实现针对 **Insert**、**Merge** 和 **Delete** 操作的开放式并发检查，尽管客户端可以强制表服务跳过这些检查。有关表服务如何管理并发的详细信息，请参阅 Microsoft Azure 网站上的[在 Microsoft Azure 存储空间中管理并发](/documentation/articles/storage-concurrency) 。  
 
 #### 合并或替换  
 
@@ -1445,7 +1445,7 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 -	可以卸下 Web 角色和辅助角色在管理传递到客户端设备（如最终用户计算机和移动设备）的实体时执行的一些工作负荷。  
 -	可以向客户端分配一组受约束且有时间限制的权限（如允许对特定资源进行只读访问）。  
 
-有关在表服务中使用 SAS 令牌的详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。  
+有关在表服务中使用 SAS 令牌的详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。  
 
 但是，仍必须生成授权客户端应用程序访问表服务中的实体的 SAS 令牌：应在可安全地访问存储帐户密钥的环境中执行此操作。通常，使用 Web 角色或辅助角色生成 SAS 令牌并将其传递给需要访问你的实体的客户端应用程序。由于生成 SAS 令牌并将其传递到客户端仍有开销，你应考虑如何最有效地减少此开销，尤其是在大容量方案中。  
 

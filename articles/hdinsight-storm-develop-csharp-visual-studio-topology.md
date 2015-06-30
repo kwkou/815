@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑 | Azure"
    description="了解如何通过使用 HDInsight Tools for Visual Studio 创建一个简单的字数统计拓扑，来以 C# 语言创建一个 Storm 拓扑。"
    services="hdinsight"
@@ -46,7 +46,7 @@
 
 3. 从"新建项目"对话框中，依次展开"已安装"和"模板"，然后选择"HDInsight"。从模板列表中，选择"Storm 应用程序"。在对话框底部，输入 **WordCount** 作为应用程序名称。
 
-	![image](./media/hdinsight-storm-develop-csharp-visual-studio/new-project.png)
+	![image](./media/hdinsight-storm-develop-csharp-visual-studio-topology/new-project.png)
 
 4. 创建项目后，你应该会获得以下文件：
 
@@ -249,7 +249,7 @@
 
 Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流动方式。此拓扑的图形如下。
 
-![image of how components are arranged](./media/hdinsight-storm-develop-csharp-visual-studio/wordcount-topology.png)
+![image of how components are arranged](./media/hdinsight-storm-develop-csharp-visual-studio-topology/wordcount-topology.png)
 
 句子从 Spout 发出，并分布到 Splitter Bolt 的实例。Splitter Bolt 将句子分割成多个单词，并将这些单词分布到 Counter Bolt。
 
@@ -498,7 +498,7 @@ HDInsight Tools for Visual Studio 还可用于创建混合拓扑，其中，有�
 
 3. 保存更改，然后按 **F5**，或者依次选择"调试"、"开始调试"以启动项目。随后应会出现一个控制台窗口，并记录测试进行的状态。出现"测试已完成"后，请按任意键关闭窗口。
 
-4. 使用"资源管理器"转到包含项目的目录。例如，**C:\Users\<your_user_name>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**。在此目录中，依次打开 **Bin** 和 **Debug**。你应会看到运行测试时生成的文本文件：sentences.txt、counter.txt 和 splitter.txt。打开每个文本文件并检查数据。
+4. 使用"资源管理器"转到包含项目的目录。例如，**C:\Users&lt;your_user_name>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**。在此目录中，依次打开 **Bin** 和 **Debug**。你应会看到运行测试时生成的文本文件：sentences.txt、counter.txt 和 splitter.txt。打开每个文本文件并检查数据。
 
 	> [AZURE.NOTE] 字符串数据会保存为这些文件中的十进制值数组。例如，**splitter.txt** 文件中的 [[97,103,111]] 是单词"and"。
 
@@ -531,7 +531,7 @@ HDInsight Tools for Visual Studio 还可用于创建混合拓扑，其中，有�
 
 ## 后续步骤
 
-在了解如何使用 HDInsight Tools for Visual Studio 开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/hdinsight-storm-develop-csharp-event-hub-topology/)。
+在了解如何使用 HDInsight Tools for Visual Studio 开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/hdinsight-storm-develop-csharp-event-hub-topology)。
 
 若要了解有关创建 C# 拓扑的详细信息，请访问 [https://github.com/hdinsight/hdinsight-storm-examples/blob/master/SCPNet-GettingStarted.md](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/SCPNet-GettingStarted.md)。
 
@@ -539,26 +539,26 @@ HDInsight Tools for Visual Studio 还可用于创建混合拓扑，其中，有�
 
 **Apache Storm on HDInsight**
 
-* [使用 Apache Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
+* [使用 Apache Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
-* [使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)
+* [使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology)
 
-* [为 Apache Storm on HDInsight 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology/)
+* [为 Apache Storm on HDInsight 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)
 
-<!--* [Trending hashtags for Twitter with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending/)-->
+<!--* [Trending hashtags for Twitter with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending)-->
 
 * [Storm on HDInsight 示例](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/SCPNet-GettingStarted.md)
 
 **Apache HDInsight 上的 Hadoop**
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
 **Apache HBase on HDInsight**
 
-* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started/)
+* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started)
 
 <!--HONumber=50-->

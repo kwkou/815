@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-media-services-java" urlDisplayName="Media Services" pageTitle="How to use Media Services (Java) - Azure feature guide" metaKeywords="Azure Media Services, Azure media, Azure streaming, azure media, azure streaming, azure encoding" description="Describes how to use Azure Media Services to perform common tasks including encoding, encrypting, and streaming resources." metaCanonical="" services="media-services" documentationCenter="Java" title="How to Use Media Services" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
+﻿<properties linkid="develop-media-services-how-to-guides-media-services-java" urlDisplayName="Media Services" pageTitle="How to use Media Services (Java) - Azure feature guide" metaKeywords="Azure Media Services, Azure media, Azure streaming, azure media, azure streaming, azure encoding" description="Describes how to use Azure Media Services to perform common tasks including encoding, encrypting, and streaming resources." metaCanonical="" services="media-services" documentationCenter="Java" title="How to Use Media Services" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
 <tags ms.service="media-services"
     ms.date="02/20/2015"
     wacn.date="04/11/2015"
@@ -83,7 +83,7 @@ Media Services 支持下表中所述的多种常见媒体开发方案。
 
 #### Windows 8 应用程序
 
-对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C\# 和 C+）生成 Windows 应用商店应用程序。
+对于 Windows 8，你可以使用支持的任一开发语言和构造（例如 HTML、Javascript、XAML、C# 和 C+）生成 Windows 应用商店应用程序。
 
 -   [适用于 Windows 8 的平滑流式处理客户端 SDK](http://go.microsoft.com/fwlink/?LinkID=246146)。有关如何使用此 SDK 创建 Windows 应用商店应用程序的详细信息，请参阅[如何生成平滑流式处理 Windows 应用商店应用程序](http://go.microsoft.com/fwlink/?LinkId=271647)。有关如何使用 HTML5 语言创建平滑流式处理播放器的信息，请参阅[演练：生成你的第一个 HTML5 平滑流式处理播放器](http://msdn.microsoft.com/zh-cn/library/jj573656.aspx)。
 
@@ -131,14 +131,14 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 ### 先决条件
 
 -   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](http://go.microsoft.com/fwlink/?linkid=256662)。
--   适用于 Java 的 Azure 库，可以从 [Azure Java 开发人员中心](/develop/java/)安装。
+-   适用于 Java 的 Azure 库，可以从 [Azure Java 开发人员中心](/develop/java)安装。
 
 将 Media Services 与 Java 结合使用如何：将 Media Services 与 Java 结合使用
 --------------------------------------------------------------------------
 
 以下代码演示了如何创建一个资产、如何将媒体文件上载到该资产、如何使用任务运行某个作业以转换该资产，以及如何下载转换后的资产的输出文件。
 
-在使用此代码之前，需要设置一个 Media Services 帐户。有关设置帐户的信息，请参阅[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account/)。
+在使用此代码之前，需要设置一个 Media Services 帐户。有关设置帐户的信息，请参阅[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account)。
 
 将 `clientId` 和 `clientSecret` 变量替换为你自己的值。该代码还依赖于本地存储的文件 `c:/media/MPEG4-H264.mp4`。你需要提供自己的文件以供使用。该代码还需要一个输出文件夹 `c:/output`，输出文件将下载到其中。
 
@@ -458,5 +458,5 @@ Microsoft 提供可用于生成 Windows Phone 版高级视频应用程序的 SDK
 其他资源其他资源
 ----------------
 
-有关 Media Services Javadoc 文档，请参阅[适用于 Java 的 Azure 库文档](http://dl.windowsazure.cn/javadoc/)。
+有关 Media Services Javadoc 文档，请参阅[适用于 Java 的 Azure 库文档](http://dl.windowsazure.cn/javadoc)。
 

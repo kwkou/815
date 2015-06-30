@@ -276,9 +276,9 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 
 <!--
 FWLink 533699 points to TechNet...
-https://technet.microsoft.com/en-us/library/cc793139(v=sql.90).aspx,
+https://technet.microsoft.com/zh-CN/library/cc793139(v=sql.90).aspx,
  which instead should be...
-http://technet.microsoft.com/library/cc793139.aspx
+https://technet.microsoft.com/zh-CN/library/cc793139.aspx
 .
 Regardless, we should use direct URL, not indirect, in this type of one-time case. It might be different if this link were being placed into 25 different topics.
 -->

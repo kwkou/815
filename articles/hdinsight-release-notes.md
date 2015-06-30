@@ -1,4 +1,4 @@
-<properties title="HDInsight Release Notes" pageTitle="HDInsight 发行说明 | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
+﻿<properties title="HDInsight Release Notes" pageTitle="HDInsight 发行说明 | Azure" description="HDInsight release notes." metaKeywords="hdinsight, hadoop, hdinsight hadoop, hadoop azure, release notes" services="HDInsight" solutions="" documentationCenter="" editor="cgronlun" manager="paulettm"  authors="bradsev" />
 
 <tags 
 wacn.date="04/11/2015"
@@ -59,7 +59,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 由于 SDK/PowerShell 和群集之间的版本不同，可能遇到 HDInsight PowerShell/SDK 错误，附带消息"群集 <clustername> 没有配置 HTTP 服务访问权限"（或者根据操作，遇到其他错误消息，如："无法连接群集"）。8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。旧版本 SDK/PowerShell 无法正确解释此功能，导致提交作业操作失败。如果使用 SDK API 或 PowerShell cmdlet 提交作业（如 Use-AzureHDInsightCluster 或 Invoke-AzureHDInsightHiveJob），则那些操作可能失败，并附加一条上述错误消息。
 
-在最新版 SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.HDInsight/) 访问最新版 HDInsight SDK，还可以使用 [Microsoft Web PI](http://go.microsoft.com/?linkid=9811175&clcid=0x409) 访问 Azure PowerShell 工具。
+在最新版 SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。你可以从 [nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.HDInsight) 访问最新版 HDInsight SDK，还可以使用 [Microsoft Web PI](http://go.microsoft.com/?linkid=9811175&clcid=0x409) 访问 Azure PowerShell 工具。
 
 你可以期待，只要群集版本保持不变，SDK 和 PowerShell 就将可以继续与群集新更新配合使用。例如，群集版本 3.1 将始终与 SDK/PowerShell 当前版本 1.3.1.6 和 0.8.8 兼容。
 
@@ -93,7 +93,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 ### Apache Mahout 现已预装在 HDInsight 3.1上
 
- [Mahout](http://hortonworks.com/hadoop/mahout/) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
+ [Mahout](http://hortonworks.com/hadoop/mahout) 已预装在 HDInsight 3.1 Hadoop 群集上。因此，你无需进行其他任何群集配置，就能运行 Mahout 作业。例如，你可以使用远程桌面协议 (RDP) 远程访问 Hadoop 群集，并且无需执行附加的步骤，就能执行 Hello world Mahout 命令：
 
 		mahout org.apache.mahout.classifier.df.tools.Describe -p /user/hdp/glass.data -f /user/hdp/glass.info -d I 9 N L  
 
@@ -110,7 +110,7 @@ Hive 0.13 现已在 HDInsight 3.1 中提供，并且能够使用 Tez 运行查�
 		set hive.execution.engine=tez;
 		select sc_status, count(*), histogram_numeric(sc_bytes,5) from website_logs_orc_local group by sc_status;
 
-Hortonworks 发布了使用以标准基准版提供的 Tez 后，Hive 查询性能得到增强的每条明细。有关详细信息，请参阅[适用于 Enterprise Hadoop 的 Apache Hive 13 基准](http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop/)。 
+Hortonworks 发布了使用以标准基准版提供的 Tez 后，Hive 查询性能得到增强的每条明细。有关详细信息，请参阅[适用于 Enterprise Hadoop 的 Apache Hive 13 基准](http://hortonworks.com/blog/benchmarking-apache-hive-13-enterprise-hadoop)。 
 
 有关将 Hive 与 Tez 结合使用的更多详细信息，请参阅 ["Tez 上的 Hive"Wiki 页](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)。
 
@@ -216,23 +216,23 @@ HDInsight 3.x (HDP2.x) 中不再存在以下依赖项：
 
 在 HDInsight 2.x (HDP1.x) 与 HDInsight 3.x (HDP2.x) 之间发生了以下版本更改：
 
--   metrics-core： ['2.1.2'] -\> ['3.0.0']
--   derbynet： ['10.4.2.0'] -\> ['10.10.1.1']
--   datanucleus：['rdbms-3.0.8'] -\> ['rdbms-3.2.9']
--   jasper-compiler： ['5.5.12'] -\> ['5.5.23']
--   log4j： ['1.2.15', '1.2.16'] -\> ['1.2.16', '1.2.17']
--   derbyclient： ['10.4.2.0'] -\> ['10.10.1.1']
--   httpcore： ['4.2.4'] -\> ['4.2.5']
--   hsqldb： ['1.8.0.10'] -\> ['2.0.0']
--   jets3t： ['0.6.1'] -\> ['0.9.0']
--   protobuf-java： ['2.4.1'] -\> ['2.5.0']
--   derby： ['10.4.2.0'] -\> ['10.10.1.1']
--   jasper：['runtime-5.5.12'] -\> ['runtime-5.5.23']
--   commons-daemon： ['1.0.1'] -\> ['1.0.13']
--   datanucleus-core： ['3.0.9'] -\> ['3.2.10']
--   datanucleus-api-jdo： ['3.0.7'] -\> ['3.2.6']
--   zookeeper： ['3.4.5.1.3.9.0-01320'] -\> ['3.4.5.2.1.3.0-1948']
--   bonecp：['0.7.1.RELEASE'] -\> ['0.8.0.RELEASE']
+-   metrics-core： ['2.1.2'] -&gt; ['3.0.0']
+-   derbynet： ['10.4.2.0'] -&gt; ['10.10.1.1']
+-   datanucleus：['rdbms-3.0.8'] -&gt; ['rdbms-3.2.9']
+-   jasper-compiler： ['5.5.12'] -&gt; ['5.5.23']
+-   log4j： ['1.2.15', '1.2.16'] -&gt; ['1.2.16', '1.2.17']
+-   derbyclient： ['10.4.2.0'] -&gt; ['10.10.1.1']
+-   httpcore： ['4.2.4'] -&gt; ['4.2.5']
+-   hsqldb： ['1.8.0.10'] -&gt; ['2.0.0']
+-   jets3t： ['0.6.1'] -&gt; ['0.9.0']
+-   protobuf-java： ['2.4.1'] -&gt; ['2.5.0']
+-   derby： ['10.4.2.0'] -&gt; ['10.10.1.1']
+-   jasper：['runtime-5.5.12'] -&gt; ['runtime-5.5.23']
+-   commons-daemon： ['1.0.1'] -&gt; ['1.0.13']
+-   datanucleus-core： ['3.0.9'] -&gt; ['3.2.10']
+-   datanucleus-api-jdo： ['3.0.7'] -&gt; ['3.2.6']
+-   zookeeper： ['3.4.5.1.3.9.0-01320'] -&gt; ['3.4.5.2.1.3.0-1948']
+-   bonecp：['0.7.1.RELEASE'] -&gt; ['0.8.0.RELEASE']
 
 ### 驱动程序
 

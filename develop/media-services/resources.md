@@ -26,7 +26,7 @@
 <p>了解如何以编程方式连接到媒体服务。</p>
 <h3>功能指南： <a href="/documentation/articles/media-services-protect-asset/">安全地将内容上载到媒体服务</a></h3>
 <p>了解如何将原始素材上载到媒体服务并在默认情况下将其加密。</p>
-<h3>功能指南： <a href="http://msdn.microsoft.com/en-us/library/windowsazure/jj853022.aspx">将内容批量上载到媒体服务</a></h3>
+<h3>功能指南： <a href="https://msdn.microsoft.com/zh-CN/library/windowsazure/jj853022.aspx">将内容批量上载到媒体服务</a></h3>
 <p>了解如何将大量内容上载到媒体服务中。</p>
 <h2 id="header-2"><a id="users"></a>编码</h2>
 <h3>功能指南： <a href="/documentation/articles/media-services-encode-asset/">对媒体服务中的内容进行编码</a></h3>

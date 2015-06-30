@@ -16,7 +16,7 @@
 
 基于 Linux 的 HDInsight 群集提供了使用密码或 SSH 密钥保护 SSH 访问的选项。本文档提供有关在 Linux、Unix 或 OS X 客户端中将 SSH 与 hdinsight 配合使用的信息。
 
-> [AZURE.NOTE] 本文中的步骤假设你使用 Linux、Unix 或 OS X 客户端。虽然可以在装有提供 `ssh` 和 `ssh-keygen` 的包（例如，适用于 Windows 的 Git）的Windows 客户端上执行这些步骤，但是，我们建议在 Windows 客户端上遵循[在 Windows 中将 SSH 与基于 Linux 的 HDInsight (Hadoop) 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)中的步骤。
+> [AZURE.NOTE] 本文中的步骤假设你使用 Linux、Unix 或 OS X 客户端。虽然可以在装有提供 `ssh` 和 `ssh-keygen` 的包（例如，适用于 Windows 的 Git）的Windows 客户端上执行这些步骤，但是，我们建议在 Windows 客户端上遵循[在 Windows 中将 SSH 与基于 Linux 的 HDInsight (Hadoop) 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)中的步骤。
 
 ## 先决条件
 
@@ -225,11 +225,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCelfkjrpYHYiks4TM+r1LVsTYQ4jAXXGeOAF9Vv/KG
 
 现在，你已了解如何使用 SSH 密钥进行身份验证，以及如何将 MapReduce 与 HDInsight 上的 Hadoop 配合使用。
 
-* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 
-* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
  
 
 <!--HONumber=50-->

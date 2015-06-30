@@ -20,7 +20,7 @@
 高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。可以将多个高级存储磁盘附加到虚拟机 (VM)。使用高级存储，每个 VM 的应用程序最多拥有 32 TB 的存储，每个 VM 可达到 50,000 IOPS（每秒输入/输出操作次数），读取操作的延迟极低。高级存储目前只能在 Azure 虚拟机使用的磁盘上存储数据。 
 
 <!--
-若要注册 Azure 高级存储预览版，请访问 [Azure 预览版](/home/features/preview/)页面。
+若要注册 Azure 高级存储预览版，请访问 [Azure 预览版](/home/features/preview)页面。
 -->
 
 本文提供 Azure 高级存储的深入概述。
@@ -31,7 +31,7 @@
 
 - 若要使用高级存储，你必须有一个高级存储帐户。若要了解如何创建高级存储帐户，请参阅[为磁盘创建和使用高级存储帐户](#creating-and-using-premium-storage-account-for-disks)。
 
-- 可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/install-configure-powershell/) 0.8.10 或更高版本。 
+- 可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/install-configure-powershell) 0.8.10 或更高版本。 
 
 - 以下地区提供受限的高级存储预览版：中国东部。
 
@@ -55,7 +55,7 @@
 
 Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话说，如果你创建 Azure DS 系列的 VM 并选择 Azure 高级存储帐户，操作系统和数据磁盘会存储在该存储帐户中。
 
-为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用[Azure PowerShell](/documentation/articles/install-configure-powershell/) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#creating-and-using-premium-storage-account-for-disks)。
+为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用[Azure PowerShell](/documentation/articles/install-configure-powershell) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#creating-and-using-premium-storage-account-for-disks)。
 
 ### 重要说明：
 
@@ -131,7 +131,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话�
 - 目前不支持保存和部署自定义 VM 映像。若要执行这些任务，请使用 Azure PowerShell cmdlet，例如 [Save-AzureVMImage](https://msdn.microsoft.com/zh-cn/library/azure/dn495108.aspx)。
 - 避免将 DS 系列虚拟机添加到包含非 DS 系列 VM 的现有云服务。可能的解决方法是将现有 VHD 迁移到只运行 DS 系列 VM 的新云服务。如果想要保留托管 DS 系列 VM 的新云服务的相同虚拟 IP 地址 (VIP)，请使用[保留 IP 地址](https://msdn.microsoft.com/zh-cn/library/azure/dn690120.aspx)功能。
 - 可以将 DS 系列 Azure 虚拟机配置为使用标准存储帐户或高级存储帐户上托管的操作系统 (OS) 磁盘。如果 OS 磁盘只是用于引导，则你可以考虑使用基于标准存储的 OS 磁盘。这样既可以提高性价比，又可以在引导后提供类似于高级存储的性能。如果在除引导以外的 OS 磁盘上执行任何其他任务，请使用高级存储，因为它提供更好的性能。例如，如果你的应用程序要与 OS 磁盘相互读/写数据，则使用基于高级存储的 OS 磁盘可为 VM 提供更好的性能。
-- 可以对高级存储使用 [Azure 跨平台命令行界面 (xplat-cli)](/documentation/articles/xplat-cli/)。若要使用 xplat-cli 更改某个磁盘上的缓存策略，请运行以下命令：
+- 可以对高级存储使用 [Azure 跨平台命令行界面 (xplat-cli)](/documentation/articles/xplat-cli)。若要使用 xplat-cli 更改某个磁盘上的缓存策略，请运行以下命令：
 
 	`$ azure vm disk attach -h ReadOnly <VM-Name> <Disk-Name>`
 
@@ -240,7 +240,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 - 如果高级存储上的复制 Blob 操作会覆盖目标上现有的 Blob，则所覆盖的 Blob 不得含有任何快照。若要在高级存储帐户内部或之间进行复制，在初始化复制时，目标 Blob 不得含有快照。
 - 单个 Blob 的快照数限制为 100。每 10 分钟最多可获取一个快照。
 - 10 TB 是每个高级存储帐户的最大快照容量。请注意，快照容量是快照中存在的唯一数据。换句话说，快照容量不包括基础 Blob 大小。
-- 可以使用 AzCopy 或"复制 Blob"将高级存储帐户中的快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅[如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy/) 和[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)。
+- 可以使用 AzCopy 或"复制 Blob"将高级存储帐户中的快照复制到地域冗余的标准存储帐户。有关详细信息，请参阅[如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy) 和[复制 Blob](http://msdn.microsoft.com/zh-cn/library/azure/dd894037.aspx)。
 - 有关对高级存储帐户中的页 Blob 执行 REST 操作的详细信息，请参阅 MSDN 库中的[对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)。
 
 ## 在高级存储中使用 Linux VM
@@ -258,7 +258,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 - 高级存储磁盘的计费根据是磁盘的设置大小。Azure 会将磁盘大小（向上舍入）映射到[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage) 部分的表中指定的最接近高级存储磁盘选项。任何已设置的磁盘都是按每月的高级存储优惠价格以每小时的方式计费。例如，如果你在设置完 P10 磁盘的 20 小时后删除它，则会以 20 小时计算 P10 解决方案的费用。这与写入磁盘的实际数据量或使用的 IOPS/吞吐量无关。
 - 高级存储上的快照会因为使用的额外容量而产生费用。有关快照的详细信息，请参阅[创建 Blob 的快照](http://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)。
-- [出站数据传输](/pricing/details/data-transfer/)（Azure 数据中心送出的数据）会产生带宽使用费。
+- [出站数据传输](/pricing/details/data-transfer)（Azure 数据中心送出的数据）会产生带宽使用费。
 
 有关高级存储与 DS 系列 VM 定价的详细信息，请参阅：
 
@@ -279,7 +279,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 ### 在 Azure 预览版门户中创建高级存储帐户
 本部分说明如何使用 Azure 预览版门户创建高级存储帐户。
 
-1.	登录 [Azure 预览版门户](https://manage.windowsazure.cn/)。如果你尚未订阅，请查看[免费试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/)优惠产品。 
+1.	登录 [Azure 预览版门户](https://manage.windowsazure.cn)。如果你尚未订阅，请查看[免费试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial)优惠产品。 
 
 
     > [AZURE.NOTE] 登录 Azure 管理门户时，请在门户右上角单击你的用户帐户名。然后单击"切换到新门户"。
@@ -296,13 +296,13 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 	
 5.	在"存储帐户"边栏中，保留"资源组"、"订阅"、"位置"和"诊断"的默认值。单击"创建"。
 
-有关在 Azure 环境中的完整演练，请参阅[在 Azure 预览版门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-azure-preview/)。
+有关在 Azure 环境中的完整演练，请参阅[在 Azure 预览版门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-azure-preview)。
 -->
 
 ### <a id="create-a-premium-storage-account-with-azure-powershell"></a>使用 Azure PowerShell 创建高级存储帐户
 本部分说明在创建虚拟机并将数据磁盘附加到 VM 时，如何使用 Azure PowerShell 来创建高级存储帐户以及如何使用它。
 
-1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/) 中提供的步骤设置 PowerShell 环境。
+1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中提供的步骤设置 PowerShell 环境。
 2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，当你创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium_LRS**。
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" 
@@ -336,11 +336,11 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 [对 Azure 高级存储使用 Blob 服务操作](https://msdn.microsoft.com/zh-cn/library/dn889922.aspx)
 
-[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial/)
+[创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)
 
 [虚拟机和 Azure 的云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
 
-[存储文档](/documentation/services/storage/)
+[存储文档](/documentation/services/storage)
 
 [MSDN 参考](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 

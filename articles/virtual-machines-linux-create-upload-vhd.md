@@ -12,11 +12,11 @@
 
 本文演示了如何创建并上载虚拟硬盘 (VHD)，以便您可以将其用作您自己的映像以在 Azure 中创建虚拟机。您将了解如何准备操作系统，以便您可以使用它创建多个基于该映像的虚拟机。  
 
-> [WACOM.NOTE] 您不需要任何 Azure VM 的相关经验便可完成本文中的步骤。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account/)。 
+> [WACOM.NOTE] 您不需要任何 Azure VM 的相关经验便可完成本文中的步骤。但是，您需要一个 Azure 帐户。只需几分钟即可创建一个免费的试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account)。 
 
 Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操作系统。您的映像以 VHD 格式存储在存储帐户的 .vhd 文件中。有关 Azure 中的磁盘和映像的详细信息，请参阅[管理磁盘和映像](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj672979.aspx)。
 
-**注意**：创建虚拟机时，您可以自定义操作系统设置以快速运行您的应用程序。您设置的配置存储在该虚拟机的磁盘上。有关说明，请参阅[如何创建自定义虚拟机](/zh-cn/documentation/articles/virtual-machines-create-custom/)。
+**注意**：创建虚拟机时，您可以自定义操作系统设置以快速运行您的应用程序。您设置的配置存储在该虚拟机的磁盘上。有关说明，请参阅[如何创建自定义虚拟机](/zh-cn/documentation/articles/virtual-machines-create-custom)。
 
 **重要说明**：只有在使用某个认可的分发的时候也使用[本文](https://support.microsoft.com/zh-CN/kb/2805216)中指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 分发都是具有所需配置的认可的分发。
 
@@ -34,7 +34,7 @@ Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操�
 
 - **Linux Azure 命令行工具。**如果您使用 Linux 操作系统创建映像，则使用此工具上载 VHD 文件。若要下载该工具，请参阅[适用于 Mac 和 Linux 的 Azure 命令行工具](http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409)。
 
-- **Add-AzureVhd cmdlet**，是 Azure PowerShell 模块的一部分。若要下载该模块，请参阅 [Azure 下载](/develop/downloads/)。有关参考信息，请参阅 [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)。
+- **Add-AzureVhd cmdlet**，是 Azure PowerShell 模块的一部分。若要下载该模块，请参阅 [Azure 下载](/develop/downloads)。有关参考信息，请参阅 [Add-AzureVhd](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)。
 
 
 此任务包括以下步骤：
@@ -63,11 +63,11 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可分发](../linux-endor
 
 1. 登录到 Azure 管理门户。
 
-2. 在命令栏上，单击"新建"****。
+2. 在命令栏上，单击"新建"。
 
 	![Create storage account](./media/virtual-machines-linux-create-upload-vhd/create.png)
 
-3. 单击"存储帐户"****，然后单击"快速创建"****。
+3. 单击"存储帐户"，然后单击"快速创建"。
 
 	![Quick create a storage account](./media/virtual-machines-linux-create-upload-vhd/storage-quick-create.png)
 
@@ -75,15 +75,15 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可分发](../linux-endor
 
 	![Enter storage account details](./media/virtual-machines-linux-create-upload-vhd/storage-create-account.png)
 
-- 在"URL"****下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
+- 在"URL"下，键入要在存储帐户的 URL 中使用的子域名称。输入的名称可包含 3-24 个小写字母和数字。此名称将成为用于对订阅的 Blob、队列或表资源进行寻址的 URL 中的主机名。
 	
 - 选择存储帐户的位置或地缘组。通过指定地缘组，可将同一数据中心内的云服务与您的存储放置在一起。
  
 - 决定是否使用存储帐户的地域复制。默认情况下启用地域复制。此选项会将您的数据免费复制到辅助位置，以便在发生无法在主要位置进行处理的严重故障时将您的存储故障转移到辅助位置。将自动分配辅助位置，并且无法对其进行更改。如果法律要求或组织政策要求更加严格地控制基于云的存储的位置，则您可以关闭地域复制。但是，请注意，如果稍后您打开地域复制，则将现有数据复制到辅助位置时将向您收取一次性数据传输费用。不具有地域复制的存储服务将以优惠价提供。
 
-5. 单击"创建存储帐户"****。
+5. 单击"创建存储帐户"。
 
-	帐户现在列在"存储帐户"****下。
+	帐户现在列在"存储帐户"下。
 
 	![Storage account successfully created](./media/virtual-machines-linux-create-upload-vhd/Storagenewaccount.png)
 

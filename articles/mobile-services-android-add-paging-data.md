@@ -1,4 +1,4 @@
-<properties linkid="develop-mobile-tutorials-add-paging-to-data-android" urlDisplayName="Add paging to data" pageTitle="Add paging to data (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Android app from Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="ricksal" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-mobile-tutorials-add-paging-to-data-android" urlDisplayName="Add paging to data" pageTitle="Add paging to data (Android) | Mobile Dev Center" metaKeywords="" description="Learn how to use paging to manage the amount of data returned to your Android app from Mobile Services." metaCanonical="" services="" documentationCenter="Mobile" title="Refine Mobile Services queries with paging" authors="ricksal" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="12/17/2014"
     wacn.date="04/11/2015"
@@ -105,7 +105,7 @@
 <!-- Images. --> 
 <!-- URLs. -->
 
-  [Windows 应用商店 C\#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
+  [Windows 应用商店 C#]: /develop/mobile/tutorials/add-paging-to-data-dotnet "Windows 应用商店 C#"
   [Windows 应用商店 JavaScript]: /develop/mobile/tutorials/add-paging-to-data-js "Windows 应用商店 JavaScript"
   [Windows Phone]: /develop/mobile/tutorials/add-paging-to-data-wp8 "Windows Phone"
   [iOS]: /develop/mobile/tutorials/add-paging-to-data-ios "iOS"

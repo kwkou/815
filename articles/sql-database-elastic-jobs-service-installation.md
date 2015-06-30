@@ -16,7 +16,7 @@
 **估计完成时间：**10 分钟。
 
 ## 先决条件
-* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial/)。
+* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
 * 一个弹性数据库池。请参阅[创建 Azure SQL Database 弹性池（预览版）](sql-database-elastic-pool-portal)。
 
 ## 安装服务组件

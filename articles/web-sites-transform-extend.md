@@ -41,7 +41,7 @@ Azure 网站平台为站点配置提供灵活性和控制。尽管标准 IIS App
         </system.webServer> 
     </configuration> 
 
-包含转换状态和详细信息的日志文件位于 FTP 根目录 LogFiles\\Transform 中。
+包含转换状态和详细信息的日志文件位于 FTP 根目录 LogFiles&#92;Transform 中。
 
 有关其他示例，请参阅 <https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions>。
 
@@ -79,7 +79,7 @@ PHP Manager 扩展是使用 Visual Studio ASP.NET MVC 4 Web 应用程序模板�
 
 ![TransformSiteSolEx][TransformSiteSolEx]
 
-文件 I/O 所需的唯一特殊逻辑是表示网站的 wwwroot 目录所在的位置。如以下代码示例所示，环境变量“HOME”表示站点根路径，可以通过附加“site\\wwwroot”来构造 wwwroot 路径：
+文件 I/O 所需的唯一特殊逻辑是表示网站的 wwwroot 目录所在的位置。如以下代码示例所示，环境变量“HOME”表示站点根路径，可以通过附加“site&#92;wwwroot”来构造 wwwroot 路径：
 
     /// <summary>
     /// Gives the location of the .user.ini file, even if one doesn't exist yet
@@ -109,7 +109,7 @@ PHP Manager 扩展是使用 Visual Studio ASP.NET MVC 4 Web 应用程序模板�
 
 #### <span id="XDT"></span></a>applicationHost.xdt 文件
 
-站点扩展的代码位于 %HOME%\\SiteExtensions[您的扩展名称] 下。该目录称为扩展根目录。
+站点扩展的代码位于 %HOME%&#92;SiteExtensions[您的扩展名称] 下。该目录称为扩展根目录。
 
 要使用 applicationHost.config 文件注册站点扩展，需要将 ApplicationHost.xdt 文件放在扩展根目录中。ApplicationHost.xdt 文件的内容应如下所示：
 

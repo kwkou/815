@@ -26,7 +26,7 @@
 
 在其他方案（例如从分布式设备中引入数据）中，分片可用于填充某个时间段内分发的一组数据库。例如，可以在每天或每周专门使用某个单独的数据库。在此情况下，分片键可以是一个表示日期的整数（显示在分片表的所有行中），应用程序必须将用于检索有关日期范围的信息的查询路由到涉及相关范围的数据库子集。
 
-无论使用何种分片模型，一个特殊的数据结构（称为**分片映射**）都可以用作查找表，该表将分片键值与数据库相关联；这使应用程序可以为数据库请求执行路由。这称为**数据依赖路由**，它是应用程序使用分片数据层时所需的核心功能。[灵活扩展客户端 API](/zh-cn/documentation/articles/sql-database-elastic-scale-introduction/) 提供了[管理分片映射](/zh-cn/documentation/articles/sql-database-elastic-scale-shard-map-management/)和启用应用程序中有效且易于使用的[数据依赖路由功能](/zh-cn/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)时所需的一组丰富功能。 
+无论使用何种分片模型，一个特殊的数据结构（称为**分片映射**）都可以用作查找表，该表将分片键值与数据库相关联；这使应用程序可以为数据库请求执行路由。这称为**数据依赖路由**，它是应用程序使用分片数据层时所需的核心功能。[灵活扩展客户端 API](/zh-cn/documentation/articles/sql-database-elastic-scale-introduction) 提供了[管理分片映射](/zh-cn/documentation/articles/sql-database-elastic-scale-shard-map-management)和启用应用程序中有效且易于使用的[数据依赖路由功能](/zh-cn/documentation/articles/sql-database-elastic-scale-data-dependent-routing)时所需的一组丰富功能。 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

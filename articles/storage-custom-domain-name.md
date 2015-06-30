@@ -12,7 +12,7 @@
 
 > [WACOM.NOTE]	此任务中的过程适用于 Azure 存储帐户。对于云服务，请参阅<a href = "/develop/net/common-tasks/custom-dns/">为 Azure 云服务配置自定义域名</a>；对于网站，请参阅<a href="/develop/net/common-tasks/custom-dns-web-site/">为 Azure 网站配置自定义域名</a>。 
 
-> [WACOM.NOTE]	高级存储帐户无法映射到自定义域名。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal/)，以了解有关高级存储帐户的信息。
+> [WACOM.NOTE]	高级存储帐户无法映射到自定义域名。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](/zh-cn/documentation/articles/storage-premium-storage-preview-portal)，以了解有关高级存储帐户的信息。
 
 有两种方法可用于将你的自定义域指向你的存储帐户的 Blob 终结点。最简单方法是创建一个 CNAME 记录，将你的自定义域和子域映射到 Blob 终结点。CNAME 记录是一种 DNS 功能，用于将源域映射到目标域。在此情况下，源域是你的自定义域和子域 -- 请注意，始终需要子域。目标域是你的 Blob 服务终结点。
 

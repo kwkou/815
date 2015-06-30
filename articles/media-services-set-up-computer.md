@@ -1,4 +1,4 @@
-<properties linkid="develop-media-services-how-to-guides-set-up-computer" urlDisplayName="Set Up Computer for Media Services" pageTitle="设置计算机以进行 Media Services 开发 - Azure" metaKeywords="" description="Learn about the prerequisites for Media Services using the Media Services SDK for .NET. Also learn how to create a Visual Studio app." metaCanonical="" services="media-services" documentationCenter="" title="Setting up your computer for Media Services development" authors="migree" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-media-services-how-to-guides-set-up-computer" urlDisplayName="Set Up Computer for Media Services" pageTitle="设置计算机以进行 Media Services 开发 - Azure" metaKeywords="" description="Learn about the prerequisites for Media Services using the Media Services SDK for .NET. Also learn how to create a Visual Studio app." metaCanonical="" services="media-services" documentationCenter="" title="Setting up your computer for Media Services development" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/18/2015"
     wacn.date="04/11/2015"
@@ -11,7 +11,7 @@
 
 ### 先决条件
 
--   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account/)。
+-   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account)。
 -   操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 -   .NET Framework 4.5 或 .NET Framework 4。
 -   Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）。
@@ -24,9 +24,9 @@
 
 ### 在 Visual Studio 中创建应用程序
 
-本部分演示如何在 Visual Studio 中创建项目，以及如何将该项目设置为进行 Media Services 开发。在本示例中，该项目为 C\# Windows 控制台应用程序，但此处所示的设置步骤同样适用于针对 Media Services 应用程序（例如，Windows 窗体应用程序或 ASP.NET Web 应用程序）创建的其他类型的项目。
+本部分演示如何在 Visual Studio 中创建项目，以及如何将该项目设置为进行 Media Services 开发。在本示例中，该项目为 C# Windows 控制台应用程序，但此处所示的设置步骤同样适用于针对 Media Services 应用程序（例如，Windows 窗体应用程序或 ASP.NET Web 应用程序）创建的其他类型的项目。
 
-1.  在 Visual Studio 2012 或 Visual Studio 2010 SP1 中创建一个新的 C\# **控制台应用程序**。输入“名称”、“位置”和“解决方案名称”，然后单击**“确定”**。
+1.  在 Visual Studio 2012 或 Visual Studio 2010 SP1 中创建一个新的 C# **控制台应用程序**。输入“名称”、“位置”和“解决方案名称”，然后单击**“确定”**。
 2.  添加对 **System.Configuration** 程序集的引用。若要添加对 **System.Configuration** 的引用，请在**解决方案资源管理器**中，右键单击**“引用”**节点，然后选择**“添加引用...”**。在“管理引用”对话框中，**选择** **“System.Configuration”**，然后单击**“确定”**。
 3.  添加对 **Azure SDK for .NET**(Microsoft.WindowsAzure.StorageClient.dll)、**Azure Media Services SDK for .NET** (Microsoft.WindowsAzure.MediaServices.Client.dll) 和 **WCF Data Services 5.0 for OData V3** (Microsoft.Data.OData.dll) 库的引用，只需通过 [windowsazure.mediaservices Nuget](http://nuget.org/packages/windowsazure.mediaservices) 程序包进行操作即可。
 
@@ -68,5 +68,5 @@ using System;
 后续步骤
 --------
 
-你已经完成计算机设置并创建了进行 Media Services 编程所需的 Visual Studio 解决方案，现在可转到 [如何创建加密的资产并上载到存储中][] 主题。[如何创建 Media Services 帐户]:http://www.windowsazure.com/manage/services/media-services/how-to-create-a-media-services-account/ [如何创建加密的资产并上载到存储中]:http://go.microsoft.com/fwlink/?LinkID=301733&clcid=0x409
+你已经完成计算机设置并创建了进行 Media Services 编程所需的 Visual Studio 解决方案，现在可转到 [如何创建加密的资产并上载到存储中][] 主题。[如何创建 Media Services 帐户](http://www.windowsazure.com/manage/services/media-services/how-to-create-a-media-services-account/) [如何创建加密的资产并上载到存储中](http://go.microsoft.com/fwlink/?LinkID=301733&clcid=0x409)
 

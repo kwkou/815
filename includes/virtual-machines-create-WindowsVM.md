@@ -1,4 +1,4 @@
-﻿1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。签出[试用版](/pricing/1rmb-trial/) 提供了如果您不具有尚未订阅。
+1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。签出[试用版](/pricing/1rmb-trial) 提供了如果您不具有尚未订阅。
 
 2. 在在窗口底部的命令栏中，单击**新建**。
 
@@ -23,13 +23,13 @@
 6. 第三个屏幕允许您配置的网络、 存储和可用性的资源。下面是一些详细信息，以帮助您填写此： 
 	
 
-	- **云服务 DNS 名称**是将成为用于联系虚拟机的 URI 的一部分的全局 DNS 名称。您将需要使用您自己的云服务名称提出，因为它必须是唯一在 Azure 中。云服务非常重要的使用方案[多个虚拟机](/zh-cn/documentation/articles/cloud-services-connect-virtual-machine/)。
+	- **云服务 DNS 名称**是将成为用于联系虚拟机的 URI 的一部分的全局 DNS 名称。您将需要使用您自己的云服务名称提出，因为它必须是唯一在 Azure 中。云服务非常重要的使用方案[多个虚拟机](/zh-cn/documentation/articles/cloud-services-connect-virtual-machine)。
  
 	- 对于**区域/地缘组/虚拟网络**，使用适合于您所在位置的区域。您还可以选择改为指定的虚拟网络。
  
 	>[WACOM.NOTE] 如果您希望虚拟机使用虚拟网络，您**必须**在创建虚拟机时指定虚拟网络。在创建虚拟机后，不能向虚拟网络中加入虚拟机。有关详细信息，请参阅[Azure 虚拟网络概述](http://go.microsoft.com/fwlink/p/?LinkID=294063)。
 
-	- 有关配置终结点的详细信息，请参阅[如何设置终结点到虚拟机](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints/)。
+	- 有关配置终结点的详细信息，请参阅[如何设置终结点到虚拟机](/zh-cn/documentation/articles/virtual-machines-set-up-endpoints)。
 
 	![Configure the connected resources of the virtual machine](./media/virtual-machines-create-WindowsVM/resourceconfiguration.png)
 

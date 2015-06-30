@@ -173,7 +173,7 @@
 
 -   将用于保存应用程序日志的位置，该位置是相对于 Web 根的。
 
--   默认值：..\\..\\LogFiles\\Application
+-   默认值：..&#92;..&#92;LogFiles&#92;Application
 
 **DIAGNOSTICS\_TEXTTRACEMAXBUFFERSIZEBYTES**
 
@@ -292,7 +292,7 @@
 2.  单击**“配置”**选项卡。
 3.  转到“监视”部分以便输入你的终结点设置。
 4.  输入终结点的名称。
-5.  输入要监视的服务的 URL。例如，[][]<http://contoso.chinacloudapp.cn></a>。
+5.  输入要监视的服务的 URL。例如，http://contoso.chinacloudapp.cn
 6.  从列表中选择一个或多个地理位置。
 7.  （可选）重复之前的步骤以便创建第二个终结点。
 8.  单击**“保存”**。Web 终结点监视数据可能需要一段时间后才在“仪表板”和“监视器”选项卡上可用。
@@ -324,6 +324,5 @@
   [Azure PowerShell Cmdlet 入门]: http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx
   [如何使用 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
   [W3C 扩展日志格式]: http://go.microsoft.com/fwlink/?LinkID=90561
-  []: http://contoso.chinacloudapp.cn
   [Scott Guthrie 介绍 Azure 网站并设置终结点监视]: /zh-cn/documentation/videos/websites-and-endpoint-monitoring-scottgu/
   [保持 Azure 网站运行以及终结点监视 - Stefan Schackow]: /zh-cn/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/

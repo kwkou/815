@@ -1,4 +1,4 @@
-<properties linkid="manage-services-hdinsight-develop-Java-MapReduce-programs-for-HDInsight" urlDisplayName="HDInsight Tutorials" pageTitle="为 HDInsight 开发 Java MapReduce 程序 | Azure" metaKeywords="hdinsight, hdinsight development, hadoop development, hdinsight deployment, development, deployment, tutorial, MapReduce, Java" description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight." services="hdinsight" title="Develop Java MapReduce programs for HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="jgao" />
+﻿<properties linkid="manage-services-hdinsight-develop-Java-MapReduce-programs-for-HDInsight" urlDisplayName="HDInsight Tutorials" pageTitle="为 HDInsight 开发 Java MapReduce 程序 | Azure" metaKeywords="hdinsight, hdinsight development, hadoop development, hdinsight deployment, development, deployment, tutorial, MapReduce, Java" description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight." services="hdinsight" title="Develop Java MapReduce programs for HDInsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" authors="jgao" />
 <tags ms.service="hdinsight"
     ms.date="10/10/2014"
     wacn.date="04/11/2015"
@@ -105,14 +105,14 @@
 
     请注意，包名为 **org.apache.hadoop.examples**，类名为 **WordCount**。提交 MapReduce 作业时，将使用这些名称。
 
-3.  将该文件另存为 **c:\\Tutorials\\WordCountJava\\WordCount.java**。创建文件夹结构（如果不存在）。
+3.  将该文件另存为 **c:&#92;Tutorials&#92;WordCountJava&#92;WordCount.java**。创建文件夹结构（如果不存在）。
 
 HDInsight Emulator 附带了 *javac* 编译器。
 
 **编译 MapReduce 程序**
 
 1.  打开命令提示符。
-2.  将目录更改为 **c:\\Tutorials\\WordCountJava**。这是单词计数 MapReduce 程序所在的文件夹。
+2.  将目录更改为 **c:&#92;Tutorials&#92;WordCountJava**。这是单词计数 MapReduce 程序所在的文件夹。
 3.  运行以下命令以检查两个 jar 文件是否存在：
 
         dir %hadoop_home%\hadoop-core-1.1.0-SNAPSHOT.jar
@@ -122,7 +122,7 @@ HDInsight Emulator 附带了 *javac* 编译器。
 
         C:\Hadoop\java\bin\javac -classpath %hadoop_home%\hadoop-core-1.1.0-SNAPSHOT.jar;%hadoop_home%\lib\commons-cli-1.2.jar WordCount.java
 
-    javac 位于 C:\\Hadoop\\java\\bin 文件夹中。最后一个参数是当前文件夹中的 java 程序。编译器将在当前文件夹中创建 3 个类文件。
+    javac 位于 C:&#92;Hadoop&#92;java&#92;bin 文件夹中。最后一个参数是当前文件夹中的 java 程序。编译器将在当前文件夹中创建 3 个类文件。
 
 5.  运行以下命令以创建 jar 文件：
 
@@ -266,7 +266,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 
     **\$storageAccountName\_Data** 和 **\$containerName\_Data** 与你在上一个过程中定义的一样。
 
-    请注意，源文件文件夹是 **c:\\Hadoop\\hadoop-1.1.0-SNAPSHOT**，目标文件夹是 **WordCount/Input**。
+    请注意，源文件文件夹是 **c:&#92;Hadoop&#92;hadoop-1.1.0-SNAPSHOT**，目标文件夹是 **WordCount/Input**。
 
 3.  运行以下命令以获取源文件文件夹中的 txt 文件的列表：
 
@@ -456,7 +456,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 **检索输出**
 
 1.  打开 Azure PowerShell 窗口。
-2.  将目录更改为 **C:\\Tutorials\\WordCountJava**。默认 Azure PowerShell 文件夹是 **C:\\Windows\\System32\\WindowsPowerShell\\v1.0**。你将运行的 cmdlet 会将输出文件下载到当前文件夹。你无权将文件下载到系统文件夹。
+2.  将目录更改为 **C:&#92;Tutorials&#92;WordCountJava**。默认 Azure PowerShell 文件夹是 **C:&#92;Windows&#92;System32&#92;WindowsPowerShell&#92;v1.0**。你将运行的 cmdlet 会将输出文件下载到当前文件夹。你无权将文件下载到系统文件夹。
 3.  运行以下命令以设置值：
 
         $subscriptionName = "<AzureSubscriptionName>"
@@ -481,7 +481,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 
 在本教程中，你已学习如何执行以下操作：开发 Java MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce。若要了解更多信息，请参阅下列文章：
 
--   [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序][]
+-   [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序][]
 -   [Azure HDInsight 入门][]
 -   [HDInsight Emulator 入门][开始使用 HDInsight Emulator]
 -   [将 Azure Blob 存储与 HDInsight 配合使用][]
@@ -511,7 +511,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
   [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
   [利用 Power Query 将 Excel 连接到 HDInsight]: /zh-cn/documentation/articles/hdinsight-connect-excel-power-query/
   [Sqoop]: /zh-cn/documentation/articles/hdinsight-use-sqoop/
-  [为 HDInsight 开发 C\# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+  [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
   [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
   [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
   [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/

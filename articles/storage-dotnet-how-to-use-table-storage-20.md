@@ -1,4 +1,4 @@
-<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage  from .NET | Windows Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use the Table Storage Service" authors="tamram" />
+﻿<properties linkid="dev-net-2-how-to-table-services" urlDisplayName="Table Service" pageTitle="How to use table storage  from .NET | Windows Azure" metaKeywords="Get started Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure table .NET   Azure table storage .NET   Azure table C#   Azure table storage C#" description="Learn how to use table storage to create and delete tables and insert and query entities in a table." services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use the Table Storage Service" authors="tamram" />
 <tags ms.service="storage"
     ms.date="10/02/2014"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 # 如何通过 .NET 使用表存储服务
 
 本指南将演示如何使用 Azure 表存储服务执行常见方案。
-示例是用 C\# 代码编写的并使用了
+示例是用 C# 代码编写的并使用了
 Azure .NET 存储客户端库。涉及的方案包括**创建和删除表**
 ，以及**使用表实体**。有关表的详细信息，请参阅
 [后续步骤][]部分。
@@ -60,16 +60,16 @@ Azure .NET 存储客户端库支持使用存储连接字符
 
 1.  在 Visual Studio 解决方案资源管理器内 Azure 部署
     项目的**“角色”**文件夹中，右键单击你的 Web 角色或辅助角色，
-    然后单击**“属性”**。
+    然后单击**“属性”**。  
     ![Blob5][]
 
-2.  单击**“设置”**选项卡并按**“添加设置”**按钮。
+2.  单击**“设置”**选项卡并按**“添加设置”**按钮。  
     ![Blob6][]
 
     新的 **Setting1** 条目稍后将显示在设置网格中。
 
 3.  在新的 **Setting1** 条目的**“类型”**下拉列表中，选择
-    **“连接字符串”**。
+    **“连接字符串”**。  
     ![Blob7][]
 
 4.  单击 **Setting1** 条目最右侧的 **...** 按钮。
@@ -80,12 +80,12 @@ Azure .NET 存储客户端库支持使用存储连接字符
     本指南中的代码适用于其中任一方式。
     如果你希望使用我们之前在 Azure 中创建的存储帐户
     来存储 Blob 数据，请输入从本教程前面的步骤中
-    复制的**“主访问密钥”**值。
+    复制的**“主访问密钥”**值。  
     ![Blob8][]
 
 6.  将条目**“名称”**从 **Setting1** 更改为更友好的名称，
     例如 **StorageConnectionString**。在本指南后面的
-    代码中你将引用此连接字符串。
+    代码中你将引用此连接字符串。  
     ![Blob9][]
 
 ### 使用 .NET 配置来配置连接字符串
@@ -108,11 +108,11 @@ Azure .NET 存储客户端库支持使用存储连接字符
 
 你可以使用 NuGet 来获得 `Microsoft.WindowsAzure.Storage.dll` 程序集。在**“解决方案资源管理器”**中，右键单击你的项目并选择**“管理 NuGet 包”**。在线搜索“WindowsAzure.Storage”，然后单击**“安装”**以安装 Azure 存储包和依赖项。
 
-Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从 [.NET 开发人员中心][]下载该版本。该程序集将安装到 `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK\<sdk-version>\ref\` 目录中。
+Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从 [.NET 开发人员中心][]下载该版本。该程序集将安装到 `%Program Files%\Microsoft SDKs\Windows Azure\.NET SDK&lt;sdk-version>\ref\` 目录中。
 
 ### 命名空间声明
 
-在你希望在其中以编程方式访问 Azure 存储服务的任何 C\# 文件中，
+在你希望在其中以编程方式访问 Azure 存储服务的任何 C# 文件中，
 将以下代码命名空间声明添加到文件的顶部：
 
     using Microsoft.WindowsAzure.Storage;
@@ -167,7 +167,7 @@ Azure SDK for .NET 中也包括了 `Microsoft.WindowsAzure.Storage.dll`，可从
 ## 将实体添加到表如何：将实体添加到表
 
 实体将映射到使用派生自 **TableEntity** 的
-自定义类的 C\# 对象。若要将实体添加到表，请创建用于定义
+自定义类的 C# 对象。若要将实体添加到表，请创建用于定义
 实体的属性的类。以下代码定义了
 将客户的名字和姓氏分别用作行键和分区键的
 实体类。实体的分区键和行键共同唯一地标识

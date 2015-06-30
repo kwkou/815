@@ -93,4 +93,4 @@
 
 <!-- URLs. -->
 [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account
-[应用设置]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[应用设置]: https://msdn.microsoft.com/zh-CN/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

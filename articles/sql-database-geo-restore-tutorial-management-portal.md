@@ -22,12 +22,12 @@
 # 在 Azure 门户中使用地域还原恢复 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [地域还原 - PowerShell](/documentation/articles/sql-database-geo-restore-tutorial-powershell/)
-- [地域还原 - REST API](/documentation/articles/sql-database-geo-restore-tutorial-rest/)   
+- [地域还原 - PowerShell](/documentation/articles/sql-database-geo-restore-tutorial-powershell)
+- [地域还原 - REST API](/documentation/articles/sql-database-geo-restore-tutorial-rest)   
 
 ## 概述
 
-本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn/)中使用地域还原恢复 Azure SQL 数据库。地域还原是针对所有基本、标准和高级 Azure SQL Database 服务层提供的核心灾难恢复保护。
+本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn)中使用地域还原恢复 Azure SQL 数据库。地域还原是针对所有基本、标准和高级 Azure SQL Database 服务层提供的核心灾难恢复保护。
 
 ## 限制和安全性
 
@@ -71,14 +71,14 @@
 
 有关详细信息，请参阅以下主题： 
 
-[在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal/)
+[在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库](/documentation/articles/sql-database-point-in-time-restore-tutorial-management-portal)
 
-[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/)
+[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)
 
 [Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
 [Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)-->
+<!--[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)-->
 
 <!--HONumber=55-->

@@ -9,7 +9,7 @@
 
 # 共享访问签名，第 1 部分：了解 SAS 模型
 
-使用共享访问签名 (SAS) 是将对你存储帐户中 Blob、表和队列的受限访问权限授予其他客户端且不必公开帐户密钥的一种强大的方法。在有关共享访问签名的教程的第 1 部分中，我们将概要介绍 SAS 模型并复习 SAS 最佳实践。[本教程的第 2](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-2/) 部分将逐步引导你完成使用 Blob 服务创建共享访问签名的过程。
+使用共享访问签名 (SAS) 是将对你存储帐户中 Blob、表和队列的受限访问权限授予其他客户端且不必公开帐户密钥的一种强大的方法。在有关共享访问签名的教程的第 1 部分中，我们将概要介绍 SAS 模型并复习 SAS 最佳实践。[本教程的第 2](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-2) 部分将逐步引导你完成使用 Blob 服务创建共享访问签名的过程。
 
 ## 什么是共享访问签名？##
 
@@ -213,7 +213,7 @@ https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt?sv=2012-02
 
 ## 后续步骤 ##
 
-[共享访问签名，第 2 部分：创建 SAS 并将其用于 Blob 服务](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-2/)
+[共享访问签名，第 2 部分：创建 SAS 并将其用于 Blob 服务](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-2)
 
 [管理对 Azure 存储资源的访问](http://msdn.microsoft.com/zh-cn/library/azure/ee393343.aspx)
 

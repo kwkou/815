@@ -6,7 +6,7 @@
 
 # 灵活扩展安全配置  
 
-Microsoft Azure SQL Database 灵活扩展包括自托管服务。此分发包括服务配置文件，该文件包含必须配置的安全相关设置。
+Windows Azure SQL Database 灵活扩展包括自托管服务。此分发包括服务配置文件，该文件包含必须配置的安全相关设置。
 
 1. [配置证书][]
 2. [允许的 IP 地址][]
@@ -405,7 +405,7 @@ Microsoft Azure SQL Database 灵活扩展包括自托管服务。此分发包括
 
 ## <a name="upload-certificate"></a>上载证书
 
-在 [Azure 管理门户](http://manage.windowsazure.cn/)中
+在 [Azure 管理门户](http://manage.windowsazure.cn)中
 
 1. 选择"云服务"
 2. 选择云服务

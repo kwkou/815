@@ -239,7 +239,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Driver.dll** 和 **MongoDB.B
 
 ### 添加控制器
 
-在“解决方案资源管理器”中打开 *Controllers\\HomeController.cs* 文件，将现有代码替换为以下代码：
+在“解决方案资源管理器”中打开 *Controllers&#92;HomeController.cs* 文件，将现有代码替换为以下代码：
 
     using System;
     using System.Collections.Generic;
@@ -321,11 +321,11 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Driver.dll** 和 **MongoDB.B
 
 ### 设置站点样式
 
-若要更改页面顶部的标题，请在“解决方案资源管理器”中打开 \*Views\\Shared\\\_Layout.cshtml\* 文件，将导航条标头中的“Application name”替换为“My Task List Application”以便其类似如下所示：
+若要更改页面顶部的标题，请在“解决方案资源管理器”中打开 \*Views&#92;Shared&#92;\_Layout.cshtml\* 文件，将导航条标头中的“Application name”替换为“My Task List Application”以便其类似如下所示：
 
     @Html.ActionLink("My Task List Application", "Index", "Home", null, new { @class = "navbar-brand" })
 
-为了设置 Task List 菜单，请打开 *\\Views\\Home\\Index.cshtml* 文件并将现有代码替换为以下代码：
+为了设置 Task List 菜单，请打开 *&#92;Views&#92;Home&#92;Index.cshtml* 文件并将现有代码替换为以下代码：
 
     @model IEnumerable<MyTaskListApp.Models.MyTask>
 
@@ -361,7 +361,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Driver.dll** 和 **MongoDB.B
     </table>
     <div>  @Html.Partial("Create", new MyTaskListApp.Models.MyTask())</div>
 
-若要增加创建新任务的功能，右键单击 *Views\\Home\\* 文件夹并“添加”一个“视图”。将该视图命名为 *Create*。将此代码替换为以下代码：
+若要增加创建新任务的功能，右键单击 *Views&#92;Home&#92;* 文件夹并“添加”一个“视图”。将该视图命名为 *Create*。将此代码替换为以下代码：
 
     @model MyTaskListApp.Models.MyTask
 

@@ -5,7 +5,7 @@
 若要管理的虚拟机和在计算机运行的应用程序的设置，可以使用 SSH 客户端。为此，您必须在计算机上安装要用于访问虚拟机的 SSH 客户端。你可以选择很多 SSH 客户端程序。以下是可能的选项：
 
 - 如果使用的正在运行 Windows 操作系统的计算机，您可能希望使用 PuTTY 之类的 SSH 客户端。有关详细信息，请参阅[PuTTY 下载](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
-- 如果您使用的运行 Linux 操作系统的计算机，您可能希望使用 OpenSSH 等 SSH 客户端。有关详细信息，请参阅[OpenSSH](http://www.openssh.org/)。
+- 如果您使用的运行 Linux 操作系统的计算机，您可能希望使用 OpenSSH 等 SSH 客户端。有关详细信息，请参阅[OpenSSH](http://www.openssh.org)。
 
 此教程将向您演示如何使用 PuTTY 程序访问虚拟机。
 
@@ -30,7 +30,7 @@
 
 您的应用程序可能需要将数据存储。若要执行此操作，您可以将数据磁盘附加到之前创建的虚拟机。若要这样做的最简单方法是将空数据磁盘附加到计算机。
 
-在 Linux 上，通常由 Azure Linux 代理管理并且自动装载到资源磁盘**/mnt/资源**（或**/mnt** Ubuntu 映像上）。另一方面，在 Linux 上的数据磁盘可能名为 /dev/sdc，作为内核，并且用户将需要进行分区、 格式化和装入该资源。请参阅[Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide/) 有关详细信息。
+在 Linux 上，通常由 Azure Linux 代理管理并且自动装载到资源磁盘**/mnt/资源**（或**/mnt** Ubuntu 映像上）。另一方面，在 Linux 上的数据磁盘可能名为 /dev/sdc，作为内核，并且用户将需要进行分区、 格式化和装入该资源。请参阅[Azure Linux 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide) 有关详细信息。
 
 >[WACOM.NOTE] 不在资源磁盘上存储数据。此磁盘为应用程序和进程提供临时存储空间，用于存储不需要保存，如交换文件的数据。数据磁盘作为页 blob 中的.vhd 文件驻留 Azure 存储空间，并且提供存储冗余，从而保护您的数据。有关详细信息，请参阅[有关磁盘和映像在 Azure 中的](http://msdn.microsoft.com/zh-cn/library/jj672979.aspx)。
 

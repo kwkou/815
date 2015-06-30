@@ -20,9 +20,9 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 
 * [Maven](http://maven.apache.org/what-is-maven.html)
 
-* [Git](http://git-scm.com/)
+* [Git](http://git-scm.com)
 
-> [AZURE.NOTE] Java、JDK、Maven 和 Git 也可通过 [Chocolatey NuGet](http://chocolatey.org/) 软件开发包管理器获得。
+> [AZURE.NOTE] Java、JDK、Maven 和 Git 也可通过 [Chocolatey NuGet](http://chocolatey.org) 软件开发包管理器获得。
 
 ## 创建仪表板
 
@@ -1255,7 +1255,7 @@ Bolt 执行拓扑中的主处理操作。 此拓扑有三个 Bolt，但其中一
 
 ### 启用 HBaseBolt 并准备 HBase
 
-1.  打开 **Temperature.java** 文件并从以下行中删除注释 (//)：
+1.  打开 **Temperature.java** 文件并从以下行中删除注释 (/)：
 
 		//topologyBuilder.setBolt("HBase", new HBaseBolt("SensorData", mapper).withConfigKey("hbase.conf"), spoutConfig.getPartitionCount())
     	//  .fieldsGrouping("Parser", "hbasestream", new Fields("deviceid")).setNumTasks(spoutConfig.getPartitionCount());
@@ -1320,16 +1320,16 @@ Bolt 执行拓扑中的主处理操作。 此拓扑有三个 Bolt，但其中一
 
 现在，您已了解如何使用 Storm 从 Event Hub 中读取数据，将数据存储在 HBase 中，以及使用 SignalR 和 D3.js 将 Storm 中的信息显示在 的外部仪表板上。
 
-* 有关 Apache Storm 的更多信息，请参见 [https://storm.incubator.apache.org/](https://storm.incubator.apache.org/)
+* 有关 Apache Storm 的更多信息，请参见 [https://storm.incubator.apache.org/](https://storm.incubator.apache.org)
 
-* 有关将 HBase 与 HDInsight 配合使用的更多信息，请参见[将 HBase 与 HDInsight 配合使用概述](/zh-cn/documentation/articles/hdinsight-hbase-overview/)
+* 有关将 HBase 与 HDInsight 配合使用的更多信息，请参见[将 HBase 与 HDInsight 配合使用概述](/zh-cn/documentation/articles/hdinsight-hbase-overview)
 
-* 有关 SignalR 的更多信息，请参见 [ASP.NET SignalR](http://signalr.net/)
+* 有关 SignalR 的更多信息，请参见 [ASP.NET SignalR](http://signalr.net)
 
-* 有关 D3.js 的更多信息，请参见 [D3.js - 数据驱动的文档](http://d3js.org/)
+* 有关 D3.js 的更多信息，请参见 [D3.js - 数据驱动的文档](http://d3js.org)
 
 <!---
-* For information on creating topologies in .NET, see [Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight](/zh-cn/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/)
+* For information on creating topologies in .NET, see [Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight](/zh-cn/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application)
 --->
 
 [azure-portal]: https://manage.windowsazure.cn/

@@ -1,4 +1,4 @@
-<properties linkid="develop-python-web-site-with-django" urlDisplayName="Web Sites with Django" pageTitle="Python Web Sites with Django - Azure tutorial" metaKeywords="Azure django, django website" description="A tutorial that introduces you to running a Python web site on Azure." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Web Sites with Django" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-python-web-site-with-django" urlDisplayName="Web Sites with Django" pageTitle="Python Web Sites with Django - Azure tutorial" metaKeywords="Azure django, django website" description="A tutorial that introduces you to running a Python web site on Azure." metaCanonical="" services="web-sites" documentationCenter="Python" title="Creating Web Sites with Django" authors="" solutions="" manager="" editor="" />
 <tags ms.service="web-sites"
     ms.date="02/09/2015"
     wacn.date="04/11/2015"
@@ -12,7 +12,7 @@
 
 [WACOM.INCLUDE [create-account-and-websites-note][create-account-and-websites-note]]
 
-本教程使用 Python 2.7 和 Django 1.4。你可以自行获取这些软件，也可以通过使用 [][]<http://azure.microsoft.com/develop/python/></a> 上的 Windows Installer 链接来快速轻松地安装这些软件。
+本教程使用 Python 2.7 和 Django 1.4。你可以自行获取这些软件，也可以通过使用[这里](/develop/python/) 的 Windows Installer 链接来快速轻松地安装这些软件。
 
 **注意**：Azure 网站现在预安装了 Python 2.7 和 wfastcgi 处理程序。不过，未包括 Web 框架，例如 Django。如果愿意，你仍可以使用其他 Python 解释程序。你只需将它包括在 Git 存储库中，并将网站配置为使用该解释程序而非已安装的 Python 2.7 解释程序。
 
@@ -26,7 +26,7 @@
 
 创建你的应用程序的第一步是通过 Azure 管理门户创建网站。为此，你将需要登录到该门户，然后单击左下角的“新建”按钮。将出现一个窗口。单击“快速创建”，输入 URL，然后选择“创建网站”。
 
-![][]
+![][0]
 
 将快速设置网站。接下来，你要为通过 Git 进行发布提供相应支持。这一点可通过选择“从源代码管理设置部署”来完成。
 
@@ -71,7 +71,7 @@
 ![][6]
 
 **选项 2：**
-你还可以使用 Python Tools for Visual Studio 创建新网站。启动安装了 Python Tools for Visual Studio 的 Visual Studio，然后选择“文件”-\>“新建项目”。钻取到“其他语言”下的“Python”项目，然后选择“Django 应用程序”。输入“DjangoApplication”作为项目名称，并确保未选中“创建解决方案的目录”以获得与从命令行创建 Django 应用程序时完全相同的目录结构。此选项可以为你配备好 Visual Studio 解决方案和项目文件，从而为你提供优质的本地开发体验，包括模板调试和智能感知。
+你还可以使用 Python Tools for Visual Studio 创建新网站。启动安装了 Python Tools for Visual Studio 的 Visual Studio，然后选择“文件”-&gt;“新建项目”。钻取到“其他语言”下的“Python”项目，然后选择“Django 应用程序”。输入“DjangoApplication”作为项目名称，并确保未选中“创建解决方案的目录”以获得与从命令行创建 Django 应用程序时完全相同的目录结构。此选项可以为你配备好 Visual Studio 解决方案和项目文件，从而为你提供优质的本地开发体验，包括模板调试和智能感知。
 
 ![][7]
 
@@ -94,7 +94,7 @@
 
 现在你需要配置网站，以便让它了解你的 Django 项目并使用 wfastcgi 处理程序。为此，你可以单击屏幕顶部的“配置”选项卡，然后向下滚动到该页的下半部分，其中包含“应用程序设置”和“处理程序映射”部分。
 
-此处设置的所有设置将在实际请求时转变为环境变量。这意味着你可以使用它们来配置 DJANGO\_SETTINGS\_MODULE 环境变量以及 PYTHONPATH 和 WSGI\_HANDLER。如果你的应用程序具有其他配置值，则你可以在此处分配这些值，然后从环境中选取它们。有时，你将需要设置你的网站中文件的路径。例如，你要为 PYTHONPATH 执行此操作。在作为 Azure 网站运行时，你的网站将位于“D:\\home\\site\\wwwroot\\”，因此你可以在需要磁盘上文件的完整路径的任何位置使用它。
+此处设置的所有设置将在实际请求时转变为环境变量。这意味着你可以使用它们来配置 DJANGO\_SETTINGS\_MODULE 环境变量以及 PYTHONPATH 和 WSGI\_HANDLER。如果你的应用程序具有其他配置值，则你可以在此处分配这些值，然后从环境中选取它们。有时，你将需要设置你的网站中文件的路径。例如，你要为 PYTHONPATH 执行此操作。在作为 Azure 网站运行时，你的网站将位于“D:\home\site\wwwroot\”，因此你可以在需要磁盘上文件的完整路径的任何位置使用它。
 
 若要设置 Django 应用程序，需要创建三个环境变量。第一个是 DJANGO\_SETTINGS\_MODULE，它提供将用于配置的 Django 应用程序的模块名称。第二个是 PYTHONPATH 环境变量，它指定设置模块所在的包。第三个是 WSGI\_HANDLER。此变量是模块/包名称，后跟要使用的模块中的属性（例如，mypackage.mymodule.handler）。添加括号以指示应调用该属性。因此，对于这些变量，可将它们设置为：
 
@@ -122,20 +122,19 @@
 
 从这里，你可以通过使用已使用的工具继续开发 Django 应用程序。如果你使用 [Python Tools for Visual Studio][Python Tools for Visual Studio] 进行开发，则你将很可能需要安装 [VisualGit][VisualGit] 来获取 Visual Studio 中的源代码管理集成。
 
-你的应用程序可能具有除 Python 和 Django 以外的其他依赖项。如果你通过使用 [][]<http://azure.microsoft.com/develop/python/></a> 中的安装程序安装了 Python，表明你已安装 PIP，并可以使用它来快速添加新依赖项。例如，若要安装自然语言工具包及其所有依赖项，请键入：
+你的应用程序可能具有除 Python 和 Django 以外的其他依赖项。如果你通过使用[这里](/develop/python) 的安装程序安装了 Python，表明你已安装 PIP，并可以使用它来快速添加新依赖项。例如，若要安装自然语言工具包及其所有依赖项，请键入：
 
     pip install nltk
 
-然后，你需要通过从 C:\\Python27\\Lib\\site-packages 将文件复制到你的本地 site-packages 目录来更新 site-packages 目录。
+然后，你需要通过从 C:\Python27\Lib\site-packages 将文件复制到你的本地 site-packages 目录来更新 site-packages 目录。
 
 复制文件后，运行命令 **git status** 来查看新添加的文件，再依次运行 **git add** 和 **git commit** 向存储库提交更改。最后，你可以执行 **git push**，将更新的网站部署到 Azure。
 
 现在你可以像通常一样转到 DjangoApplication 目录并使用 manage.py 来开始将新应用程序添加到 Django 项目中。
 
   [create-account-and-websites-note]: ../includes/create-account-and-websites-note.md
-  []: http://azure.microsoft.com/develop/python/
   [msysgit]: http://code.google.com/p/msysgit/
-  []: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png
+  [0]: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png
   [1]: ./media/web-sites-python-create-deploy-django-app/django-ws-004.png
   [2]: ./media/web-sites-python-create-deploy-django-app/django-ws-005.png
   [3]: ./media/web-sites-python-create-deploy-django-app/django-ws-006.png

@@ -9,7 +9,7 @@
 
 [WACOM.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-本主题演示如何使用 Azure 移动服务并通过 Apple 推送通知服务 (APNS) 向 iOS 应用程序发送推送通知。在本教程中，你将要使用 Azure 通知中心为[快速入门项目](/zh-cn/documentation/articles/mobile-services-ios-get-started/)启用推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
+本主题演示如何使用 Azure 移动服务并通过 Apple 推送通知服务 (APNS) 向 iOS 应用程序发送推送通知。在本教程中，你将要使用 Azure 通知中心为[快速入门项目](/zh-cn/documentation/articles/mobile-services-ios-get-started)启用推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
 本教程将指导你完成启用推送通知的以下基本步骤：
 

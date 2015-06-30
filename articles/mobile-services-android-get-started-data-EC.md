@@ -23,7 +23,7 @@
 4. [更新应用程序以使用移动服务]
 5. [针对移动服务测试应用程序]
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。 
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。 
 
 本教程需要安装[移动服务 Android SDK]；<a href="http://developer.android.com/sdk/" target="_blank">Android SDK</a>，其中包含 Eclipse 集成开发环境 (IDE) 和 Android 开发人员工具 (ADT) 插件；以及 Android 4.2 或更高版本。 
 

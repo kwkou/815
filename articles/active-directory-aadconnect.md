@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Azure Active Directory Connect" description="Azure Active Directory Connect 向导是用于将本地 Windows Server Active Directory 与 Azure Active Directory 进行连接的单一工具，它提供了引导式体验。" services="active-directory" documentationCenter="" authors="Gayana" manager="terrylan" editor="" />
+<properties pageTitle="Azure Active Directory Connect" description="Azure Active Directory Connect 向导是用于将本地 Windows Server Active Directory 与 Azure Active Directory 进行连接的单一工具，它提供了引导式体验。" services="active-directory" documentationCenter="" authors="Gayana" manager="terrylan" editor="" />
 
 <tags ms.service="active-directory" ms.date="02/27/2015" wacn.date="04/11/2015"/>
 
@@ -26,6 +26,6 @@ Azure Active Directory Connect 向导是用于将本地目录与 Azure Active Di
 - 配置其他同步选项，例如 Exchange 混合模式、密码写回和备用 ID 属性
 
 ## 其他资源
-[Azure Active Directory 文档](/documentation/services/identity/)
+[Azure Active Directory 文档](/documentation/services/identity)
 
 <!--HONumber=51-->

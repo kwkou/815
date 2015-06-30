@@ -1,4 +1,4 @@
-<properties linkid="manage-services-mediaservices-manage-media-services-content" urlDisplayName="How to manage media content" pageTitle="How to manage media content - Azure Media Services" metaKeywords="" description="Learn how to manage your media content in Azure Media Services." metaCanonical="" services="media-services" documentationCenter="" title="How to Manage Content in Media Services" authors="migree" solutions="" manager="" editor="" />
+﻿<properties linkid="manage-services-mediaservices-manage-media-services-content" urlDisplayName="How to manage media content" pageTitle="How to manage media content - Azure Media Services" metaKeywords="" description="Learn how to manage your media content in Azure Media Services." metaCanonical="" services="media-services" documentationCenter="" title="How to Manage Content in Media Services" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/24/2015"
     wacn.date="04/11/2015"
@@ -47,9 +47,9 @@
 
     **常用预置**
 
-    -   在 PC/Mac 上(通过 Flash/Silverlight)播放\*\*。此预设将生成具有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种位速率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
-    -   通过 HTML5 (IE/Chrome/Safari)播放\*\*。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
-    -   在 iOS 设备和 PC/Mac 上播放\*\*。此预设将生成具有与平滑流式处理资产相同特征的资产（如上所述），但该资产采用的是可用于将 Apple HLS 流传递到 iOS 设备的格式。
+    -   在 PC/Mac 上(通过 Flash/Silverlight)播放。此预设将生成具有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种位速率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
+    -   通过 HTML5 (IE/Chrome/Safari)播放。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
+    -   在 iOS 设备和 PC/Mac 上播放。此预设将生成具有与平滑流式处理资产相同特征的资产（如上所述），但该资产采用的是可用于将 Apple HLS 流传递到 iOS 设备的格式。
 
     **高级预置**
 
@@ -57,15 +57,15 @@
 
     ![EncoderDialog](./media/media-services-manage-content/EncoderDialog2.png)
 
-    当前，该门户不支持媒体编码器所支持的所有编码格式，也不支持媒体资产加密\\解密。你可以以编程方式执行这些任务。有关详细信息，请参阅[使用 Media Services SDK for .NET 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973613.aspx)和 [Azure Media Encoder 的任务预设字符串](https://msdn.microsoft.com/zh-CN/library/jj129582.aspx)。
+    当前，该门户不支持媒体编码器所支持的所有编码格式，也不支持媒体资产加密&#92;解密。你可以以编程方式执行这些任务。有关详细信息，请参阅[使用 Media Services SDK for .NET 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973613.aspx)和 [Azure Media Encoder 的任务预设字符串](https://msdn.microsoft.com/zh-CN/library/jj129582.aspx)。
 
 5.  在“Azure 媒体编码器”对话框中，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
 
 在完成编码后，你的视图应类似于以下屏幕截图。
 
-	![PortalViewUploadCompleted][portaloverview]
+![PortalViewUploadCompleted](./media/media-services-manage-content/media-services-encrypt-content)
 
-如果在完成编码后未更新文件大小值，请按“同步元数据”****按钮。这会将输出资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
+如果在完成编码后未更新文件大小值，请按“同步元数据”按钮。这会将输出资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
 
 如何：发布内容
 --------------

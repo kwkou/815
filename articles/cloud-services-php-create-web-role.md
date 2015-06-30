@@ -1,4 +1,4 @@
-<properties linkid="develop-php-common-tasks-create-web-and-worker-roles" urlDisplayName="Create Web and Worker Roles" pageTitle="创建 Web 角色和辅助角色" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="PHP" title="How to create PHP web and worker roles" authors="bswan" solutions="" manager="paulettm" editor="mollybos" />
+﻿<properties linkid="develop-php-common-tasks-create-web-and-worker-roles" urlDisplayName="Create Web and Worker Roles" pageTitle="创建 Web 角色和辅助角色" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="PHP" title="How to create PHP web and worker roles" authors="bswan" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service=""
     ms.date="02/05/2015"
     wacn.date="04/11/2015"
@@ -34,7 +34,7 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 
 若要创建新的 Azure 服务项目，请执行以下命令：
 
-	PS C:\>New-AzureServiceProject myProject
+	PS C:&gt;New-AzureServiceProject myProject
 
 此命令将创建可将 Web 角色和辅助角色添加到的新目录（"myProject"）。
 

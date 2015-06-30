@@ -124,7 +124,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放点播流保留单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放点播流保留单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，Media Services 将会根据客户端的要求创建并提供适当的响应。 
 

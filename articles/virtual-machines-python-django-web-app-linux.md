@@ -43,7 +43,7 @@ Azure 中使用 Linux 虚拟机。本教程假定您之前未使用过 Azure。�
 
 ## <a id="setup"> </a>设置开发环境
 
-**注意：**如果您需要安装 Python 或希望使用客户端库，请参阅[Python 安装指南](../python-how-to-install/).
+**注意：**如果您需要安装 Python 或希望使用客户端库，请参阅[Python 安装指南](../python-how-to-install).
 
 Ubuntu Linux 虚拟机已经都附带了 Python 2.7 预安装，但它没有安装 Apache 或 django。按照以下步骤可连接到你的 VM 并安装 Apache 和 Django。
 

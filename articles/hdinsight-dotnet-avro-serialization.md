@@ -1,4 +1,4 @@
-<properties linkid="hdinsight-dotnet-avro-serialization" urlDisplayName="HDInsight Microsoft Avro Library Serialization" pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Avro to serialize big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialize data with Microsoft Avro Library " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
+﻿<properties linkid="hdinsight-dotnet-avro-serialization" urlDisplayName="HDInsight Microsoft Avro Library Serialization" pageTitle="使用 Microsoft Avro Library 序列化数据 | Azure" metaKeywords="" description="Learn how Azure HDInsight uses Avro to serialize big data." metaCanonical="" services="hdinsight" documentationCenter="" title="Serialize data with Microsoft Avro Library " authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="11/10/2014"
     wacn.date="04/11/2015"
@@ -12,7 +12,7 @@
 
 ### Apache Avro
 
-Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C\#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
+Microsoft Avro Library 针对 Microsoft.NET 环境实现了 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 [JSON][] 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。有关格式的详细信息可以在 [Apache Avro 规范][]中找到。请注意，Microsoft Avro Library 的当前版本不支持此规范的远程过程调用 (RPC) 部分。
 
 Avro 系统中的对象的序列化表示形式由两部分组成：架构和实际值。Avro 架构使用 JSON 描述已序列化数据的与语言无关的数据模型。它与数据的二进制表示形式并排显示。将架构与二进制表示形式分离，使写入每个对象时没有针对值的开销，从而实现快速序列化和较小的表示形式。
 
@@ -40,11 +40,11 @@ Microsoft Avro Library 支持通过两种方式序列化对象：
 
 Microsoft .NET Library for Avro 以 NuGet 包的形式分发，可以使用以下过程从 Visual Studio 安装：
 
--   选择“项目” 选项卡 -\>“管理 NuGet 包...” 
+-   选择“项目” 选项卡 -&gt;“管理 NuGet 包...” 
 -   在“联机搜索” 框中，搜索“Microsoft.Hadoop.Avro”。
 -   单击 **Microsoft .NET Library for Avro** 旁边的“安装” 按钮。
 
-请注意，Newtonsoft.Json.dll (\>= .5.0.5) 依赖项也将随 Microsoft Avro Library 一起自动下载。
+请注意，Newtonsoft.Json.dll (&gt;= .5.0.5) 依赖项也将随 Microsoft Avro Library 一起自动下载。
 
 ## 示例指南
 
@@ -68,7 +68,7 @@ Microsoft Avro Library 设计为可处理任何流。在这些示例中，为保
 
 ## <a id="Scenario1"></a>通过反射进行序列化
 
-Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer**][] 以标识要序列化的字段。
+Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据协定特性自动生成类型的 JSON 架构。Microsoft Avro Library 将创建一个 [**IAvroSeralizer**][] 以标识要序列化的字段。
 
 在此示例中，将对象（具有成员 **Location** 结构的 **SensorData** 类）序列化到内存流，继而又将此流反序列化。然后，将结果与初始实例进行比较，以确认恢复的 **SensorData** 对象与原始对象相同。
 
@@ -192,7 +192,7 @@ Microsoft Avro Library 可以使用反射从要序列化的 C\# 对象的数据�
 
 ## <a id="Scenario2"></a>通过通用记录进行序列化
 
-当数据无法使用具有数据协定的 .NET 类表示而导致不能使用反射时，可以在通用记录中显式指定 JSON 架构。此方法通常比使用反射和用于特定 C\# 类的序列化程序速度慢。在这种情况下，数据架构也可能是动态的，因为在编译之前它是未知的。以逗号分隔值 (CSV) 文件表示的数据（在运行时转换为 Avro 格式之前，其架构一直是未知的）是这种动态方案的一个示例。
+当数据无法使用具有数据协定的 .NET 类表示而导致不能使用反射时，可以在通用记录中显式指定 JSON 架构。此方法通常比使用反射和用于特定 C# 类的序列化程序速度慢。在这种情况下，数据架构也可能是动态的，因为在编译之前它是未知的。以逗号分隔值 (CSV) 文件表示的数据（在运行时转换为 Avro 格式之前，其架构一直是未知的）是这种动态方案的一个示例。
 
 此示例演示如何创建 [**AvroRecord**][2] 并使用它显式指定 JSON 架构，如何为其填充数据，然后对其进行序列化和反序列化。然后，将结果与初始实例进行比较，以确认恢复的记录与原始记录相同。
 
