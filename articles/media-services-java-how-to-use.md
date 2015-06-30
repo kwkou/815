@@ -45,12 +45,12 @@ Azure Media Services 构成了一个可扩展的媒体平台，它在 Azure 中�
 Media Services 支持下表中所述的多种常见媒体开发方案。
 
 <table data-morhtml="true" border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
-  <thead data-morhtml="true">
+  <th data-morhtml="true">
     <tr data-morhtml="true">
 <th data-morhtml="true">方案</th>
 <th data-morhtml="true">说明</th>
     </tr>
-  </thead>
+  </th>
   <tbody data-morhtml="true">
     <tr data-morhtml="true">
 <td data-morhtml="true">生成端到端工作流</td>
