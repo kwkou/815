@@ -1,4 +1,4 @@
-<properties linkid="dev-net-common-tasks-continuous-delivery" urlDisplayName="Continuous Delivery" pageTitle="在 Azure 中使用 TFS 持续交付云服务" metaKeywords="Azure continuous delivery, continuous delivery sample code, continuous deliver PowerShell" description="了解如何设置 Azure 云应用程序的持续交付。MSBuild 命令行语句和 PowerShell 脚本的代码示例。" metaCanonical="" services="" documentationCenter="" title="Continuous Delivery for Cloud Services in Azure" authors="ghogen" solutions="" manager="" editor="" />
+﻿<properties linkid="dev-net-common-tasks-continuous-delivery" urlDisplayName="Continuous Delivery" pageTitle="在 Azure 中使用 TFS 持续交付云服务" metaKeywords="Azure continuous delivery, continuous delivery sample code, continuous deliver PowerShell" description="了解如何设置 Azure 云应用程序的持续交付。MSBuild 命令行语句和 PowerShell 脚本的代码示例。" metaCanonical="" services="" documentationCenter="" title="Continuous Delivery for Cloud Services in Azure" authors="ghogen" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="02/18/2015"
     wacn.date="04/11/2015"
@@ -163,7 +163,7 @@
 
     使用以下 cmdlet 脚本将远程桌面证书作为一次性安装步骤上载：
 
-        Add-AzureCertificate -serviceName <CLOUDSERVICENAME> -certToDeploy (get-item cert:\CurrentUser\MY\<THUMBPRINT>)
+        Add-AzureCertificate -serviceName <CLOUDSERVICENAME> -certToDeploy (get-item cert:\CurrentUser\MY&lt;THUMBPRINT>)
 
     例如：
 
@@ -172,7 +172,7 @@
     或者，可以导出带私钥的证书文件 PFX，并使用Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解更多信息：
     [http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][].
 
-    **升级部署与删除部署 -\> 新建部署**
+    **升级部署与删除部署 -&gt; 新建部署**
 
     默认情况下，此脚本将在未传入参数或显式传递值 1 时执行升级部署 ($enableDeploymentUpgrade = 1)。对于单一实例，此部署相对于完整部署的好处是，花费的时间更少。对于需要高可用性的实例，此部署的好处是，在升级一些实例的同时使其他实例保持运行（检查更新域）且不会删除你的 VIP。
 
