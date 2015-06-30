@@ -1,4 +1,4 @@
-# 从源控件发布到 Azure 网站
+﻿# 从源控件发布到 Azure 网站
 
 Azure 网站支持从源代码控件和存储库工具（例如，BitBucket、CodePlex、Dropbox、Git、GitHub、Mercurial 和 TFS）进行连续部署。可以使用这些工具维护您网站的内容和代码，然后在需要时快速轻松地将更改推送到您的站点。
 
@@ -142,41 +142,6 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 
 	![A webpage containing 'Yay!'][yay]
 
-<h3><a id="Step7"></a>从存储库网站（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）部署文件</h3>
-
-通过使用"本地 Git"将本地文件推送到 Azure，可以手动将更新从本地项目推送到您的 Azure 网站，而从 BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial 进行部署会生成一个连续部署过程，在此过程中，Azure 会从项目中拉入最新的更新。
-
-这两种方法都会将项目部署到 Azure 网站，如果您有多个人员在处理同一个项目并希望确保始终发布最新版本（不管是谁执行了最新更新），则连续部署会很有用。此外，如果您将上述工具之一用作应用程序的中央存储库，则连续部署也很有用。
-
-从 GitHub、CodePlex 或 BitBucket 部署文件需要您已将本地项目发布到这些服务之一。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]、[使用 Git 和 CodePlex]、[创建存储库 (BitBucket)]、[使用 Dropbox 共享 Git 存储库]或[快速入门- Mercurial]。
-
-1. 首先，将您的网站文件放到将用于连续部署的选定存储库中。
-
-2. 在网站的 Azure 门户中，转到"仪表板"选项卡。在"速览"部分中，选择"从源控件设置部署"。这将显示"设置部署"对话框，该对话框会询问"您的源代码在哪里?"。 
-
-2. 选择要用于连续部署的源控件方法。
-	
-3. 在系统提示时，为选定服务输入凭据。
-
-4. 在授权 Azure 访问您的帐户后，系统将提示您提供存储库列表。 
-
-	![git-ChooseARepositoryToDeploy][git-ChooseARepositoryToDeploy]
-  
-5. 选择要与 Azure 网站关联的存储库。单击复选标记以继续。
-
-	> [WACOM.NOTE] 在使用 GitHub 或 BitBucket 启用连续部署时，将显示公用项目和专用项目。
-
-6. Azure 创建与所选存储库的关联，并从 master 分支拉入文件。在此过程完成后，"部署"页面上的"部署历史记录"将显示与下面类似的"活动部署"消息：
-
-	![git-githubdeployed][git-githubdeployed]
-
-7. 此时，已将您的项目从所选存储库部署到 Azure 网站。若要验证该站点是否处于活动状态，请单击门户底部的"浏览"链接。浏览器应导航到该网站。
-
-8. 若要验证连续部署是否正在进行，请更改您的项目，然后将所做的更新推送到已与此网站关联的存储库。推送到存储库完成后，您的网站应很快更新以反映更改。可以在网站的"部署"页面上验证是否已拉入更新。
-
-	![git-GitHubDeployed-Updated][git-GitHubDeployed-Updated]
-
-
 <h4>连续部署的工作方式</h4>
 连续部署通过提供在网站的"配置"选项卡的"部署"部分中找到的"部署触发器 URL"来工作。
 
@@ -194,13 +159,6 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 
 	Azure 应立即开始基于对新分支所做的更改进行更新。
 
-<h4>禁用连续部署</h4>
-
-可从 Azure"仪表板"禁用连续部署。在"速览"部分下，选择用于断开与所使用存储库的连接的选项：
-
-![git-DisconnectFromGitHub][git-DisconnectFromGitHub]	
-
-在显示确认消息时回答"是"后，若要从其他源设置发布，您可以返回到"速览"并单击"从源控件设置部署"。
 
 <h2><a id="Step8"></a>故障排除</h2>
 
