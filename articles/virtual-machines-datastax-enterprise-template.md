@@ -22,9 +22,9 @@ DataStax 是知名的行业领导者，该公司根据 Apache Cassandra™ 开�
 
 在深入了解与 Azure 资源管理器和将针对此次部署使用的模板的详细信息之前，请确定你已正确配置 Azure PowerShell 或 Azure CLI。
 
-<!--[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell)]
 
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm)]-->
+[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm)]
 
 ## 使用资源管理器模板创建基于 Datastax Enterprise 的 Cassandra 群集
 
