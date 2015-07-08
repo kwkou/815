@@ -111,7 +111,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
 ###使用 Visual Studio 服务器资源管理器管理服务命名空间：
 
-若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中 **Microsoft Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击"属性"，此时就会看到在 Visual Studio 的"属性"窗格中显示与该命名空间关联的连接字符串和其他元数据。 
+若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中 **Windows Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击"属性"，此时就会看到在 Visual Studio 的"属性"窗格中显示与该命名空间关联的连接字符串和其他元数据。 
 
 ![][44]
 
@@ -146,7 +146,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 7.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
 8.  在 NuGet 对话框的左栏中，单击"联机"。
 
-9. 	在右栏中，单击"搜索"框，键入"MicrosoftAzure"，并选择"Microsoft Azure Service Bus"项。单击"安装"以完成安装，然后关闭此对话框。
+9. 	在右栏中，单击"搜索"框，键入"MicrosoftAzure"，并选择"Windows Azure Service Bus"项。单击"安装"以完成安装，然后关闭此对话框。
 
     ![][13]
 
@@ -282,7 +282,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 在本部分中，你将生成一个简单的 MVC 4 应用程序，以便显示你的产品服务中检索到的数据。
 创建项目
 
-1.  确保使用管理员权限运行 Microsoft Visual Studio 2013。否则，请右键单击"Microsoft Visual Studio 2013"（或"Microsoft Visual Studio Express"），然后单击"以管理员身份运行"，以便使用管理员权限启动 Visual Studio。Microsoft Azure 计算模拟器（本指南后面会讨论）要求使用管理员权限启动 Visual Studio。
+1.  确保使用管理员权限运行 Microsoft Visual Studio 2013。否则，请右键单击"Microsoft Visual Studio 2013"（或"Microsoft Visual Studio Express"），然后单击"以管理员身份运行"，以便使用管理员权限启动 Visual Studio。Windows Azure 计算模拟器（本指南后面会讨论）要求使用管理员权限启动 Visual Studio。
 
 2.  在 Visual Studio 的"文件"菜单中，单击"新建"，然后单击"项目"。
 
@@ -422,7 +422,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
 
     2.  采用与"创建本地服务器"部分类似的步骤，将 NuGet 包添加到项目"引用"中。在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包"。
 
-    3.  搜索"MicrosoftAzure.ServiceBus"，然后选择"Microsoft Azure Service Bus"项。然后，完成安装过程并关闭此对话框。
+    3.  搜索"MicrosoftAzure.ServiceBus"，然后选择"Windows Azure Service Bus"项。然后，完成安装过程并关闭此对话框。
 
     4.  在"解决方案资源管理器"中，右键单击"ProductsPortal"项目，单击"添加"，然后单击"现有项"。
 
@@ -508,7 +508,7 @@ Service Bus 中继功能将为混合解决方案带来哪些帮助
     3.  使用 Microsoft 帐户登录。
 
 
-    8.  单击"下一步"。如果你的订阅尚未包含任何托管服务，则系统将要求你创建一个托管服务。托管服务在 Microsoft Azure 订阅中充当应用程序的容器。输入标识应用程序的名称，然后选择应为其优化应用程序的区域。（用户从此区域访问应用程序所花的加载时间会更少。）
+    8.  单击"下一步"。如果你的订阅尚未包含任何托管服务，则系统将要求你创建一个托管服务。托管服务在 Windows Azure 订阅中充当应用程序的容器。输入标识应用程序的名称，然后选择应为其优化应用程序的区域。（用户从此区域访问应用程序所花的加载时间会更少。）
 
         ![][32]
 

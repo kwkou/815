@@ -92,7 +92,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 
 	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" -RunOn "MyHybridGroup"
 
->[AZURE.NOTE]在 0.9.1 版的 Microsoft Azure PowerShell中，**RunOn** 参数已添加到 **Start-AzureAutomationRunbook** cmdlet。如果你安装的是旧版，则应[下载最新版本](/downloads)。你只需在要在其中通过 Windows PowerShell 启动 Runbook 的工作站上安装此版本。你不需要在辅助角色计算机上安装它，除非你要从该计算机启动 Runbook。你目前还不能通过其他 Runbook 在混合 Runbook 辅助角色上启动 Runbook，因为这需要在你的自动化帐户中安装最新版本的 Azure Powershell。最新版本将在 Azure 自动化中自动更新，并会快速地自动向下推送到辅助角色。
+>[AZURE.NOTE]在 0.9.1 版的 Windows Azure PowerShell中，**RunOn** 参数已添加到 **Start-AzureAutomationRunbook** cmdlet。如果你安装的是旧版，则应[下载最新版本](/downloads)。你只需在要在其中通过 Windows PowerShell 启动 Runbook 的工作站上安装此版本。你不需要在辅助角色计算机上安装它，除非你要从该计算机启动 Runbook。你目前还不能通过其他 Runbook 在混合 Runbook 辅助角色上启动 Runbook，因为这需要在你的自动化帐户中安装最新版本的 Azure Powershell。最新版本将在 Azure 自动化中自动更新，并会快速地自动向下推送到辅助角色。
 
 
 ## 为混合 Runbook 辅助角色创建 Runbook

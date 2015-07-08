@@ -1,10 +1,10 @@
-<properties pageTitle="Azure SQL Database 弹性数据库池（预览版）" description="弹性数据库池是由一组弹性数据库共享的可用资源的集合。" services="sql-database" documentationCenter="" authors="stevestein" manager="jeffreyg" editor=""/>
+<properties pageTitle="Azure SQL 数据库 弹性数据库池（预览版）" description="弹性数据库池是由一组弹性数据库共享的可用资源的集合。" services="sql-database" documentationCenter="" authors="stevestein" manager="jeffreyg" editor=""/>
 
 <tags ms.service="sql-database" ms.date="05/11/2015" wacn.date="05/29/2015"/>
 
 
 
-# SQL Database 弹性池（预览版）
+# SQL 数据库 弹性池（预览版）
 
 如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。 
 
@@ -21,7 +21,7 @@ Microsoft 创建弹性池就是专门帮你解决这个问题。
 你可以在几分钟内使用 Windows Azure 门户或 PowerShell 创建弹性池。有关详细信息，请参阅[创建和管理弹性池](sql-database-elastic-pool-portal)。有关弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库参考](sql-database-elastic-pool-reference)。
 
 
-> [AZURE.NOTE] 弹性池目前为预览版，仅适用于 SQL Database V12 Servers。
+> [AZURE.NOTE] 弹性池目前为预览版，仅适用于 SQL 数据库 V12 Servers。
 
 ## 使用弹性工具轻松管理大量数据库
 

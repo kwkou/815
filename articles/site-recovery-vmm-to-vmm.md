@@ -27,7 +27,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 确保已满足以下先决条件：
 ### Azure 先决条件
 
-- 你将需要一个 [Microsoft Azure](http://www.windowsazure.cn) 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
+- 你将需要一个 [Windows Azure](http://www.windowsazure.cn) 帐户。如果没有，请使用 [1rmb 试用版](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
 - 若要了解信息和数据是如何使用的，请阅读 [Azure 隐私声明](/support/legal/privacy-statement)和本主题底部的其他 <a href="#privacy">Site Recovery 隐私信息</a>。
 
 ### VMM 先决条件
@@ -102,7 +102,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 ## 步骤 3：安装 Azure Site Recovery 提供程序	
 
-1. 在"快速启动"页面上<b></b>，在"准备 VMM 服务器"中，单击"下载用于在 VMM 服务器上安装的 Microsoft Azure Site Recovery 提供程序"<b></b>来获取最新版本的提供程序安装文件。
+1. 在"快速启动"页面上<b></b>，在"准备 VMM 服务器"中，单击"下载用于在 VMM 服务器上安装的 Windows Azure Site Recovery 提供程序"<b></b>来获取最新版本的提供程序安装文件。
 
 2. 在源和目标 VMM 服务器上运行此文件。如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果你是在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
 
@@ -298,7 +298,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 <a name="privacy"></a><h2>Site Recovery 的隐私信息</h2>
 
-本部分提供了 Microsoft Azure Site Recovery 服务（"服务"）的更多隐私信息。若要查看 Microsoft Azure 服务的隐私声明，请参阅 
+本部分提供了 Windows Azure Site Recovery 服务（"服务"）的更多隐私信息。若要查看 Windows Azure 服务的隐私声明，请参阅 
 [Azure 隐私声明](/support/legal/privacy-statement)
 
 **功能：注册**

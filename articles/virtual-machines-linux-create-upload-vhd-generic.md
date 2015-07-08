@@ -7,7 +7,7 @@
 **重要提示**：仅当使用某个[认可的发行版](virtual-machines-linux-endorsed-distributions)时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。在 Azure 平台映像库中提供的所有 Linux 发行版都是具有所需配置的认可的发行版。
 
 - [Azure 上的 Linux - 认可的发行版](virtual-machines-linux-endorsed-distributions)
-- [Microsoft Azure 中对 Linux 映像的支持](http://support2.microsoft.com/kb/2941892)
+- [Windows Azure 中对 Linux 映像的支持](http://support2.microsoft.com/kb/2941892)
 
 所有正在 Azure 上运行的发行版都需要满足多个先决条件才能在平台上正常运行。本文并未涵盖所有信息，因为每个发行版都是不同的；即使你满足以下所有条件，你也可能仍需显著调整你的 Linux 系统以确保其在平台上正常运行。
 

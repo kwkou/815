@@ -1,4 +1,4 @@
-<properties title="Splitting and Merging with Elastic Scale" pageTitle="使用弹性缩放拆分和合并" description="介绍如何使用弹性缩放 API 通过自托管服务来操作分片和移动数据。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Splitting and Merging with Elastic Scale" pageTitle="使用弹性缩放拆分和合并" description="介绍如何使用弹性缩放 API 通过自托管服务来操作分片和移动数据。" metaKeywords="sharding scaling, Azure SQL 数据库 sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -7,7 +7,7 @@
 
 # 使用弹性缩放拆分和合并
 
-当在 Azure SQL Database 上构建的应用程序的数据或处理需求不再符合 Azure SQL Database 中的单个扩展单元时，它们将面临许多挑战。例如，病毒式传播的应用程序，或其中某个特定租户集的增长超过单个 Azure SQL DB 限制的应用程序。弹性缩放"拆分/合并服务"将显著缓解此问题。 
+当在 Azure SQL 数据库 上构建的应用程序的数据或处理需求不再符合 Azure SQL 数据库 中的单个扩展单元时，它们将面临许多挑战。例如，病毒式传播的应用程序，或其中某个特定租户集的增长超过单个 Azure SQL DB 限制的应用程序。弹性缩放"拆分/合并服务"将显著缓解此问题。 
 
 对拆分/合并服务的这一讨论将通过更改 Azure DB Database 的数量并平衡 **shardlet** 在其中的分布来管理向内扩展和向外扩展。有关术语定义，请参阅[弹性缩放术语库](/documentation/articles/sql-database-elastic-scale-glossary))。 
 
@@ -35,7 +35,7 @@
 
 ## 概念和主要功能
 
-**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Microsoft Azure 订阅中部署并托管该服务。你从 NuGet 下载的程序包将包含一个要使用你的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在你的 Azure 订阅中运行，因此你可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、DoS 防护和 IP 限制。你可以在以下[弹性缩放安全注意事项](/documentation/articles/sql-database-elastic-scale-configure-security)文档中找到有关安全设置的详细信息。
+**客户托管服务**：拆分/合并将作为客户托管服务交付。你必须在 Windows Azure 订阅中部署并托管该服务。你从 NuGet 下载的程序包将包含一个要使用你的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)。由于服务在你的 Azure 订阅中运行，因此你可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、DoS 防护和 IP 限制。你可以在以下[弹性缩放安全注意事项](/documentation/articles/sql-database-elastic-scale-configure-security)文档中找到有关安全设置的详细信息。
 
 默认部署的服务可与一个辅助角色和一个 Web 角色同时运行。在 Azure 云服务中，每个角色都使用 A1 VM 大小。虽然你无法在部署程序包时修改这些设置，但是你可以在运行的云服务中成功进行部署之后更改它们（通过 Azure 门户）。请注意，出于技术方面的原因，不得为多个实例配置辅助角色。 
 
@@ -87,7 +87,7 @@
 
 -    操作类型：操作类型是一个单选按钮，用于控制针对此请求由服务执行的操作类型。你可以在"概念和主要功能"中讨论的拆分、合并和移动方案之间进行选择。此外，你还可以取消以前提交的操作。
 
--    分片映射：请求参数的下一部分包含有关分片映射和托管分片映射的数据库的信息。具体而言，你需要提供托管分片映射的 Azure SQL Database 服务器和数据库的名称、用于连接到分片映射数据库的凭据以及分片映射的名称。当前，该操作仅接受一个凭据集。这些凭据需要具有足够的权限，才能对分片映射和分片上的用户数据执行更改。
+-    分片映射：请求参数的下一部分包含有关分片映射和托管分片映射的数据库的信息。具体而言，你需要提供托管分片映射的 Azure SQL 数据库 服务器和数据库的名称、用于连接到分片映射数据库的凭据以及分片映射的名称。当前，该操作仅接受一个凭据集。这些凭据需要具有足够的权限，才能对分片映射和分片上的用户数据执行更改。
 
 -    源范围（拆分/合并）：对于拆分和合并操作，请求需要在源分片上具有源范围的低键和高键。当前，由于这些键出现在你的分片映射的映射中，因此你需要准确指定这些键。可以使用 GetMappings.ps1 PowerShell 脚本检索给定分片映射中的当前映射。
 
@@ -121,7 +121,7 @@
 
 ## 计费 
 
-由于拆分/合并服务在你的 Microsoft Azure 订阅中作为云服务运行，因此适用于云服务的常规收费也适用于你的拆分/合并实例。除非你频繁地执行拆分/合并/移动操作，否则建议删除你的拆分/合并云服务。这有助于节省用于运行中的或已部署的云服务实例的成本。只要你需要执行拆分/合并操作，你就可以重新部署和启用已准备好的可运行配置。 
+由于拆分/合并服务在你的 Windows Azure 订阅中作为云服务运行，因此适用于云服务的常规收费也适用于你的拆分/合并实例。除非你频繁地执行拆分/合并/移动操作，否则建议删除你的拆分/合并云服务。这有助于节省用于运行中的或已部署的云服务实例的成本。只要你需要执行拆分/合并操作，你就可以重新部署和启用已准备好的可运行配置。 
   
 ## 监视 
 ### 状态表 
@@ -157,7 +157,7 @@
 
 ## 性能
 
-拆分、合并和移动操作的性能取决于多种因素。通常，Azure SQL Database 中更高、更可执行的服务层应具有更好的性能。为更高服务层分配更高的 IO、CPU 和内存有利于拆分/合并服务在内部使用的批量复制和删除操作。因此，在定义明确的有限时间段内仅为某个给定的数据库集增加服务层，以快速完成为在这些数据库上托管的范围所计划的拆分/合并服务操作，这种做法可能是强制性的。
+拆分、合并和移动操作的性能取决于多种因素。通常，Azure SQL 数据库 中更高、更可执行的服务层应具有更好的性能。为更高服务层分配更高的 IO、CPU 和内存有利于拆分/合并服务在内部使用的批量复制和删除操作。因此，在定义明确的有限时间段内仅为某个给定的数据库集增加服务层，以快速完成为在这些数据库上托管的范围所计划的拆分/合并服务操作，这种做法可能是强制性的。
 
 请注意，该服务也会将验证查询作为其常规操作的一部分来执行。除此之外，这些验证查询还会检查目标范围中数据的异常存在，确保任何拆分/合并/移动操作都从一致状态开始进行。这些查询在由拆分/合并/移动操作范围定义的分片键范围和作为请求定义的一部分而提供的批大小上都有效。当使用分片键作为起始列的索引存在时，这些查询表现最好。 
 

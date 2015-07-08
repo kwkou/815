@@ -51,7 +51,7 @@ HDInsight 提供在 Azure 上设置 Linux 群集的选项。如果你熟悉 Linu
 
 元存储包含有关 Hive 表、分区、架构、列等的信息。该信息被 Hive 用于定位数据在 HDFS 上的存储位置（或用于 HDInsight 的 WASB）。默认情况下，Hive 使用嵌入的数据库存储该信息。
 
-设置 HDInsight 群集时，你可以指定一个 SQL Database 来包含 Hive 元存储。由此，当你删除一个群集时将保留元数据信息，其存储到外部的 SQL Database 中。
+设置 HDInsight 群集时，你可以指定一个 SQL 数据库 来包含 Hive 元存储。由此，当你删除一个群集时将保留元数据信息，其存储到外部的 SQL 数据库 中。
 
 > [AZURE.NOTE] 目前，只有在使用 .NET SDK 设置 HDInsight for Linux 时，才提供使用元存储的选项。有关说明，请参阅[使用 .NET SDK 在 Linux 上设置 HDInsight 群集](#sdk)。
 
@@ -362,7 +362,7 @@ HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供�
 		#Run this command to create a cluster using the config file
 		azure hdinsight cluster create --config <file>
 
-	>[AZURE.NOTE] 用于元存储的 Azure SQL Database 必须允许连接到其他 Azure 服务，包括 Azure HDInsight。在 Azure SQL 数据库仪表板的右侧单击服务器名称。这是运行 SQL 数据库实例的服务器。进入服务器视图后，请单击"配置"，单击"Microsoft Azure 服务"对应的"是"，然后单击"保存"。
+	>[AZURE.NOTE] 用于元存储的 Azure SQL 数据库 必须允许连接到其他 Azure 服务，包括 Azure HDInsight。在 Azure SQL 数据库仪表板的右侧单击服务器名称。这是运行 SQL 数据库实例的服务器。进入服务器视图后，请单击"配置"，单击"Windows Azure 服务"对应的"是"，然后单击"保存"。
 
 
 	![HDI.CLIClusterCreationConfig][image-cli-clustercreation-config]
@@ -464,7 +464,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
         string sshusername = "<ssh user name>";
         string sshpublickey = "<ssh public key>;
 		
-		//if required, provide details of the Hive and Oozie metastore that you want to configure. ServerName is the name of the server on which the SQL databases are provisioned. HiveStoreSqlDatabaseName and OozieStoreSqlDatabaseName are the names of databases created on the server. You can also use the same database for both Hive and Oozie metastores
+		//if required, provide details of the Hive and Oozie metastore that you want to configure. ServerName is the name of the server on which the SQL 数据库s are provisioned. HiveStoreSqlDatabaseName and OozieStoreSqlDatabaseName are the names of databases created on the server. You can also use the same database for both Hive and Oozie metastores
 		Metastore hiveMetastore = new Metastore("<ServerName>.database.chinacloudapi.cn", "<HiveStoreSqlDatabaseName>", "<SqlDatabaseUser>", "<SqlDatabasePassword>");
         Metastore oozieMetastore = new Metastore("<ServerName>.database.chinacloudapi.cn", "<OozieStoreSqlDatabaseName>", "<SqlDatabaseUser>", "<SqlDatabasePassword>");
 

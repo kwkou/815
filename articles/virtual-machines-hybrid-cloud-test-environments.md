@@ -52,7 +52,7 @@
 
 [三维业务线应用程序体系结构蓝图 PDF](http://download.microsoft.com/download/2/C/8/2C8EB75F-AC45-4A79-8A63-C1800C098792/MS_Arch_LOB_App_3D_pdf.pdf)
 
-[在 Microsoft Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
+[在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
 
 
 <!--HONumber=53-->

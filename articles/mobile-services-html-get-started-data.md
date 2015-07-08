@@ -72,7 +72,7 @@
 
 <h2><a name="add-table"></a>将新表添加到移动服务</h2>
 
-为了能够在新移动服务中存储应用数据，必须先在关联的 SQL Database 实例中创建一个新表。
+为了能够在新移动服务中存储应用数据，必须先在关联的 SQL 数据库 实例中创建一个新表。
 
 1. 在管理门户中单击**"移动服务"**，然后单击您刚刚创建的移动服务。
 
@@ -168,7 +168,7 @@
 
         todoItemTable = client.getTable('todoitem');
 
-   	此代码将为 SQL Database **TodoItem** 创建代理对象 (**todoItemTable**)。 
+   	此代码将为 SQL 数据库 **TodoItem** 创建代理对象 (**todoItemTable**)。 
 
 7. 将 **$('#add-item').submit** 事件处理程序替换为以下代码：
 

@@ -18,7 +18,7 @@
 ## 构建
 
 - [如何使用 Service Bus 中继（视频和代码示例）](http://appfabricdemos.codeplex.com/releases/view/67597)
-- [如何通过 Service Bus 中继将 Microsoft Azure 网站和 LOB 应用程序相集成](http://code.msdn.microsoft.com/windowsazure/How-to-integrate-a-Windows-f1fedff8)
+- [如何通过 Service Bus 中继将 Windows Azure 网站和 LOB 应用程序相集成](http://code.msdn.microsoft.com/windowsazure/How-to-integrate-a-Windows-f1fedff8)
 - [使用 Service Bus 中继消息进行地域复制](http://code.msdn.microsoft.com/windowsazure/Geo-replication-with-16dbfecd)
 - [如何将移动服务与 REST Service Bus 中继服务相集成](http://blogs.msdn.com/b/paolos/archive/2013/07/09/how-to-integrate-a-mobile-service-with-a-rest-service-bus-relay-service.aspx)
  

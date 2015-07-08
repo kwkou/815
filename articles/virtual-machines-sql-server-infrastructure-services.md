@@ -22,8 +22,8 @@
 ## 概述
 你可以使用各种配置（从单个数据库服务器到多计算机配置）通过 AlwaysOn 可用性组和 Azure 虚拟网络托管 [Azure 虚拟机中的 SQL Server][sqlvmlanding]。
 
-> [AZURE.NOTE] 在 Azure VM 中运行 SQL Server 是在 Azure 中存储关系数据的一个选项。此外，还可以使用 Azure SQL Database 服务。 
- <!-- For more information, see [Understanding Azure SQL Database and SQL Server in Azure VMs][sqldbcompared]. -->
+> [AZURE.NOTE] 在 Azure VM 中运行 SQL Server 是在 Azure 中存储关系数据的一个选项。此外，还可以使用 Azure SQL 数据库 服务。 
+ <!-- For more information, see [Understanding Azure SQL 数据库 and SQL Server in Azure VMs][sqldbcompared]. -->
  
 ## 在单个 VM 上部署 SQL Server 实例
 [使用 Azure 门户创建 Azure 虚拟机][createvmportal] 或自动安装后，可以安装你有其许可证的 SQL Server 的任何实例。但是，你必须采取其他步骤在 SQL Server 计算机和其他客户端计算机之间[设置连接][setupconnectivity]。
@@ -31,7 +31,7 @@
 你还可以从库中安装众多不同的 SQL Server 虚拟机映像之一。这些映像包括 VM 定价中的 SQL Server 许可。有关详细信息，请参阅[在 Azure 上设置 SQL Server 虚拟机][provisionsqlvm]。
 
 ## 使用多个 VM 部署高可用性配置
-可以使用 SQL Server AlwaysOn 可用性组，实现 SQL Server 高可用性。这涉及虚拟网络中的多个 Azure VM。Azure 预览版门户有一个模板为你设置了此配置。有关详细信息，请参阅 [Microsoft Azure 门户库中的 SQL Server AlwaysOn 产品][sqlalwaysonportal]。或者，你可以[手动配置 AlwaysOn 可用性组][sqlalwaysonmanual]。有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复][sqlhadr]。
+可以使用 SQL Server AlwaysOn 可用性组，实现 SQL Server 高可用性。这涉及虚拟网络中的多个 Azure VM。Azure 预览版门户有一个模板为你设置了此配置。有关详细信息，请参阅 [Windows Azure 门户库中的 SQL Server AlwaysOn 产品][sqlalwaysonportal]。或者，你可以[手动配置 AlwaysOn 可用性组][sqlalwaysonmanual]。有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复][sqlhadr]。
 
 ## 在 Azure 中运行商业智能、数据仓库和 OLTP 工作负荷   
 你可以在 Azure 虚拟机上运行常见的 SQL Server 工作负荷。SQL Server 有多个经过优化的虚拟机映像在库中提供。其中包括[商业智能][sqlbi]、[数据仓库][sqldw] 和 [OLTP][sqloltp] 的映像。

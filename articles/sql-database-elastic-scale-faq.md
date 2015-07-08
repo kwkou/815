@@ -1,11 +1,11 @@
-<properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 弹性缩放常见问题" description="有关 Azure SQL Database 弹性缩放的常见问题。" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
+<properties title="Azure SQL Elastic Scale FAQ" pageTitle="Azure SQL 弹性缩放常见问题" description="有关 Azure SQL 数据库 弹性缩放的常见问题。" metaKeywords="sharding scaling, Azure SQL 数据库 sharding, elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh"/>
 
 <tags
    ms.service="sql-database"
    ms.date="02/16/2015"
    wacn.date="05/25/2015"/>
 
-# Azure SQL Database 弹性缩放常见问题 
+# Azure SQL 数据库 弹性缩放常见问题 
 
 #### 如果我的分片只有单个租户并且我没有分片键，该如何为架构信息填充分片键？  
 架构信息对象仅用于"拆分合并"方案。如果某个应用程序本质上是单租户的，则它不需要"拆分合并"服务，因此你无需填充架构信息对象。
@@ -23,7 +23,7 @@
 不是 - 分片映射管理器（例如，**[ShardMapManagerFactory.CreateSqlShardMapManager](http://msdn.microsoft.co/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.createsqlshardmapmanager.aspx)**）只需创建一次。在启动应用程序时，应用程序应使用调用 **[ShardMapManagerFactory.TryGetSqlShardMapManager()](http://msdn.microsoft.co/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.trygetsqlshardmapmanager.aspx)**。每个应用程序域应该只有一个此类调用。
 
 #### 我在使用弹性缩放方面存在疑问，如何可以获得解答？   
-请在 [Azure SQL Database 论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)上联系我们。
+请在 [Azure SQL 数据库 论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)上联系我们。
 
 #### 当我使用分片键建立数据库连接时，我仍可以对同一分片上的其他分片键查询数据。这是设计使然吗？  
 弹性缩放 API 可让你连接到分片键的正确数据库，但不提供分片键筛选。如果需要，请在查询中添加 **WHERE** 子句，以将范围限制到提供的分片键。

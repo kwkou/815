@@ -1,4 +1,4 @@
-<properties title="Managing Elastic Scale Credentials" pageTitle="管理弹性缩放凭据" description="如何为弹性缩放应用程序设置正确的凭据级别（从管理员到只读权限）。" metaKeywords="Azure SQL Database, elastic scale, about user credentials in elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Managing Elastic Scale Credentials" pageTitle="管理弹性缩放凭据" description="如何为弹性缩放应用程序设置正确的凭据级别（从管理员到只读权限）。" metaKeywords="Azure SQL 数据库, elastic scale, about user credentials in elastic scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"

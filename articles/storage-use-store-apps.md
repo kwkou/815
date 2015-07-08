@@ -16,7 +16,7 @@
 ## 下载所需工具 ##
 
 - [Visual Studio 2012](http://msdn.microsoft.com/zh-cn/library/windows/apps/br211384) 便于生成、调试、本地化、包装和部署 Windows 应用商店应用程序。
-- [Windows 运行时的 Microsoft Azure 存储客户端库](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) 包含用于与 Azure 存储进行通信的类型，打包在 Windows 运行时组件中。
+- [Windows 运行时的 Windows Azure 存储客户端库](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/11/05/windows-azure-storage-client-library-for-windows-runtime.aspx) 包含用于与 Azure 存储进行通信的类型，打包在 Windows 运行时组件中。
 - [Windows 应用商店应用程序的 WCF 数据服务工具](http://www.microsoft.com/zh-cn/download/details.aspx?id=30714) 在 Visual Studio 2012 中提供对 Windows 应用商店应用程序的客户端 OData 支持，扩展了"添加服务引用"体验。
 
 ## 开发应用程序 ##

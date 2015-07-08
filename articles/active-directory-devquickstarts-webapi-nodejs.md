@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD NodeJS 入门 | Microsoft Azure"
+	pageTitle="Azure AD NodeJS 入门 | Windows Azure"
 	description="如何生成一个与 Azure AD 集成以进行身份验证的 Node.js Web API。"
 	services="active-directory"
 	documentationCenter="nodejs"

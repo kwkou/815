@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务和 ASP.NET 入门" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序在云服务中运行，带有 Web 角色和辅助角色。它使用实体框架、SQL Database 和 Azure 存储队列与 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Get Started with Azure Cloud Services and ASP.NET" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务和 ASP.NET 入门" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序在云服务中运行，带有 Web 角色和辅助角色。它使用实体框架、SQL 数据库 和 Azure 存储队列与 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Get Started with Azure Cloud Services and ASP.NET" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="02/19/2015"
     wacn.date="04/11/2015"
@@ -6,7 +6,7 @@
 
 # Azure 云服务和 ASP.NET 入门
 
-本教程演示如何使用 ASP.NET MVC 前端创建多层.NET 应用程序，并将其部署到 [Azure 云服务](/zh-cn/documentation/articles/fundamentals-application-models/#CloudServices)。应用程序使用 [Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/ee336279)、[Azure Blob 服务](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)和 [Azure 队列服务](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)。你可以从 MSDN 代码库[下载 Visual Studio 项目](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4)。 
+本教程演示如何使用 ASP.NET MVC 前端创建多层.NET 应用程序，并将其部署到 [Azure 云服务](/zh-cn/documentation/articles/fundamentals-application-models/#CloudServices)。应用程序使用 [Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/ee336279)、[Azure Blob 服务](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)和 [Azure 队列服务](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)。你可以从 MSDN 代码库[下载 Visual Studio 项目](http://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4)。 
 
 ### Contoso 广告应用程序
 
@@ -163,7 +163,7 @@ Azure 云服务是该应用程序将运行的环境。
 
 1. 单击"创建 SQL 数据库"。
 
-	![New SQL Database](./media/cloud-services-dotnet-get-started/newdb.png)	
+	![New SQL 数据库](./media/cloud-services-dotnet-get-started/newdb.png)	
 
 1. Azure 完成创建数据库后，在门户的左窗格中单击"SQL 数据库"选项卡，然后单击新数据库的名称。
 
@@ -358,7 +358,7 @@ Web 角色项目和辅助角色项目的 Azure 存储帐户连接字符串存储
 
 1. 在 Visual Studio 中，从"文件"菜单中选择"新建项目"。
 
-2. 在"新建项目"对话框的左窗格中，展开"Visual C#"，选择"云"模板，然后选择"Microsoft Azure 云服务"模板。
+2. 在"新建项目"对话框的左窗格中，展开"Visual C#"，选择"云"模板，然后选择"Windows Azure 云服务"模板。
 
 3. 将项目和解决方案命名为 ContosoAdsCloudService，然后单击"确定"。
 

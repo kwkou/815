@@ -1,6 +1,6 @@
 <properties 
    pageTitle="在 Azure 门户中还原已删除的 Azure SQL 数据库" 
-   description="Microsoft Azure SQL Database, 还原已删除的数据库, 恢复已删除的数据库, Azure 管理门户, Azure 门户" 
+   description="Windows Azure SQL 数据库, 还原已删除的数据库, 恢复已删除的数据库, Azure 管理门户, Azure 门户" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -43,7 +43,7 @@
  
 * Web 和企业版服务层不支持还原已删除的 SQL 数据库。
  
-	* 如果你有 Web 或企业版数据库，可以使用数据库复制来获取数据库的事务一致副本，然后将复制的数据库导出到 Microsoft Azure 存储帐户。有关更多信息，请参阅[如何：使用数据库复制 (Azure SQL Database) ](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx) 和[如何：在 Azure SQL Database 中使用导入和导出服务](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx)。
+	* 如果你有 Web 或企业版数据库，可以使用数据库复制来获取数据库的事务一致副本，然后将复制的数据库导出到 Windows Azure 存储帐户。有关更多信息，请参阅[如何：使用数据库复制 (Azure SQL 数据库) ](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx) 和[如何：在 Azure SQL 数据库 中使用导入和导出服务](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx)。
 	* Web 和企业版将在 2015 年 9 月停用。有关详细信息，请参阅 [Web 和企业版停用常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
 
 ## 如何：在 Azure 门户中还原已删除的 Azure SQL 数据库
@@ -51,7 +51,7 @@
 
 1. 使用你的 Microsoft 帐户登录到 Azure 门户。
 
-2. 在左侧导航窗格中，单击"SQL Database"。
+2. 在左侧导航窗格中，单击"SQL 数据库"。
 
 3. 在页面顶部，单击"已删除的数据库"。此时将显示"可还原的已删除数据库"列表。 
 
@@ -71,8 +71,8 @@
 
 有关详细信息，请参阅以下主题： 
 
-[Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
+[Azure SQL 数据库 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
-[Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
+[Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
 <!--HONumber=55-->

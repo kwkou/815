@@ -7,7 +7,7 @@
 
 # 联合迁移 
 
-Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用。到那时，使用联合功能的应用程序将停止工作。为了确保迁移成功，强烈建议你尽快开始迁移工作，以便充分计划和执行。本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到 [Azure SQL DB 弹性缩放预览版 API](/documentation/articles/sql-database-elastic-scale-introduction)。该文档的目标是引导你完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
+Azure SQL 数据库 联合功能以及 Web/企业版将于 2015 年 9 月停用。到那时，使用联合功能的应用程序将停止工作。为了确保迁移成功，强烈建议你尽快开始迁移工作，以便充分计划和执行。本文档提供了联合迁移实用工具的上下文、示例和介绍，说明了如何成功地将当前联合应用程序无缝迁移到 [Azure SQL DB 弹性缩放预览版 API](/documentation/articles/sql-database-elastic-scale-introduction)。该文档的目标是引导你完成建议的步骤来迁移联合应用程序，而无需任何数据移动。
 
 将现有联合应用程序迁移到使用弹性缩放 API 的应用程序需要三个主要步骤。
 
@@ -77,7 +77,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
 
 ![Switch out the federation members for the shards][3]
 
-将应用程序修改为包含弹性缩放 API 后，迁移联合应用程序的最后一步是**断开** (SWITCH OUT) 联合成员（有关详细信息，请参阅 [ALTER FEDERATION (Azure SQL Database)](http://msdn.microsoft.com/zh-cn/library/dn269988\(v=sql.120\).aspx) 的 MSDN 参考）。针对特定联合成员发出 **SWITCH OUT** 的最终结果将导致删除所有联合约束和元数据，从而将联合成员呈现为常规 Azure SQL Database，与其他任何 Azure SQL Database 无异。  
+将应用程序修改为包含弹性缩放 API 后，迁移联合应用程序的最后一步是**断开** (SWITCH OUT) 联合成员（有关详细信息，请参阅 [ALTER FEDERATION (Azure SQL 数据库)](http://msdn.microsoft.com/zh-cn/library/dn269988\(v=sql.120\).aspx) 的 MSDN 参考）。针对特定联合成员发出 **SWITCH OUT** 的最终结果将导致删除所有联合约束和元数据，从而将联合成员呈现为常规 Azure SQL 数据库，与其他任何 Azure SQL 数据库 无异。  
 
 请注意，针对联合成员发出 **SWITCH OUT** 是一个单向操作，无法撤消。执行后，无法将产生的数据库添加回联合，并且 USE FEDERATION 命令将不再适用于此数据库。 
 
@@ -86,7 +86,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
 对所有现有联合成员执行切换后，便完成了应用程序的迁移。  
 联合迁移实用工具提供了以下功能： 
 
-1.    执行联合根到分片映射管理器的克隆。开发人员可选择将现有的分片映射管理器放置在新 Azure SQL Database 上（推荐）或放置在现有联合根数据库上。
+1.    执行联合根到分片映射管理器的克隆。开发人员可选择将现有的分片映射管理器放置在新 Azure SQL 数据库 上（推荐）或放置在现有联合根数据库上。
 2.    针对联合中的所有联合成员发出 SWITCH OUT。
 
 
@@ -113,7 +113,7 @@ Azure SQL Database 联合功能以及 Web/企业版将于 2015 年 9 月停用�
 
 * Web 版和企业版以及联合功能将于 2015 年秋季停用。作为联合应用程序迁移的一部分，强烈建议对基础版、标准版和高级版执行性能测试。 
 
-* 对联合成员执行 SWITCH OUT 语句将使生成的数据库能够利用所有 Azure SQL Database 功能（即新版本、备份、PITR、审核等）。 
+* 对联合成员执行 SWITCH OUT 语句将使生成的数据库能够利用所有 Azure SQL 数据库 功能（即新版本、备份、PITR、审核等）。 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

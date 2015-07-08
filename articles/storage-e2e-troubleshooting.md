@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除 | Microsoft Azure" 
+	pageTitle="使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除 | Windows Azure" 
 	description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行点对点故障排除" 
 	services="storage" 
 	documentationCenter="dotnet" 
@@ -23,7 +23,7 @@
 
 ## 概述
 
-诊断和故障排除是构建和支持包含 Microsoft Azure 存储空间的客户端应用程序的一项关键技能。由于 Azure 应用程序的分布特性，诊断和排查错误与性能问题可能会比在传统环境中更为复杂。
+诊断和故障排除是构建和支持包含 Windows Azure 存储空间的客户端应用程序的一项关键技能。由于 Azure 应用程序的分布特性，诊断和排查错误与性能问题可能会比在传统环境中更为复杂。
 
 在本教程中，我们将演示如何识别某些会影响性能的错误，并使用 Microsoft 和 Azure 存储空间提供的工具以点对点的方式排查这些错误，以优化客户端应用程序。 
 
@@ -31,7 +31,7 @@
 
 ## Azure 存储应用程序故障排除工具
 
-若要使用 Microsoft Azure 存储空间排查客户端应用程序问题，可以使用多种工具的组合来确定问题出现的时间以及可能的原因。这些工具包括：
+若要使用 Windows Azure 存储空间排查客户端应用程序问题，可以使用多种工具的组合来确定问题出现的时间以及可能的原因。这些工具包括：
 
 - **Azure 存储分析**。[Azure 存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)提供 Azure 存储空间的度量值和日志记录。
 	- **存储度量值**用于跟踪存储帐户的事务度量值和容量度量值。使用度量值，你可以确定应用程序如何根据各种不同的度量值执行。有关存储分析跟踪的度量值类型的详细信息，请参阅[存储分析度量值表架构](http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)。 
@@ -43,7 +43,7 @@
 	本教程说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn)监视存储帐户。请参阅[如何监视存储帐户](/documentation/articles/storage-monitor-storage-account) 以了解有关在门户中配置监视的信息。
  
 
-- **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy) 以了解有关 AzCopy 的详细信息。
+- **AzCopy**。Azure 存储空间的服务器日志存储为 Blob，因此你可以使用 AzCopy 将日志 Blob 复制到本地目录，以使用 Microsoft Message Analyzer 进行分析。请参阅[如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy) 以了解有关 AzCopy 的详细信息。
 
 - **Microsoft Message Analyzer**。Message Analyzer 是一个工具，它使用日志文件并以可视格式显示日志数据，方便你筛选、搜索日志数据，以及将日志数据组合成有用的集，用于分析错误和性能问题。有关 Message Analyzer 的详细信息，请参阅 [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)。
 
@@ -111,7 +111,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 	Add-AzureAccount
 	```
 
-2. 在"登录 Microsoft Azure"窗口中，键入与你的帐户关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
+2. 在"登录 Windows Azure"窗口中，键入与你的帐户关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 3. 通过在 PowerShell 窗口中执行以下命令，将默认存储帐户设置为用于本教程的存储帐户：
 
 	```
@@ -133,7 +133,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 ### 配置 .NET 客户端日志记录
 
-若要为 .NET 应用程序配置客户端日志记录，请在应用程序的配置文件（web.config 或 app.config）中启用 .NET 诊断。有关详细信息，请参阅 MSDN 上的[使用存储客户端库进行的客户端日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782839.aspx)和[通过 Microsoft Azure Storage SDK for Java 进行的客户端日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782844.aspx)。
+若要为 .NET 应用程序配置客户端日志记录，请在应用程序的配置文件（web.config 或 app.config）中启用 .NET 诊断。有关详细信息，请参阅 MSDN 上的[使用存储客户端库进行的客户端日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782839.aspx)和[通过 Windows Azure Storage SDK for Java 进行的客户端日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782844.aspx)。
 
 客户端日志包括有关客户端准备请求以及接收和处理响应的详细信息。
 
@@ -197,7 +197,7 @@ Azure 存储空间将服务器日志数据写入 Blob，将度量值写入表。
 
 	AzCopy.exe /Source:http://<storageaccountname>.blob.core.chinacloudapi.cn/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
 
-可以从 [Azure 下载](http://www.windowsazure.cn/zh-cn/downloads)页下载 AzCopy。有关使用 AzCopy 的详细信息，请参阅[如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)。
+可以从 [Azure 下载](http://www.windowsazure.cn/zh-cn/downloads)页下载 AzCopy。有关使用 AzCopy 的详细信息，请参阅[如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)。
 
 有关下载服务器端日志的其他信息，请参阅[启用存储日志记录和访问日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#DownloadingStorageLogginglogdata)。 
 
@@ -374,7 +374,7 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 - [监视、诊断和排查存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 - [存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)
 - [如何监视存储帐户](/documentation/articles/storage-monitor-storage-account)
-- [如何对 Microsoft Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)
+- [如何对 Windows Azure 存储空间使用 AzCopy](/documentation/articles/storage-use-azcopy)
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
  
 

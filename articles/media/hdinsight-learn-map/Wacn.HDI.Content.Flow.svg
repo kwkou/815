@@ -2404,9 +2404,9 @@
              font-family="Segoe UI"
              fill="#000000">Sqoop</text>
           <title
-             id="title479">Click this box to know about moving data from Hadoop to an Azure SQL database using Sqoop</title>
+             id="title479">Click this box to know about moving data from Hadoop to an Azure SQL 数据库 using Sqoop</title>
           <desc
-             id="desc481">Learn how to move data from Hadoop to an Azure SQL database using Sqoop</desc>
+             id="desc481">Learn how to move data from Hadoop to an Azure SQL 数据库 using Sqoop</desc>
         </g>
       </a>
       <a

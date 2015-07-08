@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName=" Website with Storage" pageTitle="使用表存储构建 Node.js 网站 | Microsoft Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="本教程演示如何使用 Azure 表服务在 Azure 网站上托管的 Node 应用程序中存储数据。" metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-tutorials-web-site-with-storage" urlDisplayName=" Website with Storage" pageTitle="使用表存储构建 Node.js 网站 | Windows Azure" metaKeywords="Azure table storage Node.js, Azure Node.js application, Azure Node.js tutorial, Azure Node.js example" description="本教程演示如何使用 Azure 表服务在 Azure 网站上托管的 Node 应用程序中存储数据。" metaCanonical="" services="web-sites,storage" documentationCenter="Node.js" title="Node.js Web Application using the Azure Table Service" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="web-sites,storage"
     ms.date="02/25/2015"
     wacn.date="04/11/2015"
@@ -450,7 +450,7 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 
 ###创建配置文件
 
-config.json 文件包含用于连接到 SQL Database 的连接字符串，应用程序在运行时将读取该文件。若要创建此文件，请执行以下步骤：
+config.json 文件包含用于连接到 SQL 数据库 的连接字符串，应用程序在运行时将读取该文件。若要创建此文件，请执行以下步骤：
 
 1. 在 tasklist 目录中，创建一个名为 config.json 的新文件并在文本编辑器中将其打开。
 

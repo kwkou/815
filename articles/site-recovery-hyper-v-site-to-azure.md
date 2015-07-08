@@ -36,8 +36,8 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 ### Azure 先决条件
 
-- 需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
-- - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Microsoft Azure 存储空间简介](storage-introduction)。
+- 需要一个 [Windows Azure](http://www.windowsazure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
+- - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储空间简介](storage-introduction)。
 - - 需要一个 Azure 虚拟网络，以便在故障转移后可将复制的虚拟机连接到网络。
 
 ## Hyper-V 先决条件

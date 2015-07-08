@@ -10,7 +10,7 @@
 <tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="05/29/2015"/>
 
 
-# SQL Database 弹性数据库池参考（预览版）
+# SQL 数据库 弹性数据库池参考（预览版）
 
 对于拥有数十、数百甚至数千数据库的 SaaS 开发人员，则可以通过弹性数据库池来简化整个数据库组的创建、维护以及性能和成本管理流程。 
 
@@ -25,7 +25,7 @@
 ## 创建和管理弹性池的先决条件
 
 
-- 弹性池只能在 Azure SQL Database V12 服务器中使用。   
+- 弹性池只能在 Azure SQL 数据库 V12 服务器中使用。   
 - 仅 Azure 资源管理器 (ARM) 支持适用于弹性池的 PowerShell 和 REST API；不支持服务管理命令 (RDFE)。 
 - [Windows Azure 门户](https://manage.windowsazure.cn)支持创建和管理弹性池。 
 
@@ -42,9 +42,9 @@
 
 | 文章 | 说明 |
 | :-- | :-- |
-| [SQL Database 弹性池](sql-database-elastic-pool) | 弹性池概述 |
-| [使用 Azure 门户创建和管理 SQL Database 弹性池](sql-database-elastic-pool-portal) | 如何使用 Azure 门户创建和管理弹性池 |
-| [使用 PowerShell 创建和管理 SQL Database 弹性池](sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性池 |
+| [SQL 数据库 弹性池](sql-database-elastic-pool) | 弹性池概述 |
+| [使用 Azure 门户创建和管理 SQL 数据库 弹性池](sql-database-elastic-pool-portal) | 如何使用 Azure 门户创建和管理弹性池 |
+| [使用 PowerShell 创建和管理 SQL 数据库 弹性池](sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性池 |
 | [弹性数据库作业概述](sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
 | [安装弹性数据库作业组件](sql-database-elastic-jobs-service-installation) | 如何安装弹性数据库作业服务 |
 | [创建弹性作业服务所需的用户](sql-database-elastic-jobs-add-logins-to-dbs) | 若要运行弹性数据库作业脚本，必须将具有适当权限的用户添加到池中的每个数据库。|
@@ -53,7 +53,7 @@
 
 
 ## 命名空间和终结点详细信息
-弹性池是 Windows Azure SQL Database 中类型为"ElasticPool"的 ARM 资源。
+弹性池是 Windows Azure SQL 数据库 中类型为"ElasticPool"的 ARM 资源。
 
 - **命名空间**：Microsoft.Sql/ElasticPool
 - 用于 REST API 调用的**辅助终结点**（Azure 资源管理器）: https://management.windowsazure.cn
@@ -103,7 +103,7 @@
 
 ## Azure 资源管理器限制
 
-弹性池要求 Azure SQL Database V12 服务器。服务器位于资源组中。
+弹性池要求 Azure SQL 数据库 V12 服务器。服务器位于资源组中。
 
 - 每个资源组最多可以有 800 个服务器。
 - 每个服务器最多可以有 800 个弹性池。
@@ -124,24 +124,24 @@
 | [PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125356.aspx) | [REST API 命令](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) |
 | :-- | :-- |
 | Get-AzureSqlDatabase | 获取 Azure SQL 数据库 |
-| Get-AzureSqLElasticPool | 获取 Azure SQL Database 弹性数据库池 |
-| Get-AzureSqlElasticPoolActivity | 获取 Azure SQL Database 弹性数据库池操作 |
-| Get-AzureSqlElasticPoolDatabase | 获取 Azure SQL Database 弹性数据库 |
-| Get-AzureSqlElasticPoolDatabaseActivity | 获取 Azure SQL Database 弹性数据库操作 |
-| Get-AzureSqlServer | 获取 Azure SQL Database 服务器 |
-| Get-AzureSqlServerFirewallRule | 获取 Azure SQL Database 服务器防火墙规则 |
-| Get-AzureSqlServerServiceObjective | 获取 Azure SQL Database 服务器服务目标 |
+| Get-AzureSqLElasticPool | 获取 Azure SQL 数据库 弹性数据库池 |
+| Get-AzureSqlElasticPoolActivity | 获取 Azure SQL 数据库 弹性数据库池操作 |
+| Get-AzureSqlElasticPoolDatabase | 获取 Azure SQL 数据库 弹性数据库 |
+| Get-AzureSqlElasticPoolDatabaseActivity | 获取 Azure SQL 数据库 弹性数据库操作 |
+| Get-AzureSqlServer | 获取 Azure SQL 数据库 服务器 |
+| Get-AzureSqlServerFirewallRule | 获取 Azure SQL 数据库 服务器防火墙规则 |
+| Get-AzureSqlServerServiceObjective | 获取 Azure SQL 数据库 服务器服务目标 |
 | New-AzureSqlDatabase | 创建 Azure SQL 数据库 |
-| New-AzureSqlElasticPool | 创建 Azure SQL Database 弹性数据库池 |
-| New-AzureSqlServer | 创建 Azure SQL Database 服务器 |
-| New-AzureSqlServerFirewallRule | 创建 Azure SQL Database 服务器防火墙规则 |
+| New-AzureSqlElasticPool | 创建 Azure SQL 数据库 弹性数据库池 |
+| New-AzureSqlServer | 创建 Azure SQL 数据库 服务器 |
+| New-AzureSqlServerFirewallRule | 创建 Azure SQL 数据库 服务器防火墙规则 |
 | Remove-AzureSqlDatabase | 删除 Azure SQL 数据库 |
-| Remove-AzureSqlElasticPool | 删除 Azure SQL Database 弹性数据库池 |
-| Remove-AzureSqlServer | 删除 Azure SQL Database 服务器 |
+| Remove-AzureSqlElasticPool | 删除 Azure SQL 数据库 弹性数据库池 |
+| Remove-AzureSqlServer | 删除 Azure SQL 数据库 服务器 |
 | Set-AzureSqlDatabase | 设置 Azure SQL 数据库 |
-| Set-AzureSqlElasticPool | 设置 Azure SQL Database 弹性数据库池 |
-| Set-AzureSqlServer | 设置 Azure SQL Database 服务器 |
-| Set-AzureSqlServerFirewallRule | 设置 Azure SQL Database 服务器防火墙规则 |
+| Set-AzureSqlElasticPool | 设置 Azure SQL 数据库 弹性数据库池 |
+| Set-AzureSqlServer | 设置 Azure SQL 数据库 服务器 |
+| Set-AzureSqlServerFirewallRule | 设置 Azure SQL 数据库 服务器防火墙规则 |
 | Get-Metrics | 获取指标 |
 
 
@@ -157,7 +157,7 @@
 - 弹性池的价格取决于池的 DTU 数和池中数据库的数量。 
 - 价格按 (池 DTU 数)x(每个 DTU 的单价) + (数据库数)x(每个数据库的单价) 计算
 
-弹性池的 DTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL Database 定价](/home/features/sql-database/#price)。  
+弹性池的 DTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库 定价](/home/features/sql-database/#price)。  
 
 ## 弹性数据库池错误
 

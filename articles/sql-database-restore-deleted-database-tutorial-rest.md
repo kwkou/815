@@ -1,6 +1,6 @@
 <properties 
    pageTitle="使用 REST API 还原已删除的 Azure SQL 数据库" 
-   description="Microsoft Azure SQL Database, 还原已删除的数据库, 恢复已删除的数据库, REST API" 
+   description="Windows Azure SQL 数据库, 还原已删除的数据库, 恢复已删除的数据库, REST API" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -43,9 +43,9 @@
 
 有关详细信息，请参阅以下主题：
 
-[Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
+[Azure SQL 数据库 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
-[Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
+[Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
 [服务管理 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 

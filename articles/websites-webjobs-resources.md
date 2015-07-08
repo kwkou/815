@@ -18,7 +18,7 @@
 
 本主题提供了有关如何使用 Azure Web 作业和 Azure WebJobs SDK 的文档资源的链接。Azure Web 作业可让你在 Azure 网站上以后台进程的形式运行脚本或程序。你可以上载和运行可执行文件，例如 cmd、bat、exe (.NET)、ps1、sh、php、py、js 和 jar。这些程序将按计划 (cron) 或者连续地以 Web 作业的形式运行。
 
-借助 WebJobs SDK 可以更方便地使用 Azure 存储空间。WebJobs SDK 还有一个绑定和触发器系统，该系统可与 Microsoft Azure 存储 Blob、队列和表以及 Service Bus 队列配合工作。
+借助 WebJobs SDK 可以更方便地使用 Azure 存储空间。WebJobs SDK 还有一个绑定和触发器系统，该系统可与 Windows Azure 存储 Blob、队列和表以及 Service Bus 队列配合工作。
 
 使用 Visual Studio 中集成的工具，可以顺利地创建、部署和管理 Web 作业。你可以从模板创建 Web 作业，还可以发布和管理（运行/停止/监视/调试）这些作业。 
 
@@ -29,7 +29,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [Azure Web 作业简介](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx)
 * [Azure Web 作业功能](http://azure.microsoft.com/blog/2014/10/22/webjobs-goes-into-full-production)
 * [什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
-* [宣布推出 Microsoft Azure WebJobs SDK 1.0.0 RTM](http://azure.microsoft.com/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk)
+* [宣布推出 Windows Azure WebJobs SDK 1.0.0 RTM](http://azure.microsoft.com/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk)
 * [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
@@ -61,7 +61,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [在云中托管交互式代码](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [获取一个仪表板以使用 WebJobs SDK 进行本地开发](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)
 * [在 Azure 网站和 Web 作业中添加跟踪](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)
-* [监视、诊断和排查 Microsoft Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
+* [监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 
 
 ## <a name="scale"></a>缩放 Web 作业

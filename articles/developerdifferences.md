@@ -76,7 +76,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 * 数据服务 – HDInsight 
 * 数据服务 – 备份
 * 数据服务 - 站点恢复
-* 数据服务 - MySQL Database on Azure
+* 数据服务 - MySQL 数据库 on Azure
 * 访问控制服务 – 拥有其自己的 UI 和命名空间
 * 网络服务 – 虚拟网络（通过本地网络在云服务之间进行通信）
 * 网络服务 – 流量管理器

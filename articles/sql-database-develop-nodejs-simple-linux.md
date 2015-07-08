@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="在 Ubuntu Linux 上使用 NodeJS 和 Tedious 连接到 SQL Database" 
-	description="演示了一个可以用来连接到 Azure SQL Database 的 NodeJS 代码示例。该示例使用 Tedious 驱动程序进行连接。"
+	pageTitle="在 Ubuntu Linux 上使用 NodeJS 和 Tedious 连接到 SQL 数据库" 
+	description="演示了一个可以用来连接到 Azure SQL 数据库 的 NodeJS 代码示例。该示例使用 Tedious 驱动程序进行连接。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -19,10 +19,10 @@
 	ms.author="mebha"/>
 
 
-# 在 Ubuntu Linux 上使用 NodeJS 和 Tedious 连接到 SQL Database
+# 在 Ubuntu Linux 上使用 NodeJS 和 Tedious 连接到 SQL 数据库
 
 
-本主题介绍在 Unbutu Linux 上运行的 NodeJS 代码示例。该示例将使用 Tedious 驱动程序连接到 Azure SQL Database。
+本主题介绍在 Unbutu Linux 上运行的 NodeJS 代码示例。该示例将使用 Tedious 驱动程序连接到 Azure SQL 数据库。
 
 
 ## 所需的软件项
@@ -48,10 +48,10 @@
 ### 创建 AdventureWorks 数据库
 
 
-本主题中的代码示例需要一个 **AdventureWorks** 测试数据库。如果你尚未创建一个这样的数据库，请参阅 [SQL Database 入门](sql-database-get-started)。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。 
+本主题中的代码示例需要一个 **AdventureWorks** 测试数据库。如果你尚未创建一个这样的数据库，请参阅 [SQL 数据库 入门](sql-database-get-started)。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。 
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
 
 	var Connection = require('tedious').Connection;
@@ -59,7 +59,7 @@
 		userName: 'yourusername',
 		password: 'yourpassword',
 		server: 'yourserver.database.chinacloudapi.cn',
-		// If you are on Microsoft Azure, you need this:
+		// If you are on Windows Azure, you need this:
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);
@@ -80,7 +80,7 @@
 		userName: 'yourusername',
 		password: 'yourpassword',
 		server: 'yourserver.database.chinacloudapi.cn',
-		// When you connect to Azure SQL Database, you need these next options.
+		// When you connect to Azure SQL 数据库, you need these next options.
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);
@@ -129,7 +129,7 @@
 		userName: 'yourusername',
 		password: 'yourpassword',
 		server: 'yourserver.database.chinacloudapi.cn',
-		// If you are on Azure SQL Database, you need these next options.
+		// If you are on Azure SQL 数据库, you need these next options.
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);
@@ -181,7 +181,7 @@ Same problem in the next section about Stored procedures. Perhaps you can call s
 		userName: 'yourusername',
 		password: 'yourpassword',
 		server: 'yourserver.database.chinacloudapi.cn',
-		// If you are on Microsoft Azure, you need this:
+		// If you are on Windows Azure, you need this:
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);
@@ -207,7 +207,7 @@ Same problem in the next section about Stored procedures. Perhaps you can call s
 		userName: 'yourusername',
 		password: 'yourpassword',
 		server: 'yourserver.database.chinacloudapi.cn',
-		// If you are on Microsoft Azure, you need this:
+		// If you are on Windows Azure, you need this:
 		options: {encrypt: true, database: 'AdventureWorks'}
 	};
 	var connection = new Connection(config);

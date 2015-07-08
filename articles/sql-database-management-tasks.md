@@ -1,27 +1,27 @@
-<properties umbracoNaviHide="0" pageTitle="如何管理 SQL Database" metaKeywords="Azure SQL database, SQL database, manage sql database, add logins, connect to sql database" description="了解如何管理 Azure SQL Database。" linkid="devnav-manage-services-cloud-services" urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL Database" authors=""/>
+<properties umbracoNaviHide="0" pageTitle="如何管理 SQL 数据库" metaKeywords="Azure SQL 数据库, SQL 数据库, manage SQL 数据库, add logins, connect to SQL 数据库" description="了解如何管理 Azure SQL 数据库。" linkid="devnav-manage-services-cloud-services" urlDisplayName="Cloud Services" headerExpose="" footerExpose="" disqusComments="1" title="How to Manage SQL 数据库" authors=""/>
 
 <tags
    ms.service="sql-database"
    ms.date="01/13/2015"
    wacn.date="05/25/2015"/>  
  
-<h1><a id="swap"></a>如何管理 SQL Database</h1>
+<h1><a id="swap"></a>如何管理 SQL 数据库</h1>
 
-本文档说明如何在 Azure SQL Database 中执行简单的管理任务。 
+本文档说明如何在 Azure SQL 数据库 中执行简单的管理任务。 
 
 ## 目录##
 
-* [如何：使用 Management Studio 连接到 Azure 中的 SQL Database](#connect)
-* [如何：将登录名和用户添加到 Azure 中的 SQL Database](#addlogins)
+* [如何：使用 Management Studio 连接到 Azure 中的 SQL 数据库](#connect)
+* [如何：将登录名和用户添加到 Azure 中的 SQL 数据库](#addlogins)
 
 
-<h2><a id="connect"></a>如何：使用 Management Studio 连接到 Azure 中的 SQL Database</h2>
+<h2><a id="connect"></a>如何：使用 Management Studio 连接到 Azure 中的 SQL 数据库</h2>
 
 Management Studio 是一种管理工具，让你能够管理单个工作空间中的多个 SQL Server 实例和服务器。如果你已经有了本地 SQL Server 实例，则可同时打开与本地实例和 Azure 上的逻辑服务器的连接，以便并行执行任务。
 
-Management Studio 包括在管理门户中当前不可用的功能，例如语法检查程序以及保存脚本和命名查询以供重复使用的功能。SQL Database 只是一个表格格式数据流 (TDS) 终结点。适用于 TDS 的任何工具，包括 Management Studio，都可以有效地执行 SQL Database 操作。你为本地服务器开发的脚本将在 SQL Database 逻辑服务器上运行。 
+Management Studio 包括在管理门户中当前不可用的功能，例如语法检查程序以及保存脚本和命名查询以供重复使用的功能。SQL 数据库 只是一个表格格式数据流 (TDS) 终结点。适用于 TDS 的任何工具，包括 Management Studio，都可以有效地执行 SQL 数据库 操作。你为本地服务器开发的脚本将在 SQL 数据库 逻辑服务器上运行。 
 
-在下一步中，你将使用 Management Studio 连接到 Azure 上的逻辑服务器。执行此步骤需要你具有 SQL Server Management Studio 2008 R2 或 2012 版本。如需有关下载或连接到 Management Studio 的帮助，请参阅本站点上的[使用 Management Studio 管理 SQL Database][]。
+在下一步中，你将使用 Management Studio 连接到 Azure 上的逻辑服务器。执行此步骤需要你具有 SQL Server Management Studio 2008 R2 或 2012 版本。如需有关下载或连接到 Management Studio 的帮助，请参阅本站点上的[使用 Management Studio 管理 SQL 数据库][]。
 
 在能够连接之前，有时必须创建防火墙例外，允许本地系统的端口 1433 上的出站请求。安全的计算机通常默认不打开端口 1433。 
 
@@ -54,13 +54,13 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 2. 在"身份验证"中，选择"Windows 身份验证"，然后输入作为 sysadmin 角色成员的 Windows 帐户。
 
 
-<h2><a id="addlogins"></a>如何：将登录名和用户添加到 Azure 中的 SQL Database</h2>
+<h2><a id="addlogins"></a>如何：将登录名和用户添加到 Azure 中的 SQL 数据库</h2>
 
 部署数据库后，你需要配置登录名和分配权限。在下面的步骤中，你将运行两个脚本。
 
 对于第一个脚本，你将连接到 master 数据库并运行创建登录名的脚本。登录名将用于支持读写操作，并且委托操作任务，例如能够在没有"SA"权限的情况下运行系统查询。
 
-你创建的登录名必须是 SQL Server 身份验证登录名。如果你已经有了使用 Windows 用户标识或声明标识的现成脚本，则该脚本将不在 SQL Database 上运行。
+你创建的登录名必须是 SQL Server 身份验证登录名。如果你已经有了使用 Windows 用户标识或声明标识的现成脚本，则该脚本将不在 SQL 数据库 上运行。
 
 第二个脚本用于分配数据库用户权限。对于此脚本，你将连接到已在 Azure 上装载的数据库。
 
@@ -125,10 +125,10 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 
 6. 打开第二个查询窗口，并将连接上下文更改为 *sqlwriter*。相同的查询现在应该成功运行。
 
-你现在已经创建和测试了几个登录名。有关详细信息，请参阅[在 SQL Database 中管理数据库和登录名][]和[使用动态管理视图监视 SQL Database][]。
+你现在已经创建和测试了几个登录名。有关详细信息，请参阅[在 SQL 数据库 中管理数据库和登录名][]和[使用动态管理视图监视 SQL 数据库][]。
 
-[在 SQL Database 中管理数据库和登录名]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
-[使用动态管理视图监视 SQL Database]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
-[使用 Management Studio 管理 SQL Database]: /documentation/articles/sql-database-manage-azure-ssms/
+[在 SQL 数据库 中管理数据库和登录名]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
+[使用动态管理视图监视 SQL 数据库]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
+[使用 Management Studio 管理 SQL 数据库]: /documentation/articles/sql-database-manage-azure-ssms/
 
 <!--HONumber=55-->

@@ -1,9 +1,9 @@
-<properties pageTitle="从 .NET (CSharp) 使用 SQL Database" description="使用本快速入门教程中的示例代码可以生成一个包含 CSharp 代码并由云中强大的 Azure SQL Database 关系数据库支持的现代应用程序。" services="sql-database" documentationCenter="" authors="tobbox" manager="jeffreyg" editor=""/>
+<properties pageTitle="从 .NET (CSharp) 使用 SQL 数据库" description="使用本快速入门教程中的示例代码可以生成一个包含 CSharp 代码并由云中强大的 Azure SQL 数据库 关系数据库支持的现代应用程序。" services="sql-database" documentationCenter="" authors="tobbox" manager="jeffreyg" editor=""/>
 
 <tags ms.service="sql-database" ms.date="04/13/2015" wacn.date="05/25/2015"/>
 
 
-# 从 .NET (C#) 使用 SQL Database 
+# 从 .NET (C#) 使用 SQL 数据库 
 
 
 ## 要求
@@ -12,13 +12,13 @@
 
 已在 Windows 上预装了 .NET Framework。对于 Linux 和 Mac OS X，可从 [Mono 项目](http://www.mono-project.com)下载 .NET Framework。
 
-### SQL Database
+### SQL 数据库
 
 请参阅[入门页](sql-database-get-started) 了解如何创建示例数据库并检索连接字符串。  
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
-使用 [System.Data.SqlClient.SqlConnection 类](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx)连接到 SQL Database。  
+使用 [System.Data.SqlClient.SqlConnection 类](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx)连接到 SQL 数据库。  
 
 
 		using System.Data.SqlClient;
@@ -37,7 +37,7 @@
 
 ## 执行查询并检索结果集 
 
-[System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) 和 [SqlDataReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqldatareader.aspx) 类可用于针对 SQL Database 从查询中检索结果集。请注意，System.Data.SqlClient 也支持将数据检索到脱机 [System.Data.DataSet](https://msdn.microsoft.com/zh-cn/library/system.data.dataset.aspx) 中。   
+[System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) 和 [SqlDataReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqldatareader.aspx) 类可用于针对 SQL 数据库 从查询中检索结果集。请注意，System.Data.SqlClient 也支持将数据检索到脱机 [System.Data.DataSet](https://msdn.microsoft.com/zh-cn/library/system.data.dataset.aspx) 中。   
 
 
     using System;
@@ -81,7 +81,7 @@
 
 ## 插入一行，应用参数，然后检索生成的主键值 
 
-在 SQL Database 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。在本示例中，你将了解如何执行 [insert 语句](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx)，安全传递用于防止 [SQL 注入](https://msdn.microsoft.com/magazine/cc163917.aspx)的参数，然后检索自动生成的主键值。  
+在 SQL 数据库 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENECE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。在本示例中，你将了解如何执行 [insert 语句](https://msdn.microsoft.com/zh-cn/library/ms174335.aspx)，安全传递用于防止 [SQL 注入](https://msdn.microsoft.com/magazine/cc163917.aspx)的参数，然后检索自动生成的主键值。  
 
 可以使用 [System.Data.SqlClient.SqlCommand](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.aspx) 类中的 [ExecuteScalar](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.executescalar.aspx) 方法执行语句，然后检索此语句返回的第一列和行。可以使用 INSERT 语句的 [OUTPUT](https://msdn.microsoft.com/zh-cn/library/ms177564.aspx) 子句将插入的值作为结果集返回到调用应用程序。请注意，[UPDATE](https://msdn.microsoft.com/zh-cn/library/ms177523.aspx)、[DELETE](https://msdn.microsoft.com/zh-cn/library/ms189835.aspx) 和 [MERGE](https://msdn.microsoft.com/zh-cn/library/bb510625.aspx) 语句也支持 OUTPUT。如果插入了多个行，你应使用 [ExecuteReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.executereader.aspx) 方法来检索所有行的插入值。  
 

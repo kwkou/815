@@ -32,7 +32,7 @@
 > [AZURE.NOTE]
 > 
 - 仅当你已启用 Azure Active Directory 高级版时，一些高级异常报告和资源使用情况报告才可用。高级报告可帮助你提高访问安全性、应对潜在威胁以及获得对设备访问和应用程序使用情况进行分析。
-- 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Microsoft Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
+- 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
 
 
 ## 异常报告

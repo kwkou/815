@@ -1,6 +1,6 @@
 <properties 
    pageTitle="更改数据库服务层和性能级别" 
-   description="了解如何使用 Azure SQL Database 的服务层向上和向下缩放云数据库。使用服务层中可以根据业务和成本要求上下调节性能，且不会造成应用程序中断服务。" 
+   description="了解如何使用 Azure SQL 数据库 的服务层向上和向下缩放云数据库。使用服务层中可以根据业务和成本要求上下调节性能，且不会造成应用程序中断服务。" 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -20,11 +20,11 @@
 
 # 更改数据库服务层和性能级别 
 
-本主题介绍有关在服务层和性能级别之间移动 Azure SQL Database 的步骤。
+本主题介绍有关在服务层和性能级别之间移动 Azure SQL 数据库 的步骤。
 
 ## 更改服务层 
 
-使用[将 SQL Database Web/企业数据库升级到新服务层](sql-database-upgrade-new-service-tiers)和 [Azure SQL Database 服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)中的信息，确定适合你的 Azure SQL Database 的服务层和性能级别。
+使用[将 SQL 数据库 Web/企业数据库升级到新服务层](sql-database-upgrade-new-service-tiers)和 [Azure SQL 数据库 服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)中的信息，确定适合你的 Azure SQL 数据库 的服务层和性能级别。
 
 你可以使用 Azure 管理门户、[PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx) 在任何服务层之间轻松转移。
 
@@ -36,7 +36,7 @@
 
 - 从高级服务层降级时，你必须首先终止所有地域复制关系。可以执行[终止连续复制关系](https://msdn.microsoft.com/zh-cn/library/azure/dn741323.aspx)主题中所述的步骤来停止在主数据库与活动辅助数据库之间进行的复制过程。
 
-- 还原服务解决方案根据服务层的不同而异。如果你要降级，则以后可能无法还原到时间点，或者会缩短备份保留期。有关详细信息，请参阅 [Azure SQL Database 备份和还原](https://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)。
+- 还原服务解决方案根据服务层的不同而异。如果你要降级，则以后可能无法还原到时间点，或者会缩短备份保留期。有关详细信息，请参阅 [Azure SQL 数据库 备份和还原](https://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)。
 
 - 在 24 小时期限内，最多可以单独进行四次数据库更改（服务层或性能级别）。
 
@@ -46,24 +46,24 @@
 - 企业和 Web 服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和企业版停用常见问题](https://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
 
 <注意事项>
-- 必须注意，[联合的当前实现将随 Web 和企业服务层一起停用](https://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。建议你使用 [Azure SQL Database 的弹性缩放](sql-database-elastic-scale-get-started)在 Azure SQL Database 上生成分片的向外扩展解决方案。若要试用弹性缩放，请参阅"Azure SQL Database 弹性缩放预览版入门"。
+- 必须注意，[联合的当前实现将随 Web 和企业服务层一起停用](https://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。建议你使用 [Azure SQL 数据库 的弹性缩放](sql-database-elastic-scale-get-started)在 Azure SQL 数据库 上生成分片的向外扩展解决方案。若要试用弹性缩放，请参阅"Azure SQL 数据库 弹性缩放预览版入门"。
 
 ## 升级到更高的服务层
 使用以下方法之一可以升级数据库。这些步骤专门用于升级到高级服务层，不过也适用于所有升级。
 
 ### 使用 Azure 管理门户
 1. 使用你的 Microsoft 帐户登录到 Azure 管理门户。
-2. 导航到"SQL DATABASE"选项卡。
+2. 导航到"SQL 数据库"选项卡。
 3. 从"数据库"列表中选择数据库。这将在"数据库仪表板"或"快速启动"页上打开该数据库。
 4. 为数据库选择"缩放"选项卡。
 5. 在"常规"部分下，为服务层选择"高级"。
-6. 对于"性能级别"，请选择"P1"、"P2"或"P3"。为每个性能级别提供支持的资源以 DTU 表示。有关性能级别和 DTU 的详细信息，请参阅"Azure SQL Database 服务层和性能级别"
+6. 对于"性能级别"，请选择"P1"、"P2"或"P3"。为每个性能级别提供支持的资源以 DTU 表示。有关性能级别和 DTU 的详细信息，请参阅"Azure SQL 数据库 服务层和性能级别"
 8. 在屏幕底部的命令栏中，单击"保存"按钮。
 9. 将为你显示"确认"。阅读提供的信息，然后选中该复选框进行确认。
 
 
 ### 使用 Azure PowerShell
-1. 使用 Set-AzureSqlDatabase 指定数据库的性能级别、最大数据库大小和服务层。有关不同服务层支持的数据库大小的列表，请参阅"Azure SQL Database 服务层（版本）"。
+1. 使用 Set-AzureSqlDatabase 指定数据库的性能级别、最大数据库大小和服务层。有关不同服务层支持的数据库大小的列表，请参阅"Azure SQL 数据库 服务层（版本）"。
 2. 使用 New-AzureSqlDatabaseServerContext cmdlet 设置服务器上下文。"使用 Azure PowerShell 命令"部分中提供了示例语法。
 3. 获取数据库和目标性能级别的句柄。使用 Set-AzureSqlDatabase -ServiceObjective 指定性能级别
 
@@ -89,7 +89,7 @@
 
 ### 使用 Azure 管理门户
 1. 使用你的 Microsoft 帐户登录到 Azure 管理门户。
-2. 导航到"SQL DATABASE"选项卡。
+2. 导航到"SQL 数据库"选项卡。
 3. 为所需数据库选择"缩放"选项卡。
 4. 在"常规"部分下，选择你要降级到的服务层。
 5. 在屏幕底部的命令栏中，单击"保存"按钮。
@@ -135,7 +135,7 @@
 
 ### 使用 Azure 管理门户
 1. 使用你的 Microsoft 帐户登录到 Azure 管理门户。
-2. 导航到"SQL DATABASE"选项卡。
+2. 导航到"SQL 数据库"选项卡。
 3. 从该帐户或特定服务器的"数据库"列表中选择一个数据库。这将在"数据库仪表板"或"快速启动"页上打开该数据库。
 5. 为数据库选择"缩放"选项卡。
 6. 对于"性能级别"选项，请选择一个性能级别。
@@ -170,7 +170,7 @@
 本部分提供有关升级到标准或高级服务层，或者对数据库做出性能级别更改所造成的影响的信息。
 
 ### 在数据库更改期间处理应用程序连接
-在完成性能级别更改或升级/降级时，与数据库的连接可能会暂时断开，并且可能需要几秒钟才能重新建立连接。SQL Database 应用程序的代码应当具有从断开的连接恢复的弹性，因为当数据中心内的计算机出现故障，SQL Database 服务对数据库执行故障转移时，SQL Database 中随时会出现这种情况。应用程序不需要执行实现方面的更改，即可使用高级数据库或更改高级数据库性能级别。
+在完成性能级别更改或升级/降级时，与数据库的连接可能会暂时断开，并且可能需要几秒钟才能重新建立连接。SQL 数据库 应用程序的代码应当具有从断开的连接恢复的弹性，因为当数据中心内的计算机出现故障，SQL 数据库 服务对数据库执行故障转移时，SQL 数据库 中随时会出现这种情况。应用程序不需要执行实现方面的更改，即可使用高级数据库或更改高级数据库性能级别。
 
 ### 了解和估算数据库更改的延迟
 数据库的 SLO 更改通常会涉及数据移动，因此可能需要几个小时，更改请求才能完成，关联的计费更改才会生效。在升级或降级数据库时，将会因为更改而发生数据移动；在更改数据库的性能级别时，也有可能会发生数据移动。
@@ -232,7 +232,7 @@
 
 
 **Azure PowerShell 参考**
-若要查看有关本主题中使用的 Azure PowerShell cmdlet 的详细信息，请参阅 [Azure SQL Database Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn546726.aspx)。
+若要查看有关本主题中使用的 Azure PowerShell cmdlet 的详细信息，请参阅 [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn546726.aspx)。
 
 [New-AzureSqlDatabaseServerContext](https://msdn.microsoft.com/zh-cn/library/azure/dn546736.aspx)
 

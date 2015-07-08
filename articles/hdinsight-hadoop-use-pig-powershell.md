@@ -82,7 +82,7 @@ Azure PowerShell 提供  *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 		Write-Host "Display the standard output ..." -ForegroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardOutput
 
-2. 打开新的 **Microsoft Azure PowerShell** 提示符。将目录切换到 **pigjob.ps1** 文件所在位置，然后使用以下命令来运行脚本。
+2. 打开新的 **Windows Azure PowerShell** 提示符。将目录切换到 **pigjob.ps1** 文件所在位置，然后使用以下命令来运行脚本。
 
 		.\pigjob.ps1
 

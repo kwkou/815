@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase 教程：HDInsight 中的 HBase 入门 | Microsoft Azure"
+	pageTitle="HBase 教程：HDInsight 中的 HBase 入门 | Windows Azure"
 	description="遵循本 HBase 教程开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用。从 HBase shell 创建表，然后使用 Hive 查询这些表。"
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"

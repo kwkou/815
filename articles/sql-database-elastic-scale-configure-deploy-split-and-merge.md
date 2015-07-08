@@ -1,4 +1,4 @@
-<properties title="Split and Merge Service Tutorial" pageTitle="Azure SQL 拆分和合并服务教程" description="使用弹性缩放拆分和合并" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Split and Merge Service Tutorial" pageTitle="Azure SQL 拆分和合并服务教程" description="使用弹性缩放拆分和合并" metaKeywords="sharding scaling, Azure SQL 数据库 sharding, elastic scale, splitting and merging elastic scale" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -17,9 +17,9 @@
 
 ## 先决条件 
 
-1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后单击"数据服务"->"SQL Database"->"自定义创建"。填写数据库名称并创建新的用户和密码。确保记录该名称和密码以供日后使用。
+1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 管理门户](https://manage.windowsazure.cn)。在左下角单击"新建"，然后单击"数据服务"->"SQL 数据库"->"自定义创建"。填写数据库名称并创建新的用户和密码。确保记录该名称和密码以供日后使用。
 
-2. 确保你的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。转到 [Azure 管理门户](https://manage.windowsazure.cn)，在左侧窗格上，单击"SQL Database"。然后，在屏幕顶部的功能区上单击"服务器"，并选择你的服务器。然后，在顶部单击"配置"并确保将"Microsoft Azure 服务"设置设置为"是"。
+2. 确保你的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。转到 [Azure 管理门户](https://manage.windowsazure.cn)，在左侧窗格上，单击"SQL 数据库"。然后，在屏幕顶部的功能区上单击"服务器"，并选择你的服务器。然后，在顶部单击"配置"并确保将"Windows Azure 服务"设置设置为"是"。
 
     ![Allowed services][1]
 
@@ -132,9 +132,9 @@
         "Server=myservername.database.chinacloudapi.cn; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 
 * 确保服务器名称不以 **https://** 开头。
-* 确保你的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 https://manage.windowsazure.cn，依次单击左侧的"SQL Databases"和顶部的"服务器"，然后选择你的服务器。在顶部单击"配置"并确保将"Microsoft Azure 服务"设置设置为"是"。（请参阅此文章顶部的"先决条件"部分）。
+* 确保你的 Azure SQL DB 服务器允许 Windows Azure 服务与其连接。若要执行此操作，请打开 https://manage.windowsazure.cn，依次单击左侧的"SQL 数据库s"和顶部的"服务器"，然后选择你的服务器。在顶部单击"配置"并确保将"Windows Azure 服务"设置设置为"是"。（请参阅此文章顶部的"先决条件"部分）。
 
-* 查看你的拆分/合并服务实例的诊断日志。打开 Visual Studio 实例，然后在菜单栏中，依次单击"视图"和"服务器资源管理器"。单击"Microsoft Azure"图标以连接到你的 Azure 订阅。然后，导航到"Microsoft Azure"->"<你的存储帐户>"->"表"->"WADLogsTable"。有关详细信息，请参阅[使用服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx) 
+* 查看你的拆分/合并服务实例的诊断日志。打开 Visual Studio 实例，然后在菜单栏中，依次单击"视图"和"服务器资源管理器"。单击"Windows Azure"图标以连接到你的 Azure 订阅。然后，导航到"Windows Azure"->"<你的存储帐户>"->"表"->"WADLogsTable"。有关详细信息，请参阅[使用服务器资源管理器浏览存储资源](http://msdn.microsoft.com/zh-cn/library/azure/ff683677.aspx) 
 
     ![][5]
 
@@ -155,7 +155,7 @@
 2. **ExecuteSampleSplitMerge.ps1** - 在测试数据层上执行测试操作（有关详细说明，请参见下表）
 3. **GetMappings.ps1** - 可输出分片映射的当前状态的顶级示例脚本。
 4. **ShardManagement.psm1** - 可包装 ShardManagement API 的帮助器脚本
-5. **SqlDatabaseHelpers.psm1** - 用于创建和管理 SQL Database 的帮助器脚本
+5. **SqlDatabaseHelpers.psm1** - 用于创建和管理 SQL 数据库 的帮助器脚本
 
 <table style="width:100%">
   <tr>
@@ -204,7 +204,7 @@
 ## 使用 PowerShell 验证你的部署
 
 1.    打开新的 PowerShell 窗口并导航到你下载拆分/合并包的目录，然后导航到"powershell"目录中。
-2.    创建将在其中创建分片映射管理器和分片的 Azure SQL Database 服务器（或选择现有服务器）。 
+2.    创建将在其中创建分片映射管理器和分片的 Azure SQL 数据库 服务器（或选择现有服务器）。 
 
     注意：在默认情况下，SetupSampleSplitMergeEnvironment.ps1 脚本将在相同的服务器上创建所有这些数据库以简化脚本。这并不表示拆分/合并服务本身存在限制。
 

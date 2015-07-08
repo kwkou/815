@@ -1,6 +1,6 @@
 ﻿<properties 
-   pageTitle="SQL Database 业务连续性常见问题" 
-   description="客户所提出的，有关 Azure SQL Database 中用于实现业务连续性和灾难恢复的内置功能和可选功能的常见问题与解答。" 
+   pageTitle="SQL 数据库 业务连续性常见问题" 
+   description="客户所提出的，有关 Azure SQL 数据库 中用于实现业务连续性和灾难恢复的内置功能和可选功能的常见问题与解答。" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -44,7 +44,7 @@
 
 ## 7.	如何批量还原服务器中的数据库？
 
-没有任何内置功能用于执行批量还原。你可以使用 [Azure SQL Database：完全服务器恢复](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666)脚本来完成此任务。 
+没有任何内置功能用于执行批量还原。你可以使用 [Azure SQL 数据库：完全服务器恢复](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666)脚本来完成此任务。 
 
 ## 8.	标准地域复制与活动地域复制之间有什么差别？
 

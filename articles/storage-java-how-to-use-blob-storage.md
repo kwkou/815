@@ -1,4 +1,4 @@
-<properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="如何使用 Blob 存储 (Java) | Microsoft Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。用 Java 编写的示例。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-how-to-use-blog-storage-service-java" urlDisplayName="Blob Service" pageTitle="如何使用 Blob 存储 (Java) | Windows Azure" metaKeywords="Get started Azure blob, Azure unstructured data, Azure unstructured storage, Azure blob, Azure blob storage, Azure blob Java" description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。用 Java 编写的示例。" metaCanonical="" services="storage" documentationCenter="Java" title="How to use Blob Storage from Java" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -59,7 +59,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
         "AccountName=your_storage_account;" + 
         "AccountKey=your_storage_account_key";
 
-在 Microsoft Azure 中的某个角色内运行的应用程序中，此字符串可存储在服务配置文件  *ServiceConfiguration.cscfg* 中，并可通过调用 RoleEnvironment.getConfigurationSettings 方法进行访问。下面是从服务配置文件中名为  *StorageConnectionString* 的 **Setting** 元素中获取连接字符串的示例：
+在 Windows Azure 中的某个角色内运行的应用程序中，此字符串可存储在服务配置文件  *ServiceConfiguration.cscfg* 中，并可通过调用 RoleEnvironment.getConfigurationSettings 方法进行访问。下面是从服务配置文件中名为  *StorageConnectionString* 的 **Setting** 元素中获取连接字符串的示例：
 
     // Retrieve storage account from connection-string.
     String storageConnectionString = 

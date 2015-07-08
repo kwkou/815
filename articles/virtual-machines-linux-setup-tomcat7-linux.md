@@ -1,12 +1,12 @@
-<properties urlDisplayName="How to Set Up Tomcat7 on a Linux Virtual Machine with Windows Azure" pageTitle="如何使用 Microsoft Azure 在 Linux 虚拟机上设置 Tomcat7" metaKeywords="Azure Tomcat7 vm, Tomcat7 vm, Azure Tomcat7" description="了解如何在 Microsoft Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 设置 Tomcat7。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="ningk" solutions="" manager="timlt" editor="tysonn"/>
+<properties urlDisplayName="How to Set Up Tomcat7 on a Linux Virtual Machine with Windows Azure" pageTitle="如何使用 Windows Azure 在 Linux 虚拟机上设置 Tomcat7" metaKeywords="Azure Tomcat7 vm, Tomcat7 vm, Azure Tomcat7" description="了解如何在 Windows Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 设置 Tomcat7。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="ningk" solutions="" manager="timlt" editor="tysonn"/>
 
 <tags ms.service="virtual-machines" ms.date="10/27/2014" wacn.date="06/19/2015"/>
 
-# 如何使用 Microsoft Azure 在 Linux 虚拟机上设置 Tomcat7 
+# 如何使用 Windows Azure 在 Linux 虚拟机上设置 Tomcat7 
 
 Apache Tomcat（或简称 Tomcat，以前也称为 Jakarta Tomcat）是由 Apache Software Foundation (ASF) 开发的一个开源 Web 服务器和 servlet 容器。Tomcat 实现了 Sun Microsystems 提出的 Java Servlet 和 JavaServer Pages (JSP) 规范，并提供了用于运行 Java 代码的纯 Java HTTP Web 服务器环境。在最简单的配置中，Tomcat 在单个操作系统进程中运行。此进程运行 Java 虚拟机 (JVM)。浏览器向 Tomcat 发出的每个 HTTP 请求都作为 Tomcat 进程中的单独线程进行处理。
 
-在本指南中，将在 Linux 映像上安装 tomcat7，并将其部署在 Microsoft Azure 中。
+在本指南中，将在 Linux 映像上安装 tomcat7，并将其部署在 Windows Azure 中。
 
 你将学习以下内容：
 

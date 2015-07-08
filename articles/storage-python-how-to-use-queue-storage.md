@@ -1,4 +1,4 @@
-<properties linkid="develop-python-queue-service" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Python) | Microsoft Azure" metaKeywords="Azure Queue Service messaging Python" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Python 编写的。" metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="" solutions="" manager="" editor="" />
+<properties linkid="develop-python-queue-service" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Python) | Windows Azure" metaKeywords="Azure Queue Service messaging Python" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Python 编写的。" metaCanonical="" services="storage" documentationCenter="Python" title="How to Use the Queue Storage Service from Python" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 
 
 # 如何从 Python 使用队列存储服务
-本指南将演示如何使用 Microsoft Azure 队列服务
+本指南将演示如何使用 Windows Azure 队列服务
 Azure 队列存储服务。相关示例是使用 Python
 API 编写的。涉及的方案包括**插入**、**扫视**、
 **获取**和**删除**队列消息，以及**创建和删除队列**。有关队列的详细信息，请参阅[后续步骤][]部分。

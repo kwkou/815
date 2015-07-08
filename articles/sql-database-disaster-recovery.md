@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="SQL Database 灾难恢复" 
-   description="了解在发生区域性的数据中心中断或故障后，如何使用 Azure SQL Database 地域复制和地域还原功能来恢复数据库。" 
+   pageTitle="SQL 数据库 灾难恢复" 
+   description="了解在发生区域性的数据中心中断或故障后，如何使用 Azure SQL 数据库 地域复制和地域还原功能来恢复数据库。" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -17,9 +17,9 @@
    wacn.date="05/25/2015" 
    ms.author="elfish"/>
 
-# 在中断后恢复 Azure SQL Database
+# 在中断后恢复 Azure SQL 数据库
 
-Azure SQL Database 提供了许多的中断恢复功能：
+Azure SQL 数据库 提供了许多的中断恢复功能：
 
 - 活动地域复制[（博客）](http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication)
 - 标准地域复制[（博客）](http://azure.microsoft.com/blog/2014/09/03/azure-sql-database-standard-geo-replication)
@@ -43,7 +43,7 @@ Azure SQL Database 提供了许多的中断恢复功能：
 
 ### Azure 门户
 1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择"浏览"，然后选择"SQL Database"。
+2. 在屏幕左侧选择"浏览"，然后选择"SQL 数据库"。
 3. 导航到你的数据库并选择它。 
 4. 在数据库边栏选项卡底部选择"地域复制映射"。
 4. 在"辅助数据库"下，右键单击你要恢复到的数据库名称所在的行，然后选择"停止"。
@@ -72,7 +72,7 @@ Azure SQL Database 提供了许多的中断恢复功能：
 
 ### Azure 门户
 1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择"新建"，选择"数据和存储"，然后选择"SQL Database"。
+2. 在屏幕左侧选择"新建"，选择"数据和存储"，然后选择"SQL 数据库"。
 2. 选择"备份"作为源，然后选择要从中进行恢复的地域冗余备份。
 3. 指定余下的数据库属性，然后单击"创建"。
 4. 数据库还原过程随即将会开始，你可以使用屏幕左侧的"通知"监视还原进度。

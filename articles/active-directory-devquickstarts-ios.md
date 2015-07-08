@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD iOS 入门 | Microsoft Azure"
+	pageTitle="Azure AD iOS 入门 | Windows Azure"
 	description="如何生成一个与 Azure AD 集成以方便登录，并使用 OAuth 调用 Azure AD 保护 API 的 iOS 应用程序。"
 	services="active-directory"
 	documentationCenter="ios"
@@ -34,21 +34,21 @@
 
 ## 步骤 1：下载并运行 .Net 或 Node.js REST API TODO 示例服务器
 
-专门编写这个示例是为了与用于生成 Microsoft Azure Active Directory 的单租户 To-Do REST API 的现有示例配合工作。这是本快速入门教程的先决条件。
+专门编写这个示例是为了与用于生成 Windows Azure Active Directory 的单租户 To-Do REST API 的现有示例配合工作。这是本快速入门教程的先决条件。
 
 有关如何设置的信息，请访问我们的现有示例：
 
-* [适用于 Node.js 的 Microsoft Azure Active Directory 示例 REST API 服务](active-directory-devquickstarts-webapi-nodejs)
+* [适用于 Node.js 的 Windows Azure Active Directory 示例 REST API 服务](active-directory-devquickstarts-webapi-nodejs)
 
-## 步骤 2：向 Microsoft Azure AD 租户注册 Web API
+## 步骤 2：向 Windows Azure AD 租户注册 Web API
 
 **我正在执行什么操作？**
 
-*Microsoft Active Directory 支持添加两种类型的应用程序。Web API，向访问这些 Web API 的用户和应用程序（在 Web 上或者设备中运行的应用程序上）提供服务。在此步骤中，你将注册你在本地运行的用于测试此示例的 Web API。通常，此 Web API 是一个 REST 服务，它提供应用程序需要访问的功能。Microsoft Azure Active Directory 可以保护任何终结点！*
+*Microsoft Active Directory 支持添加两种类型的应用程序。Web API，向访问这些 Web API 的用户和应用程序（在 Web 上或者设备中运行的应用程序上）提供服务。在此步骤中，你将注册你在本地运行的用于测试此示例的 Web API。通常，此 Web API 是一个 REST 服务，它提供应用程序需要访问的功能。Windows Azure Active Directory 可以保护任何终结点！*
 
 *此处我们假设你要注册上面引用的 TODO REST API，但这也适用于你希望 Azure Active Directory 保护的任何 Web API。*
 
-在 Microsoft Azure AD 中注册 Web API 的步骤
+在 Windows Azure AD 中注册 Web API 的步骤
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 2. 在左侧的导航栏中单击“Active Directory”。
@@ -68,7 +68,7 @@
 
 **我正在执行什么操作？**
 
-*如前所述，Microsoft Azure Active Directory 支持添加两种类型的应用程序。Web API，向访问这些 Web API 的用户和应用程序（在 Web 上或者设备中运行的应用程序上）提供服务。在此步骤中，你要将应用程序注册到此示例。只有执行了此操作，此应用程序才能请求访问你刚刚注册的 Web API。除非注册了应用程序，否则 Azure Active Directory 甚至可能会拒绝应用程序请求登录！ 这是模型安全功能的一部分。*
+*如前所述，Windows Azure Active Directory 支持添加两种类型的应用程序。Web API，向访问这些 Web API 的用户和应用程序（在 Web 上或者设备中运行的应用程序上）提供服务。在此步骤中，你要将应用程序注册到此示例。只有执行了此操作，此应用程序才能请求访问你刚刚注册的 Web API。除非注册了应用程序，否则 Azure Active Directory 甚至可能会拒绝应用程序请求登录！ 这是模型安全功能的一部分。*
 
 *此处我们假设你要注册上面引用的这个示例应用程序，但这也适用于你正在开发的任何应用程序。*
 

@@ -24,12 +24,12 @@ Azure SDK for .NET 将安装以下产品：
 
 - [Visual Studio Express for Web](#vwd)
 - [Microsoft ASP.NET 和 Web Tools for Visual Studio](#wte)
-- [Microsoft Azure Tools for Microsoft Visual Studio](#tools)
-- [Microsoft Azure 创作工具](#auth)
-- [Microsoft Azure 模拟器](#emulator)
-- [Microsoft Azure 存储模拟器](#stgemulator)
-- [Microsoft Azure 存储工具](#stgtools)
-- [用于 .NET 的 Microsoft Azure 库](#libraries)
+- [Windows Azure Tools for Microsoft Visual Studio](#tools)
+- [Windows Azure 创作工具](#auth)
+- [Windows Azure 模拟器](#emulator)
+- [Windows Azure 存储模拟器](#stgemulator)
+- [Windows Azure 存储工具](#stgtools)
+- [用于 .NET 的 Windows Azure 库](#libraries)
 - [用于 Visual Studio 的LightSwitch Azure Publishing 外接程序](#ls)
 
 ###<a id="vwd"></a>Visual Studio Express for Web
@@ -42,14 +42,14 @@ Azure SDK for .NET 将安装以下产品：
 
 * [将 Web 项目发布到 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-get-started)。
 * [将控制台应用程序项目发布到 Azure WebJobs](/zh-cn/documentation/articles/websites-dotnet-deploy-webjobs)。
-* [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL Database 资源](/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+* [在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库 资源](/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 * [在创建新网站时创建 PowerShell 部署脚本](http://msdn.microsoft.com/zh-cn/library/dn642480.aspx)。
 * [在服务器资源管理器中管理和故障诊断 Azure 网站](/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#sitemanagement)。
 * [在调试模式下针对网站和 WebJobs 远程运行](/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)。
 
 >[WACOM.NOTE] 无需安装 Azure SDK for .NET 即可使用这些功能；它们还包括在 Visual Studio 更新中。 
 
-###<a id="tools"></a>Microsoft Azure Tools for Microsoft Visual Studio
+###<a id="tools"></a>Windows Azure Tools for Microsoft Visual Studio
 
 这使你可以使用 Azure 云服务和虚拟机：
 
@@ -61,7 +61,7 @@ Azure SDK for .NET 将安装以下产品：
 * 在服务器资源管理器中查看和管理 [云服务](http://msdn.microsoft.com/zh-cn/library/ff683675.aspx)、[虚拟机](http://msdn.microsoft.com/zh-cn/library/jj131259.aspx) 和 [Service Bus](http://msdn.microsoft.com/zh-cn/library/jj149828.aspx)。 
 * [针对云服务和虚拟机在调试模式下远程运行](http://msdn.microsoft.com/zh-cn/library/ff683670.aspx)。
 
-###<a id="auth"></a>Microsoft Azure 创作工具
+###<a id="auth"></a>Windows Azure 创作工具
 
 其中包括：
 
@@ -69,19 +69,19 @@ Azure SDK for .NET 将安装以下产品：
 * [CSEncrypt 命令行工具](http://msdn.microsoft.com/zh-cn/library/hh404001.aspx)，用于加密密码，以便使用密码通过远程桌面连接访问云服务角色实例。
 * 运行时二进制文件，云服务项目需要使用该文件与运行时环境通信以及进行诊断。这些二进制文件在 NuGet 包中不提供。
 
-###<a id="emulator"></a>Microsoft Azure 模拟器
+###<a id="emulator"></a>Windows Azure 模拟器
 
 [Azure 模拟器](http://msdn.microsoft.com/zh-cn/library/dn339018.aspx) 模拟云服务环境，这样你就可以先在本地计算机上测试云服务项目，然后再将其部署到 Azure。
 
-###<a id="stgemulator"></a>Microsoft Azure 存储模拟器
+###<a id="stgemulator"></a>Windows Azure 存储模拟器
 
 [Azure 存储模拟器](http://msdn.microsoft.com/zh-cn/library/hh403989.aspx) 使用 SQL Server 实例和本地文件系统来模拟 Azure 存储空间（队列、表、Blob），以便在本地进行测试。 
 
-###<a id="stgtools"></a>Microsoft Azure 存储工具
+###<a id="stgtools"></a>Windows Azure 存储工具
 
 这将安装命令行工具 [AzCopy](/zh-cn/documentation/articles/storage-use-azcopy)，以便将数据传入和传出 Azure 存储帐户。
 
-###<a id="libraries"></a>用于 .NET 的 Microsoft Azure 库
+###<a id="libraries"></a>用于 .NET 的 Windows Azure 库
 
 其中包括：
 
@@ -138,7 +138,7 @@ Azure SDK for .NET 将安装以下产品：
 
 ###<a id="lifecycle"></a>Azure SDK for .NET 版本的生命周期策略是什么？
 
-请参阅 [Microsoft Azure 云服务支持生命周期策略](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq)。
+请参阅 [Windows Azure 云服务支持生命周期策略](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq)。
 
 ###<a id="guestos"></a>哪些来宾操作系统版本是 Azure SDK for .NET 兼容的？
 

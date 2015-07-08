@@ -27,10 +27,10 @@
 ##自动化脚本
 
 ####常用脚本
-- [部署指向 SQL Database 和存储帐户的 Azure 网站](http://gallery.technet.microsoft.com/scriptcenter/Deploy-a-Windows-Azure-Web-790cacd2)
+- [部署指向 SQL 数据库 和存储帐户的 Azure 网站](http://gallery.technet.microsoft.com/scriptcenter/Deploy-a-Windows-Azure-Web-790cacd2)
 - [远程更新 Azure 网站的环境设置](http://gallery.technet.microsoft.com/scriptcenter/Remotely-Update-the-25375d03)
 - [下载和分析来自 Azure 网站的 IIS 日志](http://gallery.technet.microsoft.com/scriptcenter/and-Parse-IIS-logs-from-a-9b85431b)
-- [部署具有 SQL Database 和存储的 Azure Web 角色（云服务）](http://gallery.technet.microsoft.com/scriptcenter/Deploy-a-Windows-Azure-Web-81629e04)
+- [部署具有 SQL 数据库 和存储的 Azure Web 角色（云服务）](http://gallery.technet.microsoft.com/scriptcenter/Deploy-a-Windows-Azure-Web-81629e04)
 - [在 Azure 虚拟机中部署 SQL Server 数据仓库](http://gallery.technet.microsoft.com/scriptcenter/Deploy-a-SQL-Server-Data-584e88d5)
 
 <!--

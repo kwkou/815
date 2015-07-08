@@ -1,4 +1,4 @@
-<properties title="Shard Map Management" pageTitle="分片映射管理" description="如何使用 ShardMapManager（.NET 的弹性缩放 API）" metaKeywords="sharding scaling, Azure SQL Database sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Shard Map Management" pageTitle="分片映射管理" description="如何使用 ShardMapManager（.NET 的弹性缩放 API）" metaKeywords="sharding scaling, Azure SQL 数据库 sharding, elastic scale, shardmapmanager" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"

@@ -1,6 +1,6 @@
 <properties 
    pageTitle="在 Azure 门户中使用时间点还原来还原 Azure SQL 数据库" 
-   description="时间点还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户" 
+   description="时间点还原, Windows Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -22,7 +22,7 @@
 
 ## 概述
 
-本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn)中使用时间点还原来还原 Azure SQL 数据库。Azure SQL Database 针对基本、标准和高级服务层提供内置备份，以支持自助时间点还原。
+本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn)中使用时间点还原来还原 Azure SQL 数据库。Azure SQL 数据库 针对基本、标准和高级服务层提供内置备份，以支持自助时间点还原。
 
 时间点还原会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact)。
 
@@ -38,7 +38,7 @@
 
 * Web 和企业版服务层不支持时间点还原。
  
-	* 如果你有 Web 或企业版数据库，可以使用数据库复制来获取数据库的事务一致副本，然后将复制的数据库导出到 Microsoft Azure 存储帐户。有关更多信息，请参阅[如何：使用数据库复制 (Azure SQL Database) ](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx) 和[如何：在 Azure SQL Database 中使用导入和导出服务](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx)。
+	* 如果你有 Web 或企业版数据库，可以使用数据库复制来获取数据库的事务一致副本，然后将复制的数据库导出到 Windows Azure 存储帐户。有关更多信息，请参阅[如何：使用数据库复制 (Azure SQL 数据库) ](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx) 和[如何：在 Azure SQL 数据库 中使用导入和导出服务](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx)。
 
 	* Web 和企业版将在 2015 年 9 月停用。有关详细信息，请参阅 [Web 和企业版停用常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
 
@@ -47,7 +47,7 @@
 
 1. 使用你的 Microsoft 帐户登录到 Azure 门户。
 
-2. 在左侧导航窗格中，单击"SQL Database"。
+2. 在左侧导航窗格中，单击"SQL 数据库"。
   
 3. 在"数据库"列表中，单击你要还原的数据库。 
 
@@ -65,10 +65,10 @@
 
 有关详细信息，请参阅以下主题：
 
-[Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
+[Azure SQL 数据库 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
-[Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
+[Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-[Azure SQL Database Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore)
+[Azure SQL 数据库 Point in Time Restore (blog)](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore)
 
 <!--HONumber=55-->

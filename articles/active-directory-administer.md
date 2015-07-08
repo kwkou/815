@@ -23,7 +23,7 @@
 
 在物理工作区中，可以将"租户"一词定义为占用某个大厦的组或公司。例如，你的组织可能在某个大厦中拥有办公空间。此大厦可能与其他几个组织在一条大街上。你的组织将被视为该大厦的租户。此大厦是你的组织的资产并提供安全性以确保你们可以安全地开展业务。此外，它与你们街道上的其他企业是分隔开的。这可确保你的组织以及其中的资产与其他组织隔离。 
 
-在启用云的工作区中，可以将"租户"定义为拥有并管理该云服务的特定实例的客户端或组织。租户使用 Microsoft Azure 提供的标识平台，它只是你的组织在注册 Azure 或 Office 365 等 Microsoft 云服务时接收并拥有的 Azure Active Directory (Azure AD) 专用实例。
+在启用云的工作区中，可以将"租户"定义为拥有并管理该云服务的特定实例的客户端或组织。租户使用 Windows Azure 提供的标识平台，它只是你的组织在注册 Azure 或 Office 365 等 Microsoft 云服务时接收并拥有的 Azure Active Directory (Azure AD) 专用实例。
 
 每个 Azure AD 目录都是独特的，独立于其他 Azure AD 目录。就像公司办公大楼是你的组织特有的安全资产一样，根据设计，Azure AD 目录也是仅供你的组织使用的安全资产。Azure AD 体系结构隔离了客户数据和身份信息，避免混合存放。这意味着，一个 Azure AD 目录的用户和管理员不可能意外或恶意性地访问另一目录中的数据。
 
@@ -61,7 +61,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 
 如果你尚未订阅 Microsoft 云服务，请使用下面的链接之一来注册。注册第一个服务后，将自动创建 Azure AD 目录。
 
-- [Microsoft Azure](https://account.windowsazure.cn/organization)
+- [Windows Azure](https://account.windowsazure.cn/organization)
 - [Office 365](http://products.office.com/zh-cn/business/compare-office-365-for-business-plans)
 - [Microsoft Intune](https://account.manage.microsoft.com/Signup/MainSignUp.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&ali=1)
 
@@ -77,7 +77,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 
 ## 如何管理目录数据
 
-作为一个或多个 Microsoft 云服务订阅的管理员，你可以使用 Azure 管理门户、Microsoft Intune 帐户门户或 Office 365 管理中心来管理你的组织目录数据。你还可以下载并运行[用于 Windows PowerShell 的 Microsoft Azure Active Directory 模块](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) cmdlet 来帮助管理 Azure AD 中存储的数据。 
+作为一个或多个 Microsoft 云服务订阅的管理员，你可以使用 Azure 管理门户、Microsoft Intune 帐户门户或 Office 365 管理中心来管理你的组织目录数据。你还可以下载并运行[用于 Windows PowerShell 的 Windows Azure Active Directory 模块](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) cmdlet 来帮助管理 Azure AD 中存储的数据。 
 
 通过上述任一门户（或 cmdlet），你可以执行以下操作：
 
@@ -128,7 +128,7 @@ Azure AD 要求删除目录之前必须符合特定的条件。这可以降低�
 
 - 该目录中的唯一用户是将要删除该目录的全局管理员。只有在删除所有其他用户后，才能删除该目录。如果用户是从本地同步的，则需要关闭同步，并且必须使用管理门户或用于 Windows PowerShell 的 Azure 模块从云目录中删除这些用户。不要求删除组或联系人，例如，从 Office 365 管理中心添加的联系人。
 - 该目录中不能有任何应用程序。只有在删除所有应用程序后，才能删除该目录。 
-- 与该目录关联的任何 Microsoft Online Services（例如 Microsoft Azure、Office 365 或 Azure AD 高级版）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则你不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将你的订阅与其他目录相关联，请登录到 Azure 管理门户，并在左侧导航窗格中单击"设置"。然后，在"订阅"页的底部单击"编辑目录"。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](active-directory-how-subscriptions-associated-directory)。 
+- 与该目录关联的任何 Microsoft Online Services（例如 Windows Azure、Office 365 或 Azure AD 高级版）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则你不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将你的订阅与其他目录相关联，请登录到 Azure 管理门户，并在左侧导航窗格中单击"设置"。然后，在"订阅"页的底部单击"编辑目录"。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](active-directory-how-subscriptions-associated-directory)。 
 
     > [AZURE.NOTE]
     > 如果用户是使用工作或学校帐户登录的，则该用户不得尝试删除其主目录。例如，如果用户是作为 joe@contoso.onmicrosoft.com 登录的，则该用户不能删除默认域为 contoso.onmicrosoft.com 的目录。

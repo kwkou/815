@@ -1,6 +1,6 @@
 <properties 
    pageTitle="在 Azure 门户中使用地域还原恢复 Azure SQL 数据库" 
-   description="地域还原, Microsoft Azure SQL Database, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户" 
+   description="地域还原, Windows Azure SQL 数据库, 还原数据库, 恢复数据库, Azure 管理门户, Azure 门户" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -27,7 +27,7 @@
 
 ## 概述
 
-本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn)中使用地域还原恢复 Azure SQL 数据库。地域还原是针对所有基本、标准和高级 Azure SQL Database 服务层提供的核心灾难恢复保护。
+本教程说明如何在 [Azure 门户](http://manage.windowsazure.cn)中使用地域还原恢复 Azure SQL 数据库。地域还原是针对所有基本、标准和高级 Azure SQL 数据库 服务层提供的核心灾难恢复保护。
 
 ## 限制和安全性
 
@@ -41,15 +41,15 @@
 
 * Web 和企业版服务层不支持地域还原。
  
-	* 如果你有 Web 或企业版数据库，可以使用数据库复制来获取数据库的事务一致副本，然后将复制的数据库导出到 Microsoft Azure 存储帐户。有关更多信息，请参阅[如何：使用数据库复制 (Azure SQL Database) ](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx)和[如何：在 Azure SQL Database 中使用导入和导出服务](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx)。
+	* 如果你有 Web 或企业版数据库，可以使用数据库复制来获取数据库的事务一致副本，然后将复制的数据库导出到 Windows Azure 存储帐户。有关更多信息，请参阅[如何：使用数据库复制 (Azure SQL 数据库) ](http://msdn.microsoft.com/zh-cn/library/azure/ff951631.aspx)和[如何：在 Azure SQL 数据库 中使用导入和导出服务](http://msdn.microsoft.com/zh-cn/library/azure/hh335292.aspx)。
 
 	* Web 和企业版将在 2015 年 9 月停用。有关详细信息，请参阅 [Web 和企业版停用常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
 
 ## 如何：在 Azure 门户中使用地域还原恢复 Azure SQL 数据库
 
-1. 使用你的 Microsoft 帐户登录到 Azure 门户，然后选择"SQL Database"。
+1. 使用你的 Microsoft 帐户登录到 Azure 门户，然后选择"SQL 数据库"。
 
-2. 在左侧导航窗格中，单击"SQL Database"。
+2. 在左侧导航窗格中，单击"SQL 数据库"。
 
 3. 在页面顶部，单击"服务器"。
 
@@ -75,10 +75,10 @@
 
 [在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)
 
-[Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
+[Azure SQL 数据库 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
-[Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
+[Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-<!--[Azure SQL Database Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)-->
+<!--[Azure SQL 数据库 Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)-->
 
 <!--HONumber=55-->

@@ -172,7 +172,7 @@ SSH 是用于登录远程服务器以及在其上远程执行命令的实用工�
 
 	> [AZURE.NOTE] 选择"远程 DNS"会使用 HDInsight 群集解析 DNS 请求。如果取消选择此项，将在本地解析 DNS。
 
-	<!--You can verify that traffic is being routed through the tunnel by vising a site such as <a href="http://www.whatismyip.com/" target="_blank">http://www.whatismyip.com/</a> with the proxy settings enabled and disabled in Firefox. While enabled, the IP address will be for a machine in the Microsoft Azure datacenter.-->
+	<!--You can verify that traffic is being routed through the tunnel by vising a site such as <a href="http://www.whatismyip.com/" target="_blank">http://www.whatismyip.com/</a> with the proxy settings enabled and disabled in Firefox. While enabled, the IP address will be for a machine in the Windows Azure datacenter.-->
 
 ### 浏览器扩展
 

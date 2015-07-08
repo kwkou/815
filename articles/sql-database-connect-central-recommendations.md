@@ -112,7 +112,7 @@
 对于 Elastic Scale，请参阅：
 
 
-- [Azure SQL Database 弹性缩放预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
+- [Azure SQL 数据库 弹性缩放预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
 - [数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
 
 
@@ -122,6 +122,6 @@
 本部分中的链接是指向博客文章或类似来源的，因此它们可能未完成或已过时。但它们可能仍有一些基本价值。
 
 
-- [针对 Microsoft Azure SQL 数据库中的暂时性错误的重试逻辑](https://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-windows-azure-sql-database.aspx)
+- [针对 Windows Azure SQL 数据库中的暂时性错误的重试逻辑](https://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-windows-azure-sql-database.aspx)
 
 <!--HONumber=55-->

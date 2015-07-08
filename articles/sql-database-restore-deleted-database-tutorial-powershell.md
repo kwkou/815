@@ -1,6 +1,6 @@
 ﻿<properties 
    pageTitle="在 Azure PowerShell 中还原已删除的 Azure SQL 数据库" 
-   description="Microsoft Azure SQL Database, 还原已删除的数据库, 恢复已删除的数据库, Azure PowerShell" 
+   description="Windows Azure SQL 数据库, 还原已删除的数据库, 恢复已删除的数据库, Azure PowerShell" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -70,9 +70,9 @@
 
 有关详细信息，请参阅以下主题：
 
-[Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
+[Azure SQL 数据库 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
 
-[Azure SQL Database 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
+[Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
 [Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 

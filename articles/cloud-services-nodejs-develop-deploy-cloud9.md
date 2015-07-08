@@ -153,7 +153,7 @@
 
 ## 部署到 Azure 生产环境
 
-1.  选择在前面的步骤中创建的部署。将出现一个对话框，其中提供有关此部署的信息，以及部署到 Microsoft Azure 之后将使用的生产 URL。
+1.  选择在前面的步骤中创建的部署。将出现一个对话框，其中提供有关此部署的信息，以及部署到 Windows Azure 之后将使用的生产 URL。
 
 	![select a deployment](./media/cloud-services-nodejs-develop-deploy-cloud9/cloud9_select_deployment.png)
 

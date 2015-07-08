@@ -1,12 +1,12 @@
-<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="存储简介 | Microsoft Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="Microsoft Azure 存储空间概述。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Windows Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="storage-introduction" urlDisplayName="Introduction to Azure Storage" pageTitle="存储简介 | Windows Azure" metaKeywords="Get started  Azure storage introduction  Azure storage overview  Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage  Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage Azure table   Azure nosql   Azure large structured data store   Azure table   Azure table storage   Azure " description="Windows Azure 存储空间概述。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="Introduction to Windows Azure Storage" authors="tamram" manager="mbaldwin" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="03/03/2015"
     wacn.date="04/11/2015"
     />
 
-# Microsoft Azure 存储空间简介
+# Windows Azure 存储空间简介
 
-本文面向开发人员、IT 专业人员和业务决策者介绍了 Microsoft Azure 存储空间。通过阅读本文，你将会了解：
+本文面向开发人员、IT 专业人员和业务决策者介绍了 Windows Azure 存储空间。通过阅读本文，你将会了解：
 
 - 什么是 Azure 存储空间，以及如何在你的云、移动、服务器和桌面应用程序中利用它
 - 你可以使用 Azure 存储服务存储什么类型的数据：Blob、表、队列和文件存储
@@ -116,7 +116,7 @@ Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。�
 
 根据以下四个因素向使用 Azure 存储空间的客户收费：使用的存储容量、选择的复制选项、对服务发出的请求数，以及数据流出量。 
 
-存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储空间的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Windows Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Microsoft Azure 服务，你可以采取措施将数据和服务通过分组分到相同的数据中心内，从而降低或避免进程和数据流出量费用。） 
+存储容量指的是存储帐户中用来存储数据的配额。对数据进行简单存储时，其成本取决于存储的数据量和数据复制方式。针对 Azure 存储空间的每个读取和写入操作还将针对服务发出一个请求。数据流出量是指从某个 Windows Azure 区域传出的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Windows Azure 服务，你可以采取措施将数据和服务通过分组分到相同的数据中心内，从而降低或避免进程和数据流出量费用。） 
 
 [存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers)提供了针对数据流出量的详细定价信息。你可以使用 [Azure 存储空间定价计算器](/zh-cn/pricing/calculator/?scenario=data-management)来帮助估算成本。
 
@@ -145,7 +145,7 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 
 ### 源代码
 
-- [适用于 .NET 的 Microsoft Azure 存储库](https://github.com/Azure/azure-storage-net)
+- [适用于 .NET 的 Windows Azure 存储库](https://github.com/Azure/azure-storage-net)
 
 ### 文档
 

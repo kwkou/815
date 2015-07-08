@@ -11,14 +11,14 @@
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 
-本主题将指导你一步步创建混合云环境，以便测试在 Microsoft Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
+本主题将指导你一步步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
 
 ![](./media/virtual-networks-set-up-SharePoint-hybrid-cloud-for-testing/CreateSPFarmHybridCloud_3.png)
  
 此配置将通过你在 Internet 上的位置模拟 Azure 生产环境中的 SharePoint。它包括：
 
 - 简化的本地网络（Corpnet 子网）。
-- 在 Microsoft Azure 中托管的跨界虚拟网络 (TestVNET)。
+- 在 Windows Azure 中托管的跨界虚拟网络 (TestVNET)。
 - 站点到站点 VPN 连接。
 - 两层 SharePoint 场和 TestVNET 虚拟网络中的辅助域控制器。
 

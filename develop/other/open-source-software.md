@@ -74,7 +74,7 @@ CouchDB 是构建在 HTTP 和 JSON 等 Web 标准上的数据库。它提供 Jav
 
 ###<a id="Doctrine"></a>Doctrine
 
-Doctrine 项目是一组可提供持久性服务、对象关系映射和相关功能的 PHP 库。Doctrine 支持对 SQL Database 进行分区来实现可高度缩放的性能和可用性。
+Doctrine 项目是一组可提供持久性服务、对象关系映射和相关功能的 PHP 库。Doctrine 支持对 SQL 数据库 进行分区来实现可高度缩放的性能和可用性。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253289&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253789&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 

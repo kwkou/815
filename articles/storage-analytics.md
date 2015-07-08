@@ -30,7 +30,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 存储分析针对存储的数据量实施 20TB 的限制，这与存储帐户的总限制无关。有关计费和数据保留策略的详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-cn/library/hh360997.aspx)。有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-cn/library/dn249410.aspx)。
 
-有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Microsoft Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
+有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
 
 
 

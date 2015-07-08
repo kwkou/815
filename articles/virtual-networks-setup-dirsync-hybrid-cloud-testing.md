@@ -12,7 +12,7 @@
 
 # 在混合云中设置 Office 365 目录同步 (DirSync) 以便进行测试
 
-本主题将指导你一步步创建混合云环境，以便测试在 Microsoft Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。
+本主题将指导你一步步创建混合云环境，以便测试在 Windows Azure 中托管的带密码同步的 Office 365 目录同步 (DirSync)。这是生成的配置。
 
 ![](./media/virtual-networks-set-up-DirSync-hybrid-cloud-for-testing/CreateDirSyncHybridCloud_3.png)
  
@@ -139,7 +139,7 @@
 2.	在**"开始"**屏幕上，键入**"目录同步"**。
 3.	右键单击**"目录同步配置"**，然后单击**"以管理员身份运行"**。这将启动配置向导。
 4.	在"欢迎"页上，单击**"下一步"**。
-5.	在"Microsoft Azure Active Directory 凭据"页上，键入你在阶段 2 设置 Office 365 FastTrack 试用版时创建的初始帐户的电子邮件地址和密码。单击"下一步"。 
+5.	在"Windows Azure Active Directory 凭据"页上，键入你在阶段 2 设置 Office 365 FastTrack 试用版时创建的初始帐户的电子邮件地址和密码。单击"下一步"。 
 6.	在"Active Directory 凭据"页上，在**"用户名"**中键入**"CORP\User1"**，在**"密码"**中键入 User1 帐户密码。单击**"下一步"**。
 7.	在"混合部署"页上，选择**"启用混合部署"**，然后单击**"下一步"**。
 8.	在"密码同步"页上，选择**"启用密码同步"**，然后单击**"下一步"**。
@@ -173,7 +173,7 @@
 
 ## 其他资源
 
-[在 Microsoft Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
+[在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
 
 [使用 Office 服务器和云的解决方案](https://technet.microsoft.com/zh-CN/library/dn262744.aspx)
 

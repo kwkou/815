@@ -25,21 +25,21 @@
 除了本文档外，还可以参考以下附加资源：
 
 * [Azure Automation 入门](/documentation/articles/automation-create-runbook-from-samples)
-* [分步指南：Microsoft Azure Automation 预览版新增功能入门](http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx)
-* [Microsoft Azure Automation](http://blogs.technet.com/b/cbernier/archive/2014/04/08/microsoft-azure-automation.aspx)
+* [分步指南：Windows Azure Automation 预览版新增功能入门](http://blogs.technet.com/b/keithmayer/archive/2014/04/04/step-by-step-getting-started-with-windows-azure-automation.aspx)
+* [Windows Azure Automation](http://blogs.technet.com/b/cbernier/archive/2014/04/08/microsoft-azure-automation.aspx)
 * 在 [Automation 论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)咨询具体的 Azure Automation 问题。  
 
 
 ## 先决条件
 
-[熟悉](/documentation/articles/automation-create-runbook-from-samples) Microsoft Azure Automation 预览版服务。
+[熟悉](/documentation/articles/automation-create-runbook-from-samples) Windows Azure Automation 预览版服务。
 
 
 ## 分片弹性 PowerShell 文件
 
 以下 PowerShell 文件集包含使用 Azure Automation 完成横向和纵向缩放方案的基本命令。 
 
-这些示例演示如何使用 PowerShell 示例模块来执行基本分片弹性任务。结合 Microsoft Azure Automation 服务和相应的 Azure Automation Runbook，你可以创建自动化和计划的作业，以设置新的分片和/或根据一组规则更改特定分片的性能级别。 
+这些示例演示如何使用 PowerShell 示例模块来执行基本分片弹性任务。结合 Windows Azure Automation 服务和相应的 Azure Automation Runbook，你可以创建自动化和计划的作业，以设置新的分片和/或根据一组规则更改特定分片的性能级别。 
 
 **SetupShardedEnvironment.ps1**：此 PowerShell Runbook 会执行分片环境的一次性设置，在环境中提供分片映射管理器和范围分片映射。 
 
@@ -74,8 +74,8 @@
 3. 查找弹性缩放客户端库 (**Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll**)。
 4. 将 DLL 放入 ShardElasticityModule 文件夹，并压缩该文件夹。 
 3. 在 Azure Automation 帐户中，上载 ShardElasticityModule.zip 文件作为**资产**。 
-4. 在 Azure Automation 中，创建名为  *ElasticScaleCredential* 的**资产凭据**，其中包含 Azure SQL Database 服务器的用户名和密码。 
-5. 创建名为  *SqlServerName* 的**资产变量**，作为完整的 Azure SQL Database 服务器名称。 
+4. 在 Azure Automation 中，创建名为  *ElasticScaleCredential* 的**资产凭据**，其中包含 Azure SQL 数据库 服务器的用户名和密码。 
+5. 创建名为  *SqlServerName* 的**资产变量**，作为完整的 Azure SQL 数据库 服务器名称。 
 5. 上载 **SetupShardedEnvironment.ps1**、**ProvisionBySize.ps1**、**ProvisionByDate.ps1** 和 **ProvisionByDate.ps1** 作为 Runbook。 
 6. 以一次性操作形式测试 **SetupShardedEnvironment.ps1** Runbook，以设置分片环境。 
 7. 发布剩余的一个或多个 Runbook，并将 Runbook 链接到计划。 
@@ -86,7 +86,7 @@
 ## 使用 Runbook
 
 1. 创作并打包 PowerShell 模块 
-2. 创建 Microsoft Azure Automation 帐户 
+2. 创建 Windows Azure Automation 帐户 
 3. 将 PowerShell 模块上载到 Azure Automation 作为资产 
 4. 创建 Azure Automation 凭据和变量资产 
 5. 将 PowerShell Runbook 上载到 Azure Automation 

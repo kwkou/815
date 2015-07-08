@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置站点到站点虚拟网络连接 | Microsoft Azure"
+   pageTitle="配置站点到站点虚拟网络连接 | Windows Azure"
    description="使用站点到站点 VPN 连接创建虚拟网络，以便进行跨界的和混合的配置。"
    services="vpn-gateway"
    documentationCenter=""

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 5 分钟内开始使用 Azure Blob、表和队列" 
-	description="了解如何使用 Azure 快速入门项目和 Visual Studio 快速掌握 Microsoft Azure Blob、表和队列。" 
+	description="了解如何使用 Azure 快速入门项目和 Visual Studio 快速掌握 Windows Azure Blob、表和队列。" 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="Selcin" 
@@ -33,7 +33,7 @@
 
 ## 在 Azure 存储模拟器上运行你的第一个 Azure 存储空间应用程序
 
-本部分演示如何通过开发一个访问 [Azure 存储模拟器](https://msdn.microsoft.com/zh-cn/library/azure/hh403989.aspx)的示例应用程序，对 **Azure 存储 Blob**、**表** 和 **队列**进行编程。Microsoft Azure 存储模拟器提供了一个本地环境，用于根据开发目的模拟 Azure Blob、队列和表服务。使用存储模拟器，你可以在本地针对存储服务测试你的应用程序，且不会产生任何费用。
+本部分演示如何通过开发一个访问 [Azure 存储模拟器](https://msdn.microsoft.com/zh-cn/library/azure/hh403989.aspx)的示例应用程序，对 **Azure 存储 Blob**、**表** 和 **队列**进行编程。Windows Azure 存储模拟器提供了一个本地环境，用于根据开发目的模拟 Azure Blob、队列和表服务。使用存储模拟器，你可以在本地针对存储服务测试你的应用程序，且不会产生任何费用。
 
 若要完成本部分，请确保先执行以下必要任务：
 
@@ -104,7 +104,7 @@
 
 如果你想要了解有关这些服务的详细信息，请访问以下链接：
 
-* [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)
+* [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)
 * [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
 * [如何通过 .NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)
 * [如何通过 .NET 使用队列存储](/documentation/articles/storage-dotnet-how-to-use-queues)

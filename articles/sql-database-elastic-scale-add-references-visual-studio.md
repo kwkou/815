@@ -1,4 +1,4 @@
-<properties title="Add Azure SQL DB Elastic Scale References to a Visual Studio Project" pageTitle="将 Azure SQL DB 弹性缩放引用添加到 Visual Studio 项目" description="如何使用 Nuget 将弹性缩放 API 的 .NET 引用添加到 Visual Studio 项目。" metaKeywords="Azure SQL Database, elastic scale, Nuget references" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Add Azure SQL DB Elastic Scale References to a Visual Studio Project" pageTitle="将 Azure SQL DB 弹性缩放引用添加到 Visual Studio 项目" description="如何使用 Nuget 将弹性缩放 API 的 .NET 引用添加到 Visual Studio 项目。" metaKeywords="Azure SQL 数据库, elastic scale, Nuget references" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -19,7 +19,7 @@
 4. 在"联机搜索"对话框中，键入"弹性缩放"、选择"弹性缩放客户端库"，然后单击"安装"。
 4. 查看许可协议，然后单击"我接受"。 
 
-Azure SQL Database 弹性缩放引用现已添加到你的项目。 
+Azure SQL 数据库 弹性缩放引用现已添加到你的项目。 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

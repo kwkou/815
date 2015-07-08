@@ -120,7 +120,7 @@ FS 的详细信息：
 -   **声明感知应用程序和服务中的基于角色的访问控制 (RBAC) 授权。**在此方案中，您需要在应用中实现基于角色的授权逻辑。
 -   **声明感知应用程序和服务中的基于声明的授权。**在此方案中，您需要在应用中实现基于复杂授权规则的授权逻辑。
 -   **Azure 存储服务身份识别和访问控制方案。**在此方案中，您需要安全地共享对 Azure 存储 Blob 和容器的访问权限。
--   **Azure SQL Database 身份识别和访问控制方案。**SQL Database 仅支持 SQL Server 身份验证。不支持 Windows 身份验证（集成安全性）。用户在每次连接到 SQL Database 时都必须提供凭据（登录名和密码）。
+-   **Azure SQL 数据库 身份识别和访问控制方案。**SQL 数据库 仅支持 SQL Server 身份验证。不支持 Windows 身份验证（集成安全性）。用户在每次连接到 SQL 数据库 时都必须提供凭据（登录名和密码）。
 -   **Azure 服务总线身份识别和访问控制方案。**在此方案中，您需要安全地访问 Azure 服务总线队列。
 -   **内存中的缓存身份识别和访问控制方案。**在此方案中，您需要安全地访问内存中缓存所管理的数据。
 -   **Azure Marketplace 身份识别和访问控制方案。**在此方案中，您需要安全地访问 Azure Marketplace 数据集。
@@ -326,24 +326,24 @@ URL。
 -   [共享访问签名现在很容易实现](http://blog.smarx.com/posts/shared-access-signatures-are-easy-these-days)
 
 
-##Azure SQL Database 身份识别和访问控制方案
+##Azure SQL 数据库 身份识别和访问控制方案
 
-SQL Database 仅支持 SQL Server 身份验证。Windows
+SQL 数据库 仅支持 SQL Server 身份验证。Windows
 不支持身份验证（集成安全性）。用户在每次连接到
-SQL Database 时都必须提供凭据（登录名和密码）。在管理您的用户名和密码时应特别注意避免信息泄露。
+SQL 数据库 时都必须提供凭据（登录名和密码）。在管理您的用户名和密码时应特别注意避免信息泄露。
 
 ![][15]
 
 请参见以下资源来实施此方案：
 
--   [安全指导原则和限制 (SQL Database)](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394108.aspx#authentication)
--   [如何：使用 sqlcmd 连接到 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336280.aspx)
--   [如何：使用 ADO.NET 连接到 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336243.aspx)
--   [如何：通过 ASP.NET 连接到 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621781.aspx)
--   [如何：通过 WCF Data Services 连接 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621789.aspx)
--  [如何：使用 PHP 连接到 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394110.aspx)
--   [如何：使用 JDBC 连接到 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg715284.aspx)
--   [如何：使用 ADO.NET 实体框架连接到 SQL Database](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff951633.aspx)
+-   [安全指导原则和限制 (SQL 数据库)](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394108.aspx#authentication)
+-   [如何：使用 sqlcmd 连接到 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336280.aspx)
+-   [如何：使用 ADO.NET 连接到 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee336243.aspx)
+-   [如何：通过 ASP.NET 连接到 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621781.aspx)
+-   [如何：通过 WCF Data Services 连接 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee621789.aspx)
+-  [如何：使用 PHP 连接到 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394110.aspx)
+-   [如何：使用 JDBC 连接到 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg715284.aspx)
+-   [如何：使用 ADO.NET 实体框架连接到 SQL 数据库](http://msdn.microsoft.com/zh-cn/library/windowsazure/ff951633.aspx)
 
 ##Azure 服务总线身份识别和访问控制方案
 

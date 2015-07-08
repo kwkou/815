@@ -11,7 +11,7 @@
 
 # 在混合云中设置用于测试且基于 Web 的 LOB 应用程序
 
-本主题将指导你一步步创建混合云环境，以便测试在 Microsoft Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
+本主题将指导你一步步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
 
 ![](./media/virtual-networks-set-up-LOB-App-hybrid-cloud-for-testing/CreateLOBAppHybridCloud_3.png)
 

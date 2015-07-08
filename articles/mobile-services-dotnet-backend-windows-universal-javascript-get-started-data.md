@@ -23,7 +23,7 @@
 4. [更新应用程序以使用移动服务]
 5. [将移动服务发布到 Azure]
 6. [针对 Azure 中托管的服务测试应用程序]
-7. [查看 SQL Database 中存储的数据]
+7. [查看 SQL 数据库 中存储的数据]
 
 若要完成本教程，你需要以下项：
 
@@ -75,7 +75,7 @@
 
 [WACOM.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
 
-## <a name="view-stored-data"></a>查看 SQL Database 中存储的数据
+## <a name="view-stored-data"></a>查看 SQL 数据库 中存储的数据
 
 [WACOM.INCLUDE [mobile-services-dotnet-backend-view-sql-data](../includes/mobile-services-dotnet-backend-view-sql-data.md)]
 
@@ -111,7 +111,7 @@
 [针对本地托管的服务测试应用程序]: #test-locally-hosted
 [将移动服务发布到 Azure]: #publish-mobile-service
 [针对 Azure 中托管的服务测试应用程序]: #test-azure-hosted
-[查看 SQL Database 中存储的数据]: #view-stored-data
+[查看 SQL 数据库 中存储的数据]: #view-stored-data
 [后续步骤]:#next-steps
 
 <!-- Images. -->

@@ -14,14 +14,14 @@
 
 # 将弹性缩放与 Dapper 配合使用 
 
-本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用 [Azure SQL Database 弹性缩放](/documentation/articles/sql-database-elastic-scale-introduction)通过分片和向外缩放其应用程序，以弹性方式扩大和缩小容量的开发人员。本文档演示了与当前弹性缩放功能集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性缩放分片管理和数据相关的路由。 
+本文档面向依赖于使用 Dapper 生成应用程序，但同时想要运用 [Azure SQL 数据库 弹性缩放](/documentation/articles/sql-database-elastic-scale-introduction)通过分片和向外缩放其应用程序，以弹性方式扩大和缩小容量的开发人员。本文档演示了与当前弹性缩放功能集成所需的基于 Dapper 的应用程序发生的更改。我们将重点介绍如何使用 Dapper 构建弹性缩放分片管理和数据相关的路由。 
 
-**示例代码**：[Azure SQL Database 弹性缩放与 Dapper 集成](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f)。
+**示例代码**：[Azure SQL 数据库 弹性缩放与 Dapper 集成](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f)。
  
-将 **Dapper** 和 **DapperExtensions** 与 Azure SQL Database 弹性缩放集成的过程很简单。应用程序可以通过将新 [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) 对象的创建和打开方式更改为使用来自[弹性缩放库](http://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx)的 [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) 调用，来使用弹性缩放数据相关的路由。这会将应用程序中的更改限制为已创建和打开新连接的位置。 
+将 **Dapper** 和 **DapperExtensions** 与 Azure SQL 数据库 弹性缩放集成的过程很简单。应用程序可以通过将新 [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) 对象的创建和打开方式更改为使用来自[弹性缩放库](http://msdn.microsoft.com/zh-cn/library/azure/dn765902.aspx)的 [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) 调用，来使用弹性缩放数据相关的路由。这会将应用程序中的更改限制为已创建和打开新连接的位置。 
 
 ## Dapper 概述
-**Dapper** 是对象关系映射器。它将应用程序中的 .NET 对象映射到关系数据库（或者执行相反的映射）。示例代码的第一个部分演示了如何将 Azure SQL Database 弹性缩放与基于 Dapper 的应用程序相集成。示例代码的第二个部分演示了同时使用 Dapper 和 DapperExtensions 时如何集成弹性缩放。 
+**Dapper** 是对象关系映射器。它将应用程序中的 .NET 对象映射到关系数据库（或者执行相反的映射）。示例代码的第一个部分演示了如何将 Azure SQL 数据库 弹性缩放与基于 Dapper 的应用程序相集成。示例代码的第二个部分演示了同时使用 Dapper 和 DapperExtensions 时如何集成弹性缩放。 
 
 Dapper 中的映射器功能对数据库连接提供扩展方法，可以简化用于执行或查询数据库的 T-SQL 语句的提交。例如，使用 Dapper 可以轻松地在 .NET 对象与用于 **Execute** 调用的 SQL 语句参数之间进行映射，或者在 Dapper 中通过 **Query** 查询来使用对 .NET 对象执行 SQL 查询后返回的结果。 
 
@@ -33,7 +33,7 @@ Dapper 和 DapperExtensions 的另一个优点在于，应用程序可以控制�
 
 ## 弹性缩放概览
 
-使用 Azure SQL Database 弹性缩放，你可以定义应用程序数据的分区（称为  *shardlet*），将它们映射到数据库，并根据 *分片键* 来识别这些分区。你可以根据需要创建任意数目的数据库，并在这些数据库之间分布 shardlet。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为**分片映射管理**。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为**数据相关的路由**。
+使用 Azure SQL 数据库 弹性缩放，你可以定义应用程序数据的分区（称为  *shardlet*），将它们映射到数据库，并根据 *分片键* 来识别这些分区。你可以根据需要创建任意数目的数据库，并在这些数据库之间分布 shardlet。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为**分片映射管理**。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为**数据相关的路由**。
 
 ![Shard maps and data dependent routing][1]
 
@@ -161,7 +161,7 @@ Microsoft 模式和实践团队发布了[暂时性故障处理应用程序块](h
 
 ## 结束语
 
-使用 **Dapper** 和 **DapperExtensions** 的应用程序很容易从 Azure SQL Database 弹性缩放受益。通过本文档中所述的步骤，这些应用程序可以使用弹性缩放功能，通过将新 [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) 对象的创建和打开方式更改为使用来自弹性缩放库的 [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) 调用，来实现数据相关的路由。这会将应用程序更改限制为已创建和打开新连接的位置。 
+使用 **Dapper** 和 **DapperExtensions** 的应用程序很容易从 Azure SQL 数据库 弹性缩放受益。通过本文档中所述的步骤，这些应用程序可以使用弹性缩放功能，通过将新 [SqlConnection](http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.aspx) 对象的创建和打开方式更改为使用来自弹性缩放库的 [OpenConnectionForKey](http://msdn.microsoft.com/zh-cn/library/azure/dn807226.aspx) 调用，来实现数据相关的路由。这会将应用程序更改限制为已创建和打开新连接的位置。 
 
 [WACOM.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

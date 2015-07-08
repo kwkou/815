@@ -11,7 +11,7 @@
 
 # Azure 虚拟机备份 - 简介
 
-本部分介绍如何使用 Microsoft Azure 备份来保护 Azure 虚拟机。通过阅读本文，你将会了解：
+本部分介绍如何使用 Windows Azure 备份来保护 Azure 虚拟机。通过阅读本文，你将会了解：
 
 + Azure 虚拟机备份原理
 

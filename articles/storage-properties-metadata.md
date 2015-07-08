@@ -1,6 +1,6 @@
 
 <properties 
-  pageTitle="设置和检索 Blob 存储的属性与元数据 | Microsoft Azure" 
+  pageTitle="设置和检索 Blob 存储的属性与元数据 | Windows Azure" 
   description="了解如何设置和检索 Azure 存储容器及 Blob 的属性与元数据。" 
   services="storage" 
   documentationCenter="" 

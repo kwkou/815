@@ -1,4 +1,4 @@
-<properties title="Using Elastic Scale with Entity Framework" pageTitle="将实体框架与弹性缩放一起使用" description="弹性缩放简化了缩放；实体框架易于在编码数据库中使用 " metaKeywords="Using Elastic Scale with Entity Framework, Azure SQL Database sharding, elastic scale, Entity Framework and Elastic Scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Using Elastic Scale with Entity Framework" pageTitle="将实体框架与弹性缩放一起使用" description="弹性缩放简化了缩放；实体框架易于在编码数据库中使用 " metaKeywords="Using Elastic Scale with Entity Framework, Azure SQL 数据库 sharding, elastic scale, Entity Framework and Elastic Scale" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -7,7 +7,7 @@
 
 # 将实体框架与弹性缩放一起使用 
  
-你可以将 Azure SQL Database 弹性缩放与 Microsoft 的实体框架 (EF) 一起用于构建应用程序。弹性缩放使你可以通过应用程序的数据层的分片和向外缩放来增加和缩小容量。此文档介绍与弹性缩放功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[弹性缩放分片管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)和[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。EF 的[代码优先 - 新数据库](http://msdn.microsoft.com/zh-cn/data/jj193542.aspx)教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中弹性缩放示例的一部分。
+你可以将 Azure SQL 数据库 弹性缩放与 Microsoft 的实体框架 (EF) 一起用于构建应用程序。弹性缩放使你可以通过应用程序的数据层的分片和向外缩放来增加和缩小容量。此文档介绍与弹性缩放功能集成所需的实体框架应用程序中的更改。重点是使用实体框架的**代码优先**方法撰写[弹性缩放分片管理](/documentation/articles/sql-database-elastic-scale-shard-map-management)和[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)。EF 的[代码优先 - 新数据库](http://msdn.microsoft.com/zh-cn/data/jj193542.aspx)教程在本文档中充当运行示例。本文档附带的示例代码是 Visual Studio 代码示例中弹性缩放示例的一部分。
   
 ## 下载和运行示例代码
 若要下载本文的代码：
@@ -19,9 +19,9 @@
     
     ![Entity Framework and elastic scale sample app][1] 
 
-    选择名为 **Azure SQL Database 的弹性缩放 - 与实体框架集成**的示例。在接受许可证后，该示例将加载。 
+    选择名为 **Azure SQL 数据库 的弹性缩放 - 与实体框架集成**的示例。在接受许可证后，该示例将加载。 
 
-若要运行该示例，你需要在 Azure SQL Database 中创建三个空数据库：
+若要运行该示例，你需要在 Azure SQL 数据库 中创建三个空数据库：
 
 * 分片映射管理器数据库
 * 分片 1 数据库
@@ -44,7 +44,7 @@
 
 有关术语定义，请参阅[弹性缩放术语库](/documentation/articles/sql-database-elastic-scale-glossary)。
 
-借助 Azure SQL Database 弹性缩放，你可以定义称为 shardlet 的应用程序数据分区。Shardlet 由分片键标识，并且映射到特定数据库。应用程序可以具有任意所需数量的数据库，并根据当前业务需求分发 shardlet 以提供足够的容量或性能。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为分片映射管理或简称为 SMM。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为数据相关路由。 
+借助 Azure SQL 数据库 弹性缩放，你可以定义称为 shardlet 的应用程序数据分区。Shardlet 由分片键标识，并且映射到特定数据库。应用程序可以具有任意所需数量的数据库，并根据当前业务需求分发 shardlet 以提供足够的容量或性能。分片键值到数据库的映射由弹性缩放 API 提供的分片映射存储。我们将此功能称为分片映射管理或简称为 SMM。分片映射还为带有分片键的请求充当数据库连接的代理。我们将此功能称为数据相关路由。 
  
 弹性缩放中的分片映射管理器防止用户在 shardlet 数据中出现不一致视图，当发生并发 shardlet 管理操作时（例如将数据从一个分片重新分配到另一个分片）可能发生此情况。为此，分片映射弹性缩放将中转弹性缩放应用程序的数据库连接。当分片管理操作可能影响为其创建数据库连接的 shardlet 时，此操作允许分片映射功能自动终止该连接。此方法需要与一些 EF 的功能集成，例如从现有连接创建新连接以检查数据库是否存在。在通常情况下，我们观察到标准 DbContext 构造函数仅对可安全克隆用于 EF 工作的关闭数据库连接有效。相反，弹性缩放的设计原则是仅代理打开的连接。有人可能认为，在交付给 EF DbContext 之前关闭由弹性缩放代理的连接可能解决此问题。但是，通过关闭连接并依靠 EF 重新打开它，将放弃由弹性缩放执行的验证和一致性检查。但是，EF 中的迁移功能使用这些连接以对应用程序透明的方式管理基础数据库架构。理想情况下，我们希望在相同的应用程序中保留和合并所有这些来自弹性缩放和 EF 的功能。以下部分将更详细地讨论这些属性和要求。 
 
@@ -61,7 +61,7 @@
  
 * **架构**：实体框架通过迁移处理初始数据库架构创建和后续架构演变。通过保留这些功能，随着数据的演变调整你的应用很容易。 
 
-以下指南指导如何满足使用 Azure SQL Database 弹性缩放的"代码优先"应用程序的这些要求。 
+以下指南指导如何满足使用 Azure SQL 数据库 弹性缩放的"代码优先"应用程序的这些要求。 
 
 ## 使用 EF DbContext 的数据相关路由 
 
@@ -261,7 +261,7 @@ MyContext(DbConnection, DbCompiledModel,bool) |ElasticScaleContext(ShardMap, TKe
 
 ## 结论 
 
-实体框架应用程序可以从 Azure SQL Database 弹性缩放中轻松受益。通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用弹性缩放的数据相关路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和弹性缩放分片映射中的映射进行结合，来继续从自动架构部署中受益。 
+实体框架应用程序可以从 Azure SQL 数据库 弹性缩放中轻松受益。通过本文档中概述的步骤，EF 应用程序可以通过重构 EF 应用程序中使用的 **DbContext** 子类的构造函数来使用弹性缩放的数据相关路由功能。这将所需的更改限制到 **DbContext** 类已经存在的位置。此外，EF 应用程序可以通过将调用必要的 EF 迁移的步骤与新分片的注册和弹性缩放分片映射中的映射进行结合，来继续从自动架构部署中受益。 
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

@@ -26,9 +26,9 @@
 
 ## 准备 Azure
 
-- **Azure 帐户**：你需要一个 [Microsoft Azure](http://www.windowsazure.cn/) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial/)。
+- **Azure 帐户**：你需要一个 [Windows Azure](http://www.windowsazure.cn/) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial/)。
 - 阅读 Site Recovery 服务的[定价](/home/features/site-recovery/#price)。
-- **Azure 存储空间**：如果通过复制到 Azure 的方式部署 Site Recovery，则你需要一个 Azure 存储帐户。你可以在部署期间设置该帐户，也可以在开始之前准备该帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。请阅读 [Microsoft Azure 存储空间简介](storage-introduction)。
+- **Azure 存储空间**：如果通过复制到 Azure 的方式部署 Site Recovery，则你需要一个 Azure 存储帐户。你可以在部署期间设置该帐户，也可以在开始之前准备该帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。请阅读 [Windows Azure 存储空间简介](storage-introduction)。
 
 ## 虚拟机
 
@@ -118,7 +118,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 
 ## 存储
 
-- **Azure 存储帐户**：如果要复制到 Azure，则你需要一个 Azure 存储帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Microsoft Azure 存储空间简介](storage-introduction)。
+- **Azure 存储帐户**：如果要复制到 Azure，则你需要一个 Azure 存储帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储空间简介](storage-introduction)。
 - **存储映射**：如果要复制本地 VMM 服务器上的虚拟机，你可以设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储。在两个本地 VMM 站点之间复制时，默认情况下，副本虚拟机将存储在目标 Hyper-V 主机服务器上的指定位置。可以配置源和目标 VMM 服务器上的 VMM 存储分类之间的映射。如果你要使用此功能，请确保在开始部署之前设置存储分类。[详细了解](site-recovery-storage-mapping)有关存储映射的信息。
 - **SAN**：如果你要使用 SAN 复制在两个在本地站点之间复制，请注意：
 	- 使用 SAN 复制只能将 Hyper-V 虚拟机复制到辅助数据中心，而不能复制到 Azure。

@@ -14,7 +14,7 @@
 
 # 性能和扩展测试：本地到本地
 
-Microsoft Azure Site Recovery 负责协调和管理从主数据中心到辅助位置的复制，以便对你的数据进行备份并且在发生计划内和计划外中断时可以对其进行恢复。你可以将位于 System Center Virtual Machine Manager (VMM) 上的本地私有云备份到另一个本地位置或者备份到 Microsoft Azure 存储空间。为了执行复制，VMM 使用 Hyper-V 副本，这是 Windows Server 2012 和 Windows Server 2012 R2 中内置到 Hyper-V 的一种复制机制。它在两个宿主服务器之间提供 Hyper-V 虚拟机的异步复制。可以在 Hyper-V 中虚拟化的任何服务器工作负荷都可以复制。复制通过任意普通的基于 IP 的网络 Hyper-V 副本进行，并且适用于独立服务器、故障转移群集或两者的混合体。
+Windows Azure Site Recovery 负责协调和管理从主数据中心到辅助位置的复制，以便对你的数据进行备份并且在发生计划内和计划外中断时可以对其进行恢复。你可以将位于 System Center Virtual Machine Manager (VMM) 上的本地私有云备份到另一个本地位置或者备份到 Windows Azure 存储空间。为了执行复制，VMM 使用 Hyper-V 副本，这是 Windows Server 2012 和 Windows Server 2012 R2 中内置到 Hyper-V 的一种复制机制。它在两个宿主服务器之间提供 Hyper-V 虚拟机的异步复制。可以在 Hyper-V 中虚拟化的任何服务器工作负荷都可以复制。复制通过任意普通的基于 IP 的网络 Hyper-V 副本进行，并且适用于独立服务器、故障转移群集或两者的混合体。
 
 本主题将在本地到本地部署中对使用 Azure Site Recovery 进行复制给性能造成的影响进行测试。它提供了关于测试中使用的参数和配置设置的详细信息，显示了测试部署步骤，并提供了详细的测试结果。
 

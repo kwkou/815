@@ -1,4 +1,4 @@
-<properties title="Azure Elastic Scale Glossary" pageTitle="Azure 弹性缩放词汇表" description="用于 Azure SQL Database 的弹性缩放功能的术语解释" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Azure Elastic Scale Glossary" pageTitle="Azure 弹性缩放词汇表" description="用于 Azure SQL 数据库 的弹性缩放功能的术语解释" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter="" manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
@@ -6,11 +6,11 @@
    wacn.date="05/25/2015"/>
 
 # 弹性缩放词汇表
-为 Azure SQL Database 的弹性缩放功能定义了以下术语。
+为 Azure SQL 数据库 的弹性缩放功能定义了以下术语。
 
 ![Elastic Scale terms][1]
 
-**数据库**：Azure SQL Database。 
+**数据库**：Azure SQL 数据库。 
 
 **数据相关的路由**：使应用程序能够连接到给定了特定分片键的分片的功能。与**多分片查询**进行比较。
 
@@ -28,7 +28,7 @@
 
 **引用表**：未进行分片，但在分片间进行复制的表。 
 
-**分片**：用于存储分片数据集中的数据的 Azure SQL Database。 
+**分片**：用于存储分片数据集中的数据的 Azure SQL 数据库。 
 
 **分片弹性** (SE)：执行**横向缩放**和**纵向缩放**的能力。
 

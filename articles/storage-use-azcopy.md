@@ -1,4 +1,4 @@
-<properties urlDisplayName="AzCopy" pageTitle="如何将 AzCopy 与 Microsoft Azure 存储一起使用" metaKeywords="Get started Azure AzCopy   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure file   Azure file storage   Azure file share   AzCopy" description="了解如何使用 AzCopy 实用程序上载、下载以及复制 blob 和文件内容。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use AzCopy with Windows Azure Storage" authors="tamram" manager="adinah" editor="cgronlun" />
+<properties urlDisplayName="AzCopy" pageTitle="如何将 AzCopy 与 Windows Azure 存储一起使用" metaKeywords="Get started Azure AzCopy   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure file   Azure file storage   Azure file share   AzCopy" description="了解如何使用 AzCopy 实用程序上载、下载以及复制 blob 和文件内容。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter="" title="How to use AzCopy with Windows Azure Storage" authors="tamram" manager="adinah" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="01/05/2015"
     wacn.date="04/11/2015"
@@ -7,7 +7,7 @@
 
 # AzCopy 命令行实用程序入门
 
-AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复制到 Microsoft Azure Blob、文件和表存储以及从其中下载和复制数据。本指南提供了有关使用 AzCopy 的概述。
+AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复制到 Windows Azure Blob、文件和表存储以及从其中下载和复制数据。本指南提供了有关使用 AzCopy 的概述。
 
 > [WACOM.NOTE] 本指南假定你已安装了 AzCopy 3.0.0 或更高版本。AzCopy 3.x 现在为公开发行版本。<br /> 
 > 本指南还包括了如何使用 AzCopy 4.0.0，这是 AzCopy 的预览版本。在本指南中，只在预览版本中提供的功能标注有"预览版本"( *preview*) 字样。<br />
@@ -825,10 +825,10 @@ AzCopy 在已拆分数据文件名称中使用卷索引 ( *volume index*) 来区
 
 - [AzCopy 3.0：支持表和文件的 AzCopy 3.0 增强预览版本 AzCopy 4.0 宣布公开发行](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy 2.5：针对大规模复制方案进行了优化](http://go.microsoft.com/fwlink/?LinkId=507682)
-- [Microsoft Azure 文件服务介绍](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
+- [Windows Azure 文件服务介绍](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [AzCopy：对读取访问地域冗余存储的支持](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
 - [AzCopy：使用可重新启动的模式和 SAS 令牌传输数据](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
-- [AzCopy：为 Microsoft Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
+- [AzCopy：为 Windows Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
 <!--HONumber=41-->

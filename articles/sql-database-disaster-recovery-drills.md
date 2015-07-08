@@ -1,6 +1,6 @@
 ﻿<properties 
-   pageTitle="SQL Database 灾难恢复演练" 
-   description="了解有关使用 Azure SQL Database 执行灾难恢复演练，帮助任务关键型业务应用程序弹性应对故障和中断的指导和最佳实践。" 
+   pageTitle="SQL 数据库 灾难恢复演练" 
+   description="了解有关使用 Azure SQL 数据库 执行灾难恢复演练，帮助任务关键型业务应用程序弹性应对故障和中断的指导和最佳实践。" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -27,7 +27,7 @@
 - 恢复 
 - 验证恢复后的应用程序完整性
 
-根据[业务连续性的设计](sql-database-business-continuity)方式，用于执行演练的工作流会有所不同。下面将会讨论在 Azure SQL Database 上下文中执行灾难恢复演练的最佳实践。 
+根据[业务连续性的设计](sql-database-business-continuity)方式，用于执行演练的工作流会有所不同。下面将会讨论在 Azure SQL 数据库 上下文中执行灾难恢复演练的最佳实践。 
 
 ## 地域还原
 

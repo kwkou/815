@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Windows 上使用 NodeJS 连接到 SQL Database" 
-	description="演示了一个可以用来连接到 Azure SQL Database 的 NodeJS 代码示例。该示例在 Windows 客户端计算机上运行。"
+	pageTitle="在 Windows 上使用 NodeJS 连接到 SQL 数据库" 
+	description="演示了一个可以用来连接到 Azure SQL 数据库 的 NodeJS 代码示例。该示例在 Windows 客户端计算机上运行。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -19,7 +19,7 @@
 	ms.author="mebha"/>
 
 
-# 在 Windows 上使用 NodeJS 连接到 SQL Database
+# 在 Windows 上使用 NodeJS 连接到 SQL 数据库
 
 
 <!--
@@ -28,7 +28,7 @@ Original author is Meet Bhagdev (mebha; or on github 'meet-bhagdev'). GeneMi did
 -->
 
 
-本主题演示了一个可以用来连接到 Azure SQL Database 的 NodeJS 代码示例。该 NodeJS 程序在 Windows 客户端计算机上运行。若要管理连接，请使用 msnodesql 驱动程序。
+本主题演示了一个可以用来连接到 Azure SQL 数据库 的 NodeJS 代码示例。该 NodeJS 程序在 Windows 客户端计算机上运行。若要管理连接，请使用 msnodesql 驱动程序。
 
 
 ## 要求
@@ -79,7 +79,7 @@ Is the Python 2.7.6 download truly necessary for the NodeJS sample to work, or w
 有关如何创建示例数据库并检索连接字符串，请参阅[入门主题](sql-database-get-started)。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。 
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
 
 <!--
@@ -181,7 +181,7 @@ TODO, to Meet: In this code sample, the connection string lines are excessively 
 ## 事务
 
 
-方法 **conn.beginTransactions** 在 Azure SQL Database 中不起作用。请遵循代码示例在 SQL 数据库中执行事务。
+方法 **conn.beginTransactions** 在 Azure SQL 数据库 中不起作用。请遵循代码示例在 SQL 数据库中执行事务。
 
 
 	var http = require('http');

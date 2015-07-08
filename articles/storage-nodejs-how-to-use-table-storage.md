@@ -1,4 +1,4 @@
-<properties linkid="dev-nodejs-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Node.js) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="了解如何在 Azure 中使用表存储服务。代码示例使用 Node.js API 编写。" metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
+<properties linkid="dev-nodejs-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Node.js) | Windows Azure" metaKeywords="Azure table storage service, Azure table service Node.js, table storage Node.js" description="了解如何在 Azure 中使用表存储服务。代码示例使用 Node.js API 编写。" metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Table Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -11,7 +11,7 @@
 
 # 如何从 Node.js 使用表服务
 
-本指南将演示如何使用 Microsoft Azure 队列服务 Azure 表服务。相关示例是使用 Node.js API 编写的。涉及的方案包括**创建和删除表、插入和查询表中的实体**。有关表的详细信息，请参阅[后续步骤][]部分。
+本指南将演示如何使用 Windows Azure 队列服务 Azure 表服务。相关示例是使用 Node.js API 编写的。涉及的方案包括**创建和删除表、插入和查询表中的实体**。有关表的详细信息，请参阅[后续步骤][]部分。
 
 ## 目录
 

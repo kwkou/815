@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD .NET 入门 | Microsoft Azure"
+	pageTitle="Azure AD .NET 入门 | Windows Azure"
 	description="如何生成一个与 Azure AD 集成以支持登录的 .NET MVC Web 应用。"
 	services="active-directory"
 	documentationCenter=".net"

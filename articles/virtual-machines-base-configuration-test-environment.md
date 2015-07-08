@@ -19,7 +19,7 @@
 
 # 基本配置测试环境
 
-本主题为你提供在 Microsoft Azure 虚拟网络中使用运行 Windows Server 2012 R2 的计算机创建基本配置测试环境的分步说明。可以使用生成的测试环境：
+本主题为你提供在 Windows Azure 虚拟网络中使用运行 Windows Server 2012 R2 的计算机创建基本配置测试环境的分步说明。可以使用生成的测试环境：
 
 - 进行应用程序开发和测试。
 - [模拟的混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。

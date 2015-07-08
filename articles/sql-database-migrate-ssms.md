@@ -1,6 +1,6 @@
 ﻿<properties
-   pageTitle="使用 SSMS 迁移到 SQL Database"
-   description="Microsoft Azure SQL Database, 迁移 sql database, 使用 ssms 迁移"
+   pageTitle="使用 SSMS 迁移到 SQL 数据库"
+   description="Windows Azure SQL 数据库, 迁移 SQL 数据库, 使用 ssms 迁移"
    services="sql-database"
    documentationCenter=""
    authors="kaivalyah2015"
@@ -21,32 +21,32 @@
 
 ![alt text](./media/sql-database-migrate-ssms/01SSMSDiagram.png)
 
-如果数据库架构已与 Azure SQL Database 兼容，则迁移将十分直截了当。由于无需进行任何转换，迁移只要求将数据库导入 Azure。你可以使用 SSMS，通过将数据库"部署"到 Azure SQL Database，以一个步骤来实现此目的；或者，可以分两步来完成：先导出 BACPAC，然后将它导入到 Azure SQL Database 服务器以创建新的数据库。 
+如果数据库架构已与 Azure SQL 数据库 兼容，则迁移将十分直截了当。由于无需进行任何转换，迁移只要求将数据库导入 Azure。你可以使用 SSMS，通过将数据库"部署"到 Azure SQL 数据库，以一个步骤来实现此目的；或者，可以分两步来完成：先导出 BACPAC，然后将它导入到 Azure SQL 数据库 服务器以创建新的数据库。 
 
 可以将导出的 BACPAC 上载到 Azure 存储空间，然后使用门户导入 BACPAC。在云中运行导入可以降低导入步骤出现的延迟，从而提高迁移大型数据库时的性能和可靠性。
 
 直接从 SSMS 部署的方法始终会部署架构和数据，而导出再导入的方法始终会部署架构，并提供一个选项用于部署所有或一部分表中的数据。不管是从 SSMS 部署，还是从 SSMS（然后通过门户）导出再导入，实质上使用的是相同的 DAC 技术，而结果也是相同的。   
 
-此选项也相当于选项 #3 中的最后一个步骤，用于在更新数据库后迁移数据库，使之与 Azure SQL Database 兼容。 
+此选项也相当于选项 #3 中的最后一个步骤，用于在更新数据库后迁移数据库，使之与 Azure SQL 数据库 兼容。 
 
-## 使用 SSMS 部署到 Azure SQL Database
+## 使用 SSMS 部署到 Azure SQL 数据库
 1.	根据"为迁移的数据库创建目标服务器"中所述，使用 Azure 门户设置一个服务器。
-2. 在 SSMS 对象资源管理器中找到源数据库，然后执行**将数据库部署到 Windows Azure SQL Database...** 任务
+2. 在 SSMS 对象资源管理器中找到源数据库，然后执行**将数据库部署到 Windows Azure SQL 数据库...** 任务
 
 	![alt text](./media/sql-database-migrate-ssms/02MigrateusingSSMS.png)
 
-3.	在部署向导中，配置与设置的目标 Azure SQL Database 服务器的连接。 
+3.	在部署向导中，配置与设置的目标 Azure SQL 数据库 服务器的连接。 
 4.	提供数据库的**名称**，并设置"版本"（服务层）和"服务目标"（性能级别）。有关配置这些设置的详细信息，请参阅"选择数据库性能级别/定价层以进行迁移"。 
 
 	![alt text](./media/sql-database-migrate-ssms/03MigrateusingSSMS.png)
 
 5.	完成向导，以执行数据库迁移。  
-根据数据库的大小和复杂性，部署可能需要花费几分钟到几小时。如果发生了指出数据库架构与 SQL Database 不兼容的错误，你必须使用其他选项。 
-## 使用 SSMS 导出 BACPAC，然后将其导入 SQL Database
+根据数据库的大小和复杂性，部署可能需要花费几分钟到几小时。如果发生了指出数据库架构与 SQL 数据库 不兼容的错误，你必须使用其他选项。 
+## 使用 SSMS 导出 BACPAC，然后将其导入 SQL 数据库
 部署过程可分为两个步骤：导出和导入。在第一个步骤中，将创建一个 BACPAC 文件，该文件稍后将用作第二个步骤的输入。 
 
-1.	根据"为迁移的数据库创建目标服务器"中所述，使用最新的 SQL Database Update 设置一个服务器。
-2.	在 SSMS 对象资源管理器中找到源数据库，然后选择**将数据库部署到 Windows Azure SQL Database...** 任务
+1.	根据"为迁移的数据库创建目标服务器"中所述，使用最新的 SQL 数据库 Update 设置一个服务器。
+2.	在 SSMS 对象资源管理器中找到源数据库，然后选择**将数据库部署到 Windows Azure SQL 数据库...** 任务
 
 	![alt text](./media/sql-database-migrate-ssms/04MigrateusingSSMS.png)
 
@@ -59,13 +59,13 @@
 
 	![alt text](./media/sql-database-migrate-ssms/06MigrateusingSSMS.png) 
 
-5.	在导入向导中，选择你刚导出的 BACPAC 文件，以在 Azure SQL Database 中创建新的数据库。 
+5.	在导入向导中，选择你刚导出的 BACPAC 文件，以在 Azure SQL 数据库 中创建新的数据库。 
 
 	![alt text](./media/sql-database-migrate-ssms/07MigrateusingSSMS.png)
 
 6.	提供数据库的名称，并设置"版本"（服务层）和"服务目标"（性能级别）。 
 	 
-7.	完成向导以导入 BACPAC 文件，并在 Azure SQL Database 中创建数据库。
+7.	完成向导以导入 BACPAC 文件，并在 Azure SQL 数据库 中创建数据库。
 
 	![alt text](./media/sql-database-migrate-ssms/08MigrateusingSSMS.png)
  

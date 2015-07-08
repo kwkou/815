@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="SQL Database 用户错误恢复" 
-   description="了解如何在发生用户错误、意外的数据损坏后进行恢复，或者使用 Azure SQL Database 的时间点还原 (PITR) 功能还恢复已删除的数据库。" 
+   pageTitle="SQL 数据库 用户错误恢复" 
+   description="了解如何在发生用户错误、意外的数据损坏后进行恢复，或者使用 Azure SQL 数据库 的时间点还原 (PITR) 功能还恢复已删除的数据库。" 
    services="sql-database" 
    documentationCenter="" 
    authors="elfisher" 
@@ -17,16 +17,16 @@
    wacn.date="05/25/2015"
    ms.author="elfish"/>
 
-# 在发生用户错误后恢复 Azure SQL Database
+# 在发生用户错误后恢复 Azure SQL 数据库
 
-Azure SQL Database 提供两个核心功能，用于在发生用户错误或意外的数据修改后进行恢复。
+Azure SQL 数据库 提供两个核心功能，用于在发生用户错误或意外的数据修改后进行恢复。
 
 - 时间点还原 
 - 还原已删除的数据库
 
 可以从这篇[博客文章](http://azure.microsoft.com/blog/2014/10/01/azure-sql-database-point-in-time-restore)了解有关这些功能的详细信息。
 
-Azure SQL Database 始终会还原到新数据库。这些还原功能适用于所有基本、标准和高级数据库。
+Azure SQL 数据库 始终会还原到新数据库。这些还原功能适用于所有基本、标准和高级数据库。
 ## 使用时间点还原进行恢复
 在发生用户错误或意外数据修改的情况下，可以使用时间点还原，将数据库还原到数据库保留期内的任一时间点。 
 
@@ -34,7 +34,7 @@ Azure SQL Database 始终会还原到新数据库。这些还原功能适用于�
 
 ### Azure 门户
 1. 登录到 [Azure 门户](https://manage.windowsazure.cn)
-2. 在屏幕左侧选择"浏览"，然后选择"SQL Database"。
+2. 在屏幕左侧选择"浏览"，然后选择"SQL 数据库"。
 3. 导航到你的数据库并选择它。
 4. 在数据库边栏选项卡的顶部，选择"还原"。
 5. 指定数据库名称和时间点，然后单击"创建"。
@@ -64,7 +64,7 @@ Azure SQL Database 始终会还原到新数据库。这些还原功能适用于�
 完成还原后，你可以根据[确认已恢复的数据库](sql-database-recovered-finalize)指南，来配置要使用的已恢复数据库。
 
 ## 恢复已删除的数据库
-在删除了某个数据库的情况下，Azure SQL Database 允许你将删除的数据库还原到删除时的时间点。Azure SQL Database 将会根据数据库的保留期存储已删除的数据库备份。
+在删除了某个数据库的情况下，Azure SQL 数据库 允许你将删除的数据库还原到删除时的时间点。Azure SQL 数据库 将会根据数据库的保留期存储已删除的数据库备份。
 
 已删除的数据库的保留期由该数据库尚未删除时所在的服务层或者数据库存在的天数确定（以两者中较小的为准）。若要了解有关数据库保留期的详细信息，请阅读[业务连续性概述](sql-database-business-continuity)。
 

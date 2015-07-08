@@ -25,7 +25,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 先决条件
 
-* Microsoft Azure 订阅
+* Windows Azure 订阅
 
 * 具有 [Power BI](https://powerbi.com) 访问权限的 Azure Active Directory 用户
 

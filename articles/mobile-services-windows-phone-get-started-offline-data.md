@@ -201,7 +201,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
     ![][4]
 
-2.  登录到 Microsoft Azure 管理门户，查看你的移动服务数据库。如果您的服务将 JavaScript 后端用于移动服务，则可以通过移动服务的"数据"选项卡来游览数据。 
+2.  登录到 Windows Azure 管理门户，查看你的移动服务数据库。如果您的服务将 JavaScript 后端用于移动服务，则可以通过移动服务的"数据"选项卡来游览数据。 
 
     如果将 .NET 后端用于移动服务，则在 Visual Studio 中转到"服务器资源管理器"->"Azure" ->"SQL 数据库"。右键单击您的数据库，然后选择"在 SQL Server 对象资源管理器中打开"。
 

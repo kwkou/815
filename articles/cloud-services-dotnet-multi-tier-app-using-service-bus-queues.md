@@ -10,7 +10,7 @@
 
 # 使用 Service Bus 队列创建 .NET 多层应用程序
 
-使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松针对 Azure 进行开发。如果你还没有 Visual Studio 2013，则此 SDK 将自动安装 Visual Studio Express 2013，以便你能完全免费地开始针对 Azure 进行开发。本指南假定你之前未使用过 Microsoft Azure。完成本指南之后，你将拥有使用多项 Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。
+使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松针对 Azure 进行开发。如果你还没有 Visual Studio 2013，则此 SDK 将自动安装 Visual Studio Express 2013，以便你能完全免费地开始针对 Azure 进行开发。本指南假定你之前未使用过 Windows Azure。完成本指南之后，你将拥有使用多项 Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。
 
 你将了解到以下内容：
 
@@ -113,7 +113,7 @@ Service Bus 提供了两个实体以支持中转消息传送：队列和主题�
 
 ###使用 Visual Studio 服务器资源管理器管理服务命名空间和消息传送实体
 
-若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处](http://http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中 **Microsoft Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击**"属性"**，此时就会看到在 Visual Studio 的**"属性"**窗格中显示与该命名空间关联的连接字符串和其他元数据。 
+若要使用 Visual Studio 而非管理门户来管理命名空间并获取连接信息，请按[此处](http://http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中 **Windows Azure** 树下的 **Service Bus** 节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击**"属性"**，此时就会看到在 Visual Studio 的**"属性"**窗格中显示与该命名空间关联的连接字符串和其他元数据。 
 
 记下 **SharedAccessKey** 值或将其复制到剪贴板：
 
@@ -151,7 +151,7 @@ Service Bus 提供了两个实体以支持中转消息传送：队列和主题�
 
 6.  在"解决方案资源管理器"中，右键单击"引用"，然后单击"管理 NuGet 包..."或"添加库程序包引用"。
 
-7.  在该对话框的左侧选择"联机"。搜索"Service Bus"，然后选择"Microsoft Azure Service**
+7.  在该对话框的左侧选择"联机"。搜索"Service Bus"，然后选择"Windows Azure Service**
     **Bus"项。然后，完成安装过程并关闭此对话框。
 
     ![][13]

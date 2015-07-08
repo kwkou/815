@@ -14,7 +14,7 @@
 
 # Azure Site Recovery 的隐私信息
 
-此表提供了 Microsoft Azure Site Recovery 服务（"服务"）的更多隐私信息。若要查看 Microsoft Azure 服务的隐私声明，请参阅
+此表提供了 Windows Azure Site Recovery 服务（"服务"）的更多隐私信息。若要查看 Windows Azure 服务的隐私声明，请参阅
 [Azure 隐私声明](/support/legal/privacy-statement)
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 存储空间示例 | Microsoft Azure"
+   pageTitle="Azure 存储空间示例 | Windows Azure"
    description="查看和下载 Azure 存储空间示例。"
    services="storage"
    documentationCenter="na"

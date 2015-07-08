@@ -1,4 +1,4 @@
-<properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="如何使用队列服务 (PHP) | Microsoft Azure" metaKeywords="Azure Queue Service messaging PHP" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 PHP 编写的。" documentationCenter="PHP" services="storage" authors="" />
+<properties title="How to use the queue service (PHP) - Azure feature guide" pageTitle="如何使用队列服务 (PHP) | Windows Azure" metaKeywords="Azure Queue Service messaging PHP" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 PHP 编写的。" documentationCenter="PHP" services="storage" authors="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"

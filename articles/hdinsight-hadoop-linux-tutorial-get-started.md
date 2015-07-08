@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Linux 教程：Hadoop 和 Hive 入门 | Microsoft Azure"
+   pageTitle="Linux 教程：Hadoop 和 Hive 入门 | Windows Azure"
    description="遵循本 Linux 教程开始使用 HDInsight 中的 Hadoop。了解如何设置 Linux 群集，以及如何使用 Hive 查询数据。"
    services="hdinsight"
    documentationCenter=""

@@ -8,7 +8,7 @@
 
 #Windows Azure 存储性能和可伸缩性清单
 ##介绍
-自从 Microsoft Azure 存储服务发布以来，Microsoft 已经形成了大量的经过验证的做法，目的是提高这些服务的使用效率。本文将其中最重要的一些做法进行了总结，并以"清单"形式列出。本文的目的是确保应用程序开发人员在使用 Azure 存储空间时，采用的是经过验证的做法，并帮助他们确认其他经过验证的、可以考虑采用的做法。本文不会全盘介绍所有可能的性能与伸缩性优化内容，那些影响不大或适用范围不广的内容不在本文讲解之列。必须在设计过程中确保应用程序的行为是可预测到的，因此应早些了解这些经过验证的做法，避免进行那些会引发性能问题的设计。  
+自从 Windows Azure 存储服务发布以来，Microsoft 已经形成了大量的经过验证的做法，目的是提高这些服务的使用效率。本文将其中最重要的一些做法进行了总结，并以"清单"形式列出。本文的目的是确保应用程序开发人员在使用 Azure 存储空间时，采用的是经过验证的做法，并帮助他们确认其他经过验证的、可以考虑采用的做法。本文不会全盘介绍所有可能的性能与伸缩性优化内容，那些影响不大或适用范围不广的内容不在本文讲解之列。必须在设计过程中确保应用程序的行为是可预测到的，因此应早些了解这些经过验证的做法，避免进行那些会引发性能问题的设计。  
 
 每一位使用 Azure 存储空间的应用程序开发人员都应抽时间阅读本文，确保其应用程序的设计遵循下面列出的每一项经过验证的做法。  
 
@@ -99,7 +99,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ####有用的资源
 以下链接提供了有关可伸缩性目标的更多详细信息：
 -	你可以在 [MSDN 上的 Azure 存储可伸缩性和性能目标]页上查看最新的可伸缩性目标(http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx).
--	你可以在博客文章 [Microsoft Azure 存储冗余选项和读取访问地域冗余存储]中了解有关存储冗余选项的详细信息(http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)- see the next section for more details.
+-	你可以在博客文章 [Windows Azure 存储冗余选项和读取访问地域冗余存储]中了解有关存储冗余选项的详细信息(http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)- see the next section for more details.
 -	有关 Azure 服务定价的最新信息，请参阅 [Azure 定价一览]（/定价/概述/）。  
 
 ###联网
@@ -261,7 +261,7 @@ Azure 存储空间支持两种类型的 Blob： *page* Blob 和 *block* Blob。�
 ####<a name="subheading25"></a>使用 JSON
 从存储服务 2013-08-15 版开始，表服务就支持使用 JSON 而非基于 XML 的 AtomPub 格式来传输表数据。这最多可以减少 75% 的负载大小，显著改进应用程序的性能。   
 
-有关详细信息，请参阅文章[Microsoft Azure 表：JSON 简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) and [Payload Format for Table Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx) on MSDN. 
+有关详细信息，请参阅文章[Windows Azure 表：JSON 简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx) and [Payload Format for Table Service Operations](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx) on MSDN. 
 
 ####<a name="subheading26"></a>关闭 Nagle
 Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网络性能的方法。不过，该方法并非适用于所有情况（例如交互性很强的环境）。就 Azure 存储空间来说，Nagle 的算法会对表请求和队列服务请求的执行造成负面影响，应尽可能禁用。  

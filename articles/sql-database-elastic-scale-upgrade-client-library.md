@@ -17,14 +17,14 @@
 
 ## 升级步骤
 
-升级要求你使用新库重新生成你的应用程序，以及更改 Azure SQL Database 中存储的现有分片映射管理器元数据以支持新功能。
+升级要求你使用新库重新生成你的应用程序，以及更改 Azure SQL 数据库 中存储的现有分片映射管理器元数据以支持新功能。
 
 请按照以下顺序升级你的应用程序、分片映射管理器数据库和每个分片中的本地分片映射管理器元数据。按此顺序执行升级步骤可确保在更新元数据对象时旧版本的客户端库不再存在于你的环境中，这意味着在升级后不会创建旧版本的元数据对象。   
 
 **1. 升级你的应用程序。**在 Visual Studio 中，下载最新的客户端库版本并在所有弹性缩放项目中引用该版本；然后重新生成并部署。 
 
  * 在 Visual Studio 解决方案中，选择"工具"->"NuGet Package Manager"->"管理解决方案的 NuGet 包"。 
- * 在左面板中，选择**"更新"**，然后选择窗口中显示的包**"Azure SQL Database 弹性缩放客户端库"** 上的**"更新"**按钮。
+ * 在左面板中，选择**"更新"**，然后选择窗口中显示的包**"Azure SQL 数据库 弹性缩放客户端库"** 上的**"更新"**按钮。
 	![Upgrade Nuget Pacakges][1]
  
  * 生成并部署。 
@@ -33,7 +33,7 @@
 
 **3. 升级拆分/合并服务。**如果你使用弹性缩放拆分/合并服务来重新组织分片数据，请[下载并部署最新版本的服务](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge)。可在[此处](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)找到该服务的详细升级步骤。 
 
-**4. 升级分片映射管理器数据库**。升级 Azure SQL Database 中支持分片映射的元数据。有两种方法可以完成此操作：使用 PowerShell 或 C#。这两个选项在下面说明。
+**4. 升级分片映射管理器数据库**。升级 Azure SQL 数据库 中支持分片映射的元数据。有两种方法可以完成此操作：使用 PowerShell 或 C#。这两个选项在下面说明。
 
 ***选项 1：使用 PowerShell 升级元数据***
 

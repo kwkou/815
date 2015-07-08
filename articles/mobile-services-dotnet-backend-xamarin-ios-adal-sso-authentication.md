@@ -28,7 +28,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-
 * XCode 4.5 和 iOS 6.0（或更高版本） 
 * OS X 上安装了 [Xamarin 扩展]的 Visual Studio 或 [Xamarin Studio]
 * 完成[移动服务入门]或[数据处理入门]教程。
-* Microsoft Azure 移动服务 SDK
+* Windows Azure 移动服务 SDK
 * [用于 iOS 的 Active Directory 身份验证库的 Xamarin 绑定]。
 
 [WACOM.INCLUDE [mobile-services-dotnet-adal-register-service](../includes/mobile-services-dotnet-adal-register-service.md)]

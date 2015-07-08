@@ -15,7 +15,7 @@
 
 ## 概述
 
-本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources)部署到 Azure 网站。部署 Web 作业的另一个方法是使用 Azure 管理门户，具体请参阅[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
+本主题说明如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources)部署到 Azure 网站。部署 Web 作业的另一个方法是使用 Azure 管理门户，具体请参阅[使用 Web 作业在 Windows Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
 
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
@@ -100,7 +100,7 @@
 
 ### <a id="createnolink"></a> 为独立的 Web 作业使用 Web 作业新建项目模板
   
-1. 单击"文件">"新建项目"，然后在"新建项目"对话框中，单击"云">"Microsoft Azure Web 作业"。
+1. 单击"文件">"新建项目"，然后在"新建项目"对话框中，单击"云">"Windows Azure Web 作业"。
 
 	![New Project dialog showing WebJob template](./media/websites-dotnet-deploy-webjobs/np.png)
 	
@@ -122,7 +122,7 @@
 
 !["添加 Azure Web 作业"对话框](./media/websites-dotnet-deploy-webjobs/aaw2.png)
 
-此对话框中的字段对应于 Azure 管理门户中"新建作业"对话框上的字段。有关详细信息，请参阅[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
+此对话框中的字段对应于 Azure 管理门户中"新建作业"对话框上的字段。有关详细信息，请参阅[使用 Web 作业在 Windows Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)。
 
 对于计划的 Web 作业（而不是连续 Web 作业），Visual Studio 将创建 [Azure 计划程序](/home/features/scheduler) 作业集合（如果尚不存在），然后在该集合中创建一个作业：
 

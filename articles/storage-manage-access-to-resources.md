@@ -110,7 +110,7 @@
     
     // As an alternative, you can retrieve storage account information from an app.config file. 
     // This is one way to store and retrieve a connection string if you are 
-    // writing an application that will run locally, rather than in Microsoft Azure.
+    // writing an application that will run locally, rather than in Windows Azure.
     
     // string storageConnectionString = ConfigurationManager.AppSettings["StorageAccountConnectionString"];
     

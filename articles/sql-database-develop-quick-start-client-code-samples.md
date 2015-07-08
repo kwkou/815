@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="SQL Database 客户端开发和快速入门代码示例" 
-	description="列出客户端程序可用来连接 Azure SQL Database 或 Microsoft SQL Server 的每个驱动程序的最低版本号。此外，还提供了社区（而不是 Microsoft）发布的驱动程序的版本信息链接。"
+	pageTitle="SQL 数据库 客户端开发和快速入门代码示例" 
+	description="列出客户端程序可用来连接 Azure SQL 数据库 或 Microsoft SQL Server 的每个驱动程序的最低版本号。此外，还提供了社区（而不是 Microsoft）发布的驱动程序的版本信息链接。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -19,7 +19,7 @@
 	ms.author="genemi"/>
 
 
-# SQL Database 客户端开发和快速入门代码示例
+# SQL 数据库 客户端开发和快速入门代码示例
 
 
 <!--
@@ -31,7 +31,7 @@ Add link to sql-database-get-started (rewritten by casey Karst at HackaDoc2).
 -->
 
 
-本主题提供了可用来连接 Azure SQL Database 的快速入门代码示例的链接。这些示例的范围包括：
+本主题提供了可用来连接 Azure SQL 数据库 的快速入门代码示例的链接。这些示例的范围包括：
 
 
 - 各种编程语言。
@@ -74,8 +74,8 @@ Add link to sql-database-get-started (rewritten by casey Karst at HackaDoc2).
 
 
 - [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
-- [连接到 SQL Database：链接、最佳实践和设计指南](sql-database-connect-central-recommendations)
-- [创建第一个 Azure SQL Database](sql-database-get-started)
+- [连接到 SQL 数据库：链接、最佳实践和设计指南](sql-database-connect-central-recommendations)
+- [创建第一个 Azure SQL 数据库](sql-database-get-started)
 
 
 <!-- eof -->

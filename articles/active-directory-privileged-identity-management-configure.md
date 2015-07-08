@@ -39,7 +39,7 @@ Azure AD 特权标识管理预览版可让你：
 
 ## 为目录启用特权标识管理
 
-可以通过访问 [Microsoft Azure 门户](https://manage.windowsazure.cn/)开始使用 Azure AD 特权标识管理。你必须是全局管理员才能为目录启用 Azure AD 特权标识管理。
+可以通过访问 [Windows Azure 门户](https://manage.windowsazure.cn/)开始使用 Azure AD 特权标识管理。你必须是全局管理员才能为目录启用 Azure AD 特权标识管理。
 
 ![][1]
 

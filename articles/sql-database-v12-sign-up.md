@@ -1,6 +1,6 @@
 <properties
-	pageTitle="演练：激活最新的 SQL Database Update V12"
-	description="介绍使用新的 Windows Azure 门户 UI 试用 Azure SQL Database 版本 V12 的步骤。"
+	pageTitle="演练：激活最新的 SQL 数据库 Update V12"
+	description="介绍使用新的 Windows Azure 门户 UI 试用 Azure SQL 数据库 版本 V12 的步骤。"
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -10,19 +10,13 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/22/2015"
-	wacn.date="05/25/2015"
-	ms.author="genemi"/>
+	wacn.date="05/25/2015"/>
 
-> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户
 
-# 演练：激活最新的 SQL Database Update V12
+# 演练：激活最新的 SQL 数据库 Update V12
 
-本主题介绍你可以遵循哪些步骤来在2015年6月首次发布的 Azure SQL Database V12 选项。
+本主题介绍你可以遵循哪些步骤来在2015年6月首次发布的 Azure SQL 数据库 V12 选项。
 
 若要试用最新的 V12，首先需要订阅 Windows Azure，或者至少获得了一个[试用](/pricing/1rmb-trial)订阅。
 
@@ -31,7 +25,7 @@
 > [AZURE.NOTE]
 > 测试数据库、数据库副本或新数据库都是适合升级到预览版的候选项。业务所依赖的生产数据库应在预览期过后再进行部署。
 
-有关升级到 V12 的详细信息，请参阅[规划和准备升级到 Azure SQL Database V12](sql-database-v12-plan-prepare-upgrade)。
+有关升级到 V12 的详细信息，请参阅[规划和准备升级到 Azure SQL 数据库 V12](sql-database-v12-plan-prepare-upgrade)。
 
 
 ## A. 安全授权
@@ -47,11 +41,11 @@
 
 ## B. 门户 UI 中的步骤
 
-> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户
+> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户，此文仅供参考。
 
 本部分介绍在激活 V12 选项时，你可以在 Azure 门户 UI 中执行一次的单击序列。在激活该选项后，你仍可以使用此操作。
 
-所有激活方案使用相同的基本思路。当你首次尝试[创建新的 SQL Database 服务器](sql-database-create)时，将显示标记为"最新更新(预览版)"的边栏选项卡，其中提供了一个复选框让你选择激活权限以使用 V12 版本。在你激活权限后，系统永远不会再次显示该复选框。而是显示一个"是|否"控件，让你指定是否希望新服务器使用 V12。如果你选择"否"，则会创建 V11 服务器（参阅 SELECT @@VERSION; 的返回值）。
+所有激活方案使用相同的基本思路。当你首次尝试[创建新的 SQL 数据库 服务器](sql-database-create)时，将显示标记为"最新更新(预览版)"的边栏选项卡，其中提供了一个复选框让你选择激活权限以使用 V12 版本。在你激活权限后，系统永远不会再次显示该复选框。而是显示一个"是|否"控件，让你指定是否希望新服务器使用 V12。如果你选择"否"，则会创建 V11 服务器（参阅 SELECT @@VERSION; 的返回值）。
 
 ### B.1 V12 版本的"是|否"控件
 
@@ -62,9 +56,9 @@
 
 ## C. 后续步骤
 
-以下主题介绍了如何使用 SQL Database V12。
+以下主题介绍了如何使用 SQL 数据库 V12。
 
-- [在 SQL Database Update V12 中创建数据库](sql-database-create)
+- [在 SQL 数据库 Update V12 中创建数据库](sql-database-create)
 
 <!--
   [ AZUR E . N OTE ]

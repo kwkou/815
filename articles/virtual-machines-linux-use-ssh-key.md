@@ -39,13 +39,13 @@
 
 
 ## 从现有 OpenSSH 兼容密钥生成密钥
-前面的示例介绍了如何创建可用于 Windows Azure 的新密钥。在某些情况下，你可能已经拥有现有的 OpenSSH 兼容公钥和私钥对，并且希望将相同的密钥用于 Microsoft Azure。
+前面的示例介绍了如何创建可用于 Windows Azure 的新密钥。在某些情况下，你可能已经拥有现有的 OpenSSH 兼容公钥和私钥对，并且希望将相同的密钥用于 Windows Azure。
 
-OpenSSH 私钥可通过 `openssl` 实用工具直接读取。以下命令将采用现有的 SSH 私钥（在以下示例中为 id_rsa），并创建 Microsoft Azure 所需的 `.pem` 公钥：
+OpenSSH 私钥可通过 `openssl` 实用工具直接读取。以下命令将采用现有的 SSH 私钥（在以下示例中为 id_rsa），并创建 Windows Azure 所需的 `.pem` 公钥：
 
 	# openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
-**myCert.pem** 文件是公钥，它随后可用于在 Microsoft Azure 上设置 Linux 虚拟机。在设置期间，`.pem` 文件将转换为 `openssh` 兼容公钥并放置在 `~/.ssh/authorized_keys` 中。
+**myCert.pem** 文件是公钥，它随后可用于在 Windows Azure 上设置 Linux 虚拟机。在设置期间，`.pem` 文件将转换为 `openssh` 兼容公钥并放置在 `~/.ssh/authorized_keys` 中。
 
 
 ## 从 Linux 连接到 Windows Azure 虚拟机

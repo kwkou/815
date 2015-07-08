@@ -157,7 +157,7 @@
     此新类定义包括新的时间戳属性，作为可以为 null 的 DateTime 类型。
   
     <div class="dev-callout"><b>注意</b>
-	<p>该 <strong>DataMemberAttribute</strong> 会让客户端将应用程序中的新 <strong>CreatedAt</strong> 属性映射到 TodoItem 表中定义的 <strong>createdAt</strong> 列（具有不同的大小写）。如果你使用此属性，应用程序在对象上使用的属性名称可以不同于 SQL Database 中的列名称。如果不使用此属性，则会因大小写不同而发生错误。</p>
+	<p>该 <strong>DataMemberAttribute</strong> 会让客户端将应用程序中的新 <strong>CreatedAt</strong> 属性映射到 TodoItem 表中定义的 <strong>createdAt</strong> 列（具有不同的大小写）。如果你使用此属性，应用程序在对象上使用的属性名称可以不同于 SQL 数据库 中的列名称。如果不使用此属性，则会因大小写不同而发生错误。</p>
     </div>
 
 5. 在 MainPage.xaml 文件中的 **CheckBoxComplete** 元素的正下方，添加以下 XAML 元素：

@@ -352,7 +352,7 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。您可以�
 
 [Azure 虚拟机中的 SQL Server 技术文章](http://msdn.microsoft.com/zh-cn/library/azure/dn248435.aspx)
 
-- [白皮书：了解 Azure SQL Database 和 Azure 虚拟机中的 SQL Server](/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)
+- [白皮书：了解 Azure SQL 数据库 和 Azure 虚拟机中的 SQL Server](/zh-cn/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)
 
 - [白皮书：应用程序模式和 Azure 虚拟机中的 SQL Server 的开发策略](https://msdn.microsoft.com/zh-CN/library/azure/dn574746.aspx)
 

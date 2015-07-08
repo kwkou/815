@@ -53,8 +53,8 @@ Azure AD 包含一个 Reporting API，可让你以编程方式访问安全、活
 - 导航到新建的应用程序。
 - 导航到“配置”选项卡。
 - 在“针对其他应用程序的权限”部分中：
-	- “添加 Microsoft Azure Active Directory”>“应用程序权限”> 启用“读取目录数据”
-	- “添加 Microsoft Azure 服务管理 API”>“委托的权限”> 启用“访问 Azure 服务管理”
+	- “添加 Windows Azure Active Directory”>“应用程序权限”> 启用“读取目录数据”
+	- “添加 Windows Azure 服务管理 API”>“委托的权限”> 启用“访问 Azure 服务管理”
 - 在底部栏上，单击“保存”。
 
 
@@ -175,6 +175,6 @@ c0-a84f-57faf131dc2b"
 - 想要知道可以使用哪些安全、审核和活动报告吗？ 查看 [Azure AD 安全、审核和活动报告](active-directory-view-access-usage-reports)
 - 有关审核报告的详细信息，请参阅 [Azure AD 审核报告事件](active-directory-reporting-audit-events)
 - 有关 Graph API REST 服务的详细信息，请参阅 [Azure AD 报告和事件（预览版）](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx)
-- 有关在 Azure AD 中使用 curl 执行 OAuth 流程的详细信息：[Microsoft Azure REST API + OAuth 2.0](https://ahmetalpbalkan.com/blog/azure-rest-api-with-oauth2/)（外部链接）
+- 有关在 Azure AD 中使用 curl 执行 OAuth 流程的详细信息：[Windows Azure REST API + OAuth 2.0](https://ahmetalpbalkan.com/blog/azure-rest-api-with-oauth2/)（外部链接）
 
 <!---HONumber=60-->

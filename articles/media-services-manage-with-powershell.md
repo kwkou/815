@@ -32,7 +32,7 @@
 >[AZURE.NOTE]
 > 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
-## 安装 Microsoft Azure PowerShell Cmdlet
+## 安装 Windows Azure PowerShell Cmdlet
 
 若要安装最新的 Azure PowerShell cmdlet，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 

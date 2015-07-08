@@ -16,7 +16,7 @@
 
 ## 将自定义数据注入到 Azure 虚拟机中
 
-当前仅在 [Microsoft Azure 跨平台命令行界面](https://github.com/Azure/azure-sdk-tools-xplat)上支持此功能。尽管你可以使用 `azure vm create` 命令的任何选项，但以下方法演示一个非常基本的方法。
+当前仅在 [Windows Azure 跨平台命令行界面](https://github.com/Azure/azure-sdk-tools-xplat)上支持此功能。尽管你可以使用 `azure vm create` 命令的任何选项，但以下方法演示一个非常基本的方法。
 
 ```
     PASSWORD='AcceptablePassword -- more than 8 chars, a cap, a num, a special'
@@ -61,6 +61,6 @@
 <!--Link references-->
 [添加 Azure 角色服务管理 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/jj157186.aspx)
 
-[Microsoft Azure 跨平台命令行接口](https://github.com/Azure/azure-sdk-tools-xplat)
+[Windows Azure 跨平台命令行接口](https://github.com/Azure/azure-sdk-tools-xplat)
 
 <!---HONumber=60-->

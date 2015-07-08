@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="创建和管理 SQL Database 弹性数据库池（预览版）" 
-	description="创建一个可在一组 Azure SQL Database 之间共享的资源池。" 
+	pageTitle="创建和管理 SQL 数据库 弹性数据库池（预览版）" 
+	description="创建一个可在一组 Azure SQL 数据库 之间共享的资源池。" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
@@ -10,7 +10,7 @@
 <tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="05/29/2015"/>
 
 
-# 创建和管理 SQL Database 弹性池（预览版）
+# 创建和管理 SQL 数据库 弹性池（预览版）
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
@@ -21,7 +21,7 @@
 弹性池可以简化大量数据库的创建、维护以及性能和成本的管理流程。
  
 
-> [AZURE.NOTE] 弹性池目前为预览版，仅适用于 SQL Database V12 Servers。
+> [AZURE.NOTE] 弹性池目前为预览版，仅适用于 SQL 数据库 V12 Servers。
 
  
 
@@ -31,7 +31,7 @@
 若要创建弹性池，你需要满足以下条件：
 
 - Azure 订阅！如果你需要 Azure 订阅，只需单击本页顶部的"试用版"，然后再回来完成本文的相关操作即可。
-- Azure SQL Database V12 服务器。如果你没有 V12 服务器，可按以下步骤创建一个：[创建你的第一个 Azure SQL Database](sql-database-get-started)。
+- Azure SQL 数据库 V12 服务器。如果你没有 V12 服务器，可按以下步骤创建一个：[创建你的第一个 Azure SQL 数据库](sql-database-get-started)。
 
 
 
@@ -40,7 +40,7 @@
 通过向服务器添加新池来创建弹性池。可以将多个池添加到一个服务器，但每个池只能有 1 个关联的服务器。此外，你还可以将将服务器上的所有或部分数据库添加到一个池中。
 
 
-1.	选择包含你要添加到池的数据库的 SQL Database V12 服务器。
+1.	选择包含你要添加到池的数据库的 SQL 数据库 V12 服务器。
 2.	通过选择 SQL Server 边栏选项卡顶部的"添加池"来创建池。
 
    ![Create Elastic Pool][1]
@@ -141,8 +141,8 @@
 
 ## 相关内容
 
-- [SQL Database 弹性池](sql-database-elastic-pool)
-- [使用 PowerShell 创建 SQL Database 弹性池](sql-database-elastic-pool-powershell)
+- [SQL 数据库 弹性池](sql-database-elastic-pool)
+- [使用 PowerShell 创建 SQL 数据库 弹性池](sql-database-elastic-pool-powershell)
 - [弹性数据库参考](sql-database-elastic-pool-reference)
 
 

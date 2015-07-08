@@ -70,11 +70,11 @@ Azure 提供了三种用于运行应用程序的计算模型：[Azure 网站][ex
 
 若要发布，请右键单击解决方案中的云服务项目，然后选择**"发布"**。
 
-![Microsoft Azure Publish Sign In](./media/cloud-services-python-ptvs/publish-sign-in.png)
+![Windows Azure Publish Sign In](./media/cloud-services-python-ptvs/publish-sign-in.png)
 
 在设置页中，选择你要发布到的云服务。
 
-![Microsoft Azure Publish Settings](./media/cloud-services-python-ptvs/publish-settings.png)
+![Windows Azure Publish Settings](./media/cloud-services-python-ptvs/publish-settings.png)
 
 可以创建新的云服务（如果没有）。
 

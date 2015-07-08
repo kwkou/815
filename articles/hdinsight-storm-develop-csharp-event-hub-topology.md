@@ -407,7 +407,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 ### 修改 Bolt
 
-1. 在"解决方案资源管理器"中，右键单击"EventHubReader"项目，然后单击"管理 NuGet 包"。搜索 **Json.Net** 包，然后将它添加到解决方案。这样，我们便可以轻松处理从 Spout 接收的 JSON 数据。此外，请添加 **Microsoft Azure 存储空间**包，以便能够写入表存储。
+1. 在"解决方案资源管理器"中，右键单击"EventHubReader"项目，然后单击"管理 NuGet 包"。搜索 **Json.Net** 包，然后将它添加到解决方案。这样，我们便可以轻松处理从 Spout 接收的 JSON 数据。此外，请添加 **Windows Azure 存储空间**包，以便能够写入表存储。
 
 1. 打开 **Bolt.cs**，在该文件的顶部添加以下内容。
 

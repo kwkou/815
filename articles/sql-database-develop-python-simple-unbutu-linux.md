@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Ubuntu 上使用 Python 和 pymssql 连接到 SQL Database" 
-	description="演示了一个可以用来连接到 Azure SQL Database 的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。"
+	pageTitle="在 Ubuntu 上使用 Python 和 pymssql 连接到 SQL 数据库" 
+	description="演示了一个可以用来连接到 Azure SQL 数据库 的 Python 代码示例。该示例在 Unbutu Linux 客户端计算机上运行。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -19,7 +19,7 @@
 	ms.author="genemi"/>
 
 
-# 在 Unbutu Linux 上使用 Python 连接到 SQL Database
+# 在 Unbutu Linux 上使用 Python 连接到 SQL 数据库
 
 
 <!--
@@ -27,7 +27,7 @@ Original author of content is Meet Bhagdev. GeneMi edited and first published.
 -->
 
 
-本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL Database 数据库的 Python 代码示例。
+本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库 数据库的 Python 代码示例。
 
 
 ## 要求
@@ -53,7 +53,7 @@ Original author of content is Meet Bhagdev. GeneMi edited and first published.
 有关如何创建示例数据库并检索连接字符串，请参阅[入门主题](sql-database-get-started)。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。 
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
 
 	import pymssql

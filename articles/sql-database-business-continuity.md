@@ -1,6 +1,6 @@
 ﻿<properties 
-   pageTitle="Azure SQL Database 业务连续性概述"
-   description="了解 Azure SQL Database 中可帮助任务关键型云应用程序保持运行以及帮助你在发生中断和错误后进行恢复的内置功能与可用选项。"
+   pageTitle="Azure SQL 数据库 业务连续性概述"
+   description="了解 Azure SQL 数据库 中可帮助任务关键型云应用程序保持运行以及帮助你在发生中断和错误后进行恢复的内置功能与可用选项。"
    services="sql-database"
    documentationCenter="" 
    authors="elfisher" 

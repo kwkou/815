@@ -23,7 +23,7 @@
 
 或者使用以下 PowerShell 脚本：
 
-1. 启动 [Microsoft Azure PowerShell 窗口](powershell-install-configure)。
+1. 启动 [Windows Azure PowerShell 窗口](powershell-install-configure)。
 2. 确保使用 PowerShell SDK 0.8.10 或更高版本。
 3. 运行以下脚本：
 

@@ -19,7 +19,7 @@
 # 使用 PowerShell 管理 SQL Azure 资源
 
 
-在本主题中，你将使用 PowerShell 脚本创建 Azure SQL Database 逻辑服务器、数据库和防火墙规则。
+在本主题中，你将使用 PowerShell 脚本创建 Azure SQL 数据库 逻辑服务器、数据库和防火墙规则。
 
 ## 步骤 1：安装 Azure SDK
 

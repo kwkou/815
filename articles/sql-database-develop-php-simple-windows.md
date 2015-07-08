@@ -1,6 +1,6 @@
 ﻿<properties
-	pageTitle="在 Windows 上使用 PHP 连接到 SQL Database"
-	description="演示一个示例 PHP 程序，该程序可从 Windows 客户端连接到 Azure SQL Database，并与客户端所需的软件组件建立链接。"
+	pageTitle="在 Windows 上使用 PHP 连接到 SQL 数据库"
+	description="演示一个示例 PHP 程序，该程序可从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。"
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -19,7 +19,7 @@
 	ms.author="genemi"/>
 
 
-# 在 Windows 上使用 PHP 连接到 SQL Database
+# 在 Windows 上使用 PHP 连接到 SQL 数据库
 
 
 <!--
@@ -27,7 +27,7 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 -->
 
 
-本主题演示了如何从 Windows 运行的、以 PHP 编写的客户端应用程序连接到 Azure SQL Database。
+本主题演示了如何从 Windows 运行的、以 PHP 编写的客户端应用程序连接到 Azure SQL 数据库。
 
 
 ## 先决条件
@@ -51,7 +51,7 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 3. 通过在 Dynamic Extensions 节下添加一个条目来编辑 PHP.INI 文件，如下所示：<br/>**extension=php_sqlsrv_55_nts.dll**
 
 
-## 连接到 SQL Database 数据库
+## 连接到 SQL 数据库 数据库
 
 
 此 **OpenConnection** 函数将在其后面的所有函数的靠近顶部位置调用。

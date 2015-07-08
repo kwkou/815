@@ -11,7 +11,7 @@
 
 # 设置用于测试的模拟混合云环境
 
-本主题将指导你一步步创建用于 Microsoft Azure 的模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。可以将此配置作为一种替代方法来 
+本主题将指导你一步步创建用于 Windows Azure 的模拟混合云环境，以便使用两个独立的 Azure 虚拟网络进行测试。可以将此配置作为一种替代方法来 
 [设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) ，前提是你没有直接的 Internet 连接，也没有可用的公共 IP 地址。这是生成的配置。
 
 ![](./media/virtual-networks-set-up-simulated-hybrid-cloud-environment-for-testing/CreateSimHybridCloud_4.png)

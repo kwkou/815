@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-net-how-to-queue-service" urlDisplayName="Queue Service" pageTitle="如何通过 .NET 使用队列存储 | Microsoft Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="了解如何使用 Microsoft Azure 队列存储创建和删除队列，以及插入、扫视、获取和删除队列消息。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Queue Storage" authors="tamram" />
+﻿<properties linkid="dev-net-how-to-queue-service" urlDisplayName="Queue Service" pageTitle="如何通过 .NET 使用队列存储 | Windows Azure" metaKeywords="Get started Azure queue   Azure asynchronous processing   Azure queue   Azure queue storage   Azure queue .NET   Azure queue storage .NET   Azure queue C#   Azure queue storage C#" description="了解如何使用 Windows Azure 队列存储创建和删除队列，以及插入、扫视、获取和删除队列消息。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Queue Storage" authors="tamram" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -257,7 +257,7 @@ Microsoft.WindowsAzure.CloudConfigurationManager，则可以使用 **CloudConfig
   <ul>
     <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/">表存储</a>来存储结构化数据。</li>
     <li>使用 <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob 存储</a>来存储非结构化数据。</li>
-    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> 来存储关系数据。</li>
+    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL 数据库</a> 来存储关系数据。</li>
   </ul>
 </li>
 </ul>

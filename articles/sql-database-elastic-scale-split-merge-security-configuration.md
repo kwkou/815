@@ -1,8 +1,8 @@
 <properties 
     title="Elastic Scale Security Configurations" 
     pageTitle="弹性缩放安全配置" 
-    description="使用 Azure SQL Database 弹性缩放的拆分/合并服务安全" 
-    metaKeywords="Elastic Scale Security Configurations, Azure SQL Database sharding, elastic scale " 
+    description="使用 Azure SQL 数据库 弹性缩放的拆分/合并服务安全" 
+    metaKeywords="Elastic Scale Security Configurations, Azure SQL 数据库 sharding, elastic scale " 
     services="sql-database" documentationCenter="" 
     manager="jhubbard" 
     authors="torsteng@microsoft.com"/>
@@ -11,7 +11,7 @@
 
 # 拆分合并安全配置  
 
-若要使用拆分/合并服务，必须正确配置安全性。该服务是 Microsoft Azure SQL Database 弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
+若要使用拆分/合并服务，必须正确配置安全性。该服务是 Windows Azure SQL 数据库 弹性缩放功能的一部分。有关详细信息，请参阅[弹性缩放拆分和合并服务教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge)
 
 ## 配置证书
 
@@ -237,7 +237,7 @@
 
 ## <a name="turn-off-client-cert"></a>禁用基于客户端证书的身份验证
 
-仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Microsoft Azure 虚拟网络）。
+仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Windows Azure 虚拟网络）。
 
 在服务配置文件中，将这些设置更改为 false 以关闭该功能：
 
@@ -475,7 +475,7 @@
 
 # <a name="other-security"></a>其他安全注意事项
  
-使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保存在其内部表中，该表位于你在 Microsoft Azure 订阅中为元数据存储提供的 Microsoft Azure SQL Database 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分： 
+使用 HTTPS 终结点时，本文档中介绍的 SSL 设置将对服务及其客户端之间的通信进行加密。这一点很重要，因为该通信中包含了数据库访问凭据以及其他可能的敏感信息。但是，请注意，该服务会将内部状态（包括凭据）保存在其内部表中，该表位于你在 Windows Azure 订阅中为元数据存储提供的 Windows Azure SQL 数据库 中。在服务配置文件（.CSCFG 文件）中，该数据库已定义为以下设置的一部分： 
 
     <Setting name="ElasticScaleMetadata" value="Server=..." />
 

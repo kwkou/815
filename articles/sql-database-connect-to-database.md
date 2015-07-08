@@ -1,42 +1,39 @@
 <properties 
-	urlDisplayName="How to connect to an Azure SQL database using SSMS" 
-	pageTitle="如何使用 SSMS 连接到 Azure SQL Database" metaKeywords="" 
-	description="了解如何使用 SSMS 连接到 Azure SQL Database" 
+	urlDisplayName="How to connect to an Azure SQL 数据库 using SSMS" 
+	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库" metaKeywords="" 
+	description="了解如何使用 SSMS 连接到 Azure SQL 数据库" 
 	metaCanonical="" 
 	services="sql-database" 
 	documentationCenter="" 
-	title="How to connect to an Azure SQL database using SSMS" 
+	title="How to connect to an Azure SQL 数据库 using SSMS" 
 	authors="sidneyh" solutions="" 
-	manager="jhubbard" editor="" />
+	manager="jhubbard" editor=""/>
 
 <tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+	ms.service="sql-database"  
 	ms.date="04/02/2015" 
-	wacn.date="05/25/2015" 
-	ms.author="sidneyh" />
+	wacn.date="05/25/2015"/>
 
-# 如何使用 SSMS 连接到 Azure SQL Database
+# 如何使用 SSMS 连接到 Azure SQL 数据库
 
-本主题介绍使用 SQL Server Management Studio 连接到 Microsoft Azure SQL Database 的步骤。
+本主题介绍使用 SQL Server Management Studio 连接到 Windows Azure SQL 数据库 的步骤。
 
 ## 先决条件
-* 设置并运行了 Azure SQL Database。若要创建新的 SQL Database，请参阅 [Microsoft Azure SQL Database 入门](sql-database-get-started)。
-* SQL Database 的管理员名称和密码。
-* SQL Server Management Studio 2014。若要获取该工具，请参阅[下载 SQL Express](http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx)。
+* 设置并运行了 Azure SQL 数据库。若要创建新的 SQL 数据库，请参阅 [Windows Azure SQL 数据库 入门](sql-database-get-started)。
+* SQL 数据库 的管理员名称和密码。
+* SQL Server Management Studio 2014。若要获取该工具，请参阅[下载 SQL Express](http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx)。  
 
-## 连接到 SQL Database 的实例
+> [AZURE.NOTE]由世纪互联运营的Windows Azure目前暂不支持新门户，此文仅供参考。
+
+## 连接到 SQL 数据库 的实例  
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击"浏览"按钮，然后单击"SQL Database"(b)。 
+2. 单击"浏览"按钮，然后单击"SQL 数据库"(b)。 
 
-	![Click Browse and SQL Database][1]
-3. 选择"SQL Database"(a) 后，单击服务器上你要连接到的数据库名称 (b)。
+	![Click Browse and SQL 数据库][1]
+3. 选择"SQL 数据库"(a) 后，单击服务器上你要连接到的数据库名称 (b)。
 
 	![Click the name of a database][2]
-4. 选择名称后 (a)，单击"属性"(b)。复制服务器的名称 (c) 和管理员的名称 (d)。管理员名称和密码是创建 SQL Database 时创建的。你必须使用该密码来继续下一步。 
+4. 选择名称后 (a)，单击"属性"(b)。复制服务器的名称 (c) 和管理员的名称 (d)。管理员名称和密码是创建 SQL 数据库 时创建的。你必须使用该密码来继续下一步。 
 
 	![Click SQL Server, Settings, and Property][3]
 5. 打开 SQL Server Management Studio 2014。 
@@ -49,11 +46,11 @@
 
 ## 排查连接问题
 
-在出现问题时，请参阅[排查 Azure SQL Database 连接问题](https://support.microsoft.com/zh-CN/kb/2980233)。有关可能出现的问题与解答列表，请参阅[排查 Microsoft Azure SQL Database 连接问题](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1)。
+在出现问题时，请参阅[排查 Azure SQL 数据库 连接问题](https://support.microsoft.com/zh-CN/kb/2980233)。有关可能出现的问题与解答列表，请参阅[排查 Windows Azure SQL 数据库 连接问题](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1)。
 
 
 ## 后续步骤
-你可以使用 Transact-SQL 语句来创建或管理数据库。请参阅 [CREATE DATABASE (Azure SQL Database)](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx) 和[使用 SQL Server Management Studio 管理 Azure SQL Database](sql-database-manage-azure-ssms)。你还可以将事件记录到 Azure 存储空间。请参阅 [SQL Database 审核入门](sql-database-auditing-get-started)。
+你可以使用 Transact-SQL 语句来创建或管理数据库。请参阅 [CREATE DATABASE (Azure SQL 数据库)](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx) 和[使用 SQL Server Management Studio 管理 Azure SQL 数据库](sql-database-manage-azure-ssms)。你还可以将事件记录到 Azure 存储空间。请参阅 [SQL 数据库 审核入门](sql-database-auditing-get-started)。
 
 <!--Image references-->
 

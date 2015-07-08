@@ -52,12 +52,12 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-若要在本地 Windows 计算机中测试你的应用程序，可以使用随 [Azure SDK](/downloads) 一起安装的 Microsoft Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一个实用工具，用于在本地开发计算机上模拟 Azure 中提供的 Blob、队列和表服务。以下示例演示如何声明一个静态字段来保存本地存储模拟器的连接字符串：  
+若要在本地 Windows 计算机中测试你的应用程序，可以使用随 [Azure SDK](/downloads) 一起安装的 Windows Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一个实用工具，用于在本地开发计算机上模拟 Azure 中提供的 Blob、队列和表服务。以下示例演示如何声明一个静态字段来保存本地存储模拟器的连接字符串：  
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 
-若要启动 Azure 存储模拟器，请选择**"启动"**按钮或按 **Windows** 键。开始键入**"Azure 存储模拟器"**，然后从应用程序列表中选择**"Microsoft Azure 存储模拟器"**。  
+若要启动 Azure 存储模拟器，请选择**"启动"**按钮或按 **Windows** 键。开始键入**"Azure 存储模拟器"**，然后从应用程序列表中选择**"Windows Azure 存储模拟器"**。  
 
 下面的示例假定你使用了这两个方法之一来获取存储连接字符串。  
 

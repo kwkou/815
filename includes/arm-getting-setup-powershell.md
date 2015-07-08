@@ -49,7 +49,7 @@
 
 	Add-AzureAccount
 
-在 Microsoft Azure 登录对话框中指定帐户的电子邮件地址及其密码。
+在 Windows Azure 登录对话框中指定帐户的电子邮件地址及其密码。
 
 通过在 Azure PowerShell 命令提示符下运行以下命令设置你的 Azure 订阅。将引号内的所有内容（包括 < 和 > 字符）替换为相应的名称。
 

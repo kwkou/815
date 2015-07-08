@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何获取 Azure AD 租户 | Microsoft Azure"
+	pageTitle="如何获取 Azure AD 租户 | Windows Azure"
 	description="如何获取用于注册和生成应用程序的 Azure Active Directory 租户。"
 	services="active-directory"
 	documentationCenter=""

@@ -1,22 +1,22 @@
-<properties title="Azure SQL Database Elastic Scale" pageTitle="Azure SQL Database 弹性缩放" description="使用 Azure SQL Database 的弹性缩放功能，轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
+<properties title="Azure SQL 数据库 Elastic Scale" pageTitle="Azure SQL 数据库 弹性缩放" description="使用 Azure SQL 数据库 的弹性缩放功能，轻松扩展云中的数据库资源。" metaKeywords="sharding,elastic scale, Azure SQL DB sharding" services="sql-database" documentationCenter=""  manager="jhubbard" authors="sidneyh@microsoft.com"/>
 
 <tags
    ms.service="sql-database"
    ms.date="02/16/2015"
    wacn.date="05/25/2015"/>
 
-# Azure SQL Database 弹性缩放概述 
-欢迎使用 Azure SQL Database 弹性缩放公共预览版！ 
+# Azure SQL 数据库 弹性缩放概述 
+欢迎使用 Azure SQL 数据库 弹性缩放公共预览版！ 
 
 ### 约定和挑战
-Azure SQL Database 弹性缩放将交付云计算约定，并在 Azure SQL DB 平台上同时实现几乎无限制的容量以及弹性。到目前为止，云服务提供程序已经能够在无限计算容量和 Blob 存储等大多数方面进行交付。但是，当弹性涉及云中有状态的数据处理（特别是关系数据库处理）时，弹性仍然是一个挑战。我们发现这些挑战主要出现在以下两种情况中： 
+Azure SQL 数据库 弹性缩放将交付云计算约定，并在 Azure SQL DB 平台上同时实现几乎无限制的容量以及弹性。到目前为止，云服务提供程序已经能够在无限计算容量和 Blob 存储等大多数方面进行交付。但是，当弹性涉及云中有状态的数据处理（特别是关系数据库处理）时，弹性仍然是一个挑战。我们发现这些挑战主要出现在以下两种情况中： 
 
 * 增加和缩小你的工作负载的关系数据库部分的容量。
 * 管理有状态的数据库工作负载及其数据的利用率热点。
 
-通常，通过购买更多可托管应用程序数据层的硬件来处理这些情况。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。就成本和弹性而言，出于容量原因而在几个扩展单元上进行分片（或分发数据）和处理，可提供一种出色的替代方法来代替传统的向上扩展方法。在过去的几年中，我们发现客户必须在 Azure SQL DB 顶部实现他们自己的向外扩展方法，才能成功进行分片。对于某些客户，这意味着要管理数百或数千个 Azure SQL Database。这意味着其数据层中有大量代码，该数据层用于处理分片的复杂性，而不是应用程序的业务逻辑。 
+通常，通过购买更多可托管应用程序数据层的硬件来处理这些情况。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。就成本和弹性而言，出于容量原因而在几个扩展单元上进行分片（或分发数据）和处理，可提供一种出色的替代方法来代替传统的向上扩展方法。在过去的几年中，我们发现客户必须在 Azure SQL DB 顶部实现他们自己的向外扩展方法，才能成功进行分片。对于某些客户，这意味着要管理数百或数千个 Azure SQL 数据库。这意味着其数据层中有大量代码，该数据层用于处理分片的复杂性，而不是应用程序的业务逻辑。 
 
-经过多年与客户直接合作，我们从这些项目中发现了几种可供分片的模式。Azure SQL Database 弹性缩放围绕这些模式提供了客户端库和服务产品。通过弹性缩放，你可以更轻松地开发、扩展和管理你的 Azure 应用程序的有状态数据层。
+经过多年与客户直接合作，我们从这些项目中发现了几种可供分片的模式。Azure SQL 数据库 弹性缩放围绕这些模式提供了客户端库和服务产品。通过弹性缩放，你可以更轻松地开发、扩展和管理你的 Azure 应用程序的有状态数据层。
 
 然后，你可以侧重于你的应用程序的业务逻辑，而不是构建分片的基础结构。
 ## 横向向外扩展与纵向向外扩展
@@ -43,7 +43,7 @@ Azure SQL Database 弹性缩放将交付云计算约定，并在 Azure SQL DB �
 
 
 下图在左侧和右侧显示开发人员和管理员。当客户提交具有其自己的语义的局部分片操作（与跨分片操作相对）时，可获取完整的 T-SQL 功能。 
-Azure SQL Database 弹性缩放的公共预览版本借助以下特定功能，使开发分片 Azure SQL DB 应用程序更为轻松： 
+Azure SQL 数据库 弹性缩放的公共预览版本借助以下特定功能，使开发分片 Azure SQL DB 应用程序更为轻松： 
 
 ![Elastic Scale Capabilities][1]
 

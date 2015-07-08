@@ -1174,7 +1174,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Creating mobile service
 	info:    Overall application state: Healthy
 	info:    Mobile service (todolist) state: ProvisionConfigured
-	info:    SQL database (todolist_db) state: Provisioned
+	info:    SQL 数据库 (todolist_db) state: Provisioned
 	info:    SQL server (e96ean1c6v) state: ProvisionConfigured
 	info:    mobile create command OK
 
@@ -1192,7 +1192,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	~$ azure mobile delete todolist -a -q
 	info:    Executing command mobile delete
 	data:    Mobile service todolist
-	data:    SQL database todolistAwrhcL60azo1C401
+	data:    SQL 数据库 todolistAwrhcL60azo1C401
 	data:    SQL server fh1kvbc7la
 	+ Deleting mobile service
 	info:    Deleted mobile service
@@ -1231,8 +1231,8 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	data:    status Healthy
 	data:    Mobile service name todolist
 	data:    Mobile service status ProvisionConfigured
-	data:    SQL database name todolistAwrhcL60azo1C401
-	data:    SQL database status Linked
+	data:    SQL 数据库 name todolistAwrhcL60azo1C401
+	data:    SQL 数据库 status Linked
 	data:    SQL server name fh1kvbc7la
 	data:    SQL server status Linked
 	info:    Mobile service

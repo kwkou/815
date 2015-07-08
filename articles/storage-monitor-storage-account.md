@@ -1,4 +1,4 @@
-<properties linkid="manage-services-how-to-monitor-a-storage-account" urlDisplayName="How to monitor" pageTitle="如何监视存储帐户 | Microsoft Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="了解如何使用管理门户在 Azure 中监视存储帐户。" metaCanonical="" services="storage" documentationCenter="" title="How To Monitor a Storage Account" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
+<properties linkid="manage-services-how-to-monitor-a-storage-account" urlDisplayName="How to monitor" pageTitle="如何监视存储帐户 | Windows Azure" metaKeywords="Azure monitor storage accounts, storage account management portal, storage account dashboard, storage metrics table, storage metrics chart" description="了解如何使用管理门户在 Azure 中监视存储帐户。" metaCanonical="" services="storage" documentationCenter="" title="How To Monitor a Storage Account" authors="tamram" solutions="" manager="mbaldwin" editor="cgronlun" />
 <tags ms.service="storage"
     ms.date="03/06/2015"
     wacn.date="04/11/2015"
@@ -14,7 +14,7 @@
 
 > [WACOM.NOTE] Azure 文件服务当前不支持存储分析。
 
-> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Microsoft Azure 存储空间问题](../storage-monitoring-diagnosing-troubleshooting)。
+> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Windows Azure 存储空间问题](../storage-monitoring-diagnosing-troubleshooting)。
 
 
 ##目录##

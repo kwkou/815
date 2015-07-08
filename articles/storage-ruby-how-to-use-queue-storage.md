@@ -1,4 +1,4 @@
-<properties linkid="dev-ruby-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Ruby) | Microsoft Azure" metaKeywords="Azure Queue Service get messages Ruby" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Ruby 编写的相关示例。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Queue Storage Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<properties linkid="dev-ruby-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Ruby) | Windows Azure" metaKeywords="Azure Queue Service get messages Ruby" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Ruby 编写的相关示例。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Queue Storage Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -10,7 +10,7 @@
 
 # 如何通过 Ruby 使用队列存储服务
 
-本指南将演示如何使用 Microsoft Azure 队列存储服务
+本指南将演示如何使用 Windows Azure 队列存储服务
 执行常见的方案。相关示例是使用 Ruby Azure API 编写的。
 介绍的方案包括插入、查看、获取和删除队列消息以及创建和删除队列。有关队列的详细信息，请参阅[后续
 步骤](#next-steps) 部分。

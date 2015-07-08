@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Blob Service" pageTitle="如何通过 .NET 使用 Blob 存储 | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="了解如何使用 Microsoft Azure Blob 存储上载、下载、列出和删除 Blob 内容。相关示例用 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Blob storage in .NET" authors="tamram" manager="adinah" />
+﻿<properties urlDisplayName="Blob Service" pageTitle="如何通过 .NET 使用 Blob 存储 | Azure" metaKeywords="Get started Azure blob   Azure unstructured data   Azure unstructured storage   Azure blob   Azure blob storage   Azure blob .NET   Azure blob C#   Azure blob C#" description="了解如何使用 Windows Azure Blob 存储上载、下载、列出和删除 Blob 内容。相关示例用 C# 编写。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" services="storage" documentationCenter=".NET" title="How to use Windows Azure Blob storage in .NET" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/12/2015"
     wacn.date="04/11/2015"
@@ -347,7 +347,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
   <ul>
     <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/">表存储</a>来存储结构化数据。</li>
     <li>使用<a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues/">队列存储</a>来存储非结构化数据。</li>
-    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL Database</a> 来存储关系数据。</li>
+    <li>使用 <a href="/zh-cn/documentation/articles/sql-database-dotnet-how-to-use/">SQL 数据库</a> 来存储关系数据。</li>
   </ul>
 </li>
 </ul>

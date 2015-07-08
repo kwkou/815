@@ -1,11 +1,11 @@
-<properties urlDisplayName="扩展 Azure SQL Database 支持的移动服务" pageTitle="扩展 Azure SQL Database 支持的移动服务 - Azure 移动服务" metaKeywords="" description="了解如何诊断和修复 SQL Database 支持的移动服务中的可扩展性问题" metaCanonical="" services="" documentationCenter="Mobile" title="Scale mobile services backed by Azure SQL Database" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
+<properties urlDisplayName="扩展 Azure SQL 数据库 支持的移动服务" pageTitle="扩展 Azure SQL 数据库 支持的移动服务 - Azure 移动服务" metaKeywords="" description="了解如何诊断和修复 SQL 数据库 支持的移动服务中的可扩展性问题" metaCanonical="" services="" documentationCenter="Mobile" title="Scale mobile services backed by Azure SQL 数据库" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
 
 <tags 
 wacn.date="04/11/2015"
 ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/11/2014" ms.author="donnam" />
-# 扩展 Azure SQL Database 支持的移动服务
+# 扩展 Azure SQL 数据库 支持的移动服务
 
-Azure 移动服务可轻松启动和构建连接云托管后端的应用，从而将数据存储在 SQL database 中。随着应用的增长，服务示例的扩展与在门户中的调整扩展设置一样简单，可轻松提高计算和网络容量。然而，扩展支持服务的 SQL Database 要求在服务接收更多负载的同时进行主动规划和监控。本文档将指导您实行一组最佳实践，以确保 SQL 支持的移动服务能够持续提供最佳性能。
+Azure 移动服务可轻松启动和构建连接云托管后端的应用，从而将数据存储在 SQL 数据库 中。随着应用的增长，服务示例的扩展与在门户中的调整扩展设置一样简单，可轻松提高计算和网络容量。然而，扩展支持服务的 SQL 数据库 要求在服务接收更多负载的同时进行主动规划和监控。本文档将指导您实行一组最佳实践，以确保 SQL 支持的移动服务能够持续提供最佳性能。
 
 本主题将指导你完成以下基本步骤：
 
@@ -24,11 +24,11 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 - 您的使用仪表（包括 **API 调用 (API Calls)** 和**主动设备 (Active Devices) **仪表未超出限额
 - **端点监控** (Endpoint Monitoring) 状态指示服务处于上升阶段（仅支持服务正使用标准层以及端点监控已启用的情况） 
 
-如与上述情况不符，请考虑在调整 *Scale*选项卡的扩展设置。如果问题未得以解决，您可以继续操作并调查问题的根源是否为 Azure SQL Database。下文介绍了几种不同的问题诊断方法。
+如与上述情况不符，请考虑在调整 *Scale*选项卡的扩展设置。如果问题未得以解决，您可以继续操作并调查问题的根源是否为 Azure SQL 数据库。下文介绍了几种不同的问题诊断方法。
 
-### 选择合适的 SQL Database 层 
+### 选择合适的 SQL 数据库 层 
 
-请务必了解，您可以在不同的数据库层进行选择，以确保选择合适的数据库层满足应用需求。Azure SQL Database 可提供两种带有不同层级的数据库版本：
+请务必了解，您可以在不同的数据库层进行选择，以确保选择合适的数据库层满足应用需求。Azure SQL 数据库 可提供两种带有不同层级的数据库版本：
 
 - Web 版和业务版（已停用）
 - 基础版、标准版和高级版 
@@ -38,10 +38,10 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 若要将使用的 Web 版和业务版的移动服务转换成使用基础版、标准版和高级版的移动服务，请遵循下列步骤。
 
 1. 启动[Azure 管理门户 (Azure Management Portal)][]。
-2. 选择工具栏中的 **+NEW**，然后选择**数据服务 (Data Services)**、**SQL Database**和**快速创建 (Quick Create)**。
-3. 输入数据库名称，然后在**服务器 (Server)**字段中选择**新 SQL Database 服务器 (New SQL database server)**。这样可创建使用全新基础版、标准版和高级版的服务器。 
-4. 填写其余字段，并选择**创建 SQL Database (Create SQL Database)**。这样可创建使用基础层的 100 MB 数据库。
-5. 配置移动服务以使用刚刚创建的数据库。导航到关于该服务的**配置 (Configure)** 选项卡，然后选择工具栏中的**更改数据库 (Change Database)**。在下一屏幕中选择 **SQL Database** 字段中的**使用现有 SQL Database (Use an existing SQL database)**，然后选择**下一步 (Next)**。在下一屏幕中请务必选择在步骤 5 中创建的数据库，然后选择**确定 (OK)**。
+2. 选择工具栏中的 **+NEW**，然后选择**数据服务 (Data Services)**、**SQL 数据库**和**快速创建 (Quick Create)**。
+3. 输入数据库名称，然后在**服务器 (Server)**字段中选择**新 SQL 数据库 服务器 (New SQL 数据库 server)**。这样可创建使用全新基础版、标准版和高级版的服务器。 
+4. 填写其余字段，并选择**创建 SQL 数据库 (Create SQL 数据库)**。这样可创建使用基础层的 100 MB 数据库。
+5. 配置移动服务以使用刚刚创建的数据库。导航到关于该服务的**配置 (Configure)** 选项卡，然后选择工具栏中的**更改数据库 (Change Database)**。在下一屏幕中选择 **SQL 数据库** 字段中的**使用现有 SQL 数据库 (Use an existing SQL 数据库)**，然后选择**下一步 (Next)**。在下一屏幕中请务必选择在步骤 5 中创建的数据库，然后选择**确定 (OK)**。
 
 关于如何为数据库选择合适的层级，下面提供几点建议：
 
@@ -58,7 +58,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 1. 启动[Azure 管理门户 (Azure Management Portal)][]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择**配置 (Configure) **选项卡。
-4. 在**数据库设置 (Database Settings) **部分选择**SQL Database**名称。这样可导航到门户中的 Azure SQL Database 选项卡。
+4. 在**数据库设置 (Database Settings) **部分选择**SQL 数据库**名称。这样可导航到门户中的 Azure SQL 数据库 选项卡。
 5. 导航到**监控器 (Monitor)** 选项卡
 6. 确保使用**添加指标 (Add Metrics)**按钮显示出相关指标。待显示指标包含以下内容
     - *CPU 百分比*（仅在基础层/标准层/高级层中显示）
@@ -67,12 +67,12 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
     - *存储* 
 7. 当服务遇到问题时，检查高于时窗的指标。 
 
-    ![Azure Management Portal - SQL Database Metrics][PortalSqlMetrics]
+    ![Azure Management Portal - SQL 数据库 Metrics][PortalSqlMetrics]
 
 如果指标超出了时间延长期 80% 的利用率，说明存在性能问题。如欲获取关于了解数据库利用率的更多详情，请参阅[了解资源使用](https://msdn.microsoft.com/zh-CN/library/azure/dn369873.aspx#Resource)。
 
 如果指标显示数据库的利用率较高，请考虑**将数据库纵向扩展至更高的服务层，**这是缓解问题的第一步。为尽快解决问题，请考虑使用数据库的**扩展 (Scale)** 选项卡，对数据库进行扩展。这样一来可能导致成本上升。
-![Azure Management Portal - SQL Database Scale][PortalSqlScale]
+![Azure Management Portal - SQL 数据库 Scale][PortalSqlScale]
 
 请尽早考虑以下其他缓解步骤：
 
@@ -163,7 +163,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 <a name="Schema"></a>
 ## 架构设计
 
-为对象选取数据类型，然后将其转换为 SQL Database 架构时，需注意以下几个问题。由于 SQL 具备自定义的优化方式处理不同数据类型的索引和存储，因此优化架构通常可显著提高性能：
+为对象选取数据类型，然后将其转换为 SQL 数据库 架构时，需注意以下几个问题。由于 SQL 具备自定义的优化方式处理不同数据类型的索引和存储，因此优化架构通常可显著提高性能：
 
 - **使用所提供的 ID 列**。每个移动服务表均带有以主关键配置的默认 ID 列，并具有索引设置。因此无需创建其他 ID 列。
 - **使用模型中正确的数据类型。**如果您知道模型的某个属性为数值或布尔值，请务必用模型中的方式（而非字符串）对其进行定义。在 JavaScript 后端，使用诸如 `true`（而不是`"true"`）和`5`（而不是`"5"`）等文字。在 .NET 后端，声明模型属性时请使用 `int`和 `bool`类型。这样可支持 SQL 为这些类型创建正确的架构，从而提高查询效率。
@@ -185,10 +185,10 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 <a name="Architecture"></a>
 ## 服务体系结构
 
-假设您要向所有客户发送推送通知，提醒他们查看应用中的新内容。他们点击该通知时，该应用将启动，这样可能会触发调用您的移动服务，并根据 SQL Database 执行查询。由于可能会有数百万客户在仅仅几分钟的跨度内执行该操作，将形成 SQL 负载高峰，该峰值大大高于您应用的稳定状态负载。通过在峰值期间将应用扩展到更高版本的 SQL 层，然后再回缩可解决这种问题，但这种解决方法需要手动干预，并且会导致成本上升。通常，细微调整移动服务体系结构可显著平衡访问 SQL Database 的负载客户端，并消除问题需求峰值。这些调整通常可以轻松执行，而对客户体验的影响可降至最低。下面列举一些示例：
+假设您要向所有客户发送推送通知，提醒他们查看应用中的新内容。他们点击该通知时，该应用将启动，这样可能会触发调用您的移动服务，并根据 SQL 数据库 执行查询。由于可能会有数百万客户在仅仅几分钟的跨度内执行该操作，将形成 SQL 负载高峰，该峰值大大高于您应用的稳定状态负载。通过在峰值期间将应用扩展到更高版本的 SQL 层，然后再回缩可解决这种问题，但这种解决方法需要手动干预，并且会导致成本上升。通常，细微调整移动服务体系结构可显著平衡访问 SQL 数据库 的负载客户端，并消除问题需求峰值。这些调整通常可以轻松执行，而对客户体验的影响可降至最低。下面列举一些示例：
 
 - **随着时间的推移分散负载。**如果您控制某些预计生成需求峰值的事件（例如，广播推送通知）的时间，并且这些事件的时间无关紧要，请考虑随时间的推移分散这些负载。在上面的示例中，也许您的应用客户能够接受在一天之内（而不是几乎同时）成批接收新应用内容的通知。请考虑将客户分成不同小组，让各批次的客户交错接收信息。如果使用通知中心，可运用其他标记跟踪该批次，然后向该标记发送推送通知，从而轻松执行该策略。有关标记的详细信息，请参阅[使用通知中心发送即时新闻](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)。
-- **在适当的时候使用 Blob 和表存储。**客户将在峰值期间查看的内容通常是静态的，并且不需要存储在 SQL Database 中，因为您不大可能需要关系查询功能查看该内容。在这种情况下，请考虑将内容存储在 Blob 或表存储中。您可以直接通过设备访问公共 blob 在 Blob 存储。若要以安全方式访问 blob 或使用表存储，您需要仔细检查移动服务自定义 API 以保护您的存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上传到 Azure 存储](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
+- **在适当的时候使用 Blob 和表存储。**客户将在峰值期间查看的内容通常是静态的，并且不需要存储在 SQL 数据库 中，因为您不大可能需要关系查询功能查看该内容。在这种情况下，请考虑将内容存储在 Blob 或表存储中。您可以直接通过设备访问公共 blob 在 Blob 存储。若要以安全方式访问 blob 或使用表存储，您需要仔细检查移动服务自定义 API 以保护您的存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上传到 Azure 存储](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
 - **使用内存中缓存**。另一种方法是将流量峰值期间通常访问的数据存储于内存中缓存，比如 [Azure Cache](/home/features/cache)。这意味着传入的请求能够从内存中提取所需的信息，而不是重复查询数据库。
 
 <a name="Advanced"></a>
@@ -196,19 +196,19 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 本部分介绍一些更高级的诊断任务，如果上述步骤未完全解决此问题，这些高级任务可能会有所帮助。
 
 ### 先决条件
-若要执行本部分的诊断任务，您需要访问 SQL database 的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 管理门户**的管理功能。
+若要执行本部分的诊断任务，您需要访问 SQL 数据库 的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 管理门户**的管理功能。
 
 SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果您未访问 Windows 计算机（例如，如果您正使用 Mac），请考虑如[创建虚拟机运行的 Windows Server](/zh-cn/documentation/articles/virtual-machines-windows-tutorial)所示在 Azure 中配置虚拟机，然后将其远程连接。如果您希望主要使用虚拟机运行 SQL Server Management Studio，**基本 A0**（以前称为 "Extra Small"）示例应该已经足够。 
 
 Azure 管理门户可提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
 
-下列步骤向您介绍如何获取关于支持移动服务的 SQL database 的连接信息，以及如何使用以下两种工具进行连接。您可以挑选任意一种您喜欢的工具。
+下列步骤向您介绍如何获取关于支持移动服务的 SQL 数据库 的连接信息，以及如何使用以下两种工具进行连接。您可以挑选任意一种您喜欢的工具。
 
 #### 获取 SQL 连接信息 
 1. 启动[Azure 管理门户 (Azure Management Portal)][]。
 2. 在移动服务 (Mobile Services) 选项卡中选择您希望使用的服务。
 3. 选择**配置 (Configure) **选项卡。
-4. 在**数据库设置 (Database Settings) **部分选择**SQL Database**名称。这样可导航到门户中的 Azure SQL Database 选项卡。
+4. 在**数据库设置 (Database Settings) **部分选择**SQL 数据库**名称。这样可导航到门户中的 Azure SQL 数据库 选项卡。
 5. 选择**设置关于此 IP 地址的 Windows Azure 防火墙规则**。
 6. 记下**连接到您数据库**部分的服务器地址，例如： *mcml4otbb9.database.chinacloudapi.cn*。
 
@@ -226,8 +226,8 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
     - 密码: *password you picked when creating server*
 5. 立即连接。
 
-#### SQL Database 管理门户
-1. 在您数据库的 Azure SQL Database 选项卡选择**管理 (Manage) **按钮 
+#### SQL 数据库 管理门户
+1. 在您数据库的 Azure SQL 数据库 选项卡选择**管理 (Manage) **按钮 
 2. 输入下列值对连接进行配置
     - 服务器: *should be pre-set to the right value*
     - 数据库： *leave blank*
@@ -235,24 +235,24 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
     - 密码: *password you picked when creating server*
 3. 立即连接。
 
-    ![Azure Management Portal - SQL Database][PortalSqlManagement]
+    ![Azure Management Portal - SQL 数据库][PortalSqlManagement]
 
 <a name="AdvancedDiagnosing"></a>
 ### 高级诊断
 
-许多诊断任务可以在 **Azure 管理门户**中轻松完成，但一些高级诊断任务只能通过**SQL Server Management Studio** 或 **SQL Database 管理门户**完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。详细信息请参阅[使用动态管理视图监控 SQL Database][]。
+许多诊断任务可以在 **Azure 管理门户**中轻松完成，但一些高级诊断任务只能通过**SQL Server Management Studio** 或 **SQL 数据库 管理门户**完成。我们将充分利用动态管理视图，它是一组已自动填充数据库相关诊断信息的视图。本部分将提供一组我们根据这些视图所运行的查询，以检查各种指标。详细信息请参阅[使用动态管理视图监控 SQL 数据库][]。
 
 完成上述步骤，连接到 SQL Server Management Studio 中的数据库，在 **Object Explorer** 中选择您的数据库。展开**视图 (Views)**，**系统视图 (System Views)**将显示管理视图列表。若要执行以下查询，请选择**新查询 (New Query)**，尽管您已在 **Object Explorer** 选择了数据库，然后粘贴查询并选择**执行 (Execute)**。
 
 ![SQL Server management Studio - dynamic management views][SSMSDMVs]
 
-如果您正使用 SQL Database 管理门户，您可以首先选择数据库，然后选择**新查询 (New Query)**。
+如果您正使用 SQL 数据库 管理门户，您可以首先选择数据库，然后选择**新查询 (New Query)**。
 
-![SQL Database Management Portal - new query][PortalSqlManagementNewQuery]
+![SQL 数据库 Management Portal - new query][PortalSqlManagementNewQuery]
 
 若要执行以下查询，请前往相关窗口并选择**运行 (Run)**。
 
-![SQL Database Management Portal - run query][PortalSqlManagementRunQuery]
+![SQL 数据库 Management Portal - run query][PortalSqlManagementRunQuery]
 
 #### 高级指标
 
@@ -329,7 +329,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 #### 在数据库架构中创建索引
 
-就 JavaScript 后端而言，您只能通过 SQL Server Management Studio 或 Azure SQL Database门户直接更改数据库架构，然后修改表的聚集索引。
+就 JavaScript 后端而言，您只能通过 SQL Server Management Studio 或 Azure SQL 数据库门户直接更改数据库架构，然后修改表的聚集索引。
 
 以下指南介绍了如何通过直接修改数据库架构设置聚集或非聚集索引：  
 
@@ -362,7 +362,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
       AND migs_adv.index_advantage > 10
     ORDER BY migs_adv.index_advantage DESC;
 
-更多详情请参阅[使用动态管理视图监控 SQL Database][]和[缺失索引动态管理视图](sys-missing-index-stats)。
+更多详情请参阅[使用动态管理视图监控 SQL 数据库][]和[缺失索引动态管理视图](sys-missing-index-stats)。
 
 <a name="AdvancedQuery"></a>
 ### 高级查询设计 
@@ -388,9 +388,9 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 	GROUP BY query_stats.query_hash
 	ORDER BY 2 DESC;
 
-详细信息请参阅[使用动态管理视图监控 SQL Database][]。除执行查询之外，**SQL Database 管理门户**还可为您提供有效的捷径查看数据：选择数据库**汇总 (Summary)**，然后选择**查询性能 (Query Performance)**：
+详细信息请参阅[使用动态管理视图监控 SQL 数据库][]。除执行查询之外，**SQL 数据库 管理门户**还可为您提供有效的捷径查看数据：选择数据库**汇总 (Summary)**，然后选择**查询性能 (Query Performance)**：
 
-![SQL Database Management Portal - query performance][PortalSqlManagementQueryPerformance]
+![SQL 数据库 Management Portal - query performance][PortalSqlManagementQueryPerformance]
 
 #### 分析查询计划
 
@@ -398,15 +398,15 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 ![SQL Server Management Studio - query plan][SSMSQueryPlan]
 
-若要在 **SQL Database 管理门户**中分析查询计划，可使用突出显示的工具栏按钮。
+若要在 **SQL 数据库 管理门户**中分析查询计划，可使用突出显示的工具栏按钮。
 
-![SQL Database Management Portal - query plan][PortalSqlManagementQueryPlan]
+![SQL 数据库 Management Portal - query plan][PortalSqlManagementQueryPlan]
 
 ## 另请参阅
 
-- [Azure SQL Database 文档][]
-- [Azure SQL Database 性能与扩展][]
-- [Azure SQL Database 故障排除][]
+- [Azure SQL 数据库 文档][]
+- [Azure SQL 数据库 性能与扩展][]
+- [Azure SQL 数据库 故障排除][]
 
 ### 索引
 
@@ -442,11 +442,11 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
 
 [Azure 管理门户 (Azure Management Portal)]: http://manage.windowsazure.cn
 
-[Azure SQL Database 文档]: /zh-cn/documentation/services/sql-database/
-[使用 SQL Server Management Studio 管理 SQL Database]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
-[使用动态管理视图监控 SQL Database]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
-[Azure SQL Database 性能与扩展]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
-[Azure SQL Database 故障排除]: https://msdn.microsoft.com/zh-CN/library/azure/ee730906.aspx
+[Azure SQL 数据库 文档]: /zh-cn/documentation/services/sql-database/
+[使用 SQL Server Management Studio 管理 SQL 数据库]: http://go.microsoft.com/fwlink/p/?linkid=309723&clcid=0x409
+[使用动态管理视图监控 SQL 数据库]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
+[Azure SQL 数据库 性能与扩展]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
+[Azure SQL 数据库 故障排除]: https://msdn.microsoft.com/zh-CN/library/azure/ee730906.aspx
 
 <!-- MSDN -->
 [创建和修改主键约束]: https://technet.microsoft.com/zh-CN/library/ms181043(v=sql.105).aspx

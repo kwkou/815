@@ -10,7 +10,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 启用软删除后再查询表的记录时，默认情况下，已删除的行不会返回在查询中。如欲请求查看这些行，你必须在[ REST 查询操作](https://msdn.microsoft.com/zh-CN/library/azure/jj677199.aspx)中传递一个查询参数*\__includeDeleted=true*。在.NET 客户端 SDK 中，你还可以使用帮助程序方法 `IMobileServiceTable.IncludeDeleted()`。
 
-软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。最新的 NuGet 程序包可以在这里获取， [Microsoft Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)。
+软删除支持首次与 1.0.402 版 Windows Azure 移动服务.NET 后端发布的.NET 后端。最新的 NuGet 程序包可以在这里获取， [Windows Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)。
 
 
 使用软删除的一些潜在优势：
@@ -33,13 +33,13 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 ## <a name="enable-for-dotnet"></a>启用面向.NET 后端的软删除
 
-软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。最新的 NuGet 程序包可以在这里获取， [Microsoft Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)。
+软删除支持首次与 1.0.402 版 Windows Azure 移动服务.NET 后端发布的.NET 后端。最新的 NuGet 程序包可以在这里获取， [Windows Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)。
 
 以下步骤将指导你如何启用面向.NET 后端移动服务的软删除功能。
 
 1. 在 Visual Studio 中打开 .NET 后端移动服务项目。
 2. 右键单击.NET 后端项目，然后单击**管理 NuGet 包**。 
-3. 在程序包管理器对话框中，单击更新下的 **Nuget.org**，然后安装 [Microsoft Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165) NuGet 包的 1.0.402 版本或更高版本。
+3. 在程序包管理器对话框中，单击更新下的 **Nuget.org**，然后安装 [Windows Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165) NuGet 包的 1.0.402 版本或更高版本。
 3. 在 Visual Studio 的解决方案资源管理器中，展开你.NET 后端项目下的**控制器**节点并打开你的控制器源。例如， *TodoItemController.cs*。
 4. 在你的控制器 `Initialize()`方法中，将参数  `enableSoftDelete: true` 传递给 EntityDomainManager 构造函数。
 

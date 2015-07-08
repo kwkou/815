@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Windows 上使用 Python 连接到 SQL Database" 
-	description="演示了一个可用于从 Windows 客户端连接到 Azure SQL Database 的 Python 代码示例。该示例使用了 pyodbc 驱动程序。"
+	pageTitle="在 Windows 上使用 Python 连接到 SQL 数据库" 
+	description="演示了一个可用于从 Windows 客户端连接到 Azure SQL 数据库 的 Python 代码示例。该示例使用了 pyodbc 驱动程序。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -19,7 +19,7 @@
 	ms.author="mebha"/>
 
 
-# 在 Windows 上使用 Python 连接到 SQL Database
+# 在 Windows 上使用 Python 连接到 SQL 数据库
 
 
 <!--
@@ -28,7 +28,7 @@ Original content written by Meet Bhagdev, then edited by GeneMi.
 -->
 
 
-本主题提供以 Python 编写的代码示例。该示例在 Windows 计算机上运行。该示例将使用 **pyodbc** 驱动程序连接到 Azure SQL Database。
+本主题提供以 Python 编写的代码示例。该示例在 Windows 计算机上运行。该示例将使用 **pyodbc** 驱动程序连接到 Azure SQL 数据库。
 
 
 ## 要求
@@ -52,7 +52,7 @@ Original content written by Meet Bhagdev, then edited by GeneMi.
 有关如何创建示例数据库并检索连接字符串，请参阅[入门主题](sql-database-get-started)。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。 
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
 
 	import pyodbc
@@ -111,7 +111,7 @@ If so, perhaps we should at least include a sentence explaining that the option 
 ## 存储过程
 
 
-我们将使用 **pyodbc** 驱动程序连接到 SQL Database。从 2015 年 4 月开始，此驱动程序将附带限制，它不再支持存储过程中的输出参数。因此，我们执行的存储过程将返回行结果集形式的信息。在该存储过程的 Transact-SQL 源代码中，靠近结尾处有一个用于生成和发出结果集的 SQL SELECT 语句。
+我们将使用 **pyodbc** 驱动程序连接到 SQL 数据库。从 2015 年 4 月开始，此驱动程序将附带限制，它不再支持存储过程中的输出参数。因此，我们执行的存储过程将返回行结果集形式的信息。在该存储过程的 Transact-SQL 源代码中，靠近结尾处有一个用于生成和发出结果集的 SQL SELECT 语句。
 
 
 
@@ -124,7 +124,7 @@ Additionally you will have to use a database management tool such as SSMS to cre
 
 <!--
 TODO: Does AdventureWorks db have any stored procedure that returns a results set?
-Or can we use a regular system stored procedure that is a native part of SQL Database, maybe like sys.sp_helptext !
+Or can we use a regular system stored procedure that is a native part of SQL 数据库, maybe like sys.sp_helptext !
 -->
 
 

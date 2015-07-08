@@ -84,7 +84,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 ### Azure 先决条件
 
 - 你将需要 [Azure](http://www.windowsazure.cn) 帐户。你可以开始[试用](/pricing/1rmb-trial)。
-- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Microsoft Azure 存储简介](/documentation/articles/storage-introduction)。
+- 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储简介](/documentation/articles/storage-introduction)。
 - 你将需要 Azure 虚拟网络，配置服务器和主目标服务器将部署在该网络上。它应该位于 Azure Site Recovery 保管库所在的订阅和区域中。
 - 确保你有足够的 Azure 资源用于部署所有组件。在 [Azure 订阅限制](/documentation/articles/azure-subscription-service-limits)中阅读更多内容。
 - 检查你要保护的计算机是否符合 Azure 虚拟机要求。
@@ -207,7 +207,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 	![Passphrase](./media/site-recovery-vmware-to-azure/ASRVMWareRegister2.png)
 
-在注册后，保管库中的**"配置服务器"**页上将列出该配置服务器。若要通过代理服务器路由配置服务器 Internet 通信，请运行 C:\Program Files\Microsoft Azure Site Recovery Provider\DRConfigurator.exe，然后指定要使用的代理服务器。你将需要使用已下载并复制到配置服务器的注册密钥重新注册到 Azure Site Recovery。  
+在注册后，保管库中的**"配置服务器"**页上将列出该配置服务器。若要通过代理服务器路由配置服务器 Internet 通信，请运行 C:\Program Files\Windows Azure Site Recovery Provider\DRConfigurator.exe，然后指定要使用的代理服务器。你将需要使用已下载并复制到配置服务器的注册密钥重新注册到 Azure Site Recovery。  
 
 ## 步骤 4：设置 VPN 连接
 

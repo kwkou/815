@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="使用 .NET 对 Azure 存储帐户的访问进行身份验证 | Microsoft Azure" 
+    pageTitle="使用 .NET 对 Azure 存储帐户的访问进行身份验证 | Windows Azure" 
     description="使用 .NET 客户端库对 Azure 存储帐户的访问进行身份验证。" 
     services="storage" 
     documentationCenter=".net" 

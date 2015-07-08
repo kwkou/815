@@ -93,14 +93,14 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 	![Quick Start Icon](./media/site-recovery-vmm-to-azure/ASRE2AVMM_QuickStartIcon.png)
 
-2. 在下拉列表中，选择"本地 Hyper-V 站点与 Microsoft Azure 之间"。
+2. 在下拉列表中，选择"本地 Hyper-V 站点与 Windows Azure 之间"。
 3. 在"准备 VMM 服务器"中，单击"生成注册密钥文件"。密钥文件将自动生成并且自生成后在 5 天内有效。如果你不是从 VMM 服务器访问 Azure 门户，则需要将此文件复制到服务器。
 
 	![Registration key](./media/site-recovery-vmm-to-azure/ASRE2AVMM_RegisterKey.png)
 
 ## 步骤 3：安装 Azure Site Recovery 提供程序
 
-4. 在"快速启动"页面上<b></b>，在"准备 VMM 服务器"中，单击"下载用于在 VMM 服务器上安装的 Microsoft Azure Site Recovery 提供程序"<b></b>来获取最新版本的提供程序安装文件。
+4. 在"快速启动"页面上<b></b>，在"准备 VMM 服务器"中，单击"下载用于在 VMM 服务器上安装的 Windows Azure Site Recovery 提供程序"<b></b>来获取最新版本的提供程序安装文件。
 
 2. 在源 VMM 服务器上运行此文件。如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果你是在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
 
@@ -175,7 +175,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 1. 在"快速启动"页上，单击"为 VMM 云设置保护"。
 2. 在"受保护的项"选项卡上，单击你要配置的云，然后转到"配置"选项卡。
-3. 在"目标"中<b></b>，选择"Microsoft Azure"<b></b>。
+3. 在"目标"中<b></b>，选择"Windows Azure"<b></b>。
 4. 在"存储帐户"<b></b>中，选择要用来存储 Azure 虚拟机的 Azure 存储。
 5. 将"加密存储的数据"<b></b>设置为"关闭"<b></b>。此设置指定应该加密在本地站点与 Azure 之间复制的数据。
 6. 在"复制频率"<b></b>中，保留默认设置。此值指定数据应在源和目标位置之间同步的频率。

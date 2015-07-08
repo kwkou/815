@@ -1,16 +1,16 @@
-<properties linkid="" urlDisplayName="" pageTitle="如何使用MySQL Database on Azure来配置WordPress网站- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, 网站配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL Database on Azure 和 Azure Web应用来安装配置WordPress。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
+<properties linkid="" urlDisplayName="" pageTitle="如何使用MySQL 数据库 on Azure来配置WordPress网站- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, 网站配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和 Azure Web应用来安装配置WordPress。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
 <tags ms.service="mysql" ms.date="" wacn.date="05/21/2015"/>
 
-# 如何使用MySQL Database on Azure来配置WordPress网站
+# 如何使用MySQL 数据库 on Azure来配置WordPress网站
 
-WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL Database on Azure 和Azure Web应用来安装配置WordPress。
+WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和Azure Web应用来安装配置WordPress。
 
 ## 步骤 1:下载最新版WordPress安装包  
 
 您可以通过[WordPress官方网站]( https://wordpress.org/download)下载最新版的安装包到您的本地存储目录。并进行解压到该目录中。
 
-## 步骤 2：新建MySQL Database on Azure的服务器  
+## 步骤 2：新建MySQL 数据库 on Azure的服务器  
 
 您可以通过[Windows Azure管理门户](https://manage.windowsazure.cn)创建您的MySQL服务器。  
 

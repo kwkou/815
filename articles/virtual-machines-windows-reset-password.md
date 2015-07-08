@@ -76,10 +76,10 @@ VMAccess 扩展在 VM　上运行这两个命令：
 
 如果这未解决你的远程桌面访问问题，请运行　[Azure IaaS (Windows) 诊断程序包](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)。 
 
-1.	单击此页上的**"Microsoft Azure IaaS (Windows)诊断程序包"**以创建新的诊断会话。
+1.	单击此页上的**"Windows Azure IaaS (Windows)诊断程序包"**以创建新的诊断会话。
 2.	在**"你遇到 Azure VM 的以下哪些问题?"**页上，选择**"与 Azure VM 的 RDP 连接(需要重启)"**问题。 
 
-有关详细信息，请参阅 [Microsoft Azure IaaS (Windows) 诊断程序包知识库文章](https://support.microsoft.com/zh-CN/kb/2976864)。 
+有关详细信息，请参阅 [Windows Azure IaaS (Windows) 诊断程序包知识库文章](https://support.microsoft.com/zh-CN/kb/2976864)。 
 
 如果你无法运行 Azure IaaS (Windows) 诊断程序包或运行该程序包未解决你的问题，请参阅[对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)。
 

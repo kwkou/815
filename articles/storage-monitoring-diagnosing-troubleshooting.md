@@ -6,9 +6,9 @@
 
 
 
-# 监视、诊断和排查 Microsoft Azure 存储空间问题 
+# 监视、诊断和排查 Windows Azure 存储空间问题 
 
-诊断和排查在云环境中托管的分布式应用程序中的问题可能会比在传统环境中更复杂。应用程序可以部署在 PaaS 或 IaaS 基础结构、本地、移动设备，或这些项的某种组合中。通常，应用程序的网络流量可能会经过公用和专用网络，你的应用程序可以使用多种存储技术（如 Microsoft Azure 存储表、Blob、队列或文件）以及其他数据存储（如关系数据库和文档数据库）。
+诊断和排查在云环境中托管的分布式应用程序中的问题可能会比在传统环境中更复杂。应用程序可以部署在 PaaS 或 IaaS 基础结构、本地、移动设备，或这些项的某种组合中。通常，应用程序的网络流量可能会经过公用和专用网络，你的应用程序可以使用多种存储技术（如 Windows Azure 存储表、Blob、队列或文件）以及其他数据存储（如关系数据库和文档数据库）。
 
 若要成功管理此类应用程序，应主动监视这些应用程序，并了解如何诊断和排查这些应用程序及其相关技术的所有方面的问题。作为 Azure 存储服务的用户，你应持续监视你的应用程序所用的存储服务是否出现任何意外的行为更改（如比正常响应时间慢），并使用日志记录收集更详细的数据并深入地分析问题。从监视和日志记录获取的诊断信息将有助于确定应用程序所遇到问题的根本原因。然后，你可以排查该问题，并确定可以执行以更正该问题的相应步骤。Azure 存储空间是一项核心 Azure 服务，它是客户部署到 Azure 基础结构的大多数解决方案的重要组成部分。Azure 存储空间提供的功能可以简化监视、诊断和排查基于云的应用程序中的存储问题的过程。 
 
@@ -46,7 +46,7 @@
 	+ [容量度量值显示存储容量使用量意外增加]
 	+ [遇到具有大量附加 VHD 的虚拟机意外重新启动]
 	+ [你的问题是由于使用存储模拟器进行开发或测试而导致]
-	+ [安装 Microsoft Azure SDK for.NET 时遇到问题]
+	+ [安装 Windows Azure SDK for.NET 时遇到问题]
 	+ [你遇到了其他存储服务问题]
 + [附录]
 	+ [附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]
@@ -109,7 +109,7 @@
 
 ### <a name="monitoring-service-health"></a>监视服务运行状况
 
-可以使用 Microsoft Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。 
+可以使用 Windows Azure 门户（网址为 <a href="https://manage.windowsazure.cn" target="_blank">https://manage.windowsazure.cn</a>）查看全球所有 Azure 区域中的存储服务（及其他 Azure 服务）的运行状况。这使你可以立即了解是否有不受你控制的问题正在影响你的应用程序所使用的区域中的存储服务。 
 
 此外，Azure 门户还可以提供影响各种 Azure 服务的事件的通知。
 注意：此信息以前未在 Azure 服务仪表板（网址为：<a href="http://www.windowsazure.cn/support/service-dashboard/" target="_blank">http://www.windowsazure.cn/support/service-dashboard/</a>）上与历史数据一起提供。
@@ -122,7 +122,7 @@
 
 > [WACOM.NOTE] 你应监视这些值以便获取"你已接近存储帐户的容量限制"的早期警告。在 Azure 门户中你的存储帐户的**"监视"**页上，你可以添加警报规则，以便在聚合存储使用量超过或低于你指定的阈值时通知你。
 
-若要帮助估算各种存储对象（如 Blob）的大小，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">了解 Microsoft Azure 存储空间计费 - 带宽、事务和容量</a>。
+若要帮助估算各种存储对象（如 Blob）的大小，请参阅博客文章<a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">了解 Windows Azure 存储空间计费 - 带宽、事务和容量</a>。
 
 ### <a name="monitoring-availability"></a>监视可用性
 
@@ -176,7 +176,7 @@
 
 ### <a name="service-health-issues"></a>服务运行状况问题
 
-服务运行状况问题通常不受你控制。Azure 门户提供了有关 Azure 服务（包括存储服务）当前存在的任何问题的信息。如果你在创建存储帐户时选择了启用读取访问地域冗余存储，则在主位置中的数据不可用时，你的应用程序可以暂时切换到辅助位置中的只读副本。为此，您的应用程序必须能够在使用主存储位置和辅助存储位置之间切换，并能够在降低的功能模式下使用只读数据。使用 Azure 存储客户端库，可以定义重试策略，以便在从主存储读取失败时可以从辅助存储读取。你的应用程序还需要注意辅助位置中的数据是否最终一致。有关详细信息，请参阅博客文章 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx" target="_blank">Microsoft Azure 存储冗余选项和读取访问地域冗余存储</a>。
+服务运行状况问题通常不受你控制。Azure 门户提供了有关 Azure 服务（包括存储服务）当前存在的任何问题的信息。如果你在创建存储帐户时选择了启用读取访问地域冗余存储，则在主位置中的数据不可用时，你的应用程序可以暂时切换到辅助位置中的只读副本。为此，您的应用程序必须能够在使用主存储位置和辅助存储位置之间切换，并能够在降低的功能模式下使用只读数据。使用 Azure 存储客户端库，可以定义重试策略，以便在从主存储读取失败时可以从辅助存储读取。你的应用程序还需要注意辅助位置中的数据是否最终一致。有关详细信息，请参阅博客文章 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx" target="_blank">Windows Azure 存储冗余选项和读取访问地域冗余存储</a>。
 
 ### <a name="performance-issues"></a>性能问题
 
@@ -340,7 +340,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 ----------
 
-[你在安装 Microsoft Azure SDK for.NET 时遇到问题]
+[你在安装 Windows Azure SDK for.NET 时遇到问题]
 
 ----------
 
@@ -362,7 +362,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 客户端响应速度慢的可能原因包括：可用连接数或可用线程数有限。你可以通过以下方式解决此问题：修改客户端代码使其更高效（例如，对存储服务使用异步调用），或者使用更大的虚拟机（包含更多内核和更多内存）。
 
-对于表和队列服务，Nagle 算法也可能会导致高 **AverageE2ELatency**（与 **AverageServerLatency** 相比）：有关详细信息，请参阅 Microsoft Azure 存储空间团队博客上的文章 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx" target="_blank">Nagle 算法对小请求不友好</a>。你可以通过使用 **System.Net** 命名空间中的 **ServicePointManager** 类在代码中禁用 Nagle 算法。应在应用程序中调用表或队列服务之前执行此操作，因为这样做不会影响已打开的连接。下面的示例来自辅助角色中的 **Application_Start** 方法。
+对于表和队列服务，Nagle 算法也可能会导致高 **AverageE2ELatency**（与 **AverageServerLatency** 相比）：有关详细信息，请参阅 Windows Azure 存储空间团队博客上的文章 <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx" target="_blank">Nagle 算法对小请求不友好</a>。你可以通过使用 **System.Net** 命名空间中的 **ServicePointManager** 类在代码中禁用 Nagle 算法。应在应用程序中调用表或队列服务之前执行此操作，因为这样做不会影响已打开的连接。下面的示例来自辅助角色中的 **Application_Start** 方法。
 
     var storageAccount = CloudStorageAccount.Parse(connStr);
     ServicePoint tableServicePoint = ServicePointManager.FindServicePoint(storageAccount.TableEndpoint);
@@ -888,7 +888,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 之所以发生这些错误是因为 Web 浏览器实施了<a href="http://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank">同源策略</a>安全限制，以防止网页调用与它来自的域不同的域中的 API。 
 
-若要解决此 JavaScript 问题，可以为客户端访问的存储服务配置跨域资源共享 (CORS)。有关详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn535601.aspx" target="_blank">Microsoft Azure 存储服务的跨域资源共享 (CORS) 支持</a>。
+若要解决此 JavaScript 问题，可以为客户端访问的存储服务配置跨域资源共享 (CORS)。有关详细信息，请参阅 MSDN 上的 <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/dn535601.aspx" target="_blank">Windows Azure 存储服务的跨域资源共享 (CORS) 支持</a>。
 
 下面的代码示例演示如何配置 Blob 服务，以允许在 Contoso 域中运行的 JavaScript 访问 Blob 存储服务中的 Blob：
 
@@ -1025,7 +1025,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 有关详细信息，请参阅 MSDN 上的<a href="http://msdn.microsoft.com/zh-cn/library/gg433132.aspx" target="_blank">使用命令行工具初始化存储模拟器</a>（也可以在 Visual Studio 中初始化存储模拟器，但这需要管理权限）。
 
-### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>你在安装 Microsoft Azure SDK for.NET 时遇到问题
+### <a name="you-are-encountering-problems-installing-the-Windows-Azure-SDK"></a>你在安装 Windows Azure SDK for.NET 时遇到问题
 
 当你尝试安装 SDK 时，它尝试在本地计算机上安装存储模拟器时失败。安装日志包含以下消息之一：
 
@@ -1057,7 +1057,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 
 ## <a name="appendices"></a>附录
 
-附录介绍几种在诊断和排查 Azure 存储空间（及其他服务）问题时你可能会发现很有用的工具。这些工具不属于 Azure 存储空间，有些工具是第三方产品。因此，这些附录中介绍的工具可能在你与 Microsoft Azure 或 Azure 存储空间签订的任何支持协议中均未涉及，因此，你在评估过程中，应查看这些工具的提供者提供的许可和支持选项。
+附录介绍几种在诊断和排查 Azure 存储空间（及其他服务）问题时你可能会发现很有用的工具。这些工具不属于 Azure 存储空间，有些工具是第三方产品。因此，这些附录中介绍的工具可能在你与 Windows Azure 或 Azure 存储空间签订的任何支持协议中均未涉及，因此，你在评估过程中，应查看这些工具的提供者提供的许可和支持选项。
 
 ### <a name="appendix-1"></a>附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信
 
@@ -1209,7 +1209,7 @@ Microsoft Message Analyzer 中内置的 **Web 代理**跟踪基于 Fiddler；它
 [功能"X"在存储模拟器中无法正常工作]: #feature-X-is-not-working
 [使用存储模拟器时出现错误"其中一个 HTTP 标头的值的格式不正确"]: #error-HTTP-header-not-correct-format
 [运行存储模拟器需要管理权限]: #storage-emulator-requires-administrative-privileges
-[你在安装 Microsoft Azure SDK for.NET 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
+[你在安装 Windows Azure SDK for.NET 时遇到问题]: #you-are-encountering-problems-installing-the-Windows-Azure-SDK
 [你遇到了其他存储服务问题]: #you-have-a-different-issue-with-a-storage-service
 
 [附录]: #appendices

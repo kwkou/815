@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="如何使用表存储 (PHP) | Microsoft Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。" metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-php-table-service" urlDisplayName="Table Service" pageTitle="如何使用表存储 (PHP) | Windows Azure" metaKeywords="Azure Table service PHP, Azure creating table, Azure deleting table, Azure insert table, Azure query table" description="了解如何通过 PHP 使用表服务来创建和删除表以及插入、删除和查询表。" metaCanonical="" services="storage" documentationCenter="PHP" title="How to use the Table service from PHP" authors="" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"

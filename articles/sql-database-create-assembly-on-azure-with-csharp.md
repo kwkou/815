@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="使用 CSharp 在 Azure SQL Database 上执行 CREATE ASSEMBLY"
-	description="提供 CSharp 源代码，用于在先将 DLL 文件编码成包含长十六进制数的字符串后，向 Azure SQL Database 发出 CREATE ASSEMBLY 语句。" 
+	pageTitle="使用 CSharp 在 Azure SQL 数据库 上执行 CREATE ASSEMBLY"
+	description="提供 CSharp 源代码，用于在先将 DLL 文件编码成包含长十六进制数的字符串后，向 Azure SQL 数据库 发出 CREATE ASSEMBLY 语句。" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -13,9 +13,9 @@
 	wacn.date="05/25/2015"/>
 
 
-# 使用 CSharp 在 Azure SQL Database 上执行 CREATE ASSEMBLY
+# 使用 CSharp 在 Azure SQL 数据库 上执行 CREATE ASSEMBLY
 
-本主题提供可以用来向 Azure SQL Database 发出 CREATE ASSEMBLY 语句的 C# 代码示例。对于 SQL Database，FROM 子句不能接受托管数据库的本地计算机上的简单格式路径。替代的做法是先将程序集 DLL 的二进制位编码成包含十六进制数的长字符串。然后，将该字符串指定为 FROM 子句中的值。
+本主题提供可以用来向 Azure SQL 数据库 发出 CREATE ASSEMBLY 语句的 C# 代码示例。对于 SQL 数据库，FROM 子句不能接受托管数据库的本地计算机上的简单格式路径。替代的做法是先将程序集 DLL 的二进制位编码成包含十六进制数的长字符串。然后，将该字符串指定为 FROM 子句中的值。
 
 ### 先决条件
 
@@ -36,7 +36,7 @@
 
 上面的列表未提到...<br/>
 **execute sp_configure 'clr enabled', 1;**<br/>
-...，因为 Azure SQL Database 不需要此语句，但 Microsoft SQL Server 需要它。
+...，因为 Azure SQL 数据库 不需要此语句，但 Microsoft SQL Server 需要它。
 
 
 如果需要重新运行，请执行以下 T-SQL 代码删除函数和程序集：
@@ -85,7 +85,7 @@
  - 该方法输出一个 SqlString，它将程序集存储为十六进制数。
 3. Main 调用 **SubmitCreateAssemblyToAzureSqlDb** 方法。
  - 主要输入为 SqlString。
- - 输出是发送到 Azure SQL Database 的 CREATE ASSEMBLY 调用。
+ - 输出是发送到 Azure SQL 数据库 的 CREATE ASSEMBLY 调用。
 
 
 			using             System;   // C#
@@ -99,7 +99,7 @@
 			{
 			    /// <summary>
 			    /// Run the Main method on your local computer console, so it can issue a
-			    /// a CREATE ASSEMBLY statement to your Azure SQL Database server:
+			    /// a CREATE ASSEMBLY statement to your Azure SQL 数据库 server:
 			    /// </summary>
 			    class Program
 			    {
@@ -112,10 +112,10 @@
 			        /// args[0] = FullDirPathFileNameOfAssembly.
 			        /// args[1] = AssemblyName.
 			        ///    For the CREATE ASSEMBLY assemblyName statement.
-			        /// args[2] = Azure SQL Database - ServerName, including a suffix like .database.chinacloudapi.cn .
-			        /// args[3] = Azure SQL Database - DatabaseName.
-			        /// args[4] = Azure SQL Database - LoginName.
-			        /// args[5] = Azure SQL Database - Password for login.
+			        /// args[2] = Azure SQL 数据库 - ServerName, including a suffix like .database.chinacloudapi.cn .
+			        /// args[3] = Azure SQL 数据库 - DatabaseName.
+			        /// args[4] = Azure SQL 数据库 - LoginName.
+			        /// args[5] = Azure SQL 数据库 - Password for login.
 			        ///    (Better if from .config file.)
 			        /// </param>
 			        static int Main(string[] args)
@@ -282,7 +282,7 @@
 ## D. 运行 CREATE FUNCTION 语句
 
 
-将程序集存储在 Azure SQL Database 服务器中后，你必须运行的 Transact-SQL CREATE FUNCTION 语句以引用程序集中的方法。
+将程序集存储在 Azure SQL 数据库 服务器中后，你必须运行的 Transact-SQL CREATE FUNCTION 语句以引用程序集中的方法。
 
 
 以下 Transact-SQL 代码块包含一组无关紧要的 SELECT 语句，以证明数据库系统包含程序集和函数的记录。最后，有 SELECT 语句调用了函数。

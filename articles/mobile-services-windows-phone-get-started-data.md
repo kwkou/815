@@ -114,7 +114,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
         private IMobileServiceTable<TodoItem> todoTable = 
 			App.MobileService.GetTable<TodoItem>();
 
-   	此代码将创建一个移动服务感知型绑定集合 (**items**) 和 SQL Database 表 **TodoItem** (**todoTable**) 的代理类。 
+   	此代码将创建一个移动服务感知型绑定集合 (**items**) 和 SQL 数据库 表 **TodoItem** (**todoTable**) 的代理类。 
 
 7. 在 **InsertTodoItem** 方法中，删除设置 **TodoItem**.**Id** 属性的代码行，为该方法添加 **async** 修饰符，并取消注释下面的代码行：
 

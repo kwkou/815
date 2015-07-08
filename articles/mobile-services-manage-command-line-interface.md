@@ -67,7 +67,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 
 <h2><a name="create-service"></a><span class="short-header">创建服务</span>如何创建移动服务</h2>
 
-可以使用命令行工具创建新的移动服务实例。在创建移动服务的同时，还会在新服务器中创建一个 SQL Database 实例。 
+可以使用命令行工具创建新的移动服务实例。在创建移动服务的同时，还会在新服务器中创建一个 SQL 数据库 实例。 
 
 以下命令将在订阅中创建一个新的移动服务实例，其中`<service-name>`是新移动服务的名称，`<server-admin>`是新服务器的登录名，`<server-password>`是新登录名的密码：
 
@@ -85,14 +85,14 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 
 <h2><a name="delete-service"></a>如何删除现有的移动服务</h2>
 
-可以使用命令行工具将现有的某个移动服务连同相关的 SQL Database 和服务器一起删除。以下命令将删除移动服务，其中`<service-name>`是要删除的移动服务的名称：
+可以使用命令行工具将现有的某个移动服务连同相关的 SQL 数据库 和服务器一起删除。以下命令将删除移动服务，其中`<service-name>`是要删除的移动服务的名称：
 
 		azure mobile delete <service-name> -a -q
 
-如果包含`-a`和`-q`参数的话，此命令还会删除该移动服务使用的 SQL Database 和服务器且不显示任何提示。
+如果包含`-a`和`-q`参数的话，此命令还会删除该移动服务使用的 SQL 数据库 和服务器且不显示任何提示。
 
 <div class="dev-callout"><strong>注意</strong> 
-   <p>如果未指定 <code>-q</code> 参数与 <code>-a</code> 或 <code>-d</code>系统将暂停执行，并且提示您选择 SQL Database 的删除选项。当没有其他服务使用数据库或服务器时，只能使用 <code>-a</code> 参数；否则请使用 <code>-d</code> 参数，以便只删除属于要删除的移动服务的数据。</p>
+   <p>如果未指定 <code>-q</code> 参数与 <code>-a</code> 或 <code>-d</code>系统将暂停执行，并且提示您选择 SQL 数据库 的删除选项。当没有其他服务使用数据库或服务器时，只能使用 <code>-a</code> 参数；否则请使用 <code>-d</code> 参数，以便只删除属于要删除的移动服务的数据。</p>
 </div>
 
 <h2><a name="create-table"></a>如何在移动服务中创建表</h2>

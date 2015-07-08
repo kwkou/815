@@ -217,7 +217,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-
 
 2. 按 **F5** 键重新生成并运行应用程序。请注意，数据看上去与脱机情况下相同，即使应用程序现已连接到移动服务。这是因为此应用程序始终使用指向本地存储区的 `IMobileServiceSyncTable`。
 
-3. 登录到 Microsoft Azure 管理门户，查看你的移动服务数据库。如果您的服务将 JavaScript 后端用于移动服务，则可以通过移动服务的"数据"选项卡来游览数据。 
+3. 登录到 Windows Azure 管理门户，查看你的移动服务数据库。如果您的服务将 JavaScript 后端用于移动服务，则可以通过移动服务的"数据"选项卡来游览数据。 
 
     如果将 .NET 后端用于移动服务，则在 Visual Studio 中转到"服务器资源管理器"->"Azure" ->"SQL 数据库"。右键单击您的数据库，然后选择"在 SQL Server 对象资源管理器中打开"。
 

@@ -90,7 +90,7 @@ SCVMM 还需要相关存储供应商提供的更新 SMI-S 提供程序发现你�
 不是。事实上，你的租户不需要访问 ASR 门户。只有服务提供商管理员才会在 Azure 中的 ASR 门户上执行操作。
 
 ### 我的租户是否会收到来自 Azure 的帐单？
-不会。Microsoft Azure 直接与服务提供商保持计费关系。服务提供商责任为其租户生成特定的帐单。
+不会。Windows Azure 直接与服务提供商保持计费关系。服务提供商责任为其租户生成特定的帐单。
 
 ### 我的租户应用程序数据是否会发往 Azure？
 在使用服务提供商拥有的站点进行灾难恢复时，应用程序数据永远不会传到 Azure。数据将会加密，并直接在服务提供商站点之间复制。将 Azure 用作 DR 站点时，应用程序数据将发送到 Azure – 静态数据和传输中的数据始终处于加密状态。你也可以使用 VPN、ExpressRoute 或公共 Internet 来与 Azure 建立连接。
@@ -115,7 +115,7 @@ SCVMM 还需要相关存储供应商提供的更新 SMI-S 提供程序发现你�
 是的。通过 ASR 门户单击一个鼠标，就能从 Azure 故障回复到本地站点。
 
 ### ASR 是否要求启用站点到站点 VPN？
-没有这种强制要求；ASR 也可以通过公共 Internet 运行。但是，如果配置了站点到站点 VPN，则你可以像以往一样访问故障转移的虚拟机。有关在启用到 Azure 的灾难恢复时的网络注意事项详细信息，请参阅[用作灾难恢复站点的 Microsoft Azure 的网络基础结构设置](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/)博客文章。
+没有这种强制要求；ASR 也可以通过公共 Internet 运行。但是，如果配置了站点到站点 VPN，则你可以像以往一样访问故障转移的虚拟机。有关在启用到 Azure 的灾难恢复时的网络注意事项详细信息，请参阅[用作灾难恢复站点的 Windows Azure 的网络基础结构设置](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/)博客文章。
 
 ### 除了 ASR 保护费用费用以外，我是否还要支付其他任何费用？
 在稳定状态下，我们会将更改复制到地域冗余的 Azure 存储空间，此时，你不需要支付任何 Azure IaaS 虚拟机费用（一个明显的优势）。当你故障转移到 Azure 时，ASR 会自动创建 Azure IaaS 虚拟机，此后，你需要为你在 Azure 中使用的计算资源付费。

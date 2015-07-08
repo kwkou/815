@@ -1,4 +1,4 @@
-<properties linkid="dev-ruby-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Ruby) | Microsoft Azure" metaKeywords="Azure table storage service, Azure table service Ruby, table storage Ruby" description="了解如何在 Azure 中使用表存储服务。相关代码示例是使用 Ruby API 编写的。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Table Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
+<properties linkid="dev-ruby-how-to-table-services" urlDisplayName="Table Service" pageTitle="如何使用表存储 (Ruby) | Windows Azure" metaKeywords="Azure table storage service, Azure table service Ruby, table storage Ruby" description="了解如何在 Azure 中使用表存储服务。相关代码示例是使用 Ruby API 编写的。" metaCanonical="" services="storage" documentationCenter="Ruby" title="How to Use the Table Service from Ruby" authors="guayan" solutions="" manager="" editor="" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -10,7 +10,7 @@
 
 # 如何通过 Ruby 使用表服务
 
-本指南将演示如何使用 Microsoft Azure 表服务执行常见方案。相关示例是使用Ruby API 编写的。涉及的方案包括**创建和删除表、插入和查询表中的实体**。有关表的详细信息，请参阅[后续步骤](#next-steps) 部分。
+本指南将演示如何使用 Windows Azure 表服务执行常见方案。相关示例是使用Ruby API 编写的。涉及的方案包括**创建和删除表、插入和查询表中的实体**。有关表的详细信息，请参阅[后续步骤](#next-steps) 部分。
 
 ## 目录
 
