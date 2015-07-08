@@ -306,7 +306,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，当你创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium_LRS**。
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" 
-		-Type "Premium_LRS" -Environment AzureChinaCloud
+		-Type "Premium_LRS" 
 
 3. 接下来，请创建新的 DS 系列 VM，并在控制台窗口中运行以下 PowerShell cmdlet 以指定你要使用高级存储：
 
