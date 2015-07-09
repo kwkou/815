@@ -35,7 +35,6 @@
 
 ## <h2><a name="setup-connection-string"></a>设置 Azure 存储连接字符串</h2>
 
-[WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
 ## <a name="configure-access"> </a>如何：以编程方式访问队列存储
 

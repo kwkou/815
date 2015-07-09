@@ -6,7 +6,6 @@
 
 本主题介绍如何使用 Azure 服务管理和 PowerShell 快速创建基于 Windows 的 Azure 虚拟机。
 
-<!--[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager)]
 
 - [使用 Azure 资源管理器和 PowerShell 创建 Windows 虚拟机](virtual-machines-create-windows-powershell-resource-manager)-->
 

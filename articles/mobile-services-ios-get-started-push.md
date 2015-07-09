@@ -45,7 +45,6 @@
 
 本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。
 
-[WACOM.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
 
 ## 配置移动服务以发送推送请求
 

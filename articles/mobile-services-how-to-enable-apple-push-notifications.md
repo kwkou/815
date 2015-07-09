@@ -8,7 +8,6 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-ios" ms.
 
 本主题演示如何使用 Apple 推送通知服务 (APNS) 为 iOS 应用程序启用推送通知。获取的证书用于在 [Azure 管理门户][Management Portal]中为 iOS 应用程序注册推送通知。有关包括对应用程序的更新的完整端到端教程，请参阅[推送通知入门]。 
 
-[WACOM.INCLUDE [Enable Apple Push Notifications](../includes/enable-apple-push-notifications.md)]
 
 现在，你可以使用此 .p12 证书允许服务使用 APNS 进行身份验证并代表你的应用程序发送推送通知。
 

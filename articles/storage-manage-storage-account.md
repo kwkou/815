@@ -17,7 +17,7 @@
 
 <h2><a id="georeplication"></a>如何：复制存储帐户数据以实现耐用性和高可用性</h2>
 
-[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
+
 
 ### 为存储帐户指定复制设置 ###
 

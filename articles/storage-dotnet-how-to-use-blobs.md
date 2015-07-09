@@ -34,7 +34,6 @@
 
 ##<a name="setup-connection-string"></a>设置存储连接字符串
 
-[WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
 ## <a name="configure-access"> </a>如何：以编程方式访问 Blob 存储
 

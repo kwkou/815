@@ -96,7 +96,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 ### <a id="replication-options"></a>存储帐户复制选项
 
-[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
+
 
 
 ## <a id="regeneratestoragekeys"></a>如何：查看、复制和重新生成存储访问密钥

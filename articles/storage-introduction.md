@@ -110,7 +110,7 @@ Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。�
 
 ## 用于实现持久性和高可用性的复制 ##
 
-[WACOM.INCLUDE [storage-replication-options](../includes/storage-replication-options.md)]
+
 
 ## 定价 ##
 

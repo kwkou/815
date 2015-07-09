@@ -42,7 +42,6 @@
 
 ## <h2><a name="setup-connection-string"></a>设置存储连接字符串</h2>
 
-[WACOM.INCLUDE [storage-configure-connection-string](../includes/storage-configure-connection-string.md)]
 
 ## <h2> <a name="configure-access"> </a>如何：以编程方式访问表存储</h2>
 
