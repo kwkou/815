@@ -10,12 +10,7 @@
 <tags 
 wacn.date="05/15/2015"
 	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/15/2015" 
-	ms.author="juliako"/>
+	ms.date="04/15/2015"/>
 
 
 # 保护内容
@@ -98,7 +93,7 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 
 使用 **Azure 管理门户**、".NET"或"REST API"上载文件。
 
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files)]
+[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
 ### 为资产编码
 

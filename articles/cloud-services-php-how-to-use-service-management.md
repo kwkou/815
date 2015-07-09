@@ -43,7 +43,7 @@ Azure SDK for PHP 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后者
 
 ##<a id="GetClientLibraries"></a>获取 Azure 客户端库
 
-[WACOM.INCLUDE [get-client-libraries](/zh-cn/documentation/articles/includes/get-client-libraries.md)]
+[WACOM.INCLUDE [get-client-libraries](../includes/get-client-libraries.md)]
 
 ##<a id="Connect"></a>如何：连接到服务管理
 
@@ -539,19 +539,22 @@ Azure 提供两种部署环境：过渡和生产。通常，在将服务部署�
 [CreateServiceOptions]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/CreateServiceOptions.php
 [ListHostedServicesResult]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/ListHostedServicesResult.php
 
-[服务包]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433093
-[Azure PowerShell cmdlet]：/zh-cn/documentation/articles/install-configure-powershell/
+[服务包]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433093  
+
+[Azure PowerShell cmdlet]:/zh-cn/documentation/articles/install-configure-powershell  
+
 [cspack 命令行工具]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg432988.aspx
 [GetDeploymentOptions]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/GetDeploymentOptions.php
 [ListHostedServicesResult]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/GetDeploymentOptions.php
 
 [在 Azure 中管理部署概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh386336.aspx
-[存储服务]：/zh-cn/documentation/articles/storage-whatis-account/
-[azure-blobs]: /zh-cn/documentation/articles/storage-php-how-to-use-blobs/
-[azure-tables]: /zh-cn/documentation/articles/storage-php-how-to-use-table-storage/
-[azure-queues]: /zh-cn/documentation/articles/storage-php-how-to-use-queues/
+[存储服务]:/zh-cn/documentation/articles/storage-whatis-account
+[azure-blobs]: /zh-cn/documentation/articles/storage-php-how-to-use-blobs
+[azure-tables]: /zh-cn/documentation/articles/storage-php-how-to-use-table-storage
+[azure-queues]: /zh-cn/documentation/articles/storage-php-how-to-use-queues
 [AffinityGroup]: https://github.com/WindowsAzure/azure-sdk-for-php/blob/master/WindowsAzure/ServiceManagement/Models/AffinityGroup.php
 
 
-[Azure 服务配置架构 (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx
+[Azure 服务配置架构 (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx  
+
 <!--HONumber=39-->

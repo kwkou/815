@@ -10,17 +10,12 @@
 <tags 
 	wacn.date="05/15/2015"
 	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="04/08/2015" 
-	ms.author="juliako"/>
+	ms.date="04/08/2015"/>
 
 
 # 使用 Azure 管理门户开始传送视频点播 (VoD)
 
-[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started)]
+[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
 
 >[AZURE.NOTE]

@@ -81,7 +81,7 @@
 初始预览版 
 
 
-[AZURE.INCLUDE [elastic-scale-include](/documentation/articles/includes/elastic-scale-include)]  
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]  
 
 
 <!--Image references-->

@@ -10,7 +10,7 @@
 
 # 在 Azure 中为应用程序配置 SSL
 
-[WACOM.INCLUDE [Websites-cloud-services-css-guided-walkthrough](../includes/Websites-cloud-services-css-guided-walkthrough.md)]
+[WACOM.INCLUDE [Websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 

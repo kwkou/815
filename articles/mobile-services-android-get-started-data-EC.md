@@ -4,9 +4,6 @@
 
 # 将移动服务添加到现有应用程序
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data-EC.md)]
-
-
 
 本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 

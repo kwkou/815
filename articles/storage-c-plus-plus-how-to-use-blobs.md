@@ -10,16 +10,11 @@
 <tags 
 	wacn.date="05/15/2015"
     ms.service="storage" 
-    ms.workload="storage" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="04/06/2015" 
-    ms.author="tamram"/>
+    ms.date="04/06/2015"/>
 
 # 如何通过 C++ 使用 Blob 存储  
 
-[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include)]
+[AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## 概述
 本指南将演示如何使用 Azure Blob 存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储客户端库](https://github.com/Azure/azure-storage-cpp/blob/v0.5.0-preview/README)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。  

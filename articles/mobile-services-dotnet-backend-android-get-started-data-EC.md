@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="数据处理入门 (Android) | 移动开发人员中心" 
 	description="了解如何开始使用移动服务来利用 Android 应用程序中的数据。" 
 	services="mobile-services" 
@@ -12,8 +12,6 @@
 	ms.date="02/06/2015" />
 
 # 将移动服务添加到现有应用程序
-
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data-EC.md)]
 
 本主题说明如何使用 Azure 移动服务作为 Android 应用程序的后端数据源。在本教程中，你将要创建一个新移动服务，为某个应用程序（该应用程序在内存中存储数据）下载一个 Eclipse Android 项目，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。
 

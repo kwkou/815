@@ -1,0 +1,9 @@
+> [AZURE.SELECTOR]
+- [.NET](storage-dotnet-how-to-use-blobs)
+- [Node.js](storage-nodejs-how-to-use-blob-storage)
+- [Java](storage-java-how-to-use-blob-storage)
+- [C++](storage-c-plus-plus-how-to-use-blobs)
+- [PHP](storage-php-how-to-use-blobs)
+- [Ruby](storage-ruby-how-to-use-blob-storage)
+- [Python](storage-python-how-to-use-blob-storage)
+- [Xamarin](storage-xamarin-blob-storage)

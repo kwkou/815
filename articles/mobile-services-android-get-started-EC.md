@@ -4,10 +4,8 @@
 
 # <a name="getting-started"> </a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started-EC.md)]
 
-
-本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 **待办事项列表** 应用程序，该应用程序将应用程序数据存储在新的移动服务中。以下是完成的应用程序的屏幕截图：</p>
+本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将创建一个新的移动服务和一个简单的 **待办事项列表** 应用程序，该应用程序将应用程序数据存储在新的移动服务中。以下是完成的应用程序的屏幕截图：
 
 
 ![][0]
@@ -115,6 +113,7 @@
 [后续步骤]:#next-steps
 
 <!-- Images. -->
+
 [0]: ./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png
 
 
