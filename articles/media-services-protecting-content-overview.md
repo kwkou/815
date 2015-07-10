@@ -99,7 +99,7 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 
 使用 **Azure 管理门户**、**.NET** 或 **REST API** 通过 **Azure Media Encoder** 进行编码。
  
-[AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode)]
+[AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
 ### 创建内容密钥
 

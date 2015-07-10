@@ -36,7 +36,6 @@
 
 上述产品中，只要缺少其中任意一个，安装 Azure SDK 时就将自动安装 Visual Studio 2013 Express for Web。
 
-[WACOM.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## <a id="learn"></a>学习内容
 

@@ -14,7 +14,7 @@
 
 # 使用 Azure AD 执行 Web 应用登录和注销
 
-[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide)]
+[AZURE.INCLUDE [active-directory-devguide](../includes/active-directory-devguide.md)]
 
 使用 Azure AD，只需编写几行代码，就能简单直接地外包 Web 应用的标识管理，提供单一登录和注销。在 Asp.NET Web Apps中，你可以使用 .NET Framework 4.5 中包含的社区驱动 OWIN 中间件的 Microsoft 实现来达到此目的。在这里，我们将使用 OWIN 来：- 使用 Azure AD 作为标识提供程序将用户登录到应用程序。- 显示有关用户的某些信息。- 从应用程序中注销用户。
 

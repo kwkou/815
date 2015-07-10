@@ -101,9 +101,6 @@
 
 如果你要对某台较旧的设备进行测试，请查阅[设置 Google Play Services SDK]，以确定此值可设置到的最小值，并相应地进行设置。
 
-### 将 Google Play Services 添加到项目
-
-[AZURE.INCLUDE [Add Play Services](../includes/mobile-services-add-Google-play-services-EC.md)]
 
 ### 添加代码
 

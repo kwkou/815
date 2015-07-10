@@ -13,7 +13,6 @@
 
 你还可以使用[自己的映像](virtual-machines-create-upload-vhd-windows-server-classic-portal)创建 Windows VM。若要了解有关 Azure VM 的详细信息，请参阅 [Azure 虚拟机概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156143.aspx)。
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note)]
 
 ## <a id="createvirtualmachine"> </a>如何创建虚拟机
 
