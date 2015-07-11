@@ -1,140 +1,129 @@
-﻿<properties pageTitle="Get Started with Azure Mobile Services for Android apps" metaKeywords="Azure android application, mobile service android, getting started Azure android, azure droid, getting started droid windows" description="Follow this tutorial to get started using Azure Mobile Services for Android development." metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date="02/13/2015"
-    wacn.date="04/11/2015"
-    />
 
-<a name="getting-started"> </a>
-# 移动服务入门
+<properties 
+	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" 
+	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" 
+	services="mobile-services" 
+	documentationCenter="android" 
+	authors="RickSaling" 
+	manager="dwrede" 
+	editor=""/>
 
-<div class="dev-center-tutorial-selector sublanding">
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started" title="Windows Store C#">Windows 应用商店 C#</a>
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a>
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started" title="Windows Phone">Windows Phone</a>
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started" title="iOS">iOS</a>
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started" title="Android" class="current">Android</a>
-</div>
+<tags 
+	ms.service="mobile-services" 
+	ms.date="05/13/2015" 
+	wacn.date="06/26/2015"/>
 
-<div class="dev-center-tutorial-subselector">
-	<a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started/" title=".NET backend" class="current">.NET 后端</a> | 
-	<a href="/zh-cn/documentation/articles/mobile-services-android-get-started/"  title="JavaScript backend">JavaScript 后端</a>
-</div>
 
-本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题中的 [JavaScript 后端版本][]。
+# <a name="getting-started"></a>移动服务入门
+
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+
+本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](mobile-services-android-get-started)。
 
 以下是完成的应用程序的屏幕快照：
 
 ![][0]
 
-完成本教程需要你安装 [Android 开发人员工具][]，其中包含 Eclipse 集成开发环境 (IDE)、Android 开发人员工具 (ADT) 插件和最新的 Android 平台。需要使用 Android 4.2 或更高版本。
+完成本教程需要你安装 [Android 开发人员工具][Android Studio]，其中包含 Android Studio 集成开发环境和最新的 Android 平台。需要使用 Android 4.2 或更高版本。
 
-下载的快速入门项目包含适用于 Android 的移动服务 SDK。尽管此项目需要 Android 4.2 或更高版本，但移动服务 SDK 只需要 Android 2.2 或更高版本。
+下载的快速入门项目包含适用于 Android 的移动服务 SDK。
 
-<div class="dev-callout"><b>说明</b>
+> [AZURE.IMPORTANT]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
-<p>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p>
-</div>
 
-<a name="create-new-service"> </a>
-## 创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
+> [AZURE.NOTE]如果你要查看本教程的 Eclipse 版本，请转到：[入门 (Eclipse)]。
+
+## <a name="create-new-service"></a>创建新的移动服务
+
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../includes/mobile-services-dotnet-backend-create-new-service.md)]
 
 ## 将移动服务下载到本地计算机
 
 在创建移动服务后，请下载可在本地计算机或虚拟机上运行的个性化移动服务项目。
 
-1.  单击刚刚创建的移动服务，在快速入门选项卡中单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序” 。
+1. 单击刚刚创建的移动服务，在快速入门选项卡中单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序”。
 
-    ![][1]
+	![][1]
 
-2.  如果你尚未安装 Visual Studio，请下载和安装 [Visual Studio Professional 2013][] 或更高版本。
+2. 如果你尚未安装 Visual Studio，请下载和安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) 或更高版本。
 
-3.  在“下载你的服务并将其发布到云”下面单击“下载” 。
+3. 在步骤 2 中，在“下载你的服务并将其发布到云”下面单击“下载”。
 
-    这样可以下载实现你的移动服务的 Visual Studio 项目。将压缩的项目文件保存到本地计算机上，并记下你保存它的位置。
-
-4.  另外，请下载发布配置文件，将下载的文件保存到本地计算机，然后记下保存位置。
+	这样可以下载实现你的移动服务的 Visual Studio 项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
 
 ## 测试移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service](../includes/mobile-services-dotnet-backend-test-local-service.md)]
 
 ## 发布移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
 ## 创建新的 Android 应用程序
 
 在本部分中，你将要创建一个连接到移动服务的新的 Android 应用程序。
 
-1.  在[管理门户][]中单击“移动服务”，然后单击你刚刚创建的移动服务 。
+1. 在[管理门户]中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
-2.  在快速入门选项卡中，单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序” 。
+2. 在快速入门选项卡中，单击“选择平台”下的“Android”，然后展开“创建新的 Android 应用程序”。
+ 
+	![][2]
 
-    ![][2]
+3. 在本地计算机或虚拟机上下载并安装 [Android 开发人员工具][Android SDK]（如果尚未这么做）。
 
-3.  在本地计算机或虚拟机上下载并安装 [Android 开发人员工具][]（如果尚未这么做）。
+4. 在“下载并运行应用程序”下面单击“下载”。
 
-4.  在“下载并运行应用程序”下面单击“下载” 。
-
-    随即将会下载已连接到移动服务的示例*待办事项列表*应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
+  	随即将会下载已连接到移动服务的示例_待办事项列表_应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
 
 ## 运行 Android 应用程序
 
-本教程的最后一个阶段是生成和运行你的新应用程序。
+[AZURE.INCLUDE [mobile-services-run-your-app](../includes/mobile-services-android-get-started.md)]
 
-1.  浏览到压缩的项目文件所保存到的位置，然后在计算机上展开这些文件。
+## <a name="next-steps"></a>后续步骤
+完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-2.  在 Eclipse 中，单击“文件” ，然后单击“导入” ，展开“Android” ，单击“现有 Android 代码到工作区” ，再单击“下一步”。 
+* [身份验证入门]<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-    ![][3]
+* [推送通知入门]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-3.  单击“浏览”，浏览到已展开项目文件所在的位置，单击“确定”，并确认 TodoActivity 项目已选中，然后单击“完成” 。
+* [移动服务 .NET 后端故障排除]<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
-    ![][4]
+<!-- Anchors. -->
+[Getting started with Mobile Services]: #getting-started
+[Create a new mobile service]: #create-new-service
+[Define the mobile service instance]: #define-mobile-service-instance
+[Next Steps]: #next-steps
 
-    这样可将项目文件导入当前工作区。
+<!-- Images. -->
 
-    ![][5]
+[0]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png
+[1]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-vs-AS.png
+[2]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-android-AS.png
 
-4.  在“运行”菜单中，单击“运行” ，以便在 Android 模拟器中启动项目。
 
-	<div class="dev-callout"><b>说明</b>
+[6]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-portal-quickstart-android.png
+[7]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-android.png
+[8]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-eclipse-quickstart.png
 
-    <p>若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。</p>
-	</div>
+[10]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-startup-android.png
+[11]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-data-tab.png
+[12]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-data-browse.png
 
-5.  在应用程序中键入有意义的文本（例如 *Complete the tutorial*），然后单击“添加” 。
+[14]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-workspace.png
+[15]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
 
-    ![][6]
+<!-- URLs. -->
 
-    这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
+[入门 (Eclipse)]: mobile-services-dotnet-backend-android-get-started-EC
+[Get started with data]: mobile-services-dotnet-backend-android-get-started-data
+[身份验证入门]: mobile-services-dotnet-backend-android-get-started-users
+[推送通知入门]: mobile-services-dotnet-backend-android-get-started-push
+[Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
+[Android Studio]: https://developer.android.com/sdk/index.html
+[Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
+[移动服务 .NET 后端故障排除]: mobile-services-dotnet-backend-how-to-troubleshoot
 
-	<div class="dev-callout"><b>说明</b>
+[管理门户]: https://manage.windowsazure.cn/
 
-    <p>你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。</p>
-	</div>
-
-  [Windows 应用商店 C#]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started "Windows 应用商店 C#"
-  [Windows 应用商店 JavaScript]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started "Windows 应用商店 JavaScript"
-  [Windows Phone]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started "Windows Phone"
-  [iOS]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started "iOS"
-  [Android]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started "Android"
-  [.NET 后端]: /zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started/ ".NET 后端"
-  [JavaScript 后端]: /zh-cn/documentation/articles/mobile-services-android-get-started/ "JavaScript 后端"
-  [JavaScript 后端版本]: /zh-cn/documentation/articles/mobile-services-android-get-started/
-  [0]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-completed-android.png
-  [Android 开发人员工具]: https://go.microsoft.com/fwLink/p/?LinkID=280125
-  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
-  [mobile-services-dotnet-backend-create-new-service]: ../includes/mobile-services-dotnet-backend-create-new-service.md
-  [1]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-vs.png
-  [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=391934
-  [mobile-services-dotnet-backend-test-local-service]: ../includes/mobile-services-dotnet-backend-test-local-service.md
-  [mobile-services-dotnet-backend-publish-service]: ../includes/mobile-services-dotnet-backend-publish-service.md
-  [管理门户]: https://manage.windowsazure.cn/
-  [2]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-steps-android.png
-  [3]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-workspace.png
-  [4]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
-  [5]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-eclipse-quickstart.png
-  [6]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-quickstart-startup-android.png
+<!---HONumber=61-->

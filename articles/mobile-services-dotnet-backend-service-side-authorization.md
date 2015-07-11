@@ -1,25 +1,23 @@
-﻿<properties
+<properties
 	pageTitle="在装有 .NET 后端的移动服务中进行用户服务端授权 | 移动开发人员中心"
 	description="了解如何在 Azure 移动服务的 .NET 后端中为用户授权"
 	services="mobile-services"
+	documentationCenter="windows"
 	authors="krisragh"
 	manager="dwrede"
 	editor=""/>
 
 <tags
 	ms.service="mobile-services"
-	ms.date="02/18/2015"
-	wacn.date="06/25/2015"/>
+	ms.date="05/10/2015"
+	wacn.date="06/26/2015"/>
 
 # 移动服务中的用户服务端授权
 
-> [AZURE.SELECTOR-LIST(平台 | 后端)]
-- [（任何 | .NET）](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
-- [（任何 | Javascript）](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
-本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将在 .NET 中修改数据访问方法，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。
+本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将要修改表控制器，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
 
-本教程基于"移动服务快速入门"，并且是在[向现有移动服务应用程序添加身份验证]教程的基础上制作的。请先完成[向现有移动服务应用程序添加身份验证]教程。
+本教程基于“移动服务快速入门”，并且是在[向现有移动服务应用程序添加身份验证]教程的基础上制作的。请先完成[向现有移动服务应用程序添加身份验证]教程。
 
 ## <a name="register-scripts"></a>修改数据访问方法
 
@@ -27,7 +25,7 @@
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE] 若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+	>[AZURE.NOTE]若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
 2. 在 Visual Studio 中，展开 Controllers 文件夹，然后打开 **TodoItemController.cs**。找到 **PostTodoItem** 方法，并在该方法的开头添加以下代码。此代码会将已经过身份验证的用户的用户 ID 添加到项中，然后将此 ID 插入 TodoItem 表。
 
@@ -47,7 +45,7 @@
 4. 将移动服务项目重新发布到 Azure。
 
 
-## <a name="test-app"></a>测试应用
+## <a name="test-app"></a>测试应用程序
 
 1. 你会发现，现在当你运行客户端应用程序时，尽管已存在完成前面的教程时创建的项，但并没有返回任何项。发生此情况的原因是，以前插入项时并未使用用户 ID 列，而现在该列的值为 null。
 
@@ -56,19 +54,16 @@
 
 
 <!-- Anchors. -->
-[注册服务器脚本]: #register-scripts
-[后续步骤]:#next-steps
+
+[Register server scripts]: #register-scripts
+[Next Steps]: #next-steps
 
 <!-- Images. -->
 
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[数据处理入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
-[向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 
-[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[向现有移动服务应用程序添加身份验证]: mobile-services-dotnet-backend-ios-get-started-users
 
-<!--HONumber=50-->
+<!---HONumber=61-->
