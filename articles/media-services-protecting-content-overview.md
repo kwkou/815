@@ -105,7 +105,7 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 
 使用 **.NET** 或 **REST API** 创建用来为资产加密的内容密钥。
 
-[AZURE.INCLUDE [media-services-selector-create-contentkey](../includes/media-services-selector-create-contentkey)]
+[AZURE.INCLUDE [media-services-selector-create-contentkey](../includes/media-services-selector-create-contentkey.md)]
 
 ### 配置内容密钥授权策略 
 

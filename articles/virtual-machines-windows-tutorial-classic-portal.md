@@ -20,7 +20,7 @@
 
 > [AZURE.NOTE]你还可以尝试使用功能更丰富且可自定义的 [Azure 预览门户](https://manage.windowsazure.cn)来创建虚拟机、自动部署多 VM 应用程序模板、使用增强的 VM 监视和诊断功能，以及执行更多操作。这两个门户提供的 VM 配置选项基本上重叠，但并不完全相同。
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-WindowsVM)]
+[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-WindowsVM.md)]
 
 ## 后续步骤
 
