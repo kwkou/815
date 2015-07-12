@@ -1,11 +1,20 @@
-<properties urlDisplayName="Get started with push notifications using .NET runtime mobile services for Xamarin iOS apps" pageTitle="用于 Xamarin iOS 应用程序的移动服务入门 - Azure 移动服务" metaKeywords="" description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Xamarin iOS 应用程序" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="Mobile" title="Get started with push notifications using .NET runtime mobile services" authors="donnam" solutions="" manager="dwrede" editor="mollybos" />
+<properties 
+	pageTitle="用于 Xamarin iOS 应用程序的移动服务入门 - Azure 移动服务" 
+	description="了解如何使用 Azure 移动服务和通知中心将推送通知发送到 Xamarin iOS 应用程序" 
+	services="mobile-services" 
+	documentationCenter="xamarin" 
+	authors="lindydonna" 
+	manager="dwrede" 
+	editor="mollybos"/>
 
 <tags 
-wacn.date="04/11/2015"
-ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-xamarin-ios" ms.devlang="dotnet" ms.topic="article" ms.date="09/25/2014" ms.author="donnam" />
+	ms.service="mobile-services" 
+	ms.date="04/24/2015" 
+	wacn.date="06/26/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
-[WACOM.INCLUDE [mobile-services-selector-get-started-push-xamarin](../includes/mobile-services-selector-get-started-push-xamarin.md)]
 
-[WACOM.INCLUDE [mobile-services-content-not-ready](../includes/mobile-services-content-not-ready.md)]
+[AZURE.INCLUDE [mobile-services-content-not-ready](../includes/mobile-services-content-not-ready.md)]
+
+<!---HONumber=61-->

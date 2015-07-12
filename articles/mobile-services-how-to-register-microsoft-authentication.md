@@ -1,51 +1,100 @@
-<properties pageTitle="注册以进行 Microsoft 身份验证 - 移动服务" metaKeywords="Azure registering application, Azure Microsoft authentication, application authenticate, authenticate mobile services" description="了解如何在 Azure 移动服务应用程序中注册以进行 Microsoft 身份验证。" metaCanonical="" disqusComments="0" umbracoNaviHide="1" title="Register your apps to use a Microsoft Account login" authors="glenga" services="mobile-services" documentationCenter="Mobile" />
-<tags ms.service="mobile-services"
-    ms.date="11/21/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	pageTitle="注册以进行 Microsoft 身份验证 - 移动服务" 
+	description="了解如何在 Azure 移动服务应用程序中注册以进行 Microsoft 身份验证。" 
+	authors="ggailey777" 
+	services="mobile-services" 
+	documentationCenter="Mobile" 
+	manager="dwrede" 
+	editor=""/>
 
-# 注册应用程序以使用 Microsoft 帐户登录
+<tags 
+	ms.service="mobile-services" 
+	ms.date="05/07/2015" 
+	wacn.date="06/26/2015"/>
 
-本主题说明如何注册你的应用程序，以便能够使用 Live Connect 作为 Azure 移动服务的身份验证提供程序。 
+# 注册应用程序以使用 Microsoft 帐户进行身份验证
 
->[WACOM.NOTE]若要为通用 Windows 应用程序配置 Microsoft 帐户身份验证或者为 Windows 应用商店应用程序提供单一登录体验，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/zh-cn/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication)。
+本主题说明如何注册你的移动应用程序，以便能够使用 Microsoft 帐户作为 Azure 移动服务的标识提供程序。以下步骤同样适用于使用 Live SDK 的服务导向型身份验证和客户端导向型身份验证。
 
-1. 在 Live Connect 开发人员中心内导航到<a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">我的应用程序</a>页，然后根据需要使用你的 Microsoft 帐户登录。 
+##在 Windows 开发人员中心注册 Windows 应用商店应用程序
 
-2. 单击**"创建应用程序"**，然后键入**"应用程序名称"**并单击**"我接受"**。
+首先必须在 Windows 开发人员中心注册 Windows 应用商店应用程序。
 
-   	![][1] 
+>[AZURE.NOTE]Windows Phone 8、Windows Phone 8.1 Silverlight 和非 Windows 应用程序可以跳过本部分。
 
-   	随即会将应用程序注册到 Live Connect。
+1. 如果尚未注册应用程序，请在开发人员中心内导航到 Windows 应用商店应用的“提交应用程序”页，用 Microsoft 帐户登录，然后单击“应用程序名称”[]。
 
-3. 单击**"API 设置"**，在**"重定向 URL"**中提供  `https://<mobile_service>.azure-mobile.cn/login/microsoftaccount` 值，然后单击**"保存"**。
+   	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-submit-win8-app.png)
 
-	>[WACOM.NOTE]对于使用 Visual Studio 发布到 Azure 的 .NET 后端移动服务，重定向 URL 是移动服务的 URL 后接用作 .NET 服务的移动服务的路径 _signin-microsoft_，例如 <code>https://todolist.azure-mobile.cn/signin-microsoft</code>。  
+2. 选择“通过保留唯一名称来创建新应用程序”，单击“继续”，在“应用程序名称”中输入应用程序的名称，单击“保留应用程序名称”，然后单击“保存”。
 
-	![][3]
+   	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-name.png)
 
-	这样可为您的应用启用 Microsoft 帐户身份验证。
+   	此操作为应用创建一个新的 Windows 应用商店注册。
 
-	>[WACOM.NOTE]对于现有的 Live Connect 应用程序注册，你可能必须先启用**"增强型重定向安全"**。
+3. 在 Visual Studio 中，打开你在完成[移动服务入门]教程后创建的项目。
 
-4. 单击**"应用程序设置"**，并记下**"客户端 ID"**和**"客户端密钥"**的值。 
+4. 在“解决方案资源管理器”中，右键单击 Windows 应用商店应用程序项目，单击“应用商店”，然后单击“将应用与应用商店关联...”。
 
-   	![][2]
+  	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-store-association.png)
 
-    > [AZURE.NOTE] 客户端密钥是一个非常重要的安全凭据。请勿与任何人分享客户端密钥或将密钥随应用程序分发。
+   	此时将显示“将应用与 Windows 应用商店关联”向导。
 
-现在，你可以通过向移动服务提供客户端 ID 和客户端密钥值，使用 Microsoft 帐户在应用程序中进行身份验证。
+5. 在向导中，单击“登录”，以你的 Microsoft 帐户登录，选择你在步骤 2 中保留的应用程序名称，单击“下一步”，然后单击“关联”。
+
+   	这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
+
+6. （可选）对于 Windows 通用应用程序，请对 Windows Phone 应用商店项目重复执行步骤 4 和 5。
+
+7. 回到新应用的“Windows 开发人员中心”页，单击“服务”。
+
+   	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-edit-app.png)
+
+8. 在“服务”页中，单击“Azure 移动服务”下的“Live 服务站点”。
+
+	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-edit2-app.png)
+
+此时将显示应用程序的 Microsoft 帐户页。
+
+## 配置你的 Microsoft 帐户注册，然后连接到移动服务
+
+本部分中的第一个步骤只适用于 Windows Phone 8、Windows Phone 8.1 Silverlight 以及非 Windows 应用商店应用程序。对于这些应用程序，你也可以忽略包安全性标识符 (SID)，因为该标识符只适用于 Windows 应用商店应用程序。
+
+1. 对于非 Windows 应用商店应用程序，请浏览到 Microsoft 帐户开发人员中心的<a href="http://go.microsoft.com/fwlink/p/?LinkId=262039" target="_blank">我的应用程序</a>页，以你的 Microsoft 帐户登录（如果需要），单击“创建应用程序”，键入应用程序名称，然后单击“我接受”。
+
+   	这将会通过 Microsoft 帐户为你保留应用程序名称，并显示应用程序的 Microsoft 帐户页。
+
+2. 在应用程序的 Microsoft 帐户页上，单击“API 设置”，选择启用“移动或桌面客户端应用程序”，将移动服务 URL 设为“目标域”，在“重定向 URL”中提供 `https://<mobile_service>.azure-mobile.net/login/microsoftaccount/` 的值，然后单击“保存”。
+
+	 >[AZURE.NOTE]对于使用 Visual Studio 发布到 Azure 的 .NET 后端移动服务，重定向 URL 是移动服务的 URL 后接用作 .NET 服务的移动服务的路径 _signin-microsoft_，例如 `https://todolist.azure-mobile.net/signin-microsoft`。
+
+    ![Microsoft 帐户 API 设置](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth-2.png)
+
+	“根域”应该会自动填入。
+
+3. 单击“应用程序设置”，并记下“客户端 ID”、“客户端机密”和“包 SID”的值。
+
+   	![Microsoft 帐户应用程序设置](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth.png)
+
+    > [AZURE.NOTE]客户端密钥是一个非常重要的安全凭据。请勿与任何人分享客户端密钥或将密钥随应用程序分发。只有 Windows 应用商店应用程序注册才能看到“包 SID”字段。
+
+4. 在 [Azure 管理门户]中，单击移动服务的“标识”选项卡，输入从标识提供程序获取的客户端 ID、客户端机密和包 SID，然后单击“保存”。
+
+ 	![移动服务“标识”选项卡](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-identity-tab.png)
+	
+	>[AZURE.NOTE]对于 Windows Phone 8、Windows Phone 应用商店 8.1 Silverlight 或非 Windows 应用程序，不需提供包 SID 值。
+	
+现在，你的移动服务和应用程序都已配置为使用 Microsoft 帐户。
 
 <!-- Anchors. -->
 
 <!-- Images. -->
-[1]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-live-connect-add-app.png
-[2]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth.png
-[3]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-app-push-auth-2.png
 
 <!-- URLs. -->
 
-["提交应用程序"页]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[ ]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
+
+<!---HONumber=61-->
