@@ -15,7 +15,6 @@
 
 # 向应用程序添加推送通知 | .NET 后端
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 本教程说明将推送通知发送到[快速入门项目](mobile-services-dotnet-backend-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
