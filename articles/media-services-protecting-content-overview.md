@@ -111,7 +111,7 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 
 使用 **.NET** 或 **REST API** 配置内容保护和密钥授权策略。
 
-[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy)]
+[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)]
 
 ### 配置资产传送策略
 

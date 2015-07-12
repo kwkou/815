@@ -14,7 +14,6 @@
 
 # 将移动服务添加到现有应用程序
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data-EC.md)]
 
 ##概述
 

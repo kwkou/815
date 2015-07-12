@@ -60,8 +60,6 @@
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
 
-[AZURE.INCLUDE [向应用程序添加推送通知](../includes/add-push-notifications-to-app.md)]
-
 [AZURE.INCLUDE [在应用程序中测试推送通知](../includes/test-push-notifications-in-app.md)]
 
 <!-- Anchors.  -->
