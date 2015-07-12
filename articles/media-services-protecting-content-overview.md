@@ -120,4 +120,4 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy)]
 
 
-<!--HONumber=53-->
+<!-- HONumber=53 -->  
