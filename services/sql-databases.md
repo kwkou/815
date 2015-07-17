@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-net-sql-database" urlDisplayName="Windows Azure SQL数据库" pageTitle="SQL数据库 - Azure 微软云" metaKeywords="SQL数据库,SQL 数据库,Azure SQL 数据库,配置,监视,缩放,同步,Elastic Scale,Spring Framework,迁移" description="在 Azure 中配置、监视和缩放 SQL数据库。将 SQL数据库 用于业务应用程序、复杂的基于云的服务或混合解决方案。在 SQL 数据库之间或者在 SQL Server 的本地实例和 Azure SQL 数据库之间共享数据。" metaCanonical="" services="SQL数据库" documentationCenter="Services" title="Configure, monitor, and scale your SQL数据库s in Azure" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-sql-database" urlDisplayName="Windows Azure SQL数据库" pageTitle="SQL数据库 - Azure 微软云" metaKeywords="SQL数据库,SQL 数据库,Azure SQL 数据库,配置,监视,缩放,同步,Elastic Scale,Spring Framework,迁移" description="在 Azure 中配置、监视和缩放 SQL数据库。将 SQL数据库 用于业务应用程序、复杂的基于云的服务或混合解决方案。在 SQL 数据库之间或者在 SQL Server 的本地实例和 Azure SQL 数据库之间共享数据。" metaCanonical="" services="SQL数据库" documentationCenter="Services" title="Configure, monitor, and scale your SQL数据库s in Azure" authors="" solutions="" manager="" editor="" />
 <tags ms.service="SQL数据库"
     ms.date=""
     wacn.date="06/29/2015"
@@ -53,19 +53,19 @@ Azure SQL数据库 Elastic Scale（预览版）使数据级别的应用程序可
   
 ###SaaS开发人员解决方案
 
-####[借助弹性数据库应对爆炸性增长](sql-database-elastic-pool)  
+####[借助弹性数据库应对爆炸性增长](/documentation/articles/sql-database-elastic-pool)  
 
 如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。  
 
-####[创建弹性池以开始使用](sql-database-elastic-pool-portal)  
+####[创建弹性池以开始使用](/documentation/articles/sql-database-elastic-pool-portal)  
 
 弹性池可以简化大量数据库的创建、维护以及性能和成本的管理流程。  
 
-####[借助弹性作业简化管理](sql-database-elastic-jobs-overview)  
+####[借助弹性作业简化管理](/documentation/articles/sql-database-elastic-jobs-overview)  
 
 使用**弹性数据库作业**（预览版）可对[弹性数据库池（预览版）](sql-database-elastic-pool)中的所有数据库运行 T-SQL（作业）。  
 
-####[弹性数据库池参考](sql-database-elastic-pool-reference)  
+####[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)  
 
 对于拥有数十、数百甚至数千数据库的 SaaS 开发人员，则可以通过弹性数据库池来简化整个数据库组的创建、维护以及性能和成本管理流程。  
 
