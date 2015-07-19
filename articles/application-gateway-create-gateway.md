@@ -221,7 +221,7 @@
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](application-gateway-SSL)。
+如果你要配置 SSL 卸载，请参阅[配置应用程序网关以进行 SSL 卸载](application-gateway-ssl)。
 
 如需负载平衡选项的其他常规信息，请参阅：
 
