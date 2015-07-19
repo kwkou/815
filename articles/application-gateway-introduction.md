@@ -14,7 +14,7 @@
 # 应用程序网关技术概述 
 
 
-Windows Azure 应用程序网关是 Azure 托管的服务，它类似于 Azure VPN 网关。应用程序网关提供基于 IIS/ARR 的 Azure 托管 HTTP 负载平衡解决方案。应用程序网关服务高度可用，并附带计量功能。有关服务级别协议和定价，请参阅 [SLA](/support/legal/sla) 和[定价](/home/features/application-gateway/#price)页。
+Windows Azure 应用程序网关是 Azure 托管的服务，它类似于 Azure VPN 网关。应用程序网关提供基于 IIS/ARR 的 Azure 托管 HTTP 负载平衡解决方案。应用程序网关服务高度可用，并附带计量功能。有关服务级别协议，请参阅 [SLA](/support/legal/sla) 页。
 
 应用程序网关当前支持以下第 7 层应用程序传送功能：
 
