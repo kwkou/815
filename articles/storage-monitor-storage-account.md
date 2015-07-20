@@ -14,7 +14,7 @@
 
 > [WACOM.NOTE] Azure 文件服务当前不支持存储分析。
 
-> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Windows Azure 存储空间问题](../storage-monitoring-diagnosing-troubleshooting)。
+> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
 
 
 ##目录##

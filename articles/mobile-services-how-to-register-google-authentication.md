@@ -8,7 +8,7 @@
 
 本主题说明如何注册你的应用程序，以便能够使用 Google 在 Azure 移动服务中进行身份验证。
 
->[WACOM.NOTE] 本教程有关 [Azure 移动服务](/zh-cn/services/mobile-services)，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持<a href="/zh-cn/documentation/articles/mobile-services-ios-get-started-users/">身份验证入门</a>教程，该教程演示如何将用户登录到你的应用程序。如果这是你第一次体验移动服务，请先完成<a href="/zh-cn/documentation/articles/mobile-services-ios-get-started/">移动服务入门教程</a>。
+>[WACOM.NOTE] 本教程有关 [Azure 移动服务](/documentation/services/mobile-services)，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持<a href="/documentation/articles/mobile-services-ios-get-started-users/">身份验证入门</a>教程，该教程演示如何将用户登录到你的应用程序。如果这是你第一次体验移动服务，请先完成<a href="/documentation/articles/mobile-services-ios-get-started/">移动服务入门教程</a>。
 
 若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转至 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。
 
@@ -46,6 +46,6 @@
 <!-- URLs. -->
 
 [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
-[身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
+[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 
 [Azure 管理门户]: https://manage.windowsazure.cn/

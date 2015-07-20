@@ -23,7 +23,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 - 事务指的是对 Azure 存储空间的所有读取和写入操作。 
 - 数据流出量指的是传出某个 Azure 区域的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将你的数据和服务通过分组分到相同的数据中心内，从而降低或避免数据流出量费用。）  
 
-[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/zh-cn/pricing/details/data-transfers)提供了针对数据流出量的详细定价信息。
+[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers)提供了针对数据流出量的详细定价信息。
 
 有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn249410.aspx).
 
@@ -85,7 +85,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：: http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*.
 
-此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](../storage-custom-domain-name) 以了解详细信息。
+此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name) 以了解详细信息。
 
 ### <a id="affinity-group"></a>服务与地缘组的归置 
 
@@ -103,7 +103,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
-> [WACOM.NOTE] 我们建议你避免与其他人共享你的存储帐户访问密钥。若要在不提供你的访问密钥的情况下允许他人访问存储资源，你可以使用 *shared access signature*。共享访问签名可用于访问你帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](../storage-dotnet-shared-access-signature-part-1)，以了解详细信息。
+> [WACOM.NOTE] 我们建议你避免与其他人共享你的存储帐户访问密钥。若要在不提供你的访问密钥的情况下允许他人访问存储资源，你可以使用 *shared access signature*。共享访问签名可用于访问你帐户中的资源，访问时间间隔由你定义，访问权限由你指定。请参阅[共享访问签名教程](storage-dotnet-shared-access-signature-part-1)，以了解详细信息。
 
 在[管理门户](http://manage.windowsazure.cn)中操作, use **Manage Keys** on the dashboard or the **Storage** page to view, copy, and regenerate the storage access keys that are used to access the Blob, Table, and Queue services. 
 
@@ -117,7 +117,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
  	此时将打开"管理访问密钥"页面。
 
-	![Managekeys](./media/storage-create-storage-account/Storage_ManageKeys.png)
+   ![Managekeys](./media/storage-create-storage-account/Storage_ManageKeys.png)
 
  
 3. 若要复制存储访问密钥，请选择密钥文本。然后右键单击，并单击"复制"。

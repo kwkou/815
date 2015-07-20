@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-media-services-how-to-guides-encrypt-assets" urlDisplayName="Encrypt Assets in Media Services" pageTitle="How to Encrypt Assets in Media Services - Azure" metaKeywords="" description="Learn how to use Microsoft PlayReady Protection to encrypt an asset in Media Services. Code samples are written in C# and use the Media Services SDK for .NET. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Protect an Asset with PlayReady Protection" authors="migree" solutions="" manager="" editor="" />
+<properties linkid="develop-media-services-how-to-guides-encrypt-assets" urlDisplayName="Encrypt Assets in Media Services" pageTitle="How to Encrypt Assets in Media Services - Azure" metaKeywords="" description="Learn how to use Microsoft PlayReady Protection to encrypt an asset in Media Services. Code samples are written in C# and use the Media Services SDK for .NET. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Protect an Asset with PlayReady Protection" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/15/2015"
     wacn.date="04/11/2015"
@@ -114,5 +114,5 @@ return job;
 后续步骤
 --------
 
-了解如何使用 Media Services 保护资产后，请转到[如何管理资产](/manage/services/media-services/how-to-manage-content-in-media-services)主题。
+了解如何使用 Media Services 保护资产后，请转到[如何管理资产](/documentation/articles/media-services-manage-content)主题。
 

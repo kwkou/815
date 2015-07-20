@@ -17,5 +17,5 @@
 
 请注意，对于 Tomcat 网站：在将 WAR 文件上载到 **webapps** 文件夹后，Tomcat 应用程序服务器将检测到你已经添加了该文件并会将其自动上载。请注意，如果你将文件（除 WAR 文件以外）复制到 ROOT 目录，在使用这些文件之前，将需要重新启动该应用程序服务器。Azure 上运行的 Tomcat Java 网站的自动上载功能基于所添加的新 WAR 文件，或添加到 **webapps** 文件夹的新文件或目录。
 
-  [Windows Azure 网站和 Java 入门]: ../web-sites-java-get-started
-  [从源代码管理发布到 Azure 网站]: ../web-sites-publish-source-control
+  [Windows Azure 网站和 Java 入门]: /documentation/articles/web-sites-java-get-started
+  [从源代码管理发布到 Azure 网站]: /documentation/articles/web-sites-publish-source-control

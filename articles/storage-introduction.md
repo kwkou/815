@@ -60,7 +60,7 @@ Azure 存储帐户是一个安全的帐户，它向你授予对 Azure 存储空�
 
 ![Azure 存储资源](./media/storage-introduction/storage-concepts.png)
 
-当你准备好创建标准存储帐户时，请参阅[创建、管理或删除存储帐户](../storage-create-storage-account) 以了解更多详细信息。
+当你准备好创建标准存储帐户时，请参阅[创建、管理或删除存储帐户](storage-create-storage-account) 以了解更多详细信息。
 
 
 ## Blob 存储 ##
@@ -104,7 +104,7 @@ Blob 存储提供了两种类型的 Blob：块 Blob 和页 Blob（磁盘）。�
 
 在创建你的存储帐户时为其分配了两个用于身份验证的私有访问密钥。设置两个密钥可以确保你的应用程序在你定期重新生成密钥（这是一种常用的安全密钥管理做法）时仍然保持可用。
 
-如果你不需要为你的存储资源实施用户受控访问，则可以创建一个[共享访问签名](../storage-dotnet-shared-access-signature-part-1)。共享访问签名是一个可以附加到 URL 的令牌，可以实现对容器、Blob、表或队列的委托访问。持有令牌的任何人都可以在令牌有效期间使用它指定的权限访问它指向的资源。请注意，当前不支持 Azure 文件存储共享访问签名。
+如果你不需要为你的存储资源实施用户受控访问，则可以创建一个[共享访问签名](storage-dotnet-shared-access-signature-part-1)。共享访问签名是一个可以附加到 URL 的令牌，可以实现对容器、Blob、表或队列的委托访问。持有令牌的任何人都可以在令牌有效期间使用它指定的权限访问它指向的资源。请注意，当前不支持 Azure 文件存储共享访问签名。
 
 最后，你可以指定一个容器及其 Blob 或某个特定的 Blob 可供公开访问。当你指定某个容器或 Blob 为公用的时，任何人都可以匿名读取它，不需要进行身份验证。公用容器和 Blob 非常适用于公开在网站上托管的资源，例如媒体和文档。若要降低全球受众的网络延迟，你可以通过 Azure CDN 来缓存网站使用的 Blob 数据。
 
@@ -127,10 +127,10 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 - [.NET](http://msdn.microsoft.com/zh-cn/library/dn495001.aspx)
 - [本机代码](http://msdn.microsoft.com/zh-cn/library/dn495438.aspx)
 - [Java](/develop/java)
-- [Node.js](../storage/#node)
-- [PHP](../storage/#php)
-- [Ruby](../storage/#ruby)
-- [Python](../storage/#python)
+- [Node.js](/develop/nodejs)
+- [PHP](/develop/php)
+- [Ruby](/develop/ruby)
+- [Python](/develop/python)
 - [PowerShell](http://msdn.microsoft.com/zh-cn/library/dn495240.aspx)
 
 ## 后续步骤 ##
@@ -159,38 +159,38 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 <h3>面向 .NET 开发人员</h3>
 
 - [.NET 客户端库引用](http://msdn.microsoft.com/zh-cn/library/wa_storage_30_reference_home.aspx)
-- [如何通过 .NET 使用 Blob 存储](../storage-dotnet-how-to-use-blobs)
-- [如何通过 .NET 使用表存储](../storage-dotnet-how-to-use-tables)
-- [如何通过 .NET 使用队列存储](../storage-dotnet-how-to-use-queues)
+- [如何通过 .NET 使用 Blob 存储](storage-dotnet-how-to-use-blobs)
+- [如何通过 .NET 使用表存储](storage-dotnet-how-to-use-tables)
+- [如何通过 .NET 使用队列存储](storage-dotnet-how-to-use-queues)
 
 <h3>面向 Java/Android 开发人员</h3>
 
 - [Java 客户端库参考]()
-- [如何通过 Java/Android 使用 Blob 存储](../storage-java-how-to-use-blob-storage)
-- [如何通过 Java/Android 使用表存储](../storage-java-how-to-use-table-storage)
-- [如何通过 Java/Android 使用队列存储](../storage-java-how-to-use-queue-storage)
+- [如何通过 Java/Android 使用 Blob 存储](storage-java-how-to-use-blob-storage)
+- [如何通过 Java/Android 使用表存储](storage-java-how-to-use-table-storage)
+- [如何通过 Java/Android 使用队列存储](storage-java-how-to-use-queue-storage)
 
 <h3>面向 Node.js 开发人员</h3>
 
-- [如何通过 Node.js 使用 Blob 存储](../storage-nodejs-how-to-use-blob-storage)
-- [如何通过 Node.js 使用表存储](../storage-nodejs-how-to-use-table-storage)
-- [如何通过 Node.js 使用队列存储](../storage-nodejs-how-to-use-queues)
+- [如何通过 Node.js 使用 Blob 存储](storage-nodejs-how-to-use-blob-storage)
+- [如何通过 Node.js 使用表存储](storage-nodejs-how-to-use-table-storage)
+- [如何通过 Node.js 使用队列存储](storage-nodejs-how-to-use-queues)
 
 <h3>面向 PHP 开发人员</h3>
 
-- [如何通过 PHP 使用 Blob 存储](../storage-php-how-to-use-blobs)
-- [如何通过 PHP 使用表存储](../storage-php-how-to-use-table-storage)
-- [如何通过 PHP 使用队列存储](../storage-php-how-to-use-queues)
+- [如何通过 PHP 使用 Blob 存储](storage-php-how-to-use-blobs)
+- [如何通过 PHP 使用表存储](storage-php-how-to-use-table-storage)
+- [如何通过 PHP 使用队列存储](storage-php-how-to-use-queues)
 
 <h3>面向 Ruby 开发人员</h3>
 
-- [如何通过 Ruby 使用 Blob 存储](../storage-ruby-how-to-use-blob-storage)
-- [如何通过 Ruby 使用表存储](../storage-ruby-how-to-use-table-storage)
-- [如何通过 Ruby 使用队列存储](../storage-ruby-how-to-use-queue-storage)
+- [如何通过 Ruby 使用 Blob 存储](storage-ruby-how-to-use-blob-storage)
+- [如何通过 Ruby 使用表存储](storage-ruby-how-to-use-table-storage)
+- [如何通过 Ruby 使用队列存储](storage-ruby-how-to-use-queue-storage)
 
 <h3>面向 Python 开发人员</h3>
 
-- [如何通过 Python 使用 Blob 存储](../storage-python-how-to-use-blob-storage)
-- [如何通过 Python 使用表存储](../storage-python-how-to-use-table-storage)
-- [如何通过 Python 使用队列存储](../storage-python-how-to-use-queue-storage)
+- [如何通过 Python 使用 Blob 存储](storage-python-how-to-use-blob-storage)
+- [如何通过 Python 使用表存储](storage-python-how-to-use-table-storage)
+- [如何通过 Python 使用队列存储](storage-python-how-to-use-queue-storage)
 <!--HONumber=41-->

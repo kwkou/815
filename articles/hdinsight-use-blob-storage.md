@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="将 Azure Blob 存储与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
+<properties linkid="manage-services-hdinsight-howto-blob-store" urlDisplayName="Blob Storage with HDInsight" pageTitle="将 Azure Blob 存储与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how HDInsight uses Blob storage as the underlying data store for HDFS and how you can query data from the store." metaCanonical="" services="storage,hdinsight" documentationCenter="" title="Use Azure Blob storage with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="mollybos" />
 <tags ms.service="storage,hdinsight"
     ms.date="03/16/2015"
     wacn.date="04/11/2015"
@@ -262,7 +262,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
   [限制对容器和 Blob 的访问]: http://msdn.microsoft.com/zh-cn/library/azure/dd179354.aspx
   [将 HDInsight 群集与备用存储帐户和元存储配合使用]: http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
   [Blob 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-  [Azure 存储帐户]: /manage/services/storage/how-to-create-a-storage-account/
+  [Azure 存储帐户]: storage-create-storage-account
   [HDI.QuickCreate]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
   [HDI.CustomCreateStorageAccount]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png
   [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/

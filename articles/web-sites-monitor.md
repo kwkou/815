@@ -316,7 +316,7 @@
   [Azure 管理门户]: http://manage.windowsazure.cn/
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://go.microsoft.com/fwlink/?LinkId=309356
   [Azure 的虚拟机和云服务大小]: http://go.microsoft.com/fwlink/?LinkID=309169
-  [如何管理存储帐户]: /manage/services/storage/how-to-manage-a-storage-account/
+  [如何管理存储帐户]: /documentation/articles/storage-create-storage-account
   [如何使用 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
   [为 Azure 网站启用诊断日志记录]: /develop/net/common-tasks/diagnostics-logging-and-instrumentation/
   [如何在 Azure 网站中调试 Node.js 应用程序]: /develop/nodejs/how-to-guides/Debug-Website/

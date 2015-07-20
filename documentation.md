@@ -1,4 +1,4 @@
-﻿<properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
+<properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
     wacn.date="06/29/2015"
@@ -11,16 +11,16 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td><a href="/develop/net/">.Net</a></a></td>
-    <td><a href="/develop/nodejs/">Node.js</a></a></td>
-    <td><a href="/develop/java/">Java</a></a></td>
-    <td><a href="/develop/mobile/ios/">移动服务</a></a></td>
+    <td><a href="/develop/net/">.Net</a></td>
+    <td><a href="/develop/nodejs/">Node.js</a></td>
+    <td><a href="/develop/java/">Java</a></td>
+    <td><a href="/develop/mobile/ios/">移动服务</a></td>
   </tr>
   <tr>
-    <td><a href="/develop/php/">PHP</a></a></td>
-    <td><a href="/develop/python/">Python</a></a></td>
-    <td><a href="/develop/ruby/">Ruby</a></a></td>
-    <td><a href="/develop/media-services/">媒体服务</a></a></td>
+    <td><a href="/develop/php/">PHP</a></td>
+    <td><a href="/develop/python/">Python</a></td>
+    <td><a href="/develop/ruby/">Ruby</a></td>
+    <td><a href="/develop/media-services/">媒体服务</a></td>
   </tr>
 </table>
 

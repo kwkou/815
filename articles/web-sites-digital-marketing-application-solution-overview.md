@@ -121,7 +121,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
 </tr>
 <tr>
 <td valign="middle"><strong>创建</strong></td>
-<td valign="top">- <a href="/manage/services/web-sites/how-to-create-websites/">如何创建和部署网站</a></td>
+<td valign="top">- <a href="/documentation/articles/web-sites-php-web-site-gallery">如何创建和部署网站</a></td>
 </tr>
 <tr>
 <td valign="middle"><strong>部署</strong></td>
@@ -180,7 +180,7 @@ Azure 网站十分适合于为单独市场营销活动定制的可重复使用�
   [DigitalMarketingUsageOverview]: ./media/web-sites-digital-marketing-application-solution-overview/DigitalMarketing_UsageOverview.png
   [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
   [1]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
-  [如何创建和部署网站]: /manage/services/web-sites/how-to-create-websites/
+  [如何创建和部署网站]: /documentation/articles/web-sites-php-web-site-gallery
   [如何部署 Azure 网站]: /zh-cn/documentation/articles/web-sites-deploy/
   [2]: /zh-cn/documentation/articles/web-sites-publish-source-control/
   [使用成员资格、OAuth 和 SQL数据库 部署安全的 ASP.NET MVC 应用程序]: /zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/

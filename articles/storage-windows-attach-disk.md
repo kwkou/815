@@ -45,13 +45,11 @@
 	![Initialize the volume](./media/storage-windows-attach-disk/InitializeDiskVolume.png)
 
 
-[logon]: ../virtual-machines-log-on-windows-server/
-
-
 
 	磁盘现在处于联机状态且可以使用新的驱动器号。
 
 
 
-	![已成功初始化卷](./media/storage-windows-attach-disk/InitializeSuccess.png)
+   ![已成功初始化卷](./media/storage-windows-attach-disk/InitializeSuccess.png)  
+   
 <!--HONumber=41-->

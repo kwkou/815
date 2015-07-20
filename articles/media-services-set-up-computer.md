@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-media-services-how-to-guides-set-up-computer" urlDisplayName="Set Up Computer for Media Services" pageTitle="设置计算机以进行 Media Services 开发 - Azure" metaKeywords="" description="Learn about the prerequisites for Media Services using the Media Services SDK for .NET. Also learn how to create a Visual Studio app." metaCanonical="" services="media-services" documentationCenter="" title="Setting up your computer for Media Services development" authors="migree" solutions="" manager="" editor="" />
+<properties linkid="develop-media-services-how-to-guides-set-up-computer" urlDisplayName="Set Up Computer for Media Services" pageTitle="设置计算机以进行 Media Services 开发 - Azure" metaKeywords="" description="Learn about the prerequisites for Media Services using the Media Services SDK for .NET. Also learn how to create a Visual Studio app." metaCanonical="" services="media-services" documentationCenter="" title="Setting up your computer for Media Services development" authors="migree" solutions="" manager="" editor="" />
 <tags ms.service="media-services"
     ms.date="02/18/2015"
     wacn.date="04/11/2015"
@@ -11,7 +11,7 @@
 
 ### 先决条件
 
--   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](/manage/services/media-services/how-to-create-a-media-services-account)。
+-   在新的或现有的 Azure 订阅中拥有一个 Media Services 帐户。请参阅主题[如何创建 Media Services 帐户](/documentation/articles/media-services-create-account)。
 -   操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 -   .NET Framework 4.5 或 .NET Framework 4。
 -   Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）。
@@ -68,5 +68,5 @@ using System;
 后续步骤
 --------
 
-你已经完成计算机设置并创建了进行 Media Services 编程所需的 Visual Studio 解决方案，现在可转到 [如何创建加密的资产并上载到存储中][] 主题。[如何创建 Media Services 帐户](http://www.windowsazure.com/manage/services/media-services/how-to-create-a-media-services-account/) [如何创建加密的资产并上载到存储中](http://go.microsoft.com/fwlink/?LinkID=301733&clcid=0x409)
+你已经完成计算机设置并创建了进行 Media Services 编程所需的 Visual Studio 解决方案，现在可转到 [如何创建加密的资产并上载到存储中][] 主题。[如何创建 Media Services 帐户](/documentation/articles/media-services-create-account) [如何创建加密的资产并上载到存储中](/documentation/articles/media-services-create-encrypted-asset-upload-storage)
 

@@ -1,4 +1,4 @@
-﻿<properties urlDisplayName="Table Service" pageTitle="如何使用表 storagrom .NET | Windows Azure" metaKeywords="Get started Azure table,Azure nosql,Azure large structured data store,Azure table,Azure table storage,Azure table .NET,Azure table storage .NET,Azure table C#,Azure table storage C#" description="了解如何使用 Windows Azure 表存储来创建和删除表,以及在表中插入和查询实体。" services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Windows Azure Table storage" authors="tamram" manager="adinah" />
+<properties urlDisplayName="Table Service" pageTitle="如何使用表 storagrom .NET | Windows Azure" metaKeywords="Get started Azure table,Azure nosql,Azure large structured data store,Azure table,Azure table storage,Azure table .NET,Azure table storage .NET,Azure table C#,Azure table storage C#" description="了解如何使用 Windows Azure 表存储来创建和删除表,以及在表中插入和查询实体。" services="storage" documentationCenter=".NET" metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="How to use Windows Azure Table storage" authors="tamram" manager="adinah" />
 <tags ms.service="storage"
     ms.date="03/11/2015"
     wacn.date="04/11/2015"
@@ -433,7 +433,7 @@ Microsoft.WindowsAzure.CloudConfigurationManager 命名空间，则可以使用 
   </ul>
 </li>
 <li>在以下位置了解使用 Azure 存储空间能够执行的更高级任务：<a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">在 Azure 中存储和访问数据</a>。</li>
-<li>了解如何使用 <a href="../ Websites-dotnet-webjobs-sdk/">Azure WebJobs SDK 简化你编写的用于 Azure 存储空间的代码。</li>
+<li>了解如何使用 <a href="/documentation/articles/Websites-dotnet-webjobs-sdk/">Azure WebJobs SDK 简化你编写的用于 Azure 存储空间的代码。</li>
 <li>查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
   <ul>
     <li>使用 <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs/">Blob 存储</a>来存储非结构化数据。</li>

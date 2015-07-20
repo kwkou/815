@@ -7,7 +7,7 @@
 如何：交付 Apple HLS 流内容
 ===========================
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：交付流内容](/develop/media-services/how-to-guides/deliver-streaming-content/&clcid=0x409)。
+本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：交付流内容](media-services-deliver-streaming-content)。
 
 本主题说明如何在 Media Services 来源服务器上创建一个定位器，以指向 Apple HTTP 实时流 (HLS) 内容。使用此方法可以生成 Apple HLS 内容的 URL，并将该 URL 提供给 Apple iOS 设备进行播放。生成定位器 URL 的基本思路与此相同。在来源服务器上生成指向 Apple HLS 流资产路径的定位器，然后生成链接到流内容清单的完整 URL。
 
@@ -77,6 +77,6 @@ return originLocator;
 -   [使用 Media Services SDK for .NET 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973613)
 -   [使用 Azure Media Services REST API 生成应用程序](https://msdn.microsoft.com/zh-CN/library/hh973618)
 -   [Media Services 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/MediaServices/threads)
--   [如何监视 Media Services 帐户](/manage/services/media-services/how-to-monitor-a-media-services-account)
--   [如何管理 Media Services 中的内容](/manage/services/media-services/how-to-manage-content-in-media-services)
+-   [如何监视 Media Services 帐户](media-services-monitor-services-account)
+-   [如何管理 Media Services 中的内容](media-services-manage-content)
 
