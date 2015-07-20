@@ -35,7 +35,6 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
 
 对于 web 开发人员，Azure 网站为您提供创建复杂的 web 应用程序所需的内容。网站提供 Visual Studio 和 SQL 数据库等工具的紧密集成。使用**网站**，开发人员可以：
 
--   使用[自动任务][自动任务]的命令行工具。
 -   使用流行的语言，如 [.Net][.Net]、[PHP][PHP]、[Node.js][Node.js] 和 [Python][Python]。
 -   选择向上扩展到超高容量的三个不同的扩展级别。
 -   与其他 Azure 服务集成，例如 [SQL 数据库][SQL 数据库]、[服务总线][服务总线]和[存储][存储]。
@@ -278,7 +277,6 @@ Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开�
   [方案]: #scenarios
   [服务摘要]: #services
   [功能比较]: #features
-  [自动任务]: /zh-cn/documentation/scripts/?services=web-sites
   [.Net]: /develop/net/
   [PHP]: /develop/php/
   [Node.js]: /develop/nodejs/

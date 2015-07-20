@@ -1,4 +1,4 @@
-<properties linkid="manage-linux-howto-custom-create-vm" urlDisplayName="Custom create a VM" pageTitle="在 Azure 中自定义创建运行 Linux 的虚拟机" metaKeywords="Azure custom vm, creating custom vm" description="了解如何在 Azure 中创建自定义虚拟机。" metaCanonical="/manage/windows/how-to-guides/custom-create-a-vm/" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
+<properties linkid="manage-linux-howto-custom-create-vm" urlDisplayName="Custom create a VM" pageTitle="在 Azure 中自定义创建运行 Linux 的虚拟机" metaKeywords="Azure custom vm, creating custom vm" description="了解如何在 Azure 中创建自定义虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
 <tags ms.service="virtual-machines"
     ms.date="03/13/2015"
     wacn.date="04/11/2015"

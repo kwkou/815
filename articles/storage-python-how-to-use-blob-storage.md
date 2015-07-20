@@ -28,7 +28,7 @@
 
 ## <a name="create-container"> </a>如何：创建容器
 
-**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](../python-how-to-install)。
+**注意：**如果你需要安装 Python 或客户端库，请参阅 [Python 安装指南](/documentation/articles/python-how-to-install)。
 
 
 使用 **BlobService** 对象可以对容器和 Blob 进行操作。以下代码创建 **BlobService** 对象。在你希望在其中以编程方式访问 Azure 存储空间的任何 Python 文件中，将以下代码添加到文件的顶部附近：

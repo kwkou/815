@@ -1,4 +1,4 @@
-﻿<properties linkid="dev-net-commons-tasks-profiling" urlDisplayName="Performance Profiling" pageTitle="Use Performance Counters in Azure (.NET)" metaKeywords="Azure performance counters, Azure performance profiling, Azure performance counters C#, Azure performance profiling C#" description="Learn how to enable and collect data from performance counters in Azure applications. " metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Using performance counters in Azure" authors="ryanwi" solutions="" manager="" editor="" />
+<properties linkid="dev-net-commons-tasks-profiling" urlDisplayName="Performance Profiling" pageTitle="Use Performance Counters in Azure (.NET)" metaKeywords="Azure performance counters, Azure performance profiling, Azure performance counters C#, Azure performance profiling C#" description="Learn how to enable and collect data from performance counters in Azure applications. " metaCanonical="" services="cloud-services" documentationCenter=".NET" title="Using performance counters in Azure" authors="ryanwi" solutions="" manager="" editor="" />
 <tags ms.service="cloud-services"
     ms.date="12/26/2014"
     wacn.date="04/11/2015"
@@ -247,7 +247,7 @@
 -   [调试 Azure 应用程序][调试 Azure 应用程序]
 
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [如何监视云服务]: /manage/services/cloud-services/how-to-monitor-a-cloud-service/
+  [如何监视云服务]: /documentation/articles/cloud-services-how-to-monitor
   [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
   [先决条件]: #prereqs
   [步骤 1：通过性能计数器收集和存储数据]: #step1

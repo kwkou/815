@@ -237,8 +237,8 @@
   [链接的数据库]: ./media/web-sites-scale/16LinkedResources.png
   [缩放 SQL Server 数据库]: ./media/web-sites-scale/17ScaleDatabase.png
   [Windows Azure SQL数据库 中的帐户和结算]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
-  [如何监视网站]: /zh-cn/documentation/articles/web-sites-monitor/
-  [Windows Azure 试用版]: /pricing/1rm-trial/
+  [如何监视网站]: /zh-cn/documentation/articles/web-sites-monitor
+  [Windows Azure 试用版]: /pricing/1rmb-trial/
   [数据传输定价详细信息]: /pricing/details/data-transfer
   [最佳实践：Windows Azure 网站 (WAWS)]: http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx
   

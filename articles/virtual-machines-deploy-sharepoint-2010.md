@@ -179,7 +179,7 @@ Azure 虚拟机使开发人员能够灵活选取其所需的语言或运行时�
 </li>
 <li>使用下列任一选项构建 SQL Server VM：
 <ul>
-<li>按照上述的步骤 1 到步骤 7（<stong>步骤 3<stong> 除外）创建 SQL Server 2012 VM，使用 SQL Server 2012 映像，而不是 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到<a href="/manage/windows/common-tasks/install-sql-server/">在 Azure 上设置 SQL Server 虚拟机</a>。
+<li>按照上述的步骤 1 到步骤 7（<stong>步骤 3<stong> 除外）创建 SQL Server 2012 VM，使用 SQL Server 2012 映像，而不是 Windows Server 2008 R2 SP1 映像。有关详细信息，请转到<a href="/documentation/articles/virtual-machines-provision-sql-server">在 Azure 上设置 SQL Server 虚拟机</a>。
 <ul>
 <li>当您选择此选项时，设置过程会在 <em>C:\SQLServer_11.0_Full</em> 目录路径中保留 SQL Server 2012 设置文件的副本，以便您可以自定义安装。例如，您可通过使用许可证密钥将 SQL Server 2012 的评估版安装转换为许可版本。</li>
 </ul>

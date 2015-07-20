@@ -30,7 +30,7 @@ Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操�
 
 	**重要说明**：Azure 不支持更新的 VHDX 格式。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。
 
-	有关认可分发的列表，请参阅 [Azure 认可的分发上的 Linux](../linux-endorsed-distributions).或者，请参阅本文末尾的部分中的[非认可分发的信息](../virtual-machines-linux-create-upload-vhd-generic)。
+	有关认可分发的列表，请参阅 [Azure 认可的分发上的 Linux](linux-endorsed-distributions).或者，请参阅本文末尾的部分中的[非认可分发的信息](virtual-machines-linux-create-upload-vhd-generic)。
 
 - **Linux Azure 命令行工具。**如果您使用 Linux 操作系统创建映像，则使用此工具上载 VHD 文件。若要下载该工具，请参阅[适用于 Mac 和 Linux 的 Azure 命令行工具](http://go.microsoft.com/fwlink/?LinkID=253691&clcid=0x409)。
 
@@ -46,13 +46,13 @@ Azure 中的虚拟机运行基于您在创建虚拟机时选择的映像的操�
 
 ## <a id="prepimage"> </a>步骤 1：准备要上载的映像 ##
 
-Windows Azure 支持多种 Linux 分发（请参阅[认可分发](../linux-endorsed-distributions)）。以下文章将指导您如何准备 Azure 上受支持的各种 Linux 分发：
+Windows Azure 支持多种 Linux 分发（请参阅[认可分发](linux-endorsed-distributions)）。以下文章将指导您如何准备 Azure 上受支持的各种 Linux 分发：
 
-- **[基于 CentOS 的分发](../virtual-machines-linux-create-upload-vhd-centos)**
-- **[Oracle Linux](../virtual-machines-linux-create-upload-vhd-oracle)**
-- **[SLES 和 openSUSE](../virtual-machines-linux-create-upload-vhd-suse)**
-- **[Ubuntu](../virtual-machines-linux-create-upload-vhd-ubuntu)**
-- **[其他 - 非认可分发](../virtual-machines-linux-create-upload-vhd-generic)**
+- **[基于 CentOS 的分发](virtual-machines-linux-create-upload-vhd-centos)**
+- **[Oracle Linux](virtual-machines-linux-create-upload-vhd-oracle)**
+- **[SLES 和 openSUSE](virtual-machines-linux-create-upload-vhd-suse)**
+- **[Ubuntu](virtual-machines-linux-create-upload-vhd-ubuntu)**
+- **[其他 - 非认可分发](virtual-machines-linux-create-upload-vhd-generic)**
 
 完成上述指南中的步骤之后，您应该有一个可以上载到 Azure 中的 VHD 文件。
 

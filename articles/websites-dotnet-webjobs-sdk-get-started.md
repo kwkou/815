@@ -4,7 +4,7 @@
 
 # Azure WebJobs SDK 入门
 
-本教程说明如何创建一个在 [Azure 网站](/zh-cn/documentation/services/websites/)中使用 WebJobs SDK 处理 [Azure 队列](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)和 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)中的多层 ASP.NET MVC 应用程序。该应用程序还使用 [Azure SQL Database](http://msdn.microsoft.com/library/azure/ee336279)。 
+本教程说明如何创建一个在 [Azure 网站](/documentation/services/websites/)中使用 WebJobs SDK 处理 [Azure 队列](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)和 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)中的多层 ASP.NET MVC 应用程序。该应用程序还使用 [Azure SQL Database](http://msdn.microsoft.com/library/azure/ee336279)。 
 
 示例应用程序是一个广告公告板。用户通过输入文本和上载图像创建一个广告。它们可以通过缩略图查看一个广告列表，当用户选择广告以查看详细信息时，它们可以查看完整尺寸的图像。下面是屏幕快照：
 
@@ -69,7 +69,7 @@ Web 作业在网站的上下文中运行，并且不可单独缩放。例如，�
 * 在专用于此目的的独立网站中以 Web 作业的形式运行该程序。然后，可以独立于前端网站缩放你的后端网站。
 * 在 Azure 云服务辅助角色中运行该程序。如果选择此选项，则可以在云服务 Web 角色或网站中运行前端。
 
-本教程说明如何在一个网站中运行前端，并在同一个网站中以 Web 作业形式运行后端。有关如何选择最适合你方案的环境的信息，请参阅 [Azure 网站、云服务和虚拟机比较](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/)。
+本教程说明如何在一个网站中运行前端，并在同一个网站中以 Web 作业形式运行后端。有关如何选择最适合你方案的环境的信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
 
 [WACOM.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 
@@ -105,7 +105,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 6. 将"复制"下拉列表设置为"本地冗余"。 
 
-	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](../storage-create-storage-account/#replication-options)。
+	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](storage-create-storage-account/#replication-options)。
 
 5. 单击"创建"。 
 
@@ -170,7 +170,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
     &lt;/startup&gt;
 &lt;/configuration&gt;</pre>
 
-	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以[根据需要存储该连接字符串，并显式将它传递给 `JobHost` 对象](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#config)。
+	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以[根据需要存储该连接字符串，并显式将它传递给 `JobHost` 对象](websites-dotnet-webjobs-sdk-storage-queues-how-to/#config)。
 
 1. 将两个存储连接字符串替换为先前复制的连接字符串。
 
@@ -424,7 +424,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 	* 在 Web 项目  *webjobs-list.json* 文件夹中添加一个文件。
 	* 在 Web 作业项目中安装 Microsoft.Web.WebJobs.Publish NuGet 包。
 	 
-	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/zh-cn/documentation/articles/websites-dotnet-deploy-webjobs/)。
+	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 ### 添加 NuGet 包
 
@@ -779,21 +779,21 @@ HttpPost  `Edit` 方法的代码和它类似，不同之处在于如果用户选
 
 有关如何编写使用 WebJobs SDK 属性的函数的详细信息，请参阅以下资源：
 
-* [如何通过 WebJobs SDK 使用 Azure 队列存储](../websites-dotnet-webjobs-sdk-storage-queues-how-to)
-* [如何通过 WebJobs SDK 使用 Azure Blob 存储](../websites-dotnet-webjobs-sdk-storage-blobs-how-to)
-* [如何通过 WebJobs SDK 使用 Azure 表存储](../websites-dotnet-webjobs-sdk-storage-tables-how-to)
-* [如何通过 WebJobs SDK 使用 Azure Service Bus](../websites-dotnet-webjobs-sdk-service-bus)
+* [如何通过 WebJobs SDK 使用 Azure 队列存储](websites-dotnet-webjobs-sdk-storage-queues-how-to)
+* [如何通过 WebJobs SDK 使用 Azure Blob 存储](websites-dotnet-webjobs-sdk-storage-blobs-how-to)
+* [如何通过 WebJobs SDK 使用 Azure 表存储](websites-dotnet-webjobs-sdk-storage-tables-how-to)
+* [如何通过 WebJobs SDK 使用 Azure Service Bus](websites-dotnet-webjobs-sdk-service-bus)
 
 >[AZURE.NOTE] 
 >* 如果在多台虚拟机上运行你的网站，此程序将运行在每个计算机上，并且每台计算机将等待触发器并尝试运行功能。在某些情况下，这可能会导致某些函数处理相同的数据两次，因此函数应该是幂等的（编写的这些函数在使用相同输入数据重复调用时不会生成重复的结果）。
->* 有关如何实现正常关闭的信息，请参阅[正常关闭](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#graceful)。   
+>* 有关如何实现正常关闭的信息，请参阅[正常关闭](websites-dotnet-webjobs-sdk-storage-queues-how-to/#graceful)。   
 >* 为方便起见， `ConvertImageToThumbnailJPG` 方法中的代码（未显示）使用  `System.Drawing` 命名空间中的类。但是，此命名空间中的类已设计用于 Windows 窗体。不支持在 Windows 或 ASP.NET 服务中使用。
 
 ### WebJobs SDK 与不使用 WebJobs SDK 的云服务辅助角色
 
-如果比较结果中的代码量  `GenerateThumbnails` 方法在此示例应用程序中的辅助角色代码[云服务的应用程序版本](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/)，你可以看到 WebJobs SDK 为你做多少工作。优点是大于它出现，因为云服务的示例应用程序代码不会执行所有操作（例如病毒消息处理）你需要像在生产应用程序，和它为你做 WebJobs SDK 中。
+如果比较结果中的代码量  `GenerateThumbnails` 方法在此示例应用程序中的辅助角色代码[云服务的应用程序版本](/documentation/articles/cloud-services-dotnet-get-started/)，你可以看到 WebJobs SDK 为你做多少工作。优点是大于它出现，因为云服务的示例应用程序代码不会执行所有操作（例如病毒消息处理）你需要像在生产应用程序，和它为你做 WebJobs SDK 中。
 
-在应用程序的云服务版本中，记录 ID 是队列消息中的唯一信息和后台进程从数据库中获取图像 URL。在应用程序的 WebJobs SDK 版本，队列消息包含图像 URL，以便它可以提供给  `Blob` 属性。如果队列消息没有 Blob URL，则你可以[在方法正文而不是方法签名中使用 Blob 属性](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#blobbody)。
+在应用程序的云服务版本中，记录 ID 是队列消息中的唯一信息和后台进程从数据库中获取图像 URL。在应用程序的 WebJobs SDK 版本，队列消息包含图像 URL，以便它可以提供给  `Blob` 属性。如果队列消息没有 Blob URL，则你可以[在方法正文而不是方法签名中使用 Blob 属性](websites-dotnet-webjobs-sdk-storage-queues-how-to/#blobbody)。
 
 ### 在 Web 作业的外部使用 WebJobs SDK
 

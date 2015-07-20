@@ -296,7 +296,7 @@ For 访问模拟器存储：
 - 参阅位于以下位置的 PHP 块 Blob 示例：<https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/BlockBlobExample.php>.
 - 参阅位于以下位置的 PHP 页 Blob 示例：<https://github.com/WindowsAzure/azure-sdk-for-php-samples/blob/master/storage/PageBlobExample.php>
 
-[download]: /zh-cn/documentation/articles/php-download-sdk/
+[download]: /documentation/articles/php-download-sdk
 [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [container-acl]: http://msdn.microsoft.com/zh-cn/library/azure/dd179391.aspx
 [error-codes]: http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx

@@ -1,4 +1,4 @@
-﻿<properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
+<properties linkid="develop-net-tutorials-multi-tier-web-site-1-overview" pageTitle="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" metaKeywords="Azure tutorial, Azure storage tutorial, Azure multi-tier tutorial, MVC Web Role tutorial, Azure worker role tutorial, Azure blobs tutorial, Azure tables tutorial, Azure queues tutorial" description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。该应用程序运行在云服务中，使用 Web 角色和辅助角色，并使用 Azure 存储表、队列和 Blob。" metaCanonical="" services="cloud-services,storage" documentationCenter=".NET" title="Azure 云服务教程：ASP.NET MVC Web 角色、辅助角色、Azure 存储表、队列和 Blob" authors="tdykstra,riande" solutions="" manager="wpickett" editor="mollybos" />
 <tags ms.service="cloud-services,storage"
     ms.date="12/23/2014"
     wacn.date="04/11/2015"
@@ -1112,7 +1112,7 @@ $60.43
   [Azure Connect]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433122.aspx
   [Azure 虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
   [虚拟 IP 交换]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee517253.aspx "VIP 交换"
-  [Azure 执行模型]: /manage/windows/fundamentals/compute/
+  [Azure 执行模型]: /documentation/articles/fundamentals-application-models
   [Azure 价格计算器]: http://www.windowsazure.cn/zh-cn/pricing/calculator/
   [SendGrid Azure]: http://sendgrid.com/windowsazure.html
   [Azure 云服务 99.95% 服务级别协议 (SLA)]: https://www.windowsazure.cn/zh-cn/support/legal/sla/ "SLA"
