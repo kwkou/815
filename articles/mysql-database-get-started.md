@@ -27,28 +27,28 @@
 
 >[AZURE.NOTE]**强烈建议您将Azure服务放在同一个区域，选择一个最靠近您的位置。**
 
-##<a id="step2"></a>步骤步骤二：配置防火墙
+##<a id="step2"></a>步骤二：配置防火墙
 首次从您的客户端连MySQL 数据库 on Azure之前你需要配置防火墙，将您的客户端公网IP地址（也可以是IP地址段）加入到白名单中。在管理门户上，点击您的实例，然后点击“配置”，可以通过以下界面完成IP地址添加。
 
 ![配置MySQL服务器](./media/mysql-database-get-started/config-mysql-server.png) 
 
 默认您在Azure上的其他服务（包括在Azure上的VM）允许访问您的MySQL数据库，您无需再手动添加IP地址。您也可以更改此默认功能，在“允许的服务”中，“Windows Azure 服务”一项选择“否”
 
-##<a id="step3"></a>步骤步骤三：设置备份时间
+##<a id="step3"></a>步骤三：设置备份时间
 MySQL 数据库 on Azure支持两种备份形式：按需备份和每日定时备份。您可以选中您的MySQL服务器，点击“配置”进行每日备份时间的设置。您可以通过下拉菜单选择自动备份时间。
 
 ![备份设置](./media/mysql-database-get-started/config-backup-window.png)
 
-##<a id="step4"></a>步骤步骤四：创建数据库
+##<a id="step4"></a>步骤四：创建数据库
 在一个MySQL服务器中，用户可创建多个数据库，数量上没有限制，但是多个数据库会共享服务器资源。您可以选定MySQL服务器，点击“数据库”，点击左下角“新建”进行数据库的创建。
 
 ![创建数据库](./media/mysql-database-get-started/create-mysql-db.png)
 
-##<a id="step5"></a>步骤步骤五： 连接数据库
+##<a id="step5"></a>步骤五： 连接数据库
 您可以通过查看管理门户的”仪表盘”获取server地址，通过应用程序连接您在MySQL 数据库 on Azure的数据库。
 >[AZURE.NOTE]MySQL 数据库 on Azure支持SSL连接，如果你的应用与MySQL数据库不在同一个Azure数据中心，我们建议你用SSL连接以增强安全性。
 
-##<a id="step6"></a>步骤步骤六：数据迁移（可选）
+##<a id="step6"></a>步骤六：数据迁移（可选）
 如果您需要把数据库从别的地方迁移到MySQL 数据库 on Azure，当数据量大的情况下建议您通过以下步骤完成迁移。
 - 第一步，把数据从现在的数据库导出到一个文件（比如用mysqldump工具）。
 - 第二步，将数据库导出文件传输到您在Azure上的某台VM上。您可以用您熟悉的数据传输工具（比如FTP等），您也可以用[AzCopy](/documentation/articles/storage-use-azcopy)这一工具（用AzCopy需要先把文件传输到一个存储blob，再传至VM）。
