@@ -63,9 +63,9 @@
 
 6. **安装 Azure 代理**
 
-    可以始终在 [github](https://github.com/Azure/WALinuxAgent/releases) 上找到 Azure 代理的最新版本。版本 2.0.10 及更高版本正式支持 FreeBSD 10 及更高版本。
+    可以始终在 [github](https://github.com/Azure/WALinuxAgent/releases) 上找到 Azure 代理的最新版本。版本 2.0.12 及更高版本正式支持 FreeBSD 10 及更高版本。
 
-		# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.10/waagent --no-check-certificate
+		# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.12/waagent --no-check-certificate
 		# mv waagent /usr/sbin
 		# chmod 755 /usr/sbin/waagent
 		# /usr/sbin/waagent -install
