@@ -8,7 +8,7 @@
 
 
 
-# 设置 SQL Server 虚拟机在 Azure 的 #
+# 设置在 Azure 中的 SQL Server 虚拟机 #
 
 Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。您可以从库中选择一个虚拟机映像，并单击几下，您可以设置虚拟机到 Azure 环境。
 

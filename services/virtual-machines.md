@@ -1,7 +1,7 @@
-﻿<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="虚拟机技术 - Azure 微软云" metaKeywords="Virtual Machine,虚拟机,设置,迁移,管理,Visual Studio,映像,镜像,image,VHD,磁盘管理,镜像管理,面向开发,面向企业,SQL Server,sharepoint,SDK下载,虚拟机常见问题,开发,测试,.Net,NuGet,虚拟机可用性,SDK下载" description="本文是用户了解微软云提供的虚拟机服务的入口页面，无论是虚拟机新手、开发人员，还是企业用户，都可以在本文中找到如何设置、迁移和管理虚拟机的相关文档链接。还可以透过本页下载微软提供的丰富的SDK供开发者使用。使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的映像以便创建自定义虚拟机。" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="虚拟机技术的相关指南" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-virtual-machine" urlDisplayName="Windows Azure 虚拟机" pageTitle="虚拟机技术 - Azure 微软云" metaKeywords="Virtual Machine,虚拟机,设置,迁移,管理,Visual Studio,映像,镜像,image,VHD,磁盘管理,镜像管理,面向开发,面向企业,SQL Server,sharepoint,SDK下载,虚拟机常见问题,开发,测试,.Net,NuGet,虚拟机可用性,SDK下载" description="本文是用户了解微软云提供的虚拟机服务的入口页面，无论是虚拟机新手、开发人员，还是企业用户，都可以在本文中找到如何设置、迁移和管理虚拟机的相关文档链接。还可以透过本页下载微软提供的丰富的SDK供开发者使用。使用虚拟机可在你需要灵活的资源时配置可缩放的按需计算基础结构。创建运行 Windows、Linux 和企业应用程序的 VM。或者，捕获你自己的映像以便创建自定义虚拟机。" metaCanonical="" services="Virtual Machine" documentationCenter="Services" title="虚拟机技术的相关指南" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Virtual Machine"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="07/23/2015"
     />
 
 #虚拟机
@@ -96,7 +96,7 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 
 准备迁移计划，了解针对在 Azure 虚拟机上运行的 SQL Server 的许可，以及评估迁移途径。
 
-####[了解 Azure 虚拟机中的 SQL Server 部署选项](http://msdn.microsoft.com/zh-cn/library/azure/dn133141.aspx)
+####[了解 Azure 虚拟机中的 SQL Server 部署选项](/documentation/articles/virtual-machines-provision-sql-server)
 
 帮助您决定如何在 Windows Azure 虚拟机中部署 SQL Server 的指导 – 您可以对多种方法进行评估以便决定适合您的方法。
 
@@ -110,7 +110,7 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 
 由于 SharePoint 2013 的硬件要求较高，您可能无法提供合格的备用硬件来实施本地实验环境。此教程说明如何在 Azure 中构建一个用于研究、测试、演示、开发环境或概念验证的 SharePoint 2013 实验环境。
 
-####[在 Azure 基础结构服务上配置和部署 SharePoint 2013 场](http://msdn.microsoft.com/zh-cn/library/azure/dn275959.aspx?amp;clcid=0x804)
+####[在 Azure 基础结构服务上配置和部署 SharePoint 2013 场](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview)
 
 在一组虚拟机上配置和部署 SharePoint 场。在本教程中，您将使用市场中的映像创建一组虚拟机，然后将创建一个域。之后，您将计算机加入该域中并运行 SharePoint 配置向导。最后，您将了解如何启用 SQL Server AlwaysOn 功能以实现高可用性。
 
@@ -119,10 +119,6 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 ####[Active Directory](http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
 
 提供有关在 Azure 中的虚拟机上使用 Windows Server Active Directory 时将需要的背景信息以及针对建议的部署方案的指南。
-
-####[BizTalk Server](http://msdn.microsoft.com/zh-cn/library/azure/jj248689)
-
-介绍如何在 Azure 中的虚拟机上配置 BizTalk Server 2013。
 
 ####[桌面托管](http://msdn.microsoft.com/zh-cn/library/azure/dn451351.aspx)
 
@@ -136,7 +132,7 @@ Cerebrata 团队说明他们如何以及为何决定使用 Azure 虚拟机进行
 
 指导您在 Azure 虚拟机群集上部署 HPC Pack 以运行大型计算工作负载，例如本质并行的应用程序。
 
-####[Oracle 软件](http://msdn.microsoft.com/zh-cn/library/azure/dn439770.aspx)
+####[Oracle 软件](/documentation/articles/virtual-machines-oracle-azure-virtual-machines)
 
 用于设置运行 Oracle Database、WebLogic Server 和 Java 平台的虚拟机的指南和教程。
 

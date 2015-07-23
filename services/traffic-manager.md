@@ -1,39 +1,41 @@
-﻿
-
 <properties linkid="流量管理器" urlDisplayName="Windows Azure 流量管理器" pageTitle="流量管理器 - Azure 微软云" metaKeywords="Azure 流量管理器,Traffic Manager,流量分发,流量控制,DNS查询," description="将用户流量分发到同一数据中心内或其他数据中心中的类似托管服务中。使用 流量管理器 作为您的整体网络解决方案的一部分 - 流量管理器 将智能策略引擎应用于您的域名上的 DNS 查询中，以便您可以出于性能、业务连续性、价格、合规性、法律或纳税目的将流量发送到最佳的数据中心。" metaCanonical="" services="流量管理器" documentationCenter="Services" title="Learn how 流量管理器 distributes user traffic to hosted services within or across data centers" authors="" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="流量管理器"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="07/23/2015"
     />
 
 
-#流量管理器
+#流量管理器  
 
-####将用户流量分发到同一数据中心内或其他数据中心中的类似托管服务中。
+##概览  
 
-使用 流量管理器 作为您的整体网络解决方案的一部分 - 流量管理器 将智能策略引擎应用于您的域名上的 DNS 查询中，以便您可以出于性能、业务连续性、价格、合规性、法律或纳税目的将流量发送到最佳的数据中心。
+- [什么是流量管理器](/documentation/articles/traffic-manager-overview)  
+- [流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)  
+- [监视流量管理器](/documentation/articles/traffic-manager-monitoring)  
 
-####快速链接
+##开始使用  
 
--   [服务概述](/home/features/traffic-manager)
--   [定价详细信息](/home/features/traffic-manager/#price)
+- [创建配置文件](/documentation/articles/traffic-manager-manage-profiles)  
+- [添加终结点](/documentation/articles/traffic-manager-endpoints) 
+- [将公司域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain)  
+
+##如何  
+
+- [配置故障转移负载平衡](/documentation/articles/traffic-manager-configure-failover-load-balancing)  
+- [配置循环负载平衡](/documentation/articles/traffic-manager-configure-round-robin-load-balancing)  
+- [配置性能负载平衡](/documentation/articles/traffic-manager-configure-performance-load-balancing)  
+- [测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings)  
 
 
-####特色
+<!--##自动化  
 
--   [控制分配到托管服务的用户流量](http://msdn.microsoft.com/zh-cn/library/azure/hh744833.aspx)
--   [配置 流量管理器](http://msdn.microsoft.com/zh-cn/library/azure/hh744830.aspx)
+- [Azure资源管理器支持](/documentation/articles/traffic-manager-powershell-arm)  
+- [网络资源提供程序](/documentation/articles/resource-groups-networking)-->  
+        
+##技术资源  
 
-##教程和指南
+- [REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh758255.aspx)  
+- [PowerShell命令行](https://msdn.microsoft.com/zh-cn/library/azure/dn690250.aspx)  
 
-###探究
-
-####[流量管理器 概述](http://msdn.microsoft.com/zh-cn/library/azure/hh744833.aspx)
-
-该技术主题从概念上介绍了如何借助 流量管理器 控制分发给 Azure 托管服务的用户流量。
-
-####[流量管理器 配置任务](http://msdn.microsoft.com/zh-cn/library/azure/hh744830.aspx)
-
-使用此过程主题集合可帮助配置、测试和管理您的 流量管理器 设置。
 
 

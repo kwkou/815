@@ -1,7 +1,7 @@
-﻿<properties linkid="dev-net-Active-Directory" urlDisplayName="Windows Azure Active Directory" pageTitle="Active Directory - Azure 微软云" metaKeywords="Active Directory,活动目录,AAD,身份标识,身份认证,策略,目录服务,访问控制,ACS,ADDS,ADFS" description="管理服务和应用程序的标识和访问。Azure Active Directory 是一个全面的标识和访问管理云解决方案。它将核心目录服务、高级标识监管、安全防护和应用程序访问管理相结合。Azure AD 还为开发人员提供了标识管理平台，以便基于集中的策略和规则为应用程序提供访问控制。" metaCanonical="" services="Active Directory" documentationCenter="Services" title="Manage identity and access of services and applications" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-Active-Directory" urlDisplayName="Windows Azure Active Directory" pageTitle="Active Directory - Azure 微软云" metaKeywords="Active Directory,活动目录,AAD,身份标识,身份认证,策略,目录服务,访问控制,ACS,ADDS,ADFS" description="管理服务和应用程序的标识和访问。Azure Active Directory 是一个全面的标识和访问管理云解决方案。它将核心目录服务、高级标识监管、安全防护和应用程序访问管理相结合。Azure AD 还为开发人员提供了标识管理平台，以便基于集中的策略和规则为应用程序提供访问控制。" metaCanonical="" services="Active Directory" documentationCenter="Services" title="Manage identity and access of services and applications" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Active Directory"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="07/23/2015"
     />
 
 #Azure Active Directory 文档
@@ -22,7 +22,7 @@ Azure Active Directory 是一个全面的标识和访问管理云解决方案。
 
 ###探究
 
-####[什么是 Azure Active Directory？](/zh-cn/documentation/articles/active-directory-whatis)
+####[什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis)
 
 Azure AD 的快速概述。
 
@@ -40,7 +40,7 @@ Azure AD 高级版是在 Azure AD 的大量免费功能基础之上构建的，�
 
 浏览和运行针对 .NET、iOS、Java、Javascript 和 PHP 等的代码示例。
 
-####[使用多种方案验证 Azure AD 用户身份](http://msdn.microsoft.com/zh-cn/library/azure/dn499820.aspx)
+####[使用多种方案验证 Azure AD 用户身份](/documentation/articles/active-directory-authentication-scenarios)
 
 了解 Azure AD 支持的常见身份验证方案以及如何将其用于应用程序。
 
@@ -58,9 +58,6 @@ Azure AD 高级版是在 Azure AD 的大量免费功能基础之上构建的，�
 
 了解 Azure 管理门户和 Office 365 帐户门户等门户如何使用单个 Azure AD 实例帮助租户管理员管理其组织的标识和订阅数据。
 
-####[对 Azure AD 使用多重身份验证](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj713614.aspx)
-
-了解多重身份验证的概念、最佳实践以及你作为全局管理员如何在 Azure AD 中使用多重身份验证来在云中保护你组织的标识数据。
 
 ####[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx)
 
