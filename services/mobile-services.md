@@ -1,7 +1,7 @@
-﻿<properties linkid="dev-net-Mobile-Service" urlDisplayName="Windows Azure Mobile Service" pageTitle="移动服务 - Azure 微软云" metaKeywords="Mobile Service,Azure 移动服务,iOS,Windows Phone,Android,HTML,PhoneGap,Sencha,Office 365,AD,Active Directory,.Net,Node.js,Web API,动态受众细分,推送,通知,推送通知,服务端用户授权,后端作业,移动服务SDK,REST API" description="本页面是微软Azure云服务中移动服务的入口页。通过本页面，你可以找到有关Azure移动服务的相关内容。包括：iOS、Windows Phone、Android等主流移动操作系统上如何使用Azure移动服务提供的SDK、API等，使用你熟悉的.Net、Node.js等架构开发应用程序；如何将应用程序注册到Windows应用商店；如何链接到AD、SQL 数据库、MongoDB、Office 365、SharePoint；如何添加身份认证，如何对客户端进行授权等。" metaCanonical="" services="Mobile Service" documentationCenter="Services" title="Add a cloud backend to your app in minutes" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-Mobile-Service" urlDisplayName="Windows Azure Mobile Service" pageTitle="移动服务 - Azure 微软云" metaKeywords="Mobile Service,Azure 移动服务,iOS,Windows Phone,Android,HTML,PhoneGap,Sencha,Office 365,AD,Active Directory,.Net,Node.js,Web API,动态受众细分,推送,通知,推送通知,服务端用户授权,后端作业,移动服务SDK,REST API" description="本页面是微软Azure云服务中移动服务的入口页。通过本页面，你可以找到有关Azure移动服务的相关内容。包括：iOS、Windows Phone、Android等主流移动操作系统上如何使用Azure移动服务提供的SDK、API等，使用你熟悉的.Net、Node.js等架构开发应用程序；如何将应用程序注册到Windows应用商店；如何链接到AD、SQL 数据库、MongoDB、Office 365、SharePoint；如何添加身份认证，如何对客户端进行授权等。" metaCanonical="" services="Mobile Service" documentationCenter="Services" title="Add a cloud backend to your app in minutes" authors="" solutions="" manager="" editor="" />
 <tags ms.service="Mobile Service"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="07/23/2015"
     />     
 
 
@@ -122,6 +122,7 @@ Azure 移动服务 SDK 包括支持进行 Windows 应用商店和 iOS 应用程�
 移动服务提供一系列 REST API，可用于访问和更改表数据以及检索经过身份验证的登录信息。此参考提供有关使用移动服务 API 的常规信息，以及每个可用操作的特定参考信息。
 
 <!----------- Links ---------->
+
 [iOS getstarted]:/documentation/articles/mobile-services-ios-get-started/
 [WP getstarted]:/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started/
 [Windows Store getstarted]:/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/
