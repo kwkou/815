@@ -1,12 +1,19 @@
-<properties linkid="develop-mobile-tutorials-build-realtime-apps-with-pusher-ios" urlDisplayName="使用 Pusher 生成实时应用程序" pageTitle="使用 Pusher 生成实时应用程序 (iOS) - 移动服务" metaKeywords="" description="了解如何使用 Pusher 将通知发送到 iOS 上的 Azure 媒体服务应用程序。" metaCanonical="" services="" documentationCenter="Mobile" title="Build Real-time Apps with Mobile Services and Pusher" authors="" solutions="" manager="" editor="" />
-<tags ms.service=""
-    ms.date="10/10/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	pageTitle="使用 Pusher 生成实时应用程序 (iOS) - 移动服务" 
+	description="了解如何使用 Pusher 将通知发送到 iOS 上的 Azure 媒体服务应用程序。" 
+	services="mobile-services" 
+	documentationCenter="ios" 
+	authors="lindydonna" 
+	manager="dwrede" 
+	editor=""/>
+
+<tags 
+	ms.service="mobile-services" 
+	ms.date="06/05/2015" 
+	wacn.date="07/25/2015"/>
 
 
-
-# 使用移动服务和 Pusher 生成实时应用程序
+#  使用移动服务和 Pusher 生成实时应用程序
 <div class="dev-center-tutorial-selector sublanding">
 	<a href="" title="iOS" class="current">iOS</a>
 </div>
@@ -15,7 +22,7 @@
 
 [向用户推送通知][]教程说明了如何使用推送通知来让用户知道 Todo 列表中已添加了新项。推送通知是显示偶发性更改的极佳方式。但是，应用程序有时需要频繁发送实时通知。在此情况下，你可以使用 Pusher API 将实时通知添加到你的移动服务。在本教程中，我们将结合使用 Pusher 和移动服务，使 Todo 列表在运行的应用程序实例发生更改时保持同步。
 
-Pusher 是一个基于云的服务，与移动服务一样，它可以让你无比轻松地生成实时应用程序。你可以使用 Pusher 快速生成实时投票、聊天室、多玩家游戏和协作应用程序，广播实时数据和内容，但这只是它的一些最基本功能！有关详细信息，请参阅 [http://pusher.com](http://pusher.com)。
+Pusher 是一个基于云的服务，与移动服务一样，它可以让你无比轻松地生成实时应用程序。你可以使用 Pusher 快速生成实时投票、聊天室、多玩家游戏和协作应用程序，广播实时数据和内容，但这只是它的一些最基本功能！ 有关详细信息，请参阅 [http://pusher.com](http://pusher.com)。
 
 本教程将指导你完成在 Todo 列表应用程序中添加实时协作功能的以下基本步骤：
 
@@ -24,13 +31,13 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 3. [安装服务器脚本][]
 4. [测试应用程序][]
 
-本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门][]。
+本教程基于移动服务快速入门。在开始本教程之前，必须先[完成移动服务入门][]。
 
-## <a name="sign-up"></a>创建新的 Pusher 帐户
+##  <a name="sign-up"></a>创建新的 Pusher 帐户
 
-[WACOM.INCLUDE [pusher-sign-up](../includes/pusher-sign-up.md)]
+[AZURE.INCLUDE [pusher-sign-up](../includes/pusher-sign-up.md)]
 
-## <a name="update-app"></a>更新应用程序
+##  <a name="update-app"></a>更新应用程序
 
 设置 Pusher 帐户后，下一步就是修改 iOS 应用程序代码以使用新功能。
 
@@ -38,42 +45,42 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 [libPusher][] 库可让你从 iOS 访问 Pusher。
 
-1. [从此处][libPusherDownload] 下载 libPusher 库。
+1. [从此处][libPusherDownload]下载 libPusher 库。
 
 2. 在项目中创建一个名为 _libPusher_ 的组。
 
 3. 在查找工具中，解压缩下载的 zip 文件，选择 **libPusher-combined.a** 和 **/headers** 文件夹，然后将这些项拖动到项目中的 **libPusher** 组内。
 
-4. 选中**"将项复制到目标组的文件夹中"**，然后单击**"完成"**
+4. 选中“将项复制到目标组的文件夹中”，然后单击“完成”
 
 	![][add-files-to-group]
 
    这就会将 libPusher 文件复制到你的项目中。
 
-5. 在项目资源管理器中的项目根目录位置，单击**"生成阶段"**，然后单击**"添加生成阶段"**和**"添加复制文件"**。
+5. 在项目资源管理器中的项目根目录位置，单击“生成阶段”，然后单击“添加生成阶段”和“添加复制文件”。
 
 6. 将 **libPusher-combined.a** 文件从项目资源管理器拖放到新的生成阶段。
 
-7. 将**"目标"**更改为**"框架"**，然后单击**"仅在安装时复制"**。
+7. 将“目标”更改为“框架”，然后单击“仅在安装时复制”。
 
 	![][add-build-phase]
 
-8. 在**"将二进制文件链接到库"**区域中添加以下库：
+8. 在“将二进制文件链接到库”区域中添加以下库：
 
 	- libicucore.dylib
 	- CFNetwork.framework
 	- Security.framework
 	- SystemConfiguration.framework
 
-9. 最后，在**"生成设置"**中，找到目标生成设置**"其他链接器标志"**，并添加 **-all_load** 标志。
+9. 最后，在“生成设置”中，找到目标生成设置“其他链接器标志”，并添加 **all_load** 标志。
 
 	![][add-linker-flag]
 
-	此时将显示针对"调试"生成目标设置的 **-all_load** 标志。
+	此时将显示针对“调试”生成目标设置的 **-all_load** 标志。
 
 该库现已安装并可供使用。
 
-### 向应用程序添加代码
+###  向应用程序添加代码
 
 1. 在 Xcode 中，打开 **QSTodoService.h** 文件并添加以下方法声明：
 
@@ -229,7 +236,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 		    }];
 		}
 
-11. 将 `**your_app_key**` 占位符替换为你前面从"连接信息"对话框中复制的 app_key 值。
+11. 将 `**your_app_key**` 占位符替换为你前面从“连接信息”对话框中复制的 app_key 值。
 
 12. 将 **onAdd** 方法替换为以下代码：
 
@@ -261,7 +268,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 
 
-<h2><a name="install-scripts"></a>安装服务器脚本</h2>
+## <a name="install-scripts"></a>安装服务器脚本
 
 
 
@@ -269,16 +276,16 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 
 
-1. 登录到 [Azure 管理门户]、单击**"移动服务"**，然后单击您的移动服务。
+1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的移动服务。
 
 
-2. 在管理门户中，单击**"数据"**选项卡，然后单击**TodoItem**表。
+2. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
 
 	![][1]
 
 
 
-3. 在 **TodoItem** 中，单击**"脚本"**选项卡，然后选择**"插入"**。
+3. 在 **TodoItem** 中，单击“脚本”选项卡，然后选择“插入”。
 
 
 	![][2]
@@ -321,17 +328,17 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 
 
-5. 将上述脚本中的占位符替换为你前面从"连接信息"对话框中复制的值。
+5. 将上述脚本中的占位符替换为你前面从“连接信息”对话框中复制的值。
 
 	- **`**your_app_id**`**：app&#95;id 值
 	- **`**your_app_key**`**：app&#95;key 值
 	- **`**your_app_key_secret**`**：app&#95;key&#95;secret
 
 
-6. 单击**"保存"**按钮。现在你已配置了一个脚本，每当在 **TodoItem** 表中插入一个新项时，该脚本都会向 Pusher 发布事件。
+6. 单击“保存”按钮。现在你已配置了一个脚本，每当在 **TodoItem** 表中插入一个新项时，该脚本都会向 Pusher 发布事件。
 
 
-7. 从**"操作"**下拉列表中选择**"更新"**。
+7. 从“操作”下拉列表中选择“更新”。
 
 
 8. 将 update 函数替换为以下代码：
@@ -370,17 +377,17 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 9. 针对此脚本重复步骤 5 以替换占位符。
 
 
-10. 单击**"保存"**按钮。现在你已配置了一个脚本，每当更新新项时，该脚本都会向 Pusher 发布事件。
+10. 单击“保存”按钮。现在你已配置了一个脚本，每当更新新项时，该脚本都会向 Pusher 发布事件。
 
 
 
-<h2><a name="test-app"></a>测试应用程序</h2>
+## <a name="test-app"></a>测试应用程序
 
 
 
 若要测试应用程序，你需要运行两个实例。可以在 iOS 设备上运行一个实例，在 iOS 模拟器上运行另一个实例。
 
-1. 连接你的 iOS 设备，按**"运行"**按钮（或者按 Command+R 键）在设备上启动该应用程序，然后停止调试。 
+1. 连接你的 iOS 设备，按“运行”按钮（或者按 Command+R 键）在设备上启动该应用程序，然后停止调试。 
 
 	你的应用程序现已安装到设备上。
 
@@ -388,17 +395,17 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 	现在，你已运行了该应用程序的两个实例。
 
-3. 在其中一个应用程序实例中添加一个新的 Todo 项。 
+3. 在其中一个应用程序实例中添加一个新的 Todo 项。
 
 	检查添加的项是否出现在另一个实例中。
 
-4. 在一个应用程序实例中选中某个 Todo 项可将它标记为已完成。 
+4. 在一个应用程序实例中选中某个 Todo 项可将它标记为已完成。
 
-	检查该项是否已从另一个实例中消失。 
+	检查该项是否已从另一个实例中消失。
 
 祝贺你！你已成功配置了你的移动服务应用程序，现在它可以在所有客户端之间实时同步。
 
-## <a name="nextsteps"> </a>后续步骤
+##  <a name="nextsteps"></a>后续步骤
 
 现在你已知道，将 Pusher 服务与移动服务结合使用是多么的容易。请点击以下链接了解有关 Pusher 的详细信息。
 
@@ -414,6 +421,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 [测试应用程序]: #test-app
 
 <!-- Images. -->
+
 [1]: ./media/mobile-services-ios-build-realtime-apps-pusher/mobile-portal-data-tables.png
 [2]: ./media/mobile-services-ios-build-realtime-apps-pusher/mobile-insert-script-push2.png
 
@@ -422,12 +430,15 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 [add-linker-flag]: ./media/mobile-services-ios-build-realtime-apps-pusher/pusher-ios-add-linker-flag.png
 
 <!-- URLs. -->
-[向用户推送通知]: /zh-cn/documentation/articles/mobile-services-ios-push-notifications-app-users
-[移动服务入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+
+[向用户推送通知]: /documentation/articles/mobile-services-ios-push-notifications-app-users
+[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [libPusher]: http://go.microsoft.com/fwlink/p?LinkId=276999
 [libPusherDownload]: http://go.microsoft.com/fwlink/p/?LinkId=276998
 
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
-[移动服务服务器脚本参考]:/zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
+
+<!---HONumber=HO63-->

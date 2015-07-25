@@ -1,11 +1,22 @@
-﻿<properties title="移动服务入门" pageTitle="移动服务入门" metaKeywords="Azure, Getting Started, Mobile Services" description="" services="mobile-services" documentationCenter="" authors="ghogen, kempb" />
+<properties 
+	pageTitle="" 
+	description="如何在 Visual Studio 中的 JavaScript 项目内开始使用 Azure 移动服务" 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="patshea123" 
+	manager="douge" 
+	editor=""/>
 
-<tags wacn.date="04/11/2015" ms.service="mobile-services" ms.date="02/02/2015" />
+<tags 
+	ms.service="mobile-services" 
+	ms.date="05/06/2015" 
+	wacn.date="07/25/2015"/>
 
- [入门][入门]
- [发生了什么情况][发生了什么情况]
+#  移动服务入门
 
-## 移动服务入门
+> [AZURE.SELECTOR]
+> - [Getting Started](vs-mobile-services-javascript-getting-started)
+> - [What Happened](vs-mobile-services-javascript-what-happened)
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 
@@ -17,9 +28,9 @@
 
 客户端对象已添加到您的项目。其名称是移动服务的名称，后面附加“Client”。以下代码将获取对表（包含 TodoItem 数据）的引用，您可以将该引用用于后续操作以便读取和更新数据表。
 
-    var todoTable = yourMobileServiceClient.getTable('TodoItem');
+	var todoTable = yourMobileServiceClient.getTable('TodoItem');
 
-##### 添加条目
+##### 添加条目 
 
 将新的项目插入数据表。ID（类型字符串的 GUID）将自动创建为新行的主密钥。不要更改 ID 列的类型，因为移动服务基础结构将使用它。
 
@@ -55,11 +66,11 @@
         listItems.winControl.itemDataSource = todoItems.dataSource;
     });
 
-有关您可以使用的查询的更多示例，请参阅[查询对象][查询对象]。
+有关您可以使用的查询的更多示例，请参阅[查询对象](http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx)。
 
 ##### 更新条目
 
-更新数据表中的行。在此示例中，todoItem 是更新的项目，而且项目是从移动服务返回的相同项目。移动服务响应时，本地 todoItems 列表中的项目将使用 [splice][splice] 方法进行更新。对返回的 [Promise][Promise] 对象调用 [done][Promise] 方法以获取插入对象的副本并处理任何错误。
+更新数据表中的行。在此示例中，todoItem 是更新的项目，而且项目是从移动服务返回的相同项目。移动服务响应时，本地 todoItems 列表中的项目将使用 [splice](http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx) 方法进行更新。对返回的 [Promise]() 对象调用 [done]() 方法以获取插入对象的副本并处理任何错误。
 
         todoTable.update(todoItem).done(function (item) {
             todoItems.splice(todoItems.indexOf(item), 1, item);
@@ -67,17 +78,14 @@
 
 ##### 删除条目
 
-删除数据表中的行。对返回的 [Promise][Promise] 对象调用 [done][Promise] 方法以获取插入对象的副本并处理任何错误。
+删除数据表中的行。对返回的 [Promise]() 对象调用 [done]() 方法以获取插入对象的副本并处理任何错误。
 
-    todoTable.delete(todoItem).done(function (item) {
-        todoItems.splice(todoItems.indexOf(item), 1);
+	todoTable.delete(todoItem).done(function (item) {
+	    todoItems.splice(todoItems.indexOf(item), 1);
     }
 
-[详细了解移动服务][详细了解移动服务]
 
-  [入门]: /documentation/articles/vs-mobile-services-javascript-getting-started/
-  [发生了什么情况]: /documentation/articles/vs-mobile-services-javascript-what-happened/
-  [查询对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
-  [splice]: http://msdn.microsoft.com/zh-cn/library/windows/apps/Hh700810.aspx
-  [Promise]: 
-  [详细了解移动服务]: http://www.windowsazure.cn/manage/services/mobile-services/
+
+[详细了解移动服务](/documentation/services/mobile-services)
+
+<!---HONumber=HO63-->
