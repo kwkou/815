@@ -46,9 +46,9 @@
 
 
 <!--Image references-->
-[1]: ./img/ssl-001.png
-[2]: ./img/ssl-002.png
-[3]: ./img/ssl-003.png
-[4]: ./img/ssl-004.png
-[5]: ./img/ssl-005.png
-[6]: ./img/ssl-006.png
+[1]: ./media/mysql-database-ssl-connection/ssl-001.png
+[2]: ./media/mysql-database-ssl-connection/ssl-002.png
+[3]: ./media/mysql-database-ssl-connection/ssl-003.png
+[4]: ./media/mysql-database-ssl-connection/ssl-004.png
+[5]: ./media/mysql-database-ssl-connection/ssl-005.png
+[6]: ./media/mysql-database-ssl-connection/ssl-006.png
