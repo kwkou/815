@@ -21,7 +21,7 @@
 
 参考样例：
 
-`mysql.exe --ssl-ca=WS_CA1_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%test -p`
+    `mysql.exe --ssl-ca=WS_CA1_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%test -p`
 
 ![mysql.exe访问数据库][1]
 
@@ -29,7 +29,7 @@
 
 ![验证][6]
 
->**提示** 当前证书支持MySQL.exe 5.5.44和5.6.25及其后续版本。
+> **提示** 当前证书支持MySQL.exe 5.5.44和5.6.25及其后续版本。
 
 以MySQL Workbench为例，通过Parameters标签设置访问数据库的Connection String，如下图所示。
 
@@ -39,9 +39,9 @@
 
 ![配置SSL证书][3]
 
->**注意** 在Use SSL中选择‘If Available’，否则可能会造成配置失败。 在Test Connection过程中可能会提示SSL not enabled，这是一个假预警，点击确认后连接数据库，通信过程已加密。
+> **注意** 在Use SSL中选择‘If Available’，否则可能会造成配置失败。 在Test Connection过程中可能会提示SSL not enabled，这是一个假预警，点击确认后连接数据库，通信过程已加密。
 >
->![errormessage][4]
+> ![errormessage][4]
 >
 
 ### 利用函数进行配置
