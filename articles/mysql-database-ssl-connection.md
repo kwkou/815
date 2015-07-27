@@ -21,7 +21,7 @@
 
 参考样例：
 
-    mysql.exe --ssl-ca=WS_CA1_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%test -p
+`mysql.exe --ssl-ca=WS_CA1_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%test -p`
 
 ![mysql.exe访问数据库][1]
 
