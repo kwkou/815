@@ -117,7 +117,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 	<tr><td>数据节点</td><td>要部署的数据节点的数目。出于测试目的，请创建单节点群集。<br />群集大小限制因 Azure 订阅而异。若要提高限制的大小，请联系 Azure 计费支持。</td></tr>
 	<tr><td>区域/虚拟网络</td><td><p>选择与上一个过程中创建的存储帐户相同的区域。HDInsight 要求存储帐户位于同一区域。在以后的配置中，你只能选择你在此处指定的区域中的存储帐户。</p><p>可以选择的区域为： <strong>China East</strong>, <strong>China North</strong>
 	<br/>
-	If you have created an Azure Virtual Network, you can select the network that the HDInsight cluster will be configured to use.</p><p>For more information on creating an Azure Virtual Network, see [Virtual Network configuration tasks](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx).</p></td></tr>
+	If you have created an Azure Virtual Network, you can select the network that the HDInsight cluster will be configured to use.</p></td></tr>
 	</table>
 
 
@@ -190,7 +190,7 @@ HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。创建 
 ## <a id="powershell"></a> 使用 Azure PowerShell
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本部分提供有关如何设置 HDInsight 群集的说明。有关配置工作站运行 HDInsight Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。有关将 PowerShell 用于 HDInsight 的更多信息，请参见[使用 PowerShell 管理 HDInsight][hdinsight-admin-powershell]。有关 HDInsight PowerShell cmdlet 的列表，请参见 [HDInsight cmdlet 参考][hdinsight-powershell-reference]。
 
-> [WACOM.NOTE] 虽然本部分中的脚本可用于配置 Azure 虚拟网络上的 HDInsight 群集，但它们不会创建 Azure 虚拟网络。有关创建 Azure 虚拟网络的信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。
+> [WACOM.NOTE] 虽然本部分中的脚本可用于配置 Azure 虚拟网络上的 HDInsight 群集，但它们不会创建 Azure 虚拟网络。
 
 使用 PowerShell 设置 HDInsight 群集的步骤如下：
 
