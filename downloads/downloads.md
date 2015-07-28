@@ -76,7 +76,6 @@
   <div>
     <h4>媒体</h4>
     <ul>
-      <li><a href="https://github.com/WindowsAzure/azure-media-player-framework/">iOS SDK 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=299854&amp;clcid=0x804">Flash OSMF 安装</a></li>
       <li><a href="http://playerframework.codeplex.com/releases/view/97333">Windows 8 安装</a></li>
       <li><a href="http://smf.codeplex.com/releases/view/88970">Silverlight 安装</a></li>

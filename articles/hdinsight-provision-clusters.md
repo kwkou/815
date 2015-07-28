@@ -1,8 +1,9 @@
 <properties urlDisplayName="HDInsight Administration" pageTitle="在 HDInsight 中设置 Hadoop 群集 | Azure" metaKeywords="hdinsight, 管理, hdinsight 管理 azure" description="Learn how to provision clusters for Azure HDInsight using the management portal, PowerShell, or the command line." umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" services="hdinsight" documentationCenter="" title="Provision Hadoop clusters in HDInsight" authors="jgao" />
 
 <tags 
-wacn.date="04/11/2015"
-ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="03/03/2015" ms.author="jgao" />
+wacn.date="07/28/2015"
+ms.service="hdinsight" 
+ms.date="03/03/2015" />
 
 # 使用自定义选项在 HDInsight 中设置 Hadoop 群集
 
@@ -71,7 +72,7 @@ HDInsight 群集会抽象化 Hadoop 实现详细信息，因此你不必担心�
 
 有关虚拟网络特性、优势和功能的更多信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
 
-> [WACOM.NOTE] 你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。有关详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。
+> [WACOM.NOTE] 你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。
 > 
 > Azure HDInsight 仅支持基于位置的虚拟网络，并且当前不适用于基于地缘组的虚拟网络。
 

@@ -23,8 +23,6 @@ Azure 流量管理器使用三种负载平衡方法来分发流量：
 - **性能**：请在以下情况下使用此方法：您在不同地理位置中具有多个终结点，并且希望请求客户端使用"最靠近的"终结点（因为延迟最低）。
 - **轮循机制：**请在以下情况下使用此方法：要将负载分发到位于同一数据中心的一组云服务中，或位于不同数据中心的多个云服务或网站中。
 
-有关详细信息，请参阅[关于流量管理器负载平衡方法](http://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx).
-
 下图显示了一个用于将流量分发到不同云服务的轮循机制负载平衡方法的示例。
 
 ![loadbalancing](./media/load-balancing-vms/TMSummary.png)
@@ -36,8 +34,6 @@ Azure 流量管理器使用三种负载平衡方法来分发流量：
 3.	流量管理器将轮循机制列表中云服务的 DNS 名称发送回来。Internet 客户端的 DNS 服务器将该名称解析为 IP 地址，然后将其发送到 Internet 客户端。
 4.	Internet 客户端与所选的云服务相连接。
 
-有关详细信息，请参阅[流量管理器](http://msdn.microsoft.com/zh-cn/library/azure/hh745750.aspx).
-
 ## 针对虚拟机的 Azure 负载平衡 ##
 
 位于同一云服务或虚拟网络中的虚拟机可以使用其专用 IP 地址直接相互通信。该云服务或虚拟网络以外的计算机和服务仅可通过已配置好的终结点与某个云服务或虚拟网络中的虚拟机通信。终结点是公用 IP 地址和端口到 Azure 云服务中的虚拟机或 Web 角色的该专用 IP 地址和端口的映射。
@@ -47,8 +43,6 @@ Azure 流量管理器使用三种负载平衡方法来分发流量：
 下图显示了公用和专用 TCP 端口 80 的标准（未加密）Web 流量的负载平衡终结点，由三个虚拟机共享。这三个虚拟机位于一个负载平衡集中。
 
 ![loadbalancing](./media/load-balancing-vms/LoadBalancing.png)
-
-有关详细信息，请参阅 [Azure 负载平衡器](http://msdn.microsoft.com/zh-cn/library/azure/dn655058.aspx)。有关创建负载平衡集的步骤，请参阅 [Configure a load-balanced set](http://msdn.microsoft.com/zh-cn/library/azure/dn655055.aspx)。
 
 Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为"内部负载平衡"并可以通过以下方式使用：
 
@@ -61,8 +55,6 @@ Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为"�
 下图的示例显示了在外部/本地虚拟网络的三个虚拟机之中共享的业务线 (LOB) 应用程序的内部负载平衡终结点。 
 
 ![loadbalancing](./media/load-balancing-vms/LOBServers.png)
-
-有关详细信息，请参阅[内部负载平衡](http://msdn.microsoft.com/zh-cn/library/azure/dn690121.aspx)。有关创建负载平衡集的步骤，请参阅 [Configure an internal load-balanced set](http://msdn.microsoft.com/zh-cn/library/azure/dn690125.aspx)。
 
 <!-- LINKS -->
 

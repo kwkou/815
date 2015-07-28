@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 pageTitle="Windows Azure 开发人员中心：开源软件" 
 description="" 
 services="" 
@@ -29,7 +29,7 @@ Apache Ant 是一个 Java 库和命令行工具，用于驱动可在生成文件
 
 AppFog 为 Web 开发人员提供了可承载在任何"基础结构即服务"(IaaS) 平台上的"平台即服务"(PaaS) 基础结构。AppFog 最初面向 PHP，现在支持 PHP、Node.js、Ruby、Python、Java、.NET、MySQL 和 PostreSQL。
 
-<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253777&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="https://console.appfog.com/azure" target="_blank" class="_know-more-link">如何使用</a>
+<a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253777&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="https://support.appfog.com/hc/en-us/categories/200150708-Documentation" target="_blank" class="_know-more-link">如何使用</a>
 
 ###BlogEngine.NET
 
