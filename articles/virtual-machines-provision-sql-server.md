@@ -1,7 +1,7 @@
 <properties linkid="manage-windows-commontask-install-sql-server" urlDisplayName="Install SQL Server" pageTitle="设置在 Azure 中的 SQL Server 虚拟机 " metaKeywords="Azure tutorial creating SQL Server, SQL Server vm, configuring SQL Server" description="本教程演示如何创建和配置 SQL Server 虚拟机在 Azure 上。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Provisioning a SQL Server Virtual Machine on Azure" authors="selcint" solutions="" manager="clairt" editor="tyson" />
 <tags ms.service="virtual-machines"
     ms.date="03/06/2015"
-    wacn.date="04/11/2015"
+    wacn.date="07/28/2015"
     />
 
 
@@ -325,8 +325,6 @@ Azure 虚拟机库包括若干含有 Microsoft SQL Server 的映像。您可以�
 [有关 Azure 虚拟机中的 SQL Server 的性能注意事项](http://msdn.microsoft.com/zh-cn/library/azure/dn133149.aspx)
 
 [有关 Azure 虚拟机中的 SQL Server 的安全注意事项](http://msdn.microsoft.com/zh-cn/library/azure/dn133147.aspx)
-
-[故障排除和监视 Azure 虚拟机中的 SQL Server](http://msdn.microsoft.com/zh-cn/library/azure/dn195883.aspx)
 
 [高可用性和 Azure 虚拟机中的 SQL Server 的灾难恢复](http://msdn.microsoft.com/zh-cn/library/azure/jj870962.aspx)
 

@@ -1,5 +1,5 @@
-﻿<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="" ms.date="" wacn.date="06/24/2015"/>
+<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国 Windows Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
+<tags ms.service="" ms.date="" wacn.date="07/28/2015"/>
 
 #中国 Windows Azure 应用程序开发人员说明
 
@@ -114,8 +114,7 @@ Microsoft 提供了一些工具来创建和部署 Microsoft Windows Azure 全球
 
 #<a name="cndiffoverview"></a>在中国服务上创建应用程序时的区别概述
 
-Windows Azure 中的托管服务由一个设计为在托管服务中运行的应用程序和多个定义托管服务如何运行的 XML 配置文件组成。托管服务同时使用服务定义文件 (.csdef) 和配置文件 (.cscfg)。有关详细信息，请参阅[创建 Windows Azure 托管服务概述](http://msdn.microsoft.com/zh-cn/library/gg432976.aspx)。
-在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的 URI。例如，Windows Azure 和 SQL 数据库的 URI 通常以chinacloudapi.cn结尾。中国服务的开发人员必须能够识别 URI 端点的不同之处，然后将其使用的工具以及开发的应用程序配置为使用这些不同端点的对应 URI。
+Windows Azure 中的托管服务由一个设计为在托管服务中运行的应用程序和多个定义托管服务如何运行的 XML 配置文件组成。托管服务同时使用服务定义文件 (.csdef) 和配置文件 (.cscfg)。在中国服务上开发托管服务时的一项主要区别是端点地址具有不同的 URI。例如，Windows Azure 和 SQL 数据库的 URI 通常以chinacloudapi.cn结尾。中国服务的开发人员必须能够识别 URI 端点的不同之处，然后将其使用的工具以及开发的应用程序配置为使用这些不同端点的对应 URI。
 以下是需要更改端点 URI 时的示例：
 
 * 配置 Visual Studio 时
@@ -455,17 +454,14 @@ Webservices\Acs2WindowsPhoneSample<br />  \CustomerInformationService\Web.config
 #<a name="srvapi"></a>使用服务管理 API
 
 通过服务管理 API，开发人员可以对 Windows Azure 中运行的托管服务进行部署管理。事实上，全球服务和中国服务的管理门户都使用服务管理 API。
-全球服务使用的路径为<a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic">
-  <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>
-</span>
-有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/ee460786.aspx">访问服务管理资源</a>和<a href="http://msdn.microsoft.com/zh-cn/library/ee460807.aspx">关于服务管理 API</a>。
+全球服务使用的路径为<a href="https://management.core.windows.net">https://management.core.windows.net</a>。为中国服务编写代码的开发人员应使用的路径为<span class="Italic">
+  <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>。
  
 
 #<a name="dnsred"></a>将自定义域名重定向到中国服务中的托管服务
 
 如果您使用的自定义域名转发到在全球服务中运行的托管服务，并将该托管服务移动到中国服务中，则必须更新转发的域以指向中国的新特定端点。
-例如，如果将 www.contoso.com 重定向到在 contoso.chinacloudapp.cn 运行的 Web 角色，现在必须将其重定向到 contoso.chinacloudapp.cn。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/gg981933.aspx">如何为 Windows Azure 托管服务配置自定义域</a> 
-组织可以使用其 DNS 服务器上的 CNAME 条目转发域。中国服务不包括允许自定义域名注册或转发的功能。
+例如，如果将 www.contoso.com 重定向到在 contoso.chinacloudapp.cn 运行的 Web 角色，现在必须将其重定向到 contoso.chinacloudapp.cn。中国服务不包括允许自定义域名注册或转发的功能。
  
 
 #<a name="usecnvm"></a>对中国服务使用 VM 角色
@@ -493,7 +489,7 @@ csuploadSet-Connection"SubscriptionId=<span class="Italic">&lt;subscriptionId&gt
 
 ##<a name="csmanage"></a>CSManage - Windows Azure 服务管理示例
 
-CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="http://code.msdn.microsoft.com/Windows-Azure-CSManage-e3f1882c/sourcecode?fileId=21328&amp;pathId=1293677472">服务管理示例</a>中下载 CSManage 示例。
+CSManage 示例（最近更名为“Windows Azure 服务管理示例”）使用服务管理 API。此示例包含指向全球服务的代码。必须找到对http://*.chinacloudapi.cn的引用并将其更新为 *.chinacloudapi.cn。可以在<a href="https://code.msdn.microsoft.com/windowsazure/Windows-Azure-CSManage-e3f1882c">服务管理示例</a>中下载 CSManage 示例。
 
 ##<a name="plainhttp"></a>为中国服务更新 ServiceBus SDK 中的 PlainHttp 示例
 
@@ -578,7 +574,7 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
       <td width="130" valign="top"> P&amp;P 丛书 </td>
       <td width="180" valign="top"> 否 </td>
       <td width="794" valign="top"><ul>
-          <li><a href="http://www.amazon.cn/%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-Dominic-Betts/dp/B00C8JDM10/ref=sr_1_8?ie=UTF8&amp;qid=1370328786&amp;sr=8-8&amp;keywords=azure" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
+          <li><a href="http://www.amazon.cn/%E5%BE%AE%E8%BD%AF%E4%BA%91%E8%AE%A1%E7%AE%97%E7%B3%BB%E5%88%97%E4%B8%9B%E4%B9%A6-%E4%BA%91%E8%BF%81%E7%A7%BB%E6%8A%80%E6%9C%AF-%E8%B4%9D%E8%8C%A8/dp/B00C8JDM10/" target="_blank">微软云计算系列丛书:云迁移技术(第2版)</a></li>
           <li><a href="http://www.amazon.cn/%E6%9E%84%E5%BB%BA%E5%BC%B9%E6%80%A7%E4%BA%91%E5%BA%94%E7%94%A8-Dominic-Betts/dp/B00C8JDGRA/ref=pd_sim_b_2" target="_blank">构建弹性云应用</a></li>
           <li><a href="http://www.amazon.cn/%E4%BA%91%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91-Dominic-Betts/dp/B00C8JDO68/ref=sr_1_10?ie=UTF8&amp;qid=1370328786&amp;sr=8-10&amp;keywords=azure" target="_blank">云应用开发(第2版) </a></li>
         </ul></td>

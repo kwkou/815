@@ -111,8 +111,7 @@ Transact-SQL 语句来完成这些任务。下面的步骤
 
 若要在 Management Studio 中打开查询窗口，请打开 Databases 文件夹，展开"系统数据库"，右键单击"master"，然后单击"新建查询"。
 
--   使用 **CREATE DATABASE** 语句可创建新数据库。有关
-    详细信息，请参阅 [CREATE DATABASE (SQL 数据库)][]。下面的语句创建一个新数据库，名称为
+-   使用 **CREATE DATABASE** 语句可创建新数据库。下面的语句创建一个新数据库，名称为
     **myTestDB** 的新数据库并指定它是 Web 版数据库
     且最大大小为 1 GB。
 
@@ -124,9 +123,8 @@ Transact-SQL 语句来完成这些任务。下面的步骤
 
 -   使用 **ALTER DATABASE** 语句来修改现有数据库，
     例如，在想要更改数据库的名称、最大大小
-    或版本（企业或 Web 版）时。有关详细信息，请参阅 [ALTER DATABASE (SQL 数据库)][]。下面的
-    下面的语句修改你在上一步中
-    创建的数据库来将最大大小更改为 5 GB。
+    或版本（企业或 Web 版）时。
+    下面的语句修改你在上一步中创建的数据库来将最大大小更改为 5 GB。
 
         ALTER DATABASE myTestDB
         MODIFY
@@ -134,7 +132,7 @@ Transact-SQL 语句来完成这些任务。下面的步骤
          EDITION='web');
 
 -   使用 **DROP DATABASE** 语句可删除现有数据库。
-    有关详细信息，请参阅 [DROP DATABASE (SQL 数据库)][]。下面的语句将删除 **myTestDB**
+    下面的语句将删除 **myTestDB**
     数据库，但现在没有删除它，因为你将在下一步中使用它创建登录名。
 
         DROP DATABASE myTestBase;
@@ -170,7 +168,7 @@ Transact-SQL 语句来完成这些任务。下面的步骤
 
 
 -   使用 **CREATE LOGIN** 语句可创建新的服务器级别
-    登录名。有关详细信息，请参阅 [CREATE LOGIN (SQL 数据库)][]。下面的语句将创建一个名为
+    登录名。下面的语句将创建一个名为
     **login1** 的新登录名。将 **password1** 替换为你选择的
     密码。
 
@@ -180,7 +178,7 @@ Transact-SQL 语句来完成这些任务。下面的步骤
     权限。必须在 **master** 数据库中创建所有登录名，
     但若要使登录名连接到不同的数据库，你
     必须使用 **CREATE USER** 语句授予它对
-    该数据库的数据库级别权限。有关详细信息，请参阅 [CREATE USER (SQL 数据库)][]。 
+    该数据库的数据库级别权限。 
 
 -   若要为 login1
     提供对名为 **myTestDB** 的数据库的权限，请完成以下
@@ -207,8 +205,7 @@ Transact-SQL 语句来完成这些任务。下面的步骤
         exec sp_addrolemember 'db_datareader', 'login1User';    
 
 -   例如，如果你要更改用于登录的密码，请使用 **ALTER LOGIN** 语句
-    修改现有登录名。有关
-    详细信息，请参阅 [ALTER LOGIN (SQL 数据库)][]。应对 **master** 数据库
+    修改现有登录名。应对 **master** 数据库
     运行 **ALTER LOGIN** 语句。切换回连接到该数据库的查询窗口。 
 
     下面的语句修改 **login1** 登录名来重置密码。
@@ -222,7 +219,7 @@ Transact-SQL 语句来完成这些任务。下面的步骤
 -   使用 **DROP LOGIN** 语句来删除现有登录名。
     删除处于服务器级别的登录名也会删除任何关联的
     数据库用户帐户。有关详细信息，
-    请参阅 [DROP DATABASE (SQL 数据库)][]。应对 **master**
+    应对 **master**
     数据库运行 **DROP LOGIN** 语句。下面的
     语句将删除 **login1** 登录名。
 
@@ -296,10 +293,8 @@ SQL 数据库 支持多个
 
 <h2>其他资源</h2>
 
-* [SQL 数据库 简介][]
 * [在 SQL 数据库 中管理数据库和登录名][]
 * [使用动态管理视图监视 SQL 数据库][]
-* [SQL 数据库 设置模型][]
 * [将用户添加到你的 SQL 数据库 中][]
 * [Transact-SQL 参考 (SQL 数据库)][]
 
@@ -318,17 +313,9 @@ SQL 数据库 支持多个
   [连接到 SSMS]: ./media/ssms_connect.png
   [连接到 SSMS - 属性]: ./media/ssms_connect_properties.png
   [Transact-SQL 参考 (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/bb510741(v=sql.120).aspx
-  [CREATE DATABASE (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/ee336274.aspx
-  [ALTER DATABASE (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/ff394109.aspx
-  [DROP DATABASE (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/ee336259.aspx
   [在 SQL 数据库 中管理数据库和登录名]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
-  [CREATE LOGIN (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/ee336268.aspx
-  [CREATE USER (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/ee336277.aspx
   [sp_addrolemember (Transact-SQL)]: http://msdn.microsoft.com/zh-cn/library/ms187750.aspx
-  [ALTER LOGIN (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/azure/ee336254.aspx
   [使用动态管理视图监视 SQL 数据库]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
-  [SQL 数据库 简介]: http://msdn.microsoft.com/zh-cn/library/azure/ee336230.aspx
-  [SQL 数据库 设置模型]: http://msdn.microsoft.com/zh-cn/library/ee336227.aspx
   [将用户添加到你的 SQL 数据库 中]: http://blogs.msdn.com/b/sqlazure/archive/2010/06/21/10028038.aspx
 
 <!--HONumber=55-->
