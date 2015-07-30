@@ -1,6 +1,6 @@
 <properties pageTitle="如何在 Azure 中创建路由并启用 IP 转发" description="了解如何管理 UDR 和 IP 转发" services="virtual-network" documentationCenter="na" authors="telmosampaio" manager="adinah" editor="tysonn" />
 
-<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="06/26/2015"/>
+<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="07/30/2015"/>
 
 # 如何在 Azure 中创建路由并启用 IP 转发
 你可以使用 Azure 中的虚拟设备来处理 Azure 虚拟网络中的流量。但是，你需要创建相应的路由，以便虚拟网络中的 VM 和云服务将数据包发送到虚拟设备而非数据包的所需目标。你还需要在虚拟设备 VM 上启用 IP 转发，使之能够接收和转发其目标地址不是实际虚拟设备 VM 的数据包。
@@ -135,6 +135,6 @@
 
 ## 另请参阅
 
-[用户定义的路由和 IP 转发概述](virtual-networks-udr-overview)
+[用户定义的路由和 IP 转发概述](/documentation/articles/virtual-networks-udr-overview)
 
 <!---HONumber=61-->

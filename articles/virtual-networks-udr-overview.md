@@ -1,6 +1,6 @@
 <properties pageTitle="用户定义的路由和 IP 转发概述" description="了解 UDR 和 IP 转发" services="virtual-network" documentationCenter="na" authors="telmosampaio" manager="adinah" editor="tysonn" />
 
-<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="06/26/2015"/>
+<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="07/30/2015"/>
 
 # 用户定义的路由和 IP 转发
 将虚拟机 (VM) 添加到 Azure 中同一虚拟网络 (VNet) 的不同子网时，你会注意到，VM 可以与其他 VM 通过网络自动通信。你不需要指定网关，即使这些 VM 位于不同子网中。存在从 Azure 到你自己的数据中心的混合连接时，这同样适用于从 VM 到公共 Internet 甚至到本地网络的通信。
@@ -55,12 +55,12 @@
 1. BGP 路由（当使用 ExpressRoute 时）
 1. 系统路由
 
-若要了解如何创建用户定义路由，请参阅[如何在 Azure 中创建路由和启用 IP 转发](../virtual-networks-udr-how-to#How-to-manage-routes)。
+若要了解如何创建用户定义路由，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to#How-to-manage-routes)。
 
 >[AZURE.IMPORTANT]用户定义路由仅适用于 Azure VM 和云服务。例如，如果你想要在本地网络和 Azure 之间添加防火墙虚拟设备，则需为 Azure 路由表创建用户定义路由，以便将目标为本地地址空间的所有流量转发到虚拟设备。但是，来自本地地址空间的传入流量将流经你的 VPN 网关或 ExpressRoute 线路，绕过虚拟设备直接进入 Azure 环境中。
 
 ## BGP 路由
-如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与系统路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](../expressroute-introduction)。
+如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与系统路由和用户定义路由相同。<!--有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction)。-->
 
 >[AZURE.IMPORTANT]你可以将 Azure 环境配置为使用强制方式通过隧道来连接你的本地网络，即为子网 0.0.0.0/0 创建一个用户定义路由，而该子网则使用 VPN 网关作为下一跃点。但是，仅在使用 VPN 网关而非 ExpressRoute 的情况下，此方法才起作用。对于 ExpressRoute，强制隧道是通过 BGP 配置的。
 
@@ -69,10 +69,10 @@
 
 此虚拟设备 VM 必须能够接收不发送给自身的传入流量。若要允许 VM 接收发送到其他目标的流量，必须为该 VM 启用 IP 转发。这是 Azure 设置，不是来宾操作系统中的设置。
 
-若要了解如何在 Azure 中为 VM 启用 IP 转发，请参阅[如何在 Azure 中创建路由和启用 IP 转发](../virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding)。
+若要了解如何在 Azure 中为 VM 启用 IP 转发，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding)。
 
 ## 后续步骤
 
-[如何在 Azure 中创建路由和启用 IP 转发](virtual-networks-udr-how-to)
+[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to)
 
 <!---HONumber=61-->
