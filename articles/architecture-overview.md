@@ -1,7 +1,7 @@
 <properties linkid="" urlDisplayName="" pageTitle="Architecture" metaKeywords="" description="Architecture overview that covers common design patterns" metaCanonical="" services="" documentationCenter="" videoId="" scriptId="" title="Architecture Overview" authors="robb" solutions="" manager="dongill" editor="mattshel" />
 <tags ms.service=""
     ms.date="03/20/2015"
-    wacn.date="04/11/2015"
+    wacn.date="08/05/2015"
     />
 
 # 体系结构
@@ -50,7 +50,7 @@
 
 有关 Azure 中其他常见设计模式的信息，请参阅[云设计模式][云设计模式]。
 
-  [下载 Azure 符号/图标集]: http://www.microsoft.com/zh-CN/download/details.aspx?id=41937
+  [下载 Azure 符号/图标集]: https://www.microsoft.com/en-us/download/details.aspx?id=41937
   [Azure 符号/图标集]: ./media/architecture-overview/AzureSymbols.png
   [让使用者竞争]: http://msdn.microsoft.com/zh-cn/library/dn568101.aspx
   [1]: ./media/architecture-overview/CompetingConsumers.png
