@@ -7,9 +7,9 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 # 开始在 HDInsight 中使用 Hadoop 1.2
 
 <div class="dev-center-tutorial-selector sublanding">
-<a href="/documentation/articles/hdinsight-get-started" title="开始在 HDInsight 中使用 Hadoop 2.2">Hadoop 2.2</a>
-<a href="/documentation/articles/hdinsight-get-started-31" title="开始在 HDInsight 中使用 Hadoop 2.4">Hadoop 2.4</a>
-<a href="/documentation/articles/hdinsight-get-started-21" title="开始在 HDInsight 中使用 Hadoop 1.2" class="current">Hadoop 1.2</a>
+<a href="../hdinsight-get-started" title="开始在 HDInsight 中使用 Hadoop 2.2">Hadoop 2.2</a>
+<a href="../hdinsight-get-started-31" title="开始在 HDInsight 中使用 Hadoop 2.4">Hadoop 2.4</a>
+<a href="../hdinsight-get-started-21" title="开始在 HDInsight 中使用 Hadoop 1.2" class="current">Hadoop 1.2</a>
 </div>
 
 HDInsight 使 [Apache Hadoop][] 可在云中作为服务使用，并使 MapReduce 软件框架可用于更简单、缩放性更高且经济实用的 Azure 环境。HDInsight 还提供了使用 Azure Blob 存储管理和存储数据的经济实用方法。
