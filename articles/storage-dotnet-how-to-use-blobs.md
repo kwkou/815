@@ -358,7 +358,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
   [设置存储连接字符串]: #setup-connection-string
   [如何：以编程方式访问 Blob 存储]: #configure-access
   [如何：创建容器]: #create-container
-  [如何：将 Blob 上载到容器]: #upload-blob
+  [如何：将 Blob 上载到容器中]: #upload-blob
   [如何：列出容器中的 Blob]: #list-blob
   [如何：下载 Blob]: #download-blobs
   [如何：删除 Blob]: #delete-blobs
