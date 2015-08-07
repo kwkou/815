@@ -1,6 +1,6 @@
 <properties pageTitle="如何设置静态内部专用 IP" description="了解静态内部 IP (DIP) 以及如何对其进行管理" services="virtual-network" documentationCenter="na" authors="telmosampaio" manager="adinah" editor="tysonn"/>
 
-<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="06/26/2015"/>
+<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="08/07/2015"/>
 
 # 如何设置静态内部专用 IP
 大多数情况下，你不需要指定虚拟机的静态内部 IP 地址。虚拟网络中的 VM 将自动从你所指定的范围接收内部 IP 地址。但在某些情况下，需要为特定 VM 指定静态 IP 地址。例如，在你的 VM 需要运行 DNS 或将要成为域控制器的情况下。
@@ -18,7 +18,7 @@
 	OperationId          : fd3097e1-5f4b-9cac-8afa-bba1e3492609
 	OperationStatus      : Succeeded
 
->[AZURE.NOTE]如果你想要在安全的环境中测试上述命令，请遵循[创建虚拟网络](https://msdn.microsoft.com/zh-CN/library/azure/dn631643.aspx)中的准则创建名为 *TestVnet* 的 VNet，并确保其使用 *10.0.0.0/8* 地址空间。
+>[AZURE.NOTE]如果你想要在安全的环境中测试上述命令，请遵循[创建虚拟网络](/documentation/articles/virtual-networks-create-a-vnet)中的准则创建名为 *TestVnet* 的 VNet，并确保其使用 *10.0.0.0/8* 地址空间。
 
 ## 如何在创建 VM 时指定静态内部 IP
 下面的 PowerShell 脚本将创建名为 *TestService* 的全新云服务，然后从 Azure 中检索映像，接着在新的云服务中使用检索的映像创建名为 *TestVM* 的 VM，对该 VM 进行设置，使之位于名为 *Subnet-1* 的子网中，最后再将 *10.0.0.7* 设置为 VM 的静态内部 IP：
@@ -79,9 +79,9 @@
 
 ## 后续步骤
 
-[保留 IP](virtual-networks-reserved-public-ip)
+[保留 IP](/documentation/articles/virtual-networks-reserved-public-ip)
 
-[实例级公共 IP (ILPIP)](virtual-networks-instance-level-public-ip)
+[实例级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip)
 
 [保留 IP REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn722420.aspx)
 
