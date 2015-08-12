@@ -59,7 +59,7 @@ Azure Redis Cache 非常容易上手。若要开始使用，需要首先设置�
 
 在“资源组”中，为缓存选择或创建资源组。
 
->[AZURE.NOTE]有关详细信息，请参阅[使用资源组管理 Azure 资源][]。
+<!-->[AZURE.NOTE]有关详细信息，请参阅[使用资源组管理 Azure 资源][]。-->
 
 对于“订阅”，请选择要用于缓存的 Azure 订阅。如果你的帐户仅具有一个订阅，将自动选择该订阅并且将不显示“订阅”下拉菜单。
 
@@ -126,7 +126,7 @@ NuGet 程序包会给客户端应用程序下载并添加所需的程序集引�
 
 如果你不想要使用 SSL，请设置 `ssl=false` 或只传入终结点和密钥。
 
->[AZURE.NOTE]默认情况下，将为新缓存禁用非 SSL 端口。有关启用非 SSL 端口的说明，请参阅[在 Azure Redis 缓存中配置缓存][]主题中的“访问端口”部分。
+>[AZURE.NOTE]默认情况下，将为新缓存禁用非 SSL 端口。<!--有关启用非 SSL 端口的说明，请参阅[在 Azure Redis 缓存中配置缓存][]主题中的“访问端口”部分。-->
 
 	connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.chinacloudapi.cn,password=...");
 
@@ -271,7 +271,7 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 现在，你已了解 Azure Redis 缓存的基础知识，请单击下面的链接了解如何执行更复杂的缓存任务。
 
--	[启用缓存诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics)，以便可以[监视](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)缓存的运行状况。可以在门户中查看度量值，也可以使用所选的工具[下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)这些度量值。
+<!---	[启用缓存诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics)，以便可以[监视](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)缓存的运行状况。可以在门户中查看度量值，也可以使用所选的工具[下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)这些度量值。-->
 -	查看 [StackExchange.Redis 缓存客户端文档][]。
 	-	可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。有关详细信息，请参阅 [http://redis.io/clients][] 和[以其他语言开发 Azure Redis 缓存][]。
 	-	Azure Redis 缓存还可用于 Redsmin 等服务。有关详细信息，请参阅[如何检索 Azure Redis 连接字符串并将其用于 Redsmin][]。
@@ -349,11 +349,11 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
-[缓存定价详细信息]: /home/features/cache/#price
+[缓存定价详细信息]: /home/features/redis-cache/#price
 [Management Portal]: https://manage.windowsazure.cn/
 
-[Azure Redis 缓存概述]: http://go.microsoft.com/fwlink/?LinkId=320830
-[Azure Redis 缓存]: http://go.microsoft.com/fwlink/?LinkId=398247
+[Azure Redis 缓存概述]: https://msdn.microsoft.com/zh-cn/library/azure/dn690523.aspx
+[Azure Redis 缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn690523.aspx
 
 [Migrate to Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=317347
 [Azure Redis Cache Samples]: http://go.microsoft.com/fwlink/?LinkId=320840

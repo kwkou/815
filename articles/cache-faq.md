@@ -97,7 +97,7 @@
 
 ## <a name="cache-monitor"></a>如何监视缓存的运行状况和性能？
 
-可以在 [Azure 门户](https://manage.windowsazure.cn)中监视 Windows Azure Redis 缓存实例。你可以查看度量值、将度量值图表固定到启动面板、自定义监视图表的日期和时间范围、在图表中添加和删除度量值，以及设置符合特定条件时发出的警报。借助这些工具，你可以监视 Azure Redis 缓存实例的运行状况，以及管理缓存应用程序。有关监视缓存的详细信息，请参阅[监视 Azure Redis 缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)。
+可以在 [Azure 门户](https://manage.windowsazure.cn)中监视 Windows Azure Redis 缓存实例。你可以查看度量值、将度量值图表固定到启动面板、自定义监视图表的日期和时间范围、在图表中添加和删除度量值，以及设置符合特定条件时发出的警报。借助这些工具，你可以监视 Azure Redis 缓存实例的运行状况，以及管理缓存应用程序。<!--有关监视缓存的详细信息，请参阅[监视 Azure Redis 缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)。-->
 
 
 ## <a name="cache-disconnect"></a>客户端为何与缓存断开连接？
@@ -178,7 +178,7 @@ StackExchange.Redis 有很多选项。本部分将介绍一些常用设置。有
 
 Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支持。如果你要连接到 Azure Redis 缓存并且客户端支持 SSL（如 StackExchange.Redis），则你应使用 SSL。
 
-请注意，默认情况下，为新的 Azure Redis 缓存实例禁用了非 SSL 端口。如果客户端不支持 SSL，则你必须根据[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)一文中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分中的说明启用非 SSL 端口。
+请注意，默认情况下，为新的 Azure Redis 缓存实例禁用了非 SSL 端口。如果客户端不支持 SSL，则你必须<!--根据[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)一文中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分中的说明-->启用非 SSL 端口。
 
 `redis-cli` 等 Redis 工具对 SSL 端口不起作用，但是，你可以根据[适用于 Redis 预览版的 ASP.NET 会话状态提供程序通告](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)中的说明，使用 `stunnel` 等实用程序安全地将这些工具连接到 SSL。
 

@@ -464,7 +464,7 @@ NuGet 包还添加对以下程序集的引用：
 [OutputCache 指令]: https://msdn.microsoft.com/zh-cn/library/hdxfb6cy.aspx
 [故障排除和诊断]: https://msdn.microsoft.com/zh-cn/library/azure/dn386117.aspx
 [NuGet Package Manager]: http://go.microsoft.com/fwlink/?LinkId=240311
-[缓存定价详细信息]: /home/features/cache/#price/
+[缓存定价详细信息]: /home/features/redis-cache/#price/
 [Management Portal]: https://manage.windowsazure.cn/
 [缓存产品]: https://msdn.microsoft.com/zh-cn/library/azure/dn386114.aspx
 [Capacity planning]: https://msdn.microsoft.com/zh-cn/library/azure/dn386139.aspx
@@ -475,7 +475,7 @@ NuGet 包还添加对以下程序集的引用：
 [托管缓存服务（预览版）示例]: https://msdn.microsoft.com/zh-cn/library/azure/dn386105.aspx
 [New-AzureManagedCache]: http://go.microsoft.com/fwlink/?LinkId=400495
 [Azure Managed Cache Cmdlets]: http://go.microsoft.com/fwlink/?LinkID=398555
-[如何安装和配置 Azure PowerShell]: http://go.microsoft.com/fwlink/?LinkId=400494
+[如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 [Add-AzureAccount]: http://msdn.microsoft.com/zh-cn/library/dn495128.aspx
 [Select-AzureSubscription]: http://msdn.microsoft.com/zh-cn/library/dn495203.aspx
 

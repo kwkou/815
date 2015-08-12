@@ -73,7 +73,7 @@ Azure Redis 缓存可让你访问世纪互联管理的、专用安全的 Redis �
 
 ## 后续步骤
 
-- [启用缓存诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics)，以便可以[监视](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)缓存的运行状况。 
+<!--- [启用缓存诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics)，以便可以[监视](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx)缓存的运行状况。--> 
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
 
