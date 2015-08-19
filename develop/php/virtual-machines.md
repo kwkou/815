@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="04/11/2015"
+    wacn.date="08/19/2015"
     />
 
 
@@ -27,6 +27,8 @@
 <p>了解如何使用 Azure Linux 代理管理虚拟机与 Azure 结构控制器的交互。</p>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-how-to-attach-disk/">如何将数据磁盘附加到虚拟机</a></h3>
 <p>了解如何将数据磁盘附加到虚拟机以存储应用程序数据。数据磁盘是一个可使用您自己的计算机在本地创建或使用 Azure 在云中创建的虚拟硬盘 (VHD)。</p>
+<h3>如何：<a href="http://www.cnblogs.com/WilsonWu/archive/2012/12/13/2816122.html">创建支持Apache，PHP以及MySQL的CentOS Web Virtual Machine Server</a></h3>
+<p>了解如何创建支持Apache，PHP以及MySQL的CentOS Web Virtual Machine Server。</p>
 <h2 id="header-1">管理</h2>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-set-up-endpoints/">如何与虚拟机建立通信</a></h3>
 <p>了解如何与虚拟机建立通信。在 Azure 中创建的所有虚拟机均可以使用专用网络通道自动与位于同一云服务或虚拟网络中的其他虚拟机进行通信。</p>
