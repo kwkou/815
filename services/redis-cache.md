@@ -52,8 +52,8 @@
 
 ##最佳实践  
 - [选择缓存级别](https://msdn.microsoft.com/zh-cn/library/azure/dn762132.aspx)  
-<!--- [常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns)-->  
-- [模式与实践指导指南](https://github.com/mspnp/azure-guidance/blob/master/Caching.md)  
+- [模式与实践指导指南](https://github.com/mspnp/azure-guidance/blob/master/Caching.md)
+<!--- [常见缓存模式](/documentation/articles/cache-howto-common-cache-patterns)-->   
 
 ##示例  
 - [MVC 电影应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes)  
