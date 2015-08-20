@@ -1,4 +1,4 @@
-<properties linkid="" urlDisplayName="Redis 缓存" pageTitle="Redis 缓存 - Azure 微软云" metaKeywords="Redis,Cache,Redis Cache,缓存,Redis 缓存,Azure 云服务,资源链接" description="Azure Redis 缓存基于流行的开放源 Redis 缓存。这使您能够访问 Microsoft 管理的安全、专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Windows Azure 内的任何应用程序访问。" metaCanonical="" services="Cloud Service" documentationCenter="Services" title="在Windows Azure中创建高扩展性和可用性的应用程序" authors="" solutions="" manager="" editor="Eric Chen" />
+<properties linkid="" urlDisplayName="Redis 缓存" pageTitle="Redis 缓存 - Azure 微软云" metaKeywords="Redis,Cache,Redis Cache,缓存,Redis 缓存,Azure 云服务,资源链接" description="Azure Redis 缓存基于流行的开放源 Redis 缓存。这使您能够访问 Microsoft 管理的安全、专用的 Redis 缓存。使用 Azure Redis 缓存创建的缓存可从 Windows Azure 内的任何应用程序访问。" metaCanonical="" services="Redis Cache" documentationCenter="Services" title="在Windows Azure中创建高扩展性和可用性的应用程序" authors="" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="redis-cache"
     ms.date=""
     wacn.date="08/10/2015"/>
@@ -48,7 +48,7 @@
 
 ##故障排除  
 - [使用 StackExchange 调查超时异常](http://azure.microsoft.com/blog/2015/02/10/investigating-timeout-exceptions-in-stackexchange-redis-for-azure-redis-cache)  
-- [设置警报](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#Alerts)  
+<!--- [设置警报](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#Alerts)-->  
 
 ##最佳实践  
 - [选择缓存级别](https://msdn.microsoft.com/zh-cn/library/azure/dn762132.aspx)  
@@ -59,7 +59,7 @@
 - [MVC 电影应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes)  
 - [Redis Azure 快速入门](http://azure.microsoft.com/blog/2014/11/12/announcing-azure-sdk-2-5-for-net-and-visual-studio-2015-preview)  
 - [查看门户外的缓存指标](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)  
-- [更多示例](/documentation/articles/cache-redis-samples/)  
+- [更多示例](/documentation/articles/cache-redis-samples)  
 
 
 
