@@ -1,5 +1,5 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL Database on Azure 数据库 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,技术指南,Azure MySQL,MySQL PaaS,Azure MySQL PaaS,Azure MySQL Service,Azure RDS" description="MySQL Database on Azure的技术帮助让您迅速了解当前业务，选择适合您的性能层级，轻松入门使用，并帮助您监视管理使用数据库，随时查看性能情况。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
-<tags ms.service="mysql" ms.date="" wacn.date="07/27/2015"/>  
+<tags ms.service="mysql" ms.date="" wacn.date="08/19/2015"/>  
 
 #MySQL Database on Azure 数据库<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag">预览</sup>  
 MySQL Database on Azure 是 Windows Azure 提供的一种关系型数据库服务，全面兼容MySQL协议，为用户提供了一个性能稳定，操作简便，高可靠性，安全性的数据库平台，并提供四个不同的版本，性能从低到高按倍数提高。支持快速部署，弹性伸缩，全面监控的数据库平台。
@@ -33,6 +33,10 @@ MySQL Database on Azure 是 Windows Azure 提供的一种关系型数据库服�
 - [技术常见问题](/documentation/articles/mysql-database-tech-faq)
 
     了解SLA保障，存储空间限额，服务限制等问题。
+
+- [创建支持Apache，PHP以及MySQL的CentOS Web Virtual Machine Server](http://www.cnblogs.com/WilsonWu/archive/2012/12/13/2816122.html)
+
+    了解如何创建支持Apache，PHP以及MySQL的CentOS Web Virtual Machine Server 。
 
 
 ###部署  
