@@ -18,7 +18,7 @@
 
 ##何时使用事件中心？ 
 - [大规模摄取遥测和应用事件](/documentation/articles/event-hubs-authentication-and-security-model-overview)  
-- [Avaliablity and Support FAQ](/documentation/articles/event-hubs-availability-and-support-faq)  
+- [可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq)  
 
 
 ##运行示例 
