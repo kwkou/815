@@ -10,7 +10,7 @@
 <tags
 	ms.service="event-hubs"
 	ms.date="07/21/2015"
-	wacn.date="08/14/2015"/>
+	wacn.date="08/21/2015"/>
 
 # 事件中心入门
 
@@ -108,7 +108,7 @@
 <!-- Links -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
+[事件中心概述]: /documentation/articles/event-hubs-overview
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues

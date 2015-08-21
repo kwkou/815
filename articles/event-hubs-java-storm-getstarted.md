@@ -10,7 +10,7 @@
 <tags
 	ms.service="event-hubs"
 	ms.date="07/21/2015"
-	wacn.date="08/14/2015"/>
+	wacn.date="08/21/2015"/>
 
 # 事件中心入门
 
@@ -98,7 +98,7 @@
 <!-- Links -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
+[事件中心概述]: /documentation/articles/event-hubs-overview
 
 [Apache Storm]: https://storm.incubator.apache.org
 [HDInsight Storm 概述]: /documentation/articles/hdinsight-storm-overview

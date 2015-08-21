@@ -10,7 +10,7 @@
 <tags
 	ms.service="event-hubs"
 	ms.date="07/15/2015"
-	wacn.date="08/14/2015"/>
+	wacn.date="08/21/2015"/>
 
 # 什么是 Azure 事件中心？
 
@@ -26,7 +26,7 @@
 
 事件中心的其他一些主要功能包括移动应用中的行为跟踪、从 Web 场中采集流量信息、控制台游戏中的游戏内事件捕获，或者从工业机器或互联汽车中收集遥测数据。
 
-与[服务总线队列和主题](/documentation/articles/service-bus-messaging-overview)不同，事件中心重点提供大规模的消息流处理。事件中心功能与主题的不同之处在于，它明显偏向于高吞吐量和事件处理方案。因此，事件中心未实现[主题](/documentation/articles/service-bus-fundamentals-service-bus-hybrid-solutions#topics)提供的某些消息传递功能。如果你需要这些功能，主题仍是最佳的选择。
+与服务总线队列和主题<!--(/documentation/articles/service-bus-messaging-overview)-->不同，事件中心重点提供大规模的消息流处理。事件中心功能与主题的不同之处在于，它明显偏向于高吞吐量和事件处理方案。因此，事件中心未实现主题<!--(/documentation/articles/service-bus-fundamentals-service-bus-hybrid-solutions#topics)-->提供的某些消息传递功能。如果你需要这些功能，主题仍是最佳的选择。
 
 ## 后续步骤
 
@@ -38,7 +38,7 @@
 - 使用[事件中心教程]入门。
 - [使用事件中心的完整示例应用程序]。
 
-[事件中心教程]: /documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted
+[事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 
 <!---HONumber=66-->

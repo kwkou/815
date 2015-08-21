@@ -10,7 +10,7 @@
 <tags
 	ms.service="event-hubs"
 	ms.date="07/21/2015"
-	wacn.date="08/14/2015"/>
+	wacn.date="08/21/2015"/>
 
 # 事件中心入门
 
@@ -89,7 +89,7 @@
 
 - [使用事件中心的完整示例应用程序]。
 - [使用事件中心扩大事件处理]示例。
-- 使用服务总线队列的[队列消息解决方案]。
+<!--- 使用服务总线队列的[队列消息解决方案]。-->
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-ephcs-getstarted/create-event-hub1.png

@@ -17,7 +17,7 @@
 
 
 ##何时使用事件中心？ 
-- [大规模摄取遥测和应用事件](/documentation/articles/event-hubs-authentication-and-security-model-overview)  
+- [大规模摄取遥测和应用事件](/documentation/articles/event-hubs-ingest-telemetry-and-application-events)  
 - [可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq)  
 
 
@@ -28,15 +28,15 @@
 
 ##管理事件中心 
 - [在Azure门户上管理服务总线资源](https://msdn.microsoft.com/zh-cn/library/azure/hh690928.aspx)
-- [使用PowerShell设置消息传递实体](/documentation/articles/service-bus-powershell-how-to-provision) 
 - [Azure PowerShell参考](https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx)
 - [使用服务总线资源管理器管理服务总线和事件中心资源](https://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a)
+<!--- [使用PowerShell设置消息传递实体](/documentation/articles/service-bus-powershell-how-to-provision)-->
 
 
 ##参考
 - [服务总线 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)
 - [服务总线 .NET API 参考](https://msdn.microsoft.com/zh-cn/library/azure/jj933424.aspx)
-- [服务总线配额](/documentation/articles/service-bus-quotas) 
+<!--- [服务总线配额](/documentation/articles/service-bus-quotas)--> 
 
 
 ##了解服务总线的最新功能

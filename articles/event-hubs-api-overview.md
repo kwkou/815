@@ -182,6 +182,5 @@ public class SimpleEventProcessor : IEventProcessor
 
 - [服务总线和事件中心 .NET API 参考](https://msdn.microsoft.com/zh-cn/library/jj933424.aspx)
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
-- 
 
 <!---HONumber=66-->
