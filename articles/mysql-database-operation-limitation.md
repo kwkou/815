@@ -27,7 +27,7 @@ MySQL 数据库 on Azure目前有如下几点限制，如果您有任何疑问�
 	* user
 	* proxies_priv
 
-7.	目前不支持配置Data Replication
+7.	目前Data Replication仅支持本地、云服务器间的数据同步，方便用户构建混合云场景
 8.	目前不支持MyISAM存储引擎
 
 

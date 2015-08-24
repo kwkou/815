@@ -54,7 +54,7 @@ MySQL 数据库 on Azure支持两种备份形式：按需备份和每日定时�
 - 第二步，将数据库导出文件传输到您在Azure上的某台VM上。您可以用您熟悉的数据传输工具（比如FTP等），您也可以用[AzCopy](/documentation/articles/storage-use-azcopy)这一工具（用AzCopy需要先把文件传输到一个存储blob，再传至VM）。
 - 第三步，把数据从您的Azure VM上导入到您的MySQL 数据库 on Azure。**这样可以降低连接中途断开而导致迁移失败的可能性**。
 
-##<a id="nextstep"></a>步骤后续步骤
+##<a id="nextstep"></a>后续步骤
 完成上述步骤，您即建立了MySQL 数据库 on Azure数据库，也对管理门户有所了解。接下来，您可以尝试其他功能，如查看数据库使用情况，数据库的备份和恢复，版本的升级降级等等。
 
 如果您在操作中遇到问题，可以查看管理门户帮助指南，也可以联系技术支持，或在[MSDN论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureMySQLRDS)上提出您的问题。
