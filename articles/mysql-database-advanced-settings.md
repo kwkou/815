@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="定制MySQL 数据库 on Azure服务器参数 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,参数,定制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure支持您根据需求定制化服务器部分参数,帮您了解不同参数的设置范围和区间。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="" wacn.date="04/29/2015"/>
+<tags ms.service="mysql" ms.date="" wacn.date="08/26/2015"/>
 
 #定制MySQL 数据库 on Azure服务器参数
 
@@ -61,6 +61,11 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
     <td>max_allowed_packet</td>
     <td>1048576</td>
     <td>[1024- 16777216]</td>
+  </tr>
+   <tr>
+    <td>server-id</td>
+    <td>Random Value</td>
+    <td>[1000 - 4294967295]</td>
   </tr>
   <tr>
     <td>sql_mode</td>
