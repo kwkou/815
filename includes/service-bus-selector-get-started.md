@@ -1,4 +1,5 @@
-> [AZURE.SELECTOR（平台 | 后端）]
+> （平台 | 后端）
+> [AZURE.SELECTOR]
 - [(C# | EventProcessorHost C#)](/documentation/articles/event-hubs-csharp-ephcs-getstarted)
 - [(C# | Apache Storm)](/documentation/articles/event-hubs-csharp-storm-getstarted)
 - [(Java | EventProcessorHost C#)](/documentation/articles/event-hubs-java-ephcs-getstarted)
