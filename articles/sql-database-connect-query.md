@@ -1,7 +1,7 @@
-﻿
+
 <properties 
-	pageTitle="使用 CSharp 连接和查询 SQL 数据库" 
-	description="使用 ADO.NET 连接到 Azure SQL 数据库 云服务上的 AdventureWorks 数据库并与其交互的 CSharp 客户端代码示例。"
+	pageTitle="Connect to and query your SQL Database with C#" 
+	description="Code sample for a C# client using ADO.NET to connect to and interact with the AdventureWorks database on the Azure SQL Database cloud service."
 	services="sql-database" 
 	documentationCenter="" 
 	authors="ckarst" 
@@ -9,60 +9,52 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/14/2015" 
-	wacn.date="05/25/2015" 
-	ms.author="cakarst"/>
+<tags  wacn.date="" ms.service="sql-database" ms.date="04/14/2015" />
 
 
-# 使用 C# 连接和查询 SQL 数据库 
+# Connect to and query your SQL Database with C&#x23;
 
-本主题提供一个 C# 代码示例，演示如何使用 ADO.NET 连接到现有的 AdventureWorks SQL 数据库。该示例将编译成一个用于查询数据库并显示结果的控制台应用程序。
-
-
-## 先决条件
+This topic provides a C# code sample that shows you how to connect to an existing AdventureWorks SQL Database by using ADO.NET. The sample compiles to a console application that queries the database and displays the results.
 
 
-- Azure SQL 数据库 上的现有 AdventureWorks 数据库。[在数分钟内即可创建一个](sql-database-get-started)。
-- [装有 .NET Framework 的 Visual Studio](https://www.visualstudio.com/zh-cn/visual-studio-homepage-vs.aspx)
+## Prerequisites
 
 
-## 步骤 1：控制台应用程序
+- An existing AdventureWorks database on Azure SQL Database. [Create one in minutes](/documentation/articles/sql-database-get-started).
+- [Visual Studio with the .NET Framework](https://www.visualstudio.com/zh-CN/visual-studio-homepage-vs.aspx)
 
 
-1. 使用 Visual Studio 创建 C# 控制台应用程序。
+## Step 1: Console application
+
+
+1. Create a C# console application by using Visual Studio.
 
 
 ![Connect and query](./media/sql-database-connect-query/ConnectandQuery_VisualStudio.png)
 
 
-## 步骤 2：SQL 代码示例
+## Step 2: SQL code sample
 
 
-1. 将以下代码示例复制并粘贴到你的控制台应用程序。
+1. Copy and paste the code sample from below into your console application.
 
 
-> [AZURE.WARNING] 该代码示例在编写时追求简短，以方便用户理解。该示例不适合在生产环境中使用。
+> [AZURE.WARNING] The code sample is designed to be as short as possible to make it easy to understand. The sample is not meant to be used in production.
 
 
-此代码不适合在生产环境中使用。如果你想要实施生产就绪代码，以下要求被认为是行业最佳实践：
+This code is not meant for production. If you would like to implement production ready code, the following are considered industry best practices:
 
 
-- 异常处理。
-- 针对暂时性错误的重试逻辑。
-- 在配置文件中安全存储密码。
+- Exception handling.
+- Retry logic for transient errors.
+- Safe storage of passwords in a configuration file.
 
 
 
-### C# 示例的源代码
+### Source code for C# sample
 
 
-将此源代码粘贴到你的 **Program.cs** 文件中。
+Paste this source code into your **Program.cs** file.
 
 
 	using System;  // C#
@@ -78,7 +70,7 @@
 		{
 			static void Main()
 			{
-				string SQLConnectionString = <Your_Connection_String>;
+				string SQLConnectionString = "[Your_Connection_String]";
 				// Create a SqlConnection from the provided connection string.
 				using (SqlConnection connection = new SqlConnection(SQLConnectionString))
 				{
@@ -105,38 +97,35 @@
 							reader[0], reader[1], reader[2], reader[3], reader[4]);
 					}
 				}
+				Console.WriteLine("Press any key to continue...");
+				Console.ReadKey();
 			}
 		}
 	}
 
 
-## 步骤 3：查找数据库的连接字符串
+## Step 3: Find the connection string for your database
 
 
-1. 打开 [Azure 门户](http://manage.windowsazure.cn)。
-2. 单击"浏览">"SQL 数据库">"Adventure Works"数据库 >"属性">"显示数据库连接字符串"。
+1. Open the [Azure portal](https://manage.windowsazure.cn).
+2. Click **Browse** > **SQL Databases** > **“Adventure Works” Database**> **Properties** > **Show Database Connection Strings**.
 
 
-![Portal](./media/sql-database-connect-query/ConnectandQuery_portal.png)
-> [AZURE.NOTE] 由世纪互联运营的Windows Azure目前暂不支持新门户
-
-在数据库连接字符串边栏选项卡上，你将看到 ADO.NET、ODBC、PHP 和 JDBC 的相应连接字符串。
+![Portal](.\media\sql-database-connect-query\ConnectandQuery_portal.png)
 
 
-## 步骤 4：替换实际连接信息
+On the database connection strings blade, you see the appropriate connection strings for ADO.NET, ODBC, PHP, and JDBC.
 
 
--在粘贴的源代码中，将 *<Your_Connection_String>* 占位符替换为连接字符串，并确保将该字符串中的  *your_password_here* 替换为实际密码。
+## Step 4: Substitute real connection information
 
 
-## 步骤 5：运行应用程序
+-In the source code you pasted, replace the *[Your_Connection_String]* placeholder with the connection string, and be sure to replace *your_password_here* in that string with your actual password.
 
 
-1. 编译你的应用程序。
-2. 在 **cmd.exe** 窗口中，导航到 Visual Studio 项目下的 **bin\debug** 目录。
-3. 在 **cmd.exe** 提示符下输入以下内容：<br/> **ConnectandQuery_Example.exe**
+## Step 5: Run the application
 
 
-程序将在 cmd.exe 窗口中显示查询结果。
-
-<!--HONumber=55-->
+1. To build and run your application, click **DEBUG** > **Start Debugging**
+2. The program prints the query results to the console window.
+ 

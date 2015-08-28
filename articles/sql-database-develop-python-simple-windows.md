@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Windows 上使用 Python 连接到 SQL 数据库" 
-	description="演示了一个可用于从 Windows 客户端连接到 Azure SQL 数据库 的 Python 代码示例。该示例使用了 pyodbc 驱动程序。"
+	pageTitle="Connect to SQL Database by using Python on Windows" 
+	description="Presents a Python code sample you can use to connect to Azure SQL Database from a Windows client. The sample uses the pyodbc driver."
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -8,69 +8,67 @@
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="04/18/2015"
-	wacn.date="05/25/2015" 
-	ms.author="mebha"/>
+<tags  wacn.date="" ms.service="sql-database" ms.date="04/18/2015" />
 
 
-# 在 Windows 上使用 Python 连接到 SQL 数据库
+# Connect to SQL Database by using Python on Windows
 
 
-<!--
-2015-04-18
-Original content written by Meet Bhagdev, then edited by GeneMi.
--->
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-本主题提供以 Python 编写的代码示例。该示例在 Windows 计算机上运行。该示例将使用 **pyodbc** 驱动程序连接到 Azure SQL 数据库。
+This topic presents a code sample written in Python. The sample runs on a Windows computer. The sample and connects to Azure SQL Database by using the **pyodbc** driver.
 
 
-## 要求
+## Requirements
 
 
-- [Python 2.7.6](https://www.python.org/download/releases/2.7.6)
+- [Python 2.7.6](https://www.python.org/download/releases/2.7.6/)
 
 
-### 安装所需的模块
+### Install the required modules
 
 
-导航到目录 **C:\Python27\Scripts**，然后运行以下命令。
+Install [pymssql](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymssql). 
+
+Make sure you choose the correct whl file.
+
+For example : If you are using Python 2.7 on a 64 bit machine choose : pymssql-2.1.1-cp27-none-win_amd64.whl.
+Once you download the .whl file place it in the the C:/Python27 folder.
+
+Now install the pymssql driver using pip from command line. cd into C:/Python27 and run the following
+	
+	pip install pymssql-2.1.1-cp27-none-win_amd64.whl
+
+Instructions to enable the use pip can be found [here](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows)
 
 
-	pip install --allow-external pyodbc --allow-unverified pyodbc pyodbc
+### Create a database and retrieve your connection string
 
 
-### 创建数据库并检索连接字符串
+See the [Getting Started topic](/documentation/articles/sql-database-get-started) to learn how to create a sample database and retrieve your connection string. It is important you follow the guide to create an **AdventureWorks database template**. The samples shown below only work with the **AdventureWorks schema**. 
 
 
-有关如何创建示例数据库并检索连接字符串，请参阅[入门主题](sql-database-get-started)。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。 
+## Connect to your SQL Database
 
 
-## 连接到 SQL 数据库
+The [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html) function is used to connect to SQL Database.
 
+	import pymssql
+	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
-	import pyodbc
-	cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=tcp:yourservername.database.chinacloudapi.cn;DATABASE=AdventureWorks;UID=yourusername;PWD=yourpassword')
-	cursor = cnxn.cursor())
 
 
 <!--
 TODO: Again, Does Python allow you to somehow split a very long line of code into multiple lines, for better display?
 -->
 
+The [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute) function can be used to retrieve a result set from a query against SQL Database. This function essentially accepts any query and returns a result set which can be iterated over with the use of [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone).
 
-## 执行 SQL SELECT
 
-
-	import pyodbc
-	cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=tcp:yourserver.database.chinacloudapi.cn;DATABASE=AdventureWorks;UID=yourusername;PWD=yourpassword')
-	cursor = cnxn.cursor()
+	import pymssql
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	cursor = conn.cursor()
 	cursor.execute('SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC;')
 	row = cursor.fetchone()
 	while row:
@@ -78,12 +76,14 @@ TODO: Again, Does Python allow you to somehow split a very long line of code int
 	    row = cursor.fetchone()
 
 
-## 插入一行，传递参数，然后检索生成的主键
+## Insert a row, pass parameters, and retrieve the generated primary key
+
+In SQL Database the [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) property and the [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) object can be used to auto-generate [primary key](https://msdn.microsoft.com/library/ms179610.aspx) values. 
 
 
-	import pyodbc
-	cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=tcp:yourserver.database.chinacloudapi.cn;DATABASE=AdventureWorks;UID=yourusername;PWD=yourpassword')
-	cursor = cnxn.cursor()
+	import pymssql
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	cursor = conn.cursor()
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express', 'SQLEXPRESS', 0, 0, CURRENT_TIMESTAMP)")
 	row = cursor.fetchone()
 	while row:
@@ -91,14 +91,24 @@ TODO: Again, Does Python allow you to somehow split a very long line of code int
 	    row = cursor.fetchone()
 
 
-## 事务
+## Transactions
 
 
-	import pyodbc
-	cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=tcp:yourserver.database.chinacloudapi.cn;DATABASE=AdventureWorks;UID=yourusername;PWD=yourpassword')
-	cursor = cnxn.cursor()
+This code example demonstrates the use of transactions in which you:
+
+
+-Begin a transaction
+
+-Insert a row of data
+
+-Rollback your transaction to undo the insert
+
+
+	import pymssql
+	conn = pymssql.connect(server='yourserver.database.chinacloudapi.cn', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
+	cursor = conn.cursor()
 	cursor.execute("BEGIN TRANSACTION")
-	cursor.execute("DELETE FROM test WHERE value = 1;")
+	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
 
@@ -108,10 +118,10 @@ If so, perhaps we should at least include a sentence explaining that the option 
 -->
 
 
-## 存储过程
+## Stored procedures
 
 
-我们将使用 **pyodbc** 驱动程序连接到 SQL 数据库。从 2015 年 4 月开始，此驱动程序将附带限制，它不再支持存储过程中的输出参数。因此，我们执行的存储过程将返回行结果集形式的信息。在该存储过程的 Transact-SQL 源代码中，靠近结尾处有一个用于生成和发出结果集的 SQL SELECT 语句。
+We are using the **pyodbc** driver to connect to SQL Database. As of April 2015 this driver has the limitation of not supporting output parameters from a stored procedure. Therefore we execute a stored procedure that returns information in the form of a results set of rows. In the Transact-SQL source code for the stored procedure, near the end there is an SQL SELECT statement to generate and emit the results set.
 
 
 
@@ -124,7 +134,7 @@ Additionally you will have to use a database management tool such as SSMS to cre
 
 <!--
 TODO: Does AdventureWorks db have any stored procedure that returns a results set?
-Or can we use a regular system stored procedure that is a native part of SQL 数据库, maybe like sys.sp_helptext !
+Or can we use a regular system stored procedure that is a native part of SQL Database, maybe like sys.sp_helptext !
 -->
 
 
@@ -133,4 +143,3 @@ Or can we use a regular system stored procedure that is a native part of SQL 数
 	cursor = cnxn.cursor()
 	cursor.execute("execute sys.sp_helptext 'SalesLT.vGetAllCategories';")
 
-<!--HONumber=55-->
