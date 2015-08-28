@@ -1,75 +1,67 @@
-﻿<properties
-   pageTitle="使用 SSMS 迁移到 SQL 数据库"
-   description="Windows Azure SQL 数据库, 迁移 SQL 数据库, 使用 ssms 迁移"
+<properties
+   pageTitle="Migrating to SQL Database using SSMS"
+   description="Microsoft Azure SQL Database, migrate sql database, migrate using ssms"
    services="sql-database"
    documentationCenter=""
    authors="kaivalyah2015"
    manager="jeffreyg"
    editor="monicar"/>
 
-<tags
+<tags wacn.date="05/20/2015" 
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management"
-   ms.date="04/14/2015"
-   wacn.date="05/25/2015"
-   ms.author="kaivalyh"/>
+   ms.date="04/14/2015"/>
 
-# 使用 SSMS 迁移兼容的数据库 
+#Migrating a compatible database using SSMS 
 
-![alt text](./media/sql-database-migrate-ssms/01SSMSDiagram.png)
+![SSMS migration diagram](./media/sql-database-migrate-ssms/01SSMSDiagram.png)
 
-如果数据库架构已与 Azure SQL 数据库 兼容，则迁移将十分直截了当。由于无需进行任何转换，迁移只要求将数据库导入 Azure。你可以使用 SSMS，通过将数据库"部署"到 Azure SQL 数据库，以一个步骤来实现此目的；或者，可以分两步来完成：先导出 BACPAC，然后将它导入到 Azure SQL 数据库 服务器以创建新的数据库。 
+If a database schema is already compatible with Azure SQL Database then then migration will be straightforward. If no schema modifications are required, a migration only requires that the database is imported into Azure. This can be done in a single step using SSMS by ‘deploying’ the database to Azure SQL Database, or as a two-step process by first exporting a BACPAC of the current database and then importing that BACPAC to Azure to create a new Azure SQL database. 
 
-可以将导出的 BACPAC 上载到 Azure 存储空间，然后使用门户导入 BACPAC。在云中运行导入可以降低导入步骤出现的延迟，从而提高迁移大型数据库时的性能和可靠性。
+You can upload the exported BACPAC to Azure Storage and import it using the portal. Running the import in the cloud will reduce the latency in the import step which will improve performance and reliability of the migration with large databases.
 
-直接从 SSMS 部署的方法始终会部署架构和数据，而导出再导入的方法始终会部署架构，并提供一个选项用于部署所有或一部分表中的数据。不管是从 SSMS 部署，还是从 SSMS（然后通过门户）导出再导入，实质上使用的是相同的 DAC 技术，而结果也是相同的。   
+Deploying directly from SSMS will always deploy the schema and data, while export and import always deploys the schema and provides an option to deploy data from all or a subset of the tables.  Whether you deploy from SSMS or export and then import from SSMS (or later the portal) the same DAC technology is used under the hood and the outcome is the same.   
 
-此选项也相当于选项 #3 中的最后一个步骤，用于在更新数据库后迁移数据库，使之与 Azure SQL 数据库 兼容。 
+This option is also used as the final step in option #3 to migrate the databases after it has been updated to make it compatible with Azure SQL Database. 
 
-## 使用 SSMS 部署到 Azure SQL 数据库
-1.	根据"为迁移的数据库创建目标服务器"中所述，使用 Azure 门户设置一个服务器。
-2. 在 SSMS 对象资源管理器中找到源数据库，然后执行**将数据库部署到 Windows Azure SQL 数据库...** 任务
+##Using SSMS to Deploy to Azure SQL Database
+1.	Provision a logical server using the Azure Management Portal.
+2. Locate the source database in the SSMS Object Explorer and execute the task, **Deploy Database to Azure SQL Database…**
 
-	![alt text](./media/sql-database-migrate-ssms/02MigrateusingSSMS.png)
+	![[Deploy to Azure from Tasks menu](./media/sql-database-migrate-ssms/02MigrateusingSSMS.png)
 
-3.	在部署向导中，配置与设置的目标 Azure SQL 数据库 服务器的连接。 
-4.	提供数据库的**名称**，并设置"版本"（服务层）和"服务目标"（性能级别）。有关配置这些设置的详细信息，请参阅"选择数据库性能级别/定价层以进行迁移"。 
+3.	In the deployment wizard configure the connection to the target Azure SQL Database server provisioned in step. 
+4.	Provide the **name** for the database and set the **Edition** (service tier) and **Service Objective** (performance level). See, Choosing a database performance level/pricing tier for migration, for more information on configuring these settings. 
 
-	![alt text](./media/sql-database-migrate-ssms/03MigrateusingSSMS.png)
+	![Export settings](./media/sql-database-migrate-ssms/03MigrateusingSSMS.png)
 
-5.	完成向导，以执行数据库迁移。  
-根据数据库的大小和复杂性，部署可能需要花费几分钟到几小时。如果发生了指出数据库架构与 SQL 数据库 不兼容的错误，你必须使用其他选项。 
-## 使用 SSMS 导出 BACPAC，然后将其导入 SQL 数据库
-部署过程可分为两个步骤：导出和导入。在第一个步骤中，将创建一个 BACPAC 文件，该文件稍后将用作第二个步骤的输入。 
+5.	Complete the wizard to migrate the database.  
+Depending on the size and complexity of the database deployment may take from a few minutes to many hours. If errors occur that indicate that the database schema is incompatible with the SQL Database then a different option must be used. 
+##Use SSMS to export a BACPAC and then import it to SQL Database
+The deployment process can be broken into two steps: export and import. In the first step a BACPAC file is created which is then used as input in the second step. 
 
-1.	根据"为迁移的数据库创建目标服务器"中所述，使用最新的 SQL 数据库 Update 设置一个服务器。
-2.	在 SSMS 对象资源管理器中找到源数据库，然后选择**将数据库部署到 Windows Azure SQL 数据库...** 任务
+1.	Provision a logical server using the Azure Management Portal.
+2.	Locate the source database in the SSMS Object Explorer and select the task, **Deploy Database to Azure SQL Database…**
 
-	![alt text](./media/sql-database-migrate-ssms/04MigrateusingSSMS.png)
+	![Export a data-tier application from the Tasks menu](./media/sql-database-migrate-ssms/04MigrateusingSSMS.png)
 
-3. 在导出向导中配置导出，以在本地保存 BACPAC 文件。导出的 BACPAC 始终包括完整的数据库架构，默认情况下还包括所有表中的数据。如果你要排除部分或全部表中的数据，请使用"高级"选项卡。例如，你可以选择仅导出引用表的数据。
-	>[AZURE.NOTE] 注意：在 Azure 管理门户支持在 Azure 中运行导入后，你可以选择将导出的 BACPAC 文件保存到 Azure 存储空间，并在云中运行导入。 
+3. In the export wizard configure the export to save the BACPAC file locally. The exported BACPAC always includes the complete database schema and by default data from all the tables. Use the Advanced tab if you wish to exclude data from some or all of the tables. You might, for example, choose to export only the data for reference tables.
+	>[AZURE.NOTE] Note: once the Azure management portal supports import running in Azure then you could choose to save the exported BACPAC file to Azure Storage and run the import in the cloud. 
 
-	![alt text](./media/sql-database-migrate-ssms/05MigrateusingSSMS.png)
+	![Export settings](./media/sql-database-migrate-ssms/05MigrateusingSSMS.png)
 
-4.	在创建 BACPAC 后，请连接到步骤 1 中创建的服务器，右键单击"数据库"文件夹，然后选择"导入数据层应用程序..."
+4.	Once the BACPAC has been created, connect to the server you created in step1, right click on Databases folder and select Import Data Tier Application...
 
-	![alt text](./media/sql-database-migrate-ssms/06MigrateusingSSMS.png) 
+	![Import data-tier application menu item](./media/sql-database-migrate-ssms/06MigrateusingSSMS.png) 
 
-5.	在导入向导中，选择你刚导出的 BACPAC 文件，以在 Azure SQL 数据库 中创建新的数据库。 
+5.	In the import wizard select the BACPAC file you have just exported to create the new database in Azure SQL Database. 
 
-	![alt text](./media/sql-database-migrate-ssms/07MigrateusingSSMS.png)
+	![Import settings](./media/sql-database-migrate-ssms/07MigrateusingSSMS.png)
 
-6.	提供数据库的名称，并设置"版本"（服务层）和"服务目标"（性能级别）。 
+6.	Provide the name for the database and set the Edition (service tier) and Service Objective (performance level). 
 	 
-7.	完成向导以导入 BACPAC 文件，并在 Azure SQL 数据库 中创建数据库。
+7.	Complete the wizard to import the BACPAC file and create the database in Azure SQL Database.
 
-	![alt text](./media/sql-database-migrate-ssms/08MigrateusingSSMS.png)
+	![Database settings](./media/sql-database-migrate-ssms/08MigrateusingSSMS.png)
  
-## 备选方法
-你也可以使用命令行实用工具 sqlpackage.exe 来部署数据库，或者导出并导入 BACPAC。Sqlpackage.exe 使用的 DAC 技术与 SSMS 相同，因此结果是相同的。有关详细信息，请转到[此处](https://msdn.microsoft.com/zh-CN/library/hh550080.aspx)。
-
-<!--HONumber=55-->
+##Alternatives
+You can also use the command line utility sqlpackage.exe to deploy the database or export and import a BACPAC. Sqlpackage.exe uses the same DAC technology as SSMS so the outcome is the same. For more information go [here](https://msdn.microsoft.com/zh-CN/library/hh550080.aspx).

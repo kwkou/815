@@ -1,187 +1,190 @@
 <properties 
-	pageTitle="Azure SQL 弹性数据库池参考" 
-	description="本参考提供弹性数据库池文章和可编程性信息的链接和详情。" 
+	pageTitle="Azure SQL elastic database pool reference" 
+	description="This reference provides links and details to elastic database pool articles and programmability information." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
 	manager="jeffreyg" 
 	editor=""/>
 
-<tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="05/29/2015"/>
+<tags 
+	ms.service="sql-database" ms.date="04/29/2015" wacn.date="" />
 
 
-# SQL 数据库 弹性数据库池参考（预览版）
+# SQL Database elastic database pool reference (preview)
 
-对于拥有数十、数百甚至数千数据库的 SaaS 开发人员，则可以通过弹性数据库池来简化整个数据库组的创建、维护以及性能和成本管理流程。 
+For SaaS developers who have tens, hundreds, or even thousands of databases, an elastic database pool simplifies the process of creating, maintaining, and managing both performance and cost across the entire group of databases. 
 
-本参考提供弹性池文章和可编程性信息的链接和详情。
+This reference provides links and details to elastic database pool articles and programmability information.
 
-## 概述
+## Overview
 
-弹性池集合了数据库吞吐量单位 (DTU)，以及由多个数据库共享的存储 (GB)。可以随时在池中添加和删除弹性数据库。池中的弹性数据库只使用所需的池中资源，同时会释放可用资源供需要它们的活动数据库使用。
-
-
-
-## 创建和管理弹性池的先决条件
+An elastic database pool is a collection of database throughput units (DTUs), and storage (GBs) that are shared by multiple databases. Elastic databases can be added to, and removed from the pool at any time. Elastic databases in the pool utilize only the resources they require from the pool freeing up available resources for only the active databases that need them.
 
 
-- 弹性池只能在 Azure SQL 数据库 V12 服务器中使用。   
-- 仅 Azure 资源管理器 (ARM) 支持适用于弹性池的 PowerShell 和 REST API；不支持服务管理命令 (RDFE)。 
-- [Windows Azure 门户](https://manage.windowsazure.cn)支持创建和管理弹性池。 
+
+## Prerequisites for creating and managing elastic database pools
 
 
-## 当前预览版的限制
-
-- 当前预览版中弹性池的定价层为"标准"。  
-- 不支持直接将数据库导入弹性池。你可以先导入到独立的数据库中，然后将该数据库移到池中。支持从池中导出数据库。
+- Elastic pools are only available in Azure SQL Database V12 servers.   
+- Creating and managing elastic pools is supported in the [Windows Azure portal](https://manage.windowsazure.cn) . 
 
 
-## 文章列表
+## Restrictions for the current preview
 
-以下文章可帮助你着手使用弹性数据库和弹性作业：
+- The pricing tier for an elastic database pool in the current preview is Standard.  
+- Import of a database directly into a pool is not supported. You can import into a stand-alone database and then move the database into a pool. Export of a database from within a pool is supported.
+- Each pool can have a maximum 100 databases.
 
-| 文章 | 说明 |
+
+## List of articles
+
+The following articles will help you get started using elastic databases and elastic jobs:
+
+| Article | Description |
 | :-- | :-- |
-| [SQL 数据库 弹性池](sql-database-elastic-pool) | 弹性池概述 |
-| [使用 Azure 门户创建和管理 SQL 数据库 弹性池](sql-database-elastic-pool-portal) | 如何使用 Azure 门户创建和管理弹性池 |
-| [使用 PowerShell 创建和管理 SQL 数据库 弹性池](sql-database-elastic-pool-powershell) | 如何使用 PowerShell cmdlet 创建和管理弹性池 |
-| [弹性数据库作业概述](sql-database-elastic-jobs-overview) | 概述弹性作业服务，该服务可用于跨池中的所有弹性数据库运行 T-SQL 脚本 |
-| [安装弹性数据库作业组件](sql-database-elastic-jobs-service-installation) | 如何安装弹性数据库作业服务 |
-| [创建弹性作业服务所需的用户](sql-database-elastic-jobs-add-logins-to-dbs) | 若要运行弹性数据库作业脚本，必须将具有适当权限的用户添加到池中的每个数据库。|
-| [如何卸载弹性数据库作业组件](sql-database-elastic-jobs-uninstall) | 尝试安装弹性数据库作业服务时从故障中进行恢复 |
+| [SQL Database elastic database pools](sql-database-elastic-pool) | Overview of elastic pools |
+| [Create and manage a SQL Database elastic database pool with the Azure portal](sql-database-elastic-pool-portal) | How to create and manage an elastic pool using the Azure portal |
+| [Create and manage a SQL Database elastic database pool with PowerShell](sql-database-elastic-pool-powershell) | How to create and manage an elastic pool using PowerShell cmdlets |
+| [Elastic database jobs overview](sql-database-elastic-jobs-overview) | An overview of the elastic jobs service, that enables running T-SQL scripts across all elastic databases in a pool |
+| [Installing the elastic database job component](sql-database-elastic-jobs-service-installation) | How to install the elastic database job service |
+| [Creating the required user for the elastic jobs service](sql-database-elastic-jobs-add-logins-to-dbs) | To run an elastic database job script, a user with the appropriate permissions must be added to every database in the pool. |
+| [How to uninstall the elastic database job components](sql-database-elastic-jobs-uninstall) | Recover from failures when attempting to install the elastic database job service |
 
 
 
-## 命名空间和终结点详细信息
-弹性池是 Windows Azure SQL 数据库 中类型为"ElasticPool"的 ARM 资源。
+## Namespace and endpoint details
+An elastic pool is an ARM resource of type “ElasticPool” in the Microsoft Azure SQL Database.
 
-- **命名空间**：Microsoft.Sql/ElasticPool
-- 用于 REST API 调用的**辅助终结点**（Azure 资源管理器）: https://management.windowsazure.cn
+- **namespace**: Microsoft.Sql/ElasticPool
+- **management-endpoint** for REST API calls (Azure resource manager): https://management.windowsazure.cn
 
 
 
-## 弹性数据库池属性
+## Elastic database pool properties
 
-| 属性 | 说明 |
+| Property | Description |
 | :-- | :-- |
-| creationDate | 创建池的日期。 |
-| databaseDtuMax | 池中单个数据库可以使用的 DTU 最大数目。数据库 DTU 最大值不是资源保障。DTU 最大值适用于池中的所有数据库。 |
-| databaseDtuMin | 池中单个数据库可以确保获得的 DTU 最小数目。数据库 DTU 最小值可以设置为 0。DTU 最小值适用于池中的所有数据库。请注意，池中数据库数目和数据库 DTU 最小值的积不能超过池本身的 DTU 数。 |
-| Dtu | 池中所有数据库共享的 DTU 数。 |
-| edition | 池的服务层。池中的每个数据库都是此版本。 |
-| elasticPoolId | 池实例的 GUID。 |
-| elasticPoolName | 池的名称。该名称相对于其父服务器来说是唯一的。 |
-| location | 创建池时所在的数据中心的位置。 |
-| state | 如果订阅的帐单付款延迟，则状态为"禁用"，否则状态为"就绪"。 |
-| storageMB | 池的存储限制 (MB)。池中任何单个的数据库都可以用到标准版本存储限制 (250 GB) 为止，但池中所有数据库所用的存储总量不能超过此池限制。   |
+| creationDate | Date the pool is created. |
+| databaseDtuMax | Maximum number of DTUs that a single database in the pool may use.  The database DTU max is not a resource guarantee. The DTU max applies to all databases in the pool. |
+| databaseDtuMin | Minimum number of DTUs that a single database in the pool is guaranteed. The database DTU min may be set to 0. The DTU min applies to all databases in the pool. Note that the product of the number of databases in the pool and the database DTU min cannot exceed the DTUs of the pool itself. |
+| Dtu | Number of DTUs shared by all databases in the pool. |
+| edition | Service tier of the pool.  Every database within the pool has this edition. |
+| elasticPoolId | GUID of the instance of the pool. |
+| elasticPoolName | Name of the pool.  The name is unique relative to its parent server. |
+| location | Data center location where the pool was created. |
+| state | State is “Disabled” if payment of the bill for subscription is delinquent, and “Ready” otherwise. |
+| storageMB | Storage limit in MB for the pool.  Any single database in the pool can use up to Standard Edition storage limit (250 GB), but the total of storage used by all databases in the pool cannot exceed this pool limit.   |
 
 
-## 弹性池和弹性数据库的 DTU 和存储限制
+## DTU and storage limits for elastic pools and elastic databases
 
-池的存储限制决定于池的 DTU 量；每个 DTU = 1 GB 存储。例如，一个 200 DTU 的池的存储限制为 200 GB。
+The storage limit of the pool is determined by the amount of DTUs of the pool; each DTU = 1 GB storage.  For example, a 200 DTU pool has a storage limit of 200 GB.
 
-| 属性 | 默认值 | 有效值 |
+| property | default value | valid values |
 | :-- | :-- | :-- |
-| Dtu | 200 | 200, 400, 800, 1200 |
+| Dtu | 100 | 100, 200, 400, 800, 1200 |
 | databaseDtuMax | 100 | 10, 20, 50 100 |
 | databaseDtuMin | 0 | 0, 10, 20, 50 |
-| storageMB | 200 GB*  | 200 GB, 400 GB, 800 GB, 1200 GB |
+| storageMB | 100 GB*  | 100 GB, 200 GB, 400 GB, 800 GB, 1200 GB |
 
-*API 中的单位为 MB，而不是 GB
+*units in API are MB, not GB
 
-## 辅助进程和会话限制
+## Worker and session limits
 
-弹性池中所有数据库所支持的并发辅助进程和并发会话的最大数目取决于池的 DTU 设置： 
+The maximum number of concurrent workers and concurrent sessions supported for all databases in an elastic pool depends on the DTU setting for the pool: 
 
-| DTU | 最大并发辅助进程数 | 最大并发会话数 |
+| DTUs | Max concurrent workers | Max concurrent sessions |
 | :-- | :-- | :-- |
+| 100 | 200 | 2,400 |
 | 200 | 400 | 4,800 |
 | 400 | 800 | 9,600 |
 | 800 | 1,600 | 19,200 |
 | 1,200 | 2,400 | 28,800 |
 
 
-## Azure 资源管理器限制
+## Azure Resource Manager limitations
 
-弹性池要求 Azure SQL 数据库 V12 服务器。服务器位于资源组中。
+Azure SQL Database V12 servers are located in resource groups.
 
-- 每个资源组最多可以有 800 个服务器。
-- 每个服务器最多可以有 800 个弹性池。
-- 每个弹性池最多可以有 100 个数据库。
-
-
-## 弹性池操作延迟
-
-- 更改单个数据库的保障 DTU 数 (databaseDtuMin) 或单个数据库的最大 DTU 数 (databaseDtuMax) 通常在 5 分钟或更少的时间内完成。 
-- 如何更改池的 DTU/存储限制 (storageMB) 取决于池中所有数据库使用的空间总容量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改池的 DTU/存储限制时，预计延迟为 3 小时或更短的时间。 
+- Each resource group can have a maximum 800 servers.
+- Each server can have a maximum 800 elastic pools.
 
 
 
-## 弹性数据库池 PowerShell cmdlet 和 REST API 命令（仅限 Azure 资源管理器）
+## Latency of elastic pool operations
 
-以下 PowerShell cmdlet 和 REST API 命令可用于创建和管理弹性池：
+- Changing the guaranteed DTUs per database (databaseDtuMin) or maximum DTUs per database (databaseDtuMax) typically completes in 5 minutes or less. 
+- Changing the DTU / storage limit (storageMB) of the pool depends on the total amount of space used by all databases in the pool.  Changes average 90 minutes or less per 100 GB. For example, if the total space used by all databases in the pool is 200 GB, then the expected latency for changing the pool DTU / storage limit is 3 hours or less. 
 
-| [PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125356.aspx) | [REST API 命令](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) |
+
+
+## Elastic database pool PowerShell cmdlets and REST API commands (Azure Resource Manager only)
+
+The following PowerShell cmdlets and REST API commands are available for creating and managing elastic pools:
+
+| [PowerShell cmdlets](https://msdn.microsoft.com/zh-cn/library/mt125356.aspx) | [REST API commands](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) |
 | :-- | :-- |
-| Get-AzureSqlDatabase | 获取 Azure SQL 数据库 |
-| Get-AzureSqLElasticPool | 获取 Azure SQL 数据库 弹性数据库池 |
-| Get-AzureSqlElasticPoolActivity | 获取 Azure SQL 数据库 弹性数据库池操作 |
-| Get-AzureSqlElasticPoolDatabase | 获取 Azure SQL 数据库 弹性数据库 |
-| Get-AzureSqlElasticPoolDatabaseActivity | 获取 Azure SQL 数据库 弹性数据库操作 |
-| Get-AzureSqlServer | 获取 Azure SQL 数据库 服务器 |
-| Get-AzureSqlServerFirewallRule | 获取 Azure SQL 数据库 服务器防火墙规则 |
-| Get-AzureSqlServerServiceObjective | 获取 Azure SQL 数据库 服务器服务目标 |
-| New-AzureSqlDatabase | 创建 Azure SQL 数据库 |
-| New-AzureSqlElasticPool | 创建 Azure SQL 数据库 弹性数据库池 |
-| New-AzureSqlServer | 创建 Azure SQL 数据库 服务器 |
-| New-AzureSqlServerFirewallRule | 创建 Azure SQL 数据库 服务器防火墙规则 |
-| Remove-AzureSqlDatabase | 删除 Azure SQL 数据库 |
-| Remove-AzureSqlElasticPool | 删除 Azure SQL 数据库 弹性数据库池 |
-| Remove-AzureSqlServer | 删除 Azure SQL 数据库 服务器 |
-| Set-AzureSqlDatabase | 设置 Azure SQL 数据库 |
-| Set-AzureSqlElasticPool | 设置 Azure SQL 数据库 弹性数据库池 |
-| Set-AzureSqlServer | 设置 Azure SQL 数据库 服务器 |
-| Set-AzureSqlServerFirewallRule | 设置 Azure SQL 数据库 服务器防火墙规则 |
-| Get-Metrics | 获取指标 |
+| Get-AzureSqlDatabase | Get Azure SQL database |
+| Get-AzureSqLElasticPool | Get Azure SQL Database elastic database pool |
+| Get-AzureSqlElasticPoolActivity | Get Azure SQL Database elastic database pool operations |
+| Get-AzureSqlElasticPoolDatabase | Get Azure SQL Database elastic database |
+| Get-AzureSqlElasticPoolDatabaseActivity | Get Azure SQL Database elastic database operations |
+| Get-AzureSqlServer | Get Azure SQL Database server |
+| Get-AzureSqlServerFirewallRule | Get Azure SQL Database server firewall rule |
+| Get-AzureSqlServerServiceObjective | Get Azure SQL Database server service objective |
+| New-AzureSqlDatabase | Create Azure SQL database |
+| New-AzureSqlElasticPool | Create Azure SQL Database elastic database pool |
+| New-AzureSqlServer | Create Azure SQL Database server |
+| New-AzureSqlServerFirewallRule | Create Azure SQL Database server firewall rule) |
+| Remove-AzureSqlDatabase | Remove Azure SQL database |
+| Remove-AzureSqlElasticPool | Remove Azure SQL Database elastic database pool |
+| Remove-AzureSqlServer | Remove Azure SQL Database server |
+| Set-AzureSqlDatabase | Set Azure SQL database |
+| Set-AzureSqlElasticPool | Set Azure SQL Database elastic database pool |
+| Set-AzureSqlServer | Set Azure SQL Database server |
+| Set-AzureSqlServerFirewallRule | Set Azure SQL Database server firewall rule |
+| Get-Metrics | Get Metrics |
 
 
-## 计费和定价信息
+## Billing and pricing information
 
-弹性数据库池按以下情况计费：
+Elastic database pools are billed per the following characteristics:
 
-- 弹性池一创建即计费，即使池中没有数据库。 
-- 弹性池按小时计费。该计量频率与独立数据库性能级别的计量频率相同。 
-- 如果将弹性池的大小调整为新的 DTU 量，则在调整操作完成之前，不会按新的 DTU 量计费。这种计费所遵循的模式与更改独立数据库的性能级别所遵循的模式相同。 
+- An elastic pool is billed upon its creation, even when there are no databases in the pool. 
+- An elastic pool is billed hourly. This is the same metering frequency as for performance levels of standalone databases. 
+- If an elastic pool is resized to a new amount of DTUs, then the pool is not billed according to the new amount of DTUS until the resizing operation completes.  This follows the same pattern as changing the performance level of standalone databases. 
 
 
-- 弹性池的价格取决于池的 DTU 数和池中数据库的数量。 
-- 价格按 (池 DTU 数)x(每个 DTU 的单价) + (数据库数)x(每个数据库的单价) 计算
+- The price of an elastic pool is based on the number of DTUs of the pool, and the number of databases in the pool. 
+- Price is computed by (number of pool DTUs)x(unit price per DTU) + (number of databases)x(unit price per database)
 
-弹性池的 DTU 单价高于同一服务层中独立数据库的 DTU 单价。有关详细信息，请参阅 [SQL 数据库 定价](/home/features/sql-database/#price)。  
+The unit DTU price for an elastic pool is higher than the unit DTU price for a standalone database in the same service tier. For details, see [SQL Database pricing](/home/features/sql-database/#price).  
 
-## 弹性数据库池错误
+## Elastic database pool errors
 
 | ErrorNumber | ErrorSeverity | ErrorFormat | ErrorInserts | ErrorCause | ErrorCorrectiveAction |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| 1132 | EX_RESOURCE | 弹性池已达到其存储限制。弹性池的存储使用不能超过 (%d) MB。|弹性池空间限制 (MB)。|到达弹性池的存储限制时，尝试向数据库写入数据。|在可能的情况下，请考虑增加弹性池的 DTU 数，以便提高其存储限制，降低弹性池中各数据库使用的存储，或者从弹性池中删除数据库。 |
-| 10929 | EX_USER | %s 最小保障为 %d，最大限制为 %d，数据库的当前使用量为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。如需帮助，请参阅 [https://msdn.microsoft.com/zh-cn/library/dn338081.aspx](https://msdn.microsoft.com/zh-cn/library/dn338081.aspx)。否则，请稍后再试。|单个数据库的 DTU 最小值；单个数据库的 DTU 最大值 | 弹性池中所有数据库的并发辅助进程（请求）总数尝试超过池限制。|可能情况下，请考虑增加弹性池的 DTU 数，以便提高其辅助进程限制，或者从弹性池中删除数据库。 |
-| 40844 | EX_USER | 弹性池中数据库"%ls"（位于服务器"%ls"上）是"%ls"版本的数据库，不能有连续的复制关系。| 数据库名称, 数据库版本, 服务器名称 | 针对弹性池中非高级数据库发出 StartDatabaseCopy 命令。|即将推出 |
-| 40857 | EX_USER | 服务器为"%ls"，弹性池名称为"%ls"时，找不到弹性池。|服务器名称；弹性池名称 | 指定的弹性池在指定的服务器中不存在。|请提供有效的弹性池名称。 |
-| 40858 | EX_USER | 弹性池"%ls"已存在于服务器"%ls"中 | 弹性池名称, 服务器名称 | 指定的弹性池已存在于指定的逻辑服务器中。|提供新弹性池名称。 |
-| 40859 | EX_USER | 弹性池不支持服务层"%ls"。| 弹性池服务层 | 进行弹性池设置时，不支持指定服务层。|提供正确的版本，或者将服务层留空以使用默认服务层。 |
-| 40860 | EX_USER | 弹性池"%ls"和服务目标"%ls"的组合无效。 | 弹性池名称；服务级别目标名称 | 仅当服务目标指定为 'ElasticPool' 的情况下，才能一起指定弹性池和服务目标。| 请指定正确的弹性池和服务目标组合。 |
-| 40861 | EX_USER | 数据库版本"%.*ls"不能不同于弹性池服务层"%.*ls"。| 数据库版本, 弹性池服务层 | 数据库版本不同于弹性池服务层。|请勿指定不同于弹性池服务层的数据库版本。请注意，数据库版本不需要指定。 |
-| 40862 | EX_USER | 如果指定了弹性池服务目标，则必须指定弹性池名称。| 无 | 弹性池服务目标没有唯一地标识弹性池。|如果使用弹性池服务目标，请指定弹性池名称。 |
-| 40864 | EX_USER | 对于服务层"%.*ls"来说，弹性池的 DTU 数必须至少为 (%d) 个 DTU。| 弹性池的 DTU 数；弹性池服务层。|尝试将弹性池的 DTU 数设置为最小限制以下。|请重新尝试将弹性池的 DTU 数至少设置为最小限制。 |
-| 40865 | EX_USER | 对于服务层"%.*ls"来说，弹性池的 DTU 数不能超过 (%d) 个 DTU。| 弹性池的 DTU 数；弹性池服务层。|尝试将弹性池的 DTU 数设置为高出最大限制。|请重新尝试将弹性池的 DTU 数设置为不超过最大限制。 |
-| 40867 | EX_USER | 对于服务层"%.*ls"来说，单个数据库的 DTU 最大值必须至少为 (%d)。| 单个数据库的 DTU 最大值；弹性池服务层 | 尝试将单个数据库的 DTU 最大值设置为支持的限制以下。|请考虑使用支持所需设置的弹性池服务层。 |
-| 40868 | EX_USER | 对于服务层"%.*ls"来说，单个数据库的 DTU 最大值不能超过 (%d)。| 单个数据库的 DTU 最大值；弹性池服务层。|尝试将单个数据库的 DTU 最大值设置为超出支持的限制。|请考虑使用支持所需设置的弹性池服务层。 |
-| 40870 | EX_USER | 对于服务层"%.*ls"来说，单个数据库的 DTU 最小值不能超出 (%d)。| 单个数据库的 DTU 最小值；弹性池服务层。|尝试将单个数据库的 DTU 最小值设置为超出支持的限制。|请考虑使用支持所需设置的弹性池服务层。 |
-| 40873 | EX_USER | 数据库数目 (%d) 和单个数据库的 DTU 最小值 (%d) 不能超过弹性池的 DTU 数 (%d)。| 弹性池中的数据库数；单个数据库的 DTU 最小值；弹性池的 DTU 数。|尝试指定弹性池中数据库的 DTU 最小值，该最小值超出弹性池的 DTU 数。|请考虑增加弹性池的 DTU 数，或者降低单个数据库的 DTU 最小值，或者降低弹性池中数据库的数目。 |
-| 40877 | EX_USER | 除非弹性池不含任何数据库，否则不能将其删除。| 无 | 弹性池包含一个或多个数据库，因此无法将其删除。|请删除弹性池中的数据库，以便删除弹性池。 |
-| 40881 | EX_USER | 弹性池"%.*ls"已达到其数据库计数限制。弹性池的数据库计数限制不能超出 (%d) 是针对 DTU 数为 (%d) 的弹性池的。|弹性池名称；弹性池的数据库计数限制；资源池的 DTU 数。|达到弹性池的数据库计数限制时，尝试创建数据库或将其添加到弹性池。|可能情况下，请考虑增加弹性池的 DTU 数，以便提高其数据库限制，或者从弹性池中删除数据库。 |
-| 40889 | EX_USER | 弹性池"%.*ls"的 DTU 数或存储限制不能降低，因为这样就无法为其数据库提供足够的存储空间。| 弹性池的名称。|尝试将弹性池的存储限制降低到其存储使用量以下。|请考虑降低弹性池中各个数据库的存储使用量，或者从池中删除数据库以降低其 DTU 或存储限制。 |
-| 40891 | EX_USER | 单个数据库的 DTU 最小值 (%d) 不能超过单个数据库的 DTU 最大值 (%d)。| 单个数据库的 DTU 最小值；单个数据库的 DTU 最大值。|尝试将单个数据库的 DTU 最小值设置为高于单个数据库的 DTU 最大值。|请确保单个数据库的 DTU 最小值不超过单个数据库的 DTU 最大值。 |
-| 待定 | EX_USER | 弹性池中单个数据库的存储大小不能超过"%.*ls"服务层弹性池所允许的最大大小。| 弹性池服务层 | 数据库的最大大小超过弹性池服务层允许的最大大小。|请将数据库的最大大小设置为处于弹性池服务层允许的最大大小限制范围内。 |
+| 1132 | EX_RESOURCE | The elastic pool has reached its storage limit.  The storage usage for the elastic pool cannot exceed (%d) MBs. | Elastic pool space limit in MBs. | Attempting to write data to a database when the storage limit of the elastic pool has been reached. | Please consider increasing the DTUs of the elastic pool if possible in order to increase its storage limit, reduce the storage used by individual databases within the elastic pool, or remove databases from the elastic pool. |
+| 10929 | EX_USER | The %s minimum guarantee is %d, maximum limit is %d and the current usage for the database is %d. However, the server is currently too busy to support requests greater than %d for this database. See [https://msdn.microsoft.com/zh-cn/library/dn338081.aspx](https://msdn.microsoft.com/zh-cn/library/dn338081.aspx) for assistance. Otherwise, please try again later. | DTU min per database; DTU max per database | The total number of concurrent workers (requests) across all databases in the elastic pool attempted to exceed the pool limit. | Please consider increasing the DTUs of the elastic pool if possible in order to increase its worker limit, or remove databases from the elastic pool. |
+| 40844 | EX_USER | Database '%ls' on Server '%ls' is a '%ls' edition database in an elastic pool and cannot have a continuous copy relationship. | database name, database edition, server name | A StartDatabaseCopy command is issued for a non-premium db in an elastic pool. | Coming soon |
+| 40857 | EX_USER | Elastic pool not found for server: '%ls', elastic pool name: '%ls'. | name of server; elastic pool name | Specified elastic pool does not exist in the specified server. | Please provide a valid elastic pool name. |
+| 40858 | EX_USER | Elastic pool '%ls' already exists in server: '%ls' | elastic pool name, server name | Specified elastic pool already exists in the specified logical server. | Provide new elastic pool name. |
+| 40859 | EX_USER | Elastic pool does not support service tier '%ls'. | elastic pool service tier | Specified service tier is not supported for elastic pool provisioning. | Provide the correct edition or leave service tier blank to use the default service tier. |
+| 40860 | EX_USER | Elastic pool '%ls' and service objective '%ls' combination is invalid. | elastic pool name; service level objective name | Elastic pool and service objective can be specified together only if service objective is specified as 'ElasticPool'. | Please specify correct combination of elastic pool and service objective. |
+| 40861 | EX_USER | The database edition '%.*ls' cannot be different than the elastic pool service tier which is '%.*ls'. | database edition, elastic pool service tier | The database edition is different than the elastic pool service tier. | Please do not specify a database edition which is different than the elastic pool service tier.  Note that the database edition does not need to be specified. |
+| 40862 | EX_USER | Elastic pool name must be specified if the elastic pool service objective is specified. | None | Elastic pool service objective does not uniquely identify an elastic pool. | Please specify the elastic pool name if using the elastic pool service objective. |
+| 40864 | EX_USER | The DTUs for the elastic pool must be at least (%d) DTUs for service tier '%.*ls'. | DTUs for elastic pool; elastic pool service tier. | Attempting to set the DTUs for the elastic pool below the minimum limit. | Please retry setting the DTUs for the elastic pool to at least the minimum limit. |
+| 40865 | EX_USER | The DTUs for the elastic pool cannot exceed (%d) DTUs for service tier '%.*ls'. | DTUs for elastic pool; elastic pool service tier. | Attempting to set the DTUs for the elastic pool above the maximum limit. | Please retry setting the DTUs for the elastic pool to no greater than the maximum limit. |
+| 40867 | EX_USER | The DTU max per database must be at least (%d) for service tier '%.*ls'. | DTU max per database; elastic pool service tier | Attempting to set the DTU max per database below the supported limit. | Please consider using the elastic pool service tier that supports the desired setting. |
+| 40868 | EX_USER | The DTU max per database cannot exceed (%d) for service tier '%.*ls'. | DTU max per database; elastic pool service tier. | Attempting to set the DTU max per database beyond the supported limit. | Please consider using the elastic pool service tier that supports the desired setting. |
+| 40870 | EX_USER | The DTU min per database cannot exceed (%d) for service tier '%.*ls'. | DTU min per database; elastic pool service tier. | Attempting to set the DTU min per database beyond the supported limit. | Please consider using the elastic pool service tier that supports the desired setting. |
+| 40873 | EX_USER | The number of databases (%d) and DTU min per database (%d) cannot exceed the DTUs of the elastic pool (%d). | Number databases in elastic pool; DTU min per database; DTUs of elastic pool. | Attempting to specify DTU min for databases in the elastic pool that exceeds the DTUs of the elastic pool. | Please consider increasing the DTUs of the elastic pool, or decrease the DTU min per database, or decrease the number of databases in the elastic pool. |
+| 40877 | EX_USER | An elastic pool cannot be deleted unless it does not contain any databases. | None | The elastic pool contains one or more databases and therefore cannot be deleted. | Please remove databases from the elastic pool in order to delete it. |
+| 40881 | EX_USER | The elastic pool '%.*ls' has reached its database count limit.  The database count limit for the elastic pool cannot exceed (%d) for an elastic pool with (%d) DTUs. | Name of elastic pool; database count limit of elastic pool; DTUs for resource pool. | Attempting to create or add database to elastic pool when the database count limit of the elastic pool has been reached. | Please consider increasing the DTUs of the elastic pool if possible in order to increase its database limit, or remove databases from the elastic pool. |
+| 40889 | EX_USER | The DTUs or storage limit for the elastic pool '%.*ls' cannot be decreased since that would not provide sufficient storage space for its databases. | Name of elastic pool. | Attempting to decrease the storage limit of the elastic pool below its storage usage. | Please consider reducing the storage usage of individual databases in the elastic pool or remove databases from the pool in order to reduce its DTUs or storage limit. |
+| 40891 | EX_USER | The DTU min per database (%d) cannot exceed the DTU max per database (%d). | DTU min per database; DTU max per database. | Attempting to set the DTU min per database higher than the DTU max per database. | Please ensure the DTU min per databases does not exceed the DTU max per database. |
+| TBD | EX_USER | The storage size for an individual database in a elastic pool cannot exceed the max size allowed by '%.*ls' service tier elastic pool. | elastic pool service tier | The max size for the database exceeds the max size allowed by the elastic pool service tier. | Please set the max size of the database within the limits of the max size allowed by the elastic pool service tier. |
 
-<!---HONumber=56-->
+
+
