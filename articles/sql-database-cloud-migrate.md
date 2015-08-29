@@ -1,75 +1,82 @@
 <properties 
-   pageTitle="Migration to Azure SQL Database" 
-   description="Microsoft Azure SQL Database, database deploy, database migration, import database, export database, migration wizard" 
+   pageTitle="迁移到 Azure SQL 数据库" 
+   description="Windows Azure SQL 数据库, 数据库部署, 数据库迁移, 导入数据库, 导出数据库, 迁移向导" 
    services="sql-database" 
    documentationCenter="" 
    authors="pehteh" 
    manager="jeffreyg" 
    editor="monicar"/>
 
-<tags 
-wacn.date="" ms.service="sql-database" ms.date="04/14/2015"/>
+<tags
+   ms.service="sql-database"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management" 
+   ms.date="04/14/2015"
+   wacn.date="05/25/2015" 
+   ms.author="pehteh"/>
 
-# Migrating a Database to Azure SQL Database
-Azure SQL Database V12 brings near-complete engine compatibility with SQL Server 2014. As such, it dramatically simplifies the task of migrating most databases from SQL Server to Azure SQL Database. Migration for many databases is a straightforward movement operation requiring few if any changes to the schema and little or no re-engineering of applications. And where databases need to be changed the scope of these changes is more confined. 
+# 概述
+Azure SQL 数据库 V12 几乎与 SQL Server 2014 的引擎完全兼容。因此，它极大地简化了将大多数数据库从 SQL Server 迁移到 Azure SQL 数据库 的任务。许多数据库的迁移是一个直截了当的转移操作，它只需对架构做出少量的更改（如果有），并且只需对应用程序做出轻微的改造，甚至不需要任何改造。如果需要对数据库做出更改，你可以更好地限制这种更改的范围。 
 
-By design, server-scoped features of SQL Server are not supported by SQL Database, so databases and applications that rely on these will continue to need some re-engineering before they can be migrated. While SQL Database V12 improves compatibility with SQL Server, migration still needs to be planned and executed carefully, particularly for larger more complex databases. 
+根据设计，SQL 数据库 不支持 SQL Server 的服务器设限功能，因此，在迁移依赖于这些功能的数据库和应用程序之前，仍然需要对它们进行某种形式的改造。尽管 SQL 数据库 V12 改进了与 SQL Server 的兼容性，但仍然需要精心规划和执行迁移，对于较复杂的大型数据库尤其如此。 
 
-## At a Glance
-There are different approaches for migrating a SQL Server database to Azure, each using one or more tools. Some approaches are quick and easy, while others take longer to prepare. Please be aware that migrating a large complex database may take several  hours.
+## 概览
+可通过不同的方法将 SQL Server 数据库迁移到 Azure，其中的每种方法使用一个或多个工具。有些方法可以快速方便地完成，而有些方法需要较长的准备工作。请注意，迁移复杂的大型数据库可能需要好几个小时！ 
 
-### Option #1
-***Migrate a compatible database using SQL Server Management Studio (SSMS)***
+### 选项 #1
+***使用 SQL Server Management Studio (SSMS) 迁移兼容的数据库***
 
-The database is deployed  to Azure SQL Database using SSMS. The database can be deployed directly or exported to a BACPAC which is then imported to create a new Azure SQL database.  Use this method when the source database is fully compatible with Azure SQL Database.
+数据库是使用 SSMS 部署到 Azure SQL 数据库 的。可以直接将数据库部署或导出到 BACPAC，然后导入该数据库以创建新的 Azure SQL 数据库。当源数据库与 Azure SQL 数据库 完全兼容时使用。
 
-### Option #2
-***Migrate a near-compatible database using SQL Azure Migration Wizard (SAMW)***
+### 选项 #2
+***使用 SQL Azure 迁移向导 (SAMW) 迁移几乎兼容的数据库***
 
-The database is processed using the SQL Azure Migration Wizard to generate a migration script containing schema or schema plus data in BCP format. Use this method when the database schema requires upgrade and the changes can be handled by the wizard. 
+使用 SQL Azure 迁移向导处理数据库，以生成包含架构或者包含架构加上 BCP 格式数据的迁移脚本。当数据库架构需要升级并且向导可以处理所做的更改时使用。 
 
-### Option #3
-***Update database schema off-line using Visual Studio (VS) and SAMW and deploy with SSMS***
+### 选项 #3
+***使用 Visual Studio (VS) 和 SAMW 脱机更新数据库架构，然后使用 SSMS 部署***
 
-The source database is imported into a Visual Studio database project for processing offline. SQL Azure Migration Wizard is then run across all the scripts in the project to apply a series of transformations and corrections. The project is targeted at SQL Database V12 and built and any remaining errors are reported. These errors are then resolved manually using SQL Server Data Tools (SSDT) in Visual Studio. Once the project builds successfully it is published back to a copy of the source database. This updated database is then deployed to Azure SQL Database using option #1. If schema-only migration is required, the schema can be publish directly from Visual Studio directly to Azure SQL Database. Use when the database schema requires more changes than can be handled by SAMW alone. 
+源数据库将导入 Visual Studio 数据库项目，以便进行脱机处理。然后，配合项目中的所有脚本运行 SQL Azure 迁移向导，以应用一系列的转换和更正操作。项目面向 SQL 数据库 V12 并经过生成，系统将报告所有剩余错误。然后，用户使用 Visual Studio 中的 SQL Server 工具手动解决这些错误。成功生成项目后，将它发布回到源数据库的副本。然后，使用选项 #1 将这个更新的数据库部署到 Azure SQL 数据库。如果需要进行仅有架构的迁移，则可以将架构直接从 Visual Studio 发布到 Azure SQL 数据库。当数据库架构所需的更改量超过了 SAMW 单独可处理的数量时使用。 
 
-## Deciding options to use
-- If you anticipate that a database can be migrated without change you should use option #1 which is quick and easy.  If you are uncertain, start by exporting a schema-only BACPAC from the database, as described in option #1. If the export succeeds with no errors then you can use option #1 to migrate the database with its data.  
-- If you encounter errors during the export of option#1 use the SQL Azure Migration Wizard (SAMW) to process the database in schema-only mode as described in option #2.  If SAMW reports no errors then option #2 can be used. 
-- If SAMW reports that the schema needs additional work then, unless it needs only simple fixes, it is best to use option #3 and correct the database schema offline in Visual Studio using a combination of SAMW and manually applied schema changes. A copy of the source database is then updated in situ and then migrated to Azure using option #1.
+## 确定要用的选项
+- 如果你预料到无需更改就可以迁移某个数据库，则应使用选项 #1，因为该选项可以快速方便地完成。如果你不太确定，请根据选项 #1 中所述，先从数据库中导出仅有架构的 BACPAC。如果导出成功且未出错，则你可以使用选项 #1 迁移数据库及其数据。  
+- 如果在使用选项 #1 导出期间遇到错误，请根据选项 #2 中所述，使用 SQL Azure 迁移向导 (SAMW) 以仅有架构的模式处理数据库。如果 SAMW 未报告错误，则可以使用选项 #2。 
+- 如果 SAMW 报告架构需要额外的工作，则除非这种工作只需要简单的修复，否则最好使用选项 #3，并在 Visual Studio 中结合使用 SAMW 和手动应用的架构更改，来脱机更正数据库架构。然后，就地更新源数据库的副本，并使用选项 #1 将它迁移到 Azure。
 
-## Migration tools
-Tools used include SQL Server Management Studio (SSMS), the SQL Server tooling in Visual Studio (VS, SSDT), and the SQL Azure Migration Wizard (SAMW), as well the Azure portal. 
+## 迁移工具
+使用的工具包括 SQL Server Management Studio (SSMS)、Visual Studio 中的 SQL Server 工具（VS、SSDT）和 SQL Azure 迁移向导 (SAMW)，以及 Azure 门户。 
 
-> Be sure to install the latest versions of the client tools as earlier versions are not compatible with the SQL Database v12.
+> 请务必安装最新版本的客户端工具，因为早期版本与 SQL 数据库 v12 不兼容。
 
 ### SQL Server Management Studio (SSMS)
-SSMS can be used to deploy a compatible database directly to Azure SQL Database or to export a logical backup of the database as a BACPAC, which can then be imported, still using SSMS, to create a new Azure SQL Database.  
+可以使用 SSMS 将兼容的数据库直接部署到 Azure SQL 数据库，或者将数据库的逻辑备份导出为 BACPAC，然后，仍然使用 SSMS 导入该 BACPAC 来创建新的 Azure SQL 数据库。  
 
-[Download the latest version of SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) or be sure to use CU6 in SQL Server 2013 or later.  
+必须使用最新版本的 SSMS（SQL Server 2013 及更高版本中的 CU6）的工具。  
 
-### SQL Azure Migration Wizard (SAMW)
-SAMW can be used to analyze the schema of an existing database for compatibility with Azure SQL Database, and in many cases can be used to generate and then deploy a T-SQL script containing schema and data. The wizard will report errors during the transformation if it encounters schema content that it cannot transform. If this occurs, the generated script will require further editing before it can be deployed successfully. SAMW will process the body of functions or stored procedures which is normally excluded from validation performed by the SQL Server tooling in Visual Studio (see below) so may find issues that might not otherwise be reported by validation in Visual Studio alone. Combining use of SAMW with the SQL Server tooling in Visual Studio can substantially reduce the amount of work required to migrate a complex schema.
+### SQL Azure 迁移向导 (SAMW)
+SAMW 可用于分析现有数据库的架构是否与 Azure SQL 数据库 兼容，在许多情况下，它可用于生成然后部署包含架构和数据的 T-SQL 脚本。在转换期间，如果该向导遇到了它无法转换的架构内容，则会报告错误。如果发生这种情况，需要进一步编辑生成的脚本，然后才能成功部署脚本。SAMW 处理的某些函数或存储过程的主体通常已在 Visual Studio 中的 SQL Server 工具（参阅下文）执行验证中排除，因此，Visual Studio 单独执行的验证可能不会报告该向导所发现的问题。将 SAMW 与 Visual Studio 中的 SQL Server 工具结合使用可以明显减少迁移复杂架构所需的工作量。
 
-Be sure to use the latest version of the [SQL Azure Migration Wizard](http://sqlazuremw.codeplex.com/) from CodePlex . 
+请务必使用 CodePlex 提供的最新版本的 [SQL Azure 迁移向导](http://sqlazuremw.codeplex.com)。 
 
-### SQL Server tooling in Visual Studio (VS, SSDT)
-The SQL Server tooling in Visual Studio can be used to create and manage a database project comprising a set of T-SQL files for each object in the schema. The project can be imported from a database or from a script file. Once created, the project can be to Azure SQL Database v12; building the project then validates schema compatibility. Clicking on an error opens the corresponding T-SQL file allowing it to be edited and the error corrected. Once all the errors are fixed the project can be published, either directly to SQL Database to create an empty database or back to (a copy of) the original SQL Server database to update its schema, which allows the database to be deployed with its data using SSMS as above. 
+### Visual Studio 中的 SQL Server 工具（VS、SSDT）
+Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，该项目包括架构中每个对象的 T-SQL 文件集。可以从数据库或者脚本文件导入该项目。创建后，可将该项目部署到 Azure SQL 数据库 v12；生成项目，然后验证架构兼容性。单击某个错误会打开相应的 T-SQL 文件，然后便可以编辑该文件并更正错误。修复所有错误后，可将项目直接发布到 SQL 数据库 以创建空数据库，或者发布回到原始 SQL Server 数据库的（副本）以更新其架构，然后，便可以使用上述 SSMS 来部署该数据库及其数据。 
 
-Use the [lastest SQL Server Data Tools for Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx) with Visual Studio 2013 Update 4 or later.
+对于 Azure SQL 数据库 Latest Update V12，必须使用最新的 Visual Studio SQL Server 数据库工具。请确保安装 Visual Studio 2013 Update 4。 
 
-## Comparisons
-| Option #1 | Option #2 | Option #3 |
+## 比较
+| 选项 #1 | 选项 #2 | 选项 #3 |
 | ------------ | ------------ | ------------ |
-| Deploy a compatible database to Azure SQL Database |   Generate a migration script with changes and execute on Azure SQL Database | Update database in-place then deploy to Azure SQL Database |
+| 将兼容的数据库部署到 Azure SQL 数据库 |   生成包含更改的迁移脚本并在 Azure SQL 数据库 上执行 | 就地更新数据库，然后部署到 Azure SQL 数据库 |
 |![SSMS](./media/sql-database-cloud-migrate/01SSMSDiagram.png)| ![SAMW](./media/sql-database-cloud-migrate/02SAMWDiagram.png) | ![Offline Edit](./media/sql-database-cloud-migrate/03VSSSDTDiagram.png) |
-| Uses SSMS | Uses SAMW | Uses SAMW, VS, SSMS |
-|Simple process requires that schema is compatible. Schema is migrated unchanged. | T-SQL script is generated by SAMW includes changes required to ensure compatibility. Some unsupported features will be dropped from the schema, most are flagged as errors. | Schema is imported into a database project in Visual Studio and (optionally) transformed with SAMW. Additional updates are made using the SQL Server tooling in Visual Studio and final schema used to update the database in situ. |
-| If exporting a BACPAC then can choose to migrate schema only.   | Can configure the wizard to script schema or schema plus data. | Can publish schema only directly to Azure from Visual Studio. Database is updated with any required changes in-situ to allow schema and data to be deployed/exported. |
-| Always deploys or exports the entire database. | Can choose to exclude specific objects from the migration. | Full control of the objects that are included in the migration. |
-| No provision for changing the output if there are errors, the source schema must be compatible. | Single monolithic generated script can be awkward to edit if required. The script can be opened and edited in SSMS or Visual Studio with the SQL Server database tooling. All errors must be fixed before the script can be deployed to Azure SQL Database.| Full features of SQL Server tooling in Visual Studio available. Schema is changed offline. |
-| Application validation occurs in Azure. Should be minimal as schema is migrated without change. | Application validation occurs in Azure after migration. Generated script could also be installed on-premises for initial application validation. | Application validation can be done in SQL Server before the database is deployed to Azure. |
-| Microsoft supported tool. | Community supported tool downloaded from CodePlex. | Microsoft supported tools with optional use of community supported tool downloaded from CodePlex. |
-| Simple easily configured one- or two-step process. | Schema transformation and generation and deployment to the cloud are orchestrated from a single easy to use wizard. | More complex multi-step process (simpler if only deploying schema). |
+| 使用 SSMS | 使用 SAMW | 使用 SAMW、VS、SSMS |
+|简单的过程要求架构兼容。架构按原样迁移。 | SAMW 生成的 T-SQL 脚本包含所需的更改来确保兼容性。某些不受支持的功能将从架构中删除，其中的大多数功能将标记为错误。 | 架构将导入 Visual Studio 中的数据库项目，并（可选）使用 SAMW 进行转换。使用 Visual Studio 中的 SQL Server 工具和所用的最终架构进行其他更新，以就地更新数据库。 |
+| 在导出 BACPAC 时，可以选择仅迁移架构。   | 可以将向导配置为编写架构或架构加上数据的脚本。 | 可以从 Visual Studio 只将架构直接发布到 Azure。使用任何所需的更改就地更新数据库，以便能够部署/导出架构和数据。 |
+| 始终部署或导出整个数据库。 | 可以选择从迁移中排除特定的对象。 | 全面控制迁移中包含的对象。 |
+| 未规定出错时必须更改输出，源架构必须兼容。 | 可能难以根据需要编辑生成的单个整体脚本。可以在 SSMS 或装有 SQL Server 数据库工具的 Visual Studio 中打开并编辑脚本。只有在修复所有错误后，才可以将脚本部署到 Azure SQL 数据库。| 可以使用 Visual Studio 中的 SQL server 工具的完整功能。脱机更改架构。 |
+| 在 Azure 中进行应用程序验证。应该很少，因为无需更改即可迁移架构。 | 迁移后在 Azure 中进行应用程序验证。也可以在本地安装生成的脚本以进行初始应用程序验证。 | 将数据库部署到 Azure 之前，可以在 SQL Server 中执行应用程序验证。 |
+| Microsoft 支持的工具。 | 从 CodePlex 下载的受社区支持的工具。 | Microsoft 支持的工具，可以选择使用从 CodePlex 下载的受社区支持的工具。 |
+| 轻松配置的单步或双步过程。 | 可以通过一个易用的向导，来安排架构转换与生成以及到云的部署。 | 更复杂的多步过程（如果只部署架构，则更方便一些）。 |
 
-
+<!--HONumber=55-->

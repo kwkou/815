@@ -1,175 +1,127 @@
-<properties 
-	pageTitle="Connecting to SQL Database: Links, Best Practices and Design Guidelines" 
-	description="A starting point topic that gathers together links and recommendations for client programs that connect to Azure SQL Database from technologies such as ADO.NET and PHP." 
+﻿<properties 
+	pageTitle="到 Azure SQL 数据库的连接中心建议" 
+	description="这是一个中心主题，其中提供了有关连接到 Azure SQL 数据库时使用的各种驱动程序（例如 ADO.NET 和 PHP）的更具体主题的链接。" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
 	manager="jeffreyg" 
 	editor=""/>
 	
-<tags ms.service="sql-database" ms.date="03/19/2015" wacn.date=""/>
+<tags ms.service="sql-database" ms.date="03/19/2015" wacn.date="05/25/2015"/>
 
 
 
-# Connecting to SQL Database: Links, Best Practices and Design Guidelines
+# 到 SQL 数据库的连接中心建议
 
+本主题提供了你可以用来连接到 Azure SQL 数据库以及与之进行交互的各种技术的代码示例的链接。这些技术包括企业库、JDBC 和 PHP。提供的建议是普遍适用的，与具体的连接技术无关。
 
-<!--
-GeneMi , 2015-April-21 Tuesday 12:44pm
-sql-database-connect-central-recommendations.md
-sql-database-connect-*.md
 
-Add link to sql-database-develop-quick-start-client-code-samples.md.
-Add a paragraph about why transient errors legitimately occur sometimes.
--->
+## 与技术无关的建议
 
 
-This topic is a good place to get started with client connectivity to Azure SQL Database. It provides links to code samples for various technologies that you can use to connect to and interact with SQL Database. The technologies include Enterprise Library, JDBC, PHP, and several more. Recommendations are given that apply generally regardless of the specific connection technology or programming language.
+无论你连接到 SQL 数据库时使用哪种具体技术，本部分中的信息都适用。
 
 
-##Technology-independent recommendations
+- [以编程方式连接到 Azure SQL 数据库时的准则](https://msdn.microsoft.com/zh-CN/library/azure/ee336282.aspx) - 讨论了以下内容：
+ - 端口
+ - 防火墙
+ - 连接字符串
+- [Azure SQL 数据库资源管理](https://msdn.microsoft.com/zh-CN/library/azure/dn338083.aspx) - 讨论了以下内容：
+ - 资源控制
+ - 强制实施限制
+ - 限制
 
 
-The information in this section applies regardless of which specific technology you use to connect to SQL Database.
+无论你使用哪种连接技术，SQL 数据库服务器甚至单个数据库的某些防火墙设置都很重要：
 
 
-- [Guidelines for Connecting to Azure SQL Database Programmatically](https://msdn.microsoft.com/zh-CN/library/azure/ee336282.aspx) - discussions include the following:
- - Ports
- - Firewalls
- - Connection strings
-- [Azure SQL Database Resource Management](https://msdn.microsoft.com/zh-CN/library/azure/dn338083.aspx) - discussions include the following:
- - Resource governance
- - Enforcement of limits
- - Throttling
+- [Azure SQL 数据库防火墙](https://msdn.microsoft.com/zh-CN/library/azure/ee621782.aspx)
 
 
-Regardless of which connection technology you use, certain firewall settings for SQL Database server, and even individual databases, matter:
+### 快速建议
 
 
-- [Azure SQL Database Firewall](https://msdn.microsoft.com/zh-CN/library/azure/ee621782.aspx)
+#### 连接
 
 
-## Recommendation: Authentication
+- 在你的客户端连接逻辑中，将默认超时替换为 30 秒。
+ - 默认值 15 秒对于依赖于 Internet 的连接而言太短。
+- 如果你在使用[连接池](https://msdn.microsoft.com/zh-CN/library/8xx3tyca.aspx)，请在你的程序不活跃地使用连接时将其关闭，而不只是准备着重用它。
+ - 除非你的程序会立即（没有停顿）将连接重用于另一操作，否则，建议采用以下模式：
+<br/><br/>打开一个连接。
+<br/>通过连接执行一个操作。
+<br/>关闭连接。<br/><br/>
+- 随你的连接逻辑使用重试逻辑，但仅针对暂时性错误使用。当使用 SQL 数据库时，尝试打开连接或发出查询可能会因各种原因而失败。
+ - 导致失败的一个持久原因可能是你的连接字符串的格式不正确。
+ - 导致失败的一个暂时原因可能是 Azure SQL 数据库系统需要平衡总体的负载。暂时原因会自己消失，这意味着你的程序应当进行重试。
+ - 当重试查询时，请首先关闭连接然后打开另一个连接。
+- 确保你的 [Azure SQL 数据库防火墙](https://msdn.microsoft.com/zh-CN/library/ee621782.aspx)允许端口 1433 上的传出 TCP 通信。
+ - 你可以在 SQL 数据库服务器上或者为单个的数据库配置[防火墙](https://msdn.microsoft.com/zh-CN/library/azure/ee621782.aspx)设置。
 
 
-- Use SQL Database authentication, not Windows authentication.
-- Specify a particular database, instead of defaulting to the *master* database.
-- Sometimes the user name must be given with the suffix of *@yourservername*, but other times the suffix must be omitted. It depends on how your tool or API was written.
- - Check the details on each individual technology.
-- Connect by specifying a user in a [contained database](http://msdn.microsoft.com/zh-cn/library/ff929071.aspx).
- - This approach provides better performance and scalability by avoiding the need for a login in the master database.
- - You cannot use the Transact-SQL **USE myDatabaseName;** statement on SQL Database.
+#### 身份验证
 
 
+- 使用 SQL 数据库身份验证而非 Windows 身份验证。
+- 指定一个特定的数据库，而不是默认使用  *master* 数据库。
+- 有时候，必须为用户名指定后缀 *@yourservername*，但有时候必须省略后缀。这取决于你的工具或 API 是如何编写的。
+ - 请查看有关各项技术的详细信息。
+- 通过指定[包含的数据库](https://msdn.microsoft.com/zh-CN/library/ff929071.aspx)中的某个用户进行连接。
+ - 此方法可以提供较好的性能和稳定性，因为这不需要登录到 master 数据库。
+ - 不能对 SQL 数据库使用 Transact-SQL **USE myDatabaseName;** 语句。
 
 
-## Recommendations: Connection
+### 暂时性错误
 
-- In your client connection logic, override the default timeout to be 30 seconds.
- - The default of 15 seconds is too short for connections that depend on the internet.
-- Ensure that your [Azure SQL Database firewall](http://msdn.microsoft.com/zh-cn/library/ee621782.aspx) allows outgoing TCP communication on port 1433.
- - You can configure the [firewall](http://msdn.microsoft.com/zh-cn/library/azure/ee621782.aspx) settings on an SQL Database server or to an individual database.
-- If you are using a [connection pool](http://msdn.microsoft.com/library/8xx3tyca.aspx), close the connection the instant your program is not actively using it, and is not just preparing to reuse it.
- - Unless your program will reuse the connection for another operation immediately, without pause, we recommend the following pattern:
-<br/><br/>Open a connection.
-<br/>Do one operation through the connection.
-<br/>Close the connection.<br/><br/>
-- Use retry logic with your connection logic, but only for transient errors. When using SQL Database, your attempts to open a connection or issue a query can fail for various reasons.
- - One persistent reason for failure could be that your connection string is malformed.
- - One transient reason for failure could be that the Azure SQL Database system needs to balance the overall load. The transient reason goes away by itself, which means your program should retry.
- - When retrying a query, first close the connection, and then open another connection.
 
+某些 SQL 数据库连接错误是持久的，并且没有理由立即重试连接。某些错误是暂时的，建议你的程序自动重试几次。示例：
 
 
-The next section has more to say about retry logic and transient fault handling.
+- *持久的：*如果你在尝试连接时错误拼写了 SQL 数据库服务器的名称，则重试没有意义。
+- *暂时的：*如果到 SQL 数据库的正常运行的连接之后被 Azure 限制或负载平衡系统强制中断，建议尝试重新连接。
 
 
-## Transient errors and retry logic
+对 SQL 数据库的调用引发的 [SqlException](https://msdn.microsoft.com/zh-CN/library/system.data.sqlclient.sqlexception.aspx) 在其 **Number** 属性中包括一个数字错误代码。如果错误代码为 1，则它列出为暂时性错误，你的程序应当重试调用。
 
 
-Cloud services such as Azure and its SQL Database service have the endless challenge of balancing workloads and managing resources. If two databases that are being served from the same computer are involved in exceptionally heavy processing at overlapping times, the management system might detect the necessary of shifting the workload of one database to another resource which has excess capacity.
+- [错误消息（Azure SQL 数据库）](https://msdn.microsoft.com/zh-CN/library/azure/ff394106.aspx) - 它的**Connection-Loss Errors** 部分是证明需要重试的暂时性错误的列表。
+ - 例如，如果出现错误编号 40613，则应当重试，这表示类似于<br/>服务器  'theserver' 上的*数据库 'mydatabase' 当前不可用之类的消息。*
 
 
-During the shift, the database might be temporarily unavailable. This might block new connections, or it might cause your client program to lose its connection. But the resource shift is transient, and it might resolve itself in a couple of minutes or in several seconds. After the shift is completed, your client program can reestablish its connection and resume its work. The pause in processing is better than an avoidable failure of your client program.
+如果在遇到连接错误（不管是持久的还是暂时的）时需要进一步的帮助，请参阅：
 
 
-When any error occurs with SQL Database, an [SqlException](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlexception.aspx) is thrown. The SqlException contains a numeric error code in its **Number** property. If the error code identifies a transient error, your program should retry the call.
+- [Azure SQL 数据库连接问题故障排除](http://support.microsoft.com/zh-CN/kb/2980233)
 
 
-- [Error Messages (Azure SQL Database)](http://msdn.microsoft.com/zh-cn/library/azure/ff394106.aspx)
- - Its **Transient Errors, Connection-Loss Errors** section is a list of the transient errors that warrant an automatic retry.
- - For example, retry if the error number 40613 occurs, which says something similar to<br/>*Database 'mydatabase' on server 'theserver' is not currently available.*
+## 技术
 
 
-Transient *errors* are sometimes called transient *faults*. This topic considers these two terms to be synonyms.
+以下主题包含几种连接技术的代码示例：
 
 
-For further assistance when you encounter a connection error, whether transient or not, see:
+- [Azure SQL 数据库开发：操作指南主题](https://msdn.microsoft.com/zh-CN/library/azure/ee621787.aspx)
 
 
-- [Troubleshoot connection problems to Azure SQL Database](http://support.microsoft.com/zh-CN/kb/2980233)
+对于包含企业库和暂时性错误处理类的 ADO.NET，请参阅：
 
 
-For links to code sample topics that demonstrate retry logic, see:
+- [操作指南：可靠地连接到 Azure SQL 数据库](https://msdn.microsoft.com/zh-CN/library/azure/dn864744.aspx)
 
 
-- [Client quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+对于 Elastic Scale，请参阅：
 
 
-<a id="gatewaynoretry" name="gatewaynoretry">&nbsp;</a>
+- [Azure SQL 数据库 弹性缩放预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
+- [数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
 
 
-## Gateway no longer provides retry logic in V12
+## 未完成的或过时的帖子
 
 
-Before version V12, Azure SQL Database had a gateway that acted as a proxy to buffer all interactions between the database and your client program. The gateway was an additional network hop that sometimes increased the latency of database accesses.
+本部分中的链接是指向博客文章或类似来源的，因此它们可能未完成或已过时。但它们可能仍有一些基本价值。
 
 
-V12 eliminated the gateway. So now:
+- [针对 Windows Azure SQL 数据库中的暂时性错误的重试逻辑](https://social.technet.microsoft.com/wiki/contents/articles/4235.retry-logic-for-transient-failures-in-windows-azure-sql-database.aspx)
 
-
-- Your client program interacts *directly* with the database, which is more efficient.
-- The gateway's minor distortions in error messages and other communications to your program are eliminated.
- - SQL Database and SQL Server look more identical to your program.
-
-
-#### Retry logic gone
-
-
-The gateway had retry logic handle some transient errors for you. Now your program must more fully handle transient errors. For code samples about retry logic, see:
-
-
-- [Client development and quick-start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
- - Has links to code samples that contain retry logic, and to simpler samples that connect-and-query.
-- [How to: Reliably connect to Azure SQL Database](http://msdn.microsoft.com/zh-cn/library/azure/dn864744.aspx)
-- [How to: Connect to Azure SQL Database by using ADO.NET with Enterprise Library](http://msdn.microsoft.com/zh-cn/library/azure/dn961167.aspx)
-- [How to: Connect to Azure SQL Database by using ADO.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx)
-
-
-## Technologies
-
-
-The following topics contains links to code samples for several languages and driver technologies that you can use to connect to Azure SQL Database from your client program.
-
-
-Various code samples are given for clients that run on both Windows and Linux.
-
-
-**General samples:** There are code samples for a variety of programming languages, including PHP, Python, Node.js, and .NET CSharp. Also, samples are given for clients that run on Windows, Linux, and Mac OS X.
-
-
-- [Client development and quick start code samples to SQL Database](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
-- [Azure SQL Database Development: How-to Topics](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
-
-**Elastic scale:** For information about connectivity to Elastic Scale databases, see:
-
-
-- [Get Started with Azure SQL Database Elastic Scale Preview](/documentation/articles/sql-database-elastic-scale-get-started)
-- [Data dependent routing](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
-
-
-## See Also
-
-
-- [Create your first Azure SQL Database](/documentation/articles/sql-database-get-started)
-
+<!--HONumber=55-->

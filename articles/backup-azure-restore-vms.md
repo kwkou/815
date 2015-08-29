@@ -1,100 +1,59 @@
 
 <properties
-	pageTitle="Azure Backup - restore a virtual machine"
-	description="Learn how to restore an Azure virtual machine"
+	pageTitle="Azure 备份 - 恢复虚拟机"
+	description="了解如何恢复 Azure 虚拟机"
 	services="backup"
 	documentationCenter=""
-	authors="trinadhk"
+	authors="aashishr"
 	manager="shreeshd"
 	editor=""/>
 
-<tags
-	ms.service="backup"
+<tags ms.service="backup" ms.date="04/30/2015" wacn.date="06/16/2015"/>  
 
-	ms.date="07/17/2015"
-	wacn.date=""/>
+# 恢复虚拟机
 
-# Restore a virtual machine
-You can restore a virtual machine to a new VM from the backups stored in Azure backup vault using restore action.
 
-## Choose an item to restore
+## 运行恢复
+你可以使用恢复操作，通过存储在 Azure 备份保管库中的备份将虚拟机恢复为新的 VM。
 
-1. Navigate to the **Protected Items** tab and select the virtual machine you want to restore to a new VM.
+1. 若要从备份恢复虚拟机，请在“受保护的项”页上，单击“恢复”以打开“恢复项”向导。  
 
-    ![Protected items](./media/backup-azure-restore-vms/protected-items.png)
+	>[AZURE.NOTE]“受保护的项”页中的恢复点栏会显示你的虚拟机恢复点数目。最新恢复点栏会显示你可以将虚拟机恢复到的最新快照时间。
 
-    The **Recovery Point** column in the **Protected Items** page will tell you the number of recovery points for a virtual machine. The **Newest Recovery Point** column tells you the time of the most recent backup from which a virtual machine can be restored.
+2. 在“选择恢复点”页上，你可以从最新的恢复点进行恢复，或者从以前的某个时间点进行恢复。可用的恢复点突出显示在日历上。
 
-2. Click **Restore** to open the **Restore an Item** wizard.
+	![选择恢复点](./media/backup-azure-restore-vms/backup-recovery1.png)
 
-    ![Restore an item](./media/backup-azure-restore-vms/restore-item.png)
+3.  在“选择恢复实例”页上，指定你要将虚拟机恢复到何处。你需要恢复到一个替换位置。指定替换虚拟机名称以及现有的或新的云服务。根据需要指定目标网络和子网。
 
-## Pick a recovery point
+	![恢复虚拟机](./media/backup-azure-restore-vms/backup-recover2.png)
 
-1. In the **select a recovery point** screen, you can restore from the newest recovery point, or from a previous point in time. The default option selected when wizard opens is *Newest Recovery Point*.
+在恢复后，你将需要在 Azure 门户中为虚拟机重新配置扩展并重新创建终结点。
+ 
+## 管理受保护的虚拟机
 
-    ![Select a recovery point](./media/backup-azure-restore-vms/select-recovery-point.png)
+1. 若要查看和管理某个虚拟机的备份设置，请在“受保护的项”页上单击该虚拟机。
 
-2. To pick an earlier point in time, choose the **Select Date** option in the dropdown and select a date in the calendar control by clicking on the **calendar icon**. In the control, all dates that have recovery points are filled with a light gray shade and are selectable by the user.
+	- “备份详细信息”选项卡将显示有关最后一个备份的信息。
 
-    ![Select a date](./media/backup-azure-restore-vms/select-date.png)
+		![虚拟机备份](./media/backup-azure-restore-vms/backup-vmdetails.png)
 
-    Once you click a date in the calendar control, the recovery points available on that date will be shown in recovery points table below. The **Time** column indicates the time at which the snapshot was taken. The **Type** column displays the [consistency](documentation/articles/backup-azure-vms) of the recovery point. The table header shows the number of recovery points available on that day in parenthesis.
+	- “备份策略”选项卡将显示现有策略。你可以根据需要进行更改。如果需要创建新策略，请在“策略”页上单击“创建”。请注意，如果要删除某个策略，则它不应当具有与之关联的任何虚拟机。
 
-    ![Recovery points](./media/backup-azure-restore-vms/recovery-points.png)
+		![虚拟机策略](./media/backup-azure-restore-vms/backup-vmpolicy.png)
 
-3. Select the recovery point from the **Recovery Points** table and click the Next arrow to go to the next screen.
+2. 可以在“作业”页上获取有关虚拟机的操作或状态的更多信息。单击列表中的某个作业可获取更多详细信息，还可以筛选特定虚拟机的作业。
 
-## Specify a destination location
+	![作业](./media/backup-azure-restore-vms/backup-job.png)
 
-1. In the **Select restore instance** screen specify details of where to restore the virtual machine.
+3. 在任何时刻，如果你希望停止保护某个虚拟机，请选择该虚拟机并在“受保护的项”页上单击“停止保护”。你可以指定是否为虚拟机删除当前位于“Azure 备份”中的备份，并且可以指定原因以备审核。虚拟机将以“保护已停止”状态显示。
 
-  - Specify the virtual machine name: In a given cloud service, the virtual machine name should be unique. If you plan to replace an existing VM with the same name, first delete the existing VM and data disks and then restore the data from Azure Backup.
-  - Select a cloud service for the VM: This is mandatory for creating a VM. You can choose to either use an existing cloud service or create a new cloud service.
+	![禁用保护](./media/backup-azure-restore-vms/backup-disable-protection.png)
 
-        Whatever cloud service name is picked should be globally unique. Typically, the cloud service name gets associated with a public-facing URL in the form of [cloudservice].cloudapp.net. Azure will not allow you to create a new cloud service if the name has already been used. If you choose to create select create a new cloud service, it will be given the same name as the virtual machine � in which case the VM name picked should be unique enough to be applied to the associated cloud service.
+ 请注意，如果你在为虚拟机停止备份时没有选择删除备份，可以在“受保护的项”页上选择该虚拟机，然后单击“删除”。如果希望从备份保管库中删除虚拟机，请将其停止，然后单击“取消注册”以将其完全删除。
 
-        We only display cloud services and virtual networks that are not associated with any affinity groups in the restore instance details. [Learn More](https://msdn.microsoft.com/zh-cn/library/azure/jj156085.aspx).
+###仪表板
 
-2. Select a storage account for the VM: This is mandatory for creating the VM. You can select from existing storage accounts in the same region as the Azure Backup vault. We don�t support storage accounts that are Zone redundant or of Premium storage type.
+在“仪表板”页上，你可以查看过去 24 小时内关于 Azure 虚拟机、其存储以及与之关联的作业的信息。你可以查看备份状态和任何关联的备份错误。
 
-    If there are no storage accounts with supported configuration, please create a storage account of supported configuration prior to starting restore operation.
-
-    ![Select a virtual network](./media/backup-azure-restore-vms/restore-sa.png)
-
-3. Select a Virtual Network: The virtual network (VNET) for the virtual machine should be selected at the time of creating the VM. The restore UI shows all the VNETs within this subscription that can be used. It is not mandatory to select a VNET for the restored VM � you will be able to connect to the restored virtual machine over the internet even if the VNET is not applied.
-
-    If the cloud service selected is associated with a virtual network, then you cannot change the virtual network.
-
-    ![Select a virtual network](./media/backup-azure-restore-vms/restore-cs-vnet.png)
-
-4. Select a subnet: In case the VNET has subnets, by default the first subnet will be selected. Choose the subnet of your choice from the dropdown options. For subnet details, go to Networks extension in the [portal home page](https://manage.windowsazure.cn), go to **Virtual Networks** and select the virtual network and drill down into Configure to see subnet details.
-
-    ![Select a subnet](./media/backup-azure-restore-vms/select-subnet.png)
-
-5. Click the **Submit** icon in the wizard to submit the details and create a restore job.
-
-## Track the Restore operation
-Once you have input all the information into the restore wizard and submitted it Azure Backup will try to create a job to track the restore operation.
-
-![Creating a restore job](./media/backup-azure-restore-vms/create-restore-job.png)
-
-If the job creation is successful, you will see a toast notification indicating that the job is created. You can get more details by clicking the **View Job** button that will take you to **Jobs** tab.
-
-![Restore job created](./media/backup-azure-restore-vms/restore-job-created.png)
-
-Once the restore operation is finished, it will be marked as completed in **Jobs** tab.
-
-![Restore job complete](./media/backup-azure-restore-vms/restore-job-complete.png)
-
-After restoring the virtual machine you may need to re-install the extensions existing on the original VM and [modify the endpoints](/documentation/articles/virtual-machines-set-up-endpoints) for the virtual machine in the Azure portal.
-
-## Troubleshooting errors
-For most errors, you can follow the recommended action suggested in the Error Details. Here are some additional points to help with the troubleshooting:
-
-| Backup operation | Error details | Workaround |
-| -------- | -------- | -------|
-| Restore | Restore failed with Cloud Internal error | <ol><li>Cloud service to which you are trying to restore is configured with DNS settings. You can check <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" 	Get-AzureDns -DnsSettings $deployment.DnsSettings<br>If there is Address configured, this means that DNS settings are configured.<br> <li>Cloud service to which to you are trying to restore is configured with ReservedIP and existing VMs in cloud service are in stopped state.<br>You can check a cloud service has reserved IP by using following powershell cmdlets:<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName</ol> |
-
-## Next steps
-- [Manage virtual machines](/documentation/articles/backup-azure-manage-vms)
+<!---HONumber=60-->
