@@ -1,33 +1,44 @@
-<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="如何部署 SQL 数据库 - Azure" metaKeywords="" description="了解如何将 SQL Server 数据库部署到 Azure。你将使用将数据库部署到 SQL 数据库 向导来上载示例数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
+<properties 
+	pageTitle="如何部署 SQL Database - Azure" 
+	description="了解如何将 SQL Server 数据库部署到 Azure。您将使用“将数据库部署到 SQL Database”向导来上载示例数据库。" 
+	services="sql-database" 
+	documentationCenter="" 
+	authors="jeffgoll" 
+	manager="jeffreyg" 
+	editor=""/>
 
 <tags 
-	ms.service="sql-database" 	 
-	ms.date="02/25/2015" 
-	wacn.date="05/25/2015"/>
+	ms.service="sql-database" ms.date="02/25/2015" wacn.date=""/>
 
 
-<h1><a id="howtodeploySQLdb"></a>如何将数据库部署到 Azure</h1>
 
-可通过几种不同的方法将本地 SQL Server 数据库移动到 Azure。在此任务中，你将使用"将数据库部署到 SQL 数据库"向导来上载示例数据库。
 
-School 示例数据库方便简单；其所有对象均与 SQL 数据库 兼容，因此不需要修改或准备要迁移的数据库。作为新的管理员，请在使用你自己的数据库之前先尝试部署简单的数据库，以了解相关步骤。 
 
-**注意：**请查看《Azure SQL 数据库 迁移指南》，以了解有关如何准备将本地数据库迁移到 Azure 的详细说明。此外，请考虑下载 Azure 培训工具包，其中包含的实验教程演示了迁移本地数据库的备选方法。
 
-## 目录##
-* [如何：在本地服务器上创建 school 数据库](#schooldb)
-* [如何：部署到 SQL 数据库](#deploydb)
-* [如何：验证数据库部署](#verify)
+# 如何将 SQL Server 数据库部署到 Azure SQL Database
+
+本文介绍如何使用“将数据库部署到 Azure SQL Database”向导将示例数据库上载到 Azure SQL Database。对于本教程，必须下载 **SQL Server 2016 Management Studio (CTP 2.1)**。
+
+估计完成时间：15 分钟（包括下载时间）
+
+> [AZURE.NOTE]本教程使用非常简便的“school”示例数据库；其所有对象都与 Azure SQL Database 兼容，消除了修改或准备数据库进行迁移的需要。如果你要迁移更复杂的现有数据库，也可以考虑使用 [SQL Database 迁移向导](http://sqlazuremw.codeplex.com/)，具体请参阅此[概述](/documentation/articles/sql-database-cloud-migrate)主题。
+
+## 先决条件
+
+一个 **Microsoft Azure 帐户**。如需免费试用，请参阅此项[优惠](http://www.windowsazure.cn/pricing/1rmb-trial/)。
+
+下载 [**SQL Server Management Studio**](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。（有关该工具的详细信息，请参阅 [SQL Server Management Studio - 2015 年 6 月发行说明](https://msdn.microsoft.com/zh-cn/library/mt238486.aspx)。）
+
 
 <h2><a id="schooldb"></a>如何：在本地服务器上创建 school 数据库</h2>
 
-可在 [SQL 数据库 管理入门][]中找到用于创建此数据库的脚本。在本指南中，你将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
+可在 [SQL Database 管理入门][]中找到用于创建此数据库的脚本。在本指南中，您将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
 
-1. 在 Management Studio 中，连接到本地服务器。右键单击"数据库"、单击"新建数据库"，然后输入 *school*。
+1. 在 Management Studio 中，连接到本地服务器。右键单击“数据库”、单击“新建数据库”，然后输入 *school*。
 
-2. 右键单击 *school*，然后单击"新建查询"。 
+2. 右键单击“school”，然后单击“新建查询”。
 
-3. 根据教程复制并执行 Create Schema 脚本。 
+3. 根据教程复制并执行 Create Schema 脚本。
 
 <div style="width:auto; height:300px; overflow:auto"><pre>
 	-- Create the Department table.
@@ -521,46 +532,51 @@ School 示例数据库方便简单；其所有对象均与 SQL 数据库 兼容�
 	GO
 </pre></div>
 
-   现在，你拥有了一个可导出到 Azure 的本地数据库。接下来，你将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL 数据库 中的向导。
+   现在，您拥有了一个可导出到 Azure 的本地数据库。接下来，您将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL Database 中的向导。
 
 
-<h2><a id="deploydb"></a>如何：部署到 SQL 数据库</h2>
+<h2><a id="deploydb"></a>如何：部署到 SQL Database</h2>
 
-1. 在 Management Studio 中，连接到包含你要迁移的数据库的本地 SQL Server 实例。
+1. 在 Management Studio 中，连接到包含您要迁移的数据库的本地 SQL Server 实例。
 
-2. 右键单击你刚创建的 school 数据库、指向"任务"，然后单击"将数据库部署到 SQL Azure"。
+2. 右键单击你刚创建的 school 数据库、指向“任务”，然后单击“将数据库部署到 SQL Azure”。
 
-3. 在"部署设置"中，为该数据库输入一个名称，如 *school*。 
+3. 在“部署设置”中，为该数据库输入一个名称，如 *school*。
 
-4. 单击"连接"。
+4. 单击“连接”。
 
-5. 在"服务器名称"中，输入 10 个字符的服务器名称，后跟 .database.chinacloudapi.cn。
+5. 在“服务器名称”中，输入 10 个字符的服务器名称，后跟 .database.chinacloudapi.cn。
 
-6. 在"身份验证"中，选择"SQL Server 身份验证"。
+6. 在“身份验证”中，选择“SQL Server 身份验证”。
 
-7. 输入你在创建 SQL 数据库 逻辑服务器时设置的管理员登录名和密码。
+7. 输入您在创建 SQL Database 逻辑服务器时设置的管理员登录名和密码。
 
-8. 单击"选项"。
+8. 单击“选项”。
 
-9. 在"连接属性"的"连接到数据库"中，键入 **master**。
+9. 在“连接属性”的“连接到数据库”中，键入 **master**。
 
-10. 单击"连接"。此步骤将结束连接规范并返回到该向导。
+	**注意：**每当你想要在 Azure SQL Database 服务器上创建数据库时，都必须连接到 **master** 数据库。 
+10. 单击“连接”。此步骤将结束连接规范并返回到该向导。
+11. 单击“下一步”，然后单击“完成”以运行该向导。
 
 
-11. 单击"下一步"，然后单击"完成"以运行该向导。
+## 如何：验证数据库部署
 
+1. 在 Management Studio 中的“对象资源管理器”下，单击“连接”图标。
+2. 在“服务器”名称框中，键入 Azure SQL 服务器的名称，后接 **database.chinacloudapi.cn**
+3. 在“身份验证”中，选择“SQL Server 身份验证”。
+4. 输入你在设置服务器时创建的管理员登录名和密码。 
+5. 单击“选项”按钮。
+6. 单击“连接到数据库”下拉列表，然后单击“浏览服务器”。在接下来的对话框中，单击“是”以允许浏览服务器。
+7. 单击“school”数据库将它选中，然后单击“确定”。 
+8. 单击“连接”。 
+2. 展开 **Databases** 文件夹。你应会在列表中看到 **school** 数据库。
 
-<h2><a id="verify"></a>如何：验证数据库部署</h2>
-
-1. 在 Management Studio 的"对象资源管理器"中，刷新数据库以查看你刚才创建的新数据库。
-
-2. 展开 Databases 文件夹。你应当会在列表中看到 **school** 数据库。
-
-3. 右键单击 school 数据库，然后单击"新建查询"。
-
+	**注意：**必须连接到你要查询的数据库。 
+3. 右键单击“school”，然后单击“新建查询”。
 4. 执行以下查询以验证数据可供访问。
 
-<div style="width:auto; height:auto; overflow:auto"><pre>
+
 	SELECT
 		Course.Title as "Course Title"
   		,Department.Name as "Department"
@@ -580,6 +596,6 @@ School 示例数据库方便简单；其所有对象均与 SQL 数据库 兼容�
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
 </pre></div>
 
-[SQL 数据库 管理入门]: /documentation/articles/sql-database-get-started/  
+[SQL Database 管理入门]: /manage/services/sql-databases/getting-started-w-sql-databases/
 
-<!--HONumber=55-->
+<!---HONumber=66-->
