@@ -8,14 +8,11 @@
 	editor=""/>
 
 <tags
-	ms.service="backup"
-	
-	ms.date="07/06/2015"
-	wacn.date=""/>
+	ms.service="backup" ms.date="07/06/2015" wacn.date=""/>
 
 
 # 备份 Azure 虚拟机
-本文是有关备份 Azure 虚拟机的基本指南。在继续之前，请确定符合所有[先决条件](/documentation/articles/backup-azure-vms-introduction)。
+本文是有关备份 Azure 虚拟机的基本指南。在继续之前，请确定符合所有[先决条件](/documentation/articles/backup-azure-vms-introduction/#prerequisites)。
 
 备份 Azure 虚拟机的过程包括三个主要步骤：
 
@@ -130,7 +127,7 @@
 | 注册 | 安装代理操作超时，注册失败 | 检查是否支持虚拟机的操作系统版本。 |
 | 注册 | 命令执行失败 - 此项上正在进行另一项操作。等到前一项操作完成 | 无 |
 | 备份 | 从备份保管库复制 VHD 超时 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持。 | 要复制的数据太多时会发生此问题。请检查你的数据磁盘是否少于 6 个。 |
-| 备份 | 快照 VM 子任务超时 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 如果 VM 代理出现问题，或以某种方式阻止了对 Azure 基础结构的网络访问，则会引发此错误。<ul><li>了解如何[调试 VM 代理问题](#Troubleshooting-vm-agent-related-issues) <li>了解如何[调试网络问题](#troubleshooting-networking-issues) </ul> |
+| 备份 | 快照 VM 子任务超时 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 如果 VM 代理出现问题，或以某种方式阻止了对 Azure 基础结构的网络访问，则会引发此错误。<ul><li>了解如何[调试 VM 代理问题]<!--(#Troubleshooting-vm-agent-related-issues)--> <li>了解如何[调试网络问题](#troubleshooting-networking-issues) </ul> |
 | 备份 | 发生内部错误，备份失败 - 请在几分钟后重试操作。如果问题持续出现，请联系 Microsoft 支持 | 发生此错误的原因有 2 个：<ol><li>要复制的数据太多。请检查你的磁盘是否少于 6 个。<li>已删除原始 VM，因此无法进行备份。若要保留已删除 VM 的备份数据但要防止备份错误，请取消保护 VM 并选择保留数据。这样即可停止备份计划以及重复出现的错误消息。 |
 | 备份 | 无法在选择的项上安装 Azure 恢复服务扩展 - VM 代理是 Azure 恢复服务扩展的必备组件。请安装 Azure VM 代理并重新启动注册操作 | <ol> <li>检查是否已正确安装 VM 代理。<li>确定已正确设置 VM 配置中的标志。</ol> [详细了解](#validating-vm-agent-installation)如何安装 VM 代理以及如何验证 VM 代理安装。 |
 | 备份 | 命令执行失败 - 此项上当前正在进行另一项操作。请等到前一项操作完成，然后重试 | VM 的现有备份或还原作业正在运行，而当现有作业正在运行时，无法启动新的作业。<br><br>
@@ -150,13 +147,13 @@
 更新 VM 代理与重新安装 [VM 代理二进制文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)一样简单。但是，需要确保在更新 VM 代理时，没有任何正在运行的备份作业。
 
 
-#### 验证 VM 代理安装
+#### <a id= 'validating-vm-agent-installation'></a>验证 VM 代理安装
 如何检查 Windows VM 上的 VM 代理版本：
 
 1. 登录 Azure 虚拟机并导航到 *C:\\WindowsAzure\\Packages* 文件夹。你应会发现 WaAppAgent.exe 文件已存在。
 2. 右键单击该文件，转到“属性”，然后选择“详细信息”选项卡。“产品版本”字段应为 2.6.1198.718 或更高
 
-### 排查网络问题
+### <a id= 'troubleshooting-networking-issues'></a>排查网络问题
 与所有扩展一样，备份扩展也需要访问公共 Internet 才能工作。无法访问公共 Internet 可能会出现以下各种情况：
 
 - 扩展安装可能失败
@@ -168,7 +165,7 @@
 正确完成名称解析后，还需要提供对 Azure IP 的访问权限。若要取消阻止对 Azure 基础结构的访问，请执行以下步骤：
 
 1. 获取要列入允许列表的 [Azure 数据中心 IP](https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx)。
-2. 使用 [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx) cmdlet 取消阻止 IP。在 Azure VM 上提升权限的 PowerShell 窗口中运行此 cmdlet（以管理员身份运行）。
+2. 使用 [New-NetRoute](https://technet.microsoft.com/ZH-CN/library/hh826148.aspx) cmdlet 取消阻止 IP。在 Azure VM 上提升权限的 PowerShell 窗口中运行此 cmdlet（以管理员身份运行）。
 
 
 ## 恢复点的一致性
@@ -191,6 +188,6 @@
 若要了解有关如何开始使用 Azure 备份的详细信息，请参阅：
 
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms)
-- [管理虚拟机](/documentation/articles/backup-azure-manage-vms)
+<!--- [管理虚拟机](/documentation/articles/backup-azure-manage-vms)-->
 
 <!---HONumber=66-->

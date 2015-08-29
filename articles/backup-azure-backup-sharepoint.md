@@ -25,7 +25,7 @@ DPM 的 Azure 备份支持以下方案。
 在将 SharePoint 场备份到 Azure 之前，需要确保满足几个条件。
 
 ### 先决条件
-在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
+在继续之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件]<!--(/documentation/articles/backup-azure-dpm-introduction)-->。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
 
 ### DPM 代理
 必须在 SharePoint Server、SQL Server 以及属于 SharePoint 场的任何其他服务器上安装 DPM 代理。有关设置保护代理的详细信息，请参阅[设置保护代理](https://technet.microsoft.com/zh-cn/library/hh758039.aspx)。唯一的例外是，你只能在单个 Web 前端 (WFE) 服务器上安装代理。DPM 只需将 WFE 服务器上的代理作为保护的入口点。

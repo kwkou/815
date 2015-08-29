@@ -596,6 +596,6 @@
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
 </pre></div>
 
-[SQL Database 管理入门]: /manage/services/sql-databases/getting-started-w-sql-databases/
+[SQL Database 管理入门]: /documentation/articles/sql-database-get-started
 
 <!---HONumber=66-->

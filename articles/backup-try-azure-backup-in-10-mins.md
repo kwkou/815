@@ -14,7 +14,7 @@
 Azure 备份的设置极其简单，以下操作方法视频将会帮助你入门。
 
 ## 步骤 1：获取 Azure 订阅
-+ 如果你还没有 Azure 订阅，可以先注册一个免费试用产品，这样就可以访问任何 Azure 服务。请访问链接 [http://azure.microsoft.com/en-in/pricing/free-trial/](http://azure.microsoft.com/en-in/pricing/free-trial) 了解详细信息。
++ 如果你还没有 Azure 订阅，可以先注册一个免费试用产品，这样就可以访问任何 Azure 服务。请访问链接 [http://www.windowsazure.cn/pricing/1rmb-trial/](http://www.windowsazure.cn/pricing/1rmb-trial/) 了解详细信息。
 + 如果你已经有了 Azure 订阅，则可以跳过此步骤。
 
 ## 步骤 2：配置 Azure 备份服务
@@ -48,7 +48,7 @@ Azure 备份的设置极其简单，以下操作方法视频将会帮助你入�
 
 
 ## 后续步骤
-+ 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](documentation/articles/backup-introduction-to-azure-backup)。
+<!--+ 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](documentation/articles/backup-introduction-to-azure-backup)。-->
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
 <!---HONumber=66-->

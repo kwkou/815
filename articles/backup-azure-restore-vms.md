@@ -9,10 +9,7 @@
 	editor=""/>
 
 <tags
-	ms.service="backup"
-
-	ms.date="07/17/2015"
-	wacn.date=""/>
+	ms.service="backup" ms.date="07/17/2015" wacn.date=""/>
 
 # 还原虚拟机
 你可以使用还原操作，通过存储在 Azure 备份保管库中的备份将虚拟机还原到新的 VM。
@@ -39,7 +36,7 @@
 
     ![选择日期](./media/backup-azure-restore-vms/select-date.png)
 
-    在你单击日历控件中的日期后，该日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](documentation/articles/backup-azure-vms)。表标题在括号中显示该日期可用的恢复点数目。
+    在你单击日历控件中的日期后，该日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](backup-azure-vms/#consistency-of-recovery-points)。表标题在括号中显示该日期可用的恢复点数目。
 
     ![恢复点](./media/backup-azure-restore-vms/recovery-points.png)
 
@@ -54,7 +51,7 @@
 
         所选云服务名称应全局唯一。通常，云服务名称以 [cloudservice].cloudapp.net 的形式与面向公众的 URL 相关联。如果该名称已被使用，Azure 不会允许你创建新的云服务。如果你选择创建新的云服务，它将被提供与虚拟机相同的名称，在这种情况下，所选 VM 名称将具备足够的唯一性，可以应用于关联的云服务。
 
-        我们仅显示未与还原实例详细信息中的任何地缘组关联的云服务和虚拟网络。[了解详细信息](https://msdn.microsoft.com/zh-cn/library/azure/jj156085.aspx)。
+        我们仅显示未与还原实例详细信息中的任何地缘组关联的云服务和虚拟网络。<!--[了解详细信息](https://msdn.microsoft.com/zh-cn/library/azure/jj156085.aspx)。-->
 
 2. 选择 VM 的存储帐户：这是创建 VM 的必要步骤。你可以选择与 Azure 备份保管库位于相同区域的现有存储帐户。不支持区域冗余或高级存储类型的存储帐户。
 
@@ -96,7 +93,7 @@
 | -------- | -------- | -------|
 | 还原 | 发生云内部错误，还原失败 | <ol><li>使用 DNS 设置配置了你正在尝试还原的云服务。你可以检查 <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>如果配置了地址，则表示配置了 DNS 设置。<br> <li>尝试还原的云服务配置了 ReservedIP，且云服务中现有的 VM 处于停止状态。<br>可以使用以下 PowerShell cmdlet 检查云服务是否有保留的 IP：<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName</ol> |
 
-## 后续步骤
-- [管理虚拟机](/documentation/articles/backup-azure-manage-vms)
+<!--## 后续步骤
+- [管理虚拟机](/documentation/articles/backup-azure-manage-vms)-->
 
 <!---HONumber=66-->

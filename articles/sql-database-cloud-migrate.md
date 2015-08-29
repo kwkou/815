@@ -56,7 +56,7 @@ SAMW 可用于分析现有数据库的架构是否与 Azure SQL Database 兼容�
 ### Visual Studio 中的 SQL Server 工具（VS、SSDT）
 Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，该项目包括架构中每个对象的 T-SQL 文件集。可以从数据库或者脚本文件导入该项目。创建后，可将该项目部署到 Azure SQL Database v12；生成项目，然后验证架构兼容性。单击某个错误会打开相应的 T-SQL 文件，然后便可以编辑该文件并更正错误。修复所有错误后，可将项目直接发布到 SQL Database 以创建空数据库，或者发布回到原始 SQL Server 数据库的（副本）以更新其架构，然后，便可以使用上述 SSMS 来部署该数据库及其数据。
 
-请使用包含 Visual Studio 2013 Update 4 或更高版本的[最新 SQL Server Data Tools for Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx)。
+请使用包含 Visual Studio 2013 Update 4 或更高版本的[最新 SQL Server Data Tools for Visual Studio](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)。
 
 ## 比较
 | 选项 #1 | 方法 #2 | 选项 #3 |
