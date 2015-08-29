@@ -1,44 +1,33 @@
-<properties 
-	pageTitle="How to deploy a SQL Database - Azure" 
-	description="Learn how to deploy a SQL Server database to Azure. You will use the Deploy Database to SQL Database wizard to upload a sample database." 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="jeffgoll" 
-	manager="jeffreyg" 
-	editor=""/>
+<properties linkid="manage-services-how-to-deploy-a-sqldb" urlDisplayName="How to deploy" pageTitle="如何部署 SQL 数据库 - Azure" metaKeywords="" description="了解如何将 SQL Server 数据库部署到 Azure。你将使用将数据库部署到 SQL 数据库 向导来上载示例数据库。" metaCanonical="" services="sql-database" documentationCenter="" title="How to Deploy a Database to Azure" authors="" solutions="" manager="" editor="" />
 
 <tags 
-	ms.service="sql-database" ms.date="02/25/2015" wacn.date=""/>
+	ms.service="sql-database" 	 
+	ms.date="02/25/2015" 
+	wacn.date="05/25/2015"/>
 
 
+<h1><a id="howtodeploySQLdb"></a>如何将数据库部署到 Azure</h1>
 
+可通过几种不同的方法将本地 SQL Server 数据库移动到 Azure。在此任务中，你将使用"将数据库部署到 SQL 数据库"向导来上载示例数据库。
 
+School 示例数据库方便简单；其所有对象均与 SQL 数据库 兼容，因此不需要修改或准备要迁移的数据库。作为新的管理员，请在使用你自己的数据库之前先尝试部署简单的数据库，以了解相关步骤。 
 
+**注意：**请查看《Azure SQL 数据库 迁移指南》，以了解有关如何准备将本地数据库迁移到 Azure 的详细说明。此外，请考虑下载 Azure 培训工具包，其中包含的实验教程演示了迁移本地数据库的备选方法。
 
-# How to Deploy a SQL Server database to Azure SQL Database
+## 目录##
+* [如何：在本地服务器上创建 school 数据库](#schooldb)
+* [如何：部署到 SQL 数据库](#deploydb)
+* [如何：验证数据库部署](#verify)
 
-In this article, you'll use the **Deploy Database to Azure SQL Database wizard** to upload a sample database to Azure SQL Database. You must download **SQL Server 2016 Management Studio (CTP 2.1)** for this tutorial.
+<h2><a id="schooldb"></a>如何：在本地服务器上创建 school 数据库</h2>
 
-Estimated time to completion: 15 minutes (includes download time)
+可在 [SQL 数据库 管理入门][]中找到用于创建此数据库的脚本。在本指南中，你将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
 
-> [AZURE.NOTE] This tutorial uses a "school" sample database that is purposefully simple; all of its objects are compatible with Azure SQL Database, eliminating the need to modify or prepare the database for migration. If you are migrating a more complex existing database, you could also consider using the [SQL Database Migration Wizard](http://sqlazuremw.codeplex.com/) and see this [overview](/documentation/articles/sql-database-cloud-migrate).
+1. 在 Management Studio 中，连接到本地服务器。右键单击"数据库"、单击"新建数据库"，然后输入 *school*。
 
-## Prerequisites
+2. 右键单击 *school*，然后单击"新建查询"。 
 
-A **Microsoft Azure account**. For a free trial, see this [offer](http://www.windowsazure.cn/pricing/1rmb-trial/).
-
-Download [**SQL Server Management Studio**](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx).  (For more information about the tool, see [SQL Server Management Studio - June 2015 Release Notes](https://msdn.microsoft.com/zh-cn/library/mt238486.aspx).)
-
-
-<h2><a id="schooldb"></a>How to: Create the school database on an on-premises server</h2>
-
-Scripts for creating this database can be found in the [Getting Started with SQL Database Administration][]. In this guide, you'll run these scripts in Management Studio to create an on-premises version of the school database.
-
-1. In Management Studio, connect to an on-premises server. Right-click **Databases**, click **New Database**, and enter *school*.
-
-2. Right-click on *school*, click **New Query**. 
-
-3. Copy and then execute the Create Schema script from the tutorial. 
+3. 根据教程复制并执行 Create Schema 脚本。 
 
 <div style="width:auto; height:300px; overflow:auto"><pre>
 	-- Create the Department table.
@@ -278,7 +267,7 @@ Scripts for creating this database can be found in the [Getting Started with SQL
 	GO
 </pre></div>
 
-Next, copy and execute the Insert Data script.
+接下来，复制并执行 Insert Data 脚本。
 
 <div style="width:auto; height:300px; overflow:auto"><pre>
 	-- Insert data into the Person table.
@@ -532,51 +521,46 @@ Next, copy and execute the Insert Data script.
 	GO
 </pre></div>
 
-   You now have an on-premises database that you can export to Azure. Next, you'll run a wizard that creates a .bacpac file, loads it onto Azure, and imports it into SQL Database.
+   现在，你拥有了一个可导出到 Azure 的本地数据库。接下来，你将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL 数据库 中的向导。
 
 
-<h2><a id="deploydb"></a>How to: Deploy to SQL Database</h2>
+<h2><a id="deploydb"></a>如何：部署到 SQL 数据库</h2>
 
-1. In Management Studio, connect to an on-premises SQL Server instance that has a database you want to migrate.
+1. 在 Management Studio 中，连接到包含你要迁移的数据库的本地 SQL Server 实例。
 
-2. Right-click the school database that you just created, point to **Tasks**, and click **Deploy Database to SQL Azure**.
+2. 右键单击你刚创建的 school 数据库、指向"任务"，然后单击"将数据库部署到 SQL Azure"。
 
-3. In Deployment Settings, enter a name for the database, such as *school*. 
+3. 在"部署设置"中，为该数据库输入一个名称，如 *school*。 
 
-4. Click **Connect**.
+4. 单击"连接"。
 
-5. In Server name, enter the 10-character server name, followed by .database.chinacloudapi.cn.
+5. 在"服务器名称"中，输入 10 个字符的服务器名称，后跟 .database.chinacloudapi.cn。
 
-6. In Authentication, choose **SQL Server Authentication**.
+6. 在"身份验证"中，选择"SQL Server 身份验证"。
 
-7. Enter the administrator login name and password that you provisioned when creating the SQL Database logical server.
+7. 输入你在创建 SQL 数据库 逻辑服务器时设置的管理员登录名和密码。
 
-8. Click **Options**.
+8. 单击"选项"。
 
-9. In Connection Properties, in **Connect to database**, type **master**.
+9. 在"连接属性"的"连接到数据库"中，键入 **master**。
 
-	**Note** You must connect to the **master** database whenever you want to create a database on the Azure SQL Database server. 
-10. Click **Connect**. This step concludes the connection specification and takes you back to the wizard.
-11. Click **Next** and click **Finish** to run the wizard.
+10. 单击"连接"。此步骤将结束连接规范并返回到该向导。
 
 
-## How to: Verify database deployment
-
-1. In Management Studio, under **Object Explorer**, click the **Connect** icon.
-2. In the **Server** name box, type the name of the Azure SQL server, followed by **database.chinacloudapi.cn**
-3. In **Authentication**, select **SQL Server Authenication**.
-4. Enter the administrator login name and password you created when provisioning the server. 
-5. Click the **Options** button.
-6. Click the **Connect to database** dropdown, and click **Browse server**. In the following dialog box, click **Yes** to allow browsing of the server.
-7. Click the **school** database to select it, then click **OK**. 
-8. Then click **Connect**. 
-2. Expand the **Databases** folder. You should see the **school** database in the list.
-
-	**Note** You must connect to the database you want to query. 
-3. Right-click **school** and click **New Query**.
-4. Execute the following query to verify that data is accessible.
+11. 单击"下一步"，然后单击"完成"以运行该向导。
 
 
+<h2><a id="verify"></a>如何：验证数据库部署</h2>
+
+1. 在 Management Studio 的"对象资源管理器"中，刷新数据库以查看你刚才创建的新数据库。
+
+2. 展开 Databases 文件夹。你应当会在列表中看到 **school** 数据库。
+
+3. 右键单击 school 数据库，然后单击"新建查询"。
+
+4. 执行以下查询以验证数据可供访问。
+
+<div style="width:auto; height:auto; overflow:auto"><pre>
 	SELECT
 		Course.Title as "Course Title"
   		,Department.Name as "Department"
@@ -596,5 +580,6 @@ Next, copy and execute the Insert Data script.
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
 </pre></div>
 
-[Getting Started with SQL Database Administration]: /manage/services/sql-databases/getting-started-w-sql-databases/  
+[SQL 数据库 管理入门]: /documentation/articles/sql-database-get-started/  
 
+<!--HONumber=55-->
