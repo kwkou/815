@@ -26,7 +26,7 @@
 - 在模拟器计算机上安装 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 - 在模拟器计算机上安装 Java 平台 JDK 7 或更高版本。模拟器计算机上已有此版本。
 - 安装并配置 [Apache Maven](http://maven.apache.org/)。
-- 获取 Azure 订阅。有关说明，请参阅[购买选项][azure-purchase-options]、[会员优惠][azure-member-offers] 或[免费试用][azure-trial]。
+- 获取 Azure 订阅。有关说明，请参阅[购买选项][azure-purchase-options]、[试用][azure-trial]。
 
 
 ##<a name="develop"></a>使用 Apache Maven 以 Java 创建 MapReduce 程序
@@ -576,7 +576,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 - [利用 Power Query 将 Excel 连接到 HDInsight][hdinsight-power-query]
-- [使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight][hdinsight-ODBC]
+ <!--[使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight][hdinsight-ODBC]-->
 
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 [azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
