@@ -13,7 +13,7 @@
 
 # 弹性数据库查询入门
 
-Azure SQL Database 弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](sql-database-elastic-query-overview.md)。
+Azure SQL Database 弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](sql-database-elastic-query-overview)。
 
 本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例做了延伸。完成时，你将会：了解如何配置和使用 Azure SQL Database 执行跨多个相关数据库的查询。
 ## 先决条件

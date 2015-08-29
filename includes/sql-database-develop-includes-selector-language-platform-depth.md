@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (Language | Platform & Depth)]
+> [AZURE.SELECTOR]
 - [(CSharp. ADO.NET | Windows. Starter)](sql-database-develop-dotnet-simple)
 - [(CSharp. Custom logic | Windows. Retry logic)](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx)
 - [(CSharp. Enterprise Library | Windows. Retry logic)](http://msdn.microsoft.com/zh-cn/library/azure/dn961167.aspx)

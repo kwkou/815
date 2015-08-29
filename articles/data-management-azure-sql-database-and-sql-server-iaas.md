@@ -173,7 +173,7 @@ Microsoft Azure 提供了用于托管 SQL Server 的两个选项：**Azure SQL D
 
 对于某些人而言，达到服务级别协议 (SLA) 规定的正常运行时间义务是首要任务。在本部分中，我们将了解 SLA 对每个数据库托管选项代表的含义。
 
-对于 **Azure SQL Database**，假设使用基本、标准和高级服务层，则 Microsoft 将提供 99.99% 的可用性 SLA。请注意，可用性 SLA 提供连接到数据库的能力。换句话说，它是个数据库级别 SLA。有关 SLA 的最新信息，请参阅[服务级别协议](http://www.windowsazure.cn/support/legal/sla)。有关 Azure SQL Database 服务层（版本）和支持的业务连续性计划的最新信息，请参阅 [Azure SQL Database 服务层](http://msdn.microsoft.com/zh-cnlibrary/dn741340.aspx)。
+对于 **Azure SQL Database**，假设使用基本、标准和高级服务层，则 Microsoft 将提供 99.99% 的可用性 SLA。请注意，可用性 SLA 提供连接到数据库的能力。换句话说，它是个数据库级别 SLA。有关 SLA 的最新信息，请参阅[服务级别协议](http://www.windowsazure.cn/support/legal/sla)。有关 Azure SQL Database 服务层（版本）和支持的业务连续性计划的最新信息，请参阅 [Azure SQL Database 服务层](http://msdn.microsoft.com/zh-cn/library/dn741340.aspx)。
 
 对于 **Azure 中托管的虚拟机**，Microsoft 提供 99.95% 的可用性 SLA，这个可用性适用于 VM，而不适用于 VM 内部运行的进程（例如 SQL Server）。VM SLA 要求你在可用性集中至少托管两个 VM。使用此类配置，Azure 保证至少一个 VM 将有 99.95% 的时间可用。为了在 VM 中实现数据库高可用性 (HA)，你应在 SQL Server 中配置一个受支持的高可用性选项，例如 AlwaysOn 可用性组。请注意，在 Azure 中设置 AlwaysOn 需要一些手动配置和管理，并且你需要额外支付所操作的每个辅助数据库。
 
@@ -228,7 +228,7 @@ Microsoft Azure 提供了用于托管 SQL Server 的两个选项：**Azure SQL D
 </tr>
 <tr>
    <td valign="middle"><p><a href="http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx">MSDN：Azure SQL Database</a></p>
-<p><a href="http://msdn.microsoft.com/library/azure/jj823132.aspx">MSDN：Azure 虚拟机中的 SQL Server</a></p>
+<p><a href="http://msdn.microsoft.com/zh-cn/library/azure/jj823132.aspx">MSDN：Azure 虚拟机中的 SQL Server</a></p>
 
 <p><a href="http://www.windowsazure.cn/home/features/sql-database/">Azure.com：Azure SQL Database</a></p></td>
    <td valign="middle">库文档的链接。</td>   

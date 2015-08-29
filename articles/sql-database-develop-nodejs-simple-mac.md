@@ -45,7 +45,7 @@
 ### 创建 AdventureWorks 数据库
 
 
-本主题中的代码示例需要使用 **AdventureWorks** 测试数据库。如果还没有此数据库，请参阅 [SQL Database 入门](/documenttation/articles/sql-database-get-started)。请务必遵循该指南来创建 **AdventureWorks 数据库模板**。以下所示的示例仅适用于 **AdventureWorks 架构**。
+本主题中的代码示例需要使用 **AdventureWorks** 测试数据库。如果还没有此数据库，请参阅 [SQL Database 入门](/documentation/articles/sql-database-get-started)。请务必遵循该指南来创建 **AdventureWorks 数据库模板**。以下所示的示例仅适用于 **AdventureWorks 架构**。
 
 
 ## 连接到 SQL Database

@@ -78,7 +78,7 @@ TODO: Again, Does Python allow you to somehow split a very long line of code int
 
 ## 插入一行，传递参数，然后检索生成的主键
 
-在 SQL Database 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/library/ms179610.aspx)值。
+在 SQL Database 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 
 	import pymssql
