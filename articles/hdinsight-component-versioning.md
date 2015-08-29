@@ -44,7 +44,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 **发行说明**
 
-请参阅 [HDInsight 发行说明](hdinsight-release-notes)，了解 HDInsight 最新版本的更多发行说明。
+请参阅 [HDInsight 发行说明](/documentation/articles/hdinsight-release-notes)，了解 HDInsight 最新版本的更多发行说明。
 
 ### 设置 HDInsight 群集时选择一个版本
 
@@ -59,7 +59,7 @@ HDInsight 平台的一些突出功能包括：
 
 	Spark 还可用于执行基于磁盘的传统数据处理。Spark 改进了传统的 MapReduce 框架，因为在中间阶段不必写入到磁盘。另外，Spark 与 Hadoop 分布式文件系统 (HDFS) 和 Azure Blob 存储兼容，以便现有的数据可通过 Spark 进行轻松处理。
 
-	也可以使用脚本操作添加 Spark。脚本操作会将 Spark 1.2.0 添加到 HDInsight 3.2 群集，或者将 Spark 1.0.2 添加到 HDInsight 3.1 群集。有关详细信息，请参阅[在 HDInsight Hadoop 群集上安装并使用 Spark](hdinsight-hadoop-spark-install.md)。
+	也可以使用脚本操作添加 Spark。脚本操作会将 Spark 1.2.0 添加到 HDInsight 3.2 群集，或者将 Spark 1.0.2 添加到 HDInsight 3.1 群集。<!--有关详细信息，请参阅[在 HDInsight Hadoop 群集上安装并使用 Spark](hdinsight-hadoop-spark-install.md)。-->
 
  
 - **Storm** - Storm on Azure HDInsight 现已正式发布，它你只需单击几下鼠标，就能在数分钟内快速轻松地完成实时部署。Apache Storm on Azure HDInsight 提供分析平台，能够可靠地处理的事件数以百万计的访问 Apache Hadoop 生态系统的开放源代码项目。现在，Hadoop 用户可以分析发生的事件，以及从过去的事件中获得见解。Microsoft 还提供与 Visual Studio 的内置集成，方便开发人员与 Storm 交互。现在，你可以从 Visual Studio 内部开发、部署和调试 Storm 拓扑。
@@ -116,7 +116,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 **弃用日期**是在该日期后，不能在 HDInsight 上创建此群集版本的日期。
 
-> [AZURE.NOTE]HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4](cloud-services-guestos-update-matrix) 上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
+> [AZURE.NOTE]HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4](/documentation/articles/cloud-services-guestos-update-matrix) 上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
 
 ## 与 HDInsight 版本相关的 Hortonworks 发行说明##
 

@@ -191,7 +191,7 @@ Storm UI 可以用于监视拓扑。
 
 * **HDInsight Tools for Visual Studio** - HDInsight Tools 允许你使用 Visual Studio 提交、监视和管理 Storm 拓扑，就像在前面提到的 Storm 仪表板中一样。HDInsight Tools 可让你创建 C# Storm 拓扑，并包含可在群集上部署和运行的示例拓扑。
 
-	有关详细信息，请参阅 <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">HDInsight Hadoop Tools for Visual Studio 入门</a>。
+	<!--有关详细信息，请参阅 <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">HDInsight Hadoop Tools for Visual Studio 入门</a>。-->
 
 * **示例文件** - HDInsight Storm 群集在 **%STORM_HOME%\\contrib** 目录中提供了多个示例。每个示例都会包含以下内容：
 

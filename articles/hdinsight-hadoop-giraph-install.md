@@ -336,9 +336,9 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 ## 另请参阅##
 - [在 HDinsight Hadoop 群集上安装和使用 Spark][hdinsight-install-spark]：提供有关如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 Spark 的说明。Spark 是一种开放源代码并行处理框架，支持内存中处理，以提升大数据分析应用程序的性能。
-- [在 HDinsight 群集上安装 R][hdinsight-install-r]：提供有关如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 R 的说明。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
+<!--- [在 HDinsight 群集上安装 R][hdinsight-install-r]：提供有关如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 R 的说明。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
 - [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。使用群集自定义在 HDInsight Hadoop 群集上安装 Solr。Solr 允许你对存储的数据执行功能强大的搜索操作。
-
+-->
 
 
 [tools]: https://github.com/Blackmist/hdinsight-tools

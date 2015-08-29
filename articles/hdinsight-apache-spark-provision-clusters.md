@@ -62,7 +62,7 @@ Spark 可让你基于原始数据定义架构和 Hive 表。可以将这些架�
 
 有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
 
-> [AZURE.NOTE]你必须先创建 Azure 虚拟网络，然后才能设置群集。有关详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。
+> [AZURE.NOTE]你必须先创建 Azure 虚拟网络，然后才能设置群集。<!-- 有关详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。-->
 >
 > Azure HDInsight 仅支持基于位置的虚拟网络，并且当前不适用于基于地缘组的虚拟网络。
 >
@@ -207,7 +207,7 @@ HDInsight 上的 Spark 群集使用 Azure Blob 存储容器作为默认文件系
 
 本部分提供有关如何通过使用 Azure PowerShell 在 HDInsight 中设置 Apache Spark 群集的说明。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。有关将 Azure PowerShell 与 HDInsight 配合使用的详细信息，请参阅[使用 PowerShell 管理 HDInsight][hdinsight-admin-powershell]。有关 HDInsight Windows PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考][hdinsight-powershell-reference]。
 
-> [AZURE.NOTE]虽然本部分中的脚本可用于在 Azure 虚拟网络上配置 HDInsight 群集，但它们不能用于创建 Azure 虚拟网络。有关创建 Azure 虚拟网络的信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。
+> [AZURE.NOTE]虽然本部分中的脚本可用于在 Azure 虚拟网络上配置 HDInsight 群集，但它们不能用于创建 Azure 虚拟网络。<!--有关创建 Azure 虚拟网络的信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。-->
 
 通过使用 Azure PowerShell 设置 HDInsight 群集需要执行以下过程：
 
