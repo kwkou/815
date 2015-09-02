@@ -602,10 +602,9 @@ _图 6.根据分析和存储要求将数据分区_
 - Microsoft 网站上的 [Azure：遥测基础知识和疑难解答](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx)一文。
 - Microsoft 网站上的[使用 Azure 诊断收集日志记录数据](https://msdn.microsoft.com/zh-cn/library/azure/gg433048.aspx)页。
 - Microsoft 网站上的[为 Azure 云服务和虚拟机配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx)页。
-- Microsoft 网站上的 [Azure Redis 缓存](http://azure.microsoft.com/services/cache/)、[Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) 和 [HDInsight](http://azure.microsoft.com/services/hdinsight/) 页。
-- Microsoft 网站上的[如何使用服务总线队列](http://azure.microsoft.com/)页。
+- Microsoft 网站上的 [Azure Redis 缓存](/home/features/redis-cache/) 和 [HDInsight](/home/features/hdinsight/) 页。
+- Microsoft 网站上的[如何使用服务总线队列](/home/features/messaging/)页。
 - Microsoft 网站上的 [Azure 虚拟机中的 SQL Server Business Intelligence](https://msdn.microsoft.com/zh-cn/library/azure/jj992719.aspx) 一文。
 - Microsoft 网站上的[了解 Azure 中的监视警报和通知](https://msdn.microsoft.com/zh-cn/library/azure/dn306639.aspx)页。
-- Microsoft 网站上的 [Application Insights](app-insights-get-started/) 页。
 
 <!---HONumber=67-->

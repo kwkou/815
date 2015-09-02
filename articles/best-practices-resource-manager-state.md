@@ -373,8 +373,8 @@ enableJumpbox | 约束列表中的字符串 (enabled/disabled) | 一个参数，
         "value": "[reference('master-node').outputs.masterip.value]"
     }
 
-## 后续步骤
+<!--## 后续步骤
 - [创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
+- [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)-->
 
 <!---HONumber=67-->

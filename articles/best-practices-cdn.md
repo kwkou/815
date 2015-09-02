@@ -43,7 +43,7 @@ CDN 的典型用途包括：
 
 - 处理高峰和偶发性请求而不需应用程序缩放，避免后续增加营运成本。例如，对于硬件设备（例如特定型号的路由器）或消费型设备（例如智能电视）将更新发布到操作系统时，如果数以百万的用户和设备在短期间内下载更新，则可能会根据需要生成庞大的高峰量。
 
-- 下表显示了来自不同地理位置的第一个字节的时间中间值示例。目标 Web 角色部署到 Azure 美国西部。因为 CDN 很靠近 CDN 节点，因此较大的促升之间有更强的关联性。有关 Azure CDN 节点位置的列表，请参阅 [Azure 内容交付网络 (CDN) 节点位置](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)。
+- 下表显示了来自不同地理位置的第一个字节的时间中间值示例。目标 Web 角色部署到 Azure 美国西部。因为 CDN 很靠近 CDN 节点，因此较大的促升之间有更强的关联性。<!--有关 Azure CDN 节点位置的列表，请参阅 [Azure 内容交付网络 (CDN) 节点位置](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)。-->
 
 <table xmlns:xlink="http://www.w3.org/1999/xlink"><tr><th><a name="_MailEndCompose" href="#"><span /></a><br /></th><th><p>距第一字节的时间（源）</p></th><th><p>距第一字节的时间 (CDN)</p></th><th><p>% 更快的速度，适用于 CDN</p></th></tr><tr><td><p>* San Jose, CA</p></td><td><p>47.5</p></td><td><p>46.5</p></td><td><p>2 %</p></td></tr><tr><td><p>** Dulles, VA</p></td><td><p>109</p></td><td><p>40.5</p></td><td><p>169 %</p></td></tr><tr><td><p>Buenos Aires, AR</p></td><td><p>210</p></td><td><p>151</p></td><td><p>39 %</p></td></tr><tr><td><p>* London, UK</p></td><td><p>195</p></td><td><p>44</p></td><td><p>343 %</p></td></tr><tr><td><p>Shanghai, CN</p></td><td><p>242</p></td><td><p>206</p></td><td><p>17 %</p></td></tr><tr><td><p>* Singapore</p></td><td><p>214</p></td><td><p>74</p></td><td><p>189 %</p></td></tr><tr><td><p>* Tokyo, JP</p></td><td><p>163</p></td><td><p>48</p></td><td><p>240 %</p></td></tr><tr><td><p>Seoul, KR</p></td><td><p>190</p></td><td><p>190</p></td><td><p>0 %</p></td></tr></table>* 在同一城市中具有 Azure CDN 节点。  
 * 在邻近城市中具有 Azure CDN 节点。
@@ -215,8 +215,6 @@ CDN 用处不大的应用场景包括：
 ## 详细信息
 + [Azure CDN](/home/features/caching/)
 + [Azure 内容交付网络 (CDN) 概述](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
-+ [在 Web 应用程序中从 Azure CDN 提供内容](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
-+ [将云服务与 Azure CDN 集成](/documentation/articles/cdn-cloud-service-with-cdn)
 + [Azure 内容交付网络最佳实践](http://azure.microsoft.com/blog/2011/03/18/best-practices-for-the-windows-azure-content-delivery-network/)
 
 <!---HONumber=67-->

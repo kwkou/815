@@ -1033,7 +1033,7 @@ Web API 的性质带来了其自己的验证是否正常运行的附加要求。
 
 你还应创建并运行性能测试以检查 Web API 在压力下令人满意地运行。你可以使用 Visual Studio Ultimate 构建一个 Web 性能和负载测试项目。有关详细信息，请参阅 Microsoft 网站上的[在发布前对应用程序运行性能测试](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx)页。
 
-## 通过使用 Azure API 管理服务发布和管理 Web API
+<!--## 通过使用 Azure API 管理服务发布和管理 Web API
 
 Azure 提供了 [API 管理服务](http://azure.microsoft.com/documentation/services/api-management/)，你可以使用它来发布和管理 Web API。使用此工具，你可以生成一个充当一个或多个 Web API 的外观的服务。该服务本身是一个可缩放的 Web 服务，你可以使用 Azure 管理门户创建和配置它。可以使用此服务发布和管理 Web API，如下所示：
 
@@ -1059,7 +1059,7 @@ Azure 提供了 [API 管理服务](http://azure.microsoft.com/documentation/serv
 
 > [AZURE.TIP]Azure 提供了使用 Azure 流量管理器，使用它可以实现故障转移和负载平衡，并可以减少在不同地理位置托管的多个网站实例之间的延迟。可以将 Azure 流量管理器与 API 管理服务结合使用；API 管理服务可以通过 Azure 流量管理器将请求路由到网站实例。有关详细信息，请访问 Microsoft 网站上的[关于流量管理器负载平衡方法](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx)页。
 
-> 在此结构中，如果你要对网站使用自定义 DNS 名称，则应将每个网站的相应 CNAME 记录配置为指向 Azure 流量管理器网站的 DNS 名称。
+> 在此结构中，如果你要对网站使用自定义 DNS 名称，则应将每个网站的相应 CNAME 记录配置为指向 Azure 流量管理器网站的 DNS 名称。-->
 
 ## 为构建客户端应用程序的开发人员提供支持
 构造客户端应用程序的开发人员通常需要了解有关如何访问 Web API 和与参数、数据类型、返回类型和返回代码（描述 Web 服务和客户端应用程序之间的不同请求和响应）相关的文档的信息。
@@ -1069,7 +1069,7 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 
 此门户还提供了：
 
-- 产品的文档，列出它公开的操作、所需参数和可以返回的不同响应。请注意，此信息从[通过使用 Microsoft Azure API 管理服务发布 Web API](#publishing-a-web-API) 部分的列表中的步骤 3 中提供的详细信息生成。
+- 产品的文档，列出它公开的操作、所需参数和可以返回的不同响应。请注意，此信息从[通过使用 Windows Azure API 管理服务发布 Web API](#publishing-a-web-API) 部分的列表中的步骤 3 中提供的详细信息生成。
 
 - 演示如何通过多种语言（包括 JavaScript、C#、Java、Ruby、Python 和 PHP）调用操作的代码片段。
 
@@ -1107,7 +1107,7 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 
 可以从 Azure 管理门户实时查看此数据。此外，还可以创建监视 Web API 的运行状况的 webtest。Webtest 将定期请求发送到 Web API 中指定的 URI，并捕获响应。你可以指定成功响应的定义（如 HTTP 状态代码 200），如果请求未返回此响应，可以安排向管理员发送警报。如有必要，管理员可以重新启动托管 Web API 的服务器（如果它出现故障）。
 
-Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](app-insights-start-monitoring-app-health-usage/)页提供了详细信息。
+<!--Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](app-insights-start-monitoring-app-health-usage/)页提供了详细信息。-->
 
 ### 通过 API 管理服务监视 Web API
 
@@ -1140,11 +1140,8 @@ Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行
 - 有关使用 ASP.NET Web API 处理 HTTP 异常的详细信息，请访问 Microsoft 网站上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页。
 - Microsoft 网站上的 [Web API 全局错误处理](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling)一文介绍了如何为 Web API 实现全局错误处理和日志记录策略。
 - Microsoft 网站上的[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页提供了有关使用 Web 作业在 Azure 网站上执行后台操作的信息和示例。
-- Microsoft 网站上的 [Azure 通知中心通知用户](notification-hubs-aspnet-backend-windows-dotnet-notify-users/)页显示了如何使用 Azure 通知中心将异步响应推送到客户端应用程序。
 - Microsoft 网站上的 [API 管理](http://azure.microsoft.com/services/api-management/)页介绍了如何发布可提供对 Web API 的受控且安全访问的产品。
 - Microsoft 网站上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页介绍了如何使用 API 管理 REST API 构建自定义管理应用程序。
-- Microsoft 网站上的[关于流量管理器负载平衡方法](https://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx)页汇总了如何使用 Azure 流量管理器对托管 Web API 的多个网站实例上的请求进行负载平衡。
-- Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](/documentation/articles/app-insights-start-monitoring-app-health-usage)页提供了有关在 ASP.NET Web API 项目中安装和配置 Application Insights 的详细信息。
 - Microsoft 网站上的[使用单元测试验证代码](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx)页提供了有关使用 Visual Studio 创建和管理单元测试的详细信息。
 - Microsoft 网站上的[在发布前对应用程序运行性能测试](https://msdn.microsoft.com/zh-cn/library/dn250793.aspx)页介绍了如何使用 Visual Studio Ultimate 来创建 Web 性能和负载测试项目。
 

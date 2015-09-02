@@ -244,7 +244,6 @@
 
 ## 后续步骤
 
-- 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)。
 - 至于如何在 Azure 资源管理器中处理安全事项，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)以获取相关建议。
 - 若要了解进出模板的状态，请参阅[共享 Azure 资源管理器模板中的状态](/documentation/articles/best-practices-resource-manager-state)
 

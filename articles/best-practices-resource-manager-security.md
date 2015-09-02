@@ -17,7 +17,7 @@
 
 关于 Azure 资源管理器模板的安全事项，有几个方面需要考虑，即密钥和机密、基于角色的访问控制，以及网络安全组。
 
-本主题假定你熟悉 Azure 资源管理器中基于角色的访问控制 (RBAC)。有关详细信息，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)和[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)
+本主题假定你熟悉 Azure 资源管理器中基于角色的访问控制 (RBAC)。<!--有关详细信息，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)和[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)-->
 
 ## 机密和证书
 
@@ -164,11 +164,11 @@
 
 许多方案都会有特定的要求，要求指定具体的控制方法来控制流向你的虚拟网络中一个或多个 VM 实例的流量。你可以使用网络安全组 (NSG) 在 ARM 模板部署过程中这样做。
 
-网络安全组是与你的订阅相关联的顶层对象。NSG 包含特定的访问控制规则，可以通过这些规则来允许或拒绝流向 VM 实例的流量。可以随时更改 NSG 的规则，所做的更改适用于所有关联的实例。若要使用 NSG，你必须有一个与某区域（位置）关联的虚拟网络。NSG 不兼容与地缘组关联的虚拟网络。如果你没有区域性虚拟网络却又希望控制流向终结点的流量，请参阅[关于网络访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376541.aspx)。
+网络安全组是与你的订阅相关联的顶层对象。NSG 包含特定的访问控制规则，可以通过这些规则来允许或拒绝流向 VM 实例的流量。可以随时更改 NSG 的规则，所做的更改适用于所有关联的实例。若要使用 NSG，你必须有一个与某区域（位置）关联的虚拟网络。NSG 不兼容与地缘组关联的虚拟网络。<!--如果你没有区域性虚拟网络却又希望控制流向终结点的流量，请参阅[关于网络访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376541.aspx)。-->
 
 你可以将 NSG 与 VM 相关联，也可以将其与虚拟网络中的子网相关联。与 VM 关联后，NSG 适用于 VM 实例所发送和接收的所有通信。应用到虚拟网络中的子网以后，它将适用于子网中所有 VM 实例发送和接收的所有通信。一个 VM 或子网只能与 1 个 NSG 相关联，但每个 NSG 都可以包含多达 200 条规则。每个订阅可以有 100 个 NSG。
 
->[AZURE.NOTE]不支持将基于终结点的 ACL 和网络安全组置于同一 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376543.aspx)。
+>[AZURE.NOTE]不支持将基于终结点的 ACL 和网络安全组置于同一 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。<!--有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376543.aspx)。-->
 
 ### 网络安全组工作原理
 
@@ -296,11 +296,11 @@ Azure 使用路由表来决定如何根据每个数据包的目标来转发 IP �
 - 本地规则：此规则适用于要发送到本地地址范围的所有流量，并使用 VPN 网关作为下一跃点目标。
 - Internet 规则：此规则处理要发送到公共 Internet 的所有流量，并使用基础结构 Internet 网关作为要发送到 Internet 的所有流量的下一跃点。
 
-### BGP 路由
+<!--### BGP 路由
 
-在撰写本文时，[ExpressRoute](/documentation/articles/expressroute-introduction) 在 Azure 资源管理器的[网络资源提供程序](/documentation/articles/resource-groups-networking)中并不受支持。如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则一旦 NRP 支持 ExpressRoute，即可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与默认路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction)。
+在撰写本文时，ExpressRoute 在 Azure 资源管理器的[网络资源提供程序](/documentation/articles/resource-groups-networking)中并不受支持。如果在本地网络和 Azure 之间存在 ExpressRoute 连接，则一旦 NRP 支持 ExpressRoute，即可通过 BGP 将路由从本地网络传播到 Azure。在每个 Azure 子网中，这些 BGP 路由的使用方式与默认路由和用户定义路由相同。有关详细信息，请参阅 [ExpressRoute 简介](/documentation/articles/expressroute-introduction)。
 
->[AZURE.NOTE]NRP 上支持 ExpressRoute 时，你就可以将 Azure 环境配置为使用强制方式通过隧道来连接你的本地网络，即为子网 0.0.0.0/0 创建一个用户定义路由，而该子网则使用 VPN 网关作为下一跃点。但是，仅在使用 VPN 网关而非 ExpressRoute 的情况下，此方法才起作用。对于 ExpressRoute，强制隧道是通过 BGP 配置的。
+>[AZURE.NOTE]NRP 上支持 ExpressRoute 时，你就可以将 Azure 环境配置为使用强制方式通过隧道来连接你的本地网络，即为子网 0.0.0.0/0 创建一个用户定义路由，而该子网则使用 VPN 网关作为下一跃点。但是，仅在使用 VPN 网关而非 ExpressRoute 的情况下，此方法才起作用。对于 ExpressRoute，强制隧道是通过 BGP 配置的。-->
 
 ### 用户定义路由
 
@@ -326,9 +326,10 @@ Azure 使用路由表来决定如何根据每个数据包的目标来转发 IP �
 此虚拟设备 VM 必须能够接收不发送给自身的传入流量。若要允许 VM 接收发送到其他目标的流量，必须在 VM 中启用 IP 转发。
 
 ## 后续步骤
-- 若要了解如何设置安全主体，以便通过正确的访问权限来使用组织中的资源，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)
-- 如果你需要锁定对资源的访问，则可使用管理锁。请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)
 - 若要配置路由和 IP 转发，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to) 
-- 有关基于角色的访问控制的概述，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)
+<!--- 若要了解如何设置安全主体，以便通过正确的访问权限来使用组织中的资源，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)
+- 如果你需要锁定对资源的访问，则可使用管理锁。请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)
+
+- 有关基于角色的访问控制的概述，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)-->
 
 <!---HONumber=67-->
