@@ -82,7 +82,7 @@ _图 1. - 基于分区键将数据水平分区（分片）_
 
 垂直分区的最常见用途是降低与提取最常访问的项相关的 I/O 和性能成本。图 2 显示了垂直分区的示例概览，其中每个数据项的不同属性都保存在不同的分区中；产品的名称、描述和价格信息的访问频率高于库存量或上次订购日期。
 
-![](media/best-practices-data-partitioning/DataPartitioning02.png)
+![](./media/best-practices-data-partitioning/DataPartitioning02.png)
 
 _图 2. - 按使用模式将数据垂直分区_
 
@@ -199,19 +199,19 @@ Azure SQL 数据库是在云中运行的关系数据库即服务。它基于 Mic
 
 - “列表分片映射”描述单个键与 shardlet 之间的关联。例如，在多租户系统中，每个租户的数据可与唯一的键相关联，并存储在自身的 shardlet 中。为了保证隐私性和隔离（防止租户耗尽其他租户可用的数据存储资源），每个 shardlet 都可以保存在自身的分片中。
 
-![](media/best-practices-data-partitioning/PointShardlet.png)
+![](./media/best-practices-data-partitioning/PointShardlet.png)
 
 _图 4. - 使用列表分片映射将租户数据存储在独立分片中_
 
 - “范围分片映射”描述一组连续键值与 shardlet 之间的关联。在前面所述的多租户示例中，有一个实施专用 shardlet 的替代方案，就是将数据分组成同一 shardlet 中的一组租户（每个租户有自己的键）。此方案的开销低于第一种方案（租户共享数据存储资源），但是要承担数据隐私性和隔离性降低的风险。
 
-![](media/best-practices-data-partitioning/RangeShardlet.png)
+![](./media/best-practices-data-partitioning/RangeShardlet.png)
 
 _图 5. - 使用范围分片映射来存储分片中租户范围的数据_
 
 请注意，单个分片可以包含多个 shardlet 的数据。例如，可以使用列表 shardlet 将不同非连续租户的数据存储在同一分片中。还可以混合同一分片中的范围 shardlet 和列表 shardlet，不过，将会通过全局分片映射管理器数据库中的不同映射对这些 shardlet 寻址（全局分片映射管理器数据库可以包含多个分片映射）。图 6 演示了这种方法。
 
-![](media/best-practices-data-partitioning/MultipleShardMaps.png)
+![](./media/best-practices-data-partitioning/MultipleShardMaps.png)
 
 _图 6. - 实施多个分片映射_
 
@@ -259,7 +259,7 @@ Azure 表存储是存储的键/值，专为分区而设计。所有实体都存�
 
 图 7 显示了一个虚构电子商务应用程序的示例存储帐户（Contoso 数据）的逻辑结构。存储帐户包含三个表（“客户信息”、“产品信息”和“订单信息”），每个表有多个分区。在“客户信息”表中，数据已根据客户所在的城市分区，行键包含客户 ID。在“产品信息”表中，产品已按产品类别分区，行键包含产品编号。在“订单信息”表中，订单已按下单日期分区，行键指定了收到订单的时间。请注意，所有数据都已按行键在每个分区中排序。
 
-![](media/best-practices-data-partitioning/TableStorage.png)
+![](./media/best-practices-data-partitioning/TableStorage.png)
 
 _图 7. - 示例存储帐户中的表和分区_
 
@@ -393,7 +393,7 @@ Redis 网站上的[分区：如何在多个 Redis 实例之间拆分数据](http
 - Azure Redis 缓存并非旨在用作永久性的数据存储，因此无论实施哪种分区方案，应用程序代码都应该准备好接受在缓存中找不到数据，因而必须从其他位置检索数据的事实。
 - 将经常访问的数据一起保存在同一分区中。Redis 是一个功能强大的键/值存储，提供多种高度优化的机制用于建构数据：从简单字符串（实际上是长度最大为 512MB 的二进制数据）、聚合类型（例如列表（可充当队列和堆栈））、集（已排序和未排序）到哈希（可将相关的字段分组在一起，例如表示对象中字段的项）。聚合类型可让你将许多相关值与同一个键相关联；Redis 键标识列表、集或哈希，而不是它包含的数据项。可以在 Azure Redis 缓存中使用这些类型，Redis 网站上的[数据类型](http://redis.io/topics/data-types)页已提供了说明。例如，跟踪客户所下订单的电子商务系统部件中，每位客户的详细信息可能存储在 Redis 哈希中，使用客户 ID 键控。每个哈希可以保存该客户的订单 ID 集合。一个独立的 Redis 集可以保存订单（同样已结构化为哈希），使用订单 ID 键控。图 10 显示了此结构。请注意，Redis 不实施任何形式的引用完整性，因此开发人员需要负责维护客户与订单之间的关系。
 
-![](media/best-practices-data-partitioning/RedisCustomersandOrders.png)
+![](./media/best-practices-data-partitioning/RedisCustomersandOrders.png)
 
 _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结构_
 
@@ -467,7 +467,7 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 - Microsoft 网站上的 [Azure 搜索概述](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)页介绍了 Azure 搜索服务提供的功能。
 - Microsoft 网站上的[限制和约束（Azure 搜索 API）](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)页包含有关每个 Azure 搜索服务实例的容量的信息。
 - Microsoft 网站上的[支持的数据类型（Azure 搜索）](https://msdn.microsoft.com/zh-cn/library/azure/dn798938.aspx)页汇总了你可以在可搜索文档和索引中使用的数据类型。
-- Microsoft 网站上的 [Microsoft Azure 缓存](/home/features/redis-cache/)页提供了 Azure Redis 缓存的介绍。
+- Microsoft 网站上的 [Windows Azure 缓存](/home/features/redis-cache/)页提供了 Azure Redis 缓存的介绍。
 - Redis 网站上的[分区：如何在多个 Redis 实例之间拆分数据](http://redis.io/topics/partitioning)页提供了有关使用 Redis 实施分区的信息。
 - Microsoft 网站上的[在 Azure 中的 CentOS Linux VM 上运行 Redis](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) 页逐步讲解了一个示例，用于演示如何构建和配置作为 Azure VM 运行的 Redis 节点。
 - Redis 网站上的[数据类型](http://redis.io/topics/data-types)页介绍了可在 Redis 和 Azure Redis 缓存中使用的数据类型。
