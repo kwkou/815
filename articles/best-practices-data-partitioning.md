@@ -459,11 +459,10 @@ _图 10. - 记录客户订单及其详细信息的 Redis 存储中的建议结�
 - Microsoft 网站上的 [Azure SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx)页提供了有关如何创建和使用 SQL 数据库的详细文档。
 - Microsoft 网站上的 [Azure SQL 数据库弹性缩放概述](/documentation/articles/sql-database-elastic-scale-introduction)页提供了有关弹性缩放的全面介绍。
 - Microsoft 网站上的[使用弹性缩放进行拆分和合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)主题包含有关使用拆分/合并服务管理弹性缩放分片的信息。
-- Microsoft 网站上的 [Azure 存储空间可缩放性和性能目标](https://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页介绍了 Azure 存储空间的当前大小和吞吐量限制。
+- Microsoft 网站上的 [Azure 存储空间可缩放性和性能目标](/documentation/articles/storage-scalability-targets)页介绍了 Azure 存储空间的当前大小和吞吐量限制。
 - Microsoft 网站上的[执行实体组事务](https://msdn.microsoft.com/zh-cn/library/azure/dd894038.aspx)页提供了有关通过存储在 Azure 表存储的实体执行事务操作的详细信息。
 - Microsoft 网站上的[为 Azure 表存储设计可缩放分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)一文包含有关 Azure 表存储中的分区的详细信息。
 - Microsoft 网站上的[使用 Azure CDN](/documentation/articles/cdn-how-to-use) 页介绍了如何使用 Azure 内容交付网络 (CDN) 复制保存在 Azure Blob 存储中的数据。
-- Microsoft 网站上的[预览版的 DocumentDB 限制](/documentation/articles/documentdb-limits)页介绍了 Microsoft DocumentDB 的当前限制和配额。
 - Microsoft 网站上的[管理 DocumentDB 容量和性能](/documentation/articles/documentdb-manage)页包含有关 Azure DocumentDB 如何将资源分配给数据库的信息。
 - Microsoft 网站上的 [Azure 搜索概述](https://msdn.microsoft.com/zh-cn/library/azure/dn798933.aspx)页介绍了 Azure 搜索服务提供的功能。
 - Microsoft 网站上的[限制和约束（Azure 搜索 API）](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)页包含有关每个 Azure 搜索服务实例的容量的信息。

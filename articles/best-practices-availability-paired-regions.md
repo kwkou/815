@@ -59,7 +59,7 @@ Azure 在世界各地的多个地理位置运营。Azure 地理位置是至少�
 
 ![1Green](./media/best-practices-availability-paired-regions/1Green.png) **Azure 计算 (PaaS)** – 你必须提前设置附加的计算资源，以确保在发生灾难期间另一个区域可以提供资源。有关详细信息，请参阅 [Azure 业务连续性技术指南](https://msdn.microsoft.com/zh-cn/library/azure/hh873027.aspx)
 
-![2Green](./media/best-practices-availability-paired-regions/2Green.png) **Azure 存储空间** - 创建 Azure 存储帐户时，将按默认配置异地冗余存储 (GRS)。使用 GRS 时，数据将在主要区域自动复制三次，并在配对区域复制三次。有关详细信息，请参阅 [Azure 存储冗余选项](/documentation/articles/storage-redundancy.md)。
+![2Green](./media/best-practices-availability-paired-regions/2Green.png) **Azure 存储空间** - 创建 Azure 存储帐户时，将按默认配置异地冗余存储 (GRS)。使用 GRS 时，数据将在主要区域自动复制三次，并在配对区域复制三次。有关详细信息，请参阅 [Azure 存储冗余选项](/documentation/articles/storage-redundancy)。
 
 
 ![3Green](./media/best-practices-availability-paired-regions/3Green.png) **Azure SQL 数据库** – 使用 Azure SQL 标准异地复制，可以配置为将事务异步复制到配对区域。使用高级异地复制，可以配置为复制到全球任何区域；但是，我们建议在配对区域中为大多数灾难恢复方案部署这些资源。有关详细信息，请参阅 [Azure SQL 数据库中的异地复制](https://msdn.microsoft.com/zh-cn/library/azure/dn783447.aspx)
