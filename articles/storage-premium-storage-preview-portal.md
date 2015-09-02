@@ -7,7 +7,7 @@
 	manager="adinah" 
 	editor="tysonn"/>
 
-<tags ms.service="storage" ms.date="03/28/2015" wacn.date="04/29/2015"/>
+<tags ms.service="storage" ms.date="03/28/2015" wacn.date="09/02/2015"/>
 
 # 高级存储：Azure 虚拟机工作负载的高性能存储
 
@@ -19,9 +19,6 @@
 
 高级存储为 Azure 虚拟机上运行的 I/O 密集型工作负载提供高性能、低延迟的磁盘支持。可以将多个高级存储磁盘附加到虚拟机 (VM)。使用高级存储，每个 VM 的应用程序最多拥有 32 TB 的存储，每个 VM 可达到 50,000 IOPS（每秒输入/输出操作次数），读取操作的延迟极低。高级存储目前只能在 Azure 虚拟机使用的磁盘上存储数据。 
 
-<!--
-若要注册 Azure 高级存储预览版，请访问 [Azure 预览版](/home/features/preview)页面。
--->
 
 本文提供 Azure 高级存储的深入概述。
 
@@ -33,7 +30,7 @@
 
 - 可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/install-configure-powershell) 0.8.10 或更高版本。 
 
-- 以下地区提供受限的高级存储预览版：中国东部。
+- 以下地区提供受限的高级存储：中国东部。
 
 - 高级存储仅支持 Azure 页 Blob，用于保存适用于 Azure 虚拟机 (VM) 的持久性磁盘。有关 Azure 页 blob 的信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。高级存储不支持 Azure 块 Blob、Azure 文件、Azure 表或 Azure 队列。
 
@@ -59,7 +56,7 @@ Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话�
 
 ### 重要说明：
 
-- 有关高级存储帐户的容量和带宽预览版限制的详细信息，请参阅[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage) 选项。如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。例如，如果要将 51 TB 的磁盘附加到多个 VM，请将它们分布在两个存储帐户中，因为 32 TB 是单个高级存储帐户的限制。请确保单个高级存储帐户永远不会超过 32 TB 的设置磁盘。
+- 有关高级存储帐户的容量和带宽限制的详细信息，请参阅[使用高级存储时的缩放性和性能目标](#scalability-and-performance-targets-when-using-premium-storage) 选项。如果你的应用程序的需求超过了单个存储帐户的可伸缩性目标，则在生成应用程序时请让它使用多个存储帐户，并将数据分布在这些存储帐户中。例如，如果要将 51 TB 的磁盘附加到多个 VM，请将它们分布在两个存储帐户中，因为 32 TB 是单个高级存储帐户的限制。请确保单个高级存储帐户永远不会超过 32 TB 的设置磁盘。
 - 默认情况下，所有高级数据磁盘的磁盘缓存策略都是"只读的"，所有附加到 VM 的高级操作系统都是"读写的"。为使应用程序的 I/O 达到最佳性能，建议使用此配置设置。对于频繁写入或只写的磁盘（例如 SQL Server 日志文件），禁用磁盘缓存可获得更佳的应用程序性能。
 - 确保 VM 上有足够的带宽来驱动磁盘通信。例如，STANDARD_DS1 VM 为高级存储磁盘通信提供每秒 32 MB 的专用带宽。这意味着，附加到此 VM 的 P10 高级存储磁盘最高只能达到每秒 32 MB，而不能像 P10 磁盘那样最高达到每秒 100 MB。同样，STANDARD_DS13 VM 可跨所有磁盘最高达到每秒 256 MB。目前，DS 系列上的最大 VM 是 STANDARD_DS14，它可以跨所有磁盘最高提供每秒 512 MB。根据磁盘通信中的读写 IO 混合形式，你可能会获得高于此值的吞吐量。
 
@@ -266,38 +263,11 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 - [虚拟机定价](/home/features/virtual-machines/#price)
 
 ## <a id="creating-and-using-premium-storage-account-for-disks"></a>为磁盘创建和使用高级存储帐户
-本部分演示如何使用 Azure 预览版门户和 Azure PowerShell 创建高级存储帐户。另外，还演示了高级存储帐户的示例用例：在使用高级存储帐户时创建虚拟机，并将数据磁盘附加到虚拟机。
+本部分演示如何使用 Azure 门户和 Azure PowerShell 创建高级存储帐户。另外，还演示了高级存储帐户的示例用例：在使用高级存储帐户时创建虚拟机，并将数据磁盘附加到虚拟机。
 
 本部分内容：
-<!--
-* [在 Azure 预览版门户中创建高级存储帐户](#create-a-premium-storage-account-in-the-azure-preview-portal)
--->
 
 * [使用 Azure PowerShell 创建高级存储帐户](#create-a-premium-storage-account-with-azure-powershell)	
-
-<!-- 
-### 在 Azure 预览版门户中创建高级存储帐户
-本部分说明如何使用 Azure 预览版门户创建高级存储帐户。
-
-1.	登录 [Azure 预览版门户](https://manage.windowsazure.cn)。如果你尚未订阅，请查看[免费试用](http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial)优惠产品。 
-
-
-    > [AZURE.NOTE] 登录 Azure 管理门户时，请在门户右上角单击你的用户帐户名。然后单击"切换到新门户"。
-        
-
-2.	在"中心"菜单上，单击"新建"。
-
-3.	在"新建"下方，单击"全部"。选择"存储、缓存和备份"。在该处单击"存储"，然后单击"创建"。
-
-4.	在"存储帐户"边栏中，键入存储帐户名称。单击"定价层"。在"建议的定价层"边栏中，单击"浏览所有定价层"。在"选择定价层"边栏中，选择"高级本地冗余"。单击"选择"。请注意，"存储帐户"边栏默认会显示"标准-GRS"作为"定价层"。在你单击"选择"后，"定价层"会显示为"高级-LRS"。
-	
-	![Pricing Tier][Image1]
-
-	
-5.	在"存储帐户"边栏中，保留"资源组"、"订阅"、"位置"和"诊断"的默认值。单击"创建"。
-
-有关在 Azure 环境中的完整演练，请参阅[在 Azure 预览版门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial-azure-preview)。
--->
 
 ### <a id="create-a-premium-storage-account-with-azure-powershell"></a>使用 Azure PowerShell 创建高级存储帐户
 本部分说明在创建虚拟机并将数据磁盘附加到 VM 时，如何使用 Azure PowerShell 来创建高级存储帐户以及如何使用它。
