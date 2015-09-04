@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="05/15/2015" 
-	wacn.date="07/19/2015"/>
+	wacn.date="08/29/2015"/>
 
 # 为 Azure 准备基于 CentOS 的虚拟机
 
@@ -19,7 +19,7 @@
 
 ## 先决条件 ##
 
-本文假设你已在虚拟硬盘中安装了 CentOS（或类似的衍生产品）Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
+本文假设你已在虚拟硬盘中安装了 CentOS（或类似的衍生产品）Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
 
 **CentOS 安装说明**
@@ -78,25 +78,25 @@
 
 	**重要说明：该步骤仅适用于 CentOS 6.3 及更低版本。** 在 CentOS 6.4+ 上，*内核中已提供* Linux Integration Services。
 
-	a\) 从 [Microsoft 下载中心](http://www.microsoft.com/zh-CN/download/details.aspx?id=41554)获取包含 Linux Integration Services 驱动程序的 .iso 文件。
+	a) 从 [Microsoft 下载中心](http://www.microsoft.com/zh-CN/download/details.aspx?id=41554)获取包含 Linux Integration Services 驱动程序的 .iso 文件。
 
-	b\) 在 Hyper-V 管理器的“操作”窗格中，单击“设置”。
+	b) 在 Hyper-V 管理器的“操作”窗格中，单击“设置”。
 
 	![打开 Hyper-V 设置](./media/virtual-machines-linux-create-upload-vhd-centos/settings.png)
 
-	c\) 在“硬件”窗格中，单击“IDE 控制器 1”。
+	c) 在“硬件”窗格中，单击“IDE 控制器 1”。
 
 	![添加 DVD 驱动器与安装介质](./media/virtual-machines-linux-create-upload-vhd-centos/installiso.png)
 
-	d\) 在“IDE 控制器”框中，单击“DVD 驱动器”，然后单击“添加”。
+	d) 在“IDE 控制器”框中，单击“DVD 驱动器”，然后单击“添加”。
 
-	e\) 选择“映像文件”，浏览到 **Linux IC v3.2.iso**，然后单击“打开”。
+	e) 选择“映像文件”，浏览到 **Linux IC v3.2.iso**，然后单击“打开”。
 
-	f\) 在“设置”页中，单击“确定”。
+	f) 在“设置”页中，单击“确定”。
 
-	g\) 单击“连接”打开虚拟机窗口。
+	g) 单击“连接”打开虚拟机窗口。
 
-	h\) 在命令提示符窗口中键入以下命令：
+	h) 在命令提示符窗口中键入以下命令：
 
 		# sudo mount /dev/cdrom /media
 		# sudo /media/install.sh
@@ -212,7 +212,7 @@
 		# export HISTSIZE=0
 		# logout
 
-20. 在 Hyper-V 管理器中单击**“操作”-\>“关闭”**。Linux VHD 现已准备好上载到 Azure。
+20. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
 
 ----------
@@ -355,7 +355,9 @@
 		# export HISTSIZE=0
 		# logout
 
-16. 在 Hyper-V 管理器中单击**“操作”-\>“关闭”**。Linux VHD 现已准备好上载到 Azure。
+16. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
 
-<!---HONumber=HO63-->
+ 
+
+<!---HONumber=67-->
