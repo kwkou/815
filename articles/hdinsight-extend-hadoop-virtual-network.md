@@ -9,7 +9,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/06/2015"
-   wacn.date=""/>
+   wacn.date="08/29/2015"/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -52,7 +52,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
 
-> [AZURE.NOTE]你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。<!--有关详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。-->
+> [AZURE.NOTE]你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。有关详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。
 >
 > Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于地缘的虚拟网络。
 >
@@ -168,4 +168,4 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
 
-<!---HONumber=66-->
+<!---HONumber=67-->

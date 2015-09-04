@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="以编程方式访问 Hadoop YARN 应用程序日志 | Azure" 
+	pageTitle="以编程方式访问 Hadoop YARN 应用程序日志 | Windows Azure" 
 	description="以编程方式访问 HDInsight 中 Hadoop 群集上的应用程序日志。" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -8,9 +8,10 @@
 	editor="cgronlun"/>
 
 <tags 
-   ms.service="hdinsight"
-   ms.date="07/09/2015" 
-   wacn.date=""/>
+	ms.service="hdinsight" 
+	
+	ms.date="07/09/2015" 
+	wacn.date="08/29/2015"/>
 
 # 以编程方式访问 HDInsight 中 Hadoop 上的 YARN 应用程序日志
 
@@ -168,4 +169,4 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
 
-<!---HONumber=66-->
+<!---HONumber=67-->

@@ -8,16 +8,17 @@
 	editor="cgronlun"/>
 
 <tags 
-   ms.service="hdinsight"
-   ms.date="07/16/2015" 
-   wacn.date="" /> 
+	ms.service="hdinsight" 
+	
+	ms.date="07/16/2015" 
+	wacn.date="08/29/2015" /> 
 
 # 使用脚本操作自定义 HDInsight 群集
 
 HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作可调用自定义脚本，以定义设置过程中要在群集上执行自定义。这些脚本可用于在群集上安装额外的软件或更改群集上的应用程序配置。
 
 
-> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
+> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [/documentation/articles/HDInsight cluster versions](hdinsight-component-versioning)。
 > 
 > 脚本操作是标准 Azure HDInsight 订阅免费提供的功能之一。
 
@@ -31,7 +32,7 @@ HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作
 
 当脚本运行时，群集进入 **ClusterCustomization** 阶段。在此阶段，脚本在系统管理员帐户下，以并行方式在群集中所有指定的节点上运行，而在节点上提供完全的系统管理员权限。
 
-> [AZURE.NOTE]因为你在 **ClusterCustomization** 阶段中于群集节点上拥有系统管理员权限，所以你可以使用脚本来运行作业，例如停止和启动服务，包括 Hadoop 相关服务。因此，在脚本中，你必须在脚本完成运行之前，确定 Ambari 服务及其他 Hadoop 相关服务已启动并且正在运行。这些服务必须在群集创建时，成功地确定群集的运行状况和状态。如果你更改群集上的任何影响这些服务的配置，必须使用所提供的帮助器函数。<!--有关帮助器函数的详细信息，请参阅[使用 HDInsight 进行脚本操作开发][hdinsight-write-script]。-->
+> [AZURE.NOTE]因为你在 **ClusterCustomization** 阶段中于群集节点上拥有系统管理员权限，所以你可以使用脚本来运行作业，例如停止和启动服务，包括 Hadoop 相关服务。因此，在脚本中，你必须在脚本完成运行之前，确定 Ambari 服务及其他 Hadoop 相关服务已启动并且正在运行。这些服务必须在群集创建时，成功地确定群集的运行状况和状态。如果你更改群集上的任何影响这些服务的配置，必须使用所提供的帮助器函数。有关帮助器函数的详细信息，请参阅[使用 HDInsight 进行脚本操作开发][hdinsight-write-script]。
 
 脚本的输出以及错误日志文件存储在你为群集指定的默认存储帐户中。这些日志存储在名为 **u<\\cluster-name-fragment><\\time-stamp>setuplog** 的表中。这是从群集中所有节点上（头节点和辅助节点）运行的脚本聚合的日志文件。
 
@@ -46,10 +47,10 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 
 Name | 脚本
 ----- | -----
-**安装 Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1。请参阅[在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]。
-<!--**安装 R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
-**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。-->
-**安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
+**安装 Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1。 请参阅[在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]。
+**安装 R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。 请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
+**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。 请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。
+- **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。 请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
 
 
 
@@ -138,7 +139,7 @@ HDInsight 服务中有两种类型的开放源代码组件：
 
 完全支持内置组件，Microsoft 支持部门将帮助你找出并解决与这些组件相关的问题。
 
-自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">stackoverflow</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> 和 <a href="http://spark.apache.org/" target="_blank">Spark</a>。
+自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> 和 <a href="http://spark.apache.org/" target="_blank">Spark</a>。
 
 HDInsight 服务提供多种方式来使用自定义组件。不论在群集上使用组件或安装组件的方式为何，均适用相同级别的支持。以下是可以在 HDInsight 群集上使用的自定义组件最常见方式的列表：
 
@@ -146,18 +147,18 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 2. 群集自定义 - 在群集创建期间，你可以指定将安装在群集节点的其他设置和自定义组件。
 3. 示例 - 对于常见的自定义组件，Microsoft 和其他人可能会提供演示如何在 HDInsight 群集上使用这些组件的示例。我们不针对这些示例提供支持。
 
-<!--## 开发脚本操作脚本
+## 开发脚本操作脚本
 
-请参阅[为 HDInsight 开发脚本操作脚本][hdinsight-write-script]。-->
+请参阅[为 HDInsight 开发脚本操作脚本][hdinsight-write-script]。
 
 
 ## 另请参阅
 
 - [使用自定义选项在 HDInsight 中设置 Hadoop 群集][hdinsight-provision-cluster]说明了如何使用其他自定义选项来设置 HDInsight 群集。
-<!-- [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
+- [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
 - [在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
-- [在 HDInsight 群集上安装并使用 Solr](hdinsight-hadoop-solr-install.md)-->
+- [在 HDInsight 群集上安装并使用 Solr](hdinsight-hadoop-solr-install.md)
 - [在 HDInsight 群集上安装并使用 Giraph](hdinsight-hadoop-giraph-install.md)
 
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
@@ -169,4 +170,4 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集设置过程中的阶段"
 
-<!---HONumber=66-->
+<!---HONumber=67-->
