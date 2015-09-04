@@ -1,3 +1,5 @@
 > [AZURE.SELECTOR] 
-- [.NET SDK](media-services-dotnet-create-contentkey)
-- [REST API](media-services-rest-create-contentkey)  
+- [.NET](/documentation/articles/media-services-dotnet-create-contentkey)
+- [REST API](/documentation/articles/media-services-rest-create-contentkey)
+
+<!---HONumber=67-->

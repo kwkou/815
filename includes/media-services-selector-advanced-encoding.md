@@ -1,4 +1,4 @@
 > [AZURE.SELECTOR]
-- [.NET SDK](media-services-encode-with-premium-workflow)
+- [.NET](/documentation/articles/media-services-encode-with-premium-workflow)
 
-<!---HONumber=61-->
+<!---HONumber=67-->
