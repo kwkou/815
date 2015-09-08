@@ -9,7 +9,6 @@
 
 <tags 
    ms.service=“sql-database”
-  
    ms.date=“06/30/2015”
    wacn.date="08/29/2015"/>
 
@@ -36,7 +35,7 @@ SQL 数据库服务通过分析 SQL 数据库的历史资源使用状况来评�
 
 ## 先决条件
 
-若要查看和创建索引建议，需要 Azure 中正确的[基于角色的访问控制](/documentation/artciles/role-based-access-control-configure)权限。
+若要查看和创建索引建议，需要 Azure 中正确的<!--[-->基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->权限。
 
 - 查看建议需要“读者”、“SQL DB 参与者”权限。
 - 执行任何操作（如创建或删除索引、取消创建索引）需要“所有者”、“SQL DB 参与者”权限。
