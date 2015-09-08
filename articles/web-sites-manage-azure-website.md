@@ -14,7 +14,7 @@
 
 # 管理 Azure App Service 中的 Web 应用
 
-本主题包含用于管理 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) 中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
+本主题包含用于管理 <!--[-->Azure App Service<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
 
 在整个 Web 应用使用期内，您将执行各种管理任务，从初始部署到正常操作、维护与更新。
 
@@ -30,7 +30,7 @@
 
 <!--Azure App Service is offered in five tiers: Free, Shared, Basic, Standard, and Premium. For information about the features and pricing for each tier, see [Pricing details](/pricing/details/app-service/). -->
 
-- [App Service 计划](/documentation/articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)支持您在同一层对多个 Web 应用进行分组。
+- [App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)支持您在同一层对多个 Web 应用进行分组。
 - 您可以在创建 Web 应用之后经常[切换层](/documentation/articles/web-sites-scale)。
 
 ### 配置
@@ -65,12 +65,12 @@
  
 ### 备份
 
-- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup)。观看[本视频](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。
+<!--- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup)。观看[本视频](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。-->
 - 了解 Azure SQL 数据库的[数据库恢复](http://msdn.microsoft.com/library/azure/hh852669.aspx)选项。
 
 ### 故障排除
 
-- 如果出现问题，您可以使用云中的诊断日志和实时调试[在 Visual Studio 中排除故障](web-sites-dotnet-troubleshoot-visual-studio.md#remotedebug)。 
+- 如果出现问题，您可以使用云中的诊断日志和实时调试[在 Visual Studio 中排除故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)。 
 - 在 Visual Studio 之外还提供了不同的诊断日志收集方法。请参阅[在 Azure App Service 中启用 Web 应用的诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
 - 关于 Node.js 应用程序，请参阅[如何在 Azure App Service 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug)。
 

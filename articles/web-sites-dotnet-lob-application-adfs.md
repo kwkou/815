@@ -14,7 +14,7 @@
 
 # 在 Azure App Service 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
-在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure App Service Web Apps 中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
+在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure App Service Web Apps 中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
 
 >[AZURE.NOTE]有关 Azure App Service Web Apps 支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
 
@@ -42,11 +42,11 @@
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
 
 若要完成本教程，你需要以下项目：
 
-- 本地 AD FS 部署（有关所使用的测试实验室的端到端演练，请参阅[测试实验室：Azure VM 中使用 AD FS 的独立 STS（仅用于测试）](TODO)）
+- 本地 AD FS 部署（有关所使用的测试实验室的端到端演练，请参阅[测试实验室：Azure VM 中使用 AD FS 的独立 STS（仅用于测试）](#)）
 - 用于在 AD FS 管理中创建信赖方信任的权限
 - Visual Studio 2013
 - [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) 或更高版本
@@ -205,7 +205,7 @@
 	-	名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
 	-	用户主体名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - 用于唯一标识组织中的用户。
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
-	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 AD FS 进行身份验证的 ASP.NET MVC 业务线应用程序](../web-sites-dotnet-lob-application-adfs/#bkmk_crud)中的**添加 LOB 功能**部分。
+	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 AD FS 进行身份验证的 ASP.NET MVC 业务线应用程序](/documentation/articles/web-sites-dotnet-lob-application-adfs/#bkmk_crud)中的**添加 LOB 功能**部分。
 
 	<div class="wa-note">
 	<span class="wa-icon-bulb"></span>
@@ -363,16 +363,16 @@
 <a name="bkmk_data"></a>
 ## 连接到本地数据
 
-使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/documentation/services/sql-database)作为 Web 应用的数据层。
+使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/documentation/services/sql-databases/)作为 Web 应用的数据层。
 
-Azure App Service Web Apps 支持通过以下这两种方法访问本地数据库：[混合连接](/documentation/articles/integration-hybrid-connection-overview)和[虚拟网络](/documentation/servicesweb-sites-integrate-with-vnet)。有关详细信息，请参阅[对 Azure App Service Web Apps 使用 VNET 集成和混合连接](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)。
+Azure App Service Web Apps 支持通过以下这两种方法访问本地数据库：[混合连接](/documentation/articles/integration-hybrid-connection-overview)和<!--[-->虚拟网络<!--](/documentation/articles/servicesweb-sites-integrate-with-vnet)-->。有关详细信息，请参阅[对 Azure App Service Web Apps 使用 VNET 集成和混合连接](http://azure.microsoft.com/zh-cn/blog/using-vnet-or-hybrid-conn-with-websites/)。
 
 <a name="bkmk_resources"></a>
 ## 其他资源
 
-- [通过 SSL 和 Authorize 属性保护应用程序](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/servicesweb-sites-authentication-authorization)
-- [在 Azure App Service 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/servicesweb-sites-dotnet-lob-application-azure-ad)
+- [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
+- [在 Azure App Service 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
 - [在 Visual Studio 2013 中将本地组织的身份验证选项 (ADFS) 与 ASP.NET 结合使用](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

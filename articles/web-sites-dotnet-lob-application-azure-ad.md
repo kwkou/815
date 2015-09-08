@@ -14,7 +14,7 @@
 
 # 在 Azure App Service 中通过 Azure Active Directory 身份验证创建 .NET MVC Web 应用 #
 
-在本文中，您将了解如何在 [Azure Active Directory](/documentation/services/active-directory) 用作标识提供程序的 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 中创建 ASP.NET MVC 业务线应用程序。您还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
+在本文中，您将了解如何在 [Azure Active Directory](/documentation/services/identity/) 用作标识提供程序的 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中创建 ASP.NET MVC 业务线应用程序。您还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
 
 使用的 Azure Active Directory 租户可以是仅限 Azure 的目录，或者与本地 Active Directory (AD) 进行目录同步，以便为本地或远程的辅助角色创建单一登录体验。
 
@@ -44,7 +44,7 @@
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过该网站在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过该网站在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。-->
 
 若要完成本教程，您需要以下项目：
 
@@ -104,7 +104,7 @@
 <a name="bkmk_deploy"></a>
 ## 将示例应用程序部署到 App Service Web Apps
 
-现在，您需要将应用程序发布到 Azure App Service 中的 Web 应用。[README.md](https://github.com/AzureADSamples/WebApp-GroupClaims-DotNet/blob/GroupClaims/README.md) 中已经提供了有关部署到 App Service Web Apps 的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
+现在，您需要将应用程序发布到 Azure App Service 中的 Web 应用。[README.md](https://github.com/AzureADSamples/WebApp-GroupClaims-DotNet/blob/master/README.md) 中已经提供了有关部署到 App Service Web Apps 的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
 
 1. 右键单击您的项目并选择**发布**。
 
@@ -377,16 +377,16 @@
 <a name="bkmk_resources"></a>
 ## 其他资源
 
-- [通过 SSL 和 Authorize 属性保护应用程序](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
 - [在 Azure App Service 中通过 AD FS 身份验证创建 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
 - [Microsoft Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
-- [Azure 的新混合连接不是您父亲的 #hybridCloud](/zh-cn/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)
+<!--- [Azure 的新混合连接不是您父亲的 #hybridCloud](/zh-cn/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)-->
 - [Active Directory 与 Azure AD 之间的相似之处](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [使用单一登录方案进行目录同步](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
-- [Azure AD 支持的令牌和声明类型](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+- [Azure AD 支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  

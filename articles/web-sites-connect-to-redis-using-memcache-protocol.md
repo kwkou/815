@@ -14,7 +14,7 @@
 
 # 通过 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis Cache
 
-在本文中，您将学习如何使用 [Memcache][13] 协议将 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) 中的 WordPress Web 应用连接到 [Azure Redis Cache][12]。如果您有一个将 Memcached 服务器用于内存缓存的现有 Web 应用，您可以将其迁移到 Azure App Service，并使用 Microsoft Azure 中第一方的缓存解决方案，其中对您的应用程序代码进行少量更改或无更改。此外，您可以利用现有的 Memcache 专业知识在 Azure App Service （带有用于内部缓存的 Azure Redis Cache）中创建高度可缩放、分布式应用，同时使用常用的应用程序框架，例如 .NET、PHP、Node.js、Java 和 Python。
+在本文中，您将学习如何使用 [Memcache][13] 协议将 <!--[-->Azure App Service<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中的 WordPress Web 应用连接到 [Azure Redis Cache][12]。如果您有一个将 Memcached 服务器用于内存缓存的现有 Web 应用，您可以将其迁移到 Azure App Service，并使用 Microsoft Azure 中第一方的缓存解决方案，其中对您的应用程序代码进行少量更改或无更改。此外，您可以利用现有的 Memcache 专业知识在 Azure App Service （带有用于内部缓存的 Azure Redis Cache）中创建高度可缩放、分布式应用，同时使用常用的应用程序框架，例如 .NET、PHP、Node.js、Java 和 Python。
 
 App Service Web Apps 使用 Web Apps Memcache 填充码启用该应用程序方案，这是充当 Memcache 代理服务器的本地 Memcached 服务器，用于缓存对 Azure Redis Cache 的调用。这使得使用 Memcache 协议通信的任何应用可以使用 Redis Cache 缓存数据。此 Memcache 填充码在协议级别运行，因此只要它使用 Memcached 协议通信，就可以供任何应用程序或应用程序框架使用。
 
@@ -32,7 +32,7 @@ Web Apps Memcache 填充码可以与任何应用程序一起使用，前提是�
 
 ## 启用 Web Apps Memcache 填充码
 
-若要配置 Memcache 填充码，您必须创建三项应用设置。这可以使用多种方法来完成，其中包括 [Azure 门户](http://go.microsoft.com/fwlink/?LinkId=529715)、[旧门户][3]、[Azure PowerShell Cmdlet][5] 或 [ Azure 命令行界面][5]。在本文中，我将使用 [Azure 门户][4] 来进行应用设置。从 Redis Cache 实例中的**设置**边栏选项卡，可以检索以下值。
+若要配置 Memcache 填充码，您必须创建三项应用设置。这可以使用多种方法来完成，其中包括 [Azure 门户](https://manage.windowsazure.cn)、[旧门户][3]、[Azure PowerShell Cmdlet][5] 或 [ Azure 命令行界面][5]。在本文中，我将使用 [Azure 门户][4] 来进行应用设置。从 Redis Cache 实例中的**设置**边栏选项卡，可以检索以下值。
 
 ![Azure Redis 缓存设置边栏选项卡](./media/web-sites-connect-to-redis-using-memcache-protocol/1-azure-redis-cache-settings.png)
 
@@ -171,26 +171,26 @@ redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –
 
 祝贺您！ WordPress 应用现在有了一个集中式的内存中缓存，这将有助于吞吐量的提高。请记住，Web Apps Memcache 填充码可以用于任何 Memcache 客户端，无需考虑编程语言或应用程序框架。若要提供反馈或者提问有关 Web Apps Memcache 填充码的问题，请在 [MSDN 论坛][10]或 [Stackoverflow][11] 上发布相关文章。
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过它在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过它在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。-->
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
-[0]: http://bit.ly/1F0m3tw
-[1]: http://bit.ly/1t0KxBQ
+[0]: https://msdn.microsoft.com/zh-cn/library/dn690516.aspx
+[1]: http://azure.microsoft.com/zh-cn/blog/how-to-host-a-scalable-and-optimized-wordpress-for-azure-in-minutes/
 [2]: https://manage.windowsazure.cn
 [3]: https://manage.windowsazure.cn
 [4]: /documentation/articles/powershell-install-configure
-[5]: /documentation/downloads/downloads
+[5]: #
 [6]: http://pecl.php.net
 [7]: http://pecl.php.net/package/memcache
 [8]: http://blog.syntaxc4.net/post/2015/02/05/how-to-enable-a-site-extension-in-azure-websites.aspx
 [9]: http://redis.io/download#installation
-[10]: https://social.msdn.microsoft.com/Forums/home?forum=windowsazurewebsitespreview
+[10]: https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurewebsitespreview
 [11]: http://stackoverflow.com/questions/tagged/azure-web-sites
-[12]: /documentation/services/cache
+[12]: /documentation/services/redis-cache/
 [13]: http://memcached.org
  
 

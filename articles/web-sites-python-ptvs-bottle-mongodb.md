@@ -21,7 +21,7 @@
 
 轮询 Web 应用定义其存储库的抽象，因此您可以轻松地在不同类型存储库（内存中、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何使用在 Azure 上托管的 MongoDB 服务之一、如何配置应用程序使用 MongoDB 和如何将 Web 应用发布到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。
+我们将了解如何使用在 Azure 上托管的 MongoDB 服务之一、如何配置应用程序使用 MongoDB 和如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure App Service Web Apps，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但是步骤相似于开发 [Azure 云服务]。
 
@@ -41,11 +41,11 @@
  - [Python Tools 2.1 for Visual Studio 样本 VSIX]
  - [Azure SDK Tools for VS 2013] 或 [Azure SDK Tools for VS 2012]
  - [Python 2.7 32 位]或 [Python 3.4 32 位]
- - [RoboMongo](optional)
+ - [RoboMongo](http://robomongo.org/)(optional)
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
 
 ## 创建项目
 
@@ -221,12 +221,12 @@ Azure.NET SDK 轻松实现将 Web 应用程序部署到 Azure。
 
 <!--Link references-->
 [Python 开发人员中心]: /develop/python/
-[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs.md
+[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
 
 <!--External Link references-->
 [Azure 管理门户]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 for Visual Studio 样本 VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510

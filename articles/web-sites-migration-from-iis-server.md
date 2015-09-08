@@ -15,7 +15,7 @@
 
 # 将企业 Web 应用迁移至 Azure App Service
 
-您可以轻松将运行于 Internet 信息服务 (IIS) 6 或更高版本的现有网站迁移至 [App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。[Web Apps 迁移助手](https://www.movemetothecloud.net/)可以分析您的 IIS 服务器安装，确定哪些网站可以迁移至 App Service、突出显示所有不能迁移或不受平台支持的元素，然后将您的网站迁移到与 Azure 相关联的数据库。
+您可以轻松将运行于 Internet 信息服务 (IIS) 6 或更高版本的现有网站迁移至 <!--[-->App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。[Web Apps 迁移助手](https://www.movemetothecloud.net/)可以分析您的 IIS 服务器安装，确定哪些网站可以迁移至 App Service、突出显示所有不能迁移或不受平台支持的元素，然后将您的网站迁移到与 Azure 相关联的数据库。
 
 >[AZURE.IMPORTANT]Windows Server 2003 将于 2015 年 7 月 14 终止支持。如果您的网站目前正运行于 IIS 服务器（即 Windows Server 2003），Web Apps 将能够以较低的风险、成本和摩擦保持网站联机，此外，Web Apps 迁移助手还可帮助您实现迁移过程自动化。
 
@@ -103,7 +103,7 @@
 
 	![](./media/web-sites-migration-from-iis-server/migration-settings.png)
 
-	>[AZURE.NOTE]自定义设置中的**启用 Azure Active Directory** 复选框集成了带有 [Azure Active Directory](active-directory-whatis.md)（**默认目录**）的 Azure Web 应用。更多关于同步 Azure Active Directory 与您的本地 Active Directory 的详细信息，请参阅[目录集成](http://msdn.microsoft.com/library/jj573653)。
+	>[AZURE.NOTE]自定义设置中的**启用 Azure Active Directory** 复选框集成了带有 [Azure Active Directory](/documentation/articles/active-directory-whatis)（**默认目录**）的 Azure Web 应用。更多关于同步 Azure Active Directory 与您的本地 Active Directory 的详细信息，请参阅[目录集成](https://msdn.microsoft.com/zh-cn/library/jj573653)。
 
 16.	 所需的更改完成后，请单击**创建**开始迁移过程。迁移工具将创建 Azure SQL 数据库和 Azure Web 应用，然后发布网站内容和数据库。迁移工具可清晰地显示迁移进度，结束时您将看到一个摘要屏幕，详细显示迁移的站点（无论是否成功迁移），并链接到新创建的 Azure Web 应用。
 
@@ -115,17 +115,17 @@
  
 20.	单击 Azure Web 应用链接，并验证迁移是否成功。
 
-21. 您现在可以 Azure App Service 中已迁移的 Web 应用。为此，请登录到 [Azure 门户](http://go.microsoft.com/fwlink/?LinkId=529715)。
+21. 您现在可以 Azure App Service 中已迁移的 Web 应用。为此，请登录到 [Azure 门户](https://manage.windowsazure.cn)。
 
 22. 在 Azure 门户中，打开 Web Apps 边栏选项卡以查看已迁移的网站（显示为 Web 应用），然后单击其中任何一个以开始管理 Web 应用，例如配置连续发布、创建备份、自动缩放、监视使用情况或性能。
 
 	![](./media/web-sites-migration-from-iis-server/TimeTrackerMigrated.png)
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 ## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
  
 
 <!---HONumber=67-->

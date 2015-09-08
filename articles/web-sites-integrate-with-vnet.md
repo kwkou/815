@@ -13,7 +13,7 @@
 	wacn.date="08/29/2015"/>
 
 # 将 Web 应用与 Azure 虚拟网络进行集成 #
-本文档将介绍虚拟网络集成预览功能，并说明如何在 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) 中使用 Web Apps 对其进行设置。如果您不熟悉 Azure 虚拟网络，该功能可支持您借助 Azure 和本地资源构建混合解决方案。
+本文档将介绍虚拟网络集成预览功能，并说明如何在 <!--[-->Azure App Service<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中使用 Web Apps 对其进行设置。如果您不熟悉 Azure 虚拟网络，该功能可支持您借助 Azure 和本地资源构建混合解决方案。
 
 该集成功能允许您的 Web 应用访问虚拟网络中的资源，但不允许通过虚拟网络访问您的 Web 应用。在一些标准情况下，您的 Web 应用需要访问数据库或 Web 服务，它们运行于您的虚拟网络甚至数据中心的虚拟机中。它不允许您安装驱动器。它目前还不支持启用与虚拟网络的身份验证系统相集成的功能。尽管该功能还处于预览状态，但到达 GA 之前将继续进行改进。
 
@@ -95,11 +95,11 @@ Web Apps 还可提供另外一项功能：混合连接，该功能在某些方�
 
 两者的定价层也不同。因为即使是最便宜的混合连接功能，也可对开发/测试方案发挥巨大作用，此外，它仅支持访问少量终结点。而虚拟网络功能支持您访问虚拟网络之中或与虚拟网络连接的所有内容。
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。-->
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
  
 
 <!---HONumber=67-->

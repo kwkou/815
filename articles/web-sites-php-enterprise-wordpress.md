@@ -49,7 +49,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 ### 使用媒体存储和缓存的多区域部署
 
-如果该网站将接受上传或主机媒体文件，使用 Azure Blob 存储。如果您需要缓存，请考虑使用 [Redis cache][rediscache]、[Memcache Cloud](http://azure.microsoft.com/gallery/store/garantiadata/memcached/)、[MemCachier](http://azure.microsoft.com/gallery/store/memcachier/memcachier/) 或 [Azure 应用商店](http://azure.microsoft.com/gallery/store/)中的一款其他缓存产品。
+如果该网站将接受上传或主机媒体文件，使用 Azure Blob 存储。如果您需要缓存，请考虑使用 [Redis cache][rediscache]<!--、[Memcache Cloud](http://azure.microsoft.com/gallery/store/garantiadata/memcached/)、[MemCachier](http://azure.microsoft.com/gallery/store/memcachier/memcachier/) 或 [Azure 应用商店](http://azure.microsoft.com/gallery/store/)中的一款其他缓存产品-->。
 
 ![一个托管在多个区域的 Azure Web 应用，使用面向 MySQL 的 CDBR 高可用性路由器，带托管缓存、Blob 存储和 CDN][performance-diagram]
 
@@ -62,7 +62,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 为此，请执行以下操作... | 使用此方法...
 ------------------------|-----------
 **上载或存储大型文件** | [适用于使用 Blob 存储的 WordPress 插件][storageplugin]
-**发送电子邮件** | [SendGrid][storesendgrid] 和[针对使用 SendGrid 的 WordPress 插件][sendgridplugin]
+**发送电子邮件** | <!--[SendGrid][storesendgrid] 和-->[针对使用 SendGrid 的 WordPress 插件][sendgridplugin]
 **自定义域名** | [在 Azure App Service 中配置自定义域名][customdomain]
 **HTTPS** | [在 Azure App Service 中启用 Web 应用的 HTTPS][httpscustomdomain]
 **预生产验证** | [在 Azure App Service 中设置 Web 应用的过渡环境][staging]<p>请注意，将 Web 应用从过渡切换到生产也会移动 WordPress 配置。在将过渡应用切换为生产应用之前，您应确保所有设置均针对您生产应用的要求进行了更新。</p>
@@ -83,7 +83,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 为此，请执行以下操作... | 使用此方法...
 ------------------------|-----------
 **了解 App Service 实例功能** | [定价详细信息，其中包括 App Service 层的功能][websitepricing]
-**缓存资源** | [Redis cache][rediscache]、[Memcache Cloud](/gallery/store/garantiadata/memcached/)、[MemCachier](/gallery/store/memcachier/memcachier/) 或 [Azure 应用商店](/gallery/store/)中的一款其他缓存产品
+**缓存资源** | [Redis cache][rediscache]<!--、[Memcache Cloud](/gallery/store/garantiadata/memcached/)、[MemCachier](/gallery/store/memcachier/memcachier/) 或 [Azure 应用商店](/gallery/store/)中的一款其他缓存产品-->
 **扩展您的应用程序** | [在 Azure App Service 中扩展 Web 应用][websitescale]和 [ClearDB 高可用性路由][cleardbscale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
 
 #### 迁移
@@ -181,9 +181,9 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 ------------- | -----------
 **设置 App Service 计划模式、大小和启用缩放** | [在 Azure App Service 中缩放 Web 应用][websitescale]
 <p>默认情况下**启用持久的数据库连接**，WordPress 不使用持久的数据库连接，这可能导致数据库的连接在多次连接后成为限制。</p> | <ol><li><p>编辑 <strong>wp-includes/wp-db.php</strong> 文件。</p></li><li><p>查找以下行。</p><code>$this->dbh = mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client_flags )；<br/>如果 ( false !== $error_reporting ) { /br/>&nbsp;&nbsp;error_reporting( $error_reporting )；<br/>} </code></li><li><p>查找以下行。</p><code>$this->dbh = @mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = @mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client_flags )；</code></li><li><p>保存文件 <strong>wp-includes/wp-db.php</strong> 文件并重新部署网站。</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><p>更新 WordPress 后，可以覆盖这些更改。</p><p>WordPress 默认自动更新，通过编辑 <strong>wp-config.php</strong> 文件并添加 <code>define ( 'WP_AUTO_UPDATE_CORE', false ) 可以禁用；</code></p><p>处理更新的另一个方法是使用监视 <strong>wp-db.php</strong> 文件的 WebJob 并在每次更新文件时执行上述修改。有关详细信息，请参阅 <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">WebJobs 简介</a>。</p></div>
-**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="http://msdn.microsoft.com/library/azure/dn690470.aspx">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用，或使用其中一个来自 <a href="/gallery/store/">Azure 应用商店</a>的其他缓存产品</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="../web-sites-scale/">在 Azure App Service 中扩展 Web 应用</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
-**使用 blob 进行存储处理** | <ol><li><p><a href="../storage-create-storage-account/">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="../cdn-how-to-use/">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
-**启用电子邮件** | <ol><li><p><a href="/gallery/store/sendgrid/sendgrid-azure/">使用 Azure 应用商店启用 SendGrid</a></p></li><li><p><a href="http://wordpress.org/plugins/sendgrid-email-delivery-simplified/"> 为 WordPress 安装 SendGrid 插件</a></p></li></ol>
+**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="https://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用，或使用其中一个来自 <a href="/gallery/store/">Azure 应用商店</a>的其他缓存产品</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale/">在 Azure App Service 中扩展 Web 应用</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
+**使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account/">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use/">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
+**启用电子邮件** | <ol><li><p><!--<a href="/gallery/store/sendgrid/sendgrid-azure/">使用 Azure 应用商店启用 SendGrid</a>--></p></li><li><p><a href="http://wordpress.org/plugins/sendgrid-email-delivery-simplified/"> 为 WordPress 安装 SendGrid 插件</a></p></li></ol>
 **配置自定义域名** | [在 Azure App Service 中配置自定义域名][customdomain]
 **启用自定义域名的 HTTPS** | [在 Azure App Service 中启用 Web 应用的 HTTPS][httpscustomdomain]
 **负载平衡或地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]。如果您使用自定义域，请参阅[在 Azure App Service 中使用自定义域名][customdomain]，了解有关使用含自定义域名的流量管理器的信息
@@ -228,11 +228,11 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 * [在 Azure 上支持 WordPress 的技巧](http://www.johnpapa.net/azurecleardbmysql/)
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 ## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从门户更改为预览门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从门户更改为预览门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png
@@ -248,7 +248,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 [trafficmanager]: /blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/
 [backup]: /documentation/articles/web-sites-backup
 [restore]: /documentation/articles/web-sites-restore
-[rediscache]: http://msdn.microsoft.com/library/azure/dn690470.aspx
+[rediscache]: https://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx
 [managedcache]: http://msdn.microsoft.com/library/azure/dn386122.aspx
 [websitescale]: /documentation/articles/web-sites-scale
 [managedcachescale]: http://msdn.microsoft.com/library/azure/dn386113.aspx

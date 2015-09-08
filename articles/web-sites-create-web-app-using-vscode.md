@@ -16,7 +16,7 @@
 
 ## 概述
 
-本教程演示如何使用 [Visual Studio Code (VS Code) ](http://code.visualstudio.com//Docs/whyvscode)创建 ASP.NET 5 Web 应用，并将其部署到 [Azure App Service](/documentation/articles//app-service-value-prop-what-is)。ASP.NET 5 是对 ASP.NET 的重要重新设计。ASP.NET 5 是新的开源跨平台框架，用于通过 .NET 构建基于云的现代 Web 应用。有关详细信息，请参阅 [ASP.NET 5 简介](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html)。有关 Azure App Service Web Apps 的详细信息，请参阅 [Web 应用概述](/documentation/articles/app-service-web-overview)。
+本教程演示如何使用 [Visual Studio Code (VS Code) ](http://code.visualstudio.com//Docs/whyvscode)创建 ASP.NET 5 Web 应用，并将其部署到 <!--[-->Azure App Service<!--](/documentation/articles//app-service-value-prop-what-is)-->。ASP.NET 5 是对 ASP.NET 的重要重新设计。ASP.NET 5 是新的开源跨平台框架，用于通过 .NET 构建基于云的现代 Web 应用。有关详细信息，请参阅 [ASP.NET 5 简介](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html)。有关 Azure App Service Web Apps 的详细信息，请参阅 [Web 应用概述](/home/features/web-site)。
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
 
@@ -143,7 +143,7 @@ ASP.NET 5/DNX 是精简的 .NET 堆栈，用于构建在 OS X、Linux 和 Window
 
 4. 输入**名称**的值，例如 **SampleWebAppDemo**。请注意，此名称必须是唯一的；当您尝试输入名称时，门户会强制此要求。因此，如果您选择或输入了不同的值，需要以该值替换本教程中每个出现的 **SampleWebAppDemo**。
 
-5. 选择现有的 **App Service 计划** 或创建新的计划。如果创建新计划，请选择定价层、位置和其他选项。有关 App Service 计划的详细信息，请参阅 [Azure App Service 计划深入概述](/documentation/articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)一文。
+5. 选择现有的 **App Service 计划** 或创建新的计划。如果创建新计划，请选择定价层、位置和其他选项。<!--有关 App Service 计划的详细信息，请参阅 [Azure App Service 计划深入概述](/documentation/articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)一文。-->
 
 	![Azure 新建 Web 应用边栏选项卡](./media/web-sites-create-web-app-using-vscode/10-azure-newappblade.png)
 
@@ -250,6 +250,6 @@ Git 是分布式版本控制系统，可用于部署 Azure App Service Web 应�
 ![Azure Web 应用](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## 摘要
-在本教程中，您已学会如何在 VS Code 创建 Web 应用并将其部署到 Azure。有关 VS Code 的详细信息，请参阅[为何使用 Visual Studio Code？](https://code.visualstudio.com/Docs/)一文。有关 App Service Web Apps 的详细信息，请参阅 [Web Apps 概述](/documentation/articles/app-service-web-overview)。
+在本教程中，您已学会如何在 VS Code 创建 Web 应用并将其部署到 Azure。有关 VS Code 的详细信息，请参阅[为何使用 Visual Studio Code？](https://code.visualstudio.com/Docs/)一文。有关 App Service Web Apps 的详细信息，请参阅 [Web Apps 概述](/home/features/web-site)。
 
 <!---HONumber=67-->
