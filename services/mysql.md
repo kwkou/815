@@ -34,10 +34,6 @@ MySQL Database on Azure 是 Windows Azure 提供的一种关系型数据库服�
 
     了解SLA保障，存储空间限额，服务限制等问题。
 
-- [创建支持Apache，PHP以及MySQL的CentOS Web Virtual Machine Server](http://www.cnblogs.com/WilsonWu/archive/2012/12/13/2816122.html)
-
-    了解如何创建支持Apache，PHP以及MySQL的CentOS Web Virtual Machine Server 。
-
 
 ###部署  
 
