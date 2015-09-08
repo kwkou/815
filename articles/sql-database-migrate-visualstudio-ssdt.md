@@ -9,10 +9,8 @@
 
 <tags 
    ms.service="sql-database"
-  
    ms.date="04/14/2015" 
-   wacn.date="08/29/2015" 
-   />
+   wacn.date="08/29/2015" />
 
 #就地更新数据库，然后部署到 Azure SQL 数据库
 

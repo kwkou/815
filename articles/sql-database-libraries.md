@@ -10,10 +10,8 @@
 
 <tags 
 	ms.service="sql-database"
-
 	ms.date="04/13/2015"
-	wacn.date="08/29/2015"
-	/>
+	wacn.date="08/29/2015"/>
 
 
 #用于 SQL 数据库和 SQL Server 的连接库
