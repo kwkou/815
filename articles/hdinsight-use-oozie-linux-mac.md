@@ -21,7 +21,7 @@
 
 Apache Oozie 是一个用于管理 Hadoop 作业的工作流/协调系统。它与 Hadoop 堆栈集成，并且它支持 Apache MapReduce、Apache Pig、Apache Hive 和 Apache Sqoop 的 Hadoop 作业。此外，它还可用于计划特定于系统的作业（例如 Java 程序或 shell 脚本）
 
-> [AZURE.NOTE]使用 HDInsight 定义工作流的另一个选项是 Azure 数据工厂。若要了解有关 Azure 数据工厂的详细信息，请参阅[将 Pig 和 Hive 用于数据工厂][azure-data-factory-pig-hive]。
+> [AZURE.NOTE]使用 HDInsight 定义工作流的另一个选项是 Azure 数据工厂。<!--若要了解有关 Azure 数据工厂的详细信息，请参阅[将 Pig 和 Hive 用于数据工厂][azure-data-factory-pig-hive]。-->
 
 ## 先决条件
 

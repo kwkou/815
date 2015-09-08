@@ -35,7 +35,7 @@
 
 - **工作站**：使用 SSH 客户端的计算机。
 
-- **Azure CLI**：有关详细信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli.)
+- **Azure CLI**：有关详细信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)
 
 - **基于 Linux 的 HDInsight 群集**：有关群集预配的说明，请参阅[开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) 或[预配 HDInsight 群集][hdinsight-provision]。
 
@@ -203,9 +203,9 @@ HDInsight 群集带有某些示例数据。你将使用一个名为 **hivesample
 
     > [AZURE.NOTE]对于**点到站点**虚拟网络，SQL Server 必须运行 Azure 虚拟网络配置的“仪表板”中提供的 VPN 客户端配置应用程序。
 
-    有关创建和配置虚拟网络的详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。
+    <!--有关创建和配置虚拟网络的详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。-->
 
-* 必须将 SQL Server 配置为允许 SQL 身份验证。有关详细信息，请参阅[选择身份验证模式](https://msdn.microsoft.com/ms144284.aspx)
+* 必须将 SQL Server 配置为允许 SQL 身份验证。有关详细信息，请参阅[选择身份验证模式](https://msdn.microsoft.com/zh-cn/ms144284.aspx)
 
 * 你可能需要将 SQL Server 配置为接受远程连接。有关详细信息，请参阅[如何解决 SQL Server 数据库引擎的连接问题](http://social.technet.microsoft.com/wiki/contents/articles/2102.how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx)
 

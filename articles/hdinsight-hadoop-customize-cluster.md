@@ -130,16 +130,16 @@ HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/mi
 
 
 ## 支持 HDInsight 群集上使用的开放源代码软件
-Microsoft Azure HDInsight 服务是弹性平台，可让你使用围绕着 Hadoop 形成的开放源代码技术生态系统，在云生成大数据应用程序。Microsoft Azure 为开放源代码技术提供一般级别的支持，如 <a href="http://azure.microsoft.com/support/faq/" target="_blank">Azure 支持常见问题网站</a>上的**支持范围**部分中所述。HDInsight 服务为如下所述的某些组件提供附加的支持级别。
+Microsoft Azure HDInsight 服务是弹性平台，可让你使用围绕着 Hadoop 形成的开放源代码技术生态系统，在云生成大数据应用程序。Microsoft Azure 为开放源代码技术提供一般级别的支持，如 <a href="http://azure.microsoft.com/zh-cn/support/faq/" target="_blank">Azure 支持常见问题网站</a>上的**支持范围**部分中所述。HDInsight 服务为如下所述的某些组件提供附加的支持级别。
 
 HDInsight 服务中有两种类型的开放源代码组件：
 
-- **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供在群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 及 Mahout 库均属于此类别。<a href="http://azure.microsoft.com/documentation/articles/hdinsight-component-versioning/" target="_blank">HDInsight 提供的 Hadoop 群集版本有哪些新功能</a>中提供了群集组件的完整列表。
+- **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供在群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 及 Mahout 库均属于此类别。<a href="/documentation/articles/hdinsight-component-versioning" target="_blank">HDInsight 提供的 Hadoop 群集版本有哪些新功能</a>中提供了群集组件的完整列表。
 - **自定义组件** - 作为群集用户，你可以安装，或者在工作负荷中使用由社区提供的或你自己创建的任何组件。
 
 完全支持内置组件，Microsoft 支持部门将帮助你找出并解决与这些组件相关的问题。
 
-自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> 和 <a href="http://spark.apache.org/" target="_blank">Spark</a>。
+自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> 和 <a href="http://spark.apache.org/" target="_blank">Spark</a>。
 
 HDInsight 服务提供多种方式来使用自定义组件。不论在群集上使用组件或安装组件的方式为何，均适用相同级别的支持。以下是可以在 HDInsight 群集上使用的自定义组件最常见方式的列表：
 
@@ -158,8 +158,8 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 - [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
 - [在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
-- [在 HDInsight 群集上安装并使用 Solr](hdinsight-hadoop-solr-install.md)
-- [在 HDInsight 群集上安装并使用 Giraph](hdinsight-hadoop-giraph-install.md)
+- [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)
+- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
 
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts

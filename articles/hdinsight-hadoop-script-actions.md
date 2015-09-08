@@ -27,8 +27,8 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
   
 <tr><td>**安装 Spark**<td><td> https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1。   请参阅 [在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]。  </td></tr>
 <tr><td>**安装 R**<td><td>https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。 请参阅 [在 HDInsight 群集上安装并使用 R][hdinsight-r-scripts]。  </td></tr>
-<tr><td>**安装 Solr** <td><td> https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。 请参阅 [在 HDInsight 群集上安装并使用 Solr](hdinsight-hadoop-solr-install.md)。  </td></tr>
-**安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Giraph](hdinsight-hadoop-giraph-install.md)。
+<tr><td>**安装 Solr** <td><td> https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。 请参阅 [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。  </td></tr>
+**安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
 
 脚本操作可以从 Azure 门户、Azure PowerShell 或通过使用 HDInsight .NET SDK 来部署。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]。
 
@@ -107,7 +107,7 @@ HDInsight 具有实现高可用性的主-被体系结构，在该结构中，一
 	Write-HDILog "Starting environment variable setting at: $(Get-Date)";
 	[Environment]::SetEnvironmentVariable('MDS_RUNNER_CUSTOM_CLUSTER', 'true', 'Machine');
 
-此语句将环境变量 **MDS_RUNNER_CUSTOM_CLUSTER** 设置为值“true”，同时将此变量的作用域设置为计算机范围。有时，在相应的作用域（计算机或用户）内设置环境变量很重要。有关设置环境变量的详细信息，请参考[此处](https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx“此处”)。
+此语句将环境变量 **MDS_RUNNER_CUSTOM_CLUSTER** 设置为值“true”，同时将此变量的作用域设置为计算机范围。有时，在相应的作用域（计算机或用户）内设置环境变量很重要。有关设置环境变量的详细信息，请参考[此处](https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx)。
 
 ### 访问存储自定义脚本的位置
 
