@@ -24,7 +24,7 @@
 	2. 将“可用性集”保留为“未配置”。
 	3. 此时请不要添加任何**终结点**。
 
-9.	选择或创建[资源组](/documentation/articles/resource-group-portal)
+9.	选择或创建<!--[-->资源组<!--](/documentation/articles/resource-group-portal)-->
 
 10. 选择一个**订阅**
 

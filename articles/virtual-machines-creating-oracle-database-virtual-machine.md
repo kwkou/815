@@ -171,7 +171,7 @@
 
 -	[Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
 
--	[Oracle Database 12c 文档库](http://www.oracle.com/pls/db1211/homepage)
+-	<!--[-->Oracle Database 12c 文档库<!--](http://www.oracle.com/pls/db1211/homepage)-->
 
 -	[从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 

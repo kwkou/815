@@ -31,19 +31,19 @@
 
 ## Oracle WebLogic Server 12c
 
-[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-virtual-machine)将指导你逐步了解如何基于 Windows Server 2012 上运行的 Oracle WebLogic Server 12c 映像创建 Azure 虚拟机。
+<!--[-->在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机<!--](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-virtual-machine)-->将指导你逐步了解如何基于 Windows Server 2012 上运行的 Oracle WebLogic Server 12c 映像创建 Azure 虚拟机。
 
 ## Oracle WebLogic Server 12c 和 Oracle 数据库 12c
 
-[在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle 数据库 12c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-oracle-database-12c-virtual-machine)将指导你逐步了解虚拟机和数据库的创建与配置。
+<!--[-->在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle 数据库 12c 虚拟机<!--](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-oracle-database-12c-virtual-machine)-->将指导你逐步了解虚拟机和数据库的创建与配置。
 
 ## Oracle WebLogic Server 12c 群集
 
-[在 Azure 中创建 Oracle WebLogic Server 12c 群集](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-cluster)将指导你逐步了解群集创建和应用程序部署。
+<!--[-->在 Azure 中创建 Oracle WebLogic Server 12c 群集<!--](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-cluster)-->将指导你逐步了解群集创建和应用程序部署。
 
 ## Oracle WebLogic Server 11g
 
-[在 Azure 中创建 Oracle WebLogic Server 11g 虚拟机](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-11g-virtual-machine)将指导你逐步了解虚拟机创建、配置和应用程序安装。
+<!--[-->在 Azure 中创建 Oracle WebLogic Server 11g 虚拟机<!--](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-11g-virtual-machine)-->将指导你逐步了解虚拟机创建、配置和应用程序安装。
 
 ## 准备 Oracle Linux 虚拟机
 

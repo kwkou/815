@@ -78,7 +78,7 @@ Azure 预览门户的 SharePoint Server 场功能可在服务管理中创建虚�
 
 [Azure 基础结构服务上的 SharePoint](http://msdn.microsoft.com/zh-cn/library/azure/dn275955.aspx)
 
-[在混合云中设置 SharePoint Intranet 场用于测试](./documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
+[在混合云中设置 SharePoint Intranet 场用于测试](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
 
 [Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 

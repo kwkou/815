@@ -115,7 +115,7 @@
 
 	Get-AzureAvailabilitySet –ResourceGroupName $rgName | Sort Name | Select Name
 
-可以为基于资源管理器的虚拟机配置入站 NAT 规则以允许 Internet 的传入流量，并且可以将这些虚拟机放在一个负载平衡集中。在这两种情况中，都必须指定负载平衡器实例和其他设置。有关详细信息，请参阅[使用 Azure 资源管理器创建负载平衡器](/documentation/articles/load-balancer-arm-powershell)。
+可以为基于资源管理器的虚拟机配置入站 NAT 规则以允许 Internet 的传入流量，并且可以将这些虚拟机放在一个负载平衡集中。在这两种情况中，都必须指定负载平衡器实例和其他设置。有关详细信息，请参阅 <!--[-->使用 Azure 资源管理器创建负载平衡器<!--](/documentation/articles/load-balancer-arm-powershell)-->。
 
 基于资源管理器的虚拟机需要基于资源管理器的虚拟网络。如有需要，可以为新虚拟机创建一个基于资源管理器且包含至少一个子网的新虚拟网络。下面是一个包含两个名为 frontendSubnet 和 backendSubnet 的子网的新虚拟网络的示例。
 
@@ -281,7 +281,7 @@ $nicName 字符串对于资源组必须是唯一的。最佳做法是将虚拟�
 |MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials |
 |MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 |
 
-如果未列出你需要的虚拟机映像，请按照[此处](/documentation/articles/resource-groups-vm-searching/#powershell)的说明来确定发布者、产品/服务和 SKU 名称。
+如果未列出你需要的虚拟机映像，请按照<!--[-->此处<!--](/documentation/articles/resource-groups-vm-searching/#powershell)-->的说明来确定发布者、产品/服务和 SKU 名称。
 
 将以下命令复制到命令集中，并填写发布者、产品/服务和 SKU 名称。
 
@@ -375,7 +375,7 @@ $nicName 字符串对于资源组必须是唯一的。最佳做法是将虚拟�
 
 [Azure 资源管理器下的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-[Azure 资源管理器概述](/documentation/articles/resource-group-overview)
+<!--[-->Azure 资源管理器概述<!--](/documentation/articles/resource-group-overview)-->
 
 [使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 

@@ -1,7 +1,6 @@
 <properties title="How to use the Docker VM Extension with the Azure Portal" pageTitle="使用适用于 Azure 上的 Linux 的 Docker VM 扩展" description="介绍 Docker 以及 Azure 虚拟机扩展，并说明如何在 Azure 上，使用 azure-cli 命令界面通过命令行以编程方式创建用作 Docker 主机的虚拟机。" metaKeywords="linux, virtual machines, vm, azure, docker, linux containers,  lxc, virtualization" services="virtual-machines" solutions="dev-test" documentationCenter="virtual-machines" authors="rasquill" videoId="" scriptId="" manager="timlt" />
 <tags
 	ms.service="virtual-machines"
-	
 	ms.date="05/25/2015"
 	wacn.date="08/29/2015"/>
 

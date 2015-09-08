@@ -43,7 +43,7 @@
 
 发现 [GitHub](https://github.com/Azure/azure-quickstart-templates) 上可任由你处理的所有模板。
 
-可在[此处](/documentation/articles/resource-group-template-deploy)了解有关 Azure 资源管理的详细信息。
+可在<!--[-->此处<!--](/documentation/articles/resource-group-template-deploy)-->了解有关 Azure 资源管理的详细信息。
  
 
 <!---HONumber=67-->

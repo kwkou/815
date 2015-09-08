@@ -41,7 +41,7 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 *   在使用 SQL Server Enterprise 版时，选择具有 4 个或 8 个 CPU 内核的虚拟机。
 
-*   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 – A11。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。有关每个部署方案的解决方法，请参阅支持论坛上的主题[错误：“未能配置虚拟机”](http://social.msdn.microsoft.com/Forums/WAVirtualMachinesforWindows/thread/9693f56c-fcd3-4d42-850e-5e3b56c7d6be)。
+*   Azure 数据中心内的一些物理主机可能不支持更大的虚拟机大小，例如 A5 – A11。因此，在以下情况下，可能会显示错误消息**<machine name>**“未能配置虚拟机”或**<machine name>**“未能创建虚拟机”：将现有虚拟机的大小调整为新的大小时；在 2013 年 4 月 16 日之前创建的虚拟网络中创建新的虚拟机时；或者向现有的云服务中添加新的虚拟机时。<!--有关每个部署方案的解决方法，请参阅支持论坛上的主题[错误：“未能配置虚拟机”](http://social.msdn.microsoft.com/Forums/WAVirtualMachinesforWindows/thread/9693f56c-fcd3-4d42-850e-5e3b56c7d6be)。-->
 
 *   A8/A10 和 A9/A11 虚拟机大小具有相同的容量。A8 和 A9 虚拟机实例包括一个连接到远程直接内存访问 (RDMA) 网络的附加网络适配器，从而实现两台虚拟机之间的快速通信。A8 和 A9 实例专门用于在执行期间需要在两个节点之间保持恒定和低延迟通信的高性能计算应用程序，例如使用消息传递接口 (MPI) 的应用程序。A10 和 A11 虚拟机实例不包含其他网络适配器。A10 和 A11 实例专门用于不需要在两个节点之间保持恒定和低延迟通信的高性能计算应用程序，也称为参数化或高度并行应用程序。
 
@@ -85,10 +85,10 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |A5（相同）|2|14 GB|<p>操作系统 = 1023 GB</p><p>临时磁盘 = 135 GB</p>|4|4X500|
 |A6（相同）|4|28 GB|<p>操作系统 = 1023 GB</p><p>临时磁盘 = 285 GB</p>|8|8x500|
 |A7（相同）|8|56 GB|<p>操作系统 = 1023 GB</p><p>临时磁盘 = 605 GB</p>|16|16x500|
-|A8（相同）|8|56 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</p></blockquote>|16|16x500|
-|A9（相同）|16|112 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</p></blockquote>|16|16x500|
-|A10（相同）|8|56 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</p></blockquote>|16|16x500|
-|A11（相同）|16|112 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">关于 A8、A9、A10 和 A11 计算密集型实例</a>。</p></blockquote>|16|16x500|
+|A8（相同）|8|56 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<!--<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">-->关于 A8、A9、A10 和 A11 计算密集型实例<!--</a>-->。</p></blockquote>|16|16x500|
+|A9（相同）|16|112 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<!--<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">-->关于 A8、A9、A10 和 A11 计算密集型实例<!--</a>-->。</p></blockquote>|16|16x500|
+|A10（相同）|8|56 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<!--<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">-->关于 A8、A9、A10 和 A11 计算密集型实例<!--</a>-->。</p></blockquote>|16|16x500|
+|A11（相同）|16|112 GB|<p><p>操作系统 = 1023 GB</p><p>临时磁盘 = 382 GB</p><blockquote><p>注意：有关使用此大小的信息和注意事项，请参阅<!--<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-a8-a9-a10-a11-specs">-->关于 A8、A9、A10 和 A11 计算密集型实例<!--</a>-->。</p></blockquote>|16|16x500|
 |Standard\_D1（相同）|1|3\.5 GB|<p>操作系统 = 1023 GB</p><p>临时磁盘 (SSD) = 50 GB</p>|2|2x500|
 |Standard\_D2（相同）|2|7 GB|<p>操作系统 = 1023 GB</p><p>临时磁盘 (SSD) = 100 GB</p>|4|4x500|
 |Standard\_D3（相同）|4|14 GB|<p>操作系统 = 1023 GB</p><p>临时磁盘 (SSD) = 200 GB</p>|8|8x500|
@@ -127,7 +127,7 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 ### 另请参阅
 
 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)
-
+<!--
 [关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)
-
+->
 <!---HONumber=67-->

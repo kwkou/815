@@ -41,7 +41,7 @@
 
 需有一个工作或学校帐户才能使用 Azure 资源管理模板。如果有的话，请键入 `azure login`，输入你的用户名和密码，然后应该可以成功登录。
 
-> [AZURE.NOTE]如果你没有帐户，你会看到错误消息，指出你需要不同类型的帐户。若要从当前 Azure 帐户创建一个帐户，请参阅[在 Azure Active Directory 中创建工作或学校标识](/documentation/articles/resource-group-create-work-id-from-personal)。
+> [AZURE.NOTE]如果你没有帐户，你会看到错误消息，指出你需要不同类型的帐户。<!--若要从当前 Azure 帐户创建一个帐户，请参阅[在 Azure Active Directory 中创建工作或学校标识](/documentation/articles/resource-group-create-work-id-from-personal)。-->
 
 你的帐户可能有多个订阅。可以通过键入 `azure account list` 列出订阅，如下所示：
 
@@ -83,7 +83,7 @@
 - 审核操作。 
 - 使用其他元数据标记资源以方便跟踪。 
 
-可在[此处](/documentation/articles/resource-groups-overview)了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+<!--可在[此处](/documentation/articles/resource-groups-overview)了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。-->
 
 ## <a id="quick-create-a-vm-in-azure"></a>任务：在 Azure 中快速创建 VM
 
@@ -105,7 +105,7 @@
     info:    group create command OK
     
 
-其次，你需要一个映像。若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching)。不过，本快速入门教程只列出了以下常用映像的简短列表。我们将使用 CoreOS 的 Stable 映像来完成这个快速创建过程。
+其次，你需要一个映像。<!--若要使用 Azure CLI 查找映像，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching)。-->不过，本快速入门教程只列出了以下常用映像的简短列表。我们将使用 CoreOS 的 Stable 映像来完成这个快速创建过程。
 
 > [AZURE.NOTE]对于 ComputeImageVersion，你也可以简单地在模板语言和 Azure CLI 中提供“latest”作为参数。这样，你无需修改脚本或模板，就始终都能使用映像的最新修补版本。如下所示。
 
@@ -489,7 +489,7 @@
 
 ### 步骤 1：检查 JSON 文件中的模板
 
-以下是本部分举例说明时，模板的 JSON 文件内容，不过随时可以到[此处](https://raw.githubusercontent.com/azurermtemplates/azurermtemplates/master/101-vm-from-user-image/azuredeploy.json)找到该模板本身。
+以下是本部分举例说明时，模板的 JSON 文件内容<!--，不过随时可以到[此处](https://raw.githubusercontent.com/azurermtemplates/azurermtemplates/master/101-vm-from-user-image/azuredeploy.json)找到该模板本身-->。
 
 同样，参数如果没有默认值，就必须找出你想输入的值。当你运行 `azure group deployment create` 命令时，Azure CLI 会提示你输入这些值。
 
@@ -1173,7 +1173,7 @@ Note that this template deploys a Windows Server image; however, it could easily
     
 ## <a id="show-the-log-for-a-resource-group-deployment"></a>任务：显示资源组部署日志
 
-创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。（如需部署故障排除的详细信息以及有关问题的其他详细信息，请参阅[在 Azure 中排查资源组部署问题](resource-group-deploy-debug)）
+创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。<!--（如需部署故障排除的详细信息以及有关问题的其他详细信息，请参阅[在 Azure 中排查资源组部署问题](resource-group-deploy-debug)）-->
 
 为了查明特定的失败，你可以使用 **jq** 等工具来更清楚地查明前因后果，例如，你需要更正的单个失败。以下示例使用 **jq** 分析 **lbgroup** 的部署日志，以找出失败的原因
 
@@ -1289,7 +1289,7 @@ Note that this template deploys a Windows Server image; however, it could easily
 
 ## 后续步骤
 
-有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅[将适用于 Mac、Linux 和 Windows 的 Windows Azure CLI 用于 Azure 资源管理](/documentation/articles/xplat-cli-azure-resource-manager)。若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
+有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅[将适用于 Mac、Linux 和 Windows 的 Windows Azure CLI 用于 Azure 资源管理](/documentation/articles/xplat-cli-azure-resource-manager)。<!--若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。-->
 
 有关可用的其他模板，请参阅 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和[应用程序框架](/documentation/articles/virtual-machines-app-frameworks)。
 

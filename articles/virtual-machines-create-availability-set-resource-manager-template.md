@@ -8,9 +8,8 @@
 	editor=""/>
 
 <tags ms.service="virtual-machines"
-
-	ms.date="05/04/2015"
-        wacn.date="08/29/2015"/>
+	  ms.date="05/04/2015"
+      wacn.date="08/29/2015"/>
 
 # 使用 Azure 资源管理器模板创建可用性集
 
@@ -43,7 +42,7 @@
 
 当你使用模板时，需要提供位置和集名称等详细信息。若要找出模板需要哪些参数，请执行以下操作之一：
 
-- 在[此处](http://azure.microsoft.com/documentation/templates/201-2-vms-2-FDs-no-resource-loops/)查看参数列表。
+- 在[此处](http://azure.microsoft.com/zh-cn/documentation/templates/201-2-vms-2-FDs-no-resource-loops/)查看参数列表。
 - 在所选的工具或文本编辑器中打开 JSON 文件。在该文件顶部查找“parameters”节，其中列出了该模板要配置虚拟机所需的参数集。
 
 收集所需的信息，以便到时可以输入。当你运行命令来部署模板时，系统将提示你输入这些信息。
