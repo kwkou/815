@@ -1,7 +1,6 @@
 <properties title="The Docker Virtual Machine Extension for Linux on Azure" pageTitle="适用于 Azure 上的 Linux 的 Docker 虚拟机扩展" description="介绍 Docker 和容器、Azure 虚拟机扩展，并提供有关通过 xplat-cli 和门户创建 Docker 容器的其他资源的链接。" metaKeywords="linux, virtual machines, vm, azure, docker, linux containers,  lxc, virtualization" services="virtual-machines" solutions="dev-test" documentationCenter="virtual-machines" authors="rasquill" videoId="" scriptId="" manager="timlt" />
 <tags
 	ms.service="virtual-machines"
-	
 	ms.date="06/29/2015"
 	wacn.date="08/29/2015"/>
 

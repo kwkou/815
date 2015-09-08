@@ -832,11 +832,11 @@ azuredeploy.json 的“parameters”节指定此模板中使用的可修改参�
 有关详细信息，请参阅 [Azure 资源管理器模板语言](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx)。
 
 ## 后续步骤
-
+<!--
 了解关于[部署模板](/documentation/articles/resource-group-template-deploy)的更多详细信息。
-
+-->
 了解关于[应用程序框架](/documentation/articles/virtual-machines-app-frameworks)的更多信息。
-
+<!--
 [对模板部署进行故障排除](/documentation/articles/resource-group-deploy-debug)。
-
+-->
 <!---HONumber=67-->

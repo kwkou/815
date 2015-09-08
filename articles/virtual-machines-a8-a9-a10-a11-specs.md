@@ -6,11 +6,11 @@
  authors="dlepow"
  manager="timlt"
  editor=""/>
+
 <tags  
-ms.service="virtual-machines"
- 
- ms.date="07/22/2015" 
- wacn.date="08/29/2015"/>
+	ms.service="virtual-machines"
+ 	ms.date="07/22/2015" 
+ 	wacn.date="08/29/2015"/>
 
 # 关于 A8、A9、A10 和 A11 计算密集型实例
 

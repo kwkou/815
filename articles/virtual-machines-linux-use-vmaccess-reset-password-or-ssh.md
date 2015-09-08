@@ -10,7 +10,7 @@
 
 ## Azure 预览门户
 
-若要在 [Azure 预览门户](manage.windowsazure.cn)中重置 SSH 配置，请单击“浏览”>“虚拟机”>“你的 Linux 虚拟机”>“重置远程访问”。下面是一个示例。
+若要在 [Azure 预览门户](https://manage.windowsazure.cn)中重置 SSH 配置，请单击“浏览”>“虚拟机”>“你的 Linux 虚拟机”>“重置远程访问”。下面是一个示例。
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-RDP-Reset-Linux.png)
 

@@ -1,16 +1,15 @@
 <properties
- pageTitle="设置 Linux RDMA 群集以运行 MPI 应用程序 | Windows Azure"
- description="了解如何创建 A8 或 A9 大小 VM 的 Linux 群集以使用 RDMA 运行 MPI 应用。"
- services="virtual-machines"
- documentationCenter=""
- authors="dlepow"
- manager="timlt"
- editor=""/>
+      pageTitle="设置 Linux RDMA 群集以运行 MPI 应用程序 | Windows Azure"
+      description="了解如何创建 A8 或 A9 大小 VM 的 Linux 群集以使用 RDMA 运行 MPI 应用。"
+      services="virtual-machines"
+      documentationCenter=""
+      authors="dlepow"
+      manager="timlt"
+      editor=""/>
 <tags
-ms.service="virtual-machines"
-
- ms.date="07/17/2015"
- wacn.date="08/29/2015"/>
+      ms.service="virtual-machines"
+      ms.date="07/17/2015"
+      wacn.date="08/29/2015"/>
 
 # 设置 Linux RDMA 群集以运行 MPI 应用程序
 

@@ -1,7 +1,6 @@
 <properties urlDisplayName="Install MongoDB" pageTitle="在 Windows Server 虚拟机上安装 MongoDB" metaKeywords="Azure vm, Azure MongoDB, Azure remote desktop" description="了解如何在运行 Windows Server 的 Azure VM 上安装 MongoDB。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Install MongoDB on a virtual machine running Windows Server in Azure" authors="kathydav" solutions="" manager="timlt" editor="tysonn" />
 <tags
 	ms.service="virtual-machines"
-
 	ms.date="07/13/2015"
 	wacn.date="08/29/2015"/>
 

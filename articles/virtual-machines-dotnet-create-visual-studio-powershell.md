@@ -1,9 +1,8 @@
 <properties urlDisplayName="Create a virtual machine for a website" pageTitle="使用 Visual Studio 创建网站的虚拟机" metaKeywords="Visual Studio, ASP.NET, web project, virtual machine" description="为网站创建虚拟机" metaCanonical="" services="" documentationCenter="" title="Creating a virtual machine for a website with Visual Studio" authors="ghogen" solutions="" manager="douge" editor="" />
 <tags
 	ms.service="virtual-machines"
-
 	ms.date="06/10/2015"
-        wacn.date="08/29/2015"/>
+    wacn.date="08/29/2015"/>
 
 # 使用 Visual Studio 创建用于网站的虚拟机
 

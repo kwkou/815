@@ -29,7 +29,7 @@
 
 	c.此时请不要添加任何终结点。
 
-9.	选择或创建资源组。有关详细信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal)。
+9.	选择或创建资源组。有关详细信息，请参阅<!--[-->使用 Azure 预览门户管理 Azure 资源<!--](/documentation/articles/resource-group-portal)-->。
 
 10. 选择一个**订阅**。
 
@@ -44,7 +44,7 @@
 按照以**在 Azure 中配置 Oracle WebLogic Server 12c 虚拟机**部分开头的[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine)中的说明进行操作。如果要设置 WebLogic Server 群集，另请参阅[在 Azure 中创建 Oracle WebLogic Server 12c 群集](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-cluster)。
 
 ##其他资源
-[有关 Oracle 虚拟机映像的其他注意事项](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
+<!--[-->有关 Oracle 虚拟机映像的其他注意事项<!--](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)-->
 
 [Oracle 虚拟机映像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
 

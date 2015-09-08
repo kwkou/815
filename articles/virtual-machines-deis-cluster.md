@@ -9,8 +9,8 @@
 
 <tags
    ms.service="virtual-machines"
-  
-   ms.date="06/24/2015" wacn.date=""/>
+   ms.date="06/24/2015"
+   wacn.date=""/>
 
 # 部署三节点 Deis 群集
 
@@ -23,7 +23,7 @@
 若要完成以下步骤，你需要：
 
  * 一个有效的 Azure 订阅。如果没有，你可以在 [azure.com](http://www.windowsazure.cn/) 上获取免费试用帐户。
- * 用来使用 Azure 资源组的工作或学校 ID。如果你有个人帐户并使用 Microsoft ID 登录，则需要[基于你的个人 ID 创建工作 ID](/documentation/articles/resource-group-create-work-id-from-personal)。
+ * 用来使用 Azure 资源组的工作或学校 ID。如果你有个人帐户并使用 Microsoft ID 登录，则需要<!--[-->基于你的个人 ID 创建工作 ID<!--](/documentation/articles/resource-group-create-work-id-from-personal)-->。
  * 以下组件之一（取决于客户端操作系统）[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install)。
  * [OpenSSL](https://www.openssl.org/)。OpenSSL 用于生成必要的证书。
  * Git 客户端，如 [Git Bash](https://git-scm.com/)。
@@ -32,7 +32,7 @@
 
 ## 设置群集
 
-在本部分中，你将使用开放源代码存储库 [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates) 中的 [Azure 资源管理员](/documentation/articles/resource-group-overview)模板。首先复制该模板。其次，创建用于身份验证的新 SSH 密钥对。再次，为群集配置新的标识符。最后，使用 Shell 脚本或 PowerShell 脚本设置群集。
+在本部分中，你将使用开放源代码存储库 [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates) 中的 <!--[-->Azure 资源管理员<!--](/documentation/articles/resource-group-overview)-->模板。首先复制该模板。其次，创建用于身份验证的新 SSH 密钥对。再次，为群集配置新的标识符。最后，使用 Shell 脚本或 PowerShell 脚本设置群集。
 
 1. 克隆存储库：[https://github.com/Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates)。
 
