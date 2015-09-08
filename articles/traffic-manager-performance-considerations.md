@@ -83,15 +83,15 @@ http://www.digwebinterface.com – 类似于 Watchmouse 站点，但此站点显
 
 [关于流量管理器的负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[流量管理器概述](/documentation/articles/traffic-manmager-overview)
+[流量管理器概述](/documentation/articles/traffic-manager-overview)
 
 [云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 
-[网站](http://azure.microsoft.com/zh-cn/services/app-service/web/)
+[网站](/home/features/web-site/)
 
 [有关流量管理器的操作（REST API 引用）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
-[Azure 流量管理器 Cmdlet](http://go.microsoft.com/fwlink/p/?LinkId=400769)
+[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
 <!---HONumber=67-->
