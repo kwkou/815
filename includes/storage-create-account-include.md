@@ -16,7 +16,7 @@
 
 5.  选择要在其中查找存储的区域/地缘组。如果将从您的 Azure 应用程序使用存储，请选择要在其中部署您的应用程序的同一区域。
 
-6. 或者，可以选择您的帐户所需的复制的类型。地域冗余复制是默认设置，并且提供最长的持续性。有关复制选项的详细信息，请参阅 [Azure 存储冗余选项](http://msdn.microsoft.com/zh-cn/library/azure/dn727290.aspx)和 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage)。
+6. 或者，可以选择您的帐户所需的复制的类型。地域冗余复制是默认设置，并且提供最长的持续性。有关复制选项的详细信息，请参阅 [Azure 存储冗余选项](/documentation/articles/storage-redundancy/)和 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage)。
 
 6.  单击"创建存储帐户"。
 

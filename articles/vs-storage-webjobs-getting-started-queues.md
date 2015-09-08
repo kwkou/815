@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="storage"
-	
 	ms.date="07/13/2015" 
 	wacn.date="08/29/2015"/>
 
@@ -18,9 +17,7 @@
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-webjobs-getting-started-queues)
 > - [What Happened](/documentation/articles/vs-storage-webjobs-what-happened)
-
-> [AZURE.SELECTOR]
-> - [Blobs]/documentation/articles/vs-storage-webjobs-getting-started-blobs)
+> - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
 > - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
 
@@ -48,7 +45,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 除了 `string` 以外，参数可以是字节数组、`CloudQueueMessage` 对象或你定义的 POCO。
 
-### POCO[（无格式传统 CLR 对象](http://zh.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
+### POCO[（无格式传统 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
 在下面的示例中，队列消息包含 `BlobInformation` 对象的 JSON，该对象包含一个 `BlobName` 属性。SDK 会自动反序列化该对象。
 

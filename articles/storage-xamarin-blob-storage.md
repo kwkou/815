@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="storage" 
-
 	ms.date="06/15/2015" 
 	wacn.date="08/29/2015"/>
 
@@ -52,7 +51,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 就本教程来说，我们将在 Visual Studio 中创建 Xamarin 应用程序。请按以下步骤创建该应用程序：
 
-1. 下载并安装 [Visual Studio](https://www.visualstudio.com/)。
+1. 下载并安装 [Visual Studio](https://www.visualstudio.com/zh-cn)。
 2. 下载并安装 [Xamarin](http://xamarin.com/platform)。
 3. 打开 Visual Studio，然后选择“文件”>“新建”>“项目”>“Android”>“空应用程序(Android)”。
 4. 右键单击“解决方案资源管理器”窗格中的项目，然后选择“管理 NuGet 包”。然后搜索**“Azure 存储空间”**并安装 **Azure 存储空间 4.4.0-预览版**。

@@ -8,7 +8,6 @@
 
 <tags
     ms.service="storage"
-   
     ms.date="05/27/2015"
     wacn.date="08/29/2015"/>
 
@@ -22,13 +21,13 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
 本指南假定你了解 Azure 存储空间的基本概念。本指南提供了大量的脚本，用于演示 Azure CLI 与 Azure 存储空间的用法。在运行每个脚本之前，请确保根据配置更新脚本变量。
 
-> [AZURE.NOTE]本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands#azure-storage-commands-to-manage-your-storage-objects)。
+<!---> [AZURE.NOTE]本指南提供在 Azure 服务管理 (ASM) 模式下运行的 Azure CLI 命令和脚本的示例。若要了解如何使用 Azure CLI 命令在 Azure 资源管理 (ARM) 模式下进行存储，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/azure-cli-arm-commands#azure-storage-commands-to-manage-your-storage-objects)。-->
 
 ## 在 5 分钟内开始使用 Azure 存储空间和 Azure CLI
 
 本指南使用 Ubuntu 作为示例，但其他 OS 平台的操作应与此类似。
 
-**Azure 新用户：**获取一个 Windows Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)、[购买选项](http://azure.microsoft.com/pricing/purchase-options/)、和[成员优惠](http://azure.microsoft.com/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）。
+**Azure 新用户：**获取一个 Windows Azure 订阅以及与该订阅关联的 Microsoft 帐户。有关 Azure 购买选项的信息，请参阅[免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)、[购买选项](/pricing/pia/)<!--、和[成员优惠](http://azure.microsoft.com/pricing/member-offers/)（适用于 MSDN、Microsoft 合作伙伴网络和 BizSpark 以及其他 Microsoft 计划的成员）-->。
 
 有关 Azure 订阅的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)。
 
@@ -168,7 +167,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
 Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可以通过装载的共享跨应用程序组件共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 PowerShell 和 .NET 使用 Azure 文件存储](storage-dotnet-how-to-use-files)。
 
-> [AZURE.NOTE]Azure 文件存储目前发布了预览版。若要请求访问预览版，请导航到 [Windows Azure 预览页](/services/preview/)，然后请求访问“Azure 文件”。你的请求得到批准后，系统就会通知你，然后你就可以访问文件存储预览版。然后，你就可以创建用于访问文件存储的存储帐户。
+<!--> [AZURE.NOTE]Azure 文件存储目前发布了预览版。若要请求访问预览版，请导航到 [Windows Azure 预览页](/services/preview/)，然后请求访问“Azure 文件”。你的请求得到批准后，系统就会通知你，然后你就可以访问文件存储预览版。然后，你就可以创建用于访问文件存储的存储帐户。-->
 
 ### 创建文件共享
 

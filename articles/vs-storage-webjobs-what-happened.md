@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="storage"
-	
 	ms.date="07/13/2015" 
-	wacn.date=""/>
+	wacn.date="08/29/2015"/>
 
 # 我的项目发生了什么情况？
 
