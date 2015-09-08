@@ -63,13 +63,13 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 在 internet 上有许多页面，包含了有关如何使用 IIS 实现此操作的信息。[此处](https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-in-iis-7.html)就是一个很棒的页面，我认为其说明很不错。
 
 ### Java
-你可以使用 Java [创建证书](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate)。
+你可以使用 Java <!--[-->创建证书<!--](../app-service-web/java-create-azure-website-using-java-sdk.md#create-a-certificate)-->。
 
 ## 后续步骤
 
-[上载服务证书到 Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)（或[预览门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)）并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
+[上载服务证书到 Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)（或<!--[-->预览门户<!--](/documentation/articles/cloud-services-configure-ssl-certificate-portal)-->）并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
 
-将[管理 API 证书](/documentation/articles/azure-api-management-certs)上载到 Azure 门户。
+将<!--[-->管理 API 证书<!--](/documentation/articles/azure-api-management-certs)-->上载到 Azure 门户。
 
 >[AZURE.NOTE]Azure 预览门户不使用管理证书来访问 API，而是使用用户帐户。
 

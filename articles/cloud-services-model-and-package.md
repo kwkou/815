@@ -18,7 +18,7 @@
 
 ## 你想了解哪方面的详细信息？
 
-* 我想了解有关 [ServiceDefinition.csdef](#csdef) 和 [ServiceConfig.cscfg](#cscfg) 文件的详细信息。
+* 我想了解有关 [ServiceDefinition.csdef](#csdef) 和 [ServiceConfiguration.cscfg](#cscfg) 文件的详细信息。
 * 我已经知道，请为我提供有关可以配置具体内容的[一些示例](#next-steps)。
 * 我想要创建 [ServicePackage.cspkg](#cspkg)。 
 * 我正在使用 Visual Studio，我想要...
@@ -253,7 +253,7 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 -->
 
 * [为云服务实例设置远程桌面][remotedesktop]
-* [部署云服务项目][deploy]
+* [部署云服务项目]<!--[deploy]-->
 
 我正在使用 Visual Studio，我想要...
 

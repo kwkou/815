@@ -23,7 +23,7 @@ wacn.date="08/29/2015"/>
 ### 在服务模型中设置连接
 **导入**元素必须添加到将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入服务模型的服务定义文件。使用 Visual Studio 创建 Azure 项目时，将创建服务模型的文件。
 
-服务模型由一个 [ServiceDefinition.csdef](cloud-services-model-and-package.md#csdef) 文件和一个 [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg) 文件组成。当准备云服务的应用程序进行部署时，定义文件将与角色二进制文件一起打包。ServiceConfiguration.cscfg 文件与应用程序包一起部署并被 Azure 用于确定应用程序的运行方式。
+服务模型由一个 <!--[-->ServiceDefinition.csdef<!--](cloud-services-model-and-package.md#csdef)--> 文件和一个 <!--[-->ServiceConfiguration.cscfg<!--](cloud-services-model-and-package.md#cscfg)-->文件组成。当准备云服务的应用程序进行部署时，定义文件将与角色二进制文件一起打包。ServiceConfiguration.cscfg 文件与应用程序包一起部署并被 Azure 用于确定应用程序的运行方式。
 
 创建项目后，可以使用 Visual Studio [启用远程桌面连接](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)。
 
@@ -72,7 +72,7 @@ wacn.date="08/29/2015"/>
 </ServiceConfiguration>
 ```
 
-当你[打包](cloud-services-model-and-package.md#cspkg)并[发布](/documentation/articles/cloud-services-how-to-create-deploy-portal)应用程序时，必须确保已选中“为所有角色启用远程桌面”复选框。[此](https://msdn.microsoft.com/zh-cn/library/ff683672.aspx)文章提供了与使用 Visual Studio 和云服务相关的常见任务的列表。
+当你[打包](cloud-services-model-and-package.md#cspkg)并<!--[-->发布<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->应用程序时，必须确保已选中“为所有角色启用远程桌面”复选框。[此](https://msdn.microsoft.com/zh-cn/library/ff683672.aspx)文章提供了与使用 Visual Studio 和云服务相关的常见任务的列表。
 
 ### 在正在运行的实例上设置连接
 在云服务的配置页上，可以启用或修改远程桌面连接设置。有关详细信息，请参阅[配置角色实例的远程访问](/documentation/articles/cloud-services-how-to-configure)。
@@ -107,6 +107,6 @@ wacn.date="08/29/2015"/>
 可以使用[下载 RDP 文件](https://msdn.microsoft.com/zh-cn/library/jj157183.aspx) REST 操作下载 RDP 文件。然后可以使用具有远程桌面连接的 RDP 文件来访问云服务。
 
 ## 后续步骤
-可能需要[打包](/documentation/articles/cloud-services-model-and-package)或[上载（部署）](/documentation/articles/cloud-services-how-to-create-deploy-portal)你的应用程序。
+可能需要[打包](/documentation/articles/cloud-services-model-and-package)或<!--[-->上载（部署）<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->你的应用程序。
 
 <!---HONumber=67-->
