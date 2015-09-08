@@ -32,8 +32,8 @@
 
 	- Windows 8.1、Windows 8 或 Windows 7
 	- Visual Studio（以下版本之一）：
-		- 包含 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305) 的 Visual Studio 2012 Professional/Premium/Ultimate
-		- 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
+		- 包含 [Update 4](http://www.microsoft.com/zh-cn/download/details.aspx?id=39305) 的 Visual Studio 2012 Professional/Premium/Ultimate
+		- 包含 [Update 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
 		- Visual Studio 2015 预览版
 
 	>[AZURE.NOTE]目前，适用于 Visual Studio 的 HDInsight 工具仅有英文版本。

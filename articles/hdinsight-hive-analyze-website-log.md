@@ -29,7 +29,7 @@
 
 - 你必须已经预配了 **HDInsight 群集**。有关说明，请参阅[预配 HDInsight 群集][hdinsight-provision]。 
 - 你必须已安装 Microsoft Excel 2013 或 Excel 2010。
-- 你必须拥有 [Microsoft Hive ODBC 驱动程序](http://www.microsoft.com/zh-cn/download/details.aspx?id=40886)，才能将数据从 Hive 导入 Excel。
+- 你必须拥有 [Microsoft Hive ODBC 驱动程序](https://www.microsoft.com/en-us/download/details.aspx?id=40886)，才能将数据从 Hive 导入 Excel。
 
 
 ## 运行示例

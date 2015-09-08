@@ -233,9 +233,9 @@ Mahout 作业不删除在处理作业时创建的临时数据。在示例作业�
 
 现在，你已经学习了如何使用 Mahout，因此可以探索通过其他方式来使用 HDInsight 上的数据：
 
-* [Hive 和 HDInsight](/documentation/articles/hadoop-use-hive)
-* [Pig 和 HDInsight](/documentation/articles/hadoop-use-pig)
-* [MapReduce 和 HDInsight](/documentation/articles/hadoop-use-mapreduce)
+* [Hive 和 HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Pig 和 HDInsight](/documentation/articles/hdinsight-use-pig)
+* [MapReduce 和 HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
 [movielens]: http://grouplens.org/datasets/movielens/

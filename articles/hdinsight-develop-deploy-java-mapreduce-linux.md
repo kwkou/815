@@ -26,7 +26,7 @@
 
 - [Apache Maven](http://maven.apache.org/)
 
-- **Azure 订阅**：请参阅[获取 Azure 试用版](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight)。
+- **Azure 订阅**：请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
 - **Azure CLI**：有关详细信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)
 
