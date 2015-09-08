@@ -29,12 +29,12 @@
 
 ## 另请参阅
 
-[Azure 服务配置架构 (.cscfg)](https://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710)
+- [Azure 服务配置架构 (.cscfg)](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 
-[Azure 虚拟网络配置架构](http://go.microsoft.com/fwlink/?LinkId=248093)
+- [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[使用网络配置文件配置虚拟网络](http://go.microsoft.com/fwlink/?LinkId=248094)
+<!--[使用网络配置文件配置虚拟网络](http://go.microsoft.com/fwlink/?LinkId=248094)-->
 
-[关于管理门户中的虚拟网络设置](http://go.microsoft.com/fwlink/?LinkId=248092)
+- [关于管理门户中的虚拟网络设置](/documentation/articles/virtual-networks-settings/)
 
 <!---HONumber=67-->
