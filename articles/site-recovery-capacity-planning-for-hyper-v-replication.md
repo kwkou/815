@@ -226,7 +226,7 @@ c.群集的任何节点
 
 - [引导式动手实验](http://go.microsoft.com/fwlink/?LinkId=510893)—使用 Keith Mayer 的 TechNet 博客上所述的工具，完成有关容量规划的极佳演练。
 
-- [性能和缩放测试：本地到本地](https://msdn.microsoft.com/zh-cn/library/azure/dn760892.aspx)—阅读对本地到本地部署进行复制测试的结果。
+- [性能和缩放测试：本地到本地](/documentation/articles/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises)—阅读对本地到本地部署进行复制测试的结果。
 
 
 ## 后续步骤
