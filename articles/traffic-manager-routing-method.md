@@ -50,7 +50,7 @@
 
 ### “轮循机制”负载平衡方法
 
-一种常见的负载平衡模式是提供一组相同的终结点，并以轮循机制方式向每个终结点发送流量。“轮循机制”方法将流量拆分到不同的终结点。它将随机选择一个正常运行的终结点，而且不会将流量发送到检测为处于脱机状态的服务。有关详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-onitoring)。
+一种常见的负载平衡模式是提供一组相同的终结点，并以轮循机制方式向每个终结点发送流量。“轮循机制”方法将流量拆分到不同的终结点。它将随机选择一个正常运行的终结点，而且不会将流量发送到检测为处于脱机状态的服务。有关详细信息，请参阅[流量管理器监视](/documentation/articles/traffic-manager-monitoring)。
 
 图 2 显示了针对一组终结点的“轮循机制”负载平衡方法的示例。
 
@@ -129,7 +129,7 @@
 
 [网站](http://www.windowsazure.cn/home/features/web-site/)
 
-[Azure 流量管理器 Cmdlet](http://go.microsoft.com/fwlink/p/?LinkId=400769)
+[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
 
  
 
