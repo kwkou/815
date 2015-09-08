@@ -8,7 +8,6 @@
    editor="tysonn" />
 <tags
    ms.service="automation"
-   
    ms.date="05/21/2015"
    wacn.date="08/29/2015" />
 
@@ -100,7 +99,7 @@
 
 ![](media/automation-connections/connection-add-canvas.png)
 
-下图显示了在图形 Runbook 中使用连接的示例。该示例与上面显示的从文本 runbook 中使用 Twilio 发送短信的示例为同一个示例。此示例将对使用连接对象向服务进行身份验证的 **Send-TwilioSMS** 活动使用 **UseConnectionObject** 参数集。此处使用了一个[管道链接](automation-graphical-authoring-intro#links-and-workflow)，因为预期的连接参数是单个对象。
+下图显示了在图形 Runbook 中使用连接的示例。该示例与上面显示的从文本 runbook 中使用 Twilio 发送短信的示例为同一个示例。此示例将对使用连接对象向服务进行身份验证的 **Send-TwilioSMS** 活动使用 **UseConnectionObject** 参数集。此处使用了一个[管道链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)，因为预期的连接参数是单个对象。
 
 将 PowerShell 表达式而不是常量值用作 **To** 参数中的值，是因为此参数要求一个字符串数组值类型，以便您可以将其发送到多个号码。PowerShell 表达式允许您提供单个值或一个数组。
 
@@ -114,7 +113,7 @@
 
 ## 相关文章
 
-- [图形创作中的链接](automation-graphical-authoring-intro#links-and-workflow)
+- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
  
 
 <!---HONumber=67-->

@@ -8,7 +8,6 @@
    editor="tysonn" />
 <tags 
    ms.service="automation"
-  
    ms.date="05/21/2015"
    wacn.date="08/29/2015" />
 
@@ -157,7 +156,7 @@
 
 #### 设置变量中的值
 
-下图显示了在图形 Runbook 中用于更新具有简单值的一个变量的示例活动。在此示例中，使用 **Get-AzureVM** 检索到一个 Azure 虚拟机并将计算机名称保存到一个字符串类型的现有自动化变量。[链接是管道还是序列](/documentatio/articles/automation-graphical-authoring-intro#links-and-workflow)并不重要，因为我们仅预期输出中的单个对象。
+下图显示了在图形 Runbook 中用于更新具有简单值的一个变量的示例活动。在此示例中，使用 **Get-AzureVM** 检索到一个 Azure 虚拟机并将计算机名称保存到一个字符串类型的现有自动化变量。[链接是管道还是序列](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)并不重要，因为我们仅预期输出中的单个对象。
 
 ![设置简单变量](media/automation-variables/set-simple-variable.png)
 
@@ -165,24 +164,24 @@
 
 ![设置复杂变量](media/automation-variables/set-complex-variable.png)
 
-下图显示与前面的示例类型的功能，将多个虚拟机保存到变量。此处必须使用[序列链接](/documentatio/articles/automation-graphical-authoring-intro#links-and-workflow)，以便 **Set-AutomationVariable** 活动将整组虚拟机作为一个集合接收。如果使用[管道链接](/documentatio/articles/automation-graphical-authoring-intro#links-and-workflow)，则会对每个对象单独运行 **Set-AutomationVariable** 活动，结果是只会保存该集合中的最后一个虚拟机。如[变量类型](#variable-types)中所述，变量存储为一组 PSCustomObject。
+下图显示与前面的示例类型的功能，将多个虚拟机保存到变量。此处必须使用[序列链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)，以便 **Set-AutomationVariable** 活动将整组虚拟机作为一个集合接收。如果使用[管道链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)，则会对每个对象单独运行 **Set-AutomationVariable** 活动，结果是只会保存该集合中的最后一个虚拟机。如[变量类型](#variable-types)中所述，变量存储为一组 PSCustomObject。
 
 ![设置复杂集合变量](media/automation-variables/set-complex-variable-collection.png)
 
 #### 从变量中检索值
 
-下图显示了在图形 Runbook 中用于检索和使用变量的示例活动。第一个活动检索在前面的示例中保存至变量的虚拟机。该链接需要是[管道](automation-graphical-authoring-intro#links-and-workflow)链接，以便 **Start-AzureVM** 活动对发自 **Get-AutomationVariable** 活动的每个对象运行一次。无论存储在变量中的是单个对象还是多个对象，将执行的操作相同。**Start-AzureVM** 活动使用表示每个虚拟机的 PSCustomObject 的属性。
+下图显示了在图形 Runbook 中用于检索和使用变量的示例活动。第一个活动检索在前面的示例中保存至变量的虚拟机。该链接需要是[管道](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)链接，以便 **Start-AzureVM** 活动对发自 **Get-AutomationVariable** 活动的每个对象运行一次。无论存储在变量中的是单个对象还是多个对象，将执行的操作相同。**Start-AzureVM** 活动使用表示每个虚拟机的 PSCustomObject 的属性。
 
 ![获取复杂变量](media/automation-variables/get-complex-variable.png)
 
-下图显示了如何筛选存储到图形 Runbook 中的一个变量的对象。向前面示例中的链接添加了一个[条件](/documentatio/articles/automation-graphical-authoring-intro#links-and-workflow)来仅筛选出设置该变量时已停止的那些虚拟机。
+下图显示了如何筛选存储到图形 Runbook 中的一个变量的对象。向前面示例中的链接添加了一个[条件](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)来仅筛选出设置该变量时已停止的那些虚拟机。
 
 ![获取筛选出的复杂变量](media/automation-variables/get-complex-variable-filter.png)
 
 
 ## 相关文章
 
-- [图形创作中的链接](/documentatio/articles/automation-graphical-authoring-intro#links-and-workflow)
+- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
  
 
 <!---HONumber=67-->

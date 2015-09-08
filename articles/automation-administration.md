@@ -8,9 +8,8 @@
    editor="tysonn" />
 <tags
    ms.service="automation"
-  
    ms.date="07/06/2015"
-  wacn.date="08/29/2015" />
+   wacn.date="08/29/2015" />
 
 # Azure Automation 管理
 

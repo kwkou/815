@@ -8,7 +8,6 @@
    editor="tysonn" />
 <tags 
    ms.service="automation"
-   
    ms.date="05/21/2015"
    wacn.date="08/29/2015" />
 
