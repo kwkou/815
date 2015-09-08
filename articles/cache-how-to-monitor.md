@@ -190,7 +190,7 @@ Azure Redis 缓存提供如下功能：将诊断数据存储在存储帐户中�
 
 当警报条件评估结果不再为 true 时，警报规则将被视为已解决。解决警报规则条件之后，警报图标将替换为复选标记。有关警报激活和解析的详细信息，请单击“Redis 缓存”边栏选项卡上的“事件”部分，查看“事件”边栏选项卡上的事件。
 
-有关 Azure 中的警报的详细信息，请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。
+<!--有关 Azure 中的警报的详细信息，请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications)。-->
   
 <!-- IMAGES -->
 [redis-cache-monitor-overview]: ./media/cache-how-to-monitor/redis-cache-monitor-overview.png

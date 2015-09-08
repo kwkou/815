@@ -94,9 +94,9 @@
 
 ![Redis 缓存用户和标记](./media/cache-configure/IC808320.png)
 
-门户中的“用户”部分对基于角色的访问控制 (RBAC) 提供支持，以帮助简单准确地满足组织的访问管理要求。有关详细信息，请参阅 [Windows Azure 预览门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+门户中的“用户”部分对基于角色的访问控制 (RBAC) 提供支持，以帮助简单准确地满足组织的访问管理要求。<!-- 有关详细信息，请参阅 [Windows Azure 预览门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->
 
-“标记”部分可帮助你组织资源。有关详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags)。
+“标记”部分可帮助你组织资源。<!--有关详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags)。-->
 
 ## 默认 Redis 服务器配置
 

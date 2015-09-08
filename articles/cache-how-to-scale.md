@@ -34,7 +34,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 如果确定缓存不再满足应用程序的要求，可以更改到适合应用程序的更大或更小缓存定价层。有关确定应使用哪个缓存定价层的详细信息，请参阅[我应当使用哪些 Redis 缓存产品/服务和大小](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
 
 ## 缩放缓存
-要缩放缓存，在 [Azure 门户](https://manage.windowsazure.cn)中[浏览到缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#RedisCacheConfiguration)，单击“Redis 缓存”边栏选项卡中的“标准层”或“基本层”部分。
+要缩放缓存，在 [Azure 门户](https://manage.windowsazure.cn)中[浏览到缓存](/documentation/articles/cache-configure/)，单击“Redis 缓存”边栏选项卡中的“标准层”或“基本层”部分。
 
 ![定价层][redis-cache-pricing-tier-part]
 
@@ -54,7 +54,7 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 ## 如何自动执行缩放操作
 
-除了在 Azure 门户中缩放你的 Azure Redis 缓存实例，你还可以使用 [Windows Azure 管理库 (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) 进行缩放。要缩放你的缓存，请调用 `IRedisOperations.CreateOrUpdate` 方法并传入 `RedisProperties.SKU.Capacity` 的新大小。
+除了在 Azure 门户中缩放你的 Azure Redis 缓存实例，你还可以使用 <!--[-->Windows Azure 管理库 (MAML)<!--](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) -->进行缩放。要缩放你的缓存，请调用 `IRedisOperations.CreateOrUpdate` 方法并传入 `RedisProperties.SKU.Capacity` 的新大小。
 
     static void Main(string[] args)
     {
