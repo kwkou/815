@@ -15,11 +15,11 @@
 
 网络配置文件有两个可用于指定域名系统 (DNS) 设置的元素：**DnsServers** 和 **DnsServerRef**。可以通过指定服务器的 IP 地址和 **DnsServers** 元素的引用名添加 DNS 服务器列表。然后可以使用 **DnsServerRef** 元素指定 DnsServers 元素中的哪些 DNS 服务器实体用于虚拟网络内的不同网络站点。
 
->[AZURE.IMPORTANT]有关如何配置网络配置文件的信息，请参阅[使用网络配置文件配置虚拟网络](https://msdn.microsoft.com/zh-cn/library/azure/jj156097.aspx)。有关网络配置文件中包含的每个元素的信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
+>[AZURE.IMPORTANT]有关如何配置网络配置文件的信息，请参阅[使用网络配置文件配置虚拟网络](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-networks-create-vnet-classic-portal/)。有关网络配置文件中包含的每个元素的信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
 网络配置文件可能包含以下元素。每个元素的标题链接到提供有关元素值设置的其他信息的页中。
 
-[Dns 元素](http://go.microsoft.com/fwlink/?LinkId=248093)
+[Dns 元素](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
     <Dns>
       <DnsServers>
@@ -31,7 +31,7 @@
 
 >[AZURE.WARNING]**DnsServer** 元素中的 **name** 属性仅用作 **DnsServerRef** 元素的引用。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值在整个 Microsoft Azure 订阅中必须具有唯一性
 
-[虚拟网络站点元素](http://go.microsoft.com/fwlink/?LinkId=248093)
+[虚拟网络站点元素](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
 	<DnsServersRef>
 	  <DnsServerRef name="ID1" />
@@ -43,10 +43,10 @@
 
 ## 另请参阅
 
-[使用网络配置文件配置虚拟网络](http://go.microsoft.com/fwlink/?LinkId=248094)
+[使用网络配置文件配置虚拟网络](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-networks-create-vnet-classic-portal/)
 
-[Azure 虚拟网络配置架构](http://go.microsoft.com/fwlink/?LinkId=248093)
+[Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-[Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710)
+[Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 
 <!---HONumber=67-->

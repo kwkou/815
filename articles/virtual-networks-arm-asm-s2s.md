@@ -31,7 +31,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 >[AZURE.IMPORTANT]互相连接的 VNet 之间不能有 CIDR 块冲突。确保每个 VNet 都有独特的 CIDR 块！
 
-## 创建经典 VNet 环境
+##<a id="Create-a-classic-VNet-environment"></a> 创建经典 VNet 环境
 
 可使用现有的块 VNet 连接到新 ARM VNet。在本示例中，你将看到如何创建新的包含两个子网、一个网关和一个 VM 的经典 VNet，以用于测试目的。
 
@@ -94,7 +94,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 		--------------------                                            -----------                                                     ---------------                                                
 		Set-AzureVNetConfig                                             e0ee6e66-9167-cfa7-a746-7cab93c22013                            Succeeded 
 
-### 步骤 2：在经典 VNet 中创建 VM
+###<a id="Create-a-new-VNet-environment"></a> 步骤 2：在经典 VNet 中创建 VM
 
 若要使用 Azure 服务管理器 PowerShell cmdlet 在经典 VNet 中创建 VM，请遵循以下说明。
 
@@ -230,7 +230,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 	>[AZURE.NOTE]此操作可能需要几分钟。你可继续移动到本文档中的下一部分。
 
-## 连接两个 VNet
+##<a id="Connect-the-two-VNets"></a> 连接两个 VNet
 
 现在，你的两个 VNet 都连接了 VM，是时候通过之前创建的网关连接 VNet 并测试连接了。
 
@@ -356,7 +356,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ## 后续步骤
 
-- 了解有关[适用于 ARM 的网络资源提供程序 (NRP)](/documentation/articles/resource-groups-networking) 的详细信息。
+<--- 了解有关[适用于 ARM 的网络资源提供程序 (NRP)](/documentation/articles/resource-groups-networking) 的详细信息。-->
 - 查看有关如何[在经典 VNet 和 ARM VNet 之间创建 S2S VPN 连接](/documentation/articles/virtual-networks-arm-asm-s2s-howto)的通用准则。
 
 <!---HONumber=67-->

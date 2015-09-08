@@ -19,7 +19,7 @@
 
 可以将 NSG 与 VM 相关联，也可以将其与 VNet. 中的子网相关联。与 VM 关联后，NSG 适用于 VM 实例发送和接收的所有流量。应用到 VNet 中的子网后，它将适用于子网中所有 VM 实例发送和接收的所有流量。一个 VM 或子网只能与 1 个 NSG 相关联，但每个 NSG 都可以包含多达 200 条规则。每个订阅可以有 100 个 NSG。
 
->[AZURE.NOTE]不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376543.aspx)。
+>[AZURE.NOTE]不支持将基于终结点的 ACL 和网络安全组置于相同 VM 实例上。如果你想要使用 NSG，但已有了终结点 ACL，则请先删除该终结点 ACL。<!--有关如何执行此操作的信息，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376543.aspx)。-->
 
 ## 网络安全组是如何工作的？
 
