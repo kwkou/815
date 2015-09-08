@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="storage"
-	
 	ms.date="07/22/2015" 
 	wacn.date="08/29/2015"/>
 
@@ -18,8 +17,6 @@
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
 > - [What Happened](/documentation/articles/vs-storage-aspnet5-what-happened)
-
-> [AZURE.SELECTOR]
 > - [Blobs](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
 > - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)

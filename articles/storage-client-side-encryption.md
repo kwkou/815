@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="storage" 
-
 	ms.date="06/18/2015" 
 	wacn.date="08/29/2015"/>
 
@@ -18,7 +17,7 @@
 
 ## 概述
 
-欢迎使用[新的 Azure .NET 存储客户端库预览版](https://www.nuget.org/packages/WindowsAzure.Storage/4.4.1-preview)。此预览库包含的新功能可帮助开发人员在上载到 Azure 存储空间之前加密客户端应用程序内部的数据，以及在下载时解密数据。此预览库还支持与 Azure [密钥保管库](http://azure.microsoft.com/services/key-vault/)集成，以便管理存储帐户密钥。
+欢迎使用[新的 Azure .NET 存储客户端库预览版](https://www.nuget.org/packages/WindowsAzure.Storage/4.4.1-preview)。此预览库包含的新功能可帮助开发人员在上载到 Azure 存储空间之前加密客户端应用程序内部的数据，以及在下载时解密数据。此预览库还支持与 Azure <!--[-->密钥保管库<!--](http://azure.microsoft.com/services/key-vault/)-->集成，以便管理存储帐户密钥。
 
 ## 通过信封技术加密和解密
 
@@ -47,7 +46,7 @@
 
 ## 加密机制
 
-存储客户端库使用 [AES](http://zh.wikipedia.org/wiki/Advanced_Encryption_Standard) 来加密用户数据。具体而言，是使用 AES 的[加密块链接 (CBC)](http://zh.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) 模式。每个服务的工作方式都稍有不同，因此我们将在此讨论其中每个服务。
+存储客户端库使用 [AES](http://zh.wikipedia.org/wiki/Advanced_Encryption_Standard) 来加密用户数据。具体而言，是使用 AES 的[加密块链接 (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) 模式。每个服务的工作方式都稍有不同，因此我们将在此讨论其中每个服务。
 
 ### Blob
 
@@ -100,7 +99,7 @@
 
 ## Azure 密钥保管库
 
-Azure 密钥保管库（预览版）可帮助保护云应用程序和服务使用的加密密钥和机密。通过 Azure 密钥保管库，用户可以使用受硬件安全模块 (HSM) 保护的密钥，来加密密钥和机密（例如身份验证密钥、存储帐户密钥、数据加密密钥、.PFX 文件和密码）。有关详细信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/articles/key-vault-whatis)
+Azure 密钥保管库（预览版）可帮助保护云应用程序和服务使用的加密密钥和机密。通过 Azure 密钥保管库，用户可以使用受硬件安全模块 (HSM) 保护的密钥，来加密密钥和机密（例如身份验证密钥、存储帐户密钥、数据加密密钥、.PFX 文件和密码）。<!--有关详细信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/articles/key-vault-whatis)-->
 
 存储客户端库使用密钥保管库核心库在整个 Azure 上提供通用框架以便管理密钥。用户还可以使用密钥保管库扩展库获得其他好处。扩展库围绕简单无缝的对称/RSA 本地和云密钥提供程序以及使用聚合和缓存提供有用的功能。
 
@@ -118,7 +117,7 @@ Azure 密钥保管库（预览版）可帮助保护云应用程序和服务使�
 2. 使用机密的基标识符作为参数来解析要加密的当前版本的机密，并在本地缓存此信息。使用 CachingKeyResolver 进行缓存；用户不需要实现自己的缓存逻辑。
 3. 创建加密策略时，使用缓存解析程序作为输入。
 
-有关密钥保管库用法的详细信息可在[加密代码示例](https://github.com/Azure/azure-storage-net/tree/preview/Samples/GettingStarted/EncryptionSamples)中找到。
+有关密钥保管库用法的详细信息可在[加密代码示例](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples)中找到
 
 ### 最佳实践
 
@@ -141,7 +140,7 @@ Azure 密钥保管库（预览版）可帮助保护云应用程序和服务使�
 	- 如果指定为获取密钥，则将调用密钥解析程序。如果指定了解析程序，但该解析程序不具有密钥标识符的映射，则将引发错误。
 	- 如果未指定解析程序，但指定了密钥，则将根据密钥的密钥标识符存储服务的内容。
 
-[加密示例](https://github.com/Azure/azure-storage-net/tree/preview/Samples/GettingStarted/EncryptionSamples)演示了针对 blob、队列和表的更详细端到端方案，以及密钥保管库集成。
+[加密示例](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted)演示了针对 blob、队列和表的更详细端到端方案，以及密钥保管库集成。
 
 ### Blob
 
@@ -229,10 +228,10 @@ Azure 密钥保管库（预览版）可帮助保护云应用程序和服务使�
 
 ## 后续步骤
 
-[Windows Azure 存储空间的客户端加密（预览版）](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/28/client-side-encryption-for-microsoft-azure-storage-preview.aspx)  
-下载 [Azure .NET 存储客户端库 NuGet 程序包](http://www.nuget.org/packages/WindowsAzure.Storage/4.4.0-preview)  
-从 GitHub 下载 [Azure .NET 存储客户端库源代码](https://github.com/Azure/azure-storage-net/tree/preview)  
-下载 Azure 密钥保管库 NuGet [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包  
-访问 [Azure 密钥保管库文档](/documentation/articles/articles/key-vault-whatis)
+- [Windows Azure 存储空间的客户端加密（预览版）](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/28/client-side-encryption-for-microsoft-azure-storage-preview.aspx)  
+- 下载 [Azure .NET 存储客户端库 NuGet 程序包](http://www.nuget.org/packages/WindowsAzure.Storage/4.4.0-preview)  
+- 从 GitHub 下载 [Azure .NET 存储客户端库源代码](https://github.com/Azure/azure-storage-net/)  
+- 下载 Azure 密钥保管库 NuGet [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包  
+<!---访问 [Azure 密钥保管库文档](/documentation/articles/articles/key-vault-whatis)-->
 
 <!---HONumber=67-->
