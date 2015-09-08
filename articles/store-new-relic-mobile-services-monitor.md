@@ -116,7 +116,7 @@
 ## <a name="next-steps"></a>后续步骤
 
 + 若要优化你的 **iOS**/**Android** 移动应用程序性能，请参阅 [New Relic 移动]。
-+ 有关定价信息，请参阅 [Azure 应用商店中的 New Relic 页]。
++ 有关定价信息，请参阅 <!--[-->Azure 应用商店中的 New Relic 页<!--]-->。
 + 有关使用 New Relic 的更多信息，请参阅 New Relic 文档中的[应用程序概述]。 
 
 <!-- Anchors. -->
