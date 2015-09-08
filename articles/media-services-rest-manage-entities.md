@@ -17,10 +17,10 @@
 
 Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
 
-- 添加实体 
-- 查询实体 
-- 更新实体 
-- 删除实体 
+- [添加实体](#Adding-entities) 
+- [查询实体](#Querying-entities) 
+- [更新实体](#Updating-entities) 
+- [删除实体](#Deleting-entities) 
 
 >[AZURE.NOTE]使用 Media Services REST API 时，需注意以下事项：
 >
@@ -29,7 +29,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 >在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
 
 
-##添加实体
+##<a id="Adding-entities"></a>添加实体
 
 媒体服务中的每个实体都会通过 POST HTTP 请求添加到实体集（如资产）中。
 
@@ -49,7 +49,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	{"Name": "DownloadPolicy", "DurationInMinutes" : "300", "Permissions" : 1}
 
  
-##查询实体
+##<a id="Querying-entities"></a>查询实体
 
 查询和列出实体非常简单，仅涉及 GET HTTP 请求和可选的 OData 操作。下面的示例会检索一个包含所有 MediaProcessor 实体的列表。
 
@@ -105,7 +105,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 >[AZURE.NOTE]媒体服务不支持 $expand 操作以及“LINQ 注意事项（WCF 数据服务）”中所述的不受支持的 LINQ 方法。
 
 
-##更新实体
+##<a id="Updating-entities"></a>更新实体
 
 根据实体类型及其所处的状态，可以通过 PATCH、PUT 或 MERGE HTTP 请求更新该实体上的属性。有关这些操作的详细信息，请参阅 [PATCH/PUT/MERGE](https://msdn.microsoft.com/zh-cn/library/dd541276.aspx)。
 
@@ -124,7 +124,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	
 	{"Name" : "NewName" }
 
-##删除实体
+##<a id="Deleting-entities"></a>删除实体
 
 可以使用 DELETE HTTP 请求在媒体服务中删除实体。删除实体的顺序可能很重要，具体视实体而定。例如，资产等实体要求先撤消（或删除）引用该特定资产的所有定位符，然后再删除资产。
 
