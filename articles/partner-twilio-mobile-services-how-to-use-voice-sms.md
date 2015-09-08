@@ -28,7 +28,7 @@ Azure 客户在升级 Twilio 帐户后即可获得[特别优惠][special_offer]�
 Twilio 是一种现用现付服务。没有设置费用，并且您可以随时关闭您的帐户。你可以在 [Twilio 定价][twilio_pricing]上找到更多详细信息。
 
 ## <a id="Concepts"></a>概念
-Twilio API 是一个为应用程序提供语音和 SMS 功能的 RESTful API。提供了多种语言版本的客户端库；有关列表，请参阅 [Twilio API 库][twilio_libraries]。其他教程介绍了如何使用 Twilio 和以 [.NET][azure_twilio_howto_dotnet]、[node.js][azure_twilio_howto_node]、[Java][azure_twilio_howto_java]、[PHP][azure_twilio_howto_php]、[Python][azure_twilio_howto_python] 或 [Ruby][azure_twilio_howto_ruby] 编写的任何 Azure 应用程序。
+Twilio API 是一个为应用程序提供语音和 SMS 功能的 RESTful API。提供了多种语言版本的客户端库；有关列表，请参阅 [Twilio API 库][twilio_libraries]。其他教程介绍了如何使用 Twilio 和以 [.NET][azure_twilio_howto_dotnet]、<!--[-->node.js<!--]-->[azure_twilio_howto_node]、[Java][azure_twilio_howto_java]、[PHP][azure_twilio_howto_php]、[Python][azure_twilio_howto_python] 或 [Ruby][azure_twilio_howto_ruby] 编写的任何 Azure 应用程序。
 
 Twilio API 的关键方面是 Twilio 谓词和 Twilio 标记语言 (TwiML)。
 

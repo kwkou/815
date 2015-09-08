@@ -31,7 +31,7 @@
 + [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
 + 连接到计算机的照相机或其他图像捕获设备。
 
-本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。
+本教程基于移动服务快速入门。在开始本教程之前，必须先完成<!--[-->移动服务入门<!--]-->。
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-dotnet-backend-configure-blob-storage.md)]
 
