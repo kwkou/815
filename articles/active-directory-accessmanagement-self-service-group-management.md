@@ -1,12 +1,12 @@
-<properties 
-pageTitle="设置 Azure AD 以便进行自助服务应用程序访问管理 | Windows Azure" 
-description="介绍如何在 Azure AD 中管理组的主题。" 
-services="active-directory" 
-documentationCenter=" 
-authors="femila" 
-manager="swadhwa"" 
-editor="" 
-tags="azure-classic-portal"/>
+<properties
+	pageTitle="设置 Azure AD 以便进行自助服务应用程序访问管理 | Windows Azure" 
+	description="介绍如何在 Azure AD 中管理组的主题。" 
+	services="active-directory" 
+	documentationCenter=""
+	authors="femila" 
+	manager="swadhwa"
+	editor="" 
+	tags="azure-classic-portal"/>
 
 <tags 
 	ms.service="active-directory" 

@@ -1,4 +1,11 @@
-<properties pageTitle="向"登录"和"访问面板"页添加公司品牌" description="本主题介绍组织如何在它们管理的所有网站和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。" services="active-directory" documentationCenter="" authors="Justinha" manager="TerryLan" editor="LisaToft"/>
+<properties
+	pageTitle="向'登录'和'访问面板'页添加公司品牌"
+	description="本主题介绍组织如何在它们管理的所有网站和服务上应用一致的外观，使得最终用户在使用这些站点时，不会感到困惑。"
+	services="active-directory"
+	documentationCenter=""
+	authors="Justinha"
+	manager="TerryLan"
+	editor="LisaToft"/>
 
 <tags ms.service="active-directory" ms.date="05/05/2015" wacn.date="05/26/2015"/>  
 

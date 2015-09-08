@@ -22,7 +22,7 @@
 * [**密码重置门户的工作原理。**](#how-does-the-password-reset-portal-work)
   - [密码重置使用哪些数据？](#what-data-is-used-by-password-reset)
 
-## 密码写回概述
+## <a name="password-writeback-overview"></a>密码写回概述
 密码写回是一个 [Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect) 组件，Azure Active Directory Premium 的当前订户可以启用和使用该组件。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 
 使用此功能，你可将云租户配置为将密码写回本地 Active Directory。有了此功能，你无需再设置和管理复杂的本地自助服务密码重置解决方案。此功能提供了一种基于云的便利方法，让你的用户能够在任何位置重置本地密码。有关密码写回的一些主要功能，请继续阅读以下内容：
@@ -36,7 +36,7 @@
 - **不需要任何入站防火墙规则。** 密码写回功能使用 Azure 服务总线中继作为底层通信通道，这意味着你无需打开防火墙上的任何入站端口即可使用此功能（仅限 443 出站）。
 - **本地 Active Directory 的受保护组中存在的用户帐户不支持。** 有关受保护组的详细信息，请参阅 [Active Directory 中的受保护帐户和组](https://technet.microsoft.com/zh-cn/library/dn535499.aspx)。
 
-### 密码写回的工作原理
+### <a name="how-password-writeback-works"></a>密码写回的工作原理
 密码写回有三个主要组件：
 
 - 密码重置云服务（也集成到 Azure AD 的密码更改页面中）
@@ -60,12 +60,12 @@
 9.	如果密码设置操作成功，我们将告诉用户其密码已被修改，他们可以继续操作。
 10.	如果密码设置操作失败，我们会将错误返回给用户，让他们再试一次。操作失败的可能原因是服务已关闭、用户选择的密码不符合组织策略、我们在本地 AD 中找不到该用户等。我们对于许多这类情况都有一个特定消息，并告知用户他们可以执行哪些操作来解决问题。
 
-### 密码写回支持的方案
+### <a name="scenarios-supported-for-password-writeback"></a>密码写回支持的方案
 下表介绍同步功能的各个版本支持哪些方案。通常情况下，如果要使用密码写回，我们强烈建议安装最新版本的 [Azure AD Connect](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect)。
 
   ![][002]
 
-### 密码写回安全模型
+### <a name="password-writeback-security-model"></a>密码写回安全模型
 密码写回是高度安全、极其可靠的服务。为确保你的信息受保护，我们启用了一个 4 层安全模型，如下所述。
 
 - **租户特定的服务总线中继** – 如果你设置该服务，我们将建立租户特定的总线服务中继，该中继受随机生成的强密码保护，而 Microsoft 绝不会接触此密码。
@@ -73,7 +73,7 @@
 - **行业标准 TLS** – 云中发生密码重置或更改操作时，我们将采用纯文本密码并用公钥对其进行加密。然后，我们将其置于 HTTPS 消息中，该消息使用 Microsoft 的 SSL 证书通过加密通道发送到服务总线中继。此消息到达服务总线后，你的本地代理将唤醒、使用先前生成的强密码对服务总线进行身份验证、选取加密消息、使用我们生成的私钥对消息进行解密，然后尝试通过 AD DS SetPassword API 设置密码。通过此步骤，我们可以在云中强制实施你的 AD 本地密码策略（复杂性、年龄、历史记录、筛选器等）。
 - **消息过期策略** – 最后，如果由于某种原因而使消息位于服务总线中（因为本地服务关闭），消息则会超时并在几分钟后删除，以便进一步提高安全性。
 
-## 密码重置门户的工作原理。
+## <a name="how-does-the-password-reset-portal-work"></a>密码重置门户的工作原理。
 当某个用户导航到密码重置门户时，工作流将启动以确定此用户帐户是否有效、此用户所属的组织、此用户密码的管理位置以及用户是否已获许可使用该功能。阅读以下步骤，了解有关密码重置页面背后的逻辑。
 
 1.	用户单击“无法访问你的帐户”链接或直接转到 [https://passwordreset.microsoftonline.com](https://passwordreset.microsoftonline.com)。
@@ -93,7 +93,7 @@
 
 有关如何部署密码写回的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
-### 密码重置使用哪些数据？
+### <a name="what-data-is-used-by-password-reset"><a>密码重置使用哪些数据？
 下表概述密码重置期间此数据使用的位置和方式，旨在帮助你决定哪些身份验证选项适合你的组织。此表还显示当你代表用户从未验证此数据的输入路径提供数据时的格式要求。
 
 > [AZURE.NOTE]注册门户中不会显示办公电话，因为用户当前无法在目录中编辑此属性。

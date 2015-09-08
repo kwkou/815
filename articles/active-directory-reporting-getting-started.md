@@ -88,7 +88,7 @@ Azure Active Directory 包括针对目录的安全报表、活动报表和审核
 
 ### 浏览每个报表
 
-导航到每个报表以查看所收集的数据和处理的登录。可在[此处](/documentation/articles/active-directory-reporting-what-it-is)查看所有报表的列表。
+导航到每个报表以查看所收集的数据和处理的登录。<!--可在[此处](/documentation/articles/active-directory-reporting-what-it-is)查看所有报表的列表。-->
 
 ![所有报表](./media/active-directory-reporting-getting-started/reportsMain.png)
 

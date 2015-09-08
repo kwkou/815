@@ -24,10 +24,10 @@
   * [如何上载用户帐户的身份验证数据](#uploading-data-yourself)
 * [**示例用户和支持培训材料（即将推出！）**](#sample-training-materials)
 
-## 如何为密码管理配置用户
+## <a name="how-to-get-users-configured-for-password-reset"></a>如何为密码管理配置用户
 本部分介绍确保组织中的每个用户在忘记其密码时可以有效使用自助服务密码重置的各种方法。
 
-### 如何配置帐户
+### <a name="what-makes-an-account-configured"></a>如何配置帐户
 只有满足以下**所有**条件，用户才能使用密码重置：
 
 1.	必须在目录中启用密码重置。请阅读[让用户重置其 Azure AD 密码](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-their-azure-ad-passwords)或[让用户重置或更改其 AD 密码](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)，了解如何启用密码重置
@@ -39,7 +39,7 @@
  - 如果配置了一个关口策略，则将最小身份验证数据集定义为**至少一个**启用的身份验证选项；如果配置了两个关口策略，则将其定义为**至少两个**启用的身份验证选项。
 4.	如果用户使用的是本地帐户，则必须启用并打开[密码写回](/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)
 
-### 填充身份验证数据的方式
+### <a name="ways-to-populate-authentication-data"></a>填充身份验证数据的方式
 关于如何为你所在组织中的用户指定用于密码重置的数据，你有几种选择。
 
 - 在 [Azure 管理门户](https://manage.windowsazure.cn)或 [Office 365 管理门户](https://portal.partner.microsoftonline.cn)中编辑用户
@@ -50,7 +50,7 @@
 
 用户无需针对密码重置注册，系统便能正常工作。例如，如果你的现有电话号码位于本地目录中，则可以在 Azure AD 中同步它们，我们将自动使用它们进行密码重置。
 
-## 为用户启用密码重置的最佳方式是什么？
+## <a name="what-is-the-best-way-to-roll-out-password-reset-for-users"></a>为用户启用密码重置的最佳方式是什么？
 密码重置的常规启用步骤如下：
 
 1.	转到 [Azure 管理门户](https://manage.windowsazure.cn)中的“配置”选项卡并针对“可进行密码重置的用户”选项选择“是”，在你的目录中启用密码重置。
@@ -62,14 +62,14 @@
 
 通知用户可以注册并在组织中使用密码重置的方法有多种。下面将详细介绍。
 
-### 基于电子邮件的启用
+### <a name="email-based-rollout"></a>基于电子邮件的启用
 或许，通知用户有关注册或使用密码重置的最简单方法是向其发送一封电子邮件，指导他们如何操作。下面是可实现此目的的模板。你可以将颜色/徽标随意替换为你自己选择的自定义项，以符合你的需求。
 
   ![][001]
 
 你可以[从此](http://1drv.ms/1xWFtQM)处下载电子邮件模板。
 
-### 使用强制注册
+### <a name="using-enforced-registration"></a>使用强制注册
 如果希望你的用户自行注册密码重置，还可以强制他们在登录到访问面板（网址为 [http://myapps.microsoft.com](http://myapps.microsoft.com)）时注册。你可以启用“要求用户在登录到访问面板时注册”选项，从目录的“配置”选项卡启用此选项。
 
 也可以通过将“用户必须确认其联系人数据前的天数”选项修改为一个不是零的值，来定义在可配置的一段时间后是否要求用户重新注册。有关详细信息，请参阅[自定义用户密码管理行为](/documentation/articles/active-directory-passwords-customize#password-management-behavior)。
@@ -84,7 +84,7 @@
 
   ![][004]
 
-### 自行上载数据
+### <a name="uploading-data-yourself"></a>自行上载数据
 如果要自行上载身份验证数据，用户无需注册密码重置便可重置其密码。只要用户在其帐户上定义的身份验证数据符合你定义的密码重置策略，这些用户便能重置其密码。
 
 要了解可以通过 DirSync 或 Windows PowerShell 设置哪些属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)。
@@ -105,7 +105,7 @@
 
 若要了解如何使用上述每个属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)。
 
-## 示例培训材料
+## <a name="sample-training-materials"></a>示例培训材料
 我们正在准备示例培训材料，以帮助你的 IT 部门和用户快速了解如何部署及使用密码重置。敬请期待！
 
 

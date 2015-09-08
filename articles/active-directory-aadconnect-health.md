@@ -139,7 +139,7 @@ Azure AD Connect Health 使用情况分析可分析联合服务器的身份验�
 | | 应用程序 | 这将基于目标应用程序（信赖方）对用户平均数进行分组。这有助于了解使用具体某个应用程序的用户数量。 |
 
 ## 后续步骤
-要熟悉 Azure AD Connect Health，请参阅 [Azure AD Connect Health 要求](/documentation/articles/active-directory-aadconnect-health-requirements)。完成代理安装并且正在收集数据时，请参阅 [Azure AD Connect Health 操作](/documentation/artilces/active-directory-aadconnect-health-operations)以了解有关配置 Azure AD Connect Health 的详细信息或查看[常见问题](/documentation/artilces/active-directory-aadconnect-health-faq)。
+要熟悉 Azure AD Connect Health，请参阅 [Azure AD Connect Health 要求](/documentation/articles/active-directory-aadconnect-health-requirements)。完成代理安装并且正在收集数据时，请参阅 [Azure AD Connect Health 操作](/documentation/articles/active-directory-aadconnect-health-operations)以了解有关配置 Azure AD Connect Health 的详细信息或查看[常见问题](/documentation/articles/active-directory-aadconnect-health-faq)。
 
 
 **其他资源**

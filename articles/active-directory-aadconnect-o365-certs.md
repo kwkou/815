@@ -44,7 +44,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 ## 如果你的 AutoCertificateRollover 属性设置为 False
 
-如果 AutoCertificateRollover 属性设置为 False，那么你正在使用非默认 AD FS 证书设置。最常见的原因是，你的组织管理的 AD FS 证书是从组织的证书颁发机构注册的。在这种情况下，你需要自行续订并更新你的证书。在[此处](https://msdn.microsoft.com/library/azure/JJ933264.aspx#BKMK_NotADFSCert)使用指南。
+如果 AutoCertificateRollover 属性设置为 False，那么你正在使用非默认 AD FS 证书设置。最常见的原因是，你的组织管理的 AD FS 证书是从组织的证书颁发机构注册的。在这种情况下，你需要自行续订并更新你的证书。在[此处](https://msdn.microsoft.com/zh-cn/library/azure/JJ933264.aspx#BKMK_NotADFSCert)使用指南。
 
 ## 如果你的元数据不可公开访问
 如果 AutocertificateRollover 设置为 True，但你的联合元数据未公开提供，使用下面的过程以确保在本地和云中更新你的证书：
