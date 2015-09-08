@@ -1,5 +1,4 @@
 <properties
-
 	pageTitle="在 Azure Active Directory 中管理安全组 | Windows Azure"
 	description="介绍如何注册 Azure，以及可以使用 Azure AD 尝试的前几个步骤。"
 	services="active-directory"

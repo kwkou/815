@@ -158,7 +158,7 @@ Azure AD 提供若干种自定义方式来向你组织中的最终用户部署�
 
 ###Azure AD 访问面板
 
-https://myapps.microsoft.com 的访问面板是基于 Web 的门户，该门户允许在 Azure Active Directory 中具有组织帐户的最终用户查看并启动基于云的应用程序，Azure AD 管理员已授予访问这些应用程序的权限。如果你是使用 [Azure Active Directory Premium](https://msdn.microsoft.com/library/azure/dn532272.aspx) 的最终用户，你也可以通过访问面板使用自助服务组管理功能。
+https://myapps.microsoft.com 的访问面板是基于 Web 的门户，该门户允许在 Azure Active Directory 中具有组织帐户的最终用户查看并启动基于云的应用程序，Azure AD 管理员已授予访问这些应用程序的权限。如果你是使用 [Azure Active Directory Premium](https://msdn.microsoft.com/zh-cn/library/azure/dn532272.aspx) 的最终用户，你也可以通过访问面板使用自助服务组管理功能。
 
 ![][3]
 

@@ -26,7 +26,7 @@
 
 如果你已尝试过以下故障排除步骤，但仍遇到问题，请将问题发布到 [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)，或者与支持人员联系，我们将尽快解答你的问题。
 
-## 你需要帮助时应包含的信息
+## <a name="information-to-include-when-you-need-help"></a>你需要帮助时应包含的信息
 
 如果根据以下指导仍然无法解决问题，请联系我们的支持工程师。与他们联系时，建议你包含以下信息：
 
@@ -45,7 +45,7 @@
 包含这些信息将有助于我们尽快为你解决问题。
 
 
-## 在 Azure 管理门户中排查密码重置配置问题
+##  <a name="troubleshoot-password-reset-configuration-in-the-azure-management-portal"></a>在 Azure 管理门户中排查密码重置配置问题
 如果你在配置密码重置时遇到错误，可以遵循以下故障排除步骤来解决错误：
 
 <table>
@@ -115,7 +115,7 @@
           </tr>
         </tbody></table>
 
-## 在 Azure 管理门户中排查密码管理报告问题
+## <a name="troubleshoot-password-management-reports-in-the-azure-management-portal"></a>在 Azure 管理门户中排查密码管理报告问题
 如果在使用密码管理报告时遇到错误，可以通过执行以下故障排除步骤来解决错误：
 
 <table>
@@ -162,7 +162,7 @@
           </tr>
         </tbody></table>
 
-## 排查密码重置注册门户问题
+## <a name="troubleshoot-password-management-reports-in-the-azure-management-portal"></a>排查密码重置注册门户问题
 如果你在针对密码重置注册用户时遇到错误，也许能够通过执行以下故障排除步骤来解决错误：
 
 <table>
@@ -224,7 +224,7 @@
           </tr>
         </tbody></table>
 
-## 排查密码重置门户问题
+## <a name="troubleshoot-the-password-reset-portal"></a>排查密码重置门户问题
 如果在为用户重置密码时遇到错误，可通过遵循以下故障排除步骤来解决：
 
 <table>
@@ -412,7 +412,7 @@
           </tr>
         </tbody></table>
 
-## 排查密码写回问题
+## <a name="roubleshoot-password-writeback"></a>排查密码写回问题
 如果在启用、禁用或使用密码写回时遇到错误，可以通过执行以下故障排除步骤来解决错误：
 
 <table>
@@ -640,7 +640,7 @@
         </tbody></table>
 
 
-## 密码写回事件日志错误代码
+## <a name="password-writeback-event-log-error-codes"></a>密码写回事件日志错误代码
 在排查密码写回问题时，最佳做法是检查 Azure AD Connect 计算机上的该应用程序事件日志。此事件日志将包含来自与密码写回相关的两个源的事件。PasswordResetService 源将描述与密码写回操作相关的操作和问题。ADSync 源将描述与在你的 AD 环境中设置密码相关的操作和问题。
 
 <table>
@@ -1026,7 +1026,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示连接到你的租户的服务总线实例时发生错误。发生此错误可能是因为你在本地环境中阻止了出站连接。请检查你的防火墙以确保你允许基于 TCP 443 的连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a> 的连接，然后重试。如果仍然有问题，请尝试禁用再重新启用密码写回。</p>
+              <p>此事件表示连接到你的租户的服务总线实例时发生错误。发生此错误可能是因为你在本地环境中阻止了出站连接。请检查你的防火墙以确保你允许基于 TCP 443 的连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的连接，然后重试。如果仍然有问题，请尝试禁用再重新启用密码写回。</p>
             </td>
           </tr>
           <tr>
@@ -1152,7 +1152,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动登记过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 TCP 443 和 TCP 9350-9354 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a> 的出站连接，并确保你用来登记的 AAD 管理员帐户不是联合的。</p>
+              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动登记过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 TCP 443 和 TCP 9350-9354 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的出站连接，并确保你用来登记的 AAD 管理员帐户不是联合的。</p>
             </td>
           </tr>
           <tr>
@@ -1180,7 +1180,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动卸载过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 443 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a> 的出站连接，并确保你用来卸载的 AAD 管理员帐户不是联合的。</p>
+              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动卸载过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 443 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的出站连接，并确保你用来卸载的 AAD 管理员帐户不是联合的。</p>
             </td>
           </tr>
           <tr>
@@ -1396,7 +1396,7 @@
             </td>
           </tr>
         </tbody></table>
-## 排查密码写回连接问题
+## <a name="troubleshoot-password-writeback-connectivity"></a>排查密码写回连接问题
 
 如果遇到 Azure AD Sync 密码写回组件的服务中断，可以使用以下快速步骤来解决此问题：
 

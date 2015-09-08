@@ -24,7 +24,7 @@ Azure AD Connect Health 是一项 Azure AD 高级版功能，并要求 Azure AD 
 
 ## 你必须是 Azure AD 租户的全局管理员。
 
-默认情况下，全局管理员有权访问由 Azure AD Connect Health 提供的信息。如果你不是与本地 Active Directory 联合的 Azure AD 租户的全局管理员，你将不能创建 Azure AD Connect Health 服务实例。确保你是全局管理员。其他有关信息，请参阅[管理 Azure AD 目录](https://msdn.microsoft.com/library/azure/hh967611.aspx)。
+默认情况下，全局管理员有权访问由 Azure AD Connect Health 提供的信息。如果你不是与本地 Active Directory 联合的 Azure AD 租户的全局管理员，你将不能创建 Azure AD Connect Health 服务实例。确保你是全局管理员。其他有关信息，请参阅[管理 Azure AD 目录](https://msdn.microsoft.com/zh-cn/library/azure/hh967611.aspx)。
  
 
 ## 安装在每个目标服务器上的 Azure AD Connect Health 代理

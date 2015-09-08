@@ -20,7 +20,7 @@
 - [**在组织中查看密码重置注册活动**](#view-password-reset-registration-activity)
 - [**在组织中查看密码重置活动**](#view-password-reset-activity)
 
-## 密码管理报告概述
+## <a name="overview-of-password-management-reports"></a>密码管理报告概述
 一旦部署密码重置，最常见的后续步骤之一是查看其在组织中的使用情况。例如，你可能希望了解用户对密码重置的注册情况，或者在过去几天内进行了多少个密码重置。下面是一些常见问题，你将能够使用当今 [Azure 管理门户](https://manage.windowsazure.cn)中的密码管理报告来回答这些问题：
 
 - 有多少人注册了密码重置？
@@ -33,7 +33,7 @@
 - 密码重置时是否有任何可疑的活动？
 
 
-## 如何查看密码管理报告
+##  <a name="how-to-view-password-management-reports"></a>如何查看密码管理报告
 若要查找密码管理报告，请按照以下步骤操作：
 
 1.	在 [Azure 管理门户](https://manage.windowsazure.cn)中单击 **Active Directory** 扩展。
@@ -44,7 +44,7 @@
 
     ![][001]
 
-## 查看密码重置注册活动
+##  <a name="view-password-reset-registration-activity"></a>查看密码重置注册活动
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 
@@ -107,7 +107,7 @@
             </tr>
           </tbody></table>
 
-## 查看密码重置活动
+##  <a name="overview-of-password-management-reports"></a>查看密码重置活动
 
 此报告显示你的组织中发生的所有密码重置尝试。
 
@@ -117,7 +117,7 @@
 
     ![][003]
 
-### 报告列的说明
+###  <a name="overview-of-password-management-reports"></a>报告列的说明
 以下列表详细说明每个报告列：
 
 1. **用户** – 尝试了密码重置操作的用户（基于用户重置密码时提供的“用户 ID”字段）。
@@ -127,7 +127,7 @@
 5. **结果** – 密码重置操作的最终结果。
 6. **详细信息** – 密码重置为什么导致这样值的详细信息。此外，还包括你为解决意外错误而可能采取的任何缓解步骤。
 
-### 报告值的说明
+###  <a name="overview-of-password-management-reports"></a>报告值的说明
 下表描述了每个列的不同允许值：
 
 <table>
@@ -211,7 +211,7 @@
             </tr>
           </tbody></table>
 
-### 详细信息列的允许值
+###  <a name="overview-of-password-management-reports"></a>详细信息列的允许值
 下面是你在使用密码重置活动报告时可能会遇到的结果类型列表：
 
 <table>
