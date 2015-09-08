@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="notification-hubs" 
-	
 	ms.date="02/18/2015" 
 	wacn.date="08/29/2015" />
 
@@ -125,7 +124,7 @@ Azure 通知中心支持在 Azure 管理门户中查看遥测数据。有关可�
 [移动服务定价]: http://www.windowsazure.cn/home/features/mobile-services/#price
 [后端注册指导]: https://msdn.microsoft.com/zh-cn/library/azure/dn743807.aspx
 [后端注册指南 - 2]: https://msdn.microsoft.com/zh-cn/library/azure/dn530747.aspx
-[NH 安全模型]: https://msdn.microsoft.com/zh-cn/library/azure/dn495373.aspx.
+[NH 安全模型]: https://msdn.microsoft.com/zh-cn/library/azure/dn495373.aspx
 [NH - 安全推送教程]: /documentation/articles/notification-hubs-aspnet-backend-ios-secure-push
 [NH - 故障排除]: /documentation/articles/notification-hubs-diagnosing
 [NH - 度量值]: https://msdn.microsoft.com/zh-cn/library/dn458822.aspx

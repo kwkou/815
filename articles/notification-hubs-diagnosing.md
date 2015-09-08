@@ -7,9 +7,8 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="notification-hubs" 
-
 	ms.date="01/27/2015" 
 	wacn.date="08/29/2015"/>
 
