@@ -39,7 +39,7 @@
 ![联系人 - 编辑页](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms00.png)
 
 >[AZURE.NOTE]
-若要完成本教程，您需要一个 Azure 帐户。如果您没有帐户，则可以<a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a>或<a href="/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">注册获取免费试用版</a>。如果您想要在注册帐户之前开始使用 Azure，请转到[试用 App Service](https://tryappservice.azure.com/)，您可以通过该网站在 App 中免费创建一个生存期较短的 ASP.NET 入门站点。您不需要使用信用卡，也不需要做出承诺。
+若要完成本教程，您需要一个 Azure 帐户。如果您没有帐户，则可以<!--<a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a>或--><a href="/pricing/1rmb-trial/" target="_blank">注册获取试用版</a>。<!--如果您想要在注册帐户之前开始使用 Azure，请转到[试用 App Service](https://tryappservice.azure.com/)，您可以通过该网站在 App 中免费创建一个生存期较短的 ASP.NET 入门站点。您不需要使用信用卡，也不需要做出承诺。-->
 
 本教程包含以下部分：
 
@@ -57,7 +57,7 @@
 ## 设置开发环境 
 若要开始，请通过安装 Visual Studio 2013 和 Azure SDK for .NET 来设置开发环境。
 
-1. 安装 [Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkId=306566)（如果尚未安装）。  
+1. 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-cn/downloads)（如果尚未安装）。  
 2. 安装 [Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)。本教程需要先安装 Visual Studio 2013，然后再安装 Azure SDK for Visual Studio 2013。根据计算机上已有 SDK 依赖项数量的不同，安装 SDK 可能耗时较长，从几分钟到半小时或更长时间不等。  
 
 	>[AZURE.NOTE]
@@ -70,7 +70,7 @@
 	>[AZURE.NOTE]
 	如果你已安装 SDK，则会安装 0 个项。要安装的项数将显示在 **Web 平台安装程序**窗口的左下角。
 
-5. 如果您还没有 **Visual Studio Update 2**，请下载并安装 **[Visual Studio 2013 Update 2](http://www.microsoft.com/download/details.aspx?id=42666)** 或更高版本。
+5. 如果您还没有 **Visual Studio Update 2**，请下载并安装 **<!--[-->Visual Studio 2013 Update 2<!--](http://www.microsoft.com/download/details.aspx?id=42666)-->** 或更高版本。
 
 	>[AZURE.NOTE]
 	只有安装了 Visual Studio 2013 Update 2 或更高版本才能使用 Goggle OAuth 2.0 以及在本地使用 SSL，而不会显示任何警告。此外，您需要通过 Update 2 来使用 Web 窗体基架。
@@ -793,7 +793,7 @@ Web 应用程序现已完成，您可以将其发布到 Azure。
 我们正在开发可显著简化用户和角色管理的工具。
 
 ## 后续步骤
-有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的[了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Microsoft Azure 教程和指南](http://azure.microsoft.com/documentation/services/web-sites/#net)。
+有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的[了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Windows Azure 教程和指南](/documentation/services/web-sites/)。
 
 本教程基于 Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL Database 的 ASP.NET MVC 应用并部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 

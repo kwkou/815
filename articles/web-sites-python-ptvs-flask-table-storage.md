@@ -18,11 +18,11 @@
 
 # 具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储 
 
-在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。您还可以观看本教程的[视频](https://www.youtube.com/watch?v=qUtZWtPwbTk)。
+在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。<!--您还可以观看本教程的[视频](https://www.youtube.com/watch?v=qUtZWtPwbTk)。-->
 
 轮询 Web 应用是对存储库的抽象界定，因此您可以轻松地在不同类型的存储库（内存、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何创建 Azure 存储帐户、如何将 Web 应用配置为使用 Azure 表存储，以及如何将 Web 应用发布到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 中。
+我们将了解如何创建 Azure 存储帐户、如何将 Web 应用配置为使用 Azure 表存储，以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中。
 
 请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure App Service Web Apps 的文章。虽然本文将着重介绍 App Service，但步骤与 [Azure 云服务]的开发步骤类似。
 
@@ -45,7 +45,7 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
 
 ## 创建项目
 
@@ -77,7 +77,7 @@
 
 1.  登录 [Azure 门户]。
 
-2. 单击门户左下角的“新建”图标，然后单击“数据 + 存储”>“存储”。为存储帐户命名一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview)。
+2. 单击门户左下角的“新建”图标，然后单击“数据 + 存储”>“存储”。为存储帐户命名一个唯一名称，并为其新建一个<!--[-->资源组<!--](/documentation/articles/resource-group-overview)-->。
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
 
@@ -197,9 +197,9 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅[门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅[门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->
@@ -210,8 +210,8 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 
 <!--External Link references-->
 [Azure 管理门户]: https://manage.windowsazure.cn
-[Azure SDK for .NET]: http://azure.microsoft.com/downloads/
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Azure SDK for .NET]: /downloads/
+[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 for Visual Studio 样本 VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510

@@ -15,7 +15,7 @@
 
 # 在 Azure App Service 中保护 Web 应用安全
 
-开发 Web 应用时所要面对的一大难题是，如何为您的客户提供安全服务。在本文中，您将了解可以保护 Web 应用安全的 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) 功能。
+开发 Web 应用时所要面对的一大难题是，如何为您的客户提供安全服务。在本文中，您将了解可以保护 Web 应用安全的 <!--[-->Azure App Service<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 功能。
 
 > [AZURE.NOTE]关于基于 web 的应用程序安全注意事项的全面讨论超出了本文的范围。有关保护 Web 应用程序安全的更多指导，请参阅[打开 Web 应用程序安全项目 (OWASP)](https://www.owasp.org/index.php/Main_Page)（尤其是[前 10 大项目](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)），其中列出了前 10 大 Web 应用程序安全缺陷（由 OWASP 成员确定）。
 
@@ -70,22 +70,22 @@ Azure 通过 **FTPS** 提供对您 Web 应用文件系统的安全 FTP 访问。
 6. 在“设置”边栏选项卡中，选择“属性”。
 7. “设置”边栏选项卡上显示了 FTP 和 FTPS 链接。 
 
-有关 FTPS 的更多信息，请参阅[文件传输协议](http://en.wikipedia.org/wiki/File_Transfer_Protocol)。
+有关 FTPS 的更多信息，请参阅[文件传输协议](https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)。
 
->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
 
 ## 后续步骤
 
-若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 您将对网站执行**渗透测试**，请参阅 [Windows Azure 信任中心](http://azure.microsoft.com/support/trust-center/security/)的安全部分。
+若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 您将对网站执行**渗透测试**，请参阅 [Windows Azure 信任中心](http://azure.microsoft.com/zh-cn/support/trust-center/security/)的安全部分。
 
-有关 Web 应用中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure App Service Web Apps 中解锁的配置选项](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
+有关 Web 应用中 **web.config** 或 **applicationhost.config** 文件的更多信息，请参阅 [Azure App Service Web Apps 中解锁的配置选项](http://azure.microsoft.com/zh-cn/blog/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)。
 
 若要了解 Web 应用的日志记录（可能在检测攻击时很有用），请参阅[启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
 
-* 有关从旧门户更改为新门户的指南，请参阅[预览门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅[预览门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
  
 
 <!---HONumber=67-->

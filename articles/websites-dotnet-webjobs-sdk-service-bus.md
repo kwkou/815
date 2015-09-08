@@ -71,7 +71,7 @@ SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消�
 		    logger.WriteLine(message);
 		}
 
-**注意：**如果您在未使用 WebJobs SDK 的应用程序中创建队列消息，请务必将 [BrokeredMessage.ContentType](http://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx) 设置为 “text/plain”。
+**注意：**如果您在未使用 WebJobs SDK 的应用程序中创建队列消息，请务必将 [BrokeredMessage.ContentType](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx) 设置为 “text/plain”。
 
 ### POCO 队列消息
 
@@ -83,7 +83,7 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 		    logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
 		}
 
-有关展示如何使用 POCO 属性在同一函数中处理 blob 和表的代码示例，请参阅[这篇文章的存储队列版本](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#pocoblobs)。
+有关展示如何使用 POCO 属性在同一函数中处理 blob 和表的代码示例，请参阅[这篇文章的存储队列版本](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#pocoblobs)。
 
 ### ServiceBusTrigger 适用的类型
 
@@ -159,7 +159,7 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 
 ## <a id="nextsteps"></a>后续步骤
 
-本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure 服务总线。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](http://go.microsoft.com/fwlink/?linkid=390226)。
+本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure 服务总线。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
 <!---HONumber=67-->

@@ -40,7 +40,7 @@
 
 此部分介绍了如何使用 `BlobTrigger` 属性。
 
-> **注意：**WebJobs SDK 会扫描日志文件，监控新的或更改后的 blob。此过程非常缓慢；在创建 blob 后，需要经过数分钟或更长时间才可能会触发函数。如果您的应用程序需要立即处理 blob，推荐的方法是在创建 blob 时创建一个队列消息，并对处理 blob 的函数使用 [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger) 属性（而非 `BlobTrigger` 属性）。
+> **注意：**WebJobs SDK 会扫描日志文件，监控新的或更改后的 blob。此过程非常缓慢；在创建 blob 后，需要经过数分钟或更长时间才可能会触发函数。如果您的应用程序需要立即处理 blob，推荐的方法是在创建 blob 时创建一个队列消息，并对处理 blob 的函数使用 [QueueTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#trigger) 属性（而非 `BlobTrigger` 属性）。
 
 ### blob 名称和扩展名的单个占位符  
 
@@ -158,7 +158,7 @@
 
 当 `BlobTrigger` 函数失败时，如果失败是由暂时性错误所导致，则 SDK 会再次调用此函数。如果失败是由 blob 内容所导致，则此函数每次尝试处理 blob 时都会失败。默认情况下，对于给定的 blob，SDK 最多调用一个函数 5 次。如果第 5 次尝试失败，则 SDK 会将消息添加到 *webjobs-blobtrigger-poison* 队列中。
 
-重试次数上限是可配置的。处理病毒 blob 和病毒队列消息所使用的是同一个 [MaxDequeueCount](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#configqueue) 设置。
+重试次数上限是可配置的。处理病毒 blob 和病毒队列消息所使用的是同一个 [MaxDequeueCount](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#configqueue) 设置。
 
 病毒 blob 的队列消息是包含以下属性的 JSON 对象：
 
@@ -239,7 +239,7 @@ Blob 回执存储在 *azure-webjobs-hosts* 容器内，此容器位于 AzureWebJ
 
 ## <a id="nextsteps"></a>后续步骤
 
-本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure blob。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](http://go.microsoft.com/fwlink/?linkid=390226)。
+本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure blob。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
 <!---HONumber=67-->

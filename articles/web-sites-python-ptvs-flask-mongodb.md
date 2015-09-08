@@ -19,11 +19,11 @@
 
   	<!-- 预览门户尚不支持 MongoLab 工作流 -->
 
-在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。您还可以观看本教程的[视频](https://www.youtube.com/watch?v=eql-crFgrAE)。
+在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。<!--您还可以观看本教程的[视频](https://www.youtube.com/watch?v=eql-crFgrAE)。-->
 
 轮询 Web 应用是对存储库的抽象界定，因此您可以轻松地在不同类型的存储库（内存、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何在 Azure 上使用托管的一项 MongoDB 服务、如何将 Web 应用配置为使用 MongoDB，以及如何将 Web 应用发布到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 中。
+我们将了解如何在 Azure 上使用托管的一项 MongoDB 服务、如何将 Web 应用配置为使用 MongoDB，以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中。
 
 请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure App Service Web Apps 的文章。虽然本文将着重介绍 App Service，但步骤与 [Azure 云服务]的开发步骤类似。
 
@@ -43,11 +43,11 @@
  - [Python Tools 2.1 for Visual Studio 样本 VSIX]
  - [Azure SDK Tools for VS 2013] 或 [Azure SDK Tools for VS 2012]
  - [Python 2.7（32 位）]或 [Python 3.4（32 位）]
- - [RoboMongo](optional)
+ - [RoboMongo](http://robomongo.org/)(optional)
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
 
 ## 创建项目
 
@@ -226,10 +226,10 @@
 [Azure 云服务]: /documentation/articles/cloud-services-python-ptvs.md
 
 <!--External Link references-->
-[]: https://manage.windowsazure.cn
+<!--[]: https://manage.windowsazure.cn-->
 [Azure 管理门户]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 for Visual Studio 样本 VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510

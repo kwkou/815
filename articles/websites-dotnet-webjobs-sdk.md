@@ -105,11 +105,12 @@ WebJobs SDK 提供多种使用 Azure 存储空间的方法。例如，如果使�
 * 可以从仪表板重放函数。
 * 您可以在仪表板中查看日志，链接到特定的 WebJob（使用 Console.Out、Console.Error、Trace 等编写的应用程序日志）或链接到生成它们的特定函数调用（使用此 SDK 传递给函数作为参数的 `TextWriter` 对象编写的日志）。 
 
-* 有关详细信息，请参阅[如何手动调用函数](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#manual)和[如何编写日志](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#logs)
+* 有关详细信息，请参阅[如何手动调用函数](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual)和[如何编写日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs)
 
 ## <a id="nextsteps"></a>后续步骤
 
-有关 WebJobs SDK 的详细信息，请参阅[Azure WebJobs 推荐资源](http://go.microsoft.com/fwlink/?linkid=390226)。
+有关 WebJobs SDK 的详细信息，请参阅[Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/
+)。
  
 
 <!---HONumber=67-->

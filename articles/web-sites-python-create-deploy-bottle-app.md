@@ -20,7 +20,7 @@
 
 在本教程中，我们将介绍如何开始在 Azure App Service Web Apps 中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-您将使用 Bottle web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) 的备选版本)。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后将本地运行 Web 应用，将其更改、提交和推送到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+您将使用 Bottle web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) 的备选版本)。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后将本地运行 Web 应用，将其更改、提交和推送到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -43,7 +43,7 @@
 - Python 2.7 或 3.4
 - setuptools, pip, virtualenv（仅限 Python 2.7）
 - Git
-- [Python Tools 2.1 for Visual Studio](optional)
+- <!--[-->Python Tools 2.1 for Visual Studio<!--](optional)-->
 
 **注意**：Python 项目目前不支持 TFS 发布。
 
@@ -399,14 +399,14 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 - [具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 MongoDB]
 - [具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储]
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->
-[具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 MongoDB]: web-sites-python-ptvs-bottle-table-storage.md
-[具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储]: web-sites-python-ptvs-bottle-mongodb.md
+[具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 MongoDB]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
+[具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储]: /documentation/articles/web-sites-python-ptvs-bottle-mongodb
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
@@ -414,7 +414,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 [python.org]: http://www.python.org/
 [Git for Windows]: http://msysgit.github.io/
 [GitHub for Windows]: https://windows.github.com/
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Visual Studio]: http://www.visualstudio.com/
 [PTVS 文档]: http://pytools.codeplex.com/documentation

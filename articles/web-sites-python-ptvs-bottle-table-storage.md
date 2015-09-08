@@ -17,11 +17,11 @@
 
 # 具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储 
 
-在本教程中，我们将使用 [Python Tools for Visual Studio] 通过其中一个 PTVS 样本模板创建一个简单的轮询 Web 应用。还以[视频](https://www.youtube.com/watch?v=GJXDGaEPy94)形式提供了本教程。
+在本教程中，我们将使用 [Python Tools for Visual Studio] 通过其中一个 PTVS 样本模板创建一个简单的轮询 Web 应用。<!--还以[视频](https://www.youtube.com/watch?v=GJXDGaEPy94)形式提供了本教程。-->
 
 轮询 Web 应用定义其存储库的抽象，因此您可以轻松地在不同类型存储库（内存中、Azure 表存储、MongoDB）之间进行切换。
 
-我们将学习如何创建 Azure 存储帐户、如何配置应用程序以使用 Azure 表存储以及如何将 Web 应用发布到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。
+我们将学习如何创建 Azure 存储帐户、如何配置应用程序以使用 Azure 表存储以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。
 
 请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure App Service Web Apps，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但是步骤相似于开发 [Azure 云服务]。
 
@@ -44,7 +44,7 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
 
 ## 创建项目
 
@@ -76,7 +76,7 @@
 
 1.  登录到 [Azure 门户]。
 
-2. 单击门户左下角的**新建**图标，然后单击**数据 + 存储** > **存储**。提供存储帐户一个唯一名称并为其创建一个新[资源组](/documentation/articles/resource-group-overview)。
+2. 单击门户左下角的**新建**图标，然后单击**数据 + 存储** > **存储**。提供存储帐户一个唯一名称并为其创建一个新<!--[-->资源组<!--](/documentation/articles/resource-group-overview)-->。
 
 1.  依次单击**数据服务**、**存储**和**快速创建**。
 
@@ -194,9 +194,9 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->
@@ -207,8 +207,8 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 
 <!--External Link references-->
 [Azure 门户]: https://manage.windowsazure.cn
-[Azure SDK for .NET]: http://azure.microsoft.com/downloads/
-[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Azure SDK for .NET]: /downloads/
+[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 for Visual Studio 样本 VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
