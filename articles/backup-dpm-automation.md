@@ -64,7 +64,7 @@ PS C:\> MARSAgentInstaller.exe /?
 | /pw | 代理密码 | - |
 
 ### 注册到 Azure 备份服务
-在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentattion/articles/backup-azure-dpm-introduction)。你必须：
+在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-azure-dpm-introduction)。你必须：
 
 - 具备有效的 Azure 订阅
 - 创建备份保管库
