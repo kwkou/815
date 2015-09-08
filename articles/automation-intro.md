@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="automation"
-
 	ms.date="07/06/2015"
 	wacn.date="08/29/2015"/>
 
@@ -45,7 +44,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 ## Azure 自动化如何与其他自动化工具关联？
 
-[Service Management Automation (SMA)](http://technet.microsoft.com/zh-cn/library/dn469260.aspx) 用于自动处理私有云中的管理任务。它作为 [Windows Azure Pack](http://www.microsoft.com/server-cloud/products/windows-azure-pack/default.aspx) 的组件本地安装在您的数据中心中。SMA 和 Azure 自动化使用基于 Windows PowerShell 工作流的相同的 Runbook 格式，但 SMA 不支持[图形 Runbook](/documentation/articles/automation-graphical-authoring-intro)。
+[Service Management Automation (SMA)](http://technet.microsoft.com/zh-cn/library/dn469260.aspx) 用于自动处理私有云中的管理任务。它作为 [Windows Azure Pack](http://www.microsoft.com/zh-cn/server-cloud/products/windows-azure-pack/default.aspx) 的组件本地安装在您的数据中心中。SMA 和 Azure 自动化使用基于 Windows PowerShell 工作流的相同的 Runbook 格式，但 SMA 不支持[图形 Runbook](/documentation/articles/automation-graphical-authoring-intro)。
 
 [System Center 2012 Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) 适用于本地资源的自动化。它使用与 Azure 自动化和 Service Management Automation 不同的 Runbook 格式，并且具有图形界面，可用于创建 Runbook 而无需编写任何脚本。它的 Runbook 由专门为 Orchestrator 编写的集成包中的活动构成。
 
@@ -55,11 +54,11 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 - “Azure 自动化库”就是您当前正在查看的资源。该库中的文章提供了有关配置和管理 Azure 自动化以及创作自己的 Runbook 的完整文档。
 - [Azure PowerShell cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 提供了有关使用 Windows PowerShell 自动完成 Azure 操作的信息。Runbook 使用这些 cmdlet 来处理 Azure 资源。
-- [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。欢迎订阅 Azure 自动化博客，随时了解 Azure 自动化团队提供的最新信息。
+<!--- [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。欢迎订阅 Azure 自动化博客，随时了解 Azure 自动化团队提供的最新信息。-->
 - [自动化论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation)允许您提出有关 Azure 自动化的问题，并将由 Microsoft 和自动化社区提供解答。
 
 ## 我是否可以提供反馈？
 
-**欢迎提供反馈！** 如果您正在寻找 Azure 自动化 Runbook 解决方案或集成模块，请在脚本中心发布脚本请求。如果您有关于 Azure 自动化的反馈或功能请求，请将其发布在[用户之声](http://feedback.windowsazure.com/forums/34192--general-feedback)。谢谢！
+**欢迎提供反馈！** 如果您正在寻找 Azure 自动化 Runbook 解决方案或集成模块，请在脚本中心发布脚本请求。如果您有关于 Azure 自动化的反馈或功能请求，请将其发布在[用户之声](/product-feedback)。谢谢！
 
 <!---HONumber=67-->

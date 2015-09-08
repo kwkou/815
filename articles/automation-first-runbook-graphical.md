@@ -9,7 +9,6 @@
 
 <tags
 	ms.service="automation"
-	
 	ms.date="07/03/2015"
 	wacn.date="08/29/2015"/>
 
@@ -22,7 +21,7 @@
 
 为了完成本教程，您将需要以下内容。
 
-- Azure 订阅。如果您没有帐户，则可以“[激活 MSDN 订户权益](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)”或<a href="/pricing/free-trial/" target="_blank">“[注册免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)”。
+- Azure 订阅。如果您没有帐户，则可以<!--“[激活 MSDN 订户权益](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)”或<a href="/pricing/free-trial/" target="_blank">-->“[注册免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)”。
 - 用于保存 Runbook 的“[Automation 帐户](/documentation/articles/automation-configuring)”。
 - Azure 虚拟机。我们将停止并启动该计算机，因此其不应为生产用计算机。
 - 用于对 Azure 资源进行身份验证的“[Azure Active Directory 用户和凭据资产](/documentation/articles/automation-configuring)”。此用户必须有权启动和停止虚拟机。
