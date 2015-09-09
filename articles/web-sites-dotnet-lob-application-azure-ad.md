@@ -44,8 +44,6 @@
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
-<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过该网站在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。-->
-
 若要完成本教程，您需要以下项目：
 
 - 包含各组中的用户的 Azure Active Directory 租户

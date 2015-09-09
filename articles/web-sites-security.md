@@ -72,8 +72,6 @@ Azure 通过 **FTPS** 提供对您 Web 应用文件系统的安全 FTP 访问。
 
 有关 FTPS 的更多信息，请参阅[文件传输协议](https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)。
 
-<!-->[AZURE.NOTE]如果您想在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，从而能够在 App Service 中立即创建临时入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
-
 ## 后续步骤
 
 若要详细了解 Azure 平台安全、如何举报**安全事件或滥用行为**，或者如何通知 Microsoft 您将对网站执行**渗透测试**，请参阅 [Windows Azure 信任中心](http://azure.microsoft.com/zh-cn/support/trust-center/security/)的安全部分。
