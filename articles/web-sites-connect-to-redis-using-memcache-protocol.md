@@ -171,7 +171,7 @@ redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –
 
 祝贺您！ WordPress 应用现在有了一个集中式的内存中缓存，这将有助于吞吐量的提高。请记住，Web Apps Memcache 填充码可以用于任何 Memcache 客户端，无需考虑编程语言或应用程序框架。若要提供反馈或者提问有关 Web Apps Memcache 填充码的问题，请在 [MSDN 论坛][10]或 [Stackoverflow][11] 上发布相关文章。
 
-<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过它在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。-->
+<!--[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以通过它在 App Service 中创建一个生存期较短的入门 Web 应用。您不需要使用信用卡，也不需要做出承诺。-->
 
 <!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
