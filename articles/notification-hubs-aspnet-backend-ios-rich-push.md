@@ -82,7 +82,7 @@
             }
         }
 
-> AZURE.NOTE 请参阅[如何使用 Visual C# 嵌入和访问资源](https://support.microsoft.com/zh-cn/kb/319292)了解有关如何添加和获取项目资源的详细信息。
+> [AZURE.NOTE] 请参阅[如何使用 Visual C# 嵌入和访问资源](https://support.microsoft.com/zh-cn/kb/319292)了解有关如何添加和获取项目资源的详细信息。
 
 7. 在 **NotificationsController.cs** 中，使用以下代码段重新定义 **NotificationsController**。这会将初始无提示的富通知 ID 发送到设备，并允许客户端对图像进行检索：
 

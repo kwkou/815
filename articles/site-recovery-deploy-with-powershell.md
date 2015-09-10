@@ -67,7 +67,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 - 了解有关网络映射的更多信息：
 	- [在 VMM 中配置逻辑网络](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)
 	- [在 VMM 中配置 VM 网络和网关](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)
-	- [在 Azure 中配置和监视虚拟网络](/documentation/services/virtual-network)
+	- [在 Azure 中配置和监视虚拟网络](/documentation/services/networking)
 
 ###PowerShell 必决条件
 确保已将 Azure PowerShell 准备就绪。如果你已使用 PowerShell，则升级到 0.8.10 或更高版本。如需设置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。安装并配置 PowerShell 后，可在[此处](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx)查看该服务的所有可用 cmdlet。
@@ -445,12 +445,8 @@ if($isJobLeftForProcessing)
 
 
 ##<a id="next" name="next" href="#next"></a>后续步骤
-<UL>
-
-<LI>有关 Azure Site Recovery PowerShell cmdlet 的详细信息，请参阅<a href="https://msdn.microsoft.com/zh-cn/library/dn850420.aspx">此文</a>。
-
-<LI>若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅[Azure Site Recovery 规划指南](/documentation/articles/site-recovery-best-practices/)和 [Azure Site Recovery 部署指南](/documentation/articles/site-recovery-vmm-to-vmm/)。</LI>
-
-<LI>如有问题，请访问 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>。</LI></UL>
+- 有关 Azure Site Recovery PowerShell cmdlet 的详细信息，请参阅<a href="https://msdn.microsoft.com/zh-cn/library/dn850420.aspx">此文</a>。
+- 若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 [Azure Site Recovery 规划指南](/documentation/articles/site-recovery-best-practices/) 和 [Azure Site Recovery 部署指南](/documentation/articles/site-recovery-vmm-to-vmm/) 。
+- 如有问题，请访问 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>。
 
 <!---HONumber=67-->

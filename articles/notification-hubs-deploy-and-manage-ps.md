@@ -21,7 +21,7 @@
 + 创建通知中心
 + 设置凭据
 
-<!-->如果您还需要为通知中心创建新的服务总线命名空间，请参阅[使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)。-->
+<!--如果您还需要为通知中心创建新的服务总线命名空间，请参阅[使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)。-->
 
 不支持直接使用 Azure PowerShell 随附的 cmdlet 来管理通知中心。在 PowerShell 中，最佳方法是引用 Microsoft.ServiceBus.dll 程序集。该程序集是随[服务总线 NuGet 包](http://www.nuget.org/packages/WindowsAzure.ServiceBus/)一起分发的。
 
@@ -87,7 +87,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 ## 设置新通知中心 
 
-若要设置新的通知中心，请使用[服务总线的 .NET API]。本文只着重于通知中心。若要使用其他服务总线实体，请参阅[使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)。
+<!--若要设置新的通知中心，请使用[服务总线的 .NET API]。本文只着重于通知中心。若要使用其他服务总线实体，请参阅[使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)。-->
 
 您将在脚本的这个部分设置四个本地变量。
 
