@@ -356,7 +356,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 ## 后续步骤
 
-<--- 了解有关[适用于 ARM 的网络资源提供程序 (NRP)](/documentation/articles/resource-groups-networking) 的详细信息。-->
+<!--- 了解有关[适用于 ARM 的网络资源提供程序 (NRP)](/documentation/articles/resource-groups-networking) 的详细信息。-->
 - 查看有关如何[在经典 VNet 和 ARM VNet 之间创建 S2S VPN 连接](/documentation/articles/virtual-networks-arm-asm-s2s-howto)的通用准则。
 
 <!---HONumber=67-->

@@ -24,7 +24,7 @@
 
 ### 如何开始？
 
-请访问[虚拟网络文档](http://azure.microsoft.com/documentation/services/virtual-network/)开始。此页包含指向常见配置步骤的链接以及帮助你了解设计虚拟网络时需要考虑的事项的信息。
+请访问[虚拟网络文档](/documentation/services/virtual-network/)开始。此页包含指向常见配置步骤的链接以及帮助你了解设计虚拟网络时需要考虑的事项的信息。
 
 ### 哪些服务可以与 VNet 共同使用？
 
@@ -260,10 +260,10 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 ### 是否可以通过代码管理 VNet？
 
-是的。可以使用 REST API 管理 VNet 和跨界连接。可在[此处](http://go.microsoft.com/fwlink/?LinkId=296833)找到更多信息。
+是的。可以使用 REST API 管理 VNet 和跨界连接。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)找到更多信息。
 
 ### 是否有 VNet 的工具支持？
 
-是的。PowerShell 和命令行工具可用于各种平台。可在[此处](http://go.microsoft.com/fwlink/?LinkId=317721)找到更多信息。
+是的。PowerShell 和命令行工具可用于各种平台。可在[此处](https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx)找到更多信息。
 
 <!---HONumber=67-->
