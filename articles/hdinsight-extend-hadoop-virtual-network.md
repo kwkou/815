@@ -24,7 +24,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 * 在专用网络（仅限云）中将云资源连接在一起。
 
-	![仅限云配置示意图](media/hdinsight-extend-hadoop-virtual-network/cloud-only.png)
+	![仅限云配置示意图](./media/hdinsight-extend-hadoop-virtual-network/cloud-only.png)
 
 	使用虚拟网络链接 Azure 服务与 HDInsight 可实现以下方案：
 
@@ -38,11 +38,11 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	利用站点到站点配置，你可以使用硬件 VPN 或路由和远程访问服务将多个资源从数据中心连接到 Azure 虚拟网络。
 
-	![站点到站点配置示意图](media/hdinsight-extend-hadoop-virtual-network/site-to-site.png)
+	![站点到站点配置示意图](./media/hdinsight-extend-hadoop-virtual-network/site-to-site.png)
 
 	利用点到站点配置，你可以使用软件 VPN 将特定资源连接到 Azure 虚拟网络。
 
-	![点到站点配置示意图](media/hdinsight-extend-hadoop-virtual-network/point-to-site.png)
+	![点到站点配置示意图](./media/hdinsight-extend-hadoop-virtual-network/point-to-site.png)
 
 	使用虚拟网络链接云和数据中心可让类似方案在仅限云的配置上实现。但是，如果不想受限于使用云中的资源，你也可以使用数据中心内的资源。
 
