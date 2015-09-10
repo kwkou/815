@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="hdinsight" 
-	
 	ms.date="07/16/2015" 
 	wacn.date="08/29/2015" /> 
 
