@@ -8,7 +8,6 @@
     editor=""/>
 <tags 
     ms.service="storage" 
-   
     ms.date="07/19/2015" 
     wacn.date="08/29/2015"/>
 
