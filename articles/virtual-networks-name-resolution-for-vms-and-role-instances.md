@@ -124,7 +124,7 @@
 
 - [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710) 
 - [虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100) 
-- [关于在管理门户中配置虚拟网络设置](https://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx) 
+<!--- [关于在管理门户中配置虚拟网络设置](https://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx) -->
 - [使用网络配置文件配置虚拟网络](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-networks-create-vnet-classic-portal/) 
 <!--- [Azure 虚拟网络配置任务](https://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)-->
 
