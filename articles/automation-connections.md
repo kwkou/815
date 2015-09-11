@@ -98,17 +98,17 @@
 
 通过在图形编辑器的“库”窗格中右键单击连接，并选择“添加到画布”，将 **Get-AutomationConnection** 活动添加到图形 Runbook。
 
-![](media/automation-connections/connection-add-canvas.png)
+![](./media/automation-connections/connection-add-canvas.png)
 
 下图显示了在图形 Runbook 中使用连接的示例。该示例与上面显示的从文本 runbook 中使用 Twilio 发送短信的示例为同一个示例。此示例将对使用连接对象向服务进行身份验证的 **Send-TwilioSMS** 活动使用 **UseConnectionObject** 参数集。此处使用了一个[管道链接](automation-graphical-authoring-intro#links-and-workflow)，因为预期的连接参数是单个对象。
 
 将 PowerShell 表达式而不是常量值用作 **To** 参数中的值，是因为此参数要求一个字符串数组值类型，以便您可以将其发送到多个号码。PowerShell 表达式允许您提供单个值或一个数组。
 
-![](media/automation-connections/get-connection-object.png)
+![](./media/automation-connections/get-connection-object.png)
 
 下图显示的示例与上面显示的示例为同一个示例，但使用**SpecifyConnectionFields** 参数集，要求单独指定 AccountSid 和 AuthToken 参数，而不使用连接对象进行身份验证。在这种情况下，指定的是连接的字段，而不是连接本身。
 
-![](media/automation-connections/get-connection-properties.png)
+![](./media/automation-connections/get-connection-properties.png)
 
 
 
