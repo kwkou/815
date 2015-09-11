@@ -217,6 +217,6 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 
 Windows Azure Redis 缓存基于主流开源 Redis 缓存，让你能够访问由世纪互联管理的安全专用 Redis 缓存。我们针对许多编程语言提供各种 [Redis 客户端](http://redis.io/clients)。每个客户端有自身的 API，用于通过 [Redis 命令](http://redis.io/commands)调用 Redis 缓存实例。
 
-由于客户端各不相同，因此 MSDN 上未提供统一的类参考；而是每个客户端都在维护其自身的参考文档。除了参考文档以外，Azure.com 的 [Redis 缓存文档](/documentation/services/redis-cache/)页上提供了许多教程，说明如何使用不同的语言和缓存客户端开始使用 Azure Redis 缓存。
+由于客户端各不相同，因此 MSDN 上未提供统一的类参考；而是每个客户端都在维护其自身的参考文档。除了参考文档以外，windowsazure.cn 的 [Redis 缓存文档](/documentation/services/redis-cache/)页上提供了许多教程，说明如何使用不同的语言和缓存客户端开始使用 Azure Redis 缓存。
 
 <!---HONumber=60-->
