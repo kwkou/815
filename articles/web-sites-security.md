@@ -80,10 +80,10 @@ Azure 通过 **FTPS** 提供对您 Web 应用文件系统的安全 FTP 访问。
 
 若要了解 Web 应用的日志记录（可能在检测攻击时很有用），请参阅[启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)。
 
-<!--## 发生的更改
+## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
 
-* 有关从旧门户更改为新门户的指南，请参阅[预览门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+* 有关从旧门户更改为新门户的指南，请参阅[预览门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
 <!---HONumber=67-->

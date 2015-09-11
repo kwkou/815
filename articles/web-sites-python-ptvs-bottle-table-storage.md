@@ -192,9 +192,9 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-<!--## 发生的更改
+## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 <!--Link references-->

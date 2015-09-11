@@ -195,9 +195,9 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-<!--## 发生的更改
+## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅[门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+* 有关从旧门户更改为新门户的指南，请参阅[门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 <!--Link references-->
