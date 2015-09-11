@@ -17,7 +17,7 @@
 
 本教程演示了如何使用计算、存储和网络 .NET 库中的某些可用客户端来创建和删除 Windows Azure 中的资源。它还演示了如何使用 Azure Active Directory 对发往 Azure 资源管理器的请求进行身份验证。
 
-[AZURE.INCLUDE] [free-trial-note](../includes/free-trial-note.md)
+<!--AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)-->
 
 若要完成本教程，你还需要：
 

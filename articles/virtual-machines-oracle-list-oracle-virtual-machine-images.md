@@ -16,7 +16,7 @@ wacn.date="08/29/2015"/ >
 #Oracle 虚拟机映像列表
 若要基于 Oracle 映像创建虚拟机，请登录到 [Azure 门户](https://manage.windowsazure.cn)，单击“应用商店”，单击“计算”，然后在“搜索”框中键入“Oracle”。选择一个映像，然后按照说明在 Windows Azure 上安装该映像。请注意，[Azure 门户](https://manage.windowsazure.cn)上由 Microsoft 提供的 Oracle 映像在 Windows 上运行，由 Oracle 提供的 Oracle 映像在 Oracle Linux 上运行。
 
-![](media/virtual-machines-oracle-list-oracle-virtual-machine-images/image1.png)
+![](./media/virtual-machines-oracle-list-oracle-virtual-machine-images/image1.png)
 
 ##基于 Windows 的虚拟机映像
 以下是在 Azure 的 Windows Server 上运行的可用 Oracle 虚拟机映像的列表。这些映像是即用即付型，这意味着使用这些映像时包含 Oracle 许可证费用。你也可以生成自己的许可证，以便在 Windows 或 Linux 上运行 Oracle 软件。以下是有关 [Azure 虚拟机和虚拟机库映像的定价和许可](http://www.windowsazure.cn/home/features/virtual-machines/#price)的完整详细信息。单击“Oracle”选项卡获取有关 Oracle 具体定价的详细信息。

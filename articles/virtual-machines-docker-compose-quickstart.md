@@ -24,7 +24,7 @@
 可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Azure VM 并在其上安装 Docker 和 Compose。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](virtual-machines-docker-with-xplat-cli)，了解通过适用于 Mac、Linux 和 Windows 的 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。该文章中的示例在服务管理 (**asm**) 模式下使用 CLI。
 
 
-在 Ubuntu VM 使用 Docker 运行后，使用 SSH 连接到该 VM，然后通过运行两个命令安装 [Compose](https://github.com/docker/compose/blob/882dc673ce84b0b29cd59b6815cb93f74a6c4134/docs/install)：
+在 Ubuntu VM 使用 Docker 运行后，使用 SSH 连接到该 VM，然后通过运行两个命令安装 <!--[-->Compose<!--](https://github.com/docker/compose/blob/882dc673ce84b0b29cd59b6815cb93f74a6c4134/docs/install)-->：
 
 ```
 curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
@@ -114,8 +114,8 @@ azure vm endpoint create <machine-name> 80 8080
 
 ## 后续步骤
 
-* 有关构建和部署多容器应用程序的更多示例，请查阅 [Compose 命令参考](http://docs.docker.com/compose/cli/)和[用户指南](http://docs.docker.com/compose/)。
-* 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-docker-swarm) 群集集成。有关方案，请参阅 [Docker Compose/Swarm 集成](https://github.com/docker/compose/blob/master/SWARM)。
+* 有关构建和部署多容器应用程序的更多示例，请查阅 <!--[-->Compose 命令参考<!--](http://docs.docker.com/compose/cli/)-->和[用户指南](http://docs.docker.com/compose/)。
+* 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-docker-swarm) 群集集成。有关方案，请参阅<!-- [-->Docker Compose/Swarm 集成<!--](https://github.com/docker/compose/blob/master/SWARM)-->。
 * 使用 Azure 资源管理器模板（你自己的或[社区](http://azure.microsoft.com/documentation/templates/)提供的），通过 Docker 部署 Azure VM 和使用 Compose 设置的应用程序。例如，[包含 Docker 和三个容器的 Ubuntu VM 模板](http://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/)可帮助你使用 [DockerHub 注册表](https://registry.hub.docker.com/)中的映像快速部署三个服务。
 
 <!--Image references-->

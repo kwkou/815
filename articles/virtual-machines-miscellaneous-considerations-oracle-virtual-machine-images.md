@@ -26,11 +26,11 @@ Azure 向每个虚拟机分配一个内部 IP 地址。除非 VM 是虚拟网络
 
 请考虑采用以下两种不同的方法来附加多个磁盘，具体取决于你是优先考虑数据库的读取操作性能还是写入操作性能：
 
-- **Oracle ASM 自身**可能会带来更好的写入操作性能，但相比使用 Windows Server 2012 存储池的方法，其读取操作 IOPS 性能更差。下图从逻辑上描绘了这种排列方式。![](media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image2.png)
+- **Oracle ASM 自身**可能会带来更好的写入操作性能，但相比使用 Windows Server 2012 存储池的方法，其读取操作 IOPS 性能更差。下图从逻辑上描绘了这种排列方式。![](./media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image2.png)
 
 - **使用 Windows Server 2012 存储池的 Oracle ASM** 在数据库主要执行读取操作或者你更重视读取操作性能而非写入操作性能的情况下，可能会带来更好的读取操作 IOPS 性能。这种方法需要基于 Windows Server 2012 操作系统的映像。有关存储池的详细信息，请参阅[在独立服务器上部署存储空间](http://technet.microsoft.com/zh-cn/library/jj822938.aspx)。在这种排列方式中，首先在两个存储池卷中将两个同等的附加磁盘子集一起“条带化”为物理磁盘，然后将这两个卷添加到一个 ASM 磁盘组中。下图从逻辑上描绘了这种排列方式。
 
-	![](media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image3.png)
+	![](./media/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images/image3.png)
 
 >[AZURE.IMPORTANT]写入性能和读取性能孰轻孰重，应具体情况具体分析。使用这些方法时的实际结果可能会有所不同。
 

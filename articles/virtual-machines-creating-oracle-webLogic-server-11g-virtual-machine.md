@@ -49,15 +49,15 @@
 
 7. 在**“欢迎使用”**对话框中，选择**“创建一个新的 WebLogic 域”**，然后单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image30.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image30.png)
 
 8. 在**“选择域源”**对话框中，接受默认值，然后单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image31.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image31.png)
 
 9. 在**“选择域名和位置”**对话框中，接受默认值，然后单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image32.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image32.png)
 
 10. 在**“配置管理员用户名和密码”**对话框中：
 
@@ -67,23 +67,23 @@
 
 	3. 单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image33.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image33.png)
 
 11. 在**“配置服务器启动模式和 JDK”**对话框中，选择**“生产模式”**，选择可用的 JDK 或浏览到 JDK（如果需要），然后单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image34.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image34.png)
 
 12.	在**“选择可选配置”**对话框中，不要选择任何选项，然后单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image35.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image35.png)
 
 13.	在**“配置摘要”**对话框中，单击**“创建”**。
 	
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image35.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image35.png)
 
 14.	在**“创建域”**对话框中，选中**“启动管理服务器”**，然后单击**“完成”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image37.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image37.png)
 
 15.	此时将启动 **startWebLogic.cmd** 命令提示符。根据提示提供你的 WebLogic 用户名和密码。
 
@@ -97,7 +97,7 @@
 
 4. 对于**“路径”**，键入 `c:\mywar\shoppingcart.war`。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image38.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-11g-virtual-machine/image38.png)
 
 	单击**“下一步”**。
 

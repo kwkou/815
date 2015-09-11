@@ -47,15 +47,15 @@
 
 7.	在“欢迎”对话框中，选择“创建新的 WebLogic 域”，然后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image10.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image10.png)
 
 8.	在“选择域源”对话框中接受默认值，然后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image11.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image11.png)
 
 9.	在“指定域名和位置”对话框中接受默认值，然后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image12.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image12.png)
 
 10.	在“配置管理员用户名和密码”对话框中：
 
@@ -65,23 +65,23 @@
 
 	3.	单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image13.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image13.png)
 
 11.	在“配置服务器启动模式和 JDK”对话框中，选择“生产模式”，选择可用的 JDK（或根据需要浏览到某个 JDK），然后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image14.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image14.png)
 
 12.	在“选择可选配置”对话框中，请不要选择任何选项，而是直接单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image15.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image15.png)
 
 13.	在“配置摘要”对话框中，单击“创建”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image16.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image16.png)
 
 14.	在“创建域”对话框中，选中“启动管理服务器”，然后单击“完成”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image17.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image17.png)
 
 15.	此时将启动 **startWebLogic.cmd** 命令提示符。根据提示提供你的 WebLogic 用户名和密码。
 
@@ -94,7 +94,7 @@
 
 4.	对于“路径”，请键入 **c:\mywar\shoppingcart.war**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image18.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine/image18.png)
 
 	单击**“下一步”**。
 

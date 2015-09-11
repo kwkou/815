@@ -26,7 +26,7 @@ Redis 群集在子网后面创建，因此没有公共 IP 可访问 Redis 群集
 
 “中等”T 恤大小的 Redis 群集模板可创建此配置：
 
-![cluster-architecture](media/virtual-machines-redis-template/cluster-architecture.png)
+![cluster-architecture](./media/virtual-machines-redis-template/cluster-architecture.png)
 
 在深入了解与 Azure 资源管理器和将用于此部署的模板相关的详细信息之前，请确保你已正确配置 Azure PowerShell 或 Azure CLI。
 
@@ -379,7 +379,7 @@ azure group deployment list TestRG
 
 下图描述了从 GitHub 中为此部署下载的所有文件彼此间的关系：
 
-![redis-files](media/virtual-machines-redis-template/redis-files.png)
+![redis-files](./media/virtual-machines-redis-template/redis-files.png)
 
 本部分将指导你逐步了解 Redis 群集的 azuredeploy.json 模板的结构。
 
@@ -650,7 +650,7 @@ $webclient.DownloadFile($url,$filePath)
 
 熟悉此部署包含的其他文件后，你将能够了解有关如何利用 Azure 资源管理器模板基于任何技术来组织和协调多节点解决方案的复杂部署策略所需的所有详细信息和最佳做法。在此建议一种构造模板文件的方法，请自行决定是否采用，如下图突出显示的部分所示：
 
-![redis-template-structure](media/virtual-machines-redis-template/redis-template-structure.png)
+![redis-template-structure](./media/virtual-machines-redis-template/redis-template-structure.png)
 
 本质上，这种方法会建议：
 
