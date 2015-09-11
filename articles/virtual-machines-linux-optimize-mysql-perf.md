@@ -52,11 +52,11 @@
 	sudo grep SCSI /var/log/dmesg
 
 ####步骤 2：创建具有更多磁盘的 RAID
-<!--
+
 有关详细的 RAID 设置步骤，请参照本文：
 
-[/zh-cn/documentation/articles/virtual-machines-linux-configure-RAID/](/documentation/articles/virtual-machines-linux-configure-RAID)
--->
+<!--[-->/zh-cn/documentation/articles/virtual-machines-linux-configure-RAID/<!--](/documentation/articles/virtual-machines-linux-configure-RAID)-->
+
 >[AZURE.NOTE]如果使用的是 XFS 文件系统，创建 RAID 后请按照下面的步骤操作。
 
 若要在 Debian、Ubuntu 或 Linux Mint 上安装 XFS，请使用以下命令：

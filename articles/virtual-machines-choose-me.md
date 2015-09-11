@@ -7,7 +7,7 @@
 	authors="KBDAzure" 
 	documentationCenter=""
 	manager="timlt"
-	tags=azure-resource-manager, azure-service-management/>
+	tags="azure-resource-manager, azure-service-management"/>
 
 <tags 
 	ms.service="multiple" 

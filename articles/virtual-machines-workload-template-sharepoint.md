@@ -168,7 +168,7 @@
 
 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 <!--
-[Azure 资源管理器概述](/documentation/articles/resource-group-overview)
+[-->Azure 资源管理器概述<!--](/documentation/articles/resource-group-overview)
 -->
 [使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
