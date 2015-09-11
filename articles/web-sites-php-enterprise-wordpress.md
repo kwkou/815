@@ -22,7 +22,7 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 * **MySQL 数据库** - 可通过 [Azure 应用商店中的 ClearDB][cdbnstore] 获得，或者也可以在使用 [Windows][mysqlwindows] 或 [Linux][mysqllinux] 的 Azure 虚拟机上管理自己的 MySQL 安装。
 
-    > [AZURE.NOTE]ClearDB 提供了几种 MySQL 配置，每种配置具有不同的性能特点。请参见 [Azure 应用商店][cdbnstore]，了解通过 Azure 应用商店提供的产品或由 ClearDB 直接提供的产品的 [ClearDB 定价](http://www.cleardb.com/pricing.view)。
+    <!--AZURE.NOTE ClearDB 提供了几种 MySQL 配置，每种配置具有不同的性能特点。请参见 [Azure 应用商店][cdbnstore]，了解通过 Azure 应用商店提供的产品或由 ClearDB 直接提供的产品的 [ClearDB 定价](http://www.cleardb.com/pricing.view)。-->
 
 * **PHP 5.2.4 或更高版本** - Azure App Service 目前提供 [PHP 5.3、5.4 和 5.5 版本][phpwebsite]。
 
@@ -228,11 +228,9 @@ Azure App Service 为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 * [在 Azure 上支持 WordPress 的技巧](http://www.johnpapa.net/azurecleardbmysql/)
 
-<!--[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
-
 ## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从门户更改为预览门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+* 有关从门户更改为预览门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png

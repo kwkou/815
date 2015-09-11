@@ -44,8 +44,6 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-<!-->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。-->
-
 ## 创建项目
 
 在此部分中，我们将使用样本模板创建 Visual Studio 项目。我们将创建虚拟环境并安装所需软件包。然后，我们将使用默认内存中存储库在本地运行应用程序。
@@ -194,9 +192,9 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-<!--## 发生的更改
+## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 <!--Link references-->
