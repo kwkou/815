@@ -9,13 +9,13 @@
 	authors="sidneyh"/>
 
 <tags
-	ms.service="sql-database" ms.date="06/23/2015" wacn.date="" />
+	ms.service="sql-database" ms.date="06/23/2015" wacn.date="08/14/2015" />
 
 # 弹性数据库查询入门
 
-Azure SQL Database 弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](sql-database-elastic-query-overview)。
+Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。有关弹性数据库查询功能的详细信息，请参阅[功能概述页](sql-database-elastic-query-overview)。
 
-本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例做了延伸。完成时，你将会：了解如何配置和使用 Azure SQL Database 执行跨多个相关数据库的查询。
+本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started)中的示例做了延伸。完成时，你将会：了解如何配置和使用 Azure SQL 数据库执行跨多个相关数据库的查询。
 ## 先决条件
 
 下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started)。
@@ -126,7 +126,7 @@ Azure SQL Database 弹性数据库查询（预览版）可让你使用单一连�
 ### 成本
 使用弹性数据库查询功能不会产生额外的费用。但是，目前此功能只能在用作终结点的高级数据库上使用，但分片可以是任何服务层。
 
-有关价格信息，请参阅 [SQL Database 定价详细信息](http://www.windowsazure.cn/home/features/sql-database/#price)。
+有关价格信息，请参阅 [SQL 数据库定价详细信息](http://www.windowsazure.cn/home/features/sql-database/#price)。
 
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]

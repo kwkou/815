@@ -1,23 +1,23 @@
 <properties 
-   pageTitle="Azure SQL Database 资源限制"
-   description="本页介绍 Azure SQL Database 的一些常见资源限制。"
+   pageTitle="Azure SQL 数据库资源限制"
+   description="本页介绍 Azure SQL 数据库的一些常见资源限制。"
    services="sql-database"
    documentationCenter="na"
    authors="rothja"
    manager="jeffreyg"
    editor="monicar" />
 <tags 
-   ms.service="sql-database" ms.date="07/13/2015" wacn.date="" />
+   ms.service="sql-database" ms.date="07/13/2015" wacn.date="08/14/2015" />
 
-# Azure SQL Database 资源限制
+# Azure SQL 数据库资源限制
 
-Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多资源）的使用进行监视。这样 Azure SQL Databse 便可将数据库限定在既定的资源边界之内。此资源边界或阈值称为资源限制。当客户端使用的资源超过这些限制时，Azure SQL Database 将在租户或在物理节点级别，通过管理资源使用率来进行响应，而这会导致连接断开或请求被拒绝。
+Azure SQL 数据库会对共享资源（例如事务日志、I/O 和其他许多资源）的使用进行监视。这样 Azure SQL Databse 便可将数据库限定在既定的资源边界之内。此资源边界或阈值称为资源限制。当客户端使用的资源超过这些限制时，Azure SQL 数据库将在租户或在物理节点级别，通过管理资源使用率来进行响应，而这会导致连接断开或请求被拒绝。
 
-> [AZURE.NOTE]当资源限制妨碍了查询分析数据库性能问题时，你可能需要使用专用的管理员连接 (DAC)（从 Azure SQL Database V12 开始提供的功能）。有关使用 DAC 的详细信息，请参阅[为数据库管理员提供的诊断连接](https://msdn.microsoft.com/zh-cn/library/ms189595.aspx)。
+> [AZURE.NOTE]当资源限制妨碍了查询分析数据库性能问题时，你可能需要使用专用的管理员连接 (DAC)（从 Azure SQL 数据库V12 开始提供的功能）。有关使用 DAC 的详细信息，请参阅[为数据库管理员提供的诊断连接](https://msdn.microsoft.com/zh-cn/library/ms189595.aspx)。
 
 ## 资源限制摘要表
 
-下表汇总了每种资源的限制，当超过这些限制时，Azure SQL Database 会拒绝对受影响资源的请求或终止与受影响资源的连接，然后返回一个错误代码。在某些情况下，服务层（基本、标准、高级）和性能级别决定了确切的限制。对于这些情况，请参阅 [Azure SQL Database 服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)。
+下表汇总了每种资源的限制，当超过这些限制时，Azure SQL 数据库会拒绝对受影响资源的请求或终止与受影响资源的连接，然后返回一个错误代码。在某些情况下，服务层（基本、标准、高级）和性能级别决定了确切的限制。对于这些情况，请参阅 [Azure SQL 数据库服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)。
 
 [AZURE.INCLUDE [azure-sql-database-limits](../includes/azure-sql-database-limits.md)]
 
@@ -55,7 +55,7 @@ Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多
 
 | &nbsp; | 更多信息 |
 | :--- | :--- |
-| **条件** | SQL Database 会调控可与数据库建立的并发登录数限制。达到数据库的并发登录限制后，将拒绝对数据库的新登录请求，并返回错误代码 10928。 |
+| **条件** | SQL 数据库会调控可与数据库建立的并发登录数限制。达到数据库的并发登录限制后，将拒绝对数据库的新登录请求，并返回错误代码 10928。 |
 | **错误代码** | **10928**: 资源 ID: 3。数据库的 %s 限制是 %d 且已达到该限制。如需协助，请参阅 https://msdn.microsoft.com/zh-cn/library/dn338081.aspx。 |
 | **限制** | 取决于[服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)。 |
 | **建议** | 检查 dm_exec_connections，查看哪些用户连接当前处于活动状态。<br><br>后退并在 10 秒后重试登录。 |
@@ -76,7 +76,7 @@ Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多
 
 | &nbsp; | 更多信息 |
 | :--- | :--- |
-| **条件** | SQL Database 会调控与数据库建立的并发会话数目限制。当达到数据库的并发会话数限制时，新的数据库连接将被拒绝，且用户将收到错误代码 10928。但是，现有的数据库会话不会终止。 |
+| **条件** | SQL 数据库会调控与数据库建立的并发会话数目限制。当达到数据库的并发会话数限制时，新的数据库连接将被拒绝，且用户将收到错误代码 10928。但是，现有的数据库会话不会终止。 |
 | **错误代码** | **10928**: 资源 ID: 2。数据库的 %s 限制是 %d 且已达到该限制。如需协助，请参阅 https://msdn.microsoft.com/zh-cn/library/dn338081.aspx。 |
 | **限制** | 取决于[服务层和性能级别](https://msdn.microsoft.com/library/zh-cn/azure/dn741336.aspx)。 |
 | **建议** | 检查 dm_exec_requests，查看当前正在执行哪些用户请求。 |
@@ -101,7 +101,7 @@ Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多
 | **错误代码** | **40549**: 由于你有长时间运行的事务，已终止会话。请尝试缩短事务运行时间。 |
 | **限制** | **状态 1：**24 小时<br><br>**状态 2：**20 秒，如果事务锁定基础系统任务所需的资源 |
 | **被拒请求的类型** | 任何运行超过 24 小时的事务或任何采用锁的 DDL 或 DML 语句（导致阻止系统任务）。 |
-| **建议** | 对 SQL Database 执行的操作不应阻止用户输入或有会产生长期运行事务的其他依赖项。 |
+| **建议** | 对 SQL 数据库执行的操作不应阻止用户输入或有会产生长期运行事务的其他依赖项。 |
 
 ## 事务锁计数
 
@@ -117,7 +117,7 @@ Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多
 
 | &nbsp; | 更多信息 |
 | :--- | :--- |
-| **条件** | 你的请求可能由于以下两种情况中的任意一种而遭到拒绝：<br><br>**状态 1：**SQL Database 支持最多生成 2 GB 日志的事务。日志大小超过此限制的事务会被截断。可能占用此卷中日志空间的操作示例：插入、更新、删除、合并和创建索引。<br><br>**状态 2：**未提交的事务可能会阻止日志文件的截断。为防止这种情况发生，从最旧的活动事务日志序列号 (LSN) 到日志末尾（当前 LSN）的距离，不能超过日志文件大小的 20%。如果违反这一规定，违反这一规定的事务将被截断并回滚，以便可以截断日志。 |
+| **条件** | 你的请求可能由于以下两种情况中的任意一种而遭到拒绝：<br><br>**状态 1：**SQL 数据库支持最多生成 2 GB 日志的事务。日志大小超过此限制的事务会被截断。可能占用此卷中日志空间的操作示例：插入、更新、删除、合并和创建索引。<br><br>**状态 2：**未提交的事务可能会阻止日志文件的截断。为防止这种情况发生，从最旧的活动事务日志序列号 (LSN) 到日志末尾（当前 LSN）的距离，不能超过日志文件大小的 20%。如果违反这一规定，违反这一规定的事务将被截断并回滚，以便可以截断日志。 |
 | **错误代码** | **40552**: 由于过度使用事务日志空间，已终止该会话。请尝试在单个事务中修改更少的行。 |
 | **限制** | **状态 1：**每个事务 2 GB<br><br>**状态 2：**总日志空间的 20% |
 | **被拒请求的类型** | 任何 DDL 或 DML 语句。 |
@@ -127,7 +127,7 @@ Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多
 
 | &nbsp; | 更多信息 |
 | :--- | :--- |
-| **条件** | SQL Database 会调控对数据库实施的工作线程（并发请求）数限制。并发请求数超过限制的任何数据库都将收到错误 10928，对此数据库的进一步请求可能会遭到拒绝。 |
+| **条件** | SQL 数据库会调控对数据库实施的工作线程（并发请求）数限制。并发请求数超过限制的任何数据库都将收到错误 10928，对此数据库的进一步请求可能会遭到拒绝。 |
 | **错误代码** | **10928**: 资源 ID: 1。数据库的 %s 限制是 %d 且已达到该限制。如需协助，请参阅 https://msdn.microsoft.com/zh-cn/library/dn338081.aspx。<br><br>**10929**: 资源 ID: 1。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。如需协助，请参阅 https://msdn.microsoft.com/zh-cn/library/dn338081.aspx。否则，请稍后再试。 |
 | **限制** | 对于高级、基本和标准服务层，将取决于[性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)。对于早期的 Web/企业版数据库，最大并发请求限制为 180 并可能会更少，具体取决于系统活动。 |
 | **建议** | 检查 dm_exec_requests，查看当前正在执行哪些用户请求。<br><br>后退并在 10 秒后重试请求。 |
@@ -140,10 +140,10 @@ Azure SQL Database 会对共享资源（例如事务日志、I/O 和其他许多
 
 ## 另请参阅
 
-[Azure SQL Database 资源管理](https://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx)
+[Azure SQL 数据库资源管理](https://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx)
 
 [错误消息 (Azure SQL Database)](https://msdn.microsoft.com/zh-cn/library/azure/ff394106.aspx)
 
-[防止拒绝请求或终止连接的 Azure SQL Database 最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/dn338082.aspx)
+[防止拒绝请求或终止连接的 Azure SQL 数据库最佳实践](https://msdn.microsoft.com/zh-cn/library/azure/dn338082.aspx)
 
 <!---HONumber=66-->

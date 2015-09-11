@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-   ms.service="backup" ms.date="03/26/2015" wacn.date=""/>
+   ms.service="backup" ms.date="03/26/2015" wacn.date="08/14/2015"/>
 
 # Azure 备份 - 常见问题
 下面是与 Azure 备份有关的常见问题的列表。如果你有与 Azure 备份有关的任何其他问题，请转到[论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)并发布你的问题。来自我们社区的人员将帮助你回答问题。如果某个问题是常见问题，我们会将该问题添加到本文中，以便可以轻松快捷地找到该问题。

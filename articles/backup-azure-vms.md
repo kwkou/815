@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags
-	ms.service="backup" ms.date="07/06/2015" wacn.date=""/>
+	ms.service="backup" ms.date="07/06/2015" wacn.date="08/14/2015"/>
 
 
 # 备份 Azure 虚拟机
