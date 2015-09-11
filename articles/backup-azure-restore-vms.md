@@ -9,7 +9,7 @@
 	editor=""/>
 
 <tags
-	ms.service="backup" ms.date="07/17/2015" wacn.date=""/>
+	ms.service="backup" ms.date="07/17/2015" wacn.date="08/14/2015"/>
 
 # 还原虚拟机
 你可以使用还原操作，通过存储在 Azure 备份保管库中的备份将虚拟机还原到新的 VM。

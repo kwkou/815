@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Excel 连接到 Azure SQL Database"
-	description="用于连接到 Azure SQL Database 以生成报告和探索数据的 Excel 电子表格。"
+	pageTitle="使用 Excel 连接到 Azure SQL 数据库"
+	description="用于连接到 Azure SQL 数据库以生成报告和探索数据的 Excel 电子表格。"
 	services="sql-database"
 	documentationCenter=""
 	authors="joseidz"
@@ -9,26 +9,26 @@
 
 
 <tags
-	ms.service="sql-database" ms.date="07/09/2015" wacn.date=""/>
+	ms.service="sql-database" ms.date="07/09/2015" wacn.date="08/14/2015"/>
 
 
-# 使用 Excel 连接到 Azure SQL Database
-将 Excel 连接到 Azure SQL Database，并基于数据库中的数据创建报告。
+# 使用 Excel 连接到 Azure SQL 数据库
+将 Excel 连接到 Azure SQL 数据库，并基于数据库中的数据创建报告。
 
 ## 先决条件
-- 已设置并运行 Azure SQL Database。若要创建新的 SQL Database，请参阅 [Microsoft Azure SQL Database 入门](/documentation/articles/sql-database-get-started)。
+- 已设置并运行 Azure SQL 数据库。若要创建新的 SQL 数据库，请参阅 [Windows Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)。
 - [Microsoft Excel 2013](https://products.office.com/zh-cn/)（或 Microsoft Excel 2010）
 
-## 连接到 SQL Database 并创建报告
+## 连接到 SQL 数据库并创建报告
 1.	打开 Excel。
 2.	在页面顶部的菜单栏中，单击“数据”。
 3.	单击“从其他源”，然后单击“从 SQL Server”。“数据连接向导”即会打开。
 
 	![数据连接向导][1]
-4.	在“服务器名称”框中，键入 Azure SQL Database 服务器名称。示例：
+4.	在“服务器名称”框中，键入 Azure SQL 数据库服务器名称。示例：
 
 	 	adventureserver.database.chinacloudapi.cn
-5.	在“登录凭据”部分中，选择“使用以下用户名和密码”，然后键入 SQL Database 服务器的正确凭据。然后单击“下一步”。
+5.	在“登录凭据”部分中，选择“使用以下用户名和密码”，然后键入 SQL 数据库服务器的正确凭据。然后单击“下一步”。
 
 	
 

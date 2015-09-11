@@ -1,7 +1,7 @@
 
 <properties 
-	pageTitle="使用 C# 连接和查询 SQL Database" 
-	description="使用 ADO.NET 连接到 Azure SQL Database 云服务上的 AdventureWorks 数据库并与其交互的 C# 客户端代码示例。"
+	pageTitle="使用 C# 连接和查询 SQL 数据库" 
+	description="使用 ADO.NET 连接到 Azure SQL 数据库云服务上的 AdventureWorks 数据库并与其交互的 C# 客户端代码示例。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="ckarst" 
@@ -10,10 +10,10 @@
 
 
 <tags 
-	wacn.date="" ms.service="sql-database" ms.date="04/14/2015" />
+	wacn.date="08/14/2015" ms.service="sql-database" ms.date="04/14/2015" />
 
 
-# 使用 C&#x23; 连接和查询 SQL Database
+# 使用 C&#x23; 连接和查询 SQL 数据库
 
 本主题提供一个 C# 代码示例，演示如何使用 ADO.NET 连接到现有的 AdventureWorks SQL 数据库。该示例将编译成一个用于查询数据库并显示结果的控制台应用程序。
 
@@ -21,7 +21,7 @@
 ## 先决条件
 
 
-- Azure SQL Database 上的现有 AdventureWorks 数据库。[在数分钟内即可创建一个](/documentation/articles/sql-database-get-started)。
+- Azure SQL 数据库上的现有 AdventureWorks 数据库。[在数分钟内即可创建一个](/documentation/articles/sql-database-get-started)。
 - [装有 .NET Framework 的 Visual Studio](https://www.visualstudio.com/zh-CN/visual-studio-homepage-vs.aspx)
 
 
@@ -109,7 +109,7 @@
 
 
 1. 打开 [Azure 门户](https://manage.windowsazure.cn)。
-2. 单击“浏览”>“SQL Database”>“Adventure Works”数据库 >“属性”>“显示数据库连接字符串”。
+2. 单击“浏览”>“SQL 数据库”>“Adventure Works”数据库 >“属性”>“显示数据库连接字符串”。
 
 
 ![门户](.\media\sql-database-connect-query\ConnectandQuery_portal.png)

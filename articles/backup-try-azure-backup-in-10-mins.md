@@ -8,7 +8,7 @@
    editor=""/>
 
 <tags
-   ms.service="backup" ms.date="03/26/2015" wacn.date=""/>
+   ms.service="backup" ms.date="03/26/2015" wacn.date="08/14/2015"/>
 
 # Azure 备份 10 分钟入门
 Azure 备份的设置极其简单，以下操作方法视频将会帮助你入门。

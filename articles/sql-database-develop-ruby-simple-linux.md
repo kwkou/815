@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Ubuntu 上使用 Ruby 和 TinyTDS 连接到 SQL Database" 
-	description="提供可在 Ubuntu Linux 上以客户端形式运行的，用于连接到 Azure SQL Database 的 Ruby 代码示例。"
+	description="提供可在 Ubuntu Linux 上以客户端形式运行的，用于连接到 Azure SQL 数据库的 Ruby 代码示例。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="ajlam" 
@@ -9,14 +9,14 @@
 
 
 <tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date=""/>
+	ms.service="sql-database" ms.date="07/20/2015" wacn.date="08/14/2015"/>
 
 
 # 在 Ubuntu Linux 上使用 Ruby 连接到 SQL Database
 
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
-本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL Database 数据库的 Ruby 代码示例。
+本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库数据库的 Ruby 代码示例。
 
 ## 安装所需的模块
 
@@ -64,7 +64,7 @@ Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 Adve
 
 ## 执行 SELECT 语句并检索结果集
 
-[TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) 函数用于检索针对 SQL Database 执行的查询所返回的结果集。此函数接受查询并返回结果集。可以使用 [result.each do |row|](https://github.com/rails-sqlserver/tiny_tds) 循环访问结果集。
+[TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) 函数用于检索针对 SQL 数据库执行的查询所返回的结果集。此函数接受查询并返回结果集。可以使用 [result.each do |row|](https://github.com/rails-sqlserver/tiny_tds) 循环访问结果集。
 
     require 'tiny_tds'  
     print 'test'     
@@ -84,7 +84,7 @@ Ruby 示例依赖于 AdventureWorks 示例数据库。如果你尚未创建 Adve
 - 插入行。
 - 检索为主键生成的值。
 
-在 SQL Database 中，可以使用 [IDENTITY](http://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](http://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](http://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
+在 SQL 数据库中，可以使用 [IDENTITY](http://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](http://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](http://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 若要配合使用 TinyTDS 和 Azure，建议你运行多个 `SET` 语句来更改当前会话处理特定信息的方式。建议使用代码示例中所提供的 `SET` 语句。例如，即使未显式指定列的可为 null 状态，`SET ANSI_NULL_DFLT_ON` 也可以让你创建新列来允许 null 值。
 

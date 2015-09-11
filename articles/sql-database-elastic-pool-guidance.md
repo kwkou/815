@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="弹性数据库池的价格和性能注意事项 | Azure SQL Database 弹性数据库池" 
+	pageTitle="弹性数据库池的价格和性能注意事项 | Azure SQL 数据库弹性数据库池" 
 	description="弹性数据库池是由一组弹性数据库共享的可用资源的集合。本文提供相关的指导来帮助你评估是否适合对一组数据库使用弹性数据库池。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -8,7 +8,7 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" ms.date="06/24/2015" wacn.date=" "/>
+	ms.service="sql-database" ms.date="06/24/2015" wacn.date="08/14/2015"/>
 
 
 # 弹性数据库池的价格和性能注意事项
@@ -16,17 +16,17 @@
 
 本文档提供相关的指导来帮助你根据数据库使用模式以及弹性池与单一数据库之间的价格差异，评估对一组数据库使用弹性数据库池是否能够产生成本效益。此外，还提供了其他指导来帮助你确定一组现有 SQL 数据库所需的当前池大小。
 
-- 有关弹性数据库池的概述，请参阅 [SQL Database 弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
-- 有关弹性数据库池的详细信息，请参阅 [SQL Database 弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
+- 有关弹性数据库池的概述，请参阅 [SQL 数据库弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+- 有关弹性数据库池的详细信息，请参阅 [SQL 数据库弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
 
 
-> [AZURE.NOTE]弹性池目前为预览版，仅适用于 SQL Database V12 Servers。
+> [AZURE.NOTE]弹性池目前为预览版，仅适用于 SQL 数据库V12 Servers。
 
 ## 弹性数据库池
 
 SaaS ISV 开发构建在由多个数据库组成的大规模数据层上的应用程序。常见的应用程序模式是每个数据库有不同的客户，但有独特的且无法预期的使用模式。因此让 ISV 难以个别预测每个数据库的资源要求。在这些情况下，ISV 可能以可观的费用过度设置资源，以确保所有数据库能有最佳吞吐量和响应时间。或者，ISV 可能用较少的费用，让客户承担体验性能不佳的风险。
 
-Azure SQL Database 中的弹性数据库池可让 SaaS ISV 将一组数据库的价格性能优化在规定的预算内，同时为每个数据库提供性能弹性。弹性池可让 ISV 为由多个数据库共享的弹性池购买数据库吞吐量单位 (DTU)，以适应单一数据库使用时段不可预测的情况。弹性池的 DTU 要求取决于其数据库的聚合使用量。弹性池可用的 DTU 数量由 ISV 预算控制。弹性池可让 ISV 轻松为其池推断预算对性能的影响，反之亦然。ISV 只要将数据库加入到弹性池、设置数据库需要任何 DTU 保证或容量，并根据其预算设置池的 DTU。通过使用弹性池，ISV 可以顺畅地扩大其服务，以渐增的规模从精简的新创公司到成熟的企业。
+Azure SQL 数据库中的弹性数据库池可让 SaaS ISV 将一组数据库的价格性能优化在规定的预算内，同时为每个数据库提供性能弹性。弹性池可让 ISV 为由多个数据库共享的弹性池购买数据库吞吐量单位 (DTU)，以适应单一数据库使用时段不可预测的情况。弹性池的 DTU 要求取决于其数据库的聚合使用量。弹性池可用的 DTU 数量由 ISV 预算控制。弹性池可让 ISV 轻松为其池推断预算对性能的影响，反之亦然。ISV 只要将数据库加入到弹性池、设置数据库需要任何 DTU 保证或容量，并根据其预算设置池的 DTU。通过使用弹性池，ISV 可以顺畅地扩大其服务，以渐增的规模从精简的新创公司到成熟的企业。
   
 
 
@@ -115,7 +115,7 @@ Azure SQL Database 中的弹性数据库池可让 SaaS ISV 将一组数据库的
 
     池价格 = (*池 DTU* * *池 DTU 单价*) + (*数据库数目总计* * *池数据库单价*)
 
-    有关价格信息，请参阅 [SQL Database 定价](http://www.windowsazure.cn/home/features/sql-database/#price)。
+    有关价格信息，请参阅 [SQL 数据库定价](http://www.windowsazure.cn/home/features/sql-database/#price)。
 
 
 4. 将步骤 3 的池价格与单一数据库适当性能级别的价格相比较。
@@ -135,7 +135,7 @@ Azure SQL Database 中的弹性数据库池可让 SaaS ISV 将一组数据库的
 
 STA 和 DMV 为调整弹性池大小提供了不同的工具选项和功能。无论使用何种工具选项，大小估算值应该仅用于弹性池的初步评估与创建。创建弹性池后，应该准确地监视其资源使用情况，并根据需要调高和调低池的性能设置。
 
-**STA**<br>STA 是 Azure 门户中的内置工具，它可以自动评估现有 SQL Database 服务器中数据库的历史资源使用率，并推荐适当的弹性池配置。
+**STA**<br>STA 是 Azure 门户中的内置工具，它可以自动评估现有 SQL 数据库服务器中数据库的历史资源使用率，并推荐适当的弹性池配置。
 
 **DMV 大小调整工具**<br>DMV 大小调整工具以 PowerShell 脚本的形式提供，可让你自定义服务器中现有数据库弹性池的大小估算值。
 
@@ -165,7 +165,7 @@ STA 评估数据库的使用率历史记录，并在比使用单一数据库的�
 
 ## 用于估算数据库聚合 DTU 使用率的 PowerShell 脚本
 
-这里提供了一个示例 PowerShell 脚本，用于估算 SQL Database 服务器中用户数据库的聚合 DTU 值。
+这里提供了一个示例 PowerShell 脚本，用于估算 SQL 数据库服务器中用户数据库的聚合 DTU 值。
 
 该脚本只在运行时收集数据。对于典型的生产工作负荷，应该至少运行该脚本一天，但运行一周甚至更长时间可以提供更准确的估算值。针对代表数据库典型工作负荷的持续时间运行该脚本。
 

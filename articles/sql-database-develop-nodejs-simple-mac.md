@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL Database" 
-	description="演示了一个可以用来连接到 Azure SQL Database 的 Node.js 代码示例。该示例使用 Tedious 驱动程序进行连接。"
+	pageTitle="在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL 数据库" 
+	description="演示了一个可以用来连接到 Azure SQL 数据库的 Node.js 代码示例。该示例使用 Tedious 驱动程序进行连接。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="meet-bhagdev" 
@@ -9,16 +9,16 @@
 
 
 <tags 
-	ms.service="sql-database" ms.date="07/20/2015" wacn.date=""/>
+	ms.service="sql-database" ms.date="07/20/2015" wacn.date="08/14/2015"/>
 
 
-# 在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL Database
+# 在 Mac OS X 上配合 Tedious 使用 Node.js 连接到 SQL 数据库
 
 
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-本主题提供可在 Mac OS X 上运行的 Node.js 代码示例。该示例使用 Tedious 驱动程序连接到 Azure SQL Database。
+本主题提供可在 Mac OS X 上运行的 Node.js 代码示例。该示例使用 Tedious 驱动程序连接到 Azure SQL 数据库。
 
 
 ## 所需软件项
@@ -45,12 +45,12 @@
 ### 创建 AdventureWorks 数据库
 
 
-本主题中的代码示例需要使用 **AdventureWorks** 测试数据库。如果还没有此数据库，请参阅 [SQL Database 入门](/documentation/articles/sql-database-get-started)。请务必遵循该指南来创建 **AdventureWorks 数据库模板**。以下所示的示例仅适用于 **AdventureWorks 架构**。
+本主题中的代码示例需要使用 **AdventureWorks** 测试数据库。如果还没有此数据库，请参阅 [SQL 数据库入门](/documentation/articles/sql-database-get-started)。请务必遵循该指南来创建 **AdventureWorks 数据库模板**。以下所示的示例仅适用于 **AdventureWorks 架构**。
 
 
-## 连接到 SQL Database
+## 连接到 SQL 数据库
 
-[new Connection](http://pekim.github.io/tedious/api-connection.html) 函数用于连接到 SQL Database。
+[new Connection](http://pekim.github.io/tedious/api-connection.html) 函数用于连接到 SQL 数据库。
 
 	var Connection = require('tedious').Connection;
 	var config = {
@@ -119,7 +119,7 @@
 ## 插入一行，应用参数，然后检索生成的主键
 
 
-在 SQL Database 中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。在本示例中，你将了解如何执行 insert 语句，安全传递用于防止 SQL 注入的参数，然后检索自动生成的主键值。
+在 SQL 数据库中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。在本示例中，你将了解如何执行 insert 语句，安全传递用于防止 SQL 注入的参数，然后检索自动生成的主键值。
 
 
 本部分中的代码示例将向 SQL INSERT 语句应用参数。程序将检索生成的主键值。
