@@ -68,20 +68,20 @@
 
 	1.	**步骤 1：**单击“创建数据库”，然后单击“下一步”。
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image5.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image5.png)
 
 	2. **步骤 2：**输入“全局数据库名称”的值。输入并确认“管理密码”的值；此密码将用于 Oracle 数据库 **SYSTEM** 用户。取消选中“创建为容器数据库”。单击**“下一步”**。
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image6.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image6.png)
 
 	3. **步骤 3：**此时将自动进行“必备组件”检查，然后转到**步骤 4**。
 	
 	4. **步骤 4：**查看“创建数据库 - 摘要”选项，然后单击“完成”。
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image7.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image7.png)
 	5. **步骤 5：**“进度页”将报告数据库创建状态。
 
-		![](media/virtual-machines-creating-oracle-database-virtual-machine/image8.png)
+		![](./media/virtual-machines-creating-oracle-database-virtual-machine/image8.png)
 	6. 创建数据库后，你可以选择使用“密码管理”对话框。根据需要修改密码设置，然后关闭对话框以退出“数据库配置助手”向导。
 
 ##确认已安装数据库
@@ -96,7 +96,7 @@
 
 	结果应是你创建的数据库的全局名称。
 
-	![](media/virtual-machines-creating-oracle-database-virtual-machine/image9.png)
+	![](./media/virtual-machines-creating-oracle-database-virtual-machine/image9.png)
 
 ##允许远程访问数据库
 若要允许远程访问你的数据库（例如，从运行 Java 代码的客户端计算机），你需要启动数据库侦听器，在虚拟机防火墙中打开端口 1521，并为端口 1521 创建一个公共终结点。

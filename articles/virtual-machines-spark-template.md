@@ -28,7 +28,7 @@ Apache Spark 是一种适用于大规模数据处理的快速引擎。Spark 具�
 
 根据此模板新部署的群集采用下图中所述的拓扑，不过，你可以通过自定义本文中所述的模板，轻松实现其他拓扑：
 
-![cluster-architecture](media/virtual-machines-spark-template/cluster-architecture.png)
+![cluster-architecture](./media/virtual-machines-spark-template/cluster-architecture.png)
 
 如上面的图像所示，部署拓扑由以下元素组成：
 
@@ -380,7 +380,7 @@ Parameters        :
 - 在“资源组”边栏选项卡的“监视”部分中单击“事件”条形图，可以查看部署的事件。
 - 单击各个事件，可以进一步深化到系统代表模板执行的各项操作的详细信息中。
 
-![portal-events](media/virtual-machines-spark-template/portal-events.png)
+![portal-events](./media/virtual-machines-spark-template/portal-events.png)
 
 测试之后，如果需要删除此资源组及其所有资源（存储帐户、虚拟机和虚拟网络），请使用这一命令：
 
@@ -408,7 +408,7 @@ Remove-AzureResourceGroup -Name "<resource group name>" -Force
 
 下图描述了从 GitHub 中为此部署下载的所有文件彼此间的关系：
 
-![spark-files](media/virtual-machines-spark-template/spark-files.png)
+![spark-files](./media/virtual-machines-spark-template/spark-files.png)
 
 本部分将指导你逐步了解 Spark 群集的 azuredeploy.json 文件结构。
 
@@ -819,7 +819,7 @@ azuredeploy.json 的“parameters”节指定此模板中使用的可修改参�
 
 熟悉此部署包含的其他文件后，你将能够通过利用 Azure 资源管理器模板，基于任何技术了解组织和协调多节点解决方案的复杂部署策略所需的所有详细信息和最佳做法。在此建议一种构造模板文件的方法，请自行决定是否采用，如下图突出显示的部分所示：
 
-![spark-template-structure](media/virtual-machines-spark-template/spark-template-structure.png)
+![spark-template-structure](./media/virtual-machines-spark-template/spark-template-structure.png)
 
 本质上，这种方法会建议：
 
@@ -833,10 +833,9 @@ azuredeploy.json 的“parameters”节指定此模板中使用的可修改参�
 
 ## 后续步骤
 
-了解关于<!--[-->部署模板<!--](/documentation/articles/resource-group-template-deploy)的更多详细信息。
--->
-了解关于<!--[-->应用程序框架<!--](/documentation/articles/virtual-machines-app-frameworks)的更多信息。-->
+了解关于<!--[-->部署模板<!--](/documentation/articles/resource-group-template-deploy)-->的更多详细信息。
 
-<!--[-->对模板部署进行故障排除<!--](/documentation/articles/resource-group-deploy-debug)。
--->
+了解关于<!--[-->应用程序框架<!--](/documentation/articles/virtual-machines-app-frameworks)-->的更多信息。
+
+<!--[-->对模板部署进行故障排除<!--](/documentation/articles/resource-group-deploy-debug)-->。
 <!---HONumber=67-->

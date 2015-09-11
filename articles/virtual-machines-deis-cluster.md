@@ -18,7 +18,7 @@
 
 下图显示了部署的系统的体系结构。系统管理员可以使用 Deis 工具（如 **deis** 和 **deisctl**）来管理群集。连接是通过会将连接转发到群集上某个成员节点的 Azure 负载平衡器建立的。客户端也通过负载平衡器访问部署的应用程序。在此情况下，负载平衡器会将流量转发到 Deis 路由器网络，从者进一步将流量路由到托管在群集上的对应 Docker 容器。
 
-  ![部署的 Desis 群集的体系结构示意图](media/virtual-machines-deis-cluster/architecture-overview.png)
+  ![部署的 Desis 群集的体系结构示意图](./media/virtual-machines-deis-cluster/architecture-overview.png)
 
 若要完成以下步骤，你需要：
 
@@ -84,7 +84,7 @@
 
 11. 设置资源组后，可以在 Azure 门户上看到组中的所有资源。如以下屏幕截图所示，资源组中有一个包含三个 VM 的虚拟网络，这些 VM 已加入同一个可用性集。该组还包含具有关联公共 IP 的负载平衡器。
 
-  ![Azure 门户上显示的已设置资源组](media/virtual-machines-deis-cluster/resource-group.png)
+  ![Azure 门户上显示的已设置资源组](./media/virtual-machines-deis-cluster/resource-group.png)
 
 ## 安装客户端
 
@@ -107,7 +107,7 @@
 
 模板定义了将 2223 映射到实例 1、将 2224 映射到实例 2、将 2225 映射到实例 3 的入站 NAT 规则。这提供了使用 deisctl 工具时的冗余。可以在 Azure 门户中检查这些规则：
 
-![负载平衡器上的 NAT 规则](media/virtual-machines-deis-cluster/nat-rules.png)
+![负载平衡器上的 NAT 规则](./media/virtual-machines-deis-cluster/nat-rules.png)
 
 > [AZURE.NOTE]模板目前仅支持三节点群集。这是因为 Azure 资源管理器模板 NAT 规则定义存在限制，它不支持循环语法。
 
@@ -162,7 +162,7 @@
 
 1. 为了使路由网络正确工作，指向负载平衡器公共 IP 的域需要有通配符 A 记录。以下屏幕截图显示了在 GoDaddy 上注册的示例域的 A 记录：
 
-    ![Godaddy A 记录](media/virtual-machines-deis-cluster/go-daddy.png)
+    ![Godaddy A 记录](./media/virtual-machines-deis-cluster/go-daddy.png)
 <p />
 2. 安装 deis：
 
@@ -178,7 +178,7 @@
 
 4. 在 GitHub 添加 id_rsa.pub 或所选的公钥。可以使用 SSH 密钥配置屏幕上的“添加 SSH 密钥”按钮来执行此操作。
 
-  ![Github 密钥](media/virtual-machines-deis-cluster/github-key.png) <p /> 5.注册新用户：
+  ![Github 密钥](./media/virtual-machines-deis-cluster/github-key.png) <p /> 5.注册新用户：
 
         deis register http://deis.[your domain]
 <p />

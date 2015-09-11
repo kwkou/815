@@ -32,11 +32,11 @@ WebLogic Server 群集中的每个实例必须运行相同版本的 Oracle WebLo
 
 6. 在“Fusion Middleware 配置向导”对话框的“第 1 页”中，单击“创建新域”，然后单击“下一步”。（如果尚未打开“Fusion Middleware 配置向导”对话框，请单击 Windows“开始”菜单，键入“配置向导”，然后单击“配置向导”图标打开该对话框。）
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image19.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image19.png)
 
 7. 在“Fusion Middleware 配置向导”对话框的“第 2 页”中，选择“基本 WebLogic Server 域”模板，然后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image20.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image20.png)
 
 8. 在“Fusion Middleware 配置向导”对话框的“第 3 页”中：
 
@@ -46,27 +46,27 @@ WebLogic Server 群集中的每个实例必须运行相同版本的 Oracle WebLo
 	
 	3. 单击**“下一步”**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image21.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image21.png)
 
 9. 在“Fusion Middleware 配置向导”对话框的“第 4 页”中，选择“生产”作为域模式，选择可用的 JDK（或根据需要浏览到某个 JDK），然后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image22.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image22.png)
 
 10.  在“Fusion Middleware 配置向导”对话框的“第 5 页”中，不要选择任何选项，而是直接单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image23.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image23.png)
 
 11.  在“Fusion Middleware 配置向导”对话框的“第 6 页”中，单击“创建”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image24.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image24.png)
 
 12.  在“Fusion Middleware 配置向导”对话框的“第 7 页”中，在创建域后单击“下一步”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image25.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image25.png)
 
 13.  在“Fusion Middleware 配置向导”对话框的“第 8 页”中，选中“启动管理服务器”，然后单击“完成”。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image26.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image26.png)
 
 14.  此时将启动 **startWebLogic.cmd** 命令提示符。根据提示提供你的 WebLogic 用户名和密码。
 
@@ -86,7 +86,7 @@ WebLogic Server 群集中的每个实例必须运行相同版本的 Oracle WebLo
 
 	2. 选择“单播”作为“消息传送模式”。
 
-		![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image001.png)
+		![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image001.png)
 
 	
 	3. 单击**“确定”**。
@@ -185,7 +185,7 @@ WebLogic Server 群集中的每个实例必须运行相同版本的 Oracle WebLo
 
 15. 在管理虚拟机上，打开 **WebLogic Server 管理控制台** (<http://localhost:7001/console>)，并查看服务器是否正在运行。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image003.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image003.png)
 
 16. 为托管虚拟机创建负载平衡的终结点集：
 
@@ -247,7 +247,7 @@ WebLogic Server 群集中的每个实例必须运行相同版本的 Oracle WebLo
 
 5. 对于“路径”，请键入 **c:\\myway\\shoppingcart.war**。
 
-	![](media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image004.png)
+	![](./media/virtual-machines-creating-oracle-webLogic-server-12c-cluster/image004.png)
 
 	单击**“下一步”**。
 
