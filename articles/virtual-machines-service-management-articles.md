@@ -74,11 +74,13 @@
 
 [如何通过云服务或虚拟网络连接虚拟机](/documentation/articles/cloud-services-connect-virtual-machine)
 <!--
-[如何为虚拟机配置可用性集](/documentation/articles/virtual-machines-how-to-configure-availability)
-
-[开始配置内部负载平衡器](/documentation/articles/load-balancer-internal-getstarted)
-
-[开始配置面向 Internet 的负载平衡器](/documentation/articles/load-balancer-internet-getstarted)
+[-->如何为虚拟机配置可用性集<!--](/documentation/articles/virtual-machines-how-to-configure-availability)
+-->
+<!--
+[-->开始配置内部负载平衡器<!--](/documentation/articles/load-balancer-internal-getstarted)
+-->
+<!--
+[-->开始配置面向 Internet 的负载平衡器<!--](/documentation/articles/load-balancer-internet-getstarted)
 -->
 [如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)
 
@@ -90,7 +92,7 @@
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
 <!--
-[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli)
+[-->Docker<!--](/documentation/articles/virtual-machines-docker-with-xplat-cli)
 -->
 [Dynamics AX](https://technet.microsoft.com/zh-cn/library/dn741581.aspx)
 
@@ -104,7 +106,7 @@
 
 [消息队列 (MSMQ)](https://msdn.microsoft.com/zh-cn/library/azure/dn529082.aspx)
 <!--
-[Windows Server 上的 MongoDB](/documentation/articles/virtual-machines-install-mongodb-windows-server)
+[-->Windows Server 上的 MongoDB<!--](/documentation/articles/virtual-machines-install-mongodb-windows-server)
 -->
 [Windows Server 上的 MySQL](/documentation/articles/virtual-machines-mysql-windows-server-2008r2)
 

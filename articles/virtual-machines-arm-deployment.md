@@ -1,17 +1,17 @@
 <properties 
-	pageTitle="使用计算、网络和存储 .NET 库部署 Azure 资源" 
-	description="学习使用计算、存储和网络 .NET 库中提供的一些客户端在 Windows Azure 中创建和删除资源" 
-	services="virtual-machines,virtual-network,storage" 
-	documentationCenter="" 
-	authors="davidmu1" 
-	manager="timlt" 
-	editor="tysonn" 
-	tags="azure-resource-manager/>
+    pageTitle="使用计算、网络和存储 .NET 库部署 Azure 资源" 
+    description="学习使用计算、存储和网络 .NET 库中提供的一些客户端在 Windows Azure 中创建和删除资源" 
+    services="virtual-machines,virtual-network,storage" 
+    documentationCenter="" 
+    authors="davidmu1" 
+    manager="timlt" 
+    editor="tysonn" 
+    tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines"
-	ms.date="04/27/2015"
-	wacn.date="08/29/2015"/>
+<tags
+    ms.service="virtual-machines"
+    ms.date="04/27/2015"
+    wacn.date="08/29/2015"/>
 
 # 使用计算、网络和存储 .NET 库部署 Azure 资源
 

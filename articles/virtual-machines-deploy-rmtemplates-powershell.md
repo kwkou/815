@@ -34,7 +34,7 @@
 - 审核操作。 
 - 使用其他元数据标记资源以方便跟踪。 
 
-可在[此处](virtual-machines-azurerm-versus-azuresm)了解有关 Azure 资源管理器的详细信息。<!--如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](resource-group-authoring-templates)。-->
+可在[此处](virtual-machines-azurerm-versus-azuresm)了解有关 Azure 资源管理器的详细信息。如果你想要了解如何创作模板，请参阅<!--[-->创作 Azure 资源管理器模板<!--](resource-group-authoring-templates)-->。
 
 ## <a id="windowsvm"></a>任务：部署 Windows VM
 
@@ -933,9 +933,9 @@
 ## 其他资源
 
 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](virtual-machines-azurerm-versus-azuresm)
-<!--
-[Azure 资源管理器概述](resource-group-overview)
--->
+
+<!--[-->Azure 资源管理器概述<!--](resource-group-overview)-->
+
 [使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机](virtual-machines-deploy-rmtemplates-azure-cli)
 
 [虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/)

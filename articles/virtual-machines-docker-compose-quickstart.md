@@ -1,6 +1,15 @@
-<properties pageTitle="在 Azure 虚拟机上使用 Docker 和 Compose 入门" description="对在 Azure 上使用 Compose 和 Docker 的简要介绍" services="virtual-machines" documentationCenter="" authors="dlepow" manager="timlt editor=""/>
+<properties
+    pageTitle="在 Azure 虚拟机上使用 Docker 和 Compose 入门"
+    description="对在 Azure 上使用 Compose 和 Docker 的简要介绍"
+    services="virtual-machines"
+    documentationCenter=""
+    authors="dlepow"
+    manager="timlt editor="/>
 
-<tags ms.service="virtual-machines" ms.date="05/07/2015" wacn.date="08/29/2015"/>
+<tags
+    ms.service="virtual-machines"
+    ms.date="05/07/2015"
+    wacn.date="08/29/2015"/>
 
 # 在 Azure 虚拟机上使用 Docker 和 Compose 入门
 

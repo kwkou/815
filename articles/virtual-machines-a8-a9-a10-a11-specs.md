@@ -64,7 +64,7 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单一的 10-Gbps 
 
 * **地缘组** – 当前，对于大多数新部署不建议使用地缘组。但是请注意，如果正在使用包含 A8 – A11 以外大小的实例的地缘组，则无法对 A8 – A11 实例使用该地缘组，反之亦然。
 
-* **虚拟网络** – Azure 虚拟网络不需要使用计算密集型实例。但是，如果需要访问本地资源（例如，应用程序许可证服务器），则对于许多 IaaS 方案或者一个站点到站点的连接，可能至少需要一个基于云的 Azure 虚拟网络。需要先创建一个新的（区域）虚拟网络，再部署实例。不支持将 A8、A9、A10 或 A11 VM 添加到地缘组中的虚拟网络中。有关详细信息，请参阅[如何创建虚拟网络 (VNet)](/documentation/articles/virtual-network/virtual-networks-create-vnet) 和[配置具有站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway/vpn-gateway-site-to-site-create)。
+* **虚拟网络** – Azure 虚拟网络不需要使用计算密集型实例。但是，如果需要访问本地资源（例如，应用程序许可证服务器），则对于许多 IaaS 方案或者一个站点到站点的连接，可能至少需要一个基于云的 Azure 虚拟网络。需要先创建一个新的（区域）虚拟网络，再部署实例。不支持将 A8、A9、A10 或 A11 VM 添加到地缘组中的虚拟网络中。有关详细信息，请参阅<!--[-->如何创建虚拟网络 (VNet)<!--](/documentation/articles/virtual-network/virtual-networks-create-vnet) -->和<!--[-->配置具有站点到站点 VPN 连接的虚拟网络<!--](/documentation/articles/vpn-gateway/vpn-gateway-site-to-site-create)-->。
 
 * **云服务或可用性集** – 若要通过 RDMA 网络进行连接，A8 和 A9 实例必须部署在同一云服务（用于在 Azure 资源管理器中具有基于 Linux 的 VM 或基于 Windows 的 VM 的 IaaS 方案；或者具有 Windows Server 的 PaaS 方案）或者同一可用性集（用于在 Azure 资源管理器中基于 Linux 的 VM 或基于 Windows 的 VM）中。
 
@@ -72,7 +72,7 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单一的 10-Gbps 
 
 ### HPC Pack 和 Linux 的注意事项
 
-[HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)是用于 Windows 的 Microsoft 的免费 HPC 群集和作业管理的解决方案。从 HPC Pack 2012 R2 Update 2 开始，HPC Pack 支持多个 Linux 分配，以在部署于由 Windows Server 的头节点管理的 Azure VM 中的计算节点上运行。使用 HPC Pack 的最新版本，可以部署基于 Linux 的群集，可运行访问 Azure 中的 RDMA 网络的 MPI 应用程序。有关详细信息，请参阅 [HPC Pack 文档](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
+[HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)是用于 Windows 的 Microsoft 的免费 HPC 群集和作业管理的解决方案。从 HPC Pack 2012 R2 Update 2 开始，HPC Pack 支持多个 Linux 分配，以在部署于由 Windows Server 的头节点管理的 Azure VM 中的计算节点上运行。使用 HPC Pack 的最新版本，可以部署基于 Linux 的群集，可运行访问 Azure 中的 RDMA 网络的 MPI 应用程序。有关详细信息，请参阅 <!--[-->HPC Pack 文档<!--](/documentation/articles/virtual-machines-linux-cluster-hpcpack)-->。
 
 ### HPC Pack 和 Windows 的注意事项
 
