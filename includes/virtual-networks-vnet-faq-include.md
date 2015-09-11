@@ -24,7 +24,7 @@
 
 ### 如何开始？
 
-请访问[虚拟网络文档](/documentation/services/virtual-network/)开始。此页包含指向常见配置步骤的链接以及帮助你了解设计虚拟网络时需要考虑的事项的信息。
+请访问[虚拟网络文档](/documentation/services/networking)开始。此页包含指向常见配置步骤的链接以及帮助你了解设计虚拟网络时需要考虑的事项的信息。
 
 ### 哪些服务可以与 VNet 共同使用？
 
