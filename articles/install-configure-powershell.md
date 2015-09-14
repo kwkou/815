@@ -6,7 +6,10 @@
 
 # 如何安装和配置 Windows Azure PowerShell#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/install-configure-powershell/" title="PowerShell" class="current">PowerShell</a><a href="/zh-cn/documentation/articles/xplat-cli/" title="跨平台 CLI">跨平台 CLI</a></div>
+> [AZURE.SELECTOR]
+> - [PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)
+> - [跨平台 CLI](/zh-cn/documentation/articles/xplat-cli/)
+
 
 您可以使用 Windows PowerShell 在 Windows Azure 中执行各种任务，要么在命令提示符下以交互方式执行，要么通过脚本自动执行。Windows Azure PowerShell 是一个通过 Windows PowerShell 提供用于管理 Windows Azure 的 cmdlet 的模块。您可以使用 cmdlet 创建、测试、部署和管理通过 Windows Azure 平台提供的解决方案和服务。在大多数情况下，您可以使用 cmdlet 执行与通过 Windows Azure 管理门户执行的相同任务。例如，您可以创建和配置云服务、虚拟机、虚拟网络和网站。
 
