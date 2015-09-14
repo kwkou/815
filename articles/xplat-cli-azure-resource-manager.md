@@ -6,7 +6,10 @@
 
 # 结合使用 Azure 跨平台命令行接口和 Resource Manager
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/powershell-azure-resource-manager.md" title="Windows PowerShell">Windows PowerShell</a><a href="/zh-cn/documentation/articles/xplat-cli-azure-resource-manager.md" title="跨平台 CLI" class="current">跨平台 CLI</a></div>
+> [AZURE.SELECTOR]
+> - [Windows PowerShell](/zh-cn/documentation/articles/powershell-azure-resource-manager.md)
+> - [跨平台 CLI](/zh-cn/documentation/articles/xplat-cli-azure-resource-manager.md)
+
 
 我们最近发布了 Resource Manager 的预览版，这是一个管理 Windows Azure 的新方法。您将从本文了解到如何结合使用 Azure 跨平台命令行接口 (xplat-cli) 和 Resource Manager。
 
