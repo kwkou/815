@@ -6,7 +6,16 @@
 
 # 移动服务中的身份验证入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/develop/mobile/tutorials/get-started-with-users-dotnet" title="Windows Store C#" class="current">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/get-started-with-users-js" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-users-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-users-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-users-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-users-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/get-started-with-users-xamarin-ios" title="Xamarin.iOS">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-users-xamarin-android" title="Xamarin.Android">Xamarin.Android</a></div>
+> [AZURE.SELECTOR]
+> - [Windows 应用商店 C#](/develop/mobile/tutorials/get-started-with-users-dotnet)
+> - [Windows 应用商店 JavaScript](/develop/mobile/tutorials/get-started-with-users-js)
+> - [Windows Phone](/develop/mobile/tutorials/get-started-with-users-wp8)
+> - [iOS](/develop/mobile/tutorials/get-started-with-users-ios)
+> - [Android](/develop/mobile/tutorials/get-started-with-users-android)
+> - [HTML](/develop/mobile/tutorials/get-started-with-users-html)
+> - [Xamarin.iOS](/develop/mobile/tutorials/get-started-with-users-xamarin-ios)
+> - [Xamarin.Android](/develop/mobile/tutorials/get-started-with-users-xamarin-android)
+
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
