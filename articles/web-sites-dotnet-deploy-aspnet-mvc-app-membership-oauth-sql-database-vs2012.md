@@ -6,7 +6,10 @@
 
 # 使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用部署到 Azure 网站
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
+> [AZURE.SELECTOR]
+> - [Visual Studio 2013](/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+> - [Visual Studio 2012](/zh-cn/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+
 
 <div class="dev-callout"><strong>说明</strong><p>已提供<a href="/develop/net/tutorials/web-site-with-sql-database/">本教程的较新版本</a>。如果您想要使用 Visual Studio 2012，则仍可以执行此版本，但较新版本更加易于执行。</p></div>
 

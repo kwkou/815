@@ -10,7 +10,10 @@
 
 # Windows Azure 和 ASP.NET 入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/develop/net/tutorials/get-started/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
+> [AZURE.SELECTOR]
+> - [Visual Studio 2013](/develop/net/tutorials/get-started/)
+> - [Visual Studio 2012](/develop/net/tutorials/get-started-vs2012/)
+
 
 本教程说明如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 中的“发布 Web”向导将 ASP.NET Web 应用程序部署到 Windows Azure 网站。（如果您喜欢使用 Visual Studio 2012，请参见[本教程的上一版本](/develop/net/tutorials/get-started-vs2012)。）
 

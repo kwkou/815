@@ -6,7 +6,17 @@
 
 # 使用流量管理器为 Azure 网站配置自定义域名
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/web-sites-custom-domain-name" title="自定义域" class="current">自定义域</a><a href="/zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name" title="GoDaddy">GoDaddy</a><a href="/zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name" title="Network Solutions">Network Solutions</a><a href="/zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name" title="Register.com">Register.com</a><a href="/zh-cn/documentation/articles/web-sites-enom-custom-domain-name" title="Enom">Enom</a><a href="/zh-cn/documentation/articles/web-sites-moniker-custom-domain-name" title="Moniker">Moniker</a><a href="/zh-cn/documentation/articles/web-sites-dotster-custom-domain-name" title="Dotster">Dotster</a><a href="/zh-cn/documentation/articles/web-sites-domaindiscover-custom-domain-name" title="DomainDiscover">DomainDiscover</a><a href="/zh-cn/documentation/articles/web-sites-directnic-custom-domain-name" title="Directnic">Directnic</a></div>
+> [AZURE.SELECTOR]
+> - [自定义域](/zh-cn/documentation/articles/web-sites-custom-domain-name)
+> - [GoDaddy](/zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name)
+> - [Network Solutions](/zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name)
+> - [Register.com](/zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name)
+> - [Enom](/zh-cn/documentation/articles/web-sites-enom-custom-domain-name)
+> - [Moniker](/zh-cn/documentation/articles/web-sites-moniker-custom-domain-name)
+> - [Dotster](/zh-cn/documentation/articles/web-sites-dotster-custom-domain-name)
+> - [DomainDiscover](/zh-cn/documentation/articles/web-sites-domaindiscover-custom-domain-name)
+> - [Directnic](/zh-cn/documentation/articles/web-sites-directnic-custom-domain-name)
+
 
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/web-sites-custom-domain-name/" title="网站">网站</a> | <a href="/zh-cn/documentation/articles/web-sites-traffic-manager-custom-domain-name/" title="使用流量管理器的网站" class="current">使用流量管理器的网站</a></div>
 
