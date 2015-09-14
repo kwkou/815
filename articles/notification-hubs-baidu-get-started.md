@@ -6,7 +6,16 @@ ms.service ms.devlang ms.topic="article" ms.tgt_pltfrm ms.workload ms.date="03/1
 
 # 通知中心入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/notification-hubs-windows-phone-get-started/" title="Windows Phone">Windows Phone</a><a href="/zh-cn/documentation/articles/notification-hubs-ios-get-started/" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/notification-hubs-android-get-started/" title="Android">Android</a><a href="/zh-cn/documentation/articles/notification-hubs-kindle-get-started/" title="Kindle">Kindle</a><a href="/zh-cn/documentation/articles/notification-hubs-baidu-get-started/" title="百度" class="current">百度</a><a href="/zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/" title="Xamarin.Android">Xamarin.Android</a></div>
+> [AZURE.SELECTOR]
+> - [Windows 应用商店 C#](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
+> - [Windows Phone](/zh-cn/documentation/articles/notification-hubs-windows-phone-get-started/)
+> - [iOS](/zh-cn/documentation/articles/notification-hubs-ios-get-started/)
+> - [Android](/zh-cn/documentation/articles/notification-hubs-android-get-started/)
+> - [Kindle](/zh-cn/documentation/articles/notification-hubs-kindle-get-started/)
+> - [百度](/zh-cn/documentation/articles/notification-hubs-baidu-get-started/)
+> - [Xamarin.iOS](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/)
+> - [Xamarin.Android](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
+
 
 百度云推送是一种中国云服务，可以使用它将推送通知发送到移动设备。考虑到在中国存在各种不同的应用程序商店、推送服务以及通常未连接到 GCM（Google 云消息传送）的 Android 设备的可用性，将推送通知传送到 Android 的过程很复杂，因此此服务特别有用。
 
