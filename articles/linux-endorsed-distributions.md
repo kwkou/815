@@ -1,12 +1,12 @@
-<properties linkid="manage-linux-other-resources-endorsed-distributions" urlDisplayName="Endorsed distributions" pageTitle="Azure 中的 Linux 的认可分发" metaKeywords="" description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic 和 SUSE 的指南。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure 认可的分发中的 Linux" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
+<properties linkid="manage-linux-other-resources-endorsed-distributions" urlDisplayName="Endorsed distributions" pageTitle="Azure中认可Linux发行版" metaKeywords="" description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic 和 SUSE 的指南。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Azure 认可的分发中的 Linux" authors="kathydav" solutions="" manager="jeffreyg" editor="tysonn" />
 <tags ms.service="virtual-machines"
     ms.date="12/14/2014"
     wacn.date="04/11/2015"
     />
 
-# Azure 认可的分发中的 Linux
+# Azure中认可Linux发行版
 
-库中的分发映像由以下合作伙伴提供，我们正在与社区协作以便提供更多认可的分发。同时，您始终可通过按照本页中的指南进行操作来引入您自己的 Linux。
+库中的分发镜像由以下合作伙伴提供，我们正在与社区协作以便提供更多认可的分发。同时，您始终可通过按照本页中的指南进行操作来引入您自己的 Linux。
 
 ## Canonical
 
@@ -21,12 +21,6 @@ Canonical 工程和开放社区监管对 Ubuntu 在客户端、服务器和云�
 <http://www.openlogic.com/azure>
 
 OpenLogic 是针对云和数据中心的企业开放源解决方案的行业领先的提供商。OpenLogic 帮助各个行业数以百计的领先企业安全获取、支持和控制开源软件。OpenLogic 为 OpenLogic 专家社区支持的 600 个开放源包提供商业级技术支持和保护（包括针对 CentOS 的企业级支持），同时作为在 Azure 上提供 Centos 映像的产品发布合作伙伴。
-
-## Oracle
-
-<http://www.oracle.com/technetwork/topics/cloud/faq-1963009.html>
-
-Oracle 的策略是为公有和私有云提供广泛的解决方案，同时针对如何在 Oracle 云以及其他云中部署 Oracle 软件方面给予客户选择权和灵活性。通过 Oracle 与 Microsoft 的合作关系，客户可以凭借可信的证书和 Oracle 支持在 Microsoft 公有和私有云中部署 Oracle 软件。Oracle 对 Oracle 公有和私有云的承诺和投资保持不变。
 
 ## SUSE
 
