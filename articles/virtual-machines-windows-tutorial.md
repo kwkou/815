@@ -9,7 +9,9 @@
 
 # 创建运行 Windows 的虚拟机 #
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/virtual-machines-windows-tutorial/" title="Azure Portal" class="current">Azure 门户</a></div>
+> [AZURE.SELECTOR]
+> - [Azure 门户](/zh-cn/documentation/articles/virtual-machines-windows-tutorial/)
+
 
 本教程演示创建 Azure 虚拟机 (VM) 运行 Windows，例如使用 Windows Server 映像在 Azure 管理门户的映像库是多么容易。映像库提供了各种各样的映像，包括 Windows 操作系统、基于 Linux 的操作系统和应用程序映像。 
 
