@@ -14,7 +14,10 @@
 
 # 使用 Azure 命令行界面 (Azure CLI) 管理基于角色的访问控制#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/documentation/articles/powershell-rbac" title="Windows PowerShell" class="current">Windows PowerShell</a><a href="/documentation/articles/xplat-cli-rbac" title="Azure CLI">Azure CLI</a></div>
+> [AZURE.SELECTOR]
+> - [Windows PowerShell](/documentation/articles/powershell-rbac)
+> - [Azure CLI](/documentation/articles/xplat-cli-rbac)
+
 
 使用 Azure 门户中基于角色的访问控制 (RBAC) 和 Azure 资源管理器 API 可以精细地管理对订阅的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
 
