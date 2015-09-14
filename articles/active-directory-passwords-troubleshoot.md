@@ -749,7 +749,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -832,7 +832,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解会导致此错误的其他情况的详细信息，请参阅[排查密码写回问题](#troubleshoot-password-writeback)。</p>
+              <p>若要了解会导致此错误的其他情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -887,7 +887,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅[排查密码写回问题](#troubleshoot-password-writeback)。</p>
+              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
