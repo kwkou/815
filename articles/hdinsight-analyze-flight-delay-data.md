@@ -1,4 +1,4 @@
-﻿<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL数据库 using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
+<properties linkid="manage-services-hdinsight-analyze-flight-delay-data" urlDisplayName="Analyze flight delay data with HDInsight" pageTitle="使用 HDInsight 分析航班延误数据 | Azure" metaKeywords="" description="Learn how to upload data to HDInsight, how to process the data using Hive, and how to export the results to SQL数据库 using Sqoop." metaCanonical="" services="hdinsight" documentationCenter="" title="Analyze flight delay data using HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
 <tags ms.service="hdinsight"
     ms.date="12/04/2014"
     wacn.date="04/11/2015"
@@ -63,7 +63,7 @@ WASB 语法为：
 
 <table border="1">
 <tr><td><strong>文件</strong></td><td><strong>说明</strong></td></tr>
-<tr><td>\tutotirals\flightdelays\data</td><td>Hive 的输入航班数据</td></tr>
+<tr><td>\tutorirals\flightdelays\data</td><td>Hive 的输入航班数据</td></tr>
 <tr><td>\tutorials\flightdelays\output</td><td>Hive 的输出</td></tr>
 <tr><td>\tutorials\flightdelays\flightdelays.hql</td><td>HiveQL 脚本文件</td></tr>
 <tr><td>\tutorials\flightdelays\jobstatus</td><td>Hadoop 作业状态</td></tr>
