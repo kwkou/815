@@ -6,7 +6,10 @@
 
 # 将 Windows PowerShell 与资源管理器一起使用
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/powershell-azure-resource-manager.md" title="Windows PowerShell" class="current">Windows PowerShell</a><a href="/zh-cn/documentation/articles/xplat-cli-azure-resource-manager.md" title="跨平台 CLI">跨平台 CLI</a></div>
+> [AZURE.SELECTOR]
+> - [Windows PowerShell](/zh-cn/documentation/articles/powershell-azure-resource-manager.md)
+> - [跨平台 CLI](/zh-cn/documentation/articles/xplat-cli-azure-resource-manager.md)
+
 
 资源管理器引入了一种考虑您的 Azure 资源的全新方法。您首先设想一项复杂的服务，而不是创建和管理各个资源，如博客、照片库、SharePoint 门户或 wiki。您使用模板（服务的资源模型）来创建具有您支持服务所需要的资源的资源组。然后，可以将该资源组作为一个逻辑单元进行管理和部署。
 
