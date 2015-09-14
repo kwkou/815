@@ -93,8 +93,8 @@
 
 有关如何部署密码写回的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
-### <a name="what-data-is-used-by-password-reset"><a>密码重置使用哪些数据？
-下表概述密码重置期间此数据使用的位置和方式，旨在帮助你决定哪些身份验证选项适合你的组织。此表还显示当你代表用户从未验证此数据的输入路径提供数据时的格式要求。
+### <a name="what-data-is-used-by-password-reset"></a>密码重置使用哪些数据？
+- 下表概述密码重置期间此数据使用的位置和方式，旨在帮助你决定哪些身份验证选项适合你的组织。此表还显示当你代表用户从未验证此数据的输入路径提供数据时的格式要求。
 
 > [AZURE.NOTE]注册门户中不会显示办公电话，因为用户当前无法在目录中编辑此属性。
 
