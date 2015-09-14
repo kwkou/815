@@ -6,7 +6,10 @@
 
 # Azure 网站和 ASP.NET 入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/develop/net/tutorials/get-started/" title="Visual Studio 2013">Visual Studio 2013</a><a href="/develop/net/tutorials/get-started-vs2012/" title="Visual Studio 2012" class="current">Visual Studio 2012</a></div>
+> [AZURE.SELECTOR]
+> - [Visual Studio 2013](/develop/net/tutorials/get-started/)
+> - [Visual Studio 2012](/develop/net/tutorials/get-started-vs2012/)
+
 
 <div class="dev-callout"><strong>说明</strong><p><a href="/develop/net/tutorials/get-started/">本教程较新版本</a>现已推出。如果您使用的是 Visual Studio 2012，则仍可按本版教程进行学习，但其中不会介绍所有最新的 Azure SDK 功能。</p></div>
 

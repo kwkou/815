@@ -11,7 +11,10 @@
 ***由 [Rick Anderson](https://twitter.com/RickAndMSFT) 和 Tom Dykstra 撰写。上次更新时间：2013 年 10 月 18 日。***
 
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/develop/net/tutorials/web-site-with-sql-database/" title="Visual Studio 2013" class="current">Visual Studio 2013</a><a href="/develop/net/tutorials/web-site-with-sql-database-vs2012/" title="Visual Studio 2012">Visual Studio 2012</a></div>
+> [AZURE.SELECTOR]
+> - [Visual Studio 2013](/develop/net/tutorials/web-site-with-sql-database/)
+> - [Visual Studio 2012](/develop/net/tutorials/web-site-with-sql-database-vs2012/)
+
 
 本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用程序，以便用户能够使用 Facebook 或 Google 凭据进行登录。您还会将应用程序部署到 Windows Azure。
 
