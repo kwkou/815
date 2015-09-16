@@ -10,7 +10,7 @@
 <tags 
 	ms.service="hdinsight"
 	ms.date="07/19/2015" 
-	wacn.date=""/>
+	wacn.date="08/14/2015"/>
 
 
 # 快速入门：在 HDInsight 上设置 Apache Spark 并使用 Spark SQL 运行交互式查询

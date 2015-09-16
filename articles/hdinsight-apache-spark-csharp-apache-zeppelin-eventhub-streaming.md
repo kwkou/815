@@ -11,7 +11,7 @@
 <tags 
 	ms.service="hdinsight"
 	ms.date="07/10/2015" 
-	wacn.date=""/>
+	wacn.date="08/14/2015"/>
 
 # Spark Streaming：在 HDInsight 上使用 Apache Spark 处理来自 Azure 事件中心的事件
 

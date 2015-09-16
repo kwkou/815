@@ -8,8 +8,9 @@
 	editor="cgronlun"/>
 
 <tags
+    ms.service="hdinsight"
 	ms.date="07/09/2015" 
-	wacn.date=""/>
+	wacn.date="08/14/2015"/>
 
 
 # 使用 Microsoft Avro Library 序列化 Hadoop 中的数据

@@ -10,7 +10,7 @@
 <tags
    ms.service="hdinsight"
    ms.date="07/10/2015"
-   wacn.date=""/>
+   wacn.date="08/14/2015"/>
 
 # 使用自定义选项在 HDInsight 中设置 Apache Spark 群集
 
