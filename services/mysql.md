@@ -40,7 +40,9 @@ MySQL Database on Azure 是 Windows Azure 提供的一种关系型数据库服�
 - [使用MySQL Database on Azure来部署WordPress](/documentation/articles/mysql-database-wordpress-setup)
 
     了解如何使用MySQL Database on Azure来连接部署MySQL Database on Azure.
-
+- [如何配置数据同步复制到MySQL Database on Azure](/documentation/articles/mysql-database-data-replication)
+	了解如何配置数据同步从本地实例到云端MySQL Database on Azure, 方便混合云构建。
+	
 ###开发
 
 - [SSL安全访问MySQL Database on Azure](/documentation/articles/mysql-database-ssl-connection)
