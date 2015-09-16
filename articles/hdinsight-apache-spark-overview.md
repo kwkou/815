@@ -10,7 +10,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="07/19/2015" 
-	wacn.date=""/>
+	wacn.date="08/14/2015"/>
 
 # 概述：Azure HDInsight 上的 Apache Spark 
  

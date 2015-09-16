@@ -10,7 +10,7 @@
 <tags 
 	ms.service="hdinsight" 
 	ms.date="07/19/2015" 
-	wacn.date=""/>
+	wacn.date="08/14/2015"/>
 
 
 # 将 BI 工具与 Azure HDInsight 上的 Apache Spark 配合使用
