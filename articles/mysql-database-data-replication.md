@@ -59,13 +59,10 @@ source <备份文件名>;
 12.	配置成功后,底部的复制状态应该为复制中。
 ![配置过程](./media/mysql-database-data-replication/replicationstatus.png)
 
->[AZURE.NOTE] ** 注意:**
-
->[AZURE.NOTE] **- 当MySQL服务器的复制角色配置为从服务器以后,该服务器处于只读模式。**
-
->[AZURE.NOTE] **- 当MySQL服务器的复制角色配置为从服务器以后, 除角色外，复制页面所有主服务器参数不可更改。如果有输入错误,只有先将复制角色配置为禁止，然后重新配置从服务器参数。**
-
->[AZURE.NOTE] **- 我们推荐将主服务器的binlog_format参数设置为 Mixed或者Row, 从而避免因为使用unsafe statement,例如 sysdate()而引发的数据复制错误.**
+>[AZURE.NOTE] ** 注意:
+- 当MySQL服务器的复制角色配置为从服务器以后,该服务器处于只读模式。
+- 当MySQL服务器的复制角色配置为从服务器以后, 除角色外，复制页面所有主服务器参数不可更改。如果有输入错误,只有先将复制角色配置为禁止，然后重新配置从服务器参数。
+- 我们推荐将主服务器的binlog_format参数设置为 Mixed或者Row, 从而避免因为使用unsafe statement,例如 sysdate()而引发的数据复制错误.**
 
 
 ##数据复制的限制
