@@ -14,7 +14,7 @@
 
 # Windows Azure中支持的虚拟机镜像
 
-<table>
+<table border='1'>
 <tr>
 <th>Company</th>		<th>Subcategory</th>	<th>VM</th>
 </tr>
