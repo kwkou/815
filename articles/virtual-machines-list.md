@@ -16,7 +16,7 @@
 
 <table>
 <tr>
-<th>Company</th>		<th>Subcategory</th>	<th>VM</th>
+<th>公司</th>		<th>子类</th>	<th>虚拟机</th>
 </tr>
 <tr>
 <td>Microsoft</td>		<td>Windows Server</td>	<td>Windows Server 2012 R2 Datacenter (en-us)</td>
