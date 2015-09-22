@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure App Service 中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
-	description="了解如何在 Azure App Service Web Apps 中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
+	pageTitle="在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
+	description="了解如何在 Azure 网站中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="cephalin" 
@@ -12,11 +12,11 @@
 	ms.date="07/07/2015" 
 	wacn.date="08/29/2015"/>
 
-# 在 Azure App Service 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
+# 在 Azure 网站 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
-在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure App Service Web Apps 中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
+在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure 网站中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
 
->[AZURE.NOTE]有关 Azure App Service Web Apps 支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
+>[AZURE.NOTE]有关 Azure 网站支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
 
 - [要生成的项目](#bkmk_build)
 - [所需的项目](#bkmk_need)
@@ -31,11 +31,11 @@
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##
 
-您将在 Azure App Service Web Apps 中生成具有以下功能的基本 ASP.NET 应用程序：
+您将在 Azure 网站中生成具有以下功能的基本 ASP.NET 应用程序：
 
 - 根据 AD FS 对用户进行身份验证
 - 使用 `[Authorize]` 授权用户执行不同操作
-- 用于在 Visual Studio 中进行调试和发布到 App Service Web Apps 的静态配置（配置一次，随时调试和发布） 
+- 用于在 Visual Studio 中进行调试和发布到 Azure 网站的静态配置（配置一次，随时调试和发布） 
 
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
@@ -120,9 +120,9 @@
 就这么简单。现在，便可以配合 AD FS 运行该示例应用程序。稍后，你仍需要在 AD FS 中配置 RP 与此应用程序间的信任关系。
 
 <a name="bkmk_deploy"></a>
-## 将示例应用程序部署到 Azure App Service Web Apps 中
+## 将示例应用程序部署到 Azure 网站中
 
-现在，您需要将应用程序发布到 App Service Web Apps 的 Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用 URL，稍后您还可以使用此 URL 来配置 RP 信任。
+现在，您需要将应用程序发布到 Azure 网站的 Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用 URL，稍后您还可以使用此 URL 来配置 RP 信任。
 
 1. 右键单击您的项目，然后选择“发布”。
 
@@ -356,21 +356,21 @@
 
 	![](./media/web-sites-dotnet-lob-application-adfs/14-unauthorized-forbidden.png)
 
-7. 再次将应用程序发布到 Azure App Service Web Apps 中，并测试实时应用程序的行为。
+7. 再次将应用程序发布到 Azure 网站中，并测试实时应用程序的行为。
 
 <a name="bkmk_data"></a>
 ## 连接到本地数据
 
 使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/documentation/services/sql-databases/)作为 Web 应用的数据层。
 
-Azure App Service Web Apps 支持通过以下这两种方法访问本地数据库：[混合连接](/documentation/articles/integration-hybrid-connection-overview)和<!--[-->虚拟网络<!--](/documentation/articles/servicesweb-sites-integrate-with-vnet)-->。有关详细信息，请参阅[对 Azure App Service Web Apps 使用 VNET 集成和混合连接](http://azure.microsoft.com/zh-cn/blog/using-vnet-or-hybrid-conn-with-websites/)。
+Azure 网站支持通过以下这两种方法访问本地数据库：[混合连接](/documentation/articles/integration-hybrid-connection-overview)和<!--[-->虚拟网络<!--](/documentation/articles/servicesweb-sites-integrate-with-vnet)-->。有关详细信息，请参阅[对 Azure 网站使用 VNET 集成和混合连接](http://azure.microsoft.com/zh-cn/blog/using-vnet-or-hybrid-conn-with-websites/)。
 
 <a name="bkmk_resources"></a>
 ## 其他资源
 
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [使用 Active Directory 在 Azure App Service 中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
-- [在 Azure App Service 中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
+- [使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
+- [在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
 - [在 Visual Studio 2013 中将本地组织的身份验证选项 (ADFS) 与 ASP.NET 结合使用](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

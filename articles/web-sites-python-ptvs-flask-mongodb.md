@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 MongoDB" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建在 MongoDB 数据库实例中存储数据的 Flask Web 应用，以及将应用部署到 Azure App Service Web Apps 中。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建在 MongoDB 数据库实例中存储数据的 Flask Web 应用，以及将应用部署到 Azure 网站中。" 
 	services="app-service\web" 
 	tags="python"
 	documentationCenter="python" 
@@ -17,15 +17,15 @@
 
 # 具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 MongoDB
 
-  	<!-- 预览门户尚不支持 MongoLab 工作流 -->
+<!--   	预览门户尚不支持 MongoLab 工作流 -->
 
 在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。<!--您还可以观看本教程的[视频](https://www.youtube.com/watch?v=eql-crFgrAE)。-->
 
 轮询 Web 应用是对存储库的抽象界定，因此您可以轻松地在不同类型的存储库（内存、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何在 Azure 上使用托管的一项 MongoDB 服务、如何将 Web 应用配置为使用 MongoDB，以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中。
+我们将了解如何在 Azure 上使用托管的一项 MongoDB 服务、如何将 Web 应用配置为使用 MongoDB，以及如何将 Web 应用发布到 <!--[-->Azure 网站<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中。
 
-请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure App Service Web Apps 的文章。虽然本文将着重介绍 App Service，但步骤与 [Azure 云服务]的开发步骤类似。
+请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure 网站的文章。虽然本文将着重介绍 Azure 网站，但步骤与 [Azure 云服务]的开发步骤类似。
 
 + [先决条件](#prerequisites)
 + [创建项目](#create-the-project)
@@ -151,9 +151,9 @@
 
   	![RoboMongo 查询结果](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoQuery.png)
 
-## 将 Web 应用发布到 Azure App Service 中
+## 将 Web 应用发布到 Azure 网站中
 
-借助 PTVS，您可以轻松地将 Web 应用部署到 Azure App Service 中。
+借助 PTVS，您可以轻松地将 Web 应用部署到 Azure 网站中。
 
 1.  在“解决方案资源管理器”中，右键单击项目节点，然后选择“发布”。
 
@@ -165,7 +165,7 @@
 
 1.  填写以下字段，然后单击“创建”。
 	-	**Web 应用名称**
-	-	**App Service 计划**
+	<!---	**App Service 计划**-->
 	-	**资源组**
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
@@ -176,7 +176,7 @@
 
 1.  此时，您的 Web 浏览器会自动打开已发布的 Web 应用。如果您转到“关于”页面，则会看到它使用的是**内存**存储库，而不是 **MongoDB** 存储库。
 
-    这是因为未在 Azure App Service 的 Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
+    这是因为未在 Azure 网站的 Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
 
 ## 配置 Web 应用实例
 

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建在 Azure 表存储中存储数据的 Flask Web 应用，以及将应用部署到 Azure App Service Web Apps 中。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建在 Azure 表存储中存储数据的 Flask Web 应用，以及将应用部署到 Azure 网站中。" 
 	services="app-service\web"
 	tags="python"
 	documentationCenter="python" 
@@ -24,7 +24,7 @@
 
 我们将了解如何创建 Azure 存储帐户、如何将 Web 应用配置为使用 Azure 表存储，以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中。
 
-请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure App Service Web Apps 的文章。虽然本文将着重介绍 App Service，但步骤与 [Azure 云服务]的开发步骤类似。
+请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure 网站的文章。虽然本文将着重介绍 Azure 网站，但步骤与 [Azure 云服务]的开发步骤类似。
 
 + [先决条件](#prerequisites)
 + [创建项目](#create-the-project)
@@ -145,7 +145,7 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 
 1.  填写以下字段，然后单击“创建”。
 	-	**Web 应用名称**
-	-	**App Service 计划**
+	<!---	**App Service 计划**-->
 	-	**资源组**
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
@@ -156,7 +156,7 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 
 1.  此时，您的 Web 浏览器会自动打开已发布的 Web 应用。如果您转到“关于”页面，则会看到它使用的是**内存**存储库，而不是 **Azure 表存储库**。
 
-    这是因为未在 Azure App Service 的 Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
+    这是因为未在 Azure 网站的 Web 应用实例上设置环境变量，因此它使用的是 **settings.py** 中指定的默认值。
 
 ## 配置 Web 应用实例
 
@@ -195,9 +195,9 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅[门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅[门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储" 
-	description="了解如何使用 Python Tools for Visual Studio 来创建 Bottle 应用程序，该应用程序在 Azure 表存储中存储数据并且可以部署到 Azure App Service Web Apps。" 
+	description="了解如何使用 Python Tools for Visual Studio 来创建 Bottle 应用程序，该应用程序在 Azure 表存储中存储数据并且可以部署到 Azure 网站。" 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
@@ -23,7 +23,7 @@
 
 我们将学习如何创建 Azure 存储帐户、如何配置应用程序以使用 Azure 表存储以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure App Service Web Apps，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但是步骤相似于开发 [Azure 云服务]。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure 网站，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure 网站。虽然本文将着重介绍 Azure 网站，但是步骤相似于开发 [Azure 云服务]。
 
 + [先决条件](#prerequisites)
 + [创建项目](#create-the-project)
@@ -128,9 +128,9 @@
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonServerExplorerTable.png) -->
 
-## 将 Web 应用发布到 Azure App Service
+## 将 Web 应用发布到 Azure 网站
 
-Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
+Azure.NET SDK 轻松实现将 Web 应用部署到 Azure 网站。
 
 1.  在**解决方案资源管理器**中，右键单击项目节点并选择**发布**。
 
@@ -142,7 +142,7 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 
 1.  填写以下字段并单击**创建**。
 	-	**Web 应用名称**
-	-	**App Service 计划**
+	<!---	**App Service 计划**-->
 	-	**资源组**
 	-	**区域**
 	-	将保留**数据库服务器**设置为**没有数据库**
@@ -153,7 +153,7 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 
 1.  Web 浏览器会自动打开到已发布 Web 应用。如果浏览到“有关”页，您将看到它使用**内存中**存储库，而不是 **Azure 表存储**存储库。
 
-    这是因为未在 Azure App Service 的 Web Apps 实例上设置环境变量，因此它将使用 **settings.py** 中指定的默认值。
+    这是因为未在 Azure 网站的 Web Apps 实例上设置环境变量，因此它将使用 **settings.py** 中指定的默认值。
 
 ## 配置 Web Apps 实例
 
@@ -192,9 +192,9 @@ Azure.NET SDK 轻松实现将 Web 应用部署到 Azure App Service。
 - [Azure SDK for Python]
 - [如何从 Python 使用表存储服务]
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->
