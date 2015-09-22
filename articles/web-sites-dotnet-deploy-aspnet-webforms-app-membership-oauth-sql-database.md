@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="创建包含成员资格、OAuth 和 SQL Database 的安全 ASP.NET Web 窗体应用并部署到 Azure App Service" 
+	pageTitle="创建包含成员资格、OAuth 和 SQL Database 的安全 ASP.NET Web 窗体应用并部署到 Azure 网站" 
 	description="本教程将向您介绍如何构建整合了 SQL Database 的安全 ASP.NET 4.5 Web 窗体 Web 应用并将其部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -13,13 +13,13 @@
 	wacn.date="08/29/2015"/>
 
 
-# 创建包含成员资格、OAuth 和 SQL Database 的安全 ASP.NET Web 窗体应用并部署到 Azure App Service
+# 创建包含成员资格、OAuth 和 SQL Database 的安全 ASP.NET Web 窗体应用并部署到 Azure 网站
 
 ## 概述
 本教程将向您介绍如何构建整合了 SQL Database 的安全 ASP.NET 4.5 Web 窗体 Web 应用并将其部署到 Azure。
 
 >[AZURE.NOTE]
-有关本教程中的 MVC 版本，请参阅[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+有关本教程中的 MVC 版本，请参阅[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 
 您可以免费注册一个 Azure 帐户，而且，如果您还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。您现在可以针对 Azure 开始免费开发了。
 
@@ -81,7 +81,7 @@
 在本部分中，您将通过在 Azure 中创建 Azure 和 SQL 数据库来设置 Azure 环境。
 
 ### 在 Azure 中创建 Web 应用和 SQL 数据库 
-在本教程中，您的 Web 应用将运行在共享宿主环境中，这意味着它将在与 Azure App Service 中其他 Web 应用共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。如果您的 Web 流量在以后有所增加，则应用程序可通过在专用 VM 上运行进行扩展以满足相应需求。如果您需要一个更复杂的体系结构，则可迁移到 Azure 云服务。云服务在您可根据自己的需求进行配置的专用 VM 上运行。
+在本教程中，您的 Web 应用将运行在共享宿主环境中，这意味着它将在与 Azure 网站中其他 Web 应用共享的虚拟机 (VM) 上运行。共享宿主环境是一种在云中开始工作的低成本方式。如果您的 Web 流量在以后有所增加，则应用程序可通过在专用 VM 上运行进行扩展以满足相应需求。如果您需要一个更复杂的体系结构，则可迁移到 Azure 云服务。云服务在您可根据自己的需求进行配置的专用 VM 上运行。
 
 Azure SQL Database 是采用 SQL Server 技术构建的基于云的关系数据库服务。可以与 SQL Server 一起使用的工具和应用程序也可用于 SQL Database。
 
@@ -795,7 +795,7 @@ Web 应用程序现已完成，您可以将其发布到 Azure。
 ## 后续步骤
 有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的[了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Windows Azure 教程和指南](/documentation/services/web-sites/)。
 
-本教程基于 Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL Database 的 ASP.NET MVC 应用并部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
+本教程基于 Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL Database 的 ASP.NET MVC 应用并部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 
 请提供有关您喜欢的内容或者您希望看到改善的内容的反馈，不仅关于教程本身，还包括其所演示的产品。您的反馈将帮助我们确定优先改进哪些方面。您还可以在[教我编写代码](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)上请求帮助以及对新主题投票。
 
