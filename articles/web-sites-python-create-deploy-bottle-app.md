@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Azure 中使用 Bottle 的 Python Web 应用" 
-	description="本教程介绍如何在 Azure App Service Web Apps 上运行 Python Web 应用。" 
+	description="本教程介绍如何在 Azure 网站上运行 Python Web 应用。" 
 	services="app-service\web" 
 	documentationCenter="python" 
 	tags="python"
@@ -18,7 +18,7 @@
 
 # 在 Azure 中使用 Bottle 创建 Web 应用
 
-在本教程中，我们将介绍如何开始在 Azure App Service Web Apps 中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
+在本教程中，我们将介绍如何开始在 Azure 网站中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
 您将使用 Bottle web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app) 的备选版本)。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后将本地运行 Web 应用，将其更改、提交和推送到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
@@ -68,8 +68,8 @@
 2. 单击 **Web + 移动** > **Azure 应用商店** > **Web Apps**。
 3. 在搜索框中，键入“python”。
 4. 在搜索结果中，选择 **Bottle**，然后单击**创建**。
-5. 配置新的 Bottle 应用，如为其创建新的 App Service 计划和新的资源组。然后单击**创建**。
-6. 按照[在 Azure App Service 中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的 Web 应用配置 Git 发布。
+5. 配置新的 Bottle 应用<!--，如为其创建新的 App Service 计划和新的资源组。然后单击**创建**-->。
+6. 按照[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的 Web 应用配置 Git 发布。
  
 接下来，你要为通过 Git 进行发布提供相应支持。这一点可通过选择**从源代码控制设置部署**来完成。
 
@@ -156,7 +156,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 克隆存储库
 
-首先，使用 Azure 预览门户上提供的 url 来克隆存储库。有关详细信息，请参阅[在 Azure App Service 中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用 Azure 预览门户上提供的 url 来克隆存储库。有关详细信息，请参阅[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -223,7 +223,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 预览门户中提供的 url 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure App Service 中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 预览门户中提供的 url 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -302,7 +302,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 预览门户中提供的 url 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure App Service 中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 预览门户中提供的 url 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -399,9 +399,9 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 - [具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 MongoDB]
 - [具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储]
 
-## 发生的更改
+<!--## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->
