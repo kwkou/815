@@ -65,7 +65,7 @@
 		# Use Set-AzureRedisCache to set Redis cache updatable parameters.
 		# Set the memory policy to Least Recently Used.
 		
-		Set-AzureRedisCache -MaxMemoryPolicy AllKeysLRU -Name $cacheName -ResourceGroupName $resourceGroupName
+		Set-AzureRedisCache  -Name $cacheName -ResourceGroupName $resourceGroupName  -RedisConfiguration @{"maxmemory-policy" = "allkeys-lru"}
 		
 		# Delete the cache.
 		
