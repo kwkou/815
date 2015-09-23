@@ -192,7 +192,7 @@
 [12]: ./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.view.hive.jobs.png
 <!--Link references-->
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight.introduction]: /documentation/articles/hdinsight-introduction/
+[hdinsight.introduction]: /documentation/articles/hdinsight-hadoop-introduction/
 [hdinsight.get.started]: /documentation/articles/hdinsight-get-started/
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
