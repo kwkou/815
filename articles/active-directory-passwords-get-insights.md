@@ -107,7 +107,7 @@
             </tr>
           </tbody></table>
 
-##  <a name="view-password-reset-activity"></a>查看密码重置活动
+##  <a name="overview-of-password-management-reports"></a>查看密码重置活动
 
 此报告显示你的组织中发生的所有密码重置尝试。
 
@@ -117,7 +117,7 @@
 
     ![][003]
 
-###  报告列的说明
+###  <a name="overview-of-password-management-reports"></a>报告列的说明
 以下列表详细说明每个报告列：
 
 1. **用户** – 尝试了密码重置操作的用户（基于用户重置密码时提供的“用户 ID”字段）。
@@ -127,7 +127,7 @@
 5. **结果** – 密码重置操作的最终结果。
 6. **详细信息** – 密码重置为什么导致这样值的详细信息。此外，还包括你为解决意外错误而可能采取的任何缓解步骤。
 
-###  报告值的说明
+###  <a name="overview-of-password-management-reports"></a>报告值的说明
 下表描述了每个列的不同允许值：
 
 <table>
@@ -211,7 +211,7 @@
             </tr>
           </tbody></table>
 
-###  详细信息列的允许值
+###  <a name="overview-of-password-management-reports"></a>详细信息列的允许值
 下面是你在使用密码重置活动报告时可能会遇到的结果类型列表：
 
 <table>
@@ -530,7 +530,7 @@
 * [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
 * [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
 * [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)
-* [MSDN 上的密码管理](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
+* [MSDN 上的密码管理](/documentation/articles/https://msdn.microsoft.com/library/azure/dn510386.aspx)
 
 
 
