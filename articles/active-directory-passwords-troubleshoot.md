@@ -40,7 +40,8 @@
 
  - **用户 ID** – 看到错误的用户的 ID（例如 user@contoso.com)?）
  - **有关用户的信息** – 用户是否已联合、密码哈希是否已同步、是否只在云中？ 用户是否已分配有 AAD Premium 或 AAD Basic 许可证？
- - **应用程序事件日志** – 如果你使用密码写回，而且错误位于你的本地基础结构中，请将 Azure AD Connect 服务器中的应用程序事件日志副本进行压缩，然后连同请求一起发送。
+ - **应用程序事件日志** – 如果你使用密码
+ - ，而且错误位于你的本地基础结构中，请将 Azure AD Connect 服务器中的应用程序事件日志副本进行压缩，然后连同请求一起发送。
 
 包含这些信息将有助于我们尽快为你解决问题。
 
@@ -162,7 +163,7 @@
           </tr>
         </tbody></table>
 
-## <a name="troubleshoot-password-management-reports-in-the-azure-management-portal"></a>排查密码重置注册门户问题
+## <a name="troubleshoot-the-password-reset-registration-portal"></a>排查密码重置注册门户问题
 如果你在针对密码重置注册用户时遇到错误，也许能够通过执行以下故障排除步骤来解决错误：
 
 <table>
@@ -412,7 +413,7 @@
           </tr>
         </tbody></table>
 
-## <a name="roubleshoot-password-writeback"></a>排查密码写回问题
+## <a name="troubleshoot-password-writeback"></a>排查密码写回问题
 如果在启用、禁用或使用密码写回时遇到错误，可以通过执行以下故障排除步骤来解决错误：
 
 <table>
@@ -748,7 +749,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a href="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -831,7 +832,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解会导致此错误的其他情况的详细信息，请参阅<a href="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解会导致此错误的其他情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -886,7 +887,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a href="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -1407,7 +1408,7 @@
 
 通常，我们建议按照上述顺序执行这些步骤，从而以最快的方式恢复你的服务。
 
-### 重新启动 Azure AD Sync 服务
+### <a name="restart-the-azure-AD-sync-service"></a>重新启动 Azure AD Sync 服务
 重新启动 Azure AD Sync 服务可以帮助解决连接问题或该服务出现的其他暂时性问题。
 
  1.	以管理员身份单击运行 **Azure AD Connect** 的服务器上的“开始”。
@@ -1419,7 +1420,7 @@
 
 这些步骤将重新建立与云服务的连接，并且可解决可能遇到的任何中断。如果重新启动同步服务无法解决你遇到的问题，我们建议你接下来尝试禁用密码写回功能，然后重新启用该功能。
 
-### 禁用再重新启用密码写回功能
+### <a name="disable-and-re-enable-the-password-writeback-feature"></a>禁用再重新启用密码写回功能
 禁用再重新启用密码写回功能可以帮助解决连接问题。
 
  1.	以管理员身份打开 **Azure AD Connect 配置向导**。
@@ -1427,6 +1428,8 @@
  3.	在**连接到 Azure AD DS** 对话框中，输入你的 **AD 域服务管理员凭据**。
  4.	在“唯一标识你的用户”对话框中，单击“下一步”按钮。
  5.	在“可选功能”对话框中，取消选中“密码写回”复选框。
+
+
 
     ![][003]
 
@@ -1442,7 +1445,7 @@
 
 如果禁用再重新启用密码写回功能无法解决你遇到的问题，我们建议你接下来尝试重新安装 Azure AD Connect。
 
-### 安装最新版本的 Azure AD Connect
+### <a name="install-the-latest-azure-ad-connect-release"></a>安装最新版本的 Azure AD Connect
 重新安装 Azure AD Connect 包可以解决所有可能会影响你在本地 AD 环境中连接到我们的云服务或管理你的密码的配置问题。我们建议你仅在尝试了上述前两个步骤后再执行此步骤。
 
  1.	可从[此处](/documentation/articles/active-directory-aadconnect#download-azure-ad-connect)下载最新版本的 Azure AD Connect。
