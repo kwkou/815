@@ -77,5 +77,5 @@ HDInsight 随附了以下示例。
 [hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
 
 [submit-jobs-programmatically]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-resources]: /zh-cn/documentation/articles/hdinsight-introduction/
+[hdinsight-resources]: /zh-cn/documentation/articles/hdinsight-hadoop-introduction/
 
