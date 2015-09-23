@@ -1,7 +1,7 @@
 <properties urlDisplayName="Run Hadoop Samples in HDInsight" pageTitle="在 HDInsight 中运行 Hadoop 示例 | Azure" metaKeywords="hdinsight, hdinsight 示例, hadoop, mapreduce" description="Get started using the Azure HDInsight service with the samples provided. Use PowerShell scripts that run MapReduce programs on data clusters." metaCanonical="" services="hdinsight" documentationCenter="" title="Run the Hadoop samples in HDInsight" authors="bradsev" solutions="" manager="paulettm" editor="cgronlun" />
 
 <tags 
-wacn.date="04/11/2015"
+wacn.date="09/23/2015"
 ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/10/2014" ms.author="bradsev" />
 
 
