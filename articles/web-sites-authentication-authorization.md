@@ -35,9 +35,9 @@
 	-	可以按应用程序管理[声明](https://technet.microsoft.com/zh-cn/library/ee913571.aspx)。
 	-	必须提供单独的解决方案，用于通过公司防火墙访问本地 AD 数据。
 
-<!--## 发生的更改
+## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
 <!---HONumber=67-->
