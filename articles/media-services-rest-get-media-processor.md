@@ -37,11 +37,11 @@
        <td>允许你使用媒体编码器运行编码任务。</td>
        <td><a href="http://msdn.microsoft.com/zh-cn/library/jj129582.aspx">Azure 媒体编码器的任务预设字符串</a></td>
     </tr>
-    <tr>
+<!--    <tr>
        <td>媒体编码器高级工作流</td>
        <td>允许你使用媒体编码器高级工作流运行编码任务。</td>
        <td><a href="http://www.windowsazure.cn/documentation/articles/media-services-encode-with-premium-workflow/">使用媒体编码器高级工作流进行编码。</a></td>
-    </tr>    
+    </tr>    -->
 	<tr>
         <td>Azure Media Indexer</td>
         <td>使媒体文件和内容可搜索，以及生成隐藏式字幕跟踪和关键字。</td>

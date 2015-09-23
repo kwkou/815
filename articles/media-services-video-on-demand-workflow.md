@@ -143,9 +143,9 @@
  
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
-使用 **.NET** 通过**媒体编码器高级工作流**进行高级编码。
+<!--使用 **.NET** 通过**媒体编码器高级工作流**进行高级编码。
 
-[AZURE.INCLUDE [media-services-selector-advanced-encoding](../includes/media-services-selector-advanced-encoding.md)]
+[AZURE.INCLUDE [media-services-selector-advanced-encoding](../includes/media-services-selector-advanced-encoding.md)]-->
 
 ####监视作业进度
 
