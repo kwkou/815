@@ -379,7 +379,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ## 故障排除 - 软件包安装
 
-[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
+[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../../includes/web-sites-python-troubleshooting-package-installation.md)]
 
 
 ## 故障排除 - 虚拟环境
