@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="big-data" 
 	ms.date="04/08/2015" 
-	wacn.date="08/29/2015" 
+	wacn.date="09/23/2015" 
 	ms.author="jgao"/>
 
 # 开始使用适用于 Visual Studio 的 HDInsight 工具
