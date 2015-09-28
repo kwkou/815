@@ -1,10 +1,21 @@
-﻿<properties authors="danielceckert" documentationCenter="dev-center-name" editor="" manager="jefco" pageTitle="管理：负载平衡器分发模式（源 IP 关联）" description="Azure 负载平衡器分发模式的管理功能" services="virtual-network"/>
+﻿<properties 
+   pageTitle="管理：负载平衡器分发模式（源 IP 关联）"
+   description="Azure 负载平衡器分发模式的管理功能" 
+   services="virtual-network" 
+   documentationCenter="" 
+   authors="telmosampaio" 
+   manager="carolz" 
+   editor=""
+   />
 
-<tags ms.service="virtual-network" ms.date="02/20/2015" wacn.date="04/11/2015"/>
+<tags
+   ms.service="virtual-network"
+   ms.date="05/27/2015"
+   wacn.date="09/18/2015"
+   />
    
 # 管理虚拟网络：负载平衡器分发模式（源 IP 关联）
-
-**源 IP 关联**（也称为**"会话关联"**或**"客户端 IP 关联"**）是一种 Azure 负载平衡器分发模式，它将来自单个客户端的连接绑定到 Azure 托管的单个服务器，而不是将每个客户端连接动态分发到 Azure 托管的不同服务器（默认负载平衡器行为）。
+**源 IP 关联**（也称为“会话关联”或“客户端 IP 关联”）是一种 Azure 负载平衡器分发模式，它将来自单个客户端的连接绑定到 Azure 托管的单个服务器，而不是将每个客户端连接动态分发到 Azure 托管的不同服务器（默认负载平衡器行为）。
 
 使用源 IP 关联，Azure 负载平衡器可以配置为使用 2 元组组合（源 IP、目标 IP）或 3 元组组合（源 IP、目标 IP、协议）将流量映射到 Azure 托管的可用服务器池。使用源 IP 关联时，从同一客户端计算机发起的连接由单个 DIP 终结点（Azure 托管的单个服务器）处理。
 
@@ -14,12 +25,12 @@
 
 ## 实现
 
-可以为以下项配置源 IP 关联： 
+可以为以下项配置源 IP 关联：
 
 * [虚拟机终结点](/documentation/articles/virtual-machines-set-up-endpoints)
-* [负载平衡的终结点集](https://msdn.microsoft.com/zh-CN/library/azure/dn655055.aspx)
-* [Web 角色](https://msdn.microsoft.com/zh-CN/library/azure/ee758711.aspx)
-* [辅助角色](https://msdn.microsoft.com/zh-CN/library/azure/ee758711.aspx)
+* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)
+* [Web 角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
+* [辅助角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
 
 ## 方案
 1. 使用单个云服务的远程桌面网关群集
@@ -40,14 +51,15 @@
 
 ### 将 Azure 终结点添加到虚拟机并设置负载平衡器分发模式
 
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 â€“LoadBalancerDistribution â€œsourceIPâ€�| Update-AzureVM  
 
     Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution "sourceIP"| Update-AzureVM  
 
-LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、目标 IP）负载平衡）、sourceIPProtocol（用于 3 元组（源 IP、目标 IP、协议）负载平衡）或 none（如果想要默认行为（5 元组负载平衡））。  
+LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、目标 IP）负载平衡）、sourceIPProtocol（用于 3 元组（源 IP、目标 IP、协议）负载平衡）或 none（如果想要默认行为（5 元组负载平衡））。
 
 ### 检索终结点负载平衡器分发模式配置
 
-    PS C:&gt; Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
+    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -70,6 +82,8 @@ LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、�
 如果 LoadBalancerDistribution 元素不存在，则 Azure 负载平衡器使用默认的 5 元组算法
 
 ### 在负载平衡终结点集上设置分发模式
+
+    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -LoadBalancerDistribution "sourceIP"
 
     Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -LoadBalancerDistribution "sourceIP"
     
@@ -142,5 +156,6 @@ LoadBalancerDistribution 的值可以是 sourceIP（用于 2 元组关联）、s
     x-ms-servedbyregion: ussouth2 
     x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af 
     Date: Thu, 16 Oct 2014 22:49:21 GMT
+ 
 
-<!--HONumber=51-->
+<!---HONumber=70-->

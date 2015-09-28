@@ -1,13 +1,20 @@
-<properties pageTitle="保留 IP" description="了解保留 IP、VIP、ILPIP 以及如何对其进行管理" services="virtual-network" documentationCenter="na" authors="telmosampaio" manager="adinah" editor="tysonn"/>
-
-<tags ms.service="virtual-network" ms.date="04/22/2015" wacn.date="08/07/2015"/>
+<properties 
+   pageTitle="保留 IP"
+   description="了解保留 IP、VIP、ILPIP 以及如何对其进行管理"
+   services="virtual-network"
+   documentationCenter="na"
+   authors="telmosampaio"
+   manager="adinah"
+   editor="tysonn" />
+<tags 
+   ms.service="virtual-network"
+   ms.date="08/17/2015"
+   wacn.date="09/18/2015" />
 
 # 保留 IP 概述
 Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 Azure 管理的公共 IP 地址默认为动态 IP 地址。这意味着，用于给定云服务的 IP 地址 (VIP) 或用于直接访问 VM 或角色示例的 IP 地址 (ILPIP) 可能会在关闭资源或释放资源的情况下不时进行更改。
 
 若要防止 IP 地址更改，可将其设置为保留 IP 地址。保留 IP 只能用作 VIP，可确保云服务的 IP 地址即使在关闭资源或释放资源的情况下也是相同的。此外，你还可以将用作 VIP 的现有动态 IP 转换为保留 IP 地址。
-
->[AZURE.WARNING]你只能将保留 IP 分配给 VIP。
 
 ## 何时需要保留 IP？
 - **你想要确保订阅中的 IP 为保留 IP**。如果你想要保留一个 IP 地址，使得该 IP 地址在任何情况下都不会从你的订阅中释放，则应使用保留的公共 IP。  
@@ -18,21 +25,19 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 1. 可以将保留 IP 用于所有 Azure 服务吗？  
   - 保留 IP 只能用于 VM 和云服务实例角色。
 1. 我可以有多少个保留 IP？  
-  - 目前，所有 Azure 订阅都有权使用 20 个保留 IP。不过，你可以请求更多的保留 IP。请参阅[订阅和服务限制](/documentation/articles/azure-subscription-service-limits)页以获取更多的信息。
+  - 目前，所有 Azure 订阅都有权使用 20 个保留 IP。不过，你可以请求更多的保留 IP。请参阅[订阅和服务限制](/documentation/articles/azure-subscription-service-limits/)页以获取更多的信息。
 1. 保留 IP 是否收费？ 
-  - 请参阅[保留 IP 地址定价详细信息](/pricing/details/reserved-ip-addresses)以获取定价信息。
-1. 我可以将多少保留 IP 分配给云服务？ 
-  - 在云服务中，每个终结点只允许使用一个 IP 地址，不管该 IP 地址是否为保留 IP 地址。拥有保留 IP 地址并不意味着你可以向云服务添加更多 IP 地址。
+  - 请参阅[保留 IP 地址定价详细信息](/pricing/details/ip-addresses/)以获取定价信息。
 1. 如何保留某个 IP 地址？ 
   - 你可以使用 PowerShell 或 [Azure 管理 REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn722420.aspx) 来请求特定区域的保留 IP。Azure 会保留该区域的 IP 地址并将其关联到你的订阅。然后，你就可以使用该区域的保留 IP。你不能使用管理门户来保留 IP 地址。
 1. 我可以将保留 IP 用于基于地缘组的 VNet 吗？ 
-  - 仅区域 VNet 支持保留 IP。与地缘组关联的 VNet 不支持保留 IP。
+  - 仅区域 VNet 支持保留 IP。与地缘组关联的 VNet 不支持保留 IP。有关如何将 VNet 与区域或地缘组关联的详细信息，请参阅[关于区域 VNet 和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet)。 
 
 ## 如何管理保留 VIP
 
-在使用保留 IP 之前，必须先将其添加到订阅。若要从*美国中部* 地点中提供的公共 IP 地址池创建保留 IP，请运行以下 PowerShell 命令：
+在使用保留 IP 之前，必须先将其添加到订阅。若要从*中国北部*位置中提供的公共 IP 地址池创建保留 IP，请运行以下 PowerShell 命令：
 
-	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “Central US”
+	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “China North”
 
 但请注意，你不能指定要保留的具体 IP。若要查看你的订阅中哪些 IP 地址为保留 IP 地址，请运行以下 PowerShell 命令，然后注意观察 *ReservedIPName* 和 *Address* 的值：
 
@@ -42,7 +47,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 	Address              : 23.101.114.211
 	Id                   : d73be9dd-db12-4b5e-98c8-bc62e7c42041
 	Label                : 
-	Location             : Central US
+	Location             : China North
 	State                : Created
 	InUse                : False
 	ServiceName          : 
@@ -58,11 +63,11 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 ## 如何将保留 IP 关联到新的云服务
 下面的脚本将创建新的保留 IP，然后将其关联到新的名为 *TestService* 的云服务。
 
-	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “Central US”
+	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “China North”
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
-	| New-AzureVM -ServiceName TestService -ReservedIPName MyReservedIP -Location "Central US"
+	| New-AzureVM -ServiceName TestService -ReservedIPName MyReservedIP -Location "China North"
 
 >[AZURE.NOTE]创建用于云服务的保留 IP 时，仍需使用 *VIP:&lt;端口号>* 来引用 VM，以便进行入站通信。使用保留 IP 并不意味着你可以直接连接到 VM。保留 IP 将分配给 VM 所部署到的云服务。如果你想要直接通过 IP 连接到 VM，则必须配置实例级公共 IP。实例级公共 IP 是一类可直接分配给 VM 的公共 IP（称为 ILPIP）。它不能保留。有关详细信息，请参阅[实例级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip)。
 
@@ -79,7 +84,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM2 -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
-	| New-AzureVM -ServiceName TestService2 -Location "Central US"
+	| New-AzureVM -ServiceName TestService2 -Location "China North"
 	Set-AzureReservedIPAssociation -ReservedIPName MyReservedIP -ServiceName TestService2
 
 ## 如何使用服务配置文件将保留 IP 关联到云服务
@@ -104,10 +109,10 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 
 ## 后续步骤
 
-[保留专用 IP](/documentation/articles/virtual-networks-reserved-private-ip)
+- 了解[保留专用 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)。
 
-[实例级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip)
+- 了解[实例级公共 IP (ILPIP) 地址](/documentation/articles/virtual-networks-instance-level-public-ip)。
 
-[保留 IP REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn722420.aspx)
+- 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
-<!---HONumber=61-->
+<!---HONumber=70-->

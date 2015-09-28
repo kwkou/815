@@ -8,19 +8,18 @@
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-   ms.date="06/30/2015"
-   wacn.date="08/29/2015" />
+   ms.date="08/10/2015"
+   wacn.date="09/18/2015" />
 
 # VM 和角色实例的名称解析
 
 具体取决于如何使用 Azure 托管 IaaS、PaaS 和混合解决方案，你可能需要允许 VM 和创建的角色实例与其他 VM 和角色实例进行通信。尽管这种通信可以通过使用 IP 地址完成，但使用容易记住的主机名要简单得多。但是，这些主机名必须以某种方式解析为 IP 地址，以建立通信。
 
-<!--
 当 Azure 中托管的角色实例和 VM 需要将主机名和域名解析到内部 IP 地址时，它们可以使用两种方法之一：
 
-- [Azure 提供的名称解析](/documentation/articles/azure-provided-name-resolution)
+- [Azure 提供的名称解析](#azure-provided-name-resolution)
 
-- [使用你自己的 DNS 服务器的名称解析](/documentation/articles/name-resolution-using-your-own-DNS-server)-->
+- [使用你自己的 DNS 服务器的名称解析](#name-resolution-using-your-own-dns-server)
 
 使用的名称解析类型取决于 VM 和角色实例需要在云服务和其他云服务中进行通信的方式。
 
@@ -105,7 +104,7 @@
 
 ### 通过使用管理门户指定 DNS 服务器
 
-当使用管理门户创建虚拟网络时，可以指定想要使用的 DNS 服务器（或多台服务器）的 IP 地址和名称。一旦创建虚拟网络后，部署到虚拟网络的虚拟机和将角色实例会使用指定的 DNS 设置自动配置，除非你指定用于部署的 DNS 服务器。<!--有关 Azure 虚拟网络的配置设置的详细信息，请参阅[关于在管理门户中配置虚拟网络](https://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx)。-->
+当使用管理门户创建虚拟网络时，可以指定想要使用的 DNS 服务器（或多台服务器）的 IP 地址和名称。一旦创建虚拟网络后，部署到虚拟网络的虚拟机和将角色实例会使用指定的 DNS 设置自动配置，除非你指定用于部署的 DNS 服务器。有关 Azure 虚拟网络的配置设置的详细信息，请参阅[关于在管理门户中配置虚拟网络](/documentation/articles/virtual-networks-settings)。
 
 > [AZURE.NOTE]最多只能使用 9 个 DNS 服务器。
 
@@ -120,12 +119,14 @@
 > [AZURE.NOTE]服务配置文件中的设置重写网络配置文件中的设置。例如，如果 VM 添加到属于虚拟网络一部分的云服务中，网络配置文件和服务配置文件都具有 DNS 设置，则服务配置文件中的 DNS 设置将应用到 VM 中。
 
 
-## 另请参阅
+## 后续步骤
 
-- [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710) 
-- [虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100) 
-<!--- [关于在管理门户中配置虚拟网络设置](https://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx) -->
-- [使用网络配置文件配置虚拟网络](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-networks-create-vnet-classic-portal/) 
-<!--- [Azure 虚拟网络配置任务](https://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)-->
+[Azure 服务配置架构](https://msdn.microsoft.com/library/azure/ee758710)
 
-<!---HONumber=67-->
+[虚拟网络配置架构](https://msdn.microsoft.com/library/azure/jj157100)
+
+[关于在管理门户中配置虚拟网络设置](/documentation/articles/virtual-networks-settings)
+
+[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)
+
+<!---HONumber=70-->
