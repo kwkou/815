@@ -5,9 +5,11 @@
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
-   editor="tysonn"/>
-   
-<tags ms.service="automation" ms.date="05/11/2015" wacn.date="06/16/2015"/> 
+   editor="tysonn" />
+<tags
+   ms.service="automation"
+   ms.date="07/10/2015"
+   wacn.date="09/15/2015" />
 
 # Azure 自动化混合 Runbook 辅助角色
 
@@ -36,29 +38,24 @@ Azure 自动化中的 Runbook 无法访问你本地数据中心的资源，因�
 完成以下步骤，以便针对混合 Runbook 辅助角色准备你的 Azure 自动化环境。
 
 #### 1.创建 Azure Operational Insights 工作区  
-
-如果你的 Azure 帐户中还没有 Operational Insights 工作区，则可按[设置 Operational Insights 工作区](operational-insights-setup-workspace)中的说明创建一个。如果你已经有一个工作区，则可以使用现有的。
+如果你的 Azure 帐户中还没有 Operational Insights 工作区，则可按[设置 Operational Insights 工作区](/documentation/articles/operational-insights-setup-workspace)中的说明创建一个。如果你已经有一个工作区，则可以使用现有的。
 
 #### 2.部署自动化解决方案  
+Operational Insights 中的自动化解决方案可以向下推送所需组件，以便配置 Runbook 环境并提供相关支持。按照 [Operational Insights 解决方案](/documentation/articles/operational-insights-setup-workspace#1-add-solutions)中的说明安装 **Azure 自动化**包。
 
-Operational Insights 中的自动化解决方案可以向下推送所需组件，以便配置 Runbook 环境并提供相关支持。按照 [Operational Insights 解决方案](operational-insights-add-solution)中的说明安装 **Azure 自动化**包。
-
-### 配置本地计算机  
-
+### 配置本地计算机
 针对每台将充当混合 Runbook 辅助角色的本地计算机完成以下步骤。
 
 
 #### 1.安装 Microsoft 管理代理  
-
-Microsoft 管理代理可将计算机连接到 Operational Insights，并允许其运行解决方案中的逻辑。按照[将计算机直接连接到 Operational Insights](operational-insights-direct-agent) 中的说明在本地计算机上安装代理，并将其连接到 Operational Insights。
+Microsoft 管理代理可将计算机连接到 Operational Insights，并允许其运行解决方案中的逻辑。按照[将计算机直接连接到 Operational Insights](/documentation/articles/operational-insights-direct-agent) 中的说明在本地计算机上安装代理，并将其连接到 Operational Insights。
 
 #### 2.安装 Runbook 环境并连接到 Azure 自动化  
-
 将计算机添加到 Operational Insights 时，自动化解决方案会向下推送 **HybridRegistration** PowerShell 模块，其中包含 **Add-HybridRunbookWorker** cmdlet。使用此 cmdlet 将 Runbook 环境安装到计算机上，并将其注册到 Azure 自动化。
 
 在管理员模式下打开 PowerShell 会话，并运行以下命令以导入模块。
 
-	Import-Module HybridRegistration 
+	Import-Module HybridRegistration
 
 如果你收到一条错误，指出找不到模块文件，则你可能需要使用以下命令，该命令会使用模块文件的完整路径。
 
@@ -75,16 +72,14 @@ Microsoft 管理代理可将计算机连接到 Operational Insights，并允许�
 
 	![混合 Runbook 辅助角色概述](./media/automation-hybrid-runbook-worker/elements-panel-keys.png)
 
-
 #### 3.安装 PowerShell 模块  
-
 Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任何活动和 cmdlet。不过，这些模块不会自动部署到本地计算机，因此必须手动安装。例外情况是 Azure 模块，该模块是默认安装的，可以用于访问所有 Azure 服务的 cmdlet 以及 Azure 自动化的活动。
 
 由于混合 Runbook 辅助角色功能的主要用途是管理本地资源，你很可能需要安装支持这些资源的模块。你可以参考[安装模块](http://msdn.microsoft.com/zh-cn/library/dd878350.aspx)以获取有关安装 Windows PowerShell 模块的信息。
 
 ## 在混合 Runbook 辅助角色中启动 Runbook
 
-[在 Azure 自动化中启动 Runbook](automation-starting-a-runbook) 介绍了用于启动 Runbook 的不同方法。混合 Runbook 辅助角色增加了一个 **RunOn** 选项，你可以在其中指定混合 Runbook 辅助角色组的名称。如果指定了组，则会由该组中的辅助角色检索和运行 Runbook。如果未指定此选项，则会在 Azure 自动化中正常运行 Runbook。
+[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook) 介绍了用于启动 Runbook 的不同方法。混合 Runbook 辅助角色增加了一个 **RunOn** 选项，你可以在其中指定混合 Runbook 辅助角色组的名称。如果指定了组，则会由该组中的辅助角色检索和运行 Runbook。如果未指定此选项，则会在 Azure 自动化中正常运行 Runbook。
 
 在 Azure 预览门户中启动 Runbook 时，你会看到一个 **RunOn** 选项，你可以在其中选择“Azure”或“混合辅助角色”。如果你选择“混合辅助角色”，则可以从下拉列表中选择该组。
 
@@ -101,7 +96,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 
 ### Runbook 权限
 
-在混合 Runbook 辅助角色中，Runbook 将在本地系统帐户的上下文中运行，因此必须针对要访问的资源进行身份验证。这些 Runbook 不能使用[通常用于针对 Azure 资源进行 Runbook 身份验证的方法](automation-configuring#configuring-authentication-to-azure-resources)，因为它们将要访问的资源位于 Azure 之外。
+在混合 Runbook 辅助角色中，Runbook 将在本地系统帐户的上下文中运行，因此必须针对要访问的资源进行身份验证。这些 Runbook 不能使用[通常用于针对 Azure 资源进行 Runbook 身份验证的方法](/documentation/articles/automation-configuring#configuring-authentication-to-azure-resources)，因为它们将要访问的资源位于 Azure 之外。
 
 你可以在包含 cmdlet 的 Runbook 中使用[凭据](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx)和[证书](http://msdn.microsoft.com/zh-cn/library/dn940013.aspx)资产，这些 cmdlet 可以让你指定凭据，方便你向不同资源进行身份验证。下面的示例显示了用于重新启动计算机的 Runbook 的一部分。它从凭据资产检索凭据，从变量资产检索计算机的名称，然后将这些值用于 Restart-Computer cmdlet。
 
@@ -110,7 +105,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 
 	Restart-Computer -ComputerName $Computer  -Credential $Cred
 
-你还可以利用 [InlineScript](automation-runbook-concepts#inline-script)，以便在其他由 [PSCredential 通用参数](http://technet.microsoft.com/zh-cn/library/jj129719.aspx)指定凭据的计算机上运行代码块。
+你还可以利用 [InlineScript](/documentation/articles/automation-powershell-workflow#inline-script)，以便在其他由 [PSCredential 通用参数](http://technet.microsoft.com/zh-cn/library/jj129719.aspx)指定凭据的计算机上运行代码块。
 
 
 ### 创作和测试 Runbook
@@ -125,7 +120,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 
 可以使用以下条件来确定是带有混合 Runbook 辅助角色的 Azure 自动化还是 Service Management Automation 更适合你的要求。
 
-- SMA 需要在本地安装比 Azure 自动化需要更多本地资源和更高维护成本的 Windows Azure Pack，而 Azure 自动化只需在本地 Runbook 辅助角色中安装代理。代理由 Operational Insights 管理，这进一步降低了其维护成本。 
+- SMA 需要在本地安装比 Azure 自动化需要更多本地资源和更高维护成本的 Windows Azure Pack，而 Azure 自动化只需在本地 Runbook 辅助角色中安装代理。代理由 Operational Insights 管理，这进一步降低了其维护成本。
 - Azure 自动化在云中存储其 Runbook，然后将这些 Runbook 传送给本地混合 Runbook 辅助角色。如果你的安全策略不允许此行为，则应使用 SMA。
 - Windows Azure Pack 可免费下载，而 Azure 自动化可能需要订阅费用。Azure。必须为 SMA 维护多个数据库。
 - 使用带混合 Runbook 辅助角色的 Azure 自动化，你可以在一个位置管理云资源和本地资源的 Runbook，而不必分别管理 Azure 自动化和 SMA。
@@ -134,7 +129,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 
 ## 相关文章
 
-- [在 Azure 自动化中启动 Runbook](automation-starting-a-runbook)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
 - [在 Azure 自动化中编辑 Runbook](https://msdn.microsoft.com/zh-cn/library/dn879137.aspx)
 
-<!---HONumber=60-->
+<!---HONumber=69-->

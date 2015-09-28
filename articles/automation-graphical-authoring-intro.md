@@ -5,9 +5,11 @@
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
-   editor="tysonn"/>
-   
-<tags ms.service="automation" ms.date="05/04/2015" wacn.date="06/16/2015"/> 
+   editor="tysonn" />
+<tags 
+   ms.service="automation"
+   ms.date="07/10/2015"
+   wacn.date="09/15/2015" />
 
 # Azure 自动化中的图形创作
 
@@ -32,8 +34,7 @@ Azure 自动化中的所有 Runbook 都是 Windows PowerShell 工作流。图形
 以下各节介绍图形编辑器中的控件。
 
 
-### 画布  
-
+### 画布
 画布是设计 Runbook 的地方。你可以将库控件中节点的活动添加到 Runbook，然后将其通过链接进行连接，以便定义 Runbook 的逻辑。
 
 ### 库控件
@@ -108,11 +109,16 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 | 数据源 | 说明 |
 |:---|:---|
-|活动输出|工作流中某个位于当前活动前面的活动的输出。将列出所有有效的活动。只选择要将其输出用于参数值的活动。如果该活动输出的对象具有多个属性，你可以在选择活动之后键入属性的名称。|
 |常量值|键入参数的值。这仅适用于以下数据类型：Int32、Int64、字符串、布尔值、DateTime、开关。 |
+|活动输出|工作流中某个位于当前活动前面的活动的输出。将列出所有有效的活动。只选择要将其输出用于参数值的活动。如果该活动输出的对象具有多个属性，你可以在选择活动之后键入属性的名称。|
+|Runbook 输入参数|选择一个 Runbook 输入参数作为活动参数的输入。|  
+|自动化变量资产|选择一个自动化变量作为输入。|  
+|自动化凭据资产|选择一个自动化凭据作为输入。|  
+|自动化证书资产|选择一个自动化证书作为输入。|  
+|自动化连接资产|选择一个自动化连接作为输入。| 
+|PowerShell 表达式|指定简单的 PowerShell 表达式。对表达式的计算将先于用于参数值的活动和结果之前。你可以使用变量来引用活动或 Runbook 输入参数的输出。|
 |空字符串|空字符串值。|
 |Null|一个 Null 值。|
-|PowerShell 表达式|指定简单的 PowerShell 表达式。对表达式的计算将先于用于参数值的活动和结果之前。你可以使用变量来引用活动或 Runbook 输入参数的输出。|
 |取消选择|清除以前配置的任何值。|
 
 
@@ -218,11 +224,11 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 ### 检查点
 
-你的 Runbook 中用于设置[检查点](automation-runbook-concepts/#checkpoints)的指南同样也适用于图形 Runbook。你可以为需要在其中设置检查点的 Checkpoint-Workflow cmdlet 添加活动。然后，如果 Runbook 从其他辅助角色上的这个检查点启动，则应使用 Add-AzureAccount 来跟踪此活动。
+你的 Runbook 中用于设置[检查点](/documentation/articles/automation-powershell-workflow/#checkpoints)的指南同样也适用于图形 Runbook。你可以为需要在其中设置检查点的 Checkpoint-Workflow cmdlet 添加活动。然后，如果 Runbook 从其他辅助角色上的这个检查点启动，则应使用 Add-AzureAccount 来跟踪此活动。
 
 ## 通过 Azure 资源进行身份验证
 
-Azure 自动化中的大多数 Runbook 将需要通过 Azure 资源进行身份验证。此身份验证所使用的典型方法是通过 Add-AzureAccount cmdlet 以及代表有权访问 Azure 帐户的 Active Directory 用户的[凭据资产](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx)进行的。这在[配置 Azure 自动化](automation-configuring)中进行了讨论。
+Azure 自动化中的大多数 Runbook 将需要通过 Azure 资源进行身份验证。此身份验证所使用的典型方法是通过 Add-AzureAccount cmdlet 以及代表有权访问 Azure 帐户的 Active Directory 用户的[凭据资产](http://msdn.microsoft.com/zh-cn/library/dn940015.aspx)进行的。这在[配置 Azure 自动化](/documentation/articles/automation-configuring)中进行了讨论。
 
 你可以将此功能添加到图形 Runbook，只需将凭据资产添加到画布，然后完成 Add-AzureAccount 活动即可。Add-AzureAccount 使用凭据活动作为其输入。下面的示例对此进行了演示。
 
@@ -266,7 +272,8 @@ Runbook 可能会要求用户提供输入（如果该用户是通过 Azure 预�
 
 ## 相关文章
 
-- [Azure 自动化 Runbook 概念](automation-runbook-concepts)
+- [学习 Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
 - [自动化资产](http://msdn.microsoft.com/zh-cn/library/azure/dn939988.aspx)
+ 
 
-<!---HONumber=60-->
+<!---HONumber=69-->

@@ -1,24 +1,19 @@
 <properties 
-   pageTitle="在 Azure Automation 中计划 Runbook"
-   description="介绍如何在 Azure Automation 中创建一个计划，以便在特定的时间或按重复计划自动启动 Runbook。"
+   pageTitle="在 Azure 自动化中计划 Runbook"
+   description="介绍如何在 Azure 自动化中创建一个计划，以便在特定的时间或按重复计划自动启动 Runbook。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
 <tags 
-wacn.date="05/15/2015"
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="03/30/2015"
-   ms.author="bwren" />
+   ms.date="06/30/2015"
+   wacn.date="09/15/2015" />
 
-# 在 Azure Automation 中计划 Runbook
+# 在 Azure 自动化中计划 Runbook
 
-若要将 Azure Automation 中的 Runbook 计划为在指定的时间启动，可以将它链接到一个或多个计划。可以将某个计划配置为运行一次，或者每隔指定的小时数或天数重复运行。可将一个 Runbook 链接到多个计划，一个计划可以链接多个 Runbook。
+若要将 Azure 自动化中的 Runbook 计划为在指定的时间启动，可以将它链接到一个或多个计划。可以将某个计划配置为运行一次，或者每隔指定的小时数或天数重复运行。可将一个 Runbook 链接到多个计划，一个计划可以链接多个 Runbook。
 
 ## 创建计划
 
@@ -26,17 +21,17 @@ wacn.date="05/15/2015"
 
 ### 使用 Azure 管理门户创建新计划
 
-1. 在 Azure 管理门户中，选择"自动化"，然后单击 Automation 帐户的名称。
-1. 选择"资产"选项卡。
-1. 在窗口底部，单击"添加设置"。
-1. 单击"添加计划"。
-1. 键入新计划的"名称"和（可选）"说明"。
-1. 选择计划的运行频率："一次"、"每小时"或"每日"。
-1. 指定"开始时间"，并根据选择的计划类型指定其他选项。
+1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 选择“资产”选项卡。
+1. 在窗口底部，单击“添加设置”。
+1. 单击“添加计划”。
+1. 键入新计划的“名称”和（可选）“说明”。
+1. 选择计划的运行频率：“一次”、“每小时”或“每日”。
+1. 指定“开始时间”，并根据选择的计划类型指定其他选项。
 
 ### 使用 Windows PowerShell 创建新计划
 
-你可以使用 [New-AzureAutomationSchedule](https://msdn.microsoft.com/zh-CN/library/azure/dn690271.aspx) cmdlet 在 Azure Automation 中创建新计划。必须指定计划的开始时间，以及它是要运行一次、每小时还是每天运行。
+你可以使用 [New-AzureAutomationSchedule](https://msdn.microsoft.com/zh-CN/library/azure/dn690271.aspx) cmdlet 在 Azure 自动化中创建新计划。必须指定计划的开始时间，以及它是要运行一次、每小时还是每天运行。
 
 以下示例命令演示了如何创建一个从 2015 年 1 月 20 日开始在每天下午 3:30 运行的新计划。
 
@@ -50,16 +45,16 @@ wacn.date="05/15/2015"
 
 ### 使用 Azure 管理门户将计划链接到 Runbook
 
-1. 在 Azure 管理门户中，选择"自动化"，然后单击 Automation 帐户的名称。
-1. 选择"Runbook"选项卡。
+1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 选择“Runbook”选项卡。
 1. 单击要计划的 Runbook 的名称。
-1. 单击"计划"选项卡。
-2. 如果 Runbook 当前未链接到计划，则系统会提供"链接到新计划"或"链接到现有计划"选项。如果 Runbook 当前已链接到计划，请单击窗口底部的"链接"来访问这些选项。
+1. 单击“计划”选项卡。
+2. 如果 Runbook 当前未链接到计划，则系统会提供“链接到新计划”或“链接到现有计划”选项。如果 Runbook 当前已链接到计划，请单击窗口底部的“链接”来访问这些选项。
 1. 如果 Runbook 包含参数，系统将提示你输入其值。  
 
 ### 使用 Windows PowerShell 将计划链接到 Runbook
 
-你可以使用 [Register-AzureAutomationScheduledRunbook](https://msdn.microsoft.com/zh-CN/library/azure/dn690265.aspx) 将计划链接到 Runbook。可以使用 Parameters 参数指定 Runbook 参数的值。有关指定参数值的详细信息，请参阅[在 Azure Automation 中启动 Runbook](/documentation/articles/automation-starting-a-runbook)。
+你可以使用 [Register-AzureAutomationScheduledRunbook](https://msdn.microsoft.com/zh-CN/library/azure/dn690265.aspx) 将计划链接到 Runbook。可以使用 Parameters 参数指定 Runbook 参数的值。有关指定参数值的详细信息，请参阅 [在 Azure 自动化中启动 Runbook](/do cumentation/articles/automation-starting-a-runbook)。
 
 以下示例命令演示了如何将计划链接到包含参数的 Runbook。
 
@@ -75,12 +70,12 @@ wacn.date="05/15/2015"
 
 ### 使用 Azure 管理门户禁用计划
 
-可以在 Azure 管理门户中通过某个计划的"计划详细信息"页禁用该计划。
+可以在 Azure 管理门户中通过某个计划的“计划详细信息”页禁用该计划。
 
-1. 在 Azure 管理门户中，选择"自动化"，然后单击 Automation 帐户的名称。
-1. 选择"资产"选项卡。
+1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 选择“资产”选项卡。
 1. 单击某个计划的名称以打开该计划的详细信息页。
-2. 将"已启用"更改为"否"。
+2. 将“已启用”更改为“否”。
 
 ### 使用 Windows PowerShell 禁用计划
 
@@ -94,7 +89,7 @@ wacn.date="05/15/2015"
 
 ## 相关文章
 
-- [在 Azure Automation 中计划资产](https://msdn.microsoft.com/zh-CN/library/azure/dn940016.aspx)
-- [在 Azure Automation 中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
+- [在 Azure 自动化中计划资产](https://msdn.microsoft.com/zh-CN/library/azure/dn940016.aspx)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
 
-<!--HONumber=53-->
+<!---HONumber=69-->

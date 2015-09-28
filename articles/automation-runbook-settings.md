@@ -7,14 +7,9 @@
    manager="stevenka"
    editor="tysonn" />
 <tags 
-wacn.date="05/15/2015"
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="04/13/2015"
-   ms.author="bwren" />
+   ms.date="07/22/2015"
+   wacn.date="09/15/2015" />
 
 # Runbook 设置
 
@@ -24,7 +19,7 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 ### 名称和说明
 
-创建 Runbook 后，无法更改它的名称。"说明"是可选的，最多可包含 512 个字符。
+创建 Runbook 后，无法更改它的名称。“说明”是可选的，最多可包含 512 个字符。
 
 ### 标记
 
@@ -32,18 +27,18 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 
 ### 日志记录
 
-默认情况下，"详细"和"进度"记录不会写入作业历史记录。你可以更改特定 Runbook 的设置以记录这些记录。有关这些记录的详细信息，请参阅 [Runbook 输出和消息](https://msdn.microsoft.com/zh-CN/library/dn879148.aspx)。
+默认情况下，“详细”和“进度”记录不会写入作业历史记录。你可以更改特定 Runbook 的设置以记录这些记录。有关这些记录的详细信息，请参阅 [Runbook 输出和消息](https://msdn.microsoft.com/zh-CN/library/dn879148.aspx)。
 
 ## 更改 Runbook 设置
 
 ### 使用 Azure 管理门户更改 Runbook 设置
 
-你可以在 Azure 管理门户中通过 Runbook 的"配置"页更改 Runbook 的设置。
+你可以在 Azure 管理门户中通过 Runbook 的“配置”页更改 Runbook 的设置。
 
-1. 在 Azure 管理门户中，选择"自动化"，然后单击 Automation 帐户的名称。
-1. 选择"Runbook"选项卡。
+1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
+1. 选择“Runbook”选项卡。
 1. 单击 Runbook 的名称。
-1. 选择**配置 (Configure)**选项卡。
+1. 选择“配置”选项卡。
 
 ### 使用 Windows PowerShell 更改 Runbook 设置
 
@@ -58,7 +53,7 @@ Azure Automation 中的每个 Runbook 都提供了多个设置用于帮助标识
 	Set-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName -LogVerbose $true -Tags $tags
 
 ## 相关文章
-<!--- [Runbook Output and Messages](/documentation/articles/automation-runbook-output-and-messages) -->
+- [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages)
 - [创建或导入 Runbook](https://msdn.microsoft.com/zh-CN/library/dn643637.aspx)
 
-<!--HONumber=53-->
+<!---HONumber=69-->

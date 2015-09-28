@@ -1,23 +1,32 @@
-<properties pageTitle="从 Orchestrator 迁移 Runbook 和集成包" description="介绍如何将 Runbook 和集成包从 System Center Orchestrator 迁移到 Azure 自动化。" services="automation" documentationCenter="" authors="bwren" manager="stevenka" editor="tysonn"/>
-
-<tags ms.service="automation" ms.date="05/04/2015" wacn.date="06/16/2015"/>
+<properties
+   pageTitle="从 Orchestrator 迁移到 Azure 自动化 | Windows Azure"
+   description="介绍如何将 Runbook 和集成包从 System Center Orchestrator 迁移到 Azure 自动化。"
+   services="automation"
+   documentationCenter=""
+   authors="bwren"
+   manager="stevenka"
+   editor="tysonn" />
+<tags
+   ms.service="automation"
+   ms.date="08/18/2015"
+   wacn.date="09/15/2015" />
 
 
 # 从 Orchestrator 迁移到 Azure 自动化
 
 [System Center Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) 中的 Runbook 基于专为 Orchestrator 编写的集成包中的活动，而 Azure 自动化中的 Runbook 则基于 Windows PowerShell 工作流。Azure 自动化中的图形 Runbook 具有的外观类似于其活动用于表示 PowerShell cmdlet、子 Runbook 和资产的 Orchestrator Runbook。
 
-**System Center Orchestrator 迁移工具包**包含的工具可帮助你将 Runbook 从 Orchestrator 转换为 Azure 自动化。除了转换 Runbook 本身，你还必须将包含所用活动的集成包转换为包含 Windows PowerShell cmdlet 的集成模块。
+[System Center Orchestrator 迁移工具包](http://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all)包含的工具可帮助你将 Runbook 从 Orchestrator 转换为 Azure 自动化。除了转换 Runbook 本身，你还必须将包含所用活动的集成包转换为包含 Windows PowerShell cmdlet 的集成模块。
 
 下面是将 Orchestrator Runbook 转换为 Azure 自动化的基本过程。这每个步骤都在下面的相应部分进行了详细介绍。
 
-1.  下载包含本文讨论的工具和模块的 System Center Orchestrator 迁移工具包。 
-2.  将[标准活动模块](standard-activities-module)安装到 Azure 自动化中。这包括标准 Orchestrator 活动的转换后版本，可供已转换的 Runbook 使用。
-3.  将已转换的 Microsoft 集成包安装到 Azure 自动化中。这些是已经从 Orchestrator 集成包转换过来的用于 Microsoft 技术的模块，而这些集成包中可能包含已转换 Runbook 所使用的活动。 
-4.  使用[集成包转换器](#integration-pack-converter)转换自定义的和第三方的集成包，并在 Azure 自动化中进行安装。
-5.  在 Azure 自动化的 Orchestrator 中通过手动方式重新创建[全局资产](#global-assets)，因为没有自动化方法来执行此迁移。
-6.  使用 [Runbook 转换器](#runbook-converter)（即将推出）来转换 Orchestrator Runbook，并在 Azure 自动化中进行安装。
-7.  在本地数据中心配置[混合 Runbook 辅助角色](#hybrid-runbook-worker)，以便运行转换的 Runbook。
+1.  下载包含本文讨论的工具和模块的 [System Center Orchestrator 迁移工具包](http://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all)。
+2.  将[标准活动模块](#standard-activities-module)安装到 Azure 自动化中。这包括标准 Orchestrator 活动的转换后版本，可供已转换的 Runbook 使用。
+2.  针对 Runbook 使用的集成包，在 Azure 自动化中安装 [System Center Orchestrator 集成模块](#system-center-orchestrator-integration-modules)。
+3.  使用[集成包转换器](#integration-pack-converter)转换自定义的和第三方的集成包，并在 Azure 自动化中进行安装。
+4.  在 Azure 自动化的 Orchestrator 中通过手动方式重新创建全局资产，因为没有自动化方法来执行此迁移。
+5.  使用 [Runbook 转换器](#runbook-converter-coming-soon)（即将推出）来转换 Orchestrator Runbook，并在 Azure 自动化中进行安装。
+6.  在本地数据中心配置[混合 Runbook 辅助角色](#hybrid-runbook-worker)，以便运行转换的 Runbook。
 
 ## Service Management Automation
 
@@ -25,7 +34,7 @@
 
 ## 混合 Runbook 辅助角色
 
-Orchestrator 中的 Runbook 存储在数据库服务器上，运行在 Runbook 服务器上，这两种服务器都位于本地数据中心。Azure 自动化中的 Runbook 存储在 Azure 云中，并可使用[混合 Runbook 辅助角色](automation-hybrid-runbook-worker)运行在本地数据中心。这是通常情况下运行从 Orchestrator 转换过来的 Runbook 的方式，因为这些 Runbook 是设计在本地服务器上运行的。
+Orchestrator 中的 Runbook 存储在数据库服务器上，运行在 Runbook 服务器上，这两种服务器都位于本地数据中心。Azure 自动化中的 Runbook 存储在 Azure 云中，并可使用[混合 Runbook 辅助角色](/documentation/articles/automation-hybrid-runbook-worker)运行在本地数据中心。这是通常情况下运行从 Orchestrator 转换过来的 Runbook 的方式，因为这些 Runbook 是设计在本地服务器上运行的。
 
 ## 集成包转换器
 
@@ -61,7 +70,7 @@ Orchestrator 包括一组[标准活动](http://technet.microsoft.com/zh-cn/libra
 
 - [System Center 2012 - Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx)
 - [Service Management Automation](https://technet.microsoft.com/zh-cn/library/dn469260.aspx)
-- [混合 Runbook 辅助角色](automation-hybrid-runbook-worker)
+- [混合 Runbook 辅助角色](/documentation/articles/automation-hybrid-runbook-worker)
 - [Orchestrator 标准活动](http://technet.microsoft.com/zh-cn/library/hh403832.aspx)
 
-<!---HONumber=60-->
+<!---HONumber=69-->
