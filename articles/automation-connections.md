@@ -8,14 +8,14 @@
    editor="tysonn" />
 <tags
    ms.service="automation"
-   ms.date="05/21/2015"
-   wacn.date="08/29/2015" />
+   ms.date="08/18/2015"
+   wacn.date="09/15/2015" />
 
 # Azure 自动化中的连接资产
 
 自动化连接资产包含从 Runbook 连接到外部服务或应用程序所需的信息。除 URL 和端口等连接信息外，还包括身份验证所需的信息，如用户名和密码。使用连接的值将用于连接一个特定应用程序的所有属性保留在一个资产中，而不是创建多个变量。用户可以从一个位置编辑连接的值，并且您可以在单个参数中将连接名称传递给 Runbook。可在 Runbook 中使用 **Get-AutomationConnection** 活动访问连接的属性。
 
-当创建连接时，必须指定*连接类型*。连接类型是定义了一组属性的模板。连接为其连接类型中定义的每个属性定义值。连接类型通过集成模块添加到 Azure 自动化或使用 [Azure 自动化 API](http://msdn.microsoft.com/zh-cn/library/azure/mt163818.aspx) 创建。在创建连接时，仅能使用安装到您的自动化帐户中的连接类型。
+当创建连接时，必须指定“连接类型”。连接类型是定义了一组属性的模板。连接为其连接类型中定义的每个属性定义值。连接类型通过集成模块添加到 Azure 自动化或使用 [Azure 自动化 API](http://msdn.microsoft.com/zh-cn/library/azure/mt163818.aspx) 创建。在创建连接时，仅能使用安装到您的自动化帐户中的连接类型。
 
 >[AZURE.NOTE]Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
 
@@ -116,4 +116,4 @@
 - [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
  
 
-<!---HONumber=67-->
+<!---HONumber=69-->

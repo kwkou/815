@@ -1,26 +1,21 @@
 <properties 
-   pageTitle="Azure Automation 数据保留"
-   description="介绍 Azure Automation 的数据保留策略。"
+   pageTitle="Azure 自动化数据保留"
+   description="介绍 Azure 自动化的数据保留策略。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
 <tags 
-wacn.date="05/15/2015"
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="04/13/2015"
-   ms.author="bwren" />
+   ms.date="07/22/2015"
+   wacn.date="09/15/2015" />
 
-# Azure Automation 数据保留
+# Azure 自动化数据保留
 
-在删除 Azure Automation 中的某个资源时，该资源在被永久删除之前将保留 90 天以供审核。在此期间，你无法查看或使用该资源。此策略也适用于属于已删除的 Automation 帐户的资源。
+在删除 Azure 自动化中的某个资源时，该资源在被永久删除之前将保留 90 天以供审核。在此期间，你无法查看或使用该资源。此策略也适用于属于已删除的自动化帐户的资源。
 
-Azure Automation 会自动删除并永久移除 90 天之前的作业。
+Azure 自动化会自动删除并永久移除 90 天之前的作业。
 
 下表汇总了各种资源的保留策略。
 
@@ -37,4 +32,4 @@ Azure Automation 会自动删除并永久移除 90 天之前的作业。
 ## 相关文章
 - [备份 Azure Automation](https://msdn.microsoft.com/zh-CN/library/dn643635.aspx)
 
-<!--HONumber=53-->
+<!---HONumber=69-->
