@@ -9,7 +9,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services"  
 ms.date="07/06/2015" 
-wacn.date="09/15/2015"/>
+wacn.date="08/29/2015"/>
 
 # 为 Azure 中的角色设置远程桌面连接
 在创建运行应用程序的云服务后，可以远程访问该应用程序中的角色实例，以配置设置或解决问题。必须已为远程桌面配置云服务。
@@ -109,4 +109,4 @@ wacn.date="09/15/2015"/>
 ## 后续步骤
 可能需要[打包](/documentation/articles/cloud-services-model-and-package)或<!--[-->上载（部署）<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->你的应用程序。
 
-<!---HONumber=69-->
+<!---HONumber=67-->

@@ -1,41 +1,48 @@
-﻿<properties 
-	pageTitle="在计算模拟器中本地分析云服务" 
-	services="cloud-services"
-	description="使用 Visual Studio 探查器调查云服务中的性能问题" 
-	documentationCenter=""
-	authors="patshea123" 
-	manager="douge" 
-	editor="tglee"
-	tags="" 
-	/>
-
-<tags 
-	ms.service="cloud-services" 
-	ms.date="05/27/2015" 
-	wacn.date="09/15/2015"/>
+﻿<properties linkid="dev-net-common-tasks-profiling-in-compute-emulator" urldisplayname="Team Foundation Service" headerexpose="" pageTitle="在计算模拟器中本地分析云服务" metakeywords="" footerexpose="" description="" umbraconavihide="0" disquscomments="1" title="Testing the Performance of a Cloud Service Locally in the Azure Compute Emulator Using the Visual Studio Profiler" authors="" />
+<tags ms.service=""
+    ms.date="02/18/2015"
+    wacn.date="04/11/2015"
+    />
 
 # 在 Azure 计算模拟器中使用 Visual Studio 探查器来本地测试云服务的性能
 
-可通过各种工具和技术来测试云服务的性能。在将云服务发布到 Azure 后，可以让 Visual Studio 收集分析数据，然后在本地进行分析，如[分析 Azure 应用程序][1]中所述。也可以使用诊断来跟踪各种性能计数器，如[在 Azure 中使用性能计数器][2]中所述。此外，在将应用程序部署到云之前，您可能需要在计算模拟器中本地分析应用程序。
+可通过各种工具和技术来测试云服务的性能。
+在将云服务发布到 Azure 后，可以让 Visual Studio 收集分析数据，然后在本地进行分析，如[分析 Azure 应用程序][1]中所述。
+也可以使用诊断来跟踪各种性能计数器，如[在 Azure 中使用性能计数器][2]中所述。
+此外，在将应用程序部署到云之前，你可能需要在计算模拟器中本地分析应用程序。
 
-本文包含了 CPU 采样分析方法，可在模拟器中本地执行该方法。CPU 采样是一种干预性不是很强的分析方法。探查器将按照指定的采样时间间隔拍摄调用堆栈的快照。将收集一段时间内的数据并将其显示在报告中。此分析方法倾向于指示在具有大量计算的应用程序中执行大多数 CPU 工作的位置。这使你能够侧重于应用程序在其上花费最多时间的“热路径”。
+本文包含了 CPU 采样分析方法，可在模拟器中本地执行该方法。CPU 采样是一种干预性不是很强的分析方法。探查器将按照指定的采样时间间隔拍摄调用堆栈的快照。将收集一段时间内的数据并将其显示在报告中。此分析方法倾向于指示在具有大量计算的应用程序中执行大多数 CPU 工作的位置。这使你能够侧重于应用程序在其上花费最多时间的"热路径"。
 
 
 ## 先决条件
 
 仅在拥有 Visual Studio 高级专业版或 Visual Studio 旗舰版的情况下才能本地运行探查器。 
 
-## <a name="step1"></a>步骤 1：配置 Visual Studio 以进行分析
+## 本文内容：
 
-首先，提供了几个 Visual Studio 配置选项，这些选项在分析时可能会有用。若要使分析报告变得有意义，你将需要应用程序的符号（.pdb 文件）与系统库的符号。你将需要确保引用可用的符号服务器。为此，请在 Visual Studio 中的“工具”菜单上，依次选择“选项”、“调试”和“符号”。确保**符号文件 (.pdb) 位置**下方列出了 Microsoft 符号服务器。你也可参考 http://referencesource.microsoft.com/symbols，其上可能提供了其他符号文件。
+-   [步骤 1：配置 Visual Studio 以进行分析][]
+
+-   [步骤 2：附加到进程][]
+
+-   [步骤 3：查看分析报告][]
+
+-   [步骤 4：进行更改并比较性能][]
+
+-   [故障排除][]
+
+-   [后续步骤][]
+
+## <a name="step1"> </a> 步骤 1：配置 Visual Studio 以进行分析
+
+首先，提供了几个 Visual Studio 配置选项，这些选项在分析时可能会有用。若要使分析报告变得有意义，你将需要应用程序的符号（.pdb 文件）与系统库的符号。你将需要确保引用可用的符号服务器。为此，请在 Visual Studio 中的**"工具"**菜单上，依次选择**"选项"**、**"调试"**和**"符号"**。确保**"符号文件(.pdb)位置"**下列出了 Microsoft 符号服务器。你也可参考 http://referencesource.microsoft.com/symbols，其上可能提供了其他符号文件。
 
 ![][4]
 
-如果需要，可通过设置“仅我的代码”来简化探查器生成的报告。通过启用“仅我的代码”，可简化函数调用堆栈，以便从报告中隐藏对库和 .NET Framework 的完全内部调用。在“工具”菜单上，选择“选项”。然后展开“性能工具”节点，并选择“常规”。选中“为探查器报告启用‘仅我的代码’”的复选框。
+如果需要，可通过设置"仅我的代码"来简化探查器生成的报告。通过启用"仅我的代码"，可简化函数调用堆栈，以便从报告中隐藏对库和 .NET Framework 的完全内部调用。在"工具"菜单上，选择**"选项"**。然后展开"性能工具"节点，并选择**"常规"**。选中**"为探查器报告启用'仅我的代码'"的复选框**。
 
 ![][17]
 
-你可以在现有项目或新项目中使用这些说明。如果你创建新的项目来尝试下面描述的技术，请选择 C# **Azure 云服务**项目，并选择“Web 角色”和“辅助角色”。
+你可以在现有项目或新项目中使用这些说明。如果你创建新的项目来尝试下面描述的技术，请选择 C# **Azure 云服务**项目，并选择**"Web 角色"**和**"辅助角色"**。
 
 ![][5]
 
@@ -46,7 +53,7 @@
 	    public static string Concatenate(int number)
 	    {
 	        int count;
-	        string s = "";
+	        string s = ""
 	        for (count = 0; count < number; count++)
 	        {
 	            s += "\n" + count.ToString();
@@ -67,13 +74,13 @@
 	    }
 	}
 
-本地生成并运行云服务且不进行调试 (Ctrl+F5)，并将解决方案配置设置为 **Release**。这将确保创建的所有文件和文件夹都用于本地运行应用程序，并确保启动所有仿真程序。从任务栏启动计算模拟器 UI，以验证辅助角色是否正在运行。
+本地生成并运行云服务且不进行调试 (Ctrl+F5)，并将解决方案配置设置为 **Release**。这将确保创建的所有文件和文件夹都用于本地运行应用程序，并确保启动所有模拟器。从任务栏启动计算模拟器 UI，以验证辅助角色是否正在运行。
 
 ## <a name="step2"> </a> 步骤 2：附加到进程
 
 你必须将探查器附加到正在运行的进程，而不是通过从 Visual Studio 2010 IDE 中启动应用程序来分析该应用程序。 
 
-若要将探查器附加到进程，请在“分析”菜单上选择“探查器”和“附加/分离”。
+若要将探查器附加到进程，请在**"分析"**菜单上选择**"探查器"**和**"附加/分离"**。
 
 ![][6]
 
@@ -83,7 +90,8 @@
 
 如果项目文件夹位于网络驱动器上，则探查器将要求你提供其他位置来保存分析报告。
 
- 也可以通过附加到 WaIISHost.exe 来附加到 Web 角色。如果应用程序中有多个辅助角色进程，则需要使用 processID 将它们区分开来。可以通过访问 Process 对象以编程方式查询 processID。例如，如果将此代码添加到角色中 RoleEntryPoint 派生的类的 Run 方法，则可在计算模拟器 UI 中查看日志以了解要连接到的进程。
+ 也可以通过附加到 WaIISHost.exe 来附加到 Web 角色。
+ 如果应用程序中有多个辅助角色进程，则需要使用 processID 将它们区分开来。可以通过访问 Process 对象以编程方式查询 processID。例如，如果将此代码添加到角色中 RoleEntryPoint 派生的类的 Run 方法，则可在计算模拟器 UI 中查看日志以了解要连接到的进程。
 
 	var process = System.Diagnostics.Process.GetCurrentProcess();
 	var message = String.Format("Process ID: {0}", process.Id);
@@ -99,7 +107,7 @@
 
 完成附加后，请在应用程序的 UI 中执行这些步骤（如果需要）来复制方案。
 
-如果想要停止分析，请选择“停止分析”链接。
+如果想要停止分析，请选择**"停止分析"**链接。
 
 ![][10]
 
@@ -112,7 +120,7 @@
 ![][11]
 
 
-如果你在热路径中看到 String.wstrcpy，请单击“仅我的代码”以将视图更改为仅显示用户代码。如果你看到 String.Concat，请尝试按“显示所有代码”按钮。
+如果你在热路径中看到 String.wstrcpy，请单击"仅我的代码"以将视图更改为仅显示用户代码。如果你看到 String.Concat，请尝试按"显示所有代码"按钮。
 
 您将看到占用大部分执行时间的 Concatenate 方法和 String.Concat。
 
@@ -137,7 +145,7 @@
 	    return builder.ToString();
 	}
 
-执行其他性能运行，然后比较性能。在性能资源管理器中，如果运行位于同一会话中，则只需选择两个报告，打开快捷菜单，并选择“比较性能报告”。若要与其他性能会话中的运行进行比较，请打开“分析”菜单，并选择“比较性能报告”。在显示的对话框中指定这两个文件。
+执行其他性能运行，然后比较性能。在性能资源管理器中，如果运行位于同一会话中，则只需选择两个报告，打开快捷菜单，并选择**"比较性能报告"**。若要与其他性能会话中的运行进行比较，请打开**"分析"**菜单，并选择**"比较性能报告"**。在显示的对话框中指定这两个文件。
 
 ![][15]
 
@@ -151,7 +159,7 @@
 
 - 请确保正在分析 Release 生成，并在不调试的情况下启动。
 
-- 如果未在“探查器”菜单上启用“附加/分离”选项，请运行性能向导。
+- 如果未在"探查器"菜单上启用"附加/分离"选项，请运行性能向导。
 
 - 使用计算模拟器 UI 来查看应用程序的状态。 
 
@@ -159,19 +167,19 @@
 
 - 如果您已从命令行使用任一分析命令（尤其是全局设置），请确保已调用 VSPerfClrEnv /globaloff 并已关闭 VsPerfMon.exe。
 
-- 如果采样时显示了消息“PRF0025: 未收集数据”，请检查附加的进程是否有 CPU 活动。未执行任何计算工作的应用程序将无法生成任何采样数据。此外，在执行任何采样前可能会退出进程。查看以验证正在分析的角色的 Run 方法是否已终止。
+- 如果采样时显示了消息"PRF0025:未收集数据"，请检查附加的进程是否有 CPU 活动。未执行任何计算工作的应用程序将无法生成任何采样数据。此外，在执行任何采样前可能会退出进程。查看以验证正在分析的角色的 Run 方法是否已终止。
 
 ## <a name="nextSteps"> </a> 后续步骤
 
 Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，但若要测试内存分配，你可以在分析时选择该选项。此外，你可以选择并发分析，这将帮助你确定线程是否正在浪费时间竞争锁；也可以选择层交互分析，这将帮助你跟踪在应用程序的各个层之间（最常见的是数据层和辅助角色之间）进行交互时的性能问题。你可以查看应用程序生成的数据库查询并使用分析数据来改进对数据库的使用。有关层交互分析的信息，请参阅[演练：在 Visual Studio Team System 2010 中使用层交互探查器][3]。
 
 
-[Step 1: Configure Visual Studio for Profiling]: #step1
-[Step 2: Attach to a Process]: #step2
-[Step 3: View Profiling Reports]: #step3
-[Step 4: Make Changes and Compare Performance]: #step4
-[Troubleshooting]: #troubleshooting
-[Next Steps]: #nextSteps
+[步骤 1：配置 Visual Studio 以进行分析]: #step1
+[步骤 2：附加到进程]: #step2
+[步骤 3：查看分析报告]: #step3
+[步骤 4：进行更改并比较性能]: #step4
+[故障排除]: #troubleshooting
+[后续步骤]: #nextSteps
 
 [1]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh369930.aspx
 [2]: https://msdn.microsoft.com/zh-CN/library/azure/hh411542.aspx
@@ -189,5 +197,4 @@ Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，�
 [15]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally013.png
 [16]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally012.png
 [17]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally08.png
-
-<!---HONumber=69-->
+<!--HONumber=39-->
