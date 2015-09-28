@@ -1,8 +1,8 @@
 <properties title="How to Configure An Availability Set for Virtual Machines" pageTitle="如何为虚拟机配置可用性集" description="提供为 Azure 中的 VM 配置可用性集的步骤" metaKeywords="" services="virtual-machines" solutions="" documentationCenter="" authors="kathydav" manager="timlt" videoId="" scriptId="" />
 <tags 
 	ms.service="virtual-machines"
-	ms.date="03/31/2015" 
-	wacn.sate="08/29/2015"/>
+	ms.date="03/31/2015"
+	wacn.date="08/29/2015"/>
 
 # 如何为虚拟机配置可用性集#
 

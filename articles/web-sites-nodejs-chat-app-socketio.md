@@ -1,6 +1,6 @@
 <properties linkid="dev-nodejs-Website-with-socketio" urlDisplayName="Website Using Socket.IO" pageTitle="使用 Socket.io 构建 Node.js 网站 - Azure 教程" metaKeywords="Azure Node.js socket.io 教程, Azure Node.js socket.io, Azure Node.js 教程" description="本教程将演示如何在托管在 Azure 上的 node.js 网站中使用 socket.io。" metaCanonical="" services="web-sites" documentationCenter="Node.js" title="Build a Node.js Chat Application with Socket.IO on an Azure Website" authors="larryfr" solutions="" videoId="" scriptId="" manager="paulettm" editor="mollybos" />
 
-<tags ms.serive="website" ms.date="03/24/2015" wacn.date="04/11/2015"/>
+<tags ms.service="website" ms.date="03/24/2015" wacn.date="04/11/2015"/>
 
 
 
