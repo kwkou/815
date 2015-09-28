@@ -64,7 +64,7 @@
 
 对于访问实时服务：
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey]
+	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey];BlobEndpoint=[http|https]://yourAccount.blob.core.chinacloudapi.cn/;TableEndpoint=[http|https]://yourAccount.table.core.chinacloudapi.cn/;QueueEndpoint=[http|https]://yourAccount.queue.core.chinacloudapi.cn/;
 
 For 访问模拟器存储：
 
