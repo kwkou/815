@@ -28,7 +28,7 @@ Azure 自动化中的所有 Runbook 都是 Windows PowerShell 工作流。图形
 
 通过创建或编辑图形 Runbook，你可以在 Azure 预览门户中打开图形编辑器。
 
-![图形工作区](media/automation-graphical-authoring-intro/graphical-editor.png)
+![图形工作区](./media/automation-graphical-authoring-intro/graphical-editor.png)
 
 
 以下各节介绍图形编辑器中的控件。
@@ -64,11 +64,11 @@ Azure 自动化中的所有 Runbook 都是 Windows PowerShell 工作流。图形
 
 若要打开 Runbook 的测试控件，可先打开要编辑的该 Runbook，然后单击“测试窗格”按钮。
 
-![测试窗格按钮](media/automation-graphical-authoring-intro/runbook-edit-test-pane.png)
+![测试窗格按钮](./media/automation-graphical-authoring-intro/runbook-edit-test-pane.png)
 
 测试控件会提示你输入参数，你可以通过单击“启动”按钮来启动 Runbook。
 
-![测试控件按钮](media/automation-graphical-authoring-intro/runbook-test-start.png)
+![测试控件按钮](./media/automation-graphical-authoring-intro/runbook-test-start.png)
 
 ### 发布图形 Runbook
 
@@ -76,22 +76,22 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 发布图形 Runbook 时，你可以先打开要编辑的 Runbook，然后单击“发布”按钮即可。
 
-![发布按钮](media/automation-graphical-authoring-intro/runbook-edit-publish.png)
+![发布按钮](./media/automation-graphical-authoring-intro/runbook-edit-publish.png)
 
 当 Runbook 尚未发布时，其状态为“新建”。当 Runbook 发布后，其状态为“已发布”。如果你对已发布的 Runbook 进行编辑，而草稿版不同于已发布版，则 Runbook 的状态为“正在编辑”。
 
-![Runbook 状态](media/automation-graphical-authoring-intro/runbook-statuses.png)
+![Runbook 状态](./media/automation-graphical-authoring-intro/runbook-statuses.png)
 
 你还可以选择还原到 Runbook 的已发布版。这会抛弃自上次发布 Runbook 以来所做的任何更改，并会将 Runbook 的草稿版替换为已发布版。
 
-![“恢复到已发布版本”按钮](media/automation-graphical-authoring-intro/runbook-edit-revert-published.png)
+![“恢复到已发布版本”按钮](./media/automation-graphical-authoring-intro/runbook-edit-revert-published.png)
 
 
 ## 活动
 
 活动是 Runbook 的构建基块。活动可以是一个 PowerShell cmdlet，一个子 Runbook，也可以是一个工作流活动。将活动添加到 Runbook 时，可以右键单击库控件中的该活动，然后选择“添加到画布”。然后，你可以通过单击拖放的方式将活动置于画布上你喜欢的任何位置。活动在画布上的位置不会以任何方式影响 Runbook 的运行。你可以对 Runbook 进行任何形式的布局，只要你觉得该布局最适合实现 Runbook 操作的可视化即可。
 
-![添加到画布](media/automation-graphical-authoring-intro/add-to-canvas.png)
+![添加到画布](./media/automation-graphical-authoring-intro/add-to-canvas.png)
 
 在画布上选择需要在“配置”边栏选项卡中配置其属性和参数的活动。你可以将活动的“标签”更改为你觉得更具描述性的内容。原始 cmdlet 仍在运行，你只是更改其要在图形编辑器中使用的显示名称。该标签在 Runbook 中必须是唯一的。
 
@@ -101,7 +101,7 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 在下面的示例中，Get-AzureVM cmdlet 有两个参数集。在你选择其中一个参数集之前，你将无法配置参数值。ListAllVMs 参数集可用于返回所有虚拟机，并具有一个可选参数。GetVMByServiceandVMName 可用于指定你希望返回的虚拟机，具有一个必需参数和两个可选参数。
 
-![参数集](media/automation-graphical-authoring-intro/parameter-set.png)
+![参数集](./media/automation-graphical-authoring-intro/parameter-set.png)
 
 #### 参数值
 
@@ -145,7 +145,7 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 在两个活动之间创建链接，方法是：先选择源活动，然后单击图形底部的圆圈。将箭头拖到目标活动，然后放开。
 
-![创建链接](media/automation-graphical-authoring-intro/create-link.png)
+![创建链接](./media/automation-graphical-authoring-intro/create-link.png)
 
 选择可在“配置”边栏选项卡中配置其属性的链接。这种情况下，将会包括下表中描述的链接类型。
 
@@ -183,7 +183,7 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 例如，下面的 Runbook 中的源活动可获取所有虚拟机。它具有两个条件链接，以及一个不带条件的链接。第一个条件链接使用表达式 *$ActivityOutput['Get-AzureVM'].PowerState -eq 'Started'* 来筛选当前运行的虚拟机。第二个条件链接使用表达式 *$ActivityOutput['Get-AzureVM'].PowerState -eq 'Stopped'* 来筛选当前已停止的虚拟机。
 
-![条件链接示例](media/automation-graphical-authoring-intro/conditional-links.png)
+![条件链接示例](./media/automation-graphical-authoring-intro/conditional-links.png)
 
 任何按第一个链接进行并使用 Get-AzureVM 提供的活动输出的活动都只会获取在 Get-AzureVM 运行时已启动的虚拟机。任何按第二个链接进行的活动都只会获取在 Get-AzureVM 运行时已停止的虚拟机。任何按第三个链接进行的活动都会获取所有虚拟机，不管这些虚拟机的运行状态如何。
 
@@ -195,13 +195,13 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 下面的示例是某个 Runbook 的一部分，该 Runbook 可以启动一组虚拟机，同时还会下载要应用到这些虚拟机的修补程序。使用接合点是为了确保在 Runbook 继续之前两个进程都已完成。
 
-![交接点](media/automation-graphical-authoring-intro/junction.png)
+![交接点](./media/automation-graphical-authoring-intro/junction.png)
 
 ### 周期
 
 一个周期是指目标活动需要多长时间才能通过链接回到其源活动，或者回到最终会通过链接回到其源活动的其他活动。目前不允许使用周期来进行图形创作。如果你的 Runbook 有一个周期，你可以正常保存它，但在运行它时会收到一个错误。
 
-![周期](media/automation-graphical-authoring-intro/cycle.png)
+![周期](./media/automation-graphical-authoring-intro/cycle.png)
 
 ### 循环
 
@@ -215,7 +215,7 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 
 你可以使用两种方法之一访问数据总线上的数据。第一种方法是使用**活动输出**数据源来填充另一活动的参数。如果输出是一个对象，可以指定单个属性。
 
-![活动输出](media/automation-graphical-authoring-intro/activity-output-datasource.png)
+![活动输出](./media/automation-graphical-authoring-intro/activity-output-datasource.png)
 
 你还可以在 **PowerShell 表达式**数据源中检索活动的输出，或者使用 ActivityOutput 变量通过**工作流脚本**活动这样做。如果输出是一个对象，可以指定单个属性。ActivityOutput 变量使用以下语法。
 
@@ -232,11 +232,11 @@ Azure 自动化中的大多数 Runbook 将需要通过 Azure 资源进行身份�
 
 你可以将此功能添加到图形 Runbook，只需将凭据资产添加到画布，然后完成 Add-AzureAccount 活动即可。Add-AzureAccount 使用凭据活动作为其输入。下面的示例对此进行了演示。
 
-![身份验证活动](media/automation-graphical-authoring-intro/authentication-activities.png)
+![身份验证活动](./media/automation-graphical-authoring-intro/authentication-activities.png)
 
 你必须在 Runbook 启动时以及每个检查点之后进行身份验证。这意味着在每个 Checkpoint-Workflow 活动之后添加一个表示添加凭据的 Add-AzureAccount 活动。你不需要添加凭据活动，因为你可以使用相同的
 
-![活动输出](media/automation-graphical-authoring-intro/authentication-activity-output.png)
+![活动输出](./media/automation-graphical-authoring-intro/authentication-activity-output.png)
 
 ## Runbook 输入和输出
 
@@ -248,11 +248,11 @@ Runbook 可能会要求用户提供输入（如果该用户是通过 Azure 预�
 
 你可以通过单击 Runbook 工具栏上的“输入和输出”按钮来访问 Runbook 的输入参数。
 
-![Runbook 输入和输出](media/automation-graphical-authoring-intro/runbook-edit-input-output.png)
+![Runbook 输入和输出](./media/automation-graphical-authoring-intro/runbook-edit-input-output.png)
 
 这种情况下将打开**输入和输出**控件，你可以通过单击“添加输入”在该控件中编辑现有输入参数或创建新的参数。
 
-![添加输入](media/automation-graphical-authoring-intro/runbook-edit-add-input.png)
+![添加输入](./media/automation-graphical-authoring-intro/runbook-edit-add-input.png)
 
 按下表中的属性定义每个输入参数。
 

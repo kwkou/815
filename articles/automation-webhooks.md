@@ -114,15 +114,15 @@ Runbook 预期请求的正文中包含 JSON 格式的虚拟机列表。我们还
 
 下图显示此请求中的标头信息（使用 [Fiddler](http://www.telerik.com/fiddler) 跟踪）。这包括 HTTP 请求的标准标头，除此之外，还有我们添加的自定义“日期”和“时间”标头。其中每个值可以在 **WebhookData** 的 **RequestHeaders** 属性中提供给 Runbook 使用。
 
-![Webhook 按钮](media/automation-webhooks/webhook-request-headers.png)
+![Webhook 按钮](./media/automation-webhooks/webhook-request-headers.png)
 
 下图显示请求的正文（使用 [Fiddler](http://www.telerik.com/fiddler) 跟踪）可在 **WebhookData** 的 **RequestBody** 属性中提供给 Runbook 使用。格式化为 JSON 是因为其格式是请求正文中包含的格式。
 
-![Webhook 按钮](media/automation-webhooks/webhook-request-body.png)
+![Webhook 按钮](./media/automation-webhooks/webhook-request-body.png)
 
 下图显示了从 Windows PowerShell 发送的请求以及生成的响应。作业 ID 从响应中提取，并转换为字符串。
 
-![Webhook 按钮](media/automation-webhooks/webhook-request-response.png)
+![Webhook 按钮](./media/automation-webhooks/webhook-request-response.png)
 
 以下示例 Runbook 将接受前面的示例请求，并启动请求正文中指定的虚拟机。
 
