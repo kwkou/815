@@ -1,8 +1,16 @@
-<properties linkid="dev-nodejs-basic-web-app-with-storage" urlDisplayName="Web App with Storage" pageTitle="使用表存储构建 Web 应用程序 (Node.js) | Windows Azure 教程" metaKeywords="Azure Node.js hello world tutorial, Azure Node.js hello world, Azure Node.js Getting Started tutorial, Azure Node.js tutorial, Azure Node.js Express tutorial" description="本教程以使用 Express 构建 Web 应用程序教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" metaCanonical="" services="cloud-services,storage" documentationCenter="Node.js" title="Node.js Web Application using Storage" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="cloud-services,storage"
-    ms.date="02/25/2015"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	pageTitle="使用表存储构建 Web 应用程序 (Node.js) | Windows Azure 教程" 
+	description="本教程以“使用 Express 构建 Web 应用程序”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
+	services="cloud-services, storage" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
+	editor=""/>
+
+<tags 
+	ms.service="storage" 
+	ms.date="02/25/2015" 
+	wacn.date="09/15/2015"/>
 
 
 
@@ -11,40 +19,34 @@
 
 # 使用存储构建 Node.js Web 应用程序
 
-在本教程中，你将扩展在
-[使用 Express 的 Node.js Web 应用程序]教程中创建的应用程序，方法是将针对 Node.js 的 Microsoft
-Azure 客户端库用于数据管理服务。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
+## 概述
 
-任务项存储在 Azure 存储空间中。Azure
-存储空间提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储空间包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Node.js 中包含的 API 或通过 REST API 利用存储服务。有关详细信息，请参阅[在 Azure 中存储和访问数据]。
+在本教程中，你将通过将用于 Node.js 的 Windows Azure 客户端库与数据管理服务结合使用，来扩展在[使用 Express 生成 Node.js Web 应用程序]教程中创建的应用程序。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
 
-本教程假定你已完成 [Node.js Web
-应用程序]和[使用 Express 的 Node.js][使用 Express 的 Node.js Web 应用程序]教程。
+任务项存储在 Azure 存储空间中。Azure 存储空间提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储空间包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Node.js 中包含的 API 或通过 REST API 利用存储服务。有关详细信息，请参阅[在 Azure 中存储和访问数据]。
 
-你将了解到以下内容：
+本教程假定你已完成 [Node.js Web 应用程序]和[使用 Express 生成 Node.js][Node.js Web Application using Express] 教程。
 
--   如何使用 Jade 模板引擎
+你将学习以下内容：
+
+-   如何操作 Jade 模板引擎
 -   如何操作 Azure 数据管理服务
 
 以下是已完成应用程序的屏幕快照：
 
-![The completed web page in internet explorer](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
+![Internet Explorer 中已完成的网页](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
 
 ## 在 Web.Config 中设置存储凭据
 
-若要访问 Azure 存储空间，你需要传入存储凭据。为此，您将使用 web.config 应用程序设置。
-这些设置将作为环境变量传递给 Node，然后再由 Azure SDK 进行读取。
+若要访问 Azure 存储空间，你需要传入存储凭据。为此，您将使用 web.config 应用程序设置。这些设置将作为环境变量传递给 Node，然后再由 Azure SDK 进行读取。
 
-<div class="dev-callout">
-<strong>说明</strong>
-<p>仅在将应用程序部署到 Azure 时才使用存储凭据。应用程序在模拟器中运行时将使用存储模拟器。</p>
-</div>
+> [AZURE.NOTE]仅在将应用程序部署到 Azure 时才使用存储凭据。应用程序在模拟器中运行时将使用存储模拟器。
 
 执行下列步骤可检索存储帐户凭据并将这些凭据添加到 web.config 设置中：
 
-1.  如果尚未打开 Azure PowerShell，请通过在"开始"菜单中展开"所有程序"、"Azure"，右键单击"Azure PowerShell"，然后选择"以管理员身份运行"启动 Azure PowerShell。
+1.  如果尚未打开 Azure PowerShell，请通过在“开始”菜单中展开“所有程序”、“Azure”，右键单击“Azure PowerShell”，然后选择“以管理员身份运行”启动 Azure PowerShell。
 
-2.  将目录更改到包含你的应用程序的文件夹。例如 C:\node\tasklist\WebRole1。
+2.  将目录更改到包含你的应用程序的文件夹。例如，C:\\node\\tasklist\\WebRole1。
 
 3.  从 Azure Powershell 窗口中，输入以下 cmdlet 以检索存储帐户信息：
 
@@ -52,10 +54,7 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 
 	这样可以检索与托管服务关联的存储帐户和帐户密钥的列表。
 
-	<div class="dev-callout">
-	<strong>说明</strong>
-	<p>由于在你部署服务时 Azure SDK 会创建一个存储帐户，因此在前面的指南中部署你的应用程序之后应当已存在一个存储帐户。</p>
-	</div>
+	> [AZURE.NOTE]由于在你部署服务时 Azure SDK 会创建一个存储帐户，因此在前面的指南中部署你的应用程序之后应当已存在一个存储帐户。
 
 4.  打开 **ServiceDefinition.csdef** 文件，该文件包含将应用程序部署到 Azure 时所使用的环境设置：
 
@@ -66,13 +65,13 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
         <Variable name="AZURE_STORAGE_ACCOUNT" value="{STORAGE ACCOUNT}" />
         <Variable name="AZURE_STORAGE_ACCESS_KEY" value="{STORAGE ACCESS KEY}" />
 
-	![The web.cloud.config file contents](./media/storage-nodejs-use-table-storage-cloud-service-app/node37.png)
+	![web.cloud.config 文件内容](./media/storage-nodejs-use-table-storage-cloud-service-app/node37.png)
 
 6.  保存该文件并关闭记事本。
 
-###安装其他模块
+### 安装其他模块
 
-2. 使用以下命令在本地安装 azure、[node-uuid]、[nconf] 和 [async] 模块，并将它们的一个条目保存到 package.json 文件：[][][][]
+2. 使用以下命令在本地安装 azure、[node-uuid]、[nconf] 和 [async] 模块，并将它们的一个条目保存到 **package.json** 文件：
 
 		PS C:\node\tasklist\WebRole1> npm install azure-storage node-uuid async nconf --save
 
@@ -81,31 +80,31 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 		node-uuid@1.4.1 node_modules\node-uuid
 
 		nconf@0.6.9 node_modules\nconf
-		(c)À(c)¤(c)¤ ini@1.1.0
-		(c)À(c)¤(c)¤ async@0.2.9
-		(c)¸(c)¤(c)¤ optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
+		+-- ini@1.1.0
+		+-- async@0.2.9
+		+-- optimist@0.6.0 (wordwrap@0.0.2, minimist@0.0.8)
 
         azure-storage@0.1.0 node_modules\azure-storage
-		(c)À(c)¤(c)¤ extend@1.2.1
-		(c)À(c)¤(c)¤ xmlbuilder@0.4.3
-		(c)À(c)¤(c)¤ mime@1.2.11
-		(c)À(c)¤(c)¤ underscore@1.4.4
-		(c)À(c)¤(c)¤ validator@3.1.0
-		(c)À(c)¤(c)¤ node-uuid@1.4.1
-		(c)À(c)¤(c)¤ xml2js@0.2.7 (sax@0.5.2)
-		(c)¸(c)¤(c)¤ request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- underscore@1.4.4
+		+-- validator@3.1.0
+		+-- node-uuid@1.4.1
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
 
-##Using Node 应用程序中的表服务
+##在 Node 应用程序中使用表服务
 
-在本节中，你将通过添加一个包含你的任务模型的 task.js 文件来扩展 express 命令创建的基本应用程序。你还将修改现有 app.js 并创建使用该模型的新 tasklist.js 文件。
+在本节中，你将通过添加一个包含你的任务模型的 **task.js** 文件来扩展 **express** 命令创建的基本应用程序。你还将修改现有 **app.js** 并创建使用该模型的新** tasklist.js** 文件。
 
 ### 创建模型
 
-1. 在 WebRole1 目录中，创建一个名为 models 的新目录。
+1. 在 **WebRole1** 目录中，创建一个名为 **models** 的新目录。
 
-2. 在 models 目录中，创建一个名为 task.js 的新文件。此文件将包含你的应用程序创建的任务的模型。
+2. 在 **models** 目录中，创建一个名为 **task.js** 的新文件。此文件将包含你的应用程序创建的任务的模型。
 
-3. 在 task.js 文件的开头，添加以下代码来引用所需的库：
+3. 在 **task.js** 文件的开头，添加以下代码来引用所需的库：
 
         var azure = require('azure-storage');
   		var uuid = require('node-uuid');
@@ -178,13 +177,13 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 		  }
 		}
 
-6. 保存并关闭 task.js 文件。
+6. 保存并关闭 **task.js **文件。
 
-###创建控制器
+### 创建控制器
 
-1. 在 WebRole1/routes 目录中，创建一个名为 tasklist.js 的新文件并在文本编辑器中将其打开。
+1. 在 **WebRole1/routes** 目录中，创建一个名为 **tasklist.js** 的新文件并在文本编辑器中将其打开。
 
-2. 将以下代码添加到 tasklist.js。这将加载 tasklist.js 使用的 azure 和 async 模块。这还将定义 TaskList 函数，将向该函数传递我们之前定义的 Task 对象的一个实例：
+2. 将以下代码添加到 **tasklist.js**。这将加载 **tasklist.js** 使用的 azure 和 async 模块。这还将定义 **TaskList** 函数，将向该函数传递我们之前定义的 **Task** 对象的一个实例：
 
 		var azure = require('azure-storage');
 		var async = require('async');
@@ -195,7 +194,7 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 		  this.task = task;
 		}
 
-2. 继续向 tasklist.js 文件添加用于 showTasks、addTask 和 completeTasks 的方法：
+2. 继续向 **tasklist.js** 文件添加用于**showTasks**、**addTask** 和 **completeTasks** 的方法：
 
 		TaskList.prototype = {
 		  showTasks: function(req, res) {
@@ -239,11 +238,11 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 		  }
 		}
 
-3. 保存 tasklist.js 文件。
+3. 保存 **tasklist.js** 文件。
 
 ### 修改 app.js
 
-1. 在 **WebRole1** 目录中，用文本编辑器打开 app.js 文件。 
+1. 在 **WebRole1** 目录中，用文本编辑器打开 **app.js** 文件。 
 
 2. 在该文件的开头，添加以下内容来加载 azure 模块并设置表名称和分区键：
 
@@ -267,13 +266,13 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 		app.post('/addtask', taskList.addTask.bind(taskList));
 		app.post('/completetask', taskList.completeTask.bind(taskList));
 	
-4. 保存 app.js 文件。
+4. 保存 **app.js** 文件。
 
 ###修改索引视图
 
-1. 将目录更改为 views 目录并在文本编辑器中打开 index.jade 文件。
+1. 将目录更改为 **views** 目录并在文本编辑器中打开 **index.jade** 文件。
 
-2. 将 index.jade 文件的内容替换为以下代码。这将定义用于显示现有任务的视图，以及用于添加新任务和将现有任务标记为已完成的表单。
+2. 将 **index.jade** 文件的内容替换为以下代码。这将定义用于显示现有任务的视图，以及用于添加新任务和将现有任务标记为已完成的表单。
 
 		extends layout
 
@@ -312,15 +311,15 @@ Azure 客户端库用于数据管理服务。你将扩展你的应用程序以�
 		    br
 		    button.btn(type="submit") Add item
 
-3. 保存并关闭 index.jade 文件。
+3. 保存并关闭 **index.jade** 文件。
 
 ###修改全局布局
 
-views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。在此步骤中，你需要修改它以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap), which is a toolkit that makes it easy to design a nice looking  Website.
+**views** 目录中的 **layout.jade** 文件用作其他 .**jade** 文件的全局模板。在此步骤中，你将对其进行修改以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观网站的工具包）。
 
-1. 下载并提取 [Twitter Bootstrap] 的文件。(http://getbootstrap.com). Copy the **bootstrap.min.css** file from the **bootstrap&#92;dist&#92;css** folder to the **public&#92;stylesheets** directory of your tasklist application.
+1. 下载并提取 [Twitter Bootstrap](http://getbootstrap.com/) 的文件。将 **bootstrap.min.css** 文件从 **bootstrap\\dist\\css** 文件夹复制到你的 tasklist 应用程序的 **public\\stylesheets** 目录中。
 
-2. 从 views 文件夹中，用文本编辑器打开 layout.jade 并将其内容替换为以下代码：
+2. 从 **views** 文件夹中，用文本编辑器打开 **layout.jade** 并将其内容替换为以下代码：
 
 		doctype html
 		html
@@ -334,7 +333,7 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 		        a.navbar-brand(href='/') My Tasks
 		    block content
 
-3. 保存 layout.jade 文件。
+3. 保存 **layout.jade** 文件。
 
 ### 在模拟器中运行应用程序
 
@@ -344,7 +343,7 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 
 浏览器将打开并显示以下页面：
 
-![A web paged titled My Task List with a table containing tasks and fields to add a new task.](./media/storage-nodejs-use-table-storage-cloud-service-app/node44.png)
+![标题为 My Task List 的网页，其中所含的表包含任务和用于添加新任务的字段。](./media/storage-nodejs-use-table-storage-cloud-service-app/node44.png)
 
 使用窗体添加项，或通过将其标记为完成来删除现有项。
 
@@ -355,11 +354,11 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 
     PS C:\node\tasklist\WebRole1> Publish-AzureServiceProject -name myuniquename -location datacentername -launch
 
-将 **myuniquename** 替换为此应用程序的唯一名称。将 **datacentername** 替换为 Azure 数据中心的名称，例如"美国西部"。
+将 **myuniquename** 替换为此应用程序的唯一名称。将 **datacentername** 替换为 Azure 数据中心的名称，例如“美国西部”。
 
 部署完成后，你将看到如下响应：
 
-	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "China North"
+	PS C:\node\tasklist> publish-azureserviceproject -servicename tasklist -location "West US"
 	WARNING: Publishing tasklist to Windows Azure. This may take several minutes...
 	WARNING: 2:18:42 PM - Preparing runtime deployment for service 'tasklist'
 	WARNING: 2:18:42 PM - Verifying storage account 'tasklist'...
@@ -372,16 +371,15 @@ views 目录中的 layout.jade 文件用作其他 .jade 文件的全局模板。
 	WARNING: 2:22:49 PM - Instance WebRole1_IN_0 of role WebRole1 is ready.
 	WARNING: 2:22:50 PM - Created  Website URL: http://tasklist.chinacloudapp.cn/.
 
-	与先前一样，由于你指定了 -launch 选项，因此在发布完成后，浏览器将打开并显示正在 Azure 中运行的应用程序。
+	As before, because you specified the **-launch** option, the browser opens and displays your application running in Azure when publishing is completed.
 
-![A browser window displaying the My Task List page. The URL indicates the page is now being hosted on Azure.](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
+![浏览器窗口中显示 My Task List 页面。URL 表明该页面现在托管在 Azure 上。](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
 
 ## 停止并删除应用程序
 
 在部署应用程序后，您可能希望禁用它，以避免在免费试用期内产生费用或生成和部署其他应用程序。
 
-Azure 将按使用的服务器小时数对 Web 角色实例计费。
-你的应用程序部署之后就会开始使用服务器时间，即使相关实例并未运行且处于停止状态也是如此。
+Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用程序部署之后就会开始使用服务器时间，即使相关实例并未运行且处于停止状态也是如此。
 
 以下步骤演示了如何停止和删除应用程序。
 
@@ -395,12 +393,14 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。
 
         PS C:\node\tasklist\WebRole1> Remove-AzureService contosotasklist
 
-	在出现提示时，输入 Y 以删除服务。
+	在出现提示时，输入 **Y** 以删除服务。
 
 	删除服务可能需要花费几分钟时间。删除服务后，你将收到一条指示服务已被删除的消息。
 
-  [使用 Express 的 Node.js Web 应用程序]: /develop/nodejs/tutorials/web-app-with-express/
+  [Node.js Web Application using Express]: /develop/nodejs/tutorials/web-app-with-express/
+  [使用 Express 生成 Node.js Web 应用程序]: /develop/nodejs/tutorials/web-app-with-express/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx
   [Node.js Web 应用程序]: /develop/nodejs/tutorials/getting-started/
  
-<!--HONumber=41-->
+
+<!---HONumber=69-->

@@ -9,7 +9,7 @@
 <tags 
     ms.service="cloud-services"  
     ms.date="07/06/2015" 
-    wacn.date="08/29/2015"/>
+    wacn.date="09/15/2015"/>
 
 # 什么是云服务模型以及如何打包？
 云服务由以下三个组件创建：服务定义 _(.csdef)_、服务配置 _(.cscfg)_ 和服务包 _(.cspkg)_。**ServiceDefinition.csdef** 和 **ServiceConfig.cscfg** 文件都基于 XML，同时介绍云服务的结构及其配置方式；统称为模型。**ServicePackage.cspkg** 是从 **ServiceDefinition.csdef** 和其他文件生成的 zip 文件，它包含所有必需的基于二进制的依赖项。Azure 可从 **ServicePackage.cspkg** 和 **ServiceConfig.cscfg** 两者创建云服务。
@@ -188,16 +188,16 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 ### 使用服务运行时事件处理配置更改
 [Azure 运行时库](https://msdn.microsoft.com/zh-cn/library/azure/dn511024.aspx)包括 [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.aspx) 命名空间，它为与 Azure 环境（来自角色实例中运行的代码）的交互提供类。[RoleEnvironment](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx) 类定义在配置更改前后引发的以下事件：
 
-- **[Changing](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx) 事件**此事件发生在配置更改应用于某个角色的指定实例之前，使你有机会记下角色实例（如有必要）。
-- **[Changed](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changed.aspx) 事件**发生在配置更改已应用于某个角色的指定实例之后。
+- **[Changing](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx) 事件**此事件发生在配置更改应用于某个角色的指定实例之前，使你有机会记下角色实例（如有必要）。
+- **[Changed](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changed.aspx) 事件**发生在配置更改已应用于某个角色的指定实例之后。
 
 > [AZURE.NOTE]由于证书更改始终使角色实例处于脱机状态，因此不会引发 RoleEnvironment.Changing 或 RoleEnvironment.Changed 事件。
 
 <a name="cspkg">
 ## ServicePackage.cspkg
-要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](http://azure.microsoft.com/downloads/) 一起安装）来创建包文件作为 Visual Studio 的替代。
+要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](/downloads/) 一起安装）来创建包文件作为 Visual Studio 的替代。
 
-**CSPack** 使用服务定义文件和服务配置文件的内容来定义包的内容。**CSPack** 生成可以使用 [Azure 管理门户](cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service)上载到 Azure 的应用程序包文件 (.cspkg)。默认情况下，该应用程序包名为 `[ServiceDefinitionFileName].cspkg`，但可以通过使用 **CSPack** 的 `/out` 选项指定不同的名称。
+**CSPack** 使用服务定义文件和服务配置文件的内容来定义包的内容。**CSPack** 生成可以使用 [Azure 管理门户](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service)上载到 Azure 的应用程序包文件 (.cspkg)。默认情况下，该应用程序包名为 `[ServiceDefinitionFileName].cspkg`，但可以通过使用 **CSPack** 的 `/out` 选项指定不同的名称。
 
 ###### CSPack 工具（在 Windows 中）的位置
 | SDK 版本 | 路径 |
@@ -248,8 +248,8 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 我正在创建云服务包，并且我想要...
 
 <!--
-* [Configure Sizes for Cloud Services](!!!!!https://msdn.microsoft.com/library/azure/ee814754.aspx)  
-* [Configure Local Storage Resources](!!!!!https://msdn.microsoft.com/library/azure/ee758708.aspx)
+* [Configure Sizes for Cloud Services](!!!!!https://msdn.microsoft.com/zh-cn/library/azure/ee814754.aspx)  
+* [Configure Local Storage Resources](!!!!!https://msdn.microsoft.com/zh-cn/library/azure/ee758708.aspx)
 -->
 
 * [为云服务实例设置远程桌面][remotedesktop]
