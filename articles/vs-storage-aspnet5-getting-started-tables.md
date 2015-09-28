@@ -12,7 +12,7 @@
 	ms.date="07/22/2015" 
 	wacn.date="08/29/2015"/>
 
-# Azure 存储入门（ASP.NET 5 项目）
+# Azure 表存储入门（ASP.NET 5 项目）
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
@@ -23,7 +23,7 @@
 
 ##概述
 
-Azure 表存储服务使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的呼叫。Azure 表最适合存储结构化非关系型数据。
+Azure 表存储服务使用户可以存储大量结构化数据。该服务是一个 NoSQL 数据存储，接受来自 Azure 云内部和外部的通过验证的请求。Azure 表最适合存储结构化非关系型数据。
 
 本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 5 项目中已创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 表存储。
 
@@ -31,13 +31,13 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 有关使用 Azure 表存储的更多常规信息，请参阅[如何通过.NET 使用表存储](/documentation/articles/storage-dotnet-how-to-use-tables)。
 
-若要开始，首先需要在存储帐户中创建表。我们将向您展示如何通过 Visual Studio **服务器资源管理器**创建 Azure 表。如果你愿意，我们还会向你展示如何使用代码创建表。
+若要开始，首先需要在存储帐户中创建表。我们将向您展示如何使用代码创建Azure表。
 
 此外，我们将展示如何执行基本的表和实体操作，例如添加、修改、读取和删除表实体。示例是使用 C# 代码编写的，并使用了 .NET 的 Azure 存储客户端库。
 
-**注意：**在 ASP.NET 5 中执行调出 Azure 存储的一些 API 是异步的。有关详细信息，请参阅[使用 Async 和 Await 进行异步编程](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。下面的代码假定正在使用异步编程方法。
+**注意：**在 ASP.NET 5 中调用 Azure 存储的一些 API 是异步的。有关详细信息，请参阅[使用 Async 和 Await 进行异步编程](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。下面的代码假定正在使用异步编程方法。
 
-##使用 Visual Studio 服务器资源管理器创建 Azure 存储表
+##使用 Visual Studio 创建 Azure 存储表
 
 [AZURE.INCLUDE [vs-create-table-in-server-explorer](../includes/vs-create-table-in-server-explorer.md)]
 
@@ -71,9 +71,9 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
     	// Get a reference to a table named "peopleTable"
 	    CloudTable table = tableClient.GetTableReference("peopleTable");
 
-###使用代码创建表
+##使用代码创建表
 
-若要使用代码而非通过使用 Visual Studio **服务器资源管理器**创建 Azure 表，只需对 `CreateIfNotExistsAsync()` 添加调用。
+若要使用代码创建 Azure 表，只需调用 `CreateIfNotExistsAsync()`方法。
 
 	// Create the CloudTable if it does not exist
 	await table.CreateIfNotExistsAsync();
@@ -97,7 +97,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 	    public string PhoneNumber { get; set; }
 	}
 
-将使用之前在“使用代码访问表”中创建的 **CloudTable** 对象完成涉及实体的表操作。 **TableOperation** 对象表示将完成的操作。以下代码示例演示如何创建 **CloudTable** 对象以及 **CustomerEntity** 对象。为准备此操作，会创建一个 **TableOperation** 以将客户实体插入该表中。最后，将通过调用 CloudTable.ExecuteAsync 执行此操作。
+将使用之前在“使用代码访问表”部分中创建的 **CloudTable** 对象，以完成涉及实体的表操作。 **TableOperation** 对象表示将完成的操作。以下代码示例演示如何创建 **CloudTable** 对象以及 **CustomerEntity** 对象。为准备此操作，会创建一个 **TableOperation** 以将客户实体插入该表中。最后，将通过调用 CloudTable.ExecuteAsync 执行此操作。
 
 	// Get a reference to the **CloudTable** object named 'peopleTable' as described in "Access a table in code"
 

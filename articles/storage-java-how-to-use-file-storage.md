@@ -59,11 +59,11 @@
 		// Handle the exception
 	}
 
-**CloudStorageAccount.parse** 会引发 InvalidKeyException，因此恤将其置于 try/catch 块内。
+**CloudStorageAccount.parse** 会引发 InvalidKeyException，因此须将其置于 try/catch 块内。
 
 ## 如何：创建共享
 
-文件存储中的所有文件和目录都位于名为 **Share** 的容器内。你的存储帐户可以拥有无数的共享，只要你的帐户容量允许。若要获得共享及其内容的访问权限，你需要使用文件存储客户端。
+文件存储中的所有文件和目录都位于名为 **Share** 的容器内。你的存储帐户可以拥有无数的共享，只要你的帐户容量允许。若要获得共享及其内容的访问权限，你需要在代码中创建CloudFileClient类的实例。
 
 	// Create the file storage client.
 	CloudFileClient fileClient = storageAccount.createCloudFileClient();
@@ -100,7 +100,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 
 ## 如何：创建目录
 
-你也可以将文件置于子目录中，不必将其全部置于根目录中，以便对存储进行有效的组织。Azure 文件存储服务可以创建任意数目的目录，只要你的帐户允许。以下代码将在根目录下创建名为 **sampledir** 的子目录。
+你也可以将文件置于子目录中，不必将其全部置于根目录中，以便对存储进行有效的组织。Azure 文件存储服务可以创建任意数目的目录，只要你的帐户容量允许。以下代码将在根目录下创建名为 **sampledir** 的子目录。
 
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();

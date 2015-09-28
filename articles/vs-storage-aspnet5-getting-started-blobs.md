@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 存储入门" 
+	pageTitle="Azure Blob 存储入门" 
 	description="如何开始在 Visual Studio 的 ASP.NET 5 项目中使用 Azure blob 存储" 
 	services="storage" 
 	documentationCenter="" 
@@ -12,7 +12,7 @@
 	ms.date="07/22/2015" 
 	wacn.date="08/29/2015"/>
 
-# Azure 存储入门（ASP.NET 5 项目）
+# Azure Blob 存储入门（ASP.NET 5 项目）
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-blobs)
@@ -21,9 +21,9 @@
 > - [Queues](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
 > - [Tables](/documentation/articles/vs-storage-aspnet5-getting-started-tables)
 
-Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可在世界任何地方通过 HTTP 或 HTTPS 访问这些数据。单个 Blob 可以是任意大小。Blob 可以是图像、音频和视频文件、原始数据以及文档文件等。本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 5 项目中已创建 Azure 存储帐户之后，如何开始使用 blob 存储。
+Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可在世界任何地方通过 HTTP 或 HTTPS 访问这些数据。单个 Blob 可以是任意大小。Blob 可以是图像、音频和视频文件、原始数据以及文档文件等。本文介绍在创建了 Azure 存储账号之后，如何通过使用 Visual Studio 中的“添加连接服务”对话框，在 ASP.NET 5 项目中使用 blob 存储。
 
-正如文件位于文件夹中一样，存储 Blob 位于容器中。创建存储空间后，可以在存储空间中创建一个或多个容器。例如，在名为“Scrapbook”的存储空间中，可以在名为“images”的存储空间中创建容器，用于存储图片，还可以在名为“audio”的存储空间中创建另一个容器，用于存储音频文件。创建这些容器后，您可以向它们上载单独的 Blob 文件。有关以编程方式操作 blob 的详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs "如何通过 .NET 使用 Blob 存储")。
+正如文件位于文件夹中一样，存储 Blob 位于容器中。创建存储账号后，可以在存储账号中创建一个或多个容器。例如，在名为“Scrapbook”的存储空间中，可以在名为“images”的存储空间中创建容器，用于存储图片，还可以在名为“audio”的存储空间中创建另一个容器，用于存储音频文件。创建这些容器后，您可以向它们上载单独的 Blob 文件。有关以编程方式操作 blob 的详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs "如何通过 .NET 使用 Blob 存储")。
 
 ##在 Visual Studio 服务器资源管理器中创建 blob 容器
 
