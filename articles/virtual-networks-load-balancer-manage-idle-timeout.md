@@ -1,14 +1,26 @@
-﻿<properties authors="danielceckert" documentationCenter="dev-center-name" editor="" manager="jefco" pageTitle="管理：负载平衡器空闲超时" description="Azure 负载平衡器空闲超时的管理功能" services="virtual-network" />
+﻿<properties 
+   authors="danielceckert" 
+   documentationCenter="dev-center-name" 
+   editor=""
+   manager="jefco" 
+   pageTitle="管理：负载平衡器空闲超时" 
+   description="Azure 负载平衡器空闲超时的管理功能" 
+   services="virtual-network" 
+   />
 
-<tags ms.service="virtual-network" ms.date="02/20/2015" wacn.date="04/11/2015"/>
-
+<tags
+   ms.date="05/27/2015"
+   ms.service="virtual-network"
+   wacn.date="09/18/2015"
+   />
+   
 # 管理虚拟网络：负载平衡器 TCP 空闲超时
 
 **TCP 空闲超时**允许开发人员指定一个确定的阈值，该阈值针对客户端-服务器会话期间出现的与 Azure 负载平衡器相关的非活动状态。TCP 空闲超时值为 4 分钟（Azure 负载平衡器的默认值）意味着，如果在客户端-服务器会话期间出现的与 Azure 负载平衡器相关的非活动状态的持续时间超过 4 分钟，则会关闭连接。
 
-当客户端-服务器连接关闭时，客户端应用程序会获得一条类似于下面这样的错误消息："基础连接已关闭:本应保持活动的连接已被服务器关闭"。
+当客户端-服务器连接关闭时，客户端应用程序会收到一条类似于下面这样的错误消息：“基础连接已关闭: 应保持活动状态的连接已由服务器关闭”。
 
-长时间处于非活动状态时，通常使用 [TCP Keep-Alive](http://tools.ietf.org/html/rfc1122#page-101) 来保持连接 [（MSDN 示例）](https://msdn.microsoft.com/zh-CN/library/system.net.servicepoint.settcpkeepalive.aspx)。使用 TCP Keep-Alive 时，客户端会定期发送简单的数据包（其频率周期通常短于服务器的空闲超时阈值）。服务器会将这些传输内容视为存在连接活动的证据，即使除传输本身外并没有出现其他活动，这样就永远达不到空闲超时值，因此就可以长时间维持连接。
+长时间处于非活动状态时，通常使用 [TCP Keep-Alive](http://tools.ietf.org/html/rfc1122#page-101) 来保持连接[（MSDN 示例）](https://msdn.microsoft.com/zh-CN/library/system.net.servicepoint.settcpkeepalive.aspx)。使用 TCP Keep-Alive 时，客户端会定期发送简单的数据包（其频率周期通常短于服务器的空闲超时阈值）。服务器会将这些传输内容视为存在连接活动的证据，即使除传输本身外并没有出现其他活动，这样就永远达不到空闲超时值，因此就可以长时间维持连接。
 
 虽然 TCP Keep-Alive 很有效，但通常不适用于移动应用程序，因为它会消耗移动设备上有限的能源。使用 TCP Keep-Alive 的移动应用程序会更快地耗尽设备电池的能源，因为它会持续地汲取需要在网络上使用的能源。
 
@@ -16,19 +28,19 @@ Azure 负载平衡器支持对 TCP 空闲超时进行配置，因此支持移动
 
 ## 实现
 
-TCP 空闲超时可以针对以下情况进行配置： 
+TCP 空闲超时可以针对以下情况进行配置：
 
-* [实例级公共 IP](https://msdn.microsoft.com/zh-CN/library/azure/dn690118.aspx)
-* [负载平衡的终结点集](https://msdn.microsoft.com/zh-CN/library/azure/dn655055.aspx)
+* [实例级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip)
+* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)
 * [虚拟机终结点](/documentation/articles/virtual-machines-set-up-endpoints)
-* [Web 角色](https://msdn.microsoft.com/zh-CN/library/windowsazure/ee758711.aspx)
-* [辅助角色](https://msdn.microsoft.com/zh-CN/library/windowsazure/ee758711.aspx)
+* [Web 角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
+* [辅助角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
 
 ## 后续步骤
 * TBD
 
 ## PowerShell 示例
-请下载[最新版 Azure PowerShell](https://github.com/Azure/azure-sdk-tools/releases) 以获取最佳结果。
+为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools/releases)。
 
 ### 将你的实例级公共 IP 的 TCP 超时配置为 15 分钟
 
@@ -42,7 +54,7 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 ### 检索空闲超时配置
 
-    PS C:&gt; Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
+    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -94,7 +106,7 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
     
 ## API 示例
 
-开发人员可以使用服务管理 API 来配置负载平衡器分布。请确保添加的 x-ms-version 标头设置为 2014-06-01 或更高版本。
+开发人员可以使用服务管理 API 配置负载平衡器分发。请确保添加的 x-ms-version 标头设置为 2014-06-01 或更高版本。
 
 ### 通过一次部署，在所有虚拟机上更新指定的负载平衡输入终结点的配置
 
@@ -102,7 +114,7 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
     POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
 
-LoadBalancerDistribution 的值可以是 sourceIP（在 2 元组关联的情况下）、sourceIPProtocol（在 3 元组关联的情况下）或无（在没有关联的情况下，即 5 元组）
+LoadBalancerDistribution 的值可以是 sourceIP（用于 2 元组关联）、sourceIPProtocol（用于 3 元组关联）或 none（用于无关联，即 5 元组）
 
 #### 响应
 
@@ -135,4 +147,4 @@ LoadBalancerDistribution 的值可以是 sourceIP（在 2 元组关联的情况�
       </InputEndpoint>
     </LoadBalancedEndpointList>
 
-<!--HONumber=51-->
+<!---HONumber=70-->
