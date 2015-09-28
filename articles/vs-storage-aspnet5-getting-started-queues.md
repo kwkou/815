@@ -12,7 +12,7 @@
 	ms.date="07/22/2015"
 	wacn.date="08/29/2015"/>
 
-# Azure 存储入门（ASP.NET 5 项目）
+# Azure 队列服务存储入门（ASP.NET 5 项目）
 
 > [AZURE.SELECTOR]
 > - [Getting Started](/documentation/articles/vs-storage-aspnet5-getting-started-queues)
@@ -23,9 +23,9 @@
 
 ##概述
 
-Azure 队列存储是一项可存储大量消息的服务，用户可以通过经验证的呼叫，使用 HTTP 或 HTTPS 从世界任何地方访问这些消息。一条队列消息的大小可达 64 KB，一个队列中可以包含数百万条消息，直至达到存储帐户的总容量限值。
+Azure 队列存储是一项可存储大量消息的服务，用户可以通过经验证的调用，使用 HTTP 或 HTTPS 从世界任何地方访问这些消息。一条队列消息的大小可达 64 KB，一个队列中可以包含数百万条消息，直至达到存储帐户的总容量上限。
 
-本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 5 项目中已创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 表存储。执行“添加连接服务”操作会安装相应的 NuGet 程序包，以访问项目中的 Azure 存储，并将存储帐户的连接字符串添加到项目配置文件中。
+本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 5 项目中已创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 队列存储。执行“添加连接服务”操作会安装相应的 NuGet 程序包，以访问项目中的 Azure 存储，并将存储帐户的连接字符串添加到项目配置文件中。
 
 若要开始，首先需要在存储帐户中创建 Azure 队列。我们将向您展示如何通过 Visual Studio **服务器资源管理器**创建队列。如果你愿意，我们还会向你展示如何使用代码创建队列。
 
@@ -101,7 +101,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ##读取和删除队列中的消息
 
-您的代码分两步从队列中删除消息（取消对消息的排队）。1.调用 GetMessageAsync()，以获得队列中的下一条消息。从 GetMessageAsync() 返回的消息将变为对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。2.若要从队列中删除消息，请调用 DeleteMessageAsync()。
+您的代码分两步从队列中删除消息（取消对消息的排队）。1.调用 GetMessageAsync()，以获得队列中的下一条消息。从 GetMessageAsync() 返回的消息将变为对任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。2.若要从队列中删除消息，请调用 DeleteMessageAsync()。
 
 此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。以下代码将在处理消息后立即调用 DeleteMessageAsync()。
 
@@ -135,7 +135,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ## 获取队列长度
 
-你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求队列服务检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
+你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可向队列服务检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用队列服务。
 
     // Get a reference to the **CloudQueue** object named 'messageQueue' as described in "Access a queue in code"
 

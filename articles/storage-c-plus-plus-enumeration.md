@@ -33,7 +33,7 @@
 
 	pplx::task<list_blob_item_segment> list_blobs_segmented_async(continuation_token& token) const;
 
-同步操作包装了相应的异步操作：
+同步操作封装了相应的异步操作：
 
 	list_blob_item_segment list_blobs_segmented(const continuation_token& token) const
 	{
@@ -51,7 +51,7 @@
 分段列表操作的响应包括：
 
 -	<i>_segment</i>，其中包含针对列表 API 进行单个调用时返回的结果集。 
--	*continuation_token*，将传递给下一个调用，以获取下一页结果。当不再有需要返回的结果时，继续标记为 null。
+-	*continuation_token*，它将被传递给下一个调用，以获取下一页结果。当没有后续结果可以返回时，continuation_token为null。
 
 例如，进行典型调用以列出容器中的所有 blob 时，该调用的代码段可能如下所示。我们的[示例](https://github.com/Azure/azure-storage-cpp/blob/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted/Application.cpp)中提供了该代码：
 
@@ -84,7 +84,7 @@
 
 如果未指定 *max_results* 参数，则会在单个页面中返回默认的最大值（最多 5000 个结果）。
 
-另请注意，针对 Azure 表存储进行查询时，可能不会返回任何记录，或者返回的记录数小于你所指定的 *max_results* 参数的值，即使继续标记不为空。可能的一个原因是，查询可能无法在 5 秒钟内完成。只要继续标记不为空，查询就会继续，你的代码不应假定分段结果的大小。
+另请注意，针对 Azure 表存储进行查询时，可能不会返回任何记录，或者返回的记录数小于你所指定的 *max_results* 参数的值，即使continuation_token不为空。可能的一个原因是，查询可能无法在 5 秒钟内完成。只要continuation_token不为空，查询就会继续，你的代码不应假定分段结果的大小。
 
 大多数情况下，建议采用分段列表编码模式，因为这样可以明确地了解列表或查询的进度，以及服务对每个请求是如何响应的。具体说来，对于 C++ 应用程序或服务来说，对列表进程进行低级别的控制可以更好地控制内存和性能。
 
@@ -96,7 +96,7 @@
 	std::vector<table_entity> execute_query(const table_query& query) const;
 	std::vector<cloud_queue> list_queues() const;
 
-这些方法在实现时，以分段 API 包装器的方式进行。每次对分段列表进行响应时，代码会将结果附加到一个矢量，并在对完整的容器进行扫描后返回所有结果。
+这些方法在实现时，以分段 API 封装器的方式进行。每次对分段列表进行响应时，代码会将结果附加到一个矢量，并在对完整的容器进行扫描后返回所有结果。
 
 当存储帐户或表所包含的对象数量较少时，此方法可以使用。但是，随着对象数目的增加，所需的内存可能会增加且没有限制，因为所有结果都保留在内存中。一个列表操作可能需要很长时间，调用方在此期间无法获得进度方面的信息。
 
@@ -166,7 +166,7 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 
 -	在出现多个线程的情况下，强烈建议使用异步 API。
 -	大多数情况下，建议使用分段的列表。
--	在库中提供懒惰列表是将其作为包装器，适合在同步方案中使用。
+-	在库中提供懒惰列表是将其作为封装器，适合在同步方案中使用。
 -	不建议使用贪婪列表，因此已将其从库中删除。
 
 ## 后续步骤
