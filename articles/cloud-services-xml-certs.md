@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="07/24/2015"
-	wacn.date="08/29/2015"/>
+	wacn.date="09/15/2015"/>
 
 
 
@@ -66,4 +66,4 @@
 ## 后续步骤
 查看[服务定义 XML](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx) 架构和[服务配置 XML](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx) 架构。
 
-<!---HONumber=67-->
+<!---HONumber=69-->
