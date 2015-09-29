@@ -62,9 +62,9 @@ Azure 资源管理器原生地在管理平台中集成了访问控制，因此�
 
 最后，该模板将成为应用程序源代码的一部分。你可以将它签入源代码存储库，并随着应用程序的发展更新该模板。你可以通过 Visual Studio 编辑模板。
 
-有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](resource-group-authoring-templates)。
+<!--有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](resource-group-authoring-templates)。
 
-有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](resource-group-template-deploy)。
+有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](resource-group-template-deploy)。-->
 
 ## 标记
 
@@ -76,7 +76,7 @@ Azure 资源管理器提供了标记功能，让你根据管理或计费要求�
 
 资源不需要驻留在同一个资源组中就能共享一个标记。你可以创建自己的标记分类，以确保组织中的所有用户使用公用的标记，避免用户无意中应用稍有不同的标记（如“dept”而不是“department”）。
 
-有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](resource-group-using-tags)。
+<!--有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](resource-group-using-tags)。-->
 
 ## Access Control
 
@@ -90,9 +90,9 @@ Azure 资源管理器会自动记录用户操作以供审核。
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。
 
-有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览版门户中基于角色的访问控制](role-based-access-control-configure)。
+<!--有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览版门户中基于角色的访问控制](role-based-access-control-configure)。
 
-有关设置访问策略的示例，请参阅[管理和审核对资源的访问权限](resource-group-rbac)。
+有关设置访问策略的示例，请参阅[管理和审核对资源的访问权限](resource-group-rbac)。-->
 
 ## 一致的管理层
 
@@ -109,7 +109,7 @@ Azure 资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows
 
 - [将 Azure PowerShell 用于资源管理器](powershell-azure-resource-manager)
 - [将 Azure CLI 用于资源管理器](xplat-cli-azure-resource-manager)
-- [使用 Azure 门户管理资源](resource-group-portal)
+<!-- [使用 Azure 门户管理资源](resource-group-portal)
 
 创建和部署应用程序
 
@@ -129,6 +129,6 @@ Azure 资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows
 - [管理和审核对资源的访问权限](resource-group-rbac)
 - [预览版门户中基于角色的访问控制](role-based-access-control-configure)
 - [对服务主体进行身份验证](resource-group-authenticate-service-principal)
-- [使用 Azure 门户创建新的服务主体](resource-group-create-service-principal-portal)
+- [使用 Azure 门户创建新的服务主体](resource-group-create-service-principal-portal)-->
 
 <!---HONumber=69-->

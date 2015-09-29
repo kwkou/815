@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../includes/virtual-networks-create-vnet-intro-include.md)]
 
-本文档介绍如何使用经典部署模型创建 VNet。你还可以[通过 Azure 预览门户使用资源管理器部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal)。
+<!--本文档介绍如何使用经典部署模型创建 VNet。你还可以[通过 Azure 预览门户使用资源管理器部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal)。-->
 
 你将了解如何通过使用 UI 以及通过部署 netcfg 文件从 Azure 门户创建 VNet。
 

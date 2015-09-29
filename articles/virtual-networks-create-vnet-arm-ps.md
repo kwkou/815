@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../includes/virtual-networks-create-vnet-intro-include.md)]
 
-本文档介绍如何使用资源管理器部署模型创建 VNet。你还可以[使用经典部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps)。
+<!--本文档介绍如何使用资源管理器部署模型创建 VNet。你还可以[使用经典部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps)。-->
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-include](../includes/virtual-networks-create-vnet-scenario-include.md)]
 
