@@ -7,27 +7,38 @@
 	authors="sidneyh"
 	editor=""/>
 
-<tags ms.service="sql-database" ms.date="04/29/2015" wacn.date="06/23/2015"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/21/2015"
+	wacn.date="09/15/2015"/>
 
-# 创建和管理弹性数据库作业
+# 使用门户创建和管理 SQL 数据库弹性作业（预览版）
 
-**弹性数据库池**提供可预测的模型用于部署大量数据库。你可以设置每个数据库的最小数据吞吐量单位 (DTU)，而不会超过预算。使用**弹性数据库作业**可以非常轻松地管理这些数据库中的公共对象。该服务允许你以单个操作，针对池中的所有数据库运行 T-SQL 脚本。例如，可以对每个数据库设置策略，以便只允许具有适当凭据的用户查看敏感数据。
+> [AZURE.SELECTOR]
+- [Azure portal](/documentation/articles/sql-database-elastic-jobs-create-and-manage)
+- [PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell)
+
+
+使用**弹性数据库作业**，可以通过执行架构更改、凭据管理、引用数据更新、性能数据收集或租户（客户）遥测数据收集等管理操作，来轻松可靠地管理一组数据库。目前可以通过 Azure 门户和 PowerShell cmdlet 使用弹性数据库作业。但是，它在 Azure 门户中的功能被缩减，仅限针对[弹性数据库池（预览版）](/documentation/articles/sql-database-elastic-pool)中的所有数据库执行。若要访问其他功能并针对包含自定义集合或分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-scale-introduction)创建）的一组数据库执行脚本，请参阅[使用 PowerShell 创建和管理作业](/documentation/articles/sql-database-elastic-jobs-powershell)。有关作业的详细信息，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview)。
 
 ## 先决条件
 
-* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial)。
-* 一个弹性数据库池。请参阅关于[弹性数据库池](sql-database-elastic-pool)
-* 安装弹性数据库作业服务组件。请参阅[安装弹性数据库作业服务](vsql-database-elastic-jobs-service-installation)。
+* Azure 订阅。若要获取试用版，请参阅[试用](/pricing/1rmb-trial/)。
+* 一个弹性数据库池。请参阅关于[弹性数据库池](/documentation/articles/sql-database-elastic-pool)
+* 安装弹性数据库作业服务组件。请参阅[安装弹性数据库作业服务](/documentation/articles/sql-database-elastic-jobs-service-installation)。
 
 ## 创建作业
 
-1. 在弹性数据库作业池边栏选项卡，单击“创建作业”。
-2. 键入数据库管理员（在安装时创建）的名称和密码。
-2. 在“创建作业”边栏选项卡中，键入作业的名称。
-3. 粘贴或键入 T-SQL 脚本。
-4. 单击“保存”，然后单击“运行”。
+1. 使用 [Azure 门户](https://manage.windowsazure.cn)，从现有的弹性数据库作业池中单击“创建作业”。
+2. 键入作业控制数据库（作业的元数据存储）的数据库管理员（在安装作业时创建）的用户名和密码。
 
 	![为作业命名，键入或粘贴代码，然后单击“运行”][1]
+2. 在“创建作业”边栏选项卡中，键入作业的名称。
+3. 键入具有足够权限、用于连接到目标数据库的用户名和密码，使脚本执行成功。
+4. 粘贴或键入 T-SQL 脚本。
+5. 单击“保存”，然后单击“运行”。
+
+	![创建并运行作业][5]
 
 ## 运行幂等作业
 
@@ -92,11 +103,12 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
-
 [1]: ./media/sql-database-elastic-jobs-create-and-manage/screen-1.png
 [2]: ./media/sql-database-elastic-jobs-create-and-manage/click-manage-jobs.png
 [3]: ./media/sql-database-elastic-jobs-create-and-manage/running-jobs.png
 [4]: ./media/sql-database-elastic-jobs-create-and-manage/failed.png
-[5]: ./media/sql-database-elastic-jobs-create-and-manage/provide-creds.png
+[5]: ./media/sql-database-elastic-jobs-create-and-manage/screen-2.png
 
-<!---HONumber=61-->
+ 
+
+<!---HONumber=69-->

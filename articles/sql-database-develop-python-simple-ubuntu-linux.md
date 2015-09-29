@@ -8,15 +8,16 @@
 	editor="genemi"/>
 
 
-<tags
-	ms.service="sql-database"  
-	ms.date="05/19/2015"
-	wacn.date="06/30/2015"/>
+<tags 
+	ms.service="sql-database" 
+	ms.date="07/20/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 在 Ubuntu Linux 上使用 Python 连接到 SQL 数据库
 
 
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 本主题演示了一个在 Unbutu Linux 客户端计算机上运行的，用于连接到 Azure SQL 数据库 数据库的 Python 代码示例。
@@ -42,7 +43,7 @@
 ### 创建数据库并检索连接字符串
 
 
-请参阅[入门页](sql-database-get-started)，以了解如何创建示例数据库并检索连接字符串。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
+请参阅[入门页](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库并检索连接字符串。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
 ## 连接到 SQL 数据库
@@ -65,7 +66,7 @@
 	cursor.execute('SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC;')
 	row = cursor.fetchone()
 	while row:
-	    print str(row[0]) + " " + str(row[1]) + " " + str(row[2])
+	    print str(row[0]) + " " + str(row[1]) + " " + str(row[2]) 	
 	    row = cursor.fetchone()
 
 
@@ -104,4 +105,7 @@
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
-<!---HONumber=61-->
+
+ 
+
+<!---HONumber=69-->

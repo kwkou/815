@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="迁移到 Azure SQL 数据库" 
+   pageTitle="将数据库迁移到 Azure SQL 数据库" 
    description="Microsoft Azure SQL 数据库, 数据库部署, 数据库迁移, 导入数据库, 导出数据库, 迁移向导" 
    services="sql-database" 
    documentationCenter="" 
@@ -7,11 +7,14 @@
    manager="jeffreyg" 
    editor="monicar"/>
 
-<tags 
-wacn.date="08/14/2015" ms.service="sql-database" ms.date="04/14/2015"/>
+<tags
+   ms.service="sql-database"
+   ms.date="07/17/2015"
+   wacn.date="09/15/2015"/>
 
-# 将数据库迁移到 Azure SQL 数据库
-Azure SQL 数据库 V12 几乎与 SQL Server 2014 的引擎完全兼容。因此，它极大地简化了将大多数数据库从 SQL Server 迁移到 Azure SQL 数据库 的任务。许多数据库的迁移是一个直截了当的转移操作，它只需对架构做出少量的更改（如果有），并且只需对应用程序做出轻微的改造，甚至不需要任何改造。如果需要对数据库做出更改，你可以更好地限制这种更改的范围。
+# 将数据库迁移到 Azure SQL Database
+
+Azure SQL Database V12 几乎与 SQL Server 2014 的引擎完全兼容。因此，它极大地简化了将大多数数据库从 SQL Server 迁移到 Azure SQL Database 的任务。许多数据库的迁移是一个直截了当的转移操作，它只需对架构做出少量的更改（如果有），并且只需对应用程序做出轻微的改造，甚至不需要任何改造。如果需要对数据库做出更改，你可以更好地限制这种更改的范围。
 
 根据设计，SQL 数据库不支持 SQL Server 的服务器设限功能，因此，在迁移依赖于这些功能的数据库和应用程序之前，仍然需要对它们进行某种形式的改造。尽管 SQL 数据库 V12 改进了与 SQL Server 的兼容性，但仍然需要精心规划和执行迁移，对于较复杂的大型数据库尤其如此。
 
@@ -35,8 +38,8 @@ Azure SQL 数据库 V12 几乎与 SQL Server 2014 的引擎完全兼容。因此
 
 ## 确定要用的选项
 - 如果你预料到无需更改就可以迁移某个数据库，则应使用选项 #1，因为该选项可以快速方便地完成。如果你不太确定，请根据选项 #1 中所述，先从数据库中导出仅有架构的 BACPAC。如果导出成功且未出错，则你可以使用选项 #1 迁移数据库及其数据。  
-- 如果在使用选项 #1 导出期间遇到错误，请根据选项 #2 中所述，使用 SQL Azure 迁移向导 (SAMW) 以仅有架构的模式处理数据库。如果 SAMW 未报告错误，则可以使用选项 #2。 
-- 如果 SAMW 报告架构需要额外的工作，则除非这种工作只需要简单的修复，否则最好使用选项 #3，并在 Visual Studio 中结合使用 SAMW 和手动应用的架构更改，来脱机更正数据库架构。然后，就地更新源数据库的副本，并使用选项 #1 将它迁移到 Azure。
+- 如果在使用选项 #1 导出期间遇到错误，请根据选项 #2 中所述，使用 SQL Azure 迁移向导以仅有架构的模式处理数据库。如果迁移向导未报告任何错误，请使用选项 #2。 
+- 如果 SAMW 报告架构需要额外的工作，则除非这种工作只需要简单的修复，否则最好使用选项 #3，并在 Visual Studio 中结合使用迁移向导和手动应用的架构更改，来脱机更正数据库架构。然后，就地更新源数据库的副本，并使用选项 #1 将它迁移到 Azure。
 
 ## 迁移工具
 使用的工具包括 SQL Server Management Studio (SSMS)、Visual Studio 中的 SQL Server 工具（VS、SSDT）和 SQL Azure 迁移向导 (SAMW)，以及 Azure 门户。
@@ -54,7 +57,7 @@ SAMW 可用于分析现有数据库的架构是否与 Azure SQL 数据库兼容�
 请务必使用 CodePlex 提供的最新版本的 [SQL Azure 迁移向导](http://sqlazuremw.codeplex.com/)。
 
 ### Visual Studio 中的 SQL Server 工具（VS、SSDT）
-Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，该项目包括架构中每个对象的 T-SQL 文件集。可以从数据库或者脚本文件导入该项目。创建后，可将该项目部署到 Azure SQL 数据库 v12；生成项目，然后验证架构兼容性。单击某个错误会打开相应的 T-SQL 文件，然后便可以编辑该文件并更正错误。修复所有错误后，可将项目直接发布到 SQL 数据库以创建空数据库，或者发布回到原始 SQL Server 数据库的（副本）以更新其架构，然后，便可以使用上述 SSMS 来部署该数据库及其数据。
+Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，该项目包括架构中每个对象的 Transact-SQL 文件集。可以从数据库或者脚本文件导入该项目。创建后，可将该项目部署到 Azure SQL Database v12；生成项目，然后验证架构兼容性。单击某个错误会打开相应的 Transact-SQL 文件，然后便可以编辑该文件并更正错误。修复所有错误后，可将项目直接发布到 SQL Database 以创建空数据库，或者发布回到原始 SQL Server 数据库的（副本）以更新其架构，然后，便可以使用上述 SSMS 来部署该数据库及其数据。
 
 请使用包含 Visual Studio 2013 Update 4 或更高版本的[最新 SQL Server Data Tools for Visual Studio](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)。
 
@@ -64,7 +67,7 @@ Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，
 | 将兼容的数据库部署到 Azure SQL 数据库 | 生成包含更改的迁移脚本并在 Azure SQL 数据库上执行 | 就地更新数据库，然后部署到 Azure SQL 数据库 |
 |![SSMS](./media/sql-database-cloud-migrate/01SSMSDiagram.png)| ![SAMW](./media/sql-database-cloud-migrate/02SAMWDiagram.png) | ![脱机编辑](./media/sql-database-cloud-migrate/03VSSSDTDiagram.png) |
 | 使用 SSMS | 使用 SAMW | 使用 SAMW、VS、SSMS |
-|简单的过程要求架构兼容。架构按原样迁移。 | SAMW 生成的 T-SQL 脚本包含所需的更改来确保兼容性。某些不受支持的功能将从架构中删除，其中的大多数功能将标记为错误。 | 架构将导入 Visual Studio 中的数据库项目，并（可选）使用 SAMW 进行转换。使用 Visual Studio 中的 SQL Server 工具和所用的最终架构进行其他更新，以就地更新数据库。 |
+|简单的过程要求架构兼容。架构按原样迁移。 | SAMW 生成的 Transact-SQL 脚本包含所需的更改来确保兼容性。某些不受支持的功能将从架构中删除，其中的大多数功能将标记为错误。 | 架构将导入 Visual Studio 中的数据库项目，并（可选）使用 SAMW 进行转换。使用 Visual Studio 中的 SSDT 和所用的最终架构进行其他更新，以就地更新数据库。 |
 | 如果导出 BACPAC，则可以选择仅迁移架构。 | 可以将向导配置为编写架构或架构加上数据的脚本。 | 可以从 Visual Studio 只将架构直接发布到 Azure。使用任何所需的更改就地更新数据库，以便能够部署/导出架构和数据。 |
 | 始终部署或导出整个数据库。 | 可以选择从迁移中排除特定的对象。 | 全面控制迁移中包含的对象。 |
 | 未规定出错时必须更改输出，源架构必须兼容。 | 可能难以根据需要编辑生成的单个整体脚本。可以在 SSMS 或装有 SQL Server 数据库工具的 Visual Studio 中打开并编辑脚本。只有在修复所有错误后，才可以将脚本部署到 Azure SQL 数据库。| 可以使用 Visual Studio 中的 SQL server 工具的完整功能。脱机更改架构。 |
@@ -72,4 +75,7 @@ Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，
 | Microsoft 支持的工具。 | 从 CodePlex 下载的受社区支持的工具。 | Microsoft 支持的工具，可以选择使用从 CodePlex 下载的受社区支持的工具。 |
 | 轻松配置的单步或双步过程。 | 可以通过一个易用的向导，来安排架构转换与生成以及到云的部署。 | 更复杂的多步过程（如果只部署架构，则更方便一些）。 |
 
-<!---HONumber=66-->
+
+ 
+
+<!---HONumber=69-->

@@ -1,8 +1,16 @@
-<properties urlDisplayName="Storage" pageTitle="Data management and business analytics - Azure" metaKeywords="Azure Storage, Azure Storage, Azure cloud database, Azure managing data, Azure analytics" description="An introduction to managing and analyzing data in Azure. A range of options are provided for working with relational and non-relational data." metaCanonical="" services="sql-database,storage" documentationCenter=".NET" title="" authors="robb" solutions="" manager="johndaw" editor="" />
+<properties 
+	pageTitle="数据管理和业务分析 | Microsoft Azure" 
+	description="介绍如何在 Azure 中管理和分析数据。提供了各种选项来处理关系数据和非关系数据。" 
+	services="sql-database, storage" 
+	documentationCenter=".net" 
+	authors="jenniehubbard" 
+	manager="jhubbard" 
+	editor=""/>
 
 <tags 
-wacn.date="04/11/2015"
-ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/01/2014" ms.author="robb" />
+	ms.service="multiple" 
+	ms.date="09/01/2014" 
+	wacn.date="09/15/2015"/>
 
 
 
@@ -10,4 +18,7 @@ ms.service="multiple" ms.workload="multiple" ms.tgt_pltfrm="na" ms.devlang="na" 
 
 
 
-[WACOM.INCLUDE [cloud-storage](../includes/cloud-storage.md)]
+[AZURE.INCLUDE [cloud-storage](../includes/cloud-storage.md)]
+ 
+
+<!---HONumber=69-->

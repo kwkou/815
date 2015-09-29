@@ -1,19 +1,21 @@
-
-<properties 
+<properties
 	pageTitle="使用 C# 连接和查询 SQL 数据库" 
 	description="使用 ADO.NET 连接到 Azure SQL 数据库云服务上的 AdventureWorks 数据库并与其交互的 C# 客户端代码示例。"
-	services="sql-database" 
-	documentationCenter="" 
-	authors="ckarst" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="ckarst"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	wacn.date="08/14/2015" ms.service="sql-database" ms.date="04/14/2015" />
+<tags
+	ms.service="sql-database"
+	ms.date="07/17/2015"
+	wacn.date="09/15/2015"/>
 
 
 # 使用 C&#x23; 连接和查询 SQL 数据库
+
 
 本主题提供一个 C# 代码示例，演示如何使用 ADO.NET 连接到现有的 AdventureWorks SQL 数据库。该示例将编译成一个用于查询数据库并显示结果的控制台应用程序。
 
@@ -64,7 +66,7 @@
 	using System.Text;
 	using System.Threading.Tasks;
 	using System.Data.SqlClient;
-	
+
 	namespace ConnectandQuery_Example
 	{
 		class Program
@@ -112,16 +114,16 @@
 2. 单击“浏览”>“SQL 数据库”>“Adventure Works”数据库 >“属性”>“显示数据库连接字符串”。
 
 
-![门户](.\media\sql-database-connect-query\ConnectandQuery_portal.png)
+![门户](./media/sql-database-connect-query/ConnectandQuery_portal.png)
 
 
-在数据库连接字符串边栏选项卡上，你将看到 ADO.NET、ODBC、PHP 和 JDBC 的相应连接字符串。
+在数据库连接字符串边栏选项卡上，你可以看到 ADO.NET、ODBC、PHP 和 JDBC 的相应连接字符串。
 
 
 ## 步骤 4：替换为实际连接信息
 
 
-\- 在粘贴的源代码中，将 *[Your_Connection_String]* 占位符替换为连接字符串，并确保将该字符串中的 *your_password_here* 替换为实际密码。
+- 在粘贴的源代码中，将 *[Your\_Connection\_String]* 占位符替换为连接字符串，并确保将该字符串中的 *your\_password\_here* 替换为实际密码。
 
 
 ## 步骤 5：运行应用程序
@@ -131,4 +133,4 @@
 2. 程序将在控制台窗口中显示查询结果。
  
 
-<!---HONumber=66-->
+<!---HONumber=69-->

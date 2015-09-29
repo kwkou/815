@@ -9,15 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/17/2015"
-   wacn.date="05/25/2015"/>
-
-
-
-
-
-
-
+   ms.date="07/24/2015"
+   wacn.date="09/15/2015"/>
 
 # 使用地域还原和 REST API 恢复 Azure SQL 数据库
 
@@ -55,8 +48,8 @@
 
 [Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
 
-[Azure SQL 数据库 Geo-Restore (blog)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore)
+[Azure SQL 数据库异地还原（博客）](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
 
 [服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
-<!--HONumber=55-->
+<!---HONumber=69-->

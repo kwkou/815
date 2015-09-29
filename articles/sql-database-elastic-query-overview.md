@@ -1,17 +1,17 @@
 <properties
-	title="Elastic database query – previewing May 2015"
-	pageTitle="弹性数据库查询 – 2015 年 5 月预览版"
-	description="宣告推出弹性查询功能"
-	metaKeywords="azure SQL 数据库 elastic global queries"
-	services="sql-database"
-	documentationCenter=""  
-	manager="jeffreyg"
-	authors="sidneyh"/>
+    title="Azure SQL Database elastic database query overview"
+    pageTitle="Azure SQL 数据库弹性数据库查询概述"
+    description="弹性查询功能概述"
+	metaKeywords="azure sql 数据库 elastic database queries"
+    services="sql-database"
+    documentationCenter=""  
+    manager="jeffreyg"
+    authors="sidneyh"/>
 
 <tags
-	ms.service="sql-database"  
-	ms.date="04/29/2015"
-	wacn.date="06/30/2015"/>
+    ms.service="sql-database"
+    ms.date="07/09/2015"
+    wacn.date="09/15/2015" />
 
 # 弹性数据库查询 – 2015 年 5 月预览版
 
@@ -37,8 +37,7 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
-
 [1]: ./media/sql-database-elastic-query-overview/overview.png
 <!--anchors-->
 
-<!---HONumber=61-->
+<!---HONumber=69-->

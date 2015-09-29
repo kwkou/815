@@ -6,29 +6,21 @@
 	authors="MightyPen" 
 	manager="jeffreyg" 
 	editor=""/>
-	
-<tags 
-	ms.service="sql-database" ms.date="03/19/2015" wacn.date="08/14/2015"/>
 
+
+<tags 
+	ms.service="sql-database" 
+	ms.date="08/05/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 连接到 SQL 数据库：链接、最佳实践和设计准则
 
 
-<!--
-GeneMi , 2015-April-21 Tuesday 12:44pm
-sql-database-connect-central-recommendations.md
-sql-database-connect-*.md
-
-Add link to sql-database-develop-quick-start-client-code-samples.md.
-Add a paragraph about why transient errors legitimately occur sometimes.
--->
-
-
 本主题能够很好地帮助你学习如何与 Azure SQL 数据库建立客户端连接。其中提供了你可以用来连接到 SQL 数据库以及与之进行交互的各种技术的代码示例的链接。这些技术包括企业库、JDBC、PHP，等等。提供的建议是普遍适用的，与具体的连接技术或编程语言无关。
 
 
-##独立于技术的建议
+## 独立于技术的建议
 
 
 无论你连接到 SQL 数据库时使用哪种具体技术，本部分中的信息都适用。
@@ -50,7 +42,7 @@ Add a paragraph about why transient errors legitimately occur sometimes.
 - [Azure SQL 数据库防火墙](https://msdn.microsoft.com/zh-CN/library/azure/ee621782.aspx)
 
 
-## 建议：身份验证
+## 身份验证建议
 
 
 - 使用 SQL 数据库身份验证而非 Windows 身份验证。
@@ -62,9 +54,8 @@ Add a paragraph about why transient errors legitimately occur sometimes.
  - 不能对 SQL 数据库使用 Transact-SQL **USE myDatabaseName;** 语句。
 
 
+## 连接建议
 
-
-## 建议：连接
 
 - 在你的客户端连接逻辑中，将默认超时替换为 30 秒。
  - 默认值 15 秒对于依赖于 Internet 的连接而言太短。
@@ -77,6 +68,11 @@ Add a paragraph about why transient errors legitimately occur sometimes.
  - 导致失败的一个暂时原因可能是 Azure SQL 数据库系统需要平衡总体的负载。暂时原因会自己消失，这意味着你的程序应当进行重试。
  - 当重试查询时，请首先关闭连接然后打开另一个连接。
 
+
+### V12 中的非 1433 端口
+
+
+与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。有关详细信息，请参阅：<br/>[用于 ADO.NET 4.5、ODBC 11 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 
 下一部分更详细说明了重试逻辑和暂时性故障处理。
@@ -94,7 +90,7 @@ Add a paragraph about why transient errors legitimately occur sometimes.
 发生任何 SQL 数据库错误时，将引发 [SqlException](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlexception.aspx)。SqlException 在其 **Number** 属性中包括一个数字错误代码。如果错误代码指出是暂时性错误，你的程序应当重试调用。
 
 
-- [错误消息 (Azure SQL 数据库)](http://msdn.microsoft.com/zh-cn/library/azure/ff394106.aspx)
+- [SQL 数据库客户端程序的错误消息](http://msdn.microsoft.com/zh-cn/library/azure/ff394106.aspx)
  - “暂时性错误”、“连接断开错误”部分是证明需要自动重试的暂时性错误的列表。
  - 例如，如果出现错误编号 40613，则应当重试，这表示类似于<br/>服务器“theserver”上的数据库“mydatabase”当前不可用。
 
@@ -117,31 +113,19 @@ Add a paragraph about why transient errors legitimately occur sometimes.
 <a id="gatewaynoretry" name="gatewaynoretry">&nbsp;</a>
 
 
-## 网关不再提供 V12 中的重试逻辑
+## 中间件代理和重试逻辑
 
 
-在 V12 以前的版本是，Azure SQL 数据库具有可用作代理的网关，用于缓冲数据库和客户端程序之间的所有交互。网关是一个附加的网络跃点，有时会增大数据库访问延迟。
+在 V11 与 ADO.NET 4.5 客户端之间进行调解的中间件代理将使用重试逻辑正常处理一小部分的暂时性故障。如果代理在第二次尝试成功，则客户端程序将不知道第一次尝试失败，这是有利的现象。
 
 
-V12 取消了网关。因此现在：
+V12 代理处理一小部分的暂时性故障。在 V12 发生其他情况时，将绕过代理，以便以超快的速度直接连接到 SQL 数据库。对于客户端 ADO.NET 4.5 程序而言，这种变化使得 Azure SQL 数据库 V12 更像是 Microsoft SQL Server。
 
 
-- 客户端程序将与数据库*直接*交互，这更有效率。
-- 消除了网关在错误消息以及与程序的其他通信方面的些轻微失真。
- - 对程序而言，SQL 数据库和 SQL Server 比较相似。
+有关演示重试逻辑的代码示例，请参阅：<br/>[SQL 数据库的客户端快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)。
 
 
-#### 已取消重试逻辑
-
-
-网关针对某些暂时性错误提供了重试逻辑。程序现在必定能更全面处理暂时性错误。有关重试逻辑的代码示例，请参阅：
-
-
-- [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
- - 提供包含重试逻辑的代码示例的链接，以及更简单的连接与查询示例的链接。
-- [如何：可靠地连接到 Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn864744.aspx)
-- [如何：使用 ADO.NET 和企业库连接到 Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn961167.aspx)
-- [如何：使用 ADO.NET 连接到 Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx)
+> [AZURE.TIP]在生产环境中，建议连接到 Azure SQL 数据库 V11 或 V12 的客户端在其代码中实施重试逻辑。这可以是自定义代码，也可以是利用 API（例如 Enterprise Library）的代码。
 
 
 ## 技术
@@ -150,7 +134,7 @@ V12 取消了网关。因此现在：
 以下主题包含多个语言和驱动程序技术的代码示例链接，可让你从客户端程序连接到 Azure SQL 数据库。
 
 
-针对在 Windows 和 Linux 上运行的客户端提供各种代码示例。
+针对在 Windows、Linux 和 Mac OS X 上运行的客户端提供各种代码示例。
 
 
 **一般示例：**有各种不同的程序设计语言，包括 PHP、Python、Node.js 和 .NET CSharp 的代码示例。此外，还提供在 Windows、Linux 和 Mac OS X 上运行的客户端示例。
@@ -159,11 +143,18 @@ V12 取消了网关。因此现在：
 - [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 - [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
 
+
 **弹性缩放：**有关连接到弹性缩放数据库的信息，请参阅：
 
 
-- [Azure SQL DatabaseElastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
+- [Azure SQL Database Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
 - [依赖于数据的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)
+
+
+**驱动程序库：**有关连接驱动程序库的信息（包括建议的版本），请参阅：
+
+
+- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
 
 
 ## 另请参阅
@@ -171,4 +162,6 @@ V12 取消了网关。因此现在：
 
 - [创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)
 
-<!---HONumber=66-->
+ 
+
+<!---HONumber=69-->

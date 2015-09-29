@@ -9,25 +9,24 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="03/17/2015"
-   wacn.date="05/25/2015"/>
-
+   ms.date="07/24/2015"
+   wacn.date="09/15/2015"/>
 
 # 使用 REST API 还原已删除的 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
-- [还原已删除的数据库 - 门户](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)
-- [还原已删除的数据库 - PowerShell](/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell) 
+- [还原已删除数据库 - 门户](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)
+- [还原已删除数据库 - PowerShell](/documentation/articles/sql-database-restore-deleted-database-tutorial-powershell) 
 
 ## 概述
 
 本教程说明如何使用 REST API 还原已删除的 Azure SQL 数据库。此外还提供了更详细操作的链接。
 
-还原已删除的 Azure SQL 数据库会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact)。
+还原已删除的 Azure SQL 数据库会创建一个新的数据库。服务会根据还原时间点使用的备份自动选择服务层。请确保你在逻辑服务器上具有创建另一个数据库所需的可用配额。如果你想要请求增加配额，请联系 [Azure 支持](/support/contact/)。
 
 ## 限制和安全性
 
-请参阅[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)。
+请参阅[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/)。
 
 ## 如何：使用 REST API 还原已删除的 Azure SQL 数据库
 
@@ -49,4 +48,4 @@
 
 [服务管理 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
-<!--HONumber=55-->
+<!---HONumber=69-->

@@ -1,6 +1,6 @@
 ﻿<properties 
-	pageTitle="SQL 数据库 客户端开发和快速入门代码示例" 
-	description="列出客户端程序可用来连接 Azure SQL 数据库 或 Microsoft SQL Server 的每个驱动程序的最低版本号。此外，还提供了社区（而不是 Microsoft）发布的驱动程序的版本信息链接。"
+	pageTitle="SQL 数据库的客户端快速入门代码示例 | Windows Azure" 
+	description="提供 Node.js on Linux、Python on Mac OS、Java 和 Windows、Enterprise Library 和其他许多平台上的 Azure SQL 数据库客户端的代码示例与驱动程序。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -10,74 +10,83 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/21/2015"
-	wacn.date="05/25/2015"  
-	ms.author="genemi"/>
+	ms.date="08/04/2015" 
+	wacn.date="09/15/2015"/>
 
 
-# SQL 数据库 客户端开发和快速入门代码示例
+# SQL 数据库 的客户端快速入门代码示例
 
 
-<!--
-GeneMi (MightyPen), 2015-April-21 12:30pm.
-sql-database-develop-quick-start-client-code-samples
-.
-Add link to sql-database-connect-central-recommendations.
-Add link to sql-database-get-started (rewritten by casey Karst at HackaDoc2).
--->
+本主题提供了可用来连接 Azure SQL 数据库的快速入门代码示例的链接：
 
 
-本主题提供了可用来连接 Azure SQL 数据库 的快速入门代码示例的链接。这些示例的范围包括：
+- 简短示例连接和查询。
+- 重试示例连接和查询，但如果遇到的错误分类为[*暂时性故障*](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)（例如连接超时），则会自动重试。
+
+
+示例包括：
 
 
 - 各种编程语言。
-- 运行客户端程序的 Windows 和 Linux 操作系统。
-- 简短的快速入门代码示例，以及使用自动重试逻辑处理暂时性错误的较长示例。
-- 将关系结果集转换为面向对象的格式的代码示例。
+- 可运行你的客户端程序的 Windows、Linux 和 Mac OS 操作系统。
+- 用于下载任何所需连接驱动程序的链接。
+- 简短的快速入门代码示例。
+- 较长的示例，其中包含以自动重试逻辑形式处理的暂时性故障。
+- 将关系结果集转换为对象导向格式的代码示例。
 
 
-> [AZURE.NOTE] 我们正在制作更多语言的代码示例，从 2015 年 4 月 20 开始，我们将在本主题中添加相关的链接。
+> [AZURE.NOTE]我们正在准备更多语言的代码示例，到时将在本主题中添加这些示例的链接。
 
 
 ## Linux 上的客户端
 
 
-本部分提供有关在 Linux 上运行的客户端程序代码示例主题的链接。
+本部分提供在 Linux 上运行的客户端程序的代码示例主题链接。
 
 
-| 语言 | 简短示例 | 重试 | 关系到对象的转换 |
+| 语言 | 简短示例 | 重试示例 | 关系到对象 |
 | :-- | :-- | :-- | :-- |
-| NodeJS | [NodeJS](sql-database-develop-nodejs-simple-linux) | . | . |
-| Python | [Python](sql-database-develop-python-simple-unbutu-linux) | . | . |
+| Node.js | [Tedious](/documentation/articles/sql-database-develop-nodejs-simple-linux) | 。 | 。 |
+| Python | [FreeTDS、pymssql](/documentation/articles/sql-database-develop-python-simple-unbutu-linux) | 。 | 。 |
+| Ruby | [FreeTDS、TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-linux) | 。 | 。 |
+
+
+## Mac OS 上的客户端
+
+
+本部分提供在 Mac OS 上运行的客户端程序的代码示例主题链接。
+
+
+| 语言 | 简短示例 | 重试示例 | 关系到对象 |
+| :-- | :-- | :-- | :-- |
+| Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-mac-osx) | 。 | 。 |
+| Ruby | [Homebrew<br/>FreeTDS、TinyTDS](/documentation/articles/sql-database-develop-ruby-simple-mac-osx) | 。 | 。 |
 
 
 ## Windows 上的客户端
 
 
-本部分提供有关在 Windows 上运行的客户端程序代码示例主题的链接。
+本部分提供在 Windows 上运行的客户端程序的代码示例主题链接。
 
 
-| 语言 | 简短示例 | 重试 | 关系到对象的转换 |
+| 语言 | 简短示例 | 重试示例 | 关系到对象 |
 | :-- | :-- | :-- | :-- |
-| C# | [ADO.NET](sql-database-develop-dotnet-simple) | [ADO.NET](http://msdn.microsoft.com/zh-cn/library/azure/ee336243.aspx) | [ADO.NET 实体框架](http://msdn.microsoft.com/zh-cn/library/azure/ff951633.aspx) |
-| C++ | [ODBC 驱动程序](http://msdn.microsoft.com/zh-cn/library/azure/hh974312.aspx) | . | . |
-| NodeJS | [NodeJS](sql-database-develop-nodejs-simple-windows) | . | . |
-| PHP | [PHP](sql-database-develop-php-simple-windows) | . | . |
-| Python | [Python](sql-database-develop-python-simple-windows) | . | . |
+| C# | [ADO.NET](/documentation/articles/sql-database-develop-dotnet-simple) | [ADO.NET 自定义](/documentation/articles/sql-database-develop-csharp-retry-windows)<br/><br/>[Enterprise Library](/documentation/articles/sql-database-develop-entlib-csharp-retry-windows) | （实体框架） |
+| C++ | [ODBC 驱动程序](http://msdn.microsoft.com/zh-cn/library/azure/hh974312.aspx) | 。 | 。 |
+| Java | [Java。JDBC、JDK。Insert、Transaction、Select.](/documentation/articles/sql-database-develop-java-simple-windows)<br/><br/>[Java。Eclipse](/documentation/articles/sql-data-java-how-to-use-sql-database)<br/><br/>[Java。JDBC](http://msdn.microsoft.com/zh-cn/library/azure/gg715284.aspx) | 。 | 。 |
+| Node.js | [msnodesql](/documentation/articles/sql-database-develop-nodejs-simple-windows) | 。 | 。 |
+| PHP | [ODBC](/documentation/articles/sql-database-develop-php-simple-windows) | [ODBC 自定义](/documentation/articles/sql-database-develop-php-retry-windows) | 。 |
+| Python | [pymssql](/documentation/articles/sql-database-develop-python-simple-windows) | 。 | 。 |
 
 
 ## 另请参阅
 
 
-- [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)
-- [连接到 SQL 数据库：链接、最佳实践和设计指南](sql-database-connect-central-recommendations)
-- [创建第一个 Azure SQL 数据库](sql-database-get-started)
+- [适用于多种语言和平台的 SDK 与工具的下载项目](http://azure.microsoft.com/ZH-CN/downloads/#cmd-line-tools)
+- [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries)
+- [暂时性错误的数字代码列表](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)<br/>
+- [Azure SQL 数据库开发：操作指南主题](https://msdn.microsoft.com/zh-CN/library/azure/ee621787.aspx)
+- [连接到 SQL Database：链接、最佳实践和设计准则](/documentation/articles/sql-database-connect-central-recommendations)
+- [创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)
 
-
-<!-- eof -->
-
-<!--HONumber=55-->
+<!---HONumber=69-->

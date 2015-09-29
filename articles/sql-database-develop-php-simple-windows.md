@@ -1,57 +1,38 @@
 ﻿<properties
-	pageTitle="在 Windows 上使用 PHP 连接到 SQL 数据库"
-	description="演示一个示例 PHP 程序，该程序可从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。"
+	pageTitle="使用 Windows 上的 PHP 连接到 SQL 数据库 | Windows Azure"
+	description="演示一个示例 PHP 程序，该程序可以从 Windows 客户端连接到 Azure SQL 数据库，并与客户端所需的软件组件建立链接。"
 	services="sql-database"
 	documentationCenter=""
-	authors="MightyPen"
+	authors="meet-bhagdev"
 	manager="jeffreyg"
 	editor=""/>
 
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="php"
-	ms.topic="article"
-	ms.date="04/17/2015"
-	wacn.date="05/25/2015" 
-	ms.author="genemi"/>
+	ms.date="07/20/2015"
+	wacn.date="09/15/2015"/>
 
 
-# 在 Windows 上使用 PHP 连接到 SQL 数据库
+# 在 Windows上使用 PHP 连接到 SQL 数据库
 
 
-<!--
-Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDoc2, 2015-04-14.
--->
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 本主题演示了如何从 Windows 运行的、以 PHP 编写的客户端应用程序连接到 Azure SQL 数据库。
 
 
-## 先决条件
+[AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
 
-若要运行本主题中所述的 PHP 代码示例，你的客户端计算机必须已安装以下软件项：
+## 创建数据库并检索连接字符串
 
 
-- [Microsoft Drivers for PHP for Microsoft SQL Server](http://www.microsoft.com/zh-CN/download/details.aspx?id=20098)（SQLSRV32.EXE 包含最新的数据）
-- [Microsoft SQL Server Native Client 11.0](http://www.microsoft.com/zh-CN/download/details.aspx?id=36434)
-- 某些安装需要使用 [Web 平台安装程序](http://www.microsoft.com/web/downloads/platform.aspx)来完成。有关详细信息，请参阅下一节。
+请参阅[入门主题](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库和检索连接字符串。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
 
 
-### 使用 Web 平台安装程序安装
-
-
-1. 下载并运行 [Web 平台安装程序](http://www.microsoft.com/web/downloads/platform.aspx)，然后选择所需的模块。
-2. 使用 [Web 平台安装程序](http://www.microsoft.com/web/downloads/platform.aspx)安装以下组件：
- - IIS 或 IIS Express.<br/>例如，可通过在网站中搜索以下关键字找到 [IIS Express 8.0 下载](http://www.microsoft.com/zh-cn/download/details.aspx?id=34679)：IIS Express 下载。
- - PHP for Windows 版本 5.5 或更高，32 位。
-3. 通过在 Dynamic Extensions 节下添加一个条目来编辑 PHP.INI 文件，如下所示：<br/>**extension=php_sqlsrv_55_nts.dll**
-
-
-## 连接到 SQL 数据库 数据库
+## 连接到 SQL 数据库
 
 
 此 **OpenConnection** 函数将在其后面的所有函数的靠近顶部位置调用。
@@ -78,7 +59,40 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 	}
 
 
-## 将值插入表中
+## 执行查询并检索结果集
+
+[sqlsrv\_query()](http://php.net/manual/zh/function.sqlsrv-query.php) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询和连接对象，并返回可使用 [sqlsrv\_fetch\_array()](http://php.net/manual/zh/function.sqlsrv-fetch-array.php) 循环访问的结果集。
+
+	function ReadData()
+	{
+		try
+		{
+			$conn = OpenConnection();
+			$tsql = "SELECT [CompanyName] FROM SalesLT.Customer";
+			$getProducts = sqlsrv_query($conn, $tsql);
+			if ($getProducts == FALSE)
+				die(FormatErrors(sqlsrv_errors()));
+			$productCount = 0;
+			while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
+			{
+				echo($row['CompanyName']);
+				echo("<br/>");
+				$productCount++;
+			}
+			sqlsrv_free_stmt($getProducts);
+			sqlsrv_close($conn);
+		}
+		catch(Exception $e)
+		{
+			echo("Error!");
+		}
+	}
+	
+
+## 插入一行，传递参数，然后检索生成的主键
+
+
+在 SQL 数据库中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
 
 	function InsertData()
@@ -87,91 +101,17 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 		{
 			$conn = OpenConnection();
 
-			$tsql = "INSERT INTO [SalesLT].[Customer]
-					   ([NameStyle],[FirstName],[MiddleName],[LastName],
-					   [PasswordHash],[PasswordSalt],[rowguid],[ModifiedDate])
-					   VALUES (?,?,?,?,?,?,?,?)";
-
-			$params = array("0", "Luiz", "F", "Santos",
-				"L/Rlwxzp4w7RWmEgXX+/A7cXaePEPcp+KwQhl2fJL7w=",
-				"1KjXYs4=", "88949BFE-0BB4-4148-AFC2-DD8C8DAE4CD6",
-				date("Y-m-d"));
-
-			$insertReview = sqlsrv_prepare($conn, $tsql, $params);
+			$tsql = "INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT 			INSERTED.ProductID VALUES ('SQL Server 1', 'SQL Server 2', 0, 0, getdate())";
+			//Insert query
+			$insertReview = sqlsrv_query($conn, $tsql);
 			if($insertReview == FALSE)
 				die(FormatErrors( sqlsrv_errors()));
-
-			if(sqlsrv_execute($insertReview) == FALSE)
-				die(FormatErrors(sqlsrv_errors()));
-
-			sqlsrv_free_stmt($insertReview);
-
-			sqlsrv_close($conn);
-		}
-		catch(Exception $e)
-		{
-			echo("Error!");
-		}
-	}
-
-
-## 从表中删除值
-
-
-	function DeleteData()
-	{
-		try
-		{
-			$conn = OpenConnection();
-
-			$tsql = "DELETE FROM [SalesLT].[Customer] WHERE FirstName=? AND LastName=?";
-			$params = array($_REQUEST['FirstName'], $_REQUEST['LastName']);
-
-			$deleteReview = sqlsrv_prepare($conn, $tsql, $params);
-			if($deleteReview == FALSE)
-				die(FormatErrors(sqlsrv_errors()));
-
-			if(sqlsrv_execute($deleteReview) == FALSE)
-				die(FormatErrors(sqlsrv_errors()));
-
-			sqlsrv_free_stmt($deleteReview);
-
-			sqlsrv_close($conn);
-		}
-		catch(Exception $e)
-		{
-			echo("Error!");
-		}
-	}
-
-
-## 从表中选择值
-
-
-	function ReadData()
-	{
-		try
-		{
-			$conn = OpenConnection();
-
-			$tsql = "SELECT [CompanyName] FROM SalesLT.Customer";
-
-			$getProducts = sqlsrv_query($conn, $tsql);
-
-			if ($getProducts == FALSE)
-				die(FormatErrors(sqlsrv_errors()));
-
-			$productCount = 0;
-
-			while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
-			{
-				echo($row['CompanyName']);
-				echo("<br/>");
-				$productCount++;
+			echo "Product Key inserted is :";	
+			while($row = sqlsrv_fetch_array($insertReview, SQLSRV_FETCH_ASSOC))
+			{   
+				echo($row['ProductID']);
 			}
-
-			sqlsrv_free_stmt($getProducts);
-
+			sqlsrv_free_stmt($insertReview);
 			sqlsrv_close($conn);
 		}
 		catch(Exception $e)
@@ -179,9 +119,17 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 			echo("Error!");
 		}
 	}
-
 
 ## 事务
+
+
+此代码示例演示了你可以在其中执行以下操作的事务的用法：
+
+-开始一个事务
+
+-插入一行数据，更新另一行数据
+
+-如果插入和更新成功，则提交你的事务；如果其中任一操作失败，则回滚事务
 
 
 	function Transactions()
@@ -193,44 +141,29 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 			if (sqlsrv_begin_transaction($conn) == FALSE)
 				die(FormatErrors(sqlsrv_errors()));
 
-			/* Initialize parameter values. */
-			$orderId = 43659;
-			$qty = 5;
-			$productId = 709;
-			$offerId = 1;
-			$price = 5.70;
-
-			/* Set up and execute the first query. */
-			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail
-			   (SalesOrderID,OrderQty,ProductID,SpecialOfferID,UnitPrice)
-			   VALUES (?, ?, ?, ?, ?)";
-			$params1 = array($orderId, $qty, $productId, $offerId, $price);
-			$stmt1 = sqlsrv_query($conn, $tsql1, $params1);
-
+			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice) 
+			VALUES (71774, 22, 709, 33)";
+			$stmt1 = sqlsrv_query($conn, $tsql1);
+			
 			/* Set up and execute the second query. */
-			$tsql2 = "UPDATE Production.ProductInventory SET Quantity = (Quantity - ?)
-					  WHERE ProductID = ?";
-			$params2 = array($qty, $productId);
-			$stmt2 = sqlsrv_query( $conn, $tsql2, $params2 );
-
+			$tsql2 = "UPDATE SalesLT.SalesOrderDetail SET OrderQty = (OrderQty + 1) WHERE ProductID = 709";
+			$stmt2 = sqlsrv_query( $conn, $tsql2);
+			
 			/* If both queries were successful, commit the transaction. */
 			/* Otherwise, rollback the transaction. */
 			if($stmt1 && $stmt2)
 			{
-					sqlsrv_commit($conn);
-					echo "Transaction was committed.\n";
+			       sqlsrv_commit($conn);
+			       echo("Transaction was commited");
 			}
 			else
 			{
-					sqlsrv_rollback($conn);
-					echo "Transaction was rolled back.\n";
+			    sqlsrv_rollback($conn);
+			    echo "Transaction was rolled back.\n";
 			}
-
 			/* Free statement and connection resources. */
 			sqlsrv_free_stmt( $stmt1);
 			sqlsrv_free_stmt( $stmt2);
-
-			sqlsrv_close($conn);
 		}
 		catch(Exception $e)
 		{
@@ -239,48 +172,11 @@ Original content written by Luiz Fernando Santos, then edited by GeneMi, HackaDo
 	}
 
 
-## 存储过程
+## 延伸阅读
 
 
-	function ExecuteSProc()
-	{
-		try
-		{
-			$conn = OpenConnection();
+有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](https://technet.microsoft.com/zh-CN/library/cc793139.aspx)。
 
-			$tsql = "EXEC [dbo].[uspLogError]";
-
-			$execReview = sqlsrv_prepare($conn, $tsql);
-			if($execReview == FALSE)
-				die(FormatErrors( sqlsrv_errors()));
-
-			if(sqlsrv_execute($execReview) == FALSE)
-				die(FormatErrors(sqlsrv_errors()));
-
-			sqlsrv_free_stmt($execReview);
-
-			sqlsrv_close($conn);
-		}
-		catch(Exception $e)
-		{
-			echo("Error!");
-		}
-	}
-
-
-## 深入阅读
-
-
-有关 PHP 安装和用法的详细信息，请参阅[使用 PHP 访问 SQL Server 数据库](http://technet.microsoft.com/zh-cn/library/cc793139.aspx)。
-
-
-<!--
-FWLink 533699 points to TechNet...
-https://technet.microsoft.com/zh-CN/library/cc793139(v=sql.90).aspx,
- which instead should be...
-https://technet.microsoft.com/zh-CN/library/cc793139.aspx
-.
-Regardless, we should use direct URL, not indirect, in this type of one-time case. It might be different if this link were being placed into 25 different topics.
--->
+ 
 
 <!--HONumber=55-->
