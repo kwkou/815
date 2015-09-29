@@ -5,12 +5,13 @@
 	documentationCenter=""
 	authors="davidmu1"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-resource-manager"/>
 
-<tags
+<tags 
 	ms.service="virtual-machines"
-	ms.date="04/29/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="07/28/2015"
+	wacn.date="09/15/2015"/>
 
 # 使用资源管理器模板和 PowerShell 创建 Windows 虚拟机
 
@@ -94,7 +95,7 @@
 
 [使用 PowerShell 和 Azure 服务管理器创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
-[虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/)
+[虚拟机文档](/documentation/services/virtual-machines)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 

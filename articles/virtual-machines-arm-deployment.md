@@ -1,17 +1,17 @@
-<properties 
-    pageTitle="使用计算、网络和存储 .NET 库部署 Azure 资源" 
-    description="学习使用计算、存储和网络 .NET 库中提供的一些客户端在 Windows Azure 中创建和删除资源" 
-    services="virtual-machines,virtual-network,storage" 
-    documentationCenter="" 
-    authors="davidmu1" 
-    manager="timlt" 
-    editor="tysonn" 
-    tags="azure-resource-manager"/>
+<properties
+	pageTitle="使用计算、网络和存储 .NET 库部署 Azure 资源"
+	description="了解如何使用计算、存储和网络 .NET 库中的某些可用客户端来创建和删除 Microsoft Azure 中的资源。"
+	services="virtual-machines,virtual-network,storage"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-resource-manager"/>
 
-<tags
-    ms.service="virtual-machines"
-    ms.date="04/27/2015"
-    wacn.date="08/29/2015"/>
+<tags 
+	ms.service="virtual-machines"
+	ms.date="07/28/2015"
+	wacn.date="09/15/2015"/>
 
 # 使用计算、网络和存储 .NET 库部署 Azure 资源
 
@@ -30,7 +30,7 @@
 
 ## 步骤 1：将应用程序添加到 Azure AD 并设置权限
 
-若要使用 Azure AD 对发往 Azure 资源管理器的请求进行身份验证，必须在默认目录中添加一个应用程序。执行以下操作可以添加应用程序：
+若要使用 Azure AD 要对发往 Azure 资源管理器的请求进行身份验证，必须在默认目录中添加一个应用程序。执行以下操作可以添加应用程序：
 
 1. 打开 Azure PowerShell 提示符，然后运行以下命令：
 
@@ -40,7 +40,7 @@
 
 	    Add-AzureAccount
 
-3. 将以下命令中的 {password} 替换为要使用的密码，然后运行以下命令创建应用程序：
+3. 在以下命令中的 {password} 替换为要使用的密码，然后运行以下命令创建应用程序：
 
 	    New-AzureADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
@@ -48,9 +48,9 @@
 
 	![创建 AD 应用程序](./media/virtual-machines-arm-deployment/azureapplicationid.png)
 
-	>[AZURE.NOTE]你还可以在管理门户上应用程序的客户端 ID 字段中找到应用程序标识符。
+	>[AZURE.NOTE]你也可以在管理门户上，从应用程序的客户端 id 字段中找到应用程序标识符。
 
-5. 将 {application-id} 替换为刚记录的标识符，然后创建该应用程序的服务主体：
+5. 将 {application-id} 替换为刚才记下的标识符，然后创建该应用程序的服务主体：
 
         New-AzureADServicePrincipal -ApplicationId {application-id}
 
@@ -68,15 +68,15 @@
 
 3. 在解决方案资源管理器中右键单击项目名称，然后单击“管理 NuGet 包”。
 
-4. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包的“安装”，然后根据说明安装该包。
+4. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Azure 计算*，单击“计算 .NET 库”的“安装”，然后根据说明安装该包。
+5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Azure 计算*，单击“计算 .NET 库”的**“安装”**，然后按照说明安装该包。
 
-6. 在搜索框中键入 *Azure 网络*，单击“网络 .NET 库”的“安装”，然后根据说明安装该包。
+6. 在搜索框中键入*“Azure 网络”*，单击“网络 .NET 库”的**“安装”**，然后按照说明安装该包。
 
-7. 在搜索框中键入 *Azure 存储空间*，单击“网络 .NET 库”的“安装”，然后根据说明安装该包。
+7. 在搜索框中键入*“Azure 存储空间”*，单击“网络 .NET 库”的**“安装”**，然后按照说明安装该包。
 
-8. 在搜索框中键入 *Azure 资源管理*，并单击“资源管理库”的“安装”。
+8. 在搜索框中键入*“Azure 资源管理”*，并单击“资源管理库”的**“安装”**。
 
 现在，你可以开始使用这些库来创建应用程序了。
 
@@ -116,7 +116,7 @@
           return token;
         }
 
-	将 {application-id} 替换为前面记录的应用程序标识符，{password} 替换为选用于 AD 应用程序的密码，{tenant-id} 替换为订阅的租户标识符。可以通过运行 Get-AzureSubscription 找到租户 ID。
+	将 {application-id} 替换为前面记下的应用程序标识符，将 {password} 替换为你为 AD 应用程序选择的密码，将 {tenant-id} 替换为订阅的租户标识符。可以通过运行 Get-AzureSubscription 找到租户 ID。
 
 3.	将以下代码添加到 Program.cs 文件中的 Main 方法，以创建凭据：
 
@@ -342,7 +342,7 @@
           }
         }
 
-	>[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理映像窗口](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如，“a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201411.01-en.us-127GB.vhd”。
+	>[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理映像 (Windows)](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如，“a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201411.01-en.us-127GB.vhd”。
 
 	将 {subscription-id} 替换为订阅的标识符。
 
@@ -353,7 +353,7 @@
 
 ##步骤 5：添加代码以删除资源
 
-由于你需要为 Azure 中使用的资源付费，因此，删除不再需要的资源总是一种良好的做法。如果想要删除虚拟机和所有支持资源，只需删除资源组。
+由于你需要为 Azure 中使用的资源付费，因此，删除不再需要的资源总是一种良好的做法。如果要删除虚拟机和所有支持资源，只需删除资源组。
 
 1.	将以下方法添加到 Program 类，以删除资源组：
 
@@ -374,14 +374,14 @@
 
 ##步骤 6：运行控制台应用程序
 
-1.	若要运行控制台应用程序，请在 Visual Studio 中单击“启动”，然后使用订阅所用的相同用户名和密码登录到 Azure AD。
+1.	若要运行控制台应用程序，请在 Visual Studio 中单击“启动”，然后使用用于订阅的相同用户名和密码登录到 Azure AD。
 
-2.	在返回每个状态代码后，按 **Enter** 以创建每个资源。创建虚拟机后，执行下一步骤，然后按 Enter 删除所有资源。
+2.	在返回每个状态代码后，按 **Enter** 创建每个资源。创建虚拟机后，执行下一步骤，然后按 Enter 删除所有资源。
 
-	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 预览门户中花几分钟时间来验证资源的创建。
+	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 预览版门户中花费几分钟时间来验证资源的创建。
 
-3. 在 Azure 预览门户中，浏览到“审核日志”，以查看资源的状态：
+3. 在 Azure 预览版门户浏览到“审核日志”，以查看资源的状态：
 
 	![创建 AD 应用程序](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=67-->
+<!---HONumber=69-->

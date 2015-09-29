@@ -1,35 +1,36 @@
 <properties
-   pageTitle="使用 Azure x-plat cli 创建多 VM 部署 | Azure"
-   description="了解如何使用 Azure x-plat CLI 创建多 VM 部署"
+   pageTitle="使用 Azure CLI 创建多 VM 部署 | Windows Azure"
+   description="了解如何使用 Azure CLI 创建多 VM 部署"
    services="virtual-machines"
    documentationCenter="nodejs"
    authors="AlanSt"
    manager="timlt"
    editor=""/>
-<tags ms.service="virtual-machines"
-    ms.date="02/20/2015"
-    wacn.date="04/15/2015"
-    />
 
-# 使用 Azure x-plat cli 创建多 VM 部署
+<tags
+   ms.service="virtual-machines"
+   ms.date="02/20/2015"
+   wacn.date="09/15/2015"/>
 
-下面的脚本将向你展示如何使用 Azure 跨平台命令行界面 (xplat-cli) 在 VNET 中配置多 VM 多云服务部署。
+# 使用 Azure CLI 创建多 VM 部署
+
+下面的脚本将向你展示如何使用 Azure 命令行界面 (Azure CLI) 在 VNET 中配置多 VM 多云服务部署。
 
 下图说明了在该脚本完成后你的部署的外观：
 
 ![](./media/virtual-machines-create-multi-vm-deployment-xplat-cli/multi-vm-xplat-cli.png)
 
-该脚本在云服务 **servercs** 中创建一个 VM (**servervm**) 并且附加两个数据磁盘，在云服务 **workercs** 中创建两个 VM（**clientvm1、clientvm2**）。两个云服务都放置在 VNET **samplevnet** 中。 **servercs** 云服务还配置了一个用于外部连接的终结点。
+该脚本在云服务 **servercs** 中创建一个 VM (**servervm**) 并附加两个数据磁盘，在云服务 **workercs** 中创建两个 VM（**clientvm1、clientvm2**）。两个云服务都放置在 VNET **samplevnet** 中。**servercs** 云服务还配置了一个用于外部连接的终结点。
 
 ## 用于实现此目标的 CLI 脚本
 用于实现此目标的代码比较简单明了：
 
->[AZURE.NOTE] 你可能需要将云服务名称 servercs 和 workercs 更改为唯一的云服务名称
+>[AZURE.NOTE]你可能需要将云服务名称 servercs 和 workercs 更改为唯一的云服务名称
 
     azure network vnet create samplevnet -l "China North"
-    azure vm create -l "China North" -w samplevnet -e 10000 -z Small -n servervm servercs 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd azureuser Password@1
-    azure vm create -l "China North" -w samplevnet -e 10001 -z Small -n clientvm1 clientcs 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd azureuser Password@1
-    azure vm create -l "China North" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-201502.01-zh.cn-127GB.vhd azureuser Password@1
+    azure vm create -l "China North" -w samplevnet -e 10000 -z Small -n servervm servercs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-zh-CN-30GB azureuser Password@1
+    azure vm create -l "China North" -w samplevnet -e 10001 -z Small –n clientvm1 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-zh-CN-30GB azureuser Password@1
+    azure vm create -l "China North" -w samplevnet -e 10002 -c -z Small -n clientvm2 clientcs b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-zh-CN-30GB azureuser Password@1
     azure vm disk attach-new servervm 100
     azure vm disk attach-new servervm 500
     azure vm endpoint create servervm 443 443 -n https -o tcp
@@ -41,11 +42,11 @@
     azure vm delete -b -q clientvm2
     azure network vnet delete -q samplevnet
 
-*-q 选项禁止以交互方式确认删除对象操作，-b 清除与 VM 关联的磁盘 / blob。*
+*–q 选项禁止以交互方式确认删除对象操作，-b 清除与 VM 关联的磁盘 / blob。*
 
 ## 使用的命令的一般形式
 
-虽然你可以在任何 Azure CLI 命令中使用 -help 选项来了解更多信息，但是上面使用的每个命令的一般形式如下所示：
+虽然你可以在任何 Azure CLI 命令中使用 –help 选项来了解更多信息，但是上面使用的每个命令的一般形式如下所示：
 
     azure network vnet create -l <Region> <VNet_name>
     azure network vnet delete -q <VNet_name>
@@ -57,8 +58,9 @@
 
 ## 后续步骤
 
- 
+
 * [Azure 上的 Linux 和开源计算](/documentation/articles/virtual-machines-linux-opensource)
 * [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)
+ 
 
-<!--HONumber=50-->
+<!---HONumber=69-->

@@ -1,55 +1,55 @@
-<properties linkid="manage-linux-howto-attach-a-disk" urlDisplayName="Attach a disk" pageTitle="将磁盘附加到虚拟机 | Azure" metaKeywords="Azure Linux virtual machine, Azure Windows virtual machine, Azure attach disk, Azure initialize disk" description="了解如何将数据磁盘附加到 Azure 虚拟机。然后在 Windows Server 或 Linux 虚拟机中初始化该磁盘。" metaCanonical="" services="virtual-machines,storage" documentationCenter="" title="How to Attach a Data Disk to a Virtual Machine" authors="" solutions="" manager="" editor="" />
-<tags ms.service="virtual-machines,storage"
-    ms.date="03/05/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="将磁盘附加到虚拟机 | Microsoft Azure"
+	description="了解如何将数据磁盘附加到 Azure 虚拟机并将其初始化，以便它可供使用。"
+	services="virtual-machines, storage"
+	documentationCenter=""
+	authors="KBDAzure"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-service-management"/>
 
+<tags 
+	ms.service="virtual-machines"
+	ms.date="07/16/2015"
+	wacn.date="09/15/2015"/>
 
-#如何将数据磁盘附加到 Windows 虚拟机
+# 如何将数据磁盘附加到 Windows 虚拟机
 
-你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，也是在这两种情况下，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。 
+你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，也是在这两种情况下，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。
 
-> [WACOM.NOTE] 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，它具有一个映射到 C 驱动器的操作系统磁盘和一个映射到 D 驱动器的临时磁盘。**不要使用 D 驱动器来存储数据。**顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
-
-- [如何：附加空磁盘](#attachempty)
-- [如何：附加现有磁盘](#attachexisting)
-- [如何：在 Windows Server 中初始化新的数据磁盘](#initializeinWS)
-
-
-[WACOM.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
-
-##<a id="initializeinWS"></a>如何：在 Windows Server 中初始化新的数据磁盘
-
-1. 使用[如何登录到运行 Windows Server 的虚拟机][logon]中列出的步骤连接到虚拟机。
+> [AZURE.NOTE]最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，它具有一个映射到 C 驱动器的操作系统磁盘和一个映射到 D 驱动器的临时磁盘。**不要使用 D 驱动器来存储数据**。 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
 
 
 
-2. 在登录之后，打开"服务器管理器"，在左侧窗格中展开"存储"，然后单击"磁盘管理"。
 
+[AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
+## <a id="initializeinWS"></a>如何：在 Windows Server 中初始化新的数据磁盘
 
-	![Open Server Manager](./media/storage-windows-attach-disk/ServerManager.png)
+1. 连接到虚拟机。有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][logon]。
 
+2. 在你登录虚拟机后，打开“服务器管理器”。在左窗格中，选择“文件和存储服务”。
 
+	![打开服务器管理器](./media/storage-windows-attach-disk/fileandstorageservices.png)
 
-3. 右键单击**"磁盘 2"**，单击**"初始化磁盘"**，然后单击**"确定"**。
+3. 展开菜单并选择“磁盘”。
 
+4. “磁盘”部分列出了磁盘 0、磁盘 1 和磁盘 2。磁盘 0 是操作系统磁盘，磁盘 1 是临时资源磁盘（不应该用于数据存储），磁盘 2 是已附加到虚拟机的数据磁盘。根据你附加磁盘时指定的设置，数据磁盘的容量为 5 GB。右键单击磁盘 2，然后选择“初始化”。
 
+5.	在初始化磁盘时，系统会告知你将要擦除所有数据。单击“是”确认警告并初始化磁盘。然后，再次右键单击磁盘 2，然后选择“新建卷”。
 
-	![Initialize the disk](./media/storage-windows-attach-disk/InitializeDisk.png)
+6.	使用默认值完成向导操作。完成向导后，“卷”部分将列出新卷。现在，磁盘处于联机状态并已准备好存储数据。
 
+	![已成功初始化卷](./media/storage-windows-attach-disk/newvolumecreated.png)
 
-4. 右键单击磁盘 2 的空间分配区域，单击"新建简单卷"，然后使用默认值完成该向导。
- 
+> [AZURE.NOTE]虚拟机的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs.md)。
 
-	![Initialize the volume](./media/storage-windows-attach-disk/InitializeDiskVolume.png)
+## 其他资源
 
+[如何从 Windows 虚拟机分离磁盘](/documentation/articles/storage-windows-detach-disk)
 
+[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)
 
-	磁盘现在处于联机状态且可以使用新的驱动器号。
+[logon]: /documentation/articles/virtual-machines-log-on-windows-server.md
 
-
-
-   ![已成功初始化卷](./media/storage-windows-attach-disk/InitializeSuccess.png)  
-   
-<!--HONumber=41-->
+<!---HONumber=69-->

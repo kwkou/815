@@ -1,24 +1,35 @@
-<properties pageTitle="使用资源管理器模板创建 Windows 虚拟机" description="将资源管理器模板与 Azure PowerShell 或 Azure CLI 配合使用，以轻松创建新的 Windows 虚拟机。" services="virtual-machines" documentationCenter="" authors="JoeDavies-MSFT" manager="timlt" editor=""/>
+<properties
+	pageTitle="使用资源管理器模板创建 Windows 虚拟机"
+	description="将资源管理器模板与 Azure PowerShell 或 Azure CLI 配合使用，以轻松创建新的 Windows 虚拟机。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
+	editor=""
+	tags="azure-resource-manager"/>
 
-<tags ms.service="virtual-machines" ms.date="04/29/2015" wacn.date="08/29/2015"/>
+<tags 
+	ms.service="virtual-machines"	
+	ms.date="07/28/2015"
+	wacn.date="09/15/2015"/>
 
 # 使用资源管理器模板创建 Windows 虚拟机
 
-你可以将资源管理器模板与 Azure PowerShell 或 Azure CLI 配合使用，轻松创建新的基于 Windows 的 Azure 虚拟机 (VM)。此模板将在新资源组中包含单个子网的新虚拟网络上创建运行 Windows 的单个虚拟机。
+你可以通过将资源管理器模板与 Azure PowerShell 或 Azure CLI 配合使用，轻松创建新的基于 Windows 的 Azure 虚拟机。此模板将在新资源组中包含单个子网的新虚拟网络上创建运行 Windows 的单个虚拟机。
 
 ![](./media/virtual-machines-create-windows-powershell-resource-manager-template/windowsvm.png)
  
 在深入到下一步之前，请确保你已安装 Azure、PowerShell 和 Azure CLI 并已准备就绪。
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm)]
+[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
 
-## 配合使用资源管理器模板和 Azure PowerShell 创建 Windows 虚拟机
+## 通过 Azure PowerShell 使用资源管理器模板创建 Windows 虚拟机
 
-按照以下步骤，配合 Azure PowerShell 使用 Github 模板存储库中的资源管理器模板创建 Windows VM。
+按照以下步骤，通过 Azure PowerShell 使用 Github 模板存储库中的资源管理器模板创建 Windows 虚拟机。
 
-### 步骤 1：检查 JSON 文件中的模板。
+### 步骤 1：检查 JSON 文件中的模板
 
 以下是模板的 JSON 文件内容。
 
@@ -60,7 +71,7 @@
                 "Windows-Server-Technical-Preview"
             ],
             "metadata": {
-                "Description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version. Allowed values: 2008-R2-SP1, 2012-Datacenter, 2012-R2-Datacenter, Windows-Server-Technical-Preview."
+                "Description": "The Windows version for the virtual machine. This will pick a fully patched image of this given Windows version. Allowed values: 2008-R2-SP1, 2012-Datacenter, 2012-R2-Datacenter, Windows-Server-Technical-Preview."
             }
         }
     },
@@ -199,9 +210,9 @@
 	} 
 
 
-### 步骤 2：使用模板创建虚拟机。
+### 步骤 2：使用模板创建虚拟机
 
-填写 Azure 部署名称、资源组名称、Azure 数据中心位置，然后运行以下命令。
+填写 Azure 部署名称、资源组名称和 Azure 数据中心位置，然后运行以下命令。
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
@@ -261,9 +272,9 @@
 
 现在，你已在新的资源组中创建了名为 MyWindowsVM 的新 Windows 虚拟机。
 
-## 配合使用资源管理器模板和 Azure CLI 创建 Windows 虚拟机
+## 通过 Azure CLI 使用资源管理器模板创建 Windows 虚拟机
 
-按照以下步骤，配合 Azure CLI 命令使用 Github 模板存储库中的资源管理器模板创建 Windows VM。
+按照以下步骤，通过 Azure CLI 命令使用 Github 模板存储库中的资源管理器模板创建 Windows 虚拟机。
 
 填写资源组名称中和 Azure 位置（例如，westus 表示中国北部，请删除中括号），然后运行以下命令。
 
@@ -314,8 +325,8 @@
 
 [使用 PowerShell 和 Azure 服务管理器创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
-[虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/)
+[虚拟机文档](/documentation/services/virtual-machines/)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-<!---HONumber=67-->
+<!---HONumber=69-->
