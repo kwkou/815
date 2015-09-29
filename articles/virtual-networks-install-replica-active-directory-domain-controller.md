@@ -52,8 +52,8 @@
 	**站点到站点连接** | <p>名称：键入本地网络的名称。</p><p>VPN 设备 IP 地址：指定要连接到虚拟网络的设备的公共 IP 地址。VPN 设备不能位于 NAT 的后面。</p><p>地址：指定本地网络的地址范围（例如方案示意图中的 192.168.0.0/16）。</p>
 	**虚拟网络地址空间** | <p>地址空间：指定你要在 Azure 虚拟网络中运行的 VM IP 地址范围（例如方案示意图中的 10.1.0.0/16）。此地址范围不能与本地网络的地址范围重叠。</p><p>子网：指定应用程序服务器的子网名称和地址（例如 Frontend、10.1.1.0/24）以及域控制器的子网名称和地址（例如 Backend、10.1.2.0/24）。</p><p>单击“添加网关子网”。</p>
 
-2. 接下来，你将配置虚拟网络网关，以便创建安全的站点到站点 VPN 连接。有关说明，请参阅[配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
-3. 在新的虚拟网络与本地 VPN 设备之间创建站点到站点 VPN 连接。有关说明，请参阅[配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。
+2. 接下来，你将配置虚拟网络网关，以便创建安全的站点到站点 VPN 连接。<!--有关说明，请参阅[配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。-->
+3. 在新的虚拟网络与本地 VPN 设备之间创建站点到站点 VPN 连接。<!--有关说明，请参阅[配置虚拟网络网关](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp)。-->
 
 
 
@@ -108,7 +108,7 @@
 ## 其他资源
 
 -  [在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)
--  [如何使用 Azure PowerShell 将现有的本地 Hyper-V 域控制器上载到 Azure](http://support.microsoft.com/kb/2904015)
+-  [如何使用 Azure PowerShell 将现有的本地 Hyper-V 域控制器上载到 Azure](http://support.microsoft.com/zh-cn/kb/2904015)
 -  [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine)
 -  [Azure 虚拟网络](https://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
 -  [Windows Azure IT Pro IaaS：(01) 虚拟机基础知识](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)

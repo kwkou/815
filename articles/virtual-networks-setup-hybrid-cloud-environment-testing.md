@@ -47,7 +47,7 @@
 
 ## 阶段 1：在 Corpnet 子网上配置计算机
 
-按照[测试实验室指南：Windows Server 2012 R2 的基本配置](https://www.microsoft.com/zh-CN/download/details.aspx?id=39638)的“配置 Corpnet 子网的步骤”一节中的说明，在名为 Corpnet 的子网上配置 DC1、APP1 和 CLIENT1 计算机。**此子网必须与组织网络隔离，因为它将通过 RRAS1 计算机直接连接到 Internet。**
+按照[测试实验室指南：Windows Server 2012 R2 的基本配置](https://www.microsoft.com/download/details.aspx?id=39638)的“配置 Corpnet 子网的步骤”一节中的说明，在名为 Corpnet 的子网上配置 DC1、APP1 和 CLIENT1 计算机。**此子网必须与组织网络隔离，因为它将通过 RRAS1 计算机直接连接到 Internet。**
 
 接下来，使用 CORP\User1 凭据登录到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请从管理员级 Windows PowerShell 命令提示符运行这些命令。
 

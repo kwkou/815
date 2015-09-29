@@ -121,9 +121,9 @@
 
 ## 后续步骤
 
-[Azure 服务配置架构](https://msdn.microsoft.com/library/azure/ee758710)
+[Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 
-[虚拟网络配置架构](https://msdn.microsoft.com/library/azure/jj157100)
+[虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
 [关于在管理门户中配置虚拟网络设置](/documentation/articles/virtual-networks-settings)
 

@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="管理：负载平衡器分发模式（源 IP 关联）"
    description="Azure 负载平衡器分发模式的管理功能" 
    services="virtual-network" 
@@ -28,9 +28,9 @@
 可以为以下项配置源 IP 关联：
 
 * [虚拟机终结点](/documentation/articles/virtual-machines-set-up-endpoints)
-* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)
-* [Web 角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
-* [辅助角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
+<!--* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)-->
+* [Web 角色](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
+* [辅助角色](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 
 ## 方案
 1. 使用单个云服务的远程桌面网关群集
@@ -47,7 +47,7 @@
 * 通过代理路由流量的客户端可能被 Azure 负载平衡器视为单个客户端
 
 ## PowerShell 示例
-为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools/releases)。
+为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools-samples)。
 
 ### 将 Azure 终结点添加到虚拟机并设置负载平衡器分发模式
 
