@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    authors="danielceckert" 
    documentationCenter="dev-center-name" 
    editor=""
@@ -31,16 +31,16 @@ Azure 负载平衡器支持对 TCP 空闲超时进行配置，因此支持移动
 TCP 空闲超时可以针对以下情况进行配置：
 
 * [实例级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip)
-* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)
+<!--* [负载平衡的终结点集](/documentation/articles/load-balancer-overview)-->
 * [虚拟机终结点](/documentation/articles/virtual-machines-set-up-endpoints)
-* [Web 角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
-* [辅助角色](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx)
+* [Web 角色](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
+* [辅助角色](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 
 ## 后续步骤
 * TBD
 
 ## PowerShell 示例
-为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools/releases)。
+为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools-samples)。
 
 ### 将你的实例级公共 IP 的 TCP 超时配置为 15 分钟
 

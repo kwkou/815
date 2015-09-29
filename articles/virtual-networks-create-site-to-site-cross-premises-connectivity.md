@@ -75,7 +75,7 @@
 
 3.  [配置 VPN 设备](#ConfigVPN)
 
-##  <a name="CreateVN">创建虚拟网络</a>
+##  <a name="CreateVN"></a>创建虚拟网络
 
 创建可连接到公司网络的示例虚拟网络：
 
@@ -117,7 +117,7 @@
 
 6.  在“虚拟网络地址空间”页上，输入以下信息，然后单击右下方的复选标记以配置你的网络。
 
-	地址空间必须是 10.0.0.0/8、172.16.0.0/12 或 192.168.0.0/16（由 RFC 1918 指定）中用 CIDR 表示法指定的专用地址范围。有关此页面上各项设置的详细信息，请参阅[关于使用管理门户配置虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx)中的**虚拟网络地址空间页**。
+	地址空间必须是 10.0.0.0/8、172.16.0.0/12 或 192.168.0.0/16（由 RFC 1918 指定）中用 CIDR 表示法指定的专用地址范围。<!--有关此页面上各项设置的详细信息，请参阅[关于使用管理门户配置虚拟网络](http://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx)中的**虚拟网络地址空间页**。-->
 
 	-  **地址空间：**对于本教程中的示例，请单击右上角的“CIDR”，然后输入以下内容：
 		-  **起始 IP：**10.4.0.0
@@ -135,7 +135,7 @@
 
 	![](./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVNet_06_VirtualNetworkCreatedStatus.png)
 
-##  <a name="StartGateway">启动网关</a>
+##  <a name="StartGateway"></a>启动网关
 
 创建 Azure 虚拟网络之后，使用以下步骤配置虚拟网络网关以创建站点到站点 VPN。此过程要求你具有满足最低要求的 VPN 设备。有关 VPN 设备和设置配置的详细信息，请参阅[关于用于虚拟网络的 VPN 设备](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)。
 
@@ -182,7 +182,7 @@
 如果在下拉列表中看不到你的 VPN 设备，请参阅 MSDN 库中的[关于用于虚拟网络的 VPN 设备](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)以获取其他脚本模板。
 
 
-##  <a name="ConfigVPN">配置 VPN 设备（网络管理员）</a>
+##  <a name="ConfigVPN"></a>配置 VPN 设备（网络管理员）
 
 因为每个 VPN 设备都不同，所以这只是一个概要的过程。此过程应由网络管理员执行。
 
@@ -245,7 +245,7 @@
 
 -  [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
 
-如果你要将虚拟网络设置导出到网络配置文件以便备份配置或将其用作模板，请参阅[将虚拟网络设置导出到网络配置文件](http://msdn.microsoft.com/zh-cn/library/azure/dn133804.aspx)。
+如果你要将虚拟网络设置导出到网络配置文件以便备份配置或将其用作模板，请参阅[将虚拟网络设置导出到网络配置文件](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
 
 ## 另请参阅
 
@@ -257,7 +257,7 @@
 
 -  [将虚拟机添加到虚拟网络](/documentation/articles/virtual-machines-create-custom)
 
--  [有关虚拟网络的 VPN 设备（可能为英文页面）](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156075.aspx)
+-  [有关虚拟网络的 VPN 设备（可能为英文页面）](https://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)
 
 <!---  [Azure Name Resolution Overview](http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)-->
 
