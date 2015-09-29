@@ -15,7 +15,6 @@
 
 # API 设计指南
 
-![](./media/best-practices-api-design/pnp-logo.png)
 
 本指南中的一些主题正在讨论中，将来可能会更改。我们欢迎你的反馈！
 

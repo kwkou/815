@@ -15,9 +15,6 @@
 
 # API 实现指南
 
-![](./media/best-practices-api-implementation/pnp-logo.png)
-
-
 本指南中的一些主题正在讨论中，将来可能会更改。我们欢迎你的反馈！
 
 ## 概述

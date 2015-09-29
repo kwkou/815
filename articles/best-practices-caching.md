@@ -15,7 +15,6 @@
 
 # 缓存指南
 
-![](./media/best-practices-caching/pnp-logo.png)
 
 缓存是一种常见的技术，目标是通过暂时将经常访问的数据复制到位置靠近应用程序的快速存储，从而提高系统的性能和可缩放性。如果这种快速数据存储比原始源更靠近应用程序，则缓存可以通过更快速提供数据，大幅改善客户端应用程序的响应时间。如果客户端实例重复读取同一数据（特别是数据保持相对静态且原始数据存储相对于缓存速度而言较慢时）、受限于激烈的资源争用，或者由于距离遥远，网络延迟会造成访问速度缓慢，则缓存是最有效的方式。
 
@@ -285,7 +284,7 @@ Redis 支持以多种编程语言编写的客户端应用程序。如果要使�
 ```csharp
 // Connect to the Azure Redis cache
 ConfigurationOptions config = new ConfigurationOptions();
-config.EndPoints.Add("<your DNS name>.redis.cache.windows.net");
+config.EndPoints.Add("<your DNS name>.redis.cache.chinacloudapi.cn");
 config.Password = "<Redis cache key from management portal>";
 ConnectionMultiplexer redisHostConnection = ConnectionMultiplexer.Connect(config);
 IDatabase cache = redisHostConnection.GetDatabase();
