@@ -58,7 +58,7 @@ Azure 自动化中的所有 Runbook 都是 Windows PowerShell 工作流。图形
 
 ## 图形 Runbook 过程 
 
-### 测试图形 Runbook
+### <a id="graphical-runbook-procedures"></a> 测试图形 Runbook
 
 你可以在 Azure 预览门户中测试 Runbook 的草稿版，对 Runbook 的已发布版不做任何更改，也可以在新的 Runbook 发布前对其进行测试。这样你就可以确保新的 Runbook 在替代已发布版之前各项功能运行正常。测试 Runbook 时，将执行草稿版 Runbook，并会完成其所执行的任何操作。不会创建作业历史记录，但会在“测试输出窗格”中显示输出。
 
@@ -87,7 +87,7 @@ Azure 自动化中的每个 Runbook 都有草稿版和已发布版。只有已�
 ![“恢复到已发布版本”按钮](./media/automation-graphical-authoring-intro/runbook-edit-revert-published.png)
 
 
-## 活动
+## <a id="activities"></a> 活动
 
 活动是 Runbook 的构建基块。活动可以是一个 PowerShell cmdlet，一个子 Runbook，也可以是一个工作流活动。将活动添加到 Runbook 时，可以右键单击库控件中的该活动，然后选择“添加到画布”。然后，你可以通过单击拖放的方式将活动置于画布上你喜欢的任何位置。活动在画布上的位置不会以任何方式影响 Runbook 的运行。你可以对 Runbook 进行任何形式的布局，只要你觉得该布局最适合实现 Runbook 操作的可视化即可。
 

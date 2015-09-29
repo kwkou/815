@@ -90,7 +90,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 >[AZURE.NOTE]在 0.9.1 版的 Windows Azure PowerShell中，**RunOn** 参数已添加到 **Start-AzureAutomationRunbook** cmdlet。如果你安装的是旧版，则应[下载最新版本](/downloads)。你只需在要在其中通过 Windows PowerShell 启动 Runbook 的工作站上安装此版本。你不需要在辅助角色计算机上安装它，除非你要从该计算机启动 Runbook。你目前还不能通过其他 Runbook 在混合 Runbook 辅助角色上启动 Runbook，因为这需要在你的自动化帐户中安装最新版本的 Azure Powershell。最新版本将在 Azure 自动化中自动更新，并会快速地自动向下推送到辅助角色。
 
 
-## 为混合 Runbook 辅助角色创建 Runbook
+## <a id="creating-runbooks-for-hybrid-runbook-worker"></a> 为混合 Runbook 辅助角色创建 Runbook
 
 运行在 Azure 自动化中的 Runbook 和运行在混合 Runbook 辅助角色上的 Runbook 没有结构上的区别。上述两种 Runbook 使用起来可能会有很大差异，因为用于混合 Runbook 辅助角色的 Runbook 通常会管理你数据中心的本地资源，而 Azure 自动化中的 Runbook 通常会管理 Azure 云中的资源。
 
@@ -116,7 +116,7 @@ Runbook 可以使用在 Azure 自动化环境中安装的模块中定义的任�
 
 [Service Management Automation (SMA)](https://technet.microsoft.com/zh-cn/library/dn469260.aspx) 是 Windows Azure Pack (WAP) 的组件，其用来运行的 Runbook 与你本地数据中心的 Azure 自动化所支持的 Runbook 相同。与 Azure 自动化不同，SMA 需要进行本地安装，安装内容包括 Windows Azure Pack 管理门户，以及用于保留 Runbook 和 SMA 配置的数据库。Azure 自动化在云中提供这些服务，只要求你在本地环境中维护混合 Runbook 辅助角色。
 
-如果你已经是 SMA 用户，则可以将 Runbook 移到 Azure 自动化处与混合 Runbook 辅助角色一起使用，不需要进行任何更改，前提是这些 Runbook 向[为混合 Runbook 辅助角色创建Runbook](#creating-runbooks-for-hybrid-runbook-worker) 中所述的资源进行身份验证。SMA 中的 Runbook 在辅助角色服务器的服务帐户的上下文中运行，此服务器可以为 Runbook 提供该身份验证。
+如果你已经是 SMA 用户，则可以将 Runbook 移到 Azure 自动化处与混合 Runbook 辅助角色一起使用，不需要进行任何更改，前提是这些 Runbook 向[为混合 Runbook 辅助角色创建 Runbook](#creating-runbooks-for-hybrid-runbook-worker) 中所述的资源进行身份验证。SMA 中的 Runbook 在辅助角色服务器的服务帐户的上下文中运行，此服务器可以为 Runbook 提供该身份验证。
 
 可以使用以下条件来确定是带有混合 Runbook 辅助角色的 Azure 自动化还是 Service Management Automation 更适合你的要求。
 
