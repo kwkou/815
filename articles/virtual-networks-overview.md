@@ -43,7 +43,7 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 
 - **名称解析**。Azure 为部署在 VNet 中的 IaaS VM 和 PaaS 角色实例提供内部名称解析。你还可以部署自己的 DNS 服务器，并将 VNet 配置为使用这些服务器。
 
-- **连接**。VNet 通过使用站点到站点 VPN 连接或 ExpressRoute 连接可以彼此连接，甚至可以连接到本地数据中心。若要了解有关 VPN 网关的详细信息，请访问[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。若要了解有关 ExpressRoute 的详细信息，请访问 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
+- **连接**。VNet 通过使用站点到站点 VPN 连接或 ExpressRoute 连接可以彼此连接，甚至可以连接到本地数据中心。<!--若要了解有关 VPN 网关的详细信息，请访问[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways)。-->若要了解有关 ExpressRoute 的详细信息，请访问 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
 
     >[AZURE.NOTE]请确保在将任何 IaaS VM 或 PaaS 角色实例部署到 Azure 环境之前创建 VNet。基于 ARM 的 VM 需要 VNet，如果你未指定现有 VNet，Azure 将创建其 CIDR 地址块可能会与本地网络冲突的默认 VNet。使你无法将 VNet 连接到本地网络。
 
@@ -65,7 +65,7 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 
 - **内部负载平衡器**。可以使用内部负载平衡器为从 VNet 中的其他服务访问的 IaaS VM 和 PaaS 角色实例提供高可用性。
 
-若要了解有关 Azure 中的负载平衡的详细信息，请访问[负载平衡器概述](/documentation/articles/load-balancer-overview)。
+<!--若要了解有关 Azure 中的负载平衡的详细信息，请访问[负载平衡器概述](/documentation/articles/load-balancer-overview)。-->
 
 ## 网络安全组 (NSG)
 
@@ -84,7 +84,7 @@ VNet 为部署到它们的 IaaS VM 和 PaaS 角色的角色实例提供以下服
 - [创建 VNet](/documentation/articles/virtual-networks-create-a-vnet) 和子网。
 - [在 VNet 中创建 VM](/documentation/articles/virtual-machines-windows-tutorial)。
 - 了解 [NSG](/documentation/articles/virtual-networks-nsg)。
-- 了解[负载平衡器](/documentation/articles/load-balancer-overview)。
+<!--- 了解[负载平衡器](/documentation/articles/load-balancer-overview)。-->
 - [保留内部 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip)
 - [保留公共 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip)。
 - 了解[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview)。
