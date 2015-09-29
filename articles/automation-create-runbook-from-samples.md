@@ -10,7 +10,7 @@
 <tags 
 	ms.service="automation" 
 	ms.date="05/19/2015"
-	wacn.date=""/>
+	wacn.date="09/15/2015"/>
 
 
 # Azure 自动化入门
