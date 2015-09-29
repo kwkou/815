@@ -15,7 +15,6 @@
 
 # 数据分区指南
 
-![](./media/best-practices-data-partitioning/pnp-logo.png)
 
 ## 概述
 

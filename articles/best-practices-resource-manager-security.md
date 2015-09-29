@@ -55,7 +55,7 @@
             },
             "location": {
                 "type": "string",
-                "allowedValues": ["East US", "West US", "West Europe", "East Asia", "South East Asia"],
+                "allowedValues": ["China East", "China North"],
                 "metadata": {
                     "description": "Location of the Vault"
                 }

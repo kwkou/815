@@ -15,7 +15,6 @@
 
 # 有关重试的一般性指南
 
-![](./media/best-practices-retry-general/pnp-logo.png)
 
 ## 概述
 
