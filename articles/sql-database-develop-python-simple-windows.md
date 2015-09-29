@@ -9,7 +9,9 @@
 
 
 <tags 
-	wacn.date="08/14/2015" ms.service="sql-database" ms.date="04/18/2015" />
+	ms.service="sql-database" 
+	ms.date="07/20/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 在 Windows上使用 Python 连接到 SQL 数据库
@@ -18,7 +20,7 @@
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-本主题提供以 Python 编写的代码示例。该示例在 Windows 计算机上运行。该示例将使用 **pyodbc** 驱动程序连接到 Azure SQL 数据库。
+本主题提供以 Python 编写的代码示例。该示例在 Windows 计算机上运行。该示例将使用 **pymssql** 驱动程序连接到 Azure SQL 数据库。
 
 
 ## 要求
@@ -34,7 +36,7 @@
 
 确保选择正确的 whl 文件。
 
-例如，如果在 64 位计算机上使用 Python 2.7，请选择：pymssql-2.1.1-cp27-none-win_amd64.whl。下载 .whl 文件后，请将它放入 C:/Python27 文件夹。
+例如，如果在 64 位计算机上使用 Python 2.7，请选择：pymssql-2.1.1-cp27-none-win\_amd64.whl。下载 .whl 文件后，请将它放入 C:/Python27 文件夹。
 
 现在，请从命令行使用 pip 安装 pymssql 驱动程序。使用 cd 命令切换到 C:/Python27 并运行以下命令
 	
@@ -43,7 +45,7 @@
 可在[此处](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows)找到有关使用 pip 的说明
 
 
-### 创建数据库并检索连接字符串
+## 创建数据库并检索连接字符串
 
 
 请参阅[入门主题](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库和检索连接字符串。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。
@@ -58,10 +60,7 @@
 	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
 
-
-<!--
-TODO: Again, Does Python allow you to somehow split a very long line of code into multiple lines, for better display?
--->
+## 执行 SQL SELECT 语句
 
 [Cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询，并返回可使用 [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone) 循环访问的结果集。
 
@@ -97,11 +96,11 @@ TODO: Again, Does Python allow you to somehow split a very long line of code int
 此代码示例演示了你可以在其中执行以下操作的事务的用法：
 
 
-\-开始一个事务
+-开始一个事务
 
-\-插入一行数据
+-插入一行数据
 
-\-回滚事务以撤消插入
+-回滚事务以撤消插入
 
 
 	import pymssql
@@ -111,36 +110,6 @@ TODO: Again, Does Python allow you to somehow split a very long line of code int
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
+ 
 
-<!--
-TODO: Hmm, could we just as easily issue another cursor.execute('ROLLBACK TRNASACTION;')?
-If so, perhaps we should at least include a sentence explaining that the option is viable?
--->
-
-
-## 存储过程
-
-
-我们将使用 **pyodbc** 驱动程序连接到 SQL 数据库。从 2015 年 4 月开始，此驱动程序将附带限制，它不再支持存储过程中的输出参数。因此，我们执行的存储过程将返回行结果集形式的信息。在该存储过程的 Transact-SQL 源代码中，靠近结尾处有一个用于生成和发出结果集的 SQL SELECT 语句。
-
-
-
-<!--
-TODO: I commented out these next sentences because they seem false. For example, I would expect that the Python program could issue a Transact-SQL string for a CREATE PROCEDURE statement, just as the Python program can issue an INSERT statement. Right?
-.
-Additionally you will have to use a database management tool such as SSMS to create your stored procedure. There is no way to create a stored procedure using pyodbc.
--->
-
-
-<!--
-TODO: Does AdventureWorks db have any stored procedure that returns a results set?
-Or can we use a regular system stored procedure that is a native part of SQL Database, maybe like sys.sp_helptext !
--->
-
-
-	import pyodbc
-	cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=tcp:yourserver.database.chinacloudapi.cn;DATABASE=AdventureWorks;UID=yourusername;PWD=yourpassword')
-	cursor = cnxn.cursor()
-	cursor.execute("execute sys.sp_helptext 'SalesLT.vGetAllCategories';")
-
-<!---HONumber=66-->
+<!---HONumber=69-->

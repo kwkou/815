@@ -1,63 +1,80 @@
 <properties 
 	urlDisplayName="How to connect to an Azure SQL 数据库 using SSMS" 
-	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库" metaKeywords="" 
-	description="了解如何使用 SSMS 连接到 Azure SQL 数据库" 
-	metaCanonical="" 
-	services="sql-database" 
-	documentationCenter="" 
+	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库| Windows Azure" 
+	metaKeywords=""
+	description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
+	metaCanonical=""
+	services="sql-database"
+	documentationCenter=""
 	title="How to connect to an Azure SQL 数据库 using SSMS" 
-	authors="sidneyh" solutions="" 
-	manager="jhubbard" editor=""/>
+	authors="sidneyh" solutions=""
+	manager="jhubbard" editor="" />
 
-<tags 
-	ms.service="sql-database"  
-	ms.date="04/02/2015" 
-	wacn.date="05/25/2015"/>
+<tags
+	ms.service="sql-database"
+	ms.date="07/15/2015"
+	wacn.date="09/15/2015" />
 
-# 如何使用 SSMS 连接到 Azure SQL 数据库
+# 使用 SQL Server Management Studio 进行连接
 
-本主题介绍使用 SQL Server Management Studio 连接到 Windows Azure SQL 数据库 的步骤。
+使用以下步骤来安装 SQL Server Management Studio (SSMS)，然后使用 SSMS 来连接和查询 SQL 数据库。
 
 ## 先决条件
-* 设置并运行了 Azure SQL 数据库。若要创建新的 SQL 数据库，请参阅 [Windows Azure SQL 数据库 入门](sql-database-get-started)。
-* SQL 数据库 的管理员名称和密码。
-* SQL Server Management Studio 2014。若要获取该工具，请参阅[下载 SQL Express](http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx)。  
+* [Windows Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 SQL 数据库 AdventureWorks 示例数据库。
 
-> [AZURE.NOTE]由世纪互联运营的Windows Azure目前暂不支持新门户，此文仅供参考。
+## 安装并启动 SQL Server Management Studio (SSMS)
+1. 转到 [SQL Server 2014 Express](http://www.microsoft.com/zh-cn/download/details.aspx?id=42299) 的下载页，单击“下载”，然后选择 32 位版本 (x86) 或 64 位版本 (x64) 的 MgmtStudio 下载文件。
 
-## 连接到 SQL 数据库 的实例  
-1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 单击"浏览"按钮，然后单击"SQL 数据库"(b)。 
+	![MgtmtStudio32BIT 或 MgmtStudio64BIT][1]
+2.	如果使用默认设置安装 SSMS，请根据提示操作。
+3.	下载后，在电脑上搜索 SQL Server 2014 Management Studio，然后启动 SSMS。
 
-	![Click Browse and SQL 数据库][1]
-3. 选择"SQL 数据库"(a) 后，单击服务器上你要连接到的数据库名称 (b)。
 
-	![Click the name of a database][2]
-4. 选择名称后 (a)，单击"属性"(b)。复制服务器的名称 (c) 和管理员的名称 (d)。管理员名称和密码是创建 SQL 数据库 时创建的。你必须使用该密码来继续下一步。 
+## 连接到 SQL Database
+1. 打开 SSMS。
+2. 在“连接到服务器”窗口的“服务器名称”框中，输入格式为 *&lt;服务器名称>*.**database.windows.net** 的服务器名称。
+3. 在“身份验证”列表中，选择“SQL Server 身份验证”。
+4. 输入你创建 SQL 数据库服务器时指定的**登录名**和**密码**。
 
-	![Click SQL Server, Settings, and Property][3]
-5. 打开 SQL Server Management Studio 2014。 
-6. 在"连接到服务器"对话框中，将服务器名称粘贴到"服务器名称"框中 (a)。将"身份验证"设置为"SQL Server 身份验证"(b)。将服务器管理员名称粘贴到"登录"框中 (c)，然后键入管理员的密码 (d)。然后单击"选项"(e)。
+	![连接到服务器对话框][2]
+5. 单击“选项”按钮。
+6. 在“连接到数据库”框中输入 **AdventureWorks**，然后单击“连接”。
 
-	![SSMS login dialog box][4]
-7. 在"连接属性"选项卡中，将"连接到数据库"框设置为 **master**（或连接到的任何其他数据库）。然后单击"连接"。
+	![连接到数据库][3]
 
-	![Set to master and click Connect][5]
+### 如果连接失败
+确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx)。
 
-## 排查连接问题
+## 运行示例查询
 
-在出现问题时，请参阅[排查 Azure SQL 数据库 连接问题](https://support.microsoft.com/zh-CN/kb/2980233)。有关可能出现的问题与解答列表，请参阅[排查 Windows Azure SQL 数据库 连接问题](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1)。
+1. 在“对象资源管理器”中，导航到 **AdventureWorks** 数据库。
+2. 右键单击数据库，然后选择“新建查询”。
 
+	![新建查询][4]
+
+3. 在查询窗口中，复制并粘贴以下代码。
+
+		SELECT
+		CustomerId
+		,Title
+		,FirstName
+		,LastName
+		,CompanyName
+		FROM SalesLT.Customer;
+
+4. 单击“运行”按钮。以下屏幕截图显示查询成功。
+
+	![成功][5]
 
 ## 后续步骤
-你可以使用 Transact-SQL 语句来创建或管理数据库。请参阅 [CREATE DATABASE (Azure SQL 数据库)](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx) 和[使用 SQL Server Management Studio 管理 Azure SQL 数据库](sql-database-manage-azure-ssms)。你还可以将事件记录到 Azure 存储空间。请参阅 [SQL 数据库 审核入门](sql-database-auditing-get-started)。
+你可以使用 Transact-SQL 语句来创建或管理数据库。有关详细信息，请参阅 [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)和[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms)。你还可以将事件记录到 Azure 存储空间。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
 
 <!--Image references-->
 
-[1]:./media/sql-database-connect-to-database/browse-vms.png
-[2]:./media/sql-database-connect-to-database/sql-databases.png
-[3]:./media/sql-database-connect-to-database/blades.png
-[4]:./media/sql-database-connect-to-database/ssms-connect-to-server.png
-[5]:./media/sql-database-connect-to-database/ssms-master.png
+[1]: ./media/sql-database-connect-to-database/1-download.png
+[2]: ./media/sql-database-connect-to-database/2-connect.png
+[3]: ./media/sql-database-connect-to-database/3-connect-to-database.png
+[4]: ./media/sql-database-connect-to-database/4-run-query.png
+[5]: ./media/sql-database-connect-to-database/5-success.png
 
-<!--HONumber=55-->
+<!---HONumber=69-->

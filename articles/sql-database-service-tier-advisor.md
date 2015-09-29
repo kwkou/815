@@ -1,22 +1,22 @@
-<properties
+<properties 
    pageTitle="Azure SQL 数据库 的定价层建议"
    description="在 Azure 门户中更改定价层时，提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库 负载的层。"
-   services="sql-database"
-   documentationCenter=""
-   authors="stevestein"
-   manager="jeffreyg"
+   services="sql-database" 
+   documentationCenter="" 
+   authors="stevestein" 
+   manager="jeffreyg" 
    editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-   ms.date="04/29/2015"
-   wacn.date="06/30/2015"/>
+   ms.date="06/30/2015"
+   wacn.date="09/15/2015"/>
 
 # SQL 数据库 定价层建议 
 
 在 Azure 门户中更改定价层时，提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库 负载的层。
 
-> [AZURE.NOTE]定价层建议仅适用于 Web 和企业数据库。
+> [AZURE.NOTE]定价层建议仅适用于 Web 和企业数据库，并且只会在 [Azure 门户](https://manage.windowsazure.cn)中提供。
 
 
 ## 概述
@@ -77,12 +77,13 @@ Azure 会通过评估 SQL 数据库 的历史资源使用量，来分析当前�
 
 
 <!--Image references-->
+[1]: ./media/sql-database-service-tier-advisor/select-database.png
+[2]: ./media/sql-database-service-tier-advisor/pricing-tier.png
+[3]: ./media/sql-database-service-tier-advisor/preview-sign-up.png
+[4]: ./media/sql-database-service-tier-advisor/choose-pricing-tier.png
+[5]: ./media/sql-database-service-tier-advisor/usage-details.png
 
 
-[1]: ./media/sql-database-pricing-tier-recommendations/select-database.png
-[2]: ./media/sql-database-pricing-tier-recommendations/pricing-tier.png
-[3]: ./media/sql-database-pricing-tier-recommendations/preview-sign-up.png
-[4]: ./media/sql-database-pricing-tier-recommendations/choose-pricing-tier.png
-[5]: ./media/sql-database-pricing-tier-recommendations/usage-details.png
+ 
 
-<!---HONumber=61-->
+<!---HONumber=69-->

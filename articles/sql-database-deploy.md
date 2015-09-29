@@ -1,18 +1,16 @@
 <properties 
-	pageTitle="如何部署 SQL 数据库 - Azure" 
-	description="了解如何将 SQL Server 数据库部署到 Azure。您将使用“将数据库部署到 SQL 数据库”向导来上载示例数据库。" 
+	pageTitle="如何将 SQL 数据库部署到 SQL Azure" 
+	description="使用 SQL Server 2016 Management Studio 中的向导将 SQL Server 数据库部署到 Azure SQL 数据库。" 
 	services="sql-database" 
 	documentationCenter="" 
-	authors="jeffgoll" 
+	authors="sidneyh" 
 	manager="jeffreyg" 
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" ms.date="02/25/2015" wacn.date="08/14/2015"/>
-
-
-
-
+	ms.service="sql-database" 
+	ms.date="07/17/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 如何将 SQL Server 数据库部署到 Azure SQL 数据库
@@ -25,20 +23,21 @@
 
 ## 先决条件
 
-一个 **Microsoft Azure 帐户**。如需免费试用，请参阅此项[优惠](http://www.windowsazure.cn/pricing/1rmb-trial/)。
+一个 **Windows Azure 帐户**。如需免费试用，请参阅此项[优惠](/pricing/1rmb-trial/)。
 
 下载 [**SQL Server Management Studio**](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。（有关该工具的详细信息，请参阅 [SQL Server Management Studio - 2015 年 6 月发行说明](https://msdn.microsoft.com/zh-cn/library/mt238486.aspx)。）
 
+现有的 **SQL 数据库服务器**。若要创建服务器，首先必须创建至少一个数据库。创建数据库时，你可以选择在新服务器上创建，或者在现有的服务器上创建。有关创建新数据库（在新服务器上）的说明，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
 
-<h2><a id="schooldb"></a>如何：在本地服务器上创建 school 数据库</h2>
+## 在本地服务器上创建 school 数据库
 
-可在 [SQL 数据库管理入门][]中找到用于创建此数据库的脚本。在本指南中，您将在 Management Studio 中运行这些脚本以创建本地版本的 school 数据库。
+在 SQL Server Management Studio (SSMS) 中运行这些脚本以创建本地版本的“school”数据库。
 
-1. 在 Management Studio 中，连接到本地服务器。右键单击“数据库”、单击“新建数据库”，然后输入 *school*。
+1. 在 SSMS 中，连接到本地服务器。右键单击“数据库”、单击“新建数据库”，然后输入 *school*。
 
 2. 右键单击“school”，然后单击“新建查询”。
 
-3. 根据教程复制并执行 Create Schema 脚本。
+3. 复制并执行以下脚本：
 
 <div style="width:auto; height:300px; overflow:auto"><pre>
 	-- Create the Department table.
@@ -534,30 +533,21 @@
 
    现在，您拥有了一个可导出到 Azure 的本地数据库。接下来，您将运行一个可创建 .bacpac 文件、将其加载到 Azure 上并将其导入到 SQL 数据库中的向导。
 
-
-<h2><a id="deploydb"></a>如何：部署到 SQL 数据库</h2>
-
-1. 在 Management Studio 中，连接到包含您要迁移的数据库的本地 SQL Server 实例。
-
-2. 右键单击你刚创建的 school 数据库、指向“任务”，然后单击“将数据库部署到 SQL Azure”。
-
-3. 在“部署设置”中，为该数据库输入一个名称，如 *school*。
-
-4. 单击“连接”。
-
-5. 在“服务器名称”中，输入 10 个字符的服务器名称，后跟 .database.chinacloudapi.cn。
-
-6. 在“身份验证”中，选择“SQL Server 身份验证”。
-
-7. 输入您在创建 SQL 数据库逻辑服务器时设置的管理员登录名和密码。
-
-8. 单击“选项”。
-
-9. 在“连接属性”的“连接到数据库”中，键入 **master**。
+	
+## 将数据库部署到 Azure SQL 
+	
+1. 在 Management Studio 中，右键单击刚刚创建的 school 数据库、指向“任务”，然后单击“将数据库部署到 Windows Azure SQL 数据库”。
+2. 在“部署设置”中，为该数据库输入一个名称，如 *school*。
+5. 单击“连接”。若要解决连接问题，请尝试此项[故障排除方法](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1)。
+6. 在“服务器名称”中，输入 10 个字符的服务器名称，后接 **.database.chinacloudapi.cn**。
+7. 在“身份验证”中，选择“SQL Server 身份验证”。
+8. 输入你在预配 SQL 数据库逻辑服务器时创建的管理员登录名和密码。
+9. 单击“选项”。
+10. 在“连接属性”的“连接到数据库”中，键入 **master**。
 
 	**注意：**每当你想要在 Azure SQL 数据库服务器上创建数据库时，都必须连接到 **master** 数据库。 
-10. 单击“连接”。此步骤将结束连接规范并返回到该向导。
-11. 单击“下一步”，然后单击“完成”以运行该向导。
+11. 单击“连接”。此步骤将结束连接规范并返回到该向导。
+12. 单击“下一步”，然后单击“完成”以运行该向导。
 
 
 ## 如何：验证数据库部署
@@ -570,32 +560,34 @@
 6. 单击“连接到数据库”下拉列表，然后单击“浏览服务器”。在接下来的对话框中，单击“是”以允许浏览服务器。
 7. 单击“school”数据库将它选中，然后单击“确定”。 
 8. 单击“连接”。 
-2. 展开 **Databases** 文件夹。你应会在列表中看到 **school** 数据库。
+2. 展开“数据库”文件夹。你应会在列表中看到 **school** 数据库。
 
 	**注意：**必须连接到你要查询的数据库。 
 3. 右键单击“school”，然后单击“新建查询”。
 4. 执行以下查询以验证数据可供访问。
 
-
-	SELECT
-		Course.Title as "Course Title"
-  		,Department.Name as "Department"
-  		,Person.LastName as "Instructor"
-  		,OnsiteCourse.Location as "Location"
-  		,OnsiteCourse.Days as "Days"
-  		,OnsiteCourse.Time as "Time"
-	FROM
- 	 Course
- 	 INNER JOIN Department
-  	  ON Course.DepartmentID = Department.DepartmentID
- 	 INNER JOIN CourseInstructor
- 	   ON Course.CourseID = CourseInstructor.CourseID
- 	 INNER JOIN Person
- 	   ON CourseInstructor.PersonID = Person.PersonID
- 	 INNER JOIN OnsiteCourse
+		SELECT
+			Course.Title as "Course Title"
+				,Department.Name as "Department"
+				,Person.LastName as "Instructor"
+				,OnsiteCourse.Location as "Location"
+				,OnsiteCourse.Days as "Days"
+				,OnsiteCourse.Time as "Time"
+		FROM
+			 Course
+			 INNER JOIN Department
+			  ON Course.DepartmentID = Department.DepartmentID
+			 INNER JOIN CourseInstructor
+			   ON Course.CourseID = CourseInstructor.CourseID
+			 INNER JOIN Person
+			   ON CourseInstructor.PersonID = Person.PersonID
+			 INNER JOIN OnsiteCourse
 		ON OnsiteCourse.CourseID = CourseInstructor.CourseID;
-</pre></div>
+		
+## 后续步骤
 
-[SQL 数据库管理入门]: /documentation/articles/sql-database-get-started
+有关新建 Azure SQL 数据库的教程，请参阅 [SQL 数据库管理入门](/documentation/articles/sql-database-get-started)。有关从 C# 应用连接到 Azure SQL 数据库的基础知识，请参阅[使用 C# 连接和查询 SQL 数据库](/documentation/articles/sql-database-connect-query)。有关从各种平台（如 PHP）进行连接的其他教程，请参阅 [Azure SQL 数据库开发：操作指南主题](https://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx)。
 
-<!---HONumber=66-->
+ 
+
+<!---HONumber=69-->

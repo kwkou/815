@@ -8,13 +8,16 @@
 	editor="genemi"/>
 
 
-<tags
-	ms.service="sql-database"
-	ms.date="05/20/2015"
-	wacn.date="06/30/2015"/>
+<tags 
+	ms.service="sql-database" 
+	ms.date="06/25/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库
+
+
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 本主题演示了一个可以用来连接到 Azure SQL 数据库 的 Java 代码示例。该 Java 示例依赖于 Java 开发工具包 (JDK) 版本 1.8。该示例将使用 JDBC 驱动程序连接到 Azure SQL 数据库。
@@ -25,13 +28,14 @@
 
 - [Microsoft JDBC Driver for SQL Server - SQL JDBC 4](http://www.microsoft.com/zh-CN/download/details.aspx?id=11774)。
 - 运行 [Java 开发工具包 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 的任何操作系统平台。
-- SQL Azure 上的现有数据库。请参阅[入门主题](sql-database-get-started)，以了解如何创建示例数据库和检索连接字符串。
+- SQL Azure 上的现有数据库。请参阅[入门主题](/documentation/articles/sql-database-get-started)，以了解如何创建示例数据库和检索连接字符串。
 
 
 ## 测试环境
 
 
 本主题中的 Java 代码示例假设 Azure SQL 数据库 数据库中已存在以下测试表。
+
 
 
 
@@ -47,7 +51,7 @@
 ## SQL 数据库 的连接字符串
 
 
-该代码示例将使用连接字符串创建 `Connection` 对象。有关查找连接字符串的详细信息，请参阅[创建你的第一个 Azure SQL 数据库](sql-database-get-started)。
+该代码示例将使用连接字符串创建 `Connection` 对象。你可以使用 [Azure 门户](http://manage.windowsazure.cn/)查找连接字符串。有关查找连接字符串的详细信息，请参阅[创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)。
 
 
 ## Java 代码示例
@@ -66,9 +70,9 @@
 
 	import java.sql.*;
 	import com.microsoft.sqlserver.jdbc.*;
-
+	
 	public class SQLDatabaseTest {
-
+	
 		public static void main(String[] args) {
 			String connectionString =
 				"jdbc:sqlserver://your_server.database.chinacloudapi.cn:1433;"
@@ -78,24 +82,24 @@
 				+ "encrypt=true;"
 				+ "trustServerCertificate=false;"
 				+ "hostNameInCertificate=*.database.chinacloudapi.cn;"
-				+ "loginTimeout=30;";
-
+				+ "loginTimeout=30;"; 
+	
 			// Declare the JDBC objects.
 			Connection connection = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
 			PreparedStatement prepsInsertPerson = null;
 			PreparedStatement prepsUpdateAge = null;
-
+	
 			try {
 				connection = DriverManager.getConnection(connectionString);
-
+	
 				// INSERT two rows into the table.
 				// ...
-
+	
 				// TRANSACTION and commit for an UPDATE.
 				// ...
-
+	
 				// SELECT rows from the table.
 				// ...
 			}
@@ -133,7 +137,7 @@
  - 我们包含了参数 `Statement.RETURN_GENERATED_KEYS`，以便稍后可以获取自动为 **id** 键值生成的值。
 2. 对 `PreparedStatement` 对象调用 `execute` 方法。
 3. 使用 `PreparedStatement` 对象获取自动为主键生成的数字值。
- - 此值与 Person 表中 **id** 列上的 AUTO_INCREMENT 规范相关
+ - 此值与 Person 表中 **id** 列上的 AUTO\_INCREMENT 规范相关
 
 
 将此简短 Java 段复制并粘贴到主代码示例中注释 `// INSERT two rows into the table.` 所在的位置。
@@ -143,7 +147,7 @@
 	String insertSql = "INSERT INTO Person (firstName, lastName, age) VALUES "
 		+ "('Bill', 'Gates', 59), "
 		+ "('Steve', 'Ballmer', 59);";
-
+	
 	prepsInsertPerson = connection.prepareStatement(
 		insertSql,
 		Statement.RETURN_GENERATED_KEYS);
@@ -172,17 +176,17 @@
 
 	// Set AutoCommit value to false to execute a single transaction at a time.
 	connection.setAutoCommit(false);
-
+	
 	// Write the SQL Update instruction and get the PreparedStatement object.
 	String transactionSql = "UPDATE Person SET Person.age = Person.age + 1;";
 	prepsUpdateAge = connection.prepareStatement(transactionSql);
-
+	
 	// Execute the statement.
 	prepsUpdateAge.executeUpdate();
-
+	
 	//Commit the transaction.
 	connection.commit();
-
+	
 	// Return the AutoCommit value to true.
 	connection.setAutoCommit(true);
 
@@ -205,11 +209,13 @@
 	String selectSql = "SELECT firstName, lastName, age FROM dbo.Person";
 	statement = connection.createStatement();
 	resultSet = statement.executeQuery(selectSql);
-
+	
 	// Iterate through the result set and print the attributes.
 	while (resultSet.next()) {
 		System.out.println(resultSet.getString(2) + " "
 			+ resultSet.getString(3));
 	}
 
-<!---HONumber=61-->
+ 
+
+<!---HONumber=69-->

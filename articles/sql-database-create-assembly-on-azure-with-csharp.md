@@ -8,35 +8,38 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database" 	 
-	ms.date="04/22/2015" 
-	wacn.date="05/25/2015"/>
+	ms.service="sql-database" 
+	ms.date="07/14/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 使用 CSharp 在 Azure SQL 数据库 上执行 CREATE ASSEMBLY
 
-本主题提供可以用来向 Azure SQL 数据库 发出 CREATE ASSEMBLY 语句的 C# 代码示例。对于 SQL 数据库，FROM 子句不能接受托管数据库的本地计算机上的简单格式路径。替代的做法是先将程序集 DLL 的二进制位编码成包含十六进制数的长字符串。然后，将该字符串指定为 FROM 子句中的值。
+本主题提供可以用来向 Azure SQL 数据库发出 [CREATE ASSEMBLY](http://msdn.microsoft.com/zh-cn/library/ms189524.aspx) 语句的 C# 代码示例。对于 SQL 数据库，FROM 子句不能接受托管数据库的本地计算机上的简单格式路径。替代的做法是先将程序集 DLL 的二进制位编码成包含十六进制数的长字符串。然后，将该字符串指定为 FROM 子句中的值。
+
 
 ### 先决条件
 
+
 若要学习本主题，必须已了解以下信息：
+
 
 - [CLR 表值函数](https://msdn.microsoft.com/zh-cn/library/ms131103.aspx)<br/>说明 CREATE ASSEMBLY Transact-SQL 语句如何与本地 Microsoft SQL Server 的其他语句配合工作。
 
-## A. 总体方法
+
+## A.总体方法
+
 
 1. 根据需要使用 DROP FUNCTION 和 DROP ASSEMBLY 来清理前一次运行。
 2. 请记住从自己的代码编译的 Microsoft.NET Framework 程序集 DLL 文件所在位置。需要在下一步中提供该位置。 
 3. 运行要对其指定本主题中的 C# 源代码的 EXE。告诉该 EXE 你的 DLL 文件位于哪个位置。
  - 将二进制 DLL 编码成包含十六进制数的长字符串。
  - 发出 CREATE ASSEMBLY 语句，并在 FROM 子句中指定该十六进制字符串。
-4. 执行 CREATE FUNCTION 以引用程序集中的方法。
+4. 执行 [CREATE FUNCTION](http://msdn.microsoft.com/zh-cn/library/ms186755.aspx) 以引用程序集中的方法。
 5. 执行 T-SQL SELECT 语句以调用并测试你的函数。
 
 
-上面的列表未提到...<br/>
-**execute sp_configure 'clr enabled', 1;**<br/>
-...，因为 Azure SQL 数据库 不需要此语句，但 Microsoft SQL Server 需要它。
+上面的列表未提到...<br/> **execute sp\_configure 'clr enabled', 1;**<br/> ...因为 Azure SQL 数据库不需要此语句，但 Microsoft SQL Server 需要它。
 
 
 如果需要重新运行，请执行以下 T-SQL 代码删除函数和程序集：
@@ -46,7 +49,7 @@
     DROP ASSEMBLY CreateAssemblyFunctions3;
 
 
-## B. T-SQL 函数要引用的简单程序集 DLL
+## B.T-SQL 函数要引用的简单程序集 DLL
 
 
 可将本部分中的简单 C# 代码示例编译到程序集 DLL 文件中。
@@ -74,7 +77,7 @@
 	}
 
 
-## C. C&#x23; 发出 CREATE ASSEMBLY 的 EXE 代码示例
+## C.发出 CREATE ASSEMBLY 的 EXE 的 C&#x23; 代码示例
 
 
 运行从此 C# 示例生成的 EXE 时，将发生以下序列：
@@ -279,7 +282,7 @@
 为方便解释，此示例传递了密码作为命令行参数。更好的设计是让 C# 代码从 CONFIG 文件中获取密码。
 
 
-## D. 运行 CREATE FUNCTION 语句
+## D.运行 CREATE FUNCTION 语句
 
 
 将程序集存储在 Azure SQL 数据库 服务器中后，你必须运行的 Transact-SQL CREATE FUNCTION 语句以引用程序集中的方法。
@@ -314,4 +317,4 @@
 
 <!-- EndOfFile -->
 
-<!--HONumber=55-->
+<!---HONumber=69-->

@@ -3,18 +3,18 @@
 	description="列出每个客户端程序可以用来连接到 Azure SQL 数据库或 Microsoft SQL Server 的驱动程序的最低版本号。提供一个链接，通过它可查看由社区而不是 Microsoft 发布的驱动程序的版本信息。"
 	services="sql-database"
 	documentationCenter=""
-	authors="MightyPen"
+	authors="pehteh"
 	manager="jeffreyg"
-	editor=""/>
+	editor="genemi"/>
 
 
-<tags 
+<tags
 	ms.service="sql-database"
-	ms.date="04/13/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="06/24/2015"
+	wacn.date="09/15/2015"/>
 
 
-#用于 SQL 数据库和 SQL Server 的连接库
+# 用于 SQL 数据库和 SQL Server 的连接库
 
 
 此主题列出了客户端程序连接到 Azure SQL 数据库或 Microsoft SQL Server 时可以使用的每个库/驱动程序的最低版本号。
@@ -61,7 +61,8 @@
 
 > [AZURE.IMPORTANT]下表显示在第三方的许可条款下发布的库。要使用这些库，你有责任验证并遵守相关的第三方许可。使用者自行承担使用这些库的风险。Microsoft 不对此处提供的信息作出任何明示或暗示的保证，仅出于用户方便起见而提供这些信息。此处的任何内容都不表示 Microsoft 的任何认可。<br/><br/>由开发人员公共社区使用 GitHub.com 上为 **Azure** 所有的 [azure-content](http://github.com/Azure/azure-content/) 存储库对此“第三方库”部分中的信息进行更新和维护。Microsoft 鼓励开发人员更新此部分。Microsoft 员工*不*计划维护此部分中的信息，部分原因是对于每个特定的第三方库，其他人员比我们更加专业。谢谢。
 
-下表显示由 Microsoft 之外的其他公司或社区之类的第三方发布的库。
+
+下表显示了其他公司或社区之类的第三方发布的库。Microsoft 只发布了本主题前面部分中所述的库。
 
 
 | 平台 | 库 |
@@ -77,4 +78,4 @@
 https://zh.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=67-->
+<!---HONumber=69-->
