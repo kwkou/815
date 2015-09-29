@@ -21,7 +21,7 @@
 
 本教程将指导你在 Azure 自动化中创建[文本 Runbook](/documentation/articles/automation-powershell-workflow)。我们将从一个简单的 Runbook 开始，我们将测试和发布该 Runbook，同时介绍如何跟踪 Runbook 作业的状态。然后我们将通过修改 Runbook 来实际管理 Azure 资源，这种情况下将启动 Azure 虚拟机。然后我们将通过添加 Runbook 参数来使该 Runbook 更稳健。
 
-## 先决条件
+## <a id="prerequisites"></a> 先决条件
 
 为了完成本教程，你需要满足以下条件。
 
@@ -34,7 +34,7 @@
 
 我们首先创建一个输出文本 *Hello World* 的简单 Runbook 。
 
-1. 在 Azure 预览门户中，打开你的自动化帐户。通过自动化帐户页面可快速查看此帐户中的资源。你应该已拥有某些资产。大多数资产都是自动包括在新的自动化帐户中的模块。你还应具有在“先决条件”中提到的凭证资产[](#prerequisites)。
+1. 在 Azure 预览门户中，打开你的自动化帐户。通过自动化帐户页面可快速查看此帐户中的资源。你应该已拥有某些资产。大多数资产都是自动包括在新的自动化帐户中的模块。你还应具有在[“先决条件”](#prerequisites)中提到的凭证资产。
 2. 单击 **Runbook** 磁贴打开 Runbook 的列表。<br>![Runbook 控制](./media/automation-first-runbook-textual/runbooks-control.png)
 2. 通过单击“添加 Runbook”按钮创建一个新 Runbook，然后“创建新 Runbook”。
 3. 将该 Runbook 命名为 *MyFirstRunbook-Textual*。
@@ -78,7 +78,7 @@
 
 ## 步骤 5 - 添加身份验证来管理 Azure 资源
 
-我们已经测试并发布 Runbook，但到目前为止它不执行任何有用的操作。我们想要让其管理 Azure 资源。然而，除非使用“先决条件”中引用的凭据对其进行身份验证，否则它将无法进行管理[](#prerequisites)。我们使用 **Add-AzureAccount** cmdlet 实现此目的。
+我们已经测试并发布 Runbook，但到目前为止它不执行任何有用的操作。我们想要让其管理 Azure 资源。然而，除非使用[“先决条件”](#prerequisites)中引用的凭据对其进行身份验证，否则它将无法进行管理。我们使用 **Add-AzureAccount** cmdlet 实现此目的。
 
 1.  通过单击 MyFirstRunbook-Textual 窗格上的“编辑”打开文本编辑器。<br> ![编辑 Runbook](./media/automation-first-runbook-textual/runbook-toolbar-edit.png) 
 2.  我们不再需要 **Write-Output** 行，因此请直接删除它。
