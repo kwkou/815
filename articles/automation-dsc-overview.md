@@ -14,7 +14,7 @@
 
 # Azure 自动化 DSC 概述 #
 
->[AZURE.IMPORTANT]**Azure 自动化 DSC 当前为受限预览版**，不支持用于生产工作负荷。它目前主要基于 cmdlet，并有精简的图形用户界面。注册获取 Azure 自动化 DSC 的预览版本即表示你认同此功能为预览版本，同意[服务协议](/support/legal/sla)中规定的功能缩减或不同服务条款，并同意[预览版补充条款](http://azure.microsoft.com/zh-cn/support/legal/preview-supplemental-terms/)。虽然此服务当前可免费使用，但以后会对其定价。
+>[AZURE.IMPORTANT]**Azure 自动化 DSC 当前为受限预览版**，不支持用于生产工作负荷。它目前主要基于 cmdlet，并有精简的图形用户界面。注册获取 Azure 自动化 DSC 的预览版本即表示你认同此功能为预览版本，同意[服务协议](/support/legal/sla)中规定的功能缩减或不同服务条款，并同意[预览版补充条款](/support/legal/)。虽然此服务当前可免费使用，但以后会对其定价。
 
 ## 什么是 PowerShell DSC？ ##
 所需状态配置 (DSC) 是 Windows PowerShell 中一个新的管理平台，可通过声明性的 PowerShell 语法管理物理主机和虚拟机的配置。

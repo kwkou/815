@@ -38,17 +38,17 @@ Azure 自动化中的 Runbook 无法访问你本地数据中心的资源，因�
 完成以下步骤，以便针对混合 Runbook 辅助角色准备你的 Azure 自动化环境。
 
 #### 1.创建 Azure Operational Insights 工作区  
-如果你的 Azure 帐户中还没有 Operational Insights 工作区，则可按[设置 Operational Insights 工作区](/documentation/articles/operational-insights-setup-workspace)中的说明创建一个。如果你已经有一个工作区，则可以使用现有的。
+如果你的 Azure 帐户中还没有 Operational Insights 工作区，则可按[设置 Operational Insights 工作区](https://technet.microsoft.com/zh-cn/library/mt484119.aspx)中的说明创建一个。如果你已经有一个工作区，则可以使用现有的。
 
 #### 2.部署自动化解决方案  
-Operational Insights 中的自动化解决方案可以向下推送所需组件，以便配置 Runbook 环境并提供相关支持。按照 [Operational Insights 解决方案](/documentation/articles/operational-insights-setup-workspace#1-add-solutions)中的说明安装 **Azure 自动化**包。
+Operational Insights 中的自动化解决方案可以向下推送所需组件，以便配置 Runbook 环境并提供相关支持。按照 [Operational Insights 解决方案](https://technet.microsoft.com/zh-cn/library/mt484119.aspx#1-add-solutions)中的说明安装 **Azure 自动化**包。
 
 ### 配置本地计算机
 针对每台将充当混合 Runbook 辅助角色的本地计算机完成以下步骤。
 
 
 #### 1.安装 Microsoft 管理代理  
-Microsoft 管理代理可将计算机连接到 Operational Insights，并允许其运行解决方案中的逻辑。按照[将计算机直接连接到 Operational Insights](/documentation/articles/operational-insights-direct-agent) 中的说明在本地计算机上安装代理，并将其连接到 Operational Insights。
+Microsoft 管理代理可将计算机连接到 Operational Insights，并允许其运行解决方案中的逻辑。按照[将计算机直接连接到 Operational Insights](https://technet.microsoft.com/zh-cn/library/mt484108.aspx) 中的说明在本地计算机上安装代理，并将其连接到 Operational Insights。
 
 #### 2.安装 Runbook 环境并连接到 Azure 自动化  
 将计算机添加到 Operational Insights 时，自动化解决方案会向下推送 **HybridRegistration** PowerShell 模块，其中包含 **Add-HybridRunbookWorker** cmdlet。使用此 cmdlet 将 Runbook 环境安装到计算机上，并将其注册到 Azure 自动化。
