@@ -37,7 +37,7 @@
 
 > [AZURE.NOTE]Internet 和公共终结点上的计算机之间的名称解析由 Azure 自动提供，并且不需要配置。
 
-## Azure 提供的名称解析
+## <a id="azure-provided-name-resolution"></a> Azure 提供的名称解析
 
 除公共 Internet 域的解析之外，Azure 还使用主机名为驻留在相同云服务中的 VM 和角色实例提供主机名的名称解析，并且使用 FQDN 提供驻留在相同虚拟网络的不同云服务中的 VM 和角色实例之间的名称解析。虽然 Azure 提供的名称解析不需要任何配置，但并不适合所有部署方案，如上表所示。
 
@@ -77,13 +77,13 @@
 
 - DNS 查询流量按照 VM 进行限制。如果应用程序对多个目标名称执行常用 DNS 查询，则某些查询可能会超时。若要避免这种情况，建议使用客户端缓存。
 
-## 使用你自己的 DNS 服务器的名称解析
+## <a id="name-resolution-using-your-own-dns-server"></a> 使用你自己的 DNS 服务器的名称解析
 
 如果名称解析要求超出 Azure 提供的功能，则可以选择使用你自己的 DNS 服务器。当你使用自己的 DNS 服务器时，你负责管理云服务所需的记录。
 
 > [AZURE.NOTE]建议避免使用外部 DNS 服务器，除非部署方案需要。
 
-## DNS 服务器要求
+## <a id="dns-server-requirements"></a> DNS 服务器要求
 
 如果计划使用不由 Azure 提供的名称解析，指定的 DNS 服务器则必须支持以下情况：DNS 服务器必须接受通过动态 DNS (DDNS) 执行的动态 DNS 注册。
 
