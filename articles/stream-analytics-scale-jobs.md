@@ -143,7 +143,7 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 
 **调整作业流式处理单位的步骤**
 
-1. 登录到[管理门户](https://manage.windowsazure.com)。
+1. 登录到[管理门户](https://manage.windowsazure.cn)。
 2. 单击左窗格中的**“流分析”**。
 3. 单击想要缩放的流分析作业。
 4. 单击页面顶部的**“缩放”**。
@@ -247,7 +247,7 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 <!--Link references-->
 
 [microsoft.support]: http://support.microsoft.com
-[azure.management.portal]: http://manage.windowsazure.com
+[azure.management.portal]: http://manage.windowsazure.cn
 [azure.event.hubs.developer.guide]: http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx
 
 [stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
