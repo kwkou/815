@@ -30,7 +30,7 @@
 
 现在，客户端库引用已添加到你的项目。
 
-[AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
+[AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-add-references-visual-studio/search-online.png
