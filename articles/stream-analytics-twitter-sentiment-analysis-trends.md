@@ -77,7 +77,8 @@
 	* **区域**：选择要在其中运行作业的区域。考虑将作业和事件中心放在同一区域，以确保获得更好的性能，并确保在不同区域之间传输数据时不需付费。
 	* **存储帐户**：选择要使用的存储帐户，以便为所有在此区域运行的流分析作业存储监视数据。你可以选择现有存储帐户，也可以创建新的存储帐户。
 
-3.	单击左窗格中的**“流分析”**，列出流分析作业。<br/>![流分析服务图标](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-service-icon.png)
+3.	单击左窗格中的**“流分析”**，列出流分析作业。  
+![流分析服务图标](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-service-icon.png)
 
 4.	新作业在显示时的状态为**“已创建”**。请注意，页面底部的**“启动”**按钮已禁用。你必须先配置作业输入、输出和查询，然后才能启动作业。
 
