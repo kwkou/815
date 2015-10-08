@@ -102,7 +102,7 @@
 1. 选择一个 Runbook，然后单击“启动”。
 1. 如果 Runbook 包含参数，则系统会提示你在文本框中提供每个参数的值。请参阅下面的 [Runbook 参数](#Runbook-parameters)，以获取有关参数的更多详细信息。
 1. 选择“启动 Runbook”消息旁边的“查看作业”，或选择 Runbook 的“作业”选项卡以查看 Runbook 作业的状态。
-
+<!--
 ## 使用 Azure 预览门户启动 Runbook
 
 1. 在你的自动化帐户，单击“Runbook”部分打开“Runbook”边栏选项卡。
@@ -110,7 +110,7 @@
 2. 单击“启动”。
 1. 如果该 Runbook 没有参数，系统会提示你确认是否要启动它。如果该 Runbook 有参数，“启动 Runbook”边栏选项卡将会打开，并让你提供参数值。请参阅下面的 [Runbook 参数](#Runbook-parameters)，以获取有关参数的更多详细信息。
 3. “工作”边栏选项卡将会打开，并让你跟踪作业的状态。
-
+-->
 
 ## 使用 Windows PowerShell 启动 Runbook
 

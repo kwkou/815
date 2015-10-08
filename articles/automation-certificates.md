@@ -85,7 +85,7 @@
 	$cert = Get-AutomationCertificate -Name 'MyCertificate'
 	$certPwd = Get-AutomationVariable –Name 'MyCertPassword'
 	Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
-
+<!--
 ### 图形 Runbook 示例
 
 通过在图形编辑器的“库”窗格中右键单击证书并选择“添加到 Canvas”，将 **Get-AutomationCerticiate** 添加到图形 Runbook。
@@ -101,6 +101,6 @@
 
 ## 另请参阅
 
-- [图形创作中的链接](automation-graphical-authoring-intro#links-and-workflow) 
+- [图形创作中的链接](automation-graphical-authoring-intro#links-and-workflow) -->
 
 <!---HONumber=69-->
