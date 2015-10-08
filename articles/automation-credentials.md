@@ -49,14 +49,14 @@
 2. 在“凭据类型”下拉列表中，选择“PowerShell 凭据”。
 1. 完成向导并单击复选框以保存新凭据。
 
-
+<!--
 ### 使用 Azure 预览门户创建新凭据
 
 1. 在您的自动化帐户中，单击“资产”部分打开“资产”边栏选项卡。
 1. 单击“凭据”部分以打开“凭据”边栏选项卡。
 1. 单击边栏选项卡顶部的“添加凭据”。
 1. 完成表单，然后单击“创建”以保存新凭据。
-
+-->
 
 ### 使用 Windows PowerShell 创建新的 PowerShell 凭据
 
@@ -80,7 +80,7 @@
 	$securePassword = $myCredential.Password
 	$password = $myCredential.GetNetworkCredential().Password
 
-
+<!--
 ### 图形 Runbook 示例
 
 通过在图形编辑器的“库”窗格中右键单击凭据并选择“添加到画布”，将 **Get-AutomationPSCredential** 活动添加到图形 Runbook。
@@ -95,7 +95,7 @@
 
 ## 相关文章
 
-- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
+- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)-->
 
  
 

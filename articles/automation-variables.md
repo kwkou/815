@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Azure 自动化中的变量资产 | Windows Azure"
-   description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本和图形创作中使用变量。"
+   description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本创作中使用变量。"
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -62,14 +62,14 @@
 1. 单击“添加变量”。
 1. 完成向导并单击复选框以保存新变量。
 
-
+<!--
 ### 使用 Azure 预览门户创建新变量
 
 1. 在你的自动化帐户中，单击“资产”部分打开“资产”边栏选项卡。
 1. 单击“变量”部分以打开“变量”边栏选项卡。
 1. 单击边栏选项卡顶部的“添加变量”。
 1. 完成表单，然后单击“创建”以保存新变量。
-
+-->
 
 ### 使用 Windows PowerShell 创建新变量
 
@@ -147,7 +147,7 @@
 	      Start-AzureVM -ServiceName $vmValue.ServiceName -Name $vmValue.Name
 	   }
 	}
-
+<!--
 ### 图形 Runbook 示例
 
 在图形 Runbook 中，你通过在图形编辑器的库窗格中的变量上右键单击并选择所需的活动添加 **Get-AutomationVariable** 或 **Set-AutomationVariable**。
@@ -181,7 +181,7 @@
 
 ## 相关文章
 
-- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
+- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)-->
  
 
 <!---HONumber=69-->

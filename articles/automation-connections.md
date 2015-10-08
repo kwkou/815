@@ -50,7 +50,7 @@
 2. 在“连接类型”下拉列表中，选择您想要创建连接的类型。向导将显示该特定类型的属性。
 1. 完成该向导并单击该复选框以保存新连接。
 
-
+<!--
 ### 使用 Azure 预览门户创建新连接
 
 1. 在您的自动化帐户中，单击“资产”部分打开“资产”边栏选项卡。
@@ -58,7 +58,7 @@
 1. 单击边栏选项卡顶部的“添加连接”。
 2. 在“类型”下拉列表中，选择您想要创建连接的类型。表单将显示该特定类型的属性。
 1. 完成该表单，然后单击“创建”以保存新连接。
-
+-->
 
 
 ### 使用 Windows PowerShell 创建新连接
@@ -92,7 +92,7 @@
 
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
-
+<!--
 ### 图形 Runbook 示例
 
 通过在图形编辑器的“库”窗格中右键单击连接，并选择“添加到画布”，将 **Get-AutomationConnection** 活动添加到图形 Runbook。
@@ -113,7 +113,7 @@
 
 ## 相关文章
 
-- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)
+- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)-->
  
 
 <!---HONumber=69-->
