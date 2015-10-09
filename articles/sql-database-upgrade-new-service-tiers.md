@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 SQL 数据库 Web 或企业数据库升级到新服务层"
+	pageTitle="将 SQL 数据库 Web 或企业数据库升级到新服务层" 
 	description="将 Azure SQL 数据库 Web 或企业数据库升级到新的 Azure SQL 数据库基本、标准和高级服务层与性能级别。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.date="06/18/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="帮助"/>
 
 
 # 将 SQL 数据库 Web 或企业数据库升级到新服务层
