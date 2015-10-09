@@ -77,13 +77,6 @@ Azure Active Directory 中的密码管理由下述的几个逻辑组件构成。
 
 若要了解有关用户可如何更改其自己的本地 Active Directory 密码的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
-##<a name="password-management-reports"></a>密码管理报告
-通过导航至**报表**选项卡和在**活动日志**部分下查看，你将看到两个“密码管理”报表：**密码重置活动**和**密码重置注册活动**。可以使用这两个报表来查看你组织中注册和使用密码重置的用户。下面是这些报表在 [Azure 管理门户](https://manage.windowsazure.cn)中的外观：
-
-  ![][006]
-
-有关详细信息，请参阅[获取见解：Azure AD 密码管理报告](active-directory-passwords-get-insights)。
-
 ##<a name="password-writeback-component-of-azure-ad-connect"></a>Azure AD Connect 的“密码写回”组件
 如果组织中用户的密码源自你的本地环境（通过联合或是密码同步），可以安装最新版本的 Azure AD Connect 以便可以从云端直接更新这些密码。这意味着当你的用户忘记或是想要修改其 AD 密码，他们可以直接通过 web 实现此操作。以下是 Azure AD Connect 安装向导中“密码写回”的位置：
 
@@ -101,7 +94,6 @@ Azure Active Directory 中的密码管理由下述的几个逻辑组件构成。
 * [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
 * [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
 * [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何通过密码管理报告获取操作见解](/documentation/articles/active-directory-passwords-get-insights)
 * [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
 * [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
 * [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)

@@ -719,7 +719,6 @@
 * [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works)
 * [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
 * [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何通过密码管理报告获取操作见解](/documentation/articles/active-directory-passwords-get-insights)
 * [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
 * [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
 * [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)

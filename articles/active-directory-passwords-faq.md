@@ -21,7 +21,6 @@
 
 - [**有关密码重置注册的问题**](#password-reset-registration)
 - [**有关密码重置的问题**](#password-reset)
-- [**有关密码管理报告的问题**](#password-management-reports)
 - [**有关密码写回的问题**](#password-writeback)
 
 ## <a name="password-reset-registration"></a>密码重置注册
@@ -130,28 +129,6 @@
  
  > **答：**进行密码重置的会话生存期为 105 分钟。这意味着，从密码重置操作开始算，用户有 105 分钟的时间来重置其密码。此时间段到期后，电子邮件和短信的一次性密码将无效。
 
-
-## <a name="password-management-reports"></a>密码管理报告
-
- - **问：需要多长时间才能在密码管理报告上看到数据？**
- 
- > **答：**数据应在 5 到 10 分钟内显示在密码管理报告中。某些情况下，需要一个小时才能显示。
-
- - **问：如何筛选密码管理报告？**
- 
- > **答：**单击报告顶部的列标签最右侧的小放大镜，即可筛选密码管理报告（请参阅屏幕快照）。如果希望进行更丰富的筛选，可以将报告下载到 excel 并创建数据透视表。
-
-  ![][002]
-
- - **问：密码管理报告可向前追溯多久？**
- 
- > **答：**密码管理报告可显示在过去 30 天内发生的操作。我们目前正在研究如何使这一时间更长。现在，如果你需要存档此数据，可以定期下载报告并将它们保存在单独的位置。
-
- - **问：密码管理报告中显示的行数是否存在上限？**
- 
- > **答：**有；任一密码管理报告都最多只能显示 1,000 行，不论是用户界面中正在显示的行数还是正在下载的行数都存在此限制。我们目前正在研究如何增大此限制。
-
-
 ## <a name="password-writeback"></a>密码写回
  - **问：密码写回如何在后台工作？**
  
@@ -184,7 +161,6 @@
 * [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
 * [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
 * [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何通过密码管理报告获取操作见解](/documentation/articles/active-directory-passwords-get-insights)
 * [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
 * [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)
 * [MSDN 上的密码管理](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)

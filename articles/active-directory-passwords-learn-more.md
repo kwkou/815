@@ -267,7 +267,6 @@
 * [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
 * [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
 * [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何通过密码管理报告获取操作见解](/documentation/articles/active-directory-passwords-get-insights)
 * [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
 * [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
 * [MSDN 上的密码管理](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)

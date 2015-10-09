@@ -297,7 +297,6 @@ Azure AD Connect 发行版或版本号为 **1.0.0419.0911** 或更高的 Azure A
 * [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works)
 * [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
 * [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何通过密码管理报告获取操作见解](/documentation/articles/active-directory-passwords-get-insights)
 * [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
 * [密码管理疑难解答](/documentation/articles/active-directory-passwords-troubleshoot)
 * [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)
