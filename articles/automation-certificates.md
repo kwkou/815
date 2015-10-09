@@ -96,7 +96,7 @@
 
 此示例将对使用连接对象向服务进行身份验证的“SendTwilioSMS 活动”使用 **UseConnectionObject** 参数集。必须在此处使用“[管道链接](automation-graphical-authoring-intro#links-and-workflow)”，因为序列链接将返回一个集合，其中包含不应在 Connection 参数中使用的单个对象。
 
-![](./media/automation-certificates/add-certificate.png)
+![](media/automation-certificates/add-certificate.png)
 
 
 ## 另请参阅
