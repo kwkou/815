@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Êý¾Ý¹ÜÀíºÍÒµÎñ·ÖÎö | Microsoft Azure" 
-	description="½éÉÜÈçºÎÔÚ Azure ÖÐ¹ÜÀíºÍ·ÖÎöÊý¾Ý¡£Ìá¹©ÁË¸÷ÖÖÑ¡ÏîÀ´´¦Àí¹ØÏµÊý¾ÝºÍ·Ç¹ØÏµÊý¾Ý¡£" 
+	pageTitle="æ•°æ®ç®¡ç†å’Œä¸šåŠ¡åˆ†æž | Windows Azure" 
+	description="ä»‹ç»å¦‚ä½•åœ¨ Azure ä¸­ç®¡ç†å’Œåˆ†æžæ•°æ®ã€‚æä¾›äº†å„ç§é€‰é¡¹æ¥å¤„ç†å…³ç³»æ•°æ®å’Œéžå…³ç³»æ•°æ®ã€‚" 
 	services="sql-database, storage" 
 	documentationCenter=".net" 
 	authors="jenniehubbard" 
