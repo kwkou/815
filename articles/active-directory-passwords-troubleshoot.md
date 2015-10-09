@@ -17,7 +17,6 @@
 
 * [**你需要帮助时应包含的信息**](#information-to-include-when-you-need-help)
 * [**Azure 管理门户中的密码管理配置问题**](#troubleshoot-password-reset-configuration-in-the-azure-management-portal)
-* [**Azure 管理门户中的密码管理报告问题**](#troubleshoot-password-management-reports-in-the-azure-management-portal)
 * [**密码重置注册门户的问题**](#troubleshoot-the-password-reset-registration-portal)
 * [**密码重置门户的问题**](#troubleshoot-the-password-reset-portal)
 * [**密码写回的问题**](#troubleshoot-password-writeback)
@@ -116,52 +115,6 @@
           </tr>
         </tbody></table>
 
-## <a name="troubleshoot-password-management-reports-in-the-azure-management-portal"></a>在 Azure 管理门户中排查密码管理报告问题
-如果在使用密码管理报告时遇到错误，可以通过执行以下故障排除步骤来解决错误：
-
-<table>
-          <tbody><tr>
-            <td>
-              <p>
-                <strong>错误案例</strong>
-              </p>
-            </td>
-            <td>
-              <p>
-                <strong>用户看到的错误。</strong>
-              </p>
-            </td>
-            <td>
-              <p>
-                <strong>解决方案</strong>
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>我看不到任何密码管理报告</p>
-            </td>
-            <td>
-              <p>“密码重置活动”和“密码重置注册活动”报表未显示在“报表”选项卡中的“活动日志”报表下方<strong></strong><strong></strong><strong></strong><strong></strong>。</p>
-            </td>
-            <td>
-              <p>如果未向执行此操作的管理员分配 AAD Premium 或 AAD Basic 许可证，则会发生这种情况。</p>
-              <p>若要纠正此问题，请导航到“许可证”选项卡，将 AAD Premium 或 AAD Basic 许可证分配给相关的管理员帐户，然后重试<strong></strong>。</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>用户注册显示了多次</p>
-            </td>
-            <td>
-              <p>当用户注册备用电子邮件、移动电话和安全问题时，它们每个都显示为单独的行而不是显示为单个行。</p>
-            </td>
-            <td>
-              <p>目前，当用户注册时，我们无法假定他们将注册在注册页上存在的所有内容。因此，我们当前将所注册的每个单独的数据片记录为一个单独的事件。</p>
-              <p>如果希望聚合此数据，你可以下载报表并在 excel 中将其作为数据透视表打开以实现更大的灵活性。</p>
-            </td>
-          </tr>
-        </tbody></table>
 
 ## <a name="troubleshoot-the-password-reset-registration-portal"></a>排查密码重置注册门户问题
 如果你在针对密码重置注册用户时遇到错误，也许能够通过执行以下故障排除步骤来解决错误：
@@ -1469,7 +1422,6 @@
 * [密码管理入门](/documentation/articles/active-directory-passwords-getting-started)
 * [自定义密码管理](/documentation/articles/active-directory-passwords-customize)
 * [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices)
-* [如何通过密码管理报告获取操作见解](/documentation/articles/active-directory-passwords-get-insights)
 * [密码管理常见问题](/documentation/articles/active-directory-passwords-faq)
 * [了解详细信息](/documentation/articles/active-directory-passwords-learn-more)
 * [MSDN 上的密码管理](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)
