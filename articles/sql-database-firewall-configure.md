@@ -78,13 +78,7 @@ Windows Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提
 
 | 目录视图或存储过程 | 级别 | 说明 |
 |--------------------------------------------------------------------------------------------|-----------|------------------------------------------------------|
-| [sys.firewall\\_rules](https://msdn.microsoft.com/zh-cn/library/dn269980.aspx) | 服务器 | 显示当前的服务器级防火墙规则 |
-| [sp\\_set\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) | 服务器 | 创建或更新服务器级防火墙规则 |
-| [sp\\_delete\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx) | 服务器 | 删除服务器级防火墙规则 |
-| [sys.database\\_firewall\\_rules](https://msdn.microsoft.com/zh-cn/library/dn269982.aspx) | 数据库 | 显示当前的数据库级防火墙规则 |
-| [sp\_set\\_database\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) | 数据库 | 创建或更新数据库级防火墙规则 |
-| [sp\\_delete\\_database\\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270030.aspx) | 数据库 | 删除数据库级防火墙规则 |
-
+| [sys.firewall\\_rules](https://msdn.microsoft.com/zh-cn/library/dn269980.aspx) | 服务器 | 显示当前的服务器级防火墙规则 | | [sp\\_set\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270017.aspx) | 服务器 | 创建或更新服务器级防火墙规则 | | [sp\\_delete\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270024.aspx) | 服务器 | 删除服务器级防火墙规则 | | [sys.database\\_firewall\\_rules](https://msdn.microsoft.com/zh-cn/library/dn269982.aspx) | 数据库 | 显示当前的数据库级防火墙规则 | | [sp\_set\\_database\\_firewall\\_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) | 数据库 | 创建或更新数据库级防火墙规则 | | [sp\\_delete\\_database\\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270030.aspx) | 数据库 | 删除数据库级防火墙规则 |
 
 ### REST API
 

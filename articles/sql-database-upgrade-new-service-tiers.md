@@ -189,11 +189,11 @@ Web 和企业层的 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/libra
 
 **示例结果：**
 
-![示例结果](./media/sql-database-upgrade-new-service-tiers/sample_result.png)
+![示例结果](media/sql-database-upgrade-new-service-tiers/sample_result.png)
 
 在图表中，你可以看到不同时间的平均 DTU 消耗百分比变化趋势。下面是大部分时间处于 S2 级别中的某个数据库的示例图表，该数据库的某个高峰活动上冲到了 P1 数据库级别。各时间的 DTU 消耗量从“基本”限制最大升到了“P1”限制。若要使此数据库完全适合新层，你需要购买性能级别为“P1”的“高级”服务层数据库。另一方面，如果 P1 级别极少出现这种偶然喷发现象，则 S2 级别数据库也是可行的。
 
-![DTU 使用量](./media/sql-database-upgrade-new-service-tiers/DTU_usage.png)
+![DTU 使用量](media/sql-database-upgrade-new-service-tiers/DTU_usage.png)
 
 **内存对性能的影响：**尽管内存是影响 DTU 等级的资源维度之一，但 SQL 数据库会使用所有可用内存来运行数据库操作。出于此原因，上述查询未在平均 DTU 消耗中包括内存消耗。另一方面，如果你要降级到更低的性能级别，则数据库的可用内存将会减少。这可能会导致 IO 消耗提高，从而影响消耗的 DTU 数量。因此，在降级到更低的性能级别时，请确保 IO 百分比中有足够的余隙。可以使用上述 [sys.dm\_db\_resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 来监视这种情况。
 
