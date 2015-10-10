@@ -100,7 +100,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 1. 创建 MySQL 数据库。
 
-2. 请按照[在 Azure 网站中创建 WordPress Web 应用][createwordpress]中的步骤，创建一个新的 WordPress 网站。创建 Web 应用时，选择使**用现有的 MySQL 数据库**，然后选择在步骤 1 中创建的数据库。
+2. 创建 Web 应用时，选择使**用现有的 MySQL 数据库**，然后选择在步骤 1 中创建的数据库。
 
 如果要迁移现有的 WordPress 网站，请在创建新 Web 应用后，参阅[将现有 WordPress 网站迁移到 Azure](#Migrate-an-existing-WordPress-site-to-Azure)。
 
@@ -256,7 +256,6 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressdbbackup]: http://codex.wordpress.org/Backing_Up_Your_Database
-[createwordpress]: /documentation/articles/web-sites-php-web-site-gallery
 [velvet]: https://wordpress.org/plugins/velvet-blues-update-urls/
 [mgmtportal]: https://manage.windowsazure.cn/
 [wordpressbackup]: http://codex.wordpress.org/WordPress_Backups

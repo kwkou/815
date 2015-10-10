@@ -96,10 +96,6 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [Azure 网站]: /documentation/services/web-sites/
-
-[Orchard]: web-sites-dotnet-orchard-cms-gallery.md
-[Umbraco]: web-sites-gallery-umbraco.md
-[WordPress]: web-sites-php-web-site-gallery.md
   
 [MySQL]: web-sites-php-mysql-deploy-use-git.md
 [Azure SQL 数据库]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md

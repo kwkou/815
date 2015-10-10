@@ -131,7 +131,6 @@ WSGI 是 [PEP 3333][PEP 3333] 描述的 Python 标准，用于定义 Web 服务�
 ![][5]
 
   [PEP 3333]: http://www.python.org/dev/peps/pep-3333/
-  [1]: /documentation/articles/web-sites-php-web-site-gallery
   [0]: ./media/web-sites-python-configure/configure-python-create-website.png
   [2]: ./media/web-sites-python-configure/configure-python-git.png
   [3]: ./media/web-sites-python-configure/configure-python-handler-mapping.png

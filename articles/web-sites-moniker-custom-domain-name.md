@@ -1,4 +1,4 @@
-﻿<properties title="Learn how to configure an Azure web site to use a domain name registered with Moniker" pageTitle="Configure a Moniker domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, domain name" description="Learn how to configure an Azure web site to use a domain name registered with Moniker" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
+<properties title="Learn how to configure an Azure web site to use a domain name registered with Moniker" pageTitle="Configure a Moniker domain name for an Azure web site" metaKeywords="Azure, Azure Web Sites, domain name" description="Learn how to configure an Azure web site to use a domain name registered with Moniker" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
 <tags ms.service="web-sites"
     ms.date="10/18/2014"
     wacn.date="04/11/2015"
@@ -8,7 +8,6 @@
 
 > [AZURE.SELECTOR]
 > - [自定义域](/zh-cn/documentation/articles/web-sites-custom-domain-name)
-> - [GoDaddy](/zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name)
 > - [Network Solutions](/zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name)
 > - [Register.com](/zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name)
 > - [Enom](/zh-cn/documentation/articles/web-sites-enom-custom-domain-name)
@@ -93,7 +92,6 @@
 [WACOM.INCLUDE [modes][2]]
 
   [自定义域]: /zh-cn/documentation/articles/web-sites-custom-domain-name "自定义域"
-  [GoDaddy]: /zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name "GoDaddy"
   [Network Solutions]: /zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name "Network Solutions"
   [Register.com]: /zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name "Register.com"
   [Enom]: /zh-cn/documentation/articles/web-sites-enom-custom-domain-name "Enom"

@@ -118,16 +118,6 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 * [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881)。说明如何在 Visual Studio 中部署 ASP.NET Web 项目（使用 Git 插件将代码提交到 Git 并将 Azure 连接到 Git 存储库）。从 Visual Studio 2013 开始，Git 支持是内置的，不需要安装插件。
 
 
-
-###<a name="webmatrix"></a>WebMatrix
-
-有关如何从 WebMatrix 部署到 Azure 网站的信息，请参阅以下资源：
-
-* [使用 Microsoft WebMatrix 开发和部署网站](/documentation/articles/web-sites-dotnet-using-webmatrix/)。如何使用 WebMatrix 模板创建简单的 ASP.NET 网站，并使用 WebMatrix 和 Web 部署将其部署到 Azure 网站。
-* [使用 WebMatrix 生成 Node.js 网站并将其部署到 Azure](/documentation/articles/web-sites-nodejs-use-webmatrix/)。
-* [使用 WebMatrix 创建和部署 PHP-MySQL Azure 网站](/documentation/articles/web-sites-php-mysql-use-webmatrix/)。
-* [WebMatrix 3：集成 Git 与到 Azure 的部署](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD)。如何使用 WebMatrix 从 Git 源代码管理存储库进行部署。
-
 有关详细信息，请参阅以下资源：
 
 * [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)。 
