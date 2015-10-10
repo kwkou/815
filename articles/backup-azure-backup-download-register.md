@@ -3,11 +3,13 @@
    description="了解如何以及在何处下载 Azure 备份代理、安装步骤以及如何使用保管库凭据注册 Azure 备份代理"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
-   manager="shreeshd"
+   authors="Jim-Parker"
+   manager="jwhit"
    editor=""/>
 <tags
-   ms.service="backup" ms.date="04/08/2015" wacn.date="08/29/2015"/>
+   ms.service="backup"
+   ms.date="07/01/2015"
+   wacn.date="09/15/2015"/>
 
 # 下载、安装和注册 Azure 备份代理
 

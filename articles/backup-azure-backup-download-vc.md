@@ -3,11 +3,13 @@
    description="了解如何使用保管库凭据在备份保管库和 Azure 备份服务中对你的计算机进行身份验证"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
+   authors="Jim-Parker"
    manager="shreeshd"
    editor=""/>
 <tags
-   ms.service="backup" ms.date="03/27/2015" wacn.date="08/29/2015"/>
+   ms.service="backup"
+   ms.date="08/11/2015"
+   wacn.date="09/15/2015"/>
 
 # 使用保管库凭据向 Azure 备份服务进行身份验证
 
