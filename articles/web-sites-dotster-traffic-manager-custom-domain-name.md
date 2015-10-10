@@ -1,4 +1,4 @@
-﻿<properties title="使用流量管理器为 Windows Azure 网站配置自定义域名 (Dotster)" pageTitle="使用流量管理器为 Windows Azure 网站配置自定义域名 (Dotster)" metaKeywords="Windows Azure, Windows Azure Web Sites, Dotster, 流量管理器" description="Learn how to configure an Azure web site that uses 流量管理器 to use a domain name registered with Dotster" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
+<properties title="使用流量管理器为 Windows Azure 网站配置自定义域名 (Dotster)" pageTitle="使用流量管理器为 Windows Azure 网站配置自定义域名 (Dotster)" metaKeywords="Windows Azure, Windows Azure Web Sites, Dotster, 流量管理器" description="Learn how to configure an Azure web site that uses 流量管理器 to use a domain name registered with Dotster" services="web-sites" documentationCenter="" authors="larryfr,jroth" />
 <tags ms.service="web-sites"
     ms.date="11/15/2014"
     wacn.date="04/11/2015"
@@ -8,7 +8,6 @@
 
 > [AZURE.SELECTOR]
 > - [自定义域](/zh-cn/documentation/articles/web-sites-custom-domain-name)
-> - [GoDaddy](/zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name)
 > - [Network Solutions](/zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name)
 > - [Register.com](/zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name)
 > - [Enom](/zh-cn/documentation/articles/web-sites-enom-custom-domain-name)
@@ -81,7 +80,6 @@
 [WACOM.INCLUDE [modes][4]]
 
   [自定义域]: /zh-cn/documentation/articles/web-sites-custom-domain-name "自定义域"
-  [GoDaddy]: /zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name "GoDaddy"
   [Network Solutions]: /zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name "Network Solutions"
   [Register.com]: /zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name "Register.com"
   [Enom]: /zh-cn/documentation/articles/web-sites-enom-custom-domain-name "Enom"

@@ -8,7 +8,6 @@
 
 > [AZURE.SELECTOR]
 > - [自定义域](/zh-cn/documentation/articles/web-sites-custom-domain-name)
-> - [GoDaddy](/zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name)
 > - [Network Solutions](/zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name)
 > - [Register.com](/zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name)
 > - [Enom](/zh-cn/documentation/articles/web-sites-enom-custom-domain-name)
@@ -69,7 +68,6 @@
 [WACOM.INCLUDE [modes][1]]
 
   [自定义域]: /zh-cn/documentation/articles/web-sites-custom-domain-name "自定义域"
-  [GoDaddy]: /zh-cn/documentation/articles/web-sites-godaddy-custom-domain-name "GoDaddy"
   [Network Solutions]: /zh-cn/documentation/articles/web-sites-network-solutions-custom-domain-name "Network Solutions"
   [Register.com]: /zh-cn/documentation/articles/web-sites-registerdotcom-custom-domain-name "Register.com"
   [Enom]: /zh-cn/documentation/articles/web-sites-enom-custom-domain-name "Enom"

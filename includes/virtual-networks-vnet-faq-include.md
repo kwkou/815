@@ -227,8 +227,6 @@ Azure 提供的 DNS 是由 Microsoft 提供的多租户 DNS 服务。在此服�
 
 - [共同使用 VNet 集成和混合连接与 Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
-- [将 Web 应用与 Azure 虚拟网络进行集成](/documentation/articles/web-sites-integrate-with-vnet)
-
 
 ### 是否可以在 VNet 中部署云服务与 Web 和辅助角色 (PaaS)？
 
