@@ -3,34 +3,28 @@
 	description="用于管理 Azure 网站中 Web 应用的资源链接。" 
 	services="app-service\web" 
 	documentationCenter="" 
-	authors="MikeWasson" 
+	authors="erikre" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="04/23/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="07/31/2015" 
+	wacn.date="10/03/2015"/>
 
 # 管理 Azure 网站中的 Web 应用
 
-本主题包含用于管理 <!--[-->Azure App Service<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
+本主题包含用于管理 [Azure 网站](http://go.microsoft.com/fwlink/?LinkId=529714) 中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
 
 在整个 Web 应用使用期内，您将执行各种管理任务，从初始部署到正常操作、维护与更新。
 
-- [将站点部署为生产环境之前]
-- [网站运行期间]
-- [更新网站时]
-
-许多网站管理任务都可在 Azure 门户中执行。更多详细信息，请参阅[通过 Azure 管理门户管理网站](/documentation/articles/web-sites-manage)。
+许多 Web 应用管理任务都可在 Azure 门户中执行。
 
 ## 将 Web 应用部署到生产之前
 
 ### 选择层级
 
-<!--Azure App Service is offered in five tiers: Free, Shared, Basic, Standard, and Premium. For information about the features and pricing for each tier, see [Pricing details](/pricing/details/app-service/). -->
-
-<!--- [App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)支持您在同一层对多个 Web 应用进行分组。-->
+- [Azure 网站计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)支持您在同一层对多个 Web 应用进行分组。
 - 您可以在创建 Web 应用之后经常[切换层](/documentation/articles/web-sites-scale)。
 
 ### 配置
@@ -45,12 +39,12 @@
 除了这些基本配置设置，您可能还需要进行下列配置：
 
 - **安全套接字层 (SSL)**加密。若要使用带有自定义域名的 SSL，您必须获取 SSL 证书并配置 Web 应用。请参阅[在 Azure 网站中启用 Web 应用的 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
-- **自定义域名。** Web 应用自动具有 azurewebsites.net 下的子域。可以关联自定义域名（如 contoso.com ）。请参阅[在 Azure 网站中配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
+- **自定义域名。** Web 应用自动具有 chinacloudsites.cn 下的子域。可以关联自定义域名（如 contoso.com ）。请参阅[在 Azure 网站中配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 
 特定于语言的配置：
 
-- **PHP**：[在 Azure 网站中配置 PHP](/documentation/articles/web-sites-php-configure)。
-- **PHP**：[使用 Azure 网站配置 Python](/documentation/articles/web-sites-python-configure)。
+- **PHP**：[在 Azure 网站 Web Apps 中配置 PHP](/documentation/articles/web-sites-php-configure)。
+- **PHP**：[使用 Azure 网站 Web Apps 配置 Python](/documentation/articles/web-sites-python-configure)。
 
 
 ## Web 应用运行期间
@@ -65,8 +59,8 @@
  
 ### 备份
 
-<!--- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup)。观看[本视频](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。-->
-- 了解 Azure SQL 数据库的[数据库恢复](http://msdn.microsoft.com/library/azure/hh852669.aspx)选项。
+- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup)。观看[本视频](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。
+- 了解 Azure SQL 数据库的[数据库恢复](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)选项。
 
 ### 故障排除
 
@@ -89,18 +83,15 @@
 
 - [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
 - [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)
- 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  
 <!-- Anchors. -->
 
 
-[将站点部署为生产环境之前]: #before-you-deploy-your-site-to-production
-[网站运行期间]: #while-your-website-is-running
-[更新网站时]: #when-you-update-your-website
+[Before you deploy your site to production]: #before-you-deploy-your-site-to-production
+[While your website is running]: #while-your-website-is-running
+[When you update your website]: #when-you-update-your-website
 
   
 
-<!---HONumber=67-->
+<!---HONumber=71-->

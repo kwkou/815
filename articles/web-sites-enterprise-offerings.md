@@ -1,23 +1,22 @@
 <properties 
-	pageTitle="面向企业的 Azure 网站产品" 
-	description="演示如何使用 Azure 网站为您的企业创建企业网站解决方案" 
+	pageTitle="面向企业的 Azure 网站 Web Apps 产品" 
+	description="演示如何使用 Azure 网站 Web Apps 为您的企业创建企业网站解决方案" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="apwestgarth" 
-	writer="cephalin" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="app-service-web"  
-	ms.date="04/21/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/04/2015" 
+	wacn.date="10/03/2015"/>
 
 # 适用于企业的 Azure 网站产品白皮书 #
 
-降低成本以及在快速发展的环境中更快地交付 IT 解决方案的要求为开发人员、IT 专业人员和管理人员带来了新的挑战。用户日益期望其业务线 (LOB) Web 应用程序能够在任何设备上快速运行和响应。同时，企业正在尝试利用由于与云和移动服务集成所带来的生产力和效率提高，这简单可到使用 Active Directory 实现的跨设备的单一登录，复杂可到使用从内部 LOB 应用程序（反过来也可以从公司 Salesforce 实施中拉取数据）中提取的数据在 Office365 中进行协作。<!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714) -->是一种用于开发、测试和运行 Web 及移动应用程序、Web API 和一般网站的企业级云服务。它可以用于在针对扩展和可用性优化的全球数据中心网络上运行企业网站、业务应用程序和数字营销活动，同时还支持持续集成和现代 DevOps 实践。
+降低成本以及在快速发展的环境中更快地交付 IT 解决方案的要求为开发人员、IT 专业人员和管理人员带来了新的挑战。用户日益期望其业务线 (LOB) Web 应用程序能够在任何设备上快速运行和响应。同时，企业正在尝试利用由于与云和移动服务集成所带来的生产力和效率提高，这简单可到使用 Active Directory 实现的跨设备的单一登录，复杂可到使用从内部 LOB 应用程序（反过来也可以从公司 Salesforce 实施中拉取数据）中提取的数据在 Office365 中进行协作。[Azure 网站 Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 是一种用于开发、测试和运行 Web 及移动应用程序、Web API 和一般网站的企业级云服务。它可以用于在针对扩展和可用性优化的全球数据中心网络上运行企业网站、业务应用程序和数字营销活动，同时还支持持续集成和现代 DevOps 实践。
 
-本白皮书重点介绍专门侧重于运行 LOB Web 应用程序的 [Web Apps](/documentation/services/web-sites/) 功能，涵盖现有 Web 应用程序的迁移和平台上全新 LOB Web 应用程序的部署。
+本白皮书重点介绍专门侧重于运行 LOB Web 应用程序的 [Web Apps](/services/app-service/web/) 功能，涵盖现有 Web 应用程序的迁移和平台上全新 LOB Web 应用程序的部署。
 
 ## 目标受众 ##
 
@@ -25,27 +24,22 @@
 
 ## 介绍 ##
 
-Azure 网站是一款理想的平台，可用于托管外部和内部 Web 应用程序和服务，因为它提供了一款经济高效、高度可扩展、托管的解决方案，使您能够集中精力为用户创造商业价值，而不用耗费大量时间和资金维护和支持单独的环境。Web Apps 提供了一款灵活的平台，可用于部署企业 Web 应用程序，从而提供能够通过与 Microsoft Azure Active Directory 集成继续按照本地 Active Directory 进行身份验证的能力；支持利用内部连续集成和部署实践轻松、快速地进行部署，同时自动进行扩展来满足业务需求 - 所有这些都在一个托管平台上实现，使您能够专注于您的应用程序，而不是您的基础架构。
+Azure 网站是一款理想的平台，可用于托管外部和内部 Web 应用程序和服务，因为它提供了一款经济高效、高度可扩展、托管的解决方案，使您能够集中精力为用户创造商业价值，而不用耗费大量时间和资金维护和支持单独的环境。Web Apps 提供了一款灵活的平台，可用于部署企业 Web 应用程序，从而提供能够通过与 Windows Azure Active Directory 集成继续按照本地 Active Directory 进行身份验证的能力；支持利用内部连续集成和部署实践轻松、快速地进行部署，同时自动进行扩展来满足业务需求 - 所有这些都在一个托管平台上实现，使您能够专注于您的应用程序，而不是您的基础架构。
 
 ## 问题定义 ##
 
-IT 环境正在快速变化，从在资本成本高、前置时间长的传统服务器上进行托管迁移到使用能够自动扩展以处理负载的按需式服务的托管。IT 部门不得不降低基础架构的成本和占地空间以及维护支出以减少资本支出，同时也在不断增加灵活性。较旧的基础架构平台（例如 Windows Server 2003）生命周期的即将结束正促使 IT 部门将云迁移作为一种避免新的长期资本成本的潜在方法。在过去，首席信息官为其他部门制定购买决策；但是慢慢地首席营销官和其他业务部门的负责人在如何花费其预算以及其投资有哪些回报方面发挥着更加积极的作用。企业日益需要其员工比以前任何时候都更具移动性，让员工能够远程工作，花费更多时间与客户在一起，满足客户轻松访问系统的需求。
+IT 环境正在快速变化，从在资本成本高、前置时间长的传统服务器上进行托管迁移到使用能够自动扩展以处理负载的按需式服务的托管。IT 部门不得不降低基础架构的成本和占地空间以及维护支出以减少资本支出，同时也在不断增加灵活性。较旧的基础架构平台（例如 Windows Server 2003）生命周期的结束正促使 IT 部门将云迁移作为一种避免新的长期资本成本的潜在方法。在过去，首席信息官为其他部门制定购买决策；但是慢慢地首席营销官和其他业务部门的负责人在如何花费其预算以及其投资有哪些回报方面发挥着更加积极的作用。企业日益需要其员工比以前任何时候都更具移动性，让员工能够远程工作，花费更多时间与客户在一起，满足客户轻松访问系统的需求。
 
 企业需要每天、每周、每月都进行变革。企业正在借助由第三方或内部提供的充满新特性的定期更新服务寻求即时全球扩展。用户的期望更高，许多人是在自己的私人生活中利用这些服务（例如 Office365）。他们希望在其工作生活中有权访问类似的、最新的、功能丰富的服务。为了满足这种需求，IT 部门必须致力于通过选择和集成第三方服务，仔细选择可以适应业务需求的平台，同时可靠地降低总体拥有成本，帮助企业满足这种需求。
 
 开发团队正在寻求提供即时业务利益，频繁地推出新功能。它们正在寻找一种集成其现有工具和实践（开发、测试、发布）的经济高效、可靠的平台；而且正在与 IT 部门合作实现部署、管理和告警的自动化，以期实现零停机的目标。
 
-<a href="highlevel" />
+<a href="highlevel"></a>
 ## 高级别的解决方案 ##
 
 Web 平台和框架越来越多地被用于开发、测试和托管业务线应用程序。就典型的业务线应用程序而言（例如内部员工支出系统），通常仅包含一个带有用于存储与应用程序相关数据的支持数据库的 Web 应用。
 
-Azure 网站是托管此类应用程序一个不错的选择，提供可扩展且可靠的基础架构，后者的管理和修补具有接近零的人工干预和停机时间。Microsoft Azure 平台提供了许多数据存储选项来支持在 Web Apps 上托管的 Web 应用程序，从托管的可扩展关系型数据库即服务 Microsoft Azure SQL 数据库，到我们的 ClearDB MySQL 数据库和 MongoDB 等合作伙伴提供的热门服务。
-
-另一种方法是在本地使用你的现有投资。在示例场景中（员工支出系统），你可能想要在自己的内部基础架构中维护数据存储。这可能是为了与内部系统 （报表、工资单、计费等）集成，或者为了满足 IT 监管要求。Web Apps 提供两种方法支持您连接到本地的基础架构：
-
-- [混合连接](/documentation/articles/integration-hybrid-connection-overview) – 混合连接是 Microsoft Azure BizTalk 服务的一项功能，可支持 Web Apps 安全地连接到本地资源，例如 SQL Server、MySQL、Web API 和自定义 Web 服务。 
-- [虚拟网络集成](http://azure.microsoft.com/zh-cn/blog/azure-websites-virtual-network-integration/) – Web Apps 与 Azure 虚拟网络的集成支持您将 Web 应用连接到 Azure 虚拟网络，后者反过来又能够通过站点到站点 VPN 连接到您的本地基础架构。 
+Azure 网站是托管此类应用程序一个不错的选择，提供可扩展且可靠的基础架构，后者的管理和修补具有接近零的人工干预和停机时间。Windows Azure 平台提供了许多数据存储选项来支持在 Web Apps 上托管的 Web 应用程序，从托管的可扩展关系型数据库即服务 Windows Azure SQL 数据库，到我们的 ClearDB MySQL 数据库和 MongoDB 等合作伙伴提供的热门服务。
 
 下图是一个具有适用于本地资源的连接选项的高级解决方案示例。
 
@@ -75,15 +69,13 @@ Azure 网站构建于一种平台即服务的模型之上，可提供成本的�
 
 Azure 网站提供了一个稳定、可靠的平台，后者已被证实能够满足从小型内部开发和测试工作负荷到高度可扩展的高流量网站的各种业务需求。通过使用 Web Apps，您可以使用与 Microsoft 公司用于处理高价值 Web 工作负荷相同的企业类托管平台。Web Apps 以及 Azure 平台上的所有服务均符合安全要求和遵从法规要求，如 ISO (ISO/IEC 27001:2005）；SOC1 和 SOC2 SSAE 16/ISAE 3402 Attestations、HIPAA BAA、PCI 和 Fedramp，是每个元素和功能的核心，有关详细信息，请参阅[http://aka.ms/azurecompliance](/support/trust-center/compliance/)。
 
-Microsoft Azure 平台支持基于角色的身份验证控制，从而支持企业控制级别到 Web Apps 内的资源。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。<!--关于 Azure 中 RBAC 的详细信息，请参阅 [http://aka.ms/azurerbac](/documentation/articles/role-based-access-control-configure)。-->通过利用 Web Apps，您可以确保您的 Web 应用程序部署在安全可靠的环境中，并且您对资产部署到哪些区域拥有完全控制权。
-
-此外，Web Apps 支持往回连接到您的内部资源（如数据仓库或 SharePoint 环境），从而还能够充分利用您在本地的投资。如之前在 [高级别的解决方案] 中所讨论的，您可以使用混合连接和虚拟网络连接建立到本地基础架构和服务的连接。
+Windows Azure 平台支持基于角色的身份验证控制，从而支持企业控制级别到 Web Apps 内的资源。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。关于 Azure 中 RBAC 的详细信息，请参阅 [http://aka.ms/azurerbac](/documentation/role-based-access-control-configure)。通过利用 Web Apps，您可以确保您的 Web 应用程序部署在安全可靠的环境中，并且您对资产部署到哪些区域拥有完全控制权。
 
 ### 全球扩展 ###
 
 Azure 网站是一个全球和可扩展的平台，使您的 Web 应用程序能够增长并快速适应不断成长的企业的需求，只需要最少的长期规划和最低的成本。在典型的本地基础架构场景中，本地和地理上需求的扩展和增长都需要大量的管理、规划和支出以供应和管理额外的基础架构。Web Apps 支持根据需求的变化扩展您的 Web 应用程序。例如，下面我们使用开支应用程序作为例子，在一个月的大部分时间内，您的用户很少会使用该应用程序，但是随着每个月支出提交截止日期的邻近，应用程序的使用会增加，Web Apps 能够自动为您的应用程序供应更多基础架构，一旦应用程序的使用再次减少，它能够缩放回您所定义的基线基础架构。
 
-<!--Web Apps 现在在全球 17 个数据中心提供，且还在不断增长。有关最新的区域和位置列表，请参阅 [http://aka.ms/azlocations](http://aka.ms/azlocations)。借助 Web Apps，您的企业能够轻松实现全球覆盖和扩展。随着您的公司发展到新区域，您在 Web Apps 上使用和托管的报表应用程序仪表板可以被轻松地部署到其他数据中心，并通过 Web Apps 和 Azure Traffic Manager 组合更快地服务本地用户，其附加效益在于底层的可扩展基础架构能够随着区域办事处需求的变化而缩小和扩展。-->
+Web Apps 现在在全球 17 个数据中心提供，且还在不断增长。有关最新的区域和位置列表，请参阅 [http://aka.ms/azlocations](http://aka.ms/azlocations)。借助 Web Apps，您的企业能够轻松实现全球覆盖和扩展。随着您的公司发展到新区域，您在 Web Apps 上使用和托管的报表应用程序仪表板可以被轻松地部署到其他数据中心，并通过 Web Apps 和 Azure Traffic Manager 组合更快地服务本地用户，其附加效益在于底层的可扩展基础架构能够随着区域办事处需求的变化而缩小和扩展。
  
 ## 解决方案详细信息 ##
 
@@ -102,7 +94,7 @@ Azure 网站是一个全球和可扩展的平台，使您的 Web 应用程序能
 当迁移应用程序来自本地环境时，您可能需要记住 Web Apps 的几个限制。以下是将 Web 应用程序迁移到 Web Apps 时需要注意的一些关键主题 ([http://aka.ms/websitesmigrationresources](http://aka.ms/websitesmigrationresources))：
 
 -	端口绑定 - Web Apps 仅支持用于 HTTP 的端口 80 和用于 HTTPS 通信的端口 443。如果您的应用程序使用任何其他端口，则一次迁移的应用程序将使用用于 HTTP 的端口 80 和用于 HTTPS 通信的端口 443。这通常是一个无害的问题，因为在本地部署中使用不同的端口以克服域名的使用是很常见的情况，尤其是在开发和测试环境中
--	身份验证 – 默认情况下 Web Apps 支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Web Apps 可以提供 Windows 身份验证。此功能在[此处](/documentation/articles/web-sites-business-application-solution-overview/)有更详细的讨论 
+-	身份验证 – 默认情况下 Web Apps 支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Web Apps 可以提供 Windows 身份验证。此功能在[此处](http://aka.ms/azurebizapp)有更详细的讨论 
 -	基于 GAC 的程序集 – Web Apps 不允许将程序集部署到全局程序集缓存 (GAC) 中。因此，如果迁移的应用程序在本地利用此功能，请考虑将这些程序集移到该应用程序的 bin 文件夹。
 -	IIS5 兼容模式 – Web Apps 不支持 IIS5 兼容模式，因此每个 Web Apps 实例和父 Web Apps 实例下的所有 Web 应用程序均在单个应用程序池内相同的工作进程中运行。
 -	使用 COM 库 – Web Apps 不允许 COM 组件在平台上注册。因此如果该应用程序正在使用 COM 组件，就需要将这些在托管代码中进行重写并使用该应用程序进行部署。
@@ -110,25 +102,17 @@ Azure 网站是一个全球和可扩展的平台，使您的 Web 应用程序能
 
 考虑完这些主题之后，您的 Web 应用程序已准备好支持云。如果一些主题没有完全被满足也不用担心，迁移工具将为迁移提供最佳支持。
 
-迁移流程中的后续步骤是创建 Azure 网站 Web 应用和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Web Apps 实例可供您根据 Web 应用程序需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Microsoft Azure SQL Database 适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/pricing/details/sql-database/)。创建完成后，应用程序被上传到 Azure 网站（通过 FTP 或 WebDeploy），然后再迁移到数据库。
+迁移流程中的后续步骤是创建 Azure 网站和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Web Apps 实例可供您根据 Web 应用程序需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Windows Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/pricing/details/sql-database/)。创建完成后，应用程序被上传到 Azure 网站（通过 FTP 或 WebDeploy），然后再迁移到数据库。
 
-<!--In this migration the solution uses Azure SQL Database but that is not the only database that is supported on Azure. Companies can also make use of MySQL, MongoDB, Azure DocumentDB and many more via add-ons which can be purchased at the [Azure Store](/marketplace/partner-program/). -->
+在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](http://aka.ms/dacpac)。
 
-在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate/)。
-
-创建一个新的 Azure SQL Database，使用 SQL Server Management Studio 连接到数据库，然后运行脚本构建数据库架构并用来自本地数据库的数据对其进行填充，此时开支应用程序数据库创建完成。
+创建一个新的 Azure SQL 数据库，使用 SQL Server Management Studio 连接到数据库，然后运行脚本构建数据库架构并用来自本地数据库的数据对其进行填充，此时开支应用程序数据库创建完成。
 
 迁移第一阶段中的最后一步需要将连接字符串更新到应用程序的数据库。这可以通过 Azure 门户来完成。对于每个 Web 应用，您可以修改应用程序的特定设置，包括被应用程序用来连接正在使用的任何数据库的任意连接字符串。
 
-### 使用 Azure SQL Database 的替代方法 ###
+### 使用 Azure SQL 数据库的替代方法 ###
 
 Azure 平台提供了一些替代方法，可以将 Azure SQL 数据库用作 Web 应用程序的主数据库，从而使不同的工作负荷（例如，使用 NoSQL 解决方案）或使该平台可以满足业务的数据需要。例如，业务可能会保存不得存储在场外或公用云环境中的数据，因此会通过查找来维护对其本地数据库的使用。
-
-#### 到本地资源的连接 ####
-Azure 网站提供两种连接到本地资源（如数据库）的方法，能够重用现有的高价值的基础架构。两种方法分别是 Web Apps 虚拟网络集成和混合连接：
-
-- Web Apps 虚拟网络集成支持 Web Apps 与 Azure 虚拟网络的集成，允许您访问运行在您的虚拟网络中的资源，在已通过站点到站点 VPN 连接到您的本地网络的情况下，可直接连接到您的本地系统。
-- 混合连接是 Azure BizTalk 服务的一项功能，提供了一种简单的方法来连接到单个本地资源，如 SQL Server、MySQL、HTTP Web API 和大多数自定义的 Web 服务。
 
 #### 扩展性和弹性 ####
 
@@ -142,12 +126,10 @@ Azure 网站允许通过 Azure 门户将 Web 应用程序配置为可自动进�
 Azure 网站提供了一款灵活、经济高效、响应迅速的解决方案在快速发展的环境中满足企业不断变化的需求。Web Apps 帮助企业利用托管平台以及现代化的 DevOps 功能和减少的人工管理提高了生产力和效率，同时提供企业扩展功能、弹性、安全性以及与本地资产的集成。
 
 ## 行动号召 ##
-有关 Azure 网站服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/documentation/services/web-sites/)，在这里您可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial) 立即注册试用版，评估该服务并发现为您企业带来的优势。
+有关 Azure 网站服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/sservices/websites/enterprise/)，在这里您可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial) 立即注册试用版，评估该服务并发现为您企业带来的优势。
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  
  
 
-<!---HONumber=67-->
+<!---HONumber=71-->

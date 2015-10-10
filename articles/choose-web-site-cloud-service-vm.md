@@ -1,288 +1,366 @@
-<properties linkid="manage-scenarios-choose-web-app-service" urlDisplayName="Web Options for Azure" pageTitle="Azure 网站、云服务和虚拟机比较 - Azure 微软云" metaKeywords="Cloud Services, Virtual Machines, Web Sites, 虚拟机比较, 托管 Web 应用程序,方案" description="了解何时使用 Azure 网站、云服务和虚拟机来托管 Web 应用程序。查看功能比较。本文还从不同角度给出了多种方案，包括：要求低成本的小型企业，设计师，带有web前端的应用迁移，开源软件使用者。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title=" 云服务" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
-<tags ms.service="web-sites,virtual-machines,cloud-services"
-    ms.date="09/24/2014"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="Azure 网站、云服务和虚拟机比较"
+	description="了解何时使用 Azure 网站、云服务和虚拟机来托管 Web 应用程序。"
+	services="app-service\web, virtual-machines, cloud-services"
+	documentationCenter=""
+	authors="tdykstra"
+	manager="wpickett"
+	editor="jimbe"/>
+
+<tags
+	ms.service="app-service-web"
+	ms.date="08/10/2015"
+	wacn.date="10/03/2015"/>
 
 # Azure 网站、云服务和虚拟机比较
 
-Azure 提供几种方式托管 web 应用程序，如 [Azure 网站][Azure 网站]、[云服务][云服务]和[虚拟机][虚拟机]。查看这些不同的选项后，您可能不确定哪一种最适合需求，或可能有不清楚的概念，如 IaaS 对比 PaaS。这篇文章可帮助您了解选项，并帮助您为自己 web 方案做出正确的选择。尽管所有三个选项允许您在 Azure 中运行高度可扩展的 web 应用程序，但差异可帮助指导您的决定。
+## 概述
 
-在许多情况，Azure 网站是最佳的选择。它为部署和管理提供简单灵活的选项，并且能够在托管高容量的网站。使用流行的软件如 WordPress，可从 Web 应用程序库快速创建新的网站，或可以将现有的网站移动到 Azure 网站。使用[Azure WebJobs SDK][Azure WebJobs SDK]（目前处于预览状态），还可以添加后台作业处理。
+Azure 提供几种方式托管网站：[Azure 网站][]、[云服务][]和[虚拟机][]。本文可帮助你了解选项，并针对 Web 应用程序做出正确的选择。
 
-还有在 Azure 云服务或 Azure 虚拟机上托管 web 应用程序的选项。这些选项是很好的选择，您的 web 层需要它们提供更多额外级别的控制和定制；但是，此增强的控制要以应用程序创建、管理和部署的复杂性增加为代价。下图说明了三个选项之间的权衡。
+Azure 网站是大多数 Web Apps 的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可提供高可用性。可以使用[联机迁移工具](https://www.migratetoazure.net/)轻松地将现有站点转移到 Azure 网站，使用选择的框架和工具创建新站点。利用 [WebJobs][] 功能，可以轻松地将后台作业处理添加到你的应用。
+
+如果你需要加强控制 Web 服务器环境，例如想要远程登录服务器或配置服务器启动任务，Azure 云服务通常是最佳选择。
+
+如果现有应用程序需要进行大幅修改才能在 Azure 网站或 Azure 云服务中运行，你可以选择 Azure 虚拟机来简化迁移到云的操作。不过，相比于 Azure 网站和云服务，正确配置、保护和维护 VM 需要更多的时间和 IT 专业知识。如果你考虑采用 Azure 虚拟机，请确保将修补、更新和管理 VM 环境所需的持续性维护工作纳入考虑。
+
+下图说明了 Azure 上这些 Web 托管选项中每个选项的控制和易于使用的相对程度。
 
 ![ChoicesDiagram][ChoicesDiagram]
 
-网站是更易于设置、管理和监视，但配置选项较少。关键之处在于使用 Azure 网站时，没有让您信服的理由将 web 前端放在云服务或虚拟机上。本文档其余部分提供做出明智决策所需的信息。这包括：
+## 目录
 
--   [方案][方案]
--   [服务摘要][服务摘要]
--   [功能比较][功能比较]
+- [方案和建议](#scenarios)
+- [功能比较](#features)
+- [后续步骤](#nextsteps)
 
-## <a name="scenarios"></a>方案
+##<a name="scenarios"></a>方案和建议
 
-### 我是小型企业所有者，并且我需要一种成本较低的方式来托管自己的站点，同时考虑将来的增长。
+以下是一些常见的应用程序方案，该方案提供有关哪些 Azure Web 托管选项可能最适合每个方案的建议。
 
-Azure 网站 (WAWS） 是这种情况不错的解决方案，因为您可以开始免费使用它，然后在需要时添加更多功能。例如，每个免费的网站附带由 Azure 提供的域 (*your\_company*。 chinacloudsites.cn)。如果已经准备好开始使用自己的域，添加的费用低至低至 $9.80 每月（截止到 1/2014)。有许多其他服务和扩展选项，允许站点随着用户需求的增加而发展。使用 **Azure 网站**，您可以：
+- [我需要具有后台处理的 Web 前端和数据库后端，以运行与本地资产集成的业务应用程序。](#onprem)
+- [我需要可靠的方式来托管我的公司网站，既可以进行良好地扩展也能提供全球覆盖。](#corp)
+- [我具有在 Windows Server 2003 上运行的 IIS6 应用程序。](#iis6)
+- [我是小型企业所有者，并且我需要一种成本较低的方式来托管自己的站点，同时考虑将来的增长。](#smallbusiness)
+- [我是 Web 或图形设计师，并且我想为客户设计和构建网站。](#designer)
+- [我要将带有 Web 前端的多层应用程序迁移到云中。](#multitier)
+- [我的应用程序取决于高度自定义的 Windows 或 Linux 的环境，并且我想将其转移到云中。](#custom)
+- [我的站点使用开放源代码软件，并且我希望在 Azure 中托管它。](#oss)
+- [我有一个需要连接到公司网络的业务线应用程序。](#lob)
+- [我想为移动客户端托管 REST API 或 Web 服务。](#mobile)
 
--   从免费层开始，然后根据需要向上扩展。
--   使用应用程序库快速设置流行的 web 应用程序，如 WordPress。
--   根据需要向您的应用程序添加其他 Azure 服务和功能。
--   通过使用 *your\_company*.chinacloudsites.cn 域名提供的证书，用 HTTPS 保护您的网站。
 
-### 我是 web 或图形设计师，并且我想为客户设计和生成网站
+### <a id="onprem"></a> 我需要具有后台处理的 Web 前端和数据库后端，以运行与本地资产集成的业务应用程序。
 
-对于 web 开发人员，Azure 网站为您提供创建复杂的 web 应用程序所需的内容。网站提供 Visual Studio 和 SQL 数据库等工具的紧密集成。使用**网站**，开发人员可以：
+Azure 网站是复杂的业务应用程序的理想解决方案。通过利用该网站，可以开发应用，这些应用可以在负载平衡平台上自动缩放、使用 Active Directory 进行保护并连接到本地资源。使用该网站，可以通过世界级管理门户和 API 轻松地管理这些应用，并且还能够深入了解客户结合使用这些应用与 App Insight 工具的方式。使用新的 [Webjobs][] 功能，能够作为 Web 层的一部分运行后台进程和任务。Azure 网站提供了三个 9's SLA 并使你能够：
 
--   使用流行的语言，如 [.Net][.Net]、[PHP][PHP]、[Node.js][Node.js] 和 [Python][Python]。
--   选择向上扩展到超高容量的三个不同的扩展级别。
--   与其他 Azure 服务集成，例如 [SQL 数据库][SQL 数据库]、[服务总线][服务总线]和[存储][存储]。
--   与工具集成，例如 Visual Studio、Git、WebMatrix、WebDeploy、TFS 和 FTP。
+* 在自愈性自动修补云平台上可靠地运行应用程序。 
+* 跨数据中心的全球网络进行自动缩放。
+* 备份和还原，以进行灾难恢复。 
+* 遵守 ISO、SOC2 和 PCI 的要求。
+* 与 Azure Active Directory 集成
 
-### 我要将带有 web 前端的多层应用程序迁移到云
+### <a id="corp"></a> 我需要可靠的方式来托管我的公司网站，既可以进行良好地扩展也能提供全球覆盖。 
 
-如果您运行多层应用程序，如与数据库服务器对话以存储和检索网站数据的 web 服务器，则您在 Azure 中有几个选项。这些体系结构选项包括网站、云服务和虚拟机。首先，**网站**对于您的解决方案是不错的选择，并可配合 Azure SQL 数据使用以创建一个两层体系结构。网站还允许您使用 Azure WebJobs SDK 预览运行后台或长时间运行进程。如果您需要更复杂的体系结构或更灵活的扩展选项，云服务或虚拟机是更好的选择。
+Azure 网站是用于托管公司网站的理想解决方案。通过该网站，可以使站点快速缩放并轻松地满足整个数据中心的全球网络的需求。它提供了本地范围、容错和智能流量管理。所有内容均位于提供世界级管理工具的平台上，从而可以快速而轻松地更深入了解站点运行状况和站点流量。Azure 网站提供了三个 9's SLA 并使你能够：
 
-**云服务**使您能够：
+* 在自愈性自动修补云平台上可靠地运行网站。 
+* 跨数据中心的全球网络进行自动缩放。
+* 备份和还原，以进行灾难恢复。 
+* 使用集成工具管理日志和流量。 
+* 遵守 ISO、SOC2 和 PCI 的要求。
+* 与 Azure Active Directory 集成
 
--   在可扩展的 web 和辅助角色上托管 web、中间层和后端服务。
--   仅在辅助角色上托管中间层和后端服务，保持前端在 Azure 网站上。
--   独立扩展前端和后端服务。
+### <a id="iis6"></a> 我具有在 Windows Server 2003 上运行的 IIS6 应用程序。
 
-**虚拟机**使您能够：
+利用 Azure 网站，可以很容易地避免与迁移较旧的 IIS6 应用程序相关联的基础结构成本。Microsoft 已经创建 [易于使用的迁移工具和详细的迁移指南](https://www.movemetowebsites.net/)，你可以利用它检查兼容性，并确定需要进行的任何更改。与 Visual Studio、TFS 和常见的 CMS 工具集成，能够更轻松地将 IIS6 应用程序直接部署到云中。部署后，Azure 管理门户提供强大的管理工具，可帮助你减少来管理成本，并根据需要增加来满足要求。使用迁移工具可以：
 
--   更轻松地迁移高度定制的环境，如一个虚拟机映像。
--   运行不能在网站或云服务配置的软件或服务。
+* 快速而轻松地将旧版 Windows Server 2003 Web 应用程序迁移到云中。
+* 选择在本地保留附加的 SQL 数据库，以创建混合应用程序。 
+* 自动转移 SQL 数据库与旧的应用程序。 
 
-### 我的应用程序取决于高度定制的 Windows 或 Linux 的环境
+### <a id="smallbusiness"></a>我是小型企业所有者，并且我需要一种成本较低的方式来托管自己的站点，同时考虑将来的增长。
 
-如果您的应用程序需要软件和操作系统的复杂安装或配置，虚拟机可能是最佳解决方案。通过**虚拟机**，您可以：
+Azure 网站是这种情况不错的解决方案，因为开始你可以免费使用它，然后在需要时添加更多功能。每个免费网站都附带由 Azure 提供的域 (*your_company*.chinacloudsites.cn)，并且平台包括集成的部署和管理工具。有许多其他服务和扩展选项，允许站点随着用户需求的增加而发展。使用 Azure 网站，你可以：
 
--   使用虚拟机库启动操作系统，如 Windows 或 Linux，然后针对您的应用程序要求对其进行定制。
--   创建并上传现有的本地服务器的自定义映像，在 Azure 中的虚拟机上运行。
+- 从免费层开始，然后根据需要向上扩展。
+- 根据需要向您的应用程序添加其他 Azure 服务和功能。
+- 使用 HTTPS 保护 Web 应用程序。
 
-### 我的站点使用开放源代码软件，并且我希望在 Azure 中托管它
+### <a id="designer"></a> 我是 Web 或图形设计师，并且我想为客户设计和构建网站
 
-所有三个选项都允许您托管开放源代码语言和框架。**云服务**要求您使用启动任务，来安装和配置在 Windows 上运行的任何所需的开放源代码软件。使用**虚拟机**，可在机器映像上安装和配置软件，基于 Windows 或 Linux 都可以。如果网站上支持开放源代码框架，这提供更简单的方法来托管这些类型的应用程序，因为使用应用程序所需的语言和框架可以自动配置“网站”。**网站**使您能够：
+对于 Web 开发人员和设计师，Azure 网站可以轻松地与各种框架和工具进行集成，其中包括 Git 和 FTP 的部署支持，并提供与工具和服务的紧密集成，如 Visual Studio 和 SQL 数据库。使用网站，你可以：
 
--   使用多种流行的开放源代码语言，如[.NET][.Net]、[PHP][PHP]、[Node.js][Node.js] 和 [Python][Python]。
--   安装 WordPress、Drupal、Umbraco、DNN 和许多其他第三方 web 应用程序。
--   迁移现有应用程序或从应用程序库创建一个新的。
+- 将命令行工具用于[自动化任务][脚本]。
+- 使用流行的语言，如 [.Net][dotnet]、[PHP][]、[Node.js][nodejs] 和 [Python][]。
+- 选择向上扩展到超高容量的三个不同的扩展级别。
+- 与其他 Azure 服务集成，例如 [SQL 数据库][sqldatabase]、[服务总线][servicebus]和[存储][]，或者来自 [Azure 应用商店][azurestore] 的合作伙伴产品，如 MySQL 和 MongoDB。
+- 与工具集成，例如 Visual Studio、Git、WebMatrix、WebDeploy、TFS 和 FTP。
 
-### 我有一个业务应用程序需要连接到公司网络
+### <a id="multitier"></a>我要将带有 Web 前端的多层应用程序迁移到云中
 
-如果您想要创建业务应用程序，您的网站可能需要直接访问公司网络上的服务或数据。可能在**网站**、**云服务**和**虚拟机**上。您采用的方法中存在差异，其中包括：
+如果运行多层应用程序，如连接到数据库的 Web 服务器，Azure 网站则是一个不错的选择，它提供与 Azure SQL 数据库的紧密集成。并且可以使用 WebJobs 功能运行后端进程。
 
--   网站可通过使用服务总线中继安全地连接到本地资源。这允许公司网络上的服务代表该 web 应用程序执行任务，无需将所有内容移到云中或建立一个虚拟网络。
--   云服务和虚拟机可以充分利用虚拟网络。实际上，虚拟网络允许 Azure 中运行的机器连接到本地网络。然后 Azure 将成为您公司数据中心的扩展。
+如果你需要加强控制服务器环境，例如想要远程登录服务器或配置服务器启动任务，则可以为一个或多个层选择云服务。
 
-### 我想为移动客户端托管 REST API 或 web 服务
+如果你想要使用你自己的计算机映像或运行服务器软件或不能在云服务中配置的服务，则可以为一个或多个层选择虚拟机。
 
-基于 HTTP 的 web 服务允许您支持各种客户端，包括移动客户端。如 ASP.NET Web API 的框架与 Visual Studio 集成，能够更加轻松地创建和使用 REST 服务。这些服务来自 web 端点，因此可使用 Azure 上的任何 web 托管技巧支持此情况。但是，**网站**是托管 REST API 的不错选择。使用“站点”，您可以：
+### <a id="custom"></a>我的应用程序取决于高度自定义的 Windows 或 Linux 的环境，并且我想将其转移到云中。
 
--   快速创建网站以便在 Azure 全球分布的数据中心之一托管 HTTP web 服务。
--   迁移现有的服务或创建新的，可能会利用 Visual Studio 中的 ASP.NET Web API。
--   实现 SLA 的单个实例可用性，或向外扩展到多台专用的计算机。
--   使用已发布的站点来提供 REST API 到任何 HTTP 客户端，包括移动客户端。
+如果您的应用程序需要软件和操作系统的复杂安装或配置，虚拟机可能是最佳解决方案。通过虚拟机，您可以：
 
-## <a name="services"></a>服务摘要
+- 使用虚拟机库启动操作系统，如 Windows 或 Linux，然后针对您的应用程序要求对其进行定制。 
+- 创建并上传现有的本地服务器的自定义映像，在 Azure 中的虚拟机上运行。 
 
-[Azure 网站][Azure 网站]允许您在 Azure 上快速生成高度可扩展的网站。您可以使用 Azure 门户或命令行工具，通过流行的语言（例如 .NET、PHP 和 Python）设置网站。支持的框架已部署并且不要求更多安装步骤。Azure 网站库包含许多第三方应用程序（例如 Drupal 和 WordPress）以及开发框架（例如 Django 和 CakePHP）。在创建网站后，您可以迁移现有网站或者生成全新网站。Web 站点无需管理物理硬件，还提供了几个扩展选项。您可以从共享的多租户模型移动到标准模式，那里的专用机服务于传入流量。网站还允许您与其他 Azure 服务（例如 SQL数据库、服务总线 和存储）相集成。使用 [Azure WebJobs SDK][Azure WebJobs SDK] 预览，您可以添加后台处理。总之，Azure 网站通过支持多种语言、开放源应用程序和部署方法（FTP、Git、Web Deploy 或 TFS），从而更便于关注应用程序开发。如果您没有要求云服务或虚拟机的专门要求，则 Azure 网站非常有可能是您的最佳选择。
+### <a id="oss"></a>我的站点使用开放源代码软件，并且我希望在 Azure 中托管它
 
-通过[云服务][云服务]，您能够在丰富的平台即服务 (PaaS) 环境中创建高度可用的、可扩展 Web 应用程序。与网站不同，云服务首先在 Visual Studio 之类的开发环境中创建，然后部署到 Azure。PHP 之类的框架要求在角色启动时安装框架的自定义部署步骤或任务。云服务的主要优势在于能够支持更复杂的多层体系结构。单个云服务可由一个前端 Web 角色以及一个或多个辅助角色构成。每个层都可以单独缩放。还有对您的 Web 应用程序体系结构的提高的控制级别。例如，您可以使用远程桌面控制正在运行角色实例的计算机。您还可以编写在角色启动时运行的更高级的 IIS 和计算机配置更改的脚本，包括要求管理员控制的任务。
+如果网站上支持开放源框架，则会自动为你配置应用程序所需的语言和框架。利用网站，你可以：
 
-[虚拟机][虚拟机]，您能够在 Azure 中的虚拟机上运行 Web 应用程序。这种功能也称为“基础结构即服务 (IaaS)”。通过门户创建新的 Windows Server 或 Linux 计算机，或者上载现有的虚拟机映像。虚拟机向您提供对操作系统、配置以及已安装软件和服务的最高的控制。这个选项很适合于快速将复杂的本地 Web 应用程序迁移到云，因为计算机可作为整体进行迁移。使用虚拟网络，您还可以将这些虚拟机连接到本地公司网络。与云服务一样，您能够远程访问这些计算机并且能够在管理级别执行配置更改。但与网站和云服务不同，您必须完全在基础结构级别管理虚拟机映像和应用程序体系结构。一个基本示例是您需要将自己的修补程序应用到操作系统。
+- 使用多种流行的开放源代码语言，如 [.NET][dotnet]、[PHP][]、[Node.js][nodejs] 和 [Python][]。 
+- 安装 WordPress、Drupal、Umbraco、DNN 和许多其他第三方 web 应用程序。 
+- 迁移现有应用程序。 
 
-## <a name="features"></a>功能比较
+如果网站上不支持开放源框架，则可以在其他两个 Azure Web 托管选项中的任意一个选项上运行该框架。利用云服务，你可以使用启动任务来安装和配置在 Windows 上运行的任何所需的开放源软件。使用虚拟机，可在机器映像上安装和配置软件，基于 Windows 或 Linux 都可以。
 
-下表比较网站、云服务和虚拟机的功能，以便帮助您进行最佳选择。表格后面的注释中详细解释带有星号的框。
+### <a id="lob"></a>我有一个需要连接到公司网络的业务线应用程序
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">功能</th>
-<th align="left">网站</th>
-<th align="left">云服务（web 角色）</th>
-<th align="left">虚拟机</th>
+如果你想要创建业务线应用程序，你的网站则可能需要直接访问公司网络上的服务或数据。在网站、云服务和虚拟机上使用 [Azure 虚拟网络服务](/home/features/networking/)是可能的。在网站上，可以使用新的 [VNET 集成功能](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)，通过利用此功能，Azure 应用程序能够如同在你的公司网络上一样运行。
+
+### <a id="mobile"></a>我想为移动客户端托管 REST API 或 web 服务
+
+利用基于 HTTP 的 Web 服务，你可以支持各种客户端，包括移动客户端。如 ASP.NET Web API 的框架与 Visual Studio 集成，能够更加轻松地创建和使用 REST 服务。这些服务来自 web 端点，因此可使用 Azure 上的任何 web 托管技巧支持此情况。但是，网站是托管 REST API 的不错选择。使用网站，你可以：
+
+- 快速创建网站，以在 Azure 全球分布的数据中心之一中托管 HTTP Web 服务。
+- 迁移现有的服务或创建新的服务。
+- 实现 SLA 的单个实例可用性，或向外扩展到多台专用的计算机。 
+- 使用已发布的站点来提供 REST API 到任何 HTTP 客户端，包括移动客户端。
+
+##<a name="features"></a>功能比较
+
+下表比较了网站、云服务和虚拟机的功能，以便帮助你 做出最佳选择。有关每个选项的 SLA 的当前信息，请参阅 [Azure 服务级别协议](/support/legal/sla/)。
+
+<table cellspacing="0" border="1">
+<tr>
+   <th align="left" valign="middle">功能</th>
+   <th align="left" valign="middle">网站</th>
+   <th align="left" valign="middle">云服务（web 角色）</th>
+   <th align="left" valign="middle">虚拟机</th>
+   <th align="left" valign="middle">说明</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>访问 服务总线、存储、SQL数据库 之类的服务</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>接近即时的部署</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
+   <td valign="middle">将应用程序或应用程序更新部署到云服务中或创建 VM，至少需要几分钟；将应用程序部署到网站需要数秒钟。</td>
 </tr>
-<tr class="even">
-<td align="left"><p>托管多层体系结构的 web 或 web 服务层</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>向上扩展到更大的计算机且无需重新部署</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>托管多层体系结构的中间层</p></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>Web 服务器实例共享内容和配置，这意味着进行扩展时无需重新部署或重新配置。</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>集成的 MySQL-as-a-service 支持</p></td>
-<td align="left">X</td>
-<td align="left">X <sup>1</sup></td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>多个部署环境（生产和过渡）</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>支持 ASP.NET、经典 ASP、Node.js、PHP、Python</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>自动操作系统更新管理</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>向外扩展到多个实例且无需重新部署</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X <sup>2</sup></td>
+<tr>
+   <td valign="middle"><p>无缝平台切换（轻松地在 32 位和 64 位之间转移）</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>支持 SSL</p></td>
-<td align="left">X <sup>3</sup></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>使用 GIT、FTP 部署代码</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>Visual Studio 集成</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>使用 Web 部署来部署代码</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle">云服务支持使用 Web Deploy 将更新部署到单个角色实例。但是，不能将其用于初始部署角色，并且如果将 Web Deploy 用于更新，则必须单独部署到角色的每个实例。需要提供多个实例，以便为生产环境的云服务 SLA 获得资格。</td>
 </tr>
-<tr class="odd">
-<td align="left"><p>远程调试</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>WebMatrix 支持</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>使用 TFS 部署代码</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>访问 Service Bus、存储、SQL 数据库之类的服务</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>使用 GIT、FTP 部署代码</p></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>托管多层体系结构的 web 或 web 服务层</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>使用 Web 部署来部署代码</p></td>
-<td align="left">X</td>
-<td align="left"><sup>4</sup></td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>托管多层体系结构的中间层</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">网站可以轻松地托管 REST API 中间层，并且网站的 <a href="/zh-cn/documentation/articles/websites-webjobs-resources/">WebJobs</a> 功能可以托管后台处理作业。你可以在专用网站中运行 WebJobs，以实现层的独立可扩展性。</td>
 </tr>
-<tr class="odd">
-<td align="left"><p>WebMatrix 支持</p></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>集成的 MySQL-as-a-service 支持</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">云服务可以通过 ClearDB 的产品集成 MySQL-as-a-service，但不作为管理门户工作流的一部分。</td>
 </tr>
-<tr class="even">
-<td align="left"><p>接近即时的部署</p></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+   <td valign="middle"><p>支持 ASP.NET、经典 ASP、Node.js、PHP、Python</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>实例共享内容和配置</p></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+   <td valign="middle"><p>向外扩展到多个实例且无需重新部署</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">虚拟机可以扩大到多个实例，但必须编写这些虚拟机上运行的服务，以处理此向外扩展。你需要配置负载平衡器，以跨计算机路由请求，并创建地缘组，以防止因维护或硬件故障导致同时重新启动所有实例。</td>
 </tr>
-<tr class="even">
-<td align="left"><p>向上扩展到更大的计算机且无需重新部署</p></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+   <td valign="middle"><p>支持 SSL</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">对于网站，基本和标准模式仅支持自定义域名称的 SSL。有关结合使用 SSL 和网站的信息，请参阅<a href="../web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a>。</td>
 </tr>
-<tr class="odd">
-<td align="left"><p>多个部署环境（生产和过渡）</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
+<tr>
+   <td valign="middle"><p>Visual Studio 集成</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>使用 Azure 虚拟网络进行网络隔离</p></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>远程调试</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>支持 Azure 流量管理器</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>使用 TFS 部署代码</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>对服务器的远程桌面访问</p></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>使用 <a href="/home/features/networking/">Azure 虚拟网络</a>进行网络隔离</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">另请参阅 <a href="/blog/2014/09/15/azure-websites-virtual-network-integration/">Azure 网站的虚拟网络集成</a></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>能够定义/执行启动任务</p></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>支持 <a href="/home/features/traffic-manager/">Azure 流量管理器</a></p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>自动操作系统更新管理</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
+<tr>
+   <td valign="middle"><p>集成的端点监视</p></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="odd">
-<td align="left"><p>集成的端点监视</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<tr>
+   <td valign="middle"><p>对服务器的远程桌面访问</p></td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-<tr class="even">
-<td align="left"><p>无缝平台切换（32 位/64 位）</p></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
+<tr>
+   <td valign="middle"><p>安装任何自定义 MSI</p></td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
 </tr>
-</tbody>
+<tr>
+   <td valign="middle"><p>能够定义/执行启动任务</p></td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+</tr>
+<tr>
+   <td valign="middle"><p>可以侦听 ETW 事件</p></td>
+   <td valign="middle"></td>
+   <td valign="middle">X</td>
+   <td valign="middle">X</td>
+   <td valign="middle"></td>
+</tr>
 </table>
 
-<sup>1</sup> Web 和辅助角色可以通过 ClearDB 的产品集成 MySQL-as-a-service，但不作为管理门户工作流的一部分。
 
-<sup>2</sup>尽管虚拟机可以向外扩展到多个实例，在必须编写这些计算机上运行的服务以处理此向外扩展。必须配置额外的负载平衡器以跨机器路由请求。最后，应为参与同一角色的所有计算机创建一个地缘组，防止它们从维护或硬件故障同时重启。
+> [WACOM.NOTE]如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中立即免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
 
-<sup>3</sup>对于“网站”，自定义域名的 SSL 仅支持标准模式。有关将 SSL 用于网站的更多信息，请参见[为 Azure 网站配置 SSL 证书][为 Azure 网站配置 SSL 证书]。
 
-<sup>4</sup> 在部署到单实例角色时云服务支持 Web 部署。但是，生产角色要求多个实例以便满足 Azure SLA。因此，Web 部署不是在生产中用于云服务的合适的部署机制。
+## <a id="nextsteps"></a> 后续步骤
 
-  [Azure 网站]: /zh-cn/documentation/services/web-sites/
+有关三个 Web 托管选项的详细信息，请参阅以下资源：
+
+* [Azure 简介](/documentation/articles/fundamentals-introduction-to-azure/)
+* [Azure 执行模型](/documentation/articles/fundamentals-application-models/)
+
+若要开始使用为应用程序选择的选项，请参阅以下资源：
+
+* [Azure 网站](/zh-cn/documentation/services/web-sites/)
+* [Azure 云服务](/zh-cn/documentation/services/cloud-services/)
+* [Azure 虚拟机](/zh-cn/documentation/services/virtual-machines/)
+
+  [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
+  [Azure  Websites]: /zh-cn/documentation/services/web-sites/
   [云服务]: /zh-cn/documentation/services/cloud-services/
   [虚拟机]: /zh-cn/documentation/services/virtual-machines/
-  [Azure WebJobs SDK]: http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs
-  [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_2.png
-  [方案]: #scenarios
-  [服务摘要]: #services
-  [功能比较]: #features
-  [.Net]: /develop/net/
+  [ClearDB]: http://www.cleardb.com/
+  [WebJobs]: /zh-cn/documentation/articles/websites-webjobs-resources/
+  [Configuring an SSL certificate for an Azure  Website]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [dotnet]: /develop/net/
+  [nodejs]: /develop/nodejs/
   [PHP]: /develop/php/
-  [Node.js]: /develop/nodejs/
   [Python]: /develop/python/
-  [SQL 数据库]: /zh-cn/documentation/services/sql-database/
-  [服务总线]: /zh-cn/documentation/services/service-bus/
+  [servicebus]: /zh-cn/documentation/services/service-bus/
+  [sqldatabase]: /zh-cn/documentation/services/sql-databases/
   [存储]: /zh-cn/documentation/services/storage/
-  [Azure 应用商店]: http://azure.microsoft.com/zh-cn/gallery/store/
-  [为 Azure 网站配置 SSL 证书]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+
+<!---HONumber=71-->

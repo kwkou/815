@@ -1,9 +1,17 @@
-<properties linkid="develop-dotnet-publishing-with-git" urlDisplayName="Publishing from Source Control to Azure Web Sites" pageTitle="Publishing from Source Control to Azure Web Sites" metaKeywords="Azure web site GitHub, Azure website GitHub, Azure website Git, Azure website CodePlex, Azure website continuous publishing, BitBucket, Dropbox, GitHub, Mercurial" description="Learn how to use Git to publish an Azure web site, and then enable continuous deployment from Bitbucket, CodePlex, Dropbox, GitHub, or Mercurial." metaCanonical="" services="web-sites" documentationCenter=".NET" title="" authors="timamm" solutions="" manager="paulettm" editor="mollybos" />
-<tags ms.service="web-sites"
-    ms.date="03/24/2015"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	pageTitle="在 Azure 网站中使用 GIT 进行连续部署" 
+	description="了解如何使用 Git 发布 Azure Web 应用，然后再启用从 Bitbucket、CodePlex、Dropbox、GitHub 或 Mercurial 进行连续部署。" 
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="cephalin" 
+	manager="wpickett" 
+	editor="mollybos"/>
 
-[WACOM.INCLUDE [publishing-with-git][publishing-with-git]]
+<tags 
+	ms.service="app-service-web" 
+	ms.date="07/02/2015" 
+	wacn.date="10/03/2015"/>
 
-  [publishing-with-git]: ../includes/publishing-with-git.md
+[WACOM.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
+
+<!---HONumber=71-->
