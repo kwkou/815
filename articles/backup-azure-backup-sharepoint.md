@@ -8,7 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="backup" ms.date="07/14/2015" wacn.date="08/14/2015"/>
+	ms.service="backup" 
+	ms.date="07/14/2015" 
+	wacn.date="08/14/2015"/>
 
 
 # 将 SharePoint 场备份到 Azure
