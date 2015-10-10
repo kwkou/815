@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure PowerShell 部署和管理 Windows Server/客户端的备份 | Microsoft Azure"
+	pageTitle="使用 Azure PowerShell 部署和管理 Windows Server/客户端的备份 | Windows Azure"
 	description="了解如何使用 Azure PowerShell 部署和管理 Azure 备份"
 	services="backup"
 	documentationCenter=""
@@ -8,7 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="backup" ms.date="07/17/2015" wacn.date="08/29/2015"/>
+	ms.service="backup" 
+	ms.date="08/18/2015" 
+	wacn.date="09/15/2015"/>
 
 
 # 使用 Azure PowerShell 部署和管理 Windows Server/Windows 客户端的 Azure 备份
@@ -19,9 +21,22 @@
 ## 设置和注册
 使用 Azure PowerShell 可以自动化以下设置和注册任务：
 
+- 创建备份保管库
 - 安装 Azure 备份代理
 - 注册到 Azure 备份服务
-- 联网
+- 网络设置
+- 加密设置
+
+### 创建备份保管库
+可以使用 **New-AzureBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
+
+```
+PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “China North”
+PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+```
+
+可以使用 **Get-AzureBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
+
 
 ### 安装 Azure 备份代理
 在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。将安装程序保存到方便访问的位置，例如 *C:\Downloads*。
@@ -66,25 +81,34 @@ PS C:\> MARSAgentInstaller.exe /?
 在可注册 Azure 备份服务之前，需要确保符合[先决条件](/documentation/articles/backup-try-azure-backup-in-10-mins)。你必须：
 
 - 具备有效的 Azure 订阅
-- 创建备份保管库
-- 下载保管库凭据并将其保存在方便的位置（例如 *C:\Downloads\*）。为方便起见，你也可以重命名保管库凭据。
+- 有一个备份保管库
 
-使用 [Start-OBRegistration](https://technet.microsoft.com/zh-cn/library/hh770398%28v=wps.630%29.aspx) cmdlet 即可向保管库注册计算机：
+若要下载保管库凭据，请在 Azure PowerShell 控制台中运行 **Get-AzureBackupVaultCredentials**，并将其存储在方便的位置，例如 *C:\Downloads*。
 
 ```
-PS C:\> Start-OBRegistration -VaultCredentials "C:\Downloads\register.vaultcredentials" -Confirm:$false
+PS C:\> $credspath = "C:"
+PS C:\> $credsfilename = Get-AzureBackupVaultCredentials -Vault $backupvault -TargetLocation $credspath
+PS C:\> $credsfilename
+f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
+```
+
+使用 [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx) cmdlet 即可向保管库注册计算机：
+
+```
+PS C:\> $cred = $credspath + $credsfilename
+PS C:\> Start-OBRegistration -VaultCredentials $cred -Confirm:$false
 
 CertThumbprint      : 7a2ef2caa2e74b6ed1222a5e89288ddad438df2
 SubscriptionID      : ef4ab577-c2c0-43e4-af80-af49f485f3d1
 ServiceResourceName : test-vault
-Region              : Australia East
+Region              : China North
 
 Machine registration succeeded.
 ```
 
 > [AZURE.IMPORTANT]请勿使用相对路径来指定保管库凭据文件。必须提供绝对路径作为 cmdlet 的输入。
 
-### 联网
+### 网络设置
 如果 Windows 计算机通过代理服务器连接到 Internet，则也可以向代理提供代理设置。此示例未使用代理服务器，因此我们要显式清除任何代理相关的信息。
 
 你也可以针对给定的一组星期日期，使用 ```work hour bandwidth``` 和 ```non-work hour bandwidth``` 选项来控制带宽使用。
@@ -139,7 +163,7 @@ PS C:\> $sched = New-OBSchedule -DaysofWeek Saturday, Sunday -TimesofDay 16:00
 备份计划需要与策略相关联，这可以使用 [Set-OBSchedule](https://technet.microsoft.com/zh-cn/library/hh770407) cmdlet 来实现。
 
 ```
-PS C:> Set-OBSchedule -Policy $newpolicy -Schedule $sched
+PS C:\> Set-OBSchedule -Policy $newpolicy -Schedule $sched
 BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s) DsList : PolicyName : RetentionPolicy : State : New PolicyState : Valid
 ```
 ### 配置保留策略
@@ -187,7 +211,7 @@ PolicyState     : Valid
 在以下示例中，我们要备份卷 C: 和 D:，并排除 Windows 文件夹和任何临时文件夹中的操作系统二进制文件。为此，我们将使用 [New-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770408) cmdlet 创建两个文件规范 - 一个用于包含，一个用于排除。创建文件规范后，使用 [Add-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770424) cmdlet 将它们与策略相关联。
 
 ```
-PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:\", "D:\")
+PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")
 
 PS C:\> $exclusions = New-OBFileSpec -FileSpec @("C:\windows", "C:\temp") -Exclude
 
@@ -279,26 +303,44 @@ PolicyState     : Valid
 现在已完成策略对象，并且具有关联的备份计划、保留策略及文件包含/排除列表。现在可以提交此策略以供 Azure 备份使用。应用新建策略之前，请使用 [Remove-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770415) cmdlet 确保没有任何现有备份策略与服务器相关联。删除策略时，系统会提示你确认。若要跳过确认，请在 cmdlet 中请使用 ```-Confirm:$false``` 标志。
 
 ```
-PS C:> Get-OBPolicy | Remove-OBPolicy
+PS C:\> Get-OBPolicy | Remove-OBPolicy
 Windows Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 ```
 
 使用 [Set-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770421) cmdlet 可以提交策略对象。系统将提示你确认。若要跳过确认，请在 cmdlet 中请使用 ```-Confirm:$false``` 标志。
 
 ```
-PS C:> Set-OBPolicy -Policy $newpolicy
+PS C:\> Set-OBPolicy -Policy $newpolicy
 Windows Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
-BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s) DsList : {DataSource DatasourceId:4508156004108672185 Name:C:\ FileSpec:FileSpec FileSpec:C:\ IsExclude:False IsRecursive:True ,FileSpec FileSpec:C:\windows IsExclude:True IsRecursive:True ,FileSpec FileSpec:C:\temp IsExclude:True IsRecursive:True
-              , DataSource
-              DatasourceId:4508156005178868542
-              Name:D:\
-              FileSpec:FileSpec
-              FileSpec:D:\
-              IsExclude:False
-              IsRecursive:True
+BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s)
+DsList : {DataSource
+         DatasourceId:4508156004108672185
+         Name:C:\
+         FileSpec:FileSpec
+         FileSpec:C:\
+         IsExclude:False
+         IsRecursive:True,
 
-              }
-PolicyName : c2eb6568-8a06-49f4-a20e-3019ae411bac RetentionPolicy : Retention Days : 7
+         FileSpec
+         FileSpec:C:\windows
+         IsExclude:True
+         IsRecursive:True,
+
+         FileSpec
+         FileSpec:C:\temp
+         IsExclude:True
+         IsRecursive:True,
+
+         DataSource
+         DatasourceId:4508156005178868542
+         Name:D:\
+         FileSpec:FileSpec
+         FileSpec:D:\
+         IsExclude:False
+         IsRecursive:True
+	}
+PolicyName : c2eb6568-8a06-49f4-a20e-3019ae411bac
+RetentionPolicy : Retention Days : 7
               WeeklyLTRSchedule :
               Weekly schedule is not set
 
@@ -313,23 +355,56 @@ State : Existing PolicyState : Valid
 可以使用 [Get-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770406) cmdlet 来查看现有备份策略的详细信息。可以使用 [Get-OBSchedule](https://technet.microsoft.com/zh-cn/library/hh770423) cmdlet（适用于备份计划）和 [Get-OBRetentionPolicy](https://technet.microsoft.com/zh-cn/library/hh770427) cmdlet（适用于保留策略）向下钻取
 
 ```
-PS C:> Get-OBPolicy | Get-OBSchedule
-SchedulePolicyName : 71944081-9950-4f7e-841d-32f0a0a1359a ScheduleRunDays : {Saturday, Sunday} ScheduleRunTimes : {16:00:00} State : Existing
-PS C:> Get-OBPolicy | Get-OBRetentionPolicy
-RetentionDays : 7 RetentionPolicyName : ca3574ec-8331-46fd-a605-c01743a5265e State : Existing
-PS C:> Get-OBPolicy | Get-OBFileSpec
-FileName : * FilePath : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\ FileSpec : D:\ IsExclude : False IsRecursive : True
-FileName : * FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\ FileSpec : C:\ IsExclude : False IsRecursive : True
-FileName : * FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\windows FileSpec : C:\windows IsExclude : True IsRecursive : True
-FileName : * FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\temp FileSpec : C:\temp IsExclude : True IsRecursive : True
+PS C:\> Get-OBPolicy | Get-OBSchedule
+SchedulePolicyName : 71944081-9950-4f7e-841d-32f0a0a1359a
+ScheduleRunDays : {Saturday, Sunday}
+ScheduleRunTimes : {16:00:00}
+State : Existing
+
+PS C:\> Get-OBPolicy | Get-OBRetentionPolicy
+RetentionDays : 7
+RetentionPolicyName : ca3574ec-8331-46fd-a605-c01743a5265e
+State : Existing
+
+PS C:\> Get-OBPolicy | Get-OBFileSpec
+FileName : *
+FilePath : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
+FileSpec : D:\
+IsExclude : False
+IsRecursive : True
+
+FileName : *
+FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\
+FileSpec : C:\
+IsExclude : False
+IsRecursive : True
+
+FileName : *
+FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\windows
+FileSpec : C:\windows
+IsExclude : True
+IsRecursive : True
+
+FileName : *
+FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\temp
+FileSpec : C:\temp
+IsExclude : True
+IsRecursive : True
 ```
 
 ### 执行即席备份
 设置备份策略之后，将会根据计划进行备份。你也可以使用 [Start-OBBackup](https://technet.microsoft.com/zh-cn/library/hh770426) cmdlet 来触发即席备份：
 
 ```
-PS C:> Get-OBPolicy | Start-OBBackup
-Taking snapshot of volumes... Preparing storage... Estimating size of backup items... Estimating size of backup items... Transferring data... Verifying backup... Job completed. The backup operation completed successfully.
+PS C:\> Get-OBPolicy | Start-OBBackup
+Taking snapshot of volumes...
+Preparing storage...
+Estimating size of backup items...
+Estimating size of backup items...
+Transferring data...
+Verifying backup...
+Job completed.
+The backup operation completed successfully.
 ```
 
 ## 从 Azure 备份还原数据
@@ -344,18 +419,43 @@ Taking snapshot of volumes... Preparing storage... Estimating size of backup ite
 若要从 Azure 备份还原某个项，需要先识别该项的源。由于我们要在 Windows Server 或 Windows 客户端的上下文中执行命令，因此已识别了计算机。识别源的下一步是识别它所在的卷。运行 [Get-OBRecoverableSource](https://technet.microsoft.com/zh-cn/library/hh770410) cmdlet 可以检索正在从此计算机备份的卷或源的列表。此命令将返回从此服务器/客户端备份的所有源的数组。
 
 ```
-PS C:> $source = Get-OBRecoverableSource
-PS C:> $source FriendlyName : C:\ RecoverySourceName : C:\ ServerName : myserver.microsoft.com
-FriendlyName : D:\ RecoverySourceName : D:\ ServerName : myserver.microsoft.com
+PS C:\> $source = Get-OBRecoverableSource
+PS C:\> $source
+FriendlyName : C:\
+RecoverySourceName : C:\
+ServerName : myserver.microsoft.com
+
+FriendlyName : D:\
+RecoverySourceName : D:\
+ServerName : myserver.microsoft.com
 ```
 
 ### 选择要还原的备份点
 结合适当的参数运行 [Get-OBRecoverableItem](https://technet.microsoft.com/zh-cn/library/hh770399.aspx) cmdlet 可以检索备份点列表。在本示例中，我们将选择源卷 *D:* 的最新备份点，并使用它还原特定的文件。
 
 ```
-PS C:> $rps = Get-OBRecoverableItem -Source $source[1]
-IsDir : False ItemNameFriendly : D:\ ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\ LocalMountPoint : D:\ MountPointName : D:\ Name : D:\ PointInTime : 18-Jun-15 6:41:52 AM ServerName : myserver.microsoft.com ItemSize : ItemLastModifiedTime :
-IsDir : False ItemNameFriendly : D:\ ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\ LocalMountPoint : D:\ MountPointName : D:\ Name : D:\ PointInTime : 17-Jun-15 6:31:31 AM ServerName : myserver.microsoft.com ItemSize : ItemLastModifiedTime :
+PS C:\> $rps = Get-OBRecoverableItem -Source $source[1]
+IsDir : False
+ItemNameFriendly : D:\
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : D:\
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize :
+ItemLastModifiedTime :
+
+IsDir : False
+ItemNameFriendly : D:\
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : D:\
+PointInTime : 17-Jun-15 6:31:31 AM
+ServerName : myserver.microsoft.com
+ItemSize :
+ItemLastModifiedTime :
 ```
 对象 ```$rps``` 是备份点数组。第一个元素是最新备份点，第 N 个元素是最旧的备份点。为了选择最新的点，我们将使用 ```$rps[0]```。
 
@@ -365,11 +465,42 @@ IsDir : False ItemNameFriendly : D:\ ItemNameGuid : \?\Volume{b835d359-a1dd-11e2
 在本示例中，如果我们要还原文件 *finances.xls*，可以使用对象 ```$filesFolders[1]``` 来引用该文件。
 
 ```
-PS C:> $filesFolders = Get-OBRecoverableItem $rps[0]
-PS C:> $filesFolders IsDir : True ItemNameFriendly : D:\MyData\ ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\ LocalMountPoint : D:\ MountPointName : D:\ Name : MyData PointInTime : 18-Jun-15 6:41:52 AM ServerName : myserver.microsoft.com ItemSize : ItemLastModifiedTime : 15-Jun-15 8:49:29 AM
-PS C:> $filesFolders = Get-OBRecoverableItem $filesFolders[0]
-PS C:> $filesFolders IsDir : False ItemNameFriendly : D:\MyData\screenshot.oxps ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\screenshot.oxps LocalMountPoint : D:\ MountPointName : D:\ Name : screenshot.oxps PointInTime : 18-Jun-15 6:41:52 AM ServerName : myserver.microsoft.com ItemSize : 228313 ItemLastModifiedTime : 21-Jun-14 6:45:09 AM
-IsDir : False ItemNameFriendly : D:\MyData\finances.xls ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\finances.xls LocalMountPoint : D:\ MountPointName : D:\ Name : finances.xls PointInTime : 18-Jun-15 6:41:52 AM ServerName : myserver.microsoft.com ItemSize : 96256 ItemLastModifiedTime : 21-Jun-14 6:43:02 AM
+PS C:\> $filesFolders = Get-OBRecoverableItem $rps[0]
+PS C:\> $filesFolders
+IsDir : True
+ItemNameFriendly : D:\MyData\
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : MyData
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize :
+ItemLastModifiedTime : 15-Jun-15 8:49:29 AM
+
+PS C:\> $filesFolders = Get-OBRecoverableItem $filesFolders[0]
+PS C:\> $filesFolders
+IsDir : False
+ItemNameFriendly : D:\MyData\screenshot.oxps
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\screenshot.oxps
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : screenshot.oxps
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize : 228313
+ItemLastModifiedTime : 21-Jun-14 6:45:09 AM
+
+IsDir : False
+ItemNameFriendly : D:\MyData\finances.xls
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\finances.xls
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : finances.xls
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize : 96256
+ItemLastModifiedTime : 21-Jun-14 6:43:02 AM
 ```
 
 你也可以使用 ```Get-OBRecoverableItem``` cmdlet 来搜索要还原的项。在本示例中，为了搜索 *finances.xls*，我们可以运行以下命令来获取该文件上的句柄：
@@ -388,7 +519,13 @@ PS C:\> $recovery_option = New-OBRecoveryOption -DestinationPath "C:\temp" -Over
 现在，请对 ```Get-OBRecoverableItem``` cmdlet 输出中的选定 ```$item``` 使用 [Start-OBRecovery](https://technet.microsoft.com/zh-cn/library/hh770402.aspx) 命令来触发还原：
 
 ```
-PS C:\> Start-OBRecovery -RecoverableItem $item -RecoveryOption $recover_option Estimating size of backup items... Estimating size of backup items... Estimating size of backup items... Estimating size of backup items... Job completed. The recovery operation completed successfully.
+PS C:\> Start-OBRecovery -RecoverableItem $item -RecoveryOption $recover_option
+Estimating size of backup items...
+Estimating size of backup items...
+Estimating size of backup items...
+Estimating size of backup items...
+Job completed.
+The recovery operation completed successfully.
 ```
 
 
@@ -444,6 +581,9 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ```
 
 ## 后续步骤
-有关适用于 Windows Server/客户端的 Azure 备份的详细信息，请参阅 [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup)
+有关适用于 Windows Server/客户端的 Azure 备份的详细信息，请参阅
+
+- [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup)
+- [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 
 <!---HONumber=67-->

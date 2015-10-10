@@ -3,14 +3,14 @@
 	description="本文概述了可让客户将数据备份到 Azure 的 Azure 备份服务"
 	services="backup"
 	documentationCenter=""
-	authors="prvijay"
+	authors="trinadhk"
 	manager="shreeshd"
 	editor="tysonn"/>
 
 <tags
 	ms.service="backup"
-	ms.date="04/08/2015"
-	wacn.date="07/23/2015"/>
+	ms.date="08/18/2015"
+	wacn.date="09/15/2015"/>
 
 # Azure 备份简介
 本文全面概述了可让客户将本地数据备份到 Azure 的 Microsoft 云集成备份解决方案。
@@ -49,7 +49,6 @@ Azure 备份是一个多租户 Azure 服务，可让你将本地数据备份到 
 
 + 企业客户端和服务器计算机中的文件和文件夹
 
-+ Microsoft Hyper-V 虚拟机的主机级虚拟机备份
 
 + Microsoft SQL Server
 
@@ -58,7 +57,8 @@ Azure 备份是一个多租户 Azure 服务，可让你将本地数据备份到 
 + Microsoft Exchange
 
 ## 后续步骤
-+ [此处](backup-azure-backup-faq.md)列出了有关 Azure 备份服务的常见问题。
-+ 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
+- [尝试 Azure 备份](/documentation/articles/backup-try-azure-backup-in-10-mins)
+- [此处](/documentation/articles/backup-azure-backup-faq)列出了有关 Azure 备份服务的常见问题。
+- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
 
 <!---HONumber=56-->

@@ -1,8 +1,16 @@
-<properties linkid="manage-services-recovery-configure-backup-vault" urlDisplayName="Configure a Backup Vault" pageTitle="Configure Azure Recovery Services to quickly and easily back-up Windows Server" metaKeywords="disaster recovery" description="Use this tutorial to learn how to use the Backup service in Microsoft's Azure cloud offering to back up Windows Server to the cloud." metaCanonical="" services="recovery-services" documentationCenter="" title="Configure Azure Backup to quickly and easily back-up Windows Server" authors="starra" solutions="" manager="cynthn" editor="tysonn" />
+<properties
+	pageTitle="配置 Azure 备份服务以准备备份 Windows Server | Windows Azure"
+	description="使用本教程可了解如何在 Microsoft 的 Azure 云产品/服务中使用备份服务来将 Windows Server 备份到云中。"
+	services="backup"
+	documentationCenter=""
+	authors="Jim-Parker"
+	manager="jwhit"
+	editor=""/>
 
 <tags 
-wacn.date="04/11/2015"
-ms.service="site-recovery" ms.workload="backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="03/04/2015" ms.author="starra"></tags>
+     ms.service="backup"
+     ms.date="08/12/2015"
+     wacn.date="09/15/2015"/>
 
 # <span id="configure-a-backup-vault-tutorial"></span></a>配置 Azure 备份以便快速轻松地备份 Windows Server
 

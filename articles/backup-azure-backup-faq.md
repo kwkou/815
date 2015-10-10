@@ -3,12 +3,14 @@
    description="有关 Azure 备份服务的常见问题"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
+   authors="Jim-Parker"
    manager="shreeshd"
    editor=""/>
 
 <tags
-   ms.service="backup" ms.date="03/26/2015" wacn.date="08/14/2015"/>
+   ms.service="backup" 
+   ms.date="08/07/2015" 
+   wacn.date="09/15/2015"/>
 
 # Azure 备份 - 常见问题
 下面是与 Azure 备份有关的常见问题的列表。如果你有与 Azure 备份有关的任何其他问题，请转到[论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)并发布你的问题。来自我们社区的人员将帮助你回答问题。如果某个问题是常见问题，我们会将该问题添加到本文中，以便可以轻松快捷地找到该问题。
@@ -191,7 +193,30 @@ A2.是的。发送到 Azure 的数据将保持加密（静态加密）。Microso
 
 **问 4.如果我丢失了加密密钥，会发生什么情况？ 我是否可以恢复数据（或者）Microsoft 是否可以恢复数据？** <br/>
 答 4.用于加密备份数据的密钥只能放置在客户场地。Microsoft 不会在 Azure 中保留副本，并且无权访问密钥。如果客户丢失了密钥，Microsoft 将无法恢复备份的数据。
+## 备份缓存
 
+**问 1.如何更改针对 Azure 备份代理指定的缓存位置？**
+
++ 通过在权限提升的命令提示符下运行以下命令来停止 OBEngine：
+
+  ```PS C:\> Net stop obengine```
+
++ 将缓存空间文件夹复制到具有足够空间的其他驱动器。建议你从缓存空间文件夹复制文件，而不是移动它们；确认备份使用新的缓存空间后，可以删除原始缓存空间。
+
++ 更新以下注册表项，使路径指向新的缓存空间文件夹：
+
+
+	| 注册表路径 | 注册表项 | 值 |
+	| ------ | ------- | ------ |
+	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows Azure Backup\\Config | ScratchLocation | <i>新的缓存文件夹位置</i> |
+	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows Azure Backup\\Config\\CloudBackupProvider | ScratchLocation | <i>新的缓存文件夹位置</i> |
+
+
++ 通过在权限提升的命令提示符下运行以下命令来启动 OBEngine：
+
+  ```PS C:\> Net start obengine```
+
+使用新缓存位置成功备份后，可以删除原始缓存文件夹。
 
 <!--Image references-->
 [1]: ./media/backup-azure-backup-faq/Schedule.png
