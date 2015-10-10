@@ -3,21 +3,21 @@
    description="了解如何创建备份保管库，以及如何在 Azure 备份中指定存储冗余选项"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
+   authors="aashishr"
    manager="shreeshd"
    editor=""/>
 
 <tags
    ms.service="backup"
-	 ms.date="04/08/2015"
-	 wacn.date="07/23/2015"/>
+   ms.date="08/11/2015"
+   wacn.date="09/15/2015"/>
 
 # 创建备份保管库
 若要将文件和数据从 Windows Server 或 Center Data Protection Manager (SCDPM） 备份到 Azure 或者要将 IaaS VM 备份到 Azure，你必须在存储数据的地理区域中创建备份保管库。
 
 本教程将指导你创建用于存储备份的保管库。
 
-1. 登录到[管理门户](https://manage.windowsazure.com/)
+1. 登录到[管理门户](https://manage.windowsazure.cn/)
 2. 单击"新建"->"数据服务"->"恢复服务"->"备份保管库"，然后选择"快速创建" <br/>
 ![Create Vault][1]
 
