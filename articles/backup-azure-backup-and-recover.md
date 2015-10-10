@@ -8,7 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="backup" ms.date="04/02/2015" wacn.date="08/29/2015"/>
+  	ms.service="backup"
+	ms.date="08/18/2015"
+	wacn.date="09/15/2015"/>
 
 # 从 Windows Server 或 Windows 客户端计算机备份和还原
 本文介绍从 Windows server 或 Windows 客户端计算机进行备份所要执行的步骤。此外，还介绍了在同一台计算机还原已备份的文件，以及在任何其他计算机上还原备份的文件所要执行的步骤。
