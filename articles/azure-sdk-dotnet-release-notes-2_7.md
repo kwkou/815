@@ -18,7 +18,7 @@
 
 本文档包含 Azure SDK for .NET 2.7 发行版的发行说明。
 
-只有 Visual Studio 2015 和 Visual Studio 2013 才支持 Azure SDK 2.7。[Azure SDK 2.6](http://azure.microsoft.com/downloads/) 是 Visual Studio 2012 支持的最后一个 SDK。
+只有 Visual Studio 2015 和 Visual Studio 2013 才支持 Azure SDK 2.7。[Azure SDK 2.6](/downloads/) 是 Visual Studio 2012 支持的最后一个 SDK。
 
 有关此版本的详细信息，请参阅 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)。
 
@@ -57,7 +57,7 @@
 
 - 添加了对 DreamSpark 帐户的支持
 - 对 Azure 工具做了全面的更改，以支持新的 Azure 资源管理 API
-- 在[云资源管理器](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)中添加了对 Azure 网站的支持
+- 在[云资源管理器](#cloud_explorer)中添加了对 Azure 网站的支持
 
 ###已知问题
 
@@ -94,7 +94,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 ##适用于 Visual Studio 的 Azure 数据工厂工具 
 
-即将引入适用于 Visual Studio 的 **Azure 数据工厂工具**。以下是启用的功能。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=617530)。
+即将引入适用于 Visual Studio 的 **Azure 数据工厂工具**。以下是启用的功能。
 
 - **基于模板的创作**：选择基于用例的模板、数据移动模板或数据处理模板，以部署端到端数据集成解决方案，以及快速开始使用数据工厂。 
 - **与解决方案资源管理器集成，方便创作和部署数据工厂实体**：创建和部署管道与相关实体作为 Visual Studio 项目。 
@@ -108,6 +108,6 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
-[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
+[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)
 
 <!---HONumber=71-->

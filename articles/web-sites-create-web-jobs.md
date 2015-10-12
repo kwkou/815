@@ -18,7 +18,7 @@
 
 本文说明如何使用 Azure 管理门户来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure WebJobs 部署到 Azure 网站](/documentation/articles/websites-dotnet-deploy-webjobs)。
 
-Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](../websites-dotnet-webjobs-sdk)。
+Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)。
 
 ## 目录 ##
 - [可接受的脚本文件类型](#acceptablefiles)
@@ -168,12 +168,7 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 - 基本和标准模式提供了“始终打开”功能，启用该功能可防止 Web Apps 进入空闲状态。
 - 仅可以调试连续运行 WebJobs。不支持按计划或按需调试 WebJobs。
 
-## <a name="NextSteps"></a>后续步骤
- 
-有关详细信息，请参阅[Azure WebJobs 推荐资源][WebJobsRecommendedResources]。
-
 [PSonWebJobs]: http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx
-[WebJobsRecommendedResources]: /zh-cn/documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management/
 
 [OnDemandWebJob]: ./media/web-sites-create-web-jobs/01aOnDemandWebJob.png
 [WebJobsList]: ./media/web-sites-create-web-jobs/02aWebJobsList.png

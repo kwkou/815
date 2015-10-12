@@ -62,17 +62,17 @@
 
 ### 证书
 
-在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](href="/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/)。
+在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
 
 此处列出已上载的证书。在你上载某一证书后，可以将其分配给你的订阅和区域中的任何网站。通配符证书可用于接受此证书的域中的任何站点。仅当该证书不具有有效绑定关系时，才能删除证书。
 
 ### 域名
 
-查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/zh-cm/documentation/articles/web-sites-custom-domain-name/)。
+查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。
 
 ### SSL 绑定
 
-如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](href="/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/)
+如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 ### 部署
 
@@ -127,7 +127,6 @@
 
 选择“外接程序”<strong></strong>可从列表中选择分析外接程序，也可转到 Azure 应用商店选择一个。选择“自定义”<strong></strong>可从列表中选择 New Relic 之类的分析提供程序。如果你使用某一自定义提供程序，则必须在“提供程序密钥”<strong></strong>框中输入许可证密钥。
 
-有关 New Relic 与 Azure 网站配合使用的详细信息，请参阅 <a href="/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Azure 网站上的 New Relic 应用程序性能管理</a>。
 
 ### 应用设置
 

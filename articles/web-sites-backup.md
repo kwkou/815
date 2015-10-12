@@ -32,7 +32,7 @@
 	- [有关存储帐户的详细信息](#moreaboutstorage)
 
 
-<a name="whatsbackedup">
+<a name="whatsbackedup"></a>
 ## 备份的内容 
 Web Apps 可以备份以下信息：
 
@@ -44,14 +44,14 @@ Web Apps 可以备份以下信息：
 
 > [AZURE.NOTE]每个备份都是你的应用的完整脱机副本，而不是增量更新。
 
-<a name="requirements">
+<a name="requirements"></a>
 ##要求和限制
 
 * 备份和还原功能要求站点为“标准”模式。有关使用“标准”模式缩放 Web 应用的详细信息，请参阅[如何缩放网站](/documentation/articles/web-sites-scale/)。 
 
 * 备份和还原功能要求 Azure 存储帐户与要备份的网站必须同属一个订阅。如果你还没有存储帐户，可以创建一个，方法是：单击 Azure 门户左窗格中的“存储”按钮（网格图标），然后选择底部命令栏中的“新建”。有关 Azure 存储帐户的详细信息，请参阅本文结尾处的[链接](#moreaboutstorage)。
 
-<a name="manualbackup">
+<a name="manualbackup"></a>
 ## 创建手动备份
 
 1. 在网站的 Azure 门户中，选择“备份”选项卡。
@@ -78,7 +78,7 @@ Web Apps 可以备份以下信息：
 	
 你可以随时进行手动备份。在预览版期间，每 24 小时内的手动备份不能超过 2 个（此限制可能会变更）。
 
-<a name="automatedbackups">
+<a name="automatedbackups"></a>
 ## 配置自动化的备份
 
 1. 在“备份”页上，将“自动化的备份”设置为“打开”。
@@ -115,13 +115,13 @@ Web Apps 可以备份以下信息：
 	
 	![“保存”按钮][SaveIcon]
 
-<a name="notes">
+<a name="notes"></a>
 ## 说明
 
 * 一定要在 Web 应用的“设置”中的“Web 应用设置”边栏选项卡中为你的每个数据库正确设置连接字符串，这样备份和还原功能才会包括这些数据库。
 * 虽然你可以将多个 Web 应用备份到同一存储帐户，但是，为了易于维护，还是为每个 Web 应用都单独创建存储帐户比较好。
 
-<a name="partialbackups">
+<a name="partialbackups"></a>
 ## 备份只是 Web 应用的一部分
 
 有时你不想备份 Web 应用中的所有内容。以下是一些示例：
@@ -158,7 +158,7 @@ Web Apps 可以备份以下信息：
 
 3. 使用 [ftp](/documentation/articles/web-sites-deploy#ftp) 或任何其他方法将此文件上载到站点的 `D:\home\site\wwwroot` 的目录。如果你愿意，则可以直接在 `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` 中创建文件并在那里插入内容。
 
-4. 采用通常使用的相同方式运行备份，即[手动](/documentation/articles/#create-a-manual-backup)或[自动](#configure-automated-backups)。
+4. 采用通常使用的相同方式运行备份，即[手动](#create-a-manual-backup)或[自动](#configure-automated-backups)。
 
 现在，`_backup.filter` 中指定的所有文件和文件夹都会从备份中排除。在此示例中，日志文件和 2013 年以及 2014 年的映像文件以及 brand.png 将不再进行备份。
 
@@ -166,7 +166,7 @@ Web Apps 可以备份以下信息：
 >
 >还原完整备份后，站点上的所有内容都被替换为备份中的任何内容。如果文件在站点上但不在备份中，则会将其删除。但是当部分备份还原时，位于其中一个黑名单目录或任何黑名单文件中的任何内容都保持不变。
 
-<a name="aboutbackups">
+<a name="aboutbackups"></a>
 ## 如何存储备份
 
 对 Web 应用进行一个或多个备份后，则会在你的存储帐户的“容器”边栏选项卡中看到该备份以及你的 Web 应用。在存储帐户中，每个备份都由一个 .zip 文件和一个 .xml 文件组成，前者包含备份数据，后者包含 .zip 文件内容的清单。如果你想要在无需实际执行 Web 应用还原的情况下访问备份，则可以解压缩并浏览这些文件。
@@ -175,7 +175,7 @@ Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 
 > [AZURE.WARNING]改动“websitebackups”容器中的任何文件都会导致备份无效，进而无法还原。
 
-<a name="bestpractices">
+<a name="bestpractices"></a>
 ##最佳实践
 
 如果发生故障或自然灾难，你希望通过拥有现有备份和还原策略确保事先准备就绪。
@@ -195,14 +195,14 @@ Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL �
 
 >[AZURE.NOTE]始终测试还原过程。有关详细信息，请参阅[非常好的事情](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/)。例如，某些博客平台（如 [Ghost](https://ghost.org/)）对于备份过程中的行为方式具有明确警告。通过测试还原过程，如果你尚未遇到故障或灾难，则可以了解这些警告。
 
-<a name="nextsteps">
+<a name="nextsteps"></a>
 ## 后续步骤
 有关从备份中还原 Azure 网站的信息，请参阅[还原 Azure 网站](/documentation/articles/web-sites-restore/)。
 
 若要开始使用 Azure，请参阅[ Windows Azure 免费试用版](/zh-cn/pricing/1rmb-trial/)。
 
 
-<a name="moreaboutstorage">
+<a name="moreaboutstorage"></a>
 ### 有关存储帐户的详细信息
 
 [什么是存储帐户？](/documentation/articles/storage-whatis-account/)

@@ -176,7 +176,7 @@
 - 类别（字符串）
 - 已完成（布尔值）
 
-**PartitionKey** 和 **RowKey** 被表服务用作表键。有关详细信息，请参阅[了解表服务数据模型](https://msdn.microsoft.com/library/azure/dd179338.aspx)。
+**PartitionKey** 和 **RowKey** 被表服务用作表键。有关详细信息，请参阅[了解表服务数据模型](https://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
 
 
 1. 在 **tasklist** 目录中，创建名为 **models** 的新目录。
@@ -478,7 +478,7 @@
 
 本部分中的步骤使用 Azure 命令行工具在 Azure 网站中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户](https://portal.azure.com)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+> [AZURE.NOTE]还可以使用 [Azure 门户](http://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
 >
 > 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户部署此应用程序。
 
@@ -547,7 +547,7 @@
 
 将 **<storage account name>** 替换为你之前创建的存储帐户的名称，并将 **<storage access key>** 替换为你的存储帐户的主访问密钥。（使用与你先前创建的 config.json 文件相同的值。）
 
-或者，可以在 [Azure 门户](https://portal.azure.com)中设置环境变量：
+或者，可以在 [Azure 门户](http://manage.windowsazure.cn)中设置环境变量：
 
 1.  通过单击“浏览” > “Web Apps” > 你的应用名称来打开 Web 应用的边栏选项卡。
 
@@ -614,7 +614,7 @@
 [nconf]: https://www.npmjs.com/package/nconf
 [async]: https://www.npmjs.com/package/async
 
-[Azure 门户]: http://www.windowsazure.cn
+[Azure 门户]: http://manage.windowsazure.cn
 
 
 [node-table-finished]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png

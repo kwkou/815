@@ -27,8 +27,7 @@
 按照这些步骤操作创建一个 Azure 网站，然后对该网站启用 Git 发布。
 
 > [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure 免费试用</a>。
-> 
-> 如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/?language=nodejs">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
+
 
 1. 登录到 [Azure 管理门户]。
 
@@ -88,7 +87,7 @@
 
 		git init
 
-	> [AZURE.NOTE]**Git 命令不可用？** [Git](http://git-scm.com/%20target="_blank) 是一个分布式版本控制系统，可用来部署 Azure 网站。有关针对你的平台的安装说明，请参阅 [Git 下载页](http://git-scm.com/download%20target="_blank")。
+	> [AZURE.NOTE]**Git 命令不可用？** [Git](http://git-scm.com/) 是一个分布式版本控制系统，可用来部署 Azure 网站。有关针对你的平台的安装说明，请参阅 [Git 下载页](http://git-scm.com/download)。
 
 2. 使用以下命令将文件添加到存储库中：
 
@@ -175,6 +174,7 @@ Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若
 [helloworld-completed]: ./media/web-sites-nodejs-develop-deploy-mac/helloazure.png
 [helloworld-localhost]: ./media/web-sites-nodejs-develop-deploy-mac/helloworldlocal.png
 [portal-new- Website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
+
 [portal-quick-create]: ./media/web-sites-nodejs-develop-deploy-mac/create-quick- Website.png
 
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png

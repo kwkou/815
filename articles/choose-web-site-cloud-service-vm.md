@@ -257,7 +257,7 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">对于网站，基本和标准模式仅支持自定义域名称的 SSL。有关结合使用 SSL 和网站的信息，请参阅<a href="../web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a>。</td>
+   <td valign="middle">对于网站，基本和标准模式仅支持自定义域名称的 SSL。有关结合使用 SSL 和网站的信息，请参阅<a href="/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a>。</td>
 </tr>
 <tr>
    <td valign="middle"><p>Visual Studio 集成</p></td>
@@ -279,13 +279,6 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>使用 <a href="/home/features/networking/">Azure 虚拟网络</a>进行网络隔离</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">另请参阅 <a href="/blog/2014/09/15/azure-websites-virtual-network-integration/">Azure 网站的虚拟网络集成</a></td>
 </tr>
 <tr>
    <td valign="middle"><p>支持 <a href="/home/features/traffic-manager/">Azure 流量管理器</a></p></td>
@@ -331,8 +324,6 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
 </tr>
 </table>
 
-
-> [WACOM.NOTE]如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中立即免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
 
 
 ## <a id="nextsteps"></a> 后续步骤

@@ -18,7 +18,7 @@
 
 虽然 Azure 网站预装了许多 Node.js 版本，但它还允许用户提供的 Node.js 二进制文件。本文将讨论在 Azure 网站上启用 io.js 的两种方法：使用扩展的部署脚本（自动将 Azure 配置为使用最新的可用 io.js 版本），以及手动上载 io.js 二进制文件。
 
-<a id="deploymentscript">
+<a id="deploymentscript"></a>
 ## 使用部署脚本
 
 在部署 Node.js 应用程序后，Azure 网站将运行大量的小命令来确保正确配置环境。如果使用部署脚本，则可以将此过程自定义为包含 io.js 的下载和配置。
@@ -29,7 +29,7 @@ GitHub 上提供了 [io.js 部署脚本]。若要在 Web 应用上启用 io.js�
 
 > [AZURE.NOTE]若要更新使用的 io.js 二进制文件，只需重新部署你的应用程序 - 每次部署应用程序后，脚本将下载 io.js 的新版本。
 
-<a id="manualinstallation">
+<a id="manualinstallation"></a>
 ## 使用手动安装
 
 手动安装自定义 io.js 版本只包括两个步骤。首先，直接从 [io.js 分发包]中下载 **win-x64** 二进制文件。需要两个文件 - **iojs.exe** 和 **iojs.lib**。将两个文件保存到 Web 应用上的某个文件夹中，例如，保存在 **bin/iojs** 中。

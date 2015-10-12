@@ -81,7 +81,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 为此，请执行以下操作... | 使用此方法...
 ------------------------|-----------
 **了解 Azure 网站实例功能** | [定价详细信息，其中包括 Azure 网站层的功能][websitepricing]
-**缓存资源** | [Redis cache][rediscache]、[Memcache Cloud](/gallery/store/garantiadata/memcached/)
+**缓存资源** | [Redis cache][rediscache]
 **扩展您的应用程序** | [在 Azure 网站中扩展 Web 应用][websitescale]和 [ClearDB 高可用性路由][cleardbscale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
 
 ####迁移
@@ -155,7 +155,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 4. 在 Azure 门户中创建新的 Web 应用并发布 WordPress 备份。
 
-	1. 使用**新建** -> **Web Apps** -> **Web 应用 + SQL**（或 **Web 应用 + MySQL**)-> **创建**通过数据库在 [Azure 预览门户][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
+	1. 使用**新建** -> **Web Apps** -> **Web 应用 + SQL**（或 **Web 应用 + MySQL**)-> **创建**通过数据库在 [Azure 门户][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
 
 	2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新的 MySQL 数据库的信息。
 
@@ -179,8 +179,8 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 ------------- | -----------
 **设置 Azure 网站计划模式、大小和启用缩放** | [在 Azure 网站中缩放 Web 应用][websitescale]
 <p>默认情况下**启用持久的数据库连接**，WordPress 不使用持久的数据库连接，这可能导致数据库的连接在多次连接后成为限制。</p> | <ol><li><p>编辑 <strong>wp-includes/wp-db.php</strong> 文件。</p></li><li><p>查找以下行。</p><code>$this->dbh = mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；<br/>如果 ( false !== $error\_reporting ) { /br/>&nbsp;&nbsp;error\_reporting( $error\_reporting )；<br/>} </code></li><li><p>查找以下行。</p><code>$this->dbh = @mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = @mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；</code></li><li><p>保存文件 <strong>wp-includes/wp-db.php</strong> 文件并重新部署网站。</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><p>更新 WordPress 后，可以覆盖这些更改。</p><p>WordPress 默认自动更新，通过编辑 <strong>wp-config.php</strong> 文件并添加 <code>define ( 'WP\_AUTO\_UPDATE_CORE', false ) 可以禁用；</code></p><p>处理更新的另一个方法是使用监视 <strong>wp-db.php</strong> 文件的 WebJob 并在每次更新文件时执行上述修改。有关详细信息，请参阅 <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">WebJobs 简介</a>。</p></div>
-**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="../web-sites-scale/">在 Azure 网站中扩展 Web 应用</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
-**使用 blob 进行存储处理** | <ol><li><p><a href="../storage-create-storage-account/">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="../cdn-how-to-use/">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
+**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale/">在 Azure 网站中扩展 Web 应用</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
+**使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account/">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use/">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
 **配置自定义域名** | [在 Azure 网站中配置自定义域名][customdomain]
 **启用自定义域名的 HTTPS** | [在 Azure 网站中启用 Web 应用的 HTTPS][httpscustomdomain]
 **负载平衡或地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]。如果您使用自定义域，请参阅[在 Azure 网站中使用自定义域名][customdomain]，了解有关使用含自定义域名的流量管理器的信息

@@ -14,7 +14,6 @@
 # 为 Azure 网站配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app/)
 - [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
 - [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
 
@@ -22,8 +21,9 @@
 
 当你创建网站时，Azure 会将其分配给 chinacloudsites.cn 的子域。例如，如果你的网站名为 **contoso**，URL 则为 **contoso.chinacloudsites.cn**。Azure 还会将分配一个虚拟 IP 地址。
 
-对于生产 Web 应用，你可能希望用户看到的自定义域名。本文介绍如何使用 Azure 网站配置自定义域。[AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]本文内容：
+对于生产 Web 应用，你可能希望用户看到的自定义域名。本文介绍如何使用 Azure 网站配置自定义域。
 
+本文内容：
 
 -   [概述]
 -   [DNS 记录类型]
@@ -111,8 +111,6 @@
 - **contoso.com** 映射到 127.0.0.1。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
->[AZURE.NOTE]可以使用 Azure DNS 为你的 Web 应用托管必要的域记录。若要在 Azure DNS 中配置你的自定义域并创建记录，请参阅[为 Web 应用创建自定义 DNS 记录](/documentation/articles/dns-web-sites-custom-domain)。
-
 <a name="awverify" /></a>
 ## 创建 awverify 记录（仅 A 记录）
 
@@ -128,9 +126,6 @@
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
 
 
-## 后续步骤
-
-有关详细信息，请参阅：[Azure DNS 入门](/documentation/articles/dns-getstarted-create-dnszone)和[将域委托到 Azure DNS](/documentation/articles/dns-domain-delegation) <!-- Anchors. --> [概述]：#overview [DNS 记录类型]：#dns-record-types [查找虚拟 IP 地址]：#find-the-virtual-ip-address [创建 DNS 记录]：#create-the-dns-records [启用网站上的域名]：#enable-the-domain-name-on-your-website
 
 <!-- Images -->
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png

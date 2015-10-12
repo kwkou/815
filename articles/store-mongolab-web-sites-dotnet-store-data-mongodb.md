@@ -24,12 +24,12 @@
 各位冒险家，大家好！ 欢迎使用 MongoDB 即服务。在本教程中，您将：
 
 1. [创建应用][create] - 它将是一个简单的 C# ASP.NET MVC 应用，用于进行记录。
-1. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure 网站](http://go.microsoft.com/fwlink/?LinkId=529714)。
+1. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 Azure 网站。
 1. [管理数据库][manage] - 最后，我们将向你演示 MongoLab 基于 Web 的数据库管理门户，在此你可轻松搜索、显示和修改数据。
 
 在本教程的任意时间，如有任何问题，请随时发送电子邮件至 [support@mongolab.com](mailto:support@mongolab.com)。
 
-<a name="provision">
+<a name="provision"></a>
 ## 设置数据库
 
 [AZURE.INCLUDE [howto-provision-mongolab](../includes/howto-provision-mongolab.md)]
@@ -416,7 +416,7 @@
 
 1. 输入一些便笺文本，单击“创建”，然后查看结果！![HelloMongoAzure][screen-mongolab-sampleapp]
 
-<a name="manage">
+<a name="manage"></a>
 ## 管理数据库
 
 [AZURE.INCLUDE [howto-access-mongolab-ui](../includes/howto-access-mongolab-ui.md)]

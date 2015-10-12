@@ -14,7 +14,7 @@
 
 # 管理 Azure 网站中的 Web 应用
 
-本主题包含用于管理 [Azure 网站](http://go.microsoft.com/fwlink/?LinkId=529714) 中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
+本主题包含用于管理 Azure 网站中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
 
 在整个 Web 应用使用期内，您将执行各种管理任务，从初始部署到正常操作、维护与更新。
 
@@ -44,7 +44,7 @@
 特定于语言的配置：
 
 - **PHP**：[在 Azure 网站 Web Apps 中配置 PHP](/documentation/articles/web-sites-php-configure)。
-- **PHP**：[使用 Azure 网站 Web Apps 配置 Python](/documentation/articles/web-sites-python-configure)。
+- **Python**：[使用 Azure 网站 Web Apps 配置 Python](/documentation/articles/web-sites-python-configure)。
 
 
 ## Web 应用运行期间
@@ -59,7 +59,7 @@
  
 ### 备份
 
-- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup)。观看[本视频](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。
+- 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup)。
 - 了解 Azure SQL 数据库的[数据库恢复](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)选项。
 
 ### 故障排除
