@@ -1,25 +1,23 @@
-<properties 
-	pageTitle="Azure 混合云测试环境" 
-	description="访问介绍如何构建可用于 Azure 混合云的开发/测试或概念证明的测试环境的关键主题。" 
-	documentationCenter="" 
+<properties
+	pageTitle="Azure 混合云测试环境"
+	description="访问介绍如何构建可用于 Azure 混合云的开发/测试或概念证明的测试环境的关键主题。"
+	documentationCenter=""
 	services="virtual-machines"
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
-	editor=""/>
+	authors="JoeDavies-MSFT"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
-<tags 
-	wacn.date="05/15/2015"
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/07/2015" 
-	ms.author="josephd"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="07/09/2015"
+	wacn.date="09/18/2015"/>
 
 # Azure 混合云测试环境
 
-对于开发/测试或概念证明，混合云测试环境使用本地 Internet 连接和公共 IP 地址之一，逐步引导你设置可正常工作的跨界 Azure 虚拟网络 (VNet)。完成后，可以执行应用程序开发和测试、用简化的 IT 工作负载进行试验，以及测量相对于你在 Internet 上的位置的站点到站点虚拟专用网络 (VPN) 连接的性能。
+对于开发/测试或概念证明，混合云测试环境使用本地 Internet 连接和公共 IP 地址之一，逐步引导你设置可正常工作的跨界 Azure 虚拟网络 (VNet)。完成后，可以执行应用程序开发和测试、用简化的 IT 工作负荷进行试验，以及测量相对于你在 Internet 上的位置的站点到站点虚拟专用网络 (VPN) 连接的性能。
+
+> [AZURE.NOTE]这些文章目前着重于如何在服务管理中创建虚拟机、虚拟网络和其他资源。
 
 ## 混合云基本配置
 
@@ -54,5 +52,6 @@
 
 [在 Windows Azure 中部署 Office 365 目录同步 (DirSync)](https://technet.microsoft.com/zh-CN/library/dn635310.aspx)
 
+[Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-<!--HONumber=53-->
+<!---HONumber=70-->

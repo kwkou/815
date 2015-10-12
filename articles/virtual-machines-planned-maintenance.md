@@ -1,8 +1,17 @@
-<properties pageTitle="Azure 虚拟机的计划内维护" description="了解什么是 Azure 计划内维护以及它如何影响正在 Azure 中运行的虚拟机。" metaKeywords="" services="virtual-machines" documentationCenter="" authors="kenazk" manager="timlt" />
-<tags  
+<properties
+	pageTitle="Azure 虚拟机的计划内维护"
+	description="了解什么是 Azure 计划内维护以及它如何影响正在 Azure 中运行的虚拟机。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="kenazk"
+	manager="timlt"
+	editor=""/>
+
+<tags
 	ms.service="virtual-machines"
-	ms.date="06/29/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="07/23/2015"
+	wacn.date="09/18/2015"/>
+
 
 # Azure 虚拟机的计划内维护
 
@@ -27,11 +36,12 @@
 
 多实例配置可提供冗余，若要确保应用程序的可用性，建议采用此配置。可用性集中的所有虚拟机应几乎相同，并且对应用程序具有相同的用途。
 
-有关配置虚拟机的高可用性的详细信息，请参阅<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-manage-availability/">管理虚拟机的可用性</a>。
+有关配置虚拟机的高可用性的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-manage-availability)。
 
 相反，单实例配置用于不在一个可用性集中的独立虚拟机。这些虚拟机不符合服务级别协议 (SLA) 的要求，SLA 要求在同一个可用性集下部署两个或更多虚拟机。
 
-有关 SLA 的详细信息，请参阅[服务级别协议](http://www.windowsazure.cn/support/legal/sla)中的“云服务、虚拟机和虚拟网络”一节。
+有关 SLA 的详细信息，请参阅[服务级别协议](/support/legal/sla)中的“云服务、虚拟机和虚拟网络”一节。
+
 
 ## 多实例配置更新
 在计划内维护期间，Azure 平台会先更新多实例配置中托管的虚拟机集。这将导致这些虚拟机重新启动。
@@ -40,7 +50,7 @@
 
 基础 Azure 平台为可用性集中的每个虚拟机分配一个更新域和一个容错域。每个更新域是一组在相同时间范围内重新启动的虚拟机。每个容错域是一组共用一个通用电源和网络交换机的虚拟机。
 
-有关更新域和容错域的详细信息，请参阅<a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy">配置可用性集中的多个虚拟机以实现冗余</a>。
+有关更新域和容错域的详细信息，请参阅[配置可用性集中的多个虚拟机以实现冗余](/documentation/articles/virtual-machines-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)。
 
 为防止更新域同时脱机，将通过以下方式执行维护：关闭某个更新域中的所有虚拟机，向主机应用更新，重新启动虚拟机，然后继续对下一个更新域执行相同操作。更新完所有更新域之后，计划内维护事件即结束。
 
@@ -76,13 +86,13 @@ Azure 整理了一组区域对。在采用单实例配置的虚拟机的计划�
 美国中北部 | 美国中南部
 美国东部 | 美国西部
 美国东部 2 | 美国中部
-北欧 | 西欧
+欧洲北部 | 欧洲西部
 东南亚 | 东亚
-华东 | 华北
+中国东部 | 中国北部
 日本东部 | 日本西部
 巴西南部 | 美国中南部
 澳大利亚东南部 | 澳大利亚东部
-美国爱荷华州 | 美国弗吉尼亚州
+美国政府爱荷华州 | 美国政府弗吉尼亚州
 
 例如，在计划内维护期间，如果美国东部正在进行维护，Azure 就不会同时对美国西部执行更新。但是，北欧等其他区域可以与美国东部同时进行维护。
 
@@ -93,7 +103,7 @@ Azure 整理了一组区域对。在采用单实例配置的虚拟机的计划�
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /zh-cn/documentation/articles/virtual-machines-windows-tutorial/
-[了解计划内与计划外维护]: /zh-cn/documentation/articles/virtual-machines-manage-availability/#Understand-planned-versus-unplanned-maintenance/
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial
+[了解计划内与计划外维护]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=67-->
+<!---HONumber=70-->
