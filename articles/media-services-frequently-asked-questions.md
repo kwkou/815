@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/17/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 #常见问题  
@@ -35,10 +35,10 @@
 
 问：Azure 媒体服务是否支持存储图像？
 
-答：如果需要存储 JPEG 或 PNG 图像，应将其存储在 Azure Blob 存储中。除非你想要将图像与你的视频或音频资产相关联，否则将图像放入媒体服务帐户毫无益处。或者，你可能需要在视频编码器中将图像用作叠加。媒体服务编码器支持在视频上叠加图像，且它将 JPEG 和 PNG 列为支持的输入格式。有关详细信息，请参阅[创建叠加](https://msdn.microsoft.com/zh-cn/library/azure/dn640496.aspx)。
+答：如果需要存储 JPEG 或 PNG 图像，应将其存储在 Azure Blob 存储中。除非你想要将图像与你的视频或音频资产相关联，否则将图像放入媒体服务帐户毫无益处。或者，你可能需要在视频编码器中将图像用作叠加。媒体服务编码器支持在视频上叠加图像，且它将 JPEG 和 PNG 列为支持的输入格式。有关详细信息，请参阅[创建覆盖](https://msdn.microsoft.com/zh-cn/library/azure/dn640496.aspx)。
 
 问：如何将资产从一个媒体服务帐户复制到另一个媒体服务帐户？
 
 答：要将资产从一个媒体服务帐户复制到另一个，可使用 [Azure 媒体服务 .NET SDK 扩展](https://github.com/Azure/azure-sdk-for-media-services-extensions/)存储库中提供的 [IAsset.Copy](https://github.com/Azure/azure-sdk-for-media-services-extensions/blob/dev/MediaServices.Client.Extensions/IAssetExtensions.cs#L354) 扩展方法。有关详细信息，请参阅[此](https://social.msdn.microsoft.com/Forums/azure/28912d5d-6733-41c1-b27d-5d5dff2695ca/migrate-media-services-across-subscription?forum=MediaServices)论坛线程。
 
-<!---HONumber=67-->
+<!---HONumber=71-->

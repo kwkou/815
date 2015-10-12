@@ -8,14 +8,11 @@
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-    ms.date="05/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 #如何：管理存储中的资产
-
-本文是[媒体服务点播视频工作流](/documentation/articles/media-services-video-on-demand-workflow)和[媒体服务实时流式处理工作流](/documentation/articles/media-services-live-streaming-workflow)系列的一部分。
 
 
 创建媒体资产后，可以在服务器上访问并管理这些资产。还可以在服务器上管理属于媒体服务的其他对象，包括作业、任务、访问策略、定位器，等等。
@@ -82,4 +79,4 @@
 
  
 
-<!---HONumber=67-->
+<!---HONumber=71-->

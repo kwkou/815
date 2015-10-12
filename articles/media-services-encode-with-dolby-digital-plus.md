@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Dolby Digital Plus 对媒体进行编码" 
+	pageTitle="使用 Dolby Digital Plus 编码媒体" 
 	description="本主题介绍如何使用 Dolby Digital Plus 对媒体进行编码。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,23 +9,23 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"  
+	wacn.date="10/03/2015"/>
 
-#使用 Dolby Digital Plus 对媒体进行编码
+#使用 Dolby Digital Plus 编码媒体
 
 Azure 媒体编码器支持 **Dolby® Digital Plus** 编码。Dolby® Digital Plus 或高级 AC-3 (E-AC-3) 是一种专为不断进化的媒体设计的高级环绕声音频编解码器。从家庭影院和 PC 到手机和在线流式处理，都可使用 Dolby Digital Plus 来定义高保真音频。你将获得著名的涵盖所有娱乐的杜比影院体验。Dolby Digital Plus 基于核心 Dolby Digital 技术，该技术是影院、广播和家庭影院环绕声的公认标准。随着移动设备数量的不断增加，Dolby Digital Plus 也逐渐成为移动娱乐的标准。它推出的具有音频增强功能的高级新技术可提供更优良的音质，并可进一步节省带宽。它的中断会更少（即使在带宽有限的情况下），为你提供优质的内容。
 
 
-##将 Azure 媒体编码器设置为使用 Dolby Digital Plus 进行编码
+##将 Azure Media Encoder 设置为使用 Dolby Digital Plus 进行编码
 
-###获取 Azure 媒体编码器处理器 
+###获取 Azure Media Encoder 处理器 
 
-Azure 媒体编码器支持 Dolby Digital Plus。若要获取对 **Azure 媒体编码器**的引用，请参阅[获取媒体处理器](/documentation/articles/media-services-get-media-processor)主题。
+Azure Media Encoder 支持 Dolby Digital Plus。若要获取对 **Azure 媒体编码器**的引用，请参阅[获取媒体处理器](/documentation/articles/media-services-get-media-processor)主题。
 
 ###<a id="configure_preset"></a>配置 Azure 媒体编码器设置
 
-当编码设置配置为与 Azure 媒体编码器搭配使用时，可以使用各种由易记字符串表示的预定义预设。Dolby Digital Plus 编码器提供了丰富的控件，有关详细信息，请参阅[<DolbyDigitalPlusAudioProfile>](https://msdn.microsoft.com/zh-cn/library/azure/dn296500.aspx)。因此，并没有任何使用此编解码器的预建字符串预设。你必须在 XML 文件中指定所需的编码器设置，然后将此数据与你的任务一起提交，如以下代码示例所示：
+当编码设置配置为与 Azure Media Encoder 搭配使用时，可以使用各种由易记字符串表示的预定义预设。Dolby Digital Plus 编码器提供了丰富的控件，有关详细信息，请参阅[<DolbyDigitalPlusAudioProfile>](https://msdn.microsoft.com/zh-cn/library/azure/dn296500.aspx)。因此，并没有任何使用此编解码器的预建字符串预设。你必须在 XML 文件中指定所需的编码器设置，然后将此数据与你的任务一起提交，如以下代码示例所示：
 	
 	string configuration = File.ReadAllText(pathToXMLConfigFile));
 
@@ -40,7 +40,7 @@ Azure 媒体编码器支持 Dolby Digital Plus。若要获取对 **Azure 媒体�
 
 若要编码为 Dolby Digital Plus 5.1 多声道，请将 Codec 和 EncoderMode 属性设置为“DolbyDigitalPlus”。所编码的通道数使用 <DolbyDigitalPlusAudioProfile> 元素的 AudioCodingMode 属性指定。对于 5.1 多声道编码，请将 AudioCodingMode 设置为“Mode32”。
 
-以下 XML 预设包含一个完整的 Azure 媒体编码器 XML 预设，该预设可使用 H264 宽带 1080p 视频和 Dolby Digital Plus 5.1 多声道音频生成 MP4 文件。此预设还指定编码低频效果 (LFE) 通道，这是通过将 LFEOn 属性设置为 true 来指定的。任何未指定的属性将使用其默认值。
+以下 XML 预设包含一个完整的 Azure Media Encoder XML 预设，该预设可使用 H264 宽带 1080p 视频和 Dolby Digital Plus 5.1 多声道音频生成 MP4 文件。此预设还指定编码低频效果 (LFE) 通道，这是通过将 LFEOn 属性设置为 true 来指定的。任何未指定的属性将使用其默认值。
 
 此 XML 预设应传递到 **Azure 媒体编码器**，以创建[本](/documentation/articles/media-services-dotnet-encode-asset)主题中所述的编码作业（只不过，你应该传递整个 XML 预设，而不是预定义的预设字符串，如[此处](#configure_preset)所述）。
 
@@ -123,7 +123,7 @@ Azure 媒体编码器支持 Dolby Digital Plus。若要获取对 **Azure 媒体�
 
 ##编码成 Dolby Digital Plus 立体声
 
-若要编码为 Dolby Digital Plus 立体声，请将 Codec 和 EncoderMode 属性设置为“DolbyDigitalPlus”。所编码的频道数使用 AudioCodingMode 属性指定。对于立体声编码，请将 AudioCodingMode 设置为“Mode20”。以下 XML 预设示例显示了用于编码为 5.1 音频的 <DolbyDigitalPlusAudioProfile>。任何未指定的属性将使用其默认值。
+若要编码为 Dolby Digital Plus 立体声，请将 Codec 和 EncoderMode 属性设置为“DolbyDigitalPlus”。所编码的通道数使用 AudioCodingMode 属性指定。对于立体声编码，请将 AudioCodingMode 设置为“Mode20”。以下 XML 预设示例显示了用于编码为 5.1 音频的 <DolbyDigitalPlusAudioProfile>。任何未指定的属性将使用其默认值。
 
 此 XML 预设应传递到 **Azure 媒体编码器**，以创建[本](/documentation/articles/media-services-dotnet-encode-asset)主题中所述的编码作业（只不过，你应该传递整个 XML 预设，而不是预定义的预设字符串，如[此处](#configure_preset)所述）。
 
@@ -581,24 +581,24 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 <LoudnessMetering> 元素只能在 <DolbyDigitalPlusAudioProfile> 元素中指定。如果使用了 <LoudnessMetering> 元素，则不得使用 DialogNormalization 属性。如果同时使用 <LoudnessMetering> 元素和 DialogNormalization 属性，编码器会生成错误。LoudnessMetering 的所有属性都是可选的，编码器将默认使用 Dolby Laboratories, Inc. 建议的值。
 
-以下各节介绍了各个属性。
+以下部分介绍了各个属性。
 
 ###Mode 属性
 
 该属性确定响度计量模式。允许值包括：
 
  
-**ITU\_R\_BS\_1770\_2\_DI**（默认值）- 表示 ITU-R BS.1770-2 plus 对话智能
+**ITU\_R\_BS\_1770\_2_DI**（默认值）- 表示 ITU-R BS.1770-2 plus 对话智能
 
-**ITU\_R\_BS\_1770\_1\_DI** - 表示 ITU-R BS.1770-1 plus 对话智能
+**ITU\_R\_BS\_1770\_1_DI** - 表示 ITU-R BS.1770-1 plus 对话智能
 
-**ITU\_R\_BS\_1770\_2** - 表示 ITU-R BS.1770-2
+**ITU\_R\_BS\_1770_2** - 表示 ITU-R BS.1770-2
 
-**LEQA\_DI** - 表示 Leq(A) plus 对话智能
+**LEQA_DI** - 表示 Leq(A) plus 对话智能
 
 **注意：**
 
-** EBU R128** 模式可以通过 **ITU\_R\_BS\_1770\_2\_DI** 实现
+** EBU R128** 模式可以通过 **ITU\_R\_BS\_1770\_2_DI** 实现
 
 包括 **Leq(A)** 完全是出于历史原因的考虑，它只能用于特定的旧工作流
 
@@ -606,7 +606,7 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 ###SpeechThreshold 属性
 
-指定 DPLM 用来生成集成响度结果的语音阈值（例如，在语音选通、电平选通和无选通之间进行选择）。语音阈值设置范围是 0% 至 100%（以 1% 为增量）。此参数仅适用于 DPLM 配置为利用对话智能的模式的情况，也就是说，仅当模式设置为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1\_DI 时才能指定此参数。当模式为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1\_DI 时，默认值为 20%。此属性的值必须在范围 0、1 – 100 内设置。
+指定 DPLM 用来生成集成响度结果的语音阈值（例如，在语音选通、电平选通和无选通之间进行选择）。语音阈值设置范围是 0% 至 100%（以 1% 为增量）。此参数仅适用于 DPLM 配置为利用对话智能的模式的情况，也就是说，仅当模式设置为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1\_DI 时才能指定此参数。当模式为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1_DI 时，默认值为 20%。此属性的值必须在范围 0、1 – 100 内设置。
 
 ###TruePeakDCBlock 属性
 
@@ -636,7 +636,7 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 **DialogNormalization** - 从输入音频中测得的 DialNorm 值（单位为分贝），将嵌入到输出 DD+ 流中，范围为 {-31, -30, …, -1} dB。
 
-**IntegratedLoudness** - 由 DPLM 测得的集成响度，范围是 -70 到 +10 LKFS/dBFS（仅当模式设置为 LEQA\_DI 时才使用 dBFS）。
+**IntegratedLoudness** - 由 DPLM 测得的集成响度，范围是 -70 到 +10 LKFS/dBFS（仅当模式设置为 LEQA_DI 时才使用 dBFS）。
 
 **IntegratedLoudnessGatingMethod** - 有效值为：0 – 无/无选通；1 – 语音选通；2 – 电平选通。
 
@@ -646,4 +646,4 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 **TruePeak** - 此结果包含自重置计量以来任何通道内的最大绝对真实峰值。有关真实峰值的说明，请参阅 ITU‐R BS.1770‐2。值范围可以是 -70 至 12.04 dBTP。
 
-<!---HONumber=67-->
+<!---HONumber=71-->

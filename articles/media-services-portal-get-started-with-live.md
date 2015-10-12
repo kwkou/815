@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用管理门户创建从本地编码器接收多比特率实时流的通道" 
-	description="本教程将指导你完成实施一个基本 Media Services 实时流式处理应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。" 
+	description="本教程将指导你完成实施一个基本媒体服务实时流式处理应用程序的步骤，在该应用程序中，某个通道将从本地实时编码器接收多比特率实时流。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="04/16/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用管理门户创建从本地编码器接收多比特率实时流的通道
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
-本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个**通道**将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](../media-services-channels-overview.md)。
+本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个**通道**将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](/documentation/articles/media-services-channels-overview)。
 
 在本教程中，将使用 Azure 管理门户完成以下任务：
 
@@ -33,22 +33,22 @@
 ##先决条件
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](azure.microsoft.com)。
-- 一个 Media Services 帐户。若要创建 Media Services 帐户，请参阅[创建帐户](media-services-create-account.md)。
+- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/documentation/articles/azure.microsoft.com)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](media-services-create-account)。
 - 可以发送多比特率实时流的摄像头和编码器。
 
 
 ##使用门户配置流式处理终结点
 
-使用 Azure Media Services 时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。Media Services 支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-使用实时流时，本地实时编码器（在本例中为 Wirecast）会将多比特率实时流引入你的通道。当用户请求流时，Media Services 会使用动态打包将源流重新打包成自适应比特率流（HLS、DASH 或平滑流）。
+使用实时流时，本地实时编码器（在本例中为 Wirecast）会将多比特率实时流引入你的通道。当用户请求流时，媒体服务会使用动态打包将源流重新打包成自适应比特率流（HLS、DASH 或平滑流）。
 
 若要利用动态打包，你需要获取计划从中传送内容的**流式处理终结点**的至少一个流式处理单元。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **Media Services**。然后，单击 Media Services 的名称。
+1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -63,7 +63,7 @@
 
 	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [Media Services 定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
 
 
 ##创建通道
@@ -177,7 +177,7 @@
 
 有关传送内容的详细信息，请参阅[传送内容](/documentation/articles/media-services-deliver-content-overview)。
 
-你可以使用 [AMS 播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
+你可以使用 [AMS 播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
 
 ##清理
 
@@ -189,16 +189,9 @@
 
 
 
-##后续步骤
-
-了解有关生成实时传送视频流应用程序的详细信息[生成实时传送视频流应用程序](/documentation/articles/media-services-live-streaming-workflow)
-
-<!-- Anchors. -->
-
-
 <!-- URLs. -->
 [Management Portal]: http://manage.windowsazure.cn/
 
 <!-- Images -->
 
-<!---HONumber=67-->
+<!---HONumber=71-->

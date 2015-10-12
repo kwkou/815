@@ -9,29 +9,28 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/05/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 
 #动态加密：配置内容密钥授权策略 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)]
 
-本文是[媒体服务点播视频工作流](/documentation/articles/media-services-video-on-demand-workflow)和[媒体服务实时流式处理工作流](/documentation/articles/media-services-live-streaming-workflow)系列的一部分。
 
 ##概述
 
-借助 Microsoft Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady DRM 动态加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
+借助 Windows Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady DRM 动态加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
 
 如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-rest-create-contentkey)所述），并且配置密钥的授权策略（如本文所述）。
 
-当前，你可以加密以下流格式：HLS、MPEG DASH 和平滑流式处理。无法加密 HDS 流格式或渐进式下载。
+当前你可以加密以下流格式：HLS、MPEG DASH 和平滑流。无法加密 HDS 流格式或渐进式下载。
 
-当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。若要解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
+当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：**开放**、**令牌**限制或 **IP** 限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用**简单 Web 令牌** ([SWT](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2)) 格式和 **JSON Web 令牌**(JWT) 格式的令牌。
 
-媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Microsoft Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名（如本文所述）。如果令牌有效，而且令牌中的声明与为内容密钥配置的声明相匹配，则媒体服务密钥传送服务会将加密密钥返回到客户端。
+媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Windows Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名（如本文所述）。如果令牌有效，而且令牌中的声明与为内容密钥配置的声明相匹配，则媒体服务密钥传送服务会将加密密钥返回到客户端。
 
 有关详细信息，请参阅
 
@@ -43,8 +42,8 @@
 
 ###请注意以下事项：
 
-- 若要使用动态打包和动态加密，必须确保至少有一个串流保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。 
-- 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset)。  
+- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。 
+- 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset)。  
 - 使用 **AssetCreationOptions.StorageEncrypted** 选项上载资产并对其进行编码。
 - 如果你打算创建需要相同策略配置的多个内容密钥，我们强烈建议你创建单个授权策略，并将其重复用于多个内容密钥。
 - 密钥传送服务将 ContentKeyAuthorizationPolicy 及其相关对象（策略选项和限制）缓存 15 分钟。如果你创建 ContentKeyAuthorizationPolicy 并指定使用“令牌”限制，然后对其进行测试，再将策略更新为“开放”限制，则现有策略切换到“开放”版本的策略需要大约 15 分钟。
@@ -57,7 +56,7 @@
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到一个 301 重定向，它指定另一个媒体服务 URI。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
 
 
 ###开放限制
@@ -468,4 +467,4 @@
 ##后续步骤
 在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)主题。
 
-<!---HONumber=67-->
+<!---HONumber=71-->

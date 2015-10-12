@@ -1,31 +1,34 @@
 <properties 
-	pageTitle="使用 castLabs 将 DRM 许可证传送到 Azure Media Services" 
-	description="本文介绍如何使用 Azure Media Services (AMS) 传送 AMS 使用 PlayReady 和 Widevine DRM 动态加密的流。PlayReady 许可证来自 Media Services PlayReady 许可证服务器，而 Widevine 许可证则由 castLabs 许可证服务器传送。" 
+	pageTitle="使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务" 
+	description="本文介绍如何使用 Azure 媒体服务 (AMS) 传送 AMS 使用 PlayReady 和 Widevine DRM 动态加密的流。PlayReady 许可证来自媒体服务 PlayReady 许可证服务器，而 Widevine 许可证则由 castLabs 许可证服务器传送。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags ms.service="media-services" ms.date="05/12/2015" wacn.date="06/16/2015"/> 
+<tags 
+	ms.service="media-services" 
+	ms.date="08/11/2015"  
+	wacn.date="10/03/2015"/>
 
 
-#使用 castLabs 将 DRM 许可证传送到 Azure Media Services
+#使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务
 
 ##概述
 
-本文介绍如何使用 Azure Media Services (AMS) 传送 AMS 使用 PlayReady 和 Widevine DRM 动态加密的流。PlayReady 许可证来自 Media Services PlayReady 许可证服务器，而 Widevine 许可证则由 **castLabs** 许可证服务器传送。
+本文介绍如何使用 Azure 媒体服务 (AMS) 传送 AMS 使用 PlayReady 和 Widevine DRM 动态加密的流。PlayReady 许可证来自媒体服务 PlayReady 许可证服务器，而 Widevine 许可证则由 **castLabs** 许可证服务器传送。
 
-下图演示了高级 Azure Media Services 和 castLabs 集成体系结构。
+下图演示了高级 Azure 媒体服务和 castLabs 集成体系结构。
 
-![“缩放”页](./media/media-services-castlabs-integration/media-services-castlabs-integration.png)
+![集成](./media/media-services-castlabs-integration/media-services-castlabs-integration.png)
 
 ##典型的系统设置
 
 - 媒体内容存储在 AMS 中。
 - 内容密钥的密钥 ID 存储在 castLabs 和 AMS 中。
 - castLabs 和 AMS 均内置了令牌身份验证。以下部分讨论身份验证令牌。 
-- 当客户端请求流式传输视频时，内容将使用**常用加密** (CENC) 动态加密，并由 AMS 动态打包到任何（或所有）指定的协议：平滑流、HLS 或 DASH。 
+- 当客户端请求流式传输视频时，内容将使用**常用加密** (CENC) 动态加密，并由 AMS 动态打包成平滑流和 DASH。我们还针对 HLS 流式处理协议提供 PlayReady M2TS 基本流加密。
 - PlayReady 许可证从 AMS 许可证服务器检索，而 Widevine 许可证则从 castLabs 许可证服务器检索。 
 - Media Player 将自动根据客户端平台功能决定要提取哪个许可证。 
 
@@ -59,7 +62,7 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 
 ##示例解决方案设置 
 
- [示例解决方案](https://github.com/AzureMediaServicesSamples/CastlabsIntegration)由两个项目组成：
+[示例解决方案](https://github.com/AzureMediaServicesSamples/CastlabsIntegration)由两个项目组成：
 
 -	可用于对 PlayReady 和 Widevine 的已引入资源设置 DRM 限制的控制台应用程序。
 -	分发令牌的 Web 应用程序，可将其视为 STS 的非常简化版本。
@@ -88,10 +91,10 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 
 ##播放视频
 
-若要播放使用常用加密（PlayReady 和 Widevine）加密的视频，可以使用 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。运行控制台应用程序时，将回显内容密钥 ID 和清单 URL。
+若要播放使用常用加密 (PlayReady) 加密的视频，可以使用 [Azure Media Player](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。运行控制台应用程序时，将回显内容密钥 ID 和清单 URL。
 
 1.	打开新选项卡并启动 STS：http://[yourStsName].chinacloudsites.cn/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid]。
-2.	转到 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+2.	转到 [Azure Media Player](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
 3.	粘贴到流 URL 中。
 4.	单击**“高级选项”**复选框。
 5.	在**“保护”**下拉列表中选择 PlayReady。
@@ -105,4 +108,4 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 
 2.	castLab 许可证服务器不需要在令牌前面加“Bearer=”前缀。因此，请在提交令牌之前删除该前缀。
 
-<!---HONumber=60-->
+<!---HONumber=71-->

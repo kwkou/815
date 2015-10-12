@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何创建媒体处理器 - Azure" 
-	description="了解如何创建一个媒体处理器组件，用于为 Azure 媒体服务的媒体内容进行编码、转换格式、加密或解密。" 
+	description="了解如何创建一个媒体处理器组件用来为 Azure 媒体服务编码、转换格式、加密或解密媒体内容。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -9,13 +9,16 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/12/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #如何：获取媒体处理器实例
 
-本文是[媒体服务点播视频工作流](/documentation/articles/media-services-video-on-demand-workflow)系列教程的一部分。
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-get-media-processor)
+- [REST](/documentation/articles/media-services-rest-get-media-processor)
 
 ##概述
 
@@ -23,53 +26,15 @@
 
 下表提供了每个可用媒体处理器的名称和说明。
 
-<table border="2" cellspacing="0" cellpadding="5" style="border: 2px solid #000000;">
-  <thead>
-    <tr>
-       <th>媒体处理器名称</th>
-       <th>说明</th>
-	<th>更多信息</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-       <td>Azure 媒体编码器</td>
-       <td>允许你使用媒体编码器运行编码任务。</td>
-       <td><a href="http://msdn.microsoft.com/zh-cn/library/jj129582.aspx">Azure 媒体编码器的任务预设字符串</a></td>
-    </tr>
-<!--    <tr>
-       <td>媒体编码器高级工作流</td>
-       <td>允许你使用媒体编码器高级工作流运行编码任务。</td>
-       <td><a href="http://www.windowsazure.cn/documentation/articles/media-services-encode-with-premium-workflow/">使用媒体编码器高级工作流进行编码。</a></td>
-    </tr>    -->
-	<tr>
-        <td>Azure Media Indexer</td>
-        <td>使媒体文件和内容可搜索，以及生成隐藏式字幕跟踪和关键字。</td>
-		<td><a href="http://www.windowsazure.cn/documentation/articles/media-services-index-content/">使用 Azure Media Indexer 为媒体文件编制索引</a>。</td>
-    </tr>
-    <tr>
-        <td>Windows Azure Media Packager</td>
-        <td>允许你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时传送视频流 (HLS) 格式。</td>
-		<td><a href="http://msdn.microsoft.com/zh-cn/library/hh973635.aspx">Azure Media Packager 的任务预设字符串</a></td>
-    </tr>
-    <tr>
-        <td>Windows Azure Media Encryptor</td>
-        <td>允许你使用 PlayReady 保护加密媒体资产。</td>
-        <td><a href="http://msdn.microsoft.com/zh-cn/library/hh973610.aspx">Azure Media Packager 的任务预设字符串</a></td>
-    </tr>
-	<tr>
-		<td>Azure Media Hyperlapse（预览）</td>
-		<td>使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。</td>
-		<td><a href="http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db">Azure Media Hyperlapse</a></td>
-	</tr>
-    <tr>
-        <td>存储解密</td>
-        <td>允许你使用存储加密来解密已加密的媒体资产。</td>
-		<td>不适用</td>
-    </tr>  </tbody>
-</table>
-
-<br />
+媒体处理器名称|说明|更多信息
+---|---|---
+Azure Media Encoder|让你使用 Azure 媒体编码器运行编码任务。|[Azure Media Encoder](/documentation/articles/media-services-encode-asset#azure_media_encoder)
+媒体编码器标准版|让你使用媒体编码器标准版运行编码任务。|[Azure Media Encoder](/documentation/articles/media-services-encode-asset#media_encoder_standard)
+Azure Media Indexer| 使媒体文件和内容可搜索，以及生成隐藏字幕跟踪和关键字。|[使用 Azure Media Indexer 为媒体文件编制索引](media-services-index-content)。
+Azure Media Hyperlapse（预览）|使你能够通过视频防抖动功能消除视频中的“晃动”。也可使将内容制作为可用剪辑的速度加快。|		[Azure Media Hyperlapse](http://azure.microsoft.com/blog/?p=286281&preview=1&_ppp=61e1a0b3db)</a>
+存储解密| 让你解密使用存储加密技术加密的媒体资产。|不适用
+Windows Azure Media Packager|让你将媒体资产从 .mp4 格式转换为平滑流式处理格式。还可让你将媒体资产从平滑流式处理格式转换为 Apple HTTP 实时流 (HLS) 格式。|[Azure Media Packager 的任务预设字符串](http://msdn.microsoft.com/library/hh973635.aspx)
+Windows Azure Media Encryptor|让你使用 PlayReady 保护加密媒体资产。|[Azure Media Packager 的任务预设字符串](http://msdn.microsoft.com/library/hh973610.aspx)
 
 ##获取 MediaProcessor
 
@@ -77,7 +42,7 @@
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到一个 301 重定向，它指定另一个媒体服务 URI。必须根据[使用 REST API 连接到媒体服务](/zh-cn/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
 
 
 
@@ -93,7 +58,7 @@
 	Accept-Charset: UTF-8
 	User-Agent: Microsoft ADO.NET Data Services
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=juliakoams1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1423635565&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=6zwXEn7YJzVJbVCNpqDUjBLuE5iUwsdJbWvJNvpY3%2b8%3d
-	x-ms-version: 2.8
+	x-ms-version: 2.11
 	Host: media.chinacloudapi.cn
 	
 响应：
@@ -122,4 +87,4 @@
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
 [How to: Connect to Media Services Programmatically]: /documentation/articles/media-services-rest-connect_programmatically
 
-<!---HONumber=67-->
+<!---HONumber=71-->

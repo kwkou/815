@@ -10,26 +10,30 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 #使用 REST API 管理媒体服务实体
 
-Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
+> [AZURE.SELECTOR]
+- [REST](/documentation/articles/media-services-rest-manage-entities)
+- [.NET](/documentation/articles/media-services-dotnet-manage-entities)
 
-- [添加实体](#Adding-entities) 
-- [查询实体](#Querying-entities) 
-- [更新实体](#Updating-entities) 
-- [删除实体](#Deleting-entities) 
+Windows Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
 
->[AZURE.NOTE]使用 Media Services REST API 时，需注意以下事项：
+- 添加实体 
+- 查询实体 
+- 更新实体 
+- 删除实体 
+
+>[AZURE.NOTE]使用媒体服务 REST API 时，需注意以下事项：
 >
->访问 Media Services 中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
+>访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
 >在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
 
 
-##<a id="Adding-entities"></a>添加实体
+##添加实体
 
 媒体服务中的每个实体都会通过 POST HTTP 请求添加到实体集（如资产）中。
 
@@ -40,7 +44,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
 	Host: media.chinacloudapi.cn
 	Content-Length: 74
@@ -49,7 +53,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	{"Name": "DownloadPolicy", "DurationInMinutes" : "300", "Permissions" : 1}
 
  
-##<a id="Querying-entities"></a>查询实体
+##查询实体
 
 查询和列出实体非常简单，仅涉及 GET HTTP 请求和可选的 OData 操作。下面的示例会检索一个包含所有 MediaProcessor 实体的列表。
 
@@ -58,7 +62,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.chinacloudapi.cn
 
@@ -69,7 +73,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.5
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336907474&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=OpuY0CeTylqFFcFaP4pKUVGesT4PGx4CP55zDf2zXnc%3d
 	Host: media.chinacloudapi.cn
 
@@ -78,7 +82,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336907474&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=OpuY0CeTylqFFcFaP4pKUVGesT4PGx4CP55zDf2zXnc%3d
 	Host: media.chinacloudapi.cn
 
@@ -89,7 +93,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.chinacloudapi.cn
 	The following example returns all JobTemplates with the name "SampleTemplate."
@@ -98,14 +102,14 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.chinacloudapi.cn
 
 >[AZURE.NOTE]媒体服务不支持 $expand 操作以及“LINQ 注意事项（WCF 数据服务）”中所述的不受支持的 LINQ 方法。
 
 
-##<a id="Updating-entities"></a>更新实体
+##更新实体
 
 根据实体类型及其所处的状态，可以通过 PATCH、PUT 或 MERGE HTTP 请求更新该实体上的属性。有关这些操作的详细信息，请参阅 [PATCH/PUT/MERGE](https://msdn.microsoft.com/zh-cn/library/dd541276.aspx)。
 
@@ -116,7 +120,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337083279&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=DMLQXWah4jO0icpfwyws5k%2b1aCDfz9KDGIGao20xk6g%3d
 	Host: media.chinacloudapi.cn
 	Content-Length: 21
@@ -124,7 +128,7 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	
 	{"Name" : "NewName" }
 
-##<a id="Deleting-entities"></a>删除实体
+##删除实体
 
 可以使用 DELETE HTTP 请求在媒体服务中删除实体。删除实体的顺序可能很重要，具体视实体而定。例如，资产等实体要求先撤消（或删除）引用该特定资产的所有定位符，然后再删除资产。
 
@@ -135,9 +139,9 @@ Microsoft Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9s
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
 	Host: media.chinacloudapi.cn
 	Content-Length: 0
 
-<!---HONumber=67-->
+<!---HONumber=71-->

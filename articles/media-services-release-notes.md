@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="07/20/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"  
+	wacn.date="10/03/2015"/>
 
 # Azure 媒体服务发行说明
 
@@ -63,7 +63,7 @@
 
 宣布媒体编码器标准版公开上市。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)。
 
-媒体编码器标准版使用[本](http://go.microsoft.com/fwlink/?LinkId=618336)部分中所述的预设值。<!--注意，当使用预设值进行 4K 编码时，应获取**高级版**保留单位类型。有关详细信息，请参阅[如何缩放编码](media-services-portal-encoding-units)。-->
+媒体编码器标准版使用[本](http://go.microsoft.com/fwlink/?LinkId=618336)部分中所述的预设值。
 
 
 ###媒体服务 .NET SDK 更新
@@ -74,7 +74,6 @@ Azure 媒体服务 .NET SDK 当前版本为 3.4.0.0。此版本中增加了以�
 - 实现了对动态筛选器的支持。
 - 实现了允许用户在删除资产时保留存储容器的功能。
 - 修复了与频道中的重试策略相关的 Bug。
-<!--- 启用了**媒体编码器高级版工作流**。-->
 
 ##<a id="june_changes_15"></a>2015 年 6 月版本
 
@@ -103,7 +102,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.3.0.0。此版本中增加了以�
 ###媒体服务一般更新
 
 - [宣布推出 Azure 媒体播放器](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player/)。
-- 自媒体服务 REST 2.10 起，频道被配置为插入 RTMP 协议，并使用主要和辅助插入 URL 进行创建。有关详细信息，请参阅[频道插入配置](media-services-manage-channels-overview.md#channel_input)
+- 自媒体服务 REST 2.10 起，频道被配置为插入 RTMP 协议，并使用主要和辅助插入 URL 进行创建。有关详细信息，请参阅[频道插入配置](/documentation/articles/media-services-manage-channels-overview#channel_input)
 - Azure 媒体索引器更新
 	- 支持西班牙语
 	- 新增配置 XML 示例
@@ -127,8 +126,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.2.0.0。
 ### 媒体服务一般更新
 
 - 媒体服务现在提供 Azure CDN 集成。为了支持集成，将 **CdnEnabled** 属性添加到了 **StreamingEndpoint**。**CdnEnabled** 可用于版本 2.9 以上的 REST API（有关详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx)）。**CdnEnabled** 可用于版本 3.1.0.2 以上的 NET SDK（有关详细信息，请参阅 [StreamingEndpoint]）https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10).aspx))。
-<!--- 宣布推出**媒体编码器高级版工作流**。有关详细信息，请参阅[在 Azure 媒体服务中引入高级版编码](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)。-->
- 
+
 
 
 ##<a id="february_changes_15"></a>2015 年 2 月版本
@@ -177,7 +175,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 - 媒体服务现在允许你通过 SSL 连接插入实时平滑流式处理 (FMP4) 内容。若要通过 SSL 进行摄取，请确保将摄取 URL 更新为 HTTPS。有关实时流式处理的详细信息，请参阅[使用 Azure 媒体服务实时流式处理]。
 - 注意，当前无法通过 SSL 连接插入 RTMP 实时流。
 - 你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
-- 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请[创建新的流式处理终结点](/zh-cn/documentation/articles/media-services-manage-origins/)。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
+- 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请[创建新的流式处理终结点](/documentation/articles/media-services-manage-origins/)。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
    
 ##<a id="october_changes_14"></a>2014 年 10 月版本
 
@@ -533,7 +531,7 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [流式处理存储加密内容]: http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx
 [Azure Management Portal]: https://manage.windowsazure.cn
 [动态打包]: http://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx
-[Nick Drouin 的博客]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
+[Nick Drouin 的博客]: http://blog-ndrouin.chinacloudsites.cn/hls-v3-new-old-thing/
 [使用 PlayReady 保护平滑流]: http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx
 [适用于 .NET 的媒体服务 SDK 中的重试逻辑]: http://msdn.microsoft.com/zh-cn/library/azure/dn745650.aspx
 [Grass Valley 宣布通过云对 EDIUS 7 进行流式处理]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
@@ -549,4 +547,4 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [跨多个存储帐户管理媒体服务资产]: http://msdn.microsoft.com/zh-cn/library/azure/dn271889.aspx
 [处理媒体服务作业通知]: http://msdn.microsoft.com/zh-cn/library/azure/dn261241.aspx
 
-<!---HONumber=67-->
+<!---HONumber=71-->

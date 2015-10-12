@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 REST 创建 ContentKey" 
-	description="了解如何创建可安全访问资产的内容密钥。" 
+	description="了解如何创建提供对资产进行安全访问的内容密钥。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -9,13 +9,16 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="04/15/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用 REST 创建 ContentKey
 
-本文是[媒体服务点播视频工作流](/documentation/articles/media-services-video-on-demand-workflow)和[媒体服务实时流式处理工作流](/documentation/articles/media-services-live-streaming-workflow)系列的一部分。
+
+> [AZURE.SELECTOR]
+- [REST](/documentation/articles/media-services-rest-create-contentkey)
+- [.NET](/documentation/articles/media-services-dotnet-create-contentkey)
 
 媒体服务允许你创建新资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
 
@@ -65,7 +68,7 @@
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到一个 301 重定向，它指定另一个媒体服务 URI。必须根据[使用 REST API 连接到媒体服务](/zh-cn/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
 
 ##检索 ProtectionKeyId 
  
@@ -101,7 +104,7 @@
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Wed, 04 Feb 2015 02:42:52 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Edm.String","value":"7D9BB04D9D0A4A24800CADBFEF232689E048F69C"}
+	{"odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#Edm.String","value":"7D9BB04D9D0A4A24800CADBFEF232689E048F69C"}
 
 ##检索 ProtectionKeyId 的 ProtectionKey
 
@@ -137,12 +140,12 @@
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Thu, 05 Feb 2015 07:52:30 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#Edm.String",
+	{"odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#Edm.String",
 	"value":"MIIDSTCCAjGgAwIBAgIQqf92wku/HLJGCbMAU8GEnDANBgkqhkiG9w0BAQQFADAuMSwwKgYDVQQDEyN3YW1zYmx1cmVnMDAxZW5jcnlwdGFsbHNlY3JldHMtY2VydDAeFw0xMjA1MjkwNzAwMDBaFw0zMjA1MjkwNzAwMDBaMC4xLDAqBgNVBAMTI3dhbXNibHVyZWcwMDFlbmNyeXB0YWxsc2VjcmV0cy1jZXJ0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzR0SEbXefvUjb9wCUfkEiKtGQ5Gc328qFPrhMjSo+YHe0AVviZ9YaxPPb0m1AaaRV4dqWpST2+JtDhLOmGpWmmA60tbATJDdmRzKi2eYAyhhE76MgJgL3myCQLP42jDusWXWSMabui3/tMDQs+zfi1sJ4Ch/lm5EvksYsu6o8sCv29VRwxfDLJPBy2NlbV4GbWz5Qxp2tAmHoROnfaRhwp6WIbquk69tEtu2U50CpPN2goLAqx2PpXAqA+prxCZYGTHqfmFJEKtZHhizVBTFPGS3ncfnQC9QIEwFbPw6E5PO5yNaB68radWsp5uvDg33G1i8IT39GstMW6zaaG7cNQIDAQABo2MwYTBfBgNVHQEEWDBWgBCOGT2hPhsvQioZimw8M+jOoTAwLjEsMCoGA1UEAxMjd2Ftc2JsdXJlZzAwMWVuY3J5cHRhbGxzZWNyZXRzLWNlcnSCEKn/dsJLvxyyRgmzAFPBhJwwDQYJKoZIhvcNAQEEBQADggEBABcrQPma2ekNS3Wc5wGXL/aHyQaQRwFGymnUJ+VR8jVUZaC/U/f6lR98eTlwycjVwRL7D15BfClGEHw66QdHejaViJCjbEIJJ3p2c9fzBKhjLhzB3VVNiLIaH6RSI1bMPd2eddSCqhDIn3VBN605GcYXMzhYp+YA6g9+YMNeS1b+LxX3fqixMQIxSHOLFZ1G/H2xfNawv0VikH3djNui3EKT1w/8aRkUv/AAV0b3rYkP/jA1I0CPn0XFk7STYoiJ3gJoKq9EMXhit+Iwfz0sMkfhWG12/XO+TAWqsK1ZxEjuC9OzrY7pFnNxs4Mu4S8iinehduSpY+9mDd3dHynNwT4="}
 
 ##创建 ContentKey 
 
-检索 X.509 证书并使用其公钥加密内容密钥后，创建一个 **ContentKey** 实体并相应地设置其属性值。
+检索到 X.509 证书并使用其公钥加密你的内容密钥后，请创建一个 **ContentKey** 实体并相应地设置其属性值。
 
 创建内容密钥时必须设置的值之一是内容密钥类型。选择以下值之一。
 
@@ -210,7 +213,7 @@
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Wed, 04 Feb 2015 02:37:46 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeys/@Element",
+	{"odata.metadata":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/$metadata#ContentKeys/@Element",
 	"Id":"nb:kid:UUID:9c8ea9c6-52bd-4232-8a43-8e43d8564a99","Created":"2015-02-04T02:37:46.9684379Z",
 	"LastModified":"2015-02-04T02:37:46.9684379Z",
 	"ContentKeyType":1,
@@ -237,10 +240,10 @@
 	Host: media.chinacloudapi.cn
 
 	
-	{"uri":"https://wamsbayclus001rest-hs.cloudapp.net/api/ContentKeys('nb%3Akid%3AUUID%3A01e6ea36-2285-4562-91f1-82c45736047c')"}
+	{"uri":"https://wamsbayclus001rest-hs.chinacloudapp.cn/api/ContentKeys('nb%3Akid%3AUUID%3A01e6ea36-2285-4562-91f1-82c45736047c')"}
 
 响应：
 
 	HTTP/1.1 204 No Content
 
-<!---HONumber=67-->
+<!---HONumber=71-->

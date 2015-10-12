@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="07/08/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 #媒体编码器标准格式和编解码器
 
@@ -80,4 +80,4 @@
 
 [使用 Azure 媒体服务对按需内容进行编码](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=67-->
+<!---HONumber=71-->

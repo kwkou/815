@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何设置计算机以使用 .NET 进行媒体服务开发" 
-	description="了解使用适用于 .NET 的媒体服务 SDK 进行媒体服务开发所要满足的先决条件。此外，了解如何创建 Visual Studio 应用程序。" 
+	description="了解使用 Media Services SDK for .NET 进行媒体服务开发所要满足的先决条件。此外，了解如何创建 Visual Studio 应用程序。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 #使用 .NET 进行媒体服务开发 
 
@@ -46,9 +46,9 @@
 	
 		此时将显示“管理 NuGet 包”对话框。
 
-	3. 在联机库中，搜索 Azure 媒体服务扩展，选择“Azure 媒体服务 .NET SDK 扩展”，然后单击“安装”按钮。
+	3. 在“联机”库中，搜索 Azure MediaServices Extensions，选择“Azure Media Services .NET SDK Extensions”，然后单击“安装”按钮。
  
-		此时将修改项目并添加对媒体服务 .NET SDK 扩展、媒体服务 .NET SDK 和其他依赖程序集的引用。
+		此时将修改项目并添加对 Media Services .NET SDK Extensions、Media Services .NET SDK 和其他依赖程序集的引用。
 
 	4. 若要升级更干净的开发环境，请考虑启用 NuGet 包还原。有关详细信息，请参阅 [NuGet 包还原](http://docs.nuget.org/consume/package-restore)。
 
@@ -56,7 +56,7 @@
 
 	若要使用“管理引用”对话框添加引用，请执行以下操作：
 
-	1. 在“解决方案资源管理器”中，右键单击项目名称。然后，选择“添加”和“引用”。
+	1. 在解决方案资源管理器中，右键单击项目名称。然后，选择“添加”和“引用”。
 
 		此时将显示“管理引用”对话框。
 
@@ -70,7 +70,7 @@
 
 
 	<pre><code>
-&lt;configuration>
+	&lt;configuration>
     &lt;appSettings>
 	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
     	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
@@ -94,4 +94,4 @@
 现在，你可以开始开发媒体服务应用程序了。
  
 
-<!---HONumber=67-->
+<!---HONumber=71-->

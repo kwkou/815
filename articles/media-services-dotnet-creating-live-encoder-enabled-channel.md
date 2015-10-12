@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/27/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用 .NET SDK 可创建频道，以执行从单比特率到多比特率流的实时编码（预览版）
@@ -32,7 +32,7 @@
 
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](http://go.microsoft.com/fwlink/?LinkId=532824)。
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](http://go.microsoft.com/fwlink/?LinkId=532824)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -79,7 +79,7 @@
 以下是完成本教程所需具备的条件。
 
 - 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
-- 一个 Media Services 帐户。若要创建 Media Services 帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - Visual Studio 2010 SP1 或更高版本。
 - 可以发送单比特率实时流的摄像头和编码器。
 
@@ -88,12 +88,12 @@
 1. 使用 Visual Studio 创建控制台应用程序。
 1. 使用 Media Services NuGet 包将 Media Services SDK for .NET 添加到控制台应用程序。
 
-##连接到 Media Services
-最佳做法是，应使用 app.config 文件来存储 Media Services 名称和帐户密钥。
+##连接到媒体服务
+最佳做法是，应使用 app.config 文件来存储媒体服务名称和帐户密钥。
 
 >[AZURE.NOTE]若要查找名称和密钥值，请转到 Azure 门户，选择你的 Media Service 帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
  
-在 app.config 文件中添加 appSettings 部分，并设置 Media Services 帐户名称和帐户密钥的值。
+在 app.config 文件中添加 appSettings 部分，并设置媒体服务帐户名称和帐户密钥的值。
 
 
 	<?xml version="1.0"?>
@@ -494,6 +494,6 @@
 	
 ##相关主题
 
-[使用执行从单比特率到多比特率流的实时编码的频道](media-services-manage-live-encoder-enabled-channels.md)
+[使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)
 
-<!---HONumber=67-->
+<!---HONumber=71-->

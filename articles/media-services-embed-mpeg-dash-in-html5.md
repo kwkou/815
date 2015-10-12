@@ -7,7 +7,10 @@
 	services="media-services" 
 	documentationCenter=""/>
 
-<tags ms.service="media-services" ms.date="05/07/2015" wacn.date="08/29/2015"/>
+<tags 
+	ms.service="media-services" 
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用 DASH.js 在 HTML5 应用程序中嵌入 MPEG-DASH 自适应流式处理视频
@@ -99,4 +102,4 @@ Dash.js 是用 JavaScript 编写的开源 MPEG-DASH 视频播放器。其目标�
 
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
 
-<!---HONumber=67-->
+<!---HONumber=71-->

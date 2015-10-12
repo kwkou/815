@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/16/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 #<a id="managemediaservicesorigins"></a>如何在媒体服务帐户中管理流式处理终结点
@@ -19,9 +19,9 @@
 本文是[媒体服务点播视频工作流](/documentation/articles/media-services-video-on-demand-workflow)和[媒体服务实时传送视频流工作流](/documentation/articles/media-services-live-streaming-workflow)系列的一部分。
 
 
-在 Windows Azure 媒体服务中，**流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容交付网络 (CDN) 以进一步分发。媒体服务还提供无缝 Azure CDN 集成。StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。
+在 Windows Azure 媒体服务中，**流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。媒体服务还提供无缝 Azure CDN 集成。StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。
 
-此外，还可以通过调整缩放单位（也称为流式处理单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态包装](https://msdn.microsoft.com/library/azure/jj889436.aspx)、CDN 集成和高级配置在内的其他功能。
+此外，还可以通过调整扩展单元（也称为流单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态包装](https://msdn.microsoft.com/library/azure/jj889436.aspx)、CDN 集成和高级配置在内的其他功能。
 
 请注意，仅当 StreamingEndpoint 处于运行状态时才进行计费。
 
@@ -32,11 +32,11 @@
 
 可以使用 .NET SDK、REST API 或 Azure 管理门户添加或删除流式处理终结点。
 
-若要使用门户添加/删除流式处理终结点，请执行以下操作:
+若要使用门户添加/删除流式处理终结点，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击该媒体服务的名称。
+1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
 2. 选择“流式处理终结点”页。 
-3. 单击页面底部的“添加”或“删除”按钮。请注意，不能删除默认的流式处理终结点。 
+3. 单击页底部的“添加”或“删除”按钮。请注意，不能删除默认的流式处理终结点。 
 4. 单击“启动”按钮以启动流式处理终结点。 
 5. 单击要配置的流式处理终结点的名称。   
 
@@ -53,18 +53,18 @@
 
 若要使用门户更改流式处理单元数，请执行以下操作：
 
-1. 若要指定流式处理单元数，请选择“缩放”选项卡并移动“保留容量”滑块。
+1. 若要指定流式处理单元数，请选择“缩放”选项卡并移动**“保留容量”**滑块。
 
 	![“缩放”页](./media/media-services-manage-origins/media-services-origin-scale.png)
 
 4. 按“保存”按钮保存更改。
 
-	分配所有新的流式处理单元大约需要 20 分钟才能完成。
+	分配所有新的流式处理单位大约需要 20 分钟才能完成。
 
 	 
-	>[AZURE.NOTE]当前，将流式处理单元的任何正值设置回“无”可将按需流式处理功能禁用最多 1 小时。
+	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将按需流式处理功能禁用最多 1 小时。
 
-	>[AZURE.NOTE]为 24 小时期间指定的最大单元数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
+	>[AZURE.NOTE]为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
 	
 ##<a id="configure_streaming_endpoints"></a>配置流式处理终结点
 
@@ -95,7 +95,7 @@
 
 3. 指定 Akamai 签名标头身份验证的配置。
 
-4. 你可以为 Adobe Flash 客户端指定跨域访问策略（有关详细信息，请参阅[跨域策略文件规范](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)），以及为 Microsoft Silverlight 客户端指定客户端访问策略（有关详细信息，请参阅[跨域边界提供服务]https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx)）。
+4. 你可以为 Adobe Flash 客户端指定跨域访问策略（有关详细信息，请参阅[跨域策略文件规范](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)），以及为 Microsoft Silverlight 客户端指定客户端访问策略（有关详细信息，请参阅 [跨域边界提供服务](https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx)。
 
 5. 还可以通过单击“配置”按钮配置自定义主机名。有关详细信息，请参阅 [StreamingEndpont](https://msdn.microsoft.com/library/dn783468.aspx) 主题中的 **CustomHostNames** 属性。
 
@@ -113,7 +113,7 @@
 启用 Azure CDN 集成可能需要花费最多 90 分钟。在所有 CDN POP 中激活更改将花费最多两个小时。
 
 
-在下列所有 Azure 数据中心中启用了 CDN 集成：美国西部、美国东部、北欧、西欧、日本西部、日本东部、东南亚和东亚。
+在下列所有 Azure 数据中心中启用了 CDN 集成：美国西部、美国东部、欧洲北部、欧洲西部、日本西部、日本东部、亚洲东南部和亚洲东部。
 
 一旦启用，则将禁用下列配置：**自定义主机名**和**访问控制**。
 
@@ -123,11 +123,11 @@
 ###其他注意事项
 
 - 为流式处理终结点启用 CDN 时，客户端不能从原点直接请求内容。如果需要能够分别使用或不使用 CDN 测试内容，则可以创建另一个不启用 CDN 的流式处理终结点。
-- 流式处理终结点主机名在启用 CDN 后仍保持不变。启用 CDN 后，不需要对媒体服务工作流进行任何更改。例如，如果流式处理终结点主机名是 strasbourg.streaming.mediaservices.windows.net，则启用 CDN 后使用完全相同的主机名。
+- 流式处理终结点主机名在启用 CDN 后仍保持不变。启用 CDN 后，不需要对媒体服务工作流进行任何更改。例如，如果流式处理终结点主机名是 strasbourg.streaming.mediaservices.chinacloudapi.cn，则启用 CDN 后使用完全相同的主机名。
 - 对于新的流式处理终结点，只需通过创建新的终结点即可启用 CDN；对于现有流式处理终结点，则需要首先停止该终结点，然后再启用 CDN。
  
 
-有关详细信息，请参阅[通过 Azure CDN（内容交付网络）宣布 Azure 媒体服务集成](http://azure.microsoft.com/blog/2015/03/17/announcing-azure-media-services-integration-with-azure-cdn-content-delivery-network/)。
+有关详细信息，请参阅[通过 Azure CDN（内容传送网络）宣布 Azure 媒体服务集成](http://azure.microsoft.com/blog/2015/03/17/announcing-azure-media-services-integration-with-azure-cdn-content-delivery-network/)。
 
 
 [streaming-endpoint-enable-cdn]: ./media/media-services-manage-origins/media-services-origins-enable-cdn.png
@@ -135,4 +135,4 @@
 [configure-origin]: ./media/media-services-manage-origins/media-services-origins-configure.png
 [configure-origin-configure-custom-host-names]: ./media/media-services-manage-origins/media-services-configure-custom-host-names.png
 
-<!---HONumber=67-->
+<!---HONumber=71-->

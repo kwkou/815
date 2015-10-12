@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 #通过自定义任务预设操作编码任务 
 
@@ -179,51 +179,57 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 创建预设文件后必须执行以下操作：
 
 - 上载资产
-- 加载预设配置（请注意：下面的代码假定使用上述预设。）
+- 加载预设配置（请注意：以下代码假定使用上述预设。）
 - 创建作业
 - 获取对媒体服务编码器的引用
 - 创建一个任务，该任务指定输入资产、预设配置、媒体编码器和输出资产的集合
 - 提交作业
 
-下面的代码片段演示如何执行这些步骤：
+以下代码片段演示如何执行这些步骤：
 
 	static public void CreateOverlayJob()
 	{
-	_context = new CloudMediaContext(_accountName, _accountKey);
-	
-	       // Upload assets to overlay
-	       IAsset inputAsset1 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video1.mp4); // this is the input mezzanine
-	       IAsset inputAsset2 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video2.wmv);// this will be used as a video overlay
-	       IAsset inputAsset3 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video3.wmv); // this will be used as an audio overlay
-	
-	       // Load the preset configuration
-	       string presetFileName = "OverlayPreset.xml";
-	       string configuration = File.ReadAllText(presetFileName);
-	
-	       // Create a job
-	       IJob job = _context.Jobs.Create("A WAME overlay job, using " + presetFileName);
-	                 
-	// Get a reference to the media services encoder   
-	       IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
-	            
-	        // Create a task    
-	       ITask task = job.Tasks.AddNew("Encode Task for overlay, using " + presetFileName, processor, configuration, TaskOptions.None);
-	
-	    // Add the input assets
-	           task.InputAssets.Add(inputAsset1);
-	           task.InputAssets.Add(inputAsset2);
-	           task.InputAssets.Add(inputAsset3);
-	
-	     // Add the output asset
-	            task.OutputAssets.AddNew("Result of an overlay job, using " + presetFileName, AssetCreationOptions.None);
-	
-	     // Submit the job
-	            job.Submit();
+        // Create and cache the Media Services credentials in a static class variable.
+        _cachedCredentials = new MediaServicesCredentials(
+                        MediaServicesAccountName,
+                        MediaServicesAccountKey);
+        // Used the cached credentials to create CloudMediaContext.
+        _context = new CloudMediaContext(_cachedCredentials);
+
+
+		// Upload assets to overlay
+		IAsset inputAsset1 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video1.mp4); // this is the input mezzanine
+		IAsset inputAsset2 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video2.wmv);// this will be used as a video overlay
+		IAsset inputAsset3 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video3.wmv); // this will be used as an audio overlay
+		
+		// Load the preset configuration
+		string presetFileName = "OverlayPreset.xml";
+		string configuration = File.ReadAllText(presetFileName);
+		
+		// Create a job
+		IJob job = _context.Jobs.Create("A AME overlay job, using " + presetFileName);
+		         
+		// Get a reference to the media services encoder   
+		IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
+		    
+		// Create a task    
+		ITask task = job.Tasks.AddNew("Encode Task for overlay, using " + presetFileName, processor, configuration, TaskOptions.None);
+		
+		// Add the input assets
+		task.InputAssets.Add(inputAsset1);
+		task.InputAssets.Add(inputAsset2);
+		task.InputAssets.Add(inputAsset3);
+		
+		// Add the output asset
+		task.OutputAssets.AddNew("Result of an overlay job, using " + presetFileName, AssetCreationOptions.None);
+		
+		// Submit the job
+		job.Submit();
 	}
 
 
 
->[AZURE.NOTE]为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用 Media Services SDK for .NET 批量引入资产](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk)。
+>[AZURE.NOTE]为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 批量引入资产](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk)。
 
 有关完整的示例代码，请参阅[使用媒体服务编码器创建叠加](https://code.msdn.microsoft.com/Creating-Audio-and-Video-c2942c47)。
 
@@ -334,44 +340,49 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 - 创建一个任务，该任务指定输入资产、预设配置、媒体编码器和输出资产
 - 提交作业
 
-下面的代码片段演示如何执行这些步骤：
+以下代码片段演示如何执行这些步骤：
 	
 	static public void StitchWithMultipleAssets()
 	{
-    		_context = new CloudMediaContext(_accountName, _accountKey);
-	
-	       // Upload assets to stitch
-	       IAsset inputAsset1 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video1.mp4);
-	       IAsset inputAsset2 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video2.wmv);
-	       IAsset inputAsset3 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video3.wmv);
-	
-	       // Load the preset configuration
-	       string presetFileName = "StitchingWithMultipleAssets.xml";
-	       string configuration = File.ReadAllText(presetFileName);
-	
-	       // Create a job
-	       IJob job = _context.Jobs.Create("A WAME stitching job, using " + presetFileName);
-	                 
-	// Get a reference to the media services encoder   
-	       IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
-	            
-	        // Create a task    
-	       ITask task = job.Tasks.AddNew("Encode Task for stitching, using " + presetFileName, processor, configuration, TaskOptions.None);
-	
-			// Add the input assets
-	       task.InputAssets.Add(inputAsset1);
-	       task.InputAssets.Add(inputAsset2);
-	       task.InputAssets.Add(inputAsset3);
-	
-	       // Add the output asset
-	        task.OutputAssets.AddNew("Result of a stitching job, using " + presetFileName, AssetCreationOptions.None);
-	
-	       // Submit the job
-	        job.Submit();
-	} 
+        // Create and cache the Media Services credentials in a static class variable.
+        _cachedCredentials = new MediaServicesCredentials(
+                        MediaServicesAccountName,
+                        MediaServicesAccountKey);
+        // Used the cached credentials to create CloudMediaContext.
+        _context = new CloudMediaContext(_cachedCredentials);
+		
+		// Upload assets to stitch
+		IAsset inputAsset1 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video1.mp4);
+		IAsset inputAsset2 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video2.wmv);
+		IAsset inputAsset3 = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, video3.wmv);
+		
+		// Load the preset configuration
+		string presetFileName = "StitchingWithMultipleAssets.xml";
+		string configuration = File.ReadAllText(presetFileName);
+		
+		// Create a job
+		IJob job = _context.Jobs.Create("A AME stitching job, using " + presetFileName);
+		         
+		// Get a reference to the media services encoder   
+		IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
+		    
+		// Create a task    
+		ITask task = job.Tasks.AddNew("Encode Task for stitching, using " + presetFileName, processor, configuration, TaskOptions.None);
+		
+		// Add the input assets
+		task.InputAssets.Add(inputAsset1);
+		task.InputAssets.Add(inputAsset2);
+		task.InputAssets.Add(inputAsset3);
+		
+		// Add the output asset
+		task.OutputAssets.AddNew("Result of a stitching job, using " + presetFileName, AssetCreationOptions.None);
+		
+		// Submit the job
+		job.Submit();
+		} 
 
 
-为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用 Media Services SDK for .NET 批量引入资产](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk)。有关完整的示例代码，请参阅[使用媒体服务编码器进行拼结](https://code.msdn.microsoft.com/Stitching-with-Media-8fd5f203)。
+为简单起见，此代码段按顺序加载每个资产。在生产环境中将批量加载资产。有关批量上载多个资产的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 批量引入资产](/documentation/articles/media-services-dotnet-upload-files#ingest_in_bulk)。有关完整的示例代码，请参阅[使用媒体服务编码器进行拼结](https://code.msdn.microsoft.com/Stitching-with-Media-8fd5f203)。
 
 ###拼结单个资产中的视频
 
@@ -414,17 +425,23 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 	     </Sources>
 	</MediaFile>
 
-此预设将 video1.mp4、video2.wmv 和 video3.wmv 的某些部分拼结为输出资产。创建作业和任务与拼结多个资产中的视频相同，只需上载单个资产，如下面的代码所示：
+此预设将 video1.mp4、video2.wmv 和 video3.wmv 的某些部分拼结为输出资产。创建作业和任务与拼结多个资产中的视频相同，只需上载单个资产，如以下代码所示：
 
 	// Creates a stitching job that uses a single asset 
     static public void StitchWithASingleAsset()
     {
         string presetFileName = "StitchingWithASingleAsset.xml";
         string configuration = File.ReadAllText(presetFileName);
-        _context = new CloudMediaContext(_accountName, _accountKey);
+
+        // Create and cache the Media Services credentials in a static class variable.
+        _cachedCredentials = new MediaServicesCredentials(
+                        MediaServicesAccountName,
+                        MediaServicesAccountKey);
+        // Used the cached credentials to create CloudMediaContext.
+        _context = new CloudMediaContext(_cachedCredentials);
 
         IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
-        IJob job = _context.Jobs.Create("A WAME stitching job, using " + presetFileName);
+        IJob job = _context.Jobs.Create("A AME stitching job, using " + presetFileName);
         IAsset asset = CreateAssetAndUploadMultipleFiles(AssetCreationOptions.None, _stitchingFiles);
 
         ITask task = job.Tasks.AddNew("Encode Task for stitching, using " + presetFileName, processor, configuration, TaskOptions.None);
@@ -453,29 +470,39 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 	     VideoResizeMode="Stretch">
 
 1. 将已修改的预设文件保存到本地硬盘驱动器，然后通过诸如以下形式的代码使用自定义预设进行编码：
-	
-	// 上载文件和创建资产 IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, @"C:\\TEMP\\Original.mp4");
-	 
-	string inputPresetFile = @"C:\\TEMP\\H264 Broadband 720p NoAudioNorm.xml"; string presetName = Path.GetFileNameWithoutExtension(inputPresetFile);
-	 
-	IJob job = \_context.Jobs.Create("Encode Job for " + asset.Name + ", encoded using " + presetName);
-	
-	Console.WriteLine("Encode Job for " + asset.Name + ", encoded using " + presetName);
-	
-	// 获取媒体处理器引用，并将其传递给处理器名称，以用于特定任务。IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder"); Console.WriteLine("Got MP " + processor.Name + ", ID : " + processor.Id + ", version: " + processor.Version);
-	 
-	// 将配置数据读取到字符串中。string configuration = File.ReadAllText(inputPresetFile);
-	 
-	// 使用字符串预设创建包含编码详细信息的任务。ITask task = job.Tasks.AddNew("Encode Task for " + asset.Name + ", encoded using " + presetName, processor, configuration, Microsoft.WindowsAzure.MediaServices.Client.TaskOptions.None);
-	 
-	// 指定要对其进行编码的输入资产。task.InputAssets.Add(asset);
-	 
-	// 添加输出资产以包含作业结果。task.OutputAssets.AddNew("Output asset for " + asset.Name + ", encoded using " + presetName, AssetCreationOptions.None);
-	 
-	// 启动作业。job.Submit();
+		
+		// Upload file and create asset
+		IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, @"C:\TEMP\Original.mp4");
+		 
+		string inputPresetFile = @"C:\TEMP\H264 Broadband 720p NoAudioNorm.xml";
+		string presetName = Path.GetFileNameWithoutExtension(inputPresetFile);
+		 
+		IJob job = _context.Jobs.Create("Encode Job for " + asset.Name + ", encoded using " +  presetName);
+		
+		Console.WriteLine("Encode Job for " + asset.Name + ", encoded using " + presetName);
+		
+		// Get a media processor reference, and pass to it the name of the processor to use for the specific task.
+		IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
+		Console.WriteLine("Got MP " + processor.Name + ", ID : " + processor.Id + ", version: " + processor.Version);
+		 
+		// Read the configuration data into a string. 
+		string configuration = File.ReadAllText(inputPresetFile);
+		 
+		// Create a task with the encoding details, using a string preset.
+		ITask task = job.Tasks.AddNew("Encode Task for " + asset.Name + ", encoded using " + presetName, processor, configuration,
+		                Microsoft.WindowsAzure.MediaServices.Client.TaskOptions.None);
+		 
+		// Specify the input asset to be encoded.
+		task.InputAssets.Add(asset);
+		 
+		// Add an output asset to contain the results of the job.
+		task.OutputAssets.AddNew("Output asset for " + asset.Name + ", encoded using " + presetName, AssetCreationOptions.None);
+		 
+		// Launch the job. 
+		job.Submit();
 
 ##另请参阅
 
 [Azure 媒体编码器 XML 架构](https://msdn.microsoft.com/zh-cn/library/azure/dn584702.aspx)
 
-<!---HONumber=67-->
+<!---HONumber=71-->

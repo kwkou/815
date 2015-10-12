@@ -9,28 +9,28 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="04/15/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"  
+	wacn.date="10/03/2015"/>
 
 
 #动态打包 
 
 ##概述
 
-Microsoft Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silverlight、Windows 8）传递多种媒体源文件格式、媒体流格式和内容保护格式。这些客户端可识别不同的协议，例如，iOS 需要 HTTP 实时流 (HLS) V4 格式，Silverlight 和 Xbox 需要平滑流。如果你有一组自适应比特率（多比特率）MP4（ISO 基媒体 14496-12）文件或平滑流文件要提供给了解 MPEG DASH、HLS 或平滑流的客户端，则应利用媒体服务动态打包。
+Windows Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBOX、Silverlight、Windows 8）传递多种媒体源文件格式、媒体流格式和内容保护格式。这些客户端可识别不同的协议，例如，iOS 需要 HTTP 实时流 (HLS) V4 格式，Silverlight 和 Xbox 需要平滑流。如果你有一组自适应比特率（多码率）MP4（ISO 基媒体 14496-12）文件或平滑流文件要提供给了解 MPEG DASH、HLS 或平滑流的客户端，则应利用媒体服务动态打包。
 
-使用动态打包，你只需要创建一个包含一组自适应比特率 MP4 文件或自适应比特率平滑流文件的资产。然后，按需流式处理服务器会确保你以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务就会基于客户端的请求构建并提供相应响应。
+使用动态打包，你只需要创建一个包含一组自适应比特率 MP4 文件或自适应比特率平滑流文件的资产。然后，点播流服务器会确保你以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。
 
 下图显示传统编码和静态打包工作流。
 
-![静态编码](./media/media-services-dynamic-packaging/media-services-static-packaging.png)
+![静态编码](./media/media-services-dynamic-packaging-overview/media-services-static-packaging.png)
 
 下图显示了动态打包工作流。
 
-![动态编码](./media/media-services-dynamic-packaging/media-services-dynamic-packaging.png)
+![动态编码](./media/media-services-dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
 
->[AZURE.NOTE]若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+>[AZURE.NOTE]若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 ##常见方案
 
@@ -48,10 +48,10 @@ Microsoft Azure 媒体服务可用于向多种客户端技术（例如，iOS、X
 
 若要准备用于动态流式传输的资产，可以使用两个选项：
 
-- 上载主文件并使用 Azure 媒体编码器生成 H.264 MP4 自适应比特率集。
+- 上载主文件并使用 Azure Media Encoder 生成 H.264 MP4 自适应比特率集。
 - 使用 Media Packager 上载现有的自适应比特率集并对其进行验证。
 
-###上载主文件并使用 Azure 媒体编码器生成 H.264 MP4 自适应比特率集
+###上载主文件并使用 Azure Media Encoder 生成 H.264 MP4 自适应比特率集
 
 有关如何上载和编码资产的信息，请参阅以下文章：
 
@@ -81,7 +81,7 @@ Microsoft Azure 媒体服务可用于向多种客户端技术（例如，iOS、X
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
 
-使用 **Azure 管理门户**或 **.NET** 发布资产（通过创建定位符）。
+使用 **Azure 管理门户**或 **.NET** 发布资源（通过创建定位符）。
 
 [AZURE.INCLUDE [media-services-selector-publish](../includes/media-services-selector-publish.md)]
 
@@ -93,4 +93,4 @@ Microsoft Azure 媒体服务可用于向多种客户端技术（例如，iOS、X
 - Dolby Digital Plus MP4 文件。
 - Dolby Digital Plus 平滑流文件。 
 
-<!---HONumber=67-->
+<!---HONumber=71-->

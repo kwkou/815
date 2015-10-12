@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="07/23/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
-#如何：交付流内容
+#如何：传送流内容
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-deliver-streaming-content)
@@ -27,7 +27,7 @@
 
 你也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
 
-本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流式处理、MPEG DASH 和 HLS 流 URL。此外，还将演示如何生成渐进式下载 URL。
+本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流、MPEG DASH 和 HLS 流 URL。此外，还将示范如何生成渐进式下载 URL。
 
 [以下](#types)部分显示了其值将在 REST 调用中使用的枚举类型。
   
@@ -55,7 +55,7 @@
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
-	x-ms-version: 2.8
+	x-ms-version: 2.11
 	x-ms-client-request-id: 6bcfd511-a561-448d-a022-a319a89ecffa
 	Host: media.chinacloudapi.cn
 	Content-Length: 68
@@ -94,7 +94,7 @@
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstest1&urn%3aSubscriptionId=bbbef702-e769-477b-9f16-bc4d3aa97387&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1424263184&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=NWE%2f986Hr5lZTzVGKtC%2ftzHm9n6U%2fxpTFULItxKUGC4%3d
-	x-ms-version: 2.8
+	x-ms-version: 2.11
 	x-ms-client-request-id: ac159492-9a0c-40c3-aacc-551b1b4c5f62
 	Host: media.chinacloudapi.cn
 	Content-Length: 181
@@ -174,4 +174,4 @@ URL：**路径** + 资产文件 mp4 名称
         OnDemandOrigin = 2,
     }
 
-<!---HONumber=67-->
+<!---HONumber=71-->
