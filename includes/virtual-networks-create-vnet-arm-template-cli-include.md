@@ -9,7 +9,7 @@
 
 		info:    New mode is arm
 
-3. 如有必要，请运行 **azure group create** 以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。有关资源组的详细信息，请访问 [Azure 资源管理器概述](documentation/articles/resource-group-overview#resource-groups)。
+3. 如有必要，请运行 **azure group create** 以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。
 
 		azure group create -n TestRG -l centralus
 		info:    Executing command group create
