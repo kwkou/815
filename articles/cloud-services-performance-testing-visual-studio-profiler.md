@@ -12,7 +12,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="05/27/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 在 Azure 计算模拟器中使用 Visual Studio 探查器来本地测试云服务的性能
 
@@ -190,4 +190,4 @@ Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，�
 [16]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally012.png
 [17]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally08.png
 
-<!---HONumber=69-->
+<!---HONumber=71-->

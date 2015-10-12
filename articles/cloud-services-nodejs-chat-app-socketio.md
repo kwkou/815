@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="02/25/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -155,4 +155,4 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
   [The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-9.png
   
 
-<!---HONumber=69-->
+<!---HONumber=71-->

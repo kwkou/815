@@ -9,7 +9,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services" 
 ms.date="08/18/2015" 
-wacn.date="09/15/2015"/>
+wacn.date="10/03/2015"/>
 
 # 为 Azure 中的角色实例启用通信
 
@@ -355,4 +355,4 @@ namespace WorkerRole1
 ## 后续步骤
 阅读有关云服务[模型](/documentation/articles/cloud-services-model-and-package)的详细信息。
 
-<!---HONumber=69-->
+<!---HONumber=71-->

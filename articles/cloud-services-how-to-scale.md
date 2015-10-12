@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="06/16/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -166,7 +166,7 @@
 
 ## 缩放链接的资源
 
-通常当你缩放角色时，最好同时缩放应用程序正在使用的数据库。如果将数据库链接到云服务，则可更改 SQL Database 版本并在“缩放”页上调整数据库的大小。
+通常当你缩放角色时，最好同时缩放应用程序正在使用的数据库。如果将数据库链接到云服务，则可更改 SQL 数据库版本并在“缩放”页上调整数据库的大小。
 
 1. 在[管理门户](https://manage.windowsazure.cn/)中单击“云服务”，然后单击云服务名称以打开仪表板。
 2. 单击“缩放”。
@@ -219,4 +219,4 @@
 [scale_schedule]: ./media/cloud-services-how-to-scale/CloudServices_SetUpSchedule.png
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/08/2015"
-	wacn.date="09/15/2014"/>
+	wacn.date="10/03/2015"/>
 
 # Azure 云服务和 ASP.NET 入门
 
@@ -771,7 +771,7 @@ Azure 辅助角色环境在辅助角色启动时调用 `WorkerRole` 类中的 `O
 
 在 Azure 中运行应用程序或使用 Azure 计算模拟器本地运行时，`RoleEnvironment` 对象由 Azure 提供。如果您在本地运行时收到此错误，请确保您已将 ContosoAdsCloudService 项目设为启动项目。这将项目设置为使用 Azure 计算仿真程序运行。
 
-应用程序使用 Azure RoleEnvironment 的内容之一是获取 *.cscfg* 文件中存储的连接字符串值，所以此异常的另一个原因是丢失连接字符串。确保在 ContosoAdsWeb 项目中为云和本地配置创建 StorageConnectionString 设置，并且你将在 ContosoAdsWorker 项目中为两个配置创建两个连接字符串。如果为整个解决方案中的 StorageConnectionString 进行"查找全部"搜索，你应在 6 个文件中看到它 9 次。
+应用程序使用 Azure RoleEnvironment 的内容之一是获取 *.cscfg* 文件中存储的连接字符串值，所以此异常的另一个原因是丢失连接字符串。确保在 ContosoAdsWeb 项目中为云和本地配置创建 StorageConnectionString 设置，并且您将在 ContosoAdsWorker 项目中为两个配置创建两个连接字符串。如果为整个解决方案中的 StorageConnectionString 进行**查找全部**搜索，你应在 6 个文件中看到它 9 次。
 
 ### 无法重写到端口 xxx。低于最小允许值 8080 的新端口用于 http 协议
 
@@ -806,4 +806,4 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
 * [Azure 存储空间](/documentation/services/storage/)
 
-<!---HONumber=69-->
+<!---HONumber=71-->

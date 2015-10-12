@@ -10,7 +10,7 @@
   <tags
     ms.service="cloud-services"
     ms.date="03/05/2015"
-    wacn.date="09/15/2015"/>
+    wacn.date="10/03/2015"/>
 
 # 将 Azure 云服务角色连接到 Azure 中托管的自定义 AD 域控制器
 
@@ -143,4 +143,4 @@
 希望你们觉得这篇文章有用！
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

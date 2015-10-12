@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="06/29/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -29,7 +29,7 @@
 
 ## 更改云服务
 
-1. 在 [Azure 门户](hhttps://manage.windowsazure.cn)中，导航到你的云服务。
+1. 在 [Azure 门户](https://manage.windowsazure.cn)中，导航到你的云服务。
 
 2. 单击“设置”图标或“必备/全部”设置链接以打开“设置”边栏选项卡。
 
@@ -85,4 +85,4 @@
 			
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

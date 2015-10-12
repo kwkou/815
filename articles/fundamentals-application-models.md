@@ -11,7 +11,7 @@
 <tags 
 	ms.service="multiple" 
 	ms.date="06/16/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -36,12 +36,9 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 
 Azure 还针对更特殊的用途提供其他计算托管模型，例如：
 
-* [移动服务](/services/mobile-services/)  
-  适用于移动设备上运行的应用的云后端优化模型。
-* [Batch](/services/batch/)  
-  适用于处理大量类似任务的优化模型，特别适用于本身在多台计算机上以并行任务形式运行的工作负荷。
-* [HDInsight (Hadoop)](/services/hdinsight/)  
-  适用于在 Hadoop 群集上运行 [MapReduce](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options/#hadoop) 作业的优化模型。 
+* [移动服务](/services/mobile-services/) 适用于移动设备上运行的应用的云后端优化模型。
+* [Batch](/services/batch/) 适用于处理大量类似任务的优化模型，特别适用于本身在多台计算机上以并行任务形式运行的工作负荷。
+* [HDInsight (Hadoop)](/services/hdinsight/) 适用于在 Hadoop 群集上运行 [MapReduce](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options/#hadoop) 作业的优化模型。 
 
 ## 我该使用哪一种？ 做出选择
 
@@ -77,4 +74,4 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 * 了解有关[云服务](/services/cloud-services/)的详细信息
 * 了解有关[虚拟机](https://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)的详细信息 
 
-<!---HONumber=69-->
+<!---HONumber=71-->

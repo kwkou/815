@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="08/11/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -38,4 +38,4 @@ Azure Automation 提供高度可靠且高度可用的工作流执行引擎，它
 
 请参阅 Azure 自动化[入门教程](/documentation/articles/automation-create-runbook-from-samples)
 
-<!---HONumber=69-->
+<!---HONumber=71-->

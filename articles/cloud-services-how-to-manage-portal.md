@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="07/01/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 如何管理云服务
@@ -102,4 +102,4 @@ Azure 预览门户不会像当前 Azure 门户一样将资源链接在一起。�
 
 [Azure 门户]: https://manage.windowsazure.cn
 
-<!---HONumber=69-->
+<!---HONumber=71-->

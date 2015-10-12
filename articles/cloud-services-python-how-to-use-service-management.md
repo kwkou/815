@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="03/11/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -432,4 +432,4 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 [Cloud Services]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
 [Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156003.aspx
 
-<!---HONumber=69-->
+<!---HONumber=71-->

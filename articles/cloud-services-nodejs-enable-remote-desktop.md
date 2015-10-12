@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="05/29/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 在 Azure 中启用远程桌面
@@ -111,4 +111,4 @@
   [远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
   [将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
 
-<!---HONumber=69-->
+<!---HONumber=71-->

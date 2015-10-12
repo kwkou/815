@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/09/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 # 使用连续交付功能发布到 Azure 时如何启用远程调试
 
 使用[连续交付](/zh-cn/documentation/articles/cloud-services-dotnet-continuous-delivery)发布到 Azure 时，可通过执行以下步骤， 在 Azure 中启用远程调试。
@@ -91,4 +91,4 @@ $vm | Update-AzureVM
 6. 将证书导入到装有 Visual Studio 和 Azure SDK for .NET 的计算机。
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

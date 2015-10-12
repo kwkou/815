@@ -9,7 +9,7 @@
 <tags 
     ms.service="cloud-services"  
     ms.date="07/06/2015" 
-    wacn.date="09/15/2015"/>
+    wacn.date="10/03/2015"/>
 
 # 什么是云服务模型以及如何打包？
 云服务由以下三个组件创建：服务定义 _(.csdef)_、服务配置 _(.cscfg)_ 和服务包 _(.cspkg)_。**ServiceDefinition.csdef** 和 **ServiceConfig.cscfg** 文件都基于 XML，同时介绍云服务的结构及其配置方式；统称为模型。**ServicePackage.cspkg** 是从 **ServiceDefinition.csdef** 和其他文件生成的 zip 文件，它包含所有必需的基于二进制的依赖项。Azure 可从 **ServicePackage.cspkg** 和 **ServiceConfig.cscfg** 两者创建云服务。
@@ -270,4 +270,4 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 [vs_reconfigure]: https://msdn.microsoft.com/zh-cn/library/ee405486.aspx
 [vs_create]: https://msdn.microsoft.com/zh-cn/library/ee405487.aspx
 
-<!---HONumber=67-->
+<!---HONumber=71-->
