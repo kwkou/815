@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 #处理 Azure 媒体服务作业
 
-“作业”包含有关将要执行的处理的元数据。每个“作业”包含一个或多个“任务”，这些任务指定一个原子处理任务，该任务的输入资产和输出资产、一个媒体处理器及其关联的设置。有关编码器设置的详细信息，请参阅“编码器指南”和“编码器架构”。
+**作业**包含有关将要执行的处理的元数据。每个**作业**包含一个或多个**任务**，这些任务指定一个原子处理任务、该任务的输入资产和输出资产、一个媒体处理器及其关联的设置。有关编码器设置的详细信息，请参阅“编码器指南”和“编码器架构”。
 
 编码作业通常与其他处理相结合，例如打包或加密编码器生成的资产。作业中的各个任务可连接在一起，其中一个任务的输出资产指定为下一任务的输入资产。因此，一个作业可以包含播放媒体所必需的全部处理过程。
 
@@ -35,7 +35,7 @@
 
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
-##索引编制
+##索引
 
 [AZURE.INCLUDE [media-services-selector-index-content](../includes/media-services-selector-index-content.md)]
 
@@ -47,7 +47,7 @@
 
 ##监视作业进度
 
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 监视器作业进度。
+使用 **Azure 管理门户**、**.NET** 或 **REST API** 监视作业进度。
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../includes/media-services-selector-job-progress.md)]
 
@@ -55,4 +55,4 @@
 
 [配额与限制](/documentation/articles/media-services-quotas-and-limitations) - 介绍媒体服务编码器的使用配额和限制
 
-<!---HONumber=67-->
+<!---HONumber=71-->

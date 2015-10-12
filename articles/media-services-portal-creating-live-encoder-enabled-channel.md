@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/27/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 #使用管理门户可创建频道，以执行从单比特率到多比特率流的实时编码（预览版）
@@ -67,20 +67,20 @@
 以下是完成本教程所需具备的条件。
 
 - 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
-- 一个 Media Services 帐户。若要创建 Media Services 帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - 可以发送单比特率实时流的摄像头和编码器。
 
 ##使用门户配置流式处理终结点
 
-使用 Azure Media Services 时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。Media Services 支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-使用实时流时，本地实时编码器（在本例中为 Wirecast）会将多比特率实时流引入你的通道。当用户请求流时，Media Services 会使用动态打包将源流重新打包成自适应比特率流（HLS、DASH 或平滑流）。
+使用实时流时，本地实时编码器（在本例中为 Wirecast）会将多比特率实时流引入你的通道。当用户请求流时，媒体服务会使用动态打包将源流重新打包成自适应比特率流（HLS、DASH 或平滑流）。
 
 若要利用动态打包，你需要获取计划从中传送内容的**流式处理终结点**的至少一个流式处理单元。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **Media Services**。然后，单击 Media Services 的名称。
+1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -95,12 +95,12 @@
 	 
 	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [Media Services 定价详细信息](/home/features/media-services/#price)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
 
  
 ##创建频道
 
-1.	在[管理门户](http://manage.windowsazure.cn/)中，单击“Media Services”，然后单击 Media Services 帐户名。
+1.	在[管理门户](http://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2.	选择“频道”页。
 3.	选择“添加+”以添加新频道。
 
@@ -237,7 +237,7 @@
 
 有关传送内容的详细信息，请参阅[传送内容](/documentation/articles/media-services-deliver-content-overview)。
 
-你可以使用 [AMS 播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
+你可以使用 [AMS 播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
 
 ##清理
 
@@ -256,4 +256,4 @@
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=67-->
+<!---HONumber=71-->

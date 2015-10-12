@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="04/20/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 #如何创建媒体服务帐户
@@ -19,8 +19,6 @@
 - [Portal](/documentation/articles/media-services-create-account)
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx)
-
-本文是[媒体服务点播视频工作流](media-services-video-on-demand-workflow.md)和[媒体服务实时流式处理工作流](media-services-live-streaming-workflow.md)系列的一部分。
 
 使用 Azure 管理门户，你可以快速创建 Azure 媒体服务帐户。你可以使用自己的帐户访问媒体服务，这些服务使你能够在 Azure 中存储、加密、编码、管理和流式传输媒体内容。创建媒体服务帐户时，你还将在此帐户所在的地理区域内创建一个关联的媒体服务帐户（或使用现有存储帐户）。
 
@@ -36,7 +34,7 @@
 
 ##<a id="quick"></a>如何：使用“快速创建”创建媒体服务帐户
 
-1. 在[管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在“管理门户”[][]中，依次单击“新建”、“媒体服务”和“快速创建”。
    
 	![媒体服务快速创建](./media/media-services-create-account/wams-QuickCreate.png)
 
@@ -74,6 +72,6 @@
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   
-  [管理门户]: http://manage.windowsazure.cn/
+  [Management Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=67-->
+<!---HONumber=71-->

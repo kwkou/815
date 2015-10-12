@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 #媒体服务 PlayReady 许可证模板概述
 
@@ -72,7 +72,7 @@ XML 符合 PlayReady 许可证模板 XML 架构部分中定义的 PlayReady 许�
 
 >[AZURE.IMPORTANT]这些限制类型可以非常强大，但也会影响使用者体验。如果输出保护配置了太多限制，内容可能会无法在某些客户端上播放。有关详细信息，请参阅 PlayReady 符合性规则文档。
 
-有关 Silverlight 支持的保护级别的示例，请参阅：[Silverlight 支持的输出保护](https://msdn.microsoft.com/zh-cn/library/cc838192(v=vs.95).aspx#Silverlight_Support_for_Output_Protection)。
+有关 Silverlight 支持的保护级别的示例，请参阅：[Silverlight 支持的输出保护](http://go.microsoft.com/fwlink/?LinkId=617318)。
 
 ##<a id="schema"></a>PlayReady 许可证模板 XML 架构
 	
@@ -297,4 +297,4 @@ XML 符合 PlayReady 许可证模板 XML 架构部分中定义的 PlayReady 许�
 	  <xs:element name="ScmsRestriction" nillable="true" type="tns:ScmsRestriction" />
 	</xs:schema>
 
-<!---HONumber=67-->
+<!---HONumber=71-->

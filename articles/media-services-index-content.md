@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="07/23/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"  
+	wacn.date="10/03/2015"/>
 
 
 # 使用 Azure Media Indexer 为媒体文件编制索引
@@ -27,8 +27,8 @@
 
 索引作业将在每个索引文件中生成四个输出：
 
-- 采用 SAMI 格式的隐藏式字幕文件。
-- 采用时序文本标记语言 (TTML) 格式的隐藏式字幕文件。
+- 采用 SAMI 格式的隐藏字幕文件。
+- 采用时序文本标记语言 (TTML) 格式的隐藏字幕文件。
 
 	SAMI 和 TTML 包含名为 Recognizability 的标记，该标记可以根据源视频中的语音辨别度对索引作业评分。你可以使用 Recognizability 的值筛选可用的输出文件。如果分数较低，则表示索引结果由于音频质量问题而不佳。
 - 关键字文件 (XML)。
@@ -37,7 +37,7 @@
 	有关详细信息，请参阅[在 Azure Media Indexer 和 SQL Server 中使用 AIB 文件](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)。
 
 
-此主题介绍如何创建索引作业，以便“为资产编制索引”以及“为多个文件编制索引”。
+本主题介绍如何创建索引作业，以便“为资产编制索引”以及“为多个文件编制索引”。
 
 有关最新的 Azure Media Indexer 更新，请参阅[媒体服务博客](http://azure.microsoft.com/blog/topics/media-services/)。
 
@@ -154,13 +154,13 @@
 音频索引 Blob (AIB) 文件是二进制文件，可使用全文本搜索在 Microsoft SQL Server 中对其进行搜索。AIB 文件的功能比简单的字幕文件要强大，因为它包含每个单词的替代项，使你可以获得更丰富的搜索体验。
 <br/>
 <br/>
-它要求在运行 Microsoft SQL Server 2008 或更高版本的计算机上安装 Indexer SQL 外接程序。使用 Microsoft SQL Server 全文搜索对 AIB 搜索时，搜索结果比搜索由 WAMI 生成的隐藏式字幕文件要准确。这是因为，AIB 包含发音类似单词的替代项，而隐藏式字幕文件包含每个音频段的最高信任度单词。如果搜索说过的话很重要，则建议将 AIB 与 Microsoft SQL Server 结合使用。
+它要求在运行 Microsoft SQL Server 2008 或更高版本的计算机上安装 Indexer SQL 外接程序。使用 Microsoft SQL Server 全文搜索对 AIB 搜索时，搜索结果比搜索由 WAMI 生成的隐藏字幕文件要准确。这是因为，AIB 包含发音类似单词的替代项，而隐藏字幕文件包含每个音频段的最高信任度单词。如果搜索说过的话很重要，则建议将 AIB 与 Microsoft SQL Server 结合使用。
 <br/><br/>
 若要下载外接程序，请单击 <a href="http://aka.ms/indexersql">Azure Media Indexer SQL 外接程序</a>。
 <br/><br/>
-此外，还可以利用其他搜索引擎，如 Apache Lucene/Solr，仅根据隐藏式字幕文件和关键字 XML 文件为视频编制索引，但这将导致搜索结果不太准确。</td></tr>
+此外，还可以利用其他搜索引擎，如 Apache Lucene/Solr，仅根据隐藏字幕文件和关键字 XML 文件为视频编制索引，但这将导致搜索结果不太准确。</td></tr>
 <tr><td>InputFileName.smi<br/>InputFileName.ttml</td>
-<td>采用 SAMI 和 TTML 格式的隐藏式字幕 (CC) 文件。
+<td>采用 SAMI 和 TTML 格式的隐藏字幕 (CC) 文件。
 <br/><br/>
 这些文件可用于使听力障碍用户能够访问音频和视频文件。
 <br/><br/>
@@ -288,7 +288,7 @@ Error：指示是否为此媒体文件成功编制索引。0 表示成功，其�
 <tr><td>Media_1.aib </td>
 <td>文件 #0 - 音频索引 Blob 文件。</td></tr>
 <tr><td>Media_1.smi<br/>Media_1.ttml</td>
-<td>文件 #0 - 采用 SAMI 和 TTML 格式的隐藏式字幕 (CC) 文件。</td></tr>
+<td>文件 #0 - 采用 SAMI 和 TTML 格式的隐藏字幕 (CC) 文件。</td></tr>
 <tr><td>Media_1.kw.xml</td>
 <td>文件 #0 - 关键字文件。</td></tr>
 <tr><td>Media_2.aib </td>
@@ -342,4 +342,4 @@ Error：指示是否为此媒体文件成功编制索引。0 表示成功，其�
 
 <!-- URLs. -->
 
-<!---HONumber=67-->
+<!---HONumber=71-->

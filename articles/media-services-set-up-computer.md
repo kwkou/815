@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="07/07/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 #设置你的环境
 
@@ -33,9 +33,9 @@
 
 ##<a id="connect"></a>以编程方式建立连接
 
-选择**“.NET”**或**“REST API”**以编程方式连接到 Azure Media Services。
+选择**“.NET”**或**“REST API”**以编程方式连接到 Azure 媒体服务。
 
 [AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
  
 
-<!---HONumber=67-->
+<!---HONumber=71-->

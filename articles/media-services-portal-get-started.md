@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 Azure 管理门户开始传送视频点播 (VoD)"
-	description="本教程将引导你完成使用 Azure Media Services 和 Azure 管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
+	description="本教程将引导你完成使用 Azure 媒体服务和 Azure 管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="07/16/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用 Azure 管理门户开始传送视频点播 (VoD)
@@ -24,7 +24,7 @@
 
 本快速入门教程中说明了以下任务。
 
-1.  创建 Media Services 帐户
+1.  创建媒体服务帐户
 2.  配置流式处理终结点
 1.  上载视频文件
 1.  将源文件编码为一组自适应比特率 MP4 文件
@@ -32,19 +32,19 @@
 1.  播放内容
 
 
-##创建 Media Services 帐户
+##创建媒体服务帐户
 
 1. 在“管理门户”[][]中，依次单击“新建”、“媒体服务”和“快速创建”。
 
-	![Media Services 快速创建](./media/media-services-portal-get-started/wams-QuickCreate.png)
+	![媒体服务快速创建](./media/media-services-portal-get-started/wams-QuickCreate.png)
 
-2. 在“名称”中，输入新帐户的名称。Media Services 帐户名称由小写字母或数字构成（不含空格），长度为 3 - 24 个字符。
+2. 在“名称”中，输入新帐户的名称。媒体服务帐户名称由小写字母或数字构成（不含空格），长度为 3 - 24 个字符。
 
-3. 在“区域”中，选择将用于存储媒体服务帐户的元数据记录的地理区域。下拉列表中仅显示可用的 Media Services 区域。
+3. 在“区域”中，选择将用于存储媒体服务帐户的元数据记录的地理区域。下拉列表中仅显示可用的媒体服务区域。
 
-4. 在“存储帐户”中，选择一个存储帐户以便为媒体服务帐户中的媒体内容提供 Blob 存储。你可以选择位于 Media Services 帐户所在的地理区域内的现有存储帐户，也可以创建一个新的存储帐户。将在同一区域内创建一个新的存储帐户。
+4. 在“存储帐户”中，选择一个存储帐户以便为媒体服务帐户中的媒体内容提供 Blob 存储。你可以选择位于媒体服务帐户所在的地理区域内的现有存储帐户，也可以创建一个新的存储帐户。将在同一区域内创建一个新的存储帐户。
 
-5. 如果你创建了一个新的存储帐户，请在“新建存储帐户名称”中输入该存储帐户的名称。适用于存储帐户名的规则对 Media Services 帐户同样适用。
+5. 如果你创建了一个新的存储帐户，请在“新建存储帐户名称”中输入该存储帐户的名称。适用于存储帐户名的规则对媒体服务帐户同样适用。
 
 6. 单击窗体底部的“快速创建”。
 
@@ -52,30 +52,30 @@
 
 	成功创建帐户后，状态将更改为“活动”。
 
-	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含 Media Services 帐户名以及主要密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问 Media Services 帐户。
+	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主要密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
 
 
-	![“Media Services”页](./media/media-services-portal-get-started/wams-mediaservices-page.png)
+	![“媒体服务”页](./media/media-services-portal-get-started/wams-mediaservices-page.png)
 
 	当你双击帐户名称时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
 
 
 ##使用门户配置流式处理终结点
 
-使用 Azure Media Services 时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。Media Services 支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-Media Services 所提供的动态打包可让你以 Media Services 支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤），  
 - 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
 
-通过动态打包，你只需要存储及支付一种存储格式的文件，Media Services 将会根据客户端的要求创建并提供适当的响应。
+通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **Media Services**。然后，单击 Media Services 的名称。
+1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -90,7 +90,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 
 	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [Media Services 定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
 
 ##上载内容
 
@@ -117,18 +117,18 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 ##对内容进行编码
 
 ###概述
-要通过 Internet 传送数字视频，你必须对媒体进行压缩。Media Services 提供了一个 Media Encoder ，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
+要通过 Internet 传送数字视频，你必须对媒体进行压缩。媒体服务提供了一个 Media Encoder ，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
 
-使用 Azure Media Services 时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。Media Services 支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-Media Services 所提供的动态打包可让你以 Media Services 支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
 - 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
-通过动态打包，你只需要存储及支付一种存储格式的文件，Media Services 将会根据客户端的要求创建并提供适当的响应。
+通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，点播流在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
@@ -216,15 +216,14 @@ SAS URL 采用以下格式：
 请注意以下事项：
 
 - 确保视频已发布。
-- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
 
 
 ![AMSPlayer][AMSPlayer]
 
 
-##后续步骤
 
-了解有关生成视频点播应用程序的详细信息 [生成 VoD 应用程序](/documentation/articles/media-services-video-on-demand-workflow) <!--
+<!--
 ###Additional Resources
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Get your video online now!</a>
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamic Packaging and Mobile Devices</a>
@@ -234,7 +233,7 @@ SAS URL 采用以下格式：
 
 
 <!-- URLs. -->
-[]: http://manage.windowsazure.cn/
+[Management Portal]: http://manage.windowsazure.cn/
 
 
 <!-- Images -->
@@ -251,4 +250,4 @@ SAS URL 采用以下格式：
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
  
 
-<!---HONumber=67-->
+<!---HONumber=71-->

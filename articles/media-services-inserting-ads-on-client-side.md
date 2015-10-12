@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services"  
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/17/2015"  
+	wacn.date="10/03/2015"/>
 
 
 #在客户端上插入广告
@@ -20,7 +20,7 @@
 有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](https://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx#caption_ad)。
 
  
-##<a id="insert_ads_into_media"></a> 向媒体中插入广告
+##<a id="insert_ads_into_media"></a>向媒体中插入广告
 
 Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告插入支持。附带广告支持的播放器框架在 Windows 8、Silverlight、Windows Phone 8 和 iOS 设备上均可用。每个播放器框架均包含显示如何实现播放器应用程序的示例代码。可插入 media:list 中的广告有三种。
 
@@ -354,8 +354,6 @@ VPAID 是用于使可执行广告单元能够与视频播放器进行通信的 A
 
 Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从[适用于 Windows 8 和 Windows Phone 8 的播放器框架](https://playerframework.codeplex.com/releases/view/105214)下载播放器框架和示例。
 
-有关插入广告的详细信息，请参阅[向媒体中插入广告](/documentation/articles/media-services-inserting-ads-on-client-side#insert_ads_into_media)。
-
 打开 Microsoft.PlayerFramework.Xaml.Samples 解决方案时，将看到项目中的多个文件夹。Advertising 文件夹包含与创建具有广告支持的视频播放器相关的示例代码。Advertising 文件夹中有多个 XAML/cs 文件，每一个均显示如何以不同的方式插入广告。以下列表对每个文件进行描述：
 
 - AdPodPage.xaml 演示如何显示广告荚。
@@ -490,7 +488,7 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 
 此示例使用 AdSchedulerPlugin 通过指定包含广告的 .wmv 文件安排中置式广告。
 	
-	<mmppf:MediaPlayer x:Name="player" Source="http://smf.cloudapp.net/html5/media/bigbuck.mp4">
+	<mmppf:MediaPlayer x:Name="player" Source="http://smf.chinacloudapp.cn/html5/media/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:AdSchedulerPlugin>
 	                    <ads:AdSchedulerPlugin.Advertisements>
@@ -620,8 +618,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
         [self logFrameworkError];
     }
          
-   以下示例演示如何安排早期绑定 VAST 广告。
-
+   以下示例演示如何安排早期绑定 VAST 广告。    
 	//Example:4 Schedule an early binding VAST ad
     //Download the VAST file
     if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/vast/PlayerTestVAST.xml"]])
@@ -632,6 +629,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
     {
         adLinearTime.startTime = 7;
         adLinearTime.duration = 0;
+        
         
 		// Create AdInfo instance
 	    AdInfo *vastAdInfo2 = [[[AdInfo alloc] init] autorelease];
@@ -651,7 +649,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 
 	//Example:1 How to use RCE.
 	// specify manifest for ad content
-	NSString *secondContent=@"http://wamsblureg001orig-hs.cloudapp.net/6651424c-a9d1-419b-895c-6993f0f48a26/The%20making%20of%20Microsoft%20Surface-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+	NSString *secondContent=@"http://wamsblureg001orig-hs.chinacloudapp.cn/6651424c-a9d1-419b-895c-6993f0f48a26/The%20making%20of%20Microsoft%20Surface-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
 	
 	// specify ad length
     mediaTime.currentPlaybackPosition = 0;
@@ -695,7 +693,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 	
 	//Example:6 Schedule a single non sticky mid roll Ad
 	// specify URL to content
-	NSString *oneTimeAd=@"http://wamsblureg001orig-hs.cloudapp.net/5389c0c5-340f-48d7-90bc-0aab664e5f02/Windows%208_%20You%20and%20Me%20Together-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+	NSString *oneTimeAd=@"http://wamsblureg001orig-hs.chinacloudapp.cn/5389c0c5-340f-48d7-90bc-0aab664e5f02/Windows%208_%20You%20and%20Me%20Together-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
 	
 	// create an AdInfo instance
 	AdInfo *oneTimeInfo = [[[AdInfo alloc] init] autorelease];
@@ -721,7 +719,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 以下示例演示如何安排粘性中置式广告。每当到达时间线上指定时间点时就会显示粘性广告。
 
 	//Example:7 Schedule a single sticky mid roll Ad
-	NSString *stickyAd=@"http://wamsblureg001orig-hs.cloudapp.net/2e4e7d1f-b72a-4994-a406-810c796fc4fc/The%20Surface%20Movement-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+	NSString *stickyAd=@"http://wamsblureg001orig-hs.chinacloudapp.cn/2e4e7d1f-b72a-4994-a406-810c796fc4fc/The%20Surface%20Movement-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
 	// create AdInfo instance
 	AdInfo *stickyAdInfo = [[[AdInfo alloc] init] autorelease];
 	// set URI to ad
@@ -746,7 +744,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 以下示例演示如何安排后置式广告。
 
 	//Example:8 Schedule Post Roll Ad
-	NSString *postAdURLString=@"http://wamsblureg001orig-hs.cloudapp.net/aa152d7f-3c54-487b-ba07-a58e0e33280b/wp-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+	NSString *postAdURLString=@"http://wamsblureg001orig-hs.chinacloudapp.cn/aa152d7f-3c54-487b-ba07-a58e0e33280b/wp-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
 	// create AdInfo instance
 	AdInfo *postAdInfo = [[[AdInfo alloc] init] autorelease];
 	postAdInfo.clipURL = [NSURL URLWithString:postAdURLString];
@@ -766,7 +764,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 以下示例演示如何安排前置式广告。
 	
 	//Example:9 Schedule Pre Roll Ad
-	NSString *adURLString = @"http://wamsblureg001orig-hs.cloudapp.net/2e4e7d1f-b72a-4994-a406-810c796fc4fc/The%20Surface%20Movement-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
+	NSString *adURLString = @"http://wamsblureg001orig-hs.chinacloudapp.cn/2e4e7d1f-b72a-4994-a406-810c796fc4fc/The%20Surface%20Movement-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
 	AdInfo *adInfo = [[[AdInfo alloc] init] autorelease];
 	adInfo.clipURL = [NSURL URLWithString:adURLString];
 	adInfo.mediaTime = [[[MediaTime alloc] init] autorelease];
@@ -809,6 +807,6 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
  
 ##另请参阅
 
-[开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players) [适用于 iOS 的 Azure 媒体播放器框架简介](https://channel9.msdn.com/Series/Windows-Azure-Media-Services-Tutorials/An-introduction-to-Azure-Media-Player-Framework-for-IOS)
+[开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players)
 
-<!---HONumber=67-->
+<!---HONumber=71-->

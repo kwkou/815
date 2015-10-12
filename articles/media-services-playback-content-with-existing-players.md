@@ -3,24 +3,24 @@
 	description="本主题列出了你可以用来播放内容的现有播放器。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用现有播放器播放内容
 
-Azure Media Services 支持多种常用的流式处理格式，如平滑流、HTTP 实时流和 MPEG-Dash。本主题会将你指向可用来测试流的现有播放器。
+Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 实时流和 MPEG-Dash。本主题会将你指向可用来测试流的现有播放器。
 
 >[AZURE.NOTE]若要播放动态打包或动态加密的内容，请确保获取你计划从中传送内容的流式处理终结点的至少一个流式处理单元。有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 
-###Azure 管理门户 Media Services 内容播放器
+###Azure 管理门户媒体服务内容播放器
 
 **Azure 管理门户**提供了可用于测试视频的内容播放器。
 
@@ -28,14 +28,14 @@ Azure Media Services 支持多种常用的流式处理格式，如平滑流、HT
  
 请注意以下事项：
 
-- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
  
 
 ![AMSPlayer][AMSPlayer]
 
-###Azure Media Services 播放器
+###Azure 媒体服务播放器
 
-使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)以下列任意格式播放你的内容（清除或受保护）：
+使用 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)以下列任意格式播放你的内容（清除或受保护）：
 
 - 平滑流
 - MPEG DASH
@@ -47,21 +47,21 @@ Azure Media Services 支持多种常用的流式处理格式，如平滑流、HT
 
 ####带令牌的 AES 加密 
 
-[http://aestoken.azurewebsites.net]("http://aestoken.azurewebsites.net)
+[http://aestoken.chinacloudsites.cn]("http://aestoken.chinacloudsites.cn)
 
 ###Silverlight 播放器
 
 ####监视
 
-[http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor)
+[http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor)
 
 ####带令牌的 PlayReady
 
-[http://sltoken.azurewebsites.net](http://sltoken.azurewebsites.net)
+[http://sltoken.chinacloudsites.cn](http://sltoken.chinacloudsites.cn)
 
 ### DASH 播放器
 
-[http://dashplayer.azurewebsites.net](http://dashplayer.azurewebsites.net)
+[http://dashplayer.chinacloudsites.cn](http://dashplayer.chinacloudsites.cn)
 
 [http://dashif.org](http://dashif.org)
 
@@ -78,4 +78,4 @@ Azure Media Services 支持多种常用的流式处理格式，如平滑流、HT
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=67-->
+<!---HONumber=71-->

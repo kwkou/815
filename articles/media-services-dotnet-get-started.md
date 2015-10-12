@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 .NET SDK 开始传送点播视频 (VoD)"
-	description="本教程将引导你完成使用 Azure 媒体服务和 .NET 实施点播视频 (VoD) 内容传送应用程序的步骤。"
+	description="本教程将引导你完成使用 Azure 媒体服务和 .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -9,18 +9,18 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="04/16/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/18/2015"
+	wacn.date="10/03/2015"/>
 
 
-# 使用 .NET SDK 开始传送点播视频 (VoD)
+# 使用 .NET SDK 开始传送点播视频 (VoD) 内容
 
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started)]
 
 
 >[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
-本教程将引导你完成使用 Azure Media Services (AMS) SDK for .NET 实施点播视频 (VoD) 内容传送应用程序的步骤。
+本教程将引导你完成使用 Azure Media Services (AMS) SDK for .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。
 
 
 本教程介绍了基本的媒体服务工作流，以及进行媒体服务开发需要用到的最常见编程对象和任务。完成本教程后，你就能够流式传输或渐进下载你已上载、编码和下载的示例媒体文件。
@@ -41,14 +41,13 @@
 5.  连接到媒体服务帐户
 1.  创建新资产并上载视频文件
 1.  将源文件编码为一组自适应比特率 MP4 文件
-1.  配置编码资产的传送策略
-1.  发布资产并获取流式处理和渐进式下载 URL  
+8.  发布资产并获取用于流式处理和渐进式下载的 URL。  
 1.  播放内容
 
 
 ##使用门户创建媒体服务帐户
 
-1. 在[管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在“管理门户”[][]中，依次单击“新建”、“媒体服务”和“快速创建”。
 
 	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
@@ -73,38 +72,37 @@
 
 	当你双击帐户名称时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
 
-
 ##使用门户配置流式处理终结点
 
-使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流式处理传送至你的客户端。通过自适应比特率流式处理，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤），  
-- 针对你要传送内容的**流式处理终结点**，获取至少一个流式处理单元。
+- 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
-若要更改流式处理保留单位数，请执行以下操作：
+若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击该媒体服务的名称。
+1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
-3. 若要指定流式处理单元数，请选择“缩放”选项卡并移动“保留容量”滑块。
+3. 若要指定流式处理单元数，请单击“缩放”选项卡，然后移动“保留容量”滑块。
 
 	![“缩放”页](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
-4. 按“保存”按钮保存更改。
+4. 按“保存”以保存更改。
 
 	分配所有新的单元大约需要 20 分钟才能完成。
 
 
 	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
 
 
 
@@ -112,12 +110,11 @@
 
 1. 在 Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1 中创建一个新的 C# 控制台应用程序。输入“名称”、“位置”和“解决方案名称”，然后单击“确定”。
 
-2. 使用 [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) Nuget 包安装 **Azure Media Services .NET SDK Extensions**。Media Services .NET SDK Extensions 是一组扩展方法和帮助器函数，可简化你的代码，并令使用媒体服务进行开发变得更加容易。安装此包也会安装 **Media Services .NET SDK** 并添加所有其他必需的依赖项。
+2. 使用 [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions) Nuget 包安装 **Azure 媒体服务 .NET SDK 扩展**。Media Services .NET SDK Extensions 是一组扩展方法和帮助器函数，可简化你的代码，并令使用媒体服务进行开发变得更加容易。安装此包也会安装**媒体服务 .NET SDK** 并添加所有其他必需的依赖项。
 
-3. 添加对 System.Configuration 程序集的引用。此程序集包含用于访问配置文件（例如，App.config）的 System.Configuration.ConfigurationManager 类。
+3. 添加对 System.Configuration 程序集的引用。此程序集包含用于访问配置文件（例如，App.config）的 **System.Configuration.ConfigurationManager** 类。
 
-4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 管理门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
-
+4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 	<pre><code>
 &lt;configuration>
@@ -128,8 +125,7 @@
 &lt;/configuration>
 </code></pre>
 
-
-5. 使用以下代码覆盖位于 Program.cs 文件开头的现有 using 语句。
+5. 使用以下代码覆盖位于 Program.cs 文件开头的现有 **using** 语句。
 
 		using System;
 		using System.Collections.Generic;
@@ -148,7 +144,7 @@
 
 使用采用 .NET 的媒体服务时，你必须将 **CloudMediaContext** 类用于大多数媒体服务编程任务：连接到媒体服务帐户；创建、更新、访问和删除以下对象：资产、资产文件、作业、访问策略、定位符等等。
 
-使用以下代码覆盖默认 Program 类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 CloudMediaContext 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用 Media Services SDK for .NET 连接到媒体服务](http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx)。
+使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 CloudMediaContext 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 连接到媒体服务](http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx)。
 
 **Main** 函数调用将在本部分中进一步定义的方法。
 
@@ -183,8 +179,6 @@
                 IAsset encodedAsset =
                     EncodeToAdaptiveBitrateMP4s(inputAsset, AssetCreationOptions.None);
 
-                ConfigureClearAssetDeliveryPolicy(encodedAsset);
-
                 PublishAssetGetURLs(encodedAsset);
             }
             catch (Exception exception)
@@ -203,20 +197,20 @@
 
 ##创建新资产并上载视频文件
 
-在媒体服务中，可以讲数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏字幕文件（以及有关这些文件的元数据。） 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。资产中的文件称为**资产文件**。
+在媒体服务中，可以将数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。资产中的文件称为**资产文件**。
 
 下面定义的 **UploadFile** 方法调用 **CreateFromFile**（在 .NET SDK Extensions 中定义）。**CreateFromFile** 创建指定的源文件所要上载到的新资产。
 
 **CreateFromFile** 方法采用 **AssetCreationOptions**，它可让你指定以下其中一个资产创建选项：
 
 - **无** - 不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。如果计划使用渐进式下载交付 MP4，则使用此选项。
-- **StorageEncrypted** - 使用 AES-256 位加密在本地加密明文内容，然后将其上载到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
+- **StorageEncrypted** - 使用此选项可以通过高级加密标准 (AES) 256 位加密在本地加密明文内容，然后将其上载到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
 - **CommonEncryptionProtected** - 上载经过常用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
 - **EnvelopeEncryptionProtected** – 如果要上载使用 AES 加密的 HLS，请使用此选项。请注意，Transform Manager 必须已对文件进行编码和加密。
 
 **CreateFromFile** 方法还允许你指定回调，以报告文件的上载进度。
 
-在以下示例中，指定了 **None** 做为资产选项。
+在以下示例中，指定了 **None** 作为资产选项。
 
 将以下方法添加到 Program 类。
 
@@ -238,14 +232,14 @@
 
 ##将源文件编码为一组自适应比特率 MP4 文件
 
-将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度和运行这些活动，以确保较高的性能和可用性。这些活动称为“作业”，每个“作业”由原子“任务”构成，这些原子“任务”将在“资产”文件上执行具体的工作。
+将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度把那个运行这些活动，以确保较高的性能和可用性。这些活动称为作业，每个作业由原子任务构成，这些原子任务将在资产文件上执行具体的工作。
 
-如前所述，使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流式处理传送至你的客户端。媒体服务可动态将一组自适应比特率 MP4 文件打包成以下格式之一：HTTP 实时流 (HLS)、平滑流、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+如前所述，使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。媒体服务可以将一组自适应比特率 MP4 文件动态打包为以下其中一种格式：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件，  
-- 针对你要传送内容的流式处理终结点，获取至少一个流式处理单元。
+- 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
 
 以下代码演示如何提交编码作业。该作业所包含的一项任务会指定要使用 **Azure 媒体编码器**将夹层文件转码成一组自适应比特率 MP4。代码会提交作业，并等待作业完成。
 
@@ -287,41 +281,22 @@
 	    return outputAsset;
 	}
 
-##配置编码资产的传送策略
+##发布资产并获取用于流式处理和渐进式下载的 URL
 
-媒体服务内容传送工作流中的步骤之一是配置资产传送策略。资产传送策略组态包括：哪些协议可用来传送资产（例如 MPEG DASH、HLS、HDS、平滑流或全部），是否可以动态加密资产及其方法（信封或一般加密）。
-
-以下 **ConfigureClearAssetDeliveryPolicy** 方法会指定不应用动态加密，而是在以下任一协议内传送流：MPEG DASH、HLS 和平滑流。
-
-将以下方法添加到 Program 类。
-
-    static public void ConfigureClearAssetDeliveryPolicy(IAsset asset)
-    {
-        IAssetDeliveryPolicy policy =
-            _context.AssetDeliveryPolicies.Create("Clear Policy",
-            AssetDeliveryPolicyType.NoDynamicEncryption,
-            AssetDeliveryProtocol.HLS | AssetDeliveryProtocol.SmoothStreaming | AssetDeliveryProtocol.Dash, null);
-
-        asset.DeliveryPolicies.Add(policy);
-    }
-
-
-##发布资产并获取流式处理和渐进式下载 URL
-
-若要流处理或下载资产，你必须先创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流处理媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
+若要流处理或下载资产，你必须先创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
 
 创建定位符后，可以创建用来流式处理或下载文件的 URL。
 
 
-平滑流式处理的流式处理 URL 采用以下格式：
+平滑流式处理的流 URL 采用以下格式：
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
-HLS 的流式处理 URL 采用以下格式：
+HLS 的流 URL 采用以下格式：
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-MPEG DASH 的流式处理 URL 采用以下格式：
+MPEG DASH 的流 URL 采用以下格式：
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
@@ -331,7 +306,7 @@ MPEG DASH 的流式处理 URL 采用以下格式：
 
 Media Services .NET SDK Extensions 提供了便利的帮助器方法，可针对已发布的资产返回格式化 URL。
 
-以下代码使用 .NET SDK Extensions 创建定位符，获取流式处理 URL 和渐进式下载 URL。该代码还演示了如何将文件下载到本地文件夹。
+以下代码使用 .NET SDK 扩展创建定位符，获取流和渐进式下载 URL。该代码还演示了如何将文件下载到本地文件夹。
 
 将以下方法添加到 Program 类。
 
@@ -364,7 +339,7 @@ Media Services .NET SDK Extensions 提供了便利的帮助器方法，可针对
         Uri hlsUri = asset.GetHlsUri();
         Uri mpegDashUri = asset.GetMpegDashUri();
 
-        // Get progressive download URLs for each MP4 file that was generated as a result
+        // Get the URls for progressive download for each MP4 file that was generated as a result
 		// of encoding.
 		List<Uri> mp4ProgressiveDownloadUris = mp4AssetFiles.Select(af => af.GetSasUri()).ToList();
 
@@ -376,7 +351,7 @@ Media Services .NET SDK Extensions 提供了便利的帮助器方法，可针对
         Console.WriteLine(mpegDashUri);
         Console.WriteLine();
 
-		// Display the progressive download URLs.
+		// Display the URLs for progressive download.
         Console.WriteLine("Use the following URLs for progressive download.");
         mp4ProgressiveDownloadUris.ForEach(uri => Console.WriteLine(uri + "\n"));
         Console.WriteLine();
@@ -406,7 +381,7 @@ Media Services .NET SDK Extensions 提供了便利的帮助器方法，可针对
 
 自适应流式处理 URL：
 
-平滑流式处理
+平滑流
 
 	http://amstestaccount001.streaming.mediaservices.chinacloudapi.cn/ebf733c4-3e2e-4a68-b67b-cc5159d1d7f2/BigBuckBunny.ism/manifest
 
@@ -437,13 +412,13 @@ MPEG DASH
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
 
-若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 IE、Chrome、Safari）中。
+若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 Internet Explorer、Chrome 或 Safari）中。
 
 ##后续步骤
 
-通过[生成 VoD 应用程序](/documentation/articles/media-services-video-on-demand-workflow)了解有关生成点播视频应用程序的详细信息
+若要了解有关生成视频点播应用程序的详细信息，请参阅[生成 VoD 应用程序](/documentation/articles/media-services-video-on-demand-workflow)
 
 ###其他资源
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure 媒体服务 101 - 立即在线获取你的视频！</a>
@@ -455,6 +430,6 @@ MPEG DASH
 
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
-  [管理门户]: http://manage.windowsazure.cn/
+  []: http://manage.windowsazure.cn/
 
-<!---HONumber=67-->
+<!---HONumber=71-->

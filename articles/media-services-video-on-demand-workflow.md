@@ -9,17 +9,17 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/08/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #使用 Azure 媒体服务交付按需媒体
 
 ##概述
 
-本主题介绍典型 Azure Media Services (AMS) 视频点播工作流的步骤。每个步骤都链接到相关的主题。对于可以使用不同技术实现的任务，将提供相应的按钮链接到所选的技术（例如，.NET 或 REST）。
+本主题介绍典型 Azure 媒体服务 (AMS) 视频点播工作流的步骤。每个步骤都链接到相关的主题。对于可以使用不同技术实现的任务，将提供相应的按钮链接到所选的技术（例如，.NET 或 REST）。
 
-请注意，你可以将 Media Services 与现有工具和过程相集成。例如，在现场为内容编码，再将其上载到媒体服务以转码为多种格式，然后通过 Azure CDN 或第三方 CDN 交付内容。
+请注意，你可以将媒体服务与现有工具和过程相集成。例如，在现场为内容编码，再将其上载到媒体服务以转码为多种格式，然后通过 Azure CDN 或第三方 CDN 交付内容。
 
 下图显示了参与视频点播工作流的主要媒体服务平台部分。![VoD 工作流][vod-overview]
 
@@ -83,11 +83,11 @@
 
 ##概念
 
-有关与按需交付内容相关的概念，请参阅[媒体服务概念](media-services-concepts.md)。
+有关与按需交付内容相关的概念，请参阅[媒体服务概念](/documentation/articles/media-services-concepts)。
 
 ##常见任务：按需交付媒体
 
-###创建 Media Services 帐户
+###创建媒体服务帐户
 
 使用 **Azure 管理门户**来[创建 Azure 媒体服务帐户](/documentation/articles/media-services-create-account)。
 
@@ -99,7 +99,7 @@
 
 ##以编程方式建立连接  
 
-选择**“.NET”**或**“REST API”**以编程方式连接到 Azure Media Services。
+选择**“.NET”**或**“REST API”**以编程方式连接到 Azure 媒体服务。
 
 [AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
 
@@ -143,10 +143,6 @@
  
 [AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode.md)]
 
-<!--使用 **.NET** 通过**媒体编码器高级工作流**进行高级编码。
-
-[AZURE.INCLUDE [media-services-selector-advanced-encoding](../includes/media-services-selector-advanced-encoding.md)]-->
-
 ####监视作业进度
 
 使用 **Azure 管理门户**、**.NET** 或 **REST API** 监视作业进度。
@@ -177,7 +173,7 @@
 
 ####与合作伙伴集成
 
-[使用 castLabs 将 DRM 许可证传送到 Azure Media Services](/documentation/articles/media-services-castlabs-integration)
+[使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration)
 
 ###发布和传送资源
 
@@ -198,9 +194,9 @@
 
 ###启用 Azure CDN
 
-Media Services 支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在 Media Services 帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins#enable_cdn)。
+媒体服务支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins#enable_cdn)。
 
-###缩放 Media Services 帐户
+###缩放媒体服务帐户
 
 通过指定要为帐户预配的**串流保留单位**和**编码保留单位**的数量，可以缩放**媒体服务**。
 
@@ -216,4 +212,4 @@ Media Services 支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信�
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  
 
-<!---HONumber=67-->
+<!---HONumber=71-->

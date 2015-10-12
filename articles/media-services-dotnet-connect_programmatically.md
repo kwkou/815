@@ -9,15 +9,18 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"  
+	wacn.date="10/03/2015"/>
 
 
 # 使用 Media Services SDK for .NET 连接到媒体服务帐户
 
-本文是[媒体服务点播视频工作流](/documentation/articles/media-services-video-on-demand-workflow)和[媒体服务实时流式处理工作流](/documentation/articles/media-services-live-streaming-workflow)系列的一部分。
+> [AZURE.SELECTOR]
+- [REST](/documentation/articles/media-services-rest-connect_programmatically)
+- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
 
-本主题介绍如何在使用 Media Services SDK for .NET 编程时获取与 Microsoft Azure 媒体服务的编程连接。
+
+本主题介绍如何在使用 Media Services SDK for .NET 编程时获取与 Windows Azure 媒体服务的编程连接。
 
 
 ## 连接到媒体服务
@@ -30,7 +33,7 @@
 
 - 你的媒体服务帐户密钥。
 
-若要查找这些值，请转到 Azure 管理门户，选择你的媒体服务帐户，然后单击门户窗口底部的“**管理密钥**”图标。单击每个文本框旁边的图标，将值复制到系统剪贴板中。
+若要查找这些值，请转到 Azure 管理门户，选择你的媒体服务帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
 
 
 ## 创建 CloudMediaContext 实例
@@ -42,7 +45,7 @@
 
 CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServicesCredentials** 为参数的构造函数。有关详细信息，请参阅下面的**重复使用访问控制服务令牌**。
 
-以下示例使用公共 CloudMediaContext（MediaServicesCredentials 凭据）构造函数：
+以下示例使用 public CloudMediaContext(MediaServicesCredentials credentials) 构造函数：
 
 	// _cachedCredentials and _context are class member variables. 
 	_cachedCredentials = new MediaServicesCredentials(
@@ -57,11 +60,11 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 本部分说明如何通过使用以 MediaServicesCredentials 为参数的 CloudMediaContext 构造函数重复使用访问控制服务令牌。
 
 
-[Azure Active Directory 访问控制](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx)（也称为访问控制服务或 ACS）是一个基于云的服务，可轻松对用户进行身份验证和授权以使用户获得访问其 Web 应用程序的权限。Microsoft Azure 媒体服务通过需要 ACS 令牌的 OAuth 协议控制对其服务的访问。媒体服务从授权服务器接收 ACS 令牌。
+[Azure Active Directory 访问控制](https://msdn.microsoft.com/zh-cn/library/hh147631.aspx)（也称为访问控制服务或 ACS）是一个基于云的服务，可轻松对用户进行身份验证和授权以使用户获得访问其 Web 应用程序的权限。Windows Azure 媒体服务通过需要 ACS 令牌的 OAuth 协议控制对其服务的访问。媒体服务从授权服务器接收 ACS 令牌。
 
-使用 Media Services SDK 进行开发时，可选择不处理令牌，因为 SDK 代码会为你进行管理。不过，将 ACS 令牌完全交由 SDK 管理会导致不必要的令牌请求。请求令牌将耗用一定的时间并消耗客户端和服务器资源。此外，如果速度过快，ACS 服务器还会限制请求。上限为每秒钟 30 条请求，请参阅 [ACS 服务限制](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx)了解更多详细信息。
+使用 Media Services SDK 进行开发时，可选择不处理令牌，而是由 SDK 代码为你进行管理。不过，将 ACS 令牌完全交由 SDK 管理会导致不必要的令牌请求。请求令牌将耗用一定的时间并消耗客户端和服务器资源。此外，如果速度过快，ACS 服务器还会限制请求。上限为每秒钟 30 条请求，请参阅 [ACS 服务限制](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx)了解更多详细信息。
 
-自 Media Services SDK 3.0.0.0 版本起，可以重复使用 ACS 令牌。以 **MediaServicesCredentials** 作为参数的 **CloudMediaContext** 构造函数可实现在多个上下文之间共享 ACS 令牌。MediaServicesCredentials 类中封装有媒体服务凭据。如果 ACS 令牌可用且其过期时间已知，则可以使用该令牌创建一个新的 MediaServicesCredentials 实例并将其传递给 CloudMediaContext 的构造函数。请注意，Media Services SDK 将在每次令牌过期时自动刷新令牌。重复使用 ACS 令牌的方式有两种，如以下示例中所示。
+自 Media Services SDK 版本 3.0.0.0 起，可以重复使用 ACS 令牌。以 **MediaServicesCredentials** 作为参数的 **CloudMediaContext** 构造函数可实现在多个上下文之间共享 ACS 令牌。MediaServicesCredentials 类中封装有媒体服务凭据。如果 ACS 令牌可用且其过期时间已知，则可以使用该令牌创建一个新的 MediaServicesCredentials 实例并将其传递给 CloudMediaContext 的构造函数。请注意，Media Services SDK 将在每次令牌过期时自动刷新令牌。有两种方法可重复使用 ACS 令牌，如以下示例中所示。
 
 - 你可以在内存中（例如，在静态类变量中）缓存 **MediaServicesCredentials** 对象。然后，将缓存的对象传递给 CloudMediaContext 构造函数。MediaServicesCredentials 对象包含一个 ACS 令牌，如果该令牌仍然有效，则可重复使用。如果该令牌无效，则会使用提供给 MediaServicesCredentials 构造函数的凭据通过 Media Services SDK 刷新该令牌。
 
@@ -79,9 +82,9 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 		
 		CloudMediaContext context = new CloudMediaContext(_cachedCredentials);
 
-- 你也可以缓存 AccessToken 字符串和 TokenExpiration 值。这些值以后可以与缓存的令牌数据一并用于创建一个新的 MediaServicesCredentials 对象。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
+- 你也可以缓存 AccessToken 字符串和 TokenExpiration 值。这些值以后可以与缓存的令牌数据一起用于创建一个新的 MediaServicesCredentials 对象。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
 
-	以下代码片段调用了未在此示例中定义的 SaveTokenDataToExternalStorage、GetTokenDataFromExternalStorage 和 UpdateTokenDataInExternalStorageIfNeeded 方法。你可以定义这些方法以在外部存储中存储、检索和更新令牌数据。
+	以下代码段调用了未在此示例中定义的 SaveTokenDataToExternalStorage、GetTokenDataFromExternalStorage 和 UpdateTokenDataInExternalStorageIfNeeded 方法。你可以定义这些方法以在外部存储中存储、检索和更新令牌数据。
 
 		CloudMediaContext context1 = new CloudMediaContext(_mediaServicesAccountName, _mediaServicesAccountKey);
 		
@@ -95,7 +98,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 		// If it is not valid, call MediaServicesCredentials’s RefreshToken before caching.
 		SaveTokenDataToExternalStorage(accessToken, tokenExpiration);
 		
-	使用保存的令牌值来创建 MediaServicesCredentials。
+	使用保存的令牌值可创建 MediaServicesCredentials。
 
 
 		var accessToken = "";
@@ -121,7 +124,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 		}
 		
 
-- 如果你具有多个媒体服务帐户（例如，用于负载共享目的或地域分布），则可以使用 System.Collections.Concurrent.ConcurrentDictionary 集合（ConcurrentDictionary 集合表示可由多个线程同时访问的密钥/值对的线程安全集合）缓存 MediaServicesCredentials 对象。然后可以使用 GetOrAdd 方法获得缓存凭据。
+- 如果你具有多个媒体服务帐户（例如，用于负载共享目的或地域分布，则可以使用 System.Collections.Concurrent.ConcurrentDictionary 集合（ConcurrentDictionary 集合表示可由多个线程同时访问的密钥/值对的线程安全集合）缓存 MediaServicesCredentials 对象。然后可以使用 GetOrAdd 方法获得缓存凭据。
 
 		// Declare a static class variable of the ConcurrentDictionary type in which the Media Services credentials will be cached.  
 		private static readonly ConcurrentDictionary<string, MediaServicesCredentials> mediaServicesCredentialsCache = 
@@ -162,9 +165,9 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 
 ## 将连接值存储到配置中
 
-强烈建议将连接值（特别是敏感值，如帐户名和密码）存储到配置中。此外，建议你敏感的配置数据加密。你可以使用 Windows 加密文件系统 (EFS) 加密整个配置文件。要对某个文件启用 EFS，请右键单击该文件，选择**“属性”**，然后在**“高级”**设置选项卡中启用加密。此外，你也可以使用受保护的配置来创建自定义解决方案，以便加密配置文件的所选部分。请参阅[使用受保护的配置来加密配置信息](https://msdn.microsoft.com/zh-cn/library/53tyfkaw.aspx)。
+强烈建议你将连接值（特别是敏感值，如你的帐户名和密码）存储到配置中。此外，建议你对敏感的配置数据加密。你可以使用 Windows 加密文件系统 (EFS) 加密整个配置文件。要对某个文件启用 EFS，请右键单击该文件，选择“属性”，然后在“高级”设置选项卡中启用加密。此外，你也可以使用受保护的配置来创建自定义解决方案，以便加密配置文件的所选部分。请参阅[使用受保护的配置来加密配置信息](https://msdn.microsoft.com/zh-cn/library/53tyfkaw.aspx)。
 
-以下 App.config 文件包含了必需的连接值。<appSettings> 元素中的值是从媒体服务帐户的设置过程中获取的必需值。
+以下 App.config 文件包含了必需的连接值。<appSettings> 元素中的值是你从媒体服务帐户设置过程中获取的必需值。
 
 
 <pre><code>
@@ -187,4 +190,4 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 
 <!-- URLs. -->
 
-<!---HONumber=67-->
+<!---HONumber=71-->

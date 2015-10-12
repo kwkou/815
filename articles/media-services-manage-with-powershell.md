@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="06/16/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/11/2015"
+	wacn.date="10/03/2015"/>
 
 
 #使用 PowerShell 管理 Azure 媒体服务帐户
@@ -26,7 +26,7 @@
 
 >[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
-##安装 Microsoft Azure PowerShell Cmdlet
+##安装 Windows Azure PowerShell Cmdlet
 
 若要安装最新的 Azure PowerShell cmdlet，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
@@ -104,4 +104,4 @@ Azure 媒体服务使用 Azure 存储空间来存储媒体内容。当你创建�
 
 	PS C:\> Remove-AzureMediaServicesAccount -Name "amstestaccount001" -Force
 
-<!---HONumber=67-->
+<!---HONumber=71-->
