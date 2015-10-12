@@ -1,7 +1,7 @@
 <properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Windows Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="downloads"
     ms.date=""
-    wacn.date="07/28/2015"
+    wacn.date="10/12/2015"
     />
 
 
@@ -17,7 +17,7 @@
   <div>
     <h4>.NET</h4>
     <ul>
-      <!--li><a href="http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x804">VS 2015 安装</a></li-->
+      <li><a href="http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x804">VS 2015 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x804">VS 2013 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x804">VS 2012 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=234674&clcid=0x804">客户端库</a></li>
@@ -80,7 +80,7 @@
       <!--li><a href="http://nuget.org/packages/WindowsAzure.MobileServices/">Windows 应用商店 C# 安装</a></li-->
       <!--li><a href="http://nuget.org/packages/WindowsAzure.MobileServices.WinJS/">Windows 应用商店 JS 安装</a></li-->
       <li><a href="http://nuget.org/packages/WindowsAzure.MobileServices/">Windows Phone 8 安装</a></li>
-      <li><a href="/develop/mobile/">文档</a></li>
+      <li><a href="/documentation/services/mobile-services">文档</a></li>
     </ul>
   </div>
   <div>
