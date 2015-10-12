@@ -44,12 +44,12 @@
 
     在安装过程中，你会看到如下所示的对话窗口弹出，要求你设置 MySQL 根密码。你需要在此处设置该密码。
 
-    ![图像](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p1.png)
+    ![图像](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p01.png)
 
     
     再次输入密码进行确认。
 
-    ![图像](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p2.png)
+    ![图像](./media/virtual-machines-linux-install-mysql/virtual-machines-linux-install-mysql-p02.png)
  
 - 步骤 2：登录 MySQL Server
 
