@@ -1,33 +1,42 @@
-1. 在登录到 Azure 的[管理门户](http://manage.windowsazure.cn)。
-在命令栏中，单击**新建**。
+1. 使用[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect) 中列出的步骤登录到你的 Azure 订阅。
 
-2. 单击**虚拟机**，然后单击**从库**。
+2. 请使用以下命令你确保处于服务管理模式下：
 
-3. 从**选择一个图像**，从一个列表中选择一个映像。（可用的映像可能不同具体取决于正在使用的订阅。）单击箭头以继续。
+        azure config mode asm
 
-4. 图像的多个版本中是否可用，**版本发布日期**，选择您想要使用的版本。
+3. 从可用映像中找出你想要加载的 Linux 映像：
 
-5. 在**虚拟机名称**，键入您想要使用的名称。对于此虚拟机，键入**MyTestVM1**。
+        azure vm image list | grep "Linux"
 
-6. 在**大小**，选择您想要用于虚拟机的大小。所选大小取决于您的应用程序所需的内核数。对于此虚拟机，选择最小的可用大小。
+4. 利用上述列表中的 Linux 映像，使用 `azure vm create` 创建新的虚拟机。此步骤将创建新的云服务以及新的存储帐户。你还可通过 `-c` 选项将此虚拟机连接到现有云服务。其还通过 `-e` 选项创建 SSH 终结点以登录到 Linux 虚拟机。
 
-7. 在**新用户名**，键入将用于管理虚拟机的帐户的名称。不能使用"root"作为用户名。对于此虚拟机，键入**NewUser1**。
+        ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "West US"
+        info:    Executing command vm create
+        + Looking up image b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64
+        Enter VM 'adminUser' password:*********
+        Confirm password: *********
+        + Looking up cloud service
+        info:    cloud service MyTestVM not found.
+        + Creating cloud service
+        + Retrieving storage accounts
+        + Creating a new storage account 'mytestvm1437604756125'
+        + Creating VM
+        info:    vm create command OK
 
-8. 在身份验证下, 检查**提供密码**。然后，提供所需的信息，并单击箭头以继续。
+    >[AZURE.NOTE]对于 Linux 虚拟机，你必须提供在 `vm create` 中提供 `-e` 选项；不能在创建虚拟机后启用 SSH。有关 SSH 的详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
 
-9. 您可以将虚拟机一起放在云服务中，但对于本教程，您只创建单个虚拟机。若要执行此操作，请选择**创建新的云服务**。
+    请注意，映像 *b4590d9e3ed742e4a1d46e5424aa335e\_\_suse-opensuse-13.1-20141216-x86-64* 是我们在上述步骤中从映像列表中选择的映像。*MyTestVM* 是我们的新虚拟机的名称，*adminUser* 是我们将 SSH 用于虚拟机的用户名。你可以根据你的要求来替换这些变量。有关此命令的更多详细信息，请访问[使用 Azure 服务管理的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
 
-10. 在**云服务 DNS 名称**，键入使用 3 到 24 个小写字母和数字之间的名称。您将需要使用您自己的云服务名称提出，因为它必须是唯一在 Azure 中。Clouse 服务名称将成为用于联系虚拟机通过云服务的 URI 的一部分。
+5. 新创建的 Linux 虚拟机将显示在由以下命令生成的列表中：
 
-11. 在**区域/地缘组/虚拟网络**，选择您想要放置该虚拟机的位置。
+        azure vm list
 
-12. 您可以选择存储 VHD 文件的存储帐户。对于本教程中，可接受的默认设置**使用自动生成的存储帐户**。
+6. 可以通过使用以下命令来验证虚拟机的属性：
 
-13. 在下**可用性集**，对于本教程的目的，请使用默认设置为**None**。 
+        azure vm show MyTestVM
 
-14.	在下**终结点**，查看自动创建以允许安全外壳 (SSH) 连接到虚拟机的终结点。（终结点允许与虚拟机进行通信的 Internet 或其他虚拟网络上的资源。）您可以现在，添加更多终结点或以后创建它们。有关更高版本创建它们的说明，请参阅[如何设置终结点到虚拟机](http://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-set-up-endpoints)。
+7. 使用 `azure vm start` 命令即可启动新创建的虚拟机。
 
-15.  在下**VM 代理**，查看可用的扩展。这些扩展提供更加轻松地使用和管理虚拟机的各种功能。有关详细信息，请参阅[Azure VM 扩展](http://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。 
+有关所有这些 Azure CLI 虚拟机命令的详细信息，请参阅[使用服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
 
-
-Azure 创建虚拟机和云服务后，管理门户会列出新的虚拟机在**虚拟机**，并列出云服务下的**云服务**。自动启动虚拟机和云服务。
+<!---HONumber=70-->

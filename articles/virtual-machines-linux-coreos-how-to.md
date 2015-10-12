@@ -1,12 +1,23 @@
-<properties pageTitle="如何在 Azure 上使用 CoreOS" description="介绍 CoreOS、如何在 Azure 上创建 CoreOS 虚拟机及其基本用法。" services="virtual-machines" documentationCenter="virtual-machines" authors="rasquill" manager="timlt" />
-<tags 
+<properties
+	pageTitle="如何使用 CoreOS | Windows Azure"
+	description="介绍 CoreOS、如何在 Azure 上创建 CoreOS 虚拟机群集及其基本用法。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="squillace"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-service-management"/>
+
+<tags
 	ms.service="virtual-machines"
-	ms.date="03/16/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/03/2015"
+	wacn.date="09/18/2015"/>
 
 # 如何在 Azure 上使用 CoreOS
 
-本主题介绍 [CoreOS] 并演示如何在 Azure 上创建三个 CoreOS 虚拟机构成的群集，以帮助你快速开始了解 CoreOS。它使用非常基本的 CoreOS 部署元素和来自 [CoreOS 与 Azure]、[Tim Park 的 CoreOS 教程]和 [Patrick Chanezon 的 CoreOS 教程]中的示例，演示了解 CoreOS 部署的基本结构及成功运行三个虚拟机构成的群集的绝对最低要求。
+本主题介绍 [CoreOS] 并演示如何在 Azure 上创建三个 CoreOS 虚拟机构成的群集，以帮助你快速了解此操作系统。它使用非常基本的 CoreOS 部署元素和来自 [CoreOS 与 Azure]、[Tim Park 的 CoreOS 教程]和 [Patrick Chanezon 的 CoreOS 教程]中的示例，演示了解 CoreOS 部署的基本结构及成功运行三个虚拟机构成的群集的绝对最低要求。
+
+>[AZURE.NOTE]本文介绍了如何通过 Azure 命令行界面来使用服务管理命令创建 CoreOS VM。若要在 Azure 资源管理器中开始使用 CoreOS，请尝试此[快速入门模板](documentation/templates/coreos-with-fleet-multivm)。
 
 ## <a id='intro'>CoreOS、群集和 Linux 容器</a>
 
@@ -39,16 +50,16 @@ CoreOS 是 Linux 的轻量级版本，旨在支持快速创建使用 Linux 容�
 6. 在 localhost 中测试你的 CoreOS 群集
 
 ### 创建用于通信的公钥和私钥
- 
-按照[如何在 Azure 上通过 Linux 使用 SSH](/zh-cn/documentation/articles/virtual-machines-linux-use-ssh-key/) 中的说明，创建用于 SSH 的公钥和私钥。（可在下面的说明中找到基本步骤。） 你将使用这些密钥连接到群集中的 VM，以验证它们是否可以正常工作并互相通信。
+
+按照[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-use-ssh-key) 中的说明，创建用于 SSH 的公钥和私钥。（可在下面的说明中找到基本步骤。） 你将使用这些密钥连接到群集中的 VM，以验证它们是否可以正常工作并互相通信。
 
 > [AZURE.NOTE]本主题假定你没有这些密钥，为了让你明了操作过程，将要求你创建 `myPrivateKey.pem` 和 `myCert.pem` 文件。如果已将公钥和私钥对保存到 `~/.ssh/id_rsa`，只需键入 `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem` 即可获取需要上载到 Azure 的 .pem 文件。
 
-1. 在工作目录中，键入 `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem` 以创建私钥和与之关联的 X.509 证书。 
+1. 在工作目录中，键入 `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout myPrivateKey.key -out myCert.pem` 以创建私钥和与之关联的 X.509 证书。
 
 2. 若要判断私钥的所有者是否可以读取或写入文件，请键入 `chmod 600 myPrivateKey.key`。
 
-你的工作目录中现在应同时包含 `myPrivateKey.key` 和 `myCert.pem`。
+你的工作目录中现在应同时包含 `myPrivateKey.key` 和 `myCert.pem` 文件。
 
 
 ### 获取群集的 etcd id
@@ -61,7 +72,7 @@ curl https://discovery.etcd.io/new | grep ^http.* > etcdid
 
 ### 创建 cloud-config 文件
 
-在相同的工作目录中，使用你最喜欢的文本编辑器创建包含以下文本的文件，并将其保存为 `cloud-config.yaml`。（可以使用你想要的任何文件名将其保存，但在下一步创建 VM 时，必须在 **azure create vm** 命令的 **--custom-data** 选项中引用此文件的名称。）
+在相同的工作目录中，使用你最喜欢的文本编辑器创建包含以下文本的文件，并将其另存为 `cloud-config.yaml`。（可以使用你想要的任何文件名将其保存，但在下一步创建 VM 时，必须在 **azure vm create** 命令的 **--custom-data** 选项中引用此文件的名称。）
 
 > [AZURE.NOTE]请记得键入 `cat etcdid`，以从之前创建的 `etcdid` 文件中检索 etcd 发现 id，并使用 `etcdid` 文件生成的数字替换以下 `cloud-config.yaml` 文件中的 `<token>`。如果最后无法验证群集，这可能会是你忽略了的其中一个步骤！
 
@@ -88,22 +99,27 @@ coreos:
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
 1. 如果尚未安装 [Azure 命令行界面 (Azure CLI)]，请先执行安装并使用工作或学校 ID 登录，或下载 .publishsettings 文件并将其导入你的帐户。
-2. 寻找 CoreOS 映像。键入 `azure vm image list | grep CoreOS` 可随时找到可用的映像，，应该会显示类似如下内容的结果列表：data: 2b171e93f07c4903bcad35bda10acf22\_\_CoreOS-Stable-522.6.0 Public Linux
-3. 键入 `azure service create <cloud-service-name>`（其中的 *cloud-service-nam * 是你的 CoreOS 云服务的名称）可创建用于基本群集的云服务。此示例使用 **`coreos-cluster`** 作为名称；你将需要重用所选名称来创建云服务内部的 CoreOS VM 实例。 
+2. 寻找 CoreOS 映像。若要查找随时可用的映像，请键入 `azure vm image list | grep CoreOS`，然后就会看到类似于以下内容的结果列表：
+
+	数据: 2b171e93f07c4903bcad35bda10acf22\_\_CoreOS-Stable-522.6.0 Public Linux
+
+3. 键入 `azure service create <cloud-service-name>`（其中的 <*cloud-service-name*> 是你的 CoreOS 云服务的名称）可创建用于基本群集的云服务。此示例使用 **`coreos-cluster`** 作为名称；你将需要重用所选名称来创建云服务内部的 CoreOS VM 实例。
 
 注意：如果在[门户](https://manage.windowsazure.cn)中观察你到目前为止的工作，你会在资源组和域中看到你的云服务名称，如下图所示：
 
-![][CloudServiceInNewPortal] 4.使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 映像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
+	![][CloudServiceInNewPortal]
+
+4. 使用 **azure vm create** 命令可连接到你的云服务，并可在其中创建新的 CoreOS VM。你将在 **--ssh-cert** 选项中传递 X.509 证书的位置。通过键入以下命令创建你的第一个 VM 映像，请记得使用你创建的云服务名称替换 **coreos-cluster**：
 
 ```
 azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location='China East' 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
 ```
 
-5. 通过重复步骤 4 中的命令来创建第二个节点，使用 **node-2** 替换 **--vm-name** 值，并使用 2022 替换 **--ssh** 端口值。 
- 
+5. 通过重复步骤 4 中的命令来创建第二个节点，使用 **node-2** 替换 **--vm-name** 值，并使用 2022 替换 **--ssh** 端口值。
+
 6. 通过重复步骤 4 中的命令来创建第三个节点，使用 **node-3** 替换 **--vm-name** 值，并使用 3022 替换 **--ssh** 端口值。
- 
-从下方的截图中，你可以看到 CoreOS 群集在新门户中显示时的样子。
+
+从下方的截图中，你可以看到 CoreOS 群集在门户中显示时的样子。
 
 ![][EmptyCoreOSCluster]
 
@@ -125,7 +141,7 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 
 ### 在 localhost 中测试你的 CoreOS 群集
 
-最后，让我们通过安装 **fleet** 来从本地 Linux 客户端测试你的 CoreOS 群集。**fleet** 需要 **golang**，因此你可能需要先安装它，方法是键入：
+最后，让我们测试你本地 Linux 客户端中的 CoreOS 群集。你也许可以使用 **npm** 来安装 **fleetctl**；或者，你可能希望安装 **fleet** 并在本地客户端上自行构建 **fleetctl**。**fleet** 需要使用 **golang**，因此，你可能需要先安装后者，则需键入：
 
 `sudo apt-get install golang`
 
@@ -133,7 +149,7 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 
 `git clone https://github.com/coreos/fleet.git`
 
-生成 **fleet**，方法是更改为 `fleet` 目录并键入
+生成 **fleet**，方法是转到 `fleet` 目录并键入
 
 `./build`
 
@@ -145,7 +161,7 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 
 `ssh-add ./myPrivateKey.key`
 
-> [AZURE.NOTE]如果你已在使用 **`~/.ssh/id_rsa`** 密钥，则使用 `ssh-add ~/.ssh/id_rsa` 进行添加。
+> [AZURE.NOTE]如果你已在使用 `~/.ssh/id_rsa` 密钥，则使用 `ssh-add ~/.ssh/id_rsa` 进行添加。
 
 现在，你已准备好使用你在 **node-1** 中使用的相同 **fleetctl** 命令进行远程测试，但需要传递部分远程参数：
 
@@ -178,8 +194,7 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 
 
 <!--Link references-->
-[Azure 命令行界面 (Azure CLI)]: /zh-cn/documentation/articles/xplat-cli/
-
+[Azure 命令行界面 (Azure CLI)]: /documentation/articles/xplat-cli/
 [CoreOS]: https://coreos.com/
 [CoreOS 概述]: https://coreos.com/using-coreos/
 [CoreOS 与 Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -190,4 +205,4 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 [在 Azure 上的 CoreOS 上使用 Fleet 入门]: /documentation/articles/virtual-machines-linux-coreos-fleet-get-started
  
 
-<!---HONumber=67-->
+<!---HONumber=70-->

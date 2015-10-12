@@ -1,60 +1,66 @@
-<properties linkid="manage-windows-common-tasks-vm-availability" urlDisplayName="Manage Availability of VMs" pageTitle="管理虚拟机的可用性 - Azure 微软云" metaKeywords="Azure,Virtual Machine,虚拟机,冗余,高可用性,负载平衡,高可用性最佳实践,负载平衡器" description="本文首先概览了计划的和计划外的维护事件，然后介绍了多种应用程序实现高可靠性的最佳做法，包括：配置多个虚拟机中的冗余的可用性集、将多个应用层配置到不同的可用性集中、合并负载均衡器使用可用性集及避免单一实例中的可用性集中的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="" authors="kenazk" solutions="" manager="dongill" editor="tysonn" />
-<tags ms.service="virtual-machines"
-    ms.date="03/13/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="管理虚拟机的可用性 | Windows Azure"
+	description="了解如何使用多个虚拟机来确保你的 Azure 应用程序的高可用性。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="kenazk"
+	manager="timlt"
+	editor="tysonn"/>
+
+<tags
+	ms.service="virtual-machines"
+	ms.date="07/23/2015"
+	wacn.date="09/18/2015"/>
 
 #管理虚拟机的可用性
 
-## 了解计划而不是计划外维护
-有两种类型的可能会影响您的虚拟机的可用性的 Azure 平台事件： 计划的维护和计划外的维护。
+## 了解计划内与计划外维护
+有两种类型的 Windows Azure 平台事件可能影响到虚拟机的可用性：计划内维护和计划外维护。
 
-- **计划的维护事件**是对底层 Azure 平台以提高总体可靠性、 性能和安全性的虚拟机运行的平台基础结构的定期更新。而不影响您的虚拟机或云服务执行的大部分这些更新。但是，有一些的实例，这些更新需要重新启动到虚拟机将所需的更新应用于平台基础结构。 
+- **计划内维护事件**是指由 21vnet 对底层 Azure平台进行定期更新，以改进虚拟机运行时所在的平台基础结构的总体可靠性、性能和安全性。大多数此类更新在执行时不会影响虚拟机或云服务。但有时候，这些更新要求重启你的虚拟机，否则无法将这些必需更新应用到平台基础结构。
 
-- **计划外的维护事件**时的硬件或物理基础结构基础虚拟机出现故障以某种方式发生。这可能包括本地网络故障、 本地磁盘故障或其他机架级故障。检测到此类故障时，Azure 平台从状态不良的物理计算机承载的运行状况良好的物理机到虚拟机将自动迁移虚拟机。此类事件很少见，但也可能会导致您的虚拟机重新启动。 
+- **计划外维护事件**见于虚拟机所在硬件或物理基础结构出现某类故障的情况。此类故障可能包括：本地网络故障、本地磁盘故障，或者其他机架级别的故障。检测到此类故障时，Azure 平台会自动将虚拟机从所在的不健康物理机迁移到健康的物理机。此类事件很少见，但也会导致虚拟机重启。
 
-## 在设计您的应用程序以实现高可用性时遵循的最佳做法
-若要减少由于一个或多个事件而导致的停机时间的影响，我们建议以下高可用性虚拟机的最佳实践：
+## 当你设计可用性高的应用程序时，请遵循最佳做法
+若要减轻一个或多个此类事件引发的停机所造成的影响，我们建议你遵循以下最佳做法以提高虚拟机的可用性：
 
-* [配置多个虚拟机中的冗余的可用性集]  
-* [将每个应用层配置到单独的可用性集]
-* [合并负载平衡器使用可用性集]
-* [避免单一实例中的可用性集中的虚拟机]
+* [在可用性集中配置多个虚拟机以确保冗余]
+* [将每个应用程序层配置到不同的可用性集中]
+* [将负载平衡器与可用性集组合在一起]
+* [避免可用性集中出现单实例虚拟机]
 
-### <a id="configure-multiple-virtual-machines-in-an-availability-set-for-redundancy"></a>配置多个虚拟机中的冗余的可用性集 
-若要提供给您的应用程序的冗余，我们建议您在一个可用性集的两个或多个虚拟机进行分组。此配置可以确保在计划内或计划外维护事件期间至少一台虚拟机将可用并满足 99.95%Azure SLA。有关服务级别协议的详细信息，请参阅中的"云服务、 虚拟机和虚拟网络"部分[服务级别协议](/support/legal/sla). 
+### 在可用性集中配置多个虚拟机以确保冗余
+若要为应用程序提供冗余，我们建议你将两个或两个以上的虚拟机组合到一个可用性集中。这种配置可以确保在发生计划内或计划外维护事件时，至少有一个虚拟机可用，因此满足 99.95% Azure SLA 的要求。有关服务级别协议要求的更多信息，请参阅[服务级别协议](/support/legal/sla/)中的“云服务、虚拟机和虚拟网络”一节。
 
-在您的可用性集的每个虚拟机分配更新域 (UD) 和容错域 (FD) 由基础的 Azure 平台。为给定可用性集时，五个非用户配置 Ud 分配以指示虚拟机和在同一时间就会重新引导的底层物理硬件的组。当在单个可用性集内配置时超过五个虚拟机时，第六个虚拟机将放入同一 UD 作为第一个虚拟机与第二个虚拟机，相同的 UD 中的第七个，依此类推。计划维护期间不能按顺序继续 Ud 正在重新启动的顺序，但只有一个 UD 将重新启动一次。
+基础 Azure 平台为可用性集中的每个虚拟机分配一个更新域 \(UD\) 和一个容错域 \(FD\)。对于给定的可用性集，将会分配 5 个非用户可配置 UD，以指示能够同时重启的虚拟机组和底层物理硬件。在单个可用性集中配置 5 个以上的虚拟机时，第 6 个虚拟机将放置在第 1 个虚拟机所在的 UD 中，第 7 个虚拟机将放置在第 2 个虚拟机所在的 UD 中，依此类推。在计划内维护期间，UD 的重启顺序可能不会按序进行，但一次只重启一个 UD。
 
-Fd 定义共享常见的电源源与网络交换机的虚拟机的组。默认情况下，在您的可用性集内配置虚拟机跨两个 Fd 分隔。虽然将虚拟机放入一个可用性集不会从操作系统，也不特定于应用程序故障中保护您的应用程序，它却限制潜在的物理硬件故障、 网络中断或电源中断的影响。   
-
-<!--Image reference-->
-   ![UD FD configuration](./media/virtual-machines-manage-availability/ud-fd-configuration.png)
-
-### <a id="configure-each-application-tier-into-separate-availability-sets"></a>将每个应用层配置到单独的可用性集
-如果可用性组中的虚拟机都几乎完全相同，并且用于您的应用程序相同的目的，我们建议您将配置您的应用程序的每个层的可用性集。如果在同一可用性集中放置两个不同的层，可以一次重新启动在相同的应用程序层的所有虚拟机。通过配置在至少两台虚拟机中的每个层的可用性集，您保证至少一个在每个虚拟机层将可用。   
-
-例如，您可以将所有虚拟机放在运行 IIS、 Apache、 Nginx 等一单个可用性组中的应用程序的前端。请确保仅前端的虚拟机将放置在同一个可用性集中。同样，请确保 SQL Server 虚拟机或您 MySQL 的虚拟机仅数据层的虚拟机将放置在他们自己可用性集时，像您复制中。
+根据定义，FD 是一组共用一个通用电源和网络交换机的虚拟机。默认情况下，在可用性集中配置的虚拟机分布在两个 FD 中。虽然将虚拟机置于可用性集中并不能让你的应用程序免受特定于操作系统或应用程序的故障的影响，但可以限制潜在物理硬件故障、网络中断或电源中断的影响。
 
 <!--Image reference-->
-   ![Application tiers](./media/virtual-machines-manage-availability/application-tiers.png)
+   ![UD FD 配置](./media/virtual-machines-manage-availability/ud-fd-configuration.png)
 
- 
-### <a id="combine-the-load-balancer-with-availability-sets"></a>合并负载平衡器使用可用性集
-结合使用可用性集以获取最大应用程序复原 Azure 负载平衡器。Azure 负载平衡器分配多个虚拟机之间的流量。对于我们的标准层虚拟机，则包含 Azure 负载平衡器。请注意并非所有虚拟机层都包括 Azure 负载平衡器。有关虚拟机进行负载平衡的详细信息，请阅读[虚拟机进行负载平衡](/documentation/articles/load-balance-virtual-machines)。 
+>[AZURE.NOTE]有关说明，请参阅[如何为虚拟机配置可用性集][]。
 
-如果未配置负载平衡器来平衡跨多个虚拟机的通信，任何计划内的维护事件将会影响仅流量提供虚拟机导致到应用层服务中断。放置在同一个负载平衡器和可用性集下，在同一层的多个虚拟机可以使流量可以不断地提供至少一个实例。 
+### 将每个应用程序层配置到不同的可用性集中
+如果可用性集中的虚拟机几乎都是相同的，并且对你的应用程序的用途是一样的，我们建议你针对每个应用程序层配置可用性集。如果将两个不同的层置于同一可用性集中，则同一应用程序层中的所有虚拟机可以同时重启。通过在可用性集中为每个层配置至少两个虚拟机，可以确保每个层中至少有一个虚拟机可用。
 
-### <a id="avoid-single-instance-virtual-machines-in-availability-sets"></a>避免单一实例中的可用性集中的虚拟机
-避免在可用性集中的单个实例的虚拟机保留具体本身。在此配置中的虚拟机 SLA 保证不符合条件，并将在 Azure 的计划内的维护事件过程中遇到的停机时间。此外，如果部署在可用性集中的单个虚拟机实例时，您会收到任何高级的警告或平台维护的通知。单个虚拟机实例可以在此配置中，并且将重新启动不出现任何高级警告平台维护发生时。
+例如，你可以将运行 IIS、Apache、Nginx 等服务器的应用程序前端的所有虚拟机置于单个可用性集中。请确保仅将前端虚拟机置于同一可用性集中。同样，请确保仅将数据层虚拟机置于其自身的可用性集中，例如已复制的 SQL 服务器虚拟机或 MySQL 虚拟机。
 
-[配置多个虚拟机中的冗余的可用性集]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy 
-[将每个应用层配置到单独的可用性集]: #configure-each-application-tier-into-separate-availability-sets 
-[合并负载平衡器使用可用性集]: #combine-the-load-balancer-with-availability-sets 
-[避免单一实例中的可用性集中的虚拟机]: #avoid-single-instance-virtual-machines-in-availability-sets 
-
- 
+<!--Image reference-->
+   ![应用程序层](./media/virtual-machines-manage-availability/application-tiers.png)
 
 
+### 将负载平衡器与可用性集组合在一起
+将 Azure 负载平衡器与可用性集组合在一起，以获取最大的应用程序复原能力。Azure 负载平衡器将流量分布到多个虚拟机中。对于标准层虚拟机来说，Azure 负载平衡器已包括在内。请注意，并非所有虚拟机层都包括 Azure 负载平衡器。有关对虚拟机进行负载平衡的更多信息，请阅读[对虚拟机进行负载平衡](/documentation/articles/load-balance-virtual-machines)。
 
+如果没有将负载平衡器配置为对多个虚拟机上的流量进行平衡，则任何计划内维护事件都会影响唯一的那个处理流量的虚拟机，导致应用程序层中断。将同一层的多个虚拟机置于相同的负载平衡器和可用性集下可以确保至少有一个虚拟机实例能够持续处理流量。
 
+### 避免可用性集中出现单实例虚拟机
+避免将单实例虚拟机置于可用性集中。此配置中的虚拟机并不符合 SLA 保证，在出现 Azure 计划内维护事件时就会停机。请注意，如果系统发送多实例虚拟机计划内维护通知，则可用性集中的单个虚拟机实例也会收到提前发出的电子邮件通知。
+
+<!-- Link references -->
+[在可用性集中配置多个虚拟机以确保冗余]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
+[将每个应用程序层配置到不同的可用性集中]: #configure-each-application-tier-into-separate-availability-sets
+[将负载平衡器与可用性集组合在一起]: #combine-the-load-balancer-with-availability-sets
+[避免可用性集中出现单实例虚拟机]: #avoid-single-instance-virtual-machines-in-availability-sets
+[如何为虚拟机配置可用性集]: /documentation/articles/virtual-machines-how-to-configure-availability
