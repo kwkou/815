@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="08/05/2015"
-	wacn.dater="09/18/2015" />
+	wacn.date="09/18/2015" />
 
 # Azure 虚拟机中 SQL Server 的备份和还原
 

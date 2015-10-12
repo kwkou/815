@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="05/21/2015" 
-	ms.author="09/18/2015"/>
+	wacn.date="09/18/2015"/>
 
 # 如何使用 Windows Azure 在 Linux 虚拟机上设置 Tomcat7 
 

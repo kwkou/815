@@ -10,7 +10,7 @@
 <tags 
 	ms.service="virtual-machines"
 	ms.date="05/19/2015" 
-	wacndate="09/15/2015"/>
+	wacn.date="09/15/2015"/>
 
 # 使用 Chef 自动执行 Azure 虚拟机部署
 
