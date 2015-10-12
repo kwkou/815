@@ -88,14 +88,10 @@
 
 ![将凭据添加到画布](./media/automation-credentials/credential-add-canvas.png)
 
-下图显示了在图形 Runbook 中使用凭据的示例。在这种情况下，它被该 Runbook 用来对 Azure 资源提供身份验证，<!--在[配置对 Azure 资源的身份验证](#automation-configuring)中进行了描述。-->第一个活动检索有权访问 Azure 订阅的凭据。然后，**Add-AzureAccount** 活动使用此凭据对它之后的任何活动提供身份验证。此处是一个[管道链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)，因为 **Get-AutomationPSCredential** 要求是单个对象。
+下图显示了在图形 Runbook 中使用凭据的示例。在这种情况下，它被该 Runbook 用来对 Azure 资源提供身份验证，<!--在[配置对 Azure 资源的身份验证](#automation-configuring)中进行了描述。-->第一个活动检索有权访问 Azure 订阅的凭据。然后，**Add-AzureAccount** 活动使用此凭据对它之后的任何活动提供身份验证。
 
 ![将凭据添加到画布](./media/automation-credentials/get-credential.png)
 
-
-## 相关文章
-
-- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)-->
 
  
 
