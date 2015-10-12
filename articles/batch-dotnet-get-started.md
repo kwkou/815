@@ -38,6 +38,8 @@
 
 	2. 在线搜索 **WindowsAzure.Storage**，然后单击“安装”以安装 Azure 存储包和依赖项。
 
+> [AZURE.TIP]本教程使用了[Azure Batch API 基础知识](batch-api-basics.md)中所述的某些核心 Batch 概念，对于 Batch 的新用户，强烈建议阅读该主题。
+
 ## 步骤 1：创建并上载支持文件
 
 为了支持应用程序，请在 Azure 存储空间中创建一个容器，再创建文本文件，然后将文本文件和支持文件上载到该容器。
@@ -61,17 +63,20 @@
 
 2. 保存 App.config 文件。
 
-若要了解详细信息，请参阅[配置连接字符串](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758697.aspx)。
+若要了解有关 Azure 存储空间连接字符串的详细信息，请参阅[配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string)。
 
 ### 创建存储容器
 
-1. 将以下命名空间声明添加到 GettingStarted 项目中 Program.cs 的顶部：
+1. 将以下 using 指令添加到 GettingStarted 项目中 Program.cs 的顶部：
 
 		using System.Configuration;
+		using System.IO;
 		using Microsoft.WindowsAzure.Storage;
 		using Microsoft.WindowsAzure.Storage.Blob;
 
-2. 将此方法添加到 Program 类，该方法将获取存储连接字符串、创建容器，并设置权限：
+2. 将 *System.Configuration* 添加到 GettingStarted 项目的“解决方案资源管理器”中的“引用”内。
+
+3. 将此方法添加到 Program 类，该方法将获取存储连接字符串、创建容器，并设置权限：
 
 		static void CreateStorage()
 		{
@@ -100,13 +105,19 @@
 
 	> [AZURE.NOTE]在生产环境中，建议你使用共享访问签名。
 
-若要了解详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
+若要了解有关 Blob 存储的详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
 
 ### 创建处理程序
 
 1. 在解决方案资源管理器中，创建名为 **ProcessTaskData** 的新控制台应用程序项目。
 
-2. 将以下用于处理文件中文本的代码添加到 Main 中：
+2. 在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。在线搜索 **WindowsAzure.Storage**，然后单击“安装”以安装 Azure 存储包和依赖项。
+
+3. 将以下 using 指令添加到 Program.cs 的顶部：
+
+		using Microsoft.WindowsAzure.Storage.Blob;
+
+4. 将以下用于处理文件中文本的代码添加到 Main 中：
 
 		string blobName = args[0];
 		Uri blobUri = new Uri(blobName);
@@ -128,7 +139,7 @@
 			Console.WriteLine("{0} {1}", pair.Key, pair.Value);
 		}
 
-3. 保存并生成 ProcessTaskData 项目。
+5. 保存并生成 ProcessTaskData 项目。
 
 ### 上载数据文件
 
@@ -142,40 +153,47 @@
 
 3. 创建一个名为 **taskdata3** 的新文本文件，将以下文本复制到其中，然后保存该文件。
 
-	Azure 网站为托管 Web 应用程序提供了可缩放的、可靠的且易于使用的环境。从一系列框架和模板中进行选择，几秒钟就可以创建一个网站。使用任何工具或 OS 以利用 .NET、PHP、Node.js 或 Python 开发网站。从各种源代码管理选项（包括 TFS、GitHub 和 BitBucket）中进行选择，可设置持续集成并像一个团队一样进行开发。利用其他 Azure 托管服务（如存储、CDN 和 SQL Database）随时间扩展网站功能。
+	Azure 网站为托管 Web 应用程序提供了可缩放的、可靠的且易于使用的环境。从一系列框架和模板中进行选择，几秒钟就可以创建一个网站。使用任何工具或 OS 以利用 .NET、PHP、Node.js 或 Python 开发网站。从各种源代码管理选项（包括 TFS、GitHub 和 BitBucket）中进行选择，可设置持续集成并像一个团队一样进行开发。利用其他 Azure 托管服务（如存储、CDN 和 SQL 数据库）随时间扩展网站功能。
 
-### 将文件上载到容器
+### 将文件上载到存储容器
 
 1. 打开 GettingStarted 项目的 Program.cs 文件，然后添加以下用于上载文件的方法：
 
 		static void CreateFiles()
 		{
-		  privateCloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-			ConfigurationManager.AppSettings["StorageConnectionString"]);
-		  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-		  CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
-		  CloudBlockBlob taskData1 = container.GetBlockBlobReference("taskdata1");
-		  CloudBlockBlob taskData2 = container.GetBlockBlobReference("taskdata2");
-		  CloudBlockBlob taskData3 = container.GetBlockBlobReference("taskdata3");
-	  	CloudBlockBlob dataprocessor = container.GetBlockBlobReference("ProcessTaskData.exe");
-	  	CloudBlockBlob storageassembly =
-			container.GetBlockBlobReference("Microsoft.WindowsAzure.Storage.dll");
-		  taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
-		  taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
-	  	taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
-		  dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
-		  storageassembly.UploadFromFile("Microsoft.WindowsAzure.Storage.dll", FileMode.Open);
-		  Console.WriteLine("Uploaded the files. Press Enter to continue.");
-		  Console.ReadLine();
+			CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+				ConfigurationManager.AppSettings["StorageConnectionString"]);
+			CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+			CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
+
+			CloudBlockBlob taskData1 = container.GetBlockBlobReference("taskdata1");
+			CloudBlockBlob taskData2 = container.GetBlockBlobReference("taskdata2");
+			CloudBlockBlob taskData3 = container.GetBlockBlobReference("taskdata3");
+			taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
+			taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
+			taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
+
+			CloudBlockBlob storageassembly = container.GetBlockBlobReference("Microsoft.WindowsAzure.Storage.dll");
+			storageassembly.UploadFromFile("Microsoft.WindowsAzure.Storage.dll", FileMode.Open);
+
+			CloudBlockBlob dataprocessor = container.GetBlockBlobReference("ProcessTaskData.exe");
+			dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
+
+			Console.WriteLine("Uploaded the files. Press Enter to continue.");
+			Console.ReadLine();
 		}
 
-2. 保存 Program.cs 文件。
+2. 将以下用于调用刚刚添加的方法的代码添加到 Main 中：
 
-## 步骤 2.将池添加到帐户
+		CreateFiles();
+
+3. 保存 Program.cs 文件。
+
+## 步骤 2.将池添加到 Batch 帐户
 
 计算节点池是要运行任务时必须创建的第一组资源。
 
-1.	将以下命名空间声明添加到 GettingStarted 项目中 Program.cs 的顶部：
+1.	将以下 using 指令添加到 GettingStarted 项目中 Program.cs 的顶部：
 
 			using Microsoft.Azure.Batch;
 			using Microsoft.Azure.Batch.Auth;
@@ -230,7 +248,7 @@
 
 7. 保存 Program.cs 文件。
 
-## 步骤 2：将作业添加到帐户
+## 步骤 3：将作业添加到帐户
 
 创建一个作业用于管理池中运行的任务。所有任务都必须与作业关联。
 
@@ -272,7 +290,7 @@
 
 5. 保存 Program.cs 文件。
 
-## 步骤 3：将任务添加到作业
+## 步骤 4：将任务添加到作业
 
 创建作业之后，可以在其中添加任务。每个任务都在计算节点上运行，并处理文本文件。在本教程中，你要将三个任务添加到作业。
 
@@ -316,7 +334,9 @@
 			Console.ReadLine();
 		}
 
-	需要将 **[account-name]** 替换为前面创建的存储帐户的名称。请确保在所有四处进行替换。
+
+	需要将 **[account-name]** 替换为前面创建的存储帐户的名称。在上一示例中，更新 **[account-name]** 的所有四个实例。
+
 
 2. 将以下用于调用刚刚添加的方法的代码添加到 Main 中：
 
@@ -342,7 +362,7 @@
 
 5. 保存 Program.cs 文件。
 
-## 步骤 4：删除资源
+## 步骤 5：删除资源
 
 由于你需要为 Azure 中的资源付费，因此，删除不再需要的资源总是一种良好的做法。
 
@@ -373,12 +393,12 @@
 
 			static void DeleteJob(BatchClient client)
 			{
-				client.JobOperations.DeleteJob("davidmujob1");
+				client.JobOperations.DeleteJob("testjob1");
 				Console.WriteLine("Job was deleted.");
 				Console.ReadLine();
 			}
 
-2. 将以下用于运行刚刚添加的方法的代码添加到到 Main 中：
+2. 将以下用于调用刚刚添加的方法的代码添加到到 Main 中：
 
 		DeleteJob(client);
 
@@ -390,18 +410,18 @@
 
 		static void DeletePool (BatchClient client)
 		{
-			client.PoolOperations.DeletePool("davidmupl1");
+			client.PoolOperations.DeletePool("testpool1");
 			Console.WriteLine("Pool was deleted.");
 			Console.ReadLine();
 		}
 
-2. 将以下用于运行刚刚添加的方法的代码添加到到 Main 中：
+2. 将以下用于调用刚刚添加的方法的代码添加到到 Main 中：
 
 		DeletePool(client);
 
 3. 保存 Program.cs 文件。
 
-## 步骤 5：运行应用程序
+## 步骤 6：运行应用程序
 
 1. 启动 GettingStarted 项目，你应会在容器创建后看到此项目出现在控制台窗口中：
 
@@ -467,7 +487,7 @@
 
 ## 后续步骤
 
-1. 现在你已学习了运行任务的基本知识，接下来可以学习如何在应用程序的需求发生变化时自动缩放计算节点。为此，请参阅[自动缩放 Azure 批处理池中的计算节点](/documentation/articles/batch-automatic-scaling)
+1. 现在你已学习了运行任务的基本知识，接下来可以学习如何在应用程序的需求发生变化时自动缩放计算节点。为此，请参阅[自动缩放 Azure Batch 池中的计算节点](batch-automatic-scaling.md)
 
 2. 某些应用程序会生成大量难以处理的数据。解决此问题的方法之一是进行[有效的列表查询](/documentation/articles/batch-efficient-list-queries)。
 

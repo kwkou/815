@@ -10,7 +10,7 @@
 <tags 
 	ms.service="batch" 
 	ms.date="07/14/2015" 
-	wacn.date="08/13/2015"/> 
+	wacn.date="09/02/2015"/> 
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Azure 批处理 API 基础知识
 

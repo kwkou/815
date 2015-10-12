@@ -10,7 +10,7 @@
 <tags
    ms.service="batch"
    ms.date="07/01/2015"
-   wacn.date="08/13/2015"/>
+   wacn.date="09/15/2015"/>
 
 # 批处理和 HPC 解决方案
 
@@ -110,7 +110,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 * [Blob、表和队列存储](/documentation/services/storage) - 分别管理大量非结构化数据、NoSQL 数据，以及有关工作流和通信的消息。例如，你可以为大型技术数据集或应用程序处理的输入图像或媒体文件使用 Blob 存储。可以在解决方案中使用队列以进行异步通信。有关这些存储解决方案的详细信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
-* Azure 文件存储 - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。
+* [Azure 文件存储](http://azure.microsoft.com/services/storage/files/) - 在 Azure 中使用标准 SMB 通信协议（某些 HPC 群集解决方案需要这种协议）来共享公用文件和数据。
 
 ### 数据和分析服务
 
@@ -118,7 +118,7 @@ Azure 中的计算服务是大计算解决方案的核心。下表是经常使�
 
 <!--* [Data Factory](/documentation/services/data-factory) - Builds data-driven workflows (pipelines) that join, aggregate, and transform data sourced from on-premises, cloud-based, and Internet data stores.-->
 
-* [SQL Database](/documentation/services/sql-databases) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
+* [SQL 数据库](/documentation/services/sql-databases) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
 
 * [HDInsight](/documentation/services/hdinsight) - 在云中部署和设置基于 Windows Server 或 Linux 的 Apache Hadoop 群集，用于管理、分析和报告具有高可靠性与可用性的大数据。
 

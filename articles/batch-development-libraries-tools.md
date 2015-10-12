@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="07/24/2015"
-	wacn.date="08/13/2015"/>
+	wacn.date="09/15/2015"/>
 
 
 # Azure 批处理开发库和工具
