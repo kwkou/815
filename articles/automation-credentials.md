@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.date="08/18/2015"
-   wacn.date="10/08/2015" />
+   wacn.date="09/15/2015" />
 
 # Azure 自动化中的凭据资产
 
