@@ -6,16 +6,11 @@
  authors="krisragh" 
  manager="dwrede" 
  editor=""/>
-<tags 
- wacn.date="05/15/2015"
- ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="04/22/2015" 
- ms.author="krisragh"/>
- 
+<tags
+ ms.service="scheduler"
+ ms.date="08/04/2015"
+ wacn.date="09/16/2015"/>
+
 # 计划程序的概念、术语和实体层次结构
 
 ## 计划程序实体层次结构
@@ -44,7 +39,7 @@
 
 有两种类型的作业：HTTP 作业（包括支持 SSL 的 HTTPS 作业）和存储队列作业。HTTP 作业适用于现有工作负载或服务的终结点。利用存储队列作业，你可以将消息发布到存储队列，因此这些作业适合使用存储队列的工作负载。
 
-## "Job"实体详述
+## “Job”实体详述
 
 在基本级别上，一个计划的作业具有若干部分：
 
@@ -112,27 +107,27 @@
 
 如上面的示例计划程序作业中所示，一个作业定义具有若干部分：
 
-1.  开始时间（"startTime"）  
+1.  开始时间（“startTime”）  
 
-2.  操作（"action"），包括错误操作（"errorAction"）   
+2.  操作（“action”），包括错误操作（“errorAction”）
 
-3.  重复周期（"recurrence"）  
+3.  重复周期（“recurrence”）
 
-4.  状况（"state"）  
+4.  状况（“state”）
 
-5.  状态（"status"）  
+5.  状态（“status”）
 
-6.  重试策略（"retryPolicy"）  
+6.  重试策略（“retryPolicy”）
 
 让我们仔细看看其中每一项：
 
 ## startTime
 
-"startTime"是开始时间，允许调用方以 [ISO-8601 格式](http://zh.wikipedia.org/wiki/ISO_8601)在线指定时区偏移量。
+“startTime”是开始时间，允许调用方以 [ISO-8601 格式](http://zh.wikipedia.org/wiki/ISO_8601)在线指定时区偏移量。
 
 ## action 和 errorAction
 
-"action"是每次执行时调用的操作，并且描述服务调用的类型。操作是将按提供的计划执行的内容。目前，计划程序支持 HTTP 和存储队列操作。
+“action”是每次执行时调用的操作，并且描述服务调用的类型。操作是将按提供的计划执行的内容。目前，计划程序支持 HTTP 和存储队列操作。
 
 上例中的操作是一个 http 操作。下面是存储队列操作的示例：
 
@@ -147,8 +142,8 @@
 					"My message body",
 			},
 	}
-				
-"errorAction"是错误处理程序，在主操作失败时调用的操作。你可以使用此变量调用错误处理终结点或发送用户通知。这可用于在主终结点不可用时（例如，在终结点的站点上出现灾难情形时）访问辅助终结点，或者可用于通知错误处理终结点。与主操作相似，错误操作可以是基于其他操作的简单或复合逻辑。若要了解如何创建一个 SAS 令牌，请参阅[创建和使用共享访问签名](https://msdn.microsoft.com/zh-CN/library/azure/jj721951.aspx)。
+
+“errorAction”是错误处理程序，在主操作失败时调用的操作。你可以使用此变量调用错误处理终结点或发送用户通知。这可用于在主终结点不可用时（例如，在终结点的站点上出现灾难情形时）访问辅助终结点，或者可用于通知错误处理终结点。与主操作相似，错误操作可以是基于其他操作的简单或复合逻辑。若要了解如何创建一个 SAS 令牌，请参阅[创建和使用共享访问签名](https://msdn.microsoft.com/zh-CN/library/azure/jj721951.aspx)。
 
 ## recurrence
 
@@ -172,11 +167,11 @@
 
 	
     	"state": "disabled", // enabled, disabled, completed, or faulted
-Completed and faulted jobs are deleted after 60 days.
+60 天后删除完成的作业和出错的作业。
 
 ## status
 
-一旦启动了某一计划程序作业后，将返回与该作业的当前状态有关的信息。用户无法设置该对象 - 该对象是由系统设置的。但是，该对象包含在作业对象中（而不是单独的链接资源中），因此，可以轻松地获取某一作业的状态。
+一旦启动了某一计划程序作业后，将返回与该作业的当前状态有关的信息。用户无法设置该对象 – 该对象是由系统设置的。但是，该对象包含在作业对象中（而不是单独的链接资源中），因此，可以轻松地获取某一作业的状态。
 
 作业状态包含前一个执行的时间（如果有）、下一个计划执行的时间（对于正在进行中的作业）以及作业的执行计数。
 
@@ -190,20 +185,24 @@ Completed and faulted jobs are deleted after 60 days.
 
 ## 另请参阅
 
- [在管理门户中开始使用计划程序](/documentation/articles/scheduler-get-started-portal)
- 
- [Azure 计划程序中的计划和计费方式](/documentation/articles/scheduler-plans-billing)
- 
- [如何使用 Azure 计划程序生成复杂的计划和高级循环](/documentation/articles/scheduler-advanced-complexity)
- 
- [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)   
- 
- [计划程序高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
- 
+ [计划程序是什么？](/documentation/articles/scheduler-intro)
+
+ [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
+
+ [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing)
+
+ [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity)
+
+ [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)
+
+ [计划程序 PowerShell Cmdlet 参考](/documentation/articles/scheduler-powershell-reference)
+
+ [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
+
  [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
  
  [计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication)
  
  
 
-<!--HONumber=53-->
+<!---HONumber=69-->

@@ -1,5 +1,5 @@
 <properties 
- pageTitle="计划程序出站身份验证 - Azure 教程" 
+ pageTitle="计划程序出站身份验证" 
  description="" 
  services="scheduler" 
  documentationCenter=".NET" 
@@ -7,14 +7,9 @@
  manager="dwrede" 
  editor=""/>
 <tags 
-wacn.date="05/15/2015"
  ms.service="scheduler" 
- ms.workload="infrastructure-services" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="04/22/2015" 
- ms.author="krisragh"/>
+ ms.date="08/04/2015" 
+ wacn.date="09/16/2015"/>
  
 # 计划程序出站身份验证
 
@@ -22,7 +17,7 @@ wacn.date="05/15/2015"
 
 ## 添加和删除身份验证
 
-将身份验证添加到计划程序作业非常简单 - 只需在创建或更新作业时将一个 JSON 子元素 `authentication` 添加到 `request` 元素。在 PUT、PATCH 或 POST 请求中（作为 `authentication` 对象的一部分）传递给计划程序服务的机密永远不会在响应中返回。在响应中，机密信息将设置为 null，或者包含一个表示已经过身份验证的实体的公共令牌。
+将身份验证添加到计划程序作业非常简单 – 只需在创建或更新作业时将一个 JSON 子元素 `authentication` 添加到 `request` 元素。在 PUT、PATCH 或 POST 请求中（作为 `authentication` 对象的一部分）传递给计划程序服务的机密永远不会在响应中返回。在响应中，机密信息将设置为 null，或者包含一个表示已经过身份验证的实体的公共令牌。
 
 若要删除身份验证，请对作业显式执行 PUT 或 PATCH，并将 `authentication` 对象设置为 null。响应中不会传回任何身份验证属性。
 
@@ -77,7 +72,7 @@ wacn.date="05/15/2015"
 		  "authentication": {
 			"type": "clientcertificate",
 			"password": "test",
-			"pfx": "long-pfx-key"
+			"pfx": "long-pfx-key”
 		  }
 		}
 	  },
@@ -334,20 +329,21 @@ wacn.date="05/15/2015"
 
 ## 另请参阅
 
- [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
+ [计划程序是什么？](/documentation/articles/scheduler-intro) [计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms)
  
- [在管理门户中开始使用计划程序](/documentation/articles/scheduler-get-started-portal)
+ [开始在管理门户中使用计划程序](/documentation/articles/scheduler-get-started-portal)
  
- [Azure 计划程序中的计划和计费方式](/documentation/articles/scheduler-plans-billing)
+ [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing)
  
- [如何使用 Azure 计划程序生成复杂的计划和高级循环](/documentation/articles/scheduler-advanced-complexity)
+ [如何使用 Azure 计划程序生成复杂的计划和高级重复执行](/documentation/articles/scheduler-advanced-complexity)
  
  [计划程序 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn528946)   
  
- [计划程序高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
+ [计划程序的高可用性和可靠性](/documentation/articles/scheduler-high-availability-reliability)
  
  [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
  
+ [计划程序的限制、默认值和错误代码](/documentation/articles/scheduler-limits-defaults-errors)
  
 
-<!--HONumber=53-->
+<!---HONumber=69-->
