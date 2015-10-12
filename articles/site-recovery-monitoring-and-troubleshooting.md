@@ -21,7 +21,7 @@
 ### 用于在本地与 Azure 之间复制的 VMware/物理站点部署。
 要在本地 VMware/物理计算机之间设置灾难恢复；需要配置配置服务器、主目标和进程服务器。在启用对源服务器的保护时，Azure Site Recovery 将安装移动服务。在源服务器故障转移到 Azure 发生本地中断后，客户需要在 Azure 中设置进程服务器和在本地设置主目标服务器，以防止源服务器在本地重新生成。
 
-![用于在本地与 Azure 之间复制的 VMware/物理站点部署](media/site-recovery-monitoring-and-troubleshooting/image18.png)
+![用于在本地与 Azure 之间复制的 VMware/物理站点部署](./media/site-recovery-monitoring-and-troubleshooting/image18.png)
 
 ### 用于在本地站点之间复制的 VMM 站点部署。
 
