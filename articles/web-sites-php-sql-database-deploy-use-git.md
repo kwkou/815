@@ -27,9 +27,8 @@
 
 ![Azure PHP 网站][running-app]
 
-> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。你可以<a href="/zh-cn/pricing/member-offers/msdn-benefits-details/">激活 MSDN 订户权益</a>或<a href="/zh-cn/pricing/1rmb-trial/">注册以获取免费试用版</a>。
-> 
-> 如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/?language=php">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
+> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。你可以<a href="/zh-cn/pricing/1rmb-trial/">注册以获取免费试用版</a>。
+
 
 ##创建 Azure 网站并设置 Git 发布
 
@@ -219,7 +218,7 @@
 			echo "<h3>No one is currently registered.</h3>";
 		}
 
-现在，你可以浏览到 ****http://localhost/registration/index.php** 以测试应用程序。
+现在，你可以浏览到 **http://localhost/registration/index.php** 以测试应用程序。
 
 ##发布应用程序
 
@@ -271,11 +270,18 @@
 
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/zh-cn/download/details.aspx?id=29062
-[install-Drivers]: http://www.microsoft.com/zh-cn/download/details.aspx?id=20098
+[install-Drivers]: http://www.microsoft.com/download/details.aspx?id=20098
 [install-git]: http://git-scm.com/
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
 [running-app]: ./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png
-[new- Website]: ./media/web-sites-php-sql-database-deploy-use-git/new\_ Website.jpg [custom-create]: ./media/web-sites-php-sql-database-deploy-use-git/custom\_create.png [website-details-sqlazure]: ./media/web-sites-php-sql-database-deploy-use-git/createphpgitsite.png [database-settings]: ./media/web-sites-php-sql-database-deploy-use-git/setupdb.png [create-server]: ./media/web-sites-php-sql-database-deploy-use-git/create\_server.jpg [go-to-dashboard]: ./media/web-sites-php-sql-database-deploy-use-git/viewdeploy.png [setup-git-publishing]: ./media/web-sites-php-sql-database-deploy-use-git/setup\_git\_publishing.png [credentials]: ./media/web-sites-php-sql-database-deploy-use-git/git-deployment-credentials.png
+[new- Website]: ./media/web-sites-php-sql-database-deploy-use-git/new\_Website.jpg
+[custom-create]: ./media/web-sites-php-sql-database-deploy-use-git/custom\_create.png
+[website-details-sqlazure]: ./media/web-sites-php-sql-database-deploy-use-git/createphpgitsite.png
+[database-settings]: ./media/web-sites-php-sql-database-deploy-use-git/setupdb.png
+[create-server]: ./media/web-sites-php-sql-database-deploy-use-git/create\_server.jpg
+[go-to-dashboard]: ./media/web-sites-php-sql-database-deploy-use-git/viewdeploy.png
+[setup-git-publishing]: ./media/web-sites-php-sql-database-deploy-use-git/setup\_git\_publishing.png 
+[credentials]: ./media/web-sites-php-sql-database-deploy-use-git/git-deployment-credentials.png
 
 
 [git-instructions]: ./media/web-sites-php-sql-database-deploy-use-git/gitsettings.png

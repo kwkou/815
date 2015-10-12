@@ -147,15 +147,15 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
 </tr>
 <tr>
    <td valign="middle"><strong>身份验证</strong></td>
-   <td valign="top">- <a href ="/zh-cn/documentation/articles/fundamentals-identity">了解 Azure 标识选项</a><br/>- <a href="/zh-cn/documentation/services/identity/">Azure Active Directory 服务</a><br/>- <a href="http://technet.microsoft.com/zh-cn/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn151790.aspx">使用 Azure AD 将登录添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
+   <td valign="top">- <a href ="/zh-cn/documentation/articles/fundamentals-identity">了解 Azure 标识选项</a><br/>- <a href="/zh-cn/documentation/services/identity/">Azure Active Directory 服务</a><br/>- <a href="http://technet.microsoft.com/zh-cn/library/jj573650.aspx">什么是 Azure AD 租户？</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn151790.aspx">使用 Azure AD 将登录添加到 Web 应用程序中</a><br/>- <a href="http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication">Azure 身份验证教程</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>Service Bus 中继</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-relay">如何使用服务总线中继服务</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx">服务总线中继消息传送教程</a></td>
+   <td valign="top">- <a href="/zh-cn/documentation/articles/service-bus-dotnet-how-to-use-relay">如何使用服务总线中继服务</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/azure/ee706736.aspx">服务总线中继消息传送教程</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>监视</strong></td>
-   <td valign="top">- <a href ="/zh-cn/documentation/articles/web-sites-monitor">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/library/windowsazure/dn306638.aspx">如何在 Azure 中接收警报通知和管理警报规则</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-monitor/#howtoconfigdiagnostics">如何为网站配置诊断和下载日志</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/">在 Visual Studio 中对 Azure 网站进行故障排除</a></td>
+   <td valign="top">- <a href ="/zh-cn/documentation/articles/web-sites-monitor">如何监视网站</a><br/>- <a href="http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx">如何在 Azure 中接收警报通知和管理警报规则</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-monitor/#howtoconfigdiagnostics">如何为网站配置诊断和下载日志</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/">在 Visual Studio 中对 Azure 网站进行故障排除</a></td>
 </tr>
 </table>
 
@@ -163,24 +163,24 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [csoverview]: /zh-cn/documentation/services/cloud-services/
   [vmoverview]: /zh-cn/documentation/services/virtual-machines/
   [chooseservice]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm
-  [scenarioglobalweb]: /zh-cndocumentation/articles/web-sites-global-web-presence-solution-overview/
+  [scenarioglobalweb]: /documentation/articles/web-sites-global-web-presence-solution-overview/
   [scenariodigitalmarketing]: /zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview
   [adoverview]: /zh-cn/documentation/services/identity/
   [adusing]: /zh-cn/documentation/articles/fundamentals-identity
   [adwithvm]: /zh-cn/documentation/articles/fundamentals-identity
-  [addeployguidelines]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx
-  [acs2]: http://msdn.microsoft.com/library/windowsazure/hh147631.aspx
+  [addeployguidelines]: https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx
+  [acs2]: http://msdn.microsoft.com/zh-cn/library/azure/hh147631.aspx
   [acsusing]: /zh-cn/documentation/articles/fundamentals-identity
   [adtenant]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
-  [adsso]: http://msdn.microsoft.com/library/windowsazure/dn151790.aspx
+  [adsso]: https://msdn.microsoft.com/zh-cn/library/azure/dn151790.aspx
   [dirintegration]: http://technet.microsoft.com/zh-cn/library/jj573653.aspx
   [identityandaccess]: http://visualstudiogallery.msdn.microsoft.com/e21bf653-dfe1-4d81-b3d3-795cb104066e
   [aspnettools]: http://go.microsoft.com/fwlink/?LinkID=282306
   [azureauthtutorial]: http://www.asp.net/aspnet/overview/aspnet-and-visual-studio-2012/windows-azure-authentication
   [trustcenter]: /zh-cn/support/trust-center/
-  [sbrelay]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860549.aspx
+  [sbrelay]: http://msdn.microsoft.com/zh-cn/library/azure/jj860549.aspx
   [sbrelayhowto]: /zh-cn/documentation/articles/service-bus-dotnet-how-to-use-relay
-  [sbrelaytutorial]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee706736.aspx
+  [sbrelaytutorial]: http://msdn.microsoft.com/zh-cn/library/azure/ee706736.aspx
   [enterprisepizza]: http://code.msdn.microsoft.com/windowsazure/Enterprise-Pizza-e2d8f2fa
   [newrelic]: http://newrelic.com/azure
   [configurediagnostics]: /zh-cn/documentation/articles/web-sites-monitor

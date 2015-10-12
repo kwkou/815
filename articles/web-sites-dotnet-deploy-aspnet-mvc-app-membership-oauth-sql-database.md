@@ -31,9 +31,7 @@
 
 你将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整应用程序的登录页面：
 
-![登录页面][rxb] <!--
->[WACOM.NOTE] 若要完成本教程，你需要一个 Windows Azure 帐户。 如果你没有帐户，可以 <a href="/zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">激活 MSDN 订户权益</a> or <a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">注册免费试用帐户</a>
--->
+![登录页面][rxb]
 
 在本教程中：
 

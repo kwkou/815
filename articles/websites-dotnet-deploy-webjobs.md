@@ -44,7 +44,7 @@
 
 * [Azure SDK for Visual Studio 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)。
 
-[Visual Studio 2013 Update 3](https://www.microsoft.com/zh-CN/downloads/details.aspx?FamilyID=769b58b3-9e2e-4b57-9070-2159fac2b5fb) 和更高版本的更新也包含了 Web 作业部署功能。
+* Visual Studio 2013 Update 3 和更高版本的更新也包含了 Web 作业部署功能。
 
 ## <a id="convert"></a>为现有的控制台应用程序项目启用 WebJobs 部署
 
@@ -96,7 +96,7 @@
 
 	创建一个项目，该项目配置为在针对位于相同解决方案中的 Web 项目进行部署时，自动以 Web 作业的方式部署。当你要在与运行相关 Web 应用程序相同的 Web 应用中运行 Web 作业时，请使用此选项。
 
-在 SDK 2.4 版本中，Web 作业新建项目模板并不比创建控制台应用程序项目并启用 Web 作业部署容易。将来，Web 作业新建项目模板将更有助于[ WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs) 开发，因为它会自动安装相应的 WebJobs SDK NuGet 包。在此之前，你可以手动安装此包，以将项目配置为使用 Webjobs SDK，如 [Webjobs SDK 教程](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)中所示。
+在 SDK 2.4 版本中，Web 作业新建项目模板并不比创建控制台应用程序项目并启用 Web 作业部署容易。将来，Web 作业新建项目模板将更有助于[ WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/) 开发，因为它会自动安装相应的 WebJobs SDK NuGet 包。在此之前，你可以手动安装此包，以将项目配置为使用 Webjobs SDK，如 [Webjobs SDK 教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)中所示。
 
 
 ### <a id="createnolink"></a>为独立的 Web 作业使用 Web 作业新建项目模板
@@ -177,7 +177,7 @@
   
 ## <a id="deploy"></a>部署 Web 作业项目
 
-已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署 Azure 网站](/documentation/articles/websites-dotnet-deploy/)。
+已链接到 Web 项目的 Web 作业项目会通过 Web 项目自动部署。有关 Web 项目部署的信息，请参阅[如何部署 Azure 网站](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 若要自动部署某个 Web 作业项目，请在“解决方案资源管理器”中右键单击该项目，然后单击“发布为 Azure Web 作业”。
 
@@ -187,6 +187,6 @@
 
 ## <a id="nextsteps"></a>后续步骤
 
-本文介绍了如何使用 Visual Studio 部署 Web 作业。有关如何在 Visual Studio 中使用连续传送过程部署 Azure Web 作业的信息，请参阅 [Azure Web 作业 - 推荐的资源 - 部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/azure-webjobs-recommended-resources#deploying)。
+本文介绍了如何使用 Visual Studio 部署 Web 作业。有关如何在 Visual Studio 中使用连续传送过程部署 Azure Web 作业的信息，请参阅 [Azure Web 作业 - 推荐的资源 - 部署](/documentation/articles/websites-webjobs-resources/#deploying)。
 
 <!---HONumber=71-->

@@ -27,8 +27,7 @@
 ![Azure PHP 网站][running-app]
 
 > [AZURE.NOTE]若要完成本教程，你需要一个启用了 Azure 网站功能的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A74E0F923" target="_blank">Azure 免费试用</a>。
-> 
-> 如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/?language=php">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
+
 
 ##设置开发环境
 
@@ -259,9 +258,9 @@
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
-[new- Website]: ./media/web-sites-php-mysql-deploy-use-git/new_ Website.jpg
+[new- Website]: ./media/web-sites-php-mysql-deploy-use-git/new_Website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
-[ Website-details]: ./media/web-sites-php-mysql-deploy-use-git/ Website_details.jpg
+[ Website-details]: ./media/web-sites-php-mysql-deploy-use-git/Website_details.jpg
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
 [go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
 [setup-git-publishing]: ./media/web-sites-php-mysql-deploy-use-git/setup_git_publishing.png

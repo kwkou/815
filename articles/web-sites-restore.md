@@ -18,7 +18,7 @@
 
 利用 Web Apps 还原功能，可将 Web 应用还原到以前某个你自己需要的状态，或基于原有 Web 应用备份之一创建新的 Web 应用。创建与最新版本并行运行的新 Web 应用对于 A/B 测试会很有用。
 
-Web Apps 还原功能在 [Azure 门户](http://.com)中的“备份”边栏选项卡上，只能用于“标准”和“高级”模式。有关使用标准或高级模式缩放应用的信息，请参阅[在 Azure 网站中缩放 Web 应用](/documentation/articles/web-sites-scale)。
+Web Apps 还原功能在 [Azure 门户](http://manage.windowsazure.com)中的“备份”边栏选项卡上，只能用于“标准”和“高级”模式。有关使用标准或高级模式缩放应用的信息，请参阅[在 Azure 网站中缩放 Web 应用](/documentation/articles/web-sites-scale)。
 
 ##本文内容
 - [从以前制作的备份中还原 Azure 网站](#PreviousBackup)
@@ -127,7 +127,7 @@ Web Apps 还原功能在 [Azure 门户](http://.com)中的“备份”边栏选�
 [ChooseDBServer]: ./media/web-sites-restore/06ChooseDBServer.png
 [RestoreToNewSQLDB]: ./media/web-sites-restore/07RestoreToNewSQLDB.png
 [NewSQLDBConfig]: ./media/web-sites-restore/08NewSQLDBConfig.png
-[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContoso Website.png
+[RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebsite.png
 [DashboardOperationLogsLink]: ./media/web-sites-restore/10DashboardOperationLogsLink.png
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png

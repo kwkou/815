@@ -264,9 +264,13 @@
 [localhost-createtable]: http://localhost/tasklist/createtable.php
 [localhost-index]: http://localhost/tasklist/index.php
 [running-app]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/running_app_2.png
-[new- Website]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/new_ Website.jpg
+
+[new- Website]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/new_Website.jpg
+
 [custom-create]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/custom_create.png
-[Website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/ Website_details.jpg
+
+[Website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/Website_details.jpg
+
 [new-mysql-db]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/new_mysql_db.jpg
 [go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
 [reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png

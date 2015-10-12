@@ -16,13 +16,13 @@
 
 [WACOM.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
-<a name="understanding-records">
+<a name="understanding-records"></a>
 ## 了解 DNS 记录
 
 [WACOM.INCLUDE [understandingdns](../includes/custom-dns-web-site-understanding-dns-traffic-manager.md)]
 
 
-<a name="bkmk_configsharedmode">
+<a name="bkmk_configsharedmode"></a>
 ## 将您的网站配置为标准模式
 
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-modes-traffic-manager.md)]<a name="bkmk_configurecname"></a>
@@ -44,7 +44,7 @@
 
 6. 在注册机构添加或修改完 DNS 记录后，请保存这些更改。
 
-<a name="enabledomain">
+<a name="enabledomain"></a>
 ## 启用流量管理器
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-traffic-manager.md)]
 

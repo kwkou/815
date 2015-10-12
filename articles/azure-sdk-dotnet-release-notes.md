@@ -28,32 +28,32 @@
 
 ##Azure SDK for .NET 2.5 发行说明
 
-[Azure SDK for .NET 2.5 发行说明](https://msdn.microsoft.com/library/azure/dn873976.aspx)
+[Azure SDK for .NET 2.5 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn873976.aspx)
 
 ##Azure SDK for .NET 2.4 发行说明
 
-[Azure SDK for .NET 2.4 发行说明](https://msdn.microsoft.com/library/azure/dn794167.aspx)
+[Azure SDK for .NET 2.4 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn794167.aspx)
 
 ##Azure SDK for .NET 2.3 发行说明
 
-[Azure SDK for .NET 2.3 发行说明](https://msdn.microsoft.com/library/azure/dn655054.aspx)
+[Azure SDK for .NET 2.3 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn655054.aspx)
 
 ##Azure SDK for .NET 2.2 发行说明
 
-[Azure SDK for .NET 2.2 发行说明](https://msdn.microsoft.com/library/azure/dn459835.aspx)
+[Azure SDK for .NET 2.2 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn459835.aspx)
 
 ##Azure SDK for .NET 2.1 发行说明
 
-[Azure SDK for .NET 2.1 发行说明](https://msdn.microsoft.com/library/azure/dn407359.aspx)
+[Azure SDK for .NET 2.1 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn407359.aspx)
 
 ##Azure SDK for .NET 2.0 发行说明
 
-[Azure SDK for .NET 2.0 发行说明](https://msdn.microsoft.com/library/azure/dn169556.aspx)
+[Azure SDK for .NET 2.0 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn169556.aspx)
 
 ##相关主题
 
-[Azure SDK for .NET](http://azure.microsoft.com/downloads/archive-net-downloads/)
+[Azure SDK for .NET](/downloads/)
 
-[MSDN 上的 Azure SDK 发行说明](https://msdn.microsoft.com/library/azure/dn627519.aspx)
+[MSDN 上的 Azure SDK 发行说明](https://msdn.microsoft.com/zh-cn/library/azure/dn627519.aspx)
 
 <!---HONumber=71-->

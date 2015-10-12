@@ -65,7 +65,7 @@
 
 	> [AZURE.NOTE]将此订阅文件下载并保存到源代码目录之外的文件夹中（例如，在 Downloads 文件夹中），然后在导入完成后将其删除。获得了此订阅文件访问权的恶意用户可以编辑、创建和删除你的 Azure 服务。
 
-	有关从 Visual Studio 连接至 Azure 资源的详细信息，请参阅[管理帐户、订阅和管理角色](http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert)。
+	有关从 Visual Studio 连接至 Azure 资源的详细信息，请参阅[管理帐户、订阅和管理角色](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx#bkmk_accountvcert&clcid=0x409)。
 
 2. 在“服务资源管理器”中，展开“Azure”，然后展开“Web Apps”。
 
@@ -216,7 +216,7 @@
 
 1. 在“解决方案资源管理器”中，右键单击该 Web 项目（不是 Web 作业项目）并单击“发布”。
 
-2. 在“配置文件”下拉列表中，选择与 [Azure WebJobs SDK 入门](../websites-dotnet-webjobs-sdk)中所用相同的配置文件。
+2. 在“配置文件”下拉列表中，选择与 [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk)中所用相同的配置文件。
 
 3. 单击“设置”选项卡，将“配置”更改为“调试”，然后单击“发布”。
 
@@ -260,7 +260,7 @@
 
 	![函数详细信息](./media/web-sites-dotnet-troubleshoot-visual-studio/funcdetails.png)
 
-如果函数[写入了日志](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)，你可以单击 **ToggleOutput** 查看日志。
+如果函数[写入了日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)，你可以单击 **ToggleOutput** 查看日志。
 
 ## 有关远程调试的说明
 
@@ -304,7 +304,7 @@
 * 本地运行该项目时查看日志。
 * 查看由运行于 Azure 中的应用程序生成的日志。 
 
-有关如何在 Web 作业中创建应用程序日志的信息，请参阅[如何使用 WebJobs SDK 处理 Azure 队列存储 - 如何写入日志](../websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)。以下有关查看日志以及控制其在 Azure 中的存储方式的说明同样适用于 Web 作业创建的应用程序日志。
+有关如何在 Web 作业中创建应用程序日志的信息，请参阅[如何使用 WebJobs SDK 处理 Azure 队列存储 - 如何写入日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)。以下有关查看日志以及控制其在 Azure 中的存储方式的说明同样适用于 Web 作业创建的应用程序日志。
 
 ### 向应用程序添加跟踪语句
 
@@ -530,7 +530,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 	![下载的文件](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
 	* 应用程序跟踪日志位于 *LogFiles\\Application* 文件夹的 *.txt* 文件中。
-	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/zh-cn/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
+	* Web 服务器位于 *LogFiles\\http\\RawLogs* 文件夹的 *.log* 文件中。可以使用诸如 [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) 之类的工具查看并处理这些文件。
 	* 详细的错误消息日志位于 *LogFiles\\DetailedErrors* 文件夹的 *.html* 文件中。
 
 	（*deployments* 文件夹内是由源代码管理发布创建的文件；其中没有任何有关 Visual Studio 发布的内容。*Git* 文件夹内是与源代码管理发布以及日志文件流式传输服务相关的跟踪。）
@@ -569,7 +569,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 6. 将“复制”下拉列表设置为“本地冗余”。
 
-	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](../storage-create-storage-account/#replication-options)。
+	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/#replication-options)。
 
 5. 单击“创建”。
 
@@ -746,8 +746,7 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 * [从 Azure 命令行流式传输诊断跟踪日志记录（加上 Glimpse！）](http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
   如何使用命令行实现本教程中通过 Visual Studio 完成的任务。[Glimpse](http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) 是一个用于调试 ASP.NET 应用程序的工具。
-* [使用 Web Apps 日志记录和诊断 - 与 David Ebbo 协作完成](/documentation/videos/azure-web-site-logging-and-diagnostics/)和[从 Azure Web Apps 流式传输日志 - 与 David Ebbo 协作完成](/documentation/videos/log-streaming-with-azure-web-sites/)<br>
-  由 Scott Hanselman 和 David Ebbo 提供的视频。
+
 
 对于错误日志记录，若不想编写自己的跟踪代码，可以使用开源日志记录框架，如 [ELMAH](http://nuget.org/packages/elmah/)。有关详细信息，请参阅 [Scott Hanselman 有关 ELMAH 的博客文章](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx)。
 
@@ -757,7 +756,7 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 有关分析 Web 服务器日志的详细信息，请参阅以下资源：
 
-* [LogParser](http://www.microsoft.com/zh-cn/download/details.aspx?id=24659)<br/>用于查看 Web 服务器日志（*.log* 文件）中的数据的工具。
+* [LogParser](http://www.microsoft.com/download/details.aspx?id=24659)<br/>用于查看 Web 服务器日志（*.log* 文件）中的数据的工具。
 * [使用 LogParser 解决 IIS 性能问题或应用程序错误](http://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>可用于分析 Web 服务器日志的 Log Parser 工具介绍。
 * [Robert McMurray 有关 LogParser 使用的博客文章](http://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [IIS 7.0、IIS 7.5 以及 IIS 8.0 中的 HTTP 状态代码](http://support.microsoft.com/kb/943891)

@@ -233,7 +233,7 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
   [customdns]: /zh-cn/documentation/articles/web-sites-custom-domain-name/
   [ssl]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
   [openssl]: http://www.openssl.org/
-  [sni]: http://zh.wikipedia.org/wiki/Server_Name_Indication
+  [sni]: http://en.wikipedia.org/wiki/Server_Name_Indication
   [sslpricing]: /zh-cn/pricing/details/web-sites/#service-ssl
   [howtomonitor]: /zh-cn/documentation/articles/web-sites-monitor/
   

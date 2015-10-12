@@ -26,7 +26,7 @@
 各位冒险家，大家好！ 欢迎使用 MongoDB 即服务。在本教程中你将：
 
 2. [创建应用][create] - 它将是一个简单的 Node.js 应用，用于维护任务列表。
-3. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714)。
+3. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 Azure 网站。
 4. [管理数据库][manage] - 最后，我们将向你演示 MongoLab 基于 Web 的数据库管理门户，在此你可轻松搜索、显示和修改数据。
 
 在本教程的任意时间，如有任何问题，请随时发送电子邮件至 [support@mongolab.com](mailto:support@mongolab.com)。
@@ -39,12 +39,12 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-<a name="provision">
+<a name="provision"></a>
 ## 设置数据库
 
 [AZURE.INCLUDE [howto-provision-mongolab](../includes/howto-provision-mongolab.md)]
 
-<a name="create">
+<a name="create"></a>
 ## 创建应用程序
 
 在本节中，你将使用 Node.js、Express 和 MongoDB 设置你的开发环境以及为基本任务列表 Web 应用程序布置代码。[Express] 为 node 提供视图控制器框架，而 [Mongoose] 是用于在 node 中与 MongoDB 通信的驱动程序。
@@ -375,7 +375,7 @@
 
 	npm install azure-cli -g
 
-如果你已从 <a href="/develop/nodejs/">Azure 开发人员中心</a>安装了 <strong>Azure SDK for Node.js</strong>，则应该已安装了 Azure CLI。有关详细信息，请参阅 <a href="../virtual-machines-command-line-tools.md">Azure CLI</a>。
+如果你已从 <a href="/develop/nodejs/">Azure 开发人员中心</a>安装了 <strong>Azure SDK for Node.js</strong>，则应该已安装了 Azure CLI。有关详细信息，请参阅 <a href="/documentation/articles/virtual-machines-command-line-tools/">Azure CLI</a>。
 
 虽然 Azure CLI 主要针对 Mac 和 Linux 用户而创建，但它们基于 Node.js，应该可在能够运行 Node 的任何系统上使用。
 
@@ -488,18 +488,13 @@
 
 ![显示空白 tasklist 的网页][node-mongo-finished]
 
-<a name="manage">
+<a name="manage"></a>
 ## 管理数据库
 
 [AZURE.INCLUDE [howto-access-mongolab-ui](../includes/howto-access-mongolab-ui.md)]
 
 祝贺你！ 你刚刚启动了由 MongoLab 托管的 MongoDB 数据库提供支持的 Node.js 应用程序！ 现在，你拥有了一个 MongoLab 数据库，如有任何关于你的数据库的问题或疑虑，或者要获得有关 MongoDB 或 Node 驱动程序本身的帮助，请联系 [support@mongolab.com](mailto:support@mongolab.com)。祝您好运！
 
-## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)
-
->[AZURE.NOTE]如果您想要在注册 Azure 帐户之前开始使用 Azure App Service，请转到[试用 App Service](http://go.microsoft.com/fwlink/?LinkId=523751)，您可以在 App Service 中立即创建一个生存期较短的入门 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 
 [screen-mongolab-websitedashboard]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/screen-mongolab-websitedashboard.png

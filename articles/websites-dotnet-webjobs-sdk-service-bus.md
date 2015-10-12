@@ -77,7 +77,7 @@ SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消�
 
 ### POCO 队列消息
 
-SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://zh.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
+SDK 会自动反序列化包含 POCO（[普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
 
 		public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
 		    TextWriter logger)

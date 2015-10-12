@@ -32,10 +32,6 @@
 完成本教程需要有一个 Azure 帐户：
 
 * 你可以[免费建立一个 Azure 帐户](/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F) - 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用免费的 Azure 服务（如网站）。
-<!--
-* You can [activate MSDN subscriber benefits](/zh-cn/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.</li>
--->
-> [AZURE.NOTE]如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中创建一个生存期较短的 ASP.NET 入门站点。
 
 下图演示了完整的应用程序：
 
@@ -224,7 +220,7 @@
 
 ## 在管理门户中监视和管理 Web 应用
 
-[Azure 管理门户](/zh-cn/services/management-portal/)是一个 Web 界面，可让你管理和监视 Azure 服务，例如，刚刚创建的网站。在本教程的本部分，你将了解可在该门户中执行的某些操作。
+[Azure 管理门户](http://manage.windowsazure.cn)是一个 Web 界面，可让你管理和监视 Azure 服务，例如，刚刚创建的网站。在本教程的本部分，你将了解可在该门户中执行的某些操作。
 
 1. 在浏览器中，转到 [http://manage.windowsazure.cn](http://manage.windowsazure.cn)，然后使用你的 Azure 凭据登录。
 
@@ -258,7 +254,6 @@
 
 这只是管理门户的一部分功能。你还可以创建新网站、删除现有站点、停止和重新启动站点，以及管理其他类型的 Azure 服务，如数据库和虚拟机。
 
-**提示：**有一个新的预览版管理门户最终将取代你所用的门户。有关详细信息，请参阅 [Azure 预览门户](/zh-cn/overview/preview-portal/)。
 
 ## 后续步骤
 

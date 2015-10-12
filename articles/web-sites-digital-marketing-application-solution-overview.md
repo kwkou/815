@@ -67,13 +67,12 @@ Web Apps 中的数字市场营销活动可以通过使用 Facebook 和 Twitter �
 
 若要为在各自区域的全局客户提供服务，使用 [Azure 流量管理器]将站点访问者路由到可以提供最佳性能的地区站点。或者，你可以在多个区域托管的 Web 应用的多个副本中均衡分布负载。
 
-通过[将 Web 应用与 Azure CDN 集成]向全局用户快速传递静态内容。Azure CDN 可以缓存离用户最近的 [CDN 节点]中的静态内容，从而最大程度减少了滞后时间和连接到 Web 应用时间。
 
 ## 优化
 
 Web 应用可通过使用 Autoscale 进行自动缩放，使用 Azure Redis 缓存进行缓存，使用 WebJobs 运行后台任务以及使用 Azure 流量管理器维护高可用性达到优化目的。
 
-Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，数字市场营销活动就属于这种情况。通过 [Azure 预览门户](http://go.microsoft.com/fwlink/?LinkId=529715)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。此功能根据用户活动仅在需要时横向扩展 Web 应用，从而有助于最大限度提高灵活性并降低成本。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
+Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，数字市场营销活动就属于这种情况。通过 [Azure 门户](http://manage.windowsazure.cn)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。此功能根据用户活动仅在需要时横向扩展 Web 应用，从而有助于最大限度提高灵活性并降低成本。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
 
 使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作（如 [ASP.NET 会话状态]和[输出缓存]）缓存数据。
 
@@ -83,56 +82,55 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
 
 使用 Azure 或第三方工具让 Web 应用的性能保持最新状态。接收关于关键 Web 应用事件的警报。使用 Application Insight 或 HDInsight 中的 Web 日志分析，让用户可以轻松地深入了解。
 
-可以[快速浏览] Web 的当前性能指标以及[Azure 预览门户](http://go.microsoft.com/fwlink/?LinkId=529715)中 Web 应用边栏选项卡中的资源配额。有关应用程序的可用性、性能和使用情况的全面概述，可使用 [Azure Application Insights] 提供的快速且功能强大的故障排除、诊断和使用情况见解进行了解。或者，使用第三方工具如 [New Relic]）提供对 Web 应用的高级数据监视。
+可以[快速浏览] Web 的当前性能指标以及[Azure 门户](http://manage.windowsazure.cn)中 Web 应用边栏选项卡中的资源配额。有关应用程序的可用性、性能和使用情况的全面概述，可使用 [Azure Application Insights] 提供的快速且功能强大的故障排除、诊断和使用情况见解进行了解。
 
 在“标准”层，当 Web 应用无法响应时，监视器应用程序响应能力会收到电子邮件通知。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则]。
 
 ## 更多资源
 
-- [Web Apps 文档](/services/app-service/web/)
+- [Web Apps 文档](/documentation/services/web-sites/)
 - [适用于 Azure 网站的学习路线图](/documentation/articles/websites-learning-map)
-- [Azure Web 博客](/blog/topics/web/)
+- [Azure Web 博客](/blog/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [Azure 网站]: /documentation/services/web-sites/
   
-[MySQL]: web-sites-php-mysql-deploy-use-git.md
-[Azure SQL 数据库]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
-[FTP]: web-sites-deploy.md#ftp
-[Visual Studio]: web-sites-dotnet-get-started.md
-[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso.md
-[Git]: web-sites-publish-source-control.md
+[MySQL]: web-sites-php-mysql-deploy-use-git
+[Azure SQL 数据库]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[FTP]: web-sites-deploy#ftp
+[Visual Studio]: web-sites-dotnet-get-started
+[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso
+[Git]: web-sites-publish-source-control
 
-[将其部署到过渡槽]: web-sites-staged-publishing.md
+[将其部署到过渡槽]: web-sites-staged-publishing
 [连续发布]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [运行 A/B 测试]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
+[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 
 [Azure 媒体服务]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid 服务在 Azure 应用商店]: sendgrid-dotnet-how-to-send-email.md
-[移动服务]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md
-[通知中心]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md
+[SendGrid 服务在 Azure 应用商店]: sendgrid-dotnet-how-to-send-email
+[移动服务]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[通知中心]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[将 Web 应用与 Azure CDN 集成]: cdn-websites-with-cdn.md
-[CDN 节点]: https://msdn.microsoft.com/library/azure/gg680302.aspx
+[将 Web 应用与 Azure CDN 集成]: cdn-websites-with-cdn
+[CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
-[增加和扩大]: /manage/services/web-sites/how-to-scale-websites/
+[增加和扩大]: /documentation/articles/how-to-scale-websites/
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[服务管理 API]: http://msdn.microsoft.com/library/windowsazure/ee460799.aspx
-[PowerShell 脚本]: http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
+[服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
+[PowerShell 脚本]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt
 [我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
-[Azure Redis 缓存]: /blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
-[ASP.NET 会话状态]: https://msdn.microsoft.com/library/azure/dn690522.aspx
-[输出缓存]: https://msdn.microsoft.com/library/azure/dn798898.aspx
+[Azure Redis 缓存]: http://azure.microsoft.com/zh-cn/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
+[ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
+[输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[快速浏览]: /manage/services/web-sites/how-to-monitor-websites/
+[快速浏览]: /documentation/articles/how-to-monitor-websites/
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
-[New Relic]: /develop/net/how-to-guides/new-relic/
-[如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/library/windowsazure/dn306638.aspx
+[如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
   
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites

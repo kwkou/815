@@ -116,7 +116,7 @@ Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应
 
 ###创建 Redis 缓存
 
-执行[在 Azure Redis 缓存中创建缓存](http://go.microsoft.com/fwlink/p/?linkid=398592&clcid=0x409)中的步骤，以创建新的缓存。
+执行[在 Azure Redis 缓存中创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤，以创建新的缓存。
 
 > [AZURE.NOTE] 保存用于缓存的__主机名__和__主密钥__，因为接下来的步骤需要这些信息。
 

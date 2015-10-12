@@ -563,7 +563,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 [使用 Azure 网站中的 GIT 进行持续部署]: /zh-cn/documentation/articles/web-sites-publish-source-control/
 [Installing MongoDB on a Linux Virtual machine]: /zh-cn/documentation/article/virtual-machines-install-mongodb-centos-linux/
 [使用 Azure 表服务的 Node.js Web 应用程序]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
-[node-mongo-finished]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_list_empty.png
+[node-mongo-finished]: ./media/web-sites-nodejs-store-data-mongodb/todo_list_empty.png
 [node-mongo-express-results]: ./media/store-mongodb-web-sites-nodejs-use-mac/express_output.png
 [node-mongo-add-item]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_add_item.png
 [node-mongo-list-items]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_list_items.png
