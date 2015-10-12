@@ -5,4 +5,4 @@ Azure 存储中的每个 Blob 必须驻留在一个容器中。该容器构成 B
  
 > [AZURE.IMPORTANT]请注意，容器的名称必须始终为小写。如果你在容器名称中包括大写字母或以其他方式违反了容器命名规则，则可能会收到 400 错误（错误请求）。有关命名容器的规则，请参阅[命名和引用容器、Blob 和元数据](https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)。
 
-<!---HONumber=61-->
+<!---HONumber=70-->

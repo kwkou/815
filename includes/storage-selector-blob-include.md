@@ -1,9 +1,11 @@
 > [AZURE.SELECTOR]
-- [.NET](storage-dotnet-how-to-use-blobs)
-- [Node.js](storage-nodejs-how-to-use-blob-storage)
-- [Java](storage-java-how-to-use-blob-storage)
-- [C++](storage-c-plus-plus-how-to-use-blobs)
-- [PHP](storage-php-how-to-use-blobs)
-- [Ruby](storage-ruby-how-to-use-blob-storage)
-- [Python](storage-python-how-to-use-blob-storage)
-- [Xamarin](storage-xamarin-blob-storage)
+- [.NET](/documentation/articles/storage-dotnet-how-to-use-blobs)
+- [Node.js](/documentation/articles/storage-nodejs-how-to-use-blob-storage)
+- [Java](/documentation/articles/storage-java-how-to-use-blob-storage)
+- [C++](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
+- [PHP](/documentation/articles/storage-php-how-to-use-blobs)
+- [Ruby](/documentation/articles/storage-ruby-how-to-use-blob-storage)
+- [Python](/documentation/articles/storage-python-how-to-use-blob-storage)
+- [Xamarin](/documentation/articles/storage-xamarin-blob-storage)
+
+<!---HONumber=70-->

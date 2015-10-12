@@ -1,58 +1,43 @@
-<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Queue Service" pageTitle="如何使用队列服务 (Node.js) | Windows Azure" metaKeywords="Azure Queue Service get messages Node.js" description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Node.js 编写的。" metaCanonical="" services="storage" documentationCenter="Node.js" title="How to Use the Queue Service from Node.js" authors="larryfr" solutions="" manager="" editor="" />
-<tags ms.service="storage"
-    ms.date="03/11/2015"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	pageTitle="如何通过 Node.js 使用队列存储 | Windows Azure" 
+	description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Node.js 编写的。" 
+	services="storage" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
+	editor=""/>
+
+<tags 
+	ms.service="storage" 
+	ms.date="03/11/2015" 
+	wacn.date="09/18/2015"/>
 
 
+# 如何通过 Node.js 使用队列存储
 
+[AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
+## 概述
 
-# 如何从 Node.js 使用队列服务
+本指南演示如何使用 Windows Azure 队列服务执行常见任务。相关示例是使用 Node.js API 编写的。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
 
-本指南将演示如何使用 Windows Azure 队列服务
-执行常见方案。相关示例是使用 Node.js
-API 编写的。涉及的方案包括**插入**、**扫视**、
-**获取**和**删除**队列消息，以及**创建和删除队列**。有关队列的详细信息，请参阅[后续步骤][]部分。
+[AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 
-## 目录
+[AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
 
-* [什么是队列服务？][]   
-* [概念][]   
-* [创建 Azure 存储帐户][]  
-* [创建 Node.js 应用程序][]   
-* [配置应用程序以范围存储][]   
-* [设置 Azure 存储连接字符串][]   
-* [如何：创建队列][]   
-* [如何：在队列中插入消息][]   
-* [如何：扫视下一条消息][]   
-* [如何：取消对下一条消息的排队][]   
-* [如何：更改已排队消息的内容][]   
-* [如何：用于对消息取消排队的其他方法][]   
-* [如何：获取队列长度][]   
-* [如何：删除队列][]   
-* [如何：使用共享访问签名][]
-* [后续步骤][]
-
-[WACOM.INCLUDE [howto-queue-storage](../includes/howto-queue-storage.md)]
-
-<h2><a name="create-account"></a>创建 Azure 存储帐户</h2>
-
-[WACOM.INCLUDE [create-storage-account](../includes/create-storage-account.md)]
-
-## <a name="create-app"> </a>创建 Node.js 应用程序
+## 创建 Node.js 应用程序
 
 创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅 [创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或 [使用 WebMatrix 构建网站]。
 
-## <a name="configure-access"> </a>配置应用程序以访问存储
+## 配置应用程序以访问存储
 
 若要使用 Azure 存储空间，你需要 Azure Storage SDK for Node.js，其中包括一组便于与存储 REST 服务进行通信的库。
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 PowerShell (Windows)、Terminal (Mac) 或 Bash (Unix) 等命令行界面导航到你在其中创建了示例应用程序的文件夹。
+1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了示例应用程序的文件夹。
 
-2.  在命令窗口中键入 npm install azure-storage，这应该产生以下输出：
+2.  在命令窗口中键入 **npm install azure-storage**，这应该产生以下输出：
 
         azure-storage@0.1.0 node_modules\azure-storage
 		(c)À(c)¤(c)¤ extend@1.2.1
@@ -76,19 +61,19 @@ API 编写的。涉及的方案包括**插入**、**扫视**、
 
     var azure = require('azure-storage');
 
-## <a name="setup-connection-string"> </a>设置 Azure 存储连接
+## 设置 Azure 存储连接
 
-Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_ACCESS\_KEY 或 AZURE\_STORAGE\_CONNECTION\_STRING，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 createQueueService 时必须指定帐户信息。
+Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_ACCESS\_KEY 或 AZURE\_STORAGE\_CONNECTION\_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createQueueService** 时必须指定帐户信息。
 
 有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序]
 
-## <a name="create-queue"></a>如何：创建队列
+## 如何：创建队列
 
-以下代码将创建一个 QueueService 对象，你可通过该对象来操作队列。
+以下代码将创建一个 **QueueService** 对象，您可通过该对象来操作队列。
 
     var queueSvc = azure.createQueueService();
 
-使用 createQueueIfNotExists 方法，该方法将返回指定队列**（如果它存在），或创建具有指定名称的新队列**（如果它尚不存在）。
+使用 **createQueueIfNotExists** 方法，该方法将返回指定队列（如果它存在），或创建具有指定名称的新队列（如果它尚不存在）。
 
 	queueSvc.createQueueIfNotExists('myqueue', function(error, result, response){
       if(!error){
@@ -100,24 +85,24 @@ Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_AC
 
 ###筛选器
 
-可以向使用 QueueService 执行的操作应用可选的筛选操作。筛选操作可以包括日志记录、自动重试等。筛选器是实现了具有签名的方法的对象：
+可以向使用 **QueueService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
 		function handle (requestOptions, next)
 
-在对请求选项执行预处理后，该方法需要调用"next"并且传递具有以下签名的回调：
+在对请求选项执行预处理后，该方法需要调用“next”并且传递具有以下签名的回调：
 
 		function (returnObject, finalCallback, next)
 
 在此回调中并且在处理 returnObject（来自对服务器请求的响应）后，回调需要调用 next（如果它存在以便继续处理其他筛选器）或只调用 finalCallback 以便结束服务调用。
 
-Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分别是 ExponentialRetryPolicyFilter 和 LinearRetryPolicyFilter。下面的代码将创建一个 QueueService 对象，该对象使用 ExponentialRetryPolicyFilter：
+Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分别是 **ExponentialRetryPolicyFilter** 和 **LinearRetryPolicyFilter**。下面的代码将创建一个 **QueueService** 对象，该对象使用 **ExponentialRetryPolicyFilter**：
 
 	var retryOperations = new azure.ExponentialRetryPolicyFilter();
 	var queueSvc = azure.createQueueService().withFilter(retryOperations);
 
-## <a name="insert-message"></a>如何：在队列中插入消息
+## 如何：在队列中插入消息
 
-若要在队列中插入消息，可使用 createMessage 方法创建一条新消息并将其添加到队列中。
+若要在队列中插入消息，可使用 **createMessage** 方法创建一条新消息并将其添加到队列中。
 
 	queueSvc.createMessage('myqueue', "Hello world!", function(error, result, response){
 	  if(!error){
@@ -125,7 +110,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-## <a name="peek-message"></a>如何：扫视下一条消息
+## 如何：扫视下一条消息
 
 通过调用 peekMessages 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，
 **peekMessages** 扫视单个消息。
@@ -138,9 +123,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
  `result` 包含该消息。
 
-> [WACOM.NOTE] 在队列中没有消息时使用 peekMessages 不会返回错误，但也不会返回消息。
+> [AZURE.NOTE] 在队列中没有消息时使用 **peekMessages** 不会返回错误，但也不会返回消息。
 
-## <a name="get-message"></a>如何：取消对下一条消息的排队
+## 如何：取消对下一条消息的排队
 
 处理消息是一个两阶段过程：
 
@@ -162,14 +147,14 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-> [WACOM.NOTE] 默认情况下，一条消息只会隐藏 30 秒，然后其他客户端就可以看见它。你可以将  `options.visibilityTimeout` 与 **getMessages** 一起使用，以便指定其他值。
+> [AZURE.NOTE] 默认情况下，一条消息只会隐藏 30 秒，然后其他客户端就可以看见它。您可以将 `options.visibilityTimeout` 与 **getMessages** 一起使用，以便指定其他值。
 
-> [WACOM.NOTE]
+> [AZURE.NOTE]
 > 在队列中没有消息时使用 <b>getMessages</b> 不会返回错误，但也不会返回消息。
 
-## <a name="change-contents"></a>如何：更改已排队消息的内容
+## 如何：更改已排队消息的内容
 
-你可以更改队列中现有消息的内容，只需使用 **updateMessage** 即可。以下示例将更新消息文本：
+您可以更改队列中现有消息的内容，只需使用 **updateMessage** 即可。以下示例将更新消息文本：
 
     queueSvc.getMessages('myqueue', function(error, result, response){
 	  if(!error){
@@ -183,14 +168,14 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-## <a name="advanced-get"></a>如何：用于对消息取消排队的其他方法
+## 如何：用于对消息取消排队的其他选项
 
 你可以通过两种方式自定义队列中的消息检索：
 
-* `options.numOfMessages` - 检索一批消息（最多 32 条）。
+* `options.numOfMessages` - 您可以获取一批消息（最多 32 条）。
 * `options.visibilityTimeout` - 设置较长或较短的不可见性超时。
 
-以下示例使用 getMessages 方法通过一次调用获取 15 条消息。然后，使用 for 循环来处理每条消息。它还将通过此方法返回的所有消息的不可见性超时设置为 5 分钟。
+以下示例使用 **getMessages** 方法通过一次调用获取 15 条消息。然后，它会使用 for 循环处理每条消息。它还将通过此方法返回的所有消息的不可见性超时设置为 5 分钟。
 
     queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, function(error, result, response){
 	  if(!error){
@@ -207,7 +192,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-## <a name="get-queue-length"></a>如何：获取队列长度
+## 如何：获取队列长度
 
 **getQueueMetadata** 返回有关队列的元数据，其中包括队列中等待的消息的大致数目。
 
@@ -217,7 +202,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-## <a name="list-queue"></a>如何：列出队列
+## 如何：列出队列
 
 若要检索队列的列表，请使用 **listQueuesSegmented**。若要检索按特定前缀筛选的列表，请使用 **listQueuesSegmentedWithPrefix**。
 
@@ -229,10 +214,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 如果无法返回所有队列，则可使用  `result.continuationToken` 作为 **listQueuesSegmented** 的第一个参数或 **listQueuesSegmentedWithPrefix** 的第二个参数，以便检索更多结果。
 
-## <a name="delete-queue"></a>如何：删除队列
+## 如何：删除队列
 
-若要删除队列及其中包含的所有消息，请针对队列对象调用
-**deleteQueue** 方法。
+若要删除队列及其中包含的所有消息，请对队列对象调用 **deleteQueue** 方法。
 
     queueSvc.deleteQueue(queueName, function(error, response){
 		if(!error){
@@ -242,7 +226,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 若要清除队列中的所有消息而不删除该队列，则可使用 **clearMessages**。
 
-## <a name="sas"></a>如何：使用共享访问签名
+## 如何：使用共享访问签名
 
 共享访问签名 (SAS) 是一种安全的方法，用于对队列进行细致访问而无需提供你的存储帐户名或密钥。通常使用 SAS 来提供对你的队列的有限访问权限，例如允许移动应用程序提交消息。
 
@@ -283,7 +267,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 你还可以使用访问控制列表 (ACL) 为 SAS 设置访问策略。如果你希望允许多个客户端访问某个队列，但为每个客户端提供了不同的访问策略，则访问控制列表会很有用。
 
-ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。下面的示例定义了两个策略，一个用于"user1"，一个用于"user2"：
+ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。下面的示例定义了两个策略，一个用于“user1”，一个用于“user2”：
 
 	var sharedAccessPolicy = [
 	  {
@@ -304,7 +288,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 	  }
 	];
 
-下面的示例获取 **myqueue** 的当前 ACL，，然后使用 **setQueueAcl** 添加新策略。此方法具有以下用途：
+下面的示例获取 **myqueue** 的当前 ACL，然后使用 **setQueueAcl** 添加新策略。此方法具有以下用途：
 
 	queueSvc.getQueueAcl('myqueue', function(error, result, response) {
       if(!error){
@@ -318,35 +302,19 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 	  }
 	});
 
-设置 ACL 后，你可以根据某个策略的 ID 创建 SAS。以下示例为  'user2': 创建新的 SAS
+设置 ACL 后，你可以根据某个策略的 ID 创建 SAS。以下示例为“user2”创建新的 SAS：
 
 	queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 
-## <a name="next-steps"> </a>后续步骤
+## 后续步骤
 
-现在，你已了解有关队列存储的基础知识，可单击下面的链接来了解如何执行更复杂的存储任务。
+现在，您已了解有关队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
--   查看 MSDN 参考：[在 Azure 中存储和访问数据][]。
+-   请参阅 MSDN 参考：[在 Azure 中存储和访问数据][]。
 -   访问 [Azure 存储空间团队博客][]。
 -   访问 GitHub 上的 [Azure Storage SDK for Node][] 存储库。
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
-  [后续步骤]: #next-steps
-  [什么是队列服务？]: #what-is
-  [概念]: #concepts
-  [创建 Azure 存储帐户]: #create-account
-  [创建 Node.js 应用程序]: #create-app
-  [配置应用程序以范围存储]: #configure-access
-  [设置 Azure 存储连接字符串]: #setup-connection-string
-  [如何：创建队列]: #create-queue
-  [如何：在队列中插入消息]: #insert-message
-  [如何：扫视下一条消息]: #peek-message
-  [如何：取消对下一条消息的排队]: #get-message
-  [如何：更改已排队消息的内容]: #change-contents
-  [如何：用于对消息取消排队的其他方法]: #advanced-get
-  [如何：获取队列长度]: #get-queue-length
-  [如何：删除队列]: #delete-queue
-  [如何：使用共享访问签名]: #sas
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
@@ -364,4 +332,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
  [使用 WebMatrix 构建网站]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
-<!--HONumber=41-->
+<!---HONumber=70-->
