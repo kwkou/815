@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.date="07/21/2015"
-	wacn.date="08/13/2015"/>
+	wacn.date="09/02/2015"/>
 
 
 

@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="batch"
-	ms.date="07/21/2015"
-	wacn.date="08/13/2015"/>
+	ms.date="08/05/2015"
+	wacn.date="09/15/2015"/>
 
 # 自动缩放 Azure 批处理池中的计算节点
 
@@ -52,7 +52,7 @@
     <td>池的专用计算节点的目标数。可以根据任务的实际用法更改该值。</td>
   </tr>
   <tr>
-    <td>$TVMDeallocationOption</td>
+    <td>$NodeDeallocationOption</td>
     <td>从池中删除计算节点时发生的操作。可能的值包括：
       <br/>
       <ul>
@@ -143,18 +143,25 @@
 - double
 - doubleVec
 - 字符串
-- timestamp
+- timestamp。timestamp 是包含以下成员的复合结构。
+	- year
+	- month (1-12)
+	- day (1-31)
+	- weekday（采用数字格式。例如1 表示星期一）
+	- hour（采用 24 时制数字格式。例如13 表示下午 1 点）
+	- minute (00-59)
+	- second (00-59)
 - timeinterval
-	- TimeInterval_Zero
-	- TimeInterval_100ns
-	- TimeInterval_Microsecond
-	- TimeInterval_Millisecond
-	- TimeInterval_Second
-	- TimeInterval_Minute
-	- TimeInterval_Hour
-	- TimeInterval_Day
-	- TimeInterval_Week
-	- TimeInterval_Year
+	- TimeInterval\_Zero
+	- TimeInterval\_100ns
+	- TimeInterval\_Microsecond
+	- TimeInterval\_Millisecond
+	- TimeInterval\_Second
+	- TimeInterval\_Minute
+	- TimeInterval\_Hour
+	- TimeInterval\_Day
+	- TimeInterval\_Week
+	- TimeInterval\_Year
 
 ### 操作
 
@@ -388,7 +395,7 @@ DoubleVecList 值在计算之前将转换为单个 doubleVec。例如，如果 v
     <td><p>根据 CPU 使用率、带宽使用率、内存使用率和计算节点的数目。可在公式中使用上述系统变量来管理池中的计算节点：</p>
     <p><ul>
       <li>$TargetDedicated</li>
-      <li>$TVMDeallocationOption</li>
+      <li>$NodeDeallocationOption</li>
     </ul></p>
     <p>这些系统变量用于根据节点度量值进行调整：</p>
     <p><ul>
@@ -456,6 +463,36 @@ DoubleVecList 值在计算之前将转换为单个 doubleVec。例如，如果 v
 
 - [ICloudPool.AutoScaleRun 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.icloudpool.autoscalerun.aspx) – 在使用 .NET 库时，池的这个属性将提供 [AutoScaleRun 类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.aspx)的实例，该实例提供 [AutoScaleRun.Error 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)、[AutoScaleRun.Results 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)和 [AutoScaleRun.Timestamp 属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)。
 - [获取有关池的信息](https://msdn.microsoft.com/zh-cn/library/dn820165.aspx) – 此 REST API 返回有关池的信息，包括最近的自动缩放运行结果。
+
+## 示例
+
+### 示例 1.
+
+你想要基于周中的时间调整池大小。
+
+    curTime=time();
+    workhours=curTime.hour>=8 && curTime.hour <18;
+    isweekday=curTime.weekday>=1 && curTime.weekday<=5;
+    isworkingweekdayhour = workhours && isweekday;
+    $TargetDedicated=workhours?20:10;
+    
+此公式将检测当前时间。如果是工作日 (1..5) 和工作时间 (8am...6pm)，则将目标池大小设置为 20。否则，将目标池大小设置为 10。
+
+### 示例 2.
+
+基于队列中任务调整池大小的另一个示例。
+
+    // Get pending tasks for the past 15 minutes
+    $Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15); 
+    // If we have less than 70% data points, we use the last sample point, otherwise we use the maximum of last sample point and the history average
+    $Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+    // If number of pending task is not 0, set targetVM to pending tasks, otherwise half of current dedicated
+    $TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
+    // The pool size is capped at 20, if target vm value is more than that, set it to 20. This value should be adjusted according to your case.
+    $TargetDedicated = max(0,min($TargetVMs,20));
+    // optionally, set vm Deallocation mode - shrink VM after task is done.
+    $TVMDeallocationOption = taskcompletion;
+    
 
 ## 后续步骤
 
