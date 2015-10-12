@@ -9,7 +9,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services" 
 ms.date="06/11/2015" 
-wacn.date="09/15/2015"/>
+wacn.date="10/03/2015"/>
 
 # 在 .NET 中自定义 Web 角色或辅助角色的生命周期
 
@@ -76,4 +76,4 @@ public override bool OnStart()
 ## 后续步骤
 了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package)。
 
-<!---HONumber=69-->
+<!---HONumber=71-->

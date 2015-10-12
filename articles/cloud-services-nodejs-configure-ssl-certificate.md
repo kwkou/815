@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="02/20/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -186,4 +186,4 @@
   [cert-wizard]: ./media/cloud-services-nodejs-configure-ssl-certificate/certificateimport.png
   [key-protection]: ./media/cloud-services-nodejs-configure-ssl-certificate/exportable.png
   [在 Azure 辅助角色中为 Node.js 应用程序配置 SSL]: /zh-cn/documentation/articles/cloud-services-nodejs-configure-ssl-certficate-worker-role/
-<!---HONumber=69-->
+<!---HONumber=71-->

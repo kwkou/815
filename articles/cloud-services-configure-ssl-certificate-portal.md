@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services"  
 	ms.date="06/28/2015"
-	wacn.date=09/15/2015""/>
+	wacn.date=10/03/2015""/>
 
 
 
@@ -38,7 +38,7 @@
 
 -   证书必须包含私钥。
 -   必须为密钥交换创建证书，并且该证书可导出到个人信息交换 (.pfx) 文件。
--   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 cloudapp.net 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 ****.contoso.com** 或 **www.contoso.com** 的证书。
+-   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 cloudapp.net 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 **.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
 出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 cloudapp.net 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.cloudapp.net** 的自签名证书。
@@ -150,4 +150,4 @@
 
 [Azure Portal]: https://manage.windowsazure.cn
 
-<!---HONumber=69-->
+<!---HONumber=71-->

@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/18/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="10/03/2015"/>
 
 
 
@@ -77,4 +77,4 @@ foreach($subscription in Get-AzureSubscription) {
 ## 后续步骤
 查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix)。
 
-<!---HONumber=69-->
+<!---HONumber=71-->

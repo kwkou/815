@@ -11,7 +11,7 @@
 <tags 
 	ms.service="multiple" 
 	ms.date="06/04/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 是否应选择 App Service？
 
@@ -32,4 +32,4 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 [虚拟机]: /documentation/articles/virtual-machines-choose-me
 [云服务]: /documentation/articles/cloud-services-choose-me
 
-<!---HONumber=69-->
+<!---HONumber=71-->

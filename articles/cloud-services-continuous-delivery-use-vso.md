@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="08/07/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -62,7 +62,7 @@
 
 ## <a name="step3"></a>步骤 3：将项目连接到 Azure
 
-1. 此时你已拥有一个包含某些源代码的 VSO 团队项目，可以将该团队项目连接到 Azure。在 Azure 门户中，选择云服务或网站，或通过选择左下角的 + 图标并依次选择“云服务”或“网站”和“快速创建”来创建新的云服务或网站[](http://manage.windowsazure.cn)。选择“使用 Visual Studio Online 设置发布”链接。<br/> ![][10]
+1. 此时你已拥有一个包含某些源代码的 VSO 团队项目，可以将该团队项目连接到 Azure。在 [Azure 门户](http://manage.windowsazure.cn中，选择云服务或网站，或通过选择左下角的 + 图标并依次选择“云服务”或“网站”和“快速创建”来创建新的云服务或网站)。选择“使用 Visual Studio Online 设置发布”链接。<br/> ![][10]
 
 2. 在向导中，在文本框中键入 Visual Studio Online 帐户的名称，然后单击“立即授权”链接。系统可能会要求你登录。<br/> ![][11]
 
@@ -236,4 +236,4 @@
 [49]: ./media/cloud-services-continuous-delivery-use-vso/TestsFailed.PNG
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
 
-<!---HONumber=69-->
+<!---HONumber=71-->

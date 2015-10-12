@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="07/16/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 # Azure 云服务的证书概述
 证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于使用管理 API 进行身份验证（[管理证书](#what-are-management-certificates)）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)它们以及如何将其[部署](#deploy)到 Azure。
@@ -73,4 +73,4 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 
 >[AZURE.NOTE]Azure 预览门户不使用管理证书来访问 API，而是使用用户帐户。
 
-<!---HONumber=67-->
+<!---HONumber=71-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/01/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
@@ -187,4 +187,4 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 [How to Delete a Storage Account from an Azure Subscription]: /documentation/articles/storage-manage-storage-account
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
 
-<!---HONumber=69-->
+<!---HONumber=71-->

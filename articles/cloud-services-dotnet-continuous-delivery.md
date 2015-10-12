@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="07/07/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -165,7 +165,7 @@
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    或者，可以导出带私钥的证书文件 PFX，并使用 Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解详细信息：[http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx][]。
+    或者，可以导出带私钥的证书文件 PFX，并使用 Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解详细信息：http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx。
 
     **升级部署与删除部署 -> 新建部署**
 
@@ -572,4 +572,4 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=69-->
+<!---HONumber=71-->

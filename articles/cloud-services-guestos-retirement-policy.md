@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/18/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="10/03/2015"/>
 
 # Azure 来宾 OS 可支持性和停用策略
 本页面上的信息与 Azure 来宾操作系统（[来宾 OS](https://msdn.microsoft.com/zh-cn/library/azure/ff729422.aspx)）相关。来宾 OS 仅适用于云服务辅助角色和 Web 角色 (PaaS)，而不适用于虚拟机 (IaaS)。
@@ -86,4 +86,4 @@ Microsoft 将继续推出合并了最新 MSRC 更新的新来宾 OS 版本，直
 ## 后续步骤
 查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix)。
 
-<!---HONumber=69-->
+<!---HONumber=71-->

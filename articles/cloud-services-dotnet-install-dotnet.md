@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/03/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="10/03/2015"/>
 
 # 在云服务角色上安装 .NET 
 
@@ -136,4 +136,4 @@
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png
 [2]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithallfiles.png
 
-<!---HONumber=69-->
+<!---HONumber=71-->

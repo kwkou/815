@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/14/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="10/03/2015"/>
 
 # Azure 来宾 OS 版本和 SDK 兼容性对照表
 提供适用于云服务的最新 Azure 来宾 OS 版本的最新信息。此信息将帮助你在来宾 OS 停用之前规划升级路径。
@@ -332,4 +332,4 @@ Microsoft Azure 不断地发布更新。来宾 OS 只不过是此类更新的其
 [fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

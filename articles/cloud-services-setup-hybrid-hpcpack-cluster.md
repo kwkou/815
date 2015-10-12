@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/24/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 使用 Microsoft HPC Pack 设置混合计算群集
@@ -343,4 +343,4 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=69-->
+<!---HONumber=71-->

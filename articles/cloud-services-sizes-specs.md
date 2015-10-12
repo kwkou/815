@@ -9,7 +9,7 @@
 <tags 
  ms.service="cloud-services" 
  ms.date="06/04/2015" 
- wacn.date="09/15/2015"/>
+ wacn.date="10/03/2015"/>
  
 # 云服务的大小
 
@@ -38,8 +38,8 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |大小|CPU<br>核心数|内存|磁盘大小|
 |---|---|---|---|
 |特小型|1|768 MB|OS = 来宾操作系统大小<br/>本地资源 = 19 GB<br/>应用 = 约 1.5 GB|
-|小型|1|1.75 GB|OS = 来宾操作系统大小<br/>本地资源 = 224 GB<br/>应用 = 约 1.5 GB|
-|中型|2|3.5 GB|OS = 来宾操作系统大小<br/>本地资源 = 489 GB<br/>应用 = 约 1.5 GB|
+|小型|1|1\.75 GB|OS = 来宾操作系统大小<br/>本地资源 = 224 GB<br/>应用 = 约 1.5 GB|
+|中型|2|3\.5 GB|OS = 来宾操作系统大小<br/>本地资源 = 489 GB<br/>应用 = 约 1.5 GB|
 |大型|4|7 GB|OS = 来宾操作系统大小<br/>本地资源 = 999 GB<br/>应用 = 约 1.5 GB|
 |超大型|8|14 GB|OS = 来宾操作系统大小<br/>本地资源 = 2,039 GB<br/>应用 = 约 1.5 GB|
 |A5|2|14 GB|OS = 来宾操作系统大小<br/>本地资源 = 489 GB<br/>应用 = 约 1.5 GB|
@@ -49,17 +49,17 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |A9|16|112 GB|OS = 来宾操作系统大小<br/>本地资源 = 1.77 TB<br/>应用 = 约 1.5 GB<!--blockquote> Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 Compute Intensive Instances</a>.</blockquote-->|
 |A10|8|56 GB|OS = 来宾操作系统大小<br/>本地资源 = 1.77 TB<br/>应用 = 约 1.5 GB<!--blockquote> Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 Compute Intensive Instances</a>.</blockquote-->|
 |A11|16|112 GB|OS = 来宾操作系统大小<br/>本地资源 = 1.77 TB<br/>应用 = 约 1.5 GB<!--blockquote> Note: For information and considerations about using this size, see <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">About the A8, A9, A10, and A11 Compute Intensive Instances</a>.</blockquote-->|
-|Standard_D1|1|3.5 GB|OS = 来宾操作系统大小<br/>本地资源 = 50 GB<br/>应用 = 约 1.5 GB|
-|Standard_D2|2|7 GB|OS = 来宾操作系统大小<br/>本地资源 = 100 GB<br/>应用 = 约 1.5 GB|
-|Standard_D3|4|14 GB|OS = 来宾操作系统大小<br/>本地资源 = 200 GB<br/>应用 = 约 1.5 GB|
-|Standard_D4|8|28 GB|OS = 来宾操作系统大小<br/>本地资源 = 400 GB<br/>应用 = 约 1.5 GB|
-|Standard_D11|2|14 GB|OS = 来宾操作系统大小<br/>本地资源 = 100 GB<br/>应用 = 约 1.5 GB|
-|Standard_D12|4|28 GB|OS = 来宾操作系统大小<br/>本地资源 = 200 GB<br/>应用 = 约 1.5 GB|
-|Standard_D13|8|56 GB|OS = 来宾操作系统大小<br/>本地资源 = 400 GB<br/>应用 = 约 1.5 GB|
-|Standard_D14|16|112 GB|OS = 来宾操作系统大小<br/>本地资源 = 800 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D1|1|3\.5 GB|OS = 来宾操作系统大小<br/>本地资源 = 50 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D2|2|7 GB|OS = 来宾操作系统大小<br/>本地资源 = 100 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D3|4|14 GB|OS = 来宾操作系统大小<br/>本地资源 = 200 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D4|8|28 GB|OS = 来宾操作系统大小<br/>本地资源 = 400 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D11|2|14 GB|OS = 来宾操作系统大小<br/>本地资源 = 100 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D12|4|28 GB|OS = 来宾操作系统大小<br/>本地资源 = 200 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D13|8|56 GB|OS = 来宾操作系统大小<br/>本地资源 = 400 GB<br/>应用 = 约 1.5 GB|
+|Standard\_D14|16|112 GB|OS = 来宾操作系统大小<br/>本地资源 = 800 GB<br/>应用 = 约 1.5 GB|
 
 ## 后续步骤
 
 [为 Azure 设置云服务](https://msdn.microsoft.com/zh-cn/library/hh124108)[配置云服务大小](https://msdn.microsoft.com/zh-cn/library/ee814754)
 
-<!---HONumber=69-->
+<!---HONumber=71-->

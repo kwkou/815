@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/30/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -143,4 +143,4 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 [TFSTutorialForCloudService]: /documentation/articles/cloud-services-continuous-delivery-use-vso
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

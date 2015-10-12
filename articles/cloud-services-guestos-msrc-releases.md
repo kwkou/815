@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="04/17/2015"
-   wacn.dater="09/15/2015"/>
+   wacn.dater="10/03/2015"/>
 
 # Azure 来宾 OS 
 
@@ -261,4 +261,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

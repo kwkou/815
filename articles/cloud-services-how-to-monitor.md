@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="08/04/2014" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 #如何监视云服务
@@ -189,4 +189,4 @@
 
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
 
-<!---HONumber=69-->
+<!---HONumber=71-->

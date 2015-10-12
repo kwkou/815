@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="06/29/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -140,4 +140,4 @@
 			
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

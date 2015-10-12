@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="04/27/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -508,4 +508,4 @@ EventSource|否|表|记录你的代码使用 .NET EventSource 类生成的事件
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495145.aspx
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495168.aspx
 
-<!---HONumber=69-->
+<!---HONumber=71-->

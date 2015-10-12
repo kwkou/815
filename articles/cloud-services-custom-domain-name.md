@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/29/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 为 Azure 云服务配置自定义域名
 
@@ -40,7 +40,7 @@ CNAME（即别名记录）和 A 记录都允许您将域名与特定服务器（
 
 CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）映射到规范域名。在这种情况下，规范域名是你的 Azure 托管应用程序的 **[myapp].cloudapp.net** 域名。CNAME 创建后，将为 **[myapp].cloudapp.net** 创建一个别名。CNAME 条目将自动解析为你的 **[myapp].cloudapp.net** 服务的 IP 地址，因此，如果该云服务的 IP 地址发生更改，你无需采取任何措施。
 
-> [AZURE.NOTE]某些域注册机构只允许您在使用 CNAME 记录（例如 www.contoso.com）和非根名称（例如 contoso.com）时映射子域。有关 CNAME 记录的详细信息，请参阅由你的注册机构提供的文档、[CNAME 记录上的 Wikipedia 条目](http://en.wikipedia.org/wiki/CNAME_record)或 [IETF 域名 - 实现和规范文档](http://tools.ietf.org/html/rfc1035)。
+> [AZURE.NOTE]某些域注册机构只允许您在使用 CNAME 记录（例如 www.contoso.com）和非根名称（例如 contoso.com）时映射子域。有关 CNAME 记录的详细信息，请参阅由您的注册机构提供的文档、[CNAME 记录上的 Wikipedia 条目](http://en.wikipedia.org/wiki/CNAME_record)或 [IETF 域名 - 实现和规范文档](http://tools.ietf.org/html/rfc1035)。
 
 ### A 记录
 
@@ -77,7 +77,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 
 4.  如果希望为 **www.customdomain.com** 创建别名，还必须为 CNAME 提供域或子域别名，例如 **www**。如果希望为根域创建别名，它可能在注册机构的 DNS 工具中以符号“**@**”的形式列出。
 
-5. 然后，你必须提供一个规范主机名，在此示例中它是你的应用程序的 **chinacloudapp.cn** 域。
+5. 然后，您必须提供一个规范主机名，在此示例中它是您的应用程序的 **chinacloudapp.cn** 域。
 
 例如，以下 CNAME 记录会将 **www.contoso.com** 的全部流量都转发至 **contoso.chinacloudapp.cn**（你已部署的应用程序的自定义域名）：
 
@@ -149,4 +149,4 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 [csurl]: ./media/cloud-services-custom-domain-name/csurl.png
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->

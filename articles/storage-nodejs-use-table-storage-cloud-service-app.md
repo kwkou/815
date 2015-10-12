@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="02/25/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -389,7 +389,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 	停止服务可能需要花费几分钟时间。在服务停止时，你会收到一条指示服务已停止的消息。
 
-3.  若要删除服务，请调用以下 cmdlet：
+2.  若要删除服务，请调用以下 cmdlet：
 
         PS C:\node\tasklist\WebRole1> Remove-AzureService contosotasklist
 
@@ -403,4 +403,4 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [Node.js Web 应用程序]: /develop/nodejs/tutorials/getting-started/
  
 
-<!---HONumber=69-->
+<!---HONumber=71-->
