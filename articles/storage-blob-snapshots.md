@@ -6,8 +6,11 @@
 	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
-	
-<tags ms.service="storage" ms.date="02/20/2015" wacn.date="04/11/2015"/>
+
+<tags 
+	ms.service="storage" 
+	ms.date="05/27/2015" 
+	wacn.date="09/18/2015"/>
 
 # 创建 Blob 快照
 
@@ -54,16 +57,25 @@ Blob 的快照与从中创建快照的基本 Blob 具有相同的名称，但后
 
 - 若要读取快照，你可以使用"复制 Blob"操作将快照复制到帐户中的另一个页 Blob。复制操作的目标 Blob 不能包含任何现有快照。如果目标 Blob 确实包含快照，则"复制 Blob"将返回错误代码 409 (**SnapshotsPresent**)。
 
-## 构造快照的绝对 URI 
+## 返回快照的绝对 URI 
 
-以下 C# 代码示例从快照的基本 Blob 对象构造快照的绝对 URI。
+此 C# 代码示例创建一个新的快照并写出主位置的绝对 URI。
 
-	var snapshot = blob.CreateSnapshot();
-	var uri = Microsoft.WindowsAzure.StorageClient.Protocol.BlobRequest.Get
-    (snapshot.Uri, 
-    0, 
-    snapshot.SnapshotTime.Value, 
-    null).Address.AbsoluteUri;
+    //Create the blob service client object.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+    
+    //Get a reference to a container.
+    CloudBlobContainer container = blobClient.GetContainerReference("sample-container");
+    container.CreateIfNotExists();
+
+    //Get a reference to a blob.
+    CloudBlockBlob blob = container.GetBlockBlobReference("sampleblob.txt");
+    blob.UploadText("This is a blob.");
+
+    //Create a snapshot of the blob and write out its primary URI.
+    CloudBlockBlob blobSnapshot = blob.CreateSnapshot();
+    Console.WriteLine(blobSnapshot.SnapshotQualifiedStorageUri.PrimaryUri);
 
 ## 了解快照如何产生费用
 

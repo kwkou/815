@@ -1,45 +1,45 @@
-<properties linkid="dev-java-how-to-on-premise-application-with-blob-storage" urlDisplayName="Image Gallery w/ Storage" pageTitle="使用 Blob 存储的本地应用程序 (Java) | Windows Azure" metaKeywords="Azure blob storage, Azure blob Java, Azure blob example, Azure blob tutorial" description="了解如何创建将图像上载到 Azure 并在浏览器中显示图像的控制台应用程序。使用 Java 的代码示例。" metaCanonical="" services="storage" documentationCenter="Java" title="On-Premises Application with Blob Storage" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
-<tags ms.service="storage"
-    ms.date="02/20/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="使用 Blob 存储的本地应用程序 (Java) | Windows Azure"
+	description="了解如何创建将图像上载到 Azure 并在浏览器中显示图像的控制台应用程序。使用 Java 的代码示例。"
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
+	editor="jimbe"/>
+
+<tags
+	ms.service="storage"
+	ms.date="06/03/2015"
+	wacn.date="09/18/2015"/>
 
 # 使用 Blob 存储的本地应用程序
 
-以下示例将演示如何使用 Azure 存储空间在 Azure 中存储图像。下面的代码用于控制台应用程序，目的是将一个图像上载到 Azure，然后再创建一个
-HTML 文件，以便在浏览器中显示该图像。
+## 概述
 
-## 目录
+以下示例将演示如何使用 Azure 存储空间在 Azure 中存储图像。本文中的代码是一个控制台应用程序的代码，该应用程序将一个图像上载到 Azure，然后创建用于在浏览器中显示该图像的 HTML 文件。
 
--   [先决条件][]
--   [使用 Azure Blob 存储上载文件][]
--   [删除容器][]
+## 先决条件
 
-## <a name="bkmk_prerequisites"> </a>先决条件
-
-1.  已安装 Java 开发人员工具包 (JDK)、1.6 版或更高版本。
-2.  已安装 Azure SDK。
-3.  适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅[下载
-    Azure SDK for Java]。
-4.  已设置了一个 Azure 存储帐户。以下代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户]；有关检索帐户密钥的信息，请参阅[如何管理存储帐户]。
-5.  你已创建了存储在路径 c:\myimages\image1.jpg 处的已命名本地图像文件。或者，
-    在示例中修改**FileInputStream 构造函数以使用其他图像路径和文件名。**
+- 已安装 Java 开发人员工具包 (JDK) 版本1.6 或更高版本。
+- 已安装 Azure SDK。
+- 适用于 Azure Libraries for Java 的 JAR 以及任何适用的依赖项 JAR 已安装并且位于 Java 编译器使用的生成路径中。有关安装 Azure Libraries for Java 的信息，请参阅“下载 Azure SDK for Java”。
+- 已设置了一个 Azure 存储帐户。本文中的代码将使用存储帐户的帐户名称和帐户密钥。有关创建存储帐户的信息，请参阅[如何创建存储帐户]；有关检索帐户密钥的信息，请参阅[如何管理存储帐户]。
+- 您已创建存储在路径 c:\\myimages\\image1.jpg 处的已命名本地图像文件。或者，在示例中修改 **FileInputStream** 构造函数以使用其他图像路径和文件名。
 
 [WACOM.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
-## <a name="bkmk_uploadfile"> </a>使用 Azure Blob 存储上载文件
+## 使用 Azure Blob 存储上载文件
 
-此处提供了分步过程；如果您要跳过这些过程，则可在本主题的后面找到完整的代码。
+此处提供分步过程。如果你要跳过这些过程，则可在本文后面找到完整的代码。
 
-在代码的开头请包括对 Azure 核心存储类、Azure Blob**客户端类、Java IO 类和 URISyntaxException 类**的导入：
+在代码的开头请包括对 Azure 核心存储类、Azure Blob 客户端类、Java IO 类和 **URISyntaxException** 类的导入：
 
     import com.microsoft.windowsazure.services.core.storage.*;
     import com.microsoft.windowsazure.services.blob.client.*;
     import java.io.*;
     import java.net.URISyntaxException;
 
-声明一个名为 StorageSample 的类，包含左大括号
-**{**。
+声明一个名为 **StorageSample** 的类，包含左大括号 **{**。
 
     public class StorageSample {
 
@@ -51,7 +51,7 @@ HTML 文件，以便在浏览器中显示该图像。
                "AccountName=your_account_name;" + 
                "AccountKey=your_account_name"; 
 
-添加对 main 的声明，包括 try 块并包括必需的左大括号 **{**。
+添加对 **main** 的声明，包括 **try** 块并包括必需的左大括号 **{**。
 
     public static void main(String[] args) 
     {
@@ -72,15 +72,15 @@ HTML 文件，以便在浏览器中显示该图像。
     CloudBlobContainer container;
     CloudBlockBlob blob;
 
-为 account 变量赋值。
+为 **account** 变量赋值。
 
     account = CloudStorageAccount.parse(storageConnectionString);
 
-为 serviceClient 变量赋值。
+为 **serviceClient** 变量赋值。
 
     serviceClient = account.createCloudBlobClient();
 
-为 container 变量赋值。我们将获取对名为 gettingstarted 的容器的引用。
+为 **container** 变量赋值。我们将获取对名为 **gettingstarted** 的容器的引用。
 
     // Container name must be lower case.
     container = serviceClient.getContainerReference("gettingstarted");
@@ -88,7 +88,7 @@ HTML 文件，以便在浏览器中显示该图像。
 创建该容器。如果该容器不存在，此方法将创建该容器（并返回 true）。如果该容器存在，则此方法将返回
 **false**。createIfNotExist 的一个替代方法是 create 方法（如果该容器已存在，该方法将返回错误）。
 
-    container.createIfNotExist();
+    container.createIfNotExists();
 
 为容器设置匿名访问。
 
@@ -130,7 +130,7 @@ Azure 存储空间中的 Blob。
     或 **FileOutputStream** 构造函数引发。
 -   **StorageException**：可由 Azure 客户端存储库引发。
 -   **URISyntaxException**：可由 ListBlobItem.getUri 方法引发。
--   **异常**：一般异常处理。
+-   **Exception**：一般异常处理。
 
 <!-- -->
 
@@ -161,12 +161,12 @@ Azure 存储空间中的 Blob。
 
 结束 **main** 的方法是插入右大括号：**}**
 
-创建一个名为 MakeHTMLPage 的方法来创建一个基本的 HTML 页面。此方法**具有一个 CloudBlobContainer 类型的参数，该参数将用于循环访问**已上载 Blob 的列表。此方法将引发 FileNotFoundException 类型的异常（可由 FileOutputStream 构造函数引发）以及 URISyntaxException（可由 ListBlobItem.getUri 方法引发）。包括左大括号 **{**。
+创建一个名为 **MakeHTMLPage** 的方法来创建一个基本的 HTML 页面。此方法具有一个 **CloudBlobContainer** 类型的参数，该参数将用于循环访问已上载 Blob 的列表。此方法将引发 **FileNotFoundException** 类型的异常（可由 **FileOutputStream** 构造函数引发）以及 **URISyntaxException**（可由 **ListBlobItem.getUri**.getUri 方法引发）。包括左大括号 **{**。
 
     public static void MakeHTMLPage(CloudBlobContainer container) throws FileNotFoundException, URISyntaxException
     {
 
-创建一个名为 index.html 的本地文件。
+创建一个名为 **index.html** 的本地文件。
 
     PrintStream stream;
     stream = new PrintStream(new FileOutputStream("index.html"));
@@ -189,7 +189,7 @@ Azure 存储空间中的 Blob。
     stream.println("<img src='" + blobItem.getUri() + "'/><br/>");
     }
 
-结束 **&lt;body&gt;** 元素和 **&lt;html&gt;** 元素。
+关闭 **&lt;body&gt;** 元素和 **&lt;html&gt;** 元素。
 
     stream.println("</body>");
     stream.println("</html>");
@@ -233,8 +233,8 @@ Azure 存储空间中的 Blob。
                 serviceClient = account.createCloudBlobClient();
                 // Container name must be lower case.
                 container = serviceClient.getContainerReference("gettingstarted");
-                container.createIfNotExist();
-                
+                container.createIfNotExists();
+
                 // Set anonymous access on the container.
                 BlobContainerPermissions containerPermissions;
                 containerPermissions = new BlobContainerPermissions();
@@ -364,14 +364,24 @@ Azure 存储空间中的 Blob。
         }
     }
 
-有关其他 Blob 存储类和方法的概述，请参阅[如何
-从 Java 使用 Blob 存储服务]。
+有关其他 Blob 存储类和方法的概述，请参阅[如何通过 Java 使用 Blob 存储服务]。
 
-  [先决条件]: #bkmk_prerequisites
-  [使用 Azure Blob 存储上载文件]: #bkmk_uploadfile
-  [删除容器]: #bkmk_deletecontainer
-  [下载 Azure SDK for Java]: /develop/java/
-  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
-  [如何管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
-  [如何从 Java 使用 Blob 存储服务]: /zh-cn/documentation/articles/storage-java-how-to-use-blob-storage/
-<!--HONumber=41-->
+## 后续步骤
+
+请访问下面的链接了解有关更复杂的存储任务的详细信息。
+
+- [Azure Storage SDK for Java]
+- [Azure 存储客户端 SDK 参考]
+- [Azure 存储 REST API]
+- [Azure 存储团队博客]
+
+  [Download the Azure SDK for Java]: /develop/java/
+  [如何创建存储帐户]: /documentation/articles/storage-create-storage-account#create-a-storage-account
+  [如何管理存储帐户]: /documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
+  [如何通过 Java 使用 Blob 存储服务]: /documentation/articles/storage-java-how-to-use-blob-storage
+  [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
+  [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
+  [Azure 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
+  [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+
+<!---HONumber=70-->

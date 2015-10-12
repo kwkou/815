@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="如何使用队列存储 (C++) Azure - 教程" 
+    pageTitle="如何使用队列存储 (C++) | Windows Azure" 
     description="了解如何在 Azure 中使用队列存储服务。示例用 C++ 编写。" 
     services="storage" 
     documentationCenter=".net" 
@@ -8,23 +8,18 @@
     editor=""/>
 
 <tags 
-wacn.date="05/15/2015"
     ms.service="storage" 
-    ms.workload="storage" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="04/06/2015" 
-    ms.author="tamram"/>
+	ms.date="07/19/2015" 
+    wacn.date="09/18/2015"/>
 
 # 如何通过 C++ 使用队列存储  
 
 [AZURE.INCLUDE [storage-selector-queue-include](../includes/storage-selector-queue-include.md)]
 
 ## 概述
-本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储客户端库](https://github.com/Azure/azure-storage-cpp/blob/v0.5.0-preview/README.md)。介绍的方案包括插入、查看、获取和删除队列消息以及创建和删除队列。  
+本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-cpp/blob/v1.0.0/README.md)。介绍的方案包括“插入”、“查看”、“获取”和“删除”队列消息以及“创建和删除队列”。
 
->[AZURE.NOTE] 本指南主要面向适用于 C++ 版本 0.5.0 及其更高版本的 Azure 存储客户端库。建议的版本是存储客户端库 0.5.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com) 获得。 
+>[AZURE.NOTE] 本指南主要面向适用于 C++ 的 Azure 存储空间客户端库 1.0.0 版及更高版本。建议的版本是存储空间客户端库 1.0.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/) 获得。
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../includes/storage-queue-concepts-include.md)]
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
@@ -36,35 +31,35 @@ wacn.date="05/15/2015"
 
 若要安装适用于 C++ 的 Azure 存储客户端库，你可以使用以下方法：
 
--	**Linux：**按照[适用于 C++ 的 Azure 存储客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)页中提供的说明操作。
--	**Windows：**在 Visual Studio 中，单击**"工具">"NuGet 程序包管理器">"程序包管理器控制台"**。在 [NuGet 程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)中键入以下命令，然后按 **ENTER**。
+-	**Linux：**按照[适用于 C++ 的 Azure 存储空间客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)页中提供的说明操作。  
+-	**Windows：**在 Visual Studio 主菜单中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器控制台”。在 [NuGet 程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)窗口中输入以下命令，然后按 **ENTER**。  
 
-		Install-Package wastorage -Pre  
+		Install-Package wastorage 
  
-## 将你的应用程序配置为访问队列存储
-将以下 include 语句添加到 C++ 文件的顶部，你要在此使用 Azure 存储 API 来访问队列：  
+## 配置应用程序以访问队列存储
+将以下 include 语句添加到 C++ 文件的顶部，你要在此使用 Azure 存储 API 来访问队列：
 
 	#include "was/storage_account.h"
 	#include "was/queue.h"
 
 ## 设置 Azure 存储连接字符串
 
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，你必须提供以下格式的存储连接字符串：对  *AccountName* 和  *AccountKey* 值使用管理门户中列出的存储帐户的存储帐户名称和存储访问密钥。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：  
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用管理门户中列出的存储帐户的名称和存储帐户的存储访问密钥。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：
 
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-若要在本地 Windows 计算机中测试你的应用程序，可以使用随同 [Azure SDK](/downloads) 一起安装的 Windows Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：  
+若要在本地 Windows 计算机中测试您的应用程序，可以使用随 [Azure SDK](/downloads/) 一起安装的 Windows Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 
-若要启动 Azure 存储模拟器，请选择**"开始"**按钮或按 **Windows** 键。开始键入 **Azure 存储模拟器**，然后从应用程序列表中选择**"Windows Azure 存储模拟器"**。  
+若要启动 Azure 存储模拟器，请选择“开始”按钮或按 **Windows** 键。开始键入“Azure 存储模拟器”，然后从应用程序列表中选择“Windows Azure 存储模拟器”。
 
 下面的示例假定你使用了这两个方法之一来获取存储连接字符串。  
 
 ## 检索你的连接字符串
-可以使用 **cloud_storage_account** 类来表示你的存储帐户信息。若要从存储连接字符串中检索你的存储帐户信息，你可以使用 **parse** 方法。 
+可以使用 **cloud_storage_account** 类来表示您的存储帐户信息。若要从存储连接字符串中检索您的存储帐户信息，您可以使用 **parse** 方法。 
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -87,7 +82,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
  	queue.create_if_not_exists();  
 
 ## 如何：在队列中插入消息
-若要将消息插入到现有队列中，请先创建新的 **cloud_queue_message**。其次，调用 **add_message** 方法。可以从字符串或 **byte** 数组创建 **cloud_queue_message**。以下代码将创建队列（如果队列不存在）并插入消息  'Hello, World'。
+若要将消息插入到现有队列中，请先创建新的 **cloud_queue_message**。接下来，调用 **add_message** 方法。可以从字符串或 **字节** 数组创建 **cloud_queue_message**。以下代码将创建队列（如果该队列不存在）并插入消息  'Hello, World'。
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -120,7 +115,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	// Peek at the next message.
 	azure::storage::cloud_queue_message peeked_message = queue.peek_message();
 
-	// Output the message value.
+	// Output the message content.
 	std::wcout << U("Peeked message content: ") << peeked_message.content_as_string() << std::endl;
 
 ## 如何：更改已排队消息的内容
@@ -143,10 +138,12 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 	changed_message.set_content(U("Changed message"));
 	queue.update_message(changed_message, std::chrono::seconds(60), true);
+
+	// Output the message content.
 	std::wcout << U("Changed message content: ") << changed_message.content_as_string() << std::endl;  
 
 ## 如何：取消对下一条消息的排队
-你的代码通过两个步骤来取消对队列中某条消息的排队。调用 **get_message** 时，你将获取队列中的下一条消息。从 **get_message** 返回的消息对从此队列读取消息的其他任何代码不可见。若要完成从队列中删除消息，你还必须调用 **delete_message**。此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。一处理完消息，你的代码就立即调用 **delete_message**。
+你的代码通过两个步骤来取消对队列中某条消息的排队。调用 **get_message** 时，您将获取队列中的下一条消息。从 **get_message** 返回的消息对从此队列读取消息的其他任何代码不可见。若要完成从队列中删除消息，您还必须调用 **delete_message**。此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。你的代码在处理消息后会立即调用 **delete_message**。
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -185,12 +182,10 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	// Retrieve 20 messages from the queue with a visibility timeout of 300 seconds.
 	std::vector<azure::storage::cloud_queue_message> messages = queue.get_messages(20, std::chrono::seconds(300), options, context);
 		
-	std::vector<azure::storage::cloud_queue_message>::const_iterator i;
-
-	for (i = messages.cbegin(); i != messages.cend(); ++i)
+	for (auto it = messages.cbegin(); it != messages.cend(); ++it)
 	{
-    	// Display the contents of the message.
-    	std::wcout << U("Get: ") << i->content_as_string() << std::endl;
+		// Display the contents of the message.
+		std::wcout << U("Get: ") << it->content_as_string() << std::endl;
 	}
 
 ## 如何：获取队列长度
@@ -215,7 +210,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 	std::wcout << U("Number of messages in queue: ") << cachedMessageCount << std::endl;  
 
 ## 如何：删除队列
-若要删除队列及其包含的所有消息，请对队列对象调用 **delete_queue_if_exists** 方法。
+若要删除队列及其包含的所有消息，请对队列对象调用 **delete_queue_if_exists**。
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -234,9 +229,9 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 -	[如何通过 C++ 使用 Blob 存储](/documentation/articles/storage-c-plus-plus-how-to-use-blobs)
 -	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables)
--	[适用于 C++ 的存储客户端库](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx) 
--	[Azure 存储 MSDN 参考](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx)
--	[Azure 存储文档](/documentation/services/storage)
+-	[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration)
+-	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
+-	[Azure 存档文档](/documentation/services/storage/)
 
 
-<!--HONumber=53-->
+<!---HONumber=70-->

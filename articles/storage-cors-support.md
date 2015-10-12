@@ -6,10 +6,11 @@
 	authors="andtyler" 
 	manager="aungoo" 
 	editor=""/>
-<tags ms.service="storage"
-    ms.date="03/05/2015"
-    wacn.date="04/15/2015"
-    />
+
+<tags 
+	ms.service="storage" 
+	ms.date="06/18/2015" 
+	wacn.date="09/18/2015"/>
 
 
 
@@ -138,40 +139,12 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 接下来，考虑以下 CORS 请求：
 
-<table>
-<tr>
-<td colspan=3><b>请求</b></td>
-<td colspan=2><b>响应</b></td>
-</tr>
-<tr>
-<td><b>方法</b></td>
-<td><b>源</b></td>
-<td><b>请求标头</b></td>
-<td><b>规则匹配</b></td>
-<td><b>结果</b></td>
-</tr>
-<tr>
-<td><b>PUT</b></td>
-<td>http://www.contoso.com</td>
-<td>x-ms-blob-content-type</td>
-<td>第一条规则</td>
-<td>成功</td>
-</tr>
-<tr>
-<td><b>GET</b></td>
-<td>http://www.contoso.com</td>
-<td>x-ms-blob-content-type</td>
-<td>第二条规则</td>
-<td>成功</td>
-</tr>
-<tr>
-<td><b>GET</b></td>
-<td>http://www.contoso.com</td>
-<td>x-ms-blob-content-type</td>
-<td>第二条规则</td>
-<td>失败</td>
-</tr>
-</table>
+请求||| 响应||
+---|---|---|---|---
+**方法** |**源** |**请求标头** |**规则匹配** |**结果**
+**PUT** | http://www.contoso.com |x-ms-blob-content-type | 第一条规则 |成功
+**GET** | http://www.contoso.com| x-ms-blob-content-type | 第二条规则 |成功
+**GET** | http://www.contoso.com| x-ms-blob-content-type | 第二条规则 | 失败
 
 第一个请求与第一条规则相匹配，源域与允许的来源相匹配，方法与允许的方法相匹配，标头与允许的标头相匹配，所以第一个请求成功。
 
@@ -187,9 +160,9 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 当浏览器或其他用户代理缓存 CORS 请求的响应时，源域将作为允许的来源缓存。如果第二个域在缓存处于活动时对存储资源发出相同请求，用户代理将会检索缓存的源域。由于第二个域与缓存的域不匹配，因此原本应该成功的请求将会失败。在某些情况下，Azure 存储空间会将 Vary 标头设置为 **Origin**，以便在发出请求的域不同于缓存的来源时，指示用户代理将后续 CORS 请求发送到服务。
 
-在以下情况下，Azure 存储会针对实际 GET/HEAD 请求，将 *Vary* 标头设置为 **Origin**：
+在以下情况下，Azure 存储空间会针对实际 GET/HEAD 请求，将 *Vary* 标头设置为 **Origin**：
 
-- 当请求来源与 CORS 规则定义的允许来源完全匹配时。要想成为精确匹配项，CORS 规则不能包含"*"通配符。
+- 当请求来源与 CORS 规则定义的允许来源完全匹配时。要想成为精确匹配项，CORS 规则不能包含 ' * ' 通配符。
 
 - 不存在与请求源匹配的规则，但为存储服务启用了 CORS。
 
@@ -199,85 +172,17 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 下表指示了 Azure 存储如何基于前面提供的情况响应 GET/HEAD 请求：
 
-<table>
-<tr>
-<td><b>请求</b></td>
-<td colspan=3><b>帐户设置和规则评估结果</b></td>
-<td colspan=3><b>响应</b></td>
-</tr>
-<tr>
-<td><b>请求中存在 Origin 标头</b></td>
-<td><b>为此服务指定了 CORS 规则</b></td>
-<td><b>存在允许所有域 (*) 的匹配规则</b></td>
-<td><b>存在精确匹配域的匹配规则</b></td>
-<td><b>响应包含设置为 Origin 的 Vary 标头</b></td>
-<td><b>响应包含 Access-Control-Allowed-Origin:"*"</b></td>
-<td><b>响应包含 Access-Control-Exposed-Headers</b></td>
-</tr>
-<tr>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-</tr>
-<tr>
-<td>否</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-</tr>
-<tr>
-<td>否</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-<td>是</td>
-<td>是</td>
-</tr>
-<tr>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-</tr>
-<tr>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-<td>是</td>
-</tr>
-<tr>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-</tr>
-<tr>
-<td>是</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-<td>是</td>
-<td>是</td>
-</tr>
-</table>
+请求|帐户设置和规则评估结果|||响应|||
+---|---|---|---|---|---|---|---|---
+**请求中存在 Origin 标头** | **为此服务指定了 CORS 规则** | **存在允许所有域 (*) 的匹配规则** | **存在精确匹配域的匹配规则** | **响应包含设置为 Origin 的 Vary 标头** | **响应包含 Access-Control-Allowed-Origin:"*"** | **响应包含 Access-Control-Exposed-Headers**
+否|否|否|否|否|否|否
+否|是|否|否|是|否|否
+否|是|是|否|否|是|是
+是|否|否|否|否|否|否
+是|是|否|是|是|否|是
+是|是|否|否|是|否|否
+是|是|是|否|否|是|是
+
 
 ## CORS 请求的计费
 
@@ -295,4 +200,4 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 [W3C 跨域资源共享规范](http://www.w3.org/TR/cors)
 
-<!--HONumber=50-->
+<!---HONumber=70-->

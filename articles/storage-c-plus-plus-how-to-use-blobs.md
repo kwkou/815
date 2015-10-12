@@ -8,18 +8,18 @@
     editor=""/>
 
 <tags 
-	wacn.date="05/15/2015"
     ms.service="storage" 
-    ms.date="04/06/2015"/>
+	ms.date="07/19/2015" 
+    wacn.date="09/18/2015"/>
 
 # 如何通过 C++ 使用 Blob 存储  
 
 [AZURE.INCLUDE [storage-selector-blob-include](../includes/storage-selector-blob-include.md)]
 
 ## 概述
-本指南将演示如何使用 Azure Blob 存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储客户端库](https://github.com/Azure/azure-storage-cpp/blob/v0.5.0-preview/README)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。  
+本指南将演示如何使用 Azure Blob 存储服务执行常见方案。示例用 C++ 编写，并使用[适用于 C++ 的 Azure 存储空间客户端库](https://github.com/Azure/azure-storage-cpp/blob/v1.0.0/README.md)。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。  
 
->[AZURE.NOTE] 本指南主要面向适用于 C++ 版本 0.5.0 及其更高版本的 Azure 存储客户端库。建议的版本是存储客户端库 0.5.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com) 获得。 
+>[AZURE.NOTE] 本指南主要面向适用于 C++ 的 Azure 存储空间客户端库 1.0.0 版及更高版本。建议的版本是存储空间客户端库 1.0.0，它可以通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp) 获得。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 [AZURE.INCLUDE [storage-create-account-include](../includes/storage-create-account-include.md)]
@@ -31,10 +31,10 @@
 
 若要安装适用于 C++ 的 Azure 存储客户端库，你可以使用以下方法：
 
--	**Linux：**按照[适用于 C++ 的 Azure 存储客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README)页中提供的说明操作。
--	**Windows：**在 Visual Studio 中，单击**"工具">"NuGet 程序包管理器">"程序包管理器控制台"**。在 [NuGet 程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)中键入以下命令，然后按 **ENTER**。
+-	**Linux：**按照[适用于 C++ 的 Azure 存储空间客户端库自述文件](https://github.com/Azure/azure-storage-cpp/blob/master/README.md)页中提供的说明操作。  
+-	**Windows：**在 Visual Studio 主菜单中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器控制台”。在 [NuGet 程序包管理器控制台](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)窗口中输入以下命令，然后按 **ENTER**。  
 
-		Install-Package wastorage -Pre
+		Install-Package wastorage
 
 ## 配置你的应用程序以访问 Blob 存储  
 将以下 include 语句添加到 C++ 文件的顶部，你要在此使用 Azure 存储 API 来访问 blob：  
@@ -43,33 +43,36 @@
 	#include "was/blob.h"
 
 ## 设置 Azure 存储连接字符串
-Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，你必须提供以下格式的存储连接字符串：对  *AccountName* 和  *AccountKey* 值使用管理门户中列出的存储帐户的存储帐户名称和存储访问密钥。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：  
+Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用管理门户中列出的存储帐户的名称和存储帐户的存储访问密钥。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)。此示例演示如何声明一个静态字段以保存连接字符串：
 
 	// Define the connection-string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 
-若要在本地 Windows 计算机中测试你的应用程序，可以使用随同 [Azure SDK](/downloads) 一起安装的 Windows Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
+若要在本地 Windows 计算机中测试您的应用程序，可以使用随 [Azure SDK](/downloads) 一起安装的 Windows Azure [存储模拟器](https://msdn.microsoft.com/zh-CN/library/azure/hh403989.aspx)。存储模拟器是一种用于模拟本地开发计算机上 Azure 中可用的 Blob、队列和表服务的实用程序。以下示例演示如何声明一个静态字段以将连接字符串保存到你的本地存储模拟器：
 
 	// Define the connection-string with Azure Storage Emulator.
 	const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 
-若要启动 Azure 存储模拟器，请选择**"开始"**按钮或按 **Windows** 键。开始键入**"Azure 存储模拟器"**，然后从应用程序列表中选择**"Windows Azure 存储模拟器"**。  
+若要启动 Azure 存储模拟器，请选择“开始”按钮或按 **Windows** 键。开始键入“Azure 存储模拟器”，然后从应用程序列表中选择“Windows Azure 存储模拟器”。
 
 下面的示例假定你使用了这两个方法之一来获取存储连接字符串。  
 
 ## 检索你的连接字符串
-可以使用 **cloud_storage_account** 类来表示你的存储帐户信息。若要从存储连接字符串中检索你的存储帐户信息，你可以使用 **parse** 方法。  
+可以使用 **cloud\_storage\_account** 类来表示您的存储帐户信息。若要从存储连接字符串中检索您的存储帐户信息，您可以使用 **parse** 方法。
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
-其次，获取对 **cloud_blob_client** 类的引用，因为它允许你检索表示存储在 Blob 存储服务中的容器和 Blob 的对象。以下代码使用我们在上面检索到的存储帐户对象创建 **cloud_blob_client** 对象：  
+其次，获取对 **cloud\_blob\_client** 类的引用，因为它允许您检索表示存储在 Blob 存储服务中的容器和 Blob 的对象。以下代码使用我们在上面检索到的存储帐户对象创建 **cloud\_blob\_client** 对象：
 
 	// Create the blob client.
 	azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
 
 ## 如何：创建容器
-Azure 存储中的每个 Blob 必须驻留在一个容器中。此示例演示如何创建一个容器（如果该容器不存在）：  
+
+[AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
+
+此示例演示如何创建一个容器（如果该容器不存在）：
 
 	try 
 	{
@@ -99,8 +102,8 @@ Azure 存储中的每个 Blob 必须驻留在一个容器中。此示例演示�
 
 Internet 中的所有人都可以查看公共容器中的 Blob，但是，仅在你具有相应的访问密钥时，才能修改或删除它们。  
 
-## 如何：将 Blob 上载到容器中
-Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Blob。  
+## 如何：将 Blob 上载到容器
+Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Blob。
 
 若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。拥有 blob 引用后，你可以通过调用 **upload_from_stream** 方法将任何数据流上载到其中。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。  
 
@@ -133,7 +136,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 你还可以使用 **upload_from_file** 方法将文件上载到块 blob。
 
 ## 如何：列出容器中的 Blob
-若要列出容器中的 Blob，首先需要获取容器引用。然后，你可以使用容器的 **list_blobs_segmented** 方法来检索其中的 blob 和/或目录。若要访问返回的 **blob_result_segment** 的各种属性和方法集，你必须调用 **blob_result_segment.blobs** 属性来获取 **cloud_blob** 对象，或调用 **blob_result_segment.directories** 属性来获取 cloud_blob_directory 对象。以下代码演示如何检索和输出 **my-sample-container** 容器中每项的 URI：  
+若要列出容器中的 Blob，首先需要获取容器引用。然后，您可以使用容器的 **list_blobs** 方法来检索其中的 blob 和/或目录。若要针对一个返回的 **list_blob_item** 访问其丰富的属性和方法，您必须调用 **list_blob_item.as_blob** 方法以获取一个 **cloud_blob** 对象，或调用 **list_blob.as_directory** 方法以获取 cloud_blob_directory 对象。以下代码演示如何检索和输出 **my-sample-container** 容器中每一项的 URI：  
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -144,30 +147,24 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	// Retrieve a reference to a previously created container.
 	azure::storage::cloud_blob_container container = blob_client.get_container_reference(U("my-sample-container"));
 
-	// Loop over items within the container and output the length and URI.
-	azure::storage::continuation_token token;
-	do
+	// Output URI of each item.
+	azure::storage::list_blob_item_iterator end_of_results;
+	for (auto it = container.list_blobs(); it != end_of_results; ++it)
 	{
-		azure::storage::blob_result_segment result = container.list_blobs_segmented(token);
-		std::vector<azure::storage::cloud_blob> blobs = result.blobs();
-
-		for (std::vector<azure::storage::cloud_blob>::const_iterator it = blobs.cbegin(); it != blobs.cend(); ++it)
+		if (it->is_blob())
 		{
-			std::wcout << U("Blob: ") << it->uri().primary_uri().to_string() << std::endl;
+			std::wcout << U("Blob: ") << it->as_blob().uri().primary_uri().to_string() << std::endl;
 		}
-
-		std::vector<azure::storage::cloud_blob_directory> directories = result.directories();
-
-		for (std::vector<azure::storage::cloud_blob_directory>::const_iterator it = directories.cbegin(); it != directories.cend(); ++it)
+		else
 		{
-			std::wcout << U("Directory: ") << it->uri().primary_uri().to_string() << std::endl;
+			std::wcout << U("Directory: ") << it->as_directory().uri().primary_uri().to_string() << std::endl;
 		}
-		token = result.continuation_token();
-	} while (!token.empty());  
+	}
 
+有关列出操作的更多详细信息，请参阅[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration)。
 
 ## 如何：下载 Blob
-若要下载 Blob，请首先检索 Blob 引用，然后调用 **download_to_stream** 方法。以下示例使用 **download_to_stream** 方法将 Blob 内容传输到一个流对象，然后你可以将该对象保存到本地文件。  
+若要下载 Blob，请首先检索 Blob 引用，然后调用 **download_to_stream** 方法。以下示例使用 **download_to_stream** 方法将 Blob 内容传输到一个流对象，然后您可以将该对象保存到本地文件。  
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -192,7 +189,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	outfile.write((char *)&data[0], buffer.size());
 	outfile.close();  
 
-或者，可以使用 **download_to_file** 方法以将 blob 的内容下载到文件。
+或者，可以使用 **download_to_file** 方法将 blob 的内容下载到文件。
 此外，也可以使用 **download_text** 方法以文本字符串形式下载 Blob 的内容。  
 
 	// Retrieve storage account from connection string.
@@ -233,12 +230,8 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 -	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues)
 -	[如何通过 C++ 使用表存储](/documentation/articles/storage-c-plus-plus-how-to-use-tables)
--	[适用于 C++ 的存储客户端库](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx) 
--	[Azure 存储 MSDN 参考](https://msdn.microsoft.com/zh-CN/library/azure/gg433040.aspx)
--	[Azure 存档文档](/documentation/services/storage)
+-	[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration)
+-	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
+-	[Azure 存档文档](/documentation/services/storage/)
 
-
-
-
-
-<!--HONumber=53-->
+<!---HONumber=70-->
