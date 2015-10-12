@@ -59,17 +59,6 @@
  </tr>
  <tr>
  <tr>
-  <td><a href="/documentation/articles/automation-webhooks/">Webhook</a></td>
-  <td>
-   <ul>
-    <li>从单个 HTTP 请求启动 Runbook。</li>
-    <li>使用 URL 中的安全令牌进行身份验证。</li>
-    <li>客户端无法覆盖创建 Webhook 时指定的参数值。Runbook 可以定义填入了 HTTP 请求详细信息的单个参数。</li>
-    <li>无法通过 Webhook URL 跟踪作业状态。</li>
-   </ul>
-  </td>
- </tr>
- <tr>
  <tr>
   <td><a href="/documentation/articles/automation-scheduling-a-runbook">计划</a></td>
   <td>
