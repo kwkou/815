@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="07/31/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="10/13/2015"/>
 
 # 管理 Azure 网站中的 Web 应用
 
@@ -79,10 +79,10 @@
 
 请考虑使用[分阶段部署](/documentation/articles/web-sites-staged-publishing)。该选项可支持您向与生产部署并排运行的分阶段部署发布更新。
 
-如果使用 Visual Studio Online，您可以通过源控件设置持续部署：
+<!-- 如果使用 Visual Studio Online，您可以通过源控件设置持续部署：
 
-- [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
-- [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)
+- [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) -->
+<!-- - [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)-->
 
  
 <!-- Anchors. -->
