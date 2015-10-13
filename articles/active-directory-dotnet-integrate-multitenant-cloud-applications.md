@@ -1,14 +1,14 @@
-<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="使用 Azure Active Directory 开发多租户云应用程序" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="" urlDisplayName="" pageTitle="" metaKeywords="" description="" metaCanonical="" services="" documentationCenter="" title="使用 Azure Active Directory 开发多租户云应用程序" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date="12/16/2014"
-    wacn.date="10/13/2015"
+    wacn.date="04/11/2015"
     />
 
 # 使用 Azure Active Directory 开发多租户云应用程序
 
 ## <a name="introduction"></a>介绍
 
-Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可为云应用程序提供标识管理和访问控制功能。Azure AD 可与云服务，以及 Azure、Microsoft Office 365、Dynamics CRM Online 和 Windows Intune 轻松集成。现有的本地 Active Directory 部署还可以充分利用 Azure AD。要了解详细信息，请参阅 [windowsazure.cn][windowsazure.cn] 上的标识页。
+Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可为云应用程序提供标识管理和访问控制功能。Azure AD 可与云服务，以及 Azure、Microsoft Office 365、Dynamics CRM Online 和 Windows Intune 轻松集成。现有的本地 Active Directory 部署还可以充分利用 Azure AD。要了解详细信息，请参阅 [windowsazure.cn][windowsazure.cn] 上的[标识页][标识页]。
 
 本演练面向想要将多租户应用程序与 Azure AD 集成的 .NET 开发人员。你将了解如何执行以下操作：
 
@@ -400,7 +400,7 @@ Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可�
 
 与 Azure AD 集成可以让您的客户注册应用程序，并通过他们所维系的标识管理系统登录，以便减少或消除您的应用程序执行单独标识管理任务的需要。此功能为您的客户在使用应用程序时提供更加无缝的体验，解放管理任务所花费的时间。
 
-  <!--[标识页]: http://azure.microsoft.com/zh-cn/services/multi-factor-authentication/-->
+  [标识页]: http://azure.microsoft.com/zh-cn/services/multi-factor-authentication/
   [此处下载]: http://go.microsoft.com/fwlink/?LinkId=271213
   [Visual Studio 中的端口分配]: http://msdn.microsoft.com/zh-cn/library/ms178109(v=vs.100).aspx
   [Visual Studio 2012]: http://www.visualstudio.com/downloads/download-visual-studio-vs

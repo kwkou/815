@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/14/2015"
-	wacn.date="10/13/2015"/>
+	wacn.date="10/03/2015"/>
 
 #如何部署 Azure 网站
 
@@ -71,10 +71,10 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 [Visual Studio Online](http://www.visualstudio.com/)（以前称为 Team Foundation Service）是 Microsoft 针对源代码管理和团队协作的基于云的解决方案。该服务对最多 5 个开发人员的团队免费。你可以向 Azure 网站持续交付，并且你的存储库可以使用 [Git 或 TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs)。
 
-<!--有关详细信息，请参阅以下资源：
+有关详细信息，请参阅以下资源：
 
-* [使用 Visual Studio Online 和 TFVC 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso)。分步教程演示如何使用 TFVC 设置从 Visual Studio Online 的持续交付。TFVC 是集中式源代码管理选项，与分布式源代码管理选项 Git 截然相反。-->
-<!-- * [使用 Visual Studio Online 和 Git 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)。与上一个教程类似，但使用 Git 而不是 TFVC。-->
+* [使用 Visual Studio Online 和 TFVC 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso)。分步教程演示如何使用 TFVC 设置从 Visual Studio Online 的持续交付。TFVC 是集中式源代码管理选项，与分布式源代码管理选项 Git 截然相反。
+* [使用 Visual Studio Online 和 Git 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)。与上一个教程类似，但使用 Git 而不是 TFVC。
 
 ##<a name="git"></a>使用 Git 的存储库网站
 
