@@ -6,7 +6,7 @@
 	authors="davidmu1" 
 	manager="timlt" 
 	editor="tysonn" 
-	tags="azure-resource-manager/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="multiple"
