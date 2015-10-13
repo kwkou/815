@@ -106,7 +106,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 ##<a id="SSMS">从另一台计算机上的 SSMS 连接到 SQL Server VM 实例</a>
 
-[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../../includes/virtual-machines-sql-server-connection-steps.md)]
+[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../includes/virtual-machines-sql-server-connection-steps.md)]
 
 ## <a id="cdea">从应用程序连接到数据库引擎</a>
 
