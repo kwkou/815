@@ -8,12 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="08/19/2015"
-   ms.author="joaoma" />
+   wacn.date="10/03/2015" />
 
 # 禁用或启用流量管理器终结点
 

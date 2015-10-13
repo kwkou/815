@@ -83,7 +83,7 @@ http://www.digwebinterface.com – 类似于 Watchmouse 站点，但此站点显
 
 [关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[什么是流量管理器？](/documentation/articles/traffic-manmager-overview)
+[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
 
 [云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 

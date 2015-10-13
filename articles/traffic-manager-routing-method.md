@@ -129,7 +129,7 @@
 
 [网站](http://www.windowsazure.cn/home/features/web-site/)
 
-[Azure 流量管理器 Cmdlet](http://go.microsoft.com/fwlink/p/?LinkId=400769)
+[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
 
  
 

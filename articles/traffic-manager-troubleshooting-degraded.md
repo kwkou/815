@@ -64,15 +64,15 @@
 
 [关于流量管理器负载平衡方法](/documentation/articles/traffic-manager-load-balancing-methods)
 
-[流量管理器概述](/documentation/articles/traffic-manmager-overview)
+[流量管理器概述](/documentation/articles/traffic-manager-overview)
 
 [云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 
-[网站](http://www.windowsazure.cn/home/features/web-site/)
+[网站](/home/features/web-site/)
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
-[Azure 流量管理器 Cmdlet](http://go.microsoft.com/fwlink/p/?LinkId=400769)
+[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
 <!---HONumber=71-->
