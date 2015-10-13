@@ -7,7 +7,9 @@
    manager="timlt"
    editor=""/>
 
-<tags ms.service="service-bus" ms.date="04/14/2015" wacn.date="06/16/2015"/>
+<tags ms.service="service-bus"
+
+   ms.date="08/14/2015" wacn.date="10/03/2015"/>
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 
@@ -19,13 +21,9 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 
 - Azure 订阅。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[购买选项][试用版]。
 
-- 配备 Azure PowerShell 的计算机。参阅下一部分中的设置说明。
+- 配备 Azure PowerShell 的计算机。有关说明，请参阅[安装和配置 Azure PowerShell]。
 
 - 大致了解 PowerShell 脚本、NuGet 包和 .NET Framework。
-
-## 设置 PowerShell
-
-[AZURE.INCLUDE [powershell-setup](../includes/powershell-setup.md)]
 
 ## 包含对用于 Service Bus 的 .NET 程序集的引用
 
@@ -40,26 +38,26 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 
 下面说明如何在 PowerShell 脚本中实现这些步骤：
 
-	powershell
-	
-	try
-	{
-	    # IMPORTANT: Make sure to reference the latest version of Microsoft.ServiceBus.dll
-	    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
-	    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
-	    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
-	    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
-	    Add-Type -Path $assembly.FullName
-	
-	    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
-	}
-	
-	catch [System.Exception]
-	{
-	    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
-	}
-	
-	
+```powershell
+
+try
+{
+    # IMPORTANT: Make sure to reference the latest version of Microsoft.ServiceBus.dll
+    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
+    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
+    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
+    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
+    Add-Type -Path $assembly.FullName
+
+    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
+}
+
+catch [System.Exception]
+{
+    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
+}
+
+```
 
 ## 设置 Service Bus 命名空间
 
@@ -103,13 +101,14 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 		
 若要设置其他 Service Bus 实体，请从 SDK 创建 `NamespaceManager` 对象的一个实例。可以使用 [Get-AzureSBAuthorizationRule] cmdlet 来检索用于提供连接字符串的授权规则。此示例在 `$NamespaceManager` 变量中存储对 `NamespaceManager` 实例的引用。此脚本稍后将使用 `$NamespaceManager` 来设置其他实体。
 
-		powershell
-		$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
-		# Create the NamespaceManager object to create the Event Hub
-		Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
-		$NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
-		Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
-		
+	``` powershell
+	$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
+	# Create the NamespaceManager object to create the Event Hub
+	Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
+	$NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
+	Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
+	```
+
 ## 设置其他 Service Bus 实体
 
 若要设置其他实体（如队列、主题和事件中心），可以使用 [.NET API for Service Bus]。更多详细示例（包括其他实体）将在本文末尾提及。
@@ -122,38 +121,38 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 2. 如果不存在，将创建 `EventHubDescription` 并将其传递到 `NamespaceManager` 类的 `CreateEventHubIfNotExists` 方法。
 3. 确定事件中心可用后，请使用 `ConsumerGroupDescription` 和 `NamespaceManager` 创建使用者组。
 
-		powershell
-		
-		$Path  = "MyEventHub"
-		$PartitionCount = 12
-		$MessageRetentionInDays = 7
-		$UserMetadata = $null
-		$ConsumerGroupName = "MyConsumerGroup"
-		
-		# Check if the Event Hub already exists
-		if ($NamespaceManager.EventHubExists($Path))
-		{
-		    Write-Output "The [$Path] event hub already exists in the [$Namespace] namespace."  
-		}
-		else
-		{
-		    Write-Output "Creating the [$Path] event hub in the [$Namespace] namespace: PartitionCount=[$PartitionCount] MessageRetentionInDays=[$MessageRetentionInDays]..."
-		    $EventHubDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.EventHubDescription -ArgumentList $Path
-		    $EventHubDescription.PartitionCount = $PartitionCount
-		    $EventHubDescription.MessageRetentionInDays = $MessageRetentionInDays
-		    $EventHubDescription.UserMetadata = $UserMetadata
-		    $EventHubDescription.Path = $Path
-		    $NamespaceManager.CreateEventHubIfNotExists($EventHubDescription);
-		    Write-Output "The [$Path] event hub in the [$Namespace] namespace has been successfully created."
-		}
-		
-		# Create the consumer group if it doesn't exist
-		Write-Output "Creating the consumer group [$ConsumerGroupName] for the [$Path] event hub..."
-		$ConsumerGroupDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.ConsumerGroupDescription -ArgumentList $Path, $ConsumerGroupName
-		$ConsumerGroupDescription.UserMetadata = $ConsumerGroupUserMetadata
-		$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
-		Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
-		
+	``` powershell
+
+	$Path  = "MyEventHub"
+	$PartitionCount = 12
+	$MessageRetentionInDays = 7
+	$UserMetadata = $null
+	$ConsumerGroupName = "MyConsumerGroup"
+
+	# Check if the Event Hub already exists
+	if ($NamespaceManager.EventHubExists($Path))
+	{
+	    Write-Output "The [$Path] event hub already exists in the [$Namespace] namespace."  
+	}
+	else
+	{
+	    Write-Output "Creating the [$Path] event hub in the [$Namespace] namespace: PartitionCount=[$PartitionCount] MessageRetentionInDays=[$MessageRetentionInDays]..."
+	    $EventHubDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.EventHubDescription -ArgumentList $Path
+	    $EventHubDescription.PartitionCount = $PartitionCount
+	    $EventHubDescription.MessageRetentionInDays = $MessageRetentionInDays
+	    $EventHubDescription.UserMetadata = $UserMetadata
+	    $EventHubDescription.Path = $Path
+	    $NamespaceManager.CreateEventHubIfNotExists($EventHubDescription);
+	    Write-Output "The [$Path] event hub in the [$Namespace] namespace has been successfully created."
+	}
+
+	# Create the consumer group if it doesn't exist
+	Write-Output "Creating the consumer group [$ConsumerGroupName] for the [$Path] event hub..."
+	$ConsumerGroupDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.ConsumerGroupDescription -ArgumentList $Path, $ConsumerGroupName
+	$ConsumerGroupDescription.UserMetadata = $ConsumerGroupUserMetadata
+	$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
+	Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
+	```
 
 ### 创建队列
 
@@ -256,8 +255,7 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 - [如何使用 PowerShell 脚本创建 Service Bus 队列、主题和订阅](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [如何使用 PowerShell 脚本创建 Service Bus 命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
-一些现成的脚本也可供下载：
-- [Service Bus PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
+一些现成的脚本也可供下载：- [Service Bus PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->
 
@@ -268,5 +266,6 @@ Windows Azure PowerShell 是一个脚本编写环境，可用于控制和自动�
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
+[安装和配置 Azure PowerShell]: /documentation/articles/install-configure-powershell
 
-<!---HONumber=60-->
+<!---HONumber=71-->
