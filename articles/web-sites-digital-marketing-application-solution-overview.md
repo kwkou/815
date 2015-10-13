@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="07/06/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="10/13/2015"/>
 
 # 在 Azure 网站上创建数字市场营销活动
 本指南提供如何使用 Azure 网站创建数字市场营销活动的技术概述。数字市场营销活动通常是一种短期的实体，旨在促进短期市场营销目标。有两个要考虑的主要方案。在第一个方案中，第三方市场营销公司为其客户为促销期间创建并管理市场营销活动。第二个方案涉及市场营销公司创建数字市场营销活动资源，然后将资源的所有权转移给其客户。客户然后自己运行和管理数字市场营销活动。
@@ -35,7 +35,7 @@
 
 你可以使用你最喜欢的 CMS 风格创建 Web 应用。你可以从各种数据库后端选择以满足你的需要，包括 [Azure SQL 数据库]和 [MySQL].
 
-无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Web Apps 中运行。你可以使用熟悉的 [FTP] 工具将它们移动到 Web Apps。如果频繁创建数字市场营销活动，则源代码控制系统中可能存在现有 Web 资产。你可以直接从流行的源代码管理选项部署到 Web Apps，如 [Visual Studio]、[Visual Studio Online] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
+无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Web Apps 中运行。你可以使用熟悉的 [FTP] 工具将它们移动到 Web Apps。如果频繁创建数字市场营销活动，则源代码控制系统中可能存在现有 Web 资产。你可以直接从流行的源代码管理选项部署到 Web Apps，如 [Visual Studio]、Visual Studio Online 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
 
 ## 保持敏捷
 
@@ -100,7 +100,7 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
 [Azure SQL 数据库]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: web-sites-deploy#ftp
 [Visual Studio]: web-sites-dotnet-get-started
-[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso
+<!--[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso -->
 [Git]: web-sites-publish-source-control
 
 [将其部署到过渡槽]: web-sites-staged-publishing
