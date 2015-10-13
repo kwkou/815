@@ -40,9 +40,9 @@
 
 ## 后续步骤
 
-[流量管理器 - 禁用或启用终结点](/documentaion/articles/disable-or-enable-an-endpoint)
+[流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
 
-[什么是流量管理器？](/documentaion/articles/traffic-manager-overview)
+[什么是流量管理器？](/documentation/articles/traffic-manager-overview)
 
  
 

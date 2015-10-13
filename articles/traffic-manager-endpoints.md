@@ -72,6 +72,6 @@
 
 [云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
-[网站](/home/features/web-sites/)
+[网站](/home/features/web-site/)
 
 <!---HONumber=71-->

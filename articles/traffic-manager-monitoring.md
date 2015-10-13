@@ -108,7 +108,7 @@ Azure 流量管理器在管理门户中显示配置文件和终结点服务运�
 
 [云服务](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx)
 
-[网站](/home/features/web-sites/)
+[网站](/home/features/web-site/)
 
 [Azure 流量管理器上的降级状态故障排除](/documentation/articles/traffic-manager-troubleshooting-degraded)
  
