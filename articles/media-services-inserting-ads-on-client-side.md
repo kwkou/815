@@ -565,7 +565,7 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 ##实现带有广告支持的 iOS 视频播放器
 
 
-Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从 [Azure 媒体播放器框架](https://github.com/Azure/azure-media-player-framework)下载播放器框架和示例。GitHub 页面具有指向 Wiki（含有关播放器框架的其他信息）的链接和播放器示例简介：[Azure 媒体播放器 Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework)。
+Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。
 
 有关插入广告的详细信息，请参阅[向媒体中插入广告](/documentation/articles/media-services-inserting-ads-on-client-side#insert_ads_into_media)。
 
@@ -592,7 +592,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 ###使用 VAST 安排广告
 
 以下示例演示如何安排后期绑定 VAST 广告。
-	
+
 	//Example:3 How to schedule a late binding VAST ad.
 	// set the start time for the ad
     adLinearTime.startTime = 13;
@@ -618,7 +618,8 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
         [self logFrameworkError];
     }
          
-   以下示例演示如何安排早期绑定 VAST 广告。    
+   以下示例演示如何安排早期绑定 VAST 广告。 
+   
 	//Example:4 Schedule an early binding VAST ad
     //Download the VAST file
     if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/vast/PlayerTestVAST.xml"]])

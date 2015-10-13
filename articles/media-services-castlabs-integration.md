@@ -91,10 +91,10 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 
 ##播放视频
 
-若要播放使用常用加密 (PlayReady) 加密的视频，可以使用 [Azure Media Player](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。运行控制台应用程序时，将回显内容密钥 ID 和清单 URL。
+若要播放使用常用加密 (PlayReady) 加密的视频，可以使用 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。运行控制台应用程序时，将回显内容密钥 ID 和清单 URL。
 
 1.	打开新选项卡并启动 STS：http://[yourStsName].chinacloudsites.cn/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid]。
-2.	转到 [Azure Media Player](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
+2.	转到 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 3.	粘贴到流 URL 中。
 4.	单击**“高级选项”**复选框。
 5.	在**“保护”**下拉列表中选择 PlayReady。

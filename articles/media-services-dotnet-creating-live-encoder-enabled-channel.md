@@ -17,7 +17,7 @@
 
 > [AZURE.SELECTOR]
 - [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET SDK]/documentation/articles/(media-services-dotnet-creating-live-encoder-enabled-channel)
+- [.NET SDK](/documentation/articles/(media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 - 
 ##概述

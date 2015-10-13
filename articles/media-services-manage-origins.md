@@ -21,7 +21,7 @@
 
 在 Windows Azure 媒体服务中，**流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。媒体服务还提供无缝 Azure CDN 集成。StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。
 
-此外，还可以通过调整扩展单元（也称为流单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态包装](https://msdn.microsoft.com/library/azure/jj889436.aspx)、CDN 集成和高级配置在内的其他功能。
+此外，还可以通过调整扩展单元（也称为流单元）来控制流式处理终结点服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单位为你提供了可按照 200 Mbps 的增量购买的专用出口容量和包括[动态包装](/documentation/articles/media-services-dynamic-packaging-overview/)、CDN 集成和高级配置在内的其他功能。
 
 请注意，仅当 StreamingEndpoint 处于运行状态时才进行计费。
 
@@ -47,7 +47,7 @@
 
 ##<a id="scale_streaming_endpoints"></a>缩放流式处理终结点
 
-流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态包装功能](http://go.microsoft.com/fwlink/?LinkId=276874)）。默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
+流式处理单元为你提供了可按照 200 Mbps 的增量购买的专用出口容量和其他功能（当前包括[动态包装功能](/documentation/articles/media-services-dynamic-packaging-overview/)）。默认情况下，流式处理在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加流式处理吞吐量，建议购买流式处理单元。
 
 可以使用 .NET SDK、REST API 或 Azure 管理门户进行缩放。
 
@@ -64,7 +64,7 @@
 	 
 	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将按需流式处理功能禁用最多 1 小时。
 
-	>[AZURE.NOTE]为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
+	>[AZURE.NOTE]为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/pricing/overview/)。
 	
 ##<a id="configure_streaming_endpoints"></a>配置流式处理终结点
 
@@ -75,7 +75,7 @@
 - 缓存控制
 - 跨网站访问策略
 
-有关这些属性的详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx)。
+有关这些属性的详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx)。
 
 可以使用 .NET SDK、REST API 或 Azure 管理门户配置这些属性。
 
@@ -95,9 +95,9 @@
 
 3. 指定 Akamai 签名标头身份验证的配置。
 
-4. 你可以为 Adobe Flash 客户端指定跨域访问策略（有关详细信息，请参阅[跨域策略文件规范](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)），以及为 Microsoft Silverlight 客户端指定客户端访问策略（有关详细信息，请参阅 [跨域边界提供服务](https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx)。
+4. 你可以为 Adobe Flash 客户端指定跨域访问策略（有关详细信息，请参阅[跨域策略文件规范](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)），以及为 Microsoft Silverlight 客户端指定客户端访问策略（有关详细信息，请参阅 [跨域边界提供服务](https://msdn.microsoft.com/zh-cn/library/cc197955(v=vs.95).aspx)。
 
-5. 还可以通过单击“配置”按钮配置自定义主机名。有关详细信息，请参阅 [StreamingEndpont](https://msdn.microsoft.com/library/dn783468.aspx) 主题中的 **CustomHostNames** 属性。
+5. 还可以通过单击“配置”按钮配置自定义主机名。有关详细信息，请参阅 [StreamingEndpont](https://msdn.microsoft.com/zh-cn/library/dn783468.aspx) 主题中的 **CustomHostNames** 属性。
 
 
 ##<a id="enable_cdn"></a>启用 Azure CDN 集成

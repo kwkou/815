@@ -26,7 +26,7 @@
 ## 先决条件
 以下是开始使用媒体服务和 REST API 进行开发所要满足的先决条件。
 
-- 了解如何使用媒体服务 REST API 进行开发。有关详细信息，请参阅 [media-services-rest-overview](http://msdn.microsoft.com/zh-cn/library/azure/hh973616.aspx)。
+- 了解如何使用媒体服务 REST API 进行开发。有关详细信息，请参阅 [media-services-rest-overview](/documentation/articles/media-services-rest-how-to-use/)。
 - 可以发送 HTTP 请求和响应的所选应用程序。本教程使用 [Fiddler](http://www.telerik.com/download/fiddler)。 
 
 本快速入门教程中说明了以下任务。
@@ -551,7 +551,7 @@ SAS URL 采用以下格式：
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 
->[AZURE.NOTE]有关定价详细信息，请参阅 [媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
+>[AZURE.NOTE]有关定价详细信息，请参阅 [媒体服务定价详细信息](/pricing/overview/)。
 
 若要更改流式处理保留单元数，请执行以下操作：
 	
@@ -1176,7 +1176,7 @@ MPEG DASH 的流 URL 采用以下格式：
 
 ## <a id="play"></a>播放内容  
 
-若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
+若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 IE、Chrome、Safari）中。
 

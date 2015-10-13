@@ -114,10 +114,10 @@ Windows Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储]
 
 在开发使用 Azure 存储队列的媒体服务应用程序时，请注意以下几点。
 
-- 队列服务不保证按照先进先出 (FIFO) 的顺序传递消息。有关详细信息，请参阅 [Azure 队列和 Azure 服务总线队列比较与对照](https://msdn.microsoft.com/library/azure/hh767287.aspx)。
+- 队列服务不保证按照先进先出 (FIFO) 的顺序传递消息。
 - Azure 存储队列不是推送服务；你必须轮询队列。 
-- 可以有任意数目的队列。有关详细信息，请参阅[队列服务 REST API](https://msdn.microsoft.com/library/azure/dd179363.aspx)。
-- Azure 存储队列存在一些限制，有关具体的说明，请参阅以下文章：[Azure 队列和 Azure 服务总线队列比较与对照](https://msdn.microsoft.com/library/azure/hh767287.aspx)。
+- 可以有任意数目的队列。有关详细信息，请参阅[队列服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179363.aspx)。
+- Azure 存储队列存在一些限制，有关具体的说明，请参阅以下文章：[Azure 队列和 Azure 服务总线队列比较与对照](https://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx)。
 
 ###代码示例
 

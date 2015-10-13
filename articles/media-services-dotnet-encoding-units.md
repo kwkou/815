@@ -21,7 +21,7 @@
 > [AZURE.SELECTOR]
 - [Portal](/documentation/articles/media-services-portal-encoding-units)
 - [.NET](/documentation/articles/media-services-dotnet-encoding-units)
-- [REST](https://msdn.microsoft.com/library/azure/dn859236.aspx)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
 
 ##概述
 
