@@ -18,7 +18,7 @@
 
 本文中所述过程向你演示如何设置对 Azure 云应用程序的持续交付。此过程使你能够在签入每个代码后，自动创建服务包并将其部署到 Azure。本文中介绍的包生成过程与 Visual Studio 中的 Package 命令等效，而发布步骤与 Visual Studio 中的 Publish 命令等效。本文包含用于创建生成服务器的方法以及 MSBuild 命令行语句和 Windows PowerShell 脚本，并演示了如何选择性地配置 Visual Studio Team Foundation Server - Team Build 定义以使用 MSBuild 命令和 PowerShell 脚本。可针对你的生成环境和 Azure 目标环境自定义此过程。
 
-此外，通过使用 Visual Studio Online（承载于 Azure 中的某个版本的 TFS），可以更轻松地做到这一点。有关详细信息，请参阅[使用 Visual Studio Online 向 Azure 持续交付][]。
+此外，通过使用 Visual Studio Online（承载于 Azure 中的某个版本的 TFS），可以更轻松地做到这一点。
 
 开始之前，您应从 Visual Studio 中发布应用程序。这将确保所有资源在您尝试实现发布过程的自动化时可用并进行初始化。
 
@@ -549,7 +549,7 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
 
 若要在使用持续交付时启用远程调试，请参阅[这些说明](/documentation/articles/cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging)。
 
-  [使用 Visual Studio Online 向 Azure 持续交付]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+
   [Team Foundation 生成服务]: http://go.microsoft.com/fwlink/p/?LinkId=239963
   [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
   [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
