@@ -237,7 +237,7 @@
 
 有关传送内容的详细信息，请参阅[传送内容](/documentation/articles/media-services-deliver-content-overview)。
 
-你可以使用 [AMS 播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
+你可以使用 [AMS 播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
 
 ##清理
 

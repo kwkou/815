@@ -78,7 +78,7 @@
 	  </LicenseTemplates>
 	</PlayReadyLicenseResponseTemplate>
 
-你可以单击“导入策略 xml”按钮，然后提供符合[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx)定义的 XML 架构的另一个 XML。
+你可以单击“导入策略 xml”按钮，然后提供符合[此处](/documentation/articles/media-services-playready-license-template-overview/)定义的 XML 架构的另一个 XML。
 
 ##后续步骤
 现在已经配置了内容密钥的授权策略，请转到[如何：使用 Azure 管理门户启用加密](/documentation/articles/media-services-manage-content#encrypt)主题。

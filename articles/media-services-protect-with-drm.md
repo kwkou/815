@@ -18,7 +18,7 @@ Windows Azure 媒体服务 允许你传送受 [Microsoft PlayReady DRM](https://
 
 媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户尝试播放受保护的内容时，PlayReady DRM 运行时便会强制实施这些权限和限制。当用户请求观看受 PlayReady 保护的内容时，客户端播放器应用程序将向 Azure 媒体服务请求内容。然后，Azure 媒体服务将客户端重定向到 Azure 媒体服务PlayReady 授权服务器，后者将对用户进行身份验证，并授予用户对该内容的访问权限。PlayReady 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
 
-媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：开放、令牌限制或 IP 限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅“配置内容密钥授权策略”。
+媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：开放、令牌限制或 IP 限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅“配置内容密钥授权策略”。
 
 为了充分利用动态加密，你的资产必须包含一组多码率 MP4 文件或多码率平滑流源文件。你还需要为资产配置传送策略（在本主题后面部分介绍）。然后，根据你在流 URL 中指定的格式，按需流式处理服务器将确保使用你选定的协议来传送流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。
 
@@ -178,7 +178,7 @@ Windows Azure 媒体服务 允许你传送受 [Microsoft PlayReady DRM](https://
 	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
 
 	
-你可以使用 [AMS Player](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html) 来测试你的流。
+你可以使用 [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) 来测试你的流。
 
 ##<a id="example"></a>示例
 

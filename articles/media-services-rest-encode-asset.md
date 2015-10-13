@@ -33,7 +33,7 @@
 - 通过 OData 批处理。
   
 
-建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](https://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 如果你的输出资产已经过存储加密，则必须配置资产传送策略。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)。
 
@@ -49,7 +49,7 @@
 >在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须按[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
 
 
-以下示例说明了如何使用一个任务集来创建和发布一个作业，从而以特定分辨率和质量来编码某个视频。使用 Azure 媒体编码器编码时，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn619389.aspx)指定的任务配置预设。
+以下示例说明了如何使用一个任务集来创建和发布一个作业，从而以特定分辨率和质量来编码某个视频。使用 Azure 媒体编码器编码时，可以使用[此处](https://github.com/AzureMediaServicesSamples/Encoding-Presets/tree/master/VoD/Azure%20Media%20Encoder)指定的任务配置预设。
 	
 请求：
 

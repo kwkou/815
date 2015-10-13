@@ -73,7 +73,7 @@
 
 ###存储帐户
 
-对 Azure 存储空间进行的所有访问都要通过存储帐户完成。一个 Media Service 帐户可与一个或多个存储帐户相关联。一个帐户可以包含无限个容器，只要每个帐户的容器总大小不超过 500TB 即可。媒体服务提供 SDK 级工具，可用于管理多个存储帐户，并在上载到这些帐户时基于指标或随机分发使资产分发达到负载平衡。有关详细信息，请参阅[使用 Azure 存储空间](https://msdn.microsoft.com/zh-cn/library/azure/dn767951.aspx)。
+对 Azure 存储空间进行的所有访问都要通过存储帐户完成。一个 Media Service 帐户可与一个或多个存储帐户相关联。一个帐户可以包含无限个容器，只要每个帐户的容器总大小不超过 500TB 即可。媒体服务提供 SDK 级工具，可用于管理多个存储帐户，并在上载到这些帐户时基于指标或随机分发使资产分发达到负载平衡。有关详细信息，请参阅[使用 Azure 存储空间](/documentation/services/storage/)。
 
 ##作业\\任务
 
@@ -148,7 +148,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 媒体服务提供了用于传送 PlayReady 许可证的服务。当最终用户播放器（例如 Silverlight）尝试播放受 PlayReady 保护的内容时，将向许可证交付服务发送请求以获取许可证。如果许可证服务批准了该请求，则会颁发该许可证，该许可证将发送到客户端，并可用于解密和播放指定的内容。
 
-许可证包含在用户尝试播放受保护的内容时要由 PlayReady DRM 运行时强制实施的权限和限制。媒体服务提供了可让你配置 PlayReady 许可证的 API。有关详细信息，请参阅[媒体服务 PlayReady 许可证模板概述](https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx)。
+许可证包含在用户尝试播放受保护的内容时要由 PlayReady DRM 运行时强制实施的权限和限制。媒体服务提供了可让你配置 PlayReady 许可证的 API。有关详细信息，请参阅[媒体服务 PlayReady 许可证模板概述](/documentation/articles/media-services-playready-license-template-overview/)。
 
 ###令牌限制
 

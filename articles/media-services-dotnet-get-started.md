@@ -144,7 +144,7 @@
 
 使用采用 .NET 的媒体服务时，你必须将 **CloudMediaContext** 类用于大多数媒体服务编程任务：连接到媒体服务帐户；创建、更新、访问和删除以下对象：资产、资产文件、作业、访问策略、定位符等等。
 
-使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 CloudMediaContext 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 连接到媒体服务](http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx)。
+使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 CloudMediaContext 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically/)。
 
 **Main** 函数调用将在本部分中进一步定义的方法。
 
@@ -412,7 +412,7 @@ MPEG DASH
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
+若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 Internet Explorer、Chrome 或 Safari）中。
 

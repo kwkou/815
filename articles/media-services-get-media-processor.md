@@ -37,7 +37,7 @@
     <tr>
        <td>Azure 媒体编码器</td>
        <td>让你使用 Azure 媒体编码器运行编码任务。</td>
-       <td><a href="http://msdn.microsoft.com/zh-cn/library/jj129582.aspx">Azure 媒体编码器的任务预设字符串</a></td>
+       <td><a href="/documentation/articles/media-services-dotnet-encoding-units/">Azure 媒体编码器的任务预设字符串</a></td>
     </tr>   
 	<tr>
         <td>Azure Media Indexer</td>

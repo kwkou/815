@@ -31,7 +31,7 @@
 
 其他注意事项：
 
-构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。Name 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。Name 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 
 ##使用 Azure 服务管理 REST API 附加存储帐户
 

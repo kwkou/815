@@ -154,7 +154,7 @@
 
 在频道开始摄取数据后，你可以预览流。
 
-请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你可以使用 [http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 管理门户中承载的播放器来查看你的流。
+请注意，当前，不管指定了哪种输入类型，都只能以分片 MP4 (Smooth Streaming) 格式来传送预览流。你可以使用 [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) 播放器来测试平滑流。你还可以使用 Azure 管理门户中承载的播放器来查看你的流。
 
 
 ####允许的 IP 地址

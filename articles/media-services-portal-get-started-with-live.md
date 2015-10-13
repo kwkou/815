@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
-本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个**通道**将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](/documentation/articles/media-services-channels-overview)。
+本教程将指导你完成实施一个基本媒体服务实时传送视频流应用程序的步骤，在该应用程序中，某个**通道**将从本地实时编码器接收多比特率实时流。有关使用通道和相关组件的详细概述，请参阅[使用从本地编码器接收多比特率实时流的通道](/documentation/articles/media-services-manage-channels-overview)。
 
 在本教程中，将使用 Azure 管理门户完成以下任务：
 
@@ -33,7 +33,7 @@
 ##先决条件
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/documentation/articles/azure.microsoft.com)。
+- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](media-services-create-account)。
 - 可以发送多比特率实时流的摄像头和编码器。
 
@@ -63,7 +63,7 @@
 
 	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](http://go.microsoft.com/fwlink/?LinkId=275107)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/pricing/overview/)。
 
 
 ##创建通道
@@ -85,7 +85,7 @@
 
 ![ingesturls](./media/media-services-portal-get-started-with-live/media-services-ingest-urls.png)
 
-有关引入 URL 的详细信息，请参阅[使用本地编码器向通道发送多比特率实时流](/documentation/articles/media-services-channels-overview)。
+有关引入 URL 的详细信息，请参阅[使用本地编码器向通道发送多比特率实时流](/documentation/articles/media-services-manage-channels-overview)。
 
 ##配置实时编码器并引入实时流
 
@@ -177,7 +177,7 @@
 
 有关传送内容的详细信息，请参阅[传送内容](/documentation/articles/media-services-deliver-content-overview)。
 
-你可以使用 [AMS 播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
+你可以使用 [AMS 播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)播放平滑流，或使用 iOS 和 Android 设备播放 HLS 版本 3。
 
 ##清理
 

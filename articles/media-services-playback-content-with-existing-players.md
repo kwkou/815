@@ -28,14 +28,14 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
  
 请注意以下事项：
 
-- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
+- **媒体服务内容播放器**从默认的流式处理终结点播放。如果要从非默认流式处理终结点播放，请使用其他播放器。例如 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
  
 
 ![AMSPlayer][AMSPlayer]
 
 ###Azure 媒体服务播放器
 
-使用 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)以下列任意格式播放你的内容（清除或受保护）：
+使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)以下列任意格式播放你的内容（清除或受保护）：
 
 - 平滑流
 - MPEG DASH
@@ -47,21 +47,21 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ####带令牌的 AES 加密 
 
-[http://aestoken.chinacloudsites.cn]("http://aestoken.chinacloudsites.cn)
+[http://aestoken.azurewebsites.net]("http://aestoken.azurewebsites.net)
 
 ###Silverlight 播放器
 
 ####监视
 
-[http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor)
+[http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor)
 
 ####带令牌的 PlayReady
 
-[http://sltoken.chinacloudsites.cn](http://sltoken.chinacloudsites.cn)
+[http://sltoken.azurewebsites.net](http://sltoken.azurewebsites.net)
 
 ### DASH 播放器
 
-[http://dashplayer.chinacloudsites.cn](http://dashplayer.chinacloudsites.cn)
+[http://dashplayer.azurewebsites.net](http://dashplayer.azurewebsites.net)
 
 [http://dashif.org](http://dashif.org)
 
