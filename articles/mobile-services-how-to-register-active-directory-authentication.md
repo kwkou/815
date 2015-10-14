@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="注册以进行 Azure Active Directory 身份验证 - 移动服务" 
+	pageTitle="注册以进行 Azure Active Directory 身份验证 | Windows Azure" 
 	description="了解如何在移动服务应用程序中注册以进行 Azure Active Directory 身份验证。" 
 	authors="wesmc7777" 
 	services="mobile-services" 
@@ -9,10 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/20/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/15/2015" 
+	wacn.date="10/03/2015"/>
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
+
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
+
 ##概述
 
 
@@ -20,59 +23,34 @@
 
 ##注册你的应用程序
 
->[AZURE.NOTE]本主题中所述的步骤应在你想要对应用程序使用[服务定向的登录操作](mobile-services-dotnet-backend-windows-store-dotnet-get-started-users)时与[向移动服务应用程序添加身份验证](http://msdn.microsoft.com/zh-cn/library/azure/dn283952.aspx)教程一起使用。此外，如果你的应用程序对于 Azure Active Directory 需要[客户端定向的登录操作](http://msdn.microsoft.com/zh-cn/library/azure/jj710106.aspx)和 .NET 后端移动服务，应首先阅读[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证](mobile-services-windows-store-dotnet-adal-sso-authentication)教程。
+>[AZURE.NOTE]本主题中所述的步骤应在你想要对应用程序使用[服务定向的登录操作](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users)时与[向移动服务应用程序添加身份验证](http://msdn.microsoft.com/zh-cn/library/azure/dn283952.aspx)教程一起使用。此外，如果你的应用程序对于 Azure Active Directory 需要[客户端定向的登录操作](http://msdn.microsoft.com/zh-cn/library/azure/jj710106.aspx)和 .NET 后端移动服务，应首先阅读[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证](mobile-services-windows-store-dotnet-adal-sso-authentication)教程。
+
+1. 登录到 [Azure 管理门户]，导航到你的移动服务，单击“标识”选项卡，然后向下滚动到“Azure Active Directory”标识提供者部分，并复制显示的“应用 URL”。
+
+    ![AAD 的移动服务应用 URL](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-copy-app-url-waad-auth.png)
 
 
-1. 登录到 [Azure 管理门户]，单击“移动服务”，然后单击你的移动服务。
+2. 在管理门户中，导航到“Active Directory”，依次单击你的目录和“域”，然后记下目录的默认域。
 
-    ![][1]
+3. 单击“应用程序”>“添加”>“添加我的组织正在开发的应用程序”。
 
-2. 单击移动服务的“标识”选项卡。
+4. 在“添加应用程序向导”中，为应用程序输入“名称”，并单击“Web 应用程序和/或 Web API”类型。
 
-    ![][2]
+    ![为 AAD 应用命名](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-add-app-wizard-1-waad-auth.png)
 
-3. 向下滚动到“Azure Active Directory”标识提供程序部分，并复制其中列出的“应用程序 URL”。
-
-    ![][3]
-
-4. 导航到管理门户中的“Active Directory”，然后单击你的目录。
-
-    ![][4]
-
-5. 单击顶部的“应用程序”选项卡，然后单击“添加”以添加应用程序。
-
-    ![][10]
-
-6. 单击“添加我的组织正在开发的应用程序”。
-
-7. 在“添加应用程序向导”中，为应用程序输入“名称”，并单击“Web 应用程序和/或 Web API”类型。然后单击以继续。
-
-    ![][5]
-
-8. 在“登录 URL”框中，粘贴你从移动服务 Active Directory 标识提供程序设置中复制的应用程序 ID。在“应用程序 ID URI”框中输入相同的唯一资源标识符。然后单击以继续。
+5. 在“登录 URL”框中，粘贴你从移动服务中复制的应用 ID 值。在“应用 ID URI”框中输入相同的唯一值，然后单击以继续。
  
-    ![][6]
+    ![设置 AAD 应用属性](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-add-app-wizard-2-waad-auth.png)
 
+6. 添加应用程序后，单击“配置”选项卡并复制应用的“客户端 ID”。
 
-9. 添加应用程序后，请单击“配置”选项卡。然后单击相应的按钮以复制应用程序的“客户端 ID”。
+    >[AZURE.NOTE]对于 .Net 后端移动服务，还必须将“单一登录”下的“答复 URL”值编辑为移动服务的 URL 后接路径“signin-aad”。例如 `https://todolist.azure-mobile.net/signin-aad`
 
-    如果你将移动服务创建为使用 .Net 后端提供移动服务，则还需要将“单一登录”下的“答复 URL”编辑为移动服务的 URL 后接路径“signin-aad”。例如 `https://todolist.azure-mobile.net/signin-aad`
-
-    ![][8]
-
-
-10. 返回到移动服务的“标识”选项卡。在底部粘贴 Azure Active Directory 标识提供程序的“客户端 ID”设置。
-
-  
-11. 在“允许的租户”列表中，需要添加已注册该应用程序的目录的域（例如 contoso.onmicrosoft.com）。可以通过单击 Active Directory 上的“域”选项卡找到默认域名。
-
-    ![][11]
+7. 返回到移动服务的“标识”选项卡，然后粘贴复制的 Azure Active Directory 标识提供者“客户端 ID”值。
  
-    将域名添加到“允许的租户”列表中，然后单击“保存”。
+    ![](./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-clientid-pasted-waad-auth.png)
 
-
-    ![][9]
-
+8.  在“允许的租户”列表中，键入已注册该应用程序的目录的域（例如 `contoso.onmicrosoft.com`），然后单击“保存”。
 
 
 现在，你可以使用 Azure Active Directory 在应用程序中进行身份验证。
@@ -83,19 +61,8 @@
 
 <!-- Images. -->
 
-[1]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-selection.png
-[2]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-identity-tab.png
-[3]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-copy-app-url-waad-auth.png
-[4]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-select-ad-waad-auth.png
-[5]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-add-app-wizard-1-waad-auth.png
-[6]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-add-app-wizard-2-waad-auth.png
-[7]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-add-app-wizard-3-waad-auth.png
-[8]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-clientid-waad-auth.png
-[9]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-clientid-pasted-waad-auth.png
-[10]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-waad-idenity-tab-selection.png
-[11]: ./media/mobile-services-how-to-register-active-directory-authentication/mobile-services-default-domain.png
 
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

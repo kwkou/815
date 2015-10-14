@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/13/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 移动服务中的身份验证入门
 
-
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
@@ -84,7 +84,10 @@
    	当你成功登录时，应用应该运行而不出现错误，你应该能够查询移动服务，并对数据进行更新。
 
 
+<!-- ## <a name="next-steps"> </a>Next steps
 
+In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
+ -->
 <!-- Anchors. -->
 
 [注册应用程序以进行身份验证并配置移动服务]: #register
@@ -98,12 +101,12 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[移动服务入门]: mobile-services-dotnet-backend-xamarin-android-get-started
-[Get started with authentication]: mobile-services-dotnet-backend-xamarin-android-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-xamarin-android-get-started-push
-[Authorize users with scripts]: mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
-[JavaScript and HTML]: mobile-services-dotnet-backend-windows-store-javascript-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
+[JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

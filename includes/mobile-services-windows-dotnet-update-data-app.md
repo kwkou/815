@@ -18,7 +18,7 @@
 	
 	**JsonPropertyAttribute** 用于定义客户端类型中的属性名称与基础数据表中的列名之间的映射。
 
-	>[WACOM.NOTE] 在通用 Windows 应用项目中，在共享的 DataModel 文件夹中的单独代码文件内定义了 TodoItem 类。
+	>[AZURE.NOTE]在通用 Windows 应用项目中，在共享的 DataModel 文件夹中的单独代码文件内定义了 TodoItem 类。
 
 3. 在 MainPage.xaml.cs 中，注释掉或删除用于定义现有项集合的行，然后取消注释或添加以下行，将 _&lt;yourClient&gt;_ 替换为将项目连接到移动服务时添加到 App.xaml.cs 文件的 `MobileServiceClient`字段： 
 
@@ -28,7 +28,7 @@
 		  
 	此代码将创建一个移动服务感知型绑定集合 (items) 和数据库表 (todoTable) 的代理类。 
 
-4. 在 **InsertTodoItem** 方法中，除去设置 **TodoItem.Id** 属性的代码行，为该方法添加 **async** 修饰符，并取消注释以下代码行： 
+4. 在 **InsertTodoItem** 方法中，删除设置 **TodoItem.Id** 属性的代码行，为该方法添加 **async** 修饰符，然后取消注释以下代码行：
 
 		await todoTable.InsertAsync(todoItem);
 
@@ -69,3 +69,5 @@
 	这会将项更新发送给移动服务。 
 
 既然此应用已更新从而将移动服务用于后端存储，就可以针对移动服务测试该应用。
+
+<!---HONumber=71-->

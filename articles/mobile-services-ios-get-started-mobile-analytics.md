@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="移动分析入门 | 移动开发人员中心" 
+	pageTitle="移动分析入门 | Windows Azure" 
 	description="移动分析入门。" 
 	documentationCenter="ios" 
 	authors="mattchenderson" 
@@ -10,13 +10,11 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="06/03/2015" 
-	wacn.date="07/25/2015"/>
+	wacn.date=""/>
 
 #  移动分析入门 (Capptain)
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/documentation/articles/mobile-services-ios-get-started-mobile-analytics" title="iOS" class="current">iOS</a>
-</div>
+
 
 在本教程中，你将使用 [Capptain] 将移动分析功能添加到你的应用程序。使用移动分析，可以确定用户如何与你的应用程序进行交互以及哪些部分驱动大多数活动。若要开始获取这些数据，你将使用 Capptain SDK 来装备你的应用程序。
 
@@ -99,4 +97,4 @@
 [Capptain]: http://www.capptain.com
 [移动服务标准层]: /home/features/mobile-services/#price
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

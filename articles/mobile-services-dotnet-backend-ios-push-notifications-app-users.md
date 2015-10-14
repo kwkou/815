@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/03/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="07/01/2015"
+	wacn.date="10/03/2015"/>
 
 # 向经过身份验证的用户发送推送通知
 
@@ -41,11 +41,10 @@
 
 
 <!-- URLs. -->
-
-[身份验证入门]: mobile-services-dotnet-backend-ios-get-started-users
-[推送通知入门]: mobile-services-dotnet-backend-ios-get-started-push
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
-<!---HONumber=61-->
+<!---HONumber=71-->

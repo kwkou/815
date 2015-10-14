@@ -9,16 +9,22 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/06/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/08/2015" 
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有应用程序
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data-EC.md)]
 
-本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
+<div class="dev-onpage-video-clear clearfix">
+<div class="dev-onpage-left-content">
+
+<p>本主题说明如何通过 Azure 移动服务来利用 Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。</p>
 
 
-> [AZURE.NOTE]本教程旨在帮助你更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](mobile-services-android-get-started-EC)教程。如果要查看已完成应用程序的源代码，请转到[此处](https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithData/Android/GetStartedWithData)。
+> [AZURE.NOTE]本教程旨在帮助你更好地了解如何使用移动服务并通过 Azure 来存储数据以及从 Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/documentation/articles/get-started-android-EC)教程。
+> 
+> 如果要查看已完成应用程序的源代码，请转到[此处](https://github.com/RickSaling/mobile-services-samples/tree/futures/GettingStartedWithData/Android/GetStartedWithData)。
 
 若要完成本教程，您需要以下各项：
 
@@ -27,6 +33,8 @@
 + [移动服务 Android SDK]；<a href="http://developer.android.com/intl/zh-cn/sdk/index.html" target="_blank">Android SDK</a>，其中包含 Eclipse 集成开发环境 (IDE) 和 Android 开发人员工具 (ADT) 插件；以及 Android 4.2 或更高版本。
 
 > [AZURE.NOTE]本教程提供了 Android SDK 和移动服务 Android SDK 的安装说明。下载的 GetStartedWithData 项目需要 Android 4.2 或更高版本。但是，移动服务 SDK 只需要 Android 2.2 或更高版本。
+
+<!-- -->
 
 > [AZURE.NOTE]本教程使用最新版本的移动服务 SDK。你可以在<a href="http://go.microsoft.com/fwlink/p/?LinkID=280126">此处</a>找到旨在向后兼容的早期版本，但这些教程中包含的代码并不适用于这些版本。
 
@@ -85,11 +93,9 @@
 
 接下来，请试着学习下列其他 Android 教程：
 
-* [身份验证入门]  
-	了解如何对应用程序用户进行身份验证。
+* [身份验证入门]<br/>了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门 ]  
-	了解如何使用移动服务将非常基本的推送通知发送到应用程序。
+* [推送通知入门]<br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
 <!-- Anchors. -->
 [Download the Android app project]: #download-app
@@ -102,7 +108,7 @@
 <!-- Images. -->
 
 [8]: ./media/mobile-services-android-get-started-data/mobile-dashboard-tab.png
-[9]: ./media/mobile-services-android-get-started-data/mobile-todoitem-data-browse.png
+[9]: ./media/mobile-services-android-get-started-data-EC/mobile-todoitem-data-browse.png
 [12]: ./media/mobile-services-android-get-started-data/mobile-eclipse-project.png
 [13]: ./media/mobile-services-android-get-started-data/mobile-quickstart-startup-android.png
 [14]: ./media/mobile-services-android-get-started-data/mobile-services-import-android-workspace.png
@@ -110,8 +116,8 @@
 
 
 <!-- URLs. -->
-[身份验证入门]: mobile-services-android-get-started-users
-[推送通知入门 ]: mobile-services-javascript-backend-android-get-started-push-EC
+[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
+[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-EC
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
@@ -119,4 +125,4 @@
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: http://developer.android.com/intl/zh-cn/sdk/index.html
 
-<!---HONumber=61-->
+<!---HONumber=71-->

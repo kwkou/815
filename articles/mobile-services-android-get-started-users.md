@@ -9,16 +9,27 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/03/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/01/2015" 
+	wacn.date="10/03/2015"/>
 
-# 向移动服务应用程序添加身份验证
+# 向移动服务 Android 应用添加身份验证
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 
 ## 摘要
 
-本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
+<div class="dev-onpage-video-clear clearfix">
+<div class="dev-onpage-left-content">
+
+
+
+<p>本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。</p>
+
+</div>
+
+<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-authentication-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">10:42</span></div>
+</div>
 
 本教程将指导你完成在应用程序中启用身份验证的基本步骤。
 
@@ -27,11 +38,11 @@
 
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
-<h2><a name="register"></a>注册应用程序以进行身份验证并配置移动服务</h2>
+## 注册应用程序以进行身份验证并配置移动服务
 
 [AZURE.INCLUDE [mobile-services-register-authentication](../includes/mobile-services-register-authentication.md)]
 
-<h2><a name="permissions"></a>将权限限制给已经过身份验证的用户</h2>
+## 将权限限制给已经过身份验证的用户
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
@@ -43,7 +54,7 @@
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。
 
-<h2><a name="add-authentication"></a>向应用程序添加身份验证</h2>
+## 向应用程序添加身份验证
 
 [AZURE.INCLUDE [mobile-services-android-authenticate-app](../includes/mobile-services-android-authenticate-app.md)]
 
@@ -88,13 +99,13 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
-[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data/
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
+[移动服务入门]: /documentation/articles/mobile-services-android-get-started
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
+
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

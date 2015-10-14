@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/03/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="06/03/2015"
+	wacn.date="10/03/2015"/>
 
 
 # 如何从 iOS 客户端调用自定义 API（.NET 后端）
@@ -26,6 +26,8 @@
 
 [AZURE.INCLUDE [mobile-services-ios-call-custom-api](../includes/mobile-services-ios-call-custom-api.md)]
 
+本主题说明了如何使用 **invokeApi** 方法从 iOS 应用程序调用一个相当简单的自定义 API。若要了解有关使用 **invokeApi** 方法的详细信息，请参阅文章 [Azure 移动服务中的自定义 API](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx)。
+
 <!-- Anchors. -->
 
 [Define the custom API]: #define-custom-api
@@ -38,13 +40,13 @@
 <!-- URLs. -->
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
-[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[Get started with Mobile Services]: mobile-services-dotnet-backend-ios-get-started
-[Mobile Services Quick Start]: mobile-services-dotnet-backend-ios-get-started
-[Get started with data]: mobile-services-dotnet-backend-ios-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-ios-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-ios-get-started-push
-[Store server scripts in source control]: mobile-services-store-scripts-source-control
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[Mobile Services Quick Start]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+[Store server scripts in source control]: /documentation/articles/mobile-services-store-scripts-source-control
 
-<!---HONumber=61-->
+<!---HONumber=71-->

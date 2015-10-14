@@ -1,64 +1,52 @@
-<properties urlDisplayName="Build a Service Using a Non-Relational Data Store" pageTitle="使用非关系数据存储构建服务 - Azure 移动服务" metaKeywords="" description="了解如何使用非关系数据存储（如 MongoDB 或 Azure 表存储）用于基于 .NET 的移动服务" metaCanonical="" services="" documentationCenter="Mobile" title="Build a Service Using a Non-Relational Data Store" authors="yavorg, mahender" solutions="" manager="dwrede" editor="mollybos" />
+<properties 
+	pageTitle="使用非关系数据存储构建服务 | Windows Azure" 
+	description="了解如何使用非关系数据存储（如 MongoDB 或 Azure 表存储）用于基于 .NET 的移动服务" 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="mattchenderson" 
+	manager="dwrede" 
+	editor="mollybos"/>
 
 <tags 
-wacn.date="04/11/2015"
-ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple" ms.devlang="multiple" ms.topic="article" ms.date="11/21/2014" ms.author="mahender" />
+	ms.service="mobile-services" 
+	ms.date="08/08/2015" 
+	wacn.date="10/03/2015"/>
 
-# 使用作为数据存储的 MongoDB 和 .NET 后端构建服务
+# 生成使用 MongoDB 而非 SQL 数据库作为存储的 .NET 后端移动服务
 
-本主题说明如何将非关系数据存储用于移动服务。在本教程中，你将要修改移动服务快速入门项目，以使用 MongoDB 而不是 SQL 作为数据存储。
+本主题说明如何将非关系数据存储用于 .NET 后端移动服务。在此教程中，你将要修改移动服务快速入门项目，以使用 MongoDB 而不是默认的 Azure SQL 数据库作为数据存储。
 
-本教程将指导你完成以下步骤来设置非关系存储：
+只有在完成[移动服务入门]或[将移动服务添加到现有应用程序]教程之后，才可以完成本教程。还需要将 MongoLab 服务添加到你的订阅。
 
-1. [创建非关系存储]
-2. [修改数据和控制器]
-3. [测试应用程序]
+## <a name="create-store"></a>创建 MongoLab 非关系存储
 
-只有在完成[移动服务入门]或[数据处理入门]教程之后，才可以完成本教程。
+1. 在 [Azure 管理门户]中，单击“新建”，然后单击“应用商店”。
 
-## <a name="create-store"></a>创建非关系存储
+2. 单击“MongoLab”外接程序，然后完成向导以注册一个 MongoLab 帐户。
 
-1. 在[Azure 管理门户]中，单击**"新建"**，然后选择**"存储"**。
+	有关 MongoLab 的详细信息，请参阅 [MongoLab 外接程序页]。
 
-2. 选择**"MongoLab"**外接程序，然后在向导中导航以注册一个帐户。有关 MongoLab 的详细信息，请参阅 [MongoLab 外接程序页]。
+3. 设置帐户后，单击“连接信息”并复制连接字符串。
 
-    ![][0]
+4. 在移动服务中，单击“配置”选项卡，向下滚动到“连接字符串”并输入新的连接字符串（其“名称”为 `MongoConnectionString`，其“值”为 MongoDB 连接），然后单击“保存”。
 
-2. 设置帐户后，选择**"连接信息"**并复制连接字符串。
+	![添加 MongoDB 连接字符串](./media/mobile-services-dotnet-backend-use-non-relational-data-store/mongo-connection-string.png)
 
-3. 导航到门户的"移动服务**"部分并选择"配置"**选项卡。
+	存储帐户连接字符串将以加密形式存储在应用设置中。你可以在运行时在任何表控制器中访问此字符串。
 
-4. 在**"应用程序设置"**下，输入包含键"MongoConnectionString"的连接字符串，然后单击**"保存"**。
+5. 在 Visual Studio 的解决方案资源管理器中，打开移动服务项目的 Web.config 文件，并添加以下新连接字符串：
 
-    ![][1]
+		<add name="MongoConnectionString" connectionString="<MONGODB_CONNECTION_STRING>" />
 
-2. 将以下代码添加到  `TodoItemController`：
+6. 将 `<MONGODB_CONNECTION_STRING>` 占位符替换为 MongoDB 连接字符串。
 
-        static bool connectionStringInitialized = false;
+	移动服务在本地计算机上运行时将使用此连接字符串，使你可以在发布之前测试代码。在 Azure 中运行时，移动服务将改用门户中设置的连接字符串值，并忽略项目中的连接字符串。
 
-        private void InitializeConnectionString(string connectionStringName)
-        {
-            if (!connectionStringInitialized)
-            {
-                connectionStringInitialized = true;
-                if (!this.Services.Settings.Connections.ContainsKey(connectionStringName))
-                {
-                    var connectionString = this.Services.Settings[connectionStringName];
-                    var connectionSetting = new ConnectionSettings(connectionStringName, connectionString);
-                    this.Services.Settings.Connections.Add(connectionStringName, connectionSetting);
-                }
-            }
-        }
-    
-    此代码将加载应用程序设置，并告知移动服务要将此设置将为可由  `TableController` 使用的连接。稍后，你将在调用  `TodoItemController` 时调用此方法。
-
-
-
-## <a name="modify-service"></a>修改数据和控制器
+## <a name="modify-service"></a>修改数据类型和表控制器
 
 1. 安装 **WindowsAzure.MobileServices.Backend.Mongo** NuGet 包。
 
-2. 将  `TodoItem` 修改为从  `DocumentData` 而不是  `EntityData` 派生。
+2. 将 **TodoItem** 修改为派生自 **DocumentData** 而不是 **EntityData**。
 
         public class TodoItem : DocumentData
         {
@@ -67,7 +55,7 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
             public bool Complete { get; set; }
         }
 
-3. 在  `TodoItemController` 中，将  `Initialize` 方法替换为以下内容：
+3. 在 **TodoItemController** 中，将 **Initialize** 方法替换为以下代码：
 
         protected override async void Initialize(HttpControllerContext controllerContext)
         {
@@ -75,20 +63,41 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
             string connectionStringName = "MongoConnectionString";
             string databaseName = "<YOUR-DATABASE-NAME>";
             string collectionName = "todoItems";
-            InitializeConnectionString(connectionStringName);
-            DomainManager = new MongoDomainManager<TodoItem>(connectionStringName, databaseName, collectionName, Request, Services);
+
+            DomainManager = new MongoDomainManager<TodoItem>(connectionStringName, databaseName,
+	                        collectionName, Request, Services);
         }
 
-4. 在上述  `Initialize` 方法的代码中，将 **YOUR-DATABASE-NAME** 替换为你在设置 MongoLab 外接程序时选择的名称。
+4. 在上述 **Initialize** 方法的代码中，将 `<YOUR-DATABASE-NAME>` 替换为你在预配 MongoLab 外接程序时选择的名称。
 
+现在，可以测试应用。
 
 ## <a name="test-application"></a>测试应用程序
 
-1. 重新发布移动服务后端项目。
+1. （可选）重新发布移动服务 .NET 后端项目。
 
-2. 运行客户端应用程序。请注意，你将看不到前面从快速入门教程存储在 SQL 数据库中的任何项。
+	你也可以先在本地测试移动服务，然后将 .NET 后端项目发布到 Azure。无论是在本地还是在 Azure 中测试，移动服务都使用 MongoDB 作为存储。
 
-3. 创建新项。应用程序应该会像以前一样工作，不过，现在你的数据会存储到非关系存储中。
+2. 与前面一样，使用启动页上的“立即试用”按钮，或使用连接到移动应用的客户端应用程序，来查询数据库中的项。
+ 
+	 请注意，你将看不到前面从快速入门教程存储在 SQL 数据库中的任何项。
+
+	>[AZURE.NOTE]当你使用“立即试用”按钮来启动帮助 API 页时，请记得提供应用程序密钥作为密码（用户名为空白）。
+	
+
+3. 创建新项。
+
+	应用和移动服务的行为应如同以往，不过，数据现在将存储在非关系存储而不是 SQL 数据库中。
+
+##后续步骤
+
+现在你已知道，为 .NET 后端使用表存储是如此简单，接下来建议你了解其他一些后端存储选项：
+
++ [生成使用表存储而非 SQL 数据库的 .NET 后端移动服务](/documentation/articles/mobile-services-dotnet-backend-store-data-table-storage)</br>与你刚刚完成的教程一样，本主题说明如何将非关系数据存储用于移动服务。在此教程中，你将要修改移动服务快速入门项目，以使用 Azure 存储空间而不是 SQL 数据库作为数据存储。
+ 
++ [使用混合连接来连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)</br>混合连接可让移动服务安全地连接到本地资产。这样，移动客户端便可以使用 Azure 访问你的本地数据。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。
+
++ [使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)</br>说明如何扩展 TodoList 示例项目，以便将图像从应用上载到 Azure Blob 存储。
 
 
 <!-- Anchors. -->
@@ -108,3 +117,5 @@ ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-multiple
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [什么是表服务]: /zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/#what-is
 [MongoLab 外接程序页]: /zh-cn/gallery/store/mongolab/mongolab
+
+<!---HONumber=71-->

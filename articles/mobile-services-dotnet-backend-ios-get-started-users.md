@@ -1,5 +1,5 @@
 <properties
-	pageTitle="向现有 Azure 移动服务应用程序添加身份验证 (iOS) | 移动开发人员中心"
+	pageTitle="向现有 Azure 移动服务应用添加身份验证 (iOS) | Windows Azure"
 	description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 iOS 应用程序的用户进行身份验证。"
 	services="mobile-services"
 	documentationCenter="ios"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="04/13/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="07/01/2015"
+	wacn.date="10/03/2015"/>
 
 # 向现有 Azure 移动服务应用程序添加身份验证
 
@@ -51,16 +51,15 @@
 [Storing authentication tokens in your app]: #store-authentication
 
 <!-- URLs. -->
-
-[移动服务用户的服务端授权]: mobile-services-dotnet-backend-service-side-authorization
-[移动服务快速入门教程]: mobile-services-dotnet-backend-ios-get-started
-[Get started with data]: mobile-services-dotnet-backend-ios-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-ios-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-ios-get-started-push
-[Authorize users with scripts]: mobile-services-dotnet-backend-ios-authorize-users-in-scripts
+[移动服务用户的服务端授权]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
+[移动服务快速入门教程]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: mobile-services-how-to-register-store-app-package-microsoft-authentication
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 
-<!---HONumber=61-->
+<!---HONumber=71-->

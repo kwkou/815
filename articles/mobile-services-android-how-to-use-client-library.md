@@ -9,12 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/03/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/03/2015" 
+	wacn.date="10/03/2015"/>
 
 
 # 如何使用适用于移动服务的 Android 客户端库
 
+[AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
 本指南说明如何使用适用于 Azure 移动服务的 Android 客户端执行常见任务。所述的任务包括：查询数据；插入、更新和删除数据；对用户进行身份验证；处理错误；自定义客户端。
 
@@ -24,7 +25,7 @@
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
-## <a name="setup"></a>安装与先决条件
+##<a name="setup"></a>安装与先决条件
 
 假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表](https://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx)。在本主题使用的代码中，我们假设表的名称为 *ToDoItem*，其中包含以下列：
 
@@ -42,12 +43,13 @@
 	
 启用动态架构后，Azure 移动服务将基于 insert 或 update 请求中的对象自动生成新列。有关详细信息，请参阅[动态架构](https://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx)。
 
-## <a name="create-client"></a>如何创建移动服务客户端
+##<a name="create-client"></a>如何创建移动服务客户端
 以下代码将创建用于访问移动服务的 [MobileServiceClient](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) 对象。代码会进入在 *AndroidManifest.xml* 中指定为 **MAIN** 操作和 **LAUNCHER** 类别的 Activity 类的 `onCreate` 方法。
 
-	MobileServiceClient mClient = new MobileServiceClient(
-			"MobileServiceUrl", // Replace with the above Site URL
-			"AppKey", 			// replace with the Application Key this)
+		MobileServiceClient mClient = new MobileServiceClient(
+				"MobileServiceUrl", // Replace with the above Site URL
+				"AppKey", 			// replace with the Application Key 
+				this)
 
 在上面的代码中，请将 `MobileServiceUrl` 和 `AppKey` 依次替换为移动服务 URL 和应用程序密钥。在 Azure 管理门户中选择你的移动服务，然后单击“仪表板”即可获取这两个值。
 
@@ -296,10 +298,10 @@
 +  可打印字符：**"**(0x0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
 +  ID“.”和“..”
 
-也可以为表使用整数 ID。若要使用整数 ID，必须使用 `mobile table create` 命令并结合 `--integerId` 选项创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。<!--For more information on using the CLI, see [CLI to manage Mobile Services tables].-->
+也可以为表使用整数 ID。若要使用整数 ID，必须使用 `mobile table create` 命令并结合 `--integerId` 选项创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅 [用于管理移动服务表的 CLI]。
 
 
-## <a name="updating"></a>如何在移动服务中更新数据
+##<a name="updating"></a>如何在移动服务中更新数据
 
 以下代码演示了如何更新表中的数据。在此示例中，*item* 是对 *ToDoItem* 表中某个行的引用，该表包含一些更改。以下方法会更新表和 UI 适配器。
 
@@ -556,7 +558,7 @@
 	    </ListView>
 	
 
-在上面的代码中，*listitem* 属性指定列表中单个行的布局 ID。以下代码指定了一个复选框及其关联的文本。这些元素将会针对列表中的每个项实例化一次。如果使用更复杂的布局，则会在屏幕中指定更多的字段。以下代码摘自 *row_list_to_do.xml* 文件。
+在上面的代码中，*listitem* 属性指定列表中单个行的布局 ID。以下代码指定了一个复选框及其关联的文本。这些元素将会针对列表中的每个项实例化一次。如果使用更复杂的布局，则会在屏幕中指定更多的字段。以下代码摘自 *row\_list\_to\_do.xml* 文件。
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -918,8 +920,8 @@
 
 
 <!-- URLs. -->
-[移动服务入门]: mobile-services-android-get-started
-[移动服务快速入门]: mobile-services-android-get-started
+[移动服务入门]: /documentation/articles/mobile-services-android-get-started
+[移动服务快速入门]: /documentation/articles/mobile-services-android-get-started
 [ASCII 控制代码 C0 和 C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
-<!---HONumber=61-->
+<!---HONumber=71-->

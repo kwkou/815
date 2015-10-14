@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="身份验证入门 (HTML5) | 移动开发人员中心" 
+	pageTitle="向 HTML/JavaScript 应用添加身份验证 | Windows Azure" 
 	description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 HTML 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/28/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="07/21/2015" 
+	wacn.date="10/03/2015"/>
 
 #  向移动服务应用程序添加身份验证 
 
@@ -29,7 +29,7 @@
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-3. 在 app 目录中，启动 **server** 子文件夹中的下列命令文件之一。
+1. 在 app 目录中，启动 **server** 子文件夹中的下列命令文件之一。
 
 	+ **launch-windows**（Windows 计算机） 
 	+ **launch-mac.command**（Mac OS X 计算机）
@@ -99,9 +99,7 @@
 
     这将会创建一组用于处理身份验证过程的函数。将使用 Facebook 登录对用户进行身份验证。如果使用的标识提供者不是 Facebook，请将传递给上述 **login** 方法的值更改为下列其中一项：*microsoftaccount*、*aad*。
 
-	>[AZURE.IMPORTANT]在 PhoneGap 应用程序中，还必须向项目中添加以下插件：
-	><ul><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</code></li> 
-	><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git</code></li></ul>
+	>[AZURE.IMPORTANT]在 PhoneGap 应用程序中，还必须向项目中添加以下插件：<ul><li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</code></li> <li><code>phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git</code></li></ul>
 
 9. 返回到运行应用程序的浏览器并刷新页。
 
@@ -129,13 +127,12 @@
 [15]: ./media/mobile-services-html-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-
-[移动服务入门]: mobile-services-html-get-started
-[Get started with data]: mobile-services-html-get-started-data
-[使用脚本为用户授权]: mobile-services-javascript-backend-service-side-authorization
+[移动服务入门]: /documentation/articles/mobile-services-html-get-started
+[Get started with data]: /documentation/articles/mobile-services-html-get-started-data
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[移动服务 HTML/JavaScript 操作方法概念性参考]: mobile-services-html-how-to-use-client-library
+[移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library
  
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

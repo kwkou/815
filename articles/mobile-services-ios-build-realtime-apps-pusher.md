@@ -10,13 +10,10 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="06/05/2015" 
-	wacn.date="07/25/2015"/>
+	wacn.date="10/03/2015"/>
 
 
-#  使用移动服务和 Pusher 生成实时应用程序
-<div class="dev-center-tutorial-selector sublanding">
-	<a href="" title="iOS" class="current">iOS</a>
-</div>
+# 使用移动服务和 Pusher 生成实时应用程序
 
 本主题说明如何将实时功能添加到基于 Azure 移动服务的应用程序。完成本主题后，你的 TodoList 数据将在所有运行的应用程序实例之间实时同步。
 
@@ -72,11 +69,11 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 	- Security.framework
 	- SystemConfiguration.framework
 
-9. 最后，在“生成设置”中，找到目标生成设置“其他链接器标志”，并添加 **all_load** 标志。
+9. 最后，在“生成设置”中，找到目标生成设置“其他链接器标志”，并添加 **all\_load** 标志。
 
 	![][add-linker-flag]
 
-	此时将显示针对“调试”生成目标设置的 **-all_load** 标志。
+	此时将显示针对“调试”生成目标设置的 **-all\_load** 标志。
 
 该库现已安装并可供使用。
 
@@ -236,7 +233,7 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 		    }];
 		}
 
-11. 将 `**your_app_key**` 占位符替换为你前面从“连接信息”对话框中复制的 app_key 值。
+11. 将 `**your_app_key**` 占位符替换为你前面从“连接信息”对话框中复制的 app\_key 值。
 
 12. 将 **onAdd** 方法替换为以下代码：
 
@@ -441,4 +438,4 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

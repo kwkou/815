@@ -9,11 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/07/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="07/02/2015" 
+	wacn.date="10/03/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 本主题说明如何使用 Azure 移动服务向 Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 向快速入门项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
@@ -100,21 +101,20 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-
-[推送通知入门 (Eclipse)]: mobile-services-dotnet-backend-android-get-started-push-EC
-[移动服务入门]: mobile-services-dotnet-backend-android-get-started
-[数据处理入门]: mobile-services-dotnet-backend-android-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-android-get-started-users
+[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push-EC
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[数据处理入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 
-[如何使用适用于移动服务的 Android 客户端库 ]: mobile-services-android-how-to-use-client-library
+[如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
 
-[向经过身份验证的用户发送推送通知]: mobile-services-dotnet-backend-android-push-notifications-app-users
+[向经过身份验证的用户发送推送通知]: /documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users
 
-[什么是通知中心？]: notification-hubs-overview
-[将广播通知发送到订户]: notification-hubs-windows-store-dotnet-send-breaking-news
-[将基于模板的通知发送到订户]: notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[什么是通知中心？]: /documentation/articles/notification-hubs-overview
+[将广播通知发送到订户]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[将基于模板的通知发送到订户]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="移动服务 .NET 后端故障排除 - Azure 移动服务" 
+	pageTitle="移动服务 .NET 后端故障排除 | Windows Azure" 
 	description="了解如何诊断和修复使用 .NET 后端的移动服务遇到的问题" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/20/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 移动服务 .NET 后端故障排除
 
@@ -22,7 +22,7 @@
 4. [调试云程序集解析](#AssemblyResolution)
 5. [实体框架迁移疑难解答](#EFMigrations)
 
-<a name="HttpDebugging"></a>
+<a name="HttpDebugging">
 ## HTTP 调试
 
 使用移动服务开发应用程序时，通常会将移动服务客户端 SDK 用于你所使用的平台（Windows 应用商店、iOS、Android 等）。但有时候，深入了解 HTTP 级别并观察网络上发生的原始调用可能会有所帮助。此方法在调试连接和序列化问题时特别有用。通过移动服务 .NET 后端，你可以将此方法与 Visual Studio 本地和远程调试搭配使用（下一部分将详细说明），以了解 HTTP 调用在调用服务代码之前所创建的路径。
@@ -129,9 +129,9 @@
 <a name="EFMigrations"></a>
 ## Entity Framework 迁移故障排除
 
-使用包含 SQL Database 的移动服务 .NET 后端时，将以 Entity Framework (EF) 作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为*架构*）如何随着代码中指定的模型类的更改而更改。此过程称为 [Code First 迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
+使用包含 SQL 数据库的移动服务 .NET 后端时，将以 Entity Framework (EF) 作为数据访问技术，让你查询数据库及保存对象。EF 代表开发人员处理的重要方面之一是数据库列（也称为*架构*）如何随着代码中指定的模型类的更改而更改。此过程称为 [Code First 迁移](http://msdn.microsoft.com/zh-cn/data/jj591621)。
 
-迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+迁移可能很复杂，只有数据库状态与 EF 模型保持同步才能成功。有关如何处理移动服务的迁移和可能发生的错误的说明，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
 <!-- IMAGES -->
 
@@ -150,4 +150,4 @@
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=61-->
+<!---HONumber=71-->

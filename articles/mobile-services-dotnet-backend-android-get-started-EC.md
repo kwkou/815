@@ -9,13 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/13/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # <a name="getting-started"></a>移动服务入门
 
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started-EC.md)]
 
-本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](mobile-services-android-get-started-EC)。
+本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](/documentation/articles/mobile-services-android-get-started-EC)。
 
 以下是完成的应用程序的屏幕快照：
 
@@ -101,18 +102,16 @@
 
 	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。
 
+<!--This shows how to run your new client app against the mobile service running in Azure. Before you can test the Android app with the mobile service running on a local computer, you must configure the Web server and firewall to allow access from your Android development computer. For more information, see [Configure the local web server to allow connections to a local mobile service](/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express).-->
 
 ## <a name="next-steps"></a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [身份验证入门]
-  <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [身份验证入门]<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 .NET 后端故障排除]
-  <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
+* [移动服务 .NET 后端故障排除]<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
 <!-- Anchors. -->
 
@@ -140,14 +139,13 @@
 [15]: ./media/mobile-services-dotnet-backend-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-
-[Get started with data]: mobile-services-dotnet-backend-android-get-started-data
-[身份验证入门]: mobile-services-dotnet-backend-android-get-started-users
-[推送通知入门]: mobile-services-dotnet-backend-android-get-started-push
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-[移动服务 .NET 后端故障排除]: mobile-services-dotnet-backend-how-to-troubleshoot
+[移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
 [管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

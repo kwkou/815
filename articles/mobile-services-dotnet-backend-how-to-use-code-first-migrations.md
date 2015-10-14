@@ -10,24 +10,30 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/27/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/04/2015" 
+	wacn.date="10/03/2015"/>
 
 # 如何对 .NET 后端移动服务进行数据模型更改
 
-本主题说明如何使用 Entity Framework Code First 迁移对现有的 Azure SQL Database 进行数据模型更改，以避免丢失现有数据。此过程假设你已将移动服务项目发布到 Azure，数据库中已有数据，并且远程和本地数据模型仍然保持同步。本主题还将介绍 Azure 移动服务实现的、在开发期间使用的默认 Code First 初始值设定项。这些初始值设定项可让你在无需维护现有数据的情况下，不使用 Code First 迁移就能轻松进行架构更改。
+本主题说明如何使用 Entity Framework Code First 迁移对现有的 Azure SQL 数据库进行数据模型更改，以避免丢失现有数据。此过程假设你已将移动服务项目发布到 Azure，数据库中已有数据，并且远程和本地数据模型仍然保持同步。本主题还将介绍 Azure 移动服务实现的、在开发期间使用的默认 Code First 初始值设定项。这些初始值设定项可让你在无需维护现有数据的情况下，不使用 Code First 迁移就能轻松进行架构更改。
 
->[AZURE.NOTE]用作 SQL Database 中表的前缀的架构名称在 web.config 文件内的 <strong>MS_MobileServiceName</strong> 应用程序设置中定义。当你从门户下载初学者项目后，此值已设置为移动服务名称。如果架构名称与移动服务匹配，则多个移动服务可以安全共享同一个数据库实例。
+>[AZURE.NOTE]用作 SQL 数据库中表的前缀的架构名称在 web.config 文件内的 MS\_MobileServiceName 应用设置中定义。当你从门户下载初学者项目后，此值已设置为移动服务名称。如果架构名称与移动服务匹配，则多个移动服务可以安全共享同一个数据库实例。
+
+## 更新数据模型
+
+当你在 .NET 后端移动服务中添加功能时，会添加新的控制器来公开 API 中的新终结点。可以将新的 API 创建为自定义控制器或表控制器。[TableController<TEntity>] 公开继承自 [EntityData] 的数据类型。要使数据持久保存在数据库中，还必须在 [DbContext] 中将此数据类型作为新的 [DbSet<T>] 添加到数据模型中。若要了解有关 Entity Framework 中 Code First 的详细信息，请参阅[使用 Code First 创建模型](https://msdn.microsoft.com/zh-cn/data/ee712907#codefirst)。
+
+使用 Visual Studio 可以轻松地创建用于向客户端应用公开新数据类型的新表控制器。有关详细信息，请参阅[如何使用控制器访问移动服务中的数据](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn614132.aspx)。
 
 ## 数据模型初始值设定项
 
-移动服务在一个 .NET 后端移动服务项目中支持两个数据模型初始值设定项基类。每当 Entity Framework 在 [DbContext] 中检测到数据模型更改时，这些初始值设定项将删除然后重新创建数据库中的表。不管移动服务在本地计算机上运行，还是在 Azure 中托管，都可以使用这些初始值设定项。
+移动服务在 .NET 后端移动服务项目中提供两个数据模型初始值设定项基类。当 Entity Framework 在 [DbContext] 中检测到数据模型更改时，这两个初始值设定项将删除然后重新创建数据库中的表。不管移动服务在本地计算机上运行，还是在 Azure 中托管，都可以使用这些初始值设定项。
 
 >[AZURE.NOTE]当你发布 .NET 后端移动服务时，在发生数据访问操作之前，初始值设定项将不会运行。这意味着，对于新发布的服务而言，只有在客户端请求数据访问操作（例如查询）之后，才会创建存储的表。
 >
->你也可以使用内置的 API 帮助功能（从启动页上的“试用”链接访问）执行数据访问操作。有关使用 API 页面测试移动服务的详细信息，请参阅[将移动服务添加到现有应用程序](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#test-the-service-locally)中的“在本地测试移动服务项目”部分。
+>你也可以使用内置的 API 帮助功能（从启动页上的“试用”链接访问）执行数据访问操作。有关使用 API 页面测试移动服务的详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#test-the-service-locally)中的“在本地测试移动服务项目”部分。
 
-这两个初始值设定项基类会从数据库中，删除移动服务所用架构中的所有表、视图、函数和过程。
+这两个初始值设定项会从数据库中，删除移动服务所用架构中的所有表、视图、函数和过程。
 
 + **ClearDatabaseSchemaIfModelChanges** <br/>仅当 Code First 检测到数据模型更改时，才删除架构对象。从 [Azure 管理门户]下载的 .NET 后端项目中的预设初始值设定项继承自这个基类。
  
@@ -43,7 +49,7 @@
 
 Code First 迁移使用快照方法来生成代码，执行这些代码会对数据库进行架构更改。借助迁移，你可对数据模型进行增量更改并在数据库中维护现有数据。
 
->[AZURE.NOTE]如果你已将 .NET 后端移动服务项目发布到 Azure，而你的 SQL Database 表架构与项目的当前数据模型不匹配，则你必须使用初始值设定项并手动删除表，或者使架构和数据模型保持同步，然后尝试使用 Code First 迁移进行发布。
+>[AZURE.NOTE]如果你已将 .NET 后端移动服务项目发布到 Azure，而你的 SQL 数据库表架构与项目的当前数据模型不匹配，则你必须使用初始值设定项并手动删除表，或者使架构和数据模型保持同步，然后尝试使用 Code First 迁移进行发布。
 
 以下步骤将启用迁移，并应用项目、本地数据库和 Azure 中的数据模型更改。
 
@@ -65,7 +71,7 @@ Code First 迁移使用快照方法来生成代码，执行这些代码会对数
 
 	这将创建一个名为 *Initial* 的新迁移。迁移代码存储在迁移项目文件夹中。
 
-5. 展开 App_Start 文件夹，打开 WebApiConfig.cs 项目文件并添加以下 **using** 语句：
+5. 展开 App\_Start 文件夹，打开 WebApiConfig.cs 项目文件并添加以下 **using** 语句：
 
 		using System.Data.Entity.Migrations;
 		using todolistService.Migrations;
@@ -95,13 +101,13 @@ Code First 迁移使用快照方法来生成代码，执行这些代码会对数
 
 10. 将移动服务重新发布到 Azure，然后运行客户端应用程序以访问数据，并验证是否可以加载数据且不出错。
 
-13. （可选）在 [Azure 管理门户]中选择你的移动服务，单击“配置”选项卡，然后单击“SQL Database”链接。
+11. （可选）在 [Azure 管理门户]中选择你的移动服务，单击“配置”选项卡，然后单击“SQL 数据库”链接。
 
 	![][0]
 
-	随后你将导航到移动服务数据库的 SQL Database 页。
+	随后你将导航到移动服务数据库的 SQL 数据库页。
 
-14. （可选）单击“管理”，登录到 SQL Database 服务器，然后单击“设计”并验证是否已在 Azure 中进行架构更改。
+12. （可选）单击“管理”，登录到 SQL 数据库服务器，然后单击“设计”并验证是否已在 Azure 中进行架构更改。
 
     ![][1]
 
@@ -156,5 +162,8 @@ Code First 迁移使用快照方法来生成代码，执行这些代码会对数
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [DbContext]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext(v=vs.113).aspx
 [AddOrUpdate]: http://msdn.microsoft.com/zh-cn/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
+[TableController<TEntity>]: https://msdn.microsoft.com/zh-cn/library/azure/dn643359.aspx
+[EntityData]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.entitydata.aspx
+[DbSet<T>]: https://msdn.microsoft.com/zh-cn/library/azure/gg696460.aspx
 
-<!---HONumber=61-->
+<!---HONumber=71-->

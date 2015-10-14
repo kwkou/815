@@ -9,18 +9,18 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/12/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有应用程序
 
 ##概述
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
 
+本主题说明如何将 Azure 移动服务添加为 Windows Phone 8.1 Silverlight 应用程序的后端数据源。在本教程中，你将要为某个应用程序（该应用程序在内存中存储数据）下载一个 Visual Studio 项目，创建一个新的移动服务，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。若要将移动服务添加到 Windows Phone 应用商店 8.1 应用程序，请参阅[此教程版本](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data)。
 
-本主题说明如何将 Azure 移动服务添加为 Windows Phone 8.1 Silverlight 应用程序的后端数据源。在本教程中，你将要为某个应用程序（该应用程序在内存中存储数据）下载一个 Visual Studio 项目，创建一个新的移动服务，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。若要将移动服务添加到 Windows Phone 应用商店 8.1 应用程序，请参阅[此教程版本](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data)。
-
-在本教程中创建的移动服务支持移动服务中的 .NET 运行时。这样，你便可以将 .NET 语言和 Visual Studio 用于移动服务中的服务器端业务逻辑。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](mobile-services-windows-phone-get-started-data)。
+在本教程中创建的移动服务支持移动服务中的 .NET 运行时。这样，你便可以将 .NET 语言和 Visual Studio 用于移动服务中的服务器端业务逻辑。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](/documentation/articles/mobile-services-windows-phone-get-started-data)。
 
 
 ##先决条件
@@ -162,7 +162,7 @@
         }
 
 
-##针对本地托管的服务测试 Windows Phone 应用程序
+##针对本地托管的服务测试 Windows Phone 应用程序</h2>
 
 在本部分中，你将要使用 Visual Studio 来测试位于开发工作站本地的应用程序和移动服务。若要从 Windows Phone 设备或者某个 Windows Phone 模拟器测试 IIS Express 本地托管的移动服务，你必须配置 IIS Express 和工作站，以允许与工作站的 IP 地址和端口建立连接。Windows Phone 设备和模拟器以非本地网络客户端的形式建立连接。
 
@@ -172,7 +172,7 @@
 
 #### 针对 IIS Express 中的移动服务测试应用程序
 
-6. 在 Visual Studio 中打开 App.xaml.cs 文件，并注释掉你最近粘贴到该文件中的 `MobileService` 定义。添加新定义，以根据你在工作站上配置的 IP 地址和端口建立连接。然后保存该文件。你的代码应类似于...
+1. 在 Visual Studio 中打开 App.xaml.cs 文件，并注释掉你最近粘贴到该文件中的 `MobileService` 定义。添加新定义，以根据你在工作站上配置的 IP 地址和端口建立连接。然后保存该文件。你的代码应类似于...
 
         public static MobileServiceClient MobileService = new MobileServiceClient(
             "http://192.168.111.11:54321");
@@ -183,19 +183,19 @@
         //);        
 
 
-7. 在 Visual Studio 中，按 F7 键或者在“生成”菜单中单击“生成解决方案”，以同时生成 Windows Phone 应用程序和移动服务。在 Visual Studio 的输出窗口中确认是否已生成这两个项目且未出错
+2. 在 Visual Studio 中，按 F7 键或者在“生成”菜单中单击“生成解决方案”，以同时生成 Windows Phone 应用程序和移动服务。在 Visual Studio 的输出窗口中确认是否已生成这两个项目且未出错
 
-8. 在 Visual Studio 中，按 F5 键或者在“调试”菜单中单击“启动调试”，以运行应用程序并将移动服务托管在 IIS Express 本地。
+3. 在 Visual Studio 中，按 F5 键或者在“调试”菜单中单击“启动调试”，以运行应用程序并将移动服务托管在 IIS Express 本地。
 
     >[AZURE.NOTE]确保使用“以管理员身份运行”选项运行 Visual Studio。否则，IIS Express 可能不会加载 applicationhost.config 发生的更改。
 
-9. 输入新 todoitem 的文本。然后单击“保存”。这样便会在 IIS Express 本地托管的移动服务所创建的数据库中插入一个新的 todoItem。单击某个项对应的复选框可将它标记为已完成。
+4. 输入新 todoitem 的文本。然后单击“保存”。这样便会在 IIS Express 本地托管的移动服务所创建的数据库中插入一个新的 todoItem。单击某个项对应的复选框可将它标记为已完成。
 
-10. 在 Visual Studio 中停止调试应用程序。打开服务器资源管理器并展开“数据连接”即可查看针对后端服务创建的数据库中的更改。右键单击“MS_TableConnectionString”下的 TodoItems 表，然后单击“显示表数据”
+5. 在 Visual Studio 中停止调试应用程序。打开服务器资源管理器并展开“数据连接”即可查看针对后端服务创建的数据库中的更改。右键单击“MS\_TableConnectionString”下的 TodoItems 表，然后单击“显示表数据”
 
-    ![显示表中的数据](./media/mobile-services-dotnet-backend-windows-phone-get-started-data/vs-show-local-table-data.png)
+    ![显示表中的数据]([14]: ./media/mobile-services-dotnet-backend-windows-phone-get-started-data/vs-show-local-table-data.png)
 
-11. 测试完本地托管的移动服务后，请删除你创建的、用于打开工作站上端口的 Windows 防火墙规则。
+6. 测试完本地托管的移动服务后，请删除你创建的、用于打开工作站上端口的 Windows 防火墙规则。
 
 
 ##将移动服务发布到 Azure
@@ -228,13 +228,13 @@
 
 4. 在 Azure 管理门户中，单击与移动服务关联的数据库对应的“管理”。
 
-    ![管理 SQL Database](./media/mobile-services-dotnet-backend-windows-phone-get-started-data/manage-sql-azure-database.png)
+    ![管理 SQL 数据库](./media/mobile-services-dotnet-backend-windows-phone-get-started-data/manage-sql-azure-database.png)
 
 5. 在管理门户中，执行一个查询以查看应用程序所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 `todolist`。
 
         SELECT * FROM [todolist].[todoitems]
 
-    ![查询 SQL Database](./media/mobile-services-dotnet-backend-windows-phone-get-started-data/sql-azure-query.png)
+    ![查询 SQL 数据库](./media/mobile-services-dotnet-backend-windows-phone-get-started-data/sql-azure-query.png)
 
 **数据处理入门**教程到此结束。
 
@@ -242,34 +242,30 @@
 
 本教程所述的基础知识演示了如何使 Windows Phone 8 应用程序处理使用 .Net 运行时生成的移动服务中的数据。接下来，请试着学习下列教程之一：
 
-* [身份验证入门]
-  <br/>了解如何对应用程序用户进行身份验证。
+* [身份验证入门]<br/>了解如何对应用程序用户进行身份验证。
 
-* [向应用程序添加推送通知]()
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [向应用程序添加推送通知]()<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 .NET 操作方法概念性参考]
-  <br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
+* [移动服务 .NET 操作方法概念性参考]<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
   
 
 
 <!-- Images. -->
 
 <!-- URLs. -->
-
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-phone-get-started
-[Get started with data]: mobile-services-dotnet-backend-windows-phone-get-started-data
-[身份验证入门]: mobile-services-dotnet-backend-windows-phone-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-windows-phone-get-started-push
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push
 
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Developer Code Samples site]: https://code.msdn.microsoft.com/Add-Azure-Mobile-to-a-8b906f72
-[移动服务 .NET 操作方法概念性参考]: mobile-services-windows-dotnet-how-to-use-client-library
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 [How to add a new Windows Firewall port rule]: http://go.microsoft.com/fwlink/?LinkId=392240
   
 
-<!---HONumber=61-->
+<!---HONumber=71-->

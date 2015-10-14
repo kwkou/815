@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/25/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/19/2015" 
+	wacn.date="10/03/2015"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
-
+[AZURE.INCLUDE [mobile-services-selector-adal-sso](../includes/mobile-services-selector-adal-sso.md)]
 
 ##概述
 
@@ -129,13 +129,12 @@
 
 
 <!-- URLs. -->
-
-[数据处理入门]: partner-xamarin-mobile-services-ios-get-started-data
-[移动服务入门]: mobile-services-dotnet-backend-xamarin-ios-get-started
-[如何向 Azure Active Directory 注册]: mobile-services-how-to-register-active-directory-authentication
+[数据处理入门]: /documentation/articles/mobile-services-ios-get-started-data
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started
+[如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [用于 iOS 的 Active Directory 身份验证库的 Xamarin 绑定]: https://github.com/AzureADSamples/NativeClient-Xamarin-iOS
 [Xamarin 扩展]: http://xamarin.com/visual-studio
 [Xamarin Studio]: http://xamarin.com/download
 
-<!---HONumber=61-->
+<!---HONumber=71-->

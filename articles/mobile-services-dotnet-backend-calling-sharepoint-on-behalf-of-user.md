@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/13/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/08/2015" 
+	wacn.date="10/03/2015"/>
 
 # 代表用户访问 SharePoint
 
@@ -60,11 +60,11 @@
 
     ![][3]
 
-4. 将 SP_Authority 设置为 AAD 租户的机构终结点。此项应与客户端应用程序所用的机构值相同。其格式为 https://login.windows.net/contoso.onmicrosoft.com
+4. 将 SP\_Authority 设置为 AAD 租户的机构终结点。此项应与客户端应用程序所用的机构值相同。其格式为 https://login.windows.net/contoso.onmicrosoft.com
 
-5. 将 SP_ClientSecret 设置为你先前获取的客户端机密值。
+5. 将 SP\_ClientSecret 设置为你先前获取的客户端机密值。
 
-6. 将 SP_SharePointURL 设置为 SharePoint 站点的 URL。其格式应为 https://contoso-my.sharepoint.com
+6. 将 SP\_SharePointURL 设置为 SharePoint 站点的 URL。其格式应为 https://contoso-my.sharepoint.com
 
 你可以使用 ApiServices.Settings 在代码中再次获取这些值。
 
@@ -209,4 +209,4 @@
 [SharePoint Online]: http://office.microsoft.com/zh-cn/sharepoint/
 [使用 Active Directory 身份验证库单一登录对应用程序进行身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

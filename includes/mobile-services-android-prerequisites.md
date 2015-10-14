@@ -1,5 +1,11 @@
-﻿本教程使用 Eclipse 和 Android 4.2 或更高版本。 
+﻿本教程基于你在移动服务快速入门中下载的代码。在开始本教程之前，你首先必须完成 [移动服务入门] 或 [将移动服务添加到现有应用]。
 
-本教程基于移动服务快速入门。在开始本教程之前，您首先必须完成[移动服务入门]或[将移动服务添加到现有应用]。
+> [AZURE.IMPORTANT]如果你完成到 Azure 移动服务 Android SDK 2.0 发行版之前的快速入门教程，你必须重新执行它，因为 SDK 不向后兼容。若要验证版本，请检查项目的 **build.gradle** 文件的 **dependencies** 节。
 
->[AZURE.NOTE] Mobile Services Android SDK 已更新到 V2.0。如果您一段时间以前完成上述两个教程，如果它们未使用更新后的 SDK，您必须重新学习这些教程。要验证您的应用使用哪些版本的 SDK，请在 Eclipse 中打开它，并检查 **libs** 文件夹的内容。移动服务 jar 文件上的版本号应该为 2.0 或更大值。
+
+<!-- URLs. 
+[Get started with Mobile Services]:  /documentation/articles/mobile-services-android-get-started
+[Add Mobile Services to an existing app]:/documentation/articles/mobile-services-android-get-started-data
+-->
+
+<!---HONumber=71-->

@@ -9,17 +9,29 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/15/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有 Android 应用程序
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ## 摘要
 
-本主题说明如何使用 Azure 移动服务将持久性数据添加到 Android 应用程序。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该应用程序与该移动服务相集成以便在 Azure 移动服务而不是在本地存储和更新数据，然后使用 Azure 管理门户查看运行该应用程序时对数据所做的更改。
+<div class="dev-onpage-video-clear clearfix">
+<div class="dev-onpage-left-content">
 
-本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成<a href="/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android">移动服务入门</a>教程。
+<p>本主题说明如何使用 Azure 移动服务将持久性数据添加到 Android 应用程序。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该应用程序与该移动服务相集成以便在 Azure 移动服务而不是在本地存储和更新数据，然后使用 Azure 管理门户查看运行该应用程序时对数据所做的更改。</p>
+
+</div>
+
+
+<div class="dev-onpage-video-wrapper">
+<a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">15:32</span></div>
+</div>
+
+
+<p>本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成<a href="/zh-CN/develop/mobile/tutorials/get-started-android">移动服务入门</a>教程。</p>
 
 ## 先决条件
 
@@ -105,7 +117,7 @@
 
 * [身份验证入门]了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门]了解如何使用移动服务将非常基本的推送通知发送到应用程序。
+* [推送通知入门 ] 了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
 <!-- Anchors. -->
 [Download the Android app project]: #download-app
@@ -126,13 +138,13 @@
 
 
 <!-- URLs. -->
-[使用脚本验证和修改数据]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
-[使用分页优化查询]: /documentation/articles/mobile-services-android-add-paging-data
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-android
-[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
+[使用脚本验证和修改数据]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[使用分页优化查询]: /documentation/articles/mobile-services-android-how-to-use-client-library
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started/
+[Get started with data]: /documentation/articles/mobile-services-android-get-started-data
 [Get started with data (Eclipse)]: /documentation/articles/mobile-services-android-get-started-data-EC/
-[身份验证入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
-[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
+[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
+[推送通知入门 ]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
@@ -140,4 +152,4 @@
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
-<!---HONumber=61-->
+<!---HONumber=71-->

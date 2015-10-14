@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/02/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="07/21/2015" 
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有应用程序
 
-
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##概述
 
@@ -22,9 +22,9 @@
 
 在本教程中创建的移动服务是一个 .NET 后端移动服务。借助 .NET 后端，你可以对移动服务中的服务器端业务逻辑使用 .NET 语言和 Visual Studio，并且可以在本地计算机上运行和调试移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题中的 JavaScript 后端版本。
 
->[AZURE.NOTE]本主题说明如何使用 Visual Studio Professional 2013 Update 3 中的工具将新的移动服务连接到通用 Windows 应用程序。你可以使用相同的步骤将移动服务连接到 Windows 应用商店或 Windows Phone 应用商店 8.1 应用程序。若要将移动服务连接到 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序，请参阅[针对 Windows Phone 的数据处理入门](mobile-services-dotnet-backend-windows-phone-get-started-data)。
+>[AZURE.NOTE]本主题说明如何使用 Visual Studio Professional 2013 Update 3 中的工具将新的移动服务连接到通用 Windows 应用程序。你可以使用相同的步骤将移动服务连接到 Windows 应用商店或 Windows Phone 应用商店 8.1 应用程序。若要将移动服务连接到 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序，请参阅[针对 Windows Phone 的数据处理入门](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data)。
 
-> 如果你无法升级到 Visual Studio Professional 2013 Update 3，或者你要手动将移动服务项目添加到 Windows 应用商店应用程序解决方案，请参阅本主题的[此版本](mobile-services-dotnet-backend-windows-store-dotnet-get-started-data)。
+> 如果你无法升级到 Visual Studio Professional 2013 Update 3，或者你要手动将移动服务项目添加到 Windows 应用商店应用程序解决方案，请参阅本主题的[此版本](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data)。
 
 ##先决条件
 
@@ -81,7 +81,7 @@
 
 [AZURE.INCLUDE [mobile-services-windows-universal-test-app](../includes/mobile-services-windows-universal-test-app.md)]
 
-##查看 SQL Database 中存储的数据
+##查看 SQL 数据库中存储的数据
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-view-sql-data](../includes/mobile-services-dotnet-backend-view-sql-data.md)]
  
@@ -91,14 +91,11 @@
 
 本教程演示了使一个通用的 Windows 应用程序项目，以使用移动服务中的数据的基础知识。建议你接下来阅读下列其他主题之一：
 
-* [身份验证入门]
-  <br/>了解如何对应用程序用户进行身份验证。
+* [身份验证入门]<br/>了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门 ]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门 ]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 C# 操作方法概念性参考 ](mobile-services-windows-dotnet-how-to-use-client-library)
-  <br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
+* [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
   
 
 <!-- Images. -->
@@ -109,18 +106,18 @@
 
 [Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
 [Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[身份验证入门]: mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
-[推送通知入门 ]: mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+[推送通知入门 ]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 
-[Get started with offline data sync]: mobile-services-windows-store-dotnet-get-started-offline-data
+[Get started with offline data sync]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkID=510826
-[Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!---HONumber=61-->
+<!---HONumber=71-->

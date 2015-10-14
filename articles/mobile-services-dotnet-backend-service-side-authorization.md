@@ -9,11 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="05/10/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="07/02/2015"
+	wacn.date="10/03/2015"/>
 
 # 移动服务中的用户服务端授权
 
+> [AZURE.SELECTOR-LIST (Platform | Backend)]
+- [(Any | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
+- [(Any | Javascript)](/zh-cn/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
 本主题说明如何使用服务器端逻辑为用户授权。在本教程中，你将要修改表控制器，根据用户 ID 筛选查询，然后只授予用户对其自己数据的访问权限。根据用户 ID 筛选用户的查询结果是最基本的授权形式。根据具体的方案，你可能还需要创建“用户”或“角色”表，以跟踪更详细的用户授权信息，例如，给定的用户有权访问哪些终结点。
 
@@ -25,24 +28,31 @@
 
 		public string UserId { get; set; }
 
-	>[AZURE.NOTE]若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+	>[AZURE.NOTE]若要进行此数据模型更改并维护数据库中的现有数据，必须使用 [Code First 迁移](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
-2. 在 Visual Studio 中，展开 Controllers 文件夹，然后打开 **TodoItemController.cs**。找到 **PostTodoItem** 方法，并在该方法的开头添加以下代码。此代码会将已经过身份验证的用户的用户 ID 添加到项中，然后将此 ID 插入 TodoItem 表。
+2. 在 Visual Studio 中，展开“控制器”文件夹，打开 **TodoItemController.cs**，然后添加以下 using 语句：
 
-			// Get the logged in user
-			var currentUser = User as ServiceUser;
+		using Microsoft.Azure.Mobile.Server.Security;
 
-			// Set the user ID on the item
-			item.UserId = currentUser.Id;
+3. 找到 **PostTodoItem** 方法，并在该方法的开头添加以下代码。
 
-3. 找到 **GetAllTodoItems** 方法，并将现有的 **return** 语句替换为以下代码行。此查询可筛选返回的 TodoItem 对象，使得每个用户只收到他们插入的项。
+		// Get the logged in user
+		var currentUser = User as ServiceUser;
+	
+		// Set the user ID on the item
+		item.UserId = currentUser.Id;
+	
+	此代码会将已经过身份验证的用户的用户 ID 添加到项中，然后将此 ID 插入 TodoItem 表。
+
+4. 找到 **GetAllTodoItems** 方法，并将现有的 **return** 语句替换为以下代码行：
 
 				// Get the logged in user
 				var currentUser = User as ServiceUser;
 
 				return Query().Where(todo => todo.UserId == currentUser.Id);
+	此查询可筛选返回的 TodoItem 对象，使得每个用户只收到他们插入的项。
 
-4. 将移动服务项目重新发布到 Azure。
+5. 将移动服务项目重新发布到 Azure。
 
 
 ## <a name="test-app"></a>测试应用程序
@@ -63,7 +73,6 @@
 [3]: ./media/mobile-services-dotnet-backend-ios-authorize-users-in-scripts/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
+[向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 
-[向现有移动服务应用程序添加身份验证]: mobile-services-dotnet-backend-ios-get-started-users
-
-<!---HONumber=61-->
+<!---HONumber=71-->

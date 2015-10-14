@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="02/16/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/03/2015" 
+	wacn.date="10/03/2015"/>
 
 # 从客户端调用自定义 API
 
@@ -53,12 +53,12 @@
 [Mobile Services Android SDK]: http://go.microsoft.com/fwlink/p/?LinkID=280126
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[完成移动服务入门]: mobile-services-dotnet-backend-android-get-started
-[移动服务入门]: mobile-services-dotnet-backend-android-get-started
-[数据处理入门]: mobile-services-dotnet-backend-android-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-android-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-android-get-started-push
+[完成移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[数据处理入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 
-[在源代码管理中存储服务器脚本]: mobile-services-store-scripts-source-control
+[在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
 
-<!---HONumber=61-->
+<!---HONumber=71-->

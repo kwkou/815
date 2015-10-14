@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/01/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/16/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #  如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南说明如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端（包括 Windows 应用商店 JavaScript 和 PhoneGap/Cordova 应用程序）执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](mobile-services-html-get-started)。快速入门教程可帮助你配置帐户并创建第一个移动服务。
+本指南说明如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端（包括 Windows 应用商店 JavaScript 和 PhoneGap/Cordova 应用程序）执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-html-get-started)。快速入门教程可帮助你配置帐户并创建第一个移动服务。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -40,13 +40,13 @@
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为应用程序密钥。若要了解如何获取移动服务的应用程序 URL 和应用程序密钥，请查阅[将移动服务添加到现有应用程序](mobile-services-html-get-started-data)。
+必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为应用程序密钥。若要了解如何获取移动服务的应用程序 URL 和应用程序密钥，请查阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-html-get-started-data)。
 
 >[AZURE.IMPORTANT]应用程序密钥用于针对移动服务筛选出随机请求，将随应用程序一起分发。由于此密钥未加密，因此不能被认为是安全的。为确保安全访问你的移动服务数据，你必须改为在允许用户访问前对用户进行身份验证。有关详细信息，请参阅[如何：对用户进行身份验证](#caching)。
 
 ## <a name="querying"></a>如何从移动服务查询数据
 
-访问或修改 SQL Database 表中数据的所有代码均将调用 `MobileServiceTable` 对象的函数。可通过对 `MobileServiceClient` 实例调用 `getTable()` 函数来获取对表的引用。
+访问或修改 SQL 数据库表中数据的所有代码均将调用 `MobileServiceTable` 对象的函数。可通过对 `MobileServiceClient` 实例调用 `getTable()` 函数来获取对表的引用。
 
     var todoItemTable = client.getTable('todoitem');
 
@@ -291,9 +291,9 @@
 + 更方便地合并不同表或数据库中的记录。
 + ID 值能够更好地与应用程序的逻辑相集成。
 
-如果插入的记录中尚未设置字符串 ID 值，移动服务将为 ID 生成唯一值。有关如何在客户端上或 .NET 后端中生成自己的 ID 值的详细信息，请参阅[如何：生成唯一 ID 值](mobile-services-how-to-use-server-scripts#generate-guids)。
+如果插入的记录中尚未设置字符串 ID 值，移动服务将为 ID 生成唯一值。有关如何在客户端上或 .NET 后端中生成自己的 ID 值的详细信息，请参阅[如何：生成唯一 ID 值](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids)。
 
-也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](virtual-machines-command-line-tools#Mobile_Tables)。
+也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables)。
 
 ## <a name="modifying"></a>如何：在移动服务中修改数据
 
@@ -393,8 +393,8 @@
 
 支持两种身份验证流：_服务器流_和_客户端流_。服务器流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能（例如单一登录）进行更深入的集成。
 
-### 服务器流
-若要让移动服务管理 Windows 应用商店或 HTML5 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](mobile-services-html-get-started-users)教程。
+###服务器流
+若要让移动服务管理 Windows 应用商店或 HTML5 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](/documentation/articles/mobile-services-html-get-started-users)教程。
 
 注册标识提供者后，只需结合提供者的 [MobileServiceAuthenticationProvider] 值调用 [LoginAsync 方法]。例如，若要使用 Facebook 登录，请使用以下代码。
 
@@ -408,7 +408,7 @@
 
 在此情况下，移动服务将通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成移动服务身份验证令牌。[login] 函数在完成时将返回一个 JSON 对象 (**user**)，该对象分别在 **userId** 和 **authenticationToken** 字段中公开用户 ID 和移动服务身份验证令牌。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅“缓存身份验证令牌”。
 
-> [AZURE.NOTE]**Windows 应用商店应用程序**当你使用 Microsoft 帐户登录提供程序对 Windows 应用商店应用程序的用户进行身份验证时，还应该将应用程序包注册到移动服务。将 Windows 应用商店应用程序包信息注册到移动服务后，客户端可以重复使用 Microsoft 帐户登录凭据来提供单一登录体验。如果你不执行此操作，则每次调用 login 方法时，系统都会向 Microsoft 帐户登录用户显示登录提示。若要了解如何注册 Windows 应用商店应用程序包，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication)。将程序包信息注册到移动服务后，请为 <em>useSingleSignOn</em> 参数提供 **true** 值以重复使用凭据，方便调用 [login](http://go.microsoft.com/fwlink/p/?LinkId=322050%20target="_blank") 方法。
+> [AZURE.NOTE]**Windows 应用商店应用程序**当你使用 Microsoft 帐户登录提供程序对 Windows 应用商店应用程序的用户进行身份验证时，还应该将应用程序包注册到移动服务。将 Windows 应用商店应用程序包信息注册到移动服务后，客户端可以重复使用 Microsoft 帐户登录凭据来提供单一登录体验。如果你不执行此操作，则每次调用 login 方法时，系统都会向 Microsoft 帐户登录用户显示登录提示。若要了解如何注册 Windows 应用商店应用程序包，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/%20target="_blank")。将程序包信息注册到移动服务后，请为 <em>useSingleSignOn</em> 参数提供 **true** 值以重复使用凭据，方便调用 [login](http://go.microsoft.com/fwlink/p/?LinkId=322050%20target="_blank") 方法。
 
 ### 客户端流
 你的应用程序还能够独立联系标识提供者，然后将返回的令牌提供给移动服务以进行身份验证。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。
@@ -600,10 +600,10 @@
 [ListView]: http://msdn.microsoft.com/zh-cn/library/windows/apps/br211837.aspx
 [数据绑定（使用 JavaScript 和 HTML 的 Windows 应用商店应用程序）]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh758311.aspx
 [login]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L301
-[使用单一登录对应用程序进行身份验证]: mobile-services-windows-store-javascript-single-sign-on
+[使用单一登录对应用程序进行身份验证]: /documentation/articles/mobile-services-windows-store-javascript-single-sign-on
 [ASCII control codes C0 and C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [OData 系统查询选项参考]: http://go.microsoft.com/fwlink/p/?LinkId=444502
-[从客户端调用自定义 API]: mobile-services-html-call-custom-api
+[从客户端调用自定义 API]: /documentation/articles/mobile-services-html-call-custom-api
  
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

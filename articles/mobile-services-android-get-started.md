@@ -9,15 +9,24 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/09/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/03/2015"
+	wacn.date="10/03/2015"/>
 
 # 移动服务入门
 
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。以下是完成的应用程序的屏幕快照：
+<div class="dev-onpage-video-clear clearfix">
+<div class="dev-onpage-left-content">
 
- ![ ](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
+
+<p>本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单<em>待办事项列表</em>应用程序。</p>
+<p>以下是完成的应用程序的屏幕快照：</p>
+</div>
+<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">7:26</span></div>
+</div>
+
+![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## 先决条件
 
@@ -69,7 +78,7 @@
 如果要查看已完成应用程序的源代码，请转到[此处](https://github.com/RickSaling/mobile-services-samples/tree/androidStudio/GettingStarted/AndroidStudio)。
 
 
-如果你要查看本教程的 Eclipse 版本，请转到：[入门 (Eclipse)](mobile-services-android-get-started-EC)。
+如果你要查看本教程的 Eclipse 版本，请转到：[入门 (Eclipse)](/documentation/articles/mobile-services-android-get-started-EC)。
 
 ## <a name="next-steps"></a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
@@ -102,14 +111,14 @@
 [15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[Get started (Eclipse)]: mobile-services-android-get-started-EC
-[数据处理入门]: mobile-services-android-get-started-data
-[身份验证入门]: mobile-services-android-get-started-users
-[推送通知入门 ]: mobile-services-javascript-backend-android-get-started-push
+[Get started (Eclipse)]: /documentation/articles/mobile-services-android-get-started-EC
+[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data
+[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
+[推送通知入门 ]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

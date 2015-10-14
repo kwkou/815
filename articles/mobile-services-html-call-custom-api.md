@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="06/04/2015" 
-	wacn.date="07/25/2015"/>
+	wacn.date="10/03/2015/>
 
 #  从 HTML 应用程序调用自定义 API
 
@@ -90,4 +90,4 @@
 [将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-html-get-started-data
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

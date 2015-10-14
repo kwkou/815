@@ -10,7 +10,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="06/30/2015"
-	wacn.date="08/29/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 将脱机数据同步添加到 Android 移动服务应用
 
@@ -145,7 +145,7 @@
 	按下右上角的“刷新”按钮时，会运行此代码。除了在启动时同步外，这是将本地存储同步到 Azure 的主要方式。此方式鼓励同步更改的批处理，并且在来自 Azure 的拉取操作相对很昂贵时非常高效。如果你的应用需要此操作，你也可以通过将对 `syncAsync` 的调用添加到 `addItem` 和 `checkItem` 方法来设计此应用。
 
 
-## 测试应用
+## 测试应用程序
 
 在此部分中，你将在启用 WiFi 的情况下测试行为，然后关闭 WiFi 以创建脱机方案。
 
@@ -176,17 +176,17 @@ One thing which is important to point out: if there are pending changes in the l
 
 3. 查看 Azure *TodoItem* 表的内容。验证新项是否_未_同步到服务器：
 
-   - 对于 JavaScript 后端，请转到管理门户，并单击“数据”选项卡以查看 `TodoItem` 表的内容。
+   - 对于 JavaScript 后端，请转到管理门户，然后单击“数据”选项卡查看 `TodoItem` 表的内容。
    - 对于 .NET 后端，请使用 SQL 工具（如 *SQL Server Management Studio*）或 REST 客户端（如 *Fiddler* 或 *Poistman*）查看表内容。
 
 4. 在设备或模拟器中打开 WiFi。接下来，按“刷新”按钮。
 
-5. 在 Azure 门户中再次查看 TodoItem 数据。现在应显示新的和更改的 TodoItems。
+5. 在 Azure 门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
 
 
 ## 后续步骤
 
-* [在移动服务中使用软删除][Soft Delete]
+* [使用移动服务中的软删除][Soft Delete]
 
 ## 其他资源
 
@@ -217,4 +217,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [移动服务快速入门教程]: /documentation/articles/mobile-services-android-get-started
 
-<!---HONumber=67-->
+<!---HONumber=71-->

@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/09/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
-
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 本主题说明如何使用 Azure 移动服务向 Xamarin.Android 应用程序发送推送通知。在本教程中，你将要使用 Google Cloud Messaging (GCM) 服务向[移动服务入门]项目添加推送通知。完成本教程后，每次插入一条记录时，你的移动服务就会发送一条推送通知。
 
@@ -64,12 +64,11 @@
 [AZURE.INCLUDE [mobile-services-android-push-notifications-test](../includes/mobile-services-android-push-notifications-test.md)]
 
 <!-- URLs. -->
-
-[移动服务入门]: mobile-services-dotnet-backend-xamarin-android-get-started
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started
 
 
 [Google Cloud Messaging 客户端组件]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 
-<!---HONumber=61-->
+<!---HONumber=71-->
