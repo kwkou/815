@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="05/10/2015"
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 #  Site Recovery 概述
 
@@ -175,4 +175,4 @@ Oracle | 即将支持 | 即将支持 | Y（Microsoft 已测试） | 即将支持
 
 完成本概述后，请[阅读最佳实践](site-recovery-best-practices)，帮助开始进行部署规划。
 
-<!---HONumber=61-->
+<!---HONumber=71-->

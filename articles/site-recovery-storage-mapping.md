@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"  
 	ms.date="05/08/2015"
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # Site Recovery 存储映射
@@ -101,4 +101,4 @@ VM5 | C:\ClusterStorage\\SourceVolume3 | 不适用 | 无映射，因此将使用
 
 对存储映射有了更好的理解后，请开始阅读[最佳实践](site-recovery-best-practices)以做好部署准备。
 
-<!---HONumber=61-->
+<!---HONumber=71-->

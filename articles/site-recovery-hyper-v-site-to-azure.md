@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="05/07/2015"
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 在本地 Hyper-V 站点与 Azure 之间设置保护
@@ -271,4 +271,4 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 	4. 单击“说明”以记录并保存与测试故障转移相关联的任何观测结果。
 	5.  单击“测试故障转移已完成”。清理测试环境以自动关闭电源，并删除测试虚拟机。
 
-<!---HONumber=61-->
+<!---HONumber=71-->

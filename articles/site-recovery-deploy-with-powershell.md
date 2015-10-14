@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="06/08/2015"
-	wacn.date="08/29/2015"/>
+	wacn.date="10/03/2015"/>
 
 #  使用 PowerShell 部署 Azure Site Recovery
 Windows PowerShell® 是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。支持在 VMM 管理的 Hyper-V 站点与 Azure 之间为 Azure Site Recovery 使用 PowerShell cmdlet。
@@ -31,7 +31,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 确保已满足以下先决条件：
 ### Azure 先决条件
 
-- 需要一个 [Microsoft Azure](http://www.windowsazure.cn) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](http://www.windowsazure.cn/home/features/site-recovery/#price)。
+- 需要一个 [Windows Azure](http://www.windowsazure.cn) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial)。此外，你可以阅读 [Azure Site Recovery Manager 定价](/home/features/site-recovery/#price)。
 - 你将需要一个 Azure 存储帐户来存储复制到 Azure 的数据。需要为帐户启用地域复制。该帐户应位于 Azure Site Recovery 服务所在的同一区域，并与同一订阅相关联。若要了解有关设置 Azure 存储的更多信息，请参阅 [Microsoft Azure 存储空间简介](/documentation/articles/storage-introduction)。
 - 你将需要确保你要保护的虚拟机符合 Azure 要求。有关详细信息，请参阅[虚拟机支持](/documentation/articles/site-recovery-best-practices)。
 
@@ -70,7 +70,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	- [在 Azure 中配置和监视虚拟网络](/documentation/services/networking)
 
 ###PowerShell 必决条件
-确保已将 Azure PowerShell 准备就绪。如果你已使用 PowerShell，则升级到 0.8.10 或更高版本。如需设置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。安装并配置 PowerShell 后，可在[此处](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx)查看该服务的所有可用 cmdlet。
+确保已将 Azure PowerShell 准备就绪。如果你已使用 PowerShell，则升级到 0.8.10 或更高版本。如需设置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。安装并配置 PowerShell 后，可在[此处](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx)查看该服务的所有可用 cmdlet。
 
 若要了解可帮助你使用 cmdlet 的提示（如在 Azure PowerShell 中通常如何处理参数值、输入和输出），请参阅 [Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
 
@@ -446,7 +446,7 @@ if($isJobLeftForProcessing)
 
 ##<a id="next" name="next" href="#next"></a>后续步骤
 - 有关 Azure Site Recovery PowerShell cmdlet 的详细信息，请参阅<a href="https://msdn.microsoft.com/zh-cn/library/dn850420.aspx">此文</a>。
-- 若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 [Azure Site Recovery 规划指南](/documentation/articles/site-recovery-best-practices/) 和 [Azure Site Recovery 部署指南](/documentation/articles/site-recovery-vmm-to-vmm/) 。
+- 若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 [Azure Site Recovery 规划指南](/documentation/articles/site-recovery-best-practices) 和 [Azure Site Recovery 部署指南](/documentation/articles/site-recovery-vmm-to-vmm) 。
 - 如有问题，请访问 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>。
 
-<!---HONumber=67-->
+<!---HONumber=71-->
