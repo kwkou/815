@@ -1,4 +1,4 @@
-﻿<properties
+<properties
    pageTitle="使用 Visual Studio 和 C# 创建 Apache Storm 拓扑 | Azure"
    description="了解如何通过使用 HDInsight Tools for Visual Studio 创建一个简单的单词计数拓扑，来以 C# 语言创建一个 Storm 拓扑。"
    services="hdinsight"
@@ -66,7 +66,7 @@ HDInsight Tools for Visual Studio 提供以下模板：
 
 3. 在“新建项目”屏幕中，展开“已安装”>“模板”，然后选择“HDInsight”。从模板列表中，选择“Storm 应用程序”。在屏幕底部，输入 **WordCount** 作为应用程序名称。
 
-	![图像](./media/hdinsight-storm-develop-csharp-visual-studio/new-project.png)
+	![图像](./media/hdinsight-storm-develop-csharp-visual-studio-topology/new-project.png)
 
 4. 创建项目后，你应该会获得以下文件：
 
@@ -299,7 +299,7 @@ HDInsight Tools for Visual Studio 提供以下模板：
 
 Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流动方式。此拓扑的图形如下：
 
-![组件的排列方式图像](./media/hdinsight-storm-develop-csharp-visual-studio/wordcount-topology.png)
+![组件的排列方式图像](./media/hdinsight-storm-develop-csharp-visual-studio-topology/wordcount-topology.png)
 
 句子从 Spout 发出，并分布到 Splitter Bolt 的实例。Splitter Bolt 将句子分割成多个单词，并将这些单词分布到 Counter Bolt。
 
@@ -467,7 +467,7 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 1.	在“解决方案资源管理器”中，右键单击项目，然后选择“属性”。在项目属性中，将“输出类型”更改为“控制台应用程序”。
 
-	![输出类型](./media/hdinsight-storm-develop-csharp-visual-studio/outputtype.png)
+	![输出类型](./media/hdinsight-storm-develop-csharp-visual-studio-topology/outputtype.png)
 
 	> [AZURE.NOTE]将拓扑部署到群集之前，请记得将“输出类型”更改回“类库”。
 
