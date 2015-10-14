@@ -1,18 +1,21 @@
-<properties urlDisplayName="Learn HDInsight" pageTitle="HDInsight 学习计划图 | Azure" metaKeywords="" description="Get a suggested flow of resources to go through for learning all you need to know about HDInsight" metaCanonical="" services="hdinsight" documentationCenter="" title="Learning map for HDInsight" authors="nitinme" solutions="big-data" manager="paulettm" editor="cgronlun" />  
+<properties
+	pageTitle="HDInsight 中 Hadoop 的学习路径 | Azure"
+	description="通过文档和资源遵循本学习路径，以了解如何在 HDInsight 中使用 Hadoop 及其组件。"
+	services="hdinsight"
+	documentationCenter=""
+	authors="nitinme"
+	manager="paulettm"
+	editor="cgronlun"/>
 
-<tags wacn.date="04/11/2015" ms.service="hdinsight" ms.date="01/16/2015" ms.author="nitinme"/>  
+<tags 
+	ms.service="hdinsight" 
+	ms.date="07/11/2015"
+	wacn.date="10/03/2015" />
 
 
-# HDInsight 学习计划图  
+# HDInsight 中 Hadoop 的学习路径
+在 HDInsight 中，你可以通过使用 Hadoop、HBase、Apache Storm 和自定义群集在云中使用大数据。在学习 Hadoop 及其组件时若要获得帮助，请通过 HDInsight 文档遵循本学习路径中的指导：
 
-HDInsight 能够适用于 Azure 上的"大数据"，让您可以在云上设置 Hadoop 和 HBase 群集。 本页面为您开始学习 HDInsight 所需的全部资源提供相关链接。 使用示图中建议的流程是最有效的学习途径。
+<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.chinacloudapi.cn/documentation/HDI.Content.Flow.svg" width="100%" height="100%"> </object>
 
-<object type="image/svg+xml" data="https://mysstorage.blob.core.windows.net/picture/HDI.Content.Flow.svg" width="100%" height="100%">
-</object>
-
-
-[hadoop-hdinsight-intro]: /zh-cn/documentation/articles/hdinsight-hadoop-introduction/
-
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-
-[img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png
+<!---HONumber=71-->

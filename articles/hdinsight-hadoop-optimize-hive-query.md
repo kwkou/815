@@ -1,16 +1,17 @@
 <properties
    pageTitle="优化 Hive 查询以便在 HDInsight 中更快地执行 | Windows Azure"
-   description="了解如何在 HDInsight 中优化 Hive 查询"
+   description="了解如何为 HDInsight 中的 Hadoop 优化 Hive 查询。"
    services="hdinsight"
    documentationCenter=""
    authors="rashimg"
    manager="mwinkle"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
-   ms.date="05/12/2015"
-   wacn.date="06/26/2015"/>
+   ms.date="07/28/2015"
+   wacn.date="10/03/2015"/>
 
 
 # 了解如何使用 HDInsight 优化 Hive 查询
@@ -21,19 +22,25 @@
 
 如果你已开始阅读有关 Hive 优化的主题，很快就会发现，你可以使用几十种甚至几百种优化方法。在本教程中，我们将探讨可以用来加快查询运行速度的最常用优化方法。我们将从体系结构和查询级别进行讲解。
 
-## 优化方法 1：扩大
+##优化方法 1：扩大
 
 扩大是指增加群集中可部署的节点数。之所以增加节点能够带来帮助，是因为你可以并行运行更多的任务，从而可以运行更多的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
 
-1. 在创建群集的过程中，可以选择要在多少个节点中运行查询。下图显示了这种方法。![scaleout_1][image-hdi-optimize-hive-scaleout_1]
-2. 如果你已启动并运行了群集，则无需删除然后重新创建该群集，也能增加扩展数目。如下所示。![scaleout_1][image-hdi-optimize-hive-scaleout_2]
+1. 在创建群集的过程中，可以选择要在多少个节点中运行查询。下图显示了这种方法。
+
+	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
+
+2. 如果你已启动并运行了群集，则无需删除然后重新创建该群集，也能增加扩展数目。如下所示。
+
+	![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
 
 有关 HDInsight 支持的不同 VM 的详细信息，请单击[价格](/home/features/hdinsight/#price)链接。
 
-## 优化方法 2：启用 Tez
+##优化方法 2：启用 Tez
 
-[Apache Tez](http://hortonworks.com/hadoop/tez/) 是 MapReduce 的备用执行引擎，可使 Hive 具有交互性。Tez 不仅能够提高 MapReduce 引擎的速度，而且还能保留 MapReduce 扩展到 PB 数据量级的能力。Apache Hive 和 Apache Pig 使用 Tez。下图显示了 Hive 可以在 HDInsight 平台中的 MapReduce 或交互式 Tez 上运行。  
-![tez_1][image-hdi-optimize-hive-tez_1]
+[Apache Tez](http://hortonworks.com/hadoop/tez/) 是 MapReduce 的备用执行引擎，可使 Hive 具有交互性。Tez 不仅能够提高 MapReduce 引擎的速度，而且还能保留 MapReduce 扩展到 PB 数据量级的能力。Apache Hive 和 Apache Pig 使用 Tez。下图显示了 Hive 可以在 HDInsight 平台中的 MapReduce 或交互式 Tez 上运行。
+
+![tez\_1][image-hdi-optimize-hive-tez_1]
 
 Tez 的速度比 MapReduce 引擎更快，原因如下：
 
@@ -76,11 +83,13 @@ Tez 的速度比 MapReduce 引擎更快，原因如下：
     Add-AzureHDInsightConfigValues -Hive $hiveConfig |
     New-AzureHDInsightCluster -Name $hdiName -Location $location -Credential $hdiCredential -Version $hdiVersion -Debug
 
-## 优化方法 3：分区
+##优化方法 3：分区
 
 默认情况下，Hive 查询会扫描整个表。对于“表扫描”之类的查询，这非常有利；但是，对于只需扫描少量数据的查询（例如，使用筛选进行查询），这会不必要地延长运行时间。由于 Hive 查询的大部分瓶颈都是 I/O 操作造成的，因此，如果可以减少需要读取的数据量，则会降低查询的总体延迟。
 
-Hive 分区利用了此方法。分区可使 Hive 访问一部分数据，以便只会处理必要的数据量。Hive 中实现这种优势的途径是，重新组织原始数据，以便为每个分区创建一个新目录 - 用户将在此目录中定义一个分区。例如，假设我们要根据“年份”列为表分区。那么，将为每个年份创建一个新目录。下图详细演示了分区的概念。![partitioning][image-hdi-optimize-hive-partitioning_1]
+Hive 分区利用了此方法。分区可使 Hive 访问一部分数据，以便只会处理必要的数据量。Hive 中实现这种优势的途径是，重新组织原始数据，以便为每个分区创建一个新目录 - 用户将在此目录中定义一个分区。例如，假设我们要根据“年份”列为表分区。那么，将为每个年份创建一个新目录。下图详细演示了分区的概念。
+
+![partitioning][image-hdi-optimize-hive-partitioning_1]
 
 关于分区的某些要点：1.不要分区不足 - 根据包含少量值的列进行分区可能会导致创建很少的分区，以致无法减少需要读取的数据量。例如，根据性别分区只会创建两个分区 - 一个针对男性，一个针对女性 - 最多只会将延迟降低一半。2.不要过度分区 - 另一种极端是，根据包含唯一值（例如 userid）的列进行分区会导致创建多个分区，从而给命名节点带来很大的压力，因为它必须处理大量的目录。这是另一种极端做法。3.避免数据偏斜 - 明智选择分区键，以便所有分区的大小均等。例如，根据“州”分区可能会导致“加利福尼亚州”的记录数几乎是“佛蒙特州”的 30 倍，因为两个州的人口有差异。
 
@@ -122,7 +131,7 @@ Hive 分区利用了此方法。分区可使 Hive 访问一部分数据，以便
 
 有关分区的更多详细信息，请单击[此处](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-PartitionedTables)。
 
-## 优化方法 4：使用 ORCFile 格式
+##优化方法 4：使用 ORCFile 格式
 Hive 支持使用不同的文件格式来执行查询。下面是其中的一部分格式及其最佳用例：
 
 
@@ -155,7 +164,7 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 
 使用 ORC 时，你应会看到，数据压缩率大约为 50-80%，同时，运行时执行时间会明显下降。
 
-## 优化方法 5：向量化
+##优化方法 5：向量化
 向量化是 Hive 的一项功能，可以减少常见查询操作的 CPU 使用率。向量化不是一次处理一行，而是一次性处理 1024 行。这意味着，简单的操作可以更快地完成，因为需要运行的内部代码更少。可以在[此处](https://cwiki.apache.org/confluence/display/Hive/Vectorized+Query+Execution)阅读有关向量化的详细信息。
 
 若要启用向量化，请在 Hive 查询的前面加上以下设置作为前缀：
@@ -163,11 +172,11 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
     set hive.vectorized.execution.enabled = true;
 
 
-## 其他优化方法
+##其他优化方法
 
 你还可以考虑使用其他一些高级优化方法，其中包括装桶、联接和增加化简器，我们将在以后的文章中予以介绍。
 
-## 摘要
+##摘要
 总之，你应该根据具体的情景，考虑使用上述优化方法来加快查询运行速度。
 
 HDInsight 正在致力于进一步优化 Hadoop，且不会明显增大贵方的工作量。一旦我们有分享的内容，就会在本教程中更新更多的详情。
@@ -177,4 +186,4 @@ HDInsight 正在致力于进一步优化 Hadoop，且不会明显增大贵方的
 [image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png
 
-<!---HONumber=61-->
+<!---HONumber=71-->

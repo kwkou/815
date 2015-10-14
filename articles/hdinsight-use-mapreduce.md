@@ -1,225 +1,191 @@
-<properties linkid="manage-services-hdinsight-howto-mapreduce" urlDisplayName="MapReduce with HDInsight " pageTitle="MapReduce 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use HDInsight to execute a simple Hadoop MapReduce job." metaCanonical="" services="hdinsight" documentationCenter="" title="Use MapReduce with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
-<tags ms.service="hdinsight"
-    ms.date="02/20/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+   pageTitle="将 MapReduce 与 HDInsight 上的 Hadoop 配合使用"
+   description="学习如何在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业。你将运行一个实现为 Java MapReduce 作业的基本单词计数操作。"
+   services="hdinsight"
+   documentationCenter=""
+   authors="Blackmist"
+   manager="paulettm"
+   editor="cgronlun"
+	tags="azure-portal"/>
 
-# MapReduce 与 HDInsight 配合使用
+<tags
+   ms.service="hdinsight"
+   ms.date="07/06/2015"
+   wacn.date="10/03/2015"/>
 
-Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用程序。在本教程中，你将从工作站上使用 Azure PowerShell 来提交一个 MapReduce 程序，该程序将文本中的单词出现次数统计到 HDInsight 群集。该单词统计程序用 Java 和随 HDInsight 群集提供的程序编写。
+# 在 HDInsight 上的 Hadoop 中使用 MapReduce
 
-**先决条件：**
+[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
 
-在开始阅读本教程前，你必须具有：
+在本文中，你将学习如何在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业。我们将运行一个实现为 Java MapReduce 作业的基本单词计数操作。
 
--   HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters)。
+##<a id="whatis"></a>什么是 MapReduce？
 
--   已安装并已配置 Azure PowerShell 的工作站。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
+Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的作业。输入数据已拆分成独立的区块，这些区块将在群集中的节点之间并行处理。MapReduce 作业包括两个函数：
 
-**估计完成时间：** 30 分钟
+* **映射器**：使用输入数据，对数据进行分析（通常使用筛选器和排序操作），然后发出 Tuple（键/值对）
+* **化简器**：使用映射器发出的 Tuple，并执行汇总运算，以基于映射器数据创建更小的合并结果
 
-## 在本教程中
-
-1.  [了解方案](#scenario)
-2.  [使用 Azure PowerShell 运行示例](#run-sample)
-3.  [字数统计 MapReduce 程序的 Java 代码](#java-code)
-4.  [后续步骤](#next-steps)
-
-##<a id="scenario"></a>了解方案
-
-下图解释了 MapReduce 怎样用于字数统计方案：
+下图演示了一个基本的单词计数 MapReduce 作业示例：
 
 ![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
 
-MapReduce 作业的输出结果是一组键值对。键是一个用于指定单词的字符串，值是一个用于指定单词在文本中的总出现次数的整数。这是通过两个阶段完成的：
+此作业的输出是某个单词在所分析的文本中出现的次数。
 
--   映射器将输入文本中的每行用作一个输入并将其拆分为多个单词。它在每次出现后面跟有 1 的单词时发出一个键值对。输出结果在发送到化简器之前会先存储起来。
+* 映射器将输入文本中的每行用作一个输入并将其拆分为多个单词。每当文本中的单词后跟一个 1 时，映射器将发出一个键/值对。输出在发送到化简器之前经过排序。
 
--   随后，化简器会计算每个单词的计数的和并发出一个键值对（包含单词，后跟该单词的总出现次数）。
+* 随后，化简器会计算每个单词的计数的和并发出一个键/值对（包含单词，后跟该单词的总出现次数）。
 
-运行 MapReduce 作业要求以下元素：
+可以使用多种语言实现 MapReduce。Java 是最常见的实现，本文档中使用该语言进行演示。
 
--   MapReduce 程序。在本教程中，你将使用 HDInsight 群集附带的字数统计示例，因此，你无需编写自己的 MapReduce 程序。该示例位于 */example/jars/hadoop-mapreduce.jar*。版本 3.0 的 HDInsight 群集上的文件名为 *hadoop-mapreduce-examples.jar*。有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-MapReduce]。
--   一个输入文件。你将使用 */example/data/gutenberg/davinci.txt* 作为输入文件。有关上传文件的信息，请参见[将数据上传到 HDInsight][hdinsight-upload-data]。
--   输出文件文件夹。你将使用 */example/data/WordCountOutput* 作为输出文件文件夹。如果该文件夹不存在，系统将会创建。如果该文件夹存在，MapReduce 作业将会失败。如果你想第二次运行 MapReduce 作业，一定要删除该输出文件夹或指定另一输出文件夹。
+### Hadoop 流式处理
 
-##<a id="run-sample"></a>使用 Azure PowerShell 运行示例
+与 Java 应用程序一样，基于 Java 和 Java 虚拟机（例如 Scalding 或 Cascading）的语言或框架可以直接作为 MapReduce 作业运行。其他实体（例如 C# 或 Python）或独立的可执行文件必须使用 Hadoop 流式处理。
+	
+Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映射器和化简器每次从 STDIN 读取一行数据，并将输出写入到 STDOUT。读取的每行或者由映射器和化简器发出的每行必须采用制表符分隔的键/值对格式：
 
-1.  打开 **Azure PowerShell**。有关打开 Azure PowerShell 控制台窗口的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
+    [key]/t[value]
 
-2.  在以下命令中设置两个变量，然后运行它们：
+有关详细信息，请参阅 [Hadoop 流式处理](http://hadoop.apache.org/docs/r1.2.1/streaming.html)。
+		
+有关将 Hadoop 流式处理与 hdinsight 配合使用的示例，请参阅：
 
-        $subscriptionName = "<SubscriptionName>"   # Azure 订阅名称
-        $clusterName = "<ClusterName>"             # HDInsight 群集名称
+* [开发 C# Hadoop 流式处理程序](hdinsight-hadoop-develop-deploy-streaming-jobs)
+		
+* [开发 Python MapReduce 作业](hdinsight-hadoop-streaming-python)
 
-3.  运行以下命令并提供你的 Azure 帐户信息：
+##<a id="data"></a>关于示例数据
 
-        Add-AzureAccount
+对于本示例中的示例数据，你将使用 HDInsight 群集中作为文本文档提供的 Leonardo Da Vinci 笔记本。
+	
+示例数据存储在 Azure Blob 存储中，HDInsight 可以将该存储用作 Hadoop 群集的默认文件系统。HDInsight 可以使用 **wasb** 前缀访问 Blob 存储中存储的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
-4.  运行以下命令创建 MapReduce 作业定义：
+	wasb:///example/data/gutenberg/davinci.txt
 
-        # 定义 MapReduce 作业
-        $wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce.jar" -ClassName "wordcount" -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput" 
+由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 **/example/data/gutenberg/davinci.txt** 访问该文件。
 
-    > [WACN.NOTE] *hadoop-mapreduce.jar* 随版本 2.1 HDInsight 群集提供。该文件在版本 3.0 HDInsight 群集上已被重命名为 *hadoop-mapreduce.jar*。
+> [AZURE.NOTE]在上述语法中，****wasb:///** 可用来访问 HDInsight 群集的默认存储容器所存储的文件。如果你在设置群集时指定了其他存储帐户，并想要访问这些帐户中存储的文件，你可以指定容器名称和存储帐户地址来访问数据。例如 ****wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/gutenberg/davinci.txt**。
 
-    hadoop-mapreduce.jar 文件随 HDInsight 群集分发提供。此 MapReduce 作业有两个参数。第一个参数是源文件名，第二个参数是输出文件路径。源文件随 HDInsight 群集分发提供，输出文件路径将会在运行时创建。
+##<a id="job"></a>关于示例 MapReduce
 
-5.  运行以下命令来提交 MapReduce 作业：
+本示例中使用的 MapReduce 作业位于 HDInsight 群集随附的 ****wasb://example/jars/hadoop-mapreduce-examples.jar** 中。其中包含一个你要针对 **davinci.txt** 运行的单词计数示例。
 
-        # 提交作业
-        Select-AzureSubscription $subscriptionName
-        $wordCountJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $wordCountJobDefinition | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600  
+> [AZURE.NOTE]在 HDInsight 2.1 群集上，该文件位于 ****wasb:///example/jars/hadoop-examples.jar** 中。
 
-    除了 MapReduce 作业定义外，你还要提供需运行 MapReduce 作业的 HDInsight 群集名称，以及凭据。Start-AzureHDInsightJob 是异步调用。若要检查作业是否完成，请使用 *Wait-AzureHDInsightJob* cmdlet。
+下面提供了单词计数 MapReduce 作业的 Java 代码供你参考：
+ 
+	package org.apache.hadoop.examples;
+	
+	import java.io.IOException;
+	import java.util.StringTokenizer;
+	
+	import org.apache.hadoop.conf.Configuration;
+	import org.apache.hadoop.fs.Path;
+	import org.apache.hadoop.io.IntWritable;
+	import org.apache.hadoop.io.Text;
+	import org.apache.hadoop.mapreduce.Job;
+	import org.apache.hadoop.mapreduce.Mapper;
+	import org.apache.hadoop.mapreduce.Reducer;
+	import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+	import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+	import org.apache.hadoop.util.GenericOptionsParser;
+	
+	public class WordCount {
+	
+	  public static class TokenizerMapper 
+	       extends Mapper<Object, Text, Text, IntWritable>{
+	    
+	    private final static IntWritable one = new IntWritable(1);
+	    private Text word = new Text();
+	      
+	    public void map(Object key, Text value, Context context
+	                    ) throws IOException, InterruptedException {
+	      StringTokenizer itr = new StringTokenizer(value.toString());
+	      while (itr.hasMoreTokens()) {
+	        word.set(itr.nextToken());
+	        context.write(word, one);
+	      }
+	    }
+	  }
+	  
+	  public static class IntSumReducer 
+	       extends Reducer<Text,IntWritable,Text,IntWritable> {
+	    private IntWritable result = new IntWritable();
+	
+	    public void reduce(Text key, Iterable<IntWritable> values, 
+	                       Context context
+	                       ) throws IOException, InterruptedException {
+	      int sum = 0;
+	      for (IntWritable val : values) {
+	        sum += val.get();
+	      }
+	      result.set(sum);
+	      context.write(key, result);
+	    }
+	  }
+	
+	  public static void main(String[] args) throws Exception {
+	    Configuration conf = new Configuration();
+	    String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
+	    if (otherArgs.length != 2) {
+	      System.err.println("Usage: wordcount <in> <out>");
+	      System.exit(2);
+	    }
+	    Job job = new Job(conf, "word count");
+	    job.setJarByClass(WordCount.class);
+	    job.setMapperClass(TokenizerMapper.class);
+	    job.setCombinerClass(IntSumReducer.class);
+	    job.setReducerClass(IntSumReducer.class);
+	    job.setOutputKeyClass(Text.class);
+	    job.setOutputValueClass(IntWritable.class);
+	    FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
+	    FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
+	    System.exit(job.waitForCompletion(true) ? 0 : 1);
+	  }
+	}
+ 
+有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)。
 
-6.  运行以下命令来检查 MapReduce 作业的完成：
+##<a id="run"></a>运行 MapReduce
 
-        Wait-AzureHDInsightJob -Job $wordCountJob -WaitTimeoutInSeconds 3600 
+HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后按链接进行演练。
 
-7.  运行以下命令来检查运行 MapReduce 作业时的错误：
+| **使用此方法**... | **...实现此目的** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
+|:-------------------------------------------------------------------|:--------------------------------------------------------|:------------------------------------------|:-----------------------------------------|
+| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl) | 使用 **REST** 远程提交作业 | Windows | Windows |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell) | 使用 **Windows PowerShell** 远程提交作业 | Windows | Windows |
+| [远程桌面](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop) | 通过**远程桌面**使用 Hadoop 命令 | Windows | Windows |
 
-        # 获取作业输出
-        Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $wordCountJob.JobId -StandardError 
+##<a id="nextsteps"></a>后续步骤
 
-**检索 MapReduce 作业的结果**
+虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。有多个基于 Java 的框架可让你更轻松地定义 MapReduce 应用程序，还有一些技术（例如 Pig 和 Hive）可让你更方便地在 HDInsight 中处理数据。若要了解更多信息，请参阅下列文章：
 
-1.  打开 **Azure PowerShell**。
-2.  运行以下命令将目录更改到 c:&#92; 根目录：
+* [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
 
-        cd \
+* [开发适用于 HDInsight 的 Python 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-streaming-python)
 
-    默认 Azure Powershell 目录是 *C:&#92;Windows&#92;System32&#92;WindowsPowerShell&#92;v1.0*。默认情况下，你对此文件夹没有写入权限。你必须将目录更改到 C:&#92; 根目录或你有写权限的文件夹。
+* [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序][/documentation/articles/hdinsight-develop-streaming]
 
-3.  在以下命令中设置三个变量，然后运行它们：
+* [使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业](/documentation/articles/hdinsight-hadoop-mapreduce-scalding)
 
-        $subscriptionName = "<SubscriptionName>"   # Azure 订阅名称
+* [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 
-        $storageAccountName = "<StorageAccountName>"   # Azure 存储帐户名
-        $containerName = "<ContainerName>"             # Blob 存储容器名
+* [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 
-        Azure 存储帐户是你在本教程前面部分创建的帐户。存储帐户用于承载作为默认 HDInsight 群集文件系统的 Blob 容器。Blob 存储容器名称通常与 HDInsight 群集共享相同的名称，除非在你设置群集时指定其他名称。
+* [运行 HDInsight 示例][hdinsight-samples]
 
-4.  运行以下命令以创建 Azure 存储上下文对象：
 
-        # 选择当前订阅
-        Select-AzureSubscription $subscriptionName
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 
-        # 创建存储帐户上下文对象
-        $storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-        $storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-    *Select-AzureSubscription* 用于在你有多个订阅但默认订阅不是要使用的订阅时设置当前订阅。
+[image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
-5.  运行以下命令，将 MapReduce 作业输出从 Blob 容器下载到工作站：
-
-        # 将作业输出下载到工作站
-        Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force
-
-    */example/data/WordCountOutput* 文件夹是你在运行 MapReduce 作业时指定的输出文件夹。*part-r-00000* 是 MapReduce 作业输出的默认文件名。此文件将下载到本地文件夹上的相同文件夹结构。例如，在以下屏幕快照中，当前文件是 C 根文件夹。此文件将下载到 \*C:&#92;example&#92;data&#92;WordCountOutput\* 文件夹。
-
-6.  运行以下命令来打印 MapReduce 作业输出文件：
-
-        cat ./example/data/WordCountOutput/part-r-00000 | findstr "there"
-
-    MapReduce 作业将生成一个名为 part-r-00000** 的文件，其中包含单词和计数。此脚本使用 findstr 命令来列出包含“there”**的所有单词。
-
-请注意，MapReduce 作业的输出文件是不可变的。所以，如果你重新运行此示例，将需要更改输出文件的名称。
-
-##<a id="java-code"></a>字数统计 MapReduce 程序的 Java 代码
-
-下面是字数统计 Java MapReduce 程序的源代码：
-
-    package org.apache.hadoop.examples;
-
-    import java.io.IOException;
-    import java.util.StringTokenizer;
-
-    import org.apache.hadoop.conf.Configuration;
-    import org.apache.hadoop.fs.Path;
-    import org.apache.hadoop.io.IntWritable;
-    import org.apache.hadoop.io.Text;
-    import org.apache.hadoop.mapreduce.Job;
-    import org.apache.hadoop.mapreduce.Mapper;
-    import org.apache.hadoop.mapreduce.Reducer;
-    import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-    import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-    import org.apache.hadoop.util.GenericOptionsParser;
-
-    public class WordCount {
-
-    public static class TokenizerMapper 
-    extends Mapper<Object, Text, Text, IntWritable>{
-        
-    private final static IntWritable one = new IntWritable(1);
-    private Text word = new Text();
-          
-    public void map(Object key, Text value, Context context
-    ) throws IOException, InterruptedException {
-    StringTokenizer itr = new StringTokenizer(value.toString());
-    while (itr.hasMoreTokens()) {
-    word.set(itr.nextToken());
-    context.write(word, one);
-          }
-        }
-      }
-      
-    public static class IntSumReducer 
-    extends Reducer<Text,IntWritable,Text,IntWritable> {
-    private IntWritable result = new IntWritable();
-
-    public void reduce(Text key, Iterable<IntWritable> values, 
-    Context context
-    ) throws IOException, InterruptedException {
-    int sum = 0;
-    for (IntWritable val :values) {
-    sum += val.get();
-          }
-    result.set(sum);
-    context.write(key, result);
-        }
-      }
-
-    public static void main(String[] args) throws Exception {
-    Configuration conf = new Configuration();
-    String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-    if (otherArgs.length != 2) {
-    System.err.println("Usage:wordcount <in> <out>");
-    System.exit(2);
-        }
-    Job job = new Job(conf, "word count");
-    job.setJarByClass(WordCount.class);
-    job.setMapperClass(TokenizerMapper.class);
-    job.setCombinerClass(IntSumReducer.class);
-    job.setReducerClass(IntSumReducer.class);
-    job.setOutputKeyClass(Text.class);
-    job.setOutputValueClass(IntWritable.class);
-    FileInputFormat.addInputPath(job, new Path(otherArgs[0]));
-    FileOutputFormat.setOutputPath(job, new Path(otherArgs[1]));
-    System.exit(job.waitForCompletion(true) ? 0 : 1);
-      }
-    }
-
-##<a id="next-steps"></a>后续步骤
-
-虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。利用其他语言（如 Pig 和 Hive），可以更轻松地处理存储在 HDInsight 中的数据。若要了解更多信息，请参阅下列文章：
-
--   [Azure HDInsight 入门][hdinsight-getting-started]
--   [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-MapReduce]
--   [为 HDInsight 开发 C# Hadoop 流 MapReduce 程序][hdinsight-develop-streaming]
--   [Hive 与 HDInsight 配合使用][hdinsight-hive]
--   [Pig 与 HDInsight 配合使用][hdinsight-pig]
--   [运行 HDInsight 示例][hdinsight-samples]
-
-[hdinsight-upload-data]: /zh-cn/documentation/articles/hdinsight-upload-data/
-
-[hdinsight-getting-started]: /zh-cn/documentation/articles/hdinsight-get-started/
-[hdinsight-develop-mapreduce]: /zh-cn/documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-develop-streaming]: /zh-cn/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
-[hdinsight-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
-[hdinsight-samples]: /zh-cn/documentation/articles/hdinsight-run-samples/
-
-[powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
-
-[image-hdi-wordcountdiagram]: ./media/hdinsight-get-started/HDI.WordCountDiagram.gif
+<!---HONumber=71-->

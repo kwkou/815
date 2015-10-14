@@ -1,7 +1,16 @@
-<properties pageTitle="使用 Maven 开发 Scalding MapReduce 作业 - Azure 教程" description="了解如何使用 Maven 创建 Scalding MapReduce 作业,然后在 Hadoop on HDInsight 群集上部署并运行该作业." services="hdinsight" documentationCenter="" authors="Blackmist" manager="paulettm" editor="cgronlun"/>
-
-<tags ms.service="hdinsight" ms.date="04/17/2015" wacn.date="05/15/2015"/>
-
+<properties
+ pageTitle="使用 Maven 开发 Scalding MapReduce 作业 | Azure"
+ description="了解如何使用 Maven 创建 Scalding MapReduce 作业，然后在 Hadoop on HDInsight 群集上部署并运行该作业。"
+ services="hdinsight"
+ documentationCenter=""
+ authors="Blackmist"
+ manager="paulettm"
+ editor="cgronlun"
+	tags="azure-portal"/>
+<tags
+ ms.service="hdinsight"
+ ms.date="07/06/2015"
+ wacn.date="10/03/2015"/>
 
 # 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
 
@@ -13,9 +22,9 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 * Azure 订阅
 
-* 基于 Windows 或 Linux 的 Hadoop on HDInsight 群集 - 有关详细信息，请参阅[设置基于 Linux 的 Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters) 或[设置基于 Windows 的 Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters)。
+* 基于 Windows 的 Hadoop on HDInsight 群集 - 有关详细信息，请参阅[预配基于 Windows 的 Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters)。
 
-* [Maven](http://maven.apache.org)
+* [Maven](http://maven.apache.org/)
 
 * [Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本
 
@@ -25,10 +34,9 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
         mvn archetype:generate -DgroupId=com.microsoft.example -DartifactId=scaldingwordcount -DarchetypeGroupId=org.scala-tools.archetypes -DarchetypeArtifactId=scala-archetype-simple -DinteractiveMode=false
 
-   此命令将创建一个名为 **scaldingwordcount** 的新目录，并创建 Scala 应用程序的基架。
+    此命令将创建一个名为 **scaldingwordcount** 的新目录，并创建 Scala 应用程序的基架。
 
 2. 在 **scaldingwordcount** 目录中，打开 **pom.xml** 文件并将其内容替换为以下内容：
-
 
         <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
           <modelVersion>4.0.0</modelVersion>
@@ -122,22 +130,21 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
           </build>
         </project>
 
+    此文件描述了项目、依赖关系和插件。以下是重要条目：
 
-   此文件描述了项目、依赖关系和插件。以下是重要条目：
+    * **maven.compiler.source** 和 **maven.compiler.target**：设置此项目的 Java 版本
 
-   * **maven.compiler.source** 和 **maven.compiler.target**：设置此项目的 Java 版本
+    * **repositories**：包含此项目使用的依赖文件的存储库
 
-   * **repositories**：包含此项目使用的依赖文件的存储库
+    * **scalding-core_2.11** 和 **hadoop-core**：此项目依赖于 Scalding 和 Hadoop 核心程序包
 
-   * **scalding-core_2.11** 和 **hadoop-core**：此项目依赖于 Scalding 和 Hadoop 核心程序包
+    * **maven-scala-plugin**：用于编译 scala 应用程序的插件
 
-   * **maven-scala-plugin**：用于编译 scala 应用程序的插件
+    * **maven-shade-plugin**：用于创建阴影 (fat) jar 的插件。此插件将应用筛选器和转换，具体包括：
 
-   * **maven-shade-plugin**：用于创建阴影 (fat) jar 的插件。此插件将应用筛选器和转换，具体包括：
+        * **筛选器**：应用的筛选器将修改 jar 文件中包含的元信息。为了防止运行时发生签名异常，它会排除依赖项中可能包含的各种签名文件。
 
-        * **filters**：应用的筛选器将修改 jar 文件中包含的元信息。为了防止运行时发生签名异常，它会排除依赖项中可能包含的各种签名文件。
-
-        * **executions**：程序包阶段执行配置将 **com.twitter.scalding.Tool** 类指定为程序包的主类。如果没有此项配置，则你在使用 hadoop 命令运行作业时，需要指定 com.twitter.scalding.Tool 以及包含应用程序逻辑的类。
+        * **执行**：程序包阶段执行配置将 **com.twitter.scalding.Tool** 类指定为程序包的主类。如果没有此项配置，则你在使用 hadoop 命令运行作业时，需要指定 com.twitter.scalding.Tool 以及包含应用程序逻辑的类。
 
 3. 删除 **src/test** 目录，因为你不需要使用此示例创建测试。
 
@@ -159,11 +166,11 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
           //Tokenizer to split sentance into words
           def tokenize(text : String) : Array[String] = {
-            text.toLowerCase.replaceAll("[^a-zA-Z0-9&#92;s]", "").split("&#92;s+")
+            text.toLowerCase.replaceAll("[^a-zA-Z0-9\\s]", "").split("\\s+")
           }
         }
 
-   这将会实现基本的单词计数作业。
+    这将会实现基本的单词计数作业。
 
 5. 保存并关闭文件。
 
@@ -171,55 +178,11 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
         mvn package
 
-   完成此作业后，可以在 **target/scaldingwordcount-1.0-SNAPSHOT.jar** 中找到包含 WordCount 应用程序的程序包。
-
-## 在基于 Linux 的群集上运行作业
-
-> [AZURE.NOTE] 以下步骤使用 SSH 和 Hadoop 命令。有关运行 MapReduce 作业的其他方法，请参阅[在 Hadoop on HDInsight 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce)。
-
-1. 使用以下命令将该程序包上载到你的 HDInsight 群集：
-
-        scp target/scaldingwordcount-1.0-SNAPSHOT.jar username@clustername-ssh.azurehdinsight.cn:
-
-   这样就会将两个文件从本地系统复制到头节点。
-
-    > [AZURE.NOTE] 如果你使用了密码来保护 SSH 帐户，系统会提示你输入密码。如果你使用了 SSH 密钥，你可能必须使用"-i"参数和私钥的路径。例如，scp -i /path/to/private/key target/scaldingwordcount-1.0-SNAPSHOT.jar username@clustername-ssh.azurehdinsight.cn:。
-
-2. 输入以下命令连接到群集头节点：
-
-        ssh username@clustername-ssh.azurehdinsight.cn
-
-    > [AZURE.NOTE] 如果你使用了密码来保护 SSH 帐户，系统会提示你输入密码。如果你使用了 SSH 密钥，你可能必须使用"-i"参数和私钥的路径。例如， `ssh -i /path/to/private/key username@clustername-ssh.azurehdinsight.cn`
-
-3. 连接到头节点后，使用以下命令运行该单词计数作业
-
-        hadoop jar scaldingwordcount-1.0-SNAPSHOT.jar com.microsoft.example.WordCount --hdfs --input wasb:///example/data/gutenberg/davinci.txt --output wasb:///example/wordcountout
-
-   这将会运行前面实现的 WordCount 类。"--hdfs"指示作业使用 HDFS。"--input"指定输入文本文件，而"--output"指定输出位置。
-
-4. 完成作业后，使用以下命令查看输出。
-
-        hadoop fs -text wasb:///example/wordcountout/part-00000
-
-   这将会显示如下信息：
-
-        writers 9
-        writes  18
-        writhed 1
-        writing 51
-        writings        24
-        written 208
-        writtenthese    1
-        wrong   11
-        wrongly 2
-        wrongplace      1
-        wrote   34
-        wrotefootnote   1
-        wrought 7
+    完成此作业后，可以在 **target/scaldingwordcount-1.0-SNAPSHOT.jar** 中找到包含 WordCount 应用程序的程序包。
 
 ## 在基于 Windows 的群集上运行作业
 
-> [AZURE.NOTE] 以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 Hadoop on HDInsight 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce)。
+> [AZURE.NOTE]以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 Hadoop on HDInsight 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce)。
 
 1. [安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
@@ -229,7 +192,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
         import-module hdinsight-tools.psm1
 
-   这将会导入多个函数用于处理 HDInsight 中的文件。
+    这将会导入多个函数用于处理 HDInsight 中的文件。
 
 4. 使用以下命令上载包含 WordCount 作业的 jar 文件。将 `CLUSTERNAME` 替换为 HDInsight 群集的名称。
 
@@ -250,7 +213,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
         cat output.txt
 
-   该文件应包含如下所示的值：
+    该文件应包含如下所示的值：
 
         writers 9
         writes  18
@@ -280,4 +243,4 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!--HONumber=53-->
+<!---HONumber=71-->
