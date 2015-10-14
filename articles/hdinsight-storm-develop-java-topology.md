@@ -1,51 +1,51 @@
 <properties
-   pageTitle="为 Apache Storm on HDInsight 开发基于 Java 的拓扑 | Azure"
-   description="了解如何通过创建一个简单的字数统计拓扑，来以 Java 语言创建一个 Storm 拓扑。"
+   pageTitle="为 Apache Storm 开发基于 Java 的拓扑 | Azure"
+   description="了解如何通过创建一个简单的单词计数拓扑，来以 Java 语言创建一个 Storm 拓扑。"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
-<tags ms.service="hdinsight"
-    ms.date="02/18/2015"
-    wacn.date="04/15/2015"
-    />
+   editor="cgronlun"
+	tags="azure-portal"/>
 
+<tags
+   ms.service="hdinsight"
+   ms.date="07/08/2015"
+   wacn.date="10/03/2015"/>
 
+#使用 Apache Storm 和 HDInsight 上的 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑
 
-# 为 Apache Storm on HDInsight 开发基于 Java 的拓扑
-
-了解使用 Maven 为 Apache Storm on HDInsight 创建基于 Java 的拓扑的基本过程。将会演练使用 Maven 和 Java 创建基本字数统计应用程序的过程。虽然本文提供了有关使用 Eclipse 的说明，但你也可以使用所选的文本编辑器。
+了解使用 Maven 为 Apache Storm on HDInsight 创建基于 Java 的拓扑的基本过程。将会演练使用 Maven 和 Java 创建基本单词计数应用程序的过程。虽然本文提供了有关使用 Eclipse 的说明，但你也可以使用所选的文本编辑器。
 
 完成本文档中的步骤之后，你将会获得一个用于部署到 Apache Storm on HDInsight 的基本拓扑。
 
-## 先决条件
+##先决条件
 
 * <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank">Java 开发人员工具包 (JDK) 版本 7</a>
 
-* <a href="https://maven.apache.org/download.cgi" target="_blank">Maven</a> - 是 Java 项目的项目生成系统
+* <a href="https://maven.apache.org/download.cgi" target="_blank">Maven</a>：Maven 是 Java 项目的项目生成系统。
 
-* 文本编辑器，例如 <a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs</a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a> 或记事本。或者集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
+* 文本编辑器，例如记事本、<a href="http://www.gnu.org/software/emacs/" target="_blank">Emacs<a>、<a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>、<a href="https://atom.io/" target="_blank">Atom.io</a>、<a href="http://brackets.io/" target="_blank">Brackets.io</a>。或者使用集成开发环境 (IDE)，例如 <a href="https://eclipse.org/" target="_blank">Eclipse</a>（Luna 或更高版本）。
 
-	> [AZURE.NOTE] 你的编辑器或 IDE 可能具有处理 Eclipse 的特定功能，但本文档中未提供说明。有关环境编辑功能的详细信息，请参阅所使用产品的文档。
+	> [AZURE.NOTE]你的编辑器或 IDE 可能具有处理 Maven 的特定功能，但本文档中未提供说明。有关环境编辑功能的详细信息，请参阅所使用产品的文档。
 
-## 配置环境变量
+##配置环境变量
 
-安装 Java 和 JDK 时会设置以下环境变量；不过，你应该检查它们是否存在并且包含系统的正确值
+可以在安装 Java 和 JDK 时设置以下环境变量。不过，你应该检查它们是否存在并且包含系统的正确值。
 
-* **JAVA_HOME** - 应该指向已安装 Java 运行时环境 (JRE) 的目录。例如，在 Unix 或 Linux 分发版上，它的值应该类似于 `/usr/lib/jvm/java-7-oracle`。在 Windows 上，它的值类似于 `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - 应该指向已安装 Java 运行时环境 (JRE) 的目录。例如，在 Windows 中，它的值类似于 `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - 应该包含以下路径：
 
-	* **JAVA_HOME** 或等效的路径
+	* **JAVA_HOME**（或等效的路径）
 
-	* **JAVA_HOME\bin** 或等效的路径
+	* **JAVA_HOME\\bin**（或等效的路径）
 
 	* 安装 Maven 的目录
 
-## 创建新的 Maven 项目
+##创建新的 Maven 项目
 
-从命令行中，使用以下命令创建名为 **WordCount** 的新 Maven 项目。
+从命令行中，使用以下代码创建名为 **WordCount** 的新 Maven 项目：
 
 	mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.microsoft.example -DartifactId=WordCount -DinteractiveMode=false
 
@@ -53,23 +53,23 @@
 
 **WordCount** 目录将包含以下项：
 
-* **pom.xml** - 包含 Maven 项目的设置
+* **pom.xml**：包含 Maven 项目的设置。
 
-* **src\main\java\com\microsoft\example** - 包含应用程序代码
+* **src\\main\\java\\com\\microsoft\\example**：包含应用程序代码。
 
-* **src\test\java\com\microsoft\example** - 包含应用程序的测试。对于本示例，我们将不创建测试
+* **src\\test\\java\\com\\microsoft\\example**：包含应用程序的测试。对于本示例，我们将不创建测试。
 
-### 删除示例代码
+###删除示例代码
 
-由于我们要从头开始创建应用程序，因此请删除生成的测试和应用程序文件：
+由于我们要创建应用程序，因此请删除生成的测试和应用程序文件：
 
-*  **src\test\java\com\microsoft\example\AppTest.java**
+*  **src\\test\\java\\com\\microsoft\\example\\AppTest.java**
 
-*  **src\main\java\com\microsoft\example\App.java**
+*  **src\\main\\java\\com\\microsoft\\example\\App.java**
 
-## 添加依赖项
+##添加依赖项
 
-由于这是一个 Storm 拓扑，因此你必须添加 Storm 组件的依赖项。打开 **pom.xml**，并在 **&lt;dependencies>** 节中添加以下代码。
+由于这是一个 Storm 拓扑，因此你必须添加 Storm 组件的依赖项。打开 **pom.xml**，并在 **&lt;dependencies>** 节中添加以下代码：
 
 	<dependency>
 	  <groupId>org.apache.storm</groupId>
@@ -81,11 +81,11 @@
 
 在编译时，Maven 会使用此信息来查找 Maven 存储库中的 **storm-core**。它会先查找本地计算机上的存储库。如果文件不存在，它会从公共 Maven 存储库下载这些文件，并将其存储在本地存储库中。
 
-> [AZURE.NOTE] 请记下我们在该节中添加的 `<scope>provided</scope>` 行。这会告诉 Maven 从我们创建的任何 Jar 文件中排除 storm-core，因为系统将会予以提供。这样，便可以稍微减小所创建的包，并确保它们使用 Storm on HDInsight 群集上包含的 storm-core 位。
+> [AZURE.NOTE]请注意我们在该节中添加的 `<scope>provided</scope>` 行。这会告诉 Maven 从我们创建的任何 JAR 文件中排除 **storm-core**，因为系统将会予以提供。这样，便可以稍微减小所创建的包，并确保它们使用 Storm on HDInsight 群集中包含的 **storm-core** 位。
 
-## 生成配置
+##生成配置
 
-Maven 插件可让你自定义项目的生成阶段，例如，如何编译项目，或者如何将它打包成 jar 文件。打开 **pom.xml**，并紧靠在 `</project>` 行的上方添加以下内容。
+Maven 插件可让你自定义项目的生成阶段，例如，如何编译项目，或者如何将它打包成 JAR 文件。打开 **pom.xml**，并紧靠在 `</project>` 行的上方添加以下代码。
 
 	<build>
 	  <plugins>
@@ -94,9 +94,9 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 此节将用来添加插件和其他生成配置选项。
 
-### 添加插件
+###添加插件
 
-针对 Storm 拓扑，<a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec 插件</a>十分有用，因为它可让你轻松地在开发环境本地运行拓扑。将以下内容添加至 **pom.xml** 的 `<plugins>` 节，以包括 Exec 插件。
+针对 Storm 拓扑，<a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec Maven 插件</a>十分有用，因为它可让你轻松地在开发环境本地运行拓扑。将以下内容添加至 **pom.xml** 文件的 `<plugins>` 节，以包括 Exec Maven 插件：
 
 	<plugin>
       <groupId>org.codehaus.mojo</groupId>
@@ -117,9 +117,9 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
       </configuration>
     </plugin>
 
-另一个有用的插件是用于更改编译选项的 <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" target="_blank">Compiler 插件</a>。我们需要此插件的主要原因是要更改 Maven 用作应用程序源和目标的 Java 版本（需要的是 1.7）。
+另一个有用的插件是用于更改编译选项的 <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" target="_blank">Apache Maven Compiler 插件</a>。我们需要此插件的主要原因是要更改 Maven 用作应用程序源和目标的 Java 版本。我们需要的是版本 1.7。
 
-在 **pom.xml** 的 `<plugins>` 节中添加以下内容，以包括 Compiler 插件并将源和目标版本设置为 1.7。
+在 **pom.xml** 的 `<plugins>` 节中添加以下内容，以包括 Apache Maven Compiler 插件并将源和目标版本设置为 1.7。
 
 	<plugin>
       <groupId>org.apache.maven.plugins</groupId>
@@ -130,27 +130,27 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
       </configuration>
     </plugin>
 
-## 创建拓扑
+##创建拓扑
 
-基于 Java 的 Storm 拓扑包含你必须编写或引用为依赖项的三个组件。
+基于 Java 的 Storm 拓扑包含你必须编写（或引用）为依赖项的三个组件。
 
-* **Spouts** - 读取外部源中的数据，并发出进入拓扑的数据流
+* **Spout**：读取外部源中的数据，并发出进入拓扑的数据流。
 
-* **Bolt** - 对 Spout 或其他 Bolt 所发出的数据流执行处理，并发出一个或多个数据流
+* **Bolt**：对 Spout 或其他 Bolt 所发出的数据流执行处理，并发出一个或多个数据流。
 
-* **拓扑** - 定义如何排列 Spout 和 Bolt，并提供拓扑的入口点。
+* **拓扑**：定义如何排列 Spout 和 Bolt，并提供拓扑的入口点。
 
-### 创建 Spout
+###创建 Spout
 
-为了降低设置外部数据源的要求，以下 Spout 只会发出随机句子。它是 Storm-Starter 示例随附的 Spout 的修改版本 (<a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">https://github.com/apache/storm/blob/master/examples/storm-starter/</a>)。
+为了降低设置外部数据源的要求，以下 Spout 只会发出随机句子。它是 <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">Storm-Starter 示例</a>随附的 Spout 的修改版本。
 
-> [AZURE.NOTE] 有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一。
+> [AZURE.NOTE]有关从外部数据源读取的 Spout 的示例，请参阅以下示例之一：
 >
-<!--* <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a> - an example spout that reads from Twitter-->
+> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>：从Twitter 读取数据的示例 Spout
 >
-> * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm Kafka</a> - 从 Kafka 读取的 Spout
+> * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>：从 Kafka 读取数据的 Spout
 
-对于 Spout，在 **src\main\java\com\microsoft\example** 目录中创建名为 **RandomSentenceSpout.java** 的新文件，并使用以下内容做为内容。
+对于 Spout，在 **src\\main\\java\\com\\microsoft\\example** 目录中创建名为 **RandomSentenceSpout.java** 的新文件，并使用以下内容做为内容：
 
     /**
      * Licensed to the Apache Software Foundation (ASF) under one
@@ -236,19 +236,19 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 请花费片刻时间通读代码注释，以了解此 Spout 的工作原理。
 
-> [AZURE.NOTE] 虽然此拓扑只使用一个 Spout，但其他拓扑可能存在将数据从不同源送入拓扑的多个 Spout。
+> [AZURE.NOTE]虽然此拓扑只使用一个 Spout，但其他拓扑可能存在将数据从不同源送入拓扑的多个 Spout。
 
-### 创建 Bolt
+###创建 Bolt
 
 Bolt 用于处理数据。此拓扑有两个 Bolt：
 
-* **SplitSentence** - 将 RandomSentenceSpout 发出的句子分割成不同的单词
+* **SplitSentence**：将 **RandomSentenceSpout** 发出的句子分割成不同的单词。
 
-* **WordCount** - 统计每个单词的出现次数
+* **WordCount**：统计每个单词的出现次数。
 
-> [AZURE.NOTE] Bolt 几乎可以执行任何操作：计算、保存、与外部组件通信，等等。
+> [AZURE.NOTE]Bolt 几乎可以执行任何操作，例如，计算、保存，或者与外部组件通信。
 
-在 **src\main\java\com\microsoft\example** 目录中创建两个新文件：**SplitSentence.java** 和 **WordCount.Java**。将以下内容用作这些文件的内容。
+在 **src\\main\\java\\com\\microsoft\\example** 目录中创建两个新文件：**SplitSentence.java** 和 **WordCount.Java**。将以下内容用作这些文件的内容：
 
 **SplitSentence**
 
@@ -282,7 +282,7 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
           //get the word
           String word=sentence.substring(start,end);
           //If a word is whitespace characters, replace it with empty
-          word=word.replaceAll("&#92;s+","");
+          word=word.replaceAll("\\s+","");
           //if it's an actual word, emit it
           if (!word.equals("")) {
             collector.emit(new Values(word));
@@ -341,15 +341,15 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 请花费片刻时间通读代码注释，以了解每个 Bolt 的工作原理。
 
-### 创建拓扑
+###创建拓扑
 
 拓扑将 Spout 和 Bolt 一起绑定到图形，该图形定义了组件之间的数据流动方式。它还提供 Storm 在群集内创建组件的实例时使用的并行度提示。
 
-以下是此拓扑的组件的基本原理图
+以下是此拓扑的组件的基本原理图。
 
-![diagram showing the spouts and bolts arrangement](./media/hdinsight-storm-develop-java-topology/wordcount-topology.png)
+![显示 Spout 和 Bolt 排列方式的示意图](./media/hdinsight-storm-develop-java-topology/wordcount-topology.png)
 
-若要实现该拓扑，请在 **src\main\java\com\microsoft\example** 目录中创建名为 **WordCountTopology.java** 的新文件。将以下内容用作该文件的内容。
+若要实现该拓扑，请在 **src\\main\\java\\com\\microsoft\\example** 目录中创建名为 **WordCountTopology.java** 的新文件。将以下内容用作该文件的内容：
 
 	package com.microsoft.example;
 
@@ -411,13 +411,13 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 请花片刻时间通读代码注释以了解拓扑的定义方式，然后将拓扑提交到群集。
 
-## 在本地测试拓扑
+##在本地测试拓扑
 
 保存文件之后，请使用以下命令在本地测试拓扑。
 
 	mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
-运行该命令时，拓扑会显示启动信息，然后开始显示与下面类似的行，因为句子是从 Spout 发出，然后由 Bolt 处理的。
+运行该命令时，拓扑会显示启动信息。然后开始显示与下面类似的行，因为句子是从 Spout 发出，然后由 Bolt 处理的。
 
     15398 [Thread-16-split] INFO  backtype.storm.daemon.executor - Processing received message source: spout:10, stream: default, id: {}, [an apple a day keeps thedoctor away]]
     15398 [Thread-16-split] INFO  backtype.storm.daemon.task - Emitting: split default [an]
@@ -435,32 +435,32 @@ Bolt 用于处理数据。此拓扑有两个 Bolt：
 
 从此输出中可以看到发生了以下情况：
 
-1. Spout 发出"an apple a day keeps the doctor away"
+1. Spout 发出“an apple a day keeps the doctor away”。
 
-2. Split Bolt 开始发出句子中的各个单词
+2. Split Bolt 开始发出句子中的各个单词。
 
-3. Count Bolt 开始发出每个单词及其发出次数
+3. Count Bolt 开始发出每个单词及其发出次数。
 
-查看 Count Bolt 所发出的数据，"apple"已发出 53 次。只要拓扑运行，计数就会持续增加，因为系统会随机反复发出相同的句子，并且永不会重置计数。
+查看 Count Bolt 所发出的数据，“apple”已发出 53 次。只要拓扑运行，计数就会持续增加，因为系统会随机反复发出相同的句子，并且永不会重置计数。
 
-## Trident
+##Trident
 
-Trident 是 Storm 提供的、支持有状态处理的高级抽象。Trident 的主要优点在于，它可以保证进入拓扑的每个消息只会处理一次 - 这在保证消息至少处理一次的原始 Java 拓扑中很难实现。两者还有其他方面的差异，例如，可以使用内置组件，而无需创建 Bolt。事实上，可以使用低泛型组件（例如筛选、投影和函数）来完全取代 Bolt。
+Trident 是 Storm 提供的高级抽象。它支持有状态处理。Trident 的主要优点在于，它可以保证进入拓扑的每个消息只会处理一次。这在保证消息至少处理一次的原始 Java 拓扑中很难实现。两者还有其他方面的差异，例如，可以使用内置组件，而无需创建 Bolt。事实上，可以使用低泛型组件（例如筛选、投影和函数）来完全取代 Bolt。
 
-你可以使用上面的相同基本步骤（只有代码不同），并使用 Maven 项目来创建 Trident 应用程序。
+你可以使用 Maven 项目来创建 Trident 应用程序。使用本文前面所述的相同基本步骤 - 只有代码不同。
 
 有关 Trident 的详细信息，请参阅 <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API 概述</a>。
 
-<!--For an example of a Trident application, see [Twitter trending topics with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending)-->
+<!--For an example of a Trident application, see [Twitter trending topics with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending/)-->
 
-## 后续步骤
+##后续步骤
 
-你已了解如何使用 Java 创建 Storm 拓扑，接下来请学习如何：
+你已学习如何使用 Java 创建 Storm 拓扑。接下来，请学习如何：
 
-* [在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
+* [在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
-* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
-<!--* [Analyzing Twitter trending topics with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending)-->
+如需更多 Storm 拓扑示例，请访问 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
 
-<!--HONumber=50-->
+<!---HONumber=71-->

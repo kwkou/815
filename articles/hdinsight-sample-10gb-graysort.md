@@ -1,101 +1,99 @@
-<properties urlDisplayName="Hadoop Samples in HDInsight" pageTitle="10GB GraySort 示例 | Azure " metaKeywords="hdinsight, hadoop, hdinsight 管理, hdinsight 管理 azure" description="Learn how to run a general purpose GraySort on Hadoop with HDInsight using Azure PowerShell." disqusComments="1" editor="cgronlun"  manager="paulettm" services="hdinsight"  documentationCenter="" title="The 10GB GraySort sample" authors="bradsev" />
+<properties
+	pageTitle="10GB GraySort Hadoop MapReduce 示例 | Azure"
+	description="了解如何使用 Azure PowerShell 对 HDInsight Hadoop 中的巨量数据（通常至少为 100 TB）运行常规用途的 GraySort。"
+	editor="cgronlun"
+	manager="paulettm"
+	tags="azure-portal"
+	services="hdinsight"
+	documentationCenter=""
+	authors="mumian"/>
 
-<tags 
-wacn.date="04/11/2015"
-ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/10/2014" ms.author="bradsev" />
+<tags
+	ms.service="hdinsight"
+	ms.date="07/09/2015"
+	wacn.date="10/03/2015"/>
 
-# HDInsight 中的 10GB GraySort Hadoop 示例
+# HDInsight 中的 10GB GraySort Hadoop MapReduce 示例
+
+本示例主题介绍如何使用 Azure PowerShell 在 Azure HDInsight 上运行常规用途的 GraySort Hadoop MapReduce 程序。GraySort 是一个基准排序，其指标为在给巨量数据（通常至少 100TB）排序时达到的排序速率（TB/分钟）。
+
+此示例使用适中的 10GB 数据，这样它运行时能相对快一点。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578TB/分钟（100TB 用时 173 分钟）的速率赢得了 2009 年年度常用（“daytona”）TB 级排序基准。有关这一排序基准和其他排序基准的详细信息，请参阅 [Sortbenchmark](http://sortbenchmark.org/) 网站。
+
+本示例使用三组 MapReduce 程序：
  
-此示例主题介绍如何使用 Azure PowerShell 在 Azure HDInsight 上运行常规用途的 GraySort Hadoop MapReduce 程序。GraySort 是一个基准排序，其指标为在给非常大量的数据（通常至少 100 TB）排序时达到的排序速率（TB/分钟）。 
+1. **TeraGen** 是一个 MapReduce 程序，你可用来生成要排序的数据行。
+2. **TeraSort** 以输入数据为例，使用 MapReduce 将数据排序到总数订单中。TeraSort 是 MapReduce 函数的一种标准排序，但自定义的分区程序除外，此分区程序使用 N-1 个抽样键（用于定义每次简化的键范围）的已排序列表。具体说来，sample[i-1] <= key < sample[i] 的所有键都将会发送到化简变量 i。这样可确保化简变量 i 的输出全都小于化简变量 i+1 的输出。
+3. **TeraValidate** 是一个 MapReduce 程序，用于验证数据已全局排序。它在输出目录中对于每个文件创建一个映射，每个映射都确保每个键均小于或等于前一个键。映射函数也会生成每个文件的第一个和最后一个键的记录，而化简函数会确保文件 i 的第一个键大于文件 i-1 的最后一个键。任何问题都会报告为包含故障键的化简的输出结果。
 
-此示例使用适中的 10 GB 数据，以便较快地运行排序。它使用由 Owen O'Malley 和 Arun Murthy 开发的 MapReduce 应用程序，此应用程序以 0.578 TB/分钟（100 TB 用时 173 分钟）的速率赢得了 2009 年年度常用（"daytona"）TB 级排序基准。有关这一排序基准和其他排序基准的更多信息，请参见 [Sortbenchmark](http://sortbenchmark.org) 网站。
-
-此示例使用三组 MapReduce 程序：	
- 
-1. **TeraGen** 是一个 MapReduce 程序，您可用来生成要排序的数据行。
-2. **TeraSort** 以输入数据为例，使用 MapReduce 将数据排序到总数订单中。TeraSort 是 MapReduce 函数的一种标准排序，但自定义的分区程序除外，此分区程序使用 N-1 个抽样键（用于定义每次简化的键范围）的已排序列表。 尤其是，所有 sample[i-1] <= key < sample[i] 这样的键都会发送到化简 i。这样就保证了化简 i 都小于化简 i+1 的输出结果。
-3. **TeraValidate** 是一个 MapReduce 程序，用于验证数据已全局排序。它在输出目录中对于每个文件创建一个映射，每个映射都确保每个键均小于或等于前一个键。映射函数还生成每个文件的第一个键和最后一个键的记录，而化简函数确保文件 i 的第一个键小于文件 i-1 的最后一个键。任何问题均报告为表示键顺序混乱的化简函数输出。
-
-所有这三个应用程序使用的输入和输出格式均以正确的格式读取和写入文本文件。化简函数的输出将复制设置为 1 而不是默认值 3，因为基准竞争不要求将输出数据复制到多个节点。
+所有三个应用程序所使用的输入和输出格式都以正确格式读写文本文件。化简的输出结果的复制设置为 1，而不是默认值 3，因为基准比赛不要求输出结果数据复制到多个节点上。
 
  
-**您将了解：**		
-* 如何使用 Azure PowerShell 在 Azure HDInsight 上运行一系列 MapReduce 程序。		
-* 用 Java 编写的 MapReduce 程序是怎样的。
+**学习内容：*** 如何使用 Azure PowerShell 在 Azure HDInsight 上运行一系列 MapReduce 程序。* 用 Java 编写的 MapReduce 程序是怎样的。
 
 
-**先决条件**：	
+**先决条件：**
 
-- 您必须具有 Azure 帐户。 有关注册帐户的选项，请参阅[试用 Azure](http://www.windowsazure.cn/pricing/1rmb-trial) 页。
+- **一个 Azure 订阅**。请参阅 [azure-trial](/pricing/1rmb-trial/) 页。
 
-- 您必须配置了 HDInsight 群集。有关可用于创建这种群集的各种不同方法的说明，请参阅[设置 HDInsight 群集](/zh-cn/documentation/articles/hdinsight-provision-clusters)。
+- **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。
 
-- 您必须已经安装了 Azure PowerShell，并且已将其配置为可用于您的帐户。 有关如何进行此安装的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
-## 本文内容
-本主题演示如何运行构成示例的一系列 MapReduce 程序、演示 MapReduce 程序的 Java 代码、汇总您学到的内容，并概括接下来的一些步骤。包含以下部分：
 	
-1. [使用 Azure PowerShell 运行示例](#run-sample)	
-2. [TeraSort MapReduce 程序的 Java 代码](#java-code)
-3. [摘要](#summary)	
-4. [后续步骤](#next-steps)	
+##使用 Azure PowerShell 运行示例
 
-<h2><a id="run-sample"></a>使用 Azure PowerShell 运行示例</h2>
-
-此示例要求三个任务，每个任务对应于简介部分介绍的一个 MapReduce 程序：	
+此示例要求三个任务，每个任务对应于简介部分介绍的一个 MapReduce 程序：
 
 1. 通过运行 **TeraGen** MapReduce 作业生成用于排序的数据。	
 2. 通过运行 **TeraSort** MapReduce 作业对数据排序。		
 3. 通过运行 **TeraValidate** MapReduce 作业确认数据已正确排序。	
 
 
-**运行 TeraGen 程序**	
+**运行 TeraGen 程序**
 
 1. 打开 Azure PowerShell。有关打开 Azure PowerShell 控制台窗口的说明，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 2. 在以下命令中设置两个变量，然后运行它们：
 	
-		# 提供 Azure 订阅名称和 HDInsight 群集名称。
+		# Provide the Azure subscription name and the HDInsight cluster name
 		$subscriptionName = "myAzureSubscriptionName"   
 		$clusterName = "myClusterName"
                  
-4. 运行以下命令创建 MapReduce 作业定义"
+4. 运行以下命令创建 MapReduce 作业定义：
 
-		# 为 TeraGen MapReduce 程序创建 MapReduce 作业定义
-		$teragen = New-AzureHDInsightMapReduceJobDefinition -JarFile "/example/jars/hadoop-mapreduce.jar" -ClassName "teragen" -Arguments "-Dmapred.map.tasks=50", "100000000", "/example/data/10GB-sort-input" 
+		# Create a MapReduce job definition for the TeraGen MapReduce program
+		$teragen = New-AzureHDInsightMapReduceJobDefinition -JarFile "/example/jars/hadoop-mapreduce-examples.jar" -ClassName "teragen" -Arguments "-Dmapred.map.tasks=50", "100000000", "/example/data/10GB-sort-input"
 
-	> [WACOM.NOTE] *hadoop-mapreduce.jar* 随版本 2.1 HDInsight 群集提供。 该文件在版本 3.0 HDInsight 群集上已被重命名为 *hadoop-mapreduce.jar*。
+	*"-Dmapred.map.tasks=50"* 参数指定将创建 50 个映射以执行此作业。参数 *100000000* 指定要生成的数据量。最后一个参数 */example/data/10GB-sort-input* 指定要将结果保存到其中的输出目录（包含用于后续排序阶段的输入）。
 	
-	*"-Dmapred.map.tasks=50"* 参数指定将创建 50 个映射以执行此作业。 参数 *100000000* 指定要生成的数据量。 最后一个参数 */example/data/10GB-sort-input* 指定要将结果保存到其中的输出目录（包含用于后续排序阶段的输入）。
-
 5. 运行以下命令以提交作业，等待作业完成，然后打印标准错误：
 
-		# Run the TeraGen MapReduce job.
-		# Wait for the job to complete.
+		# Run the TeraGen MapReduce job
+		# Wait for the job to finish
 		# Print output and standard error file of the MapReduce job
 		Select-AzureSubscription $subscriptionName         
 		$teragen | Start-AzureHDInsightJob -Cluster $clustername | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600 | Get-AzureHDInsightJobOutput -Cluster $clustername -StandardError 
 
 
-**运行 TeraSort 程序**			
+**运行 TeraSort 程序**
 
 1. 打开 Azure PowerShell。
 2. 在以下命令中设置两个变量，然后运行它们：
 	
-		# Provide the Azure subscription name and the HDInsight cluster name.
+		# Provide the Azure subscription name and the HDInsight cluster name
 		$subscriptionName = "myAzureSubscriptionName"   
 		$clusterName = "myClusterName"
 
-3. 运行以下命令以定义 MapReduce 作业： 	 
+3. 运行以下命令来定义 MapReduce 作业：
 
 		# Create a MapReduce job definition for the TeraSort MapReduce program
-		$terasort = New-AzureHDInsightMapReduceJobDefinition -JarFile "/example/jars/hadoop-mapreduce.jar" -ClassName "terasort" -Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-input", "/example/data/10GB-sort-output" 
+		$terasort = New-AzureHDInsightMapReduceJobDefinition -JarFile "/example/jars/hadoop-mapreduce-examples.jar" -ClassName "terasort" -Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-input", "/example/data/10GB-sort-output"
 
-	*"-Dmapred.map.tasks=50"* 参数指定将创建 50 个映射以执行此作业。 参数 *100000000* 指定要生成的数据量。最后两个参数指定输入目录和输出目录。 
+	*"-Dmapred.map.tasks=50"* 参数指定将创建 50 个映射以执行此作业。参数 *100000000* 指定要生成的数据量。最后两个参数指定输入目录和输出目录。
 
 4. 运行以下命令以提交作业，等待作业完成，然后打印标准错误：
 
-		# Run the TeraSort MapReduce job.
-		# Wait for the job to complete.
+		# Run the TeraSort MapReduce job
+		# Wait for the job to finish
 		# Print output and standard error file of the MapReduce job 
 		Select-AzureSubscription $subscriptionName        
 		$terasort | Start-AzureHDInsightJob -Cluster $clustername | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600 | Get-AzureHDInsightJobOutput -Cluster $clustername -StandardError 
@@ -106,30 +104,30 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 1. 打开 Azure PowerShell。
 2. 在以下命令中设置两个变量，然后运行它们：
 	
-		# Provide the Azure subscription name and the HDInsight cluster name.
+		# Provide the Azure subscription name and the HDInsight cluster name
 		$subscriptionName = "myAzureSubscriptionName"   
 		$clusterName = "myClusterName"
                  
-3. 运行以下命令以定义 MapReduce 作业： 
+3. 运行以下命令来定义 MapReduce 作业：
 
 		#	Create a MapReduce job definition for the TeraValidate MapReduce program
-		$teravalidate = New-AzureHDInsightMapReduceJobDefinition -JarFile "/example/jars/hadoop-mapreduce.jar" -ClassName "teravalidate" -Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-output", "/example/data/10GB-sort-validate" 
+		$teravalidate = New-AzureHDInsightMapReduceJobDefinition -JarFile "/example/jars/hadoop-mapreduce-examples.jar" -ClassName "teravalidate" -Arguments "-Dmapred.map.tasks=50", "-Dmapred.reduce.tasks=25", "/example/data/10GB-sort-output", "/example/data/10GB-sort-validate"
 
-	*"-Dmapred.map.tasks=50"* 参数指定将创建 50 个映射以执行此作业。*"-Dmapred.reduce.tasks=25"* 参数指定将创建 25 个简化任务以执行此作业。最后两个参数指定输入目录和输出目录。  
+	*"-Dmapred.map.tasks=50"* 参数指定将创建 50 个映射以执行此作业。*"-Dmapred.reduce.tasks=25"* 参数指定将创建 25 个化简任务来执行该作业。最后两个参数指定输入目录和输出目录。
  
 
 4. 运行以下命令以提交 MapReduce 作业，等待作业完成，然后打印标准错误：
 
-		# Run the TeraSort MapReduce job.
-		# Wait for the job to complete.
+		# Run the TeraSort MapReduce job
+		# Wait for the job to finish
 		# Print output and standard error file of the MapReduce job 
 		Select-AzureSubscription $subscriptionName 
 		$teravalidate | Start-AzureHDInsightJob -Cluster $clustername | Wait-AzureHDInsightJob -WaitTimeoutInSeconds 3600 | Get-AzureHDInsightJobOutput -Cluster $clustername -StandardError 
 
 
-<h2><a id="java-code"></a>TerraSort MapReduce 程序的 Java 代码</h2>
+##TeraSort MapReduce 程序的 Java 代码
 
-这一部分提供了 TerraSort MapReduce 程序的代码以供检查。 
+这一部分提供了 TeraSort MapReduce 程序的代码以供检查。
 
 
 	/**
@@ -179,7 +177,7 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 	 * and waits for it to finish. 	
 	 * <p>
 	 * To run the program: 	
-	 * <b>bin/hadoop jar hadoop-mapreduce-*.jar terasort in-dir out-dir</b>	
+	 * <b>bin/hadoop jar hadoop-examples-*.jar terasort in-dir out-dir</b>	
 	 */	
 	
 	public class TeraSort extends Configured implements Tool {
@@ -398,18 +396,18 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 	}
   
 
-<h2><a id="summary"></a>摘要</h2>
+##摘要
 
 本示例已经演示了如何使用 Azure HDInsight 运行一系列 MapReduce 作业，其中一个作业的数据输出结果成为这一系列中下一作业的输入。
 
-<h2><a id="next-steps"></a>后续步骤</h2>
+##后续步骤
 
-有关运行其他示例的教程，以及提供在 Azure HDInsight 上通过 Azure PowerShell 使用 Pig、Hive 和 MapReduce 作业的说明的教程，请参阅以下主题：
+有关引导你运行其他示例的教程，以及提供在 Azure HDInsight 上通过 Azure PowerShell 使用 Pig、Hive 和 MapReduce 作业的说明的教程，请参阅以下主题：
 
 * [Azure HDInsight 入门][hdinsight-get-started]
-* [示例：Pi estimator][hdinsight-sample-pi-estimator]
+* [示例：Pi Estimator][hdinsight-sample-pi-estimator]
 * [示例：Wordcount][hdinsight-sample-wordcount]
-* [示例：C# Steaming][hdinsight-sample-csharp-streaming]
+* [示例：C# 流式处理][hdinsight-sample-csharp-streaming]
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 * [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 * [Azure HDInsight SDK 文档][hdinsight-sdk-documentation]
@@ -417,18 +415,17 @@ ms.service="hdinsight" ms.workload="big-data" ms.tgt_pltfrm="na" ms.devlang="na"
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
 
 
-[Powershell-install-configure]: /zh-cn/documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
 
-[hdinsight-get-started]: /zh-cn/documentation/articles/hdinsight-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
 
-[hdinsight-samples]: /zh-cn/documentation/articles/hdinsight-run-samples/
-[hdinsight-sample-10gb-graysort]: /zh-cn/documentation/articles/hdinsight-sample-10gb-graysort/
-[hdinsight-sample-csharp-streaming]: /zh-cn/documentation/articles/hdinsight-sample-csharp-streaming/
-[hdinsight-sample-pi-estimator]: /zh-cn/documentation/articles/hdinsight-sample-pi-estimator/
-[hdinsight-sample-wordcount]: /zh-cn/documentation/articles/hdinsight-sample-wordcount/
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort/
+[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming/
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator/
+[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount/
 
-[hdinsight-use-hive]: /zh-cn/documentation/articles/hdinsight-use-hive/
-[hdinsight-use-pig]: /zh-cn/documentation/articles/hdinsight-use-pig/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
-
-
+<!---HONumber=71-->

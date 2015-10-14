@@ -1,206 +1,160 @@
-<properties linkid="manage-services-hdinsight-howto-hive" urlDisplayName="Use Hive with HDInsight" pageTitle="Hive 与 HDInsight 配合使用 | Azure" metaKeywords="" description="Learn how to use Hive with HDInsight. You'll use a log file as input into an HDInsight table, and use HiveQL to query the data and report basic statistics." metaCanonical="" services="hdinsight" documentationCenter="" title="Use Hive with HDInsight" authors="jgao" solutions="" manager="paulettm" editor="cgronlun" />
-<tags ms.service="hdinsight"
-    ms.date="02/18/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+   pageTitle="了解 Hive 是什么以及如何使用 HiveQL | Azure"
+   description="了解 Apache Hive 以及如何将它与 HDInsight 中的 Hadoop 配合使用。选择如何运行 Hive 作业，并使用 HiveQL 分析一个示例 Apache log4j 文件。"
+   keywords="hiveql,what is hive"
+   services="hdinsight"
+   documentationCenter=""
+   authors="Blackmist"
+   manager="paulettm"
+   editor="cgronlun"
+   tags="azure-portal"/>
 
-# Hive 与 HDInsight 配合使用
+<tags
+   ms.service="hdinsight"
+   ms.date="07/06/2015"
+   wacn.date="10/03/2015"/>
 
-[Apache Hive][] 提供了通过类似 SQL 的脚本语言（称作 *HiveQL*）运行 MapReduce 作业的方法，此方法可用于对大量数据进行汇总、查询和分析。在本文中，你将使用 HiveQL 来查询 Apache log4j 日志文件中的数据并报告基本统计信息。
+# 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
-**先决条件：**
+[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
 
--   你必须已经设置了 **HDInsight 群集**。有关如何使用 Azure 门户进行此设置的演练，请参阅 [HDInsight 入门][]。有关可用于创建这种群集的各种其他方法的说明，请参阅[设置 HDInsight 群集][]。
 
--   你的工作站上必须已经安装了 **Azure PowerShell**。有关如何进行此安装的说明，请参阅[安装和配置 Azure PowerShell][]。
+在本教程中，你将学习如何在 HDInsight 上使用 Hadoop 中的 Apache Hive，以及选择如何运行 Hive 作业。此外，你还将了解 HiveQL 以及如何分析一个示例 Apache log4j 文件。
 
-**估计完成时间：** 30 分钟
+##<a id="why"></a>什么是 Hive，为何要使用它？
+[Apache Hive](http://hive.apache.org/) 是适用于 Hadoop 的数据仓库系统，可让你使用 HiveQL（类似于 SQL 的查询语言）来进行数据汇总、查询和数据分析。使用 Hive 能够以交互方式浏览数据，或者创建可重用的批处理作业。
 
-## 本文内容
+Hive 允许你在很大程度上未结构化的数据上投影结构。在定义结构后，你可以使用 Hive 来查询这些数据，而不需要具备 Java 或 MapReduce 的知识。**HiveQL**（Hive 查询语言）可让你使用类似于 T-SQL 的语句编写查询。
 
--   [Hive 用例][]
--   [将数据文件上载到 Azure Blob 存储][]
--   [使用 PowerShell 运行 Hive 查询][]
--   [后续步骤][]
+Hive 知道如何处理结构化和半结构化数据，例如其中的字段以特定字符分隔的文本文件。Hive 还支持对复杂或不规则的结构化数据使用自定义**序列化程序/反序列化程序 (SerDe)**。有关详细信息，请参阅[如何将自定义 JSON SerDe 与 hdinsight 配合使用](http://blogs.msdn.com/b/bigdatasupport/archive/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight.aspx)。
 
-##<a id="usage"></a>Hive 用例
+还可以通过**用户定义函数的 (UDF)** 扩展 Hive。UDF 允许你实现 HiveQL 中不容易建模的功能或逻辑。有关将 UDF 与 Hive 配合使用的示例，请参阅：
 
-数据库比较适合需要管理可能有低延迟查询的较小数据集的情况。但对于包含以 TB 为单位的数据的大型数据集而言，传统的 SQL 数据库并不是理想的解决方案。数据库管理员习惯上调规模来处理这些较大的数据集，这样就会随着数据库负载增加和性能下降而采购更大型的硬件。
+* [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](hdinsight-python)
 
-Hive 通过允许用户在查询大型数据集时横向扩展来解决与大数据有关联的问题。Hive 使用 MapReduce 在多个节点间并行查询数据，从而在数量随负载增加而不断增加的主机间分布数据库。
+* [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 
-Hive 和 HiveQL 还提供了备用方法，以便在查询数据时用 Java 编写 MapReduce 作业。它提供简单的类似 SQL 的包装器，允许用 HiveQL 编写查询，这些查询之后由 HDInsight 为你编译到 MapReduce 并在群集上运行。
+* [如何将自定义 Hive UDF 添加到 HDInsight](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
 
-利用 Hive，熟悉 MapReduce 框架的程序员还将能够插入其自定义映射器和简化器，以便执行 HiveQL 语言的内置功能无法支持的更复杂的分析。
+##<a id="data"></a>关于示例数据（一个 Apache log4j 文件）
 
-Hive 最适合批处理大量不可变数据（例如 Web 日志）。但它不适用于需要非常快的响应速度的事务应用程序，如数据库管理系统。Hive 已针对可伸缩性（可将多台计算机动态添加到 Hadoop 群集）、扩展性（在 MapReduce 框架内，具有其他编程接口）和容错进行了优化。延迟并不是设计时重点要考虑的问题。
+本示例使用 *log4j* 示例文件，该文件存储在 Blob 存储容器的 **/example/data/sample.log** 中。文件内的每个日志具有包含 `[LOG LEVEL]` 字段的一行字段以显示类型和严重级别，例如：
 
-一般而言，应用程序会在日志文件中保存错误、异常和其他代码类问题，以便管理员能够使用日志文件中的这些数据来检查可能出现的问题并生成与错误或其他问题（如性能）相关的指标。这些日志文件通常都很大，并且包含着丰富数据，为了提高该应用程序的智能水平，必须对这些数据进行处理和挖掘。
+	2012-02-03 20:26:41 SampleClass3 [ERROR] verbose detail for id 1527353937
 
-所以，日志文件就是大数据的典型范例。HDInsight 提供了 Hive 数据仓库系统，该系统有助于简化数据摘要、即席查询，以及对 Azure Blob 存储这样的 Hadoop 兼容文件系统中存储的这些大数据集进行分析。
+在前面的示例中，日志级别为 ERROR。
 
-##<a id="uploaddata"></a>将数据文件上载到 Blob 存储
+> [AZURE.NOTE]你也可以使用 [Apache Log4j](http://en.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](hdinsight-use-blob-storage)。
 
-HDInsight 使用 Azure Blob 存储容器作为默认文件系统。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][]。
+示例数据存储在 HDInsight 用作默认文件系统的 Azure Blob 存储中。HDInsight 可以使用 **wasb** 前缀来访问存储在 Blob 中的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
-在本文中，你要使用一个 log4j 示例文件，它是随 *&#92;example&#92;data&#92;sample.log* 中存储的 HDInsight 群集分发的。该文件中的每个日志都包含一行字段，其中包含一个 `[LOG LEVEL]` 字段，可显示类型和严重性。例如：
+	wasb:///example/data/sample.log
 
-    2012-02-03 20:26:41 SampleClass3 [ERROR] verbose detail for id 1527353937 
+由于 Azure Blob 存储是 HDInsight 的默认存储，因此你也可以使用 HiveQL 中的 **/example/data/sample.log** 访问该文件。
 
-要访问文件，请使用以下语法：
+> [AZURE.NOTE]语法 **wasb:///** 用于访问存储在 HDInsight 群集的默认存储容器中的文件。如果你在预配群集时指定了其他存储帐户，并且你想要访问存储在这些帐户中的文件，则可以通过指定容器名称和存储帐户地址来访问这些数据，例如：**wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**。
 
-    wasb://<containerName>@<AzureStorageName>.blob.core.chinacloudapi.cn
+##<a id="job"></a>示例作业：将列投影到分隔的数据
 
-例如：
+以下 HiveQL 语句将列投影到 ****wasb:///example/data** 目录中存储的分隔数据：
 
-    wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log
+	DROP TABLE log4jLogs;
+    CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
+    ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
+    STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
+    SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
 
-将 *mycontainer* 替换为容器名称，将 *mystorage* 替换为 Blob 存储帐户名。
+在上例中，HiveQL 语句执行以下操作：
 
-由于文件存储在默认文件系统中，你也可以使用以下命令来访问文件：
+* **DROP TABLE**：删除表和数据文件（如果该表已存在）。
+* **CREATE EXTERNAL TABLE**：在 Hive 中创建新的**外部**表。外部表只会在 Hive 中存储表定义；数据以原始格式保留在原始位置。
+* **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
+* **STORED AS TEXTFILE LOCATION**：让 Hive 知道数据的存储位置（example/data 目录），并且数据已存储为文本。数据可以在一个文件中，也可以分散在目录的多个文件内。
+* **SELECT**：选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
 
-    wasb:///example/data/sample.log
-    /example/data/sample.log
+> [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
+	>
+> 删除外部表**不会**删除数据，只会删除表定义。
 
-若要生成你自己的 log4j 文件，请使用 [Apache Log4j][] 日志记录实用程序。有关将数据上载到 Azure Blob 存储的信息，请参阅[将数据上载到 HDInsight][]。
+创建外部表后，使用以下语句创建**内部**表。
 
-##<a id="runhivequeries"></a>使用 PowerShell 运行 Hive 查询
+	CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
+	STORED AS ORC;
+	INSERT OVERWRITE TABLE errorLogs
+	SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
 
-在上一节中，你将一个名为 sample.log 的 log4j 文件上载到了默认文件系统容器中。在本节中，你将运行 HiveQL 来创建一个 hive 表，将数据载入到该 hive 表，然后查询这些数据来了解错误日志的数量。
+这些语句将执行以下操作：
 
-本文提供了有关使用 Azure PowerShell cmdlet 运行 Hive 查询的说明。在学习本节之前，必须先按照本主题开始时**先决条件**一节中的说明，设置本地环境并配置到 Azure 的连接。
+* **CREATE TABLE IF NOT EXISTS**：创建表（如果该表尚不存在）。由于未使用 **EXTERNAL** 关键字，因此这是一个内部表，它存储在 Hive 数据仓库中并完全受 Hive 的管理。
+* **STORED AS ORC**：以优化行纵栏表 (ORC) 格式存储数据。这是高度优化且有效的 Hive 数据存储格式。
+* **INSERT OVERWRITE ...SELECT**：从包含 **[ERROR]** 的 **log4jLogs** 表中选择行，然后将数据插入 **errorLogs** 表中。
 
-使用 **Start-AzureHDInsightJob** cmdlet 或 **Invoke-Hive** cmdlet 均可在 PowerShell 中运行 Hive 查询。
+> [AZURE.NOTE]与外部表不同，删除内部表会同时删除基础数据。
 
-**要使用 Start-AzureHDInsightJob 运行 Hive 查询**
+##<a id="usetez"></a>使用 Apache Tez 提高性能
 
-1.  打开 Azure PowerShell 控制台窗口。在[安装和配置 Azure PowerShell][] 中可找到说明。
-2.  运行以下命令以连接到 Azure 订阅：
+[Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。此功能目前默认为关闭，而必须启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：
 
-        Add-AzureAccount
+	set hive.execution.engine=tez;
 
-    系统将提示你输入 Azure 帐户凭据。
+你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](hdinsight-provision-clusters)中找到详细信息。
 
-3.  设置以下脚本中的变量并运行它：
+[Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
-        # 提供 Azure 订阅名称，以及用于默认 HDInsight 文件系统的 Azure 存储帐户和容器。
-        $subscriptionName = "<SubscriptionName>"
-        $storageAccountName = "<AzureStorageAccountName>"
-        $containerName = "<AzureStorageContainerName>"
 
-        # 提供要在其中运行该 Hive 作业的 HDInsight 群集的名称
-        $clusterName = "<HDInsightClusterName>"
+##<a id="run"></a>选择如何运行 HiveQL 作业
 
-4.  运行以下脚本以定义 HiveQL 查询：
+HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后按链接进行演练。
 
-        # HiveQL 查询
-        # 使用内部表选项。 
-        $queryString = "DROP TABLE log4jLogs;" +
-        "CREATE TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ';" +
-        "LOAD DATA INPATH 'wasb://$containerName@$storageAccountName.blob.core.chinacloudapi.cn/example/data/sample.log' OVERWRITE INTO TABLE log4jLogs;" +
-        "SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;"
-
-        # 使用外部表选项。 
-        $queryString = "DROP TABLE log4jLogs;" +
-        "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb://$containerName@$storageAccountName.blob.core.chinacloudapi.cn/example/data/';" +
-        "SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;"
-
-    LOAD DATA HiveQL 命令将导致数据文件移动到 &#92;hive&#92;warehouse&#92; 文件夹。DROP TABLE 命令将用于删除表和数据文件。如果你使用内部表选项并要再次运行脚本，必须再次上传 sample.log 文件。如果想保留数据文件，必须按该脚本中显示的那样使用 CREATE EXTERNAL TABLE 命令。
-
-    对于数据文件位于不同容器或存储帐户的情况，还可以使用外部表。
-
-    首先使用 DROP TABLE，以防再次运行脚本和 log4jlogs 表已存在。
-
-5.  运行以下脚本来创建 Hive 作业定义：
-
-        # 创建 Hive 作业定义 
-        $hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString 
-
-    还可以使用 -File 开关来指定 HDFS 上的 HiveQL 脚本文件。
-
-6.  运行以下脚本来提交 Hive 作业：
-
-        # 将作业提交到群集 
-        Select-AzureSubscription $subscriptionName
-        $hiveJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $hiveJobDefinition
-
-7.  运行以下脚本来等待 Hive 作业完成：
-
-        # 等待 Hive 作业完成
-        Wait-AzureHDInsightJob -Job $hiveJob -WaitTimeoutInSeconds 3600
-
-8.  运行以下脚本以打印标准输出结果：
-9.  # 打印 Hive 作业的标准错误和标准输出结果。
-        Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardOutput
-
-    ![HDI.HIVE.PowerShell][]
-
-    结果为：
-
-        [ERROR] 3
-
-**使用 Invoke-Hive 提交 Hive 查询**
-
-1.  打开 Azure PowerShell 控制台窗口。
-2.  运行以下命令以连接到 Azure 订阅：
-
-        Add-AzureAccount
-
-    系统将提示你输入 Azure 帐户凭据。
-
-3.  设置该变量，然后运行它：
-
-        $clusterName = "<HDInsightClusterName>"
-
-4.  运行以下脚本以调用 HiveQL 查询：
-
-        Use-AzureHDInsightCluster $clusterName 
-        $response = Invoke-Hive -Query @"
-        SELECT * FROM hivesampletable
-        WHERE devicemake LIKE "HTC%"
-        LIMIT 10; 
-        "@
-
-        Write-Host $response
-
-    输出为：
-
-    ![PowerShell Invoke-Hive 输出结果][]
-
-    对于比较长的 HiveQL 查询，推荐使用 PowerShell Here-Strings 或 HiveQL 脚本文件。下面的示例显示了如何使用 Invoke-Hive cmdlet 来运行 HiveQL 脚本文件。HiveQL 脚本文件必须上载到 WASB。
-
-        Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"
-
-    有关 Here-Strings 的详细信息，请参阅[使用 Windows PowerShell Here-Strings][]。
+| **使用此方法**，如果你想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
+|:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
+| [Curl](hdinsight-hadoop-use-hive-curl) | &nbsp; | ✔ | Windows | Windows |
+| [查询控制台](hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 基于浏览器 |
+| [HDInsight tools for Visual Studio](hdinsight-hadoop-use-hive-visual-studio) | &nbsp; | ✔ | Windows | Windows |
+| [.NET SDK for Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk) | &nbsp; | ✔ | Windows | Windows（暂时） |
+| [Windows PowerShell](hdinsight-hadoop-use-hive-powershell) | &nbsp; | ✔ | Windows | Windows |
+| [远程桌面](hdinsight-hadoop-use-hive-remote-desktop) | ✔ | ✔ | Windows | Windows |
 
 ##<a id="nextsteps"></a>后续步骤
 
-Hive 可以简化使用类似 SQL 的查询语言进行数据查询的步骤，而随 HDInsight 提供的其他组件也提供了数据移动和转换这样的补充功能。若要了解更多信息，请参阅下列文章：
+现在，你已了解什么是 Hive，以及如何将它与 HDInsight 中的 Hadoop 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 
--   [Azure HDInsight 入门][HDInsight 入门]
--   [使用 HDInsight 分析航班延误数据][]
--   [将 Oozie 与 HDInsight 配合使用][]
--   [以编程方式提交 Hadoop 作业][]
--   [将数据上传到 HDInsight][将数据上载到 HDInsight]
--   [Pig 与 HDInsight 配合使用][]
--   [Azure HDInsight SDK 文档][]
+* [将数据上载到 HDInsight][hdinsight-upload-data]
+* [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
+* [将 MapReduce 作业与 HDInsight 配合使用][hdinsight-use-mapreduce]
 
-  [Apache Hive]: http://hive.apache.org/
-  [HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
-  [设置 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-provision-clusters/
-  [安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
-  [Hive 用例]: #usage
-  [将数据文件上载到 Azure Blob 存储]: #uploaddata
-  [使用 PowerShell 运行 Hive 查询]: #runhivequeries
-  [后续步骤]: #nextsteps
-  [将 Azure Blob 存储与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-blob-storage/
-  [Apache Log4j]: http://en.wikipedia.org/wiki/Log4j
-  [将数据上载到 HDInsight]: /zh-cn/documentation/articles/hdinsight-upload-data/
-  [HDI.HIVE.PowerShell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
-  [PowerShell Invoke-Hive 输出结果]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-  [使用 Windows PowerShell Here-Strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
-  [使用 HDInsight 分析航班延误数据]: /zh-cn/documentation/articles/hdinsight-analyze-flight-delay-data/
-  [将 Oozie 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-oozie/
-  [以编程方式提交 Hadoop 作业]: /zh-cn/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-  [Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
-  [Azure HDInsight SDK 文档]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
+[check]: ./media/hdinsight-use-hive/hdi.checkmark.png
+
+[1]: hdinsight-hadoop-visual-studio-tools-get-started
+
+[hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+
+
+
+[apache-tez]: http://tez.apache.org
+[apache-hive]: http://hive.apache.org/
+[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
+[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
+
+[hdinsight-use-pig]: hdinsight-use-pig
+[hdinsight-use-oozie]: hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
+
+
+[hdinsight-storage]: hdinsight-use-blob-storage
+
+[hdinsight-provision]: hdinsight-provision-clusters
+[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: hdinsight-upload-data
+[hdinsight-get-started]: hdinsight-get-started
+
+[Powershell-install-configure]: install-configure-powershell
+[powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
+
+[image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
+[img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
+[image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
+
+<!---HONumber=71-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase 教程：Hadoop 中的 HBase 入门 | Azure"
+	pageTitle="HBase 教程：HDInsight 中的 HBase 入门 | Windows Azure"
 	description="遵循本 HBase 教程开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用。从 HBase shell 创建表，然后使用 Hive 查询这些表。"
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -10,27 +10,34 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/28/2015"
+	ms.date="08/11/2015"
 	wacn.date="10/03/2015"/>
 
 
 
 # HBase 教程：开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用
 
-在本 HBase 教程中，你将学习如何从 HBase shell 创建 HBase 表，并通过使用 HDInsight 中的 Hive 查询这些表。
+了解如何使用 Hive 在 HDInsight 中预配 HBase 群集、创建 HBase 表和查询表。有关 HBase 的一般信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
 
-[Apache HBase (HBase)](http://hbase.apache.org/) 是分布式、可缩放的大数据存储。它是 Apache Hadoop 项目的子项目，用于提供对大数据的实时读取和写入访问。
+[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配置为在 Azure Blob 存储中直接存储数据，这样就减少了延迟，并提高了选择性能和价格的灵活性。这样，客户便可构建用于处理大型数据集的交互式网站，构建用于存储数百万个终结点的传感器数据与遥测数据的服务，并通过 Hadoop 作业来分析这些数据。有关 HBase 及其适用的方案的详细信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
-
+* [HBase 教程：开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started)
+ 
 > [AZURE.NOTE]HBase（版本 0.98.0）只能用于 HDInsight 上的 HDInsight 3.1 群集（基于 Apache Hadoop 和 YARN 2.4.0）。有关版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][hdinsight-versions]
 
-## 先决条件
+以下视频演示了相同的内容：
+
+> [AZURE.VIDEO get-started-with-hbase-in-hdinsight]
+
+
+
+
+**先决条件**
 
 在开始阅读本 HBase 教程前，你必须具有：
 
-- **Azure 订阅**：有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options]和[试用][azure-trial]。
-- 装有 Visual Studio 2013 的**工作站**：有关说明，请参阅[安装 Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx)。
+- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/)。
+- 装有 Visual Studio 2013 的**工作站**：有关说明，请参阅[安装 Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx)。
 
 ## 设置 HBase 群集
 
@@ -40,29 +47,37 @@ HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配�
 
 
 1. 登录到 [Azure 门户][azure-management-portal]。
-2. 单击左下方的“新建”，然后单击“数据服务”>“HDINSIGHT”>“HBASE”。
+2. 单击左下方的“新建”，然后依次单击“数据服务”、“HDInsight”、“HBase”。
 
-	你还可以使用“自定义创建”选项。
-3. 输入“群集名称”、“群集大小”、群集用户密码和“存储帐户”。
+	>[AZURE.NOTE]你还可以使用“自定义创建”选项。
+3. 输入“群集名称”、“群集大小”、HTTP 用户密码和“存储帐户”。
 
-	![选择 HBase 群集类型，然后输入群集登录凭据。][img-hdinsight-hbase-cluster-quick-create]
+	![在 HDInsight 中预配 HBase 群集][img-hdinsight-hbase-cluster-quick-create]
 
 	默认 HTTP 用户名是 admin。你可以通过使用“自定义创建”选项自定义该名称。
 
-	若要使用默认 HBase 设置过程，你需要一个 Azure 存储帐户。有关说明，请参阅[如何创建存储帐户][azure-create-storageaccount]。自定义创建选项可让你使用群集设置过程创建存储帐户选项。
+	若要使用默认 HBase 设置过程，你需要一个 Azure 存储帐户。请参阅[创建 Azure 存储帐户][azure-create-storageaccount]来创建一个存储帐户。“自定义创建”选项可让你使用群集预配过程创建存储帐户选项。
 
 	> [AZURE.WARNING]为了实现 HBase 服务的高可用性，你必须设置至少包含**三个**节点的群集。这可确保，如果一个节点发生故障，则 HBase 数据区域在其他节点上可用。
 
-4. 单击右下方的复选标记图标，以创建 HBase 群集。
+	> 如果你正在学习 HBase，请始终选择 1 作为群集大小，并在每次使用后删除该群集以节省费用。
 
->[AZURE.NOTE]在删除 HBase 群集后，你可以通过使用相同的默认 Blob 创建另一个 HBase 群集。新群集将选取你在原始群集中创建的 HBase 表。
+4. 单击右下方的“创建 HDInsight 群集”以创建 HBase 群集。
+
+>[AZURE.NOTE]在删除 HBase 群集后，你可以通过使用相同的默认 Blob 容器创建另一个 HBase 群集。新群集将选取你在原始群集中创建的 HBase 表。
 
 ## 使用 HBase shell
-本部分介绍如何使用 HBase shell 创建 HBase 表，添加行，并列出行。下面是你要使用的数据：
+目前，可通过两种方式访问 HBase。本部分介绍如何使用 HBase shell。下一部分介绍如何使用 .NET SDK。
 
-![hdinsight hbase 表数据][img-hbase-sample-table]
+对于大多数人而言，数据以表格形式显示：
 
-若要访问 HBase shell，你必须首先启用远程桌面协议 (RDP)，然后建立与 HBase 群集的 RDP 连接。有关说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集][hdinsight-manage-portal]。
+![hdinsight hbase 表格数据][img-hbase-sample-data-tabular]
+
+在 HBase（BigTable 的一种实现）中，相同的数据看起来类似于：
+
+![hdinsight hbase bigtable 数据][img-hbase-sample-data-bigtable]
+
+在完成下一过程后，数据将更易于理解。
 
 
 **使用 HBase shell**
@@ -96,6 +111,7 @@ HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配�
 
 	有关 Hbase 表架构的详细信息，请参阅 [HBase 架构设计简介][hbase-schema]。有关 HBase 命令的详细信息，请参阅 [Apache HBase 参考指南][hbase-quick-start]。
 
+
 6. 退出 shell
 
 		exit
@@ -122,7 +138,6 @@ HBase 提供了多种方法用于将数据载入表中。有关详细信息，�
 
 > [AZURE.NOTE]此过程使用你在上一个过程中创建的“联系人”HBase 表。
 
-
 1. 在 RDP 会话中，单击桌面上的“Hadoop 命令行”快捷方式。
 2. 更改目录：
 
@@ -130,7 +145,7 @@ HBase 提供了多种方法用于将数据载入表中。有关详细信息，�
 
 3. 运行以下命令，将数据文件转换成 StoreFiles 并将其存储在 Dimporttsv.bulk.output 指定的相对路径：
 
-		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasb://hbasecontacts@hditutorialdata.blob.core.chinacloudapi.cn/contacts.txt
+		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:Phone, Office:Phone, Office:Address" -Dimporttsv.bulk.output="/example/data/storeDataFileOutput" Contacts wasb://hbasecontacts@hditutorialdata.blob.core.chinacloudapi.cn/contacts.txt
 
 4. 运行以下命令，将数据从 /example/data/storeDataFileOutput 上载到 HBase 表：
 
@@ -166,20 +181,47 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 	![HDInsight 群集仪表板。][img-hdinsight-hbase-hive-editor]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **运行 Hive 查询**
 
 1. 在 Hive 编辑器中输入以下 HiveQL 脚本，然后单击“提交”，以创建映射到 HBase 表的 Hive 表。确保你已创建本教程中前面引用的示例表，方法是在运行此语句前使用 HBase shell。
 
-		CREATE EXTERNAL TABLE hbasecontactstable(rowkey STRING, name STRING, homephone STRING, officeaddress STRING)
+		CREATE EXTERNAL TABLE hbasecontacts(rowkey STRING, name STRING, homephone STRING, officephone STRING, officeaddress STRING)
 		STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
-		WITH SERDEPROPERTIES ('hbase.columns.mapping' = ':key,Personal:Name,Personal:HomePhone,Office:Address')
+		WITH SERDEPROPERTIES ('hbase.columns.mapping' = ':key,Personal:Name,Personal:Phone,Office:Phone,Office:Address')
 		TBLPROPERTIES ('hbase.table.name' = 'Contacts');
 
 	等到“状态”更新为“已完成”。
 
 2. 在 Hive 编辑器中输入以下 HiveQL 脚本，然后单击“提交”。Hive 查询会在 HBase 表中查询数据：
 
-     	SELECT count(*) FROM hbasecontactstable;
+     	SELECT count(*) FROM hbasecontacts;
 
 4. 若要检索 Hive 查询的结果，请在作业完成运行时，单击“作业会话”窗口中的“查看详细信息”链接。由于你将一条记录放置在 HBase 表中，因此将只有一个作业输出文件。
 
@@ -197,7 +239,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 	![HDInsight HBase Hive 编辑器文件浏览器][img-hdinsight-hbase-file-browser]
 
-## 使用适用于 .NET C# 的 HBase REST API 客户端库从 HBase 表创建和检索数据
+## 使用.NET HBase REST API 客户端库
 
 你必须从 GitHub 下载适用于 .NET 的 HBase REST API 客户端库并构建项目，以便你可以使用 HBase .NET SDK。以下过程包括有关此任务的说明。
 
@@ -290,10 +332,10 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 - [HDInsight HBase 概述][hdinsight-hbase-overview]：HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
 - [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication)：了解如何跨两个 Azure 数据中心配置 HBase 复制。
+- [在 HDInsight 中使用 HBase 分析 Twitter 观点][hbase-twitter-sentiment]：了解如何通过在 HDInsight 的 Hadoop 群集中使用 HBase 对大数据执行实时[观点分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
 
-
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal
-[hdinsight-upload-data]: hdinsight-upload-data
+[hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md
+[hdinsight-upload-data]: hdinsight-upload-data.md
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -302,12 +344,13 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 
 
-[hdinsight-hbase-overview]: hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet
-[hdinsight-versions]: hdinsight-component-versioning
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
-[azure-purchase-options]: /pricing/overview/
-[azure-trial]: /pricing/1rmb-trial/
+[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
+[hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
+[hdinsight-versions]: hdinsight-component-versioning.md
+[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
+[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
@@ -315,6 +358,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 [img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-hive-editor.png
 [img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-file-browser.png
 [img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-shell.png
-[img-hbase-sample-table]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts.png
+[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-tabular.png
+[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-bigtable.png
 
 <!---HONumber=71-->
