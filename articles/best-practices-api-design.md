@@ -1,5 +1,5 @@
 <properties
-   pageTitle="API 设计指南 | Windows Azure"
+   pageTitle="API 设计指南 | Microsoft Azure"
    description="有关如何创建设计良好的 API 的指南。"
    services=""
    documentationCenter="na"
@@ -11,10 +11,11 @@
 <tags
    ms.service="best-practice"
    ms.date="04/28/2015"
-   wacn.date="08/29/2015"/>
+   wacn.date="10/3/2015"/>
 
 # API 设计指南
 
+![](./media/best-practices-api-design/pnp-logo.png)
 
 本指南中的一些主题正在讨论中，将来可能会更改。我们欢迎你的反馈！
 
@@ -33,7 +34,7 @@
 
 Roy Fielding 在他 2000 年的论文中提出了一种替代架构方法，用于组织 Web 服务公开的操作；REST。REST 是基于超媒体构建分布式系统的架构样式。REST 模型的主要优势在于它基于开放标准，并且不将模型的实现或访问它的客户端应用程序绑定到任何特定实现。例如，REST Web 服务可以使用 Microsoft ASP.NET Web API 加以实现，而客户端应用程序则可通过使用任何可生成 HTTP 请求并分析 HTTP 响应的语言和工具集进行开发。
 
-> [AZURE.NOTE]: REST 实际上独立于任何基础协议，并且不一定绑定到 HTTP。但是，最常见的基于 REST 的系统实现利用 HTTP 作为发送和接收请求的应用程序协议。本文档重点介绍如何将 REST 原则映射到设计为使用 HTTP 运行的系统。
+> [AZURE.NOTE]\: REST 实际上独立于任何基础协议，并且不一定绑定到 HTTP。但是，最常见的基于 REST 的系统实现利用 HTTP 作为发送和接收请求的应用程序协议。本文档重点介绍如何将 REST 原则映射到设计为使用 HTTP 运行的系统。
 
 REST 模型使用导航方案来表示网络上的对象和服务（称为_资源_）。实现 REST 的许多系统通常使用 HTTP 协议来传输要访问这些资源的请求。在这些系统中，客户端应用程序以 URI 的形式提交请求，其中标识资源和 HTTP 方法（最常见的有 GET、POST、PUT 或 DELETE，用于指示要对该资源执行的操作）。HTTP 请求的正文包含执行该操作所需的数据。要了解的要点是 REST 定义无状态的请求模型。HTTP 请求应是独立的，并可以任何顺序发出，因此尝试保留请求之间的瞬时状态信息并不可行。存储信息的唯一位置是在资源本身中，并且每个请求应是原子操作。实际上，REST 模型可实现有限状态机，其中请求将资源从一种明确定义的非瞬时状态转换为另一种状态。
 
@@ -267,7 +268,7 @@ Date: Fri, 22 Aug 2014 09:18:37 GMT
 
 例如，如果订单包含为订单支付的价格，需要检索成本高于特定值的所有订单的客户端应用程序可能需要从 _/orders_ URI 检索所有订单，然后在本地筛选出这些订单。此过程显然效率非常低；它浪费了托管 Web API 的服务器的网络带宽和处理能力。
 
-一种解决方案是提供 URI 方案，例如 _/orders/ordervalue_greater_than_n_，其中 _n_ 是订单价格，但对于所有订单而言只是有限数量的价格，这种方法不切实际。此外，如果你需要基于其他条件查询订单，你可能最终面临着需要提供使用可能非直观名称的 URI 的长列表。
+一种解决方案是提供 URI 方案，例如 _/orders/ordervalue\_greater\_than\_n_，其中 _n_ 是订单价格，但对于所有订单而言只是有限数量的价格，这种方法不切实际。此外，如果你需要基于其他条件查询订单，你可能最终面临着需要提供使用可能非直观名称的 URI 的长列表。
 
 筛选数据的较好策略是在传递到 Web API 的查询字符串中提供筛选条件，例如 _/orders?ordervaluethreshold=n_。在此示例中，Web API 中的相应操作负责分析和处理查询字符串中的 `ordervaluethreshold` 参数并在 HTTP 响应中返回筛选结果。
 
@@ -354,7 +355,7 @@ Accept: application/json
 ...
 ```
 
-响应消息的正文包含一个 `Links` 数组（在代码示例中突出显示），用于指定关系的性质（_客户_）、客户的 URI (__http://adventure-works.com/customers/3_))、检索此客户的详细信息的方法 (_GET_)，以及 Web 服务器支持检索此信息的 MIME 类型（_text/xml_ 和 _application/json_）。这是客户端应用程序要能够提取客户的详细信息所需的所有信息。此外，链接数组还包括其他可以执行的操作的链接，例如 PUT（用于修改客户以及 Web 服务器需要客户端提供的格式）和 DELETE。
+响应消息的正文包含一个 `Links` 数组（在代码示例中突出显示），用于指定关系的性质（_客户_）、客户的 URI (\__http://adventure-works.com/customers/3_))、检索此客户的详细信息的方法 (_GET_)，以及 Web 服务器支持检索此信息的 MIME 类型（_text/xml_ 和 _application/json_）。这是客户端应用程序要能够提取客户的详细信息所需的所有信息。此外，链接数组还包括其他可以执行的操作的链接，例如 PUT（用于修改客户以及 Web 服务器需要客户端提供的格式）和 DELETE。
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -390,7 +391,7 @@ Content-Length: ...
 
 这是最简单的方法，它对于一些内部 API 来说可能是可以接受的。较大的更改可以表示为新资源或新链接。向现有资源添加内容可能未呈现重大更改，因为不应查看此内容的客户端应用程序将直接忽略它。
 
-例如，向 URI __http://adventure-works.com/customers/3_ 发出请求应返回包含客户端应用程序所需的 `Id`、`Name` 和 `Address` 字段的单个客户的详细信息：
+例如，向 URI \__http://adventure-works.com/customers/3_ 发出请求应返回包含客户端应用程序所需的 `Id`、`Name` 和 `Address` 字段的单个客户的详细信息：
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -435,7 +436,7 @@ Content-Length: ...
 
 ### 查询字符串版本控制
 
-不是提供多个 URI，而是可以通过在追加到 HTTP 请求后面的查询字符串中使用参数来指定资源的版本，例如 __http://adventure-works.com/customers/3?version=2_。如果 version 参数被较旧的客户端应用程序省略，则应默认为有意义的值（例如 1）。
+不是提供多个 URI，而是可以通过在追加到 HTTP 请求后面的查询字符串中使用参数来指定资源的版本，例如 \__http://adventure-works.com/customers/3?version=2_。如果 version 参数被较旧的客户端应用程序省略，则应默认为有意义的值（例如 1）。
 
 此方法具有语义优势（即，同一资源始终从同一 URI 进行检索），但它依赖于代码处理请求以分析查询字符串并发送回相应的 HTTP 响应。此方法也与 URI 版本控制机制一样，增加了实现 HATEOAS 的复杂性。
 
@@ -516,7 +517,6 @@ Content-Length: ...
 ## 详细信息
 
 - [RESTful Cookbook](http://restcookbook.com/) 包含构建 RESTful API 的简介。
-- 元素 
 - Web [API 清单](https://mathieu.fenniak.net/the-api-checklist/)包含在设计和实现 Web API 时要考虑的有用的项目列表。
 
-<!---HONumber=67-->
+<!---HONumber=71-->

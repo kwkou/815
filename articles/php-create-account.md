@@ -1,9 +1,19 @@
-<properties title="Create an Azure account" pageTitle="Create an Azure account" description="Create an account" authors="robmcm" manager="wpickett" editor="mollybos"  videoId="" scriptId="" />
-<tags ms.service=""
-    ms.date="11/17/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	pageTitle="创建 Azure 帐户" 
+	description="创建帐户" 
+	authors="tfitzmac" 
+	manager="wpickett" 
+	editor="jimbe" 
+	services="" 
+	documentationCenter="php"/>
 
-[WACOM.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+<tags 
+	ms.service="multiple" 
+    	ms.date="06/03/2015"
+	wacn.date="10/3/2015"/>
 
-  [create-an-azure-account]: ../includes/create-an-azure-account.md
+# 创建 Azure 帐户并启用预览功能
+
+[AZURE.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+
+<!---HONumber=71-->

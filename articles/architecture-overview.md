@@ -1,65 +1,102 @@
-<properties linkid="" urlDisplayName="" pageTitle="Architecture" metaKeywords="" description="Architecture overview that covers common design patterns" metaCanonical="" services="" documentationCenter="" videoId="" scriptId="" title="Architecture Overview" authors="robb" solutions="" manager="dongill" editor="mattshel" />
-<tags ms.service=""
-    ms.date="03/20/2015"
-    wacn.date="08/05/2015"
-    />
+<properties 
+	pageTitle="Microsoft Azure 上的应用程序体系结构" 
+	description="包括常见设计模式的体系结构概述" 
+	services="" 
+	documentationCenter="" 
+	authors="Rboucher" 
+	manager="jwhit" 
+	editor="mattshel"/>
 
-# 体系结构
+<tags 
+	ms.service="multiple" 
+	ms.date="08/11/2015" 
+	wacn.date="10/3/2015"/>
 
-了解如何在 Azure 中实施常见设计模式。
+#Microsoft Azure 上的应用程序体系结构
+用于构建使用 Microsoft Azure 的应用程序的资源。这包括一些工具，帮助您画图以直观地描述软件系统。
 
-### Azure 符号/图标集
+##Microsoft 体系结构认证课程
 
-[下载 Azure 符号/图标集][下载 Azure 符号/图标集]以创建描述（或使用）Azure 的技术材料 - 例如体系结构图、培训材料、演示文稿、数据表、信息图和白皮书。你可以下载 PPT、Visio 或 PNG 格式的符号。我们想要知道你的想法，因此下载文件中包含了有关如何提供反馈的说明。
+Microsoft 刚刚发布了支持 Microsoft 认证考试 70-534 的新的体系结构课程。在 [EDX.ORG 上免费提供](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x)。使用新的 [3D Blueprint Visio Template](#3d-blueprint-visio-template)。
 
-![Azure 符号/图标集][Azure 符号/图标集]
+![Microsoft 体系结构认证课程](./media/architecture-overview/EDXCourse.png)
 
-## 设计模式
+##Microsoft 体系结构蓝图
 
-### [让使用者竞争][让使用者竞争]
+Microsoft 发布了一套高级别的 [体系结构蓝图](http://aka.ms/azblueprints)，介绍如何使用 Microsoft 产品构建特定类型的系统。
 
-![让使用者竞争][1]
+每个蓝图包含一个
 
-使多个并发使用者能够处理同一消息通道上收到的消息。此模式可让系统同时处理多个消息，以优化吞吐量、改进可扩展性和可用性，以及平衡工作负载。
+- 平面的基于**2D Visio** 2003 的文件，供您下载和修改 
+- 彩色 **3D perspective PDF** 文件为较少的技术受众介绍蓝图
+- **Video** 通过 3D 版本运行。 
 
-### [命令和查询责任分离][命令和查询责任分离]
+该蓝图使用 [Cloud and Enterprise Symbol Set](#symbol-and-icon-sets)。
 
-![命令和查询责任分离][2]
+![Microsoft 体系结构蓝图 3D 图](./media/architecture-overview/BluePrintThumb.jpg)
 
-使用独立接口将读取数据的操作与更新数据的操作分离。此模式可以最大化性能、可扩展性和安全性；具有更高的灵活性，支持系统随着时间的推移而改进；防止更新命令在域级别造成合并冲突。
 
-### [领导选拔][领导选拔]
 
-![领导选拔][3]
+##3D Blueprint Visio Template
+3D 版 [Microsoft 体系结构蓝图](http://aka.ms/azblueprints)最初在非 Microsoft 工具中创建，但新的 Visio 2013 模板于 2015 年 8 月 5 日发布，作为 [Microsoft 体系结构认证课程的一部分，分布在 EDX.ORG 上](#microsoft-architecture-certification-course)。
 
-协调分布式应用程序中协作的任务实例集合所执行的操作，具体的协调方式是选拔一个实例作为领导来负责管理其他实例。此模式有助于确保任务实例不会因相互冲突而导致共享资源的争用，也不会意外地影响其他任务实例执行的工作。
+该模板在本课程外也可用。
 
-### [管道和筛选器][管道和筛选器]
+- 首先[观看视频培训](http://aka.ms/3dBlueprintTemplateVideo)了解其功能   
+- 下载 [Microsoft 3d Blueprint Visio Template](http://aka.ms/3DBlueprintTemplate)
+- 下载 [Cloud and Enterprise Symbols](#symbol-and-icon-sets) 与 3D 模板共同使用
 
-![管道和筛选器][4]
+提供反馈，或者需要提培训材料无法答复的具体问题，请发邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。可用性是模板的主要目标之一，让我们了解其优点和缺点
 
-将一个执行复杂处理的任务分解为一系列可重复使用的离散元素。此模式允许单独部署和缩放执行处理的任务元素，从而可以提高性能、可扩展性和可重用性。
+![Microsoft 3D Blueprint Visio Template](./media/architecture-overview/3DBlueprintVisioTemplate.jpg)
 
-### [严格保密的密钥][严格保密的密钥]
 
-![严格保密的密钥][5]
 
-使用一个可让客户端有限度直接访问特定资源或服务的令牌或密钥，以减轻应用程序代码的数据传输操作负担。此模式在使用云托管存储系统或队列的应用程序中特别有用，可以最大程度地降低成本并提高可扩展性和性能。
+##符号和图标集 
 
-### 更多指导
+[查看 Visio 和符号培训视频](http://aka.ms/CnESymbolsVideo)然后[下载云和企业符号集](http://aka.ms/CnESymbols)来帮助创建描述 Azure、Windows Server 和 SQL Server 等的技术资料。如果此书培训用户如何使用 Microsoft 产品，您可以使用体系结构图的符号、培训材料、演示文稿、数据表、信息图、白皮书和甚至是第三方书籍。但是，它们并不适合在用户界面中使用。
 
-有关 Azure 中其他常见设计模式的信息，请参阅[云设计模式][云设计模式]。
+CnE 符号采用 Visio 和 PNG 格式。有关如何在 PowerPoint 中使用 PNG 的其他说明包括在集中。
 
-  [下载 Azure 符号/图标集]: https://www.microsoft.com/en-us/download/details.aspx?id=41937
-  [Azure 符号/图标集]: ./media/architecture-overview/AzureSymbols.png
-  [让使用者竞争]: http://msdn.microsoft.com/zh-cn/library/dn568101.aspx
-  [1]: ./media/architecture-overview/CompetingConsumers.png
-  [命令和查询责任分离]: http://msdn.microsoft.com/zh-cn/library/dn568103.aspx
-  [2]: ./media/architecture-overview/CQRS.png
-  [领导选拔]: http://msdn.microsoft.com/zh-cn/library/dn568104.aspx
-  [3]: ./media/architecture-overview/LeaderElection.png
-  [管道和筛选器]: http://msdn.microsoft.com/zh-cn/library/dn568100.aspx
-  [4]: ./media/architecture-overview/PipesAndFilters.png
-  [严格保密的密钥]: http://msdn.microsoft.com/zh-cn/library/dn568102.aspx
-  [5]: ./media/architecture-overview/ValetKey.png
-  [云设计模式]: http://msdn.microsoft.com/zh-cn/library/dn568099.aspx
+符号集按季度发布，一旦新服务发布就会更新。
+
+[Microsoft Office Visio stencil](http://www.microsoft.com/zh-CN/download/details.aspx?id=35772) 中的其他符号可用，但并没有对体系结构图如 CnE 集进行优化。
+
+
+**反馈：**如果您曾经使用过 CnE 符号，请填写 5 个简短的[调查](http://aka.ms/azuresymbolssurveyv2)问题，如果有具体的问题或事宜需要咨询，请发电子邮件至 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com)。我们想知道您的想法，包括积极的反馈，以便我们知道可以继续对其投入时间。
+
+
+![云和企业符号/图标集](./media/architecture-overview/CnESymbols.png)
+
+
+##Azure 体系结构设计模式
+Microsoft 发布一系列体系结构设计模式，以帮助您编写自己的自定义设计。这些模式都应是简洁的体系结构指南，可以按顺序组合在一起，为如何充分利用 Microsoft Azure 平台提供指导，以满足您组织的业务需求。
+
+
+[概述](/documentation/articles/azure-architectures-cpif-overview) - [混合网络](/documentation/articles/azure-architectures-cpif-infrastructure-hybrid-networking) - [异地批处理](/documentation/articles/azure-architectures-cpif-foundation-offsite-batch-processing-tier) - [多站点数据层](/documentation/articles/azure-architectures-cpif-foundation-multi-site-data-tier) - [全局负载平衡的 Web 层](/documentation/articles/azure-architectures-cpif-foundation-global-load-balanced-web-tier) - [Azure 搜索层](/documentation/articles/azure-architectures-cpif-foundation-azure-search-tier)
+ 
+每个模式包含
+ 
+- 一份服务说明
+- 一份利用此模式所需的 Azure 服务列表
+- 若干体系结构图
+- 若干体系结构依赖项
+- 一些设计限制或可能会影响该模式的注意事项
+- 若干接口和终结点
+- 若干反模式
+- 高级别体系结构方面的关键注意事项包括可用性和复原能力、使用了服务的复合 SLA、规模和性能、成本和操作方面的注意事项。
+
+
+![Azure 体系结构设计模式](./media/architecture-overview/AzureArchPatterns.jpg)
+
+##设计模式海报
+Microsoft Patterns and Practices 已发布了[云设计模式](http://msdn.microsoft.com/library/dn568099.aspx)一书，在 MSDN 上可用，也可以 PDF 格式下载。此外还提供了一张可用的大画幅海报，列出了所有的模式。
+
+![模式与实践云模式海报](./media/architecture-overview/PnPPatternPosterThumb.jpg)
+
+##体系结构信息图
+Microsoft 发布了几个与体系结构相关的海报/信息图。它们包括[构建实际云应用程序](http://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/)和[与云服务一起成长](http://azure.microsoft.com/documentation/infographics/cloud-services/)。
+
+![Azure 体系结构信息图](./media/architecture-overview/AzureArchInfographicThumb.jpg)
+
+<!---HONumber=71-->

@@ -9,12 +9,14 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="07/15/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/13/2015"
+	wacn.date="10/3/2015"/>
 
 # 设计 Azure 资源管理器模板的最佳实践
 
 在与企业、系统集成商 (SI)、云服务供应商 (CSV) 和开放源代码软件 (OSS) 项目团队合作时，经常需要快速部署环境、工作负荷或缩放单位。这些部署需要受到支持，根据经过实证的做法执行，并遵循既有的策略。基于 Azure 资源管理器模板使用弹性方法，可以快速一致地部署复杂拓扑，然后随着核心产品的演进轻松缩放这些部署，或者适应外来方案或客户的变化。
+
+本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载 [一流的 ARM 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf)。
 
 模板结合了底层 Azure 资源管理器的优点，以及 JavaScript 对象表示法 (JSON) 的自适应性和易读性。使用模板可以：
 
@@ -195,8 +197,7 @@ Azure 网站上的 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.
 
 **模板元数据在 metadata.json 文件中描述**
 
-软件代理可以检索 metadata.json 文件，并在网页或目录中发布信息以及模板的链接。  
-元素包括 *itemDisplayName*、*description*、*summary*、*githubUsername* 和 *dateUpdated*。
+软件代理可以检索 metadata.json 文件，并在网页或目录中发布信息以及模板的链接。元素包括 *itemDisplayName*、*description*、*summary*、*githubUsername* 和 *dateUpdated*。
 
 下面显示了完整的示例文件。
 
@@ -242,7 +243,7 @@ Azure 网站上的 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.
 
 **可选资源模板**
 
-例如，可以使用可选资源模板来配置 Jumpbox，以便从公共 Internet 间接访问部署的环境。使用参数或变量来识别是否应启用 Jumpbox，并使用 *concat* 函数来构建模板的目标名称，例如 *jumpbox_enabled.json*。模板链接将使用生成的变量来安装 Jumpbox。
+例如，可以使用可选资源模板来配置 Jumpbox，以便从公共 Internet 间接访问部署的环境。使用参数或变量来识别是否应启用 Jumpbox，并使用 *concat* 函数来构建模板的目标名称，例如 *jumpbox\_enabled.json*。模板链接将使用生成的变量来安装 Jumpbox。
 
 可以从多个位置链接可选资源模板：
 
@@ -306,7 +307,7 @@ Azure 网站上的 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.
 
 创建名为 shared-resources.json 的共享资源模板
 
-创建用于启用 Jumpbox 部署的可选资源模板，其名为 jumpbox_enabled.json
+创建用于启用 Jumpbox 部署的可选资源模板，其名为 jumpbox\_enabled.json
 
 Redis 只使用单一节点类型，因此你将要创建名为 node-resources.json 的单个成员资源模板。
 
@@ -316,9 +317,9 @@ Redis 只使用单一节点类型，因此你将要创建名为 node-resources.j
 
 主模板使用模板链接向外链接到共享资源模板，以建立虚拟网络。
 
-在主模板中添加逻辑，使模板使用者能够指定是否应部署 Jumpbox。*EnableJumpbox* 参数的 *enabled* 值指示客户想要部署 Jumpbox。如果提供了此值，模板将串联 *_enabled* 作为 Jumpbox 功能的基本模板名称后缀。
+在主模板中添加逻辑，使模板使用者能够指定是否应部署 Jumpbox。*EnableJumpbox* 参数的 *enabled* 值指示客户想要部署 Jumpbox。如果提供了此值，模板将串联 *\_enabled* 作为 Jumpbox 功能的基本模板名称后缀。
 
-主模板应用 *large* 参数值作为 T 恤尺寸的基本模板名称后缀，然后使用模板中的该值向外链接到 *technology_on_os_large.json*。
+主模板应用 *large* 参数值作为 T 恤尺寸的基本模板名称后缀，然后使用模板中的该值向外链接到 *technology\_on\_os\_large.json*。
 
 拓扑类似于下图。
 
@@ -378,4 +379,4 @@ Redis 只使用单一节点类型，因此你将要创建名为 node-resources.j
 - 至于如何在 Azure 资源管理器中处理安全事项，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)以获取相关建议
 - 若要了解进出模板的状态，请参阅[共享 Azure 资源管理器模板中的状态](/documentation/articles/best-practices-resource-manager-state)。
 
-<!---HONumber=67-->
+<!---HONumber=71-->
