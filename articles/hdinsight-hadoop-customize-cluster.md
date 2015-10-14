@@ -46,7 +46,6 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 
 Name | 脚本
 ----- | -----
-**安装 Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1。 请参阅[在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]。
 **安装 R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。 请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
 **安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。 请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。
 - **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。 请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
@@ -118,13 +117,6 @@ HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/mi
 			...
 		};
 
-		// Add the script action to install Spark
-		clusterInfo.ConfigActions.Add(new ScriptAction(
-	  		"MyScriptActionName", // Name of the config action
-	  		new ClusterNodeType[] { ClusterNodeType.HeadNode }, // List of nodes to install the component on
-	  		new Uri("http://uri.to/scriptaction.ps1"), // Location of the script to install the component
-	  		"MyScriptActionParameter" //Parameters, if any, required by the script
-		));
 
 
 
@@ -138,7 +130,7 @@ HDInsight 服务中有两种类型的开放源代码组件：
 
 完全支持内置组件，Microsoft 支持部门将帮助你找出并解决与这些组件相关的问题。
 
-自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a> 和 <a href="http://spark.apache.org/" target="_blank">Spark</a>。
+自定义组件可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：<a href ="https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hdinsight" target="_blank">HDInsight 的 MSDN 论坛</a>和<a href="http://stackoverflow.com" target="_blank">堆栈溢出</a>。此外，Apache 项目在 <a href="http://apache.org" target="_blank">Apache.org</a> 上提供了项目站点，例如 <a href="http://hadoop.apache.org/" target="_blank">Hadoop</a>。
 
 HDInsight 服务提供多种方式来使用自定义组件。不论在群集上使用组件或安装组件的方式为何，均适用相同级别的支持。以下是可以在 HDInsight 群集上使用的自定义组件最常见方式的列表：
 
@@ -155,12 +147,10 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 
 - [使用自定义选项在 HDInsight 中设置 Hadoop 群集][hdinsight-provision-cluster]说明了如何使用其他自定义选项来设置 HDInsight 群集。
 - [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
-- [在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
 - [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)
 - [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
 
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
 [hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters

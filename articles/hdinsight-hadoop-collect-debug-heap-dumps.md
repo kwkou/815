@@ -21,8 +21,6 @@
 
 必须为各个群集上的各个服务启用堆转储收集。默认情况下，为群集关闭了此功能。这些堆转储可能很大，因此，在启用收集后，建议你监视保存这些转储的 Blob 存储帐户。
 
-> [AZURE.NOTE]本文中的信息仅适用于基于 Windows 的 HDInsight。有关基于 Linux 的 HDInsight 的信息，请参阅[为基于 Linux 的 HDInsight 上的 Hadoop 服务启用堆转储](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux)
-
 ## <a name="whichServices"></a>符合堆转储条件的服务
 
 可按请求启用堆转储的服务包括：

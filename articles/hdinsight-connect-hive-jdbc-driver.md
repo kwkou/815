@@ -22,7 +22,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-* HDInsight 群集上的 Hadoop。可以使用基于 Linux 或基于 Windows 的群集。
+* HDInsight 群集上的 Hadoop。可以使用基于 Windows 的群集。
 
 * [Java 开发人员工具包 (JDK) 版本 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或更高版本。
 

@@ -20,8 +20,6 @@ Hadoop 为 MapReduce 提供了一个流式处理 API，使你能够以 Java 之�
 
 ![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
 
-> [AZURE.NOTE]本文中的步骤仅适用于基于 Windows 的 Azure HDInsight 群集。有关基于 Linux 的 HDInsight 流式处理的示例，请参阅[开发适用于 HDInsight 的 Python 流式处理程序](/documentation/articles/hdinsight-hadoop-streaming-python)。
-
 本教程演示如何：
 
 - 在 HDInsight Emulator for Azure 上使用 C# 开发和测试 Hadoop 流式处理 MapReduce 程序
