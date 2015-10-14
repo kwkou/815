@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有应用程序 (HTML 5) | 移动开发人员中心" 
+	pageTitle="将移动服务添加到现有应用 (HTML 5) | Windows Azure" 
 	description="了解如何开始在现有 HTML 应用程序中使用移动服务。" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/02/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/16/2015" 
+	wacn.date="10/03/2015"/>
 
 #  将移动服务添加到现有应用程序
 
@@ -72,7 +72,7 @@
 
 ## <a name="add-table"></a>将新表添加到移动服务
 
-为了能够在新移动服务中存储应用数据，必须先在关联的 SQL Database 实例中创建一个新表。
+为了能够在新移动服务中存储应用数据，必须先在关联的 SQL 数据库实例中创建一个新表。
 
 1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
@@ -86,12 +86,12 @@
 
 4. 单击新的 **TodoItem** 表，然后验证是否不存在任何数据行。
 
-	>[AZURE.NOTE]将使用 Id、__createdAt、__updatedAt 和 __version 列创建新表。启用动态架构后，移动服务将基于插入或更新请求中的 JSON 对象自动生成新列。有关详细信息，请参阅[动态架构](http://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx)。
+	>[AZURE.NOTE]将使用 Id、\_\_createdAt、\_\_updatedAt 和 \_\_version 列创建新表。启用动态架构后，移动服务将基于插入或更新请求中的 JSON 对象自动生成新列。有关详细信息，请参阅[动态架构](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193175.aspx)。
 
-6. 在“配置”选项卡中，验证 是否已列在“跨域资源共享(CORS)”下的“允许来自以下主机名的请求”列表中`localhost`。如果未列出，请在“主机名”字段中键入 `localhost`，然后单击“保存”。
+5. 在“配置”选项卡中，验证 是否已列在“跨域资源共享(CORS)”下的“允许来自以下主机名的请求”列表中`localhost`。如果未列出，请在“主机名”字段中键入 `localhost`，然后单击“保存”。
 
 
-	> [AZURE.IMPORTANT]如果将快速入门应用程序部署到除 localhost 以外的 Web 服务器，则必须将该 Web 服务器的主机名添加到“允许来自主机名的请求”列表。有关详细信息，请参阅[跨域资源共享](http://msdn.microsoft.com/zh-cn/library/azure/dn155871.aspx)。
+	> [AZURE.IMPORTANT]如果将快速入门应用程序部署到除 localhost 以外的 Web 服务器，则必须将该 Web 服务器的主机名添加到“允许来自主机名的请求”列表。有关详细信息，请参阅[跨域资源共享](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx"%20target="_blank)。
 
 现在，您可以将新移动服务用作应用的数据存储。
 
@@ -99,24 +99,24 @@
 
 将移动服务准备就绪后，您可以更新应用，以便在移动服务而不是本地集合中存储项。
 
-3. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
-4. 单击“仪表板”选项卡并记下“移动服务 URL”中的值，然后单击“管理密钥”并记下“应用程序密钥”中的值。
+2. 单击“仪表板”选项卡并记下“移动服务 URL”中的值，然后单击“管理密钥”并记下“应用程序密钥”中的值。
 
   	从应用代码访问移动服务时，您需要使用这些值。
 
-1. 在 Web 编辑器中打开 index.html 项目文件，然后将以下代码添加到页的脚本引用中：
+3. 在 Web 编辑器中打开 index.html 项目文件，然后将以下代码添加到页的脚本引用中：
 
         <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
 
-5. 在编辑器中打开 app.js 文件，取消注释以下用于定义 **MobileServiceClient** 变量的代码，然后在 **MobileServiceClient** 构造函数中依次提供来自移动服务的 URL 和应用程序密钥：
+4. 在编辑器中打开 app.js 文件，取消注释以下用于定义 **MobileServiceClient** 变量的代码，然后在 **MobileServiceClient** 构造函数中依次提供来自移动服务的 URL 和应用程序密钥：
 
 	    var MobileServiceClient = WindowsAzure.MobileServiceClient,
 			client = new MobileServiceClient('AppUrl', 'AppKey'),   		    
 
   	这将创建用于访问移动服务的 MobileServiceClient 的新实例。
 
-6. 注释掉以下代码行：
+5. 注释掉以下代码行：
 
 		var itemCount = 0;
 		var staticItems = [];
@@ -127,7 +127,7 @@
 
         todoItemTable = client.getTable('todoitem');
 
-   	此代码将为 SQL Database **TodoItem** 创建代理对象 (**todoItemTable**)。
+   	此代码将为 SQL 数据库 **TodoItem** 创建代理对象 (**todoItemTable**)。
 
 7. 将 **$('#add-item').submit** 事件处理程序替换为以下代码：
 
@@ -195,7 +195,7 @@
 
 ## <a name="test-app"></a>针对新移动服务测试应用程序
 
-4. 在 Web 浏览器中重新加载 URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> 以启动该应用程序。
+1. 在 Web 浏览器中重新加载 URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> 以启动该应用程序。
 
     > [AZURE.NOTE]如果需要重新启动 Web 服务器，请重复第一部分中的步骤。
 
@@ -241,17 +241,16 @@
 [0]: ./media/mobile-services-html-get-started-data/mobile-quickstart-startup-html.png
 
 <!-- URLs. -->
-
-[移动服务入门]: mobile-services-html-get-started
-[向应用程序添加身份验证]: mobile-services-html-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-html-get-started
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
 [GetStartedWithData app]: http://go.microsoft.com/fwlink/?LinkID=286345
 [GetStartedWithData 应用程序]: http://go.microsoft.com/fwlink/?LinkID=286345
 
-[Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library
+[Mobile Services HTML/JavaScript How-to Conceptual Reference]: /documentation/articles/mobile-services-html-how-to-use-client-library
 
-[Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/azure/dn155871.aspx
+[Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

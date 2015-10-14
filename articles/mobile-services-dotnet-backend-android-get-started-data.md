@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/05/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="07/29/2015" 
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有应用程序
 
@@ -18,7 +18,7 @@
 
 本主题说明如何使用 Azure 移动服务作为 Android 应用程序的后端数据源。在本教程中，你将要创建一个新移动服务，为某个应用程序（该应用程序在内存中存储数据）下载一个 Eclipse Android 项目，将该移动服务与该应用程序相集成，并查看运行该应用程序时对数据所做的更改。
 
-在本教程中创建的移动服务支持移动服务中的 .NET 运行时。这样，你便可以将 .NET 语言和 Visual Studio 用于移动服务中的服务器端业务逻辑。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](mobile-services-android-get-started-data)。
+在本教程中创建的移动服务支持移动服务中的 .NET 运行时。这样，你便可以将 .NET 语言和 Visual Studio 用于移动服务中的服务器端业务逻辑。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本](/documentation/articles/mobile-services-android-get-started-data)。
 
 > [AZURE.NOTE]如果你要查看本教程的 Eclipse 版本，请转到：[数据处理入门 (Eclipse)]。
 
@@ -100,7 +100,7 @@
 
 * [推送通知入门]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 Android 操作方法概念性参考](mobile-services-android-how-to-use-client-library)<br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
+* [移动服务 Android 操作方法概念性参考](/documentation/articles/mobile-services-android-how-to-use-client-library)<br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
   
 <!-- Anchors. -->
 
@@ -118,11 +118,10 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-
-[数据处理入门 (Eclipse)]: mobile-services-dotnet-backend-android-get-started-data-EC
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[身份验证入门]: mobile-services-dotnet-backend-android-get-started-users
-[推送通知入门]: mobile-services-dotnet-backend-android-get-started-push
+[数据处理入门 (Eclipse)]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data-EC
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
@@ -130,4 +129,4 @@
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
   
 
-<!---HONumber=61-->
+<!---HONumber=71-->

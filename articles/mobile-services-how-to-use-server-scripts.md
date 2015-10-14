@@ -9,13 +9,13 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/05/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/17/2015" 
+	wacn.date="10/03/2015"/>
 
 
 #  使用 JavaScript 后端移动服务
 
-<div class="dev-center-tutorial-subselector"><a href="/documentation/articles/mobile-services-dotnet-backend-how-to-use/" title=".NET 后端">.NET 后端</a> | <a href="/documentation/articles/mobile-services-how-to-use-server-scripts/"  title="JavaScript 后端" class="current">JavaScript 后端</a></div>
+ 
 本文提供有关如何在 Azure 移动服务中使用 JavaScript 后端的详细信息和示例。
 
 ## <a name="intro"></a>介绍
@@ -224,7 +224,7 @@
 `id` 的值必须唯一，并且不能包含以下集中的字符：
 
 + 控制字符：[0x0000-0x001F] 和 [0x007F-0x009F]。有关详细信息，请参阅 [ASCII 控制代码 C0 和 C1](http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set)。
-+  可打印字符：**"**(0x0022), **\+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
++  可打印字符：**"**(0x0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
 +  ID“.”和“..”
 
 也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](../virtual-machines-command-line-tools.md#Mobile_Tables)。
@@ -481,6 +481,7 @@ HTTP GET 请求可按如下所示调用上述自定义 API 示例中的两个路
 + **path**：包含用于处理文件路径的实用工具。有关详细信息，请参阅 [Node.js 文档][path API]。
 + **querystring**：包含用于处理查询字符串的实用工具。有关详细信息，请参阅 [Node.js 文档][querystring API]。
 + **request**：向 Twitter 和 Facebook 等外部 REST 服务发送 HTTP 请求。有关详细信息，请参阅[发送 HTTP 请求]。
++ **sendgrid**：使用 Azure 中的 Sendgrid 电子邮件服务发送电子邮件。有关详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件]。
 + **url**：包含用于分析和解析 URL 的实用工具。有关详细信息，请参阅 [Node.js 文档][url API]。
 + **util**：包含各种实用工具，例如字符串格式设置和对象类型检查。有关详细信息，请参阅 [Node.js 文档][util API]。 
 + **zlib**：公开压缩功能，例如 gzip 和 deflate。有关详细信息，请参阅 [Node.js 文档][zlib API]。 
@@ -532,7 +533,7 @@ HTTP GET 请求可按如下所示调用上述自定义 API 示例中的两个路
  
 在脚本中，Helper 函数必须在主函数之后声明。必须声明脚本中的所有变量。未声明的变量会导致出错。
 
-Helper 函数也可以只定义一次，然后在服务器脚本之间共享。若要在脚本之间共享某个函数，必须导出该函数，并且脚本文件必须在 `.\service\shared\` 目录中存在。以下模板演示了如何在文件 `.\services\shared\helpers.js` 中导出共享函数：
+Helper 函数也可以只定义一次，然后在服务器脚本之间共享。若要在脚本之间共享某个函数，必须导出该函数，并且脚本文件必须在 `.\service\shared` 目录中存在。以下模板演示了如何在文件 `.\services\shared\helpers.js` 中导出共享函数：
 
 		exports.handleUnapprovedItem = function (tables, user, callback) {
 		    
@@ -594,7 +595,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 
 请注意，此目录结构与使用源代码管理时的 git 存储库相同。
 
-从命令行工具上载脚本文件时，必须先导航到 `.\services\` 目录。以下命令从 `table` 子目录上载名为 `todoitem.insert.js` 的脚本：
+从命令行工具上载脚本文件时，必须先导航到 `.\services` 目录。以下命令从 `table` 子目录上载名为 `todoitem.insert.js` 的脚本：
 
 		~$azure mobile script upload todolist table/todoitem.insert.js
 		info:    Executing command mobile script upload
@@ -631,7 +632,7 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 
 ## <a name="working-with-tables"></a>使用表
 
-本部分详细介绍了用于直接处理 SQL Database 表数据的策略，具体包括以下小节：
+本部分详细介绍了用于直接处理 SQL 数据库表数据的策略，具体包括以下小节：
 
 + [使用表的概述](#overview-tables)
 + [如何：从脚本访问表]
@@ -1008,66 +1009,66 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 [4]: ./media/mobile-services-how-to-use-server-scripts/4-mobile-source-local-cli.png
 
 <!-- URLs. -->
-
-[移动服务服务器脚本参考]: http://msdn.microsoft.com/zh-cn/library/azure/jj554226.aspx
-[在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks/
-[request object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx
-[request 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx
-[response object]: http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx
-[response 对象]: http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx
-[User object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554220.aspx
-[user 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554220.aspx
-[用户对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554220.aspx
-[push object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx
-[insert function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554229.aspx
-[insert]: http://msdn.microsoft.com/zh-cn/library/azure/jj554229.aspx
-[update function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554214.aspx
-[delete function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554215.aspx
-[read function]: http://msdn.microsoft.com/zh-cn/library/azure/jj554224.aspx
-[update]: http://msdn.microsoft.com/zh-cn/library/azure/jj554214.aspx
-[delete]: http://msdn.microsoft.com/zh-cn/library/azure/jj554215.aspx
-[read]: http://msdn.microsoft.com/zh-cn/library/azure/jj554224.aspx
-[query object]: http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
-[query 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
-[apns object]: http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx
-[mpns object]: http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx
-[wns object]: http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
-[table 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554210.aspx
-[tables 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj614364.aspx
-[mssql 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554212.aspx
-[console 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554209.aspx
-[读取和写入数据]: http://msdn.microsoft.com/zh-cn/library/azure/jj631640.aspx
-[验证数据]: http://msdn.microsoft.com/zh-cn/library/azure/jj631638.aspx
-[修改请求]: http://msdn.microsoft.com/zh-cn/library/azure/jj631635.aspx
-[修改响应]: http://msdn.microsoft.com/zh-cn/library/azure/jj631631.aspx
+[移动服务服务器脚本参考]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554226.aspx
+[在移动服务中计划后端作业]: /zh-cn/documentation/articles/mobile-services-schedule-recurring-tasks/
+[request object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx
+[request 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx
+[response object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303373.aspx
+[response 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303373.aspx
+[User object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554220.aspx
+[user 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554220.aspx
+[用户对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554220.aspx
+[push object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
+[insert function]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554229.aspx
+[insert]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554229.aspx
+[update function]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554214.aspx
+[delete function]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554215.aspx
+[read function]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554224.aspx
+[update]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554214.aspx
+[delete]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554215.aspx
+[read]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554224.aspx
+[query object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj613353.aspx
+[query 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj613353.aspx
+[apns object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj839711.aspx
+[mpns object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj871025.aspx
+[wns object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860484.aspx
+[table 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554210.aspx
+[tables 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj614364.aspx
+[mssql 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx
+[console 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554209.aspx
+[读取和写入数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631640.aspx
+[验证数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631638.aspx
+[修改请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631635.aspx
+[修改响应]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631631.aspx
 [Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
-[计划作业]: http://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx
-[使用服务器脚本在移动服务中验证和修改数据]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
-[用于管理 Azure 移动服务的命令]: /documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts
-[Windows Store Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
-[Windows Phone Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
-[iOS Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
-[Android Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
+[计划作业]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj860528.aspx
+[使用服务器脚本在移动服务中验证和修改数据]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts/
+[用于管理 Azure 移动服务的命令]: /zh-cn/documentation/articles/command-line-tools/#Commands_to_manage_mobile_services/#Mobile_Scripts
+[Windows Store Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
+[Windows Phone Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
+[iOS Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+[Android Push]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
-[发送 HTTP 请求]: http://msdn.microsoft.com/zh-cn/library/azure/jj631641.aspx
-[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[发送 HTTP 请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631641.aspx
+[使用 SendGrid 从移动服务发送电子邮件]: /zh-cn/documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
+[身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
 [path API]: http://go.microsoft.com/fwlink/p/?LinkId=288803
 [querystring API]: http://go.microsoft.com/fwlink/p/?LinkId=288804
 [url API]: http://go.microsoft.com/fwlink/p/?LinkId=288805
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
-[自定义 API]: http://msdn.microsoft.com/zh-cn/library/azure/dn280974.aspx
-[从客户端调用自定义 API]: /documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api
+[自定义 API]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn280974.aspx
+[从客户端调用自定义 API]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-call-custom-api/#define-custom-api
 [express.js 库]: http://go.microsoft.com/fwlink/p/?LinkId=309046
-[定义支持定期通知的自定义 API]: /documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/
+[定义支持定期通知的自定义 API]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/
 [express.js 中的 express 对象]: http://expressjs.com/api.html#express
-[Store server scripts in source control]: /documentation/articles/mobile-services-store-scripts-source-control/
-[在服务器脚本中利用共享代码和 Node.js 模块]: /documentation/articles/mobile-services-store-scripts-source-control/#use-npm
-[service 对象]: http://msdn.microsoft.com/zh-cn/library/azure/dn303371.aspx
+[Store server scripts in source control]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/
+[在服务器脚本中利用共享代码和 Node.js 模块]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/#use-npm
+[service 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303371.aspx
 [应用设置]: http://msdn.microsoft.com/zh-cn/library/dn529070.aspx
 [config module]: http://msdn.microsoft.com/zh-cn/library/dn508125.aspx
 [Azure 移动服务中对 package.json 的支持]: http://go.microsoft.com/fwlink/p/?LinkId=391036
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

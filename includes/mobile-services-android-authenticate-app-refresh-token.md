@@ -1,10 +1,10 @@
 在简单的情况下，我们的令牌缓存应该有效，但是，在令牌到期或撤销时，会发生什么情况？该应用未运行时，该令牌可能会到期。这就意味着令牌缓存无效。在应用直接进行的调用或移动服务库进行的调用期间，该应用实际运行时，令牌也可能到期。结果将是 HTTP 状态码 401"未授权"。 
 
-我们需要能够检测到期的令牌，并刷新它。为此，我们从 [Android 客户端库](http://dl.windowsazure.cn/androiddocs)使用 [ServiceFilter](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/ServiceFilter.html)。
+我们需要能够检测到期的令牌，并刷新它。为此，我们从[ Android 客户端库](http://dl.windowsazure.cn/androiddocs/)使用 [ServiceFilter](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/ServiceFilter.html)。
 
 在本节中，您将定义 ServiceFilter，它将检测 HTTP 状态码 401 响应，并触发令牌和令牌缓存的刷新。此外，在身份验证期间，此 ServiceFilter 将阻止其他出站请求，以便这些请求可以使用刷新的令牌。
 
-1. 在 Eclipse 中，打开 ToDoActivity.java 文件并添加以下 import 语句：
+1. 打开 ToDoActivity.java 文件并添加以下 import 语句：
  
         import java.util.concurrent.atomic.AtomicBoolean;
 		import java.util.concurrent.ExecutionException;
@@ -74,7 +74,7 @@
     	}
 
 
-5. 在 ToDoActivity.java 文件中，更新 ToDoActivity 类的  `authenticate` 方法，以便它接受一个布尔型参数，以允许强制刷新令牌和令牌缓存。我们还需要在身份验证完成时，通知任何被阻止的线程以便其可以选取新令牌。
+5. 在 ToDoActivity.java 文件中，更新 ToDoActivity 类的 `authenticate` 方法，使它接受一个布尔型参数，以允许强制刷新令牌和令牌缓存。我们还需要在身份验证完成时，通知任何被阻止的线程以便其可以选取新令牌。
 
 	    /**
     	 * Authenticates with the desired login provider. Also caches the token. 
@@ -186,8 +186,6 @@
 	                                    public void run() {
 	                                        // Force a token refresh during authentication.
 	                                        authenticate(true);
-				// ToDoActivity.mMainActivity.authenticate(true);
-	
 	                                    }
 	                                });
 	                            }
@@ -204,9 +202,57 @@
 		}
 
 
-    该服务过滤器将检查每个响应以查找 HTTP 状态码 401"未授权"。如果遇到 401，将在 UI 线程上设置用于获取新令牌的新登录请求。其他调用将被阻止，直到完成该登录，或 5 次尝试都已失败。如果获得新令牌，则将使用新令牌重试触发 401 的请求，将使用新令牌重试任何被阻止的调用。 
+    该服务过滤器将检查每个响应以查找 HTTP 状态码 401“未授权”。如果遇到 401，将在 UI 线程上设置用于获取新令牌的新登录请求。其他调用将被阻止，直到完成该登录，或 5 次尝试都已失败。如果获得新令牌，则将使用新令牌重试触发 401 的请求，将使用新令牌重试任何被阻止的调用。
 
-7. 在 ToDoActivity.java 文件中，更新  `onCreate` 方法，如下所示：
+7. 在 ToDoActivity.java 文件中，在 ToDoActivity 类中，为新 `ProgressFilter` 类添加此代码：
+		
+		/**
+		* The ProgressFilter class renders a progress bar on the screen during the time the App is waiting for the response of a previous request.
+		* the filter shows the progress bar on the beginning of the request, and hides it when the response arrived.
+		*/
+		private class ProgressFilter implements ServiceFilter {
+			@Override
+			public ListenableFuture<ServiceFilterResponse> handleRequest(ServiceFilterRequest request, NextServiceFilterCallback nextServiceFilterCallback) {
+
+				final SettableFuture<ServiceFilterResponse> resultFuture = SettableFuture.create();
+
+				runOnUiThread(new Runnable() {
+
+					@Override
+					public void run() {
+						if (mProgressBar != null) mProgressBar.setVisibility(ProgressBar.VISIBLE);
+					}
+				});
+
+				ListenableFuture<ServiceFilterResponse> future = nextServiceFilterCallback.onNext(request);
+
+				Futures.addCallback(future, new FutureCallback<ServiceFilterResponse>() {
+					@Override
+					public void onFailure(Throwable e) {
+						resultFuture.setException(e);
+					}
+
+					@Override
+					public void onSuccess(ServiceFilterResponse response) {
+						runOnUiThread(new Runnable() {
+
+							@Override
+							public void run() {
+								if (mProgressBar != null) mProgressBar.setVisibility(ProgressBar.GONE);
+							}
+						});
+
+						resultFuture.set(response);
+					}
+				});
+
+				return resultFuture;
+			}
+		}
+		
+	此筛选器将在请求开始时显示进度条，在响应传达时隐藏进度条。
+
+8. 在 ToDoActivity.java 文件中，更新 `onCreate` 方法，如下所示：
 
 		@Override
 	    public void onCreate(Bundle savedInstanceState) {
@@ -237,6 +283,6 @@
 	    }
 
 
-       在这代码中，除了  `ProgressFilter`，将使用  `RefreshTokenCacheFilter`。此外，在  `onCreate` 期间，我们想要加载令牌缓存。因此 将  `false` 传递给  `authenticate` 方法。
+       在此代码中，除了 `ProgressFilter` 以外，还使用了 `RefreshTokenCacheFilter`。此外，在 `onCreate` 期间，我们想要加载令牌缓存。因此将 `false` 传递给 `authenticate` 方法。
 
-
+<!---HONumber=71-->

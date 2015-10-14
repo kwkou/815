@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/29/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
@@ -50,7 +50,7 @@
 
         #import "ADALiOS/ADAuthenticationContext.h"
 
-2. 然后，添加以下方法：
+3. 然后，添加以下方法：
 
         - (void) loginAndGetData
         {
@@ -86,16 +86,16 @@
         }
 
 
-6. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-AUTHORITY-HERE** 替换为在其中进行应用程序设置的租户的名称，格式应为 https://login.windows.net/tenant-name.onmicrosoft.com。可以在 [Azure 管理门户]中从 Azure Active Directory 的“域”选项卡复制此值。
+4. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-AUTHORITY-HERE** 替换为在其中进行应用程序设置的租户的名称，格式应为 https://login.windows.net/tenant-name.onmicrosoft.com。可以在 [Azure 管理门户]中从 Azure Active Directory 的“域”选项卡复制此值。
 
-7. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-RESOURCE-URI-HERE** 替换为你的移动服务的“应用程序 ID URI”。如果你按照[如何向 Azure Active Directory 注册]主题进行操作，你的应用程序 ID URI 应该类似于 https://todolist.azure-mobile.net/login/aad。
+5. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-RESOURCE-URI-HERE** 替换为你的移动服务的“应用程序 ID URI”。如果你按照[如何向 Azure Active Directory 注册]主题进行操作，你的应用程序 ID URI 应该类似于 https://todolist.azure-mobile.net/login/aad。
 
-8. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-CLIENT-ID-HERE** 替换为你从本机客户端应用程序复制的客户端 ID。
+6. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-CLIENT-ID-HERE** 替换为你从本机客户端应用程序复制的客户端 ID。
 
-9. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-REDIRECT-URI-HERE** 替换为移动服务的 /login/done 终结点。它应该类似于 https://todolist.azure-mobile.net/login/done。
+7. 在上面的 `loginAndGetData` 方法的代码中，将 **INSERT-REDIRECT-URI-HERE** 替换为移动服务的 /login/done 终结点。它应该类似于 https://todolist.azure-mobile.net/login/done。
 
 
-3. 在 QSTodoListViewController 中修改 `ViewDidLoad`，方法是将 `[self refresh]` 替换为以下内容：
+8. 在 QSTodoListViewController 中修改 `ViewDidLoad`，方法是将 `[self refresh]` 替换为以下内容：
 
         [self loginAndGetData];
 
@@ -110,11 +110,10 @@
 
 
 <!-- URLs. -->
-
-[数据处理入门]: mobile-services-ios-get-started-data
-[移动服务入门]: mobile-services-dotnet-backend-ios-get-started
-[如何向 Azure Active Directory 注册]: mobile-services-how-to-register-active-directory-authentication
+[数据处理入门]: /documentation/articles/mobile-services-ios-get-started-data
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
+[如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [适用于 iOS 的 Active Directory 身份验证库]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
 
-<!---HONumber=61-->
+<!---HONumber=71-->

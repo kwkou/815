@@ -9,17 +9,17 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/09/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="07/21/2015" 
+	wacn.date="10/03/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
-
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
 ##概述
 本主题说明如何结合使用 Azure 移动服务和 .NET 后端向通用 Windows 应用程序发送推送通知。在本教程中，你将在通用 Windows 应用程序项目中使用 Azure 通知中心来启用推送通知。完成后，每当在 TodoList 表中插入一条记录时，移动服务都会从 .NET 后端向所有已注册的 Windows 应用商店和 Windows Phone 应用商店应用程序发送一条推送通知。创建的通知中心可在移动服务中任意使用，可独立于移动服务进行管理，并可供其他应用程序和服务使用。
 
->[AZURE.NOTE]本主题演示如何使用 Visual Studio Professional 2013 Update 3 中的工具，为通用 Windows 应用程序添加从移动服务发送推送通知的支持。可以使用相同的步骤将推送通知从移动服务添加到 Windows 应用商店或 Windows Phone 应用商店 8.1 应用程序。若要将推送通知添加到 Windows Phone 8 或 Windows Phone Silverlight 8.1 应用程序，请参阅此版本的[移动服务中的推送通知入门](mobile-services-dotnet-backend-windows-phone-get-started-push)。
+>[AZURE.NOTE]本主题演示如何使用 Visual Studio Professional 2013 Update 3 中的工具，为通用 Windows 应用程序添加从移动服务发送推送通知的支持。可以使用相同的步骤将推送通知从移动服务添加到 Windows 应用商店或 Windows Phone 应用商店 8.1 应用程序。若要将推送通知添加到 Windows Phone 8 或 Windows Phone Silverlight 8.1 应用程序，请参阅此版本的[移动服务中的推送通知入门](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push)。
 
 若要完成本教程，您需要以下各项：
 
@@ -76,20 +76,15 @@ public static MobileServiceClient todolistClient = new MobileServiceClient(
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [将移动服务添加到现有应用程序][Get started with data]
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [将移动服务添加到现有应用程序][Get started with data]<br/>了解有关使用移动服务存储和查询数据的详细信息。
 
-* [向应用程序添加身份验证][Get started with authentication]
-  <br/>了解如何通过不同帐户类型（使用移动服务）对应用程序的用户进行身份验证。
+* [向应用程序添加身份验证][Get started with authentication]<br/>了解如何通过不同帐户类型（使用移动服务）对应用程序的用户进行身份验证。
 
-* [什么是通知中心？] 
-  <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+* [什么是通知中心？] <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
-  </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
+* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)</br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
-* [如何使用适用于 Azure 移动服务的 .NET 客户端]
-  <br/>了解有关如何从 C# Windows 应用程序使用移动服务的详细信息。
+* [如何使用适用于 Azure 移动服务的 .NET 客户端]<br/>了解有关如何从 C# Windows 应用程序使用移动服务的详细信息。
 
 <!-- Anchors. -->
 
@@ -100,14 +95,14 @@ public static MobileServiceClient todolistClient = new MobileServiceClient(
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[Get started with data]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
 
-[向经过身份验证的用户发送推送通知]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[向经过身份验证的用户发送推送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 
-[什么是通知中心？]: notification-hubs-overview
+[什么是通知中心？]: /documentation/articles/notification-hubs-overview
 
-[如何使用适用于 Azure 移动服务的 .NET 客户端]: mobile-services-windows-dotnet-how-to-use-client-library
+[如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
-<!---HONumber=61-->
+<!---HONumber=71-->

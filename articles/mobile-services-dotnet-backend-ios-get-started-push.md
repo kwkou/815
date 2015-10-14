@@ -9,14 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="05/19/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="05/28/2015"
+	wacn.date="10/03/2015"/>
 
 
-# 向应用程序添加推送通知 | .NET 后端
+# 向 iOS 应用和 .NET 后端添加推送通知
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-本教程说明将推送通知发送到[快速入门项目](mobile-services-dotnet-backend-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
+本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-dotnet-backend-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
 [AZURE.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
 
@@ -24,23 +25,17 @@
 
 [AZURE.INCLUDE [在 Azure 移动服务中配置推送通知](../includes/mobile-services-apns-configure-push.md)]
 
-##<a id="update-server"></a>更新服务器以发送推送通知
+##<a id="update-server"></a>更新后端代码以发送推送通知
 
-* 在 Visual Studio 中，展开 **Controllers** 文件夹，然后打开 TodoItemController.cs。添加以下 `using` 语句（如果不存在）：
-
-
-		using System;
-		using System.Collections.Generic;
+* 打开 Visual Studio 项目，然后选择“控制器”文件夹 >“TodoItemController.cs”> 方法 `PostTodoItem`。将该方法替换为以下内容。插入待办事项时，此代码将发送包含项文本的推送通知。如果发生了错误，该代码将添加一个错误日志条目，该条目可通过门户中的“日志”部分查看。
 
 
-* 如下所示更新方法 `PostTodoItem`。插入待办事项时，此代码将发送包含项文本的推送通知。如果发生了错误，该代码将添加一个错误日志条目，该条目可通过门户中的“日志”部分查看。
-
-
-		public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
+```
+        public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
             TodoItem current = await InsertAsync(item);
 
-            ApplePushMessage message = new ApplePushMessage(item.Text, TimeSpan.FromHours(1));
+            ApplePushMessage message = new ApplePushMessage(item.Text, System.TimeSpan.FromHours(1));
 
             try
             {
@@ -53,11 +48,13 @@
             }
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
-
+```
 
 ##<a name="publish-the-service"></a>将移动服务发布到 Azure
 
 [AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service](../includes/mobile-services-dotnet-backend-publish-service.md)]
+
+[AZURE.INCLUDE [向应用程序添加推送通知](../includes/add-push-notifications-to-app.md)]
 
 [AZURE.INCLUDE [在应用程序中测试推送通知](../includes/test-push-notifications-in-app.md)]
 
@@ -120,16 +117,16 @@
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[移动服务入门]: mobile-services-dotnet-backend-ios-get-started
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Get started with data]: mobile-services-dotnet-backend-ios-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-ios-get-started-users
-[Send push notifications to authenticated users]: mobile-services-dotnet-backend-ios-push-notifications-app-users
-[Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library
-[What are Notification Hubs?]: notification-hubs-overview
-[Send broadcast notifications to subscribers]: notification-hubs-ios-send-breaking-news
-[Send template-based notifications to subscribers]: notification-hubs-ios-send-localized-breaking-news
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[Send push notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users
+[Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 
-<!---HONumber=61-->
+<!---HONumber=71-->

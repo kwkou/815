@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于 Xamarin iOS 应用程序的移动服务中的身份验证入门 - Azure 移动服务" 
+	pageTitle="用于 Xamarin iOS 应用的移动服务中的身份验证入门 | Windows Azure"
 	description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 Xamarin iOS 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="xamarin" 
@@ -9,11 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/13/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/03/2015"/>
 
 # 向移动服务应用程序添加身份验证
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
@@ -107,7 +108,10 @@
 
 	通过向下拉动项列表来执行刷新笔势，这将导致显示登录屏幕。成功输入有效的凭据后，应用程序将显示 Todo 项的列表，你可以对数据进行更新。
 
+<!-- ## <a name="next-steps"> </a>Next steps
 
+In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
+ -->
 <!-- Anchors. -->
 
 [注册应用程序以进行身份验证并配置移动服务]: #register
@@ -121,11 +125,11 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[移动服务入门]: mobile-services-dotnet-backend-xamarin-ios-get-started
-[Get started with authentication]: mobile-services-dotnet-backend-xamarin-ios-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-xamarin-ios-get-started-push
-[Authorize users with scripts]: mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
-[JavaScript and HTML]: mobile-services-dotnet-backend-windows-store-javascript-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-xamarin-ios-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts
+[JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 

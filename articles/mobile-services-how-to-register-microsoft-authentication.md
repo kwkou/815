@@ -9,10 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/07/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/08/2015" 
+	wacn.date="10/03/2015"/>
 
 # 注册应用程序以使用 Microsoft 帐户进行身份验证
+
+[AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../includes/mobile-services-selector-register-identity-provider.md)]
+
+## 概述 
 
 本主题说明如何注册你的移动应用程序，以便能够使用 Microsoft 帐户作为 Azure 移动服务的标识提供程序。以下步骤同样适用于使用 Live SDK 的服务导向型身份验证和客户端导向型身份验证。
 
@@ -32,7 +36,7 @@
 
    	此操作为应用创建一个新的 Windows 应用商店注册。
 
-3. 在 Visual Studio 中，打开你在完成[移动服务入门]教程后创建的项目。
+3. 在 Visual Studio 中，打开你在完成[移动服务入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started)教程后创建的项目。
 
 4. 在“解决方案资源管理器”中，右键单击 Windows 应用商店应用程序项目，单击“应用商店”，然后单击“将应用与应用商店关联...”。
 
@@ -40,19 +44,16 @@
 
    	此时将显示“将应用与 Windows 应用商店关联”向导。
 
-5. 在向导中，单击“登录”，以你的 Microsoft 帐户登录，选择你在步骤 2 中保留的应用程序名称，单击“下一步”，然后单击“关联”。
+5. 在向导中，单击“登录”，以你的 Microsoft 帐户登录，选择你在步骤 2 中保留的应用程序名称，然后单击“下一步”>“关联”。
 
    	这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
 
 6. （可选）对于 Windows 通用应用程序，请对 Windows Phone 应用商店项目重复执行步骤 4 和 5。
 
-7. 回到新应用的“Windows 开发人员中心”页，单击“服务”。
+7. 回到新应用的“Windows 开发人员中心”页，单击“服务”>“推送通知”。
 
-   	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-edit-app.png)
+8. 在“推送通知”页中，在“Windows 推送通知服务(WNS)和 Microsoft Azure 移动服务”下面单击“Live Services 站点”。
 
-8. 在“服务”页中，单击“Azure 移动服务”下的“Live 服务站点”。
-
-	![](./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-win8-edit2-app.png)
 
 此时将显示应用程序的 Microsoft 帐户页。
 
@@ -92,9 +93,9 @@
 
 <!-- URLs. -->
 
-[ ]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

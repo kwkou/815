@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="自定义身份验证入门 | 移动开发人员中心" 
+	pageTitle="自定义身份验证入门 | Windows Azure" 
 	description="了解如何使用用户名和密码对用户进行身份验证。" 
 	documentationCenter="Mobile" 
 	authors="mattchenderson" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/02/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/09/2015" 
+	wacn.date="10/03/2015"/>
 
 # 自定义身份验证入门
 
@@ -44,13 +44,11 @@
     
     这样，我们的新帐户表中将会显示一行，其中包含用户名、该用户的盐以及安全存储的密码。
 
-2. 在 **Models** 文件夹下，你将会看到与移动服务同名的 **DbContext** 派生类。请打开你的内容并添加以下代码，将帐户表添加到数据模型：
+4. 在 **Models** 文件夹下，你将会看到与移动服务同名的 **DbContext** 派生类。请打开你的内容并添加以下代码，将帐户表添加到数据模型：
 
         public DbSet<Account> Accounts { get; set; }
 
-	>[AZURE.NOTE]本教程中的代码段使用 `todoContext` 作为上下文名称。你必须更新项目上下文的代码段。
-
-	接下来，请设置安全功能以处理此数据。
+	>[AZURE.NOTE]本教程中的代码段使用 `todoContext` 作为上下文名称。你必须更新项目上下文的代码段。接下来，请设置安全功能以处理此数据。
  
 5. 创建名为 `CustomLoginProviderUtils` 的类，然后添加以下 `using` 语句：
 
@@ -112,7 +110,7 @@
 
 	在以上代码中，将占位符替换为项目的命名空间。
  
-4. 将类定义替换为以下代码：
+3. 将类定义替换为以下代码：
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
         public class CustomRegistrationController : ApiController
@@ -162,7 +160,7 @@
 
 ## 创建 LoginProvider
 
-**LoginProvider** 是移动服务身份验证管道中的基础构造之一。在本部分中，你将创建自己的 `CustomLoginProvider`。它并不会像内置提供程序一样插入管道中，但会为你提供方便的功能。
+**LoginProvider** 是移动服务身份验证管道中的基础构造之一。在本部分中，你将创建自己的 `CustomLoginProvider`。它并不会像内置提供程序一样插入管道中，但会为你提供方便的功能。如果你使用 Visual Studio 2013，则可能需要安装 `WindowsAzure.MobileServices.Backend.Security` Nuget 包才能添加对 `LoginProvider` 类的引用。
 
 1. 创建派生自 **LoginProvider** 的新类 `CustomLoginProvider`，然后添加以下 `using` 语句：
 
@@ -172,7 +170,7 @@
 		using Owin;
 		using System.Security.Claims;
  
-3. 将 **CustomLoginProvider** 类定义替换为以下代码：
+2. 将 **CustomLoginProvider** 类定义替换为以下代码：
 
         public class CustomLoginProvider : LoginProvider
         {
@@ -193,7 +191,7 @@
 
        如果你现在尝试生成项目，生成将会失败。`LoginProvider` 有三个稍后需要实现的抽象方法。
 
-2. 在同一个代码文件中创建名为 `CustomLoginProviderCredentials` 的新类。
+3. 在同一个代码文件中创建名为 `CustomLoginProviderCredentials` 的新类。
 
         public class CustomLoginProviderCredentials : ProviderCredentials
         {
@@ -205,7 +203,7 @@
 
 	此类表示有关用户的信息，将通过 [GetIdentitiesAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.serviceuser.getidentitiesasync.aspx) 在后端上供你使用。如果你要添加自定义声明，请确保可在此对象中捕获这些声明。
 
-3. 将抽象方法 `ConfigureMiddleware` 的以下实现添加到 **CustomLoginProvider**。
+4. 将抽象方法 `ConfigureMiddleware` 的以下实现添加到 **CustomLoginProvider**。
 
         public override void ConfigureMiddleware(IAppBuilder appBuilder, ServiceSettingsDictionary settings)
         {
@@ -215,14 +213,14 @@
 
 	这是一个无操作方法，因为 **CustomLoginProvider** 不会与身份验证管道集成。
 
-4. 将抽象方法 `ParseCredentials` 的以下实现添加到 **CustomLoginProvider**。public override ProviderCredentials ParseCredentials(JObject serialized) { if (serialized == null) { throw new ArgumentNullException("serialized"); }
+5. 将抽象方法 `ParseCredentials` 的以下实现添加到 **CustomLoginProvider**。public override ProviderCredentials ParseCredentials(JObject serialized) { if (serialized == null) { throw new ArgumentNullException("serialized"); }
 
             return serialized.ToObject<CustomLoginProviderCredentials>();
         }
 
 	此方法将使后端能够从传入的身份验证令牌反序列化用户信息。
 
-5. 将抽象方法 `CreateCredentials` 的以下实现添加到 **CustomLoginProvider**。
+6. 将抽象方法 `CreateCredentials` 的以下实现添加到 **CustomLoginProvider**。
 
         public override ProviderCredentials CreateCredentials(ClaimsIdentity claimsIdentity)
         {
@@ -241,6 +239,9 @@
         }
 
 	此方法将 [ClaimsIdentity] 转换成在身份验证令牌颁发阶段使用的 [ProviderCredentials] 对象。在此方法中，你可以再次捕获任何其他声明。
+7. 创建 **ConfigOptions** 后，打开 App\_Start 文件夹中的 WebApiConfig.cs 项目文件并添加以下代码行:
+		
+		options.LoginProviders.Add(typeof(CustomLoginProvider));
 
 ## 创建登录终结点
 
@@ -267,14 +268,14 @@
 
 	此类表示使用用户 ID 和身份验证令牌成功完成的登录。请注意，此类和客户端的 MobileServiceUser 类具有相同形式，因此，使用此类可以轻松地将登录响应传递给强类型化客户端。
 
-2. 右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomLoginController` 的新“Microsoft Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
+3. 右键单击“控制器”，单击“添加”和“控制器”，创建名为 `CustomLoginController` 的新“Microsoft Azure 移动服务自定义控制器”，然后添加以下 `using` 语句：
 
 		using Microsoft.WindowsAzure.Mobile.Service.Security;
 		using System.Security.Claims;
 		using <my_project_namespace>.DataObjects;
 		using <my_project_namespace>.Models;
 
-3. 将 **CustomLoginController** 类定义替换为以下代码：
+4. 将 **CustomLoginController** 类定义替换为以下代码：
 
         [AuthorizeLevel(AuthorizationLevel.Anonymous)]
         public class CustomLoginController : ApiController
@@ -331,7 +332,7 @@
 
 	随后会启动移动服务后端项目的新调试实例。成功启动服务之后，你会看到显示“此移动服务在正常运行”的启动页。
 
-2. 在服务启动页中，单击“试用”，然后在身份验证对话框中，键入你在 web.config 文件的 **MS_ApplicationKey** 应用程序设置中设置的密码，并将用户名保留空白。
+2. 在服务启动页中，单击“试用”，然后在身份验证对话框中，键入你在 web.config 文件的 **MS\_ApplicationKey** 应用程序设置中设置的密码，并将用户名保留空白。
 
 3. 在帮助页中，单击“CustomRegistration”终结点，然后单击“试用”。
 
@@ -355,11 +356,11 @@
 
 7. 在 GET 请求对话框中，单击“标头”旁边的加号，在左侧框中键入 `X-ZUMO-AUTH` 值，在右侧框中粘贴复制的 *authenticationToken* 值，然后单击“发送”。
 
- 	![][5]
+ 	![](./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-access-endpoint.png)
 
-   移动服务应会授予访问终结点的权限，并返回“200/正常”状态，以及表中的 TodoItems 列表。
+	移动服务应会授予访问终结点的权限，并返回“200/正常”状态，以及表中的 TodoItems 列表。
 
-   ![][6]
+ 	![](./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-access-success.png)
 
 >[AZURE.IMPORTANT]如果你选择还要将此移动服务项目发布到 Azure 以供测试，请记住，登录和身份验证提供程序将很容易受到攻击。确保这些提供程序已经过适当的增强，或者受保护的测试数据对你而言并不重要。使用自定义身份验证方案之前请保持谨慎，以确保生产环境服务的安全。
 
@@ -375,13 +376,13 @@
 
 	如果你在“帐户”表中保留了用户登录信息，则你只需调用 **CustomRegistration** 终结点一次，即可为给定的用户创建帐户。有关如何在支持的各种客户端平台上调用自定义 API 的示例，请参阅文章 [Azure 移动服务中的自定义 API – 客户端 SDK](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx)。
 	 
-	> [AZURE.IMPORTANT]由于此用户设置步骤只会发生一次，因此你可以考虑以某种带外方式创建用户帐户。对于公共注册终结点，还应该考虑实施基于短信或电子邮件的验证过程或者其他防护机制，以避免生成欺骗性的帐户。你可以通过移动服务发送短信。你也可以通过移动服务发送电子邮件。
+	> [AZURE.IMPORTANT]由于此用户设置步骤只会发生一次，因此你可以考虑以某种带外方式创建用户帐户。对于公共注册终结点，还应该考虑实施基于短信或电子邮件的验证过程或者其他防护机制，以避免生成欺骗性的帐户。你可以使用 Twilio 从移动服务发送短信。有关详细信息，请参阅[如何：发送短信](/documentation/articles/partner-twilio-mobile-services-how-to-use-voice-sms.md#howto_send_sms)。也可以使用 SendGrid 从移动服务发送电子邮件。有关详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts)。
 	
 3. 再次使用适当的 **invokeApi** 方法，但这次改为调用 **CustomLogin** 终结点，以在消息正文中传递运行时提供的用户名和密码。
 
 	这次你必须在成功登录后，捕获响应对象中返回的 *userId* 和 *authenticationToken* 值。
 	
-4. 使用返回的 *userId* 和 *authenticationToken* 值创建新的 **MobileServiceUser** 对象，并将该对象设为 **MobileServiceClient** 实例的当前用户，如[向现有应用程序添加身份验证](mobile-services-dotnet-backend-ios-get-started-users)主题中所述。由于 CustomLogin 的结果与 **MobileServiceUser** 对象具有相同形式，因此你应该能够直接转换结果。
+4. 使用返回的 *userId* 和 *authenticationToken* 值创建新的 **MobileServiceUser** 对象，并将该对象设为 **MobileServiceClient** 实例的当前用户，如[向现有应用程序添加身份验证](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users)主题中所述。由于 CustomLogin 的结果与 **MobileServiceUser** 对象具有相同形式，因此你应该能够直接转换结果。
 
 本教程到此结束。
 
@@ -396,12 +397,13 @@
 [2]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-test-client.png
 [3]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-send-register.png
 [4]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-login-result.png
-[5]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-access-endpoint.png
-[6]: ./media/mobile-services-dotnet-backend-get-started-custom-authentication/mobile-services-dotnet-backend-custom-auth-access-success.png
 
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
-[移动服务入门]: mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[ClaimsIdentity]: https://msdn.microsoft.com/zh-cn/library/system.security.claims.claimsidentity(v=vs.110).aspx
+[ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
+ 
 
-<!---HONumber=61-->
+<!---HONumber=71-->

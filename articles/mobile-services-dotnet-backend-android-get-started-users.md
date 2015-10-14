@@ -9,20 +9,22 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/13/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="06/13/2015" 
+	wacn.date="10/03/2015"/>
 
-# 向移动服务应用程序添加身份验证
+# 向移动服务 Android 应用添加身份验证
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
+## 摘要
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
 本教程将指导你完成在应用程序中启用身份验证的基本步骤。
 
 
+## 先决条件
 
-本教程基于移动服务快速入门。此外，还必须先完成[移动服务入门]教程。
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
 ##<a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
@@ -69,15 +71,14 @@
 [Next Steps]: #next-steps
 
 <!-- URLs. -->
-
-[移动服务入门]: mobile-services-dotnet-backend-android-get-started
-[Get started with data]: mobile-services-dotnet-backend-android-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-android-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-android-get-started-push
-[Authorize users with scripts]: mobile-services-dotnet-backend-android-authorize-users-in-scripts
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-android-authorize-users-in-scripts
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: mobile-services-how-to-register-store-app-package-microsoft-authentication
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 
-<!---HONumber=61-->
+<!---HONumber=71-->

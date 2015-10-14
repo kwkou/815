@@ -9,18 +9,18 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/29/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="07/21/2015" 
+	wacn.date="10/03/2015"/>
 
 # 向移动服务应用程序添加身份验证
 
-
+[AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
 ## 概述
 
 本主题说明如何通过 Windows Phone 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
->[AZURE.NOTE]本主题仅支持 Windows Phone 8.0 和 Windows Phone 8.1 Silverlight 应用程序。如果你有 Windows Phone 应用商店 8.1 或通用 Windows 应用程序，请遵循[本主题的通用 Windows 应用程序版本](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users)。
+>[AZURE.NOTE]本主题仅支持 Windows Phone 8.0 和 Windows Phone 8.1 Silverlight 应用程序。如果你有 Windows Phone 应用商店 8.1 或通用 Windows 应用程序，请遵循[本主题的通用 Windows 应用程序版本](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users)。
 
 本教程基于移动服务快速入门。此外，还必须先完成[移动服务入门]教程。
 
@@ -34,12 +34,9 @@
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-<ol start="6">
-<li>在 Visual Studio 中打开你的客户端应用程序项目，并确保在 App.xaml.cs 中，<strong>MobileServiceClient</strong> 的实例已配置为使用移动服务的云 URL。</li> 
-<li><p>按 F5 键运行这个基于快速入门的应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。</p>
-   
-   	<p>发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 <em>TodoItem</em> 表现在要求身份验证。</p></li>
-</ol>
+&nbsp;&nbsp;6.在 Visual Studio 中打开你的客户端应用程序项目，并确保在 App.xaml.cs 中，**MobileServiceClient** 的实例已配置为使用移动服务的云 URL。
+
+&nbsp;&nbsp;7.按 F5 键运行这个基于快速入门的应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。当应用程序尝试以未经身份验证的用户身份访问移动服务，但 *TodoItem* 表现在要求身份验证时，就会发生此异常。
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。
 
@@ -63,16 +60,16 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Single sign-on for Windows Phone apps by using Live Connect]: mobile-services-windows-phone-single-sign-on
-[移动服务入门]: mobile-services-dotnet-backend-windows-phone-get-started
-[Get started with data]: mobile-services-dotnet-backend-windows-phone-get-started-data
-[Get started with authentication]: mobile-services-dotnet-backend-windows-phone-get-started-users
-[Get started with push notifications]: mobile-services-dotnet-backend-windows-phone-get-started-push
-[Authorize users with scripts]: mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts
-[JavaScript and HTML]: mobile-services-dotnet-backend-windows-store-javascript-get-started-users
+[Single sign-on for Windows Phone apps by using Live Connect]: /documentation/articles/mobile-services-windows-phone-single-sign-on
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
+[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts
+[JavaScript and HTML]: /documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[移动服务 .NET 操作方法概念性参考]: mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: mobile-services-how-to-register-store-app-package-microsoft-authentication
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 
-<!---HONumber=61-->
+<!---HONumber=71-->

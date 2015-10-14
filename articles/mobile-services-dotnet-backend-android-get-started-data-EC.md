@@ -9,11 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/06/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/08/2015" 
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有应用程序
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data-EC.md)]
 
 ##概述
 
@@ -97,14 +98,11 @@
 
 请试着学习下列教程之一：
 
-* [身份验证入门][]
-  <br/>了解如何对应用程序用户进行身份验证。
+* [身份验证入门]<br/>了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门][]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 Android 操作方法概念性参考](mobile-services-android-how-to-use-client-library)
-  <br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
+* [移动服务 Android 操作方法概念性参考](/documentation/articles/mobile-services-android-how-to-use-client-library)<br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
   
 <!-- Anchors. -->
 
@@ -122,10 +120,9 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[身份验证入门]: mobile-services-dotnet-backend-android-get-started-users
-[推送通知入门]: mobile-services-dotnet-backend-android-get-started-push-EC
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
+[推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push-EC
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
@@ -133,4 +130,4 @@
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
 [MobileServiceClient class]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=61-->
+<!---HONumber=71-->

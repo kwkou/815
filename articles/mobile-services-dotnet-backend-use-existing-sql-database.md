@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用现有的 SQL 数据库和移动服务 .NET 后端生成服务 - Azure 移动服务" 
+	pageTitle="使用现有的 SQL 数据库和移动服务 .NET 后端生成服务 | Windows Azure" 
 	description="了解如何将现有的云或本地 SQL 数据库与基于 .NET 的移动服务结合使用" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="05/20/2015" 
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 使用现有的 SQL 数据库和移动服务 .NET 后端生成服务
@@ -20,7 +20,7 @@
 <a name="ExistingModel"></a>
 ## 探索现有的数据库模型
 
-在本教程中，我们将使用以你的移动服务创建的数据库，但不使用创建的默认模型。我们将手动创建任意模型，以代表你可能具有的现有应用程序。有关如何改为连接到本地数据库的完整详细信息，请查看[使用混合连接从 Azure 移动服务连接到本地 SQL Server](mobile-services-dotnet-backend-hybrid-connections-get-started)。
+在本教程中，我们将使用以你的移动服务创建的数据库，但不使用创建的默认模型。我们将手动创建任意模型，以代表你可能具有的现有应用程序。有关如何改为连接到本地数据库的完整详细信息，请查看[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)。
 
 1. 首先，请在 **Visual Studio 2013 Update 2** 中创建移动服务服务器项目，或使用可在 [Azure 管理门户](http://manage.windowsazure.cn)中从服务的“移动服务”选项卡下载的快速入门项目。对于本教程，我们假设你的服务器项目名称为 **ShoppingService**。
 
@@ -169,13 +169,13 @@
         [Timestamp]
         public byte[] Version { get; set; }
 
-4. 刚刚添加的系统属性具有某些会在数据库操作期间明确发生的内置行为（例如，自动更新创建/更新时间）。若要启用这些行为，我们需要更改 **ExistingContext.cs**。在该文件的顶部，添加以下代码：
+5. 刚刚添加的系统属性具有某些会在数据库操作期间明确发生的内置行为（例如，自动更新创建/更新时间）。若要启用这些行为，我们需要更改 **ExistingContext.cs**。在该文件的顶部，添加以下代码：
     
         using System.Data.Entity.ModelConfiguration.Conventions;
         using Microsoft.WindowsAzure.Mobile.Service.Tables;
         using System.Linq;
 
-5. 然后，在 **ExistingContext** 的正文中，重写 [**OnModelCreating**](http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext.onmodelcreating.aspx)：
+6. 然后，在 **ExistingContext** 的正文中，重写 [**OnModelCreating**](http://msdn.microsoft.com/zh-cn/library/system.data.entity.dbcontext.onmodelcreating.aspx)：
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -186,7 +186,7 @@
             base.OnModelCreating(modelBuilder);
         } 
 
-5. 让我们在数据库中填充一些示例数据。打开文件 **WebApiConfig.cs**。创建新的 [**IDatabaseInitializer**](http://msdn.microsoft.com/zh-cn/library/gg696323.aspx)，并按如下所示在 **Register** 方法中对它进行配置。
+7. 让我们在数据库中填充一些示例数据。打开文件 **WebApiConfig.cs**。创建新的 [**IDatabaseInitializer**](http://msdn.microsoft.com/zh-cn/library/gg696323.aspx)，并按如下所示在 **Register** 方法中对它进行配置。
 
         using Microsoft.WindowsAzure.Mobile.Service;
         using ShoppingService.Models;
@@ -611,4 +611,4 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 接下来，你可以生成客户端应用程序以访问服务。有关详细信息，请参阅[将移动服务添加到现有应用程序](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service)。
 
-<!---HONumber=61-->
+<!---HONumber=71-->

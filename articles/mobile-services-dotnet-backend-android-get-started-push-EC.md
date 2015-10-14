@@ -9,11 +9,12 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/12/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="08/08/2015" 
+	wacn.date="10/03/2015"/>
 
 # 向移动服务应用程序添加推送通知
 
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push-EC.md)]
 
 ## 概述
 
@@ -147,9 +148,21 @@
 
 ## <a name="next-steps"></a>后续步骤
 
+<!---This tutorial demonstrated the basics of enabling an Android app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing the next tutorial, [Send push notifications to authenticated users], which shows how to use tags to send push notifications from a Mobile Service to only an authenticated user.
+
+
++ [Send push notifications to authenticated users]
+	<br/>Learn how to use tags to send push notifications from a Mobile Service to only an authenticated user.
+
++ [Send broadcast notifications to subscribers]
+	<br/>Learn how users can register and receive push notifications for categories they're interested in.
+
++ [Send template-based notifications to subscribers]
+	<br/>Learn how to use templates to send push notifications from a Mobile Service, without having to craft platform-specific payloads in your back-end.
+-->
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [移动服务入门]<br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [数据处理入门]<br/>了解有关使用移动服务存储和查询数据的详细信息。
 
 * [身份验证入门]<br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
@@ -203,22 +216,21 @@
 
 
 <!-- URLs. -->
-
-[移动服务入门]: mobile-services-dotnet-backend-android-get-started
-[将移动服务添加到现有应用程序]: mobile-services-dotnet-backend-android-get-started-data
-[身份验证入门]: mobile-services-dotnet-backend-android-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
+[身份验证入门 ]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
 
-[如何使用适用于移动服务的 Android 客户端库]: mobile-services-android-how-to-use-client-library
+[如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
 
-[Send push notifications to authenticated users]: mobile-services-dotnet-backend-android-push-notifications-app-users
+[Send push notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users
 
-[什么是通知中心？]: notification-hubs-overview
-[Send broadcast notifications to subscribers]: notification-hubs-windows-store-dotnet-send-breaking-news
-[Send template-based notifications to subscribers]: notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[什么是通知中心？]: /documentation/articles/notification-hubs-overview
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

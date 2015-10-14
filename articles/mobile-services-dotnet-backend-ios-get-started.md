@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="05/13/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="07/28/2015"
+	wacn.date="10/03/2015"/>
 
 # <a name="getting-started"></a>移动服务入门
 
@@ -50,24 +50,19 @@
 
 ## <a name="next-steps"></a>后续步骤
 
-本主题说明了如何针对 Azure 中运行的移动服务运行新的客户端应用程序。在对本地计算机上运行的移动服务测试 iOS 应用程序之前，必须配置 Web 服务器和防火墙，以允许从 iOS 开发计算机进行访问。有关详细信息，请参阅[配置本地 Web 服务器以允许连接到本地移动服务](mobile-services-dotnet-backend-how-to-configure-iis-express)。
+本主题说明了如何针对 Azure 中运行的移动服务运行新的客户端应用程序。在对本地计算机上运行的移动服务测试 iOS 应用程序之前，必须配置 Web 服务器和防火墙，以允许从 iOS 开发计算机进行访问。有关详细信息，请参阅[配置本地 Web 服务器以允许连接到本地移动服务](/documentation/articles/mobile-services-dotnet-backend-how-to-configure-iis-express)。
 
 了解如何在移动服务中执行其他重要任务：
 
-* [将移动服务添加到现有应用程序]
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [将移动服务添加到现有应用程序]<br/>了解有关使用移动服务存储和查询数据的详细信息。
 
-* [脱机数据同步入门]
-  <br/>了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+* [脱机数据同步入门]<br/>了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [向现有应用程序添加身份验证]
-  <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [向现有应用程序添加身份验证]<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [向现有应用程序添加推送通知]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [向现有应用程序添加推送通知]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 .NET 后端故障排除]
-  <br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
+* [移动服务 .NET 后端故障排除]<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
 <!-- Anchors. -->
 
@@ -91,17 +86,16 @@
 
 
 <!-- URLs. -->
-
-[将移动服务添加到现有应用程序]: mobile-services-dotnet-backend-ios-get-started-data
-[脱机数据同步入门]: mobile-services-ios-get-started-offline-data
-[向现有应用程序添加身份验证]: mobile-services-dotnet-backend-ios-get-started-users
-[向现有应用程序添加推送通知]: mobile-services-dotnet-backend-ios-get-started-push
-[移动服务 .NET 后端故障排除]: mobile-services-dotnet-backend-how-to-troubleshoot
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
+[脱机数据同步入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
+[向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
+[向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
+[移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
 
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [Management Portal]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[JavaScript 后端版本]: mobile-services-ios-get-started
+[JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started
 
-<!---HONumber=61-->
+<!---HONumber=71-->

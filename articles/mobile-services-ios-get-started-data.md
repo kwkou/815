@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/12/2015"
-	wacn.date="07/25/2015"/>
+	ms.date="07/01/2015"
+	wacn.date="10/03/2015"/>
 
 #  将移动服务添加到现有应用程序
 
@@ -59,7 +59,6 @@
 [Refine queries with paging]: /documentation/articles/mobile-services-ios-add-paging-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
@@ -68,5 +67,7 @@
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 [GitHub repo]: http://go.microsoft.com/fwlink/p/?LinkId=268784
+[快速入门]: /documentation/articles/mobile-services-javascript-backend-ios-get-started
+[GetStartedWithData iOS 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

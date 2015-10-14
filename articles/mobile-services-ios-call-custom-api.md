@@ -11,7 +11,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="06/04/2015"
-	wacn.date="07/25/2015"/>
+	wacn.date="10/03/2015"/>
 
 #  如何从 iOS 客户端调用自定义 API（JavaScript 后端）
 
@@ -45,14 +45,14 @@
 <!-- URLs. -->
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started/
-[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data/
-[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users/
-[Get started with push notifications]: /documentation/articles/mobile-services-ios-get-started-push/
-[Get started with push notifications]: mobile-services-ios-get-started-push
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-ios-get-started-push
+[Get started with push notifications]: /documentation/articles/mobile-services-ios-get-started-push
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
  
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->

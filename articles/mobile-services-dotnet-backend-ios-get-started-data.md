@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/03/2015"
-	wacn.date="06/26/2015"/>
+	ms.date="07/01/2015"
+	wacn.date="10/03/2015"/>
 
 # 将移动服务添加到现有应用程序
 
@@ -39,9 +39,9 @@
 
 3. 若要使用门户检查数据库，请在移动服务的“仪表板”页中单击数据库名称，单击“管理”以管理数据库，然后登录。执行以下查询，不过，这里要使用你的移动服务名称而不是 `todolist`。
 
-
+```
         SELECT * FROM [todolist].[todoitems]
-
+```
 
 <!-- Anchors. -->
 
@@ -71,7 +71,7 @@
 [Refine queries with paging]: /documentation/articles/mobile-services-ios-add-paging-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
-[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
+
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [JavaScript backend version]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
 
@@ -83,7 +83,7 @@
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 [GitHub repo]: http://go.microsoft.com/fwlink/p/?LinkId=268784
 
-[快速入门]: mobile-services-dotnet-backend-ios-get-started.md
+[快速入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started.md
 [GetStartedWithData iOS 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 
-<!---HONumber=61-->
+<!---HONumber=71-->

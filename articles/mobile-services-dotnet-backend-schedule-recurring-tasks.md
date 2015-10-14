@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用计划程序计划后端任务 - 移动服务" 
+	pageTitle="在 Azure 移动服务中计划定期作业" 
 	description="使用 Azure 移动服务计划程序来计划移动应用程序的作业。" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,14 +9,16 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/20/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="07/21/2015" 
+	wacn.date="10/03/2015"/>
 
 # 在移动服务中计划定期作业 
 
-<div class="dev-center-tutorial-subselector">
-	<a href="/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks/" title=".NET 后端" class="current">.NET 后端</a> | <a href="/documentation/articles/mobile-services-schedule-recurring-tasks/"  title="JavaScript 后端" >JavaScript 后端</a>
-</div>
+> [AZURE.SELECTOR-LIST (Platform | Backend)]
+- [(Any | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+- [(Any | Javascript)](/zh-cn/documentation/articles/mobile-services-schedule-recurring-tasks)
+
+ 
 本主题说明如何使用管理门户中的作业计划程序功能来定义服务器脚本代码，该代码将基于你定义的计划执行。在此情况下，脚本将定期检查远程服务（在本主题中为 Twitter），并在新表中存储结果。可以计划的其他一些定期任务包括：
 
 + 存档旧的或重复的数据记录。
@@ -31,16 +33,15 @@
 
 [AZURE.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
-<ol start="7">
-<li><p>在 Visual Studio 的解决方案资源管理器中，打开移动服务项目的 web.config 文件，找到 <strong>MS_TwitterConsumerKey</strong> 和 <strong>MS_TwitterConsumerSecret</strong> 应用程序设置，然后将这些密钥的值替换为你在门户中设置的 Twitter 使用者密钥值和使用者机密值。</p></li>
+&nbsp;&nbsp;7.在 Visual Studio 的解决方案资源管理器中，打开移动服务项目的 web.config 文件，找到 `MS_TwitterConsumerKey` 和 `MS_TwitterConsumerSecret` 应用设置，然后将这些密钥的值替换为你在门户中设置的 Twitter 使用者密钥值和使用者机密值。
 
-<li><p>在同一节中，添加以下新的应用程序设置，并将占位符替换为你在门户中设为应用程序设置的 Twitter 访问令牌值和访问令牌机密值：</p>
+&nbsp;&nbsp;8.在同一节中，添加以下新的应用程序设置，并将占位符替换为你在门户中设为应用程序设置的 Twitter 访问令牌值和访问令牌机密值：
 
-<pre><code>&lt;add key="TWITTER_ACCESS_TOKEN" value="**your_access_token**" />
-&lt;add key="TWITTER_ACCESS_TOKEN_SECRET" value="**your_access_token_secret**" /></code></pre>
+	<add key="TWITTER_ACCESS_TOKEN" value="**your_access_token**" />
+	<add key="TWITTER_ACCESS_TOKEN_SECRET" value="**your_access_token_secret**" />
 
-<p>移动服务在本地计算机上运行时将使用这些存储的设置，让你在发布计划的作业之前对作业进行测试。在 Azure 中运行时，移动服务将改用门户中设置的值，并忽略这些项目设置。 </p></li>
-</ol>
+移动服务在本地计算机上运行时将使用这些存储的设置，让你在发布计划的作业之前对作业进行测试。在 Azure 中运行时，移动服务将改用门户中设置的值，并忽略这些项目设置。
+
 
 ##<a name="install-linq2twitter"></a>下载并安装 LINQ to Twitter 库
 
@@ -60,18 +61,18 @@
 
 	此时将为 Updates 类创建一个新的项目文件。
 
-2. 右键单击“引用”，单击“添加引用...”，在“程序集”下选择“框架”，选中“System.ComponentModel.DataAnnotations”，然后单击“确定”。
+2. 右键单击“引用”>“添加引用...”，在“程序集”下选择“框架”，选中“System.ComponentModel.DataAnnotations”，然后单击“确定”。
 
 	![][7]
 
 	此时将会添加一个新的程序集引用。
 
-2. 在此新类中添加以下 **using** 语句：
+3. 在此新类中添加以下 **using** 语句：
  
 		using Microsoft.WindowsAzure.Mobile.Service;
 		using System.ComponentModel.DataAnnotations;
 
-3. 将 **Updates** 类定义替换为以下代码：
+4. 将 **Updates** 类定义替换为以下代码：
 
 		public class Updates 
 	    {
@@ -83,13 +84,13 @@
 	        public DateTime Date { get; set; }
     	}
 
-4. 展开 Models 文件夹，打开数据模型上下文文件（名为 <em>service_name</em>Context.cs），并添加以下将返回类型化 **DbSet** 的属性：
+5. 展开 Models 文件夹，打开数据模型上下文文件（名为 *service\_name*Context.cs），并添加以下将返回类型化 **DbSet** 的属性：
 
 		public DbSet<Updates> Updates { get; set; }
 
 	服务使用首次访问 DbSet 时在数据库中创建的 Updates 表来存储推文数据。
 
-	>[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。不能为 Azure 中的 SQL Database 使用默认的初始值设定项。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](mobile-services-dotnet-backend-use-code-first-migrations)。
+	>[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。不能为 Azure 中的 SQL 数据库使用默认的初始值设定项。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations)。
 
 接下来，请创建计划的作业，用于访问 Twitter 并在新的 Updates 表中存储推文数据。
 
@@ -122,7 +123,8 @@
 		        private string accessToken;
 		        private string accessTokenSecret;
 		
-		        protected override void Initialize(ScheduledJobDescriptor scheduledJobDescriptor, CancellationToken cancellationToken)
+		        protected override void Initialize(ScheduledJobDescriptor scheduledJobDescriptor, 
+			                CancellationToken cancellationToken)
 		        {
 		            base.Initialize(scheduledJobDescriptor, cancellationToken);
 		
@@ -209,7 +211,7 @@
 		    }
 		}
 
-	在上述代码中，必须将字符串 _todolistService_ 和 _todolistContext_ 替换为已下载项目的命名空间和 DbContext（分别为 <em>mobile&#95;service&#95;name</em>Service 和 <em>mobile&#95;service&#95;name</em>Context）。
+	在上述代码中，必须将字符串 _todolistService_ 和 _todolistContext_ 替换为已下载项目的命名空间和 DbContext（分别为 *mobile&#95;service&#95;name*Service 和 *mobile&#95;service&#95;name*Context, respective）。
    	
 	在上述代码中，**ExecuteAsync** 重写方法使用存储的凭据调用 Twitter 查询 API，以请求包含哈希标记 `#mobileservices` 的最新推文。在表中存储结果之前，将从结果中删除重复的推文和回复。
 
@@ -225,13 +227,13 @@
 
 	![][8]
  
-4. 单击“试用此项”，键入 `Sample` 作为 **{jobName}** 参数值，然后单击“发送”。
+3. 单击“试用此项”，键入 `Sample` 作为 **{jobName}** 参数值，然后单击“发送”。
 
 	![][9]
 
 	此时将向 Sample 作业终结点发送一个新的 POST 请求。在本地服务中，**ExecuteAsync** 方法已启动。你可以在此方法中设置一个断点来调试代码。
 
-3. 在服务器资源管理器中，依次展开“数据连接”、“MSTableConnectionString”和“表”，右键单击“Updates”，然后单击“显示表数据”。
+4. 在服务器资源管理器中，依次展开“数据连接”、“MSTableConnectionString”和“表”，右键单击“Updates”，然后单击“显示表数据”。
 
 	新推文现已作为行输入到数据表中。
 
@@ -239,31 +241,31 @@
 
 必须在“计划程序”选项卡中注册该作业，使移动服务能够根据你定义的计划运行该作业。
 
-3. 将移动服务项目重新发布到 Azure。
+1. 将移动服务项目重新发布到 Azure。
 
-4. 在 [Azure 管理门户]中单击“移动服务”，然后单击你的应用程序。
+2. 在 [Azure 管理门户]中单击“移动服务”，然后单击你的应用程序。
  
-2. 单击“计划程序”选项卡，然后单击“+创建”。
+3. 单击“计划程序”选项卡，然后单击“+创建”。
 
     >[AZURE.NOTE]如果在<em>免费</em>版本级别中运行你的移动服务，你一次只能运行一个计划的作业。在付费版本级别中，一次最多可以运行 10 个计划的作业。
 
-3. 在计划程序对话框中，为“作业名称”输入 _Sample_，设置计划间隔和单位，然后单击勾选按钮。
+4. 在计划程序对话框中，为“作业名称”输入 _Sample_，设置计划间隔和单位，然后单击勾选按钮。
    
    	![][4]
 
    	此时将创建一个名为 **Sample** 的新作业。
 
-4. 单击刚刚创建的新作业，然后单击“运行一次”以测试脚本。
+5. 单击刚刚创建的新作业，然后单击“运行一次”以测试脚本。
 
    	此时将会执行该作业，不过它在计划程序中保持为禁用状态。你随时可以通过此页启用该作业及更改其计划。
 
 	>[AZURE.NOTE]仍可使用 POST 请求来启动计划的作业。但是，系统默认向用户授权，也就是说，该请求的标头中必须包含应用程序密钥。
 
-4. （可选）在 [Azure 管理门户]中，单击与你的移动服务关联的数据库对应的“管理”。
+6. （可选）在 [Azure 管理门户]中，单击与你的移动服务关联的数据库对应的“管理”。
 
     ![][6]
 
-5. 在管理门户中，执行一个查询以查看应用程序所做的更改。你的查询应类似于以下查询，不过，请使用你的移动服务名称作为架构名称，而不要使用 `todolist`。
+7. 在管理门户中，执行一个查询以查看应用程序所做的更改。你的查询应类似于以下查询，不过，请使用你的移动服务名称作为架构名称，而不要使用 `todolist`。
 
         SELECT * FROM [todolist].[Updates]
 
@@ -293,9 +295,9 @@
 
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[Register your apps for Twitter login with Mobile Services]: mobile-services-how-to-register-twitter-authentication
+[Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQ to Twitter CodePlex 项目]: http://linqtotwitter.codeplex.com/
 
-<!---HONumber=61-->
+<!---HONumber=71-->

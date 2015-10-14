@@ -4,7 +4,7 @@
 
 2. 将  `.jar` 文件从 SDK 的  `mobileservices` 文件夹复制到 GetStartedWithData 项目的  `libs` 文件夹中。
 
-3. 在 Eclipse 中的"程序包资源管理器"中，右键单击  `libs` 文件夹，单击"刷新"，复制的 jar 文件将会出现
+3. 在 Eclipse 中的“程序包资源管理器”中，右键单击 `libs` 文件夹，单击“刷新”，复制的 jar 文件将会出现
 
   	这样可将移动服务 SDK 引用添加到工作区。
 
@@ -12,7 +12,7 @@
 
 		<uses-permission android:name="android.permission.INTERNET" />
 
-5. 在"程序包资源管理器"中，打开位于 com.example.getstartedwithdata 程序包中的 TodoActivity.java 文件，并且取消注释以下代码行： 
+5. 在“程序包资源管理器”中，打开位于 com.example.getstartedwithdata 程序包中的 TodoActivity.java 文件，并且取消注释以下代码行：
 
 		import java.net.MalformedURLException;
 		import android.os.AsyncTask;
@@ -33,7 +33,7 @@
 		import java.util.ArrayList;
 		import java.util.List;
 
-7. 我们将删除应用当前使用的内存中列表，因此可将其替换为移动服务。在 **ToDoActivity** 类中，取消注释以下定义现有 **toDoItemList** 列表的代码行。
+7. 我们将删除应用当前使用的内存中列表，因此可将其替换为移动服务。在 **ToDoActivity** 类中，注释掉以下定义现有 **toDoItemList** 列表的代码行。
 
 		public List<ToDoItem> toDoItemList = new ArrayList<ToDoItem>();
 
@@ -44,12 +44,12 @@
 		private MobileServiceClient mClient;
 		private private MobileServiceTable<ToDoItem> mToDoTable;
 
-10. 找到文件底部的  *ProgressFilter* 类，并取消其注释。当  *MobileServiceClient* 运行网络操作时，此类显示"正在加载"指示器。
+10. 找到文件底部的 *ProgressFilter* 类，并取消其注释。当 *MobileServiceClient* 运行网络操作时，此类显示“正在加载”指示器。
 
 
-11. 在管理门户中单击"移动服务"，然后单击您刚刚创建的移动服务。
+11. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
-12. 单击"仪表板"选项卡并记下"站点 URL"中的值，然后单击"管理密钥"并记下"应用程序密钥"中的值。
+12. 单击“仪表板”选项卡并记下“站点 URL”中的值，然后单击“管理密钥”并记下“应用程序密钥”中的值。
 
    	![](./media/download-android-sample-code/mobile-dashboard-tab.png)
 
@@ -126,7 +126,7 @@
 
   	此代码将创建一个新项目并将其插入到远程移动服务的表中。
 
-18. 取消注释 **refreshItemsFromTable** 方法的以下行：
+17. 取消注释 **refreshItemsFromTable** 方法的以下行：
 
 		// Get the items that weren't marked as completed and add them in the adapter
 	    new AsyncTask<Void, Void, Void>() {
@@ -151,10 +151,10 @@
 	        }
 	    }.execute();
 
-	这将查询移动服务，并返回未标记为"完成"的所有项。这些项目将添加到用于绑定的适配器。
+	这将查询移动服务，并返回未标记为“完成”的所有项。这些项目将添加到用于绑定的适配器。
 		
 
 <!-- URLs. -->
 [移动服务 Android SDK]: https://zumo.blob.core.windows.net/sdk/azuresdk-android-2.0.2-beta2.zip
 
-<!--HONumber=50-->
+<!---HONumber=71-->

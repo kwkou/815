@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何在多个客户端上使用单个移动服务后端 | Azure 移动服务" 
+	pageTitle="如何在多个客户端上使用单个移动服务后端 | Windows Azure" 
 	description="了解如何在面向不同移动平台（包括 Windows 应用商店和 Windows Phone）的多个客户端应用程序上使用单个移动服务后端。" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,7 +9,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="06/04/2015" 
-	wacn.date="07/25/2015"/>
+	wacn.date="10/03/2015"/>
 
 #  通过单个移动服务支持多个设备平台
  
@@ -21,7 +21,7 @@
 
 + 适用于 iOS 应用程序的 Apple 推送通知服务 (APNS)
 + 适用于 Android 应用程序的 Google 云消息 (GCM) 服务
-+ 适用于 Windows Phone 8.1 应用商店和通用 Windows 应用程序的 Windows 通知服务 (WNS) 
++ 适用于 Windows 应用商店、Windows Phone 8.1 应用商店和通用 Windows 应用程序的 Windows 通知服务 (WNS) 
 + 适用于 Windows Phone Silverlight 应用程序的 Microsoft 推送通知服务 (MPNS)
 
 >[AZURE.NOTE]通知中心目前不支持使用 WNS 将推送通知发送到 Windows Phone Silverlight 8.1 应用程序。必须使用 MPNS 将通知发送到 Silverlight 和 Windows Phone 8.0 和 7.0 应用程序。
@@ -42,7 +42,7 @@
 
 在 .NET 后端移动服务中，通过调用从 [ApiServices.Push](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) 属性获取的 [PushClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) 对象的 [SendAsync] 方法发送通知。发送的推送通知（本机或模板）取决于传递给 [SendAsync] 方法的特定 [IPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx) 派生的对象，如下表所示：
 
-|平台 |[APNS](mobile-services-dotnet-backend-ios-get-started-push)|[GCM](mobile-services-dotnet-backend-android-get-started-push) |[WNS](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) |[MPNS](mobile-services-dotnet-backend-windows-phone-get-started-push)|
+|平台 |[APNS](mobile-services-dotnet-backend-ios-get-started-push)|[GCM](mobile-services-dotnet-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
 |本机|[ApplePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx) |[GooglePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx) |[WindowsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
 
@@ -77,7 +77,7 @@
 
 在 JavaScript 后端移动服务中，通过调用从全局 [push 对象]获取的特定于平台的对象的 **send** 方法发送通知，如下表所示：
 
-|平台 |[APNS](mobile-services-javascript-backend-ios-get-started-push)|[GCM](mobile-services-javascript-backend-android-get-started-push) |[WNS](mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](mobile-services-javascript-backend-windows-phone-get-started-push)|
+|平台 |[APNS](mobile-services-javascript-backend-ios-get-started-push)|[GCM](/documentation/articles/mobile-services-javascript-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
 |本机|[apns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx) |[gcm 对象](http://msdn.microsoft.com/zh-cn/library/azure/dn126137.aspx) |[wns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx) | [mpns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx) |
 
@@ -158,7 +158,7 @@
 
 Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支持。通用应用程序是包括 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序项目，以及共享的代码项目的解决方案。在这种项目中，共享的代码将视为是 Windows 应用商店和 Windows Phone 项目的一部分。有关详细信息，请参阅[构建适用于所有 Windows 设备的通用 Windows 应用程序]。可以使用 C#/XAML 和 JavaScript/HTML 编写通用 Windows 应用程序。
 
-默认情况下，[Azure 管理门户]的“移动服务快速入门”选项卡可生成 TodoList 示例应用程序的通用 Windows 应用程序版本以帮助你入门。你可以选择下载该项目的 C#/XAML 或 JavaScript/HTML 版本。有关详细信息，请参阅[移动服务入门](/documentation/articles/mobile-services-windows-store-get-started/)。
+默认情况下，[Azure 管理门户]的“移动服务快速入门”选项卡可生成 TodoList 示例应用程序的通用 Windows 应用程序版本以帮助你入门。你可以选择下载该项目的 C#/XAML 或 JavaScript/HTML 版本。有关详细信息，请参阅[移动服务入门](/zh-cn/documentation/articles/mobile-services-windows-store-get-started/)。
 
 >[AZURE.NOTE]该门户提供的快速入门应用程序项目的 C# 版本共享 MainPage.xaml.cs 代码隐藏页，但未使用视图模型。有关作为用 C# 编写使用 MVVM 的通用 Windows 应用程序项目的 TodoList 应用程序示例，请参阅[使用 MVVM 的 Azure 移动服务的通用 Windows 应用程序项目]。
 
@@ -166,7 +166,7 @@ Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支�
 
 通过使用 Xamarin 和 Visual Studio 或 Xamarin Studio，你可以利用 Visual Studio 和 C# 开发体验开发适用于 iOS 和 Android 的应用程序。Xamarin 使用 .NET Framework 的跨平台实现，让你使用 C# 代码开发 iOS 和 Android 应用程序。通过使用 Xamarin，你可以利用 Windows 项目中使用移动服务 .NET 客户端库的现有代码来访问移动服务。有关详细信息，请参阅 [Visual Studio 中的跨平台开发](http://msdn.microsoft.com/zh-cn/library/dn771552.aspx)。
 
-若要开始构建使用移动服务的 Xamarin 应用程序，请参阅 Xamarin 快速入门教程 ([iOS](mobile-services-ios-get-started)/[Android](mobile-services-android-get-started))。
+若要开始构建使用移动服务的 Xamarin 应用程序，请参阅 Xamarin 快速入门教程 ([iOS](/documentation/articles/mobile-services-ios-get-started)/[Android](/documentation/articles/mobile-services-android-get-started))。
 
 
 ###  Windows 应用商店和 Windows Phone Silverlight 应用程序
@@ -192,16 +192,16 @@ Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支�
 [Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
 [Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
-[Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/azure/jj193175.aspx
+[Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193175.aspx
 [如何将 .NET 客户端用于移动服务]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
-[push 对象]: http://msdn.microsoft.com/zh-cn/library/azure/jj554217.aspx
+[push 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
 [TemplatePushMessage]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
-[PhoneGap]: mobile-services-javascript-backend-phonegap-get-started
-[Sencha]: partner-sencha-mobile-services-get-started
-[Appcelerator]: partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
+[PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started
+[Sencha]: /documentation/articles/partner-sencha-mobile-services-get-started
+[Appcelerator]: /documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started
 [SendAsync]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
 [Windows Phone 8 开发人员下一步要做什么]: http://msdn.microsoft.com/zh-cn/library/windows/apps/dn655121(v=vs.105).aspx
 [构建适用于所有 Windows 设备的通用 Windows 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=509905
 [使用 MVVM 的 Azure 移动服务的通用 Windows 应用程序项目]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
 
-<!---HONumber=HO63-->
+<!---HONumber=71-->
