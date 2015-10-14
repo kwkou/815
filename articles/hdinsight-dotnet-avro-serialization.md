@@ -8,7 +8,7 @@
 	editor="cgronlun"/>
 
 <tags
-    ms.service="hdinsight"
+    	ms.service="hdinsight"
 	ms.date="07/09/2015" 
 	wacn.date="08/14/2015"/>
 

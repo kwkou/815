@@ -33,7 +33,6 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 <tr><td>Storm</td><td>0.9.3</td><td>0.9.1</td><td></td><td></td></tr>
 <tr><td>Mahout</td><td>0.9.0</td><td>0.9.0</td><td></td><td></td></tr>
 <tr><td>Phoenix</td><td>4.2.0</td><td>4.0.0.2.1.7.0-2162</td><td></td><td></td></tr>
-<tr><td>Spark</td><td>1.3.1</td><td></td><td></td><td></td></tr>
 </table>
 
 
@@ -54,13 +53,6 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 ##功能特点
 HDInsight 平台的一些突出功能包括：
-
-- **Spark** - Apache Spark 是一种开放源代码并行处理框架，支持内存中处理，以提升大数据分析应用程序的性能。Spark 的内存中计算功能使其成为机器学习和图形计算中的迭代算法的最佳选择。
-
-	Spark 还可用于执行基于磁盘的传统数据处理。Spark 改进了传统的 MapReduce 框架，因为在中间阶段不必写入到磁盘。另外，Spark 与 Hadoop 分布式文件系统 (HDFS) 和 Azure Blob 存储兼容，以便现有的数据可通过 Spark 进行轻松处理。
-
-	也可以使用脚本操作添加 Spark。脚本操作会将 Spark 1.2.0 添加到 HDInsight 3.2 群集，或者将 Spark 1.0.2 添加到 HDInsight 3.1 群集。<!--有关详细信息，请参阅[在 HDInsight Hadoop 群集上安装并使用 Spark](hdinsight-hadoop-spark-install.md)。-->
-
  
 - **Storm** - Storm on Azure HDInsight 现已正式发布，它你只需单击几下鼠标，就能在数分钟内快速轻松地完成实时部署。Apache Storm on Azure HDInsight 提供分析平台，能够可靠地处理的事件数以百万计的访问 Apache Hadoop 生态系统的开放源代码项目。现在，Hadoop 用户可以分析发生的事件，以及从过去的事件中获得见解。Microsoft 还提供与 Visual Studio 的内置集成，方便开发人员与 Storm 交互。现在，你可以从 Visual Studio 内部开发、部署和调试 Storm 拓扑。
 

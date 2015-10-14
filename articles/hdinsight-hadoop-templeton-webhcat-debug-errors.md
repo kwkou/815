@@ -26,8 +26,6 @@
 
 * 对于 **Windows** 群集：使用脚本操作在群集创建过程中配置值。有关详细信息，请参阅[开发脚本操作](/documentation/articles/hdinsight-hadoop-script-actions)。
 
-* 对于 **Linux** 群集：使用 Ambari（Web 或 REST API）修改值。有关详细信息，请参阅[使用 Ambari 管理 HDInsight](/documentation/articles/hdinsight-hadoop-manage-ambari)
-
 ### 默认配置
 
 以下是在超过时可能影响 WebHCat 性能或导致错误的默认配置值：
