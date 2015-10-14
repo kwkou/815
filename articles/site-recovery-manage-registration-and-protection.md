@@ -14,7 +14,7 @@
 
 # 管理注册和保护
 
-本文说明如何从站点恢复保管库中取消注册服务器，以及如何禁用站点恢复保护的虚拟机保护。如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布你的问题。
+本文说明如何从站点恢复保管库中取消注册服务器，以及如何禁用站点恢复保护的虚拟机保护。如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的问题。
 
 ## 取消注册 VMM 服务器
 

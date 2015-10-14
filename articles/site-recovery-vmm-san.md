@@ -109,7 +109,7 @@ Azure 站点恢复有助于业务连续性和灾难恢复 (BCDR) 策略，因为
 
 <!--- [What's New in Private Cloud](http://go.microsoft.com/fwlink/?LinkId=324952)-->
 - Gunter Danzeisen 博客中的 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)。
-- [配置 VMM 云结构](https://msdn.microsoft.com/zh-CN/library/azure/dn883636.aspx#BKMK_Fabric)
+- [配置 VMM 云结构](/documentation/articles/site-recovery-vmm-san)
 - [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)
 - [演练：创建私有云](http://go.microsoft.com/fwlink/?LinkId=324954)（Keith Mayer 博客文章）。
 
@@ -162,7 +162,7 @@ Azure 站点恢复有助于业务连续性和灾难恢复 (BCDR) 策略，因为
 
 如果你要配置网络映射，请执行以下操作：
 
-1. 阅读有关[网络映射](https://msdn.microsoft.com/zh-CN/library/azure/dn801052.aspx)的信息。
+1. 阅读有关[网络映射](/documentation/articles/site-recovery-network-mapping)的信息。
 2. 在 VMM 中准备 VM 网络：
  
 	- 了解有关[设置逻辑网络](https://technet.microsoft.com/zh-cn/library/jj721568.aspx)的信息。设置逻辑网络 - 阅读“在 VMM 中配置逻辑网络概述”。
@@ -328,7 +328,7 @@ Azure 站点恢复有助于业务连续性和灾难恢复 (BCDR) 策略，因为
 	![添加虚拟机](./media/site-recovery-vmm-san/SRSAN_RPlanVM.png)	
 1. 在创建恢复计划后，它将出现在“恢复计划”选项卡上的列表中。 
 1. 在“恢复计划”选项卡上，选择该计划并单击“测试故障转移”。
-1. 在“确认测试故障转移”页面上，选择“无”。请注意，当启用了此选项时，故障转移后的副本虚拟机不会连接到任何网络。这将测试虚拟机是否按预期进行故障转移，但是不会测试你的复制网络环境。如果你希望运行更全面的测试故障转移，请参阅 <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn788912.aspx">MSDN 上的测试本地到本地部署</a>。
+1. 在“确认测试故障转移”页面上，选择“无”。请注意，当启用了此选项时，故障转移后的副本虚拟机不会连接到任何网络。这将测试虚拟机是否按预期进行故障转移，但是不会测试你的复制网络环境。如果你希望运行更全面的测试故障转移，请参阅 <a href="/documentation/articles/site-recovery-failover">MSDN 上的测试本地到本地部署</a>。
 
 	![选择测试网络](./media/site-recovery-vmm-san/SRSAN_TestFailover1.png)
 
@@ -365,7 +365,7 @@ Azure 站点恢复有助于业务连续性和灾难恢复 (BCDR) 策略，因为
 
 从“仪表板”中，你可以下载提供程序和代理安装文件的最新版本，获取保管库的配置信息，查看其保护是由保管库管理的虚拟机的数量，查看最近的作业，管理保管库证书，以及重新同步虚拟机。
 
-有关与作业和仪表板交互的详细信息，请参阅[操作和监视](https://msdn.microsoft.com/zh-cn/library/dn788906.aspx)。
+有关与作业和仪表板交互的详细信息，请参阅[操作和监视](/documentation/articles/site-recovery-manage-registration-and-protection)。
 	
 
 <!---HONumber=71-->

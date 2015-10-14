@@ -47,6 +47,6 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMWare 站点之间提供实�
 
 ##后续步骤
 
-请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布你的任何问题。
+请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的任何问题。
 
 <!---HONumber=71-->

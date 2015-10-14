@@ -73,7 +73,7 @@ Site Recovery 服务有助于构建稳健的业务连续性和灾难恢复 (BCDR
 在开始之前，请注意以下事项：
 
 - 使用 Windows PowerShell 编写脚本。
-- Windows PowerShell 模块中随附了 VMM cmdlet。在安装 VMM 控制台时，会安装 VMM Windows PowerShell 模块。可以在脚本中使用以下命令将 VMM 模块加载到脚本中：Import-Module -Name virtualmachinemanager。[了解详细信息](hhttps://technet.microsoft.com/zh-cn/library/hh875013.aspx)。
+- Windows PowerShell 模块中随附了 VMM cmdlet。在安装 VMM 控制台时，会安装 VMM Windows PowerShell 模块。可以在脚本中使用以下命令将 VMM 模块加载到脚本中：Import-Module -Name virtualmachinemanager。[了解详细信息](https://technet.microsoft.com/zh-cn/library/hh875013.aspx)。
 - 确保 VMM 部署中至少有一个库服务器。默认情况下，VMM 服务器的库共享路径位于 VMM 服务器本地，其文件夹名称为 MSCVMMLibrary。
 - 如果库共享路径在远程位置（或在本地，但不与 MSCVMMLibrary 共享），请按如下所示配置共享（例如，使用 \\libserver2.contoso.com\\share\\）：
 	- 打开注册表编辑器。

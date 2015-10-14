@@ -21,7 +21,7 @@
 
 本文包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](hyper-v-recovery-manager-overview)。
 
-如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布你的问题。
+如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的问题。
 
 
 ## 准备 Azure
@@ -147,7 +147,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 	- 在 VMM 中正确配置逻辑和 VM 网络。阅读有关[逻辑网络](http://blogs.technet.com/b/scvmm/archive/2013/02/14/networking-in-vmm-2012-sp1-logical-networks-part-i.aspx)和 [VM 网络](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)的信息。
 	- 确保源 VMM 服务器上的所有虚拟机已连接到 VM 网络。
 	- 检查 VM 网络是否已链接到与云相关联的逻辑网络。
-	- 如果要复制到 Azure，请在 Azure 中创建虚拟网络。注意，可以将多个 VM 网络映射到单个 Azure 网络。阅读[虚拟网络配置任务](https://msdn.microsoft.com/zh-cn/library/azure/dn133795.aspx)。
+	- 如果要复制到 Azure，请在 Azure 中创建虚拟网络。注意，可以将多个 VM 网络映射到单个 Azure 网络。阅读[虚拟网络配置任务](/documentation/articles/vpn-gateway-site-to-site-create)。
 
 ## 优化性能
 
@@ -155,11 +155,11 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 - **数据磁盘大小**：如果要复制到 Azure，一个虚拟机中最多可以包含 32 个数据磁盘，每个磁盘的最大大小为 1 TB。可以有效地复制和故障转移约 32 TB 的虚拟机。
 - **恢复计划限制**：Site Recovery 可以扩展到数千个虚拟机。恢复计划旨在用作应一起故障转移的应用程序的模型，因此，我们可以将一个恢复计划中的计算机数目限制为 50。
 - **Azure 服务限制**：每个 Azure 订阅在核心、云服务等方面附带了一组默认限制。我们建议你运行测试故障转移，以验证你的订阅中资源的可用性。可以通过 Azure 支持人员修改这些限制。
-- **容量规划**：要获得指导，请使用 [Hyper-V 副本容量规划器](http://www.microsoft.com/zh-cn/download/details.aspx?id=39057)。
+- **容量规划**：要获得指导，请使用 Hyper-V 副本容量规划器。
 - **复制带宽**：如果你的复制带宽不足，请注意：
 	- **ExpressRoute**：可以配合 Azure ExpressRoute 和 WAN 优化器（如 Riverbed）来使用 Site Recovery。[详细了解](http://blogs.technet.com/b/virtualization/archive/2014/07/20/expressroute-and-azure-site-recovery.aspx)有关 ExpressRoute 的信息。
 	- **复制流量**：Site Recovery 用户只能使用数据块（而不是整个 VHD）执行智能初始复制。在复制过程中，只会复制更改。
-	- **网络流量**：你可以通过使用基于目标 IP 地址和端口的策略设置 [Windows QoS](https://technet.microsoft.com/zh-cn/library/hh967468.aspx)，来控制用于复制的网络流量。此外，如果要使用 Azure 备份代理复制到 Azure Site Recovery，你可以配置该代理的限制。[了解详细信息](https://msdn.microsoft.com/zh-cn/library/azure/dn168844.aspx)。
+	- **网络流量**：你可以通过使用基于目标 IP 地址和端口的策略设置 [Windows QoS](https://technet.microsoft.com/zh-cn/library/hh967468.aspx)，来控制用于复制的网络流量。此外，如果要使用 Azure 备份代理复制到 Azure Site Recovery，你可以配置该代理的限制。<!--[了解详细信息](https://msdn.microsoft.com/zh-cn/library/azure/dn168844.aspx)。-->
 - **RTO**：如果你想要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，我们建议你运行测试故障转移并查看 Site Recovery 作业，以分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
 - **RPO**：当你复制到 Azure 时，Site Recovery 支持近乎同步的恢复点目标 (RPO)。这种效果假设数据中心和 Azure 之间有足够的带宽。
 
@@ -182,10 +182,10 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 
 在了解这些最佳实践后，你可以开始部署 Site Recovery：
 
-- [设置本地 VMM 站点与 Azure 之间的保护](site-recovery-vmm-to-azure)
-- [在本地 Hyper-V 站点与 Azure 之间设置保护](site-recovery-hyper-v-site-to-azure)
-- [设置两个本地 VMM 站点之间的保护](site-recovery-vmm-to-vmm)
-- [使用 SAN 在两个本地 VMM 站点之间设置保护](site-recovery-vmm-san)
-- [使用单个 VMM 服务器设置保护](site-recovery-single-vmm)
+- [设置本地 VMM 站点与 Azure 之间的保护](/documentation/articles/site-recovery-vmm-to-azure)
+- [在本地 Hyper-V 站点与 Azure 之间设置保护](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm)
+- [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san)
+- [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm)
 
 <!---HONumber=71-->

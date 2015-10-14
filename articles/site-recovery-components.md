@@ -18,7 +18,7 @@ Azure 站点恢复 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 本文总结并介绍了在服务器和虚拟机中安装的 站点恢复 组件。
 
-您可以在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布有关本文的任何问题。
+您可以在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布有关本文的任何问题。
 
 ## 概述
 
