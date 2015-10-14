@@ -1,4 +1,4 @@
-<properties linkid="develop-php-how-to-guides-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (PHP) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues PHP" description="了解如何在 Azure 中使用 Service Bus 队列。采用 PHP 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Queues" authors="" solutions="" manager="" editor="" />
+﻿<properties linkid="develop-php-how-to-guides-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用 Service Bus 队列 (PHP) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues PHP" description="了解如何在 Azure 中使用 Service Bus 队列。采用 PHP 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Queues" authors="" solutions="" manager="" editor="" />
 <tags  ms.service="service-bus"
 
 	ms.date="07/06/2015" 
@@ -8,7 +8,7 @@
 
 本指南说明如何使用服务总线队列。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk)。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
-[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
+[AZURE.INCLUDE [howto-service-bus-queues](../includes/howto-service-bus-queues.md)]
 
 ##<a id="CreateApplication"></a>创建 PHP 应用程序
 
