@@ -121,7 +121,7 @@ HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 3. 在“新建项目”对话框中，展开“已安装”>“模板”，然后选择“HDInsight”。从模板列表中，选择“Storm 示例”。在对话框底部，键入应用程序的名称。
 
-	![图像](./media/hdinsight-storm-deploy-monitor/sample.png)
+	![图像](./media/hdinsight-storm-deploy-monitor-topology/sample.png)
 
 1. 在“解决方案资源管理器”中，右键单击项目，然后选择“提交到 Storm on HDInsight”。
 
@@ -131,7 +131,7 @@ HDInsight Tools 可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 3. 成功提交拓扑之后，应该会出现群集的“Storm 拓扑”。从列表中选择拓扑，以查看有关正在运行的拓扑的信息。
 
-	![visual studio 监视器](./media/hdinsight-storm-deploy-monitor/vsmonitor.png)
+	![visual studio 监视器](./media/hdinsight-storm-deploy-monitor-topology/vsmonitor.png)
 
 	> [AZURE.NOTE]你也可以依次展开“Azure”和“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，来从“服务器资源管理器”查看“Storm 拓扑”。
 
@@ -170,8 +170,8 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 * [使用 Maven 开发基于 Java 的拓扑](hdinsight-storm-develop-java-topology)
 
 有关更多示例拓扑的列表，请参阅 [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)。
-[hdinsight-dashboard]: ./media/hdinsight-storm-deploy-monitor/dashboard-link.png 
-[storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor/submit.png 
-[storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor/storm-ui-summary.png
+[hdinsight-dashboard]: ./media/hdinsight-storm-deploy-monitor-topology/dashboard-link.png 
+[storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png 
+[storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
 <!---HONumber=71-->
