@@ -1,286 +1,211 @@
-<properties linkid="azure-subscription-service-limits" urlDisplayName="Azure Subscription and Service Limits, Quotas, and Constraints" pageTitle="Windows Azure 订阅和服务限制、配额和约束" metaKeywords="Cloud Services, Virtual Machines, Web Sites, Virtual Network, SQL数据库, Subscription, Storage" description="提供常见的 Azure 订阅和服务限制以及最大值的列表。" metaCanonical="" services="web-sites,virtual-machines,cloud-services" documentationCenter="" title="" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
-<tags ms.service="web-sites,virtual-machines,cloud-services"
-    ms.date="02/20/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="Microsoft Azure 订阅和服务限制、配额和约束"
+	description="提供常见的 Azure 订阅和服务限制、配额和约束的列表。这包括有关如何增加限制以及最大值的信息。"
+	services=""
+	documentationCenter=""
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar"/>
+
+<tags
+	ms.service="multiple"
+	ms.date="08/09/2015"
+	wacn.date="10/3/2015"/>
 
 # Azure 订阅和服务限制、配额和约束
 
-下面的文档中指定一些最常见的 Windows Azure 限制。请注意本文档中当前不包括所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
+## 概述
 
--   [订阅限制][订阅限制]
--   [Web 工作进程限制][Web 工作进程限制]
--   [虚拟机限制][虚拟机限制]
--   [网络限制][网络限制]
--   [存储限制][存储限制]
--   [SQL 数据库限制][SQL 数据库限制]
+本文档指定一些最常见的 Microsoft Azure 限制。请注意，本文档目前未涵盖所有 Azure 服务。一段时间后，将展开并更新这些限制以包含多个平台。
 
-> [WACOM.NOTE] 如果想要提高**默认限制**上的限制，请用[客户支持][客户支持]打开事件。超过下表中的**最大限制**值无法提高限制。如果没有任何**最大限制**列，则指定的资源不具有可调整的限制。
+> [AZURE.NOTE]如果想要提高**默认限制**之上的限制，可以[打开免费的联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。无法将这些限制提高到超过下表中的**最大限制**值。如果没有任何**最大限制**列，则指定的资源不具有可调整的限制。
 
-## <a name="subscription"></a>订阅限制
+### 限制和 Azure 资源管理器
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">资源</th>
-<th align="left">默认限制</th>
-<th align="left">最大限制</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>每个<a href="http://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx">订阅</a>内核数<sup>1</sup></p></td>
-<td align="left"><p>20</p></td>
-<td align="left"><p>10,000</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个订阅的<a href="http://msdn.microsoft.com/zh-cn/library/azure/gg456328.aspx">共同管理员</a></p></td>
-<td align="left"><p>200</p></td>
-<td align="left"><p>200</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个订阅的<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/storage-whatis-account/">存储帐户</a></p></td>
-<td align="left"><p>20</p></td>
-<td align="left"><p>50</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个订阅的<a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-what-is/">云服务</a></p></td>
-<td align="left"><p>20</p></td>
-<td align="left"><p>200</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个订阅的<a href="http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx">虚拟网络</a><sup>2</sup></p></td>
-<td align="left"><p>10</p></td>
-<td align="left"><p>100</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个订阅的<a href="http://msdn.microsoft.com/zh-cn/library/jj157100.aspx">本地网络</a></p></td>
-<td align="left"><p>10</p></td>
-<td align="left"><p>100</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个订阅的 DNS 服务器</p></td>
-<td align="left"><p>9</p></td>
-<td align="left"><p>100</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个订阅的保留的 IP</p></td>
-<td align="left"><p>20</p></td>
-<td align="left"><p>100</p></td>
-</tr>
-</tbody>
-</table>
+现在可以将多个 Azure 资源合并到单个 Azure 资源组中。在使用资源组时，以前针对全局的限制会通过 Azure 资源管理器在区域级别进行管理。有关 Azure 资源组的详细信息，请参阅[使用资源组管理 Azure 资源](resource-group-portal.md)。
 
-<sup>1</sup>特小实例作为一项核心至核心限制计数，即使使用了部分核心。
+在下面的限制中，添加了一个新表以反映在使用 Azure 资源管理器时限制中的任何差异。例如，会存在一个**订阅限制**表和一个**订阅数限制 - Azure 资源管理器**表。如果某个限制同时适用于这两种方案，它将仅显示在第一个表中。除非另有说明，否则限制是跨所有区域的全局限制。
 
-<sup>2</sup>每个虚拟网络支持单个虚拟网络网关。
+> [AZURE.NOTE]请务必强调 Azure 资源组中的资源配额是您的订阅可以访问的每个区域，而不像服务管理配额那样是可以访问的每个订阅。我们来使用核心配额作为示例。如果您需要根据对核心的支持请求增加配额，则需要决定您想要在哪个区域中使用多少核心，然后针对您希望的 Azure 资源组核心配额的数量和区域进行特定请求。因此，如果您需要在西欧使用 30 个核心以在那里运行您的应用程序，则应专门在西欧请求 30 个核心。但这不会增加您在任何其他区域的核心配额 -- 仅西欧会有 30 个核心配额。<!-- -->因此，您可能会发现考虑决定您在任何一个区域中的工作负荷所需的 Azure 资源组配额数量，以及请求您考虑在其中进行部署的每个区域的数量很有用。请参阅[部署问题疑难解答](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues)，了解有关发现您特定区域的当前配额的更多帮助。
 
-## <a name="webworkerlimits"></a>Web/工作进程限制
+## 订阅限制
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">资源</th>
-<th align="left">默认限制</th>
-<th align="left">最大限制</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><a href="http://www.windowsazure.cn/zh-cn/documentation/articles/cloud-services-what-is/">每个部署的 web/辅助角色<sup>1</sup></a></p></td>
-<td align="left"><p>25</p></td>
-<td align="left"><p>25</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个部署的<a href="http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InstanceInputEndpoint">实例输入终结点</a></p></td>
-<td align="left"><p>25</p></td>
-<td align="left"><p>25</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个部署的<a href="http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InputEndpoint">输入终结点</a></p></td>
-<td align="left"><p>25</p></td>
-<td align="left"><p>25</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个部署的<a href="http://msdn.microsoft.com/zh-cn/library/gg557552.aspx#InternalEndpoint">内部终结点</a></p></td>
-<td align="left"><p>25</p></td>
-<td align="left"><p>25</p></td>
-</tr>
-</tbody>
-</table>
+[AZURE.INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
 
-<sup>1</sup>与 Web/辅助角色的每个云服务可以具有两个部署，一个用于生产，一个用于临时。
+### 订阅限制 - Azure 资源管理器
 
-## <a name="vmlimits"></a>虚拟机限制
+使用 Azure 资源管理器和 Azure 资源组时，以下限制适用。未使用 Azure 资源管理器更改的限制不会在下面列出。请参阅上表了解这些限制。
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">资源</th>
-<th align="left">默认限制</th>
-<th align="left">最大限制</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>每个云服务的<a href="http://www.windowsazure.cn/zh-cn/documentation/services/virtual-machines/">虚拟机</a><sup>1</sup></p></td>
-<td align="left"><p>50</p></td>
-<td align="left"><p>50</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>输入每个云服务的终结点<sup>2</sup></p></td>
-<td align="left"><p>150</p></td>
-<td align="left"><p>150</p></td>
-</tr>
-</tbody>
-</table>
+[AZURE.INCLUDE [azure-subscription-limits-azure-resource-manager](../includes/azure-subscription-limits-azure-resource-manager.md)]
 
-<sup>1</sup>当您创建一台虚拟机后，会自动创建一项云服务来包含该虚拟机。然后可以在该相同的云服务中添加多个虚拟机。
 
-<sup>2</sup>输入终结点用于允许包含云服务的到外部虚拟机的通信。同一个云服务中的虚拟机自动允许所有 UDP 和 TCP 端口之间的通信，以实现内部通信。
+## 资源组限制
 
-## <a name="networkinglimits"></a>网络限制
+[AZURE.INCLUDE [azure-resource-groups-limits](../includes/azure-resource-groups-limits.md)]
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">资源</th>
-<th align="left">默认限制</th>
-<th align="left">最大限制</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><sup>1</sup>每个<a href="http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx">虚拟网络</a>的总机<sup>2</sup></p></td>
-<td align="left"><p>2048</p></td>
-<td align="left"><p>2048</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>虚拟机或角色实例的并发 TCP 连接</p></td>
-<td align="left"><p>500K</p></td>
-<td align="left"><p>500K</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个终结点访问控制列表 (ACL)<sup>3</sup></p></td>
-<td align="left"><p>50</p></td>
-<td align="left"><p>50</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个虚拟网络的本地网络站点</p></td>
-<td align="left"><p>10</p></td>
-<td align="left"><p>10</p></td>
-</tr>
-</tbody>
-</table>
 
-<sup>1</sup>机器的总数，包括虚拟机和 Web/辅助角色实例。
+## 虚拟机限制
 
-<sup>2</sup>每个虚拟网络支持单个[虚拟网络网关][虚拟网络网关]。
+[AZURE.INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
-<sup>3</sup>ACL 在输入终结点上支持虚拟机。对于 web/辅助角色，在输入和实例输入终结点上支持它。
 
-## <a name="storagelimits"></a>存储限制<sup>1</sup>
+### 虚拟机限制 - Azure 资源管理器
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">资源</th>
-<th align="left">默认限制</th>
-<th align="left">最大限制</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>每个存储帐户的 TB<sup>2</sup></p></td>
-<td align="left"><p>500</p></td>
-<td align="left"><p>500</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>持久性磁盘的最大 IOPS</p></td>
-<td align="left"><p>500</p></td>
-<td align="left"><p>500<sup>3</sup></p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个存储帐户的最大 IOPS</p></td>
-<td align="left"><p>20,000</p></td>
-<td align="left"><p>20,000</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>每个存储帐户的最大入口</p></td>
-<td align="left"><p>5Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 10Gbps</p></td>
-<td align="left"><p>5Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 10Gbps</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>每个存储帐户的最大传出</p></td>
-<td align="left"><p>10Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 15Gbps</p></td>
-<td align="left"><p>10Gbps，如果 GRS<sup>4</sup> 启用，与其禁用 15Gbps</p></td>
-</tr>
-</tbody>
-</table>
+使用 Azure 资源管理器和 Azure 资源组时，以下限制适用。未使用 Azure 资源管理器更改的限制不会在下面列出。请参阅上表了解这些限制。
 
-<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储服务可伸缩性和性能目标][Azure 存储服务可伸缩性和性能目标]。
+[AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
 
-<sup>2</sup>对于页面 blob，只是使用中的页面会产生容量使用情况。例如，虚拟机具有 127 GB VHD 但操作系统只使用 30 GB，则仅为 VHD 中已使用的 30 GB 部分计费，而非整个 127 GB。
 
-<sup>3</sup>不要将经常使用的 40 多个 VHD 放在一个帐户，以避免 20000 的 IOPS 限制。
+## 网络限制
 
-<sup>4</sup>地域冗余存储帐户
+[AZURE.INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
 
-## <a name="sqldblimits"></a>SQL 数据库限制
+### 流量管理器限制
 
-有关 SQL 数据库限制，请参阅以下主题：
+[AZURE.INCLUDE [traffic-manager-limits](../includes/traffic-manager-limits.md)]
 
--   [Azure SQL数据库 服务层（版本）][Azure SQL数据库 服务层（版本）]
--   [Azure SQL数据库 服务层和性能级别][Azure SQL数据库 服务层和性能级别]
--   [SQL数据库 资源限制][SQL数据库 资源限制]
+### DNS 限制
 
-## <a name="seealso"></a>另请参阅
+[AZURE.INCLUDE [dns-limits](../includes/dns-limits.md)]
 
-[虚拟机和 Azure 的云服务大小][虚拟机和 Azure 的云服务大小]
+## 存储限制
 
-[Azure 存储服务可伸缩性和性能目标][Azure 存储服务可伸缩性和性能目标]
+### 标准存储限制
 
-[Azure SQL数据库 服务层（版本）][Azure SQL数据库 服务层（版本）]
+[AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-[Azure SQL数据库 服务层和性能级别][Azure SQL数据库 服务层和性能级别]
+有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
-[SQL数据库 资源限制][SQL数据库 资源限制]
 
-  [订阅限制]: #subscription
-  [Web 工作进程限制]: #webworkerlimits
-  [虚拟机限制]: #vmlimits
-  [网络限制]: #networkinglimits
-  [存储限制]: #storagelimits
-  [SQL 数据库限制]: #sqldblimits
-  [客户支持]: http://www.windowsazure.cn/support/faq/
-  [虚拟网络网关]: http://msdn.microsoft.com/zh-cn/library/azure/jj156210.aspx
-  [Azure 存储服务可伸缩性和性能目标]: http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx
-  [Azure SQL数据库 服务层（版本）]: http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx
-  [Azure SQL数据库 服务层和性能级别]: http://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx
-  [SQL数据库 资源限制]: http://msdn.microsoft.com/zh-cn/library/azure/dn338081.aspx
-  [虚拟机和 Azure 的云服务大小]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx
+### 高级存储限制
+
+[AZURE.INCLUDE [azure-storage-limits-premium-storage](../includes/azure-storage-limits-premium-storage.md)]
+
+
+### 存储限制- Azure 资源管理器
+
+[AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../includes/azure-storage-limits-azure-resource-manager.md)]
+
+
+## 云服务限制
+
+[AZURE.INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
+
+
+## App Service 限制 - Web Apps、Mobile Apps、API Apps 和 Logic Apps
+
+[AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
+
+## 计划程序限制
+
+[AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
+
+## Batch 限制
+
+[AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
+
+
+## DocumentDB 限制
+
+[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)]
+
+
+## Mobile Engagement 限制
+
+[AZURE.INCLUDE [azure-mobile-engagement-limits](../includes/azure-mobile-engagement-limits.md)]
+
+
+## 搜索限制
+
+[AZURE.INCLUDE [azure-search-limits](../includes/azure-search-limits.md)]
+
+有关 Azure 搜索限制的其他详细信息，请参阅[限制和约束](https://msdn.microsoft.com/library/azure/dn798934.aspx)。
+
+## SQL 数据库限制
+
+[AZURE.INCLUDE [azure-sql-database-limits](../includes/azure-sql-database-limits.md)]
+
+有关 SQL 数据库限制的其他详细信息，请参阅以下主题：
+
+ - [Azure SQL 数据库服务层（版本）](http://msdn.microsoft.com/library/azure/dn741340.aspx)
+ - [Azure SQL 数据库服务层和性能级别](http://msdn.microsoft.com/library/azure/dn741336.aspx)
+ - [数据库吞吐量单位 (DTU) 配额](http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs)
+ - [SQL 数据库资源限制](sql-database/sql-database-resource-limits.md)
+
+## 媒体服务限制
+
+[AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
+
+## CDN 限制
+
+[AZURE.INCLUDE [cdn-limits](../includes/cdn-limits.md)]
+
+## 移动服务限制
+
+[AZURE.INCLUDE [mobile-services-limits](../includes/mobile-services-limits.md)]
+
+## 服务总线限制
+
+[AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
+
+## 数据工厂限制
+
+[AZURE.INCLUDE [azure-data-factory-limits](../includes/azure-data-factory-limits.md)]
+
+
+## 流分析限制
+
+[AZURE.INCLUDE [stream-analytics-limits-table](../includes/stream-analytics-limits-table.md)]
+
+## Active Directory 限制
+
+[AZURE.INCLUDE [AAD-service-limits](../includes/active-directory-service-limits-include.md)]
+
+
+## Azure RemoteApp 限制
+
+[AZURE.INCLUDE [azure-remoteapp-limits](../includes/azure-remoteapp-limits.md)]
+
+## StorSimple 系统限制
+
+[AZURE.INCLUDE [storsimple-limits-table](../includes/storsimple-limits-table.md)]
+
+
+## 操作见解限制
+
+[AZURE.INCLUDE [operational-insights-limits](../includes/operational-insights-limits.md)]
+
+## 备份限制
+
+[AZURE.INCLUDE [azure-backup-limits](../includes/azure-backup-limits.md)]
+
+## 站点恢复限制
+
+[AZURE.INCLUDE [site-recovery-limits](../includes/site-recovery-limits.md)]
+
+## Application Insights 限制
+
+[AZURE.INCLUDE [application-insights-limits](../includes/application-insights-limits.md)]
+
+## API 管理限制
+
+[AZURE.INCLUDE [api-management-service-limits](../includes/api-management-service-limits.md)]
+
+## Azure Redis 缓存限制
+
+[AZURE.INCLUDE [redis-cache-service-limits](../includes/redis-cache-service-limits.md)]
+
+## 密钥保管库限制
+
+[AZURE.INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]
+
+## 多因素身份验证
+[AZURE.INCLUDE [azure-mfa-service-limits](../includes/azure-mfa-service-limits.md)]
+
+## 另请参阅
+
+[了解 Azure 限制和增加](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
+
+[Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)
+
+<!---HONumber=71-->

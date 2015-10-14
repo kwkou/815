@@ -1,9 +1,19 @@
-<properties linkid="nodejs-create-account" urlDisplayName="Specifying a Node.js Version" pageTitle="Azure Node.js Dev Center - Tutorials - Create an Account" metaKeywords="" description="Azure Node.js Dev Center - Tutorials - Create an Azure Account" metaCanonical="" services="" documentationCenter="Node.js" title="Create an account and enable preview features" authors="larryfr" solutions="" manager="paulettm" editor="mollybos" />
-<tags ms.service=""
-    ms.date="02/20/2015"
-    wacn.date="04/11/2015"
-    />
+<properties
+    pageTitle="Azure Node.js 开发人员中心 - 教程 - 创建帐户"
+    description="Azure Node.js 开发人员中心 - 教程 - 创建 Azure 帐户"
+    services=""
+    documentationCenter="nodejs"
+    authors="cephalin"
+    manager="wpickett"
+    editor="jimbe"/>
 
-[WACOM.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+<tags
+    ms.service="multiple"
+    ms.date="06/03/2015"
+    wacn.date="10/3/2015"/>
 
-  [create-an-azure-account]: ../includes/create-an-azure-account.md
+# 创建 Azure 帐户并启用预览功能
+
+[AZURE.INCLUDE [create-an-azure-account](../includes/create-an-azure-account.md)]
+
+<!---HONumber=71-->
