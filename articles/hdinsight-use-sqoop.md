@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Azure" 
 	description="学习如何从工作站使用 Azure PowerShell 在 Hadoop 群集和 Azure SQL 数据库之间运行 Sqoop 导入和导出。" 
 	editor="cgronlun" 
@@ -14,7 +14,7 @@
 
 #将 Sqoop 与 HDInsight 中的 Hadoop 配合使用 (Windows)
 
-[AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
+[AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
 
 学习如何从工作站使用 Azure PowerShell 和 HDInsight .NET SDK 在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间运行 Sqoop 进行导入和导出。
 
