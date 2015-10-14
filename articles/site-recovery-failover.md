@@ -16,7 +16,7 @@
 
 [Azure Site Recovery 服务](/documentation/articles/site-recovery-overview)有助于构建稳健的业务连续性和灾难恢复 (BCDR) 解决方案，并通过协调和自动化到 Azure 或辅助本地数据中心的复制与故障转移，来保护本地物理服务器和虚拟机。本文提供有关恢复（故障转移和故障回复）使用 Site Recovery 保护的虚拟机和物理服务器的信息与说明。
 
-如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布你的问题。
+如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的问题。
 
 
 ## 概述

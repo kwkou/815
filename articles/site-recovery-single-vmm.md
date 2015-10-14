@@ -56,7 +56,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 2. 在 VMM 服务器上至少设置两个云。了解详细信息：
 
 	- [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。
-	- [配置 VMM 云结构](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
+	- [配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)
 	- [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 3. 将你要在其上保护虚拟机的源 Hyper-V 主机服务器添加你要保护的云（源云）。将目标 Hyper-V 主机服务器添加到 VMM 服务器上用于提供保护的云中。
 4. [创建](site-recovery-vmm-to-vmm#step-1-create-a-site-recovery-vault) Azure Site Recovery 保管库并生成保管库注册密钥。
@@ -82,7 +82,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 恢复计划会将应该一起故障转移和恢复的虚拟机分组到一起。
 
 1. 创建恢复计划时，请在“源”和“目标”中指定单个 VMM 服务器的名称。在“选择虚拟机”中，将显示与主云关联的虚拟机。
-2. 然后，[创建并自定义恢复计划](https://msdn.microsoft.com/zh-cn/library/azure/dn337331.aspx)。
+2. 然后，[创建并自定义恢复计划](/documentation/articles/site-recovery-vmm-to-vmm)。
 
 
 ### 恢复

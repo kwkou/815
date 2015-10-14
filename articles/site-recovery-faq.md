@@ -139,10 +139,10 @@ SCVMM 还需要相关存储供应商提供的更新 SMI-S 提供程序发现你�
 
 开始部署 ASR：
 
-- [设置本地 VMM 站点与 Azure 之间的保护](site-recovery-vmm-to-azure)
-- [在本地 Hyper-V 站点与 Azure 之间设置保护](site-recovery-hyper-v-site-to-azure)
-- [设置两个本地 VMM 站点之间的保护](site-recovery-vmm-to-vmm)
-- [使用 SAN 在两个本地 VMM 站点之间设置保护](site-recovery-vmm-san)
-- [使用单个 VMM 服务器设置保护](site-recovery-single-vmm)
+- [设置本地 VMM 站点与 Azure 之间的保护](/documentation/articles/site-recovery-vmm-to-azure)
+- [在本地 Hyper-V 站点与 Azure 之间设置保护](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm)
+- [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san)
+- [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm)
 
 <!---HONumber=71-->

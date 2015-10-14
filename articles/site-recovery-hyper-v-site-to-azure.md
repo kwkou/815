@@ -48,7 +48,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 ### 虚拟机先决条件
 
-要保护的虚拟机应符合 [Azure 先决条件](https://msdn.microsoft.com/zh-cn/library/azure/dn469078.aspx#BKMK_E2A)。
+要保护的虚拟机应符合 [Azure 先决条件](documentation/articles/site-recovery-best-practices)。
 
 ### 提供程序和代理先决条件
 

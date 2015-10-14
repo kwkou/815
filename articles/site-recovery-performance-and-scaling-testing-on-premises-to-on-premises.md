@@ -100,7 +100,7 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 ### 结束语
 
-我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 [Hyper-V 副本容量规划器](https://www.microsoft.com/zh-cn/download/details.aspx?id=39057)。
+我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 Hyper-V 副本容量规划器。
 
 ## 测试部署环境
 
@@ -203,10 +203,10 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 开始部署 ASR：
 
-- [设置本地 VMM 站点与 Azure 之间的保护](site-recovery-vmm-to-azure)
-- [在本地 Hyper-V 站点与 Azure 之间设置保护](site-recovery-hyper-v-site-to-azure)
-- [设置两个本地 VMM 站点之间的保护](site-recovery-vmm-to-vmm)
-- [使用 SAN 在两个本地 VMM 站点之间设置保护](site-recovery-vmm-san)
-- [使用单个 VMM 服务器设置保护](site-recovery-single-vmm)
+- [设置本地 VMM 站点与 Azure 之间的保护](/documentation/articles/site-recovery-vmm-to-azure)
+- [在本地 Hyper-V 站点与 Azure 之间设置保护](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+- [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm)
+- [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san)
+- [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm)
 
 <!---HONumber=71-->

@@ -28,7 +28,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 - 你将需要 Azure 帐户。如果没有，请使用 [1rmb 试用版](http://www.windowsazure.cn/pricing/1rmb-trial)。此外，你可以阅读 [Azure 站点恢复管理器定价](/home/features/site-recovery/#price)。
 - 你将需要一个 Azure 存储帐户来存储复制到 Azure 的数据。需要为帐户启用地域复制。该帐户应位于 Azure 站点恢复 服务所在的同一区域，并与同一订阅相关联。若要了解有关设置 Azure 存储的更多信息，请参阅 [Azure 存储简介](/documentation/articles/storage-introduction)。
-- 你将需要确保你要保护的虚拟机符合 Azure 要求。有关详细信息，请参阅[虚拟机支持](https://msdn.microsoft.com/zh-CN/library/azure/dn469078.aspx#BKMK_E2A)。
+- 你将需要确保你要保护的虚拟机符合 Azure 要求。有关详细信息，请参阅[虚拟机支持](/documentation/articles/site-recovery-best-practices)。
 
 ### VMM 先决条件
 - 你需要具有运行 System Center 2012 R2 的 VMM 服务器。
@@ -39,7 +39,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	- 源 Hyper-V 服务器上有一个或多个虚拟机。虚拟机应当是层代 1。 
 - 了解有关设置 VMM 云的更多信息：
 	- 阅读 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)中有关私有 VMM 云的更多信息。 
-	- 了解有关[配置 VMM 云结构](https://msdn.microsoft.com/zh-CN/library/azure/dn469075.aspx#BKMK_Fabric)的更多信息
+	- 了解有关[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)的更多信息
 	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](http://technet.microsoft.com/zh-CN/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)了解有关创建私有云的更多信息。
 
 ### Hyper-V 先决条件
@@ -62,7 +62,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 - 了解有关网络映射的更多信息：
 	- [在 VMM 中配置逻辑网络](http://technet.microsoft.com/zh-cn/library/jj721568.aspx)
 	- [在 VMM 中配置 VM 网络和网关](http://technet.microsoft.com/zh-cn/library/jj721575.aspx)
-	- [在 Azure 中配置和监视虚拟网络](http://azure.microsoft.com/zh-cn/documentation/services/virtual-network)
+	- [在 Azure 中配置和监视虚拟网络](/documentation/services/networking)
 
 
 ## 步骤 1：创建站点恢复保管库
@@ -210,7 +210,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。注意以下事项：
 
-- 虚拟机必须满足 Azure 要求。可以在规划指南中的<a href="https://msdn.microsoft.com/zh-CN/library/dn469078.aspx">先决条件和支持</a>中查看这些要求。
+- 虚拟机必须满足 Azure 要求。可以在规划指南中的<a href="/documentation/articles/site-recovery-best-practices">先决条件和支持</a>中查看这些要求。
 - 若要启用保护，必须为虚拟机设置操作系统和操作系统磁盘属性。当你使用虚拟机模板在 VMM 中创建虚拟机时，可以设置属性。也可以在虚拟机属性的"常规"和"硬件配置"选项卡上为现有虚拟机设置这些属性。如果未在 VMM 中设置这些属性，可以在 Azure 站点恢复 门户中配置它们。
 
 ![创建虚拟机](./media/site-recovery-vmm-to-azure/ASRE2AVMM_EnableNew.png)
@@ -302,11 +302,11 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 <p>从“仪表板”中，你可以下载提供程序和代理安装文件的最新版本，获取保管库的配置信息，查看其保护是由保管库管理的虚拟机的数量，查看最近的作业，管理保管库证书，以及重新同步虚拟机。<b></b></p>
 
-<p>有关与作业和仪表板交互的详细信息，请参阅<a href="https://msdn.microsoft.com/zh-CN/library/dn788906.aspx">操作和监视指南</a>。</p>
+<p>有关与作业和仪表板交互的详细信息，请参阅<a href="/documentation/articles/site-recovery-manage-registration-and-protection">操作和监视指南</a>。</p>
 
 <h2><a id="next" name="next" href="#next"></a>后续步骤</h2>
 <UL>
-<LI>若要在完全的生产环境中规划和部署 Azure 站点恢复，请参阅 <a href="https://msdn.microsoft.com/zh-CN/library/azure/dn469074.aspx">Azure 站点恢复 规划指南</a>和 <a href="https://msdn.microsoft.com/zh-CN/library/sazure/dn168841.aspx">Azure 站点恢复 部署指南</a>。</LI>
+<LI>若要在完全的生产环境中规划和部署 Azure 站点恢复，请参阅 <a href="/documentation/articles/site-recovery-best-practices">Azure 站点恢复 规划指南</a>和 <a href="/documentation/articles/site-recovery-vmm-to-vmm">Azure 站点恢复 部署指南</a>。</LI>
 
 
 <LI>如有问题，请访问 <a href="https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazucezhchs">Azure 恢复服务论坛</a>。</LI> 
