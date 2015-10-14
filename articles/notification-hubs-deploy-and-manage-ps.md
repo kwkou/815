@@ -10,7 +10,7 @@
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="06/18/2015" 
-	wacn.date="08/29/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 使用 PowerShell 部署和管理通知中心
 

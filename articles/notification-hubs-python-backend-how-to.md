@@ -1,13 +1,29 @@
-<properties urlDisplayName="How to use Notification Hubs with Python" pageTitle="如何结合使用通知中心与 Python" metaKeywords="" description="了解如何从 Python 后端使用 Azure 通知中心。" metaCanonical="" services="notification-hubs,push,python,notification hubs REST APIs" documentationCenter="" title="How to use Notification Hubs with Python" authors="piyushjo" solutions="" manager="dwrede" editor="" />
-
-<tags ms.service="notification-hubs"  ms.date="12/09/2014" wacn.date="08/29/2015" />
+<properties 
+	urlDisplayName="How to use Notification Hubs with Python" 
+	pageTitle="如何结合使用通知中心与 Python" 
+	metaKeywords="" 
+	description="了解如何从 Python 后端使用 Azure 通知中心。" 
+	metaCanonical="" 
+	services="notification-hubs,push,python,notification hubs REST APIs" 
+	documentationCenter="" 
+	title="How to use Notification Hubs with Python" 
+	authors="piyushjo" 
+	solutions="" 
+	manager="dwrede" 
+	editor="" />
+<tags 
+	ms.service="notification-hubs"  
+	ms.date="07/17/2015" 
+	wacn.date="10/03/2015" />
 
 # 如何通过 Python 使用通知中心
-<div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/documentation/articles/notification-hubs-java-backend-how-to" title="Java">Java</a><a href="/documentation/articles/notification-hubs-php-backend-how-to" title="PHP">PHP</a><a href="/documentation/articles/notification-hubs-python-backend-how-to" title="Python" class="current">Python</a>
-</div>
-
-如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 中所述，您可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。
+> [AZURE.SELECTOR] 
+- [Java](/documentation/articles/notification-hubs-php-backend-how-to)
+- [PHP](/documentation/articles/notification-hubs-python-backend-how-to)
+- [Python](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+		
+如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。
 
 > [AZURE.NOTE]这是在 Python 中实现通知发送的示例引用实现，不是官方支持的通知中心 Python SDK。
 

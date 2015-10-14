@@ -1,8 +1,21 @@
-﻿<properties linkid="develop-notificationhubs-tutorials-get-started-windowsphone" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="sethm" solutions="" manager="" editor="" />
-<tags ms.service="notification-hubs"
-    ms.date="03/16/2015"
-    wacn.date="04/11/2015"
-    />
+﻿<properties 
+	linkid="develop-notificationhubs-tutorials-get-started-windowsphone" 
+	urlDisplayName="Get Started" 
+	pageTitle="Get Started with Azure Notification Hubs" 
+	metaKeywords="" 
+	description="Learn how to use Azure Notification Hubs to push notifications." 
+	metaCanonical="" 
+	services="notification-hubs" 
+	documentationCenter="Mobile" 
+	title="Get started with Notification Hubs" 
+	authors="sethm" 
+	solutions="" 
+	manager="" 
+	editor="" />
+<tags 
+	ms.service="notification-hubs"
+	ms.date="06/16/2015"
+	wacn.date="10/03/2015"/>
 
 # 通知中心入门
 
@@ -16,9 +29,7 @@
 > - [Xamarin.iOS](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/)
 > - [Xamarin.Android](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
 
-
-本主题说明如何使用 Azure 通知中心向 Windows Phone 8 应用程序发送推送通知。
-在本教程中，你将要创建一个使用 Microsoft 推送通知服务 (MPNS) 接收推送通知的空白 Windows Phone 8 应用程序。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
+> [AZURE.NOTE]通知中心 Windows Phone SDK 不支持将 WNS 与 Windows Phone 8.1 Silverlight 应用配合使用。若要将 WNS（而不是 MPNS）与 Windows Phone 8.1 Silverlight 应用配合使用，请根据 [Windows Universal 入门](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)中所述设置 WNS 凭据。然后，你便可以根据[通知用户](/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/)教程中所述通过后端注册，或者使用 [通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 注册。
 
 本教程将指导你完成启用推送通知的以下步骤：
 

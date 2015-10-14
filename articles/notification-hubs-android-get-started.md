@@ -1,370 +1,510 @@
-﻿<properties linkid="develop-notificationhubs-tutorials-get-started-android" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="ricksal" solutions="" manager="dwrede" editor="" />
-<tags ms.service="notification-hubs"
-    ms.date="03/15/2014"
-    wacn.date="04/11/2015"
-    />
+﻿<properties 
+	pageTitle="Azure 通知中心入门" 
+	description="了解如何使用 Azure 通知中心推送通知。" 
+	services="notification-hubs" 
+	documentationCenter="android" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor=""/>
+<tags 
+	ms.service="notification-hubs"	
+	ms.date="05/27/2015" 
+	wacn.date="10/08/2015" />
 
 # 通知中心入门
 
-> [AZURE.SELECTOR]
-> - [Windows 应用商店 C#](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
-> - [Windows Phone](/zh-cn/documentation/articles/notification-hubs-windows-phone-get-started/)
-> - [iOS](/zh-cn/documentation/articles/notification-hubs-ios-get-started/)
-> - [Android](/zh-cn/documentation/articles/notification-hubs-android-get-started/)
-> - [Kindle](/zh-cn/documentation/articles/notification-hubs-kindle-get-started/)
-> - [百度](/zh-cn/documentation/articles/notification-hubs-baidu-get-started/)
-> - [Xamarin.iOS](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/)
-> - [Xamarin.Android](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
+##概述
 
-本主题说明如何使用 Azure 通知中心向 Android 应用程序发送推送通知。
-在本教程中，你将要创建一个使用 Google Cloud Messaging (GCM) 接收推送通知的空白 Android 应用程序。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
-
-本教程将指导你完成启用推送通知的以下基本步骤：
-
--   [启用 Google Cloud Messaging][启用 Google Cloud Messaging]
--   [配置通知中心][配置通知中心]
--   [将你的应用程序连接到通知中心][将你的应用程序连接到通知中心]
--   [如何向应用程序发送通知][如何向应用程序发送通知]
--   [测试应用程序][测试应用程序]
+本主题演示如何使用 Azure 通知中心将推送通知发送到 Android 应用程序。在本教程中，您将创建一个空白 Android 应用程序，它使用 Google Cloud Messaging (GCM) 接收推送通知。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
 
 本教程演示使用通知中心的简单广播方案。请确保随后学习下一教程以了解如何使用通知中心来发送到特定用户和设备组。
 
+
+##先决条件
+
 本教程需要的内容如下：
 
--   Android SDK（假设你要使用 Eclipse），你可以从[此处][此处]下载该 SDK。
--   [移动服务 Android SDK][移动服务 Android SDK]
++ Android Studio，可从<a href="http://go.microsoft.com/fwlink/?LinkId=389797">此处</a>下载
++ 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fzh-CN%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F)。
+
 
 完成本教程是学习有关 Android 应用程序的所有其他通知中心教程的先决条件。
 
-<div class="dev-callout"><strong>说明</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。</p></div>
 
-## <span id="register"></span></a>启用 Google Cloud Messaging
+##创建支持 Google Cloud Messaging 的项目
 
-[WACOM.INCLUDE [启用 GCM][启用 GCM]]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
-接下来，你将使用此 API 密钥值让通知中心向 GCM 进行身份验证并代表你的应用程序发送推送通知。
 
-## <span id="configure-hub"></span></a>配置通知中心
+##配置新通知中心
 
-1.  登录到 [Azure 管理门户][Azure 管理门户]，然后单击屏幕底部的“+新建”。
+[AZURE.INCLUDE [notification-hubs-android-configure-push](../../includes/notification-hubs-android-configure-push.md)]
 
-2.  依次单击“应用程序服务”、“服务总线”、“通知中心”和“快速创建”。
+##<a id="connecting-app"></a>将你的应用连接到通知中心
 
-    ![][]
+###创建新的 Android 项目
 
-3.  键入通知中心的名称，选择所需的区域，然后单击“创建新的通知中心”。
+1. 在 Android Studio 中，启动新的 Android Studio 项目。
 
-    ![][1]
+   	![][13]
 
-4.  单击刚刚创建的命名空间（通常为***通知中心名称*-ns**），然后单击顶部的“配置”。
+2. 选择“手机和平板电脑”外形规格和你要支持的“最低 SDK 版本”。然后单击“下一步”。
 
-    ![][2]
+   	![][14]
 
-5.  单击顶部的“通知中心”选项卡，然后单击你刚刚创建的通知中心。
+3. 为主要活动选择“空白活动”。单击“下一步”，然后单击“完成”。
 
-    ![][3]
+###将 Google Play Services 添加到项目
 
-6.  单击顶部的“配置”选项卡，输入在上一部分中获得的“API 密钥”值，然后单击“保存”。
+[AZURE.INCLUDE [添加 Play Services](../../includes/mobile-services-add-google-play-services.md)]
 
-    ![][4]
+###添加代码
 
-7.  选择顶部的“仪表板”选项卡，然后单击“查看连接字符串”。记下两个连接字符串。
+1. 从<a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">此处</a>下载通知中心 Android SDK。解压缩 .zip 文件，并将 **notificationhubs\\notification-hubs-0.4.jar** 和 **notifications\\notifications-1.0.1.jar** 复制到项目的 **app\\libs** 目录。为此，可以在 Android Studio 的“项目视图”窗口中，将文件直接拖放到 **libs** 文件夹。刷新 libs 文件夹。
 
-你的通知中心现在已配置为使用 GCM，并且你有连接字符串用于注册你的应用程序和发送推送通知。
 
-## <span id="connecting-app"></span></a>将你的应用程序连接到通知中心
 
-### 创建新的 Android 项目
+	这两个包的参考文档位于以下链接： * [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html) * [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
 
-1.  在 Eclipse ADT 中，创建新的 Android 项目（依次单击“文件”、“新建”、“Android 应用程序”）。
 
-    ![][5]
+    > [AZURE.NOTE]在后续的 SDK 版本中，文件名末尾的数字可能更改。
 
-2.  确保“要求的最低 SDK”已设置为“API 8:Android 2.2 (Froyo)”，并且后面的两个 SDK 条目已设置为最新的可用版本。选择“下一步”，然后按向导说明操作，确保选择“创建活动”以创建空白活动。在下一个框中接受默认的启动器图标，然后在最后一个框中单击“完成”。
+2. 接下来，设置该应用程序以从 GCM 获取 registrationId，并使用它将应用程序实例注册到通知中心。
 
-    ![][6]
+	在 AndroidManifest.xml 文件中，在 `</application>` 元素的下面添加以下权限。请确保将 `<your package>` 替换为 AndroidManifest.xml 文件顶部显示的包名称（在本示例中为 `com.example.testnotificationhubs`）。
 
-### 将 Google Play Services 添加到项目
+		<uses-permission android:name="android.permission.INTERNET"/>
+		<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+		<uses-permission android:name="android.permission.WAKE_LOCK"/>
+		<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-[WACOM.INCLUDE [添加 Play Services][添加 Play Services]]
+		<permission android:name="<your package>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+		<uses-permission android:name="<your package>.permission.C2D_MESSAGE"/>
 
-### 添加代码
+3. 在 **MainActivity** 类中，在类声明的上面添加以下 `import` 语句。
 
-1.  从[此处][移动服务 Android SDK]下载通知中心 Android SDK。解压缩 .zip 文件并在包资源管理器中将 notificationhubs&#92;notification-hubs-0.1.jar 文件复制到你项目的 &#92;libs 目录。
+		import android.app.AlertDialog;
+		import android.content.DialogInterface;
+		import android.os.AsyncTask;
+		import com.google.android.gms.gcm.*;
+		import com.microsoft.windowsazure.messaging.*;
+		import com.microsoft.windowsazure.notifications.NotificationsManager;
 
-2.  下载和解压缩[移动服务 Android SDK][移动服务 Android SDK]，打开 **notifications** 文件夹，将 **notifications-1.0.1.jar** 文件复制到 Eclipse 项目的 *libs* 文件夹，并刷新 *libs* 文件夹。
 
-    <div class="dev-callout"><b>说明</b>
-<p>在后续的 SDK 版本中，文件名末尾的数字可能更改。</p>
-</div>
+4. 将以下私有成员添加到类的顶部。
 
-    现在，设置该应用程序以从 GCM 获取 *registrationId*，并使用它将应用程序实例注册到通知中心。
+		private String SENDER_ID = "<your project number>";
+		private GoogleCloudMessaging gcm;
+		private NotificationHub hub;
+    	private String HubName = "<Enter Your Hub Name>";
+		private String HubListenConnectionString = "<Your default listen connection string>";
 
-3.  在 AndroidManifest.xml 文件中，在紧挨 <uses-sdk></uses-sdk> 元素下添加以下行。确保将 `<your package>` 替换为你在步骤 1 中为应用程序选择的包（在本示例中为`com.yourCompany.wams_notificationhubs` ）。
 
-        <uses-permission android:name="android.permission.INTERNET"/>
-        <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-        <uses-permission android:name="android.permission.WAKE_LOCK"/>
-        <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	确保更新三个占位符：* * **SENDER\_ID**：将 `SENDER_ID` 设置为前面在从 [Google Cloud Console](http://cloud.google.com/console) 中创建的项目获取的项目编号。* **HubListenConnectionString**：将 `HubListenConnectionString` 设置为中心的 **DefaultListenAccessSignature** 连接字符串。在 [Azure 管理门户]上，单击中心的“仪表板”选项卡上的“查看连接字符串”，即可复制该连接字符串。* **HubName**：在 Azure 中的页面顶部显示的通知中心名称（**不是**完整 URL）。例如 `"myhub"`。
 
-        <permission android:name="<your package>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-        <uses-permission android:name="<your package>.permission.C2D_MESSAGE"/>
 
-4.  在 **MainActivity** 类中添加以下语句。
 
-        import android.os.AsyncTask;    
-        import com.google.android.gms.gcm.*;
-        import com.microsoft.windowsazure.messaging.*;
-        import com.microsoft.windowsazure.notifications.NotificationsManager;
+5. 在 **MainActivity** 类的 **OnCreate** 方法中，添加以下代码，以便在创建活动时执行注册。
 
-5.  将以下私有成员添加到类的顶部。
-
-    <div class="dev-callout"><b>说明</b>
-<p>确保将 SENDER_ID 设置为你前面获取的项目编号。</p>
-</div>
-
-        private String SENDER_ID = "<your project number>";
-        private GoogleCloudMessaging gcm;
-        private NotificationHub hub;
-
-6.  在 **OnCreate** 方法中添加以下代码，确保将占位符替换为你的连接字符串（它具有在前一部分中获取的侦听访问权限）以及 Azure 中与你的中心对应的页面顶部显示的通知中心名称（**不是**完整 URL）。
-
+        MyHandler.mainActivity = this;
         NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
-
         gcm = GoogleCloudMessaging.getInstance(this);
-
-        String connectionString = "<your listen access connection string>";
-        hub = new NotificationHub("<your notification hub name>", connectionString, this);
-
+        hub = new NotificationHub(HubName, HubListenConnectionString, this);
         registerWithNotificationHubs();
 
-7.  在 MainActivity.java 中，创建以下方法：
+6. 在 **MainActivity.java** 中，针对 **registerWithNotificationHubs()** 方法添加以下代码。向 Google Cloud Messaging 和通知中心注册之后，此方法将报告成功。
 
-        @SuppressWarnings("unchecked")
-        private void registerWithNotificationHubs() {
-           new AsyncTask() {
-              @Override
-              protected Object doInBackground(Object... params) {
-                 try {
-                    String regid = gcm.register(SENDER_ID);
-                    hub.register(regid);
-                 } catch (Exception e) {
-                    return e;
-                 }
-                 return null;
-             }
-           }.execute(null, null, null);
-        }
+    	@SuppressWarnings("unchecked")
+    	private void registerWithNotificationHubs() {
+        	new AsyncTask() {
+            	@Override
+            	protected Object doInBackground(Object... params) {
+                	try {
+                    	String regid = gcm.register(SENDER_ID);
+                    DialogNotify("Registered Successfully","RegId : " + 
+						hub.register(regid).getRegistrationId());
+                	} catch (Exception e) {
+                    	DialogNotify("Exception",e.getMessage());
+                    	return e;
+                	}
+                	return null;
+            	}
+        	}.execute(null, null, null);
+    	}
 
-8.  因为 Android 不显示通知，你必须编写自己的接收器。在 **AndroidManifest.xml** 中，在`<application/>` 元素内添加以下元素。
+		
+		/**
+		  * A modal AlertDialog for displaying a message on the UI thread
+		  * when theres an exception or message to report.
+		  * 
+		  * @param title   Title for the AlertDialog box. 
+		  * @param message The message displayed for the AlertDialog box.
+		  */
+    	public void DialogNotify(final String title,final String message)
+    	{
+        	final AlertDialog.Builder dlg;
+        	dlg = new AlertDialog.Builder(this);
 
-    <div class="dev-callout"><b>说明</b>
-<p>将占位符替换为你的包名称。</p>
-</div>
+        	runOnUiThread(new Runnable() {
+            	@Override
+            	public void run() {
+                	AlertDialog dlgAlert = dlg.create();
+                	dlgAlert.setTitle(title);
+                	dlgAlert.setButton(DialogInterface.BUTTON_POSITIVE, 
+						(CharSequence) "OK", 
+						new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                	dlgAlert.setMessage(message);
+                	dlgAlert.setCancelable(false);
+                	dlgAlert.show();
+            	}
+        	});
+    	}
+
+7. 因为 Android 不显示通知，你必须编写自己的接收器。在 **AndroidManifest.xml** 中的 `<application>` 元素内添加以下元素。
+
+	> [AZURE.NOTE]将占位符替换为你的包名称。
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="**my_app_package**" />
+                <category android:name="<your package name>" />
             </intent-filter>
         </receiver>
 
-9.  在包资源管理器中，右键单击包（在 `src` 节点下面），单击“新建”，然后单击“类”。
 
-10. 在“名称”中，键入`MyHandler`，在“超类”中，键入`com.microsoft.windowsazure.notifications.NotificationsHandler`，然后单击“完成”。
+8. 在“项目”视图中，展开“应用”>“src”>“main”>“java”。右键单击 **java** 下的包文件夹，单击“新建”，然后单击“Java 类”。
 
-    ![][7]
+	![][6]
 
-    这样可创建新的 MyHandler 类。
+9. 在新类的“名称”字段中输入 **MyHandler**，然后单击“确定”。
+	
 
-11. 添加以下 import 语句：
+10. 在 **MyHandler.java** 的顶部添加以下 import 语句：
 
-        import android.app.NotificationManager;
-        import android.app.PendingIntent;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v4.app.NotificationCompat;
+		import android.app.NotificationManager;
+		import android.app.PendingIntent;
+		import android.content.Context;
+		import android.content.Intent;
+		import android.os.Bundle;
+		import android.support.v4.app.NotificationCompat;
+		import com.microsoft.windowsazure.notifications.NotificationsHandler;
+		
 
-12. 将以下代码添加到类：
+11. 更新类声明，使 `MyHandler` 成为 `com.microsoft.windowsazure.notifications.NotificationsHandler` 的子类，如下所示。
 
-        public static final int NOTIFICATION_ID = 1;
-        private NotificationManager mNotificationManager;
-        NotificationCompat.Builder builder;
-        Context ctx;
+		public class MyHandler extends NotificationsHandler {
 
 
-        @Override
-        public void onReceive(Context context, Bundle bundle) {
-            ctx = context;
-            String nhMessage = bundle.getString("msg");
+12. 在 `MyHandler` 类中添加以下代码。
 
-            sendNotification(nhMessage);
-        }
+	此代码将重写 `OnReceive` 方法，因此处理程序将弹出 `AlertDialog` 以显示收到的通知。处理程序还会使用 `sendNotification()` 方法将通知发送到 Android 通知管理器。
 
-        private void sendNotification(String msg) {
-            mNotificationManager = (NotificationManager)
-                      ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+    	public static final int NOTIFICATION_ID = 1;
+    	private NotificationManager mNotificationManager;
+    	NotificationCompat.Builder builder;
+    	Context ctx;
 
-            PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
-                  new Intent(ctx, MainActivity.class), 0);
+    	static public MainActivity mainActivity;
 
-            NotificationCompat.Builder mBuilder =
-                  new NotificationCompat.Builder(ctx)
-                  .setSmallIcon(R.drawable.ic_launcher)
-                  .setContentTitle("Notification Hub Demo")
-                  .setStyle(new NotificationCompat.BigTextStyle()
-                             .bigText(msg))
-                  .setContentText(msg);
+    	@Override
+    	public void onReceive(Context context, Bundle bundle) {
+        	ctx = context;
+        	String nhMessage = bundle.getString("message");
 
-             mBuilder.setContentIntent(contentIntent);
-             mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-        }
+        	sendNotification(nhMessage);
+        	mainActivity.DialogNotify("Received Notification",nhMessage);
+    	}
 
-## <a name="send"></a>如何向应用程序发送通知
+    	private void sendNotification(String msg) {
+        	mNotificationManager = (NotificationManager)
+                ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
-你可以使用通知中心通过 [REST 接口][REST 接口]从任意后端发送通知。本教程演示了发送通知的两种方法：使用 .NET 控制台应用程序，以及结合使用移动服务和节点脚本。
+        	PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
+                new Intent(ctx, MainActivity.class), 0);
 
-### 使用 .NET 控制台应用程序发送通知：
+			NotificationCompat.Builder mBuilder =
+				new NotificationCompat.Builder(ctx)
+					.setSmallIcon(R.mipmap.ic_launcher)
+					.setContentTitle("Notification Hub Demo")
+					.setStyle(new NotificationCompat.BigTextStyle()
+					.bigText(msg))
+					.setContentText(msg);
 
-1.  创建新的 Visual C# 控制台应用程序：
+			mBuilder.setContentIntent(contentIntent);
+			mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+		}
+	
+13. 在 Android Studio 的菜单栏上，单击“生成”>“重新生成项目”，以确保不会检测到任何错误。
 
-    ![][8]
+##如何发送通知
 
-2.  通过使用 [WindowsAzure.ServiceBus NuGet 包][WindowsAzure.ServiceBus NuGet 包]添加对 Azure 服务总线 SDK 的引用。在 Visual Studio 主菜单中，依次单击“工具”、“库程序包管理器”和“程序包管理器控制台”。然后，在控制台窗口中键入：
 
-        Install-Package WindowsAzure.ServiceBus
 
-    然后按 Enter。
+在 Azure 门户中通过通知中心上的调试选项卡（如以下屏幕中所示）来发送通知，可以在应用中测试通知的接收情况。
 
-3.  打开文件 Program.cs 并添加以下 using 语句：
+![][30]
 
-        using Microsoft.ServiceBus.Notifications;
+[AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
-4.  在 `Program` 类中添加以下方法：
+![][31]
 
-        private static async void SendNotificationAsync()
-        {
-            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            await hub.SendGcmNativeNotificationAsync("{ \"data\" : {\"msg\":\"Hello from Azure!\"}}");
-        }
+1. 在 Android Studio 的项目视图中展开“应用”>“src”>“main”>“res”>“layout”。打开 **activity\_main.xml** 布局文件，然后单击“文本”选项卡以更新文件的文本内容。使用以下代码更新文件，该代码将添加新的 `Button` 和 `EditText` 控件，用于将通知消息发送到通知中心。将此代码添加在底部紧靠 `</RelativeLayout>` 前面的位置。
 
-5.  然后在 Main 方法中添加下列行：
+	    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_button"
+        android:id="@+id/sendbutton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendNotificationButtonOnClick" />
 
-         SendNotificationAsync();
-         Console.ReadLine();
+	    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextNotificationMessage"
+        android:layout_above="@+id/sendbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:hint="@string/notification_message_hint" />
 
-### 使用移动服务发送通知
+2. 在 Android Studio 的项目视图中展开“应用”>“src”>“main”>“res”>“values”。打开 **strings.xml** 文件并添加新的 `Button` 和 `EditText` 控件引用的字符串值。在文件底部紧靠在 `</resources>` 前面的位置添加这些值。
 
-1.  登录到 [Azure 管理门户][Azure 管理门户]并选择你的移动服务。如果你还没有移动服务，请按[移动服务入门][移动服务入门]中的说明操作。
+        <string name="send_button">Send Notification</string>
+        <string name="notification_message_hint">Enter notification message text</string>
 
-2.  选择顶部的“计划程序”选项卡。
 
-    ![][9]
+3. 在 **MainActivity.java** 文件中，将以下 `import` 语句添加在 `MainActivity` 类的上面。
 
-3.  创建新的计划作业，插入名称，然后选择“按需”。
+		import java.net.URLEncoder;
+		import javax.crypto.Mac;
+		import javax.crypto.spec.SecretKeySpec;
+		
+		import android.util.Base64;
+		import android.view.View;
+		import android.widget.EditText;
+		
+		import org.apache.http.HttpResponse;
+		import org.apache.http.client.HttpClient;
+		import org.apache.http.client.methods.HttpPost;
+		import org.apache.http.entity.StringEntity;
+		import org.apache.http.impl.client.DefaultHttpClient;
 
-    ![][10]
 
-4.  创建作业时，单击该作业名称。然后单击顶部栏上的“脚本”选项卡。
+3. 在 **MainActivity.java** 文件中，将以下成员添加在 `MainActivity` 类的最上面。
 
-5.  在你的计划程序函数中插入以下脚本。确保将占位符替换为你的通知中心名称和你以前获取的 *DefaultFullSharedAccessSignature* 的连接字符串。单击**“保存”**。
+	在 `HubName` 中，为中心（不是命名空间）输入名称。例如“myhub”。此外，输入 **DefaultFullSharedAccessSignature** 连接字符串。单击通知中心的“仪表板”选项卡上的“查看连接字符串”，即可从 [Azure 管理门户]复制此连接字符串。
 
-        var azure = require('azure');
-        var notificationHubService = azure.createNotificationHubService('<hub name>', '<connection string>');
-        notificationHubService.gcm.send(null,'{"data":{"msg" : "Hello from Mobile Services!"}}',
-          function (error)
-          {
-            if (!error) {
-               console.warn("Notification successful");
+	    private String HubEndpoint = null;
+	    private String HubSasKeyName = null;
+	    private String HubSasKeyValue = null;
+		private String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
+
+4. 活动保留中心名称以及中心的完整共享访问连接字符串。你必须创建软件访问签名 (SaS) 令牌对 POST 请求进行身份验证，以便将消息发送到通知中心。为此，可以分析连接字符串中的密钥数据，然后根据[一般概念](http://msdn.microsoft.com/library/azure/dn495627.aspx) REST API 参考中所述创建 SaS 令牌。
+
+	在 **MainActivity.java** 中，将以下方法添加到 `MainActivity` 类，以分析连接字符串。
+
+	    /**
+    	 * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx
+    	 * to parse the connection string so a SaS authentication token can be 
+    	 * constructed.
+    	 * 
+    	 * @param connectionString This must be the DefaultFullSharedAccess connection
+    	 *                         string for this example.
+	     */
+	    private void ParseConnectionString(String connectionString)
+	    {
+	        String[] parts = connectionString.split(";");
+	        if (parts.length != 3)
+	            throw new RuntimeException("Error parsing connection string: "
+	                    + connectionString);
+	
+	        for (int i = 0; i < parts.length; i++) {
+	            if (parts[i].startsWith("Endpoint")) {
+	                this.HubEndpoint = "https" + parts[i].substring(11);
+	            } else if (parts[i].startsWith("SharedAccessKeyName")) {
+	                this.HubSasKeyName = parts[i].substring(20);
+	            } else if (parts[i].startsWith("SharedAccessKey")) {
+	                this.HubSasKeyValue = parts[i].substring(16);
+	            }
+	        }
+	    }
+
+5. 在 **MainActivity.java** 中，将以下方法添加到 `MainActivity` 类，以创建 SaS 身份验证令牌。
+
+        /**
+         * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx to
+         * construct a SaS token from the access key to authenticate a request.
+         * 
+         * @param uri The un-encoded resource URI string for this operation. The resource
+         *            URI is the full URI of the Service Bus resource to which access is
+         *            claimed. For example, 
+         *            "http://<namespace>.servicebus.windows.net/<hubName>" 
+         */
+        private String generateSasToken(String uri) {
+    
+            String targetUri;
+            try {
+                targetUri = URLEncoder
+                        .encode(uri.toString().toLowerCase(), "UTF-8")
+                        .toLowerCase();
+    
+                long expiresOnDate = System.currentTimeMillis();
+                int expiresInMins = 60; // 1 hour
+                expiresOnDate += expiresInMins * 60 * 1000;
+                long expires = expiresOnDate / 1000;
+                String toSign = targetUri + "\n" + expires;
+    
+                // Get an hmac_sha1 key from the raw key bytes
+                byte[] keyBytes = HubSasKeyValue.getBytes("UTF-8");
+                SecretKeySpec signingKey = new SecretKeySpec(keyBytes, "HmacSHA256");
+    
+                // Get an hmac_sha1 Mac instance and initialize with the signing key
+                Mac mac = Mac.getInstance("HmacSHA256");
+                mac.init(signingKey);
+    
+                // Compute the hmac on input data bytes
+                byte[] rawHmac = mac.doFinal(toSign.getBytes("UTF-8"));
+    
+            	// Using android.util.Base64 for Android Studio instead of 
+	            // Apache commons codec.
+                String signature = URLEncoder.encode(
+                        Base64.encodeToString(rawHmac, Base64.NO_WRAP).toString(), "UTF-8");
+    
+                // construct authorization string
+                String token = "SharedAccessSignature sr=" + targetUri + "&sig="
+                        + signature + "&se=" + expires + "&skn=" + HubSasKeyName;
+                return token;
+            } catch (Exception e) {
+                DialogNotify("Exception Generating SaS",e.getMessage().toString());
             }
-            else
+    
+            return null;
+        }
+
+
+6. 在 **MainActivity.java** 中，将以下方法添加到 `MainActivity` 类，以使用 REST API 处理**发送通知**按钮点击并将通知消息发送到中心。
+
+        /**
+         * Send Notification button click handler. This method parses the 
+         * DefaultFullSharedAccess connection string and generates a SaS token. The 
+         * token is added to the Authorization header on the POST request to the 
+         * notification hub. The text in the editTextNotificationMessage control
+         * is added as the JSON body for the request to add a GCM message to the hub.
+         * 
+         * @param v 
+         */
+        public void sendNotificationButtonOnClick(View v) {
+            EditText notificationText = (EditText) findViewById(R.id.editTextNotificationMessage);
+            final String json = "{"data":{"message":"" + notificationText.getText().toString() + ""}}";
+    
+            new Thread()
             {
-              console.warn("Notification failed" + error);
-            }
-          }
-        );
+                public void run()
+                {
+                    try
+                    {
+                        HttpClient client = new DefaultHttpClient();
+    
+                        // Based on reference documentation...
+                        // http://msdn.microsoft.com/library/azure/dn223273.aspx
+                        ParseConnectionString(HubFullAccess);
+                        String url = HubEndpoint + HubName + "/messages/?api-version=2015-01";
+                        HttpPost post = new HttpPost(url);
+    
+                        // Authenticate the POST request with the SaS token.
+                        post.setHeader("Authorization", generateSasToken(url));
+    
+                        // JSON content for GCM
+                        post.setHeader("Content-Type", "application/json;charset=utf-8");
+    
+                        // Notification format should be GCM
+                        post.setHeader("ServiceBusNotification-Format", "gcm");
+                        post.setEntity(new StringEntity(json));
+    
+                        HttpResponse response = client.execute(post);
+                    }
+                    catch(Exception e)
+                    {
+                        DialogNotify("Exception",e.getMessage().toString());
+                    }
+                }
+            }.start();
+        }
 
-## <a name="run-app"></a>测试应用程序
 
-若要使用真正的电话来测试此应用程序，你只需使用 USB 电缆将它连接到计算机即可。
 
-使用模拟器测试此应用程序：
+##测试应用程序
 
-1.  确保使用支持 Google API 的 Android 虚拟设备 (AVD)。
+####模拟器测试
+如果你想要在模拟器上进行测试，请确保模拟器映像支持你为应用选择的 Google API 级别。如果你的映像不支持 Google API，最终将会发生 **SERVICE\_NOT\_AVAILABLE** 异常。
 
-2.  从“窗口”中，单击“Android 虚拟设备管理器”，选择你的设备，然后单击“编辑”。
+此外，请确保已将 Google 帐户添加到运行的模拟器的“设置”->“帐户”下。否则，尝试向 GCM 注册可能会导致 **AUTHENTICATION\_FAILED** 异常。
 
-    ![][11]
+####测试应用程序     
 
-3.  在“目标”中选择“Google API”，然后单击“确定”。
+1. 运行应用，并留意报告注册成功的注册 ID。
 
-    ![][12]
+   	![][18]
 
-4.  为了接收推送通知，你必须在 Android 虚拟设备上设置 Google 帐户（方法如下：在模拟器中，导航到“设置”，然后单击“添加帐户”）。此外，请确保模拟器已连接到 Internet。
+2. 输入一条要发送到已在中心注册的所有 Android 设备的通知消息。
 
-无论选择了哪种设备，接下来都请执行以下操作：
+   	![][19]
 
-1.  在 Eclipse 顶部工具栏中，单击“运行”，然后选择你的应用程序。这会将你的应用程序加载到连接的电话，或者启动模拟器，然后加载并运行此应用程序。
+3. 按“发送通知”。运行该应用的所有设备将显示一个包含该通知消息的 `AlertDialog`。未运行该应用但前面已注册通知的设备将收到已添加到通知管理器的通知。从左上角向下扫动即可查看通知。
 
-2.  应用程序从 GCM 检索 *registrationId* 并注册到通知中心。
+   	![][21]
 
-3.  现在，请使用上一部分介绍的方法之一将通知发送到应用程序：
+##后续步骤
 
-    -   如果你使用的是 .Net 控制台应用程序，请在 Visual Studio 中按 F5 键以运行将要发送通知的应用程序。
-    -   如果使用的是移动服务脚本，请单击移动服务屏幕底部栏上的“运行一次”，随后脚本将会发送通知。
+在这个简单的示例中，你将通知广播到所有 Android 设备。若要向特定的用户推送消息，请参考教程[使用通知中心将通知推送到用户]，如果要按兴趣组来划分用户，请阅读[使用通知中心发送突发新闻]。在[通知中心指南]中了解有关如何使用通知中心的更多信息。
 
-4.  通知区域中（左上角）会出现一个图标。下拉通知抽屉可以查看该通知。
 
-    ![][13]
+<!-- Images. -->
+[1]: ./media/notification-hubs-android-get-started/mobile-services-google-new-project.png
+[2]: ./media/notification-hubs-android-get-started/mobile-services-google-create-server-key.png
+[3]: ./media/notification-hubs-android-get-started/mobile-services-google-create-server-key2.png
+[4]: ./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png
+[5]: ./media/notification-hubs-android-get-started/mobile-services-google-enable-GCM.png
+[6]: ./media/notification-hubs-android-get-started/notification-hub-android-new-class.png
 
-## <a name="next-steps"> </a>后续步骤
+[12]: ./media/notification-hubs-android-get-started/notification-hub-connection-strings.png
 
-在这个简单的示例中，你将通知广播到所有 Android 设备。为了针对特定用户广播，请参考教程[使用通知中心将通知推送到用户][使用通知中心将通知推送到用户]，如果你要按兴趣细分用户组，请参考[使用通知中心发送突发新闻][使用通知中心发送突发新闻]。在[通知中心指南][通知中心指南]中了解通知中心的详细使用信息。
+[13]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-new-project.png
+[14]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-choose-form-factor.png
+[15]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app4.png
+[16]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app5.png
+[17]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app6.png
+
+[18]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-registered.png
+[19]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-set-message.png
+
+[20]: ./media/notification-hubs-android-get-started/notification-hub-create-console-app.png
+[21]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-received-message.png
+[22]: ./media/notification-hubs-android-get-started/notification-hub-scheduler1.png
+[23]: ./media/notification-hubs-android-get-started/notification-hub-scheduler2.png
+[29]: ./media/mobile-services-android-get-started-push/mobile-eclipse-import-Play-library.png
+
+[30]: ./media/notification-hubs-android-get-started/notification-hubs-debug-hub-gcm.png
+
+[31]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-add-ui.png
 
 
 <!-- URLs. -->
+[Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md
+[Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
+[Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
+[Azure 管理门户]: https://manage.windowsazure.com/
+[通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
+[使用通知中心将通知推送到用户]: notification-hubs-aspnet-backend-android-notify-users.md
+[使用通知中心发送突发新闻]: notification-hubs-aspnet-backend-android-breaking-news.md
+ 
 
-  [Windows 应用商店 C#]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/ "Windows 应用商店 C#"
-  [Windows Phone]: /zh-cn/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone"
-  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-get-started/ "iOS"
-  [Android]: /zh-cn/documentation/articles/notification-hubs-android-get-started/ "Android"
-  [Kindle]: /zh-cn/documentation/articles/notification-hubs-kindle-get-started/ "Kindle"
-  [Xamarin.iOS]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
-  [启用 Google Cloud Messaging]: #register
-  [配置通知中心]: #configure-hub
-  [将你的应用程序连接到通知中心]: #connecting-app
-  [如何向应用程序发送通知]: #send
-  [测试应用程序]: #run-app
-  [此处]: http://go.microsoft.com/fwlink/?LinkId=389797
-  [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
-  [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
-  [启用 GCM]: ../includes/mobile-services-enable-Google-cloud-messaging.md
-  [Azure 管理门户]: https://manage.windowsazure.cn/
-
-<!-- Images. --> 
-
-  []: ./media/notification-hubs-android-get-started/notification-hub-create-from-portal.png
-  [1]: ./media/notification-hubs-android-get-started/notification-hub-create-from-portal2.png
-  [2]: ./media/notification-hubs-android-get-started/notification-hub-select-from-portal.png
-  [3]: ./media/notification-hubs-android-get-started/notification-hub-select-from-portal2.png
-  [4]: ./media/notification-hubs-android-get-started/notification-hub-configure-android.png
-  [5]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app.png
-  [6]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app2.png
-  [添加 Play Services]: ../includes/mobile-services-add-Google-play-services.md
-  [7]: ./media/notification-hubs-android-get-started/notification-hub-android-new-class.png
-  [REST 接口]: http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx
-  [8]: ./media/notification-hubs-android-get-started/notification-hub-create-console-app.png
-  [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
-  [移动服务入门]: /develop/mobile/tutorials/get-started/#create-new-service
-  [9]: ./media/notification-hubs-android-get-started/notification-hub-scheduler1.png
-  [10]: ./media/notification-hubs-android-get-started/notification-hub-scheduler2.png
-  [11]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app7.png
-  [12]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app8.png
-  [13]: ./media/notification-hubs-android-get-started/notification-hub-android-toast.png
-  [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
-  [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+<!---HONumber=71-->

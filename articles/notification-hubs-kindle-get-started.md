@@ -1,29 +1,33 @@
-﻿<properties linkid="develop-notificationhubs-tutorials-get-started-kindle" urlDisplayName="Get Started" pageTitle="Get Started with Azure Notification Hubs" metaKeywords="" description="Learn how to use Azure Notification Hubs to send push notifications." metaCanonical="" services="notification-hubs" documentationCenter="Mobile" title="Get started with Notification Hubs" authors="sethm" solutions="" manager="dwrede" editor="" />
-<tags ms.service="notification-hubs"
-    ms.date="03/16/2015"
-    wacn.date="04/11/2015"
-    />
+﻿<properties 
+	linkid="develop-notificationhubs-tutorials-get-started-kindle" 
+	urlDisplayName="Get Started" 
+	pageTitle="Get Started with Azure Notification Hubs" 
+	metaKeywords="" 
+	description="Learn how to use Azure Notification Hubs to send push notifications." 
+	metaCanonical="" 
+	services="notification-hubs" 
+	documentationCenter="Mobile" 
+	title="Get started with Notification Hubs" 
+	authors="sethm" 
+	solutions="" 
+	manager="dwrede" editor="" />
+<tags 
+	ms.service="notification-hubs"
+	ms.date="06/16/2015"
+	wacn.date="10/03/2015"/>
 
 # 通知中心入门
 
-> [AZURE.SELECTOR]
-> - [Windows 应用商店 C#](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)
-> - [Windows Phone](/zh-cn/documentation/articles/notification-hubs-windows-phone-get-started/)
-> - [iOS](/zh-cn/documentation/articles/notification-hubs-ios-get-started/)
-> - [Android](/zh-cn/documentation/articles/notification-hubs-android-get-started/)
-> - [Kindle](/zh-cn/documentation/articles/notification-hubs-kindle-get-started/)
-> - [百度](/zh-cn/documentation/articles/notification-hubs-baidu-get-started/)
-> - [Xamarin.iOS](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/)
-> - [Xamarin.Android](/zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
+##概述
 
-本主题说明如何使用 Azure 通知中心向 Kindle 应用程序发送推送通知。
-在本教程中，你将要创建一个使用 Google Cloud Messaging (GCM) 接收推送通知的空白 Kindle 应用程序。
+本主题演示如何使用 Azure 通知中心将推送通知发送到 Kindle 应用程序。在本教程中，你将创建一个空白 Kindle 应用程序，它使用 Amazon Device Messaging (ADM) 接收推送通知。
 
 本教程需要的内容如下：
 
--   Android SDK（假设你要使用 Eclipse），你可以从[此处][此处]下载该 SDK。
--   遵照[此处][1]所述的步骤设置 Kindle 的开发环境。
++ Android SDK（假设你要使用 Eclipse），你可以从<a href="http://go.microsoft.com/fwlink/?LinkId=389797">此处</a>下载该 SDK。
++ 遵照<a href="https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment">此处</a>所述的步骤设置 Kindle 的开发环境。
 
 ## 向开发人员门户添加新应用程序
 

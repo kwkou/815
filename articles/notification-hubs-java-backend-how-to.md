@@ -1,13 +1,30 @@
-<properties urlDisplayName="How to use Notification Hubs with Java" pageTitle="如何结合使用通知中心与 Java" metaKeywords="" description="了解如何从 Java 后端使用 Azure 通知中心。" metaCanonical="" services="mobile-services,notification-hubs,push,java" documentationCenter="" title="How to use Notification Hubs with Java" authors="piyushjo" solutions="" manager="dwrede" editor="" />
+<properties 
+	urlDisplayName="How to use Notification Hubs with Java" 
+	pageTitle="如何结合使用通知中心与 Java" 
+	metaKeywords="" 
+	description="了解如何从 Java 后端使用 Azure 通知中心。" 
+	metaCanonical="" 
+	services="mobile-services,notification-hubs,push,java" 
+	documentationCenter="" 
+	title="How to use Notification Hubs with Java" 
+	authors="piyushjo" 
+	solutions="" 
+	manager="dwrede" 
+	editor="" />
 
-<tags ms.service="notification-hubs" ms.date="11/14/2014" wacn.date="08/29/2015" />
+<tags 
+	ms.service="notification-hubs" 
+ 	ms.date="07/17/2015" 
+	wacn.date="10/03/2015" />
 
 # 如何通过 Java 使用通知中心
-<div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/documentation/articles/notification-hubs-java-backend-how-to" title="Java" class="current">Java</a><a href="/documentation/articles/notification-hubs-php-backend-how-to" title="PHP">PHP</a><a href="/documentation/articles/notification-hubs-python-backend-how-to" title="Python">Python</a>
-</div>
-
-本主题将向您介绍完全受支持的全新官方 Azure 通知中心 Java SDK 的主要功能。这是一个开源项目，您可以在 [Java SDK] 查看完整的 SDK 代码。
+> [AZURE.SELECTOR] 
+- [Java](/documentation/articles/notification-hubs-php-backend-how-to)
+- [PHP](/documentation/articles/notification-hubs-python-backend-how-to)
+- [Python](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+		
+本主题将向你介绍完全受支持的全新官方 Azure 通知中心 Java SDK 的主要功能。这是一个开源项目，你可以在 [Java SDK] 查看完整的 SDK 代码。
 
 通常情况下，如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 中所述，您可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。此 Java SDK 在以 Java 形式表示的 REST 接口上提供瘦包装器。
 
@@ -281,7 +298,7 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。您请求的操作会�
 * 播放示例：
 	- [通知中心入门]
 	- [发送突发新闻]
-	- [发送本地化的突发新闻]
+	- [发送当地的突发新闻]
 	- [发送通知到经身份验证的用户]
 	- [发送跨平台通知到经身份验证的用户]
 
@@ -289,7 +306,7 @@ CreateOrUpdate、Patch 和 Delete 最终与 Get 一致。您请求的操作会�
 [Get started tutorial]: /documentation/articles/notification-hubs-ios-get-started
 [通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-[发送本地化的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[发送当地的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [发送通知到经身份验证的用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [发送跨平台通知到经身份验证的用户]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 [Maven]: http://maven.apache.org/
