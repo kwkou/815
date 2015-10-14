@@ -1,18 +1,37 @@
-﻿<properties linkid="notification-hubs-how-to-guides-howto-register-user-with-aspnet-webapi-ios" urlDisplayName="Notify iOS app users by using Web API" pageTitle="Register the current user for push notifications by using Web API - Notification Hubs" metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification iOS app" description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by ASP.NET Web API." metaCanonical="" services="notification-hubs" documentationCenter="" title="Register the current user for push notifications by using ASP.NET" authors="" solutions="" manager="" editor="" />
-<tags ms.service="notification-hubs"
-    ms.date="02/26/2015"
-    wacn.date="04/11/2015"
+﻿<properties 
+	linkid="notification-hubs-how-to-guides-howto-register-user-with-aspnet-webapi-ios" 
+	urlDisplayName="Notify iOS app users by using Web API" 
+	pageTitle="Register the current user for push notifications by using Web API - Notification Hubs" 
+	metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification iOS app" 
+	description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by ASP.NET Web API." 
+	metaCanonical="" 
+	services="notification-hubs" 
+	documentationCenter="" 
+	title="Register the current user for push notifications by using ASP.NET" 
+	authors="" 
+	solutions="" 
+	manager="" editor="" />
+<tags 
+	ms.service="notification-hubs"
+	ms.date="06/02/2015"
+	wacn.date="10/03/2015"
     />
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/" title="iOS" class="current">iOS</a>
-</div>
+> [AZURE.SELECTOR]
+- [Windows Store C#](/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications)
+- [iOS](/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications)
+
+
+
+##概述
 
 本主题演示在 ASP.NET Web API 执行注册时如何请求向 Azure 通知中心注册推送通知。它是对教程[使用通知中心通知用户][使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户][使用通知中心通知用户]。
 
-1.  在 MainStoryboard\_iPhone.storyboard 中，从对象库添加以下组件：
+##更新应用程序  
+
+1. 在 MainStoryboard\_iPhone.storyboard 中，从对象库添加以下组件：
 
     -   **标签**：“使用通知中心推送到用户”
     -   **标签**：“安装 ID”
@@ -24,7 +43,7 @@
 
     此时，你的 Storyboard 应与下图类似：
 
-    ![][]
+   	![][0]
 
 2.  在助手编辑器中，创建所有带开关的控件的容器并调用它们，连接文本字段与视图控制器（委派），并创建“登录”按钮的“操作”。
 
@@ -93,9 +112,7 @@
 
     这为请求设置设备标记。
 
-    <div class="dev-callout"><b>说明</b>
-<p>此时，此方法中不应有任何其他代码。如果你已调用在完成<a href="/documentation/articles/notification-hubs-ios-get-started/" target="_blank">通知中心入门</a>教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。</p>
-</div>
+	> [AZURE.NOTE]此时，此方法中不应有任何其他代码。如果你已调用在完成[通知中心入门](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank")教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。
 
 8.  在 PushToUserAppDelegate.m 文件中，添加以下处理程序方法：
 
@@ -211,15 +228,14 @@
 
 <!-- Anchors. -->  
 
+
+[0]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios1.png
+[1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
+
 <!-- URLs. -->
+[使用通知中心通知用户]: /manage/services/notification-hubs/notify-users-aspnet
 
-  [Windows 应用商店 C#]: /zh-cn/documentation/articles/notification-hubs-windows-store-aspnet-register-user-push-notifications/ "Windows 应用商店 C#"
-  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications/ "iOS"
-  [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+[Azure Management Portal]: https://manage.windowsazure.cn/
+[通知中心入门]: /manage/services/notification-hubs/get-started-notification-hubs-ios
 
-<!-- Images. -->
-
-  []: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios1.png
-  [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
-  [通知中心入门]: /manage/services/notification-hubs/get-started-notification-hubs-ios
-  [2]: /documentation/articles/notification-hubs-ios-get-started/
+<!---HONumber=71-->

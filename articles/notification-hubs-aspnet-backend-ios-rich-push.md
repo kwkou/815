@@ -1,6 +1,18 @@
-<properties title="Azure Notification Hubs Rich Push" pageTitle="Azure 通知中心富推送" metaKeywords="Azure push notifications, Azure notification hubs, rich push" description="了解如何从 Azure 将富推送通知发送到 iOS 应用。代码示例是使用 .Objective-C 和 C# 编写的。" documentationCenter="Mobile" metaCanonical="" services="notification-hubs" authors="yuaxu" manager="timlt" />
+<properties 
+	title="Azure Notification Hubs Rich Push" 
+	pageTitle="Azure 通知中心富推送" 
+	metaKeywords="Azure push notifications, Azure notification hubs, rich push" 
+	description="了解如何从 Azure 将富推送通知发送到 iOS 应用。代码示例是使用 .Objective-C 和 C# 编写的。" 
+	documentationCenter="Mobile" 
+	metaCanonical="" 
+	services="notification-hubs" 
+	authors="yuaxu" 
+	manager="timlt" />
 
-<tags ms.service="notification-hubs"  ms.date="10/10/2014" wacn.date="08/29/2015" />
+<tags 
+	ms.service="notification-hubs"  
+	ms.date="10/10/2014" 
+	wacn.date="10/03/2015" />
 
 # Azure 通知中心富推送
 

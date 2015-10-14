@@ -1,12 +1,25 @@
-<properties title="Azure Notification Hubs Secure Push" pageTitle="Azure 通知中心安全推送" metaKeywords="Azure push notifications, Azure notification hubs, secure push" description="了解如何从 Azure 将安全推送通知发送到 iOS 应用。代码示例是使用 .Objective-C 和 C# 编写的。" documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="yuaxu" manager="dwrede" />
-
-<tags ms.service="notification-hubs" ms.date="10/10/2014" wacn.date="08/29/2015" />
+<properties 
+	title="Azure Notification Hubs Secure Push" 
+	pageTitle="Azure 通知中心安全推送" 
+	metaKeywords="Azure push notifications, Azure notification hubs, secure push" 
+	description="了解如何从 Azure 将安全推送通知发送到 iOS 应用。代码示例是使用 .Objective-C 和 C# 编写的。" 
+	documentationCenter="Mobile" 
+	metaCanonical="" 
+	disqusComments="1" 
+	umbracoNaviHide="0" 
+	authors="yuaxu" 
+	manager="dwrede" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.date="06/02/2015" 
+	wacn.date="10/03/2015" />
 
 # Azure 通知中心安全推送
 
-<div class="dev-center-tutorial-selector sublanding">
-    	<a href="/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push" title="Windows 通用">Windows 通用</a><a href="/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push" title="iOS" class="current">iOS</a> <a href="/documentation/articles/notification-hubs-aspnet-backend-android-secure-push" title="Android">Android</a>
-</div>
+> [AZURE.SELECTOR]
+- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push)
+- [Android](/documentation/articles/notification-hubs-aspnet-backend-android-secure-push)
+
 
 ## 概述
 

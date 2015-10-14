@@ -1,22 +1,36 @@
-<properties urlDisplayName="Breaking News" pageTitle="通知中心重要资讯教程 - Android" metaKeywords="" description="了解如何使用 Azure 服务总线通知中心向 Android 设备发送重要资讯通知。" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send breaking news" authors="ricksal" solutions="" manager="dwrede" editor="" />
+<properties 
+	urlDisplayName="Breaking News" 
+	pageTitle="通知中心重要资讯教程 - Android" 
+	metaKeywords="" 
+	description="了解如何使用 Azure 服务总线通知中心向 Android 设备发送重要资讯通知。" 
+	metaCanonical="" 
+	services="mobile-services,notification-hubs" 
+	documentationCenter="" 
+	title="Use Notification Hubs to send breaking news" 
+	authors="ricksal" 
+	solutions="" 
+	manager="dwrede" 
+	editor="" />
 
-<tags ms.service="notification-hubs" ms.date="11/22/2014" wacn.date="08/29/2015" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.date="11/22/2014" 
+	wacn.date="10/03/2015" />
 
-
-# 使用通知中心发送重要资讯
+# 使用通知中心发送突发新闻
 
 [AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 ## 概述
 
-本主题介绍如何使用 Azure 通知中心将重要资讯通知广播到 Android 应用。完成后，您将可以注册感兴趣的重要资讯类别并仅接收这些类别的推送通知。此方案对于很多应用来说是常见模式，在此模式中必须将通知发送到以前声明过对它们感兴趣的一组用户，这样的应用有 RSS 阅读器、针对音乐迷的应用等。
+本主题介绍如何使用 Azure 通知中心将重要资讯通知广播到 Android 应用。完成时，你可以注册感兴趣的突发新闻类别并仅接收这些类别的推送通知。此方案对于很多应用程序来说是常见模式，在其中必须将通知发送到以前声明过对它们感兴趣的一组用户，这样的应用程序有 RSS 阅读器、针对音乐迷的应用程序等。
 
-在创建通知中心的注册时，通过加入一个或多个_标记_来启用广播方案。将通知发送到标记时，已注册该标记的所有设备将收到该通知。因为标记是简单字符串，不必提前进行设置。有关标记的详细信息，请参阅[通知中心指南]。
+在创建通知中心的注册时，通过加入一个或多个_标记_来启用广播方案。将通知发送到标签时，已注册该标签的所有设备将接收通知。因为标签是简单的字符串，它们不必提前设置。有关标记的详细信息，请参阅[通知中心指南]。
 
 
 ## 先决条件
 
-本主题以您在[通知中心入门][get-started]中创建的应用为基础。在开始本教程之前，必须先阅读[通知中心入门][get-started]。
+本主题以你在[通知中心入门][get-started]中创建的应用为基础。在开始本教程之前，必须先阅读[通知中心入门][get-started]。
 
 ## 将类别选择添加到应用
 
@@ -151,7 +165,7 @@
 
 4. 在上面的代码中，将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为您的通知中心名称和之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
 
-	> [AZURE.NOTE]由于使用客户端应用分发的凭据通常是不安全的，您只应使用客户端应用分发侦听访问密钥。侦听访问允许应用注册通知，但是无法修改现有注册，也无法发送通知。在受保护的后端服务中使用完全访问密钥，以便发送通知和更改现有注册。
+	> [AZURE.NOTE]由于使用客户端应用程序分发的凭据通常是不安全的，你只应使用客户端应用程序分发具有侦听访问权限的密钥。侦听访问权限允许应用程序注册通知，但是无法修改现有注册，也无法发送通知。在受保护的后端服务中使用完全访问权限密钥，以便发送通知和更改现有注册。
 
 4. 在 **MainActivity** 类中删除 **NotificationHub** 和 **GoogleCloudMessaging** 的私有字段，然后添加一个 **Notifications** 字段：
 
@@ -248,7 +262,7 @@
 
 	这将基于以前保存的类别状态更新主活动。
 
-此应用现已完成，可以在设备的本地存储中存储一组类别，每当用户更改所选类别时，可以使用这些类别注册到通知中心。接下来，我们将定义一个后端，它可将类别通知发送到此应用。
+应用程序现在已完成，可以在设备的本地存储区中存储一组类别了，每当用户更改所选类别时将使用这些类别注册到通知中心。接下来，我们将定义一个后端，它可将类别通知发送到此应用程序。
 
 ## 从后端发送通知
 
@@ -274,11 +288,11 @@
 
 ## 后续步骤
 
-在本教程中，我们了解了如何按类别广播重要资讯。请考虑学习侧重说明其他高级通知中心方案的以下教程之一：
+在本教程中，我们了解了如何按类别广播突发消息。请考虑学习侧重说明其他高级通知中心方案的以下教程之一：
 
-+ [使用通知中心广播本地化的重要资讯]
++ [使用通知中心广播本地化的突发新闻]
 
-	了解如何扩展重要资讯应用以允许发送本地化的通知。
+	了解如何扩展突发新闻应用程序以允许发送本地化的通知。
 
 + [使用通知中心通知用户]
 
@@ -292,7 +306,7 @@
 
 <!-- URLs.-->
 [get-started]: /documentation/articles/notification-hubs-android-get-started
-[使用通知中心广播本地化的重要资讯]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Mobile Service]: documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx

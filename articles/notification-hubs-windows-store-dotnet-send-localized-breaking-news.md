@@ -1,23 +1,27 @@
-﻿<properties linkid="develop-notificationhubs-tutorials-send-localized-breaking-news-windowsdotnet" urlDisplayName="Localized Breaking News" pageTitle="Notification Hubs Localized Breaking News Tutorial" metaKeywords="" description="Learn how to use Azure 服务总线 Notification Hubs to send localized breaking news notifications." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Use Notification Hubs to send localized breaking news" authors="ricksal" solutions="" manager="" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date="11/21/2014"
-    wacn.date="04/11/2015"
-    />
+﻿<properties
+	pageTitle="通知中心本地化的突发新闻教程"
+	description="了解如何使用 Azure 服务总线通知中心发送本地化的突发新闻通知。"
+	services="notification-hubs"
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
+
+<tags
+    ms.service="mobile-services,notification-hubs"
+    ms.date="08/18/2015"
+    wacn.date="10/03/2015"/>
 
 # 使用通知中心发送本地化的突发新闻
 
-<div class="dev-center-tutorial-selector sublanding"> 
-<a href="/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/" title="Windows 应用商店 C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/notification-hubs-ios-send-localized-breaking-news/" title="iOS">iOS</a>
-</div>
 
-本主题演示如何使用 Azure 通知中心的**模板**功能广播已按语言和设备本地化的突发新闻通知。在本教程中，你从在[使用通知中心发送突发新闻][使用通知中心发送突发新闻]中创建的 Windows 应用商店应用程序开始操作。完成时，你将可以注册感兴趣的突发新闻类别，指定要接收通知的语言并仅接收采用该语言的这些类别的推送通知。
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
-本教程将指导你完成启用此方案的以下基本步骤：
 
-1.  [模板概念][模板概念]
-2.  [应用程序用户界面][应用程序用户界面]
-3.  [构建 Windows 应用商店客户端应用程序][构建 Windows 应用商店客户端应用程序]
-4.  [从后端发送通知][从后端发送通知]
+##概述
+
+本主题演示如何使用 Azure 通知中心的**模板**功能广播已按语言和设备本地化的突发新闻通知。在本教程中，你从在[使用通知中心发送突发新闻]中创建的 Windows 应用商店应用程序开始操作。完成时，你将可以注册感兴趣的突发新闻类别，指定要接收通知的语言并仅接收采用该语言的这些类别的推送通知。
+
 
 此方案包含两个部分：
 
@@ -31,11 +35,10 @@
 
 你还需要 Visual Studio 2012。
 
-## <a name="concepts"></a><span class="short-header">概念</span>模板概念
 
-在[使用通知中心发送突发新闻][使用通知中心发送突发新闻]中，你生成了一个使用**标记**订阅不同新闻类别通知的应用程序。
-但是，很多应用程序针对多个市场，需要本地化。这意味着通知内容本身必须本地化且传递到正确的设备组。
-在本主题中，我们将演示如何使用通知中心的**模板**功能轻松传递本地化的突发新闻通知。
+##模板概念
+
+在[使用通知中心发送突发新闻]中，你构建了一个使用**标记**订阅不同新闻类别通知的应用程序。但是，很多应用程序针对多个市场，需要本地化。这意味着通知内容本身必须本地化且传递到正确的设备组。在本主题中，我们将演示如何使用通知中心的**模板**功能轻松传递本地化的突发新闻通知。
 
 注意：发送本地化的通知的一种方式是创建每个标签的多个版本。例如，要支持英语、法语和汉语，我们需要三种不同的标签用于世界新闻：“world\_en”、“world\_fr”和“world\_ch”。我们然后必须将世界新闻的本地化版本分别发送到这些标签。在本主题中，我们使用模板来避免增生标签和发送多个消息的要求。
 
@@ -59,7 +62,8 @@
 
 模板是很强大的功能，你可以在[通知中心指南][通知中心指南]一文中了解其更多信息。一个模板表达语言的参考是[针对 Windows 应用商店的通知中心操作指南][针对 Windows 应用商店的通知中心操作指南]。
 
-## <a name="ui"></a><span class="short-header">应用程序 UI</span>应用程序用户界面
+
+##应用程序用户界面
 
 我们现在将修改你在[使用通知中心发送突发新闻][使用通知中心发送突发新闻]主题中创建的“突发新闻”应用程序，以使用模板发送本地化的突发新闻。
 
@@ -117,7 +121,7 @@
             await hub.RegisterTemplateAsync(channel.Uri, template, "newsTemplate", categories);
         }
 
-    请注意，我们没有调用 *RegisterNativeAsync* 方法，而是调用了 *RegisterTemplateAsync*：我们将注册特定的通知格式，在其中模板依赖于区域设置。我们还提供模板的名称（“newsTemplate”），因为我们可能要注册多个模板（例如一个用于 toast 通知，一个用于磁贴），需要命名它们以便可以更新或删除它们。
+	请注意，不是调用 *RegisterNativeAsync* 方法，我们调用的是 *RegisterTemplateAsync*：我们将注册特定的通知格式，在其中模板依赖于区域设置。我们还提供模板的名称（“newsTemplate”），因为我们可能要注册多个模板（例如一个用于 toast 通知，一个用于磁贴），需要命名它们以便可以更新或删除它们。
 
     请注意，如果一个设备使用同一标签注册多个模板，针对该标签的传入消息将导致多个通知发送到设备（每个通知对应一个模板）。当同一逻辑消息必须导致多个可视通知时，此行为很有用，例如在 Windows 应用商店应用程序显示徽章和 toast。
 
@@ -147,33 +151,49 @@
          dialog.Commands.Add(new UICommand("OK"));
          await dialog.ShowAsync();
 
-4.  最后，在 App.xaml.cs 文件中，确保在 *OnLaunched* 方法中更新对 Notifications 单一实例的调用：
+4. 最后，在 App.xaml.cs 文件中，确保在 OnLaunched 方法中更新对 *Notifications* 单一实例的调用：
 
         Notifications.SubscribeToCategories(Notifications.RetrieveLocale(), Notifications.RetrieveCategories());
 
-## <a name="send"></a><span class="short-header">发送本地化的通知</span>从后端发送本地化的通知
 
-[WACOM.INCLUDE [notification-hubs-localized-back-end][notification-hubs-localized-back-end]]
+##从后端发送本地化的通知
+
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
 
 ## 后续步骤
 
-有关使用模板的详细信息，请参阅[使用通知中心通知用户：ASP.NET][使用通知中心通知用户：ASP.NET]、[使用通知中心通知用户：移动服务][使用通知中心通知用户：移动服务]和[通知中心指南][通知中心指南]。一个模板表达语言的参考是[针对 Windows 应用商店的通知中心操作指南][针对 Windows 应用商店的通知中心操作指南]。
+有关使用模板的更多信息，请参见[使用通知中心通知用户：ASP.NET]、[使用通知中心通知用户：移动服务]以及[通知中心指南]。一个模板表达语言的参考是[针对 Windows 应用商店的通知中心操作指南]。
 
-<!-- Anchors. --> 
+<!-- Anchors. -->
+[Template concepts]: #concepts
+[The app user interface]: #ui
+[Building the Windows Store client app]: #building-client
+[Send notifications from your back-end]: #send
+[Next Steps]: #next-steps
 
 <!-- Images. --> 
 
 <!-- URLs. -->
+[Mobile Service]: /develop/mobile/tutorials/get-started
+[使用通知中心通知用户：ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
+[使用通知中心通知用户：移动服务]: /manage/services/notification-hubs/notify-users
+[使用通知中心发送突发新闻]: /manage/services/notification-hubs/breaking-news-dotnet
 
-  [Windows 应用商店 C#]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/ "Windows 应用商店 C#"
-  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-send-localized-breaking-news/ "iOS"
-  [使用通知中心发送突发新闻]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
-  [模板概念]: #concepts
-  [应用程序用户界面]: #ui
-  [构建 Windows 应用商店客户端应用程序]: #building-client
-  [从后端发送通知]: #send
-  [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-  [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
-  [notification-hubs-localized-back-end]: ../includes/notification-hubs-localized-back-end.md
-  [使用通知中心通知用户：ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/
-  [使用通知中心通知用户：移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users.md
+[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[Get started with data]: /develop/mobile/tutorials/get-started-with-data-dotnet
+[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet
+[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-dotnet
+[Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-app-users-dotnet
+[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-dotnet
+[JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js
+
+[Azure Management Portal]: https://manage.windowsazure.com/
+[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/library/jj927172.aspx
+
+<!---HONumber=71-->

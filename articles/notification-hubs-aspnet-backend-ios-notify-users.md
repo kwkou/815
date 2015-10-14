@@ -1,6 +1,18 @@
-<properties title="Azure Notification Hubs Notify Users" pageTitle="Azure 通知中心通知用户" metaKeywords="Azure push notifications, Azure notification hubs" description="了解如何在 Azure 中发送安全推送通知。使用 .NET API 通过 Objective-C 编写的代码示例。" documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="yuaxu" manager="dwrede" />
+<properties 
+	title="Azure Notification Hubs Notify Users" 
+	pageTitle="Azure 通知中心通知用户" 
+	metaKeywords="Azure push notifications, Azure notification hubs" 
+	description="了解如何在 Azure 中发送安全推送通知。使用 .NET API 通过 Objective-C 编写的代码示例。" 
+	documentationCenter="Mobile" metaCanonical="" 
+	disqusComments="1" 
+	umbracoNaviHide="0" 
+	authors="yuaxu" 
+	manager="dwrede" />
 
-<tags ms.service="notification-hubs" ms.date="11/22/2014" wacn.date="08/29/2015" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.date="11/22/2014" 
+	wacn.date="10/03/2015" />
 
 # Azure 通知中心通知用户
 

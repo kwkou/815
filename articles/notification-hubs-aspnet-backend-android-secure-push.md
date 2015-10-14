@@ -1,6 +1,19 @@
-<properties title="Azure Notification Hubs Secure Push" pageTitle="Azure 通知中心安全推送" metaKeywords="Azure push notifications, Azure notification hubs, secure push" description="了解如何从 Azure 将安全推送通知发送到 Android 应用。使用 Java 和 C# 编写的代码示例。" documentationCenter="Mobile" metaCanonical="" disqusComments="1" umbracoNaviHide="0" authors="sethm" manager="timlt" />
+<properties 
+	title="Azure Notification Hubs Secure Push" 
+	pageTitle="Azure 通知中心安全推送" 
+	metaKeywords="Azure push notifications, Azure notification hubs, secure push" 
+	description="了解如何从 Azure 将安全推送通知发送到 Android 应用。使用 Java 和 C# 编写的代码示例。" 
+	documentationCenter="Mobile" 
+	metaCanonical="" 
+	disqusComments="1" 
+	umbracoNaviHide="0" 
+	authors="sethm" 
+	manager="timlt" />
 
-<tags ms.service="notification-hubs" ms.date="09/24/2014" wacn.date="08/29/2015" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.date="09/24/2014" 
+	wacn.date="10/03/2015" />
 
 # Azure 通知中心安全推送
 
