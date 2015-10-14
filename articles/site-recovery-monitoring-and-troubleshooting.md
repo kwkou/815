@@ -10,28 +10,28 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="07/20/2015" 
-	wacn.date="08/29/2015"/>
+	wacn.date="10/03/2015"/>
 	
 # 监视 VMware、VMM、Hyper-V 和物理站点的保护以及对其进行故障排除
 
-你可以参考本监视与故障排除指南来了解如何跟踪 Azure Site Recovery 的复制运行状况，并掌握相关的故障排除方法。
+你可以参考本监视与故障排除指南来了解如何跟踪 Azure 站点恢复的复制运行状况，并掌握相关的故障排除方法。
 
 ## 了解组件
 
 ### 用于在本地与 Azure 之间复制的 VMware/物理站点部署。
-要在本地 VMware/物理计算机之间设置灾难恢复；需要配置配置服务器、主目标和进程服务器。在启用对源服务器的保护时，Azure Site Recovery 将安装移动服务。在源服务器故障转移到 Azure 发生本地中断后，客户需要在 Azure 中设置进程服务器和在本地设置主目标服务器，以防止源服务器在本地重新生成。
+要在本地 VMware/物理计算机之间设置灾难恢复；需要配置配置服务器、主目标和进程服务器。在启用对源服务器的保护时，Azure 站点恢复将安装移动服务。在源服务器故障转移到 Azure 发生本地中断后，客户需要在 Azure 中设置进程服务器和在本地设置主目标服务器，以防止源服务器在本地重新生成。
 
 ![用于在本地与 Azure 之间复制的 VMware/物理站点部署](./media/site-recovery-monitoring-and-troubleshooting/image18.png)
 
 ### 用于在本地站点之间复制的 VMM 站点部署。
 
-在两个本地位置之间设置 DR 的一部分操作；需要下载 Azure Site Recovery 提供者并将其安装在 VMM 服务器上。提供者需要 Internet 连接，以确保从 Azure 门户触发的所有操作都将转换成本地操作，例如启用保护、在故障排除过程中关闭主端虚拟机，等等。
+在两个本地位置之间设置 DR 的一部分操作；需要下载 Azure 站点恢复提供者并将其安装在 VMM 服务器上。提供者需要 Internet 连接，以确保从 Azure 门户触发的所有操作都将转换成本地操作，例如启用保护、在故障排除过程中关闭主端虚拟机，等等。
 
 ![用于在本地站点之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image1.png)
 
 ### 用于在本地与 Azure 之间复制的 VMM 站点部署。
 
-在本地和 Azure 之间设置 DR 的一部分操作；下载下载 Azure Site Recovery 提供者并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。
+在本地和 Azure 之间设置 DR 的一部分操作；下载下载 Azure 站点恢复提供者并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。
 
 ![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)
 
@@ -93,7 +93,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 
 ![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image12.png)
 
-在本例中，*复制运行状况*指示为“关键”– 请使用*查看复制运行状况*查看详细信息。
+在本例中，“复制运行状况”指示为“关键”– 请使用“查看复制运行状况”查看详细信息。
 
 ![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image13.png)
 
@@ -127,7 +127,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 
 对于 Hyper-V 分支机构和 SMB 站点保护，请下载[工具](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab)，然后在 Hyper-V 主机上执行该工具以收集日志。
 
-对于 VMware/物理站点方案，请参阅[针对 VMware 和物理站点保护进行 Azure Site Recovery 日志收集](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx)，以收集所需的日志。
+对于 VMware/物理站点方案，请参阅[针对 VMware 和物理站点保护进行 Azure 站点恢复日志收集](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx)，以收集所需的日志。
 
 SDP 工具将在本地收集日志文件，您也可以在“%LocalAppData%\\ElevatedDiagnostics”下随机命名的子文件夹下找到该文件
 
@@ -143,7 +143,7 @@ SDP 工具将在本地收集日志文件，您也可以在“%LocalAppData%\\Ele
 -   [如何排查 Azure 恢复服务
     > 问题](http://support.microsoft.com/kb/3005185)
 
--   [如何在 Hyper-V 站点保护中为 Azure Site Recovery 启用调试
+-   [如何在 Hyper-V 站点保护中为 Azure 站点恢复启用调试
     > 日志记录](http://support.microsoft.com/kb/3033922)
 
 -   [ASR：尝试为虚拟机启用保护时发生
@@ -162,7 +162,7 @@ SDP 工具将在本地收集日志文件，您也可以在“%LocalAppData%\\Ele
 
 -   [无法验证所选的证书。请选择其他证书。](http://social.technet.microsoft.com/wiki/contents/articles/25569.the-selected-certificate-cannot-be-validated-please-select-a-different-certificate.aspx)
 
--   [由于出现内部错误，无法注册 VMM 服务器。请参阅 Site Recovery 门户中的作业视图，了解有关错误的更多详细信息。再次运行安装程序以注册该服务器。](http://social.technet.microsoft.com/wiki/contents/articles/25570.the-vmm-server-cannot-be-registered-due-to-an-internal-error-please-refer-to-the-jobs-view-in-the-site-recovery-portal-for-more-details-on-the-error-run-setup-again-to-register-the-server.aspx)
+-   [由于出现内部错误，无法注册 VMM 服务器。请参阅站点恢复门户中的作业视图，了解有关错误的更多详细信息。再次运行安装程序以注册该服务器。](http://social.technet.microsoft.com/wiki/contents/articles/25570.the-vmm-server-cannot-be-registered-due-to-an-internal-error-please-refer-to-the-jobs-view-in-the-site-recovery-portal-for-more-details-on-the-error-run-setup-again-to-register-the-server.aspx)
 
 -   [无法建立到 Hyper-V Recovery Manager 保管库的连接。请验证代理设置或稍后再试。](http://social.technet.microsoft.com/wiki/contents/articles/25571.a-connection-cant-be-established-to-the-hyper-v-recovery-manager-vault-verify-the-proxy-settings-or-try-again-later.aspx)
 
@@ -226,4 +226,4 @@ SDP 工具将在本地收集日志文件，您也可以在“%LocalAppData%\\Ele
 
 -   [PS/CS 作为虚拟机托管所在的 ESXi 主机发生故障，出现死机紫屏。](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
 
-<!---HONumber=67-->
+<!---HONumber=71-->

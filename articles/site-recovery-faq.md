@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="05/12/2015"
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # Azure Site Recovery：常见问题
@@ -145,4 +145,4 @@ SCVMM 还需要相关存储供应商提供的更新 SMI-S 提供程序发现你�
 - [使用 SAN 在两个本地 VMM 站点之间设置保护](site-recovery-vmm-san)
 - [使用单个 VMM 服务器设置保护](site-recovery-single-vmm)
 
-<!---HONumber=61-->
+<!---HONumber=71-->

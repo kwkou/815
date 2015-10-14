@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="05/08/2015"
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # Site Recovery 网络映射
@@ -131,4 +131,4 @@ VMNetwork1-Shanghai 的网络映射已更改 | VM-1 将连接到现映射到 VMN
 
 对网络映射有了更好的理解后，请开始阅读[最佳实践](site-recovery-best-practices)以做好部署准备。
 
-<!---HONumber=61-->
+<!---HONumber=71-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="05/08/2015"
-	wacn.date="06/26/2015"/>
+	wacn.date="10/03/2015"/>
 
 # Site Recovery 部署最佳实践
 
@@ -19,7 +19,7 @@
 
 ## 关于本文
 
-其中包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](hyper-v-recovery-manager-overview)。
+本文包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](hyper-v-recovery-manager-overview)。
 
 如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布你的问题。
 
@@ -72,7 +72,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 
 ### 设置 VMM 云基础结构
 
-无论你想要使用 Site Recovery 部署哪种 VMM 方案，都需要在 VMM 中创建两个私有云（一个在源 VMM 服务器上，一个在目标上），以便在使用 VMM 控制台定义、管理和访问云及其基础资源时可以利用私有云的优势。VMM 云将收集并提供一组聚合资源，这些资源的使用受云容量设置和用户角色配额的限制。自助服务用户可以管理和使用云的资源，而无需完全了解云的底层基础结构。可以轻松添加资源，以缩小或增大云的弹性。如果你需要设置云，请使用以下资源：
+无论你想要使用 Site Recovery 部署哪种 VMM 方案，都需要在 VMM 中至少创建两个私有云（一个在源 VMM 服务器上，一个在目标上），以便在使用 VMM 控制台定义、管理和访问云及其基础资源时可以利用私有云的优势。VMM 云将收集并提供一组聚合资源，这些资源的使用受云容量设置和用户角色配额的限制。自助服务用户可以管理和使用云的资源，而无需完全了解云的底层基础结构。可以轻松添加资源，以缩小或增大云的弹性。如果你需要设置云，请使用以下资源：
 
 
 - [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。
@@ -99,7 +99,11 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 	- 在安装提供程序之前设置自定义代理服务器。
 	- 允许这些 URL 通过防火墙：
 		- hypervrecoverymanager.windowsazure.cn
-		- *.accesscontrol.chinacloudapi.cn - *.backup.windowsazure.cn - *.blob.core.chinacloudapi.cn - *.store.core.chinacloudapi.cn 
+		- *.accesscontrol.chinacloudapi.cn
+- *.backup.windowsazure.cn
+- *.blob.core.chinacloudapi.cn
+- *.store.core.chinacloudapi.cn
+
 	- 如果你要部署包含 VMM 的 Site Recovery 并使用自定义代理，系统会使用你在 Site Recovery 门户的自定义代理设置中指定的代理凭据自动创建一个 VMM RunAs 帐户 (DRAProxyAccount)。你需要设置代理服务器，以便此帐户能够成功完成身份验证。
 
 
@@ -109,7 +113,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 - **提供程序连接**：提供程序和代理安装在本地服务器上，因此可以连接到 Site Recovery。它们使用加密的 HTTPS 连接通过 Internet 连接到 Site Recovery。你无需添加防火墙例外或创建特定的代理。
 - **Internet 连接**：需要按如下所述设置服务器 Internet 连接：
 	- 如果你要保护 VMM 云中 Hyper-V 主机服务器上的虚拟机，则只有 VMM 服务器才需要连接到 Internet。
-	- 如果你要保护不包含 VMM 服务器的 Hyper-V 主机服务器上的虚拟机，则只有该 Hyper-V 服务器才需要连接到 Internet。
+	- 如果你要保护不包含 VMM 服务器的 Hyper-V 主机服务器上的虚拟机，则只有这些 Hyper-V 主机服务器才需要连接到 Internet。
 	- 你不需要从想要保护的虚拟机建立任何 Internet 连接。
 - **VPN 站点到站点连接**：不需要建立 VPN 站点到站点连接来连接到 Site Recovery。但是，如果建立了站点到站点连接，则你可以像在故障转移之前一样，访问已故障转移的虚拟机。请注意，在复制到 Azure 时，你需要在本地站点和特定 Azure 网络之间设置 VPN 站点到站点网络。该网络不会用于加密的复制流量。这些流量将通过 Internet 发往订阅中的 Azure 存储帐户。
 - **故障转移后的连接**：为了确保故障转移到 Azure 之后用户可以连接到虚拟机，请执行以下操作：
@@ -137,7 +141,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 
 - **设置网络映射**：网络映射是部署 VMM 和 Site Recovery 时的要素。网络映射可将复制的虚拟机放在最佳的目标 Hyper-V 主机服务器上，并确保复制的虚拟机在故障转移后可连接到适当的网络。你可以在复制到 Azure 或辅助数据中心时配置网络映射：
 	- **到 Azure 的网络映射**：如果你要复制到 Azure，网络映射可确保同一网络上执行故障转移的所有虚拟机都能彼此互连，与这些虚拟机所属的恢复计划无关。此外，如果在目标 Azure 网络上配置了网络网关，则虚拟机可以连接到其他本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。
-	- **到辅助站点的网络映射**：如果要复制到辅助 VMM 站点，网络映射可确保在故障转移后以最佳方式将副本虚拟机放置在 Hyper-V 主机服务器上，并确保它们连接到适当的网络。如果不配置网络映射，则复制的计算机将不会连接到任何 VM 网络。
+	- **到辅助站点的网络映射**：如果要复制到辅助 VMM 站点，网络映射可确保虚拟机在故障转移后连接到适当的网络，确保以最佳方式将副本虚拟机放置在 Hyper-V 主机服务器上。如果不配置网络映射，则复制的计算机将不会连接到任何 VM 网络。
 	- [详细了解](site-recovery-network-mapping)有关网络映射的信息。
 - **设置 VM 网络**：
 	- 在 VMM 中正确配置逻辑和 VM 网络。阅读有关[逻辑网络](http://blogs.technet.com/b/scvmm/archive/2013/02/14/networking-in-vmm-2012-sp1-logical-networks-part-i.aspx)和 [VM 网络](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)的信息。
@@ -165,7 +169,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 - **故障转移到 Azure 后保留 IP 地址**：可以在虚拟机的“配置”选项卡中指定要分配给已故障转移 VM 的 IP。有关详细信息，请查看[如何配置虚拟机的网络属性](site-recovery-vmm-to-azure#step-8-enable-protection-for-virtual-machines)
 - **保留公共 IP 地址**：如果你要在故障转移到辅助站点后保留公共 IP 地址，Site Recovery 不会阻止你执行此操作（如果你的 ISP 支持这种做法）。故障转移到 Azure 后无法保留公共 IP 地址。
 - **保留 Azure 中的非 RFC 内部地址**：你可以在故障转移到 Azure 后保留非 RFC 1918 地址空间。
-- **部分故障转移到辅助数据中心**：如果你要将部分站点故障转移到辅助数据中心并想要连接回到主站点，你可以使用站点到站点 VPN 辅助站点上已故障转移的应用程序连接到主站点上运行的基础结构组件。请注意，如果故障转移了整个子网，则你可以保留虚拟机 IP 地址。如果故障转移了部分子网，则你无法保留虚拟机 IP 地址，因为无法在站点之间拆分子网。
+- **部分故障转移到辅助数据中心**：如果你要将部分站点故障转移到辅助数据中心并想要连接回到主站点，你可以使用站点到站点 VPN 将辅助站点上已故障转移的应用程序连接到主站点上运行的基础结构组件。请注意，如果故障转移了整个子网，则你可以保留虚拟机 IP 地址。如果故障转移了部分子网，则你无法保留虚拟机 IP 地址，因为无法在站点之间拆分子网。
 - **部分故障转移到 Azure**：如果你要将部分站点故障转移到 Azure 并想要连接回到主站点，你可以使用站点到站点 VPN 将 Azure 中已故障转移的应用程序连接到主站点上运行的基础结构组件。请注意，如果故障转移了整个子网，则你可以保留虚拟机 IP 地址。如果故障转移了部分子网，则你无法保留虚拟机 IP 地址，因为无法在站点之间拆分子网。
 - **保留驱动器号**：如果你要在故障转移后保留虚拟机上的驱动器号，可将虚拟机的 SAN 策略设置为“打开”。[了解详细信息](https://technet.microsoft.com/zh-cn/library/gg252636.aspx)。
 - **故障转移后将客户端请求路由到 Azure**：Site Recovery 可与 Azure 流量管理器配合工作，以便在故障转移后将客户端请求路由到你的应用程序。可以使用恢复计划中的脚本（配合 Azure 自动化）来执行 DNS 更新。
@@ -184,4 +188,4 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 - [使用 SAN 在两个本地 VMM 站点之间设置保护](site-recovery-vmm-san)
 - [使用单个 VMM 服务器设置保护](site-recovery-single-vmm)
 
-<!---HONumber=61-->
+<!---HONumber=71-->

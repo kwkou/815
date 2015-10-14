@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="05/29/2015" 
-	wacn.date="08/29/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 在本地 VMWare 站点之间部署
@@ -49,4 +49,4 @@ Azure Site Recovery 中的 InMage Scout 在本地 VMWare 站点之间提供实�
 
 请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上发布你的任何问题。
 
-<!---HONumber=67-->
+<!---HONumber=71-->
