@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="教程：创建仅使用云的虚拟网络" 
 	description="通过本教程了解如何创建一个仅使用云的 Azure 虚拟网络。" 
 	services="virtual-machines, virtual-network" 
@@ -20,10 +20,10 @@
 
 例如，FrontEndSubnet 可用于 Web 服务器，BackEndSubnet 可用于 SQL 服务器或域控制器。
 
-本教程假定您之前未使用过 Azure。其目的是通过一个示例配置逐步提供指导，来帮助你熟悉创建自己虚拟网络所要执行的步骤。如果你要针对特定的配置创建只使用云的虚拟网络，请参阅[在管理门户中配置只使用云的虚拟机](/documentation/articles/virtual-network/virtual-networks-create-vnet)。如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zn-ch/library/windowsazure/jj156007.aspx)。
+本教程假定您之前未使用过 Azure。其目的是通过一个示例配置逐步提供指导，来帮助你熟悉创建自己虚拟网络所要执行的步骤。如果你要针对特定的配置创建只使用云的虚拟网络，请参阅[在管理门户中配置只使用云的虚拟机](/documentation/articles/virtual-networks-create-vnet)。如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zn-ch/library/windowsazure/jj156007.aspx)。
 
 
-> [AZURE.NOTE]本教程将不会指导你创建跨界配置（在这种配置中，虚拟网络将连接到组织网络）。有关指导你创建提供跨界连接和站点到站点 VPN 连接（例如，连接到位于你公司内的 Active Directory 或 SharePoint）的虚拟网络的教程，请参阅[教程：创建跨界虚拟网络以建立站点到站点连接](/documentation/articles/virtual-network/virtual-networks-create-site-to-site-cross-premises-connectivity)。
+> [AZURE.NOTE]本教程将不会指导你创建跨界配置（在这种配置中，虚拟网络将连接到组织网络）。有关指导你创建提供跨界连接和站点到站点 VPN 连接（例如，连接到位于你公司内的 Active Directory 或 SharePoint）的虚拟网络的教程，请参阅[教程：创建跨界虚拟网络以建立站点到站点连接](/documentation/articles/virtual-networks-create-site-to-site-cross-premises-connectivity)。
 
 
 ##  目标
@@ -32,7 +32,7 @@
 
 ##  先决条件
 
-*  至少具有一个有效活动 Azure 订阅的 Microsoft 帐户。如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 免费注册。如果你已有 MSDN 订阅，请参阅 [Microsoft Azure 特价：MSDN、 MPN、和 Bizspark 优惠](/pricing/member-offers/msdn-benefits-details/)。
+*  至少具有一个有效活动 Azure 订阅的 Microsoft 帐户。如果你还没有 Azure 订阅，可以通过[试用 Azure](/pricing/1rmb-trial/) 免费注册。<!--如果你已有 MSDN 订阅，请参阅 [Microsoft Azure 特价：MSDN、 MPN、和 Bizspark 优惠](/pricing/member-offers/msdn-benefits-details/)。-->
 
 ##  为本教程创建虚拟网络
 
@@ -80,13 +80,13 @@
 
 你可以参考以下资源继续了解 Azure 基础结构服务：
 
-- [如何创建自定义虚拟机](virtual-machines-create-custom.md) 使用本主题在虚拟网络中安装虚拟机。有关虚拟机和安装选项的详细信息，请参阅 [Azure 虚拟机](/documentation/services/virtual-machines/)。
+- [如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom) 使用本主题在虚拟网络中安装虚拟机。有关虚拟机和安装选项的详细信息，请参阅 [Azure 虚拟机](/documentation/services/virtual-machines/)。
 
-- [在 Azure 虚拟网络中安装新的 Active Directory 林](documentation/articles/active-directory-new-forest-virtual-machine) - 使用本主题在不连接任何其他网络的情况下安装新的 Windows Server Active Directory (AD) 林。本教程将介绍创建虚拟机 (VM) 以安装新林所需的特定步骤。如果你计划使用本教程，请不要通过管理门户创建任何虚拟机。有关详细信息，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](http://msdn.microsoft.com/zn-ch/library/windowsazure/jj156090.aspx)。
+- [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine) - 使用本主题在不连接任何其他网络的情况下安装新的 Windows Server Active Directory (AD) 林。本教程将介绍创建虚拟机 (VM) 以安装新林所需的特定步骤。如果你计划使用本教程，请不要通过管理门户创建任何虚拟机。有关详细信息，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](http://msdn.microsoft.com/zn-ch/library/windowsazure/jj156090.aspx)。
 
 若要删除此虚拟网络，请将它选中，单击“删除”，然后单击“是”。
 
-如果你已准备好针对特定的配置创建只使用云的虚拟网络，请参阅[在管理门户中配置只使用云的虚拟机](/documentation/articles/virtual-network/virtual-networks-create-vnet)。
+如果你已准备好针对特定的配置创建只使用云的虚拟网络，请参阅[在管理门户中配置只使用云的虚拟机](/documentation/articles/virtual-networks-create-vnet)。
 
 如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zn-chlibrary/windowsazure/jj156007.aspx)。
 
@@ -99,7 +99,7 @@
 
 -  [Azure 虚拟网络配置任务](http://go.microsoft.com/fwlink/p/?LinkId=296652)
 
--  [使用网络配置文件配置虚拟网络](documentation/articles/virtual-network/virtual-networks-using-network-configuration-file.md)
+-  [使用网络配置文件配置虚拟网络](documentation/articles/virtual-networks-using-network-configuration-file)
 
 -  [VM 和角色实例的名称解析](http://go.microsoft.com/fwlink/?LinkId=248097)
 

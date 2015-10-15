@@ -22,7 +22,7 @@ Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库�
 
 与[服务管理模式 (**asm**)](/documentation/articles/virtual-machines-command-line-tools) 一样，Azure CLI 的 **arm** 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
 
-但是，使用用于描述资源组的资源组_模板_是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](resource-groups-overview)。
+但是，使用用于描述资源组的资源组_模板_是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅<!-- [-->Azure 资源组概述<!--](/documentation/articles/resource-groups-overview)-->。
 
 > [AZURE.NOTE]除了下面记录的特定于命令的选项外，还有三个可用于查看详细输出（例如请求选项和状态代码）的选项。-v 参数提供详细输出，而 -vv 参数提供更详细的输出。--json 选项以原始 json 格式输出结果，对于脚本编程方案非常有用。
 >
