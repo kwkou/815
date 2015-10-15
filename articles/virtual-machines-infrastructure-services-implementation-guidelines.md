@@ -207,7 +207,7 @@ Azure 将对可用的数据磁盘量和带宽加以限制，具体取决于虚�
 
 对于 IaaS，云服务提供类似的功能，虽然在大多数情况下，负载平衡器功能用于将流量转发到 Internet 上的特定 TCP 或 UDP 端口，再转发到该云服务中的多个虚拟机。
 
-> [AZURE.NOTE]云服务不存在于 Azure 资源管理器中。有关资源管理器优点的简介，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines/virtual-machines-azurerm-versus-azuresm)。
+> [AZURE.NOTE]云服务不存在于 Azure 资源管理器中。有关资源管理器优点的简介，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
 
 云服务名称在 IaaS 中尤其重要，因为 Azure 将使用它们作为磁盘的默认命名约定的一部分。云服务名称只能包含字母、数字和连字符。该字段中的第一个和最后一个字符必须是字母或数字。
 
@@ -431,7 +431,7 @@ Contoso 决定将以下名称用于其 Azure 虚拟机：
 
 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)
 
-[云平台集成框架（Azure 体系结构模式）](/documentation/articles/azure-architectures-cpif-overview)
+<!--[云平台集成框架（Azure 体系结构模式）](/documentation/articles/azure-architectures-cpif-overview)-->
 
 [数据中心扩展参考体系结构关系图](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 

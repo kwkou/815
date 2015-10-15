@@ -58,7 +58,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
    	> - 当使用针对事务性工作负荷映像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A4 或更大。  
    	> - 当使用针对数据仓库工作负荷映像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A7 或更大。 
    	> - 为了获得最佳性能，请对高级存储使用 DS2 或 DS3。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](https://msdn.microsoft.com/library/azure/dn133149.aspx)。
-   	> - 所选定的大小会限制您能够配置的数据磁盘个数。有关可用虚拟机大小和可附加到虚拟机的数据磁盘数目的最新信息，请参阅[用于 Azure 的虚拟机大小](virtual-machines-size-specs.md)。
+   	> - 所选定的大小会限制您能够配置的数据磁盘个数。有关可用虚拟机大小和可附加到虚拟机的数据磁盘数目的最新信息，请参阅[用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
 5. 输入 VM 配置详细信息后，单击右下角的“下一步”箭头以继续。
 
@@ -142,7 +142,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 - [Azure 虚拟机中的 SQL Server 数据仓库和事务性工作负荷](/documentation/articles/virtual-machines-sql-server-dw-and-oltp-workloads)
 
 ### 白皮书：
-- [了解 Azure 虚拟机中的 Azure SQL 数据库和 SQL Server](sql-database//documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)
+- [了解 Azure 虚拟机中的 Azure SQL 数据库和 SQL Server](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)
 
 - [Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](http://msdn.microsoft.com/zh-cn/library/azure/dn574746.aspx)
 

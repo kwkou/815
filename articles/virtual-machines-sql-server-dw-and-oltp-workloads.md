@@ -18,7 +18,7 @@
 本文重点介绍如何在 Azure 虚拟机上运行这些工作负荷（也称为基础结构即服务，或 IaaS）。你也可以在 Azure 中以服务的形式运行数据仓库和事务工作负荷。有关详细信息，请参阅 [Azure SQL 数据仓库预览版](http://azure.microsoft.com/documentation/services/sql-data-warehouse/)和 [Azure SQL 数据库](http://azure.microsoft.com/documentation/services/sql-database/)。
 
 ## 提供了哪些预配置的 VM 映像？
-
+<!--
 Azure VM 库中提供了以下预配置的 VM 映像：
 
 - [针对 Windows Server 2012 R2 上的事务工作负荷优化的 SQL Server 2014 Enterprise](http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2014fortransactionalworkloadswindowsserver2012r2/)
@@ -32,7 +32,7 @@ Azure VM 库中提供了以下预配置的 VM 映像：
 - [针对 Windows Server 2012 上的事务工作负荷优化的 SQL Server 2012 SP2 Enterprise](http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2012sp2fortransactionalworkloadswindowsserver2012/)
 
 - [针对 Windows Server 2012 上的数据仓库优化的 SQL Server 2012 SP2 Enterprise](http://azure.microsoft.com/marketplace/partners/microsoft/sqlserver2012sp2datawarehousingworkloadswindowsserver2012/)
-
+-->
 目前，我们在最多允许附加 16 个数据磁盘以提供最高吞吐量（或聚合带宽）的 VM 实例上支持这些映像。这些实例为标准层 A4、A7、A8、A9、D4、D13、D14、F3、G4 和 G5 及基本层 A4。有关大小和选项的更多详细信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。
 
 >[AZURE.NOTE]在 2014 年 9 月以前的版本上，可以使用以前的事务和 DW 库映像。但是，这些映像需要你附加数据磁盘才可供使用。建议使用上面列出的较新映像，因为它们在预配后即可供使用。
@@ -97,7 +97,7 @@ Azure VM 库中提供了以下预配置的 VM 映像：
 
 - 优化的映像与未优化的映像之间有价格差异吗？
 
-	没有。优化的映像遵循相同的定价模式（在[此处](http://azure.microsoft.com/pricing/details/virtual-machines/)了解详细信息），不收取额外的费用。请注意，VM 实例大小越大，相关的费用就越高。
+	没有。优化的映像遵循相同的定价模式（在[此处](/pricing/details/virtual-machines/)了解详细信息），不收取额外的费用。请注意，VM 实例大小越大，相关的费用就越高。
 
 - 我是否应考虑任何其他性能修复程序？
 

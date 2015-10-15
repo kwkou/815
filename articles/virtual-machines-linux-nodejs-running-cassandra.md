@@ -49,7 +49,7 @@ Cassandra 可以部署到单个或多个 Azure 区域，具体取决于工作负
 
 请注意，在撰写本文的时候，Azure 并不允许将一组 VM 显式映射到特定的容错域；因此，即使采用图 1 所示的部署模型，也极有可能会将所有虚拟机映射到两个容错域，而不是四个容错域。
 
-**对 Thrift 通信进行负载平衡：**Web 服务器中的 Thrift 客户端库通过内部负载平衡器连接到群集。在使用云服务托管 Cassandra 群集的情况下，这需要执行相关过程，以便将内部负载平衡器添加到“数据”子网（参见图 1）。定义好内部负载平衡器以后，每个节点都需要添加进行过负载平衡的终结点，并使用以前定义的负载平衡器名称对负载平衡集进行标注。有关详细信息，请参阅 [Azure 内部负载平衡](/documentation/articles/load-balancer-internal-overview)。
+**对 Thrift 通信进行负载平衡：**Web 服务器中的 Thrift 客户端库通过内部负载平衡器连接到群集。在使用云服务托管 Cassandra 群集的情况下，这需要执行相关过程，以便将内部负载平衡器添加到“数据”子网（参见图 1）。定义好内部负载平衡器以后，每个节点都需要添加进行过负载平衡的终结点，并使用以前定义的负载平衡器名称对负载平衡集进行标注。<!--有关详细信息，请参阅 [Azure 内部负载平衡](/documentation/articles/load-balancer-internal-overview)。-->
 
 **群集种子：**必须选择可用性最高的节点作为种子，因为新节点需要与种子节点进行通信才能发现群集的拓扑。将会从每个可用性集中选择一个节点作为种子节点，以免出现单节点故障。
 
@@ -287,7 +287,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 执行以下顺序的操作以捕获映像：
 #####1\.预配
-使用命令“sudo waagent –deprovision+user”删除特定于虚拟机实例的信息。请参阅[如何捕获将用作模板的 Linux 虚拟机](virtual-machines-linux-capture-image.md)，了解映像捕获过程的详细信息。
+使用命令“sudo waagent –deprovision+user”删除特定于虚拟机实例的信息。请参阅[如何捕获将用作模板的 Linux 虚拟机](/documentation/articles/virtual-machines-linux-capture-image)，了解映像捕获过程的详细信息。
 
 #####2：关闭 VM
 确保突出显示该虚拟机，然后单击底部命令栏中的“关闭”链接。

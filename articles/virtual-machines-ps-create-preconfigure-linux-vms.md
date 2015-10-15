@@ -149,7 +149,7 @@
 
 如果在错误的订阅、存储帐户、云服务、可用性集、虚拟网络或子网中创建了虚拟机，请删除该虚拟机，更正命令块语法，然后运行已更正的命令集。
 
-创建虚拟机后，请参阅[如何登录到运行 Linux 的虚拟机](virtual-machines-linux-how-to-log-on.md)。
+创建虚拟机后，请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)。
 
 如果你要再次创建此虚拟机或类似的虚拟机，则可以：
 

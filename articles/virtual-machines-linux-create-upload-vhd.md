@@ -23,7 +23,7 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 
 当你创建虚拟机时，你可以自定义部分操作系统设置，使之适合于要运行的应用程序。有关说明，请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom)。
 
-**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](documentation/articles/linux-endorsed-distributions.md)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](/documentation/articles/linux-endorsed-distributions)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
 
 
 ##先决条件##

@@ -26,7 +26,7 @@
 
 ![](./media/virtual-machines-windows-reset-password/Portal-RDP-Reset-Windows.png)
 
-若要在[预览门户](https://portal.azure.com)中重置本地管理员帐户的名称和密码，请“浏览所有”>“虚拟机(经典)”>“你的 Windows 虚拟机”>“所有设置”>“密码重置”。将显示以下页。
+若要在[预览门户](https://manage.windows.cn)中重置本地管理员帐户的名称和密码，请“浏览所有”>“虚拟机(经典)”>“你的 Windows 虚拟机”>“所有设置”>“密码重置”。将显示以下页。
 
 ![](./media/virtual-machines-windows-reset-password/Portal-PW-Reset-Windows.png)
 

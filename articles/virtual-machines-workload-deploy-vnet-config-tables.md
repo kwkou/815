@@ -26,7 +26,7 @@
 
 以下过程参考了这些表中的信息，以指导你完成虚拟网络配置过程。如果你尚未在另一个主题中指定这些表中的设置，但仍要配置跨界虚拟网络，请参阅[配置与 Azure 虚拟网络的跨界站点到站点连接](https://msdn.microsoft.com/zh-CN/library/dn133795.aspx)。
 
-> [AZURE.NOTE]此过程将指导你逐步完成创建使用站点到站点 VPN 连接的虚拟网络。有关将 Azure ExpressRoute 用于站点到站点连接的信息，请参阅 [ExpressRoute 技术概述](../expressroute/expressroute-introduction.md)。
+> [AZURE.NOTE]此过程将指导你逐步完成创建使用站点到站点 VPN 连接的虚拟网络。有关将 Azure ExpressRoute 用于站点到站点连接的信息，请参阅 <!--[-->ExpressRoute 技术概述<!--](/documentation/articles/expressroute-introduction)-->。
 
 ## 使用配置表设置创建新的跨界 Azure 虚拟网络
 

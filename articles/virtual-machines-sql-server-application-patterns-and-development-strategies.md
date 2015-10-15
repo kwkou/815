@@ -189,7 +189,7 @@
 
 ## 使用 Azure VM 和云服务的 2 层和 3 层模式
 
-在此应用程序模式中，你使用 [Azure 云服务](/documentation/articles/cloud-services-choose-me#tellmecs)（Web 角色和辅助角色 - 平台即服务 (PaaS)）和 [Azure 虚拟机](virtual-machines/)（基础结构即服务 (IaaS)），将 2 层或 3 层应用程序部署到 Azure。将 [Azure 云服务](/documentation/services/cloud-services/)用于呈现层/业务层，而将 [Azure 虚拟机](/documentation/articles/virtual-machines-about)中的 SQL Server 用于数据层，这对于在 Azure 上运行的大多数应用程序都是有利的。原因是，在云服务上运行一个计算实例可以简化管理、部署、监控和向外缩放操作。
+在此应用程序模式中，你使用 [Azure 云服务](/documentation/articles/cloud-services-choose-me#tellmecs)（Web 角色和辅助角色 - 平台即服务 (PaaS)）和 [Azure 虚拟机](/documentation/services/virtual-machines/)（基础结构即服务 (IaaS)），将 2 层或 3 层应用程序部署到 Azure。将 [Azure 云服务](/documentation/services/cloud-services/)用于呈现层/业务层，而将 [Azure 虚拟机](/documentation/articles/virtual-machines-about)中的 SQL Server 用于数据层，这对于在 Azure 上运行的大多数应用程序都是有利的。原因是，在云服务上运行一个计算实例可以简化管理、部署、监控和向外缩放操作。
 
 通过云服务，Azure 可为你维护基础结构、执行日常维护、为操作系统安装修补程序，并尝试从服务和硬件故障中恢复。当你的应用程序需要向外缩放时，可以通过增加或减少应用程序使用的实例或虚拟机的数量，使用云服务项目的自动和手动向外缩放选项。此外，你可以使用本地 Visual Studio，将应用程序部署到 Azure 中的云服务项目。
 
@@ -213,7 +213,7 @@
 
 ![使用云服务的应用程序模式](./media/virtual-machines-sql-server-application-patterns-and-development-strategies/IC728013.png)
 
-实施此应用程序模式的另一种方法是使用包含呈现层和业务层组件的整合 Web 角色，如下图所示。此应用程序模式适用于需要状态设计的应用程序。由于 Azure 在 Web 角色和辅助角色上提供无状态计算节点，我们建议你实现一个使用以下技术之一存储会话状态的逻辑：[Azure 缓存](/documentation/services/redis-cache/)、[Azure 表存储](/documentation/articles/storage/storage-dotnet-how-to-use-tables)或 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)。
+实施此应用程序模式的另一种方法是使用包含呈现层和业务层组件的整合 Web 角色，如下图所示。此应用程序模式适用于需要状态设计的应用程序。由于 Azure 在 Web 角色和辅助角色上提供无状态计算节点，我们建议你实现一个使用以下技术之一存储会话状态的逻辑：[Azure 缓存](/documentation/services/redis-cache/)、[Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables)或 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)。
 
 ![使用云服务的应用程序模式](./media/virtual-machines-sql-server-application-patterns-and-development-strategies/IC728014.png)
 

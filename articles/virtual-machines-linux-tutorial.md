@@ -31,7 +31,7 @@
 
 太好了。现在，请使用你的工作或学校 ID 登录，先请键入 `azure login`，然后按提示进行操作。
 
-> [AZURE.NOTE]如果你在登录时收到错误，则可能需要[从个人 Microsoft 帐户创建工作或学校 ID](/documentation/articles/resource-group-create-work-id-from-personal)。
+> [AZURE.NOTE]如果你在登录时收到错误，则可能需要<!--[-->从个人 Microsoft 帐户创建工作或学校 ID<!--](/documentation/articles/resource-group-create-work-id-from-personal)-->。
 
 ## 创建 Azure VM
 

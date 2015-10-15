@@ -366,7 +366,7 @@
 
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
-[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
+<!--[-->创作 Azure 资源管理器模板<!--](/documentation/articles/resource-group-authoring-templates)-->
 
 [虚拟机文档](/home/features/virtual-machines/)
 
