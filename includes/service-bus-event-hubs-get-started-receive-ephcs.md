@@ -109,7 +109,7 @@
 > [AZURE.NOTE] 本教程使用了一个 [EventProcessorHost] 实例。若要增加吞吐量，建议运行多个 [EventProcessorHost] 实例，如[经过扩展的事件处理示例]中所示。在这些情况下，为了对接收到的事件进行负载平衡，各个不同实例会自动相互协调。如果希望多个接收方都各自处理  *all* 事件，则必须使用 **ConsumerGroup** 概念。在从不同计算机中接收事件时，根据部署 [EventProcessorHost] 实例的计算机（或角色）来指定该实例的名称可能会很有用。有关这些主题的详细信息，请参阅[事件中心概述]。
 
 <!-- Links -->
-[事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn821413.aspx
+[事件中心概述]: https://azure.microsoft.com/zh-cn/documentation/articles/event-hubs-overview/
 [经过扩展的事件处理示例]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [Azure 存储帐户]: http://www.windowsazure.cn/zh-cn/documentation/articles/storage-create-storage-account/
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx 
