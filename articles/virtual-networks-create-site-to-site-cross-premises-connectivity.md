@@ -36,7 +36,7 @@
 
 -  [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
 
-有关在 Azure 虚拟机上部署 AD DS 的指南，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)。
+有关在 Azure 虚拟机上部署 AD DS 的指南，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156090.aspx)。
 
 <!--For additional Virtual Network configuration procedures and settings, see [Azure Virtual Network Configuration Tasks](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx).-->
 
