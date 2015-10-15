@@ -90,4 +90,4 @@
 <!-- Links -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [事件处理器主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx
+[事件中心概述]: https://azure.microsoft.com/zh-cn/documentation/articles/event-hubs-overview/
