@@ -88,7 +88,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 * **Azure PowerShell** - 在客户端计算机上[安装并配置 Azure PowerShell](/documentation/articles/powershell-install-configure)（版本 0.8.10 或更高版本）。
 
-* **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](/download/)下载并解压缩最新版本的脚本。通过运行 `New-HPCIaaSCluster.ps1 –Version` 检查脚本的版本。本文基于版本 4.4.0 或更高版本的脚本。
+* **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](/downloads/)下载并解压缩最新版本的脚本。通过运行 `New-HPCIaaSCluster.ps1 –Version` 检查脚本的版本。本文基于版本 4.4.0 或更高版本的脚本。
 
 **创建配置文件**
 

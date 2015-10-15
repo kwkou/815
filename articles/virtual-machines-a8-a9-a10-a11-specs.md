@@ -55,7 +55,7 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以
 
 ## 有关 Azure 订阅的注意事项
 
-* **Azure 帐户** – 如果要部署非少量的计算密集型实例，请考虑使用即付即用订阅或其他购买选项。还可以使用你的 MSDN 订阅。请参阅 [MSDN 订户的 Azure 权益](/pricing/member-offers/msdn-benefits-details/)。如果你使用的是 [Azure 免费试用版](http://www.windowsazure.cn/pricing/1rmb-trial/)，则仅可以使用有限数量的 Azure 计算核心。
+* **Azure 帐户** – 如果要部署非少量的计算密集型实例，请考虑使用即付即用订阅或其他购买选项。<!--还可以使用你的 MSDN 订阅。请参阅 [MSDN 订户的 Azure 权益](/pricing/member-offers/msdn-benefits-details/)。-->如果你使用的是 [Azure 免费试用版](http://www.windowsazure.cn/pricing/1rmb-trial/)，则仅可以使用有限数量的 Azure 计算核心。
 
 * **内核配额** – 你可能需要在 20 个的默认内核配额的基础上增加 Azure 订阅中的内核配额，对于许多 8 核心或 16 核心实例的方案，20 个的默认内核是不够的。对于初始测试，可考虑请求将配额增加到 100 个内核。若要执行此操作，请打开免费支持票证，如[了解 Azure 限制与增加](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)中所示。
 
@@ -63,7 +63,7 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以
 
 * **地缘组** – 当前，对于大多数新部署不建议使用地缘组。但是请注意，如果正在使用包含 A8 – A11 以外大小的实例的地缘组，则无法对 A8 – A11 实例使用该地缘组，反之亦然。
 
-* **虚拟网络** – Azure 虚拟网络不需要使用计算密集型实例。但是，如果需要访问本地资源（例如，应用程序许可证服务器），则对于许多 IaaS 方案或者一个站点到站点连接，可能至少需要一个基于云的 Azure 虚拟网络。需要先创建一个新的（区域）虚拟网络，再部署实例。不支持将 A8、A9、A10 或 A11 VM 添加到地缘组中的虚拟网络。有关详细信息，请参阅[如何创建虚拟网络 (VNet)](/documentation/articles/virtual-network/virtual-networks-create-vnet) 和[为虚拟网络配置站点到站点 VPN 连接](/documentation/articles/vpn-gateway/vpn-gateway-site-to-site-create)。
+* **虚拟网络** – Azure 虚拟网络不需要使用计算密集型实例。但是，如果需要访问本地资源（例如，应用程序许可证服务器），则对于许多 IaaS 方案或者一个站点到站点连接，可能至少需要一个基于云的 Azure 虚拟网络。需要先创建一个新的（区域）虚拟网络，再部署实例。不支持将 A8、A9、A10 或 A11 VM 添加到地缘组中的虚拟网络。有关详细信息，请参阅[如何创建虚拟网络 (VNet)](/documentation/articles/virtual-networks-create-vnet) 和[为虚拟网络配置站点到站点 VPN 连接](/documentation/articles/vpn-gateway-site-to-site-create)。
 
 * **云服务或可用性集** – 若要通过 RDMA 网络进行连接，A8 和 A9 实例必须部署在同一云服务（用于在 Azure 资源管理器中具有基于 Linux 的 VM 或基于 Windows 的 VM 的 IaaS 方案；或者具有 Windows Server 的 PaaS 方案）或同一可用性集（用于 Azure 资源管理器中基于 Linux 的 VM 或基于 Windows 的 VM）中。
 

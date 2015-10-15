@@ -14,7 +14,7 @@
 
 # 使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像
 
-> [AZURE.NOTE]当你在本主题中搜索 VM 映像时，将要在 [Azure 资源管理模式](../resource-group-overview.md)下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行界面，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理配合使用](xplat-cli-azure-resource-manager.md)和[将 PowerShell 与 Azure 资源管理配合使用](../powershell-azure-resource-manager.md)。
+> [AZURE.NOTE]当你在本主题中搜索 VM 映像时，将要在 [Azure 资源管理模式](/documentation/articles/resource-group-overview)下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行界面，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)和[将 PowerShell 与 Azure 资源管理配合使用](/documentation/articles/powershell-azure-resource-manager)。
 
 ## 常用映像表
 
@@ -129,7 +129,7 @@
     data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201504270  chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.201504270
     info:    vm image list command OK
 
-现在，你可以确切地选择想要使用的映像。若要使用你刚刚找到的 URN 信息快速创建 VM，或要使用包含该 URN 信息的模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](xplat-cli-azure-resource-manager.md)。
+现在，你可以确切地选择想要使用的映像。若要使用你刚刚找到的 URN 信息快速创建 VM，或要使用包含该 URN 信息的模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
 
 ### 视频演练
 

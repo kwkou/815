@@ -42,7 +42,7 @@
 
 	![已成功初始化卷](./media/storage-windows-attach-disk/newvolumecreated.png)
 
-> [AZURE.NOTE]虚拟机的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs.md)。
+> [AZURE.NOTE]虚拟机的大小决定了可以在其上附加多少个磁盘。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
 ## 其他资源
 
@@ -50,6 +50,6 @@
 
 [关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)
 
-[logon]: /documentation/articles/virtual-machines-log-on-windows-server.md
+[logon]: /documentation/articles/virtual-machines-log-on-windows-server
 
 <!---HONumber=69-->
