@@ -26,7 +26,7 @@
 ##先决条件
 在开始阅读本教程前，你必须具有：
 
-- **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options][试用版][azure-trial]。
+- **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options], [试用版][azure-trial]。
 
 - **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell](install-configure-powershell)。若要执行 Azure PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅[使用 Set-ExecutionPolicy cmdlet][2]。
 
@@ -50,20 +50,6 @@
 
 那么，你可以使用 Azure 资源管理器以组的方式处理应用程序中的资源。你可以通过一个协调的操作为应用程序部署、更新或删除所有资源。你可以使用一个模板来完成部署，该模板适用于不同的环境，例如测试、过渡和生产。你可以通过查看整个组的累积费用，明确了解组织的帐单开支。
 
-**创建资源组**
-
-1. 登录到 [Azure 预览门户](https://portal.azure.com)。
-2. 依次单击“新建”，“管理”、“资源组”。
-3. 键入或选择以下值：
-
-	- **资源组名称**：输入资源组的名称。
-	- **订阅**：选择用于此资源组的 Azure 订阅。
-	- **资源组位置**：选择一个 Azure 数据中心。此位置不一定要与 HDInsight 群集位置相同。
-
-4. 单击“创建”。
-
-在设置 HBase 群集前，你需要拥有 Azure 虚拟网络。
-
 **通过使用 Azure 门户创建虚拟网络**
 
 1. 登录到 [Azure 门户][azure-portal]。
@@ -74,7 +60,7 @@
 	- **地址空间** - 为虚拟网络提供大到足以为群集中的所有节点提供地址的地址空间。否则，设置将失败。为了完成本教程，你可以选取以下三个选项之一。 
 	- **最大 VM 计数** - 选择最大虚拟机 (VM) 计数之一。此值确定可以在地址空间下创建的可能主机 (VM) 数。为了完成本教程，**4096 [CIDR: /20]** 便已足够。 
 	- **位置** - 位置必须与你要创建的 HBase 群集相同。
-	- **DNS 服务器** - 本教程使用 Azure 提供的内部域名系统 (DNS) 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指导，请参阅[名称解析 (DNS)](http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)。
+	- **DNS 服务器** - 本教程使用 Azure 提供的内部域名系统 (DNS) 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。
 4. 单击右下角的“创建虚拟网络”。新虚拟网络名称将显示在列表中。等到“状态”列显示“已创建”。
 5. 在主窗格中，单击刚创建的虚拟网络。
 6. 单击该页顶部的“仪表板”。
@@ -369,7 +355,6 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 - [在 HDInsight 中配置 HBase 复制](hdinsight-hbase-geo-replication) 
 - [在 HDInsight 中设置 Hadoop 群集](hdinsight-provision-clusters) 
 - [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](hdinsight-hbase-get-started)
-- [在 HDInsight 中使用 HBase 分析 Twitter 观点](hdinsight-hbase-twitter-sentiment)
 - [虚拟网络概述][vnet-overview]
 
 

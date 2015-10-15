@@ -51,8 +51,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 有关将 Hadoop 流式处理与 hdinsight 配合使用的示例，请参阅：
 
 * [开发 C# Hadoop 流式处理程序](hdinsight-hadoop-develop-deploy-streaming-jobs)
-		
-* [开发 Python MapReduce 作业](hdinsight-hadoop-streaming-python)
+
 
 ##<a id="data"></a>关于示例数据
 
@@ -161,10 +160,6 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。有多个基于 Java 的框架可让你更轻松地定义 MapReduce 应用程序，还有一些技术（例如 Pig 和 Hive）可让你更方便地在 HDInsight 中处理数据。若要了解更多信息，请参阅下列文章：
 
 * [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-
-* [开发适用于 HDInsight 的 Python 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-streaming-python)
-
-* [为 HDInsight 开发 C# Hadoop 流式处理 MapReduce 程序][/documentation/articles/hdinsight-develop-streaming]
 
 * [使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业](/documentation/articles/hdinsight-hadoop-mapreduce-scalding)
 

@@ -40,7 +40,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 在开始学习这篇针对 Windows 上的 Hadoop 的教程之前，你必须具有：
 
 
-- Azure 订阅。有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options][试用版][azure-trial]。
+- Azure 订阅。有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options], [试用版][azure-trial]。
 - 装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的计算机。
 
 

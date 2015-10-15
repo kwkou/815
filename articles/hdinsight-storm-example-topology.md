@@ -23,7 +23,6 @@
 | [为 Apache Storm on HDInsight 开发基于 Java 的拓扑][5797064f] | Maven | Java |
 | [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑][16fce2d1] | HDInsight Tools for Visual Studio | C#、Java |
 | [在 C# Storm 拓朴中创建多个数据流][ec5a4064] | 多个流 | C# |
-| [使用 Storm on HDInsight 确定 Twitter 趋势主题][3c86c7c8] | Trident | Java、Trident |
 | [使用 Storm on HDInsight 从 Azure 事件中心处理事件][844d1d81] | 事件中心 | C# 和 Java |
 | [使用 Power BI（预览版）从 Storm 拓扑可视化数据][94d15238] | Power BI | C# |
 | [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据][ab894747] | 事件中心、HBase、Socket.IO、Web 仪表板 | C#、Java、JavaScript、HTML |
@@ -47,7 +46,6 @@
   [ec5a4064]: https://github.com/Blackmist/csharp-storm-example "演示一个执行单词计数的基本 Storm 拓扑（以 C# 实现）。此外，还演示如何在一个 C# 拓扑中创建多个数据流。"
   [844d1d81]: hdinsight-storm-develop-csharp-event-hub-topology "了解如何使用 Storm on HDInsight 从 Azure 事件中心读取和写入数据。"
   [ab894747]: hdinsight-storm-sensor-data-analysis "了解如何使用 Apache Storm on HDInsight 处理来自 Azure 事件中心的传感器数据，使用 D3.js 可视化这些数据，然后（可选）将数据存储到 HBase。"
-  [3c86c7c8]: hdinsight-storm-twitter-trending "了解如何使用 Trident 创建一个 Storm 拓扑，用于确定 Twitter 上的流行主题（基于哈希标记）。"
   [246ee964]: hdinsight-storm-iot-eventhub-documentdb "了解如何使用 Storm 拓扑从 Azure 事件中心读取消息，从 DocumentDB 读取数据参考文档，并将数据保存到 Azure 存储空间。"
   [d6c540e3]: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/EventCountExample "用于演示使用 Apache Storm on HDInsight 从 Azure 事件中心读取数据以及将数据存储到 SQL 数据库时的吞吐量的多个拓扑。"
   [b4b68194]: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample "了解如何从 Azure 事件中心读取数据，聚合并转换数据，然后将数据存储到 HBase on HDInsight。"

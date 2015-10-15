@@ -28,12 +28,6 @@
 
    ![Hadoop 教程：创建帐户；预配 Hadoop 群集；提交 Hive 查询；在 Excel 中分析数据。][image-hdi-getstarted-flow]
 
-观看本教程的演示视频，以了解 HDInsight 上的 Hadoop：
-
-![第一份 Hadoop 教程的视频：在 Hadoop 群集上提交 Hive 查询，然后在 Excel 中分析结果。][img-hdi-getstarted-video]
-
-**[观看 YouTube 上的 HDInsight Hadoop 教程](https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS)**
-
 
 Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HDInsight 开发者预览版*），与 Azure HDInsight 的通用版本结合使用。Emulator 针对开发人员方案，仅支持单节点部署。有关如何使用 HDInsight Emulator 的信息，请参阅 [HDInsight Emulator 入门][hdinsight-emulator]。
 
@@ -44,7 +38,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 在开始学习这篇针对 Windows 上的 Hadoop 的教程之前，你必须具有：
 
 
-- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/)。
+- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
 - 装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的**工作站计算机**。
 
 **本教程预计完成时间：**30 分钟
@@ -216,42 +210,42 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
+[1]: hdinsight-hadoop-visual-studio-tools-get-started
 
-[hdinsight-versions]: hdinsight-component-versioning.md
+[hdinsight-versions]: hdinsight-component-versioning
 
 
-[hdinsight-provision]: hdinsight-provision-clusters.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
-[hdinsight-emulator]: hdinsight-hadoop-emulator-get-started.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
-[hadoop-hdinsight-intro]: hdinsight-hadoop-introduction.md
-[hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log.md
-[hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data.md
+[hdinsight-provision]: hdinsight-provision-clusters
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
+[hdinsight-upload-data]: hdinsight-upload-data
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
+[hdinsight-use-hive]: hdinsight-use-hive
+[hdinsight-use-pig]: hdinsight-use-pig
+[hdinsight-use-oozie]: hdinsight-use-oozie
+[hdinsight-storage]: hdinsight-hadoop-use-blob-storage
+[hdinsight-emulator]: hdinsight-hadoop-emulator-get-started
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
+[hadoop-hdinsight-intro]: hdinsight-hadoop-introduction
+[hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log
+[hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data
 
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account.md
+[azure-create-storageaccount]: storage-create-storage-account
 
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
 [apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
 [apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
-[hdinsight-hbase-custom-provision]: hdinsight-hbase-tutorial-get-started.md
+[hdinsight-hbase-custom-provision]: hdinsight-hbase-tutorial-get-started
 
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ../install-configure-powershell.md
-[powershell-open]: ../install-configure-powershell.md#Install
+[powershell-install-configure]: install-configure-powershell
+[powershell-open]: install-configure-powershell#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png

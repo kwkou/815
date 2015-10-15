@@ -14,7 +14,7 @@
 
 # 在 HDInsight 中配置 HBase 地域复制
 
-- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs)
+- [配置 VPN 连接](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
 - [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
 - [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication) 
  

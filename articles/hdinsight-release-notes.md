@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="Azure HDInsight 上的 Hadoop 组件发行说明 | Azure"
 	description="Azure HDInsight 的 Hadoop 组件的最新发行说明和版本。获取有关 Hadoop、Apache Storm 和 HBase 的开发技巧和详细信息。"
 	services="hdinsight"
@@ -627,7 +627,7 @@
 
 <tr>
 <td>Hadoop Connector for DocumentDB</td>
-<td>使用 Hadoop Connector for DocumentDB，你可以通过无架构 JSON 文档存储在 DocumentDB 集合之间或跨数据库帐户执行复杂的聚合、分析和操作。有关详细信息和教程，请参阅<a href="/documentation/articles/documentdb-run-hadoop-with-hdinsight/" target="_blank">使用 DocumentDB 和 HDInsight 运行 Hadoop 作业</a>。</td>
+<td>使用 Hadoop Connector for DocumentDB，你可以通过无架构 JSON 文档存储在 DocumentDB 集合之间或跨数据库帐户执行复杂的聚合、分析和操作。</td>
 <td>服务</td>
 <td>Hadoop</td>
 <td>不适用</td>
@@ -1058,7 +1058,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 </table>
 
-有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html)。Hortonworks 还提供了一款工具用于计算合适的内存设置。
+Hortonworks 还提供了一款工具用于计算合适的内存设置。
 
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 

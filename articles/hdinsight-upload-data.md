@@ -214,7 +214,6 @@ Azure 数据工厂服务是完全托管的服务，可将数据存储、数据�
 
 Azure 数据工厂可用于将数据移到 Azure Blob 存储，或创建数据管道来直接使用 HDInsight 功能，例如 Hive 和 Pig。
 
-有关详细信息，请参阅 [Azure 数据工厂文档](http://azure.microsoft.com/documentation/services/data-factory/)。
 
 ###<a id="sqoop"></a>Apache Sqoop
 
@@ -233,7 +232,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 * Python
 * Ruby
 
-有关安装 Azure SDK 的详细信息，请参阅 [Azure 下载](http://azure.microsoft.com/downloads/)
+有关安装 Azure SDK 的详细信息，请参阅 [Azure 下载](/downloads/)
 
 
 ## 后续步骤
@@ -272,7 +271,7 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell/
 
 [xplatcli]: /documentation/articles/xplat-cli/
-
+[azurecli]: /documentation/articles/xplat-cli/
 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png

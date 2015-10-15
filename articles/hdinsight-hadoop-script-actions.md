@@ -29,9 +29,9 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
 <tr><td>**安装 Solr** <td><td> https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1 。请参阅 [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。 </td></tr>
 **安装 Giraph** | https://hdiconfigactions.blob.core.chinacloudapi.cn/giraphconfigactionv01/giraph-installer-v01.ps1 。请参阅 [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
 
-脚本操作可以从 Azure 门户、Azure PowerShell 或通过使用 HDInsight .NET SDK 来部署。有关详细信息，请参阅 [使用脚本操作自定义 HDInsight 群集](hdinsight-cluster-customize)。
+脚本操作可以从 Azure 门户、Azure PowerShell 或通过使用 HDInsight .NET SDK 来部署。
 
-> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集 3.1 或更高版本。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](../hdinsight-component-versioning/)。
+> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集 3.1 或更高版本。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
 
 ## 示例脚本
 
@@ -80,7 +80,7 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
 
 	Write-HDILog "$configFileName has been configured."
 
-可以在 [https://hditutorialdata.blob.core.chinacloudapi.cn/customizecluster/editSiteConfig.ps1](https://hditutorialdata.blob.core.chinacloudapi.cn/customizecluster/editSiteConfig.ps1) 上找到该脚本文件的副本。当你从预览门户调用该脚本时，可以使用以下参数：
+可以在 [https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1](https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1) 上找到该脚本文件的副本。当你从预览门户调用该脚本时，可以使用以下参数：
 
 	hive-site.xml hive.metastore.client.socket.timeout 90
 
