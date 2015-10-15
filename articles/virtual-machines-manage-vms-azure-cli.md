@@ -74,6 +74,6 @@
 
 ## 后续步骤
 
-有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅[将适用于 Mac、Linux 和 Windows 的 Windows Azure CLI 用于 Azure 资源管理](/documentation/articles/xplat-cli-resource-manager)。若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
+有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅<!--[-->将适用于 Mac、Linux 和 Windows 的 Windows Azure CLI 用于 Azure 资源管理<!--](/documentation/articles/xplat-cli-resource-manager)-->。若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
 <!---HONumber=70-->

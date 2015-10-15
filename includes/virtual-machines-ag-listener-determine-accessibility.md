@@ -7,6 +7,6 @@
 
 >[AZURE.IMPORTANT]对于使用云服务公用 VIP（外部负载平衡器）的侦听器，通过侦听器返回的任何数据均被视为传出，并按照 Azure 中的普通数据传输速率收费。即使客户端位于同一虚拟网络并且数据中心用作侦听器和数据库，也是如此。如果侦听器使用 ILB，则不适用。
 
-ILB 只能在具有区域范围的虚拟网络上配置。已配置关联组的现有虚拟网络无法使用 ILB。有关详细信息，请参阅[内部负载平衡器](../articles/load-balancer/load-balancer-internal-overview.md)。
+ILB 只能在具有区域范围的虚拟网络上配置。已配置关联组的现有虚拟网络无法使用 ILB。有关详细信息，请参阅<!--[-->内部负载平衡器<!--](../articles/load-balancer-internal-overview.md-->)。
 
 <!---HONumber=70-->

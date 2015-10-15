@@ -108,9 +108,9 @@
 
 ## 其他资源
 
-[在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint](/documentation/articles/virtual-machines-workload-deploy-spsqlao-overview)
+<!--[-->在 Azure 中通过 SQL Server AlwaysOn 可用性组部署 SharePoint<!--](/documentation/articles/virtual-machines-workload-deploy-spsqlao-overview)-->
 
-[在混合云中设置 SharePoint Intranet 场用于测试](./documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
+[在混合云中设置 SharePoint Intranet 场用于测试](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
 
 [适用于 SharePoint 2013 的 Windows Azure 体系结构](https://technet.microsoft.com/zh-cn/library/dn635309.aspx)
 
@@ -120,6 +120,6 @@
 
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
-[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-lob-application)
+[Azure 基础结构服务工作负荷：高可用性业务线应用程序](/documentation/articles/virtual-machines-workload-high-availability-LOB-application)
 
 <!---HONumber=70-->

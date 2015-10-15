@@ -23,7 +23,7 @@ Azure 提供不同方式来创建 VM，因为 VM 适合于不同用户和目的�
 
 ### GUI：Azure 门户或预览门户
 
-Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 门户](http://manage.windowsazure.cn)或 [Azure 预览门户](http://portal.azure.cn)创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。请注意，[Azure 门户](http://manage.windowsazure.cn)只使用经典部署模型创建虚拟机。
+Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 门户](http://manage.windowsazure.cn)或 [Azure 预览门户](http://manage.windowsazure.cn)创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。请注意，[Azure 门户](http://manage.windowsazure.cn)只使用经典部署模型创建虚拟机。
 
 ### 命令 Shell：Azure CLI 或 Azure PowerShell
 
@@ -75,7 +75,7 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial
 [创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
 
-[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行 VM 操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
+<!--[-->适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行 VM 操作的等效资源管理器和服务管理命令<!--]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm-->
 [使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
 [使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
 [使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机]: /documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms

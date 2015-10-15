@@ -57,7 +57,7 @@
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
-有关详细信息，请参阅 [Azure 负载平衡器](/documentation/articles/load-balancer-overview)。有关创建负载平衡集的步骤，请参阅[配置负载平衡集](/documentation/articles/load-balancer-internet-getstarted)。
+有关详细信息，请参阅<!-- [-->Azure 负载平衡器<!--](/documentation/articles/load-balancer-overview)-->。有关创建负载平衡集的步骤，请参阅<!--[-->配置负载平衡集<!--](/documentation/articles/load-balancer-internet-getstarted)-->。
 
 Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为“内部负载平衡”并可以通过以下方式使用：
 
@@ -73,8 +73,8 @@ Azure 还可以在云服务或虚拟网络内部实现负载平衡。这称为�
 
 ## 后续步骤
 
-有关创建负载平衡集的步骤，请参阅[配置内部负载平衡集](/documentation/articles/load-balancer-internal-getstarted)。
+有关创建负载平衡集的步骤，请参阅<!--[-->配置内部负载平衡集<!--](/documentation/articles/load-balancer-internal-getstarted)-->。
 
-有关负载平衡器的详细信息，请参阅[内部负载平衡](/documentation/articles/load-balancer-internal-overview)。
+有关负载平衡器的详细信息，请参阅<!--[-->内部负载平衡<!--](/documentation/articles/load-balancer-internal-overview)-->。
 
 <!-- LINKS -->

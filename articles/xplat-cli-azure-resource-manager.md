@@ -37,7 +37,7 @@
 
 有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。
 
-> [AZURE.NOTE]你使用的公司或学校帐户由 Azure Active Directory 管理，因此你也可以使用 Azure 基于角色的访问控制 (RBAC) 来管理 Azure 资源的访问与使用。有关详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。
+> [AZURE.NOTE]你使用的公司或学校帐户由 Azure Active Directory 管理，因此你也可以使用 Azure 基于角色的访问控制 (RBAC) 来管理 Azure 资源的访问与使用。有关详细信息，请参阅<!--[-->管理和审核对资源的访问权限<!--](/documentation/articles/resource-group-rbac)-->。
 
 ## 设置 Azure 资源管理器模式
 

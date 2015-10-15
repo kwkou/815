@@ -22,7 +22,7 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 
 <!--[-->Azure 资源管理器概述<!--](/documentation/articles/resource-group-overview)-->
 
-[Azure 快速入门模板](http://go.microsoft.com/fwlink/p/?linkid=536445&clcid=0x409)
+<!--[-->Azure 快速入门模板<!--](http://go.microsoft.com/fwlink/p/?linkid=536445&clcid=0x409)-->
 
 [使用模板的应用程序框架](/documentation/articles/virtual-machines-app-frameworks)
 
@@ -32,7 +32,7 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 
 ## 常规资源
 
-[Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)
+<!--[-->Azure 快速入门模板<!--](http://azure.microsoft.com/documentation/templates/)-->
 
 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
