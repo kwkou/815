@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="在 HDInsight 中使用 Hadoop Oozie | Azure" 
 	description="在 HDInsight 中使用大数据服务 Hadoop Oozie。了解如何定义 Oozie 工作流，并提交 Oozie 作业。"
 	services="hdinsight" 
@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
 ##概述
-了解如何定义工作流，以及如何在 HDInsight 上运行工作流。若要了解 Oozie 协调器，请参阅[将基于时间的 Hadoop Oozie 协调器与 HDInsight 配合使用][hdinsight-oozie-coordinator-time]。若要了解 Azure 数据工厂，请参阅[将 Pig 和 Hive 用于数据工厂][azure-data-factory-pig-hive]。
+了解如何定义工作流，以及如何在 HDInsight 上运行工作流。若要了解 Oozie 协调器，请参阅[将基于时间的 Hadoop Oozie 协调器与 HDInsight 配合使用][hdinsight-oozie-coordinator-time]。
 
 ##什么是 Oozie？
 
@@ -565,7 +565,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 
 
 
-[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities/
+
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time/
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/

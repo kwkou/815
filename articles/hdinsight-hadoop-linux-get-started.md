@@ -237,7 +237,6 @@ HDInsight 使用 Azure Blob 存储来存储数据。该 Blob 称为 *WASB* 或 *
 
 - [使用自定义选项在 Linux 上设置 HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters)
 - [使用 Linux 上的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-information)
-- [使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari)
 - [将 MapReduce 与 HDInsight 配合使用][hdinsight-use-mapreduce]
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]

@@ -30,7 +30,7 @@
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 - 在运行时，你也可以向外缩放群集，而无需重建群集。如下所示。![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
 
-有关 HDInsight 支持的不同虚拟机的详细信息，请参阅 [HDInsight 定价](http://azure.microsoft.com/pricing/details/hdinsight/)。
+有关 HDInsight 支持的不同虚拟机的详细信息，请参阅 [HDInsight 定价](/home/features/hdinsight/#price)。
 
 ##启用 Tez
 
@@ -202,11 +202,9 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 ##<a id="nextsteps"></a>后续步骤
 在本文中，你已学习了几种常见的 Hive 查询优化方法。若要了解更多信息，请参阅下列文章：
 
-- [使用 HDInsight 中的 Apache Hive](/documentation/articles/hdinsight-using-hive)
 - [使用 HDInsight 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)
 - [使用 HDInsight 中的 Hive 分析 Twitter 数据](/documentation/articles/hdinsight-analyze-twitter-data)
 - [使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)
-- [将 Hive 与 HDInsight 配合使用来分析来自网站的日志](/documentation/articles/hdinsight-hive-analyze-web-site-log)
 
 
 [image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query-v1/scaleout_1.png

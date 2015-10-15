@@ -636,7 +636,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 [sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: ../install-configure-powershell
+[powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

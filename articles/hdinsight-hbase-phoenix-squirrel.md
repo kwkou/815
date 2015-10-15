@@ -117,7 +117,7 @@
 3. 单击你创建的虚拟网络（请参阅[在 Azure 虚拟网络上预配 HBase 群集][hdinsight-hbase-provision-vnet]）。
 4. 在顶部单击“配置”。
 5. 在“点到站点连接”部分中，选择“配置点到站点连接”。 
-6. 配置“起始 IP”和“CIDR”，以指定你的 VPN 客户端在连接后接收 IP 地址时的 IP 地址范围。范围不能与本地网络和要连接到的 Azure 虚拟网络上的任何范围重叠。例如，如果你为虚拟网络选择了 10.0.0.0/20，则可为客户端地址空间选择 10.1.0.0/24。有关详细信息，请参阅[点到站点连接][vnet-point-to-site-connectivity]页。
+6. 配置“起始 IP”和“CIDR”，以指定你的 VPN 客户端在连接后接收 IP 地址时的 IP 地址范围。范围不能与本地网络和要连接到的 Azure 虚拟网络上的任何范围重叠。例如，如果你为虚拟网络选择了 10.0.0.0/20，则可为客户端地址空间选择 10.1.0.0/24。页。
 7. 在虚拟网络地址空间部分中，单击“添加网关子网”。
 7. 单击页面底部的“保存”。
 8. 单击“是”确认更改。等到系统完成更改，然后转到下一过程。
@@ -279,17 +279,14 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 - [HDInsight HBase 概述][hdinsight-hbase-overview]：HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
 - [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication)：了解如何跨两个 Azure 数据中心配置 HBase 复制。 
-- [在 HDInsight 中使用 HBase 分析 Twitter 观点][hbase-twitter-sentiment]：了解如何通过在 HDInsight 的 Hadoop 群集中使用 HBase 对大数据执行实时[观点分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
 
 [azure-portal]: https://manage.windowsazure.cn
-[vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-CN/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
 [hdinsight-versions]: hdinsight-component-versioning
 [hdinsight-hbase-get-started]: hdinsight-hbase-get-started
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md#connect-to-hdinsight-clusters-by-using-rdp
+[hdinsight-manage-portal]: hdinsight-administer-use-management-portal#connect-to-hdinsight-clusters-by-using-rdp
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet
 [hdinsight-hbase-overview]: hdinsight-hbase-overview
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png

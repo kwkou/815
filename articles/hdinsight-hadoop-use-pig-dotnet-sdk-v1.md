@@ -36,7 +36,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 若要在 Azure HDInsight 上对应用程序进行身份验证，你必须创建自签名证书，将它安装在开发工作站上，同时将它上载到你的 Azure 订阅。
 
-有关如何执行此操作的说明，请参阅[创建自签名证书](http://go.microsoft.com/fwlink/?LinkId=511138)。
+有关如何执行此操作的说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal/#cert)。
 
 > [AZURE.NOTE]创建证书时，请务必记下使用的友好名称供以后使用。
 

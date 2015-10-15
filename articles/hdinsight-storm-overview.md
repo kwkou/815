@@ -47,7 +47,7 @@ Apache Storm on HDInsight 是已集成到 Azure 环境中的托管群集。它�
 
 你可以在分钟数设置好新的 Storm on HDInsight 群集。指定群集名称、大小、管理员帐户和存储帐户。Azure 将创建该群集，包括示例拓扑和 Web 管理仪表板。
 
-> [AZURE.NOTE]你也可以使用 [Azure CLI](/documentation/articles/xplat-cli.md) 或 [Azure PowerShell](/documentation/articles/powershell-install-configure.md) 预配 Storm 群集。
+> [AZURE.NOTE]你也可以使用 [Azure CLI](/documentation/articles/xplat-cli) 或 [Azure PowerShell](/documentation/articles/powershell-install-configure) 预配 Storm 群集。
 
 在提交请求后的 15 分钟内，你就可以运行新的 Storm 群集，并准备好建立第一个实时分析管道。
 
@@ -176,7 +176,7 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 
 批处理可以通过若干方式来实现。利用基本 Storm Java 拓扑，你可以在发出元组前使用简单计数器对 X 个元组进行批处理，或使用称为计时周期元组的内部计时机制每 X 秒发出一批元组。
 
-有关使用计时周期的示例，请参阅[使用 Storm 和 HDInsight 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis.md)
+有关使用计时周期的示例，请参阅[使用 Storm 和 HDInsight 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)
 
 如果你使用的是 Trident，则其基于批量处理元组。
 

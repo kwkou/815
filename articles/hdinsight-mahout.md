@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="使用 Mahout 和 Hadoop 生成建议 | Azure"
 	description="了解如何使用 Apache Mahout 机器学习库通过 HDInsight (Hadoop) 生成电影推荐。"
 	services="hdinsight"
@@ -268,11 +268,11 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ### 加载数据
 
-1. 从 [NSL-KDD 数据集](http://nsl.cs.unb.ca/NSL-KDD/)下载以下文件。
+1. 从 NSL-KDD 数据集下载以下文件。
 
-  * [KDDTrain+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff)：训练文件
+  * KDDTrain+.ARFF ：训练文件
 
-  * [KDDTest+.ARFF](http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff)：测试数据
+  * KDDTest+.ARFF ：测试数据
 
 2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则你在 Mahout 中使用数据时将会收到错误消息。
 
@@ -397,9 +397,9 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 
 现在，你已经学习了如何使用 Mahout，因此可以探索通过其他方式来使用 HDInsight 上的数据：
 
-* [Hive 和 HDInsight](../hadoop-use-hive)
-* [Pig 和 HDInsight](../hadoop-use-pig)
-* [MapReduce 和 HDInsight](../hadoop-use-mapreduce)
+* [Hive 和 HDInsight](hdinsight-hadoop-use-hive-powershell)
+* [Pig 和 HDInsight](hdinsight-hadoop-use-pig-powershell)
+* [MapReduce 和 HDInsight](hdinsight-hadoop-use-mapreduce-powershell)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
 [aps]: /documentation/articles/install-configure-powershell/

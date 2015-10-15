@@ -164,7 +164,7 @@
 
 ## <a name="usingPS"></a>通过使用 Azure PowerShell 在 HDInsight Hadoop 群集上安装 Solr
 
-在本部分中，我们使用 **<a href = "http://msdn.microsoft.com/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 通过脚本操作来调用脚本，以自定义群集。在继续前，确保你已安装并配置 Azure PowerShell。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
+在本部分中，我们使用 **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 通过脚本操作来调用脚本，以自定义群集。在继续前，确保你已安装并配置 Azure PowerShell。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
 执行以下步骤：
 
@@ -242,7 +242,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 **创建自签名证书**
 
-创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](http://go.microsoft.com/fwlink/?LinkId=511138)。
+创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](hdinsight-administer-use-management-portal-v1)。
 
 
 **创建 Visual Studio 应用程序**
@@ -326,7 +326,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
             Version = "3.1"
         };        
 
-10. 将以下代码追加到 Main() 函数，以使用 [ScriptAction](http://msdn.microsoft.com/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx) 类调用自定义脚本来安装 Solr。
+10. 将以下代码追加到 Main() 函数，以使用 [ScriptAction](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx) 类调用自定义脚本来安装 Solr。
 
 		// Add the script action to install Solr
         clusterInfo.ConfigActions.Add(new ScriptAction(
@@ -357,10 +357,10 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 
 
-[powershell-install-configure]: ../install-configure-powershell.md
-[hdinsight-provision]: hdinsight-provision-clusters.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
+[powershell-install-configure]: install-configure-powershell
+[hdinsight-provision]: hdinsight-provision-clusters
+[hdinsight-install-r]: hdinsight-hadoop-r-scripts
+[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster
  
 
 <!---HONumber=71-->
