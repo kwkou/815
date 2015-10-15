@@ -1,15 +1,15 @@
-<properties 
-   pageTitle="Azure 存储可伸缩性和性能目标 |Windows Azure"
-   description="了解有关 Azure 存储帐户的可伸缩性和性能目标的信息，包括标准和高级存储账户的容量、请求速率以及入站和出站带宽。了解每个 Azure 存储服务中各分区的性能目标。"
-   services="storage"
-   documentationCenter="na"
-   authors="tamram"
-   manager="na"
-   editor="na" />
+<properties
+	pageTitle="Azure 存储可伸缩性和性能目标 |Windows Azure"
+	description="了解有关 Azure 存储帐户的可伸缩性和性能目标的信息，包括标准和高级存储账户的容量、请求速率以及入站和出站带宽。了解每个 Azure 存储服务中各分区的性能目标。"
+	services="storage"
+	documentationCenter="na"
+	authors="tamram"
+	manager="na"
+	editor="na" />
 <tags 
-   ms.service="storage"
-   ms.date="08/07/2015"
-   wacn.date="09/18/2015" />
+	ms.service="storage"
+	ms.date="08/07/2015"
+	wacn.date="09/18/2015" />
 
 # Azure 存储空间可伸缩性和性能目标
 
