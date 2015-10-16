@@ -27,7 +27,8 @@
 编辑运行以下命令，定义您的服务器名称、位置、版本等信息来完成服务器创建。
 
 ```
-New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} -Sku MS3
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 		
+-ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
 ```
 
 ###2.2 创建服务器防火墙原则
@@ -55,7 +56,8 @@ New-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName te
 编辑运行以下命令，设置数据库读写权限给用户。权限分为"Read"以及"ReadWrite"。
 
 ```
-New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
+New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 	
+-ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
 ```
 ###2.6 创建按需备份文件
 编辑运行以下命令，制定备份文件名称，创建按需备份文件。
@@ -122,7 +124,8 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName te
 编辑运行以下命令，修改某个用户的读写权限。
 
 ```
-Set-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='Read'} -UsePatchSemantics
+Set-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" 		
+-ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='Read'} -UsePatchSemantics
 ```
 
 ###4.3 允许所有Azure服务访问
