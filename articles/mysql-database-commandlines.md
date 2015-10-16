@@ -7,7 +7,6 @@
 
 在开始之前，请确保已将 Azure PowerShell 准备就绪。
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
 ###目录
 - [了解 Azure 资源模板和资源组](#gettoknow)
 - [创建操作](#creat)
