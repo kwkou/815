@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="使用通知中心发送突发新闻 (Windows Universal)" 
 	description="结合注册中的标记使用 Azure 通知中心将突发新闻发送到通用 Windows 应用。" 
 	services="notification-hubs" 
@@ -16,7 +16,7 @@
 # 使用通知中心发送突发新闻
 
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述
@@ -169,7 +169,7 @@
 
 ##从后端发送通知
 
-[AZURE.INCLUDE [notification-hubs-back-end](../../includes/notification-hubs-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-back-end](../includes/notification-hubs-back-end.md)]
 
 ##运行应用并生成通知
 

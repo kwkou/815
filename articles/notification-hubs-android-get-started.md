@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="Azure 通知中心入门" 
 	description="了解如何使用 Azure 通知中心推送通知。" 
 	services="notification-hubs" 
@@ -13,7 +13,7 @@
 
 # 通知中心入门
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
 
@@ -35,12 +35,12 @@
 
 ##创建支持 Google Cloud Messaging 的项目
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 
 ##配置新通知中心
 
-[AZURE.INCLUDE [notification-hubs-android-configure-push](../../includes/notification-hubs-android-configure-push.md)]
+[AZURE.INCLUDE [notification-hubs-android-configure-push](../includes/notification-hubs-android-configure-push.md)]
 
 ##<a id="connecting-app"></a>将你的应用连接到通知中心
 
@@ -58,7 +58,7 @@
 
 ###将 Google Play Services 添加到项目
 
-[AZURE.INCLUDE [添加 Play Services](../../includes/mobile-services-add-google-play-services.md)]
+[AZURE.INCLUDE [添加 Play Services](../includes/mobile-services-add-google-play-services.md)]
 
 ###添加代码
 
@@ -251,7 +251,7 @@
 
 ![][30]
 
-[AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
+[AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
 ![][31]
 

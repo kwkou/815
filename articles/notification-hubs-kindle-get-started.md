@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="develop-notificationhubs-tutorials-get-started-kindle" 
 	urlDisplayName="Get Started" 
 	pageTitle="Get Started with Azure Notification Hubs" 
@@ -18,7 +18,7 @@
 
 # 通知中心入门
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
 

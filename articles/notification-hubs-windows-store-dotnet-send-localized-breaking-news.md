@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="通知中心本地化的突发新闻教程"
 	description="了解如何使用 Azure 服务总线通知中心发送本地化的突发新闻通知。"
 	services="notification-hubs"
@@ -15,7 +15,7 @@
 # 使用通知中心发送本地化的突发新闻
 
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述
@@ -158,7 +158,7 @@
 
 ##从后端发送本地化的通知
 
-[AZURE.INCLUDE [notification-hubs-localized-back-end](../../includes/notification-hubs-localized-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
 ## 后续步骤
 

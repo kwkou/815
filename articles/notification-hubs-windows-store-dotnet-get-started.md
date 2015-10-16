@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="develop-notificationhubs-tutorials-get-started-windowsdotnet" 
 	urlDisplayName="Get started with notification hubs" 
 	pageTitle="Get started with Azure Notification Hubs" 
@@ -19,7 +19,7 @@
 
 # 通知中心入门
 
-[AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+[AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
 
