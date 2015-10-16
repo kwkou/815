@@ -19,7 +19,7 @@
 
 #Azure 通知中心 - 通知用户
 
-[AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
+[AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
 
 ##概述
@@ -43,7 +43,7 @@
 
 1. 在解决方案资源管理器中，右键单击解决方案的顶层节点（在本例中为 **Solution NotifyUsers**），单击**"添加"**，然后单击**"新建项目"**。
 
-[AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
+[AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
 ## 更新客户端项目的代码
 

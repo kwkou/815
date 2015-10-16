@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="develop-notificationhubs-tutorials-send-breaking-news-ios" 
 	urlDisplayName="Breaking News" 
 	pageTitle="Notification Hubs Breaking News Tutorial - iOS" 
@@ -19,7 +19,7 @@
 
 # 使用通知中心发送突发新闻
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述

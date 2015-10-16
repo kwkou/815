@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="manage-services-web-sites-operating-system-functionality-available-to-applications" 
 	urlDisplayName="Operating System Functionality Available to Applications on Azure Web Sites" 
 	pageTitle="Operating System Functionality Available to Applications on Azure Web Sites" 
@@ -20,7 +20,7 @@
 
 # 使用通知中心发送突发新闻
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述
