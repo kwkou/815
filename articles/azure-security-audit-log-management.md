@@ -26,11 +26,11 @@ Azure 安全日志记录、分析和监视生命周期包括：
 本文重点介绍生命周期的生成和收集阶段。
 
 ## 日志生成
-Windows 事件日志中引发了虚拟机中有关**系统**、**安全**和**应用程序**通道的安全事件。若要确保在不出现数据丢失的情况下记录事件，请务必正确配置事件日志的大小。根据审核策略设置生成的事件数量和事件收集策略定义的事件数量来设置事件日志的大小。有关详细信息，请参阅[安全审核监视和管理规划](http://technet.microsoft.com/library/ee513968.aspx#BKMK_4)。
+Windows 事件日志中引发了虚拟机中有关**系统**、**安全**和**应用程序**通道的安全事件。若要确保在不出现数据丢失的情况下记录事件，请务必正确配置事件日志的大小。根据审核策略设置生成的事件数量和事件收集策略定义的事件数量来设置事件日志的大小。有关详细信息，请参阅[安全审核监视和管理规划](http://technet.microsoft.com/zh-cn/library/ee513968.aspx#BKMK_4)。
 
 >[AZURE.NOTE]在使用 Windows 事件转发 (WEF) 或 Azure 诊断（如[日志收集](#log-collection)部分所述）从云服务或虚拟机中拉取日志时，请考虑系统中断的潜在影响。例如，如果您的 WEF 环境在一段时间内出现故障，您要么确保日志大小足以应对更长的持续时间，要么就需要做好日志数据可能丢失的准备。
 
-对于在 Azure 中部署的云服务应用程序和从 [Azure 虚拟机应用商店](http://www.windowsazure.cn/marketplace/virtual-machines/#microsoft)创建的虚拟机，默认情况下启用一组操作系统安全事件。客户可以通过自定义操作系统审核策略来添加、删除或修改要审核的事件。有关详细信息，请参阅[安全策略设置参考](http://technet.microsoft.com/library/jj852210.aspx)。
+对于在 Azure 中部署的云服务应用程序和从 <!--[-->Azure 虚拟机应用商店<!--](http://www.windowsazure.cn/marketplace/virtual-machines/#microsoft)-->创建的虚拟机，默认情况下启用一组操作系统安全事件。客户可以通过自定义操作系统审核策略来添加、删除或修改要审核的事件。有关详细信息，请参阅[安全策略设置参考](http://technet.microsoft.com/zh-cn/library/jj852210.aspx)。
 
 可以使用以下方法来从操作系统（例如，审核策略更改）和 Windows 组件（例如 IIS）生成其他日志：
 
@@ -52,9 +52,9 @@ EnableLogOnAudit.cmd 的内容：
     auditpol.exe /set /category:"Logon/Logoff" /success:enable /failure:enable
     Exit /B 0
 
-前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
+前面示例中使用的 [Auditpol.exe](https://technet.microsoft.com/zh-cn/library/cc731451.aspx) 是 Windows Server 操作系统中包含的命令行工具，该操作系统允许您管理审核策略设置。
 
-除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
+除了生成 Windows 事件日志，还可以对各种 Windows 操作系统组件进行配置以生成日志，这些日志对于安全分析和监视而言非常重要。例如，自动为 Web 角色生成的 Internet Information Services (IIS) 日志和 http.err 日志，可以配置这些日志以进行收集。这些日志提供有价值的信息，可用于标识未经授权的访问或针对您的 Web 角色的攻击。有关详细信息，请参阅[在 IIS 中配置日志记录](http://technet.microsoft.com/zh-cn/library/hh831775.aspx)和 [ IIS 高级日志记录 – 自定义日志记录](http://www.iis.net/learn/extensions/advanced-logging-module/advanced-logging-for-iis-custom-logging)。
 
 若要更改 Web 角色中的 IIS 日志记录，客户可以向 Web 角色服务定义文件添加启动任务。下面的示例为名为 Contoso 的网站启用 HTTP 日志记录，并指定 IIS 应记录 Contoso 网站的所有请求。
 
@@ -83,7 +83,7 @@ ConfigureIISLogging:cmd 的内容
 | Azure 诊断 | Windows 事件转发 |
 |-----|-----|
 |支持 Azure 虚拟机和 Azure 云服务 | 仅支持已加入域的 Azure 虚拟机 |
-|支持各种日志格式，如 Windows 事件日志、[Windows 事件跟踪](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) (ETW) 跟踪和 IIS 日志。有关详细信息，请参阅 [支持 Azure 诊断的数据源](#diagnostics) |仅支持 Windows 事件日志 |
+|支持各种日志格式，如 Windows 事件日志、[Windows 事件跟踪](https://msdn.microsoft.com/zh-cn/library/windows/desktop/bb968803.aspx) (ETW) 跟踪和 IIS 日志。有关详细信息，请参阅 [支持 Azure 诊断的数据源](#diagnostics) |仅支持 Windows 事件日志 |
 |将已收集的数据推送到 Azure 存储空间 |将已收集的数据移动到中央收集器服务器 |
 
 ##	使用 Windows 事件转发进行的安全事件数据收集
@@ -91,14 +91,14 @@ ConfigureIISLogging:cmd 的内容
 
 组织可以使用此方法购买 IaaS 订阅，通过使用 [ExpressRoute](http://www.windowsazure.cn/services/expressroute/) 或站点到站点 VPN 将其连接到公司网络，然后将已在 Azure 中的虚拟机加入到企业域。之后，您可以从已加入域的计算机配置 WEF。
 
-事件转发拆分为两个部分：源和收集器。源是在其中生成安全日志的计算机。收集器是收集并合并事件日志的集中式服务器。IT 管理员可以订阅事件，以便他们可以接收和存储从远程计算机（事件源）转发的事件。有关详细信息，请参阅[配置计算机以转发和收集事件](http://technet.microsoft.com/library/cc748890.aspx)。
+事件转发拆分为两个部分：源和收集器。源是在其中生成安全日志的计算机。收集器是收集并合并事件日志的集中式服务器。IT 管理员可以订阅事件，以便他们可以接收和存储从远程计算机（事件源）转发的事件。有关详细信息，请参阅[配置计算机以转发和收集事件](http://technet.microsoft.com/zh-cn/library/cc748890.aspx)。
 
 收集的 Windows 事件可以发送到 SIEM 等本地分析工具，以做进一步分析。
 
 ## 使用 Azure 诊断进行的安全数据收集
 Azure 诊断使您能够从云服务辅助角色或 Web 角色，或者从 Azure 中运行的虚拟机中收集诊断数据。这是预定义的来宾代理扩展，需要启用它并加以配置以便进行数据收集。客户的订阅可以包括将数据推送到 Azure 存储空间。
 
-数据（通过使用 HTTPS）在传输中加密。本文档中提供的示例使用的是 Azure Diagnostics 1.2。我们建议您升级到版本 1.2 或更高版本，以便进行安全数据收集。有关详细信息，请参阅[使用 Azure 诊断收集日志记录数据](http://msdn.microsoft.com/library/gg433048.aspx)。
+数据（通过使用 HTTPS）在传输中加密。本文档中提供的示例使用的是 Azure Diagnostics 1.2。我们建议您升级到版本 1.2 或更高版本，以便进行安全数据收集。有关详细信息，请参阅[使用 Azure 诊断收集日志记录数据](http://msdn.microsoft.com/zh-cn/library/gg433048.aspx)。
 
 下图显示了使用 Azure 诊断、进一步分析和监视的安全数据收集的高级数据流。
 
@@ -531,7 +531,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
 
 - 如果不再需要诊断数据，请定期将其从 Azure 存储空间中清除。
 
->[AZURE.NOTE]若要了解有关诊断数据的详细信息，请参阅[在 Azure 存储空间中存储和查看诊断数据](https://msdn.microsoft.com/library/azure/hh411534.aspx)。容器和存储诊断数据的表就像其他容器和表一样，您可以采用对其他数据采用的相同方法来删除其中的 blob 和实体。您可以采用编程方式通过其中一个存储客户端库或采用直观的方式通过[存储资源管理器客户端](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)来删除诊断数据。
+>[AZURE.NOTE]若要了解有关诊断数据的详细信息，请参阅[在 Azure 存储空间中存储和查看诊断数据](https://msdn.microsoft.com/zh-cn/library/azure/hh411534.aspx)。容器和存储诊断数据的表就像其他容器和表一样，您可以采用对其他数据采用的相同方法来删除其中的 blob 和实体。您可以采用编程方式通过其中一个存储客户端库或采用直观的方式通过[存储资源管理器客户端](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)来删除诊断数据。
 
 - 它是将服务数据和安全日志数据存储在单独的存储帐户的最佳做法。这种隔离可确保安全日志数据的保存不会影响生产服务数据的存储性能。
 - 基于组织的合规性策略、数据分析和监视要求选择日志保留期。
@@ -568,19 +568,19 @@ Azure Active Directory (Azure AD) 包括一组安全、使用情况和审核日�
 ## 其他资源
 以下资源提供有关 Microsoft Azure 和相关的 Microsoft 服务的常规信息：
 
-- [Microsoft Azure 信任中心](http://www.windowsazure.cn/support/trust-center/)
+- [Microsoft Azure 信任中心](/support/trust-center/)
 
     有关如何为 Azure 开发嵌入安全和隐私的信息以及 Azure 如何满足广泛的国际和特定于行业的合规性标准的信息
 
-- [Microsoft Azure 主页](http://www.microsoft.com/windowsazure/)
+- [Microsoft Azure 主页](http://www.windowsazure.cn)
 
     有关 Microsoft Azure 常规信息和链接
 
-- [Microsoft Azure 文档中心](http://msdn.microsoft.com/windowsazure/default.aspx)
+- [Microsoft Azure 文档中心](/documentation)
 
     Azure 服务和自动化脚本指南
 
-- [Microsoft 安全响应中心 (MSRC)](http://www.microsoft.com/security/msrc/default.aspx)
+- [Microsoft 安全响应中心 (MSRC)](https://technet.microsoft.com/zh-cn/security/dn440717)
 
     MSRC 与世界各地的合作伙伴和安全研究人员一起致力于防止安全事件的发生并继续提高 Microsoft 产品的安全性
 

@@ -16,7 +16,7 @@
 
 本文概述如何使用自定义脚本扩展编写 Azure 资源管理器模板，用于引导 Linux 或 Windows VM 上的工作负荷。
 
-有关自定义脚本扩展的概述，请参阅<a href="https://azure.microsoft.com/zh-CN/documentation/articles/virtual-machines-extensions-customscript/" target="_blank">此文</a>。
+有关自定义脚本扩展的概述，请参阅<a href="https://www.windowsazure.cn/documentation/articles/virtual-machines-extensions-customscript" target="_blank">此文</a>。
 
 自定义脚本扩展自推出后已广泛应用于在 Windows 和 Linux VM 上配置工作负荷。随着 Azure 资源管理器模板的引入，用户现在可以创建单个模板，该模板不只可以预配 VM，还可以在 VM 上配置工作负荷。
 
@@ -24,11 +24,11 @@
 
 Azure 资源管理器模板可让你通过定义资源之间的依赖性，使用 JSON 语言以声明方式指定 Azure IaaS 基础结构。有关 Azure 资源管理器模板的详细概述，请参阅以下文章：
 
-<a href="https://azure.microsoft.com/zh-CN/documentation/articles/resource-group-overview/" target="_blank">资源组概述</a>。<br/><a href="https://azure.microsoft.com/zh-CN/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">使用 Azure CLI 部署模板</a>。<br/><a href="https://azure.microsoft.com/zh-CN/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">使用 Azure Powershell 部署模板。</a>
+<a href="https://www.windowsazure.cn/documentation/articles/resource-group-overview/" target="_blank">资源组概述</a>。<br/><a href="https://www.windowsazure.cn/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">使用 Azure CLI 部署模板</a>。<br/><a href="https://www.windowsazure.cn/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">使用 Azure Powershell 部署模板。</a>
 
 ### 运行自定义脚本扩展的先决条件
 
-1. 从<a href="http://azure.microsoft.com/downloads" target="_blank">此处</a>安装最新的 Azure PowerShell Cmdlet 或 Azure CLI。
+1. 从<a href="https://www.windowsazure.cn/downloads" target="_blank">此处</a>安装最新的 Azure PowerShell Cmdlet 或 Azure CLI。
 2. 如果脚本将在现有 VM 上运行，请确保已在该 VM 上启用了 VM 代理，如果没有启用，请根据<a href="https://msdn.microsoft.com/library/azure/dn832621.aspx" target="_blank">此文</a>来安装一个。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个或多个存储容器。
 4. 或者，也可以将脚本上载到 Github 帐户。

@@ -51,7 +51,7 @@
 
 可以使用此元素或 dependsOn 元素来指定依赖关系，但不需要同时使用它们用于同一依赖资源。本指南将使用隐式引用以避免无意中使某个不必要的 dependsOn 元素阻止部署引擎执行并行部署方面操作的风险。
 
-若要了解详细信息，请参阅[引用函数](../resource-group-template-functions/#reference)。
+若要了解详细信息，请参阅[引用函数](/documentation/articles/resource-group-template-functions/#reference)。
 
 ## 后续步骤
 
