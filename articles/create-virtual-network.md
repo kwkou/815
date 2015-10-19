@@ -99,7 +99,7 @@
 
 -  [Azure 虚拟网络配置任务](http://go.microsoft.com/fwlink/p/?LinkId=296652)
 
--  [使用网络配置文件配置虚拟网络](documentation/articles/virtual-networks-using-network-configuration-file)
+-  [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file)
 
 -  [VM 和角色实例的名称解析](http://go.microsoft.com/fwlink/?LinkId=248097)
 
