@@ -97,15 +97,15 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 ![Azure 流分析事件存档，适用于未来进行的流处理。][img.stream.analytics.scenario3]
  
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 <!--[-->Azure 流分析论坛<!--](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)-->
 
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，适用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：
 
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
+- <!--[-->Azure 流分析入门<!--](/documentation/articles/stream-analytics-get-started)-->
 - <!--[-->缩放 Azure 流分析作业<!--](/documentation/articles/stream-analytics-scale-jobs)-->
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
+- <!--[-->Azure 流分析查询语言参考<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)-->
+- <!--[-->Azure 流分析管理 REST API 参考<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)-->
 
 
 <!--Image references-->
