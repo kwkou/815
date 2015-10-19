@@ -24,7 +24,7 @@
 
 1. 您不能更改该资源的位置。移动资源仅能够将其移动到新的资源组。新的资源组可能有不同的位置，但这不会更改该资源的位置。
 2. 目标资源组应仅包含与您在移动的资源共享相同的应用程序生命周期的资源。
-3. 如果您在使用 Azure PowerShell，请确保您使用的是最新版本。**Move-AzureResource** 命令将经常更新。若要更新您的版本，请运行 Microsoft Web 平台安装程序并检查新版本是否可用。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure.md)。
+3. 如果您在使用 Azure PowerShell，请确保您使用的是最新版本。**Move-AzureResource** 命令将经常更新。若要更新您的版本，请运行 Microsoft Web 平台安装程序并检查新版本是否可用。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 4. 移动操作可能需要一段时间才能完成，在这个过程中，您的 PowerShell 提示符将处于等待状态，直到操作完成。
 
 ## 支持的服务
@@ -40,7 +40,7 @@
 - Mobile Engagement
 - 操作见解
 - Redis Cache
-- Azure Web Apps（一些应用[限制](app-service-web/app-service-move-resources.md)）
+- Azure Web Apps（一些应用[限制](/documentation/articles/app-service-move-resources)）
 
 支持移到新的资源组而非新的订阅的服务包括：
 
@@ -94,7 +94,7 @@
 ## 后续步骤
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
 - [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
-- [使用 Azure 门户管理资源](/documentation/articles/resource-group-portal)
+<!-- - [使用 Azure 门户管理资源](/documentation/articles/resource-group-portal)-->
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
 <!---HONumber=71-->

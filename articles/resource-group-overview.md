@@ -43,7 +43,7 @@ Azure 资源管理器原生地在管理平台中集成了访问控制，因此�
 
 有关链接资源的详细信息，请参阅 [Azure 资源管理器中的链接资源](/documentation/articles/resource-group-link-resources)
 
-如果您需要将资源移到新的资源组，请参阅[将资源移到新的资源组或订阅](resource-group-move-resources.md)。
+如果您需要将资源移到新的资源组，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources)。
 
 在门户中，你可以轻松查看费用、监视事件和管理警报。下图显示了某个组的合并帐户。
 
@@ -68,8 +68,8 @@ Azure 资源管理器原生地在管理平台中集成了访问控制，因此�
 有关定义模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 
 有关模板的架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)。
-
-有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)和[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)。
+<!--
+有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)和[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably)。-->
 
 有关如何构建您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
 
@@ -99,7 +99,7 @@ Azure 资源管理器会自动记录用户操作以供审核。
 
 有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
 
-有关设置访问策略的示例，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。
+有关设置访问策略的示例，请参阅<!--[-->管理和审核对资源的访问权限<!--](/documentation/articles/resource-group-rbac)-->。
 
 有关最佳实践，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 
@@ -113,12 +113,12 @@ Azure 资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows
 
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
-有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal.md)。
+<!--有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal.md)。-->
 
 ## 后续步骤
 
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
-- 若要部署您创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
+<!-- - 若要部署您创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)-->
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
 - 有关如何设计您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 

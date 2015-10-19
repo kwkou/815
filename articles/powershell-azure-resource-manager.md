@@ -24,7 +24,7 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 ## 先决条件
 
-若要完成本教程，您必须具有 Azure PowerShell 版本 0.8.0 或更高版本。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure.md)。
+若要完成本教程，您必须具有 Azure PowerShell 版本 0.8.0 或更高版本。若要安装最新版本并将其与 Azure 订阅相关联，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 本教程专为 PowerShell 新手设计，但它假定您了解基本概念，如模块、cmdlet 和会话。有关 Windows PowerShell 的详细信息，请参阅 [Windows PowerShell 入门](http://technet.microsoft.com/zh-cn/library/hh857337.aspx)。
 
@@ -321,7 +321,7 @@ PowerShell 会完成参数名称。若要循环显示参数名称，请重复按
 
 ## 移动资源
 
-可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](resource-group-move-resources.md)。
+可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](/documentation/articles/resource-group-move-resources)。
 
 ## 删除资源组
 
@@ -367,7 +367,8 @@ AzureResourceManager 模块包括帮助您防止错误的 cmdlet。
 ## 后续步骤
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+<!--
 - 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 - 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-web/app-service-deploy-complex-application-predictably)。
-
+-->
 <!---HONumber=71-->

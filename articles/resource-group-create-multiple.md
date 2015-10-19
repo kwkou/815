@@ -106,8 +106,8 @@
     ]
 
 ## 后续步骤
-- [创作 Azure 资源管理器模板](/documentation/articles/./resource-group-authoring-templates)
-- [Azure 资源管理器模板函数](/documentation/articles/./resource-group-template-functions)
-- [使用 Azure 资源管理器模板部署应用程序](/documentation/articles/azure-portal/resource-group-template-deploy)
+- [创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
+- [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
+- [使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
 <!---HONumber=71-->

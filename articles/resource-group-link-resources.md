@@ -135,7 +135,7 @@
 
 Properties 元素包含第二个资源的标识符。
 
-有关更多示例，包括如何检索有关链接的信息，请参阅[链接资源](https://msdn.microsoft.com/library/azure/mt238499.aspx)。
+有关更多示例，包括如何检索有关链接的信息，请参阅[链接资源](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx)。
 
 ## 后续步骤
 

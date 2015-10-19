@@ -20,7 +20,7 @@
 
 **估计完成时间：**20 分钟。
 
-有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](key-vault/key-vault-whatis.md)
+有关 Azure 密钥保管库的概述信息，请参阅<!--[-->什么是 Azure 密钥保管库？<!--](key-vault/key-vault-whatis.md)-->
 
 有关 Azure 存储空间的客户端加密的概述信息，请参阅 [Microsoft Azure 存储空间客户端加密 – 预览](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/28/client-side-encryption-for-microsoft-azure-storage-preview.aspx)
 
@@ -47,7 +47,7 @@
 
 
 ## 设置您的 Azure 密钥保管库
-若要继续本教程，您需要执行教程中所述的以下操作：[开始使用 Azure 密钥保管库](key-vault/key-vault-get-started.md)
+若要继续本教程，您需要执行教程中所述的以下操作：<!--[-->开始使用 Azure 密钥保管库<!--](key-vault/key-vault-get-started.md)-->
 
 - 创建密钥保管库
 - 将密钥或密码添加到密钥保管库
@@ -223,9 +223,9 @@ RSA 密钥的私钥则保留在密钥保管库中，为了进行解密，来自�
 
 ## 后续步骤
 
-有关将 Microsoft Azure 存储空间与 C# 配合使用的详细信息，请参阅[用于 .NET 的 Microsoft Azure 存储客户端库](https://msdn.microsoft.com/library/azure/dn261237.aspx)
+有关将 Microsoft Azure 存储空间与 C# 配合使用的详细信息，请参阅[用于 .NET 的 Microsoft Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)
 
-有关 Blob REST API 的详细信息，请参阅 [Blob 服务 REST API](https://msdn.microsoft.com/library/azure/dd135733.aspx)
+有关 Blob REST API 的详细信息，请参阅 [Blob 服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)
 
 有关 Microsoft Azure 存储空间的最新信息，请转到 [Microsoft Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 

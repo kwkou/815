@@ -21,7 +21,7 @@
 
 您添加到资源或资源组的每个标记都会自动添加到订阅范围的分类。您也可以将标记名称预先填入订阅的分类，而且您想要作为资源使用的值会在未来加以标记。
 
-> [AZURE.NOTE]您只能将标记应用到支持资源管理器操作的资源。如果您是通过经典部署模型（如通过 Azure 门户或[服务管理 API](https://msdn.microsoft.com/library/azure/dn948465.aspx)）创建的虚拟机、虚拟网络或存储，则无法将标记应用到该资源。您必须通过资源管理器重新部署这些资源才能支持标记。所有其他资源均支持标记。
+> [AZURE.NOTE]您只能将标记应用到支持资源管理器操作的资源。如果您是通过经典部署模型（如通过 Azure 门户或[服务管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948465.aspx)）创建的虚拟机、虚拟网络或存储，则无法将标记应用到该资源。您必须通过资源管理器重新部署这些资源才能支持标记。所有其他资源均支持标记。
 
 
 ## 预览门户中的标记
@@ -132,7 +132,7 @@
 
 ## 使用 REST API 进行标记
 
-门户和 PowerShell 在幕后都使用[资源管理器 REST API](http://msdn.microsoft.com/library/azure/dn790568.aspx)。如果需要将标记集成到另一个环境中，可以对资源 ID 使用 GET 以获取标记，并使用 PATCH 调用更新标记集。
+门户和 PowerShell 在幕后都使用[资源管理器 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。如果需要将标记集成到另一个环境中，可以对资源 ID 使用 GET 以获取标记，并使用 PATCH 调用更新标记集。
 
 
 ## 标记和计费
@@ -149,7 +149,7 @@
 
 - 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 - 有关部署资源时使用 Azure CLI 的说明，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
-- 有关使用预览门户的说明，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal)。  
+<!-- - 有关使用预览门户的说明，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal)。-->  
   
 
   
