@@ -20,7 +20,7 @@
 ## 流分析作业的组成部分有哪些？ ##
 Azure 流分析作业定义包括输入、查询和输出。输入是作业读取数据流的地方，查询是用于转换数据输入流的一种方式，而输出则是作业将作业结果发送到的地方。
 
-若要对数据进行流式处理，作业需要至少一个输入源。可以将数据流输入源存储在 Azure Service Bus 事件中心或 Azure Blob 存储中。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)、[Azure 流分析入门](/documentation/articles/stream-analytics-get-started)和 [Azure 流分析开发人员指南](/documentation/articles/stream-analytics-developer-guide)。
+若要对数据进行流式处理，作业需要至少一个输入源。可以将数据流输入源存储在 Azure Service Bus 事件中心或 Azure Blob 存储中。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)、[Azure 流分析入门](/documentation/articles/stream-analytics-get-started)<!--和 [Azure 流分析开发人员指南](/documentation/articles/stream-analytics-developer-guide)-->。
 
 ## 配置流式处理单位 ##
 流式处理单位 (SU) 代表执行 Azure 流分析作业的资源和能力。在已经对 CPU、内存以及读取和写入速率进行测量的情况下，可以使用 SU 来描述相对的事件处理能力。每个流式处理单位大致相当于 1MB/秒的吞吐量。
@@ -57,7 +57,7 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 
 对步骤进行分区需要下列条件：
 
-- 输入源必须进行分区。有关详细信息，请参阅 [Azure 流分析开发人员指南](/documentation/articles/stream-analytics-developer-guide)和[事件中心编程指南](/documentation/articles/azure-event-hubs-developer-guide)。
+- 输入源必须进行分区。有关详细信息，请参阅 <!--[-->Azure 流分析开发人员指南<!--](/documentation/articles/stream-analytics-developer-guide)-->和<!--[-->事件中心编程指南<!--](/documentation/articles/azure-event-hubs-developer-guide)-->。
 - 查询的 SELECT 语句必须从进行了分区的输入源读取。
 - 步骤中的查询必须有 **Partition By** 关键字
 

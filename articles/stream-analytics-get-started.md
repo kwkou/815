@@ -19,7 +19,7 @@
 
 了解如何创建端到端解决方案，以便通过 Azure 流分析实时检测欺诈行为。将事件引入 Azure 事件中心、编写用于聚合或提醒的流分析查询，以及将结果发送到输出接收器，以便通过实时处理来分析数据。
 
-流分析是一种完全托管的服务，可以在云中通过流式数据进行低延迟、高度可用、可伸缩且复杂的事件处理。有关详细信息，请参阅 <!--[-->Azure 流分析简介<!--](/documentation/articles/stream-analytics-introduction)-->。
+流分析是一种完全托管的服务，可以在云中通过流式数据进行低延迟、高度可用、可伸缩且复杂的事件处理。有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)。
 
 
 ## 方案：实时进行远程通信和 SIM 欺诈行为检测
@@ -30,16 +30,16 @@
 
 ## 先决条件
 
-此方案需要利用位于 GitHub 上的事件生成器。可以在<!--[-->此处<!--](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator)-->下载它，然后按照本教程中的步骤设置你的解决方案。
+此方案需要利用位于 GitHub 上的事件生成器。可以在[此处](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator)下载它，然后按照本教程中的步骤设置你的解决方案。
 
 ## 创建 Azure 事件中心输入和使用者组
 
-示例应用程序将会生成事件并将其推送到进行实时处理的事件中心实例。为流分析引入事件时，Service Bus 事件中心是首选的方法。你可以在 <!--[-->Azure Service Bus 文档<!--](/documentation/services/service-bus/)-->中了解有关事件中心的更多信息。
+示例应用程序将会生成事件并将其推送到进行实时处理的事件中心实例。为流分析引入事件时，Service Bus 事件中心是首选的方法。你可以在 [Azure Service Bus 文档](/documentation/services/service-bus/)中了解有关事件中心的更多信息。
 
 创建事件中心的步骤：
 
-1.	在 <!--[-->Azure 门户<!--](https://manage.windowsazure.cn/)-->中单击**“新建”**>**“应用程序服务”**>**“Service Bus”**>**“事件中心”**>**“快速创建”**。提供创建新的事件中心所需的名称、区域以及新的或现有的命名空间。  
-2.	最佳做法是让每个流分析作业都从单个事件中心使用者组进行读取。我们将在下面向你详细介绍创建使用者组的过程，你可以<!--[-->了解有关使用者组的详细信息<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx)-->。若要创建使用者组，请导航到新创建的事件中心并单击**“使用者组”**选项卡，然后单击页面底部的**“创建”**，为使用者组提供一个名称。
+1.	在 [Azure 门户](https://manage.windowsazure.cn/)中单击**“新建”**>**“应用程序服务”**>**“Service Bus”**>**“事件中心”**>**“快速创建”**。提供创建新的事件中心所需的名称、区域以及新的或现有的命名空间。  
+2.	最佳做法是让每个流分析作业都从单个事件中心使用者组进行读取。我们将在下面向你详细介绍创建使用者组的过程，你可以[了解有关使用者组的详细信息](https://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx)。若要创建使用者组，请导航到新创建的事件中心并单击**“使用者组”**选项卡，然后单击页面底部的**“创建”**，为使用者组提供一个名称。
 3.	若要授予对事件中心的访问权限，需创建共享访问策略。单击事件中心的**“配置”**选项卡。
 4.	在**“共享访问策略”**下，使用**管理**权限创建一个新策略。
 
@@ -52,7 +52,7 @@
 
 我们提供了一个客户端应用程序，该程序会生成示例性的传入呼叫元数据并将其推送到事件中心。按照以下步骤来设置此应用程序。
 
-1.	从 <!--[-->https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator<!--](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator)--> 下载 TelcoGenerator 解决方案。
+1.	从 [https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator) 下载 TelcoGenerator 解决方案。
 2.	将 App.Config 中 Microsoft.ServiceBus.ConnectionString 和 EventHubName 的值替换为事件中心的连接字符串和名称。
 3.	生成解决方案，以便触发下载操作来下载所需的 NuGet 包。
 4.	启动应用程序。用法如下：
@@ -120,10 +120,10 @@
 
 ### 指定作业查询
 
-流分析支持简单的声明性查询模型，用于描述实时处理的转换。若要了解有关语言的详细信息，请参阅 <!--[-->Azure 流分析查询语言参考<!--](https://msdn.microsoft.com/zh-cn/library/dn834998.aspx)-->。本教程将帮助你创作和测试多个可通过实时调用数据流完成的查询。
+流分析支持简单的声明性查询模型，用于描述实时处理的转换。若要了解有关语言的详细信息，请参阅 [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/dn834998.aspx)。本教程将帮助你创作和测试多个可通过实时调用数据流完成的查询。
 
 #### 可选：示例输入数据
-若要针对实际的作业数据来验证查询，可使用**“示例数据”**功能从流中提取事件，然后创建包含要测试事件的 .JSON 文件。以下步骤演示了如何执行此操作，我们还提供了一个用于测试的示例性 <!--[-->Telco.json<!--](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json)--> 文件。
+若要针对实际的作业数据来验证查询，可使用**“示例数据”**功能从流中提取事件，然后创建包含要测试事件的 .JSON 文件。以下步骤演示了如何执行此操作，我们还提供了一个用于测试的示例性 [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) 文件。
 
 1.	选择事件中心输入，然后单击页面底部的**“示例数据”**。
 2.	在出现的对话框中，指定开始收集数据的**“开始时间”**，以及使用额外数据的**“持续时间”**。
@@ -143,7 +143,7 @@
 	> 请确保输入源的名称与你此前指定的输入的名称相匹配。
 
 3.	单击查询编辑器下的**“测试”**。
-4.	提供测试文件，可以使用在前面的步骤中创建的文件，也可以使用 <!--[-->Telco.json<!--](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json)-->。
+4.	提供测试文件，可以使用在前面的步骤中创建的文件，也可以使用 [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json)。
 5.	单击勾选按钮，然后就会看到结果显示在查询定义下方。
 
 	![查询定义结果](./media/stream-analytics-get-started/stream-analytics-sim-fraud-output.png)
@@ -164,7 +164,7 @@
 
 ### 按区域计算传入呼叫数：带聚合功能的翻转窗口
 
-为了比较每个区域的传入呼叫数，我们将利用 <!--[-->TumblingWindow<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn835055.aspx)--> 来获取每 5 秒钟就按 SwitchNum 进行分组的传入呼叫的计数。
+为了比较每个区域的传入呼叫数，我们将利用 [TumblingWindow](https://msdn.microsoft.com/zh-cn/library/azure/dn835055.aspx) 来获取每 5 秒钟就按 SwitchNum 进行分组的传入呼叫的计数。
 
 1.	在代码编辑器中将查询更改为：
 
@@ -172,7 +172,7 @@
 		FROM CallStream TIMESTAMP BY CallRecTime
 		GROUP BY TUMBLINGWINDOW(s, 5), SwitchNum
 
-	此查询使用 **Timestamp By** 关键字在要用于临时计算的负载中指定时间戳字段。如果未指定此字段，将根据每个事件到达事件中心的时间执行开窗操作。请参阅<!--[-->流分析查询语言参考中的“到达时间与应用程序时间”<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)-->。
+	此查询使用 **Timestamp By** 关键字在要用于临时计算的负载中指定时间戳字段。如果未指定此字段，将根据每个事件到达事件中心的时间执行开窗操作。请参阅[流分析查询语言参考中的“到达时间与应用程序时间”](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)。
 
 	请注意，你可以使用 **System.Timestamp** 属性访问每个窗口结束时的时间戳。
 
@@ -182,7 +182,7 @@
 
 ### 使用自联接进行 SIM 欺诈行为检测
 
-为了确定可能存在的欺诈性使用情况，我们需要查找从同一个用户发出但发出位置却位于不同的地区且间隔时间不到 5 秒钟的呼叫。我们会让呼叫事件流进行自我<!--[-->联接<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn835026.aspx)-->，看是否存在此类情况。
+为了确定可能存在的欺诈性使用情况，我们需要查找从同一个用户发出但发出位置却位于不同的地区且间隔时间不到 5 秒钟的呼叫。我们会让呼叫事件流进行自我[联接](https://msdn.microsoft.com/zh-cn/library/azure/dn835026.aspx)，看是否存在此类情况。
 
 1.	在代码编辑器中将查询更改为：
 
@@ -237,20 +237,20 @@
 
 ## 查看欺诈检测输出
 
-在将欺诈性事件实时写入到输出中时，使用 <!--[-->Azure 存储资源管理器<!--](https://azurestorageexplorer.codeplex.com/)-->或 <!--[-->Azure 资源管理器<!--](http://www.cerebrata.com/products/azure-explorer/introduction)-->之类的工具查看这些事件。
+在将欺诈性事件实时写入到输出中时，使用 [Azure 存储资源管理器](https://azurestorageexplorer.codeplex.com/)或 [Azure 资源管理器](http://www.cerebrata.com/products/azure-explorer/introduction)之类的工具查看这些事件。
 
 ![欺诈行为检测：实时查看欺诈性事件](./media/stream-analytics-get-started/stream-ananlytics-view-real-time-fraudent-events.png)
 
 ## 获取支持
-如需进一步的帮助，请尝试我们的 <!--[-->Azure 流分析论坛<!--](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)-->。
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)。
 
 
 ## 后续步骤
 
-- <!--[-->Azure 流分析简介<!--](/documentation/articles/stream-analytics-introduction)-->
-- <!--[-->Azure 流分析入门<!--](/documentation/articles/stream-analytics-get-started)-->
-- <!--[-->缩放 Azure 流分析作业<!--](/documentation/articles/stream-analytics-scale-jobs)-->
-- <!--[-->Azure 流分析查询语言参考<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)-->
-- <!--[-->Azure 流分析管理 REST API 参考<!--](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)-->
+- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
+- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
+- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!---HONumber=69-->
