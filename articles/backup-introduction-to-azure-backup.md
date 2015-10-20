@@ -43,22 +43,25 @@ Azure 备份是一个多租户 Azure 服务，可让你将本地数据备份到 
 
 6. **经济高效**：Azure 备份的价格包括每个实例的备份管理费用，以及在 Azure 上使用的存储的费用（块 Blob 价格）。与其他基于云的备份产品不同，Azure 备份不向客户收取任何还原操作的费用。此外，在还原操作过程中，客户无需支付任何传出（出站）数据传输费用。
 
-
-## 可以备份到 Azure 的应用程序和工作负载
-将 Azure 备份与 SCDPM 结合使用时，你可以备份：
-
-+ 企业客户端和服务器计算机中的文件和文件夹
+7. **云中备份**：Azure 备份为运行中的 Azure IaaS 虚拟机提供基于 VSS 的应用程序一致性备份，并且备份时无需关闭虚拟机。它还可以备份 Azure 中的 Linux 虚拟机，并保证文件系统一致性。
 
 
-+ Microsoft SQL Server
+## 应用程序和工作负荷
 
-+ Microsoft SharePoint
-
-+ Microsoft Exchange
+| 工作负载 | 源计算机 | Azure 备份解决方案 |
+| --- | --- |---|
+| 文件和文件夹 | Windows Server、Windows 客户端 | Azure 备份代理 |
+| 文件和文件夹 | Windows Server、Windows 客户端 | System Center DPM |
+| Hyper-V 虚拟机 (Windows) | Windows Server | System Center DPM |
+| Hyper-V 虚拟机 (Linux) | Windows Server | System Center DPM |
+| Microsoft SQL Server | Windows Server | System Center DPM |
+| Microsoft SharePoint | Windows Server | System Center DPM |
+| Microsoft Exchange | Windows Server | System Center DPM |
+| Azure IaaS VMs (Windows)| - | Azure 备份 | | Azure IaaS VMs (Linux) | - | Azure 备份 |
 
 ## 后续步骤
 - [尝试 Azure 备份](/documentation/articles/backup-try-azure-backup-in-10-mins)
 - [此处](/documentation/articles/backup-azure-backup-faq)列出了有关 Azure 备份服务的常见问题。
-- 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
+- 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 
 <!---HONumber=56-->

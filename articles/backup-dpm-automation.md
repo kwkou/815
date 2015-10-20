@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup" 
 	ms.date="08/18/2015"
-	wacn.date=""/>
+	wacn.date="09/15/2015"/>
 
 
 # 使用 Azure PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份

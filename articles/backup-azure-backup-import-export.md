@@ -94,7 +94,7 @@ Azure 备份与 Azure 导入/导出服务深度集成，使你可以快速传输
   >[AZURE.NOTE]捕获整个工作流的信息的 WAImportExport 文件夹中创建日志文件。在 Azure 门户中创建导入作业时，将需要此文件。
 
   ![PowerShell 输出][4]
-
+>[AZURE.NOTE]目前“导入/导出”功能在Azure门户中不可用。
 ### 在 Azure 门户中创建导入作业
 1. 导航到[管理门户](https://manage.windowsazure.cn/)中的存储帐户，然后依次单击任务窗格上的“导入/导出”和“创建导入作业”。<br/>
 ![门户][5]

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 DPM 在 Azure 上保护 SharePoint 场 | Microsoft Azure"
+	pageTitle="使用 DPM 在 Azure 上保护 SharePoint 场 | Windows Azure"
 	description="本文概述如何使用 DPM 在 Azure 上保护 SharePoint 场"
 	services="backup"
 	documentationCenter=""

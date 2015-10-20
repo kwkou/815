@@ -110,4 +110,4 @@
   [受保护的项]: ./media/backup-configure-vault/RS_protecteditems.png
   [删除的服务器]: ./media/backup-configure-vault/RS_deletedserver.png
   [Azure 备份概述]: https://technet.microsoft.com/zh-CN/library/hh831419.aspx
-  [Azure 备份论坛]: http://social.msdn.microsoft.com/Forums/zh-CN/windowsazureonlinebackup/threads
+  [Azure 备份论坛]: https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup

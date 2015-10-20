@@ -3,12 +3,12 @@
    description="了解如何从 Windows Server 或 Windows 客户端备份和还原。本文还介绍了备选的服务器恢复方法"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
-   manager="shreeshd"
+   authors="aashishr" 
+   manager="jwhit" 
    editor=""/>
 
 <tags
-  	ms.service="backup"
+	ms.service="backup"
 	ms.date="08/18/2015"
 	wacn.date="09/15/2015"/>
 
