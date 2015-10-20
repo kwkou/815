@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure DPM 备份简介 | Microsoft Azure"
+	pageTitle="Azure DPM 备份简介 | Windows Azure"
 	description="使用 Azure 备份服务备份 DPM 服务器的简介"
 	services="backup"
 	documentationCenter=""
@@ -8,7 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="backup" ms.date="07/16/2015" wacn.date="08/29/2015"/>
+	ms.service="backup" 
+	ms.date="07/16/2015" 
+	wacn.date="08/29/2015"/>
 
 # Azure DPM 备份简介
 

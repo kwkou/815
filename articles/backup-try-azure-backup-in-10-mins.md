@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 备份 10 分钟入门"
+   pageTitle="Azure 备份 10 分钟入门 | Windows Azure"
    description="Azure 备份 10 分钟入门"
    services="backup"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
    ms.service="backup" 
-   ms.date="08/20/2015"
+   ms.date="09/03/2015"
    wacn.date="09/15/2015"/>
 
 # Azure 备份 10 分钟入门
