@@ -11,6 +11,10 @@
     <td width="96" valign="top"><p align="center"><strong>性能指标 </strong></p></td>
     <td width="306" valign="top"><p align="center"><strong>描述 </strong></p></td>
   </tr>
+    <tr>
+    <td width="96" valign="top"><p align="center">CPU</p></td>
+    <td width="306" valign="top"><p>CPU使用量的峰值 </p></td>
+  </tr>
   <tr>
     <td width="96" valign="top"><p align="center">Query Per Second</p></td>
     <td width="306" valign="top"><p>每秒查询数量的平均值 </p></td>
