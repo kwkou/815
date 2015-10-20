@@ -1,6 +1,6 @@
-﻿<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (Node.js) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Node.js" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例用 Node.js 编写。" metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Queues" authors="larryfr" solutions="" manager="" editor="" />
-<tags  ms.service="service-bus"
-
+<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (Node.js) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Node.js" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例用 Node.js 编写。" metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Queues" authors="larryfr" solutions="" manager="" editor="" />
+<tags
+	ms.service="service-bus"
 	ms.date="07/06/2015" 
 	wacn.date="10/03/2015"/>
 

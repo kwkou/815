@@ -7,8 +7,8 @@
 	manager="timlt"
 	editor=""/>
 
-<tags ms.service="service-bus"
-
+<tags
+	ms.service="service-bus"
 	ms.date="06/02/2015"
 	wacn.date="10/03/2015"/>
 
@@ -402,7 +402,7 @@
 
 ## 准备好将应用程序部署到 Azure
 
-你可以将应用程序部署到 Azure 云服务或 Azure 网站。若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。若要了解如何将应用程序部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](http://azure.microsoft.com/develop/net/tutorials/get-started/)。本部分包含有关如何将应用程序部署到 Azure 云服务的详细步骤。
+你可以将应用程序部署到 Azure 云服务或 Azure 网站。若要详细了解网站和云服务之间的差异，请参阅 [Azure 执行模型][executionmodels]。若要了解如何将应用程序部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/develop/net/)。本部分包含有关如何将应用程序部署到 Azure 云服务的详细步骤。
 
 若要将应用程序部署到云服务，需要在解决方案中添加一个云服务项目部署项目。该部署项目包含在云中正常运行应用程序所需的配置信息。
 
@@ -561,7 +561,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
   [0]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/hybrid.png
   [1]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/App2.png
-  [获取工具和 SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
+  [获取工具和 SDK]: /develop/net/
   [NuGet]: http://nuget.org
   [2]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-3.png
   [3]: ./media/service-bus-dotnet-hybrid-app-using-service-bus-relay/getting-started-4-2-WebPI.png
@@ -612,8 +612,8 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
   [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx
   [sbwacom]: /documentation/services/service-bus/
-  [sbwacomqhowto]: /develop/net/how-to-guides/service-bus-queues/
-  [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
+  [sbwacomqhowto]: /develop/net/
+  [executionmodels]: /develop/net/
  
 
 <!---HONumber=71-->

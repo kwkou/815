@@ -4,7 +4,6 @@
 
 <tags 
 	ms.service="service-bus" 
-
 	ms.date="07/06/2015" 
 	wacn.date="10/03/2015"/>
 # 如何使用服务总线主题和订阅
@@ -316,7 +315,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 [Namespace List screenshot]: ../../../DevCenter/dotNet/Media/sb-queues-05.png
 [Properties Pane screenshot]: ../../../DevCenter/dotNet/Media/sb-queues-06.png
 [Default Key screenshot]: ../../../DevCenter/dotNet/Media/sb-queues-07.png
-[队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh367516.aspx
+[队列、主题和订阅]: https://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx
 [可用命名空间屏幕截图]: ../../../DevCenter/Java/Media/SvcBusQueues_04_SvcBusNode_AvailNamespaces.jpg
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 

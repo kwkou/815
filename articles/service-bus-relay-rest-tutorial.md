@@ -6,9 +6,10 @@
    authors="sethmanheim"
    manager="timlt"
    editor="" />
-<tags  ms.service="service-bus"
-
-   ms.date="07/07/2015" wacn.date="10/03/2015" />
+<tags 
+   ms.service="service-bus"
+   ms.date="07/07/2015" 
+   wacn.date="10/03/2015" />
 
 # 服务总线 REST 教程
 

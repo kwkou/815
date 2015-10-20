@@ -1,6 +1,6 @@
 <properties linkid="dev-java-how-to-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用 Service Bus 主题 (Java) - Azure" metaKeywords="Get started Azure Service Bus topics, Get Started Service Bus topics, Azure publish subscribe messaging, Azure messaging topics and subscriptions, Service Bus topic Java" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Java 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Java" title="How to Use Service Bus Topics/Subscriptions" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" scriptId="" videoId="" />
-<tags  ms.service="service-bus"
-
+<tags
+	ms.service="service-bus"
 	ms.date="06/19/2015"
 	wacn.date="10/03/2015"/>
 

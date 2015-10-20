@@ -7,9 +7,10 @@
    manager="timlt"
    editor=""/>
 
-<tags ms.service="service-bus"
-
-   ms.date="07/24/2015" wacn.date="10/03/2015"/>
+<tags
+	ms.service="service-bus"
+	ms.date="07/24/2015"
+	wacn.date="10/03/2015"/>
 
 # 共享访问签名（可能为英文页面）
 

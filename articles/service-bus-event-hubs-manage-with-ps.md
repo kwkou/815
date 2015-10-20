@@ -7,9 +7,10 @@
    manager="timlt"
    editor=""/>
 
-<tags ms.service="service-bus"
-
-   ms.date="08/14/2015" wacn.date="10/03/2015"/>
+<tags
+	ms.service="service-bus"
+	ms.date="08/14/2015" 
+	wacn.date="10/03/2015"/>
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 

@@ -1,6 +1,7 @@
 <properties linkid="dev-net-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (.NET) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues C#, Azure queues .NET" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 .NET API 通过 C# 编写的。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Queues" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
-<tags  ms.service="service-bus"
 
+<tags
+	ms.service="service-bus"
     ms.date="07/02/2015"
     wacn.date="10/03/2015"/>
 
