@@ -1,5 +1,5 @@
-﻿
-## <a name="update-app"></a>更新应用以调用自定义 API
+
+
 
 1. 在 Visual Studio 中，打开快速启动项目中的 MainPage.xaml 文件，找到名为  `ButtonRefresh` 的**按钮**元素，并将其替换为以下 XAML 代码： 
 

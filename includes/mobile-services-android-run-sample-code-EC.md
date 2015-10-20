@@ -1,6 +1,6 @@
 1. 在 Package Explorer 中，依次展开"GetStartedWithData"、"src"和".com.example.GetStartedWithData"，然后检查 ToDoActivity.java 文件。
 
-   ![](./media/download-android-sample-code/mobile-eclipse-project.png)
+    ![](./media/download-android-sample-code/mobile-eclipse-project.png)
 
    	注意，有一些  `//TODO` 注释指定了将此应用用于您的移动服务时必须执行的步骤。
 

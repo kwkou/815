@@ -18,6 +18,7 @@
 
 ## 摘要
 
+<!--
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
@@ -29,7 +30,7 @@
 <div class="dev-onpage-video-wrapper">
 <a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-data-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-With-Data-Connecting-your-app-to-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">15:32</span></div>
 </div>
-
+-->
 
 <p>本教程将帮助你详细了解 Azure 移动服务如何从 Android 应用程序存储和检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门教程中代你完成。如果这是你第一次体验移动服务，请考虑首先完成<a href="/zh-CN/develop/mobile/tutorials/get-started-android">移动服务入门</a>教程。</p>
 

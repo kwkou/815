@@ -33,7 +33,7 @@
 
 1. 在 SQL Server Management Studio 中，连接至刚才安装的 SQL Server。（如果“连接到服务器”对话框没有自动显示，请导航至左侧窗格中的“对象资源管理器”，单击“连接”，然后单击“数据库引擎”。） 	
 
-	![连接到服务器](./media/hybrid-connections-create-on-premises-database/A04SSMSConnectToServer.png)
+    ![连接到服务器](./media/hybrid-connections-create-on-premises-database/A04SSMSConnectToServer.png)
 	
 	对于“服务器类型”，请选择“数据库引擎”。对于“服务器名称”，可使用 **localhost** 或正装有 SQL Server 的计算机的名称。选择“SQL Server 身份验证”，然后提供前面创建的 sa 登录名的密码。
 	

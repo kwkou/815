@@ -4,6 +4,7 @@
 
     ![](./media/mobile-services-download-service-locally/download-service-project.png)
 
+
 3. 在“下载你的服务并将其发布到云”下，单击“下载”。
 
 	这样可以下载实现你的移动服务的 Visual Studio 项目。将压缩的项目文件保存到本地计算机，并记下保存位置。

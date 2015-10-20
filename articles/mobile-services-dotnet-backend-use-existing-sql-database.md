@@ -581,13 +581,14 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 3. 现在，你可以运行服务。按 **F5**，然后使用内置于帮助页中的测试客户端来修改数据。
 
-请注意，这两个控制器实现独占使用 **MobileCustomer** 和 **MobileOrder**，且不区分基础模型。这些 DTO 已序列化为 JSON，并可用来与所有平台上的移动服务客户端 SDK 交换数据。例如，如果生成 Windows 应用商店应用程序，则相应的客户端类型将如下所示。该类型将与其他客户端平台上的类型相似。
+    请注意，这两个控制器实现独占使用 **MobileCustomer** 和 **MobileOrder**，且不区分基础模型。这些 DTO 已序列化为 JSON，并可用来与所有平台上的移动服务客户端 SDK 交换数据。例如，如果生成 Windows 应用商店应用程序，则相应的客户端类型将如下所示。该类型将与其他客户端平台上的类型相似。
 
-    using Microsoft.WindowsAzure.MobileServices;
-    using System;
 
-    namespace ShoppingClient
-    {
+		using Microsoft.WindowsAzure.MobileServices;
+		using System;
+
+		namespace ShoppingClient
+		{
         public class MobileCustomer
         {
             public string Id { get; set; }
@@ -607,7 +608,7 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
         }
 
-    }
+	    }
 
 接下来，你可以生成客户端应用程序以访问服务。有关详细信息，请参阅[将移动服务添加到现有应用程序](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service)。
 

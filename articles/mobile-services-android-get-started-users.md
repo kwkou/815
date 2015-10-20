@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="身份验证入门 (Android) | 移动开发人员中心" 
 	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 Android 应用程序的用户进行身份验证。" 
 	services="mobile-services" 
@@ -19,6 +19,7 @@
 
 ## 摘要
 
+<!--
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
@@ -30,6 +31,8 @@
 
 <div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="label">观看教程</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-authentication-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">播放视频</span></a><span class="time">10:42</span></div>
 </div>
+-->
+
 
 本教程将指导你完成在应用程序中启用身份验证的基本步骤。
 
@@ -46,9 +49,9 @@
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
-1. 在 Android Studio 中，打开你在完成[移动服务入门]教程后创建的项目。 
+3. 在 Android Studio 中，打开你在完成[移动服务入门]教程后创建的项目。 
 
-2. 然后，从“运行”菜单中单击“运行应用程序”；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。
+4. 然后，从“运行”菜单中单击“运行应用程序”；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。
 
 	 发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 _TodoItem_ 表现在要求身份验证。
 

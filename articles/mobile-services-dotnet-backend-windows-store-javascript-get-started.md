@@ -1,8 +1,9 @@
-﻿<properties linkid="develop-mobile-tutorials-get-started" urlDisplayName="Get Started" pageTitle="Get Started with Mobile Services for Windows Store apps | Mobile Dev Center" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Windows Store development in C#, VB, or JavaScript. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service=""
+<properties linkid="develop-mobile-tutorials-get-started" urlDisplayName="Get Started" pageTitle="Get Started with Mobile Services for Windows Store apps | Mobile Dev Center" metaKeywords="" description="Follow this tutorial to get started using Azure Mobile Services for Windows Store development in C#, VB, or JavaScript. " metaCanonical="" services="" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="" editor="" />
+<tags
+	ms.service=""
     ms.date="11/21/2014"
     wacn.date="04/11/2015"
-    />
+/>
 
 <a name="getting-started"> </a>
 # 移动服务入门
@@ -13,7 +14,6 @@
 > - [Windows Phone](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started)
 > - [iOS](/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started)
 > - [Android](/zh-cn/documentation/articles/mobile-services-dotnet-backend-android-get-started)
-> - [HTML](/zh-cn/documentation/articles/get-started-html)
 > - [Xamarin.iOS](/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started)
 > - [Xamarin.Android](/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started)
 > - [Sencha](/zh-cn/documentation/articles/partner-sencha-mobile-services-get-started/)
@@ -28,16 +28,16 @@
 
 以下是完成的应用程序的屏幕快照：
 
-![][]
+![][0]
 
 只有在完成本教程后，才可以学习有关 Windows 应用商店应用程序的所有其他移动服务教程。
 
-> [WACOM.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][]。
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][]。
 > 本教程需要安装 [Visual Studio Professional 2013][]。可以使用免费试用版。
 
 ## 创建新的移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-create-new-service][]]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service][]]
 
 ## 创建新的 Windows 应用商店应用程序
 
@@ -69,13 +69,13 @@
 
 ## 针对本地移动服务测试应用程序
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-test-local-service-dotnet][]]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-test-local-service-dotnet][]]
 
-> [WACOM.NOTE] 你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 default.js 文件中。
+> [AZURE.NOTE] 你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 default.js 文件中。
 
 ## 发布移动服务
 
-[WACOM.INCLUDE [mobile-services-dotnet-backend-publish-service][]]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-publish-service][]]
 
 <ol start="4">
 <li><p>在 Windows 应用商店应用程序项目中，打开 App.xaml.cs 文件，找到创建 <a href="http://msdn.microsoft.com/zh-cn/library/Windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx" target="_blank">MobileServiceClient</a> 实例的代码，注释掉使用 *localhost* 创建此客户端的代码，然后取消注释使用如下所示远程移动服务 URL 创建客户端的代码：</p>

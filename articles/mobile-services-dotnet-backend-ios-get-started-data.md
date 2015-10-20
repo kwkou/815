@@ -83,7 +83,7 @@
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 [GitHub repo]: http://go.microsoft.com/fwlink/p/?LinkId=268784
 
-[快速入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started.md
+[快速入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 [GetStartedWithData iOS 应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 
 <!---HONumber=71-->

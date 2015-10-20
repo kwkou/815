@@ -2,19 +2,19 @@
 
 1. 在 Visual Studio 2013 中，打开"解决方案资源管理器"、右键单击 Windows 应用商店应用项目、单击"添加"，然后单击"推送通知..."。 
 
-	![Add Push Notification wizard in Visual Studio 2013](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png)
+	![Add Push Notification wizard in Visual Studio 2013](./media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013.png)
 
 	这样可以启动"添加推送通知"向导。
 
 2. 单击"下一步"，登录您的 Windows 应用商店帐户，然后在"保留新名称"中提供一个名称，再单击"保留"。
 
-	![Select an app name in the Add Push Notification wizard](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png) 
+	![Select an app name in the Add Push Notification wizard](./media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-2.png) 
 
 	这样可以创建新的应用注册。
 
 3. 在"应用名称"列表中单击新注册，然后单击"下一步"。
 
-	![mobile-add-push-notifications-vs2013-3](../includes/media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-3.png)
+	![mobile-add-push-notifications-vs2013-3](./media/mobile-services-create-new-push-vs2013/mobile-add-push-notifications-vs2013-3.png)
 
 4. 在"选择服务"页上，依次单击您的移动服务名称、"下一步"和"完成"。 
 

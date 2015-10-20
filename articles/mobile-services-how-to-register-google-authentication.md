@@ -18,7 +18,7 @@
 
 本主题说明如何注册你的应用程序，以便能够使用 Google 在 Azure 移动服务中进行身份验证。
 
->[AZURE.NOTE]本教程与 [Azure 移动服务](/home/features/identity/)有关，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持[身份验证入门](mobile-services-ios-get-started-users.md)教程，该教程演示如何将用户登录到你的应用程序。<br/>如果这是你第一次体验移动服务，请先完成[移动服务入门](/documentation/articles/mobile-services-ios-get-started)教程。
+>[AZURE.NOTE]本教程与 [Azure 移动服务](/home/features/identity/)有关，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持[身份验证入门](/documentation/articles/mobile-services-ios-get-started-users)教程，该教程演示如何将用户登录到你的应用程序。<br/>如果这是你第一次体验移动服务，请先完成[移动服务入门](/documentation/articles/mobile-services-ios-get-started)教程。
 
 若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Google 帐户。若要新建一个 Google 帐户，请转到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>。
 

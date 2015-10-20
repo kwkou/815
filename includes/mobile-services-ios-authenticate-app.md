@@ -19,9 +19,7 @@
             }];
         }
 
-    <div class="dev-callout"><b>注意</b>
-	<p>如果使用的标识提供程序不是 Facebook，请将传递给上述 <strong>loginWithProvider</strong> 的值更改为下列其中一项：<em>microsoftaccount</em>、<em>facebook</em>、<em>twitter</em>、<em>google</em> 或 <em>windowsazureactivedirectory</em>。</p>
-    </div>
+    >[AZURE.NOTE]如果使用的标识提供程序不是 Facebook，请将传递给上述 <strong>loginWithProvider</strong> 的值更改为下列其中一项：<em>microsoftaccount</em>、<em>facebook</em>、<em>twitter</em>、<em>google</em> 或 <em>windowsazureactivedirectory</em>。
 		
 3. 按"运行"按钮以生成项目，在 iPhone 模拟器中启动应用，然后使用您选择的标识提供程序登录。
 

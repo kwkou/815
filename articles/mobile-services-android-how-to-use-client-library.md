@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="使用移动服务 Android 客户端库" 
 	description="了解如何使用适用于 Azure 移动服务的 Android 客户端。" 
 	services="mobile-services" 
@@ -21,7 +21,7 @@
 
 如果你移动服务的新手，应该先完成[移动服务入门]教程。成功完成该教程可确保你会安装 Android Studio；该软件可帮助你配置帐户并创建第一个移动服务，安装支持 Android 2.2 或更高版本的移动服务 SDK，但我们建议你针对 Android 4.2 或更高版本进行生成。
 
-可以在[此处](http://go.microsoft.com/fwlink/p/?LinkId=298735)找到有关 Android 客户端库的 Javadocs API 参考。
+<!-- 可以在[此处](http://go.microsoft.com/fwlink/p/?LinkId=298735)找到有关 Android 客户端库的 Javadocs API 参考。-->
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 

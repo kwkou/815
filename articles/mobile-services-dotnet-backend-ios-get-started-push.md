@@ -29,16 +29,16 @@
 
 * 打开 Visual Studio 项目，然后选择“控制器”文件夹 >“TodoItemController.cs”> 方法 `PostTodoItem`。将该方法替换为以下内容。插入待办事项时，此代码将发送包含项文本的推送通知。如果发生了错误，该代码将添加一个错误日志条目，该条目可通过门户中的“日志”部分查看。
 
-
 ```
-        public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
+		
+		public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
             TodoItem current = await InsertAsync(item);
 
             ApplePushMessage message = new ApplePushMessage(item.Text, System.TimeSpan.FromHours(1));
 
             try
-            {
+            {  
                 var result = await Services.Push.SendAsync(message);
                 Services.Log.Info(result.State.ToString());
             }

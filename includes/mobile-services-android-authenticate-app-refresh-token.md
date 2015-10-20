@@ -1,6 +1,10 @@
-在简单的情况下，我们的令牌缓存应该有效，但是，在令牌到期或撤销时，会发生什么情况？该应用未运行时，该令牌可能会到期。这就意味着令牌缓存无效。在应用直接进行的调用或移动服务库进行的调用期间，该应用实际运行时，令牌也可能到期。结果将是 HTTP 状态码 401"未授权"。 
+﻿在简单的情况下，我们的令牌缓存应该有效，但是，在令牌到期或撤销时，会发生什么情况？该应用未运行时，该令牌可能会到期。这就意味着令牌缓存无效。在应用直接进行的调用或移动服务库进行的调用期间，该应用实际运行时，令牌也可能到期。结果将是 HTTP 状态码 401"未授权"。 
 
+<!--
 我们需要能够检测到期的令牌，并刷新它。为此，我们从[ Android 客户端库](http://dl.windowsazure.cn/androiddocs/)使用 [ServiceFilter](http://dl.windowsazure.cn/androiddocs/com/microsoft/windowsazure/mobileservices/ServiceFilter.html)。
+-->
+
+我们需要能够检测到期的令牌，并刷新它。为此，我们从Android 客户端库使用ServiceFilter。
 
 在本节中，您将定义 ServiceFilter，它将检测 HTTP 状态码 401 响应，并触发令牌和令牌缓存的刷新。此外，在身份验证期间，此 ServiceFilter 将阻止其他出站请求，以便这些请求可以使用刷新的令牌。
 

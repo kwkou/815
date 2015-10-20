@@ -54,7 +54,7 @@
 
 2. 如果你已保留了辅助移动服务，则可以跳过此步骤。
 
-   如果你尚未保留辅助移动服务，现在请在另一个 Azure 区域中创建一个辅助移动服务。将它的缩放模式设置为等同于主服务的模式。
+    如果你尚未保留辅助移动服务，现在请在另一个 Azure 区域中创建一个辅助移动服务。将它的缩放模式设置为等同于主服务的模式。
 
 3. 根据[使用 Azure CLI 自动操作移动服务]中所述，将 Azure 命令行界面 (Azure CLI) 配置为可处理你的订阅。
 
@@ -64,7 +64,7 @@
 
 	> [AZURE.IMPORTANT]当你执行此步骤中的命令时，将会删除辅助服务，以便能够使用它的容量来恢复主服务。我们建议你在运行该命令之前备份脚本和设置（如果你想要保留的话）。
 
-   准备就绪后，执行以下命令：
+    准备就绪后，执行以下命令：
 
 		azure mobile migrate PrimaryService SecondaryService
 		info:    Executing command mobile migrate
@@ -75,7 +75,7 @@
 		info:    Migration complete. It may take 30 minutes for DNS to resolve to the migrated site.
 		info:    mobile migrate command OK
 
-	> [AZURE.NOTE] It may take a few minutes after the command completes until you can see the changes in the portal.
+    > [AZURE.NOTE] It may take a few minutes after the command completes until you can see the changes in the portal.
 
 5. 验证是否已正确恢复所有脚本，方法是将其与源代码管理中的原件进行比较。大多数情况下，脚本会自动恢复且不会丢失数据，但如果你发现存在差异，可以手动恢复该脚本。
 
