@@ -1,6 +1,7 @@
 <properties linkid="dev-net-how-to-service-bus-relay" urlDisplayName="Service Bus Relay" pageTitle="如何使用服务总线中继 (.NET) - Azure" metaKeywords="get started azure Service Bus Relay C# " description="了解如何使用 Azure 服务总线中继服务连接两个托管于不同位置的应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
-<tags  ms.service="service-bus"
 
+<tags
+	ms.service="service-bus"
 	ms.date="07/02/2015" 
 	wacn.date="10/03/2015"/>
 
@@ -54,10 +55,14 @@
 
 若要对新的命名空间执行管理操作（如创建中继连接），必须为该命名空间配置共享访问签名 (SAS) 授权规则。有关 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证][]。
 
-1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
+1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
+	
+	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
 
-2.  在显示的列表中双击刚刚创建的命名空间的名称：![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
+2.  在显示的列表中双击刚刚创建的命名空间的名称：
+
+	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
 
 
 3.  单击页面顶部的"配置"选项卡。   

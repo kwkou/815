@@ -7,8 +7,8 @@
 	manager="timlt"
 	editor=""/>
 
-<tags ms.service="service-bus"
-
+<tags
+	ms.service="service-bus"
 	ms.date="07/02/2015"
 	wacn.date="10/03/2015"/>
 
@@ -486,15 +486,15 @@
 2. 创建辅助角色时，请在新的独立解决方案中创建它，采用的说明与创建 Web 角色所用的原始说明类似。不过现在，你只是在云服务项目中创建辅助角色。然后，请遵循创建辅助角色所用的相同说明。
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
-
-若要了解如何将前端部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](http://azure.microsoft.com/develop/net/tutorials/get-started/)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+网
+若要了解如何将前端部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/develop/net/)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
   [1]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-100.png
-  [sbqueuecomparison]: service-bus-azure-and-service-bus-queues-compared-contrasted.md
+  [sbqueuecomparison]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted
   [2]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-101.png
-  [获取工具和 SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
+  [获取工具和 SDK]: /develop/net/
   [3]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-3.png
 
 

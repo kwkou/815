@@ -1,4 +1,4 @@
-下表列出了特定于服务总线消息的配额信息。此表包含事件中心限制，但有关事件中心的更多具体信息，请参阅[事件中心定价](http://azure.microsoft.com/pricing/details/event-hubs/)。有关服务总线的定价及其他配额的信息，请参阅[服务总线定价](http://azure.microsoft.com/pricing/details/service-bus/)概述。
+下表列出了特定于服务总线消息的配额信息。此表包含事件中心限制，但有关事件中心的更多具体信息，请参阅[事件中心定价](/pricing/details/event-hubs/)。有关服务总线的定价及其他配额的信息，请参阅[服务总线定价](/pricing/details/service-bus/)概述。
 
 |配额名称|范围|类型|超出时的行为|值|
 |---|---|---|---|---|

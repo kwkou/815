@@ -1,4 +1,4 @@
-﻿<properties
+<properties
     pageTitle="如何使用服务总线主题 (.NET) | Windows Azure"
     description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 .NET 应用程序编写的。"
     services="service-bus"
@@ -7,8 +7,8 @@
     manager="timlt"
     editor=""/>
 
-<tags ms.service="service-bus"
-
+<tags
+	ms.service="service-bus"
     ms.date="07/02/2015"
     wacn.date="10/03/2015"/>
 
