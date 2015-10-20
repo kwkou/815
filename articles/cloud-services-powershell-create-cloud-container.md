@@ -21,7 +21,7 @@
     	New-AzureService [-ServiceName] <String> [-Location] <String> [[-Label] <String>] [[-Description] <String>] [[-ReverseDnsFqdn] <String>] [<CommonParameters>]
 
 
-   调用该 cmdlet 的示例：
+	调用该 cmdlet 的示例：
 
 		New-AzureService -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
 
@@ -35,7 +35,7 @@
 
    - 若要管理云服务部署，请参阅 [Get-AzureService](https://msdn.microsoft.com/zh-cn/library/azure/dn495131.aspx)、[Remove-AzureService](https://msdn.microsoft.com/zh-cn/library/azure/dn495120.aspx) 和 [Set-AzureService](https://msdn.microsoft.com/zh-cn/library/azure/dn495242.aspx) 命令。另请参阅[如何配置云服务](/documentation/articles/cloud-services-how-to-configure)。
 
-    - 若要将云服务项目发布到 Azure，请参阅[在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery.md)中的 **PublishCloudService.ps1** 代码示例
+    - 若要将云服务项目发布到 Azure，请参阅[在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery)中的 **PublishCloudService.ps1** 代码示例
  
 
 <!---HONumber=71-->

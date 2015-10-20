@@ -24,7 +24,7 @@
 
 你是否已经了解什么是 CNAME 和 A 记录？ [跳过解释](#add-a-cname-record-for-your-custom-domain)。
 
-> [AZURE.NOTE]本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/app-service-web/web-sites-custom-domain-name)。有关存储帐户，请参阅 [/documentation/articles/Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name)。
+> [AZURE.NOTE]本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅 [/documentation/articles/Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name)。
 
 <p/>
 

@@ -258,23 +258,31 @@
 
 1.  在“解决方案资源管理器”中，右键单击 App.config 文件，然后单击“编辑配置文件”。
 
-2.  在“块”菜单中，单击“添加自动缩放设置”：![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
+2.  在“块”菜单中，单击“添加自动缩放设置”：
+	
+	![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
   
 3.  展开“自动缩放设置”，然后单击“数据点存储存储帐户”旁的省略号 (...)，添加应用程序块将在其中存储所收集的数据点的 Azure 存储帐户的“帐户名称”和“帐户密钥”，（如果你不确定在何处查找这些值，请参阅[如何：定义服务模型][]），然后单击“确定”：
 
 	![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling11.png)
 
-4.  展开“自动缩放设置”部分以显示“规则存储”和“服务信息存储”部分。默认情况下，它们配置为使用 Azure Blob 存储：![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
+4.  展开“自动缩放设置”部分以显示“规则存储”和“服务信息存储”部分。默认情况下，它们配置为使用 Azure Blob 存储：
+
+	![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
 
 
 5.  单击“规则存储”旁的加号 (+)，指向“设置规则存储”，然后单击“使用本地文件规则存储”，然后单击“是”。
 
-6.  在“文件名”框中，键入 **rules.xml**。这是包含你的自动缩放规则的文件的名称：![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
+6.  在“文件名”框中，键入 **rules.xml**。这是包含你的自动缩放规则的文件的名称：
+
+	![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
 
 
 7.  单击“服务信息存储”旁的加号 (+)，指向“设置服务信息存储”，然后单击“使用本地文件服务信息存储”，然后单击“是”。
 
-8.  在“文件名”框中，键入 **services.xml**。这是包含你的自动缩放规则的文件的名称：![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
+8.  在“文件名”框中，键入 **services.xml**。这是包含你的自动缩放规则的文件的名称：
+
+	![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
 
 
 9.  在“企业库配置”窗口中的“文件”菜单上，单击“保存”以保存你的配置更改。然后在“企业库配置”窗口中的“文件”菜单上，单击“退出”。

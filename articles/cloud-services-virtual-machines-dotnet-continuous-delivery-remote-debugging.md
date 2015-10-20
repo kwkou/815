@@ -44,48 +44,48 @@
 5. 运行以下脚本以启用 RemoteDebug 扩展。将路径和个人数据替换为你自己的数据，例如，你的订阅名称、服务名称和指纹。（注意：此脚本是针对 Visual Studio 2015 RC 配置的。如果你使用的是 Visual Studio 2013，请为 ReferenceName 和 ExtensionName 使用“RemoteDebugVS2013”。）
 
 	<pre>
-Add-AzureAccount
-
-Select-AzureSubscription "My Microsoft Subscription"
-
-$vm = Get-AzureVM -ServiceName "mytestvm1" -Name "mytestvm1"
-
-$endpoints = @(
-,@{Name="RDConnVS2013"; PublicPort=30400; PrivatePort=30398}
-,@{Name="RDFwdrVS2013"; PublicPort=31400; PrivatePort=31398}
-)
-
-foreach($endpoint in $endpoints)
-{
-Add-AzureEndpoint -VM $vm -Name $endpoint.Name -Protocol tcp -PublicPort $endpoint.PublicPort -LocalPort $endpoint.PrivatePort
-}
-
-$referenceName = "Microsoft.VisualStudio.WindowsAzure.RemoteDebug.RemoteDebugVS2015"
-$publisher = "Microsoft.VisualStudio.WindowsAzure.RemoteDebug"
-$extensionName = "RemoteDebugVS2015"
-$version = "1.*"
-$publicConfiguration = "<PublicConfig><Connector.Enabled>true</Connector.Enabled><ClientThumbprint>56D7D1B25B472268E332F7FC0C87286458BFB6B2</ClientThumbprint><ServerThumbprint>E7DCB00CB916C468CC3228261D6E4EE45C8ED3C6</ServerThumbprint><ConnectorPort>30398</ConnectorPort><ForwarderPort>31398</ForwarderPort></PublicConfig>"
-
-$vm | Set-AzureVMExtension `
--ReferenceName $referenceName `
--Publisher $publisher `
--ExtensionName $extensionName `
--Version $version `
--PublicConfiguration $publicConfiguration
-
-foreach($extension in $vm.VM.ResourceExtensionReferences)
-{
-if(($extension.ReferenceName -eq $referenceName) `
--and ($extension.Publisher -eq $publisher) `
--and ($extension.Name -eq $extensionName) `
--and ($extension.Version -eq $version))
-{
-$extension.ResourceExtensionParameterValues[0].Key = 'config.txt'
-break
-}
-}
-
-$vm | Update-AzureVM
+	Add-AzureAccount
+	
+	Select-AzureSubscription "My Microsoft Subscription"
+	
+	$vm = Get-AzureVM -ServiceName "mytestvm1" -Name "mytestvm1"
+	
+	$endpoints = @(
+	,@{Name="RDConnVS2013"; PublicPort=30400; PrivatePort=30398}
+	,@{Name="RDFwdrVS2013"; PublicPort=31400; PrivatePort=31398}
+	)
+	
+	foreach($endpoint in $endpoints)
+	{
+	Add-AzureEndpoint -VM $vm -Name $endpoint.Name -Protocol tcp -PublicPort $endpoint.PublicPort -LocalPort $endpoint.PrivatePort
+	}
+	
+	$referenceName = "Microsoft.VisualStudio.WindowsAzure.RemoteDebug.RemoteDebugVS2015"
+	$publisher = "Microsoft.VisualStudio.WindowsAzure.RemoteDebug"
+	$extensionName = "RemoteDebugVS2015"
+	$version = "1.*"
+	$publicConfiguration = "<PublicConfig><Connector.Enabled>true</Connector.Enabled><ClientThumbprint>56D7D1B25B472268E332F7FC0C87286458BFB6B2</ClientThumbprint><ServerThumbprint>E7DCB00CB916C468CC3228261D6E4EE45C8ED3C6</ServerThumbprint><ConnectorPort>30398</ConnectorPort><ForwarderPort>31398</ForwarderPort></PublicConfig>"
+	
+	$vm | Set-AzureVMExtension `
+	-ReferenceName $referenceName `
+	-Publisher $publisher `
+	-ExtensionName $extensionName `
+	-Version $version `
+	-PublicConfiguration $publicConfiguration
+	
+	foreach($extension in $vm.VM.ResourceExtensionReferences)
+	{
+	if(($extension.ReferenceName -eq $referenceName) `
+	-and ($extension.Publisher -eq $publisher) `
+	-and ($extension.Name -eq $extensionName) `
+	-and ($extension.Version -eq $version))
+	{
+	$extension.ResourceExtensionParameterValues[0].Key = 'config.txt'
+	break
+	}
+	}
+	
+	$vm | Update-AzureVM
 </pre>
 
 6. 将证书导入到装有 Visual Studio 和 Azure SDK for .NET 的计算机。

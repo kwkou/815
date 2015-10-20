@@ -49,7 +49,7 @@
     
     ![云服务实例按钮](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)
 
->[AZURE.NOTE]不能使用 **Azure 门户**更改用于云服务的操作系统，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](cloud-services-how-to-configure.md#update-a-cloud-service-configuration-file)。
+>[AZURE.NOTE]不能使用 **Azure 门户**更改用于云服务的操作系统，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure/#update-a-cloud-service-configuration-file)。
 
 ## 更新云服务配置文件
 
@@ -81,7 +81,7 @@
 
 ## 配置对角色实例的远程访问
 
-不能使用 **Azure 门户**配置远程访问，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure.md#configure-remote-access-to-role-instances)。
+不能使用 **Azure 门户**配置远程访问，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure/#configure-remote-access-to-role-instances)。
 			
  
 
