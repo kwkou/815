@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="如何使用诊断 (.NET) | Windows Azure" 
 	description="了解如何在 Azure 中使用诊断数据进行调试、度量性能、进行监视以及流量分析等操作。" 
 	services="cloud-services" 
@@ -166,8 +166,8 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 4.	将 WadExample.xml 配置文件的内容替换为以下 XML 并保存该文件。此配置文件定义两个要收集的性能计数器：一个对应于 CPU 使用率，另一个对应于内存使用率。配置将定义对应于 SampleEventSourceWriter 类中方法的四个事件。
 
 ```
-		<?xml version="1.0" encoding="utf-8"?>
-		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+			<?xml version="1.0" encoding="utf-8"?>
+			<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
@@ -185,7 +185,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
       				</EtwProviders>
     			</DiagnosticMonitorConfiguration>
   			</WadCfg>
-		</PublicConfig>
+			</PublicConfig>
 ```
 
 ###步骤 5：在辅助角色上安装 Diagnostics###
@@ -203,7 +203,9 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 
 ### 步骤 6：查看遥测数据
-在 Visual Studio **服务器资源管理器**中，导航到 wadexample 存储帐户。在云服务大约运行 5 分钟后，你应该会看到表 **WADEnumsTable**、**WADHighFreqTable**、**WADMessageTable**、**WADPerformanceCountersTable** 和 **WADSetOtherTable**。双击其中一个表即可查看已收集的遥测数据。![CloudServices\_diag\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
+在 Visual Studio **服务器资源管理器**中，导航到 wadexample 存储帐户。在云服务大约运行 5 分钟后，你应该会看到表 **WADEnumsTable**、**WADHighFreqTable**、**WADMessageTable**、**WADPerformanceCountersTable** 和 **WADSetOtherTable**。双击其中一个表即可查看已收集的遥测数据。
+
+![CloudServices\_diag\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
 
 ## 如何在虚拟机中启用诊断
 
@@ -352,7 +354,9 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 
 ### 步骤 6：查看遥测数据
-在 Visual Studio **服务器资源管理器**中，导航到 wadexample 存储帐户。在 VM 大约运行 5 分钟后，你应该会看到表 **WADEnumsTable**、**WADHighFreqTable**、**WADMessageTable**、**WADPerformanceCountersTable** 和 **WADSetOtherTable**。双击其中一个表即可查看已收集的遥测数据。![CloudServices\_diag\_wadexamplevm\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleVMTables.png)
+在 Visual Studio **服务器资源管理器**中，导航到 wadexample 存储帐户。在 VM 大约运行 5 分钟后，你应该会看到表 **WADEnumsTable**、**WADHighFreqTable**、**WADMessageTable**、**WADPerformanceCountersTable** 和 **WADSetOtherTable**。双击其中一个表即可查看已收集的遥测数据。
+
+![CloudServices\_diag\_wadexamplevm\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleVMTables.png)
 
 ## 配置文件架构
 

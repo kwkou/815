@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="在 Azure 中使用 TFS 持续交付云服务"
 	description="了解如何设置 Azure 云应用程序的持续交付。MSBuild 命令行语句和 PowerShell 脚本的代码示例。"
 	services="cloud-services"
@@ -236,17 +236,17 @@
             <x:Property Name="ServiceName" Type="InArgument(x:String)" />
           </x:Members>
 
-  <this:Process.MSBuildArguments>
+	<this:Process.MSBuildArguments>
 
 7.  在“在代理上运行”结束时添加一个新的序列：
 
-    1.首先，通过添加 If 语句活动来检查有效的脚本文件。将条件设置为此值：
+    1. 首先，通过添加 If 语句活动来检查有效的脚本文件。将条件设置为此值：
 
-            Not String.IsNullOrEmpty(PublishScriptLocation)
+			Not String.IsNullOrEmpty(PublishScriptLocation)
 
-    2.  在 If 语句的 Then 事例中，添加一个新的 Sequence 活动。将显示名称设置为 'Start publish'
+    2. 在 If 语句的 Then 事例中，添加一个新的 Sequence 活动。将显示名称设置为 'Start publish'
 
-    3.在 Start publish 序列仍处于选定状态的情况下，在工作流设计器的变量选项卡中将以下一系列新变量作为单独的行项添加。所有变量应具有 Variable type =String 和 Scope=Start publish。这两个值将用于将参数从生成定义流入工作流中，然后用于调用发布脚本。
+    3. 在 Start publish 序列仍处于选定状态的情况下，在工作流设计器的变量选项卡中将以下一系列新变量作为单独的行项添加。所有变量应  	具有 Variable type =String 和 Scope=Start publish。这两个值将用于将参数从生成定义流入工作流中，然后用于调用发布脚本。
         - String 类型的 SubscriptionDataFilePath
         - String 类型的 PublishScriptFilePath
    ![][4]
@@ -274,11 +274,11 @@
 
 	11. 更正蓝色感叹号指示的任何错误。将鼠标悬停在感叹号上可以获取有关错误的提示。保存工作流以清除错误。
 
-    发布工作流活动的最终结果将与设计器中的以下内容类似：
+		发布工作流活动的最终结果将与设计器中的以下内容类似：
 
-    ![][5]
+		![][5]
 
-    发布工作流活动的最终结果将与 XAML 中的以下内容类似：
+		发布工作流活动的最终结果将与 XAML 中的以下内容类似：
 
 		<If Condition="[Not String.IsNullOrEmpty(PublishScriptLocation)]" sap2010:WorkflowViewState.IdRef="If_1">
 	        <If.Then>

@@ -386,9 +386,9 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 		role_size='Small',
 		vm_image_name = image_name)
 
-若要了解有关如何捕获 Linux 虚拟机的详细信息，请参阅[如何捕获 Linux 虚拟机](../virtual-machines-linux-capture-image.md)。
+若要了解有关如何捕获 Linux 虚拟机的详细信息，请参阅[如何捕获 Linux 虚拟机](/documentation/articles/virtual-machines-linux-capture-image)。
 
-若要了解有关如何捕获 Windows 虚拟机的详细信息，请参阅[如何捕获 Windows 虚拟机](../virtual-machines-capture-image-windows-server.md)。
+若要了解有关如何捕获 Windows 虚拟机的详细信息，请参阅[如何捕获 Windows 虚拟机](/documentation/articles/virtual-machines-capture-image-windows-server)。
 
 ## <a name="What's Next"></a>后续步骤
 

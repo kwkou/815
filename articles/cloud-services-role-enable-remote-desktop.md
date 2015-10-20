@@ -72,7 +72,7 @@ wacn.date="10/03/2015"/>
 </ServiceConfiguration>
 ```
 
-当你[打包](cloud-services-model-and-package.md#cspkg)并<!--[-->发布<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->应用程序时，必须确保已选中“为所有角色启用远程桌面”复选框。[此](https://msdn.microsoft.com/zh-cn/library/ff683672.aspx)文章提供了与使用 Visual Studio 和云服务相关的常见任务的列表。
+当你[打包](/documentation/articles/cloud-services-model-and-package/#cspkg)并<!--[-->发布<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->应用程序时，必须确保已选中“为所有角色启用远程桌面”复选框。[此](https://msdn.microsoft.com/zh-cn/library/ff683672.aspx)文章提供了与使用 Visual Studio 和云服务相关的常见任务的列表。
 
 ### 在正在运行的实例上设置连接
 在云服务的配置页上，可以启用或修改远程桌面连接设置。有关详细信息，请参阅[配置角色实例的远程访问](/documentation/articles/cloud-services-how-to-configure)。

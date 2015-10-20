@@ -397,10 +397,10 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 	删除服务可能需要花费几分钟时间。删除服务后，你将收到一条指示服务已被删除的消息。
 
-  [Node.js Web Application using Express]: /develop/nodejs/tutorials/web-app-with-express/
-  [使用 Express 生成 Node.js Web 应用程序]: /develop/nodejs/tutorials/web-app-with-express/
+  [Node.js Web Application using Express]: /develop/nodejs/
+  [使用 Express 生成 Node.js Web 应用程序]: /develop/nodejs/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx
-  [Node.js Web 应用程序]: /develop/nodejs/tutorials/getting-started/
+  [Node.js Web 应用程序]: /develop/nodejs/
  
 
 <!---HONumber=71-->

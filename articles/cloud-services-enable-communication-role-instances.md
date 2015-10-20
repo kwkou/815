@@ -74,11 +74,10 @@ wacn.date="10/03/2015"/>
 
 当你使用辅助角色和 web 角色时，在终结点方面需要注意一个细微的差别。Web 角色必须至少有一个使用 **HTTP** 协议的输入终结点。
 
-
 ```xml
 <Endpoints>
-  <InputEndpoint name="StandardWeb" protocol="http" port="80" localPort="80" />
-  <!-- more endpoints may be declared after the first InputEndPoint -->
+	<InputEndpoint name="StandardWeb" protocol="http" port="80" localPort="80" />
+	<!-- more endpoints may be declared after the first InputEndPoint -->
 </Endpoints>
 ```
 
@@ -198,8 +197,8 @@ namespace WorkerRole1
       // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
       return base.OnStart();
     }
-  }
-}
+	}
+	}
 ```
 
 ## 用于控制角色通信的网络流量规则

@@ -118,16 +118,18 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 	> [AZURE.IMPORTANT]确保使用唯一名称，否则发布过程会失败。部署完成后，浏览器将打开并导航到已部署的服务。
 	> 
 	> 如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。
-<!-- See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](/develop/nodejs/tutorials/getting-started/)-->
+	> 
 
-    ![显示托管在 Azure 上的服务的浏览器窗口][completed-app]
+
+	![显示托管在 Azure 上的服务的浏览器窗口][completed-app]
+
 
 	> [AZURE.NOTE]如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。
-<!-- See the **Deploying the Application to Azure** section of [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/)-->
 
-你的应用程序现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
 
-> [AZURE.NOTE]为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 [Azure SDK for Node.js GitHub 存储库的](https://github.com/WindowsAzure/azure-sdk-for-node)中的服务总线队列和主题使用示例。
+	你的应用程序现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
+
+	> [AZURE.NOTE]为简单起见，此示例仅限于连接到同一实例的用户之间的聊天。这意味着如果云服务创建两个辅助角色实例，用户将只能够与连接到同一辅助角色实例的其他用户聊天。要缩放应用程序以使用多个角色实例，你可以使用像 Service Bus 这样的技术在实例之间共享 Socket.IO 存储状态。有关示例，请参阅 [Azure SDK for Node.js GitHub 存储库的](https://github.com/WindowsAzure/azure-sdk-for-node)中的服务总线队列和主题使用示例。
 
 ##后续步骤
 
