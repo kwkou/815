@@ -12,6 +12,6 @@
 - [(Xamarin.Android | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-xamarin-android-get-started-users/)
 - [(Xamarin.Android | Javascript)](/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started-users/)
 - [(HTML | Javascript)](/zh-cn/documentation/articles/mobile-services-html-get-started-users/)
-- [(Appcelerator | Javascript)](/zh-cn/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users/)
+<!-- - [(Appcelerator | Javascript)](/zh-cn/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started-users/) -->
 
 <!---HONumber=71-->

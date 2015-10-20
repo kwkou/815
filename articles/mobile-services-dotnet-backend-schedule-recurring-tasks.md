@@ -33,9 +33,10 @@
 
 [AZURE.INCLUDE [mobile-services-register-twitter-access](../includes/mobile-services-register-twitter-access.md)]
 
-&nbsp;&nbsp;7.在 Visual Studio 的解决方案资源管理器中，打开移动服务项目的 web.config 文件，找到 `MS_TwitterConsumerKey` 和 `MS_TwitterConsumerSecret` 应用设置，然后将这些密钥的值替换为你在门户中设置的 Twitter 使用者密钥值和使用者机密值。
+&nbsp;&nbsp;7. 在 Visual Studio 的解决方案资源管理器中，打开移动服务项目的 web.config 文件，找到 `MS_TwitterConsumerKey` 和        
+`MS_TwitterConsumerSecret` 应用设置，然后将这些密钥的值替换为你在门户中设置的 Twitter 使用者密钥值和使用者机密值。
 
-&nbsp;&nbsp;8.在同一节中，添加以下新的应用程序设置，并将占位符替换为你在门户中设为应用程序设置的 Twitter 访问令牌值和访问令牌机密值：
+&nbsp;&nbsp;8. 在同一节中，添加以下新的应用程序设置，并将占位符替换为你在门户中设为应用程序设置的 Twitter 访问令牌值和访问令牌机密值：
 
 	<add key="TWITTER_ACCESS_TOKEN" value="**your_access_token**" />
 	<add key="TWITTER_ACCESS_TOKEN_SECRET" value="**your_access_token_secret**" />
@@ -90,7 +91,7 @@
 
 	服务使用首次访问 DbSet 时在数据库中创建的 Updates 表来存储推文数据。
 
-	>[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。不能为 Azure 中的 SQL 数据库使用默认的初始值设定项。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/documentation/articles/mobile-services-dotnet-backend-use-code-first-migrations)。
+	>[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。不能为 Azure 中的 SQL 数据库使用默认的初始值设定项。
 
 接下来，请创建计划的作业，用于访问 Twitter 并在新的 Updates 表中存储推文数据。
 

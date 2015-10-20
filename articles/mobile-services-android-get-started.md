@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
 	pageTitle="使用 Azure 移动服务开发 Android 应用程序入门" 
 	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发。" 
 	services="mobile-services" 
@@ -16,6 +16,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
+<!--
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
@@ -27,6 +28,8 @@
 </div>
 
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
+
+-->
 
 ## 先决条件
 

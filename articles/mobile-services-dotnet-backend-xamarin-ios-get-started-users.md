@@ -68,7 +68,7 @@
             }
         }
 
-   > [AZURE.NOTE]如果使用的标识提供程序不是 Facebook，请将传递给上述 **LoginAsync** 方法的值更改为下列其中一项：_MicrosoftAccount_、_Twitter_、_Google_ 或 _WindowsAzureActiveDirectory_。
+	> [AZURE.NOTE]如果使用的标识提供程序不是 Facebook，请将传递给上述 **LoginAsync** 方法的值更改为下列其中一项：_MicrosoftAccount_、_Twitter_、_Google_ 或 _WindowsAzureActiveDirectory_。
 
 3. 打开 **QSTodoListViewController.cs**。修改 **ViewDidLoad** 的方法定义以删除接近结尾处对 **RefreshAsync()** 的调用：
 

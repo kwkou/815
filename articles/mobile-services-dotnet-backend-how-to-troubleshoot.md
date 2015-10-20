@@ -27,7 +27,7 @@
 
 使用移动服务开发应用程序时，通常会将移动服务客户端 SDK 用于你所使用的平台（Windows 应用商店、iOS、Android 等）。但有时候，深入了解 HTTP 级别并观察网络上发生的原始调用可能会有所帮助。此方法在调试连接和序列化问题时特别有用。通过移动服务 .NET 后端，你可以将此方法与 Visual Studio 本地和远程调试搭配使用（下一部分将详细说明），以了解 HTTP 调用在调用服务代码之前所创建的路径。
 
-你可以使用任何 HTTP 调试器来发送和检查 HTTP 流量。[Fiddler](http://www.telerik.com/fiddler) 是开发人员针对此目的而经常使用的工具。为了让开发人员的工作更轻松，移动服务捆绑了基于 Web 的 HTTP 调试器（也称为测试客户端），以减少使用外部工具的需求。当你在本地托管移动服务时，可从类似于 [http://localhost:59233](http://localhost:59233) 的 URI 获取该移动服务；而托管在云中时，此 URI 的格式为 [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net)。无论在何处托管服务，以下步骤都会以相同方式运行：
+你可以使用任何 HTTP 调试器来发送和检查 HTTP 流量。[Fiddler](http://www.telerik.com/fiddler) 是开发人员针对此目的而经常使用的工具。为了让开发人员的工作更轻松，移动服务捆绑了基于 Web 的 HTTP 调试器（也称为测试客户端），以减少使用外部工具的需求。当你在本地托管移动服务时，可从类似于 http://localhost:59233 的 URI 获取该移动服务；而托管在云中时，此 URI 的格式为 [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net)。无论在何处托管服务，以下步骤都会以相同方式运行：
 
 1. 首先，在 **Visual Studio 2013 Update 2** 或更高版本中打开移动服务服务器项目。如果你尚无此项目，可以通过依次选择“文件”、“新建”、“项目”、“云”节点和“Microsoft Azure 移动服务”模板来创建一个项目。
 2. 按 **F5**，以生成并运行该项目。在起始页上，选择“试用”。 
@@ -64,7 +64,7 @@
 
     ![配置符号加载][SymbolLoading]
 
-3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 (SymbolSource)[http://symbolsource.org] 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
+3. 选择左边的“符号”节点，并使用 URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) 添加对 [SymbolSource](http://symbolsource.org) 服务器的引用。移动服务 .NET 后端的符号将以最新版本启用。
  
     ![配置符号服务器][SymbolServer]
 

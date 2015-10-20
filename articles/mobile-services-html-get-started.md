@@ -25,7 +25,7 @@
 
 ![][0]
 
-只有在完成本教程后，才可以学习有关 HTML 应用程序的所有其他移动服务教程。对于 PhoneGap/Cordova 应用，请参阅本教程的 [PhoneGap/Cordova 版本](mobile-services-javascript-backend-phonegap-get-started.md)。
+只有在完成本教程后，才可以学习有关 HTML 应用程序的所有其他移动服务教程。对于 PhoneGap/Cordova 应用，请参阅本教程的 [PhoneGap/Cordova 版本](/documentation/articles/mobile-services-javascript-backend-phonegap-get-started)。
 
 ##先决条件
 
@@ -98,7 +98,7 @@
 
    	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在应用的第二列中。
 
-   > [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 app.js 文件中。
+	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 app.js 文件中。
 
 4. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
 
@@ -111,11 +111,11 @@
 ##  <a name="next-steps"></a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* **[数据处理入门]**<br/>了解有关使用移动服务存储和查询数据的详细信息。
+* **数据处理入门**<br/>了解有关使用移动服务存储和查询数据的详细信息。
   
 * **[从 HTML 应用程序调用自定义 API]**<br/>将 HTML 应用程序连接到移动服务上托管的自定义 API。
 
-* **[身份验证入门]**<br/>了解如何使用标识提供者对应用程序的用户进行身份验证。
+* **身份验证入门**<br/>了解如何使用标识提供者对应用程序的用户进行身份验证。
 
 * **[移动服务 HTML/JavaScript 操作方法概念性参考]**<br/>了解有关如何将移动服务与 HTML/JavaScript 配合使用的详细信息
 

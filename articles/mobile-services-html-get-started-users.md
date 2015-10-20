@@ -29,7 +29,7 @@
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-1. 在 app 目录中，启动 **server** 子文件夹中的下列命令文件之一。
+3. 在 app 目录中，启动 **server** 子文件夹中的下列命令文件之一。
 
 	+ **launch-windows**（Windows 计算机） 
 	+ **launch-mac.command**（Mac OS X 计算机）
@@ -39,13 +39,13 @@
 
 	随后将在本地计算机上启动用于托管新应用程序的 Web 服务器。
 
-2. 在 Web 浏览器中打开 URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> 以启动该应用程序。
+4. 在 Web 浏览器中打开 URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> 以启动该应用程序。
 
 	无法加载数据。发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 _TodoItem_ 表现在要求身份验证。
 
-3. （可选）打开 Web 浏览器的脚本调试程序，并重新加载页。检查是否发生了访问被拒绝错误。
+5. （可选）打开 Web 浏览器的脚本调试程序，并重新加载页。检查是否发生了访问被拒绝错误。
 
-接下来，你需要更新应用程序，以允许在从移动服务请求资源之前进行身份验证。
+   接下来，你需要更新应用程序，以允许在从移动服务请求资源之前进行身份验证。
 
 ## <a name="add-authentication"></a>向应用程序添加身份验证
 

@@ -2,7 +2,6 @@
 
 
 <tags  ms.service="mobile-services"
-
 	ms.date="06/03/2015"
 	wacn.date="10/03/2015"/>
 
@@ -10,6 +9,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started-EC.md)]
 
+<!--
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 <p>本教程说明如何使用 Azure 移动服务向 Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单<em>待办事项列表</em>应用程序。</p>
@@ -19,6 +19,8 @@
 </div>
 
    ![][0]
+
+-->
 
 完成本教程需要你安装 [Android 开发人员工具][Android SDK]，其中包含 Eclipse 集成开发环境 (IDE)、Android 开发人员工具 (ADT) 插件和最新的 Android 平台。需要使用 Android 4.2 或更高版本。
 
@@ -94,7 +96,7 @@
 
    	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
 
-   >[AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。
+    >[AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.java 文件中。
 
 6. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
 
@@ -123,17 +125,17 @@
 
 <!-- Images. -->
 
-[0]: ./media/mobile-services-android-get-started-EC/mobile-quickstart-completed-android.png
-[6]: ./media/mobile-services-android-get-started-EC/mobile-portal-quickstart-android.png
-[7]: ./media/mobile-services-android-get-started-EC/mobile-quickstart-steps-android-EC.png
-[8]: ./media/mobile-services-android-get-started-EC/mobile-eclipse-quickstart.png
+[0]: ./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png
+[6]: ./media/mobile-services-android-get-started/mobile-portal-quickstart-android.png
+[7]: ./media/mobile-services-android-get-started/mobile-quickstart-steps-android-EC.png
+[8]: ./media/mobile-services-android-get-started/mobile-eclipse-quickstart.png
 
-[10]: ./media/mobile-services-android-get-started-EC/mobile-quickstart-startup-android.png
-[11]: ./media/mobile-services-android-get-started-EC/mobile-data-tab.png
-[12]: ./media/mobile-services-android-get-started-EC/mobile-data-browse.png
+[10]: ./media/mobile-services-android-get-started/mobile-quickstart-startup-android.png
+[11]: ./media/mobile-services-android-get-started/mobile-data-tab.png
+[12]: ./media/mobile-services-android-get-started/mobile-data-browse.png
 
-[14]: ./media/mobile-services-android-get-started-EC/mobile-services-import-android-workspace.png
-[15]: ./media/mobile-services-android-get-started-EC/mobile-services-import-android-project.png
+[14]: ./media/mobile-services-android-get-started/mobile-services-import-android-workspace.png
+[15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
 [数据处理入门]: /documentation/articles/mobile-services-android-get-started-data

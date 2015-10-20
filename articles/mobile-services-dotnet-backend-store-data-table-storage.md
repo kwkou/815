@@ -7,8 +7,8 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags ms.service="mobile-services"
-
+<tags 
+    ms.service="mobile-services"
 	ms.date="06/09/2015" 
 	wacn.date="10/03/2015"/>
 
@@ -26,7 +26,7 @@
 
 2. 在左窗格中，依次选择“联机”类别、“仅限稳定版本”，搜索 **MobileServices**，单击“Windows Azure 移动服务 .NET 后端 Azure 存储空间扩展”包对应的“安装”，然后接受许可协议。
 
-  	![](./media/mobile-services-dotnet-backend-store-data-table-storage/mobile-add-storage-nuget-package-dotnet.png)
+    ![](./media/mobile-services-dotnet-backend-store-data-table-storage/mobile-add-storage-nuget-package-dotnet.png)
 
   	这会将 Azure 存储空间服务支持添加到 .NET 后端移动服务项目。
 
@@ -135,7 +135,9 @@
  
 + [使用混合连接来连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)</br>混合连接可让移动服务安全地连接到本地资产。这样，移动客户端便可以使用 Azure 访问你的本地数据。支持的资产包括静态 TCP 端口上运行的任何资源，例如 Microsoft SQL Server、MySQL、HTTP Web API 和大多数自定义 Web 服务。
 
+<!--
 + [使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storaged)</br>说明如何扩展 TodoList 示例项目，以便将图像从应用上载到 Azure Blob 存储。
+-->
 
 <!-- Anchors. -->
 [Create a non-relational store]: #create-store

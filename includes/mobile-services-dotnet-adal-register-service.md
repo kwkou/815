@@ -1,4 +1,4 @@
-﻿## <a name="register-mobile-service-aad"></a>向 Azure Active Directory 注册您的移动服务
+## <a name="register-mobile-service-aad"></a>向 Azure Active Directory 注册您的移动服务
 
 
 在本节中，您将向 Azure Active Directory 注册您的移动服务，并配置权限以允许单点登录模拟。
@@ -11,7 +11,7 @@
 
 4. 单击**管理清单**。然后单击**下载清单**，并将应用程序清单保存到本地目录中。
 
-   ![](./media/mobile-services-dotnet-adal-register-service/mobile-services-aad-app-manage-manifest.png)
+	![](./media/mobile-services-dotnet-adal-register-service/mobile-services-aad-app-manage-manifest.png)
 
 5. 使用 Visual Studio 打开应用程序清单文件。在文件顶部找到应用程序权限行，该行如下所示：
 

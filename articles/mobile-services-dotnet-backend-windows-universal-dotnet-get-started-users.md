@@ -34,7 +34,7 @@
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-dotnet-backend](../includes/mobile-services-restrict-permissions-dotnet-backend.md)]
 
-<ol start="5">
+<ol start="6">
 <li><p>在 Visual Studio 中，右键单击 TodoList 应用程序的 Windows 应用商店项目，然后单击“设为启动项目”<strong></strong>。</p></li>
 <li><p>在共享的项目中，打开 App.xaml.cs 项目文件，找到 <a href="http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx">MobileServiceClient</a> 的定义，并确保它已配置为连接到 Azure 中运行的移动服务。</p>
 <p>请注意，使用 Visual Studio 工具将应用程序连接到移动服务时，该工具生成两组 <strong>MobileServiceClient</strong> 定义，每个客户端平台一组。这是简化生成的代码的好时机，你可以通过将 <code>#if...#endif</code> 包装的 <strong>MobileServiceClient</strong> 定义统一为单个解包的定义供这两个版本的应用程序使用来简化生成的代码。当你从 Azure 管理门户下载快速入门应用程序时无需执行此操作。</p>

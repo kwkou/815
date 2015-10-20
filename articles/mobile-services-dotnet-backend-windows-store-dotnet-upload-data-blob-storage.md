@@ -1,4 +1,4 @@
-﻿<properties pageTitle="Use Mobile Services to upload images to blob storage (Windows Store) | Mobile Services" metaKeywords="" description="Learn how to use Mobile Services to upload images to Azure Blob Storage." metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="glenga" writer="glenga" services="mobile-services" />
+<properties pageTitle="Use Mobile Services to upload images to blob storage (Windows Store) | Mobile Services" metaKeywords="" description="Learn how to use Mobile Services to upload images to Azure Blob Storage." metaCanonical="" disqusComments="0" umbracoNaviHide="1" documentationCenter="Mobile" title="Upload images to Azure Storage by using Mobile Services" authors="glenga" writer="glenga" services="mobile-services" />
 <tags ms.service="mobile-services"
     ms.date="02/26/2015"
     wacn.date="04/11/2015"
@@ -27,7 +27,7 @@
 -   为 Microsoft Visual Studio 安装 Nuget 包管理器。
 -   [Azure 存储帐户][]
 
-本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门][]。
+本教程基于移动服务快速入门。在开始本教程之前，必须先完成移动服务入门。
 
 [WACOM.INCLUDE [mobile-services-dotnet-backend-configure-blob-storage](../includes/mobile-services-configure-blob-storage.md)]
 
