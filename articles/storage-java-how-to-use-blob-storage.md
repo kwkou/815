@@ -21,7 +21,7 @@
 
 ## 概述
 
-本文将演示如何使用 Windows Azure Blob 存储执行常见任务。这些示例用 Java 编写并使用 [Azure Storage SDK for Java][]。涉及的任务包括**上载**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#NextSteps)部分。
+本文将演示如何使用 Windows Azure Blob 存储执行常见任务。这些示例用 Java 编写并使用 [Azure Storage SDK for Java][]。涉及的任务包括**上传**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#NextSteps)部分。
 
 > [AZURE.NOTE] SDK 提供给在 Android 设备上使用 Azure 存储空间的开发人员。有关详细信息，请参阅 [Azure Storage SDK for Android][]。
 
@@ -105,9 +105,9 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
     // Set the permissions on the container.
     container.uploadPermissions(containerPermissions);
 
-## 将 Blob 上载到容器中
+## 将 Blob 上传到容器中
 
-若要将文件上载到 Blob，请获取容器引用，并使用它获取 Blob 引用。获取 Blob 引用后，可以通过对该 Blob 引用调用 upload 来上载任何数据流。此操作将创建 Blob（如果该 Blob 不存在），或者覆盖它（如果该 Blob 存在）。下面的代码示例演示了这一点，并假定已创建容器。
+若要将文件上传到 Blob，请获取容器引用，并使用它获取 Blob 引用。获取 Blob 引用后，可以通过对该 Blob 引用调用 upload 来上传任何数据流。此操作将创建 Blob（如果该 Blob 不存在），或者覆盖它（如果该 Blob 存在）。下面的代码示例演示了这一点，并假定已创建容器。
 
 	try
     {
@@ -136,7 +136,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 列出容器中的 Blob
 
-若要列出容器中的 Blob，请先获取容器引用，就像上载 Blob 时执行的操作一样。可将容器的 **listBlobs** 方法用于 **for** 循环。以下代码将容器中每个 Blob 的 URI 输出到控制台。
+若要列出容器中的 Blob，请先获取容器引用，就像上传 Blob 时执行的操作一样。可将容器的 **listBlobs** 方法用于 **for** 循环。以下代码将容器中每个 Blob 的 URI 输出到控制台。
 
 	try
     {
@@ -162,13 +162,13 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 还可将 Blob 服务视为容器中的目录。这是为了让您能够以更类似于文件夹的结构来组织 Blob。
 
-例如，你可以创建一个名为“photos”的容器，你可以在其中上载名为“rootphoto1”、“2010/photo1”、“2010/photo2”和“2011/photo1”的 Blob。这将在“photos”容器中创建虚拟目录“2010”和“2011”。当你对“photos”容器调用 **listBlobs** 时，返回的集合将包含表示最高层中所含目录和 Blob 的 **CloudBlobDirectory** 和 **CloudBlob** 对象。在本例中，将返回目录“2010”和“2011”以及照片“rootphoto1”。可使用 **instanceof** 运算符来区分这些对象。
+例如，你可以创建一个名为“photos”的容器，你可以在其中上传名为“rootphoto1”、“2010/photo1”、“2010/photo2”和“2011/photo1”的 Blob。这将在“photos”容器中创建虚拟目录“2010”和“2011”。当你对“photos”容器调用 **listBlobs** 时，返回的集合将包含表示最高层中所含目录和 Blob 的 **CloudBlobDirectory** 和 **CloudBlob** 对象。在本例中，将返回目录“2010”和“2011”以及照片“rootphoto1”。可使用 **instanceof** 运算符来区分这些对象。
 
 还可以向 **listBlobs** 方法传入参数，并将 **useFlatBlobListing** 参数设置为 true。这将导致返回每个 Blob，而无论目录如何。有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考]中的 **CloudBlobContainer.listBlobs**。
 
 ## 下载 Blob
 
-若要下载 Blob，请执行之前用于上载 Blob 的相同步骤以获取 Blob 引用。在上载示例中，您对 Blob 对象调用了 upload。在下面的示例中，调用 download 以将 Blob 内容传输到可用于将 Blob 保存到本地文件的流对象（如 **FileOutputStream**）。
+若要下载 Blob，请执行之前用于上传 Blob 的相同步骤以获取 Blob 引用。在上传示例中，您对 Blob 对象调用了 upload。在下面的示例中，调用 download 以将 Blob 内容传输到可用于将 Blob 保存到本地文件的流对象（如 **FileOutputStream**）。
 
     try
     {

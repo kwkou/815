@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 			pageTitle="如何通过 PowerShell 和 .NET 使用 Azure 文件存储 | Windows Azure"
             description="了解如何使用 Azure 文件存储创建云文件共享和管理文件内容。企业可以通过文件存储将依赖 SMB 文件共享的应用程序移到 Azure。保存虚拟机的存储帐户凭据，从而在重新启动时重新连接到文件共享。"
             services="storage"
@@ -15,7 +15,7 @@
 
 ## 概述
 
-Azure 文件服务使用标准 SMB 2.1 协议公开文件共享。现在，在 Azure 中运行的应用程序可以使用标准和熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，REST 接口可打开各种混合方案，还可以通过该接口同时访问这些文件。最后，Azure 文件基于与 Blob、表和队列服务相同的技术构建，这意味着 Azure 文件能够充分利用 Azure 存储平台内置的现有可用性、持续性、可伸缩性和地域冗余性。
+Azure文件存储服务基于标准的SMB协议在云端提供文件共享存储服务。Azure文件存储正式商用版已经上线，目前同时支持SMB2.1和SMB3.0。现在，在 Azure 中运行的应用程序可以使用标准和熟悉的文件系统 API（例如 ReadFile 和 WriteFile）在 VM 之间共享文件。此外，REST 接口可打开各种混合方案，还可以通过该接口同时访问这些文件。最后，Azure 文件基于与 Blob、表和队列服务相同的技术构建，这意味着 Azure 文件能够充分利用 Azure 存储平台内置的现有可用性、持续性、可伸缩性和地域冗余性。
 
 ## 关于本教程
 

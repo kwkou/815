@@ -22,7 +22,7 @@ Azure 存储帐户是一个安全帐户，它授予你访问 Azure 存储空间�
 
 在中国有一种类型的存储帐户：
 
-- 标准存储帐户包括 Blob、表和队列存储。文件存储可通过 [Azure 门户](/zh-cn/)请求提供
+- 标准存储帐户包括 Blob、表、队列和文件存储。
 
 <!--
 - 高级存储帐户当前仅支持 Azure 虚拟机磁盘。Azure  高级存储可通过 [Azure 门户](/zh-cn)请求提供。请参阅[高级存储：Azure 虚拟机工作负载的高性能存储](http://go.microsoft.com/fwlink/?LinkId=521898) for an in-depth overview of Premium Storage.
@@ -74,7 +74,7 @@ Azure 存储帐户是一个安全帐户，它授予你访问 Azure 存储空间�
 ![存储页面](./media/storage-create-storage-account/Storage_StoragePage.png)
 
 
-### 存储帐户终结点
+###<a id="storage-account-endpoints"></a> 存储帐户终结点
 
 在 Azure 存储空间中存储的每个对象都有唯一的 URL 地址；存储帐户名称构成该地址的子域。特定于每个服务的子域和域名构成你的存储帐户的*终结点*。
 
@@ -94,7 +94,7 @@ Azure 存储帐户是一个安全帐户，它授予你访问 Azure 存储空间�
 
 此外还可以配置用于存储帐户的自定义域名称。请参阅[为存储帐户中的 Blob 数据配置自定义域名](/documentation/articles/storage-custom-domain-name) 以了解详细信息。
 
-### 服务与地缘组的归置
+###<a id="service-co-location-with-an-affinity-group"></a> 服务与地缘组的归置
 
 *地缘组*是你的 Azure 服务和 VM 及 Azure 存储帐户的地理分组。通过定位同一数据中心或靠近目标用户受众的计算机工作负载，地缘组可提高服务性能。此外，当某个存储帐户中的数据被另一个服务访问，而该服务是同一个地缘组的一部分时，不会对出口流量收费。
 
@@ -110,7 +110,7 @@ Azure 存储帐户是一个安全帐户，它授予你访问 Azure 存储空间�
 
 ### 复制存储访问密钥  
 
-你可以使用“管理密钥”复制要在连接字符串中使用的存储访问密钥。连接字符串需要在进行身份验证时使用存储帐户名称和密钥。有关配置连接字符串以访问 Azure 存储服务的信息，请参阅[配置连接字符串](http://msdn.microsoft.com/zh-cn/library/ee758697.aspx)。
+你可以使用“管理密钥”复制要在连接字符串中使用的存储访问密钥。连接字符串需要在进行身份验证时使用存储帐户名称和密钥。有关配置连接字符串以访问 Azure 存储服务的信息，请参阅[配置连接字符串](/documentation/articles/storage-configure-connection-string)。
 
 1. 在[管理门户](http://manage.windowsazure.cn)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
@@ -162,7 +162,7 @@ Azure 存储帐户是一个安全帐户，它授予你访问 Azure 存储空间�
 
 ## 后续步骤
 
-- 若要了解有关 Azure 存储空间的详细信息，请参阅[windowsazure.cn](/documentation/services/storage/)和 [MSDN](http://msdn.microsoft.com/zh-cn/libraryazure//gg433040.aspx)上的 Azure 存储空间文档。
+- 若要了解有关 Azure 存储空间的详细信息，请参阅[windowsazure.cn](/documentation/services/storage/)和 [MSDN](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)上的 Azure 存储空间文档。
 
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
  

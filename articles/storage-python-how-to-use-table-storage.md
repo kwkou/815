@@ -46,12 +46,12 @@
 具有相同的 PartitionKey 的实体存储在同一个节点上。将显示
 RowKey 是实体在其所属分区内的唯一 ID。
 
-若要将实体添加到表中，请将字典对象传递给 **insert\_entity** 方法。
+若要将实体添加到表中，请将字典对象传递给 **insert_entity** 方法。
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-你还可以将 **Entity** 类的实例传递给 **insert\_entity** 方法。
+你还可以将 **Entity** 类的实例传递给 **insert_entity** 方法。
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -67,7 +67,7 @@ RowKey 是实体在其所属分区内的唯一 ID。
 	task = {'description' : 'Take out the garbage', 'priority' : 250}
 	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-如果要更新的实体不存在，更新操作将失败。如果你要存储实体，而不管它以前是否已存在，请使用 **insert\_or\_replace_entity**。 
+如果要更新的实体不存在，更新操作将失败。如果你要存储实体，而不管它以前是否已存在，请使用 **insert_or_replace_entity**。 
 在下面的示例中，第一次调用将替换现有实体。第二个调用将插入新实体，因为表中不存在具有指定 PartitionKey 和 RowKey 的实体。
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
@@ -78,7 +78,7 @@ RowKey 是实体在其所属分区内的唯一 ID。
 
 ## 更改实体组
 
-有时，有必要成批地同时提交多项操作以确保通过服务器进行原子处理。若要实现该目的，请对 **TableService** 使用 **begin\_batch** 方法，然后像通常一样调用一系列操作。在你确实要按批提交时，可调用 **commit\_batch**。请注意，所有实体必须在相同分区中才能更改为批处理。下面的示例将两个实体一起添加到批处理中。
+有时，有必要成批地同时提交多项操作以确保通过服务器进行原子处理。若要实现该目的，请对 **TableService** 使用 **begin_batch** 方法，然后像通常一样调用一系列操作。在你确实要按批提交时，可调用 **commit_batch**。请注意，所有实体必须在相同分区中才能更改为批处理。下面的示例将两个实体一起添加到批处理中。
 
 	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
 	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
@@ -89,7 +89,7 @@ RowKey 是实体在其所属分区内的唯一 ID。
 
 ## 查询实体
 
-若要查询表中的实体，请使用 **get\_entity** 方法并传递 **PartitionKey** 和 **RowKey**。
+若要查询表中的实体，请使用 **get_entity** 方法并传递 **PartitionKey** 和 **RowKey**。
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
 	print(task.description)

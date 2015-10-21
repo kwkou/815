@@ -1,4 +1,4 @@
-存储模拟器支持单一固定的帐户和众所周知的用于共享密钥身份验证的身份验证密钥。此帐户和密钥是允许用于存储模拟器的唯一共享密钥凭据。它们具有以下特点：
+存储模拟器支持单一固定的帐户和众所周知的用于共享密钥身份验证的身份验证密钥。此帐户和密钥是允许用于存储模拟器的唯一共享密钥凭据。它们是：
 
     Account name: devstoreaccount1
     Account key: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
@@ -15,9 +15,9 @@
       <add key="StorageConnectionString" value="UseDevelopmentStorage=true" />
     </appSettings>
 
-#### 使用从众所周知的帐户名称和密钥连接到存储模拟器
+#### 使用众所周知的帐户名称和密钥连接到存储模拟器
 
-若要创建引用存储模拟器帐户名称和密钥的连接字符串，注意，你必须在连接字符串中为你希望从模拟器中使用的每个服务指定终结点。这是必须的，这样连接字符串将引用与生产存储帐户中的终结点不同的模拟器终结点。例如，你的连接字符串的值将如下所示：
+若要创建引用存储模拟器帐户名称和密钥的连接字符串，注意，你必须在连接字符串中为你希望从模拟器中使用的每个服务指定服务端口。这是必须的，这样连接字符串将引用与生产存储帐户中的终结点不同的模拟器服务端口。例如，你的连接字符串的值将如下所示：
 
 	DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;
 	AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;

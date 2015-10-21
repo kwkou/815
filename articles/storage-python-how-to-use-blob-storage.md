@@ -54,9 +54,9 @@
 
 ## 将 Blob 上载到容器中
 
-若要将数据上载到 Blob，请使用 **put\_block\_blob\_from\_path**、**put\_block\_blob\_from\_file**、**put\_block\_blob\_from\_bytes** 或 **put\_block\_blob\_from\_text** 方法。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
+若要将数据上载到 Blob，请使用 **put_block_blob_from_path**、**put_block_blob_from_file**、**put_block_blob_from_bytes** 或 **put_block_blob_from_text** 方法。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
 
-**put\_block\_blob\_from\_path** 上载指定路径中一个文件的内容，**put\_block\_blob\_from\_file** 上载已打开的文件/流中的内容。**put\_block\_blob\_from\_bytes** 上载一组字节，**put\_block\_blob\_from\_text** 使用使用指定的编码（默认为 UTF-8）上载指定的文本值。
+**put_block_blob_from_path** 上载指定路径中一个文件的内容，**put_block_blob_from_file** 上载已打开的文件/流中的内容。**put_block_blob_from_bytes** 上载一组字节，**put_block_blob_from_text** 使用使用指定的编码（默认为 UTF-8）上载指定的文本值。
 
 下面的示例将 **sunset.png** 文件的内容上载到 **myblob** Blob。
 
@@ -69,7 +69,7 @@
 
 ## 列出容器中的 Blob
 
-若要列出容器中的 Blob，请使用 **list\_blobs** 方法。每次调用 **list\_blobs** 将返回一段结果。若要获取所有结果，请检查结果的 **next\_marker** 并在需要时再次调用 **list\_blobs**。以下代码将容器中每个 Blob 的“名称”输出到控制台。
+若要列出容器中的 Blob，请使用 **list_blobs** 方法。每次调用 **list_blobs** 将返回一段结果。若要获取所有结果，请检查结果的 **next_marker** 并在需要时再次调用 **list_blobs**。以下代码将容器中每个 Blob 的“名称”输出到控制台。
 
 	blobs = []
 	marker = None
@@ -84,11 +84,11 @@
 
 ## 下载 Blob
 
-每个结果段可以包含可变数目的 Blob，最大为 5000 个。如果存在特定数据段的 **next\_marker**，容器中可能有多个 Blob。
+每个结果段可以包含可变数目的 Blob，最大为 5000 个。如果存在特定数据段的 **next_marker**，容器中可能有多个 Blob。
 
-若要从 Blob 下载数据，请使用 **get\_blob\_to\_path**、**get\_blob\_to\_file**、**get\_blob\_to\_bytes** 或 **get\_blob\_to\_text**。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
+若要从 Blob 下载数据，请使用 **get_blob_to_path**、**get_blob_to_file**、**get_blob_to_bytes** 或 **get_blob_to_text**。这些方法属于高级方法，用于在数据大小超过 64 MB 时执行必要的分块。
 
-以下示例演示了如何使用 **get\_blob\_to\_path** 下载 **myblob** Blob 的内容，并将其存储到 **out-sunset.png** 文件：
+以下示例演示了如何使用 **get_blob_to_path** 下载 **myblob** Blob 的内容，并将其存储到 **out-sunset.png** 文件：
 
 	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-sunset.png')
 
@@ -106,7 +106,7 @@
 -   访问 [Azure 存储空间团队博客][]
 
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-  [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure 包]: https://pypi.python.org/pypi/azure
 <!---HONumber=70-->
   

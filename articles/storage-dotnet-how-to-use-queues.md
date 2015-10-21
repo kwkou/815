@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="如何通过 .NET 使用队列存储 | Windows Azure"
 	description="了解如何使用 Windows Azure 队列存储创建和删除队列，以及插入、扫视、获取和删除队列消息。"
 	services="storage"
@@ -18,7 +18,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C\# 代码编写，并使用了用于 .NET 的 Azure 存储空间客户端库。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
+本指南将演示如何使用 Azure 队列存储服务执行常见方案。示例用 C# 代码编写，并使用了用于 .NET 的 Azure 存储空间客户端库。介绍的方案包括“插入”、“扫视”、“获取”和“删除”队列消息以及“创建”和“删除”队列。
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -252,7 +252,7 @@
   [下载并安装 Azure SDK for.NET]：/develop/net/
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx
   [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
-  [CloudStorageAccount]: http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.cloudstorageaccount_methods.aspx
+  [CloudStorageAccount]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.cloudstorageaccount_methods.aspx
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
