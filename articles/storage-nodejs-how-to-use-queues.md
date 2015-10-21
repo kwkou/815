@@ -63,7 +63,7 @@
 
 ## 设置 Azure 存储连接
 
-Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_ACCESS\_KEY 或 AZURE\_STORAGE\_CONNECTION\_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createQueueService** 时必须指定帐户信息。
+Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS_KEY 或 AZURE_STORAGE_CONNECTION_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createQueueService** 时必须指定帐户信息。
 
 有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序]
 
@@ -110,10 +110,10 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-## 如何：扫视下一条消息
+## 如何：查看下一条消息
 
 通过调用 peekMessages 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，
-**peekMessages** 扫视单个消息。
+**peekMessages** 查看单个消息。
 
 	queueSvc.peekMessages('myqueue', function(error, result, response){
 	  if(!error){

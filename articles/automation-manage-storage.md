@@ -30,7 +30,7 @@ Azure 自动化 提供高度可靠且高度可用的工作流执行引擎，它�
 
 ## Azure 自动化 如何帮助管理 Azure 存储空间？
 
-可以使用 [Azure PowerShell 工具](https://msdn.microsoft.com/zh-CN/library/azure/jj156055.aspx)中提供的 PowerShell cmdlet 在 Azure 自动化 中管理 Azure 存储空间。Azure 自动化 现成地提供了这些 Storage PowerShell cmdlet，因此，你可以在该服务中执行所有 Blob、表和队列管理任务。你还可以将 Azure 自动化 中的这些 cmdlet 与其他 Azure 服务的 cmdlet 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
+可以使用 [Azure PowerShell 工具](https://msdn.microsoft.com/zh-CN/library/azure/jj156055.aspx)中提供的 PowerShell 命令 在 Azure 自动化 中管理 Azure 存储空间。Azure 自动化 现成地提供了这些 Storage PowerShell 命令，因此，你可以在该服务中执行所有 Blob、表和队列管理任务。你还可以将 Azure 自动化 中的这些 命令 与其他 Azure 服务的 命令 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
 
 [Azure Automation Runbook 库](http://azure.microsoft.com/blog/2014/10/07/introducing-the-azure-automation-runbook-gallery/)包含产品团队和社区提供的各种 Runbook，以帮助你开始自动管理 Azure 存储空间、其他 Azure 服务和第三方系统。库中 Runbook 的功能包括：
 

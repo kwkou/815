@@ -20,7 +20,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Azure Blob 服务执行常见方案。相关示例是使用 Node.js API 编写的。涉及的任务包括“上载”、“列出”、“下载”和“删除”Blob。
+本指南将演示如何使用 Azure Blob 服务执行常见方案。相关示例是使用 Node.js API 编写的。涉及的任务包括“上传”、“列出”、“下载”和“删除”Blob。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
@@ -129,23 +129,23 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	var retryOperations = new azure.ExponentialRetryPolicyFilter();
 	var blobSvc = azure.createBlobService().withFilter(retryOperations);
 
-## 如何：将 Blob 上载到容器
+## 如何：将 Blob 上传到容器
 
-Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上载大型数据，而页 Blob 则针对读/写操作进行了优化。有关详细信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
+Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上传大型数据，而页 Blob 则针对读/写操作进行了优化。有关详细信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
 
 ###块 Blob
 
-若要将数据上载到块 Blob，可使用以下方法：
+若要将数据上传到块 Blob，可使用以下方法：
 
-* **createBlockBlobFromLocalFile** - 创建新的块 Blob 和上载文件的内容。
+* **createBlockBlobFromLocalFile** - 创建新的块 Blob 和上传文件的内容。
 
-* **createBlockBlobFromStream** - 创建新的块 Blob 和上载流的内容。
+* **createBlockBlobFromStream** - 创建新的块 Blob 和上传流的内容。
 
-* **createBlockBlobFromText** - 创建新的块 Blob 和上载字符串的内容。
+* **createBlockBlobFromText** - 创建新的块 Blob 和上传字符串的内容。
 
 * **createWriteStreamToBlockBlob** - 向块 Blob 提供写入流。
 
-下面的示例将 **test.txt** 文件的内容上载到 **myblob** 中。
+下面的示例将 **test.txt** 文件的内容上传到 **myblob** 中。
 
 	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', function(error, result, response){
 	  if(!error){
@@ -157,19 +157,19 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 
 ###页 Blob
 
-若要将数据上载到页 Blob，可使用以下方法：
+若要将数据上传到页 Blob，可使用以下方法：
 
 * **createPageBlob** - 创建新的特定长度的页 Blob。
 
-* **createPageBlobFromLocalFile** - 创建新的页 Blob 并上载文件的内容。
+* **createPageBlobFromLocalFile** - 创建新的页 Blob 并上传文件的内容。
 
-* **createPageBlobFromStream** - 创建新的页 Blob 并上载流的内容。
+* **createPageBlobFromStream** - 创建新的页 Blob 并上传流的内容。
 
 * **createWriteStreamToExistingPageBlob** - 向现有页 Blob 提供写入流。
 
 * **createWriteStreamToNewPageBlob** - 创建新的 blob，然后向其提供写入流。
 
-下面的示例将 **test.txt** 文件的内容上载到 **mypageblob** 中。
+下面的示例将 **test.txt** 文件的内容上传到 **mypageblob** 中。
 
 	blobSvc.createPageBlobFromLocalFile('mycontainer', 'mypageblob', 'test.txt', function(error, result, response){
 	  if(!error){
@@ -177,7 +177,7 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 	  }
 	});
 
-> [AZURE.NOTE] 页 Blob 包含 512 字节的“页面”。当你上载大小不是 512 倍数的数据时，可能会收到错误。
+> [AZURE.NOTE] 页 Blob 包含 512 字节的“页面”。当你上传大小不是 512 倍数的数据时，可能会收到错误。
 
 ## 如何：列出容器中的 Blob
 
@@ -236,7 +236,7 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 
 如果你需要允许多个客户端或实例同时写入该 Blob，则应使用 ETag。ETag 用于确定自从你第一次读取或创建某个容器或 Blob 以来，该容器或 Blob 是否被修改，这样就可以避免覆盖其他客户端或进程提交的更改。
 
-ETag 条件能够使用可选的  `options.accessConditions` 参数进行设置。如果 Blob 已存在且具有  `etagToMatch` 所包含的 ETag 值，则以下示例将仅上载 **test.txt** 文件。
+ETag 条件能够使用可选的  `options.accessConditions` 参数进行设置。如果 Blob 已存在且具有  `etagToMatch` 所包含的 ETag 值，则以下示例将仅上传 **test.txt** 文件。
 
 	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', { accessConditions: { 'if-match': etagToMatch} }, function(error, result, response){
       if(!error){

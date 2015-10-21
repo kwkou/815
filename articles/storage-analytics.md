@@ -8,7 +8,7 @@
 	editor=""/>
 <tags ms.service="storage"
     ms.date="03/06/2015"
-    wacn.date="09/018/2015"
+    wacn.date="09/18/2015"
     />
 
 
@@ -51,7 +51,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 - 使用共享访问签名 (SAS) 的请求，包括失败和成功的请求
 
-- 分析数据请求
+- 对分析数据请求
 
 不会记录存储分析本身发出的请求，如创建或删除日志。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx)主题中提供了所记录数据的完整列表。
 
@@ -69,9 +69,9 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 不会记录所有其他失败的匿名请求。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx))主题中提供了所记录数据的完整列表。
 
 ### 如何存储日志
-所有日志以块 Blob 的形式存储在一个名为 $logs 的容器中，为存储帐户启用存储分析时将自动创建该容器。$logs 容器位于存储帐户的 blob 命名空间中，例如：`http://<accountname>.blob.core.chinacloudapi.cn/$logs`。在启用存储分析后，无法删除该容器，但可以删除其内容。
+所有日志以块存储(block blob) 的形式存储在一个名为 $logs 的容器中，为存储帐户启用存储分析时将自动创建该容器。$logs 容器位于存储帐户的 blob 命名空间中，例如：`http://<accountname>.blob.core.chinacloudapi.cn/$logs`。在启用存储分析后，无法删除该容器，但可以删除其内容。
 
->[Azure.NOTE] 在执行容器列出操作（例如 [ListContainers](https://msdn.microsoft.com/zh-cn/library/ee758348.aspx) 方法）时，不会显示 $logs 容器。必须直接访问该容器。例如，可以使用 [ListBlobs](https://msdn.microsoft.com/zh-cn/library/ee772878.aspx) 方法访问 `$logs` 容器中的 Blob。在记录请求时，存储分析将中间结果作为块进行上载。存储分析定期提交这些块，并将其作为 Blob 提供。
+>[AZURE.NOTE] 在执行容器列出操作（例如 [ListContainers](https://msdn.microsoft.com/zh-cn/library/ee758348.aspx) 方法）时，不会显示 $logs 容器。必须直接访问该容器。例如，可以使用 [ListBlobs](https://msdn.microsoft.com/zh-cn/library/ee772878.aspx) 方法访问 `$logs` 容器中的 Blob。在记录请求时，存储分析将中间结果作为块进行上载。存储分析定期提交这些块，并将其作为 Blob 提供。
 
 在同一小时内创建的日志中可能存在重复的记录。可以通过检查 **RequestId** 和**操作**编号来确定记录是否为重复记录。
 
@@ -128,17 +128,17 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 ## 关于存储分析度量值
 
-存储分析可存储一些度量值，这些度量值包括有关存储服务请求的聚合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。度量值数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题以及提高使用服务的应用程序的性能。
+存储分析可存储一些度量值，这些度量值包括有关存储服务请求的整合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。度量值数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题以及提高使用服务的应用程序的性能。
 
 若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 管理门户](https://manage.windowsazure.com/)启用它；有关详细信息，请参阅[如何监视存储帐户](/documentation/articles/how-to-monitor-a-storage-account)。还可以通过 REST API 或客户端库以编程方式启用存储分析。[使用获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性和获取表服务属性操作为每个服务启用存储分析](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)。
 
 ### 事务度量值
 
-对于每个存储服务和请求的 API 操作，将按小时或分钟为间隔记录一组可靠的数据，其中包括入口/出口、可用性、错误和分类请求百分比。可以在[存储分析度量值表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)主题中查看事务详细信息的完整列表。
+对于每个存储服务和请求的 API 操作，将按小时或分钟为间隔记录一组可靠的数据，其中包括流入/流出、可用性、错误和分类请求百分比。可以在[存储分析度量值表结构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)主题中查看事务详细信息的完整列表。
 
 在两个级别记录事务数据 – 服务级别和 API 操作级别。在服务级别，汇总所有请求的 API 操作的统计信息将每小时写入一次表实体，即使未向服务发出请求也是如此。在 API 操作级别，仅当在该小时内请求操作时才将统计信息写入实体。
 
-例如，如果对 BLOB 服务执行 **GetBlob** 操作，则存储分析度量值将记录请求并将其包含在 BLOB 服务以及 **GetBlob** 操作的聚合数据中。但是，如果在一小时内未请求 **GetBlob** 操作，则不会将实体写入该操作的 `$MetricsTransactionsBlob`。
+例如，如果对 BLOB 服务执行 **GetBlob** 操作，则存储分析度量值将记录请求并将其包含在 BLOB 服务以及 **GetBlob** 操作的聚合数据中。但是，如果在一小时内未请求 **GetBlob** 操作，则不会添加记录到该操作的 `$MetricsTransactionsBlob`。
 
 为用户请求和存储分析本身发出的请求记录事务度量值。例如，将记录存储分析写入日志和表实体的请求。有关如何对这些请求进行计费的详细信息，请参阅[存储分析和计费](https://msdn.microsoft.com/zh-cn/library/hh360997.aspx)
 
@@ -154,7 +154,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 - **ObjectCount**：存储帐户的 Blob 服务中的提交和未提交的块或页 Blob 数量。
 
-有关容量度量值的详细信息，请参阅“存储分析度量值表架构”。
+有关容量度量值的详细信息，请参阅“存储分析度量值表结构”。
 
 ### 如何存储度量值
 
@@ -207,7 +207,7 @@ Azure 存储分析执行日志记录并为存储帐户提供度量值数据。�
 
 ### 存储分析度量值
 - [关于存储分析度量值](https://msdn.microsoft.com/zh-cn/library/hh343258.aspx)
-- [存储分析度量值表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx) 
+- [存储分析度量值表结构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx) 
 - [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)  
 
 <!---HONumber=70-->
