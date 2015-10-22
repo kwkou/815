@@ -1,4 +1,4 @@
-
+> [AZURE.SELECTOR]
 - [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started)
 - [iOS](/documentation/articles/notification-hubs-ios-get-started)
 - [Android](/documentation/articles/notification-hubs-android-get-started)

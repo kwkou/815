@@ -94,12 +94,6 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-[使用通知中心向用户发送通知]: ../notificationhubs/tutorial-notify-users-mobileservices.md
-[移动服务入门]: /develop/mobile/tutorials/get-started/#create-new-service
-[Azure 管理门户]: https://manage.windowsazure.cn/
-[wns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-[通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-[针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
+[入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [通知中心 REST 接口]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx
 <!--HONumber=41-->
