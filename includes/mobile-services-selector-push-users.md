@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
+> [AZURE.SELECTOR]
 - [(iOS | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/)
 - [(iOS | JavaScript)](/zh-cn/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
 - [(Windows 8.x Store C# | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/)
