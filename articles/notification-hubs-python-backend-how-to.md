@@ -18,14 +18,16 @@
 
 # 如何通过 Python 使用通知中心
 > [AZURE.SELECTOR] 
-- [Java](/documentation/articles/notification-hubs-php-backend-how-to)
-- [PHP](/documentation/articles/notification-hubs-python-backend-how-to)
-- [Python](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
+- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
+- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
+- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
 - [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
 		
 如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Python/Ruby 后端访问所有通知中心功能。
 
 > [AZURE.NOTE]这是在 Python 中实现通知发送的示例引用实现，不是官方支持的通知中心 Python SDK。
+
+<!-- ---------- -->
 
 > [AZURE.NOTE]此示例使用 Python 3.4 编写。
 

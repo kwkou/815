@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="manage-services-notification-hubs-notify-users-xplat-aspnet" 
 	urlDisplayName="Notify Users xplat aspnet" 
 	pageTitle="Send cross-platform notifications to users with Notification Hubs (ASP.NET)" 
@@ -18,10 +18,9 @@
     />
 
 # 使用通知中心向用户发送跨平台通知
-
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/" title="移动服务">移动服务</a><a href="/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/" title="ASP.NET" class="current">ASP.NET</a>
-</div>
+> [AZURE.SELECTOR]
+- [移动服务](/notification-hubs-mobile-services-cross-platform-notify-users)
+- [ASP.NET](/notification-hubs-aspnet-cross-platform-notify-users)
 
 在上一教程[使用通知中心通知用户][使用通知中心通知用户]中，你了解了如何将通知推送到经过身份验证的特定用户所注册的所有设备。在该教程中，需要使用多个请求将通知发送到每个支持的客户端平台。通知中心支持模板，这允许你指定特定设备要如何接收通知。这简化了发送跨平台通知。本主题演示如何利用模板在单个请求中发送针对所有平台的平台未知通知。有关模板的更多详细信息，请参见 [Azure 通知中心概述][Azure 通知中心概述]。
 
@@ -93,7 +92,7 @@
 
 +  **[Azure 通知中心概述][Templates]**<br/>“概述”主题提供有关模板的更多详细信息。
 
-+  **[针对 Windows 应用商店的通知中心操作指南]**<br/>包含模板表示语言参考。
+<!--+  **[针对 Windows 应用商店的通知中心操作指南]**<br/>包含模板表示语言参考-->
 
 
 <!-- Anchors. --> 
@@ -101,14 +100,11 @@
 <!-- Images. --> 
 
 <!-- URLs. -->
-[Push to users ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[Push to users Mobile Services]: /manage/services/notification-hubs/notify-users/
-[Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
 [Management Portal]: https://manage.windowsazure.cn/
-[使用通知中心发送突发新闻]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 [Azure Notification Hubs]: http://www.windowsazure.cn/zh-cn/pricing/details/notification-hubs/
-[使用通知中心通知用户]: /manage/services/notification-hubs/notify-users-aspnet
+[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Templates]: https://msdn.microsoft.com/zh-cn/library/jj927170.aspx#BKMK_NH7
 [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx
 

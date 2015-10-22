@@ -14,8 +14,7 @@
 <tags 
 	ms.service="notification-hubs"
 	ms.date="05/27/2015"
-	wacn.date="10/03/2015"
-    />
+	wacn.date="10/03/2015"/>
 
 # 通知中心入门
 
@@ -42,7 +41,7 @@
 
 <div class="dev-callout"><strong>Note</strong> <p>若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.cn%2Fzh-cn%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Azure 免费试用</a>。</p></div>
 
-[WACN.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [启用 Apple 推送通知](../includes/enable-apple-push-notifications.md)]
 
 ##<a name="configure-hub"></a>配置通知中心
 
@@ -57,7 +56,7 @@
 
 	>[AZURE.NOTE]本教程将创建 QuickStart.p12 文件。你的文件名和位置可能不同。
 
-2. 登录到 Azure 管理门户，然后单击屏幕底部的“新建”。[]
+2. 登录到[Azure 管理门户][Azure 管理门户]，然后单击屏幕底部的“新建”。
 
 3. 依次单击“应用程序服务”、“服务总线”、“通知中心”、“快速创建”。
 
@@ -499,14 +498,14 @@
 [Live SDK for Windows]: https://msdn.microsoft.com/zh-cn/onedrive/dn632140
 
 [Get started with Mobile Services]: /develop/mobile/tutorials/get-started-ios
-[]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
-[使用通知中心将通知推送到用户]: notification-hubs-aspnet-backend-ios-notify-users.md
-[使用通知中心发送突发新闻]: notification-hubs-ios-send-breaking-news.md
+[使用通知中心将通知推送到用户]: notification-hubs-aspnet-backend-ios-notify-users
+[使用通知中心发送突发新闻]: notification-hubs-ios-send-breaking-news
 
 [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 

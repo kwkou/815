@@ -11,14 +11,12 @@
 
 <tags 
 	ms.service="notification-hubs"  
-	ms.date="10/10/2014" 
+	ms.date="06/16/2015"
 	wacn.date="10/03/2015" />
 
 # Azure 通知中心富推送
-
-<div class="dev-center-tutorial-selector sublanding">
-        <a href="/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push" title="iOS" class="current">iOS</a>
-</div>
+> [AZURE.SELECTOR]
+- [iOS](/notification-hubs-aspnet-backend-ios-rich-push)
 
 ## 概述
 

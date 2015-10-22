@@ -1,29 +1,39 @@
-<properties linkid="notification-hubs-how-to-guides-howto-notify-users-aspnet" urlDisplayName="Notify Users" pageTitle="使用通知中心通知用户 ASP.NET 服务事件" metaKeywords="" description="遵循本教程来注册到通知中心以从 ASP.NET 服务接收通知" metaCanonical="" services="notification-hubs" documentationCenter="" title="使用通知中心通知用户" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service="notification-hubs"
-    ms.date="11/10/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	linkid="notification-hubs-how-to-guides-howto-notify-users-aspnet" 
+	urlDisplayName="Notify Users" pageTitle="使用通知中心通知用户 ASP.NET 服务事件" 
+	metaKeywords="" 
+	description="遵循本教程来注册到通知中心以从 ASP.NET 服务接收通知" 
+	metaCanonical="" 
+	services="notification-hubs" 
+	documentationCenter="" 
+	title="使用通知中心通知用户" 
+	authors="glenga" 
+	solutions="" 
+	manager="" 
+	editor=""/>
+<tags 
+	ms.service="notification-hubs"
+	ms.date="11/10/2014"
+	wacn.date="04/11/2015"/>
 
 # 使用通知中心通知用户
 
-<div class="dev-center-tutorial-selector sublanding">
 
-[移动服务][移动服务][ASP.NET][ASP.NET]
-
-</div>
+>[AZURE.SELECTOR]
+- [移动服务][移动服务]
+- [ASP.NET][ASP.NET]
 
 本教程演示如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。使用 ASP.NET Web API 后端对客户端进行身份验证和生成通知。本教程以您在前面的**通知中心入门**教程中创建的通知中心为基础。将通知注册代码从客户端移到后端服务。这确保仅在客户端已经过服务验证后才完成注册。它还表示通知中心凭据不随客户端应用程序一起分发。服务还控制在注册期间请求的标签。
 
 本教程将指导您完成以下基本步骤：
-
 -   [创建具有身份验证功能的 ASP.NET 应用程序][创建具有身份验证功能的 ASP.NET 应用程序]
 -   [更新 ASP.NET 应用程序以注册通知][更新 ASP.NET 应用程序以注册通知]
 -   [更新应用程序以登录和请求注册][更新应用程序以登录和请求注册]
 
 ## 先决条件
 
--   Visual Studio 2012。您还可以使用 Visual Studio Express 2012 for Web 和 Visual Studio Express 2012 for Windows 8 来分别创建 ASP.NET 应用程序和 Windows 应用商店应用程序。
--   本教程以您在**通知中心入门**中创建的应用程序和通知中心为基础。在您开始本教程之前，必须先完成**通知中心入门**教程（[Windows 应用商店 C#][Windows 应用商店 C#]/[iOS][iOS]/[Android][Android]）。
+-   Visual Studio 2012。您还可以使用 Visual Studio Express 2012 for Web 和 Visual Studio Express 2012 for Windows 8 来分别创建 ASP.NET 应用程序。
+-   本教程以您在**通知中心入门**中创建的应用程序和通知中心为基础。在您开始本教程之前，必须先完成**通知中心入门**教程（[iOS][iOS]/[Android][Android]）。
 
 <div class="dev-callout">
 
@@ -296,28 +306,17 @@
 
     显示浏览器时，记下所请求的网站的主机名。在更新客户端应用程序时，您将需要此根 URL。
 
-    <div class="dev-callout">
-
-    **说明**
-    使用本地 IIS Web 服务器或 Visual Studio Development Server 时，还必须指定端口号。请注意，将返回一个 404 错误，因为我们在此应用程序中未实现默认页。
-
-    </div>
+    **说明**使用本地 IIS Web 服务器或 Visual Studio Development Server 时，还必须指定端口号。请注意，将返回一个 404 错误，因为我们在此应用程序中未实现默认页。
 
 2.  根据您的客户端平台，按**通过使用 ASP.NET Web API 注册推送通知的当前用户**的以下版本之一中的步骤操作：
 
-    -   [Windows 应用商店 C# 版本][Windows 应用商店 C# 版本]
-    -   [iOS 版本][iOS 版本]
+     -   [iOS 版本][iOS 版本]
 
 3.  运行更新的应用程序，使用用于用户名和密码的同一字符串登录服务，然后验证是否显示分配给通知的注册 ID。
 
-    您还将接收一个推送通知。
+    您还将接收一个推送通知。<br>
+    **说明** 当缺少注册的平台（请求将通知发送到该平台）时，会在后端引发错误。在本示例中，可以忽略此错误。若要了解如何使用模板来避免此情况，请参见[使用通知中心向用户发送跨平台通知][使用通知中心向用户发送跨平台通知]。
 
-    <div class="dev-callout">
-
-    **说明**
-    当缺少注册的平台（请求将通知发送到该平台）时，会在后端引发错误。在本示例中，可以忽略此错误。若要了解如何使用模板来避免此情况，请参见[使用通知中心向用户发送跨平台通知][使用通知中心向用户发送跨平台通知]。
-
-    </div>
 
 4.  （可选）将客户端应用程序部署到第二个设备，然后运行该应用程序并插入文本。
 
@@ -327,7 +326,7 @@
 
 现在您已完成本教程，请考虑继续学习以下教程：
 
--   **使用通知中心发送突发新闻（[Windows 应用商店 C#][6] / [iOS][6]）**
+-   **使用通知中心发送突发新闻（[iOS][6]/[Android][7]）**
     此平台特定的教程演示如何使用标签来允许用户订阅他们感兴趣的通知类型。
 
 -   **[使用通知中心向用户发送跨平台通知][使用通知中心向用户发送跨平台通知]**
@@ -337,14 +336,13 @@
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ "移动服务"
-  [ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ "ASP.NET"
+  [移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ 
+  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ 
   [创建具有身份验证功能的 ASP.NET 应用程序]: #create-application
   [更新 ASP.NET 应用程序以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
-  [Windows 应用商店 C#]: /manage/services/notification-hubs/getting-started-windows-dotnet
-  [iOS]: /manage/services/notification-hubs/get-started-notification-hubs-ios
-  [Android]: /manage/services/notification-hubs/get-started-notification-hubs-android
+  [iOS]: /notification-hubs-ios-get-started
+  [Android]: /notification-hubs-android-get-started
   [使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务]: /develop/net/tutorials/rest-service-using-web-api/
   [0]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-mvc-app.png
   [1]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-aspnet-class.png
@@ -353,8 +351,8 @@
   [3]: ./media/notification-hubs-aspnet-notify-users/notification-hub-connection-strings.png
   [4]: ./media/notification-hubs-aspnet-notify-users/notification-hub-add-nuget-package.png
   [5]: ./media/notification-hubs-aspnet-notify-users/notification-hub-add-register-controller2.png
-  [Windows 应用商店 C# 版本]: /manage/services/notification-hubs/register-users-aspnet-dotnet
-  [iOS 版本]: /manage/services/notification-hubs/howto-register-user-with-aspnet-ios
-  [使用通知中心向用户发送跨平台通知]: /manage/services/notification-hubs/notify-users-xplat-aspnet
-  [6]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [iOS 版本]: /notification-hubs-ios-aspnet-register-user-push-notifications
+  [使用通知中心向用户发送跨平台通知]: /notification-hubs-aspnet-cross-platform-notify-users
+  [6]: /notification-hubs-ios-send-breaking-news
+  [7]: /notification-hubs-aspnet-backend-android-breaking-news
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

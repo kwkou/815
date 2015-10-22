@@ -8,8 +8,7 @@
 	editor=""/>
 
 <tags 
-	ms.service="notification-hubs" 
-	
+	ms.service="notification-hubs" 	
 	ms.date="01/15/2015" 
 	wacn.date="08/29/2015"/>
 
