@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="使用 Express 生成 Web 应用 (Node.js) | Windows Azure" 
+	pageTitle="使用 Express (Node.js) 构建 Web 应用 | Windows Azure" 
 	description="本教程以云服务教程为基础，演示如何使用 Express 模块。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="02/25/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/01/2015" 
+	wacn.date="10/17/2015"/>
 
 
 
@@ -41,7 +41,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
 		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 node 0.10.21
 
-	> [AZURE.NOTE]默认情况下，**Add-azurenodewebrole** 使用旧版 Node.js。上述 **Set-azureserviceprojectrole** 语句将指示 Azure 使用 v0.10.21 版本的节点。
+	> [AZURE.NOTE]默认情况下，**Add-azurenodewebrole** 使用旧版 Node.js。上述 **Set-azureserviceprojectrole** 语句将指示 Azure 使用 v0.10.21 版本的节点。请注意，这些参数区分大小写。通过检查 **WebRole1\\package.json** 中的 **engines** 属性可以验证是否已选择正确的 Node.js 版本。
 
 ##安装 Express
 
@@ -129,4 +129,4 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 
-<!---HONumber=71-->
+<!---HONumber=74-->
