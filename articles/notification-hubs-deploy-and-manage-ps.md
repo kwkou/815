@@ -77,11 +77,13 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 可以使用 Azure PowerShell 随附的 [Get-AzureSBAuthorizationRule] cmdlet 来检索用于提供连接字符串的授权规则。我们将在 `$NamespaceManager` 变量中存储对 `NamespaceManager` 实例的引用。我们将使用 `$NamespaceManager` 设置通知中心。
 
 ``` powershell
-$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
-# Create the NamespaceManager object to create the event hub
+
+$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace 
+<div>#Create the NamespaceManager object to create the event hub </div>
 Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
 $NamespaceManager=[Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
 Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
+
 ```
 
 
@@ -111,10 +113,10 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 		$WnsCredential = New-Object -TypeName Microsoft.ServiceBus.Notifications.WnsCredential -ArgumentList $WnsPackageSid,$WnsSecretkey
 
-# 查询命名空间
+<div># Query the namespace</div>
 $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
-# 检查命名空间是否已存在  
+<div>#Check if the namespace already exists</div>
 
 	if ($CurrentNamespace)
 	{
@@ -144,6 +146,7 @@ $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 	{
 	Write-Host "The [$Namespace] namespace does not exist."
 	}
+
 ```	
 
 
@@ -151,7 +154,7 @@ $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
 ## 其他资源
 
-- [使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)
+- [使用 PowerShell 管理服务总线](/service-bus-powershell-how-to-provision)
 - [如何使用 PowerShell 脚本创建 服务总线队列、主题和订阅](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [如何使用 PowerShell 脚本创建服务总线命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
@@ -161,7 +164,7 @@ $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 [购买选项]: http://www.windowsazure.cn/pricing/overview/
 [成员优惠]: http://azure.microsoft.com/pricing/member-offers/
 [免费试用]: /pricing/1rmb-trial/
-[安装和配置 Azure PowerShell]: install-configure-powershell
+[安装和配置 Azure PowerShell]: /install-configure-powershell
 [服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx

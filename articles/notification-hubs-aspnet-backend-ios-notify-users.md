@@ -281,7 +281,7 @@
 
 		@end
 
-> [AZURE.NOTE]下面的代码段不是安全的身份验证方案，您应该将 **createAndSetAuthenticationHeaderWithUsername:AndPassword:** 的实现替换为生成供注册客户端类（例如 OAuth、Active Directory）使用的身份验证令牌的特定身份验证机制。
+    > [AZURE.NOTE]下面的代码段不是安全的身份验证方案，您应该将 **createAndSetAuthenticationHeaderWithUsername:AndPassword:** 的实现替换为生成供注册客户端类（例如 OAuth、Active Directory）使用的身份验证令牌的特定身份验证机制。
 
 9. 然后在 ViewController.m 的 `@implementation` 部分中，添加以下代码，此代码将添加设置设备令牌和身份验证标头的实现。 
 
@@ -452,7 +452,7 @@
 
 	![][3]
 
-4. 在**收件人用户名标记*文本字段中，输入用于从另一台设备进行注册的用户名标记。
+4. 在*收件人用户名标记*文本字段中，输入用于从另一台设备进行注册的用户名标记。
 5. 输入一条通知消息，然后单击“发送通知”。只有使用此收件人用户名标记进行注册的设备才能接收此通知消息。此通知消息将只发送给上述用户。
 
 	![][4]

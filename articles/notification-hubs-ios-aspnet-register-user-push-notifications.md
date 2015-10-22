@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="notification-hubs-how-to-guides-howto-register-user-with-aspnet-webapi-ios" 
 	urlDisplayName="Notify iOS app users by using Web API" 
 	pageTitle="Register the current user for push notifications by using Web API - Notification Hubs" 
@@ -14,8 +14,7 @@
 <tags 
 	ms.service="notification-hubs"
 	ms.date="06/02/2015"
-	wacn.date="10/03/2015"
-    />
+	wacn.date="10/03/2015"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
@@ -112,7 +111,7 @@
 
     这为请求设置设备标记。
 
-	> [AZURE.NOTE]此时，此方法中不应有任何其他代码。如果你已调用在完成[通知中心入门](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank")教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。
+	> [AZURE.NOTE]此时，此方法中不应有任何其他代码。如果你已调用在完成[通知中心入门][通知中心入门]教程的学习时添加的 **registerNativeWithDeviceToken** 方法，必须注释掉或删除该调用。
 
 8.  在 PushToUserAppDelegate.m 文件中，添加以下处理程序方法：
 
@@ -233,9 +232,9 @@
 [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
 
 <!-- URLs. -->
-[使用通知中心通知用户]: /manage/services/notification-hubs/notify-users-aspnet
+[使用通知中心通知用户]: /notification-hubs-aspnet-backend-windows-dotnet-notify-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[通知中心入门]: /manage/services/notification-hubs/get-started-notification-hubs-ios
+[通知中心入门]: /notification-hubs-windows-phone-get-started
 
 <!---HONumber=71-->

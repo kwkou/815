@@ -1,14 +1,26 @@
-﻿<properties linkid="notification-hubs-how-to-guides-howto-register-user-with-mobile-service-windowsphonedotnet" urlDisplayName="Notify Windows Store app users by using Mobile Services" pageTitle="Register the current user for push notifications by using a mobile service - Notification Hubs" metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification Windows Store app" description="Learn how to request push notification registration in a Windows Store app with Azure Notification Hubs when registeration is performed by Azure Mobile Services." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Register the current user for push notifications by using a mobile service" authors="" solutions="" manager="" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date="11/30/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	linkid="notification-hubs-how-to-guides-howto-register-user-with-mobile-service-windowsphonedotnet" 
+	urlDisplayName="Notify Windows Store app users by using Mobile Services" 
+	pageTitle="Register the current user for push notifications by using a mobile service - Notification Hubs" 
+	metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification Windows Store app" 
+	description="Learn how to request push notification registration in a Windows Store app with Azure Notification Hubs when registeration is performed by Azure Mobile Services." 
+	metaCanonical="" services="mobile-services,notification-hubs" 
+	documentationCenter="" 
+	title="Register the current user for push notifications by using a mobile service" 
+	authors="" 
+	solutions="" 
+	manager="" 
+	editor="" />
+<tags 
+	ms.service="mobile-services,notification-hubs"
+	ms.date="11/30/2014"
+	wacn.date="04/11/2015"/>
 
 # 通过使用移动服务注册推送通知的当前用户
+> [AZURE.SELECTOR]
+- [Windows 应用商店 C#](/documentation/notification-hubs-windows-store-mobile-services-register-user-push-notifications)
+- [iOS](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/" title="Windows 应用商店 C#" class="current">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/" title="iOS">iOS</a>
-</div>
 
 本主题说明在 Azure 移动服务执行注册时如何请求向 Azure 通知中心注册推送通知。它是对教程[使用通知中心通知用户][使用通知中心通知用户]的扩展。你必须在该教程中已完成创建经过身份验证的移动服务所需的步骤。有关通知用户方案的详细信息，请参阅[使用通知中心通知用户][使用通知中心通知用户]。
 
@@ -16,7 +28,7 @@
 
 2.  在解决方案资源管理器中，右键单击项目，单击“应用商店”，然后单击“将应用程序与应用商店关联...”。
 
-    ![][]
+    ![][0]
 
     此时将显示“将应用程序与 Windows 应用商店关联”向导。
 
@@ -120,6 +132,6 @@
 
 <!-- Images. --> 
 
-  []: ./media/notification-hubs-windows-store-mobile-services-register-user-push-notifications/mobile-services-select-app-name.png
+  [0]: ./media/notification-hubs-windows-store-mobile-services-register-user-push-notifications/mobile-services-select-app-name.png
   [1]: ./media/notification-hubs-windows-store-mobile-services-register-user-push-notifications/notification-hub-associate-win8-app.png
   [2]: ./media/notification-hubs-windows-store-mobile-services-register-user-push-notifications/notification-hub-win8-app-toast.png

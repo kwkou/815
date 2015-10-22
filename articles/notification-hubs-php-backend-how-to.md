@@ -1,11 +1,28 @@
-<properties urlDisplayName="How to use Notification Hubs with PHP" pageTitle="如何结合使用通知中心与 PHP" metaKeywords="" description="了解如何从 PHP 后端使用 Azure 通知中心。" metaCanonical="" services="mobile-services,notification-hubs,push,php" documentationCenter="" title="How to use Notification Hubs with PHP" authors="piyushjo" solutions="" manager="dwrede" editor="" />
+<properties 
+	urlDisplayName="How to use Notification Hubs with PHP" 
+	pageTitle="如何结合使用通知中心与 PHP" 
+	metaKeywords="" 
+	description="了解如何从 PHP 后端使用 Azure 通知中心。" 
+	metaCanonical="" 
+	services="mobile-services,notification-hubs,push,php" 
+	documentationCenter="" 
+	title="How to use Notification Hubs with PHP" 
+	authors="piyushjo" 
+	solutions="" 
+	manager="dwrede" 
+	editor="" />
 
-<tags ms.service="notification-hubs" ms.date="11/14/2014" wacn.date="08/29/2015" />
+<tags 
+	ms.service="notification-hubs" 
+	ms.date="11/14/2014" 
+	wacn.date="08/29/2015" />
 
 # 如何通过 PHP 使用通知中心
-<div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/documentation/articles/notification-hubs-java-backend-how-to" title="Java">Java</a><a href="/documentation/articles/notification-hubs-php-backend-how-to" title="PHP" class="current">PHP</a><a href="/documentation/articles/notification-hubs-python-backend-how-to" title="Python">Python</a><a href="/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs/" title="Node.js">Node.js</a>
-</div>
+> [AZURE.SELECTOR] 
+- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
+- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
+- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
+- [Node.js](/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs)
 
 如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 中所述，您可以使用通知中心 REST 接口从 Java/PHP/Ruby 后端访问所有通知中心功能。
 

@@ -16,10 +16,10 @@
 	wacn.date="10/03/2015" />
 
 # Azure 通知中心安全推送
-
-<div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-secure-push" title="Windows 通用">Windows 通用</a><a href="/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push" title="iOS">iOS</a> <a href="/documentation/articles/notification-hubs-aspnet-backend-android-secure-push" title="Android" class="current">Android</a>
-</div>
+> [AZURE.SELECTOR]
+- [Windows Universal](/notification-hubs-aspnet-backend-windows-dotnet-secure-push)
+- [iOS](/notification-hubs-aspnet-backend-ios-secure-push)
+- [Android](/notification-hubs-aspnet-backend-android-secure-push)
 
 ## 概述
 

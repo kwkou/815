@@ -1,15 +1,27 @@
-﻿<properties linkid="manage-services-notification-hubs-notify-users-xplat-mobile-services" urlDisplayName="notify users xplat mobile services" pageTitle="Send cross-platform notifications to users with Notification Hubs (Mobile Services)" metaKeywords="" description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="Send cross-platform notifications to users with Notification Hubs" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date="12/03/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	linkid="manage-services-notification-hubs-notify-users-xplat-mobile-services" 
+	urlDisplayName="notify users xplat mobile services" 
+	pageTitle="Send cross-platform notifications to users with Notification Hubs (Mobile Services)" 
+	metaKeywords="" 
+	description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." 
+	metaCanonical="" 
+	services="mobile-services,notification-hubs" 
+	documentationCenter="" 
+	title="Send cross-platform notifications to users with Notification Hubs" 
+	authors="glenga" 
+	solutions="" 
+	manager="" 
+	editor="" />
+<tags 
+	ms.service="mobile-services,notification-hubs"
+	ms.date="12/03/2014"
+	wacn.date="04/11/2015"/>
 
 # 使用通知中心向用户发送跨平台通知
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="/zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/" title="移动服务" class="current">移动服务</a>
-<a href="/zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/" title="ASP.NET">ASP.NET</a>
-</div>
+>[AZURE.SELECTOR]
+-[移动服务][移动服务]
+-[ASP.NET][ASP.NET]
 
 在上一教程[使用通知中心通知用户][使用通知中心通知用户]中，你了解了如何将通知推送到经过身份验证的特定用户所注册的所有设备。在该教程中，需要使用多个请求将通知发送到每个支持的客户端平台。通知中心支持模板，这允许你指定特定设备要如何接收通知。这简化了发送跨平台通知。本主题演示如何利用模板在单个请求中发送针对所有平台的平台未知通知。有关模板的更多详细信息，请参见 [Azure 通知中心概述][Azure 通知中心概述]。
 
@@ -21,7 +33,7 @@
 
 1.  登录到 [Azure 管理门户][Azure 管理门户]，单击“移动服务”，然后单击你的应用程序。
 
-    ![][]
+    ![][0]
 
 2.  单击“API”选项卡，然后单击 API 表中的 **register\_notifications** 条目。
 
@@ -103,30 +115,29 @@
 
 现在，你已完成本教程，可以查看以下主题了解有关通知中心和模板的更多信息：
 
--   **使用通知中心发送突发新闻（[Windows 应用商店 C#][Windows 应用商店 C#] / [iOS][iOS]）**
+-   **使用通知中心发送突发新闻（[iOS][iOS]）**
     演示使用模板的另一方案
 
 -   **[Azure 通知中心概述][Azure 通知中心概述]**
     “概述”主题提供有关模板的更多详细信息。
 
--   **[针对 Windows 应用商店的通知中心操作指南][针对 Windows 应用商店的通知中心操作指南]**
-    包含模板表示语言参考。
+<!---   **[针对 Windows 应用商店的通知中心操作指南][针对 Windows 应用商店的通知中心操作指南]**
+    包含模板表示语言参考。-->
 
 <!-- Anchors. -->  
 
-  [移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ "移动服务"
-  [ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ "ASP.NET"
+  [移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ 
+  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/
   [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
   [Azure 通知中心概述]: http://go.microsoft.com/fwlink/p/?LinkId=317339
   [Azure 管理门户]: https://manage.windowsazure.cn/
 
 <!-- Images. -->
-  []: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-services-selection.png
+  [0]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-services-selection.png
   [1]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-custom-api-select.png
   [2]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-portal-data-tables.png
   [3]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-insert-script-push2.png
 
 <!-- URLs. --> 
-  [Windows 应用商店 C#]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [iOS]: /documentation/articles/notification-hubs-ios-send-breaking-news/
   [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx

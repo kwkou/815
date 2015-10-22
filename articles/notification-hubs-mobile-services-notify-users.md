@@ -1,16 +1,27 @@
-<properties linkid="notification-hubs-how-to-guides-howto-notify-users-mobileservices" urlDisplayName="Notify Users" pageTitle="使用通知中心通知用户移动服务事件" metaKeywords="" description="遵循本教程来注册到通知中心以从移动服务接收通知" metaCanonical="" services="mobile-services,notification-hubs" documentationCenter="" title="使用通知中心通知用户" authors="glenga" solutions="" manager="" editor="" />
-<tags ms.service="mobile-services,notification-hubs"
-    ms.date="10/25/2014"
-    wacn.date="04/11/2015"
-    />
+<properties 
+	linkid="notification-hubs-how-to-guides-howto-notify-users-mobileservices" 
+	urlDisplayName="Notify Users" 
+	pageTitle="使用通知中心通知用户移动服务事件" 
+	metaKeywords="" 
+	description="遵循本教程来注册到通知中心以从移动服务接收通知" 
+	metaCanonical="" 
+	services="mobile-services,notification-hubs" 
+	documentationCenter="" 
+	title="使用通知中心通知用户" 
+	authors="glenga" 
+	solutions="" 
+	manager="" 
+	editor="" />
+<tags 
+	ms.service="mobile-services,notification-hubs"
+	ms.date="10/25/2014"
+	wacn.date="04/11/2015"/>
 
 # <a name="getting-started"> </a>使用通知中心通知用户
 
-<div class="dev-center-tutorial-selector sublanding">
-
-[移动服务][移动服务][ASP.NET][ASP.NET]
-
-</div>
+>[AZURE.SELECTOR]
+-[移动服务][移动服务]
+-[ASP.NET][ASP.NET]
 
 本教程演示如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。使用 Azure 移动服务后端对客户端进行身份验证和生成通知。本教程以您在前面的**通知中心入门**教程中创建的通知中心为基础。将通知注册代码从客户端移到后端服务。这确保仅在客户端已经过服务验证后才完成注册。它还表示通知中心凭据不随客户端应用程序一起分发。服务还控制在注册期间请求的标签。
 
@@ -24,9 +35,9 @@
 
 在您开始本教程之前，必须先完成以下教程：
 
--   **通知中心入门**（[Windows 应用商店 C#][Windows 应用商店 C#]/[iOS][iOS]/[Android][Android]）。
+-   **通知中心入门**（[iOS][iOS]/[Android][Android]）。
 
--   **移动服务中身份验证入门**（[Windows 应用商店 C#][1]/[iOS][2]/[Android][3]）
+-   **移动服务中身份验证入门**（[iOS][2]/[Android][3]）
 
 本教程以您在**通知中心入门**中创建的应用程序和通知中心为基础。它还利用您在**移动服务中身份验证入门**中配置的经过身份验证的移动服务。
 
@@ -154,8 +165,7 @@
 
 1.  根据您的客户端平台，按**通过使用移动服务注册推送通知的当前用户**的以下版本之一中的步骤操作：
 
-    -   [Windows 应用商店 C# 版本][Windows 应用商店 C# 版本]
-    -   [iOS 版本][iOS 版本]
+       -   [iOS 版本][iOS 版本]
 
 2.  运行更新的应用程序，使用 Facebook 登录，然后验证是否显示分配给通知的注册 ID。
 
@@ -247,7 +257,7 @@
 
 现在您已完成本教程，请考虑继续学习以下教程：
 
--   **使用通知中心发送突发新闻（[Windows 应用商店 C#][11] / [iOS][12]）**
+-   **使用通知中心发送突发新闻（[iOS][12]）**
     此平台特定的教程演示如何使用标签来允许用户订阅他们感兴趣的通知类型。
 
 -   **[使用通知中心向用户发送跨平台通知][13]**
@@ -257,8 +267,8 @@
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-notify-users/ "移动服务"
-  [ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-notify-users/ "ASP.NET"
+  [移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-notify-users/ 
+  [ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-notify-users/ 
   [更新移动服务以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
   [更新移动服务以发送通知]: #send-notifications

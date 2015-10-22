@@ -33,7 +33,7 @@
 + [移动服务 Android SDK]
 + [百度推送 Android SDK]
 
-> [WACOM.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][]。
+> [WACOM.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][Azure 试用]。
 
 本教程将指导你完成启用推送通知的以下基本步骤：
 
@@ -48,7 +48,7 @@
 
 若要使用百度，必须创建帐户。如果你已有帐户，请使用百度帐户登录到[百度门户]，并跳到下一个步骤；否则，请参阅下面有关如何创建新百度帐号的说明。
 
-1. 转到百度门户并单击“登录”链接。[]单击“立即注册”以启动新帐户注册过程。 
+1. 转到百度门户并单击“登录”链接。单击“立即注册”以启动新帐户注册过程。 
 
    	![][1]
 
@@ -486,7 +486,6 @@
 [移动服务 Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [百度推送 Android SDK]: http://developer.baidu.com/wiki/index.php?title=docs/cplat/push/sdk/clientsdk
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[]: http://www.baidu.com/
 [百度门户]: http://www.baidu.com/
-
+[Azure 试用]: http://wacn-ppe.chinacloudsites.cn/pricing/1rmb-trial/
 <!---HONumber=71-->

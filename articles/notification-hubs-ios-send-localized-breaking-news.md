@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	linkid="develop-notificationhubs-tutorials-send-localized-breaking-news-iOS" 
 	urlDisplayName="Localized Breaking News" 
 	pageTitle="Notification Hubs Localized Breaking News Tutorial for iOS" 
@@ -177,7 +177,7 @@
 
 <h2><a name="send"></a>从后端发送本地化的通知</h2>
 
-[WACN.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
+[AZURE.INCLUDE [notification-hubs-localized-back-end](../includes/notification-hubs-localized-back-end.md)]
 
 
 ## 后续步骤
@@ -219,26 +219,12 @@
 
 
 <!-- URLs. -->
-[操作方法：服务总线通知中心（iOS 应用）]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
-[使用通知中心发送突发新闻]: /manage/services/notification-hubs/breaking-news-ios
+[操作方法：服务总线通知中心（iOS 应用）]: /notification-hubs-ios-get-started
+[使用通知中心发送突发新闻]: notification-hubs-windows-store-dotnet-send-breaking-news
 [Mobile Service]: /develop/mobile/tutorials/get-started
-[使用通知中心通知用户：ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[使用通知中心通知用户：移动服务]: /manage/services/notification-hubs/notify-users
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: https://msdn.microsoft.com/zh-cn/onedrive/dn632140
-[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
-[Get started with data]: /develop/mobile/tutorials/get-started-with-data-ios
-[Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-ios
-[Get started with push notifications]: /develop/mobile/tutorials/get-started-with-push-ios
-[Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-ios
-[Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
-[JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-push-js.md
-
-[Azure Management Portal]: https://manage.windowsazure.cn/
-[Windows Developer Preview registration steps for Mobile Services]: ../HowTo/mobile-services-windows-developer-preview-registration.md
-[wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
+[使用通知中心通知用户：ASP.NET]: /notification-hubs-aspnet-cross-platform-notify-users/ 
+[使用通知中心通知用户：移动服务]:/notification-hubs-mobile-services-cross-platform-notify-users/ 
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-[适用于 iOS 的通知中心操作方法]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
+[适用于 iOS 的通知中心操作方法]: /notification-hubs-ios-get-started
 
 <!---HONumber=71-->
