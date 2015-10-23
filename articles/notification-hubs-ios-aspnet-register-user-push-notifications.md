@@ -232,9 +232,9 @@
 [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
 
 <!-- URLs. -->
-[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+[使用通知中心通知用户]: /notification-hubs-aspnet-backend-windows-dotnet-notify-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started
+[通知中心入门]: /notification-hubs-windows-phone-get-started
 
 <!---HONumber=71-->

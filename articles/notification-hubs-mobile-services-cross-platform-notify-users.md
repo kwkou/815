@@ -140,4 +140,4 @@
 
 <!-- URLs. --> 
   [iOS]: /documentation/articles/notification-hubs-ios-send-breaking-news/
-  [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/library/azure/jj927172.aspx
+  [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/azure/jj927172.aspx

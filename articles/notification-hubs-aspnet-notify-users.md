@@ -341,8 +341,8 @@
   [创建具有身份验证功能的 ASP.NET 应用程序]: #create-application
   [更新 ASP.NET 应用程序以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
-  [iOS]: /documentation/articles/notification-hubs-ios-get-started
-  [Android]: /documentation/articles/notification-hubs-android-get-started
+  [iOS]: /notification-hubs-ios-get-started
+  [Android]: /notification-hubs-android-get-started
   [使用 ASP.NET Web API 和 SQL数据库 创建具有良好移动性的 REST 服务]: /develop/net/tutorials/rest-service-using-web-api/
   [0]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-mvc-app.png
   [1]: ./media/notification-hubs-aspnet-notify-users/notification-hub-create-aspnet-class.png
@@ -351,8 +351,8 @@
   [3]: ./media/notification-hubs-aspnet-notify-users/notification-hub-connection-strings.png
   [4]: ./media/notification-hubs-aspnet-notify-users/notification-hub-add-nuget-package.png
   [5]: ./media/notification-hubs-aspnet-notify-users/notification-hub-add-register-controller2.png
-  [iOS 版本]: /documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications
+  [iOS 版本]: /notification-hubs-ios-aspnet-register-user-push-notifications
   [使用通知中心向用户发送跨平台通知]: /notification-hubs-aspnet-cross-platform-notify-users
-  [6]: /documentation/articles/notification-hubs-ios-send-breaking-news
-  [7]: /documentation/articles/notification-hubs-aspnet-backend-android-breaking-news
+  [6]: /notification-hubs-ios-send-breaking-news
+  [7]: /notification-hubs-aspnet-backend-android-breaking-news
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

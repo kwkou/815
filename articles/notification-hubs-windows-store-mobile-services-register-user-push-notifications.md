@@ -18,7 +18,7 @@
 
 # 通过使用移动服务注册推送通知的当前用户
 > [AZURE.SELECTOR]
-- [Windows 应用商店 C#](/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications)
+- [Windows 应用商店 C#](/documentation/notification-hubs-windows-store-mobile-services-register-user-push-notifications)
 - [iOS](/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications)
 
 
@@ -124,8 +124,11 @@
 <!-- Anchors. --> 
 
 <!-- URLs. -->
+
+  [Windows 应用商店 C#]: /zh-cn/documentation/articles/notification-hubs-windows-store-mobile-services-register-user-push-notifications/ "Windows 应用商店 C#"
+  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications/ "iOS"
   [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
-  [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
+  [身份验证入门]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 
 <!-- Images. --> 
 
