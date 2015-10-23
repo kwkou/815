@@ -16,7 +16,7 @@
 
 # Azure 通知中心富推送
 > [AZURE.SELECTOR]
-- [iOS](/notification-hubs-aspnet-backend-ios-rich-push)
+- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push)
 
 ## 概述
 

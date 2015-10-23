@@ -28,7 +28,7 @@
  - [Xamarin.iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/)
  - [Xamarin.Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
 
-> [AZURE.NOTE]通知中心 Windows Phone SDK 不支持将 WNS 与 Windows Phone 8.1 Silverlight 应用配合使用。若要将 WNS（而不是 MPNS）与 Windows Phone 8.1 Silverlight 应用配合使用，请根据 [Windows Universal 入门](/zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)中所述设置 WNS 凭据。然后，你便可以根据[通知用户](/zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/)教程中所述通过后端注册，或者使用 [通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 注册。
+> [AZURE.NOTE]通知中心 Windows Phone SDK 不支持将 WNS 与 Windows Phone 8.1 Silverlight 应用配合使用。若要将 WNS（而不是 MPNS）与 Windows Phone 8.1 Silverlight 应用配合使用，请根据 [Windows Universal 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)中所述设置 WNS 凭据。然后，你便可以根据[通知用户](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/)教程中所述通过后端注册，或者使用 [通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 注册。
 
 本教程将指导你完成启用推送通知的以下步骤：
 
@@ -50,7 +50,7 @@
 
 2.  依次单击“应用程序服务”、“服务总线”、“通知中心”和“快速创建”。
 
-    ![][]
+    ![][0]
 
 3.  键入通知中心的名称，选择所需的区域，然后单击“创建新的通知中心”。
 
@@ -186,25 +186,18 @@
   [从后端发送通知]: #send
 
 <!-- URLs. -->
-  [Windows 应用商店 C#]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/ "Windows 应用商店 C#"
-  [Windows Phone]: /zh-cn/documentation/articles/notification-hubs-windows-phone-get-started/ "Windows Phone"
-  [iOS]: /zh-cn/documentation/articles/notification-hubs-ios-get-started/ "iOS"
-  [Android]: /zh-cn/documentation/articles/notification-hubs-android-get-started/ "Android"
-  [Kindle]: /zh-cn/documentation/articles/notification-hubs-kindle-get-started/ "Kindle"
-  [Xamarin.iOS]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/ "Xamarin.iOS"
-  [Xamarin.Android]: /zh-cn/documentation/articles/partner-xamarin-notification-hubs-android-get-started/ "Xamarin.Android"
   [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
   [Azure 试用]: http://www.windowsazure.cn/pricing/1rmb-trial/
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
-  [toast 目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/jj662938(v=vs.105).aspx
-  [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/hh202948(v=vs.105).aspx
-  [使用通知中心将通知推送到用户]: /zh-cn/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-  [使用通知中心发送突发新闻]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [toast 目录]: http://msdn.microsoft.com/library/windowsphone/develop/jj662938(v=vs.105).aspx
+  [磁贴目录]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
+  [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
+  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 
 <!-- Images. -->
-  []: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-from-portal.png
+  [0]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-from-portal.png
   [1]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-from-portal2.png
   [2]: ./media/notification-hubs-windows-phone-get-started/notification-hub-select-from-portal.png
   [3]: ./media/notification-hubs-windows-phone-get-started/notification-hub-select-from-portal2.png
