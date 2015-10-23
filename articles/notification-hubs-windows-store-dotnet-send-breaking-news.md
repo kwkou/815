@@ -225,22 +225,9 @@
 
 <!-- URLs.-->
 [get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-[使用通知中心广播本地化的突发新闻]: documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-[使用通知中心通知用户]: documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[Mobile Service]: /develop/mobile/tutorials/get-started/
+[使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
+[使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[Azure Management Portal]: https://manage.windowsazure.com/
-[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
-
-
-
-
-
- 
 
 <!---HONumber=71-->

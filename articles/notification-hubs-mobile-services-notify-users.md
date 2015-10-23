@@ -267,17 +267,15 @@
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [移动服务]: /zh-cn/documentation/articles/notification-hubs-mobile-services-notify-users/ 
-  [ASP.NET]: /zh-cn/documentation/articles/notification-hubs-aspnet-notify-users/ 
+  [移动服务]: /documentation/articles/notification-hubs-mobile-services-notify-users/ 
+  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-notify-users/ 
   [更新移动服务以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
   [更新移动服务以发送通知]: #send-notifications
-  [Windows 应用商店 C#]: /manage/services/notification-hubs/getting-started-windows-dotnet
-  [iOS]: /manage/services/notification-hubs/get-started-notification-hubs-ios
-  [Android]: /manage/services/notification-hubs/get-started-notification-hubs-android
-  [1]: /develop/mobile/tutorials/get-started-with-users-dotnet/
-  [2]: /develop/mobile/tutorials/get-started-with-users-ios/
-  [3]: /develop/mobile/tutorials/get-started-with-users-android/
+  [iOS]: /documentation/articles/notification-hubs-ios-get-started
+  [Android]: /documentation/articles/notification-hubs-android-get-started
+  [2]: /documentation/articles/mobile-services-ios-get-started-users
+  [3]: /documentation/articles/mobile-services-android-get-started-users
   [Azure 管理门户]: https://manage.windowsazure.cn/
   [0]: ./media/notification-hubs-mobile-services-notify-users/notification-hub-select-hub-connection.png
   [4]: ./media/notification-hubs-mobile-services-notify-users/notification-hub-connection-strings.png
@@ -286,11 +284,11 @@
   [7]: ./media/notification-hubs-mobile-services-notify-users/mobile-custom-api-create2.png
   [8]: ./media/notification-hubs-mobile-services-notify-users/mobile-custom-api-select.png
   [Windows 应用商店 C# 版本]: /manage/services/notification-hubs/register-users-mobile-services-dotnet
-  [iOS 版本]: /manage/services/notification-hubs/register-users-ios
+  [iOS 版本]: /documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications
   [9]: ./media/notification-hubs-mobile-services-notify-users/mobile-portal-data-tables.png
   [10]: ./media/notification-hubs-mobile-services-notify-users/mobile-insert-script-push2.png
   [使用通知中心向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
   [11]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
   [12]: /documentation/articles/notification-hubs-ios-send-breaking-news/
-  [13]: /manage/services/notification-hubs/notify-users-xplat-mobile-services
+  [13]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx
