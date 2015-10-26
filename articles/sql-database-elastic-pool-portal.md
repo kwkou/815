@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="创建和管理 SQL 数据库弹性数据库池 | Windows Azure"
-	description="创建一个可在一组 Azure SQL 数据库 之间共享的资源池。" 
+	description="创建一个可在一组 Azure SQL 数据库之间共享的资源池。"
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/13/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="08/25/2015"
+	wacn.date="10/17/2015"/>
 
 
 # 创建和管理 SQL 数据库弹性数据库池
@@ -35,7 +35,7 @@
 若要创建弹性数据库池，你需要满足以下条件：
 
 - Azure 订阅！ 如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
-- Azure SQL Database V12 服务器。如果你没有 V12 服务器，可以遵循本文中的以下步骤创建一个：[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
+- Azure SQL 数据库 V12 服务器。如果你没有 V12 服务器，可以遵循本文中的以下步骤创建一个：[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
 
 
 
@@ -44,7 +44,7 @@
 通过向服务器添加新池来创建弹性数据库池。可以将多个池添加到一个服务器，但每个池只能有一 (1) 个关联的服务器。此外，你还可以将将服务器上的所有或部分数据库添加到一个池中。
 
 
-1.	选择包含你要添加到池的数据库的 SQL Database V12 服务器。
+1.	选择包含你要添加到池的数据库的 SQL 数据库 V12 服务器。
 2.	通过选择 SQL Server 边栏选项卡顶部的“添加池”来创建池。
 
    ![创建弹性池][1]
@@ -113,9 +113,11 @@ SQL 数据库服务将评估使用历史记录，并在比使用单一数据库�
 | **eDTU MAX** - 单个数据库的 eDTU 最大值 | 单个数据库的 eDTU MAX 是指池中单一数据库可以使用的 eDTU 的最大数目。必须将单个数据库的 eDTU 最大值设置得足够高，否则无法处理数据库可能会遇到的最大突发或峰值情况。你可以将此最大值设置为系统上限，后者取决于池的定价层（高级层为 1000 eDTU）。此最大值的具体大小取决于组中数据库的峰值使用率模式。组可能会碰到某种程度的超量使用情况，因为池通常会假定数据库存在热使用模式和冷使用模式，即所有数据库不会同时达到峰值。<br> **我应该将单个数据库的 eDTU 最大值设置为何值？** <br> 将单个数据库的 eDTU MAX 或 eDTU 最大值设置为（[数据库高峰使用率]）。例如，假设单个数据库的高峰使用率为 50 DTU，在该组的 100 个数据库中，仅有 20% 同时爆发到峰值。如果将单个数据库的 eDTU 最大值设置为 50 eDTU，则可以认为超量 5 倍使用该池是合理的，因此可以将该组的 eDTU 保障 (POOL eDTU) 设置为 1,000 eDTU。此外还需要提到的是，eDTU 最大值不是数据库的资源保障，而是在可能情况下能够达到的 eDTU 上限。 |
 
 
-## 将数据库添加到弹性数据库池中
+## 将数据库添加到池，以及从池中删除弹性数据库
 
 创建池后，你可以通过在“添加数据库”页上选择或清除数据库，在池中添加或删除数据库。
+
+*创建池后，你还可以使用 Transact-SQL 在该池中创建新的弹性数据库，以及将现有数据库移入和移出池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
 
 
 ## 监视和管理弹性数据库池
@@ -157,8 +159,8 @@ SQL 数据库服务将评估使用历史记录，并在比使用单一数据库�
 
 ## 其他资源
 
-- [SQL Database 弹性池](/documentation/articles/sql-database-elastic-pool)
-- [使用 PowerShell 创建 SQL Database 弹性池](/documentation/articles/sql-database-elastic-pool-powershell)
+- [SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool)
+- [使用 PowerShell 创建 SQL 数据库弹性池](/documentation/articles/sql-database-elastic-pool-powershell)
 - [使用 C# 创建和管理 SQL 数据库](/documentation/articles/sql-database-client-library)
 - [弹性数据库参考](/documentation/articles/sql-database-elastic-pool-reference)
 
@@ -175,4 +177,4 @@ SQL 数据库服务将评估使用历史记录，并在比使用单一数据库�
 [9]: ./media/sql-database-elastic-pool-portal/pricing-tier.png
 [10]: ./media/sql-database-elastic-pool-portal/star.png
 
-<!---HONumber=69-->
+<!---HONumber=74-->

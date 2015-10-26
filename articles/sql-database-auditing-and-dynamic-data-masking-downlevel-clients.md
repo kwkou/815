@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="SQL 数据库 审核和动态数据掩码的下层客户端支持 | Azure" 
-	description="SQL 数据库 审核和动态数据掩码的下层客户端支持" 
+	description="SQL 数据库审核和动态数据掩码的下层客户端支持" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="nadavhelfman" 
@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="sql-database"
+	ms.service="sql-database" 
 	ms.date="06/01/2015" 
-	wacn.date="08/29/2015"/>
+	wacn.date="10/17/2015"/>
  
 # SQL 数据库 — 审核和动态数据掩码的下层客户端支持 
 
@@ -36,4 +36,4 @@
 
  
 
-<!---HONumber=67-->
+<!---HONumber=74-->

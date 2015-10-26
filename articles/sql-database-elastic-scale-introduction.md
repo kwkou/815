@@ -1,16 +1,16 @@
 <properties
     pageTitle="Azure SQL 数据库 - 弹性数据库工具"
-    description="使用弹性数据库工具轻松缩放云中的数据库资源。"
+    description="软件即服务 (SaaS) 开发人员可以使用这些工具轻松地在云中创建可缩放的弹性数据库"
     services="sql-database"
     documentationCenter=""
     manager="jeffreyg"
-    authors="sidneyh"
+    authors="ddove"
     editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.date="08/03/2015"
-    wacn.date="09/15/2015"/>
+    ms.date="08/27/2015"
+    wacn.date="10/17/2015"/>
 
 # 弹性数据库功能概述
 
@@ -25,6 +25,8 @@
 
 ![弹性数据库工具][1]
 
+如需此图的可打印版本，请转到[弹性数据库概述下载](http://aka.ms/axmybc)。
+
 在此图中，数据库颜色表示架构。颜色相同的数据库具有相同的架构。
 
 1. 一组使用分片体系结构的 **Azure SQL 数据库**托管在 Azure 上。 
@@ -38,7 +40,7 @@
 
 对于云应用程序而言，实现计算和 Blob 存储的弹性和缩放性非常直接 - 增加或减少单位即可。但对于关系数据库中的有状态数据处理，这仍是一个挑战。我们发现这些挑战主要出现在以下两种情况中：
 
-* 增加和缩小您的工作负载的关系数据库部分的容量。
+* 增加和缩小你的工作负载的关系数据库部分的容量。
 * 管理可能会影响特定数据子集的热点 - 例如，特别繁忙的最终客户（租户）。
 
 过去以来，在解决此类情况时，一般都是投资更大规模的数据库服务器来支持应用程序。但是，在预定义商品硬件上执行所有处理的云中，此选项受限制。将数据和处理负载分散到许多结构相同的数据库（一种称为“分片”的向外缩放模式），无论在成本还是弹性上，都是超越传统向上缩放方法的另一种选择。
@@ -91,6 +93,10 @@
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
+### 请提供反馈！
+我们怎样才能做到更好？ 本主题清楚地阐明了该功能吗？ 或是你对该功能仍感到困惑？ 我们的目标是让你满意，因此请使用投票按钮，告知我们做得失败（或成功）的地方。如果你希望我们与你联系，请在反馈中提供你的电子邮件。
+
+
 <!--Anchors-->
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-introduction/tools.png
@@ -98,4 +104,4 @@
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=69-->
+<!---HONumber=74-->

@@ -1,30 +1,43 @@
 <properties
-	pageTitle="使用 C# 连接和查询 SQL 数据库" 
-	description="使用 ADO.NET 连接到 Azure SQL 数据库云服务上的 AdventureWorks 数据库并与其交互的 C# 客户端代码示例。"
+	pageTitle="使用 C# 查询 SQL 数据库 | Windows Azure"
+	description="有关使用 IP 地址、连接字符串、安全登录配置文件和免费 Visual Studio 让 C# 程序能够使用 ADO.NET 连接到云中的 Azure SQL 数据库的详细信息。"
 	services="sql-database"
 	documentationCenter=""
-	authors="ckarst"
+	authors="MightyPen"
 	manager="jeffreyg"
 	editor=""/>
 
-
 <tags
 	ms.service="sql-database"
-	ms.date="07/17/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="09/09/2015"
+	wacn.date="10/17/2015"/>
 
 
 # 使用 C&#x23; 连接和查询 SQL 数据库
 
 
-本主题提供一个 C# 代码示例，演示如何使用 ADO.NET 连接到现有的 AdventureWorks SQL 数据库。该示例将编译成一个用于查询数据库并显示结果的控制台应用程序。
+你想要编写一个 C# 程序，该程序使用 ADO.NET 连接到云中的 Azure SQL 数据库。
+
+本主题为那些不熟悉 Azure SQL 数据库和 C# 的用户介绍每个步骤。对于熟悉 Microsoft SQL Server 和 C# 的用户，可以跳过一些步骤，重点关注那些特定于 SQL 数据库的步骤。
 
 
 ## 先决条件
 
 
-- Azure SQL 数据库上的现有 AdventureWorks 数据库。[在数分钟内即可创建一个](/documentation/articles/sql-database-get-started)。
-- [装有 .NET Framework 的 Visual Studio](https://www.visualstudio.com/zh-CN/visual-studio-homepage-vs.aspx)
+若要运行 C# 代码示例，你必须拥有：
+
+
+- Azure 帐户和订阅。你可以注册[免费试用版](http://wacn-ppe.chinacloudsites.cn/zh-cn/pricing/1rmb-trial/)。
+
+
+- Azure SQL 数据库服务的 **AdventureWorksLT** 演示数据库。
+ - 在几分钟内[创建演示数据库](/documentation/articles/sql-database-get-started)。
+
+
+- Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在*免费*提供 Visual Studio Community。
+ - [Visual Studio Community，下载](http://www.visualstudio.com/products/visual-studio-community-vs)
+ - [Visual Studio 的更多免费选项](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
+ - 或者，利用本主题中介绍 [Azure 预览门户](http://www.windowsazure.cn/)的后续[步骤](#InstallVSForFree)，指导你安装 Visual Studio。
 
 
 ## 步骤 1：控制台应用程序

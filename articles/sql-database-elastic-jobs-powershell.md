@@ -1,22 +1,19 @@
 <properties 
-	title="Elastic database jobs overview" 
-	pageTitle="弹性数据库作业概述" 
-	description="安装弹性数据库作业服务" 
-	metaKeywords="azure sql database elastic databases" 
-	services="sql-database"
-	documentationCenter=""  
+	pageTitle="使用 PowerShell 创建和管理弹性数据库作业" 
+	description="使用 PowerShell 管理 Azure SQL 数据库池" 
+	services="sql-database" documentationCenter=""  
 	manager="jeffreyg" 
 	authors="ddove"/>
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="08/04/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="09/17/2015" 
+	wacn.date="10/17/2015"/>
 
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
 > [AZURE.SELECTOR]
-- [Azure portal](/documentation/articles/sql-database-elastic-jobs-create-and-manage)
+- [Azure 门户](/documentation/articles/sql-database-elastic-jobs-create-and-manage)
 - [PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell)
 
 ## 概述
@@ -237,11 +234,11 @@
 ## 定义弹性数据库分片映射目标
 使用分片映射作为数据库目标，针对分片集（使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library)创建）的所有数据库执行作业。本示例依赖于使用弹性数据库客户端库创建分片应用程序。下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started)。
 
-###使用示例应用程序创建分片映射管理器
+### 使用示例应用程序创建分片映射管理器
 
 在此处，你将创建分片映射管理器以及多个分片，然后将数据插入分片。如果你已设置分片，则可以跳过下面的步骤，直接转到下一部分。
 
-1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
+1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
 
 	![命令提示符][1]
 
@@ -672,4 +669,4 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=69-->
+<!---HONumber=74-->
