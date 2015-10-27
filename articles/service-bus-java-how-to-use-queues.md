@@ -1,9 +1,16 @@
-<properties linkid="dev-java-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (Java) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Java" description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。" metaCanonical="" services="service-bus" documentationCenter="Java" title="How to Use Service Bus Queues" authors="robmcm" solutions="" manager="wpickett" editor="mollybos" videoId="" scriptId="" />
+<properties
+	pageTitle="如何使用服务总线队列 (Java) | windows Azure"
+	description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。"
+	services="service-bus"
+	documentationCenter="java"
+	authors="sethmanheim"
+	manager="timlt"
+	/>
 
 <tags
 	ms.service="service-bus"
 	ms.date="06/19/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="10/22/2015"/>
 
 # 如何使用 Service Bus 队列
 
@@ -12,7 +19,7 @@
 [AZURE.INCLUDE [service-bus-java-how-to-create-queue](../includes/service-bus-java-how-to-create-queue.md)]
 
 ## 配置应用程序以使用 Service Bus
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果你使用 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
+在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
 
 
 将以下导入语句添加到 Java 文件顶部：
@@ -25,7 +32,7 @@
 	
 ## 如何创建队列
 
-服务总线队列的管理操作可通过 **ServiceBusContract** 类执行。**ServiceBusContract** 对象是使用封装了用于管理对象本身的 SAS 令牌权限的适当配置构造的，而 **ServiceBusContract** 类是与 Azure 的单一通信点。
+服务总线队列的管理操作可通过 **ServiceBusContract** 类执行。**ServiceBusContract** 对象是使用封装了 SAS 令牌及用于管理它的权限的适当配置构造的，而 **ServiceBusContract** 类是与 Azure 进行通信的单一点。
 
 **ServiceBusService** 类提供了创建、枚举和删除队列的方法。以下示例演示了如何通过名为“HowToSample”的命名空间，使用 **ServiceBusService** 对象创建名为“TestQueue”的队列：
 
@@ -75,9 +82,9 @@
         System.exit(-1);
     }
 
-在服务总线队列中发送和接收的消息是 **BrokeredMessage** 类的实例。**BrokeredMessage** 对象包含一组标准方法（如 **getLabel**、**getTimeToLive**、**setLabel** 和 **setTimeToLive**）、一个用来保存自定义应用程序特定属性的词典以及一组任意的应用程序数据。应用程序可通过将任何可序列化对象传入到 **BrokeredMessage** 的构造函数中来设置消息的正文，然后将使用适当的序列化程序来序列化对象。或者，也可以提供 **java.io.InputStream**。
+发送至服务总线队列（和接收自服务总线队列）的消息是 **BrokeredMessage** 类实例。**BrokeredMessage** 对象包含一组标准方法（如 **getLabel**、**getTimeToLive**、**setLabel** 和 **setTimeToLive**）、一个用来保存自定义应用程序特定属性的词典以及一组任意的应用程序数据。应用程序可通过将任何可序列化对象传入到 **BrokeredMessage** 的构造函数中来设置消息的正文，然后将使用适当的序列化程序来序列化对象。或者，也可以提供 **java.IO.InputStream**。
 
-以下示例演示了如何将五条测试消息发送到我们在上面的代码段中获得的“TestQueue”**MessageSender**：
+以下示例演示了如何将五条测试消息发送到我们在前面的代码段中获得的“TestQueue”**MessageSender**：
 
     for (int i=0; i<5; i++)
     {
@@ -95,9 +102,9 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 从队列接收消息的主要方法是使用 **ServiceBusContract** 对象。收到的消息可在两种不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。
 
-当使用 **ReceiveAndDelete** 模式时，接收是一项单步操作，即当服务总线接收队列中某条消息的读取请求时，它会将该消息标记为“已使用”并将其返回给应用程序。**ReceiveAndDelete** 模式（默认模式）是最简单的模式，最适合应用程序可容忍出现故障时不处理消息的情景。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
+当使用 **ReceiveAndDelete** 模式时，接收是一项单次操作，即，当服务总线接收到队列中某条消息的读取请求时，它会将该消息标记为“已使用”并将其返回给应用程序。**ReceiveAndDelete** 模式（默认模式）是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
-在 **PeekLock** 模式下，接收变成了一个两阶段操作，从而有可能支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Delete** 完成接收过程的第二个阶段。当服务总线发现 **Delete** 调用时，它会将消息标记为“已使用”并将其从队列中删除。
+在 **PeekLock** 模式下，接收变成了一个两阶段操作，从而有可能支持无法允许遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Delete** 完成接收过程的第二个阶段。当服务总线发现 **Delete** 调用时，它会将消息标记为“已使用”并将其从队列中删除。
 
 以下示例演示了如何使用 **PeekLock** 模式（非默认模式）接收和处理消息。下面的示例将执行无限循环并在消息达到我们的“TestQueue”后进行处理：
 
@@ -158,11 +165,11 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
 
-如果在处理消息之后但在发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
+如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
 
 ## 后续步骤
 
-现在，你已了解服务总线队列的基础知识，请参阅 MSDN 主题[队列、主题和订阅][]以获取更多信息。
+现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
 
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
@@ -176,6 +183,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [How to: Handle Application Crashes and Unreadable Messages]: #bkmk_HowToHandleAppCrashes
   [Next Steps]: #bkmk_NextSteps
   [Azure Management Portal]: http://manage.windowsazure.cn/
-  [队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh367516.aspx
+  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 
-<!---HONumber=71-->
+<!---HONumber=74-->
