@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用移动服务将图像上载到 Blob 存储 (Windows Phone) | 移动服务" 
-	description="了解如何使用移动服务将图像上载到 Azure Blob 存储。" 
+	pageTitle="将图像从 Windows Phone Silverlight 应用上载到 Azure 存储空间 | Windows Azure" 
+	description="了解如何使用移动服务将图像从 Windows Phone Silverlight 应用上载到 Azure Blob 存储。" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
 	services="mobile-services" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/04/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="07/21/2015" 
+	wacn.date="10/22/2015"/>
 
 #  使用移动服务将图像上载到 Azure 存储空间
 
@@ -18,11 +18,11 @@
 
 ## 概述
 
-本主题说明如何借助 Azure 移动服务，使应用程序能够在 Azure 存储空间中上载和存储用户生成的图像。移动服务使用 SQL Database 存储数据。但是，将二进制大型对象 (BLOB) 数据存储在 Azure Blob 存储服务中可以提高效率。
+本主题说明如何借助 Azure 移动服务，使应用程序能够在 Azure 存储空间中上载和存储用户生成的图像。移动服务使用 SQL 数据库存储数据。但是，将二进制大型对象 (BLOB) 数据存储在 Azure Blob 存储服务中可以提高效率。
 
 你无法使用客户端应用程序安全地分发所需的凭据，因此无法安全地将数据上载到 Blob 存储服务。你必须将这些凭据存储在移动服务中，并使用它们来生成用于上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用程序安全返回 SAS（一个凭据，其过期时间较短 &mdash; 在本例中为 5 分钟）。然后，应用程序将使用此临时凭据来上载图像。在此示例中，公众可以从 Blob 服务下载。
 
-在本教程中，你将要向 [GetStartedWithData 示例应用程序项目](mobile-services-windows-phone-get-started-data)添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。
+在本教程中，你将要向 [GetStartedWithData 示例应用程序项目](/documentation/articles/mobile-services-windows-phone-get-started-data)添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。
 
 
 ## 先决条件
@@ -33,7 +33,7 @@
 + [Windows Phone SDK 8.0] 或更高版本
 + 为 Microsoft Visual Studio 安装 Nuget Package Manager。
 + [Azure 存储帐户][How To Create a Storage Account]
-+ 完成教程[将移动服务添加到现有应用程序](mobile-services-windows-phone-get-started-data)  
++ 完成教程[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-windows-phone-get-started-data)  
 
 
 ## 安装 Windows Phone 应用程序的存储客户端
@@ -64,6 +64,9 @@
 
 现在，你已能够通过将移动服务与 Blob 服务集成安全地上载图片，请查看一些其他的后端服务和集成主题：
 
++ [使用 SendGrid 从移动服务发送电子邮件]
+ 
+  了解如何使用 SendGrid 电子邮件服务为你的移动服务添加电子邮件功能。本主题演示如何添加服务器端脚本，以使用 SendGrid 发送电子邮件。
 
 + [在移动服务中计划后端作业]
 
@@ -82,7 +85,7 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-
+[使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
 [在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
@@ -93,4 +96,4 @@
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Windows Phone SDK 8.0]: http://www.microsoft.com/zh-cn/download/details.aspx?id=35471
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

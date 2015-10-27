@@ -3,9 +3,7 @@
 
 ### 使用 Visual Studio 2013 Update 2 或更高版本中的推送通知向导
 
-按此方法，该向导在您的项目中生成新的 push.register.js 和 service.js 文件。
-
->[WACOM.NOTE]目前只有 .NET 后端移动服务支持"添加推送通知向导"。
+按此方法，该向导在你的项目中生成新的 push.register.js 和 service.js 文件。
 
 1. 在 Solution Explorer 中的 Visual Studio 内，打开 push.register.js 项目文件然后注释掉或删除对 **addEventListener** 的调用。 
 
@@ -79,3 +77,5 @@
 		        });
 		    });
 		}  
+
+<!---HONumber=74-->

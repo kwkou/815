@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="将移动服务添加到现有应用程序 (Xamarin.Android) - Azure 移动服务" 
-	description="了解如何存储数据，以及如何从 Azure 移动服务 Xamarin.Android 应用程序访问数据。" 
-	documentationCenter="xamarin" 
-	authors="ggailey777" 
-	manager="dwrede" 
-	services="mobile-services" 
+<properties
+	pageTitle="将移动服务添加到现有应用 (Xamarin.Android) | Windows Azure"
+	description="了解如何存储数据，以及如何从 Azure 移动服务 Xamarin.Android 应用程序访问数据。"
+	documentationCenter="xamarin"
+	authors="ggailey777"
+	manager="dwrede"
+	services="mobile-services"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/24/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/22/2015"/>
 
 #  将移动服务添加到现有应用程序
 
@@ -18,7 +18,7 @@
 
 此主题说明如何通过 Azure 移动服务来利用 Xamarin.Android 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 
-> [AZURE.NOTE]本教程旨在帮助你更好地了解如何使用移动服务通过 Azure 来存储数据以及从 Xamarin.Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](partner-xamarin-mobile-services-android-get-started)教程。</div>
+> [AZURE.NOTE]本教程旨在帮助你更好地了解如何使用移动服务通过 Azure 来存储数据以及从 Xamarin.Android 应用程序检索数据。因此，本主题指导你完成的许多步骤已在移动服务快速入门中代你完成。如果这是你第一次体验移动服务，请考虑首先完成[移动服务入门](/develop/mobile/tutorials/get-started-xamarin-android)教程。
 
 本教程将指导你完成以下基本步骤：
 
@@ -282,4 +282,4 @@
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331302
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="向经过身份验证的用户发送推送通知" 
-	description="了解如何向特定用户发送推送通知" 
+	pageTitle="向经过身份验证的 Windows Phone Silverlight 应用用户发送推送通知 | Windows Azure" 
+	description="了解如何从 Azure 移动服务向 Windows Phone Silverlight 应用的特定用户发送推送通知。" 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="06/04/2015" 
-	wacn.date="07/25/2015"/>
+	wacn.date="10/22/2015"/>
 
 #  向经过身份验证的用户发送推送通知
 
@@ -87,4 +87,4 @@
 [向应用程序添加推送通知]: mobile-services-javascript-backend-windows-phone-get-started-push
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

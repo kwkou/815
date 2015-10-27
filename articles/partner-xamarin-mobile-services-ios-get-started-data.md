@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将移动服务添加到现有应用程序 (Xamarin.iOS) - Azure 移动服务"
+	pageTitle="将移动服务添加到现有应用 (Xamarin.iOS) | Windows Azure"
 	description="了解如何存储数据，以及如何从 Azure 移动服务 Xamarin.iOS 应用程序访问数据。"
 	documentationCenter="xamarin"
 	authors="ggailey777"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="04/24/2015"
-	wacn.date="07/25/2015"/>
+	ms.date="08/18/2015"
+	wacn.date="10/22/2015"/>
 
 #  将移动服务添加到现有应用程序
 
@@ -30,7 +30,7 @@
 
 本教程需要安装 [Azure 移动服务组件]、[XCode 6.0][Install Xcode]、[Xamarin.iOS] 和 iOS 7.0 或更高版本。
 
-> [AZURE.IMPORTANT]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial target="_blank)。
+> [AZURE.IMPORTANT]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial target="\_blank)。
 
 ##  <a name="download-app"></a>下载 GetStartedWithData 项目
 
@@ -56,7 +56,7 @@
 
 ##  <a name="add-table"></a>将新表添加到移动服务
 
-为了能够在新移动服务中存储应用数据，必须先在关联的 SQL Database 实例中创建一个新表。
+为了能够在新移动服务中存储应用数据，必须先在关联的 SQL 数据库实例中创建一个新表。
 
 1. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
@@ -129,9 +129,20 @@
 
 10. 取消注释 **TodoService** 的 **RefreshDataAsync** 方法中的以下行
 
-		// TODO:: Uncomment these lines to use Mobile Services
-    	try { // This code refreshes the entries in the list view by querying the TodoItems table. // The query excludes completed TodoItems Items = await todoTable .Where (todoItem => todoItem.Complete == false).ToListAsync(); } catch (MobileServiceInvalidOperationException e) { Console.Error.WriteLine (@"ERROR {0}", e.Message); return null; }
-        
+			// TODO:: Uncomment these lines to use Mobile Services
+			try
+	    {
+				// This code refreshes the entries in the list view by querying the TodoItems table.
+				// The query excludes completed TodoItems
+				Items = await todoTable
+					.Where (todoItem => todoItem.Complete == false).ToListAsync();
+			}
+	    catch (MobileServiceInvalidOperationException e)
+	    {
+				Console.Error.WriteLine (@"ERROR {0}", e.Message);
+				return null;
+			}
+
     这将会创建一个查询，用于返回尚未完成的所有任务。
 
 11. 找到 **InsertTodoItemAsync** 方法，并取消注释以下行：
@@ -140,7 +151,7 @@
 		
     此代码会将一个插入请求发送到移动服务。
 
-13. 找到 **CompleteItemAsync** 方法，并取消注释以下行：
+12. 找到 **CompleteItemAsync** 方法，并取消注释以下行：
 
 		await todoTable.UpdateAsync(item);
 		
@@ -177,15 +188,19 @@
 
 接下来，建议你完成下列教程之一，这些教程是基于本教程中创建的 GetStartedWithData 应用程序制作的：
 
-* [使用脚本验证和修改数据]<br/>了解更多有关使用移动服务中的服务器脚本验证和更改从应用程序发送的数据的信息。
+* [使用脚本验证和修改数据]
+  <br/>了解更多有关使用移动服务中的服务器脚本验证和更改从应用程序发送的数据的信息。
 
-* [使用分页优化查询]<br/>了解如何使用查询中的分页控制单个请求中处理的数据量。
+* [使用分页优化查询]
+  <br/>了解如何使用查询中的分页控制单个请求中处理的数据量。
 
 完成了数据系列教程后，请试着学习以下其他 iOS 教程：
 
-* [身份验证入门]<br/>了解如何对应用程序用户进行身份验证。
+* [身份验证入门]
+  <br/>了解如何对应用程序用户进行身份验证。
 
-* [推送通知入门]<br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
+* [推送通知入门]
+  <br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
 
 <!-- Anchors. -->
 
@@ -228,4 +243,4 @@
 [Xamarin.iOS]: http://xamarin.com/download
  
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

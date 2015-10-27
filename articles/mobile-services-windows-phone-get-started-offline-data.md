@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用移动服务中的脱机数据 (Windows Phone) | 移动开发人员中心" 
+	pageTitle="使用移动服务中的脱机数据 (Windows Phone) | Windows Azure" 
 	description="了解如何在 Windows Phone 应用程序中配合使用 Azure 移动服务和同步脱机数据" 
 	documentationCenter="mobile-services" 
 	authors="lindydonna" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/16/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/08/2015" 
+	wacn.date="10/22/2015"/>
 
 #  在移动服务中使用脱机数据同步
 
@@ -40,7 +40,7 @@
 * [Azure 移动服务 SQLite Store 版本 1.0.0（或更高版本）][SQLite store nuget]
 * [SQLite for Windows Phone 8]
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="_blank">Azure 试用</a>。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="\_blank">Azure 试用</a>。
 
 ##  <a name="enable-offline-app"></a>更新应用程序以支持脱机功能
 
@@ -55,7 +55,7 @@
 
     >[AZURE.NOTE]如果你使用的是 Internet Explorer，则单击用于安装 SQLite 的链接可能会提示你下载 .zip 文件形式的 .vsix。使用 .vsix 扩展名而不是 .zip 将文件保存到硬盘上的某一位置。在 Windows 资源管理器中双击 .vsix 文件以运行安装程序。
 
-2. 在 Visual Studio 中，打开你在[移动服务入门]或[数据处理入门]教程中完成的项目。在解决方案资源管理器中，右键单击项目下的“引用”，并在“Windows Phone”>“扩展”下添加对“SQLite for Windows Phone”的引用。
+2. 在 Visual Studio 中，打开你在[移动服务入门]或[数据处理入门]教程中完成的项目。在解决方案资源管理器中，右键单击项目下的“引用”，并在“Windows Phone”>“扩展”下添加对 **SQLite for Windows Phone** 的引用。
 
     ![][1]
 
@@ -174,7 +174,7 @@
 请注意，在本节中，应用程序不应连接到任何移动服务。因此，测试“推送”和“拉取”按钮时将会引发异常。在下一部分中，你会将此客户端应用程序重新连接到移动服务来测试“推送”和“拉取”操作，以便将存储与移动服务数据库进行同步。
 
 
-1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。将你 URL 中的“**azure-mobile.net**”替换为“**azure-mobile.xxx**”，以将 **MobileServiceClient** 的初始化更改为无效地址。然后保存该文件。
+1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。通过将 URL 中的 **azure-mobile.net** 替换为 **azure-mobile.xxx**，将 **MobileServiceClient** 的初始化更改为无效地址。然后保存该文件。
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://your-mobile-service.azure-mobile.xxx/",
@@ -192,7 +192,7 @@
 在本节中，你会将应用程序重新连接到移动服务。这模拟的是通过移动服务从脱机状态转为联机状态的应用程序。
 
 
-1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。将 URL 中的“**azure-mobile.xxx**”替换为“**azure-mobile.net**”，以将 **MobileServiceClient** 的初始化恢复为正确的地址。然后保存该文件。
+1. 在 Visual Studio 的解决方案资源管理器中，打开 App.xaml.cs。通过将 URL 中的 **azure-mobile.xxx** 替换为 **azure-mobile.net**，将 **MobileServiceClient** 的初始化更改回正确的地址。然后保存该文件。
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://your-mobile-service.azure-mobile.net/",
@@ -231,15 +231,13 @@
  
     在此示例中，我们将检索远程 `todoTable` 中的所有记录，但也可以通过传递查询来筛选记录。`PullAsync` 的第一个参数是用于增量同步的查询 ID；增量同步使用 `UpdatedAt` 时间戳以仅获取自上次同步以来修改的记录。查询 ID 应对于你的应用程序中的每个逻辑查询都是唯一的描述性字符串。若选择不要增量同步，请传递 `null` 作为查询 ID。此命令会检索每个请求的操作，这是可能效率低下上的所有记录。
 
-    >[AZURE.NOTE]若要通过脱机数据同步支持同步已删除的记录，应启用“软删除”[]。否则，则必须调用 `IMobileServiceSyncTable.PurgeAsync()` 来清除本地存储。
+    >[AZURE.NOTE]若要通过脱机数据同步支持同步已删除的记录，应启用“[软删除]”。否则，则必须调用 `IMobileServiceSyncTable.PurgeAsync()` 来清除本地存储。
 
  
     ![][9]
 
     ![][10]
   
-
-## 摘要
 
 ## 摘要
 
@@ -259,7 +257,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images -->
-
 [0]: ./media/mobile-services-windows-phone-get-started-data-vs2013/mobile-todoitem-data-browse.png
 [1]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-add-reference-sqlite-dialog.png
 [2]: ./media/mobile-services-windows-phone-get-started-offline-data/mobile-services-sqlitestore-nuget.png
@@ -281,10 +278,10 @@
 [数据处理入门]: /documentation/articles/mobile-services-windows-phone-get-started-data/
 [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
-[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete/
+[软删除]: /documentation/articles/mobile-services-using-soft-delete/
 []: /documentation/articles/mobile-services-using-soft-delete/
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

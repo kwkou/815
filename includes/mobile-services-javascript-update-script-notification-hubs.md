@@ -2,11 +2,9 @@
 
 最后，您必须更新注册到 TodoItem 表上的插入操作的脚本，以便发送通知。
 
-1. 单击"TodoItem"，再单击"脚本"并选择"插入"。 
+1. 单击“TodoItem”，单击“脚本”，然后选择“插入”。 
 
-   	![](./media/mobile-services-javascript-update-script-notification-hubs/mobile-insert-script-push2.png)
-
-2. 将 insert 函数替换为以下代码，然后单击"保存"：
+2. 将 insert 函数替换为以下代码，然后单击“保存”：
 
 		function insert(item, user, request) {
 		// Define a payload for the Windows Store toast notification.
@@ -31,5 +29,6 @@
 		        });
 		}
 
- 插入成功后，此插入脚本会向所有 Windows 应用商店应用注册发送推送通知（包含插入项的文本）。
+	插入成功后，此插入脚本会向所有 Windows 应用商店应用注册发送推送通知（包含插入项的文本）。
 
+<!---HONumber=74-->

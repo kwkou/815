@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将移动服务添加到现有应用程序 (WP8) - Azure 移动服务" 
+	pageTitle="将移动服务添加到现有应用 (WP8) | Windows Azure" 
 	description="了解如何使用来自 Azure 移动服务 Windows Phone 8 应用程序的数据。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/28/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="07/25/2015" 
+	wacn.date="10/22/2015"/>
 
 
 #  将移动服务添加到现有应用程序
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
 
-
+##概述
 
 此主题说明如何通过 Azure 移动服务来利用 Windows Phone 8 应用程序中的数据。在本教程中，你将要下载一个可在内存中存储数据的应用程序，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。  
 
@@ -25,7 +25,7 @@
 
 + Visual Studio 2012 Express for Windows Phone 8，以及 Windows 8 上运行的 [Windows Phone 8 SDK]。若要在完成本教程后创建一个 Windows Phone 8.1 应用程序，您必须使用 Visual Studio 2013 Update 2 或更高版本。 
 
->[WACOM.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="_blank">Azure 试用</a>。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="\_blank">Azure 试用</a>。
 
 ## <a name="download-app"></a>下载 GetStartedWithData 项目
 
@@ -112,7 +112,7 @@
         private IMobileServiceTable<TodoItem> todoTable = 
 			App.MobileService.GetTable<TodoItem>();
 
-   	此代码将创建一个移动服务感知型绑定集合 (**items**) 和 SQL Database 表 **TodoItem** (**todoTable**) 的代理类。
+   	此代码将创建一个移动服务感知型绑定集合 (**items**) 和 SQL 数据库表 **TodoItem** (**todoTable**) 的代理类。
 
 7. 在 **InsertTodoItem** 方法中，删除设置 **TodoItem**.**Id** 属性的代码行，为该方法添加 **async** 修饰符，然后取消注释以下代码行：
 
@@ -156,11 +156,14 @@
 
 本教程演示了有关如何使 Windows Phone 8 应用程序处理移动服务中的数据的基础知识。建议你接下来阅读下列其他主题之一：
 
-* [向应用程序添加身份验证](mobile-services-windows-phone-get-started-users)<br/>了解如何对应用程序用户进行身份验证。
+* [向应用程序添加身份验证](/documentation/articles/mobile-services-windows-phone-get-started-users)
+  <br/>了解如何对应用程序用户进行身份验证。
 
-* [向应用程序添加推送通知](mobile-services-javascript-backend-windows-phone-get-started-push)<br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
+* [向应用程序添加推送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)
+  <br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
  
-* [移动服务 C# 操作方法概念性参考 ](mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
+* [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
+  <br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
  
 <!-- Anchors. -->
 [Download the Windows Phone 8 app project]: #download-app
@@ -187,4 +190,4 @@
 [开发人员代码示例站点]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

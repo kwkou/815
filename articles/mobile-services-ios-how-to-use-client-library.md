@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="03/18/2015"
-	wacn.date="07/25/2015"/>
+	ms.date="07/01/2015"
+	wacn.date="Segmented Controls"/>
 
 #  如何使用适用于 Azure 移动服务的 iOS 客户端库
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
-本指南介绍如何使用 Azure 移动服务 [iOS SDK] 执行常见任务。如果你不熟悉移动服务，请先完成[移动服务快速入门]，以配置你的帐户、创建表，并创建移动服务。
+本指南介绍如何使用 Azure 移动服务 [iOS SDK] 执行常见任务。如果你不熟悉移动服务，请先完成[移动服务快速入门]或[将移动服务添加到现有应用程序]，以配置你的帐户、创建表，并创建移动服务。
 
 > [AZURE.NOTE]本指南使用最新的 [iOS 移动服务 SDK](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409)。如果你的项目使用旧版 SDK，请先升级 Xcode 中的框架。
 
@@ -24,7 +24,7 @@
 
 ## <a name="Setup"></a>安装与先决条件
 
-本指南假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表]，或重复使用在[移动服务快速入门]中创建的 `TodoItem` 表。本指南假设该表的架构与这些教程中的表相同。本指南还假设你的 Xcode 将引用 `WindowsAzureMobileServices.framework` 并导入 `WindowsAzureMobileServices/WindowsAzureMobileServices.h`。
+本指南假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表]，或重复使用在[移动服务快速入门]或[将移动服务添加到现有应用程序]中创建的 `TodoItem` 表。本指南假设该表的架构与这些教程中的表相同。本指南还假设你的 Xcode 将引用 `WindowsAzureMobileServices.framework` 并导入 `WindowsAzureMobileServices/WindowsAzureMobileServices.h`。
 
 ## <a name="create-client"></a>如何：创建移动服务客户端
 
@@ -88,13 +88,7 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
     MSQuery *query = [table queryWithPredicate: [NSPredicate predicateWithFormat:@"complete == NO"]];
 ```
 
-`MSQuery` 可让你控制以下几种查询行为。通过调用 `readWithCompletion` 执行 `MSQuery` 查询，如下一示例中所示。
-* 指定结果的顺序 
-* 限制要返回的字段 
-* 限制要返回的记录数 
-* 指定响应中的总计数 
-* 指定请求中的自定义查询字符串参数 
-* 应用其他函数
+`MSQuery` 可让你控制以下几种查询行为。通过调用 `readWithCompletion` 执行 `MSQuery` 查询，如下一示例中所示。* 指定结果的顺序 * 限制要返回的字段 * 限制要返回的记录数 * 指定响应中的总计数 * 指定请求中的自定义查询字符串参数 * 应用其他函数
 
 
 ##  <a name="sorting"></a>如何：使用 MSQuery 对数据排序
@@ -132,10 +126,10 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
 @property (nonatomic, strong)   NSMutableArray *loadedItems; // Init via [[NSMutableArray alloc] init]
 @property (nonatomic)   				BOOL moreResults;
 ```
-  
 
-	-(void)loadResults
-	{
+```
+-(void)loadResults
+{
     MSQuery *query = [self.table query];
 
 		query.includeTotalCount = YES;
@@ -154,6 +148,7 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
 		}];
 	}
 
+```
  
 ##  <a name="selecting"></a><a name="parameters"></a>如何：使用 MSQuery 限制字段和展开查询字符串参数
 
@@ -234,6 +229,12 @@ MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" applicatio
 
 进行删除时，至少必须设置 `id` 属性。
 
+##<a name="#custom-api"></a>如何：调用自定义 API
+
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
+
+[AZURE.INCLUDE [mobile-services-ios-call-custom-api](../includes/mobile-services-ios-call-custom-api.md)]
+
 
 ## <a name="authentication"></a>如何：对用户进行身份验证
 
@@ -306,7 +307,7 @@ Azure 移动服务支持两种身份验证工作流：
 <!-- Images. -->
 
 <!-- URLs. -->
-
+[将移动服务添加到现有应用程序]: /develop/mobile/
 
 [移动服务快速入门]: /documentation/articles/mobile-services-ios-get-started
 [Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-ios
@@ -317,16 +318,16 @@ Azure 移动服务支持两种身份验证工作流：
 
 [Handling Expired Tokens]: http://go.microsoft.com/fwlink/p/?LinkId=301955
 [Live Connect SDK]: http://go.microsoft.com/fwlink/p/?LinkId=301960
-[权限]: http://msdn.microsoft.com/zh-cn/library/azure/jj193161.aspx
-[服务器端授权]: mobile-services-javascript-backend-service-side-authorization
-[Use scripts to authorize users]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
+[权限]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193161.aspx
+[服务器端授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Use scripts to authorize users]: /zh-cn/documentation/articles/mobile-services-ios-authorize-users-in-scripts
 [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
-[How to: access custom parameters]: /documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
-[创建表]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
+[How to: access custom parameters]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
+[创建表]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: virtual-machines-command-line-tools#Mobile_Tables
-[冲突处理程序]: mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
+[冲突处理程序]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
  
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->
