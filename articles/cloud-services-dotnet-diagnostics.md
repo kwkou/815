@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="08/25/2015" 
-	wacn.date="10/17/2015"/>
+	ms.date="04/27/2015" 
+	wacn.date="10/03/2015"/>
 
 
 
@@ -162,12 +162,12 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 	![CloudServices\_diag\_add\_xml](./media/cloud-services-dotnet-diagnostics/AddXmlFile.png)
 
-3.	将 WadConfig.xsd 与配置文件相关联。确保 WadExample.xml 编辑器窗口是活动的窗口。按 **F4** 打开“属性”窗口。在“属性”窗口中单击“架构”属性。在“架构”属性中单击“...”。单击“添加...”按钮并导航到 XSD 文件的保存位置，然后选择文件 WadConfig.xsd。单击“确定”。
+3.	将 WadConfig.xsd 与配置文件相关联。确保 WadExample.xml 编辑器窗口是活动的窗口。按 **F4** 打开“属性”窗口。在“属性”窗口中单击“架构”属性。在“架构”属性中单击“...”。单击“添加...”按钮并导航到 XSD 文件的保存位置，然后选择文件 WadConfig.xsd。单击**“确定”**。
 4.	将 WadExample.xml 配置文件的内容替换为以下 XML 并保存该文件。此配置文件定义两个要收集的性能计数器：一个对应于 CPU 使用率，另一个对应于内存使用率。配置将定义对应于 SampleEventSourceWriter 类中方法的四个事件。
 
 ```
-		<?xml version="1.0" encoding="utf-8"?>
-		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+			<?xml version="1.0" encoding="utf-8"?>
+			<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
@@ -185,10 +185,10 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
       				</EtwProviders>
     			</DiagnosticMonitorConfiguration>
   			</WadCfg>
-		</PublicConfig>
+			</PublicConfig>
 ```
 
-### 步骤 5：在辅助角色上安装 Diagnostics
+###步骤 5：在辅助角色上安装 Diagnostics###
 用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureServiceDiagnosticsExtension、Get-AzureServiceDiagnosticsExtension 和 Remove-AzureServiceDiagnosticsExtension。
 
 1.	打开 Windows Azure PowerShell。
@@ -211,7 +211,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 本演练介绍如何从开发计算机将 Diagnostics 远程安装到 Azure 虚拟机。你还将了解如何实施在该 Azure 虚拟机上运行的应用程序，并使用 .NET [EventSource 类][]发出遥测数据。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。
 
-### 先决条件
+###先决条件###
 本演练假定你具有 Azure 订阅，并将 Visual Studio 2013 与  Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。请确保[安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ### 步骤 1：创建虚拟机
@@ -225,8 +225,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 
 ### 步骤 2：创建应用程序
 1.	在开发计算机上启动 Visual Studio 2013。
-2.	创建面向 .NET Framework 4.5 的新 Visual C# 控制台应用程序。将该项目命名为“WadExampleVM”。
-	![CloudServices\_diag\_new\_project](./media/cloud-services-dotnet-diagnostics/NewProject.png)
+2.	创建面向 .NET Framework 4.5 的新 Visual C# 控制台应用程序。将该项目命名为“WadExampleVM”。![CloudServices\_diag\_new\_project](./media/cloud-services-dotnet-diagnostics/NewProject.png)
 3.	将 Program.cs 的内容替换为以下代码。类 **SampleEventSourceWriter** 实现四个日志记录方法：**SendEnums**、**MessageMethod**、**SetOther** 和 **HighFreq**。WriteEvent 方法的第一个参数定义相关事件的 ID。Run 方法实现一个无限循环，该循环每隔 10 秒调用 **SampleEventSourceWriter** 类中实现的每个日志记录方法。
 
 		using System;
@@ -398,8 +397,7 @@ Diagnostics 由两个组件构成：来宾代理插件和监视代理。来宾�
 ### 未将 Diagnostics 数据记录到存储中
 丢失事件数据的最常见原因是错误地定义了存储帐户信息。
 
-解决方案：更正 Diagnostics 配置文件，然后重新安装 Diagnostics。
-事件数据在上载到存储帐户之前，会存储在文件夹中。有关 **LocalResourceDirectory** 的详细信息，请参阅上文。
+解决方案：更正 Diagnostics 配置文件，然后重新安装 Diagnostics。事件数据在上载到存储帐户之前，会存储在文件夹中。有关 **LocalResourceDirectory** 的详细信息，请参阅上文。
 
 如果在此文件夹中没有任何文件监视代理将无法启动。这通常是由于配置文件无效而导致的，应该已在 CommandExecution.log 中报告。如果监视代理已成功收集事件数据，你将会看到配置文件中为每个事件定义的 .tsf 文件。
 
@@ -415,10 +413,7 @@ Diagnostics 由两个组件构成：来宾代理插件和监视代理。来宾�
 
 **Q.** 如何将我的 Visual Studio 解决方案从 Azure Diagnostics 1.0 升级到 Azure Diagnostics 1.1？
 
-**A.** 将 Visual Studio 解决方案从 Diagnostics 1.0 升级到 Diagnostics 1.1（或更高版本）是一个手动过程： 
-- 在 Visual Studio 解决方案中禁用 Diagnostics，以阻止随角色一起部署 Diagnostics 1.0 
-- 如果代码使用了跟踪侦听器，则你需要将代码修改为使用 .NET EventSource。Diagnostics 1.1 和更高版本不支持跟踪侦听器。 
-- 修改部署过程以安装 Diagnostics 1.1 扩展
+**A.** 将 Visual Studio 解决方案从 Diagnostics 1.0 升级到 Diagnostics 1.1（或更高版本）是一个手动过程： - 在 Visual Studio 解决方案中禁用 Diagnostics，以阻止随角色一起部署 Diagnostics 1.0 - 如果代码使用了跟踪侦听器，则你需要将代码修改为使用 .NET EventSource。Diagnostics 1.1 和更高版本不支持跟踪侦听器。 - 修改部署过程以安装 Diagnostics 1.1 扩展
 
 **Q.** 如果我已在角色或 VM 上安装了 Diagnostics 1.1 扩展，如何升级到 Diagnostics 1.2 或 1.3？
 
@@ -462,7 +457,7 @@ provider=”prov2” &lt;DefaultEvents eventDestination=”dest2” /&gt;|WADdes
 下表比较了 Azure Diagnostics 版本 1.0 和 1.1/1.2/1.3 支持的功能：
 
 支持的角色类型|Diagnostics 1.0|Diagnostics 1.1/1.2/1.3
----|---
+---|---|---
 Web 角色|是|是
 辅助角色|是|是
 IaaS|否|是
@@ -510,11 +505,11 @@ EventSource|否|表|记录你的代码使用 .NET EventSource 类生成的事件
 [使用 Azure 诊断收集日志记录数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433048.aspx
 [有关开发 Azure 应用程序的故障排除最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
 [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
-[试用版]: /pricing/1rmb-trial
+[免费试用版]: /pricing/1rmb-trial
 [安装并配置 Azure PowerShell 0.8.7 或更高版本]: /documentation/articles/install-configure-powershell/
 [Azure Diagnostics 1.2 配置架构]: http://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495270.aspx
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495145.aspx
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495168.aspx
 
-<!---HONumber=74-->
+<!---HONumber=71-->

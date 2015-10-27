@@ -3,99 +3,31 @@ pageTitle="为 Azure 云服务中的角色设置远程桌面连接"
 description="如何配置 Azure 云服务应用程序以允许远程桌面连接" 
 services="cloud-services" 
 documentationCenter="" 
-authors="sbtron" 
+authors="Thraka" 
 manager="timlt" 
 editor=""/>
 <tags 
 ms.service="cloud-services"  
 ms.date="07/06/2015" 
-wacn.date="10/17/2015"/>
+wacn.date="10/03/2015"/>
 
-# 为 Azure 云服务中的角色设置远程桌面连接
+# 为 Azure 中的角色设置远程桌面连接
+在创建运行应用程序的云服务后，可以远程访问该应用程序中的角色实例，以配置设置或解决问题。必须已为远程桌面配置云服务。
 
->[AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/cloud-services-role-enable-remote-desktop)
-- [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell)
-- [Visual Studio](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)
+* 是否需要一个证书来启用远程桌面身份验证？ [创建](/documentation/articles/cloud-services-certs-create)一个证书并在下面进行配置。
+* 你的云服务是否已有远程桌面设置？ [连接](#remote-into-role-instances)到云服务。
 
+## 设置 Web 角色或辅助角色的远程桌面连接
+要启用 Web 角色或辅助角色的远程桌面连接，则可以在应用程序的服务模型中设置连接，或者可以使用 Azure 管理门户在实例进行运行后设置连接。
 
-你可以通过远程桌面访问在 Azure 中运行的角色的桌面。你可以使用远程桌面连接，在应用程序正在运行时排查和诊断其问题。
+### 在服务模型中设置连接
+**导入**元素必须添加到将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入服务模型的服务定义文件。使用 Visual Studio 创建 Azure 项目时，将创建服务模型的文件。
 
-你可以在开发过程中通过在服务定义中加入远程桌面模块来在你的角色中启用远程桌面连接，也可以通过远程桌面扩展选择启用远程桌面。首选方法是使用远程桌面扩展，因为即使在部署应用程序后，也能启用远程桌面，而不必重新部署你的应用程序。
+服务模型由一个 <!--[-->ServiceDefinition.csdef<!--](cloud-services-model-and-package.md#csdef)--> 文件和一个 <!--[-->ServiceConfiguration.cscfg<!--](cloud-services-model-and-package.md#cscfg)-->文件组成。当准备云服务的应用程序进行部署时，定义文件将与角色二进制文件一起打包。ServiceConfiguration.cscfg 文件与应用程序包一起部署并被 Azure 用于确定应用程序的运行方式。
 
+创建项目后，可以使用 Visual Studio [启用远程桌面连接](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)。
 
-## 从门户配置远程桌面
-门户使用远程桌面扩展方法，以便即使在部署应用程序之后，也能启用远程桌面。使用云服务的“配置”页，可以启用远程桌面、更改用于连接虚拟机的本地 Administrator 帐户、身份验证使用的证书，以及设置到期日期。
-
-
-1. 单击“云服务”，单击云服务的名称，然后单击“配置”。
-
-2. 单击“远程”。
-    
-    ![云服务远程](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)
-    
-    > [AZURE.WARNING]当首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须对于此角色安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)，然后返回到此对话框。
-    
-
-3. 在“角色”中，选择要更新的角色，或选择“全部”以选择所有角色。
-
-4. 进行以下任何更改：
-    
-    - 若要启用远程桌面，请选中“启用远程桌面”复选框。若要禁用远程桌面，请清除该复选框。
-    
-    - 创建一个要在与角色实例的远程桌面连接中使用的帐户。
-    
-    - 更新现有帐户的密码。
-    
-    - 选择要用于身份验证的已上载证书（使用“证书”页上的“上载”），或者创建新证书。
-    
-    - 更改远程桌面配置的到期日期。
-
-5. 当你完成配置更新时，请单击“确认”（复选标记）。
-
-
-## 远程到角色实例
-对角色启用远程桌面后，你可以通过各种工具远程连接到角色实例。
-
-若要从门户连接到角色实例，请执行以下操作：
-    
-  1.   单击“实例”打开“实例”页。
-  2.   选择一个配置了远程桌面的角色实例。
-  3.   单击“连接”，并按照说明打开桌面。 
-  4.   依次单击“打开”和“连接”以启动远程桌面连接。 
-
-
-### 使用 Visual Studio 远程连接到角色实例
-
-在 Visual Studio 的“服务器资源管理器”中：
-
-1. 展开“Azure\\云服务\\[云服务名称]”节点。
-2. 展开“暂存”或“生产”。
-3. 展开各个角色。
-4. 右键单击某一角色实例，单击“使用远程桌面连接...”，然后输入用户名和密码。 
-
-	![服务器资源管理器远程桌面](./media/cloud-services-role-enable-remote-desktop/ServerExplorer_RemoteDesktop.png)
-
-
-### 使用 PowerShell 获取 RDP 文件
-可以使用 [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/zh-cn/library/azure/dn495261.aspx) cmdlet 检索 RDP 文件。然后可以使用具有远程桌面连接的 RDP 文件来访问云服务。
-
-### 通过服务管理 REST API 以编程方式下载 RDP 文件
-可以使用[下载 RDP 文件](https://msdn.microsoft.com/zh-cn/library/jj157183.aspx) REST 操作下载 RDP 文件。
-
-
-
-## 在服务定义文件中配置远程访问
-
-此方法允许你在开发过程中为应用程序启用远程桌面。此方法需要将加密的密码存储在服务配置文件中，并且如果对远程桌面配置进行了任何更新，将需要重新部署应用程序。如果你想要避免这些弊端，应使用上面所述的基于远程桌面扩展的方法。
-
-可以通过服务定义文件方法使用 Visual Studio [启用远程桌面连接](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)。
-下面的步骤介绍了要启用远程桌面需要对服务模型文件进行的更改。在发布时，Visual Studio 将自动进行这些更改。
-
-### 在服务模型中设置连接 
-使用 **Imports** 元素将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入到 [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package/#csdef) 文件中。
-
-服务定义文件应类似于下面的示例，并添加 `<Imports>` 元素。
+配置连接后，服务定义文件应类似于下面的示例，并添加 `<Imports>` 元素。
 
 ```xml
 <ServiceDefinition name="<name-of-cloud-service>" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
@@ -118,7 +50,8 @@ wacn.date="10/17/2015"/>
     </WebRole>
 </ServiceDefinition>
 ```
-[ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件应类似于下面的示例，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素。指定的证书必须 [已上载到云服务](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)。
+
+服务配置文件应类似于下面的示例，并具有你在设置连接时提供的值，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -139,9 +72,41 @@ wacn.date="10/17/2015"/>
 </ServiceConfiguration>
 ```
 
+当你[打包](/documentation/articles/cloud-services-model-and-package/#cspkg)并<!--[-->发布<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->应用程序时，必须确保已选中“为所有角色启用远程桌面”复选框。[此](https://msdn.microsoft.com/zh-cn/library/ff683672.aspx)文章提供了与使用 Visual Studio 和云服务相关的常见任务的列表。
 
-## 其他资源
+### 在正在运行的实例上设置连接
+在云服务的配置页上，可以启用或修改远程桌面连接设置。有关详细信息，请参阅[配置角色实例的远程访问](/documentation/articles/cloud-services-how-to-configure)。
 
-[如何配置云服务](/documentation/articles/cloud-services-how-to-configure)
 
-<!---HONumber=74-->
+
+
+## 远程到角色实例
+要访问 Web 角色或辅助角色的实例，则必须使用远程桌面协议 (RDP) 文件。可以从管理门户下载该文件，也可以以编程方式检索该文件。
+
+### 通过管理门户下载 RDP 文件
+
+可以使用以下步骤从管理门户检索 RDP 文件，然后使用远程桌面连接，连接到使用该文件的实例：
+
+1.  在实例页上，选择该实例，然后单击命令栏上的“连接”。
+2.  单击“保存”将远程桌面协议文件保存到本地计算机。
+3.  打开“远程桌面连接”，单击“显示选项”，然后单击“打开”。
+4.  浏览保存 RDP 文件的位置，选择该文件，单击“打开”，然后单击“连接”。按照说明操作完成连接。
+
+### 使用 PowerShell 获取 RDP 文件
+可以使用 [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/zh-cn/library/azure/dn495261.aspx) cmdlet 检索 RDP 文件。
+
+### 使用 Visual Studio 下载 RDP 文件
+在 Visual Studio 中，可以使用服务器资源管理器来创建远程桌面连接。
+
+1.  在服务器资源管理器中，展开“Azure\\云服务\\[云服务名称]”节点。
+2.  展开“暂存”或“生产”。
+3.  展开各个角色。
+4.  右键单击某一角色实例，单击“使用远程桌面连接...”，然后输入用户名和密码。
+
+### 通过服务管理 REST API 以编程方式下载 RDP 文件
+可以使用[下载 RDP 文件](https://msdn.microsoft.com/zh-cn/library/jj157183.aspx) REST 操作下载 RDP 文件。然后可以使用具有远程桌面连接的 RDP 文件来访问云服务。
+
+## 后续步骤
+可能需要[打包](/documentation/articles/cloud-services-model-and-package)或<!--[-->上载（部署）<!--](/documentation/articles/cloud-services-how-to-create-deploy-portal)-->你的应用程序。
+
+<!---HONumber=71-->

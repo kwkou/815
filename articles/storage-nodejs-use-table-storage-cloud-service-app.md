@@ -3,14 +3,14 @@
 	description="本教程以“使用 Express 构建 Web 应用程序”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
-	authors="TomArcher" 
+	authors="MikeWasson" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	ms.date="02/25/2015" 
+	wacn.date="10/03/2015"/>
 
 
 
@@ -403,4 +403,4 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [Node.js Web 应用程序]: /develop/nodejs/
  
 
-<!---HONumber=74-->
+<!---HONumber=71-->

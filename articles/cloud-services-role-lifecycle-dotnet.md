@@ -8,8 +8,8 @@ manager="timlt"
 editor=""/>
 <tags 
 ms.service="cloud-services" 
-ms.date="09/08/2015" 
-wacn.date="10/17/2015"/>
+ms.date="06/11/2015" 
+wacn.date="10/03/2015"/>
 
 # 在 .NET 中自定义 Web 角色或辅助角色的生命周期
 
@@ -27,7 +27,7 @@ wacn.date="10/17/2015"/>
      
 -   **RoleEntryPoint** 方法重载中未捕获的任何异常都被视为未处理的异常。
 
-     如果某个生命周期方法中发生异常，则 Azure 将引发 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件，然后进程会终止。角色脱机后，Azure 会将它重新启动。如果出现未处理的异常，则不会引发 [Stopping](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx) 事件，并且不会调用 **OnStop** 方法。
+     如果某个生命周期方法中发生异常，则 Azure 将引发 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件，然后进程会终止。角色脱机后，Azure 会将它重新启动。如果出现未处理的异常，则不会引发 [Stopping](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx) 事件，并且不会调用 **OnStop** 方法。
 
 如果角色未启动，或者在初始化、繁忙和停止状态之间循环，可能是因为每次角色重新启动生命周期事件时，你的代码都引发了未处理的异常。在这种情况下，请使用 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件来确定异常的原因并采用适当的方法进行处理。角色也可能会从 [Run](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法返回，从而促使角色重新启动。有关部署状态的详细信息，请参阅[导致角色回收的常见问题](https://msdn.microsoft.com/zh-cn/library/azure/gg465402.aspx)。
 
@@ -76,4 +76,4 @@ public override bool OnStart()
 ## 后续步骤
 了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package)。
 
-<!---HONumber=74-->
+<!---HONumber=71-->

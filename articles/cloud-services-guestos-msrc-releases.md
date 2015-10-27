@@ -9,26 +9,12 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="09/14/2015"
-   wacn.dater="10/17/2015"/>
+   ms.date="04/17/2015"
+   wacn.dater="10/03/2015"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
-
-## 9 月来宾 OS
-
-| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
-| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
-| MS15-093 | [3088903] | Internet Explorer 的安全更新 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-094 | [3089548] | Internet Explorer 的累积安全更新 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-096 | [3072595] | Active Directory 服务中的漏洞可能导致拒绝服务 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-097 | [3089656] | Microsoft 图形组件中的漏洞可能导致提升权限 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-098 | [3089669] | Windows 日记中的漏洞可能导致远程执行代码 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-101 | [3089662] | .NET Framework 中的漏洞可能导致提升权限 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-102 | [3089657] | Windows 任务管理中的漏洞可能导致提升权限 | 4\.24、3.31、2.43 | 2015 年 9 月 8日 |
-| MS15-105 | [3091287] | Windows Hyper-V 中的漏洞可能导致绕过安全功能 | 4\.24 | 2015 年 9 月 8日 |
-
 
 ## 8 月来宾 OS
 
@@ -42,6 +28,7 @@
 | MS15-088 | [3082458] | 传递不安全的命令行参数可能导致信息泄露 | 4\.23、3.30、2.42 | 2015 年 8 月 11 日 |
 | MS15-089 | [3060716] | Microsoft Windows 中的漏洞可能导致提升权限 | 4\.23、3.30、2.42 | 2015 年 8 月 11 日 |
 | MS15-090 | [3076949] | WebDAV 中的漏洞可能导致信息泄露 | 4\.23、3.30、2.42 | 2015 年 8 月 11 日 |
+| MS15-092 | [3086251] | .NET Framework 中的漏洞可能导致提升权限 | 4\.23、3.30、2.42 | 2015 年 8 月 11 日 |
 
 
 ## 7 月来宾 OS
@@ -167,14 +154,6 @@
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
-[3088903]: http://support.microsoft.com/zh-cn/kb/3088903
-[3089548]: http://support.microsoft.com/zh-cn/kb/3089548
-[3072595]: http://support.microsoft.com/zh-cn/kb/3072595
-[3089656]: http://support.microsoft.com/zh-cn/kb/3089656
-[3089669]: http://support.microsoft.com/zh-cn/kb/3089669
-[3089657]: http://support.microsoft.com/zh-cn/kb/3089657
-[3091287]: http://support.microsoft.com/zh-cn/kb/3091287
-[3089662]: http://support.microsoft.com/zh-cn/kb/3089662
 [3082442]: http://support.microsoft.com/zh-cn/kb/3082442
 [3078662]: http://support.microsoft.com/zh-cn/kb/3078662
 [3080348]: http://support.microsoft.com/zh-cn/kb/3080348
@@ -279,7 +258,7 @@
 
 
 [archive]: https://msdn.microsoft.com/zh-cn/library/azure/dn391773.aspx
-[family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
+[family-explain]: /documentation/articles/cloud-services-guestos-update-matrix#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=74-->
+<!---HONumber=71-->

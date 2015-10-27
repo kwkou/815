@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何配置云服务 | Windows Azure" 
+	pageTitle="如何配置云服务 - Azure" 
 	description="了解如何在 Azure 中配置云服务。了解如何更新云服务配置以及配置对角色实例的远程访问。" 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="06/29/2015"
-	wacn.date="10/17/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 
@@ -18,8 +18,8 @@
 # 如何配置云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-how-to-configure)
-- [Azure 门户](/documentation/articles/cloud-services-how-to-configure-portal)
+- [Azure Portal](/documentation/articles/cloud-services-how-to-configure)
+- [Azure Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 你可以在 Azure 管理门户中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
@@ -85,4 +85,4 @@
 			
  
 
-<!---HONumber=74-->
+<!---HONumber=71-->

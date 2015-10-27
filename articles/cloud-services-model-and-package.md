@@ -9,7 +9,7 @@
 <tags 
     ms.service="cloud-services"  
     ms.date="07/06/2015" 
-    wacn.date="10/17/2015"/>
+    wacn.date="10/03/2015"/>
 
 # 什么是云服务模型以及如何打包？
 云服务由以下三个组件创建：服务定义 _(.csdef)_、服务配置 _(.cscfg)_ 和服务包 _(.cspkg)_。**ServiceDefinition.csdef** 和 **ServiceConfig.cscfg** 文件都基于 XML，同时介绍云服务的结构及其配置方式；统称为模型。**ServicePackage.cspkg** 是从 **ServiceDefinition.csdef** 和其他文件生成的 zip 文件，它包含所有必需的基于二进制的依赖项。Azure 可从 **ServicePackage.cspkg** 和 **ServiceConfig.cscfg** 两者创建云服务。
@@ -27,121 +27,110 @@
     * [部署云服务项目][vs_deploy]
     * [通过远程桌面连接到云服务实例][remotedesktop]
 
-<a name="csdef"></a>
+<a name="csdef">
 ## ServiceDefinition.csdef
 **ServiceDefinition.csdef** 文件指定 Azure 用于配置云服务的设置。[Azure 服务定义架构（.csdef 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)为服务定义文件提供允许的格式。以下示例显示了可为 Web 角色和辅助角色定义的设置：
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<ServiceDefinition name="MyServiceName" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-  <WebRole name="WebRole1" vmsize="Medium">
-    <Sites>
-      <Site name="Web">
-        <Bindings>
-          <Binding name="HttpIn" endpointName="HttpIn" />
-        </Bindings>
-      </Site>
-    </Sites>
-    <Endpoints>
-      <InputEndpoint name="HttpIn" protocol="http" port="80" />
-      <InternalEndpoint name="InternalHttpIn" protocol="http" />
-    </Endpoints>
-    <Certificates>
-      <Certificate name="Certificate1" storeLocation="LocalMachine" storeName="My" />
-    </Certificates>
-    <Imports>
-      <Import moduleName="Connect" />
-      <Import moduleName="Diagnostics" />
-      <Import moduleName="RemoteAccess" />
-      <Import moduleName="RemoteForwarder" />
-    </Imports>
-    <LocalResources>
-      <LocalStorage name="localStoreOne" sizeInMB="10" />
-      <LocalStorage name="localStoreTwo" sizeInMB="10" cleanOnRoleRecycle="false" />
-    </LocalResources>
-    <Startup>
-      <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" />
-    </Startup>
-  </WebRole>
 
-  <WorkerRole name="WorkerRole1">
-    <ConfigurationSettings>
-      <Setting name="DiagnosticsConnectionString" />
-    </ConfigurationSettings>
-    <Imports>
-      <Import moduleName="RemoteAccess" />
-      <Import moduleName="RemoteForwarder" />
-    </Imports>
-    <Endpoints>
-      <InputEndpoint name="Endpoint1" protocol="tcp" port="10000" />
-      <InternalEndpoint name="Endpoint2" protocol="tcp" />
-    </Endpoints>
-  </WorkerRole>
-</ServiceDefinition>
-```
+	<?xml version="1.0" encoding="utf-8"?>
+	<ServiceDefinition name="MyServiceName" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10//ServiceDefinition">
+	  <WebRole name="WebRole1" vmsize="Medium">
+	    <Sites>
+	      <Site name="Web">
+	        <Bindings>
+	          <Binding name="HttpIn" endpointName="HttpIn" />
+	        </Bindings>
+	      </Site>
+	    </Sites>
+	    <Endpoints>
+	      <InputEndpoint name="HttpIn" protocol="http" port="80" />
+	      <InternalEndpoint name="InternalHttpIn" protocol="http" />
+	    </Endpoints>
+	    <Certificates>
+	      <Certificate name="Certificate1" storeLocation="LocalMachine" storeName="My" />
+	    </Certificates>
+	    <Imports>
+	      <Import moduleName="Connect" />
+	      <Import moduleName="Diagnostics" />
+	      <Import moduleName="RemoteAccess" />
+	      <Import moduleName="RemoteForwarder" />
+	    </Imports>
+	    <LocalResources>
+	      <LocalStorage name="localStoreOne" sizeInMB="10" />
+	      <LocalStorage name="localStoreTwo" sizeInMB="10" cleanOnRoleRecycle="false" />
+	    </LocalResources>
+	    <Startup>
+	      <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" />
+	    </Startup>
+	  </WebRole>
+	
+	  <WorkerRole name="WorkerRole1">
+	    <ConfigurationSettings>
+	      <Setting name="DiagnosticsConnectionString" />
+	    </ConfigurationSettings>
+	    <Imports>
+	      <Import moduleName="RemoteAccess" />
+	      <Import moduleName="RemoteForwarder" />
+	    </Imports>
+	    <Endpoints>
+	      <InputEndpoint name="Endpoint1" protocol="tcp" port="10000" />
+	      <InternalEndpoint name="Endpoint2" protocol="tcp" />
+	    </Endpoints>
+	  </WorkerRole>
+	</ServiceDefinition>
+
 
 可以参考 [服务定义架构][] 以更好地了解此处使用的 XML 架构，而以下是某些元素的快速说明：
 
->**站点**  
->包含 IIS7 中承载的网站或 Web 应用程序的定义。
+>**站点**包含 IIS7 中承载的网站或 Web 应用程序的定义。
 >
->**InputEndpoints**  
->包含用于联系云服务的终结点的定义。
+>**InputEndpoints** 包含用于联系云服务的终结点的定义。
 >
->**InternalEndpoints**  
->包含角色实例用于相互通信的终结点的定义。
+>**InternalEndpoints** 包含角色实例用于相互通信的终结点的定义。
 >
->**ConfigurationSettings**  
->包含特定角色功能的设置定义。
+>**ConfigurationSettings** 包含特定角色功能的设置定义。
 >
->**证书**  
->包含角色所需的证书的定义。前面的代码示例显示了用于 Azure Connect 的配置的证书。
+>**证书**包含角色所需的证书的定义。前面的代码示例显示了用于 Azure Connect 的配置的证书。
 >
->**LocalResources**  
->包含本地存储资源的定义。本地存储资源是角色实例在其中运行的虚拟机的文件系统中的保留目录。
+>**LocalResources** 包含本地存储资源的定义。本地存储资源是角色实例在其中运行的虚拟机的文件系统中的保留目录。
 >
->**导入**  
->包含已导入模块的定义。前面的代码示例显示了远程桌面连接和 Azure Connect 的模块。
+>**导入**包含已导入模块的定义。前面的代码示例显示了远程桌面连接和 Azure Connect 的模块。
 >
->**启动**  
->包含在角色启动时运行的任务。任务在 .cmd 文件或可执行文件中定义。
+>**启动**包含在角色启动时运行的任务。任务在 .cmd 文件或可执行文件中定义。
 
 
 
-<a name="cscfg"></a>
+<a name="cscfg">
 ## ServiceConfiguration.cscfg
 你的云服务设置配置由 **ServiceConfiguration.cscfg** 文件中的值确定。指定要为此文件中每个角色部署的实例数。在服务定义文件中定义的配置设置值已添加到服务配置文件中。与云服务相关联的所有管理证书的指纹也会添加到该文件中。[Azure 服务配置架构（.cscfg 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)为服务配置文件提供允许的格式。
 
 服务配置文件不与该应用程序一起打包，但将作为一个单独的文件上载到 Azure 中并用于配置云服务。无需重新部署云服务即可上载新的服务配置文件。云服务正在运行时可以更改云服务的配置值。以下示例显示了可为 Web 角色和辅助角色定义的配置设置：
 
-```xml
-<?xml version="1.0"?>
-<ServiceConfiguration serviceName="MyServiceName" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
-  <Role name="WebRole1">
-    <Instances count="2" />
-    <ConfigurationSettings>
-      <Setting name="SettingName" value="SettingValue" />
-    </ConfigurationSettings>
 
-    <Certificates>
-      <Certificate name="CertificateName" thumbprint="CertThumbprint" thumbprintAlgorithm="sha1" />
-      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption"
-         thumbprint="CertThumbprint" thumbprintAlgorithm="sha1" />
-    </Certificates>
-  </Role>
-</ServiceConfiguration>
-```
+	<?xml version="1.0"?>
+	<ServiceConfiguration serviceName="MyServiceName" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+	  <Role name="WebRole1">
+	    <Instances count="2" />
+	    <ConfigurationSettings>
+	      <Setting name="SettingName" value="SettingValue" />
+	    </ConfigurationSettings>
+	
+	    <Certificates>
+	      <Certificate name="CertificateName" thumbprint="CertThumbprint" thumbprintAlgorithm="sha1" />
+	      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption"
+	         thumbprint="CertThumbprint" thumbprintAlgorithm="sha1" />
+	    </Certificates>
+	  </Role>
+	</ServiceConfiguration>
+
 
 可以参考[服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)以更好了解此处使用的 XML 架构，而以下是元素的快速说明：
 
->**实例**  
->为角色配置运行角色实例数。要防止云服务在升级期间可能变得不可用，建议你部署面向 Web 角色的多个实例。如此以来，则可遵守 [Azure 计算服务级别协议 (SLA)](http://azure.microsoft.com/support/legal/sla/) 中的准则，此协议可以保证在为一个服务部署了两个或多个角色实例时，面向 Internet 的角色有 99.95%的外部连接。
+>**实例**为角色配置运行角色实例数。要防止云服务在升级期间可能变得不可用，建议你部署面向 Web 角色的多个实例。如此以来，则可遵守 [Azure 计算服务级别协议 (SLA)](http://azure.microsoft.com/support/legal/sla/) 中的准则，此协议可以保证在为一个服务部署了两个或多个角色实例时，面向 Internet 的角色有 99.95%的外部连接。
 
->**ConfigurationSettings**  
->为角色配置运行实例的设置。`<Setting>` 元素的名称必须与服务定义文件中的设置定义匹配。
+>**ConfigurationSettings** 为角色配置运行实例的设置。`<Setting>` 元素的名称必须与服务定义文件中的设置定义匹配。
 
->**证书**  
->配置服务使用的证书。前面的代码示例演示如何定义 RemoteAccess 模块的证书。*指纹*属性的值必须设置为要使用的证书的指纹。
+>**证书**配置服务使用的证书。前面的代码示例演示如何定义 RemoteAccess 模块的证书。*指纹*属性的值必须设置为要使用的证书的指纹。
 
 <p/>
 
@@ -190,26 +179,21 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 ## 更改角色的配置
 当云服务在 Azure 中运行时，可以更新其配置而无需使服务处于脱机状态。要更改配置信息，可以上载新的配置文件或就地编辑配置文件，并将其应用于正在运行的服务。可对服务配置进行以下更改：
 
-- **更改配置设置的值**  
-当配置设置改变时，角色实例可以选择在实例处于联机状态时应用此更改，或选择正常回收实例并在实例处于脱机状态时应用此更改。
+- **更改配置设置的值**当配置设置改变时，角色实例可以选择在实例处于联机状态时应用此更改，或选择正常回收实例并在实例处于脱机状态时应用此更改。
 
-- **更改角色实例的服务拓扑**  
-拓扑更改不会影响正在运行的实例，但正在删除实例的情况除外。所有剩余的实例通常不需要回收；但可以选择回收角色实例以响应拓扑更改。
+- **更改角色实例的服务拓扑**拓扑更改不会影响正在运行的实例，但正在删除实例的情况除外。所有剩余的实例通常不需要回收；但可以选择回收角色实例以响应拓扑更改。
 
-- **更改证书指纹**  
-仅可在角色实例处于脱机状态时更新一个证书。如果在角色实例处于联机状态时添加、删除或更改了某个证书，则 Azure 会使实例脱机以更新证书，并在更改完成后使其重新联机。
+- **更改证书指纹**仅可在角色实例处于脱机状态时更新一个证书。如果在角色实例处于联机状态时添加、删除或更改了某个证书，则 Azure 会使实例脱机以更新证书，并在更改完成后使其重新联机。
 
 ### 使用服务运行时事件处理配置更改
 [Azure 运行时库](https://msdn.microsoft.com/zh-cn/library/azure/dn511024.aspx)包括 [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.aspx) 命名空间，它为与 Azure 环境（来自角色实例中运行的代码）的交互提供类。[RoleEnvironment](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx) 类定义在配置更改前后引发的以下事件：
 
-- **[Changing](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx) 事件**  
-此事件发生在配置更改应用于某个角色的指定实例之前，使你有机会记下角色实例（如有必要）。
-- **[Changed](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changed.aspx) 事件**  
-发生在配置更改已应用于某个角色的指定实例之后。
+- **[Changing](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx) 事件**此事件发生在配置更改应用于某个角色的指定实例之前，使你有机会记下角色实例（如有必要）。
+- **[Changed](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changed.aspx) 事件**发生在配置更改已应用于某个角色的指定实例之后。
 
-> [AZURE.NOTE] 由于证书更改始终使角色实例处于脱机状态，因此不会引发 RoleEnvironment.Changing 或 RoleEnvironment.Changed 事件。
+> [AZURE.NOTE]由于证书更改始终使角色实例处于脱机状态，因此不会引发 RoleEnvironment.Changing 或 RoleEnvironment.Changed 事件。
 
-<a name="cspkg"></a>
+<a name="cspkg">
 ## ServicePackage.cspkg
 要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](/downloads/) 一起安装）来创建包文件作为 Visual Studio 的替代。
 
@@ -221,15 +205,13 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 | 1\.7+ | C:\\Program Files\\Microsoft SDKs\\Azure\\.NET SDK\\[sdk-version]\\bin\\ |
 | &lt;1.6 | C:\\Program Files\\Azure SDK\\[sdk-version]\\bin\\ |
 
->[AZURE.NOTE]
-CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsoft Azure 命令提示符”快捷方式使用。
+>[AZURE.NOTE]CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsoft Azure 命令提示符”快捷方式使用。
 >  
 >运行 CSPack.exe 程序来查看有关所有可能的开关和命令的文档。
 
 <p />
 
->[AZURE.TIP]
-在 **Winodws Azure 计算模拟器**中本地运行云服务时，使用“/copyonly”选项。此选项将应用程序的二进制文件复制到目录布局，以便在计算模拟器中运行。
+>[AZURE.TIP]在 **Microsoft Azure 计算模拟器**中本地运行云服务时，使用“/copyonly”选项。此选项将应用程序的二进制文件复制到目录布局，以便在计算模拟器中运行。
 
 ### 打包云服务的示例命令
 以下示例创建包含 Web 角色信息的应用程序包。该命令指定待使用的服务定义文件、可以找到二进制文件的目录以及包文件名称。
@@ -288,4 +270,4 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsof
 [vs_reconfigure]: https://msdn.microsoft.com/zh-cn/library/ee405486.aspx
 [vs_create]: https://msdn.microsoft.com/zh-cn/library/ee405487.aspx
 
-<!---HONumber=74-->
+<!---HONumber=71-->

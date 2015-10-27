@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/03/2015"
-   wacn.date="10/17/2015"/>
+   wacn.date="10/03/2015"/>
 
 # 在云服务角色上安装 .NET 
 
@@ -19,14 +19,14 @@
 在 Web 角色和辅助角色上安装 .NET 的过程涉及到在云项目中添加 .NET 安装包，并在执行角色的启动任务过程中启动安装程序。
 
 ## 将 .NET 安装程序添加到项目
-1. 下载你要安装的 .NET Framework 的 Web 安装程序 
-- [.NET 4.5.2 Web 安装程序](https://www.microsoft.com/zh-CN/download/details.aspx?id=42643)
-- [.NET 4.6 Web 安装程序](https://www.microsoft.com/zh-CN/download/details.aspx?id=48130)
-2. 对于 Web 角色
+1. 下载你要安装的.NET Framework 的 Web 安装程序
+2. 下载 [.NET 4.5.2 Web 安装程序](https://www.microsoft.com/zh-CN/download/details.aspx?id=42643)
+	- [.NET 4.6 Web 安装程序](https://www.microsoft.com/zh-CN/download/details.aspx?id=48130)
+3. 对于 Web 角色
   1. 在“解决方案资源管理器”中，于云服务项目中的“角色”下，右键单击你的角色，然后选择“添加 > 新文件夹”。创建一个名为 *bin* 的文件夹。
   2. 右键单击 **bin** 文件夹，然后选择“添加 > 现有项”。选择 .NET 安装程序，并将它添加到 bin 文件夹。
-3. 对于辅助角色
-  1. 右键单击你的角色，然后选择“添加 > 现有项”。选择 .NET 安装程序，并将它添加到角色。 
+4. 对于辅助角色
+   右键单击你的角色，然后选择“添加 > 现有项”。选择 .NET 安装程序，并将它添加到角色。 
 
 以此方式添加到角色内容文件夹的文件会自动添加到云服务包，并部署到虚拟机上的一致位置。对云服务中的所有 Web 和辅助角色重复此过程，使所有角色都有安装程序的副本。
 
@@ -136,4 +136,4 @@
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png
 [2]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithallfiles.png
 
-<!---HONumber=74-->
+<!---HONumber=71-->
