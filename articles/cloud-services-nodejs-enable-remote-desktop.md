@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="05/29/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/01/2015" 
+	wacn.date="10/17/2015"/>
 
 
 # 在 Azure 中启用远程桌面
@@ -34,7 +34,7 @@
 
 1. 以管理员身份运行 **Azure PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。）
 
-2.  导航到包含服务定义 (.csdef) 文件和服务配置 (.cscfg) 文件的目录。
+2. 导航到包含服务定义 (.csdef) 文件和服务配置 (.cscfg) 文件的目录。
 
 3. 输入以下 Azure Powershell cmdlet：
 
@@ -44,7 +44,7 @@
 
 	![enable-azureserviceprojectremotedesktop][enable-rdp]
 
-5.  输入以下 PowerShell cmdlet 以发布更改：
+5. 输入以下 PowerShell cmdlet 以发布更改：
 
     	Publish-AzureServiceProject
 
@@ -111,4 +111,4 @@
   [远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
   [将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
 
-<!---HONumber=71-->
+<!---HONumber=74-->

@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="08/18/2015"
-   wacn.date="10/03/2015"/>
+   wacn.date="10/17/2015"/>
 
 
 
@@ -36,7 +36,6 @@
 3. Azure 管理门户将你的来宾操作系统系列值列为“Windows Server 2008”。请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/azure/gg456325.aspx)来找到此值。
 
 若要了解你的哪个云服务在运行哪个 OS 系列，你可以在 Azure PowerShell 中运行以下脚本，但必须首先[设置 Azure PowerShell](/documentation/articles/install-configure-powershell)。有关该脚本的其他详细信息，请参阅 [Azure 来宾 OS 系列 1 生命周期终结：2014 年 6 月](http://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx)。
-
 
 ```Powershell
 foreach($subscription in Get-AzureSubscription) {
@@ -78,4 +77,4 @@ foreach($subscription in Get-AzureSubscription) {
 ## 后续步骤
 查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix)。
 
-<!---HONumber=71-->
+<!---HONumber=74-->

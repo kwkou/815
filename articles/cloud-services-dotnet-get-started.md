@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/08/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/01/2015"
+	wacn.date="10/17/2015"/>
 
 # Azure 云服务和 ASP.NET 入门
 
@@ -30,11 +30,11 @@
 
 ![广告列表](./media/cloud-services-dotnet-get-started/list.png)
 
-应用程序使用[以队列为中心的工作模式](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)来减轻创建缩略图到后端进程的 CPU 密集型工作。 
+应用程序使用[以队列为中心的工作模式](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)来减轻创建缩略图到后端进程的 CPU 密集型工作。
 
 ## 替代体系结构：网站和 Web 作业
 
-本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/documentation/services/web-sites/)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources/)功能（目前以预览版提供）。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)。
+本教程演示如何在 Azure 云服务中运行前端和后端。一种替代方法是在 [Azure 网站](/services/web-sites/)中运行前端，并为后端使用 [Web 作业](/documentation/articles/websites-webjobs-resources/)功能（目前以预览版提供）。有关如何选择最适合你方案的服务信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
 ## 学习内容
 
@@ -536,8 +536,8 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		    }
 		    public System.Data.Entity.DbSet<Ad> Ads { get; set; }
 		}
- 
-该类具有两个构造函数。其中第一个由 Web 项目使用，并指定存储在 Web.config 文件中的连接字符串的名称。第二个构造函数允许你在实际的连接字符串中传递。程序需要辅助角色项目，因为它没有 Web.config 文件。你以前看到存储此连接字符串的位置，并且稍后你将看到连接字符串在实例化 DbContext 类时代码如何检索它。
+
+类具有两个构造函数。其中第一个由 web 项目使用，并指定存储在 Web.config 文件中的连接字符串的名称。第二个构造函数允许你在实际的连接字符串中传递。程序需要辅助角色项目，因为它没有 Web.config 文件。你以前看到存储此连接字符串的位置，并且稍后你将看到连接字符串在实例化 DbContext 类时代码如何检索它。
 
 ### ContosoAdsWeb - Global.asax.cs
 
@@ -700,7 +700,7 @@ Azure 辅助角色环境在辅助角色启动时调用 `WorkerRole` 类中的 `O
 		public override void Run()
 		{
 		    CloudQueueMessage msg = null;
-		
+
 		    while (true)
 		    {
 		        try
@@ -740,22 +740,22 @@ Azure 辅助角色环境在辅助角色启动时调用 `WorkerRole` 类中的 `O
 		    {
 		        throw new Exception(String.Format("AdId {0} not found, can't create thumbnail", adId.ToString()));
 		    }
-		
+
 		    CloudBlockBlob inputBlob = this.imagesBlobContainer.GetBlockBlobReference(ad.ImageURL);
-		
+
 		    string thumbnailName = Path.GetFileNameWithoutExtension(inputBlob.Name) + "thumb.jpg";
 		    CloudBlockBlob outputBlob = this.imagesBlobContainer.GetBlockBlobReference(thumbnailName);
-		
+
 		    using (Stream input = inputBlob.OpenRead())
 		    using (Stream output = outputBlob.OpenWrite())
 		    {
 		        ConvertImageToThumbnailJPG(input, output);
 		        outputBlob.Properties.ContentType = "image/jpeg";
 		    }
-		
+
 		    ad.ThumbnailURL = outputBlob.Uri.ToString();
 		    db.SaveChanges();
-		
+
 		    this.imagesQueue.DeleteMessage(msg);
 		}
 
@@ -799,6 +799,7 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 
 有关云开发的常规信息，请参阅[使用 Windows Azure 构建实际的云应用](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction)。
 
+有关 Azure 存储最佳实践和模式的视频介绍，请参阅 [Microsoft Azure 存储 – 新增功能、最佳实践和模式](http://channel9.msdn.com/Events/Build/2014/3-628)。
 
 有关详细信息，请参阅以下资源：
 
@@ -806,4 +807,4 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
 * [Azure 存储空间](/documentation/services/storage/)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

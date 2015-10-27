@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 中使用 TFS 持续交付云服务"
+	pageTitle="在 Azure 中使用 TFS 持续交付云服务 | Windows Azure"
 	description="了解如何设置 Azure 云应用程序的持续交付。MSBuild 命令行语句和 PowerShell 脚本的代码示例。"
 	services="cloud-services"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="07/07/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="08/19/2015"
+	wacn.date="10/17/2015"/>
 
 
 
@@ -29,14 +29,16 @@
 无需在生成服务器上安装 Visual Studio。若要使用 Team Foundation 生成服务管理生成服务器，请按照 [Team Foundation 生成服务][]文档中的说明操作。
 
 1.  在生成服务器上，安装包含 MSBuild 的 [.NET Framework 4][]、[.NET Framework 4.5][] 或 [.NET Framework 4.5.2][]。
-2.  安装 [Azure 创作工具][]（根据你的生成服务器的处理器，查找 WindowsAzureAuthoringTools-x86.msi 或 WindowsAzureAuthoringTools-x64.msi）。旧版文件的文件名可能包含 WindowsAzure。
-3. 安装 [Azure 库][]（查找 MicrosoftAzureLibsForNet-x86.msi 或 MicrosoftAzureLibsForNet-x64.msi）。
-4.  将 Microsoft.WebApplication.targets 文件从 Visual Studio 安装复制到生成服务器中。在装有 Visual Studio 的计算机上，该文件位于目录 C:\\Program Files(x86)\\MSBuild\\Microsoft\\VisualStudio\\v11.0\\WebApplications（对于 Visual Studio 2013，为 v12.0）中。您应将该文件复制到生成服务器上的同一目录中。
-5.  安装 [Azure Tools for Visual Studio][]。查找用于生成 Visual Studio 2012 项目的 MicrosoftAzureTools.VS110.exe，用于生成 Visual Studio 2013 项目的 MicrosoftAzureTools.VS120.exe，和用于生成 Visual Studio 2015 预览版项目的 MicrosoftAzureTools.VS140.exe。
+2.  安装[用于 .NET 的 Azure 创作工具](http://go.microsoft.com/fwlink/?LinkId=623518)（如果你的生成服务器具有 32 位操作系统/处理器，将替代链接中的 MicrosoftAzureAuthoringTools-x86.msi，而不是 MicrosoftAzureAuthoringTools-x64.msi）。
+3.  安装[用于 .NET 的 Azure 库](http://go.microsoft.com/fwlink/?LinkId=623519)（如果需要，将替代链接中的 MicrosoftAzureLibsForNet-x86.msi）。
+4.  将 Microsoft.WebApplication.targets 文件从 Visual Studio 安装复制到生成服务器。
+
+	在已安装 Visual Studio 的计算机上，此文件位于目录 C:\\Program Files(x86)\\MSBuild\\Microsoft\\VisualStudio\\v14.0\\WebApplications（对于 Visual Studio 2013，为 v12.0）。您应将该文件复制到生成服务器上的同一目录中。
+5.  安装 [Azure Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkId=623520)。使用 MicrosoftAzureTools.VS140.exe 生成 Visual Studio 2015 项目，或使用 MicrosoftAzureTools.VS120.exe 生成 Visual Studio 2013 项目。
 
 ## 步骤 2：使用 MSBuild 命令生成包
 
-本部分介绍如何构造用于生成 Azure 包的 MSBuild 命令。在生成服务器上执行此步骤可确认所有内容配置正确并且 MSBuild 命令起到预期作用。你可将此命令行添加到生成服务器上的现有生成脚本中，也可在 TFS 生成定义中使用此命令行，如下一部分所述。有关命令行参数和 MSBuild 的详细信息，请参阅 [MSBuild 命令行参考][]。
+本部分介绍如何构造用于生成 Azure 包的 MSBuild 命令。在生成服务器上执行此步骤可确认所有内容配置正确并且 MSBuild 命令起到预期作用。你可将此命令行添加到生成服务器上的现有生成脚本中，也可在 TFS 生成定义中使用此命令行，如下一部分所述。有关命令行参数和 MSBuild 的详细信息，请参阅 [MSBuild 命令行参考](https://msdn.microsoft.com/zh-cn/library/ms164311%28v=vs.140%29.aspx)。
 
 1.  如果在生成服务器上安装了 Visual Studio，请单击“开始”、再单击“所有程序”，然后在“Visual Studio 工具”文件夹中找到并单击“Visual Studio 命令提示符”。
 
@@ -73,7 +75,7 @@
 
 ## 步骤 3：使用 TFS Team Build 生成包（可选）
 
-如果你已将 Team Foundation Server (TFS) 设置为生成控制器并将生成服务器设置为 TFS 生成计算机，则可为 Azure 包设置自动化生成。有关如何设置 Team Foundation Server 并将其用作生成系统的信息，请参阅 [了解 Team Foundation Build 系统][]。具体而言，以下过程假设你已根据 [配置生成计算机][] 中所述配置了生成服务器，此外，你已创建了一个团队项目并在该团队项目中创建了一个云服务项目。
+如果你已将 Team Foundation Server (TFS) 设置为生成控制器并将生成服务器设置为 TFS 生成计算机，则可为 Azure 包设置自动化生成。有关如何设置 Team Foundation Server 并将其用作生成系统的信息，请参阅[扩大生成系统][]。具体而言，以下过程假设你已根据[部署和配置生成服务器][]中所述配置了生成服务器，此外，你已创建了一个团队项目并在该团队项目中创建了一个云服务项目。
 
 若要将 TFS 配置为生成 Azure 包，请执行下列步骤：
 
@@ -165,7 +167,7 @@
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    或者，可以导出带私钥的证书文件 PFX，并使用 Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解详细信息：http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx。
+    或者，可以导出带私钥的证书文件 PFX，并使用 Azure 管理门户将证书上载到每个目标云服务。阅读以下文章以了解详细信息：[http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx)。
 
     **升级部署与删除部署 -> 新建部署**
 
@@ -236,20 +238,24 @@
             <x:Property Name="ServiceName" Type="InArgument(x:String)" />
           </x:Members>
 
-	<this:Process.MSBuildArguments>
+          <this:Process.MSBuildArguments>
 
 7.  在“在代理上运行”结束时添加一个新的序列：
 
-    1. 首先，通过添加 If 语句活动来检查有效的脚本文件。将条件设置为此值：
+    1.  首先，通过添加 If 语句活动来检查有效的脚本文件。将条件设置为此值：
 
-			Not String.IsNullOrEmpty(PublishScriptLocation)
+            Not String.IsNullOrEmpty(PublishScriptLocation)
 
-    2. 在 If 语句的 Then 事例中，添加一个新的 Sequence 活动。将显示名称设置为 'Start publish'
+    2.  在 If 语句的 Then 事例中，添加一个新的 Sequence 活动。将显示名称设置为 'Start publish'
 
-    3. 在 Start publish 序列仍处于选定状态的情况下，在工作流设计器的变量选项卡中将以下一系列新变量作为单独的行项添加。所有变量应  	具有 Variable type =String 和 Scope=Start publish。这两个值将用于将参数从生成定义流入工作流中，然后用于调用发布脚本。
-        - String 类型的 SubscriptionDataFilePath
-        - String 类型的 PublishScriptFilePath
-   ![][4]
+    3.  在 Start publish 序列仍处于选定状态的情况下，在工作流设计器的变量选项卡中将以下一系列新变量作为单独的行项添加。所有变量应具有 Variable type =String 和 Scope=Start publish。这两个值将用于将参数从生成定义流入工作流中，然后用于调用发布脚本。
+
+        -   String 类型的 SubscriptionDataFilePath
+
+        -   String 类型的 PublishScriptFilePath
+
+            ![][4]
+
     4.  如果你使用的是 TFS 2012 或更低版本，请在新序列的开头添加一个 ConvertWorkspaceItem 活动。如果你使用的是 TFS 2013 或更高版本，请在新序列的开头添加一个 GetLocalPath 活动。对于 ConvertWorkspaceItem，请按如下所示设置属性：Direction=ServerToLocal, DisplayName='Convert publish script filename', Input=' PublishScriptLocation', Result='PublishScriptFilePath', Workspace='Workspace'。对于 GetLocalPath 活动，请将属性 IncomingPath 设置为“PublishScriptLocation”，将 Result 设置为“PublishScriptFilePath”。此活动将发布脚本的路径从 TFS 服务器位置（如果适用）转换为标准本地磁盘路径。
 
     5.  如果你使用的是 TFS 2012 或更低版本，请在新序列的末尾添加另一个 ConvertWorkspaceItem 活动。Direction=ServerToLocal, DisplayName='Convert subscription filename', Input=' SubscriptionDataFileLocation', Result= 'SubscriptionDataFilePath', Workspace='Workspace'。如果你使用的是 TFS 2013 或更高版本，请添加另一个 GetLocalPath。IncomingPath='SubscriptionDataFileLocation' 和 Result='SubscriptionDataFilePath'。
@@ -274,11 +280,11 @@
 
 	11. 更正蓝色感叹号指示的任何错误。将鼠标悬停在感叹号上可以获取有关错误的提示。保存工作流以清除错误。
 
-		发布工作流活动的最终结果将与设计器中的以下内容类似：
+    发布工作流活动的最终结果将与设计器中的以下内容类似：
 
-		![][5]
+    ![][5]
 
-		发布工作流活动的最终结果将与 XAML 中的以下内容类似：
+    发布工作流活动的最终结果将与 XAML 中的以下内容类似：
 
 		<If Condition="[Not String.IsNullOrEmpty(PublishScriptLocation)]" sap2010:WorkflowViewState.IdRef="If_1">
 	        <If.Then>
@@ -339,7 +345,7 @@
 
 11. 保存对生成定义所做的更改。
 
-12. 对生成进行排队以便同时执行包生成和发布。如果你的触发器设置为"持续集成"，则将在每次签入时执行此行为。
+12. 对生成进行排队以便同时执行包生成和发布。如果你的触发器设置为“持续集成”，则将在每次签入时执行此行为。
 
 ### PublishCloudService.ps1 脚本模板
 
@@ -356,11 +362,11 @@ Param(  $serviceName = "",
         $selectedsubscription = "default",
         $subscriptionDataFile = ""
      )
-      
+
 
 function Publish()
 {
-	$deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot -ErrorVariable a -ErrorAction silentlycontinue 
+	$deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot -ErrorVariable a -ErrorAction silentlycontinue
     if ($a[0] -ne $null)
     {
         Write-Output "$(Get-Date -f $timeStampFormat) - No deployment is detected. Creating a new deployment. "
@@ -370,7 +376,7 @@ function Publish()
 	{
 		switch ($alwaysDeleteExistingDeployments)
 	    {
-	        1 
+	        1
 			{
                 switch ($enableDeploymentUpgrade)
                 {
@@ -384,7 +390,7 @@ function Publish()
                         Write-Output "$(Get-Date -f $timeStampFormat) - Deployment exists in $servicename.  Deleting deployment."
 				        DeleteDeployment
                         CreateNewDeployment
-                        
+
                     }
                 } # switch ($enableDeploymentUpgrade)
 			}
@@ -405,13 +411,13 @@ function CreateNewDeployment()
 	Write-Output "$(Get-Date -f $timeStampFormat) - Creating New Deployment: In progress"
 
 	$opstat = New-AzureDeployment -Slot $slot -Package $packageLocation -Configuration $cloudConfigLocation -label $deploymentLabel -ServiceName $serviceName
-	    
+
     $completeDeployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
     $completeDeploymentID = $completeDeployment.deploymentid
 
     write-progress -id 3 -activity "Creating New Deployment" -completed -Status "Complete"
 	Write-Output "$(Get-Date -f $timeStampFormat) - Creating New Deployment: Complete, Deployment ID: $completeDeploymentID"
-    
+
 	StartInstances
 }
 
@@ -422,10 +428,10 @@ function UpgradeDeployment()
 
     # perform Update-Deployment
 	$setdeployment = Set-AzureDeployment -Upgrade -Slot $slot -Package $packageLocation -Configuration $cloudConfigLocation -label $deploymentLabel -ServiceName $serviceName -Force
-    
+
     $completeDeployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
     $completeDeploymentID = $completeDeployment.deploymentid
-    
+
     write-progress -id 3 -activity "Upgrading Deployment" -completed -Status "Complete"
 	Write-Output "$(Get-Date -f $timeStampFormat) - Upgrading Deployment: Complete, Deployment ID: $completeDeploymentID"
 }
@@ -441,7 +447,7 @@ function DeleteDeployment()
 
 	write-progress -id 2 -activity "Deleting Deployment: Complete" -completed -Status $removeDeployment
 	Write-Output "$(Get-Date -f $timeStampFormat) - Deleting Deployment: Complete"
-	
+
 }
 
 function StartInstances()
@@ -452,13 +458,13 @@ function StartInstances()
     $deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
     $runstatus = $deployment.Status
 
-    if ($runstatus -ne 'Running') 
+    if ($runstatus -ne 'Running')
     {
 	    $run = Set-AzureDeployment -Slot $slot -ServiceName $serviceName -Status Running
     }
 	$deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
 	$oldStatusStr = @("") * $deployment.RoleInstanceList.Count
-	
+
 	while (-not(AllInstancesRunning($deployment.RoleInstanceList)))
 	{
 		$i = 1
@@ -496,10 +502,10 @@ function StartInstances()
 
 		$i = $i + 1
 	}
-	
+
     $deployment = Get-AzureDeployment -ServiceName $serviceName -Slot $slot
-	$opstat = $deployment.Status 
-	
+	$opstat = $deployment.Status
+
 	write-progress -id 4 -activity "Starting Instances" -completed -status $opstat
 	Write-Output "$(Get-Date -f $timeStampFormat) - Starting Instances: $opstat"
 }
@@ -513,7 +519,7 @@ function AllInstancesRunning($roleInstanceList)
 			return $false
 		}
 	}
-	
+
 	return $true
 }
 
@@ -553,14 +559,10 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
   [Team Foundation 生成服务]: http://go.microsoft.com/fwlink/p/?LinkId=239963
   [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
   [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
-  [.NET Framework 4.5.2]: http://www.microsoft.com/zh-CN/download/details.aspx?id=42643
-  [Azure 创作工具]: http://www.microsoft.com/zh-CN/download/details.aspx?id=44938
-  [Azure 库]: http://www.windowsazure.cn/downloads/?sdk=net
-  [Azure Tools for Visual Studio]: http://www.windowsazure.cn/downloads/?sdk=net
-  [MSBuild 命令行参考]: http://msdn.microsoft.com/zh-cn/library/ms164311(v=VS.90).aspx
-  [1]: https://msdn.microsoft.com/zh-CN/library/ms164311.aspx
-  [了解 Team Foundation Build 系统]: https://msdn.microsoft.com/zh-CN/library/dd793166.aspx
-  [配置生成计算机]: https://msdn.microsoft.com/zh-CN/library/ms181712.aspx
+  [.NET Framework 4.5.2]: http://go.microsoft.com/fwlink/?LinkId=521668
+  [1]: http://go.microsoft.com/fwlink/p/?LinkId=239966
+  [扩大生成系统]: http://go.microsoft.com/fwlink/?LinkId=238798
+  [部署和配置生成服务器]: http://go.microsoft.com/fwlink/?LinkId=238799
   [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
   [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
   [Azure PowerShell cmdlet]: http://go.microsoft.com/fwlink/?LinkId=256262
@@ -572,4 +574,4 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

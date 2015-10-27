@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="08/04/2014" 
-	wacn.date="10/03/2015"/>
+	ms.date="08/04/2015" 
+	wacn.date="10/17/2015"/>
 
 
 #如何监视云服务
@@ -38,7 +38,7 @@
 
 ###开始之前###
 
-- 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。有关详细信息，请参阅“存储帐户”帮助，或者参阅[如何创建存储帐户](/zh-cn/documentation/articles/storage-create-storage-account)。
+- 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。有关详细信息，请参阅“存储帐户”帮助，或者参阅[如何创建存储帐户](/documentation/articles/how-to-create-a-storage-account/)。
 
 
 - 为你的云服务角色启用 Azure 诊断。请参阅[为云服务配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BK_EnableBefore)。
@@ -72,7 +72,7 @@
 
 ##如何：接收云服务度量值的警报##
 
-你可能会基于云服务监视度量值收到警告。在 Azure 管理门户上的“管理服务”页上，你可以创建一条规则，以便在你选择的度量值达到指定的值时触发警报。你还可以选择在触发警报时发送电子邮件。
+你可能会基于云服务监视度量值收到警告。在 Azure 管理门户上的“管理服务”页上，你可以创建一条规则，以便在你选择的度量值达到指定的值时触发警报。你还可以选择在触发警报时发送电子邮件。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则](/documentation/articles/insights-receive-alert-notification)。
 
 ##如何：向度量值表中添加度量值##
 
@@ -175,7 +175,7 @@
 
 其中：
 
-- *deploymentID* 是分配给云服务部署的 GUID
+- *DeploymentID* 是分配给云服务部署的 GUID
 
 - a*ggregation\_interval* = 5 分钟、1 小时或 12 小时
 
@@ -188,5 +188,6 @@
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRTable (hourly aggregations for the role)
 
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
+ 
 
-<!---HONumber=71-->
+<!---HONumber=74-->

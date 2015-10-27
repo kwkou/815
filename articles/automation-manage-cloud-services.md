@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="10/17/2015"/>
 
 
 
@@ -20,7 +20,7 @@
 
 ## 什么是 Azure Automation？
 
-[Azure 自动化](/documentation/services/automation/)是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure Automation 可以自动完成那些长时间运行、人工操作、易出错和经常重复的任务，从而改善组织的可靠性、效率和价值生成时间。
+[Azure 自动化](/services/automation/)是用于通过流程自动化简化云管理的一项 Azure 服务。使用 Azure Automation 可以自动完成那些长时间运行、人工操作、易出错和经常重复的任务，从而改善组织的可靠性、效率和价值生成时间。
 
 Azure Automation 提供高度可靠且高度可用的工作流执行引擎，它可以随着组织的发展，根据你的需求扩展。在 Azure Automation 中，流程可以手动、通过第三方系统或按计划的间隔启动，使任务能够完全根据需求进行。
 
@@ -38,4 +38,4 @@ Azure Automation 提供高度可靠且高度可用的工作流执行引擎，它
 
 请参阅 Azure 自动化[入门教程](/documentation/articles/automation-create-runbook-from-samples)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

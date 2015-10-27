@@ -11,8 +11,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="05/27/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/14/2015" 
+	wacn.date="10/17/2015"/>
 
 # 在 Azure 计算模拟器中使用 Visual Studio 探查器来本地测试云服务的性能
 
@@ -21,11 +21,8 @@
 本文包含了 CPU 采样分析方法，可在模拟器中本地执行该方法。CPU 采样是一种干预性不是很强的分析方法。探查器将按照指定的采样时间间隔拍摄调用堆栈的快照。将收集一段时间内的数据并将其显示在报告中。此分析方法倾向于指示在具有大量计算的应用程序中执行大多数 CPU 工作的位置。这使你能够侧重于应用程序在其上花费最多时间的“热路径”。
 
 
-## 先决条件
 
-仅在拥有 Visual Studio 高级专业版或 Visual Studio 旗舰版的情况下才能本地运行探查器。 
-
-## <a name="step1"></a>步骤 1：配置 Visual Studio 以进行分析
+## 步骤 1：配置 Visual Studio 以进行分析
 
 首先，提供了几个 Visual Studio 配置选项，这些选项在分析时可能会有用。若要使分析报告变得有意义，你将需要应用程序的符号（.pdb 文件）与系统库的符号。你将需要确保引用可用的符号服务器。为此，请在 Visual Studio 中的“工具”菜单上，依次选择“选项”、“调试”和“符号”。确保**符号文件 (.pdb) 位置**下方列出了 Microsoft 符号服务器。你也可参考 http://referencesource.microsoft.com/symbols，其上可能提供了其他符号文件。
 
@@ -69,7 +66,7 @@
 
 本地生成并运行云服务且不进行调试 (Ctrl+F5)，并将解决方案配置设置为 **Release**。这将确保创建的所有文件和文件夹都用于本地运行应用程序，并确保启动所有仿真程序。从任务栏启动计算模拟器 UI，以验证辅助角色是否正在运行。
 
-## <a name="step2"> </a> 步骤 2：附加到进程
+## 步骤 2：附加到进程
 
 你必须将探查器附加到正在运行的进程，而不是通过从 Visual Studio 2010 IDE 中启动应用程序来分析该应用程序。 
 
@@ -103,7 +100,7 @@
 
 ![][10]
 
-## <a name="step3"> </a> 步骤 3：查看性能报告
+## 步骤 3：查看性能报告
 
 这将显示应用程序的性能报告。
 
@@ -122,7 +119,7 @@
 
 ![][14]
 
-## <a name="step4"> </a> 步骤 4：进行更改并比较性能
+## 步骤 4：进行更改并比较性能
 
 你也可在代码更改之前或之后比较性能。停止正在运行的进程，并编辑代码以将字符串串联操作替换为使用 StringBuilder：
 
@@ -147,7 +144,7 @@
 
 祝贺你！你已开始使用探查器。
 
-## <a name="troubleshooting"> </a> 故障排除
+##  故障排除
 
 - 请确保正在分析 Release 生成，并在不调试的情况下启动。
 
@@ -161,17 +158,11 @@
 
 - 如果采样时显示了消息“PRF0025: 未收集数据”，请检查附加的进程是否有 CPU 活动。未执行任何计算工作的应用程序将无法生成任何采样数据。此外，在执行任何采样前可能会退出进程。查看以验证正在分析的角色的 Run 方法是否已终止。
 
-## <a name="nextSteps"> </a> 后续步骤
+## 后续步骤
 
-Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，但若要测试内存分配，你可以在分析时选择该选项。此外，你可以选择并发分析，这将帮助你确定线程是否正在浪费时间竞争锁；也可以选择层交互分析，这将帮助你跟踪在应用程序的各个层之间（最常见的是数据层和辅助角色之间）进行交互时的性能问题。你可以查看应用程序生成的数据库查询并使用分析数据来改进对数据库的使用。有关层交互分析的信息，请参阅[演练：在 Visual Studio Team System 2010 中使用层交互探查器][3]。
+Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，但若要测试内存分配，你可以在分析时选择该选项。此外，你可以选择并发分析，这将帮助你确定线程是否正在浪费时间竞争锁；也可以选择层交互分析，这将帮助你跟踪在应用程序的各个层之间（最常见的是数据层和辅助角色之间）进行交互时的性能问题。你可以查看应用程序生成的数据库查询并使用分析数据来改进对数据库的使用。有关层交互分析的信息，请参阅博客文章[演练：在 Visual Studio Team System 2010 中使用层交互探查器][3]。
 
 
-[Step 1: Configure Visual Studio for Profiling]: #step1
-[Step 2: Attach to a Process]: #step2
-[Step 3: View Profiling Reports]: #step3
-[Step 4: Make Changes and Compare Performance]: #step4
-[Troubleshooting]: #troubleshooting
-[Next Steps]: #nextSteps
 
 [1]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh369930.aspx
 [2]: https://msdn.microsoft.com/zh-CN/library/azure/hh411542.aspx
@@ -190,4 +181,4 @@ Visual Studio 探查器不支持在模拟器中检测 Azure 二进制文件，�
 [16]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally012.png
 [17]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally08.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->
