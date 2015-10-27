@@ -6,7 +6,15 @@
 
 # 移动服务中的推送通知入门
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-push" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-push" title="Windows Store JavaScript" class="current">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-push" title="Windows Phone">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-ios-get-started-push" title="iOS">iOS</a><a href="/zh-cn/documentation/articles/mobile-services-android-get-started-push" title="Android">Android</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push" title="Xamarin.iOS">Xamarin.iOS</a><a href="/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started-push" title="Xamarin.Android">Xamarin.Android</a></div>
+> [AZURE.SELECTOR]
+> - [Windows 应用商店 C#](/zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-push)
+> - [Windows 应用商店 JavaScript](/zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-push)
+> - [Windows Phone](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-push)
+> - [iOS](/zh-cn/documentation/articles/mobile-services-ios-get-started-push)
+> - [Android](/zh-cn/documentation/articles/mobile-services-android-get-started-push)
+> - [Xamarin.iOS](/zh-cn/documentation/articles/partner-xamarin-mobile-services-ios-get-started-push)
+> - [Xamarin.Android](/zh-cn/documentation/articles/partner-xamarin-mobile-services-android-get-started-push)
+
 
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-get-started-push/" title=".NET backend">.NET 后端</a> |  <a href="/zh-cn/documentation/articles/mobile-services-windows-store-javascript-get-started-push/"  title="JavaScript backend" class="current">JavaScript 后端</a></div>
 

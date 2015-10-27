@@ -1,20 +1,28 @@
-<properties title="Azure 存储入门" pageTitle="Azure 存储入门" metaKeywords="Azure, Getting Started, Storage" description="" services="storage" documentationCenter="" authors="ghogen, kempb" />
+<properties
+	pageTitle="Azure 存储入门"
+	description="介绍在 Visual Studio ASP.NET 项目中创建 Azure 存储时发生了什么情况"
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
+	editor="tglee"/>
 
-<tags 
-wacn.date="04/11/2015"
-ms.service="storage" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="02/02/2015" ms.author="ghogen, kempb"></tags>
+<tags ms.service="storage"
+
+	ms.date="07/22/2015"
+	wacn.date="09/16/2015"/>
+
+# 我的项目发生了什么情况？
 
 > [AZURE.SELECTOR]
->
-> -   [入门][入门]
-> -   [发生了什么情况][发生了什么情况]
+> - [Getting started](/documentation/articles/vs-storage-aspnet-getting-started-blobs)
+> - [What happened](/documentation/articles/vs-storage-aspnet-what-happened)
 
-### <span id="whathappened">我的项目发生了什么情况？</span>
+###我的项目发生了什么情况？
 
 ##### 已添加引用
 
-Azure 存储 NuGet 包已添加到您的 Visual Studio 项目。
-此包添加了以下 .NET 引用：
+Azure 存储 NuGet 包已添加到你的 Visual Studio 项目。此包添加了以下 .NET 引用：
 
 -   `Microsoft.Data.Edm`
 -   `Microsoft.Data.OData`
@@ -29,8 +37,6 @@ Azure 存储 NuGet 包已添加到您的 Visual Studio 项目。
 
 在项目的 web.config 文件中，已使用选定存储帐户的连接字符串和密钥创建了一个元素。
 
-有关详细信息，请参阅 [ASP.NET][ASP.NET]。
+有关详细信息，请参阅 [ASP.NET](http://www.asp.net)。
 
-  [入门]: /documentation/articles/vs-storage-aspnet-getting-started-blobs/
-  [发生了什么情况]: /documentation/articles/vs-storage-aspnet-what-happened/
-  [ASP.NET]: http://www.asp.net
+<!---HONumber=69-->

@@ -6,7 +6,12 @@
 
 # 移动服务用户的服务端授权
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts" title="Windows Store C#">Windows 应用商店 C#</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-authorize-users-in-scripts" title="Windows Store JavaScript">Windows 应用商店 JavaScript</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts" title="Windows Phone" class="current">Windows Phone</a><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts" title="iOS">iOS</a></div>
+> [AZURE.SELECTOR]
+> - [Windows 应用商店 C#](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-authorize-users-in-scripts)
+> - [Windows 应用商店 JavaScript](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-javascript-authorize-users-in-scripts)
+> - [Windows Phone](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts)
+> - [iOS](/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts)
+
 <div class="dev-center-tutorial-subselector"><a href="/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-phone-authorize-users-in-scripts/" title=".NET backend" class="current">.NET 后端</a> | <a href="/zh-cn/documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts/"  title="JavaScript backend">JavaScript 后端</a></div>
 
 本主题说明如何为已经过身份验证的用户授权，使其能够从 Windows Phone 应用程序访问 Azure 移动服务中的数据。在本教程中，你将要在控制器中添加数据访问方法的代码，用于根据已经过身份验证的用户的 userId 筛选查询，确保每个用户只会看到自己的数据。

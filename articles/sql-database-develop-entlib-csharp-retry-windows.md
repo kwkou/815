@@ -11,7 +11,7 @@
 <tags 
 	ms.service="sql-database"  
 	ms.date="08/04/2015" 
-	wacn.dat="09/15/2015"/>
+	wacn.date="09/15/2015"/>
 
 
 # 代码示例：Enterprise Library 中用于连接到 SQL 数据库的 C&#x23; 重试逻辑
