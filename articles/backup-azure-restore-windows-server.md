@@ -9,8 +9,8 @@
 
 <tags
    ms.service="backup"
-	 ms.date="08/13/2015"
-	 wacn.date="09/15/2015"/>
+   ms.date="08/13/2015"
+   wacn.date="09/15/2015"/>
 
 # 将文件还原到 Windows Server 或 Windows 客户端计算机
 本文介绍执行两种还原操作所需的步骤：

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何创建和部署云服务 - Azure"
+	pageTitle="如何创建和部署云服务 | Windows Azure"
 	description="了解如何在 Azure 中使用“快速创建”方法创建和部署云服务。"
 	services="cloud-services"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/30/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="10/17/2015"/>
 
 
 
@@ -23,9 +23,9 @@
 
 Azure 门户为你提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。
 
-本主题介绍如何使用“快速创建”方法创建新的云服务，然后使用“上载”在 Azure 中上载和部署云服务包。使用此方法时，Azure 门户在你进行操作时将提供方便的链接供你完成所有要求。如果你在创建云服务后已准备好对其进行部署，则可以使用“自定义创建”同时执行这两项操作。
+本文介绍如何使用“快速创建”方法创建新的云服务，然后使用“上载”在 Azure 中上载和部署云服务包。使用此方法时，Azure 门户在你进行操作时将提供方便的链接供你完成所有要求。如果你在创建云服务时还准备部署该云服务，则可以使用“自定义创建”同时执行这两项操作。
 
-> [AZURE.NOTE]如果你计划从 Visual Studio Online (VSO) 发布云服务，请使用“快速创建”，然后从“**快速启动**”或仪表板设置 VSO 发布。有关详细信息，请参阅[使用 Visual Studio Online 向 Azure 持续交付][TFSTutorialForCloudService]，或查看“快速启动”页的帮助。
+> [AZURE.NOTE]如果你计划从 Visual Studio Online (VSO) 发布云服务，请使用“快速创建”，然后从“Azure 快速启动”或仪表板设置 VSO 发布。有关详细信息，请参阅[使用 Visual Studio Online 向 Azure 持续交付][TFSTutorialForCloudService]，或查看“快速启动”页的帮助。
 
 ## 概念
 要将应用程序部署为 Azure 中的云服务，需要以下三个组件：
@@ -63,7 +63,7 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 ## 步骤 3：创建云服务并上载部署包
 
 1. 登录到 [Azure 门户][]。 
-2. 单击“新建”，单击“计算”，然后向下滚动到并单击“云服务”。
+2. 单击“新建”>“计算”，然后向下滚动到“云服务”并单击它。
 
     ![发布云服务](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
 
@@ -71,11 +71,11 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 4. 创建一个新**资源组**或选择一个现有的资源组。
 5. 选择“位置”。
 6. 选择“包”，然后在“上载包”边栏选项卡上，填写必填字段。  
-      
+
      如果你的任何角色包含单个实例，请确保选中“即使一个或多个角色包含单个实例也进行部署”。
 
-7. 请确保*已勾选*“开始部署”。
-8. 单击**“确定”**。 
+7. 请确保选中“开始部署”。
+8. 单击**“确定”**。
 
     ![发布云服务](./media/cloud-services-how-to-create-deploy-portal/select-package.png)
 
@@ -83,8 +83,8 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 
 如果你的部署包已[配置为使用证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/#modify)，你现在就可以上载证书。
 
-1. 选择“证书”，然后在“添加证书”边栏选项卡，选择 SSL 证书 .pfx 文件，并提供证书的**密码**， 
-2. 单击“附加证书”，并单击“添加证书”边栏选项卡上的“确定”。
+1. 选择“证书”，并在“添加证书”边栏选项卡中，选择 SSL 证书 .pfx 文件，然后提供证书的**密码**，
+2. 单击“附加证书”，然后单击“添加证书”边栏选项卡上的“确定”。
 3. 单击“云服务”边栏选项卡上的“创建”。当部署达到**“就绪”**状态时，你可以继续执行后续步骤。
 
     ![发布云服务](./media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
@@ -104,4 +104,4 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 [TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

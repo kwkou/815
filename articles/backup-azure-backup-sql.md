@@ -24,7 +24,7 @@
 3. 从 Azure 恢复数据库。
 
 ## 开始之前
-在开始之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](backup-azure-dpm-introduction/#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
+在开始之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction/#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
 
 ## 创建备份策略来保护要备份到 Azure 的 SQL 数据库
 
@@ -96,7 +96,7 @@
 
     **最佳做法**：确保在使用 DPM 完成本地磁盘备份后安排好 Azure 备份。这样就可以将最新磁盘备份复制到 Azure。
 
-13. 选择保留策略计划。有关保留策略工作原理的详细信息，请参阅[使用 Azure 备份来取代磁带基础结构文章](backup-azure-backup-cloud-as-tape)。
+13. 选择保留策略计划。有关保留策略工作原理的详细信息，请参阅[使用 Azure 备份来取代磁带基础结构文章](/documentation/articles/backup-azure-backup-cloud-as-tape)。
 
     ![保留策略](./media/backup-azure-backup-sql/pg-retentionschedule.png)
 
@@ -166,6 +166,6 @@
 
 ### 后续步骤：
 
-• [Azure 备份常见问题](backup-azure-backup-faq)
+• [Azure 备份常见问题](/documentation/articles/backup-azure-backup-faq)
 
 <!---HONumber=74-->

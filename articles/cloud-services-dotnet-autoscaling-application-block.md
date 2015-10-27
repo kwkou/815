@@ -1,40 +1,29 @@
-<properties linkid="dev-net-how-to-autoscaling" urlDisplayName="Autoscaling" pageTitle="使用自动缩放应用程序块 (.NET) - Azure" metaKeywords="Azure autoscaling, Azure autoscaling C#, Azure autoscaling .NET" description="了解如何在 Azure 中使用自动缩放应用程序。代码示例用 C# 编写且使用 .NET API。" metaCanonical="" services="cloud-services" documentationCenter=".NET" title="How to Use the Autoscaling Application Block" authors="" solutions="" manager="" editor="" />
-<tags ms.service="cloud-services"
-    ms.date="11/14/2014"
-    wacn.date="10/03/2015"
-    />
+<properties 
+	pageTitle="使用自动缩放应用程序块 (.NET) | Windows Azure" 
+	description="了解如何在 Azure 中使用自动缩放应用程序。代码示例用 C# 编写且使用 .NET API。" 
+	services="cloud-services" 
+	documentationCenter=".net" 
+	authors="squillace" 
+	manager="timlt" 
+	editor=""/>
 
-
-
-
-
-
-
+<tags 
+	ms.service="cloud-services" 
+	ms.date="05/18/2015" 
+	wacn.date="10/17/2015"/>
 # 如何使用自动缩放应用程序块
 
-本指南演示如何通过[用于 Azure 的 Microsoft Enterprise Library 5.0 集成包][]中的"自动缩放应用程序块"功能执行常见任务。相关示例用 C# 编写且使用 .NET API。所涉及的任务包括**托管块**、**使用约束规则**以及**使用反应规则**。有关自动缩放应用程序块的详细信息，请参阅[后续步骤][]部分。
+本指南将演示如何通过“自动缩放应用程序块”功能执行常见任务，你可以从[用于 Azure 的 Microsoft Enterprise Library 5.0 集成包][]获得该功能。相关示例采用 C# 编写且使用 .NET API。本指南所涉及的任务包括**托管块**、**使用约束规则**以及**使用反应规则**。有关自动缩放应用程序块的详细信息，请参阅[后续步骤](#next-steps)部分。
 
-## 目录
+## 什么是自动缩放应用程序块？
 
-[什么是自动缩放应用程序块？][]
- [概念][]   
- [从目标 Azure 应用程序收集性能计数器数据][]   
- [为自动缩放应用程序块设置宿主应用程序][]   
- [如何：实例化并运行自动缩放程序][]   
- [如何：定义服务模型][]   
- [如何：定义自动缩放规则][]   
- [如何：配置自动缩放应用程序块][]   
- [后续步骤][]
-
-## <a id="WhatIs"> </a>什么是自动缩放应用程序块？
-
-自动缩放应用程序块可根据您专门为您的应用程序定义的规则自动缩放您的 Windows Azure 应用程序。你可以使用这些规则帮助你的 Azure 应用程序保持其吞吐量以响应其工作负荷中的更改，同时控制与在 Azure 中托管你的应用程序关联的成本。除了通过增加或减少您的应用程序中的角色实例数进行缩放外，此应用程序块还使您能够执行其他缩放操作，例如限制您的应用程序中的特定功能或者使用自定义操作。
+自动缩放应用程序块可根据你专门为应用程序定义的规则，自动缩放 Windows Azure 应用程序。你可以使用这些规则来帮助 Azure 应用程序根据工作负荷的变化维持吞吐量，同时还可以控制在 Azure 中托管应用程序所产生的成本。除了通过增加或减少你的应用程序中的角色实例数进行缩放外，此应用程序块还使你能够执行其他缩放操作，例如限制你的应用程序中的特定功能或者使用自定义操作。
 
 你可以选择在 Azure 角色或在本地应用程序中托管该应用程序块。
 
 自动缩放应用程序块是[用于 Azure 的 Microsoft Enterprise Library 5.0 集成包][]的一部分。
 
-## <a id="Concepts"> </a>概念
+## 概念
 
 在下图中，绿线显示两天内 Azure 角色中正运行实例数的走势图。该实例数随时间自动变化以响应一组自动缩放规则。
 
@@ -44,7 +33,7 @@
 
 -   **约束规则：**若要设置实例数的上限和下限（例如，假定在每天早上 8:00 到 10:00 之间，你需要最少 4 个和最多 6 个实例），可使用**约束规则**。在上图中，红线和蓝线表示约束规则。例如，在图中的 **A** 点，角色实例的最小数目从 2 升至 4，以适应此时预期增加的应用程序工作负荷。在图中的 **B** 点，防止角色实例数攀升到 5 之上，以便控制应用程序的运行成本。
 
--   **反应规则：**若要使角色实例数能够根据不可预测的需求变化而变化，可使用**反应规则**。在图中的 **C** 点，应用程序块将角色实例数从 4 自动减少至 3，以响应工作负荷的减少。在 **D** 点，应用程序块检测到工作负荷增加并将运行的角色实例数从 3 自动增加至 4。
+-   **反应规则：**若要使角色实例数能够根据不可预测的需求变化而变化，可使用**反应规则**。在图中的 **C** 点，应用程序块将角色实例数从 4 自动减少至 3，以响应工作负荷的减少。在 **D** 点，应用程序块检测到工作负荷增加并将正在运行的角色实例数从 3 自动增加至 4。
 
 应用程序块将其配置设置存储在两个存储中：
 
@@ -52,13 +41,13 @@
 
 -   **服务信息存储：**服务信息存储可存储你的操作配置，是你的 Azure 应用程序的服务模型。此服务模型包括有关你的 Azure 应用程序的所有信息（例如角色名称和存储帐户详细信息），应用程序块需要这些信息才能从目标 Azure 应用程序收集数据点以及执行缩放操作。
 
-## <a id="PerfCounter"> </a>从目标 Azure 应用程序收集性能计数器数据
+## 从目标 Azure 应用程序收集性能计数器数据
 
-在定义规则时，反应规则可以使用角色中的性能计数器数据。例如，反应规则可以监视 Azure 角色的 CPU 利用率，以确定应用程序块是否应该启动缩放操作。应用程序块可读取 Azure 存储空间中名为 **WADPerformanceCountersTable** 的 Azure 诊断表中的性能计数器数据。
+在定义规则时，反应规则可以使用角色中的性能计数器数据。例如，反应规则可以监视 Azure 角色的 CPU 利用率，以确定应用程序块是否应该启动缩放操作。应用程序块从 Azure 存储空间中名为 **WADPerformanceCountersTable** 的 Azure 诊断表中读取性能计数器数据。
 
 默认情况下，Azure 不会将性能计数器数据写入 Azure 存储中的 Azure 诊断表。因此，您应修改需要从中收集性能计数器数据的角色以保存此数据。有关如何在你的应用程序中启用性能计数器的详细信息，请参阅[在 Azure 中使用性能计数器][]。
 
-## <a id="CreateHost"> </a>为自动缩放应用程序块设置宿主应用程序
+## 为自动缩放应用程序块设置宿主应用程序
 
 你可以在 Azure 角色或在本地应用程序中托管自动缩放应用程序块。自动缩放应用程序块通常托管在与您要自动缩放的目标应用程序不同的应用程序中。本节提供有关如何配置您的托管应用程序的指南。
 
@@ -97,7 +86,7 @@
     using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
     using Microsoft.Practices.EnterpriseLibrary.WindowsAzure.Autoscaling;
 
-## <a id="Instantiate"> </a>如何：实例化并运行自动缩放程序
+## 如何：实例化并运行自动缩放程序
 
 使用 **IServiceLocator.GetInstance** 方法实例化自动缩放程序，然后调用 **Autoscaler.Start** 方法以运行 **Autoscaler**。
 
@@ -105,7 +94,7 @@
         EnterpriseLibraryContainer.Current.GetInstance<Autoscaler>();
     scaler.Start();
 
-## <a id="DefineServiceModel"> </a>如何：定义服务模型
+## 如何：定义服务模型
 
 通常，可将您的服务模型（您的 Windows Azure 环境的描述，其中包括有关订阅、托管服务、角色和存储帐户的信息）存储在 XML 文件中。你可以在你的项目中的 **AutoscalingServiceModel.xsd** 文件中找到此 XML 文件架构的副本。在 Visual Studio 中，此架构可在您编辑服务模型 XML 文件时提供 Intellisense 和验证功能。
 
@@ -122,14 +111,31 @@
 
 	以下代码示例显示 **services.xml** 文件中的一个服务模型示例：
 
-    	<?xml version="1.0" encoding="utf-8" ?> <serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel"> <subscriptions> <subscription name="[subscriptionname]"
+    <?xml version="1.0" encoding="utf-8" ?>
+    <serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel">
+      <subscriptions>
+        <subscription name="[subscriptionname]"
                       certificateThumbprint="[managementcertificatethumbprint]"
                       subscriptionId="[subscriptionid]"
                       certificateStoreLocation="CurrentUser"
-                      certificateStoreName="My"> <services> <service dnsPrefix="[hostedservicednsprefix]" slot="Staging"> <roles> <role alias="AutoscalingApplicationRole"
+                      certificateStoreName="My">
+          <services>
+            <service dnsPrefix="[hostedservicednsprefix]" slot="Staging">
+              <roles>
+                <role alias="AutoscalingApplicationRole"
                       roleName="[targetrolename]"
-                      wadStorageAccountName="targetstorage"/> </roles> </service> </services> <storageAccounts> <storageAccount alias="targetstorage"
-              connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]"> </storageAccount> </storageAccounts> </subscription> </subscriptions> </serviceModel>
+                      wadStorageAccountName="targetstorage"/>
+              </roles>
+            </service>
+          </services>
+          <storageAccounts>
+            <storageAccount alias="targetstorage"
+              connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]">
+            </storageAccount>
+          </storageAccounts>
+        </subscription>
+      </subscriptions>
+    </serviceModel>
 
 您必须将方括号中的值替换为特定于您的环境和目标应用程序的值。若要找到其中许多值，你将需要登录到 [Azure 管理门户][]。
 
@@ -150,11 +156,11 @@
 
     1.  在 Azure 管理门户中单击“云服务”。
 
-    2.  在“云服务”列表中，找到托管要在其中使用自动缩放的应用程序的服务。云服务的名称为 **DNS 前缀**。
+    4.  在“云服务”列表中，找到托管要在其中使用自动缩放的应用程序的服务。云服务的名称为 **DNS Prefix**。
 
         ![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling06.png)
  
-	-   **[targetrolename]：**你的自动缩放规则的目标角色的名称。
+	-   **[targetrolename]：**作为你的自动缩放规则的目标的角色名称。
 
     1.  在 Azure 管理门户中单击“云服务”。
 
@@ -185,7 +191,7 @@
 
 若要了解有关服务模型文件的内容的详细信息，请参阅[存储服务信息数据][]。
 
-## <a id="DefineAutoscalingRules"> </a>如何：定义自动缩放规则
+## 如何：定义自动缩放规则
 
 通常，可将控制您的目标应用程序中角色实例数的自动缩放规则存储在一个 XML 文件中。你可以在你的项目中的 **AutoscalingRules.xsd** 文件中找到此 XML 文件架构的副本。在 Visual Studio 中，此架构可在您编辑 XML 文件时提供 Intellisense 和验证功能。
 
@@ -248,7 +254,7 @@
 
 -   如果过去 5 分钟内的平均 CPU 利用率小于 60%，名为 **ScaleDownOnLowUtilization** 的反应规则会将目标角色的实例计数减少 1。
 
-## <a id="Configure"> </a>如何：配置自动缩放应用程序块
+## 如何：配置自动缩放应用程序块
 
 在定义服务模型和自动缩放规则后，您必须配置自动缩放应用程序块以使用它们。此操作配置信息存储在应用程序配置文件中。
 
@@ -259,7 +265,7 @@
 1.  在“解决方案资源管理器”中，右键单击 App.config 文件，然后单击“编辑配置文件”。
 
 2.  在“块”菜单中，单击“添加自动缩放设置”：
-	
+
 	![图像](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
   
 3.  展开“自动缩放设置”，然后单击“数据点存储存储帐户”旁的省略号 (...)，添加应用程序块将在其中存储所收集的数据点的 Azure 存储帐户的“帐户名称”和“帐户密钥”，（如果你不确定在何处查找这些值，请参阅[如何：定义服务模型][]），然后单击“确定”：
@@ -291,7 +297,7 @@
 
 ### 在自动缩放应用程序块宿主应用程序中配置日志记录
 
-1.  在 Visual Studio 中，在“解决方案资源管理器”中双击 **App.config** 文件以在编辑器中将其打开。然后添加 **system.diagnostics** 部分，如以下示例所示：
+1.  在 Visual Studio 中，双击“解决方案资源管理器”中的 **App.config** 文件以在编辑器中将其打开。然后添加 **system.diagnostics** 部分，如以下示例所示：
 
         <?xml version="1.0" encoding="utf-8" ?>
         <configuration>
@@ -341,7 +347,7 @@
     "InstanceChanges":{"AutoscalingApplicationRole":{"CurrentValue":1,"DesiredValue":2}},
     "SettingChanges":{},"RequestID":"f8ca3ada07c24559b1cb075534f02d44"}
 
-## <a id="NextSteps"> </a>后续步骤
+## 后续步骤
 
 现在，您已了解使用自动缩放应用程序块的基础知识，单击下面的链接可了解如何实现更复杂的自动缩放方案：
 
@@ -357,17 +363,8 @@
 -   [Sage 如何使用自动缩放降低 Azure 托管成本][]
 -   [使用 Azure 中的自动缩放降低 TechNet 和 MSDN 托管成本并减少环境影响][]
 
-  [用于 Azure 的 Microsoft Enterprise Library 5.0 集成包]: https://msdn.microsoft.com/zh-CN/library/hh680918(v=pandp.50).aspx
-  [后续步骤]: #NextSteps
-  [什么是自动缩放应用程序块？]: #WhatIs
-  [概念]: #Concepts
-  [从目标 Azure 应用程序收集性能计数器数据]: #PerfCounter
-  [为自动缩放应用程序块设置宿主应用程序]: #CreateHost
-  [如何：实例化并运行自动缩放程序]: #Instantiate
-  [如何：定义服务模型]: #DefineServiceModel
-  [如何：定义自动缩放规则]: #DefineAutoscalingRules
-  [如何：配置自动缩放应用程序块]: #Configure
-  [在 Azure 中使用性能计数器]: /zh-cn/documentation/articles/cloud-services-dotnet-use-performance-counters/
+  [用于 Azure 的 Microsoft Enterprise Library 5.0 集成包]: http://go.microsoft.com/fwlink/?LinkID=235134
+  [在 Azure 中使用性能计数器]: /develop/net/
   [NuGet]: http://nuget.org/
   [Azure 管理门户]: http://manage.windowsazure.cn
   [存储服务信息数据]: http://msdn.microsoft.com/zh-cn/library/hh680878(PandP.50).aspx		
@@ -383,4 +380,4 @@
   [Sage 如何使用自动缩放降低 Azure 托管成本]: http://msdn.microsoft.com/zh-cn/library/jj838716(PandP.50).aspx
   [使用 Azure 中的自动缩放降低 TechNet 和 MSDN 托管成本并减少环境影响]: http://msdn.microsoft.com/zh-cn/library/jj838718(PandP.50).aspx
 
-<!---HONumber=71-->
+<!---HONumber=74-->

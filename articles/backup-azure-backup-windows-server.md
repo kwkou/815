@@ -10,7 +10,7 @@
 <tags
    ms.service="backup"
    ms.date="08/13/2015"
-   wacn.date="08/15/2015"/>
+   wacn.date="09/15/2015"/>
 
 # 将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure
 本文介绍将 Windows Server 或 Windows 客户端文件和文件夹备份到 Azure 需要执行的步骤。

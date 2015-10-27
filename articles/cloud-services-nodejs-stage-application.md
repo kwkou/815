@@ -9,11 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="02/25/2015" 
-	wacn.date="10/03/2015"/>
-
-
-
+	ms.date="09/08/2015" 
+	wacn.date="10/17/2015"/>
 
 
 
@@ -23,18 +20,15 @@
 
 > [AZURE.NOTE]本文中的步骤仅适用于托管为 Azure 云服务的 Node 应用程序。
 
-此任务包括下列步骤：
-
--   [步骤 1：暂存应用程序]
--   [步骤 2：通过交换 VIP 将应用程序部署到生产环境]
-
 ## 步骤 1：暂存应用程序
 
 此任务包括如何使用 **Windows Azure PowerShell** 暂存应用程序。
 
 1.  在发布服务时，只需将 **-Slot** 参数传递给 **Publish-AzureServiceProject** cmdlet。
 
-    **Publish-AzureServiceProject -Slot 过渡**
+    ```powershell
+    Publish-AzureServiceProject -Slot staging
+    ```
 
 2.  登录到 [Azure 管理门户]并选择“云服务”。创建云服务并且“过渡”列状态已更新为“正在运行”后，单击该服务名称。
 
@@ -49,8 +43,6 @@
     ![网站 url][cloud-service-staging-url]
 
 现在，你可以使用此过渡网站 URL 验证应用程序能否在过渡环境中正常运行。
-
-对于升级方案（在该方案中，暂存应用程序是已部署到生产环境的应用程序的升级版本），你可以 [通过交换 VIP 在生产环境中升级应用程序][Step 2: Deploy an Application to Production by Swapping VIPs]。
 
 ## 步骤 2：通过交换 VIP 升级生产环境中的应用程序
 
@@ -71,17 +63,13 @@
 ## 其他资源
 
 - [如何在 Azure 中通过交换 VIP 来将服务升级部署到生产]
-- [在 Azure 中管理部署概述]
 
-  [步骤 1：暂存应用程序]: #step1
-
-  [步骤 2：通过交换 VIP 将应用程序部署到生产环境]: #step2
-  [Azure 管理门户]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 [cloud-service]: ./media/cloud-services-nodejs-stage-application/staging-cloud-service-running.png
 [cloud-service-dashboard]: ./media/cloud-services-nodejs-stage-application/cloud-service-dashboard-staging.png
   [cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
   [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
   [如何在 Azure 中通过交换 VIP 来将服务升级部署到生产]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee517253.aspx
-  [在 Azure 中管理部署概述]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh386336.aspx
+  [Overview of Managing Deployments in Azure]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh386336.aspx
 
-<!---HONumber=71-->
+<!---HONumber=74-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="03/11/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="10/17/2015"/>
 
 
 
@@ -131,7 +131,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 	print('Service name: ' + hosted_service.service_name)
 	print('Management URL: ' + hosted_service.url)
 	print('Location: ' + hosted_service.hosted_service_properties.location)
-			
+
 在创建云服务后，你可以使用 **create\_deployment** 方法将代码部署到服务。
 
 ## <a name="DeleteCloudService"> </a>如何：删除云服务
@@ -140,7 +140,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 	sms.delete_hosted_service('myhostedservice')
 
-请注意，必须先删除服务的所有部署，然后才能删除服务。（有关详细信息，请参阅[如何：删除部署](#DeleteDeployment) 。）
+请注意，必须先删除服务的所有部署，然后才能删除服务。（有关详细信息，请参阅[如何：删除部署](#DeleteDeployment)。）
 
 ## <a name="DeleteDeployment"> </a>如何：删除部署
 
@@ -155,7 +155,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 ## <a name="CreateStorageService"> </a>如何：创建存储服务
 
-利用[存储服务]，可以访问 Azure [Blob][azure-blobs]、[表][azure-tables]和[队列][azure-queues]。若要创建存储服务，你需要服务名称（3 至 24 个小写字符且在 Azure 中是唯一的）、说明、标签（最多 100 个字符，自动编码为 base64）以及位置或地缘组。下面的示例演示如何通过指定位置来创建存储服务。如果你要使用地缘组，则必须首先创建地缘组（请参阅[如何：创建地缘组](#CreateAffinityGroup)），并使用 **affinity\_group** 参数对其进行设置。
+利用[存储服务]，可以访问 Azure [Blob][azure-blobs]、[表][azure-tables]和[队列][azure-queues]。若要创建存储服务，你需要服务名称（3 至 24 个小写字符且在 Azure 中是唯一的）、说明、标签（最多 100 个字符，自动编码为 base64）以及位置。下面的示例演示如何通过指定位置来创建存储服务。
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -432,4 +432,4 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 [Cloud Services]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
 [Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156003.aspx
 
-<!---HONumber=71-->
+<!---HONumber=74-->
