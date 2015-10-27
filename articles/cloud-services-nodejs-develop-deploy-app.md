@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/01/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="08/31/2015"
+	wacn.date="10/17/2015"/>
 
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
@@ -49,7 +49,8 @@
 
 1. 以管理员身份运行 **Azure PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。）
 
-2.  输入以下 PowerShell cmdlet 来创建项目：
+2.  [将 PowerShell 连接](/documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription)到订阅。
+3.  输入以下 PowerShell cmdlet 来创建项目：
 
         New-AzureServiceProject helloworld
 
@@ -63,7 +64,7 @@
 
 	-   **deploymentSettings.json**：存储供 Azure PowerShell 部署 cmdlet 使用的本地设置。
 
-3.  输入以下命令添加新的 Web 角色：
+4.  输入以下命令添加新的 Web 角色：
 
         Add-AzureNodeWebRole
 
@@ -87,7 +88,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 ## 将应用程序部署到 Azure
 
-[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
+	[AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
 
 ### 下载 Azure 发布设置
@@ -112,11 +113,12 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 ### 发布应用程序
 
-若要发布，请按如下所示运行 **Publish-AzureServiceProject** cmdlet：
+若要发布，请运行以下命令：
 
+  	$ServiceName = "NodeHelloWorld" + $(Get-Date -Format ('ddhhmm'))   
     Publish-AzureServiceProject -ServiceName NodeHelloWorld -Location "China North" -Launch
 
-- **-ServiceName** 指定部署的名称。此名称必须唯一，否则发布过程将会失败。
+- **-ServiceName** 指定部署的名称。此名称必须唯一，否则发布过程将会失败。**Get-Date** 命令附加应使名称唯一的日期/时间字符串。
 
 - **-Location** 指定托管应用程序的数据中心。若要查看可用数据中心的列表，请使用 **Get-AzureLocation** cmdlet。
 

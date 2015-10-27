@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="配置云服务的 SSL - Azure" 
+	pageTitle="为云服务配置 SSL | Windows Azure" 
 	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -10,19 +10,19 @@
 <tags 
 	ms.service="cloud-services"  
 	ms.date="06/28/2015"
-	wacn.date=10/03/2015""/>
+	wacn.date=10/17/2015""/>
 
 
 
 # 在 Azure 中为应用程序配置 SSL
 
 > [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
-- [Azure Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
+- [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)
+- [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 
-> [AZURE.NOTE]本任务中的过程适用于 Azure 云服务；对于网站，请参阅[为 Azure 网站配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate)。
+> [AZURE.NOTE] 本任务中的过程适用于 Azure 云服务；对于网站，请参阅[为 Azure 网站配置 SSL 证书](/documentation/articles/web-sites-configure-ssl-certificate)。
 
 此任务将使用生产部署；本主题的末尾提供了有关如何使用过渡部署的信息。
 
@@ -38,10 +38,10 @@
 
 -   证书必须包含私钥。
 -   必须为密钥交换创建证书，并且该证书可导出到个人信息交换 (.pfx) 文件。
--   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 cloudapp.net 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 **.contoso.com** 或 **www.contoso.com** 的证书。
+-   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 ***.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
-出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 cloudapp.net 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.cloudapp.net** 的自签名证书。
+出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 chinacloudapp.cn 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
 
 接下来，你必须在服务定义和服务配置文件中包含有关此证书的信息。
 
@@ -150,4 +150,4 @@
 
 [Azure Portal]: https://manage.windowsazure.cn
 
-<!---HONumber=71-->
+<!---HONumber=74-->

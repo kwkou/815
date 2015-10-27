@@ -1,13 +1,15 @@
 <properties
-   pageTitle="Azure 备份 - 使用 Azure 导入/导出服务进行脱机备份"
+   pageTitle="Azure 备份 - 使用 Azure 导入/导出服务进行脱机备份或初始种子设定 | Windows Azure"
    description="了解 Azure 备份如何让你使用 Azure 导入/导出服务离线发送数据。本文介绍如何使用 Azure 导入导出服务来脱机设定初始备份数据的种子。"
    services="backup"
    documentationCenter=""
-   authors="prvijay"
+   authors="aashishr"
    manager="shreeshd"
    editor=""/>
 <tags
-   ms.service="backup" ms.date="04/07/2015" wacn.date="08/29/2015"/>
+   ms.service="backup"
+   ms.date="07/14/2015"
+   wacn.date="09/15/2015"/>
 
 # Azure 备份中的脱机备份工作流
 
@@ -76,7 +78,7 @@ Azure 备份与 Azure 导入/导出服务深度集成，使你可以快速传输
 
 2. 解压缩 *WAImportExport.zip* 文件。运行 *WAImportExport* 工具，它将格式化 SATA 驱动器，将备份数据写入到 SATA 驱动器并对其进行加密。在运行以下命令之前请确保在计算机上启用了 BitLocker。<br/>
 
-*.\\WAImportExport.exe PrepImport /j:<*JournalFile*>.jrn /id: <*SessionId*> /sk:<*StorageAccountKey*> /BlobType:**PageBlob*\* /t:<*TargetDriveLetter*> /format /encrypt /srcdir:<*staging location*> /dstdir: <*DestinationBlobVirtualDirectory*>/\*
+*.\\WAImportExport.exe PrepImport /j:<*JournalFile*>.jrn /id: <*SessionId*> /sk:<*StorageAccountKey*> /BlobType:**PageBlob*\* /t:<*TargetDriveLetter*> /format /encrypt /srcdir:<*staging location*> /dstdir: <*DestinationBlobVirtualDirectory*>/*
 
 
 | 参数 | 说明|
