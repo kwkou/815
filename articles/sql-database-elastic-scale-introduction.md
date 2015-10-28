@@ -57,7 +57,7 @@
 
 大多数云规模的数据库应用程序都使用这些两种策略的组合。例如，软件即服务应用程序可能使用横向缩放来设置新的最终客户，使用纵向缩放来允许每个最终客户的数据库根据工作负荷的需要扩展或缩减资源。
 
-* 可以使用[弹性数据库客户端库](/documentation/articles/sql-database-elastic-client-overview)来管理水平缩放。
+* 可以使用<!--[-->弹性数据库客户端库<!--](/documentation/articles/sql-database-elastic-client-overview)-->来管理水平缩放。
 
 * 可以通过使用 Azure PowerShell cmdlet 更改服务层或者通过将数据库放入弹性数据库池中，来实现纵向缩放。
 

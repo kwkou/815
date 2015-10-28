@@ -36,9 +36,9 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
 ## 2\.数据库监视
 ![数据库监视](./media/sql-database-manage-portal/sqldatabase_monitoring.png)
 
-默认情况下，Azure SQL 数据库会根据数据库吞吐量单位 (DTU)、数据库大小和连接运行状况提供监视图表。你可以自定义和扩展这些监视图表，以进一步绘制 CPU 百分比、数据 IO 百分比、死锁、日志 IO 百分比甚至防火墙阻止的请求百分比图表。在[此处][Azure part monitoring]可找到有关如何自定义监视图表的详细信息。
+默认情况下，Azure SQL 数据库会根据数据库吞吐量单位 (DTU)、数据库大小和连接运行状况提供监视图表。你可以自定义和扩展这些监视图表，以进一步绘制 CPU 百分比、数据 IO 百分比、死锁、日志 IO 百分比甚至防火墙阻止的请求百分比图表。<!--在[此处][Azure part monitoring]可找到有关如何自定义监视图表的详细信息。-->
 
-此外，可以设置警报规则以监视指定的指标，并在达到预设的阈值时通知指定的管理员和协同管理员。在[此处][Azure part monitoring]可找到有关如何在 Azure 管理门户中设置警报规则的详细信息。
+此外，可以设置警报规则以监视指定的指标，并在达到预设的阈值时通知指定的管理员和协同管理员。<!--在[此处][Azure part monitoring]可找到有关如何在 Azure 管理门户中设置警报规则的详细信息。-->
 
 ## 3\.数据库安全和审核
 ![数据库安全](./media/sql-database-manage-portal/sqldatabase_security.png)
@@ -75,7 +75,7 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
   [Introducing SQL Database]: /documentation/services/sql-databases
   [Database geo-replication]: http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/
   [Managing Azure SQL Database using SQL Server Management Studio]: /documentation/articles/sql-database-manage-azure-ssms
-  [使用动态管理视图监控 SQL 数据库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394114.aspx
+  [使用动态管理视图监控 SQL 数据库]: /documentation/articles/sql-database-monitoring-with-dmvs
   [Transact-SQL 参考 (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/bb510741(v=sql.120).aspx
   [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started
   [AzureDb datamasking]: /documentation/articles/sql-database-dynamic-data-masking-get-started/

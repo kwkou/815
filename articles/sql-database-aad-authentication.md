@@ -87,7 +87,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - 创建初始域 Azure AD 托管的域。
 - 将本地 Active Directory 域服务与 Azure Active Directory 联合。
 
-有关详细信息，请参阅[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain)、[Windows Azure 现在支持与 Windows Server Active Directory 联合](http://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/)、[管理 Azure AD 目录](https://msdn.microsoft.com/library/azure/hh967611.aspx)和[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/library/azure/jj151815.aspx)。
+有关详细信息，请参阅[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain)、[Windows Azure 现在支持与 Windows Server Active Directory 联合](http://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/)、[管理 Azure AD 目录](https://msdn.microsoft.com/zh-cn/library/azure/hh967611.aspx)和[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)。
 
 ## 2\.确保你的数据库位于 Azure SQL 数据库 V12 中
  
@@ -101,9 +101,9 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 ## 3\.可选：关联或更改当前与你的 Azure 订阅关联的活动目录
 
-若要将你的数据库与你组织的 Azure AD 目录相关联，请允许目录成为托管数据库的 Azure 订阅的一个受信目录。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/library/azure/dn629581.aspx)。
+若要将你的数据库与你组织的 Azure AD 目录相关联，请允许目录成为托管数据库的 Azure 订阅的一个受信目录。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx)。
 
-**其他信息：**每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以访问 [https://manage.windowsazure.cn/](https://manage.windowsazure.cn/)，在“设置”选项卡下查看你的订阅信任的目录。订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将被终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。有关资源的详细信息，请参阅[了解 Azure 中的资源访问](https://msdn.microsoft.com/library/azure/dn584083.aspx)。
+**其他信息：**每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以访问 [https://manage.windowsazure.cn/](https://manage.windowsazure.cn/)，在“设置”选项卡下查看你的订阅信任的目录。订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将被终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。有关资源的详细信息，请参阅[了解 Azure 中的资源访问](https://msdn.microsoft.com/zh-cn/library/azure/dn584083.aspx)。
 
 以下过程提供分步说明，介绍如何更改给定订阅的关联目录。
 
@@ -204,12 +204,12 @@ Remove-AzureSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
  
 在所有客户端计算机上，如果你的应用程序或用户从中使用 Azure AD 标识连接到 Azure SQL 数据库，则必须安装以下软件：
 
-- 若要下载 .NET Framework 4.6 或更高版本，请访问 [https://msdn.microsoft.com/library/5a4x27ek.aspx](https://msdn.microsoft.com/library/5a4x27ek.aspx)。
+- 若要下载 .NET Framework 4.6 或更高版本，请访问 [https://msdn.microsoft.com/zh-cn/library/5a4x27ek.aspx](https://msdn.microsoft.com/zh-cn/library/5a4x27ek.aspx)。
 - 用于 SQL Server 的 Azure Active Directory 身份验证库 (**ADALSQL.DLL**) 提供多个语言版本（x86 和 amd64），请访问[用于 Microsoft SQL Server 的 Microsoft Active Directory 身份验证库](http://www.microsoft.com/download/details.aspx?id=48742)的下载中心下载。
 
 ### 工具
 
-- 安装 [SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) 或[用于 Visual Studio 2015 的 SQL Server Data Tools](https://msdn.microsoft.com/library/mt204009.aspx) 以符合 .NET Framework 4.6 要求。 
+- 安装 [SQL Server 2016 Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 或[用于 Visual Studio 2015 的 SQL Server Data Tools](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) 以符合 .NET Framework 4.6 要求。 
 - SSMS 安装 **ADALSQL.DLL** 的 x86 版本。 
 - SSMS 安装 **ADALSQL.DLL** 的 amd64 版本。SSDT 仅部分支持 Azure AD 身份验证。
 - [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)提供的最新 Visual Studio 符合 .NET Framework 4.6 要求，但并未安装所需的 amd64 版本 **ADALSQL.DLL**。
@@ -218,13 +218,13 @@ Remove-AzureSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" 
 
 ### 关于包含数据库用户
 
-Azure Active Directory 身份验证要求以包含数据库用户的身份创建数据库用户。基于 Azure AD 标识的包含数据库用户是在 master 数据库中不具有登录名的数据库用户，它映射到与数据库相关联的 Azure AD 目录中的一个标识。Azure AD 标识可以是单独的用户帐户，也可以是组。有关包含数据库用户的详细信息，请参阅[包含数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/library/ff929188.aspx)。
+Azure Active Directory 身份验证要求以包含数据库用户的身份创建数据库用户。基于 Azure AD 标识的包含数据库用户是在 master 数据库中不具有登录名的数据库用户，它映射到与数据库相关联的 Azure AD 目录中的一个标识。Azure AD 标识可以是单独的用户帐户，也可以是组。有关包含数据库用户的详细信息，请参阅[包含数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 
 ### 通过使用 SQL Server Management Studio 连接到用户数据库
  
 若要确认 Azure AD 管理员已正确设置，请使用 Azure AD 管理员帐户连接到 **master** 数据库。若要设置基于 Azure AD 的包含数据库用户（而不是拥有数据库的服务器管理员），请使用有数据库访问权限的 Azure AD 标识连接到数据库。
 
-> [AZURE.IMPORTANT][SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) 对 Azure Active Directory 身份验证提供支持。
+> [AZURE.IMPORTANT][SQL Server 2016 Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 对 Azure Active Directory 身份验证提供支持。
 
 #### 使用 Active Directory 集成的身份验证进行连接 
 
@@ -265,11 +265,11 @@ Azure Active Directory 身份验证要求以包含数据库用户的身份创建
 	CREATE USER [Nurses] FROM EXTERNAL PROVIDER;
 
 
-有关基于 Azure Active Directory 标识创建包含数据库用户的详细信息，请参阅[创建用户 (TRANSACT-SQL)](http://msdn.microsoft.com/library/ms173463.aspx)。
+有关基于 Azure Active Directory 标识创建包含数据库用户的详细信息，请参阅[创建用户 (TRANSACT-SQL)](http://msdn.microsoft.com/zh-cn/library/ms173463.aspx)。
 
 创建数据库用户时，该用户会收到**连接**权限，并能够以**公共**角色的成员身份连接到该数据库。最初，仅供用户使用的权限是授予**公共**角色的任何权限，或者授予其所属任何 Windows 组的任何权限。设置基于 Azure AD 的包含数据库用户后，便可以授予用户其他权限，方法与向任何其他类型用户授予权限相同。通常，将权限授予数据库角色，并将用户添加到角色。有关详细信息，请参阅[数据库引擎权限基础知识](http://social.technet.microsoft.com/wiki/contents/articles/4433.database-engine-permission-basics.aspx)。有关特殊 SQL 数据库角色的详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins)。如果将联合域用户导入到管理域，则此用户必须使用托管域标识。
 
-> [AZURE.NOTE]Azure AD 用户在数据库元数据中均标记为类型 E (EXTERNAL\_USER)，而组则标记为类型 X (EXTERNAL\_GROUPS)。有关详细信息，请参阅 [sys.database\_principals](https://msdn.microsoft.com/library/ms187328.aspx)。
+> [AZURE.NOTE]Azure AD 用户在数据库元数据中均标记为类型 E (EXTERNAL\_USER)，而组则标记为类型 X (EXTERNAL\_GROUPS)。有关详细信息，请参阅 [sys.database\_principals](https://msdn.microsoft.com/zh-cn/library/ms187328.aspx)。
 
 
 ## 7\.通过使用 Azure Active Directory 标识连接到你的数据库
@@ -306,9 +306,9 @@ Azure Active Directory 身份验证支持使用 Azure AD 标识连接到数据�
 
 [管理 Azure SQL 数据库的数据库和登录名](/documentation/articles/sql-database-manage-logins)
 
-[关于包含数据库用户](https://msdn.microsoft.com/library/ff929071.aspx)
+[关于包含数据库用户](https://msdn.microsoft.com/zh-cn/library/ff929071.aspx)
 
-[创建用户 (TRANSACT-SQL)](http://msdn.microsoft.com/library/ms173463.aspx)
+[创建用户 (TRANSACT-SQL)](http://msdn.microsoft.com/zh-cn/library/ms173463.aspx)
 
 <!--Image references-->
 

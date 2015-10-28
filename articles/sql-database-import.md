@@ -24,7 +24,7 @@
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
-数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储中没有 .bacpac 文件，你可以按照[创建和导出 Azure SQL 数据库的 BACPAC](/documentation/articles/sql-database-backup) 中的步骤创建一个。
+数据库是使用从 Azure 存储 blob 容器导入的 BACPAC 创建的。如果 Azure 存储中没有 .bacpac 文件，你可以按照<!--[-->创建和导出 Azure SQL 数据库的 BACPAC<!--](/documentation/articles/sql-database-backup) -->中的步骤创建一个。
 
 
 > [AZURE.NOTE]Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)。
@@ -93,7 +93,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 ## 其他资源
 
-- [SQL 数据库文档](/documentation/services/sql-database/)
+- [SQL 数据库文档](/documentation/services/sql-databases/)
 
 
 <!--Image references-->

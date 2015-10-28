@@ -86,7 +86,7 @@
 <a id="StartNewSGWizard"></a>
 ### 步骤 4a：启动新建同步组向导
 
-1.	返回[管理门户](http://manage.windowsazure.com)。
+1.	返回[管理门户](http://manage.windowsazure.cn)。
 2.	单击“SQL 数据库”。
 3.	单击页面底部的“添加同步”，然后从下拉列表中选择“新建同步组”。
 
