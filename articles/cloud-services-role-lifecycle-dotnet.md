@@ -42,16 +42,17 @@ wacn.date="10/17/2015"/>
 下面的代码示例演示如何重写 **OnStart** 方法。当角色实例启动并设置将日志记录数据传输到存储帐户时，此方法将配置并启动诊断监视器：
 
 ```csharp
-public override bool OnStart()
-{
-    var config = DiagnosticMonitor.GetDefaultInitialConfiguration();
 
-    config.DiagnosticInfrastructureLogs.ScheduledTransferLogLevelFilter = LogLevel.Error;
-    config.DiagnosticInfrastructureLogs.ScheduledTransferPeriod = TimeSpan.FromMinutes(5);
-
-    DiagnosticMonitor.Start("DiagnosticsConnectionString", config);
-
-    return true;
+	public override bool OnStart()
+	{
+	    var config = DiagnosticMonitor.GetDefaultInitialConfiguration();
+	
+	    config.DiagnosticInfrastructureLogs.ScheduledTransferLogLevelFilter = LogLevel.Error;
+	    config.DiagnosticInfrastructureLogs.ScheduledTransferPeriod = TimeSpan.FromMinutes(5);
+	
+	    DiagnosticMonitor.Start("DiagnosticsConnectionString", config);
+	
+	    return true;
 }
 ```
 
