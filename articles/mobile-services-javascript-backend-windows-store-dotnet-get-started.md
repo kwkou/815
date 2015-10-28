@@ -1,39 +1,31 @@
-<properties
-	pageTitle="适用于 Windows 应用商店应用的移动服务入门 | Windows Azure"
-	description="请按照本教程开始使用 Azure 移动服务在 C# 或 JavaScript 中进行 Windows 应用商店开发。"
-	services="mobile-services"
-	documentationCenter="windows"
-	authors="ggailey777"
-	manager="dwrede"
-	editor=""/>
+<properties pageTitle="Windows 应用商店应用程序移动服务入门 | 移动开发人员中心" metaKeywords="" description="请按照本教程开始使用 Azure 移动服务在 C# 或 JavaScript 中进行 Windows 应用商店开发。 " metaCanonical="" services="mobile-services" documentationCenter="Mobile" title="Get started with Mobile Services" authors="glenga" solutions="" manager="dwrede" editor="" />
 
-<tags
-	ms.service="mobile-services"
-	ms.date="08/08/2015"
-	wacn.date="10/22/2015"/>
+<tags 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="hero-article" ms.date="02/10/2015" ms.author="glenga" />
 
 # <a name="getting-started"> </a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[WACOM.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-本教程说明如何使用 Azure 移动服务向通用 Windows 应用程序添加基于云的后端服务。通用 Windows 应用程序解决方案包括 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目，以及常见的共享项目。有关详细信息，请参阅[生成面向 Windows 和 Windows Phone 的通用 Windows 应用程序](http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn609832.aspx)。
+本教程说明如何使用 Azure 移动服务向通用的 Windows 应用程序添加基于云的后端服务。通用 Windows 应用程序解决方案包括面向 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目以及常见的共享项目。有关详细信息，请参阅[构建面向 Windows 和 Windows Phone 的通用 Windows 应用程序](https://msdn.microsoft.com/zh-CN/library/windows/apps/xaml/dn609832.aspx)。
 
-在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。要创建的移动服务将为服务器端业务逻辑使用 JavaScript。若要创建允许你使用 Visual Studio 以受支持 .NET 语言编写服务器端业务逻辑的移动服务，请参阅本主题中的 .NET 后端版本。
+在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单 *To do list*应用程序。要创建的移动服务将为服务器端业务逻辑使用 JavaScript。若要创建允许你使用 Visual Studio 以受支持 .NET 语言编写服务器端业务逻辑的移动服务，请参阅本主题中的 .NET 后端版本。
 
->[AZURE.NOTE]本主题说明如何使用 Azure 管理门户创建新的移动服务项目和通用 Windows 应用程序。通过使用 Visual Studio 2013，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data)。
+>[AZURE.NOTE]本主题将说明如何使用 Azure 管理门户创建新的移动服务项目和通用 Windows 应用程序。通过使用 Visual Studio 2013，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[快速入门：添加移动服务（JavaScript 后端）](https://msdn.microsoft.com/zh-CN/library/windows/apps/xaml/dn263180.aspx)。
 
->若要将移动服务添加到 Windows Phone 8.0 或 Windows Phone Store 8.1 应用项目，请参阅[将移动服务添加到现有的 Windows Phone 应用](/documentation/articles/mobile-services-windows-phone-get-started-data)。
+>若要将移动服务添加到 Windows Phone 8.0 或 Windows Phone 应用商店 8.1 应用程序项目，请参阅[ Windows Phone 数据处理入门](/zh-cn/documentation/articles/mobile-services-windows-phone-get-started-data)。
 
-[AZURE.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
+[WACOM.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
 
 若要完成本教程，您需要以下各项：
 
-* 有效的 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
+* 有效的 Azure 帐户。如果您没有帐户，可以注册 Azure 试用版并获取最多 10 项免费移动服务（在试用结束后也可继续使用）。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
 * [Visual Studio 2013 Express for Windows] 
 
 ## 创建新的移动服务
 
-[AZURE.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
+[WACOM.INCLUDE [mobile-services-create-new-service](../includes/mobile-services-create-new-service.md)]
 
 ## 创建新的通用 Windows 应用程序
 
@@ -41,67 +33,65 @@
 
 在本部分中，你将要创建一个连接到移动服务的新的通用 Windows 应用程序。
 
-1.  在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+1.  在管理门户中单击"移动服务"，然后单击您刚刚创建的移动服务。
 
    
-2. 在快速入门选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 Windows 应用商店应用程序”。
+2. 在快速入门选项卡中，单击**选择平台**下的**Windows**，然后展开**创建新的 Windows 应用商店应用程序**。
 
    ![](./media/mobile-services-javascript-backend-windows-store-dotnet-get-started/mobile-portal-quickstart.png)
 
    此时将显示三个简单步骤，描述如何创建与移动服务连接的 Windows 应用商店应用程序。
 
-  	![移动服务快速入门步骤](./media/mobile-services-javascript-backend-windows-store-dotnet-get-started/mobile-quickstart-steps.png)
+  	![](./media/mobile-services-javascript-backend-windows-store-dotnet-get-started/mobile-quickstart-steps.png)
 
 3. 在本地计算机或虚拟机上下载并安装 [Visual Studio 2013 Express for Windows]（如果尚未这么做）。
 
-4. 单击“创建 TodoItem 表”以创建用于存储应用程序数据的表。
+4. 单击**创建 TodoItem 表**以创建用于存储应用程序数据的表。
 
-5. 在“下载并运行应用”下，选择应用的语言，然后单击“下载”。
+5. 在**下载并运行应用程序**下面，选择应用程序的语言，然后单击**下载**。 
 
-  	随即将会下载已连接到移动服务的示例*待办事项列表*应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
+  	随即将会下载已连接到移动服务的示例 *To do list*应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
 
 ## 运行 Windows 应用程序
 
-[AZURE.INCLUDE [mobile-services-javascript-backend-run-app](../includes/mobile-services-javascript-backend-run-app.md)]
+[WACOM.INCLUDE [mobile-services-javascript-backend-run-app](../includes/mobile-services-javascript-backend-run-app.md)]
 
 >[AZURE.NOTE]您可以查看访问您的移动服务以查询和插入数据的代码，这些代码在 MainPage.xaml.cs 文件中。
 
 ## 后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务： 
 
-* [将移动服务添加到现有应用程序][Get started with data]<br/>
-  了解有关使用移动服务存储和查询数据的详细信息。
+* [数据处理入门]
+  <br/>了解有关使用移动服务存储和查询数据的详细信息。
 
-* [脱机数据同步入门]<br/>
-  了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+* [离线数据同步入门]
+  <br/>了解如何使用离线数据同步提高您应用程序的响应能力和可靠性。
 
-* [向移动服务应用程序添加身份验证][Get started with authentication]<br/>
-  了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [身份验证入门]
+  <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [向应用程序添加推送通知][Get started with push notifications]<br/>
-  了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门] 
+  <br/>了解如何将非常简单的推送通知发送到您的应用程序。
 
-有关通用 Windows 应用程序的详细信息，请参阅[通过单个移动服务支持多个设备平台](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#shared-vs)。
+有关通用 Windows 应用程序的详细信息，请参阅[通过单个移动服务支持多种设备平台](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service#shared-vs)。
 
 <!-- Anchors. -->
-[Getting started with Mobile Services]: #getting-started
-[Create a new mobile service]: #create-new-service
-[Define the mobile service instance]: #define-mobile-service-instance
-[Next Steps]: #next-steps
+[移动服务入门]:#getting-started
+[创建新的移动服务]:#create-new-service
+[定义移动服务实例]:#define-mobile-service-instance
+[后续步骤]:#next-steps
 
 <!-- Images. -->
 
 
 
 <!-- URLs. -->
-
-[Get started with data]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
-[脱机数据同步入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
-[Get started with authentication]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[数据处理入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
+[数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
+[离线数据同步入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
+[身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[推送通知入门]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
-[Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Management Portal]: https://manage.windowsazure.cn/
-[Get started with data in Mobile Services using Visual Studio 2012]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012
-
-<!---HONumber=74-->
+[移动服务 SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
+[管理门户]: https://manage.windowsazure.cn/
+[使用 Visual Studio 2012 的移动服务中的数据处理入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012

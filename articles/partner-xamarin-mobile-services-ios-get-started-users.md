@@ -9,10 +9,13 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="05/14/2015"
+	wacn.date="07/25/2015"/>
 
-# 向移动服务应用程序添加身份验证
+#  向移动服务应用程序添加身份验证
+<div class="dev-center-tutorial-selector sublanding"> 
+	<a href="/develop/mobile/tutorials/get-started-with-users-dotnet" title="Windows 应用商店 C#">Windows 应用商店 C#</a><a href="/develop/mobile/tutorials/get-started-with-users-js" title="Windows 应用商店 JavaScript">Windows 应用商店 JavaScript</a><a href="/develop/mobile/tutorials/get-started-with-users-wp8" title="Windows Phone">Windows Phone</a><a href="/develop/mobile/tutorials/get-started-with-users-ios" title="iOS">iOS</a><a href="/develop/mobile/tutorials/get-started-with-users-android" title="Android">Android</a><a href="/develop/mobile/tutorials/get-started-with-users-html" title="HTML">HTML</a><a href="/develop/mobile/tutorials/get-started-with-users-xamarin-ios" title="Xamarin.iOS" class="current">Xamarin.iOS</a><a href="/develop/mobile/tutorials/get-started-with-users-xamarin-android" title="Xamarin.Android">Xamarin.Android</a>
+</div>
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
@@ -26,7 +29,7 @@
 
 本教程基于移动服务快速入门。此外，还必须先完成[移动服务入门]教程。
 
-完成本教程需要安装 [Xamarin.iOS]、XCode 6.0 和 iOS 7.0 或更高版本。
+完成本教程需要安装 Xamarin.iOS、XCode 6.0 和 iOS 7.0 或更高版本。
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
@@ -68,7 +71,7 @@
             }
         }
 
-	> [AZURE.NOTE]如果使用的标识提供程序不是 Microsoft 帐户，请将传递给上述 **LoginAsync** 方法的值更改为下列其中一项：_WindowsAzureActiveDirectory_。
+	> [AZURE.NOTE]如果使用的标识提供者不是 Microsoft 帐户，请将传递给上述 **LoginAsync** 的值更改为下列其中一项：_WindowsAzureActiveDirectory_。
 
 3. 从 **ToDoService** 构造函数将对 **ToDoItem** 表的请求移到名为 **CreateTable** 的新方法中：
 
@@ -144,6 +147,5 @@
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
-[Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

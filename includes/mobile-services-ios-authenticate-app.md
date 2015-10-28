@@ -1,9 +1,12 @@
 
 
- 打开项目文件 QSTodoListViewController.m，并在 **viewDidLoad** 方法中，删除用于将数据重新上载到表的以下代码：
+1. 打开项目文件 QSTodoListViewController.m，并在 **viewDidLoad** 方法中，删除用于将数据重新上载到表的以下代码：
 
-```
-        - (void) loginAndGetData
+        [self refresh];
+
+2.	在 **viewDidLoad** 方法后，添加以下代码：  
+
+        - (void)viewDidAppear:(BOOL)animated
         {
             MSClient *client = self.todoService.client;
             
@@ -15,14 +18,9 @@
                 [self refresh];
             }];
         }
-```
 
-* 将 `viewDidLoad` 中的 `[self refresh]` 替换为以下代码：
+    >[AZURE.NOTE]如果使用的标识提供程序不是 Facebook，请将传递给上述 <strong>loginWithProvider</strong> 的值更改为下列其中一项：<em>microsoftaccount</em>、<em>facebook</em>、<em>twitter</em>、<em>google</em> 或 <em>windowsazureactivedirectory</em>。
+		
+3. 按"运行"按钮以生成项目，在 iPhone 模拟器中启动应用，然后使用您选择的标识提供程序登录。
 
-```
-        [self loginAndGetData];
-```
-
-* 若要启动该应用程序，请按“运行”，然后再登录。当你登录时，你应能够查看 Todo 列表并进行更新。
-
-<!---HONumber=74-->
+   	当您成功登录时，应用应该运行而不出现错误，您应该能够查询移动服务，并对数据进行更新。

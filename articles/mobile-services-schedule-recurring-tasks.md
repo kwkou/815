@@ -1,16 +1,16 @@
-<properties
-	pageTitle="在 JavaScript 后端移动服务中安排后端任务 | Windows Azure"
-	description="使用 Azure 移动服务中的计划程序来定义按计划运行的 JavaScript 后端作业。"
-	services="mobile-services"
-	documentationCenter=""
-	authors="ggailey777"
-	manager="dwrede"
+<properties 
+	pageTitle="使用计划程序计划后端任务 - 移动服务" 
+	description="使用 Azure 移动服务计划程序来计划移动应用程序的作业。" 
+	services="mobile-services" 
+	documentationCenter="" 
+	authors="ggailey777" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/14/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="06/04/2015" 
+	wacn.date="07/25/2015"/>
 
 #  在移动服务中计划定期作业 
 
@@ -159,6 +159,6 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

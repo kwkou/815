@@ -1,69 +1,63 @@
-<properties 
-	pageTitle="使用 JavaScript 的移动服务和 Azure Active Directory 中基于角色的访问控制（Windows 应用商店）| Windows Azure" 
-	description="了解如何使用 JavaScript 后端通过移动服务基于 Windows 应用商店应用程序中的 Azure Active Directory 角色控制访问。" 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
-	services="mobile-services"/>
+<properties urlDisplayName="Azure Active Directory 基于角色的访问控制" pageTitle="移动服务和 Azure Active Directory（Windows 应用商店）中的基于角色的访问控制 |移动开发人员中心" metaKeywords="" description="了解如何根据您的 Windows 应用商店应用程序中的 Azure Active Directory 角色控制访问。" metaCanonical="" disqusComments="1" umbracoNaviHide="1" documentationCenter="Mobile" title="Role Based Access Control in Mobile Services and Azure Active Directory" authors="wesmc" manager="dwrede" />
 
 <tags 
-	ms.service="mobile-services" 
+wacn.date="04/11/2015"
+ms.service="mobile-services" ms.workload="mobile" ms.tgt_pltfrm="mobile-windows-store" ms.devlang="dotnet" ms.topic="article" ms.date="02/23/2015" ms.author="wesmc" />
 
-	ms.date="09/03/2015" 
-	wacn.date="10/22/2015"/>
+# 移动服务和 Azure Active Directory 中的基于角色的访问控制
 
-# 使用 .NET 的移动服务和 Azure Active Directory 中基于角色的访问控制
-
-[AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
-
-##概述
-
-基于角色的访问控制 (RBAC) 是对用户可充当的角色分配权限的做法，明确定义特定类别的用户可以或者不可以执行哪些操作。本教程将指导你了解如何将基本 RBAC 添加到 Azure 移动服务。
-
-本教程将演示基于角色的访问控制，检查每个用户在 Azure Active Directory (AAD) 中定义的“销售”组的成员资格。访问检查将使用 Azure Active Directory 的 [Graph API]，通过移动服务后端中的 JavaScript 完成。只有属于销售角色的用户才可以查询数据。
+[WACOM.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
 
->[AZURE.NOTE]本教程旨在扩充身份验证知识以加入授权实践。你应该先使用 Azure Active Directory 身份验证提供程序完成[向移动服务应用添加身份验证]教程。本教程将继续更新[向移动服务应用添加身份验证]教程中使用的 TodoItem 应用程序。
+基于角色的访问控制 (RBAC) 是一种为用户能够拥有的角色分配权限的实践，能够很好地定义哪些特定类型的用户能做什么和不能做什么的界限。本教程将指导您如何向 Azure 移动服务中添加基本的 RBAC。
 
-##先决条件
+本教程将演示基于角色的访问控制，检查每个用户在 Azure Active Directory (AAD) 中定义的销售组的成员身份。访问检查将使用 Azure Active Directory 的 [Graph API]，通过移动服务后端中的 JavaScript 完成。只有属于销售角色的用户才可以查询数据。
+
+
+>[AZURE.NOTE] 本教程旨在扩展您的身份验证知识，帮助您掌握授权实践。应先使用 Azure Active Directory 身份验证提供程序来完成[身份验证入门]教程。本教程将继续更新[身份验证入门]教程中使用的 TodoItem 应用程序。
+
+本教程将指导您完成以下操作：
+
+1. [创建销售组及成员]
+2. [为集成的应用程序生成密钥]
+3. [添加一个共享的脚本来检查成员资格] 
+4. [向数据库操作中添加基于角色的访问检查]
+5. [测试客户端访问]
 
 本教程需要的内容如下：
 
-* 在 Windows 8.1 上运行的 Visual Studio 2013。
-* 使用 Azure Active Directory 身份验证提供程序完成[向移动服务应用添加身份验证]教程。
-* 完成[存储服务器脚本]教程，以熟悉如何使用 Git 存储库来存储服务器脚本。
+* 运行在 Windows 8.1 上的 Visual Studio 2013。
+* 使用 Azure Active Directory 身份验证提供程序完成[身份验证入门]教程。
+* 完成[存储服务器脚本]教程，熟悉如何使用 Git 存储库来存储服务器脚本。
  
 
 
-##创建具有成员资格的销售组
+## <a name="create-group"></a>创建销售组及成员
 
-[AZURE.INCLUDE [mobile-services-aad-rbac-create-sales-group](../includes/mobile-services-aad-rbac-create-sales-group.md)]
-
-
-##为集成的应用程序生成密钥
+[WACOM.INCLUDE [mobile-services-aad-rbac-create-sales-group](../includes/mobile-services-aad-rbac-create-sales-group.md)]
 
 
-在学习[向移动服务应用添加身份验证]教程的过程中，你在完成[注册以使用 Azure Active Directory 登录名]步骤时为集成的应用程序创建了注册。在本部分中，你将生成在使用该集成应用程序客户端 ID 读取目录信息时所用的密钥。
+## <a name="generate-key"></a>为集成的应用程序生成密钥
 
-如果你已完成了[访问 Azure Active Directory Graph 信息]教程，则表示你已完成此步骤，因此可跳过本部分。
 
-[AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
+在[身份验证入门]教程中，在完成"使用 Azure Active Directory Login]步骤"[的注册后，您为集成应用程序创建了一个注册。在本部分中，您将生成一个密钥，用于读取该集成应用程序的客户端 ID 的目录信息。 
+
+[WACOM.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
 
 
 
 
 
-##将共享的脚本添加到检查成员资格的移动服务
+## <a name="add-shared-script"></a>将共享的脚本添加到检查成员资格的移动服务
 
-在本部分中，你将使用 Git 将名为 *rbac.js* 的共享脚本文件部署到你的移动服务。此共享脚本文件将包含使用 [Graph API] 检查用户的组成员身份的函数。
+在本部分，您将使用 Git 将名为 *rbac.js*的共享脚本文件部署到您的移动服务。这一共享的脚本文件将包含使用[Graph API]检查用户的组成员身份的函数。 
 
-如果你不熟悉如何使用 Git 将脚本部署到移动服务，请在完成本部分之前，认真阅读[存储服务器脚本]教程。
+如果您不熟悉如何使用 Git 将脚本部署到移动服务，请在完成本部分之前，认真阅读[存储服务器脚本]教程。
 
-1. 在移动服务的本地存储库的 *./service/shared/* 目录中，创建一个名为 *rbac.js* 的新脚本文件。
-2. 将以下脚本添加到定义 `getAADToken` 函数的文件顶部。根据给定的 *tenant\_domain*、集成应用程序*客户端 ID* 和应用程序*密钥*，此函数提供了一个用于读取目录信息的 Graph 访问令牌。
+1. 在移动服务的本地存储库的*./service/shared/*目录中，创建一个名为 *rbac.js* 的新脚本文件。
+2. 将以下脚本添加到定义 `getAADToken`函数的文件顶部。鉴于 *tenant_domain*、集成应用程序 *client id*和应用程序 *key*，此函数提供了一个用于读取目录信息的 Graph 访问令牌。
 
-    >[AZURE.NOTE]你应该缓存令牌，而不是每次执行访问权限检查时都创建一个新令牌。然后，在尝试使用 401 Authentication\_ExpiredToken 响应中的令牌结果时刷新缓存，如 [Graph API 错误参考]所述。为简单起见，以下代码中并未演示此操作，但这可以减轻 Active Directory 的额外网络流量。
+    >[AZURE.NOTE] 您应缓存令牌，而不是在每次访问检查时创建一个新令牌。然后，在尝试使用 401 Authentication_ExpiredToken 响应中的令牌结果时刷新缓存，如[Graph API 错误参考]所述。为了简单起见，下面的代码中并没有体现这一点，但它将缓解 Active Directory 的额外网络流量。 
 
         var appSettings = require('mobileservice-config').appSettings;
         var tenant_domain = appSettings.AAD_TENANT_DOMAIN;
@@ -90,9 +84,9 @@
         }
 
 
-3. 向 *rbac.js* 添加以下代码来定义 `getGroupId` 函数。此函数根据筛选器中所用的组名称，使用访问令牌来获取组 id。
+3. 添加以下代码到 *rbac.js*来定义 `getGroupId`函数。此函数根据筛选器中所用的组名称，使用访问令牌来获取组 id。
  
-    >[AZURE.NOTE]此代码将按名称查找 Active Directory 组。在许多情况下，将组 ID 存储为移动服务应用设置并只使用该组 ID 是较好的做法。这是因为组名称可能会更改，而 ID 会保持相同。但是，当组名称更改时，角色的作用域中通常至少有一项更改可能也需要移动服务代码的更新。
+    >[AZURE.NOTE] 此代码按名称查找 Active Directory 组。在许多情况下，将组 id 存储为移动服务应用程序设置并只使用该组 id 可能更好。这是因为组名称可能会改变，但 id 保持不变。然而，如果组名称更改，通常至少角色范围也会发生变化，这可能还需要更新移动服务代码。   
 
         function getGroupId(groupname, accessToken, callback) {
             var req = require("request");
@@ -113,9 +107,9 @@
         }
 
 
-4. 将以下代码添加到 *rbac.js*，以定义调用 Graph REST API 的 [IsMemberOf] 终结点的 `isMemberOf` 函数。
+4. 添加以下代码到 *rbac.js*，以定义 `isMemberOf`调用 Graph REST api 的 [IsMemberOf] 端点的函数。
 
-    此函数是围绕 Graph REST API 的 [IsMemberOf] 终结点的瘦包装器。它使用 Graph 访问令牌，根据组 id 来检查用户的目录对象 id 是否在组中具有成员身份。
+    此函数是 Graph REST API [IsMemberOf] 端点周围的瘦包装器。它使用 Graph 访问令牌，根据组 id 来检查用户的目录对象 id 是否在组中具有成员身份。
 
         function isMemberOf(access_token, userObjectId, groupObjectId, callback) {
             var req = require("request");
@@ -139,7 +133,7 @@
 
     
 
-5. 将以下导出的 `checkGroupMembership` 函数添加到 *rbac.js*。
+7. 添加以下导出的 `checkGroupMembership`函数至 *rbac.js* 。  
 
     此函数将遮蔽其他脚本函数的使用，并从共享的脚本导出，以供执行实际访问检查的其他脚本调用。鉴于该移动服务用户对象和组 id，该脚本将针对用户的身份检索 Azure Active Directory 对象 id，并验证组的成员身份。
 
@@ -162,12 +156,12 @@
             });
         }
 
-6. 保存对 *rbac.js* 所做的更改。
+8. 保存您对 *rbac.js*的更改。
 
-##将基于角色的访问检查添加到数据库操作
+## <a name="add-access-checking"></a>向数据库操作中添加基于角色的访问检查
 
 
-当你完成[向移动服务应用添加身份验证]教程后，你应该已经将表操作设置为要求身份验证，如下所示。
+当您完成[身份验证入门]教程后，你应该已经将表操作设置为要求身份验证，如下所示。
 
 ![][3]
 
@@ -251,14 +245,20 @@
 
     ![][4]
 
-##测试客户端的访问
+## <a name="test-client"></a>测试客户端的访问
 
-[AZURE.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
-
-
+[WACOM.INCLUDE [mobile-services-aad-rbac-test-app](../includes/mobile-services-aad-rbac-test-app.md)]
 
 
 
+
+
+<!-- Anchors. -->
+[创建销售组及成员]: #create-group
+[为集成的应用程序生成密钥]: #generate-key
+[添加一个共享的脚本来检查成员资格]: #add-shared-script
+[向数据库操作中添加基于角色的访问检查]: #add-access-checking
+[测试客户端访问]: #test-client
 
 
 <!-- Images -->
@@ -271,15 +271,12 @@
 [6]: ./media/mobile-services-javascript-backend-windows-store-dotnet-aad-rbac/client-id-and-key.png
 
 <!-- URLs. -->
-[向移动服务应用添加身份验证]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
-[How to Register with the Azure Active Directory]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
+[如何向 Azure Active Directory 注册]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[Directory Sync Scenarios]: http://msdn.microsoft.com/zh-cn/library/azure/jj573653.aspx
+[目录同步方案]: https://msdn.microsoft.com/zh-CN/library/azure/jj573653.aspx
 [存储服务器脚本]: /zh-cn/documentation/articles/mobile-services-store-scripts-source-control/
-[注册以使用 Azure Active Directory 登录名]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
-[Graph API]: http://msdn.microsoft.com/zh-cn/library/azure/hh974478.aspx
-[Graph API 错误参考]: http://msdn.microsoft.com/zh-cn/library/azure/hh974480.aspx
-[IsMemberOf]: http://msdn.microsoft.com/zh-cn/library/azure/dn151601.aspx
-[访问 Azure Active Directory Graph 信息]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-aad-graph-info
-
-<!---HONumber=74-->
+[注册以使用 Azure Active Directory Login]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[Graph API]: https://msdn.microsoft.com/zh-CN/library/azure/hh974478.aspx
+[Graph API 错误参考]: https://msdn.microsoft.com/zh-CN/library/azure/hh974480.aspx
+[IsMemberOf]: https://msdn.microsoft.com/zh-CN/library/azure/dn151601.aspx

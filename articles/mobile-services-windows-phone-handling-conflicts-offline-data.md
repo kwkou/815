@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在移动服务中处理与脱机数据的冲突 (Windows Phone) | Windows Azure" 
+	pageTitle="使用移动服务中的脱机数据处理冲突 (Windows Phone) | 移动开发人员中心" 
 	description="了解在 Windows Phone 应用程序中同步脱机数据时如何使用 Azure 移动服务处理冲突" 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="06/15/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="07/25/2015"/>
 
 
 #  在“移动服务”中处理与脱机数据同步的冲突
@@ -77,11 +77,11 @@
           }
 
 
-3. 在 Visual Studio 的解决方案资源管理器中，展开“App\_Start”文件夹，然后打开 WebApiConfig.cs 文件。
+3. 在 Visual Studio 的解决方案资源管理器中，展开“App_Start”文件夹，然后打开 WebApiConfig.cs 文件。
 
     请注意，在 WebApiConfig.cs 文件中，默认数据库初始值设定项类是从 `DropCreateDatabaseIfModelChanges` 类派生的。这意味着，对该模型的任何更改将导致表被删除并重新创建，以适应新模型。因此表中的数据将丢失，并且表将重新植入。修改数据库初始值设定项的 Seed 方法，使下述 `Seed()` 初始化函数可以初始化新的 DueDate 列。保存 WebApiConfig.cs 文件。
 
-    >[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
+    >[AZURE.NOTE]使用默认数据库初始值设定项时，只要实体框架在代码优先模型定义中检测到数据模型更改，它就会删除并重新创建数据库。若要进行此数据模型更改并维护数据库中的现有数据，必须使用代码优先迁移。有关更多信息，请参阅[如何使用代码优先迁移来更新数据模型](mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
 
         new TodoItem { Id = "1", Text = "First item", Complete = false, DueDate = DateTime.Today },
@@ -214,6 +214,7 @@
 
 
 <!-- Images -->
+
 [0]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-handling-conflicts-app-run1.png
 [1]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-todowithdate-empty.png
 [2]: ./media/mobile-services-windows-phone-handling-conflicts-offline-data/mobile-services-todowithdate-empty-sql.png
@@ -236,4 +237,4 @@
 [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [Get started with data]: /documentation/articles/mobile-services-windows-phone-get-started-data/
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

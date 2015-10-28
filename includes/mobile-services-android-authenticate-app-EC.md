@@ -13,7 +13,8 @@
 
 2. 将以下方法添加到 **ToDoActivity** 类： 
 	
-		private void authenticate() { // Login using the Google provider.
+	private void authenticate() {
+	    // Login using the Google provider.
 	    
 		ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.Google);
 
@@ -37,7 +38,7 @@
 
     > [AZURE.NOTE] 如果使用的标识提供程序不是 Google，请将传递给上述 **login** 方法的值更改为下列其中一项：_MicrosoftAccount_ 或 _windowsazureactivedirectory_。
 
-3. 在 **onCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
+3. 用 **onCreate** 方法，在实例化  `MobileServiceClient` 对象的代码后添加以下代码行。
 
 		authenticate();
 
@@ -61,8 +62,8 @@
 			refreshItemsFromTable();
 		}
 
-5. 然后，从“运行”菜单中单击“运行”以启动应用程序，并使用所选的标识提供程序登录。
+9. 然后，从**运行**菜单中单击**运行**以启动应用，并使用所选的标识提供商进行登录。 
 
    	当您成功登录时，应用应该运行而不出现错误，您应该能够查询移动服务，并对数据进行更新。
 
-<!---HONumber=74-->
+<!--HONumber=50-->

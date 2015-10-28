@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="05/14/2015" 
+	wacn.date="07/25/2015"/>
 
 #  向移动服务应用程序添加身份验证
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-<p>本主题说明如何通过 Xamarin.Android 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。</p>
+本主题说明如何通过 Xamarin.Android 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
 本教程将指导你完成在应用程序中启用身份验证的以下基本步骤：
 
@@ -121,6 +121,7 @@
 [Next Steps]: #next-steps
 
 <!-- Images. -->
+
 [4]: ./media/partner-xamarin-mobile-services-android-get-started-users/mobile-services-selection.png
 [5]: ./media/partner-xamarin-mobile-services-android-get-started-users/mobile-service-uri.png
 
@@ -129,10 +130,10 @@
 [15]: ./media/partner-xamarin-mobile-services-android-get-started-users/mobile-portal-change-table-perms.png
 
 <!-- URLs. -->
-[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[使用脚本为用户授权]: mobile-services-javascript-backend-service-side-authorization
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

@@ -9,14 +9,13 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="04/24/2015"
+	wacn.date="07/25/2015"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
 
-##概述
 
 本教程演示了如何在您的 Sencha Touch 应用程序中利用 Azure 移动服务。使用可利用您通过管理门户定义的移动服务的 Sencha Touch，来创建一个简单的待办事项列表应用程序。本教程适用于中级到高级的 Web 应用程序开发人员，这些开发人员非常了解 JavaScript 并熟悉 Sencha Touch 框架。
 
@@ -27,9 +26,9 @@
 
 ## 要求
 
-- 下载并安装 [Sencha Touch](http://wwww.sencha.com/products/touch/download" target="\_blank")。
+- 下载并安装 [Sencha Touch](http://wwww.sencha.com/products/touch/download)。
 
-- 下载并安装 [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download" target="\_blank")。
+- 下载并安装 [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download)。
 
 - Java Runtime Environment (JRE) 或 Java 开发工具包（如果您创建 Android 应用程序）
 
@@ -704,4 +703,4 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

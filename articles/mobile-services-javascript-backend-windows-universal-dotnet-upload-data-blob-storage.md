@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 | Windows Azure" 
+	pageTitle="将图像从通用 Windows 应用上载到 Azure Blob 存储 |Azure 移动服务" 
 	description="了解如何使用 JavaScript 后端移动服务将图像上载到 Azure Blob 存储和从通用 Windows 应用访问图像。" 
 	services="mobile-services,storage" 
 	documentationCenter="windows" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/13/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="08/29/2015"/>
 
 # 使用移动服务将图像上载到 Azure Blob 存储
 
@@ -18,11 +18,11 @@
 
 ##概述 
 
-本主题说明如何借助 Azure 移动服务，使应用程序能够在 Azure 存储空间中上载和存储用户生成的图像。移动服务使用 SQL 数据库存储数据。但是，将二进制大型对象 (BLOB) 数据存储在 Azure Blob 存储服务中可以提高效率。
+本主题说明如何借助 Azure 移动服务，使应用能够在 Azure 存储空间中上载和存储用户生成的图像。移动服务使用 SQL 数据库来存储数据。但是，将二进制大型对象 (BLOB) 数据存储在 Azure Blob 存储服务中可以提高效率。
 
-你无法使用客户端应用程序安全地分发所需的凭据，因此无法安全地将数据上载到 Blob 存储服务。你必须将这些凭据存储在移动服务中，并使用它们来生成用于上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用程序安全返回 SAS（一个凭据，其过期时间较短 &mdash; 在本例中为 5 分钟）。然后，应用程序将使用此临时凭据来上载图像。在此示例中，公众可以从 Blob 服务下载。
+你无法使用客户端应用安全地分发所需的凭据，因此无法安全地将数据上载到 Blob 存储服务。你必须将这些凭据存储在移动服务中，并使用它们来生成用于上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用程序安全返回 SAS（一个凭据，其过期时间较短 &mdash; 在本例中为 5 分钟）。然后，应用将使用此临时凭据来上载图像。在此示例中，公众可以从 Blob 服务下载。
 
-在本教程中，你将要向移动服务快速入门应用程序添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。
+在本教程中，你将要向移动服务快速入门应用添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。
 
 ##先决条件
 
@@ -30,9 +30,9 @@
 
 + Microsoft Visual Studio 2013 Update 3 或更高版本
 + [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
-+ 连接到你的计算机的照相机或其他图像捕获设备。
++ 连接到计算机的照相机或其他图像捕获设备。
 
-本教程基于移动服务快速入门。在开始本教程之前，必须先[完成移动服务入门]。
+本教程基于移动服务快速入门。在开始本教程之前，必须先完成[移动服务入门]。
 
 ##在管理门户中更新已注册的插入脚本
 
@@ -46,7 +46,7 @@
 
 + [在移动服务中计划后端作业]
 
-  	了解如何使用移动服务作业计划程序功能，定义按你定义的计划执行的服务器脚本代码。
+  	了解如何使用移动服务作业计划程序功能来定义服务器标本代码，该代码将按你定义的计划执行。
 
 + [移动服务服务器脚本参考]
 
@@ -54,7 +54,7 @@
  
 + [移动服务 .NET 操作方法概念性参考]
 
-    了解有关如何将移动服务与 .NET 一起使用的详细信息
+    深入了解如何将移动服务与 .NET 结合使用
   
  
 <!-- Anchors. -->
@@ -74,7 +74,7 @@
 [在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[完成移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 
 [Azure Management Portal]: https://manage.windowsazure.cn
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
@@ -83,4 +83,4 @@
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=74-->
+<!---HONumber=67-->

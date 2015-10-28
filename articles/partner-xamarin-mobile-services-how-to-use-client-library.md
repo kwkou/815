@@ -1,16 +1,16 @@
-<properties
-	pageTitle="如何使用 Xamarin 组件客户端 | Windows Azure"
-	description="了解如何使用适用于 Azure 移动服务的 Xamarin 组件客户端。"
-	authors="lindydonna"
-	manager="dwrede"
-	editor=""
-	services="mobile-services"
+<properties 
+	pageTitle="如何使用 Xamarin 组件客户端 - Azure 移动服务功能指南" 
+	description="了解如何使用适用于 Azure 移动服务的 Xamarin 组件客户端。" 
+	authors="lindydonna" 
+	manager="dwrede" 
+	editor="" 
+	services="mobile-services" 
 	documentationCenter="xamarin"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="04/24/2015" 
+	wacn.date="07/25/2015"/>
 
 #  如何使用适用于 Azure 移动服务的 Xamarin 组件客户端
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
@@ -398,23 +398,17 @@ Xamarin 组件客户端在设计上支持强类型化方案。但有时，松散
 
 完成这篇概念性的操作方法参考主题后，请详细了解如何在移动服务中执行重要任务：
 
-* 移动服务入门 ([Xamarin.iOS][Get started with Mobile Services iOS]/[Xamarin.Android][Get started with Mobile Services Android])
-  <br/>了解移动服务使用方面的基础知识。
+* 移动服务入门 ([Xamarin.iOS][Get started with Mobile Services iOS]/[Xamarin.Android][Get started with Mobile Services Android]) <br/>了解移动服务使用方面的基础知识。
 
-* 数据处理入门 ([Xamarin.iOS][Get started with data iOS]/[Xamarin.Android][Get started with data Android])
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
+* 数据处理入门 ([Xamarin.iOS][Get started with data iOS]/[Xamarin.Android][Get started with data Android]) <br/>了解有关使用移动服务存储和查询数据的详细信息。
 
-* 身份验证入门 ([Xamarin.iOS][Get started with authentication iOS]/[Xamarin.Android][Get started with authentication Android])
-  <br/>了解如何使用标识提供者对应用程序的用户进行身份验证。
+* 身份验证入门 ([Xamarin.iOS][Get started with authentication iOS]/[Xamarin.Android][Get started with authentication Android]) <br/>了解如何使用标识提供者对应用程序的用户进行身份验证。
 
-* 使用脚本验证和修改数据 ([Xamarin.iOS][Validate and modify data with scripts ios]/[Xamarin.Android][Validate and modify data with scripts android])
-  <br/>了解更多有关使用移动服务中的服务器脚本验证和更改从应用程序发送的数据的信息。
+* 使用脚本验证和修改数据 ([Xamarin.iOS][Validate and modify data with scripts ios]/[Xamarin.Android][Validate and modify data with scripts android]) <br/>了解更多有关使用移动服务中的服务器脚本验证和更改从应用程序发送的数据的信息。
 
-* 使用分页优化查询 ([Xamarin.iOS][Refine queries with paging iOS]/[Xamarin.Android][Refine queries with paging Android])
-  <br/>了解如何使用查询中的分页控制单个请求中处理的数据量。
+* 使用分页优化查询 ([Xamarin.iOS][Refine queries with paging iOS]/[Xamarin.Android][Refine queries with paging Android]) <br/>了解如何使用查询中的分页控制单个请求中处理的数据量。
 
-* 使用脚本为用户授权 ([Xamarin.iOS][Authorize users with scripts iOS]/[Xamarin.Android][Authorize users with scripts Android])
-  <br/>了解如何采用移动服务基于已进行身份验证的用户提供的用户 ID 值，并使用该值来筛选移动服务返回的数据。
+* 使用脚本为用户授权 ([Xamarin.iOS][Authorize users with scripts iOS]/[Xamarin.Android][Authorize users with scripts Android]) <br/>了解如何采用移动服务基于已进行身份验证的用户提供的用户 ID 值，并使用该值来筛选移动服务返回的数据。
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is
@@ -473,4 +467,4 @@ Xamarin 组件客户端在设计上支持强类型化方案。但有时，松散
 [UserID]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

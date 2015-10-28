@@ -1,7 +1,7 @@
 
-1. 在“解决方案”视图中，展开 Xamarin.Android 应用程序中的 **Components** 文件夹，确保 Azure 移动服务包已安装。 
+1. 在"解决方案"视图中，展开 Xamarin.Android 应用程序中的 **Components** 文件夹，确保 Azure 移动服务包已安装。 
 
-2. 右键单击 **Components** 文件夹，单击“获取更多组件...”，搜索 **Google Cloud Messaging Client** 组件，将其添加到项目中。
+2. 右键单击 **Components** 文件夹，单击"获取更多组件..."，搜索 **Google Cloud Messaging Client** 组件，将其添加到项目中。 
 
 1. 打开 ToDoActivity.cs 项目文件，将以下 using 语句添加到类：
 
@@ -49,4 +49,4 @@
 
 你的 **ToDoActivity** 现已准备就绪，可以添加推送通知了。
 
-<!---HONumber=74-->
+<!---HONumber=56-->

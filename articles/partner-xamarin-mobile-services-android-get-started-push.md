@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="向 Xamarin Android 应用添加推送通知 | Windows Azure" 
+	pageTitle="将推送通知发送到 Xamarin Android 应用程序 | Azure 移动服务" 
 	description="了解如何使用 Azure 移动服务和 Azure 通知中心将推送通知配置为通过 Google Cloud Messaging 发送到 Xamarin.Android 应用程序。" 
 	documentationCenter="xamarin" 
 	authors="ggailey777" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/16/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="06/19/2015" 
+	wacn.date="07/25/2015"/>
 
 #  向移动服务应用程序添加推送通知
 
@@ -61,31 +61,29 @@
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [将移动服务添加到现有应用程序]
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [将移动服务添加到现有应用程序]<br/>了解有关使用移动服务存储和查询数据的详细信息。
 
-* [身份验证入门 ](/documentation/articles/mobile-services-android-get-started-users)
-  <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+* [身份验证入门 ](mobile-services-android-get-started-users)<br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
-* [什么是通知中心？](/documentation/articles/notification-hubs-overview)
-  <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+* [什么是通知中心？](notification-hubs-overview) <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
-  </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
+* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)</br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
-* [如何使用适用于移动服务的 .NET 客户端库](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
-  <br/>了解有关如何将移动服务与 Xamarin C# 代码配合使用的详细信息。
+* [如何使用适用于移动服务的 .NET 客户端库](mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 Xamarin C# 代码配合使用的详细信息。
 
-* [移动服务服务器脚本参考](/documentation/articles/mobile-services-how-to-use-server-scripts)
-  <br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
+* [移动服务服务器脚本参考](mobile-services-how-to-use-server-scripts)<br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
 
 <!-- URLs. -->
-[移动服务入门]: /documentation/articles/mobile-services-ios-get-started
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-android-get-started-data
+[移动服务入门]: mobile-services-ios-get-started
+[将移动服务添加到现有应用程序]: mobile-services-android-get-started-data
 
 [Google Cloud Messaging 客户端组件]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/
- 
+[Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
+[Mobile Services Xamarin conceptual]: /develop/mobile/how-to-guides/work-with-xamarin-client-library
+[gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
+[completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
+[PushSharp Github page]: https://github.com/Redth/PushSharp
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->

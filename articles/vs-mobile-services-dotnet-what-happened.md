@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Visual Studio 连接服务添加移动服务后，我的 .NET 项目发生了什么情况？| Windows Azure" 
-	description="描述使用“连接服务”添加 Azure 移动服务后，Visual Studio .NET 项目发生了什么情况" 
+	pageTitle="" 
+	description="描述 Visual Studio 中的 Azure 移动服务 .NET 项目发生了什么情况" 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="patshea123" 
@@ -9,34 +9,31 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/17/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="05/06/2015" 
+	wacn.date="07/25/2015"/>
 
 #  我的项目发生了什么情况？
 
 > [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-dotnet-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-mobile-services-dotnet-what-happened)
+> - [Getting Started](vs-mobile-services-dotnet-getting-started)
+> - [What Happened](vs-mobile-services-dotnet-what-happened)
 
-## 已添加引用
+### <span id="whathappened">我的项目发生了什么情况？</span>
+
+##### 已添加引用
 
 Azure 移动服务 NuGet 包已添加到您的项目。因此，下面的 .NET 引用也已添加到您的项目：
 
-- **Microsoft.WindowsAzure.Mobile**
-- **Microsoft.WindowsAzure.Mobile.Ext**
-- **Newtonsoft.Json**
-- **System.Net.Http.Extensions**
-- **System.Net.Http.Primitives** 
+- `Microsoft.WindowsAzure.Mobile`
+- `Microsoft.WindowsAzure.Mobile.Ext`
+- `Newtonsoft.Json`
+- `System.Net.Http.Extensions`
+- `System.Net.Http.Primitives` 
 
-## 移动服务的连接字符串值
+##### 移动服务的连接字符串值
 
 在 App.xaml.cs 文件中，已使用选定移动服务的应用程序 URL 和应用程序密钥创建 **MobileServiceClient** 对象。
 
-## 已添加移动服务项目
+[详细了解移动服务](/documentation/services/mobile-services)
 
-如果在连接服务提供程序中创建了 .NET 移动服务，则已创建移动服务项目并已将其添加到解决方案中。
-
-
-[详细了解移动服务](/services/mobile-services/)
-
-<!---HONumber=74-->
+<!---HONumber=HO63-->

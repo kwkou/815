@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在命令行管理移动服务 | Windows Azure" 
+	pageTitle="在命令行管理移动服务 - Azure 教程" 
 	description="了解如何使用命令行工具创建、 部署和管理您的 Azure 移动服务。" 
 	services="mobile-services" 
 	documentationCenter="Mobile" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/22/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="04/07/2015" 
+	wacn.date="07/25/2015"/>
 
 #  使用命令行工具自动操作移动服务 
 
@@ -21,6 +21,10 @@
 将其中的每个命令合并到单个脚本或批处理文件后，这些命令可以自动完成移动服务的创建、验证和删除过程。
 
 本主题有选择地介绍了 Azure 命令行工具支持的多个常见管理任务。有关详细信息，请参阅 [Azure 命令行工具文档][reference-docs]。
+
+<!--+  You must download and install the Azure command-line tools to your local machine. To do this, follow the instructions in the first section of this topic. 
+
++ (Optional) To be able to execute HTTP requests directly from the command-line, you must use cURL or an equivalent tool. cURL runs on a variety of platforms. Locate and install cURL for your specific platform from the <a href=http://go.microsoft.com/fwlink/p/?LinkId=275676 target="_blank">cURL download  page</a>.-->
 
 ## 安装 Azure 命令行工具
 
@@ -60,7 +64,7 @@
 
 ## 如何创建移动服务
 
-可以使用命令行工具创建新的移动服务实例。在创建移动服务的同时，还会在新服务器中创建一个 SQL 数据库实例。
+可以使用命令行工具创建新的移动服务实例。在创建移动服务的同时，还会在新服务器中创建一个 SQL Database 实例。
 
 以下命令将在订阅中创建一个新的移动服务实例，其中`<service-name>`是新移动服务的名称，`<server-admin>`是新服务器的登录名，`<server-password>`是新登录名的密码：
 
@@ -80,13 +84,13 @@
 
 ## 如何删除现有的移动服务
 
-可以使用命令行工具将现有的某个移动服务连同相关的 SQL 数据库和服务器一起删除。以下命令将删除移动服务，其中`<service-name>`是要删除的移动服务的名称：
+可以使用命令行工具将现有的某个移动服务连同相关的 SQL Database 和服务器一起删除。以下命令将删除移动服务，其中`<service-name>`是要删除的移动服务的名称：
 
 		azure mobile delete <service-name> -a -q
 
-如果包含 `-a` 和 `-q` 参数的话，此命令还会删除该移动服务使用的 SQL 数据库和服务器且不显示任何提示。
+如果包含 `-a` 和 `-q` 参数的话，此命令还会删除该移动服务使用的 SQL Database 和服务器且不显示任何提示。
 
-> [AZURE.NOTE]如果不随 <code>-a</code> 或 <code>-d</code> 一起指定 <code>-q</code> 参数，则执行将会暂停，并且系统会提示你针对 SQL 数据库选择删除选项。仅当没有其他任何服务使用该数据库或服务器时，才能使用 <code>-a</code> 参数；否则，请使用 <code>-d</code> 参数，以便只删除属于要删除的移动服务的数据。
+> [AZURE.NOTE]如果不随 <code>-a</code> 或 <code>-d</code> 一起指定 <code>-q</code> 参数，则执行将会暂停，并且系统会提示你针对 SQL Database 选择删除选项。仅当没有其他任何服务使用该数据库或服务器时，才能使用 <code>-a</code> 参数；否则，请使用 <code>-d</code> 参数，以便只删除属于要删除的移动服务的数据。
 
 ## 如何在移动服务中创建表
 
@@ -102,12 +106,11 @@
 
 下面显示了脚本权限值与 [Azure 管理门户]中的权限值的对照表。
 
-|脚本值|管理门户值|
-|========|========|
-|`public`|每个人|
-|`application`（默认值）|拥有应用程序密钥的任何人|
-|`user`|仅限经过身份验证的用户|
-|`admin`|仅限脚本和管理员|
+<table border="1" width="100%"><tr><th>脚本中的值</th><th>管理门户中的值</th></tr>
+<tr><td><code>public</code></td><td>所有人</td></tr>
+<tr><td><code>application</code>（默认值）</td><td>具有应用程序密钥的任何人</td></tr>
+<tr><td><code>user</code></td><td>仅经过身份验证的用户</td></tr>
+<tr><td><code>admin </code></td><td>仅脚本和管理员</td></tr></table>
 
 当存在指定的表时，`mobile table create` 命令将会失败。在尝试重新创建某个表之前，你应该在自动化脚本中尝试删除该表。
 
@@ -183,4 +186,4 @@
 [reference-docs]: /documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [如何安装适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli
 
-<!---HONumber=74-->
+<!---HONumber=HO63-->
