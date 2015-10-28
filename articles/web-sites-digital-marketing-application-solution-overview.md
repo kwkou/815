@@ -96,24 +96,25 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
 
 [Azure 网站]: /documentation/services/web-sites/
   
-[MySQL]: web-sites-php-mysql-deploy-use-git
-[Azure SQL 数据库]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: web-sites-dotnet-get-started
+[Visual Studio]: 
+documentation/articles/web-sites-dotnet-get-started
 <!--[Visual Studio Online]: ..
 cloud-services-continuous-delivery-use-vso -->
-[Git]: web-sites-publish-source-control
-[将其部署到过渡槽]: web-sites-staged-publishing
+[Git]: /documentation/articles/web-sites-publish-source-control
+[将其部署到过渡槽]: /documentation/articles/web-sites-staged-publishing
 [连续发布]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [运行 A/B 测试]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [Azure 媒体服务]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid 服务在 Azure 应用商店]: sendgrid-dotnet-how-to-send-email
-[移动服务]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[通知中心]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[SendGrid 服务在 Azure 应用商店]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+[移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[通知中心]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[将 Web 应用与 Azure CDN 集成]: cdn-websites-with-cdn
+[将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
 [CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [增加和扩大]: /documentation/articles/how-to-scale-websites

@@ -210,39 +210,40 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 - [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 
-[1]: hdinsight-hadoop-visual-studio-tools-get-started
-[hdinsight-versions]: hdinsight-component-versioning
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-use-oozie]: hdinsight-use-oozie
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage
-[hdinsight-emulator]: hdinsight-hadoop-emulator-get-started
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
-[hadoop-hdinsight-intro]: hdinsight-hadoop-introduction
-[hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log
-[hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
+[hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
+[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
 [apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
 [apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
-[hdinsight-hbase-custom-provision]: hdinsight-hbase-tutorial-get-started
+[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: install-configure-powershell
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 [powershell-open]: /documentation/articles/install-configure-powershell#Install
 
 
 [img-hdi-dashboard]: .
-media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png
+media
+hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png
 [img-hdi-dashboard-query-select]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.png
 [img-hdi-dashboard-query-select-result]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.result.png
 [img-hdi-dashboard-query-select-result-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.result.output.png

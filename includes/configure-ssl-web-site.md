@@ -123,10 +123,10 @@ Certreq.exe 是用于创建证书请求的 Windows 实用程序。它已成为�
 2. 在系统提示后，输入适当的信息。例如：
 
  		Country Name (2 letter code) 
-        State or Province Name (full name) []: Washington
-        Locality Name (eg, city) []: Redmond
-        Organization Name (eg, company) []: Microsoft
-        Organizational Unit Name (eg, section) []: Azure
+        State or Province Name (full name) []: /documentation/articles/Washington
+        Locality Name (eg, city) []: /documentation/articles/Redmond
+        Organization Name (eg, company) []: /documentation/articles/Microsoft
+        Organizational Unit Name (eg, section) []: /documentation/articles/Azure
         Common Name (eg, YOUR name) []: www.microsoft.com
         Email Address []:
 
@@ -246,10 +246,10 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 2. 在系统提示后，输入适当的信息。例如：
 
- 		Country Name (2 letter code) []: US
-        State or Province Name (full name) []: Washington
-        Locality Name (eg, city) []: Redmond
-        Organizational Unit Name (eg, section) []: Azure
+ 		Country Name (2 letter code) []: /documentation/articles/US
+        State or Province Name (full name) []: /documentation/articles/Washington
+        Locality Name (eg, city) []: /documentation/articles/Redmond
+        Organizational Unit Name (eg, section) []: /documentation/articles/Azure
         Your common name (eg, domain name) []: www.microsoft.com
  
 

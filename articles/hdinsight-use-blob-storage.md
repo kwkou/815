@@ -262,7 +262,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
   [限制对容器和 Blob 的访问]: http://msdn.microsoft.com/zh-cn/library/azure/dd179354.aspx
   [将 HDInsight 群集与备用存储帐户和元存储配合使用]: http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
   [Blob 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-  [Azure 存储帐户]: storage-create-storage-account
+  [Azure 存储帐户]: /documentation/articles/storage-create-storage-account
   [HDI.QuickCreate]: ./media/hdinsight-use-blob-storage/HDI.QuickCreateCluster.png
   [HDI.CustomCreateStorageAccount]: ./media/hdinsight-use-blob-storage/HDI.CustomCreateStorageAccount.png
   [Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/

@@ -116,7 +116,7 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[JavaScript and HTML]: mobile-services-win8-javascript
+[JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
 [Management Portal]: https://manage.windowsazure.cn/
 [JavaScript backend version]: /documentation/articles/mobile-services-windows-store-get-started
 [Get started with data in Mobile Services using Visual Studio 2012]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012

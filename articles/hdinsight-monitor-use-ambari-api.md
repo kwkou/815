@@ -155,15 +155,15 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 
 [microsoft-hadoop-SDK]: http://hadoopsdk.codeplex.com/wikipage?title=Ambari%20Monitoring%20Client
 
-[Powershell-install]: install-configure-powershell
+[Powershell-install]: /documentation/articles/install-configure-powershell
 [Powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal
-[hdinsight-admin-cli]: hdinsight-administer-use-command-line
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
 [hdinsight-documentation]: /documentation/services/hdinsight/
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-provision]: hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
 
 <!---HONumber=71-->

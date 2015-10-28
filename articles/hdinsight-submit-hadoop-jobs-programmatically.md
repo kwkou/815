@@ -705,7 +705,7 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 [azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
 [azure-management-portal]: http://manage.windowsazure.cn/
 
-[hdinsight-visual-studio-tools]: hdinsight-hadoop-visual-studio-tools-get-started
+[hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce

@@ -195,7 +195,7 @@ Azure 计算和存储模拟器提供了一个本地环境，可在将 Azure 应�
 
 [execution model- web sites]: /documentation/articles/fundamentals-application-models#WebSites
 [execution model-vms]: 
-documentation/articles/fundamentals-application-models/#VMachine
+documentation/articles/fundamentals-application-models#VMachine
 [execution model-cloud services]: /documentation/articles/fundamentals-application-models#CloudServices
 [Azure SDK for PHP]: 
 documentation/articles/php-download-sdk
@@ -209,6 +209,6 @@ documentation/articles/php-download-sdk
 [sqlncli.msi x64 安装程序]: http://go.microsoft.com/fwlink/?LinkID=239648
 [如何：导入发布设置]: /documentation/articles/install-configure-powershell#ImportPubSettings
 [如何：将云服务部署到 Azure]: 
-documentation/articles/install-configure-powershell/#Deploy
+documentation/articles/install-configure-powershell#Deploy
 
 <!---HONumber=71-->

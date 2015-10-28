@@ -308,7 +308,7 @@
 [get-started]: /documentation/articles/notification-hubs-android-get-started
 [使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[Mobile Service]: mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Mobile Service]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582

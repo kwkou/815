@@ -47,5 +47,6 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
   [队列]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-queues
   [如何通过 .NET 使用表存储]: /documentation/articles/storage-dotnet-how-to-use-tables#create-table "如何通过 .NET 使用表存储"
   [vs-storage-getting-started-tables-include]: ..
-includes/vs-storage-getting-started-tables-include.md
+includes
+vs-storage-getting-started-tables-include.md
   [ASP.NET vNext]: http://www.asp.net/vnext

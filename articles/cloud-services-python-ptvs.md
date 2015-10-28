@@ -113,11 +113,10 @@ Azure 提供了三种计算模型以运行应用程序：[Azure 网站][executio
 [什么是云服务？]: /documentation/articles/cloud-services-what-is
 [execution model-web sites]: /documentation/articles/fundamentals-application-models#WebSites
 [execution model-vms]: 
-documentation/articles/fundamentals-application-models/#VMachine
+documentation/articles/fundamentals-application-models#VMachine
 [execution model-cloud services]: /documentation/articles/fundamentals-application-models#CloudServices
 [Python Developer Center]: 
-develop/python/
-
+documentation/articles/python
 [Blob 服务]: /documentation/articles/storage-python-how-to-use-blob-storage
 [队列服务]: /documentation/articles/storage-python-how-to-use-queue-storage
 [表服务]: /documentation/articles/storage-python-how-to-use-table-storage

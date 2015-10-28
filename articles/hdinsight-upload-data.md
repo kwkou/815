@@ -251,8 +251,8 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs
 [azure-create-storage-account]: /documentation/articles/storage-create-storage-account
-[azure-azcopy-download]: storage-use-azcopy
-[azure-azcopy]: storage-use-azcopy
+[azure-azcopy-download]: /documentation/articles/storage-use-azcopy
+[azure-azcopy]: /documentation/articles/storage-use-azcopy
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically

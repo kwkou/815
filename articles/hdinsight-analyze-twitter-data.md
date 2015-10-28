@@ -496,11 +496,11 @@ HiveQL 脚本将执行以下操作：
   [使用 Hive 处理数据]: #process
   [教程结束]: #cleanup
   [后续步骤]: #nextsteps
-  [安装和配置 Azure PowerShell]: install-configure-powershell
+  [安装和配置 Azure PowerShell]: /documentation/articles/install-configure-powershell
   [运行 Windows PowerShell 脚本]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
-  [开始使用 HDInsight]: hdinsight-get-started
-  [设置 HDInsight 群集]: hdinsight-provision-clusters
-  [将 Azure Blob 存储与 HDInsight 配合使用]: hdinsight-use-blob-storage
+  [开始使用 HDInsight]: /documentation/articles/hdinsight-get-started
+  [设置 HDInsight 群集]: /documentation/articles/hdinsight-provision-clusters
+  [将 Azure Blob 存储与 HDInsight 配合使用]: /documentation/articles/hdinsight-use-blob-storage
   [Twitter 流式传输 API]: https://dev.twitter.com/docs/streaming-apis
   [statuses/filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
   [推文数据]: https://dev.twitter.com/docs/platform-objects/tweets
@@ -512,8 +512,9 @@ HiveQL 脚本将执行以下操作：
   [在 Windows 8 和 Windows 上启动 Windows PowerShell]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
   [将 Blob 存储与 HDInsight 配合使用]: /documentation/articles/hdinsight-use-blob-storage#powershell
   [Hive 教程]: https:
-/cwiki.apache.org/confluence/display/Hive/Tutorial
-  [将 Sqoop 与 HDInsight 配合使用]: hdinsight-use-sqoop
-  [使用 HDInsight 分析航班延误数据]: hdinsight-analyze-flight-delay-data
-  [利用 Power Query 将 Excel 连接到 HDInsight]: hdinsight-connect-excel-power-query
-  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: hdinsight-connect-excel-hive-ODBC-driver
+
+cwiki.apache.org/confluence/display/Hive/Tutorial
+  [将 Sqoop 与 HDInsight 配合使用]: /documentation/articles/hdinsight-use-sqoop
+  [使用 HDInsight 分析航班延误数据]: /documentation/articles/hdinsight-analyze-flight-delay-data
+  [利用 Power Query 将 Excel 连接到 HDInsight]: /documentation/articles/hdinsight-connect-excel-power-query
+  [使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 HDInsight]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver

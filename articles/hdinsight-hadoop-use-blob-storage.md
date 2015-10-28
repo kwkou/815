@@ -295,15 +295,15 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 * [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 
-[Powershell-install]: install-configure-powershell
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-use-pig]: hdinsight-use-pig
-[Powershell-install]: install-configure-powershell
+[Powershell-install]: /documentation/articles/install-configure-powershell
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[Powershell-install]: /documentation/articles/install-configure-powershell
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-[azure-storage-create]: storage-create-storage-account
+[azure-storage-create]: /documentation/articles/storage-create-storage-account
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png

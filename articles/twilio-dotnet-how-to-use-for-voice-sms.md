@@ -254,7 +254,7 @@ Twilio 为 .NET 开发人员提供了五个库：库|说明 ---|--- Twilio.API|�
 
 
 
-[howto_phonecall_dotnet]: partner-twilio-cloud-services-dotnet-phone-call-web-role
+[howto_phonecall_dotnet]: /documentation/articles/partner-twilio-cloud-services-dotnet-phone-call-web-role
 [twimlet_message_url]: http://twimlets.com/message
 
 [twilio_rest_making_calls]: http://www.twilio.com/docs/api/rest/making-calls

@@ -57,7 +57,7 @@
 	Resource group name: myuniquegroupname
 	Virtual machine name: myuniquevmname
 	Location name: chinanorth
-	Operating system Type [Windows, Linux]: Linux
+	Operating system Type [Windows, Linux]: /documentation/articles/Linux
 	ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
 	User name: ops
 	Password: *********

@@ -201,5 +201,5 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 [stormtrident]: https://storm.incubator.apache.org/documentation/Trident-API-Overview.html
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
-[gettingstarted]: hdinsight-storm-getting-started
+[gettingstarted]: /documentation/articles/hdinsight-storm-getting-started
 <!---HONumber=71-->

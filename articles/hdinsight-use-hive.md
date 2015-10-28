@@ -125,7 +125,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
-[1]: hdinsight-hadoop-visual-studio-tools-get-started
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 
@@ -135,16 +135,16 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-use-pig]: hdinsight-use-pig
-[hdinsight-use-oozie]: hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: hdinsight-upload-data
-[hdinsight-get-started]: hdinsight-get-started
-[Powershell-install-configure]: install-configure-powershell
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
