@@ -35,7 +35,7 @@
 
 本教程中的代码将执行以下操作。
 
-- 使用服务命名空间和[共享访问签名](service-bus-sas-overview.md) (SAS) 密钥来获取对服务总线命名空间资源的访问权限。
+- 使用服务命名空间和[共享访问签名](/documentation/articles/service-bus-sas-overview) (SAS) 密钥来获取对服务总线命名空间资源的访问权限。
 
 - 创建队列、将消息发送到队列，并读取来自队列的消息。
 

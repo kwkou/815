@@ -297,8 +297,8 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
   [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]:/develop/nodejs/tutorials/create-a-Website-(mac)/ 
-  [使用存储构建 Node.js 云服务]:/develop/nodejs/tutorials/web-app-with-storage/ 
-  [使用存储构建 Node.js Web 应用程序]:/develop/nodejs/tutorials/web-site-with-storage/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]:/develop/nodejs/
+  [使用存储构建 Node.js 云服务]:/develop/nodejs/
+  [使用存储构建 Node.js Web 应用程序]:/develop/nodejs/
 
 <!---HONumber=74-->

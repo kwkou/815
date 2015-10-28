@@ -45,16 +45,17 @@
 JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称之间的分隔。将使用 JNDI 解析以下两种类型的 JMS 对象：ConnectionFactory 和 Destination。JNDI 使用一个提供程序模型，你可以在其中插入不同目录服务来处理名称解析任务。Apache Qpid JMS AMQP 1.0 库附带一个使用以下格式的属性文件配置的、基于属性文件的简单 JNDI 提供程序。
 
 ```
-# servicebus.properties – sample JNDI configuration
-	
-# Register a ConnectionFactory in JNDI using the form:
-# connectionfactory.[jndi_name] = [ConnectionURL]
-connectionfactory.SBCF = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
-	
-# Register some queues in JNDI using the form
-# queue.[jndi_name] = [physical_name]
-# topic.[jndi_name] = [physical_name]
-queue.QUEUE = queue1
+
+	# servicebus.properties – sample JNDI configuration
+		
+	# Register a ConnectionFactory in JNDI using the form:
+	# connectionfactory.[jndi_name] = [ConnectionURL]
+	connectionfactory.SBCF = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+		
+	# Register some queues in JNDI using the form
+	# queue.[jndi_name] = [physical_name]
+	# topic.[jndi_name] = [physical_name]
+	queue.QUEUE = queue1
 ```
 
 #### 配置 ConnectionFactory
@@ -224,18 +225,19 @@ InitialContext context = new InitialContext(env);
 运行应用程序将生成以下输出：
 
 ```
-> java SimpleSenderReceiver
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-	
-Sent message with JMSMessageID = ID:2867600614942270318
-Received message with JMSMessageID = ID:2867600614942270318
-	
-Sent message with JMSMessageID = ID:7578408152750301483
-Received message with JMSMessageID = ID:7578408152750301483
-	
-Sent message with JMSMessageID = ID:956102171969368961
-Received message with JMSMessageID = ID:956102171969368961
-exit
+
+	> java SimpleSenderReceiver
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+		
+	Sent message with JMSMessageID = ID:2867600614942270318
+	Received message with JMSMessageID = ID:2867600614942270318
+		
+	Sent message with JMSMessageID = ID:7578408152750301483
+	Received message with JMSMessageID = ID:7578408152750301483
+		
+	Sent message with JMSMessageID = ID:956102171969368961
+	Received message with JMSMessageID = ID:956102171969368961
+	exit
 ```
 
 ##JMS 和 .NET 之间的跨平台消息传送
@@ -258,23 +260,25 @@ exit
 #### 从 JMS 应用程序输出
 
 ```
-> java SimpleSenderReceiver sendonly
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Sent message with JMSMessageID = ID:4364096528752411591
-Sent message with JMSMessageID = ID:459252991689389983
-Sent message with JMSMessageID = ID:1565011046230456854
-exit
+
+	> java SimpleSenderReceiver sendonly
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Sent message with JMSMessageID = ID:4364096528752411591
+	Sent message with JMSMessageID = ID:459252991689389983
+	Sent message with JMSMessageID = ID:1565011046230456854
+	exit
 ```
 
 #### 从 .NET 应用程序输出
 
 ```
-> SimpleSenderReceiver.exe	
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Received message with MessageID = 4364096528752411591
-Received message with MessageID = 459252991689389983
-Received message with MessageID = 1565011046230456854
-exit
+
+	> SimpleSenderReceiver.exe	
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Received message with MessageID = 4364096528752411591
+	Received message with MessageID = 459252991689389983
+	Received message with MessageID = 1565011046230456854
+	exit
 ```
 
 ### .NET 到 JMS
@@ -289,23 +293,25 @@ exit
 #### 从 .NET 应用程序输出
 
 ```
-> SimpleSenderReceiver.exe sendonly
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3	
-Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
-Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
-exit
+
+	> SimpleSenderReceiver.exe sendonly
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3	
+	Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
+	Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
+	exit
 ```
 
 #### 从 JMS 应用程序输出
 
 ```
-> java SimpleSenderReceiver	
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
-Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
-Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
-exit
+
+	> java SimpleSenderReceiver	
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
+	Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
+	Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
+	exit
 ```
 
 ## 不受支持的功能和限制

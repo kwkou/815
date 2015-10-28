@@ -19,7 +19,9 @@
 [AZURE.INCLUDE [service-bus-java-how-to-create-topic](../includes/service-bus-java-how-to-create-topic.md)]
 
 ## 配置应用程序以使用 Service Bus
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：![](./media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
+在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
+
+![](./media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
 
 
 将以下导入语句添加到 Java 文件顶部：
