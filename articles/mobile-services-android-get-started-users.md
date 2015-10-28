@@ -105,10 +105,8 @@
 [移动服务入门]: /documentation/articles/mobile-services-android-get-started
 [Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-android-get-started-users
-
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
-[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
-
+[使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=71-->

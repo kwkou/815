@@ -173,8 +173,8 @@ Azure SQL 数据库 为 Azure 提供关系数据库管理系统并以 SQL Server
 			    String sqlString = 
 					"CREATE TABLE Person (" + 
 			        	"[PersonID] [int] IDENTITY(1,1) NOT NULL," +
-			            "[LastName] [nvarchar](50) NOT NULL," + 
-			            "[FirstName] [nvarchar](50) NOT NULL)";
+			            "[LastName] [nvarchar](/documentation/articles/50) NOT NULL," + 
+			            "[FirstName] [nvarchar](/documentation/articles/50) NOT NULL)";
 			
 			    // Use the connection to create the SQL statement.
 			    statement = connection.createStatement();

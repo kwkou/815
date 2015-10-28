@@ -26,5 +26,4 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 [App Service]: /documentation/articles/app-service-choose-me
 [Virtual Machines]: #tellmevm
 [Cloud Services]: /documentation/articles/cloud-services-choose-me
-
 <!---HONumber=67-->

@@ -76,9 +76,9 @@
 [我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
-[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/
-[JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-js/
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
+[JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-js
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=HO63-->

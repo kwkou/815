@@ -275,15 +275,14 @@
 [12]: ./media/mobile-services-windows-phone-get-started-offline-data/ui-screenshot.png
 
 <!-- URLs. -->
-[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data/
+[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-phone-handling-conflicts-offline-data
 [用于 Windows Phone 的入门脱机示例]: http://go.microsoft.com/fwlink/?LinkId=397952
-[移动服务入门]: /documentation/articles/mobile-services-windows-phone-get-started/
-[数据处理入门]: /documentation/articles/mobile-services-windows-phone-get-started-data/
+[移动服务入门]: /documentation/articles/mobile-services-windows-phone-get-started
+[数据处理入门]: /documentation/articles/mobile-services-windows-phone-get-started-data
 [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
-[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete/
-[]: /documentation/articles/mobile-services-using-soft-delete/
-
+[Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
+[]: /documentation/articles/mobile-services-using-soft-delete
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
 

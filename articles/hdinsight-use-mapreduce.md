@@ -50,7 +50,7 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与映射器和化简器通信 - 映�
 		
 有关将 Hadoop 流式处理与 hdinsight 配合使用的示例，请参阅：
 
-* [开发 C# Hadoop 流式处理程序](hdinsight-hadoop-develop-deploy-streaming-jobs)
+* [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
 
 
 ##<a id="data"></a>关于示例数据
@@ -178,9 +178,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
-
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
 <!---HONumber=71-->

@@ -243,19 +243,13 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
-
 [azure-free-trial]: /pricing/1rmb-trial/
 [azure-portal]: http://manage.windowsazure.cn
 
 
 [powershell-install]: /documentation/articles/install-configure-powershell
-
-
-
-[hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
-[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
-
-
+[hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png

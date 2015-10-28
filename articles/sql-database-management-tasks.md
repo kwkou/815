@@ -129,6 +129,5 @@ Management Studio 包括在管理门户中当前不可用的功能，例如语�
 
 [在 SQL 数据库 中管理数据库和登录名]: http://msdn.microsoft.com/zh-cn/library/azure/ee336235.aspx
 [使用动态管理视图监视 SQL 数据库]: http://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx
-[使用 Management Studio 管理 SQL 数据库]: /documentation/articles/sql-database-manage-azure-ssms/
-
+[使用 Management Studio 管理 SQL 数据库]: /documentation/articles/sql-database-manage-azure-ssms
 <!--HONumber=55-->

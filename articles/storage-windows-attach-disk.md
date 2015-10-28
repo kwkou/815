@@ -51,5 +51,4 @@
 [关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)
 
 [logon]: /documentation/articles/virtual-machines-log-on-windows-server
-
 <!---HONumber=69-->

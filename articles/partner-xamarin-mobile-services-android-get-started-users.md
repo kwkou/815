@@ -131,7 +131,6 @@
 
 <!-- URLs. -->
 [使用脚本为用户授权]: mobile-services-javascript-backend-service-side-authorization
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 [已完成的示例项目]: http://go.microsoft.com/fwlink/p/?LinkId=331328

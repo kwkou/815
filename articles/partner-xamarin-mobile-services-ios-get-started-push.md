@@ -384,7 +384,6 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple 推送通知服务]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [移动服务入门]: mobile-services-ios-get-started
-
 [Xamarin 设备设置]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 [Azure 管理门户]: https://manage.windowsazure.cn/

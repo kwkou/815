@@ -87,7 +87,7 @@ Media Services 提供了用于传送 PlayReady 许可证的服务。当最终用
 
 ### 配置流式处理终结点
 
-有关流式处理终结点的概述以及如何管理它们的信息，请参阅[如何在 Media Services 帐户中管理流式处理终结点](media-services-manage-origins)。
+有关流式处理终结点的概述以及如何管理它们的信息，请参阅[如何在 Media Services 帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins)。
 
 ### 上载媒体 
 

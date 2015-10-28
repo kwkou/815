@@ -22,7 +22,7 @@
 
 在本教程中，你将要下载一个可在内存中存储数据的 Visual Studio 2013 应用程序项目，创建一个新的移动服务，将该移动服务与该应用程序相集成，然后登录到 Azure 管理门户以查看运行该应用程序时对数据所做的更改。
 
->[AZURE.NOTE]本主题说明如何使用 Visual Studio Professional 2013 Update 3 中的工具将新的移动服务连接到通用 Windows 应用程序。你可以使用相同的步骤将移动服务连接到 Windows 应用商店或 Windows Phone 应用商店 8.1 应用程序。若要将移动服务连接到 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序，请参阅[针对 Windows Phone 的数据处理入门](mobile-services-windows-phone-get-started-data)。
+>[AZURE.NOTE]本主题说明如何使用 Visual Studio Professional 2013 Update 3 中的工具将新的移动服务连接到通用 Windows 应用程序。你可以使用相同的步骤将移动服务连接到 Windows 应用商店或 Windows Phone 应用商店 8.1 应用程序。若要将移动服务连接到 Windows Phone 8.0 或 Windows Phone Silverlight 8.1 应用程序，请参阅[针对 Windows Phone 的数据处理入门](/documentation/articles/mobile-services-windows-phone-get-started-data)。
 
 若要完成本教程，您需要以下各项：
 
@@ -84,7 +84,7 @@
 
 * [推送通知入门 ]<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 C# 操作方法概念性参考 ](mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
+* [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
   
 <!-- Anchors. -->
 
@@ -107,7 +107,6 @@
 [身份验证入门]: mobile-services-windows-store-dotnet-get-started-users
 [推送通知入门 ]: mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545

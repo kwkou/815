@@ -6,7 +6,7 @@
 
 MongoDB 是一种可提供高性能、高可用性和自动缩放的开源文档数据库。MongoDB 可独立安装或利用内置的复制功能在群集内安装。在某些情况下，你可使用复制来提高读取容量。客户端能够将读取和写入操作发送到不同的服务器。你还可以在不同数据中心中维护副本，以增加分布式应用程序的的数据位置和可用性。使用 MongoDB，复制还提供了冗余，并提高数据可用性。通过将数据的多个副本保存在不同数据库服务器上，复制还可保护数据库免遭丢失一个服务器的危害。复制还可以让你从硬件故障和服务中断中恢复。有了附加数据副本，你可以将其中一个副本专用于灾难恢复、报告或备份。
 
-除了提供 Azure 应用商店中已可供使用的各种功能之外，现在你还可以使用通过 [Azure PowerShell](powershell-install-configure) 或 [Azure CLI](xplat-cli) 部署的资源管理器模板，在 Ubuntu VM 上轻松部署新的 MongoDB 群集。
+除了提供 Azure 应用商店中已可供使用的各种功能之外，现在你还可以使用通过 [Azure PowerShell](/documentation/articles/powershell-install-configure) 或 [Azure CLI](/documentation/articles/xplat-cli) 部署的资源管理器模板，在 Ubuntu VM 上轻松部署新的 MongoDB 群集。
 
 根据此模板新部署的群集采用下图中所述的拓扑，不过，你可以通过自定义本文中所述的模板，轻松实现其他拓扑：
 

@@ -165,7 +165,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 
 - [Azure 媒体服务 .NET SDK](http://www.nuget.org/packages/windowsazure.mediaservices/) 当前版本为 3.1.0.0。
 - 将 .Net SDK 依赖项升级到了 .NET 4.5 Framework。
-- 增加了一个新的 API，使你可以更新编码保留单位。有关详细信息，请参阅[使用 .NET 更新保留单位类型和增加编码保留单位 (RU)](/documentation/articles/media-services-dotnet-encoding-units/)。
+- 增加了一个新的 API，使你可以更新编码保留单位。有关详细信息，请参阅[使用 .NET 更新保留单位类型和增加编码保留单位 (RU)](/documentation/articles/media-services-dotnet-encoding-units)。
 - 增加了对令牌身份验证的 JWT（JSON Web 令牌）支持。有关详细信息，请参阅 [Azure 媒体服务和动态加密中的 JWT 令牌身份验证](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/)。
 - 增加了 PlayReady 许可证模板中 BeginDate 和 ExpirationDate 的相对偏移量。
 
@@ -175,7 +175,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 - 媒体服务现在允许你通过 SSL 连接插入实时平滑流式处理 (FMP4) 内容。若要通过 SSL 进行摄取，请确保将摄取 URL 更新为 HTTPS。有关实时流式处理的详细信息，请参阅[使用 Azure 媒体服务实时流式处理]。
 - 注意，当前无法通过 SSL 连接插入 RTMP 实时流。
 - 你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
-- 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请[创建新的流式处理终结点](/documentation/articles/media-services-manage-origins/)。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
+- 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请[创建新的流式处理终结点](/documentation/articles/media-services-manage-origins)。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
    
 ##<a id="october_changes_14"></a>2014 年 10 月版本
 
@@ -519,32 +519,32 @@ azure-sdk-tools 中现在包含以下媒体服务 PowerShell Cmdlet。
 [媒体服务定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/details/media-services/
 [输入元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx
 [输出元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx
-[交付内容]: /documentation/articles/media-services-deliver-content-overview/
-[使用 Azure 媒体索引器为媒体文件编制索引]: /documentation/articles/media-services-index-content/
+[交付内容]: /documentation/articles/media-services-deliver-content-overview
+[使用 Azure 媒体索引器为媒体文件编制索引]: /documentation/articles/media-services-index-content
 [StreamingEndpoint]: http://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx
 [StreamingEndpont]: http://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx
 [使用 Azure 媒体服务实时流式处理]: http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx
 [使用 AES-128 动态加密和密钥传递服务]: http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx
 [使用 PlayReady 动态加密和许可证传递服务]: http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx
 [Preview features]: http://azure.microsoft.com/zh-cn/services/preview/
-[媒体服务 PlayReady 许可证模板概述]: /documentation/articles/media-services-playready-license-template-overview/
-[流式处理存储加密内容]: /documentation/articles/media-services-dotnet-configure-asset-delivery-policy/
+[媒体服务 PlayReady 许可证模板概述]: /documentation/articles/media-services-playready-license-template-overview
+[流式处理存储加密内容]: /documentation/articles/media-services-dotnet-configure-asset-delivery-policy
 [Azure Management Portal]: https://manage.windowsazure.cn
-[动态打包]: /documentation/articles/media-services-dynamic-packaging-overview/
+[动态打包]: /documentation/articles/media-services-dynamic-packaging-overview
 [Nick Drouin 的博客]: http://blog-ndrouin.chinacloudsites.cn/hls-v3-new-old-thing/
 [使用 PlayReady 保护平滑流]: http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx
 [适用于 .NET 的媒体服务 SDK 中的重试逻辑]: http://msdn.microsoft.com/zh-cn/library/azure/dn745650.aspx
 [Grass Valley 宣布通过云对 EDIUS 7 进行流式处理]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
-[控制媒体服务编码器输出文件名]: /documentation/articles/media-services-azure-media-customize-ame-presets/
-[创建覆盖]: /documentation/articles/media-services-azure-media-customize-ame-presets/
-[拼接视频片段]: /documentation/articles/media-services-azure-media-customize-ame-presets/
+[控制媒体服务编码器输出文件名]: /documentation/articles/media-services-azure-media-customize-ame-presets
+[创建覆盖]: /documentation/articles/media-services-azure-media-customize-ame-presets
+[拼接视频片段]: /documentation/articles/media-services-azure-media-customize-ame-presets
 [Azure 媒体服务 .NET SDK 3.0.0.1 和 3.0.0.2 版本]: http://www.gtrifonov.com/2014/02/07/windows-azure-media-services-.net-sdk-3.0.0.2-release/
 [Azure Active Directory 访问控制服务 (ACS)]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
-[使用适用于 .NET 的媒体服务 SDK 连接到媒体服务]: /documentation/articles/media-services-dotnet-connect_programmatically/
+[使用适用于 .NET 的媒体服务 SDK 连接到媒体服务]: /documentation/articles/media-services-dotnet-connect_programmatically
 [Azure 媒体服务 .NET SDK 扩展]: https://github.com/Azure/azure-sdk-for-media-services-extensions/tree/dev
 [azure-sdk-tools]: https://github.com/Azure/azure-sdk-tools
 [Github]: https://github.com/Azure/azure-sdk-for-media-services
-[跨多个存储帐户管理媒体服务资产]: /documentation/articles/meda-services-managing-multiple-storage-accounts/
+[跨多个存储帐户管理媒体服务资产]: /documentation/articles/meda-services-managing-multiple-storage-accounts
 [处理媒体服务作业通知]: /documentation/articles/media-services-check-job-progress/#check_progress_with_queues
 
 <!---HONumber=71-->

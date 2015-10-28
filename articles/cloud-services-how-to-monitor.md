@@ -38,7 +38,7 @@
 
 ###开始之前###
 
-- 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。有关详细信息，请参阅“存储帐户”帮助，或者参阅[如何创建存储帐户](/documentation/articles/how-to-create-a-storage-account/)。
+- 创建用于存储监视数据的存储帐户。你可以对不同的角色使用不同的存储帐户。有关详细信息，请参阅“存储帐户”帮助，或者参阅[如何创建存储帐户](/documentation/articles/how-to-create-a-storage-account)。
 
 
 - 为你的云服务角色启用 Azure 诊断。请参阅[为云服务配置诊断](https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx#BK_EnableBefore)。

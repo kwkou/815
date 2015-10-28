@@ -354,7 +354,6 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 [Migrate to Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=317347
 [Azure Redis Cache Samples]: http://go.microsoft.com/fwlink/?LinkId=320840
 [使用资源组管理 Azure 资源]: /documentation/articles/resource-group-overview
-
 [StackExchange.Redis]: http://github.com/StackExchange/StackExchange.Redis
 [StackExchange.Redis 缓存客户端文档]: http://github.com/StackExchange/StackExchange.Redis#documentation
 

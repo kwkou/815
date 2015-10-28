@@ -49,7 +49,7 @@
 
 1. 以管理员身份运行 **Azure PowerShell**。（在“开始”菜单或“开始”屏幕中，搜索 **Azure PowerShell**。）
 
-2.  [将 PowerShell 连接](/documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription)到订阅。
+2.  [将 PowerShell 连接](/documentation/articles/powershell-install-configure#how-to-connect-to-your-subscription)到订阅。
 3.  输入以下 PowerShell cmdlet 来创建项目：
 
         New-AzureServiceProject helloworld

@@ -569,7 +569,7 @@ Azure Media Services 解决了此问题。它提供了一组云组件，从而�
 
 ## 商务
 
-“软件即服务”的出现正在改变我们创建应用程序的方式。它还改变了我们销售应用程序的方式。由于 SaaS 应用程序位于云中，因此其潜在客户应联机查找解决方案。并且此更改适用于数据和应用程序。<!--为什么人们不寻求通过云来寻找市场上销售的数据集？ Microsoft 通过 [Azure 应用商店](http://datamarket.azure.com/) (Azure Marketplace) 和 [Azure 应用商店](../articles/overview.md) (Azure Store) 解决了这两个问题。-->
+“软件即服务”的出现正在改变我们创建应用程序的方式。它还改变了我们销售应用程序的方式。由于 SaaS 应用程序位于云中，因此其潜在客户应联机查找解决方案。并且此更改适用于数据和应用程序。<!--为什么人们不寻求通过云来寻找市场上销售的数据集？ Microsoft 通过 [Azure 应用商店](http://datamarket.azure.com/) (Azure Marketplace) 和 [Azure 应用商店](/documentation/articles/overview) (Azure Store) 解决了这两个问题。-->
 
 ![Azure 商务](./media/fundamentals-introduction-to-azure/CommerceIntroNew.png) **图：Azure 应用商店 (Azure Marketplace) 和 Azure 应用商店 (Azure Store) 使您可以查找和购买 Azure 应用程序和商业数据集，并将它们用作您的 Azure 应用程序的一部分。**
 

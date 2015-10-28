@@ -412,13 +412,13 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 6.	单击“自定义域和 SSL”。![配置选项卡][sslconfig]
 7.	在“证书”部分中，单击“上载”
 8.	通过使用“上载证书”对话框，选择以前使用 IIS 管理器或 OpenSSL 创建的 .pfx 证书文件。如果有，指定用于保护 .pfx 文件的密码。最后，单击“保存”以上载证书。![ssl 上载][ssluploadcert]
-9. 在“SSL 设置”选项卡的“ssl 绑定”部分中，使用下拉菜单选择要使用 SSL 保护的域名，然后选择要使用的证书。你还可以选择是使用 [服务器名称指示][sni] (SNI) 还是基于 IP 的 SSL。
+9. 在“SSL 设置”选项卡的“ssl 绑定”部分中，使用下拉菜单选择要使用 SSL 保护的域名，然后选择要使用的证书。你还可以选择是使用 [服务器名称指示][sni](/documentation/articles/SNI) 还是基于 IP 的 SSL。
 
 	![ssl 绑定][sslbindings]
 	
 	* 基于 IP 的 SSL 通过将服务器的专用公共 IP 地址映射到域名，将证书与域名相关联。这要求与您的服务相关联的每个域名（contoso.com、fabricam.com 等）都具有专用的 IP 地址。这是将 SSL 证书与某一 Web 服务器相关联的传统方法。
 
-	* 基于 SNI 的 SSL 是对 SSL 和 [传输层安全性][tls] (TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 [服务器名称指示][sni]。
+	* 基于 SNI 的 SSL 是对 SSL 和 [传输层安全性][tls](/documentation/articles/TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 [服务器名称指示][sni]。
 
 10. 单击“保存”以保存更改和启用 SSL。
 
@@ -507,7 +507,7 @@ Azure App Service *不*实施 HTTPS。访问者可能仍使用 HTTP 访问 Web �
 ## 更多资源 ##
 - [Windows Azure 信任中心](/support/trust-center/security/)
 - [Azure 网站中解锁的设置选项](http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
-- [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)
+- [启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
 - [配置网站](/documentation/articles/web-sites-configure)
 - [Azure 管理门户](https://manage.windowsazure.cn) 
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx 

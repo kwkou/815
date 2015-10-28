@@ -52,7 +52,7 @@
 
     ![][3]
 
-	> [AZURE.NOTE]如果你以前未导入 Azure 订阅的发布设置，则在尝试发布时会收到错误。有关下载和导入订阅的发布设置的信息，请参阅[如何对 Node.js 使用 Azure PowerShell](/documentation/articles/install-configure-powershell/#ImportPubSettings)
+	> [AZURE.NOTE]如果你以前未导入 Azure 订阅的发布设置，则在尝试发布时会收到错误。有关下载和导入订阅的发布设置的信息，请参阅[如何对 Node.js 使用 Azure PowerShell](/documentation/articles/install-configure-powershell#ImportPubSettings)
 
 **Publish-AzureServiceProject** cmdlet 返回的“创建的网站 URL”值包含你的托管应用程序的完全限定域名。你将需要为此特定的完全限定域名获取一个 SSL 证书，并将其部署到 Azure。
 

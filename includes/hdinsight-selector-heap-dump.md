@@ -1,2 +1,2 @@
 > [AZURE.SELECTOR]
-- [Windows](hdinsight-hadoop-collect-debug-heap-dumps)
+- [Windows](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps)

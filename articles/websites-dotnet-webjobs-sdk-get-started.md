@@ -83,7 +83,7 @@ Web 作业在 Web 应用的上下文中运行，并且不可单独缩放。例�
 * 在专用于此目的的独立 Web 应用中以 Web 作业的形式运行该程序。然后，可以独立于前端 Web 应用缩放你的后端 Web 应用。
 * 在 Azure 云服务辅助角色中运行该程序。如果选择此选项，则可以在云服务 Web 角色或 Web 应用中运行前端。
 
-本教程说明如何在一个网站中运行前端，并在同一个网站中以 Web 作业形式运行后端。有关如何选择最适合你方案的环境的信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
+本教程说明如何在一个网站中运行前端，并在同一个网站中以 Web 作业形式运行后端。有关如何选择最适合你方案的环境的信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
 [WACOM.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
 
@@ -119,7 +119,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 6. 将“复制”下拉列表设置为“本地冗余”。
 
-	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/#replication-options)。
+	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account#replication-options)。
 
 5. 单击“创建”。
 
@@ -184,7 +184,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
     &lt;/startup&gt;
 &lt;/configuration&gt;</pre>
 
-	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#config)。
+	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#config)。
 
 1. 将两个存储连接字符串替换为先前复制的连接字符串。
 
@@ -437,7 +437,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 	* 在 Web 项目的 Properties 文件夹中添加一个 *webjobs-list.json* 文件。
 	* 在 Web 作业项目中安装 Microsoft.Web.WebJobs.Publish NuGet 包。
 	 
-	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。
+	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs)。
 
 ### 添加 NuGet 包
 
@@ -801,15 +801,15 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 >
 > * 如果在多个 VM 上运行 Web 应用，多个 Web 作业将同时运行，在某些情况下，这可能会导致相同的数据被处理多次。如果使用内置队列、Blob 和服务总线触发器，则这不会造成问题。SDK 可确保只会针对每个消息或 Blob 处理函数一次。
 >
-> * 有关如何实现正常关闭的信息，请参阅[正常关闭](websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful)。
+> * 有关如何实现正常关闭的信息，请参阅[正常关闭](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful)。
 >
 > * 为方便起见，`ConvertImageToThumbnailJPG` 方法中的代码（未显示）使用 `System.Drawing` 命名空间中的类。但是，此命名空间中的类已设计用于 Windows 窗体。不支持在 Windows 或 ASP.NET 服务中使用。有关图像处理选项的详细信息，请参阅[动态图像生成](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx)和[深入学习图像大小调整](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na)。
 
 ### WebJobs SDK 与不使用 WebJobs SDK 的云服务辅助角色
 
-如果比较结果中的代码量 `GenerateThumbnails` 方法在此示例应用程序中的辅助角色代码[应用程序的云服务版本](/documentation/articles/cloud-services-dotnet-get-started/)，你可以看到 WebJobs SDK 为你做多少工作。优点是大于它出现，因为云服务的示例应用程序代码不会执行所有操作（例如病毒消息处理）你需要像在生产应用程序，和它为你做 WebJobs SDK 中。
+如果比较结果中的代码量 `GenerateThumbnails` 方法在此示例应用程序中的辅助角色代码[应用程序的云服务版本](/documentation/articles/cloud-services-dotnet-get-started)，你可以看到 WebJobs SDK 为你做多少工作。优点是大于它出现，因为云服务的示例应用程序代码不会执行所有操作（例如病毒消息处理）你需要像在生产应用程序，和它为你做 WebJobs SDK 中。
 
-在应用程序的云服务版本中，记录 ID 是队列消息中的唯一信息和后台进程从数据库中获取图像 URL。在应用程序的 WebJobs SDK 版本，队列消息包含图像 URL，以便它可以提供给 `Blob` 属性。如果队列消息没有 Blob URL，则你可以[在方法正文而不是方法签名中使用 Blob 属性](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#blobbody)。
+在应用程序的云服务版本中，记录 ID 是队列消息中的唯一信息和后台进程从数据库中获取图像 URL。在应用程序的 WebJobs SDK 版本，队列消息包含图像 URL，以便它可以提供给 `Blob` 属性。如果队列消息没有 Blob URL，则你可以[在方法正文而不是方法签名中使用 Blob 属性](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#blobbody)。
 
 ### 在 Web 作业的外部使用 WebJobs SDK
 

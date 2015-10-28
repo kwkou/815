@@ -1,2 +1,2 @@
 > [AZURE.SELECTOR]
-- [PowerShell](hdinsight-mahout)
+- [PowerShell](/documentation/articles/hdinsight-mahout)

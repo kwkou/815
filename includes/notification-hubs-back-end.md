@@ -94,6 +94,6 @@
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [通知中心 REST 接口]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx
 <!--HONumber=41-->

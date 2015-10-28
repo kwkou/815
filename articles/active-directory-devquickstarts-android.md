@@ -24,7 +24,7 @@
 -	获取用户的待办事项列表
 -	将用户注销。
 
-若要开始，你需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](active-directory-howto-tenant)。
+若要开始，你需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
 ## 步骤 1：下载并运行 Node.js REST API TODO 示例服务器
 
@@ -32,7 +32,7 @@
 
 有关如何设置的信息，请访问我们的现有示例：
 
-* [适用于 Node.js 的 Windows Azure Active Directory 示例 REST API 服务](active-directory-devquickstarts-webapi-nodejs)
+* [适用于 Node.js 的 Windows Azure Active Directory 示例 REST API 服务](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
 ## 步骤 2：向 Windows Azure AD 租户注册 Web API
 

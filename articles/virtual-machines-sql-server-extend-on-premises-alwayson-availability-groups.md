@@ -91,7 +91,7 @@ AlwaysOn 可用性组通过添加辅助副本为数据库组提供高可用性�
 
 ## 后续步骤
 
-除了使用“添加 Azure 副本向导”将 AlwaysOn 可用性组扩展到 Azure 以外，你还可以将某些 SQL Server 工作负荷完全移到 Azure。若要开始，请参阅[在 Azure 上预配 SQL Server 虚拟机](virtual-machines-provision-sql-server)。
+除了使用“添加 Azure 副本向导”将 AlwaysOn 可用性组扩展到 Azure 以外，你还可以将某些 SQL Server 工作负荷完全移到 Azure。若要开始，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
 有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 

@@ -58,7 +58,6 @@
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
 [推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=71-->

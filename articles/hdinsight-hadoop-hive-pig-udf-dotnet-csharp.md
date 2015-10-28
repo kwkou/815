@@ -27,7 +27,7 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 	* Visual Studio 2015 预览版。
 
-* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](hdinsight-provision-clusters)
+* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)
 
 * Hadoop Tools for Visual Studio - 有关安装和配置工具的步骤，请参阅<a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">开始使用 HDInsight Hadoop Tools for Visual Studio</a>。
 

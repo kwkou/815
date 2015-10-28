@@ -15,7 +15,7 @@
 
 # Azure AD 服务限制和局限性
 
-以下是 Azure Active Directory 服务的使用限制和其他服务限制。如果你正查找 Windows Azure 服务限制全集，请参阅 [Azure 订阅和服务限制、配额和约束](azure-subscription-service-limits)。
+以下是 Azure Active Directory 服务的使用限制和其他服务限制。如果你正查找 Windows Azure 服务限制全集，请参阅 [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits)。
 
 ## 目录
 
@@ -66,8 +66,8 @@
 在报告中最多可查看或下载 1,000 行。系统会截断其他任何数据。
 
 ## 后续步骤
-- [以组织身份注册 Azure](sign-up-organization)
-- [Azure 订阅与 Azure AD 的关联方式](active-directory-how-subscriptions-associated-directory)
-- [Azure AD 术语](active-directory-terminology)
+- [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
+- [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory)
+- [Azure AD 术语](/documentation/articles/active-directory-terminology)
 
 <!---HONumber=60-->

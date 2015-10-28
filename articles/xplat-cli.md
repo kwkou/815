@@ -276,5 +276,4 @@ Azure CLI 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
 [portal]: https://manage.windowsazure.cn
 [signuporg]: http://azure.microsoft.com/zh-cn/documentation/articles/sign-up-organization/
 [Using the Azure CLI]: /documentation/articles/virtual-machines-command-line-tools
-
 <!---HONumber=71-->

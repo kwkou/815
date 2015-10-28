@@ -65,7 +65,7 @@
 </tr>
 </table>
 
-<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](storage-scalability-targets)。
+<sup>1</sup>有关这些限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
 <sup>2</sup>对于基本层中的虚拟机，请不要在一个存储帐户中放置 66 个以上的频繁使用的 VHD，以免超出总请求速率 20,000 这一限制 (20,000/300)。对于标准层中的虚拟机，请不要在一个存储帐户中放置 40 个以上的频繁使用的 VHD (20,000/500)。有关详细信息，请参阅 [Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。
 

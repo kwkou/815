@@ -20,7 +20,7 @@
 
 
 
-本主题介绍将 Azure SQL 数据库从 V11 版本升级到 V12（[在某些区域以预览版提供](sql-database-preview-whats-new#V12AzureSqlDbPreviewGaTable)）时必须执行的规划和准备工作。
+本主题介绍将 Azure SQL 数据库从 V11 版本升级到 V12（[在某些区域以预览版提供](/documentation/articles/sql-database-preview-whats-new#V12AzureSqlDbPreviewGaTable)）时必须执行的规划和准备工作。
 
 
 
@@ -31,10 +31,10 @@
 
 | 标题和链接 | 内容说明 |
 | :--- | :--- |
-| [SQL 数据库 V12 的新增功能](sql-database-preview-whats-new) | 介绍 V12 如何使 Azure SQL 数据库 几乎能够完全与 Microsoft SQL Server 兼容。 |
-| [演练：注册最新的 SQL 数据库 Update V12（预览版）](sql-database-preview-sign-up) | 介绍将 Azure SQL 数据库s 升级到 V12 时必须执行的步骤。 |
-| [在 SQL 数据库 Update V12（预览版）中创建数据库](sql-database-preview-create) | 介绍如何在版本 V12 中创建新的 Azure SQL 数据库。其中介绍了各个选项，而不仅仅是如何创建空数据库。 |
-| [升级到最新的 SQL 数据库 Update V12（预览版）](sql-database-preview-upgrade) | 介绍如何将 Azure SQL 数据库 升级到 V12。其中提到了你应该先备份数据库，因为升级是永久性的，而不可撤消。 |
+| [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-preview-whats-new) | 介绍 V12 如何使 Azure SQL 数据库 几乎能够完全与 Microsoft SQL Server 兼容。 |
+| [演练：注册最新的 SQL 数据库 Update V12（预览版）](/documentation/articles/sql-database-preview-sign-up) | 介绍将 Azure SQL 数据库s 升级到 V12 时必须执行的步骤。 |
+| [在 SQL 数据库 Update V12（预览版）中创建数据库](/documentation/articles/sql-database-preview-create) | 介绍如何在版本 V12 中创建新的 Azure SQL 数据库。其中介绍了各个选项，而不仅仅是如何创建空数据库。 |
+| [升级到最新的 SQL 数据库 Update V12（预览版）](/documentation/articles/sql-database-preview-upgrade) | 介绍如何将 Azure SQL 数据库 升级到 V12。其中提到了你应该先备份数据库，因为升级是永久性的，而不可撤消。 |
 
 
 ## 提前规划
@@ -61,7 +61,7 @@
 有关基本、标准和高级服务层的详细信息，请参阅：
 
 
-- [将 SQL 数据库 Web/企业数据库升级到新服务层](sql-database-upgrade-new-service-tiers)
+- [将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)
 - [Azure SQL 数据库 定价](/home/features/sql-database/#price)
 
 

@@ -239,7 +239,7 @@ Blob 回执存储在 *azure-webjobs-hosts* 容器内，此容器位于 AzureWebJ
 
 ## <a id="nextsteps"></a>后续步骤
 
-本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure blob。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](/documentation/articles/websites-webjobs-resources/)。
+本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure blob。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](/documentation/articles/websites-webjobs-resources)。
  
 
 <!---HONumber=67-->

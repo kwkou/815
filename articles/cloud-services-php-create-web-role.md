@@ -193,10 +193,12 @@ Azure 计算和存储模拟器提供了一个本地环境，可在将 Azure 应�
 
 若要发布应用程序，您需要先使用 **Import-PublishSettingsFile** 导入发布设置，然后使用 **Publish-AzureServiceProject** cmdlet 发布应用程序。有关使用这些 cmdlet 的详细信息，请参阅[如何：导入发布设置]和[如何：将云服务部署到 Azure]。
 
-[execution model- web sites]: /documentation/articles/fundamentals-application-models/#WebSites
-[execution model-vms]: /documentation/articles/fundamentals-application-models/#VMachine
-[execution model-cloud services]: /documentation/articles/fundamentals-application-models/#CloudServices
-[Azure SDK for PHP]: /documentation/articles/php-download-sdk
+[execution model- web sites]: /documentation/articles/fundamentals-application-models#WebSites
+[execution model-vms]: 
+documentation/articles/fundamentals-application-models/#VMachine
+[execution model-cloud services]: /documentation/articles/fundamentals-application-models#CloudServices
+[Azure SDK for PHP]: 
+documentation/articles/php-download-sdk
 [install ps and emulators]: http://go.microsoft.com/fwlink/?LinkId=253447&clcid=0x409
 [什么是云服务？]: /documentation/articles/cloud-services-what-is
 [服务定义 (.csdef)]: http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx
@@ -205,7 +207,8 @@ Azure 计算和存储模拟器提供了一个本地环境，可在将 Azure 应�
 [sql native client]: http://msdn.microsoft.com/zh-cn/sqlserver/aa937733.aspx
 [sqlsrv drivers]: http://php.net/sqlsrv
 [sqlncli.msi x64 安装程序]: http://go.microsoft.com/fwlink/?LinkID=239648
-[如何：导入发布设置]: /documentation/articles/install-configure-powershell/#ImportPubSettings
-[如何：将云服务部署到 Azure]: /documentation/articles/install-configure-powershell/#Deploy
+[如何：导入发布设置]: /documentation/articles/install-configure-powershell#ImportPubSettings
+[如何：将云服务部署到 Azure]: 
+documentation/articles/install-configure-powershell/#Deploy
 
 <!---HONumber=71-->

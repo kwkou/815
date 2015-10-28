@@ -68,7 +68,7 @@
 
 		* 当你在 Azure 虚拟机上使用 SQL Server 时，如果托管 SQL Server 的虚拟机是 HDInsight 所在虚拟网络的成员，则可以使用任何虚拟网络配置。
 
-	* 若要在虚拟网络上预配 HDInsight 群集，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](hdinsight-provision-clusters)
+	* 若要在虚拟网络上预配 HDInsight 群集，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
 
 	> [AZURE.NOTE]SQL Server 还必须允许身份验证。必须使用 SQL Server 登录名来完成此文章中的步骤。
 
@@ -165,25 +165,25 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 		# SQL query strings for creating tables and clustered indexes
 		$cmdCreateLog4jTable = "CREATE TABLE [dbo].[log4jlogs](
-		    [t1] [nvarchar](50), 
-		    [t2] [nvarchar](50), 
-		    [t3] [nvarchar](50), 
-		    [t4] [nvarchar](50), 
-		    [t5] [nvarchar](50), 
-		    [t6] [nvarchar](50), 
-		    [t7] [nvarchar](50))"
+		    [t1] [nvarchar](/documentation/articles/50), 
+		    [t2] [nvarchar](/documentation/articles/50), 
+		    [t3] [nvarchar](/documentation/articles/50), 
+		    [t4] [nvarchar](/documentation/articles/50), 
+		    [t5] [nvarchar](/documentation/articles/50), 
+		    [t6] [nvarchar](/documentation/articles/50), 
+		    [t7] [nvarchar](/documentation/articles/50))"
 		
 		$cmdCreateLog4jClusteredIndex = "CREATE CLUSTERED INDEX log4jlogs_clustered_index on log4jlogs(t1)"
 		
 		$cmdCreateMobileTable = " CREATE TABLE [dbo].[mobiledata](
-		[clientid] [nvarchar](50), 
-		[querytime] [nvarchar](50), 
-		[market] [nvarchar](50), 
-		[deviceplatform] [nvarchar](50), 
-		[devicemake] [nvarchar](50), 
-		[devicemodel] [nvarchar](50), 
-		[state] [nvarchar](50), 
-		[country] [nvarchar](50), 
+		[clientid] [nvarchar](/documentation/articles/50), 
+		[querytime] [nvarchar](/documentation/articles/50), 
+		[market] [nvarchar](/documentation/articles/50), 
+		[deviceplatform] [nvarchar](/documentation/articles/50), 
+		[devicemake] [nvarchar](/documentation/articles/50), 
+		[devicemodel] [nvarchar](/documentation/articles/50), 
+		[state] [nvarchar](/documentation/articles/50), 
+		[country] [nvarchar](/documentation/articles/50), 
 		[querydwelltime] [float],
 		[sessionid] [bigint],
 		[sessionpagevieworder][bigint])"
@@ -230,23 +230,23 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 4. 在查询窗口中输入以下信息：
 
 		CREATE TABLE [dbo].[log4jlogs](
-		 [t1] [nvarchar](50), 
-		 [t2] [nvarchar](50), 
-		 [t3] [nvarchar](50), 
-		 [t4] [nvarchar](50), 
-		 [t5] [nvarchar](50), 
-		 [t6] [nvarchar](50), 
-		 [t7] [nvarchar](50))
+		 [t1] [nvarchar](/documentation/articles/50), 
+		 [t2] [nvarchar](/documentation/articles/50), 
+		 [t3] [nvarchar](/documentation/articles/50), 
+		 [t4] [nvarchar](/documentation/articles/50), 
+		 [t5] [nvarchar](/documentation/articles/50), 
+		 [t6] [nvarchar](/documentation/articles/50), 
+		 [t7] [nvarchar](/documentation/articles/50))
 
 		CREATE TABLE [dbo].[mobiledata](
-		 [clientid] [nvarchar](50), 
-		 [querytime] [nvarchar](50), 
-		 [market] [nvarchar](50), 
-		 [deviceplatform] [nvarchar](50), 
-		 [devicemake] [nvarchar](50), 
-		 [devicemodel] [nvarchar](50), 
-		 [state] [nvarchar](50), 
-		 [country] [nvarchar](50), 
+		 [clientid] [nvarchar](/documentation/articles/50), 
+		 [querytime] [nvarchar](/documentation/articles/50), 
+		 [market] [nvarchar](/documentation/articles/50), 
+		 [deviceplatform] [nvarchar](/documentation/articles/50), 
+		 [devicemake] [nvarchar](/documentation/articles/50), 
+		 [devicemodel] [nvarchar](/documentation/articles/50), 
+		 [state] [nvarchar](/documentation/articles/50), 
+		 [country] [nvarchar](/documentation/articles/50), 
 		 [querydwelltime] [float],
 		 [sessionid] [bigint],
 		 [sessionpagevieworder][bigint])
@@ -623,18 +623,16 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
-
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx

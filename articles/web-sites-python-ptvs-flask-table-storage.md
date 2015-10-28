@@ -205,7 +205,6 @@ PTVS 提供了将 web 应用程序部署到 Azure 网站的方便方法。
 [Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
 [文档]: /documentation/articles/storage-python-how-to-use-table-storage
 [如何从 Python 使用表存储服务]: /documentation/articles/storage-python-how-to-use-table-storage
-
 <!--External Link references-->
 [Azure 管理门户]: https://manage.windowsazure.cn
 [Azure SDK for .NET]: /downloads/

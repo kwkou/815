@@ -6,7 +6,7 @@
 
 DataStax 是知名的行业领导者，该公司根据 Apache Cassandra™ 开发和提供各种解决方案，这是一种可提供商业支持且符合企业需求的 NoSQL 分布式数据库技术，此技术广受市场认可、敏捷、永不停摆，并可依照未来的各种公司规模需求进行调整。DataStax 提供 Enterprise (DSE) 和 Community (DSC) 版本。它还内存中计算、企业级安全性、快速强大的集成分析，以及企业管理等功能。
 
-除了提供 Azure 应用商店中已可供使用的功能之外，现在你还可以使用通过 [Azure PowerShell](powershell-install-configure) 或 [Azure CLI](xplat-cli) 部署的资源管理器模板，在 Ubuntu VM 上轻松部署新的 DataStax 群集。
+除了提供 Azure 应用商店中已可供使用的功能之外，现在你还可以使用通过 [Azure PowerShell](/documentation/articles/powershell-install-configure) 或 [Azure CLI](/documentation/articles/xplat-cli) 部署的资源管理器模板，在 Ubuntu VM 上轻松部署新的 DataStax 群集。
 
 根据此模板部署的新群集采用下图中所述的拓扑，不过，你可以自定义本文中所述的模板，轻松实现其他拓扑：
 

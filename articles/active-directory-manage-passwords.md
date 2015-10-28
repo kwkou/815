@@ -25,12 +25,12 @@
 本主题的余下部分将介绍 Azure Active Directory 支持的整套密码管理功能，包括：
 
 - **自助密码更改**：可让最终用户或管理员就可以更改过期的或未过期的密码，而无需请求管理员或帮助台提供支持。
-- **自助密码重置**：最终用户或管理员可以自行重置密码，而无需请求管理员或帮助台提供支持。自助密码重置功能需要 Azure AD 高级或基本版。有关详细信息，请参阅 [Azure Active Directory 版本](active-directory-editions)。
+- **自助密码重置**：最终用户或管理员可以自行重置密码，而无需请求管理员或帮助台提供支持。自助密码重置功能需要 Azure AD 高级或基本版。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 - **管理员启动的密码重置**：管理员可以通过 Azure 管理门户重置某个最终用户的或其他管理员的密码。
 - **密码管理活动报告**：管理员可以深入了解发生在其组织中的密码重置和注册活动。
 - **密码写回**：从云管理本地密码，因此，所有上述方案都可以由经过联合身份验证的或密码同步的用户本人或其代表来执行。密码写回功能需要 Azure AD 高级版。 
 
-<!--For more information, see [Getting started with Azure Active Directory Premium](active-directory-get-started-premium).-->
+<!--For more information, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium).-->
 
 > [AZURE.NOTE] 
 > Azure AD 高级版适用于使用世界范围的 Azure AD 实例的中国客户。由中国的 21Vianet 运营的 Windows Azure 服务目前不支持 Azure AD 高级版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。 
@@ -47,8 +47,8 @@
 
 ## 后续步骤
 
-- [管理 Azure AD](active-directory-administer)
-- [在 Azure AD 中创建或编辑用户](active-directory-create-users)
-- [在 Azure AD 中管理组](active-directory-manage-groups)
+- [管理 Azure AD](/documentation/articles/active-directory-administer)
+- [在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users)
+- [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups)
 
 <!--HONumber=57-->

@@ -21,7 +21,7 @@
 + 创建通知中心
 + 设置凭据
 
-<!--如果您还需要为通知中心创建新的服务总线命名空间，请参阅[使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)。-->
+<!--如果您还需要为通知中心创建新的服务总线命名空间，请参阅[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision)。-->
 
 不支持直接使用 Azure PowerShell 随附的 cmdlet 来管理通知中心。在 PowerShell 中，最佳方法是引用 Microsoft.ServiceBus.dll 程序集。该程序集是随[服务总线 NuGet 包](http://www.nuget.org/packages/WindowsAzure.ServiceBus/)一起分发的。
 
@@ -89,7 +89,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 ## 设置新通知中心 
 
-<!--若要设置新的通知中心，请使用[服务总线的 .NET API]。本文只着重于通知中心。若要使用其他服务总线实体，请参阅[使用 PowerShell 管理服务总线](service-bus-powershell-how-to-provision)。-->
+<!--若要设置新的通知中心，请使用[服务总线的 .NET API]。本文只着重于通知中心。若要使用其他服务总线实体，请参阅[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision)。-->
 
 您将在脚本的这个部分设置四个本地变量。
 
@@ -98,7 +98,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 3. `$WnsPackageSid`：从 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409)将此变量设置为 Windows 应用的包 SID。
 4. `$WnsSecretkey`：从 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409)将此变量设置为 Windows 应用的机密密钥。
 
-这些变量可用于连接服务总线命名空间，以及创建配置为使用 Windows 应用 Windows 通知中心 (WNS) 凭据处理 WNS 通知的新通知中心。有关获取包 SID 和机密密钥的信息，请参阅[通知中心入门](notification-hubs-windows-store-dotnet-get-started)教程。
+这些变量可用于连接服务总线命名空间，以及创建配置为使用 Windows 应用 Windows 通知中心 (WNS) 凭据处理 WNS 通知的新通知中心。有关获取包 SID 和机密密钥的信息，请参阅[通知中心入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)教程。
 
 + 脚本代码段使用 `NamespaceManager` 对象来检查 `$Path` 标识的通知中心是否存在。
 

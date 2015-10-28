@@ -15,8 +15,8 @@
 #  移动服务入门（Cordova 项目）
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-cordova-getting-started)
-> - [What Happened](vs-mobile-services-cordova-what-happened)
+> - [Getting Started](/documentation/articles/vs-mobile-services-cordova-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-cordova-what-happened)
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 
@@ -32,7 +32,7 @@
 
 var todoTable = mobileServiceClient.getTable('TodoItem');
 
-要使这些示例工作，表的权限必须设置为**具有应用程序密钥的任何人**。稍后，您可以设置身份验证。请参阅[身份验证入门](mobile-services-html-get-started-users)。
+要使这些示例工作，表的权限必须设置为**具有应用程序密钥的任何人**。稍后，您可以设置身份验证。请参阅[身份验证入门](/documentation/articles/mobile-services-html-get-started-users)。
 
 ##### 向表中添加项
 

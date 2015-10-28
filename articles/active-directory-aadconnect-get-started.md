@@ -103,7 +103,7 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 设备同步|通过启用设备同步，可将设备配置写入 Azure AD。
 目录扩展属性同步|通过启用目录扩展属性同步，可将指定的属性同步到 Azure AD。这会在向导中打开一个附加的配置页。  
 
-有关其他配置选项（例如，更改默认配置、使用同步规则编辑器和声明性设置），请参阅[管理 Azure AD Connect](active-directory-aadconnect-whats-next.md)
+有关其他配置选项（例如，更改默认配置、使用同步规则编辑器和声明性设置），请参阅[管理 Azure AD Connect](/documentation/articles/active-directory-aadconnect-whats-next)
 
 ## Azure AD Connect 支持组件
 
@@ -120,10 +120,10 @@ Azure AD 应用程序和属性筛选|通过启用 Azure AD 应用程序和属性
 
 **其他资源**
 
-* [在云中使用本地标识基础结构](active-directory-aadconnect)
-* [Azure AD Connect 工作原理](active-directory-aadconnect-how-it-works)
-* [Azure AD Connect 后续步骤](active-directory-aadconnect-whats-next)
-* [了解详细信息](active-directory-aadconnect-learn-more)
+* [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect 工作原理](/documentation/articles/active-directory-aadconnect-how-it-works)
+* [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
+* [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more)
 * [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
 
 <!---HONumber=60-->

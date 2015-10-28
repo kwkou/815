@@ -204,8 +204,7 @@
 
 <!--Link references-->
 [Python 开发人员中心]: /develop/python/
-[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs.md
-
+[Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
 <!--External Link references-->
 [Azure 门户]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs

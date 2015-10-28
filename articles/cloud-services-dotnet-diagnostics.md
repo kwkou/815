@@ -511,7 +511,7 @@ EventSource|否|表|记录你的代码使用 .NET EventSource 类生成的事件
 [有关开发 Azure 应用程序的故障排除最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
 [有关开发 Azure 应用程序的问题排查最佳实践]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh771389.aspx
 [试用版]: /pricing/1rmb-trial
-[安装并配置 Azure PowerShell 0.8.7 或更高版本]: /documentation/articles/install-configure-powershell/
+[安装并配置 Azure PowerShell 0.8.7 或更高版本]: /documentation/articles/install-configure-powershell
 [Azure Diagnostics 1.2 配置架构]: http://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx
 [Set-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495270.aspx
 [Get-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/zh-cn/library/dn495145.aspx

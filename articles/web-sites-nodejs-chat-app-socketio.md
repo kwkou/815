@@ -65,7 +65,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 按照以下步骤创建 Azure Web 应用、启用 Git 发布，然后为 Web 应用启用 WebSocket 支持。
 
-> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure 免费试用</a>。1.安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](xplat-cli)。
+> [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure 免费试用</a>。1.安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)。
 
 2. 如果这是你第一次在 Azure 中设置存储库，则需要创建登录凭据。从 Azure CLI 输入以下命令：
 
@@ -116,7 +116,7 @@ Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应
 
 ###创建 Redis 缓存
 
-执行[在 Azure Redis 缓存中创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤，以创建新的缓存。
+执行[在 Azure Redis 缓存中创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache)中的步骤，以创建新的缓存。
 
 > [AZURE.NOTE] 保存用于缓存的__主机名__和__主密钥__，因为接下来的步骤需要这些信息。
 

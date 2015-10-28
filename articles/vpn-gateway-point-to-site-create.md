@@ -148,9 +148,9 @@
 
 你可以在下文中了解有关虚拟网络跨界连接的更多信息：[关于虚拟网络安全跨界连接](https://msdn.microsoft.com/zh-cn/library/azure/dn133798.aspx)
 
-如果你想要配置站点到站点 VPN 连接，请参阅[配置站点到站点 VPN 连接](vpn-gateway-site-to-site-create)
+如果你想要配置站点到站点 VPN 连接，请参阅[配置站点到站点 VPN 连接](/documentation/articles/vpn-gateway-site-to-site-create)
 
-你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](virtual-machines-create-custom)
+你可以将虚拟机添加到虚拟网络。请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom)
 
 如果你想要使用 RRAS 配置 VNet 连接，请参阅[使用 Windows Server 2012 路由和远程访问服务 (RRAS) 配置站点到站点 VPN](https://msdn.microsoft.com/zh-cn/library/dn636917.aspx)
 

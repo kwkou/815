@@ -25,7 +25,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 1. 可以将保留 IP 用于所有 Azure 服务吗？  
   - 保留 IP 只能用于 VM 和云服务实例角色。
 1. 我可以有多少个保留 IP？  
-  - 目前，所有 Azure 订阅都有权使用 20 个保留 IP。不过，你可以请求更多的保留 IP。请参阅[订阅和服务限制](/documentation/articles/azure-subscription-service-limits/)页以获取更多的信息。
+  - 目前，所有 Azure 订阅都有权使用 20 个保留 IP。不过，你可以请求更多的保留 IP。请参阅[订阅和服务限制](/documentation/articles/azure-subscription-service-limits)页以获取更多的信息。
 1. 保留 IP 是否收费？ 
   - 请参阅[保留 IP 地址定价详细信息](/pricing/details/reserved-ip-addresses/)以获取定价信息。
 1. 如何保留某个 IP 地址？ 

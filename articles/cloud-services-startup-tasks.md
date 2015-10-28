@@ -91,7 +91,7 @@ EXIT /B 0
 - 该命令具有可选的命令行参数，用于开始启动任务。
 - 通常它是 .cmd 或 .bat 批处理文件的文件名。
 - 该任务相对于部署的 AppRoot\\Bin 文件夹。在确定任务的路径和文件时不扩展环境变量。如果需要环境扩展，则可以创建用于调用启动任务的小型 .cmd 脚本。
-- 可以是一个启动 [PowerShell 脚本](cloud-services-startup-tasks-common.md#create-a-powershell-startup-task)的控制台应用程序或批处理文件。
+- 可以是一个启动 [PowerShell 脚本](/documentation/articles/cloud-services-startup-tasks-common#create-a-powershell-startup-task)的控制台应用程序或批处理文件。
 
 **executionContext** - 为启动任务指定权限级别。权限级别可以为 limited 或 elevated：
 
@@ -157,8 +157,9 @@ EXIT /B 0
 [打包](/documentation/articles/cloud-services-model-and-package)你的云服务。
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
-[Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
+[Task]: https:
+/msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Environment]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Environment

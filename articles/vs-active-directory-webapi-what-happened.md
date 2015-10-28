@@ -59,6 +59,6 @@ ms.service="active-directory" ms.workload="web" ms.tgt_pltfrm="na" ms.devlang="n
 
 [详细了解 Azure Active Directory][详细了解 Azure Active Directory]
 
-  [入门]: /documentation/articles/vs-active-directory-webapi-getting-started/
-  [发生了什么情况]: /documentation/articles/vs-active-directory-webapi-what-happened/
+  [入门]: /documentation/articles/vs-active-directory-webapi-getting-started
+  [发生了什么情况]: /documentation/articles/vs-active-directory-webapi-what-happened
   [详细了解 Azure Active Directory]: http://www.windowsazure.cn/manage/services/identity/

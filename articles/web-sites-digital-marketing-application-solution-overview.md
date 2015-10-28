@@ -21,13 +21,13 @@
 
 在本指南中将针对以下方面：
 
-- [部署现有网站](/documentation/articles/#deployexisting)
+- [部署现有网站](#deployexisting)
 - [与社交媒体相集成](#socialmedia)
 - [根据用户要求进行缩放](#scale)
 - [与其他服务集成](#integrate)
 - [监视活动](#monitor)
 
-> [AZURE.NOTE]本指南介绍了一些与在 Azure 网站中运行数字市场营销活动一致的最常见领域和任务。但是，还有其他你可以在 Web Apps 中实现的常见解决方案。若要查看这些解决方案，请参阅[全球网络影响力](web-sites-global-web-presence-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指南。
+> [AZURE.NOTE]本指南介绍了一些与在 Azure 网站中运行数字市场营销活动一致的最常见领域和任务。但是，还有其他你可以在 Web Apps 中实现的常见解决方案。若要查看这些解决方案，请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[业务应用程序](/documentation/articles/web-sites-business-application-solution-overview)中的其他指南。
 
 ## 从头开始创建或引入现有资产
 
@@ -98,27 +98,25 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
   
 [MySQL]: web-sites-php-mysql-deploy-use-git
 [Azure SQL 数据库]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[FTP]: web-sites-deploy#ftp
+[FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: web-sites-dotnet-get-started
-<!--[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso -->
+<!--[Visual Studio Online]: ..
+cloud-services-continuous-delivery-use-vso -->
 [Git]: web-sites-publish-source-control
-
 [将其部署到过渡槽]: web-sites-staged-publishing
 [连续发布]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [运行 A/B 测试]: http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
 [创建包含身份验证和 SQLDB 的 ASP.NET MVC 应用并将其部署到 Azure 网站]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-
 [Azure 媒体服务]: http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
 [SendGrid 服务在 Azure 应用商店]: sendgrid-dotnet-how-to-send-email
-[移动服务]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[通知中心]: ../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-
+[移动服务]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[通知中心]: mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
 [将 Web 应用与 Azure CDN 集成]: cdn-websites-with-cdn
 [CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
-[增加和扩大]: /documentation/articles/how-to-scale-websites/
+[增加和扩大]: /documentation/articles/how-to-scale-websites
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell 脚本]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -128,7 +126,7 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
 [ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[快速浏览]: /documentation/articles/how-to-monitor-websites/
+[快速浏览]: /documentation/articles/how-to-monitor-websites
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 

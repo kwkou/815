@@ -17,11 +17,11 @@
  	
 
 - MySQL Database on Azure目前有哪些限制？
-	了解更多[MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation/)
+	了解更多[MySQL Database on Azure服务限制](/documentation/articles/mysql-database-operation-limitation)
 
 - MySQL Database on Azure 并发连接量不够用？
 	
-	为了保证连接可以高效的得到充分利用，我们建议您使用连接池(connection pool)或是长连接(persistent connection)连接数据库。查看[如何高效连接到MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool/);
+	为了保证连接可以高效的得到充分利用，我们建议您使用连接池(connection pool)或是长连接(persistent connection)连接数据库。查看[如何高效连接到MySQL Database on Azure](/documentation/articles/mysql-database-connection-pool);
 
 - MYSQL Database on Azure 是否支持用户通过命令行设置权限？
 	

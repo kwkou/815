@@ -250,29 +250,22 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs
-[azure-create-storage-account]: /documentation/articles/storage-create-storage-account/
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-azcopy-download]: storage-use-azcopy
 [azure-azcopy]: storage-use-azcopy
-
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
-
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
-
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
-
-[xplatcli]: /documentation/articles/xplat-cli/
-[azurecli]: /documentation/articles/xplat-cli/
-
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[xplatcli]: /documentation/articles/xplat-cli
+[azurecli]: /documentation/articles/xplat-cli
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png

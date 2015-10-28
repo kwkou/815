@@ -22,7 +22,7 @@
 - 表 D：本地 DNS 服务器
 - 表 L：本地网络的地址前缀
 
-这些表通常在介绍 Azure 中 IT 工作负荷的配置，并涉及跨界虚拟网络的主题中填写。有关示例，请参阅[阶段 1：配置 Azure](virtual-machines-workload-intranet-sharepoint-phase1)。
+这些表通常在介绍 Azure 中 IT 工作负荷的配置，并涉及跨界虚拟网络的主题中填写。有关示例，请参阅[阶段 1：配置 Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1)。
 
 以下过程参考了这些表中的信息，以指导你完成虚拟网络配置过程。如果你尚未在另一个主题中指定这些表中的设置，但仍要配置跨界虚拟网络，请参阅[配置与 Azure 虚拟网络的跨界站点到站点连接](https://msdn.microsoft.com/zh-CN/library/dn133795.aspx)。
 

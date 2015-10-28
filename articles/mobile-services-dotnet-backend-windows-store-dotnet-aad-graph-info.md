@@ -249,5 +249,4 @@
 [Azure Active Directory Graph 团队博客]: http://go.microsoft.com/fwlink/?LinkId=510536
 [Get User]: http://msdn.microsoft.com/zh-cn/library/azure/dn151678.aspx
 [在移动服务中配合 AAD 进行基于角色的访问控制]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac
-
 <!---HONumber=71-->

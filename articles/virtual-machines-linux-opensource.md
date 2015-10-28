@@ -63,7 +63,7 @@ CentOS Linux 分发是从 Red Hat Enterprise Linux (RHEL) 的源代码派生的�
 11. [如何：安装和运行 MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse)
 12. [如何：准备自定义 SLES 或 openSUSE VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse)  
 13. [SUSE 论坛](https://forums.suse.com/showthread.php?5622-New-Update-Infrastructure)如何：移动到新的修补程序服务器
-4. [操作指南：准备自定义 SLES 或 openSUSE VM](virtual-machines-linux-create-upload-vhd-suse) 
+4. [操作指南：准备自定义 SLES 或 openSUSE VM](/documentation/articles/virtual-machines-linux-create-upload-vhd-suse) 
 ### CoreOS
 
 CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定义控制的纯计算规模。
@@ -119,7 +119,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 
 1. [映像](https://vmdepot.msopentech.cn/List/Index?sort=Featured&search=java)
 2. [如何：使用 AMQP 1.0 通过 Java 使用 Service Bus](http://msdn.microsoft.com/zh-cn/library/azure/jj841073.aspx)
-3. [如何：使用 Azure 门户在 Linux 上设置 Tomcat7](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux/)
+3. [如何：使用 Azure 门户在 Linux 上设置 Tomcat7](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux)
 4. [视频：Azure Java SDK for Service Management](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-157-The-Java-SDK-for-Azure-Management-with-Brady-Gaster)
 5. [博客：适用于 Java 的 Azure 管理库入门](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [GitHub 存储库：适用于 Eclipse with Java 的 Azure 工具包](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)

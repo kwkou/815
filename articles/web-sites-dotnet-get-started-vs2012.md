@@ -246,9 +246,9 @@
   [服务器资源管理器中的 Azure 网站]: ./media/web-sites-dotnet-get-started-vs2012/ServerExplorerWSSettings.png
   [Visual Studio 中的网站配置]: ./media/web-sites-dotnet-get-started-vs2012/WSConfigurationInVS.png
   [管理门户仪表板选项卡]: ./media/web-sites-dotnet-get-started-vs2012/MPStopStartDelete.png
-  [如何管理网站]: /documentation/articles/web-sites-manage/
+  [如何管理网站]: /documentation/articles/web-sites-manage
   [管理门户缩放选项卡]: ./media/web-sites-dotnet-get-started-vs2012/MPScale.png
-  [如何缩放网站]: /documentation/articles/web-sites-scale/
+  [如何缩放网站]: /documentation/articles/web-sites-scale
   [Visual Studio 中的日志]: ./media/web-sites-dotnet-get-started-vs2012/LogsInVS.png
   [在 Visual Studio 中排除 Windows Azure 网站的故障]: /develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/
   [使用成员资格、OAuth 和 SQL数据库 将安全的 ASP.NET MVC 应用程序部署到 Azure 网站]: /develop/net/tutorials/web-site-with-sql-database/

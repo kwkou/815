@@ -368,7 +368,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
     `<project-path>/JSPHello/src/JSPHello.war`
 
-有关部署 WAR 文件的详细信息，请参阅[将应用程序添加到 Azure 上的 Java 网站](/documentation/articles/web-sites-java-add-app/)。
+有关部署 WAR 文件的详细信息，请参阅[将应用程序添加到 Azure 上的 Java 网站](/documentation/articles/web-sites-java-add-app)。
 
 
 ## 使用 FTP 部署 Hello World 应用程序
@@ -381,8 +381,8 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 有关使用 FTP 部署到 Azure 网站的详细信息，请参阅以下主题：
 
-- [通过 Azure 管理门户管理网站：FTP 凭据](/documentation/articles/web-sites-manage/#ftp-credentials)
-- [如何使用 FTP 实用工具部署](/documentation/articles/web-sites-deploy/#ftp)
+- [通过 Azure 管理门户管理网站：FTP 凭据](/documentation/articles/web-sites-manage#ftp-credentials)
+- [如何使用 FTP 实用工具部署](/documentation/articles/web-sites-deploy#ftp)
 
 
 ### 设置部署凭据

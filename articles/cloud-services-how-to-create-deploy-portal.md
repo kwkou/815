@@ -81,7 +81,7 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 
 ## 上载证书
 
-如果你的部署包已[配置为使用证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/#modify)，你现在就可以上载证书。
+如果你的部署包已[配置为使用证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal#modify)，你现在就可以上载证书。
 
 1. 选择“证书”，并在“添加证书”边栏选项卡中，选择 SSL 证书 .pfx 文件，然后提供证书的**密码**，
 2. 单击“附加证书”，然后单击“添加证书”边栏选项卡上的“确定”。

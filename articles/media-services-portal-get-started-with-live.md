@@ -34,7 +34,7 @@
 以下是完成本教程所需具备的条件。
 
 - 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
-- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](media-services-create-account)。
+- 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - 可以发送多比特率实时流的摄像头和编码器。
 
 

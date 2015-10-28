@@ -32,7 +32,7 @@
 
 
 
-必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/#use-the-certificate-method) 中的 *使用证书方法*。
+必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell#use-the-certificate-method) 中的 *使用证书方法*。
 
 1. 使用 [Get-AzureSqlDatabase](http://msdn.microsoft.com/zh-cn/library/azure/dn546735.aspx) cmdlet 获取可恢复的数据库列表。
 	* 使用 **RestorableDropped** 开关，并指定从中删除了数据库的服务器的 **ServerName**。

@@ -53,6 +53,4 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-ios-get-started-push
 [Get started with push notifications]: /documentation/articles/mobile-services-ios-get-started-push
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
- 
-
 <!---HONumber=71-->

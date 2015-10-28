@@ -16,7 +16,7 @@
 # Azure Site Recovery：常见问题
 ## 关于本文
 
-本文包含有关 Azure Site Recovery 的常见问题。有关 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](hyper-v-recovery-manager-overview)。
+本文包含有关 Azure Site Recovery 的常见问题。有关 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)。
 
 如果在阅读本文后还有其他问题，可以在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=hypervrecovmgr)上发布你的问题。
 

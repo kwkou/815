@@ -243,14 +243,12 @@
 <!-- URLs. -->
 [移动服务入门]: /documentation/articles/mobile-services-html-get-started
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
 [GetStartedWithData app]: http://go.microsoft.com/fwlink/?LinkID=286345
 [GetStartedWithData 应用程序]: http://go.microsoft.com/fwlink/?LinkID=286345
 
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: /documentation/articles/mobile-services-html-how-to-use-client-library
-
 [Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx
 
 <!---HONumber=71-->

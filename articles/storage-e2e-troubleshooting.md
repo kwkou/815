@@ -49,7 +49,7 @@
 
 ## 关于示例情景
 
-在本教程中，我们将介绍 Azure 存储度量值指示调用 Azure 存储空间的应用程序成功率较低的情景。低成功率度量值（在 Azure 门户和度量值表中显示为 **PercentSuccess**）用于跟踪已经成功，但返回的 HTTP 状态代码大于 299 的操作。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。有关低成功率度量值的详细信息，请参阅[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/#metrics-show-low-percent-success)。
+在本教程中，我们将介绍 Azure 存储度量值指示调用 Azure 存储空间的应用程序成功率较低的情景。低成功率度量值（在 Azure 门户和度量值表中显示为 **PercentSuccess**）用于跟踪已经成功，但返回的 HTTP 状态代码大于 299 的操作。在服务器端存储日志文件中，这些操作将使用事务状态 **ClientOtherErrors** 进行记录。有关低成功率度量值的详细信息，请参阅[度量值显示低 PercentSuccess，或者分析日志项包含事务状态为 ClientOtherErrors 的操作](/documentation/articles/storage-monitoring-diagnosing-troubleshooting#metrics-show-low-percent-success)。
 
 Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能的一部分。但在某些情况下，这些错误指示你可能能够优化客户端应用程序以提高性能。 
 
@@ -185,7 +185,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 ![Metrics chart in portal](./media/storage-e2e-troubleshooting/portal-metrics-chart-1.png)
 
-有关将度量值添加到监视页的详细信息，请参阅[如何：向度量值表中添加度量值](/documentation/articles/storage-monitor-storage-account/#addmonitoringmetrics)。
+有关将度量值添加到监视页的详细信息，请参阅[如何：向度量值表中添加度量值](/documentation/articles/storage-monitor-storage-account#addmonitoringmetrics)。
 
 > [AZURE.NOTE] 在启用存储度量值后，可能需要经过一段时间，度量值数据才会显示在门户中。这是因为，只有在当前小时已过后，前一个小时的小时度量值才会显示在门户中。此外，分钟度量值当前不会显示在门户中。因此，根据启用度量值的时间，最多可能需要两个小时才能看到度量值数据。
 
@@ -248,7 +248,7 @@ Message Analyzer 包括 Azure 存储空间的资产，可帮助你分析服务�
 
 ### 使用客户端请求 ID 关联日志文件数据
 
-Azure 存储客户端库会自动为每个请求生成唯一的客户端请求 ID。此值将写入客户端日志、服务器日志和网络跟踪，因此你可以在 Message Analyzer 中使用它在所有三个日志之间关联数据。请参阅[客户端请求 ID](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/#client-request-id) 以了解有关客户端请求 ID 的更多信息。
+Azure 存储客户端库会自动为每个请求生成唯一的客户端请求 ID。此值将写入客户端日志、服务器日志和网络跟踪，因此你可以在 Message Analyzer 中使用它在所有三个日志之间关联数据。请参阅[客户端请求 ID](/documentation/articles/storage-monitoring-diagnosing-troubleshooting#client-request-id) 以了解有关客户端请求 ID 的更多信息。
 
 以下部分介绍如何使用预配置的和自定义的布局视图，来根据客户端请求 ID 关联和分组数据。
 

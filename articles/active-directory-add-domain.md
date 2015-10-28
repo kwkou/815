@@ -163,7 +163,7 @@ Office 365 针对公共域注册机构提供了具体说明。
 - 无法删除当你注册时为目录提供的原始 contoso.partner.onmschina.cn 域名。 
 - 对于具有关联子域的任何顶级域，只有在删除这些子域后，才能删除这些顶级域。例如，如果 corp.adatum.com 或其他子域使用了顶级域名 adatum.com，则你无法删除该域名。有关详细信息，请参阅此[支持文章](https://support.microsoft.com/zh-cn/kb/2787792/)。
 - 是否已激活目录同步？ 如果已激活，则会将类似于下面的域自动添加到你的帐户：contoso.mail.partner.onmschina.cn。此域名不可删除。
-- 在删除某个域名之前，必须先从与该域关联的所有用户或电子邮件帐户中删除该域名。你可以删除所有帐户，或者批量编辑用户帐户以更改其域名信息和电子邮件地址。有关详细信息，请参阅[在 Azure AD 中创建或编辑用户](active-directory-create-users)。
+- 在删除某个域名之前，必须先从与该域关联的所有用户或电子邮件帐户中删除该域名。你可以删除所有帐户，或者批量编辑用户帐户以更改其域名信息和电子邮件地址。有关详细信息，请参阅[在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users)。
 - 如果你在正用于 SharePoint Online 网站集的域名中托管 SharePoint Online 站点，则必须先删除网站集，然后才能删除该域名。
 
 若要删除域名，请执行以下步骤：
@@ -204,7 +204,7 @@ Office 365 针对公共域注册机构提供了具体说明。
 
 - [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 - [堆栈溢出](http://stackoverflow.com/questions/tagged/azure)
-- [以组织身份注册 Azure](sign-up-organization)
+- [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
 - [在 Azure AD 中管理域](https://msdn.microsoft.com/zh-cn/library/azure/dn919677.aspx)
 
 <!---HONumber=60-->

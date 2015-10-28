@@ -267,8 +267,8 @@
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [移动服务]: /documentation/articles/notification-hubs-mobile-services-notify-users/ 
-  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-notify-users/ 
+  [移动服务]: /documentation/articles/notification-hubs-mobile-services-notify-users
+  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-notify-users
   [更新移动服务以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app
   [更新移动服务以发送通知]: #send-notifications
@@ -287,8 +287,8 @@
   [iOS 版本]: /documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications
   [9]: ./media/notification-hubs-mobile-services-notify-users/mobile-portal-data-tables.png
   [10]: ./media/notification-hubs-mobile-services-notify-users/mobile-insert-script-push2.png
-  [使用通知中心向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
-  [11]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
-  [12]: /documentation/articles/notification-hubs-ios-send-breaking-news/
+  [使用通知中心向用户发送跨平台通知]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
+  [11]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
+  [12]: /documentation/articles/notification-hubs-ios-send-breaking-news
   [13]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
   [Azure 通知中心]: http://msdn.microsoft.com/zh-cn/library/azure/jj927170.aspx

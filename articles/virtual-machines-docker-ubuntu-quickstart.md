@@ -4,11 +4,11 @@
 
 # 如何在 Azure 应用商店中快速开始使用 Docker
 
-开始使用 [Docker] 的最快方法是转到 Azure 应用商店，将 [Canonical] 创建的**“Ubuntu Server 上的 Docker”**映像模板与 [MSOpenTech] 结合使用来创建 VM。这将创建 Ubuntu Server VM 并自动安装<!-- [-->Docker VM 扩展<!--](virtual-machines-docker-vm-extension)-->，同时在 Azure 上预安装并运行**最新** Docker 引擎。
+开始使用 [Docker] 的最快方法是转到 Azure 应用商店，将 [Canonical] 创建的**“Ubuntu Server 上的 Docker”**映像模板与 [MSOpenTech] 结合使用来创建 VM。这将创建 Ubuntu Server VM 并自动安装<!-- [-->Docker VM 扩展<!--](/documentation/articles/virtual-machines-docker-vm-extension)-->，同时在 Azure 上预安装并运行**最新** Docker 引擎。
 
 你可以使用 SSH 立即连接到该 VM，并直接开始使用 Docker 而不用执行任何其他操作。
 
-> [AZURE.NOTE]Azure 应用商店模板创建的 VM 未托管 Docker 远程 API 以供远程 docker 客户端进行管理。若要在此 VM 上启用远程控制 Docker 主机，请参阅[使用 HTTPS 运行 Docker](https://docs.docker.com/articles/https/)，或者执行<!--[-->通过 Azure 门户使用 Docker VM 扩展<!--](virtual-machines-docker-with-portal)-->或<!--[-->通过 Azure CLI 使用 Docker VM 扩展<!--](virtual-machines-docker-with-xplat-cli)-->中的步骤。如果你特别技术狂，则可以从 GitHub 构建 [Windows Docker 客户端](https://github.com/ahmetalpbalkan/Docker.DotNet)，然后也对其进行试用（或直接从 [nuget](https://www.nuget.org/packages/Docker.DotNet/) 中获取它）。
+> [AZURE.NOTE]Azure 应用商店模板创建的 VM 未托管 Docker 远程 API 以供远程 docker 客户端进行管理。若要在此 VM 上启用远程控制 Docker 主机，请参阅[使用 HTTPS 运行 Docker](https://docs.docker.com/articles/https/)，或者执行<!--[-->通过 Azure 门户使用 Docker VM 扩展<!--](/documentation/articles/virtual-machines-docker-with-portal)-->或<!--[-->通过 Azure CLI 使用 Docker VM 扩展<!--](/documentation/articles/virtual-machines-docker-with-xplat-cli)-->中的步骤。如果你特别技术狂，则可以从 GitHub 构建 [Windows Docker 客户端](https://github.com/ahmetalpbalkan/Docker.DotNet)，然后也对其进行试用（或直接从 [nuget](https://www.nuget.org/packages/Docker.DotNet/) 中获取它）。
 
 本主题内容：
 

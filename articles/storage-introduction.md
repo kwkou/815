@@ -200,9 +200,9 @@ Azure 存储空间通过一个 [REST API](https://msdn.microsoft.com/zh-CN/libra
 ### 面向 Java/Android 开发人员
 
 - [Java 客户端库参考](http://dl.windowsazure.com/storage/javadoc/)
-- [如何通过 Java/Android 使用 Blob 存储](/documentation/articles/storage-java-how-to-use-blob-storage/)
-- [如何通过 Java/Android 使用表存储](/documentation/articles/storage-java-how-to-use-table-storage/)
-- [如何通过 Java/Android 使用队列存储](/documentation/articles/storage-java-how-to-use-queue-storage/)
+- [如何通过 Java/Android 使用 Blob 存储](/documentation/articles/storage-java-how-to-use-blob-storage)
+- [如何通过 Java/Android 使用表存储](/documentation/articles/storage-java-how-to-use-table-storage)
+- [如何通过 Java/Android 使用队列存储](/documentation/articles/storage-java-how-to-use-queue-storage)
 
 ### 面向 Node.js 开发人员
 

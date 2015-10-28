@@ -207,6 +207,5 @@
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [SharePoint Online]: http://office.microsoft.com/zh-cn/sharepoint/
-[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication/
-
+[使用 Active Directory 身份验证库单一登录对应用程序进行身份验证]: /documentation/articles/mobile-services-windows-store-dotnet-adal-sso-authentication
 <!---HONumber=71-->

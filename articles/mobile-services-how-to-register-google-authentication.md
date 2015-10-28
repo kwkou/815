@@ -53,7 +53,6 @@
 <!-- URLs. -->
 
 [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
-[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
-
+[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [Azure 管理门户]: https://manage.windowsazure.cn/
 <!---HONumber=71-->

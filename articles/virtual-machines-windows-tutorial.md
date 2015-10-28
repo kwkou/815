@@ -24,7 +24,7 @@
 
 你还可以使用自己的映像，配合资源管理器模板或自动化工具来创建虚拟机。若要了解不同的方法，请参阅[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-choices-create-vm)。
 
-本教程使用资源管理器部署模型来创建虚拟机。我们建议使用上述模型，而不要使用基于服务管理 API 的经典部署模型。有关资源管理器的详细信息，请参阅 [Azure 资源管理器概述](resource-group-overview)。若要了解为虚拟机使用资源管理器的优点，请参阅 [Azure 资源管理器下的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+本教程使用资源管理器部署模型来创建虚拟机。我们建议使用上述模型，而不要使用基于服务管理 API 的经典部署模型。有关资源管理器的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。若要了解为虚拟机使用资源管理器的优点，请参阅 [Azure 资源管理器下的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
 
 ## 选择映像
 

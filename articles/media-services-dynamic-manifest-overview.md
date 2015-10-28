@@ -72,7 +72,7 @@
 - 修剪视频开头（“修剪视频”）。
 - 调整演播窗口，以便在播放器中提供长度有限的 DVR 窗口（“调整演播窗口”）。
  
-为实现这种灵活性，媒体服务会根据预定义的[筛选器](/documentation/articles/media-services-dynamic-manifest-overview#filters)提供**动态清单**。在你定义筛选器后，客户端将会使用筛选器来流式传输视频的特定再现内容或子剪辑。客户端将在流 URL 中指定筛选器。筛选器可应用到[动态打包](media-services-dynamic-packaging-overview)支持的自适应比特率流协议：HLS、MPEG DASH、平滑流和 HDS。例如：
+为实现这种灵活性，媒体服务会根据预定义的[筛选器](/documentation/articles/media-services-dynamic-manifest-overview#filters)提供**动态清单**。在你定义筛选器后，客户端将会使用筛选器来流式传输视频的特定再现内容或子剪辑。客户端将在流 URL 中指定筛选器。筛选器可应用到[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)支持的自适应比特率流协议：HLS、MPEG DASH、平滑流和 HDS。例如：
 
 包含筛选器的 MPEG DASH URL
 

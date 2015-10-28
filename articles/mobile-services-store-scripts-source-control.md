@@ -150,7 +150,7 @@
 [将移动服务添加到现有应用程序]: mobile-services-ios-get-started-data
 [在移动服务中使用服务器脚本]: mobile-services-how-to-use-server-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[从客户端调用自定义 API]: mobile-services-ios-call-custom-api.md
+[从客户端调用自定义 API]: mobile-services-ios-call-custom-api
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 

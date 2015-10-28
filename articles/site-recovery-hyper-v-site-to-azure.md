@@ -18,7 +18,7 @@
 
 ## 概述
 
-Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](hyper-v-recovery-manager-overview)中了解可能的部署方案。
+Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)中了解可能的部署方案。
 
 本文介绍如何部署 Site Recovery 来复制本地站点上运行 Windows Server 2012 R2 的 Hyper-V 服务器上的虚拟机。到 Azure 存储空间的复制由 Site Recovery 来协调。如果你在运行 Hyper-V 服务器但未部署 System Center Virtual Machine Manager (VMM)，则此部署将特别有用。
 
@@ -37,7 +37,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 ### Azure 先决条件
 
 - 需要一个 [Windows Azure](http://www.windowsazure.cn/) 帐户。你可以从[试用版](/pricing/1rmb-trial/)开始。
-- - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储空间简介](storage-introduction)。
+- - 你将需要使用 Azure 存储帐户来存储复制的数据。需要为帐户启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
 - - 需要一个 Azure 虚拟网络，以便在故障转移后可将复制的虚拟机连接到网络。
 
 ## Hyper-V 先决条件
@@ -48,7 +48,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 ### 虚拟机先决条件
 
-要保护的虚拟机应符合 [Azure 先决条件](documentation/articles/site-recovery-best-practices)。
+要保护的虚拟机应符合 [Azure 先决条件](/documentation/articles/site-recovery-best-practices)。
 
 ### 提供程序和代理先决条件
 
@@ -257,7 +257,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 5. 在故障转移后，你将能够在 Azure 门户中看到虚拟机测试副本。如果你已设置为从本地网络访问虚拟机，则可以启动与虚拟机的远程桌面连接。
 
 	1. 验证虚拟机成功启动。
-    2. 如果想要在故障转移之后使用远程桌面连接到 Azure 中的虚拟机，请在虚拟机上启用远程桌面连接，然后运行测试故障转移。还需要在虚拟机上添加 RDP 终结点。你可以利用 [Azure 自动化 Runbook](site-recovery-runbook-automation) 来执行此操作。
+    2. 如果想要在故障转移之后使用远程桌面连接到 Azure 中的虚拟机，请在虚拟机上启用远程桌面连接，然后运行测试故障转移。还需要在虚拟机上添加 RDP 终结点。你可以利用 [Azure 自动化 Runbook](/documentation/articles/site-recovery-runbook-automation) 来执行此操作。
     3. 故障转移后，如果想要在远程桌面中使用公共 IP 地址连接到 Azure 中的虚拟机，请确保没有任何域策略阻止你使用公共地址连接到虚拟机。
 
 6. 完成测试后，执行以下操作：

@@ -51,7 +51,7 @@
 
 <strong>平台</strong>。选择是要在 32 位还是 64 位环境中运行应用程序。64 位环境需要“基本”或“标准”模式。“免费”和“共享”模式始终在 32 位环境下运行。
 
-<strong>Web 套接字</strong>。设为“打开”以启用 WebSocket 协议；例如，如果你的网站使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/)。
+<strong>Web 套接字</strong>。设为“打开”以启用 WebSocket 协议；例如，如果你的网站使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio)。
 
 <strong>始终打开</strong>。默认情况下，网站如果已处于空闲状态相当一段时间，则是未加载的状态。这样可以让系统节省资源。在“基本”或“标准”模式下，你可以启用“始终打开”<strong></strong>，以始终保持加载站点。如果你的站点运行连续的 Web 作业，则应启用“始终打开”，否则这些 Web 作业可能无法可靠运行
 
@@ -62,17 +62,17 @@
 
 ### 证书
 
-在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
+在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
 
 此处列出已上载的证书。在你上载某一证书后，可以将其分配给你的订阅和区域中的任何网站。通配符证书可用于接受此证书的域中的任何站点。仅当该证书不具有有效绑定关系时，才能删除证书。
 
 ### 域名
 
-查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。
+查看或添加网站的其他域名。有关详细信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 
 ### SSL 绑定
 
-如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)
+如果已上载 SSL 证书，可以将其绑定到自定义域名。有关详细信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
 
 ### 部署
 
@@ -201,16 +201,16 @@ Azure 将使用指定的参数创建 SQL 数据库并将该数据库链接到网
 或者，你也可以选择使用“自定义创建”选项来创建网站。在“数据库”下拉列表中，选择“新建 MySQL 数据库”或“使用现有的 MySQL 数据库”。-->
 ##<a name="howtodomain"></a>如何配置自定义域名
 
-有关配置网站以使用自定义域名的信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。
+有关配置网站以使用自定义域名的信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 
 ##<a name="howtoconfigSSL"></a>如何配置网站以使用 SSL##
 
-有关在 Azure 上为自定义域配置 SSL 的信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
+有关在 Azure 上为自定义域配置 SSL 的信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
 
 ##<a name="next"></a>后续步骤
 
-* [如何缩放网站](/documentation/articles/web-sites-scale/)
+* [如何缩放网站](/documentation/articles/web-sites-scale)
 
-* [如何监视网站](/documentation/articles/web-sites-monitor/)
+* [如何监视网站](/documentation/articles/web-sites-monitor)
 
 <!---HONumber=71-->

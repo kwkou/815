@@ -299,5 +299,4 @@
 将资产上载到媒体服务后，请转到[如何获取媒体处理器][]主题。
 
 [如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor
-
 <!---HONumber=71-->

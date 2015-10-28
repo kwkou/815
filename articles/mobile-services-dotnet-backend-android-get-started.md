@@ -122,7 +122,6 @@
 [Android Studio]: https://developer.android.com/sdk/index.html
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
-
 [管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=71-->

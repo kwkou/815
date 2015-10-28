@@ -4,7 +4,7 @@
 
 # 使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机
 
-本文说明如何使用 Azure 资源管理器模板和 PowerShell 来自动执行部署及管理 Azure 虚拟机的常见任务。有关可用的其他模板，请参阅 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和[应用程序框架](virtual-machines-app-frameworks)。
+本文说明如何使用 Azure 资源管理器模板和 PowerShell 来自动执行部署及管理 Azure 虚拟机的常见任务。有关可用的其他模板，请参阅 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和[应用程序框架](/documentation/articles/virtual-machines-app-frameworks)。
 
 - [部署 Windows VM](#windowsvm)
 - [创建自定义 VM 映像](#customvm)
@@ -34,7 +34,7 @@
 - 审核操作。 
 - 使用其他元数据标记资源以方便跟踪。 
 
-可在[此处](virtual-machines-azurerm-versus-azuresm)了解有关 Azure 资源管理器的详细信息。如果你想要了解如何创作模板，请参阅<!--[-->创作 Azure 资源管理器模板<!--](resource-group-authoring-templates)-->。
+可在[此处](/documentation/articles/virtual-machines-azurerm-versus-azuresm)了解有关 Azure 资源管理器的详细信息。如果你想要了解如何创作模板，请参阅<!--[-->创作 Azure 资源管理器模板<!--](/documentation/articles/resource-group-authoring-templates)-->。
 
 ## <a id="windowsvm"></a>任务：部署 Windows VM
 
@@ -374,9 +374,9 @@
 
 ### 步骤 2：获取 VHD。
 
-对于基于 Windows 的虚拟机，请参阅[创建 Windows Server VHD 并将其上载到 Azure](virtual-machines-create-upload-vhd-windows-server)。
+对于基于 Windows 的虚拟机，请参阅[创建 Windows Server VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)。
 
-对于基于 Linux 的虚拟机，请参阅[在 Azure 中创建和上载 Linux VHD](virtual-machines-linux-create-upload-vhd)。
+对于基于 Linux 的虚拟机，请参阅[在 Azure 中创建和上载 Linux VHD](/documentation/articles/virtual-machines-linux-create-upload-vhd)。
 
 ### 步骤 3：使用模板创建虚拟机。
 
@@ -782,7 +782,7 @@
 
 ## <a id="logon"></a>任务：登录到 Windows 虚拟机
 
-有关详细步骤，请参阅[如何登录到运行 Windows Server 的虚拟机](virtual-machines-log-on-windows-server)。
+有关详细步骤，请参阅[如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)。
 
 ## <a id="displayvm"></a>任务：显示有关虚拟机的信息
 
@@ -932,14 +932,14 @@
 
 ## 其他资源
 
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](virtual-machines-azurerm-versus-azuresm)
+[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
-<!--[-->Azure 资源管理器概述<!--](resource-group-overview)-->
+<!--[-->Azure 资源管理器概述<!--](/documentation/articles/resource-group-overview)-->
 
-[使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机](virtual-machines-deploy-rmtemplates-azure-cli)
+[使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
 [虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/)
 
-[如何安装和配置 Azure PowerShell](install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
 <!---HONumber=67-->

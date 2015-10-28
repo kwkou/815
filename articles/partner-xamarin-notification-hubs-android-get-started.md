@@ -437,7 +437,7 @@ Xamarin 组件应用商店中提供的 Google Cloud Messaging Client 可以简�
   [Google API]: http://go.microsoft.com/fwlink/p/?LinkId=268303
 
   [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/t
-  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
   [针对 Android 的通知中心操作指南]: http://msdn.microsoft.com/zh-cn/library/dn282661.aspx
 

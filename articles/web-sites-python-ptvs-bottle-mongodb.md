@@ -220,7 +220,6 @@ Azure.NET SDK 轻松实现将 Web 应用程序部署到 Azure。
 <!--Link references-->
 [Python 开发人员中心]: /develop/python/
 [Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
-
 <!--External Link references-->
 [Azure 管理门户]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/

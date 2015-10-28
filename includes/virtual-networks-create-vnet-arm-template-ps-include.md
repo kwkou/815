@@ -11,7 +11,7 @@
 
 	>[AZURE.WARNING]Switch-AzureMode cmdlet 将在不久后弃用。如果弃用，所有资源管理器 cmdlet 都将重命名。
 
-3. 如有必要，请运行 **New-AzureResourceGroup** cmdlet 来创建新资源组。以下命令在*“美国中部”*Azure 区域创建了一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](resource-group-overview#resource-groups)。
+3. 如有必要，请运行 **New-AzureResourceGroup** cmdlet 来创建新资源组。以下命令在*“美国中部”*Azure 区域创建了一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview#resource-groups)。
 
 		New-AzureResourceGroup -Name TestRG -Location centralus
 		

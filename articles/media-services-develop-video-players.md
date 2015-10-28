@@ -59,7 +59,7 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 
 随播 - 在播放器之外显示的广告
 
-广告可置于主视频时间线中的任何一个时间点。你必须告知播放器何时播放广告以及播放哪些广告。完成该操作需使用一组标准的基于 XML 的文件：视频广告服务模板 (VAST)、数字视频多广告播放列表 (VMAP)、媒体抽象排序模板 (MAST) 和数字视频播放器广告接口定义 (VPAID)。VAST 文件用于指定要显示哪些广告。VMAP 文件用于指定何时播放各种广告并且包含 VAST XML。MAST 文件是对包含 VAST XML 的广告进行排序的另一种方法。VPAID 文件用于定义视频播放器与广告或广告服务器之间的接口。有关详细信息，请参阅[插入广告](/documentation/articles/media-services-inserting-ads-on-client-side/)。
+广告可置于主视频时间线中的任何一个时间点。你必须告知播放器何时播放广告以及播放哪些广告。完成该操作需使用一组标准的基于 XML 的文件：视频广告服务模板 (VAST)、数字视频多广告播放列表 (VMAP)、媒体抽象排序模板 (MAST) 和数字视频播放器广告接口定义 (VPAID)。VAST 文件用于指定要显示哪些广告。VMAP 文件用于指定何时播放各种广告并且包含 VAST XML。MAST 文件是对包含 VAST XML 的广告进行排序的另一种方法。VPAID 文件用于定义视频播放器与广告或广告服务器之间的接口。有关详细信息，请参阅[插入广告](/documentation/articles/media-services-inserting-ads-on-client-side)。
 
 有关在实时流式处理视频中隐藏字幕和广告支持的详细信息，请参阅[受支持的隐藏字幕和广告插入标准](https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad)。
 

@@ -13,7 +13,7 @@
 
 > [AZURE.NOTE]
 > 
-- 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](active-directory-editions)。
+- 只有在升级到 Azure Active Directory 高级或基本版后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions)。
 - 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
 
 许多公司想要在他们管理的所有网站和服务上应用一致的外观，使得最终用户在需要使用这些站点时，不会感到困惑。Azure Active Directory 提供了此功能，它允许你自定义以下面向最终用户的网页的外观，使其包含你公司的徽标和颜色方案：
@@ -167,8 +167,8 @@ Azure AD 中的某些可自定义的元素具有多个用例。公司徽标可�
 
 ## 后续步骤
 
-- [Azure Active Directory 高级版入门](active-directory-get-started-premium)
-- [查看访问和使用情况报告](active-directory-view-access-usage-reports)
+- [Azure Active Directory 高级版入门](/documentation/articles/active-directory-get-started-premium)
+- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)
 
 <!--Image references-->
 [1]: ./media/active-directory-add-company-branding/SignInPage_beforecustomization.png

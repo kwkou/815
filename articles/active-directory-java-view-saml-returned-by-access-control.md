@@ -182,7 +182,7 @@
 
 若要进一步了解 ACS 的功能并尝试将其用于更复杂的方案，请参阅 [Access Control 服务 2.0][Access Control 服务 2.0]。
 
-  [如何使用 Eclipse 向 Azure Access Control 服务对 Web 用户进行身份验证]: ../active-directory-java-authenticate-users-access-control-eclipse
+  [如何使用 Eclipse 向 Azure Access Control 服务对 Web 用户进行身份验证]: active-directory-java-authenticate-users-access-control-eclipse
   [示例 SAML 输出]: ./media/active-directory-java-view-saml-returned-by-access-control/SAML_Output.png
   [后续步骤]: #next_steps
   [先决条件]: #pre

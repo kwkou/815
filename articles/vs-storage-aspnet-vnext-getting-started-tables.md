@@ -41,10 +41,11 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 有关详细信息，请参阅 [ASP.NET vNext][ASP.NET vNext]。
 
-  [入门]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-tables/
-  [发生了什么情况]: /documentation/articles/vs-storage-aspnet-vnext-what-happened/
-  [Blob]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-blobs/
-  [队列]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-queues/
-  [如何通过 .NET 使用表存储]: /documentation/articles/storage-dotnet-how-to-use-tables/#create-table "如何通过 .NET 使用表存储"
-  [vs-storage-getting-started-tables-include]: ../includes/vs-storage-getting-started-tables-include.md
+  [入门]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-tables
+  [发生了什么情况]: /documentation/articles/vs-storage-aspnet-vnext-what-happened
+  [Blob]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-blobs
+  [队列]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-queues
+  [如何通过 .NET 使用表存储]: /documentation/articles/storage-dotnet-how-to-use-tables#create-table "如何通过 .NET 使用表存储"
+  [vs-storage-getting-started-tables-include]: ..
+includes/vs-storage-getting-started-tables-include.md
   [ASP.NET vNext]: http://www.asp.net/vnext

@@ -179,9 +179,9 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 - **始终在数据库中执行联接操作。** 你经常需要合并来自两个或更多表的记录，且这些要合并的记录共享相同的字段（称为*联接*）。此操作涉及到同时从两个表中提取所有实体，然后循环访问所有实体，因此，如果未正确执行此操作，可能会降低效率。此类操作最好在数据库中执行，但有时却很容易误由客户端执行，或者在移动服务代码中执行。
     - 请不要在应用程序代码中执行联接
-    - 请不要在移动服务代码中执行联接。在使用 JavaScript 后端时，请注意，[table 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554210.aspx)不处理联接。请务必直接使用 [mssql 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx)，以确保在数据库中执行联接。有关详细信息，请参阅[联接关系表](/documentation/articles/mobile-services-how-to-use-server-scripts/#joins)。如果使用 .NET 后端，并且通过 LINQ 查询，实体框架将在数据库级别自动处理联接。
+    - 请不要在移动服务代码中执行联接。在使用 JavaScript 后端时，请注意，[table 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554210.aspx)不处理联接。请务必直接使用 [mssql 对象](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx)，以确保在数据库中执行联接。有关详细信息，请参阅[联接关系表](/documentation/articles/mobile-services-how-to-use-server-scripts#joins)。如果使用 .NET 后端，并且通过 LINQ 查询，实体框架将在数据库级别自动处理联接。
 - **实现分页。** 查询数据库有时可能会导致大量记录返回到客户端。为了尽可能减少操作的大小和延迟，请考虑实现分页。
-    - 默认情况下，你的移动服务将所有传入的查询限制在大小为 50 的页面中，但您可以手动请求多达 1000 条记录。有关详细信息，请参阅适用于 [Windows 应用商店](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging)、[iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library/#paging)、[Android](/documentation/articles/mobile-services-android-how-to-use-client-library/#paging)、[HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library/#paging) 和 [Xamarin](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/#paging) 的“在页中返回数据”。
+    - 默认情况下，你的移动服务将所有传入的查询限制在大小为 50 的页面中，但您可以手动请求多达 1000 条记录。有关详细信息，请参阅适用于 [Windows 应用商店](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#paging)、[iOS](/documentation/articles/mobile-services-ios-how-to-use-client-library#paging)、[Android](/documentation/articles/mobile-services-android-how-to-use-client-library#paging)、[HTML/JavaScript](/documentation/articles/mobile-services-html-how-to-use-client-library#paging) 和 [Xamarin](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library#paging) 的“在页中返回数据”。
     - 通过移动服务代码进行的查询没有默认页面大小。如果您的应用不实现分页，也不用作防御措施，请考虑将默认限制应用于您的查询。在 JavaScript 后端是，对 [query 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx)使用 **take** 运算符。如果你使用 .NET 后端，请考虑以 [Take 方法] (http://msdn.microsoft.com/zh-cn/library/vstudio/bb503062(v=vs.110).aspx) 作为 LINQ 查询的一部分。  
 
 有关改进查询设计的详细信息，请参阅本文末尾的[高级查询设计](#AdvancedQuery)。
@@ -191,8 +191,8 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 
 假设您要向所有客户发送推送通知，提醒他们查看应用中的新内容。他们点击该通知时，该应用将启动，这样可能会触发调用您的移动服务，并根据 SQL Database 执行查询。由于可能会有数百万客户在仅仅几分钟的跨度内执行该操作，将形成 SQL 负载高峰，该峰值大大高于您应用的稳定状态负载。通过在峰值期间将应用扩展到更高版本的 SQL 层，然后再回缩可解决这种问题，但这种解决方法需要手动干预，并且会导致成本上升。通常，细微调整移动服务体系结构可显著平衡访问 SQL Database 的负载客户端，并消除问题需求峰值。这些调整通常可以轻松执行，而对客户体验的影响可降至最低。下面是一些示例：
 
-- **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](notification-hubs-windows-store-dotnet-send-breaking-news)。
-- **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
+- **将负载分散到不同时间。** 如果你对特定事件（例如广播推送通知）的执行时间进行控制，并预期这些事件会产生需求上的高峰，且这些事件的执行时间并不重要，请考虑将其分散到不同时间。在上述示例中，或许你的应用程序客户可以在一天的不同时间分批获取新应用程序内容的通知，而无需在几乎相同的时间获取。请考虑将客户分成允许交错传送到每个批的组。使用通知中心时，应用附加标记以跟踪批，然后将推送通知传送到该标记，这样便可提供实现此策略的简单途径。有关标记的详细信息，请参阅[使用通知中心发送突发新闻](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)。
+- **在可能的情况下使用 Blob 和表存储。** 客户在高峰期所查看的内容经常是较为静态的，且不需要存储在 SQL 数据库中，因为你不可能需要对该内容的关系查询功能。在此情况下，请考虑将内容存储在 Blob 或表存储中。你可以直接从设备访问 Blob 存储中的公共 Blob。若要以安全方式访问 Blob 或使用表存储，必须通过移动服务自定义 API 保护存储访问密钥。有关详细信息，请参阅[使用移动服务将图像上载到 Azure 存储空间](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage)。
 
 
 <a name="Advanced"></a>
@@ -202,7 +202,7 @@ Azure 移动服务可轻松启动和构建连接云托管后端的应用，从�
 ###  先决条件
 若要执行本部分的诊断任务，你需要访问 SQL database 的管理工具，比如 **SQL Server Management Studio** 或内置于 **Azure 管理门户**的管理功能。
 
-SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](virtual-machines-windows-tutorial)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
+SQL Server Management Studio 是一个免费 Windows 应用，可提供最先进的功能。如果你无法访问 Windows 计算机（例如，你使用的是 Mac），请考虑按照[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)中的说明在 Azure 中设置虚拟机，然后远程连接到该虚拟机。如果你使用 VM 的主要目的是运行 SQL Server Management Studio，则一个**基本 A0**（以前称为“超小型”）实例应该够用。
 
 Azure 管理门户可提供内置管理体验，虽然限制更多，但无需本地安装即可提供。
 
@@ -363,7 +363,7 @@ Azure 管理门户可提供内置管理体验，虽然限制更多，但无需�
       AND migs_adv.index_advantage > 10
     ORDER BY migs_adv.index_advantage DESC;
 
-有关详细信息，请参阅[使用动态管理视图监视 SQL Database][] 和[缺失索引动态管理视图](sys-missing-index-stats)。
+有关详细信息，请参阅[使用动态管理视图监视 SQL Database][] 和[缺失索引动态管理视图](/documentation/articles/sys-missing-index-stats)。
 
 <a name="AdvancedQuery" /></a>
 ###  高级查询设计 

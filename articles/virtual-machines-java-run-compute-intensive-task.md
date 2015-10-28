@@ -517,5 +517,4 @@
 [properties_pane]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_06_PropertiesPane.jpg
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
 [add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
-
 <!---HONumber=70-->

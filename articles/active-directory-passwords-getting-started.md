@@ -72,7 +72,7 @@
 
     ![][004]
 
-6.	若要配置用户密码重置策略，请将“可进行密码重置的用户”开关滑动到“是”设置。这将显示更多控件，通过这些控件你可以配置此功能在目录中的工作方式。根据需要随意自定义密码重置。如果你想详细了解每个密码重置策略控件的作用，请参阅[自定义：Azure AD 密码管理](active-directory-passwords-customize)。
+6.	若要配置用户密码重置策略，请将“可进行密码重置的用户”开关滑动到“是”设置。这将显示更多控件，通过这些控件你可以配置此功能在目录中的工作方式。根据需要随意自定义密码重置。如果你想详细了解每个密码重置策略控件的作用，请参阅[自定义：Azure AD 密码管理](/documentation/articles/active-directory-passwords-customize)。
 
     ![][005]
 
@@ -91,7 +91,7 @@
 -	通过将用户引导至位于 [http://aka.ms/ssprsetup](http://aka.ms/ssprsetup) 的注册门户，使用户能够注册其自己的数据
 -	要求用户在登录到位于 [http://myapps.microsoft.com](http://myapps.microsoft.com) 的访问面板时注册以进行密码重置，方法是将“登录到访问面板时要求用户注册”SSPR 配置选项设置为“是”。
 
-如果你想要详细了解密码重置使用哪些数据，以及此数据的任何格式要求，请参阅[密码重置使用哪些数据？](active-directory-passwords-learn-more#what-data-is-used-by-password-reset)
+如果你想要详细了解密码重置使用哪些数据，以及此数据的任何格式要求，请参阅[密码重置使用哪些数据？](/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset)
 
 #### 通过用户注册门户添加用户联系人数据
 1.	为使用密码重置注册门户，你必须为你所在组织的用户提供指向此页面的链接 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup))，或者启用要求用户自动注册的选项。一旦他们单击此链接，系统将要求他们使用组织帐户登录。这样做之后，他们将看到以下页面：

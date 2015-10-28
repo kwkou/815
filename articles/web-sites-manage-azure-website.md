@@ -29,7 +29,7 @@
 
 ### 配置
 
-使用 [Azure 门户](https://manage.windowsazure.cn)设置各种配置选项。有关详细信息，请参阅 [Azure 网站中的 /documentation/articles/Configure Web 应用](web-sites-configure)。下面是快速核对清单：
+使用 [Azure 门户](https://manage.windowsazure.cn)设置各种配置选项。有关详细信息，请参阅 [Azure 网站中的 /documentation/articles/Configure Web 应用](/documentation/articles/web-sites-configure)。下面是快速核对清单：
 
 - 如有需要，请选择针对 .NET、PHP、Java 或 Python 的**运行时版本**。
 - 如果您的 Web 应用使用 WebSocket 协议，请启用 **WebSocket**。（这包括使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio) 的应用。）

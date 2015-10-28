@@ -51,12 +51,9 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /documentation/articles/mobile-services-windows-store-get-started
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
-
-
 [定义支持定期通知的自定义 API]: /documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
-
 <!---HONumber=71-->

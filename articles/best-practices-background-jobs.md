@@ -117,7 +117,7 @@ Azure Web 作业具有以下特征：
 
 ### 详细信息
 
-- [有关 Azure Web 作业的推荐资源](websites-webjobs-resources/)列出了 Web 作业的许多有用资源、下载内容和示例。
+- [有关 Azure Web 作业的推荐资源](/documentation/articles/websites-webjobs-resources)列出了 Web 作业的许多有用资源、下载内容和示例。
 
 ## Azure 云服务 Web 和辅助角色
 
@@ -158,7 +158,7 @@ Azure Web 作业具有以下特征：
 ### 详细信息
 
 - [计算资源整合模式](http://msdn.microsoft.com/zh-cn/library/dn589778.aspx)
-- [Azure WebJobs SDK 入门](websites-dotnet-webjobs-sdk-get-started/)
+- [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 
 ## Azure 虚拟机
 
@@ -306,7 +306,7 @@ Web 角色和辅助角色在启动、运行和停止时会经历一组不同的�
 - [执行后台任务](http://msdn.microsoft.com/zh-cn/library/ff803365.aspx)
 - [Azure 角色启动生命周期](http://blog.syntaxc4.net/post/2011/04/13/windows-azure-role-startup-life-cycle.aspx)（博客文章）
 - [Azure 云服务角色生命周期](http://channel9.msdn.com/Series/Windows-Azure-Cloud-Services-Tutorials/Windows-Azure-Cloud-Services-Role-Lifecycle)（视频）
-- [Azure WebJobs SDK 入门](websites-dotnet-webjobs-sdk-get-started/)
+- [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 - [Azure 队列和服务总线队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/hh767287.aspx)
 - [如何在云服务中启用诊断](http://msdn.microsoft.com/zh-cn/library/dn482131.aspx)
 

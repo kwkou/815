@@ -52,9 +52,9 @@
 [15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data/
-[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users/
-[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push/
+[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data
+[身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
+[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [Android SDK]: http://developer.android.com/sdk/
 [Android Studio]: https://developer.android.com/sdk/index.html
 [移动服务 Android SDK]: https://github.com/Azure/azure-mobile-services/blob/master/CHANGELOG.ios.md#sdk-downloads

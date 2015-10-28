@@ -5,12 +5,12 @@
 # 在服务管理模式下使用 Azure PowerShell 的常见 VM 任务
 
 > [AZURE.SELECTOR]
-> - [Resource Manager](virtual-machines-manage-powershell-resource-management)
-> - [Service Management](virtual-machines-manage-powershell-service-management)
+> - [Resource Manager](/documentation/articles/virtual-machines-manage-powershell-resource-management)
+> - [Service Management](/documentation/articles/virtual-machines-manage-powershell-service-management)
 
 每天执行的许多管理 VM 的任务都可通过在服务管理模式下使用 Azure PowerShell cmdlet 自动执行。本文提供较简单任务的示例命令，并提供演示更复杂任务的命令的文章链接。
 
->[AZURE.NOTE]如果你尚未安装和配置 Azure PowerShell，则可以在[此处](install-configure-powershell)获取相关说明。
+>[AZURE.NOTE]如果你尚未安装和配置 Azure PowerShell，则可以在[此处](/documentation/articles/install-configure-powershell)获取相关说明。
 
 ## 如何使用示例命令
 你需要将命令中的一些文本替换为适合你的环境的文本。< and > 符号指示需要替换的文本。替换文本时，请删除符号，但将引号保留在原处。
@@ -76,7 +76,7 @@
 
 ## 创建 Windows VM
 
-若要在 Azure 中创建新的基于 Windows 的虚拟机，请使用[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](virtual-machines-ps-create-preconfigure-windows-vms)中的说明。本主题指导你逐步完成创建 PowerShell 命令集，以创建可预先配置以下项的 Windows 虚拟机：
+若要在 Azure 中创建新的基于 Windows 的虚拟机，请使用[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)中的说明。本主题指导你逐步完成创建 PowerShell 命令集，以创建可预先配置以下项的 Windows 虚拟机：
 
 - Active Directory 域成员身份
 - 附加磁盘

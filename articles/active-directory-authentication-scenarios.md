@@ -178,7 +178,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅 Web 浏览器到 Web 应用程序方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[Web 浏览器到 Web 应用程序](active-directory-code-samples#web-browser-to-web-application)。
+请参阅 Web 浏览器到 Web 应用程序方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[Web 浏览器到 Web 应用程序](/documentation/articles/active-directory-code-samples#web-browser-to-web-application)。
 
 
 #### 注册
@@ -236,7 +236,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅单页面应用程序 (SPA) 方案的代码示例。请经常回来查看 - 我们会不时地添加新示例。[单页面应用程序 (SPA)](active-directory-code-samples#single-page-application-spa)。
+请参阅单页面应用程序 (SPA) 方案的代码示例。请经常回来查看 - 我们会不时地添加新示例。[单页面应用程序 (SPA)](/documentation/articles/active-directory-code-samples#single-page-application-spa)。
 
 
 #### 注册
@@ -295,7 +295,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅本机应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[本机应用程序到 Web API](active-directory-code-samples#native-application-to-web-api)。
+请参阅本机应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[本机应用程序到 Web API](/documentation/articles/active-directory-code-samples#native-application-to-web-api)。
 
 
 #### 注册
@@ -383,7 +383,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 #### 代码示例
 
-请参阅 Web 应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](active-directory-code-samples#web-application-to-web-api)。
+请参阅 Web 应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples#web-application-to-web-api)。
 
 
 #### 注册
@@ -441,7 +441,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 #### 代码示例
 
-请参阅后台或服务器应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[服务器或守护程序应用程序到 Web API](active-directory-code-samples#server-or-daemon-application-to-web-api)
+请参阅后台或服务器应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[服务器或守护程序应用程序到 Web API](/documentation/articles/active-directory-code-samples#server-or-daemon-application-to-web-api)
 
 #### 注册
 
@@ -458,7 +458,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 
 ### 概念
-[Azure Active Directory 代码示例](active-directory-code-samples)
+[Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
 
 [有关 Azure AD 中签名密钥滚动更新的重要信息](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx)
 

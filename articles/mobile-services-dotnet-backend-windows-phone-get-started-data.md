@@ -257,7 +257,6 @@
 [Get started with data]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push
-
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/

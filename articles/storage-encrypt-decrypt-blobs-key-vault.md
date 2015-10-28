@@ -20,7 +20,7 @@
 
 **估计完成时间：**20 分钟。
 
-有关 Azure 密钥保管库的概述信息，请参阅<!--[-->什么是 Azure 密钥保管库？<!--](key-vault/key-vault-whatis.md)-->
+有关 Azure 密钥保管库的概述信息，请参阅<!--[-->什么是 Azure 密钥保管库？<!--](/documentation/articles/key-vault-whatis)-->
 
 有关 Azure 存储空间的客户端加密的概述信息，请参阅 [Microsoft Azure 存储空间客户端加密 – 预览](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/28/client-side-encryption-for-microsoft-azure-storage-preview.aspx)
 
@@ -47,7 +47,7 @@
 
 
 ## 设置您的 Azure 密钥保管库
-若要继续本教程，您需要执行教程中所述的以下操作：<!--[-->开始使用 Azure 密钥保管库<!--](key-vault/key-vault-get-started.md)-->
+若要继续本教程，您需要执行教程中所述的以下操作：<!--[-->开始使用 Azure 密钥保管库<!--](/documentation/articles/key-vault-get-started)-->
 
 - 创建密钥保管库
 - 将密钥或密码添加到密钥保管库

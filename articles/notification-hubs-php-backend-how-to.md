@@ -258,5 +258,4 @@
 
 [PHP REST 包装器示例]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [入门的教程]: /documentation/articles/notification-hubs-ios-get-started
-
 <!---HONumber=67-->

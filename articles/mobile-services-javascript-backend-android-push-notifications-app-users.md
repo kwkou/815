@@ -74,7 +74,7 @@
 
 ## 更新应用程序以要求在注册之前登录
 
-[AZURE.INCLUDE [mobile-services-android-push-notifications-app-users](mobile-services-android-push-notifications-app-users)]
+[AZURE.INCLUDE [mobile-services-android-push-notifications-app-users](/documentation/articles/mobile-services-android-push-notifications-app-users)]
 
 ## 测试应用程序
 
@@ -82,7 +82,7 @@
 
 <!---##Next steps
 
-In the next tutorial, [Service-side authorization of Mobile Services users](mobile-services-javascript-backend-service-side-authorization.md), you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. Learn more about how to use Mobile Services with .NET in [Mobile Services .NET How-to Conceptual Reference]-->
+In the next tutorial, [Service-side authorization of Mobile Services users](/documentation/articles/mobile-services-javascript-backend-service-side-authorization), you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. Learn more about how to use Mobile Services with .NET in [Mobile Services .NET How-to Conceptual Reference]-->
 
 
 <!-- URLs. -->
@@ -92,5 +92,4 @@ In the next tutorial, [Service-side authorization of Mobile Services users](mobi
 [推送通知入门]: mobile-services-javascript-backend-android-get-started-push
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-
 <!---HONumber=HO63-->

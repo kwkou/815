@@ -143,7 +143,7 @@ AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[Department](
 [DepartmentID] [int] NOT NULL,
-[Name] [nvarchar](50) NOT NULL,
+[Name] [nvarchar](/documentation/articles/50) NOT NULL,
 [Budget] [money] NOT NULL,
 [StartDate] [datetime] NOT NULL,
 [Administrator] [int] NULL,
@@ -162,8 +162,8 @@ AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[Person](
 [PersonID] [int] IDENTITY(1,1) NOT NULL,
-[LastName] [nvarchar](50) NOT NULL,
-[FirstName] [nvarchar](50) NOT NULL,
+[LastName] [nvarchar](/documentation/articles/50) NOT NULL,
+[FirstName] [nvarchar](/documentation/articles/50) NOT NULL,
 [HireDate] [datetime] NULL,
 [EnrollmentDate] [datetime] NULL,
 CONSTRAINT [PK_School.Student] PRIMARY KEY CLUSTERED   
@@ -181,8 +181,8 @@ AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[OnsiteCourse](
 [CourseID] [int] NOT NULL,
-[Location] [nvarchar](50) NOT NULL,
-[Days] [nvarchar](50) NOT NULL,
+[Location] [nvarchar](/documentation/articles/50) NOT NULL,
+[Days] [nvarchar](/documentation/articles/50) NOT NULL,
 [Time] [smalldatetime] NOT NULL,
 CONSTRAINT [PK_OnsiteCourse] PRIMARY KEY CLUSTERED 
     (
@@ -199,7 +199,7 @@ AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[OnlineCourse](
 [CourseID] [int] NOT NULL,
-[URL] [nvarchar](100) NOT NULL,
+[URL] [nvarchar](/documentation/articles/100) NOT NULL,
 CONSTRAINT [PK_OnlineCourse] PRIMARY KEY CLUSTERED 
     (
 [CourseID] ASC
@@ -250,7 +250,7 @@ AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[Course](
 [CourseID] [int] NOT NULL,
-[Title] [nvarchar](100) NOT NULL,
+[Title] [nvarchar](/documentation/articles/100) NOT NULL,
 [Credits] [int] NOT NULL,
 [DepartmentID] [int] NOT NULL,
 CONSTRAINT [PK_School.Course] PRIMARY KEY CLUSTERED 
@@ -268,7 +268,7 @@ AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[OfficeAssignment](
 [InstructorID] [int] NOT NULL,
-[Location] [nvarchar](50) NOT NULL,
+[Location] [nvarchar](/documentation/articles/50) NOT NULL,
 [Timestamp] [timestamp] NOT NULL,
 CONSTRAINT [PK_OfficeAssignment] PRIMARY KEY CLUSTERED 
     (

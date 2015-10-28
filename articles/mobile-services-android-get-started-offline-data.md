@@ -211,10 +211,8 @@ One thing which is important to point out: if there are pending changes in the l
 [Get started with data]: /documentation/articles/mobile-services-android-get-started-data
 [Handling Conflicts with Offline Support for Mobile Services]: /documentation/articles/mobile-services-android-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
-
 [云覆盖：Azure 移动服务中的脱机同步]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Aazure Friday：Azure 移动服务中支持脱机的应用]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
 [移动服务快速入门教程]: /documentation/articles/mobile-services-android-get-started
-
 <!---HONumber=71-->

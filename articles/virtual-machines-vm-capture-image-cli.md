@@ -137,14 +137,10 @@ Azure 将此模板视为一个映像并将其存储在你的映像列表中。�
 有关更多详细信息和其他命令，请访问 [Azure CLI 文档页面][]。
 
 
-[Azure CLI 文档页面]: /documentation/articles/virtual-machines-command-line-tools/
-
-[如何登录到运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on/
-
+[Azure CLI 文档页面]: /documentation/articles/virtual-machines-command-line-tools
+[如何登录到运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on
 [关于 Azure 中的虚拟机映像]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 
-[如何创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom/
-
-[如何将数据磁盘附加到虚拟机]: /documentation/articles/storage-windows-attach-disk/
-
+[如何创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
+[如何将数据磁盘附加到虚拟机]: /documentation/articles/storage-windows-attach-disk
 <!--HONumber=50-->

@@ -533,5 +533,4 @@
   [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-how-to-use-queues
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [executionmodels]: /documentation/articles/fundamentals-application-models
-
 <!---HONumber=71-->

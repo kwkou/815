@@ -46,15 +46,14 @@
 [1]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-services-live-connect-add-app.png
 [2]: ./media/mobile-services-how-to-register-microsoft-authentication/mobile-live-connect-app-api-settings.png
 <!-- URLs. -->
-[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-how-to-register-windows-live-connect-single-sign-on/
+[Single sign-on for Windows Store apps by using Live Connect]: /documentation/articles/mobile-services-how-to-register-windows-live-connect-single-sign-on
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
-[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push/
-[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts/
-[JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-js/
-
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Get started with authentication]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
+[JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-js
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=HO63-->

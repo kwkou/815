@@ -99,7 +99,7 @@
         }
     }
 
-若要了解有关使用 .NET 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](mobile-services-dotnet-backend-schedule-recurring-tasks)
+若要了解有关使用 .NET 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
 
 
 
@@ -140,7 +140,7 @@
         }});
     }
 
-若要了解有关使用 JavaScript 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](mobile-services-schedule-recurring-tasks)。
+若要了解有关使用 JavaScript 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](/documentation/articles/mobile-services-schedule-recurring-tasks)。
 
 
 

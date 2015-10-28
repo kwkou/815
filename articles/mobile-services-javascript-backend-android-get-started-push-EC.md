@@ -195,23 +195,20 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Get started with Mobile Services]: mobile-services-android-get-started
-[数据处理入门]:mobile-services-android-get-started-data 
-[身份验证入门]: mobile-services-android-get-started-users 
+[数据处理入门]: mobile-services-android-get-started-data
+[身份验证入门]: mobile-services-android-get-started-users
 [推送通知入门]:/develop/mobile/tutorials/get-started-with-push-js 
 [向应用程序用户推送通知]:/develop/mobile/tutorials/push-notifications-to-users-js 
 [使用脚本为用户授权]:/develop/mobile/tutorials/authorize-users-in-scripts-js 
 [JavaScript 和 HTML]:/develop/mobile/tutorials/get-started-with-push-js 
 [设置 Google Play Services SDK]:http://go.microsoft.com/fwlink/?LinkId=389801 
 [Azure 管理门户]:https://manage.windowsazure.com/ 
-[如何使用适用于移动服务的 Android 客户端库]:mobile-services-android-how-to-use-client-library
-
+[如何使用适用于移动服务的 Android 客户端库]: mobile-services-android-how-to-use-client-library
 [gcm 对象]:http://go.microsoft.com/fwlink/p/?LinkId=282645
 
 [移动服务服务器脚本参考]: http://go.microsoft.com/fwlink/?LinkId=262293
 
 [Send push notifications to authenticated users]: mobile-services-javascript-backend-android-push-notifications-app-users
-
 [什么是通知中心？]: notification-hubs-overview
 [Send broadcast notifications to subscribers]: notification-hubs-android-send-breaking-news
 [Send template-based notifications to subscribers]: notification-hubs-android-send-localized-breaking-news
-

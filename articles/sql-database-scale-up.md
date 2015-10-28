@@ -24,7 +24,7 @@
 
 ## 更改服务层 
 
-使用[将 SQL 数据库 Web/企业数据库升级到新服务层](sql-database-upgrade-new-service-tiers)和 [Azure SQL 数据库 服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)中的信息，确定适合你的 Azure SQL 数据库 的服务层和性能级别。
+使用[将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)和 [Azure SQL 数据库 服务层和性能级别](https://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)中的信息，确定适合你的 Azure SQL 数据库 的服务层和性能级别。
 
 你可以使用 Azure 管理门户、[PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx) 在任何服务层之间轻松转移。
 
@@ -46,7 +46,7 @@
 - 企业和 Web 服务层将于 2015 年 9 月停用。有关详细信息，请参阅 [Web 和企业版停用常见问题](https://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
 
 <注意事项>
-- 必须注意，[联合的当前实现将随 Web 和企业服务层一起停用](https://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。建议你使用 [Azure SQL 数据库 的弹性缩放](sql-database-elastic-scale-get-started)在 Azure SQL 数据库 上生成分片的向外扩展解决方案。若要试用弹性缩放，请参阅"Azure SQL 数据库 弹性缩放预览版入门"。
+- 必须注意，[联合的当前实现将随 Web 和企业服务层一起停用](https://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。建议你使用 [Azure SQL 数据库 的弹性缩放](/documentation/articles/sql-database-elastic-scale-get-started)在 Azure SQL 数据库 上生成分片的向外扩展解决方案。若要试用弹性缩放，请参阅"Azure SQL 数据库 弹性缩放预览版入门"。
 
 ## 升级到更高的服务层
 使用以下方法之一可以升级数据库。这些步骤专门用于升级到高级服务层，不过也适用于所有升级。

@@ -203,7 +203,7 @@
 	-	名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
 	-	用户主体名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - 用于唯一标识组织中的用户。
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
-	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 AD FS 进行身份验证的 ASP.NET MVC 业务线应用程序](/documentation/articles/web-sites-dotnet-lob-application-adfs/#bkmk_crud)中的**添加 LOB 功能**部分。
+	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 AD FS 进行身份验证的 ASP.NET MVC 业务线应用程序](/documentation/articles/web-sites-dotnet-lob-application-adfs#bkmk_crud)中的**添加 LOB 功能**部分。
 
 	<div class="wa-note">
 	<span class="wa-icon-bulb"></span>

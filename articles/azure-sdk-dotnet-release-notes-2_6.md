@@ -14,7 +14,7 @@
 
 本文档包含 Azure SDK for .NET 2.6 发行版的发行说明。
 
-使用 Azure SDK 2.6，你可以开发针对 .NET 4.5.2 或 .NET 4.6 的云服务应用程序 (PaaS)，前提是你在云服务角色上手动安装目标 .NET Framework。请参阅[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet/)。
+使用 Azure SDK 2.6，你可以开发针对 .NET 4.5.2 或 .NET 4.6 的云服务应用程序 (PaaS)，前提是你在云服务角色上手动安装目标 .NET Framework。请参阅[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet)。
 
 
 ##Service Bus 更新
@@ -35,7 +35,7 @@
 
 	HDInsight Tools for Visual Studio 现在支持连接到 HDInsight Emulator，因此，你可以在本地开发 Hive 脚本而不会引入任何成本，然后再针对 HDInsight 群集执行这些脚本即可。
 
-	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
+	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started)。
 
 - **针对泛型 Hadoop 群集的 HDInsight Tools for Visual Studio 支持**（预览版）
 
@@ -45,7 +45,7 @@
 	- 通过增强型 IntelliSense/自动完成支持编写 Hive 查询； 
 	- 在你的群集中通过直观的 UI 查看所有作业。 
 
-	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
+	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started)。
 
 ##角色中缓存更新
 

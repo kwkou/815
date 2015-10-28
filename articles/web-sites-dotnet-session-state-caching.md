@@ -28,7 +28,7 @@
 * [使用会话对象存储和检索缓存项。](#usesessionobject)
 
 ##<a id="createcache"></a>创建缓存
-遵照[这些指示](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-cache)创建缓存。
+遵照[这些指示](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-cache)创建缓存。
 
 ##<a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用程序
 安装 NuGet `RedisSessionStateProvider` 包。从包管理器控制台（“工具”>“NuGet 包管理器”>“包管理器控制台”）使用以下命令进行安装：
@@ -37,7 +37,7 @@
   
 若要从“工具”>“NuGet 包管理器”>“管理解决方案的 NuGet 包”进行安装，请搜索 `RedisSessionStateProvider`。
 
-有关详细信息，请参阅 [NuGet RedisSessionStateProvider 页](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/)和[配置缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#NuGet)。
+有关详细信息，请参阅 [NuGet RedisSessionStateProvider 页](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/)和[配置缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#NuGet)。
 
 ##<a id="configurewebconfig"></a>修改 Web.config 文件。
 除了为缓存生成程序集引用，NuGet 包还在 *web.config* 文件中添加存根项。

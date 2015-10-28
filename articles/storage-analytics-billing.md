@@ -49,6 +49,6 @@
 
 [关于存储分析日志记录](https://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)
 
-[关于存储分析度量值](../storage-about-analytics-metrics.md) 
+[关于存储分析度量值](/documentation/articles/storage-about-analytics-metrics) 
 
 <!--HONumber=50-->

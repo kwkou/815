@@ -11,7 +11,7 @@
 ##利用 Azure 虚拟机上的 RAID 
 存储是影响云环境中的数据库性能的关键因素。与单个磁盘相比，RAID 可以通过并发访问提供更快的访问速度。有关更多详细信息，请参阅[标准 RAID 级别](http://zh.wikipedia.org/wiki/Standard_RAID_levels)。
 
-通过 RAID 可大幅提升 Azure 中的磁盘 I/O 吞吐量和 I/O 响应时间。我们的检验测试表明，随着 RAID 磁盘数量的加倍（从 2 到 4，从 4 到 8，等等），磁盘 I/O 吞吐量平均增加一倍，I/O 响应时间平均缩短一半。有关详细信息，请参阅[附录 A](AppendixA)。
+通过 RAID 可大幅提升 Azure 中的磁盘 I/O 吞吐量和 I/O 响应时间。我们的检验测试表明，随着 RAID 磁盘数量的加倍（从 2 到 4，从 4 到 8，等等），磁盘 I/O 吞吐量平均增加一倍，I/O 响应时间平均缩短一半。有关详细信息，请参阅[附录 A](/documentation/articles/AppendixA)。
 
 增加 RAID 级别时，除了磁盘 I/O，MySQL 性能也得到改善。有关详细信息，请参阅[附录 B](#AppendixB)。
 

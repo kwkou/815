@@ -6,8 +6,8 @@
 鉴于来自开源社区的反馈与建议，我们撷取了以下国内知名开源应用，为热衷于自己动手从头开始的开发者准备了其相应虚拟机安装配置指南。 当然，您随时可以使用 VM Depot 自带的[强大搜索功能](https://vmdepot.msopentech.cn/Help/Community/Finding.cshtml)，迅速找到并将其[部署到 Windows Azure](https://vmdepot.msopentech.cn/Help/Help.cshtml#using)。 
 
 ###开源大数据类###
-1. [Cobar](../articles/MSOpenTech_CobarVM_Install.md)
-2. [Druid](../articles/MSOpenTech_DruidVM_Install.md)
+1. [Cobar](/documentation/articles/MSOpenTech_CobarVM_Install)
+2. [Druid](/documentation/articles/MSOpenTech_DruidVM_Install)
 3. mDrill
 4. otter
 5. Zeus

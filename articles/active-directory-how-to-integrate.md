@@ -24,9 +24,9 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 支持使用 Azure AD 作为登录应用程序的方式
 
-**减少登录问题并降低支持成本。** 如果使用 Azure AD 登录你的应用程序，你的用户不需要记住更多的名称和密码。作为开发人员，你可以减少要存储和保护的密码。无需重置忘记的密码，单凭这一点就能节省不少的精力。使用 Azure AD 可以登录世界上最热门的一些云应用程序，包括 Office 365 和 Windows Azure。Azure AD 包含了来自近 500 万家组织的 4.3 亿用户，你的用户很可能已经登录到了 Azure AD。了解有关[添加 Azure AD 登录支持](active-directory-authentication-scenarios)的详细信息。
+**减少登录问题并降低支持成本。** 如果使用 Azure AD 登录你的应用程序，你的用户不需要记住更多的名称和密码。作为开发人员，你可以减少要存储和保护的密码。无需重置忘记的密码，单凭这一点就能节省不少的精力。使用 Azure AD 可以登录世界上最热门的一些云应用程序，包括 Office 365 和 Windows Azure。Azure AD 包含了来自近 500 万家组织的 4.3 亿用户，你的用户很可能已经登录到了 Azure AD。了解有关[添加 Azure AD 登录支持](/documentation/articles/active-directory-authentication-scenarios)的详细信息。
 
-**简化应用程序注册。** 在注册你的应用程序期间，Azure AD 可以发送有关用户的基本信息，以便你可以预先填充注册表单，或者完全清除表单。用户可以使用其 Azure AD 帐户，通过社交媒体和移动应用程序中常见的许可体验注册你的应用程序。任何用户都可以注册和登录与 Azure AD 集成的应用程序，而无需 IT 人员的参与。了解有关[注册应用程序以使用 Azure AD 帐户登录](mobile-services-how-to-register-active-directory-authentication)的详细信息。
+**简化应用程序注册。** 在注册你的应用程序期间，Azure AD 可以发送有关用户的基本信息，以便你可以预先填充注册表单，或者完全清除表单。用户可以使用其 Azure AD 帐户，通过社交媒体和移动应用程序中常见的许可体验注册你的应用程序。任何用户都可以注册和登录与 Azure AD 集成的应用程序，而无需 IT 人员的参与。了解有关[注册应用程序以使用 Azure AD 帐户登录](/documentation/articles/mobile-services-how-to-register-active-directory-authentication)的详细信息。
 
 ### 浏览用户，管理用户设置，以及控制对应用程序的访问
 
@@ -68,13 +68,13 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **多因素身份验证。** Azure AD 提供本机多因素身份验证。IT 管理员可以要求访问应用程序之前经过多因素身份验证，因此你无需编写此项支持的代码。<!--Learn more about [Multi-Factor Authentication](http://azure.microsoft.com/documentation/services/multi-factor-authentication/).-->
 
-**异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。了解有关[查看 Azure Active Directory 访问报告](active-directory-view-access-usage-reports)的详细信息。
+**异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。了解有关[查看 Azure Active Directory 访问报告](/documentation/articles/active-directory-view-access-usage-reports)的详细信息。
 
 **条件性访问。** 除了多因素身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。了解有关 [Azure Active Directory 条件性访问](https://msdn.microsoft.com/zh-cn/library/azure/dn906873.aspx)的详细信息。
 
 ### 易于开发
 
-**行业标准协议。** Microsoft 承诺支持行业标准。Azure AD 支持 SAML 2.0、OpenID Connect 1.0、OAuth 2.0 和 WS-Federation 1.2 身份验证协议。Graph API 符合 OData 4.0 规范。如果你的应用程序已支持使用 SAML 2.0 或 OpenID Connect 1.0 进行联合登录，则可以直接添加对 Azure AD 的支持。了解有关 [Azure AD 支持的身份验证协议](active-directory-authentication-protocols)的详细信息。
+**行业标准协议。** Microsoft 承诺支持行业标准。Azure AD 支持 SAML 2.0、OpenID Connect 1.0、OAuth 2.0 和 WS-Federation 1.2 身份验证协议。Graph API 符合 OData 4.0 规范。如果你的应用程序已支持使用 SAML 2.0 或 OpenID Connect 1.0 进行联合登录，则可以直接添加对 Azure AD 的支持。了解有关 [Azure AD 支持的身份验证协议](/documentation/articles/active-directory-authentication-protocols)的详细信息。
 
 **开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 开放源代码库](https://msdn.microsoft.com/zh-cn/library/azure/dn151135.aspx)的详细信息。
 
@@ -84,8 +84,8 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ## 后续步骤
 
-[开始编写代码](active-directory-developers-guide#getting-started)。
+[开始编写代码](/documentation/articles/active-directory-developers-guide#getting-started)。
 
-[使用 Azure AD 登录用户](active-directory-authentication-scenarios)
+[使用 Azure AD 登录用户](/documentation/articles/active-directory-authentication-scenarios)
 
 <!---HONumber=60-->

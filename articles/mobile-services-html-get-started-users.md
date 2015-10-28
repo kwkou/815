@@ -130,9 +130,6 @@
 [移动服务入门]: /documentation/articles/mobile-services-html-get-started
 [Get started with data]: /documentation/articles/mobile-services-html-get-started-data
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library
- 
-
 <!---HONumber=71-->

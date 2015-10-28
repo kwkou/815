@@ -35,6 +35,6 @@
 
 <!--[使用网络配置文件配置虚拟网络](http://go.microsoft.com/fwlink/?LinkId=248094)-->
 
-- [关于管理门户中的虚拟网络设置](/documentation/articles/virtual-networks-settings/)
+- [关于管理门户中的虚拟网络设置](/documentation/articles/virtual-networks-settings)
 
 <!---HONumber=67-->

@@ -39,8 +39,8 @@
 
 ## 后续步骤
 
-- [管理 Azure AD](active-directory-administer)
-- [在 Azure AD 中创建或编辑用户](active-directory-create-users)
-- [在 Azure AD 中管理密码](active-directory-manage-passwords)
+- [管理 Azure AD](/documentation/articles/active-directory-administer)
+- [在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users)
+- [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords)
 
 <!--HONumber=57-->

@@ -40,7 +40,7 @@ Apache Cordova 可让你开发能够在移动设备上运行的完全成熟的 H
 
 如果你已经设置了这两个项目，请直接转到步骤 1。
 
-如果你没有 Azure AD 租户，可以[在此处了解如何获取租户](active-directory-howto-tenant)。
+如果你没有 Azure AD 租户，可以[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
 如果你没有在计算机上设置 Apache Cordova，请安装以下组件：
 
@@ -256,7 +256,7 @@ Azure AD 只会向已知的应用程序颁发令牌。在从应用程序使用 A
 
 此处提供了已完成示例（无需配置值）供你参考。现在，你可以转到更高级的（也更有趣）的案例。你可能想要尝试：
 
-[使用 Azure AD 保护 Node.js Web API>](active-directory-devquickstarts-webapi-nodejs)
+[使用 Azure AD 保护 Node.js Web API>](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
 有关更多资源，请参阅：
 - [GitHub 上的 AzureADSamples on >](https://github.com/AzureAdSamples) 

@@ -466,6 +466,4 @@
 [脱机数据处理入门]: mobile-services-ios-get-started-offline-data
 [Get started with Mobile Services]: mobile-services-ios-get-started
 [Get started with data]: mobile-services-ios-get-started-data
- 
-
 <!---HONumber=HO63-->

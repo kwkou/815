@@ -114,7 +114,7 @@ editor="LisaToft"/>
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn).
 2. 在左侧导航栏中单击"网站"。
 3. 单击左下角的"新建"，选择"计算">"网站">"自定义创建"，选择宿主计划和区域，为你的网站指定一个名称，例如 togo-contoso.chinacloudsites.cn。选择要使用的数据库，或者创建一个新数据库。单击"创建网站"。
-4. 在创建网站后，单击它进行管理。对于此组步骤，请下载 .publishsettings 文件并保存。还可以使用其他部署机制，例如从源控件。有关使用 .publishsettings 文件的更多信息，请参阅[如何：连接到订阅](/documentation/articles/install-configure-powershell/#Connect)。 
+4. 在创建网站后，单击它进行管理。对于此组步骤，请下载 .publishsettings 文件并保存。还可以使用其他部署机制，例如从源控件。有关使用 .publishsettings 文件的更多信息，请参阅[如何：连接到订阅](/documentation/articles/install-configure-powershell#Connect)。 
 
 ### 创建"待办事项 SPA"Azure 网站
 

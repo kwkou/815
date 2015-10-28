@@ -104,6 +104,5 @@ Azure 整理了一组区域对。在采用单实例配置的虚拟机的计划�
 
 <!--Link references-->
 [Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial
-[了解计划内与计划外维护]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance/
-
+[了解计划内与计划外维护]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance
 <!---HONumber=70-->

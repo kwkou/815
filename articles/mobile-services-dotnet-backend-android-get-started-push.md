@@ -109,9 +109,7 @@
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 
 [如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
-
 [向经过身份验证的用户发送推送通知]: /documentation/articles/mobile-services-dotnet-backend-android-push-notifications-app-users
-
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 [将广播通知发送到订户]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [将基于模板的通知发送到订户]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news

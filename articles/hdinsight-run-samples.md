@@ -35,7 +35,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
 - **一个 Azure 订阅**。请参阅 [azure-trial](/pricing/1rmb-trial/) 页。
 
-- **一个 HDInsight 群集**。有关可用于创建此类群集的不同方法的说明，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](hdinsight-provision-clusters)
+- **一个 HDInsight 群集**。有关可用于创建此类群集的不同方法的说明，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
 
 - **配备 Azure PowerShell 的工作站**。请参阅[如何安装和配置 Azure PowerShell][powershell-install-configure]。
 
@@ -65,25 +65,18 @@ HDInsight 随附了以下示例：
 * [在 HDInsight 中调试 Hadoop：错误消息][hdinsight-errors]
 
 
-[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs/
-
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
-
-
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
 [powershell-install-configure]: install-configure-powershell
-
 [hdinsight-get-started]: hdinsight-get-started
-
 [hdinsight-samples]: hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: hdinsight-sample-wordcount
-
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
-
 <!---HONumber=71-->

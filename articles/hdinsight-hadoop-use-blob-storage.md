@@ -301,11 +301,9 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-use-hive]: hdinsight-use-hive
 [hdinsight-use-pig]: hdinsight-use-pig
-
 [Powershell-install]: install-configure-powershell
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
 [azure-storage-create]: storage-create-storage-account
-
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png

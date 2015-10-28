@@ -71,13 +71,10 @@ If you have an existing subscription from Symantec for an on-premises solution, 
 [Portal]: http://manage.windowsazure.cn
 
 [Create]: /documentation/articles/virtual-machines-windows-tutorial
-
 [PS]: /documentation/articles/powershell-install-configure
-
 [Agent]: http://go.microsoft.com/fwlink/p/?LinkId=403947
 
 [Logon]: /documentation/articles/virtual-machines-log-on-windows-server
-
 [Ext]: https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 
 <!---HONumber=67-->

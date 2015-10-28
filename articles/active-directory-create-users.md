@@ -29,7 +29,7 @@
 	1. **你所在组织中的新用户** - 指示你想在你的目录中创建和管理的新用户帐户。
 	2. **另一个 Azure AD 目录中的用户** - 指示你要将另一个 Azure AD 目录中的用户帐户添加到你的目录。你需要成为另一个目录的成员才能选择该目录中的用户。 
 4. 基于你的选择，键入用户名或此用户通过其进行登录的 Microsoft 帐户名。
-5. 在该用户的"配置文件"页上，提供用户的名字和姓氏、用户友好名称，并从"角色"下拉菜单中选择用户角色。有关用户和管理员角色的详细信息，请参阅[在 Azure AD 中分配管理员角色](active-directory-assign-admin-roles)。
+5. 在该用户的"配置文件"页上，提供用户的名字和姓氏、用户友好名称，并从"角色"下拉菜单中选择用户角色。有关用户和管理员角色的详细信息，请参阅[在 Azure AD 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles)。
 6. 在"获取临时密码"页上，单击"创建"。
 
 如果你所在的组织使用多个域，在创建用户帐户时你应知道以下问题：
@@ -99,9 +99,9 @@
 
 ## 后续步骤
 
-- [管理 Azure AD](active-directory-administer)
-- [在 Azure AD 中管理密码](active-directory-manage-passwords)
-- [在 Azure AD 中管理组](active-directory-manage-groups)
+- [管理 Azure AD](/documentation/articles/active-directory-administer)
+- [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords)
+- [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups)
 
 <!--Image references-->
 

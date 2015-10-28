@@ -610,6 +610,6 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 	    }
 
-接下来，你可以生成客户端应用程序以访问服务。有关详细信息，请参阅[将移动服务添加到现有应用程序](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service)。
+接下来，你可以生成客户端应用程序以访问服务。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service)。
 
 <!---HONumber=71-->

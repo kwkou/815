@@ -156,11 +156,11 @@
 
 本教程演示了有关如何使 Windows Phone 8 应用程序处理移动服务中的数据的基础知识。建议你接下来阅读下列其他主题之一：
 
-* [向应用程序添加身份验证](mobile-services-windows-phone-get-started-users)<br/>了解如何对应用程序用户进行身份验证。
+* [向应用程序添加身份验证](/documentation/articles/mobile-services-windows-phone-get-started-users)<br/>了解如何对应用程序用户进行身份验证。
 
-* [向应用程序添加推送通知](mobile-services-javascript-backend-windows-phone-get-started-push)<br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
+* [向应用程序添加推送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)<br/>了解如何使用移动服务将非常基本的推送通知发送到应用程序。
  
-* [移动服务 C# 操作方法概念性参考 ](mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
+* [移动服务 C# 操作方法概念性参考 ](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)<br/>了解有关如何将移动服务与 .NET 一起使用的详细信息。
  
 <!-- Anchors. -->
 [Download the Windows Phone 8 app project]: #download-app

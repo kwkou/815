@@ -164,11 +164,8 @@
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 
 [移动服务服务器脚本参考]: mobile-services-how-to-use-server-scripts
-
 [Send push notifications to authenticated users]: mobile-services-javascript-backend-android-push-notifications-app-users
-
 [什么是通知中心？]: notification-hubs-overview
 [Send broadcast notifications to subscribers]: notification-hubs-android-send-breaking-news
 [Send template-based notifications to subscribers]: notification-hubs-android-send-localized-breaking-news
-
 <!---HONumber=HO63-->

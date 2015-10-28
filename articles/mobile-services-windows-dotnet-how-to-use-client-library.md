@@ -234,9 +234,9 @@
 + 更方便地合并不同表或数据库中的记录。
 + ID 值能够更好地与应用程序的逻辑相集成。
 
-如果插入的记录中未设置字符串 ID 值，移动服务将为 ID 生成唯一值。你可以在客户端上或在 .NET 移动后端服务中，使用 `Guid.NewGuid()` 方法生成自己的 ID 值。若要了解有关在 JavaScript 后端移动服务中生成 GUID 的详细信息，请参阅[如何：生成唯一的 ID 值](mobile-services-how-to-use-server-scripts#generate-guids)。
+如果插入的记录中未设置字符串 ID 值，移动服务将为 ID 生成唯一值。你可以在客户端上或在 .NET 移动后端服务中，使用 `Guid.NewGuid()` 方法生成自己的 ID 值。若要了解有关在 JavaScript 后端移动服务中生成 GUID 的详细信息，请参阅[如何：生成唯一的 ID 值](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids)。
 
-也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](virtual-machines-command-line-tools#Mobile_Tables)。
+也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables)。
 
 ## <a name="modifying"></a>如何：在移动服务中修改数据
 
@@ -298,9 +298,9 @@
 		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
 		}
 
-请注意，在此示例中，注册包含两个标记。有关详细信息，请参阅[向应用程序添加推送通知](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)
+请注意，在此示例中，注册包含两个标记。有关详细信息，请参阅[向应用程序添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)
 
->[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
+>[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
 
 
 ## <a name="optimisticconcurrency"></a>如何：使用乐观并发
@@ -683,10 +683,10 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 [UserID]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII control codes C0 and C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: virtual-machines-command-line-tools#Commands_to_manage_mobile_services
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Commands_to_manage_mobile_services
 [乐观并发教程]: mobile-services-windows-store-dotnet-handle-database-conflicts
-
-[IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx
+[IncludeTotalCount]: http:
+/msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx
 [Skip]: http://msdn.microsoft.com/zh-cn/library/azure/dn250573.aspx
 [Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler

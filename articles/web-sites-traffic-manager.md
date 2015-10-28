@@ -46,7 +46,7 @@ Azure 流量管理器使用三种不同的负载平衡方法。以下列表中�
 
 * 在将网站添加到配置文件后，该网站门户页面仪表板上的“站点 URL”将显示该网站的自定义域 URL（如果你已经设置好了一个）。否则，它将显示流量管理器配置文件 URL（例如，`contoso.trafficmgr.com`）。在网站的“配置”页面的“域名”部分下将可以看到网站的直接域名和流量管理器 URL。
 
-* 你的自定义域名将正常工作，但除了将它们添加到你的网站之外，你还必须配置 DNS 映射，使之指向流量管理器 URL。有关如何为 Azure 网站设置自定义域的信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。
+* 你的自定义域名将正常工作，但除了将它们添加到你的网站之外，你还必须配置 DNS 映射，使之指向流量管理器 URL。有关如何为 Azure 网站设置自定义域的信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 
 * 你只能将“标准”模式下的网站添加到 Azure 流量管理器配置文件。
 

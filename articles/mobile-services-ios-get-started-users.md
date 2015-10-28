@@ -36,7 +36,7 @@
 
 ##  <a name="next-steps"></a>后续步骤
 
-接下来，请学习[如何使用用户 ID 值来筛选返回的数据](mobile-services-javascript-backend-service-side-authorization)。
+接下来，请学习[如何使用用户 ID 值来筛选返回的数据](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)。
 
 <!-- Anchors. -->
 
@@ -70,5 +70,4 @@
 [Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-ios
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
-
 <!---HONumber=HO63-->

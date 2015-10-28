@@ -267,6 +267,4 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 [Azure CLI]: /documentation/articles/xplat-cli
 [storesendgrid]: /gallery/store/sendgrid/sendgrid-azure/
 [cdn]: /documentation/articles/cdn-how-to-use
- 
-
 <!---HONumber=71-->

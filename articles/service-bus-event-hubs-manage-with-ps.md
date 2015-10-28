@@ -268,5 +268,4 @@ catch [System.Exception]
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [安装和配置 Azure PowerShell]: /documentation/articles/install-configure-powershell
-
 <!---HONumber=71-->

@@ -105,7 +105,7 @@ PlayerRank 具有 Player 的外键。每个玩家各有零个或一个 PlayerRan
 	    }
 	}
 
-请注意，这两个类都继承自 **EntityData** 类。派生自 **EntityData** 可方便应用程序使用数据，并将跨平台客户端库用于 Azure 移动服务。**EntityData** 还可方便应用程序[处理数据库写入冲突](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts/)。
+请注意，这两个类都继承自 **EntityData** 类。派生自 **EntityData** 可方便应用程序使用数据，并将跨平台客户端库用于 Azure 移动服务。**EntityData** 还可方便应用程序[处理数据库写入冲突](/documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts)。
 
 `PlayerRank` 类具有指向相关 `Player` 实体的[导航属性](http://msdn.microsoft.com/zh-cn/data/jj713564.aspx)。**[ForeignKey]** 属性让 EF 知道 `Player` 属性表示外键。
 
@@ -755,5 +755,4 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 [处理数据库写入冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 [添加推送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-
 <!---HONumber=71-->

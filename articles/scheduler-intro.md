@@ -13,11 +13,11 @@
 
 # 计划程序是什么？
 
-Azure 计划程序允许你以声明方式描述要在云中运行的操作。然后，它自动计划并运行这些操作。Azure 计划程序使用 [Azure 门户](scheduler-get-started-portal)、代码、[REST API](https://msdn.microsoft.com/zh-cn/library/dn528946) 或 PowerShell 执行此操作。
+Azure 计划程序允许你以声明方式描述要在云中运行的操作。然后，它自动计划并运行这些操作。Azure 计划程序使用 [Azure 门户](/documentation/articles/scheduler-get-started-portal)、代码、[REST API](https://msdn.microsoft.com/zh-cn/library/dn528946) 或 PowerShell 执行此操作。
 
 Azure 计划程序维护、管理、计划并调用计划的工作。Azure 计划程序不托管任何工作负荷或运行任何代码。它仅_调用_别处托管的代码；该代码可以托管在 Azure 中、本地或与其他提供程序一起托管。它通过 HTTP、HTTPS 或存储队列调用。
 
-Azure 计划程序计划作业、保留用户可以询问的作业执行结果历史记录，并确切可靠地计划要运行的工作负荷。Azure 移动服务计划脚本、Azure Web 应用程序 WebJobs 及其他 Azure 计划功能在后台使用 Azure 计划程序。[计划程序 REST API](https://msdn.microsoft.com/zh-cn/library/dn528946) 可帮助管理这些操作的通信。因此，计划程序轻松地支持[复杂的计划以及高级重复执行](scheduler-advanced-complexity)。
+Azure 计划程序计划作业、保留用户可以询问的作业执行结果历史记录，并确切可靠地计划要运行的工作负荷。Azure 移动服务计划脚本、Azure Web 应用程序 WebJobs 及其他 Azure 计划功能在后台使用 Azure 计划程序。[计划程序 REST API](https://msdn.microsoft.com/zh-cn/library/dn528946) 可帮助管理这些操作的通信。因此，计划程序轻松地支持[复杂的计划以及高级重复执行](/documentation/articles/scheduler-advanced-complexity)。
 
 有几种方案适合使用 Azure 计划程序。例如：
 

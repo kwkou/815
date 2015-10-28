@@ -15,8 +15,8 @@
 #  我的项目发生了什么情况？
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-dotnet-getting-started)
-> - [What Happened](vs-mobile-services-dotnet-what-happened)
+> - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-dotnet-what-happened)
 
 ### <span id="whathappened">我的项目发生了什么情况？</span>
 

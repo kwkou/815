@@ -54,7 +54,7 @@
 5.    对于 **SplitMergeWorker** 角色，在 **WorkerRoleSynchronizationStorageAccountConnectionString** 设置中输入有效的连接字符串用于连接到 Azure 存储空间。
         
 ### 配置安全性
-有关配置服务安全性的详细说明，请参阅[拆分/合并安全配置](sql-database-elastic-scale-split-merge-security-configuration.md)。
+有关配置服务安全性的详细说明，请参阅[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)。
 
 为了简单地测试部署是否适用于完成此教程，将执行一组步数最少的配置步骤来使服务正常工作。仅一个计算机/帐户可以执行这些步骤，以便与服务进行通信。
 

@@ -18,7 +18,7 @@
 
 本主题说明如何向任何已注册设备上已经过身份验证的用户发送推送通知。与前面的[向应用程序添加推送通知]教程不同，本教程将指导你更改移动服务，以要求先对用户进行身份验证，然后，才可以将客户端注册到通知中心以发送推送通知。此外，你还要修改注册，以根据分配的用户 ID 添加标记。最后，服务器脚本会更新为仅对经过身份验证的用户 （而不是向所有注册用户）发送通知。
 
->[AZURE.NOTE]本教程支持 Windows Phone 8.0 和 Windows Phone 8.1 Silverlight 应用程序。对于 Windows Phone 8.1 应用商店应用程序，请参阅[本主题的 Windows 应用商店版本](mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)。
+>[AZURE.NOTE]本教程支持 Windows Phone 8.0 和 Windows Phone 8.1 Silverlight 应用程序。对于 Windows Phone 8.1 应用商店应用程序，请参阅[本主题的 Windows 应用商店版本](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)。
 
 ## 先决条件 
 
@@ -66,7 +66,7 @@
 
 ## <a name="update-app"></a>更新应用程序以要求在注册之前登录
 
-[AZURE.INCLUDE [mobile-services-windows-phone-push-notifications-app-users](mobile-services-windows-phone-push-notifications-app-users)]
+[AZURE.INCLUDE [mobile-services-windows-phone-push-notifications-app-users](/documentation/articles/mobile-services-windows-phone-push-notifications-app-users)]
 
 
 ## <a name="test"></a>测试应用程序

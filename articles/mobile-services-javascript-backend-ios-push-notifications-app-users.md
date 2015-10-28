@@ -67,10 +67,8 @@ var userId = user.userId;
 
 [身份验证入门]: mobile-services-ios-get-started-users
 [推送通知入门]: mobile-services-javascript-backend-ios-get-started-push
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-ios-how-to-use-client-library
-
 [23]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push1-ios.png
 [24]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push2-ios.png
 [25]: ./media/mobile-services-ios-get-started-push/mobile-quickstart-push3-ios.png

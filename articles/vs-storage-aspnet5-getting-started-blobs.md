@@ -145,7 +145,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
     	await blockBlob.DownloadToStreamAsync(fileStream);
 	}
 
-还有其他方法将 Blob 另存为文件。有关详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/#download-blobs)。
+还有其他方法将 Blob 另存为文件。有关详细信息，请参阅[如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs#download-blobs)。
 
 ##删除 Blob
 若要删除 blob，首先获取对该 blob 的引用，然后调用用于该 blob 的 **DeleteAsync()** 方法。

@@ -130,5 +130,4 @@
 <!-- Links -->
 [Azure 管理门户]: http://manage.windowsazure.cn
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
-
 <!---HONumber=71-->

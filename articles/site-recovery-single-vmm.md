@@ -17,7 +17,7 @@
 
 ## 概述
 
-Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请[参阅 Azure Site Recovery 概述](hyper-v-recovery-manager-overview)。
+Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请[参阅 Azure Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)。
 
 如果基础结构中只有一个 VMM 服务器，你可以部署 Site Recovery 将 VMM 云中的虚拟机云复制到 Azure，或者可以在单个 VMM 服务器上的云之间复制。我们建议，仅当你无法部署两个 VMM 服务器（每个站点一个）时，才执行此操作，因为故障转移和恢复不能在这种部署中顺利进行。若要恢复，你需要从 Azure Site Recovery 控制台外部手动故障转移 VMM 服务器（在 Hyper-V 管理器控制台中使用 Hyper-V 副本）。
 
@@ -39,7 +39,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 ## 开始之前
 
 - 演练步骤解释了如何使用单个独立 VMM 服务器部署 Site Recovery。
-- 在开始部署之前，请确保符合[先决条件](site-recovery-vmm-to-vmm#before-you-start)。
+- 在开始部署之前，请确保符合[先决条件](/documentation/articles/site-recovery-vmm-to-vmm#before-you-start)。
 - 这单个 VMM 服务器必须至少配置了两个云。一个云充当受保护的云，另一个云执行保护。
 - 你要保护的云必须包含以下项：
 	- 一个或多个 VMM 主机组
@@ -59,19 +59,19 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	- [配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)
 	- [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 3. 将你要在其上保护虚拟机的源 Hyper-V 主机服务器添加你要保护的云（源云）。将目标 Hyper-V 主机服务器添加到 VMM 服务器上用于提供保护的云中。
-4. [创建](site-recovery-vmm-to-vmm#step-1-create-a-site-recovery-vault) Azure Site Recovery 保管库并生成保管库注册密钥。
-4. 在 VMM 服务器上[安装](site-recovery-vmm-to-vmm#step-3-install-the-azure-site-recovery-provider) Azure Site Recovery 提供程序，并在保管库中注册该服务器。
-5. 确保云出现在 Site Recovery 门户中，然后[配置云保护设置](site-recovery-vmm-to-vmm#step-4-configure-cloud-protection-settings)。
+4. [创建](/documentation/articles/site-recovery-vmm-to-vmm#step-1-create-a-site-recovery-vault) Azure Site Recovery 保管库并生成保管库注册密钥。
+4. 在 VMM 服务器上[安装](/documentation/articles/site-recovery-vmm-to-vmm#step-3-install-the-azure-site-recovery-provider) Azure Site Recovery 提供程序，并在保管库中注册该服务器。
+5. 确保云出现在 Site Recovery 门户中，然后[配置云保护设置](/documentation/articles/site-recovery-vmm-to-vmm#step-4-configure-cloud-protection-settings)。
 	- 在“源位置”和“目标位置”中，指定单个 VMM 服务器的名称。
 	- 在“复制方法”中，选择“通过网络”用于初始复制，因为云位于同一个服务器上。
 
-6. （可选）[配置网络映射](site-recovery-vmm-to-vmm#step-5-configure-network-mapping)：
+6. （可选）[配置网络映射](/documentation/articles/site-recovery-vmm-to-vmm#step-5-configure-network-mapping)：
 
 	- 在“源”和“目标”中，指定单个 VMM 服务器的名称。
 	- 在“源的网络”中，选择为你要保护的云配置的 VM 网络。
 	- 在“目标的网络”中，选择为你要用于保护的云配置的 VM 网络。
 	- 可以在同一个 VMM 服务器上的两个虚拟机 (VM) 网络之间配置网络映射。如果同一个 VMM 网络存在于两个站点上，则可以在相同网络之间映射。
-7. 为你要保护的 VMM 云中的虚拟机[启用保护](site-recovery-vmm-to-vmm#step-7-enable-virtual-machine-protection)。
+7. 为你要保护的 VMM 云中的虚拟机[启用保护](/documentation/articles/site-recovery-vmm-to-vmm#step-7-enable-virtual-machine-protection)。
 7. 在 Hyper-V 管理器控制台中，使用 Hyper-V 副本为 VMM 虚拟机设置复制。不应将 VMM 虚拟机添加到任何 VMM 云。
 
 

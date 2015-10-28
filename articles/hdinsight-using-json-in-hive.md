@@ -243,7 +243,6 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，它可让你定义 JSON
 
 
 [hdinsight-python]: /documentation/articles/hdinsight-python
-
 [image-hdi-hivejson-flatten]: ./media/hdinsight-using-json-in-hive/flatten.png
 [image-hdi-hivejson-getjsonobject]: ./media/hdinsight-using-json-in-hive/getjsonobject.png
 [image-hdi-hivejson-jsontuple]: ./media/hdinsight-using-json-in-hive/jsontuple.png

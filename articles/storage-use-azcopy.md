@@ -157,7 +157,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
     <td><b>/Snapshot</b></td>
     <td>指示是否传输快照。只有当源是 blob 时，此选项才有效。 
         <br />
-        传输的 blob 快照将按以下格式重命名：[blob-name] (snapshot-time)[extension]。
+        传输的 blob 快照将按以下格式重命名：[blob-name](/documentation/articles/snapshot-time)[extension]。
         <br />
         默认情况下，不会复制快照。</td>
     <td>Y</td>
@@ -439,7 +439,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
 
 	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 
-有关使用存储访问密钥的详细信息，请参阅[查看、复制和重新生成存储访问密钥](/documentation/articles/storage-create-storage-account/#regeneratestoragekeys)。
+有关使用存储访问密钥的详细信息，请参阅[查看、复制和重新生成存储访问密钥](/documentation/articles/storage-create-storage-account#regeneratestoragekeys)。
 
 ### 通过服务器端复制来复制 blob
 

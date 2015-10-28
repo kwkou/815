@@ -16,7 +16,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
 
-本教程说明将推送通知发送到[快速入门项目](mobile-services-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
+本教程说明将推送通知发送到[快速入门项目](/documentation/articles/mobile-services-ios-get-started)，这样，每次插入一条记录时，你的移动服务就会发送一条推送通知。你必须先完成[移动服务入门]教程。
 
 > [AZURE.NOTE][IOS 模拟器不支持推送通知](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html)，因此你必须使用物理 iOS 设备。你还需要付费注册 [Apple 开发人员计划成员身份](https://developer.apple.com/programs/ios/)。
 
@@ -108,12 +108,10 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts/
-
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Send push notifications to authenticated users]: mobile-services-javascript-backend-ios-push-notifications-app-users
 [What are Notification Hubs?]: notification-hubs-overview
 [Send broadcast notifications to subscribers]: notification-hubs-ios-send-breaking-news
 [Send template-based notifications to subscribers]: notification-hubs-ios-send-localized-breaking-news
 [Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library
-
 <!---HONumber=HO63-->

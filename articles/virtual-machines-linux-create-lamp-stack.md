@@ -255,8 +255,7 @@ PHP 是广泛用于生成动态网页的开源 Web 脚本语言。
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: y  
-
+	Is this ok [y/N]: y
 ###Debian、Ubuntu base
 这已在 Ubuntu 14.04 上进行了测试。
 

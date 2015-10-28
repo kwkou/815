@@ -86,5 +86,4 @@ Azure Redis 缓存可让你访问世纪互联管理的、专用安全的 Redis �
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
 [在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序]: /documentation/articles/web-sites-nodejs-chat-app-socketio
-
 <!---HONumber=61-->

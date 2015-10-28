@@ -89,5 +89,4 @@
 [如何对资产进行编码]: /documentation/articles/media-services-encode-asset
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/zh-cn/library/jj129582.aspx
 [如何：以编程方式连接到媒体服务]: /documentation/articles/media-services-set-up-computer
-
 <!---HONumber=71-->

@@ -55,7 +55,7 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 
 ## 使用 .NET 自动执行
 
-<!--[-->使用 .NET 库部署 Azure 资源<!--](virtual-machines-arm-deployment)-->
+<!--[-->使用 .NET 库部署 Azure 资源<!--](/documentation/articles/virtual-machines-arm-deployment)-->
    
 ## 使用 Azure Automation 自动执行
 

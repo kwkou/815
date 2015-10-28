@@ -62,8 +62,8 @@
 ##后续步骤##
 创建虚拟机后，将自动启动它。当门户显示状态为正在运行时，您可以登录到该虚拟机。有关说明，请参阅以下文章之一：
 
-- [如何登录到运行 Linux 的虚拟机](../virtual-machines-linux-how-to-log-on)
-- [如何登录到运行 Windows Server 的虚拟机](../virtual-machines-log-on-windows-server)
+- [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)
+- [如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)
 
 
 <!--HONumber=41-->

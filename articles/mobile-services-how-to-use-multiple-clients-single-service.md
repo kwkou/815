@@ -42,7 +42,7 @@
 
 在 .NET 后端移动服务中，通过调用从 [ApiServices.Push](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.apiservices.push.aspx) 属性获取的 [PushClient](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.pushclient.aspx) 对象的 [SendAsync] 方法发送通知。发送的推送通知（本机或模板）取决于传递给 [SendAsync] 方法的特定 [IPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.notifications.ipushmessage.aspx) 派生的对象，如下表所示：
 
-|平台 |[APNS](mobile-services-dotnet-backend-ios-get-started-push)|[GCM](mobile-services-dotnet-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push)|
+|平台 |[APNS](/documentation/articles/mobile-services-dotnet-backend-ios-get-started-push)|[GCM](/documentation/articles/mobile-services-dotnet-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
 |本机|[ApplePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.applepushmessage.aspx) |[GooglePushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.googlepushmessage.aspx) |[WindowsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.windowspushmessage.aspx) | [MpnsPushMessage](http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.mpnspushmessage.aspx) |
 
@@ -77,7 +77,7 @@
 
 在 JavaScript 后端移动服务中，通过调用从全局 [push 对象]获取的特定于平台的对象的 **send** 方法发送通知，如下表所示：
 
-|平台 |[APNS](mobile-services-javascript-backend-ios-get-started-push)|[GCM](/documentation/articles/mobile-services-javascript-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)|
+|平台 |[APNS](/documentation/articles/mobile-services-javascript-backend-ios-get-started-push)|[GCM](/documentation/articles/mobile-services-javascript-backend-android-get-started-push) |[WNS](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push) |[MPNS](/documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push)|
 |-----|-----|----|----|-----|
 |本机|[apns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj839711.aspx) |[gcm 对象](http://msdn.microsoft.com/zh-cn/library/azure/dn126137.aspx) |[wns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx) | [mpns 对象](http://msdn.microsoft.com/zh-cn/library/azure/jj871025.aspx) |
 
@@ -181,19 +181,19 @@ Visual Studio 2013 Update 2 添加了对通用 Windows 应用程序项目的支�
 <!-- URLs -->
 
 [Azure 管理门户]: https://manage.windowsazure.cn
-[Azure 通知中心]: /documentation/articles/notification-hubs-overview/
-[SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on/
-[SSO Windows Phone]: /documentation/articles/mobile-services-windows-phone-single-sign-on/
+[Azure 通知中心]: /documentation/articles/notification-hubs-overview
+[SSO Windows Store]: /documentation/articles/mobile-services-windows-store-dotnet-single-sign-on
+[SSO Windows Phone]: /documentation/articles/mobile-services-windows-phone-single-sign-on
 [Tutorials and resources]: /documentation/services/mobile-services/
 [Get started with Notification Hubs]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-[向用户发送跨平台通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services/
-[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012/
-[Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012/
-[Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
-[Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
-[Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
+[向用户发送跨平台通知]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users-xplat-mobile-services
+[Get started with push Windows dotnet]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push-vs2012
+[Get started with push Windows js]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js-vs2012
+[Get started with push Windows Phone]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8
+[Get started with push iOS]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
+[Get started with push Android]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
 [Dynamic schema]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj193175.aspx
-[如何将 .NET 客户端用于移动服务]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[如何将 .NET 客户端用于移动服务]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [push 对象]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554217.aspx
 [TemplatePushMessage]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
 [PhoneGap]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started

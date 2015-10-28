@@ -14,14 +14,14 @@
 
 ## 操作指南文章
 
-- [在 Azure 虚拟网络中安装新的 Active Directory 林](active-directory-new-forest-virtual-machine)
-- [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](virtual-networks-install-replica-active-directory-domain-controller) 
-- [设置用于测试的混合云环境](virtual-networks-setup-hybrid-cloud-environment-testing)
+- [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine)
+- [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller) 
+- [设置用于测试的混合云环境](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
 
 
 ## 其他资源
 
-- [以组织身份注册 Azure](sign-up-organization)
-- [Azure 标识](fundamentals-identity)
+- [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
+- [Azure 标识](/documentation/articles/fundamentals-identity)
 
 <!---HONumber=61-->

@@ -15,8 +15,8 @@
 #  移动服务入门
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-javascript-getting-started)
-> - [What Happened](vs-mobile-services-javascript-what-happened)
+> - [Getting Started](/documentation/articles/vs-mobile-services-javascript-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-javascript-what-happened)
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 

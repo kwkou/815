@@ -218,7 +218,7 @@
 
 ##创建恢复计划
 
-恢复计划会将应该一起故障转移的计算机分组在一起。在开始之前，请先详细了解[恢复计划](site-recovery-create-recovery-plans)和[故障转移](/documentation/articles/site-recovery-failover)。
+恢复计划会将应该一起故障转移的计算机分组在一起。在开始之前，请先详细了解[恢复计划](/documentation/articles/site-recovery-create-recovery-plans)和[故障转移](/documentation/articles/site-recovery-failover)。
 
 
 ### 创建 SQL Server 群集（SQL Server 2012/2014 Enterprise）的恢复计划

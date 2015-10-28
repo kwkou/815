@@ -322,10 +322,11 @@ Azure 移动服务支持两种身份验证工作流：
 [Use scripts to authorize users]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 [动态架构]: http://go.microsoft.com/fwlink/p/?LinkId=296271
 [How to: access custom parameters]: /documentation/articles/mobile-services-how-to-use-server-scripts#access-headers
-[创建表]: http://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
+[创建表]: http:
+/msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: virtual-machines-command-line-tools#Mobile_Tables
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Mobile_Tables
 [冲突处理程序]: mobile-services-ios-handling-conflicts-offline-data#add-conflict-handling
  
 

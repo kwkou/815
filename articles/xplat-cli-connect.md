@@ -140,5 +140,4 @@ Azure CLI 提供的大多数命令需要连接到 Azure 帐户。可以使用两
 [signuporg]: /documentation/articles/sign-up-organization
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
-
 <!---HONumber=67-->

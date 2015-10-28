@@ -62,7 +62,7 @@
 
 ##  <a name="next-steps"></a>后续步骤
 
-在下一教程[移动服务用户的服务端授权](mobile-services-javascript-backend-service-side-authorization)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
+在下一教程[移动服务用户的服务端授权](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
 
 <!-- Anchors. -->
 
@@ -85,5 +85,4 @@
 [Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [使用 Live Connect 实现对 Windows Phone 应用程序的单一登录]: /documentation/articles/mobile-services-windows-phone-single-sign-on
-
 <!---HONumber=HO63-->

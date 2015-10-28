@@ -28,7 +28,7 @@
 
 ## <a id="Output"></a> 输出流
 
-输出流旨在输出脚本或工作流创建的对象（如果该脚本或工作流正常运行）。在 Azure 自动化中，此流主要用于旨在供[调用当前 Runbook 的父 Runbook](/documentation/articles/automation-child-runbooks) 使用的对象。当你从父 Runbook [调用某个内嵌 Runbook](/documentation/articles/automation-child-runbooks/#InlineExecution) 时，被调用的 Runbook 会将输出流中的数据返回给父级。仅当你知道该 Runbook 永不被其他 Runbook 调用时，才应使用输出流将一般信息传回给用户。但是，作为最佳实践，你通常应该使用[详细流](#Verbose)向用户传递一般信息。
+输出流旨在输出脚本或工作流创建的对象（如果该脚本或工作流正常运行）。在 Azure 自动化中，此流主要用于旨在供[调用当前 Runbook 的父 Runbook](/documentation/articles/automation-child-runbooks) 使用的对象。当你从父 Runbook [调用某个内嵌 Runbook](/documentation/articles/automation-child-runbooks#InlineExecution) 时，被调用的 Runbook 会将输出流中的数据返回给父级。仅当你知道该 Runbook 永不被其他 Runbook 调用时，才应使用输出流将一般信息传回给用户。但是，作为最佳实践，你通常应该使用[详细流](#Verbose)向用户传递一般信息。
 
 可以通过使用 [Write-Output](http://technet.microsoft.com/zh-cn/library/hh849921.aspx)，或者在 Runbook 中将对象放置在其对应行中，来向输出流写入数据。
 

@@ -377,7 +377,8 @@ Azure 存储空间中的 Blob。
 
   [Download the Azure SDK for Java]: /develop/java/
   [如何创建存储帐户]: /documentation/articles/storage-create-storage-account#create-a-storage-account
-  [如何管理存储帐户]: /documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
+  [如何管理存储帐户]: 
+documentation/articles/storage-create-storage-account#view-copy-and-regenerate-storage-access-keys
   [如何通过 Java 使用 Blob 存储服务]: /documentation/articles/storage-java-how-to-use-blob-storage
   [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
   [Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/

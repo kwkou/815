@@ -74,5 +74,4 @@
 
 <!-- URLs. -->
 [向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-
 <!---HONumber=71-->

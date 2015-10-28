@@ -22,7 +22,7 @@
 
 你无法使用客户端应用程序安全地分发所需的凭据，因此无法安全地将数据上载到 Blob 存储服务。你必须将这些凭据存储在移动服务中，并使用它们来生成用于上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用程序安全返回 SAS（一个凭据，其过期时间较短 &mdash; 在本例中为 5 分钟）。然后，应用程序将使用此临时凭据来上载图像。在此示例中，公众可以从 Blob 服务下载。
 
-在本教程中，你将要向 [GetStartedWithData 示例应用程序项目](mobile-services-windows-phone-get-started-data)添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。
+在本教程中，你将要向 [GetStartedWithData 示例应用程序项目](/documentation/articles/mobile-services-windows-phone-get-started-data)添加功能，使用户能够拍摄照片，并使用移动服务生成的 SAS 将图像上载到 Azure。
 
 
 ## 先决条件
@@ -33,7 +33,7 @@
 + [Windows Phone SDK 8.0] 或更高版本
 + 为 Microsoft Visual Studio 安装 Nuget Package Manager。
 + [Azure 存储帐户][How To Create a Storage Account]
-+ 完成教程[将移动服务添加到现有应用程序](mobile-services-windows-phone-get-started-data)  
++ 完成教程[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-windows-phone-get-started-data)  
 
 
 ## 安装 Windows Phone 应用程序的存储客户端
@@ -86,7 +86,6 @@
 [在移动服务中计划后端作业]: /documentation/articles/mobile-services-schedule-recurring-tasks
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866

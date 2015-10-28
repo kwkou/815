@@ -163,7 +163,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 
 ## 创建和管理文件共享
 
-Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可以通过装载的共享跨应用程序组件共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 PowerShell 和 .NET 使用 Azure 文件存储](storage-dotnet-how-to-use-files)。
+Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可以通过装载的共享跨应用程序组件共享文件数据。你可以通过 Azure CLI 管理文件共享和文件数据。有关 Azure 文件存储的详细信息，请参阅[如何通过 PowerShell 和 .NET 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)。
 
 ### 创建文件共享
 

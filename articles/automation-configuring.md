@@ -52,7 +52,7 @@
 	Add-AzureAccount –Credential $cred
 	Select-AzureSubscription –SubscriptionName "My Subscription"
 
-应该在 Runbook 中任何[检查点](automation-runbook-execution#checkpoints)的后面重复这些行。如果 Runbook 已挂起，然后在另一个工作线程上恢复，则它需要再次执行身份验证。
+应该在 Runbook 中任何[检查点](/documentation/articles/automation-runbook-execution#checkpoints)的后面重复这些行。如果 Runbook 已挂起，然后在另一个工作线程上恢复，则它需要再次执行身份验证。
 
 ## 相关文章
 - [Azure 自动化：使用 Azure Active Directory 向 Azure 进行身份验证](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)

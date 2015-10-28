@@ -53,5 +53,4 @@
 
 [移动服务服务器脚本参考]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts/
 [Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
-
 <!---HONumber=71-->

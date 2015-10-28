@@ -36,10 +36,10 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 
 **其他资源**
 
-* [在云中使用本地标识基础结构](active-directory-aadconnect.md)
-* [Azure AD Connect 入门](active-directory-aadconnect-get-started.md)
-* [Azure AD Connect 后续步骤](active-directory-aadconnect-whats-next.md)
-* [了解详细信息](active-directory-aadconnect-learn-more.md)
+* [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
+* [Azure AD Connect 入门](/documentation/articles/active-directory-aadconnect-get-started)
+* [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
+* [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more)
 * [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/library/azure/dn832695.aspx)
 
 <!---HONumber=60-->

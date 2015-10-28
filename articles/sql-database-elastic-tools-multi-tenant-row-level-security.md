@@ -54,7 +54,7 @@
 
 ### 实体框架
 
-对于使用实体框架的应用程序，最简单的方法是根据[使用 EF DbContext 进行数据相关的路由](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio/#data-dependent-routing-using-ef-dbcontext)中所述，在 ElasticScaleContext 重写中设置 CONTEXT\_INFO。在返回通过数据相关路由中转的连接之前，只需创建并执行一个 SqlCommand，用于将 CONTEXT\_INFO 设置为针对该连接指定的 shardingKey (TenantId)。这样，只需编写代码一次就能设置 CONTEXT\_INFO。
+对于使用实体框架的应用程序，最简单的方法是根据[使用 EF DbContext 进行数据相关的路由](/documentation/articles/sql-database-elastic-scale-use-entity-framework-applications-visual-studio#data-dependent-routing-using-ef-dbcontext)中所述，在 ElasticScaleContext 重写中设置 CONTEXT\_INFO。在返回通过数据相关路由中转的连接之前，只需创建并执行一个 SqlCommand，用于将 CONTEXT\_INFO 设置为针对该连接指定的 shardingKey (TenantId)。这样，只需编写代码一次就能设置 CONTEXT\_INFO。
 
 ```
 // ElasticScaleContext.cs 

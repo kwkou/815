@@ -640,14 +640,14 @@ Context.Logger.Info("Component started");
 
 **Apache HDInsight 上的 Hadoop**
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
 **Apache HBase on HDInsight**
 
-* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started/)
+* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started)
 
 <!---HONumber=71-->

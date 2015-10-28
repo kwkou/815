@@ -518,7 +518,6 @@ Azure 提供了两种部署环境：过渡和生产。通常，在将服务部�
 [svc-mgmt-rest-api]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460799.aspx
 [win-azure-account]: /pricing/1rmb-trial/
 [storage-account]: /documentation/articles/storage-create-storage-account
-
 [download-SDK-PHP]: /documentation/articles/php-download-sdk
 [command-line-tools]: /documentation/articles/command-line-tools
 [Composer]: http://getcomposer.org/

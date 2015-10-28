@@ -304,5 +304,4 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-
 <!---HONumber=71-->

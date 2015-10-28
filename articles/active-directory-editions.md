@@ -29,7 +29,7 @@ Active Directory 高级版和基本版是在 Azure Active Directory 中的大量
 
 <!-- **Premium** - With the Premium edition of Azure Active Directory, you get all of the capabilities that he Azure Active Directory Free and Basic editions have to offer, plus additional feature-rich enterprise-level identity management capabilities explained below.-->
 
-<!--To sign up and start using Active Directory Premium today, see [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md).-->
+<!--To sign up and start using Active Directory Premium today, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium).-->
 
 > [AZURE.NOTE]
 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
@@ -39,7 +39,7 @@ Active Directory 高级版和基本版是在 Azure Active Directory 中的大量
 Active Directory 基本版是一种收费的 Azure Active Directory 产品，包括以下功能：
 
 - **公司品牌打造** - 若要让最终用户获得更好的体验，你可以向组织的"登录"和"访问面板"页添加公司的徽标和颜色方案。添加徽标后，你还可以选择为不同的语言和区域设置添加徽标的本地化版本。 
-    有关详细信息，请参阅[向"登录"和"访问面板"页添加公司品牌](active-directory-add-company-branding)。
+    有关详细信息，请参阅[向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-add-company-branding)。
 - **基于组的应用程序访问** - 使用组来设置用户并向数千个 SaaS 应用程序成批分配用户访问权限。可以仅在云中创建这些组，也可以利用已在本地 Active Directory 中同步的现有组。 
     有关详细信息，请参阅[在 Azure AD 中为组分配对 SaaS 应用程序的访问权限](https://msdn.microsoft.com/zh-cn/library/azure/dn621141.aspx)。
 - **自助密码重置** - Azure 始终允许目录管理员重置密码。有了 Azure Active Directory 基本版，你现在就可以使用与 Office 365 相同的登录体验为目录中的所有用户提供密码重置功能，从而减少用户在忘记密码时呼叫支持人员的次数。
@@ -89,8 +89,8 @@ Azure Active Directory 基本版具有高级功能，可帮助简化企业级管
 
 ## 后续步骤
 
-<!--- [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md)-->
-- [向"登录"和"访问面板"页添加公司品牌](active-directory-add-company-branding)
-- [查看访问和使用情况报告](active-directory-view-access-usage-reports)
+<!--- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)-->
+- [向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
+- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)
 
 <!--HONumber=57-->

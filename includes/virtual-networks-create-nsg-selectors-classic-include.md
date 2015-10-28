@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-- [PowerShell](virtual-networks-create-nsg-classic-ps.md)
-- [Azure CLI](virtual-networks-create-nsg-classic-cli.md)
+- [PowerShell](/documentation/articles/virtual-networks-create-nsg-classic-ps)
+- [Azure CLI](/documentation/articles/virtual-networks-create-nsg-classic-cli)

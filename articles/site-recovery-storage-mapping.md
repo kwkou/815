@@ -16,7 +16,7 @@
 # Site Recovery 存储映射
 
 
-Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](hyper-v-recovery-manager-overview)中了解可能的部署方案。
+Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)中了解可能的部署方案。
 
 
 ## 关于本文
@@ -99,6 +99,6 @@ VM5 | C:\ClusterStorage\\SourceVolume3 | 不适用 | 无映射，因此将使用
 
 ## 后续步骤
 
-对存储映射有了更好的理解后，请开始阅读[最佳实践](site-recovery-best-practices)以做好部署准备。
+对存储映射有了更好的理解后，请开始阅读[最佳实践](/documentation/articles/site-recovery-best-practices)以做好部署准备。
 
 <!---HONumber=71-->

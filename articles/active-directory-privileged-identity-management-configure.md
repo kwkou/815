@@ -92,7 +92,7 @@ Azure AD 特权标识管理器提供了一个仪表板，其中显示了重要�
 
 ## 后续步骤
 
-[基于角色的访问控制](role-based-access-control-configure)
+[基于角色的访问控制](/documentation/articles/role-based-access-control-configure)
 
 <!--Image references-->
 

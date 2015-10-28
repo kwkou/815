@@ -57,7 +57,6 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
   [使用 SQL Server Management Studio 管理 Azure SQL 数据库]: sql-database-manage-azure-ssms
   [使用动态管理视图监控 SQL 数据库]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ff394114.aspx
   [Transact-SQL 参考 (SQL 数据库)]: http://msdn.microsoft.com/zh-cn/library/bb510741(v=sql.120).aspx
-  [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started/
-  [AzureDb datamasking]: /documentation/articles/sql-database-dynamic-data-masking-get-started/
-
+  [AzureDb Auditing]: /documentation/articles/sql-database-auditing-get-started
+  [AzureDb datamasking]: /documentation/articles/sql-database-dynamic-data-masking-get-started
 <!---HONumber=61-->

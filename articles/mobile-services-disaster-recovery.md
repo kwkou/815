@@ -84,7 +84,7 @@
 	+ 在 Azure 门户中，在移动服务的“配置”选项卡上选择“更改数据库”，然后选择刚刚恢复的数据库。
 
 7. 现在，你的移动服务已托管在不同的物理位置。你需要更新发布和/或 git 凭据，以便更新正在运行的站点。
-	+ 如果你使用 **.NET 后端**，请按[发布移动服务](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service)中所述重新设置发布配置文件。这会更新发布详细信息，以指向新的服务位置。
+	+ 如果你使用 **.NET 后端**，请按[发布移动服务](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started#publish-your-mobile-service)中所述重新设置发布配置文件。这会更新发布详细信息，以指向新的服务位置。
 	+ 如果你使用 **Javascript 后端**并通过门户来管理服务，则不需要执行任何附加的操作。
 	+ 如果你使用 **Javascript 后端**并通过节点来管理服务，请更新 git 远程设置以指向新的存储库。为此，请从 git 远程设置中删除 .git 文件路径：
 
@@ -107,5 +107,4 @@
 [Azure 门户]: http://manage.windowsazure.cn/
 [Azure 服务仪表板]: /zh-cn/support/service-dashboard/
 [使用 Azure CLI 自动操作移动服务]: /documentation/articles/mobile-services-manage-command-line-interface
-
 <!---HONumber=71-->

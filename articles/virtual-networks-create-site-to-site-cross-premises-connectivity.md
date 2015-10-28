@@ -245,7 +245,7 @@
 
 -  [在 Azure 虚拟网络中安装 Active Directory 域控制器副本](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
 
-如果你要将虚拟网络设置导出到网络配置文件以便备份配置或将其用作模板，请参阅[将虚拟网络设置导出到网络配置文件](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
+如果你要将虚拟网络设置导出到网络配置文件以便备份配置或将其用作模板，请参阅[将虚拟网络设置导出到网络配置文件](/documentation/articles/virtual-networks-create-vnet-classic-portal)。
 
 ## 另请参阅
 

@@ -26,7 +26,7 @@
 
 ## 限制和安全性
 
-请参阅[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal/)。
+请参阅[在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)。
 
 ## 如何：使用 REST API 还原已删除的 Azure SQL 数据库
 

@@ -55,7 +55,7 @@
 	-	**文件系统存储** - 当达到配额时，文件系统存储仍然可以访问以执行读取操作，但所有其他写入操作（包括正常 Web 应用活动所需的写入操作）将会被阻止。文件使用量降低或将该网站移入配额更高的 Web 托管计划时，写入操作将恢复。
 	-	**链接的资源** - 在此处还显示所有链接的 Web 应用资源的配额，例如数据库或存储。
 
-	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。关于各 Web 托管计划的使用率配额详情，请参阅[网站限制](/documentation/articles/azure-subscription-service-limits/#websiteslimits)。
+	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。关于各 Web 托管计划的使用率配额详情，请参阅[网站限制](/documentation/articles/azure-subscription-service-limits#websiteslimits)。
 
 
 ##<a name="resourceusage"></a>如何：避免超过配额
@@ -98,12 +98,12 @@
 
 **应用程序诊断（文件系统）**、**应用程序诊断（表存储）**和**应用程序诊断（Blob 存储）**可同时启用，但各自具有单独的日志级别配置。例如，您可能想要将错误和警告记录到存储中作为长期的日志记录解决方案，同时启用在检测应用程序代码后使用详细级别进行文件系统日志记录，以便解决问题。
 
-也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+也可以从 Azure PowerShell 中使用 **Set-AzureWebsite** cmdlet 来启用诊断。如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
 > [AZURE.NOTE] 应用程序日志记录依赖于你的应用程序生成的日志信息。用于生成日志信息的方法以及信息格式是特定于编写你的应用程序所使用的语言的。有关使用应用程序日志记录的语言特定的信息，请参见以下文章：
 > 
-> - **.NET** - [为 Azure 网站启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)
-> - **Node.js** - [如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug/)
+> - **.NET** - [为 Azure 网站启用诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)
+> - **Node.js** - [如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)
 > 
 > 只有 .NET 应用程序支持到表或 Blob 存储中的应用程序日志记录。
 
@@ -113,7 +113,7 @@
 
 - **Web 服务器日志记录** – 启用“Web 服务器日志记录”可使用 W3C 扩展日志文件格式保存 Web 应用日志。Web 服务器日志记录为对你的 Web 应用的所有传入请求生成一个记录，记录中包含客户端 IP 地址、请求的 URI、响应的 HTTP 状态代码以及客户端的用户代理字符串之类的信息。可将日志保存到 Azure 存储帐户或文件系统中。
 
- 若要将 Web 服务器日志保存到 Azure 存储帐户，请选择“存储”，然后选择“管理存储”，以指定用来保留日志的存储帐户和 Azure Blob 容器。有关 Azure 存储帐户的详细信息，请参阅[如何管理存储帐户](/documentation/articles/storage-manage-storage-account/)。
+ 若要将 Web 服务器日志保存到 Azure 存储帐户，请选择“存储”，然后选择“管理存储”，以指定用来保留日志的存储帐户和 Azure Blob 容器。有关 Azure 存储帐户的详细信息，请参阅[如何管理存储帐户](/documentation/articles/storage-manage-storage-account)。
 
    若要将 Web 服务器日志保存到文件系统，请选择“文件系统”。这将会启用“配额”框，在该框中，你可为日志文件设置最大磁盘空间量。最小大小为 25MB，最大为 100MB。默认大小是 35MB。
 
@@ -193,7 +193,7 @@
 
 这会将日志信息显示给从其运行命令的命令提示符、PowerShell、bash 或终端会话。
 
-> [AZURE.NOTE] 如果未安装 **azure** 命令，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli/)以了解安装和配置信息。
+> [AZURE.NOTE] 如果未安装 **azure** 命令，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli)以了解安装和配置信息。
 
 ###读取日志文件###
 

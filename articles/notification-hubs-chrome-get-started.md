@@ -479,6 +479,4 @@
 [Google Cloud Messaging for Chrome]: https://developer.chrome.com/apps/cloudMessagingV1
 [Azure 通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Azure 通知中心最新消息]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
- 
-
 <!---HONumber=71-->

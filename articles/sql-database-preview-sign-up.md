@@ -19,11 +19,11 @@
 
 若要试用最新的 V12，首先需要订阅 Windows Azure，或者至少获得了一个[试用](/pricing/1rmb-trial/)订阅。
 
-可以使用 Azure 门户 ([http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)) 来激活 V12 预览版。在为订阅激活 V12 预览版后，V12 预览版的创建和升级选项将在 Azure 门户中解锁。然后，用户可以从服务器边栏选项卡或数据库边栏选项卡启动[创建](sql-database-preview-create)或[升级](sql-database-preview-create)工作流。
+可以使用 Azure 门户 ([http://manage.windowsazure.cn/](http://manage.windowsazure.cn/)) 来激活 V12 预览版。在为订阅激活 V12 预览版后，V12 预览版的创建和升级选项将在 Azure 门户中解锁。然后，用户可以从服务器边栏选项卡或数据库边栏选项卡启动[创建](/documentation/articles/sql-database-preview-create)或[升级](/documentation/articles/sql-database-preview-create)工作流。
 
 > [AZURE.NOTE]测试数据库、数据库副本或新数据库都是适合升级到预览版的候选项。业务所依赖的生产数据库应在预览期过后再进行部署。
 
-有关该预览版的详细信息，请参阅[规划和准备升级到 Azure SQL 数据库 V12（预览版）](sql-database-preview-plan-prepare-upgrade)。
+有关该预览版的详细信息，请参阅[规划和准备升级到 Azure SQL 数据库 V12（预览版）](/documentation/articles/sql-database-preview-plan-prepare-upgrade)。
 
 
 ## A.安全授权
@@ -41,7 +41,7 @@
 
 本部分介绍在激活 V12 预览版选项时，你可以在 Azure 门户 UI 中执行一次的单击序列。在激活该选项后，你仍可以使用此操作。
 
-所有激活方案使用相同的基本思路。当你首次尝试[创建新的 SQL 数据库 服务器](sql-database-preview-create)时，将显示标记为“最新更新(预览版)”的边栏选项卡，其中提供了一个复选框让你选择激活权限以使用 V12 预览版。在你激活权限后，系统永远不会再次显示该复选框，而是显示一个“是|否”控件，让你指定是否希望新服务器使用 V12 预览版。如果你选择“否”，则会创建 V11 服务器（参阅 SELECT @@VERSION; 的返回值）。
+所有激活方案使用相同的基本思路。当你首次尝试[创建新的 SQL 数据库 服务器](/documentation/articles/sql-database-preview-create)时，将显示标记为“最新更新(预览版)”的边栏选项卡，其中提供了一个复选框让你选择激活权限以使用 V12 预览版。在你激活权限后，系统永远不会再次显示该复选框，而是显示一个“是|否”控件，让你指定是否希望新服务器使用 V12 预览版。如果你选择“否”，则会创建 V11 服务器（参阅 SELECT @@VERSION; 的返回值）。
 
 ### B.1 V12 预览版的“是|否”控件
 
@@ -54,8 +54,8 @@
 
 以下主题介绍了如何使用 V12 预览版。
 
-- [在最新的 SQL 数据库 Update V12（预览版）中创建数据库](sql-database-preview-create)
-- [升级到最新的 SQL 数据库 Update V12（预览版）](sql-database-preview-upgrade)
+- [在最新的 SQL 数据库 Update V12（预览版）中创建数据库](/documentation/articles/sql-database-preview-create)
+- [升级到最新的 SQL 数据库 Update V12（预览版）](/documentation/articles/sql-database-preview-upgrade)
 
 > [AZURE.NOTE]测试数据库、数据库副本或新数据库都是适合升级到预览版的候选项。业务所依赖的生产数据库应在预览期过后再进行部署。
 

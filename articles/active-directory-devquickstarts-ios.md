@@ -30,7 +30,7 @@
 3. 安装并配置 ADAL。
 5. 使用 ADAL 从 Azure AD 获取令牌。
 
-若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip)。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](active-directory-howto-tenant)。
+若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-iOS/archive/complete.zip)。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
 ## 步骤 1：下载并运行 .Net 或 Node.js REST API TODO 示例服务器
 
@@ -38,7 +38,7 @@
 
 有关如何设置的信息，请访问我们的现有示例：
 
-* [适用于 Node.js 的 Windows Azure Active Directory 示例 REST API 服务](active-directory-devquickstarts-webapi-nodejs)
+* [适用于 Node.js 的 Windows Azure Active Directory 示例 REST API 服务](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
 ## 步骤 2：向 Windows Azure AD 租户注册 Web API
 

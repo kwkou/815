@@ -82,7 +82,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 有关详细信息，请参阅以下资源：
 
-* [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control/)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
+* [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
 * [部署到 Azure 网站的 Azure 按钮](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)。有关用于触发从 Git 存储库的部署方法的博客。
 * [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit)。
 
@@ -92,7 +92,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 有关如何使用 Mercurial 进行部署的信息，请参阅以下资源：
 
-* [从源控件发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control/)。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
+* [从源控件发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control)。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
 * [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit)。
 
 <!--
@@ -109,9 +109,9 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 有关如何从 Visual Studio 部署到 Azure 网站的信息，请参阅以下资源：
 
-* [Azure 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started/)。如何使用 Visual Studio 和 Web 部署来创建和部署一个简单的 ASP.NET MVC Web 项目。
-* [如何将 Azure Web 作业部署到 Azure 网站](/documentation/articles/websites-dotnet-deploy-webjobs/)。如何配置控制台应用程序项目，以便它们部署为 Web 作业。  
-* [将包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
+* [Azure 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。如何使用 Visual Studio 和 Web 部署来创建和部署一个简单的 ASP.NET MVC Web 项目。
+* [如何将 Azure Web 作业部署到 Azure 网站](/documentation/articles/websites-dotnet-deploy-webjobs)。如何配置控制台应用程序项目，以便它们部署为 Web 作业。  
+* [将包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
 * [Visual Studio 和 ASP.NET 的 Web 部署概述](http://msdn.microsoft.com/zh-cn/library/dd394698.aspx)。使用 Visual Studio 的 Web 部署的基本简介。虽然已过时，但包括仍然相关的信息，其中包括用于部署数据库和 Web 应用程序的选项的概述，以及其他部署任务的列表（这些任务可能需要你来执行，或需要你手动配置 Visual Studio 以代替你执行）。本主题提供有关常规部署的信息，不只是关于部署到 Azure 网站。
 * [使用 Visual Studio 的 ASP.NET Web 部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction)。共 12 篇的系列教程涵盖了比此列表中其他部署任务更完整的部署任务。自编写本教程以来添加了一些 Azure 部署功能，但注释是后来添加的，说明缺少哪些内容。 
 * [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881)。说明如何在 Visual Studio 中部署 ASP.NET Web 项目（使用 Git 插件将代码提交到 Git 并将 Azure 连接到 Git 存储库）。从 Visual Studio 2013 开始，Git 支持是内置的，不需要安装插件。
@@ -119,7 +119,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 有关详细信息，请参阅以下资源：
 
-* [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)。 
+* [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)。 
 
 ##<a name="tfs"></a>Team Foundation Server (TFS)
 
@@ -127,7 +127,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 有关详细信息，请参阅以下资源：
 
-* [在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery/)。本文档适用于 Azure 云服务，但其部分内容与网站有关。
+* [在 Azure 中持续交付云服务](/documentation/articles/cloud-services-dotnet-continuous-delivery)。本文档适用于 Azure 云服务，但其部分内容与网站有关。
 
 ###<a name="gitmercurial"></a>本地 Git 或 Mercurial 存储库
 
@@ -135,7 +135,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 有关详细信息，请参阅以下资源：
 
-* [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control/)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
+* [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
 * [从任何 git/hg 存储库发布到 Azure 网站](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。该博客介绍了 Azure 网站中的“外部存储库”功能。
 * [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit)。
 * [将两个网站从一个 Git 存储库部署到 Azure](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx)。Scott Hanselman 的博客文章。
@@ -199,7 +199,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 在某些情况下，你可能想要能够轻松地在 Web 应用的过渡版本和生产版本之间来回切换。有关详细信息，请参阅 [Web Apps 网站上的过渡部署](/documentation/articles/web-sites-staged-publishing)。
 
-准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Web Apps 的备份和还原功能的信息，请参阅 [Web Apps 备份](/documentation/articles/web-sites-backup/)。
+准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Web Apps 的备份和还原功能的信息，请参阅 [Web Apps 备份](/documentation/articles/web-sites-backup)。
 
 有关如何使用 Azure 的基于角色的访问控制来管理 Web Apps 部署访问权限的信息，请参阅 [RBAC 和 Web App 发布](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing)。
 

@@ -678,9 +678,9 @@
 
 显然，为此你需要一个 .vhd。你可以使用 Azure 中现有的 .vhd，或者上载一个 .vhd。
 
-对于基于 Windows 的虚拟机，请参阅[创建 Windows Server VHD 并将其上载到 Azure](virtual-machines-create-upload-vhd-windows-server)。
+对于基于 Windows 的虚拟机，请参阅[创建 Windows Server VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server)。
 
-对于基于 Linux 的虚拟机，请参阅[在 Azure 中创建和上载 Linux VHD](virtual-machines-linux-create-upload-vhd)。
+对于基于 Linux 的虚拟机，请参阅[在 Azure 中创建和上载 Linux VHD](/documentation/articles/virtual-machines-linux-create-upload-vhd)。
 
 ### 步骤 3：使用模板创建虚拟机
 
@@ -1173,7 +1173,7 @@ Note that this template deploys a Windows Server image; however, it could easily
     
 ## <a id="show-the-log-for-a-resource-group-deployment"></a>任务：显示资源组部署日志
 
-创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。（如需部署故障排除的详细信息以及有关问题的其他详细信息，请参阅<!--[-->在 Azure 中排查资源组部署问题<!--](resource-group-deploy-debug)）-->
+创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。（如需部署故障排除的详细信息以及有关问题的其他详细信息，请参阅<!--[-->在 Azure 中排查资源组部署问题<!--](/documentation/articles/resource-group-deploy-debug)）-->
 
 为了查明特定的失败，你可以使用 **jq** 等工具来更清楚地查明前因后果，例如，你需要更正的单个失败。以下示例使用 **jq** 分析 **lbgroup** 的部署日志，以找出失败的原因
 
@@ -1256,7 +1256,7 @@ Note that this template deploys a Windows Server image; however, it could easily
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>任务：连接到基于 Linux 的虚拟机
 
-通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](virtual-machines-linux-use-ssh-key)。
+通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
 
 ## <a id="stop-a-virtual-machine"></a>任务：停止 VM
 
