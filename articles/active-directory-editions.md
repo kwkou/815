@@ -29,7 +29,7 @@ Active Directory 高级版和基本版是在 Azure Active Directory 中的大量
 
 <!-- **Premium** - With the Premium edition of Azure Active Directory, you get all of the capabilities that he Azure Active Directory Free and Basic editions have to offer, plus additional feature-rich enterprise-level identity management capabilities explained below.-->
 
-<!--To sign up and start using Active Directory Premium today, see [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md).-->
+<!--To sign up and start using Active Directory Premium today, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium).-->
 
 > [AZURE.NOTE]
 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
@@ -89,8 +89,8 @@ Azure Active Directory 基本版具有高级功能，可帮助简化企业级管
 
 ## 后续步骤
 
-<!--- [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md)-->
-- [向"登录"和"访问面板"页添加公司品牌](active-directory-add-company-branding)
-- [查看访问和使用情况报告](active-directory-view-access-usage-reports)
+<!--- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)-->
+- [向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
+- [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)
 
 <!--HONumber=57-->

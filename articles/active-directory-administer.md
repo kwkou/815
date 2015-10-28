@@ -49,11 +49,11 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 
 例如，如果你最初注册了 Windows Intune 订阅并完成了通过部署目录同步和/或单一登录服务器将本地 Active Directory 与 Azure AD 目录进一步集成所需的步骤，则可以注册其他 Microsoft 云服务（例如 Office 365），该服务也可以利用目前用于 Windows Intune 的目录集成优势。
 
-有关将本地目录与 Azure AD 集成的详细信息，请参阅[目录集成](active-directory-aadconnect)。
+有关将本地目录与 Azure AD 集成的详细信息，请参阅[目录集成](/documentation/articles/active-directory-aadconnect)。
 
 ### 将 Azure AD 目录与新的 Azure 订阅相关联
 
-可以将新的 Azure 订阅，与用于对现有 Office 365 或 Microsoft Intune 订阅的登录进行身份验证的相同目录进行关联。请使用你的工作或学校帐户登录到 Azure 管理门户。管理门户将返回一条消息，指出找不到该帐户的任何订阅。选择"注册 Azure"，你的目录将可用于在门户中进行管理。有关详细信息，请参阅[在 Azure 中管理 Office 365 订阅的目录](active-directory-how-subscriptions-associated-directory#manage-the-directory-for-your-office-365-subscription-in-azure)。
+可以将新的 Azure 订阅，与用于对现有 Office 365 或 Microsoft Intune 订阅的登录进行身份验证的相同目录进行关联。请使用你的工作或学校帐户登录到 Azure 管理门户。管理门户将返回一条消息，指出找不到该帐户的任何订阅。选择"注册 Azure"，你的目录将可用于在门户中进行管理。有关详细信息，请参阅[在 Azure 中管理 Office 365 订阅的目录](/documentation/articles/active-directory-how-subscriptions-associated-directory#manage-the-directory-for-your-office-365-subscription-in-azure)。
 
 <!--For a video about common usage questions for Azure AD, see [Azure Active Directory - Common Sign-up, sign-in and usage questions](http://channel9.msdn.com/Series/Windows-Azure-Active-Directory/WAADCommonSignupsigninquestions).-->
 
@@ -141,9 +141,9 @@ Azure AD 要求删除目录之前必须符合特定的条件。这可以降低�
 - [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/home?forum=WindowsAzureAD)
 - [Azure 多重身份验证论坛](https://social.msdn.microsoft.com/Forums/home?forum=windowsazureactiveauthentication)
 - [堆栈溢出](http://stackoverflow.com/questions/tagged/azure)
-- [以组织身份注册 Azure](sign-up-organization)
+- [以组织身份注册 Azure](/documentation/articles/sign-up-organization)
 - [使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)
-- [在 Azure AD 中分配管理员角色](active-directory-assign-admin-roles)
+- [在 Azure AD 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles)
 
 <!--Image references-->
 [1]: ./media/active-directory-administer/aad_portals.png
