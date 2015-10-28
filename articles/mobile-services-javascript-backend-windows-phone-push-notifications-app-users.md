@@ -83,8 +83,8 @@
 
 <!-- URLs. -->
 
-[向应用程序添加身份验证]: mobile-services-windows-phone-get-started-users
-[向应用程序添加推送通知]: mobile-services-javascript-backend-windows-phone-get-started-push
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-windows-phone-get-started-users
+[向应用程序添加推送通知]: /documentation/articles/mobile-services-javascript-backend-windows-phone-get-started-push
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=HO63-->

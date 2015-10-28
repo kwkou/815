@@ -454,20 +454,20 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 
 
 [azure-sdk]: /downloads/
-[azure-create-storage-account]: storage-create-storage-account
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-management-portal]: https://manage.windowsazure.cn/
 [netstat-url]: http://technet.microsoft.com/zh-cn/library/ff961504.aspx
 
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-emulator-install]: http://www.microsoft.com/web/gallery/install.aspx?appid=HDINSIGHT
-[hdinsight-emulator-release-notes]: hdinsight-emulator-release-notes
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn479228.aspx
-[hdinsight-get-started]: hdinsight-get-started
-[hdinsight-develop-deploy-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-versions]: hdinsight-component-versioning
-[Powershell-install-configure]: install-configure-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png

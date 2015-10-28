@@ -153,7 +153,7 @@
 <!-- LINKS -->
 
   [虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
-  [在 Azure 中安装新 Active Directory 林]: active-directory-forest
+  [在 Azure 中安装新 Active Directory 林]: /documentation/articles/active-directory-forest
   [如何创建存储帐户]: #CreateStorageAcct
   [如何创建虚拟机并将其部署到虚拟网络]: #CreateVM
   [在 Azure 中创建虚拟网络]: /manage/services/networking/create-a-virtual-network/

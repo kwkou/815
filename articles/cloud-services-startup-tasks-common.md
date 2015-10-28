@@ -488,7 +488,8 @@ Startup2.cmd：
 
 [ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
 [Task]: https:
-/msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
+
+msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime

@@ -168,7 +168,7 @@
 	Resource group name: CLIRG
 	Virtual machine name: myqvm
 	Location name: chinanorth
-	Operating system Type [Windows, Linux]: Linux
+	Operating system Type [Windows, Linux]: /documentation/articles/Linux
 	ImageURN (format: "publisherName:offer:skus:version"): CoreOS:CoreOS:Alpha:660.0.0
 	User name: azureuser
 	Password: ********

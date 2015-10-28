@@ -58,9 +58,9 @@
 <!-- URLs. -->
 
 [Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/p/?LinkID=257677
-[Mobile Services server script reference]: mobile-services-how-to-use-server-scripts
+[Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[向现有移动服务应用程序添加身份验证]: mobile-services-ios-get-started-users
+[向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-ios-get-started-users
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=HO63-->

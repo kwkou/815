@@ -674,7 +674,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
 [PasswordVault]: http://msdn.microsoft.com/zh-cn/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/zh-cn/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [LoginAsync 方法]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
@@ -684,14 +684,15 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII control codes C0 and C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Commands_to_manage_mobile_services
-[乐观并发教程]: mobile-services-windows-store-dotnet-handle-database-conflicts
+[乐观并发教程]: 
+documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 [IncludeTotalCount]: http:
 /msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx
 [Skip]: http://msdn.microsoft.com/zh-cn/library/azure/dn250573.aspx
 [Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Azure 移动服务客户端 SDK 中的自定义 API]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
-[从客户端调用自定义 API]: mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api
+[从客户端调用自定义 API]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
 <!---HONumber=HO63-->

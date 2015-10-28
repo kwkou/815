@@ -461,9 +461,9 @@
 [将场景添加到情节提要]: https://developer.apple.com/library/ios/recipes/xcode_help-IB_storyboard/chapters/StoryboardScene.html
 [Core Data]: https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html
 [Download the preview SDK here]: http://aka.ms/Gc6fex
-[How to use the Mobile Services client library for iOS]: mobile-services-ios-how-to-use-client-library
+[How to use the Mobile Services client library for iOS]: /documentation/articles/mobile-services-ios-how-to-use-client-library
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
-[脱机数据处理入门]: mobile-services-ios-get-started-offline-data
-[Get started with Mobile Services]: mobile-services-ios-get-started
-[Get started with data]: mobile-services-ios-get-started-data
+[脱机数据处理入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
+[Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
+[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
 <!---HONumber=HO63-->

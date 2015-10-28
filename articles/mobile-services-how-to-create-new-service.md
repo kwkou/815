@@ -29,10 +29,10 @@
 
 
 <!-- URLs. -->
-[移动服务入门]: mobile-services-javascript-backend-phonegap-get-started
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-phonegap-get-started
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 [Mobile Services SDK]: https://go.microsoft.com/fwLink/p/?LinkID=268375
 
 [Management Portal]: https://manage.windowsazure.cn/
-[.NET backend version]: mobile-services-dotnet-backend-windows-phone-get-started
+[.NET backend version]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started
 <!---HONumber=61-->

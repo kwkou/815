@@ -60,7 +60,7 @@
 
 <!-- URLs. -->
 
-[Service-side authorization of Mobile Services users]: mobile-services-javascript-backend-service-side-authorization
+[Service-side authorization of Mobile Services users]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253

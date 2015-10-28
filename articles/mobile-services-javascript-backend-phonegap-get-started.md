@@ -161,8 +161,8 @@
 
 <!-- URLs. -->
 
-[Add Mobile Services to an existing app]: mobile-services-html-get-started-data
-[向应用程序添加身份验证]: mobile-services-html-get-started-users
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-html-get-started-data
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532

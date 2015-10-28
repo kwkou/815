@@ -498,7 +498,7 @@
 
 
 <!-- URLs. -->
-[Get started with push notifications in Mobile Services]: mobile-services-javascript-backend-android-get-started-push
+[Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Azure 管理门户]: https://manage.windowsazure.cn/

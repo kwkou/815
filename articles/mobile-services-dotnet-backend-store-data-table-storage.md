@@ -154,7 +154,8 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables#what-is
 [MongoLab Add-on Page]: 
-gallery/store/mongolab/mongolab
+gallery
+store/mongolab/mongolab
  
 
 <!---HONumber=71-->

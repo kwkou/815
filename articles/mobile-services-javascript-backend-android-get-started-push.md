@@ -148,24 +148,24 @@
 
 <!-- URLs. -->
 
-[推送通知入门 (Eclipse)]: mobile-services-javascript-backend-android-get-started-push-EC
+[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-EC
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Get started with Mobile Services]: mobile-services-android-get-started
-[数据处理入门]: mobile-services-android-get-started-data
-[身份验证入门 ]: mobile-services-android-get-started-users
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
+[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data
+[身份验证入门 ]: /documentation/articles/mobile-services-android-get-started-users
 [Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [Push notifications to app users]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
 [Authorize users with scripts]: /zh-cn/documentation/articles/mobile-services-windows-store-javascript-authorize-users-in-scripts
 [JavaScript and HTML]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [设置 Google Play Services SDK]: http://go.microsoft.com/fwlink/?LinkId=389801
 [Windows Azure Management Portal]: https://manage.windowsazure.cn/
-[如何使用适用于移动服务的 Android 客户端库 ]: mobile-services-android-how-to-use-client-library
+[如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 
-[移动服务服务器脚本参考]: mobile-services-how-to-use-server-scripts
-[Send push notifications to authenticated users]: mobile-services-javascript-backend-android-push-notifications-app-users
-[什么是通知中心？]: notification-hubs-overview
-[Send broadcast notifications to subscribers]: notification-hubs-android-send-breaking-news
-[Send template-based notifications to subscribers]: notification-hubs-android-send-localized-breaking-news
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users
+[什么是通知中心？]: /documentation/articles/notification-hubs-overview
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-android-send-breaking-news
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-android-send-localized-breaking-news
 <!---HONumber=HO63-->

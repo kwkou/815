@@ -68,7 +68,7 @@
 
 		azure mobile migrate PrimaryService SecondaryService
 		info:    Executing command mobile migrate
-		Warning: this action will use the capacity from the mobile service 'SecondaryService' and delete it and the host name for 'PrimaryService' may not resolve for up to 30 minutes. Do you want to migrate the mobile service 'PrimaryService'? [y/n]: y
+		Warning: this action will use the capacity from the mobile service 'SecondaryService' and delete it and the host name for 'PrimaryService' may not resolve for up to 30 minutes. Do you want to migrate the mobile service 'PrimaryService'? [y/n]: /documentation/articles/y
 		+ Performing migration
 		+ Migration with id '0123456789abcdef0123456789abcdef' started. The migration may take several minutes to complete.
 		+ Cleaning up

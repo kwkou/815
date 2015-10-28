@@ -87,9 +87,9 @@ In the next tutorial, [Service-side authorization of Mobile Services users](/doc
 
 <!-- URLs. -->
 
-[向移动服务添加身份验证]: mobile-services-android-get-started-users
-[Get started with push notifications]: mobile-services-javascript-backend-android-get-started-push
-[推送通知入门]: mobile-services-javascript-backend-android-get-started-push
+[向移动服务添加身份验证]: /documentation/articles/mobile-services-android-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
+[推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 <!---HONumber=HO63-->

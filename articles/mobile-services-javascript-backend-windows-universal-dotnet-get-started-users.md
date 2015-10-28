@@ -70,13 +70,13 @@
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 
-[移动服务入门]: mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Get started with data]: mobile-services-javascript-backend-windows-store-dotnet-get-started-data
-[Get started with authentication]: mobile-services-javascript-backend-windows-store-dotnet-get-started-users
-[Get started with push notifications]: mobile-services-javascript-backend-windows-store-dotnet-get-started-push
-[Authorize users with scripts]: mobile-services-windows-store-dotnet-authorize-users-in-scripts
-[JavaScript and HTML]: mobile-services-windows-store-javascript-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-users
+[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
+[JavaScript and HTML]: /documentation/articles/mobile-services-windows-store-javascript-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[移动服务 .NET 操作方法概念性参考]: mobile-services-windows-dotnet-how-to-use-client-library
-[Register your Windows Store app package for Microsoft authentication]: mobile-services-how-to-register-store-app-package-microsoft-authentication
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
 <!---HONumber=HO63-->

@@ -103,7 +103,7 @@
 
 3. 配置 deisctl：
 
-        export DEISCTL_TUNNEL=[public ip of the load balancer]: 2223
+        export DEISCTL_TUNNEL=[public ip of the load balancer]: /documentation/articles/2223
 模板定义了将 2223 映射到实例 1、将 2224 映射到实例 2、将 2225 映射到实例 3 的入站 NAT 规则。这提供了使用 deisctl 工具时的冗余。可以在 Azure 门户中检查这些规则：
 
 ![负载平衡器上的 NAT 规则](./media/virtual-machines-deis-cluster/nat-rules.png)

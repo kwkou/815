@@ -386,37 +386,39 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [2]: http://technet.microsoft.com/library/ee176961.aspx
 [3]: http://technet.microsoft.com/library/hh847889.aspx
 
-[hbase-get-started]: hdinsight-hbase-get-started
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
 [vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
-[vm-create]: virtual-machines-windows-tutorial
+[vm-create]: /documentation/articles/virtual-machines-windows-tutorial
 [azure-portal]: https://manage.windowsazure.cn
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal#rdp
 
 [hdinsight-powershell-reference]: https:
-/msdn.microsoft.com/library/dn858087.aspx
+
+msdn.microsoft.com/library/dn858087.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: install-configure-powershell
-[hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
-[hdinsight-provision]: hdinsight-provision-clusters
-[hdinsight-get-started]: hdinsight-get-started
+[powershell-install]: /documentation/articles/install-configure-powershell
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-use-sqoop]: hdinsight-use-sqoop
-[hdinsight-power-query]: hdinsight-connect-excel-power-query
-[hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
+[hdinsight-analyze-flight-delay-data]: 
+documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [img-dns-surffix]: .
 media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png

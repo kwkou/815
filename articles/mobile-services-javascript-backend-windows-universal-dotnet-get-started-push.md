@@ -85,10 +85,10 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started
-[Get started with data]: mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
-[身份验证入门 ]: mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
-[Send push notifications to authenticated users]: mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
-[什么是通知中心？]: notification-hubs-overview
-[如何使用适用于 Azure 移动服务的 .NET 客户端]: mobile-services-windows-dotnet-how-to-use-client-library
+[Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
+[Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
+[身份验证入门 ]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
+[Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
+[什么是通知中心？]: /documentation/articles/notification-hubs-overview
+[如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 <!---HONumber=HO63-->

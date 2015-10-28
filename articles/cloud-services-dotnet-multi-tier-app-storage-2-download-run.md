@@ -573,7 +573,7 @@
 <div><a href="/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-3-web-role" class="site-arrowboxcta download-cta">教程 3</a></div>
 
   [本系列第一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview
-  [先决条件]: prerequisites
+  [先决条件]: /documentation/articles/prerequisites
   [设置开发环境]: #setupdevenv
   [创建 Azure 存储帐户]: #createWASA
   [安装 Azure 存储资源管理器]: #installASE
@@ -591,7 +591,7 @@
   [Azure 管理门户]: http://manage.windowsazure.cn
   [新建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-portal-new-storage.png
   [快速创建]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-storage-quick.png
-  [如何管理存储帐户]: storage-manage-storage-account
+  [如何管理存储帐户]: /documentation/articles/storage-manage-storage-account
   [使用 URL 前缀创建存储]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-create-storage-url-test.png
   [管理密钥]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-manage-keys.png
   [密钥 GUID]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-guid-keys.PNG

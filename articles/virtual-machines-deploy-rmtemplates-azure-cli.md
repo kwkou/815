@@ -136,7 +136,7 @@
     Resource group name: coreos-quick
     Virtual machine name: coreos
     Location name: westus
-    Operating system Type [Windows, Linux]: linux
+    Operating system Type [Windows, Linux]: /documentation/articles/linux
     ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
     User name: ops
     Password: *********

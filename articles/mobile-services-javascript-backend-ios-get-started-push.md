@@ -102,16 +102,16 @@
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[移动服务入门]: mobile-services-ios-get-started
-[Get started with data]: mobile-services-ios-get-started-data
-[Get started with authentication]: mobile-services-ios-get-started-users
+[移动服务入门]: /documentation/articles/mobile-services-ios-get-started
+[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
+[Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
 [Mobile Services server script reference]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[Send push notifications to authenticated users]: mobile-services-javascript-backend-ios-push-notifications-app-users
-[What are Notification Hubs?]: notification-hubs-overview
-[Send broadcast notifications to subscribers]: notification-hubs-ios-send-breaking-news
-[Send template-based notifications to subscribers]: notification-hubs-ios-send-localized-breaking-news
-[Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library
+[Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
+[Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
+[Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
+[Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 <!---HONumber=HO63-->

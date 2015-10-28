@@ -74,8 +74,8 @@
 * [移动服务服务器脚本参考](/documentation/articles/mobile-services-how-to-use-server-scripts)<br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
 
 <!-- URLs. -->
-[移动服务入门]: mobile-services-ios-get-started
-[将移动服务添加到现有应用程序]: mobile-services-android-get-started-data
+[移动服务入门]: /documentation/articles/mobile-services-ios-get-started
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-android-get-started-data
 [Google Cloud Messaging 客户端组件]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure 移动服务组件]: http://components.xamarin.com/view/azure-mobile-services/

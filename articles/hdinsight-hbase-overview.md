@@ -63,16 +63,16 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 
 
-[hbase-provision-vnet]: hdinsight-hbase-provision-vnet
-[hbase-build-java-maven]: hdinsight-hbase-build-java-maven
-[hdinsight-use-hive]: hdinsight-use-hive
-[hdinsight-storage]: hdinsight-use-blob-storage
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
+[hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
 [azure-purchase-options]: /pricing/purchase-options/
 
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/
 
 <!---HONumber=71-->

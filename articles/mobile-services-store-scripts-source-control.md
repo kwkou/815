@@ -146,11 +146,11 @@
 [Git website]: http://git-scm.com
 [源代码管理]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
-[移动服务入门]: mobile-services-ios-get-started
-[将移动服务添加到现有应用程序]: mobile-services-ios-get-started-data
-[在移动服务中使用服务器脚本]: mobile-services-how-to-use-server-scripts
+[移动服务入门]: /documentation/articles/mobile-services-ios-get-started
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-ios-get-started-data
+[在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[从客户端调用自定义 API]: mobile-services-ios-call-custom-api
+[从客户端调用自定义 API]: /documentation/articles/mobile-services-ios-call-custom-api
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 

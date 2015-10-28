@@ -100,13 +100,13 @@
 
 <!-- URLs. -->
 
-[Validate and modify data with scripts]: mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
-[Refine queries with paging]: mobile-services-windows-store-dotnet-add-paging-data
-[Get started with Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Get started with data]: mobile-services-windows-store-dotnet-get-started-data
-[身份验证入门]: mobile-services-windows-store-dotnet-get-started-users
-[推送通知入门 ]: mobile-services-javascript-backend-windows-store-dotnet-get-started-push
-[Mobile Services .NET How-to Conceptual Reference]: mobile-services-windows-dotnet-how-to-use-client-library
+[Validate and modify data with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts
+[Refine queries with paging]: /documentation/articles/mobile-services-windows-store-dotnet-add-paging-data
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
+[Get started with data]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-data
+[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[推送通知入门 ]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545

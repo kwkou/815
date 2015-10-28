@@ -165,13 +165,13 @@
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[将移动服务添加到现有应用程序]: mobile-services-windows-phone-get-started-data
-[身份验证入门 ]: mobile-services-windows-phone-get-started-users
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data
+[身份验证入门 ]: /documentation/articles/mobile-services-windows-phone-get-started-users
 [设置已经过身份验证的 Web 服务以便为 Windows Phone 发送推送通知]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/ff941099(v=vs.105).aspx
 
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[移动服务 .NET 操作方法概念性参考]: mobile-services-windows-dotnet-how-to-use-client-library
-[What are Notification Hubs?]: notification-hubs-overview
+[移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
+[What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-windows-phone-send-breaking-news
