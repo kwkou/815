@@ -1,20 +1,13 @@
-<properties
-    pageTitle="如何使用服务总线队列 (.NET) | Windows Azure"
-    description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 .NET API 通过 C# 编写的。"
-    services="service-bus"
-    documentationCenter=".net"
-    authors="sethmanheim"
-    manager="timlt"
-    editor=""/>
+<properties linkid="dev-net-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (.NET) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues C#, Azure queues .NET" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 .NET API 通过 C# 编写的。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use Service Bus Queues" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 
 <tags
-    ms.service="service-bus"
+	ms.service="service-bus"
     ms.date="07/02/2015"
-    wacn.date="10/22/2015"/>
+    wacn.date="10/03/2015"/>
 
-# 如何使用 Azure 服务总线队列
+# 如何使用服务总线队列
 
-本文介绍了如何使用服务总线队列。相关示例采用 C# 编写且使用 .NET API。涉及的方案包括创建队列以及发送和接收消息。有关队列的详细信息，请参阅[后续步骤](#Next-steps)部分。
+本指南介绍如何使用服务总线队列。相关示例用 C# 编写且使用 .NET API。涉及的任务包括**创建队列**以及**发送和接收消息**。有关队列的详细信息，请参阅[后续步骤](#Next-steps)部分。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -26,11 +19,11 @@
 
 ## 添加服务总线 NuGet 包
 
-服务总线 **NuGet** 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。
+服务总线 **NuGet** 包是获取服务总线 API 和使用所有服务总线依赖项配置应用程序的最简单的方法。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。
 
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
-1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
+1.  在“解决方案资源管理器”中，右键单击“引用”，然后单击“管理 NuGet 包”。
 2.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
 
     ![][7]
@@ -41,26 +34,26 @@
 
 服务总线使用连接字符串来存储终结点和凭据。你可以将连接字符串置于配置文件中，而不是对其进行硬编码：
 
-- 当使用 Azure 云服务时，建议你使用 Azure 服务配置系统（.csdef 和 .cscfg 文件）来存储连接字符串。
-- 在使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 Web.config 文件）来存储连接字符串。
+- 当使用 Azure 云服务时，建议你使用 Azure 服务配置系统（****.csdef** 和 ****.cscfg** 文件）来存储连接字符串。
+- 在使用 Azure 网站或 Azure 虚拟机时，建议使用 .NET 配置系统（如 **Web.config** 文件）来存储连接字符串。
 
-在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本文稍后部分将对此进行介绍。
+在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本指南稍后部分将对此进行介绍。
 
 ### 使用云服务时配置连接字符串
 
-该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (.csdef) 文件中添加 `Setting` 标签，如下一示例所示。
+该服务配置机制是 Azure 云服务项目特有的，它使你能够从 Azure 管理门户动态更改配置设置，而无需重新部署你的应用程序。例如，向服务定义 (****.csdef**) 文件中添加 `Setting` 标签，如下所示：
 
-    <ServiceDefinition name="Azure1">
-    ...
-        <WebRole name="MyRole" vmsize="Small">
-            <ConfigurationSettings>
-                <Setting name="Microsoft.ServiceBus.ConnectionString" />
-            </ConfigurationSettings>
-        </WebRole>
-    ...
-    </ServiceDefinition>
+	<ServiceDefinition name="WindowsAzure1">
+	...
+		<WebRole name="MyRole" vmsize="Small">
+	    	<ConfigurationSettings>
+	      		<Setting name="Microsoft.ServiceBus.ConnectionString" />
+    		</ConfigurationSettings>
+  		</WebRole>
+	...
+	</ServiceDefinition>
 
-然后在服务配置 (.cscfg) 文件中指定值，如以下示例所示。
+然后在服务配置 (****.cscfg**) 文件中指定值：
 
 	<ServiceConfiguration serviceName="WindowsAzure1">
 	...
@@ -73,11 +66,11 @@
 	...
 	</ServiceConfiguration>
 
-使用从 Azure 管理门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
+使用从管理门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
-### 在使用网站或 Azure 虚拟机时配置连接字符串
+### 在使用网站或虚拟机时配置连接字符串
 
-在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 **Web.config**）。你可以使用 `<appSettings>` 元素存储连接字符串：
+在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 `web.config` ）。你可以使用 `<appSettings>` 元素存储连接字符串：
 
 	<configuration>
 	    <appSettings>
@@ -86,21 +79,21 @@
 		</appSettings>
 	</configuration>
 
-使用从 Azure 管理门户检索到的 SAS 名称和密钥值，如上一部分中所述。
+使用从管理门户检索到的 SAS 名称和密钥值，如上一部分中所述。
 
 ## 如何创建队列
 
 你可以使用 [`NamespaceManager` 类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx)对服务总线队列执行管理操作。此类提供了创建、枚举和删除队列的方法。
 
-此示例使用带连接字符串的 Azure `CloudConfigurationManager` 类构造 `NamespaceManager` 对象，此连接字符串包含服务总线服务命名空间的基址和有权管理该命名空间的相应 SAS 凭据。此连接字符串的形式如以下示例所示。
+此示例使用带连接字符串的 Azure `CloudConfigurationManager` 类构造 `NamespaceManager` 对象，此连接字符串包含服务总线服务命名空间的基址和有权管理该命名空间的相应 SAS 凭据。此连接字符串的形式为
 
 	Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedSecretIssuer=[issuerName];SharedSecretValue=[yourDefaultKey]
 
-使用以下示例，考虑上一节中的配置设置。
+例如，考虑上一节中的配置设置：
 
-    // Create the queue if it does not exist already.
-    string connectionString =
-        CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
+	// Create the queue if it does not exist already
+	string connectionString = 
+	CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
     var namespaceManager =
         NamespaceManager.CreateFromConnectionString(connectionString);
@@ -112,17 +105,17 @@
 
 这里使用了 [`CreateQueue`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.createqueue.aspx) 方法的重载，以允许你调整队列属性（例如，为了将默认“生存时间”值设置为应用于发送到队列的消息）。使用 [`QueueDescription`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) 类应用这些设置。以下示例演示如何创建最大大小为 5 GB 且默认消息生存时间为 1 分钟的名为“TestQueue”的队列：
 
-    // Configure queue settings.
+	// Configure Queue Settings
     QueueDescription qd = new QueueDescription("TestQueue");
     qd.MaxSizeInMegabytes = 5120;
     qd.DefaultMessageTimeToLive = new TimeSpan(0, 1, 0);
 
-    // Create a new queue with custom settings.
-    string connectionString =
-        CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
+	// Create a new Queue with custom settings
+	string connectionString = 
+	    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-    var namespaceManager =
-        NamespaceManager.CreateFromConnectionString(connectionString);
+	var namespaceManager = 
+		NamespaceManager.CreateFromConnectionString(connectionString);
 
     if (!namespaceManager.QueueExists("TestQueue"))
     {
@@ -135,34 +128,34 @@
 
 为向服务总线队列发送消息，你的应用程序需使用连接字符串创建 [`QueueClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 对象。
 
-以下代码演示了如何使用 [`CreateFromConnectionString`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.createfromconnectionstring.aspx) API 调用为上面创建的“TestQueue”队列创建 [`QueueClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 对象。
+以下代码演示了如何使用 [`CreateFromConnectionString`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.createfromconnectionstring.aspx) API 调用为上面创建的“TestQueue”队列创建 [`QueueClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 对象：
 
-    string connectionString =
-        CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
+	string connectionString = 
+	    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-    QueueClient Client =
-        QueueClient.CreateFromConnectionString(connectionString, "TestQueue");
+    QueueClient Client = 
+		QueueClient.CreateFromConnectionString(connectionString, "TestQueue");
 
-    Client.Send(new BrokeredMessage());
+	Client.Send(new BrokeredMessage());
 
-发往服务总线队列的消息以及从服务总线队列接收的消息是 [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 类的实例。`BrokeredMessage` 对象包含具有一组标准属性（如 [`Label`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [`TimeToLive`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的字典和一段任意应用程序数据正文。应用程序可通过将任何可序列化对象传入到 [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，也可以提供 **System.IO.Stream**。
+发往服务总线队列的消息以及从服务总线队列接收的消息是 [`BrokeredMessage`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 类的实例。`BrokeredMessage` 对象包含具有一组标准属性（如 [`Label`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [`TimeToLive`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的字典和一段任意应用程序数据正文。应用程序可通过将任何可序列化对象传入到 [`BrokeredMessage`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx) 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，也可以提供 **System.IO.Stream**。
 
-以下示例演示了如何将五条测试消息发送到在上面的代码示例中获取的“TestQueue”[`QueueClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx)对象。
+以下示例演示如何将五条测试消息发送到在上面的代码段中获取的“TestQueue”[`QueueClient`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 对象：
 
      for (int i=0; i<5; i++)
      {
-       // Create message, passing a string message for the body.
+       // Create message, passing a string message for the body
        BrokeredMessage message = new BrokeredMessage("Test message " + i);
 
-       // Set some addtional custom app-specific properties.
+       // Set some addtional custom app-specific properties
        message.Properties["TestProperty"] = "TestValue";
        message.Properties["Message number"] = i;   
 
-       // Send message to the queue.
+       // Send message to the queue
        Client.Send(message);
      }
 
-服务总线队列支持[最大为 256 KB 的消息](/documentation/articles/service-bus-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息实体](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx)。
+服务总线队列支持[最大为 256 Kb](/documentation/articles/service-bus-quotas) 的消息（标头最大为 64 Kb，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息实体](https://msdn.microsoft.com/zh-cn/library/azure/dn520246.aspx)。
 
 ## 如何从队列接收消息
 
@@ -219,7 +212,7 @@
 
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 
--   请参阅[队列、主题和订阅][]。
+-   参阅 MSDN 概述：[队列、主题和订阅][]。
 -   构建向服务总线队列发送消息以及从中接收消息的工作应用程序：[服务总线中转消息传送 .NET 教程]。
 -   服务总线示例：从 [Azure 示例][]下载，或参阅 [MSDN][] 上的概述。
 
@@ -246,4 +239,4 @@
   [Azure 示例]: https://code.msdn.microsoft.com/windowsazure/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [MSDN]: https://msdn.microsoft.com/zh-cn/library/azure/dn194201.aspx
 
-<!---HONumber=74-->
+<!---HONumber=71-->

@@ -1,16 +1,7 @@
-<properties 
-	pageTitle="将无以数计的事物连接到云中" 
-	description="了解如何使用 Microsoft Azure 将无以数计的事物连接到云中。" 
-	services="service-bus,event-hubs" 
-	documentationCenter=".net" 
-	authors="sethmanheim" 
-	manager="timlt" 
-	editor=""/>
-
-<tags 
-	ms.service="service-bus" 
+<properties pageTitle="将无以数计的事物连接到云中" metaKeywords="Service Bus, internet of things" description="了解如何使用 Windows Azure 将无以数计的事物连接到云中." services="service-bus" documentationCenter=".NET" title="Connect Millions of Things to the Cloud" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<tags ms.service="service-bus"
 	ms.date="07/02/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 将无以数计的事物连接到云中
  
@@ -35,4 +26,4 @@
 - [Azure Active Directory](/zh-cn/documentation/services/identity/)
 - [云服务](/zh-cn/documentation/services/identity/) 
 
-<!---HONumber=74-->
+<!---HONumber=71-->

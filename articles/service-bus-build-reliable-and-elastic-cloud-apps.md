@@ -1,20 +1,14 @@
-<properties 
-	pageTitle="使用消息传送构建可靠弹性的云应用" 
-	description="了解如何使用 Windows Azure 中的消息传送构建可靠弹性的云应用程序。" 
-	services="service-bus" 
-	authors="sethmanheim" 
-	manager="timlt" 
-	editor="" 
-	documentationCenter=""/>
+<properties pageTitle="使用消息传送构建可靠弹性的云应用程序" metaKeywords="Service Bus, Cloud, elastic" description="了解如何使用 Windows Azure 中的消息传送构建可靠弹性的云应用程序。" services="service-bus" title="Build Reliable and Elastic Cloud Apps with Messaging" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
 
 <tags
 	ms.service="service-bus"
 	ms.date="07/02/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
+    />
 
-# 使用消息传送构建可靠弹性的云应用 
+# 使用消息传送构建可靠弹性的云应用程序 
  
-动态需求是当今应用程序面临的现实问题。从季度和可变需求到意外的社交媒体趋势，现代应用程序必须正常处理可确定或可预期的负载高峰。借助 Azure 服务总线的平台即服务 (PaaS) 特性，可以轻松创建可缩放的应用程序，并从组件的使用高峰或暂时服务中断中恢复。
+动态需求是当今应用程序面临的现实问题。从季度和可变需求到意外的社交媒体趋势，现代应用程序必须正常处理可确定或可预期的负载高峰。借助 Azure Service Bus 的平台即服务 (PaaS) 特性，可以轻松创建可缩放的应用程序，并从组件的使用高峰或暂时服务中断中恢复。  
  
 [使用服务总线队列构建 .NET 多层应用程序](/zh-cn/documentation/articles/cloud-services-dotnet-multi-tier-app-using-service-bus-queues/)
  
@@ -38,4 +32,4 @@
 ## 相关服务
 - [云服务](/zh-cn/documentation/services/cloud-services/) 
 
-<!---HONumber=74-->
+<!---HONumber=71-->

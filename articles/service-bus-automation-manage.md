@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="08/28/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="04/13/2015"
+	wacn.date="10/03/2015"/>
 
 
 
@@ -29,7 +29,7 @@ Azure Automation 提供了具有高可靠性和高可用性的工作流执行引
 
 ## Azure Automation 如何帮助管理 Azure Service Bus？
 
-可以使用[服务总线 REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)，通过 Azure 自动化管理服务总线。在 Azure Automation 中，你可以编写 PowerShell 工作流脚本来使用 REST API 执行许多 Service Bus 任务。你还可以将 Azure Automation 中的这些 REST API 调用与其他 Azure 服务的 cmdlet 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
+可以通过使用[服务总线 REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx) 在 Azure 自动化中管理服务总线。在 Azure Automation 中，你可以编写 PowerShell 工作流脚本来使用 REST API 执行许多 Service Bus 任务。你还可以将 Azure Automation 中的这些 REST API 调用与其他 Azure 服务的 cmdlet 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
 
 
 ## 后续步骤
@@ -40,4 +40,4 @@ Azure Automation 提供了具有高可靠性和高可用性的工作流执行引
 * 请参阅文章[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision)
  
 
-<!---HONumber=74-->
+<!---HONumber=71-->

@@ -1,21 +1,14 @@
-<properties
-	pageTitle="如何使用服务总线中继 (.NET) | Windows Azure"
-	description="了解如何使用 Azure 服务总线中继服务连接两个托管于不同位置的应用程序。"
-	services="service-bus"
-	documentationCenter=".net"
-	authors="sethmanheim"
-	manager="timlt"
-	editor=""/>
+<properties linkid="dev-net-how-to-service-bus-relay" urlDisplayName="Service Bus Relay" pageTitle="如何使用服务总线中继 (.NET) - Azure" metaKeywords="get started azure Service Bus Relay C# " description="了解如何使用 Azure 服务总线中继服务连接两个托管于不同位置的应用程序。" metaCanonical="" services="service-bus" documentationCenter=".NET" title="How to Use the Service Bus Relay Service" authors="sethm" solutions="" manager="dwrede" editor="mattshel" />
 
 <tags
 	ms.service="service-bus"
 	ms.date="07/02/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 
 
-# 如何使用 Azure 服务总线中继服务
+# 如何使用服务总线中继服务
 
-本文介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集（服务总线程序集是 Windows Azure .NET SDK 的一部分）中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[后续步骤](#Next-steps)部分。
+本指南将介绍如何使用服务总线中继服务。相关示例用 C# 编写并使用服务总线程序集（服务总线程序集是 Windows Azure .NET SDK 的一部分）中包含的 Windows Communication Foundation (WCF) API 及扩展。有关服务总线中继的详细信息，请参阅[后续步骤](#Next-steps)部分。
 
 [AZURE.INCLUDE [create-account-note](../includes/create-account-note.md)]
 
@@ -27,7 +20,7 @@
 
 服务总线中继使你能够在现有企业环境中托管 WCF 服务。然后，你可以将侦听传入会话和请求这些 WCF 服务的任务委托给在 Azure 内运行的服务总线服务。这使你能够向 Azure 中运行的应用程序代码或者向移动工作者或 Extranet 合作伙伴环境公开这些服务。服务总线允许你精确、安全地控制谁可以访问这些服务。它提供了一种强大且安全的方式，从你的现有企业解决方案公开应用程序功能和数据并从云中利用这些功能和数据。
 
-本操作说明论文演示如何使用服务总线中继创建 WCF Web 服务，并使用 TCP 通道绑定（可实现双方之间安全的对话）公开该服务。
+本操作说明指南演示如何使用服务总线中继创建 WCF Web 服务，并使用 TCP 通道绑定（可实现双方之间安全的对话）公开该服务。
 
 ##创建服务命名空间
 
@@ -37,9 +30,9 @@
 
 1.  登录到 [Azure 管理门户][]。
 
-2.  在 Azure 管理门户的左侧导航窗格中，单击“服务总线”。
+2.  在管理门户的左侧导航窗格中，单击“Service Bus”。
 
-3.  在Azure 管理门户的下方窗格中，单击“创建”。
+3.  在管理门户的下方窗格中，单击“创建”。
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
@@ -50,38 +43,40 @@
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
-	> [AZURE.IMPORTANT]选取要选择用于部署应用程序的*相同区域*。这将为您提供最佳性能。
+	重要说明：选取要部署应用程序的**相同区域**。这将为您提供最佳性能。
 
-6.	将对话框中的其他字段保留为其默认值（“消息传送”和“标准”层），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
+6.	将对话框中的其他字段保留其默认值（“消息传递”和“标准层”），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
-	你创建的命名空间随后将显示在 Azure 管理门户中，需花费一点时间来激活。请等到状态变为“活动”后再继续。
+	你创建的命名空间随后将显示在管理门户中，然后要花费一段时间来激活。请等到状态变为“活动”后再继续。
 
 ## 获取命名空间的默认管理凭据
 
 若要对新的命名空间执行管理操作（如创建中继连接），必须为该命名空间配置共享访问签名 (SAS) 授权规则。有关 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证][]。
 
-1.  在左侧导航窗格中，单击“服务总线”节点以显示可用命名空间的列表。
-
+1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
+	
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
-2.  在显示的列表中双击刚刚创建的命名空间的名称。
+
+2.  在显示的列表中双击刚刚创建的命名空间的名称：
 
 	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
 
-3.  单击页面顶部的“配置”选项卡。
 
-4.  如果预配了服务总线命名空间，默认情况下，将创建 **SharedAccessAuthorizationRule**，其中，**KeyName** 设置为 **RootManageSharedAccessKey**。此页将显示该密钥，以及默认规则的主密钥和辅助密钥。
+3.  单击页面顶部的"配置"选项卡。   
+ 
+4.  如果预配了服务总线命名空间，则已按默认创建了 **KeyName** 设置为 **RootManageSharedAccessKey** 的 **SharedAccessAuthorizationRule**。此页将显示该密钥，以及默认规则的主密钥和辅助密钥。
 
 ## 获取服务总线 NuGet 包
 
-服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。
+服务总线 **NuGet** 包是获取服务总线 API 和使用所有服务总线依赖项配置应用程序的最简单的方法。利用 NuGet Visual Studio 扩展，可以轻松地在 Visual Studio 和 Visual Studio Express 中安装和更新库和工具。服务总线 NuGet 包是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。
 
 要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
-1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
-2.  搜索“服务总线”并选择“Windows Azure 服务总线”项。单击“安装”以完成安装，然后关闭以下对话框。
+1.  在“解决方案资源管理器”中，右键单击“引用”，然后单击“管理 NuGet 包”。
+2.  搜索“服务总线”并选择“Windows Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-13.png)
   
@@ -95,7 +90,7 @@
 在开始下面的步骤之前，请完成以下过程以设置你的环境：
 
 1.  在 Visual Studio 中，在解决方案内创建一个包含以下两个项目的控制台应用程序：“客户端”和“服务”。
-2.  向这两个项目添加 Windows Azure Service Bus NuGet 包。这会向您的项目添加所有必需的程序集引用。
+2.  向这两个项目添加 **Windows Azure 服务总线** NuGet 包。这会向您的项目添加所有必需的程序集引用。
 
 ### 如何创建服务
 
@@ -107,7 +102,7 @@
 
 本部分中的代码示例涵盖了其中的每个组成部分。
 
-协定定义用于添加两个数字并返回相应结果的单个操作 `AddNumbers`。`IProblemSolverChannel` 接口使客户端能够更轻松地管理代理生存期。创建这样一个接口被认为是最佳实践。最好将此协定定义放入单独的文件中，以便可从你的“客户端”和“服务”两个项目中引用该文件，但也可以将代码复制到这两个项目中。
+协定定义用于添加两个数字并返回相应结果的单个操作 `AddNumbers`。`IProblemSolverChannel` 接口使客户端能够更轻松地管理代理生存期。创建这样一个接口被认为是最佳实践。最好将此协定定义放入单独的文件中，以便可从你的“客户端”和“服务”两个项目中引用该文件，但也可以将代码复制到这两个项目中：
 
         using System.ServiceModel;
      
@@ -120,7 +115,7 @@
      
         interface IProblemSolverChannel : IProblemSolver, IClientChannel {}
 
-协定到位后，实施起来就很简单了。
+协定到位后，实施起来就很简单了：
 
         class ProblemSolver : IProblemSolver
         {
@@ -157,7 +152,7 @@
 
 ### 如何在 App.config 文件中配置服务主机
 
-你还可以使用 App.config 文件配置主机。在此情况下，服务托管代码如以下示例所示。
+你还可以使用 App.config 文件配置主机。在此情况下，服务托管代码如下所示：
 
     ServiceHost sh = new ServiceHost(typeof(ProblemSolver));
     sh.Open();
@@ -165,8 +160,7 @@
     Console.ReadLine();
     sh.Close();
 
-终结点定义将移到 App.config 文件中。请注意，NuGet 包已向 App.config 文件添加一系列定义，这些定义是服务总线必需的配置扩展。以下代码示例（与上面列出的代码示例完全等效）应该紧靠在 **system.serviceModel** 元素的下面。此代码示例假定你的项目 C# 命名空间名为“Service”。
-将占位符替换为你的服务总线服务命名空间和密钥。
+终结点定义将移到 App.config 文件中。请注意，**NuGet** 包已向 App.config 文件添加一系列定义，这些定义是服务总线必需的配置扩展。以下代码段（与上面列出的代码完全等效）应该紧靠在 **system.serviceModel** 元素的下面。这段代码假定您的项目 C# 命名空间名为“Service”。将占位符替换为你的服务总线服务命名空间和密钥。
 
     <services>
         <service name="Service.ProblemSolver">
@@ -195,13 +189,13 @@
 
 ### 如何创建客户端
 
-#### 如何以编程方式配置客户端
+####如何以编程方式配置客户端####
 
 若要使用该服务，你可以使用 [`ChannelFactory`](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.channelfactory.aspx) 对象构造 WCF 客户端。服务总线使用通过 ACS 实现的基于令牌的安全模型。**TokenProvider** 类代表具有内置工厂方法的安全令牌提供程序，这些方法可返回一些众所周知的令牌提供程序。以下示例使用 [`CreateSharedAccessSignatureTokenProvider`](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) 方法来处理相应 SAS 令牌的获取。名称和密钥是根据上一部分所述从门户获取的凭据。
 
 首先，在你的客户端项目中引用服务中的 `IProblemSolver` 约定代码或将其复制到你的客户端项目中。
 
-然后，替换客户端的 `Main` 方法中的代码，再次将占位符文本替换为服务总线命名空间和 SAS 密钥。
+然后，替换客户端的 `Main` 方法中的代码，再次将占位符文本替换为服务总线命名空间和 SAS 密钥：
 
     var cf = new ChannelFactory<IProblemSolverChannel>(
         new NetTcpRelayBinding(), 
@@ -219,7 +213,7 @@
 
 #### 如何在 App.config 文件中配置客户端
 
-以下代码介绍了如何使用 App.config 文件配置客户端。
+你还可以使用 App.config 文件配置客户端。使用这种方法的客户端代码如下所示：
 
     var cf = new ChannelFactory<IProblemSolverChannel>("solver");
     using (var ch = cf.CreateChannel())
@@ -227,7 +221,7 @@
         Console.WriteLine(ch.AddNumbers(4, 5));
     }
 
-终结点定义将移到 App.config 文件中。以下代码示例（与上面列出的代码相同）应该紧靠在 **system.serviceModel** 元素的下面。在此，与之前一样，你必须将占位符替换为服务总线命名空间和 SAS 密钥。
+终结点定义将移到 App.config 文件中。以下代码段（与上面列出的代码相同）应该紧靠在 **system.serviceModel** 元素的下面。在此，与之前一样，你必须将占位符替换为服务总线命名空间和 SAS 密钥。
 
     <client>
         <endpoint name="solver" contract="Service.IProblemSolver"
@@ -249,7 +243,7 @@
 
 ## 后续步骤
 
-此时，你已了解服务总线*中继*服务的基础知识，请访问以下链接以了解更多信息。
+此时，你已了解服务总线**中继**服务的基础知识，请访问以下链接以了解更多信息。
 
 -   构建服务：[为服务总线构建服务][]。
 -   构建客户端：[构建服务总线客户端应用程序][]。
@@ -263,7 +257,7 @@
   [使用服务总线进行共享访问签名身份验证]: http://msdn.microsoft.com/zh-cn/library/dn170477.aspx
   [为服务总线构建服务]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee173564.aspx
   [构建服务总线客户端应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee173543.aspx
-  [Azure 示例]: https://code.msdn.microsoft.com/windowsazure/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
-  [MSDN]: https://msdn.microsoft.com/zh-CN/library/azure/dn194201.aspx
+  [Azure Samples]: https://code.msdn.microsoft.com/windowsazure/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
+  [Azure 示例]: http://code.msdn.microsoft.com/windowsazure
 
-<!---HONumber=74-->
+<!---HONumber=71-->

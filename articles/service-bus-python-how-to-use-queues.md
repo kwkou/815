@@ -1,16 +1,8 @@
-<properties 
-	pageTitle="如何使用服务总线队列 (Python) | Windows Azure" 
-	description="了解如何使用 Python 中的 Azure 服务总线队列" 
-	services="service-bus" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="timlt" 
-	editor=""/>
+<properties linkid="develop-python-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (Python) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Python" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例是使用 Python 编写的。" metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Queues" authors="" solutions="" manager="" editor="" />
+<tags  ms.service="service-bus"
 
-<tags 
-	ms.service="service-bus" 
 	ms.date="07/06/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 
 
 # 如何使用 Service Bus 队列
@@ -34,7 +26,7 @@
 		shared_access_key_name='sharedaccesskeyname',
 		shared_access_key_value='sharedaccesskey')
 
-SAS 密钥名称和值可以在 Azure 门户连接信息中找到，也可以在服务器资源管理器中选择服务总线命名空间后，在 Visual Studio “属性”窗口中找到（如前一部分中所示）。
+SAS 密钥名称和值可以在 Azure 门户连接信息中找到，也可以在服务器资源管理器中选择服务总线命名空间后，在“Visual Studio 属性”窗口中找到（如前一部分中所示）。
 
 	bus_service.create_queue('taskqueue')
 
@@ -68,6 +60,7 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 在接收过程中读取并删除消息的行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
+
 如果将 **peek\_lock** 参数设置为 **True**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或安全存储该消息以供将来处理）后，它会通过对 **Message** 对象调用 **delete** 方法来完成接收过程的第二个阶段。**delete** 方法会将消息标记为已使用，并从队列中删除它。
 
 	msg = bus_service.receive_queue_message('taskqueue', peek_lock=True)
@@ -81,17 +74,17 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
 
-如果应用程序在处理消息之后，但在调用 **delete** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
+如果应用程序在处理消息之后，但在调用 **delete** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
 ## 后续步骤
 
 现在，你已了解有关服务总线队列的基础知识，单击下面的链接可了解更多信息。
 
--   请参阅[队列、主题和订阅][]。
+-   参阅 MSDN 参考：[队列、主题和订阅][]。
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx
  
 
-<!---HONumber=74-->
+<!---HONumber=71-->

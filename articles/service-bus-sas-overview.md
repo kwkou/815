@@ -1,5 +1,5 @@
 <properties
-   pageTitle="共享访问签名概述 | Windows Azure"
+   pageTitle="共享访问签名概述"
    description="共享访问签名是什么，其工作原理是怎样的，以及如何在 Node、PHP 和 C# 编程中使用它们。"
    services="service-bus,event-hubs"
    documentationCenter="na"
@@ -8,11 +8,11 @@
    editor=""/>
 
 <tags
-   ms.service="service-bus"
-   ms.date="09/04/2015"
-   wacn.date="10/22/2015"/>
+	ms.service="service-bus"
+	ms.date="07/24/2015"
+	wacn.date="10/03/2015"/>
 
-# 共享访问签名
+# 共享访问签名（可能为英文页面）
 
 *共享访问签名* (SAS) 是服务总线的主要安全机制，包括事件中心、中转消息传送（队列和主题）和中继消息传送。本文介绍共享访问签名、其工作原理以及如何以平台无关的方式使用它们。
 
@@ -24,7 +24,7 @@
 
 ## 共享访问策略
 
-对于 SAS，要了解的一个重点是，一切都从策略开始。对于每个策略，需要确定三个信息片段：**名称**、**范围**和**权限**。**名称**只是该范围内的唯一名称。范围也很简单：它是相关资源的 URI。对于服务总线命名空间，范围是完全限定的域名 (FQDN)，例如 **`https://<yournamespace>.servicebus.chinacloudapi.cn/`**。
+对于 SAS，要了解的一个重点是，一切都从策略开始。对于每个策略，需要确定三个信息片段：**名称**、**范围**和**权限**。**名称**只是该范围内的唯一名称。范围也很简单：它是相关资源的 URI。对于服务总线命名空间，范围是完全限定的域名 (FQDN)，例如 **`https://<yournamespace>.servicebus.windows.net/`**。
 
 策略的可用权限大多数都易于理解：
 
@@ -49,7 +49,7 @@ SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-e
 哈希类似于以下虚构代码，它返回 32 个字节。
 
 ```
-SHA-256('https://<yournamespace>.servicebus.chinacloudapi.cn/'+'\n'+ 1438205742)
+SHA-256('https://<yournamespace>.servicebus.windows.net/'+'\n'+ 1438205742)
 ```
 
 非哈希值位于 **SharedAccessSignature** 字符串中，这样，接收方便可以使用相同的参数计算哈希，以确保它返回相同的结果。URI 指定范围，而密钥名称标识要用于计算哈希的策略。从安全性的立场来看，这非常重要。如果签名与接收方（服务总线）的计算结果不符，则拒绝访问。此时，我们可以确保发送方可访问密钥，并且应该被授予策略中指定的权限。
@@ -166,9 +166,9 @@ private static string createToken(string resourceUri, string keyName, string key
 在了解如何为服务总线中的任何实体创建共享访问签名后，便可以执行 HTTP POST 了：
 
 ```
-POST https://<yournamespace>.servicebus.chinacloudapi.cn/<yourentity>/messages
+POST https://<yournamespace>.servicebus.windows.net/<yourentity>/messages
 Content-Type: application/json
-Authorization: SharedAccessSignature sr=https%3A%2F%2F<yournamespace>.servicebus.chinacloudapi.cn%2F<yourentity>&sig=<yoursignature from code above>&se=1438205742&skn=KeyName
+Authorization: SharedAccessSignature sr=https%3A%2F%2F<yournamespace>.servicebus.windows.net%2F<yourentity>&sig=<yoursignature from code above>&se=1438205742&skn=KeyName
 ContentType: application/atom+xml;type=entry;charset=utf-8
 ``` 
 	
@@ -207,7 +207,7 @@ private bool PutCbsToken(Connection connection, string sasToken)
     request.Properties.ReplyTo = cbsClientAddress;
     request.ApplicationProperties = new ApplicationProperties();
     request.ApplicationProperties["operation"] = "put-token";
-    request.ApplicationProperties["type"] = "servicebus.chinacloudapi.cn:sastoken";
+    request.ApplicationProperties["type"] = "servicebus.windows.net:sastoken";
     request.ApplicationProperties["name"] = Fx.Format("amqp://{0}/{1}", sbNamespace, entity);
     cbsSender.Send(request);
 
@@ -239,7 +239,7 @@ private bool PutCbsToken(Connection connection, string sasToken)
 
 接下来，发布者创建两个 AMQP 链接来发送 SAS 令牌并接收来自服务的回复（令牌验证结果）。
 
-AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更多的信息。SAS 令牌放在消息正文中（使用令牌构造函数）。**"ReplyTo"** 属性设置为节点名称，用于在接收者链接上接收验证结果（可以随意更改其名称，它是服务动态创建的）。服务使用最后三个 application/custom 属性来了解它必须执行哪种类型的操作。如 CBS 草案规范中所述，这些属性必须是**操作名称** ("put-token")、放入的**令牌类型** ("servicebus.chinacloudapi.cn:sastoken")，最后是要应用令牌的**受众“名称”**（整个实体）。
+AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更多的信息。SAS 令牌放在消息正文中（使用令牌构造函数）。**"ReplyTo"** 属性设置为节点名称，用于在接收者链接上接收验证结果（可以随意更改其名称，它是服务动态创建的）。服务使用最后三个 application/custom 属性来了解它必须执行哪种类型的操作。如 CBS 草案规范中所述，这些属性必须是**操作名称** ("put-token")、放入的**令牌类型** ("servicebus.windows.net:sastoken")，最后是要应用令牌的**受众“名称”**（整个实体）。
 
 在发送方链接上发送 SAS 令牌后，发布者需要在接收者链接上读取回复。回复是一个简单的 AMQP 消息，其中包含名为 **"status-code"** 的应用程序属性，这些属性可以包含与 HTTP 状态代码相同的值。
 
@@ -247,8 +247,6 @@ AMQP 消息因为具有众多属性而有点复杂，且包含比简单消息更
 
 有关如何使用这些 SAS 令牌的详细信息，请参阅[服务总线 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/hh780717.aspx)。
 
-有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization)。
+有关 SAS 的详细信息，请参阅 MSDN 上的[服务总线身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dn155925.aspx)节点。[Damir 的博客](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中提供了有关使用 C# 和 Java 脚本的 SAS 的更多示例
 
-此[博客文章](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中介绍了更多关于 C# 和 Java 脚本中的 SAS 的示例。
-
-<!---HONumber=74-->
+<!---HONumber=71-->

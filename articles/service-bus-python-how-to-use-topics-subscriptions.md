@@ -1,16 +1,13 @@
-﻿<properties 
-	pageTitle="如何使用服务总线主题 (Python) - Windows Azure" 
-	description="了解如何使用 Python 中的 Azure 服务总线主题和订阅" 
-	services="service-bus" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="timlt" 
-	editor=""/>
+﻿<properties linkid="develop-python-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用服务总线主题 (Python) - Azure" metaKeywords="Get started Azure Service Bus topics publising subscribe messaging Python" description="了解如何在 Azure 中使用 Service Bus 主题和订阅。代码示例是针对 Python 应用程序编写的。" metaCanonical="" services="service-bus" documentationCenter="Python" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
 
-<tags 
-	ms.service="service-bus" 
+
+
+
+
+<tags ms.service="service-bus"
+
 	ms.date="07/06/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -145,13 +142,13 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 现在，你已了解有关 Service Bus 主题的基础知识，单击下面的链接可了解更多信息。
 
--   请参阅[队列、主题和订阅][]。
+-   参阅 MSDN 参考：[队列、主题和订阅][]。
 -   [SqlFilter.SqlExpression][] 参考。
 
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
  
 
-<!---HONumber=74-->
+<!---HONumber=71-->

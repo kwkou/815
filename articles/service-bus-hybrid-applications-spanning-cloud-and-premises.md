@@ -1,16 +1,8 @@
-<properties 
-	pageTitle="启用跨云和本地的混合应用程序" 
-	description="了解如何构建跨云和本地的混合应用程序。" 
-	services="service-bus" 
-	documentationCenter=".net" 
-	authors="sethmanheim" 
-	manager="timlt" 
-	editor=""/>
-
-<tags 
-	ms.service="service-bus" 
+<properties pageTitle="启用跨云和本地的混合应用程序" metaKeywords="Service Bus, Cloud, Hybrid" description="了解如何构建跨云和本地的混合应用程序。" services="service-bus" documentationCenter=".NET" title="Enable Hybrid Applications Spanning Cloud and Premises" authors="sethm" solutions="" manager="timlt" editor="mattshel" />
+<tags
+	ms.service="service-bus"
 	ms.date="07/02/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 启用跨云和本地的混合应用程序
 
@@ -41,4 +33,4 @@
 - [移动服务](/home/features/mobile-services/)
 - [云服务](/home/features/cloud-services/) 
 
-<!---HONumber=74-->
+<!---HONumber=71-->

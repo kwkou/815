@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="07/25/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 
 # Azure 服务总线
 
@@ -126,4 +126,4 @@
 [3]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [4]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_04_relay.png
 
-<!---HONumber=74-->
+<!---HONumber=71-->

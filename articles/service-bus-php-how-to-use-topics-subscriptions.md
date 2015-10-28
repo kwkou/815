@@ -1,16 +1,11 @@
-<properties 
-	pageTitle="如何使用服务总线主题 (PHP) | Windows Azure" 
-	description="了解如何通过 PHP 使用 Azure 中的服务总线主题。" 
-	services="service-bus" 
-	documentationCenter="php" 
-	authors="sethmanheim" 
-	manager="timlt" 
-	editor=""/>
+<properties linkid="develop-php-how-to-guides-service-bus-topics" urlDisplayName="Service Bus Topics" pageTitle="如何使用服务总线主题 (PHP) - Azure" metaKeywords="" description="了解如何通过 PHP 使用 Azure 中的服务总线主题。" metaCanonical="" services="service-bus" documentationCenter="PHP" title="How to Use Service Bus Topics/Subscriptions" authors="" solutions="" manager="" editor="" />
 
-<tags
-	ms.service="service-bus"
+
+
+<tags 
+	ms.service="service-bus" 
 	ms.date="07/06/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="10/03/2015"/>
 # 如何使用服务总线主题和订阅
 
 本指南说明如何使用服务总线主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk)。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
@@ -19,7 +14,7 @@
 
 ## 创建 PHP 应用程序
 
-创建访问 Azure Blob 服务的 PHP 应用程序的唯一要求是从代码中引用 [Azure SDK for PHP](/documentation/articles/php-download-sdk) 中的类。你可以使用任何开发工具或记事本创建应用程序。
+创建访问 Azure Blob 服务的 PHP 应用程序的唯一要求是从代码中引用 [Azure SDK for PHP][download-sdk] 中的类。你可以使用任何开发工具或记事本创建应用程序。
 
 > [AZURE.NOTE]你的 PHP 安装还必须已安装并启用 [OpenSSL 扩展](http://php.net/openssl)。
 
@@ -300,7 +295,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 后续步骤
 
-现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
+现在，你已了解服务总线队列的基础知识，请参阅 MSDN 主题[队列、主题和订阅][]以获取更多信息。
 
 [What are Service Bus Topics and Subscriptions?]: #bkmk_WhatAreSvcBusTopics
 [Create a Service Namespace]: #bkmk_CreateSvcNamespace
@@ -320,10 +315,10 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 [Namespace List screenshot]: ../../../DevCenter/dotNet/Media/sb-queues-05.png
 [Properties Pane screenshot]: ../../../DevCenter/dotNet/Media/sb-queues-06.png
 [Default Key screenshot]: ../../../DevCenter/dotNet/Media/sb-queues-07.png
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
-[Available Namespaces screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_04_SvcBusNode_AvailNamespaces.jpg
+[队列、主题和订阅]: https://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx
+[可用命名空间屏幕截图]: ../../../DevCenter/Java/Media/SvcBusQueues_04_SvcBusNode_AvailNamespaces.jpg
 [sqlfilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 
 [require-once]: http://php.net/require_once
 
-<!---HONumber=74-->
+<!---HONumber=71-->
