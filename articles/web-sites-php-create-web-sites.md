@@ -84,7 +84,7 @@
 -   [如何缩放网站][如何缩放网站]
 -   [使用 Git 进行发布][使用 Git 进行发布]
 
-有关端到端教程，请访问 [PHP 开发中心 - 教程][PHP 开发中心 - 教程]页。
+<!--有关端到端教程，请访问 [PHP 开发中心 - 教程][PHP 开发中心 - 教程]页。-->
 
   [Azure 管理门户]: http://manage.windowsazure.cn/
   [针对 Mac 和 Linux 的 Azure 命令行工具]: /develop/php/how-to-guides/command-line-tools/
@@ -108,5 +108,5 @@
   [如何配置网站]: /documentation/articles/web-sites-configure
   [如何管理网站]: /documentation/articles/web-sites-manage
   [如何监视网站]: /documentation/articles/web-sites-monitor
-  [使用 Git 进行发布]: /develop/php/common-tasks/publishing-with-git/
-  [PHP 开发中心 - 教程]: /develop/php/tutorials/
+  [使用 Git 进行发布]: /documentation/articles/publishing-with-git/
+  [PHP 开发中心 - 教程]: /develop/php/
