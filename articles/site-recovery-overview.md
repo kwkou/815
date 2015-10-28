@@ -31,13 +31,13 @@ Site Recovery 服务有助于构建稳健的业务连续性和灾难恢复 (BCDR
 
 **复制目标** | **复制源（本地）** | **详细信息** | **文章**
 ---|---|---|---
-Azure | Hyper-V 站点 | 将定义为 Hyper-V 站点的一个或多个本地 Hyper-V 主机服务器上的虚拟机复制到 Azure。不需要 VMM 服务器。 | [了解详细信息](site-recovery-hyper-v-site-to-azure)
-Azure| VMM 服务器 | 将 VMM 云中一个或多个本地 Hyper-V 主机服务器上的虚拟机复制到 Azure。 | [了解详细信息](site-recovery-vmm-to-azure)
-Azure | 物理 Windows 服务器 | 将物理 Windows 或 Linux 服务器复制到 Azure | [了解详细信息](site-recovery-vmware-to-azure)
-Azure | VMware 虚拟机 | 将 VMware 虚拟机复制到 Azure | [了解详细信息](site-recovery-vmware-to-azure)
-辅助数据中心 | VMM 服务器 | 将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到另一数据中心内的辅助 VMM 服务器 | [了解详细信息](site-recovery-vmm-to-vmm)
-辅助数据中心 | 使用 SAN 的 VMM 服务器 | 使用 SAN 复制将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到另一数据中心内的辅助 VMM 服务器| [了解详细信息](site-recovery-vmm-san)
-辅助数据中心 | 单个 VMM 服务器 | 将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到同一 VMM 服务器上的辅助云 | [了解详细信息](site-recovery-single-vmm)
+Azure | Hyper-V 站点 | 将定义为 Hyper-V 站点的一个或多个本地 Hyper-V 主机服务器上的虚拟机复制到 Azure。不需要 VMM 服务器。 | [了解详细信息](/documentation/articles/site-recovery-hyper-v-site-to-azure)
+Azure| VMM 服务器 | 将 VMM 云中一个或多个本地 Hyper-V 主机服务器上的虚拟机复制到 Azure。 | [了解详细信息](/documentation/articles/site-recovery-vmm-to-azure)
+Azure | 物理 Windows 服务器 | 将物理 Windows 或 Linux 服务器复制到 Azure | [了解详细信息](/documentation/articles/site-recovery-vmware-to-azure)
+Azure | VMware 虚拟机 | 将 VMware 虚拟机复制到 Azure | [了解详细信息](/documentation/articles/site-recovery-vmware-to-azure)
+辅助数据中心 | VMM 服务器 | 将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到另一数据中心内的辅助 VMM 服务器 | [了解详细信息](/documentation/articles/site-recovery-vmm-to-vmm)
+辅助数据中心 | 使用 SAN 的 VMM 服务器 | 使用 SAN 复制将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到另一数据中心内的辅助 VMM 服务器| [了解详细信息](/documentation/articles/site-recovery-vmm-san)
+辅助数据中心 | 单个 VMM 服务器 | 将 VMM 云中本地 Hyper-V 主机服务器上的虚拟机复制到同一 VMM 服务器上的辅助云 | [了解详细信息](/documentation/articles/site-recovery-single-vmm)
 
 
 ## 工作负载指南

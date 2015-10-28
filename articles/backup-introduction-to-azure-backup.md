@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure 备份简介"
+	pageTitle="Azure 备份简介 | Windows Azure"
 	description="本文概述了可让客户将数据备份到 Azure 的 Azure 备份服务"
 	services="backup"
 	documentationCenter=""
@@ -16,7 +16,7 @@
 本文全面概述了可让客户将本地数据备份到 Azure 的 Microsoft 云集成备份解决方案。
 
 ## 什么是 Azure 备份？
-Azure 备份是一个多租户 Azure 服务，可让你将本地数据备份到 Azure。它取代了现有的本地或异地备份解决方案，并且是可靠、安全、高性价比的基于云的产品。Azure 备份构建在一流的基础结构之上，具有可缩放、持久且高度可用的优点。使用此解决方案，你可以从 System Center Data Protection Manager (SCDPM) 服务器、Windows 服务器或 Windows 客户端计算机备份数据和应用程序。Azure 备份和 SCDPM 是构成 Microsoft 云集成备份解决方案的基本技术。
+Azure 备份是一个多租户 Azure 服务，可让你备份任意位置（本地或 Azure 中）的数据。它取代了现有的本地或异地备份解决方案，并且是可靠、安全、高性价比的基于云的产品。它还提供了保护云中运行的资产的弹性。Azure 备份构建在一流的基础结构之上，具有可缩放、持久且高度可用的优点。使用此解决方案，你可以从 System Center Data Protection Manager (SCDPM) 服务器、Windows 服务器、Windows 客户端计算机或 Azure IaaS 虚拟机备份数据与应用程序。Azure 备份和 SCDPM 是构成 Microsoft 云集成备份解决方案的基本技术。
 
 ## 云设计点
 传统的备份解决方案已演变成将云视为类似于磁盘或磁带的终结点。尽管这种方法简单、易于部署且提供一致的体验，但它的用途有限，并且不能充分利用基础平台。这对于最终客户而言，就是一个效率低下而昂贵的解决方案。如果将 Azure 看作"无非就是一个存储终结点"，那么，备份解决方案将无法发挥功能丰富性和公共云平台的强大功能。在另一方面，Azure 备份提供的真正服务使用云结构来提供强大且经济实惠的备份解决方案。它与在本地备份解决方案 (SCDPM) 集成，以提供端到端混合解决方案。
