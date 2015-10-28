@@ -60,7 +60,7 @@ CREATE USER user1 WITH password='<Strong_Password>';
 
 作为一项预览功能，SQL 数据库 V12 支持将 Azure Active Directory 标识作为包含数据库用户。有关详细信息，请参阅[通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication)。
 
-Microsoft 建议对 SQL 数据库使用包含数据库用户。有关详细信息，请参阅[包含数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/library/ff929188.aspx)。
+Microsoft 建议对 SQL 数据库使用包含数据库用户。有关详细信息，请参阅[包含数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 
 ## 管理登录名
 

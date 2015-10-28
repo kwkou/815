@@ -144,6 +144,6 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureSqlSe
 
 ## 其他资源
 
-- [Azure SQL 数据库](/documentation/services/sql-database/)
+- [Azure SQL 数据库](/documentation/services/sql-databases/)
 
 <!---HONumber=74-->

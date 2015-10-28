@@ -73,7 +73,7 @@
  - 你可以在 SQL 数据库服务器上或者为单个的数据库配置防火墙设置。
 
 
-- 如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。请单击[此处](sql-database-develop-direct-route-ports-adonet-v12.md)了解详细信息。
+- 如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开虚拟机上的端口范围 11000-11999 和 14000-14999。请单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)了解详细信息。
 
 
 - 若要处理*暂时性故障*，请将[*重试*逻辑](#TransientFaultsAndRetryLogicGm)添加到与 Azure SQL 数据库交互的客户端程序。
@@ -104,7 +104,7 @@
 ### V12 中的非 1433 端口
 
 
-与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。有关详细信息，请参阅：<br/>[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](sql-database-develop-direct-route-ports-adonet-v12.md)
+与 Azure SQL 数据库 V12 建立的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。有关详细信息，请参阅：<br/>[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)
 
 
 下一部分更详细说明了重试逻辑和暂时性故障处理。
@@ -140,7 +140,7 @@ Azure 系统能够在 SQL 数据库服务中出现大量工作负载时动态地
 
 有关详细信息，请参阅：
 - [Azure SQL 数据库开发：操作指南主题](http://msdn.microsoft.com/zh-cn/library/azure/ee621787.aspx) 
-- [Azure SQL 数据库连接问题故障排除](http://support.microsoft.com/kb/2980233/)
+- [Azure SQL 数据库连接问题故障排除](http://support.microsoft.com/zh-cn/kb/2980233/)
 
 
 ## 技术

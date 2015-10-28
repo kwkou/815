@@ -68,7 +68,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
     $DatabaseName = "nameofdatabasetobackup"
     $BlobName = "filename.bacpac"
 
-在 [Azure 预览门户](https://portal.azure.com)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+在 [Azure 预览门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
 
     $StorageName = "storageaccountname"
     $ContainerName = "blobcontainername"
@@ -138,6 +138,6 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity)
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
-- [SQL 数据库文档](/documentation/services/sql-database/)
+- [SQL 数据库文档](/documentation/services/sql-databases/)
 
 <!---HONumber=74-->

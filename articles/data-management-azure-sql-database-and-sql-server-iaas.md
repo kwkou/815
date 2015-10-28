@@ -230,7 +230,7 @@ Microsoft Azure 提供了用于托管 SQL Server 的两个选项：**Azure SQL �
 </tr>
 <tr>
    <td valign="middle"><p><a href="http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx">MSDN：Azure SQL 数据库</a></p>
-<p><a href="http://msdn.microsoft.com/library/azure/jj823132.aspx">MSDN：Azure 虚拟机中的 SQL Server</a></p>
+<p><a href="http://www.windowsazure.cn/documentation/articles/virtual-machines-sql-server-infrastructure-services">MSDN：Azure 虚拟机中的 SQL Server</a></p>
 
 <p><a href="http://www.windowsazure.cn/home/features/sql-database/">windowsazure.cn：Azure SQL 数据库</a></p></td>
    <td valign="middle">库文档的链接。</td>   

@@ -25,7 +25,7 @@ Azure SQL 数据库 V12 几乎与 SQL Server 2014 及更高版本的引擎完全
 将兼容的本地 SQL Server 数据库迁移到 Azure SQL 数据库 V12 的方法有很多。
 
 - 对于小型到中型数据库，迁移兼容的 SQL Server 2005 或更高版本数据库只需运行 SQL Server Management Studio 中的“将数据库部署到 Microsoft Azure 数据库向导”即可，但前提是你没有连接问题（没有连接、低带宽或超时问题）。
-- 对于中型到大型数据库或存在连接问题时，你可以使用 SQL Server Management Studio 将数据和架构导出到 BACPAC 文件 （存储在本地或 Azure blob 中），然后将 BACPAC 文件导入到 Azure SQL 实例中。如果将 BACPAC 存储在 Azure blob 中，还可以从 Azure 门户中导入 BACPAC 文件。有关 BACPAC 文件的详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/library/ee210546.aspx)。
+- 对于中型到大型数据库或存在连接问题时，你可以使用 SQL Server Management Studio 将数据和架构导出到 BACPAC 文件 （存储在本地或 Azure blob 中），然后将 BACPAC 文件导入到 Azure SQL 实例中。如果将 BACPAC 存储在 Azure blob 中，还可以从 Azure 门户中导入 BACPAC 文件。有关 BACPAC 文件的详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)。
 - 对于大型数据库，通过单独迁移架构和数据可以实现最佳性能。你可以使用 SQL Server Management Studio 或 Visual Studio 将架构提取到数据库项目，然后部署架构创建 Azure SQL 数据库。随后，你可以使用 BCP 提取数据，然后使用 BCP 通过并行流将数据导入 Azure SQL 数据库。不论你选择哪种方法，迁移大型、复杂的数据库需要花费数小时。
 
 ### 选项 #1
@@ -51,7 +51,7 @@ SQL Server Management Studio 提供两种方法，用于将兼容的本地 SQL S
 ### SQL Server Management Studio (SSMS)
 可以使用 SSMS 将兼容的数据库直接部署到 Azure SQL 数据库，或者将数据库的逻辑备份导出为 BACPAC，然后，仍然使用 SSMS 导入该 BACPAC 来创建新的 Azure SQL 数据库。
 
-[下载最新版本的 SSMS](https://msdn.microsoft.com/library/mt238290.aspx)
+[下载最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
 
 ### Visual Studio 中的 SQL Server 工具（VS、SSDT）
 Visual Studio 中的 SQL Server 工具可用于创建和管理数据库项目，该项目包括架构中每个对象的 Transact-SQL 文件集。可以从数据库或者脚本文件导入该项目。创建后，可将该项目部署到 Azure SQL 数据库 v12；生成项目，然后验证架构兼容性。单击某个错误会打开相应的 Transact-SQL 文件，然后便可以编辑该文件并更正错误。修复所有错误后，可将项目直接发布到 SQL 数据库以创建空数据库，或者发布回到原始 SQL Server 数据库的（副本）以更新其架构，然后，便可以使用上述 SSMS 来部署该数据库及其数据。
