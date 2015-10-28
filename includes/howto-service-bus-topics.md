@@ -64,4 +64,4 @@ Service Bus 主题和订阅支持*发布/订阅*消息通信模型。在使用�
   [6]: ./media/howto-service-bus-topics/getting-started-multi-tier-27.png
   [34]: ./media/howto-service-bus-topics/VSProperties.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

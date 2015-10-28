@@ -10,13 +10,13 @@
 <tags
 	ms.service="service-bus"
 	ms.date="06/02/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="10/22/2015"/>
 
 #使用 Service Bus 中继创建 .NET 本地/云混合应用程序
 
 ##介绍
 
-使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松地开发针对 Windows Azure 的混合云应用程序。本指南假设你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
+使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松地开发针对 Windows Azure 的混合云应用程序。本文假设你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
 
 你将学习以下内容：
 
@@ -31,7 +31,7 @@
 
 解决方案架构师开始使用云来轻松地处理缩放需求和降低运营成本。在此过程中，他们发现希望用作其解决方案的构建基块的现有服务资产位于企业防火墙内，无法通过云解决方案轻松访问。许多内部服务的构建或托管方式使得它们无法在企业网络边缘轻松公开。
 
-*服务总线中继*的设计考虑到如何利用现有的 Windows Communication Foundation (WCF) Web 服务，使得位于企业外部的解决方案能够安全地访问这些服务，而无需对企业网络基础结构进行彻底的更改。虽然此类服务总线中继服务仍托管在现有环境中，但它们会将侦听传入会话和请求这一任务委托给云托管的服务总线。服务总线还会通过使用[共享访问签名](https://msdn.microsoft.com/zh-cn/library/dn170478.aspx) (SAS) 身份验证来保护这些服务免遭未经授权的访问。
+服务总线中继的设计考虑到如何利用现有的 Windows Communication Foundation (WCF) Web 服务，使得位于企业外部的解决方案能够安全地访问这些服务，而无需对企业网络基础结构进行彻底的更改。虽然此类服务总线中继服务仍托管在现有环境中，但它们会将侦听传入会话和请求这一任务委托给云托管的服务总线。服务总线还会通过使用[共享访问签名](https://msdn.microsoft.com/library/dn170478.aspx) (SAS) 身份验证来保护这些服务，以阻止未经授权的访问。
 
 ##解决方案应用场景
 
@@ -49,29 +49,27 @@
 
 在你可以开始开发 Azure 应用程序之前，需要获取相应工具并设置开发环境。
 
-1.  若要安装 Azure SDK for .NET，请单击以下链接：
+1.  在[获取工具和 SDK][] 安装 Azure SDK for .NET
 
-    [获取工具和 SDK][]
-
-2. 	单击你要使用的 Visual Studio 版本对应的“安装 SDK”。本教程中的步骤使用 Visual Studio 2013：
+2. 	单击你正在使用的 Visual Studio 版本的“安装 SDK”。本教程中的步骤使用 Visual Studio 2013。
 
 	![][42]
 
-3.  当系统提示你是要运行还是保存安装程序时，请单击“运行”：
+3.  当提示你是要运行还是保存安装程序时，单击“运行”。
 
     ![][2]
 
-4.  在“Web 平台安装程序”中，单击“安装”，然后继续安装：
+4.  在“Web 平台安装程序”中，单击“安装”，然后继续安装。
 
     ![][3]
 
-5.  安装完成后，你便做好了开发准备工作。SDK 包含了一些工具，可利用这些工具在 Visual Studio 中轻松开发 Azure 应用程序。如果你未安装 Visual Studio，SDK 还会安装免费的 Visual Studio Express。
+5.  安装完成后，你就有了开始开发应用所需的一切。SDK 包含了一些工具，可利用这些工具在 Visual Studio 中轻松开发 Azure 应用程序。如果你未安装 Visual Studio，SDK 还会安装免费的 Visual Studio Express。
 
 ## 创建服务命名空间
 
 若要开始在 Azure 中使用服务总线功能，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
 
-你可以使用 [Azure 管理门户][]或 Visual Studio 服务器资源管理器来管理命名空间和服务总线消息传送实体，但只能在门户内创建新的命名空间。
+你可以使用[Azure 管理门户][]或 Visual Studio 服务器资源管理器管理命名空间和服务总线消息传送实体，但只能在门户内创建新命名空间。
 
 ### 若要使用门户创建命名空间，请执行以下操作：
 
@@ -85,9 +83,9 @@
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
-    重要说明：选取要部署应用程序的**相同区域**。这将为您提供最佳性能。
+    > [AZURE.IMPORTANT]选取要选择用于部署应用程序的*相同区域*。这将为您提供最佳性能。
 
-6.	将对话框中的其他字段保留其默认值（“消息传递”和“标准层”），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
+6.	将对话框中的其他字段保留为其默认值（“消息传送”和“标准”层），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
 	![][38]
 
@@ -122,7 +120,7 @@
 
 ### 创建项目
 
-1.  使用管理员权限启动 Microsoft Visual Studio 2013 或 Microsoft Visual Studio Express。若要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。
+1.  使用管理员权限启动 Microsoft VisualStudio 2013 或 Microsoft Visual Studio Express。要使用管理器权限启动 Visual Studio，右键单击“Microsoft Visual Studio 2013“（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。
 
 2.  在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
 
@@ -136,17 +134,17 @@
 
 5.  在“解决方案资源管理器”中，右键单击“ProductsServer”，然后单击“属性”。
 
-6.  单击左侧的“应用程序”选项卡，然后确保“.NET Framework 4”或“.NET Framework 4.5”显示在“目标框架:”下拉列表中。如果未显示，请从下拉列表中选择它，然后在提示你重新加载项目时单击“是”。
+6.  单击左侧的“应用程序”选项卡，然后确保“.NET Framework 4”或“.NET Framework 4.5”显示在“目标框架”列表中。如未显示，则从列表中将其选中，然后当提示是否重新加载该项目时单击“是”。
 
     ![][12]
 
-7.  如果你已为 Visual Studio 安装 NuGet 包管理器，请跳到下一步骤。否则，请访问 [NuGet][]，然后单击“安装 NuGet”。[](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)按照提示操作以安装 NuGet 包管理器，然后重新启动 Visual Studio。
+7.  如果你已为 Visual Studio 安装 NuGet 包管理器，请跳到下一步骤。否则，请访问 [NuGet][]，然后单击“安装 NuGet”[](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)。按照提示操作以安装 NuGet 包管理器，然后重新启动 Visual Studio。
 
-8.  在“解决方案资源管理器”中，右键单击“引用”，然后单击“管理 NuGet 包”。
+8.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 
-9.  在 NuGet 对话框的左栏中，单击“联机”。
+9.  在“NuGet”对话框的左栏中，单击“联机”。
 
-10. 	在右栏中，单击“搜索”框，键入“服务总线”，然后选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
+10. 	在右栏中，单击“搜索”框，键入“**服务总线**”，然后选择“Microsoft Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
 
     ![][13]
 
@@ -158,7 +156,7 @@
 
 12. 在“名称”框中，键入名称 **ProductsContract.cs**。然后单击“添加”。
 
-13. 在“ProductsContract.cs”中，将命名空间定义替换为以下代码（用于定义服务的协定）：
+13. 在“ProductsContract.cs”中，将命名空间定义替换为以下代码，以定义服务的协定。
 
         namespace ProductsServer
         {
@@ -168,7 +166,7 @@
 
             // Define the data contract for the service
             [DataContract]
-            // Declare the serializable properties
+            // Declare the serializable properties.
             public class ProductData
             {
                 [DataMember]
@@ -193,7 +191,7 @@
             }
         }
 
-14. 在 Program.cs 中，将命名空间定义替换为以下代码，以便添加配置文件服务及其宿主：
+14. 在 Program.cs 中，将命名空间定义替换为以下代码，以为其添加配置文件服务和主机。
 
         namespace ProductsServer
         {
@@ -246,7 +244,7 @@
             }
         }
 
-15. 在“解决方案资源管理器”中，双击“App.config”文件以在 **Visual Studio** 编辑器中将其打开。将 **&lt;system.ServiceModel&gt;** 的内容替换为以下 XML 代码。确保将 *yourServiceNamespace* 替换为你的服务命名空间的名称，并将 *yourKey* 替换为之前从 Azure 管理门户中检索到的 SAS 密钥：
+15. 在“解决方案资源管理器”中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。将 **&lt;system.ServiceModel&gt;** 的内容替换为以下 XML 代码。确保将 *yourServiceNamespace* 替换为你的服务命名空间的名称，并将 *yourKey* 替换为之前从 Azure 管理门户中检索到的 SAS 密钥：
 
         <system.serviceModel>
           <extensions>
@@ -276,7 +274,7 @@
           </behaviors>
         </system.serviceModel>
 
-16. 按 **F6** 或从“生成”菜单中单击“生成解决方案”生成该应用程序，以验证你目前工作的准确性。
+16. 按 F6 或从“生成”菜单中单击“生成解决方案”生成该应用程序，以验证你到目前为止的工作的准确性。
 
 ## 创建 ASP.NET MVC 应用程序
 
@@ -284,7 +282,7 @@
 
 ### 创建项目
 
-1.  确保使用管理员权限运行 Visual Studio。若要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。Microsoft Azure 计算模拟器（本指南后面会讨论）要求使用管理员权限启动 Visual Studio。
+1.  确保使用管理员权限运行 Visual Studio。若不能，要使用管理员权限启动 Visual Studio，请右键单击“Microsoft Visual Studio 2013”（或“Microsoft Visual Studio Express”），然后单击“以管理员身份运行”。Microsoft Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
 
 2.  在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
 
@@ -296,7 +294,7 @@
 
     ![][16]
 
-5.  在“解决方案资源管理器”中，右键单击“模型”，单击“添加”，然后单击“类”。在“名称”框中，键入名称 **Product.cs**。然后单击“添加”。
+5.  在解决方案资源管理器中，右键单击“模型”，再单击“添加”，然后单击“类”。在“名称”框中，键入名称 **Product.cs**。然后单击”添加“。
 
     ![][17]
 
@@ -336,23 +334,23 @@
             }
         }
 
-3.  在“解决方案资源管理器”中，展开 Views\\Shared：
+3.  在解决方案资源管理器中，展开 Views\\Shared 文件夹。
 
     ![][18]
 
-4.  接下来，双击 \_Layout.cshtml 以在 Visual Studio 编辑器中将其打开。
+4.  双击 **\_Layout.cshtml** 以在 Visual Studio 编辑器中将其打开。
 
 5.  将每一处 **My ASP.NET Application** 更改为 **LITWARE'S Products**。
 
-6. 删除“Home”、“About”和“Contact”链接。删除突出显示的代码：
+6. 删除“主页”、“关于”和“联系人”链接。在下面的示例中，删除突出显示的代码。
 
 	![][41]
 
-7.  在“解决方案资源管理器”中，展开 Views\\Home：
+7.  在解决方案资源管理器中，展开 Views\\Home 文件夹：
 
     ![][20]
 
-8.  双击 Index.cshtml 在 Visual Studio 编辑器中将其打开。将文件的全部内容替换为以下代码：
+8.  双击“Index.cshtml”在 Visual Studio 编辑器中将其打开。将文件的全部内容替换为以下代码。
 
 		@model IEnumerable<ProductsWeb.Models.Product>
 
@@ -387,7 +385,7 @@
 		</table>
 
 
-9.  若要验证你目前工作的准确性，可以按 **F6** 或 **Ctrl+Shift+B** 来生成项目。
+9.  若要验证你到目前为止的工作的准确性，可以按 **F6** 或 **Ctrl+Shift+B** 来生成项目。
 
 
 ### 在本地运行应用程序
@@ -395,8 +393,8 @@
 运行应用程序以验证其是否正常运行。
 
 1.  确保“ProductsPortal”是活动项目。在“解决方案资源管理器”中，右键单击项目名称并选择“设置为启动项目”。
-2.  在 **Visual Studio** 中，按 **F5**。
-3.  你的应用程序应在浏览器中显示为正在运行：
+2.  在 **Visual Studio** 中，按 F5。
+3.  你的应用程序应在浏览器中显示为正在运行。
 
     ![][21]
 
@@ -406,13 +404,13 @@
 
 若要将应用程序部署到云服务，需要在解决方案中添加一个云服务项目部署项目。该部署项目包含在云中正常运行应用程序所需的配置信息。
 
-1.  若要使应用程序能够部署到云中，请右键单击“解决方案资源管理器”中的 **ProductsPortal** 项目，单击“转换”，然后单击“转换为 Microsoft Azure 云服务项目”。
+1.  若要使应用程序能够部署到云中，请右键单击“解决方案资源管理器”中的 **ProductsPortal** 项目，再单击“转换”，然后单击“转换为 Microsoft Azure 云服务项目”。
 
     ![][22]
 
-2.  若要测试应用程序，请按 **F5**。
+2.  若要测试应用程序，请按 F5。
 
-3.  这将启动 Azure 计算模拟器。此计算模拟器使用本地计算机来模拟在 Azure 中运行的应用程序。可以通过查看系统任务栏来确认此模拟器已启动：
+3.  这将启动 Azure 计算模拟器。此计算模拟器使用本地计算机来模拟在 Azure 中运行的应用程序。可以通过查看系统托盘来确认此模拟器已启动。
 
        ![][23]
 
@@ -422,9 +420,9 @@
 
 下一步是将本地产品服务器与 ASP.NET MVC 应用程序挂钩。
 
-1.  如果尚未打开在“创建 ASP.NET MVC 应用程序”部分中创建的 **ProductsPortal** 项目，请在 Visual Studio 中重新打开该项目。
+1.  如果它尚未打开，则在 Visual Studio 中重新打开你在"Creating an ASP.NET MVC Application"部分中创建的 **ProductsPortal** 项目。
 
-2.  采用与“创建本地服务器”部分类似的步骤，将 NuGet 包添加到项目“引用”中。在“解决方案资源管理器”中，右键单击“引用”，然后单击“管理 NuGet 包”。
+2.  采用与“创建本地服务器”部分类似的步骤，将 NuGet 包添加到项目“引用”中。在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 
 3.  搜索“服务总线”并选择“Microsoft Azure 服务总线”项。然后，完成安装过程并关闭此对话框。
 
@@ -475,17 +473,17 @@
             }
 7.  在“解决方案资源管理器”中，右键单击“ProductsPortal”解决方案，单击“添加”，然后单击“现有项目”。
 
-8.  导航到 **ProductsServer** 项目，然后双击“ProductsServer.csproj”解决方案文件以添加它。
+8.  导航到 **ProductsServer** 项目，然后双击“ProductsServer.csproj”解决方案文件以将其添加。
 
 9.  在“解决方案资源管理器”中，右键单击“ProductsPortal”解决方案并单击“属性”。
 
-10. 在左侧，单击“启动项目”。在右侧单击“多个启动项目”。确保 **ProductsServer**、**ProductsPortal.Azure** **和ProductsPortal** 按这样的顺序显示，并且将“启动”设置为针对 **ProductsServer** 和 **ProductsPortal.Azure** 的操作，将“无”设置为针对 **ProductsPortal** 的操作。例如：
+10. 在左侧，单击“启动项目”。在右侧，单击“多个启动项目”。确保 **ProductsServer**、**ProductsPortal.Azure** 和 **ProductsPortal** 按这样的顺序显示，并且将“启动”设置为针对 **ProductsServer** 和 **ProductsPortal.Azure** 的操作，将“无”设置为针对 **ProductsPortal** 的操作。
 
       ![][25]
 
-11. 仍在“属性”对话框中，单击左侧的“ProjectDependencies”。
+11. 仍然在“属性”对话框中，单击左侧的“ProjectDependencies”。
 
-12. 在“项目”下拉列表中，单击“ProductsServer”。确保取消选中“ProductsPortal”并选中“ProductsPortal.Azure”。然后，单击“确定”：
+12. 在“项目”列表中，单击“ProductsServer”。确保未选中“ProductsPortal”，但选中“ProductsPortal.Azure”。然后，单击“确定”：
 
     ![][26]
 
@@ -493,7 +491,7 @@
 
 1.  从 Visual Studio 的“文件”菜单中，单击“全部保存”。
 
-2.  按 **F5** 生成并运行应用程序。应先启动本地服务器（**ProductsServer** 控制台应用程序），再在浏览器窗口中启动 **ProductsWeb** 应用程序，如下面的屏幕截图中所示。这次，你将看到产品库存列出了从产品服务本地系统中检索到的数据。
+2.  按 F5 生成并运行应用程序。应先启动本地服务器（**ProductsServer** 控制台应用程序），再在浏览器窗口中启动 **ProductsWeb** 应用程序，如以下屏幕截图中所示。这次，你将看到产品库存列出了从产品服务本地系统中检索到的数据。
 
     ![][1]
 
@@ -509,20 +507,19 @@
 
 3.  使用你的 Microsoft 帐户登录
 
-
 4.  单击**“下一步”**。如果你的订阅尚未包含任何托管服务，则系统将要求你创建一个托管服务。托管服务在 Azure 订阅中充当应用程序的容器。输入标识应用程序的名称，然后选择应为其优化应用程序的区域。（用户从此区域访问应用程序所花的加载时间会更少。）
 
-5.  选择要将应用程序发布到的托管服务。为其余设置保留以下所示的默认值。单击“下一步”：
+5.  选择要将应用程序发布到其中的托管服务。为其余设置保留以下所示的默认值。单击**“下一步”**。
 
     ![][33]
 
 6. 在最后一页上，单击“发布”以开始部署过程：
 
     ![][34]
+    
+     此过程需要大约 5-7 分钟时间。由于这是你首次发布，因此 Azure 会依次执行以下操作以便公开应用程序：预配一台虚拟机 (VM)，执行安全强化，在 VM 上创建一个 Web 角色以承载应用程序，将代码部署到该 Web 角色以及配置负载平衡器和网络。
 
-此过程花费的时间约为 5 到 7 分钟。由于这是你首次发布，因此 Azure 会依次执行以下操作以便公开应用程序：预配一台虚拟机 (VM)，执行安全强化，在 VM 上创建一个 Web 角色以承载应用程序，将代码部署到该 Web 角色以及配置负载平衡器和网络。
-
-7. 当发布正在进行时，你可以在“Azure 活动日志”窗口中监视活动，该窗口通常位于 Visual Studio 或 Visual Web Developer 的底部：
+7. 当发布正在进行时，你可以在“Azure 活动日志”窗口中监视活动，该窗口通常位于 Visual Studio 或 Visual Web Developer 的底部。
 
     ![][35]
 
@@ -530,7 +527,7 @@
 
     ![][36]
 
-    你的网站依赖于本地服务器，因此你必须本地运行 **ProductsServer** 应用程序，网站才能正常运行。在云网站上执行请求时，你将看到请求传入本地控制台应用程序，如下面的屏幕快照中显示的“GetProducts called”输出所示。
+    你的网站取决于本地服务器，因此你必须在本地运行 **ProductsServer** 应用程序，网站才能正常运行。在云网站上执行请求时，你将看到请求传入本地控制台应用程序，如以下屏幕快照中显示的“GetProducts called”输出所示。
 
     ![][37]
 
@@ -546,7 +543,7 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 1.  登录到 [Azure 管理门户]，单击“云服务”，然后单击服务的名称。
 
-2.  单击“仪表板”选项卡，然后单击“停止”以暂时挂起应用程序。只需单击“启动”即可重新启动应用程序。单击“删除”即可从 Azure 中完全删除应用程序，但无法还原它。
+2.  单击“仪表板”选项卡，然后单击“停止”以暂时挂起应用程序。单击“启动”即可重新启动它。单击“删除”即可从 Azure 中完全删除应用程序，但无法将其还原。
 
 	![][43]
 
@@ -616,4 +613,4 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
   [executionmodels]: /develop/net/
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

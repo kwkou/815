@@ -40,13 +40,17 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。你可以从 Azure 管理门户或从 Visual Studio 服务器资源管理器获取这些凭据。
 
-###从门户中获取管理凭据
+### 从门户中获取管理凭据
 
-1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：![](./media/howto-service-bus-queues/sb-queues-13.png)
+1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
 
-2.  从显示的列表中选择刚刚创建的命名空间：![](./media/howto-service-bus-queues/sb-queues-09.png)
+	![](./media/howto-service-bus-queues/sb-queues-13.png)
 
-3.  单击“连接信息”。![](./media/howto-service-bus-queues/sb-queues-06.png)
+2.  从显示的列表中选择刚刚创建的命名空间：   
+	![](./media/howto-service-bus-queues/sb-queues-09.png)
+
+3.  单击“连接信息”。   
+	![](./media/howto-service-bus-queues/sb-queues-06.png)
 
 4.  在“访问连接信息”窗格中，找到包含 SAS 密钥和密钥名称的连接字符串。
 
@@ -62,8 +66,9 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 ![][34]
 
-  [Azure 管理门户]: https://manage.windowsazure.cn
+  [Azure Management Portal]: http://manage.windowsazure.cn
+  [Azure 管理门户]: http://manage.windowsazure.cn
 
   [34]: ./media/howto-service-bus-queues/VSProperties.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

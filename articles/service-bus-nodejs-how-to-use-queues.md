@@ -1,8 +1,16 @@
-<properties linkid="dev-nodejs-how-to-service-bus-queues" urlDisplayName="Service Bus Queues" pageTitle="如何使用服务总线队列 (Node.js) - Azure" metaKeywords="Azure Service Bus queues, Azure queues, Azure messaging, Azure queues Node.js" description="了解如何在 Azure 中使用 Service Bus 队列。代码示例用 Node.js 编写。" metaCanonical="" services="service-bus" documentationCenter="Node.js" title="How to Use Service Bus Queues" authors="larryfr" solutions="" manager="" editor="" />
-<tags
-	ms.service="service-bus"
+<properties 
+	pageTitle="如何使用服务总线队列 (Node.js) | Windows Azure" 
+	description="了解如何在来自 Node.js 应用程序的 Azure 中使用服务总线队列。" 
+	services="service-bus" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
+	editor=""/>
+
+<tags 
+	ms.service="service-bus" 
 	ms.date="07/06/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="10/22/2015"/>
 
 # 如何使用 Service Bus 队列
 
@@ -19,11 +27,13 @@
 
 若要使用 Azure 服务总线，请下载并使用 Node.js Azure 包。其中包括一组用来与服务总线 REST 服务通信的库。
 
+
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
 1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\\node\\sbqueues\\WebRole1** 文件夹。
 
 2.  在命令窗口中键入 **npm install azure**，这应该产生类似如下的输出：
+
 
         azure@0.7.5 node_modules\azure
 		├── dateformat@1.0.2-1.2.3
@@ -55,7 +65,7 @@ Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVIC
 
 ## 如何创建队列
 
-可以通过 **ServiceBusService** 对象处理队列。以下代码创建 **ServiceBusService** 对象。将它添加到靠近 **server.js** 文件顶部、用于导入 azure 模块的语句之后的位置：
+可以通过 **ServiceBusService** 对象处理队列。以下代码创建 **ServiceBusService** 对象。将它添加到靠近 **server.js** 文件顶部，用于导入 Azure 模块的语句之后的位置：
 
     var serviceBusService = azure.createServiceBusService();
 
@@ -80,7 +90,7 @@ Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVIC
         }
     });
 
-###筛选器
+### 筛选器
 
 可选的筛选操作可应用于使用 **ServiceBusService** 执行的操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
@@ -90,7 +100,7 @@ Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVIC
 
 		function (returnObject, finalCallback, next)
 
-在此回调中并且在处理 **returnObject**（来自对服务器请求的响应）后，回调必须调用 `next`（如果它存在以便继续处理其他筛选器）或只调用 `finalCallback` 以便结束服务调用。
+在此回调中并且在处理 **returnObject**（来自对服务器请求的响应）后，回调必须调用 `next`（如果它存在）以便继续处理其他筛选器或只调用 `finalCallback`，以便结束服务调用。
 
 Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分别是 **ExponentialRetryPolicyFilter** 和 **LinearRetryPolicyFilter**。以下代码创建一个 **ServiceBusService** 对象，该对象使用 **ExponentialRetryPolicyFilter**：
 
@@ -118,13 +128,13 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 ## 如何从队列接收消息
 
-对 **ServiceBusService** 对象使用 **receiveQueueMessage** 方法可从队列接收消息。默认情况下，消息被读取后即从队列删除；但是你可以读取（查看）并锁定消息而不将其从队列删除，只要将可选参数 **isPeekLock** 设置为 **true** 即可。
+对 **ServiceBusService** 对象使用 **receiveQueueMessage** 方法可从队列接收消息。默认情况下，消息被读取后即从队列删除；但是你可以读取（速览）并锁定消息而不将其从队列删除，只要将可选参数 **isPeekLock** 设置为 **true** 即可。
 
 在接收过程中读取并删除消息的默认行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
-如果将 **isPeekLock** 参数设置为 **true**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序处理完该消息（或将它可靠地存储起来留待将来处理）后，通过调用 **deleteMessage** 方法并提供要删除的消息作为参数来完成接收过程的第二阶段。**deleteMessage** 方法将此消息标记为“已使用”并将其从队列中删除。
+如果将 **isPeekLock** 参数设置为 **true**，则接收将变成一个两阶段操作，这样就可以支持无法允许遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序处理完该消息（或将它可靠地存储起来留待将来处理）后，通过调用 **deleteMessage** 方法并提供要删除的消息作为参数来完成接收过程的第二阶段。**deleteMessage** 方法将此消息标记为“已使用”并将其从队列中删除。
 
-以下示例演示如何使用 **receiveQueueMessage** 接收和处理消息。该示例先接收并删除一条消息，然后将 **isPeekLock** 设置为 **true** 后再接收一条消息，最后使用 **deleteMessage** 删除该消息：
+以下示例演示如何使用 **receiveQueueMessage** 接收和处理消息。该示例先接收并删除一条消息，然后使用设置为 **true** 的 **isPeekLock** 接收一条消息，最后使用 **deleteMessage** 删除该消息：
 
     serviceBusService.receiveQueueMessage('myqueue', function(error, receivedMessage){
         if(!error){
@@ -138,7 +148,7 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
                 if(!deleteError){
                     // Message deleted
                 }
-            }
+            });
         }
     });
 
@@ -148,14 +158,14 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
 
-如果应用程序在处理消息之后，但在调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
+如果应用程序在处理消息之后，调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作“至少处理一次”，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
 ## 后续步骤
 
 现在，你已了解有关 Service Bus 队列的基础知识，单击下面的链接可了解更多信息。
 
--   参阅 MSDN 参考：[队列、主题和订阅][]。
--   访问 GitHub 上的 [Azure SDK for Node] 存储库。
+-   请参阅[队列、主题和订阅][]。
+-   访问 GitHub 上的 [Azure SDK for Node][] 存储库。
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
   [后续步骤]: #next-steps
@@ -176,10 +186,10 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   
   
   [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
-  [队列、主题和订阅]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh367516.aspx
+  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 
-  [创建 Node.js 应用程序并将其部署到 Azure  网站]: /develop/nodejs/tutorials/create-a- Website-(mac)/
-  [使用存储构建 Node.js 云服务]: /develop/nodejs/tutorials/web-app-with-storage/
-  [使用存储构建 Node.js 应用程序]: /develop/nodejs/tutorials/web-site-with-storage/
+  [创建 Node.js 应用程序并将其部署到 Azure 网站]:/develop/nodejs/tutorials/create-a-Website-(mac)/ 
+  [使用存储构建 Node.js 云服务]:/develop/nodejs/tutorials/web-app-with-storage/ 
+  [使用存储构建 Node.js Web 应用程序]:/develop/nodejs/tutorials/web-site-with-storage/
 
-<!---HONumber=71-->
+<!---HONumber=74-->
