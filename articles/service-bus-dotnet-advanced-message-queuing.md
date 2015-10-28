@@ -22,7 +22,7 @@
 
 ## 服务总线入门
 
-此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅标题为[如何使用服务总线队列](/develop/net/how-to-guides/service-bus-queues/)的操作方法指南。
+此指南假定你已具有包含名为“queue1”的队列的 Service Bus 命名空间。 如果没有，则可以使用 [Azure 管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅标题为[如何使用服务总线队列](/develop/net/)的操作方法指南。
 
 ## 下载服务总线 SDK
 

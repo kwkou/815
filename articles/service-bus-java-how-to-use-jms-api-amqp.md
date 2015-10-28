@@ -44,16 +44,17 @@
 JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称之间的分隔。将使用 JNDI 解析以下两种类型的 JMS 对象：ConnectionFactory 和 Destination。JNDI 使用一个提供程序模型，你可以在其中插入不同目录服务来处理名称解析任务。Apache Qpid JMS AMQP 1.0 库附带一个使用以下格式的属性文件配置的、基于属性文件的简单 JNDI 提供程序。
 
 ```
-# servicebus.properties - sample JNDI configuration
-	
-# Register a ConnectionFactory in JNDI using the form:
-# connectionfactory.[jndi_name] = [ConnectionURL]
-connectionfactory.SBCF = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
-	
-# Register some queues in JNDI using the form
-# queue.[jndi_name] = [physical_name]
-# topic.[jndi_name] = [physical_name]
-queue.QUEUE = queue1
+
+	# servicebus.properties - sample JNDI configuration
+		
+	# Register a ConnectionFactory in JNDI using the form:
+	# connectionfactory.[jndi_name] = [ConnectionURL]
+	connectionfactory.SBCF = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+		
+	# Register some queues in JNDI using the form
+	# queue.[jndi_name] = [physical_name]
+	# topic.[jndi_name] = [physical_name]
+	queue.QUEUE = queue1
 ```
 
 #### 配置 ConnectionFactory

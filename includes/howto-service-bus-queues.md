@@ -22,9 +22,13 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 2.  在管理门户的左侧导航窗格中，单击“Service Bus”。
 
-3.  在管理门户的下方窗格中，单击“创建”。![](./media/howto-service-bus-queues/sb-queues-03.png)
+3.  在管理门户的下方窗格中，单击“创建”。
+	
+	![](./media/howto-service-bus-queues/sb-queues-03.png)
 
-4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。![](./media/howto-service-bus-queues/sb-queues-04.png)
+4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
+
+	![](./media/howto-service-bus-queues/sb-queues-04.png)
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
@@ -60,7 +64,7 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 ###从服务器资源管理器中获取管理凭据
 
-若要使用 Visual Studio 而非管理门户来获取连接信息，请按[此处](http://http://msdn.microsoft.com/zh-cn/library/windowsazure/ff687127.aspx)所述过程进行操作，详见**从 Visual Studio 连接到 Azure** 部分。当你登录到 Azure 时，服务器资源管理器中“Microsoft Azure”树下的“服务总线”节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
+当你登录到 Azure 时，服务器资源管理器中“Microsoft Azure”树下的“服务总线”节点中会自动填充你所创建的任何命名空间。右键单击任意命名空间，然后单击“属性”，此时就会看到在 Visual Studio 的“属性”窗格中显示与该命名空间关联的连接字符串和其他元数据。
 
 记下 **SharedAccessKey** 值，或将其复制到剪贴板：
 

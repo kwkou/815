@@ -8,7 +8,6 @@
 	editor=""/>
 
 <tags ms.service="service-bus"
-
 	ms.date="06/18/2015"
 	wacn.date="10/03/2015"/>
 
@@ -43,22 +42,22 @@ Microsoft Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中�
 
 ```powershell
 
-try
-{
-    # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
-    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
-    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
-    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
-    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
-    Add-Type -Path $assembly.FullName
-
-    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
-}
-
-catch [System.Exception]
-{
-    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
-}
+	try
+	{
+	    # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
+	    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
+	    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
+	    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
+	    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
+	    Add-Type -Path $assembly.FullName
+	
+	    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
+	}
+	
+	catch [System.Exception]
+	{
+	    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
+	}
 
 ```
 
@@ -82,36 +81,38 @@ catch [System.Exception]
 
 	``` powershell
 	
-	$Namespace = "MyServiceBusNS"
-	$Location = "West US"
-	
-	# Query to see if the namespace currently exists
-	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
-	
-	# Check if the namespace already exists or needs to be created
-	if ($CurrentNamespace)
-	{
-	    Write-Output "The namespace [$Namespace] already exists in the [$($CurrentNamespace.Region)] region."
-	}
-	else
-	{
-	    Write-Host "The [$Namespace] namespace does not exist."
-	    Write-Output "Creating the [$Namespace] namespace in the [$Location] region..."
-	    New-AzureSBNamespace -Name $Namespace -Location $Location -CreateACSNamespace $false -NamespaceType Messaging
-	    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
-	    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
-	}
+		$Namespace = "MyServiceBusNS"
+		$Location = "West US"
+		
+		# Query to see if the namespace currently exists
+		$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
+		
+		# Check if the namespace already exists or needs to be created
+		if ($CurrentNamespace)
+		{
+		    Write-Output "The namespace [$Namespace] already exists in the [$($CurrentNamespace.Region)] region."
+		}
+		else
+		{
+		    Write-Host "The [$Namespace] namespace does not exist."
+		    Write-Output "Creating the [$Namespace] namespace in the [$Location] region..."
+		    New-AzureSBNamespace -Name $Namespace -Location $Location -CreateACSNamespace $false -NamespaceType Messaging
+		    $CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
+		    Write-Host "The [$Namespace] namespace in the [$Location] region has been successfully created."
+		}
 
 	```
 
 若要预配其他服务总线实体，请从 SDK 创建 `NamespaceManager` 类的一个实例。可以使用 [Get-AzureSBAuthorizationRule] cmdlet 来检索用于提供连接字符串的授权规则。我们将在 `$NamespaceManager` 变量中存储对 `NamespaceManager` 实例的引用。我们稍后将在脚本中使用 `$NamespaceManager` 来预配其他实体。
 
 ``` powershell
-$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
-# Create the NamespaceManager object to create the event hub
-Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
-$NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
-Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
+
+	$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
+	# Create the NamespaceManager object to create the event hub
+	Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
+	$NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
+	Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
+
 ```
 
 ## 设置其他 Service Bus 实体
@@ -126,35 +127,35 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 	``` powershell
 		
-	$Path  = "MyEventHub"
-	$PartitionCount = 12
-	$MessageRetentionInDays = 7
-	$UserMetadata = $null
-	$ConsumerGroupName = "MyConsumerGroup"
-		
-	# Check to see if the Event Hub already exists
-	if ($NamespaceManager.EventHubExists($Path))
-	{
-	    Write-Output "The [$Path] event hub already exists in the [$Namespace] namespace."  
-	}
-	else
-	{
-	    Write-Output "Creating the [$Path] event hub in the [$Namespace] namespace: PartitionCount=[$PartitionCount] MessageRetentionInDays=[$MessageRetentionInDays]..."
-	    $EventHubDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.EventHubDescription -ArgumentList $Path
-	    $EventHubDescription.PartitionCount = $PartitionCount
-	    $EventHubDescription.MessageRetentionInDays = $MessageRetentionInDays
-	    $EventHubDescription.UserMetadata = $UserMetadata
-	    $EventHubDescription.Path = $Path
-	    $NamespaceManager.CreateEventHubIfNotExists($EventHubDescription);
-	    Write-Output "The [$Path] event hub in the [$Namespace] namespace has been successfully created."
-	}
-		
-	# Create the consumer group if it doesn't exist
-	Write-Output "Creating the consumer group [$ConsumerGroupName] for the [$Path] event hub..."
-	$ConsumerGroupDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.ConsumerGroupDescription -ArgumentList $Path, $ConsumerGroupName
-	$ConsumerGroupDescription.UserMetadata = $ConsumerGroupUserMetadata
-	$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
-	Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
+		$Path  = "MyEventHub"
+		$PartitionCount = 12
+		$MessageRetentionInDays = 7
+		$UserMetadata = $null
+		$ConsumerGroupName = "MyConsumerGroup"
+			
+		# Check to see if the Event Hub already exists
+		if ($NamespaceManager.EventHubExists($Path))
+		{
+		    Write-Output "The [$Path] event hub already exists in the [$Namespace] namespace."  
+		}
+		else
+		{
+		    Write-Output "Creating the [$Path] event hub in the [$Namespace] namespace: PartitionCount=[$PartitionCount] MessageRetentionInDays=[$MessageRetentionInDays]..."
+		    $EventHubDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.EventHubDescription -ArgumentList $Path
+		    $EventHubDescription.PartitionCount = $PartitionCount
+		    $EventHubDescription.MessageRetentionInDays = $MessageRetentionInDays
+		    $EventHubDescription.UserMetadata = $UserMetadata
+		    $EventHubDescription.Path = $Path
+		    $NamespaceManager.CreateEventHubIfNotExists($EventHubDescription);
+		    Write-Output "The [$Path] event hub in the [$Namespace] namespace has been successfully created."
+		}
+			
+		# Create the consumer group if it doesn't exist
+		Write-Output "Creating the consumer group [$ConsumerGroupName] for the [$Path] event hub..."
+		$ConsumerGroupDescription = New-Object -TypeName Microsoft.ServiceBus.Messaging.ConsumerGroupDescription -ArgumentList $Path, $ConsumerGroupName
+		$ConsumerGroupDescription.UserMetadata = $ConsumerGroupUserMetadata
+		$NamespaceManager.CreateConsumerGroupIfNotExists($ConsumerGroupDescription);
+		Write-Output "The consumer group [$ConsumerGroupName] for the [$Path] event hub has been successfully created."
 	```
 
 ## 后续步骤
