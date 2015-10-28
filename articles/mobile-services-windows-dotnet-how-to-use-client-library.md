@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/01/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/22/2015"/>
 
 #  如何使用适用于 Azure 移动服务的 .NET 客户端
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-本指南说明如何在 Windows 应用商店应用程序和 Windows Phone 应用程序中使用适用于 Azure 移动服务的 .NET 客户端执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门]()教程或[将移动服务添加到现有应用程序]()教程。
+本指南说明如何在 Windows 应用商店应用程序和 Windows Phone 应用程序中使用适用于 Azure 移动服务的 .NET 客户端执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started)教程或[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data)教程。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -234,9 +234,9 @@
 + 更方便地合并不同表或数据库中的记录。
 + ID 值能够更好地与应用程序的逻辑相集成。
 
-如果插入的记录中未设置字符串 ID 值，移动服务将为 ID 生成唯一值。你可以在客户端上或在 .NET 移动后端服务中，使用 `Guid.NewGuid()` 方法生成自己的 ID 值。若要了解有关在 JavaScript 后端移动服务中生成 GUID 的详细信息，请参阅[如何：生成唯一的 ID 值](mobile-services-how-to-use-server-scripts#generate-guids)。
+如果插入的记录中未设置字符串 ID 值，移动服务将为 ID 生成唯一值。你可以在客户端上或在 .NET 移动后端服务中，使用 `Guid.NewGuid()` 方法生成自己的 ID 值。若要了解有关在 JavaScript 后端移动服务中生成 GUID 的详细信息，请参阅[如何：生成唯一的 ID 值](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids)。
 
-也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](virtual-machines-command-line-tools#Mobile_Tables)。
+也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables)。
 
 ## <a name="modifying"></a>如何：在移动服务中修改数据
 
@@ -272,7 +272,7 @@
 
 ## <a name="#custom-api"></a>如何：调用自定义 API
 
-自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关完整示例，包括如何在移动服务中创建自定义 API，请参阅[从客户端调用自定义 API]。
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
 
 通过在客户端上调用某一个 [InvokeApiAsync] 方法重载来调用自定义 API。例如，以下代码行向移动服务上的 **completeAll** API 发送 POST 请求：
 
@@ -298,9 +298,9 @@
 		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
 		}
 
-请注意，在此示例中，注册包含两个标记。有关详细信息，请参阅[向应用程序添加推送通知](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)
+请注意，在此示例中，注册包含两个标记。有关详细信息，请参阅[向应用程序添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)
 
->[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
+>[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
 
 
 ## <a name="optimisticconcurrency"></a>如何：使用乐观并发
@@ -361,7 +361,7 @@
 	private async Task ResolveConflict(TodoItem localItem, TodoItem serverItem)
 	{
     	//Ask user to choose the resoltion between versions
-	    MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: \"{0}\" \nLocal Text: \"{1}\"\n", 
+	    MessageDialog msgDialog = new MessageDialog(String.Format("Server Text: "{0}" \nLocal Text: "{1}"\n", 
         	                                        serverItem.Text, localItem.Text), 
                                                 	"CONFLICT DETECTED - Select a resolution:");
 
@@ -468,11 +468,11 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 在此情况下，移动服务将通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成移动服务身份验证令牌。[LoginAsync 方法]将返回 [MobileServiceUser]，该类将提供已经过身份验证的用户的 [userId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌]。
 
-> [AZURE.NOTE]**Windows 应用商店应用程序**当你使用 Microsoft 帐户登录提供程序对 Windows 应用商店应用程序的用户进行身份验证时，还应该将应用程序包注册到移动服务。将 Windows 应用商店应用程序包信息注册到移动服务后，客户端可以重复使用 Microsoft 帐户登录凭据来提供单一登录体验。如果你不执行此操作，则每次调用 login 方法时，系统都会向 Microsoft 帐户登录用户显示登录提示。若要了解如何注册 Windows 应用商店应用程序包，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication)。将程序包信息注册到移动服务后，请为 _useSingleSignOn_ 参数提供 **true** 值以重复使用凭据，方便调用 [LoginAsync](http://go.microsoft.com/fwlink/p/?LinkId=311594%20target="_blank") 方法。
-
-### 客户端流
+###客户端流
 
 你的应用程序还能够独立联系标识提供者，然后将返回的令牌提供给移动服务以进行身份验证。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。
+
+####单一登录使用来自 Facebook 或 Google 的令牌
 
 你可以根据以下代码段中所示，为 Facebook 或 Google 使用这种最简单形式的客户端流。
 
@@ -507,13 +507,60 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 		}
 	}
 
-如果使用 Microsoft 帐户，可按如下所示登录：
 
-	// Replace authentication_token_value with actual value of your Microsoft authentication token obtained through the Live SDK
-	user = await client
-		.LoginWithMicrosoftAccountAsync(authentication_token_value);
+####单一登录将 Microsoft 帐户与 Live SDK 配合使用
 
-有关如何使用 Microsoft 帐户提供单一登录体验的示例，请参阅“使用单一登录对应用程序进行身份验证”教程（[Windows 应用商店](/documentation/articles/mobile-services-windows-store-dotnet-single-sign-on)/[Windows Phone](/documentation/articles/mobile-services-windows-phone-single-sign-on)）。
+若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](mobile-services-how-to-register-microsoft-authentication.md)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 版本的应用，请先注册 Windows 应用商店版本。
+
+下面的代码使用 Live SDK 进行身份验证，并使用返回的令牌来登录到你的移动服务。
+
+	private LiveConnectSession session;
+ 	//private static string clientId = "<microsoft-account-client-id>";
+    private async System.Threading.Tasks.Task AuthenticateAsync()
+    {
+
+        // Get the URL the mobile service.
+        var serviceUrl = App.MobileService.ApplicationUri.AbsoluteUri;
+
+        // Create the authentication client for Windows Store using the mobile service URL.
+        LiveAuthClient liveIdClient = new LiveAuthClient(serviceUrl);
+        //// Create the authentication client for Windows Phone using the client ID of the registration.
+        //LiveAuthClient liveIdClient = new LiveAuthClient(clientId);
+
+        while (session == null)
+        {
+            // Request the authentication token from the Live authentication service.
+			// The wl.basic scope is requested.
+            LiveLoginResult result = await liveIdClient.LoginAsync(new string[] { "wl.basic" });
+            if (result.Status == LiveConnectSessionStatus.Connected)
+            {
+                session = result.Session;
+
+                // Get information about the logged-in user.
+                LiveConnectClient client = new LiveConnectClient(session);
+                LiveOperationResult meResult = await client.GetAsync("me");
+
+                // Use the Microsoft account auth token to sign in to Mobile Services.
+                MobileServiceUser loginResult = await App.MobileService
+                    .LoginWithMicrosoftAccountAsync(result.Session.AuthenticationToken);
+
+                // Display a personalized sign-in greeting.
+                string title = string.Format("Welcome {0}!", meResult.Result["first_name"]);
+                var message = string.Format("You are now logged in - {0}", loginResult.UserId);
+                var dialog = new MessageDialog(message, title);
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                session = null;
+                var dialog = new MessageDialog("You must log in.", "Login Required");
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
+            }
+        }
+    }
+
 
 ### <a name="caching"></a>缓存身份验证令牌
 在某些情况下，完成首次用户身份验证后，可以避免调用 login 方法。你可以使用适用于 Windows 应用商店应用程序的 [PasswordVault] 来缓存当前用户首次登录时使用的标识，以后每次该用户登录时，系统都会检查缓存中是否存在该用户标识。如果缓存为空，则用户仍然需要完成整个登录过程。
@@ -674,7 +721,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 
 <!-- URLs. -->
-[向应用程序添加身份验证]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users
 [PasswordVault]: http://msdn.microsoft.com/zh-cn/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/zh-cn/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [LoginAsync 方法]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
@@ -683,15 +730,15 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 [UserID]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
 [ASCII control codes C0 and C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[CLI to manage Mobile Services tables]: virtual-machines-command-line-tools#Commands_to_manage_mobile_services
-[乐观并发教程]: mobile-services-windows-store-dotnet-handle-database-conflicts
+[CLI to manage Mobile Services tables]: /documentation/articles/virtual-machines-command-line-tools#Commands_to_manage_mobile_services
+[乐观并发教程]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 
 [IncludeTotalCount]: http://msdn.microsoft.com/zh-cn/library/azure/dn250560.aspx
 [Skip]: http://msdn.microsoft.com/zh-cn/library/azure/dn250573.aspx
 [Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Azure 移动服务客户端 SDK 中的自定义 API]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
-[从客户端调用自定义 API]: mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api
-[InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
+[Call a custom API from the client]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api
+[InvokeApiAsync]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

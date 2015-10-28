@@ -11,7 +11,7 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="06/04/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="10/22/2015"/>
 
 #  如何从 iOS 客户端调用自定义 API（JavaScript 后端）
 
@@ -55,4 +55,4 @@
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

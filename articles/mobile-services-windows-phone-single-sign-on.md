@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="使用 Live Connect 进行应用程序身份验证 (Windows Phone) | 移动开发人员中心" 
-	description="了解如何通过 Windows Phone 应用程序在 Azure 移动服务中使用 Live Connect 单一登录。" 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="使用 Live Connect 对应用进行身份验证 (Windows Phone) | Windows Azure"
+	description="了解如何通过 Windows Phone 应用程序在 Azure 移动服务中使用 Live Connect 单一登录。"
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/09/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/22/2015"/>
 
 #  使用 Microsoft 帐户以客户端托管身份验证方式对 Windows Phone 应用程序进行身份验证
 
@@ -18,7 +18,7 @@
 ## 概述
 本主题说明如何使用 Live SDK 从 Windows Phone 8 或 Windows Phone 8.1 Silverlight 应用程序获取 Microsoft 帐户的身份验证令牌。然后，你可以使用此令牌在 Azure 移动服务中对用户进行身份验证。在本教程中，你将使用 Live SDK 向现有项目添加 Microsoft 帐户身份验证。成功通过身份验证后，将会欢迎已登录的用户并显示该用户的名称和 ID 值。
 
->[AZURE.NOTE]本教程将演示使用客户端托管身份验证和 Live SDK 的好处。这使你可以更轻松地使用移动服务对已登录的用户进行身份验证。你还可以请求额外的范围，使你的应用程序也能访问 OneDrive 等资源。服务托管的身份验证提供更通用的体验，并支持多种身份验证提供者。有关服务托管身份验证的详细信息，请参阅[向应用程序添加身份验证](mobile-services-windows-phone-get-started-users)。
+>[AZURE.NOTE]本教程将演示使用客户端托管身份验证和 Live SDK 的好处。这使你可以更轻松地使用移动服务对已登录的用户进行身份验证。你还可以请求额外的范围，使你的应用程序也能访问 OneDrive 等资源。服务托管的身份验证提供更通用的体验，并支持多种身份验证提供者。有关服务托管身份验证的详细信息，请参阅[向应用程序添加身份验证](/documentation/articles/mobile-services-windows-phone-get-started-users)。
 
 本教程需要的内容如下：
 
@@ -30,7 +30,7 @@
 
 若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。请完成以下主题中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。
 
-+ [注册应用程序以使用 Microsoft 帐户登录](mobile-services-how-to-register-microsoft-authentication) 
++ [注册应用程序以使用 Microsoft 帐户登录](/documentation/articles/mobile-services-how-to-register-microsoft-authentication) 
 
 ## <a name="permissions"></a>将权限限制给已经过身份验证的用户
 
@@ -137,4 +137,4 @@
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

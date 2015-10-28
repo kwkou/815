@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 PhoneGap 的移动服务入门 |移动开发人员中心"
+	pageTitle="使用 Azure 移动服务开发 PhoneGap/cordova 应用入门"
 	description="请按照本教程中的说明操作，开始使用用于 PhoneGap 开发的 Azure 移动服务（面向 iOS、, Android 和 Windows Phone）。"
 	services="mobile-services"
 	documentationCenter=""
@@ -8,9 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="mobile-services" 
-	ms.date="04/24/2015"
-	wacn.date="07/25/2015"/>
+	ms.service="mobile-services"
+	ms.date="07/21/2015"
+	wacn.date="10/22/2015"/>
 
 #  移动服务入门
 
@@ -147,9 +147,11 @@
 ##  后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [向应用程序添加身份验证]<br/>了解如何使用标识者对应用程序的用户进行身份验证。
+* [向应用程序添加身份验证]
+  <br/>了解如何使用标识者对应用程序的用户进行身份验证。
   
-* [向应用程序添加推送通知](https://msdn.microsoft.com/magazine/dn879353.aspx)<br/>了解如何向应用程序注册和发送推送通知。
+* [向应用程序添加推送通知](https://msdn.microsoft.com/magazine/dn879353.aspx)
+  <br/>了解如何向应用程序注册和发送推送通知。
 
 <!-- Images. -->
 
@@ -160,12 +162,11 @@
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-
-[Add Mobile Services to an existing app]: mobile-services-html-get-started-data
-[向应用程序添加身份验证]: mobile-services-html-get-started-users
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-html-get-started-data
+[向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->
