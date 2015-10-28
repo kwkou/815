@@ -29,7 +29,7 @@
 2. 将应用程序设置为使用 OWIN 身份验证管道。
 3. 配置一个客户端应用程序用于调用待办事项列表 Web API
 
-若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](active-directory-howto-tenant)。
+若要开始，请[下载应用程序框架](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
 
 ## *1.将一个应用程序注册到 Azure AD*
@@ -134,7 +134,7 @@
 
 [此处](https://github.com/AzureADQuickStarts/WebAPI-Bearer-DotNet/archive/complete.zip)提供了已完成示例（无需配置值）供你参考。现在，你可以转到其他标识方案。你可能想要尝试学习：
 
-[使用 Azure AD 生成 .NET 本机客户端 >](active-directory-devquickstarts-native-dotnet)
+[使用 Azure AD 生成 .NET 本机客户端 >](/documentation/articles/active-directory-devquickstarts-native-dotnet)
 
 有关更多资源，请参阅：
 - [GitHub 上的 AzureADSamples on >](https://github.com/AzureAdSamples)

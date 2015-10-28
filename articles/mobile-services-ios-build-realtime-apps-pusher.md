@@ -437,5 +437,4 @@ Pusher 是一个基于云的服务，与移动服务一样，它可以让你无�
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-
 <!---HONumber=71-->

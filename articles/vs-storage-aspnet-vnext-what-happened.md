@@ -33,6 +33,6 @@ Azure 存储 NuGet 包已添加到您的 Visual Studio 项目。
 
 有关详细信息，请参阅 [ASP.NET vNext][ASP.NET vNext]。
 
-  [入门]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-blobs/
-  [发生了什么情况]: /documentation/articles/vs-storage-aspnet-vnext-what-happened/
+  [入门]: /documentation/articles/vs-storage-aspnet-vnext-getting-started-blobs
+  [发生了什么情况]: /documentation/articles/vs-storage-aspnet-vnext-what-happened
   [ASP.NET vNext]: http://www.asp.net/vnext

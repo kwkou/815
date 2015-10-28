@@ -91,7 +91,7 @@ Azure AD 通过连接到由每个应用程序供应商所提供的设置终结�
 - [Concur](https://msdn.microsoft.com/zh-cn/library/azure/dn308592.aspx)
 - [Docusign](https://msdn.microsoft.com/zh-cn/library/azure/dn510973.aspx)
 - [Dropbox for Business](https://msdn.microsoft.com/zh-cn/library/azure/dn510978.aspx)
-- [Google Apps](/documentation/articles/active-directory-saas-google-apps-tutorial/)
+- [Google Apps](/documentation/articles/active-directory-saas-google-apps-tutorial)
 - [Jive](https://msdn.microsoft.com/zh-cn/library/azure/dn510977.aspx)
 - [Salesforce](/documentation/articles/active-directory-saas-salesforce-tutorial)
 - [Salesforce Sandbox](https://msdn.microsoft.com/zh-cn/library/azure/dn798671.aspx)

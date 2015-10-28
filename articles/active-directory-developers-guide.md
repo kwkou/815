@@ -19,9 +19,9 @@
 作为标识管理即服务 (IDMaaS) 平台，Azure Active Directory 为开发人员提供了有效的方法将标识管理功能集成到其应用程序中。以下文章概述了 Azure Active Directory 的实现和主要功能。我们建议你按顺序阅读这些文章。如果你要深入了解，请转到[入门](#getting-started)。
 
 
-1. **[如何与 Azure AD 集成](active-directory-how-to-integrate)**：了解与 Azure Active Directory 集成为何能够为安全登录和授权提供最佳解决方案。
+1. **[如何与 Azure AD 集成](/documentation/articles/active-directory-how-to-integrate)**：了解与 Azure Active Directory 集成为何能够为安全登录和授权提供最佳解决方案。
 
-2. **[使用 Azure AD 登录](active-directory-authentication-scenarios)**：利用 Azure Active Directory 的简化身份验证来登录应用程序。
+2. **[使用 Azure AD 登录](/documentation/articles/active-directory-authentication-scenarios)**：利用 Azure Active Directory 的简化身份验证来登录应用程序。
 
 3. **[查询目录](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)**：使用 Azure Active Directory Graph API 通过 REST API 终结点以编程方式访问 Azure AD。
 
@@ -31,33 +31,33 @@
 
 ## 入门
 
-以下教程是专门针对多种平台编写的，可帮助你快速开始使用 Azure Active Directory 进行开发。作为先决条件，你必须[获取一个 Azure Active Directory 租户](active-directory-howto-tenant)。
+以下教程是专门针对多种平台编写的，可帮助你快速开始使用 Azure Active Directory 进行开发。作为先决条件，你必须[获取一个 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant)。
 
 #### 移动或 PC 应用程序快速入门指南
 
-- [iOS](active-directory-devquickstarts-ios)
-- [Android](active-directory-devquickstarts-android)
-- [.NET](active-directory-devquickstarts-dotnet)
-- [Windows Phone](active-directory-devquickstarts-windowsphone)
-- [Windows 应用商店](active-directory-devquickstarts-windowsstore)
-- [Xamarin](active-directory-devquickstarts-xamarin)
-- [Cordova](active-directory-devquickstarts-cordova)
+- [iOS](/documentation/articles/active-directory-devquickstarts-ios)
+- [Android](/documentation/articles/active-directory-devquickstarts-android)
+- [.NET](/documentation/articles/active-directory-devquickstarts-dotnet)
+- [Windows Phone](/documentation/articles/active-directory-devquickstarts-windowsphone)
+- [Windows 应用商店](/documentation/articles/active-directory-devquickstarts-windowsstore)
+- [Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin)
+- [Cordova](/documentation/articles/active-directory-devquickstarts-cordova)
 
 
 #### Web 应用程序或 Web API 快速入门指南
 
-- [.NET Web 应用](active-directory-devquickstarts-webapp-dotnet)
-- [.NET Web API](active-directory-devquickstarts-webapi-dotnet)
-- [Javascript](active-directory-devquickstarts-angular)
-- [Node.js](active-directory-devquickstarts-webapi-nodejs)
+- [.NET Web 应用](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)
+- [.NET Web API](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
+- [Javascript](/documentation/articles/active-directory-devquickstarts-angular)
+- [Node.js](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
 
 ## 操作说明
 
 以下文章介绍如何使用 Azure Active Directory (AD) 执行具体的任务。
 
-- [如何获取 Azure AD 租户](active-directory-howto-tenant)
-- [如何列出 Azure AD 应用程序库中的应用程序](active-directory-app-gallery-listing)
+- [如何获取 Azure AD 租户](/documentation/articles/active-directory-howto-tenant)
+- [如何列出 Azure AD 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing)
 - [如何在应用程序中开始使用 Office 365 API](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
 
 
@@ -72,7 +72,7 @@
 
 - **[Azure AD 开放源代码库](http://github.com/AzureAD)**：查找库源代码的最简单方法是使用我们的[库列表](https://msdn.microsoft.com/zh-cn/library/azure/dn151135.aspx)。
 
-- **[Azure AD 示例](http://github.com/AzureADSamples)**：浏览示例列表的最简单办法是使用[代码示例索引](active-directory-code-samples)。
+- **[Azure AD 示例](http://github.com/AzureADSamples)**：浏览示例列表的最简单办法是使用[代码示例索引](/documentation/articles/active-directory-code-samples)。
 
 
 #### Graph API
@@ -95,7 +95,7 @@
 
 - **[WS-Federation 1.2 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn903702.aspx)**：Web 服务联合身份验证版本 1.2 规范中指定的 WS-Federation 1.2 协议。
 
-- **[支持的安全令牌和声明](active-directory-token-and-claims)**：该指南可帮助你了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
+- **[支持的安全令牌和声明](/documentation/articles/active-directory-token-and-claims)**：该指南可帮助你了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
 
 ## 社交
 

@@ -48,5 +48,4 @@
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 [Store server scripts in source control]: /documentation/articles/mobile-services-store-scripts-source-control
-
 <!---HONumber=71-->

@@ -108,7 +108,7 @@ Azure SQL 数据库中的弹性数据库池可让 SaaS ISV 将一组数据库的
     
     MAX(*数据库的总数目* * *每一数据库的平均 DTU 使用率*、*并发高峰数据库的数目* * *每一数据库的高峰 DTU 使用率*)
 
-2. 选择大于步骤 1 估算值的池的最小可用 eDTU 值。有关可用的 eDTU 选项，请参阅此处所列的 eDTU 有效值：[弹性数据库池和弹性数据库的 eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool-reference/#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases)。
+2. 选择大于步骤 1 估算值的池的最小可用 eDTU 值。有关可用的 eDTU 选项，请参阅此处所列的 eDTU 有效值：[弹性数据库池和弹性数据库的 eDTU 和存储限制](/documentation/articles/sql-database-elastic-pool-reference#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases)。
 
     
 
@@ -146,7 +146,7 @@ Azure SQL 数据库中的弹性数据库池可让 SaaS ISV 将一组数据库的
 
 STA 和 DMV 为调整弹性数据库池大小提供了不同的工具选项和功能。无论使用何种工具选项，大小估算值应该仅用于弹性数据库池的初步评估与创建。创建池后，应该准确地监视其资源使用情况，并根据需要调高和调低池的性能设置。
 
-**STA**<br>STA 是[门户](https://manage.windowsazure.cn)中的内置工具，它可以自动评估现有 SQL 数据库服务器中数据库的历史资源使用率，并推荐适当的弹性数据库池配置。有关详细信息，请参阅[弹性数据库池定价层建议](/documentation/articles/sql-database-elastic-pool-portal/#elastic-database-pool-pricing-tier-recommendations)。
+**STA**<br>STA 是[门户](https://manage.windowsazure.cn)中的内置工具，它可以自动评估现有 SQL 数据库服务器中数据库的历史资源使用率，并推荐适当的弹性数据库池配置。有关详细信息，请参阅[弹性数据库池定价层建议](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations)。
 
 **DMV 大小调整工具**<br>DMV 大小调整工具以 PowerShell 脚本的形式提供，可让你自定义服务器中现有数据库弹性数据库池的大小估算值。
 
@@ -168,7 +168,7 @@ STA 评估数据库的使用率历史记录，并在比使用单一数据库的�
 
 将弹性数据库池添加到现有服务器时，预览门户中会提供 STA。如果出现了有关该服务器弹性数据库池的建议，这些建议将显示在“弹性数据库池”创建页中。客户可以随时更改推荐的设置，以创建自己的弹性数据库池组。
 
-有关详细信息，请参阅[弹性数据库池定价层建议](/documentation/articles/sql-database-elastic-pool-portal/#elastic-database-pool-pricing-tier-recommendations)
+有关详细信息，请参阅[弹性数据库池定价层建议](/documentation/articles/sql-database-elastic-pool-portal#elastic-database-pool-pricing-tier-recommendations)
 
 ### 使用动态管理视图 (DMV) 估算弹性池大小 
 

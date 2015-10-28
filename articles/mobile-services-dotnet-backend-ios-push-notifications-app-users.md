@@ -43,8 +43,6 @@
 <!-- URLs. -->
 [身份验证入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
-
 <!---HONumber=71-->

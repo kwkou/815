@@ -62,5 +62,4 @@ Azure 云服务有一个特有的服务配置机制，让您能够从 Azure 管�
 [connection-string5]: ./media/storage-configure-connection-string-include/connection-string5.png
 
 [Configuring Connection Strings]: /documentation/articles/storage-configure-connection-string
-
 <!---HONumber=70-->

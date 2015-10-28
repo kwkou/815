@@ -46,7 +46,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 [AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
-有关通过使用 Azure 门户创建 Azure 存储帐户的信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/)。
+有关通过使用 Azure 门户创建 Azure 存储帐户的信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)。
 
 如果你已有存储帐户但是不知道帐户名称和帐户密钥，可以使用以下命令来检索该信息：
 
@@ -55,7 +55,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 	# List the keys for a Storage account
 	Get-AzureStorageKey <StorageAccountName>
 
-有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/)中的“查看、复制和重新生成存储访问密钥”部分。
+有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)中的“查看、复制和重新生成存储访问密钥”部分。
 
 **创建 Azure 存储帐户**
 
@@ -252,23 +252,18 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
-[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
-
-[hdinsight-hive]: /documentation/articles/hdinsight-use-hive/
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
-
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
 <!---HONumber=66-->

@@ -6,7 +6,7 @@
 当您在 Azure 中创建应用程序时，Azure 会在 chinacloudapp.cn 域上提供一个子域，以便您的用户可以使用以下 URL 访问您的应用程序，如 http://&lt;*myapp*>.chinacloudapp.cn. 但是，您还可以在自己的域名（例如 contoso.com）上公开应用程序。
 
 > [WACOM.NOTE] 
-> 本任务中的过程适用于 Azure 云服务。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](../storage-custom-domain-name)。有关网站，请参阅[为 Azure 网站配置自定义域名](../web-sites-custom-domain-name)。
+> 本任务中的过程适用于 Azure 云服务。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。有关网站，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
 
 本文内容：
 
@@ -32,7 +32,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 > [WACOM.NOTE]
 > 由于 A 记录映射到静态 IP 地址，它无法动态解析您的云服务的 IP 地址的更改。将在您第一次部署到空槽（无论是生产还是临时）时分配由您的云服务所使用的 IP 地址。如果您删除针对该槽的部署，则 Azure 将释放该 IP 地址，并且可能为将来任何针对该槽的部署提供新的 IP 地址。
 > 
-> 为方便起见，在临时和生产部署之间切换或对现有部署执行就地升级时，将保留给定部署槽（生产或临时）的 IP 地址。有关执行这些操作的详细信息，请参阅[如何管理云服务](../cloud-services-how-to-manage)。
+> 为方便起见，在临时和生产部署之间切换或对现有部署执行就地升级时，将保留给定部署槽（生产或临时）的 IP 地址。有关执行这些操作的详细信息，请参阅[如何管理云服务](/documentation/articles/cloud-services-how-to-manage)。
 
 
 <h2><a name="add-cname"></a>为自定义域添加 CNAME 记录</h2>
@@ -45,7 +45,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
   		  ![显示网站 URL 的速览部分][csurl]
 
-  * 安装和配置 [Azure Powershell](../install-configure-powershell)，然后使用以下命令：
+  * 安装和配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
 
     Get-AzureDeployment -ServiceName yourservicename | Select Url
 
@@ -90,7 +90,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
    		 ![显示 VIP 的速览部分][vip]
 
-  * 安装和配置 [Azure Powershell](../install-configure-powershell)，然后使用以下命令：
+  * 安装和配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
 
       get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
 
@@ -125,7 +125,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
 ## 后续步骤
 
--   [如何管理云服务](../cloud-services-how-to-manage)
+-   [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
 -   [如何将 CDN 内容映射到自定义域][]
 
   [在自定义域中公开应用程序]: #access-app

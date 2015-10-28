@@ -418,16 +418,16 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 [svc-mgmt-rest-api]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460799.aspx
 
 
-[download-SDK-Python]: /documentation/articles/python-how-to-install/
+[download-SDK-Python]: /documentation/articles/python-how-to-install
 [云服务]: /documentation/articles/cloud-services-what-is
 [service package]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
-[Azure PowerShell cmdlets]: /documentation/articles/install-configure-powershell/
+[Azure PowerShell cmdlets]: /documentation/articles/install-configure-powershell
 [cspack commandline tool]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg432988.aspx
 [Deploying an Azure Service]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433027.aspx
-[存储服务]: /documentation/articles/storage-introduction/
-[azure-blobs]: /documentation/articles/storage-python-how-to-use-blob-storage/
-[azure-tables]: /documentation/articles/storage-python-how-to-use-table-storage/
-[azure-queues]: /documentation/articles/storage-python-how-to-use-queue-storage/
+[存储服务]: /documentation/articles/storage-introduction
+[azure-blobs]: /documentation/articles/storage-python-how-to-use-blob-storage
+[azure-tables]: /documentation/articles/storage-python-how-to-use-table-storage
+[azure-queues]: /documentation/articles/storage-python-how-to-use-queue-storage
 [Azure Service Configuration Schema (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx
 [Cloud Services]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj155995.aspx
 [Virtual Machines]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156003.aspx

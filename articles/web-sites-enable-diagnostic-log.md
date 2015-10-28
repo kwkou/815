@@ -16,7 +16,7 @@
 
 Azure 提供内置的诊断以帮助调试在 Azure 网站中托管的应用程序。在本文中，你将了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。
 
-> [AZURE.NOTE] 本文介绍了如何通过 Azure 管理门户、Azure PowerShell 和 Azure 跨平台命令行接口使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
+> [AZURE.NOTE] 本文介绍了如何通过 Azure 管理门户、Azure PowerShell 和 Azure 跨平台命令行接口使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
 
 ##目录##
 
@@ -105,7 +105,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 这会将 **-Name** 参数指定的网站的日志保存到当前目录中名为 **logs.zip** 的文件中。
 
-> [WACOM.NOTE] 如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+> [WACOM.NOTE] 如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
 ###使用 Azure 命令行工具下载
 
@@ -115,7 +115,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 这会将名为“websitename”的网站的日志保存到当前目录中名为 **diagnostics.zip** 的文件中。
 
-> [WACOM.NOTE] 如果尚未安装 Azure 命令行工具，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli/)。
+> [WACOM.NOTE] 如果尚未安装 Azure 命令行工具，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli)。
 
 <a name="streamlogs"></a><h2>如何：流式传输日志</h2>
 
@@ -143,7 +143,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 若要查看可用的路径列表，请使用 -ListPath 参数。
 
-> [WACOM.NOTE] 如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
+> [WACOM.NOTE] 如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
 ###使用 Azure 命令行工具进行流式传输
 
@@ -161,7 +161,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 	azure site log tail websitename --path http
 
-> [WACOM.NOTE] 如果尚未安装 Azure 命令行工具，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli/)。
+> [WACOM.NOTE] 如果尚未安装 Azure 命令行工具，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure 命令行工具](/documentation/articles/xplat-cli)。
 
 <a name="understandlogs"></a><h2>如何：了解诊断日志</h2>
 
@@ -312,7 +312,7 @@ Web 服务器日志使用 [W3C 扩展日志文件格式](http://msdn.microsoft.c
 
 <a name="nextsteps"></a><h2>后续步骤</h2>
 
-- [如何监视网站](/documentation/articles/web-sites-monitor/)
+- [如何监视网站](/documentation/articles/web-sites-monitor)
 - [教程 - 排除网站故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 - [在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio//)
 - [在 HDInsight 中分析网站日志](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

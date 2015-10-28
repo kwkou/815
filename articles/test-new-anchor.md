@@ -15,14 +15,14 @@
 V.0625.1
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](hdinsight-hbase-geo-replication-configure-VNets)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets)
 - [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
 - [portal](http://www.windowsazure.cn)
  
 
 ##test direct reference of md file
 
-See the Azure Automation [Getting Started Tutorial](automation-create-runbook-from-samples)
+See the Azure Automation [Getting Started Tutorial](/documentation/articles/automation-create-runbook-from-samples)
 
 > [AZURE.TIP] Subscribe to the [Guest OS Update RSS Feed][rss] to receive the most timely notification on all Guest OS changes. Changes mentioned on that feed will be integrated into this page approximately every week.
 

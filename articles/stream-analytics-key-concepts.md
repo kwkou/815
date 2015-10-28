@@ -26,7 +26,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 - 处理进行近实时监视和诊断所需的遥测数据。 
 - 捕获和存档留待将来处理的实时事件
 
-有关详细信息，请参阅 [Azure 流分析简介](stream-analytics-introduction.md)。
+有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)。
 
 流分析作业包括所有下述项目：- 一个或多个输入源 - 对传入数据流的查询 - 输出目标。
 

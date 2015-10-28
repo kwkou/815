@@ -169,13 +169,12 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 <!-- Images -->
 
 <!-- URLs. -->
-[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data/
-[处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data/
-[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data/
-[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started/
-[如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library/
-[软删除]: /documentation/articles/mobile-services-using-soft-delete/
-
+[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data
+[处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-xamarin-ios-handling-conflicts-offline-data
+[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
+[移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started
+[如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
+[软删除]: /documentation/articles/mobile-services-using-soft-delete
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin 扩展]: http://xamarin.com/visual-studio
 

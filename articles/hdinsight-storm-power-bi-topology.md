@@ -133,6 +133,6 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 在本文档中，你已学习如何使用 REST 将数据从 Storm 拓扑发送到 Power BI。有关如何使用其他 Azure 技术的信息，请参阅以下文章：
 
-* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
+* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
 
 <!---HONumber=71-->

@@ -77,7 +77,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 ## 使用工作或学校帐户管理使用 Microsoft 帐户创建的 Azure 订阅
 
-最佳实践是，你应该[以组织身份注册 Azure](sign-up-organization) 并使用工作或学校帐户来管理 Azure 中的资源。之所以首选工作或学校帐户，是因为它们由颁发它们的组织集中管理，比 Microsoft 帐户的功能更多，并且直接由 Azure AD 进行身份验证。使用同一个帐户可以访问提供给企业和组织的其他 Microsoft Online Services，例如 Office 365 或 Microsoft Intune。如果你已经拥有了一个与其他属性配合使用的帐户，则可能想要对 Azure 使用这同一个帐户。在这种情况下，你还会获得一个 Active Directory 实例，该实例可以支持你希望 Azure 订阅信任的那些属性。 
+最佳实践是，你应该[以组织身份注册 Azure](/documentation/articles/sign-up-organization) 并使用工作或学校帐户来管理 Azure 中的资源。之所以首选工作或学校帐户，是因为它们由颁发它们的组织集中管理，比 Microsoft 帐户的功能更多，并且直接由 Azure AD 进行身份验证。使用同一个帐户可以访问提供给企业和组织的其他 Microsoft Online Services，例如 Office 365 或 Microsoft Intune。如果你已经拥有了一个与其他属性配合使用的帐户，则可能想要对 Azure 使用这同一个帐户。在这种情况下，你还会获得一个 Active Directory 实例，该实例可以支持你希望 Azure 订阅信任的那些属性。 
 
 此外，与 Microsoft 帐户相比，工作或学校帐户可通过更多方式进行管理。例如，管理员可以重置工作或学校帐户的密码，或者要求对它进行多重身份验证。
 
@@ -98,7 +98,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 ### 我没有订阅 Azure
 
-在这种情况下，你只需使用登录 Office 365 时所用的同一个工作帐户或学校帐户来[注册 Azure](sign-up-organization)。Office 365 帐户中的相关信息将预填充到 Azure 注册表单中。你的帐户将被指定为订阅的服务管理员角色。  
+在这种情况下，你只需使用登录 Office 365 时所用的同一个工作帐户或学校帐户来[注册 Azure](/documentation/articles/sign-up-organization)。Office 365 帐户中的相关信息将预填充到 Azure 注册表单中。你的帐户将被指定为订阅的服务管理员角色。  
 
 ### 我已使用我的 Microsoft 帐户订阅了 Azure
 
@@ -119,7 +119,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 
 ## 后续步骤
-[以组织身份注册 Azure](sign-up-organization)
+[以组织身份注册 Azure](/documentation/articles/sign-up-organization)
 
 
 <!--Image references-->

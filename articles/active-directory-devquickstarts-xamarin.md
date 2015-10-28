@@ -32,7 +32,7 @@ Xamarin 允许你以 C# 语言编写可在多种不同的平台（包括移动�
 3. 安装并配置 ADAL。
 4. 使用 ADAL 从 Azure AD 获取令牌。
 
-若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](active-directory-howto-tenant)。
+若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
 ## *0.设置 Xamarin 开发环境*
 你可以根据所需的具体平台，使用多种不同的方法设置 Xamarin。由于本教程包含适用于 iOS、Android 和 Windows 的项目，我们将选择使用 Visual Studio 2013 和 [Xamarin.iOS Build Host](http://developer.xamarin.com/guides/ios/getting_started/installation/windows/)，这就需要：
@@ -194,7 +194,7 @@ public static async Task<List<User> SearchByAlias(string alias, IPlatformParamet
 
 [此处](https://github.com/AzureADQuickStarts/NativeClient-MultiTarget-DotNet/archive/complete.zip)提供了已完成示例（无需配置值）供你参考。现在，你可以转到其他标识方案。你可能想要尝试：
 
-[使用 Azure AD 保护 .NET Web API >](active-directory-devquickstarts-webapi-dotnet)
+[使用 Azure AD 保护 .NET Web API >](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
 有关更多资源，请查看：
 

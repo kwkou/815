@@ -22,7 +22,7 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
 ##先决条件
 
-- 在新的或现有的 Azure 订阅中拥有两个媒体服务帐户。请参阅主题[如何创建媒体服务帐户](media-services-create-account)。
+- 在新的或现有的 Azure 订阅中拥有两个媒体服务帐户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
 - 操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
 - .NET Framework 4.5。
 - Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级版、旗舰版或速成版）。

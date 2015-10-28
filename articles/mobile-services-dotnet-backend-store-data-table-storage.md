@@ -153,7 +153,8 @@
 [将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [What is the Table Service]: /documentation/articles/storage-dotnet-how-to-use-tables#what-is
-[MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
+[MongoLab Add-on Page]: 
+gallery/store/mongolab/mongolab
  
 
 <!---HONumber=71-->

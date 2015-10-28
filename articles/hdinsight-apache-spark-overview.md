@@ -33,7 +33,7 @@ Azure HDInsight 提供完全托管的 Spark 服务。在 HDInsight 上使用 Spa
 
 | 功能 | 说明 |
 |-------------------------------------|-------------------|
-| 易于设置 | 你可以使用 Azure 管理门户、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上设置新的 Spark 群集。请参阅[在 HDInsight 中设置 Spark 群集](hdinsight-apache-spark-provision-clusters) |
+| 易于设置 | 你可以使用 Azure 管理门户、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上设置新的 Spark 群集。请参阅[在 HDInsight 中设置 Spark 群集](/documentation/articles/hdinsight-apache-spark-provision-clusters) |
 | 易于使用 | HDInsight 群集中的 Spark 包含预先配置的 Zeppelin 和 Jupyter 笔记本。你可以使用这些笔记本执行交互式数据处理和可视化。你可以从群集仪表板启动这些笔记本，并直接针对 Spark 群集运行。|
 | REST API | HDInsight 中的 Spark 包含 Spark 作业服务器，它是让用户远程提交和监视运行中作业的 REST API 服务器。 |
 | 并发查询 | HDInsight 中的 Spark 支持并发查询。它允许一个用户运行多个查询，或者不同的用户运行多个查询，以及让应用程序共享相同的群集资源。 |
@@ -92,5 +92,4 @@ HDInsight 中的 Spark 还提供 [ODBC 驱动程序](http://go.microsoft.com/fwl
 
 
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-
 <!---HONumber=66-->

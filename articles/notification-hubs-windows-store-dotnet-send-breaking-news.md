@@ -224,7 +224,7 @@
 [19]: ./media/notification-hubs-windows-store-dotnet-send-breaking-news/notification-hub-windows-reg-2.png
 
 <!-- URLs.-->
-[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
 [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx

@@ -113,7 +113,7 @@ Azure 资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows
 
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
-<!--有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal.md)。-->
+<!--有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal)。-->
 
 ## 后续步骤
 

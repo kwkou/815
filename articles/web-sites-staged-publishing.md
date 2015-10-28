@@ -66,7 +66,7 @@
 
 	-	 
 
-没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/web-sites-publish-source-control/)。
+没有任何内容。您可以从其他存储库分支或完全不同的存储库部署到槽。您还可以更改此槽的配置。使用与内容更新部署槽关联的发布配置文件或部署凭证。例如，你可以[使用 git 发布到此槽](/documentation/articles/web-sites-publish-source-control)。
 
 <a name="AboutConfiguration"></a>
 ## 部署槽的配置##
@@ -174,7 +174,7 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 Azure 跨平台命令行接口 (xplat-cli) 提供了用于与 Azure 结合使用的跨平台命令，包括对在 Azure 网站上管理部署槽的支持。
 
-- 有关安装和配置 xplat-cli 的说明（包括有关如何将 xplat-cli 连接到 Azure 订阅的信息），请参阅[安装和配置 Azure 跨平台命令行界面](/documentation/articles/xplat-cli/)。
+- 有关安装和配置 xplat-cli 的说明（包括有关如何将 xplat-cli 连接到 Azure 订阅的信息），请参阅[安装和配置 Azure 跨平台命令行界面](/documentation/articles/xplat-cli)。
 
 -  若要在 xplat-cli 中列出可用于 Azure 网站的命令，请调用 `azure site -h`。
 

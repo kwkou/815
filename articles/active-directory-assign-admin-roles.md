@@ -82,8 +82,8 @@
 
 ## 后续步骤
 
-- [管理用户](active-directory-manage-users)
-- [管理密码](active-directory-manage-passwords)
-- [管理组](active-directory-manage-groups)
+- [管理用户](/documentation/articles/active-directory-manage-users)
+- [管理密码](/documentation/articles/active-directory-manage-passwords)
+- [管理组](/documentation/articles/active-directory-manage-groups)
 
 <!--HONumber=57-->

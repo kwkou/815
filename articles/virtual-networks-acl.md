@@ -15,7 +15,7 @@
 
 网络访问控制列表 (ACL) 是可用于 Azure 部署的安全增强。利用 ACL，你可以选择允许还是拒绝虚拟机终结点的流量。此数据包筛选功能额外提供了一层安全性。你只能为终结点指定网络 ACL，而无法为虚拟网络或虚拟网络中包含的特定子网指定 ACL。
 
-> [AZURE.IMPORTANT]建议你尽可能地使用网络安全组 (NSG) 而不是 ACL。<!--若要了解有关 NSG 的详细信息，请参阅[什么是网络安全组](virtual-network-nsg)。-->
+> [AZURE.IMPORTANT]建议你尽可能地使用网络安全组 (NSG) 而不是 ACL。<!--若要了解有关 NSG 的详细信息，请参阅[什么是网络安全组](/documentation/articles/virtual-network-nsg)。-->
 
 可以使用 PowerShell 或在管理门户中配置 ACL。<!--若要使用 PowerShell 配置网络 ACL，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](https://msdn.microsoft.com/zh-cn/library/azure/dn376543.aspx)。-->若要使用管理门户配置网络 ACL，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
@@ -93,6 +93,6 @@ ACL 是包含规则列表的对象。当你创建 ACL 并将其应用于虚拟�
 
 ## 后续步骤
 
-[如何使用 PowerShell 管理终结点的访问控制列表 (ACL)](virtual-networks-acl-powershell)
+[如何使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)
 
 <!---HONumber=64-->

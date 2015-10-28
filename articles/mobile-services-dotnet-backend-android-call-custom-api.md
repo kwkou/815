@@ -51,14 +51,12 @@
 <!-- URLs. -->
 
 [Mobile Services Android SDK]: http://go.microsoft.com/fwlink/p/?LinkID=280126
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
 [完成移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started
 [数据处理入门]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-android-get-started-push
-
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
-
 <!---HONumber=71-->

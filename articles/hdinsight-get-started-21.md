@@ -204,37 +204,35 @@ HDInsight 将 Azure Blob 存储用于存储数据。它称为 *WASB* 或 *Azure 
 
 <!-- [azure-member-offers]: http://azure.microsoft.com/zh-CN/pricing/member-offers/ -->
 
-[hdinsight-versions]: ../hdinsight-component-versioning/
-
-[hdinsight-get-started-30]: ../hdinsight-get-started-30/
-[hdinsight-provision]: ../hdinsight-provision-clusters/
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
-[hdinsight-use-oozie]: ../hdinsight-use-oozie/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-[hdinsight-emulator]: ../hdinsight-get-started-emulator/
-[hdinsight-develop-streaming]: ../hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-mapreduce]: ../hdinsight-develop-deploy-java-mapreduce/
-
+[hdinsight-versions]: hdinsight-component-versioning
+[hdinsight-get-started-30]: hdinsight-get-started-30
+[hdinsight-provision]: hdinsight-provision-clusters
+[hdinsight-admin-powershell]: hdinsight-administer-use-powershell
+[hdinsight-upload-data]: hdinsight-upload-data
+[hdinsight-use-mapreduce]: hdinsight-use-mapreduce
+[hdinsight-use-hive]: hdinsight-use-hive
+[hdinsight-use-pig]: hdinsight-use-pig
+[hdinsight-use-oozie]: hdinsight-use-oozie
+[hdinsight-storage]: hdinsight-use-blob-storage
+[hdinsight-emulator]: hdinsight-get-started-emulator
+[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 <!--
 [azure-member-offers]: http://azure.microsoft.com/en-us/pricing/member-offers/
 -->
 [azure-free-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
-
+[azure-create-storageaccount]: storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ../install-configure-powershell/
-[powershell-open]: ../install-configure-powershell/#Install
+[powershell-install-configure]: install-configure-powershell
+[powershell-open]: /documentation/articles/install-configure-powershell#Install
 
 
-[img-hdi-dashboard]: ./media/hdinsight-get-started/HDI.dashboard.png
+[img-hdi-dashboard]: .
+media/hdinsight-get-started/HDI.dashboard.png
 [img-hdi-dashboard-query-select]: ./media/hdinsight-get-started/HDI.dashboard.query.select.png
 [img-hdi-dashboard-query-select-result]: ./media/hdinsight-get-started/HDI.dashboard.query.select.result.png
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png

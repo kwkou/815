@@ -521,21 +521,18 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-
 [hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator/#blobstorage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
+[hdinsight-upload-data]: 
+documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 [Powershell-install-configure]: /documentation/articles/install-configure-powershell
-
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce 单词计数应用程序流"
 
 <!---HONumber=66-->

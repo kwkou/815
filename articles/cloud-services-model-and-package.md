@@ -213,7 +213,7 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 ## ServicePackage.cspkg
 要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](/downloads/) 一起安装）来创建包文件作为 Visual Studio 的替代。
 
-**CSPack** 使用服务定义文件和服务配置文件的内容来定义包的内容。**CSPack** 生成可以使用 [Azure 管理门户](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service)上载到 Azure 的应用程序包文件 (.cspkg)。默认情况下，该应用程序包名为 `[ServiceDefinitionFileName].cspkg`，但可以通过使用 **CSPack** 的 `/out` 选项指定不同的名称。
+**CSPack** 使用服务定义文件和服务配置文件的内容来定义包的内容。**CSPack** 生成可以使用 [Azure 管理门户](/documentation/articles/cloud-services-how-to-create-deploy#how-to-deploy-a-cloud-service)上载到 Azure 的应用程序包文件 (.cspkg)。默认情况下，该应用程序包名为 `[ServiceDefinitionFileName].cspkg`，但可以通过使用 **CSPack** 的 `/out` 选项指定不同的名称。
 
 ###### CSPack 工具（在 Windows 中）的位置
 | SDK 版本 | 路径 |

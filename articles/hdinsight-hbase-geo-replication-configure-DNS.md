@@ -212,7 +212,6 @@ DNS 服务器需要静态 IP 地址。不能从 Azure 门户完成此步骤。�
 
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
-
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png
 
 <!---HONumber=71-->

@@ -35,7 +35,7 @@
 
 问：Azure 媒体服务是否支持存储图像？
 
-答：如果需要存储 JPEG 或 PNG 图像，应将其存储在 Azure Blob 存储中。除非你想要将图像与你的视频或音频资产相关联，否则将图像放入媒体服务帐户毫无益处。或者，你可能需要在视频编码器中将图像用作叠加。媒体服务编码器支持在视频上叠加图像，且它将 JPEG 和 PNG 列为支持的输入格式。有关详细信息，请参阅[创建覆盖](/documentation/articles/media-services-azure-media-customize-ame-presets/)。
+答：如果需要存储 JPEG 或 PNG 图像，应将其存储在 Azure Blob 存储中。除非你想要将图像与你的视频或音频资产相关联，否则将图像放入媒体服务帐户毫无益处。或者，你可能需要在视频编码器中将图像用作叠加。媒体服务编码器支持在视频上叠加图像，且它将 JPEG 和 PNG 列为支持的输入格式。有关详细信息，请参阅[创建覆盖](/documentation/articles/media-services-azure-media-customize-ame-presets)。
 
 问：如何将资产从一个媒体服务帐户复制到另一个媒体服务帐户？
 

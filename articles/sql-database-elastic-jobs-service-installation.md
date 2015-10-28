@@ -45,7 +45,7 @@
 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
 
-2.	执行.\\InstallElasticDatabaseJobs.ps1 PowerShell 脚本，并提供其所请求的变量的值。此脚本将根据[弹性数据库作业组件和定价](sql-database-elastic-jobs-overview/#components-and-pricing)中所述创建组件，并将 Azure 云服务配置为适当使用依赖组件。
+2.	执行.\\InstallElasticDatabaseJobs.ps1 PowerShell 脚本，并提供其所请求的变量的值。此脚本将根据[弹性数据库作业组件和定价](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing)中所述创建组件，并将 Azure 云服务配置为适当使用依赖组件。
 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\InstallElasticDatabaseJobs.ps1 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobs.ps1
@@ -80,13 +80,13 @@
 </tr>
 	<tr>
 	<td>ServiceVmSize</td>
-	<td>提供在云服务中使用的 VM 大小。此参数默认为 A0。接受参数值 A0/A1/A2/A3，这会导致辅助角色分别使用 ExtraSmall/Small/Medium/Large 大小。有关辅助角色大小的详细信息，请参阅 [弹性数据库作业组件和定价](sql-database-elastic-jobs-overview/#components-and-pricing)。</td>
+	<td>提供在云服务中使用的 VM 大小。此参数默认为 A0。接受参数值 A0/A1/A2/A3，这会导致辅助角色分别使用 ExtraSmall/Small/Medium/Large 大小。有关辅助角色大小的详细信息，请参阅 [弹性数据库作业组件和定价](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing)。</td>
 </tr>
 
 </tr>
 	<tr>
 	<td>SqlServerDatabaseSlo</td>
-	<td>提供标准版的服务级别目标。此参数默认为 S0。接受参数值 S0/S1/S2/S3，这会导致 Azure SQL 数据库使用各自的 SLO。有关 SQL 数据库 SLO 的详细信息，请参阅 [弹性数据库作业组件和定价](sql-database-elastic-jobs-overview/#components-and-pricing)。</td>
+	<td>提供标准版的服务级别目标。此参数默认为 S0。接受参数值 S0/S1/S2/S3，这会导致 Azure SQL 数据库使用各自的 SLO。有关 SQL 数据库 SLO 的详细信息，请参阅 [弹性数据库作业组件和定价](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing)。</td>
 </tr>
 
 </tr>
@@ -139,14 +139,14 @@
 
 	<tr>
 	<td>ServiceVmSize</td>
-	<td>提供在云服务中使用的 VM 大小。此参数默认为 A0。接受参数值 A0/A1/A2/A3，这会导致辅助角色分别使用 ExtraSmall/Small/Medium/Large 大小。有关辅助角色大小的详细信息，请参阅 [弹性数据库作业组件和定价](sql-database-elastic-jobs-overview/#components-and-pricing)。</td>
+	<td>提供在云服务中使用的 VM 大小。此参数默认为 A0。接受参数值 A0/A1/A2/A3，这会导致辅助角色分别使用 ExtraSmall/Small/Medium/Large 大小。有关辅助角色大小的详细信息，请参阅 [弹性数据库作业组件和定价](/documentation/articles/sql-database-elastic-jobs-overview#components-and-pricing)。</td>
 </tr>
 
 </table>
 
 ## 使用门户安装弹性数据库作业组件
 
-[创建弹性数据库池](sql-database-elastic-pool-portal.md)后，你可以安装**弹性数据库作业**组件，以便对弹性数据库池中的每个数据库执行管理任务。与使用**弹性数据库作业** PowerShell API 不同，门户界面目前限制为只能针对现有的池执行。
+[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)后，你可以安装**弹性数据库作业**组件，以便对弹性数据库池中的每个数据库执行管理任务。与使用**弹性数据库作业** PowerShell API 不同，门户界面目前限制为只能针对现有的池执行。
 
 
 **估计完成时间：**10 分钟。

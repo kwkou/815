@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Á÷·ÖÎöÏÞÖÆ±í"
-   description="ÃèÊöÁ÷·ÖÎö×é¼þºÍÁ¬½ÓµÄÏµÍ³ÏÞÖÆºÍ½¨Òé´óÐ¡¡£"
+   pageTitle="æµåˆ†æžé™åˆ¶è¡¨"
+   description="æè¿°æµåˆ†æžç»„ä»¶å’Œè¿žæŽ¥çš„ç³»ç»Ÿé™åˆ¶å’Œå»ºè®®å¤§å°ã€‚"
    services="stream-analytics"
    documentationCenter="NA"
    authors="jeffstokes72"
@@ -11,11 +11,11 @@
    ms.date="07/13/2015"
    wacn.date="" />
 
-| ÏÞÖÆ±êÊ¶·û | ÏÞÖÆ | ×¢ÊÍ |
+| é™åˆ¶æ ‡è¯†ç¬¦ | é™åˆ¶ | æ³¨é‡Š |
 |----------------- | ------------|--------- |
-| Ã¿¸öÇøÓòÃ¿¸ö¶©ÔÄµÄ×î´óÁ÷Ê½´¦Àíµ¥Î»Êý | 50 | Ôö¼Ó¶©ÔÄµÄÁ÷Ê½´¦Àíµ¥Î»Êý³¬¹ý 50 µÄÇëÇó¿ÉÍ¨¹ýÁªÏµ[¼¼ÊõÖ§³Ö](/support/contact/)·¢³ö¡£ |
-| Á÷Ê½´¦Àíµ¥Î»µÄ×î´óÍÌÍÂÁ¿ | 1MB/Ãë* | Ã¿¸ö SU µÄ×î´óÍÌÍÂÁ¿È¡¾öÓÚ·½°¸¡£Êµ¼ÊµÄÍÌÍÂÁ¿¿ÉÄÜ½ÏµÍ£¬²¢È¡¾öÓÚ²éÑ¯¸´ÔÓÐÔºÍ·ÖÇø¡£¿ÉÔÚ[À©Õ¹ Azure Á÷·ÖÎö×÷ÒµÒÔÔö¼ÓÍÌÍÂÁ¿](/documentation/articles/stream-analytics-scale-jobs.md)Ò»ÎÄÖÐÕÒµ½¸ü¶àÏêÏ¸ÐÅÏ¢¡£ |
-| SELECT Óï¾ä²éÑ¯ÏÞÖÆ | Ã¿¸ö²éÑ¯ 5 ¸öÊä³ö | ½«À´¿ÉÄÜ»áÔö¼Ó´ËÏÞÖÆ¡£ |
-| SELECT Óï¾ä×Ó²éÑ¯ÏÞÖÆ | Ã¿¸ö×Ó²éÑ¯ 14 ¸ö¾ÛºÏ | ½«À´¿ÉÄÜ»áÔö¼Ó´ËÏÞÖÆ¡£ |
+| æ¯ä¸ªåŒºåŸŸæ¯ä¸ªè®¢é˜…çš„æœ€å¤§æµå¼å¤„ç†å•ä½æ•° | 50 | å¢žåŠ è®¢é˜…çš„æµå¼å¤„ç†å•ä½æ•°è¶…è¿‡ 50 çš„è¯·æ±‚å¯é€šè¿‡è”ç³»[æŠ€æœ¯æ”¯æŒ](/support/contact/)å‘å‡ºã€‚ |
+| æµå¼å¤„ç†å•ä½çš„æœ€å¤§åžåé‡ | 1MB/ç§’* | æ¯ä¸ª SU çš„æœ€å¤§åžåé‡å–å†³äºŽæ–¹æ¡ˆã€‚å®žé™…çš„åžåé‡å¯èƒ½è¾ƒä½Žï¼Œå¹¶å–å†³äºŽæŸ¥è¯¢å¤æ‚æ€§å’Œåˆ†åŒºã€‚å¯åœ¨[æ‰©å±• Azure æµåˆ†æžä½œä¸šä»¥å¢žåŠ åžåé‡](/documentation/articles/stream-analytics-scale-jobs)ä¸€æ–‡ä¸­æ‰¾åˆ°æ›´å¤šè¯¦ç»†ä¿¡æ¯ã€‚ |
+| SELECT è¯­å¥æŸ¥è¯¢é™åˆ¶ | æ¯ä¸ªæŸ¥è¯¢ 5 ä¸ªè¾“å‡º | å°†æ¥å¯èƒ½ä¼šå¢žåŠ æ­¤é™åˆ¶ã€‚ |
+| SELECT è¯­å¥å­æŸ¥è¯¢é™åˆ¶ | æ¯ä¸ªå­æŸ¥è¯¢ 14 ä¸ªèšåˆ | å°†æ¥å¯èƒ½ä¼šå¢žåŠ æ­¤é™åˆ¶ã€‚ |
 
 <!---HONumber=69-->

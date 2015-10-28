@@ -47,7 +47,6 @@
 
 
 
-[attachdisk]:/documentation/articles/storage-windows-attach-disk
-
+[attachdisk]: /documentation/articles/storage-windows-attach-disk
 [关于磁盘和映像]:http://go.microsoft.com/fwlink/p/?LinkId=263439
 <!--HONumber=41-->

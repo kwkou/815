@@ -34,7 +34,7 @@
 
 ## 步骤 1：注册 Azure AD 租户
 
-若要使用本示例，你需要一个 Azure Active Directory 租户。如果你不确定什么是租户或者如何获取租户，请参阅[如何获取 Azure AD 租户](active-directory-howto-tenant)。
+若要使用本示例，你需要一个 Azure Active Directory 租户。如果你不确定什么是租户或者如何获取租户，请参阅[如何获取 Azure AD 租户](/documentation/articles/active-directory-howto-tenant)。
 
 ## 步骤 2：将 Web API 添加到租户
 

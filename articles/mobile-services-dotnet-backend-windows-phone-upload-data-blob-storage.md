@@ -69,7 +69,6 @@
 [Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts
 [Schedule backend jobs in Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks
 [Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866

@@ -18,13 +18,13 @@
 
 
 
-Azure SQL 数据库 版本 V12（[在某些区域以预览版提供](sql-database-preview-whats-new#V12AzureSqlDbPreviewGaTable)）现在几乎与 Microsoft SQL Server 引擎完全兼容。最近的增强有助于简化将 SQL Server 应用程序迁移到 SQL 数据库，并且可以帮助你的系统可靠处理更大的数据库工作负载。
+Azure SQL 数据库 版本 V12（[在某些区域以预览版提供](/documentation/articles/sql-database-preview-whats-new#V12AzureSqlDbPreviewGaTable)）现在几乎与 Microsoft SQL Server 引擎完全兼容。最近的增强有助于简化将 SQL Server 应用程序迁移到 SQL 数据库，并且可以帮助你的系统可靠处理更大的数据库工作负载。
 
 
-[注册](https://manage.windowsazure.cn) SQL 数据库，然后即可[开始使用](sql-database-get-started)这款全新一代的 Windows Azure。你首先需要订阅 Windows Azure。你可以注册 [Azure 试用版](/pricing/1rmb-trial)并查看[价格](/home/features/sql-database/#price)信息。
+[注册](https://manage.windowsazure.cn) SQL 数据库，然后即可[开始使用](/documentation/articles/sql-database-get-started)这款全新一代的 Windows Azure。你首先需要订阅 Windows Azure。你可以注册 [Azure 试用版](/pricing/1rmb-trial)并查看[价格](/home/features/sql-database/#price)信息。
 
 
-若你打算将早期版本的数据库升级到 V12，应该先阅读[规划和准备升级到 SQL 数据库 V12](sql-database-preview-plan-prepare-upgrade)。
+若你打算将早期版本的数据库升级到 V12，应该先阅读[规划和准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-preview-plan-prepare-upgrade)。
 
 
 ## 产品亮点
@@ -36,7 +36,7 @@ Azure SQL 数据库 版本 V12（[在某些区域以预览版提供](sql-databas
 - 在使用 Azure 门户创建新数据库时，请**选择 SQL 数据库 服务器的版本**。默认版本为 V12，不过，你也可以选择以前的 SQL 数据库 服务器版本。
 
 
-- **安全**享用新功能包含的[数据库中的用户](sql-database-preview-whats-new#UsersInContainedDatabases)。另外两项功能分别为[行级安全性](sql-database-preview-whats-new#RowLevelSecurity)和[动态数据屏蔽](sql-database-preview-whats-new#DynamicDataMasking)，不过，这两项功能仍为预览版，尚未正式推出。
+- **安全**享用新功能包含的[数据库中的用户](/documentation/articles/sql-database-preview-whats-new#UsersInContainedDatabases)。另外两项功能分别为[行级安全性](/documentation/articles/sql-database-preview-whats-new#RowLevelSecurity)和[动态数据屏蔽](/documentation/articles/sql-database-preview-whats-new#DynamicDataMasking)，不过，这两项功能仍为预览版，尚未正式推出。
 
 
 - 使用并行查询（仅限高级版）、[表分区](http://msdn.microsoft.com/zh-cn/library/ms187802.aspx)、[联机索引](http://msdn.microsoft.com/zh-cn/library/ms188388.aspx)、尽情重建大型索引（去除了 2GB 大小限制）和 [ALTER DATABASE](http://msdn.microsoft.com/zh-cn/library/bb522682.aspx) 命令的更多选项，**更轻松地管理**大型数据库。
@@ -51,7 +51,7 @@ Azure SQL 数据库 版本 V12（[在某些区域以预览版提供](sql-databas
 - **监视和故障排除**已得到改进，现在你可以在一组扩展的数据库管理视图 ([DMV](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)) 中查看 100 多个新表视图。
 
 
-- **标准层中新增了 S3 性能级别：**在标准和高级层之间提供更高的[价格](sql-database-upgrade-new-service-tiers)弹性。S3 将提供更多的 DTU（数据库吞吐量单位）以及标准层所提供的全部功能。
+- **标准层中新增了 S3 性能级别：**在标准和高级层之间提供更高的[价格](/documentation/articles/sql-database-upgrade-new-service-tiers)弹性。S3 将提供更多的 DTU（数据库吞吐量单位）以及标准层所提供的全部功能。
 
 
 ## V12 增强功能
@@ -80,7 +80,7 @@ Azure SQL 数据库 版本 V12（[在某些区域以预览版提供](sql-databas
 | 功能 | 说明 |
 | :--- | :--- |
 | 。 | ***2015 年 2 月：*** |
-| <a name="DynamicDataMasking" id="DynamicDataMasking"></a> 动态数据屏蔽预览版 | 在基于查询生成行集时，建立的数据屏蔽策略可将部分数据替换为“X”字符，以覆盖和保护敏感信息。在完成屏蔽操作后，会将修改的行集发送到客户端。<br/><br/>示例用法之一是屏蔽信用卡号中除最后几位数以外的所有数字。<br/><br/>**注意：**此功能处于预览状态，尚未宣布可在生产环境中使用的正式版。<br/><br/>有关详细信息，请参阅 [SQL 数据库 动态数据屏蔽入门](sql-database-dynamic-data-masking-get-started)。 |
+| <a name="DynamicDataMasking" id="DynamicDataMasking"></a> 动态数据屏蔽预览版 | 在基于查询生成行集时，建立的数据屏蔽策略可将部分数据替换为“X”字符，以覆盖和保护敏感信息。在完成屏蔽操作后，会将修改的行集发送到客户端。<br/><br/>示例用法之一是屏蔽信用卡号中除最后几位数以外的所有数字。<br/><br/>**注意：**此功能处于预览状态，尚未宣布可在生产环境中使用的正式版。<br/><br/>有关详细信息，请参阅 [SQL 数据库 动态数据屏蔽入门](/documentation/articles/sql-database-dynamic-data-masking-get-started)。 |
 | 。 | ***2015 年 1 月：*** |
 | <a name="RowLevelSecurity" id="RowLevelSecurity"></a> 行级安全性 (RLS) 预览版 | **注意：**RLS 功能目前只提供*预览版*，即使在 V12 已发布正式版 (GA) 的地理区域，也是如此。RLS 在发布正式版之前，尚不适合在业务关键型生产数据库中使用。<br/><br/>你可以使用 Transact-SQL 中新的 [CREATE SECURITY POLICY](http://msdn.microsoft.com/zh-cn/library/dn765135.aspx) 命令来实现 RLS。数据库服务器可通过 RLS 添加条件，以便在将行集返回给调用方之前筛选掉某些数据行。<br/><br/>在行业中，RLS 有时也称为精细访问控制。<br/><br/>有关代码示例和详细信息，请参阅[行级别安全性预览版](http://msdn.microsoft.com/zh-cn/library/7221fa4e-ca4a-4d5c-9f93-1b8a4af7b9e8.aspx)。 |
 | 。 | ***2014 年 12 月：*** |
@@ -144,13 +144,13 @@ V12 增强了 SQL 数据库，使其功能几乎完全与我们的 SQL Server �
 在已经推出正式版的任何区域，所有新订阅及其后续数据库将使用 V12 服务体系结构，因此可以访问最新功能。本文列出的是 V12 附带的新功能。
 
 
-在正式版推出后，如果你使用的是低于 V12 版的服务器和数据库，你可以选择将数据库升级（或迁移）到 V12 服务体系结构。然后，你便可以在生产环境中使用新功能。V12 数据库必须位于基本、标准版或高级[定价层](sql-database-upgrade-new-service-tiers)。
+在正式版推出后，如果你使用的是低于 V12 版的服务器和数据库，你可以选择将数据库升级（或迁移）到 V12 服务体系结构。然后，你便可以在生产环境中使用新功能。V12 数据库必须位于基本、标准版或高级[定价层](/documentation/articles/sql-database-upgrade-new-service-tiers)。
 
 
 ## 如何继续下一步
 
 
-你可以在[规划和准备升级到 Azure SQL 数据库 最新更新预览版](sql-database-preview-plan-prepare-upgrade)中了解如何将数据库从 Azure SQL 数据库 V11 升级到 V12。
+你可以在[规划和准备升级到 Azure SQL 数据库 最新更新预览版](/documentation/articles/sql-database-preview-plan-prepare-upgrade)中了解如何将数据库从 Azure SQL 数据库 V11 升级到 V12。
 
 
 类似于 V12 的版本号是指以下 Transact-SQL 语句返回的值：<br/> **SELECT @@version;**
@@ -166,7 +166,7 @@ V12 增强了 SQL 数据库，使其功能几乎完全与我们的 SQL Server �
 ## V12 预览版注意事项
 
 
-在将 V11 数据库升级到 V12 期间和之后，需要了解一些有关限制的重要事项。你可以通过这个指向[规划和准备升级到 Azure SQL 数据库 V12](sql-database-preview-plan-prepare-upgrade#limitations) 主题*中间部分*的链接来了解详细信息。
+在将 V11 数据库升级到 V12 期间和之后，需要了解一些有关限制的重要事项。你可以通过这个指向[规划和准备升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-preview-plan-prepare-upgrade#limitations) 主题*中间部分*的链接来了解详细信息。
 
 
 [V12 general availability (GA) status per region]: #V12AzureSqlDbPreviewGaTable

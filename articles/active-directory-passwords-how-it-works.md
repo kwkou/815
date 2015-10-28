@@ -53,7 +53,7 @@ Azure Active Directory 中的密码管理由下述的几个逻辑组件构成。
 
   ![][001]
 
-有关详细信息，请参阅[入门：Azure AD 密码管理](active-directory-passwords-getting-started)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices)。
+有关详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices)。
 
 ##<a name="user-password-reset-portal"></a>用户密码重置门户
 一旦启用了自助服务密码重置、设置了组织的自助服务密码重置策略并确保你的用户在目录中具有相应的联系人数据，组织中的用户便能够从任何使用“工作”或“学校”帐户登录的网页（如 [portal.partner.microsoftonline.cn](https://portal.partner.microsoftonline.cn)）自动重置其自己的密码。用户在这类网页上将看到一个**无法访问你的帐户？**链接。
@@ -64,7 +64,7 @@ Azure Active Directory 中的密码管理由下述的几个逻辑组件构成。
 
   ![][003]
 
-若要了解有关用户可如何重置其自己的密码的详细信息，请参阅[入门：Azure AD 密码管理](active-directory-passwords-getting-started)。
+若要了解有关用户可如何重置其自己的密码的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
 ##<a name="user-password-change-portal"></a>用户密码更改门户
 如果用户想要更改其自己的密码，可通过在任何时候使用密码更改门户来实现这一操作。用户可以通过“访问面板”配置文件页面或通过从 Office 365 应用程序内单击“更改密码”链接来访问密码更改门户。当用户密码过期时，用户登录时也将被要求自动更改其密码。
@@ -82,7 +82,7 @@ Azure Active Directory 中的密码管理由下述的几个逻辑组件构成。
 
   ![][007]
 
-有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](active-directory-aadconnect)。有关“密码写回”功能的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
+有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](/documentation/articles/active-directory-aadconnect)。有关“密码写回”功能的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started)。
 
 
 <br/> <br/> <br/>

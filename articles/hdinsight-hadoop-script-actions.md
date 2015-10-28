@@ -31,7 +31,7 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
 
 脚本操作可以从 Azure 门户、Azure PowerShell 或通过使用 HDInsight .NET SDK 来部署。有关详细信息，请参阅 [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]。
 
-> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集 3.1 或更高版本。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
+> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集 3.1 或更高版本。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
 
 ## 示例脚本
 
@@ -207,7 +207,7 @@ HDInsight 具有实现高可用性的主-被体系结构，在该结构中，一
 
 本部分概述在本地使用 HDInsight 模拟器进行测试的过程，但是使用 VM 的过程类似。
 
-**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-get-started-emulator/)。
+**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-get-started-emulator)。
 
 **设置 Azure PowerShell 的执行策略** - 打开 Azure PowerShell 并运行（以管理员身份）以下命令，以将执行策略设置为 *LocalMachine* 和 *Unrestricted*：
  
@@ -240,10 +240,10 @@ HDInsight 具有实现高可用性的主-被体系结构，在该结构中，一
 - [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)
 - [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
-[powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 [1]: https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx
 
 <!---HONumber=71-->

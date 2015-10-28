@@ -164,7 +164,6 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 [hdinsight-documentation]: /documentation/services/hdinsight/
 [hdinsight-get-started]: hdinsight-get-started
 [hdinsight-provision]: hdinsight-provision-clusters
-
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
 
 <!---HONumber=71-->

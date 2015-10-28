@@ -17,7 +17,7 @@
 HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作可调用自定义脚本，以定义设置过程中要在群集上执行自定义。这些脚本可用于在群集上安装额外的软件或更改群集上的应用程序配置。
 
 
-> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [/documentation/articles/HDInsight cluster versions](hdinsight-component-versioning)。
+> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [/documentation/articles/HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning)。
 > 
 > 脚本操作是标准 Azure HDInsight 订阅免费提供的功能之一。
 
@@ -54,7 +54,7 @@ Name | 脚本
 
 **从 Azure 门户**
 
-1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters/#portal)中的说明，使用“自定义创建”选项开始设置群集。 
+1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始设置群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
 	![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster/HDI.CustomProvision.Page6.png "使用脚本操作自定义群集")
@@ -103,7 +103,7 @@ HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/mi
 
 		Install-Package Microsoft.WindowsAzure.Management.HDInsight
 
-2. 使用 SDK 创建群集。有关说明，请参阅[使用 .NET SDK 设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/#sdk)。
+2. 使用 SDK 创建群集。有关说明，请参阅[使用 .NET SDK 设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters#sdk)。
 
 3. 使用 **ScriptAction** 类调用自定义脚本，如下所示：
 
@@ -155,8 +155,6 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
 [hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
-
-
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集设置过程中的阶段"
 
 <!---HONumber=67-->

@@ -20,15 +20,15 @@
 # 通知中心入门
 
 > [AZURE.SELECTOR]
- - [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started/)
- - [iOS](/documentation/articles/notification-hubs-ios-get-started/)
- - [Android](/documentation/articles/notification-hubs-android-get-started/)
- - [Kindle](/documentation/articles/notification-hubs-kindle-get-started/)
- - [百度](/documentation/articles/notification-hubs-baidu-get-started/)
- - [Xamarin.iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started/)
- - [Xamarin.Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started/)
+ - [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started)
+ - [iOS](/documentation/articles/notification-hubs-ios-get-started)
+ - [Android](/documentation/articles/notification-hubs-android-get-started)
+ - [Kindle](/documentation/articles/notification-hubs-kindle-get-started)
+ - [百度](/documentation/articles/notification-hubs-baidu-get-started)
+ - [Xamarin.iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started)
+ - [Xamarin.Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started)
 
-> [AZURE.NOTE]通知中心 Windows Phone SDK 不支持将 WNS 与 Windows Phone 8.1 Silverlight 应用配合使用。若要将 WNS（而不是 MPNS）与 Windows Phone 8.1 Silverlight 应用配合使用，请根据 [Windows Universal 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started/)中所述设置 WNS 凭据。然后，你便可以根据[通知用户](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/)教程中所述通过后端注册，或者使用 [通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 注册。
+> [AZURE.NOTE]通知中心 Windows Phone SDK 不支持将 WNS 与 Windows Phone 8.1 Silverlight 应用配合使用。若要将 WNS（而不是 MPNS）与 Windows Phone 8.1 Silverlight 应用配合使用，请根据 [Windows Universal 入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中所述设置 WNS 凭据。然后，你便可以根据[通知用户](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users)教程中所述通过后端注册，或者使用 [通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 注册。
 
 本教程将指导你完成启用推送通知的以下步骤：
 
@@ -192,8 +192,8 @@
   [WindowsAzure.ServiceBus NuGet 包]: http://nuget.org/packages/WindowsAzure.ServiceBus/
   [toast 目录]: http://msdn.microsoft.com/library/windowsphone/develop/jj662938(v=vs.105).aspx
   [磁贴目录]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
-  [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users/
-  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+  [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
+  [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
   [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 
 <!-- Images. -->

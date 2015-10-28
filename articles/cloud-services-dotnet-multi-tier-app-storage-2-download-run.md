@@ -648,7 +648,7 @@
   [15]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-trc.png
   [虚拟机大小]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee814754.aspx "VM 大小"
   [异步方法]: http://www.asp.net/mvc/tutorials/mvc-4/using-asynchronous-methods-in-aspnet-mvc-4 "异步 MVC"
-  [自动缩放应用程序块]: /documentation/articles/cloud-services-dotnet-autoscaling-application-block/
+  [自动缩放应用程序块]: /documentation/articles/cloud-services-dotnet-autoscaling-application-block
   [本系列最后一个教程]: /documentation/articles/cloud-services-dotnet-multi-tier-app-storage-5-worker-role-b
   [实例计数]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-instanceCnt.png
   [增加实例]: ./media/cloud-services-dotnet-multi-tier-app-storage-1-download-run/mtas-in3.png

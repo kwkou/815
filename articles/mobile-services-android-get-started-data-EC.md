@@ -118,7 +118,6 @@
 <!-- URLs. -->
 [身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-EC
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
 [移动服务 Android SDK]: http://aka.ms/Iajk6q

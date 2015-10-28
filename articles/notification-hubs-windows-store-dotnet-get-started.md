@@ -23,7 +23,7 @@
 
 ##概述
 
-本主题演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](documentation/articles/notification-hubs-windows-phone-get-started) 版本。在本教程中，您将创建一个空白 Windows 应用商店应用程序，它使用 Windows 推送通知服务 (WNS) 接收推送通知。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
+本主题演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started) 版本。在本教程中，您将创建一个空白 Windows 应用商店应用程序，它使用 Windows 推送通知服务 (WNS) 接收推送通知。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
 
 本教程演示使用通知中心的简单广播方案。请确保随后学习下一教程以了解如何使用通知中心来发送到特定用户和设备组。
 
@@ -269,7 +269,6 @@
 
 [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-
 [toast 目录]: http://msdn.microsoft.com/library/windows/apps/hh761494.aspx
 [磁贴目录]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
 [提醒概述]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx

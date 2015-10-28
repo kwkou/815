@@ -92,7 +92,7 @@
   [Azure 网站]: /manage/services/web-sites/
   [如何在 Azure 网站中配置 PHP]: /develop/php/common-tasks/configure-php-web-site/
   [Azure 网站定价]: http://www.windowsazure.cn/zh-cn/pricing/overview/
-  [如何缩放网站]: /documentation/articles/web-sites-scale/
+  [如何缩放网站]: /documentation/articles/web-sites-scale
   [使用 Azure 管理门户创建网站]: #portal
   [使用针对 Mac 和 Linux 的 Azure 命令行工具创建网站]: #XplatTools
   [使用 Azure PowerShell cmdlet 创建网站]: #PowerShell
@@ -105,8 +105,8 @@
   [Azure PowerShell 入门]: /develop/php/how-to-guides/powershell-cmdlets/#GetStarted
   [如何：导入发布设置]: /develop/php/how-to-guides/powershell-cmdlets/#ImportPubSettings
   [如何：创建和管理 Azure 网站]: /develop/php/how-to-guides/powershell-cmdlets/#WebSite
-  [如何配置网站]: /documentation/articles/web-sites-configure/
-  [如何管理网站]: /documentation/articles/web-sites-manage/
-  [如何监视网站]: /documentation/articles/web-sites-monitor/
+  [如何配置网站]: /documentation/articles/web-sites-configure
+  [如何管理网站]: /documentation/articles/web-sites-manage
+  [如何监视网站]: /documentation/articles/web-sites-monitor
   [使用 Git 进行发布]: /develop/php/common-tasks/publishing-with-git/
   [PHP 开发中心 - 教程]: /develop/php/tutorials/

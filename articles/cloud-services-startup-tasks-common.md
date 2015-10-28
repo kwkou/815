@@ -486,8 +486,9 @@ Startup2.cmd：
 [创建和部署](/documentation/articles/cloud-services-how-to-create-deploy-portal)云服务包。
 
 
-[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
-[Task]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
+[ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package#csdef
+[Task]: https:
+/msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime
 [Startup]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Runtime

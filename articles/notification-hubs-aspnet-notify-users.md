@@ -336,8 +336,8 @@
 
 <!-- Anchors. --> <!-- Images. --> <!-- URLs. -->
 
-  [移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ 
-  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/ 
+  [移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users
+  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
   [创建具有身份验证功能的 ASP.NET 应用程序]: #create-application
   [更新 ASP.NET 应用程序以注册通知]: #register-notification
   [更新应用程序以登录和请求注册]: #update-app

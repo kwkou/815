@@ -19,7 +19,7 @@
 
 >[AZURE.WARNING]请小心！ 这些类型的证书允许任何使用它们进行身份验证的人管理与它们相关联的订阅。
 
-有关 Azure 证书（包括创建自签名证书）的详细信息，如果您需要便可[使用](/documentation/articles/cloud-services-certs-create/#what-are-management-certificates)。
+有关 Azure 证书（包括创建自签名证书）的详细信息，如果您需要便可[使用](/documentation/articles/cloud-services-certs-create#what-are-management-certificates)。
 
 您还可以使用 [Azure Active Directory](/home/features/identity/) 对客户端代码进行身份验证，以用于自动化目的。
 

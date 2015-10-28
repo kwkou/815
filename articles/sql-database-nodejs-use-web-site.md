@@ -504,6 +504,6 @@
   [配置链接]: ./media/sql-database-nodejs-use-web-site/sql-task-configure.png
   [应用程序设置]: ./media/sql-database-nodejs-use-web-site/appsettings.png
   [保存应用程序设置]: ./media/sql-database-nodejs-use-web-site/savebutton.png
-  [使用 MongoDB 构建 Node.js Web 应用程序]: ../store-mongolab-web-sites-nodejs-store-data-mongodb/
-  [使用 Git 发布到 Azure 网站]: ../CommonTasks/publishing-with-git
+  [使用 MongoDB 构建 Node.js Web 应用程序]: store-mongolab-web-sites-nodejs-store-data-mongodb
+  [使用 Git 发布到 Azure 网站]: publishing-with-git
   [适用于 Mac 和 Linux 的 Azure 命令行工具]: /develop/nodejs/how-to-guides/command-line-tools/

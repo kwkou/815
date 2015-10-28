@@ -28,10 +28,10 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 
 * [Azure Web 作业简介](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx)
 * [Azure Web 作业功能](http://azure.microsoft.com/blog/2014/10/22/webjobs-goes-into-full-production/)
-* [什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/)
+* [什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
 * [模式与实践中的后台作业指南](https://github.com/mspnp/azure-guidance/blob/master/Background-Jobs.md)
 * [宣布推出 Windows Azure WebJobs SDK 1.0.0 RTM](http://azure.microsoft.com/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk/)
-* [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)
+* [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
 * [如何通过 WebJobs SDK 使用 Azure 表存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to)
@@ -42,8 +42,8 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 
 ##<a name="deploy"></a>部署 Web 作业
 
-* [如何使用 Visual Studio 部署 Azure Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)
-* [如何使用 Azure 管理门户部署 Web 作业](/documentation/articles/web-sites-create-web-jobs/)
+* [如何使用 Visual Studio 部署 Azure Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs)
+* [如何使用 Azure 管理门户部署 Web 作业](/documentation/articles/web-sites-create-web-jobs)
 * [启用 Azure Web 作业的命令行或连续传送](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)
 * [使用 Web 作业通过 Git 将 .NET 控制台应用程序部署到 Azure](http://blog.amitapple.com/post/73574681678/git-deploy-console-app/) 
 * [将 F# Web 作业部署到 Azure](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx)
@@ -51,20 +51,20 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 
 ##<a name="schedule"></a>计划 Web 作业
 
-* [添加 Azure Web 作业对话框](/documentation/articles/websites-dotnet-deploy-webjobs/#configure)
-* [在 Azure 管理门户中创建计划的 Web 作业](/documentation/articles/web-sites-create-web-jobs/#CreateScheduled)
+* [添加 Azure Web 作业对话框](/documentation/articles/websites-dotnet-deploy-webjobs#configure)
+* [在 Azure 管理门户中创建计划的 Web 作业](/documentation/articles/web-sites-create-web-jobs#CreateScheduled)
 
 ##<a name="debug"></a>测试和调试 Web 作业
 
 * [Visual Studio 中 Azure Web 作业的新开发人员和调试功能](http://blogs.msdn.com/b/webdev/archive/2014/11/12/new-developer-and-debugging-features-for-azure-webjobs-in-visual-studio.aspx)
-* [查看 Web 作业仪表板](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/#view-the-webjobs-sdk-dashboard)
-* [如何使用 WebJobs SDK 写入日志并在仪表板中查看日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)
-* [远程调试 Web 作业](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebugwj)
+* [查看 Web 作业仪表板](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#view-the-webjobs-sdk-dashboard)
+* [如何使用 WebJobs SDK 写入日志并在仪表板中查看日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs)
+* [远程调试 Web 作业](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#remotedebugwj)
 * [谁写入了 Blob？](http://blogs.msdn.com/b/jmstall/archive/2014/02/19/who-wrote-that-blob.aspx) 
 * [在云中托管交互式代码](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [获取一个仪表板以使用 WebJobs SDK 进行本地开发](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)
 * [在 Azure 网站和 Web 作业中添加跟踪](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)
-* [监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)
+* [监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 
 
 ##<a name="scale"></a>缩放 Web 作业
@@ -81,7 +81,7 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 * [在 Azure 完成触发 Web 作业时接收通知](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
 * [使用 Web 作业创建简单的网站备份保留策略](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
 * [在处理第一个请求时 Azure 网站和云服务速度缓慢](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/)。演示如何使用 Web 作业来模拟仅适用于标准网站层的 AlwaysOn 功能。
-* [Web 作业正常关闭](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.U72Il_5OWUl)。对于 WebJobs SDK 正常关闭，请参阅[正常关闭](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#graceful)。）
+* [Web 作业正常关闭](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.U72Il_5OWUl)。对于 WebJobs SDK 正常关闭，请参阅[正常关闭](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful)。）
 
 
 ##<a name="additionalsdk"></a>其他 WebJobs SDK 资源

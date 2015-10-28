@@ -30,9 +30,9 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 还可以通过**用户定义函数的 (UDF)** 扩展 Hive。UDF 允许你实现 HiveQL 中不容易建模的功能或逻辑。有关将 UDF 与 Hive 配合使用的示例，请参阅：
 
-* [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](hdinsight-python)
+* [在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python)
 
-* [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
+* [在 HDInsight 中将 C# 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 
 * [如何将自定义 Hive UDF 添加到 HDInsight](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
 
@@ -44,7 +44,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 在前面的示例中，日志级别为 ERROR。
 
-> [AZURE.NOTE]你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](hdinsight-use-blob-storage)。
+> [AZURE.NOTE]你也可以使用 [Apache Log4j](http://zh.wikipedia.org/wiki/Log4j) 日志记录工具生成 log4j 文件，然后将该文件上载到 Blob 容器。请参阅[将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data) 以获取相关说明。有关如何将 Azure Blob 存储与 HDInsight 配合使用的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
 示例数据存储在 HDInsight 用作默认文件系统的 Azure Blob 存储中。HDInsight 可以使用 **wasb** 前缀来访问存储在 Blob 中的文件。例如，若要访问 sample.log 文件，可使用以下语法：
 
@@ -97,7 +97,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 	set hive.execution.engine=tez;
 
-你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](hdinsight-provision-clusters)中找到详细信息。
+你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)中找到详细信息。
 
 [Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
@@ -108,12 +108,12 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 
 | **使用此方法**，如果你想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--------------------------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
-| [Curl](hdinsight-hadoop-use-hive-curl) | &nbsp; | ✔ | Windows | Windows |
-| [查询控制台](hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 基于浏览器 |
-| [HDInsight tools for Visual Studio](hdinsight-hadoop-use-hive-visual-studio) | &nbsp; | ✔ | Windows | Windows |
-| [.NET SDK for Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk) | &nbsp; | ✔ | Windows | Windows（暂时） |
-| [Windows PowerShell](hdinsight-hadoop-use-hive-powershell) | &nbsp; | ✔ | Windows | Windows |
-| [远程桌面](hdinsight-hadoop-use-hive-remote-desktop) | ✔ | ✔ | Windows | Windows |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl) | &nbsp; | ✔ | Windows | Windows |
+| [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 基于浏览器 |
+| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) | &nbsp; | ✔ | Windows | Windows |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) | &nbsp; | ✔ | Windows | Windows（暂时） |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell) | &nbsp; | ✔ | Windows | Windows |
+| [远程桌面](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop) | ✔ | ✔ | Windows | Windows |
 
 ##<a id="nextsteps"></a>后续步骤
 
@@ -126,7 +126,6 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
 [1]: hdinsight-hadoop-visual-studio-tools-get-started
-
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 
@@ -135,21 +134,16 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
-
+[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-use-pig]: hdinsight-use-pig
 [hdinsight-use-oozie]: hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data
 [hdinsight-use-mapreduce]: hdinsight-use-mapreduce
-
-
 [hdinsight-storage]: hdinsight-use-blob-storage
-
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: hdinsight-upload-data
 [hdinsight-get-started]: hdinsight-get-started
-
 [Powershell-install-configure]: install-configure-powershell
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

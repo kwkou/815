@@ -61,17 +61,17 @@ HDInsight Tools for Visual Studio 还提供了一个接口让你监视和管理�
 
 ![Storm 管理](./media/hdinsight-storm-overview/stormview.png)
 
-有关使用 HDInsight 工具创建 HDInsight 应用程序的示例，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# Storm 拓扑](hdinsight-storm-develop-csharp-visual-studio-topology)。
+有关使用 HDInsight 工具创建 HDInsight 应用程序的示例，请参阅[使用 HDInsight Tools for Visual Studio 开发 C# Storm 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)。
 
-有关 HDInsight Tools for Visual Studio 的详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](hdinsight-hadoop-visual-studio-tools-get-started)。
+有关 HDInsight Tools for Visual Studio 的详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)。
 
 每个 Storm on HDInsight 群集还提供一个基于 Web 的 Storm 仪表板让提交、监视和管理群集上运行的 Storm 拓扑。
 
 ![Storm 仪表板](./media/hdinsight-storm-overview/dashboard.png)
 
-有关使用 Storm 仪表板的详细信息，请参阅[在 HDInsight 上部署和管理 Apache Storm 拓扑](hdinsight-storm-deploy-monitor-topology)。
+有关使用 Storm 仪表板的详细信息，请参阅[在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)。
 
-Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心轻松集成。可以使用 **%STORM_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 在每个 Storm 群集上实现此目的。有关在 Storm 拓扑中使用此 Spout 的示例，请参阅[事件中心入门](service-bus-event-hubs-c-storm-getstarted)和[使用 Storm 和 HBase 分析传感器数据](hdinsight-storm-sensor-data-analysis)。
+Storm on HDInsight 还支持通过**事件中心 Spout** 与 Azure 事件中心轻松集成。可以使用 **%STORM_HOME%\\examples\\eventhubspout\\eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 在每个 Storm 群集上实现此目的。有关在 Storm 拓扑中使用此 Spout 的示例，请参阅[事件中心入门](/documentation/articles/service-bus-event-hubs-c-storm-getstarted)和[使用 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)。
 
 ###可靠性
 
@@ -202,5 +202,4 @@ Storm 可以提供不同级别的有保证的消息处理。例如，基本的 S
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
 [gettingstarted]: hdinsight-storm-getting-started
-
 <!---HONumber=71-->

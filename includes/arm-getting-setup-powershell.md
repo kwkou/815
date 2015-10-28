@@ -34,7 +34,7 @@
 	-------
 	0.8.16.1
 
-有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](powershell-install-configure)。
+有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 
 ### 步骤 2：设置你的 Azure 帐户和订阅
@@ -59,7 +59,7 @@
 
 你可以从 **Get-AzureSubscription** 命令输出的 **SubscriptionName** 属性获取相应的订阅名称。
 
-有关 Azure 订阅和帐户的详细信息，请参阅[如何：连接到订阅](powershell-install-configure#Connect)。
+有关 Azure 订阅和帐户的详细信息，请参阅[如何：连接到订阅](/documentation/articles/powershell-install-configure#Connect)。
 
 ### 步骤 3：切换到 Azure 资源管理器模块
 

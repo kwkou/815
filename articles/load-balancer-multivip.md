@@ -133,9 +133,9 @@
 
 ## 另请参阅
 
-<!--[Internet facing load balancer overview](load-balancer-internet-overview)
+<!--[Internet facing load balancer overview](/documentation/articles/load-balancer-internet-overview)
 
-[Get started on Internet facing load balancer](load-balancer-internet-getstarted)-->
+[Get started on Internet facing load balancer](/documentation/articles/load-balancer-internet-getstarted)-->
 
 [虚拟网络概述](https://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
 

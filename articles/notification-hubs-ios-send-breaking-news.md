@@ -382,10 +382,8 @@
 [使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 [Mobile Service]: /documentation/articles/notification-hubs-ios-mobile-services-register-user-push-notifications
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-ios-aspnet-register-user-push-notifications
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /documentation/articles/notification-hubs-ios-get-started
-
 <!---HONumber=71-->

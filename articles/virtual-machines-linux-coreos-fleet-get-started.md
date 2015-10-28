@@ -166,5 +166,4 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload apache@{1,2,3}.servi
 [busybox Docker Hub 映像]: https://registry.hub.docker.com/_/busybox/
 [CoreOS Apache Docker Hub 映像]: https://registry.hub.docker.com/u/coreos/apache/
 [Azure 上的 Linux 和开源计算]: /documentation/articles/virtual-machines-linux-opensource
-
 <!---HONumber=70-->

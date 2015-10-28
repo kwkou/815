@@ -82,7 +82,7 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 	>
 	> 5. 最后，从 Azure 门户注销，然后使用工作或学校帐户重新登录。如果这是使用此帐户首次登录，系统将提示更改密码。
 	>
-	>有关使用工作或学校帐户注册 Microsoft Azure 的详细信息，请参阅[以组织身份注册 Microsoft Azure](sign-up-organization)。
+	>有关使用工作或学校帐户注册 Microsoft Azure 的详细信息，请参阅[以组织身份注册 Microsoft Azure](/documentation/articles/sign-up-organization)。
 
 <h3>使用证书方法</h3>
 
@@ -225,7 +225,7 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 下面列出了可用来了解如何使用 Azure 和 Windows PowerShell 的资源。
 
-- 若要了解如何访问 Azure 存储组件，请参阅[对 Azure 存储空间使用 Azure PowerShell](storage-powershell-guide-full)。
+- 若要了解如何访问 Azure 存储组件，请参阅[对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full)。
 
 - 若要提供有关这些 cmdlet 的反馈、报告问题或访问源代码，请参阅 [Azure PowerShell 代码存储库](https://github.com/WindowsAzure/azure-sdk-tools)。
 

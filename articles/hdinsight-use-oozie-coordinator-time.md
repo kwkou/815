@@ -329,7 +329,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。wasb:// 是 Microsoft 在 Az
 		{
 			# SQL query string for creating log4jLogsCount table
 			$cmdCreateLog4jCountTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-				    [Level] [nvarchar](10) NOT NULL,
+				    [Level] [nvarchar](/documentation/articles/10) NOT NULL,
 				    [Total] float,
 				CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED   
 				(
@@ -690,37 +690,32 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
-
-
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator/
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
-[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
-
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
-
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
-
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: /documentation/articles/install-and-configure-powershell/
+[powershell-install-configure]: /documentation/articles/install-and-configure-powershell
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 

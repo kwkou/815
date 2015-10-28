@@ -23,7 +23,7 @@
 
 本教程基于移动服务 TodoList 项目。在开始本教程之前，必须先完成[将移动服务添加到现有应用程序]以将项目连接到移动服务。
 
->[AZURE.NOTE]本教程面向 Windows Phone 8.1 Silverlight 应用。如果你要生成 Windows Phone 8.1 应用商店应用程序，请参阅本教程的 [Windows 应用商店应用程序](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push)版本。有关 Windows Phone Silverlight 应用程序与 Windows Phone 应用商店应用程序的差别信息，请参阅 [Windows Phone Silverlight 8.1 应用程序]。
+>[AZURE.NOTE]本教程面向 Windows Phone 8.1 Silverlight 应用。如果你要生成 Windows Phone 8.1 应用商店应用程序，请参阅本教程的 [Windows 应用商店应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push)版本。有关 Windows Phone Silverlight 应用程序与 Windows Phone 应用商店应用程序的差别信息，请参阅 [Windows Phone Silverlight 8.1 应用程序]。
 
 ##更新应用程序以注册通知
 
@@ -190,14 +190,10 @@
 
 [将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
-
 [向经过身份验证的用户发送推送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-push-notifications-app-users
-
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-windows-phone-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-windows-phone-send-localized-breaking-news
-
-
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library
 [Windows Phone Silverlight 8.1 应用程序]: http://msdn.microsoft.com/zh-cn/library/windowsphone/develop/dn642082(v=vs.105).aspx
 [Azure 管理门户]: https://manage.windowsazure.cn/

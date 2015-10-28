@@ -330,8 +330,8 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
 
 有关三个 Web 托管选项的详细信息，请参阅以下资源：
 
-* [Azure 简介](/documentation/articles/fundamentals-introduction-to-azure/)
-* [Azure 执行模型](/documentation/articles/fundamentals-application-models/)
+* [Azure 简介](/documentation/articles/fundamentals-introduction-to-azure)
+* [Azure 执行模型](/documentation/articles/fundamentals-application-models)
 
 若要开始使用为应用程序选择的选项，请参阅以下资源：
 

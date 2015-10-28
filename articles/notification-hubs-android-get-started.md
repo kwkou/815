@@ -498,13 +498,11 @@
 
 
 <!-- URLs. -->
-[Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push
+[Get started with push notifications in Mobile Services]: mobile-services-javascript-backend-android-get-started-push
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 [使用通知中心将通知推送到用户]: /documentation/articles/notification-hubs-aspnet-backend-android-notify-users
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-aspnet-backend-android-breaking-news
- 
-
 <!---HONumber=71-->

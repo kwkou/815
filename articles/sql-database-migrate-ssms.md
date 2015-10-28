@@ -31,7 +31,7 @@
 	![通过“任务”菜单部署到 Azure](./media/sql-database-migrate-ssms/02MigrateusingSSMS.png)
 
 3.	在部署向导中，配置与设置的目标 Azure SQL 数据库 服务器的连接。
-4.	提供数据库的**名称**，并设置“版本”（服务层）和“服务目标”（性能级别）。有关配置这些设置的详细信息，请参阅 [Azure SQL 数据库服务层](sql-database-service-tiers.md)。 
+4.	提供数据库的**名称**，并设置“版本”（服务层）和“服务目标”（性能级别）。有关配置这些设置的详细信息，请参阅 [Azure SQL 数据库服务层](/documentation/articles/sql-database-service-tiers)。 
 
 	![导出设置](./media/sql-database-migrate-ssms/03MigrateusingSSMS.png)
 

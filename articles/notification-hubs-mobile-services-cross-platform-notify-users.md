@@ -126,9 +126,9 @@
 
 <!-- Anchors. -->  
 
-  [移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users/ 
-  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users/
-  [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+  [移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users
+  [ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
+  [使用通知中心通知用户]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
   [Azure 通知中心概述]: http://go.microsoft.com/fwlink/p/?LinkId=317339
   [Azure 管理门户]: https://manage.windowsazure.cn/
 
@@ -139,5 +139,5 @@
   [3]: ./media/notification-hubs-mobile-services-cross-platform-notify-users/mobile-insert-script-push2.png
 
 <!-- URLs. --> 
-  [iOS]: /documentation/articles/notification-hubs-ios-send-breaking-news/
+  [iOS]: /documentation/articles/notification-hubs-ios-send-breaking-news
   [针对 Windows 应用商店的通知中心操作指南]: http://msdn.microsoft.com/library/azure/jj927172.aspx

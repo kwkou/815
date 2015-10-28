@@ -131,10 +131,9 @@
 <!-- URLs. -->
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data/
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data
 [身份验证入门]: /documentation/articles/mobile-services-windows-phone-get-started-users
-[使用脚本为用户授权]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts/
-
+[使用脚本为用户授权]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=74-->

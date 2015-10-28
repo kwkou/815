@@ -94,7 +94,7 @@ https://github.com/azure/azurermtemplates/raw/master/linux-virtual-machine-with-
 
 ## 后续步骤
 
-Vestibul ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam ultricies, ipsum vitae volutpat hendrerit, purus diam pretium eros, vitae tincidunt nulla lorem sed turpis: [指向其他 www.windowsazure.cn 文档主题的链接 3](storage-whatis-account)。
+Vestibul ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam ultricies, ipsum vitae volutpat hendrerit, purus diam pretium eros, vitae tincidunt nulla lorem sed turpis: [指向其他 www.windowsazure.cn 文档主题的链接 3](/documentation/articles/storage-whatis-account)。
 
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png

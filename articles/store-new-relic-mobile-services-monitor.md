@@ -137,14 +137,13 @@
 <!-- URLs. -->
 [Source control]: http://msdn.microsoft.com/zh-cn/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [Work with server scripts in Mobile Services]: /documentation/articles/work-with-server-scripts
-
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Node.js API Documentation: Modules]: http://nodejs.org/api/modules.html
-[在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control/
+[在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
 [newrelic]: https://npmjs.org/package/newrelic
 [Azure 应用商店中的 New Relic 页]: /gallery/store/new-relic/new-relic/
 [应用程序概述]: https://docs.newrelic.com/docs/applications-dashboards/applications-overview
-[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+[移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [数据处理入门教程]: /develop/mobile/tutorials/get-started-with-data-dotnet
 [New Relic 移动]: http://newrelic.com/mobile-monitoring
 

@@ -98,7 +98,7 @@
 
 ## 旧代码版本
 
-如果你要查看本教程的 Eclipse 版本，请转到[使用 Eclipse 处理数据入门](mobile-services-android-get-started-data-EC)。
+如果你要查看本教程的 Eclipse 版本，请转到[使用 Eclipse 处理数据入门](/documentation/articles/mobile-services-android-get-started-data-EC)。
 
 若要查看 Eclipse 项目中源代码的已完成版本，请转到<a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/Android">此处</a>。
 
@@ -141,12 +141,11 @@
 <!-- URLs. -->
 [使用脚本验证和修改数据]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [使用分页优化查询]: /documentation/articles/mobile-services-android-how-to-use-client-library
-[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
 [Get started with data]: /documentation/articles/mobile-services-android-get-started-data
-[Get started with data (Eclipse)]: /documentation/articles/mobile-services-android-get-started-data-EC/
+[Get started with data (Eclipse)]: /documentation/articles/mobile-services-android-get-started-data-EC
 [身份验证入门]: /documentation/articles/mobile-services-android-get-started-users
 [推送通知入门 ]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [管理门户]: https://manage.windowsazure.cn/
 [Azure 移动服务 Android SDK]: http://aka.ms/Iajk6q

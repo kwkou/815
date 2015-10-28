@@ -22,7 +22,7 @@
 
 ##概述
 
-你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](media-services-encode-asset)主题说明了如何编码成自适应比特率 MP4 集。
+你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-encode-asset)主题说明了如何编码成自适应比特率 MP4 集。
 
 >[AZURE.NOTE]如果内容已加密，则在创建定位符之前配置资产传送策略（如[本](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)主题中所述）。
 

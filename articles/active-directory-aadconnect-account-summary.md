@@ -82,7 +82,7 @@ AD FS:GMSA 帐户 (aadcsvc$)|域用户|FS 服务登录帐户
 * [用于密码同步的权限](https://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#psynch)
 * [用于 Exchange 混合部署的权限](https://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#exchange)
 * [用于密码写回的权限](https://msdn.microsoft.com/zh-cn/library/azure/dn757602.aspx#pwriteback)
-* [Azure AD Connect 的自定义安装](active-directory-aadconnect-get-started-custom)
+* [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)
 * [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
  
 

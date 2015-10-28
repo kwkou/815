@@ -40,7 +40,7 @@ Hadoop 向 MapReduce 提供了一个流式处理 API，利用它，你可以采�
 
 - **一个 Azure 订阅**。请参阅 [azure-trial](/pricing/1rmb-trial/) 页。
 
-- **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[预配 HDInsight 群集](hdinsight-provision-clusters)。
+- **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
 
 - **配备 Azure PowerShell 的工作站**。请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
@@ -184,17 +184,13 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline
 [stdin-stdout-stderr]: http://msdn.microsoft.com/zh-cn/library/3x292kth(v=vs.110).aspx
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
-
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
-
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
-[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort/
-[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming/
-[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator/
-[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount/
-
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
-
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
+[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
+[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 <!---HONumber=71-->

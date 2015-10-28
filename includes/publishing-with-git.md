@@ -294,6 +294,5 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 [创建存储库 (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [快速入门 - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [使用 Dropbox 共享 Git 存储库]: https://gist.github.com/trey/2722927
-[使用 Visual Studio Online 向 Azure 连续传送项目]: /documentation/articles/cloud-services-continuous-delivery-use-vso/
-
+[使用 Visual Studio Online 向 Azure 连续传送项目]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 <!---HONumber=71-->

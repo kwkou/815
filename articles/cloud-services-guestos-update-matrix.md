@@ -338,6 +338,4 @@ Microsoft Azure 不断地发布更新。来宾 OS 只不过是此类更新的其
 [patches]: /documentation/articles/cloud-services-guestos-msrc-releases
 [retirepolicy]: /documentation/articles/cloud-services-guestos-retirement-policy
 [fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement
- 
-
 <!---HONumber=74-->

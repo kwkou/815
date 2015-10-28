@@ -10,7 +10,7 @@
 
 在本主题中，你将要使用 Azure 管理门户的"快速创建"选项创建并配置一个新的 Azure SQL 数据库。此过程演示如何使用现有服务器创建 SQL 数据库，并演示如何根据需要创建新的服务器。
 
-> [AZURE.NOTE] 使用"快速创建"创建 SQL 数据库 会设置一个标准 (S0) 数据库。若要在除标准 (S0) 以外的服务层和性能级别创建 SQL 数据库，请使用"自定义创建"。有关使用"自定义创建"创建 Azure SQL 数据库 的详细信息，请参阅 [Windows Azure SQL 数据库 入门](sql-database-get-started)。
+> [AZURE.NOTE] 使用"快速创建"创建 SQL 数据库 会设置一个标准 (S0) 数据库。若要在除标准 (S0) 以外的服务层和性能级别创建 SQL 数据库，请使用"自定义创建"。有关使用"自定义创建"创建 Azure SQL 数据库 的详细信息，请参阅 [Windows Azure SQL 数据库 入门](/documentation/articles/sql-database-get-started)。
 
 ## 目录##
 * [如何：创建 Azure SQL 数据库](#createDatabase)

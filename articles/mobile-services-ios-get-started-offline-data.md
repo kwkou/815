@@ -260,10 +260,5 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 [Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
 [使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-ios-handling-conflicts-offline-data
 [Soft Delete]: /documentation/articles/mobile-services-using-soft-delete
-
-
-
 [移动服务快速入门教程]: /documentation/articles/mobile-services-ios-get-started
- 
-
 <!---HONumber=71-->

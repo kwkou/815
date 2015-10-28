@@ -35,5 +35,4 @@
 
 [Management Portal]: https://manage.windowsazure.cn/
 [.NET backend version]: mobile-services-dotnet-backend-windows-phone-get-started
-
 <!---HONumber=61-->

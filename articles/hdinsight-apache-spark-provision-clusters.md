@@ -475,20 +475,16 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 [hdinsight-storm-get-started]: /documentation/articles/hdinsight-storm-getting-started
-
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [azure-command-line-tools]: /documentation/articles/xplat-cli
-
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-
 [apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 [azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
@@ -496,5 +492,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
-
 <!---HONumber=66-->

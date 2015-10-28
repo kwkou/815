@@ -266,5 +266,4 @@
 [服务总线发布/订阅编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-
 <!---HONumber=67-->

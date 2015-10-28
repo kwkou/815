@@ -32,7 +32,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 - 实现多 VM 一致性，以便运行特定工作负荷的虚拟机和物理服务器可以一起恢复到一致数据点。
 - 提供简化通过多个虚拟机分层的工作负荷的故障转移和恢复的恢复计划。
 
-此功能目前处于预览状态。阅读[补充使用条款预览版](preview-supplemental-terms)。
+此功能目前处于预览状态。阅读[补充使用条款预览版](/documentation/articles/preview-supplemental-terms)。
 
 ## 关于本文
 
@@ -62,7 +62,7 @@ Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因�
 
 - **数据通信和复制通道**  - 有多个选项。请注意，无论是哪个选项，都不需要你在受保护的计算机上打开任何入站网络端口。所有网络通信都从本地站点启动。
 	- **通过 Internet** - 通过安全的公用 Internet 连接通信并从受保护的本地服务器和 Azure 复制数据。这是默认选项。
-	- **VPN/ExpressRoute** - 通过 VPN 连接通信并在本地服务器与 Azure 之间复制数据。你将需要在本地站点与 Azure 网络之间设置站点到站点 VPN <!--或 [ExpressRoute](expressroute) 连接-->。
+	- **VPN/ExpressRoute** - 通过 VPN 连接通信并在本地服务器与 Azure 之间复制数据。你将需要在本地站点与 Azure 网络之间设置站点到站点 VPN <!--或 [ExpressRoute](/documentation/articles/expressroute) 连接-->。
 
 
 ## 容量规划

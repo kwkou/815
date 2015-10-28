@@ -1108,7 +1108,7 @@ $60.43
   [AppCmd]: http://www.iis.net/learn/get-started/getting-started-with-iis/getting-started-with-appcmdexe "appCmd"
   [如何在 Azure 中配置 IIS 组件]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433059.aspx
   [如何阻止特定 IP 地址访问 Web 角色]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj154098.aspx
-  [自动缩放应用程序块]: /documentation/articles/cloud-services-dotnet-autoscaling-application-block/
+  [自动缩放应用程序块]: /documentation/articles/cloud-services-dotnet-autoscaling-application-block
   [Azure Connect]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433122.aspx
   [Azure 虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
   [虚拟 IP 交换]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee517253.aspx "VIP 交换"

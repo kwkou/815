@@ -260,7 +260,7 @@
 
 	![函数详细信息](./media/web-sites-dotnet-troubleshoot-visual-studio/funcdetails.png)
 
-如果函数[写入了日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)，你可以单击 **ToggleOutput** 查看日志。
+如果函数[写入了日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs)，你可以单击 **ToggleOutput** 查看日志。
 
 ## 有关远程调试的说明
 
@@ -304,7 +304,7 @@
 * 本地运行该项目时查看日志。
 * 查看由运行于 Azure 中的应用程序生成的日志。 
 
-有关如何在 Web 作业中创建应用程序日志的信息，请参阅[如何使用 WebJobs SDK 处理 Azure 队列存储 - 如何写入日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs)。以下有关查看日志以及控制其在 Azure 中的存储方式的说明同样适用于 Web 作业创建的应用程序日志。
+有关如何在 Web 作业中创建应用程序日志的信息，请参阅[如何使用 WebJobs SDK 处理 Azure 队列存储 - 如何写入日志](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs)。以下有关查看日志以及控制其在 Azure 中的存储方式的说明同样适用于 Web 作业创建的应用程序日志。
 
 ### 向应用程序添加跟踪语句
 
@@ -485,7 +485,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 	![输出窗口中的 Web 服务器日志](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-wslogs.png)
 
 
-默认情况下，通过使用 Visual Studio 第一次启用 Web 服务器日志时，Azure 会将日志写入文件系统。或者，你可以使用管理门户指定将 Web 服务器日志写入存储帐户的 Blob 容器。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure/#howtochangeconfig)中的**站点诊断**部分。
+默认情况下，通过使用 Visual Studio 第一次启用 Web 服务器日志时，Azure 会将日志写入文件系统。或者，你可以使用管理门户指定将 Web 服务器日志写入存储帐户的 Blob 容器。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure#howtochangeconfig)中的**站点诊断**部分。
 
 如果使用管理门户将 Web 服务器日志记录写入 Azure 存储帐户，之后在 Visual Studio 中禁用日志记录，那么在 Visual Studio 中重新启用日志记录时，存储帐户设置将还原。
 
@@ -569,7 +569,7 @@ Web 服务器日志将记录 Web 应用上所有的 HTTP 活动。若要在“�
 
 6. 将“复制”下拉列表设置为“本地冗余”。
 
-	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/#replication-options)。
+	为存储帐户启用地域复制时，会将存储内容复制到辅助数据中心，这样就能够在主要位置发生重大灾难时将故障转移到该位置。地域复制可能会产生额外的成本。对于测试和开发帐户，你通常不希望因为地域复制而付款。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account#replication-options)。
 
 5. 单击“创建”。
 
@@ -698,7 +698,7 @@ Azure Web Apps 使用 IIS 7.0 及更高版本中提供的相同的失败请求�
 
 有关排除 Azure Web Apps (WAWS) 故障的详细信息，请参阅以下资源：
 
-* [如何监视 Web Apps](/documentation/articles/web-sites-monitor/)
+* [如何监视 Web Apps](/documentation/articles/web-sites-monitor)
 * [使用 Visual Studio 2013 在 Azure Web Apps 中调查内存泄漏](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx)。有关用于分析托管内存问题的 Visual Studio 功能的 Microsoft ALM 博客文章。
 * [你应该了解的 Windows Azure Web Apps 联机工具](http://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/)。Amit Apple 发表的博客文章。
 
@@ -772,7 +772,6 @@ Microsoft TechNet 网站包含的[使用失败请求跟踪](http://www.iis.net/l
 
 
 
-[GetStarted]: /documentation/articles/web-sites-dotnet-get-started/
-[GetStartedWJ]: /documentation/articles/websites-dotnet-webjobs-sdk/
-
+[GetStarted]: /documentation/articles/web-sites-dotnet-get-started
+[GetStartedWJ]: /documentation/articles/websites-dotnet-webjobs-sdk
 <!---HONumber=71-->

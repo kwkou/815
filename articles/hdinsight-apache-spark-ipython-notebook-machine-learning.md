@@ -221,18 +221,12 @@ HDInsight 上的 Apache Spark 群集包含 Anaconda 库，其中包括适用于�
 
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-
-
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
-
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 [azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-
 <!---HONumber=66-->

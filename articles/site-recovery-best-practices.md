@@ -19,7 +19,7 @@
 
 ## 关于本文
 
-本文包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](hyper-v-recovery-manager-overview)。
+本文包括你部署 Azure Site Recovery 之前应阅读并实施的最佳实践。如果你正在寻找 Site Recovery 和相关部署方案的简介，请阅读 [Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)。
 
 如果在阅读本文后有任何问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)上发布你的问题。
 
@@ -28,7 +28,7 @@
 
 - **Azure 帐户**：你需要一个 [Windows Azure](http://www.windowsazure.cn/) 帐户。如果没有，请先使用[试用帐户](/pricing/1rmb-trial/)。
 - 阅读 Site Recovery 服务的[定价](/home/features/site-recovery/#price)。
-- **Azure 存储空间**：如果通过复制到 Azure 的方式部署 Site Recovery，则你需要一个 Azure 存储帐户。你可以在部署期间设置该帐户，也可以在开始之前准备该帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。请阅读 [Windows Azure 存储空间简介](storage-introduction)。
+- **Azure 存储空间**：如果通过复制到 Azure 的方式部署 Site Recovery，则你需要一个 Azure 存储帐户。你可以在部署期间设置该帐户，也可以在开始之前准备该帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。请阅读 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
 
 ## 虚拟机
 
@@ -59,7 +59,7 @@ FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 
 ## VMM 服务器
 
-Site Recovery 可按如下方式，协调 System Center Virtual Machine Manager (VMM) 云中 Hyper-V 主机服务器上的虚拟机的复制：从现场 VMM 服务器复制到 Azure（使用 Hyper-V 副本）- 复制到辅助本地站点（使用 Hyper-V 副本）。我们建议在主站点和辅助站点中各一个部署 VMM 服务器。但是，如果需要，你可以为两个站点[部署单个 VMM 服务器](site-recovery-single-vmm)。- 复制到辅助本地站点（使用 SAN）。每个站点需要一个包含 VMM 服务器的主要和辅助数据中心。如果你想要使用 Site Recovery 部署 VMM，则需要设置你的 VMM 基础结构。如果你没有 VMM 服务器，请在[此处](site-recovery-hyper-v-site-to-azure)阅读详细信息。
+Site Recovery 可按如下方式，协调 System Center Virtual Machine Manager (VMM) 云中 Hyper-V 主机服务器上的虚拟机的复制：从现场 VMM 服务器复制到 Azure（使用 Hyper-V 副本）- 复制到辅助本地站点（使用 Hyper-V 副本）。我们建议在主站点和辅助站点中各一个部署 VMM 服务器。但是，如果需要，你可以为两个站点[部署单个 VMM 服务器](/documentation/articles/site-recovery-single-vmm)。- 复制到辅助本地站点（使用 SAN）。每个站点需要一个包含 VMM 服务器的主要和辅助数据中心。如果你想要使用 Site Recovery 部署 VMM，则需要设置你的 VMM 基础结构。如果你没有 VMM 服务器，请在[此处](/documentation/articles/site-recovery-hyper-v-site-to-azure)阅读详细信息。
 
 
 ### 验证 VMM 版本
@@ -122,8 +122,8 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 
 ## 存储
 
-- **Azure 存储帐户**：如果要复制到 Azure，则你需要一个 Azure 存储帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储空间简介](storage-introduction)。
-- **存储映射**：如果要复制本地 VMM 服务器上的虚拟机，你可以设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储。在两个本地 VMM 站点之间复制时，默认情况下，副本虚拟机将存储在目标 Hyper-V 主机服务器上的指定位置。可以配置源和目标 VMM 服务器上的 VMM 存储分类之间的映射。如果你要使用此功能，请确保在开始部署之前设置存储分类。[详细了解](site-recovery-storage-mapping)有关存储映射的信息。
+- **Azure 存储帐户**：如果要复制到 Azure，则你需要一个 Azure 存储帐户。该帐户应已启用地域复制。它应该位于 Azure Site Recovery 保管库所在的区域中，并与相同订阅关联。若要了解详细信息，请阅读 [Windows Azure 存储空间简介](/documentation/articles/storage-introduction)。
+- **存储映射**：如果要复制本地 VMM 服务器上的虚拟机，你可以设置存储映射，以确保虚拟机在故障转移后以最佳方式连接到存储。在两个本地 VMM 站点之间复制时，默认情况下，副本虚拟机将存储在目标 Hyper-V 主机服务器上的指定位置。可以配置源和目标 VMM 服务器上的 VMM 存储分类之间的映射。如果你要使用此功能，请确保在开始部署之前设置存储分类。[详细了解](/documentation/articles/site-recovery-storage-mapping)有关存储映射的信息。
 - **SAN**：如果你要使用 SAN 复制在两个在本地站点之间复制，请注意：
 	- 使用 SAN 复制只能将 Hyper-V 虚拟机复制到辅助数据中心，而不能复制到 Azure。
 	- 可以使用现有的 SAN 环境。无需在 SAN 阵列上进行任何更改。
@@ -132,7 +132,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 	- 如果你要部署 SAN 复制，请确保 Hyper-V 主机群集正在运行 Windows Server 2012 或 2012 R2。[详细了解](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)不同版本的 Hyper-V 支持的来宾操作系统。
 	- 你需要发现并分类 VMM 中的 SAN 存储。
 	- 如果你尚未开始复制，则在发现之后，需要在 VMM 控制台中创建 LUN 并分配存储。如果你已开始复制，则可以跳过此步骤。
-	- 此[文章](site-recovery-vmm-san)提供了完整说明。
+	- 此[文章](/documentation/articles/site-recovery-vmm-san)提供了完整说明。
 
 
 ## 网络
@@ -142,7 +142,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 - **设置网络映射**：网络映射是部署 VMM 和 Site Recovery 时的要素。网络映射可将复制的虚拟机放在最佳的目标 Hyper-V 主机服务器上，并确保复制的虚拟机在故障转移后可连接到适当的网络。你可以在复制到 Azure 或辅助数据中心时配置网络映射：
 	- **到 Azure 的网络映射**：如果你要复制到 Azure，网络映射可确保同一网络上执行故障转移的所有虚拟机都能彼此互连，与这些虚拟机所属的恢复计划无关。此外，如果在目标 Azure 网络上配置了网络网关，则虚拟机可以连接到其他本地虚拟机。如果不设置网络映射，则只有同一个恢复计划中故障转移的计算机才能进行连接。
 	- **到辅助站点的网络映射**：如果要复制到辅助 VMM 站点，网络映射可确保虚拟机在故障转移后连接到适当的网络，确保以最佳方式将副本虚拟机放置在 Hyper-V 主机服务器上。如果不配置网络映射，则复制的计算机将不会连接到任何 VM 网络。
-	- [详细了解](site-recovery-network-mapping)有关网络映射的信息。
+	- [详细了解](/documentation/articles/site-recovery-network-mapping)有关网络映射的信息。
 - **设置 VM 网络**：
 	- 在 VMM 中正确配置逻辑和 VM 网络。阅读有关[逻辑网络](http://blogs.technet.com/b/scvmm/archive/2013/02/14/networking-in-vmm-2012-sp1-logical-networks-part-i.aspx)和 [VM 网络](https://technet.microsoft.com/zh-cn/library/jj721575.aspx)的信息。
 	- 确保源 VMM 服务器上的所有虚拟机已连接到 VM 网络。
@@ -166,7 +166,7 @@ System Center 2012 R2 上的 VMM（建议）（群集或独立计算机） | <p>
 ## 故障转移
 - **主站点中断**：如果你正在从一个本地数据中心复制到另一个本地数据中心，并且两个数据中心的主站点发生中断，请从 Site Recovery 门户运行非计划的故障转移。运行故障转移不需要从主数据中心建立连接。
 - **故障转移到辅助站点后保留 IP 地址**：如果在源虚拟机故障转移到辅助数据中心后你要保留它的 IP 地址，请遵照[此处](http://blogs.technet.com/b/scvmm/archive/2014/04/04/retaining-ip-address-after-failover-using-hyper-v-recovery-manager.aspx)所述的步骤。
-- **故障转移到 Azure 后保留 IP 地址**：可以在虚拟机的“配置”选项卡中指定要分配给已故障转移 VM 的 IP。有关详细信息，请查看[如何配置虚拟机的网络属性](site-recovery-vmm-to-azure#step-8-enable-protection-for-virtual-machines)
+- **故障转移到 Azure 后保留 IP 地址**：可以在虚拟机的“配置”选项卡中指定要分配给已故障转移 VM 的 IP。有关详细信息，请查看[如何配置虚拟机的网络属性](/documentation/articles/site-recovery-vmm-to-azure#step-8-enable-protection-for-virtual-machines)
 - **保留公共 IP 地址**：如果你要在故障转移到辅助站点后保留公共 IP 地址，Site Recovery 不会阻止你执行此操作（如果你的 ISP 支持这种做法）。故障转移到 Azure 后无法保留公共 IP 地址。
 - **保留 Azure 中的非 RFC 内部地址**：你可以在故障转移到 Azure 后保留非 RFC 1918 地址空间。
 - **部分故障转移到辅助数据中心**：如果你要将部分站点故障转移到辅助数据中心并想要连接回到主站点，你可以使用站点到站点 VPN 将辅助站点上已故障转移的应用程序连接到主站点上运行的基础结构组件。请注意，如果故障转移了整个子网，则你可以保留虚拟机 IP 地址。如果故障转移了部分子网，则你无法保留虚拟机 IP 地址，因为无法在站点之间拆分子网。

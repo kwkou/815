@@ -103,7 +103,6 @@
 [数据处理入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-android
 [身份验证入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-android
 [推送通知入门 ]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Azure 管理门户]: https://manage.windowsazure.cn/
 

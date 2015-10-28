@@ -407,6 +407,6 @@ SubjectConfirmation 不是声明。它描述如何对令牌的使用者进行验
 ## 另请参阅
 ### 概念
 
-[Azure Active Directory 身份验证协议](active-directory-authentication-protocols)
+[Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols)
 
 <!---HONumber=60-->

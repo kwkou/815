@@ -53,7 +53,7 @@ Dx  4d7936fd-341c-4a37-8796-25e385ae6c5b
 以下网页提供了分类为暂时性故障的错误编列表：
 
 
-- [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages/#bkmk_connection_errors)
+- [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages#bkmk_connection_errors)
  - 请参阅有关*暂时性错误和连接断开错误*的部分。
 
 

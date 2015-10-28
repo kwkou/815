@@ -41,7 +41,7 @@
 ------------- | -------------  
 [来自未知源的登录](#sign-ins-from-unknown-sources) | 免费和高级版
 [多次失败后的登录](#sign-ins-after-multiple-failures) | 免费和高级版
-[来自多个地理区域的登录](sign-ins-from-multiple-geographies) | 免费和高级版
+[来自多个地理区域的登录](/documentation/articles/sign-ins-from-multiple-geographies) | 免费和高级版
 从具有可疑活动的 IP 地址登录| 高级版
 异常登录活动 | 高级版
 从可能感染的设备登录 | 高级版
@@ -171,7 +171,7 @@
 <td>报告位置</td>
 </tr>
 <tr>
-<td><p>显示在过去 24 小时、过去 7 天或过去 30 天内发生的所有已审核事件的记录。 </p><p>有关详细信息，请参阅 [Azure Active Directory 审核报告事件](active-directory-reporting-audit-events.md)</p>
+<td><p>显示在过去 24 小时、过去 7 天或过去 30 天内发生的所有已审核事件的记录。 </p><p>有关详细信息，请参阅 [Azure Active Directory 审核报告事件](/documentation/articles/active-directory-reporting-audit-events)</p>
 </td>
 <td>"目录">"报告"选项卡</td>
 </tr>
@@ -203,7 +203,7 @@
 
 ## 后续步骤
 
-<!--- [Getting started with Azure Active Directory Premium](active-directory-get-started-premium.md)-->
-- [向"登录"和"访问面板"页添加公司品牌](active-directory-add-company-branding)
+<!--- [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium)-->
+- [向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
 
 <!--HONumber=57-->

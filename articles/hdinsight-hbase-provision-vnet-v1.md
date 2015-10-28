@@ -57,7 +57,7 @@
 	- **地址空间** - 为虚拟网络提供大到足以为群集中的所有节点提供地址的地址空间。否则，设置将失败。为了完成本教程，你可以选取以下三个选项之一。
 	- **最大 VM 计数** - 选择最大虚拟机 (VM) 计数之一。此值确定可以在地址空间下创建的可能主机 (VM) 数。为了完成本教程，**4096 [CIDR: /20]** 便已足够。
 	- **位置** - 位置必须与你要创建的 HBase 群集相同。
-	- **DNS 服务器** - 本教程使用 Azure 提供的内部域名系统 (DNS) 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指导，请参阅[名称解析 (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances)。
+	- **DNS 服务器** - 本教程使用 Azure 提供的内部域名系统 (DNS) 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指导，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。
 4. 单击右下角的“创建虚拟网络”。新虚拟网络名称将显示在列表中。等到“状态”列显示“已创建”。
 5. 在主窗格中，单击刚创建的虚拟网络。
 6. 单击该页顶部的“仪表板”。
@@ -330,7 +330,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE]有关 Azure 虚拟网络中的名称解析的详细信息，包括如何使用自己的 DNS 服务器，请参阅[名称解析 (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances)。
+> [AZURE.NOTE]有关 Azure 虚拟网络中的名称解析的详细信息，包括如何使用自己的 DNS 服务器，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。
 
 ##通过使用 Azure PowerShell 设置 HBase 群集
 
@@ -389,7 +389,6 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hbase-get-started]: hdinsight-hbase-get-started
 [vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
 [vm-create]: virtual-machines-windows-tutorial
-
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: storage-create-storage-account
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
@@ -397,9 +396,10 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal#rdp
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal#rdp
 
-[hdinsight-powershell-reference]: https://msdn.microsoft.com/library/dn858087.aspx
+[hdinsight-powershell-reference]: https:
+/msdn.microsoft.com/library/dn858087.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
@@ -407,20 +407,18 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 
 [powershell-install]: install-configure-powershell
-
-
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-get-started]: hdinsight-get-started
-[hdinsight-storage-powershell]: hdinsight-use-blob-storage#powershell
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: hdinsight-use-blob-storage
 [hdinsight-use-sqoop]: hdinsight-use-sqoop
 [hdinsight-power-query]: hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
-
-[img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
+[img-dns-surffix]: .
+media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "预配新 HBase 群集的详细信息"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "使用脚本操作来自定义 HBase 群集"

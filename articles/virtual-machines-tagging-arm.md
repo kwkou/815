@@ -181,5 +181,4 @@
 [使用标记组织 Azure 资源]: /documentation/articles/resource-group-using-tags
 [了解 Azure 帐单]: /documentation/articles/billing-understand-your-bill
 [深入了解 Windows Azure 资源消耗]: /documentation/articles/billing-usage-rate-card-overview
-
 <!---HONumber=67-->

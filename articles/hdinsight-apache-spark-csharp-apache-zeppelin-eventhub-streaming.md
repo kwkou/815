@@ -155,10 +155,8 @@ Spark Streaming 可以扩展核心 Spark API，以生成可缩放、高吞吐量
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-
 [azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
 [azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
-
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 <!---HONumber=66-->

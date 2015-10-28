@@ -173,6 +173,6 @@ Oracle | 即将支持 | 即将支持 | Y（Microsoft 已测试） | 即将支持
 
 ## 后续步骤
 
-完成本概述后，请[阅读最佳实践](site-recovery-best-practices)，帮助开始进行部署规划。
+完成本概述后，请[阅读最佳实践](/documentation/articles/site-recovery-best-practices)，帮助开始进行部署规划。
 
 <!---HONumber=71-->

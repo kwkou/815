@@ -33,7 +33,7 @@
 	-	当 AD 用户从 Intranet 和 Internet 访问时，Azure AD 将从本地 AD 域进行目录同步，实现顺畅的 SSO 体验。AD 用户可从 Intranet 自动通过集成身份验证来访问网站。AD 用户可使用其 Windows 凭据从 Internet 登录网站。
 	-	将 SSO 提供给 Azure AD 支持的所有应用程序，包括 Azure、Office 365、Dynamics CRM Online、Windows InTune 和数千个非 Microsoft 云应用程序。 
 	-	Azure AD 将[信赖方](http://en.wikipedia.org/wiki/Relying_party)应用程序管理委派到非管理员角色，但是，对敏感目录数据的应用程序访问仍须由全局管理员配置。
-	-	为所有信赖方应用程序发送一组通用声明类型。有关声明类型的列表，请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。声明不可自定义。
+	-	为所有信赖方应用程序发送一组通用声明类型。有关声明类型的列表，请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)。声明不可自定义。
 	-	通过使用 [Azure AD 图形 API](http://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)，应用程序能够访问 Azure AD 中的目录数据。
 -	[本地安全令牌服务 (STS)，例如 AD FS](/documentation/articles/web-sites-dotnet-lob-application-adfs) - 你可以使用本地 STS（如 AD FS）对 Web 应用实施身份验证和授权。本地 AD FS 的使用具有以下特征：
 	-	AD FS 拓扑必须在本地部署，会产生成本和管理开销。

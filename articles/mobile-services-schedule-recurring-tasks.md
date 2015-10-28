@@ -127,7 +127,7 @@
 
    	此脚本将使用存储的凭据调用 Twitter 查询 API，以请求包含哈希标记 `#mobileservices` 的最新推文。在表中存储结果之前，将从结果中删除重复的推文和回复。
 
-   >[AZURE.NOTE]此示例假设每次按计划运行期间只会在表中插入少量的行。如果在一个循环中插入许多的行，那么，在免费版本级别上运行时可能会耗尽连接。在此情况下，你应该分批执行插入。有关详细信息，请参阅[如何：执行批量插入](mobile-services-how-to-use-server-scripts#bulk-inserts)。
+   >[AZURE.NOTE]此示例假设每次按计划运行期间只会在表中插入少量的行。如果在一个循环中插入许多的行，那么，在免费版本级别上运行时可能会耗尽连接。在此情况下，你应该分批执行插入。有关详细信息，请参阅[如何：执行批量插入](/documentation/articles/mobile-services-how-to-use-server-scripts#bulk-inserts)。
 
 6. 单击“运行一次”以测试脚本。
 
@@ -154,7 +154,7 @@
 <!-- Images. -->
 
 <!-- URLs. -->
-[移动服务服务器脚本参考 ]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[移动服务服务器脚本参考 ]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [windowsazure.cn]: http://www.windowsazure.cn/
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Register your apps for Twitter login with Mobile Services]: /documentation/articles/mobile-services-how-to-register-twitter-authentication

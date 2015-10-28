@@ -8,7 +8,7 @@
 
 > [AZURE.NOTE]这是早期的软件版本，因此请返回查看是否有关于在 Azure 上使用此软件创建 Docker 容器的大型平衡受控群集的更新，以及查阅 docker swarm 文档以了解其所有功能。
 <!-- --> 
-> 此外，本主题会将 docker 与 swarm 和 Azure CLI 一起使用，*而不*使用 **docker-machine** 以显示不同工具如何协同工作，但又保持独立。**docker-machine** 具有 **--swarm** 开关，让你能够使用 **docker-machine** 直接将节点添加到 swarm 中。有关示例，请参阅 [docker-machine](https://github.com/docker/machine) 文档。如果你错过了针对 Azure VM 运行的 **docker-machine**，请参阅[如何在 Azure 上使用 docker-machine](virtual-machines-docker-machine)。
+> 此外，本主题会将 docker 与 swarm 和 Azure CLI 一起使用，*而不*使用 **docker-machine** 以显示不同工具如何协同工作，但又保持独立。**docker-machine** 具有 **--swarm** 开关，让你能够使用 **docker-machine** 直接将节点添加到 swarm 中。有关示例，请参阅 [docker-machine](https://github.com/docker/machine) 文档。如果你错过了针对 Azure VM 运行的 **docker-machine**，请参阅[如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)。
 
 ## 使用 Azure 虚拟机创建 docker 主机
 
@@ -119,6 +119,4 @@
 <!-- links -->
 
 [docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine
- 
-
 <!---HONumber=67-->

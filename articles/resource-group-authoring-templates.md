@@ -309,11 +309,11 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 ## 更高级方案。
 本主题提供了有关模板的简介。但是，你的方案可能需要更高级的任务。
 
-你可能需要将两个模板合并在一起，或者在父模板中使用子模板。<!--有关详细信息，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-advanced-template/#nested-template)。-->
+你可能需要将两个模板合并在一起，或者在父模板中使用子模板。<!--有关详细信息，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-advanced-template#nested-template)。-->
 
 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
 
-你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
+你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions#resourceid)。
 
 ## 完整的模板
 以下模板将部署一个 Web 应用程序，并使用 .zip 文件中的代码设置该应用程序。

@@ -384,7 +384,7 @@
 <!--- [Azure 的新混合连接不是您父亲的 #hybridCloud](/zh-cn/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)-->
 - [Active Directory 与 Azure AD 之间的相似之处](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [使用单一登录方案进行目录同步](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
-- [Azure AD 支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+- [Azure AD 支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  

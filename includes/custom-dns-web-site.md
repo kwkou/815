@@ -299,7 +299,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 [PricingDetails]: /pricing/overview/
 [portal]: http://manage.windowsazure.cn
 [digweb]: http://www.digwebinterface.com/
-[cloudservicedns]: ../custom-dns/
+[cloudservicedns]: custom-dns
 [trafficmanager]: /zh-cn/documentation/articles/web-sites-traffic-manager/
 [addendpoint]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh744839.aspx
 [createprofile]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn339012.aspx

@@ -34,7 +34,7 @@ wacn.date="10/17/2015"/>
     
     ![云服务远程](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)
     
-    > [AZURE.WARNING]当首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须对于此角色安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)，然后返回到此对话框。
+    > [AZURE.WARNING]当首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须对于此角色安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service)，然后返回到此对话框。
     
 
 3. 在“角色”中，选择要更新的角色，或选择“全部”以选择所有角色。
@@ -93,7 +93,7 @@ wacn.date="10/17/2015"/>
 下面的步骤介绍了要启用远程桌面需要对服务模型文件进行的更改。在发布时，Visual Studio 将自动进行这些更改。
 
 ### 在服务模型中设置连接 
-使用 **Imports** 元素将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入到 [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package/#csdef) 文件中。
+使用 **Imports** 元素将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入到 [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package#csdef) 文件中。
 
 服务定义文件应类似于下面的示例，并添加 `<Imports>` 元素。
 
@@ -118,7 +118,7 @@ wacn.date="10/17/2015"/>
     </WebRole>
 </ServiceDefinition>
 ```
-[ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件应类似于下面的示例，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素。指定的证书必须 [已上载到云服务](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)。
+[ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package#cscfg) 文件应类似于下面的示例，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素。指定的证书必须 [已上载到云服务](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service)。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

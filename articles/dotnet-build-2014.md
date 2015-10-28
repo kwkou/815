@@ -146,6 +146,6 @@ Azure SDK 2.3 包括更新后的存储模拟器，而存储客户端库 3.0 则�
   [Azure 存储服务简介]: /zh-cn/documentation/articles/storage-introduction/
   [版本 2014：Windows Azure 存储服务 – 新功能、最佳做法和模式（视频）]: http://channel9.msdn.com/Events/Build/2014/3-628
   [Windows Azure 存储服务 @ 版本 2014]: http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/08/microsoft-azure-storage-build-2014.aspx
-  [将 Azure PowerShell 用于资源管理器]: /documentation/articles/powershell-azure-resource-manager/
+  [将 Azure PowerShell 用于资源管理器]: /documentation/articles/powershell-azure-resource-manager
   [将 Azure 跨平台命令行界面用于资源管理器]: /zh-cn/documentation/articles/xplat-cli-azure-resource-manager/
   [版本 2014：Azure 资源组模型：适合现代云的现代管理（视频）]: http://channel9.msdn.com/Events/Build/2014/2-607

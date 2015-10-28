@@ -32,7 +32,7 @@
 3. 安装并配置 ADAL。
 5. 使用 ADAL 从 Azure AD 获取令牌。
 
-若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](active-directory-howto-tenant)。
+若要开始，请[下载框架项目](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/skeleton.zip)或[下载已完成的示例](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/complete.zip)。每个下载项目都是 Visual Studio 2013 解决方案。你还需要一个可在其中创建用户和注册应用程序的 Azure AD 租户。如果你还没有租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant)。
 
 ## *1.注册目录搜索器应用程序*  
 
@@ -178,7 +178,7 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，它只
 
 [此处](https://github.com/AzureADQuickStarts/NativeClient-WindowsPhone/archive/complete.zip)提供了已完成示例（无需配置值）供你参考。现在，你可以转到其他标识方案。你可能想要尝试：
 
-[使用 Azure AD 保护 .NET Web API >](active-directory-devquickstarts-webapi-dotnet)
+[使用 Azure AD 保护 .NET Web API >](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)
 
 有关更多资源，请查看：
 

@@ -143,7 +143,6 @@
 [数据处理入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-html
 [身份验证入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-html
 [从 HTML 应用程序调用自定义 API]: /documentation/articles/mobile-services-html-call-custom-api
-
 [Management Portal]: https://manage.windowsazure.cn/
 [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?LinkId=286333
 [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342

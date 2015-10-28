@@ -1104,7 +1104,7 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 
 可以从 Azure 管理门户实时查看此数据。此外，还可以创建监视 Web API 的运行状况的 webtest。Webtest 将定期请求发送到 Web API 中指定的 URI，并捕获响应。你可以指定成功响应的定义（如 HTTP 状态代码 200），如果请求未返回此响应，可以安排向管理员发送警报。如有必要，管理员可以重新启动托管 Web API 的服务器（如果它出现故障）。
 
-<!--Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](app-insights-start-monitoring-app-health-usage/)页提供了详细信息。-->
+<!--Microsoft 网站上的 [Application Insights - 开始监视你的应用的运行状况和使用情况](/documentation/articles/app-insights-start-monitoring-app-health-usage)页提供了详细信息。-->
 
 ### 通过 API 管理服务监视 Web API
 

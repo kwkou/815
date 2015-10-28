@@ -85,7 +85,7 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 
     ![选择数据保护方法](./media/backup-azure-backup-sharepoint/select-data-protection-method1.png)
 
-    >[AZURE.NOTE]选择磁盘保护有助于达到简短恢复时间的恢复时间目标。相比于磁带，Azure 是具有成本效益的长期保护目标。有关详细信息，请参阅此[文章](documentation/articles/backup-azure-backup-cloud-as-tape)。
+    >[AZURE.NOTE]选择磁盘保护有助于达到简短恢复时间的恢复时间目标。相比于磁带，Azure 是具有成本效益的长期保护目标。有关详细信息，请参阅此[文章](/documentation/articles/backup-azure-backup-cloud-as-tape)。
 
 5. 在“指定短期目标”屏幕上，选择偏好的“保留范围”，并指定备份时间。
 

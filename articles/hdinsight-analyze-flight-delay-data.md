@@ -27,7 +27,7 @@ Hive 提供了通过类似 SQL 的脚本语言（称作 *[HiveQL][]*）运行 Ma
 
 ## <a id="prepare"></a>准备教程
 
-本教程将对你的工作站使用来自[美国研究与技术创新管理部门 - 运输统计局][] (RITA) 的航班准时表现数据。你将执行以下操作：
+本教程将对你的工作站使用来自[美国研究与技术创新管理部门 - 运输统计局][](/documentation/articles/RITA) 的航班准时表现数据。你将执行以下操作：
 
 1.  使用 Web 浏览器从 RITA 将准时表现数据下载到你的工作站
 2.  使用 Azure PowerShell 将数据上载到 HDInsight
@@ -85,7 +85,7 @@ WASB 语法为：
 
 **下载航班数据**
 
-1.  浏览到[美国研究与技术创新管理部门 - 运输统计局][] (RITA)。
+1.  浏览到[美国研究与技术创新管理部门 - 运输统计局][](/documentation/articles/RITA)。
 2.  在该页面上，选择以下值：
 
 <table border="1">
@@ -203,7 +203,7 @@ WASB 语法为：
         #用于创建 AvgDelays 表的 SQL 查询字符串
         $sqlDatabaseTableName = "AvgDelays"
         $sqlCreateAvgDelaysTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-        [origin_city_name] [nvarchar](50) NOT NULL,
+        [origin_city_name] [nvarchar](/documentation/articles/50) NOT NULL,
         [weather_delay] float,
         CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED   
             (

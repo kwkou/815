@@ -33,7 +33,7 @@
 
 **2.升级你的脚本。** 如果你使用 **PowerShell** 脚本来管理分片，请[下载新的库版本](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)并将其复制到你从其执行脚本的目录中。
 
-**3.升级拆分/合并服务。** 如果你使用弹性数据库拆分/合并工具来重新组织分片数据，请[下载并部署最新版本的工具](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)。可在[此处](sql-database-elastic-scale-overview-split-and-merge.md)找到该服务的详细升级步骤。
+**3.升级拆分/合并服务。** 如果你使用弹性数据库拆分/合并工具来重新组织分片数据，请[下载并部署最新版本的工具](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/)。可在[此处](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)找到该服务的详细升级步骤。
 
 **4. 升级分片映射管理器数据库**。升级 Azure SQL 数据库 中支持分片映射的元数据。有两种方法可以完成此操作：使用 PowerShell 或 C#。这两个选项在下面说明。
 

@@ -28,7 +28,7 @@
 
 - **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options], [试用版][azure-trial]。
 
-- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell](install-configure-powershell)。若要执行 Azure PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅[使用 Set-ExecutionPolicy cmdlet][2]。
+- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。若要执行 Azure PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅[使用 Set-ExecutionPolicy cmdlet][2]。
 
 	在运行 Azure PowerShell 脚本之前，请确保你已通过使用以下 cmdlet 连接到 Azure 订阅：
 
@@ -156,13 +156,13 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 	
 	![配置脚本操作以自定义 HDInsight HBase 群集][img-provision-cluster-page5]
 
-	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](hdinsight-hadoop-customize-cluster)。
+	> [AZURE.NOTE]此页可用于在安装过程中自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
 	
-要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](hdinsight-hbase-get-started)中的步骤操作。
+要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)中的步骤操作。
 
 ##通过使用 HBase Java RPC API 连接到虚拟网络中设置的 HBase 群集
 
-1.	将基础结构即服务 (IaaS) 虚拟机设置到相同的 Azure 虚拟网络和子网中。因此，虚拟机和 HBase 群集使用相同的内部 DNS 服务器来解析主机名。为此，你必须选择“从库中”选项，然后选择虚拟网络而不是数据中心。有关说明，请参阅[创建运行 Windows Server 的虚拟机](virtual-machines-windows-tutorial)。具有小型虚拟机的标准 Windows Server 2012 映像已足够。
+1.	将基础结构即服务 (IaaS) 虚拟机设置到相同的 Azure 虚拟网络和子网中。因此，虚拟机和 HBase 群集使用相同的内部 DNS 服务器来解析主机名。为此，你必须选择“从库中”选项，然后选择虚拟网络而不是数据中心。有关说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。具有小型虚拟机的标准 Windows Server 2012 映像已足够。
 	
 2.	使用 Java 应用程序远程连接到 HBase 时，必须使用完全限定域名 (FQDN)。若要确定这一点，你必须获取 HBase 群集的连接特定的 DNS 后缀。为此，请使用 Curl 查询 Ambari，或使用远程桌面来连接到群集。
 
@@ -298,7 +298,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 若要验证虚拟机是否可与 HBase 群集进行通信，请从虚拟机使用 `ping headnode0.<dns suffix>` 命令。例如，ping headnode0.mycluster.b1.chinacloudapp.cn。
 
-若要在 Java 应用程序中使用此信息，可以按照[使用 Maven 构建将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序](hdinsight-hbase-build-java-maven)中的步骤来创建应用程序。若要让应用程序连接到远程 HBase 服务器，请修改本示例中的 **hbase-site.xml** 文件，以对 Zookeeper 使用 FQDN。例如：
+若要在 Java 应用程序中使用此信息，可以按照[使用 Maven 构建将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序](/documentation/articles/hdinsight-hbase-build-java-maven)中的步骤来创建应用程序。若要让应用程序连接到远程 HBase 服务器，请修改本示例中的 **hbase-site.xml** 文件，以对 Zookeeper 使用 FQDN。例如：
 
 	<property>
     	<name>hbase.zookeeper.quorum</name>
@@ -351,10 +351,10 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 在本教程中，你已学习了如何设置 HBase 群集。若要了解更多信息，请参阅以下文章：
 
-- [开始使用 HDInsight](hdinsight-get-started)
-- [在 HDInsight 中配置 HBase 复制](hdinsight-hbase-geo-replication) 
-- [在 HDInsight 中设置 Hadoop 群集](hdinsight-provision-clusters) 
-- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](hdinsight-hbase-get-started)
+- [开始使用 HDInsight](/documentation/articles/hdinsight-get-started)
+- [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication) 
+- [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters) 
+- [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-get-started)
 - [虚拟网络概述][vnet-overview]
 
 
@@ -366,16 +366,16 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hbase-twitter-sentiment]: hdinsight-hbase-twitter-sentiment
 [vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
 [vm-create]: virtual-machines-windows-tutorial
-
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: storage-create-storage-account
 [azure-purchase-options]: /pricing/purchase-options/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal#rdp
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal#rdp
 
-[hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
+[hdinsight-powershell-reference]: http:
+/msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis
@@ -383,19 +383,17 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 
 [powershell-install]: install-configure-powershell
-
-
 [hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: hdinsight-provision-clusters
 [hdinsight-get-started]: hdinsight-get-started
-[hdinsight-storage-powershell]: hdinsight-use-blob-storage#powershell
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: hdinsight-use-blob-storage
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
-[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-use-sqoop]: 
+documentation/articles/hdinsight-use-sqoop
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS
-
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "预配新 HBase 群集的详细信息"

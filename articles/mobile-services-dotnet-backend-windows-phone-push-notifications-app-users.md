@@ -58,7 +58,6 @@
 <!-- URLs. -->
 [Add authentication to your app authentication]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-users
 [向应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-windows-phone-get-started-push
-
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
 <!---HONumber=71-->

@@ -4,8 +4,8 @@
 
 
 <!-- URLs. 
-[Get started with Mobile Services]:  /documentation/articles/mobile-services-android-get-started
-[Add Mobile Services to an existing app]:/documentation/articles/mobile-services-android-get-started-data
+[Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
+[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-android-get-started-data
 -->
 
 <!---HONumber=71-->

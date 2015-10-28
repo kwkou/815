@@ -44,5 +44,4 @@ Azure 虚拟机是 Azure 提供的几种按需可扩展计算资源之一。如�
 [App Service]: /documentation/articles/app-service-choose-me
 [Virtual Machines]: #tellmevm
 [Cloud Services]: /documentation/articles/cloud-services-choose-me
-
 <!---HONumber=67-->

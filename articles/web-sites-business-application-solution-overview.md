@@ -38,7 +38,7 @@
 
 - 使用 [Azure Active Directory 服务][adoverview]。你可以将它用作独立目录，或者可以将它与本地 Active Directory 同步。应用程序然后与 Azure Active Directory 交互以便对用户进行身份验证。有关此方法的概述，请参阅使用 [Azure Active Directory][adusing]。
 - 使用 Azure 虚拟机和虚拟网络可以安装 Active Directory。这使你可以选择将本地 Active Directory 安装扩展到云。还可以选择使用 Active Directory 联合身份验证服务 (ADFS) 将标识请求联合回 AD。然后，针对 Azure 应用程序的身份验证将对本地 Active Directory 执行 ADFS。有关此方法的概述，请参阅[在 VM 中运行 Windows Server Active Directory][adwithvm] 和[在 Azure 虚拟机上部署 Windows Server Active Directory 的指南][addeployguidelines]。 
-- 使用中间服务（例如 [Azure 访问控制服务][acs2] (ACS)），以便通过多个标识服务对用户进行身份验证。这提供一个抽象以便通过 Active Directory 或者通过不同的提供程序进行身份验证。有关更多信息，请参阅[使用 Azure Active Directory 访问控制][acsusing]。
+- 使用中间服务（例如 [Azure 访问控制服务][acs2](/documentation/articles/ACS)），以便通过多个标识服务对用户进行身份验证。这提供一个抽象以便通过 Active Directory 或者通过不同的提供程序进行身份验证。有关更多信息，请参阅[使用 Azure Active Directory 访问控制][acsusing]。
 
 对于此业务应用程序方案，使用 Azure Active Directory 的第一个方案为你的应用程序实现身份验证策略提供最快的途径。本指南的剩余部分将着重介绍 Azure Active Directory。但是，根据你的业务要求，你可能会发现其他两个解决方案中的一个更适合。例如，如果不允许你将标识信息同步到云，则 ADFS 解决方案可能是更好的选项。或者，如果你必须支持 Facebook 之类的其他标识提供程序，则 ACS 解决方案将会更适合。
 
@@ -163,7 +163,7 @@ Azure 使你能够在云中托管安全的 Intranet 应用程序。Azure Active 
   [csoverview]: /zh-cn/documentation/services/cloud-services/
   [vmoverview]: /zh-cn/documentation/services/virtual-machines/
   [chooseservice]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm
-  [scenarioglobalweb]: /documentation/articles/web-sites-global-web-presence-solution-overview/
+  [scenarioglobalweb]: /documentation/articles/web-sites-global-web-presence-solution-overview
   [scenariodigitalmarketing]: /zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview
   [adoverview]: /zh-cn/documentation/services/identity/
   [adusing]: /zh-cn/documentation/articles/fundamentals-identity

@@ -24,7 +24,7 @@
 3. 从 Azure 恢复数据库。
 
 ## 开始之前
-在开始之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction/#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
+在开始之前，请确保符合使用 Microsoft Azure 备份保护工作负荷的所有[先决条件](/documentation/articles/backup-azure-dpm-introduction#prerequisites)。先决条件包括如下任务：创建备份保管库、下载保管库凭据、安装 Azure 备份代理，以及向保管库注册服务器。
 
 ## 创建备份策略来保护要备份到 Azure 的 SQL 数据库
 
@@ -110,7 +110,7 @@
 14. 单击“下一步”，选择相应的选项将初始备份副本传输到 Azure。你可以选择“自动通过网络”或“脱机备份”。
 
     - “自动通过网络”会根据为备份选择的计划将备份数据传输到 Azure。
-    - “脱机备份”的工作原理详见 [Azure 备份中的脱机备份工作流](backup-azure-backup-import-export)。
+    - “脱机备份”的工作原理详见 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export)。
 
     选择将初始备份副本发送到 Azure 的相关传输机制，然后单击“下一步”。
 

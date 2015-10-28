@@ -106,7 +106,7 @@ Azure SQL 数据库联合功能以及 Web/Business Edition 将于 2015 年 9 月
 
 虽然弹性数据库工具提供了许多附加功能（例如，[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying)、[拆分和合并分片](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)、[分片弹性](/documentation/articles/sql-database-elastic-scale-elasticity)、[客户端缓存](/documentation/articles/sql-database-elastic-scale-shard-map-management)等等），但是有几个在弹性数据库工具中不受支持的联合功能值得注意。
   
-- **FILTERING=ON** 的使用。建立使用行级安全性 (RLS) 来执行行筛选。与联合中的筛选一样，RLS 会自动将一个谓词添加到对分片表执行的所有查询。有关详细信息，请参阅[具有弹性数据库工具和行级安全性的多租户应用程序](sql-database-elastic-tools-multi-tenant-row-level-security.md)。 
+- **FILTERING=ON** 的使用。建立使用行级安全性 (RLS) 来执行行筛选。与联合中的筛选一样，RLS 会自动将一个谓词添加到对分片表执行的所有查询。有关详细信息，请参阅[具有弹性数据库工具和行级安全性的多租户应用程序](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security)。 
  
  或者，你可以在针对分片发出的查询中生成筛选逻辑。例如：
 

@@ -281,7 +281,7 @@ $nicName 字符串对于资源组必须是唯一的。最佳做法是将虚拟�
 |MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials |
 |MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 |
 
-如果未列出你需要的虚拟机映像，请按照<!--[-->此处<!--](/documentation/articles/resource-groups-vm-searching/#powershell)-->的说明来确定发布者、产品/服务和 SKU 名称。
+如果未列出你需要的虚拟机映像，请按照<!--[-->此处<!--](/documentation/articles/resource-groups-vm-searching#powershell)-->的说明来确定发布者、产品/服务和 SKU 名称。
 
 将以下命令复制到命令集中，并填写发布者、产品/服务和 SKU 名称。
 
@@ -379,7 +379,7 @@ $nicName 字符串对于资源组必须是唯一的。最佳做法是将虚拟�
 
 [使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 

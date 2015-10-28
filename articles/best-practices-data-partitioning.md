@@ -377,7 +377,7 @@ _图 9. - 使用 Azure DocumentDB 实施分片_
 
 ## Azure Redis 缓存的分区策略
 
-Azure Redis 缓存在云中提供基于 Redis 键/值数据存储的共享缓存服务。顾名思义，Azure Redis 缓存旨在用作缓存解决方案，因此应该只用于保存暂时性数据，而不是用作永久性的数据存储；如果缓存不可用，利用 Azure Redis 缓存的应用程序应可继续工作。Azure Redis 缓存支持主要/辅助复制，可提供高可用性，但目前缓存大小上限为 53GB。如果需要更多的空间，则必须创建更多缓存。有关详细信息，请访问 Microsoft 网站上的 [Microsoft Azure 缓存](home/features/redis-cache/)页。
+Azure Redis 缓存在云中提供基于 Redis 键/值数据存储的共享缓存服务。顾名思义，Azure Redis 缓存旨在用作缓存解决方案，因此应该只用于保存暂时性数据，而不是用作永久性的数据存储；如果缓存不可用，利用 Azure Redis 缓存的应用程序应可继续工作。Azure Redis 缓存支持主要/辅助复制，可提供高可用性，但目前缓存大小上限为 53GB。如果需要更多的空间，则必须创建更多缓存。有关详细信息，请访问 Microsoft 网站上的 [Microsoft Azure 缓存](/documentation/articles/redis-cache)页。
 
 将 Redis 数据存储分区涉及到跨 Redis 服务的实例拆分数据。每个实例构成单个分区。Azure Redis 缓存将抽象化幕后的 Redis 服务，而不直接公开它们。实施分区的最简单方法是创建多个 Azure Redis 缓存，并在其中分散数据。可以将每个数据项与指定要存储在哪个缓存中的标识符（分区键）关联。客户端应用程序逻辑可以使用此标识符将请求路由到相应的分区。此方案非常简单，但如果分区方案发生更改（例如，如果已创建其他 Azure Redis 缓存），则可能需要重新配置客户端应用程序。
 

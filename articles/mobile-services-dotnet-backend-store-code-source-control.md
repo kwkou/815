@@ -96,5 +96,4 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Call a custom API from the client]: /documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api
 [如何对 .NET 后端移动服务进行数据模型更改]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
-
 <!---HONumber=71-->

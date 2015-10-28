@@ -346,7 +346,6 @@
 [入门的教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [突发新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [本地化新闻教程]: /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-
 <!-- Images. -->
 [1]: ./media/notification-hubs-python-backend-how-to/DetailedLoggingInfo.png
 [2]: ./media/notification-hubs-python-backend-how-to/BroadcastScenario.png

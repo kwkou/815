@@ -120,11 +120,11 @@
 [移动服务服务器脚本参考 ]: http://go.microsoft.com/fwlink/?LinkId=262293
 [Get started with Mobile Services]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started
 [使用脚本为用户授权]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-[使用分页优化查询]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging
-[数据处理入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
+[使用分页优化查询]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library#paging
+[数据处理入门]: 
+documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
 [Get started with authentication]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
 [推送通知入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
-
 [Management Portal]: https://manage.windowsazure.cn/
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkId=331330
