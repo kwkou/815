@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线 REST 教程"
+   pageTitle="服务总线 REST 教程 | Windows Azure"
    description="生成一个简单的服务总线主机应用程序来公开基于 REST 的接口。"
    services="service-bus"
    documentationCenter="na"
@@ -9,11 +9,11 @@
 <tags 
    ms.service="service-bus"
    ms.date="07/07/2015" 
-   wacn.date="10/03/2015" />
+   wacn.date="10/22/2015" />
 
 # 服务总线 REST 教程
 
-本主题介绍如何生成简单的服务总线主机应用程序来公开基于 REST 的接口。REST 使 Web 客户端（例如 Web 浏览器）可通过 HTTP 请求访问服务总线 API。
+本教程介绍了如何生成简单的服务总线主机应用程序来公开基于 REST 的接口。REST 使 Web 客户端（例如 Web 浏览器）可通过 HTTP 请求访问服务总线 API。
 
 本教程使用 Windows Communication Foundation (WCF) REST 编程模型在服务总线上构建 REST 服务。有关详细信息，请参阅 WCF 文档中的 [WCF REST 编程模型](https://msdn.microsoft.com/zh-cn/library/bb412169.aspx)和[设计和实现服务](https://msdn.microsoft.com/zh-cn/library/ms729746.aspx)。
 
@@ -35,19 +35,21 @@
 
 与其他服务总线服务一样，创建 REST 样式的服务时，必须定义约定。约定指定主机支持的操作。服务操作可以看作是 Web 服务方法。约定通过定义 C++、C# 或 Visual Basic 接口来创建。接口中的每个方法都对应一个特定的服务操作。必须将 [ServiceContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicecontractattribute.aspx) 属性应用到每个接口，且必须将 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 属性应用到每个操作。如果具有 [ServiceContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicecontractattribute.aspx) 的接口中的方法没有 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx)，则该方法是不公开的。该过程后面的示例中显示了这些任务所用的代码。
 
-基本服务总线约定和 REST 样式的约定的主要区别在于是否向 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 添加一个属性：[WebGetAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.webgetattribute.aspx)。此属性允许你将接口中的方法映射到该接口另一侧的方法。在此示例中，我们使用 [WebGetAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.webgetattribute.aspx) 将一个方法链接到 HTTP GET。这将使服务总线可以准确地检索并解释发送到接口的命令。
+基本服务总线协定和 REST 样式的协定的主要区别在于是否向 [OperationContractAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.operationcontractattribute.aspx) 添加一个属性：[WebGetAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.webgetattribute.aspx)。此属性允许你将接口中的方法映射到该接口另一侧的方法。在此示例中，我们使用 [WebGetAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.webgetattribute.aspx) 将一个方法链接到 HTTP GET。这将使服务总线可以准确地检索并解释发送到接口的命令。
 
 ### 使用接口创建服务总线约定
 
-1. 以管理员身份打开“Visual Studio”：在“开始”菜单中右键单击该程序，然后选择“以管理员身份运行”。
+1. 以管理员身份打开 Visual Studio：在“开始”菜单中右键单击该程序，然后选择“以管理员身份运行”。
 
-2. 创建新的控制台应用程序项目。单击“文件”菜单，然后依次选择“新建”和“项目”。在“新建项目”对话框中，选择“Visual C#”（如果不显示“Visual C#”，则在“其他语言”下方查看），再选择“控制台应用程序”模板，然后将其命名为 **ImageListener**。使用默认“位置”。单击“确定”以创建该项目。
+2. 创建新的控制台应用程序项目。单击“文件”菜单并选择“新建”，然后单击“项目”。在“新建项目”对话框中，单击“Visual C#”（如果未显示“Visual C#”，则在“其他语言”下方查看），再选择“控制台应用程序”模板，并将其命名为“ImageListener”。使用默认“位置”。单击“确定”以创建该项目。
 
 3. 对于 C# 项目，Visual Studio 会创建 `Program.cs` 文件。此类包含一个空的 `Main()` 方法，需要此方法才能正确生成控制台应用程序项目。
 
 4. 在项目中添加对 **System.ServiceModel.dll** 的引用：
-	1. 在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 
-	2. 在“添加引用”对话框中选择“.NET”选项卡并向下滚动，看到 **System.ServiceModel** 后将其选中。然后单击“确定”。
+
+	a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。
+
+	b.在“添加引用”对话框中选择“.NET”选项卡并向下滚动，直到看到“System.ServiceModel”。选中后单击“确定”。
 
 5. 重复上述步骤以添加对 **System.ServiceModel.Web.dll** 程序集的引用。
 
@@ -60,9 +62,9 @@
   	using System.IO;
 	```
 
-	[System.ServiceModel](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.aspx) 是让你以通过编程方式访问 WCF 基本功能的命名空间。服务总线使用 WCF 的许多对象和属性来定义服务约定。你将在大多数服务总线中继应用程序中使用此命名空间。同样，[System.ServiceModel.Channels](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.channels.aspx) 可帮助定义通道，通道是用来与服务总线和客户端 Web 浏览器通信的对象。最后，[System.ServiceModel.Web](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.aspx) 包含的类型可用于创建基于 Web 的应用程序。
+	[System.ServiceModel](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.aspx) 是可以以编程方式访问 WCF 基本功能的命名空间。服务总线使用 WCF 的许多对象和属性来定义服务约定。你将在大多数服务总线中继应用程序中使用此命名空间。同样，[System.ServiceModel.Channels](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.channels.aspx) 可帮助定义通道，通道是用来与服务总线和客户端 Web 浏览器通信的对象。最后，[System.ServiceModel.Web](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.web.aspx) 包含的类型可用于创建基于 Web 的应用程序。
 
-7. 从 Visual Studio 重命名默认为 **Microsoft.ServiceBus.Samples** 的程序的命名空间。
+7. 将程序的命名空间从 Visual Studio 默认值重命名为 **Microsoft.ServiceBus.Samples**。
 
  	```c
 	namespace Microsoft.ServiceBus.Samples
@@ -79,7 +81,7 @@
 	}
 	```
 
-9. 在 `IImageContract` 接口中，为 `IImageContract` 约定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线约定的一部分进行公开的方法中。
+9. 在 `IImageContract` 接口中，为 `IImageContract` 协定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线协定的一部分进行公开的方法中。
 
 	```c
 	public interface IImageContract
@@ -89,7 +91,7 @@
 	}
 	```
 
-10. 紧接在 **OperationContract** 属性后面，应用 **WebGet** 属性。
+10. 在 **OperationContract** 属性旁，应用 **WebGet** 属性。
 
 	```c
 	public interface IImageContract
@@ -101,8 +103,8 @@
 
 	这样做可以让服务总线将 HTTP GET 请求路由到 **GetImage**，并将 **GetImage** 的返回值转换为 HTTP GETRESPONSE 答复。稍后在本教程中，你将使用 Web 浏览器访问此方法，并将在浏览器中显示图像。
 
-11. 在 `IImageContract` 定义的正下方，声明从 `IImageContract` 和 `IClientChannel` 接口继承的通道：
-		
+11. 直接在 `IImageContract` 定义的后面，声明从 `IImageContract` 和 `IClientChannel` 接口继承的通道。
+
 	```c
 	[ServiceContract(Name = "IImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
 	public interface IImageContract
@@ -116,7 +118,7 @@
 
 	通道是服务和客户端用来互相传递信息的 WCF 对象。稍后，你将在主机应用程序中创建通道。然后服务总线将使用该通道将浏览器的 HTTP GET 请求传递到你的 **GetImage** 实现。服务总线还使用该通道获取 **GetImage** 返回值并将其转换为客户端浏览器的 HTTP GETRESPONSE。
 
-12. 在“生成”菜单中，单击“生成解决方案”以确认工作的准确性。
+12. 在“生成”菜单中，单击“生成解决方案”以确认到目前为止工作的准确性。
 
 ### 示例
 
@@ -161,7 +163,7 @@ namespace Microsoft.ServiceBus.Samples
 
 ### 实现 REST 样式的服务总线约定
 
-1. 在 **IImageContract** 接口定义的正下方创建名为 **ImageService** 的新类。**ImageService** 类实现 **IImageContract** 接口。。 
+1. 直接在 **IImageContract** 接口的定义之后创建名为 **ImageService** 的新类。**ImageService** 类可实现 **IImageContract** 接口。 
 
 	```c
 	class ImageService : IImageContract
@@ -170,7 +172,7 @@ namespace Microsoft.ServiceBus.Samples
 	```
 	与其他接口实现类似，你可以在另一个文件中实现定义。但是，在本教程中，实现所在的文件与接口定义和 `Main()` 方法所在的文件相同。
 
-2. 将 [ServiceBehaviorAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicebehaviorattribute.aspx) 属性应用到 **IImageService** 类，以指示该类是 WCF 约定的实现：
+2. 将 [ServiceBehaviorAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicebehaviorattribute.aspx) 属性应用到 **IImageService** 类，以指示该类是 WCF 协定的实现。
 
 	```c
 	[ServiceBehavior(Name = "ImageService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
@@ -179,17 +181,17 @@ namespace Microsoft.ServiceBus.Samples
 	}
 	```
 
-	如前所述，此命名空间不是传统的命名空间，而是用于标识约定的 WCF 体系结构的一部分。有关详细信息，请参阅 WCF 文档中的[数据约定名称](https://msdn.microsoft.com/zh-cn/library/ms731045.aspx)主题。
+	如前所述，此命名空间不是传统的命名空间，而是用于标识约定的 WCF 体系结构的一部分。有关详细信息，请参阅 WCF 文档中的[数据协定名称](https://msdn.microsoft.com/zh-cn/library/ms731045.aspx)主题。
 
 3. 将一幅 .jpg 图像添加到项目中。
 
 	这是服务在接收浏览器中显示的图片。右键单击你的项目并单击“添加”。然后单击“现有项”。使用“添加现有项”对话框浏览到相应的 .jpg，然后单击“添加”。
     
-	添加文件时，请确保在“文件名:”旁的下拉列表中选择“所有文件(*.*)”。本教程的余下部分假定图像的名称为“image.jpg”。如果你的 .jpg 文件名不是这样，则必须重命名图像，或更改代码进行弥补。
+	添加文件时，请确保在“文件名:”字段旁的下拉列表中选择“所有文件”。本教程的余下部分假定图像的名称为“image.jpg”。如果你的 .jpg 文件名不是这样，则必须重命名图像，或更改代码进行弥补。
 
 4. 为了确保正在运行的服务可以找到该图像文件，请在“解决方案资源管理器”中右键单击该图像文件。在“属性”窗格中，将“复制到输出目录”设置为“如果较新则复制”。
 
-5. 在项目中添加对 **System.Drawing.dll**、**System.Runtime.Serialization.dll** 和 **Microsoft.ServiceBus.dll** 程序集的引用，并添加以下关联的 `using` 语句：
+5. 在项目中添加对 **System.Drawing.dll**、**System.Runtime.Serialization.dll** 和 **Microsoft.ServiceBus.dll** 程序集的引用，并添加以下关联的 `using` 语句。
 
 	```c
 	using System.Drawing;
@@ -198,7 +200,7 @@ namespace Microsoft.ServiceBus.Samples
 	using Microsoft.ServiceBus.Web;
 	```
 
-6. 在 **ImageService** 类中定义以下构造函数，用于加载位图并准备将该位图发送到客户端浏览器：
+6. 在 **ImageService** 类中定义以下构造函数，以便加载位图并准备将该位图发送到客户端浏览器。
 
 	```c
 	class ImageService : IImageContract
@@ -214,7 +216,7 @@ namespace Microsoft.ServiceBus.Samples
 	}
 	```
 
-7. 在前一代码正下方的 **ImageService** 类中添加以下 **GetImage** 方法，以返回包含该图像的 HTTP 消息：
+7. 直接在上一代码后面，在 **ImageService** 类中添加以下 **GetImage** 方法，以返回包含该映像的 HTTP 消息。
 
 	```c
 	public Stream GetImage()
@@ -229,7 +231,7 @@ namespace Microsoft.ServiceBus.Samples
 	}
 	```
   
-	此实现使用 **MemoryStream** 检索图像并准备将其流式传输到浏览器。它将流位置设置为从零开始，将流内容声明为 jpeg，然后流式传输信息。
+	此实现使用 **MemoryStream** 检索映像并准备将其流式传输到浏览器。它将流位置设置为从零开始，将流内容声明为 jpeg，然后流式传输信息。
 
 8. 在“生成”菜单中，单击“生成解决方案”。
 
@@ -237,7 +239,7 @@ namespace Microsoft.ServiceBus.Samples
 
 1. 右键单击“ImageListener”项目。然后依次单击“添加”、“新建项”。
 
-2. 在解决方案资源管理器中双击“App.config”，该文件当前包含以下 XML 元素：
+2. 在“解决方案资源管理器”中双击“App.config”，该文件当前包含以下 XML 元素。
 
 	```xml
 	<?xml version="1.0" encoding="utf-8" ?>
@@ -452,7 +454,7 @@ namespace Microsoft.ServiceBus.Samples
 
 ### 创建并配置 Web 服务主机
 
-1. 使用之前在本部分中创建的 URI 地址创建 Web 服务主机。
+- 使用之前在本部分中创建的 URI 地址创建 Web 服务主机。
 
 	```c
 	WebServiceHost host = new WebServiceHost(typeof(ImageService), address);
@@ -486,7 +488,7 @@ namespace Microsoft.ServiceBus.Samples
 
 ## 示例
 
-以下示例包括本教程中前面步骤中使用的服务约定和实现，并将服务托管在控制台应用程序中。将以下代码编译到名为 **ImageListener.exe** 的可执行文件中：
+以下示例包括本教程中前面步骤中使用的服务约定和实现，并将服务托管在控制台应用程序中。将以下代码编译到名为 ImageListener.exe 的可执行文件中。
 
 ```c
 using System;
@@ -570,10 +572,10 @@ namespace Microsoft.ServiceBus.Samples
 
 ## 后续步骤
 
-在生成使用服务总线中继服务的应用程序后，请参阅以下主题了解有关中继消息传送的详细信息：
+在生成使用服务总线中继服务的应用程序后，请参阅以下文章了解有关中继消息传送的详细信息。
 
-- [Azure 服务总线体系结构概述](/documentatioa/articles/fundamentals-service-bus-hybrid-solutions/#relays)
+- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions/#relays)
 
 - [如何使用 Service Bus 中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

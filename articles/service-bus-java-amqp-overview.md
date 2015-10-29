@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="服务总线 AMQP 概述 (Java) | Winodws Azure" 
-	description="了解如何在 Azure 中使用高级消息队列协议 (AMQP) 1.0。" 
+	pageTitle="服务总线 AMQP 概述 (Java) | Windows Azure" 
+	description="了解如何在 Azure 中使用 Java 和高级消息队列协议 (AMQP) 1.0。" 
 	services="service-bus" 
 	documentationCenter="java" 
 	authors="sethmanheim" 
@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="07/21/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="10/22/2015"/>
 
 
 # 服务总线的 AMQP 1.0 支持
@@ -95,4 +95,4 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
 
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->
