@@ -1,27 +1,25 @@
-<properties 
-	pageTitle="开始使用 Azure 表存储和 Visual Studio 连接服务" 
-	description="如何开始在 Visual Studio 的云服务项目中使用 Azure 表存储" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+    pageTitle="开始使用表存储和 Visual Studio 连接服务（云服务）| Windows Azure"
+	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure 表存储"
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
-<tags ms.service="storage"
-	
-	ms.date="07/22/2015" 
-	wacn.date="09/16/2015"/>
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
+	wacn.date="10/17/2015"/>
 
-# 开始使用 Azure 表存储和 Visual Studio 连接服务
-
-> [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
+# 开始使用 Azure 表存储和 Visual Studio 连接服务（云服务项目）
 
 > [AZURE.SELECTOR]
+> - [入门](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
+> - [发生了什么情况](/documentation/articles/vs-storage-cloud-services-what-happened)
 > - [Blobs](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
+> - [队列](/documentation/articles/vs-storage-cloud-services-getting-started-queues)
+> - [表](/documentation/articles/vs-storage-cloud-services-getting-started-tables)
 
 ##概述
 
@@ -84,7 +82,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 ##将实体添加到表
 
-若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义了一个名为 `CustomerEntity` 的实体类，它使用将客户的名字作为行键，使用姓氏作为分区键。
+若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义了一个名为 `CustomerEntity` 的实体类，它使用客户的名字作为行键，使用姓氏作为分区键。
 
     public class CustomerEntity : TableEntity
     {
@@ -120,7 +118,70 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 您可以通过单个写入操作将多个实体插入表中。以下代码示例将创建两个实体对象（“Jeff Smith”和“Ben Smith”），使用 Insert 方法将它们添加到 `TableBatchOperation` 对象，然后通过调用 `CloudTable.ExecuteBatchAsync` 启动操作。
 
-    // Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
+	// Get a reference to a **CloudTable** object named 'peopleTable' as described in "Access a table in code".
+
+	// Create the batch operation.
+	TableBatchOperation batchOperation = new TableBatchOperation();
+
+	// Create a customer entity and add it to the table.
+	CustomerEntity customer1 = new CustomerEntity("Smith", "Jeff");
+	customer1.Email = "Jeff@contoso.com";
+	customer1.PhoneNumber = "425-555-0104";
+
+	// Create another customer entity and add it to the table.
+	CustomerEntity customer2 = new CustomerEntity("Smith", "Ben");
+	customer2.Email = "Ben@contoso.com";
+	customer2.PhoneNumber = "425-555-0102";
+
+	// Add both customer entities to the batch insert operation.
+	batchOperation.Insert(customer1);
+	batchOperation.Insert(customer2);
+
+	// Execute the batch operation.
+	await peopleTable.ExecuteBatchAsync(batchOperation);
+
+    // Create the CloudTable if it does not exist
+    await table.CreateIfNotExistsAsync();
+
+## 将实体添加到表
+
+若要将实体添加到表，请创建用于定义实体的属性的类。以下代码定义了将客户的名字和姓氏分别用作行键和分区键的 **CustomerEntity** 实体类。
+
+    public class CustomerEntity : TableEntity
+    {
+         public CustomerEntity(string lastName, string firstName)
+         {
+             this.PartitionKey = lastName;
+             this.RowKey = firstName;
+         }
+
+         public CustomerEntity() { }
+
+         public string Email { get; set; }
+
+         public string PhoneNumber { get; set; }
+    }
+
+将使用之前在“使用代码访问表”中创建的 **CloudTable** 对象完成涉及实体的表操作。 **TableOperation** 对象表示将完成的操作。以下代码示例演示如何创建 **CloudTable** 对象以及 **CustomerEntity** 对象。为准备此操作，会创建一个 **TableOperation** 以将客户实体插入该表中。最后，将通过调用 CloudTable.ExecuteAsync 执行此操作。
+
+    // Get a reference to the CloudTable object named 'peopleTable' as described in "Access a table in code".
+
+    // Create a new customer entity.
+    CustomerEntity customer1 = new CustomerEntity("Harp", "Walter");
+    customer1.Email = "Walter@contoso.com";
+    customer1.PhoneNumber = "425-555-0101";
+
+    // Create the TableOperation that inserts the customer entity.
+    TableOperation insertOperation = TableOperation.Insert(customer1);
+
+    // Execute the insert operation.
+    await peopleTable.ExecuteAsync(insertOperation);
+
+## 插入一批实体
+
+您可以通过单个写入操作将多个实体插入表中。以下代码示例将创建两个实体对象（“Jeff Smith”和“Ben Smith”），使用 Insert 方法将它们添加到 **TableBatchOperation** 对象，然后通过调用 **CloudTable.ExecuteBatchAsync** 启动操作。
+
+    // Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code".
 
     // Create the batch operation.
     TableBatchOperation batchOperation = new TableBatchOperation();
@@ -218,4 +279,4 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=69-->
+<!---HONumber=74-->

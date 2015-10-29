@@ -1,28 +1,28 @@
 <properties
-	pageTitle="Azure 存储入门"
-	description="介绍在 Visual Studio 云服务项目中使用 Azure 存储时会发生什么情况"
-	services="storage"
+    pageTitle="我的云服务项目发生了什么情况？| Windows Azure | Visual Studio 连接服务"
+	description="介绍使用 Visual Studio 连接服务连接到 Azure 存储帐户后云服务项目中会发生什么情况"
+    services="storage"
 	documentationCenter=""
 	authors="patshea123"
 	manager="douge"
 	editor="tglee"/>
 
-<tags ms.service="storage"
-	
-	ms.date="07/22/2015"
-	wacn.date="09/16/2015"/>
+<tags
+	ms.service="storage"
+	ms.date="09/03/2015"
+	wacn.date="10/17/2015"/>
 
-# 我的项目发生了什么情况？
+# 我的云服务项目（Visual Studio Azure 存储连接服务）发生了什么情况？
 
 > [AZURE.SELECTOR]
-> - [Getting started](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
-> - [What happened](/documentation/articles/vs-storage-cloud-services-what-happened)
+> - [入门](/documentation/articles/vs-storage-cloud-services-getting-started-blobs)
+> - [发生了什么情况](/documentation/articles/vs-storage-cloud-services-what-happened)
 
-###我的项目发生了什么情况？
 
 ###### 已添加引用
 
-Azure 存储 NuGet 包已添加到你的 Visual Studio 项目。此包添加了以下 .NET 引用：
+Azure 存储 NuGet 包已添加到你的 Visual Studio 项目。  
+此包添加了以下 .NET 引用：
 
 -   `Microsoft.Data.Edm`
 -   `Microsoft.Data.OData`
@@ -41,4 +41,4 @@ Azure 存储 NuGet 包已添加到你的 Visual Studio 项目。此包添加了�
 -   `ServiceConfiguration.Cloud.cscfg`
 -   `ServiceConfiguration.Local.cscfg`
 
-<!---HONumber=69-->
+<!---HONumber=74-->

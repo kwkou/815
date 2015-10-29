@@ -1,31 +1,31 @@
-<properties 
-	pageTitle="Azure 存储入门" 
-	description="如何开始在 Visual Studio 中的 Azure WebJob 项目中使用 Azure blob 存储" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle="开始使用 blob 存储和 Visual Studio 连接服务（WebJob 项目）| Windows Azure"
+	description="在使用 Visual Studio 连接服务连接到 Azure 存储后，如何开始使用 WebJob 项目中的 Blob 存储"
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
 <tags 
 	ms.service="storage"
-	ms.date="07/13/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="09/03/2015"
+	wacn.date="10/17/2015"/>
 
-# Azure 存储入门（Azure WebJob 项目）
+# 开始使用 Azure Blob 存储和 Visual Studio 连接服务（WebJob 项目）
 
 > [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [What Happened](/documentation/articles/vs-storage-webjobs-what-happened)
+> - [入门](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
+> - [发生了什么情况](/documentation/articles/vs-storage-webjobs-what-happened)
 > - [Blobs](/documentation/articles/vs-storage-webjobs-getting-started-blobs)
-> - [Queues](/documentation/articles/vs-storage-webjobs-getting-started-queues)
-> - [Tables](/documentation/articles/vs-storage-webjobs-getting-started-tables)
+> - [队列](/documentation/articles/vs-storage-webjobs-getting-started-queues)
+> - [表](/documentation/articles/vs-storage-webjobs-getting-started-tables)
 
 ## 概述
 
-当你使用 Visual Studio“添加连接服务”对话框将存储帐户添加到 WebJob 项目中时，会安装相应的 Azure 存储 NuGet 包，相应的.NET 引用会添加到项目中，并会在 App.config 文件中更新存储帐户的连接字符串。
+本文章提供 C# 代码示例，用于演示如何在创建或更新 Azure blob 后触发进程。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 版本 1.x。当你使用 Visual Studio“添加连接服务”对话框将存储帐户添加到 WebJob 项目中时，会安装相应的 Azure 存储 NuGet 包，相应的.NET 引用会添加到项目中，并会在 App.config 文件中更新存储帐户的连接字符串。
 
-本文章提供 C# 代码示例，用于演示如何在创建或更新 Azure blob 后触发进程。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 版本 1.x。
+
 
 ## 如何在创建或更新 Blob 后触发函数
 
@@ -230,7 +230,7 @@ Blob 回执在 AzureWebJobsStorage 连接字符串指定的 Azure 存储帐户�
 
 ## <a id="nextsteps"></a>后续步骤
 
-本指南提供的代码示例演示了如何处理常见方案以操作 Azure Blob。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](http://www.windowsazure.cn/documentation/articles/websites-webjobs-resources/)。
+本文提供了代码示例，演示如何处理用于操作 Azure blob 的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources)。
  
 
-<!---HONumber=67-->
+<!---HONumber=74-->
