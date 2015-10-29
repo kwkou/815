@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend )]
+> [AZURE.SELECTOR (Platform | Backend )]
 - [(iOS | .NET)](/documentation/articles/mobile-services-dotnet-backend-ios-get-started/)
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-get-started/)
 - [(Windows Runtime 8.1 universal C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started/)
@@ -16,4 +16,4 @@
 - [(Sencha | Javascript)](/documentation/articles/partner-sencha-mobile-services-get-started/)
 <!-- - [(Appcelerator | Javascript)](/documentation/articles/partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started/) -->
 
-<!---HONumber=71-->
+<!---HONumber=74-->

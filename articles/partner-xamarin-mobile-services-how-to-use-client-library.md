@@ -237,12 +237,12 @@
 
 ##  <a name="authentication"></a>如何对用户进行身份验证
 
-移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Facebook、Google、Microsoft 帐户、Twitter 和 Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅“身份验证入门”教程 ([Xamarin.iOS][Xamarin.iOS authentication]/[Xamarin.Android][Xamarin.Android authentication])。
+移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Facebook、Google、Microsoft 帐户、Twitter 和 Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅“身份验证入门”教程 ([Xamarin.iOS][Get started with authentication iOS]/[Xamarin.Android][Get started with authentication Android])。
 
 支持两种身份验证流：_服务器流_和_客户端流_。服务器流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能进行更深入的集成。
 
 ###  服务器流
-若要让移动服务管理 Windows 应用商店或 Windows Phone 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅“身份验证入门”教程 ([Xamarin.iOS][Xamarin.iOS authentication]/[Xamarin.Android][Xamarin.Android authentication])。
+若要让移动服务管理 Windows 应用商店或 Windows Phone 应用程序中的身份验证过程，必须将你的应用程序注册到标识提供者。然后，需要在移动服务中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅“身份验证入门”教程 ([Xamarin.iOS][Get started with authentication iOS]/[Xamarin.Android][Get started with authentication Android])。
 
 注册标识提供者后，只需结合提供者的 [MobileServiceAuthenticationProvider] 值调用 [LoginAsync 方法]。例如，以下代码将使用 Facebook 启动服务器流登录。
 
@@ -451,8 +451,7 @@ Xamarin 组件客户端在设计上支持强类型化方案。但有时，松散
 [Xamarin.Android quickstart tutorial]: /develop/mobile/tutorials/get-started-xamarin-android/
 [Xamarin.iOS data tutorial]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios/
 [Xamarin.Android data tutorial]: /develop/mobile/tutorials/get-started-with-data-xamarin-android/
-[Xamarin.iOS authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios/
-[Xamarin.Android authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-android/
+
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Xamarin.Auth component]: https://components.xamarin.com/view/xamarin.auth
 

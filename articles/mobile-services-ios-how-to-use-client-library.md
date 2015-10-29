@@ -10,13 +10,13 @@
 <tags
 	ms.service="mobile-services"
 	ms.date="07/01/2015"
-	wacn.date="Segmented Controls"/>
+	wacn.date="10/22/2015"/>
 
 #  如何使用适用于 Azure 移动服务的 iOS 客户端库
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
-本指南介绍如何使用 Azure 移动服务 [iOS SDK] 执行常见任务。如果你不熟悉移动服务，请先完成[移动服务快速入门]或[将移动服务添加到现有应用程序]，以配置你的帐户、创建表，并创建移动服务。
+本指南介绍如何使用 Azure 移动服务 [iOS SDK] 执行常见任务。如果你不熟悉移动服务，请先完成[移动服务快速入门]，以配置你的帐户、创建表，并创建移动服务。
 
 > [AZURE.NOTE]本指南使用最新的 [iOS 移动服务 SDK](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409)。如果你的项目使用旧版 SDK，请先升级 Xcode 中的框架。
 
@@ -24,7 +24,7 @@
 
 ## <a name="Setup"></a>安装与先决条件
 
-本指南假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表]，或重复使用在[移动服务快速入门]或[将移动服务添加到现有应用程序]中创建的 `TodoItem` 表。本指南假设该表的架构与这些教程中的表相同。本指南还假设你的 Xcode 将引用 `WindowsAzureMobileServices.framework` 并导入 `WindowsAzureMobileServices/WindowsAzureMobileServices.h`。
+本指南假设你已创建一个移动服务和一个表。有关详细信息，请参阅[创建表]，或重复使用在[移动服务快速入门]中创建的 `TodoItem` 表。本指南假设该表的架构与这些教程中的表相同。本指南还假设你的 Xcode 将引用 `WindowsAzureMobileServices.framework` 并导入 `WindowsAzureMobileServices/WindowsAzureMobileServices.h`。
 
 ## <a name="create-client"></a>如何：创建移动服务客户端
 

@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="mobile-services" 
-
 	ms.date="09/03/2015" 
 	wacn.date="10/22/2015"/>
 

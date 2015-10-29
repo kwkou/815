@@ -40,7 +40,7 @@
 * [Azure 移动服务 SQLite Store 版本 1.0.0（或更高版本）][SQLite store nuget]
 * [SQLite for Windows Phone 8]
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="\_blank">Azure 试用</a>。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 ##  <a name="enable-offline-app"></a>更新应用程序以支持脱机功能
 
@@ -247,7 +247,7 @@
 
 * [使用移动服务脱机支持处理冲突]
 
-* [使用移动服务中的软删除][Soft Delete]
+* [使用移动服务中的软删除][软删除]
 
 <!-- Anchors. -->
 [更新应用程序以支持脱机功能]: #enable-offline-app
@@ -279,7 +279,6 @@
 [SQLite for Windows Phone 8]: http://go.microsoft.com/fwlink/?LinkId=397953
 [Windows Phone 8 SDK]: http://go.microsoft.com/fwlink/p/?linkid=268374
 [软删除]: /documentation/articles/mobile-services-using-soft-delete/
-[]: /documentation/articles/mobile-services-using-soft-delete/
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0

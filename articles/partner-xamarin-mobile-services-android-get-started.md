@@ -63,9 +63,9 @@
 
 2. 在 Xamarin Studio 或 Visual Studio 中，依次单击“文件”、“打开”，导航到解压缩的示例文件，然后选择“XamarinTodoQuickStart.Android.sln”以将其打开。
 
- 	![][8]
+	![][8]
 
-   ![][9]
+	![][9]
 
 3. 按“运行”按钮生成项目并启动应用程序。系统将要求你选择模拟器或已连接的 USB 设备。
 

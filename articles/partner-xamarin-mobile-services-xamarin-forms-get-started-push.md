@@ -387,11 +387,11 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 1. 在管理门户中，单击“数据”选项卡，然后单击“TodoItem”表。
 
-   ![][21]
+	![][21]
 
 2. 在 **todoitem** 中，单击“脚本”选项卡，然后选择“插入”。
 
-   ![][22]
+	![][22]
 
     This displays the function that is invoked when an insert occurs in the **TodoItem** table.
 

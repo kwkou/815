@@ -130,7 +130,7 @@
 * [什么是通知中心？]
   <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+* [调试通知中心应用程序]
   </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
 * [如何使用适用于移动服务的 Android 客户端库 ]
@@ -153,7 +153,7 @@
 
 
 <!-- URLs. -->
-[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-ec
+[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-EC
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
@@ -168,8 +168,8 @@
 [如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 
-[移动服务服务器脚本参考]: mobile-services-how-to-use-server-scripts
-
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[调试通知中心应用程序]: http://go.microsoft.com/fwlink/p/?linkid=386630
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users
 
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview

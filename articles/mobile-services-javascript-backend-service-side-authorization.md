@@ -14,7 +14,7 @@
 
 #  移动服务中的用户服务端授权
 
-> [AZURE.SELECTOR-LIST (平台 | 后端)]
+> [AZURE.SELECTOR (平台 | 后端)]
 - [(任意 | .NET)](/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(任意 | Javascript)](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 

@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST(平台 | 后端)]
+> [AZURE.SELECTOR(平台 | 后端)]
 - [(iOS | JavaScript)](/documentation/articles/mobile-services-ios-validate-modify-data-server-scripts)
 - [(Windows Store C# | .NET)](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-validate-modify-data)
 - [(Windows Store C# | Javascript)](/documentation/articles/mobile-services-windows-store-dotnet-validate-modify-data-server-scripts)

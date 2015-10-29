@@ -52,7 +52,7 @@
 
 	此时已创建了一个使用移动服务名称的新目录，即数据服务的本地存储库。
 
-7. 打开 .\\service\\table 子文件夹，可以看到，它包含一个 TodoItem.json 文件，该文件是对 TodoItem 表的操作权限的 JSON 表示形式。
+7. 打开 .\service\table 子文件夹，可以看到，它包含一个 TodoItem.json 文件，该文件是对 TodoItem 表的操作权限的 JSON 表示形式。
 
 	如果在此表中定义了服务器脚本，则还会出现一个或多个名为 <code>TodoItem._&lt;operation&gt;_.js</code> 的文件，其中包含给定表操作的脚本。计划程序和自定义 API 脚本保留在与其名称相对应的不同文件夹中。有关详细信息，请参阅[源代码管理]。
 
@@ -60,7 +60,7 @@
 
 ## <a name="deploy-scripts"></a>将更新的脚本文件部署到移动服务
 
-1. 浏览到 .\\service\\table 子文件夹，如果 todoitem.insert.js 文件不存在，现在请创建该文件。
+1. 浏览到 .\service\table 子文件夹，如果 todoitem.insert.js 文件不存在，现在请创建该文件。
 
 2. 在文本编辑器中打开新文件 todoitem.insert.js 并在其中粘贴以下代码，然后保存更改：
 
@@ -102,7 +102,7 @@
 
 	>[AZURE.NOTE]对 package.json 文件执行这项更新会导致推送提交内容后重新启动移动服务。
 
-4. 现在，请浏览到 .\\service\\table 子文件夹，打开 todoitem.insert.js 文件并按如下所示修改该文件：
+4. 现在，请浏览到 .\service\table 子文件夹，打开 todoitem.insert.js 文件并按如下所示修改该文件：
 
 		function insert(item, user, request) {
 		    var uuid = require('node-uuid');
@@ -151,7 +151,7 @@
 [将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-ios-get-started-data
 [在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[从客户端调用自定义 API]: /documentation/articles/mobile-services-ios-call-custom-api.md
+[从客户端调用自定义 API]: /documentation/articles/mobile-services-ios-call-custom-api
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
