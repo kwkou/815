@@ -1,49 +1,61 @@
-<properties 
-	urlDisplayName="How to connect to an Azure SQL 数据库 using SSMS" 
-	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库| Windows Azure" 
+<properties
+	urlDisplayName="How to connect to an Azure SQL database using SQL Server Management Studio (SSMS)"
+	pageTitle="如何使用 SSMS 连接到 Azure SQL 数据库 | Microsoft Azure"
 	metaKeywords=""
 	description="了解如何使用 SSMS 连接到 Azure SQL 数据库。"
 	metaCanonical=""
 	services="sql-database"
 	documentationCenter=""
-	title="How to connect to an Azure SQL 数据库 using SSMS" 
+	title="How to connect to an Azure SQL database using SSMS"
 	authors="sidneyh" solutions=""
 	manager="jhubbard" editor="" />
 
 <tags
 	ms.service="sql-database"
-	ms.date="07/15/2015"
-	wacn.date="09/15/2015" />
+	ms.date="09/14/2015"
+	wacn.date="10/17/2015" />
 
-# 使用 SQL Server Management Studio 进行连接
+# 使用 SQL Server Management Studio 进行连接 (SSMS)
 
-使用以下步骤来安装 SQL Server Management Studio (SSMS)，然后使用 SSMS 来连接和查询 SQL 数据库。
+通过以下步骤使用 SQL Server Management Studio (SSMS) 连接和查询 SQL 数据库。
 
 ## 先决条件
-* [Windows Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 SQL 数据库 AdventureWorks 示例数据库。
 
-## 安装并启动 SQL Server Management Studio (SSMS)
-1. 转到 [SQL Server 2014 Express](http://www.microsoft.com/zh-cn/download/details.aspx?id=42299) 的下载页，单击“下载”，然后选择 32 位版本 (x86) 或 64 位版本 (x64) 的 MgmtStudio 下载文件。
-
-	![MgtmtStudio32BIT 或 MgmtStudio64BIT][1]
-2.	如果使用默认设置安装 SSMS，请根据提示操作。
-3.	下载后，在电脑上搜索 SQL Server 2014 Management Studio，然后启动 SSMS。
+* SQL Server Management Studio (SSMS) - 若要下载最新版本的 SSMS，请参阅[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+* [Microsoft Azure SQL 数据库入门](/documentation/articles/sql-database-get-started)中所述的 SQL 数据库 AdventureWorks 示例数据库。
 
 
-## 连接到 SQL Database
+## 获取完全限定的 Azure SQL 服务器名称
+
+若要连接到数据库，你需要服务器的完整名称 (****servername**.database.windows.net*)，该名称中包含要连接到的数据库。
+
+1. 转到 [Azure 预览门户](https://www.windowsazure.cn)。
+2. 浏览到要连接到的数据库。
+3. 找到完整的服务器名称：
+
+    ![完全限定的服务器名称][6]
+
+    使用下述步骤 3 中的完全限定的服务器名称。
+
+
+
+## 连接到 SQL 数据库
+
 1. 打开 SSMS。
+2. 单击“连接”>“数据库引擎...”
+
+    ![连接 > 数据库引擎][7]
+
 2. 在“连接到服务器”窗口的“服务器名称”框中，输入格式为 *&lt;服务器名称>*.**database.windows.net** 的服务器名称。
 3. 在“身份验证”列表中，选择“SQL Server 身份验证”。
-4. 输入你创建 SQL 数据库服务器时指定的**登录名**和**密码**。
+4. 输入你创建 SQL 数据库服务器时指定的“登录名”和“密码”，然后单击“连接”。
 
 	![连接到服务器对话框][2]
-5. 单击“选项”按钮。
-6. 在“连接到数据库”框中输入 **AdventureWorks**，然后单击“连接”。
 
-	![连接到数据库][3]
+
 
 ### 如果连接失败
-确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：配置防火墙设置（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx)。
+确保创建的逻辑服务器防火墙允许来自本地计算机的连接。有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](https://msdn.microsoft.com/zh-cn/library/azure/jj553530.aspx)。
 
 ## 运行示例查询
 
@@ -52,7 +64,7 @@
 
 	![新建查询][4]
 
-3. 在查询窗口中，复制并粘贴以下代码。
+3. 在查询窗口中，复制并粘贴以下代码：
 
 		SELECT
 		CustomerId
@@ -66,6 +78,9 @@
 
 	![成功][5]
 
+
+
+
 ## 后续步骤
 你可以使用 Transact-SQL 语句来创建或管理数据库。有关详细信息，请参阅 [CREATE DATABASE（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)和[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms)。你还可以将事件记录到 Azure 存储空间。有关详细信息，请参阅 [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started)。
 
@@ -76,5 +91,7 @@
 [3]: ./media/sql-database-connect-to-database/3-connect-to-database.png
 [4]: ./media/sql-database-connect-to-database/4-run-query.png
 [5]: ./media/sql-database-connect-to-database/5-success.png
+[6]: ./media/sql-database-connect-to-database/server-name.png
+[7]: ./media/sql-database-connect-to-database/connect-dbengine.png
 
-<!---HONumber=69-->
+<!---HONumber=74-->

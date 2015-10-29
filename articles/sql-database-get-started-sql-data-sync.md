@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL Databases 数据同步入门"
+	pageTitle="SQL 数据库数据同步入门"
 	description="本教程帮助你 Azure SQL 数据同步（预览版）入门。"
 	services="sql-database"
 	documentationCenter=""
@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="06/04/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="09/08/2015"
+	wacn.date="10/17/2015"/>
 
 
-#Azure SQL 数据同步入门（预览版）
+# Azure SQL 数据同步入门（预览版）
 在本教程中，你将了解使用 Azure（预览版）门户的 Azure SQL 数据同步的基础知识。
 
 
-本教程假定你之前未使用过 SQL Server 和 Azure SQL 数据库。在本教程中，你将创建一个完全配置且按既定计划同步的混合（SQL Server 和 SQL 数据库 实例）同步组。
+本教程假定你之前未使用过 SQL Server 和 Azure SQL 数据库。在本教程中，你将创建一个完全配置且按既定计划同步的混合（SQL Server 和 SQL 数据库实例）同步组。
 
 
 ## 步骤 1：连接到 Azure SQL 数据库
@@ -42,7 +42,7 @@
 ### 步骤 2a：安装必要的软件
 确保你安装客户端代理的计算机上安装有下列软件。
 
-- **.NET Framework 4.0** 
+- **.NET Framework 4.0**
 
  你可以从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=17851)安装 .NET Framework 4.0。
 
@@ -52,7 +52,7 @@
 
 - **Microsoft SQL Server 2008 R2 SP1 共享管理对象 (x86)**
 
- 你可以从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728)安装 Microsoft SQL Server 2008 R2 SP1 共享管理对象 (x86)
+ 你可以从[此处](http://www.microsoft.com/zh-cn/download/details.aspx?id=26728)安装 Microsoft SQL Server 2008 R2 SP1 Shared Management Objects (x86)
 
 
 
@@ -108,7 +108,7 @@
 <a id="DefineHubDB"></a>
 ### 步骤 4c：定义同步中心
 
-1. 从下拉列表中，选择 SQL Database 实例以用作同步组中心。
+1. 从下拉列表中，选择 SQL 数据库实例以用作同步组中心。
 2. 输入此 SQL 数据库实例的凭据 –“中心用户名”和“中心密码”。
 3. 等待 SQL 数据同步确认该用户名和密码。在凭据被确认后，密码右侧将出现一个绿色复选标记。
 4. 从下拉列表中，选择“冲突解决”策略。
@@ -130,7 +130,7 @@
 
 1. 从下拉列表中，选择要添加的数据库。
 
-	下拉列表中的数据库包含已向代理进行注册的 SQL Server 数据库，以及 SQL 数据库 实例。
+	下拉列表中的数据库包含已向代理进行注册的 SQL Server 数据库，以及 SQL 数据库实例。
 2.	输入此数据库的凭据 –“用户名”和“密码”。
 3.	从下拉列表中，选择此数据库的“同步方向”。
 
@@ -186,16 +186,16 @@
 
 ![Image7](./media/sql-database-get-started-sql-data-sync/NewSyncGroupConfigure-Figure7.PNG)
 
-祝贺你。你已创建了一个包含 SQL 数据库 实例和 SQL Server 数据库的同步组。
+祝贺你。你已创建了一个包含 SQL 数据库实例和 SQL Server 数据库的同步组。
 
 ## 后续步骤
-有关 SQL 数据库 和 SQL 数据同步的其他信息，请参阅：
+有关 SQL 数据库和 SQL 数据同步的其他信息，请参阅：
 
 * [MSDN 库中的 SQL 数据同步内容](https://msdn.microsoft.com/zh-cn/library/azure/hh456371.aspx)
-* [SQL Database 概述](/documentation/articles/sql-database-technical-overview)
+* [SQL 数据库概述](/documentation/articles/sql-database-technical-overview)
 * [数据库生命周期管理](https://msdn.microsoft.com/zh-cn/library/jj907294.aspx)
  
 
  
 
-<!---HONumber=69-->
+<!---HONumber=74-->

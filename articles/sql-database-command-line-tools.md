@@ -1,5 +1,5 @@
 ﻿<properties 
-	pageTitle="使用 PowerShell 管理 Azure SQL 数据库资源" 
+	pageTitle="使用 PowerShell 管理 Azure SQL 数据库" 
 	description="使用 PowerShell 管理 Azure SQL 数据库。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,11 +9,15 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="07/28/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="09/11/2015" 
+	wacn.date="10/17/2015"/>
 
 # 使用 PowerShell 管理 Azure SQL 数据库资源
 
+
+> [AZURE.SELECTOR]
+- [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
+- [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
 本主题提供了一些 PowerShell 命令，将这些命令与 Azure 资源管理器 cmdlet 配合使用可以执行许多 Azure SQL 数据库任务。
 
@@ -133,4 +137,4 @@
 - [Azure SQL 数据库服务管理 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn546726.aspx)
  
 
-<!---HONumber=69-->
+<!---HONumber=74-->

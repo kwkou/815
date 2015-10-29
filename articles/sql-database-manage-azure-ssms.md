@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 SSMS 管理 SQL 数据库 | Windows Azure" 
-	description="了解如何使用 SQL Server Management Studio 管理 SQL Database 服务器和数据库。" 
+	description="了解如何使用 SQL Server Management Studio 管理 SQL 数据库服务器和数据库。" 
 	services="sql-database" 
 	documentationCenter=".net" 
 	authors="jeffgoll" 
@@ -9,11 +9,16 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="07/07/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="09/11/2015" 
+	wacn.date="10/17/2015"/>
 
 
-# 使用 SQL Server Management Studio 管理 Azure SQL Database 
+# 使用 SQL Server Management Studio 管理 Azure SQL 数据库 
+
+
+> [AZURE.SELECTOR]
+- [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
+- [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
 你可以使用 SQL Server Management Studio (SSMS) 来管理 Azure SQL 数据库逻辑服务器与数据库。本主题将指导你使用 SSMS 完成常见任务。在开始之前，你应该已在 Azure SQL 数据库中创建了逻辑服务器和数据库。若要开始，请先阅读[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)，然后返回此处。
 
@@ -22,7 +27,7 @@
 
 ## 连接到 SQL 数据库逻辑服务器
 
-连接到 SQL Database 需要您知道在 Azure 上的服务器名称。您可能需要登录到门户来获取此信息。
+连接到 SQL 数据库需要您知道在 Azure 上的服务器名称。您可能需要登录到门户来获取此信息。
 
 1.  登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
@@ -30,7 +35,7 @@
 
 3.  在“SQL 数据库”主页上，单击页面顶部的“服务器”以列出与你的订阅关联的所有服务器。查找要连接到的服务器的名称，然后将它复制到剪贴板上。
 
-	接下来，将您的 SQL Database 防火墙配置为允许从您的本地计算机连接。通过将您的本地计算机 IP 地址添加到防火墙例外列表中来执行此操作。
+	接下来，将您的 SQL 数据库防火墙配置为允许从您的本地计算机连接。通过将您的本地计算机 IP 地址添加到防火墙例外列表中来执行此操作。
 
 1.  在“SQL 数据库”主页上，单击“服务器”，然后单击要连接到的服务器。
 
@@ -46,7 +51,7 @@
 
     **注意：**在防火墙设置的更改生效之前，可能最多有五分钟的延迟。
 
-	您现在已准备好使用 Management Studio 连接到 SQL Database。
+	您现在已准备好使用 Management Studio 连接到 SQL 数据库。
 
 1.  在任务栏上，单击“开始”、指向“所有程序”、指向“Microsoft SQL Server 2014”，然后单击“SQL Server Management Studio”。
 
@@ -133,13 +138,13 @@
 
         DROP LOGIN login1;
 
--   master 数据库具有可用于查看登录名的 **sys.sql\_logins**。若要查看所有现有登录名，请执行以下语句：
+-   master 数据库具有可用于查看登录名的 **sys.sql\_logins** 视图。若要查看所有现有登录名，请执行以下语句：
 
         SELECT * FROM sys.sql_logins;
 
 ## 使用动态管理视图监视 SQL 数据库</h2>
 
-SQL Database 支持多个您可用于监视单个数据库的动态管理视图。下面是您可通过这些视图检索的监视器数据类型的一些示例。有关完整的详细信息和更多用法示例，请参阅[使用动态管理视图监视 SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx)。
+SQL 数据库支持多个您可用于监视单个数据库的动态管理视图。下面是您可通过这些视图检索的监视器数据类型的一些示例。有关完整的详细信息和更多用法示例，请参阅[使用动态管理视图监视 SQL 数据库](https://msdn.microsoft.com/zh-cn/library/azure/ff394114.aspx)。
 
 -   查询动态管理视图需要 **VIEW DATABASE STATE** 权限。若要向特定数据库用户授予 **VIEW DATABASE STATE** 权限，请连接到要使用服务器级别主体登录名管理的数据库并对该数据库执行以下语句：
 
@@ -182,4 +187,4 @@ SQL Database 支持多个您可用于监视单个数据库的动态管理视图�
  
  
 
-<!---HONumber=69-->
+<!---HONumber=74-->

@@ -9,13 +9,12 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="08/07/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="08/25/2015"
+   wacn.date="10/17/2015"/>
 
 # 使用 C&#x23; 创建和管理 SQL 数据库
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-client-library)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
@@ -34,7 +33,7 @@
 
 <br>
 
-如果你没有 Azure 订阅，只需单击本页顶部的“免费试用”，然后再返回到本文中。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
+如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 ## 安装所需的库
 
@@ -331,6 +330,8 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 将现有数据库移入弹性数据库池
 
+*创建一个池后，你还可以使用 Transact-SQL 将现有数据库移入和移出一个池。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
+
 若要将现有数据库移入池中，请执行以下操作：
 
     
@@ -360,6 +361,8 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 
 ## 在弹性数据库池中创建新数据库
+
+*创建一个池后，你还可以使用 Transact-SQL 在池中创建新的弹性数据库。有关详细信息，请参阅[弹性数据库池参考 - Transact-SQL](/documentation/articles/sql-database-elastic-pool-reference/#Transact-SQL)。*
 
 若要直接在池中创建新数据库，请执行以下操作：
 
@@ -772,11 +775,11 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 
 ## 其他资源
 
-[SQL Database](/documentation/services/sql-databases/)
+[SQL 数据库](/documentation/services/sql-databases/)
 
 [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
-
+[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
 
 
 <!--Image references-->
@@ -790,4 +793,4 @@ SQL 数据库包含在服务器中。服务器名称在所有 Azure SQL Server �
 [8]: ./media/sql-database-client-library/add-application2.png
 [9]: ./media/sql-database-client-library/clientid.png
 
-<!---HONumber=69-->
+<!---HONumber=74-->
