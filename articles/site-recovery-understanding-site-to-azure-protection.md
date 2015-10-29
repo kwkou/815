@@ -23,7 +23,7 @@
 
 在本地和 Azure 之间设置 DR 的一部分操作；下载 Azure Site Recovery 提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。
 
-![用于在本地与 Azure 之间复制的 VMM 站点部署](media/site-recovery-understanding-site-to-azure-protection/image00.png)
+![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-understanding-site-to-azure-protection/image00.png)
 
 Hyper-V 站点部署与 VMM 部署相同 – 唯一区别在于提供程序和代理都安装在 Hyper-V 主机本身上。
 
@@ -32,16 +32,16 @@ Hyper-V 站点部署与 VMM 部署相同 – 唯一区别在于提供程序和�
 ### 启用保护
 一旦从门户或本地保护一个虚拟机，则系统将启动一个名为 *启用保护*的 ASR 作业，并在 JOBS 选项卡下进行监视。
 
-![排查本地 Hyper-V 问题](media/site-recovery-understanding-site-to-azure-protection/image01.png)
+![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image01.png)
 
 *启动保护*作业在调用 [CreateReplicationRelationship](https://msdn.microsoft.com/zh-cn/library/hh850036.aspx)（使用在保护期间配置的输入创建到 Azure 的复制）之前检查先决条件。*启用保护*作业通过调用 [StartReplication](https://msdn.microsoft.com/zh-cn/library/hh850303.aspx)（将虚拟机的虚拟磁盘发送到 Azure），从本地开始初始复制。
 
-![排查本地 Hyper-V 问题](media/site-recovery-understanding-site-to-azure-protection/image02.png)
+![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image02.png)
 
 ### 完成保护
 当触发初始复制时，系统拍摄一个 [Hyper-V 虚拟机快照](https://technet.microsoft.com/library/dd560637.aspx)。系统逐个处理虚拟硬盘，直到所有硬盘都被上载到 Azure。根据磁盘大小和带宽，这通常要花一段时间才能完成。请参阅[如何管理本地到 Azure 保护网络带宽使用](https://support.microsoft.com/zh-cn/kb/3056159)以优化你的网络使用。在初始复制完成时，*在虚拟机上完成保护*作业配置网络和复制后设置。当初始复制正在进行时，对磁盘做出的所有更改都会被记录下来，如下面的“增量复制”所述。当初始复制正在进行时，快照和 HRL 文件会占用额外的磁盘存储空间。在初始复制完成后，Hyper-V 虚拟机快照将被删除，导致系统将初始复制之后发生的数据变更合并到父磁盘中。
 
-![排查本地 Hyper-V 问题](media/site-recovery-understanding-site-to-azure-protection/image03.png)
+![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image03.png)
 
 ### 增量复制
 Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hyper-V 复制日志 (*.hrl) 的形式记录对虚拟磁盘做出的变更。HRL 文件将位于关联磁盘的相同目录中。为复制配置的每个磁盘有一个关联的 HRL 文件。在初始复制完成后，此日志被发送到客户的存储帐户中。当日志正处于传输到 Azure 的过程中时，主站点中的变更被记录到同一目录中的另一日志文件中。
@@ -53,7 +53,7 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 
 在重新同步完成后，应恢复常规的增量复制。可以在发生中断（例如网络中断、VMMS 崩溃等）的情况下恢复重新同步。
 
-默认情况下，*自动计划的重新同步*配置为非办公时间。如果虚拟机需要手动重新同步，请从门户选择虚拟机，然后单击“重新同步”。![排查本地 Hyper-V 问题](media/site-recovery-understanding-site-to-azure-protection/image04.png)
+默认情况下，*自动计划的重新同步*配置为非办公时间。如果虚拟机需要手动重新同步，请从门户选择虚拟机，然后单击“重新同步”。![排查本地 Hyper-V 问题](./media/site-recovery-understanding-site-to-azure-protection/image04.png)
 
 重新同步使用固定块分块算法，其中源文件和目标文件被分为固定区块；生成每个区块的校验和，然后进行比较以确保来自源文件中的哪些块需要应用到目标文件。
 
@@ -67,7 +67,7 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 
 ## 了解 Hyper-V 虚拟机保护和恢复生命周期
 
-![了解 Hyper-V 虚拟机保护和恢复生命周期](media/site-recovery-understanding-site-to-azure-protection/image05.png)
+![了解 Hyper-V 虚拟机保护和恢复生命周期](./media/site-recovery-understanding-site-to-azure-protection/image05.png)
 
 ## 其他参考资料
 
