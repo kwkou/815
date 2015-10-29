@@ -37,7 +37,7 @@
 * 完成[移动服务入门]。
 * [Azure 移动服务 SDK 版本 1.3.0（或更高版本）][Mobile Services SDK Nuget]
 * [Azure 移动服务 SQLite Store 版本 1.0.0（或更高版本）][SQLite store nuget]
-* [SQLite for Windows 8.1](www.sqlite.org/downloads)
+* [SQLite for Windows 8.1](http://www.sqlite.org/download.html)
 
 >[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial target="\_blank">Azure 试用</a>。
 
@@ -242,7 +242,7 @@
 
 * [使用移动服务脱机支持处理冲突]
 
-* [使用移动服务中的软删除][Soft Delete]
+* [使用移动服务中的软删除][软删除]
 
 <!-- Anchors. -->
 [Update the app to support offline features]: #enable-offline-app
@@ -274,7 +274,7 @@
 [SQLite for Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkId=397953
 [适用于 Visual Studio 2012 的 Windows Phone 8 教程]: /documentation/articles/mobile-services-windows-phone-get-started-offline-data
 [软删除]: /documentation/articles/mobile-services-using-soft-delete
-[]: /documentation/articles/mobile-services-using-soft-delete
+
 
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0

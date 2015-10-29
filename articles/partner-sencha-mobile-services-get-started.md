@@ -27,9 +27,9 @@
 
 ## 要求
 
-- 下载并安装 [Sencha Touch](http://wwww.sencha.com/products/touch/download" target="\_blank")。
+- 下载并安装 [Sencha Touch](http://wwww.sencha.com/products/touch/download"target="\_blank")。
 
-- 下载并安装 [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download" target="\_blank")。
+- 下载并安装 [Sencha Cmd Tool](http://www.sencha.com/products/sencha-cmd/download"target="\_blank")。
 
 - Java Runtime Environment (JRE) 或 Java 开发工具包（如果您创建 Android 应用程序）
 

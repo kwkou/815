@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend )]
+> [AZURE.SELECTOR (Platform | Backend )]
 - [(iOS | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users/)
 - [(iOS | JavaScript)](/zh-cn/documentation/articles/mobile-services-ios-get-started-users/)
 - [(Windows Store C# | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/)

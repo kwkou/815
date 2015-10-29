@@ -88,13 +88,13 @@
 * [数据处理入门]<br/>
   了解有关使用移动服务存储和查询数据的详细信息。
 
-* [身份验证入门 ]<br/>
+* [身份验证入门]<br/>
   了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
 * [什么是通知中心？]<br/>
   了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)</br>
+* [调试通知中心应用程序]</br>
   获取有关对通知中心解决方案进行故障排除和调试的指导。
 
 * [移动服务 .NET 操作方法概念性参考]<br/>
@@ -122,7 +122,7 @@
 [移动服务服务器脚本参考]: /zh-cn/documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务 .NET 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
-
+[调试通知中心应用程序]: http://go.microsoft.com/fwlink/p/?linkid=386630
 [向经过身份验证的用户发送推送通知]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-push-notifications-app-users/
 
 [什么是通知中心？]: /zh-cn/documentation/articles/notification-hubs-overview

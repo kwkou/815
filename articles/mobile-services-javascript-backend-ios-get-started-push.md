@@ -34,7 +34,7 @@
 * 将 insert 函数替换为以下代码，然后单击“保存”。这将会注册一个新的插入脚本，该脚本使用 [apns 对象]将推送通知（插入的文本）发送到插入请求中提供的设备。此脚本将延迟发送通知，使你有足够的时间关闭应用程序以接收推送通知。
 
 
-```
+	```
         function insert(item, user, request) {
             request.execute();
             // Set timeout to delay the notification, to provide time for the
@@ -48,7 +48,7 @@
                 });
             }, 2500);
         }
-```
+	```
 
 [AZURE.INCLUDE [向应用程序添加推送通知](../includes/add-push-notifications-to-app.md)]
 
