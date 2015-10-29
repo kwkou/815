@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR (Platform | Backend)]
+> [AZURE.SELECTOR]
 - [(iOS | Any)](/documentation/articles/mobile-services-ios-how-to-use-client-library/)
 - [(Windows C# | Any)](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/)
 - [(HTML/JavaScript | Any)](/documentation/articles/mobile-services-html-how-to-use-client-library/)
