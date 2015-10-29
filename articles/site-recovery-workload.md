@@ -55,7 +55,7 @@ Windows 文件服务器 | Y | Y | Y | Y
 
 使用 Azure Site Recovery，你可以为你的 AD 创建一个完整的自动化灾难恢复计划。如果你在主站点中有一个用于多个应用程序（例如 SharePoint 和 SAP）的 AD，并且你决定对整个站点进行故障转移，则可以首先使用 AD 恢复计划对 AD 进行故障转移，然后使用应用程序特定恢复计划对其他应用程序进行故障转移。
 
-请参阅链接的文档以获取有关[部署面向 AD 的 Azure Site Recovery](http://aka.ms/asr-ad) 的详细指南
+请参阅链接的文档以获取有关[部署面向 AD 的 Azure Site Recovery](/documentation/articles/site-recovery-active-directory) 的详细指南
 
 ##SQL Server
 Microsoft SQL Server 是很多企业级第一方、第三方和自定义业务线应用程序的基础，这些应用程序在客户的本地数据中心内运行。SharePoint、Dynamics 和 SAP 等应用程序使用 SQL Server 提供数据服务。Azure Site Recovery 和 SQL Server HA/DR 技术是补充，可用于为多层企业应用程序提供端到端保护。Azure Site Recovery 为 SQL Server 环境提供以下优势：
@@ -66,7 +66,7 @@ Microsoft SQL Server 是很多企业级第一方、第三方和自定义业务�
 - 在高峰负荷期间使用 Azure Site Recovery，通过在 Azure 中将它们“爆发”到更大的 IaaS 虚拟机大小来扩大 SQL Server。
 - 使用 Azure Site Recovery，在 Azure 或辅助站点中创建 SQL Server 的测试副本。使用此复本进行分析和数据合规性检查，而不影响生产环境。
 
-请参阅链接的文档以获取有关[部署面向 SQL 的 Azure Site Recovery](http://aka.ms/asr-sql) 的详细指南
+请参阅链接的文档以获取有关[部署面向 SQL 的 Azure Site Recovery](/documentation/articles/site-recovery-sql) 的详细指南
 
 ##SharePoint
 SharePoint 是一款流行的应用程序，让众多组织能够通过提供 Intranet 门户、文档和文件管理、社交网络、网站和企业搜索能力来进行合作。它也是一个应用程序平台，用于轻松地部署自定义应用程序和工作流程。通过使用面向 SharePoint 的 Azure Site Recovery，你可以：
