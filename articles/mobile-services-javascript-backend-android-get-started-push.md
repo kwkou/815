@@ -1,18 +1,18 @@
 
-<properties 
-	pageTitle="开始使用推送通知 (Android JavaScript) |移动开发人员中心" 
-	description="了解如何使用 Azure 移动服务向 Android JavaScript 应用程序发送推送通知。" 
-	services="mobile-services, notification-hubs" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	writer="ricksal" 
-	manager="dwrede" 
+<properties
+	pageTitle="推送通知入门 (Android JavaScript) | Windows Azure"
+	description="了解如何使用 Azure 移动服务向 Android JavaScript 应用程序发送推送通知。"
+	services="mobile-services, notification-hubs"
+	documentationCenter="android"
+	authors="RickSaling"
+	writer="ricksal"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/01/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="06/16/2015" 
+	wacn.date="10/22/2015"/>
 
 
 #  向移动服务 Android 应用程序添加推送通知
@@ -121,17 +121,23 @@
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [数据处理入门]<br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [数据处理入门]
+  <br/>了解有关使用移动服务存储和查询数据的详细信息。
 
-* [身份验证入门 ]<br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+* [身份验证入门 ]
+  <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
-* [什么是通知中心？] <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+* [什么是通知中心？]
+  <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)</br>获取有关对通知中心解决方案进行故障排除和调试的指导。
+* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+  </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
-* [如何使用适用于移动服务的 Android 客户端库 ]<br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
+* [如何使用适用于移动服务的 Android 客户端库 ]
+  <br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
 
-* [移动服务服务器脚本参考]<br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
+* [移动服务服务器脚本参考]
+  <br/>了解有关如何在移动服务中实施业务逻辑的详细信息。
 
 
 <!-- Anchors. -->
@@ -147,8 +153,7 @@
 
 
 <!-- URLs. -->
-
-[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-EC
+[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-ec
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
@@ -163,9 +168,12 @@
 [如何使用适用于移动服务的 Android 客户端库 ]: /documentation/articles/mobile-services-android-how-to-use-client-library
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
+[移动服务服务器脚本参考]: mobile-services-how-to-use-server-scripts
+
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users
+
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-android-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-android-send-localized-breaking-news
-<!---HONumber=HO63-->
+
+<!---HONumber=74-->

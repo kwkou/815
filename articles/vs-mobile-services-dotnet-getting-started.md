@@ -1,22 +1,22 @@
-<properties 
-	pageTitle="" 
-	description="如何在 Visual Studio .NET 项目中开始使用 Azure 移动服务" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle="开始使用 Visual Studio .NET 移动服务项目（连接服务）| Windows Azure"
+	description="如何在 Visual Studio .NET 项目中开始使用 Azure 移动服务"
+	services="mobile-services"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/22/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="09/17/2015" 
+	wacn.date="10/22/2015"/>
 
 #  移动服务入门（.NET 项目）
 
 > [AZURE.SELECTOR]
-> - [Getting Started](/documentation/articles/vs-mobile-services-dotnet-getting-started)
-> - [What Happened](/documentation/articles/vs-mobile-services-dotnet-what-happened)
+> - [入门](/documentation/articles/vs-mobile-services-dotnet-getting-started)
+> - [发生了什么情况](/documentation/articles/vs-mobile-services-dotnet-what-happened)
 
 为了跟踪这些代码，您需要首先执行的步骤取决于您连接的移动服务类型。
 
@@ -24,7 +24,7 @@
 
 - 如果你使用的是 .NET 后端移动服务，那么 Visual Studio 为你创建的默认项目模板中已经有一个 TodoItem 表，但你需要将其发布到 Azure。发布方法：在解决方案资源管理器中打开移动服务项目的上下文菜单，然后选择**发布 Web**。接受默认设置，然后选择**发布**。
 
-##### 获取对表的引用
+#####获取对表的引用
 
 以下代码将创建对表（`todoTable`，其中包含 TodoItem 的数据）的引用，你可以将该引用用于后续操作以便读取和更新数据表。您将需要 TodoItem 类，并将其属性设置为解释移动服务为响应您的查询而发送的 JSON。
 
@@ -79,6 +79,6 @@
 	await todoTable.DeleteAsync(item);
 
 
-[详细了解移动服务](/documentation/services/mobile-services)
+[详细了解移动服务](/services/mobile-services)
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

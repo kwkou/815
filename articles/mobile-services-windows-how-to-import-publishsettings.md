@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="在 Visual Studio 2013 导入发布设置文件 | 移动服务" 
-	description="了解如何在 Visual Studio 2013 中为 Azure 移动服务应用程序导入订阅发布设置文件。" 
-	documentationCenter="" 
-	services="mobile-services" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="在 Visual Studio 2013 中导入发布设置文件 | Windows Azure"
+	description="了解如何在 Visual Studio 2013 中为 Azure 移动服务应用程序导入订阅发布设置文件。"
+	documentationCenter=""
+	services="mobile-services"
+	manager="dwrede"
+	editor=""
 	authors="ggailey777"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/13/2015" 
-	wacn.date="07/25/2015"/> 
+	ms.date="08/18/2015" 
+	wacn.date="10/22/2015"/>
 
 #  在 Visual Studio 2013 中导入订阅发布设置文件
 
@@ -56,4 +56,4 @@
 [JavaScript and HTML]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-users-js
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

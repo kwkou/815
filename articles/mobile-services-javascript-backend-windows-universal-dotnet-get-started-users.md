@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="身份验证入门（Windows 应用商店）| 移动开发人员中心" 
+	pageTitle="向通用 Windows 8.1 应用添加身份验证 | Azure 移动服务"
 	description="了解如何使用移动服务通过提供各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 Windows 应用商店应用程序的用户进行身份验证。" 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/14/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="09/14/2015" 
+	wacn.date="10/22/2015"/>
 
-#  向移动服务应用程序添加身份验证
+# 向通用 Windows 8.1 应用添加身份验证
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../includes/mobile-services-selector-get-started-users.md)]
 
-本主题说明如何通过通用 Windows 应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
+本主题说明如何通过通用 Windows 8.1 应用对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
 本教程基于移动服务快速入门。此外，还必须先完成[移动服务入门]或[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data)教程。
 
@@ -50,9 +50,11 @@
 
 ## 另请参阅
 
-+ [增强的用户功能](http://go.microsoft.com/fwlink/p/?LinkId=506605)<br/>你可以通过调用服务器脚本中的 **user.getIdentities()** 函数，来获取标识提供者在你的移动服务中保留的其他用户数据。 
++ [增强的用户功能](http://go.microsoft.com/fwlink/p/?LinkId=506605)<br/>
+你可以通过调用服务器脚本中的 **user.getIdentities()** 函数，来获取标识提供者在你的移动服务中保留的其他用户数据。 
 
-+ [移动服务 .NET 操作方法概念性参考]<br/>了解有关如何将移动服务与 .NET 客户端配合使用的详细信息。
++ [移动服务 .NET 操作方法概念性参考]<br/>
+了解有关如何将移动服务与 .NET 客户端配合使用的详细信息。
 
 
 <!-- Anchors. -->
@@ -73,10 +75,11 @@
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
+[Get started with push notifications]: vmobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-windows-store-dotnet-authorize-users-in-scripts
 [JavaScript and HTML]: /documentation/articles/mobile-services-windows-store-javascript-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
-<!---HONumber=HO63-->
+
+<!---HONumber=74-->

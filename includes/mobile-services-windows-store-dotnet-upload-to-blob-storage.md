@@ -1,6 +1,6 @@
 ﻿## <a name="add-select-images"></a>更新快速启动客户端应用以捕获和上载图像
 
-1. 在 Visual Studio 2012 中，打开 Package.appxmanifest 文件，并在"功能"选项卡中启用"网络摄像机"和"麦克风"功能。
+1. 在 Visual Studio 中，打开 Package.appxmanifest 文件，并在“功能”选项卡中启用“网络摄像机”和“麦克风”功能。
 
    	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-app-manifest-camera.png)
  
@@ -50,7 +50,7 @@
         [JsonProperty(PropertyName = "imageUri")]
         public string ImageUri { get; set; } 
 
-   	>[WACOM.NOTE]若要将新属性添加到 TodoItem 对象，您必须在移动服务中启用动态架构。启用动态架构时，新列自动添加到映射到这些新属性的 TodoItem 表。
+   	>[AZURE.NOTE]若要将新属性添加到 JavaScript 后端移动服务中的 TodoItem 对象，你必须在你的移动服务中启用动态架构。启用动态架构时，新列自动添加到映射到这些新属性的 TodoItem 表。有关 .NET 后端移动服务的更多信息，请参阅[如何对 .NET 后端移动服务进行数据模型更改](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations)。
 
 5. 在 MainPage 类中，添加以下代码：
 
@@ -118,21 +118,21 @@
 
 最后一个步骤是测试应用并验证上载是否成功。
 		
-## <a name="test"></a>测试在您的应用中上载图像
+## <a name="test"></a>测试在你的应用程序中上载图像
 
-1. 在 Visual Studio 中，按 F5 键运行应用。
+1. 在 Visual Studio 中，按 F5 键运行应用程序。
 
-2. 在"插入 TodoItem"下的文本框中输入文本，然后单击"照片"。
+2. 在“插入 TodoItem”下的文本框中输入文本，然后单击“照片”。
 
    	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-appbar.png)
 
-  	这样可以显示相机的拍照 UI。 
+  	这样可以显示相机的拍照 UI。
 
-3. 单击图像以拍摄照片，然后单击"确定"。
+3. 单击图像以拍摄照片，然后单击“确定”。
   
    	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-camera.png)
 
-4. 单击"上载"可插入新项并上载图像。
+4. 单击“上载”可插入新项并上载图像。
 
 	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-appbar2.png)
 
@@ -140,5 +140,6 @@
 
 	![](./media/mobile-services-windows-store-dotnet-upload-to-blob-storage/mobile-quickstart-blob-ie.png)
 
-   	>[WACOM.NOTE]新项的 <code>imageUri</code> 属性绑定到<strong>图像</strong>控件时，将从 Blob 存储服务自动下载图像。
+   	>[AZURE.NOTE]新项的 <code>imageUri</code> 属性绑定到<strong>图像</strong>控件时，将从 Blob 存储服务自动下载图像。
 
+<!---HONumber=74-->

@@ -26,7 +26,7 @@
 	        Categories = new string[] { "@PACKAGE_NAME@" })]
 	    [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_LIBRARY_RETRY }, 
         Categories = new string[] { "@PACKAGE_NAME@" })]
-        public class ToDoBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
+        public class ToDoBroadcastReceiver : GcmBroadcastReceiverBase<PushHandlerService>
         {
 	        // Set the Google app ID.
 	        public static string[] senderIDs = new string[] { "<PROJECT_NUMBER>" };
@@ -45,11 +45,11 @@
         	public PushHandlerService() : base(ToDoBroadcastReceiver.senderIDs) { }
     	}
 
-	请注意，此类派生自 **GcmServiceBase**，"服务"属性必须应用于此类。
+	请注意，此类派生自 **GcmServiceBase**，“服务”属性必须应用于此类。
 
 	>[AZURE.NOTE]**GcmServiceBase** 类实现 **OnRegistered()**、**OnUnRegistered()**、**OnMessage()** 和 **OnError()** 方法。必须在 **PushHandlerService** 类中重写这些方法。
 
-5. 将以下代码添加到 **ToDoBroadcastReceiver** 类，以便重写 **OnRegistered** 事件处理程序。 
+6. 将以下代码添加到 **PushHandlerService** 类，以便重写 **OnRegistered **事件处理程序。
 
         protected override void OnRegistered(Context context, string registrationId)
         {
@@ -116,7 +116,7 @@
             }
         }
 
-12. 为项目编译所需的 **OnUnRegistered()** 和 **OnError()** 添加以下方法进行重写。
+8. 使用以下代码重写 **OnUnRegistered ()** 和 **OnError ()** 方法。
 
         protected override void OnUnRegistered(Context context, string registrationId)
         {
@@ -129,4 +129,4 @@
                 string.Format("Error occurred in the notification: {0}.", errorId));
         }
 
-<!---HONumber=56-->
+<!---HONumber=74-->

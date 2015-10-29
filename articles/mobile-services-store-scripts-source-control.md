@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="在源代码管理中存储项目代码 - Azure 移动服务" 
-	description="了解如何在您的计算机本地 Git 存储库中存储您的服务器脚本文件和模块。" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="在源代码管理中存储 JavaScript 后端项目代码 | Azure 移动服务"
+	description="了解如何在您的计算机本地 Git 存储库中存储您的服务器脚本文件和模块。"
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/24/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="09/15/2015" 
+	wacn.date="10/22/2015"/>
 
 #  在源代码管理中存储项目代码
 
@@ -125,9 +125,11 @@
 
 完成本教程后，你便知道了如何在源代码管理中存储脚本。我们建议您了解有关如何使用服务器脚本和自定义 API 的详细信息：
 
-+ [在移动服务中使用服务器脚本]<br/>说明如何使用服务器脚本、作业计划程序和自定义 API。
++ [在移动服务中使用服务器脚本]
+  <br/>说明如何使用服务器脚本、作业计划程序和自定义 API。
 
-+ [从客户端调用自定义 API]<br/>说明如何创建可从客户端调用的自定义 API。
++ [从客户端调用自定义 API]
+  <br/>说明如何创建可从客户端调用的自定义 API。
 
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
@@ -142,16 +144,15 @@
 [6]: ./media/mobile-services-store-scripts-source-control/mobile-insert-script-source-control.png
 
 <!-- URLs. -->
-
 [Git website]: http://git-scm.com
-[源代码管理]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
+[源代码管理]: http://msdn.microsoft.com/zh-cn/library/windowsazure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started
 [将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-ios-get-started-data
 [在移动服务中使用服务器脚本]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[从客户端调用自定义 API]: /documentation/articles/mobile-services-ios-call-custom-api
+[从客户端调用自定义 API]: /documentation/articles/mobile-services-ios-call-custom-api.md
 [模块]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->

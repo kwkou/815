@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/03/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="06/16/2015"
+	wacn.date="10/22/2015"/>
 
 #  从客户端调用自定义 API
 
@@ -48,10 +48,12 @@
 
 
 <!-- URLs. -->
-[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
-[Get started with data]: /documentation/articles/mobile-services-windows-phone-get-started-data
-[Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users
-[Get started with push notifications]: /documentation/articles/mobile-services-windows-phone-get-started-push
+[移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/
+[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started/
+[Get started with data]: /documentation/articles/mobile-services-windows-phone-get-started-data/
+[Get started with authentication]: /documentation/articles/mobile-services-windows-phone-get-started-users/
+[Get started with push notifications]: /documentation/articles/mobile-services-windows-phone-get-started-push/
+
 [在源代码管理中存储服务器脚本]: /documentation/articles/mobile-services-store-scripts-source-control
-<!---HONumber=HO63-->
+
+<!---HONumber=74-->

@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="使用 Live Connect 进行应用程序身份验证 (Windows Phone) | 移动开发人员中心" 
-	description="了解如何通过 Windows Phone 应用程序在 Azure 移动服务中使用 Live Connect 单一登录。" 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="使用 Live Connect 对应用进行身份验证 (Windows Phone) | Windows Azure"
+	description="了解如何通过 Windows Phone 应用程序在 Azure 移动服务中使用 Live Connect 单一登录。"
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="04/09/2015" 
-	wacn.date="07/25/2015"/>
+	ms.date="08/18/2015" 
+	wacn.date="10/22/2015"/>
 
 #  使用 Microsoft 帐户以客户端托管身份验证方式对 Windows Phone 应用程序进行身份验证
 
@@ -136,4 +136,4 @@
 [使用脚本为用户授权]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=HO63-->
+<!---HONumber=74-->
