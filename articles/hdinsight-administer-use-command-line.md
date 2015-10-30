@@ -28,7 +28,7 @@ Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href
 
 在开始阅读本文前，你必须具有：
 
-- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/)。
+- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
 
 - **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)。
 
@@ -142,11 +142,11 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 [azure-command-line-tools]: /documentation/articles/xplat-cli/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
-[azure-purchase-options]: /pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 
 
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
 

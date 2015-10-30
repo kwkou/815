@@ -44,9 +44,9 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 
 Name | 脚本
 ----- | -----
-**安装 R** | https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
-**安装 Solr** | https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。
-- **安装 Giraph** | https://hdiconfigactions.blob.core.chinacloudapi.cn/giraphconfigactionv01/giraph-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
+**安装 R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
+**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。
+- **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
 
 
 
@@ -118,7 +118,7 @@ HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/mi
 
 
 ## 支持 HDInsight 群集上使用的开放源代码软件
-Microsoft Azure HDInsight 服务是一个弹性平台，可让你使用围绕着 Hadoop 形成的开放源代码技术生态系统，在云中生成大数据应用程序。Microsoft Azure 为开放源代码技术提供一般级别的支持，如 <a href="http://azure.microsoft.com/support/faq/" target="_blank">Azure 支持常见问题网站</a>上的**支持范围**部分中所述。HDInsight 服务为如下所述的某些组件提供附加的支持级别。
+Windows Azure HDInsight 服务是一个弹性平台，可让你使用围绕着 Hadoop 形成的开放源代码技术生态系统，在云中生成大数据应用程序。Windows Azure 为开放源代码技术提供一般级别的支持，如 <a href="/support/faq/" target="_blank">Azure 支持常见问题网站</a>上的**支持范围**部分中所述。HDInsight 服务为如下所述的某些组件提供附加的支持级别。
 
 HDInsight 服务中有两种类型的开放源代码组件：
 

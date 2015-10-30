@@ -485,7 +485,7 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 [hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn479228.aspx
+[hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
