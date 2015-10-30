@@ -30,7 +30,7 @@
 + [Batch Apps 客户端 SDK](http://www.nuget.org/packages/Microsoft.Azure.Batch.Apps/2.3.0-preview) (NuGet) – 与应用程序交互，以便将作业卸载到 批处理( Batch )服务
 + [Batch Apps Python 客户端](https://github.com/Azure/azure-batch-apps-python) (GitHub) - Python 客户端模块，用来与 Batch Apps 服务中设置的应用程序交互
 
->[AZURE.IMPORTANT]Azure 只会以预览版形式发布 批处理（ Batch ） Apps API。你只应该针对测试或概念证明项目开发它。在将来的服务版本中，关键的 批处理（ Batch ） Apps 功能将集成到 批处理( Batch ) API。
+>[AZURE.IMPORTANT]Azure 只会以预览版形式发布 批处理（ Batch ） Apps API。你只应该针对测试或概念证明项目开发它。在将来的服务版本中，关键的批处理（ Batch ） Apps 功能将集成到 批处理( Batch ) API。
 
 ## 其他资源
 
