@@ -71,7 +71,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 6. 在 **VirtualNetworkSites** 元素中，根据以上方案图添加新的虚拟网络，其中包含 *10.1.0.0/16* 地址前缀和两个子网。下面的文件代码段显示了 **VirtualNetworkSites** 元素示例。
 	
 	    <VirtualNetworkSites>
-	      <VirtualNetworkSite name="vnet01" Location="East US">
+	      <VirtualNetworkSite name="vnet01" Location="China East">
 	        <AddressSpace>
 	          <AddressPrefix>10.1.0.0/16</AddressPrefix>
 	        </AddressSpace>
@@ -108,7 +108,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 		$storage1 = New-AzureStorageAccount `
 			-StorageAccountName v1v2teststorage1 `
-		    -Location "East US"	
+		    -Location "China East"	
 
 3.  运行以下命令以创建 VM。确保替换用户名和密码值。
 
@@ -125,7 +125,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 5. 通过运行以下命令，创建新的云服务以托管 VM。
 
-		New-AzureService -ServiceName "v1v2svc01" -Location "East US"
+		New-AzureService -ServiceName "v1v2svc01" -Location "China East"
  		New-AzureVM -ServiceName "v1v2svc01" –VNetName "vnet01" –VMs $vm1
 
 ### 步骤 3：为经典 VNet 创建 VPN 网关 
@@ -192,7 +192,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 5. 若要在名为 **RG1** 的新资源组中创建 ARM VNet 及其相关对象，请运行以下 PowerShell 命令。请确保更改模板文件和参数文件的路径。
 
 		Switch-AzureMode AzureResourceManager
-		New-AzureResourceGroup -Name RG1 -Location "Central US" `
+		New-AzureResourceGroup -Name RG1 -Location "China North" `
 		    -TemplateFile C:\Azure\azuredeploy.json `
 		    -TemplateParameterFile C:\Azure\azuredeploy-parameters.json		
 
@@ -304,7 +304,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 		$vnet02gateway = Get-AzureVirtualNetworkGateway -Name ArmAsmGateway -ResourceGroupName RG1
 		
 		New-AzureVirtualNetworkGatewayConnection -Name arm-asm-s2s-connection `
-			-ResourceGroupName RG1 -Location "Central US" -VirtualNetworkGateway1 $vnet02gateway `
+			-ResourceGroupName RG1 -Location "China North" -VirtualNetworkGateway1 $vnet02gateway `
 			-LocalNetworkGateway2 $vnet01gateway -ConnectionType IPsec `
 			-RoutingWeight 10 -SharedKey 'abc123'
 
