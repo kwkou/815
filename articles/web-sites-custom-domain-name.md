@@ -68,7 +68,7 @@
 
 1.	在你的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
 2.	在“网站”选项卡中，单击站点的名称并选择“仪表板”。
-3.	从页面底部选择“管理域”。（如果此选项已禁用，请确保你使用的模式为“共享”、“基本”或“标准”。有关详细信息，请参阅[如何缩放网站](http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-scale/)。） 
+3.	从页面底部选择“管理域”。（如果此选项已禁用，请确保你使用的模式为“共享”、“基本”或“标准”。有关详细信息，请参阅[如何缩放网站](http://www.windowsazure.cn/documentation/articles/web-sites-scale/)。） 
 
 	![](./media/web-sites-custom-domain-name/dncmntask-cname-6.png)
 

@@ -254,7 +254,7 @@
 <!-- URLs. -->
 
   [Azure Java 开发人员中心]: /develop/java/
-  [适用于 Java 的 Azure 库文档]: http://dl.windowsazure.com/javadoc/
-  [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223283.aspx
+  [适用于 Java 的 Azure 库文档]: http://dl.windowsazure.cn/javadoc/
+  [Media Services Client Development]: http://msdn.microsoft.com/zh-cn/library/azure/dn223283.aspx
 
 <!---HONumber=74-->

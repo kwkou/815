@@ -88,7 +88,7 @@
 
 ## 引用
 
-* [PowerShell Cmdlet](https://msdn.microsoft.com/library/azure/dn858087.aspx)  
+* [PowerShell Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx)  
 * [.NET SDK for Hadoop](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx)  
 * [.NET library for Avro](https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library)  
 * [.NET SDK for HBase](https://www.nuget.org/packages/Microsoft.HBase.Client/)  

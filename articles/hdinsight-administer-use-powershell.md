@@ -50,7 +50,7 @@ HDInsight 群集在 Azure 存储帐户上需要 Azure 资源组和 Blob 容器�
 
 3. 创建新的资源组：
 
-	New-AzureResourceGroup -name <AzureResourceGroupName> -Location <AzureDataCente> # 例如，“West US”
+	New-AzureResourceGroup -name <AzureResourceGroupName> -Location <AzureDataCente> # 例如，“China North”
 
 	[AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
 
@@ -237,7 +237,7 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 	$querystring = @"
 		SHOW TABLES;
 		SELECT * FROM hivesampletable 
-			WHERE Country='United Kingdom'
+			WHERE Country='China'
 			LIMIT 10;
 	"@
 
@@ -265,7 +265,7 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 * [Azure HDInsight 入门][hdinsight-get-started]
 
 
-[azure-purchase-options]: /pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 
 [azure-trial]: /pricing/1rmb-trial/
 
@@ -274,7 +274,7 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
 [hdinsight-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/

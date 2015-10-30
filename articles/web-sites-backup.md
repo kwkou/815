@@ -171,7 +171,7 @@ Web Apps 可以备份以下信息：
 
 对 Web 应用进行一个或多个备份后，则会在你的存储帐户的“容器”边栏选项卡中看到该备份以及你的 Web 应用。在存储帐户中，每个备份都由一个 .zip 文件和一个 .xml 文件组成，前者包含备份数据，后者包含 .zip 文件内容的清单。如果你想要在无需实际执行 Web 应用还原的情况下访问备份，则可以解压缩并浏览这些文件。
 
-Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL 数据库，这是 BACPAC 文件（无文件扩展名），并且可以导入。若要基于 BACPAC 导出创建新的 SQL 数据库，请参阅[导入 BACPAC 文件以创建新的用户数据库](http://technet.microsoft.com/library/hh710052.aspx)。
+Web 应用的数据库备份存储在 .zip 文件的根目录中。对于 SQL 数据库，这是 BACPAC 文件（无文件扩展名），并且可以导入。若要基于 BACPAC 导出创建新的 SQL 数据库，请参阅[导入 BACPAC 文件以创建新的用户数据库](http://technet.microsoft.com/zh-cn/library/hh710052.aspx)。
 
 > [AZURE.WARNING]改动“websitebackups”容器中的任何文件都会导致备份无效，进而无法还原。
 

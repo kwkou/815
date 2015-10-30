@@ -112,7 +112,7 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 
 2. 复制 git remote add 命令，该命令已在门户所返回说明的步骤 3 中列出。它将类似于以下命令：
 
-		git remote add azure https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
+		git remote add azure https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 
     > [AZURE.NOTE]**remote** 命令可将命名引用添加到远程存储库。在本例中，它为 Azure 网站存储库创建名为“azure”的引用。
 
@@ -131,7 +131,7 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 		remote: Preparing deployment for commit id '369a79c929'.
 		remote: Preparing files for deployment.
 		remote: Deployment successful.
-		To https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
+		To https://username@needsmoregit.scm.chinacloudsites.cn:443/NeedsMoreGit.git
 		* [new branch]		master -> master
 
 	> [AZURE.NOTE]为 Azure 网站创建的存储库应推送请求以便面向其存储库的 <strong>master</strong> 分支，后者将用作该网站的内容。

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何使用 Azure CLI 在经典模式下创建 NSG | Microsoft Azure"
+   pageTitle="如何使用 Azure CLI 在经典模式下创建 NSG | Windows Azure"
    description="了解如何使用 Azure CLI 在经典模式下创建和部署 NSG"
    services="virtual-network"
    documentationCenter="na"
@@ -47,7 +47,7 @@
 		info:    Creating a network security group "NSG-FrontEnd"
 		info:    Looking up the network security group "NSG-FrontEnd"
 		data:    Name                            : NSG-FrontEnd
-		data:    Location                        : West US
+		data:    Location                        : China North
 		data:    Security group rules:
 		data:    Name                               Source IP           Source Port  Destination IP   Destination Port  Protocol  Type      Action  Prior
 		ity  Default
@@ -153,7 +153,7 @@
 		info:    Creating a network security group "NSG-BackEnd"
 		info:    Looking up the network security group "NSG-BackEnd"
 		data:    Name                            : NSG-BackEnd
-		data:    Location                        : West US
+		data:    Location                        : China North
 		data:    Security group rules:
 		data:    Name                               Source IP           Source Port  Destination IP   Destination Port  Protocol  Type      Action  Prior
 		ity  Default

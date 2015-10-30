@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="配置流量管理器故障转移流量路由方法 | Microsoft Azure"
+   pageTitle="配置流量管理器故障转移流量路由方法 | Windows Azure"
    description="本文将帮助你在流量管理器中配置故障转移流量路由方法"
    services="traffic-manager"
    documentationCenter=""
@@ -40,13 +40,13 @@
 
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint)
 
-[云服务](http://go.microsoft.com/fwlink/?LinkId=314074)
+[云服务](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 
-[网站](http://go.microsoft.com/fwlink/p/?LinkId=393327)
+[网站](/home/features/web-site/)
 
-[流量管理器上的操作（REST API 参考）](http://go.microsoft.com/fwlink/?LinkId=313584)
+[流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
-[Azure 流量管理器 Cmdlet](http://go.microsoft.com/fwlink/p/?LinkId=400769)
+[Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
  
 
 <!---HONumber=74-->

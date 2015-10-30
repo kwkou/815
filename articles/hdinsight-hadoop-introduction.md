@@ -33,7 +33,7 @@ Azure HDInsight 在云中部署并设置 Apache Hadoop 群集，从而为旨在�
 
 ## <a name="overview"></a>HDInsight 中的 Hadoop 生态系统概述
 
-HDInsight 是在 Microsoft Azure 上快速扩展 Apache Hadoop 技术堆栈（作为大数据分析的首选解决方案）的云实现。它包括 Storm、HBase、Pig、Hive、Sqoop、Oozie、Ambari 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
+HDInsight 是在 Windows Azure 上快速扩展 Apache Hadoop 技术堆栈（作为大数据分析的首选解决方案）的云实现。它包括 Storm、HBase、Pig、Hive、Sqoop、Oozie、Ambari 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
 
 ### Windows 群集
 
@@ -168,7 +168,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * [运行 HDInsight 示例](/documentation/articles/hdinsight-run-samples) - 有关如何运行随 HDInsight 提供的示例的教程。
 	
-* [Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/library/dn479185.aspx) - HDinsight SDK 的参考文档。
+* [Azure HDInsight SDK](http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx) - HDinsight SDK 的参考文档。
 
 
 ### Apache Hadoop			

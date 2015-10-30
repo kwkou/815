@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何使用 PowerShell 在经典模式下创建 NSG | Microsoft Azure"
+   pageTitle="如何使用 PowerShell 在经典模式下创建 NSG | Windows Azure"
    description="了解如何使用 PowerShell 在经典模式下创建和部署 NSG"
    services="virtual-network"
    documentationCenter="na"
@@ -38,7 +38,7 @@
 
 		Name         Location   Label               
 		----         --------   -----               
-		NSG-FrontEnd West US 	Front end subnet NSG
+		NSG-FrontEnd China North 	Front end subnet NSG
 
 
 4. 创建允许从 Internet 访问端口 3389 的安全规则。
@@ -52,7 +52,7 @@
 	预期输出：
 
 		Name     : NSG-FrontEnd
-		Location : Central US
+		Location : China North
 		Label    : Front end subnet NSG
 		Rules    : 
 		           
@@ -90,7 +90,7 @@
 		
 
 		Name     : NSG-FrontEnd
-		Location : Central US
+		Location : China North
 		Label    : Front end subnet NSG
 		Rules    : 
 		           
@@ -127,7 +127,7 @@
 
 		Name        Location   Label              
 		----        --------   -----              
-		NSG-BackEnd West US    Back end subnet NSG
+		NSG-BackEnd China North    Back end subnet NSG
 
 
 4. 创建允许从前端子网访问端口 1433（SQL Server 使用的默认端口）的安全规则。
@@ -141,7 +141,7 @@
 	预期输出：
 
 		Name     : NSG-BackEnd
-		Location : Central US
+		Location : China North
 		Label    : Back end subnet NSG
 		Rules    : 
 		           
@@ -178,7 +178,7 @@
 	预期输出：
 
 		Name     : NSG-BackEnd
-		Location : Central US
+		Location : China North
 		Label    : Back end subnet NSG
 		Rules    : 
 		           

@@ -21,11 +21,11 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-本教程演示如何使用 Java 在 Microsoft Azure 上（使用 Azure 网站配置 UI）创建网站。
+本教程演示如何使用 Java 在 Windows Azure 上（使用 Azure 网站配置 UI）创建网站。
 
 如果你不想使用这些技术，例如，如果你想自定义应用程序容器，请参阅[将自定义 Java 网站上载到 Azure](/documentation/articles/web-sites-java-custom-upload)。
 
-> [AZURE.NOTE]若要完成本教程，您需要一个 Microsoft Azure 帐户。如果你没有帐户，则可以<a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">注册获取免费试用版</a>。
+> [AZURE.NOTE]若要完成本教程，您需要一个 Windows Azure 帐户。如果你没有帐户，则可以<a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">注册获取免费试用版</a>。
 
 ## 使用 Azure 配置 UI 创建 Java Web 应用
 

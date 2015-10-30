@@ -62,7 +62,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 
 ###预设
 
-媒体编码器标准版使用[此处](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409)所述的编码器预设之一进行配置。
+媒体编码器标准版使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所述的编码器预设之一进行配置。
 
 ###输入和输出元数据
 
@@ -98,7 +98,7 @@ Azure 媒体编码器是媒体服务支持的编码器之一。从 2015 年 7 �
 
 ###预设
 
-Azure 媒体编码器使用[此处](https://msdn.microsoft.com/library/azure/dn619392.aspx)所述的编码器预设之一进行配置。你还可以在[此处](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/Azure%20Media%20Encoder)获取实际的 Azure 媒体编码器预设文件。
+Azure 媒体编码器使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn619392.aspx)所述的编码器预设之一进行配置。你还可以在[此处](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/Azure%20Media%20Encoder)获取实际的 Azure 媒体编码器预设文件。
 
 ###输入和输出元数据
 
@@ -108,7 +108,7 @@ Azure 媒体编码器使用[此处](https://msdn.microsoft.com/library/azure/dn6
 
 ###缩略图
 
-[创建缩略图](https://msdn.microsoft.com/library/azure/Dn673581.aspx)
+[创建缩略图](https://msdn.microsoft.com/zh-cn/library/azure/Dn673581.aspx)
 
 ###音频和/或视频叠加
 
@@ -160,7 +160,7 @@ Windows Media/ASF |是|是 |是
 AVI（8 位/10 位未压缩）|是|是 |是
 3GPP/3GPP2 |是|是 |否
 平滑流文件格式 (PIFF 1.3)|是|是|否
-[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|是|否|否
+[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd692984)|是|否|否
 Matroska/WebM |是|否|否
 
 ###输入视频编解码器
@@ -248,6 +248,6 @@ Windows Media 音频|否|是|是
 
  
 <!--Reference links in article-->
-[1]: http://azure.microsoft.com/pricing/details/media-services/
+[1]: /home/features/media-services/#price
 
 <!---HONumber=74-->

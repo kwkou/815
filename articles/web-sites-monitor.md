@@ -165,7 +165,7 @@
 
 1. 从“开始”屏幕或“开始”菜单，搜索 **Azure PowerShell**。右键单击“Azure PowerShell”项，并选择“以管理员身份运行”。
 
-	> [AZURE.NOTE]如果未安装 **Azure PowerShell**，请参阅 [Azure PowerShell Cmdlet 入门](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554332.aspx)以了解安装和配置信息。
+	> [AZURE.NOTE]如果未安装 **Azure PowerShell**，请参阅 [Azure PowerShell Cmdlet 入门](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)以了解安装和配置信息。
 
 2. 从 Azure PowerShell 提示符处，使用以下命令下载日志文件：
 
@@ -250,7 +250,7 @@
 2.	单击“配置”选项卡。 
 3.     转到“监视”部分以便输入你的终结点设置。
 4.	输入终结点的名称。
-5.	输入你想要监视的 Web 应用一部分的 URL。例如，[http://contoso.chinacloudsites.cn/archive](http://contoso.chinacloudsites.cn/archive)。 
+5.	输入你想要监视的 Web 应用一部分的 URL。例如，[http://contoso.azurewebsites.net/archive](http://contoso.azurewebsites.net/archive)。 
 6.	从列表中选择一个或多个地理位置。
 7.	（可选）重复之前的步骤以创建第二个终结点。
 8.	单击“保存”。Web 终结点监视数据可能需要一段时间后才在“仪表板”和“监视器”选项卡上显示。

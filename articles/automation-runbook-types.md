@@ -23,18 +23,18 @@ Azure 自动化支持三种类型的 Runbook，这些 Runbook 在下表中进行
 
 ## PowerShell 工作流 Runbook
 
-PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)的文本 Runbook。你可以在 Azure 门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) 到 Azure 自动化中。
+PowerShell 工作流 Runbook 是基于 Windows PowerShell 工作流的文本 Runbook。你可以在 Azure 门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) 到 Azure 自动化中。
 
 ### 优点
 
 - 通过 PowerShell 工作流代码实现所有复杂的逻辑。
-- 在发生错误时，使用[检查点](/documentation/articles/automation-powershell-workflow#checkpoints)恢复 Runbook。
-- 使用[并行处理](/documentation/articles/automation-powershell-workflow#parallel-processing)并行执行多个操作。
+- 在发生错误时，使用检查点恢复 Runbook。
+- 使用并行处理并行执行多个操作。
 
 ### 限制
 
 - 作者必须熟悉 PowerShell 工作流。
-- Runbook 还必须处理与 PowerShell 工作流相关的其他发展性问题，例如[反序列化的对象](/documentation/articles/automation-powershell-workflow#code-changes)。
+- Runbook 还必须处理与 PowerShell 工作流相关的其他发展性问题，例如反序列化的对象。
 - 与 PowerShell Runbook 相比，Runbook 需要更长时间来启动，因为它在运行前需要进行编译。
 
 ## PowerShell Runbook
@@ -49,9 +49,8 @@ PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documenta
 ### 限制
 
 - 必须熟悉 PowerShell 脚本。
-- 不能使用[并行处理](/documentation/articles/automation-powershell-workflow#parallel-processing)来并行执行多个操作。
-- 在发生错误时，不能使用[检查点](/documentation/articles/automation-powershell-workflow#checkpoints)恢复 Runbook。
-- 不能对[混合 Runbook 辅助角色](/documentation/articles/automation-hybrid-runbook-worker)运行 Runbook。
+- 不能使用并行处理来并行执行多个操作。
+- 在发生错误时，不能使用检查点恢复 Runbook。
 
 ### 已知问题
 以下是当前 PowerShell Runbook 的已知问题。
@@ -73,7 +72,6 @@ PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documenta
   
 ## 相关文章
 
-- [学习 Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
 - [创建或导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
 
 <!---HONumber=74-->

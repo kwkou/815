@@ -127,7 +127,7 @@
 
 选择“外接程序”<strong></strong>可从列表中选择分析外接程序，也可转到 Azure 应用商店选择一个。选择“自定义”<strong></strong>可从列表中选择 New Relic 之类的分析提供程序。如果你使用某一自定义提供程序，则必须在“提供程序密钥”<strong></strong>框中输入许可证密钥。
 
-有关 New Relic 与 Azure 网站配合使用的详细信息，请参阅 <a href="/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Azure 网站上的 New Relic 应用程序性能管理</a>。
+有关 New Relic 与 Azure 网站配合使用的详细信息，请参阅 <a href="/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Azure 网站上的 New Relic 应用程序性能管理</a>。
 
 ### 应用设置
 

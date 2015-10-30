@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HDInsight 的 Hadoop 群集版本有哪些新功能？| Microsoft Azure"
+	pageTitle="HDInsight 的 Hadoop 群集版本有哪些新功能？| Windows Azure"
 	description="HDInsight 支持多个可部署的 Hadoop 群集版本。请参见“支持的 Hadoop 和 HortonWorks 数据平台 (HDP) 版本”。"
 	services="hdinsight"
 	editor="cgronlun"
@@ -89,7 +89,7 @@ HDInsight 平台的一些突出功能包括：
 下表列出当前可用的 HDInsight 版本以及它们使用的相应 Hortonworks 数据平台版本和发布日期。如果知道，还提供其支持到期日期和弃用日期。请注意以下事项：
 
 * 默认情况下，会针对 HDInsight 2.1 和更高版本的群集部署具有两个头节点的高度可用群集。它们不适用于 HDInsight 1.6 群集。
-* 某版本的支持到期后，其就不能通过 Azure 门户提供了。下表列出 Azure 门户上提供的版本。你可通过 Windows PowerShell [New-AzureHDInsightCluster](http://msdn.microsoft.com/library/dn593744.aspx) 命令中的 `Version` 参数和 .NET SDK 连续获取群集版本，直到其弃用日期为止。
+* 某版本的支持到期后，其就不能通过 Azure 门户提供了。下表列出 Azure 门户上提供的版本。你可通过 Windows PowerShell [New-AzureHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 命令中的 `Version` 参数和 .NET SDK 连续获取群集版本，直到其弃用日期为止。
 
 <table border="1"> <tr><th>HDInsight 版本</th><th>HDP 版本</a><th>高可用性</th></th><th>发行日期</th><th>可在 Azure 门户中使用</th><th>支持过期日期</th><th>弃用日期</th></tr> <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>是</td><td>2/18/2015</td><td>是</td><td></td><td></td></tr> <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>是</td><td>6/24/2014</td><td>是</td><td></td><td></td></tr> <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>是</td><td>02/11/2014</td><td>Yes</td><td>09/17/2014</td><td>06/30/2015</td></tr> <tr><td>HDI 2.1</td><td>HDP 1.3</td><td>是</td><td>10/28/2013</td><td>否</td><td>05/12/2014</td><td>05/31/2015</td></tr> <tr><td>HDI 1.6</td><td>HDP 1.1</td><td>否</td><td>10/28/2013</td><td>No</td><td>04/26/2014</td><td>05/31/2015</td></tr> </table><br>
 
