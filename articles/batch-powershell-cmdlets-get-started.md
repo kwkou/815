@@ -15,7 +15,7 @@
 # Azure  批处理( Batch ) PowerShell cmdlet 入门
 本文将简要介绍可用于管理 批处理( Batch )帐户的 Azure PowerShell cmdlet，并提供有关 批处理( Batch )作业、任务的信息和其他详细信息。
 
-有关详细的 cmdlet 语法，请键入`get-help <Cmdlet_name>`，或参阅 [Azure  批处理( Batch ) cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx)。
+有关详细的 cmdlet 语法，请键入`get-help <Cmdlet_name>`，或参阅 [Azure 批处理( Batch ) cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt125957.aspx)。
 
 ## 先决条件
 
@@ -43,13 +43,13 @@
 
 ### 创建 批处理( Batch )帐户
 
-**New-AzureBatchAccount** 可在指定的资源组中创建新的 批处理( Batch )帐户。如果你没有资源组，可以通过运行 [New-AzureResourceGroup](https://msdn.microsoft.com/zh-cn/library/dn654594.aspx) cmdlet 并在 **Location** 参数中指定一个 Azure 区域来创建资源组。（可以通过运行 [Get-AzureLocation](https://msdn.microsoft.com/zh-cn/library/dn654582.aspx) 查找不同 Azure 资源的可用区域。） 例如：
+**New-AzureBatchAccount** 可在指定的资源组中创建新的批处理( Batch )帐户。如果你没有资源组，可以通过运行 [New-AzureResourceGroup](https://msdn.microsoft.com/zh-cn/library/dn654594.aspx) cmdlet 并在 **Location** 参数中指定一个 Azure 区域来创建资源组。（可以通过运行 [Get-AzureLocation](https://msdn.microsoft.com/zh-cn/library/dn654582.aspx) 查找不同 Azure 资源的可用区域。） 例如：
 
 ```
 New-AzureResourceGroup –Name MyBatchResourceGroup –location "China North"
 ```
 
-然后，在资源组中创建新的 批处理( Batch )帐户，此时还应该为 <*account_name*> 指定帐户名，以及 批处理( Batch )服务可用的位置。帐户创建可能需要几分钟才能完成。例如：
+然后，在资源组中创建新的批处理( Batch )帐户，此时还应该为 <*account_name*> 指定帐户名，以及 批处理( Batch )服务可用的位置。帐户创建可能需要几分钟才能完成。例如：
 
 ```
 New-AzureBatchAccount –AccountName <account_name> –Location "China North" –ResourceGroupName MyBatchResourceGroup
