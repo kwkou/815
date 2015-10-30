@@ -9,9 +9,9 @@
    />
 
 <tags
-   ms.date="05/27/2015"
+   ms.date="09/01/2015"
    ms.service="virtual-network"
-   wacn.date="09/18/2015"
+   wacn.date="10/17/2015"
    />
    
 # 管理虚拟网络：负载平衡器 TCP 空闲超时
@@ -40,7 +40,7 @@ TCP 空闲超时可以针对以下情况进行配置：
 * TBD
 
 ## PowerShell 示例
-为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools-samples)。
+为获得最佳结果，请下载[最新版的 Azure PowerShell](https://github.com/Azure/azure-sdk-tools/releases)。
 
 ### 将你的实例级公共 IP 的 TCP 超时配置为 15 分钟
 
@@ -147,4 +147,4 @@ LoadBalancerDistribution 的值可以是 sourceIP（用于 2 元组关联）、s
       </InputEndpoint>
     </LoadBalancedEndpointList>
 
-<!---HONumber=70-->
+<!---HONumber=74-->

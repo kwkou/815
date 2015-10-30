@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="07/28/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="09/21/2015"
+	wacn.date="10/17/2015"/>
 
 
 # 在 Azure 虚拟网络中安装副本 Active Directory 域控制器
@@ -29,7 +29,8 @@
 在此案例中，外部用户需要访问在添加域的服务器上运行的应用程序。运行应用程序服务器和副本 DC 的 VM 安装在 Azure 虚拟网络中。虚拟网络可通过[站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create) 连接方式连接到本地网络，如下图中所示。
 <!--, or you can use [ExpressRoute](../../services/expressroute/) for a faster connection-->
 
-应用程序服务器和 DC 将部署在独立的[云服务](/documentation/articles/cloud-services-what-is)中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-manage-availability)中改进容错功能。DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相互复制。不需要任何同步工具。
+应用程序服务器和 DC 将部署在独立的[云服务](/documentation/articles/cloud-services-what-is)中以分散计算处理，并在[可用性集](/documentation/articles/virtual-machines-manage-availability)中改进容错功能。
+DC 将使用 Active Directory 复制功能在彼此之间以及与本地 DC 相互复制。不需要任何同步工具。
 
 ![][1]
 
@@ -59,7 +60,8 @@
 
 ## 为 DC 角色创建 Azure VM
 
-重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+重复以下步骤，根据需要创建用于托管 DC 角色的 VM。应该至少部署两个虚拟域控制器来提供容错和冗余。如果 Azure 虚拟网络包含至少两个采用类似配置的 DC（即，它们都是 GC、运行 DNS 服务器，并且都不包含任何 FSMO 角色，等等），那么，你可将运行这些 DC 的 VM 放在可用性集中，以获得更高的容错能力。
+若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 1. 在 Azure 经典门户中，单击“添加”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
@@ -119,4 +121,4 @@
 <!--Image references-->
 [1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-<!---HONumber=70-->
+<!---HONumber=74-->

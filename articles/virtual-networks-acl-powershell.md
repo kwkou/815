@@ -8,8 +8,8 @@
    editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.date="06/08/2015"
-   wacn.date="08/01/2015"/>
+   ms.date="09/04/2015"
+   wacn.date="10/17/2015"/>
 
 # 如何使用 PowerShell 管理终结点的访问控制列表 (ACL)
 
@@ -93,4 +93,4 @@
 
 [如何与虚拟机建立通信](/documentation/articles/virtual-machines-set-up-endpoints)
 
-<!---HONumber=64-->
+<!---HONumber=74-->
