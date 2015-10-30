@@ -4,7 +4,7 @@ Azure 网站支持从源代码控件和存储库工具（例如，BitBucket、Co
 
 在本文中，你将了解如何使用 Git 从本地计算机直接发布到 Azure 网站（在 Azure 中，此发布方法称为**本地 Git**）。你还将了解如何启用从存储库网站（例如，BitBucket、CodePlex、Dropbox、GitHub 或 Mercurial）进行的连续部署。有关使用 TFS 进行连续部署的信息，请参阅[使用 Visual Studio Online 向 Azure 连续传送项目]。
 
-> [AZURE.NOTE]在使用“针对 Mac 和 Linux 的 Azure 命令行工具”创建网站时，将自动执行本文中所述的许多 Git 命令。[](../xplat-cli/)
+> [AZURE.NOTE]在使用“针对 Mac 和 Linux 的 Azure 命令行工具”创建网站时，将自动执行本文中所述的许多 Git 命令。[](/documentation/articles/xplat-cli)
 
 此任务包括下列步骤：
 

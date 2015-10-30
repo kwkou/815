@@ -23,7 +23,7 @@
 
 本教程演示如何使用 Java 在 Microsoft Azure 上（使用 Azure 网站配置 UI）创建网站。
 
-如果你不想使用这些技术，例如，如果你想自定义应用程序容器，请参阅[将自定义 Java 网站上载到 Azure](../web-sites-java-custom-upload)。
+如果你不想使用这些技术，例如，如果你想自定义应用程序容器，请参阅[将自定义 Java 网站上载到 Azure](/documentation/articles/web-sites-java-custom-upload)。
 
 > [AZURE.NOTE]若要完成本教程，您需要一个 Microsoft Azure 帐户。如果你没有帐户，则可以<a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">注册获取免费试用版</a>。
 
@@ -48,6 +48,6 @@
 
 ## 后续步骤
 
-现在，你有了一台在 Azure 上作为 Java 网站运行的 Java 应用程序服务器。若要添加你自己的应用程序或网页，请参阅[将应用程序或网页添加到 Java 网站](../web-sites-java-add-app)。
+现在，你有了一台在 Azure 上作为 Java 网站运行的 Java 应用程序服务器。若要添加你自己的应用程序或网页，请参阅[将应用程序或网页添加到 Java 网站](/documentation/articles/web-sites-java-add-app)。
 
 <!---HONumber=74-->

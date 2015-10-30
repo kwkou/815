@@ -28,7 +28,7 @@
 
 ### 软件安装
 
-本文中的 AzureWebDemo 应用程序代码是使用 Azure Java SDK 0.7.0 编写的，你可以使用 [Web 平台安装程序][] (WebPI) 进行安装。此外，请确保使用最新版本的 [Azure Toolkit for Eclipse][]。安装 SDK 之后，通过在“Maven 存储库”中运行“更新索引”更新 Eclipse 项目中的依赖项，然后在“依赖项”窗口中重新添加每个包的最新版本。可以通过单击“帮助 > 安装详细信息”验证 Eclipse 中已安装软件的版本；至少应具有以下版本：
+本文中的 AzureWebDemo 应用程序代码是使用 Azure Java SDK 0.7.0 编写的，你可以使用 [Web 平台安装程序][](/documentation/articles/WebPI) 进行安装。此外，请确保使用最新版本的 [Azure Toolkit for Eclipse][]。安装 SDK 之后，通过在“Maven 存储库”中运行“更新索引”更新 Eclipse 项目中的依赖项，然后在“依赖项”窗口中重新添加每个包的最新版本。可以通过单击“帮助 > 安装详细信息”验证 Eclipse 中已安装软件的版本；至少应具有以下版本：
 
 - Package for Microsoft Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
@@ -41,7 +41,7 @@
 
 ### 在 Azure 中创建 Active Directory (AD)
 
-如果你的 Azure 订阅中还没有 Active Directory (AD)，请使用你的 Microsoft 帐户登录 [Azure 管理门户][] (AMP)。如果你有多个订阅，请单击“订阅”并选择要用于此项目的订阅的默认目录。然后单击“应用”切换到该订阅视图。
+如果你的 Azure 订阅中还没有 Active Directory (AD)，请使用你的 Microsoft 帐户登录 [Azure 管理门户][](/documentation/articles/AMP)。如果你有多个订阅，请单击“订阅”并选择要用于此项目的订阅的默认目录。然后单击“应用”切换到该订阅视图。
 
 1. 从左侧菜单中选择“Active Directory”。单击“新建 > 目录 > 自定义创建”。
 
@@ -60,7 +60,7 @@
 
 Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对于使用服务管理 API 代表订阅所有者管理订阅资源的客户端应用程序，你可以使用这些 X.509 v3 证书来对其进行身份验证。
 
-此过程中的代码使用自签名证书在 Azure 上进行身份验证。对于此过程，你需要事先创建一个证书并将其上载到 [Azure 管理门户][] (AMP)。这包括以下步骤：
+此过程中的代码使用自签名证书在 Azure 上进行身份验证。对于此过程，你需要事先创建一个证书并将其上载到 [Azure 管理门户][](/documentation/articles/AMP)。这包括以下步骤：
 
 - 生成表示客户端证书的 PFX 文件，并将其保存在本地。
 - 从 PFX 文件生成管理证书（CER 文件）。
