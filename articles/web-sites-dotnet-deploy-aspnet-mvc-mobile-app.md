@@ -564,7 +564,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 <!-- External Links -->
 [Visual Studio Express 2013]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
 [Visual Studio 2015]: https://www.visualstudio.com/downloads/download-visual-studio-vs
-[AzureSDKVs2013]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409
+[AzureSDKVs2013]: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids
 [Fiddler]: http://www.fiddler2.com/fiddler2/
 [EmulatorIE11]: http://msdn.microsoft.com/zh-cn/library/ie/dn255001.aspx
 [EmulatorChrome]: https://developers.google.com/chrome-developer-tools/docs/mobile-emulation

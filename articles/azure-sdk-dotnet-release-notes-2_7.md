@@ -22,7 +22,7 @@
 
 本文档还包含 Azure SDK for .NET 2.7.1 发行版的发行说明。
 
-只有 Visual Studio 2015 和 Visual Studio 2013 才支持 Azure SDK 2.7。[Azure SDK 2.6](http://azure.microsoft.com/downloads/) 是 Visual Studio 2012 支持的最后一个 SDK。
+只有 Visual Studio 2015 和 Visual Studio 2013 才支持 Azure SDK 2.7。[Azure SDK 2.6](/downloads/) 是 Visual Studio 2012 支持的最后一个 SDK。
 
 有关此版本的详细信息，请参阅 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)和 [Azure SDK 2.7.1 通告文章](http://go.microsoft.com/fwlink/?LinkId=623850)。
 
@@ -45,7 +45,7 @@
 
 ### HDInsight 工具 
 
-此版本做了以下更新。这些更新目前以预览版提供。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=619108)。
+此版本做了以下更新。这些更新目前以预览版提供。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 - 为 Tez 上的 Hive 作业绘制 Hive 图形
 - 完全支持 Hive DML IntelliSense
@@ -54,8 +54,8 @@
 
 #### 重大变化
 
-- 使用此版本的工具时，必须先升级旧的 **Storm** 项目。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=619108)。
-- 不再支持 Visual Studio Web Express。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=619108)。
+- 使用此版本的工具时，必须先升级旧的 **Storm** 项目。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+- 不再支持 Visual Studio Web Express。有关详细信息，请参阅[此博客](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ### Azure 网站工具
 
@@ -63,7 +63,7 @@
 
 - 添加了对 DreamSpark 帐户的支持
 - 对 Azure 工具做了全面的更改，以支持新的 Azure 资源管理 API
-- 在[云资源管理器](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)中添加了对 Azure 网站的支持
+- 在[云资源管理器](/documentation/articles/azure-sdk-dotnet-release-notes-2_7#cloud_explorer)中添加了对 Azure 网站的支持
 
 #### 已知问题
 
@@ -151,6 +151,6 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 
 [Azure SDK 2.7 通告文章](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
-[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
+[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)
 
 <!---HONumber=74-->

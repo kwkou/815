@@ -176,7 +176,7 @@
 - 类别（字符串）
 - 已完成（布尔值）
 
-**PartitionKey** 和 **RowKey** 被表服务用作表键。有关详细信息，请参阅[了解表服务数据模型](https://msdn.microsoft.com/library/azure/dd179338.aspx)。
+**PartitionKey** 和 **RowKey** 被表服务用作表键。有关详细信息，请参阅[了解表服务数据模型](https://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
 
 
 1. 在 **tasklist** 目录中，创建名为 **models** 的新目录。
@@ -605,8 +605,8 @@
 
 ## 其他资源
 [Azure 命令行界面]
-[创建 Node.js 应用程序并将其部署到 Azure  网站]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[使用 Git 发布到 Azure 网站]: /zh-cn/documentation/articles/web-sites-publish-source-control/
+[创建 Node.js 应用程序并将其部署到 Azure  网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[使用 Git 发布到 Azure 网站]: /documentation/articles/web-sites-publish-source-control/
 [Azure 开发人员中心]: /develop/nodejs/
 
 
@@ -617,10 +617,10 @@
 [for free]: http://www.windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[使用 MongoDB 的 Node.js Web 应用]: /zh-cn/documentation/articles/web-sites-nodejs-store-data-mongodb/
-[Azure CLI]: /zh-cn/documentation/articles/xplat-cli/
+[使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
+[Azure CLI]: /documentation/articles/xplat-cli/
 
-[使用 Git 发布到 Azure 网站]: /zh-cn/documentation/articles/web-sites-publish-source-control/
+[使用 Git 发布到 Azure 网站]: /documentation/articles/web-sites-publish-source-control/
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
@@ -642,6 +642,6 @@
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
 
-[Create and deploy a Node.js application to an Azure  Website]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Create and deploy a Node.js application to an Azure  Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
 <!---HONumber=74-->

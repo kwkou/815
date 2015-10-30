@@ -27,7 +27,7 @@
 * 如何查看 Web 服务器日志，包括详细的错误消息和失败请求跟踪。
 * 如何将诊断日志发送至 Azure 存储帐户并在其中进行查看。
 
-如果你有 Visual Studio Ultimate，则还可以使用 [IntelliTrace](http://msdn.microsoft.com/library/vstudio/dd264915.aspx) 进行调试。本教程未介绍 IntelliTrace。
+如果你有 Visual Studio Ultimate，则还可以使用 [IntelliTrace](http://msdn.microsoft.com/zh-cn/library/vstudio/dd264915.aspx) 进行调试。本教程未介绍 IntelliTrace。
 
 ### 教程章节
 
