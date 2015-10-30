@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="10/22/2015"/>
 
 
 
@@ -19,7 +19,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-portal-encoding-units)
+- [门户](/documentation/articles/media-services-portal-encoding-units)
 - [.NET](/documentation/articles/media-services-dotnet-encoding-units)
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
 
@@ -50,15 +50,15 @@
 若要开具支持票证，请执行以下操作：
 
 1. 在[管理门户](http://manage.windowsazure.cn)中登录到你的 Azure 帐户。
-2. 转到“支持”。[](http://www.windowsazure.cn/support/contact/)
+2. 转到“[支持](http://www.windowsazure.cn/support/contact/)”。
 3. 单击“获取支持”。
 4. 选择你的订阅。
-5. 在支持类型下选择“技术”。
+5. 在支持类型下，选择“技术”。
 6. 单击“创建票证”。
 7. 在下一页显示的产品列表中选择“Azure 媒体服务”。
 8. 选择适合你问题的“问题类型”。
-9. 单击“继续”(Continue)。
+9. 单击“继续”。
 10. 根据下一页上的说明进行操作，然后输入问题的详细信息。   
 11. 单击“提交”以创建该票证。
 
-<!---HONumber=71-->
+<!---HONumber=74-->

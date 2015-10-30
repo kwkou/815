@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="10/22/2015"/>
 
 
 #使用 Azure 媒体服务传送实时流
@@ -182,4 +182,4 @@ Windows Azure 媒体服务提供了相应的 API 用来请求媒体服务启动�
 	Console.WriteLine(channelId);
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

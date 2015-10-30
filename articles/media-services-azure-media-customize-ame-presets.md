@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 #通过自定义任务预设操作编码任务 
 
@@ -25,7 +25,8 @@ Azure 媒体服务编码器使你能够将自定义预设文件传递给 Azure �
 
 默认情况下，Azure 媒体编码器通过将输入资产和编码过程的各种特性组合在一起来创建输出文件名。如下文所述，使用宏来标识每种特性。
 
-以下是可用于输出文件命名的宏的完整列表：音频比特率 - 对音频进行编码时使用的比特率，单位为 kbps
+以下是可用于输出文件命名的宏的完整列表：
+音频比特率 - 对音频进行编码时使用的比特率，单位为 kbps
 
 - 音频编解码器 - 用于对音频进行编码的编解码器，有效值为 AAC、WMA 和 DDP
 - 通道计数 - 编码的音频通道数，有效值为：1、2 或 6
@@ -40,7 +41,7 @@ Azure 媒体服务编码器使你能够将自定义预设文件传递给 Azure �
 
 	{Original File Name}_{Video Codec}{Video Bitrate}{Audio Codec}{Language}{Channel Count}{Audio Bitrate}.{Default Extension}
 
-使用 [Preset](https://msdn.microsoft.com/zh-cn/library/azure/dn584702.aspx) 元素的 DefaultMediaOutputFileName 特性来指定文件命名约定。例如：
+使用 [Preset](https://msdn.microsoft.com/library/azure/dn554334.aspx) 元素的 DefaultMediaOutputFileName 属性来指定文件命名约定。例如：
 
 	<Preset DefaultMediaOutputFileName="{Original file name}{StreamId}_LongOutputFileName{Bit Rate}{Video Codec}{Video Bitrate}{Audio Codec}{Audio Bitrate}{Language}{Channel Count}.{Default extension}"
 	  Version="5.0">
@@ -249,7 +250,7 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 
 ###使用媒体服务编码器进行拼结
 
-在 <MediaFile> 元素内对拼结进行控制，如下面的预设所示：
+在<MediaFile>元素内对拼结进行控制，如下面的预设所示：
 	
 	<MediaFile
 	    DeinterlaceMode="AutoPixelAdaptive"
@@ -290,11 +291,11 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 	     </Sources>
 	</MediaFile>
 
-对于要拼结的每个视频，将向 <Sources> 元素添加 <Source> 元素。每个 <Source> 元素包含一个 <Clips> 元素。每个 <Clips> 元素包含一个或多个 <Clip> 元素，后者通过指定开始时间和结束时间来指定拼结到输出资产中的视频数目。<Source> 元素引用其作用于的资产。引用的格式取决于要拼结的视频是位于不同资产中还是位于单个资产中。如果想要拼结整个视频，只需省略 <Clips> 元素。
+对于要拼结的每个视频，将向<Sources>元素添加<Source>元素。每个<Source>元素包含一个<Clips>元素。每个<Clips>元素包含一个或多个<Clip>元素，后者通过指定开始时间和结束时间来指定拼结到输出资产中的视频数目。<Source>元素引用其作用于的资产。引用的格式取决于要拼结的视频是位于不同资产中还是位于单个资产中。如果想要拼结整个视频，只需省略<Clips>元素。
 
 ###拼结多个资产中的视频
 
-拼结多个资产中的视频时，将从零开始的索引用于 <Source> 元素的 MediaFile 特性，以标识 <Source> 元素对应的资产。当未指定零索引时，未指定 MediaFile 特性的 <Source> 元素将引用首个输入资产。所有其他 <Source> 元素都必须通过使用 %n% 语法（其中 n 是输入资产从零开始的索引）来指定所引用输入资产从零开始的索引。在前面的示例中，第一个 <Source> 元素指定第一个输入资产，第二个 <Source> 元素指定第二个输入资产，依此类推。不要求按顺序引用输入资产，例如：
+拼结多个资产中的视频时，将从零开始的索引用于<Source>元素的 MediaFile 特性，以标识<Source>元素对应的资产。当未指定零索引时，未指定 MediaFile 特性的<Source>元素将引用首个输入资产。所有其他<Source>元素都必须通过使用 %n% 语法（其中 n 是输入资产从零开始的索引）来指定所引用输入资产从零开始的索引。在前面的示例中，第一个<Source>元素指定第一个输入资产，第二个<Source>元素指定第二个输入资产，依此类推。不要求按顺序引用输入资产，例如：
 	
 	<MediaFile
 	    DeinterlaceMode="AutoPixelAdaptive"
@@ -425,7 +426,8 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 	     </Sources>
 	</MediaFile>
 
-此预设将 video1.mp4、video2.wmv 和 video3.wmv 的某些部分拼结为输出资产。创建作业和任务与拼结多个资产中的视频相同，只需上载单个资产，如以下代码所示：
+此预设将 video1.mp4、video2.wmv 和 video3.wmv 的某些部分拼结为输出资产。
+创建作业和任务与拼结多个资产中的视频相同，只需上载单个资产，如以下代码所示：
 
 	// Creates a stitching job that uses a single asset 
     static public void StitchWithASingleAsset()
@@ -505,4 +507,4 @@ Azure 媒体服务编码器可让你将图像（jpg、bmp、gif、tif）、视�
 
 [Azure 媒体编码器 XML 架构](https://msdn.microsoft.com/zh-cn/library/azure/dn584702.aspx)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

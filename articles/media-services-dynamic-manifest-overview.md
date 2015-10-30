@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services"  
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 #筛选器和动态清单
 
@@ -205,4 +205,4 @@
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

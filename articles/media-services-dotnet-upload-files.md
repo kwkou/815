@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/17/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 
 
@@ -111,7 +111,7 @@
 	{
 	    var assetName = "UploadMultipleFiles_" + DateTime.UtcNow.ToString();
 	
-	    var asset = CreateEmptyAsset(assetName, assetCreationOptions);
+            IAsset asset = _context.Assets.Create(assetName, assetCreationOptions);
 	
 	    var accessPolicy = _context.AccessPolicies.Create(assetName, TimeSpan.FromDays(30),
 	                                                        AccessPermissions.Write | AccessPermissions.List);
@@ -188,7 +188,8 @@
 	IAsset destAsset1 = _context.Assets.Create(name + "_asset_1", AssetCreationOptions.None);
 	IAsset destAsset2 = _context.Assets.Create(name + "_asset_2", AssetCreationOptions.None);
 
-一个 IngestManifestAsset 将一个资产与一个用于批量引入的批量 IngestManifest 相关联。它还关联构成每个资产的 AssetFiles。若要创建 IngestManifestAsset，请使用服务器上下文中的 Create 方法。
+一个 IngestManifestAsset 将一个资产与一个用于批量引入的批量 IngestManifest 相关联。它还关联构成每个资产的 AssetFiles。
+若要创建 IngestManifestAsset，请使用服务器上下文中的 Create 方法。
 
 以下示例演示如何添加两个新的 IngestManifestAssets，这两项将以前创建的两个资产关联到批量引入清单。每个 IngestManifestAsset 还关联一组将在批量引入期间为每个资产上载的文件。
 
@@ -299,4 +300,5 @@
 将资产上载到媒体服务后，请转到[如何获取媒体处理器][]主题。
 
 [如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor
-<!---HONumber=71-->
+
+<!---HONumber=74-->

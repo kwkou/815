@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services"  
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 #Azure 媒体服务分片 MP4 实时引入规范
 
@@ -202,4 +202,4 @@ Windows Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行�
 
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

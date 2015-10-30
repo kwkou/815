@@ -9,10 +9,12 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="10/22/2015"/>
 
 #使用 .NET 进行媒体服务开发 
+
+[AZURE.INCLUDE [media-services-selector-setup](../includes/media-services-selector-setup.md)]
 
 本主题介绍如何开始使用 .NET 开发媒体服务应用程序。
 
@@ -66,11 +68,11 @@
 
 4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。
 	
-	若要获取**帐户名**和**帐户密钥信息**，请打开“Azure 管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
+	若要获取**帐户名**和**帐户密钥**信息，请打开“Azure 管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 
 	<pre><code>
-	&lt;configuration>
+&lt;configuration>
     &lt;appSettings>
 	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
     	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
@@ -94,4 +96,4 @@
 现在，你可以开始开发媒体服务应用程序了。
  
 
-<!---HONumber=71-->
+<!---HONumber=74-->

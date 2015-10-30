@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"   
+	wacn.date="10/22/2015"/>
 
 
 # 使用 Azure Media Indexer 为媒体文件编制索引
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-manage-content#index)
+- [门户](/documentation/articles/media-services-manage-content#index)
 - [.NET](/documentation/articles/media-services-index-content)
 
 
@@ -342,4 +342,4 @@ Error：指示是否为此媒体文件成功编制索引。0 表示成功，其�
 
 <!-- URLs. -->
 
-<!---HONumber=71-->
+<!---HONumber=74-->

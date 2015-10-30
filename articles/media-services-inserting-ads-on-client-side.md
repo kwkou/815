@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services"  
-	ms.date="08/17/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 
 #在客户端上插入广告
@@ -155,7 +155,7 @@ Application/x-javascript - 资源显示在 HTML <**脚本**> 标记中。
 
 Application/x-shockwave-flash – 资源显示在 Flash Player 中。
 
-**<IFrameResource>** 描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>** 描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>** 指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关 **<NonLinearAds>** 元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>** 元素位于 **<NonLinearAds>** 元素内，而不是 **<NonLinear>** 元素内。
+**<IFrameResource>**描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>**描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>**指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关**<NonLinearAds>**元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>**元素位于**<NonLinearAds>**元素内，而不是**<NonLinear>**元素内。
 
 在 <CompanionAds> 元素内定义伴随广告。<CompanionAds> 元素可以包含一个或多个 <Companion> 元素。每个 <Companion> 元素均描述一个伴随广告，并且可以包含以与非线性广告相同的方式定义的 <StaticResource><IFrameResource> 或 <HTMLResource>。VAST 文件可以包含多个伴随广告，播放器应用程序可以选择最适合显示的广告。有关 VAST 的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。
 
@@ -565,7 +565,7 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 ##实现带有广告支持的 iOS 视频播放器
 
 
-Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。
+Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从 [Azure 媒体播放器框架](https://github.com/Azure/azure-media-player-framework)下载播放器框架和示例。GitHub 页面具有指向 Wiki（含有关播放器框架的其他信息）的链接和播放器示例简介：[Azure 媒体播放器 Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework)。
 
 有关插入广告的详细信息，请参阅[向媒体中插入广告](/documentation/articles/media-services-inserting-ads-on-client-side#insert_ads_into_media)。
 
@@ -592,7 +592,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 ###使用 VAST 安排广告
 
 以下示例演示如何安排后期绑定 VAST 广告。
-
+	
 	//Example:3 How to schedule a late binding VAST ad.
 	// set the start time for the ad
     adLinearTime.startTime = 13;
@@ -618,19 +618,16 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
         [self logFrameworkError];
     }
          
-   以下示例演示如何安排早期绑定 VAST 广告。 
-   
-	//Example:4 Schedule an early binding VAST ad
+   以下示例演示如何安排早期绑定 VAST 广告。
+    //Example:4 Schedule an early binding VAST ad
     //Download the VAST file
     if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.chinacloudapi.cn/vast/PlayerTestVAST.xml"]])
     {
         [self logFrameworkError];
     }
     else
-    {
-        adLinearTime.startTime = 7;
+        { adLinearTime.startTime = 7;
         adLinearTime.duration = 0;
-        
         
 		// Create AdInfo instance
 	    AdInfo *vastAdInfo2 = [[[AdInfo alloc] init] autorelease];
@@ -810,4 +807,4 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 
 [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 #保护内容概述
 
@@ -136,4 +136,4 @@
 
 [content-protection]: ./media/media-services-content-protection/media-services-content-protection.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

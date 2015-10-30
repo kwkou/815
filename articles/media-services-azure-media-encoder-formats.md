@@ -9,96 +9,98 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/05/2015" 
+	wacn.date="10/22/2015"/>
 
 #Azure Media Encoder 格式和编解码器
 
-编码器使用编解码器压缩数字媒体。通常，通过编码器的各种设置，你可以指定所生成媒体的属性，例如，使用的编解码器、文件格式、分辨率和比特率。文件格式是用于保存压缩视频以及用来压缩视频的编解码器的相关信息的容器。
-
-编解码器有两个组件：一个用于压缩数字媒体文件进行传输，另一个用于解压缩数字媒体文件进行播放。有音频编解码器（用于压缩和解压缩音频）和视频编解码器（用于压缩和解压缩视频）。编解码器可以使用无损压缩或有损压缩。无损编解码器在进行压缩时会保留全部信息。文件解压缩后，得到的文件与输入媒体相同，因此无损编解码器非常适用于存档和存储。有损编解码器在编码时会丢失部分信息，可通过牺牲视频质量生成比原始文件小的文件，因此非常适用于在 Internet 上进行流式传输。Azure Media Encoder 主要使用以下两款编解码器来进行编码：H.264 和 VC-1。我们的合作伙伴编码器生态系统中可能还提供了其他编解码器。
-
-了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。
-
-本文档包含最常见的导入和导出文件格式的列表，你可以将这些格式用于 Azure Media Encoder。
+本文档包含最常见的输入、输出文件格式和编解码器的列表，你可以将这些格式和编解码器用于 Azure 媒体编码器。
 
 
-[Azure 媒体编码器导入格式](#import_formats)
-
-[Azure 媒体编码器导出格式](#export_formats)
-
-
-##<a id="import_formats"></a>Azure 媒体编码器导入格式 
-
-以下部分列出了导入操作支持的编解码器和文件格式。
-
-###视频编解码器
-
-- H.264（Baseline、Main 和 High Profile）
-- MPEG-1（包含 MPEG-PS）
-- Mpeg-2（Simple 和 Main Profile 及 4:2:2 Profile）
-- MPEG-4 v2（Simple Visual Profile 和 Advanced Simple Profile）
-- VC-1（Simple、Main 和 Advanced Profile）
-- Windows Media 视频（Simple、Main 和 Advanced Profile）
-- DV（DVC、DVHD、DVSD、DVSL）
-- Grass Valley HQ/HQX
+##输入文件格式（容器）
  
-###音频编解码器
+文件格式（文件扩展名）|支持
+---|---
+3GPP、3GPP2（.3gp、.3g2、.3gp2） |是
+高级系统格式 (ASF) (.asf) |是
+高级视频编码高清晰 (AVCHD) [ MPEG-2 传输流 ] (.mts, .m2ts)	 |是
+音频视频交错 (AVI) (.avi) |是
+数码摄录机 MPEG-2 (MOD) (.mod) |是
+DVD 传输流 (TS) 文件 (.ts) |是
+DVD 视频对象 (VOB) 文件 (.vob) |是
+Expression Encoder 屏幕捕获编解码器文件 (.xesc) |是
+MP4（.mp4、.m4a、.m4v）/ISMV（.isma、.ismv） |是
+MPEG-1 系统流（.mpeg、.mpg） |是
+MPEG-2 视频文件 (.m2v) |是
+Windows Media 视频 (WMV) (.wmv) |是
+AC-3（杜比数字）音频 (.ac3)|是
+音频交换文件格式 (AIFF) (.aiff)|是
+广播波形格式 (.bwf)|是
+MP3 (MPEG-1 Audio Layer 3)(.mp3)|是
+MPEG-4 有声读物 (.m4b)|是
+WAVE 文件 (.wav)|是
+Windows Media 音频 (.wma)|是
+Adobe® Flash® F4V |否		
+MXF/SMPTE 377M |受限制 
+GXF |否		 
+[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|否
+Matroska/WebM |否
 
-- AC-3（杜比数字音频）
-- AAC（AAC-LC、带 AAC-LC 内核的 HE-AAC v1 和带 AAC-LC 内核的 HE-AAC v2）
-- MP3
-- Windows Media Audio 9（Windows Media Audio Standard、Windows Media Audio Professional 和 Windows Media Audio Lossless）
-
-###视频文件格式
- 
-<table border="1">
-<tr><th>文件格式</th><th>文件扩展名</th></tr>
-<tr><td>3GPP、3GPP2</td><td>.3gp、.3g2、.3gp2</td></tr>
-<tr><td>高级流格式 (ASF)</td><td>.asf</td></tr>
-<tr><td>高级视频编码高清晰 (AVCHD) [MPEG-2 传输流]</td><td>.mts、.m2ts</td></tr>
-<tr><td>音频视频交错 (AVI)</td><td>.avi</td></tr>
-<tr><td>数码摄录机 MPEG-2 (MOD)</td><td>.mod</td></tr>
-<tr><td>DVD 传输流 (TS) 文件</td><td>.ts</td></tr>
-<tr><td>DVD 视频对象 (VOB) 文件</td><td>.vob</td></tr>
-<tr><td>Expression Encoder 屏幕捕获编解码器文件</td><td>.xesc</td></tr>
-<tr><td>MP4</td><td>.mp4</td></tr>
-<tr><td>MPEG-1 系统流</td><td>.mpeg、.mpg</td></tr>
-<tr><td>MPEG-2 视频文件</td><td>.m2v</td></tr>
-<tr><td>平滑流文件格式 (PIFF 1.3)</td><td>.ismv</td></tr>
-<tr><td>Windows Media 视频 (WMV)</td><td>.wmv</td></tr>
-</table>
 
 支持一些未压缩的格式。有关详细信息，请参阅[支持的未压缩视频格式](#uncompressed)
 
-###音频文件格式
+##输入视频编解码器
 
-<table border="1">
-<tr><th>文件格式</th><th>文件扩展名</th></tr>
-<tr><td>AC-3（杜比数字）音频</td><td>.ac3</td></tr>
-<tr><td>音频交换文件格式 (AIFF)</td><td>.aiff</td></tr>
-<tr><td>广播波形格式</td><td>.bwf</td></tr>
-<tr><td>MP3 (MPEG-1 Audio Layer 3)</td><td>.mp3</td></tr>
-<tr><td>MP4 音频</td><td>.m4A</td></tr>
-<tr><td>MPEG-4 有声读物</td><td>.m4b</td></tr>
-<tr><td>WAVE 文件</td><td>.wav</td></tr>
-<tr><td>Windows Media 音频</td><td>.wma</td></tr>   
-</table>
+输入视频编解码器|支持
+---|--- 
+H.264（Baseline、Main 和 High Profile） |是
+AVC 8 位/10 位，最高支持 4:2:2，包括 AVCIntra |仅限 8 位 4:2:0
+Avid DNxHD（MXF 格式） |否
+DVCPro/DVCProHD（MXF 格式） |否
+JPEG2000 |否
+Mpeg-2（Simple 和 Main Profile 及 4:2:2 Profile） |最高支持 4:2:2 Profile
+MPEG-1（包含 MPEG-PS） |是
+Windows Media 视频/VC-1 |是
+Canopus HQ/HQX |是
+MPEG-4 v2（Simple Visual Profile 和 Advanced Simple Profile） |是
+[Theora](https://en.wikipedia.org/wiki/Theora) |否
+VC-1（Simple、Main 和 Advanced Profile） |是
+Windows Media 视频（Simple、Main 和 Advanced Profile） |是
+DV（DVC、DVHD、DVSD、DVSL） |是
+Grass Valley HQ/HQX |是
+ 
 
-###图像文件格式
+##输入音频编解码器
 
-<table border="1">
-<tr><th>文件格式</th><th>文件扩展名</th></tr>
-<tr><td>位图</td><td>.bmp</td></tr>
-<tr><td>GIF、动画 GIF</td><td>.gif</td></tr>
-<tr><td>JPEG</td><td>.jpeg、.jpg</td></tr>
-<tr><td>PNG</td><td>.png</td></tr>
-<tr><td>TIFF</td><td>.tif</td></tr>
-<tr><td>WPF Canvas XAML</td><td>.xaml</td></tr>
-</table>
+输入音频编解码器|支持
+---|---
+AES（SMPTE 331M 和 302M、AES3-2003） |否
+Dolby® E |否
+Dolby® Digital (AC3) |是
+Dolby® Digital Plus (E-AC3) |否
+AAC（AAC-LC、带 AAC-LC 内核的 HE-AAC v1 和带 AAC-LC 内核的 HE-AAC v2；最高支持 5.1）|是
+MPEG Layer 2|是|是|是
+MP3 (MPEG-1 Audio Layer 3)|是
+Windows Media Audio 9（Windows Media Audio Standard、Windows Media Audio Professional 和 Windows Media Audio Lossless） |是
+WAV/PCM|是
+[FLAC](https://en.wikipedia.org/wiki/FLAC)|否
+[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |否
+[Vorbis](https://en.wikipedia.org/wiki/Vorbis)|否
 
 
-##<a id="export_formats"></a>Azure 媒体编码器导出格式
+##输入图像文件格式
+
+文件格式（文件扩展名） | 支持
+---|---
+位图 (.bmp) | 是
+GIF、动画 GIF (.gif)| 是
+JPEG（.jpeg、.jpg）| 是
+PNG (.png)| 是
+TIFF (.tif)| 是
+WPF Canvas XAML (.xaml)| 是
+
+
+##输出格式和编解码器
 
 下表列出了导出操作支持的编解码器和文件格式。
 
@@ -112,11 +114,11 @@ H.264（High、Main 和 Baseline Profile）</td><td>Windows Media Audio Standard
 AAC-LC、HE-AAC v1、HE-AAC v2</td></tr>
 </table>
 
-有关媒体服务中支持的其他编解码器和筛选器，请参阅[ Windows DirectShow 筛选器](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd375464.aspx)。
+有关媒体服务中支持的其他编解码器和筛选器，请参阅 [Windows DirectShow 筛选器](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd375464.aspx)。
 
 ##<a id="uncompressed"></a>支持的未压缩视频格式 
 
-Azure 媒体服务为导入未压缩的视频数据提供支持。
+Azure Media Services 为导入未压缩的视频数据提供支持。
 
 下面是支持的未压缩格式的部分列表。
 
@@ -133,4 +135,4 @@ Azure 媒体服务为导入未压缩的视频数据提供支持。
 <tr><td>Indeo 生成的 YVU9 格式</td><td>Indeo 生成的 YVU9 格式包含有关与上一帧的差别的附加信息。每个像素 9.5 位，但报告 9 位。</td></tr>
 </table>
 
-<!---HONumber=71-->
+<!---HONumber=74-->

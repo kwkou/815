@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 .NET SDK 开始传送点播视频 (VoD)"
+	pageTitle="使用 .NET SDK 开始传送点播视频 (VoD) 内容"
 	description="本教程将引导你完成使用 Azure 媒体服务和 .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="08/18/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/18/2015"
+	wacn.date="10/22/2015"/>
 
 
 # 使用 .NET SDK 开始传送点播视频 (VoD) 内容
@@ -18,7 +18,8 @@
 [AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started)]
 
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
+>[AZURE.NOTE]
+> 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
 本教程将引导你完成使用 Azure Media Services (AMS) SDK for .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。
 
@@ -28,7 +29,7 @@
 ## 先决条件
 以下是开始使用 Media Services SDK for .NET 进行开发所要满足的先决条件。
 
-- 操作系统：Windows 7、Windows 2008 R2、Windows 8 或更高版本。
+- 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
 - .NET Framework 4.5 或 .NET Framework 4.0
 - Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级版、旗舰版或速成版）。
 
@@ -47,7 +48,7 @@
 
 ##使用门户创建媒体服务帐户
 
-1. 在“管理门户”[][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在[管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
 
 	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
@@ -65,12 +66,11 @@
 
 	成功创建帐户后，状态将更改为“活动”。
 
-	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主要密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
-
+	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
 
 	![“媒体服务”页](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
 
-	当你双击帐户名称时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
+	当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
 
 ##使用门户配置流式处理终结点
 
@@ -100,7 +100,7 @@
 	分配所有新的单元大约需要 20 分钟才能完成。
 
 
-	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
+	>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
 	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
 
@@ -197,7 +197,7 @@
 
 ##创建新资产并上载视频文件
 
-在媒体服务中，可以将数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。资产中的文件称为**资产文件**。
+在媒体服务中，可以将数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、文本轨道和隐藏字幕文件（以及有关这些文件的元数据）。 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。资产中的文件称为**资产文件**。
 
 下面定义的 **UploadFile** 方法调用 **CreateFromFile**（在 .NET SDK Extensions 中定义）。**CreateFromFile** 创建指定的源文件所要上载到的新资产。
 
@@ -206,7 +206,7 @@
 - **无** - 不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。如果计划使用渐进式下载交付 MP4，则使用此选项。
 - **StorageEncrypted** - 使用此选项可以通过高级加密标准 (AES) 256 位加密在本地加密明文内容，然后将其上载到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
 - **CommonEncryptionProtected** - 上载经过常用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
-- **EnvelopeEncryptionProtected** – 如果要上载使用 AES 加密的 HLS，请使用此选项。请注意，Transform Manager 必须已对文件进行编码和加密。
+- **EnvelopeEncryptionProtected** - 如果要上载使用 AES 加密的 HLS，请使用此选项。请注意，Transform Manager 必须已对文件进行编码和加密。
 
 **CreateFromFile** 方法还允许你指定回调，以报告文件的上载进度。
 
@@ -412,13 +412,13 @@ MPEG DASH
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.chinacloudsites.cn/azuremediaplayer.html)。
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 Internet Explorer、Chrome 或 Safari）中。
 
 ##后续步骤
 
-若要了解有关生成视频点播应用程序的详细信息，请参阅[生成 VoD 应用程序](/documentation/articles/media-services-video-on-demand-workflow)
+若要了解有关生成点播视频应用程序的详细信息，请参阅[生成 VoD 应用程序](/documentation/articles/media-services-video-on-demand-workflow)
 
 ###其他资源
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure 媒体服务 101 - 立即在线获取你的视频！</a>
@@ -430,6 +430,6 @@ MPEG DASH
 
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
-  []: http://manage.windowsazure.cn/
+  [管理门户]: http://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=74-->
