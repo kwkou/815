@@ -41,7 +41,7 @@ Azure 媒体服务编码器使你能够将自定义预设文件传递给 Azure �
 
 	{Original File Name}_{Video Codec}{Video Bitrate}{Audio Codec}{Language}{Channel Count}{Audio Bitrate}.{Default Extension}
 
-使用 [Preset](https://msdn.microsoft.com/library/azure/dn554334.aspx) 元素的 DefaultMediaOutputFileName 属性来指定文件命名约定。例如：
+使用 [Preset](https://msdn.microsoft.com/zh-cn/library/azure/dn554334.aspx) 元素的 DefaultMediaOutputFileName 属性来指定文件命名约定。例如：
 
 	<Preset DefaultMediaOutputFileName="{Original file name}{StreamId}_LongOutputFileName{Bit Rate}{Video Codec}{Video Bitrate}{Audio Codec}{Audio Bitrate}{Language}{Channel Count}.{Default extension}"
 	  Version="5.0">

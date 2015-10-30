@@ -22,7 +22,7 @@
 
 在将内容传送到客户（流式传输实时事件或视频点播）时，你的目标就是：将优质视频传递到处于不同网络条件下的各种设备。若要实现此目标，请执行以下操作：
 
-- 将你的流编码成多比特率（[自适应比特率](http://zh.wikipedia.org/wiki/Adaptive_bitrate_streaming)）视频流（这将会负责处理质量和网络条件），并 
+- 将你的流编码成多比特率（[自适应比特率](http://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)）视频流（这将会负责处理质量和网络条件），并 
 - 使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将你的流动态地重新打包成不同的协议（这将会负责不同设备上的流式处理）。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。 
 
 ###清单文件 

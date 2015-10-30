@@ -43,7 +43,7 @@ Windows Media 音频 (.wma)|是
 Adobe® Flash® F4V |否		
 MXF/SMPTE 377M |受限制 
 GXF |否		 
-[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|否
+[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd692984)|否
 Matroska/WebM |否
 
 
