@@ -27,7 +27,7 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)，你需要执行以下操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](media-services-manage-origins.md#scale_streaming_endpoints/)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 媒体服务支持将在本文中介绍的以下按需编码器：
 
@@ -90,7 +90,7 @@ Azure 媒体编码器是媒体服务支持的编码器之一。从 2015 年 7 �
 
 ###如何使用
 
-[如何使用 Azure 媒体编码器进行编码](media-services-dotnet-encode-asset)
+[如何使用 Azure 媒体编码器进行编码](/documentation/articles/media-services-dotnet-encode-asset)
 
 ###格式
 
@@ -120,7 +120,7 @@ Azure 媒体编码器使用[此处](https://msdn.microsoft.com/library/azure/dn6
 
 ###另请参阅
 
-[使用 Dolby Digital Plus 编码媒体](media-services-encode-with-dolby-digital-plus)
+[使用 Dolby Digital Plus 编码媒体](/documentation/articles/media-services-encode-with-dolby-digital-plus)
 
 ##媒体编码器高级工作流
 	

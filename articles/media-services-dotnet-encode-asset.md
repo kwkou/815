@@ -210,7 +210,7 @@
 
 ##另请参阅 
 
-[媒体服务编码概述](media-services-encode-asset)
+[媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
  
 
