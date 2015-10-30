@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="在 Azure 网站中配置 Web Apps" 
+	pageTitle="在 Azure 网站中配置 Web 应用" 
 	description="如何在 Azure 网站中配置 Web 应用" 
 	services="app-service\web" 
 	documentationCenter="" 
-	authors="MikeWasson" 
+	authors="erikre" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor="jimbe"/>
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="05/28/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015" 
+	wacn.date="10/22/2015"/>
 	
 # 如何配置网站 #
 在 Azure 管理门户中，你可以更改网站的配置选项并链接到其他 Azure 资源，如数据库。
@@ -24,7 +24,7 @@
 - [后续步骤](#next)
 
 
-##<a name="howtochangeconfig"></a>如何更改网站的配置选项
+## <a name="howtochangeconfig"></a>如何更改网站的配置选项
 
 <!-- HOW TO: CHANGE CONFIGURATION OPTIONS FOR A WEBSITE -->
 
@@ -51,7 +51,7 @@
 
 <strong>平台</strong>。选择是要在 32 位还是 64 位环境中运行应用程序。64 位环境需要“基本”或“标准”模式。“免费”和“共享”模式始终在 32 位环境下运行。
 
-<strong>Web 套接字</strong>。设为“打开”以启用 WebSocket 协议；例如，如果你的网站使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio)。
+<strong>Web 套接字</strong>。设为“打开”以启用 WebSocket 协议；例如，如果你的网站使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/)。
 
 <strong>始终打开</strong>。默认情况下，网站如果已处于空闲状态相当一段时间，则是未加载的状态。这样可以让系统节省资源。在“基本”或“标准”模式下，你可以启用“始终打开”<strong></strong>，以始终保持加载站点。如果你的站点运行连续的 Web 作业，则应启用“始终打开”，否则这些 Web 作业可能无法可靠运行
 
@@ -120,13 +120,14 @@
 
 在“基本”或“标准”模式下，你可以测试 HTTP 或 HTTPS 终结点的可用性，最多可测试三个地理分散的位置。如果 HTTP 响应码为错误（4xx 或 5xx），或者响应时间超过 30 秒，则表示监视测试失败。如果从所有指定的位置监视测试均成功，则终结点被视为可用。
 
-有关详细信息，请参阅[如何监视 web 终结点状态](/documentation/articles/web-sites-monitor)。
+有关详细信息，请参阅[如何监视 Web 终结点状态](/documentation/articles/web-sites-monitor)。
 
 
 ### 开发人员分析
 
 选择“外接程序”<strong></strong>可从列表中选择分析外接程序，也可转到 Azure 应用商店选择一个。选择“自定义”<strong></strong>可从列表中选择 New Relic 之类的分析提供程序。如果你使用某一自定义提供程序，则必须在“提供程序密钥”<strong></strong>框中输入许可证密钥。
 
+有关 New Relic 与 Azure 网站配合使用的详细信息，请参阅 <a href="/zh-cn/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">Azure 网站上的 New Relic 应用程序性能管理</a>。
 
 ### 应用设置
 
@@ -175,7 +176,7 @@ Web 应用程序可能会使用根据 URL 路由的模块，而不是提供静�
 	
 
 <!-- HOW TO: CONFIGURE A WEBSITE TO USE A SQL DATABASE -->
-##<a name="howtoconfigSQL"></a>如何配置网站以使用 SQL 数据库
+## <a name="howtoconfigSQL"></a>如何配置网站以使用 SQL 数据库
 
 执行以下步骤可将网站链接到 SQL 数据库：
 
@@ -193,24 +194,24 @@ Web 应用程序可能会使用根据 URL 路由的模块，而不是提供静�
 
 7. 完成“链接数据库”向导的第 3 页和第 4 页上的必填字段，然后单击第 4 页上的“完成”复选标记。
 
-Azure 将使用指定的参数创建 SQL 数据库并将该数据库链接到网站。<!--
+Azure 将使用指定的参数创建 SQL 数据库并将该数据库链接到网站。
 <!-- HOW TO: CONFIGURE A WEBSITE TO USE A MYSQL DATABASE -->
 ##<a name="howtoconfigMySQL"></a>如何配置网站以使用 MySQL 数据库##
 若要配置网站以使用 MySQL 数据库，请遵循与使用 SQL 数据库相同的步骤，但是在“链接资源”向导中，请选择“MySQL 数据库”，而不是“SQL 数据库”。
 
 或者，你也可以选择使用“自定义创建”选项来创建网站。在“数据库”下拉列表中，选择“新建 MySQL 数据库”或“使用现有的 MySQL 数据库”。-->
-##<a name="howtodomain"></a>如何配置自定义域名
+## <a name="howtodomain"></a>如何配置自定义域名
 
-有关配置网站以使用自定义域名的信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。
+有关配置网站以使用自定义域名的信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。
 
-##<a name="howtoconfigSSL"></a>如何配置网站以使用 SSL##
+## <a name="howtoconfigSSL"></a>如何配置网站以使用 SSL##
 
-有关在 Azure 上为自定义域配置 SSL 的信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)。
+有关在 Azure 上为自定义域配置 SSL 的信息，请参阅[为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
 
-##<a name="next"></a>后续步骤
+## <a name="next"></a>后续步骤
 
-* [如何缩放网站](/documentation/articles/web-sites-scale)
+* [如何缩放网站](/documentation/articles/web-sites-scale/)
 
-* [如何监视网站](/documentation/articles/web-sites-monitor)
+* [如何监视网站](/documentation/articles/web-sites-monitor/)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

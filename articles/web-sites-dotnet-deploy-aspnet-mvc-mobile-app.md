@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="08/01/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015" 
+	wacn.date="10/22/2015"/>
 
 
 # 在 Azure 网站上部署 ASP.NET MVC 5 移动 Web 应用
@@ -117,7 +117,7 @@
 
 ASP.NET 标记视图已根据屏幕大小缩放，这是 Bootstrap 自动为你调整的。但是，你可以改进此视图，以更好地适应移动浏览器。例如，以便能够轻松读取“日期”列。本教程的随后部分，你将更改 *AllTags* 视图，使其更适合移动应用。
 
-##<a name="bkmk_bootstrap"></a> Bootstrap CSS 框架
+## <a name="bkmk_bootstrap"></a> Bootstrap CSS 框架
 
 Bootstrap 支持是 MVC 5 模板中内置的新功能。你已经看到了它如何立即改进应用程序中的不同视图。例如，当浏览器宽度较小时，顶部导航栏可自动折叠。在桌面浏览器中，尝试调整浏览器窗口的大小，并了解导航栏如何改变其外观。这是 Bootstrap 内置的响应式 Web 设计。
 
@@ -145,15 +145,15 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
 在下一部分中，你将了解如何提供移动浏览器特定的视图。
 
-##<a name="bkmk_overrideviews"></a> 重写视图、布局和分部视图
+## <a name="bkmk_overrideviews"></a> 重写视图、布局和分部视图
 
 你可以重写一般性移动浏览器、单个移动浏览器或任何特定浏览器的任何视图（包括布局和分部视图）。若要提供移动特定的视图，你可以复制视图文件并在文件名中添加 *.Mobile*。例如，若要创建移动 *Index* 视图，可将 *Views\\Home\\Index.cshtml* 复制到 *Views\\Home\\Index.Mobile.cshtml*。
 
 在本节中，你将创建一个移动特定布局文件。
 
-若要开始，请将 *Views\\Shared\_Layout.cshtml* 复制到 *Views\\Shared\_Layout.Mobile.cshtml*。打开 *_Layout.Mobile.cshtml*，并将标题从“MVC5 应用程序”更改为“MVC5 应用程序 (Mobile)”。
+若要开始，请将 *Views\\Shared\\_Layout.cshtml* 复制到 *Views\\Shared\\_Layout.Mobile.cshtml*。打开 *\_Layout.Mobile.cshtml*，并将标题从“MVC5 应用程序”更改为“MVC5 应用程序(Mobile)”。
 
-在导航栏的每个 `Html.ActionLink` 调用中，删除每个链接 *ActionLink* 中的“浏览者”。以下代码显示移动布局文件的已完成 `<ul class="nav navbar-nav">` 标记。
+在导航栏的每个 `Html.ActionLink` 调用中，删除每个 *ActionLink* 链接中的“浏览者”。以下代码显示移动布局文件的已完成 `<ul class="nav navbar-nav">` 标记。
 
     <ul class="nav navbar-nav">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -166,15 +166,15 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
     <h2>Tags (M)</h2>
 
-使用桌面浏览器和移动浏览器模拟器浏览到标签页。移动浏览器模拟器将显示你所做的两项更改（更改了标题 *_Layout.Mobile.cshtml* 和标题 *AllTags.Mobile.cshtml*）。
+使用桌面浏览器和移动浏览器模拟器浏览到标签页。移动浏览器模拟器将显示你所做的两项更改（更改了 *\_Layout.Mobile.cshtml* 中的标题和 *AllTags.Mobile.cshtml* 中的标题）。
 
 ![][AllTagsMobile_LayoutMobile]
 
-相比之下，桌面显示并未变化（标题使用 *_Layout.cshtml* 和 *AllTags.cshtml*）。
+相比之下，桌面显示并未变化（使用 *\_Layout.cshtml* 和 *AllTags.cshtml* 中的标题）。
 
 ![][AllTagsMobile_LayoutMobileDesktop]
 
-##<a name="bkmk_browserviews"></a> 创建浏览器特定的视图
+## <a name="bkmk_browserviews"></a> 创建浏览器特定的视图
 
 除了移动特定和桌面特定的视图以外，你还可以为单个浏览器创建视图。例如，你可以创建专门针对 iPhone 或 Android 浏览器的视图。在此部分中，你将为 iPhone 浏览器和 iPhone 版本的 *AllTags* 视图创建布局。
 
@@ -198,32 +198,32 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
     using System.Web.WebPages;
 
-保存更改。请将 *Views\\Shared\_Layout.Mobile.cshtml* 文件复制到 *Views\\Shared\_Layout.iPhone.cshtml*。打开新文件，然后将标题从 `MVC5 Application (Mobile)` 更改为 `MVC5 Application (iPhone)`。
+保存更改。请将 *Views\\Shared\\_Layout.Mobile.cshtml* 文件复制到 *Views\\Shared\\_Layout.iPhone.cshtml*。打开新文件，然后将标题从 `MVC5 Application (Mobile)` 更改为 `MVC5 Application (iPhone)`。
 
-将 *Views\\Home\\AllTags.Mobile.cshtml* 文件复制到 *Views\\Home\\AllTags.iPhone.cshtml*。打开此新文件，将 `<h2>` 元素从“Tags (M)”更改为“Tags (iPhone)”。
+将 *Views\\Home\\AllTags.Mobile.cshtml* 文件复制到 *Views\\Home\\AllTags.iPhone.cshtml*。在此新文件中，将 `<h2>` 元素从“Tags (M)”更改为“Tags (iPhone)”。
 
 运行应用程序。运行移动浏览器模拟器，确保其用户代理设置为“iPhone”，然后浏览到 *AllTags* 视图。如果你在 Internet Explorer 11 F12 开发人员工具中使用模拟器，请将模拟设置为：
 
--   浏览器配置文件 = “Windows Phone”
--   用户代理字符串 = “Custom”
--   自定义字符串 = “Apple-iPhone5C1/1001.525”
+-   浏览器配置文件 = **Windows Phone**
+-   用户代理字符串 = **Custom**
+-   自定义字符串 = **Apple-iPhone5C1/1001.525**
 
 以下屏幕截图显示了使用自定义用户代理字符串（这是一个 iPhone 5C 用户代理字符串）在 Internet Explorer 11 F12 开发人员工具中的模拟器中呈现的 *AllTags* 视图。
 
 ![][AllTagsIPhone_LayoutIPhone]
 
-在移动浏览器中，选择“发言人”链接。因为没有移动视图 (*AllSpeakers.Mobile.cshtml*)，所以使用移动布局视图 (*AllSpeakers.cshtml*) 呈现默认发言人内容 (*_Layout.Mobile.cshtml*)。如下所示， *_Layout.Mobile.cshtml* 中定义了标题“MVC5 应用程序 (Mobile)”。
+在移动浏览器中，选择“发言人”链接。因为没有移动视图 (*AllSpeakers.Mobile.cshtml*)，所以使用移动布局视图 (*AllSpeakers.cshtml*) 呈现默认发言人内容 (*\_Layout.Mobile.cshtml*)。如下所示，*\_Layout.Mobile.cshtml* 中定义了标题“MVC5 应用程序(Mobile)”。
 
 ![][AllSpeakers_LayoutMobile]
 
-通过在 *Views\_ViewStart.cshtml* 文件中将 `RequireConsistentDisplayMode` 设置为 `true`，可以全局禁止默认（非移动）视图在移动布局内呈现，如下所示：
+通过在 *Views\\_ViewStart.cshtml* 文件中将 `RequireConsistentDisplayMode` 设置为 `true`，可以全局禁止默认（非移动）视图在移动布局内呈现，如下所示：
 
     @{
         Layout = "~/Views/Shared/_Layout.cshtml";
         DisplayModeProvider.Instance.RequireConsistentDisplayMode = true;
     }
 
-当 `RequireConsistentDisplayMode` 设置为 `true` 时，移动布局 (*_Layout.Mobile.cshtml*) 只用于移动视图。（即，视图文件仅为 ****ViewName**.Mobile.cshtml* 形式。）你可能需要将 `RequireConsistentDisplayMode` 设置为 `true`（如果你的移动布局不太适合你的非移动视图）。下面的屏幕截图显示当 `RequireConsistentDisplayMode` 设置为 `true` 时，如何呈现 *Speakers* 页面（顶部导航栏中没有字符串“(Mobile)”）。
+当 `RequireConsistentDisplayMode` 设置为 `true` 时，移动布局 (*\_Layout.Mobile.cshtml*) 只用于移动视图（即，视图文件仅为 <i>**ViewName**.Mobile.cshtml</i> 形式）。你可能需要将 `RequireConsistentDisplayMode` 设置为 `true`（如果你的移动布局不太适合你的非移动视图）。下面的屏幕截图显示当 `RequireConsistentDisplayMode` 设置为 `true` 时，如何呈现“发言人”页面（顶部导航栏中没有字符串“(Mobile)”）。
 
 ![][AllSpeakers_LayoutMobileOverridden]
 
@@ -238,11 +238,11 @@ Bootstrap 并不特定于 ASP.NET MVC 5，你可以在任何 Web 应用程序上
 
 在本部分中，我们已了解如何创建移动布局和视图，以及如何为特定的设备（如 iPhone）创建布局和视图。但是，Bootstrap CSS 框架的主要优势是响应式布局，也就是说，可以跨桌面、电话和平板电脑浏览器应用单个样式表，以创建一致的外观。在下一部分中，你将了解如何利用 Bootstrap 来创建适合移动的视图。
 
-##<a name="bkmk_Improvespeakerslist"></a> 改进发言人列表
+## <a name="bkmk_Improvespeakerslist"></a>改进发言人列表
 
-正如你刚才看到的，*Speakers* 视图虽然可读，但链接字迹小，不易在移动设备上点击。在本部分中，你将使 *AllSpeakers* 视图适合移动应用，显示较大的便于点按的链接，并包含一个搜索框用于快速查找发言人。
+正如你刚才看到的，“发言人”视图虽然可读，但链接字迹小，不易在移动设备上点击。在本部分中，你将使 *AllSpeakers* 视图适合移动应用，显示较大的便于点按的链接，并包含一个搜索框，用于快速查找发言人。
 
-你可以使用 Bootstrap [链接列表组 ][]样式来改进 *Speakers* 视图。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 Razor 文件的内容替换为以下代码。
+你可以使用 Bootstrap [链接列表组][]样式来改进“发言人”视图。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 Razor 文件的内容替换为以下代码。
 
      @model IEnumerable<string>
 
@@ -269,8 +269,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ![][AllSpeakersFixedDesktop]
 
-尽管移动浏览器视图得到了改进，但很难在较长的发言人列表中导航。Bootstrap 未提供现成的搜索筛选器功能，但你只需使用几行代码就能添加此功能。首先，将一个搜索框添加到视图，然后与筛选函数的 JavaScript 代码相挂接。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 <form> 标记添加到 <h2> 
-标记的后面，如下所示： </h2>
+尽管移动浏览器视图得到了改进，但很难在较长的发言人列表中导航。Bootstrap 未提供现成的搜索筛选器功能，但你只需使用几行代码就能添加此功能。首先，将一个搜索框添加到视图，然后与筛选函数的 JavaScript 代码相挂接。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 <form> 标记添加到 <h2> 标记的后面，如下所示：
 
     @model IEnumerable<string>
 
@@ -325,21 +324,21 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
         });
     });
 
-你还需要在注册的绑定中包含 filter.js。打开 *App_Start\\BundleConfig.cs* 并更改第一个捆绑。更改第一个 `bundles.Add` 语句（用于 **jquery** 捆绑），以包含 *Scripts\\filter.js*，如下所示：
+你还需要在注册的绑定中包含 filter.js。打开 *App\_Start\\BundleConfig.cs* 并更改第一个捆绑。更改第一个 `bundles.Add` 语句（用于 **jquery** 捆绑），以包含 *Scripts\\filter.js*，如下所示：
 
      bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/filter.js"));
 
-**jquery** 捆绑已由默认的 *_Layout* 视图呈现。稍后，你可以利用相同的 JavaScript 代码向其他列表视图应用筛选器功能。
+**jquery** 捆绑已由默认的 *\_Layout* 视图呈现。稍后，你可以利用相同的 JavaScript 代码向其他列表视图应用筛选器功能。
 
 刷新移动浏览器并转到 *AllSpeakers* 视图。在搜索框中，键入“sc”。现在，应已根据你的搜索字符串筛选发言人列表。
 
 ![][AllSpeakersFixedSearchBySC]
 
-##<a name="bkmk_improvetags"></a> 改进标签列表
+## <a name="bkmk_improvetags"></a> 改进标签列表
 
-与默认 *Speakers* 视图一样，*Tags* 视图虽然可读，但链接字迹小，不易在移动设备上点击。如果你使用前面所述的代码更改，你可以使用修复 *Speakers* 相同的方式来修复 *Tags* 视图，但是需要在 *Views\\Home\\AllTags.cshtml* 中使用以下 `Html.ActionLink` 方法：
+与默认“发言人”视图一样，“标签”视图虽然可读，但链接字迹小，不易在移动设备上点击。如果你使用前面所述的代码更改，你可以使用与修复“发言人”视图相同的方式来修复“标签”视图，但是需要在 *Views\\Home\\AllTags.cshtml* 中使用以下 `Html.ActionLink` 方法语法：
 
     @Html.ActionLink(tag, 
                      "SessionsByTag", 
@@ -356,9 +355,9 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 >[AZURE.NOTE]如果你发现移动浏览器仍然使用了原始列表格式，并奇怪正常的 Bootstrap 样式为何会发生这种情况，则需要知道，这是前面创建移动特定视图后产生的效果。但是，现在你要使用 Bootstrap CSS 框架来创建响应式 Web 设计，并继续删除这些移动特定的视图和移动特定的布局视图。完成此操作后，刷新的移动浏览器将显示 Bootstrap 样式。
 
-##<a name="bkmk_improvedates"></a> 改进“日期”列表
+## <a name="bkmk_improvedates"></a> 改进日期列表
 
-如果你使用前面所述的代码更改，你可以使用改进 *Speakers* 和 *Tags* 视图相同的方式来修复 *Dates* 视图，但是需要在 *Views\\Home\\AllDates.cshtml* 中使用以下 `Html.ActionLink` 方法：
+如果你使用前面所述的代码更改，你可以使用与改进“发言人”视图和“标签”视图相同的方式来修复“日期”视图，但是需要在 *Views\\Home\\AllDates.cshtml* 中使用以下 `Html.ActionLink` 方法语法：
 
     @Html.ActionLink(date.ToString("ddd, MMM dd, h:mm tt"), 
                      "SessionsByDate", 
@@ -369,7 +368,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ![][AllDatesFixed]
 
-你可以通过按日期组织日期时间值来进一步改进 *Dates* 视图。这可以使用 Bootstrap [panels][] 样式来实现。将 *Views\\Home\\AllDates.cshtml* 文件的内容替换为下列代码：
+你可以通过按日期组织日期时间值来进一步改进“日期”视图。这可以使用 Bootstrap [面板][]样式来实现。将 *Views\\Home\\AllDates.cshtml* 文件的内容替换为下列代码：
 
     @model IEnumerable<DateTime>
 
@@ -405,7 +404,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ![][AllDatesFixed2Desktop]
 
-##<a name="bkmk_improvesessionstable"></a> 改进 SessionsTable 视图
+## <a name="bkmk_improvesessionstable"></a> 改进 SessionsTable 视图
 
 在此部分中，你将使 *SessionsTable* 视图更适合移动应用。此项更改比前面的更改更宽泛。
 
@@ -452,7 +451,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 该代码执行 3 项操作：
 
--   使用 Bootstrap [自定义链接列表组][]将会话信息设为竖向，这样，即可在移动浏览器中阅读所有此类信息（使用 list-group-item-text 等类）
+-   使用 Bootstrap [自定义链接列表组][]将会话信息设为竖向，这样即可在移动浏览器中阅读所有此类信息（使用 list-group-item-text 等类）
 -   将[网格系统][]应用到布局，使会话项在桌面浏览器中横向排布，在移动浏览器中纵向排布（使用 col-md-4 类）
 -   使用[响应式实用工具][]，以便在移动浏览器中查看时隐藏会话标记（使用 hidden-xs 类）
 
@@ -466,7 +465,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 在桌面浏览器中，请注意标记现在已显示。此外，你可以看到，应用的 Bootstrap 网格系统会在两列中排列会话项。如果放大浏览器，就会看到，排列方式更改为三列。
 
-##<a name="bkmk_improvesessionbycode"></a> 改进 SessionByCode 视图
+## <a name="bkmk_improvesessionbycode"></a> 改进 SessionByCode 视图
 
 最后，需要修复 *SessionByCode* 视图，使其适合移动应用。
 
@@ -537,9 +536,9 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 -	将 ASP.NET MVC 5 应用程序部署到 Windows Azure 网站
 -   使用 Bootstrap 在 MVC 5 应用程序中创建响应式 Web 布局
 -   在全局以及针对单个视图重写布局、视图和分部视图
--   使用 `RequireConsistentDisplayMode` 属性控制布局和分部重写的实施
+-   使用 `RequireConsistentDisplayMode` 属性控制布局和分步重写的实施
 -   创建面向特定浏览器（如 iPhone 浏览器）的视图
--   在 Razor 代码中应用 Boostrap 样式
+-   在 Razor 代码中应用 Bootstrap 样式
 
 ## 另请参阅
 
@@ -564,9 +563,10 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 <!-- External Links -->
 [Visual Studio Express 2013]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
+[Visual Studio 2015]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [AzureSDKVs2013]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409
 [Fiddler]: http://www.fiddler2.com/fiddler2/
-[EmulatorIE11]: https://msdn.microsoft.com/zh-cn/library/dn255001.aspx
+[EmulatorIE11]: http://msdn.microsoft.com/zh-cn/library/ie/dn255001.aspx
 [EmulatorChrome]: https://developers.google.com/chrome-developer-tools/docs/mobile-emulation
 [EmulatorOpera]: http://www.opera.com/developer/tools/mobile/
 [StarterProject]: http://go.microsoft.com/fwlink/?LinkID=398780&clcid=0x409
@@ -574,9 +574,8 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 [BootstrapSite]: http://getbootstrap.com/
 [WebPIAzureSdk23NetVS13]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/WebPIAzureSdk23NetVS13.png
 [链接列表组]: http://getbootstrap.com/components/#list-group-linked
-[链接列表组 ]: http://getbootstrap.com/components/#list-group-linked
 [glyphicon]: http://getbootstrap.com/components/#glyphicons
-[panels]: http://getbootstrap.com/components/#panels
+[面板]: http://getbootstrap.com/components/#panels
 [自定义链接列表组]: http://getbootstrap.com/components/#list-group-custom-content
 [网格系统]: http://getbootstrap.com/css/#grid
 [响应式实用工具]: http://getbootstrap.com/css/#responsive-utilities
@@ -620,4 +619,4 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 [SessionByCode3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-3-644.png
 [SessionByCodeFixed3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-Fixed-3-644.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

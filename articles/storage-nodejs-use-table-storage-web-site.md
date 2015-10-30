@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 Azure 表服务的 Node.js Web 应用"
-	description="本教程演示如何使用 Azure 表服务存储 Azure 网站 Web Apps 中托管的 Node.js 应用程序的数据。"
+	description="本教程演示如何使用 Azure 表服务在 Azure 网站所托管的 Node.js 应用程序中存储数据。"
 	tags="azure-portal"
 	services="app-service\web, storage"
 	documentationCenter="nodejs"
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="storage"
-	ms.date="04/28/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/01/2015"
+	wacn.date="10/22/2015"/>
 
 
 
 # 使用 Azure 表服务的 Node.js Web 应用
 
 ## 概述
-本教程演示如何使用 Azure 数据管理提供的表服务来存储和访问在 Azure 上托管的 [node] 应用程序的数据。本教程假定你之前有使用 node 和[Git]的经验。
+本教程演示如何使用 Azure 数据管理提供的表服务来存储和访问在 Azure 网站上托管的 [node] 应用程序的数据。本教程假定你之前有使用 node 和[Git]的经验。
 
 你将学习以下内容：
 
@@ -36,7 +36,7 @@
 
 ## 先决条件
 
-在按照本文中的说明操作之前，你应确保已安装下列项：
+在按照本文中的说明操作之前，请确保已安装下列项：
 
 * [node] 0.10.24 或更高版本
 
@@ -45,7 +45,7 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-##创建存储帐户
+## 创建存储帐户
 
 创建 Azure 存储帐户。应用会使用此帐户存储待办事项。
 
@@ -67,11 +67,11 @@
 
 	![访问密钥][portal-storage-access-keys]
 
-##安装模块并生成基架
+## 安装模块并生成基架
 
 在本节中，你将创建新的 Node 应用程序并使用 npm 添加模块包。对于此应用程序，你将使用 [Express] 和 [Azure] 模块。Express 模块为 Node 提供了一个模型视图控制器框架，而 Azure 模块提供了与表服务的连接。
 
-###安装 Express 并生成基架
+### 安装 Express 并生成基架
 
 1. 在命令行中，创建名为 **tasklist** 的新目录并切换到该目录。  
 
@@ -83,9 +83,9 @@
 
 		sudo npm install express-generator@4.2.0 -g
 
-    输出应如下所示：
+    输出显示类似于以下示例：
 
-		express-generator@4.2.0 C:\Users\username\AppData\Roaming\npm\node_modules\express-generator
+		express-generator@4.2.0 /usr/local/lib/node_modules/express-generator
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)
 
@@ -95,7 +95,7 @@
 
         express
 
-	此命令的输出看上去应如下所示：
+	此命令的输出显示类似于以下示例：
 
 		   create : .
 		   create : ./package.json
@@ -121,17 +121,17 @@
 		   run the app:
 		     $ DEBUG=my-application ./bin/www
 
-	**tasklist** 目录中应当会有几个新目录和文件。
+	此时 **tasklist** 目录中会有几个新目录和文件。
 
-###安装其他模块
+### 安装其他模块
 
-**express** 创建的其中一个文件是 **package.json**。此文件包含模块依赖项的列表。之后，当你将应用程序部署到 Azure 网站 Web Apps 时，此文件会确定需要在 Azure 上安装的模块。
+**express** 创建的其中一个文件是 **package.json**。此文件包含模块依赖项的列表。之后，当你将应用程序部署到 Azure 网站时，此文件会确定需要在 Azure 上安装的模块。
 
 在命令行中，输入以下命令，以安装 **package.json** 文件中描述的模块。可能需要使用“sudo”。
 
         npm install
 
-此命令的输出应与以下内容相似：
+此命令的输出显示类似于以下示例：
 
 	debug@0.7.4 node_modules\debug
 
@@ -148,7 +148,7 @@
 
 使用 **--保存**标志将这些模块的条目添加到 **package.json** 文件中。
 
-此命令的输出看上去应如下所示：
+此命令的输出显示类似于以下示例：
 
 	async@0.9.0 node_modules\async
 
@@ -176,7 +176,7 @@
 - 类别（字符串）
 - 已完成（布尔值）
 
-**PartitionKey** 和 **RowKey** 被表服务用作表键。有关详细信息，请参阅[了解表服务数据模型](https://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
+**PartitionKey** 和 **RowKey** 被表服务用作表键。有关详细信息，请参阅[了解表服务数据模型](https://msdn.microsoft.com/library/azure/dd179338.aspx)。
 
 
 1. 在 **tasklist** 目录中，创建名为 **models** 的新目录。
@@ -357,7 +357,7 @@
 	
 4. 保存 **app.js** 文件。
 
-###修改索引视图
+### 修改索引视图
 
 1. 在文本编辑器中打开 **tasklist/views/index.jade** 文件。
 
@@ -463,26 +463,27 @@
 
 3. 打开 Web 浏览器并导航到 http://127.0.0.1:3000。
 
-此时会显示与下图类似的网页：
+	此时会显示类似于以下示例的网页。
 
 ![显示空白 tasklist 的网页][node-table-finished]
 
-若要创建新的待办事项，请输入名称和类别，然后单击“添加项”。若要将任务标记为完成，请选中“完成”，然后单击“更新任务”。
+4. 若要创建新的待办事项，请输入名称和类别，然后单击“添加项”。 
+
+6. 若要将任务标记为完成，请选中“完成”，然后单击“更新任务”。
 
 ![任务列表中新项的图像][node-table-list-items]
 
 即使应用程序在本地运行，它也会将数据存储在 Azure 表服务中。
 
-
 ## 将你的应用程序部署到 Azure
 
 本部分中的步骤使用 Azure 命令行工具在 Azure 网站中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户](http://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
 >
 > 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户部署此应用程序。
 
-若要开始，请通过从命令行中输入以下命令安装 [Azure 命令行界面]：
+若要开始，请在命令行中输入以下命令以安装 [Azure CLI]：
 
 	npm install azure-cli -g
 
@@ -496,7 +497,8 @@
 
 	此命令启动浏览器并导航到下载页面。如果出现提示，请使用与你的 Azure 订阅关联的帐户登录。
 
-	<!-- ![The download page][download-publishing-settings] -->文件下载应该会自动开始；如果没有自动开始，你可以单击该页面开头的链接手动下载文件。保存文件并记下文件路径。
+	<!-- ![The download page][download-publishing-settings] -->
+	文件下载会自动开始；如果没有自动开始，你可以单击该页面开头的链接手动下载文件。保存文件并记下文件路径。
 
 2. 输入以下命令以导入设置：
 
@@ -504,9 +506,9 @@
 
 	指定你在上一步中下载的发布设置文件的路径和文件名。
 
-3. 导入设置后，则应删除发布设置文件。因为不再需要该文件并且它包含有关你的 Azure 订阅的敏感信息。
+3. 导入设置后，请删除发布设置文件。因为不再需要该文件并且它包含有关你的 Azure 订阅的敏感信息。
 
-### 创建Azure 网站 Web 应用
+### 创建 Web 应用
 
 1. 在命令行中，将目录更改为 **tasklist** 目录。
 
@@ -516,9 +518,7 @@
 
 	系统将提示 Web 应用名称和位置。提供唯一的名称并选择与你的 Azure 存储帐户的相同的地理位置。
 
-	`--git` 参数在 Azure 中为此 Web 应用创建 Git 存储库。如果不存在，则还会初始化当前目录中的 Git 存储库，并添加名为“azure”的 [Git remote]，用于将应用程序发布到 Azure。最后，它会创建 **web.config** 文件，其中包含 Azure 用于托管 node 应用程序的设置。
-
-	> [AZURE.NOTE]如果目录中已包含 Git 存储库，命令则不会重新初始化该目录。此外，如果省略 `--git` 参数，但目录包含 Git 存储库，命令仍会创建“azure”remote。
+	`--git` 参数在 Azure 中为此 Web 应用创建 Git 存储库。如果不存在，则还会初始化当前目录中的 Git 存储库，并添加名为“azure”的 [Git remote]，用于将应用程序发布到 Azure。最后，它会创建 **web.config** 文件，其中包含 Azure 用于托管 node 应用程序的设置。如果省略 `--git` 参数，但目录包含 Git 存储库，命令仍会创建“azure”remote。
 
 	此命令完成后，你将看到与下面类似的输出。请注意，以 **Website created at** 开头的行包含 Web 应用的 URL。
 
@@ -535,32 +535,44 @@
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE]如果这是你的订阅的第一个 Azure 网站 Web 应用，系统会指示你使用 Azure 门户创建 Web 应用。有关详细信息，请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+	> [AZURE.NOTE]如果这是你的订阅的第一个 Web 应用，系统会指示你使用 Azure 门户创建 Web 应用。有关详细信息，请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
 
-### 设置环境变量。
+### 切换到环境变量
 
-在此步骤中，会将环境变量添加到 Azure 上的 Web 应用配置中。在命令行中，输入以下信息：
+前面我们实现了用于查找环境变量或从 **config.json** 文件中加载值的代码。在接下来的步骤中，你将在网站配置中创建应用程序通过环境变量实际访问的键值对。
 
-	azure site appsetting add
-		STORAGE_NAME=<storage account name>;STORAGE_KEY=<storage access key>;PARTITION_KEY=mytasks;TABLE_NAME=tasks
+1. 从管理门户中，单击“网站”，然后选择你的网站。
 
+	![打开网站仪表板][go-to-dashboard]
 
-将 **<storage account name>** 替换为你之前创建的存储帐户的名称，并将 **<storage access key>** 替换为你的存储帐户的主访问密钥。（使用与你先前创建的 config.json 文件相同的值。）
+2. 单击“配置”，然后找到页面的“应用设置”部分。
 
-或者，可以在 [Azure 门户](http://manage.windowsazure.cn)中设置环境变量：
+	![配置链接][web-configure]
 
-1.  通过单击“浏览” > “Web Apps” > 你的应用名称来打开 Web 应用的边栏选项卡。
+3. 在“应用设置”部分的 **KEY** 字段中输入 **STORAGE\_NAME**，并在 **VALUE**字段中输入你的存储帐户的名称。单击复选标记以移到下一个字段。为以下密钥和值重复此过程：
 
-1.  在 Web 应用边栏选项卡中，单击“所有设置” > “应用程序设置”。
+	* **STORAGE\_KEY** - 你的存储帐户的访问密钥
+	
+	* **PARTITION\_KEY** -“mytasks”
 
-  	<!-- ![Top Menu](./media/storage-nodejs-use-table-storage-web-site/PollsCommonWebSiteTopMenu.png) -->
+	* **TABLE\_NAME** -“tasks”
 
-1.  向下滚动到“应用设置”部分，然后添加键/值对。
+	![应用程序设置][app-settings]
 
-  	![应用设置](./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png)
+4. 最后，单击页面底部的“保存”图标，将此更改提交到运行时环境。
 
-1. 单击“保存”。
+	![保存应用程序设置][app-settings-save]
 
+5. 从命令行中，将目录更改为 **tasklist** 目录，然后输入以下命令以删除 **config.json** 文件：
+
+		git rm config.json
+		git commit -m "Removing config file"
+
+6. 执行以下命令将更改部署到 Azure：
+
+		git push azure master
+
+在将更改部署到 Azure 后，你的 Web 应用程序应当继续工作，因为它现在从“应用设置”条目读取连接字符串。若要验证此情况，请在“应用设置”中将 **STORAGE\_KEY** 条目的值更改为一个无效值。保存该值后，网站应该会因存储访问密钥设置无效而失败。
 
 ### 发布应用程序
 
@@ -575,11 +587,11 @@
 		git add .
 		git commit -m "adding files"
 
-3. 将提交的文件推送到 Azure 网站 Web 应用：
+3. 将提交的文件推送到 Web 应用：
 
 		git push azure master
 
-	使用 **master** 作为目标分支。在部署结束时，你将看到如下语句：
+	使用 **master** 作为目标分支。在部署结束时，你将看到类似于以下示例的语句：
 
 		To https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git
  		 * [new branch]      master -> master
@@ -632,4 +644,4 @@
 
 [Create and deploy a Node.js application to an Azure  Website]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
-<!---HONumber=71-->
+<!---HONumber=74-->

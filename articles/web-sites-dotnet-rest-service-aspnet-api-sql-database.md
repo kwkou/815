@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="06/16/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="08/31/2015" 
+	wacn.date="10/22/2015"/>
 
 # 在 Azure 网站中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
@@ -31,8 +31,7 @@
 
 你将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
 
-![网站屏幕截图][intro001]
-本教程的内容：
+![网站屏幕截图][intro001]本教程的内容：
 
 * [设置开发环境][setupdbenv]
 * [设置 Azure 环境][setupwindowsazureenv]
@@ -44,7 +43,7 @@
 * [添加 XSRF 保护][]
 * [将应用程序更新发布到 Azure 和 SQL 数据库][deploy2]
 
-<a name="bkmk_setupdevenv"></a>
+<a name="bkmk_setupdevenv"></a> 
 <!-- the next line produces the "Set up the development environment" section as see at http://www.windowsazure.cn/zh-cn/documentation/articles/web-sites-dotnet-get-started/ -->
 [WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -84,11 +83,11 @@
 ### 设置页眉和页脚
 
 
-1. 在“解决方案资源管理器”中，展开 *Views\\Shared* 文件夹并打开 *_Layout.cshtml* 文件。
+1. 在“解决方案资源管理器”中，展开 *Views\\Shared* 文件夹并打开 *\_Layout.cshtml* 文件。
 
 	![\_Layout.cshtml in Solution Explorer][newapp004]
 
-1. 将 *Views\\Shared_Layout.cshtml* 文件的内容替换为以下代码：
+1. 将 *Views\\Shared\_Layout.cshtml* 文件的内容替换为以下代码：
 
 
 		<!DOCTYPE html>
@@ -241,7 +240,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 		add-migration Initial
 
-	**add-migration Initial** 命令将生成一个创建数据库的名为 **&lt;date_stamp&gt;Initial** 的类。第一个参数 (*Initial*) 是任意参数并将用于创建文件名称。你可以在“解决方案资源管理器”中查看新的类文件。
+	**add-migration Initial** 命令将生成一个创建数据库的名为 **&lt;date\_stamp&gt;Initial** 的类。第一个参数 (*Initial*) 是任意参数并将用于创建文件名称。你可以在“解决方案资源管理器”中查看新的类文件。
 
 	在 **Initial** 类中，**Up** 方法用于创建 Contacts 表，而 **Down** 方法（在你想要返回到以前的状态时使用）用于删除该表。
 
@@ -485,7 +484,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	该样式表将用作联系人管理器应用程序的布局、颜色和样式。
 
-6. 打开 *App_Start\\BundleConfig.cs* 文件。
+6. 打开 *App\_Start\\BundleConfig.cs* 文件。
 
 
 7. 添加以下代码以注册 [Knockout](http://knockoutjs.com/index.html "KO") 插件。
@@ -636,7 +635,9 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 
 1. 将 **[ValidateHttpAntiForgeryToken]** 属性添加到 **ContactsController** 的 Post 方法以保护其免受 XSRF 威胁。将其添加到 "PutContact"、"PostContact" 和 **DeleteContact** 操作方法。
 
-	[ValidateHttpAntiForgeryToken] public IHttpActionResult PutContact(int id, Contact contact) {
+		[ValidateHttpAntiForgeryToken] 
+		public IHttpActionResult PutContact(int id, Contact contact) 
+		{
 
 1. 更新 *Views\\Home\\Index.cshtml* 文件的 *Scripts* 部分以包含代码，从而获取 XSRF 令牌。
 
@@ -731,7 +732,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 <h2><a name="nextsteps"></a>后续步骤</h2>
 ## 后续步骤
 
-实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用程序。
+实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用程序。
 
 另一种在 Azure 应用程序中存储数据的方法是使用 Azure 存储，该方法以 Blob 和表的形式提供非关系数据存储。以下链接提供了更多有关 Web API、ASP.NET MVC 以及 Window Azure 的信息。
  
@@ -739,7 +740,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 * [使用 MVC 的 Entity Framework 入门][EFCodeFirstMVCTutorial]
 * [ASP.NET MVC 5 简介](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [你的第一个 ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
-* [调试 WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
+* [调试 WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 本教程和示例应用程序由 [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写完成。
 
@@ -813,4 +814,4 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 [WebPIAzureSdk20NetVS12]: ./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/WebPIAzureSdk20NetVS12.png
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
 
-<!---HONumber=71-->
+<!---HONumber=74-->
