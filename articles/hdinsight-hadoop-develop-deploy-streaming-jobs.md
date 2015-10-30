@@ -523,8 +523,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-get-started-emulator]: /documentation/articles/hdinsight-get-started-emulator
 [hdinsight-emulator-wasb]: /documentation/articles/hdinsight-get-started-emulator#blobstorage
-[hdinsight-upload-data]: 
-documentation/articles/hdinsight-upload-data
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive

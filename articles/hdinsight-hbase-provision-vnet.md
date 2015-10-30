@@ -388,8 +388,7 @@ msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: 
-documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query

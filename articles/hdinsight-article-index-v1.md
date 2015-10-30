@@ -39,8 +39,8 @@
 * [使用 Hive 处理和分析 JSON 文档](/documentation/articles/hdinsight-using-json-in-hive)
 * [将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python)
 * [优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query–v1)
-* [使用 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1.md)
-* [将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用](hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
+* [使用 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
+* [将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 * [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
 
 ## HBase：NoSQL 数据库

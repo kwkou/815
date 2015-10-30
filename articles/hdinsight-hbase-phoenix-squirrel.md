@@ -285,8 +285,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal#connect-to-hdinsight-clusters-by-using-rdp
-[hdinsight-hbase-provision-vnet]: 
-documentation/articles/hdinsight-hbase-provision-vnet
+[hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-phoenix-sqlline]: .
 media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png

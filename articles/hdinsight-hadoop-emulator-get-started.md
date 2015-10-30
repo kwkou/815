@@ -396,9 +396,9 @@ The samples currently contain all the required binaries, so building is not requ
 ##<a name="blobstorage"></a>连接到 Azure Blob 存储
 HDInsight Emulator 使用 HDFS 作为默认文件系统。但是，Azure HDInsight 使用 Azure Blob 存储作为默认文件系统。可以将 HDInsight Emulator 配置为使用 Azure Blob 存储而不是本地存储。遵照以下说明在 Azure 中创建存储容器，然后将它连接到 HDInsight Emulator。
 
->[AZURE.NOTE]有关 HDInsight 如何使用 Azure Blob 存储的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](hdinsight-use-blob-storage)。
+>[AZURE.NOTE]有关 HDInsight 如何使用 Azure Blob 存储的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
-在开始遵照下面的说明之前，你必须创建存储帐户。有关说明，请参阅[如何创建存储帐户](storage-create-storage-account)。
+在开始遵照下面的说明之前，你必须创建存储帐户。有关说明，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
 
 **创建容器**
 

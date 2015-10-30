@@ -102,7 +102,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 **弃用日期**是在该日期后，不能在 HDInsight 上创建此群集版本的日期。
 
-> [AZURE.NOTE]HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4](cloud-services-guestos-update-matrix) 上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
+> [AZURE.NOTE]HDInsight 2.1 和 3.0 群集均运行在 Azure 来宾 OS [系列 4](/documentation/articles/cloud-services-guestos-update-matrix) 上，该系列使用 64 位版本的 Windows Server 2012 R2 并支持 .NET Framework 4.0、4.5 和 4.5.1。
 
 ## 与 HDInsight 版本相关的 Hortonworks 发行说明##
 
