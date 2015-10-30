@@ -18,12 +18,12 @@ Azure 自动化支持三种类型的 Runbook，这些 Runbook 在下表中进行
 
 | 类型 | 说明 |
 |:---|:---|
-| [PowerShell 工作流](/documentation/articles/#powershell-workflow-runbooks) | 基于 Windows PowerShell 工作流的文本 Runbook。 |
+| [PowerShell 工作流](#powershell-workflow-runbooks) | 基于 Windows PowerShell 工作流的文本 Runbook。 |
 | [PowerShell](#powershell-runbooks) | 基于 Windows PowerShell 脚本的文本 Runbook。 |
 
 ## PowerShell 工作流 Runbook
 
-PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](automation-powershell-workflow)的文本 Runbook。你可以在 Azure 门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) 到 Azure 自动化中。
+PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)的文本 Runbook。你可以在 Azure 门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) 到 Azure 自动化中。
 
 ### 优点
 
@@ -51,7 +51,7 @@ PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](automation
 - 必须熟悉 PowerShell 脚本。
 - 不能使用[并行处理](/documentation/articles/automation-powershell-workflow#parallel-processing)来并行执行多个操作。
 - 在发生错误时，不能使用[检查点](/documentation/articles/automation-powershell-workflow#checkpoints)恢复 Runbook。
-- 不能对[混合 Runbook 辅助角色](automation-hybrid-runbook-worker)运行 Runbook。
+- 不能对[混合 Runbook 辅助角色](/documentation/articles/automation-hybrid-runbook-worker)运行 Runbook。
 
 ### 已知问题
 以下是当前 PowerShell Runbook 的已知问题。
