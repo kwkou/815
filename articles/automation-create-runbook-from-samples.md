@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="automation" 
-	ms.date="05/19/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="09/08/2015"
+	wacn.date="10/17/2015"/>
 
 
 # Azure 自动化入门
 
 ## 什么是 Azure 自动化？
 
-通过 Windows Azure 自动化，用户可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。在本指南中，你将学习运行一个简单示例 Runbook 的教程。然后，你将查找用于浏览更高级服务功能的资源。
+通过 Windows Azure 自动化，用户可以自动完成通常要在云环境中执行的手动、长时间进行、易出错且重复性高的任务。你可以使用 Runbook 来创建、监视、管理和部署 Azure 环境中的资源。所谓的 Runbook，基本上就是指 Windows PowerShell 工作流。在本文中，你将学习运行一个简单示例 Runbook 的教程。然后，你将查找用于浏览更高级服务功能的资源。
 
 ## 教程
 本教程将逐步引导你完成创建自动化帐户、将一个示例“Hello World”Runbook 导入 Azure 自动化、执行该 Runbook 并查看其输出的过程。
@@ -113,7 +113,7 @@ Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为
 祝贺你！ 你已完成本教程。
 
 ## <a name="nextsteps"></a>后续步骤 
-1. 本教程中的简单 Runbook **不会管理 Azure 服务**。大多数 Runbook 使用 [Azure cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 进行管理，这需要对你的 Azure 订阅进行身份验证。请遵循[配置 Azure 以通过 Runbook 进行管理](https://msdn.microsoft.com/zh-cn/library/dn865019.aspx)中的说明配置你的 Azure 订阅，以使用这些 cmdlet。  
+1. 本教程中的简单 Runbook *不会管理 Azure 服务*。大多数 Runbook 使用 [Azure cmdlet](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) 进行管理，这需要对你的 Azure 订阅进行身份验证。请遵循[配置 Azure 以通过 Runbook 进行管理](https://msdn.microsoft.com/zh-cn/library/dn865019.aspx)中的说明配置你的 Azure 订阅，以使用这些 cmdlet。  
 2. 有关 Azure 自动化功能的详细信息，请参阅下面列出的[资源](#resources)。
 3. 订阅 [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)，随时了解 Azure 自动化团队提供的最新信息。
 
@@ -141,4 +141,4 @@ Microsoft 和 Azure 自动化社区提供了示例 Runbook，可帮助你开始�
 <strong>Give us feedback!</strong>  If you are looking for an Azure Automation runbook solution or an integration module, post a Script Request on Script Center. If you have feedback or feature requests for Azure Automation, post them on [User Voice](http://feedback.windowsazure.cn/forums/34192--general-feedback). Thanks!
 -->
 
-<!---HONumber=69-->
+<!---HONumber=74-->
