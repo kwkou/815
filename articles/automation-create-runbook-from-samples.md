@@ -126,7 +126,7 @@ Runbook 最初是以草稿模式导入的。这意味着，在授权它可作为
 - [Azure 自动化博客](http://azure.microsoft.com/blog/tag/azure-automation)提供了有关来自 Microsoft 的 Azure 自动化的最新信息。
 
 <!--
-- [Automation Forum](http://go.microsoft.com/fwlink/p/?LinkId=390561) allows you to post questions about Azure Automation to be addressed by Microsoft and the Automation community.
+- [Automation Forum](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation) allows you to post questions about Azure Automation to be addressed by Microsoft and the Automation community.
 -->
 
 
