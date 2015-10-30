@@ -9,27 +9,28 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/13/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015"
+	wacn.date="10/22/2015"/>
 # 为 Azure 网站配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
-- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name)
+- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
+- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
 
 [WACOM.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 当你创建网站时，Azure 会将其分配给 chinacloudsites.cn 的子域。例如，如果你的网站名为 **contoso**，URL 则为 **contoso.chinacloudsites.cn**。Azure 还会将分配一个虚拟 IP 地址。
 
 对于生产 Web 应用，你可能希望用户看到的自定义域名。本文介绍如何使用 Azure 网站配置自定义域。
-
+[AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 本文内容：
+
 
 -   [概述]
 -   [DNS 记录类型]
 -   [查找虚拟 IP 地址]
 -   [创建 DNS 记录]
--   [创建“awverify”记录（仅记录）](#awverify)
+-   [创建“awverify”记录（仅 A 记录）](#awverify)
 -   [在网站上启用域名]
 
 ## 概述
@@ -44,14 +45,14 @@
 
 - 映射根域。根域是你通过域注册机构保留的域。例如：**contoso.com**。
 - 映射子域。例如：**blogs.contoso.com**。可以将不同的子域映射到不同的 Web Apps。
-- 映射通配符。例如：***.contoso.com**。通配符条目会应用到域的所有子域。
+- 映射通配符。例如：**\*.contoso.com**。通配符条目会应用到域的所有子域。
  
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-modes.md)]
 
 
 ## DNS 记录类型
 
-域名系统 (DNS) 使用数据记录将域名映射到 IP 地址。有几种类型的 DNS 记录。对于 Web Apps，将创建 *A* 记录或 *CNAME* 记录。
+域名系统 (DNS) 使用数据记录将域名映射到 IP 地址。有几种类型的 DNS 记录。对于 Web 应用，将创建 *A* 记录或 *CNAME* 记录。
 
 - A**（地址）**记录会将域名映射到 IP 地址。 
 - **CNAME（Canonical 名称）**记录会将域名映射到其他域名。DNS 使用第二个名称来查找地址。用户仍然可以在浏览器中看到第一个域名。例如，你可以将 contoso.com 映射到 *&lt;yourwebapp&gt;*.chinacloudsites.cn。 
@@ -106,10 +107,12 @@
 </tr>
 </table>
 
-假设自定义域名为 contoso.com，则会创建以下记录：
+假设自定义域名为“contoso.com”，则会创建以下记录：
 
 - **contoso.com** 映射到 127.0.0.1。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
+
+>[AZURE.NOTE]可以使用 Azure DNS 为你的 Web 应用托管必要的域记录。若要在 Azure DNS 中配置你的自定义域并创建记录，请参阅[为 Web 应用创建自定义 DNS 记录](/documentation/articles/dns-web-sites-custom-domain)。
 
 <a name="awverify" /></a>
 ## 创建 awverify 记录（仅 A 记录）
@@ -126,8 +129,18 @@
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
 
 
+## 后续步骤
+
+有关详细信息，请参阅：[Azure DNS 入门](/documentation/articles/dns-getstarted-create-dnszone)和[将域委托到 Azure DNS](/documentation/articles/dns-domain-delegation) 
+
+<!-- Anchors. -->
+[概述]: #overview
+[DNS 记录类型]: #dns-record-types
+[查找虚拟 IP 地址]: #find-the-virtual-ip-address
+[创建 DNS 记录]: #create-the-dns-records
+[在网站上启用域名]: #enable-the-domain-name-on-your-website
 
 <!-- Images -->
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

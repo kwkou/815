@@ -99,8 +99,7 @@ Web Apps 的[增加和扩大]功能非常适用于不可预测的工作负载，
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: 
-documentation/articles/web-sites-dotnet-get-started
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
 <!--[Visual Studio Online]: ..
 cloud-services-continuous-delivery-use-vso -->
 [Git]: /documentation/articles/web-sites-publish-source-control

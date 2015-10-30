@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"   
+	wacn.date="10/22/2015"/>
 
 #使用 Dolby Digital Plus 编码媒体
 
@@ -588,17 +588,17 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 该属性确定响度计量模式。允许值包括：
 
  
-**ITU\_R\_BS\_1770\_2_DI**（默认值）- 表示 ITU-R BS.1770-2 plus 对话智能
+**ITU\_R\_BS\_1770\_2\_DI**（默认值）- 表示 ITU-R BS.1770-2 plus 对话智能
 
-**ITU\_R\_BS\_1770\_1_DI** - 表示 ITU-R BS.1770-1 plus 对话智能
+**ITU\_R\_BS\_1770\_1\_DI** - 表示 ITU-R BS.1770-1 plus 对话智能
 
-**ITU\_R\_BS\_1770_2** - 表示 ITU-R BS.1770-2
+**ITU\_R\_BS\_1770\_2** - 表示 ITU-R BS.1770-2
 
-**LEQA_DI** - 表示 Leq(A) plus 对话智能
+**LEQA\_DI** - 表示 Leq(A) plus 对话智能
 
 **注意：**
 
-** EBU R128** 模式可以通过 **ITU\_R\_BS\_1770\_2_DI** 实现
+**EBU R128** 模式可以通过 **ITU\_R\_BS\_1770\_2\_DI** 实现
 
 包括 **Leq(A)** 完全是出于历史原因的考虑，它只能用于特定的旧工作流
 
@@ -606,7 +606,7 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 ###SpeechThreshold 属性
 
-指定 DPLM 用来生成集成响度结果的语音阈值（例如，在语音选通、电平选通和无选通之间进行选择）。语音阈值设置范围是 0% 至 100%（以 1% 为增量）。此参数仅适用于 DPLM 配置为利用对话智能的模式的情况，也就是说，仅当模式设置为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1\_DI 时才能指定此参数。当模式为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1_DI 时，默认值为 20%。此属性的值必须在范围 0、1 – 100 内设置。
+指定 DPLM 用来生成集成响度结果的语音阈值（例如，在语音选通、电平选通和无选通之间进行选择）。语音阈值设置范围是 0% 至 100%（以 1% 为增量）。此参数仅适用于 DPLM 配置为利用对话智能的模式的情况，也就是说，仅当模式设置为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1\_DI 时才能指定此参数。当模式为 ITU\_R\_BS\_1770\_2\_DI 或 ITU\_R\_BS\_1770\_1\_DI 时，默认值为 20%。此属性的值必须在范围 0、1 – 100 内设置。
 
 ###TruePeakDCBlock 属性
 
@@ -636,7 +636,7 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 **DialogNormalization** - 从输入音频中测得的 DialNorm 值（单位为分贝），将嵌入到输出 DD+ 流中，范围为 {-31, -30, …, -1} dB。
 
-**IntegratedLoudness** - 由 DPLM 测得的集成响度，范围是 -70 到 +10 LKFS/dBFS（仅当模式设置为 LEQA_DI 时才使用 dBFS）。
+**IntegratedLoudness** - 由 DPLM 测得的集成响度，范围是 -70 到 +10 LKFS/dBFS（仅当模式设置为 LEQA\_DI 时才使用 dBFS）。
 
 **IntegratedLoudnessGatingMethod** - 有效值为：0 – 无/无选通；1 – 语音选通；2 – 电平选通。
 
@@ -646,4 +646,4 @@ Azure 媒体编码器可以使用 DPLM SDK 来测量输入音频中对话的响�
 
 **TruePeak** - 此结果包含自重置计量以来任何通道内的最大绝对真实峰值。有关真实峰值的说明，请参阅 ITU‐R BS.1770‐2。值范围可以是 -70 至 12.04 dBTP。
 
-<!---HONumber=71-->
+<!---HONumber=74-->

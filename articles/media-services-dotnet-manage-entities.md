@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="10/22/2015"/>
 
 
 #使用媒体服务 .NET SDK 管理资产和相关的实体
@@ -40,7 +40,8 @@
 
 ##<a id="Get-an-asset-reference"></a>获取资产引用
 
-一个常见的任务是获取对媒体服务中某个现有资产的引用。以下代码示例演示了如何根据资产 ID，从服务器上下文对象上的资产集合中获取资产引用。以下代码示例使用 Linq 查询来获取对现有 IAsset 对象的引用。
+一个常见的任务是获取对媒体服务中某个现有资产的引用。以下代码示例演示了如何根据资产 ID，从服务器上下文对象上的资产集合中获取资产引用。
+以下代码示例使用 Linq 查询来获取对现有 IAsset 对象的引用。
 
 	static IAsset GetAsset(string assetId)
 	{
@@ -326,4 +327,4 @@
 	}
 	
 
-<!---HONumber=71-->
+<!---HONumber=74-->

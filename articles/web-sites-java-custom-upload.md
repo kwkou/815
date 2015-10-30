@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="将自定义 Java Web 应用上载到 Azure" 
-	description="本教程说明如何将自定义 Java Web 应用上载到 Azure 网站 Web Apps。" 
+	description="本教程介绍了如何将自定义 Java Web 应用上载到 Azure 网站。" 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="06/03/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="08/31/2015" 
+	wacn.date="10/22/2015"/>
 
 # 将自定义 Java Web 应用上载到 Azure
 
 本主题介绍了如何将自定义 Java Web 应用上载到 Azure。包括适用于 Java 网站的信息以及特定应用程序的示例。
 
-请注意，Azure 提供了一种使用 Azure 门户配置 UI 和 Azure 应用程序库创建 Java 网站的方法，如 [Azure 网站和 Java 入门](/documentation/articles/web-sites-java-get-started)。此教程适用于无需使用 Azure 配置 UI 或 Azure 应用程序库的方案。
+请注意，Azure 提供了一种使用 Azure 门户配置 UI 创建 Java 网站的方法，如 [Azure 网站和 Java 入门](/documentation/articles/web-sites-java-get-started)中所述。此教程适用于无需使用 Azure 配置 UI 的方案。
 
 ## 配置指南
 
@@ -46,7 +46,6 @@
 
 
 **processPath** - 启动侦听 HTTP 请求的进程的可执行文件或脚本的路径。
-
 
 示例:
 
@@ -103,7 +102,7 @@
 对于 Tomcat，需要更改少量配置。需要编辑 Server.xml 并进行如下设置：
 
 -	Shutdown 端口 = -1
--	HTTP 连接器端口 = {port.http}
+-	HTTP 连接器端口 = ${port.http}
 -	HTTP 连接器地址 = "127.0.0.1"
 -	注释掉 HTTPS 和 AJP 连接器
 -	也可以在 catalina.properties 文件中设置 IPv4 设置，并在其中添加 `java.net.preferIPv4Stack=true`。
@@ -222,8 +221,8 @@ Azure 网站支持 Liferay。由于 Liferay 可能需要大量内存，因此站
 
 值得注意的是，JRE\_HOME 环境变量将在上述 web.config 中指定为指向 64 位 JDK。默认为 32 位，但由于 Liferay 可能需要大量内存，因此建议使用 64 位 JDK。
 
-做完上述更改后，重新启动运行 Liferay 的网站，然后打开 http://yoursite。可从网站根目录访问 Liferay 门户。
+做完上述更改后，重新启动运行 Liferay 的 Web 应用，然后打开 http://yourwebapp。可从 Web 应用根目录访问 Liferay 门户。
 
 有关 Liferay 的详细信息，请参阅 [http://www.liferay.com](http://www.liferay.com)。
 
-<!---HONumber=71-->
+<!---HONumber=74-->

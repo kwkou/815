@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="管理 Azure 媒体服务作业" 
+	pageTitle="处理 Azure 媒体服务作业" 
 	description="本主题概述如何管理 Azure 媒体服务作业。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 #处理 Azure 媒体服务作业
 
@@ -55,4 +55,4 @@
 
 [配额与限制](/documentation/articles/media-services-quotas-and-limitations) - 介绍媒体服务编码器的使用配额和限制
 
-<!---HONumber=71-->
+<!---HONumber=74-->

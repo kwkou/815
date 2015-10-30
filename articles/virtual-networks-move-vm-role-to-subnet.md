@@ -8,8 +8,8 @@
    editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.date="05/29/2015"
-   wacn.date="08/01/2015"/>
+   ms.date="09/04/2015"
+   wacn.date="10/17/2015"/>
 
 # 如何将 VM 或角色实例移到其他子网
 
@@ -47,4 +47,4 @@
 	    </AddressAssignments>
 	</NetworkConfiguration> 
 
-<!---HONumber=64-->
+<!---HONumber=74-->

@@ -7,10 +7,10 @@
 	authors="bradsev" 
 	documentationCenter=""/>
 
-<tags 
-   ms.service="hdinsight"
-   ms.date="07/09/2015" 
-   wacn.date="08/14/2015" />
+<tags
+	ms.service="hdinsight"
+	ms.date="07/28/2015"
+	wacn.date="10/22/2015"/>
 
 
 #HDInsight 提供的 Hadoop 群集版本有哪些新功能？
@@ -49,14 +49,10 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 通过 HDInsight Windows PowerShell cmdlet 或 HDInsight .NET SDK 创建群集时，你可以使用“Version”参数选择 HDInsight Hadoop 群集的版本。
 
-如果你使用“快速创建”选项，则在默认情况下将获得 HDInsight 的 3.1 版本用于创建 Hadoop 群集。如果在 Azure 门户中使用“自定义创建”选项，可以从“群集详细信息”页上的“HDInsight 版本”下拉列表中选择要部署的群集版本。
-
 ##功能特点
 HDInsight 平台的一些突出功能包括：
  
 - **Storm** - Storm on Azure HDInsight 现已正式发布，它你只需单击几下鼠标，就能在数分钟内快速轻松地完成实时部署。Apache Storm on Azure HDInsight 提供分析平台，能够可靠地处理的事件数以百万计的访问 Apache Hadoop 生态系统的开放源代码项目。现在，Hadoop 用户可以分析发生的事件，以及从过去的事件中获得见解。Microsoft 还提供与 Visual Studio 的内置集成，方便开发人员与 Storm 交互。现在，你可以从 Visual Studio 内部开发、部署和调试 Storm 拓扑。
-
-- **Linux 上的 HDInsight（预览版）**- Azure HDInsight 可让你选择设置在 Linux (Ubuntu) 虚拟机 (VM) 上运行的 Hadoop 群集。如果你熟悉 Linux 或 Unix、要从现有的基于 Linux 的 Hadoop 解决方案进行迁移，或者想要轻松集成针对 Linux 所构建的 Hadoop 生态系统组件，则可以使用此选项。你可以使用 Azure 门户、Azure CLI 或 HDInsight .NET SDK（仅限 Windows），通过运行 Windows 或 Linux 的客户端计算机在 Linux 上设置 HDInsight 群集。
 
 - **更多的 VM 大小** - 现在，HDInsight 群集支持更多的 VM 类型和大小。HDInsight 群集现在可以利用 A2 到 A7 大小实现常规目的；搭载固态硬盘 (SSD) 和处理器速度提高 60% 的 D 系列节点；支持使用 InfiniBand 加快网络速度的 A8 和 A9 大小。Azure HDInsight 上的 Apache HBase 客户可以受益于 D 系列的更高内存配置和性能。Azure HDInsight 上的 Apache Storm 客户还受益于更大的内存，因此可以加载更大的引用数据集，此外，更快的 CPU 可以提高吞吐量。
 
@@ -68,7 +64,7 @@ HDInsight 平台的一些突出功能包括：
 
 - **Apache Phoenix** - Apache Phoenix 是基于 HBase 的结构化查询语言 (SQL) 查询层。它支持有限的 SQL 查询语言规范子集，包括辅助索引支持。它是以客户端中嵌入的 Java 数据库连接 (JDBC) 驱动程序形式交付，面向 HBase 数据的低延迟查询。Apache Phoenix 将获取 SQL 查询，将它编译成一系列 HBase 扫描和协处理器调用，然后生成正则 JDBC 结果集。Apache Phoenix 是基于 HBase 的关系数据库。它是以客户端中嵌入的 JDBC 驱动程序形式交付，面向 HBase 数据的低延迟查询。Apache Phoenix 将获取 SQL 查询，将它编译成一系列 HBase 扫描，并协调这些扫描的运行来生成正则 JDBC 结果集。
 
-- **群集仪表板** - 部署到 HDInsight 群集中的新 Web 应用程序。用于运行 Hive 查询、检查作业日志以及浏览 Azure Blob 存储。用于访问 Web 应用程序的 URL 是 <*ClusterName*>.azurehdinsight.net。
+- **群集仪表板** - 部署到 HDInsight 群集中的新 Web 应用程序。用于运行 Hive 查询、检查作业日志以及浏览 Azure Blob 存储。用于访问 Web 应用程序的 URL 是 <*ClusterName*>.azurehdinsight.cn。
 
 - **Microsoft Avro Library** - 此库针对 Microsoft.NET 环境实现 Apache Avro 数据序列化系统。Apache Avro 为序列化提供了一种紧凑的二进制数据交换格式。它使用 JavaScript 对象表示法 (JSON) 定义与语言无关的架构，以支持语言互操作性。以一种语言序列化的数据可以用另一种语言读取。目前支持 C、C++、C#、Java、PHP、Python 和 Ruby。Apache Avro 序列化格式在 Azure HDInsight 中广泛使用，用于表示 Hadoop MapReduce 作业内的复杂数据结构。
 
@@ -97,8 +93,6 @@ HDInsight 平台的一些突出功能包括：
 
 **非默认群集的部署**
 
-默认情况下在 Hadoop 2.4 上创建 HDInsight 3.1 群集，因此用户必须使用门户中的“自定义创建”选项以指定需要创建的其他 HDInsight 群集版本。
-
 ### HDInsight 群集版本的服务级别协议
 
 SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集版本受 Microsoft 客户服务和支持部门支持的时间段。如果 HDInsight 群集版本具有早于当前日期的**支持过期日期**，则表示它处于支持窗口外。有关支持的 HDInsight 群集版本的列表，请参见上表。给定 HDInsight 版本 X（一旦提供更新的 X+1 版本）的支持到期日期为按以下公式计算所得时间的较晚者：
@@ -117,7 +111,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 	* 特定 Apache 组件的发行说明 - [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450)、[Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954)、[HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810)、[Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581)、[M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180)、[HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181)、[YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197)、[Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179)、[Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742)、[Ambari 2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12312020&version=12327486)、[Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112)、[Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620)。
 
 
-* HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的 Azure HDInsight 门户时创建的**默认** Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于[ Hortonworks 数据平台 2.1.1][hdp-2-1-1]。
+* HDInsight 群集版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7] 的 Hadoop 分发版。这是使用 11/7/2014 之后的门户时创建的**默认** Hadoop 群集。创建于 11/7/2014 之前的 HDInsight 3.1 群集基于[ Hortonworks 数据平台 2.1.1][hdp-2-1-1]。
 
 * HDInsight 群集版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8] 的 Hadoop 分发版。
 
@@ -130,7 +124,8 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 [wa-forums]: /support/forums/
 
-[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+
 [hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/HDP_2.2.0_Release_Notes_20141202_version/index.html
 
 [hdp-2-1-7]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.7-Win/bk_releasenotes_HDP-Win/content/ch_relnotes-HDP-2.1.7.html
@@ -147,4 +142,4 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=66-->
+<!---HONumber=74-->

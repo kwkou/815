@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 
 #将内容传送到客户概述
@@ -53,9 +53,9 @@
 
 定位符附带过期日期。当你使用门户发布资产时，将会创建过期日期在 100 年后的定位符。
 
->[AZURE.NOTE]如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
+>[AZURE.NOTE] 如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
 
-若要更新定位符的过期日期，请使用 [REST](https://msdn.microsoft.com/zh-CN/library/azure/hh974308.aspx#update_a_locator) 或 <a href="https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx">.NET</a> API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](http://go.microsoft.com/fwlink/?LinkID=533259) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
  
 定位符不用于管理按用户的访问控制。要为不同用户提供不同的访问权限，请使用数字权限管理 (DRM) 解决方案。有关详细信息，请参阅[保护媒体](https://msdn.microsoft.com/zh-CN/library/azure/dn282272.aspx)。
 
@@ -68,7 +68,7 @@
 
 若要为用户提供流 URL，必须先创建一个 OnDemandOrigin 定位符。通过创建定位符，将为你提供包含要流式传输的内容的资产的基本路径。但是，为了能够流式传输该内容，你需要进一步修改此路径。若要构造流清单文件的完整 URL，你必须将定位符的 Path 值与清单 (filename.ism) 文件名连接起来。然后，向定位符路径追加 /Manifest 和相应的格式（如果需要）。
 
-你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
+>[AZURE.NOTE]你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
 
 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请创建新的流式处理终结点。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
 
@@ -125,7 +125,7 @@
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
@@ -199,4 +199,4 @@
 
 [轮转存储密钥后更新媒体服务定位符](/documentation/articles/media-services-roll-storage-access-keys)
 
-<!---HONumber=71-->
+<!---HONumber=74-->

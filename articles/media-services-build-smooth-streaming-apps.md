@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="05/26/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 
 
@@ -28,7 +28,7 @@
 4. 选择平滑流式处理曲目
 
 ##先决条件
-- Windows 8 32 位或 64 位。你可以从 MSDN 获取 [Windows 8 企业评估版](https://technet.microsoft.com/zh-cn/evalcenter/hh699156.aspx)。
+- Windows 8 32 位或 64 位。你可以从 MSDN 获取 [Windows 8 企业评估版](http://msdn.microsoft.com/zh-cn/evalcenter/jj554510.aspx)。
 - 在 Windows 8 上安装适用于 Windows 8 的 Visual Studio 2012 或 Visual Studio Express 2012。你可以从[此处](http://www.microsoft.com/visualstudio/11/zh-cn/downloads)获取试用版。
 - [适用于 Windows 8 的 Microsoft 平滑流式处理客户端 SDK](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)。
 
@@ -39,7 +39,8 @@
 
 ![平滑流式处理 Windows 应用商店应用程序示例][PlayerApplication]
  
-有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](http://msdn.microsoft.com/zh-cn/windows/apps/br229512.aspx)。本课包含以下过程：
+有关开发 Windows 应用商店应用程序的详细信息，请参阅[开发适用于 Windows 8 的极佳应用](http://msdn.microsoft.com/zh-cn/windows/apps/br229512.aspx)。
+本课包含以下过程：
 
 1.	创建 Windows 应用商店项目
 2.	设计用户界面 (XAML)
@@ -224,7 +225,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		}
 		#endregion
 
-	现已定义 sliderProgress_PointerPressed 事件处理程序。若要使它正常工作，还需要执行其他操作，本教程的下一课将予以介绍。
+	现已定义 sliderProgress\_PointerPressed 事件处理程序。若要使它正常工作，还需要执行其他操作，本教程的下一课将予以介绍。
 6.	按 **CTRL+S** 保存文件。
 
 完成的代码隐藏文件应如下所示：
@@ -316,7 +317,8 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 
 4.	在 **MainPage** 构造函数的末尾，添加以下行以订阅自适应源打开事件：
 	
-	adaptiveSourceManager.AdaptiveSourceOpenedEvent += new AdaptiveSourceOpenedEventHandler(mediaElement_AdaptiveSourceOpened);
+	adaptiveSourceManager.AdaptiveSourceOpenedEvent += 
+    new AdaptiveSourceOpenedEventHandler(mediaElement\_AdaptiveSourceOpened);
 
 5.	按 **CTRL+S** 保存文件。
 
@@ -494,14 +496,16 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		  sliderProgress.Maximum = absvalue; }); 
 		
 
-6.	在 **mediaElement_AdaptiveSourceStatusUpdated** 方法的末尾，添加以下代码：
+6.	在 **mediaElement\_AdaptiveSourceStatusUpdated** 方法的末尾，添加以下代码：
 	
 		setSliderStartTime(args.StartTime);
 		setSliderEndTime(args.EndTime);
 
 7.	在 **MediaOpened** 方法的末尾，添加以下代码：
 	
-	sliderProgress.StepFrequency = SliderFrequency(mediaElement.NaturalDuration.TimeSpan); sliderProgress.Width = mediaElement.Width; setupTimer();
+	sliderProgress.StepFrequency = SliderFrequency(mediaElement.NaturalDuration.TimeSpan);
+	sliderProgress.Width = mediaElement.Width;
+	setupTimer();
 
 8.	按 **CTRL+S** 保存文件。
 
@@ -568,7 +572,8 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改代码隐藏文件**
 
 1. 在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看代码”。
-2. 在 SSPlayer 命名空间中添加一个新类：#region class Stream
+2. 在 SSPlayer 命名空间中添加一个新类：
+		#region class Stream
 	
 	    public class Stream
 	    {
@@ -758,7 +763,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 		}
 		#endregion stream selection
 
-5. 找到 mediaElement_ManifestReady 方法，并在函数的末尾追加以下代码：
+5. 找到 mediaElement\_ManifestReady 方法，并在函数的末尾追加以下代码：
 	
 		getStreams(manifestObject);
         refreshAvailableStreamsListBoxItemSource();
@@ -784,7 +789,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 2.	按 **F5** 运行应用程序。
 3.	在应用程序的顶部，你可以使用默认的平滑流式处理 URL，或输入一个不同的 URL。 
 4.	单击“设置源”。 
-5.	默认语言为 audio\_eng。尝试在 audio\_eng 和 audio_es 之间切换。每次选择一个新流时，都必须单击“提交”按钮。
+5.	默认语言为 audio\_eng。尝试在 audio\_eng 和 audio\_es 之间切换。每次选择一个新流时，都必须单击“提交”按钮。
 
 你已完成第 3 课。在本课中，你已添加了用于选择流的功能。
 
@@ -798,7 +803,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 **修改 XAML 文件**
 
 1. 在解决方案资源管理器中，右键单击“MainPage.xaml”，然后单击“查看设计器”。
-2. 找到名为 **gridStreamAndBitrateSelection** 的 Grid 标记，并在该标记的末尾追加以下代码：
+2. 找到名为 **gridStreamAndBitrateSelection** 的 &lt;Grid&gt; 标记，并在该标记的末尾追加以下代码：
 
 		<StackPanel Name="spBitRateSelection" Grid.Row="1" Grid.Column="1">
 		 <StackPanel Orientation="Horizontal">
@@ -963,7 +968,7 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
         }
         #endregion track selection
 
-5. 找到 mediaElement_ManifestReady 方法，并在函数的末尾追加以下代码：
+5. 找到 mediaElement\_ManifestReady 方法，并在函数的末尾追加以下代码：
 
 		getTracks(manifestObject);
 		refreshAvailableTracksListBoxItemSource();
@@ -999,4 +1004,4 @@ MediaElement 控件并非原本就支持平滑流式处理内容。若要启用�
 [PlayerApplication]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-1.png
 [CodeViewPic]: ./media/media-services-build-smooth-streaming-apps/SSClientWin8-2.png
 
-<!---HONumber=71-->
+<!---HONumber=74-->

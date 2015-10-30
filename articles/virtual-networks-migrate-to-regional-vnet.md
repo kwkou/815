@@ -8,12 +8,12 @@
    editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.date="05/29/2015"
-   wacn.date="08/01/2015"/>
+   ms.date="09/02/2015"
+   wacn.date="10/17/2015"/>
 
 # 如何从地缘组迁移到区域虚拟网络 (VNet)
 
-你可以使用地缘组来确保在相同地缘组中创建的资源由彼此靠近的服务器实际托管，从而加快这些资源的通信速度。过去，地缘组是创建虚拟网络 (VNet) 的必要条件。当时，托管 VNet 的网络管理器服务只能在一组物理服务器或缩放单位内工作。最新的体系结构改进已将网络管理的范畴扩大到了区域。
+你可以使用地缘组来确保在相同地缘组中创建的资源由彼此靠近的服务器实际托管，从而加快这些资源的通信速度。过去，地缘组是创建虚拟网络 (VNet) 的必要条件。当时，托管 VNet 的网络管理器服务只能在一组物理服务器或缩放单位内工作。体系结构改进已将网络管理的范畴扩大到了区域。
 
 由于这些体系结构的改进，不再建议或需要对虚拟网络使用地缘组。对 VNet 使用地缘组将被区域取代。与区域关联的虚拟网络称为区域 VNet。
 
@@ -53,17 +53,19 @@
 
 4. 导出网络配置文件。可以使用 PowerShell 或管理门户。有关使用管理门户的说明，请参阅[使用网络配置文件配置 VNet](/documentation/articles/virtual-networks-using-network-configuration-file)。
 
-5. 编辑网络配置文件，将替换为新值。
+5. 编辑网络配置文件，将旧值替换为新值。
 
 	> [AZURE.NOTE]“位置”是已为与 VNet 关联的地缘组指定的区域。例如，如果你的 VNet 与位于美国西部的地缘组关联，则在你迁移时，你的“位置”必须指向美国西部。
 	
 	编辑网络配置文件中的以下行，将相应值替换为你自己的值：
 
-	**旧值：** \<VirtualNetworkSitename="VNetChinsNorth" AffinityGroup="VNetDemoAG">
+	**旧值：** \<VirtualNetworkSitename="VNetChinsNorth" AffinityGroup="VNetDemoAG"\> 
 
-	**新值：** \<VirtualNetworkSitename="VNetChinsNorth" Location="China North">
+	**新值：** \<VirtualNetworkSitename="VNetChinsNorth" Location="China North"\>
 
 6. 保存所做的更改，并将网络配置[导入](/documentation/articles/virtual-networks-using-network-configuration-file)到 Azure。
+
+>[AZURE.INFO]此迁移不会导致你的服务出现任何停机情况。
 
 ## 地缘组和 VM
 
@@ -82,4 +84,4 @@
 在 VM 部署后，系统会将其部署到单个缩放单位。地缘组可以限制可用于新 VM 部署的 VM 大小集，但是部署的任何现有 VM 已限制为在其中部署该 VM 的缩放单位中可用的 VM 大小集。因此，从地缘组中删除 VM 将不产生任何影响。
  
 
-<!---HONumber=64-->
+<!---HONumber=74-->

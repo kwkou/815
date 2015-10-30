@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"  
+	wacn.date="10/22/2015"/>
 
 
 #使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务
@@ -45,7 +45,7 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 <tr><td>目标受众</td><td>所用 STS 中的受众字符串</td></tr>
 <tr><td>声明</td><td>一组声明</td></tr>
 <tr><td>NotBefore</td><td>令牌的有效起始日期</td></tr>
-<tr><td>Expires</td><td>令牌的有效结束日期</td></tr>
+<tr><td>过期</td><td>令牌的有效结束日期</td></tr>
 <tr><td>SigningCredentials</td><td>在 PlayReady 许可证服务器、castLabs 许可证服务器和 STS 之间共享的密钥，它可以是对称或非对称密钥。</td></tr>
 </table>
 
@@ -93,7 +93,7 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 
 若要播放使用常用加密 (PlayReady) 加密的视频，可以使用 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。运行控制台应用程序时，将回显内容密钥 ID 和清单 URL。
 
-1.	打开新选项卡并启动 STS：http://[yourStsName].chinacloudsites.cn/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid]。
+1.	打开新选项卡并启动 STS： http://[yourStsName].chinacloudsites.cn/api/token/assetid/[yourCastLabsAssetId]/contentkeyid/[thecontentkeyid]。
 2.	转到 [Azure Media Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 3.	粘贴到流 URL 中。
 4.	单击**“高级选项”**复选框。
@@ -108,4 +108,4 @@ castLabs 和 AMS 均支持用于授予许可证的 JWT（JSON Web 令牌）令�
 
 2.	castLab 许可证服务器不需要在令牌前面加“Bearer=”前缀。因此，请在提交令牌之前删除该前缀。
 
-<!---HONumber=71-->
+<!---HONumber=74-->

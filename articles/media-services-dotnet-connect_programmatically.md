@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 
 # 使用 Media Services SDK for .NET 连接到媒体服务帐户
@@ -40,7 +40,7 @@
 
 若要开始针对媒体服务编程，你需要创建一个代表服务器上下文的 **CloudMediaContext** 实例。**CloudMediaContext** 包括对各种重要集合的引用，这些集合包括作业、资产、文件、访问策略和定位符。
 
->[AZURE.NOTE]**CloudMediaContext** 类不是线程安全的。每个线程或每组操作均应创建一个新 CloudMediaContext。
+>[AZURE.NOTE] **CloudMediaContext** 类不是线程安全的。每个线程或每组操作均应创建一个新 CloudMediaContext。
 
 
 CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServicesCredentials** 为参数的构造函数。有关详细信息，请参阅下面的**重复使用访问控制服务令牌**。
@@ -190,4 +190,4 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 
 <!-- URLs. -->
 
-<!---HONumber=71-->
+<!---HONumber=74-->

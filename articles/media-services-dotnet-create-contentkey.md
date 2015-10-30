@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="10/22/2015"/>
 
 
 #使用 .NET 创建内容密钥
@@ -21,7 +21,7 @@
 
 媒体服务允许你创建资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
 
-创建新资产时（例如，[上载文件](/documentation/articles/media-services-dotnet-upload-files)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
+创建新资产时（例如，[上载文件](/documentation/articles/media-services-dotnet-upload-files/)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
 
 将资产传送到你的客户端时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
 
@@ -131,4 +131,4 @@ call
 
 	IContentKey key = CreateCommonTypeContentKey(encryptedsset);
 
-<!---HONumber=71-->
+<!---HONumber=74-->

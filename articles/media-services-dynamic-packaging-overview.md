@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="10/22/2015"/>
 
 
 #动态打包 
@@ -34,8 +34,8 @@ Windows Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBO
 
 ##常见方案
 
-1. 上载一个输入文件（称为夹层文件）。例如，H.264、MP4 或 WMV（有关受支持格式的列表，请参阅“媒体服务编码器支持的格式”）。
- 
+1. 上载一个输入文件（称为夹层文件）。例如，H.264、MP4 或 WMV（有关受支持格式的列表，请参阅[媒体服务编码器支持的格式](/documentation/articles/media-services-azure-media-encoder-formats)）。
+
 1. 将夹层文件编码为 H.264 MP4 自适应比特率集。
  
 1. 通过创建点播定位符来发布包含自适应比特率 MP4 集的资产。
@@ -93,4 +93,4 @@ Windows Azure 媒体服务可用于向多种客户端技术（例如，iOS、XBO
 - Dolby Digital Plus MP4 文件。
 - Dolby Digital Plus 平滑流文件。 
 
-<!---HONumber=71-->
+<!---HONumber=74-->

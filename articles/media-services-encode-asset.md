@@ -1,168 +1,253 @@
-﻿<properties linkid="develop-media-services-how-to-guides-encode-an-asset" urlDisplayName="How to Encode an Asset" pageTitle="How to Encode an Asset for Media Services - Azure" metaKeywords="" description="Learn how to use the Azure Media Encoder to encode media content on Media Services. Code samples are written in C# and use the Media Services SDK for .NET." metaCanonical="" services="media-services" documentationCenter="" title="How to: Encode an Asset" authors="migree" solutions="" manager="" editor="" />
-<tags ms.service="media-services"
-    ms.date="03/05/2015"
-    wacn.date="04/11/2015"
-    />
+﻿<properties 
+	pageTitle="简要介绍并比较 Azure 按需媒体编码器" 
+	description="本主题概括介绍并比较了 Azure 按需媒体编码器。" 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
+	editor=""/>
 
-如何：对资产进行编码
-====================
+<tags 
+	ms.service="media-services" 
+	ms.date="09/07/2015"  
+	wacn.date="10/22/2015"/>
 
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：获取媒体处理器](http://go.microsoft.com/fwlink/?LinkID=301732&ampclcid=0x409)。
-本文是介绍 Azure Media Services 编程的系列主题中的一篇。前一个主题是[如何：获取媒体处理器](/develop/media-services/how-to-guides/create-media-processor/?ampclcid=0x409)。
+#简要介绍并比较 Azure 按需媒体编码器
 
-对于服务器上的媒体内容，你可以通过 Azure 媒体编码器使用许多的媒体编码和格式对这些内容进行编码。你也可以使用 Media Services 合作伙伴提供的编码器；可通过 [Azure Marketplace](https://datamarket.azure.com) 获取第三方编码器。可以使用[编码器预设](http://msdn.microsoft.com/zh-cn/library/hh973610.aspx)字符串或配置文件指定编码任务的详细信息。
+##编码概述
 
-编码为 MP4
-----------
+编码器使用编解码器压缩数字媒体。通常，通过编码器的各种设置，你可以指定所生成媒体的属性，例如，使用的编解码器、文件格式、分辨率和比特率。文件格式是用于保存压缩视频以及用来压缩视频的编解码器的相关信息的容器。
 
-以下方法将上载单个资产，并创建一个作业以使用“H264 Broadband 720p”预设将该资产编码为 MP4，该预设将创建编码为 H264、分辨率为 720p 的单个 MP4 媒体。
+编解码器有两个组件：一个用于压缩数字媒体文件进行传输，另一个用于解压缩数字媒体文件进行播放。有音频编解码器（用于压缩和解压缩音频）和视频编解码器（用于压缩和解压缩视频）。编解码器可以使用无损压缩或有损压缩。无损编解码器在进行压缩时会保留全部信息。文件解压缩后，得到的文件与输入媒体相同，因此无损编解码器非常适用于存档和存储。有损编解码器在编码时会丢失部分信息，可通过牺牲视频质量生成比原始文件小的文件，因此非常适用于在 Internet 上进行流式传输。
 
-```csharp  
-    static IJob CreateEncodingJob(string inputMediaFilePath, string outputFolder)
-    {
-    //Create an encrypted asset and upload to storage.
-        IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.StorageEncrypted, 
-            inputMediaFilePath);
+了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。有关详细信息，请参阅[编码与打包](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/)。
 
-        // Declare a new job.
+Media Services 所提供的动态打包可让你以 Media Services 支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
-    IJob job = _context.Jobs.Create("My encoding job");
-    
-        // Get a reference to the Azure Media Encoder
-        IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Encoder");
-    
-        // Create a task with the encoding details, using a string preset.
-    ITask task = job.Tasks.AddNew("My encoding task",
-    processor,
-            "H264 Broadband 720p",
-    _protectedConfig);
-    
-        // Specify the input asset to be encoded.
-    task.InputAssets.Add(asset);
-    
-        // Add an output asset to contain the results of the job. 
-    // This output is specified as AssetCreationOptions.None, which 
-    // means the output asset is in the clear (unencrypted). 
-    task.OutputAssets.AddNew("Output asset", AssetCreationOptions.None);
-    
-        // Use the following event handler to check job progress.  
-    job.StateChanged += new EventHandler&ltJobStateChangedEventArgs>(StateChanged);
-    
-        // Launch the job.
-    job.Submit();
-    
-        // Optionally log job details.This displays basic job details
-    // to the console and saves them to a JobDetails-JobId.txt file 
-    // in your output folder.
-    LogJobDetails(job.Id);
-    
-        // Check job execution and wait for job to finish. 
-    Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
-    progressJobTask.Wait();
-    
-        // If job state is Error, the event handling 
-    // method for job progress should log errors.Here we check 
-    // for error state and exit if needed.
-    if (job.State == JobState.Error)
-        {
-            Console.WriteLine("\nExiting method due to job error.");
-    return job;
-        }
-    
-        // Perform other tasks.For example, access the assets that are the output of a job, 
-    // either by creating URLs to the asset on the server, or by downloading. 
-    return job;
-    }
+若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)，你需要执行以下操作：
 
-    private static void StateChanged(object sender, JobStateChangedEventArgs e)
-    {
-        Console.WriteLine("Job state changed event:");
-        Console.WriteLine("  Previous state:" + e.PreviousState);
-        Console.WriteLine("  Current state:" + e.CurrentState);
-        switch (e.CurrentState)
-        {
-    case JobState.Finished:
-    Console.WriteLine();
-    Console.WriteLine("Job is finished.Please wait while local tasks or downloads complete...");
-    break;
-    case JobState.Canceling:
-    case JobState.Queued:
-    case JobState.Scheduled:
-    case JobState.Processing:
-                Console.WriteLine("Please wait...\n");
-    break;
-    case JobState.Canceled:
-    case JobState.Error:
+- 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
-                // Cast sender as a job.
-    IJob job = (IJob)sender;
+媒体服务支持将在本文中介绍的以下按需编码器：
 
-                // Display or log error details as needed.
-    LogJobStop(job.Id);
-    break;
-    default:
-                break;
-        }
-    }
-```
+- **媒体编码器标准版**
+- **Azure 媒体编码器** 
+- **媒体编码器高级工作流**
 
-编码为平滑流式处理
-------------------
+本文简要概述了按需媒体编码器，并提供了指向介绍更多详细信息的文章的链接。本主题还提供了编码器的比较。
 
-如果你想要将视频编码为平滑流式处理，可以使用两个选项：
+请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单元](/documentation/articles/media-services-portal-encoding-units)。
 
--   直接编码为平滑流式处理
--   编码为 MP4，然后转换为平滑流式处理
+##媒体编码器标准版
 
-若要直接编码为平滑流式处理，请使用上面所示的代码，不过，需要在其中改用一个平滑流式处理编码器预设。有关编码器预设的完整列表，请参阅 [Azure 媒体编码器的任务预设字符串](http://msdn.microsoft.com/zh-cn/library/jj129582.aspx)。
+###概述
 
-若要将 MP4 转换为平滑流式处理，请使用 Azure 媒体包装器。Azure 媒体包装器不支持字符串预设，因此你必须在 XML 中指定配置选项。在 [Azure 媒体包装器的任务预设](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh973635.aspx)中可以找到将 MP4 转换为平滑流式处理所需的 XML。将该 XML 复制并粘贴到项目中名为 MediaPackager\_MP4ToSmooth.xml 的文件。以下代码演示了如何将 MP4 资产转换为平滑流式处理。下面的方法采用现有某个资产并对其进行转换。
+建议使用媒体编码器标准版编码器。但是，它当前未通过 Azure 门户公开。
 
-```csharp  
-private static IJob ConvertMP4toSmooth(IAsset assetToConvert, string configFilePath)
- {
-    // Declare a new job to contain the tasks
-IJob job = _context.Jobs.Create("Convert to Smooth Streaming job");
-// Set up the first Task to convert from MP4 to Smooth Streaming. 
-// Read in task configuration XML
-string configMp4ToSmooth = File.ReadAllText(Path.GetFullPath(configFilePath + @"\MediaPackager_MP4ToSmooth.xml"));
-// Get a media packager reference
-IMediaProcessor processor = GetLatestMediaProcessorByName("Azure Media Packager");
-// Create a task with the conversion details, using the configuration data
-ITask task = job.Tasks.AddNew("My Mp4 to Smooth Task",
-processor,
-configMp4ToSmooth,
-TaskOptions.None);
-// Specify the input asset to be converted.
-task.InputAssets.Add(assetToConvert);
-// Add an output asset to contain the results of the job.
-task.OutputAssets.AddNew("Streaming output asset", AssetCreationOptions.None);
-// Use the following event handler to check job progress. 
-    // The StateChange method is the same as the one in the previous sample
-job.StateChanged += new EventHandler&ltJobStateChangedEventArgs>(StateChanged);
-// Launch the job.
-job.Submit();
-// Check job execution and wait for job to finish. 
-Task progressJobTask = job.GetExecutionProgressTask(CancellationToken.None);
-progressJobTask.Wait();
-// Get a refreshed job reference after waiting on a thread.
-job = GetJob(job.Id);
-// Check for errors
-if (job.State == JobState.Error)
-    {
-Console.WriteLine("\nExiting method due to job error.");
-    }
-return job;
-}
-```
+与 Azure 媒体编码器相比，此编码器支持更多输入和输出格式和编解码器。其他优点包括：
 
-有关处理资产的详细信息，请参阅：
+- 对创建输入文件的方式的要求低
+- 与 Azure 媒体编码器相比，具有更好的 H.264 编解码器质量
+- 在更新、更灵活的管道上构建
+- 更可靠/更具弹性
 
--   [使用 Media Services SDK for .NET 处理资产](http://msdn.microsoft.com/zh-cn/library/jj129580.aspx)
--   [使用 Media Services REST API 处理资产](http://msdn.microsoft.com/zh-cn/library/jj129574.aspx)
+###如何使用
 
-后续步骤
---------
+[如何使用媒体编码器标准版进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)
 
-了解如何创建一个对资产进行编码的作业后，请转到[如何使用 Media Services 检查作业进度](/develop/media-services/how-to-guides/check-job-progress/?ampclcid=0x409)主题。
+###格式
 
+[格式和编解码器](/documentation/articles/media-services-media-encoder-standard-formats)
+
+###预设
+
+媒体编码器标准版使用[此处](http://go.microsoft.com/fwlink/?linkid=618336&clcid=0x409)所述的编码器预设之一进行配置。
+
+###输入和输出元数据
+
+编码器输入元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明（与 Azure 媒体编码器相同）。
+
+编码器输出元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明（与 Azure 媒体编码器相同）。
+
+###缩略图
+
+目前不支持。
+
+###音频和/或视频叠加
+
+目前不支持。
+
+###另请参阅
+
+[媒体服务博客](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
+ 
+##Azure 媒体编码器
+
+###概述
+
+Azure 媒体编码器是媒体服务支持的编码器之一。从 2015 年 7 月开始，建议使用[媒体编码器标准版](/documentation/articles/media-services-encode-asset#media_encoder_standard)。
+
+###如何使用
+
+[如何使用 Azure 媒体编码器进行编码](/documentation/articles/media-services-dotnet-encode-asset)
+
+###格式
+
+[格式和编解码器](/documentation/articles/media-services-azure-media-encoder-formats)
+
+###预设
+
+Azure 媒体编码器使用[此处](https://msdn.microsoft.com/library/azure/dn619392.aspx)所述的编码器预设之一进行配置。你还可以在[此处](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/Azure%20Media%20Encoder)获取实际的 Azure 媒体编码器预设文件。
+
+###输入和输出元数据
+
+编码器输入元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx)说明。
+
+编码器输出元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明。
+
+###缩略图
+
+[创建缩略图](https://msdn.microsoft.com/library/azure/Dn673581.aspx)
+
+###音频和/或视频叠加
+
+[创建叠加](/documentation/articles/media-services-azure-media-customize-ame-presets#creating-overlays)。
+
+###命名约定
+
+[如何修改输出文件名](/documentation/articles/media-services-azure-media-customize-ame-presets#controlling-azure-media-encoder-output-file-names)
+
+###另请参阅
+
+[使用 Dolby Digital Plus 编码媒体](/documentation/articles/media-services-encode-with-dolby-digital-plus)
+
+##媒体编码器高级工作流
+	
+媒体编码器高级工作流使用复杂的工作流进行配置。可以使用[工作流设计器](/documentation/articles/media-services-workflow-designer)工具创建和更新工作流文件。
+
+有关详细信息，请参阅：
+
+- [在 Azure 媒体服务中引入高级编码](http://azure.microsoft.com/blog/2015/03/05/introducing-premium-encoding-in-azure-media-services)
+- [如何在 Azure 媒体服务中使用高级编码](http://azure.microsoft.com/blog/2015/03/06/how-to-use-premium-encoding-in-azure-media-services)
+
+
+##<a id="compare_encoders"></a>比较编码器
+
+###<a id="billing"></a>每个编码器使用的计费表
+
+媒体处理器名称|适用定价|说明
+---|---|---
+**媒体编码器标准版** |编码器|编码任务将根据“编码器”列下输出资产的大小（以 GB 为单位）按[此处][1]指定的费率进行收费。
+**Azure 媒体编码器** |编码器|编码任务将根据“编码器”列下输出资产的大小（以 GB 为单位）按[此处][1]指定的费率进行收费。
+**媒体编码器高级工作流** |高级编码器|编码任务将根据“高级编码器”列下输出资产的大小（以 GB 为单位）按[此处][1]指定的费率进行收费。
+
+
+本节比较了**媒体编码器标准版**、**Azure 媒体编码器**和**媒体编码器高级工作流**的编码功能。
+
+
+###输入容器/文件格式
+
+输入容器/文件格式|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
+---|---|---|---
+Adobe® Flash® F4V |是|否 |是
+MXF/SMPTE 377M |是|受限制|是
+GXF |是|否 |是
+Mpeg-2 传输流 |是|是 |是
+MPEG-2 节目流 |是|是 |是
+MPEG-4/MP4 |是|是 |是
+Windows Media/ASF |是|是 |是
+AVI（8 位/10 位未压缩）|是|是 |是
+3GPP/3GPP2 |是|是 |否
+平滑流文件格式 (PIFF 1.3)|是|是|否
+[Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|是|否|否
+Matroska/WebM |是|否|否
+
+###输入视频编解码器
+
+输入视频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
+---|---|---|---
+AVC 8 位/10 位，最高支持 4:2:2，包括 AVCIntra |8 位 4:2:0 和 4:2:2|仅限 8 位 4:2:0|是
+Avid DNxHD（MXF 格式） |是|否|是
+DVCPro/DVCProHD（MXF 格式） |是|否|是
+JPEG2000 |是|否|是
+Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|最高支持 422 Profile|最高支持 422 Profile|是
+MPEG-1 |是|是|是
+Windows Media 视频/VC-1 |是|是|是
+Canopus HQ/HQX |否|是|否
+Mpeg-4 第 2 部分 |是|否|否
+[Theora](https://en.wikipedia.org/wiki/Theora) |是|否|否
+
+###输入音频编解码器
+
+输入音频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
+---|---|---|---
+AES（SMPTE 331M 和 302M、AES3-2003） |否|否|是
+Dolby® E |否|否|是
+Dolby® Digital (AC3) |否|是|是
+Dolby® Digital Plus (E-AC3) |否|否|是
+AAC(AAC-LC、AAC-HE 和 AAC-HEv2；最高支持 5.1）|是|是|是
+MPEG Layer 2|是|是|是
+MP3 (MPEG-1 Audio Layer 3)|是|是|是
+Windows Media 音频|是|是|是
+WAV/PCM|是|是|是
+[FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|是|否|否
+[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |是|否|否
+[Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|是|否|否
+
+
+###输出容器/文件格式
+
+输出容器/文件格式|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
+---|---|---|---
+Adobe® Flash® F4V|否|否|是
+MXF（OP1a、XDCAM 和 AS02）|否|否|是
+DPP（包括 AS11）|否|否|是
+GXF|否|否|是
+MPEG-4/MP4|是|是|是
+MPEG-TS|是|否|是
+Windows Media/ASF|否|是|是
+AVI（8 位/10 位未压缩）|否|否|是
+平滑流文件格式 (PIFF 1.3)|否|是|是
+
+###输出视频编解码器
+
+输出视频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
+---|---|---|---
+AVC（H.264；8 位；最高支持 High Profile、Level 5.2；4K Ultra HD；AVC Intra）|仅限 8 位 4:2:0|仅限 8 位 4:2:0，最高支持 1080p|是
+Avid DNxHD（MXF 格式）|否|否|是
+DVCPro/DVCProHD（MXF 格式）|否|否|是
+Mpeg-2（最高支持 422 Profile 和 High Level；包括 XDCAM、XDCAM HD、XDCAM IMX、CableLabs® 和 D10 等变体）|否|否|是
+MPEG-1|否|否|是
+Windows Media 视频/VC-1|否|是|是
+JPEG 缩图创建|否|是|是
+
+###输出音频编解码器
+
+输出音频编解码器|媒体编码器标准版|Azure 媒体编码器|媒体编码器高级工作流
+---|---|---|---
+AES（SMPTE 331M 和 302M、AES3-2003）|否|否|是
+Dolby® Digital (AC3)|否|是|是
+Dolby® Digital Plus (E-AC3)，最高支持 7.1|否|最高支持 5.1|是
+AAC(AAC-LC、AAC-HE 和 AAC-HEv2；最高支持 5.1）|是|是|是
+MPEG Layer 2|否|否|是
+MP3 (MPEG-1 Audio Layer 3)|否|否|是
+Windows Media 音频|否|是|是
+
+
+##媒体服务学习路径
+
+你可以在此处查看 AMS 学习路径：
+
+- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+
+##相关文章
+
+- [配额和限制](/documentation/articles/media-services-quotas-and-limitations)
+
+ 
+<!--Reference links in article-->
+[1]: http://azure.microsoft.com/pricing/details/media-services/
+
+<!---HONumber=74-->
