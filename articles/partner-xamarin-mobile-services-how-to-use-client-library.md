@@ -15,7 +15,7 @@
 #  如何使用适用于 Azure 移动服务的 Xamarin 组件客户端
 [AZURE.INCLUDE [mobile-services-selector-client-library](../includes/mobile-services-selector-client-library.md)]
 
-本指南演示如何在用于 iOS 和 Android 的 Xamarin 应用程序中使用针对 Azure 移动服务的 Xamarin 组件客户端来执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成“移动服务快速入门”教程 ([Xamarin.iOS][Xamarin.iOS quickstart tutorial]/[Xamarin.Android][Xamarin.Android quickstart tutorial]) 以及“.NET 中的数据处理入门”教程 ([Xamarin.iOS][Xamarin.iOS data tutorial]/[Xamarin.Android][Xamarin.Android data tutorial])。快速入门教程要求安装 [Xamarin][Xamarin download]（即[移动服务 SDK]），它可帮助你配置帐户并创建第一个移动服务。
+本指南演示如何在用于 iOS 和 Android 的 Xamarin 应用程序中使用针对 Azure 移动服务的 Xamarin 组件客户端来执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成“移动服务快速入门”教程 ([Xamarin.iOS][Get started with Mobile Services iOS]/[Xamarin.Android][Get started with Mobile Services Android]) 以及“.NET 中的数据处理入门”教程 ([Xamarin.iOS][Get started with data iOS]/[Xamarin.Android][Get started with data Android])。快速入门教程要求安装 [Xamarin][Xamarin download]（即[移动服务 SDK]），它可帮助你配置帐户并创建第一个移动服务。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -443,8 +443,8 @@ Xamarin 组件客户端在设计上支持强类型化方案。但有时，松散
 [缓存身份验证令牌]: #caching
 
 <!-- URLs. -->
-[Get started with Mobile Services iOS]: /develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with Mobile Services Android]: /develop/mobile/tutorials/get-started-xamarin-android
+[Get started with Mobile Services iOS]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started
+[Get started with Mobile Services Android]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
 [Xamarin download]: http://xamarin.com/download/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Xamarin.iOS quickstart tutorial]: /develop/mobile/tutorials/get-started-xamarin-ios/
@@ -456,16 +456,16 @@ Xamarin 组件客户端在设计上支持强类型化方案。但有时，松散
 [Xamarin.Auth component]: https://components.xamarin.com/view/xamarin.auth
 
 [移动服务 SDK]: http://nuget.org/packages/WindowsAzure.MobileServices/
-[Get started with data iOS]: /develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with data Android]: /develop/mobile/tutorials/get-started-with-data-xamarin-android
-[Get started with authentication iOS]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with authentication Android]: /develop/mobile/tutorials/get-started-with-users-xamarin-android
-[Validate and modify data with scripts ios]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-ios
-[Validate and modify data with scripts android]: /develop/mobile/tutorials/validate-modify-and-augment-data-xamarin-android
-[Refine queries with paging iOS]: /develop/mobile/tutorials/add-paging-to-data-xamarin-ios
-[Refine queries with paging Android]: /develop/mobile/tutorials/add-paging-to-data-xamarin-android
-[Authorize users with scripts iOS]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
-[Authorize users with scripts Android]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-android
+[Get started with data iOS]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
+[Get started with data Android]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data
+[Get started with authentication iOS]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
+[Get started with authentication Android]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-users
+[Validate and modify data with scripts ios]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#errors
+[Validate and modify data with scripts android]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#errors
+[Refine queries with paging iOS]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging
+[Refine queries with paging Android]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/#paging
+[Authorize users with scripts iOS]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
+[Authorize users with scripts Android]: /documentation/articles/mobile-services-javascript-backend-service-side-authorization
 [LoginAsync 方法]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
 [MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider.aspx
 [MobileServiceUser]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
