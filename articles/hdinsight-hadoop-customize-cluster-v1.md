@@ -7,17 +7,23 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="08/07/2015"
-	wacn.date="10/22/2015" /> 
+<tags 
+	ms.service="hdinsight" 
+	ms.date="08/07/2015" 
+	wacn.date="10/22/2015"/>
 
 # 使用脚本操作自定义 HDInsight 群集
 
-* [使用脚本操作自定义 HDInsight 群集](/docementation/articles/hdinsight-hadoop-customize-cluster-v1)
+[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
+
+* [使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)
 
 HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作可调用自定义脚本，以定义设置过程中要在群集上执行自定义。这些脚本可用于在群集上安装额外的软件或更改群集上的应用程序配置。
 
+
+> [AZURE.NOTE]只有在随附 Windows 操作系统的 HDInsight 群集 3.1 或更高版本上才支持脚本操作。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
+> 
+> 脚本操作是标准 Azure HDInsight 订阅免费提供的功能之一。
 
 你也可以使用多种其他方法来自定义 HDInsight 群集，例如包含其他存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（例如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过使用 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 门户来完成。有关详细信息，请参阅[使用自定义选项在 HDInsight 中设置 Hadoop 群集][hdinsight-provision-cluster]。
 
@@ -38,13 +44,13 @@ HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作
 
 ## 调用脚本操作脚本
 
-可以从 Azure 门户、Azure PowerShell 或 HDInsight .NET SDK 使用脚本操作脚本。本文介绍如何从门户使用脚本操作。若要了解如何通过 PowerShell 和 .NET SDK 使用脚本操作，请查看下表中列出的示例。
+可以从 Azure 门户、Azure PowerShell 或 HDInsight.NET SDK 使用脚本操作脚本。
 
 HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件：
 
 Name | 脚本
 ----- | -----
-**安装 R** | https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
+**安装 R** | https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1 。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
 **安装 Solr** | https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。
 - **安装 Giraph** | https://hdiconfigactions.blob.core.chinacloudapi.cn/giraphconfigactionv01/giraph-installer-v01.ps1 。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
 
@@ -52,17 +58,17 @@ Name | 脚本
 
 **从 Azure 门户**
 
-1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters/#portal)中的说明，使用“自定义创建”选项开始设置群集。 
+1. 根据[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始预配群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
-	![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster/HDI.CustomProvision.Page6.png "使用脚本操作自定义群集")
+	![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster-v1/HDI.CustomProvision.Page6.png "使用脚本操作自定义群集")
 	
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
 	<tr><td>Name</td>
 		<td>指定脚本操作的名称。</td></tr>
 	<tr><td>脚本 URI</td>
-		<td>指定要调用来自定义群集的脚本的 URI。</td></tr>
+		<td>指定要调用以自定义群集的脚本的 URI。</td></tr>
 	<tr><td>节点类型</td>
 		<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
 	<tr><td>Parameters</td>
@@ -75,7 +81,7 @@ Name | 脚本
   
 **从 Azure PowerShell cmdlet**
 
-使用 Azure PowerShell 命令来运行单个脚本操作或多个脚本操作。你可以使用 **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 调用自定义脚本。若要使用这些 cmdlet，你必须已安装并设置 Azure PowerShell。有关配置工作站以运行适用于 HDInsight 的 Azure Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
+使用 Azure PowerShell 命令来运行单个脚本操作或多个脚本操作。你可以使用 **<a href = "http://msdn.microsoft.com/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 调用自定义脚本。若要使用这些 cmdlet，你必须已安装并设置 Azure PowerShell。有关配置工作站以运行适用于 HDInsight 的 Azure Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
 使用以下 Azure PowerShell 命令可以在部署 HDInsight 群集时运行单个脚本操作：
 
@@ -95,13 +101,13 @@ Name | 脚本
 
 **从 HDInsight .NET SDK**
 
-HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx" target="_blank">ScriptAction</a> 类用于调用自定义脚本。使用 HDInsight .NET SDK：
+HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx" target="_blank">ScriptAction</a> 类用于调用自定义脚本。使用 HDInsight .NET SDK：
 
 1. 创建一个 Visual Studio 应用程序，然后从 Nuget 安装 SDK。在“工具”菜单中，单击“Nuget Package Manager”，然后单击“Package Manager Console”。在控制台中运行下列命令以安装程序包：
 
 		Install-Package Microsoft.WindowsAzure.Management.HDInsight
 
-2. 使用 SDK 创建群集。有关说明，请参阅[使用 .NET SDK 设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/#sdk)。
+2. 使用 SDK 创建群集。有关说明，请参阅[使用 .NET SDK 设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters#sdk)。
 
 3. 使用 **ScriptAction** 类调用自定义脚本，如下所示：
 
@@ -148,12 +154,13 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 - [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)
 - [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
 
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
-[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
+[hdinsight-write-script]: hdinsight-hadoop-script-actions.md
+[hdinsight-provision-cluster]: hdinsight-provision-clusters.md
+[powershell-install-configure]: ../install-configure-powershell.md
 
 
-[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集设置过程中的阶段"
+[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集设置过程中的阶段"
+ 
 
 <!---HONumber=74-->

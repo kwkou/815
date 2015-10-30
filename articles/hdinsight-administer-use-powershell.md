@@ -1,20 +1,21 @@
-<properties 
-	pageTitle="使用 PowerShell 管理 HDInsight 中的 Hadoop 群集 | Azure" 
-	description="了解如何使用 Azure PowerShell 执行针对 HDInsight 中 Hadoop 的管理任务。" 
-	services="hdinsight" 
-	editor="cgronlun" 
-	manager="paulettm" 
-	authors="mumian" 
+<properties
+	pageTitle="使用 PowerShell 管理 HDInsight 中的 Hadoop 群集 | Azure"
+	description="了解如何使用 Azure PowerShell 执行针对 HDInsight 中 Hadoop 的管理任务。"
+	services="hdinsight"
+	editor="cgronlun"
+	manager="paulettm"
+	tags="azure-portal"
+	authors="mumian"
 	documentationCenter=""/>
 
-<tags 
+<tags
 	ms.service="hdinsight"
-	ms.date="07/21/2015" 
-	wacn.date="08/14/2015" />
+	ms.date="07/28/2015"
+	wacn.date="10/22/2015"/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 
-
+[AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
 
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。在本文中，你将要学习如何通过使用 Windows PowerShell 借助于本地 Azure PowerShell 控制台来管理 Azure HDInsight 中的 Hadoop 群集。有关 HDInsight PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考][hdinsight-powershell-reference]。
 			
@@ -28,42 +29,58 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 
 
 ##设置 HDInsight 群集
-HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先拥有 Azure 存储帐户和存储容器，然后才能创建 HDInsight 群集。
+
+HDInsight 群集在 Azure 存储帐户上需要 Azure 资源组和 Blob 容器：
+
+- Azure 资源组是 Azure 资源的逻辑容器。Azure 资源组和 HDInsight 群集不必位于同一位置。有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)
+- HDInsight 使用 Azure 存储帐户的 Blob 容器作为默认文件系统。你需要先拥有 Azure 存储帐户和存储容器，然后才能创建 HDInsight 群集。默认存储帐户和 HDInsight 群集必须位于同一位置。
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
+**创建 Azure 资源组**
+
+1. 确保你在 Azure 资源模式下：
+
+		Switch-AzureMode -Name AzureResourceManager
+
+2. 连接到你的 Azure 帐户并选择一个订阅（如果你有多个订阅）。
+
+		Add-AzureAccount
+		Select-AzureSubscription
+
+3. 创建新的资源组：
+
+	New-AzureResourceGroup -name <AzureResourceGroupName> -Location <AzureDataCente> # 例如，“West US”
+
+	[AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
+
 **创建 Azure 存储帐户**
 
-在导入了 publishsettings 文件后，你可以使用以下命令创建一个存储帐户：
+	New-AzureStorageAccount -ResourceGroupName <AzureResourceGroupName> -Name <AzureStorageAccountName> -Location <AzureDataCneter> -Type <AccountType> # account type example: Standard_ZRS for zero redundancy storage
 
-	# Create an Azure Storage account
-	$storageAccountName = "<StorageAcccountName>"
-	$location = "<Microsoft data center>"           # For example, "China East"
-
-	New-AzureStorageAccount -StorageAccountName $storageAccountName -Location $location
+	For a full list of the storage account types, see [https://msdn.microsoft.com/zh-CN/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-CN/library/azure/hh264518.aspx).
 
 
-[AZURE.INCLUDE [数据中心列表](../includes/hdinsight-pricing-data-centers-clusters.md)]
 
-
-有关通过使用 Azure 门户创建 Azure 存储帐户的信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)。
+有关通过使用 Azure 门户创建 Azure 存储帐户的信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 如果你已有存储帐户但是不知道帐户名称和帐户密钥，可以使用以下命令来检索该信息：
 
 	# List Storage accounts for the current subscription
 	Get-AzureStorageAccount
 	# List the keys for a Storage account
-	Get-AzureStorageKey <StorageAccountName>
+	Get-AzureStorageAccountKey -ResourceGroupName <AzureResourceGroupName> -name $storageAccountName <AzureStorageAccountName>
 
-有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)中的“查看、复制和重新生成存储访问密钥”部分。
+有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/)中的“查看、复制和重新生成存储访问密钥”部分。
 
 **创建 Azure 存储帐户**
 
 Azure PowerShell 无法在 HDInsight 设置过程中创建 Blob 容器。你可以使用以下脚本创建一个容器：
 
-	$storageAccountName = "<StorageAccountName>"
-	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$containerName="<ContainerName>"
+	$resourceGroupName = "<AzureResoureGroupName>"
+	$storageAccountName = "<AzureStorageAccountName>"
+	$storageAccountKey = Get-AzureStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
+	$containerName="<AzureBlobContainerName>"
 
 	# Create a storage context object
 	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
@@ -74,27 +91,27 @@ Azure PowerShell 无法在 HDInsight 设置过程中创建 Blob 容器。你可�
 **设置群集**
 
 准备好存储帐户和 Blob 容器后，你就可以创建群集了。
-		
-	$storageAccountName = "<StorageAccountName>"
-	$containerName = "<ContainerName>"
+
+	$resourceGroupName = "<AzureResoureGroupName>"
+
+	$storageAccountName = "<AzureStorageAccountName>"
+	$containerName = "<AzureBlobContainerName>"
 
 	$clusterName = "<HDInsightClusterName>"
-	$location = "<MicrosoftDataCenter>"
+	$location = "<AzureDataCenter>"
 	$clusterNodes = <ClusterSizeInNodes>
 
 	# Get the Storage account key
-	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
+	$storageAccountKey = Get-AzureStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
 
 	# Create a new HDInsight cluster
-	New-AzureHDInsightCluster -Name $clusterName -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes
-
-
-下面的屏幕快照显示脚本执行：
-
-![HDI.PS.Provision][image-hdi-ps-provision]
-
-
-
+	New-AzureHDInsightCluster -ResourceGroupName $resourceGroupName `
+		-ClusterName $clusterName `
+		-Location $location `
+		-DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" `
+		-DefaultStorageAccountKey $storageAccountKey `
+		-DefaultStorageContainer $containerName  `
+		-ClusterSizeInNodes $clusterNodes
 
 ##列出群集详细信息
 使用以下命令可列出当前订阅中的所有群集：
@@ -103,7 +120,7 @@ Azure PowerShell 无法在 HDInsight 设置过程中创建 Blob 容器。你可�
 
 使用以下命令可显示当前订阅中特定群集的详细信息：
 
-	Get-AzureHDInsightCluster -Name <ClusterName> 
+	Get-AzureHDInsightCluster -ResourceGroupName <ResouceGroupName> -ClusterName <ClusterName>
 
 ##删除群集
 使用以下命令来删除群集：
@@ -252,18 +269,23 @@ HDInsight 群集分发附带称作 *hivesampletable* 的示例 Hive 表。你可
 
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal
-[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+
+[hdinsight-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=66-->
+<!---HONumber=74-->

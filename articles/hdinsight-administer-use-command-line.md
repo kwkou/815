@@ -1,191 +1,158 @@
-<properties linkid="manage-services-hdinsight-administer-hdinsight-using-command-line" urlDisplayName="HDInsight Administration" pageTitle="使用跨平台命令行界面管理 HDInsight | Azure" metaKeywords="hdinsight, hdinsight administration, hdinsight administration azure" description="Learn how to use the Cross-Platform Command-Line Interface to manage HDInsight clusters on any platform that supports Node.js, including Windows, Mac, and Linux." services="hdinsight" umbracoNaviHide="0" disqusComments="1" editor="cgronlun" manager="paulettm" title="Administer HDInsight using the Cross-platform Command-line Interface" authors="jgao" />
-<tags ms.service="hdinsight"
-    ms.date="11/21/2014"
-    wacn.date="04/11/2015"
-    />
+<properties
+	pageTitle="使用 Azure CLI 管理 Hadoop 群集 | Azure"
+	description="如何使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集"
+	services="hdinsight"
+	editor="cgronlun"
+	manager="paulettm"
+	authors="mumian"
+	tags="azure-portal"
+	documentationCenter=""/>
 
-# 使用跨平台命令行界面管理 HDInsight
+<tags 
+	ms.service="hdinsight" 
+	ms.date="09/17/2015"
+	wacn.date="10/22/2015"/>
 
-在本文中，你将了解如何使用跨平台命令行界面管理 HDInsight 群集。该命令行工具是在 Node.js 中实现的。可以在支持 Node.js 的任意平台（包括 Windows、Mac 和 Linux）上使用它。
+# 使用 Azure 命令行界面 (Azure CLI) 管理 HDInsight 中的 Hadoop 群集
 
-该命令行工具是开源的。在 GitHub 中管理源代码（网址为 <https://github.com/WindowsAzure/azure-sdk-tools-xplat>）。
+[AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
 
-本文只涉及从 Windows 使用命令行界面。有关如何使用命令行界面的一般指南，请参阅[如何使用针对 Mac 和 Linux 的 Azure 命令行工具][]。有关完整的参考文档，请参阅[针对 Mac 和 Linux 的 Azure 命令行工具][]。
+了解如何使用 Azure CLI 管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 是以 Node.js 实现的。可以在支持 Node.js 的任意平台（包括 Windows、Mac 和 Linux）上使用它。
 
-**先决条件：**
+Azure CLI 是开放源代码。在 GitHub 中管理源代码（网址为 <a href= "https://github.com/azure/azure-xplat-cli">https://github.com/azure/azure-xplat-cli</a>）。
+
+本文仅介绍如何将 Azure CLI 与 HDInsight 配合使用。有关如何使用 Azure CLI 的一般指导，请参阅[如何使用 Azure CLI][azure-command-line-tools]。
+
+
+##先决条件
 
 在开始阅读本文前，你必须具有：
 
--   **Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项][]，[试用][]。
+- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/)。
 
-## 本文内容
+- **Azure CLI** - 有关安装和配置信息，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli.md)。
 
--   [安装][]
--   [下载和导入 Azure 帐户 publishsettings][]
--   [设置群集][]
--   [使用配置文件设置群集][]
--   [列出并显示群集][]
--   [删除群集][]
--   [后续步骤][]
+##安装
 
-## <a id="installation"></a>安装
+如果尚未这样做，请使用[安装和配置 Azure CLI](/documentation/articles/xplat-cli) 文档来安装和配置 Azure CLI。
 
-可以使用 Node.js 包管理器 (NPM)** 或 Windows 安装程序安装该命令行界面。
+##设置 HDInsight 群集
 
-**使用 NPM 安装该命令行界面**
+[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-1.  浏览到**www.nodejs.org**。
-2.  单击**安装**，然后使用默认设置按说明操作。
-3.  从工作站打开**命令提示符**（或*Azure 命令提示符*，或*VS2012 的开发人员命令提示符*）。
-4.  在命令提示符窗口中运行以下命令。
-
-        npm install -g azure-cli
-
-    > [WACOM.NOTE] 如果收到“未找到 NPM 命令”的错误消息，请验证以下路径是否在 PATH 环境变量中：*C:\Program Files (x86)\nodejs;C:\Users[username]\AppData\Roaming\npm* 或 *C:\Program Files\nodejs;C:\Users\[username]\AppData\Roaming\npm*
-
-5.  运行以下命令以验证安装：
-
-        azure hdinsight -h
-
-    可以在不同级别使用 *-h* 开关以显示帮助信息。例如：
-
-        azure -h
-        azure hdinsight -h
-        azure hdinsight cluster -h
-        azure hdinsight cluster create -h
-
-**使用 Windows 安装程序安装该命令行界面**
-
-1.  浏览到 **<http://www.windowsazure.cn/zh-cn/downloads/#cmd-line-tools>**。
-2.  向下滚动到“命令行工具” 部分，然后单击“跨平台命令行界面” ，按 Web 平台安装程序向导的要求操作。
-
-## <a id="importsettings"></a>下载和导入 Azure 帐户 publishsettings
-
-在使用命令行界面前，你必须配置工作站和 Azure 之间的连接。命令行界面使用你的 Azure 订阅信息连接到你的帐户。可从 Azure 的 publishsettings 文件中获取此信息。然后，可以导入 publishsettings 文件作为永久性本地配置设置，命令行界面会将此设置用于后续操作。你只需导入你的 publishsettings 一次。
-
-> [WACOM.NOTE] publishsettings 文件包含敏感信息。建议你删除该文件或采取其他措施来加密包含该文件的用户文件夹。在 Windows 上，修改文件夹属性或使用 BitLocker。
-
-**下载和导入 publishsettings**
-
-1.  打开“命令提示符” 。
-2.  运行以下命令来下载 publishsettings 文件。
-
-        azure account download
-
-    ![HDI.CLIAccountDownloadImport][]
-
-    该命令显示下载文件的说明，包括 URL。
-
-3.  打开 **Internet Explorer** 并浏览到命令行提示符窗口中所列的 URL。
-4.  单击**保存**以将文件保存到工作站。
-5.  从命令提示符窗口，运行以下命令以导入 publishsettings 文件：
-
-        azure account import <文件>
-
-    在上一屏幕快照中，publishsettings 文件已保存到工作站上的 C:&#92;HDInsight 文件夹。
-
-## <a id="provision"></a>设置 HDInsight 群集
 
 HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先拥有 Azure 存储帐户，然后才能创建 HDInsight 群集。
 
 在导入了 publishsettings 文件后，你可以使用以下命令创建一个存储帐户：
 
-    azure account storage create [options] <StorageAccountName>
-
-> [WACOM.NOTE] 存储帐户必须共置于同一数据中心。目前，只能在以下数据中心内设置 HDInsight 群集：
-
-> -   中国东部
-> -   中国北部
+	azure account storage create [options] <StorageAccountName>
 
 
-有关使用 Azure 管理门户创建 Azure 存储帐户的信息，请参阅[如何创建存储帐户][]。
+> [AZURE.NOTE]存储帐户必须与 HDInsight 共置于同一数据中心。
 
-如果你已有存储帐户但是不知道帐户名称和帐户密钥，可以使用以下命令来检索该信息：
 
-    -- 列出存储帐户
-    azure account storage list
-    -- 显示存储帐户
-    azure account storage show <StorageAccountName>
-    -- 列出存储帐户的密钥
-    azure account storage keys list <StorageAccountName>
+有关通过使用 Azure 门户创建 Azure 存储帐户的信息，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]。
 
-有关使用管理门户获取信息的详细信息，请参阅[如何管理存储帐户][]中的*如何：查看、复制和重新生成存储访问密钥*一节。
+如果你已有存储帐户但是不知道帐户名称和帐户密钥，则可以使用以下命令来检索该信息：
 
-如果容器不存在，可使用 *azure hdinsight cluster create* 命令创建它。如果选择预先创建容器，可以使用以下命令：
+	-- Lists Storage accounts
+	azure account storage list
+	-- Shows a Storage account
+	azure account storage show <StorageAccountName>
+	-- Lists the keys for a Storage account
+	azure account storage keys list <StorageAccountName>
 
-    azure storage container create --account-name <StorageAccountName> --account-key <StorageAccountKey> [ContainerName]
-        
+有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]中的“查看、复制和重新生成存储访问密钥”部分。
 
+
+如果容器不存在，可使用 **azure hdinsight cluster create** 命令创建它。如果选择预先创建容器，可以使用以下命令：
+
+	azure storage container create --account-name <StorageAccountName> --account-key <StorageAccountKey> [ContainerName]
+		
 准备好存储帐户和 blob 容器后，你就可以创建群集了：
 
-    azure hdinsight cluster create --clusterName <ClusterName> --storageAccountName <StorageAccountName> --storageAccountKey <storageAccountKey> --storageContainer <StorageContainer> --nodes <NumberOfNodes> --location <DataCenterLocation> --username <HDInsightClusterUsername> --clusterPassword <HDInsightClusterPassword>
+	azure hdinsight cluster create --clusterName <ClusterName> --storageAccountName <StorageAccountName> --storageAccountKey <storageAccountKey> --storageContainer <StorageContainer> --nodes <NumberOfNodes> --location <DataCenterLocation> --username <HDInsightClusterUsername> --clusterPassword <HDInsightClusterPassword>
 
-![HDI.CLIClusterCreation][]
+![HDI.CLIClusterCreation][image-cli-clustercreation]
 
-## <a id="provisionconfigfile"></a>使用配置文件设置 HDInsight 群集
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##使用配置文件设置 HDInsight 群集
 通常，你设置一个 HDInsight 群集，对其运行作业，然后删除该群集以降低成本。在命令行界面上，你可以选择将配置保存到文件，以便在每次设置群集时重用这些配置。
+ 
+	azure hdinsight cluster config create <file>
+	 
+	azure hdinsight cluster config set <file> --clusterName <ClusterName> --nodes <NumberOfNodes> --location "<DataCenterLocation>" --storageAccountName "<StorageAccountName>.blob.core.chinacloudapi.cn" --storageAccountKey "<StorageAccountKey>" --storageContainer "<BlobContainerName>" --username "<Username>" --clusterPassword "<UserPassword>"
+	 
+	azure hdinsight cluster config storage add <file> --storageAccountName "<StorageAccountName>.blob.core.chinacloudapi.cn"
+	       --storageAccountKey "<StorageAccountKey>"
+	 
+	azure hdinsight cluster config metastore set <file> --type "hive" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
+	       --database "<HiveDatabaseName>" --user "<Username>" --metastorePassword "<UserPassword>"
+	 
+	azure hdinsight cluster config metastore set <file> --type "oozie" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
+	       --database "<OozieDatabaseName>" --user "<SQLUsername>" --metastorePassword "<SQLPassword>"
+	 
+	azure hdinsight cluster create --config <file>
+		 
 
-    azure hdinsight cluster config create <file>
-     
-    azure hdinsight cluster config set <file> --clusterName <ClusterName> --nodes <NumberOfNodes> --location "<DataCenterLocation>" --storageAccountName "<StorageAccountName>.blob.core.chinacloudapi.cn" --storageAccountKey "<StorageAccountKey>" --storageContainer "<BlobContainerName>" --username "<Username>" --clusterPassword "<UserPassword>"
-     
-    azure hdinsight cluster config storage add <file> --storageAccountName "<StorageAccountName>.blob.core.chinacloudapi.cn"
-    --storageAccountKey "<StorageAccountKey>"
-     
-    azure hdinsight cluster config metastore set <file> --type "hive" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
-    --database "<HiveDatabaseName>" --user "<Username>" --metastorePassword "<UserPassword>"
-     
-    azure hdinsight cluster config metastore set <file> --type "oozie" --server "<SQLDatabaseName>.database.chinacloudapi.cn"
-    --database "<OozieDatabaseName>" --user "<SQLUsername>" --metastorePassword "<SQLPassword>"
-     
-    azure hdinsight cluster create --config <file>
-         
 
-![HDI.CLIClusterCreationConfig][]
+![HDI.CLIClusterCreationConfig][image-cli-clustercreation-config]
 
-## <a id="listshow"></a>列出并显示群集详细信息
 
+##列出并显示群集详细信息
 使用以下命令来列出和显示群集详细信息：
+	
+	azure hdinsight cluster list
+	azure hdinsight cluster show <ClusterName>
+	
+![HDI.CLIListCluster][image-cli-clusterlisting]
 
-    azure hdinsight cluster list
-    azure hdinsight cluster show <ClusterName>
 
-![HDI.CLIListCluster][]
-
-## <a id="delete"></a>删除群集
-
+##删除群集
 使用以下命令来删除群集：
 
-    azure hdinsight cluster delete <ClusterName>
+	azure hdinsight cluster delete <ClusterName>
 
-## <a id="nextsteps"></a>后续步骤
 
+
+
+##后续步骤
 在本文中，你已了解如何执行不同的 HDInsight 群集管理任务。若要了解更多信息，请参阅下列文章：
 
--   [使用管理门户管理 HDInsight][]
--   [使用 PowerShell 管理 HDInsight][]
--   [Azure HDInsight 入门][]
--   [如何使用针对 Mac 和 Linux 的 Azure 命令行工具][]
--   [针对 Mac 和 Linux 的 Azure 命令行工具][]
+* [使用 Azure 门户管理 HDInsight][hdinsight-admin-portal]
+* [使用 Azure PowerShell 管理 HDInsight][hdinsight-admin-powershell]
+* [Azure HDInsight 入门][hdinsight-get-started]
+* [如何使用 Azure CLI][azure-command-line-tools]
 
-  [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
-  [针对 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/command-line-tools/
-  [购买选项]: /pricing/overview/
-  [试用]: /pricing/1rmb-trial/
-  [安装]: #installation
-  [下载和导入 Azure 帐户 publishsettings]: #importsettings
-  [设置群集]: #provision
-  [使用配置文件设置群集]: #provisionconfigfile
-  [列出并显示群集]: #listshow
-  [删除群集]: #delete
-  [后续步骤]: #nextsteps
-  [HDI.CLIAccountDownloadImport]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
-  [如何创建存储帐户]: /zh-cn/documentation/articles/storage-create-storage-account/
-  [如何管理存储帐户]: /zh-cn/documentation/articles/storage-manage-storage-account/
-  [HDI.CLIClusterCreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
-  [HDI.CLIClusterCreationConfig]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
-  [HDI.CLIListCluster]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png 
-  [使用管理门户管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/
-  [使用 PowerShell 管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-powershell/
-  [Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+
+[azure-command-line-tools]: /documentation/articles/xplat-cli/
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
+[azure-purchase-options]: /pricing/purchase-options/
+[azure-trial]: /pricing/1rmb-trial/
+
+
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+
+[image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
+[image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
+[image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
+[image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "列出并显示群集"
+
+<!---HONumber=74-->
