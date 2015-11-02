@@ -746,7 +746,7 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
         } 
 
 * [从 Azure 命令行流式传输诊断跟踪日志记录（加上 Glimpse！）](http://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/> 如何使用命令行实现本教程中通过 Visual Studio 完成的任务。[Glimpse](http://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) 是一个用于调试 ASP.NET 应用程序的工具。
-* [使用 Web Apps 日志记录和诊断 - 与 David Ebbo 协作完成](/documentation/videos/azure-web-site-logging-and-diagnostics/)和[从 Azure Web Apps 流式传输日志 - 与 David Ebbo 协作完成](/documentation/videos/log-streaming-with-azure-web-sites/)<br>由 Scott Hanselman 和 David Ebbo 提供的视频。
+
 
 对于错误日志记录，若不想编写自己的跟踪代码，可以使用开源日志记录框架，如 [ELMAH](http://nuget.org/packages/elmah/)。有关详细信息，请参阅 [Scott Hanselman 有关 ELMAH 的博客文章](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx)。
 
