@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 pageTitle="Windows Azure 开发人员中心：.NET" 
 metaKeywords=".NET" 
 description="" 
@@ -9,7 +9,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service=".NET"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="11/02/2015"
     />
 
 #.NET Azure 文档
@@ -18,6 +18,8 @@ editor="Eric Chen" />
 - 从 TFS 或源代码存储库（如 GitHub）自动部署。
 - 利用存储和 SQL 数据库 等托管服务扩展功能。
 - 了解如何通过使用 Azure 网站、Web 作业、云服务和 VM 在云中运行 ASP.NET Web 应用程序和 .NET 项目。
+- [安装用于 VS 2015 RC 的 SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x804)
+- [安装用于 VS 2013 的 SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x804)
 
 ##特色
 
@@ -41,7 +43,7 @@ editor="Eric Chen" />
         <td>表存储 <a href="/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables/">.NET</a> | <a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179423.aspx">REST</a></td>
       </tr>
       <tr>
-        <td><a href="/zh-cn/documentation/articles/fundamentals-introduction-to-azure/">Azure 简介</a></td>
+        <td><!--<a href="/zh-cn/documentation/articles/fundamentals-introduction-to-azure/">Azure 简介</a>--></td>
         <td>服务管理 <a href="http://go.microsoft.com/fwlink/p/?linkid=327806&clcid=0x804">.NET</a> | <a href="http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx">REST</a></td>
       </tr>
       <tr>
