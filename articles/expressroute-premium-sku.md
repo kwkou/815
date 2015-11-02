@@ -37,7 +37,7 @@ ExpressRoute 高级版是下面列出的功能的集合。
 - Azure 订阅
 - 最新版本的 Azure PowerShell
 
-###  1\.为 ExpressRoute 导入 PowerShell 模块
+###  1.为 ExpressRoute 导入 PowerShell 模块
 
 Windows PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关详细信息，请参阅 [MSDN](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx) 中的 PowerShell 文档。
 
@@ -48,7 +48,7 @@ Windows PowerShell 是一个功能强大的脚本编写环境，可用于在 Azu
 	    Import-Module 'C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure\ExpressRoute\ExpressRoute.psd1'
 
 
-### 2\.配置新的 ExpressRoute 线路并为其启用高级版外接程序功能
+### 2.配置新的 ExpressRoute 线路并为其启用高级版外接程序功能
 
 可以创建新的 ExpressRoute 线路并在创建时为其启用高级版外接程序。按照有关如何通过[连接提供商](/documentation/articlesexpressroute-configuring-exps) 创建 ExpressRoute 线路的说明进行操作。我们在 New-AzureDedicatedCircuit cmdlet 中添加了一个新的可选参数，让你指定 SKU。SKU 可以是 Standard 或 Premium。默认值为“standard”。在 SKU 上传递为 Premium 将为线路启用高级版外接程序功能。
 
@@ -56,7 +56,7 @@ Windows PowerShell 是一个功能强大的脚本编写环境，可用于在 Azu
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -Sku Premium
 
 
-### 3\.验证 ExpressRoute 高级版外接程序是否已启用
+### 3.验证 ExpressRoute 高级版外接程序是否已启用
 你可以检查是否为你的线路启用了 ExpressRoute 高级版外接程序。在下面的示例中，ExpressRoute 线路未启用 ExpressRoute 高级版外接程序功能。如果启用了该外接程序，SKU 将显示为 ***Premium***。
 
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
