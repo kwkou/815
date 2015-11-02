@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="简要介绍并比较 Azure 按需媒体编码器" 
 	description="本主题概括介绍并比较了 Azure 按需媒体编码器。" 
 	services="media-services" 
@@ -20,7 +20,7 @@
 
 编解码器有两个组件：一个用于压缩数字媒体文件进行传输，另一个用于解压缩数字媒体文件进行播放。有音频编解码器（用于压缩和解压缩音频）和视频编解码器（用于压缩和解压缩视频）。编解码器可以使用无损压缩或有损压缩。无损编解码器在进行压缩时会保留全部信息。文件解压缩后，得到的文件与输入媒体相同，因此无损编解码器非常适用于存档和存储。有损编解码器在编码时会丢失部分信息，可通过牺牲视频质量生成比原始文件小的文件，因此非常适用于在 Internet 上进行流式传输。
 
-了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。有关详细信息，请参阅[编码与打包](http://blog-ndrouin.chinacloudsites.cn/streaming-media-terminology-explained/)。
+了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。
 
 Media Services 所提供的动态打包可让你以 Media Services 支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
@@ -192,7 +192,7 @@ MP3 (MPEG-1 Audio Layer 3)|是|是|是
 Windows Media 音频|是|是|是
 WAV/PCM|是|是|是
 [FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|是|否|否
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |是|否|否
+[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format)) |是|否|否
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|是|否|否
 
 

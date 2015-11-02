@@ -374,9 +374,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal#rdp
 
-[hdinsight-powershell-reference]: http:
-
-msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
+[hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis

@@ -14,7 +14,7 @@
 
 # 使用脚本操作自定义 HDInsight 群集
 
-* [使用脚本操作自定义 HDInsight 群集](/docementation/articles/hdinsight-hadoop-customize-cluster-v1)
+* [使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
 
 HDInsight 提供了一个称为**脚本操作**的配置选项，该脚本操作可调用自定义脚本，以定义设置过程中要在群集上执行自定义。这些脚本可用于在群集上安装额外的软件或更改群集上的应用程序配置。
 

@@ -24,7 +24,6 @@
 
 ## 模板文件中的 NSG 资源
 
-你可以查看和下载[示例模板](https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/)。
 
 下面的部分说明基于上述方案定义前端 NSG。
 
