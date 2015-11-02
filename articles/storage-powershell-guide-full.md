@@ -196,7 +196,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 	    Get-AzureSubscription –Current
 
 ### 如何列出订阅中的所有 Azure 存储帐户
-每个 Azure 订阅最多可以有 100 个存储帐户。有关限制的最新信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
+每个 Azure 订阅最多可以有 100 个存储帐户。有关限制的最新信息，请参阅 <!--[-->Azure 订阅和服务限制、配额与约束<!--](/documentation/articles/azure-subscription-service-limits)-->。
 
 运行以下 cmdlet，以找出当前订阅中存储帐户的名称和状态：
 

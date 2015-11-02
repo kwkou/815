@@ -95,7 +95,7 @@ Azure 命令行界面 (Azure CLI) 将具有两种部署模式 - **AzureServiceMa
 
 **对我的订阅的配额有什么影响？**
 
-通过新的 Azure 资源管理器 API 创建的虚拟机、虚拟网络和存储帐户的配额与你当前所具有的配额是分开的。每个订阅都会获取新的配额，以使用新的 API 创建资源。你可以在[此处](/documentation/articles/azure-subscription-service-limits)阅读有关其他配额的详细内容。
+通过新的 Azure 资源管理器 API 创建的虚拟机、虚拟网络和存储帐户的配额与你当前所具有的配额是分开的。每个订阅都会获取新的配额，以使用新的 API 创建资源。你可以在<!--[-->此处<!--](/documentation/articles/azure-subscription-service-limits)-->阅读有关其他配额的详细内容。
 
 **是否可以继续使用我的自动脚本，用于通过新的 Azure 资源管理器 API 预配虚拟机、虚拟网络和存储帐户等？**
 

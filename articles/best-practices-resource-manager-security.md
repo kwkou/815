@@ -17,7 +17,7 @@
 
 关于 Azure 资源管理器模板的安全事项，有几个方面需要考虑，即密钥和机密、基于角色的访问控制，以及网络安全组。
 
-本主题假定你熟悉 Azure 资源管理器中基于角色的访问控制 (RBAC)。有关详细信息，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)以及[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)
+本主题假定你熟悉 Azure 资源管理器中基于角色的访问控制 (RBAC)。有关详细信息，请参阅 <!--[-->Microsoft Azure 门户中基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->以及[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)
 
 本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载 [一流的 ARM 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf)。
 
@@ -331,6 +331,6 @@ Azure 使用路由表来决定如何根据每个数据包的目标来转发 IP �
 - 若要了解如何设置安全主体，以便通过正确的访问权限来使用组织中的资源，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)
 - 如果你需要锁定对资源的访问，则可使用管理锁。请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)
 - 若要配置路由和 IP 转发，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to) 
-- 有关基于角色的访问控制的概述，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)
+- 有关基于角色的访问控制的概述，请参阅 <!--[-->Microsoft Azure 门户中基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->
 
 <!---HONumber=71-->
