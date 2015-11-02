@@ -140,7 +140,7 @@ resolv.conf 文件通常是自动生成的，不应进行编辑。添加“optio
 
 - 另外，当许多机器人扫描打开的递归 DNS 解析器时，建议保护 DNS 服务器免于通过 Internet 访问。
 
-- 为了获得最佳性能，在将 Azure VM用作 DNS 服务器时，应禁用 IPv6，并且[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip.mp) 应分配给每个 DNS 服务器 VM。
+- 为了获得最佳性能，在将 Azure VM用作 DNS 服务器时，应禁用 IPv6，并且[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip) 应分配给每个 DNS 服务器 VM。
 
 ## 指定 DNS 服务器
 
