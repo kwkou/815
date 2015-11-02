@@ -96,7 +96,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 ### 存储资源管理器工具 
 
 - 支持查看附加 Blob。有关详细信息，请参阅[此博客文章](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx)。 
-
+<!-- deleted by customization
 ### 适用于 Visual Studio 的 Azure 数据工厂工具 
 
 即将引入适用于 Visual Studio 的 **Azure 数据工厂工具**。以下是启用的功能。有关详细信息，请参阅[此博客](http://go.microsoft.com/fwlink/?LinkId=617530)。
@@ -108,7 +108,7 @@ Azure 资源管理器工具已更新为使用基于角色的访问控制 (RBAC) 
 - **使用架构验证与丰富智能感知进行 JSON 编辑**：使用丰富智能感知与架构验证，有效地配置和编辑数据工厂实体的 JSON 文档 
 - **多环境发布**：通过为每个环境创建不同的配置文件，将创作的管道发布到开发、测试或生产环境。
 - **支持基于 Pig、Hive 和 .Net 的数据处理**：支持在数据工厂项目中使用 Pig 和 Hive 脚本。支持引用 C# 项目来管理 .Net 活动。
-
+-->
 ## Azure SDK for .NET 2.7.1
 
 以下部分包含的更新是 Azure SDK for .NET 2.7.1 发行版中引入的。

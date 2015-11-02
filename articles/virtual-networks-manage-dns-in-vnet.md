@@ -47,7 +47,7 @@
 
 1. 将虚拟网络设置导出到网络配置文件。有关导出网络配置设置的详细信息和步骤，请参阅[将虚拟网络设置导出到网络配置文件](/documentation/articles/virtual-networks-using-network-configuration-file)。
 
-2. 指定虚拟网络的 DNS 服务器信息。有关指定 DNS 服务器的详细信息，请参阅[在虚拟网络配置文件中指定 DNS 服务器](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file)。有关网络配置文件的其他信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)和[使用网络配置文件配置虚拟网络](https://msdn.microsoft.com/zh-cn/library/azure/jj156097.aspx)。
+2. 指定虚拟网络的 DNS 服务器信息。有关指定 DNS 服务器的详细信息，请参阅[在虚拟网络配置文件中指定 DNS 服务器](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file)。有关网络配置文件的其他信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)和[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
 
 3. 导入网络配置文件。有关导入网络配置文件的详细信息和步骤，请参阅[导入网络配置文件](/documentation/articles/virtual-networks-using-network-configuration-file)。
 

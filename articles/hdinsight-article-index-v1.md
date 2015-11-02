@@ -30,7 +30,7 @@
 ## Hadoop 和 Excel
 
 * [使用 Power Query 将 Excel 连接到 Hadoop](/documentation/articles/hdinsight-connect-excel-power-query)
-* [使用 Hive ODBC 驱动程序将 Excel 连接到 Hadoop](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver)
+* [使用 Hive ODBC 驱动程序将 Excel 连接到 Hadoop](/documentation/articles/hdinsight-connect-excel-hive-ODBC-driver)
 
 
 ## Hadoop：高级技术
@@ -38,7 +38,7 @@
 * [使用 Microsoft Avro Library 序列化 Hadoop 中的数据](/documentation/articles/hdinsight-dotnet-avro-serialization)
 * [使用 Hive 处理和分析 JSON 文档](/documentation/articles/hdinsight-using-json-in-hive)
 * [将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python)
-* [优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query–v1)
+* [优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1)
 * [使用 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 * [将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 * [开发 C# Hadoop 流式处理程序](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)
@@ -47,11 +47,10 @@
 
 * [配置 HBase 异地复制](/documentation/articles/hdinsight-hbase-geo-replication)
 * [使用 Maven 构建使用 HBase 的 Java 应用程序](/documentation/articles/hdinsight-hbase-build-java-maven)
-* [在 HBase 上分析实时 Twitter 观点](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment)
 
 ## Apache Storm：流查询
 
-* [开始使用 Storm 初学者示例](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1)
+* [开始使用 Storm 初学者示例](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 * [部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 * [使用 Hadoop Tools for Visual Studio 开发 Apache Storm 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
 * [使用 Apache Storm 和 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)
@@ -63,20 +62,12 @@
 
 * [使用 Hive 查询控制台分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 * [使用 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)
-* [使用 Hive 分析存储的 Twitter 数据](/documentation/articles/hdinsight-analyze-twitter-data)
-* [使用 Apache Storm 确定 Twitter 趋势主题](/documentation/articles/hdinsight-storm-twitter-trending)
 * [使用 Apache Storm、事件中心和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis)
-
-## HDInsight 中的机器学习
-
-* [通过 Hadoop 使用 Apache Mahout 生成电影推荐](/documentation/articles/hdinsight-mahout)
-* [学习路径：构建高级分析解决方案](/documentation/articles/machine-learning-data-science-how-to-create-machine-learning-service)
-* [学习路径：高级数据处理](/documentation/articles/machine-learning-data-science-advanced-data-processing)
 
 ## 可扩展性
 
 * [使用 Azure 虚拟网络扩展 HDInsight 功能](/documentation/articles/hdinsight-extend-hadoop-virtual-network)
-* [使用 HDInsight 群集上的 Giraph 处理大型图形](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
+* [使用 HDInsight 群集上的 Giraph 处理大型图形](/documentation/articles/hdinsight-hadoop-giraph-install)
 * [在 Hadoop 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 
 ## 操作

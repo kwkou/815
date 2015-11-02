@@ -38,7 +38,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版�
 
 **获取当前组件版本信息**
 
-与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。确定可用组件并验证正在使用哪些群集版本的一种方法是使用 Ambari REST API。**GetComponentInformation** 命令可用于检索有关服务组件的信息。有关详细信息，请参阅 [Ambari 文档][ambari-docs]。获取此信息的另一个方法是使用远程桌面登录到群集并直接检查“C:\\apps\\dist”目录的内容。
+与 HDInsight 群集版本关联的组件版本可能在将来的 HDInsight 更新中更改。确定可用组件并验证正在使用哪些群集版本的一种方法是使用 Ambari REST API。**GetComponentInformation** 命令可用于检索有关服务组件的信息。获取此信息的另一个方法是使用远程桌面登录到群集并直接检查“C:\\apps\\dist”目录的内容。
 
 
 **发行说明**

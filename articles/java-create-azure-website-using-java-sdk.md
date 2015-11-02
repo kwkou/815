@@ -238,7 +238,7 @@ Azure SDK for Java 使用管理证书在 Azure 订阅中进行身份验证。对
 
 #### 定义 Web 创建方法
 
-接下来，定义用于创建 Web 应用的方法。此方法（`createWebApp`）指定 Web 应用的参数和 Web 空间。它还会创建并配置 Azure 网站管理客户端，该客户端由 [WebSiteManagementClient][] 对象进行定义。管理客户端对于创建 Web Apps 至关重要。它提供 RESTful web 服务，使应用程序能够通过调用服务管理 API 来管理 Web Apps（执行创建、更新和删除等操作）。
+接下来，定义用于创建 Web 应用的方法。此方法（`createWebApp`）指定 Web 应用的参数和 Web 空间。它还会创建并配置 Azure 网站管理客户端，该客户端由 WebSiteManagementClient 对象进行定义。管理客户端对于创建 Web Apps 至关重要。它提供 RESTful web 服务，使应用程序能够通过调用服务管理 API 来管理 Web Apps（执行创建、更新和删除等操作）。
 
     private static void createWebApp() throws Exception {
 

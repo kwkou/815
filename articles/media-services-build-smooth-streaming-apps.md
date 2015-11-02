@@ -28,7 +28,7 @@
 4. 选择平滑流式处理曲目
 
 ##先决条件
-- Windows 8 32 位或 64 位。你可以从 MSDN 获取 [Windows 8 企业评估版](http://msdn.microsoft.com/zh-cn/evalcenter/jj554510.aspx)。
+- Windows 8 32 位或 64 位。你可以从 MSDN 获取 Windows 8 企业评估版。
 - 在 Windows 8 上安装适用于 Windows 8 的 Visual Studio 2012 或 Visual Studio Express 2012。你可以从[此处](http://www.microsoft.com/visualstudio/11/zh-cn/downloads)获取试用版。
 - [适用于 Windows 8 的 Microsoft 平滑流式处理客户端 SDK](http://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Homehttp://visualstudiogallery.msdn.microsoft.com/04423d13-3b3e-4741-a01c-1ae29e84fea6?SRC=Home)。
 

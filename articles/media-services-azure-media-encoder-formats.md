@@ -84,7 +84,7 @@ MP3 (MPEG-1 Audio Layer 3)|是
 Windows Media Audio 9（Windows Media Audio Standard、Windows Media Audio Professional 和 Windows Media Audio Lossless） |是
 WAV/PCM|是
 [FLAC](https://en.wikipedia.org/wiki/FLAC)|否
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |否
+[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format)) |否
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)|否
 
 

@@ -28,11 +28,10 @@ Windows Azure 媒体服务允许播放 DASH、平滑流和 HLS 流格式的内�
 
 更多相关信息：
 
-- [Azure 媒体播放器](http://aka.ms/ampinfo)
-- [Azure 媒体播放器文档](http://aka.ms/ampdocs) 
+- [Azure 媒体播放器文档](/documentation/services/media-services/) 
 - [Azure 媒体播放器入门博客](http://azure.microsoft.com/blog/2015/04/15/announcing-azure-media-player)
 - [注册以保持最新版本的 Azure 媒体播放器](http://aka.ms/ampsignup)
-- [添加新的功能请求、想法和反馈](http://feedback.azure.com/forums/293565-azure-media-player/filters/my_feedback) 
+- [添加新的功能请求、想法和反馈](/product-feedback) 
 
 
 ##用于创建播放器应用程序的其他工具
@@ -44,7 +43,6 @@ Windows Azure 媒体服务允许播放 DASH、平滑流和 HLS 流格式的内�
 - [Microsoft 媒体平台：播放器框架](http://playerframework.codeplex.com/) 
 - [HTML5 Player Framework 文档](http://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 - [Microsoft Smooth Streaming Plugin for OSMF](https://www.microsoft.com/download/details.aspx?id=36057) 
-- [授权 Microsoft® 平滑流式处理客户端移植工具包](https://www.microsoft.com/mediaplatform/sspk.aspx) 
 - [XBOX 视频应用程序开发](http://xbox.create.msdn.com/) 
 
 ##广告

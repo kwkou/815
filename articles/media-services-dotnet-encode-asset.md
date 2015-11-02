@@ -33,7 +33,7 @@
 
 ##创建包含单个编码任务的作业 
 
-使用 Azure 媒体编码器编码时，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn619389.aspx)指定的任务配置预设。
+使用 Azure 媒体编码器编码时，可以使用[此处](https://github.com/AzureMediaServicesSamples/Encoding-Presets/tree/master/VoD/Azure%20Media%20Encoder)指定的任务配置预设。
 
 ###使用 Media Services SDK for .NET  
 

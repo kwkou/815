@@ -146,7 +146,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * 使用 Azure Blob 存储（一种与 Hadoop 兼容的选项），数据存储高效又经济。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-blob-storage)。
 
-* 与其他 Azure 服务集成，包括[网站](/documentation/services/websites/)和 [SQL 数据库](/documentation/services/sql-database/)。
+* 与其他 Azure 服务集成，包括[网站](/documentation/services/web-sites/)和 [SQL 数据库](/documentation/services/sql-databases/)。
 
 * 进入成本低。开始[试用](/pricing/1rmb-trial/)或查阅 [HDInsight 定价详细信息](/home/features/hdinsight/#price)。
 
@@ -175,7 +175,7 @@ Apache YARN 是下一代 MapReduce（MapReduce 2.0 或 MRv2），用于将 JobTr
 
 * <a target="_blank" href="http://hadoop.apache.org/">Apache Hadoop</a> - 了解有关 Apache Hadoop 软件库的详细信息，这是一个框架，允许你跨计算机群集分布式处理大型数据集。	
 
-* <a target="_blank" href="http://hadoop.apache.org/docs/r0.18.1/hdfs_design.html">HDFS</a> - 详细了解 Hadoop 分布式文件系统的体系结构和设计，Hadoop 分布式文件系统是由 Hadoop 应用程序使用的主存储系统。
+* HDFS - 详细了解 Hadoop 分布式文件系统的体系结构和设计，Hadoop 分布式文件系统是由 Hadoop 应用程序使用的主存储系统。
 
 * <a target="_blank" href="http://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html">MapReduce 教程</a> - 了解有关编程框架的详情，此编程框架用于编写 Hadoop 应用程序，以便并行地快速处理大型计算节点群集上的大量数据。
 

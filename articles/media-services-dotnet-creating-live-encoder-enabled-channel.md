@@ -17,9 +17,9 @@
 
 > [AZURE.SELECTOR]
 - [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET SDK](/documentation/articles/(media-services-dotnet-creating-live-encoder-enabled-channel)
+- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
-- 
+
 ##概述
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。

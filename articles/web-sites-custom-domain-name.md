@@ -112,7 +112,6 @@
 - **contoso.com** 映射到 127.0.0.1。
 - **www.contoso.com** 映射到 **contoso.chinacloudsites.cn**。
 
->[AZURE.NOTE]可以使用 Azure DNS 为你的 Web 应用托管必要的域记录。若要在 Azure DNS 中配置你的自定义域并创建记录，请参阅[为 Web 应用创建自定义 DNS 记录](/documentation/articles/dns-web-sites-custom-domain)。
 
 <a name="awverify" /></a>
 ## 创建 awverify 记录（仅 A 记录）
@@ -129,9 +128,6 @@
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
 
 
-## 后续步骤
-
-有关详细信息，请参阅：[Azure DNS 入门](/documentation/articles/dns-getstarted-create-dnszone)和[将域委托到 Azure DNS](/documentation/articles/dns-domain-delegation) 
 
 <!-- Anchors. -->
 [概述]: #overview
