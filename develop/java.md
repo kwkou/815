@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="JAVA"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="11/02/2015"
     />
 
 #Java 开发人员中心
@@ -42,7 +42,7 @@ editor="Eric Chen" />
 
 - [应用程序之间的消息](/documentation/articles/service-bus-java-how-to-use-queues)
 - [对用户进行身份验证](/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse)
-- [将 Twilio 用于音频和 SMS](/documentation/articles/partner-twilio-java-how-to-use-voice-sms)
+<!--- [将 Twilio 用于音频和 SMS](/documentation/articles/partner-twilio-java-how-to-use-voice-sms)-->
 - [全部显示](/develop/java/app-services)
 <!--- [使用 SendGrid 发送电子邮件](/documentation/articles/store-sendgrid-java-how-to-send-email)-->
     
@@ -50,7 +50,8 @@ editor="Eric Chen" />
 
 - [Access Control](/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh278947)
 - [Blob 服务](/documentation/articles/storage-java-how-to-use-blob-storage) / [API](http://dl.windowsazure.com/storage/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
-- [DocumentDB](/documentation/articles/documentdb-java-application) / [API](http://dl.windowsazure.com/documentdb/javadoc)
+<!--
+- [DocumentDB](/documentation/articles/documentdb-java-application) / [API](http://dl.windowsazure.com/documentdb/javadoc)-->
 - [媒体服务](/documentation/articles/media-services-java-how-to-use) / [API](http://dl.windowsazure.com/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
 - [队列服务](/documentation/articles/storage-java-how-to-use-queue-storage) / [API](http://dl.windowsazure.com/storage/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [SendGrid](/documentation/articles/store-sendgrid-java-how-to-send-email) / [API](https://sendgrid.com/docs/API_Reference/index.html)

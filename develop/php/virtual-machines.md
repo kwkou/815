@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="08/19/2015"
+    wacn.date="11/02/2015"
     />
 
 
@@ -45,10 +45,11 @@
 <p>了解如何在同一云服务下创建多台虚拟机，然后使虚拟机之间能够相互通信，在虚拟机之间进行平衡负载，维护虚拟机的高可用性。</p>
 <h3>如何：<a href="/documentation/articles/virtual-machines-load-balance/">平衡虚拟机负载</a></h3>
 <p>了解如何平衡运行 Linux 的和位于云服务中的虚拟机的负载。</p>
-<!--
+
 <h2 id="header-3">安装软件</h2>
 <h3>如何：<a href="/documentation/articles/virtual-machines-linux-install-lamp-stack/">在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈</a></h3>
 <p>了解如何在 Ubuntu 或 CentOS 上安装 LAMP 堆栈。</p>
+<!--
 <h3>如何：<a href="/documentation/articles/store-mongodb-virtual-machines-linux-install-centos/">通过 Azure 在 CentOS Linux 虚拟机上安装 MongoDB</a></h3>
 <p>了解如何使用 Azure 管理门户从市场中选择并安装 Linux 虚拟机、如何使用 SSH 或 PuTTY 连接到虚拟机以及如何在虚拟机上安装 MongoDB。</p>-->
 <h2 id="header-4">工具</h2>

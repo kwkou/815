@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 pageTitle="Windows Azure 开发人员中心：PYTHON" 
 description="" 
 services="PYTHON" 
@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="PYTHON"
     ms.date=""
-    wacn.date="06/29/2015"
+    wacn.date="11/02/2015"
     />
 
 #PYTHON开发人员中心
@@ -24,7 +24,7 @@ editor="Eric Chen" />
 
 - [配置 Python](/documentation/articles/web-sites-python-configure)
 - [创建 Django 网站](/documentation/articles/web-sites-python-create-deploy-django-app)
-<!--- [从 Visual Studio 部署](/documentation/articles/web-sites-python-ptvs-django-mysql)-->
+- [从 Visual Studio 部署](/documentation/articles/web-sites-python-ptvs-django-mysql)
 - [承载 IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook)
 - [自定义域名](/documentation/articles/web-sites-custom-domain-name)
 - [全部显示](/develop/python/compute)
@@ -33,7 +33,7 @@ editor="Eric Chen" />
 
 - [在 Blob 中存储数据](/documentation/articles/storage-python-how-to-use-blob-storage)
 - [在表中存储数据](/documentation/articles/storage-python-how-to-use-table-storage)
-<!--- [将 Python 与 HDInsight 配合使用](zh-cn/documentation/articles/hdinsight-python)-->
+- [将 Python 与 HDInsight 配合使用](/documentation/articles/hdinsight-python)
 - [全部显示](/develop/python/data-services)
 
 ###应用服务
