@@ -93,7 +93,7 @@
 
 - 若要了解有关指定安全策略的信息，请参阅<!--[-->管理和审核对资源的访问权限<!--](/documentation/articles/resource-group-rbac)-->  
 - 有关允许服务主体访问资源的步骤，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)  
-- 有关基于角色的访问控制的概述，请参阅 [Microsoft Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)
+- 有关基于角色的访问控制的概述，请参阅 <!--[-->Microsoft Azure 门户中基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 
 

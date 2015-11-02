@@ -97,7 +97,7 @@ Azure 资源管理器会自动记录用户操作以供审核。
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
-有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。
+有关基于角色的访问控制的详细信息，请参阅 <!--[-->Windows Azure 预览门户中基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->。
 
 有关设置访问策略的示例，请参阅<!--[-->管理和审核对资源的访问权限<!--](/documentation/articles/resource-group-rbac)-->。
 

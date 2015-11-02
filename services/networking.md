@@ -21,7 +21,7 @@
 ####特色
 
 -   [虚拟网络技术概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)
--   [Azure 订阅和服务限制、配额和约束条件](/zh-cn/documentation/articles/azure-subscription-service-limits)
+-   <!--[-->Azure 订阅和服务限制、配额和约束条件<!--](/zh-cn/documentation/articles/azure-subscription-service-limits)-->
 
 ##教程和指南
 

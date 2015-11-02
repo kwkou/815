@@ -18,7 +18,7 @@
 
 Azure 资源管理器通过资源管理锁提供对资源限制操作的功能。资源锁是能够在特定范围内强制实施锁级别的策略。锁级别标识强制实施策略的类型，目前有两个值 - **CanNotDelete** 和 **ReadOnly**。可将范围表示为一个 URI，并且可以是一个资源或一个资源组。
 
-锁不同于向用户分配用来执行某些操作的权限。若要了解有关用户和角色的设置权限，请参阅[预览门户中的基于角色的访问控制](/documentation/articles/role-based-access-control-configure)和[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。
+锁不同于向用户分配用来执行某些操作的权限。若要了解有关用户和角色的设置权限，请参阅<!--[-->预览门户中的基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->和[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。
 
 ## 常见方案
 
