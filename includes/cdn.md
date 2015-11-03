@@ -95,6 +95,6 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 
 <!--Image references-->
-[1]: ./img/image005.png
-[2]: ./img/image002.png
-[3]: ./img/how_to_001.png
+[1]: ./media/cdn/image005.png
+[2]: ./media/cdn/image002.png
+[3]: ./media/cdn/how_to_001.png
