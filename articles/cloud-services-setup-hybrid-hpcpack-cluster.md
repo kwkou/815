@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor=""f/>
+	editor=""/>
 
 <tags
 	ms.service="cloud-services"
@@ -102,7 +102,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![证书设置][upload_cert1]
 
-4. 在头节点上浏览找到文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer。然后，单击“检查”按钮。
+4. 在头节点上浏览找到文件 C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer。然后，单击“检查”按钮。
 
 	![上载证书][install_hpc10]
 
