@@ -16,7 +16,7 @@
 # 如何为 Linux 虚拟机重置密码或 SSH #
 
 如果因为忘记密码、安全外壳 (SSH) 密钥不正确或 SSH 配置出现问题而不能连接到 Linux 虚拟机，请使用 Azure 预览门户或 VMAccessForLinux 扩展重置密码或 SSH 密钥或者修复 SSH 配置。请注意，本文适用于使用**经典**部署模型创建的虚拟机。
-
+<!--
 ## Azure 预览门户
 
 若要在 [Azure 预览门户](manage.windowsazure.cn)中重置 SSH 配置，请单击“浏览”>“虚拟机”>“你的 Linux 虚拟机”>“重置远程访问”。下面是一个示例。
@@ -26,7 +26,7 @@
 若要在 [Azure 预览门户](https://manage.windowsazure.cn)中重置具有 sudo 特权的用户帐户的名称和密码或重置 SSH 公钥，请单击“浏览”>“虚拟机”>“你的 Linux 虚拟机”>“所有设置”>“密码重置”。下面是一个示例。
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-PW-Reset-Linux.png)
-
+-->
 
 ## Azure CLI 和 PowerShell
 

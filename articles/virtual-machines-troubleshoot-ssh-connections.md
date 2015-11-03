@@ -115,7 +115,7 @@ SSH 客户端无法访问 Azure 虚拟机上的 SSH 服务可能是由于以下�
 如果可以与同一虚拟网络中的某个虚拟机建立 SSH 连接，请检查：
 
 - 目标虚拟机上 SSH 流量的终结点配置。终结点的专用 TCP 端口必须与虚拟机上 SSH 服务正在其上侦听的 TCP 端口（默认为 22）匹配。对于在 Azure 资源管理器中使用模板创建的虚拟机，请通过“浏览”>“虚拟机 (v2)”>“VM 名称”>“设置”>“终结点”，验证 Azure 预览门户中的 SSH TCP 端口号。
-- 目标虚拟机上的 SSH 流量终结点的 ACL。ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-network/virtual-networks-acl)。
+- 目标虚拟机上的 SSH 流量终结点的 ACL。ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl)。
 
 要使终结点不会成为问题来源，请删除当前终结点，然后创建一个新的终结点并指定 **SSH** 名称（公用和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 

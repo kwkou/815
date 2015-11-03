@@ -32,7 +32,7 @@ Azure 资源管理器模板可让你通过定义资源之间的依赖关系，�
 ### 运行自定义脚本扩展的先决条件
 
 1. 从<a href="https://www.windowsazure.cn/downloads" target="_blank">此处</a>安装最新的 Azure PowerShell Cmdlet 或 Azure CLI。
-2. 如果脚本将在现有 VM 上运行，请确保已在该 VM 上启用了 VM 代理，如果没有启用，请根据<a href="https://msdn.microsoft.com/library/azure/dn832621.aspx" target="_blank">此文</a>来安装一个。
+2. 如果脚本将在现有 VM 上运行，请确保已在该 VM 上启用了 VM 代理，如果没有启用，请根据<a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">此文</a>来安装一个。
 3. 将你要在 VM 上运行的脚本上载到 Azure 存储。脚本可以来自单个或多个存储容器。
 4. 或者，也可以将脚本上载到 Github 帐户。
 5. 脚本应当以下述方式编写：使用扩展启动入口脚本，然后入口脚本再调用其他脚本。

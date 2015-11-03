@@ -40,13 +40,13 @@
 |SQL Server 2014 SP1|Windows Server 2012 R2|Enterprise、Standard、Web|
 |SQL Server 2016 CTP|Windows Server 2012 R2|计算|
 
->[AZURE.NOTE]用于数据仓库和事务工作负荷的虚拟机库映像（未显示在上面）已弃用并且将很快从库中删除。请使用上表中的标准映像，并按照 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)中的建议优化特定工作负荷的性能。
+>[AZURE.NOTE]用于数据仓库和事务工作负荷的虚拟机库映像（未显示在上面）已弃用并且将很快从库中删除。<!--请使用上表中的标准映像，并按照 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)中的建议优化特定工作负荷的性能。-->
 
 除了这些预配置的映像外，你还可以[创建不预装 SQL Server 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。可以安装你有许可证的 SQL Server 的任何实例。可使用 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)将许可证迁移到 Azure，以便在 Azure 虚拟机中运行 SQL Server。在这种情况下，你只需为与虚拟机关联的 Azure 计算和存储[成本](/pricing/details/virtual-machines)付费。
 
 在这些早期预配和配置阶段，常见的任务包括：
 
-- [查看 Azure VM 中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)
+<!-- - [查看 Azure VM 中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)-->
 - [查看 Azure VM 中 SQL Server 的安全最佳实践](/documentation/articles/virtual-machines-sql-server-security-considerations)
 - [设置连接](/documentation/articles/virtual-machines-sql-server-connectivity)
 
@@ -70,7 +70,7 @@
 ## 备份和还原
 对于本地数据库，Azure 可以充当用于存储 SQL Server 备份文件的辅助数据中心。有关备份与还原选项的概述，请参阅 [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-sql-server-backup-and-restore)。
 
-[SQL Server 备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 将 Azure 备份文件存储在 Azure Blob 存储中。[SQL Server 托管备份](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)允许你在 Azure 中计划备份和保留期。这些服务可用于本地 SQL Server 实例或 Azure VM 上运行的 SQL Server。Azure VM 还可以利用 SQL Server 的[自动备份](virtual-machines-sql-server-automated-backup.md)和[自动修补](/documentation/articles/virtual-machines-sql-server-automated-patching)。
+[SQL Server 备份到 URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) 将 Azure 备份文件存储在 Azure Blob 存储中。[SQL Server 托管备份](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx)允许你在 Azure 中计划备份和保留期。这些服务可用于本地 SQL Server 实例或 Azure VM 上运行的 SQL Server。Azure VM 还可以利用 SQL Server 的[自动备份](/documentation/articles/virtual-machines-sql-server-automated-backup)和[自动修补](/documentation/articles/virtual-machines-sql-server-automated-patching)。
 
 ## SQL Server VM 映像配置详细信息
 
@@ -141,6 +141,6 @@
 - [将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-migrate-onpremises-database)
 - [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions)
 - [Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](/documentation/articles/virtual-machines-sql-server-application-patterns-and-development-strategies)
-- [Azure 虚拟机](virtual-machines-about.md) 
+- [Azure 虚拟机](/documentation/articles/virtual-machines-about) 
 
 <!---HONumber=76-->

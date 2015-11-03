@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
-你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](virtual-machines-sql-server-alwayson-availability-groups-gui.md)但是没有配置侦听器。
+你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)但是没有配置侦听器。
 
 请注意对 Azure 中使用 ILB 的可用性组侦听器的以下限制：
 
@@ -58,7 +58,7 @@
 
 1. 选择一个可用地址，并在以下脚本的 **$ILBStaticIP** 参数中使用它。
 
-3. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview)。此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
+3. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。<!--有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview)。-->此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
