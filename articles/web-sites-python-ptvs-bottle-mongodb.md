@@ -21,9 +21,9 @@
 
 轮询 Web 应用定义其存储库的抽象，因此您可以轻松地在不同类型存储库（内存中、Azure 表存储、MongoDB）之间进行切换。
 
-我们将了解如何使用在 Azure 上托管的 MongoDB 服务之一、如何配置应用程序使用 MongoDB 和如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)-->。
+我们将了解如何使用在 Azure 上托管的 MongoDB 服务之一、如何配置应用程序使用 MongoDB 和如何将 Web 应用发布到 [Azure 网站](/documentation/services/web-sites/)。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure 网站，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure 网站。虽然本文将着重介绍 Azure 网站，但是步骤相似于开发 [Azure 云服务]。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure App Service Web Apps，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但是步骤相似于开发 [Azure 云服务]。
 
 + [先决条件](#prerequisites)
 + [创建项目](#create-the-project)
@@ -163,12 +163,12 @@ Azure.NET SDK 轻松实现将 Web 应用程序部署到 Azure。
 
 1.  填写以下字段并单击**创建**。
 	-	**Web 应用名称**
-	<!---	**App Service 计划**-->
+	-	**App Service 计划**
 	-	**资源组**
 	-	**区域**
 	-	将保留**数据库服务器**设置为**没有数据库**
 
-  	<!-- ![Create Site on Microsoft Azure Dialog](./media/web-sites-python-ptvs-bottle-mongodb/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-bottle-mongodb/PollsCommonCreateWebSite.png) -->
 
 1.  接受其他所有默认值，然后单击**发布**。
 
@@ -207,7 +207,7 @@ Azure.NET SDK 轻松实现将 Web 应用程序部署到 Azure。
 - [Python Tools for Visual Studio 文档]
   - [Web 项目]
   - [云服务项目]
-  - [在 Microsoft Azure 上的远程调试]
+  - [在 Windows Azure 上的远程调试]
 - [Bottle 文档]
 - [MongoDB]
 - [PyMongo 文档]
@@ -223,7 +223,7 @@ Azure.NET SDK 轻松实现将 Web 应用程序部署到 Azure。
 <!--External Link references-->
 [Azure 管理门户]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/
-[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
+[Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Python Tools 2.1 for Visual Studio 样本 VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
@@ -235,7 +235,7 @@ Azure.NET SDK 轻松实现将 Web 应用程序部署到 Azure。
 [MongoDB]: http://www.mongodb.org/
 [PyMongo 文档]: http://api.mongodb.org/python/current/
 [PyMongo]: https://github.com/mongodb/mongo-python-driver
-[在 Microsoft Azure 上的远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[在 Windows Azure 上的远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
  

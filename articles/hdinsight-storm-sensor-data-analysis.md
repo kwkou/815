@@ -298,7 +298,7 @@
 		    
 	- **位置**：该位置必须与要创建的 HBase 群集相同。
 		
-	- **DNS 服务器**：本文使用 Azure 提供的内部 DNS 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指导，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances)。
+	- **DNS 服务器**：本文使用 Azure 提供的内部 DNS 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指导，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)。
 		
 4. 单击“创建虚拟网络”。新虚拟网络名称将显示在列表中。等到“状态”列显示“已创建”。
 		
@@ -415,7 +415,7 @@
 * 有关以 Java 创建拓扑的信息，请参阅[为 Apache Storm on HDInsight 开发 Java 拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)。
 
 <!---
-* For information on creating topologies in .NET, see [Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight](/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application)
+* For information on creating topologies in .NET, see [Develop streaming data processing applications with SCP.NET and C# on Storm in HDInsight](/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/)
 --->
 
 [azure-portal]: https://manage.windowsazure.cn/

@@ -9,17 +9,17 @@
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="04/15/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/30/2015"
+	wacn.date="11/02/2015"/>
 
 
 
 
 # 在 Azure 中使用 Flask 创建 Web 应用
 
-在本教程中，我们将介绍如何开始在 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
+本教程描述如何开始在 [Azure 网站](/documentation/services/web-sites/)中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-您将使用 Flask web 框架创建应用程序（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app) 的备选版本。将从 Azure 库中创建网站，设置 Git 部署和本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+您将使用 Flask web 框架创建应用程序（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app) 的备选版本。你将创建网站，设置 Git 部署以及在本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -42,7 +42,7 @@
 - Python 2.7 或 3.4
 - setuptools, pip, virtualenv（仅限 Python 2.7）
 - Git
-- <!--[-->Python Tools 2.1 for Visual Studio<!--](/documentation/articles/optional)-->
+- Python Tools for Visual Studio - 注意：这是可选的
 
 **注意**：Python 项目目前不支持 TFS 发布。
 
@@ -52,7 +52,7 @@
 
 对于 Git，我们建议 [Git for Windows] 或 [GitHub for Windows]。如果您使用 Visual Studio，可以使用集成的 Git 支持。
 
-我们还建议您安装 [Python Tools 2.1 for Visual Studio]。这是可选的，但是如果您有 [Visual Studio]（包括免费 Visual Studio Community 2013 或 Visual Studio Express 2013 for Web），则这将为您提供很好的 Python IDE。
+我们还建议你安装 [Python Tools 2.2 for Visual Studio]。这是可选的，但是如果您有 [Visual Studio]（包括免费 Visual Studio Community 2013 或 Visual Studio Express 2013 for Web），则这将为您提供很好的 Python IDE。
 
 ### Mac/Linux
 
@@ -61,29 +61,21 @@
 
 ## 在 Azure 门户中创建 Web 应用
 
-创建您的应用的第一步是通过 [Azure 门户](https://manage.windowsazure.cn)创建 Web 应用。
+创建您的应用的第一步是通过 [Azure 门户](https://manage.windowsazure.cn)创建 Web 应用。为此，你将需要登录到该门户，然后单击左下角的新建按钮。将出现一个窗口。单击“快速创建”，输入 URL，然后选择“创建网站”。
 
-将出现一个窗口，并列出库中的可用应用。单击左侧的**应用框架**类别，并选择 **Flask**。
+![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
-![](./media/web-sites-python-create-deploy-flask-app/portal-gallery-flask.png)
+将快速设置网站。接下来，你要为通过 Git 进行发布提供相应支持。这一点可通过选择**从源代码控制设置部署**来完成。
 
-在下一页上，为您的网站输入一个名称和区域，然后单击“完成”按钮。
+![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
 
-将快速设置网站。您可以从工具栏底部单击**浏览**按钮，并且您将看到新 Flask 应用程序在 Azure 上运行。
+从“设置部署”对话框中，向下滚动并选择“本地 Git”选项。单击向右箭头以继续。
 
-![](./media/web-sites-python-create-deploy-flask-app/portal-website-flask.png)
- 
-接下来，你要为通过 Git 进行发布提供相应支持。这一点可通过选择**从源代码控制设置部署**来完成。
+![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
 
-![](./media/web-sites-python-create-deploy-flask-app/portal-site-created.png)
+在设置 Git 发布之后，你将立即看到通知你正在创建存储库的页面。在存储库就绪时，会将你转至“部署”选项卡。“部署”选项卡包括有关如何连接的说明。
 
-从**设置部署**对话框中，向下滚动并选择**本地 Git 存储库**选项。单击向右箭头以继续。
-
-![](./media/web-sites-python-create-deploy-flask-app/portal-setup-deployment.png)
-
-在设置 Git 发布之后，您将立即看到通知您正在创建存储库的页面。准备就绪后，您将看到有关如何连接的说明。
-
-![](./media/web-sites-python-create-deploy-flask-app/portal-repo-created.png)
+![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
 
 在后续部分中，我们将遵循这些说明。
 
@@ -113,7 +105,7 @@
     \FlaskWebProject.pyproj
     \FlaskWebProject.sln
 
-用于 [Python Tools for Visual Studio](https://www.visualstudio.com/zh-cn/features/python-vs) 的项目文件。
+用于 [Python Tools for Visual Studio] 的项目文件。
 
     \ptvs_virtualenv_proxy.py
 
@@ -159,7 +151,7 @@ Python 虚拟环境。如果在应用上尚不存在兼容的虚拟环境，请�
 
 ### 克隆存储库
 
-首先，使用 Azure 门户网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用 Azure 门户网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -185,7 +177,7 @@ Python 虚拟环境。如果在应用上尚不存在兼容的虚拟环境，请�
 
 ![](./media/web-sites-python-create-deploy-flask-app/windows-browser-flask.png)
 
-您可以在源中设置断点，使用监视窗口等。请参阅 [PTVS 文档]以了解有关各种功能的更多信息。
+您可以在源中设置断点，使用监视窗口等。请参阅 [Python Tools for Visual Studio 文档]以了解有关各种功能的更多信息。
 
 ### 进行更改
 
@@ -226,7 +218,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -305,7 +297,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 连续部署](/documentation/articles/web-sites-publish-source-control)。
+首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -380,12 +372,8 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 浏览到 Azure URL 要查看您的更改。
 
 
-<h2><a name="troubleshooting-deployment"></a>故障排除 - 部署</h2>
-
-[WACOM.INCLUDE [web-sites-python-troubleshooting-deployment](../includes/web-sites-python-troubleshooting-deployment.md)]
-
-
-<h2><a name="troubleshooting-package-installation"></a>故障排除 - 软件包安装</h2>
+## 故障排除 - 软件包安装
+<a name="troubleshooting-package-installation"></a>
 
 [WACOM.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
 
@@ -404,17 +392,13 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 有关使用 Azure 表存储和 MongoDB 的信息：
 
-- [具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 MongoDB]
-- [具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]
-
-<!--## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅：[Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅：[有关在预览门户中导航的参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
+- [具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 MongoDB]
+- [具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]
 
 
 <!--Link references-->
-[具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 MongoDB]: /documentation/articles/web-sites-python-ptvs-flask-mongodb
-[具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
+[具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 MongoDB]: /documentation/articles/web-sites-python-ptvs-flask-mongodb
+[具有 Python Tools for Visual Studio 的 Azure 上的 Flask 和 Azure 表存储]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
 [Azure SDK for Python 3.4]: http://go.microsoft.com/fwlink/?linkid=516990
@@ -422,10 +406,9 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 [Git for Windows]: http://msysgit.github.io/
 [GitHub for Windows]: https://windows.github.com/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
-[Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Visual Studio]: http://www.visualstudio.com/
-[PTVS 文档]: http://pytools.codeplex.com/documentation
-[Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation
+[Python Tools for Visual Studio 文档]: http://aka.ms/ptvsdocs
 [Flask 文档]: http://flask.pocoo.org/
 
-<!---HONumber=67-->
+<!---HONumber=76-->

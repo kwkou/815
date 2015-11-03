@@ -14,9 +14,9 @@
 
 # 适用于企业的 Azure 网站产品白皮书 #
 
-降低成本以及在快速发展的环境中更快地交付 IT 解决方案的要求为开发人员、IT 专业人员和管理人员带来了新的挑战。用户日益期望其业务线 (LOB) Web 应用程序能够在任何设备上快速运行和响应。同时，企业正在尝试利用由于与云和移动服务集成所带来的生产力和效率提高，这简单可到使用 Active Directory 实现的跨设备的单一登录，复杂可到使用从内部 LOB 应用程序（反过来也可以从公司 Salesforce 实施中拉取数据）中提取的数据在 Office365 中进行协作。Azure 网站 Web Apps 是一种用于开发、测试和运行 Web 及移动应用程序、Web API 和一般网站的企业级云服务。它可以用于在针对扩展和可用性优化的全球数据中心网络上运行企业网站、业务应用程序和数字营销活动，同时还支持持续集成和现代 DevOps 实践。
+降低成本以及在快速发展的环境中更快地交付 IT 解决方案的要求为开发人员、IT 专业人员和管理人员带来了新的挑战。用户日益期望其业务线 (LOB) Web 应用程序能够在任何设备上快速运行和响应。同时，企业正在尝试利用由于与云和移动服务集成所带来的生产力和效率提高，这简单可到使用 Active Directory 实现的跨设备的单一登录，复杂可到使用从内部 LOB 应用程序（反过来也可以从公司 Salesforce 实施中拉取数据）中提取的数据在 Office365 中进行协作。[Azure 网站 Web Apps](/documentation/services/web-sites/) 是一种用于开发、测试和运行 Web 及移动应用程序、Web API 和一般网站的企业级云服务。它可以用于在针对扩展和可用性优化的全球数据中心网络上运行企业网站、业务应用程序和数字营销活动，同时还支持持续集成和现代 DevOps 实践。
 
-本白皮书重点介绍专门侧重于运行 LOB Web 应用程序的 Web Apps 功能，涵盖现有 Web 应用程序的迁移和平台上全新 LOB Web 应用程序的部署。
+本白皮书重点介绍专门侧重于运行 LOB Web 应用程序的 [Web Apps](/home/features/web-site/) 功能，涵盖现有 Web 应用程序的迁移和平台上全新 LOB Web 应用程序的部署。
 
 ## 目标受众 ##
 
@@ -81,7 +81,7 @@ Azure 网站是一个全球和可扩展的平台，使您的 Web 应用程序能
 
 让我们看一个应用程序迁移方案的示例。这概述了 Azure 网站功能如何共同来提供出色解决方案和业务价值的详细信息。
  
-在整个示例中，我们要讨论的业务线应用程序是一个支出报表应用程序，它使员工能够提交费用进行报销。该应用程序托管于运行 IIS6 的 Windows Server 2003 R2 上，数据库是 SQL Server 2005 数据库。我们选择较旧服务器的原因在于 Windows Server 2003 R2 和 SQL Server 2005 的服务即将到期，并且我们拥有自动将工作负荷迁移到 Azure 的[工具](http://aka.ms/websitesmigration)和[指南](http://aka.ms/websitesmigrationresources)。基于这一点，此示例中所使用的模式将适用于各种迁移场景。
+在整个示例中，我们要讨论的业务线应用程序是一个支出报表应用程序，它使员工能够提交费用进行报销。该应用程序托管于运行 IIS6 的 Windows Server 2003 R2 上，数据库是 SQL Server 2005 数据库。我们选择较旧服务器的原因在于 Windows Server 2003 R2 和 SQL Server 2005 的服务即将到期，并且我们拥有自动将工作负荷迁移到 Azure 的[工具](http://www.movemetothecloud.net/)和[指南](http://www.movemetothecloud.net/resources)。基于这一点，此示例中所使用的模式将适用于各种迁移场景。
 
 ### 迁移现有应用程序 ###
 
@@ -91,10 +91,10 @@ Azure 网站是一个全球和可扩展的平台，使您的 Web 应用程序能
 
 #### 需要注意的事项 ####
 
-当迁移应用程序来自本地环境时，您可能需要记住 Web Apps 的几个限制。以下是将 Web 应用程序迁移到 Web Apps 时需要注意的一些关键主题 ([http://aka.ms/websitesmigrationresources](http://aka.ms/websitesmigrationresources))：
+当迁移应用程序来自本地环境时，您可能需要记住 Web Apps 的几个限制。以下是将 Web 应用程序迁移到 Web Apps 时需要注意的一些关键主题 ([http://www.movemetothecloud.net/resources](http://www.movemetothecloud.net/resources))：
 
 -	端口绑定 - Web Apps 仅支持用于 HTTP 的端口 80 和用于 HTTPS 通信的端口 443。如果您的应用程序使用任何其他端口，则一次迁移的应用程序将使用用于 HTTP 的端口 80 和用于 HTTPS 通信的端口 443。这通常是一个无害的问题，因为在本地部署中使用不同的端口以克服域名的使用是很常见的情况，尤其是在开发和测试环境中
--	身份验证 – 默认情况下 Web Apps 支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Web Apps 可以提供 Windows 身份验证。此功能在[此处](/documentation/articles/web-sites-business-application-solution-overview)有更详细的讨论 
+-	身份验证 – 默认情况下 Web Apps 支持匿名身份验证，而且还支持由应用程序鉴定的表单身份验证。当应用程序仅与 Azure Active Directory 和 ADFS 集成时，Web Apps 可以提供 Windows 身份验证。此功能在[此处](/documentation/articles/web-sites-business-application-solution-overview/)有更详细的讨论 
 -	基于 GAC 的程序集 – Web Apps 不允许将程序集部署到全局程序集缓存 (GAC) 中。因此，如果迁移的应用程序在本地利用此功能，请考虑将这些程序集移到该应用程序的 bin 文件夹。
 -	IIS5 兼容模式 – Web Apps 不支持 IIS5 兼容模式，因此每个 Web Apps 实例和父 Web Apps 实例下的所有 Web 应用程序均在单个应用程序池内相同的工作进程中运行。
 -	使用 COM 库 – Web Apps 不允许 COM 组件在平台上注册。因此如果该应用程序正在使用 COM 组件，就需要将这些在托管代码中进行重写并使用该应用程序进行部署。
@@ -102,7 +102,7 @@ Azure 网站是一个全球和可扩展的平台，使您的 Web 应用程序能
 
 考虑完这些主题之后，您的 Web 应用程序已准备好支持云。如果一些主题没有完全被满足也不用担心，迁移工具将为迁移提供最佳支持。
 
-迁移流程中的后续步骤是创建 Azure 网站和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Web Apps 实例可供您根据 Web 应用程序需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Windows Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/pricing/details/sql-database/)。创建完成后，应用程序被上传到 Azure 网站（通过 FTP 或 WebDeploy），然后再迁移到数据库。
+迁移流程中的后续步骤是创建 Azure 网站和 Azure SQL 数据库。有多个具有不同 CPU 内核数量和 RAM 数量的各种规模的 Web Apps 实例可供您根据 Web 应用程序需求选择。有关详细信息和定价，请参阅 [http://aka.ms/azurewebsitesskus](/home/features/web-site/#price)。同样，Windows Azure SQL 数据库适用于所有业务需求，可提供各种服务层和性能级别来满足需求。更多信息可访问 [http://aka.ms/azuresqldbskus](/home/features/sql-database/#price)。创建完成后，应用程序被上传到 Azure 网站（通过 FTP 或 WebDeploy），然后再迁移到数据库。
 
 在创建 Azure SQL 数据库时，可使用多种方法从本地服务器中导入现有数据库，从生成现有数据库的脚本到使用[数据层应用程序导出和导入](/documentation/articles/sql-database-cloud-migrate)。
 

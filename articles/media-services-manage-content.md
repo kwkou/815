@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="11/02/2015"/>
 
 
 # 使用 Azure 管理门户管理 Azure 媒体服务的内容
@@ -34,7 +34,7 @@
 [AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files.md)]
 
 
-1. 在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409)中，单击“媒体服务”，然后单击媒体服务帐户名。
+1. 在[管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2. 选择“内容”页。 
 3. 单击该页上或者门户底部的“上载”按钮。 
 4. 在“上载内容”对话框中，浏览到所需的资产文件。单击该文件，然后单击“打开”或按 **Enter**。
@@ -85,7 +85,7 @@
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
@@ -128,7 +128,7 @@
 如果你希望媒体服务采用 AES 密钥或 PlayReady DRM 动态加密资产，请确保执行以下操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件（编码步骤将在[编码](#encode)部分演示）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
 - 配置“默认 aes 明文密钥服务策略”或“默认 playready 许可证服务策略”。有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-portal-configure-content-key-auth-policy)。  
 
 
@@ -137,6 +137,11 @@
 	![加密][encrypt]
 
 	你启用加密后，每当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
+
+另请参阅：
+
+- [使用 PlayReady DRM 进行保护](/documentation/articles/media-services-rest-deliver-streaming-content)
+- [使用 AES-128 密钥进行保护](/documentation/articles/media-services-protect-with-aes128)
 
 ##<a id="publish"></a>如何：发布内容
 
@@ -172,7 +177,7 @@ SAS URL 采用以下格式：
 
 >[AZURE.NOTE]如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
 
-若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](http://go.microsoft.com/fwlink/?LinkID=533259) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
 
 ###发布
 
@@ -210,4 +215,4 @@ SAS URL 采用以下格式：
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

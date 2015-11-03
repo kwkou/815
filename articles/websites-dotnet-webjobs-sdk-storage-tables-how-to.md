@@ -166,7 +166,7 @@
 
 ## <a id="nextsteps"></a>后续步骤
 
-本指南提供的代码示例演示了如何处理常见方案以操作 Azure 表。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources)。
+本指南提供的代码示例演示了如何处理常见方案以操作 Azure 表。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
 <!---HONumber=67-->

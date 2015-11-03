@@ -65,11 +65,14 @@ HDInsight 随附了以下示例：
 * [在 HDInsight 中调试 Hadoop：错误消息][hdinsight-errors]
 
 
-[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs/
+
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
+
+
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples

@@ -184,7 +184,7 @@ Azure 中的一个常见方案是基于这些对象是否需要访问 Internet �
 **创建网络安全组**
 
 	New-AzureNetworkSecurityGroup -Name "MyVNetSG" -Location uswest `
-		-Label "Security group for my Vnet in West US"
+		-Label "Security group for my Vnet in China North"
 
 **添加或更新规则**
 
@@ -219,18 +219,18 @@ Azure 中的一个常见方案是基于这些对象是否需要访问 Internet �
 **将 NSG 关联到子网**
 
 	Get-AzureNetworkSecurityGroup -Name "MyVNetSG" `
-	| Set-AzureNetworkSecurityGroupToSubnet -VirtualNetworkName 'VNetUSWest' `
+	| Set-AzureNetworkSecurityGroupToSubnet -VirtualNetworkName 'VNetChinsNorth' `
 		-SubnetName 'FrontEndSubnet'
 
 **查看关联到子网的 NSG**
 
 	Get-AzureNetworkSecurityGroupForSubnet -SubnetName 'FrontEndSubnet' `
-		-VirtualNetworkName 'VNetUSWest' 
+		-VirtualNetworkName 'VNetChinsNorth' 
 
 **从子网中删除 NSG**
 
 	Get-AzureNetworkSecurityGroup -Name "MyVNetSG" `
-	| Remove-AzureNetworkSecurityGroupFromSubnet -VirtualNetworkName 'VNetUSWest' `
+	| Remove-AzureNetworkSecurityGroupFromSubnet -VirtualNetworkName 'VNetChinsNorth' `
 		-SubnetName 'FrontEndSubnet'
 
 **删除 NSG**

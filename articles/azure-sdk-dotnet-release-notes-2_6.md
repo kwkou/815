@@ -7,14 +7,17 @@
    manager="dwrede" 
    editor=""/>
 
-<tags ms.service="app-service" ms.date="04/29/2015" wacn.date="06/16/2015"/>
+<tags
+   ms.service="app-service"
+   ms.date="08/08/2015"
+   wacn.date="10/03/2015"/>
 
 
 # Azure SDK for .NET 2.6 发行说明
 
 本文档包含 Azure SDK for .NET 2.6 发行版的发行说明。
 
-使用 Azure SDK 2.6，你可以开发针对 .NET 4.5.2 或 .NET 4.6 的云服务应用程序 (PaaS)，前提是你在云服务角色上手动安装目标 .NET Framework。请参阅[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet)。
+使用 Azure SDK 2.6，你可以开发针对 .NET 4.5.2 或 .NET 4.6 的云服务应用程序 (PaaS)，前提是你在云服务角色上手动安装目标 .NET Framework。请参阅[在云服务角色上安装 .NET](/documentation/articles/cloud-services-dotnet-install-dotnet/)。
 
 
 ##Service Bus 更新
@@ -35,7 +38,7 @@
 
 	HDInsight Tools for Visual Studio 现在支持连接到 HDInsight Emulator，因此，你可以在本地开发 Hive 脚本而不会引入任何成本，然后再针对 HDInsight 群集执行这些脚本即可。
 
-	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started)。
+	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
 
 - **针对泛型 Hadoop 群集的 HDInsight Tools for Visual Studio 支持**（预览版）
 
@@ -45,7 +48,7 @@
 	- 通过增强型 IntelliSense/自动完成支持编写 Hive 查询； 
 	- 在你的群集中通过直观的 UI 查看所有作业。 
 
-	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started)。
+	有关详细信息，请参阅[此手册](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
 
 ##角色中缓存更新
 
@@ -55,15 +58,15 @@
 
 	有关详细信息，请参阅 [Azure 缓存的角色中缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn386103.aspx)。
 
-##Azure App Service 工具
+##Azure 网站工具
 
 以下各项已在 Azure SDK 2.6 版本中更新。
 
 - Azure 发布功能已增强，其中包括了作为部署目标的 Azure API Apps。
 - API Apps 预配功能，允许用户创建 API App 并行使预配功能。
-- 服务器资源管理器已更改，目的是反映新的 App Service 节点，同时 Web、移动和 API 应用程序已按资源组进行分组。
+- 服务器资源管理器已更改，目的是反映新的 Azure 网站节点，同时 Web、移动和 API 应用程序已按资源组进行分组。
 - 将 Azure API App 客户端手势添加到了大多数 C# 项目中，这样就可以自动生成可以在用户的 Azure 订阅中运行且支持 Swagger 的 API Apps。
-- 服务器资源管理器中的 API Apps 工具和 App Service 节点仅在 Visual Studio 2013 中可用。 
+- 服务器资源管理器中的 API Apps 工具和 Azure 网站节点仅在 Visual Studio 2013 中可用。 
 
 ##Azure 资源管理器工具更新
 
@@ -89,10 +92,14 @@ Azure SDK 2.6 重新支持在 Azure 计算模拟器中收集诊断日志，并�
 - 在 2015 年 4 月 29 日发布的 Azure SDK 2.6 有两大问题：
 
 	- 在计算机上安装了 Azure SDK 2.6 时，无法在 Visual Studio 2015 中加载通用应用程序。
-	- 在 Visual Studio 2013 和 Visual Studio 2015 中调试云服务项目将会失败，并始终显示消息“正在为模拟器配置诊断”。
+	- 在 Visual Studio 2013 和 Visual Studio 2015 中调试云服务项目会失败，其中 Visual Studio 停止响应或崩溃，同时出现包含消息“为模拟器配置诊断”的对话框。
 	
-	Azure SDK 2.6 的更新已于 2015 年5 月 18 日发布。更新后的版本为 2.6.30508.1601；它包含上述两大问题的修补程序。若要确定 SDK 的版本，请转到“控制面板 -> 程序和功能 -> Windows Azure Tools for Microsoft Visual Studio 2013 – v 2.6”。“版本”栏会显示版本号。
+	Azure SDK 2.6 的更新已于 2015 年5 月 18 日发布。更新后的版本为 2.6.30508.1601；它包含上述两大问题的修补程序。若要确定 SDK 的版本，请转到“控制面板 -> 程序和功能 -> Microsoft Azure Tools for Microsoft Visual Studio 2013 – v 2.6”。“版本”栏会显示版本号。
 
-	如果仍出现上述问题，请安装最新版的 Azure 2.6 SDK，该版本适用于 [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409)、[VS 2013](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) 或 [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409)。
+	如果仍出现上述问题，请安装最新版的 Azure 2.6 SDK，该版本适用于 [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409)、[VS 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 或 [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409)。
+ 
+##另请参阅
 
-<!---HONumber=60-->
+[Azure SDK for .NET 和 API 的支持和停用信息](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)
+
+<!---HONumber=71-->

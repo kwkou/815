@@ -14,7 +14,7 @@
 
 # 在 Azure 网站中通过 Azure Active Directory 身份验证创建 .NET MVC Web 应用 #
 
-在本文中，您将了解如何在 [Azure Active Directory](/documentation/services/identity/) 用作标识提供程序的 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中创建 ASP.NET MVC 业务线应用程序。您还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
+在本文中，您将了解如何在 [Azure Active Directory](/documentation/services/identity/) 用作标识提供程序的 [Azure App Service Web Apps](/documentation/services/web-sites/) 中创建 ASP.NET MVC 业务线应用程序。您还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
 
 使用的 Azure Active Directory 租户可以是仅限 Azure 的目录，或者与本地 Active Directory (AD) 进行目录同步，以便为本地或远程的辅助角色创建单一登录体验。
 
@@ -49,7 +49,7 @@
 - 包含各组中的用户的 Azure Active Directory 租户
 - 在 Azure Active Directory 租户上创建应用程序的权限
 - Visual Studio 2013
-- [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) 或更高版本
+- [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 或更高版本
 
 <a name="bkmk_sample"></a>
 ## 使用业务线模板的示例应用程序 ##
@@ -108,7 +108,7 @@
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. 选择 **Microsoft Azure Web Apps**。
+2. 选择 **Windows Azure Web Apps**。
 
 3. 如果您尚未登录到 Azure，请单击**登录**，然后使用 Azure 订阅的 Microsoft 帐户登录。
 
@@ -138,7 +138,7 @@
 
 4. 为应用程序提供一个名称，然后单击**下一步**。
 
-5. 在“应用程序属性”中，将**登录 URL** 设置为您前面保存的 Web 应用 URL（例如 `https://<site-name>.azurewebsites.net`），并将**应用 ID URI** 设置为 `https://<aad-tenanet-name>/<app-name>`。然后，单击**完成**。
+5. 在“应用程序属性”中，将**登录 URL** 设置为您前面保存的 Web 应用 URL（例如 `https://<site-name>.chinacloudsites.cn`），并将**应用 ID URI** 设置为 `https://<aad-tenanet-name>/<app-name>`。然后，单击**完成**。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -165,7 +165,7 @@
 &lt;appSettings&gt;
    &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
    &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
-   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.azurewebsites.net/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
+   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
 &lt;/appSettings&gt;</pre>
 
 	请确保 ida:PostLogoutRedirectUri 的值以斜杠“/”结尾。
@@ -356,7 +356,7 @@
 
 	在脚本中，AadPicker 对象为匹配输入的 Azure Active Directory 用户和组搜索 `~/Roles/Search` 操作。然后，在单击提交按钮后，AadPicker 对象将用户 ID 保存到隐藏的 `AssignedToID` 字段。
 
-15. 现在，在 Visual Studio 调试器中运行应用程序，或者发布到 Azure 网站。以应用程序所有者的身份登录并导航到 `~/WorkItems/Create`。对于发布的业务线应用程序，将导航至 `https://mylobapp.azurewebsites.net/WorkItems/Create`。您将看到，现在您可以使用相同的 AadPicker 搜索筛选器来选取 Azure Active Directory 用户。
+15. 现在，在 Visual Studio 调试器中运行应用程序，或者发布到 Azure 网站。以应用程序所有者的身份登录并导航到 `~/WorkItems/Create`。对于发布的业务线应用程序，将导航至 `https://mylobapp.chinacloudsites.cn/WorkItems/Create`。您将看到，现在您可以使用相同的 AadPicker 搜索筛选器来选取 Azure Active Directory 用户。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/9-create-workitem.png)
 
@@ -378,15 +378,12 @@
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
 - [在 Azure 网站中通过 AD FS 身份验证创建 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
-- [Microsoft Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
+- [Windows Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
-<!--- [Azure 的新混合连接不是您父亲的 #hybridCloud](/zh-cn/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)-->
 - [Active Directory 与 Azure AD 之间的相似之处](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [使用单一登录方案进行目录同步](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
-- [Azure AD 支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
-
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+- [Azure AD 支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims)
  
 
 <!---HONumber=67-->

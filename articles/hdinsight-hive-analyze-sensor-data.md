@@ -35,7 +35,7 @@
 
 	> [AZURE.NOTE]Microsoft Excel 用于通过 [Power View](https://support.office.com/zh-cn/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=en-US&rs=en-US&ad=US) 实现数据可视化。
 
-* [Microsoft Hive ODBC 驱动程序](https://www.microsoft.com/en-us/download/details.aspx?id=40886)
+* [Microsoft Hive ODBC 驱动程序](https://www.microsoft.com/download/details.aspx?id=40886)
 
 ## 运行示例
 

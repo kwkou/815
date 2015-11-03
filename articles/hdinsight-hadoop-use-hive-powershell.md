@@ -9,14 +9,14 @@
 
 <tags
    ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="09/03/2015"
+   wacn.date="11/02/2015"/>
 
 #使用 PowerShell 运行 Hive 查询
 
 [AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
 
-本文档提供使用 Azure PowerShell 在 HDInsight 群集上的 Hadoop 中运行 Hive 查询的示例。
+本文档提供使用 Azure 资源组模式中的 Azure PowerShell 在 HDInsight 群集上的 Hadoop 中运行 Hive 查询的示例。如需使用 Azure 服务模式中的 Azure PowerShell，请参阅[使用 PowerShell ASM 模式运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell-v1)。
 
 > [AZURE.NOTE]本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的详细信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)。
 
@@ -25,7 +25,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-* Azure HDInsight（HDInsight 上的 Hadoop）群集
+* Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
 * <a href="/documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
 
 
@@ -40,50 +40,60 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 * **New-AzureHDInsightHiveJobDefinition**：使用指定的 HiveQL 语句创建新的*作业定义*
 
-* **Start-AzureHDInsightJob**：将作业定义发送到 HDInsight、启动作业，并返回可用来检查作业状态的*作业*对象
+* **Start-AzureHDInsightJob**：将作业定义发送到 HDInsight，启动作业，然后返回可用来检查作业状态的*作业* 对象
 
 * **Wait-AzureHDInsightJob**：使用作业对象来检查作业的状态。它将一直等到作业完成或超出等待时间。
 
 * **Get-AzureHDInsightJobOutput**：用于检索作业的输出
 
-* **Invoke-Hive**：用于运行 HiveQL 语句。这将阻止查询完成，然后返回结果
+* **Invoke-AzureHDInsightHiveJob**：用于运行 HiveQL 语句。这将阻止查询完成，然后返回结果
 
 * **Use-AzureHDInsightCluster**：设置要用于 **Invoke-Hive** 命令的当前群集
 
 以下步骤演示了如何使用这些 Cmdlet 在 HDInsight 群集上运行作业：
 
-1. 使用编辑器将以下代码保存为 **hivejob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
+1. 使用编辑器将以下代码另存为 **hivejob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
-		#Login to your Azure subscription
+		#Specify the values
+		$clusterName = "CLUSTERNAME"
+		$resourceGroupName = "RESOURCEGROUPNAME"
+		$httpUsername = "HTTPUSERNAME"
+		$httpUserPassword  = "HTTPUSERPASSWORD"
+
+		# Switch to the ARM mode
+		Switch-AzureMode -Name AzureResourceManager
+		
+		# Login to your Azure subscription
 		# Is there an active Azure subscription?
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
 		    Add-AzureAccount
 		}
-		
-		#Specify the cluster name
-		$clusterName = "CLUSTERNAME" 
-		
+
 		#HiveQL
 		$queryString = "DROP TABLE log4jLogs;" +
 				       "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb:///example/data/';" +
-				       "SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;"
-		
+				       "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
+
 		#Create an HDInsight Hive job definition
-		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString
-		
+		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString 
+
 		#Submit the job to the cluster
 		Write-Host "Start the Hive job..." -ForegroundColor Green
-		$hiveJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $hiveJobDefinition
-		
+
+		$passwd = ConvertTo-SecureString $httpUserPassword -AsPlainText -Force
+		$creds = New-Object System.Management.Automation.PSCredential ($httpUsername, $passwd)
+		$hiveJob = Start-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
+
+
 		#Wait for the Hive job to complete
 		Write-Host "Wait for the job to complete..." -ForegroundColor Green
-		Wait-AzureHDInsightJob -Job $hiveJob -WaitTimeoutInSeconds 3600
-		
+		Wait-AzureHDInsightJob -ResourceGroupName $resourceGroupName -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
+
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
-		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardOutput
+		Get-AzureHDInsightJobOutput -ClusterName $clusterName -JobId $hiveJob.JobId -StandardOutput 
 
 2. 打开一个新的 **Azure PowerShell** 命令提示符。将目录更改为 **hivejob.ps1** 文件的所在位置，然后使用以下命令来运行脚本：
 
@@ -133,12 +143,12 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 有关 HDInsight 中的 Hive 的一般信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=71-->
+<!---HONumber=76-->

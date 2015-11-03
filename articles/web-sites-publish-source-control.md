@@ -9,9 +9,10 @@
 
 <tags 
 	ms.service="app-service-web" 
-	ms.date="07/02/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015" 
+	wacn.date="11/02/2015"/>
 
+# 在 Azure 网站中使用 GIT 进行连续部署
 [WACOM.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
 
-<!---HONumber=71-->
+<!---HONumber=76-->

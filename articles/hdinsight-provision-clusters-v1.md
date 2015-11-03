@@ -9,10 +9,10 @@
 
 <tags
    ms.service="hdinsight"
-   ms.date="08/07/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="09/21/2015"
+   wacn.date="11/02/2015"/>
 
-# 在 HDInsight 中设置 Hadoop 群集
+#在 HDInsight 中设置 Hadoop 群集
 
 了解如何规划 HDInsight 群集的预配。
 
@@ -43,12 +43,12 @@
  
 - **操作系统**
 
-	可以在以下操作系统中的一个上预配 HDInsight 群集：- **Windows 上的 HDInsight (Windows Server 2012 R2 Datacenter)**。
+	你可以在下面的一个操作系统中预配 HDInsight 群集：- **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**：
 
 
 - **HDInsight 版本**
 
-	用于确定要用于此群集的 HDInsight 版本。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集版本和组件](/documentation/articles/hdinsight-component-versioning)。
+	用于确定要用于此群集的 HDInsight 版本。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集版本和组件](/documentation/articles/hdinsight-component-versioning/)。
 
 - **群集类型**和**群集大小（也称为数据节点）**
 
@@ -95,13 +95,13 @@
 
 	![Azure 区域](./media/hdinsight-provision-clusters-v1/Azure.regions.png)
 
-	有关受支持地区的列表，请单击 [HDInsight 定价](/home/features/hdinsight/#price)中的“区域”下拉列表。
+	有关受支持区域的列表，请单击 [HDInsight 定价](/home/features/hdinsight/#price)中的“区域”下拉列表。
 
 - **节点大小**
 
 	![hdinsight VM 节点大小](./media/hdinsight-provision-clusters-v1/hdinsight.node.sizes.png)
 
-	选择节点的 VM 大小。有关详细信息，请参阅[云服务的大小](/documentation/articles/cloud-services-sizes-specs)。
+	选择节点的 VM 大小。有关详细信息，请参阅[云服务的大小](/documentation/articles/cloud-services-sizes-specs)
 
 	根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/home/features/hdinsight/#price" target="_blank">HDInsight 价格</a>。
 
@@ -200,7 +200,7 @@
 
 ### 使用 Azure 虚拟网络
 
-[Azure 虚拟网络](/documentation/services/virtual-network/)允许你创建包含需要用于解决方案的资源的安全永久性网络。通过虚拟网络，你可以：
+[Azure 虚拟网络](/documentation/services/networking/)允许你创建包含需要用于解决方案的资源的安全永久性网络。通过虚拟网络，你可以：
 
 * 在专用网络（仅限云）中将云资源连接在一起。
 
@@ -216,11 +216,11 @@
 
 	![点到站点配置示意图](./media/hdinsight-provision-clusters-v1/hdinsight-vnet-point-to-site.png)
 
-有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
+有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-> [AZURE.NOTE]你必须先创建 Azure 虚拟网络，然后才能设置 HDInsight 群集。
+> [AZURE.NOTE]你必须先创建 Azure 虚拟网络，然后才能设置 HDInsight 群集。有关详细信息，请参阅[虚拟网络配置任务](/documentation/services/virtual-machines/)。
 >
->[AZURE.NOTE]Azure HDInsight 仅支持基于位置的虚拟网络，并且当前不适用于基于地缘组的虚拟网络。使用 Azure PowerShell Cmdlet Get-AzureVNetConfig 来检查现有的 Azure 虚拟网络是否基于位置。如果虚拟网络并非基于位置，你可以使用以下选项：
+> Azure HDInsight 仅支持基于位置的虚拟网络，并且当前不适用于基于地缘组的虚拟网络。使用 Azure PowerShell Cmdlet Get-AzureVNetConfig 来检查现有的 Azure 虚拟网络是否基于位置。如果虚拟网络并非基于位置，你可以使用以下选项：
 >
 > - 导出现有的虚拟网络配置，然后创建新的虚拟网络。默认情况下，所有新的虚拟网络都基于位置。
 > - 迁移到基于位置的虚拟网络。请参阅[将现有服务迁移到区域范围](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/)。
@@ -280,7 +280,7 @@
 	- 默认容器
 	- 其他存储帐户
 
-8. 在“脚本操作”页上，单击“添加脚本操作”，以在创建群集时提供有关要运行以自定义群集的自定义脚本的详细信息。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
+8. 在“脚本操作”页上，单击“添加脚本操作”以提供自定义脚本的详细信息，在创建群集时，你需要运行该脚本来自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
 
 	- 名称：指定脚本操作的名称
 	- 脚本 URI：指定调用以自定义群集的脚本的统一资源标识符 (URI)。
@@ -292,7 +292,7 @@
 ### 使用 Azure PowerShell
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本部分提供有关如何通过使用 Azure PowerShell 设置 HDInsight 群集的说明。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。有关将 Azure PowerShell 与 HDInsight 配合使用的详细信息，请参阅[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell)。有关 HDInsight Windows PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx)。
 
-> [AZURE.NOTE]虽然本部分中的脚本可用于在 Azure 虚拟网络上配置 HDInsight 群集，但它们不能用于创建 Azure 虚拟网络。
+> [AZURE.NOTE]虽然本部分中的脚本可用于在 Azure 虚拟网络上配置 HDInsight 群集，但它们不能用于创建 Azure 虚拟网络。有关创建 Azure 虚拟网络的信息，请参阅[虚拟网络配置任务](/documentation/services/virtual-machines/)。
 
 通过使用 Azure PowerShell 设置 HDInsight 群集需要执行以下过程：
 
@@ -313,7 +313,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 **创建 Azure 存储帐户**
 
 	$storageAccountName = "<StorageAcccountName>"	# Provide a Storage account name
-	$location = "<MicrosoftDataCenter>"				# For example, "West US"
+	$location = "<MicrosoftDataCenter>"				# For example, "China North"
 
 	# Create an Azure Storage account
 	New-AzureStorageAccount -StorageAccountName $storageAccountName -Location $location
@@ -436,7 +436,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 > [AZURE.NOTE]自 2014 年 8 月 29 日起，Azure CLI 无法用于将群集与 Azure 虚拟网络相关联。
 
-用于预配 HDInsight 群集的另一选项是 Azure CLI。Azure CLI 是以 Node.js 实现的。可从以下位置安装 CLI：
+用于预配 HDInsight 群集的另一选项是 Azure CLI。Azure CLI 是以 Node.js 实现的。可以在支持 Node.js 的任意平台上使用它。可从以下位置安装 CLI：
 
 - **Node.js SDK** - <a href="https://www.npmjs.com/package/azure-mgmt-hdinsight" target="_blank">https://www.npmjs.com/package/azure-mgmt-hdinsight</a>
 - **Azure CLI** - <a href="https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz" target="_blank">https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz</a>  
@@ -483,7 +483,7 @@ Azure CLI 可通过 NPM 或 Windows 安装程序来安装。Microsoft 建议你�
 
 **使用 Windows 安装程序安装 Azure CLI**
 
-1.	浏览到 **http://azure.microsoft.com/downloads/**。
+1.	浏览到 **/downloads/**。
 2.	向下滚动到“命令行工具”部分，单击“Azure 命令行界面”，然后根据 Web 平台安装程序向导的提示操作。
 
 **下载和导入发布设置**
@@ -493,7 +493,7 @@ Azure CLI 可通过 NPM 或 Windows 安装程序来安装。Microsoft 建议你�
 > [AZURE.NOTE]发布设置文件包含敏感信息。Microsoft 建议你删除该文件或采取其他措施来加密包含该文件的用户文件夹。在 Windows 上，修改文件夹属性或使用 BitLocker。
 
 
-1.	打开**命令提示符**。
+1.	打开“命令提示符”。
 2.	运行以下命令来下载发布设置文件：
 
 		azure account download
@@ -537,7 +537,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 	-- Lists the keys for a Storage account
 	azure storage account keys list <StorageAccountName>
 
-有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)中的*如何：查看、复制和重新生成存储访问密钥*部分。
+有关使用 Azure 门户获取信息的详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account)中的“如何：查看、复制和重新生成存储访问密钥部分”。
 
 HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供的存储帐户尚不包含容器，*azure hdinsight cluster create* 命令将提示你输入容器名称，然后会创建该容器。但是，如果你想要预先创建容器，则可以使用以下命令：
 
@@ -623,31 +623,21 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 **创建自签名证书**
 
-创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](http://go.microsoft.com/fwlink/?LinkId=511138)。
+创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert)。
 
 
 **创建 Visual Studio 控制台应用程序**
 
-1. 打开 Visual Studio 2013。
+1. 打开 Visual Studio 2013 或 2015。
 
 2. 在“文件”菜单中，单击“新建”，然后单击“项目”。
 
 3. 在“新建项目”中，键入或选择以下值：
 
-	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-<tr>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">属性</th>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">值</th></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">类别</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">模板/Visual C#/Windows</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">模板</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">控制台应用程序</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateHDICluster</td></tr>
-</table>
+	|属性|值|
+	|--------|-----|
+	|模板|模板/Visual C#/Windows/控制台应用程序|
+	|Name|CreateHDICluster|
 
 4. 单击“确定”以创建该项目。
 
@@ -655,75 +645,109 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 6. 在控制台中运行下列命令以安装程序包：
 
-		Install-Package Microsoft.WindowsAzure.Management.HDInsight
+		Install-Package Microsoft.Azure.Common.Authentication -pre
+		Install-Package Microsoft.Azure.Management.HDInsight -Pre
 
-	此命令将 .NET 库以及对这些库的引用添加到当前 Visual Studio 项目中。
+	这些命令将 .NET 库以及对这些库的引用添加到当前 Visual Studio 项目中。
 
 7. 在“解决方案资源管理器”中，双击 **Program.cs** 将其打开。
+8. 将此代码替换为以下代码：
 
-8. 将下列 using 语句添加到文件顶部：
+		using Microsoft.Azure;
+		using Microsoft.Azure.Common.Authentication;
+		using Microsoft.Azure.Common.Authentication.Factories;
+		using Microsoft.Azure.Common.Authentication.Models;
+		using Microsoft.Azure.Management.HDInsight;
+		using Microsoft.Azure.Management.HDInsight.Models;
 
-		using System.Security.Cryptography.X509Certificates;
-		using Microsoft.WindowsAzure.Management.HDInsight;
-		using Microsoft.WindowsAzure.Management.HDInsight.ClusterProvisioning;
+		namespace CreateHDICluster
+		{
+		    internal class Program
+		    {
+		        private static HDInsightManagementClient _hdiManagementClient;
+		
+		        private static Guid SubscriptionId = new Guid("<AZURE SUBSCRIPTION ID>");
+		        private const string ResourceGroupName = "<AZURE RESOURCEGROUP NAME>";
 
+		        private const string NewClusterName = "<HDINSIGHT CLUSTER NAME>";
+		        private const int NewClusterNumNodes = <NUMBER OF NODES>;
+		        private const string NewClusterLocation = "<LOCATION>";  // Must match the Azure Storage account location
+		        private const HDInsightClusterType NewClusterType = HDInsightClusterType.Hadoop;
+		        private const OSType NewClusterOSType = OSType.Windows;
+		        private const string NewClusterVersion = "3.2";
 
-9. 在 Main() 函数中，复制并粘贴以下代码：
+		        private const string NewClusterUsername = "admin";
+		        private const string NewClusterPassword = "<HTTP USER PASSWORD>";
+		        private const string ExistingStorageName = "<STORAGE ACCOUNT NAME>.blob.core.chinacloudapi.cn";
+		        private const string ExistingStorageKey = "<STORAGE ACCOUNT KEY>";
+		        private const string ExistingContainer = "<DEFAULT CONTAINER NAME>"; 
+		
+		
+		        private static void Main(string[] args)
+		        {
+		            var tokenCreds = GetTokenCloudCredentials();
+		            var subCloudCredentials = GetSubscriptionCloudCredentials(tokenCreds, SubscriptionId);
+		
+		            _hdiManagementClient = new HDInsightManagementClient(subCloudCredentials);
+		
+		            CreateCluster();
+		        }
+		
+		        public static SubscriptionCloudCredentials GetTokenCloudCredentials(string username = null, SecureString password = null)
+		        {
+		            var authFactory = new AuthenticationFactory();
+		
+		            var account = new AzureAccount { Type = AzureAccount.AccountType.User };
+		
+		            if (username != null && password != null)
+		                account.Id = username;
+		
+		            var env = AzureEnvironment.PublicEnvironments[EnvironmentName.AzureCloud];
+		
+		            var accessToken =
+		                authFactory.Authenticate(account, env, AuthenticationFactory.CommonAdTenant, password, ShowDialog.Auto)
+		                    .AccessToken;
+		
+		            return new TokenCloudCredentials(accessToken);
+		        }
+		
+		        public static SubscriptionCloudCredentials GetSubscriptionCloudCredentials(SubscriptionCloudCredentials creds, Guid subId)
+		        {
+		            return new TokenCloudCredentials(subId.ToString(), ((TokenCloudCredentials)creds).Token);
+		        }
+		
+		
+		        private static void CreateCluster()
+		        {
+		            var parameters = new ClusterCreateParameters
+		            {
+		                ClusterSizeInNodes = NewClusterNumNodes,
+		                Location = NewClusterLocation,
+		                ClusterType = NewClusterType,
+		                OSType = NewClusterOSType,
+		                Version = NewClusterVersion,
 
-        string certfriendlyname = "<CertificateFriendlyName>";     // Friendly name for the certificate you created earlier  
-        string subscriptionid = "<AzureSubscriptionID>";
-        string clustername = "<HDInsightClusterName>";
-        string location = "<MicrosoftDataCenter>";
-        string storageaccountname = "<AzureStorageAccountName>.blob.core.chinacloudapi.cn";
-        string storageaccountkey = "<AzureStorageAccountKey>";
-        string containername = "<HDInsightDefaultContainerName>";
-        string username = "<HDInsightUsername>";
-        string password = "<HDInsightUserPassword>";
-        int clustersize = <NumberOfNodesInTheCluster>;
+		                UserName = NewClusterUsername,
+		                Password = NewClusterPassword,
 
-        // Get the certificate object from certificate store by using the friendly name to identify it
-        X509Store store = new X509Store();
-        store.Open(OpenFlags.ReadOnly);
-        X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>().First(item => item.FriendlyName == certfriendlyname);
-
-        // Create the Storage account if it doesn't exist
-
-        // Create the container if it doesn't exist.
-
-		// Create an HDInsightClient object
-        HDInsightCertificateCredential creds = new HDInsightCertificateCredential(new Guid(subscriptionid), cert);
-        var client = HDInsightClient.Connect(creds);
-
-		// Supply the cluster information
-        ClusterCreateParameters clusterInfo = new ClusterCreateParameters()
-        {
-            Name = clustername,
-            Location = location,
-            DefaultStorageAccountName = storageaccountname,
-            DefaultStorageAccountKey = storageaccountkey,
-            DefaultStorageContainer = containername,
-            UserName = username,
-            Password = password,
-            ClusterSizeInNodes = clustersize
-        };
-
-		// Create the cluster
-        Console.WriteLine("Creating the HDInsight cluster ...");
-
-        ClusterDetails cluster = client.CreateCluster(clusterInfo);
-
-        Console.WriteLine("Created cluster: {0}.", cluster.ConnectionUrl);
-        Console.WriteLine("Press ENTER to continue.");
-        Console.ReadKey();
-
-10. 替换 Main() 函数开头的变量。
+		                DefaultStorageAccountName = ExistingStorageName,
+		                DefaultStorageAccountKey = ExistingStorageKey,
+		                DefaultStorageContainer = ExistingContainer
+		            };
+		
+		            _hdiManagementClient.Clusters.Create(ResourceGroupName, NewClusterName, parameters);
+		        }
+			}
+		}
+		
+10. 替换类成员值。
 
 **运行应用程序**
 
 该应用程序在 Visual Studio 中打开时，按 **F5** 运行该应用程序。控制台窗口应打开并显示应用程序的状态。设置一个 HDInsight 群集可能需要几分钟时间。
 
 
-## <a id="nextsteps"></a>后续步骤
+##<a id="nextsteps"></a>后续步骤
 在本文中，你已经学习了几种设置 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
 * [Azure HDInsight 入门](/documentation/articles/hdinsight-get-started) - 了解如何开始使用你的 HDInsight 群集
@@ -736,4 +760,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.cn
 
-<!---HONumber=71-->
+<!---HONumber=76-->

@@ -151,11 +151,11 @@
 
 虽然本文中的步骤使用 Azure 门户来创建网站，但你也可以使用[适用于 Mac 和 Linux 的 Azure 命令行工具]执行同样的操作。
 
-Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若要了解 Azure 网站是如何使用模块的，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps)。
+Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若要了解 Azure 网站是如何使用模块的，请参阅[将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)。
 
-若要了解有关随 Azure 提供的 Node.js 版本的更多信息以及如何指定要与你的应用程序结合使用的版本，请参阅[在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps)。
+若要了解有关随 Azure 提供的 Node.js 版本的更多信息以及如何指定要与你的应用程序结合使用的版本，请参阅[在 Azure 应用程序中指定 Node.js 版本](/documentation/articles/nodejs-specify-node-version-azure-apps/)。
 
-如果你将应用程序部署到 Azure 后遇到问题，有关如何诊断问题的信息，请参阅[如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)。
+如果你将应用程序部署到 Azure 后遇到问题，有关如何诊断问题的信息，请参阅[如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug/)。
 
 
 ##其他资源
@@ -163,18 +163,17 @@ Node.js 提供可由您的应用程序使用的丰富的模块生态系统。若
 * [Azure PowerShell]
 * [适用于 Mac 和 Linux 的 Azure 命令行工具]
 
-[Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell/
+[Azure PowerShell]: /documentation/articles/install-configure-powershell/
 
 [nodejs.org]: http://nodejs.org
 [Git]: http://git-scm.com
 
 [Azure 管理门户]: http://manage.windowsazure.cn
-[适用于 Mac 和 Linux 的 Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
+[适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli/
 
 [helloworld-completed]: ./media/web-sites-nodejs-develop-deploy-mac/helloazure.png
 [helloworld-localhost]: ./media/web-sites-nodejs-develop-deploy-mac/helloworldlocal.png
 [portal-new- Website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
-
 [portal-quick-create]: ./media/web-sites-nodejs-develop-deploy-mac/create-quick- Website.png
 
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png

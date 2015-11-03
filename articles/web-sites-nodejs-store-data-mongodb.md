@@ -26,7 +26,7 @@
 
 按照本教程中的说明操作，你将构建一个简单的基于 Web 的任务管理应用程序，该应用程序可用于创建、检索和完成任务。这些任务存储在 MongoDB 中。
 
-> [AZURE.NOTE] 本教程使用在虚拟机上安装的 MongoDB 实例。如果你更喜欢使用 MongoLabs 提供的托管的 MongoDB 实例，请参阅<a href="/zh-cn/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/">使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序</a>。
+> [AZURE.NOTE] 本教程使用在虚拟机上安装的 MongoDB 实例。如果你更喜欢使用 MongoLabs 提供的托管的 MongoDB 实例，请参阅<a href="/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/">使用 MongoLab 外接程序通过 MongoDB 在 Azure 上创建 Node.js 应用程序</a>。
  
 本教程中的项目文件将存储在名为 **tasklist** 的目录中，已完成的应用程序将与下图类似：
 
@@ -455,7 +455,7 @@ To test the application on your local machine, perform the following steps:
 
 本节中的步骤使用 Azure 命令行工具创建一个新的 Azure 网站，然后使用 Git 部署你的应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [WACOM.NOTE] 还可以使用 Azure 门户执行这些步骤。有关使用 Azure 门户部署 Node.js 应用程序的步骤，请参阅<a href="/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/">创建 Node.js 应用程序并将其部署到 Azure 网站</a>。
+> [WACOM.NOTE] 还可以使用 Azure 门户执行这些步骤。有关使用 Azure 门户部署 Node.js 应用程序的步骤，请参阅<a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">创建 Node.js 应用程序并将其部署到 Azure 网站</a>。
 
 > [WACOM.NOTE] 如果这是你创建的第一个 Azure 网站，则你必须使用 Azure 门户部署此应用程序。
 
@@ -492,7 +492,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 		info:   Executing `git remote add azure http://username@mongodbtasklist.chinacloudsites.cn/mongodbtasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE> 如果这是你订阅的第一个 Azure 网站，系统会指导你使用门户创建网站。有关详细信息，请参阅<a href="/zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/">创建 Node.js 应用程序并将其部署到 Azure 网站</a>。
+	> [AZURE.NOTE> 如果这是你订阅的第一个 Azure 网站，系统会指导你使用门户创建网站。有关详细信息，请参阅<a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">创建 Node.js 应用程序并将其部署到 Azure 网站</a>。
 
 ###设置 MONGODB\_URI 环境变量
 
@@ -557,12 +557,12 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-[Azure command-line tool for Mac and Linux]: /zh-cn/documentation/articles/xplat-cli/
+[Azure command-line tool for Mac and Linux]: /documentation/articles/xplat-cli/
 [Azure Developer Center]: /develop/nodejs/
-[Create and deploy a Node.js application to Azure  Websites]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[使用 Azure 网站中的 GIT 进行持续部署]: /zh-cn/documentation/articles/web-sites-publish-source-control/
+[Create and deploy a Node.js application to Azure  Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[使用 Azure 网站中的 GIT 进行持续部署]: /documentation/articles/web-sites-publish-source-control/
 [Installing MongoDB on a Linux Virtual machine]: /zh-cn/documentation/article/virtual-machines-install-mongodb-centos-linux/
-[使用 Azure 表服务的 Node.js Web 应用程序]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
+[使用 Azure 表服务的 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
 [node-mongo-finished]: ./media/web-sites-nodejs-store-data-mongodb/todo_list_empty.png
 [node-mongo-express-results]: ./media/store-mongodb-web-sites-nodejs-use-mac/express_output.png
 [node-mongo-add-item]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_add_item.png
@@ -571,7 +571,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 [installguides]: http://docs.mongodb.org/manual/installation/
 [azureportal]: https://manage.windowsazure.cn/
 [mongodocs]: http://docs.mongodb.org/manual/
-[xplatcli]: /zh-cn/documentation/articles/xplat-cli/
+[xplatcli]: /documentation/articles/xplat-cli/
 
 [selectdepo]: ./media/web-sites-nodejs-store-data-mongodb/browsedepot.png
 [selectedimage]: ./media/web-sites-nodejs-store-data-mongodb/selectimage.png
@@ -581,7 +581,7 @@ Azure 跨平台命令行接口 (xplat-cli) 用于为 Azure 服务执行管理操
 [vmname]: ./media/web-sites-nodejs-store-data-mongodb/vmname.png
 [vmconfig]: ./media/web-sites-nodejs-store-data-mongodb/vmconfig.png
 [vmendpoint]: ./media/web-sites-nodejs-store-data-mongodb/endpoints.png
-[sshazure]: /zh-cn/documentation/articles/linux-use-ssh-key/
+[sshazure]: /documentation/articles/linux-use-ssh-key/
 [mongodbonazure]: http://docs.mongodb.org/ecosystem/tutorial/install-mongodb-on-linux-in-azure/
 
 <!---HONumber=71-->

@@ -623,16 +623,18 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
+[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-install]: /documentation/articles/install-configure-powershell
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx

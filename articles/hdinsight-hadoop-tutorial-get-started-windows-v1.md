@@ -31,7 +31,7 @@
 
 Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HDInsight 开发者预览版*），与 Azure HDInsight 的通用版本结合使用。Emulator 针对开发人员方案，仅支持单节点部署。有关如何使用 HDInsight Emulator 的信息，请参阅 [HDInsight Emulator 入门][hdinsight-emulator]。
 
-> [AZURE.NOTE]有关如何设置 HBase 群集的说明，请参阅[在 HDInsight 中设置 HBase 群集][hdinsight-hbase-custom-provision]。请参阅 <a href="http://go.microsoft.com/fwlink/?LinkId=510237">Hadoop 与 HBase 之间的差别</a>，以了解为何要选择其中的某一种数据库。
+> [AZURE.NOTE]有关如何设置 HBase 群集的说明，请参阅[在 HDInsight 中设置 HBase 群集][hdinsight-hbase-custom-provision]。请参阅 <a href="http://hbase.apache.org/book.html#architecture">Hadoop 与 HBase 之间的差别</a>，以了解为何要选择其中的某一种数据库。
 
 ## 先决条件
 
@@ -226,24 +226,22 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
-[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[azure-free-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-[apache-hadoop]: http://go.microsoft.com/fwlink/?LinkId=510084
-[apache-hive]: http://go.microsoft.com/fwlink/?LinkId=510085
-[apache-mapreduce]: http://go.microsoft.com/fwlink/?LinkId=510086
-[apache-hdfs]: http://go.microsoft.com/fwlink/?LinkId=510087
+[apache-hadoop]: http://hadoop.apache.org/
+[apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
+[apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
+[apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
 [hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
 [powershell-open]: /documentation/articles/install-configure-powershell#Install
 
 
-[img-hdi-dashboard]: .
-media
-hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png
+[img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png
 [img-hdi-dashboard-query-select]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.png
 [img-hdi-dashboard-query-select-result]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.result.png
 [img-hdi-dashboard-query-select-result-output]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.query.select.result.output.png

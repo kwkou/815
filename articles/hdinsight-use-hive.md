@@ -1,7 +1,7 @@
 <properties
    pageTitle="了解 Hive 是什么以及如何使用 HiveQL | Azure"
    description="了解 Apache Hive 以及如何将它与 HDInsight 中的 Hadoop 配合使用。选择如何运行 Hive 作业，并使用 HiveQL 分析一个示例 Apache log4j 文件。"
-   keywords="hiveql,what is hive"
+   keywords="hiveql,什么是 hive"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
@@ -11,8 +11,8 @@
 
 <tags
    ms.service="hdinsight"
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="08/28/2015"
+   wacn.date="11/02/2015"/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件
 
@@ -56,13 +56,13 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 ##<a id="job"></a>示例作业：将列投影到分隔的数据
 
-以下 HiveQL 语句将列投影到 ****wasb:///example/data** 目录中存储的分隔数据：
+以下 HiveQL 语句将列投影到 **wasb:///example/data** 目录中存储的分隔数据：
 
 	DROP TABLE log4jLogs;
     CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
     ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
     STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
-    SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
+    SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
 在上例中，HiveQL 语句执行以下操作：
 
@@ -71,6 +71,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
 * **STORED AS TEXTFILE LOCATION**：让 Hive 知道数据的存储位置（example/data 目录），并且数据已存储为文本。数据可以在一个文件中，也可以分散在目录的多个文件内。
 * **SELECT**：选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
+* **INPUT__FILE__NAME LIKE '%.log'** - 告诉 Hive，我们只应返回以 .log 结尾的文件中的数据。此项将搜索限定于包含数据的 sample.log 文件，使搜索不会返回与所定义架构不符的其他示例数据文件中的数据。
 
 > [AZURE.NOTE]当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
 	>
@@ -81,7 +82,7 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 	CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
 	STORED AS ORC;
 	INSERT OVERWRITE TABLE errorLogs
-	SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
+	SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log';
 
 这些语句将执行以下操作：
 
@@ -93,13 +94,13 @@ Hive 知道如何处理结构化和半结构化数据，例如其中的字段以
 
 ##<a id="usetez"></a>使用 Apache Tez 提高性能
 
-[Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。此功能目前默认为关闭，而必须启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：
+[Apache Tez](http://tez.apache.org) 是可让数据密集型应用程序（例如 Hive）大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。
+
+对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，必须将其启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：
 
 	set hive.execution.engine=tez;
 
 你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)中找到详细信息。
-
-[Tez 上的 Hive 设计文档](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez)包含实现选项和优化配置的详细信息。
 
 
 ##<a id="run"></a>选择如何运行 HiveQL 作业
@@ -111,17 +112,29 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 | [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl) | &nbsp; | ✔ | Windows | Windows |
 | [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console) | &nbsp; | ✔ | Windows | 基于浏览器 |
 | [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio) | &nbsp; | ✔ | Windows | Windows |
-| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk) | &nbsp; | ✔ | Windows | Windows（暂时） |
 | [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell) | &nbsp; | ✔ | Windows | Windows |
 | [远程桌面](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop) | ✔ | ✔ | Windows | Windows |
+
+## 使用本地 SQL Server Integration Services 在 Azure HDInsight 上运行 Hive 作业
+
+你也可以使用 SQL Server Integration Services (SSIS) 来运行 Hive 作业。Azure Feature Pack for SSIS 提供适用于 HDInsight 上的 Hive 作业的以下组件。
+
+
+- [Azure HDInsight Hive 任务][hivetask]
+- [Azure 订阅连接管理器][connectionmanager]
+
+
+在[此处][ssispack]了解有关 Azure Feature Pack for SSIS 的详细信息。
+
 
 ##<a id="nextsteps"></a>后续步骤
 
 现在，你已了解什么是 Hive，以及如何将它与 HDInsight 中的 Hadoop 配合使用，请使用以下链接来学习 Azure HDInsight 的其他用法。
 
-* [将数据上载到 HDInsight][hdinsight-upload-data]
-* [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
-* [将 MapReduce 作业与 HDInsight 配合使用][hdinsight-use-mapreduce]
+
+- [将数据上载到 HDInsight][hdinsight-upload-data]
+- [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
+- [将 MapReduce 作业与 HDInsight 配合使用][hdinsight-use-mapreduce]
 
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
@@ -134,7 +147,11 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query
+[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
+[hivetask]: http://msdn.microsoft.com/zh-CN/library/mt146771(v=sql.120).aspx
+[connectionmanager]: http://msdn.microsoft.com/zh-CN/library/mt146773(v=sql.120).aspx
+[ssispack]: http://msdn.microsoft.com/zh-CN/library/mt146770(v=sql.120).aspx
+
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
@@ -151,4 +168,4 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

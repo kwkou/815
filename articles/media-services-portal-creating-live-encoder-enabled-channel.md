@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="11/02/2015"/>
 
 
 #使用管理门户可创建频道，以执行从单比特率到多比特率流的实时编码（预览版）
@@ -28,7 +28,7 @@
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](http://go.microsoft.com/fwlink/?LinkId=532824)。
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -256,4 +256,4 @@
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

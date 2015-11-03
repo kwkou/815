@@ -10,13 +10,15 @@
 
 <tags 
 	ms.service="virtual-network" 
-	ms.date="07/08/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/10/2015" 
+	wacn.date="11/02/2015"/>
 
 
 # 在混合云中设置用于测试的 SharePoint Intranet 场
 
-本主题将指导你一步步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+
+本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet SharePoint 场。这是生成的配置。
 
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_3.png)
  
@@ -48,13 +50,13 @@
 
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_1.png)
 
-> [AZURE.NOTE]就阶段 1 来说，你也可以设置模拟混合云测试环境。有关说明，请参阅[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
+> [AZURE.NOTE] 就阶段 1 来说，你也可以设置模拟混合云测试环境。有关说明，请参阅[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
  
 ## 阶段 2：配置 SQL Server 计算机 (SQL1)
 
 从 Azure 管理门户中，启动 DC2 计算机（如果需要）。
 
-首先，使用 CORP\User1 凭据创建到 DC2 的远程桌面连接。
+首先，使用 CORP\\User1 凭据创建到 DC2 的远程桌面连接。
 
 接下来，创建一个 SharePoint 场管理员帐户。打开 DC2 上的管理员级 Windows PowerShell 提示符，然后运行此命令。
 
@@ -122,17 +124,17 @@
 3.	在“对象资源管理器”树窗格中，右键单击“SQL1”，然后单击“属性”。
 4.	在“服务器属性”窗口中，单击“数据库设置”。
 5.	找到“数据库默认位置”，然后设置以下值： 
-	- 对于“数据”，请键入路径 **f:\Data**。
-	- 对于“日志”，请键入路径 **f:\Log**。
-	- 对于“备份”，请键入路径 **f:\Backup**。
+	- 对于“数据”，请键入路径 **f:\\Data**。
+	- 对于“日志”，请键入路径 **f:\\Log**。
+	- 对于“备份”，请键入路径 **f:\\Backup**。
 	- 请注意，只有新数据库使用这些位置。
 6.	单击“确定”以关闭该窗口。
 7.	在“对象资源管理器”树窗格中，打开“安全性”。
 8.	右键单击“登录名”，然后单击“新建登录名”。
-9.	在“登录名”中，键入“CORP\User1”。
+9.	在“登录名”中，键入“CORP\\User1”。
 10.	在“服务器角色”页上，单击“sysadmin”，然后单击“确定”。
 11.	在“对象资源管理器”树窗格中，右键单击“登录名”，然后单击“新建登录名”。
-12.	在“常规”页的“登录名”中，键入“CORP\SPFarmAdmin”。
+12.	在“常规”页的“登录名”中，键入“CORP\\SPFarmAdmin”。
 13.	在“服务器角色”页上，选择“dbcreator”，然后单击“确定”。
 14.	关闭 Microsoft SQL Server Management Studio。
 
@@ -154,7 +156,7 @@
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
-接下来，使用 CORP\User1 凭据连接到 SP1 虚拟机。
+接下来，使用 CORP\\User1 凭据连接到 SP1 虚拟机。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。从 SP1 上的管理员级 Windows PowerShell 命令提示符处运行这些命令。
 
@@ -169,7 +171,7 @@
 2.	在“欢迎使用 SharePoint 产品”页上，单击**“下一步”**。 
 3.	在通知你某些服务可能需要在配置期间重新启动的对话框中，单击“是”。
 4.	在“连接到服务器场”页上，单击“创建新的服务器场”，然后单击“下一步”。
-5.	在“指定配置数据库设置”页上，在“数据库服务器”中键入 **sql1.corp.contoso.com**，在“用户名”中键入 **CORP\SPFarmAdmin**，在“密码”中键入 SPFarmAdmin 帐户密码，然后单击“下一步”。
+5.	在“指定配置数据库设置”页上，在“数据库服务器”中键入 **sql1.corp.contoso.com**，在“用户名”中键入 **CORP\\SPFarmAdmin**，在“密码”中键入 SPFarmAdmin 帐户密码，然后单击“下一步”。
 6.	在“指定场安全设置”页的“密码”和“确认密码”中都键入 **P@ssphrase**，然后单击“下一步”。
 7.	在“配置 SharePoint 管理中心 Web 应用程序”页上，单击**“下一步”**。
 8.	在“完成 SharePoint 产品配置向导”页上，单击“下一步”。SharePoint 产品配置向导可能需要几分钟才能完成。
@@ -178,9 +180,9 @@
 11.	遇到提示“你要如何配置你的 SharePoint 场?”时，单击“启动向导”。
 12.	在“配置你的 SharePoint 场”页的“服务帐户”中，单击“使用现有托管帐户”。
 13.	在“服务”中，清除除“状态服务”旁边的框以外的所有复选框，然后单击“下一步”。“正在处理”页可能会显示一段时间，然后才会完成相关操作。
-14.	在“创建站点集”页的“标题和说明”的“标题”中键入“Contoso Corporation”，指定 URL **http://sp1/**，然后单击“确定”。“正在处理”页可能会显示一段时间，然后才会完成相关操作。此步骤将在 URL http://sp1 上创建工作组网站。
+14.	在“创建站点集”页的“标题和说明”的“标题”中键入“Contoso Corporation”，指定 URL **http://sp1**/，然后单击“确定”。“正在处理”页可能会显示一段时间，然后才会完成相关操作。此步骤将在 URL http://sp1上创建工作组网站。
 15.	在“这将完成场配置向导”页上，单击“完成”。Internet Explorer 选项卡将显示 SharePoint 2013 管理中心站点。
-16.	使用 CORP\User1 帐户凭据登录到 CLIENT1 计算机上，然后启动 Internet Explorer。
+16.	使用 CORP\\User1 帐户凭据登录到 CLIENT1 计算机上，然后启动 Internet Explorer。
 17.	在地址栏中，键入 **http://sp1/**，然后按 Enter。此时你会看到 Contoso Corporation 的 SharePoint 工作组网站。该站点可能需要一段时间才能呈现。
 
 这是你当前的配置。
@@ -208,4 +210,4 @@
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
  
 
-<!---HONumber=70-->
+<!---HONumber=76-->

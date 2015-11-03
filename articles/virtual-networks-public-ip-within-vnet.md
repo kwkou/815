@@ -8,8 +8,8 @@
    editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.date="06/08/2015"
-   wacn.date="08/01/2015"/>
+   ms.date="09/04/2015"
+   wacn.date="11/02/2015"/>
 
 # 虚拟网络 (VNet) 中的公共 IP 地址空间
 
@@ -47,4 +47,4 @@
 
 [如何删除虚拟网络 (VNet)](/documentation/articles/virtual-networks-delete-vnet)
 
-<!---HONumber=64-->
+<!---HONumber=76-->

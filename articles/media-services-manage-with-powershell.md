@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="11/02/2015"/>
 
 
 #使用 PowerShell 管理 Azure 媒体服务帐户
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-create-account)
+- [门户](/documentation/articles/media-services-create-account)
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell)
 - [REST](https://msdn.microsoft.com/zh-CN/library/azure/dn167014.aspx)
 
@@ -104,4 +104,4 @@ Azure 媒体服务使用 Azure 存储空间来存储媒体内容。当你创建�
 
 	PS C:\> Remove-AzureMediaServicesAccount -Name "amstestaccount001" -Force
 
-<!---HONumber=71-->
+<!---HONumber=76-->

@@ -28,11 +28,11 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 
 ## 安装 R
 
-用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 门户设置群集时使用示例脚本的说明。
+用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 门户设置群集时使用示例脚本的说明。
 
 > [AZURE.NOTE]示例脚本是随同 HDInsight 群集版本 3.1 一起引入的。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
 
-1. 根据[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始预配群集。 
+1. 根据[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters/#portal)中的说明，使用“自定义创建”选项开始预配群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所述：
 
 	![使用脚本操作自定义群集](./media/hdinsight-hadoop-r-scripts/hdi-r-script-action.png "使用脚本操作自定义群集")
@@ -42,7 +42,7 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 	<tr><td>Name</td>
 		<td>指定脚本操作的名称，例如 <b>Install R</b>。</td></tr>
 	<tr><td>脚本 URI</td>
-		<td>指定调用用于自定义群集的脚本的 URI，例如 <i>https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1</i></td></tr>
+		<td>指定调用用于自定义群集的脚本的 URI，例如 <i>https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1</i></td></tr>
 	<tr><td>节点类型</td>
 		<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
 	<tr><td>Parameters</td>
@@ -107,7 +107,7 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 3. 使用 **Add-AzureHDInsightScriptAction** cmdlet 来调用用于安装 R 的示例脚本，例如：
 
 		# INVOKE THE SCRIPT USING THE SCRIPT ACTION
-		$config = Add-AzureHDInsightScriptAction -Config $config -Name "Install R"  -ClusterRoleCollection HeadNode,DataNode -Uri https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1
+		$config = Add-AzureHDInsightScriptAction -Config $config -Name "Install R"  -ClusterRoleCollection HeadNode,DataNode -Uri https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1
 
 
 	**Add-AzureHDInsightScriptAction** cmdlet 采用以下参数：
@@ -251,7 +251,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
         clusterInfo.ConfigActions.Add(new ScriptAction(
             "Install R",
             new ClusterNodeType[] { ClusterNodeType.HeadNode, ClusterNodeType.DataNode },
-            new Uri("https://hdiconfigactions.blob.core.chinacloudapi.cn/rconfigactionv02/r-installer-v02.ps1"), null
+            new Uri("https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1"), null
             ));
 
 11. 最后，创建群集：
@@ -276,4 +276,5 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+
 <!---HONumber=71-->

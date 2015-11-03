@@ -50,6 +50,7 @@
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis
+
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
 
 <!---HONumber=71-->

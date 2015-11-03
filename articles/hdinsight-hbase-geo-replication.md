@@ -64,7 +64,7 @@
 Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如，将 *hbase.replication* 设置为 *true*。如果设置群集后在配置文件中设置该值，你将在重新创建群集映像后丢失该设置。有关详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集][hdinsight-provision]。使用自定义选项设置 HDInsight 群集的选项之一是使用 Azure PowerShell。
 
 
-**在 Contoso-VNet-EU 中预配 HBase 群集**
+**在 Contoso-VNet-CN 中预配 HBase 群集**
 
 1. 在工作站上打开 Windows PowerShell ISE。
 2. 设置脚本开头位置的变量，然后运行该脚本。
@@ -78,7 +78,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 		$hadoopUserLogin = "[HadoopUserName]"
 		$hadoopUserpw = "[HadoopUserPassword]"
 		
-		$vNetName = "Contoso-VNet-EU"  # This name must match your Europe virtual network name.
+		$vNetName = "Contoso-VNet-CN"  # This name must match your Europe virtual network name.
 		$subNetName = 'Subnet-1' # This name must match your Europe virtual network subnet name.  The default name is "Subnet-1".
 		
 		$storageAccountName = 'ContosoStoreEU'  # The script will create this storage account for you.  The storage account name doesn't support hyphens. 
@@ -126,12 +126,12 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 
 
-**在 Contoso-VNet-US 中预配 HBase 群集**
+**在 Contoso-VNet-CE 中预配 HBase 群集**
 
 - 使用包含以下值的同一个脚本：
 
 		$hbaseClusterName = "Contoso-HBase-US" # This is the HBase cluster name to be used.
-		$vNetName = "Contoso-VNet-US"  # This name must match your Europe virtual network name.
+		$vNetName = "Contoso-VNet-CE"  # This name must match your Europe virtual network name.
 		$storageAccountName = 'ContosoStoreUS'	
 
 	由于你已连接到 Azure 帐户，因此不再需要运行以下 cmdlet：
@@ -159,19 +159,19 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 **配置 DNS 转发器**
  
-1.	通过 RDP 访问 **Contoso-DNS-EU**。 
+1.	通过 RDP 访问 **Contoso-DNS-CN**。 
 2.	单击左下角的 Windows 键。
 2.	单击“管理工具”。
 3.	单击“DNS”。
-4.	在左窗格中，展开“DSN”、“Contoso-DNS-EU”。
+4.	在左窗格中，展开“DSN”、“Contoso-DNS-CN”。
 5.	右键单击“条件转发器”，然后单击“新建条件转发器”。 
 5.	输入以下信息：
 	- **DNS 域**：输入 Contoso-HBase-US 的 DNS 后缀。示例：Contoso-HBase-US.f5.internal.chinacloudapp.cn.
-	- **主服务器的 IP 地址**：输入 10.2.0.4，这是 Contoso-DNS-US 的 IP 地址。请验证该 IP。你的 DNS 服务器可以具有不同的 IP 地址。
-6.	按 **ENTER**，然后单击“确定”。现在，你可以从 Contoso-DNS-EU 解析 Contoso-DNS-US 的 IP 地址。
-7.	重复上述步骤，以使用以下值将 DNS 条件转发器添加到 Contoso-DNS-US 虚拟机上的 DNS 服务：
+	- **主服务器的 IP 地址**：输入 10.2.0.4，这是 Contoso-DNS-CE 的 IP 地址。请验证该 IP。你的 DNS 服务器可以具有不同的 IP 地址。
+6.	按 **ENTER**，然后单击“确定”。现在，你可以从 Contoso-DNS-CN 解析 Contoso-DNS-CE 的 IP 地址。
+7.	重复上述步骤，以使用以下值将 DNS 条件转发器添加到 Contoso-DNS-CE 虚拟机上的 DNS 服务：
 	- **DNS 域**：输入 Contoso-HBase-EU 的 DNS 后缀。 
-	- **主服务器的 IP 地址**：输入 10.2.0.4，这是 Contoso-DNS-EU 的 IP 地址。
+	- **主服务器的 IP 地址**：输入 10.2.0.4，这是 Contoso-DNS-CN 的 IP 地址。
 
 **测试域名解析**
 
@@ -238,7 +238,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 已使用以下 URL 将一个示例数据文件上载到公共 Azure Blob 容器：
 
-		wasb://hbasecontacts@hditutorialdata.blob.core.chinacloudapi.cn/contacts.txt
+		wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 文件的内容：
 
@@ -263,7 +263,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 4. 上载数据：
 
-		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasb://hbasecontacts@hditutorialdata.blob.core.chinacloudapi.cn/contacts.txt
+		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 		hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /tmpOutput Contacts
 
@@ -304,4 +304,5 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
+
 <!---HONumber=71-->

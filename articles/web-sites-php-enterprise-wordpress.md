@@ -251,7 +251,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 [mysqlwindows]: /documentation/articles/virtual-machines-mysql-windows-server-2008r2
 [mysqllinux]: /documentation/articles/virtual-machines-linux-mysql-use-opensuse
 [cge]: http://www.mysql.com/products/cluster/
-<!--[websitepricing]: /pricing/details/app-service/-->
+<!--[websitepricing]: /home/features/app-service/#price-->
 [export]: http://en.support.wordpress.com/export/
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/

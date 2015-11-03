@@ -10,8 +10,8 @@
 
 <tags
    ms.service="hdinsight" 
-   ms.date="07/23/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="08/28/2015"
+   wacn.date="11/02/2015"/>
 
 # 使用查询控制台运行 Hive 查询
 
@@ -45,7 +45,7 @@
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
         STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
-        SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
+        SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
     这些语句将执行以下操作：
 
@@ -59,6 +59,7 @@
     * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
     * **STORED AS TEXTFILE LOCATION**：让 Hive 知道数据的存储位置（example/data 目录），并且数据已存储为文本。
     * **SELECT**：选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
+    * **INPUT__FILE__NAME LIKE '%.log'** - 告诉 Hive，我们只应返回以 .log 结尾的文件中的数据。此项将搜索限定于包含数据的 sample.log 文件，使搜索不会返回与所定义架构不符的其他示例数据文件中的数据。
 
 2. 单击“提交”。页面底部的“作业会话”应显示作业的详细信息。
 
@@ -75,37 +76,45 @@
 
 有关 HDInsight 中的 Hive 的一般信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-有关 HDInsight 上的 Hadoop 的其他使用方法的信息。
+有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
+
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[azure-purchase-options]: /pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 
 
 [apache-tez]: http://tez.apache.org
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
+
+
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

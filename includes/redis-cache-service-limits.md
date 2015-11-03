@@ -1,5 +1,10 @@
-每个定价层的 Azure Redis 缓存限制和大小都不相同。若要查看定价层及其关联的大小，请参阅 [Azure Redis 缓存定价](http://azure.microsoft.com/pricing/details/cache/)。
+| 资源 | 限制 |
+|---------------------------------------------|----------------------------------------|
+| 缓存大小 | 53 GB |
+| 数据库 | 16 |
+| 连接的最大客户端数 | 20,000 |
+| Redis 缓存副本（用于高可用性） | 1 |
 
-有关 Azure Redis 缓存配置限制的信息，请参阅[默认 Redis 服务器配置](/documentation/articles/cache-configure#default-redis-server-configuration)。
+每个定价层的 Azure Redis 缓存限制和大小都不相同。若要查看定价层及其关联的大小，请参阅 [Azure Redis 缓存定价](/home/features/redis-cache/#price)。
 
-<!---HONumber=71-->
+<!---HONumber=76-->

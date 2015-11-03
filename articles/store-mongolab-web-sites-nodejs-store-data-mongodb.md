@@ -26,7 +26,7 @@
 各位冒险家，大家好！ 欢迎使用 MongoDB 即服务。在本教程中你将：
 
 2. [创建应用][create] - 它将是一个简单的 Node.js 应用，用于维护任务列表。
-3. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 Azure 网站。
+3. [部署应用][deploy] - 通过将一些配置联系在一起，我们轻而易举就能将代码推送到 [Azure 网站](/documentation/services/web-sites/)。
 4. [管理数据库][manage] - 最后，我们将向你演示 MongoLab 基于 Web 的数据库管理门户，在此你可轻松搜索、显示和修改数据。
 
 在本教程的任意时间，如有任何问题，请随时发送电子邮件至 [support@mongolab.com](mailto:support@mongolab.com)。
@@ -375,7 +375,7 @@
 
 	npm install azure-cli -g
 
-如果你已从 <a href="/develop/nodejs/">Azure 开发人员中心</a>安装了 <strong>Azure SDK for Node.js</strong>，则应该已安装了 Azure CLI。有关详细信息，请参阅 <a href="/documentation/articles/virtual-machines-command-line-tools/">Azure CLI</a>。
+如果你已从 <a href="/develop/nodejs/">Azure 开发人员中心</a>安装了 <strong>Azure SDK for Node.js</strong>，则应该已安装了 Azure CLI。有关详细信息，请参阅 <a href="/documentation/articles/virtual-machines-command-line-tools">Azure CLI</a>。
 
 虽然 Azure CLI 主要针对 Mac 和 Linux 用户而创建，但它们基于 Node.js，应该可在能够运行 Node 的任何系统上使用。
 

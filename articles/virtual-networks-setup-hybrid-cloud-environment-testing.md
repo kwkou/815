@@ -10,12 +10,12 @@
 
 <tags 
 	ms.service="virtual-network" 
-	ms.date="07/08/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/10/2015" 
+	wacn.date="11/02/2015"/>
 
 # 设置用于测试的混合云环境
 
-本主题将指导你一步步创建用于 Windows Azure 的混合云环境，以便进行测试。这是生成的配置。
+本主题将指导你逐步使用 Windows Azure 创建混合云环境，以便进行测试。这是生成的配置。
 
 ![](./media/virtual-networks-setup-hybrid-cloud-environment-testing/CreateHybridCloudVNet_5.png)
 
@@ -41,7 +41,7 @@
 
 如果你还没有 Azure 订阅，可以在[试用 Azure](/pricing/1rmb-trial/) 中注册一个免费试用版。
 
->[AZURE.NOTE]Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的免费试用版本、MSDN 订阅或付费订阅的。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
+>[AZURE.NOTE] Azure 中的虚拟机和虚拟网关在运行时会持续产生货币成本。此成本是针对你的免费试用版本、MSDN 订阅或付费订阅的。若要在不使用的情况下降低运行此测试环境的成本，请参阅本主题中的[最大程度地降低此环境的持续使用成本](#costs)，了解详细信息。
 
 此配置要求使用一个由最多四台计算机组成的测试子网，这些计算机使用公共 IP 地址直接连接到 Internet。如果没有这些资源，你也可以[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。模拟混合云测试环境只需要 Azure 订阅。
 
@@ -49,7 +49,7 @@
 
 按照[测试实验室指南：Windows Server 2012 R2 的基本配置](https://www.microsoft.com/download/details.aspx?id=39638)的“配置 Corpnet 子网的步骤”一节中的说明，在名为 Corpnet 的子网上配置 DC1、APP1 和 CLIENT1 计算机。**此子网必须与组织网络隔离，因为它将通过 RRAS1 计算机直接连接到 Internet。**
 
-接下来，使用 CORP\User1 凭据登录到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请从管理员级 Windows PowerShell 命令提示符运行这些命令。
+接下来，使用 CORP\\User1 凭据登录到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请从管理员级 Windows PowerShell 命令提示符运行这些命令。
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
@@ -88,8 +88,8 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 	New-NetIPAddress -InterfaceAlias "Corpnet" -IPAddress 10.0.0.2 -AddressFamily IPv4 -PrefixLength 24
 	Set-DnsClientServerAddress -InterfaceAlias "Corpnet" -ServerAddresses 10.0.0.1
 	Set-DnsClient -InterfaceAlias "Corpnet" -ConnectionSpecificSuffix corp.contoso.com
-	New-NetFirewallRule -DisplayName "Allow ICMPv4-In" -Protocol ICMPv4
-	New-NetFirewallRule -DisplayName "Allow ICMPv4-Out" -Protocol ICMPv4 -Direction Outbound
+	New-NetFirewallRule -DisplayName "Allow ICMPv4-Input" -Protocol ICMPv4
+	New-NetFirewallRule -DisplayName "Allow ICMPv4-Output" -Protocol ICMPv4 -Direction Outbound
 	Disable-NetAdapterBinding -Name "Internet" -ComponentID ms_msclient
 	Disable-NetAdapterBinding -Name "Internet" -ComponentID ms_server
 	ping dc1.corp.contoso.com
@@ -264,7 +264,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 	Install-ADDSDomainController -Credential (Get-Credential CORP\User1) -DomainName "corp.contoso.com" -InstallDns:$true -DatabasePath "F:\NTDS" -LogPath "F:\Logs" -SysvolPath "F:\SYSVOL"
 
-请注意，系统会提示你输入 CORP\User1 密码和目录服务还原模式 (DSRM) 密码，然后重新启动 DC2。
+请注意，系统会提示你输入 CORP\\User1 密码和目录服务还原模式 (DSRM) 密码，然后重新启动 DC2。
 
 由于 TestVNET 虚拟网络有自己的 DNS 服务器 (DC2)，因此必须将 TestVNET 虚拟网络配置为使用此 DNS 服务器。
 
@@ -322,4 +322,4 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 接下来，请转到本地计算机上的 Azure 管理门户中等待，一直等到 TestVNET 虚拟网络显示状态为“已连接”。
  
 
-<!---HONumber=70-->
+<!---HONumber=76-->

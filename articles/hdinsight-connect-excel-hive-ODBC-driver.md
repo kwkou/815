@@ -117,6 +117,7 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [hive-odbc-driver-download]: http://go.microsoft.com/fwlink/?LinkID=286698
 
 [img-hdi-simbahiveodbc-datasource-admin]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.DataSourceAdmin1.png

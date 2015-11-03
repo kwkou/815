@@ -108,9 +108,9 @@ Azure 提供内置的诊断以帮助调试在 Azure 网站中托管的 Node.js �
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode 自述文件]: https://github.com/tjanczuk/iisnode#readme
-[如何使用Azure 命令行工具]: /zh-cn/documentation/articles/xplat-cli/
-[将 Node.js 模块与 Azure 应用程序一起使用]: /zh-cn/documentation/articles/nodejs-use-node-modules-azure-apps/
-[在 Azure 应用程序中指定 Node.js 版本]: /zh-cn/documentation/articles/nodejs-specify-node-version-azure-apps/
+[如何使用Azure 命令行工具]: /documentation/articles/xplat-cli/
+[将 Node.js 模块与 Azure 应用程序一起使用]: /documentation/articles/nodejs-use-node-modules-azure-apps/
+[在 Azure 应用程序中指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps/
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png

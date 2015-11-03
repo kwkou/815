@@ -20,7 +20,7 @@
 
 如果你想要创建仅包含云的虚拟网络，请参阅 [教程：在 Azure 中创建仅包含云的虚拟网络](/documentation/articles/create-virtual-network)。<!-- If you want to create a point-to-site VPN by using certificates and a VPN client, see [Configure a Point-to-Site VPN in the Management Portal](http://msdn.microsoft.com/zh-cn/library/azure/dn133792.aspx).-->
 
-本教程假定您之前未使用过 Azure。其目的是帮助你熟悉创建跨界虚拟网络所需的步骤。如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
+本教程假定你之前未使用过 Azure。其目的是帮助你熟悉创建跨界虚拟网络所需的步骤。如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
 完成本教程后，你将获得一个示例跨界虚拟网络。下图根据本教程中的示例设置显示了详细信息。
 
@@ -42,7 +42,7 @@
 
 ##  目标
 
-在本教程中，您将学习：
+在本教程中，你将学习：
 
 -  如何设置可在其中添加 Azure 服务的示例跨界 Azure 虚拟网络。
 
@@ -103,12 +103,11 @@
  
 	![](./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVNet_03_DNSServersandVPNConnectivity.png)
 
-5.	在“站点到站点连接”页上输入以下信息，然后单击页面右下角的复选标记。
-<!--For more information about the settings on this page, see the **Site-to-Site Connectivity** page section in [About Configuring a Virtual Network using the Management Portal](http://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx). -->
+5.	在“站点到站点连接”页上输入以下信息，然后单击页面右下角的复选标记。<!--For more information about the settings on this page, see the **Site-to-Site Connectivity** page section in [About Configuring a Virtual Network using the Management Portal](http://msdn.microsoft.com/zh-cn/library/azure/jj156074.aspx). -->
 
 	-  **名称：**对于本教程中的示例，请键入 **YourCorpHQ**。
 
-	-  **VPN 设备 IP 地址：**对于本教程中的示例，请键入 **3.2.1.1**。否则，请输入 VPN 设备的公共 IP 地址。如果你没有此信息，则需要先获取此信息，然后才能继续在向导中执行后续步骤。请注意，VPN 设备不能在 NAT 的后面。有关 VPN 设备的详细信息，请参阅[关于用于虚拟网络连接的 VPN 设备](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156075.aspx)。
+	-  **VPN 设备 IP 地址：**对于本教程中的示例，请键入 **3.2.1.1**。否则，请输入 VPN 设备的公共 IP 地址。如果你没有此信息，则需要先获取此信息，然后才能继续在向导中执行后续步骤。请注意，VPN 设备不能在 NAT 的后面。有关 VPN 设备的详细信息，请参阅[关于用于虚拟网络连接的 VPN 设备](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)。
 
 	-  **地址空间：**对于本教程中的示例，请键入 **10.1.0.0/16**。
 	-  **添加地址空间：**本教程不需要额外的地址空间。
@@ -257,7 +256,7 @@
 
 -  [将虚拟机添加到虚拟网络](/documentation/articles/virtual-machines-create-custom)
 
--  [有关虚拟网络的 VPN 设备（可能为英文页面）](https://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)
+-  [有关虚拟网络的 VPN 设备（可能为英文页面）](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)
 
 <!---  [Azure Name Resolution Overview](http://msdn.microsoft.com/zh-cn/library/azure/jj156088.aspx)-->
 

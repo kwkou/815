@@ -57,7 +57,7 @@ Tez 速度更快，因为：
 
 
 	$clusterName = "[HDInsightClusterName]"
-	$location = "[AzureDataCenter]" #i.e. West US
+	$location = "[AzureDataCenter]" #i.e. China North
 	$dataNodes = 32 # number of worker nodes in the cluster
 
 	$defaultStorageAccountName = "[DefaultStorageAccountName]"

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="11/02/2015"/>
 
 
 #如何缩放编码
@@ -18,7 +18,8 @@
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-dotnet-encoding-units)
 - [Portal](/documentation/articles/media-services-portal-encoding-units)
-- [REST](https://msdn.microsoft.com/library/azure/dn859236.aspx)
+- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 ##概述
 
@@ -51,4 +52,4 @@
 
 有关配额和限制以及如何开具支持票证的信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
 
-<!---HONumber=71-->
+<!---HONumber=76-->

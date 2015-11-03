@@ -8,15 +8,21 @@
    editor="tysonn" />
 <tags
    ms.service="automation"
-   ms.date="07/22/2015"
-   wacn.date="09/15/2015" />
+   ms.date="09/17/2015"
+   wacn.date="11/02/2015" />
 
 # 在 Azure 自动化中执行 Runbook
 
 
 在 Azure 自动化中启动 Runbook 时，将会创建一个作业。作业是 Runbook 的单一执行实例。将分配一个 Azure 自动化工作线程来运行每个作业。尽管工作线程由多个 Azure 帐户共享，但不同自动化帐户中的作业是相互独立的。你无法控制要由哪个工作线程为作业的请求提供服务。一个 Runbook 可以同时运行多个作业。当你在 Azure 门户中查看 Runbook 列表时，列表中会列出上次为每个 Runbook 启动的作业的状态。可以查看每个 Runbook 的作业列表以跟踪每个作业的状态。有关不同作业状态的说明，请参阅[作业状态](#job-statuses)。
 
-![作业状态](./media/automation-runbook-execution/job-statuses.png)
+下图显示 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) 的 Runbook 作业生命周期。
+
+![作业状态 - PowerShell 工作流](./media/automation-runbook-execution/job-statuses.png)
+
+下图显示 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 的 Runbook 作业生命周期。
+
+![作业状态 - PowerShell 脚本](./media/automation-runbook-execution/job-statuses-script.png)
 
 
 作业可以通过与 Azure 订阅建立连接来访问 Azure 资源。仅当数据中心内的资源可从公有云访问时，作业才能访问这些资源。
@@ -28,7 +34,7 @@
 | 状态| 说明|
 |:---|:---|
 |已完成|作业已成功完成。|
-|已失败|作业已结束但出现错误。|
+|已失败| 就 [PowerShell 脚本 Runbook](/documentation/articles/automation-runbook-types) 来说，是指 Runbook 无法启动或作业遇到异常。 |
 |失败，正在等待资源|作业失败，因为它已达到[公平份额](#fairshare)限制三次，并且每次都已从同一个检查点或 Runbook 开始处启动。|
 |已排队|作业正在等待提供自动化工作线程的资源，以便能够启动。|
 |正在启动|作业已分配给工作线程，并且系统正在将它启动。|
@@ -37,8 +43,8 @@
 |正在运行，正在等待资源|作业已卸载，因为它已达到[公平份额](#fairshare)限制。片刻之后，它将从其上一个检查点恢复。|
 |已停止|作业在完成之前已被用户停止。|
 |正在停止|系统正在停止作业。|
-|已挂起|作业已被用户、系统或 Runbook 中的命令暂停。挂起的作业可以重新启动，并且将从其上一个检查点恢复，如果没有检查点，则从 Runbook 的开始处恢复。只有在出现异常时，系统才会挂起 Runbook。默认情况下，ErrorActionPreference 设置为 **Continue**，表示出错时作业将保持运行。如果此首选项变量设置为 **Stop**，则出错时作业将会挂起。|
-|正在暂停|系统正在尝试按用户请求暂停作业。Runbook 只有在达到其下一个检查点后才能挂起。如果 Runbook 越过了最后一个检查点，则只有在完成后才能挂起。|
+|已挂起|作业已被用户、系统或 Runbook 中的命令暂停。挂起的作业可以重新启动，并且将从其上一个检查点恢复，如果没有检查点，则从 Runbook 的开始处恢复。只有在出现异常时，系统才会挂起 Runbook。默认情况下，ErrorActionPreference 设置为 **Continue**，表示出错时作业将保持运行。如果此首选项变量设置为 **Stop**，则出错时作业将会挂起。仅适用于 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types)。|
+|正在暂停|系统正在尝试按用户请求暂停作业。Runbook 只有在达到其下一个检查点后才能挂起。如果 Runbook 越过了最后一个检查点，则只有在完成后才能挂起。仅适用于 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types)。|
 
 ## 使用 Azure 管理门户查看作业状态
 
@@ -74,14 +80,14 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 ## 使用 Windows PowerShell 检索作业状态
 
-可以使用 [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) 检索为 Runbook 创建的作业和特定作业的详细信息。如果在 Windows PowerShell 中使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) 启动了 Runbook，则会返回生成的作业。使用 [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx)Output 可以获取作业的输出。
+可以使用 [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx) 检索为 Runbook 创建的作业和特定作业的详细信息。如果在 Windows PowerShell 中使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690259.aspx) 启动了 Runbook，则会返回生成的作业。使用 [Get-AzureAutomationJob](http://msdn.microsoft.com/zh-cn/library/azure/dn690263.aspx)Output 可以获取作业的输出。
 
 以下示例命令将检索示例 Runbook 的最后一个作业，并显示其状态、为 Runbook 参数提供的值以及作业的输出。
 
-	$job = (Get-AzureAutomationJob –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" | sort LastModifiedDate –desc)[0]
+	$job = (Get-AzureAutomationJob -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" | sort LastModifiedDate –desc)[0]
 	$job.Status
 	$job.JobParameters
-	Get-AzureAutomationJobOutput –AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
+	Get-AzureAutomationJobOutput -AutomationAccountName "MyAutomationAccount" -Id $job.Id –Stream Output
 
 ## <a id="fairshare"></a> 公平份额
 
@@ -99,4 +105,4 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 
 - [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
 
-<!---HONumber=71-->
+<!---HONumber=76-->

@@ -9,12 +9,16 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="08/14/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015"
+	wacn.date="11/02/2015"/>
 
 #使用 PlayReady DRM 动态加密和许可证传送服务
 
-Windows Azure 媒体服务 允许你传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-protect-with-drm)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+
+Windows Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。
 
 媒体服务现在提供有用于传送 Microsoft PlayReady 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户尝试播放受保护的内容时，PlayReady DRM 运行时便会强制实施这些权限和限制。当用户请求观看受 PlayReady 保护的内容时，客户端播放器应用程序将向 Azure 媒体服务请求内容。然后，Azure 媒体服务将客户端重定向到 Azure 媒体服务PlayReady 授权服务器，后者将对用户进行身份验证，并授予用户对该内容的访问权限。PlayReady 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
 
@@ -298,7 +302,7 @@ Windows Azure 媒体服务 允许你传送受 [Microsoft PlayReady DRM](https://
 		                Console.WriteLine();
 		            }
 		
-		            // You can use the http://smf.chinacloudapp.cn/healthmonitor player 
+		            // You can use the http://smf.cloudapp.net/healthmonitor player 
 		            // to test the smoothStreamURL URL.
 		            //
 		            string url = GetStreamingOriginLocator(encodedAsset);
@@ -474,8 +478,8 @@ Windows Azure 媒体服务 允许你传送受 [Microsoft PlayReady DRM](https://
 		
 		            template.PrimaryVerificationKey = new SymmetricVerificationKey();
 		            template.AlternateVerificationKeys.Add(new SymmetricVerificationKey());
-		            template.Audience = _sampleAudience;
-		            template.Issuer = _sampleIssuer;
+		            template.Audience = _sampleAudience.ToString();
+		            template.Issuer = _sampleIssuer.ToString();
 		            template.RequiredClaims.Add(TokenClaim.ContentKeyIdentifierClaim);
 		
 		            return TokenRestrictionTemplateSerializer.Serialize(template);
@@ -571,4 +575,4 @@ Windows Azure 媒体服务 允许你传送受 [Microsoft PlayReady DRM](https://
 		    }
 		}
 
-<!---HONumber=71-->
+<!---HONumber=76-->

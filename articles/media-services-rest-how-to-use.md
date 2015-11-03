@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="11/02/2015"/>
 
 
 #媒体服务 REST API 概述 
@@ -60,4 +60,4 @@
 <!-- URLs. -->
   [Management Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=76-->

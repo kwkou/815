@@ -35,6 +35,6 @@ Azure 自动化提供高度可靠且高度可用的工作流执行引擎，它�
 
 在了解 Azure 自动化以及如何使用它来管理 Azure 流量管理器的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
 
-* 查看 Azure 自动化[入门指南](/documentation/articles/automation-create-runbook-from-samples)
+* 查看 Azure 自动化[入门指南](/documentation/articles/automation-create-runbook-from-samples/)
 
 <!---HONumber=71-->

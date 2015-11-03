@@ -5,28 +5,30 @@
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
- editor="cgronlun"/>
+ editor="cgronlun"
+ tags="azure-portal"/>
 
 <tags
  ms.service="hdinsight"
- ms.date="06/04/2015"
- wacn.date="08/29/2015"/>
+ ms.date="09/02/2015"
+ wacn.date="11/02/2015"/>
 
-# 了解和解决从 HDInsight 上的 WebHCat (Templeton) 收到的错误
+#了解和解决从 HDInsight 上的 WebHCat (Templeton) 收到的错误
 
 将 WebHCat（以前称为 Templeton）与 HDInsight 配合使用时，你可能会收到错误。本文档提供常见错误指导 – 为什么会发生这些错误？如何解决这些错误？
 
-## 什么是 WebHCat？
+##什么是 WebHCat？
 
 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)是适用于 [HCatalog](https://cwiki.apache.org/confluence/display/Hive/HCatalog) 的 REST API，是针对 Hadoop 的表和存储管理层。WebHCat 默认情况下在 HDInsight 群集上处于启用状态，可供各种工具在执行提交作业、获取作业状态等操作时使用，无需登录到群集中。
 
-## 修改配置
+##修改配置
 
 > [AZURE.IMPORTANT]本文档中列出的几大错误之所以发生，是因为超出了配置的最大值。当解决步骤提到你可以更改一个值时，必须使用下列选项之一来执行更改：
 
 * 对于 **Windows** 群集：使用脚本操作在群集创建过程中配置值。有关详细信息，请参阅[开发脚本操作](/documentation/articles/hdinsight-hadoop-script-actions)。
 
-### 默认配置
+
+###默认配置
 
 以下是在超过时可能影响 WebHCat 性能或导致错误的默认配置值：
 
@@ -36,7 +38,7 @@
 | [templeton.exec.max-procs][max-procs] | 可以同时处理的最大请求数 | 20 |
 | [mapreduce.jobhistory.max-age-ms][max-age-ms] | 保留作业历史记录的天数 | 7 天 |
 
-## 请求过多
+##请求过多
 
 **HTTP 状态代码**：429
 
@@ -44,7 +46,7 @@
 | ----- | ---------- |
 | 你已超过 WebHCat 每分钟能够处理的最大并发请求数（默认值为 20） | 减少工作负载以确保你提交的数量没有超出最大并发请求数，或者通过修改 `templeton.exec.max-procs` 来提高并发请求限制。请参阅[修改配置](#modifying-configuration)以获取更多信息 |
 
-## 服务器不可用
+##服务器不可用
 
 **HTTP 状态代码**：503
 
@@ -52,7 +54,7 @@
 | ---------------- | ------------------- |
 | 这通常发生在群集的主要和辅助 HeadNode 之间进行故障转移时。 | 等待两分钟，然后重试该操作 |
 
-## 请求内容错误：找不到作业
+##请求内容错误：找不到作业
 
 **HTTP 状态代码**：400
 
@@ -62,7 +64,7 @@
 | 作业因故障转移而终止 | 重试提交作业，重试时间最多两分钟 |
 | 使用了无效的作业 ID | 检查作业 ID 是否正确 |
 
-## 网关错误
+##网关错误
 
 **HTTP 状态代码**：502
 
@@ -79,4 +81,4 @@
 [max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
  
 
-<!---HONumber=67-->
+<!---HONumber=76-->

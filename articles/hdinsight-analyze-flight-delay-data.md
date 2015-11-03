@@ -78,8 +78,8 @@ Azure Blob 存储语法为：
 
 <table border="1">
 <tr><th>文件</th><th>说明</th></tr>
-<tr><td>wasb://flightdelay@hditutorialdata.blob.core.chinacloudapi.cn/flightdelays.hql</td><td>你要运行的 Hive 作业所用的 HiveQL 脚本文件。此脚本已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-b">附录 B</a> 提供了有关准备此文件以及将其上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
-<tr><td>wasb://flightdelay@hditutorialdata.blob.core.chinacloudapi.cn/2013Data</td><td>Hive 作业的输入的数据。这些数据已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-a">附录 A</a> 提供了有关获取数据以及将数据上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
+<tr><td>wasb://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql</td><td>你要运行的 Hive 作业所用的 HiveQL 脚本文件。此脚本已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-b">附录 B</a> 提供了有关准备此文件以及将其上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
+<tr><td>wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data</td><td>Hive 作业的输入的数据。这些数据已上载到具有公共访问权限的 Azure Blob 存储帐户。<a href="#appendix-a">附录 A</a> 提供了有关获取数据以及将数据上载到你自己的 Azure Blob 存储帐户的说明。</td></tr>
 <tr><td>\tutorials\flightdelays\output</td><td>Hive 作业的输出路径。默认容器用于存储输出数据。</td></tr>
 <tr><td>\tutorials\flightdelays\jobstatus</td><td>默认容器上的 Hive 作业状态文件夹。</td></tr>
 </table>
@@ -171,7 +171,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 		
 		#region - HDInsight cluster variables
 		[int]$clusterSize = 1                # One data node is sufficient for this tutorial
-		[String]$location = "Central US"     # For better performance, choose a datacenter near you
+		[String]$location = "China North"     # For better performance, choose a datacenter near you
 		[String]$hadoopUserLogin = "admin"   # Use "admin" as the Hadoop login name
 		[String]$hadoopUserpw = "Pass@word1" # Use "Pass@word1" as the Hadoop login password
 		
@@ -184,7 +184,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 		#endregion
 		
 		#region - Hive job variables
-		[String]$hqlScriptFile = "wasb://flightdelay@hditutorialdata.blob.core.chinacloudapi.cn/flightdelays.hql" # The HiveQL script is located in a public Blob container. Update this URI if you want to use your own script file.
+		[String]$hqlScriptFile = "wasb://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql" # The HiveQL script is located in a public Blob container. Update this URI if you want to use your own script file.
 		
 		[String]$jobStatusFolder = "/tutorials/flightdelays/jobstatus" # The script saves both the output data and the job status file to the default container.
 		                                                               # The output data path is set in the HiveQL file.
@@ -613,7 +613,7 @@ HiveQL 脚本将执行以下操作：
 			"ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' " +
 			"LINES TERMINATED BY '\n' " +
 			"STORED AS TEXTFILE " +
-		    "LOCATION 'wasb://flightdelay@hditutorialdata.blob.core.chinacloudapi.cn/2013Data';" 
+		    "LOCATION 'wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data';" 
 		
 		$hqlDropDelays = "DROP TABLE delays;"
 		
@@ -709,7 +709,7 @@ HiveQL 脚本将执行以下操作：
 		    [Parameter(Mandatory=$True,
 		               HelpMessage="Enter the region to create the Database in.")]
 		    [AllowEmptyString()]
-		    [String]$sqlDatabaseLocation,   #For example, West US.
+		    [String]$sqlDatabaseLocation,   #For example, China North.
 		
 		    # SQL database variables
 		    [Parameter(Mandatory=$True,
@@ -843,7 +843,7 @@ HiveQL 脚本将执行以下操作：
 
 
 
-[azure-purchase-options]: /pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 
 

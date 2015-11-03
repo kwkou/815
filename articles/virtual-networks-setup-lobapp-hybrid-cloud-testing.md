@@ -10,12 +10,14 @@
 
 <tags 
 	ms.service="virtual-network" 
-	ms.date="07/08/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/10/2015" 
+	wacn.date="11/02/2015"/>
 
 # 在混合云中设置用于测试且基于 Web 的 LOB 应用程序
 
-本主题将指导你一步步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+
+本主题将指导你逐步创建混合云环境，以便测试在 Windows Azure 中托管的 Intranet 业务线 (LOB) 应用程序。这是生成的配置。
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_3.png)
 
@@ -49,7 +51,7 @@
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_1.png)
 
-> [AZURE.NOTE]就阶段 1 来说，你也可以设置模拟混合云测试环境。有关说明，请参阅[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
+> [AZURE.NOTE] 就阶段 1 来说，你也可以设置模拟混合云测试环境。有关说明，请参阅[设置用于测试的模拟混合云环境](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)。
  
 ## 阶段 2：配置 SQL Server 计算机 (SQL1)
 
@@ -114,14 +116,14 @@
 3.	在“对象资源管理器”树窗格中，右键单击“SQL1”，然后单击“属性”。
 4.	在“服务器属性”窗口中，单击“数据库设置”。
 5.	找到“数据库默认位置”，然后设置以下值： 
-	- 对于“数据”，请键入路径 **f:\Data**。
-	- 对于“日志”，请键入路径 **f:\Log**。
-	- 对于“备份”，请键入路径 **f:\Backup**。
+	- 对于“数据”，请键入路径 **f:\\Data**。
+	- 对于“日志”，请键入路径 **f:\\Log**。
+	- 对于“备份”，请键入路径 **f:\\Backup**。
 	- 注意：只有新数据库使用这些位置。
 6.	单击“确定”以关闭该窗口。
 7.	在“对象资源管理器”树窗格中，打开“安全性”。
 8.	右键单击“登录名”，然后单击“新建登录名”。
-9.	在“登录名”中，键入“CORP\User1”。
+9.	在“登录名”中，键入“CORP\\User1”。
 10.	在“服务器角色”页上，单击“sysadmin”，然后单击“确定”。
 11.	关闭 Microsoft SQL Server Management Studio。
 
@@ -142,7 +144,7 @@
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
-接下来，使用 CORP\User1 帐户凭据连接到 LOB1 虚拟机。
+接下来，使用 CORP\\User1 帐户凭据连接到 LOB1 虚拟机。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。从 LOB1 上的管理员级 Windows PowerShell 命令提示符下运行这些命令。
 
@@ -155,16 +157,16 @@
 
 1.	运行服务器管理器，然后单击“添加角色和功能”。
 2.	在“开始之前”页上，单击“下一步”。
-3.	在“选择安装类型”页上，单击“下一步”。
-4.	在“选择目标服务器”页上，单击“下一步”。
-5.	在“服务器角色”页上，单击“角色”列表中的“Web 服务器(IIS)”。
-6.	出现提示时，单击“添加功能”，然后单击“下一步”。
-7.	在“选择功能”页上，单击“下一步”。
+3.	在“选择安装类型”页上，单击**“下一步”**。
+4.	在“选择目标服务器”页上，单击**“下一步”**。
+5.	在“服务器角色”页上，单击**“角色”**列表中的**“Web 服务器(IIS)”**。
+6.	出现提示时，单击**“添加功能”**，然后单击**“下一步”**。
+7.	在“选择功能”页上，单击**“下一步”**。
 8.	在“Web 服务器(IIS)”页上，单击“下一步”。
 9.	在“选择角色服务”页上，选择或清除测试 LOB 应用程序所需的服务的复选框，然后单击“下一步”。
 10.	在“确认安装选择”页上，单击“安装”。
 11.	等待，直到组件安装完成，然后单击“关闭”。
-12.	使用 CORP\User1 帐户凭据登录到 CLIENT1 计算机上，然后启动 Internet Explorer。
+12.	使用 CORP\\User1 帐户凭据登录到 CLIENT1 计算机上，然后启动 Internet Explorer。
 13.	在地址栏中，键入 **http://lob1/**，然后按 Enter。你会看到默认的 IIS 8 网页。
 
 这是你当前的配置。
@@ -192,4 +194,4 @@
 [Azure 基础结构服务实施准则](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
  
 
-<!---HONumber=70-->
+<!---HONumber=76-->

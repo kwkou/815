@@ -11,13 +11,8 @@
 
 <tags 
 	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015" 
-	ms.author="jgao"/>
+	ms.date="09/17/2015"
+	wacn.date="11/02/2015"/>
 
 
 
@@ -67,12 +62,13 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 [hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-[azure-purchase-options]: /pricing/purchase-options/
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started/
+
+[azure-purchase-options]: /pricing/overview/
 
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [apache-hadoop]: http://hadoop.apache.org/
 
-<!---HONumber=71-->
+<!---HONumber=76-->

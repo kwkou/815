@@ -37,11 +37,11 @@
 ## 如何在 VM 创建期间请求 ILPIP
 下面的 PowerShell 脚本将创建名为 *FTPService* 的全新云服务，然后从 Azure 中检索映像，并使用检索到的映像创建名为 *FTPInstance* 的 VM，接着将 VM 设置为使用 ILPIP，最后再将 VM 添加到新服务：
 
-	New-AzureService -ServiceName FTPService -Location "Central US"
+	New-AzureService -ServiceName FTPService -Location "China North"
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name FTPInstance -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
-	| Set-AzurePublicIP -PublicIPName ftpip | New-AzureVM -ServiceName FTPService -Location "Central US"
+	| Set-AzurePublicIP -PublicIPName ftpip | New-AzureVM -ServiceName FTPService -Location "China North"
 
 ## 如何检索 VM 的 ILPIP 信息
 若要查看使用以上脚本创建的 VM 的 ILPIP 信息，请运行以下 PowerShell 命令，然后观察 *PublicIPAddress* 和 *PublicIPName* 的值：

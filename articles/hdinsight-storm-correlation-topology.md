@@ -9,8 +9,8 @@
 
 <tags
  ms.service="hdinsight"
- ms.date="06/05/2015"
- wacn.date="08/29/2015"/>
+ ms.date="09/02/2015"
+ wacn.date="11/02/2015"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
 
@@ -184,13 +184,13 @@
 
 > [AZURE.NOTE]虽然你输入的时间值为本地时间，但从查询返回的时间将是 UTC。
 
-## 停止拓扑
+##停止拓扑
 
 当你准备停止拓扑时，请返回到 Visual Studio 中的 **CorrelationTopology** 项目。在**“Storm 拓扑视图”**中，选择拓扑，然后使用拓扑视图顶部的**“终止”**按钮。
 
-## 后续步骤
+##后续步骤
 
 如需更多 Storm 示例，请参阅[Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
  
 
-<!---HONumber=67-->
+<!---HONumber=76-->

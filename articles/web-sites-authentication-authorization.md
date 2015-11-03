@@ -38,8 +38,8 @@
 -	[本地安全令牌服务 (STS)，例如 AD FS](/documentation/articles/web-sites-dotnet-lob-application-adfs) - 你可以使用本地 STS（如 AD FS）对 Web 应用实施身份验证和授权。本地 AD FS 的使用具有以下特征：
 	-	AD FS 拓扑必须在本地部署，会产生成本和管理开销。
 	-	当公司政策要求 AD 数据存储在本地时效果最佳。
-	-	只有 AD FS 管理员可以配置[信赖方信任和声明规则](http://technet.microsoft.com/library/dd807108.aspx)。
-	-	可以基于按应用程序管理[声明](http://technet.microsoft.com/library/ee913571.aspx)。
+	-	只有 AD FS 管理员可以配置[信赖方信任和声明规则](http://technet.microsoft.com/zh-cn/library/dd807108.aspx)。
+	-	可以基于按应用程序管理[声明](http://technet.microsoft.com/zh-cn/library/ee913571.aspx)。
 	-	必须提供单独的解决方案，用于通过公司防火墙访问本地 AD 数据。
 
 

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015"
+	wacn.date="11/02/2015"/>
 
 #使用能够使用 Azure 媒体服务（预览版）执行实时编码的频道
 
@@ -37,14 +37,6 @@
 
 ![实时工作流][live-overview]
 
->[AZURE.NOTE]并非所有数据中心都支持使用 Azure 媒体服务进行实时编码。
->
->如果要使用 Azure 管理门户来创建频道，则有两个频道编码类型选项可用：**“无”**和**“标准”**。如果你只看到**“无”**选项，则意味着你的数据中心不支持使用 AMS 进行实时编码。
->
->如果要使用 .NET SDK 或 REST API，请执行以下操作来检查：
->
->1. 尝试创建频道并将编码类型设为“标准”。 
->2. 如果返回结果 HTTP 错误代码 412（前提条件失败）并显示以下消息：*“此区域不支持实时编码；EncodingType 必须设为‘无’。”*，则你的数据中心不支持实时编码。
 
 
 ##本主题内容
@@ -52,13 +44,13 @@
 - 概述[常见的实时流方案](/documentation/articles/media-services-manage-live-encoder-enabled-channels#scenario)
 - [频道及其相关组件的说明](/documentation/articles/media-services-manage-live-encoder-enabled-channels#channel)
 - [注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels#considerations)
-- [与实时流式处理相关的任务](/documentation/articles/media-services-manage-live-encoder-enabled-channels#tasks)
+
 
 ##<a id="scenario"></a>常见的实时流方案
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](http://go.microsoft.com/fwlink/?LinkId=532824)。
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -97,7 +89,7 @@
 - 单比特率 **RTMP**
 - 单比特率**分片 MP4**（平滑流）
 
-有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](http://go.microsoft.com/fwlink/?LinkId=532824)。
+有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 
 ####RTP (MPEG-TS) - RTP 上的 MPEG-2 传输流。  
 
@@ -396,6 +388,7 @@
 
 ##<a id="Considerations"></a>注意事项
 
+- 当某个编码类型为“标准”的频道出现输入源/贡献源丢失的情况时，该频道会采取相应的补偿措施，将源视频/音频替换为表示错误的静态图像和静音。该频道会持续发出静态图像，直到输入/贡献源恢复。我们建议你不要让实时频道处于此类状态的时间超过 2 小时。如果超出该限制，该频道将无法保证输入重新连接时的行为，也无法保证其响应重置命令时的行为。这种情况下必须停止通道并将其删除，然后创建一个新的。
 - 当频道或其关联的节目正在运行时，无法更改输入协议。如果你需要不同的协议，应当针对每个输入协议创建单独的频道。 
 - 每次重新配置实时编码器后，请对频道调用**重置**方法。在重置频道之前，必须停止节目。在重置频道后，重新启动节目。 
 - 只有当频道处于“正在运行”状态且频道中的所有节目都已停止时才能停止频道。
@@ -409,30 +402,7 @@
 - RTP 支持迎合专业的广播装置。请查看[此](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/)博客中有关 RTP 的说明。
 - 静态图像应符合[此处](/documentation/articles/media-services-manage-live-encoder-enabled-channels#default_slate)所述的限制。如果你想要尝试创建默认静态图像大于 1920x1080 的频道，最终请求将会出错。
 
-
-##<a id="tasks"></a>与实时流式处理相关的任务
-
-###创建媒体服务帐户
-
-[创建 Azure 媒体服务帐户](/documentation/articles/media-services-create-account)。
-
-###配置流式处理终结点
-
-有关流式处理终结点的概述以及如何管理它们的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins)
-
-###设置开发环境  
-
-为开发环境选择**“.NET”**或**“REST API”**。
-
-[AZURE.INCLUDE [media-services-selector-setup](../includes/media-services-selector-setup.md)]
-
-###以编程方式建立连接  
-
-选择**“.NET”**或**“REST API”**以编程方式连接到 Azure 媒体服务。
-
-[AZURE.INCLUDE [media-services-selector-connect](../includes/media-services-selector-connect.md)]
-
-###创建频道以执行从单比特率到自适应比特率流的实时编码 
+###如何创建频道以执行从单比特率到自适应比特率流的实时编码 
 
 选择**“门户”**、**.NET**、**REST API** 以了解如何创建和管理频道和节目。
 
@@ -441,57 +411,6 @@
 - [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
-###保护资源
-
-**概述**：
-
-[内容保护概述](/documentation/articles/media-services-content-protection-overview)
-
-如果要使用高级加密标准 (AES)（使用 128 位加密密钥）或 PlayReady DRM 加密与节目关联的资源，则需要创建内容密钥。
-
-使用 **.NET** 或 **REST API** 创建密钥。
-
-[AZURE.INCLUDE [media-services-selector-create-contentkey](../includes/media-services-selector-create-contentkey.md)]
-
-创建内容密钥后，可以使用 **.NET** 或 **REST API** 配置密钥授权策略。
-
-[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)]
-
-####与合作伙伴集成
-
-[使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration)
-
-
-###发布和传送资源
-
-**概述**：
-
-- [动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview)
-
-
-使用 **.NET** 或 **REST API** 配置资源传送策略。
-
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
-
-使用 **Azure 管理门户**或 **.NET** 发布资源（通过创建定位符）。
-
-[AZURE.INCLUDE [media-services-selector-publish](../includes/media-services-selector-publish.md)]
-
-
-传送内容
-
-> [AZURE.SELECTOR]
-- [Overview](/documentation/articles/media-services-deliver-content-overview)
-
-###启用 Azure CDN
-
-媒体服务支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins#enable_cdn)。
-
-###缩放媒体服务帐户
-
-通过指定要为帐户设置的**流式处理保留单元**数，可以缩放 **媒体服务**。
-
-有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
 ##相关主题
 
@@ -504,4 +423,4 @@
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=71-->
+<!---HONumber=76-->

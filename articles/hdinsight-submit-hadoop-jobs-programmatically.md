@@ -18,9 +18,9 @@
 
 > [AZURE.NOTE]必须从 Windows 客户端执行本文中的步骤。
 >
-> - [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive)
-> - [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
-> - [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+> - [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
+> - [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+> - [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 ##先决条件
 
@@ -706,18 +706,20 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 [azure-management-portal]: http://manage.windowsazure.cn/
 
 [hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+
 [hdinsight-powershell-reference]: http://msdn.microsoft.com/zh-cn/library/azure/dn479228.aspx
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
 

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="11/02/2015"/>
 
 
 
@@ -26,7 +26,7 @@ Azure 媒体服务仪表板显示了可用于管理媒体服务帐户的使用�
 
 ##<a id="configuremonitoring"></a>如何：监视媒体服务帐户
 
-1. 在[管理门户](http://go.microsoft.com/fwlink/?LinkID=256666)中，单击“媒体服务”，然后单击媒体服务帐户名以打开仪表板。 
+1. 在[管理门户](https://manage.windowsazure.cn/)中，单击“媒体服务”，然后单击媒体服务帐户名以打开仪表板。 
 
 	![MediaServices\_Dashboard][dashboard]
 
@@ -52,11 +52,13 @@ Azure 媒体服务仪表板显示了可用于管理媒体服务帐户的使用�
 
 - 若要设置数据保留策略，请在“保留期(天)”中，键入要保留数据的天数，范围介于 1 到 365 天之间。如果不需要设置保留策略，请输入零。如果没有保留策略，则是否删除监视数据由你自己决定。建议你根据要将帐户的存储分析数据保留多长时间来设置保留策略，以便可以由系统免费删除旧数据和未使用的分析数据。
 
-4. 完成监视配置后，单击“保存”。与媒体服务度量值类似，大约一小时后，仪表板上会显示监视数据。度量值存储在存储帐户中的以下 4 个表中：$MetricsTransactionsBlob、$MetricsTransactionsTable、$MetricsTransactionsQueue 和 $MetricsCapacityBlob。有关详细信息，请参阅[存储分析度量值](https://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx)。
+4. 完成监视配置后，单击“保存”。
+与媒体服务度量值类似，大约一小时后，仪表板上会显示监视数据。
+度量值存储在存储帐户中的以下 4 个表中：$MetricsTransactionsBlob、$MetricsTransactionsTable、$MetricsTransactionsQueue 和 $MetricsCapacityBlob。有关详细信息，请参阅[存储分析度量值](https://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx)。
 
 
 <!-- Images -->
 [dashboard]: ./media/media-services-monitor-services-account/media-services-dashboard.png
 [storage_options_scoped]: ./media/media-services-monitor-services-account/storagemonitoringoptions_scoped.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

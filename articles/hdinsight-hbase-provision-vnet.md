@@ -317,7 +317,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		$hbaseClusterName = "<HBaseClusterName>"
 		$hadoopUserName = "<HBaseClusterUsername>"
 		$hadoopUserPassword = "<HBaseClusterUserPassword>"
-		$location = "<HBaseClusterLocation>"  #i.e. "West US"
+		$location = "<HBaseClusterLocation>"  #i.e. "China North"
 		$clusterSize = <HBaseClusterSize>  
 		$resourceGroup = "<AzureResourceGroupName>"
 		$vnetID = "<AzureVirtualNetworkID>"
@@ -368,7 +368,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-[azure-purchase-options]: /pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
@@ -388,9 +388,9 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-use-blob-storage#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet/PrimaryDNSSuffix.png

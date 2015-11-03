@@ -48,7 +48,7 @@ Get-AzureRouteTable FrontEndSubnetRouteTable `
 以上命令的输出应如下所示：
 
 	Name     : FrontEndSubnetRouteTable
-	Location : Central US
+	Location : China North
 	Label    : Route table for frontend subnet
 	Routes   : 
 	           Name                 Address Prefix    Next hop type        Next hop IP address
