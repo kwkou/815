@@ -22,7 +22,7 @@
 
 ## 概述
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以从库中选择虚拟机映像之一，只需要单击几次，即可将虚拟机设置到你的 Azure 环境。
 
@@ -116,7 +116,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 ##<a id="SSMS">从另一台计算机上的 SSMS 连接到 SQL Server VM 实例</a>
 
-[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../../includes/virtual-machines-sql-server-connection-steps.md)]
+[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../includes/virtual-machines-sql-server-connection-steps.md)]
 
 ## <a id="cdea">从应用程序连接到数据库引擎</a>
 
