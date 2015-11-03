@@ -70,7 +70,7 @@ Azure 中的 SQL 数据库位于数据库服务器上。一个服务器可以托
 
 	![创建示例数据库](./media/sql-database-get-started/adworks_create.png)
 
-	>[AZURE.NOTE]对于本快速操作指南，我们并没有更改“定价层”、“排序规则”和“资源组”的设置。。你随时可以更改数据库的定价层以及进行扩展和缩减，且没有停机时间。有关详细信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)和 [SQL 数据库定价层](/documentation/articles/sql-database-service-tiers)。数据库的排序规则一经设置不能更改。有关排序规则的详细信息，请参阅[排序规则和 Unicode 支持](https://msdn.microsoft.com/zh-cn/library/ms143726.aspx)。有关 Azure 资源组的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
+	>[AZURE.NOTE]对于本快速操作指南，我们并没有更改“定价层”、“排序规则”和“资源组”的设置。。你随时可以更改数据库的定价层以及进行扩展和缩减，且没有停机时间。有关详细信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)<!--和 [-->SQL 数据库定价层<!--](/documentation/articles/sql-database-service-tiers)-->。数据库的排序规则一经设置不能更改。有关排序规则的详细信息，请参阅[排序规则和 Unicode 支持](https://msdn.microsoft.com/zh-cn/library/ms143726.aspx)。有关 Azure 资源组的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
 将跳转回 Azure 启动板，其中一个磁贴显示进度，直到数据库创建完成并处于联机状态。也可以单击“浏览全部”，然后单击“SQL 数据库”，以确认数据库处于联机状态。
 	
