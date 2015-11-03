@@ -1,21 +1,16 @@
-<properties 
-	pageTitle="在 Azure AD 中分配管理员角色" 
-	description="本主题介绍 Azure AD 提供的管理员角色，以及如何分配这些角色。" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"/>
+<properties
+	pageTitle="在 Azure AD 中分配管理员角色"
+	description="介绍 Azure AD 提供的管理员角色，以及如何分配这些角色。"
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="stevenpo"
+	editor=""/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015"
-	wacn.date="05/26/2015" 
-	ms.author="Justinha"/>
+	ms.date="09/21/2015"
+	wacn.date="11/02/2015"/>
 
 # 在 Azure AD 中分配管理员角色
 
@@ -29,8 +24,7 @@
 - **全局管理员**：有权访问所有管理功能。注册 Azure 帐户的人员将成为全局管理员。只有全局管理员才能分配其他管理员角色。你的公司中可以有多个全局管理员。
 - **密码管理员**：重置密码、管理服务请求并监视服务运行状况。密码管理员只能为用户和其他密码管理员重置密码。
 - **服务管理员**：管理服务请求并监视服务运行状况。
-    > [AZURE.NOTE]
-    > 若要为用户分配服务管理员角色，全局管理员必须先在服务（例如 Exchange Online）中将管理权限分配给用户，然后再在 Azure 管理门户中将服务管理员角色分配给用户。 
+    > [AZURE.NOTE]若要为用户分配服务管理员角色，全局管理员必须先在服务（例如 Exchange Online）中将管理权限分配给用户，然后再在 Azure 管理门户中将服务管理员角色分配给用户。 
 - **用户管理员**：重置密码、监视服务运行状况，并管理用户帐户、用户组和服务请求。用户管理管理员权限存在一些限制。例如，他们不能删除全局管理员或创建其他管理员。另外，他们也不能为计费管理员、全局管理员和服务管理员重置密码。
 
 ## 管理员权限

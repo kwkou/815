@@ -8,36 +8,28 @@
 	editor=""/>
 
 <tags 
-	wacn.date="05/15/2015"
 	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
-	ms.date="04/20/2015" 
-	ms.author="curtand"/>
+	ms.date="09/21/2015"
+	wacn.date="11/02/2015"/>
 
 # 了解有关 Azure AD 的详细信息
 
-[什么是 Azure AD？](/documentation/articles/active-directory-whatis)
+> [AZURE.SELECTOR]
+- [什么是 Azure AD](/documentation/articles/active-directory-whatis/)
+- [它的工作原理](/documentation/articles/active-directory-aadconnect-how-it-works/)
+- [入门](/documentation/articles/active-directory-aadconnect-get-started/)
+- [后续步骤](/documentation/articles/active-directory-aadconnect-whats-next/)
+- [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more/)
 
-[工作原理](/documentation/articles/active-directory-works)
+我已有一个 Azure 订阅。Azure AD 如何与该订阅相关？ [订阅如何与目录关联](/documentation/articles/active-directory-how-subscriptions-associated-directory)
 
-[入门](/documentation/articles/active-directory-get-started)
+要完成 Azure AD 管理任务（如用户管理、域管理或单一登录配置），可以使用适用于 Windows PowerShell 的 Azure Active Directory 模块 cmdlet。[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/library/azure/jj151815.aspx)
 
-[后续步骤](/documentation/articles/active-directory-next-steps)
+使用 Azure Active Directory 图形 API 可以通过 REST API 终结点提供对 Azure AD 的编程访问权限。[Azure AD 图形 API](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 
-我已有一个 Azure 订阅。Azure AD 如何与该订阅相关？[了解详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn629581.aspx)
+你可以将自己的自定义域名添加到 Azure Active Directory，以将它用于 Microsoft Online Services。[Internet 域管理](/documentation/articles/active-directory-add-domain)
 
-[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/zh-CN/library/azure/jj151815.aspx)
-
-[Azure AD Graph API](https://msdn.microsoft.com/zh-CN/library/azure/hh974476.aspx) 
-
-[Internet 域管理](https://msdn.microsoft.com/zh-CN/library/azure/hh969248.aspx)
-
-[Azure AD 服务限制和局限性](https://msdn.microsoft.com/zh-CN/library/azure/dn764971.aspx)
-
-[Azure AD 术语](https://msdn.microsoft.com/zh-CN/library/azure/jj944946.aspx)
+若要了解 Azure Active Directory 服务的使用约束和其他服务限制，请参阅 [Azure AD 服务限制和局限性](/documentation/articles/active-directory-service-limits-restrictions)
 
 
 ## 其他资源

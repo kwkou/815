@@ -4,13 +4,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="07/02/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # Azure Active Directory Connect 常见问题
 
@@ -21,19 +21,19 @@
 
 [搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-cn/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
 
-- 在 Microsoft 知识库 (KB) 中搜索有关 Azure AD Connect 支持的常见故障修复问题的技术解决方案。
+- 在 Microsoft 知识库 (KB) 中搜索有关 Azure AD Connect 支持的常见故障维修服务问题的技术解决方案。
 
 [Windows Azure Active Directory 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=WindowsAzureAD)
 
-- 可以从社区搜索和浏览技术问题和解答，或通过单击[此处](https://social.msdn.microsoft.com/Forums/azure/zh-cn/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)进行提问。
+- 单击[此处](https://social.msdn.microsoft.com/Forums/azure/zh-cn/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)，在社区中搜索和浏览技术问题与答案，或提出自己的问题。
 
 
 [Azure AD Connect 客户支持](https://manage.windowsazure.cn/?getsupport=true)
 
 - 使用此链接以通过 Azure 门户获得支持。 
 
-**问：收到要求续订 Office 365 证书的电子邮件时应该怎么办？**
+**问：如果我收到一封电子邮件，要求我续订 Office 365 证书，我该怎么办？**
 
-使用文章中[此处](/documentation/articles/active-directory-aadconnect-o365-certs)概述的指南续订证书。
+按照[此处](/documentation/articles/active-directory-aadconnect-o365-certs)所提供文章中概述的指南进行操作，即可续订证书。
 
 <!---HONumber=67-->

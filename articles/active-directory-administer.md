@@ -1,21 +1,17 @@
-<properties 
-	pageTitle="管理 Azure AD 目录" 
-	description="本主题介绍什么是 Azure AD 租户，以及如何管理 Azure AD 目录。" 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	writer="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="管理 Azure AD 目录"
+	description="本主题介绍什么是 Azure AD 租户，以及如何管理 Azure AD 目录。"
+	services="active-directory"
+	documentationCenter=""
+	authors="Markusvi"
+	writer="markvi"
+	manager="stevenpo"
 	editor="LisaToft"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015"
-	wacn.date="05/26/2015"/>
+	ms.date="09/09/2015"
+	wacn.date="11/02/2015" />
 
 # 管理 Azure AD 目录
 

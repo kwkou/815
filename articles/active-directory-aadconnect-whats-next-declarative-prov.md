@@ -6,13 +6,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="05/28/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # Azure AD Connect 声明性设置
 
@@ -24,4 +24,4 @@
 
 有关表达式语言的详细信息，请参阅[了解声明性设置表达式](https://msdn.microsoft.com/zh-cn/library/azure/dn801048.aspx)
 
-<!---HONumber=67-->
+<!---HONumber=76-->

@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/29/2015"
-   wacn.date="06/16/2015"/> 
+   ms.date="08/25/2015"
+   wacn.date="11/02/2015"/>
 
 
 # 适用于应用程序的品牌准则
@@ -50,7 +50,7 @@ Microsoft 不会向最终用户显示 Azure 或 Active Directory 品牌名称，
 
 ## 有关获取应用程序的可视指南
 
-“获取应用程序”链接必须将用户重定向到 Azure AD 的访问权限授予（授权）页，以方便组织的管理员对你的应用程序进行授权，使其有权访问 Microsoft 托管的组织数据。[添加、更新和删除应用程序](https://msdn.microsoft.com/zh-cn/library/azure/dn132599.aspx)主题中介绍了有关如何请求访问权限的详细信息。
+“获取应用程序”链接必须将用户重定向到 Azure AD 的访问权限授予（授权）页，以方便组织的管理员对你的应用程序进行授权，使其有权访问 Microsoft 托管的组织数据。有关如何请求访问权限的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications)一文。
 
 管理员许可你的应用程序后，可以选择将应用程序添加到其用户的 Office 365 应用程序启动器体验（可从 waffle 和 [https://portal.partner.microsoftonline.cn/myapps](https://portal.partner.microsoftonline.cn/myapps) 访问）。如果你想要广告此功能，可以使用类似于“将此应用程序添加到你的组织”词语，并显示类似于下面的按钮：
 

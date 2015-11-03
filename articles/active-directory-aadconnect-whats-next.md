@@ -4,59 +4,70 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="terrylan" 
-	editor="lisatoft"/>
+	manager="stevenpo" 
+	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory"  
-	ms.date="04/02/2015"
-	wacn.date="06/16/2015"/>
+	ms.service="active-directory" 
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # 管理 Azure AD Connect 
 
 
-<div>
-<a href="/documentation/articles/active-directory-aadconnect/">简介</a> <a href="/documentation/articles/active-directory-aadconnect-how-it-works/">工作原理</a> <a href="/documentation/articles/active-directory-aadconnect-get-started/">入门</a> <a href="/documentation/articles/active-directory-aadconnect-whats-next/">后续步骤</a> <a href="/documentation/articles/active-directory-aadconnect-learn-more/">了解详细信息</a>
-</div>
 
-主题属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
+以下主题属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
 
-## 更改默认配置  
+## 向 Azure AD Premium 或企业移动套件用户分配许可证
 
-在大多数情况下，使用 Azure AD Connect 的默认配置便足以将本地目录扩展到云中。但是，在某些情况下，你可能需要修改默认配置，并根据组织的业务逻辑对其进行自定义。在这种情况下，你可以修改默认配置，不过，在这样做之前，需要注意几个事项。
+将用户同步到云后，你需要向他们分配许可证，以便他们可以继续使用云应用（例如 Office 365）。
 
-如果你要升级或迁移 Azure AD Sync 或 DirSync，请注意以下事项：
+### 分配 Azure AD Premium 或企业移动套件许可证
+--------------------------------------------------------------------------------
+1. 以管理员身份登录到 Azure 门户。
+2. 在左侧选择“Active Directory”。
+3. 在“Active Directory”页上，双击包含你要启用的用户的目录。
+4. 在“目录”页的顶部，选择“许可证”。
+5. 在“许可证”页上，选择“Active Directory Premium”或“企业移动套件”，然后单击“分配”。
+6. 在对话框中，选择要向其分配许可证的用户，然后单击复选标记图标以保存更改。
 
-- 将 Azure AD Sync 升级到较新版本之后，大多数设置会重置为默认值。
-- 在应用升级后，对“现成的”同步规则所做的更改将会丢失。
-- 在升级到较新版本期间，会重新创建已删除的“现成”同步规则。
-- 在升级到较新版本时，你创建的自定义同步规则将会保持不变。
 
-如果需要更改默认配置，请执行以下操作：
+## 验证计划的同步任务
+如果你想要检查同步状态，可以在 Azure 门户执行此操作。
 
-- 如果需要修改某个“现成”同步规则的属性流，请不要更改该规则。而是新建一个具有较高优先级（编号值较小）的、包含所需属性流的同步规则。
-- 使用同步规则编辑器导出自定义同步规则。这会提供一个 PowerShell 脚本，你可以在灾难恢复方案中使用该脚本轻松重新创建同步规则。
-- 如果你需要在“现成”同步规则中更改范围或联接设置，请记下这些更改，并升级到 Azure AD Connect 的较新版本之后重新应用更改。 
+### 验证计划的同步任务
+--------------------------------------------------------------------------------
 
-## 使用同步规则编辑器
+1. 以管理员身份登录到 Azure 门户。
+2. 在左侧选择“Active Directory”。
+3. 在“Active Directory”页上，双击包含你要启用的用户的目录。
+4. 在“目录”页的顶部，选择“目录集成”。
+5. 在与本地 Active Directory 的集成下方，记下上次同步时间。
 
-在 Azure AD Connect 中，你可以通过配置同步规则，来配置和优化 Azure AD 与本地目录之间的对象和属性流。可以使用同步规则编辑器配置同步规则。当你安装 Azure AD Connect 时，将会安装同步规则编辑器。若要使用该编辑器，你必须是安装 Azure AD Connect 期间指定的 ADSyncAdmins 组或 Administrator 组的成员。
+<center>![云](./media/active-directory-aadconnect-whats-next/verify.png)</center>
 
-在下面的屏幕截图中，你会看到使用快速安装选项安装 Azure AD Connect 时为配置创建的所有同步规则。表中的每一行代表一个同步规则。“规则类型”的左下侧列出了两种不同的类型：“入站”和“出站”。入站和出站来自 Metaverse 视图。也就是说，我们要将信息从目录发送到 Metaverse。出站表示我们要在其中向目录（例如本地 Active Directory 或 Azure AD）发送信息和属性的规则。 
+## 启动计划的同步任务
+如果需要运行同步工作，你可以通过再次运行 Azure AD Connect 向导来实现此目的。需要提供 Azure AD 凭据。在向导中，选择“自定义同步选项”任务，然后在向导中一直单击“下一步”。最后，请确保已选中“初始配置完成后立即开始同步过程”框。
 
-![同步规则编辑器](./media/active-directory-aadconnect-whats-next/Synch_Rule.png)
+<center>![云](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
+
+
+
+
+## Azure AD Connect 中提供的其他任务
+在完成 Azure AD Connect 的初始安装后，你随时可以从 Azure AD Connect 启动页或桌面快捷方式再次启动向导。在再次运行向导的过程中，你会发现，一些新选项以“其他任务”的形式提供。
+
+下表提供了这些任务的摘要和各个任务的简要描述。
+
+![联接规则](./media/active-directory-aadconnect-whats-next/addtasks.png)
 
 若要创建新规则，请选择“添加新规则”，然后配置规则。例如，假设我们要创建一个联接规则，其中，本地目录中的任何用户将与具有相同电话号码的 Metaverse 对象联接。为此，可以创建新规则，并指定连接的系统中（在本例中为 contoso.com）、连接的系统对象类型、用户、Metaverse 对象类型、人员和联接的链接类型。
 
-![创建同步规则](./media/active-directory-aadconnect-whats-next/synch2.png)
-
-
-然后，在“联接规则”屏幕上指定 Source 属性下的 telephoneNumber 和 Target 属性下的 telephoneNumber。这就是所有的操作。现在，你已成功创建了一个联接规则。
-
-![联接规则](./media/active-directory-aadconnect-whats-next/synch3.png)
-
-你可以使用同步规则编辑器来应用默认配置外部的附加业务逻辑，并根据组织的需要对其进行自定义。有关同步规则编辑器的其他信息，请参阅[了解默认配置](https://msdn.microsoft.com/zh-cn/library/azure/dn800963.aspx)。
-
+其他任务 | 说明 
+------------- | ------------- |
+查看选定的方案 |可让你查看当前的 Azure AD Connect 解决方案。这包括常规设置、同步的目录、同步设置，等等。
+自定义同步选项 | 可让你更改当前的配置，包括在配置中添加其他 Active Directory 林，或启用同步选项，例如用户、组、设备或密码回写。
+启用暂存模式 | 可让你暂存稍后将要同步的信息，但不会将任何内容导出到 Azure AD 或 Active Directory。这样，你便可以在同步之前进行预览。
 
 ## 使用声明性设置  
  
@@ -66,17 +77,17 @@
 
 有关表达式语言的详细信息，请参阅[了解声明性设置表达式](https://msdn.microsoft.com/zh-cn/library/azure/dn801048.aspx)
 
-## 其他文档  
+## 其他文档
+有关使用 Azure AD Connect 的更多文档，请参阅：
 
-为 Azure AD Sync 创建的某些文档仍有参考价值，并适用于 Azure AD Connect。尽管我们正在努力将这些文档发布到 Azure.com，但有些文档目前仍然只能在 MSDN 范围的库中提供。有关其他文档，请参阅 [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx) 和 [MSDN 上的 Azure AD Sync](https://msdn.microsoft.com/zh-cn/library/azure/dn790204.aspx)。
+- [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
+- [更改 Azure AD Connect 的默认配置](/documentation/articles/active-directory-aadconnect-whats-next-change-default-config)
+- [使用 Azure AD Connect 同步规则编辑器](/documentation/articles/active-directory-aadconnect-whats-next-synch-rules-editor)
+- [使用声明性设置](/documentation/articles/active-directory-aadconnect-whats-next-declarative-prov)
 
-**其他资源**
+另外，为 Azure AD Sync 创建的某些文档仍有参考价值，并适用于 Azure AD Connect。尽管我们正在努力将这些文档发布到 Azure.com，但有些文档目前仍然只能在 MSDN 范围的库中提供。有关其他文档，请参阅 [MSDN 上的 Azure AD Connect](/documentation/articles/active-directory-aadconnect) 和 [MSDN 上的 Azure AD Sync](https://msdn.microsoft.com/library/azure/dn790204.aspx)。
 
-* [在云中使用本地标识基础结构](/documentation/articles/active-directory-aadconnect)
-* [Azure AD Connect 工作原理](/documentation/articles/active-directory-aadconnect-how-it-works)
-* [Azure AD Connect 入门](/documentation/articles/active-directory-aadconnect-get-started)
-* [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
-* [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more)
-* [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
 
-<!---HONumber=60-->
+ 
+
+<!---HONumber=76-->

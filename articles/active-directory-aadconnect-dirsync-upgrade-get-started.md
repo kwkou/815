@@ -9,8 +9,8 @@
 
 <tags 
    ms.service="active-directory" 
-   ms.date="05/26/2015" 
-   wacn.date="08/29/2015"/>
+   ms.date="09/02/2015" 
+   wacn.date="11/02/2015"/>
 
 # 将 Windows Azure Active Directory 同步功能 (DirSync) 升级到 Azure Active Directory Connect
 
@@ -45,7 +45,7 @@
 3. 收集 Azure AD 全局管理员密码
 4. 收集企业管理员帐户的凭据（仅在 Azure AD Connect 的安装过程中使用）
 5. 安装 AAD Connect
-    * 安装 DirSync
+    * 卸载 DirSync
 	* 安装 AAD Connect
 	* （可选）开始同步
 
@@ -72,21 +72,21 @@
 
 4. 提供当前用于连接 Azure AD 的帐户的密码。
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToAzureAD.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToAzureAD.png)
 
 5. 提供 Active Directory 的企业管理员帐户。
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToADDS.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToADDS.png)
 
 6. 你现在可以开始配置。单击“下一步”时，将会卸载 DirSync 并配置 Azure AD Connect，然后开始同步。  
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ReadyToConfigure.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ReadyToConfigure.png)
 
 
 ## 就地升级 - 超过 5 万个对象
 如果你有 5 万个以上的对象需要同步，则在步骤 #3 中，你会看到不同的消息。将会显示类似于下面的屏幕：
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)
 
 在此情况下，建议你考虑在不同的服务器上进行并行升级。提出这项建议的原因是，根据你组织的大小，就地升级可能会影响企业的服务级别协议（在本地 Active Directory 中的更改反映在 Azure AD/Office 365 中的速度方面）。我们将尝试评估使用 Azure AD Connect 进行第一次同步所需的时间。如前所述，你自己的 DirSync 原始安装或升级到 DirSync 的经验可能是最佳指标。
 
@@ -98,7 +98,7 @@
 
 如果 DirSync 安装使用本地或远程完全版的 SQL Server，则会在步骤 #3 中看到不同的消息。将会显示类似于下面的屏幕：
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReadyFullSQL.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReadyFullSQL.png)
 
 系统会向你显示有关 DirSync 使用的现有 SQL Server 数据库服务器的信息。如果需要，请进行适当的调整。单击“下一步”将会继续安装。
 
@@ -106,7 +106,7 @@
 
 在步骤 #3 中，如果你的对象数超过 5 万个，则 Azure AD Connect 安装程序将会建议并行部署。有关选择对 Azure AD Connect 进行就地部署或并行部署的详细信息，请参阅上面的“就地升级 - 超过 5 万个对象”。将会显示类似于下面的屏幕：
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)
 
 如果你想要继续进行并行部署，需要运行以下步骤：
 
@@ -126,7 +126,7 @@
 
 Azure AD Connect 会连接并向你呈现以下 UI：
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ImportSettings.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ImportSettings.png)
  
 5. 选择从 DirSync 安装中导出的设置文件。    
 6. 配置任何高级选项，包括：  
@@ -136,12 +136,13 @@ Azure AD Connect 会连接并向你呈现以下 UI：
 
 UI 中会显示以下选项：
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
  
 7. 单击“下一步”。   
 8. 在“已准备好配置”页上，保留选中“配置完成后立即开始同步过程”。  
 
-> [AZURE.NOTE]将会开始 Windows Server Active Directory 和 Azure Active Directory 之间的同步，但不会将任何更改导出到 Azure AD。每次只能有一个同步工具在主动导出更改。9.单击“安装”。
+> [AZURE.NOTE]将会开始 Windows Server Active Directory 和 Azure Active Directory 之间的同步，但不会将任何更改导出到 Azure AD。每次只能有一个同步工具在主动导出更改。
+9. 单击“安装”。
 
 > [AZURE.NOTE]取消选中“开始同步”复选框，确保 DirSync（仍已安装并正在运行）和 Azure AD Connect 未尝试同时写入到 AAD。
 
@@ -168,13 +169,13 @@ UI 中会显示以下选项：
 
 你应该看到以下内容：
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AdditionalTasks.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AdditionalTasks.png)
 
 * 选择“配置过渡模式”
     * 使用导出的设置自动从 DirSync 升级时，Azure AD Connect 将进入过渡模式。简单而言，过渡模式表示在 Azure AD Connect 中进行同步，但是更改不会导出到 Azure AD 或 AD。
 * 取消选中“已启用过渡模式”复选框可以关闭过渡。
 
-![输入你的 Azure AD 凭据输入 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/configurestaging.png)
+![输入你的 Azure AD 凭据](./media/active-directory-aadconnect-dirsync-upgrade-get-started/configurestaging.png)
 
 * 单击安装按钮
 

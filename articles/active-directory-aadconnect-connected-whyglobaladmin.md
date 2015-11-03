@@ -4,19 +4,19 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="05/28/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # 设置 Azure AD Connect 时需要 Azure AD 全局管理员帐户的原因
 
 下表说明了设置 Azure AD Connect 时需要 Azure AD 全局管理员帐户的原因。
 
-在以下情况下 | 描述 
+在以下情况下 | 说明 
 ------------- | ------------- |
 快速设置和 DirSync 升级 | 我们将在 Azure AD 目录中启用同步（如果需要），并创建用于进行中同步操作的 Azure AD 帐户（Azure AD 连接器帐户）。 
 对于自定义设置 | 我们将在 Azure AD 目录中启用同步，并创建用于进行中同步操作的 Azure AD 帐户（Azure AD 连接器帐户）。对于使用 AD FS 选项的单一登录，我们将在 Azure AD 中读取和配置联合属性。
