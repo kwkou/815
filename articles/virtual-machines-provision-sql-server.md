@@ -1,18 +1,28 @@
 <properties 
-	pageTitle="在 Azure 中预配 SQL Server 虚拟机" 
-	description="指导你在 Azure 上创建和配置 SQL Server 虚拟机的教程。" 
+	pageTitle="预配 SQL Server 虚拟机 | Windows Azure" 
+	description="本教程教你如何在 Azure 上创建和配置 SQL Server VM。" 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="rothja" 
 	manager="jeffreyg" 
-	editor="monicar"/>
+	editor="monicar"
+	tags="azure-service-management"
+	/>
 
 <tags 
 	ms.service="virtual-machines" 
-	ms.date="07/28/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="08/26/2015" 
+	wacn.date="11/02/2015"/>
 
-# 在 Azure 上设置 SQL Server 虚拟机 #
+# 在 Azure 中预配 SQL Server 虚拟机
+
+> [AZURE.SELECTOR]
+- [门户](/documentation/articles/virtual-machines-provision-sql-server)
+- [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+
+## 概述
+
+[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以从库中选择虚拟机映像之一，只需要单击几次，即可将虚拟机设置到你的 Azure 环境。
 
@@ -33,15 +43,15 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 	![选择映像](./media/virtual-machines-provision-sql-server/choose-sql-vm.png)
 
-有关在 Azure 上支持的 SQL Server 映像的最新信息，请参阅 [Azure 虚拟机中的 SQL Server 入门](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
+有关在 Azure 上支持的 SQL Server 映像的最新信息，请参阅 [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。
 
 >[AZURE.NOTE]如果虚拟机是通过使用平台映像 SQL Server 评估版创建的，则无法将其升级到库中按分钟付费版本的映像。可以选择以下两个选项之一：
 >
-> - 你可以通过使用库中按分钟付费 SQL Server 版本创建一个新虚拟机，并按[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-migrate-onpremises-database) 中所述步骤将数据库文件迁移到这个新虚拟机。
+> - 你可以通过使用库中按分钟付费 SQL Server 版本创建一个新虚拟机，并按[将数据库迁移到 Azure VM 上的 SQL Server](virtual-machines-migrate-onpremises-database) 中所述步骤将数据库文件迁移到这个新虚拟机。
 > - 或者，你可以根据[在 Azure 上通过软件保证实现许可迁移](http://azure.microsoft.com/pricing/license-mobility/)协议，通过执行[升级到 SQL Server 的不同版本](https://msdn.microsoft.com/library/cc707783.aspx)中所述的步骤，将 SQL Server 评估版的现有实例升级到 SQL Server 的另一版本。有关如何购买 SQL Server 的许可副本的信息，请参阅[如何购买 SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx)。
 
 4. 在第一个**“虚拟机配置”**页上，提供下列信息：
-	- “版本发布日期”。如果有多个映像可用，请选择最新的。
+	- **版本发布日期**。如果有多个映像可用，请选择最新的。
 	- 唯一的“虚拟机名称”。
 	- 在“新用户名”框中，键入计算机本地管理员帐户的唯一用户名。
 	- 在“新密码”框中，键入一个强密码。 
@@ -57,8 +67,8 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
     > - 当使用 SQL Server Enterprise Edition 时，请选择 A3 或更大。
    	> - 当使用针对事务性工作负荷映像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A4 或更大。  
    	> - 当使用针对数据仓库工作负荷映像优化的 SQL Server 2012 或 2014 Enterprise 时，请选择 A7 或更大。 
-   	> - 为了获得最佳性能，请对高级存储使用 DS2 或 DS3。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](https://msdn.microsoft.com/library/azure/dn133149.aspx)。
-   	> - 所选定的大小会限制您能够配置的数据磁盘个数。有关可用虚拟机大小和可附加到虚拟机的数据磁盘数目的最新信息，请参阅[用于 Azure 的虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+   	> - 为了获得最佳性能，请对高级存储使用 DS2 或 DS3。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的性能最佳实践](/documentation/articles/virtual-machines-sql-server-performance-best-practices)。
+   	> - 所选定的大小会限制您能够配置的数据磁盘个数。有关可用虚拟机大小和可附加到虚拟机的数据磁盘数目的最新信息，请参阅[用于 Azure 的虚拟机大小](virtual-machines-size-specs.md)。
 
 5. 输入 VM 配置详细信息后，单击右下角的“下一步”箭头以继续。
 
@@ -66,7 +76,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 	- 在“云服务”框中，选择“创建新云服务”。
 	- 在“云服务 DNS 名称”框中，提供所选 DNS 名称的第一部分，让它完成名称时的格式是 **TESTNAME.cloudapp.net** 
 	- 如果有多个订阅可供选择，请选择一个**订阅**。此选择确定哪些 **存储帐户** 可用。
-- 在“区域/地缘组/虚拟网络”框中，选择将托管此虚拟映像的区域。
+	- 在“区域/地缘组/虚拟网络”框中，选择将托管此虚拟映像的区域。
 	- 在“存储帐户”中，自动生成一个帐户，或从列表中选择一个帐户。更改**订阅**可查看更多帐户。 
 	- 在“可用性集”框中，选择“(无)”。
 	- 阅读并接受法律条款。
@@ -106,7 +116,7 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 ##<a id="SSMS">从另一台计算机上的 SSMS 连接到 SQL Server VM 实例</a>
 
-[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../includes/virtual-machines-sql-server-connection-steps.md)]
+[AZURE.INCLUDE [连接到 VM 中的 SQL Server](../../includes/virtual-machines-sql-server-connection-steps.md)]
 
 ## <a id="cdea">从应用程序连接到数据库引擎</a>
 
@@ -120,30 +130,28 @@ Azure 虚拟机库包括几种内含 Microsoft SQL Server 的映像。你可以�
 
 你已经看到了如何使用平台映像在 Azure 虚拟机上创建和配置 SQL Server。在许多情况下，下一步是将数据库迁移到这个新 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-migrate-onpremises-database)。
 
-除了这些资源外，我们还建议你查看[与在 Azure 虚拟机中运行 SQL Server 相关的其他主题](/documentation/articles/virtual-machines-sql-server-infrastructure-services)。以下列表提供了一些具体的建议。
+下面的列表提供了有关 Azure 虚拟机中的 SQL Server 的其他资源。
 
 ### 针对 Azure VM 上的 SQL Server 建议的资源：
-- [Azure 虚拟机中的 SQL Server 入门](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
+- [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
-- [Azure 虚拟机中的 SQL Server 的连接注意事项](/documentation/articles/virtual-machines-sql-server-connectivity)
+- [连接到 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-sql-server-connectivity)
 
-- [Azure 虚拟机中的 SQL Server 的性能注意事项](http://go.microsoft.com/fwlink/?LinkId=294724)
+- [Azure 虚拟机中的 SQL Server 的性能最佳实践](http://go.microsoft.com/fwlink/?LinkId=294724)
 
-- [Azure 虚拟机中的 SQL Server 的安全注意事项](http://go.microsoft.com/fwlink/p/?LinkId=294725)
+- [Azure 虚拟机中的 SQL Server 的安全注意事项](/documentation/articles/virtual-machines-sql-server-security-considerations)
 
 ### 高可用性和灾难恢复：
-- [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](http://go.microsoft.com/fwlink/p/?LinkId=294727)
+- [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions)
 
-- [Azure 虚拟机中 SQL Server 的备份和还原](http://go.microsoft.com/fwlink/p/?LinkId=294728)
+- [Azure 虚拟机中 SQL Server 的备份和还原](/documentation/articles/virtual-machines-sql-server-backup-and-restore)
 
 ### Azure 中的 SQL Server 工作负荷：
-- [Azure 虚拟机中的 SQL Server Business Intelligence](http://go.microsoft.com/fwlink/p/?LinkId=294729)
-
-- [Azure 虚拟机中的 SQL Server 数据仓库和事务性工作负荷](/documentation/articles/virtual-machines-sql-server-dw-and-oltp-workloads)
+- [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence)
 
 ### 白皮书：
 - [了解 Azure 虚拟机中的 Azure SQL 数据库和 SQL Server](/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas)
 
-- [Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](http://msdn.microsoft.com/zh-cn/library/azure/dn574746.aspx)
+- [Azure 虚拟机中的 SQL Server 的应用程序模式和开发策略](/documentation/articles/virtual-machines-sql-server-application-patterns-and-development-strategies)
 
-<!---HONumber=70-->
+<!---HONumber=76-->

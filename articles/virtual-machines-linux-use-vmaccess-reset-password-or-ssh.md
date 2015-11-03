@@ -1,16 +1,25 @@
-<properties pageTitle="如何使用适用于 Linux 虚拟机的 VMAccess" description="如何使用适用于 Linux 的 VMAccess 扩展来重置密码、SSH 密钥和 SSH 配置" services="virtual-machines" documentationCenter="" authors="ningk, kathydav" manager="timlt" />
-<tags  
+<properties
+	pageTitle="从 Azure CLI 重置 Linux VM 密码"
+	description="如何从 Azure 门户或 CLI 使用 VMAccess 扩展重置 Linux VM 密码和 SSH 密钥、SSH 配置以及删除用户帐户。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="cynthn"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
+
+<tags
 	ms.service="virtual-machines"
-	ms.date="05/07/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="08/28/2015"
+	wacn.date="11/02/2015"/>
 
-#如何为 Linux 虚拟机重置密码或 SSH#
+# 如何为 Linux 虚拟机重置密码或 SSH #
 
-如果因为忘记密码、安全外壳 (SSH) 密钥不正确或 SSH 配置出现问题而不能连接到 Linux 虚拟机，请使用 Azure 预览门户或 VMAccessForLinux 扩展重置密码或 SSH 密钥或者修复 SSH 配置。
+如果因为忘记密码、安全外壳 (SSH) 密钥不正确或 SSH 配置出现问题而不能连接到 Linux 虚拟机，请使用 Azure 预览门户或 VMAccessForLinux 扩展重置密码或 SSH 密钥或者修复 SSH 配置。请注意，本文适用于使用**经典**部署模型创建的虚拟机。
 
 ## Azure 预览门户
 
-若要在 [Azure 预览门户](https://manage.windowsazure.cn)中重置 SSH 配置，请单击“浏览”>“虚拟机”>“你的 Linux 虚拟机”>“重置远程访问”。下面是一个示例。
+若要在 [Azure 预览门户](manage.windowsazure.cn)中重置 SSH 配置，请单击“浏览”>“虚拟机”>“你的 Linux 虚拟机”>“重置远程访问”。下面是一个示例。
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-RDP-Reset-Linux.png)
 
@@ -91,11 +100,11 @@ VMAccess 扩展无需安装就可使用它。只要在虚拟机上安装了 Linu
 
 如果忘记了用户名，可以使用 VMAccess 创建一个具有 sudo 授权的新用户帐户。在这种情况下，不会修改现有的用户名和密码。
 
-若要创建具有密码访问权限的新 sudo 用户，请使用“重置密码”[](#pwresetcli)中的脚本并指定新用户名。
+若要创建具有密码访问权限的新 sudo 用户，请使用[“重置密码”](#pwresetcli)中的脚本并指定新用户名。
 
-若要创建具有 SSH 密钥访问权限的新 sudo 用户，请使用“重置 SSH 密钥”[](#sshkeyresetcli)中的脚本并指定新用户名。
+若要创建具有 SSH 密钥访问权限的新 sudo 用户，请使用[“重置 SSH 密钥”](#sshkeyresetcli)中的脚本并指定新用户名。
 
-你还可以使用“重置密码和 SSH 密钥”[](#resetbothcli)来创建同时具有密码和 SSH 密钥访问权限的新用户。
+你还可以使用[“重置密码和 SSH 密钥”](#resetbothcli)来创建同时具有密码和 SSH 密钥访问权限的新用户。
 
 ### <a name="sshconfigresetcli"></a>重置 SSH 配置
 
@@ -237,7 +246,8 @@ SSH 配置中的错误可能会导致你无法访问虚拟机。可以通过将 
 	$vm.GuestAgentStatus
 
 
-#其他资源
+## 其他资源
+
 [Azure VM 扩展和功能][]
 
 [使用 RDP 或 SSH 连接到 Azure 虚拟机][]
@@ -249,4 +259,4 @@ SSH 配置中的错误可能会导致你无法访问虚拟机。可以通过将 
 [Azure VM 扩展和功能]: http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx
 [使用 RDP 或 SSH 连接到 Azure 虚拟机]: http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx
 
-<!---HONumber=67-->
+<!---HONumber=76-->

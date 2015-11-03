@@ -1,8 +1,18 @@
-<properties pageTitle="使用 CLI 捕获运行 Linux 的虚拟机的映像" description="了解如何捕获运行 Linux 的 Azure 虚拟机 (VM) 的映像。" services="virtual-machines" documentationCenter="" authors="karthmut" manager="madhana" editor="tysonn"/>
-<tags ms.service="virtual-machines"
-    ms.date="02/20/2015"
-    wacn.date="04/15/2015"
-    />
+<properties
+	pageTitle="使用 CLI 捕获运行 Linux 的虚拟机的映像"
+	description="了解如何捕获运行 Linux 的 Azure 虚拟机 (VM) 的映像。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="karthmut"
+	manager="timlt"
+	editor="tysonn"/>
+
+<tags
+	ms.service="virtual-machines"
+	ms.date="02/20/2015"
+	wacn.date="11/02/2015"/>
+
+
 
 
 # 如何使用 CLI 捕获将用作模板的 Linux 虚拟机##
@@ -13,11 +23,11 @@
 
 
 
-Azure 将此模板视为一个映像并将其存储在你的映像列表中。这也是你上载和存储任何映像的地方。有关映像的详细信息，请参阅[关于 Azure 中的虚拟机映像] []。
+Azure 将此模板视为一个映像并将其存储在你的映像列表中。这也是你上载和存储任何映像的地方。有关映像的详细信息，请参阅[关于 Azure 中的虚拟机映像][]。
 
 
 
-## 开始之前##
+##开始之前##
 
 
 
@@ -25,13 +35,13 @@ Azure 将此模板视为一个映像并将其存储在你的映像列表中。�
 
 
 
-- [如何创建自定义虚拟机] []
+- [如何创建自定义虚拟机][]
 
-- [如何将数据磁盘附加到虚拟机] []
+- [如何将数据磁盘附加到虚拟机][]
 
 
 
-## 捕获虚拟机##
+##捕获虚拟机##
 
 
 
@@ -47,7 +57,7 @@ Azure 将此模板视为一个映像并将其存储在你的映像列表中。�
 
 
 
-    注意，适用于  `vm shutdown` 的选项之一是 `-p`，这在关闭时将保留计算资源。**不要**启用此选项，因为要捕获 VM，必须将其解除配置。
+    注意，适用于 `vm shutdown` 的选项之一是 `-p`，这在关闭时将保留计算资源。**不**要启用此选项，因为要捕获 VM，必须将其取消预配。
 
 
 
@@ -71,7 +81,7 @@ Azure 将此模板视为一个映像并将其存储在你的映像列表中。�
 
 
 
-    `| grep <target-image-name>` 部分是可选的，但是可以帮助你更轻松地在列表中查找映像。
+    `| grep <target-image-name>` 部分是可选的，但可以帮助你更轻松地在列表中查找映像。
 
 
 
@@ -134,13 +144,17 @@ Azure 将此模板视为一个映像并将其存储在你的映像列表中。�
 
 
 
-有关更多详细信息和其他命令，请访问 [Azure CLI 文档页面][]。
+有关更多详细信息和其他命令，请访问 [Azure CLI 文档页][]。
 
 
-[Azure CLI 文档页面]: /documentation/articles/virtual-machines-command-line-tools
-[如何登录到运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[Azure CLI 文档页]: /documentation/articles/virtual-machines-command-line-tools/
+
+[如何登录到运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on/
+
 [关于 Azure 中的虚拟机映像]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 
-[如何创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
-[如何将数据磁盘附加到虚拟机]: /documentation/articles/storage-windows-attach-disk
-<!--HONumber=50-->
+[如何创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom/
+
+[如何将数据磁盘附加到虚拟机]: /documentation/articles/storage-windows-attach-disk/
+
+<!---HONumber=76-->
