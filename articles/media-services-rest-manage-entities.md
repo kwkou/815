@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="11/02/2015"/>
 
 #使用 REST API 管理媒体服务实体
 
@@ -144,4 +144,4 @@ Windows Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服�
 	Host: media.chinacloudapi.cn
 	Content-Length: 0
 
-<!---HONumber=71-->
+<!---HONumber=76-->

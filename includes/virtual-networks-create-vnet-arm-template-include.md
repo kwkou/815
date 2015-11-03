@@ -33,7 +33,7 @@
 
 		{
 		  "location": {
-		    "value": "Central US"
+		    "value": "China North"
 		  },
 		  "vnetName": {
 		      "value": "TestVNet"

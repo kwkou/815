@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="11/02/2015"/>
 
 
 
@@ -29,9 +29,9 @@
 
 如果你打算创建多个内容密钥，或者想要指定除媒体服务密钥传送服务以外的**密钥\\许可证传送服务** URL，请使用媒体服务 .NET SDK 或 REST API。
 
-[使用 Media Services .NET SDK 配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy)
+[使用 Media Services .NET SDK 配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy/)
 
-[使用 Media Services REST API 配置内容密钥授权策略](/documentation/articles/media-services-rest-configure-content-key-auth-policy)
+[使用 Media Services REST API 配置内容密钥授权策略](/documentation/articles/media-services-rest-configure-content-key-auth-policy/)
 
 ###请注意以下事项：
 
@@ -87,4 +87,4 @@
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
 [token_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-token-restriction.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

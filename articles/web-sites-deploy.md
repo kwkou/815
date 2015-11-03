@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/14/2015"
-	wacn.date="10/13/2015"/>
+	wacn.date="10/03/2015"/>
 
 #如何部署 Azure 网站
 
@@ -71,10 +71,10 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 [Visual Studio Online](http://www.visualstudio.com/)（以前称为 Team Foundation Service）是 Microsoft 针对源代码管理和团队协作的基于云的解决方案。该服务对最多 5 个开发人员的团队免费。你可以向 Azure 网站持续交付，并且你的存储库可以使用 [Git 或 TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs)。
 
-<!--有关详细信息，请参阅以下资源：
+有关详细信息，请参阅以下资源：
 
-* [使用 Visual Studio Online 和 TFVC 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso)。分步教程演示如何使用 TFVC 设置从 Visual Studio Online 的持续交付。TFVC 是集中式源代码管理选项，与分布式源代码管理选项 Git 截然相反。-->
-<!-- * [使用 Visual Studio Online 和 Git 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)。与上一个教程类似，但使用 Git 而不是 TFVC。-->
+* [使用 Visual Studio Online 和 TFVC 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso)。分步教程演示如何使用 TFVC 设置从 Visual Studio Online 的持续交付。TFVC 是集中式源代码管理选项，与分布式源代码管理选项 Git 截然相反。
+* [使用 Visual Studio Online 和 Git 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)。与上一个教程类似，但使用 Git 而不是 TFVC。
 
 ##<a name="git"></a>使用 Git 的存储库网站
 
@@ -84,7 +84,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 * [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
 * [部署到 Azure 网站的 Azure 按钮](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)。有关用于触发从 Git 存储库的部署方法的博客。
-* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit)。
+* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
 
 ##<a name="mercurial"></a>使用 Mercurial 的存储库网站
 
@@ -92,8 +92,8 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 有关如何使用 Mercurial 进行部署的信息，请参阅以下资源：
 
-* [从源控件发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control)。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
-* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit)。
+* [从源控件发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control/)。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
+* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
 
 <!--
 ###<a name="dropbox"></a>DropBox
@@ -102,7 +102,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 * [Deploy To Windows Azure Using Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). How to use the Azure Management Portal to set up DropBox deployment.
 * [DropBox and Azure  Websites](http://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Dropbox-Deployment-to-Windows-Azure-Web-Sites). This video walks through the process of connecting a DropBox folder to an Azure  Website, and shows how quickly you can get a  Website up and running or maintain it using simple drag-and-drop deployment.
-* [Azure Forum for Git, Mercurial, and DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit).
+* [Azure Forum for Git, Mercurial, and DropBox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit).
 -->
 
 ##<a name="vs"></a>Visual Studio
@@ -119,7 +119,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 有关详细信息，请参阅以下资源：
 
-* [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)。 
+* [创建 PHP-MySQL Azure 网站并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)。 
 
 ##<a name="tfs"></a>Team Foundation Server (TFS)
 
@@ -137,7 +137,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 * [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
 * [从任何 git/hg 存储库发布到 Azure 网站](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。该博客介绍了 Azure 网站中的“外部存储库”功能。
-* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/windowsazure/zh-cn/home?forum=azuregit)。
+* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
 * [将两个网站从一个 Git 存储库部署到 Azure](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx)。Scott Hanselman 的博客文章。
 
 

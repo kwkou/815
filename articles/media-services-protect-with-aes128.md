@@ -9,10 +9,14 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="08/14/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/16/2015"
+	wacn.date="11/02/2015"/>
 
 #使用 AES-128 动态加密和密钥传送服务
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-protect-with-aes128)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 ##概述
 
@@ -204,7 +208,7 @@
 
 对于 HLS，根清单将划分成段文件。
 
-例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl，并且包含段文件名的列表。
+例如，根清单是：http://test001.origin.mediaservices.chinacloudapi.cn/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/manifest(format=m3u8-aapl)，并且包含段文件名的列表。
 	
 	. . . 
 	#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=630133,RESOLUTION=424x240,CODECS="avc1.4d4015,mp4a.40.2",AUDIO="audio"
@@ -626,8 +630,8 @@
 		
 		            template.PrimaryVerificationKey = new SymmetricVerificationKey();
 		            template.AlternateVerificationKeys.Add(new SymmetricVerificationKey());
-		            template.Audience = _sampleAudience;
-		            template.Issuer = _sampleIssuer;
+		            template.Audience = _sampleAudience.ToString();
+		            template.Issuer = _sampleIssuer.ToString();
 		
 		            template.RequiredClaims.Add(TokenClaim.ContentKeyIdentifierClaim);
 		
@@ -655,4 +659,4 @@
 		    }
 		}
 
-<!---HONumber=71-->
+<!---HONumber=76-->

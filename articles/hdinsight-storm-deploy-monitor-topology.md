@@ -31,7 +31,7 @@ HDInsight Tools 中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API�
 
 	* Visual Studio 2012 <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=39305" target="_blank">Update 4</a>
 
-	* Visual Studio 2013 <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=44921" target="_blank">Update 4</a> 或 <a href="http://go.microsoft.com/fwlink/?LinkId=517284" target="_blank">Visual Studio 2013 Community</a>
+	* Visual Studio 2013 <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=44921" target="_blank">Update 4</a> 或 <a href="http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe" target="_blank">Visual Studio 2013 Community</a>
 
 	* <a href="http://visualstudio.com/downloads/visual-studio-2015-ctp-vs" target="_blank">Visual Studio 2015 CTP6</a>
 
@@ -169,7 +169,7 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 
 * [使用 Maven 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology)
 
-有关更多示例拓扑的列表，请参阅 [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)。
+有关更多示例拓扑的列表，请参阅 [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)。
 [hdinsight-dashboard]: ./media/hdinsight-storm-deploy-monitor-topology/dashboard-link.png 
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png 
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png

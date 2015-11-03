@@ -81,7 +81,7 @@
 
 有关使用 REST API 的信息，请参阅[有关流量管理器的操作（REST API 参考）](https://msdn.microsoft.com/ZH-CN/library/hh758255.aspx)。
 
-有关使用 Azure PowerShell cmdlet 的信息，请参阅 [Azure 流量管理器 Cmdlet](http://go.microsoft.com/fwlink/p/?LinkId=400769)。有关示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
+有关使用 Azure PowerShell cmdlet 的信息，请参阅 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)。有关示例配置，请参阅 Azure 博客中的 [Azure 流量管理器外部终结点与通过 PowerShell 实施的加权轮循机制](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/)。
 
 若要从单个客户端测试配置文件并观察平等的或加权的循环行为，请验证是否能够根据配置文件中的相等值或加权值，将 DNS 名称解析为终结点的不同 IP 地址。测试时，你必须禁用客户端 DNS 缓存或在每次尝试操作之后清除 DNS 缓存，以确保发送新的 DNS 名称查询。
 

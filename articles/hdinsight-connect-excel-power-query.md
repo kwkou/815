@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Power Query 将 Excel 连接到 Hadoop | Microsoft Azure"
+	pageTitle="使用 Power Query 将 Excel 连接到 Hadoop | Windows Azure"
 	description="了解如何利用商业智能组件和使用 Power Query for Excel 访问 HDInsight 上的 Hadoop 中存储的数据。"
 	services="hdinsight"
 	documentationCenter=""
@@ -72,6 +72,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png
 [image-hdi-powerquery-imported-table]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportedTable.PNG

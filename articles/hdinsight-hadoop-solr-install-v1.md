@@ -31,7 +31,7 @@
 
 ## <a name="install"></a>如何安装 Solr？
 
-用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户设置群集时使用示例脚本的说明。
+用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户设置群集时使用示例脚本的说明。
 
 
 > [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
@@ -47,7 +47,7 @@
 	<tr><td>Name</td>
 		<td>指定脚本操作的名称。例如 <b>Install Solr</b>。</td></tr>
 	<tr><td>脚本 URI</td>
-		<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如 <i>https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1</i></td></tr>
+		<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如 <i>https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1</i></td></tr>
 	<tr><td>节点类型</td>
 		<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
 	<tr><td>Parameters</td>
@@ -192,7 +192,7 @@
 3. 使用 **Add-AzureHDInsightScriptAction** cmdlet 将脚本操作添加到群集配置中。稍后，在创建群集时，将执行脚本操作。
 
 		# Add the script action to the cluster configuration
-		$config = Add-AzureHDInsightScriptAction -Config $config -Name "Install Solr" -ClusterRoleCollection HeadNode,DataNode -Uri https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1
+		$config = Add-AzureHDInsightScriptAction -Config $config -Name "Install Solr" -ClusterRoleCollection HeadNode,DataNode -Uri https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1
 
 	**Add-AzureHDInsightScriptAction** cmdlet 采用以下参数：
 
@@ -332,7 +332,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
         clusterInfo.ConfigActions.Add(new ScriptAction(
           "Install Solr", // Name of the config action
           new ClusterNodeType[] { ClusterNodeType.HeadNode, ClusterNodeType.DataNode }, // List of nodes to install Solr on
-          new Uri("https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1"), // Location of the script to install Solr
+          new Uri("https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1"), // Location of the script to install Solr
 		  null //Because the script used does not require any parameters
         ));
 

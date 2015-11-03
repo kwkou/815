@@ -29,7 +29,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
     * Visual Studio 2012 [Update 4](https://www.microsoft.com/zh-CN/download/details.aspx?id=39305)
 
-    * Visual Studio 2013 [Update 4](https://www.microsoft.com/zh-CN/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?linkid=517284&clcid=0x409)
+    * Visual Studio 2013 [Update 4](https://www.microsoft.com/zh-CN/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
 
     * Visual Studio 2015 [CTP6](http://visualstudio.com/downloads/visual-studio-2015-ctp-vs)
 
@@ -133,6 +133,6 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 在本文档中，你已学习如何使用 REST 将数据从 Storm 拓扑发送到 Power BI。有关如何使用其他 Azure 技术的信息，请参阅以下文章：
 
-* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
+* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
 <!---HONumber=71-->

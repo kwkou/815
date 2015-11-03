@@ -25,9 +25,9 @@
 
 	- 	Visual Studio 2012 <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=39305" target="_blank">Update 4</a>
 
-	- 	Visual Studio 2013 <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=44921" target="_blank">Update 4</a> 或 <a href="http://go.microsoft.com/fwlink/?LinkId=517284" target="_blank">Visual Studio 2013 Community</a>
+	- 	Visual Studio 2013 <a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=44921" target="_blank">Update 4</a> 或 <a href="http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe" target="_blank">Visual Studio 2013 Community</a>
 
-	-	Visual Studio 2015 或 [Visual Studio 2015 Community](https://go.microsoft.com/fwlink/?LinkId=532606)
+	-	Visual Studio 2015 或 [Visual Studio 2015 Community](http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs_community.exe)
 
 * Azure SDK 2.5.1 或更高版本
 
@@ -640,14 +640,14 @@ Context.Logger.Info("Component started");
 
 **Apache HDInsight 上的 Hadoop**
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 **Apache HBase on HDInsight**
 
-* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started)
+* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-get-started/)
 
 <!---HONumber=71-->

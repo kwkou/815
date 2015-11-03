@@ -7,11 +7,15 @@
 
 		azure config mode arm
 
+	下面是上述命令的预期输出：
+
 		info:    New mode is arm
 
 3. 如有必要，请运行 **azure group create** 以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview#resource-groups)。
 
 		azure group create -n TestRG -l centralus
+
+	下面是上述命令的预期输出：
 
 		info:    Executing command group create
 		+ Getting resource group TestRG
@@ -28,9 +32,11 @@
 	- **-n（或 --name）**。新资源组的名称。对于我们的方案，为 *TestRG*。
 	- **-l（或 --location）**。将在其中创建新资源组的 Azure 区域。对于我们的方案，为 *centralus*。
 
-4. 运行 **azure network vnet create** 命令以创建 VNet 和子网，如下所示。请注意 CLI 命令的输出。在输出后显示的列表说明了所用的参数。
-5. 
+4. 运行 **azure network vnet create** 命令以创建 VNet 和子网，如下所示。
+
 		azure network vnet create -g TestRG -n TestVNet -a 192.168.0.0/16 -l centralus
+
+	下面是上述命令的预期输出：
 
 		info:    Executing command network vnet create
 		+ Looking up virtual network "TestVNet"
@@ -53,6 +59,8 @@
 5. 运行 **azure network vnet subnet create** 命令以创建子网，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。
 
 		azure network vnet subnet create -g TestRG -e TestVNet -n FrontEnd -a 192.168.1.0/24
+
+	下面是上述命令的预期输出：
 
 		info:    Executing command network vnet subnet create
 		+ Looking up the subnet "FrontEnd"
@@ -78,6 +86,8 @@
 
 		azure network vnet show -g TestRG -n TestVNet
 
+	下面是上述命令的预期输出：
+
 		info:    Executing command network vnet show
 		+ Looking up virtual network "TestVNet"
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
@@ -96,4 +106,4 @@
 		data:
 		info:    network vnet show command OK
 
-<!---HONumber=69-->
+<!---HONumber=76-->

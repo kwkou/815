@@ -697,7 +697,7 @@ Web 应用程序现已完成，你可以将其发布到 Azure。
 >[AZURE.NOTE]我们正在开发可显著简化用户和角色管理的工具。
 
 ##后续步骤
-有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的 [了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 Windows Azure 教程和指南。
+有关 ASP.NET Web 窗体的详细信息，请参阅 ASP.NET Web 应用上的 [了解 ASP.NET Web 窗体](http://www.asp.net/web-forms)和 [Windows Azure 教程和指南](/documentation/services/web-sites/#net)。
 
 本教程基于 Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) 在 Tom Dykstra 和 Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) 的帮助下编写的 MVC 教程[创建包含身份验证和 SQL 数据库的 ASP.NET MVC 应用并部署到 Azure App Service](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。
 

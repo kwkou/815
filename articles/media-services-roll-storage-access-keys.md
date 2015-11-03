@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"
+	wacn.date="11/02/2015"/>
 
 #如何：轮转存储访问密钥后更新媒体服务
 
@@ -56,9 +56,9 @@
 		
 		    using (var streamWriter = new StreamWriter(request.GetRequestStream()))
 		    {
-		        streamWriter.Write(""");
+		        streamWriter.Write("\"");
 		        streamWriter.Write(storageAccountKey);
-		        streamWriter.Write(""");
+		        streamWriter.Write("\"");
 		        streamWriter.Flush();
 		    }
 		
@@ -103,4 +103,4 @@
 
  
 
-<!---HONumber=71-->
+<!---HONumber=76-->

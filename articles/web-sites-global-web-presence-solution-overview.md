@@ -27,7 +27,7 @@
 - [监视网站](#monitor)
 
 > [AZURE.NOTE]
-> 本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="/zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>和<a href="/zh-cn/documentation/articles/web-sites-business-application-solution-overview">业务应用程序</a>中的其他指导。
+> 本指南展示为面向公众的 .COM 站点开发而进行调整的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅<a href="/documentation/articles/web-sites-digital-marketing-application-solution-overview/">数字市场营销活动</a>和<a href="/documentation/articles/web-sites-business-application-solution-overview">业务应用程序</a>中的其他指导。
 > 
 <!--
 If you want to get started with Azure Websites before signing up for an account, go to <a href="https://trywebsites.chinacloudsites.cn/">https://trywebsites.chinacloudsites.cn</a>, where you can immediately create a short-lived ASP.NET starter site in Azure Websites for free. No credit card required, no commitments.
@@ -191,51 +191,51 @@ Azure 网站自动提供与实际网站 URL 的安全连接。例如，如果你
 </tr>
 <tr>
    <td valign="middle"><strong>计划</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和 VM：何时使用何种产品？</a></td>
+   <td valign="top">- <a href="/documentation/articles/choose-web-site-cloud-service-vm/">Azure 网站、云服务和 VM：何时使用何种产品？</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>创建</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-dotnet-get-started/">Azure 网站和 ASP.NET 入门</a></td>
+   <td valign="top">- <a href="/documentation/articles/web-sites-dotnet-get-started/">Azure 网站和 ASP.NET 入门</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>部署</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-dotnet-get-started/">将 ASP.NET Web 应用程序部署到 Windows Azure 网站</a><br/>- <a href="/zh-cn/documentation/articles/web-sites-dotnet-using-webmatrix/">使用 Microsoft WebMatrix 开发和部署网站</a></td>
+   <td valign="top">- <a href="/documentation/articles/web-sites-publish-source-control/">从源代码管理发布到 Azure 网站</a><br/>- <a href="/documentation/articles/web-sites-dotnet-get-started/">将 ASP.NET Web 应用程序部署到 Windows Azure 网站</a><br/>- <a href="/documentation/articles/web-sites-dotnet-using-webmatrix/">使用 Microsoft WebMatrix 开发和部署网站</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>自定义域</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></td>
+   <td valign="top">- <a href="/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>SSL</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a></td>
+   <td valign="top">- <a href="/documentation/articles/web-sites-configure-ssl-certificate/">为 Azure 网站配置 SSL 证书</a></td>
 </tr>
 <tr>
    <td valign="middle"><strong>监视</strong></td>
-   <td valign="top">- <a href="/zh-cn/documentation/articles/web-sites-monitor/">如何监视网站</a></td>
+   <td valign="top">- <a href="/documentation/articles/web-sites-monitor/">如何监视网站</a></td>
 </tr>
 </table>
 
   [ Websitesoverview]: /zh-cn/documentation/services/web-sites/
   [csoverview]: /zh-cn/documentation/services/cloud-services/
   [vmoverview]: /zh-cn/documentation/services/virtual-machines/
-  [chooseservice]: /zh-cn/documentation/articles/choose-web-site-cloud-service-vm/
+  [chooseservice]: /documentation/articles/choose-web-site-cloud-service-vm/
   
   
-  [scenariodigitalmarketing]: /zh-cn/documentation/articles/web-sites-digital-marketing-application-solution-overview/
-  [howtocreate Websites]: /zh-cn/documentation/articles/web-sites-dotnet-get-started
+  [scenariodigitalmarketing]: /documentation/articles/web-sites-digital-marketing-application-solution-overview/
+  [howtocreate Websites]: /documentation/articles/web-sites-dotnet-get-started
   [webmatrix]: http://www.microsoft.com/web/webmatrix/
-  [publishingwithgit]: /zh-cn/documentation/articles/web-sites-publish-source-control/
-  [aspnetgetstarted]: /zh-cn/documentation/articles/web-sites-dotnet-get-started/
+  [publishingwithgit]: /documentation/articles/web-sites-publish-source-control/
+  [aspnetgetstarted]: /documentation/articles/web-sites-dotnet-get-started/
 <!--
   [drupal]:https://drupal.org/
   [umbraco]:http://umbraco.com/
  -->
-  [customdns]: /zh-cn/documentation/articles/web-sites-custom-domain-name/
-  [ssl]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [customdns]: /documentation/articles/web-sites-custom-domain-name/
+  [ssl]: /documentation/articles/web-sites-configure-ssl-certificate/
   [openssl]: http://www.openssl.org/
   [sni]: http://en.wikipedia.org/wiki/Server_Name_Indication
-  [sslpricing]: /zh-cn/pricing/details/web-sites/#service-ssl
-  [howtomonitor]: /zh-cn/documentation/articles/web-sites-monitor/
+  [sslpricing]: /home/features/web-site/#price
+  [howtomonitor]: /documentation/articles/web-sites-monitor/
   
  [GlobalWebCreate]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_Create.png
   [GlobalWebQuickGlance]: ./media/web-sites-global-web-presence-solution-overview/GlobalWeb_QuickGlance.png

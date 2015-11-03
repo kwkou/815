@@ -14,7 +14,7 @@
 
 # 在 Azure 网站 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
-在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure 网站中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
+在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 [Azure App Service Web Apps](/documentation/services/web-sites/) 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure 网站中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
 
 >[AZURE.NOTE]有关 Azure 网站支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
 
@@ -47,7 +47,7 @@
 - 本地 AD FS 部署（有关所使用的测试实验室的端到端演练，请参阅[测试实验室：Azure VM 中使用 AD FS 的独立 STS（仅用于测试）](#)）
 - 用于在 AD FS 管理中创建信赖方信任的权限
 - Visual Studio 2013
-- [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) 或更高版本
+- [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 或更高版本
 
 <a name="bkmk_sample">
 ## 将示例应用程序用作业务线模板 ##
@@ -104,9 +104,9 @@
 	  &lt;add key="webpages:Enabled" value="false" /&gt;
 	  &lt;add key="ClientValidationEnabled" value="true" /&gt;
 	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /&gt;
-	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.onmicrosoft.com/WebApp-WSFederation-DotNet]" /&gt;</del></mark>
+	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /&gt;</del></mark>
 	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /&gt;</del></mark>
-	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" /&gt;</del></mark>
+	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /&gt;</del></mark>
 	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /&gt;</mark>
 	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /&gt;</mark>
 

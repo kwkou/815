@@ -342,7 +342,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		$hbaseClusterName = "<HBaseClusterName>"
 		$hadoopUserName = "<HBaseClusterUsername>"
 		$hadoopUserPassword = "<HBaseClusterUserPassword>"
-		$location = "<HBaseClusterLocation>"  #i.e. "West US"
+		$location = "<HBaseClusterLocation>"  #i.e. "China North"
 		$clusterSize = <HBaseClusterSize>  
 		$vnetID = "<AzureVirtualNetworkID>"
 		$subNetName = "<AzureVirtualNetworkSubNetName>"
@@ -382,23 +382,23 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 - [虚拟网络概述][vnet-overview]
 
 
-[1]: http://azure.microsoft.com/services/virtual-network/
-[2]: http://technet.microsoft.com/library/ee176961.aspx
-[3]: http://technet.microsoft.com/library/hh847889.aspx
+[1]: http://azure.microsoft.com/services/networking/
+[2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
+[3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
 [vnet-overview]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
 [vm-create]: /documentation/articles/virtual-machines-windows-tutorial
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[azure-free-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal#rdp
 
-[hdinsight-powershell-reference]: https://msdn.microsoft.com/library/dn858087.aspx
+[hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 
 [twitter-streaming-api]: https://dev.twitter.com/docs/streaming-apis

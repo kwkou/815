@@ -92,11 +92,6 @@
 
 ![将凭据添加到画布](./media/automation-credentials/get-credential.png)
 
-<!--
-## 相关文章
 
-- [图形创作中的链接](/documentation/articles/automation-graphical-authoring-intro#links-and-workflow)-->
-
- 
 
 <!---HONumber=69-->

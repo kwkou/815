@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-   ms.date="06/09/2015"
-   wacn.date="09/18/2015" />
+   ms.date="09/04/2015"
+   wacn.date="11/02/2015" />
 
 # 用户定义的路由和 IP 转发
 将虚拟机 (VM) 添加到 Azure 中的虚拟网络 (VNet) 时，你会注意到，VM 可以与其他 VM 通过网络自动通信。你不需要指定网关，即使这些 VM 位于不同子网中。存在从 Azure 到你自己的数据中心的混合连接时，这同样适用于从 VM 到公共 Internet 甚至到本地网络的通信。
@@ -86,4 +86,4 @@
 - 了解如何[创建路由](/documentation/articles/virtual-networks-udr-how-to#How-to-manage-routes)并将路由关联到子网。
 - 了解如何为运行虚拟设备的 VM [启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding)。 
 
-<!---HONumber=70-->
+<!---HONumber=76-->

@@ -24,7 +24,7 @@
 
 ### 如何开始？
 
-请访问[虚拟网络文档](/documentation/services/networking)开始。此页包含指向常见配置步骤的链接以及帮助你了解设计虚拟网络时需要考虑的事项的信息。
+请访问[虚拟网络文档](/documentation/services/networking/)开始。此页包含指向常见配置步骤的链接以及帮助你了解设计虚拟网络时需要考虑的事项的信息。
 
 ### 哪些服务可以与 VNet 共同使用？
 
@@ -252,7 +252,7 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 ### 是否有 VNet 安全白皮书？
 
-是的。可以在[此处](http://go.microsoft.com/fwlink/?LinkId=386611)下载。
+是的。可以在[此处](http://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx)下载。
 
 ## API、架构和工具
 

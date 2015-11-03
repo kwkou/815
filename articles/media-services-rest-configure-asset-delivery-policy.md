@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/20/2015" 
+	wacn.date="11/02/2015"/>
 
 #如何：配置资产传送策略
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
@@ -47,12 +47,13 @@ HDS
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
 
+有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content)。
 
 >[AZURE.NOTE]使用媒体服务 REST API 时，需注意以下事项：
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
->在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
+>在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically/)中所述对新的 URI 执行后续调用。
 
 
 
@@ -136,7 +137,7 @@ HDS
 
 ###创建 EnvelopeEncryption 类型的内容密钥，并将其链接到资产
 
-在指定 DynamicEnvelopeEncryption 传送策略时，需要确保将你的资产链接到 EnvelopeEncryption 类型的内容密钥。有关详细信息，请参阅[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey)。
+在指定 DynamicEnvelopeEncryption 传送策略时，需要确保将你的资产链接到 EnvelopeEncryption 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey)。
 
 
 ###<a id="get_delivery_url"></a>获取传送 URL
@@ -229,7 +230,7 @@ HDS
 
 ###创建 CommonEncryption 类型的内容密钥，并将其链接到资产
 
-在指定 DynamicCommonEncryption 传送策略时，需要确保将你的资产链接到 CommonEncryption 类型的内容密钥。有关详细信息，请参阅[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey)。
+在指定 DynamicCommonEncryption 传送策略时，需要确保将你的资产链接到 CommonEncryption 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-rest-create-contentkey)。
 
 
 ###获取传送 URL
@@ -260,6 +261,15 @@ HDS
 	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":1,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":2,"Value":"https:\\/\\/amsaccount1.keydelivery.mediaservices.chinacloudapi.cn\/PlayReady\/"}]"}
 
 
+若要使用 Widevine DRM 保护你的内容，请更新 AssetDeliveryConfiguration 值以使用 WidevineLicenseAcquisitionUrl（其值为 7），并指定许可证交付服务的 URL。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/)、[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
+
+例如：
+ 
+	
+	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":2,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":7,"Value":"https:\\/\\/example.net\/WidevineLicenseAcquisition\/"}]"}
+
+>[AZURE.NOTE]使用 Widevine 加密时，只能使用 DASH 传送。请确保在资产传送协议中指定 DASH (2)。
+  
 ###将资产与资产传送策略相链接
 
 请参阅[将资产与资产传送策略相链接](#link_asset_with_asset_delivery_policy)
@@ -368,6 +378,7 @@ HDS
     /// <summary>
     /// Keys used to get specific configuration for an asset delivery policy.
     /// </summary>
+
     public enum AssetDeliveryPolicyConfigurationKey
     {
         /// <summary>
@@ -404,6 +415,11 @@ HDS
         /// The initialization vector to use for envelope encryption.
         /// </summary>
         EnvelopeEncryptionIV,
+
+        /// <summary>
+        /// Widevine DRM acquisition url
+        /// </summary>
+        WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=71-->
+<!---HONumber=76-->

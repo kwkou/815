@@ -10,33 +10,33 @@
 
 <tags 
 	ms.service="app-service-web"  
-	ms.date="04/16/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/30/2015"
+	wacn.date="11/02/2015"/>
 
 
 
 
-# 具有 Python Tools 2.1 for Visual Studio 的 Azure 上的 Django 和 SQL 数据库 
+# 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 SQL 数据库 
 
-在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。<!--您还可以观看本教程的[视频](https://www.youtube.com/watch?v=ZwcoGcIeHF4)。-->
+在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。您还可以观看本教程的[视频](https://www.youtube.com/watch?v=ZwcoGcIeHF4)。
 
-我们将了解如何使用在 Azure 上托管的 SQL 数据库、如何将 Web 应用配置为使用 SQL 数据库，以及如何将 Web 应用发布到 <!--[-->Azure App Service Web Apps<!--](http://go.microsoft.com/fwlink/?LinkId=529714)--> 中。
+我们将了解如何使用在 Azure 上托管的 SQL 数据库、如何将 Web 应用配置为使用 SQL 数据库，以及如何将 Web 应用发布到 [Azure 网站](/documentation/services/web-sites/)中。
 
-请访问 [Python 开发人员中心]，查看更多有关使用 PTVS 以及 Bottle、Flask 和 Django Web 框架、MongoDB、Azure 表存储、MySQL、SQL 数据库服务开发 Azure 网站的文章。虽然本文将着重介绍 Azure 网站，但步骤与 [Azure 云服务]的开发步骤类似。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章介绍了如何通过 PTVS（使用 Bottle、Flask 和 Django Web 框架）、MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure 网站。虽然本文将着重介绍 Azure 网站，但 [Azure 云服务]的开发步骤也是类似的。
 
 + [先决条件](#prerequisites)
 + [创建项目](#create-the-project)
-+ [创建 SQL Database](#create-a-sql-database)
++ [创建 SQL 数据库](#create-a-sql-database)
 + [配置项目](#configure-the-project)
 + [发布到 Azure 网站](#publish-to-an-azure-website)
 + [后续步骤](#next-steps)
 
-## <a name="prerequisites"></a>先决条件
+##<a name="prerequisites"></a>先决条件
 
- - Visual Studio 2012 或 2013
- - [Python Tools 2.1 for Visual Studio]
- - [Python Tools 2.1 for Visual Studio 样本 VSIX]
- - [Azure SDK Tools for VS 2013] 或 [Azure SDK Tools for VS 2012]
+ - Visual Studio 2013 或 2015
+ - [Python Tools 2.2 for Visual Studio]
+ - [Python Tools 2.2 for Visual Studio 示例 VSIX]
+ - [Azure SDK Tools for VS 2013] 或 [Azure SDK Tools for VS 2015]
  - [Python 2.7（32 位）]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
@@ -51,7 +51,7 @@
 
   	![新建项目对话框](./media/web-sites-python-ptvs-django-sql/PollsDjangoNewProject.png)
 
-1.  系统将提示您安装外部软件包。选择“安装到虚拟环境”。
+1.  系统将提示您安装外部软件包。选择**安装到虚拟环境**。
 
   	![外部包对话框](./media/web-sites-python-ptvs-django-sql/PollsDjangoExternalPackages.png)
 
@@ -87,7 +87,7 @@
 
   	![Web 浏览器](./media/web-sites-python-ptvs-django-sql/PollsDjangoSqliteBrowser.png)
 
-## 创建 SQL Database
+## 创建 SQL 数据库
 
 对于数据库，我们将创建 Azure SQL 数据库。
 
@@ -95,7 +95,7 @@
 
 1.  登录 [Azure 门户]。
 
-1.  在导航窗格的底部，依次单击“新建”、“数据 + 存储”>“SQL 数据库”。
+1.  在导航窗格的底部，依次单击“新建”、“数据服务”和“SQL 数据库”。
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-django-sql/PollsCommonAzurePlusNew.png) -->
 
@@ -157,9 +157,9 @@
 1.  使用 `F5` 运行应用程序。使用“创建样本轮询”创建的轮询以及通过投票提交的数据会在 SQL 数据库中进行序列化。
 
 
-## 将 Web 应用发布到 Azure 网站中
+## 将 Web 应用发布到 Azure 网站
 
-借助 Azure.NET SDK，您可以轻松地将 Web 应用部署到 Azure 网站中。
+借助 Azure.NET SDK，你可以轻松地将 Web 应用部署到 Azure 网站中。
 
 1.  在“解决方案资源管理器”中，右键单击项目节点，然后选择“发布”。
 
@@ -171,14 +171,14 @@
 
 1.  填写以下字段，然后单击“创建”。
 	-	**Web 应用名称**
-	<!---	**App Service 计划**-->
+	-	**Azure 网站计划**
 	-	**资源组**
 	-	**区域**
 	-	保持“数据库服务器”的“无数据库”设置不变
 
-  	<!-- ![Create Site on Microsoft Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
 
-1.  接受其他所有默认值，然后单击“发布”。
+1.  接受其他所有默认值，然后单击**发布**。
 
 1.  此时，您的 Web 浏览器会自动打开已发布的 Web 应用。您应该会看到 Web 应用使用在 Azure 上托管的 **SQL** 数据库按预期方式运行。
 
@@ -193,13 +193,10 @@
 - [Python Tools for Visual Studio 文档]
   - [Web 项目]
   - [云服务项目]
-  - [在 Microsoft Azure 上的远程调试]
+  - [在 Windows Azure 上进行远程调试]
 - [Django 文档]
-- [SQL Database]
+- [SQL 数据库]
 
-<!--# 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](http://go.microsoft.com/fwlink/?LinkId=529714)
-* 有关从旧门户更改为新门户的指南，请参阅[预览门户的导航参考](http://go.microsoft.com/fwlink/?LinkId=529715)-->
 
 
 <!--Link references-->
@@ -207,18 +204,18 @@
 [Azure 云服务]: /documentation/articles/cloud-services-python-ptvs
 <!--External Link references-->
 [Azure 门户]: https://manage.windowsazure.cn
-[Python Tools for Visual Studio]: https://www.visualstudio.com/zh-cn/features/python-vs
-[Python Tools 2.1 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
-[Python Tools 2.1 for Visual Studio 样本 VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Python Tools for Visual Studio]: http://aka.ms/ptvs
+[Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Python Tools 2.2 for Visual Studio 示例 VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-[Azure SDK Tools for VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
+[Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python Tools for Visual Studio 文档]: http://pytools.codeplex.com/documentation
-[在 Microsoft Azure 上的远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[在 Windows Azure 上进行远程调试]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web 项目]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [云服务项目]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
 [Django 文档]: https://www.djangoproject.com/
-[SQL Database]: /documentation/services/sql-databases
+[SQL 数据库]: /documentation/services/sql-database
  
 
-<!---HONumber=67-->
+<!---HONumber=76-->

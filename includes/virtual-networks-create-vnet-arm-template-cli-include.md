@@ -1,17 +1,22 @@
 ## 使用 Azure CLI 部署 ARM 模板
 
-若要使用 PowerShell 部署下载的 ARM 模板，请执行以下步骤。
+若要使用 Azure CLI 部署下载的 ARM 模板，请执行以下步骤。
 
 1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
 		azure config mode arm
 
+	下面是上述命令的预期输出：
+
 		info:    New mode is arm
 
-3. 如有必要，请运行 **azure group create** 以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。
+3. 如有必要，请运行 **azure group create** 以创建新资源组，如下所示。请注意命令的输出。在输出后显示的列表说明了所用的参数。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
 		azure group create -n TestRG -l centralus
+
+	下面是上述命令的预期输出：
+
 		info:    Executing command group create
 		+ Getting resource group TestRG
 		+ Creating resource group TestRG
@@ -31,6 +36,8 @@
 
 		azure group deployment create -g TestRG -n TestVNetDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
 
+	下面是上述命令的预期输出：
+
 		info:    Executing command group deployment create
 		+ Initializing template configurations and parameters
 		+ Creating a deployment
@@ -45,7 +52,7 @@
 		data:    Mode               : Incremental
 		data:    Name           Type    Value
 		data:    -------------  ------  --------------
-		data:    location       String  Central US
+		data:    location       String  China North
 		data:    vnetName       String  TestVNet
 		data:    addressPrefix  String  192.168.0.0/16
 		data:    subnet1Prefix  String  192.168.1.0/24
@@ -61,6 +68,8 @@
 5. 运行 **azure network vnet show** 命令以查看新 vnet 的属性，如下所示。
 
 		azure network vnet show -g TestRG -n TestVNet
+
+	下面是上述命令的预期输出：
 
 		info:    Executing command network vnet show
 		+ Looking up virtual network "TestVNet"
@@ -80,4 +89,4 @@
 		data:
 		info:    network vnet show command OK
 
-<!---HONumber=69-->
+<!---HONumber=76-->

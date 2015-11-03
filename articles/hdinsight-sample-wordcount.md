@@ -195,13 +195,18 @@ WordCount 脚本的输出应出现在命令窗口中：
 
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
-[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
-[hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort/
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator/
+[hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming/
+
+
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+ 
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png
 
 <!---HONumber=71-->

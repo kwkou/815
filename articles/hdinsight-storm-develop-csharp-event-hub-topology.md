@@ -9,8 +9,8 @@
 
 <tags
    ms.service="hdinsight"
-   ms.date="07/24/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="09/02/2015"
+   wacn.date="11/02/2015"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)
 
@@ -22,7 +22,7 @@ Azure 事件中心可让你处理网站、应用程序和设备中的大量数�
 
 * **EventHubReader**：从事件中心读取数据，并将其存储在 Azure 表存储中
 
-## 先决条件
+##先决条件
 
 * 一个 <a href="/documentation/articles/hdinsight-storm-getting-started/" target="_blank">Apache Storm on HDInsight 群集</a>
 
@@ -32,7 +32,7 @@ Azure 事件中心可让你处理网站、应用程序和设备中的大量数�
 
 * <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">HDInsight Tools for Visual Studio</a>（2/17/2015 或更高版本）
 
-## 已完成的项目
+##已完成的项目
 
 你可以从 GitHub 下载本教程中所创建的项目的完整版本：[eventhub-storm-hybrid](https://github.com/Blackmist/eventhub-storm-hybrid)。不过，你仍然必须根据本教程中的步骤提供配置设置。
 
@@ -60,7 +60,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 		git clone https://github.com/hdinsight/hdinsight-storm-examples
 
-## 配置事件中心
+##配置事件中心
 
 事件中心是此示例的数据源。按照下列步骤创建一个新的事件中心。
 
@@ -79,12 +79,12 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 3. 创建事件中心之后，请选择命名空间，选择“事件中心”，然后选择你前面创建的事件中心。
 
 4. 选择“配置”，然后使用以下信息创建两个新的访问策略。
+
 	<table>
 <tr><th>Name</th><th>权限</th></tr>
 <tr><td>写入器</td><td>发送</td></tr>
 <tr><td>读取器</td><td>侦听</td></tr>
-</table>
-创建权限后，在页面底部选择“保存”图标。这将会创建共享访问策略，用于对此事件中心进行发送 (writer) 和侦听 (reader)。
+</table>创建权限后，在页面底部选择“保存”图标。这将会创建共享访问策略，用于对此事件中心进行发送 (writer) 和侦听 (reader)。
 
 	![策略](./media/hdinsight-storm-develop-csharp-event-hub-topology/policy.png)
 
@@ -126,7 +126,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 	* **Bolt.cs**：示例 Bolt。稍后需要删除此文件，因为你要使用事件中心 Bolt 向事件中心写入数据
 
-### 配置
+###配置
 
 1. 在“解决方案资源管理器”中，右键单击“EventHubWriter”，然后选择“属性”。
 
@@ -145,7 +145,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 4. 保存并关闭“属性”页。
 
-### 定义拓扑
+###定义拓扑
 
 1. 在“解决方案资源管理器”中，右键单击“Bolt.cs”并选择“删除”。由于你使用的是 Java 事件中心 Bolt，因此不需要此文件。
 
@@ -233,14 +233,14 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 事件中心 Bolt 需要单个字符串值，该值将路由到事件中心。在以下示例中，你将要修改默认的 **Spout.cs** 文件以生成 JSON 字符串。
 
-1. 在“解决方案资源管理器”中，右键单击“EventHubWriter”项目，然后单击“管理 NuGet 包”。搜索 **Json.NET** 包，然后将它添加到解决方案。这样，我们便可以轻松创建将要使用 Bolt 发送到事件中心的 JSON 数据。
-
-1. 打开 **Spout.cs**，在该文件的顶部添加以下内容：
+1. 在“解决方案资源管理器”中，打开“Spout.cs”，在该文件的顶部添加以下内容：
 
 		using Newtonsoft.Json;
 		using Newtonsoft.Json.Linq;
 
 	这样，我们便可以更轻松地使用 JSON 数据。
+    
+    > [AZURE.NOTE]JSON.NET 包应已安装，因为它是用于 C# Storm 拓扑的 SCP.NET 框架所必需的。
 
 3. 找到以下代码：
 
@@ -288,6 +288,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 2. 在项目属性中，选择“设置”，然后选择“此项目不包含默认的设置文件。单击此处可创建一个”。
 
 3. 输入以下设置。在“值”列中使用前面创建的事件中心和存储帐户的信息。
+
 	<table>
 <tr><th style="text-align:left">Name</th><th style="text-align:left">类型</th><th style="text-align:left">范围</th></tr>
 <tr><th style="text-align:left">EventHubPolicyName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
@@ -297,8 +298,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 <tr><th style="text-align:left">EventHubPartitionCount</th><th style="text-align:left">int</th><th style="text-align:left">应用程序</th></tr>
 <tr><th style="text-align:left">StorageConnection</th><th style="text-align:left">（连接字符串）</th><th style="text-align:left">应用程序</th></tr>
 <tr><th style="text-align:left">TableName</th><th style="text-align:left">字符串</th><th style="text-align:left">应用程序</th></tr>
-</table>
-对于 **TableName**，请输入要在其中存储事件的表的名称。
+</table>对于 **TableName**，请输入要在其中存储事件的表的名称。
 
     对于 **StorageConnection**，请输入值 `DefaultEndpointsProtocol=https;AccountName=myAccount;AccountKey=myKey;`。将 **myAccount** 和 **myKey** 分别替换为前面获取的存储帐户名和密钥。
 
@@ -310,7 +310,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 1. 在“解决方案资源管理器”中，右键单击“Spout.cs”并选择“删除”。由于你使用的是 Java 事件中心 Spout，因此不需要此文件。
 
-2. 打开 **Program.cs** 文件，并紧接在 `TopologyBuilder topologyBuilder = new TopologyBuilder("EventHubReader");` 行后添加以下内容：
+2. 打开 **Program.cs** 文件，并紧接在 `TopologyBuilder topologyBuilder = new TopologyBuilder("EventHubReader");` 行后添加以下代码：
 
 		int partitionCount = Properties.Settings.Default.EventHubPartitionCount;
 		EventHubSpoutConfig ehConfig = new EventHubSpoutConfig(
@@ -382,7 +382,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
     topologyBuilder.SetTopologyConfig(config);
 
 
-### 创建帮助器类
+###创建帮助器类
 
 将数据写入表存储时，你必须创建一个类来描述要写入的数据。
 
@@ -416,9 +416,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 ### 修改 Bolt
 
-1. 在“解决方案资源管理器”中，右键单击“EventHubReader”项目，然后单击“管理 NuGet 包”。搜索 **Json.Net** 包，然后将它添加到解决方案。这样，我们便可以轻松处理从 Spout 接收的 JSON 数据。此外，请添加 **WindowsAzure.Storage** 包，以便能够写入表存储。
-
-1. 打开 **Bolt.cs**，在该文件的顶部添加以下内容：
+1. 在“解决方案资源管理器”中，展开 **EventHubReader** 项目，然后打开 **Bolt.cs** 文件。在该文件的顶部，添加以下内容：
 
 		using Newtonsoft.Json.Linq;
 		using Microsoft.WindowsAzure.Storage;
@@ -484,7 +482,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 此时，你已完成了一个从事件中心读取数据，并将数据存储在表存储中名为 **events** 的表内的拓扑。
 
-## 部署拓扑
+##部署拓扑
 
 1. 在“解决方案资源管理器”中，右键单击“EventHubReader”项目，然后选择“提交到 Storm on HDInsight”。
 
@@ -508,9 +506,9 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar**
 
 	* **EventHubWriter** 拓扑正在生成事件，并将这些事件写入事件中心。
 
-	* **然后，EventHubReader** 将从事件中心读取事件，并将其存储在表存储中的 **events** 表内。
+	* 然后，**EventHubReader** 将从事件中心读取事件，并将其存储在表存储中的 **events** 表内。
 
-## 停止拓扑
+##停止拓扑
 
 若要停止拓扑，请在“Storm 拓扑查看器”中选择每个拓扑，然后单击“终止”。
 
@@ -553,4 +551,4 @@ EventHubSpout 定期检查点其状态为 Zookeeper 节点，将保存当前的�
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
  
 
-<!---HONumber=71-->
+<!---HONumber=76-->

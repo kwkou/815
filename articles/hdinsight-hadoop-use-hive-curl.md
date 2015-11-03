@@ -10,8 +10,8 @@
 
 <tags
    ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015" />
+   ms.date="08/28/2015"
+   wacn.date="11/02/2015" />
 
 #使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询
 
@@ -25,7 +25,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-* HDInsight 群集上的 Hadoop
+* HDInsight 群集上的 Hadoop（基于 Windows）
 
 * [Curl](http://curl.haxx.se/)
 
@@ -52,7 +52,7 @@
     * **-u** - 用来对请求进行身份验证的用户名和密码。
     * **-G** - 指出这是 GET 请求。
 
-    所有请求的 URL 开头 ****https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。路径 **/status** 指示，请求是返回服务器的 WebHCat（也称为 Templeton）的状态。你还可以通过使用以下命令请求 Hive 的版本：
+    所有请求的 URL 开头 **https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。路径 **/status** 指示，请求是返回服务器的 WebHCat（也称为 Templeton）的状态。你还可以通过使用以下命令请求 Hive 的版本：
 
         curl -u USERNAME:PASSWORD -G https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/version/hive
 
@@ -62,7 +62,7 @@
 
 2. 使用以下命令创建名为 **log4jLogs** 的新表：
 
-        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="DROP+TABLE+log4jLogs;CREATE+EXTERNAL+TABLE+log4jLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+ROW+FORMAT+DELIMITED+FIELDS+TERMINATED+BY+' '+STORED+AS+TEXTFILE+LOCATION+'wasb:///example/data/';SELECT+t4+AS+sev,COUNT(*)+AS+count+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+GROUP+BY+t4;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/hive
+        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="DROP+TABLE+log4jLogs;CREATE+EXTERNAL+TABLE+log4jLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+ROW+FORMAT+DELIMITED+FIELDS+TERMINATED+BY+' '+STORED+AS+TEXTFILE+LOCATION+'wasb:///example/data/';SELECT+t4+AS+sev,COUNT(*)+AS+count+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+AND+INPUT__FILE__NAME+LIKE+'%25.log'+GROUP+BY+t4;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/hive
 
     此命令中使用的参数如下：
 
@@ -92,6 +92,10 @@
 
     > [AZURE.NOTE]请注意，在与 Curl 配合使用时，将用 `+` 字符替换 HiveQL 语句之间的空格。如果带引号的值包含空格（例如分隔符），则不应替换为 `+`。
 
+    * **INPUT__FILE__NAME LIKE '%25.log'** - 此项会对搜索进行限制，仅使用以 .log 结尾的文件。如果此项不存在，Hive 会尝试搜索此目录及其子目录中的所有文件，包括不符合为此表定义的列架构的文件。
+
+    > [AZURE.NOTE]请注意，%25 是 % 的 URL 编码形式，因此实际条件是 `like '%.log'`。% 必须是 URL 编码的，因为系统将其视为 URL 中的特殊字符。
+
     此命令应会返回可用来检查作业状态的作业 ID。
 
         {"id":"job_1415651640909_0026"}
@@ -104,7 +108,7 @@
 
     > [AZURE.NOTE]此 Curl 请求返回具有作业相关信息的 JavaScript 对象表示法 (JSON) 文档；使用 jq 可以仅检索状态值。
 
-4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 ****wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
+4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
 
     可以使用 [Azure CLI](/documentation/articles/xplat-cli) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
 
@@ -114,9 +118,9 @@
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS_KEY** 环境变量。请参阅 <a href="/documentation/articles/hdinsight-upload-data/" target="\_blank" 了解详细信息。
+	> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_ACCESS_KEY** 环境变量。请参阅 <a href="/documentation/articles/hdinsight-upload-data/" target="_blank" 了解详细信息。
 
-6. 使用以下语句可创建名为 **errorLogs** 的新“内部”表：
+6. 使用以下语句创建名为 **errorLogs** 的新“内部”表：
 
         curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="CREATE+TABLE+IF+NOT+EXISTS+errorLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+STORED+AS+ORC;INSERT+OVERWRITE+TABLE+errorLogs+SELECT+t1,t2,t3,t4,t5,t6,t7+FROM+log4jLogs+WHERE+t4+=+'[ERROR]';SELECT+*+from+errorLogs;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/hive
 
@@ -143,18 +147,18 @@
 
 有关将 Hive 与 HDInsight 配合使用的一般信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[azure-purchase-options]: /pricing/purchase-options/
+[azure-purchase-options]: /pricing/overview/
 
 [azure-trial]: /pricing/1rmb-trial/
 
@@ -162,19 +166,26 @@
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
+
+
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

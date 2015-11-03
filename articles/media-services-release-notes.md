@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"  
-	wacn.date="10/03/2015"/>
+	ms.date="09/20/2015"   
+	wacn.date="11/02/2015"/>
 
 # Azure 媒体服务发行说明
 
@@ -20,6 +20,8 @@
 
 - [当前已知的问题](#issues)
 - [REST API 版本历史记录](#rest_version_history)
+- [2015 年 9 月版本](#september_changes_15)
+- [2015 年 8 月版本](#august_changes_15)
 - [2015 年 7 月版本](#july_changes_15)
 - [2015 年 6 月版本](#june_changes_15)
 - [2015 年 5 月版本](#may_changes_15)
@@ -59,12 +61,31 @@
 
 有关媒体服务 REST API 版本历史记录的信息，请参阅 [Azure 媒体服务 REST API 参考]。
 
+##<a id="september_changes_15"></a>2015 年 9 月版本 
+
+- AMS 现在提供通过 Widevine 模块化 DRM 技术保护点播视频 (VOD) 和实时流的功能。你可以通过以下交付服务合作伙伴来交付 Widevine 许可证：[Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/)、[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)。
+
+	你可以通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
+
+- AMS 增加了对 Apple ProRes 视频的支持。你现在可以上载使用 Apple ProRes 或其他编解码器的 QuickTime 源视频文件。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/announcing-support-for-apple-prores-videos-in-azure-media-services/)。
+
+- 你现在可以使用媒体编码器标准版来执行子剪辑和实时存档提取操作。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)。
+
+##<a id="august_changes_15"></a>2015 年 8 月版本
+
+- Azure Media Services SDK for Java V0.8.0 版和新示例现已推出。有关详细信息，请参阅：
+
+	- [博客文章](http://southworks.com/blog/2015/08/25/microsoft-azure-media-services-sdk-for-java-v0-8-0-released-and-new-samples-available/)
+	- [Java 示例存储库](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+- 支持多音频流的 Azure Media Player 更新。有关详细信息，请参阅：
+	- [博客文章](https://azure.microsoft.com/blog/2015/08/13/azure-media-player-update-with-multi-audio-stream-support/)
+
 ##<a id="july_changes_15"></a>2015 年 7 月版本
 
-宣布媒体编码器标准版公开上市。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)。
+- 宣布媒体编码器标准版公开上市。有关详细信息，请参阅[此博客文章](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)。
 
-媒体编码器标准版使用[本](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)部分中所述的预设值。
-
+	媒体编码器标准版使用[本](https://msdn.microsoft.com/library/azure/mt269960.aspx)部分中所述的预设值。注意，当使用预设值进行 4K 编码时，应获取“高级版”保留单位类型。有关详细信息，请参阅[如何缩放编码](/documentation/articles/media-services-portal-encoding-units)。
+- Azure 媒体服务和播放器的实时标题。有关详细信息，请参阅[此博客文章](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/)
 
 ###媒体服务 .NET SDK 更新
 
@@ -105,7 +126,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.3.0.0。此版本中增加了以�
 - 自媒体服务 REST 2.10 起，频道被配置为插入 RTMP 协议，并使用主要和辅助插入 URL 进行创建。有关详细信息，请参阅[频道插入配置](/documentation/articles/media-services-manage-channels-overview#channel_input)
 - Azure 媒体索引器更新
 	- 支持西班牙语
-	- 新增配置 XML 示例
+	- 新增配置 XML 格式
 	
 	有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/)。
 ###媒体服务 .NET SDK 更新
@@ -175,7 +196,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 - 媒体服务现在允许你通过 SSL 连接插入实时平滑流式处理 (FMP4) 内容。若要通过 SSL 进行摄取，请确保将摄取 URL 更新为 HTTPS。有关实时流式处理的详细信息，请参阅[使用 Azure 媒体服务实时流式处理]。
 - 注意，当前无法通过 SSL 连接插入 RTMP 实时流。
 - 你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
-- 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请[创建新的流式处理终结点](/documentation/articles/media-services-manage-origins)。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
+- 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请[创建新的流式处理终结点](/documentation/articles/media-services-manage-origins/)。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
    
 ##<a id="october_changes_14"></a>2014 年 10 月版本
 
@@ -516,7 +537,7 @@ azure-sdk-tools 中现在包含以下媒体服务 PowerShell Cmdlet。
 <!-- URLs. -->
 [Azure 媒体服务 MSDN 论坛]: http://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=MediaServices
 [Azure 媒体服务 REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx
-[媒体服务定价详细信息]: http://www.windowsazure.cn/zh-cn/pricing/details/media-services/
+[媒体服务定价详细信息]: /home/features/media-services/#price
 [输入元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx
 [输出元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx
 [交付内容]: /documentation/articles/media-services-deliver-content-overview
@@ -547,4 +568,4 @@ azure-sdk-tools 中现在包含以下媒体服务 PowerShell Cmdlet。
 [跨多个存储帐户管理媒体服务资产]: /documentation/articles/meda-services-managing-multiple-storage-accounts
 [处理媒体服务作业通知]: /documentation/articles/media-services-check-job-progress/#check_progress_with_queues
 
-<!---HONumber=71-->
+<!---HONumber=76-->

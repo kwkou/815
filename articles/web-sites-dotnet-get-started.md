@@ -240,13 +240,13 @@
 
 4. 单击“配置”选项卡。
 
-	“配置”选项卡可让你控制用于站点的 .NET 版本、启用 [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) 和[诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log)等功能、设置[连接字符串值](http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)，等等。[](/documentation/articles/web-sites-configure//)
+	“配置”选项卡可让你控制用于站点的 .NET 版本、启用 [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) 和[诊断日志记录](/documentation/articles/web-sites-enable-diagnostic-log/)等功能、设置[连接字符串值](http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)，等等。[](/documentation/articles/web-sites-configure/)
 
 	![门户网站配置选项卡](./media/web-sites-dotnet-get-started-vs2013/portalconfigure.png)
   
 5. 单击“缩放”选项卡。
 
-	对于网站服务的付费层，“缩放”选项卡允许你控制为 Web 应用程序提供服务的计算机的大小和数量，以处理流量的变化。[](/documentation/articles/web-sites-scale)
+	对于网站服务的付费层，“缩放”选项卡允许你控制为 Web 应用程序提供服务的计算机的大小和数量，以处理流量的变化。[](/documentation/articles/web-sites-scale/)
 
 	你可以手动缩放或配置条件或计划以进行自动缩放。
 
@@ -281,12 +281,12 @@
 
 	有关如何使用 SSL 和你自己的域（例如 www.contoso.com 而不是 contoso.chinacloudsites.cn）的信息，请参阅以下资源：
 
-	* [为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。 
-	* [为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
+	* [为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。 
+	* [为 Azure 网站启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 * 空闲超时后如何避免唤醒等待时间
 
-	默认情况下，网站如果已处于空闲状态相当一段时间，则是未加载的状态。此后，第一次请求必须等待重新加载站点。为了避免等待，你可以启用 AlwaysOn 功能。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure)中的配置选项。
+	默认情况下，网站如果已处于空闲状态相当一段时间，则是未加载的状态。此后，第一次请求必须等待重新加载站点。为了避免等待，你可以启用 AlwaysOn 功能。有关详细信息，请参阅[如何配置网站](/documentation/articles/web-sites-configure/)中的配置选项。
 
 * 如何添加聊天之类的实时功能
 
@@ -294,4 +294,4 @@
 
 * 如何为 Web 应用程序在 Azure 网站、云服务和 VM 之间做出选择
 
-	在 Azure 中，你可以根据本教程中所述在网站中运行 Web 应用程序，也可以在云服务或虚拟机中运行 Web 应用程序。有关详细信息，请参阅 [Azure 执行模型](/documentation/articles/fundamentals-application-models)和 [Azure 网站、云服务和 VM：何时使用何种产品？](/documentation/articles/choose-web-site-cloud-service-vm)。
+	在 Azure 中，你可以根据本教程中所述在网站中运行 Web 应用程序，也可以在云服务或虚拟机中运行 Web 应用程序。有关详细信息，请参阅 [Azure 执行模型](/documentation/articles/fundamentals-application-models/)和 [Azure 网站、云服务和 VM：何时使用何种产品？](/documentation/articles/choose-web-site-cloud-service-vm/)。

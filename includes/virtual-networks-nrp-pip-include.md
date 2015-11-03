@@ -1,0 +1,35 @@
+## 公共 IP 地址
+公共 IP 地址提供保留的或动态的公共 IP 地址资源。尽管可以创建作为独立对象的公共 IP 地址，但你需要将其关联到另一个对象才能实际使用该地址。你可以将公共 IP 地址关联到负载平衡器、应用程序网关或 NIC 以提供对这些资源的 Internet 访问。
+
+|属性|说明|示例值|
+|---|---|---|
+|**publicIPAllocationMethod**|定义 IP 地址是*静态*的还是*动态*的。|static、dynamic|
+|**idleTimeoutInMinutes**|定义空闲超时。|介于 4 和 30 之间的任何值|
+|**ipAddress**|分配给对象的 IP 地址。这是只读属性。|104\.42.233.77|
+
+### DNS 设置
+公共 IP 地址具有一个名为 **dnsSettings** 的子对象，该对象包含以下属性：
+
+|属性|说明|示例值|
+|---|---|---|
+|**domainNameLabel**|命名的主机，用于名称解析。|www、ftp、vm1|
+|**reverseFqdn**|完全限定的域名，可解析为 IP 地址并在 DNS 中注册为 PTR 记录。|www.contoso.com。|
+
+采用 JSON 格式的示例公共 IP 地址：
+
+	{
+	   "name": "PIP01",
+	   "location": "North US",
+	   "tags": { "key": "value" },
+	   "properties": {
+	      "publicIPAllocationMethod": "Static",
+	      "idleTimeoutInMinutes": 4,
+		  "ipAddress": "104.42.233.77",
+	      "dnsSettings": {
+	         "domainNameLabel": "mylabel",
+	         "reverseFqdn": "contoso.com."
+	      }
+	   }
+	} 
+
+<!---HONumber=76-->

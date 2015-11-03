@@ -12,7 +12,7 @@ DNS 系统基于 *records*。记录将特定的 *name*（例如 **contoso.com**�
 
 ###CNAME 或别名记录
 
-CNAME 记录将  *specific* DNS 名称（例如 **mail.contoso.com** 或 **www.contoso.com**）映射到另一个（规范）域名。对于使用 Traffic Manager 的 Azure 网站；规范域名是您的 Traffic Manager 配置文件的 **&lt;myapp>.trafficmanager.cn** 域名。创建后，CNAME 将为 **&lt;myapp>.trafficmanager.ncn** 域名创建一个别名。CNAME 条目将自动解析为您的 **&lt;myapp>.trafficmanager.cn** 的 IP 地址，因此，如果网站的 IP 地址发生更改，您不必采取任何操作。
+CNAME 记录将  *specific* DNS 名称（例如 **mail.contoso.com** 或 **www.contoso.com**）映射到另一个（规范）域名。对于使用 Traffic Manager 的 Azure 网站；规范域名是您的 Traffic Manager 配置文件的 **&lt;myapp>.trafficmanager.cn** 域名。创建后，CNAME 将为 **&lt;myapp>.trafficmanager.cn** 域名创建一个别名。CNAME 条目将自动解析为您的 **&lt;myapp>.trafficmanager.cn** 的 IP 地址，因此，如果网站的 IP 地址发生更改，您不必采取任何操作。
 
 一旦流量到达 Traffic Manager，后者随后会使用它为流量配置的负载平衡方法，将该流量路由到您的网站。这对您的网站访问者完全透明。他们将只在浏览器中看到自定义域。
 

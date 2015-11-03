@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-   ms.date="05/28/2015"
-   wacn.date="08/29/2015" />
+   ms.date="09/01/2015"
+   wacn.date="11/02/2015" />
 
 # 在服务配置文件中指定 DNS 设置
 
@@ -25,16 +25,16 @@
         <DnsServer name="ID3" IPAddress="IPAddress3" />
       </DnsServers>
 
->[AZURE.WARNING]**DnsServer** 元素中的 **name** 属性仅用作引用名称。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值必须在整个 Microsoft Azure 订阅中具有唯一性。
+>[AZURE.WARNING]**DnsServer** 元素中的 **name** 属性仅用作引用名称。它不表示 DNS 服务器的主机名。每个 **DnsServer** 属性值必须在整个 Windows Azure 订阅中是唯一的。
 
 ## 另请参阅
 
-- [Azure 服务配置架构 (.cscfg)](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
+[Azure 服务配置架构 (.cscfg)](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
 
-- [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
+[Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
-<!--[使用网络配置文件配置虚拟网络](http://go.microsoft.com/fwlink/?LinkId=248094)-->
+[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)
 
-- [关于管理门户中的虚拟网络设置](/documentation/articles/virtual-networks-settings)
+[关于管理门户中的虚拟网络设置](/documentation/articles/virtual-networks-settings/)
 
-<!---HONumber=67-->
+<!---HONumber=76-->

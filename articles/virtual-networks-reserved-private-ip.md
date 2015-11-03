@@ -32,7 +32,7 @@
 ## 如何在创建 VM 时指定静态内部 IP
 下面的 PowerShell 脚本将创建名为 *TestService* 的全新云服务，然后从 Azure 中检索映像，接着在新的云服务中使用检索的映像创建名为 *TestVM* 的 VM，对该 VM 进行设置，使之位于名为 *Subnet-1* 的子网中，最后再将 *10.0.0.7* 设置为 VM 的静态内部 IP：
 
-	New-AzureService -ServiceName TestService -Location "Central US"
+	New-AzureService -ServiceName TestService -Location "China North"
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `

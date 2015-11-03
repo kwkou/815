@@ -10,8 +10,8 @@
 
 <tags
    ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="08/28/2015"
+   wacn.date="11/02/2015"/>
 
 #使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
@@ -25,9 +25,9 @@
 
 若要完成本文中的步骤，你将需要：
 
-* Azure HDInsight（HDInsight 上的 Hadoop）群集
+* Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
 
-* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)、Visual Studio 2013 [Update 3](http://go.microsoft.com/fwlink/?LinkId=390465) 或 [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
+* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)、Visual Studio 2013 [Update 3](https://www.visualstudio.com/downloads/download-visual-studio-vs) 或 [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
 
 ##<a id="run"></a> 使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
@@ -39,7 +39,7 @@
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
         STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
-        SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
+        SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
     这些语句将执行以下操作：
 
@@ -53,6 +53,7 @@
     * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
     * **STORED AS TEXTFILE LOCATION**：让 Hive 知道数据的存储位置（example/data 目录），并且数据已存储为文本。
     * **SELECT** - 选择其列 **t4** 包含值 **[ERROR]** 的所有行计数。这应会返回值 **3**，因为有三个行包含此值。
+    * **INPUT__FILE__NAME LIKE '%.log'** - 告诉 Hive，我们只应返回以 .log 结尾的文件中的数据。此项将搜索限定于包含数据的 sample.log 文件，使搜索不会返回与所定义架构不符的其他示例数据文件中的数据。
 
 3. 从工具栏中，选择你要用于此查询的“HDInsight 群集”，然后选择“提交”以 Hive 作业形式运行语句。“Hive 作业摘要”将会出现并显示有关正在运行的作业的信息。在“作业状态”更改为“已完成”之前，使用“刷新”链接刷新作业信息。
 
@@ -63,13 +64,13 @@
 6. 在出现的 **temp.hql** 文档中，添加以下 HiveQL 语句：
 
         CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
-        INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
+        INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log';
 
     这些语句将执行以下操作：
 
     * **CREATE TABLE IF NOT EXISTS**：创建表（如果该表尚不存在）。由于未使用 **EXTERNAL** 关键字，因此这是一个内部表，它存储在 Hive 数据仓库中并完全受 Hive 的管理。
 
-        > [AZURE.NOTE]与**外部**表不同，删除内部表会同时删除基础数据。
+        > [AZURE.NOTE]与 **EXTERNAL** 表不同，删除内部表会同时删除基础数据。
 
     * **STORED AS ORC**：以优化行纵栏表 (ORC) 格式存储数据。这是高度优化且有效的 Hive 数据存储格式。
     * **INSERT OVERWRITE ...SELECT**：从包含 **[ERROR]** 的 **log4jLogs** 表中选择行，然后将数据插入 **errorLogs** 表中。
@@ -86,17 +87,17 @@
 
 有关 HDInsight 中的 Hive 的一般信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 有关适用于 Visual Studio 的 HDInsight 工具的详细信息：
 
-* [适用于 Visual Studio 的 HDInsight 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started)
+* [适用于 Visual Studio 的 HDInsight 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)
 
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
@@ -105,19 +106,26 @@
 [apache-hive]: http://hive.apache.org/
 [apache-log4j]: http://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
+
+
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+
+[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->

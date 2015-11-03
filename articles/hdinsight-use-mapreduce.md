@@ -178,7 +178,9 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定�
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
+
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
+
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
 <!---HONumber=71-->

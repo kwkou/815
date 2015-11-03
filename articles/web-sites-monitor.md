@@ -38,7 +38,7 @@
 6. 若要从“监视”页中删除度量值，请选择要删除的度量值，然后单击页面底部的“删除度量值”图标。
 
 ## <a name="howtoreceivealerts"></a>如何：接收来自 Web 应用度量值的警报
-在“标准”Web 应用模式中，可以收到基于 Web 应用监视度量值的警报。该警报功能要求你首先配置用于监视的 Web 终结点，你可以在“配置”页的“监视”部分中进行此配置。然后，在 Azure 管理门户的“设置”页上，可以创建规则，当所选度量值达到指定的值时，触发警报。你还可以选择在触发警报时发送电子邮件。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则](http://go.microsoft.com/fwlink/?LinkId=309356)。
+在“标准”Web 应用模式中，可以收到基于 Web 应用监视度量值的警报。该警报功能要求你首先配置用于监视的 Web 终结点，你可以在“配置”页的“监视”部分中进行此配置。然后，在 Azure 管理门户的“设置”页上，可以创建规则，当所选度量值达到指定的值时，触发警报。你还可以选择在触发警报时发送电子邮件。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则](https://msdn.microsoft.com/library/azure/dn306638.aspx)。
 
 ## <a name="howtoviewusage"></a>如何：查看 Web 应用的使用率配额
 
@@ -55,7 +55,7 @@
 	-	**文件系统存储** - 当达到配额时，文件系统存储仍然可以访问以执行读取操作，但所有其他写入操作（包括正常 Web 应用活动所需的写入操作）将会被阻止。文件使用量降低或将该网站移入配额更高的 Web 托管计划时，写入操作将恢复。
 	-	**链接的资源** - 在此处还显示所有链接的 Web 应用资源的配额，例如数据库或存储。
 
-	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。关于各 Web 托管计划的使用率配额详情，请参阅<!--[-->网站限制<!--](/documentation/articles/azure-subscription-service-limits/#websiteslimits)-->。
+	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。关于各 Web 托管计划的使用率配额详情，请参阅[网站限制](/documentation/articles/azure-subscription-service-limits/#websiteslimits)。
 
 
 ## <a name="resourceusage"></a>如何：避免超过配额
@@ -229,7 +229,7 @@
 
 **日志文件类型：Web 服务器日志记录**
 
-- 位置：/LogFiles/http/RawLogs。使用 [W3C 扩展日志格式](http://go.microsoft.com/fwlink/?LinkID=90561)设置文件中存储的信息的格式。Azure Web Apps 不使用 s-computername、s-ip 和 cs-version 字段。
+- 位置：/LogFiles/http/RawLogs。使用 [W3C 扩展日志格式](http://www.w3.org/TR/WD-logfile.html)设置文件中存储的信息的格式。Azure Web Apps 不使用 s-computername、s-ip 和 cs-version 字段。
 
 - 用于读取文件的工具：日志分析程序。用于分析和查询 IIS 日志文件。可从 Microsoft 下载中心获得 Log Parser 2.2，网址为 <a href="http://go.microsoft.com/fwlink/?LinkId=246619">http://go.microsoft.com/fwlink/?LinkId=246619</a>。
 

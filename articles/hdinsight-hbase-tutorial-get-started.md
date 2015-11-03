@@ -105,7 +105,7 @@ HBase 以集成到 Azure 环境中的托管群集形式提供。这些群集配�
 HBase 提供了多种方法用于将数据载入表中。有关详细信息，请参阅[批量加载](http://hbase.apache.org/book.html#arch.bulk.load)。
 
 
-已将示例数据文件上载到公共 Azure Blob 容器 wasb://hbasecontacts@hditutorialdata.blob.core.chinacloudapi.cn/contacts.txt。该数据文件的内容为：
+已将示例数据文件上载到公共 Azure Blob 容器 wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt。该数据文件的内容为：
 
 	8396	Calvin Raji		230-555-0191	230-555-0191	5415 San Gabriel Dr.
 	16600	Karen Wu		646-555-0113	230-555-0192	9265 La Paz
@@ -130,7 +130,7 @@ HBase 提供了多种方法用于将数据载入表中。有关详细信息，�
 
 3. 运行以下命令，将数据文件转换成 StoreFiles 并将其存储在 Dimporttsv.bulk.output 指定的相对路径：
 
-		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasb://hbasecontacts@hditutorialdata.blob.core.chinacloudapi.cn/contacts.txt
+		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 4. 运行以下命令，将数据从 /example/data/storeDataFileOutput 上载到 HBase 表：
 
@@ -308,7 +308,8 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 [azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
+
 [img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-quick-create.png
 [img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-hive-editor.png
 [img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-file-browser.png

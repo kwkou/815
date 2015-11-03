@@ -18,7 +18,7 @@ Azure 使用 xml 文件定义可用于订阅的所有 VNet。可以下载此文�
 6. 使用任何 XML 或文本编辑器应用程序打开前面步骤 5 中保存的文件，并查找 **<VirtualNetworkSites>** 元素。如果你已创建任何网络，每个网络将显示为其自身的 **<VirtualNetworkSite>** 元素。
 7. 若要创建此方案中所述的虚拟网络，请在 **<VirtualNetworkSites>** 元素的正下方添加以下 XML：
 
-		<VirtualNetworkSite name="TestVNet" Location="Central US">
+		<VirtualNetworkSite name="TestVNet" Location="China North">
 		  <AddressSpace>
 		    <AddressPrefix>192.168.0.0/16</AddressPrefix>
 		  </AddressSpace>

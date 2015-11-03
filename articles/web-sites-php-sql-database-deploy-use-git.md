@@ -270,7 +270,7 @@
 
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/zh-cn/download/details.aspx?id=29062
-[install-Drivers]: http://www.microsoft.com/download/details.aspx?id=20098
+[install-Drivers]: http://www.microsoft.com/zh-cn/download/details.aspx?id=20098
 [install-git]: http://git-scm.com/
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
 [running-app]: ./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png

@@ -54,7 +54,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 		Select-AzureSubscription <AzureSubscriptionName>
 
 
->[AZURE.NOTE]Azure 服务名称和虚拟机名称必须是唯一的。本教程中使用的名称是 Contoso-[Azure Service/VM name]-[EU/US]。例如，Contoso-VNet-CN 是位于中国北部数据中心的 Azure 的虚拟网络；Contoso-DNS-CE 是位于美国东部数据中心的 DNS 服务器 VM。你必须选择适合自己的名称。
+>[AZURE.NOTE]Azure 服务名称和虚拟机名称必须是唯一的。本教程中使用的名称是 Contoso-[Azure Service/VM name]-[CN/CE]。例如，Contoso-VNet-CN 是位于中国北部数据中心的 Azure 的虚拟网络；Contoso-DNS-CE 是位于美国东部数据中心的 DNS 服务器 VM。你必须选择适合自己的名称。
  
 
 ##创建两个 Azure VNet
@@ -243,13 +243,19 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+
 [azure-free-trial]: /pricing/1rmb-trial/
 [azure-portal]: http://manage.windowsazure.cn
 
 
 [powershell-install]: /documentation/articles/install-configure-powershell
-[hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication
-[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+
+
+
+[hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
+[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
+
+
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png

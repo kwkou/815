@@ -7,6 +7,8 @@
 
 		Switch-AzureMode AzureResourceManager
 	
+	预期输出：
+
 		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
 
 	>[AZURE.WARNING]Switch-AzureMode cmdlet 将在不久后弃用。如果弃用，所有资源管理器 cmdlet 都将重命名。
@@ -14,6 +16,8 @@
 3. 如有必要，请运行 **New-AzureResourceGroup** cmdlet 来创建新资源组，如下所示。对于我们的方案，创建一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview#resource-groups)。
 
 		New-AzureResourceGroup -Name TestRG -Location centralus
+
+	预期输出：
 	
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -31,6 +35,8 @@
 		New-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
 			-AddressPrefix 192.168.0.0/16 -Location centralus	
 		
+	预期输出：
+
 		Name              : TestVNet
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -60,6 +66,8 @@
 		Add-AzureVirtualNetworkSubnetConfig -Name FrontEnd `
 			-VirtualNetwork $vnet -AddressPrefix 192.168.1.0/24
 		
+	预期输出：
+
 		Name              : TestVNet
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -98,6 +106,8 @@
 
 		Set-AzureVirtualNetwork -VirtualNetwork $vnet	
 		
+	预期输出：
+
 		Name              : TestVNet
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -137,4 +147,4 @@
 		                      }
 		                    ]
 
-<!---HONumber=69-->
+<!---HONumber=76-->

@@ -229,7 +229,7 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
    <td valign="middle">X</td>
    <td valign="middle">X</td>
    <td valign="middle">X</td>
-   <td valign="middle">网站可以轻松地托管 REST API 中间层，并且网站的 <a href="/zh-cn/documentation/articles/websites-webjobs-resources/">WebJobs</a> 功能可以托管后台处理作业。你可以在专用网站中运行 WebJobs，以实现层的独立可扩展性。</td>
+   <td valign="middle">网站可以轻松地托管 REST API 中间层，并且网站的 <a href="/documentation/articles/websites-webjobs-resources/">WebJobs</a> 功能可以托管后台处理作业。你可以在专用网站中运行 WebJobs，以实现层的独立可扩展性。</td>
 </tr>
 <tr>
    <td valign="middle"><p>集成的 MySQL-as-a-service 支持</p></td>
@@ -330,7 +330,7 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
 
 有关三个 Web 托管选项的详细信息，请参阅以下资源：
 
-* <!--[-->Azure 简介<!--](/documentation/articles/fundamentals-introduction-to-azure)-->
+* [Azure 简介](/documentation/articles/fundamentals-introduction-to-azure)
 * [Azure 执行模型](/documentation/articles/fundamentals-application-models)
 
 若要开始使用为应用程序选择的选项，请参阅以下资源：
@@ -344,8 +344,8 @@ Azure 网站是这种情况不错的解决方案，因为开始你可以免费�
   [云服务]: /zh-cn/documentation/services/cloud-services/
   [虚拟机]: /zh-cn/documentation/services/virtual-machines/
   [ClearDB]: http://www.cleardb.com/
-  [WebJobs]: /zh-cn/documentation/articles/websites-webjobs-resources/
-  [Configuring an SSL certificate for an Azure  Website]: /zh-cn/documentation/articles/web-sites-configure-ssl-certificate/
+  [WebJobs]: /documentation/articles/websites-webjobs-resources/
+  [Configuring an SSL certificate for an Azure  Website]: /documentation/articles/web-sites-configure-ssl-certificate/
   [dotnet]: /develop/net/
   [nodejs]: /develop/nodejs/
   [PHP]: /develop/php/

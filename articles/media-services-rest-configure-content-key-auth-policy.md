@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="11/02/2015"/>
 
 
 
@@ -20,7 +20,7 @@
 
 ##概述
 
-借助 Windows Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady DRM 动态加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
+借助 Windows Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady DRM（动态）加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
 
 如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-rest-create-contentkey)所述），并且配置密钥的授权策略（如本文所述）。
 
@@ -467,4 +467,4 @@
 ##后续步骤
 在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)主题。
 
-<!---HONumber=71-->
+<!---HONumber=76-->

@@ -9,13 +9,13 @@
 
 <tags 
 	ms.service="media-services" 
-	ms.date="08/11/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015" 
+	wacn.date="11/02/2015"/>
 
 #如何：检查作业进度
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-portal-check-job-progress)
+- [门户](/documentation/articles/media-services-portal-check-job-progress)
 - [.NET](/documentation/articles/media-services-check-job-progress)
 - [REST](/documentation/articles/media-services-rest-check-job-progress)
 
@@ -36,4 +36,4 @@
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png
  
 
-<!---HONumber=71-->
+<!---HONumber=76-->

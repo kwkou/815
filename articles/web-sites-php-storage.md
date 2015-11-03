@@ -445,7 +445,7 @@ Tasklist 应用程序的主页应列出所有现有任务并允许插入新任�
 [msdn-table-query-syntax]: http://msdn.microsoft.com/zh-cn/library/azure/dd894031.aspx
 [ws-storage-app]: ./media/web-sites-php-storage/ws-storage-app.png
 [management-portal]: https://manage.windowsazure.cn
-[new-Website]: ./media/web-sites-php-storage/new\_ Website.jpg
+[new-Website]: ./media/web-sites-php-storage/new\_Website.jpg
 
 [website-quick-create]: ./media/web-sites-php-storage/createsite.png
 [website-quick-create-details]: ./media/web-sites-php-storage/sitedetails.png

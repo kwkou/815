@@ -28,7 +28,7 @@
 
 ## <a name="install"></a>如何安装 Solr？
 
-用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户设置群集时使用示例脚本的说明。
+用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户设置群集时使用示例脚本的说明。
 
 
 > [AZURE.NOTE] 示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
@@ -44,7 +44,7 @@
 		<tr><td>名称</td>
 			<td>指定脚本操作的名称。例如 <b>Install Solr</b>。</td></tr>
 		<tr><td>脚本 URI</td>
-			<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如，<i>https://hdiconfigactions.blob.core.chinacloudapi.cn/solrconfigactionv01/solr-installer-v01.ps1</i></td></tr>
+			<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如，<i>https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1</i></td></tr>
 		<tr><td>节点类型</td>
 			<td>指定在其上运行自定义脚本的节点。你可以选择<b>所有节点</b>、<b>仅限头节点</b>或<b>仅限从节点</b><b></b><b></b><b></b>。
 		<tr><td>参数</td>
@@ -171,4 +171,5 @@
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+
 <!---HONumber=71-->

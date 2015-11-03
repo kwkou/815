@@ -5,16 +5,20 @@
 1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 2. 运行 **Switch-AzureMode** cmdlet 以切换到资源管理器模式，如下所示。
 
-	Switch-AzureMode AzureResourceManager
+		Switch-AzureMode AzureResourceManager
 
-	警告：Switch-AzureMode cmdlet 将弃用，并在以后的版本中删除。
+	下面是上述命令的预期输出：
+
+		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
 
 	>[AZURE.WARNING]Switch-AzureMode cmdlet 将在不久后弃用。如果弃用，所有资源管理器 cmdlet 都将重命名。
 
-3. 如有必要，请运行 **New-AzureResourceGroup** cmdlet 来创建新资源组。以下命令在*“美国中部”*Azure 区域创建了一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview#resource-groups)。
+3. 如有必要，请运行 **New-AzureResourceGroup** cmdlet 来创建新资源组。以下命令在*“美国中部”*Azure 区域创建了一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
 		New-AzureResourceGroup -Name TestRG -Location centralus
 		
+	下面是上述命令的预期输出：
+
 		ResourceGroupName : TestRG
 		Location          : centralus
 		ProvisioningState : Succeeded
@@ -29,7 +33,8 @@
 
 		New-AzureResourceGroupDeployment -Name TestVNetDeployment -ResourceGroupName TestRG `
 			-TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
-		
+			
+	下面是上述命令的预期输出：
 		
 		DeploymentName    : TestVNetDeployment
 		ResourceGroupName : TestRG
@@ -40,7 +45,7 @@
 		Parameters        :
 		                    Name             Type                       Value
 		                    ===============  =========================  ==========
-		                    location         String                     Central US
+		                    location         String                     China North
 		                    vnetName         String                     TestVNet
 		                    addressPrefix    String                     192.168.0.0/16
 		                    subnet1Prefix    String                     192.168.1.0/24
@@ -55,6 +60,7 @@
 
 		Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 		
+	下面是上述命令的预期输出：
 		
 		Name              : TestVNet
 		ResourceGroupName : TestRG
@@ -95,4 +101,4 @@
 		                      }
 		                    ]
 
-<!---HONumber=69-->
+<!---HONumber=76-->

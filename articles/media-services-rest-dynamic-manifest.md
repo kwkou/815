@@ -10,10 +10,15 @@
 
 <tags 
 	ms.service="media-services"  
-	ms.date="08/11/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/07/2015"  
+	wacn.date="11/02/2015"/>
 
 #使用媒体服务 REST API 创建筛选器
+
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/media-services-dotnet-dynamic-manifest)
+- [REST](/documentation/articles/media-services-rest-dynamic-manifest)
+
 
 从 2.11 版开始，媒体服务可让你为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择运行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户请求创建的**动态清单**可以实现对资产进行这种筛选，并基于指定的筛选器流式传输视频。
 
@@ -359,4 +364,4 @@
 
  
 
-<!---HONumber=71-->
+<!---HONumber=76-->

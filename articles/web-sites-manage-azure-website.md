@@ -10,11 +10,11 @@
 <tags 
 	ms.service="app-service-web" 
 	ms.date="07/31/2015" 
-	wacn.date="10/13/2015"/>
+	wacn.date="10/03/2015"/>
 
 # 管理 Azure 网站中的 Web 应用
 
-本主题包含用于管理 Azure 网站中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
+本主题包含用于管理 [Azure 网站](/documentation/services/web-sites/) 中 Web 应用的资源链接。管理包括维持 Web 应用平稳运行的所有任务。
 
 在整个 Web 应用使用期内，您将执行各种管理任务，从初始部署到正常操作、维护与更新。
 
@@ -79,10 +79,11 @@
 
 请考虑使用[分阶段部署](/documentation/articles/web-sites-staged-publishing)。该选项可支持您向与生产部署并排运行的分阶段部署发布更新。
 
-<!-- 如果使用 Visual Studio Online，您可以通过源控件设置持续部署：
+如果使用 Visual Studio Online，您可以通过源控件设置持续部署：
 
-- [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) -->
-<!-- - [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)-->
+- [使用 Team Foundation 版本控制 (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
+- [使用 Git](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)
+ 
 
  
 <!-- Anchors. -->

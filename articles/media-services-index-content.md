@@ -156,7 +156,7 @@
 <br/>
 它要求在运行 Microsoft SQL Server 2008 或更高版本的计算机上安装 Indexer SQL 外接程序。使用 Microsoft SQL Server 全文搜索对 AIB 搜索时，搜索结果比搜索由 WAMI 生成的隐藏字幕文件要准确。这是因为，AIB 包含发音类似单词的替代项，而隐藏字幕文件包含每个音频段的最高信任度单词。如果搜索说过的话很重要，则建议将 AIB 与 Microsoft SQL Server 结合使用。
 <br/><br/>
-若要下载外接程序，请单击 <a href="http://aka.ms/indexersql">Azure Media Indexer SQL 外接程序</a>。
+若要下载外接程序，请单击 <a href="http://manlingtest-samplescdn.streaming.mediaservices.windows.net/be5e4df9-6ec6-44e4-9e6e-40c82dc95d1c/Azure%20Media%20Indexer%20SQL%20Add-on.zip">Azure Media Indexer SQL 外接程序</a>。
 <br/><br/>
 此外，还可以利用其他搜索引擎，如 Apache Lucene/Solr，仅根据隐藏字幕文件和关键字 XML 文件为视频编制索引，但这将导致搜索结果不太准确。</td></tr>
 <tr><td>InputFileName.smi<br/>InputFileName.ttml</td>
