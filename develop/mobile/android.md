@@ -1,6 +1,6 @@
 <properties pageTitle="移动服务-Android - Azure 微软云" metakeywords="" description="" services="" documentationCenter="Android" authors="" manager="Tiffena" editor="EricChen"/>
   
-<tags ms.service="mobile-service" ms.date="" wacn.date="04/11/2015"/>
+<tags ms.service="mobile-service" ms.date="" wacn.date="11/02/2015"/>
 
 
 
@@ -49,7 +49,7 @@
 ###推送
 
 - [使用通知中心发送推送通知](/documentation/articles/notification-hubs-android-get-started)
-<!--- [使用通知中心广播通知](/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news)-->
+- [使用通知中心广播通知](/documentation/articles/notification-hubs-aspnet-backend-android-breaking-news)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users)
 
 查看服务： [通知中心](/documentation/services/notification-hubs)

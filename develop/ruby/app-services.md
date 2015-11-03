@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date="10/18/2014"
-    wacn.date="04/11/2015"
+    wacn.date="11/02/2015"
     />
 
 
@@ -24,6 +24,7 @@
 <p>Service Bus 主题提供发布/订阅消息传送模型，以支持一对多通信。您可以选择以每个订阅为基础注册主题的筛选规则，这样就能限制哪些主题订阅接收某个主题下的哪些消息。</p>
 <h3>功能指南： <a href="/documentation/articles/storage-ruby-how-to-use-queue-storage/">使用 Azure 队列在实例之间进行通信</a></h3>
 <p>Azure 队列可存储大量消息，用户可以通过经验证的呼叫，使用 HTTP 或 HTTPS 从世界任何地方访问这些消息。队列存储的常见用途包括：创建积压工作以进行异步处理，从 Azure Web 角色向 Azure 辅助角色传递消息。</p>
+<!--
 <h2 id="header-2">音频</h2>
 <h3>如何： <a href="/documentation/articles/partner-twilio-ruby-how-to-use-voice-sms/">Twilio 音频和 SMS 服务</a></h3>
-<p>Azure 应用程序可以通过 Twilio 合并电话和短信服务 (SMS) 消息功能。可使用 Twilio API 拨打和接听电话，收发短信，以及通过现有互联网连接（包括移动连接）进行语音通信。</p>
+<p>Azure 应用程序可以通过 Twilio 合并电话和短信服务 (SMS) 消息功能。可使用 Twilio API 拨打和接听电话，收发短信，以及通过现有互联网连接（包括移动连接）进行语音通信。</p>-->

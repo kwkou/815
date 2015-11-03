@@ -1,6 +1,6 @@
 <properties pageTitle="移动服务-iOS - Azure 微软云" metakeywords="" description="" services="" documentationCenter="iOS" authors="" manager="Tiffena" editor="EricChen"/>
   
-<tags ms.service="mobile-service" ms.date="" wacn.date="04/11/2015"/>
+<tags ms.service="mobile-service" ms.date="" wacn.date="11/02/2015"/>
 
 
 #iOS 开发人员中心
@@ -21,9 +21,9 @@
 
 - [通过移动分析深入了解应用程序](/documentation/articles/mobile-services-ios-get-started-mobile-analytics)
 - [使用移动服务同步脱机数据](/documentation/articles/mobile-services-ios-get-started-offline-data)
-<!--- [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication)-->
+- [使用 Active Directory 身份验证库登录](/documentation/articles/mobile-services-dotnet-backend-ios-adal-sso-authentication)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users)
-<!---  [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push)-->
+- [使用影像发送推送通知至 iOS8](/documentation/articles/notification-hubs-aspnet-backend-ios-rich-push)
 - [通过媒体服务使用视频和音频流](/documentation/articles/media-services-use-ios-media-player-framework)
 
 ##教程
