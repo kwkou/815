@@ -10,7 +10,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="06/24/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="11/02/2015"/>
 
 
 # 使用 Microsoft HPC Pack 设置混合计算群集
@@ -26,7 +26,7 @@
 
 ## 先决条件
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account)。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/)。
 
 此外，对于本教程，你还需要以下项。
 
@@ -84,7 +84,7 @@
 使用 [Azure 管理门户](https://manage.windowsazure.cn)来执行以下 Azure 订阅步骤。之所以需要些步骤，是为了之后你可以从本地头节点部署 Azure 节点。
 
 - 上载管理证书（头节点和 Azure 之间的安全连接所需的）
- 
+
 - 创建 Azure 节点（辅助角色实例）将在其中运行的 Azure 云服务
 
 - 创建 Azure 存储帐户
@@ -204,7 +204,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![指定节点][add_node2]
 
-	有关可用虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn197896.aspx)。
+	有关可用虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-cn/library/windowsazure/dn197896.aspx)。
 
 4. 在“完成添加节点向导”页上，单击“完成”。
 
@@ -278,7 +278,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 ## 停止 Azure 节点
 
-在你试用群集后，可以使用 HPC 群集管理器停止 Azure 节点，以免向你的帐户收取不必要的费用。这将停止云服务并且删除 Azure 角色实例。 
+在你试用群集后，可以使用 HPC 群集管理器停止 Azure 节点，以免向你的帐户收取不必要的费用。这将停止云服务并且删除 Azure 角色实例。
 
 1. 在 HPC 群集管理器的“节点管理”中，将两个 Azure 节点都选中。然后，在“操作”窗格中，单击“停止”。
 
@@ -343,4 +343,4 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=71-->
+<!---HONumber=76-->
