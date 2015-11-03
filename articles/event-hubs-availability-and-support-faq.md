@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="事件中心可用性和支持常见问题"
+   pageTitle="事件中心可用性和支持常见问题 | Windows Azure"
    description="事件中心定价和常见问题。"
    services="event-hubs"
    documentationCenter="na"
@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="event-hubs"
-   ms.date="06/09/2015"
-   wacn.date="08/14/2015" />
+   ms.date="10/07/2015"
+   wacn.date="10/22/2015" />
 
 # 事件中心可用性和支持常见问题
 
