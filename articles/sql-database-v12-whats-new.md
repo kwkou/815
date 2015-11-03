@@ -19,12 +19,12 @@
 
 本主题介绍 Azure SQL 数据库新版本 V12 相比版本 V11 具有的诸多优点。
 
-
+<!--
 我们继续向 V12 添加功能。因此，我们鼓励你访问我们的针对 Azure 的服务更新网页并使用其筛选器：
 
 
 - 筛选为 [SQL 数据库服务](http://azure.microsoft.com/updates/?service=sql-database)。
-- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。
+- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。-->
 
 
 有关 SQL 数据库资源限制的最新信息：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。

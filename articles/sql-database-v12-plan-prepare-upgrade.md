@@ -193,7 +193,7 @@ Azure SQL 数据库管理门户：
 
 
 - [SQL Server Management Studio 2014 累积更新 6](http://support2.microsoft.com/kb/3031047)
-- [Visual Studio 2013 中的 SQL Server 数据库工具 2015 年 2 月更新版](https://msdn.microsoft.com/data/hh297027)
+- [Visual Studio 2013 中的 SQL Server 数据库工具 2015 年 2 月更新版](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)
 - [Azure SQL 数据库 V12 数据层应用程序框架 (DacFx) 2015 年 2 月版](https://www.microsoft.com/zh-CN/download/details.aspx?id=45886)
 
 
@@ -243,12 +243,12 @@ Stop- cmdlet 表示取消，而不是暂停。你无法在中途恢复升级，�
 > [AZURE.NOTE]
 > 在升级到 V12 期间，版本低于 V12 的数据库*仍然支持*数据访问。
 
-
+<!--
 ## 相关链接
 
 
 - Microsoft Azure [预览版功能](/home/features/preview/)
-
+-->
 
 <!--Anchors-->
 [Subheading 1]: #subheading-1
