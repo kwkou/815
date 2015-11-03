@@ -9,7 +9,9 @@
 	editor=""/>
 
 <tags
-	ms.service="backup" ms.date="07/17/2015" wacn.date="08/29/2015"/>
+	ms.service="backup" 
+	ms.date="09/09/2015"
+	wacn.date="11/02/2015"/>
 
 # 管理虚拟机
 
@@ -63,7 +65,7 @@
 - 保留 Azure 备份保管库中与虚拟机关联的备份数据
 - 删除与虚拟机关联的备份数据
 
-如果你选择了第一个选项，则可以使用备份数据来还原虚拟机。有关此类虚拟机的定价详细信息，请单击[此处](http://www.windowsazure.cn/home/features/back-up/#price)。
+如果你已选择保留与虚拟机关联的备份数据，则可使用该备份数据来还原虚拟机。有关此类虚拟机的定价详细信息，请单击[此处](http://www.windowsazure.cn/home/features/back-up/#price)。
 
 若要停止保护虚拟机，请执行以下操作：
 
@@ -153,4 +155,100 @@
 
   ![仪表板](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
 
-<!---HONumber=67-->
+>[AZURE.NOTE]仪表板中的值每 24 小时刷新一次。
+
+## 审核操作
+可以通过 Azure 备份来查看客户触发的备份操作的“操作日志”，因此可以轻松地确切了解针对备份保管库执行了哪些管理操作。通过操作日志，可以针对备份操作进行很好的事后总结和审核。
+
+操作日志中记录了以下操作：
+
+- 注册
+- 注销
+- 配置保护
+- 备份（二者均可通过 BackupNow 以按需备份的形式进行计划）
+- 还原
+- 停止保护
+- 删除备份数据
+- 添加策略
+- 删除策略
+- 更新策略
+- 取消作业
+
+若要查看某个备份保管库的相应操作日志，请执行以下操作：
+
+1. 导航到 Azure 门户中的“管理服务”，然后单击“操作日志”选项卡。
+
+    ![操作日志](./media/backup-azure-manage-vms/ops-logs.png)
+
+2. 在筛选器中选择“备份”作为“类型”，在“服务名称”中指定备份保管库名称，然后单击“提交”。
+
+    ![操作日志筛选器](./media/backup-azure-manage-vms/ops-logs-filter.png)
+
+3. 在操作日志中，选择任意操作，然后单击“详细信息”查看与操作相对应的详细信息。
+
+    ![操作日志提取详细信息](./media/backup-azure-manage-vms/ops-logs-details.png)
+
+    “详细信息向导”包含与触发的操作、作业 ID、触发此操作时所在的资源以及操作启动时间相关的信息。
+
+    ![操作详细信息](./media/backup-azure-manage-vms/ops-logs-details-window.png)
+
+## 警报通知
+你可以获取门户中作业的自定义警报通知。为此，你需要针对操作日志事件定义基于 PowerShell 的警报规则。
+
+基于事件的警报适用于 Azure 资源模式。在提升的命令模式下执行以下 cmdlet 即可切换到 Azure 资源模式：
+
+```
+PS C:\> Switch-AzureMode AzureResourceManager
+```
+
+若要定义自定义通知以便在备份失败时发出警报，可使用如下所示的示例命令：
+
+```
+PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/subscriptions/86eeac34-eth9a-4de3-84db-7a27d121967e/resourceGroups/RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US/providers/microsoft.backupbvtd2/BackupVault/trinadhVault' -EventName Backup  -EventSource Administrative -Level Error -OperationName 'Microsoft.Backup/backupVault/Backup' -ResourceProvider Microsoft.Backup -Status Failed  -SubStatus Failed -RuleType Event -Location eastus -ResourceGroup RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US -Name Backup-Failed -Description 'Backup failed for one of the VMs in vault trinadhkVault' -CustomEmails 'contoso@microsoft.com' -SendToServiceOwners
+```
+
+**ResourceId**你可以从“操作日志”弹出窗口中获取此项，如以上部分所述。操作的详细信息弹出窗口中的 ResourceUri 是要针对此 cmdlet 提交的 ResourceId。
+
+**EventName**：对于 IaaS VM 备份警报，支持的值包括 Register、Unregister、ConfigureProtection、Backup、Restore、StopProtection、DeleteBackupData、CreateProtectionPolicy、DeleteProtectionPolicy、UpdateProtectionPolicy
+
+**Level**：支持的值包括 Informational、Error。若要在操作失败时发出警报，可使用 Error，若要在作业成功时发出警报，可使用 Informational。
+
+**OperationName**：此项的格式将为“Microsoft.Backup/backupvault/<EventName>”，其中 EventName 如上所述。
+
+**Status**：支持的值包括 Started、Succeeded 和 Failed。如果 status 为 Succeeded，则建议将 level 始终设置为 Informational。
+
+**SubStatus**：进行备份操作时，与 status 相同。
+
+**RuleType**：始终设置为 *Event*，因为备份警报是基于事件的。
+
+**ResourceGroup**：触发操作时所在的资源的 ResourceGroup。可以从 ResourceId 值获取此项。ResourceId 值中字段 */resourceGroups/* 与字段 */providers/* 之间的值是 ResourceGroup 的值。
+
+**Name**：警报规则的名称。
+
+**Description**：警报规则的说明。
+
+**CustomEmails**：指定要向其发送警报通知的自定义电子邮件地址。
+
+**SendToServiceOwners**：此选项会将警报通知发送给订阅的所有管理员和共同管理员。
+
+示例警报邮件如下所示：
+
+示例标头：
+
+![警报标头](./media/backup-azure-manage-vms/alert-header.png)
+
+警报邮件的示例正文：
+
+![警报正文](./media/backup-azure-manage-vms/alert-body.png)
+
+### 对警报的限制
+基于事件的警报会受到以下限制：
+
+1. 警报在备份保管库的所有虚拟机上触发。你不能通过自定义来获取备份保管库中特定虚拟机集的警报。
+2. 如果在下一警报期间没有触发与警报相对应的事件，则会自动取消警报。在 Add-AlertRule cmdlet 中使用 *WindowSize* 参数可设置警报触发持续时间。
+
+## 后续步骤
+
+- [还原 Azure VM](/documentation/articles/backup-azure-restore-vms)
+
+<!---HONumber=76-->

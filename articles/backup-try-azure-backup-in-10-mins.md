@@ -10,10 +10,10 @@
 <tags
    ms.service="backup" 
    ms.date="09/03/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="11/02/2015"/>
 
 # Azure 备份 10 分钟入门
-Azure 备份的设置极其简单，以下操作方法视频将会帮助你入门。
+Azure 备份的设置极其简单，以下操作方法将会帮助你入门。
 
 ## 步骤 1：获取 Azure 订阅
 + 如果你还没有 Azure 订阅，可以先注册一个免费试用产品，这样就可以访问任何 Azure 服务。请访问链接 [http://www.windowsazure.cn/pricing/1rmb-trial/](http://www.windowsazure.cn/pricing/1rmb-trial/) 了解详细信息。
@@ -31,7 +31,7 @@ Azure 备份的设置极其简单，以下操作方法视频将会帮助你入�
 
 
 ## 步骤 3：准备本地计算机
-
+完成视频 [Azure 备份入门第 2 部分（共 3 部分）- 为 Azure 备份准备生产服务器](http://azure.microsoft.com/documentation/videos/getting-started-with-azure-backup-2-of-3-prepare-your-production-server-for-azure-backup/)中所述的步骤，以便：
 
 + 在 Windows Server/客户端或 DPM 服务器上安装 Azure 备份代理。
 
@@ -41,7 +41,7 @@ Azure 备份的设置极其简单，以下操作方法视频将会帮助你入�
 
 
 ## 步骤 4：备份和还原数据
-
+完成视频 [Azure 备份入门第 3 部分（共 3 部分）- 开始备份生产服务器](http://azure.microsoft.com/documentation/videos/getting-started-with-azure-backup-3-of-3-start-backing-up-your-production-server/)中所述的步骤，以便：
 
 + 从服务器备份数据
 
@@ -50,7 +50,7 @@ Azure 备份的设置极其简单，以下操作方法视频将会帮助你入�
 
 
 ## 后续步骤
-<!--+ 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup)。-->
++ 若要了解有关 Azure 备份的详细信息，请参阅 [Azure 备份概述](/documentation/articles/backup-introduction-to-azure-backup)。
 - [备份 Windows Server](/documentation/articles/backup-azure-backup-windows-server)
 + 访问 [Azure 备份论坛](https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=windowsazureonlinebackup)。
 

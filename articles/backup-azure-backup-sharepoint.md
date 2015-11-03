@@ -10,7 +10,7 @@
 <tags
 	ms.service="backup" 
 	ms.date="07/14/2015" 
-	wacn.date="08/14/2015"/>
+	wacn.date="11/02/2015"/>
 
 
 # 将 SharePoint 场备份到 Azure
@@ -44,7 +44,8 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 尽管性能取决于许多因素，例如 SharePoint 场的大小，但一般做法是使用一台 DPM 服务器来保护 25TB 的 SharePoint 场。
 
 ### DPM Update Rollup 5
-若要开始在 Azure 上保护 SharePoint 场，你需要安装 DPM Update Rollup 5 或更高版本。Update Rollup 5 提供在 Azure 上保护 SharePoint 场的功能（使用 SQL AlwaysOn 进行配置）。有关详细信息，请参阅[安装 DPM Update Rollup 5](http://blogs.technet.com/b/dpm/archive/2015/02/11/update-rollup-5-for-system-center-2012-r2-data-protection-manager-is-now-available.aspx)
+若要开始在 Azure 上保护 SharePoint 场，你需要安装 DPM Update Rollup 5 或更高版本。Update Rollup 5 提供在 Azure 上保护 SharePoint 场的功能（使用 SQL AlwaysOn 进行配置）。
+有关详细信息，请参阅[安装 DPM Update Rollup 5](http://blogs.technet.com/b/dpm/archive/2015/02/11/update-rollup-5-for-system-center-2012-r2-data-protection-manager-is-now-available.aspx)
 
 ### 不支持的功能
 1. 保护 SharePoint 场不会保护搜索索引或应用程序服务数据库。你需要单独为这些数据库配置保护。
@@ -220,11 +221,14 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 5. 此时，请按照[上述恢复步骤](#restore-a-sharepoint-item-from-disk-using-dpm)，从磁盘恢复 Sharepoint 内容数据库。
 
 ## 常见问题
-问：哪些版本的 DPM 支持 SQL 2014 和 SQL 2012 (SP2)<br>答：包含 Update Rollup 4 的 DPM 2012 R2 提供此支持
+问：哪些版本的 DPM 支持 SQL 2014 和 SQL 2012 (SP2)<br>
+答：包含 Update Rollup 4 的 DPM 2012 R2 提供此支持
 
-问：如果使用 SQL AlwaysOn（使用磁盘上保护）配置了 SharePoint，我是否能将 SharePoint 项恢复到原始位置？<br> 答：可以，项可以恢复到原始 SharePoint 站点
+问：如果使用 SQL AlwaysOn（使用磁盘上保护）配置了 SharePoint，我是否能将 SharePoint 项恢复到原始位置？<br> 
+答：可以，项可以恢复到原始 SharePoint 站点
 
-问：如果使用 SQL AlwaysOn 配置了 SharePoint，我是否能将 SharePoint 数据库恢复到原始位置？<br> 答：由于 SharePoint 数据库是在 SQL AlwaysOn 中配置的，因此除非删除可用性组 (AG)，否则无法修改它们。因此，DPM 无法将数据库还原到原始位置。你可以将 SQL 数据库恢复到其他 SQL 实例。
+问：如果使用 SQL AlwaysOn 配置了 SharePoint，我是否能将 SharePoint 数据库恢复到原始位置？<br> 
+答：由于 SharePoint 数据库是在 SQL AlwaysOn 中配置的，因此除非删除可用性组 (AG)，否则无法修改它们。因此，DPM 无法将数据库还原到原始位置。你可以将 SQL 数据库恢复到其他 SQL 实例。
 
 ## 后续步骤
 

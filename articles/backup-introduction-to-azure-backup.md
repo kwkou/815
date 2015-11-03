@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure 备份简介 | Windows Azure"
-	description="本文概述了可让客户将数据备份到 Azure 的 Azure 备份服务"
+	description="本文概述了可让客户将数据备份到 Azure 以及备份 Azure 中数据的 Azure 备份服务"
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
@@ -10,10 +10,10 @@
 <tags
 	ms.service="backup"
 	ms.date="08/18/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="11/02/2015"/>
 
 # Azure 备份简介
-本文全面概述了可让客户将本地数据备份到 Azure 的 Microsoft 云集成备份解决方案。
+本文全面概述了可让客户备份其本地数据或 Azure 中数据的 Microsoft 云集成备份解决方案。
 
 ## 什么是 Azure 备份？
 Azure 备份是一个多租户 Azure 服务，可让你备份任意位置（本地或 Azure 中）的数据。它取代了现有的本地或异地备份解决方案，并且是可靠、安全、高性价比的基于云的产品。它还提供了保护云中运行的资产的弹性。Azure 备份构建在一流的基础结构之上，具有可缩放、持久且高度可用的优点。使用此解决方案，你可以从 System Center Data Protection Manager (SCDPM) 服务器、Windows 服务器、Windows 客户端计算机或 Azure IaaS 虚拟机备份数据与应用程序。Azure 备份和 SCDPM 是构成 Microsoft 云集成备份解决方案的基本技术。
