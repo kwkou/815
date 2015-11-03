@@ -1,27 +1,30 @@
 <properties 
-	pageTitle="在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器"
-	description="本教程指导你在 Azure 中使用内部负载平衡器 (ILB) 创建 AlwaysOn 可用性组侦听器。"
+	pageTitle="为 AlwaysOn 可用性组配置 ILB 侦听器 | Windows Azure"
+	description="本教程使用通过经典部署模型创建的资源，并使用内部负载平衡器 (ILB) 在 Azure 中创建 AlwaysOn 可用性组侦听器。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar" 
+	tags="azure-service-management"/>
 <tags 
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
-	wacn.date="09/18/2015" />
+	ms.date="09/16/2015"
+	wacn.date="11/02/2015" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器
 
 > [AZURE.SELECTOR]
-- [Internal Listener](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
-- [External Listener](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
+- [内部侦听器](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
+- [外部侦听器](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
 
 ## 概述
 
 本主题说明如何使用**内部负载平衡器 (ILB)** 为 AlwaysOn 可用性组配置侦听器。
 
-你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](https://msdn.microsoft.com/zh-cn/library/azure/dn249504.aspx)但是没有配置侦听器。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+
+你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](virtual-machines-sql-server-alwayson-availability-groups-gui.md)但是没有配置侦听器。
 
 请注意对 Azure 中使用 ILB 的可用性组侦听器的以下限制：
 
@@ -30,8 +33,6 @@
 - 客户端应用程序必须位于与包含你的可用性组 VM 的云服务不同的云服务中。Azure 不支持客户端和服务器位于同一个云服务中的直接服务器返回。
 
 - 每个云服务只支持一个可用性组侦听器，因为该侦听器将配置为使用云服务 VIP 地址或内部负载平衡器的 VIP 地址。尽管 Azure 现在支持在给定的云服务中创建多个 VIP 地址，但此限制仍然有效。
-
->[AZURE.NOTE]本教程重点介绍如何使用 PowerShell 为包括 Azure 副本的可用性组创建侦听器。有关如何使用 SSMS 或 Transact-SQL 配置侦听器的详细信息，请参阅[创建或配置可用性组侦听器](https://msdn.microsoft.com/zh-cn/library/hh213080.aspx)。
 
 ## 确定侦听器的可访问性
 
@@ -57,7 +58,7 @@
 
 1. 选择一个可用地址，并在以下脚本的 **$ILBStaticIP** 参数中使用它。
 
-3. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。有关 ILB 要求的详细信息，请参阅<!--[-->内部负载平衡器<!--](/documentation/articles/load-balancer-internal-overview)-->。此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
+3. 将以下 PowerShell 脚本复制到文本编辑器中，并根据你的环境设置变量值（注意，这里为某些参数提供了默认值）。请注意，使用地缘组的现有部署不能添加 ILB。有关 ILB 要求的详细信息，请参阅[内部负载平衡器](/documentation/articles/load-balancer-internal-overview)。此外，如果可用性组跨 Azure 区域，则你必须在每个数据中心内对云服务和节点运行该脚本一次。
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
@@ -72,7 +73,7 @@
 		# Configure a load balanced endpoint for each node in $AGNodes using ILB
 		ForEach ($node in $AGNodes)
 		{
-			Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort $EndpointPort -PublicPort $EndpointPort -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM 
+			Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM 
 		}
 
 1. 设置变量后，将脚本从文本编辑器复制到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。注意：
@@ -131,4 +132,4 @@
 
 [AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=70-->
+<!---HONumber=76-->

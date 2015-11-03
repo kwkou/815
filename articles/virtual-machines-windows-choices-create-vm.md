@@ -3,15 +3,15 @@
 	description="列出创建 Windows 虚拟机的不同方式，并提供说明链接。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/15/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="09/15/2015"
+	wacn.date="11/02/2015"/>
 
 # 创建 Windows 虚拟机的不同方式
 
@@ -63,29 +63,36 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [附加数据磁盘][]
 
 ## 其他资源
-[关于 Azure 虚拟机配置设置][]
-
 [基本配置测试环境][]
 
 [Azure 混合云测试环境][]
 
 <!-- LINKS -->
 [概述]: /documentation/articles/resource-group-overview
+
 [创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial
-<!--[-->适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令<!--]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm -->
+
+[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
 [使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
 [Create and preconfigure a Windows virtual machine with Resource Manager and Azure PowerShell]: /documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms
 [使用 Azure 资源管理器模板和 PowerShell 部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
 [使用 Azure PowerShell 创建和预配置 Windows 虚拟机]: /documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms
 [如何创建运行 Windows 的自定义虚拟机]: /documentation/articles/virtual-machines-windows-create-custom
+
 [如何捕获 Windows 虚拟机以用作映像]: /documentation/articles/virtual-machines-capture-image-windows-server
+
 [创建 Windows Server VHD 并将其上载到 Azure]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
+
+
 [使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
 [使用计算、网络和存储 .NET 库部署 Azure 资源]: /documentation/articles/virtual-machines-arm-deployment
+
 [登录到虚拟机]: /documentation/articles/virtual-machines-log-on-windows-server
+
 [附加数据磁盘]: /documentation/articles/storage-windows-attach-disk
-[关于 Azure 虚拟机配置设置]: http://msdn.microsoft.com/zh-cn/library/azure/dn763935.aspx
 
 [基本配置测试环境]: /documentation/articles/virtual-machines-base-configuration-test-environment
+
 [Azure 混合云测试环境]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
-<!---HONumber=70-->
+
+<!---HONumber=76-->

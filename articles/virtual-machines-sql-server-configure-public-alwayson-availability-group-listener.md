@@ -1,25 +1,28 @@
 <properties 
-	pageTitle="在 Azure 中配置 AlwaysOn 可用性组的外部侦听器"
+	pageTitle="为 AlwaysOn 可用性组配置外部侦听器 | Windows Azure"
 	description="本教程指导你完成在 Azure 中创建一个可以使用关联云服务公共虚拟 IP 地址从外部访问的 AlwaysOn 可用性组侦听器。"
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"
+	tags="azure-service-management" />
 <tags 
 	ms.service="virtual-machines"
-	ms.date="08/11/2015"
-	wacn.date="09/18/2015" />
+	ms.date="09/16/2015"
+	wacn.date="11/02/2015" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组的外部侦听器
 
 > [AZURE.SELECTOR]
-- [Internal Listener](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
-- [External Listener](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
+- [内部侦听器](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
+- [外部侦听器](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
 
 本主题说明如何为 AlwaysOn 可用性组配置一个可以通过 Internet 从外部访问的侦听器。这是通过将云服务的**公共虚拟 IP (VIP)** 地址与侦听器关联来实现的。
 
-你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](https://msdn.microsoft.com/zh-cn/library/azure/dn249504.aspx)但是没有配置侦听器。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+
+你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](virtual-machines-sql-server-alwayson-availability-groups-gui.md)但是没有配置侦听器。
 
 在使用云服务的公共 VIP 地址部署时，请注意对 Azure 中可用性组侦听器的以下限制：
 
@@ -30,8 +33,6 @@
 - 每个云服务只支持一个可用性组侦听器，因为该侦听器将配置为使用云服务 VIP 地址。尽管 Azure 现在支持在给定的云服务中创建多个 VIP 地址，但此限制仍然有效。
 
 - 如果你要为混合环境创建侦听器，则本地网络必须连接到公共 Internet，还通过 Azure 虚拟网络连接到站点到站点 VPN。位于 Azure 子网中时，只能通过相应云服务的公共 IP 地址来访问该可用性组侦听器。
-
->[AZURE.NOTE]本教程重点介绍如何使用 PowerShell 为包括 Azure 副本的可用性组创建侦听器。有关如何使用 SSMS 或 Transact-SQL 配置侦听器的详细信息，请参阅[创建或配置可用性组侦听器](https://msdn.microsoft.com/zh-cn/library/hh213080.aspx)。
 
 ## 确定侦听器的可访问性
 
@@ -54,7 +55,7 @@
 		# Configure a load balanced endpoint for each node in $AGNodes, with direct server return enabled
 		ForEach ($node in $AGNodes)
 		{
-		    Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -Protocol "TCP" -PublicPort $EndpointPort -LocalPort 1433 -LBSetName "ListenerEndpointLB" -ProbePort 59999 -ProbeProtocol "TCP" -DirectServerReturn $true | Update-AzureVM
+		    Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -Protocol "TCP" -PublicPort 1433 -LocalPort 1433 -LBSetName "ListenerEndpointLB" -ProbePort 59999 -ProbeProtocol "TCP" -DirectServerReturn $true | Update-AzureVM
 		}
 
 1. 设置变量后，将脚本从文本编辑器复制到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。
@@ -120,4 +121,4 @@
 
 [AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=70-->
+<!---HONumber=76-->
