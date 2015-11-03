@@ -55,7 +55,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 ## 容器适合于哪些方面？
 
-它们适用于许多情况，但鼓励（正如执行 [Azure 云服务](http://www.windowsazure.cn/home/features/cloud-services/)和 [Azure Service Fabric](/documentation/articles/service-fabric-overview)）创建单一服务、以[微服务]为导向的分布式应用程序，其中的应用程序设计是基于更多小规模的组合部件，而非基于更大规模、耦合更强的组件。
+它们适用于许多情况，但鼓励（正如执行 [Azure 云服务](http://www.windowsazure.cn/home/features/cloud-services/)<!--和 [Azure Service Fabric](/documentation/articles/service-fabric-overview)-->）创建单一服务、以[微服务]为导向的分布式应用程序，其中的应用程序设计是基于更多小规模的组合部件，而非基于更大规模、耦合更强的组件。
 
 在公有云环境（例如 Azure）中尤其如此，你可随时随地租用 VM。你不仅能获得独立且快速的部署和协调工具，还能做出更高效的应用程序基础结构决策。
 

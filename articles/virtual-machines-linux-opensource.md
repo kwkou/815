@@ -75,7 +75,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 14. [GitHub：在 Azure 上部署 CoreOS 快速入门](https://github.com/timfpark/coreos-azure)
 15. [GitHub：使用 Spring Boot、MongoDB 和 CoreOS 部署 Java 应用](https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init)
 
-#### [Oracle Linux](http://azure.microsoft.com/marketplace/?term=Oracle+Linux)
+#### Oracle Linux
   2. [为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
 ### FreeBSD
@@ -207,7 +207,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 
 
 4.	[教程：Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)
-5.	[教程：在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd)
+5.	<!--[-->教程：在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD<!--](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd)-->
 6.	[教程：设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)
 
 
