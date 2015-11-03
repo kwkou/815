@@ -4,13 +4,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="05/28/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # 更改 Azure AD Connect 的默认配置 
 
@@ -23,4 +23,4 @@
 - 使用同步规则编辑器导出自定义同步规则。这会提供一个 PowerShell 脚本，你可以在灾难恢复方案中使用该脚本轻松重新创建同步规则。
 - 如果你需要在“现成”同步规则中更改范围或联接设置，请记下这些更改，并升级到 Azure AD Connect 的较新版本之后重新应用更改。 
 
-<!---HONumber=67-->
+<!---HONumber=76-->

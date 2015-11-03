@@ -1,16 +1,16 @@
 <properties 
-	pageTitle="将自己的域名添加到 Azure AD" 
+	pageTitle="将自己的域名添加到 Azure AD | Windows Azure" 
 	description="本主题介绍如何将自己的域名添加到 Azure AD 及相关信息。" 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"/>
+	authors="curtand"
+	manager="msStevenPo"
+	editor=""/>
 
 <tags 
 	ms.service="active-directory"  
 	ms.date="05/12/2015"
-	wacn.date="06/16/2015"/>
+	wacn.date="11/02/2015" />
 
 # 将自己的域名添加到 Azure AD
 
@@ -54,7 +54,8 @@ Office 365 用户可能对下列相关主题感兴趣：
 ### 使用 Azure 管理门户添加和验证域
 
 1. 在管理门户中，单击“Active Directory”，然后单击你所在组织的目录的名称。你可以执行以下操作之一：
-    1. 在默认目录页上，单击“改进用户登录体验”部分中的“添加域”。2. 单击“域”选项卡，然后单击“添加客户域”或“添加”按钮。
+    1. 在默认目录页上，单击“改进用户登录体验”部分中的“添加域”。
+    2. 单击“域”选项卡，然后单击“添加客户域”或“添加”按钮。
 2. 在“添加域”页上，键入你要添加的域名，然后执行以下操作之一：
     1. 如果你不打算将本地 Active Directory 与 Azure AD 集成，请执行以下操作：
         1. 保留“我计划配置此域为使用本地 Active Directory 进行单点登录”复选框的未选中状态，然后单击“添加”按钮。
@@ -118,7 +119,7 @@ Azure AD 使用你在域名注册机构创建的 DNS 记录来确认你拥有该
 
 如果你的域注册机构不接受“@”作为主机名，请联系你的域注册机构以了解如何表示“当前区域的父级”。
 
-Office 365 针对公共域注册机构提供了具体说明。
+Office 365 提供了[针对公共域注册机构的具体说明](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/)。
 
 对于一般情况，请按照以下步骤添加 TXT 或 MX 记录：
 

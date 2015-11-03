@@ -8,19 +8,23 @@
 	editor="lisatoft"/>
 
 <tags 
-	ms.service="active-directory"  
-	ms.date="04/27/2015"
-	wacn.date="06/16/2015"/>
+	ms.service="active-directory" 
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # Azure Active Directory Connect - 了解详细信息
 
 <div>
-<a href="/documentation/articles/active-directory-aadconnect/">简介</a> <a href="/documentation/articles/active-directory-aadconnect-how-it-works/">工作原理</a> <a href="/documentation/articles/active-directory-aadconnect-get-started/">入门</a> <a href="/documentation/articles/active-directory-aadconnect-whats-next/">后续步骤</a> <a href="/documentation/articles/active-directory-aadconnect-learn-more/">了解详细信息</a>
+<a href="/documentation/articles/active-directory-aadconnect/">简介</a> 
+<a href="/documentation/articles/active-directory-aadconnect-how-it-works/">工作原理</a> 
+<a href="/documentation/articles/active-directory-aadconnect-get-started/">入门</a>
+<a href="/documentation/articles/active-directory-aadconnect-whats-next/">后续步骤</a> 
+<a href="/documentation/articles/active-directory-aadconnect-learn-more/">了解详细信息</a>
 </div>
 
 下面是有关使用 Azure AD Connect 以及将本地目录与 Azure AD 集成的其他资源列表。
 
->[AZURE.NOTE]Azure AD Connect 整合了以前作为 DirSync 和 AAD Sync 发布的组件和功能。其中的每个工具都有很长的发布历史，将来所做的改进将包含在 Azure AD Connect 更新中，因此你始终知道从何处获取最新功能。
+>[AZURE.NOTE]Azure AD Connect 整合了以前作为 DirSync 和 AAD Sync 发布的组件和功能。这些工具不再单独发布，将来所做的改进将包含在 Azure AD Connect 更新中，因此你始终知道从何处获取最新功能。
 
 ## 文档
 

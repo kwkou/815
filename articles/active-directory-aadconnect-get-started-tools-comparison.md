@@ -4,13 +4,13 @@
 	services="active-directory" 
 	documentationCenter="" 
 	authors="billmath" 
-	manager="swadhwa" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="06/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="08/24/2015" 
+	wacn.date="11/02/2015"/>
 
 # 目录集成工具比较
 
@@ -18,11 +18,13 @@
 
 >[AZURE.NOTE]Azure AD Connect 整合了以前作为 DirSync 和 AAD Sync 发布的组件和功能。这些工具不再单独发布，将来所做的改进将包含在 Azure AD Connect 更新中，因此你始终知道从何处获取最新功能。
 >
->目前仍支持 Dirsync，但在将来某个时刻将弃用。弃用后，将仅支持一段时间。此时间段结束后将不再支持 Dirsync。
+>目前仍支持 Dirsync，但以后会弃用它。弃用后，只会对其提供短暂的支持。这段短暂的时间过后，将不再提供对 Dirsync 的支持。
 
 每个表中的代号解释如下。
 
-● = 现在可用</br> FR = 未来版本</br> PP = 公共预览版</br>
+● = 现已发布</br>
+FR = 未来版本</br>
+PP = 公共预览版本</br>
 
 
 ## 本地到云的同步
@@ -78,7 +80,7 @@
 :-------- |:--------:|:--------:|:--------:|:--------:|
 筛选域和组织单位 | ● | ● | ● | ●  
 筛选对象的属性值 | ● | ● | ● | ● 
-允许同步最小的属性集 (MinSync) | ● | ● | |   
+允许同步极少量的属性 (MinSync) | ● | ● | |   
 允许对属性流应用不同的服务模板 |● | ● | |   
 允许删除从 AD 流向 Azure AD 的属性 | ● | ● | |  
 允许对属性流进行高级自定义 | ● | ● | | ●  
