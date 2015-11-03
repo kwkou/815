@@ -10,16 +10,21 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="08/10/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="09/15/2015" 
+	wacn.date="11/02/2015"/>
 
 
-# SQL Database V12 的新增功能
+# SQL 数据库 V12 的新增功能
 
 
 本主题介绍 Azure SQL 数据库新版本 V12 相比版本 V11 具有的诸多优点。
 
 
+我们继续向 V12 添加功能。因此，我们鼓励你访问我们的针对 Azure 的服务更新网页并使用其筛选器：
+
+
+- 筛选为 [SQL 数据库服务](http://azure.microsoft.com/updates/?service=sql-database)。
+- 筛选为针对 SQL 数据库功能的正式发布 [(GA) 公告](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability)。
 
 
 有关 SQL 数据库资源限制的最新信息：<br/>[Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)。
@@ -50,7 +55,19 @@ SQL 数据库 V12 的一个主要目标就是提高与 Microsoft SQL Server 2014
 
 - 支持内存中[列存储索引](http://msdn.microsoft.com/zh-cn/library/gg492153.aspx)。
 - 使用 [TRUNCATE TABLE](http://msdn.microsoft.com/zh-cn/library/ms177570.aspx) 的相关增强功能，[按行进行表分区](http://msdn.microsoft.com/zh-cn/library/ms187802.aspx)。
-- 可以使用动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx) 和扩展事件 [(XEvent)](https://msdn.microsoft.com/zh-cn/library/bb630282.aspx) 来帮助监视和优化性能。
+- 可以使用动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx) 来帮助监视和优化性能。
+
+
+### 可靠的性能
+
+
+如果客户端程序连接到 SQL 数据库 V12，而客户端运行在 Azure 虚拟机 (VM) 上，则必须打开 VM 上的以下端口范围：
+
+- 11000-11999
+- 14000-14999
+
+
+单击[此处](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12)可了解有关 SQL 数据库 V12 的端口的详细信息。SQL 数据库 V12 中的性能增强功能需要这些端口。
 
 
 ## 更好支持云 SaaS 供应商
@@ -138,4 +155,4 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 
 <!--[Supplemental Terms of Use for Microsoft Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).-->
 
-<!---HONumber=69-->
+<!---HONumber=76-->
