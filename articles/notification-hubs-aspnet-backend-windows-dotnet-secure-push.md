@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="notification-hubs" 
-	ms.date="06/02/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="06/16/2015"
+	wacn.date="11/02/2015"/>
 
 # Azure 通知中心安全推送
 
@@ -39,7 +39,8 @@
 
 本安全推送教程演示如何安全地发送推送通知。本教程以**通知用户**教程为基础，因此您应该先完成该教程中的步骤。
 
-> [AZURE.NOTE]本教程假设您已根据[通知中心入门（Windows 应用商店）](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中所述创建并配置了通知中心。此外，请注意 Windows Phone 8.1 需要 Windows（而不是 Windows Phone）凭据，且后台任务无法在 Windows Phone 8.0 或 Silverlight 8.1 上正常运行。对于 Windows 应用商店应用程序，您只能在应用锁屏界面启用（单击 Appmanifest 中的复选框）的情况下，通过运行后台任务来接收通知。
+> [AZURE.NOTE]本教程假设您已根据[通知中心入门（Windows 应用商店）](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中所述创建并配置了通知中心。
+此外，请注意 Windows Phone 8.1 需要 Windows（而不是 Windows Phone）凭据，且后台任务无法在 Windows Phone 8.0 或 Silverlight 8.1 上正常运行。对于 Windows 应用商店应用程序，您只能在应用锁屏界面启用（单击 Appmanifest 中的复选框）的情况下，通过运行后台任务来接收通知。
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-securepush](../includes/notification-hubs-aspnet-backend-securepush.md)]
 

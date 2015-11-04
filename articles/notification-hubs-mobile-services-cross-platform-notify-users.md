@@ -35,7 +35,7 @@
 
     ![][0]
 
-2.  单击“API”选项卡，然后单击 API 表中的 **register\_notifications** 条目。
+2.  单击“API”选项卡，然后单击 API 表中的 **register_notifications** 条目。
 
     ![][1]
 

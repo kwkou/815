@@ -1,39 +1,43 @@
 ## 创建 WebAPI 项目
 
-第一步是创建 ASP.NET WebAPI 项目。这是用于对客户端进行身份验证和生成通知的后端。
+按照以下步骤创建新的 ASP.NET WebAPI 后端以对客户端进行身份验证并生成通知，或者修改以前的项目或[向经过身份验证的用户发送推送通知](/zh-cn/documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users/)教程中的现有后端。
 
-> [AZURE.NOTE] **重要提示**：在开始本教程之前，请确保已安装最新版本的 NuGet 程序包管理器。若要进行检查，请启动 Visual Studio。从"工具"菜单，单击"扩展和更新"。搜索"适用于 Visual Studio 2013 的 NuGet 程序包管理器"，并且确保具有版本 2.8.50313.46 或更高版本。否则，请卸载并重新安装 NuGet 程序包管理器。
+> [AZURE.NOTE]**重要提示**：在开始本教程之前，请确保已安装最新版本的 NuGet 包管理器。若要进行检查，请启动 Visual Studio。从“工具”菜单，单击“扩展和更新”。搜索“适用于 Visual Studio 2013 的 NuGet 包管理器”，并且确保拥有版本 2.8.50313.46 或更高版本。否则，请卸载并重新安装 NuGet 程序包管理器。
 > 
 > ![][4]
 
-1. 使用提升的权限启动 Visual Studio（以管理员身份运行）。
-2. 在 Visual Studio 或 Visual Studio Express 中，依次单击"文件"、"新建"和"项目"，依次展开"模板"和"Visual C#"，然后依次单击"Web"和"ASP.NET Web 应用程序"，键入名称 **AppBackend**，然后单击"确定"。 
+> [AZURE.NOTE]请确保已安装 Visual Studio [Azure SDK](/zh-cn/downloads/) 以便进行网站部署。
+
+1. 启动 Visual Studio 或 Visual Studio Express。
+2. 在 Visual Studio 中，依次单击“文件”、“新建”和“项目”，依次展开“模板”和“Visual C#”，然后依次单击“Web”和“ASP.NET Web 应用程序”，键入名称 **AppBackend**，然后单击“确定”。 
 	
 	![][1]
 
-2. 在"新建 ASP.NET 项目"对话框中，单击"Web API"，然后单击"确定"。
+3. 在“新建 ASP.NET 项目”对话框中，单击“Web API”，然后单击“确定”。
 
 	![][2]
 
-3. 在"配置 Azure 站点"对话框中，选择要用于此项目的订阅、区域以及数据库。然后，单击"确定"以创建该项目。 
+4. 在“配置 Azure 站点”对话框中，选择要用于此项目的订阅、区域以及数据库。然后，单击“确定”以创建该项目。
 
 	![][5]
 
-4. 在"解决方案资源管理器"中，右键单击"AppBackend"项目，然后单击"管理 NuGet 程序包"。
+5. 在“解决方案资源管理器”中，右键单击“AppBackend”项目，然后单击“管理 NuGet 包”。
 
-5. 在左侧，单击"联机"。
+6. 在左侧，单击“联机”，然后在“搜索”框中搜索 **servicebus**。
 
-6. 在"搜索"框中，键入 **servicebus**。
-
-7. 在结果列表中，单击"Windows Azure 服务总线"，然后单击"安装"。完成安装后，关闭"NuGet 程序包管理器"窗口。
+7. 在结果列表中，单击“Microsoft Azure 服务总线”，然后单击“安装”。完成安装后，关闭“NuGet 程序包管理器”窗口。
 
 	![][14]
 
-8. 在"解决方案资源管理器"中，右键单击"Models"文件夹，然后依次单击"添加"和"类"。将新类命名为 **Notifications.cs**。单击"添加"以生成类。该模块表示将要发送的其他安全通知。在完整的实现中，这些通知存储在某个数据库中。在这种情况下，为了简便起见，我们将它们存储在内存中。
+8. 现在将创建一个新类 **Notifications.cs**。转到“解决方案资源管理器”，右键单击 **Models** 文件夹，单击“添加”，然后单击“类”。将新类命名为 **Notifications.cs** 后，单击“添加”以生成该类。该模块表示将要发送的其他安全通知。在完整的实现中，这些通知存储在某个数据库中。为简单起见，本教程将这些通知存储在内存中。
 
 	![][6]
 
-9. 将代码添加到 Notifications.cs，并将  `Notifications` 类定义替换为以下内容：
+9. 在 Notifications.cs 中，在文件顶部添加以下 `using` 语句：
+
+        using Microsoft.ServiceBus.Notifications;
+
+10. 然后，将 `Notifications` 类定义替换为以下内容并确保将两个占位符替换为通知中心的连接字符串（具有完全访问权限）和中心名称（可在 [Azure 管理门户](http://manage.windowsazure.cn)中找到）：
 
     	public class Notifications
     	{
@@ -46,18 +50,18 @@
 	        }
 	    }
 
+11. 然后，我们将创建一个新类 **AuthenticationTestHandler.cs**。在“解决方案资源管理器”中，右键单击“AppBackend”项目，然后依次单击“添加”和“类”。将新类命名 **AuthenticationTestHandler.cs**，然后单击“添加”以生成该类。通过此类可使用*基本身份验证*对用户进行身份验证。请注意，您的应用可以使用所有身份验证方案。
 
-10. 在文件顶部添加以下  `using` 语句：
+12. 在 AuthenticationTestHandler.cs 中，添加以下 `using` 语句：
 
-		using Microsoft.ServiceBus.Notifications;
+        using System.Net.Http;
+        using System.Threading.Tasks;
+        using System.Threading;
+        using System.Text;
+        using System.Security.Principal;
+        using System.Net;
 
-11. 在  `Notifications()` 方法中，将以下代码行中的两个占位符分别替换为通知中心的连接字符串（具有完全访问权限）和通知中心名称。可以从 [Azure 管理门户](http://manage.windowsazure.cn)中获取这些值:
-
-		Hub = NotificationHubClient.CreateClientFromConnectionString("{conn string with full access}", "{hub name}");
-
-12. 在"解决方案资源管理器"中，右键单击"AppBackend"项目，然后依次单击"添加"和"类"。将新类命名为 **AuthenticationTestHandler.cs**。单击"添加"以生成类。通过此类可使用  *Basic Authentication* 对用户进行身份验证。请注意，您的应用可以使用所有身份验证方案。
-
-13. 将代码添加到 AuthenticationTestHandler.cs，并将  `AuthenticationTestHandler` 类定义替换为以下内容：
+13. 在 AuthenticationTestHandler.cs 中，将 `AuthenticationTestHandler` 类定义替换为以下内容：
 
 		public class AuthenticationTestHandler : DelegatingHandler
 	    {
@@ -106,30 +110,27 @@
 	        }
 	    }
 
-	> [AZURE.NOTE] **安全说明**： `AuthenticationTestHandler` 类不提供真正的身份验证。它仅用于模拟基本身份验证并返回一个主体。需要该用户名来创建通知中心注册。以上实现是不安全的。您必须在生产应用程序和服务中实现安全的身份验证机制。
+	> [AZURE.NOTE]**安全说明**：`AuthenticationTestHandler` 类不提供真正的身份验证。它仅用于模拟基本身份验证并且是不安全的。您必须在生产应用程序和服务中实现安全的身份验证机制。
 
-14. 在 AuthenticationTestHandler.cs 文件的顶部添加以下  `using` 语句：
-
-		using System.Net.Http;
-		using System.Threading.Tasks;
-		using System.Threading;
-		using System.Text;
-		using System.Security.Principal;
-		using System.Net;				
-
-14. 在 **App_Start/WebApiConfig.cs** 类中的  `Register` 方法的末尾添加以下代码：
+14. 在 **App\_Start/WebApiConfig.cs** 类的 `Register` 方法末尾添加以下代码：
 
 		config.MessageHandlers.Add(new AuthenticationTestHandler());
 
-15. 在"解决方案资源管理器"中，右键单击"Controllers"文件夹，然后依次单击"添加"和"控制器"。单击"Web API 2 Controller -- Empty"项目，然后单击"添加"。 
+15. 接下来，我们将创建一个新的控制器 **RegisterController**。在“解决方案资源管理器”中，右键单击“Controllers”文件夹，然后依次单击“添加”和“控制器”。单击“Web API 2 Controller -- Empty”项目，然后单击“添加”。将新类命名为 **RegisterController**，然后再次单击“添加”以生成该控制器。
 
 	![][7]
 
-16. 将新类命名为 **RegisterController**，然后再次单击"添加"以生成控制器。
-
 	![][8]
-	  
-16. 在  `RegisterController` 类定义中添加以下代码：
+
+16. 在 RegiterController.cs 中，添加以下 `using` 语句：
+
+        using Microsoft.ServiceBus.Notifications;
+        using AppBackend.Models;
+        using System.Threading.Tasks;
+        using Microsoft.ServiceBus.Messaging;
+        using System.Web;
+
+17. 在 `RegisterController` 类定义中添加以下代码：请注意，在该代码中，我们为已经过处理程序验证的用户添加了用户标记。还可以通过添加可选复选框来验证用户是否有权注册以获取请求标记。
 
 		private NotificationHubClient hub;
 
@@ -234,50 +235,53 @@
             }
         }
 
-17. 在 RegisterController.cs 文件的顶部添加以下  `using` 语句：
+18. 按照我们创建 **RegisterController** 的方式，创建新的控制器 **NotificationsController**。该组件为设备提供一种安全检索通知的方法，还向用户提供了一种方法来为设备触发安全推送。请注意，在向通知中心发送通知时，我们将发送一个仅具有通知 ID 的原始通知（没有实际的消息内容）。
 
-		using Microsoft.ServiceBus.Notifications;
-		using SecurePush.Models;
-		using System.Threading.Tasks;
-		using Microsoft.ServiceBus.Messaging;
-		using System.Web;
-		
-18. 请注意，在该代码中，我们为已经过处理程序验证的用户添加了用户标记。还可以通过添加可选复选框来验证用户是否有权注册以获取请求标记。
+19. 在 NotificationsController.cs 中，添加以下 `using` 语句：
 
-19. 在"解决方案资源管理器"中，右键单击"Controllers"文件夹，然后依次单击"添加"和"控制器"。单击"Web API 2 Controller -- Empty"项目，然后单击"添加"。将新类命名为 **NotificationsController**，然后再次单击"添加"以生成控制器。该组件为设备提供一种安全检索通知的方法，还向用户提供了一种方法来为其设备触发安全推送（用于本教程的教学目的）。请注意，在向通知中心发送通知时，我们将发送一个仅具有通知 ID 的原始通知（没有实际的消息内容）。
+        using AppBackend.Models;
+        using System.Threading.Tasks;
+        using System.Web;
 
-20. 在 **NotificationsController** 类定义中添加以下代码：
+20. 在 **NotificationsController** 类定义中添加以下代码，并确保注释掉未使用的平台的代码段。
 
         public async Task<HttpResponseMessage> Post()
         {
             var user = HttpContext.Current.User.Identity.Name;
             var userTag = "username:"+user;
+
+
+            // windows
             var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">Hello, " + user + "</text></binding></visual></toast>";
             await Notifications.Instance.Hub.SendWindowsNativeNotificationAsync(toast, userTag);
 
-			return Request.CreateResponse(HttpStatusCode.OK);
 
+            // apns
+            var alert = "{"aps":{"alert":"Hello"}}";
+            await Notifications.Instance.Hub.SendAppleNativeNotificationAsync(alert, userTag);
+
+
+            // gcm
+            var notif = "{ "data" : {"msg":"Hello"}}";
+            await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif, userTag);
+
+
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-21. 在 NotificationsController.cs 文件的顶部添加以下  `using` 语句：
+21. 按 **F5** 以运行应用程序并确保到目前为止操作的准确性。该应用应启动 Web 浏览器，然后显示 ASP.NET 主页。
 
-		using SecurePush.Models;
-		using System.Threading.Tasks;
-		using System.Web;
+22. 现在，我们将此应用部署到 Azure 网站，以便可以从任意设备访问它。右键单击 **AppBackend** 项目，然后选择“发布”。
 
-22. 按 **F5** 以运行应用程序并确保到目前为止工作的准确性。该应用应启动 Web 浏览器，然后显示 ASP.NET 主页。 
+23. 选择 Azure 网站作为发布目标。
 
-23. 现在，我们将此应用部署到 Azure 网站，以便可以从任意设备访问它。右键单击"AppBackend"项目，然后选择"发布"。
+    ![][B15]
 
-24. 选择 Azure 网站作为发布目标。
+24. 使用您的 Azure 帐户登录，然后选择一个现有的或新的网站。
 
-	![][B15]
+    ![][B16]
 
-25. 使用您的 Azure 帐户登录，然后选择一个现有的或新的网站。
-
-	![][B16]
-
-26. 记下"连接"选项卡中的"目标 URL"属性。在本教程后面部分，我们将此 URL 称为  *backend endpoint*。单击"发布"。
+25. 记下“连接”选项卡中的“目标 URL”属性。在本教程后面的部分中，我们将此 URL 称为*后端终结点*。单击“发布”。
 
 	![][B18]
 
@@ -291,8 +295,8 @@
 [7]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-secure-push7.png
 [8]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-secure-push8.png
 [14]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-secure-push14.png
-
 [B15]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users15.PNG
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
-<!--HONumber=41-->
+
+<!---HONumber=76-->

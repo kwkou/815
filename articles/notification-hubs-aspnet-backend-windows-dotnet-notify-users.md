@@ -1,19 +1,16 @@
 <properties 
-	title="Azure Notification Hubs Notify Users" 
 	pageTitle="Azure 通知中心 - 通知用户" 
-	metaKeywords="Azure push notifications, Azure notification hubs" 
-	description="Learn how to send secure push notifications in Azure. Code samples written in C# using the .NET API." 
-	documentationCenter="" 
-	metaCanonical="" 
-	disqusComments="1" 
-	umbracoNaviHide="0" 
-	authors="glenga" 
+	description="了解如何在 Azure 中发送安全推送通知。代码示例是使用 .NET API 通过 C# 编写的。" 
+	documentationCenter="windows" 
+	authors="wesmc7777" 
 	manager="dwrede" 
-	services="notification-hubs" />
-<tags 
+	services="notification-hubs" 
+	editor=""/>
+
+<tags
 	ms.service="notification-hubs"
-	ms.date="05/31/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="06/16/2015"
+	wacn.date="11/02/2015"/>
 
 
 #Azure 通知中心 - 通知用户
@@ -25,7 +22,7 @@
 
 利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证。后端使用经过身份验证的客户端用户自动将标记添加通知注册。后端将使用此标记为特定的用户生成通知。有关使用应用后端注册通知的详细信息，请参阅指南主题[从应用后端注册](http://msdn.microsoft.com/library/dn743807.aspx)。本教程以你在[通知中心入门]教程中创建的通知中心和项目为基础。
 
-此外，只有在学习本教程后，才可以学习**安全推送**教程。完成本**通知用户**教程中的步骤后，你可以继续学习**安全推送**教程，其中说明了如何修改**通知用户**代码以安全地发送推送通知。 
+此外，只有在学习本教程后，才可以学习[安全推送]教程。完成本教程中的步骤后，你可以继续学习[安全推送]教程，其中说明了如何修改本教程中的代码以安全地发送推送通知。
 
 
 ##先决条件 
@@ -34,13 +31,13 @@
 
 + [通知中心入门]<br/>创建通知中心，保留应用名称，然后注册以接收本教程中的通知。本教程假设已完成这些步骤。请遵循[通知中心入门（Windows 应用商店）](/documentation/articles/notification-hubs-windows-store-dotnet-get-started)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started#register-your-app-for-the-windows-store)和[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started#configure-your-notification-hub)部分中的步骤。请务必确保已在门户中你的通知中心的“配置”选项卡上输入了“程序包 SID”和“客户端机密”值。[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started#configure-your-notification-hub)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
 
-[WACOM.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notify-users.md)]
+
 
 
 > [AZURE.NOTE]如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)。
 
 
-1. 在解决方案资源管理器中，右键单击解决方案的顶层节点（在本例中为 **Solution NotifyUsers**），单击**"添加"**，然后单击**"新建项目"**。
+
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 

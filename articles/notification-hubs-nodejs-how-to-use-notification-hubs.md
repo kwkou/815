@@ -1,50 +1,51 @@
-<properties 
-	linkid="develop-nodejs-how-to-guides-service-bus-notification-hubs" 
-	urlDisplayName="Notification Hubs" 
-	pageTitle="服务总线 Notification Hubs - Node.js Dev Center" 
-	metaKeywords="" description="Learn how to use 服务总线 Notification Hubs to send push notifications. Code samples are written for Node.js applications." 
-	metaCanonical="" 
-	services="service-bus" 
-	documentationCenter="Node.js" 
-	title="How to Use 服务总线 Notification Hubs" 
-	authors="larryfr" 
-	solutions="" 
-	manager="" 
-	editor="" />
-<tags 
-	ms.service="service-bus"
-	ms.date="06/02/2015"
-	wacn.date="10/03/2015"/>
+<properties
+	pageTitle="如何通过 Node.js 使用通知中心"
+	description="了解如何使用通知中心从 Node.js 应用程序发送推送通知。"
+	services="notification-hubs"
+	documentationCenter="nodejs"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 
-# 如何使用 服务总线 通知中心
+<tags
+	ms.service="notification-hubs"
+	ms.date="06/16/2015"
+	wacn.date="11/02/2015"/>
+	
+	
+	
+	
+	
+# 如何通过 Node.js 使用通知中心
 
-本指南演示如何从 Node.js 应用程序使用 服务总线 通知中心。涉及的任务包括**将通知发送到 Android、iOS、Windows Phone 和 Windows 应用商店应用程序**。有关通知中心的详细信息，请参阅[后续步骤][后续步骤]部分。
+> [AZURE.SELECTOR]
+- [Java](/documentation/articles/notification-hubs-java-backend-how-to)
+- [PHP](/documentation/articles/notification-hubs-php-backend-how-to)
+- [Python](/documentation/articles/notification-hubs-python-backend-how-to)
 
-## 目录
+##概述
 
--   [什么是 服务总线 通知中心？][什么是 服务总线 通知中心？]
--   [创建 Node.js 应用程序][创建 Node.js 应用程序]
--   [配置应用程序以使用 服务总线][配置应用程序以使用 服务总线]
--   [如何：发送通知][如何：发送通知]
--   [后续步骤][后续步骤]
+本指南演示如何从 Node.js 应用程序使用通知中心。涉及的任务包括**将通知发送到 Android、iOS、Windows Phone 和 Windows 应用商店应用程序**。有关通知中心的详细信息，请参阅[后续步骤](#next)部分。
 
-## <span id="hub"></span></a>什么是 服务总线 通知中心？
+##什么是通知中心？
 
-Azure 服务总线 通知中心可提供用于向移动设备发送推送通知的易于使用、多平台且可扩展的基础结构。有关详细信息，请参阅 [Azure 服务总线 通知中心][Azure 服务总线 通知中心]。
 
-## <span id="create"></span></a>创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或[使用 WebMatrix 生成网站][使用 WebMatrix 生成网站]。
+Azure 通知中心可提供用于向移动设备发送推送通知的易于使用、多平台且可缩放的基础结构。有关详细信息，请参阅 [Azure 通知中心](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj927170.aspx)。
 
-## <span id="config"></span></a>配置应用程序以使用 服务总线
+##<a id="create"></a>创建 Node.js 应用程序
 
-若要使用 Azure 服务总线，需要下载和 使用 Node.js azure 包。其中包括一组便于与 服务总线 REST 服务进行通信的库。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站][nodejswebsite]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或“使用 WebMatrix 构建网站”。
+
+##<a id="config"></a>将应用程序配置为使用通知中心
+
+要使用 Azure 通知中心，需要下载并使用 Node.js azure 包。其中包括一组便于与 REST 服务进行通信的库。
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到你在其中创建了示例应用程序的文件夹。
+1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了示例应用程序的文件夹。
 
-2.  在命令窗口中键入 **npm install azure**，这应该产生以下输出：
+2.  在命令窗口中键入 **npm install azure**，这应会生成以下输出：
 
         azure@0.7.0 node_modules\azure
         |-- dateformat@1.0.2-1.2.3
@@ -58,7 +59,7 @@ Azure 服务总线 通知中心可提供用于向移动设备发送推送通知�
         |-- xml2js@0.2.6 (sax@0.4.2)
         |-- request@2.16.6 (forever-agent@0.2.0, aws-sign@0.2.0, tunnel-agent@0.2.0, oauth-sign@0.2.0, json-stringify-safe@3.0.0, cookie-jar@0.2.0, node-uuid@1.4.0, qs@0.5.5, hawk@0.10.2, form-data@0.0.7)
 
-3.  可以手动运行 **ls** 或 **dir** 命令来验证是否创建了**node\_modules** 文件夹。在该文件夹中，找到**azure** 包，其中包含访问 服务总线 通知中心所需的库。
+3.  可以手动运行 **ls** 或 **dir** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 包，其中包含访问通知中心所需的库。
 
 ### 导入模块
 
@@ -66,7 +67,7 @@ Azure 服务总线 通知中心可提供用于向移动设备发送推送通知�
 
     var azure = require('azure');
 
-### 设置 Azure 服务总线 连接
+### 设置 Azure 通知中心连接
 
 可以通过 **NotificationHubService** 对象使用通知中心。以下代码为名为 **hubname** 的通知中心创建一个**NotificationHubService** 对象。将它添加到靠近 **server.js** 文件顶部、用于导入 azure 模块的语句之后的位置：
 
@@ -80,9 +81,7 @@ Azure 服务总线 通知中心可提供用于向移动设备发送推送通知�
 
 3.  从“速览”部分中选择“查看连接字符串”，并复制连接字符串值。
 
-<div class="dev-callout">
-<strong>说明</strong>
-<p>还可以使用 Azure PowerShell 提供的 <b>Get-AzureSbNamespace</b> cmdlet 或者 Azure 命令行工具的 <b>azure sb namespace show</b> 命令检索连接字符串。</p>
+> [AZURE.NOTE]还可以使用 Azure PowerShell 提供的 **Get-AzureSbNamespace** cmdlet 或者在 Azure 命令行界面 (Azure CLI) 中使用 **azure sb namespace show** 命令检索连接字符串。
 
 </div>
 
@@ -184,11 +183,10 @@ Azure 服务总线 通知中心可提供用于向移动设备发送推送通知�
 
 ## <span id="next"></span></a> 后续步骤
 
-现在，你已了解有关 服务总线 主题的基础知识，单击
-下面的链接可了解更多信息。
+现在，你已了解有关通知中心的基础知识，请单击下面的链接了解更多信息。
 
--   查看 MSDN 参考：[Azure 服务总线 通知中心][Azure 服务总线 通知中心]。
--   访问 GitHub 上的 [Azure SDK for Node][Azure SDK for Node] 存储库。
+-   请参阅 MSDN 参考：[Azure 通知中心](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj927170.aspx)。
+-   访问 GitHub 上的 [Azure SDK for Node] 存储库。
 
   [后续步骤]: #next
   [什么是 服务总线 通知中心？]: #hub

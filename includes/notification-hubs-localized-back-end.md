@@ -20,9 +20,9 @@
 
 
 
-## 使用 C# 控制台应用发送通知 ##
+## 使用 C# 控制台应用程序发送通知 ##
 
-我们将只通过发送一条模板通知来修改  *SendNotificationAsync* 方法。
+我们将通过发送一条模板通知简单修改 *SendNotificationAsync* 方法。
 
 	var hub = NotificationHubClient.CreateClientFromConnectionString("<connection string>", "<hub name>");
     var notification = new Dictionary<string, string>() {
@@ -31,7 +31,7 @@
                             {"News_Mandarin", "World News in Mandarin!"}};
     await hub.SendTemplateNotificationAsync(notification, "World");
 
-请注意，此简单调用不管平台如何都会将正确的本地化新闻传递到您的**所有**设备，因为您的通知中心将生成正确的本机负载并将其传递到已订阅特定标记的所有设备。
+请注意，此简单调用不管平台如何都会将正确的本地化新闻传递到你的**所有**设备，因为你的通知中心将生成正确的本机负载并将其传送到已订阅特定标记的所有设备。
 
 ### 移动服务
 
@@ -51,4 +51,5 @@
 	});
 	
 请注意为何在本例中无需为不同的区域设置和平台发送多条通知。
-<!--HONumber=41-->
+
+<!---HONumber=76-->

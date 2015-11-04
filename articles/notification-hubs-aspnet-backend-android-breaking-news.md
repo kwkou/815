@@ -1,21 +1,17 @@
-<properties 
-	urlDisplayName="Breaking News" 
-	pageTitle="通知中心重要资讯教程 - Android" 
-	metaKeywords="" 
-	description="了解如何使用 Azure 服务总线通知中心向 Android 设备发送重要资讯通知。" 
-	metaCanonical="" 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="" 
-	title="Use Notification Hubs to send breaking news" 
-	authors="ricksal" 
-	solutions="" 
-	manager="dwrede" 
-	editor="" />
+<properties
+	pageTitle="通知中心突发新闻教程 - Android"
+	description="了解如何使用 Azure 服务总线通知中心向 Android 设备发送突发新闻通知。"
+	services="notification-hubs"
+	documentationCenter="android"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.date="11/22/2014" 
-	wacn.date="10/03/2015" />
+<tags
+	ms.service="notification-hubs"
+	ms.date="09/08/2015" 
+	wacn.date="11/02/2015" />
+
 
 # 使用通知中心发送突发新闻
 
@@ -32,9 +28,9 @@
 
 本主题以你在[通知中心入门][get-started]中创建的应用为基础。在开始本教程之前，必须先阅读[通知中心入门][get-started]。
 
-## 将类别选择添加到应用
+##向应用程序中添加类别选择
 
-第一步是向现有主活动添加 UI 元素，以允许用户选择要注册的类别。用户选择的类别存储在设备上。应用启动时，使用所选类别作为标记在您的通知中心创建设备注册。
+第一步是向现有主活动添加 UI 元素，以允许用户选择要注册的类别。用户选择的类别存储在设备上。应用程序启动时，使用所选类别作为标签在你的通知中心创建设备注册。
 
 1. 打开 res/layout/activity_main.xml 文件，并将此文件内容替换为以下内容：
 			
@@ -161,9 +157,9 @@
 			
 		}
 
-	此类使用本地存储来存储此设备必须接收的新闻类别。它还包含注册这些类别所用的方法。
+	此类使用本地存储区存储此设备必须接收的新闻类别。它还包含注册这些类别所用的方法。
 
-4. 在上面的代码中，将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为您的通知中心名称和之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
+4. 在上面的代码中，将 `<hub name>` 和 `<connection string with listen access>` 占位符替换为你的通知中心名称和之前获取的 *DefaultListenSharedAccessSignature* 的连接字符串。
 
 	> [AZURE.NOTE]由于使用客户端应用程序分发的凭据通常是不安全的，你只应使用客户端应用程序分发具有侦听访问权限的密钥。侦听访问权限允许应用程序注册通知，但是无法修改现有注册，也无法发送通知。在受保护的后端服务中使用完全访问权限密钥，以便发送通知和更改现有注册。
 
@@ -213,15 +209,15 @@
 			notifications.storeCategoriesAndSubscribe(categories);
 	    }
 	
-	此方法将创建一个类别列表，使用 **Notifications** 类将该列表存储在本地存储中，并将相应的标记注册到您的通知中心。更改类别后，会使用新类别重新创建注册。
+	此方法将创建一个类别列表，使用 **Notifications** 类将该列表存储在本地存储中，并将相应的标记注册到你的通知中心。更改类别时，使用新类别重新创建注册。
 
-您的应用现在可以将一组类别存储在设备的本地存储中，每当用户更改所选类别时，会将这些类别注册到通知中心。
+你的应用程序现在可以将一组类别存储在设备的本地存储区中了，每当用户更改所选类别时，会将这些类别注册到通知中心。
 
 ## 注册通知
 
-这些步骤在启动时使用本地存储中存储的类别注册到通知中心。
+这些步骤用于在启动时将在本地存储区中存储的类别注册到通知中心。
 
-> [AZURE.NOTE]由于 Google Cloud Messaging (GCM) 分配的 registrationId 随时可能更改，因此您应该经常注册通知以避免通知失败。此示例在每次应用启动时注册通知。对于运行频率较高（一天一次以上）的应用，如果每次注册间隔时间不到一天，您可以跳过注册来节省带宽。
+> [AZURE.NOTE]由于 Google Cloud Messaging (GCM) 分配的 registrationId 随时可能更改，因此你应该经常注册通知以避免通知失败。此示例在每次应用程序启动时注册通知。对于经常运行（一天一次以上）的应用程序，如果每次注册间隔时间不到一天，你可以跳过注册来节省带宽。
 
 1. 将以下代码添加到 **Notifications** 类：
 
@@ -230,13 +226,13 @@
 			return settings.getStringSet("categories", new HashSet<String>());
 		}
 
-	这会返回在类中定义的类别。
+	这返回在类中定义的类别。
 
 2. 现在，在 **MainActivity** 类的 **onCreate** 方法末尾添加此代码：
 
 		notifications.subscribeToCategories(notifications.retrieveCategories());
 
-	这将确保每次应用启动时，它从本地存储检索类别并请求注册这些类别。**InitNotificationsAsync** 方法已作为 [通知中心入门] 教程的一部分创建，但是在本主题中不需要此方法。
+	这确保每次应用程序启动时，它从本地存储区检索类别并请求注册这些类别。**InitNotificationsAsync** 方法已作为 [通知中心入门] 教程的一部分创建，但是在本主题中不需要此方法。
 
 3. 然后，将以下方法添加到 **MainActivity**：
 
@@ -272,11 +268,11 @@
 
 1. 在 Eclipse 中，构建应用并在设备或仿真器上启动它。
 	
-	请注意，应用 UI 提供了一组开关，您可以使用它们选择要订阅的类别。
+	请注意，应用程序 UI 提供了一组开关，你可以使用它们选择要订阅的类别。
 
 2. 启用一个或多个类别开关，然后单击“订阅”。
 
-	此应用将所选类别转换为标记，并针对所选标记从通知中心请求注册新设备。返回注册的类别并显示在对话框中。
+	应用程序将所选类别转换为标签并针对所选标签从通知中心请求注册新设备。返回注册的类别并显示在对话框中。
 
 4. 使用以下方式之一从后端发送新通知：
 
@@ -318,4 +314,4 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 
-<!---HONumber=67-->
+<!---HONumber=76-->

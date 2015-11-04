@@ -1,22 +1,16 @@
-﻿<properties 
-	linkid="notification-hubs-how-to-guides-howto-register-user-with-mobile-service-ios" 
-	urlDisplayName="Notify iOS app users by using Mobile Services" 
-	pageTitle="Register the current user for push notifications by using a mobile service - Notification Hubs"
-	metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification iOS app" 
-	description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by Azure Mobile Services." 
-	metaCanonical="" 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="" 
-	title="Register the current user for push notifications by using a mobile service" 
-	authors="" 
-	solutions="" 
-	manager="" 
-	editor="" />
+<properties 
+	pageTitle="使用移动服务注册推送通知的当前用户 | Microsoft Azure" 
+	description="了解在 Azure 移动服务执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。" 
+	services="notification-hubs" 
+	documentationCenter="ios" 
+	authors="ysxu" 
+	manager="dwrede" 
+	editor=""/>
+
 <tags 
-	ms.service="mobile-services,notification-hubs"
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015"
-    />
+	ms.service="mobile-services" 
+	ms.date="07/28/2015" 
+	wacn.date="11/02/2015"/>
 
 # 通过使用移动服务注册推送通知的当前用户
 
@@ -115,10 +109,10 @@
 <!-- Images. --> 
 
 <!-- URLs. -->
-[使用通知中心通知用户]: /manage/services/notification-hubs/notify-users
-[身份验证入门]: /develop/mobile/tutorials/get-started-with-users-ios/
+[使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-ios-notify-users
+[身份验证入门]:/documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
+[Get Started with Notification Hubs]: /documentation/articles/notification-hubs-ios-get-started/
 
 <!---HONumber=71-->

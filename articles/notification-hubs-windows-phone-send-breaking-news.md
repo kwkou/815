@@ -1,22 +1,16 @@
-<properties 
-	linkid="manage-services-web-sites-operating-system-functionality-available-to-applications" 
-	urlDisplayName="Operating System Functionality Available to Applications on Azure Web Sites" 
-	pageTitle="Operating System Functionality Available to Applications on Azure Web Sites" 
-	metaKeywords="" 
-	description="Learn about the common baseline operating system functionality that is available to all applications running on Azure Web Sites, including file access, network access, and registry access." 
-	metaCanonical="" 
-	services="notification-hubs" 
-	documentationCenter="" 
-	title="Use Notification Hubs to send breaking news" 
-	authors="glenga" 
-	solutions="" 
-	manager="" 
-	editor="" />
-<tags 
+<properties
+	pageTitle="使用通知中心发送突发新闻 (Windows Phone)"
+	description="通过 Azure 通知中心使用注册中的标记将突发新闻发送到 Windows Phone 应用。"
+	services="notification-hubs"
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
+
+<tags
 	ms.service="notification-hubs"
 	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"
-    />
+	wacn.date="11/02/2015" />
 
 # 使用通知中心发送突发新闻
 
@@ -252,7 +246,7 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
 
 <!-- URLs.-->
-[通知中心入门]: /manage/services/notification-hubs/get-started-notification-hubs-wp8/
+[通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started
 [Use Notification Hubs to broadcast localized breaking news]: ./breakingnews-localized-wp8.md
 [Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users/
 [Mobile Service]: /develop/mobile/tutorials/get-started
