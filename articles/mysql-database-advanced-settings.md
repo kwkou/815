@@ -87,7 +87,8 @@ MySQL 数据库 on Azure支持您对服务器部分参数进行自定义设置�
   </tr>
   <tr>
     <td >wait_timeout</td>
-    <td>1800</td>
-    <td>[60-1800] </td>
+    <td>120</td>
+    <td>[60-240] </td>
   </tr>
 </table>
+>[AZURE.NOTE] **考虑到流量管理器的限制，我们将wait_timeout的默认值调整为120s，可选范围为60-240s，但上述调整只对10月后创建的实例生效。对于以前的实例，请您手动将wait_timeout值设置为60-240s之间的任意数值，推荐120s。**
