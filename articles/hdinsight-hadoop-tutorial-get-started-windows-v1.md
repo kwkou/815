@@ -119,7 +119,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 ------ | ---------------
 [传感器数据分析][hdinsight-sensor-data-sample] | 了解如何使用 HDInsight 处理加热、通风和空调 (HVAC) 系统产生的历史数据，以识别无法可靠地保持设定温度的系统
 [网站日志分析][hdinsight-weblogs-sample] | 了解如何使用 HDInsight 分析网站日志文件，以了解一天中从外部网站对该网站的访问次数，以及用户遇到的网站错误汇总
-[Twitter 趋势分析](/documentation/articles/hdinsight-analyze-twitter-data) | 了解如何使用 HDInsight 分析 Twitter 中的趋势。
 
 
 

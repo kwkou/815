@@ -12,8 +12,6 @@
 
 下述每个选项将向你演示如何在共享的托管环境中免费创建网站，但在 CPU 使用率和带宽使用率上有一些限制。有关详细信息，请参阅 [Azure 网站定价][websites-pricing]。有关如何升级和扩展你的网站的信息，请参阅 [如何扩展网站][scale-websites]。
 
-> [AZURE.NOTE]
-> 如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/?language=php">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中立即免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
 
 ##目录
 * [使用 Azure 管理门户创建网站](#portal)
