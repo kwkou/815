@@ -95,6 +95,7 @@
 
 
 - [使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)
-- [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://msdn.microsoft.com/library/azure/dn788908.aspx)
-
+<!-- 
+- [使用 Azure Active Directory Device Registration 设置本地条件性访问](/documentation/articles/active-directory-conditional-access-on-premises-setup)
+-->
 <!---HONumber=76-->

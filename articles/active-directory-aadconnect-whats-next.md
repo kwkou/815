@@ -80,7 +80,7 @@
 ## 其他文档
 有关使用 Azure AD Connect 的更多文档，请参阅：
 
-- [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
+<!-- - [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis) -->
 - [更改 Azure AD Connect 的默认配置](/documentation/articles/active-directory-aadconnect-whats-next-change-default-config)
 - [使用 Azure AD Connect 同步规则编辑器](/documentation/articles/active-directory-aadconnect-whats-next-synch-rules-editor)
 - [使用声明性设置](/documentation/articles/active-directory-aadconnect-whats-next-declarative-prov)

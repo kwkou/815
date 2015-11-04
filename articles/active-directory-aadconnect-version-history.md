@@ -134,7 +134,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **Azure AD Sync 的初始版本。**
 
 ## 其他资源
-[Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis)
+<!-- [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis) -->
 
 [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
 
