@@ -130,7 +130,7 @@ DPM 以本地系统的形式运行，并备份 SQL Server 数据库，它需要�
 
     ![摘要](./media/backup-azure-backup-sharepoint/summary.png)
 
-## 使用 DPM 从磁盘还原 SharePoint 项
+## <a name="restore-a-sharepoint-item-from-disk-using-dpm"></a>使用 DPM 从磁盘还原 SharePoint 项
 在以下示例中，“恢复 SharePoint 项”被意外删除，需要恢复。
     ![DPM SharePoint 保护 4](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection5.png)
 
