@@ -10,7 +10,7 @@
 <tags
    ms.service="backup"
    ms.date="08/13/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="11/02/2015"/>
 
 # 将文件还原到 Windows Server 或 Windows 客户端计算机
 本文介绍执行两种还原操作所需的步骤：
@@ -108,7 +108,7 @@
 - 访问 [Azure 备份论坛](http://go.microsoft.com/fwlink/p/?LinkId=290933)。
 
 ## 了解详细信息
-- [Azure 备份概述](http://go.microsoft.com/fwlink/p/?LinkId=222425)
+- [Azure 备份概述](/documentation/articles/active-directory-accessmanagement-group-saasapps/)
 - [备份 Azure 虚拟机](/documentation/articles/backup-azure-vms-introduction)
 - [备份 Microsoft 工作负荷](/documentation/articles/backup-azure-dpm-introduction)
 
