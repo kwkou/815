@@ -1,18 +1,16 @@
 <properties 
-	title="Azure Notification Hubs Secure Push" 
 	pageTitle="Azure 通知中心安全推送" 
-	metaKeywords="Azure push notifications, Azure notification hubs, secure push" 
 	description="了解如何从 Azure 将安全推送通知发送到 iOS 应用。代码示例是使用 .Objective-C 和 C# 编写的。" 
-	documentationCenter="Mobile" 
-	metaCanonical="" 
-	disqusComments="1" 
-	umbracoNaviHide="0" 
-	authors="yuaxu" 
-	manager="dwrede" />
-<tags 
-	ms.service="notification-hubs" 
-	ms.date="06/02/2015" 
-	wacn.date="10/03/2015" />
+	documentationCenter="ios" 
+	authors="wesmc7777" 
+	manager="dwrede" 
+	editor="" 
+	services="notification-hubs"/>
+
+<tags
+	ms.service="notification-hubs"
+	ms.date="06/16/2015"
+	wacn.date="11/02/2015" />
 
 # Azure 通知中心安全推送
 
@@ -153,4 +151,4 @@
 
 [IOS1]: ./media/notification-hubs-aspnet-backend-ios-secure-push/secure-push-ios-1.png
 
-<!---HONumber=67-->
+<!---HONumber=76-->

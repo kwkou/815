@@ -1,6 +1,6 @@
 <properties
 	pageTitle="通知中心本地化的突发新闻教程"
-	description="了解如何使用 Azure 服务总线通知中心发送本地化的突发新闻通知。"
+	description="了解如何使用 Azure 通知中心发送本地化的突发新闻通知。"
 	services="notification-hubs"
 	documentationCenter="windows"
 	authors="wesmc7777"
@@ -9,13 +9,13 @@
 
 <tags
     ms.service="mobile-services,notification-hubs"
-    ms.date="08/18/2015"
-    wacn.date="10/03/2015"/>
+    ms.date="09/08/2015" 
+    wacn.date="11/02/2015"/>
 
 # 使用通知中心发送本地化的突发新闻
 
 
-[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
+[AZURE.INCLUDE] [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)
 
 
 ##概述
@@ -25,11 +25,13 @@
 
 此方案包含两个部分：
 
--   Windows 应用商店应用程序允许客户端设备指定一种语言并订阅不同的突发新闻类别；
+- Windows 应用商店应用程序允许客户端设备指定一种语言并订阅不同的突发新闻类别；
 
--   后端使用 Azure 通知中心的**标记**和**模板**功能广播通知。
+- 后端使用 Azure 通知中心的**标记**和**模板**功能广播通知。
 
-## 先决条件
+
+
+##先决条件
 
 你必须已完成学习[使用通知中心发送突发新闻][使用通知中心发送突发新闻]教程并具有可用的代码，因为本教程直接围绕该代码展开论述。
 
@@ -44,11 +46,11 @@
 
 在较高级别上，模板是指定特定设备应如何接收通知的一种方法。模板通过引用作为你应用程序后端所发消息的一部分的属性，指定确切的负载格式。在我们的示例中，我们将发送包含所有支持的语言的区域设置未知的消息：
 
-    {
-        "News_English": "...",
-        "News_French": "...",
-        "News_Mandarin": "..."
-    }
+	{
+		"News_English": "...",
+		"News_French": "...",
+		"News_Mandarin": "..."
+	}
 
 然后我们将确保设备注册到引用正确属性的模板。例如，要接收简单的 toast 消息的 Windows 应用商店应用程序将注册以下模板：
 

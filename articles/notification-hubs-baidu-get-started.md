@@ -1,21 +1,16 @@
-<properties 
-	urlDisplayName="Get Started" 
-	pageTitle="Get Started with Azure Notification Hubs" 
-	metaKeywords="" 
-	description="Learn how to use Azure Notification Hubs to push notifications." 
-	metaCanonical="" 
-	services="notification-hubs" 
-	documentationCenter="Mobile" 
-	title="Get started with Notification Hubs" 
-	authors="piyushjo" 
-	solutions="" 
-	manager="dwrede" 
-	editor="" />
+<properties
+	pageTitle="Azure 通知中心入门"
+	description="了解如何使用 Azure 通知中心推送通知。"
+	services="notification-hubs"
+	documentationCenter="android"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
 	ms.date="06/16/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="11/02/2015"/>
 	
 # 通知中心入门
 
@@ -44,7 +39,7 @@
 * [将你的应用程序连接到通知中心](#connecting-app)
 * [向应用程序发送通知](#send)
 
-## <span id="createBaiduAccount"></span></a>创建百度帐户
+##<a id="createBaiduAccount"></a>创建百度帐户
 
 若要使用百度，必须创建帐户。如果你已有帐户，请使用百度帐户登录到[百度门户]，并跳到下一个步骤；否则，请参阅下面有关如何创建新百度帐号的说明。
 
@@ -400,7 +395,9 @@
 	        PushManager.startWork(getApplicationContext(),
 	                PushConstants.LOGIN_TYPE_API_KEY, ConfigurationSettings.API_KEY);
 
-在顶部添加以下 import 语句：import com.baidu.android.pushservice.PushConstants; import com.baidu.android.pushservice.PushManager;
+在顶部添加以下 import 语句：
+import com.baidu.android.pushservice.PushConstants; 
+import com.baidu.android.pushservice.PushManager;
 
 ##<a id="send"></a>向应用发送通知
 

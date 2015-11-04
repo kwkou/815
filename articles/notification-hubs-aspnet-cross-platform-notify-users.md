@@ -1,22 +1,17 @@
-<properties 
-	linkid="manage-services-notification-hubs-notify-users-xplat-aspnet" 
-	urlDisplayName="Notify Users xplat aspnet" 
-	pageTitle="Send cross-platform notifications to users with Notification Hubs (ASP.NET)" 
-	metaKeywords="" 
-	description="Learn how to use Notification Hubs templates to send, in a single request, a platform-agnostic notification that targets all platforms." 
-	metaCanonical="" 
-	services="notification-hubs" 
-	documentationCenter="" 
-	title="Send cross-platform notifications to users with Notification Hubs" authors="glenga" 
-	solutions="" 
-	manager="" 
-	editor="" />
-<tags 
+<properties
+	pageTitle="使用通知中心向用户发送跨平台通知 (ASP.NET)" 
+	description="了解如何使用通知中心模板在单个请求中发送针对所有平台的平台未知通知。"
+	services="notification-hubs"
+	documentationCenter=""
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
+
+<tags
 	ms.service="notification-hubs"
 	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"
-    />
-
+	wacn.date="11/02/2015"/>
+	
 # 使用通知中心向用户发送跨平台通知
 > [AZURE.SELECTOR]
 - [移动服务](/documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users)

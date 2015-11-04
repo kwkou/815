@@ -1,20 +1,15 @@
-<properties 
-	linkid="develop-notificationhubs-tutorials-send-localized-breaking-news-iOS" 
-	urlDisplayName="Localized Breaking News" 
-	pageTitle="Notification Hubs Localized Breaking News Tutorial for iOS" 
-	metaKeywords="" 
-	description="Learn how to use Azure 服务总线 Notification Hubs to send localized breaking news notifications (iOS)." 
-	metaCanonical="" 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="" title="Use Notification Hubs to send localized breaking news to iOS devices" 
-	authors="ricksal" 
-	solutions=""
-	manager="" 
-	editor="" />
+<properties
+	pageTitle="通知中心本地化的突发新闻教程 - iOS"
+	description="了解如何使用 Azure 服务总线通知中心发送本地化的突发新闻通知 (iOS)。"
+	services="notification-hubs"
+	documentationCenter="ios"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 <tags 
 	ms.service="mobile-services,notification-hubs"
 	ms.date="06/02/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="11/02/2015"/>
 
 # 使用通知中心将本地化的突发新闻发送到 iOS 设备
 
@@ -203,20 +198,8 @@
 <!-- Images. -->
 
 
-
-
-
-
-
-
-
 [13]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
 [14]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
-
-
-
-
-
 
 <!-- URLs. -->
 [操作方法：服务总线通知中心（iOS 应用）]: /documentation/articles/notification-hubs-ios-get-started

@@ -1,20 +1,16 @@
-<properties 
-	linkid="notification-hubs-how-to-guides-howto-register-user-with-aspnet-webapi-ios" 
-	urlDisplayName="Notify iOS app users by using Web API" 
-	pageTitle="Register the current user for push notifications by using Web API - Notification Hubs" 
-	metaKeywords="Azure registering application, Notification Hubs, Azure push notifications, push notification iOS app" 
-	description="Learn how to request push notification registration in an iOS app with Azure Notification Hubs when registeration is performed by ASP.NET Web API." 
-	metaCanonical="" 
-	services="notification-hubs" 
-	documentationCenter="" 
-	title="Register the current user for push notifications by using ASP.NET" 
-	authors="" 
-	solutions="" 
-	manager="" editor="" />
-<tags 
+<properties
+	pageTitle="通过使用 Web API 注册推送通知的当前用户 | Microsoft Azure"
+	description="了解在 ASP.NET Web API 执行注册时如何在 iOS 应用程序中请求向 Azure 通知中心注册推送通知。"
+	services="notification-hubs"
+	documentationCenter="ios"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
+
+<tags
 	ms.service="notification-hubs"
 	ms.date="06/02/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="11/02/2015"/>
 
 # 通过使用 ASP.NET 注册推送通知的当前用户
 
@@ -190,36 +186,36 @@
 
 13. 将以下代码复制到由 XCode 创建的 **login** 处理程序方法：
 
-            DeviceInfo* deviceInfo = [(PushToUserAppDelegate*)[[UIApplication sharedApplication]delegate] deviceInfo];
-
-            // build JSON
-            NSString* json = [NSString stringWithFormat:@"{\"platform\":\"ios\", \"instId\":\"%@\", \"deviceToken\":\"%@\"}", deviceInfo.installationId, [deviceInfo getDeviceTokenInHex]];
-
-            // build auth string
-            NSString* authString = [NSString stringWithFormat:@"%@:%@", self.User.text, self.Password.text];
-
-            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.azurewebsites.net/api/register"]];
-            [request setHTTPMethod:@"POST"];
-            [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
-            [request addValue:[@([json lengthOfBytesUsingEncoding:NSUTF8StringEncoding]) description] forHTTPHeaderField:@"Content-Length"];
-            [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            [request addValue:[NSString stringWithFormat:@"Basic %@",[self base64forData:[authString dataUsingEncoding:NSUTF8StringEncoding]]] forHTTPHeaderField:@"Authorization"];
-
-            // connect with POST
-            [NSURLConnection sendAsynchronousRequest:request queue:[self downloadQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
-                // add UIAlert depending on response.
-                if (error != nil) {
-                    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-                    if ([httpResponse statusCode] == 200) {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Back-end registration" message:@"Registration successful" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles:nil, nil];
-                        [alert show];
-                    } else {
-                        NSLog(@"status: %ld", (long)[httpResponse statusCode]);
-                    }
-                } else {
-                    NSLog(@"error: %@", error);
-                }
-            }];
+			DeviceInfo* deviceInfo = [(PushToUserAppDelegate*)[[UIApplication sharedApplication]delegate] deviceInfo];
+    
+		    // build JSON
+		    NSString* json = [NSString stringWithFormat:@"{"platform":"ios", "instId":"%@", "deviceToken":"%@"}", deviceInfo.installationId, [deviceInfo getDeviceTokenInHex]];
+		    
+		    // build auth string
+		    NSString* authString = [NSString stringWithFormat:@"%@:%@", self.User.text, self.Password.text];
+		    
+		    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://nhnotifyuser.azure Websites.net/api/register"]];
+		    [request setHTTPMethod:@"POST"];
+		    [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
+		    [request addValue:[@([json lengthOfBytesUsingEncoding:NSUTF8StringEncoding]) description] forHTTPHeaderField:@"Content-Length"];
+		    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+		    [request addValue:[NSString stringWithFormat:@"Basic %@",[self base64forData:[authString dataUsingEncoding:NSUTF8StringEncoding]]] forHTTPHeaderField:@"Authorization"];
+		    
+		    // connect with POST
+		    [NSURLConnection sendAsynchronousRequest:request queue:[self downloadQueue] completionHandler:^(NSURLResponse* response, NSData* data, NSError* error) {
+		        // add UIAlert depending on response.
+		        if (error != nil) {
+		            NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+		            if ([httpResponse statusCode] == 200) {
+		                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Back-end registration" message:@"Registration successful" delegate:nil cancelButtonTitle: @"OK" otherButtonTitles:nil, nil];
+		                [alert show];
+		            } else {
+		                NSLog(@"status: %ld", (long)[httpResponse statusCode]);
+		            }
+		        } else {
+		            NSLog(@"error: %@", error);
+		        }
+		    }];
 
     此方法获取一个安装 ID 和用于推送通知的通道并将它与设备类型一起发送到在通知中心创建注册的已经身份验证的 Web API 方法。此 Web API 已在[使用通知中心通知用户][使用通知中心通知用户]中定义。
 

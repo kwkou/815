@@ -1,34 +1,30 @@
-<properties 
-	linkid="develop-notificationhubs-tutorials-get-started-ios" 
-	urlDisplayName="Get Started" 
-	pageTitle="Get Started with Azure Notification Hubs" 
-	metaKeywords="" 
-	description="Learn how to use Azure Notification Hubs to push notifications." 
-	metaCanonical="" 
-	services="notification-hubs" 
-	documentationCenter="Mobile" 
-	title="Get started with Notification Hubs" 
-	authors="sethm" solutions="" 
-	manager="" 
-	editor="" />
-<tags 
-	ms.service="notification-hubs"
-	ms.date="05/27/2015"
-	wacn.date="10/03/2015"/>
+<properties
+	pageTitle="Azure 通知中心入门（iOS 应用）| Microsoft Azure"
+	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 iOS 应用程序。"
+	services="notification-hubs"
+	documentationCenter="ios"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 
-# 通知中心入门
+<tags
+	ms.service="notification-hubs"
+	ms.date="09/03/2015"
+	wacn.date="11/02/2015"/>
+
+# 通知中心入门（iOS 应用）
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
 
-本主题演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。在本教程中，您将创建一个空白 iOS 应用程序，它使用 Apple 推送通知服务 (APNS) 接收推送通知。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
+本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。你将创建一个空白 iOS 应用，它使用 Apple 推送通知服务 (APNS) 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。
 
 本教程演示使用通知中心的简单广播方案。
 
 ##先决条件
 
-本教程需要满足以下前提条件：
+本教程需要的内容如下：
 
 + [移动服务 iOS SDK]
 + [XCode 6][Install Xcode]

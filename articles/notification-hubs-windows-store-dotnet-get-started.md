@@ -1,21 +1,16 @@
-<properties 
-	linkid="develop-notificationhubs-tutorials-get-started-windowsdotnet" 
-	urlDisplayName="Get started with notification hubs" 
-	pageTitle="Get started with Azure Notification Hubs" 
-	metaKeywords="" 
-	description="Learn how to use Azure Notification Hubs to push notifications." 
-	metaCanonical="" 
-	services="notification-hubs" 
-	documentationCenter="Mobile" 
-	title="Getting Started with Notification Hubs" 
-	authors="sethm" 
-	solutions="" 
-	manager="" 
-	editor="" />
-<tags 
-	ms.service="notification-hubs"
-        ms.date="06/09/2015"
-	wacn.date="10/03/2015"/>
+<properties
+	pageTitle="Azure 通知中心入门（Windows 应用商店应用）| Windows Azure"
+	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。"
+	services="notification-hubs"
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor="dwrede"/>
+
+<tags
+    ms.service="notification-hubs"
+    ms.date="09/03/2015"
+    wacn.date="11/02/2015"/>
 
 # 通知中心入门
 
@@ -23,7 +18,7 @@
 
 ##概述
 
-本主题演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started) 版本。在本教程中，您将创建一个空白 Windows 应用商店应用程序，它使用 Windows 推送通知服务 (WNS) 接收推送通知。完成后，你将能使用通知中心将推送通知广播到运行你的应用程序的所有设备。
+本教程演示如何使用 Azure 通知中心将推送通知发送到 Windows 应用商店或 Windows Phone 8.1（非 Silverlight）应用程序。如果你要以 Windows Phone 8.1 Silverlight 为目标，请参阅 [Windows Phone](notification-hubs-windows-phone-get-started.md) 版本。在本教程中，你将创建一个空白 Windows 应用商店应用，它使用 Windows 推送通知服务 (WNS) 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。
 
 本教程演示使用通知中心的简单广播方案。请确保随后学习下一教程以了解如何使用通知中心来发送到特定用户和设备组。
 
@@ -42,9 +37,9 @@
 
 ##为 Windows 应用商店注册应用程序
 
-要从移动服务将推送通知发送到 Windows 应用商店应用程序，你必须将你的应用程序提交到 Windows 应用商店。然后必须将通知中心配置为与 WNS 集成。
+若要将推送通知发送到 Windows 应用商店应用，你必须将你的应用关联到 Windows 应用商店。然后必须将通知中心配置为与 WNS 集成。
 
-1. 如果尚未注册应用，请在开发人员中心内导航到 Windows 应用商店应用程序的“提交应用”页，用 Microsoft 帐户登录，然后单击“应用名称”。<a href="http://go.microsoft.com/fwlink/p/?LinkID=266582" target="_blank"></a>
+1. 如果尚未注册应用，请在开发人员中心内导航到 Windows 应用商店应用程序的[“提交应用”](http://go.microsoft.com/fwlink/p/?LinkID=26658)页，用 Microsoft 帐户登录，然后单击“应用名称”。
 
    	![][0]
 

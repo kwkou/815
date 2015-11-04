@@ -1,19 +1,16 @@
-<properties 
-	title="Azure Notification Hubs Notify Users" 
-	pageTitle="Azure 通知中心通知用户" 
-	metaKeywords="Azure push notifications, Azure notification hubs" 
-	description="了解如何在 Azure 中发送安全推送通知。代码示例是使用 .NET API 通过 C# 编写的。" 
-	documentationCenter="" services="notification-hubs" 
-	metaCanonical="" 
-	disqusComments="1" 
-	umbracoNaviHide="0" 
-	authors="glenga" 
-	manager="dwrede" />
+<properties
+	pageTitle="Azure 通知中心 - 通知用户"
+	description="了解如何向 Azure 中的用户发送推送通知。用 Java for Android 编写的代码示例。"
+	documentationCenter="android"
+	services="notification-hubs"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.date="11/22/2014" 
-	wacn.date="10/03/2015" />
+<tags
+	ms.service="notification-hubs"
+	ms.date="06/16/2015"
+	wacn.date="11/02/2015"/>
 
 # Azure 通知中心通知用户
 
@@ -22,10 +19,10 @@
 
 ## 概述
 
-利用 Azure 中的推送通知支持，您可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中所述。本教程以您在**通知中心入门**教程中创建的通知中心为基础。
+利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证并生成通知，如指南主题[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中所述。本教程以你在**通知中心入门**教程中创建的通知中心为基础进行行制作。
 
-> [AZURE.NOTE]本教程假设您已根据[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 中所述创建并配置了通知中心。
-> 如果您使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users)。
+> [AZURE.NOTE]本教程假设你已根据[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 中所述创建并配置了通知中心。
+> 如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users)。
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
@@ -33,11 +30,11 @@
 
 下一步是创建 Android 应用程序。
 
-1. 请按照[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 教程来创建和配置您的应用，以接收来自 GCM 的推送通知。
+1. 请按照[通知中心入门 (Android)](/documentation/articles/notification-hubs-android-get-started) 教程创建应用并将其配置为从 GCM 接收推送通知。
 
-2. 打开 **res/layout/activity_main.xml** 文件，并将此文件内容替换为以下内容定义。
+2. 打开 **res/layout/activity\_main.xml** 文件，并将其内容替换为以下内容定义。
  
-    这将添加新的 EditText 控件以用于用户登录。此外，为将要成为您发送的通知的一部分的用户名标记添加一个字段：
+    这将添加新的 EditText 控件用于以用户身份登录。此外还会添加一个字段用作要发送的通知的一部分的用户名标记：
 			
 		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -123,7 +120,7 @@
 
 
 
-3. 打开 **res/values/strings.xml** 文件，并将 `send_button` 定义替换为重新定义 `send_button` 的字符串的以下行，并添加其他控件的字符串：
+3. 打开 **res/values/strings.xml** 文件并将 `send_button` 定义替换为以下行，以重新定义 `send_button` 的字符串并为其他控件添加字符串：
 
         <string name="usernameHint">Username</string>
         <string name="passwordHint">Password</string>
@@ -137,7 +134,7 @@
 
 	![][A1]
 
-4. 在 `MainActivity` 类所在的同一程序包中新建一个名为 **RegisterClient** 的新类。将下面的代码用于新的类文件。
+4. 在 `MainActivity` 类所在的包中创建一个名为 **RegisterClient** 的新类。将以下代码用于新的类文件。
 
 		import java.io.IOException;
 		import java.io.UnsupportedEncodingException;
@@ -242,9 +239,9 @@
 			}
 		}
 
-	此组件将实现所需的 REST 调用，以便能够联系应用后端来注册推送通知。它还会在本地存储通知中心创建的 *registrationIds*（[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中提供了详细信息）。请注意，当您单击“登录”按钮时，该组件使用存储在本地存储中的授权令牌。
+	此组件将实现所需的 REST 调用，以便能够联系应用程序后端来注册推送通知。它还会在本地存储通知中心创建的 *registrationIds*（从[应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中提供了详细信息）。请注意，该组件使用当你单击“登录”按钮时存储在本地存储中的授权令牌。
 
-5. 在 `MainActivity` 类中，删除或注释掉 `NotificationHub` 的私有字段，并为 `RegisterClient` 类添加一个字段，为 ASP.NET 后端终结点添加一个字符串。请确保将 `<Enter Your Backend Endpoint>` 替换为此前获取的实际后端终结点。例如，`http://mybackend.chinacloudsites.cn`。
+5. 在 `MainActivity` 类中，删除或注释掉 `NotificationHub` 的私有字段，并添加一个用于 `RegisterClient` 类的字段和一个用于 ASP.NET 后端终结点的字符串。确保使用前面获取的实际后端终结点来替换 `<Enter Your Backend Endpoint>`。例如，`http://mybackend.chinacloudsites.cn`。
 
 
 		//private NotificationHub hub;
@@ -368,11 +365,11 @@
         }
 
 
-	“登录”按钮的 `login` 处理程序生成用于输入用户名和密码的基本身份验证令牌（请注意，这表示身份验证方案使用的任何令牌），然后，它使用 `RegisterClient` 调用后端进行注册。
+	“登录”按钮的 `login` 处理程序使用输入的用户名和密码生成基本身份验证令牌（请注意，此令牌表示身份验证方案使用的任何令牌），然后它使用 `RegisterClient` 调用后端进行注册。
 
-	`sendPush` 方法根据用户标记，调用后端触发向用户发送安全通知。`sendPush` 面向的平台通知服务取决于已传递的 `pns` 字符串。
+	`sendPush` 方法调用后端来触发根据用户标记向用户发送安全通知。`sendPush` 针对的平台通知服务取决于传入的 `pns` 字符串。
 
-10. 在 `MainActivity` 类中，通过用户已选定的平台通知服务更新 `sendNotificationButtonOnClick` 方法以调用 `sendPush` 方法，如下所示。
+10. 在 `MainActivity` 类中，更新 `sendNotificationButtonOnClick` 方法以使用用户选择的平台通知服务调用 `sendPush` 方法，如下所示。
 
         /**
          * Send Notification button click handler. This method sends the push notification
@@ -410,19 +407,19 @@
 ## 运行应用程序
 
 
-1. 使用 Android Studio 在设备或仿真器上运行该应用程序。
+1. 在设备或模拟器上使用 Android Studio 运行该应用程序。
 
-2. 在 Android 应用中，输入用户名和密码。它们必须都是相同的字符串值，并且不得包含空格或特殊字符。
+2. 在 Android 应用中，输入用户名和密码。它们必须都是相同的字符串值，并且不能包含空格或特殊字符。
 
-3. 在 Android 应用中，单击“登录”。等待说明**已登录和已注册**状态的 toast 消息。这将启用“发送通知”按钮。
+3. 在 Android 应用中，单击“登录”。等待指示“已登录并已注册”的 toast 消息。这将启用“发送通知”按钮。
 
 	![][A2]
 
-4. 单击切换按钮，以启用您运行过该应用并注册过用户的所有平台。
-5. 输入要接收通知消息的用户名。该用户必须在目标设备上注册了通知。
+4. 单击切换按钮，以启用你已在其中运行该应用并已注册用户的所有平台。
+5. 输入将接收通知消息的用户的名称。必须已在目标设备上为通知注册该用户。
 
-6. 输入一条消息，以便用户将其接收为推送通知消息。
-7. 单击“发送通知”。使用匹配的用户名标记注册的每个设备都将收到此推送通知。
+6. 为用户输入要接收为推送通知的消息。
+7. 单击“发送通知”。已使用匹配的用户名标记注册的每个设备都将收到该推送通知。
 
 
 [A1]: ./media/notification-hubs-aspnet-backend-android-notify-users/android-notify-users.png

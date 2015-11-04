@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Azure 通知中心入门" 
-	description="了解如何使用 Azure 通知中心推送通知。" 
+	pageTitle="Azure 通知中心入门（Android 应用）| Windows Azure" 
+	description="在本教程中，你将了解如何使用 Azure 通知中心将通知推送到 Android 设备。"
 	services="notification-hubs" 
 	documentationCenter="android" 
 	authors="wesmc7777" 
@@ -8,8 +8,8 @@
 	editor=""/>
 <tags 
 	ms.service="notification-hubs"	
-	ms.date="05/27/2015" 
-	wacn.date="10/03/2015" />
+	ms.date="09/03/2015"
+	wacn.date="11/02/2015" />
 
 # 通知中心入门
 
@@ -27,7 +27,7 @@
 本教程需要的内容如下：
 
 + Android Studio，可从<a href="http://go.microsoft.com/fwlink/?LinkId=389797">此处</a>下载
-+ 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fzh-CN%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F)。
++ 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://www.windowsazure.cn/pricing/1rmb-trial/)。
 
 
 完成本教程是学习有关 Android 应用程序的所有其他通知中心教程的先决条件。
@@ -66,7 +66,9 @@
 
 
 
-	这两个包的参考文档位于以下链接： * [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html) * [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
+	这两个包的参考文档位于以下链接：
+	* [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html) 
+	* [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
 
 
     > [AZURE.NOTE]在后续的 SDK 版本中，文件名末尾的数字可能更改。
@@ -100,9 +102,13 @@
 		private NotificationHub hub;
     	private String HubName = "<Enter Your Hub Name>";
 		private String HubListenConnectionString = "<Your default listen connection string>";
+	    private static Boolean isVisible = false;
 
 
-	确保更新三个占位符：* * **SENDER\_ID**：将 `SENDER_ID` 设置为前面在从 [Google Cloud Console](http://cloud.google.com/console) 中创建的项目获取的项目编号。* **HubListenConnectionString**：将 `HubListenConnectionString` 设置为中心的 **DefaultListenAccessSignature** 连接字符串。在 [Azure 管理门户]上，单击中心的“仪表板”选项卡上的“查看连接字符串”，即可复制该连接字符串。* **HubName**：在 Azure 中的页面顶部显示的通知中心名称（**不是**完整 URL）。例如 `"myhub"`。
+	确保更新三个占位符：
+	* **SENDER\_ID**：将 `SENDER_ID` 设置为前面在从 [Google Cloud Console](http://cloud.google.com/console) 中创建的项目获取的项目编号。
+	* **HubListenConnectionString**：将 `HubListenConnectionString` 设置为中心的 **DefaultListenAccessSignature** 连接字符串。在 [Azure 管理门户]上，单击中心的“仪表板”选项卡上的“查看连接字符串”，即可复制该连接字符串。
+	* **HubName**：在 Azure 中的中心页面顶部显示的通知中心名称（**不是**完整 URL）。例如 `"myhub"`。
 
 
 
@@ -134,7 +140,22 @@
         	}.execute(null, null, null);
     	}
 
-		
+
+7. 向活动添加 **DialogNotify** 方法可在应用正在运行且可见时显示通知。此外还重写 **onStart** 和 **onStop** 以确定该活动是否可见以便显示对话框。
+
+	    @Override
+	    protected void onStart() {
+	        super.onStart();
+	        isVisible = true;
+	    }
+	
+	    @Override
+	    protected void onStop() {
+	        super.onStop();
+	        isVisible = false;
+	    }
+
+
 		/**
 		  * A modal AlertDialog for displaying a message on the UI thread
 		  * when theres an exception or message to report.
@@ -144,6 +165,9 @@
 		  */
     	public void DialogNotify(final String title,final String message)
     	{
+	        if (isVisible == false)
+	            return;
+
         	final AlertDialog.Builder dlg;
         	dlg = new AlertDialog.Builder(this);
 
@@ -243,7 +267,7 @@
 	
 13. 在 Android Studio 的菜单栏上，单击“生成”>“重新生成项目”，以确保不会检测到任何错误。
 
-##如何发送通知
+##发送通知
 
 
 
