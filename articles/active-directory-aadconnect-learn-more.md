@@ -13,14 +13,13 @@
 	wacn.date="11/02/2015"/>
 
 # Azure Active Directory Connect - 了解详细信息
+> [AZURE.SELECTOR]
+- [简介](/documentation/articles/active-directory-aadconnect/)
+- [工作原理](/documentation/articles/active-directory-aadconnect-how-it-works/)
+- [入门](/documentation/articles/active-directory-aadconnect-get-started/)
+- [后续步骤](/documentation/articles/active-directory-aadconnect-whats-next/)
+- [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more/)
 
-<div>
-<a href="/documentation/articles/active-directory-aadconnect/">简介</a> 
-<a href="/documentation/articles/active-directory-aadconnect-how-it-works/">工作原理</a> 
-<a href="/documentation/articles/active-directory-aadconnect-get-started/">入门</a>
-<a href="/documentation/articles/active-directory-aadconnect-whats-next/">后续步骤</a> 
-<a href="/documentation/articles/active-directory-aadconnect-learn-more/">了解详细信息</a>
-</div>
 
 下面是有关使用 Azure AD Connect 以及将本地目录与 Azure AD 集成的其他资源列表。
 

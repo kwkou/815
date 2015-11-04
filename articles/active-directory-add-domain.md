@@ -51,7 +51,7 @@ Office 365 用户可能对下列相关主题感兴趣：
 - [编辑云服务的 DNS 记录](#edit-dns-records-for-your-cloud-services)
 - [在任一域名注册机构验证域](#verify-a-domain-at-any-domain-name-registrar)
 
-### 使用 Azure 管理门户添加和验证域
+### <a name="add-and-verify-a-domain-using-the-azure-management-portal" ></a> 使用 Azure 管理门户添加和验证域
 
 1. 在管理门户中，单击“Active Directory”，然后单击你所在组织的目录的名称。你可以执行以下操作之一：
     1. 在默认目录页上，单击“改进用户登录体验”部分中的“添加域”。
@@ -67,7 +67,7 @@ Office 365 用户可能对下列相关主题感兴趣：
 
 > [AZURE.NOTE]将域名添加到 Azure AD 并验证此域后，可以更改新电子邮件地址的默认域名。有关详细信息，请参阅[如何更改用户的主域名？](#how-can-i-change-the-primary-domain-name-for-users?) 还可以编辑现有用户帐户的配置文件，以将电子邮件地址（同时也是你的用户 ID）更新为使用自定义域名而不是 partner.onmschina.cn 域。
 
-### 编辑云服务的 DNS 记录
+### <a name="edit-dns-records-for-your-cloud-services" ></a>编辑云服务的 DNS 记录
 
 > [AZURE.NOTE]是否使用 Microsoft Intune？ 不需要编辑 Windows Intune 云服务的 DNS 记录。
 
@@ -86,7 +86,7 @@ Office 365 用户可能对下列相关主题感兴趣：
 
 若要查看域的状态，请在“域”页上单击该域，然后在“域属性”页上单击“域故障排除”。
 
-### 在任一域名注册机构验证域
+###<a name="verify-a-domain-at-any-domain-name-registrar" ></a> 在任一域名注册机构验证域
 
 如果你的域已在某个域名注册机构注册，并且你想要将它配置为用于 Azure AD，则需要进行域验证，以确认你拥有该域。若要验证你的域，请在域名注册机构或 DNS 托管商那里创建一条 DNS 记录，然后，Azure AD 将使用该记录来确认你拥有该域。
 

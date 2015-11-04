@@ -31,10 +31,10 @@
 
 以下主题讨论在设置组织中的条件性访问策略时可以使用的每个不同的机制。
 
-- [Azure Active Directory Device Registration 概述](https://msdn.microsoft.com/zh-cn/library/azure/dn903763.aspx)
-- [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://msdn.microsoft.com/zh-cn/library/azure/dn788908.aspx)
-- [Office 365 服务的条件性访问设备策略](https://msdn.microsoft.com/zh-cn/library/azure/dn903766.aspx)
-- [SaaS 应用程序的 Azure 条件性访问预览](https://msdn.microsoft.com/zh-cn/library/azure/dn906877.aspx)
+- [Azure Active Directory Device Registration 概述](/documentation/articles/active-directory-conditional-access-device-registration-overview)
+- [使用 Azure Active Directory Device Registration 设置本地条件性访问](/documentation/articles/active-directory-conditional-access-on-premises-setup)
+- [Office 365 服务的条件性访问设备策略](/documentation/articles/active-directory-conditional-access-device-policies)
+- [SaaS 应用程序的 Azure 条件性访问预览](/documentation/articles/active-directory-conditional-access-azuread-connected-apps)
 
 
 <!--Image references--> 
