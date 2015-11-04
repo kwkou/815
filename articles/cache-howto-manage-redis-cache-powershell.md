@@ -86,7 +86,6 @@
 若要了解有关将 Windows PowerShell 与 Azure 配合使用的详细信息，请参阅以下资源：
  
 - [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/library/azure/mt125356.aspx)：了解如何在 AzureResourceManager 模块中使用这些 cmdlet。
-- [使用资源组来管理 Azure 资源](/documentation/articles/resource-group-portal)：了解如何在 Azure 管理门户中创建和管理资源组。
 - [Azure 博客](http://blogs.msdn.com/windowsazure)：了解 Azure 中的新功能。
 - [Windows PowerShell 博客](http://blogs.msdn.com/powershell)：了解 Windows PowerShell 中的新功能。
 - [“你好，脚本编写专家！” 博客](http://blogs.technet.com/b/heyscriptingguy/)：从 Windows PowerShell 社区获取实用提示和技巧。

@@ -32,19 +32,11 @@ Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发
 - 现有工具：[Azure 管理门户](http://manage.windowsazure.cn/)或 [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer)。
 
 
-##媒体服务学习路径
-
-你可以在此处查看 AMS 学习路径：
-
-- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
-
-
 ##先决条件
 
 若要开始使用 Azure 媒体服务，你应该具备以下条件：
  
-3. 一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/documentation/articles/azure.microsoft.com)。
+3. 一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 2. Azure 媒体服务帐户。使用 Azure 管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use)。 
 

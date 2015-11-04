@@ -483,7 +483,7 @@ Azure CLI 可通过 NPM 或 Windows 安装程序来安装。Microsoft 建议你�
 
 **使用 Windows 安装程序安装 Azure CLI**
 
-1.	浏览到 **/downloads/**。
+1.	浏览到 **http://www.windowsazure.cn/downloads/**。
 2.	向下滚动到“命令行工具”部分，单击“Azure 命令行界面”，然后根据 Web 平台安装程序向导的提示操作。
 
 **下载和导入发布设置**

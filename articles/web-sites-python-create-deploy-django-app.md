@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="在 Azure 中使用 Django 创建 Web 应用"
 	description="本教程介绍在 Azure 网站上运行 Python Web 应用。"
 	services="app-service\web"
@@ -47,7 +47,7 @@
 - Python 2.7 或 3.4
 - setuptools, pip, virtualenv（仅限 Python 2.7）
 - Git
-- [Python Tools for Visual Studio][](/documentation/articles/PTVS) - 注意：这是可选的
+- [Python Tools for Visual Studio][] - 注意：这是可选的
 
 **注意**：Python 项目目前不支持 TFS 发布。
 

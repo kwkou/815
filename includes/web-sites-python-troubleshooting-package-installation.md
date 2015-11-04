@@ -1,4 +1,4 @@
-﻿在 Azure 上运行时，有些软件包可能无法使用 pip 进行安装。可能只是该软件包在 Python 软件包索引中不可用。可能需要一个编译器（在运行 Azure 网站的计算机上未提供编译器）。
+在 Azure 上运行时，有些软件包可能无法使用 pip 进行安装。可能只是该软件包在 Python 软件包索引中不可用。可能需要一个编译器（在运行 Azure 网站的计算机上未提供编译器）。
 
 在此部分中，我们将考察解决此问题的方法。
 
@@ -65,5 +65,5 @@ Mac/Linux 用户：如果您没有 Windows 计算机的访问权限，请参阅[
 
 
 [创建运行 Windows 的虚拟机]: /documentation/articles/virtual-machines-windows-tutorial/
-[Microsoft Visual C++ Compiler for Python 2.7]: http:://aka.ms/vcpython27
+[Microsoft Visual C++ Compiler for Python 2.7]: http://aka.ms/vcpython27
 [Microsoft Visual C++ 2010 Express]: http://go.microsoft.com/?linkid=9709949
