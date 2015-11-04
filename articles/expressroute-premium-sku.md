@@ -50,7 +50,7 @@ Windows PowerShell 是一个功能强大的脚本编写环境，可用于在 Azu
 
 ### 2.配置新的 ExpressRoute 线路并为其启用高级版外接程序功能
 
-可以创建新的 ExpressRoute 线路并在创建时为其启用高级版外接程序。按照有关如何通过[连接提供商](/documentation/articlesexpressroute-configuring-exps) 创建 ExpressRoute 线路的说明进行操作。我们在 New-AzureDedicatedCircuit cmdlet 中添加了一个新的可选参数，让你指定 SKU。SKU 可以是 Standard 或 Premium。默认值为“standard”。在 SKU 上传递为 Premium 将为线路启用高级版外接程序功能。
+可以创建新的 ExpressRoute 线路并在创建时为其启用高级版外接程序。按照有关如何通过[连接提供商](/documentation/articles/expressroute-configuring-exps) 创建 ExpressRoute 线路的说明进行操作。我们在 New-AzureDedicatedCircuit cmdlet 中添加了一个新的可选参数，让你指定 SKU。SKU 可以是 Standard 或 Premium。默认值为“standard”。在 SKU 上传递为 Premium 将为线路启用高级版外接程序功能。
 
 
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -Sku Premium

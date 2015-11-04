@@ -51,7 +51,7 @@
 
 - 你将不能（通过 Azure）在通过站点到站点 VPN 连接的本地网络与通过 ExpressRoute 连接的本地网络之间进行路由。
 - 你不能启用与连接到 ExpressRoute 的同一虚拟网络的点到站点 VPN 连接。对于同一虚拟网络而言，点到站点 VPN 和 ExpressRoute 不能共存。
-- ExpressRoute 网关和站点到站点 VPN 网关必须是标准网关 SKU 或高性能网关 SKU。有关网关 SKU 的信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways)。
+- ExpressRoute 网关和站点到站点 VPN 网关必须是标准网关 SKU 或高性能网关 SKU。
 - 如果你的本地网络同时连接到 ExpressRoute 和站点到站点 VPN（方案 1），则你应在本地网络中配置静态路由，以便将站点到站点 VPN 连接路由到公共 Internet。 
 - 必须先创建 ExpressRoute 网关，然后再添加站点到站点 VPN 网关。
 - 这两个过程都假定你已配置有一条 ExpressRoute 线路。如果你未配置，请参阅以下文章： 
