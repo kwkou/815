@@ -202,7 +202,7 @@
 [14]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
 
 <!-- URLs. -->
-[操作方法：服务总线通知中心（iOS 应用）]: /documentation/articles/notification-hubs-ios-get-started
+[操作方法：服务总线通知中心（iOS 应用）]: https://msdn.microsoft.com/zh-cn/library/dn530748.aspx
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
 [使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-cross-platform-notify-users
 [使用通知中心通知用户：移动服务]: /documentation/articles/notification-hubs-mobile-services-cross-platform-notify-users
