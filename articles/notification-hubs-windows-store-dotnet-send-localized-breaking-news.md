@@ -15,7 +15,7 @@
 # 使用通知中心发送本地化的突发新闻
 
 
-[AZURE.INCLUDE] [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)
+[AZURE.INCLUDE [notification-hubs-selector-breaking-news](../includes/notification-hubs-selector-breaking-news.md)]
 
 
 ##概述

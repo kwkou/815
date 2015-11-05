@@ -230,5 +230,5 @@
 <!-- URLs. -->
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-notify-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[通知中心入门]: /documentation/articles/notification-hubs-windows-phone-get-started
+[通知中心入门]: /documentation/articles/notification-hubs-ios-get-started
 <!---HONumber=71-->
