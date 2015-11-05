@@ -20,14 +20,14 @@ ExpressRoute 是一项 Azure 服务，允许你在 Azure 数据中心与你的�
 ### 使用 ExpressRoute 和专用网络连接的好处是什么？
 ExpressRoute 连接不通过公共 Internet，与通过公共 Internet 的典型连接相比，提供更高的安全性、可靠性、速度和一贯较低的延迟。在某些情况下，使用 ExpressRoute 连接在本地设备和 Azure 之间传输数据可以产生显著的成本效益。
 
-### 可通过 ExpressRoute 支持哪些 Microsoft 云服务？
+### 可通过 ExpressRoute 支持哪些 Windows Azure 服务？
 ExpressRoute 目前支持大多数 Windows Azure 服务。
 
 ### 哪里提供该服务？
 参阅 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)了解服务上市区域和可用性。
 
 ### 我如果未与 ExpressRoute 运营商合作伙伴之一建立合作伙伴关系，则如何使用 ExpressRoute 连接到 Azure？
-你可以通过区域运营商来建立以太网连接到Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Microsoft 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
+你可以通过区域运营商来建立以太网连接到Azure支持的连接提供商。然后，你可以在连接服务商的位置与 Windows Azure 实现对接。查看 [ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)的最后一部分，以确定你的网络提供商是否处在任何 Exchange 位置中。然后，你可以从交换提供商订购一条 ExpressRoute 线路以连接到 Azure。
 
 ### ExpressRoute 的费用是多少？
 有关定价信息，请查看[定价详细信息](/home/features/expressroute/#price)。
@@ -93,7 +93,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 否。我们不支持将第 2 层连接扩展到 Azure。
 
 ### 能否在我的订阅中有多条 ExpressRoute 线路？
-是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Microsoft 支持。
+是的。你可以在订阅中有多条 ExpressRoute 线路。专用线路数的默认限制设置为 10。如果你需要增大限制，请联系 Windows Azure 支持。
 
 ### 能否使用不同服务提供商的 ExpressRoute 线路？
 是的。你可以使用许多服务提供商的 ExpressRoute 线路。每条 ExpressRoute 线路将只与一个服务提供商相关联。
@@ -160,7 +160,7 @@ BGP 会话将被删除。当前缀计数低于限制后，将重置这些会话�
 以下步骤可帮助 Azure 识别激活请求：
 
 1. 为 ExpressRoute 线路建立公共对等互连。
-2. 执行 DNS 查找，找到 **kms.core.windows.net** 的 IP 地址
+2. 执行 DNS 查找，找到 **kms.core.chinacloudapi.cn** 的 IP 地址
 3. 然后执行以下两项操作之一，使密钥管理服务能够识别来自 Azure 的激活请求并遵照该请求。
 	- 在你的本地网络上，通过公共对等互连将发往 IP 地址（在步骤 2 中获得）的流量路由回到 Azure。
 
