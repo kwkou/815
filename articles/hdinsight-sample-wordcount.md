@@ -81,7 +81,7 @@
 
 		# Create the storage account context object
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	**Select-AzureSubscription** 用于在你具有多个订阅但默认订阅不是要使用的订阅时设置当前订阅。
 

@@ -64,7 +64,7 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 请将下面示例中的 `storage-account-name` 和 `storage-account-key` 替换为你的帐户名称和密钥：
 
 	# create a context for account and key
-	$ctx=New-AzureStorageContext storage-account-name storage-account-key
+	$ctx=New-AzureStorageContext -Environment AzureChinaCloud storage-account-name storage-account-key
 
 ### 创建新的文件共享
 

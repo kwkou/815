@@ -33,7 +33,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 在远程 HDInsight 群集上运行 MapReduce 作业时，将使用以下 Cmdlet。
 
-* **Add-AzureAccount**：在 Azure 订阅中进行 Azure PowerShell 身份验证
+* **Add-AzureAccount -Environment AzureChinaCloud**：在 Azure 订阅中进行 Azure PowerShell 身份验证
 
 * **New-AzureHDInsightMapReduceJobDefinition**：使用指定的 MapReduce 信息创建新的*作业定义*
 
@@ -52,7 +52,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#Specify the cluster name
@@ -117,7 +117,7 @@ MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为�
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#Specify the cluster name

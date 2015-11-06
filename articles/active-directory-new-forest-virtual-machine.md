@@ -155,7 +155,7 @@
 
     cls
 
-    Set-AzureSubscription -SubscriptionName "Free Trial" -currentstorageaccountname 'constorageaccount'
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName "Free Trial" -currentstorageaccountname 'constorageaccount'
     Select-AzureSubscription -SubscriptionName "Free Trial"
 
     #Deploy a new VM and join it to the domain

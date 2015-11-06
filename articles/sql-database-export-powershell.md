@@ -44,7 +44,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -81,7 +81,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
     $credential = Get-Credential
     $SqlCtx = New-AzureSqlDatabaseServerContext -ServerName $ServerName -Credential $credential
 
-    $StorageCtx = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
+    $StorageCtx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageName -StorageAccountKey $StorageKey
     $Container = Get-AzureStorageContainer -Name $ContainerName -Context $StorageCtx
 
 
@@ -106,7 +106,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 ## 导出 SQL 数据库 PowerShell 脚本
 
 
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
     Select-AzureSubscription -SubscriptionId "4cac86b0-1e56-bbbb-aaaa-000000000000"
     
     $ServerName = "servername"

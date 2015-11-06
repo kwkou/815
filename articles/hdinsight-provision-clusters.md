@@ -380,7 +380,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 		###########################################
 
 		# Sign in
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 		# Select the subscription to use
 		$subscriptionName = "<SubscriptionName>"        # Provide your Subscription Name

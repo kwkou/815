@@ -45,7 +45,7 @@ HDInsight 群集在 Azure 存储帐户上需要 Azure 资源组和 Blob 容器�
 
 2. 连接到你的 Azure 帐户并选择一个订阅（如果你有多个订阅）。
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 		Select-AzureSubscription
 
 3. 创建新的资源组：
@@ -83,7 +83,7 @@ Azure PowerShell 无法在 HDInsight 设置过程中创建 Blob 容器。你可�
 	$containerName="<AzureBlobContainerName>"
 
 	# Create a storage context object
-	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+	$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 	
 	# Create a Blob storage container
 	New-AzureStorageContainer -Name $containerName -Context $destContext
@@ -177,7 +177,7 @@ HDInsight 群集分发附带一些 MapReduce 示例。其中一个示例是计�
 		
 	# Create the Storage account context object
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 	
 	# Download the output to local computer
 	Get-AzureStorageBlobContent -Container $ContainerName -Blob example/data/WordCountOutput/part-r-00000 -Context $storageContext -Force

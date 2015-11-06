@@ -47,7 +47,7 @@
 
 对于要向其部署新资源的订阅，请注意"帐户"属性。使用"帐户"属性中列出的帐户，通过运行此命令登录到 Azure。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 在 Windows Azure 登录对话框中指定帐户的电子邮件地址及其密码。
 
@@ -55,7 +55,7 @@
 
 	$subscr="<subscription name>"
 	Select-AzureSubscription -SubscriptionName $subscr -Current
-	Set-AzureSubscription -SubscriptionName $subscr
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr
 
 你可以从 **Get-AzureSubscription** 命令输出的 **SubscriptionName** 属性获取相应的订阅名称。
 

@@ -101,7 +101,7 @@
 
 	$stAccount="<your storage account name>"
 	New-AzureStorageAccount -StorageAccountName $stAccount -Location $loc
-	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $stAccount
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr -CurrentStorageAccountName $stAccount
 
 这是你当前的配置。
 

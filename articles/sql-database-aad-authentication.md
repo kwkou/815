@@ -155,7 +155,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 若要设置 Azure AD 管理员，必须执行以下 Azure PowerShell 命令：
 
-- Add-AzureAccount
+- Add-AzureAccount -Environment AzureChinaCloud
 - Select-AzureSubscription
 - Switch-AzureMode -Name AzureResourceManager
 

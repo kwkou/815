@@ -54,7 +54,7 @@
 
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -108,7 +108,7 @@
     $NewEdition = "Standard"
     $NewPricingTier = "S2"
     
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
     Select-AzureSubscription -SubscriptionId $SubscriptionId
     
     $ScaleRequest = Set-AzureSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier

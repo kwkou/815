@@ -86,7 +86,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 	$SecurePassword = ConvertTo-SecureString -AsPlainText $Password -Force
 	$Cred = New-Object System.Management.Automation.PSCredential -ArgumentList $UserName, $securePassword
-	Add-AzureAccount -Credential $Cred;
+	Add-AzureAccount -Environment AzureChinaCloud -Credential $Cred;
 	$AzureSubscription = Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
 
 

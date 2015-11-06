@@ -49,7 +49,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 | 资产类型 | 资产名称 | 说明 |
 |:---|:---|:---|
-| 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount** 活动的 **Credential** 参数中指定其他凭据。 |
+| 凭据 | AzureCredential | 包含帐户凭据，该帐户有权在 Azure 订阅中启动和停止虚拟机。此外，你也可以在 **Add-AzureAccount -Environment AzureChinaCloud** 活动的 **Credential** 参数中指定其他凭据。 |
 | 变量 | AzureSubscriptionId | 包含你的 Azure 订阅的订阅 ID。 |
 
 ## 使用解决方案
@@ -129,11 +129,11 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 	# Connect to Azure and select the subscription to work against
 	$Cred = Get-AutomationPSCredential -Name $AzureCredentialAssetName
-	$null = Add-AzureAccount -Credential $Cred -ErrorAction Stop
+	$null = Add-AzureAccount -Environment AzureChinaCloud -Credential $Cred -ErrorAction Stop
 	$SubId = Get-AutomationVariable -Name $AzureSubscriptionIdAssetName
     $null = Select-AzureSubscription -SubscriptionId $SubId -ErrorAction Stop
 
-后续的行设置将要用于剩余 Runbook 的[凭据](/documentation/articles/automation-configuring#configuring-authentication-to-azure-resources)和 Azure 订阅。首先，我们使用 **Get-AutomationPSCredential** 来获取用于存储凭据的资产，这些凭据具有相应的访问权限，可用于启动和停止 Azure 订阅中的虚拟机。**Add-AzureAccount** 然后就会使用此资产来设置凭据。该输出已分配给一个虚拟变量，因此不会包括在 Runbook 输出中。
+后续的行设置将要用于剩余 Runbook 的[凭据](/documentation/articles/automation-configuring#configuring-authentication-to-azure-resources)和 Azure 订阅。首先，我们使用 **Get-AutomationPSCredential** 来获取用于存储凭据的资产，这些凭据具有相应的访问权限，可用于启动和停止 Azure 订阅中的虚拟机。**Add-AzureAccount -Environment AzureChinaCloud** 然后就会使用此资产来设置凭据。该输出已分配给一个虚拟变量，因此不会包括在 Runbook 输出中。
 
 然后会使用 **Get-AutomationVariable** 来检索包含订阅 ID 的变量资产，并使用 **Select-AzureSubscription** 来设置订阅。
 

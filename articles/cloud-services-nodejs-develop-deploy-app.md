@@ -97,7 +97,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 1.  运行以下 Azure Powershell cmdlet：
 
-        Get-AzurePublishSettingsFile
+        Get-AzurePublishSettingsFile -Environment AzureChinaCloud
 
 	此操作将使用浏览器导航到发布设置下载页。系统可能会提示你使用 Microsoft 帐户登录。如果是这样，请使用与你的 Azure 订阅关联的帐户。
 
@@ -105,7 +105,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 2.  运行以下 cmdlet 以导入下载的发布配置文件：
 
-        Import-AzurePublishSettingsFile [path to file]
+        Import-AzurePublishSettingsFile -Environment AzureChinaCloud [path to file]
 
 
 	> [AZURE.NOTE]导入发布设置之后，请考虑删除下载的 .publishSettings 文件，因为它包含了可供他人访问你帐户的信息。

@@ -130,7 +130,7 @@
 
 	$staccount="<Unique storage account name>"
 	New-AzureStorageAccount -StorageAccountName $staccount -Location "<Table V – Item 2 – Value column>"
-	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 接下来，定义四个可用性集的名称。填写表 A。
 

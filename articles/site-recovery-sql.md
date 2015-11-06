@@ -239,7 +239,7 @@
 
 2.	将脚本上载到 Azure 存储帐户中的 Blob。使用以下示例：
 
-    	$context = New-AzureStorageContext -StorageAccountName "Account" -StorageAccountKey "Key"
+    	$context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName "Account" -StorageAccountKey "Key"
     	Set-AzureStorageBlobContent -Blob "AGFailover.ps1" -Container "script-container" -File "ScriptLocalFilePath" -context $context
 
 3.	创建 Azure 自动化 Runbook，以便在 Azure 中调用 SQL Server 副本虚拟机上的脚本。使用此示例脚本来实现此目的。[详细了解](/documentation/articles/site-recovery-runbook-automation)如何在恢复计划中使用自动化 Runbook。
@@ -253,7 +253,7 @@
     		$Cred = Get-AutomationPSCredential -name 'AzureCredential'
 	
     		#Connect to Azure
-    		$AzureAccount = Add-AzureAccount -Credential $Cred
+    		$AzureAccount = Add-AzureAccount -Environment AzureChinaCloud -Credential $Cred
     		$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
     		Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
     
@@ -325,7 +325,7 @@
 
 2.	将脚本上载到 Azure 存储帐户中的 Blob。使用此示例脚本。
 
-    	$context = New-AzureStorageContext -StorageAccountName "Account" -StorageAccountKey "Key"
+    	$context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName "Account" -StorageAccountKey "Key"
     	Set-AzureStorageBlobContent -Blob "AGFailover.ps1" -Container "script-container" -File "ScriptLocalFilePath" -context $context
 
 3.	创建 Azure 自动化 Runbook，以便在 Azure 中调用 SQL Server 副本虚拟机上的脚本。使用此示例脚本来实现此目的。[详细了解](/documentation/articles/site-recovery-runbook-automation)如何在恢复计划中使用自动化 Runbook。在执行此操作之前，请确保虚拟机代理在故障转移的 SQL Server 虚拟机上运行。
@@ -339,7 +339,7 @@
     	$Cred = Get-AutomationPSCredential -name 'AzureCredential'
 	
     	#Connect to Azure
-    	$AzureAccount = Add-AzureAccount -Credential $Cred
+    	$AzureAccount = Add-AzureAccount -Environment AzureChinaCloud -Credential $Cred
     	$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
     	Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
     

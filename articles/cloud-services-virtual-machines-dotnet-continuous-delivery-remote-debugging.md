@@ -44,7 +44,7 @@
 5. 运行以下脚本以启用 RemoteDebug 扩展。将路径和个人数据替换为你自己的数据，例如，你的订阅名称、服务名称和指纹。（注意：此脚本是针对 Visual Studio 2015 RC 配置的。如果你使用的是 Visual Studio 2013，请为 ReferenceName 和 ExtensionName 使用“RemoteDebugVS2013”。）
 
 	<pre>
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
 
     Select-AzureSubscription "My Microsoft Subscription"
 

@@ -48,7 +48,7 @@
 
 打开 Azure PowerShell 命令提示符，然后使用此命令登录到 Azure。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 如果有多个 Azure 订阅，你可以使用此命令列出 Azure 订阅。
 

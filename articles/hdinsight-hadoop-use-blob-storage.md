@@ -119,12 +119,12 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 	$containerName="<BlobContainerToBeCreated>" # The Blob container name that you will create
 
 	# Connect to your Azure account and selec the current subscription
-	Add-AzureAccount # The connection will expire in 12 hours.
+	Add-AzureAccount -Environment AzureChinaCloud # The connection will expire in 12 hours.
 	Select-AzureSubscription $subscriptionName #only required if you have multiple subscriptions
 
 	# Create a storage context object
 	$storageAccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
-	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+	$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	# Create a Blob storage container
 	New-AzureStorageContainer -Name $containerName -Context $destContext
@@ -207,7 +207,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
+	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
 
 	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"
@@ -215,7 +215,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 
 	Write-Host "Create a context object ... " -ForegroundColor Green
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	Write-Host "Download the blob ..." -ForegroundColor Green
 	Get-AzureStorageBlobContent -Container $ContainerName -Blob $blob -Context $storageContext -Force
@@ -232,7 +232,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
+	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
 
 	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"
@@ -240,7 +240,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 
 	Write-Host "Create a context object ... " -ForegroundColor Green
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	Write-Host "Delete the blob ..." -ForegroundColor Green
 	Remove-AzureStorageBlob -Container $containerName -Context $storageContext -blob $blob
@@ -255,7 +255,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 	$blobPrefix = "example/data/"
 
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
-	#Add-AzureAccount # The connection is good for 12 hours
+	#Add-AzureAccount -Environment AzureChinaCloud # The connection is good for 12 hours
 
 	# Use these two commands if you have multiple subscriptions
 	#$subscriptionName = "<SubscriptionName>"
@@ -263,7 +263,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 
 	Write-Host "Create a context object ... " -ForegroundColor Green
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+	$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	Write-Host "List the files in $blobPrefix ..."
 	Get-AzureStorageBlob -Container $containerName -Context $storageContext -prefix $blobPrefix

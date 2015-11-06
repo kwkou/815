@@ -35,7 +35,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 		Switch-AzureMode AzureResourceManager
 
 		# Log in to your Azure account
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 		# Select the Azure subscription you want to use to create the resource group
 		Select-AzureSubscription -SubscriptionName <subscription name>

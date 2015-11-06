@@ -20,7 +20,7 @@
 
 首先，必须使用以下命令登录到 Azure。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 在 Windows Azure 登录对话框中指定 Azure 帐户的电子邮件地址及其密码。
 

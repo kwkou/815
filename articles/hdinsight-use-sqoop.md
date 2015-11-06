@@ -271,7 +271,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 1. 打开 Windows PowerShell ISE。
 2. 在底部窗格中，运行以下命令以连接到 Azure 订阅：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	系统将提示你输入 Azure 帐户凭据。这种添加订阅连接的方法会超时，12 个小时之后，你将需要再次登录。
 
@@ -358,7 +358,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 1. 打开 Windows PowerShell ISE。
 2. 在底部窗格中，运行以下命令以连接到 Azure 订阅：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	系统将提示你输入 Azure 帐户凭据。
 
@@ -412,7 +412,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 1. 打开 Windows PowerShell ISE。
 2. 在底部窗格中，运行以下命令以连接到 Azure 订阅：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	系统将提示你输入 Azure 帐户凭据。
 
@@ -564,7 +564,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 1. 打开 Windows PowerShell ISE。
 2. 在底部窗格中，运行以下命令以连接到 Azure 订阅：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	系统将提示你输入 Azure 帐户凭据。
 

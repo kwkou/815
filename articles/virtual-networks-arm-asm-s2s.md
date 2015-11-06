@@ -41,7 +41,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 1. 从 PowerShell 控制台中，运行以下命令以添加 Azure 帐户。
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 2. 遵循登录对话框中的说明，使用 Azure 帐户登录。
 
