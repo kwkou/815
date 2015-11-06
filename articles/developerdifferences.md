@@ -520,7 +520,7 @@ Windows Azure 诊断使用开发计算机上的本地存储或中国服务存储
  
 #<a name="powershell"></a>使用 Windows Azure PowerShell
 
-要对中国服务使用*Windows Azure PowerShell*，请运行**Get-AzurePublishSettingsFile -Environment "AzureChinaCloud"** 来获取正确的*publish settings*文件。然后使用**Import-AzurePublishSettingsFile**导入。
+要对中国服务使用*Windows Azure PowerShell*，请运行**Get-AzurePublishSettingsFile -Environment "AzureChinaCloud"** 来获取正确的*publish settings*文件。然后使用**Import-AzurePublishSettingsFile -Environment AzureChinaCloud**导入。
 
 #<a name="nodejs"></a>使用 Node.js 的 Windows Azure SDK
 

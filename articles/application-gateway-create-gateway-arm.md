@@ -65,7 +65,7 @@
 登录到你的 Azure 帐户。
 
 
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
 
 系统将提示你使用凭据进行身份验证。
 

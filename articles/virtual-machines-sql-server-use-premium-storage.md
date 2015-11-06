@@ -148,7 +148,7 @@
     $location = "West Europe"
     
     #Set up subscription 
-    Set-AzureSubscription -SubscriptionName $mysubscription 
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription 
     Select-AzureSubscription -SubscriptionName $mysubscription -Current  
 
 #### 步骤 1：创建高级存储帐户
@@ -177,7 +177,7 @@
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname 
     
     ##Generate storage acc contexts 
-    $xioContext = New-AzureStorageContext –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary   
+    $xioContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary   
     
     #Create container
     $containerName = 'vhds'
@@ -187,12 +187,12 @@
     #NOTE: Set up subscription and default storage account which will be used to place the OS VHD in
     
     #If you want to place the OS VHD Premium Storage Account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount  $newxiostorageaccountname  
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount  $newxiostorageaccountname  
     
     #If you wanted to place the OS VHD Standard Storage Account but attach Premium Storage VHDs then you would run this instead:
     $standardstorageaccountname = "danstdams" 
     
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount  $standardstorageaccountname
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount  $standardstorageaccountname
 
 #### 步骤 6：创建 VM
     #Get list of available SQL Server Images from the Azure Image Gallery.
@@ -267,8 +267,8 @@
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname
     
     #Set up contexts for the storage accounts:
-    $origContext = New-AzureStorageContext  –StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
-    $destContext = New-AzureStorageContext  –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
+    $origContext = New-AzureStorageContext -Environment AzureChinaCloud  –StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
+    $destContext = New-AzureStorageContext -Environment AzureChinaCloud  –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
  
 #### 步骤 4：在存储帐户之间复制 Blob
     #Get Image VHD from Portal
@@ -548,7 +548,7 @@
 
 ### 预先步骤：连接到订阅
 
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
     
     #Set up subscription
     Get-AzureSubscription 
@@ -570,11 +570,11 @@
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname
     
     #Generate storage acc contexts
-    $origContext = New-AzureStorageContext  –StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
-    $xioContext = New-AzureStorageContext  –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
+    $origContext = New-AzureStorageContext -Environment AzureChinaCloud  –StorageAccountName $origstorageaccountname -StorageAccountKey $originalstorage.Primary
+    $xioContext = New-AzureStorageContext -Environment AzureChinaCloud  –StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary  
     
     #Set up subscription and default storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $origstorageaccountname
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount $origstorageaccountname
     Select-AzureSubscription -SubscriptionName $mysubscription -Current 
     
     #CREATE NEW CLOUD SVC
@@ -787,7 +787,7 @@
 #### 步骤 11：注册操作系统磁盘
 
     #Change storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountname 
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountname 
     Select-AzureSubscription -SubscriptionName $mysubscription -Current 
     
     #Register OS disk
@@ -959,10 +959,10 @@
     $xiostoragenode2 = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountnamenode2
     
     #Generate storage acc contexts
-    $xioContextnode2 = New-AzureStorageContext  –StorageAccountName $newxiostorageaccountnamenode2 -StorageAccountKey $xiostoragenode2.Primary  
+    $xioContextnode2 = New-AzureStorageContext -Environment AzureChinaCloud  –StorageAccountName $newxiostorageaccountnamenode2 -StorageAccountKey $xiostoragenode2.Primary  
     
     #Set up subscription and default storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
     Select-AzureSubscription -SubscriptionName $mysubscription -Current 
 
 #### 步骤 20：复制 VHD
@@ -1011,7 +1011,7 @@
 
 #### 步骤 21：注册操作系统磁盘
     #change storage account to the new XIO storage account
-    Set-AzureSubscription -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount $newxiostorageaccountnamenode2
     Select-AzureSubscription -SubscriptionName $mysubscription -Current 
     
     #Register OS disk

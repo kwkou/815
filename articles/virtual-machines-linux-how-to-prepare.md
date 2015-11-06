@@ -523,7 +523,7 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 
 2.  类型：
 
-    `Get-AzurePublishSettingsFile`
+    `Get-AzurePublishSettingsFile -Environment AzureChinaCloud`
 
     此命令将打开浏览器窗口，并自动下载包含信息的 .publishsettings 文件和 Azure 订阅的证书。
 
@@ -531,7 +531,7 @@ Azure Linux 代理需要安装 python-pyasn1 包。
 
 4.  类型：
 
-    `Import-AzurePublishSettingsFile <PathToFile>`
+    `Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
 
     其中`<PathToFile>` 是 .publishsettings 文件的完整路径。
 

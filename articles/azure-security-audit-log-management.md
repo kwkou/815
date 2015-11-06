@@ -164,7 +164,7 @@ Azure PowerShell SDK 提供用于配置 Azure 虚拟机上的 Azure 诊断的 cm
 ##### <a name="step4"></a> 步骤 4：配置 Azure 诊断
  使用以下步骤启用 Azure 诊断并启动数据收集：
 
- 1.	若要打开 Azure PowerShell，键入 **Add-AzureAccount**，然后按 ENTER。
+ 1.	若要打开 Azure PowerShell，键入 **Add-AzureAccount -Environment AzureChinaCloud**，然后按 ENTER。
  2.	使用您的 Azure 帐户进行登录。
  3.	运行以下 PowerShell 脚本。请确保更新 storage\_name、key、config\_path、service\_name 和 vm\_name。
 
@@ -174,7 +174,7 @@ $key = "<Storage Key>"
 $config_path="<Path Of WAD Config XML>"
 $service_name="<Service Name. Usually it is same as VM Name>"
 $vm_name="<VM Name>"
-$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
+$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
 $VM1 = Get-AzureVM -ServiceName $service_name -Name $vm_name
 $VM2 = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $config_path -Version "1.*" -VM $VM1 -StorageContext $storageContext
 $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
@@ -353,7 +353,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
     $key = " <storage key>"
     $config_path="<path to configuration XML file>"
     $service_name="<Cloud Service Name>"
-    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
+    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name
 
 若要验证您的服务是否具有最新的诊断配置，请运行以下 Azure PowerShell 命令：
@@ -423,7 +423,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
     $key = " <storage key>"
     $config_path="<path to configuration XML file>"
     $service_name="<Cloud Service Name>"
-    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
+    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name
 
 若要验证您的服务是否具有最新的诊断配置，请运行以下 Azure PowerShell 命令：
@@ -494,7 +494,7 @@ $VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM
     $key = " <storage key>"
     $config_path="<path to configuration XML file>"
     $service_name="<Cloud Service Name>"
-    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key
+    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key
     Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name
 
 若要验证您的服务是否具有最新的诊断配置，请运行以下 Azure PowerShell 命令：

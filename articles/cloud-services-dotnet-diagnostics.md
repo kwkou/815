@@ -198,7 +198,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 		$key = "<StorageAccountKey>"
 		$config_path="c:\users<user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
 		$service_name="wadexample"
-		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
+		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key 
 		Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Staging -Role WorkerRole1
 
 
@@ -348,7 +348,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 		$config_path="c:\users<user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
 		$service_name="wadexamplevm"
 		$vm_name="WadExample"
-		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
+		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key 
 		$VM1 = Get-AzureVM -ServiceName $service_name -Name $vm_name
 		$VM2 = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $config_path -Version "1.*" -VM $VM1 -StorageContext $storageContext
 		$VM3 = Update-AzureVM -ServiceName $service_name -Name $vm_name -VM $VM2.VM

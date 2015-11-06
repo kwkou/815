@@ -103,7 +103,7 @@ Blob 存储容器将数据存储为键值对，没有目录层次结构。不过
     $containerName="<BlobContainerToBeCreated>" # 你将要创建的 Blob 容器名称
 
     # 连接到你的 Azure 帐户并选择当前订阅
-    Add-AzureAccount # 该连接将在几小时后到期。
+    Add-AzureAccount -Environment AzureChinaCloud # 该连接将在几小时后到期。
     Select-AzureSubscription $subscriptionName #只在你有多个订阅时需要
 
     # 创建存储上下文对象
@@ -163,7 +163,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
     $blob = "example/data/sample.log" # 要下载的 Blob 的名称。
 
     # 如果你没有连接到 Azure 订阅，则使用 Add-AzureAccount
-    #Add-AzureAccount # 该连接在 12 小时内有效
+    #Add-AzureAccount -Environment AzureChinaCloud # 该连接在 12 小时内有效
 
     # 如果你有多个订阅，则使用这两个命令
     #$subscriptionName = "<SubscriptionName>"       
@@ -187,7 +187,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
 \$blob = "example/data/sample.log" \# 要下载的 Blob 的名称。
 
     # 如果你没有连接到 Azure 订阅，则使用 Add-AzureAccount
-    #Add-AzureAccount # 该连接在 12 小时内有效
+    #Add-AzureAccount -Environment AzureChinaCloud # 该连接在 12 小时内有效
 
     # 如果你有多个订阅，则使用这两个命令
     #$subscriptionName = "<SubscriptionName>"       
@@ -209,7 +209,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
     $blobPrefix = "example/data/"
 
     # 如果你没有连接到 Azure 订阅，则使用 Add-AzureAccount
-    #Add-AzureAccount # 该连接在 12 小时内有效
+    #Add-AzureAccount -Environment AzureChinaCloud # 该连接在 12 小时内有效
 
     # 如果你有多个订阅，则使用这两个命令
     #$subscriptionName = "<SubscriptionName>"       

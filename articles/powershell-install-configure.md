@@ -55,7 +55,7 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 
 2. 输入以下命令：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 3. 在窗口中，键入与你的帐户相关联的电子邮件地址和密码。
 
@@ -64,7 +64,7 @@ cmdlet 需要使用你的订阅来管理你的服务。可通过两种方法向 
 5. 从 0.8.6 开始，如果你使用工作或学校帐户登录，则可以键入以下命令来绕过弹出窗口。这会弹出标准的 Windows PowerShell 凭据窗口，供你输入工作或学校帐户的用户名和密码。
 
         $cred = Get-Credential
-        Add-AzureAccount -Credential $cred
+        Add-AzureAccount -Environment AzureChinaCloud -Credential $cred
 
 	> [AZURE.NOTE]有关安全性和使用凭据的详细信息，请参阅[将密码和其他敏感数据部署到 ASP.NET 和 Azure 网站的最佳做法](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure)。
 
@@ -103,7 +103,7 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 3. 输入以下命令：
 
-		Get-AzurePublishSettingsFile
+		Get-AzurePublishSettingsFile -Environment AzureChinaCloud
 
 4. 当系统提示时，下载并保存发布配置文件，并记下 .publishsettings 文件的路径和名称。当你运行 **Import-AzurePublishSettingsFile** cmdlet 导入设置时，必须提供此信息。默认的位置和文件名格式为：
 
@@ -111,12 +111,12 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 5. 键入类似于下面的命令，用你的 Windows 帐户名称和路径以及文件名替换占位符：
 
-		Import-AzurePublishSettingsFile C:\Users\<UserProfile>\Downloads\<SubscriptionName>-credentials.publishsettings
+		Import-AzurePublishSettingsFile -Environment AzureChinaCloud C:\Users\<UserProfile>\Downloads\<SubscriptionName>-credentials.publishsettings
 
 > [AZURE.NOTE]如果在你导入发布设置后，将你添加到其他订阅中作为共同管理员，则你将需要重复此过程来下载新的 .publishsettings 文件，然后导入这些设置。有关添加共同管理员来帮助管理订阅服务的信息，请参阅[为 Azure 订阅添加和删除协同管理员](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg456328.aspx)。
 
 <h3> 查看帐户和订阅详细信息</h3>
-你可以具有多个帐户和订阅以供 Azure PowerShell 使用。你可以通过运行多次 Add-AzureAccount 来添加多个帐户。
+你可以具有多个帐户和订阅以供 Azure PowerShell 使用。你可以通过运行多次 Add-AzureAccount -Environment AzureChinaCloud 来添加多个帐户。
 
 若要获取可用的 Azure 帐户，请键入：
 

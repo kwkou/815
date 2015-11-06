@@ -68,7 +68,7 @@
 
 	# Set up subscription and key variables
 	$subscr="<name of the Azure subscription>"
-	Set-AzureSubscription -SubscriptionName $subscr
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr
 	Switch-AzureMode AzureResourceManager
 	$rgName="<resource group name>"
 	$locName="<Azure location of your resource group>"

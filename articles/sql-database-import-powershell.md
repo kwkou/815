@@ -41,7 +41,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 首先必须与 Azure 帐户建立访问连接，因此请启动 PowerShell，然后运行以下 cmdlet。在登录屏幕中，输入登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -83,7 +83,7 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
     $credential = Get-Credential
     $SqlCtx = New-AzureSqlDatabaseServerContext -ServerName $ServerName -Credential $credential
 
-    $StorageCtx = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
+    $StorageCtx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageName -StorageAccountKey $StorageKey
     $Container = Get-AzureStorageContainer -Name $ContainerName -Context $StorageCtx
 
 
@@ -110,7 +110,7 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 ## SQL 数据库 PowerShell 还原脚本
 
 
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
     Select-AzureSubscription -SubscriptionId "4cac86b0-1e56-bbbb-aaaa-000000000000"
     
     $ServerName = "servername"

@@ -32,7 +32,7 @@
 
 	在运行 Azure PowerShell 脚本之前，请确保你已通过使用以下 cmdlet 连接到 Azure 订阅：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	如果你有多个 Azure 订阅，请使用以下 cmdlet 来设置当前订阅：
 

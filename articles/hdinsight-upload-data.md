@@ -115,7 +115,7 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 		Switch-AzureMode -Name AzureResourceManager
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 		Select-AzureSubscription $subscriptionName
 
 		# Get the storage account key

@@ -44,10 +44,10 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 1. 在本地计算机上的 PowerShell 窗口中，导入 Azure 模块，将发布设置文件下载到计算机，然后通过导入所下载的发布设置将 PowerShell 会话连接至你的 Azure 订阅。
 
 		Import-Module "C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\Azure\Azure.psd1"
-		Get-AzurePublishSettingsFile
-		Import-AzurePublishSettingsFile <publishsettingsfilepath> 
+		Get-AzurePublishSettingsFile -Environment AzureChinaCloud
+		Import-AzurePublishSettingsFile -Environment AzureChinaCloud <publishsettingsfilepath> 
 
-	**Get-AzurePublishgSettingsFile** 命令自动生成管理证书，Azure 将其下载到你的计算机。浏览器将自动打开，提示输入 Azure 订阅的 Microsoft 帐户凭据。所下载的 **.publishsettings** 文件包含管理 Azure 订阅所需的一切信息。将该文件保存到本地目录后，使用 **Import-AzurePublishSettingsFile** 命令将其导入。
+	**Get-AzurePublishgSettingsFile** 命令自动生成管理证书，Azure 将其下载到你的计算机。浏览器将自动打开，提示输入 Azure 订阅的 Microsoft 帐户凭据。所下载的 **.publishsettings** 文件包含管理 Azure 订阅所需的一切信息。将该文件保存到本地目录后，使用 **Import-AzurePublishSettingsFile -Environment AzureChinaCloud** 命令将其导入。
 	
 	>[AZURE.NOTE]publishsettings 文件中含有你的凭据（未编码），这些凭据用于管理你的 Azure 订阅和服务。确保此文件安全的最佳做法是，将其暂时存储在您的源目录的外部（例如存储在 Libraries\\Documents 文件夹中），然后在完成导入后将其删除。恶意用户获得 publishsettings 文件的访问权限后，可编辑、创建和删除你的 Azure 服务。
 
@@ -123,7 +123,7 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 			-StorageAccountName $storageAccountName `
 			-Label $storageAccountLabel `
 			-AffinityGroup $affinityGroupName 
-		Set-AzureSubscription `
+		Set-AzureSubscription -Environment AzureChinaCloud `
 			-SubscriptionName (Get-AzureSubscription).SubscriptionName `
 			-CurrentStorageAccount $storageAccountName
 

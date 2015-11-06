@@ -242,7 +242,7 @@ STA 评估数据库的使用率历史记录，并在比使用单一数据库的�
     [Parameter(Mandatory=$true)][int]$duration_minutes # How long to run. Recommend to run for the period of time when your typical workload is running. At least 10 mins.
     )
     
-    Add-AzureAccount 
+    Add-AzureAccount -Environment AzureChinaCloud 
     Select-AzureSubscription $AzureSubscriptionName
     Switch-AzureMode AzureResourceManager
     

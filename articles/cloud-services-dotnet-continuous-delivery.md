@@ -113,7 +113,7 @@
 
 4.  通过导入 .publishsettings 文件中的订阅信息来确认你能够连接到 Azure 订阅。
 
-    Import-AzurePublishSettingsFile c:\\scripts\\WindowsAzure\\default.publishsettings
+    Import-AzurePublishSettingsFile -Environment AzureChinaCloud c:\\scripts\\WindowsAzure\\default.publishsettings
 
     然后，提供以下命令
 
@@ -528,8 +528,8 @@ Import-Module Azure
 
 #configure powershell with publishsettings for your subscription
 $pubsettings = $subscriptionDataFile
-Import-AzurePublishSettingsFile $pubsettings
-Set-AzureSubscription -CurrentStorageAccountName $storageAccountName -SubscriptionName $selectedsubscription
+Import-AzurePublishSettingsFile -Environment AzureChinaCloud $pubsettings
+Set-AzureSubscription -Environment AzureChinaCloud -CurrentStorageAccountName $storageAccountName -SubscriptionName $selectedsubscription
 Select-AzureSubscription $selectedsubscription
 
 #set remaining environment variables for Azure cmdlets

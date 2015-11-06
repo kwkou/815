@@ -45,7 +45,7 @@ PowerShell cmdlet 需要使用你的订阅信息来管理你的服务。
 1.  打开 Azure PowerShell 控制台，按照[如何：安装 Azure PowerShell][] 中的说明进行操作。
 2.  运行以下命令：
 
-        Add-AzureAccount
+        Add-AzureAccount -Environment AzureChinaCloud
 
 3.  在窗口中，键入与你的帐户相关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
@@ -210,7 +210,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 wasbs 的 SSL
         # 创建存储帐户上下文对象
         Select-AzureSubscription $subscriptionName
         $storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-        $storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+        $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
     *Select-AzureSubscription* 用于在你有多个订阅但默认订阅不是要使用的订阅时设置当前订阅。
 

@@ -92,13 +92,13 @@ Azure 资源管理器引入了一种考虑您的 Azure 资源的全新方法。�
 
 3. 若要将您的 Azure 帐户添加到 Windows PowerShell 会话中，请使用 **Add-AzureAccount** cmdlet。
 
-        PS C:\> Add-AzureAccount
+        PS C:\> Add-AzureAccount -Environment AzureChinaCloud
 
 该 cmdlet 将提示您提供您的 Azure 帐户的登录凭据。登录后它会下载您的帐户设置，以便这些信息可供 Windows PowerShell 使用。
 
 帐户设置会过期，因此您需要不时刷新它们。若要刷新帐户设置，请再次运行 **Add-AzureAccount**。
 
->[AZURE.NOTE]AzureResourceManager 模块需要 Add-AzureAccount。一个发布设置文件是不够的。
+>[AZURE.NOTE]AzureResourceManager 模块需要 Add-AzureAccount -Environment AzureChinaCloud。一个发布设置文件是不够的。
 
 ### 步骤 2：选择库模板
 

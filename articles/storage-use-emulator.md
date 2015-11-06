@@ -47,7 +47,7 @@ Windows Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服�
 
 2. 请打开 Azure PowerShell 并运行以下命令。请记住要使用您自己的凭据替换 *ACCOUNT\_NAME* 和 *ACCOUNT\_KEY = =*。将 *CONTAINER\_NAME* 替换为您选择的名称。
 
-		$context = New-AzureStorageContext -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
+		$context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
 		
 		New-AzureStorageContainer CONTAINER_NAME -Permission Off -Context $context
 		

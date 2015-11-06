@@ -83,7 +83,7 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 中打开一个网页，您可以从中
 下载订阅信息。信息包含在 .publishsettings 文件中。
 
-- Import-AzurePublishSettingsFile 导入 .publishsettings 文件以供模块使用。此文件包含一个管理证书，其中具有安全凭据。
+- Import-AzurePublishSettingsFile -Environment AzureChinaCloud 导入 .publishsettings 文件以供模块使用。此文件包含一个管理证书，其中具有安全凭据。
 
 <div class="dev-callout"> 
 <b>重要说明</b>
@@ -110,14 +110,14 @@ Windows Azure PowerShell 模块包括可帮助您下载和导入证书的 cmdlet
 
 5. 键入如下命令，用您的 Windows 帐户名称和路径以及文件名替换占位符：
 
-    Import-AzurePublishSettingsFile C:\Users\&lt;UserProfile&gt;\Downloads\&lt;SubscriptionName&gt;-credentials.publishsettings
+    Import-AzurePublishSettingsFile -Environment AzureChinaCloud C:\Users\&lt;UserProfile&gt;\Downloads\&lt;SubscriptionName&gt;-credentials.publishsettings
 
 > [WACOM.NOTE] 如果在您导入发布设置后，将您添加到其他订阅中作为共同管理员，
 则您将需要重复此过程来下载新的 .publishsettings 文件，然后导入这些设置。有关添加共同管理员来帮助管理订阅服务的信息，
 请参见[添加和删除 Windows Azure 订阅的共同管理员](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg456328.aspx)。
 
 <h3> 查看帐户和订阅详细信息</h3>
-您可以具有多个帐户和订阅以供 Windows Azure PowerShell 使用。您可以通过运行多次 Add-AzureAccount 来添加多个帐户。
+您可以具有多个帐户和订阅以供 Windows Azure PowerShell 使用。您可以通过运行多次 Add-AzureAccount -Environment AzureChinaCloud 来添加多个帐户。
 
 若要查看可用帐户，请键入：
 

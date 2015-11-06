@@ -46,7 +46,7 @@
 
 你必须先建立与 Azure 帐户的访问连接，才能运行以下 cmdlet，并且会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
 
@@ -122,7 +122,7 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureSqlSe
     $DatabasePerfomanceLevel = "S1"
     
     
-    Add-AzureAccount
+    Add-AzureAccount -Environment AzureChinaCloud
     Select-AzureSubscription -SubscriptionId $SubscriptionId
     
     $ResourceGroup = New-AzureResourceGroup -Name $ResourceGroupName -Location $Location

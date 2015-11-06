@@ -175,7 +175,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 	$Cred = Get-AutomationPSCredential -Name 'AzureCredential'
 	
 	# Connect to Azure
-	$AzureAccount = Add-AzureAccount -Credential $Cred
+	$AzureAccount = Add-AzureAccount -Environment AzureChinaCloud -Credential $Cred
 	$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
 	Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
 ```
@@ -231,7 +231,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 	$Cred = Get-AutomationPSCredential -Name 'AzureCredential'
 	
 	# Connect to Azure
-	$AzureAccount = Add-AzureAccount -Credential $Cred
+	$AzureAccount = Add-AzureAccount -Environment AzureChinaCloud -Credential $Cred
 	$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
 	Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
 

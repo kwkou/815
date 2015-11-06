@@ -27,7 +27,7 @@
 
 	若要使用 Azure Active Directory 方法来连接到 Azure 订阅，请执行以下操作：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	若要选择启用了 Azure 流分析服务的 Azure 订阅，请使用以下方法：
 

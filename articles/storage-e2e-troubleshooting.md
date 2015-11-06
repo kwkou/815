@@ -108,7 +108,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 1. 使用 [Add-AzureAccount](http://msdn.microsoft.com/zh-cn/library/azure/dn722528.aspx) cmdlet 将 Azure 用户帐户添加到 PowerShell 窗口中：
 
 	```
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 	```
 
 2. 在"登录 Windows Azure"窗口中，键入与你的帐户关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
@@ -117,7 +117,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 	```
 	$SubscriptionName = 'Your subscription name'
 	$StorageAccountName = 'yourstorageaccount' 
-	Set-AzureSubscription -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
+	Set-AzureSubscription -Environment AzureChinaCloud -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
 	```
 
 4. 为 Blob 服务启用存储日志记录： 

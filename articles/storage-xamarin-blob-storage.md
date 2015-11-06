@@ -34,7 +34,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 接下来，请打开 Azure PowerShell 并运行以下命令：请记住将 `ACCOUNT_NAME` 和 `ACCOUNT_KEY== ` 替换为你的存储帐户凭据。将 `CONTAINER_NAME` 替换为你选择的名称。
 
-    PS C:\> $context = New-AzureStorageContext -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
+    PS C:\> $context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
 	PS C:\> New-AzureStorageContainer CONTAINER_NAME -Permission Off -Context $context
 	PS C:\> $now = Get-Date
 	PS C:\> New-AzureStorageContainerSASToken -Name CONTAINER_NAME -Permission rwdl -ExpiryTime $now.AddDays(1.0) -Context $context -FullUri

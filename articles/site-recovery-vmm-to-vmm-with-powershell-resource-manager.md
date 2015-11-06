@@ -60,11 +60,11 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 3. 现在，运行以下命令以将你的 Azure 帐户添加到 PowerShell 会话。该 cmdlet 提供你输入你的帐户的登录凭据。
 
-    `Add-AzureAccount -Environment AzureChinaCloud`
+    `Add-AzureAccount -Environment AzureChinaCloud -Environment AzureChinaCloud`
 
 	请注意，如果你是代表租户的 CSP 合作伙伴，则在添加 Azure 帐户时，你需要将客户指定为一名租户：
 
-    `Add-AzureAccount -Environment AzureChinaCloud -Tenant "customer"`
+    `Add-AzureAccount -Environment AzureChinaCloud -Environment AzureChinaCloud -Tenant "customer"`
 
 5. 一个帐户可以有多个订阅，因此你需要将你要使用的订阅与帐户关联在一起。
 

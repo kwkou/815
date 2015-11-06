@@ -306,7 +306,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 **连接到 Azure 帐户**
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 系统将提示你输入 Azure 帐户凭据。
 
@@ -333,7 +333,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 	# Create a storage context object
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName
+	$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName
 	                                       -StorageAccountKey $storageAccountKey  
 
 	# Create a Blob storage container
@@ -412,7 +412,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 		$hiveCreds = Get-Credential -Message "Hive metastore"
 
 		# Create a Blob storage container
-		$dest1Context = New-AzureStorageContext -StorageAccountName $storageAccountName_Default -StorageAccountKey $storageAccountKey_Default  
+		$dest1Context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName_Default -StorageAccountKey $storageAccountKey_Default  
 		New-AzureStorageContainer -Name $containerName_Default -Context $dest1Context
 
 		# Create a new HDInsight cluster

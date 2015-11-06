@@ -516,7 +516,7 @@
 		    }
 		    # Get the storage context, as we can't depend
 		    # on using the default storage context
-		    $return.context = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+		    $return.context = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 		    # Get the container, so we know where to
 		    # find/store blobs
 		    $return.container = $hdi.DefaultStorageAccount.StorageContainerName

@@ -295,7 +295,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 				
 		# Create a Blob storage container
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
 		New-AzureStorageContainer -Name $containerName -Context $destContext
 
 4. 运行以下命令以验证存储帐户和容器：
@@ -420,7 +420,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 		#====== CREATE A BLOB STORAGE CONTAINER ======
 		Write-Host "Create a Blob storage container" -ForegroundColor Green
 		$storageAccountKey_Default = Get-AzureStorageKey $storageAccountName_Default | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
 		
 		New-AzureStorageContainer -Name $containerName_Default -Context $destContext
 		
@@ -494,7 +494,7 @@ Azure HDInsight 将 Azure Blob 存储用作默认文件系统。你可以将 HDI
 		
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName –StorageAccountKey $storageAccountKey  
 
 4. 运行以下命令以下载并显示输出：
 

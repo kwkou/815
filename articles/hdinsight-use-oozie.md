@@ -245,7 +245,7 @@ HDInsight 使用 Azure 存储空间中的 Blob 来存储数据。有关详细信
 1. 打开 Windows PowerShell ISE。（在 Windows 8 的“开始”屏幕上键入 **PowerShell_ISE**，然后单击“Windows PowerShell ISE”。有关详细信息，请参阅[在 Windows 8 和 Windows 上启动 Windows PowerShell][powershell-start]）。
 2. 在底部窗格中，运行以下命令以连接到 Azure 订阅：
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	系统将提示你输入 Azure 帐户凭据。这种添加订阅连接的方法会超时，12 个小时之后，你将需要再次运行该 cmdlet。
 
@@ -278,7 +278,7 @@ HDInsight 使用 Azure 存储空间中的 Blob 来存储数据。有关详细信
 		
 		# Create a storage context object
 		$storageaccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
-		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 		
 		function uploadOozieFiles()
 		{		
@@ -530,7 +530,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。你�
 	
 	Write-host "Delete the Hive script output file ..." -ForegroundColor Green
 	$storageaccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
-	$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
+	$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 	Remove-AzureStorageBlob -Context $destContext -Blob "tutorials/useoozie/output/000000_0" -Container $containerName
 	
 	Write-host "Delete all the records from the log4jLogsCount table ..." -ForegroundColor Green

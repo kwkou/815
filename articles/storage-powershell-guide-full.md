@@ -61,7 +61,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     	$DestinationFolder = "C:\DownloadImages"
     
     	# Add your Azure account to the local PowerShell environment.
-    	Add-AzureAccount
+    	Add-AzureAccount -Environment AzureChinaCloud
     
     	# Set a default Azure subscription.
     	Select-AzureSubscription -SubscriptionName $SubscriptionName –Default
@@ -100,7 +100,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 		a.在“Windows PowerShell ISE”中，单击“文件”>“新建”以创建新的脚本文件。将以下脚本复制到新脚本文件，然后单击“调试”>“运行”。以下脚本会先请求你提供 Azure 帐户凭据以将你的 Azure 帐户添加到本地 PowerShell 环境，然后显示已连接到本地 PowerShell 会话的所有订阅。记下你在学习本教程时要使用的订阅名称：
 
-    		Add-AzureAccount
+    		Add-AzureAccount -Environment AzureChinaCloud
        		Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
 
 
@@ -142,7 +142,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 1.	在 Azure PowerShell 控制台或 Windows PowerShell ISE 中键入以下命令，将你的 Azure 帐户添加到本地 PowerShell 环境：
 
-    `Add-AzureAccount`
+    `Add-AzureAccount -Environment AzureChinaCloud`
 
 2.	在“登录 Windows Azure”窗口中，键入与你的帐户关联的电子邮件地址和密码。Azure 将对凭据信息进行身份验证和保存，然后关闭该窗口。
 
@@ -189,7 +189,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 		$SubscriptionName = "Your subscription name" 
      	$StorageAccountName = "yourstorageaccount"  
-    	Set-AzureSubscription -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
+    	Set-AzureSubscription -Environment AzureChinaCloud -CurrentStorageAccountName $StorageAccountName -SubscriptionName $SubscriptionName 
 
 2.	接下来，运行 Get-AzureSubscription cmdlet，以检查该存储帐户是否与你的默认订阅帐户关联。此命令将返回当前订阅中的订阅属性，包括其当前存储帐户。
 
@@ -203,28 +203,28 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     Get-AzureStorageAccount | Format-Table -Property StorageAccountName, Location, AccountType, StorageAccountStatus
 
 ### 如何创建 Azure 存储上下文
-Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
+Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
 
 使用以下三种方法之一创建存储上下文：
 
-- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
+- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
 
     	$StorageAccountName = "yourstorageaccount"
     	$StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    	$Ctx = New-AzureStorageContext $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
+    	$Ctx = New-AzureStorageContext -Environment AzureChinaCloud $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
 
 
 - 生成 Azure 存储容器的共享访问签名令牌，并使用它来创建存储上下文：
 
     	$sasToken = New-AzureStorageContainerSASToken -Container abc -Permission rl
-    	$Ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -SasToken $sasToken
+    	$Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageAccountName -SasToken $sasToken
 
 	有关详细信息，请参阅 [New-AzureStorageContainerSASToken](http://msdn.microsoft.com/zh-cn/library/azure/dn806416.aspx) 和[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
 
 - 在某些情况下，你可能想要在创建新的存储上下文时指定服务终结点。如果你已将存储帐户的自定义域名注册到 Blob 服务，或者你想要使用共享访问签名来访问存储资源，则可能需要进行这种指定。在连接字符串中设置服务终结点，并使用它来创建新的存储上下文，如下所示：
 
     	$ConnectionString = "DefaultEndpointsProtocol=http;BlobEndpoint=<blobEndpoint>;QueueEndpoint=<QueueEndpoint>;TableEndpoint=<TableEndpoint>;AccountName=<AccountName>;AccountKey=<AccountKey>"
-    	$Ctx = New-AzureStorageContext -ConnectionString $ConnectionString
+    	$Ctx = New-AzureStorageContext -Environment AzureChinaCloud -ConnectionString $ConnectionString
 
 有关如何配置存储连接字符串的详细信息，请参阅[配置连接字符串](/documentation/articles/storage-configure-connection-string)。
 
@@ -260,7 +260,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = "Storage key for yourstorageaccount ends with =="
-    $Ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
     
     #List all blobs in a container.
     $blobs = Get-AzureStorageBlob -Container $ContainerName -Context $Ctx
@@ -276,13 +276,13 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
     $SourceStorageAccountName = "yoursourcestorageaccount"
     $SourceStorageAccountKey = "Storage key for yoursourcestorageaccount"
     $SrcContainerName = "yoursrccontainername"
-    $SourceContext = New-AzureStorageContext -StorageAccountName $SourceStorageAccountName -StorageAccountKey $SourceStorageAccountKey
+    $SourceContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $SourceStorageAccountName -StorageAccountKey $SourceStorageAccountKey
     
     #Define the destination storage account and context.
     $DestStorageAccountName = "yourdeststorageaccount"
     $DestStorageAccountKey = "Storage key for yourdeststorageaccount"
     $DestContainerName = "destcontainername"
-    $DestContext = New-AzureStorageContext -StorageAccountName $DestStorageAccountName -StorageAccountKey $DestStorageAccountKey
+    $DestContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $DestStorageAccountName -StorageAccountKey $DestStorageAccountKey
     
     #Get a reference to blobs in the source container.
     $blobs = Get-AzureStorageBlob -Container $SrcContainerName -Context $SourceContext
@@ -296,7 +296,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
 您可以从一个已启用 RA-GRS 帐户的辅助位置复制 Blob。
 
     #define secondary storage context using a connection string constructed from secondary endpoints. 
-    $SrcContext = New-AzureStorageContext -ConnectionString "DefaultEndpointsProtocol=https;AccountName=***;AccountKey=***;BlobEndpoint=http://***-secondary.blob.core.chinacloudapi.cn;FileEndpoint=http://***-secondary.file.core.chinacloudapi.cn;QueueEndpoint=http://***-secondary.queue.core.chinacloudapi.cn; TableEndpoint=http://***-secondary.table.core.chinacloudapi.cn;"
+    $SrcContext = New-AzureStorageContext -Environment AzureChinaCloud -ConnectionString "DefaultEndpointsProtocol=https;AccountName=***;AccountKey=***;BlobEndpoint=http://***-secondary.blob.core.chinacloudapi.cn;FileEndpoint=http://***-secondary.file.core.chinacloudapi.cn;QueueEndpoint=http://***-secondary.queue.core.chinacloudapi.cn; TableEndpoint=http://***-secondary.table.core.chinacloudapi.cn;"
     Start-AzureStorageBlobCopy –Container *** -Blob *** -Context $SrcContext –DestContainer *** -DestBlob *** -DestContext $DestContext
 
 ### 如何删除 Blob
@@ -306,7 +306,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。有关详细信息，请参阅[了
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = "Storage key for yourstorageaccount ends with =="
     $ContainerName = "containername"
-    $Ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
     
     #Get a reference to all the blobs in the container.
     $blobs = Get-AzureStorageBlob -Container $ContainerName -Context $Ctx
@@ -325,7 +325,7 @@ Azure 允许你创建 Blob 的快照。快照是在某一时间点拍摄的只�
     $StorageAccountKey = "Storage key for yourstorageaccount ends with =="
     $ContainerName = "yourcontainername"
     $BlobName = "yourblobname"
-    $Ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
     
     #Get a reference to a blob.
     $blob = Get-AzureStorageBlob -Context $Ctx -Container $ContainerName -Blob $BlobName
@@ -348,7 +348,7 @@ Azure 允许你创建 Blob 的快照。快照是在某一时间点拍摄的只�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = "Storage key for yourstorageaccount ends with =="
-    $Ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
     
     #Define the variables.
     $SrcContainerName = "yoursourcecontainername"
@@ -378,7 +378,7 @@ Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = "Storage key for yourstorageaccount ends with =="
-    $Ctx = New-AzureStorageContext $StorageAccountName -StorageAccountKey $StorageAccountKey 
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud $StorageAccountName -StorageAccountKey $StorageAccountKey 
     
     #Create a new table.
     $tabName = "yourtablename"
@@ -434,7 +434,7 @@ Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    $Ctx = New-AzureStorageContext $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
     $TableName = "Employees"
     
     #Retrieve the table if it already exists.
@@ -458,7 +458,7 @@ Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    $Ctx = New-AzureStorageContext –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary;
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary;
     $TableName = "Employees"
     
     #Get a reference to a table.
@@ -490,7 +490,7 @@ Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    $Ctx = New-AzureStorageContext –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
 
     #Retrieve the table.
     $TableName = "Employees"
@@ -519,7 +519,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    $Ctx = New-AzureStorageContext –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
     $QueueName = "queuename"
     $Queue = New-AzureStorageQueue –Name $QueueName -Context $Ctx
 
@@ -552,7 +552,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    $Ctx = New-AzureStorageContext –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
 
     #Retrieve the queue.
     $QueueName = "queuename"
@@ -574,7 +574,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
     $StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
-    $Ctx = New-AzureStorageContext –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
+    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
 
     #Retrieve the queue.
     $QueueName = "queuename"
@@ -655,11 +655,11 @@ Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政�
 
 2.	将 Azure 中国区帐户添加到 Windows PowerShell：
 
-    `Add-AzureAccount –Environment AzureChinaCloud`
+    `Add-AzureAccount -Environment AzureChinaCloud –Environment AzureChinaCloud`
 
 3.	为 AzureChinaCloud 帐户创建存储上下文：
 
-    	$Ctx = New-AzureStorageContext -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment AzureChinaCloud
+    	$Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment AzureChinaCloud
 
 若要将 Azure 存储空间与[美国Azure Government](http://azure.microsoft.com/features/gov/) 一起使用，请应定义一个新环境，然后使用此环境创建新的存储上下文：
 
@@ -669,7 +669,7 @@ Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政�
 
 2. 运行 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 为此新环境创建新的存储上下文，如下所示。 
    
-	    $Ctx = New-AzureStorageContext -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment $EnvironmentName
+	    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment $EnvironmentName
 
 有关详细信息，请参阅：
 

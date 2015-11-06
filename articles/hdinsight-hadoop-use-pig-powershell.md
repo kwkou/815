@@ -34,7 +34,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 
 在远程 HDInsight 群集上运行 Pig 作业时，将使用以下 Cmdlet：
 
-* **Add-AzureAccount**：在 Azure 订阅中进行 Azure PowerShell 身份验证
+* **Add-AzureAccount -Environment AzureChinaCloud**：在 Azure 订阅中进行 Azure PowerShell 身份验证
 
 * **New-AzureHDInsightPigJobDefinition**：使用指定的 Pig Latin 语句创建新的*作业定义*
 
@@ -49,7 +49,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 1. 使用编辑器将以下代码保存为 **pigjob.ps1**。必须将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
 		#Login to your Azure subscription
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 		#Specify the cluster name
 		$clusterName = "CLUSTERNAME"

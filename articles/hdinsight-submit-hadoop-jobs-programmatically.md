@@ -95,7 +95,7 @@ Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用
 		# Create the storage account context object
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	**Select-AzureSubscription** 用于在你具有多个订阅但默认订阅不是要使用的订阅时设置当前订阅。
 
@@ -383,7 +383,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 	
 	这些是你需要为该程序设置的所有变量。你可以从 [Azure 门户][azure-management-portal]获取 Azure 订阅名称。
 
-	有关证书的信息，请参阅[创建并上载 Azure 管理证书][azure-certificate]。配置证书的简单方法是运行 **Get-AzurePublishSettingsFile** 和 **Import-AzurePublishSettingsFile** Azure PowerShell cmdlet。它们将自动创建和上载管理证书。在运行这些 cmdlet 后，可以从工作站打开 **certmgr.msc**，并通过展开“个人”>“证书”来查找该证书。由 Azure PowerShell cmdlet 创建的证书的“颁发给”和“颁发者”两个字段均为“Azure 工具”。
+	有关证书的信息，请参阅[创建并上载 Azure 管理证书][azure-certificate]。配置证书的简单方法是运行 **Get-AzurePublishSettingsFile -Environment AzureChinaCloud** 和 **Import-AzurePublishSettingsFile -Environment AzureChinaCloud** Azure PowerShell cmdlet。它们将自动创建和上载管理证书。在运行这些 cmdlet 后，可以从工作站打开 **certmgr.msc**，并通过展开“个人”>“证书”来查找该证书。由 Azure PowerShell cmdlet 创建的证书的“颁发给”和“颁发者”两个字段均为“Azure 工具”。
 
 	Azure 存储帐户名称是你在设置 HDInsight 群集时指定的帐户。默认容器名与 HDInsight 群集名相同。
 	
@@ -629,7 +629,7 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 	
 	这些是你需要为该程序设置的所有变量。你可以从你的系统管理员那里获取 Azure 订阅 ID。
 
-	有关证书的信息，请参阅[创建并上载 Azure 管理证书][azure-certificate]。配置证书的简单方法是运行 **Get-AzurePublishSettingsFile** 和 **Import-AzurePublishSettingsFile** Azure PowerShell cmdlet。它们将自动创建和上载管理证书。在运行这些 cmdlet 后，可以从工作站打开 **certmgr.msc**，并通过展开“个人”>“证书”来查找该证书。由 Azure PowerShell cmdlet 创建的证书的“颁发给”和“颁发者”两个字段均为“Azure 工具”。
+	有关证书的信息，请参阅[创建并上载 Azure 管理证书][azure-certificate]。配置证书的简单方法是运行 **Get-AzurePublishSettingsFile -Environment AzureChinaCloud** 和 **Import-AzurePublishSettingsFile -Environment AzureChinaCloud** Azure PowerShell cmdlet。它们将自动创建和上载管理证书。在运行这些 cmdlet 后，可以从工作站打开 **certmgr.msc**，并通过展开“个人”>“证书”来查找该证书。由 Azure PowerShell cmdlet 创建的证书的“颁发给”和“颁发者”两个字段均为“Azure 工具”。
 	
 11. 在 **Main()** 函数中，追加以下代码以定义 Hive 作业：
 

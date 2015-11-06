@@ -179,7 +179,7 @@
     
     $key = "<YourAzureStorageAccountKey" 
     
-    $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key  
+    $storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storage_name -StorageAccountKey $key  
     
     
     $config_path = "<YourFilePath>\SplitMergeWebContent.diagnostics.xml" 

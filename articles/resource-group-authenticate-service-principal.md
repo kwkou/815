@@ -90,7 +90,7 @@
 
 6. 使用输入的凭据作为 **Add-AzureAccount** Cmdlet 的输入，以将服务主体登录：
 
-        PS C:\> Add-AzureAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
+        PS C:\> Add-AzureAccount -Environment AzureChinaCloud -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
 
      现在，你应该已经作为所创建 AAD 应用程序的服务主体进行身份验证。
 

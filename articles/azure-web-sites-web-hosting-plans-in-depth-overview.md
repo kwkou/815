@@ -123,7 +123,7 @@ Web 托管计划 (WHP) 表示一组可在你的网站间共享的功能和容量
     </br>
     **问题**：如何将一个站点移动到不同 Web 托管计划？
     </br>
-    **回答**：目前不支持使用 Azure 门户预览或完整 Azure 门户将一个站点移动到不同 Web 托管计划。但是，使用 [Azure PowerShell 工具][Azure PowerShell 工具]，可在不同的 web 托管计划之间移动站点。要执行此操作，请安装 Azure PowerShell 工具，打开一个 power shell 提示符。然后，使用 *Switch-AzureMode AzureResourceManager* Cmdlet 切换到新的 **Azure 资源管理器**模式并使用 *Add-AzureAccount* Cmdlet 进行身份验证。
+    **回答**：目前不支持使用 Azure 门户预览或完整 Azure 门户将一个站点移动到不同 Web 托管计划。但是，使用 [Azure PowerShell 工具][Azure PowerShell 工具]，可在不同的 web 托管计划之间移动站点。要执行此操作，请安装 Azure PowerShell 工具，打开一个 power shell 提示符。然后，使用 *Switch-AzureMode AzureResourceManager* Cmdlet 切换到新的 **Azure 资源管理器**模式并使用 *Add-AzureAccount -Environment AzureChinaCloud* Cmdlet 进行身份验证。
     </br>
     对于此示例，假定已创建一个带有 2 个 Web 托管计划的名为 **powershell** (**whp1** & **whp2**) 的“资源组”和 2 个网站 (**pstest** & **pstest2**)。要获取资源组中的内容，可使用 Get-AzureResourceGroup*Get-AzureResourceGroup* Cmdlet：
     </br>

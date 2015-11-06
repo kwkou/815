@@ -326,7 +326,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 				
 		# Create a Blob storage container
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName_Data | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Data –StorageAccountKey $storageAccountKey  
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName_Data –StorageAccountKey $storageAccountKey  
 		New-AzureStorageContainer -Name $containerName_Data -Context $destContext
 
 4. 运行以下命令以验证存储帐户和容器：
@@ -361,7 +361,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		# Create a storage context object
 		Select-AzureSubscription $subscriptionName
 		$storageaccountkey = get-azurestoragekey $storageAccountName_Data | %{$_.Primary}
-		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Data -StorageAccountKey $storageaccountkey
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName_Data -StorageAccountKey $storageaccountkey
 
 5. 运行以下命令以复制文件：
 
@@ -405,7 +405,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		# Create a storage context object
 		Select-AzureSubscription $subscriptionName
 		$storageaccountkey = get-azurestoragekey $storageAccountName_Data | %{$_.Primary}
-		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName_Data -StorageAccountKey $storageaccountkey
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName_Data -StorageAccountKey $storageaccountkey
 
 5. 运行以下命令以复制应用程序：
 
@@ -484,7 +484,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		# Create a Blob storage container used as the default file system
 		Write-Host "Create a Blob storage container" -ForegroundColor Green
 		$storageAccountKey_Default = Get-AzureStorageKey $storageAccountName_Default | %{ $_.Primary }
-		$destContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
+		$destContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName_Default –StorageAccountKey $storageAccountKey_Default
 		
 		New-AzureStorageContainer -Name $containerName_Default -Context $destContext
 		
@@ -555,7 +555,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName_Data | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext –StorageAccountName $storageAccountName_Data –StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud –StorageAccountName $storageAccountName_Data –StorageAccountKey $storageAccountKey  
 
 4. 运行以下命令以下载并显示输出：
 
