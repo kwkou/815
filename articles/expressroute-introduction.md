@@ -13,7 +13,7 @@
 
 # ExpressRoute 技术概述
 
-使用 Microsoft Azure ExpressRoute，可在 Azure 数据中心与你的本地环境或第三方托管设施环境中的基础结构之间创建专用连接。使用 ExpressRoute，你可以通过 ExpressRoute 合作伙伴的网络设施中建立与 Azure 的连接。
+使用 Windows Azure ExpressRoute，可在 Azure 数据中心与你的本地环境或第三方托管设施环境中的基础结构之间创建专用连接。使用 ExpressRoute，你可以通过 ExpressRoute 合作伙伴的网络设施中建立与 Azure 的连接。
  
 与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的安全性、更多的可靠性、更快的速度和更少的延迟。在某些情况下，使用 ExpressRoute 连接在本地网络和 Azure 之间传输数据还可以产生显著的成本效益。如果你已创建从本地网络到 Azure 的跨界连接，则可以在不改动虚拟网络的情况下迁移到 ExpressRoute 连接。
 
