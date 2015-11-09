@@ -22,7 +22,7 @@
 
 	- **Azure 帐户** - 只需几分钟即可创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
-	- ** 批处理( Batch )帐户** - 请参阅 [Azure  批处理( Batch )概述](/documentation/articles/batch-technical-overview)中的** 批处理( Batch )帐户**部分。
+	- **批处理( Batch )帐户** - 请参阅 [Azure 批处理( Batch )概述](/documentation/articles/batch-technical-overview)中的**批处理( Batch )帐户**部分。
 
 	- **存储帐户** - 请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account)的**创建存储帐户**部分。在本教程中，你将在此帐户中创建名为 **testcon1** 的容器。
 
@@ -34,7 +34,7 @@
 
 - NuGet 程序集：
 
-	1. 在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。在线搜索 **Azure. 批处理( Batch )**，然后单击“安装”以安装 Microsoft Azure  批处理( Batch )包和依赖项。
+	1. 在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。在线搜索 **Azure.批处理( Batch )**，然后单击“安装”以安装 Microsoft Azure  批处理( Batch )包和依赖项。
 
 	2. 在线搜索 **WindowsAzure.Storage**，然后单击“安装”以安装 Azure 存储包和依赖项。
 
@@ -181,7 +181,7 @@
 			using Microsoft.Azure.Batch.Auth;
 			using Microsoft.Azure.Batch.Common;
 
-2. 将以下用于设置凭据以调用 Azure  批处理( Batch )服务的代码添加到 Main 中：
+2. 将以下用于设置凭据以调用 Azure 批处理( Batch )服务的代码添加到 Main 中：
 
 			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("https://[account-name].[region].batch.azure.com", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
@@ -467,7 +467,7 @@
 
 ## 后续步骤
 
-1. 现在你已学习了运行任务的基本知识，接下来可以学习如何在应用程序的需求发生变化时自动缩放计算节点。为此，请参阅[自动缩放 Azure  批处理( Batch )池中的计算节点](/documentation/articles/batch-automatic-scaling)
+1. 现在你已学习了运行任务的基本知识，接下来可以学习如何在应用程序的需求发生变化时自动缩放计算节点。为此，请参阅[自动缩放 Azure 批处理( Batch )池中的计算节点](/documentation/articles/batch-automatic-scaling)
 
 2. 某些应用程序会生成大量难以处理的数据。解决此问题的方法之一是进行[有效的列表查询](/documentation/articles/batch-efficient-list-queries)。
 
