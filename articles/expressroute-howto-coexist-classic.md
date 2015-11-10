@@ -25,7 +25,7 @@
 
 - **不支持转换性路由：**你将不能（通过 Azure）在通过站点到站点 VPN 连接的本地网络与通过 ExpressRoute 连接的本地网络之间进行路由。
 - **不支持点到站点连接：**你不能启用点到站点 VPN 连接来连接到已连接到 ExpressRoute 的同一 VNet。对于同一 VNet 而言，点到站点 VPN 和 ExpressRoute 不能共存。
-- **仅标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。有关网关 SKU 的信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways)。
+- **仅标准或高性能网关：**ExpressRoute 网关和站点到站点 VPN 网关必须使用标准或高性能网关。
 - **静态路由要求：**如果你的本地网络同时连接到 ExpressRoute 和站点到站点 VPN，则必须在本地网络中配置静态路由，以便将站点到站点 VPN 连接路由到公共 Internet。
 - **必须先配置 ExpressRoute 网关：**必须先创建 ExpressRoute 网关，然后再添加站点到站点 VPN 网关。
 
@@ -33,13 +33,13 @@
 
 你可以将站点到站点 VPN 连接配置为 ExpressRoute 的备份。这仅适用于链接到 Azure 专用对等路径的虚拟网络。对于可通过 Azure 公共线路和 Microsoft 对等线路访问的服务，没有基于 VPN 的故障转移解决方案。ExpressRoute 线路始终是主链接。仅当 ExpressRoute 线路失败时，数据才会流经站点到站点 VPN 路径。
 
-![共存](media/expressroute-howto-coexist-classic/scenario1.jpg)
+![共存](./media/expressroute-howto-coexist-classic/scenario1.jpg)
 
 ## 配置站点到站点 VPN，以便连接到不通过 ExpressRoute 进行连接的站点
 
 你可以对网络进行配置，使得部分站点通过站点到站点 VPN 直接连接到 Azure，部分站点通过 ExpressRoute 进行连接。
 
-![共存](media/expressroute-howto-coexist-classic/scenario2.jpg)
+![共存](./media/expressroute-howto-coexist-classic/scenario2.jpg)
 
 >[AZURE.NOTE]不能将虚拟网络配置为转换路由器。
 
@@ -64,7 +64,7 @@
 
 1. 验证你是否有最新版本的 PowerShell cmdlet。可以从[下载页](/downloads/)的 PowerShell 部分下载和安装最新的 PowerShell cmdlet。
 
-2. 创建虚拟网络的架构。有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/library/azure/jj157100.aspx)。
+2. 创建虚拟网络的架构。有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
 	在创建架构时，请确保使用以下值：
 
@@ -178,13 +178,13 @@
 
 2. 删除现有的站点到站点 VPN 网关。使用下面的 cmdlet，并将值替换为你自己的值。
 
-	`Remove-AzureVNetGateway ¨CVnetName MyAzureVNET`
+	`Remove-AzureVNetGateway -VnetName MyAzureVNET`
 
 3. 导出虚拟网络架构。使用下面的 PowerShell cmdlet，并将值替换为你自己的值。
 
-	`Get-AzureVNetConfig ¨CExportToFile ¡°C:\NetworkConfig.xml¡±`
+	`Get-AzureVNetConfig -ExportToFile "C:\NetworkConfig.xml"`
 
-4. 编辑网络配置文件架构，使网关子网为 /27 或更短的前缀（例如 /26 或 /25）。请参阅以下示例。有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/library/azure/jj157100.aspx)。
+4. 编辑网络配置文件架构，使网关子网为 /27 或更短的前缀（例如 /26 或 /25）。请参阅以下示例。有关使用网络配置文件的详细信息，请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)。有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
 
           <Subnet name="GatewaySubnet">
             <AddressPrefix>10.17.159.224/27</AddressPrefix>

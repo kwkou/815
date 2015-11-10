@@ -37,54 +37,13 @@
 	在创建 ExpressRoute 线路之前，你需要连接提供商、支持的位置和带宽选项的列表。PowerShell cmdlet *Get-AzureDedicatedCircuitServiceProvider* 会返回此信息，你可以在后续步骤中使用此信息。
 
 		PS C:\> Get-AzureDedicatedCircuitServiceProvider
+		**The information returned will look similar to the example below:**
 
 		Name                 DedicatedCircuitLocations      DedicatedCircuitBandwidths                                                                                                                                                                                   
 		----                 -------------------------      --------------------------                                                                                                                                                                                   
-		Aryaka Networks      Silicon Valley,Washington      200Mbps:200, 500Mbps:500, 1Gbps:1000                                                                                                                                                                         
-		                     DC,Singapore                                                                                                                                                                                                                                
-		AT&T                 Silicon Valley,Washington DC   10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		AT&T Netbond         Washington DC,Silicon          10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		                     Valley,Dallas                                                                                                                                                                                                                               
-		British Telecom      London,Amsterdam,Washington    10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		                     DC,Tokyo,Silicon Valley                                                                                                                                                                                                                     
-		Colt Ethernet        Amsterdam,London               200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Colt IPVPN           Amsterdam,London               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		Comcast              Washington DC,Silicon Valley   200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Equinix              Amsterdam,Atlanta,Chicago,Dall 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		                     as,New York,Seattle,Silicon                                                                                                                                                                                                                 
-		                     Valley,Washington                                                                                                                                                                                                                           
-		                     DC,London,Hong Kong,Singapore,                                                                                                                                                                                                              
-		                     Sydney,Tokyo,Sao Paulo,Los                                                                                                                                                                                                                  
-		                     Angeles,Melbourne                                                                                                                                                                                                                           
-		IIJ                  Tokyo                          10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		InterCloud           Washington                     200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		                     DC,London,Singapore,Amsterdam                                                                                                                                                                                                               
-		Internet Solutions   London,Amsterdam               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		¨C Cloud Connect                                                                                                                                                                                                                                                  
-		Interxion            Amsterdam                      200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Level 3              London,Chicago,Dallas,Seattle, 200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Communications -     Silicon Valley,Washington DC                                                                                                                                                                                                                
-		Exchange                                                                                                                                                                                                                                                         
-		Level 3              London,Chicago,Dallas,Seattle, 10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		Communications -     Silicon Valley,Washington DC                                                                                                                                                                                                                
-		IPVPN                                                                                                                                                                                                                                                            
-		Megaport             Melbourne,Sydney               200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		NEXTDC               Melbourne                      200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		NTT Communications   Tokyo                          10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		Orange               Amsterdam,London,Silicon       10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		                     Valley,Washington DC,Hong Kong                                                                                                                                                                                                              
-		PCCW Global Limited  Hong Kong                      10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		SingTel Domestic     Singapore                      10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		SingTel              Singapore                      10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		International                                                                                                                                                                                                                                                    
-		Tata Communications  Hong Kong,Singapore,London,Ams 10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		                     terdam,Chennai,Mumbai                                                                                                                                                                                                                       
-		TeleCity Group       Amsterdam,London               200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
-		Telstra Corporation  Sydney,Melbourne               10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		Verizon              London,Hong Kong,Silicon       10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		                     Valley,Washington DC                                                                                                                                                                                                                        
-		Vodafone             London                         10Mbps:10, 50Mbps:50, 100Mbps:100, 500Mbps:500, 1Gbps:1000                                                                                                                                                   
-		Zayo Group           Washington DC                  200Mbps:200, 500Mbps:500, 1Gbps:1000, 10Gbps:10000                                                                                                                                                           
+		Beijing Telecom      Beijing                        200Mbps:200, 500Mbps:50,1Gbps:1000,10Gbps:10000                                                                                                                                                   
+		Ethernet                                                                                                                                                                                                                                                    
+                                                                                                                                                        
     	
 
 3. **创建 ExpressRoute 线路。**
@@ -95,9 +54,9 @@
 
 		#Creating a new circuit
 		$Bandwidth = 200
-		$CircuitName = "MyTestCircuit"
-		$ServiceProvider = "Equinix"
-		$Location = "Silicon Valley"
+		$CircuitName = "21vDemo"
+		$ServiceProvider = "Beijing Telecom Ethernet"
+		$Location = "Beijing"
 
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard
 
@@ -120,12 +79,11 @@
 	响应将如下例所示：
 
 		Bandwidth                        : 200
-		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		CircuitName                      : 21vDemo
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : NotProvisioned
-		Sku                              : Standard
 		Status                           : Enabled
 
 	你可以随时使用 *Get-AzureDedicatedCircuit* 检索此信息。进行不带任何参数的调用将列出所有线路。你的服务密钥将在 *ServiceKey* 字段中列出。
@@ -133,12 +91,11 @@
 		PS C:\> Get-AzureDedicatedCircuit
 
 		Bandwidth                        : 200
-		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		CircuitName                      : 21vDemo
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : NotProvisioned
-		Sku                              : Standard
 		Status                           : Enabled
 
 	你可以通过运行以下命令获取所有这些参数的详细说明。
@@ -174,12 +131,11 @@
 		PS C:\> Get-AzureDedicatedCircuit
 
 		Bandwidth                        : 200
-		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		CircuitName                      : 21vDemo
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
-		Sku                              : Standard
 		Status                           : Enabled
 
 7. **创建路由配置。**
@@ -197,21 +153,11 @@
 		PS C:\> Get-AzureDedicatedCircuit
 
 		Bandwidth                        : 200
-		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		CircuitName                      : 21vDemo
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
-		Sku                              : Standard
-		Status                           : Enabled
-
-		Bandwidth                        : 1000
-		CircuitName                      : MyAsiaCircuit
-		Location                         : Singapore
-		ServiceKey                       : #################################
-		ServiceProviderName              : equinix
-		ServiceProviderProvisioningState : Provisioned
-		Sku                              : Standard
 		Status                           : Enabled
 
 你可以将服务密钥作为参数传递给调用，从而获取特定 ExpressRoute 线路的相关信息。
@@ -219,10 +165,10 @@
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey "*********************************"
 
 		Bandwidth                        : 200
-		CircuitName                      : MyTestCircuit
-		Location                         : Silicon Valley
+		CircuitName                      : 21vDemo
+		Location                         : Beijing
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
 		Sku                              : Standard
 		Status                           : Enabled
@@ -238,51 +184,9 @@
 
 你可以执行以下操作：
 
-- 在不停机的情况下，为 ExpressRoute 线路启用/禁用 ExpressRoute 高级版外接程序。
 - 在不停机的情况下，增加 ExpressRoute 线路的带宽。
 
 有关限制的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。
-
-### 如何启用 ExpressRoute 高级版外接程序
-
-可以使用以下 PowerShell cmdlet 为现有线路启用 ExpressRoute 高级版外接程序：
-	
-		PS C:\> Set-AzureDedicatedCircuitProperties -ServiceKey "*********************************" -Sku Premium
-		
-		Bandwidth                        : 1000
-		CircuitName                      : TestCircuit
-		Location                         : Silicon Valley
-		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
-		ServiceProviderProvisioningState : Provisioned
-		Sku                              : Premium
-		Status                           : Enabled
-
-你的线路现已启用 ExpressRoute 高级版外接程序功能。请注意，该命令成功运行后，我们将立即开始为你对高级版外接程序功能计费。
-
-### 如何禁用 ExpressRoute 高级版外接程序
-
-可以使用以下 PowerShell cmdlet 为现有线路禁用 ExpressRoute 高级版外接程序：
-	
-		PS C:\> Set-AzureDedicatedCircuitProperties -ServiceKey "*********************************" -Sku Standard
-		
-		Bandwidth                        : 1000
-		CircuitName                      : TestCircuit
-		Location                         : Silicon Valley
-		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
-		ServiceProviderProvisioningState : Provisioned
-		Sku                              : Standard
-		Status                           : Enabled
-
-你的线路现已禁用高级版外接程序。
-
->[AZURE.IMPORTANT]如果你使用的资源超出了标准线路允许的范围，此操作可能会失败。
->
->- 从高级版降级到标准版之前，你必须确保链接到线路的虚拟机的数目少于 10。否则，你的更新请求会失败，将按高级版费率向你收费。
-- 你必须取消其他地理政治区域的所有虚拟网络的链接。否则，你的更新请求会失败，将按高级版费率向你收费。
-- 路由表中专用对等互连的路由必须少于 4000。如果你的路由表大小超出 4000 个路由，则会删除 BGP 会话且不会重新启用它，除非已播发前缀的数目低于 4000。
-
 
 ### 如何更新 ExpressRoute 线路带宽
 
@@ -292,14 +196,14 @@
 		
 		Bandwidth                        : 1000
 		CircuitName                      : TestCircuit
-		Location                         : Silicon Valley
+		Location                         : Beijing 
 		ServiceKey                       : *********************************
-		ServiceProviderName              : equinix
+		ServiceProviderName              : Beijing Telecom Ethernet
 		ServiceProviderProvisioningState : Provisioned
 		Sku                              : Standard
 		Status                           : Enabled
 
-将已在 Microsoft 一侧估计好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+现已在 Microsoft 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
 
 >[AZURE.IMPORTANT]但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 

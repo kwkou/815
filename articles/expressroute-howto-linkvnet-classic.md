@@ -131,7 +131,7 @@
 
 线路用户可以通过运行以下 cmdlet 来兑现链接授权。
 
-	PS C:\> New-AzureDedicatedCircuitLink ¨Cservicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" ¨CVnetName 'SalesVNET1' 
+	PS C:\> New-AzureDedicatedCircuitLink ¨Cservicekey "&&&&&&&&&&&&&&&&&&&&&&&&&&" -VnetName 'SalesVNET1' 
 		
 	State VnetName 
 	----- -------- 
