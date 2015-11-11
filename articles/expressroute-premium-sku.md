@@ -88,7 +88,7 @@ Windows PowerShell 是一个功能强大的脚本编写环境，可用于在 Azu
 
 		 PS C:\> Get-AzureDedicatedCircuit -ServiceKey <skey>
 
-	将 <skey> 替换为实际的服务密钥。
+	将 <skey\> 替换为实际的服务密钥。
 	
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
 
@@ -138,7 +138,7 @@ Windows PowerShell 是一个功能强大的脚本编写环境，可用于在 Azu
 
 		 PS C:\> Get-AzureDedicatedCircuit -ServiceKey <skey>
 
-	将 <skey> 替换为实际的服务密钥。
+	将 <skey\> 替换为实际的服务密钥。
 	
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
 

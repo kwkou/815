@@ -35,9 +35,9 @@
 
 通过本系列的教程和动手实验来了解在云中使用 SQL数据库 的基础知识。
 
-####[SQL 数据同步入门](/documentation/articles/sql-database-get-started-sql-data-sync)
+<!-- ####[SQL 数据同步入门](/documentation/articles/sql-database-get-started-sql-data-sync)
 
-使用本教程，您将了解如何在 Azure 管理门户中使用 SQL 数据同步功能来同步数据库。
+使用本教程，您将了解如何在 Azure 管理门户中使用 SQL 数据同步功能来同步数据库。-->
 
 ####[SQL 数据库 Elastic Scale 预览版入门](/documentation/articles/sql-database-elastic-scale-get-started)
 
