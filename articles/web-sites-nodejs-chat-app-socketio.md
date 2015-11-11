@@ -114,11 +114,6 @@ Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应
 
 > [AZURE.NOTE] 向外扩展 Socket.IO 解决方案还要求支持粘滞会话。默认情况下，可以通过 Azure 请求路由为 Azure Web Apps 启用粘滞会话。有关详细信息，请参阅 [Azure 网站中的实例关联](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
 
-###创建 Redis 缓存
-
-执行[在 Azure Redis 缓存中创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache)中的步骤，以创建新的缓存。
-
-> [AZURE.NOTE] 保存用于缓存的__主机名__和__主密钥__，因为接下来的步骤需要这些信息。
 
 ###添加 redis 和 socket.io redis 模块
 

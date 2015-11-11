@@ -27,8 +27,6 @@
 * [修改 Web.config 文件。](#configurewebconfig)
 * [使用会话对象存储和检索缓存项。](#usesessionobject)
 
-## <a id="createcache"></a>创建缓存
-遵照[这些指示](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-cache)创建缓存。
 
 ## <a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用程序
 安装 NuGet `RedisSessionStateProvider` 包。从包管理器控制台（“工具”>“NuGet 包管理器”>“包管理器控制台”）使用以下命令进行安装：
@@ -37,14 +35,14 @@
   
 若要从“工具”>“NuGet 包管理器”>“管理解决方案的 NuGet 包”进行安装，请搜索 `RedisSessionStateProvider`。
 
-有关详细信息，请参阅 [NuGet RedisSessionStateProvider 页](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/)和[配置缓存客户端](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#NuGet)。
+有关详细信息，请参阅 [NuGet RedisSessionStateProvider 页](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/)。
 
 ## <a id="configurewebconfig"></a>修改 Web.config 文件。
 除了为缓存生成程序集引用，NuGet 包还在 *web.config* 文件中添加存根项。
 
 1. 打开 *web.config* 并查找 **sessionState** 元素。
 
-1. 输入 `host`、`accessKey`、 `port` 的值（SSL 端口应为 6380），并将 `SSL` 设置为 `true`。可以从 [Azure 门户](http://manage.windowsazure.cn)边栏选项卡为你的缓存实例获取这些值。有关详细信息，请参阅[连接到缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#connect-to-cache)。请注意，默认情况下，将为新缓存禁用非 SSL 端口。有关启用非 SSL 端口的详细信息，请参阅[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)主题中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分。以下标记显示了对 *web.config* 文件所做的更改，具体而言，是对 *port*、*host*、accessKey* 和 *ssl* 的更改。
+1. 输入 `host`、`accessKey`、 `port` 的值（SSL 端口应为 6380），并将 `SSL` 设置为 `true`。可以从 [Azure 门户](http://manage.windowsazure.cn)边栏选项卡为你的缓存实例获取这些值。请注意，默认情况下，将为新缓存禁用非 SSL 端口。有关启用非 SSL 端口的详细信息，请参阅[在 Azure Redis 缓存中配置缓存](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx)主题中的[访问端口](https://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx#AccessPorts)部分。以下标记显示了对 *web.config* 文件所做的更改，具体而言，是对 *port*、*host*、accessKey* 和 *ssl* 的更改。
 
 		  <system.web>;
 		    <customErrors mode="Off" />;
