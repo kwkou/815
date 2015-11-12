@@ -191,7 +191,7 @@
 	替换以下值：
 
 	- 将 **[account-name]** 替换为前面创建的批处理( Batch )帐户的名称。
-	- 将 **[region]** 替换为帐户所在的区域。<!--See [Azure Regions](http://azure.microsoft.com/regions/) -->以了解可用的区域。
+	- 将 **[region]** 替换为帐户所在的区域。<!--See [Azure Regions](http://azure.microsoft.com/regions/) 以了解可用的区域。-->
 	- 将 **[account-key]** 替换为 批处理( Batch )帐户的主密钥。
 
 3.	将以下用于创建池的方法添加到 Program 类：
@@ -284,7 +284,7 @@
 		{
 			CloudJob job = client.JobOperations.GetJob("testjob1");
 			ResourceFile programFile = new ResourceFile(
-				"https://[account-name].blob.core.chinacloudapi.cn/[]/ProcessTaskData.exe",
+				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/ProcessTaskData.exe",
 				"ProcessTaskData.exe");
       	  ResourceFile assemblyFile = new ResourceFile(
 				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/Microsoft.WindowsAzure.Storage.dll",
