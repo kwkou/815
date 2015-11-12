@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="08/04/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 管理对 Azure 存储资源的访问
 
