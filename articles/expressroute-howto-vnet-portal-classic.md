@@ -17,7 +17,7 @@
 
 这些步骤将指导你通过经典部署模型配置用于 ExpressRoute 的虚拟网络和网关。目前不支持将此配置用于通过资源管理器模型创建的 VNet 和网关。一旦可用，我们就会在此页中提供相应文档的链接。
  
->[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。有关部署模型的信息，请参阅 [Azure 部署模型](/documentation/articles/azure-classic-rm)
+>[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。
 
 1. 登录到 **Azure 门户**。
 
@@ -56,7 +56,7 @@
 
 10. 开始创建网关时，你将看到一条消息，告知网关已经开始创建。创建网关最多可能需要 15 分钟。
 
-11. 将你的网络连接到线路。遵循[如何将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnets-classic)一文中的说明。
+11. 将你的网络连接到线路。遵循[如何将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)一文中的说明。
 
 ## 后续步骤
 
