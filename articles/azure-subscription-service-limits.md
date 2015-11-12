@@ -91,10 +91,6 @@
 
 [AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
 
-## Mobile Engagement 限制
-
-[AZURE.INCLUDE [azure-mobile-engagement-limits](../includes/azure-mobile-engagement-limits.md)]
-
 ## SQL 数据库限制
 
 有关 SQL 数据库限制的其他详细信息，请参阅以下主题：
