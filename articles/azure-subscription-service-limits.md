@@ -63,10 +63,6 @@
 ### 流量管理器限制
 
 [AZURE.INCLUDE [traffic-manager-limits](../includes/traffic-manager-limits.md)]
-<!--
-### DNS 限制
-
-[AZURE.INCLUDE [dns-limits](../includes/dns-limits.md)] -->
 
 ## 存储限制
 
@@ -91,39 +87,15 @@
 
 [AZURE.INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
 
-<!--
-## App Service 限制 - Web Apps、Mobile Apps、API Apps 和 Logic Apps
-
-[AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)] -->
-
 ## 计划程序限制
 
 [AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
-<!--
-## Batch 限制
-
-[AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)] -->
-
-<!--
-## DocumentDB 限制
-
-[AZURE.INCLUDE [azure-documentdb-limits](../includes/azure-documentdb-limits.md)] -->
-
 
 ## Mobile Engagement 限制
 
 [AZURE.INCLUDE [azure-mobile-engagement-limits](../includes/azure-mobile-engagement-limits.md)]
 
-<!--
-## 搜索限制
-
-[AZURE.INCLUDE [azure-search-limits](../includes/azure-search-limits.md)] -->
-
-有关 Azure 搜索限制的其他详细信息，请参阅[限制和约束](https://msdn.microsoft.com/zh-cn/library/azure/dn798934.aspx)。
-<!--
 ## SQL 数据库限制
-
-[AZURE.INCLUDE [azure-sql-database-limits](../includes/azure-sql-database-limits.md)] -->
 
 有关 SQL 数据库限制的其他详细信息，请参阅以下主题：
 
@@ -147,11 +119,6 @@
 ## 服务总线限制
 
 [AZURE.INCLUDE [azure-servicebus-limits](../includes/service-bus-quotas-table.md)]
-<!--
-## 数据工厂限制
-
-[AZURE.INCLUDE [azure-data-factory-limits](../includes/azure-data-factory-limits.md)] -->
-
 
 ## 流分析限制
 
@@ -161,19 +128,9 @@
 
 [AZURE.INCLUDE [AAD-service-limits](../includes/active-directory-service-limits-include.md)]
 
-<!--
-## Azure RemoteApp 限制
-
-[AZURE.INCLUDE [azure-remoteapp-limits](../includes/azure-remoteapp-limits.md)] -->
-
 ## StorSimple 系统限制
 
 [AZURE.INCLUDE [storsimple-limits-table](../includes/storsimple-limits-table.md)]
-
-<!--
-## 操作见解限制
-
-[AZURE.INCLUDE [operational-insights-limits](../includes/operational-insights-limits.md)] -->
 
 ## 备份限制
 
@@ -182,25 +139,10 @@
 ## 站点恢复限制
 
 [AZURE.INCLUDE [site-recovery-limits](../includes/site-recovery-limits.md)]
-<!--
-## Application Insights 限制
-
-[AZURE.INCLUDE [application-insights-limits](../includes/application-insights-limits.md)]
-
-## API 管理限制
-
-[AZURE.INCLUDE [api-management-service-limits](../includes/api-management-service-limits.md)] -->
 
 ## Azure Redis 缓存限制
 
 [AZURE.INCLUDE [redis-cache-service-limits](../includes/redis-cache-service-limits.md)]
-<!--
-## 密钥保管库限制
-
-[AZURE.INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]
-
-## 多因素身份验证
-[AZURE.INCLUDE [azure-mfa-service-limits](../includes/azure-mfa-service-limits.md)] -->
 
 ## 另请参阅
 
