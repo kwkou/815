@@ -158,7 +158,7 @@ Azure 文件存储目前发布了预览版。若要请求访问预览版，请�
 			<supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
 		</startup>
 		<appSettings>
-	        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=StorageAccountKeyEndingIn==" />
+	        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=StorageAccountKeyEndingIn==;EndpointSuffix=core.Chinacloudapi.cn" />
 		</appSettings>
 	</configuration>
 

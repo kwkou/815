@@ -88,7 +88,7 @@ Azure .NET 存储客户端库支持使用存储连接字符
 
     <configuration>
     <appSettings>
-    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey" />
+    <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey];EndpointSuffix=core.Chinacloudapi.cn" />
     </appSettings>
     </configuration>
 

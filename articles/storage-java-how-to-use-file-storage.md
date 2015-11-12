@@ -44,7 +44,8 @@
 	public static final String storageConnectionString = 
 	    "DefaultEndpointsProtocol=http;" + 
 	    "AccountName=your_storage_account_name;" + 
-	    "AccountKey=your_storage_account_key";
+	    "AccountKey=your_storage_account_key;"+
+		"EndpointSuffix=core.Chinacloudapi.cn";
 
 > [AZURE.NOTE]将 your_storage_account_name 和 your_storage_account_key 替换为你的存储帐户的实际值。
 

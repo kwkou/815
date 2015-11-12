@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="管理对 Azure 存储资源的访问 |Windows Azure" 
 	description="了解如何管理用户访问你的 Azure 存储资源的方式。" 
 	services="storage" 
@@ -101,7 +101,8 @@
     string storageConnectionString =
        "DefaultEndpointsProtocol=https;" +
        "AccountName=myaccount;" +
-       "AccountKey=<account-key>";
+       "AccountKey=<account-key>;" +
+		"EndpointSuffix=core.Chinacloudapi.cn";
     
     // As an alternative, you can retrieve storage account information from an app.config file. 
     // This is one way to store and retrieve a connection string if you are 

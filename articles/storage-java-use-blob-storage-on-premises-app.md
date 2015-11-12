@@ -43,13 +43,14 @@
 
     public class StorageSample {
 
-在 StorageSample 类中，声明一个将包含**默认终结点协议、你的存储帐户名称和存储访问密钥**（在你的 Azure 存储帐户中指定）的字符串变量。将占位符值 **your\_account\_name** 和
-**your\_account\_key** 分别替换为你自己的帐户名称和帐户密钥。
+在 StorageSample 类中，声明一个将包含**默认终结点协议、你的存储帐户名称和存储访问密钥**（在你的 Azure 存储帐户中指定）的字符串变量。将占位符值 **your_account_name** 和
+**your_account_key** 分别替换为你自己的帐户名称和帐户密钥。
 
     public static final String storageConnectionString = 
            "DefaultEndpointsProtocol=http;" + 
                "AccountName=your_account_name;" + 
-               "AccountKey=your_account_name"; 
+               "AccountKey=your_account_name;" +
+				"EndpointSuffix=core.Chinacloudapi.cn";
 
 添加对 **main** 的声明，包括 **try** 块并包括必需的左大括号 **{**。
 
@@ -202,8 +203,8 @@ Azure 存储空间中的 Blob。
 
 结束 **StorageSample** 的方法是插入右大括号：**}**
 
-以下是此示例的完整代码。请记得修改占位符值 **your\_account\_name** 和
-**your\_account\_key**，这样才能分别使用你的帐户名和帐户密钥。
+以下是此示例的完整代码。请记得修改占位符值 **your_account_name** 和
+**your_account_key**，这样才能分别使用你的帐户名和帐户密钥。
 
     import com.microsoft.windowsazure.services.core.storage.*;
     import com.microsoft.windowsazure.services.blob.client.*;
@@ -218,7 +219,8 @@ Azure 存储空间中的 Blob。
         public static final String storageConnectionString = 
                 "DefaultEndpointsProtocol=http;" + 
                    "AccountName=your_account_name;" + 
-                   "AccountKey=your_account_name"; 
+                   "AccountKey=your_account_name;" +
+					"EndpointSuffix=core.Chinacloudapi.cn"; 
 
         public static void main(String[] args) 
         {
@@ -330,7 +332,8 @@ Azure 存储空间中的 Blob。
         public static final String storageConnectionString = 
                 "DefaultEndpointsProtocol=http;" + 
                    "AccountName=your_account_name;" + 
-                   "AccountKey=your_account_key"; 
+                   "AccountKey=your_account_key;" +
+					"EndpointSuffix=core.Chinacloudapi.cn"; 
 
         public static void main(String[] args) 
         {
