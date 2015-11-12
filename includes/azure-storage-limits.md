@@ -47,20 +47,20 @@
    <td valign="middle"><p>单个表分区的目标吞吐量（1 KB 实体）</p></td>
    <td valign="middle"><p>每秒最多 2000 个实体</p></td>
 </tr>
-<tr>
+<!--<tr>
    <td valign="middle"><p>每个存储帐户的最大入口（美国区域）</p></td>
    <td valign="middle"><p>如果已启用 GRS<sup>3</sup>，则为 10 Gbps；对于 LRS，为 20 Gbps</p></td>
 </tr>
 <tr>
    <td valign="middle"><p>每个存储帐户的最大出口（美国区域）</p></td>
    <td valign="middle"><p>如果已启用 GRS<sup>3</sup>，则为 20 Gbps；对于 LRS，为 30 Gbps</p></td>
-</tr>
+</tr>-->
 <tr>
-   <td valign="middle"><p>每个存储帐户的最大入口（欧洲和亚洲区域）</p></td>
+   <td valign="middle"><p>每个存储帐户的最大入口<!--（欧洲和亚洲区域）--></p></td>
    <td valign="middle"><p>如果已启用 GRS<sup>3</sup>，则为 5 Gbps；对于 LRS，为 10 Gbps</p></td>
 </tr>
 <tr>
-   <td valign="middle"><p>每个存储帐户的最大出口（欧洲和亚洲区域）</p></td>
+   <td valign="middle"><p>每个存储帐户的最大出口<!--（欧洲和亚洲区域）--></p></td>
    <td valign="middle"><p>如果已启用 GRS<sup>3</sup>，则为 10 Gbps；对于 LRS，为 15 Gbps</p></td>
 </tr>
 </table>
