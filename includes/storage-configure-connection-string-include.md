@@ -41,7 +41,7 @@ Azure 云服务有一个特有的服务配置机制，让您能够从 Azure 管�
 
 	<configuration>
   		<appSettings>
-    		<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key" />
+    		<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key";EndpointSuffix=core.Chinacloudapi.cn />
   		</appSettings>
 	</configuration>
 
@@ -49,7 +49,7 @@ Azure 云服务有一个特有的服务配置机制，让您能够从 Azure 管�
 
 	<configuration>
     	<appSettings>
-      		<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=nYV0gln9fT7bvY+rxu2iWAEyzPNITGkhM88J8HUoyofpK7C8fHcZc2kIZp6cKgYRUM74lHI84L50Iau1+9hPjB==" />
+      		<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=nYV0gln9fT7bvY+rxu2iWAEyzPNITGkhM88J8HUoyofpK7C8fHcZc2kIZp6cKgYRUM74lHI84L50Iau1+9hPjB==;EndpointSuffix=core.Chinacloudapi.cn" />
     	</appSettings>
 	</configuration>
 

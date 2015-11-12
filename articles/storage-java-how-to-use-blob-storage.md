@@ -51,7 +51,8 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
     public static final String storageConnectionString = 
         "DefaultEndpointsProtocol=http;" + 
         "AccountName=your_storage_account;" + 
-        "AccountKey=your_storage_account_key";
+        "AccountKey=your_storage_account_key;"+
+		"EndpointSuffix=core.Chinacloudapi.cn";
 
 在 Windows Azure 的角色中运行的应用程序中，此字符串可存储在服务配置文件  *ServiceConfiguration.cscfg* 中，并可通过调用 **RoleEnvironment.getConfigurationSettings** 方法进行访问。下面的示例从服务配置文件中名为  *StorageConnectionString* 的 **Setting** 元素获取连接字符串
 
