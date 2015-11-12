@@ -1,4 +1,4 @@
- 限制取决于你选择的[定价层](http://azure.microsoft.com/pricing/details/application-insights/)。
+ 限制取决于你选择的[定价层](/pricing/details/application-insights/)。
 
 **资源** | **默认限制** | **最大限制**
 -------- | ------------- | -------------
