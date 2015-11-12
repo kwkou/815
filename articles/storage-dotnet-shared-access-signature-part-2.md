@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="06/08/2015" 
-	ms.author="09/18/2015"/>
+	ms.author="11/12/2015"/>
 
 
 

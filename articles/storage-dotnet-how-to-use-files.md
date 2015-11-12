@@ -9,7 +9,7 @@
 
 <tags ms.service="storage"
       ms.date="08/04/2015"
-      wacn.date="09/18/2015" />
+      wacn.date="11/12/2015" />
 
 # 如何通过 PowerShell 和 .NET 使用 Azure 文件存储
 

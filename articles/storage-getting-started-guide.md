@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="05/28/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 五分钟内开始使用 Azure 存储空间 
 
