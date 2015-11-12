@@ -34,7 +34,7 @@
 
 - NuGet 程序集：
 
-	1. 在 Visual Studio 中创建项目后，可在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”。在线搜索 **Azure.批处理( Batch )**，然后单击“安装”以安装 Microsoft Azure  批处理( Batch )包和依赖项。
+	1. 在 Visual Studio 中创建项目后，可在“Solution Explorer”中右键单击该项目，然后选择“Manage NuGet Packages”。在线搜索 **Azure.Batch**，然后单击“安装”以安装 Microsoft Azure Batch包和依赖项。
 
 	2. 在线搜索 **WindowsAzure.Storage**，然后单击“安装”以安装 Azure 存储包和依赖项。
 
@@ -49,7 +49,7 @@
 		<?xml version="1.0" encoding="utf-8" ?>
 		<configuration>
 			<appSettings>
-				<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key]"/>
+				<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.chinacloudapi.cn"/>
 			</appSettings>
 		</configuration>
 
@@ -61,7 +61,7 @@
 
 2. 保存 App.config 文件。
 
-若要了解详细信息，请参阅[配置连接字符串](http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758697.aspx)。
+若要了解详细信息，请参阅[配置连接字符串](/documentation/articles/storage-configure-connection-string/)。
 
 ### 创建存储容器
 
@@ -150,7 +150,7 @@
 
 		static void CreateFiles()
 		{
-		  privateCloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+		  CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 			ConfigurationManager.AppSettings["StorageConnectionString"]);
 		  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 		  CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
@@ -168,8 +168,10 @@
 		  Console.WriteLine("Uploaded the files. Press Enter to continue.");
 		  Console.ReadLine();
 		}
+2. 将以下用于调用刚刚添加的方法的代码添加到到 Main 中：
 
-2. 保存 Program.cs 文件。
+		CreateFiles();
+3. 保存 Program.cs 文件。
 
 ## 步骤 2.将池添加到帐户
 
@@ -181,14 +183,14 @@
 			using Microsoft.Azure.Batch.Auth;
 			using Microsoft.Azure.Batch.Common;
 
-2. 将以下用于设置凭据以调用 Azure 批处理( Batch )服务的代码添加到 Main 中：
+2. 将以下用于设置凭据以调用 Azure Batch服务的代码添加到 Main 中：
 
-			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("https://[account-name].[region].batch.azure.com", "[account-name]", "[account-key]");
+			BatchSharedKeyCredentials cred = new BatchSharedKeyCredentials("https://[account-name].[region].batch.chinacloudapi.cn/", "[account-name]", "[account-key]");
 			BatchClient client = BatchClient.Open(cred);
 
 	替换以下值：
 
-	- 将 **[account-name]** 替换为前面创建的 批处理( Batch )帐户的名称。
+	- 将 **[account-name]** 替换为前面创建的批处理( Batch )帐户的名称。
 	- 将 **[region]** 替换为帐户所在的区域。<!--See [Azure Regions](http://azure.microsoft.com/regions/) -->以了解可用的区域。
 	- 将 **[account-key]** 替换为 批处理( Batch )帐户的主密钥。
 
@@ -282,16 +284,16 @@
 		{
 			CloudJob job = client.JobOperations.GetJob("testjob1");
 			ResourceFile programFile = new ResourceFile(
-				"https://[account-name].blob.azure.com/[]/ProcessTaskData.exe",
+				"https://[account-name].blob.core.chinacloudapi.cn/[]/ProcessTaskData.exe",
 				"ProcessTaskData.exe");
       	  ResourceFile assemblyFile = new ResourceFile(
-				"https://[account-name].blob.core.windows.net/testcon1/Microsoft.WindowsAzure.Storage.dll",
+				"https://[account-name].blob.core.chinacloudapi.cn/testcon1/Microsoft.WindowsAzure.Storage.dll",
 				"Microsoft.WindowsAzure.Storage.dll");
 			for (int i = 1; i < 4; ++i)
 			{
 				string blobName = "taskdata" + i;
 				string taskName = "mytask" + i;
-				ResourceFile taskData = new ResourceFile("https://[account-name].blob.core.windows.net/testcon1/" +
+				ResourceFile taskData = new ResourceFile("https://[account-name].blob.core.chinacloudapi.cn/testcon1/" +
 				  blobName, blobName);
 				CloudTask task = new CloudTask(taskName, "ProcessTaskData.exe https://[account-name].blob.core.windows.net/testcon1/" +
 				  blobName + " 3");
