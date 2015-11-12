@@ -16,12 +16,12 @@
 
 本文将指导你执行相关步骤，以便使用 PowerShell cmdlet 和典型的部署模型创建 ExpressRoute 线路。下面的步骤还将向你显示如何查看状态，以及如何更新、删除和预配 ExpressRoute 线路。
 
->[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。有关部署模型的信息，请参阅 [Azure 部署模型](/documentation/articles/azure-classic-rm)。
+>[AZURE.IMPORTANT]请务必了解 Azure 当前使用两种部署模型：资源管理器和经典部署模型。在开始你的配置之前，请确保你了解部署模型和工具。
 
 ## 配置先决条件
 
-- 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页和[工作流](/documentation/articles/expressroute-workflows)页。
+- 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页和<!--[-->工作流<!--](/documentation/articles/expressroute-workflows)-->页。
 
 ## 创建和预配 ExpressRoute 线路
 
@@ -140,11 +140,11 @@
 
 7. **创建路由配置。**
 	
-	如需分步说明，请参阅 [ExpressRoute 线路路由配置（创建和修改对等线路）](/documentation/articles/expressroute-howto-routing-classic)页。
+	如需分步说明，请参阅 <!--[-->ExpressRoute 线路路由配置（创建和修改对等线路）<!--](/documentation/articles/expressroute-howto-routing-classic)-->页。
 
 8. **将 VNet 链接到 ExpressRoute 线路。**
 
-	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-classic)。如需为 ExpressRoute 创建虚拟网络，请参阅[为 ExpressRoute 创建虚拟网络](/documentation/articles/expressroute-howto-createvnet-classic)以获取说明。
+	接下来，将 VNet 链接到 ExpressRoute 线路。如需分步说明，请参阅[将 ExpressRoute 线路链接到 VNet](/documentation/articles/expressroute-howto-linkvnet-classic)。<!--如需为 ExpressRoute 创建虚拟网络，请参阅[为 ExpressRoute 创建虚拟网络](/documentation/articles/expressroute-howto-createvnet-classic)以获取说明。-->
 
 ##  如何获取 ExpressRoute 线路的状态
 
@@ -221,7 +221,7 @@
 
 ## 后续步骤
 
-- [配置路由](/documentation/articles/expressroute-howto-routing-classic)
+- <!--[-->配置路由<!--](/documentation/articles/expressroute-howto-routing-classic)-->
 - [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic) 
 
 <!---HONumber=76-->
