@@ -100,8 +100,8 @@
 有关 SQL 数据库限制的其他详细信息，请参阅以下主题：
 
  - [Azure SQL 数据库服务层（版本）](http://msdn.microsoft.com/library/azure/dn741340.aspx)
- - [Azure SQL 数据库服务层和性能级别](http://msdn.microsoft.com/library/azure/dn741336.aspx)
- - [数据库吞吐量单位 (DTU) 配额](http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs)
+ - <!--[-->Azure SQL 数据库服务层和性能级别<!--](http://msdn.microsoft.com/library/azure/dn741336.aspx)-->
+ - <!--[-->数据库吞吐量单位 (DTU) 配额<!--](http://msdn.microsoft.com/library/azure/ee336245.aspx#DTUs)-->
  - [SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits)
 
 ## 媒体服务限制
