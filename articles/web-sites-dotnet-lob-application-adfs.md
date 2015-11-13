@@ -7,14 +7,14 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web"  
-	ms.date="07/07/2015" 
-	wacn.date="08/29/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/29/2015"
+	wacn.date="11/12/2015"/>
 
-# 在 Azure 网站 中创建使用 AD FS 身份验证的 .NET MVC Web 应用
+# 在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用
 
-在本文中，您将了解如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 [Azure App Service Web Apps](/documentation/services/web-sites/) 中创建 ASP.NET MVC 业务线应用程序。如果您想在 Azure 网站中创建业务线应用程序，而您的组织要求在网站内存储所有数据，则可以应用此方案。
+在本文中，你将了解如何在使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者的 [Azure 网站](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。当你想要在 Azure 网站中创建业务线应用程序，而你的组织要求在现场存储所有数据时，可以应用此方案。
 
 >[AZURE.NOTE]有关 Azure 网站支持的不同企业身份验证和授权选项的概述，请参阅[使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)。
 
@@ -31,16 +31,18 @@
 <a name="bkmk_build"></a>
 ## 要生成的项目 ##
 
-您将在 Azure 网站中生成具有以下功能的基本 ASP.NET 应用程序：
+你将在 Azure 网站中生成具有以下功能的基本 ASP.NET 应用程序：
 
 - 根据 AD FS 对用户进行身份验证
 - 使用 `[Authorize]` 授权用户执行不同操作
-- 用于在 Visual Studio 中进行调试和发布到 Azure 网站的静态配置（配置一次，随时调试和发布） 
+- 用于在 Visual Studio 中进行调试和发布到 Azure 网站的静态配置（配置一次，随时调试和发布）  
 
 <a name="bkmk_need"></a>
 ## 所需的项目 ##
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+
+>[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](http://go.microsoft.com/fwlink/?LinkId=523751)，在此处，可立即在 Azure 网站中创建临时初学者 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 若要完成本教程，你需要以下项目：
 
@@ -49,7 +51,7 @@
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 或更高版本
 
-<a name="bkmk_sample">
+<a name="bkmk_sample"></a>
 ## 将示例应用程序用作业务线模板 ##
 
 本教程中的示例应用程序 [WebApp-WSFederation-DotNet)](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet) 是由 Azure Active Directory 团队创建。由于 AD FS 支持 WS 联合身份验证，因此您可以将它用作模板来轻松新建业务线应用程序。该示例应用程序具有以下功能：
@@ -58,21 +60,18 @@
 - 登录和注销功能
 - 使用 [Microsoft.Owin](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana)（而不是 Windows Identity Foundation (WIF)），它代表了 ASP.NET 的未来发展方向，与 WIF 相比，它的身份验证和授权设置要简单得多
 
-<a name="bkmk_setup">
+<a name="bkmk_setup"></a>
 ## 设置示例应用程序 ##
 
 2.	将 [WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet) 的示例解决方案克隆或下载到您的本地目录中。
 
-	<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p><a href="https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md">README.md</a> 中的说明展示了如何使用 Azure Active Directory 设置应用程序，而在本教程中，您将使用 AD FS 设置应用程序，因此请改为按照本文的步骤操作。</p>
-</div>
+	> [AZURE.NOTE][README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) 中的说明展示了如何使用 Azure Active Directory 设置应用程序，而在本教程中，您将使用 AD FS 设置应用程序，因此请改为按照本文的步骤操作。
 
 3.	打开解决方案，然后在“解决方案资源管理器”中打开 Controllers\\AccountController.cs。
 
-	你将看到，代码只是发出身份验证质询以使用 WS-Federation 对用户进行身份验证。所有身份验证都在 App_Start.Auth.cs 中配置。
+	你将看到，代码只是发出身份验证质询以使用 WS-Federation 对用户进行身份验证。所有身份验证都在 App\_Start.Auth.cs 中配置。
 
-4.  打开 App_Start.Auth.cs。在 `ConfigureAuth` 方法中，记录下面的代码行：
+4.  打开 App\_Start.Auth.cs。在 `ConfigureAuth` 方法中，记录下面的代码行：
 
         app.UseWsFederationAuthentication(
             new WsFederationAuthenticationOptions
@@ -86,49 +85,47 @@
 	-	RP 标识符：`https://contoso.com/MyLOBApp`
 	-	元数据地址：`http://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
 
-5.	在 App_Start.Auth.cs 中，根据以下突出显示部分所示更改静态字符串定义：
+5.	在 App\_Start.Auth.cs 中，根据以下突出显示部分所示更改静态字符串定义：
 	<pre class="prettyprint">
-	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
-    <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
-    <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
-    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
-    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
+private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
+<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
+<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
+<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
 
-    <mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
-    </pre>
+<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
+</pre>
 
 6.	现在，你将在 Web.config 中进行相应更改。打开 Web.config 并根据以下突出显示部分所示修改应用程序设置：
 	<pre class="prettyprint">
-	&lt;appSettings&gt;
-	  &lt;add key="webpages:Version" value="3.0.0.0" /&gt;
-	  &lt;add key="webpages:Enabled" value="false" /&gt;
-	  &lt;add key="ClientValidationEnabled" value="true" /&gt;
-	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /&gt;
-	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /&gt;</del></mark>
-	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /&gt;</del></mark>
-	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /&gt;</del></mark>
-	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /&gt;</mark>
-	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /&gt;</mark>
+&lt;appSettings>
+  &lt;add key="webpages:Version" value="3.0.0.0" />
+  &lt;add key="webpages:Enabled" value="false" />
+  &lt;add key="ClientValidationEnabled" value="true" />
+  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" />
+  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /></del></mark>
+  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /></del></mark>
+  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /></del></mark>
+  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /></mark>
+  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /></mark>
 
-	&lt;/appSettings&gt;
-	</pre>
-
-	根据相应的环境填写键值。
+&lt;/appSettings>
+</pre>根据相应的环境填写键值。
 
 7.	生成应用程序，以确保没有任何错误。
 
 就这么简单。现在，便可以配合 AD FS 运行该示例应用程序。稍后，你仍需要在 AD FS 中配置 RP 与此应用程序间的信任关系。
 
 <a name="bkmk_deploy"></a>
-## 将示例应用程序部署到 Azure 网站中
+## 将示例应用程序部署到 Azure 网站
 
-现在，您需要将应用程序发布到 Azure 网站的 Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用 URL，稍后您还可以使用此 URL 来配置 RP 信任。
+现在，你需要将应用程序发布到 Azure 网站的 Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用 URL，稍后您还可以使用此 URL 来配置 RP 信任。
 
 1. 右键单击您的项目，然后选择“发布”。
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. 选择“Windows Azure Web 应用”。
+2. 选择“Microsoft Azure Web Apps”。
 3. 如果您尚未登录 Azure，请单击“登录”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
 4. 登录后，单击“新建”，新建一个 Web 应用。
 5. 填写所有必填字段。稍后，您将要连接到本地数据，因此不需要为此 Web 应用创建数据库。
@@ -155,10 +152,7 @@
 
 现在，需要先在 AD FS 管理中配置 RP 信任，然后示例应用程序才能真正使用 AD FS 进行身份验证。您需要单独设置两个 RP 信任，一个用于调试环境，另一个用于已发布的 Web 应用。
 
-<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p>确保对环境重复以下两个步骤。</p>
-</div>
+> [AZURE.NOTE]确保对环境重复以下两个步骤。
 
 4.	在 AD FS 服务器上，使用对 AD FS 具有管理权限的凭据登录。
 5.	打开“AD FS 管理”。右键单击“AD FS\\信任关系\\信赖方信任”，然后选择“添加信赖方信任”。
@@ -173,10 +167,7 @@
 7.	在“选择协议”页面上，单击“下一步”。
 8.	在“配置证书”页面上，单击“下一步”。
 
-	<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p>由于你已在使用 HTTPS，因此加密令牌是可选的。如果你确实想要在此页上加密来自 AD FS 的令牌，则还必须在代码中添加令牌解密逻辑。有关详细信息，请参阅<a href="http://chris.59north.com/post/2014/08/21/Manually-configuring-OWIN-WS-Federation-middleware-and-accepting-encrypted-tokens.aspx">手动配置 OWIN WS 联合身份验证中间件和接受加密令牌</a>。</p>
-</div>
+	> [AZURE.NOTE]由于你已在使用 HTTPS，因此加密令牌是可选的。如果你确实想要在此页上加密来自 AD FS 的令牌，则还必须在代码中添加令牌解密逻辑。有关详细信息，请参阅[手动配置 OWIN WS 联合身份验证中间件和接受加密令牌](http://chris.59north.com/post/2014/08/21/Manually-configuring-OWIN-WS-Federation-middleware-and-accepting-encrypted-tokens.aspx)。
   
 5.	在转到下一步之前，需要获得 Visual Studio 项目中的一个信息片段。在项目属性中，记录应用程序的 **SSL URL**。
 
@@ -186,29 +177,20 @@
 
 	![](./media/web-sites-dotnet-lob-application-adfs/4-configure-url.png)
 
-	<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p>URL 指定身份验证成功后要将客户端发送到的位置。对于调试环境，它应为 <code>https://localhost:&lt;port>/</code>。对于发布的网站，它应该是网站 URL。</p>
-</div>
+	> [AZURE.NOTE]URL 指定身份验证成功后要将客户端发送到的位置。对于调试环境，它应为 <code>https://localhost:&lt;port&gt;/</code>。对于发布的 Web 应用，它应该是 Web 应用 URL。
 
 7.	在“配置标识符”页面上，确认您的项目 SSL URL 是否已列出，然后单击“下一步”。保持默认选择不变，同时单击“下一步”，一直到向导结束。
 
-	<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p>在 Visual Studio 项目的 App_Start\Startup.Auth.cs 中，此标识符与联合身份验证期间 <code>WsFederationAuthenticationOptions.Wtrealm</code> 的值相匹配。默认情况下，将添加上一步中的应用程序 URL 作为 RP 标识符。</p>
-</div>
+	> [AZURE.NOTE]在 Visual Studio 项目的 App\_Start\\Startup.Auth.cs 中，此标识符与联合身份验证期间 <code>WsFederationAuthenticationOptions.Wtrealm</code> 的值相匹配。默认情况下，将添加上一步中的应用程序 URL 作为 RP 标识符。
 
 8.	现在，你已在 AD FS 中为项目完成了 RP 应用程序的配置。接下来，你要将此应用程序配置为发送应用程序所需的声明。在向导结束时，系统会默认打开“编辑声明规则”对话框，方便您立即启动。至少配置以下声明（括号中为架构）：
 
 	-	名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
 	-	用户主体名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - 用于唯一标识组织中的用户。
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
-	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 AD FS 进行身份验证的 ASP.NET MVC 业务线应用程序](/documentation/articles/web-sites-dotnet-lob-application-adfs#bkmk_crud)中的**添加 LOB 功能**部分。
+	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
 
-	<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p>需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx">支持的令牌和声明类型</a>。</p>
-</div>
+	> [AZURE.NOTE]需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅[支持的令牌和声明类型](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)。
 
 8.	在“编辑声明规则”对话框中，单击“添加规则”。
 9.	配置名称、UPN 和角色声明（如下所示），然后单击“完成”。
@@ -250,10 +232,7 @@
 
 	![](./media/web-sites-dotnet-lob-application-adfs/8-all-claim-rules.png)
 
-	<div class="wa-note">
-	<span class="wa-icon-bulb"></span>
-	<p>同样，请确保对调试环境和发布的网站重复这些步骤。</p>
-</div>
+	> [AZURE.NOTE]同样，请确保对调试环境和发布的 Web 应用重复这些步骤。
 
 <a name="bkmk_test"></a>
 ## 测试应用程序的联合身份验证
@@ -278,7 +257,7 @@
 - AD FS 已成功对 AD 用户进行身份验证，并将你重定向回到应用程序的主页
 - AD FS 已成功向应用程序发送名称声明 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name)，这可以通过网页一角显示的用户名来判断。 
 
-如果缺少名称声明，您看到的是“您好！”。如果您查看 Views\Shared\_LoginPartial.cshtml，则会发现它使用 `User.Identity.Name` 显示用户名。如前所述，ASP.NET 将使用经过身份验证的用户的名称声明（如果已在 SAML 令牌中提供）来解冻此属性。若要查看 AD FS 发送的所有声明，请在索引操作方法的 Controllers\\HomeController.cs 中放置一个断点。对用户进行身份验证后，检查 `System.Security.Claims.Current.Claims` 集合。
+如果缺少名称声明，您看到的是“您好！”。如果您查看 Views\\Shared\\_LoginPartial.cshtml，则会发现它使用 `User.Identity.Name` 显示用户名。如前所述，ASP.NET 将使用经过身份验证的用户的名称声明（如果已在 SAML 令牌中提供）来解冻此属性。若要查看 AD FS 发送的所有声明，请在索引操作方法的 Controllers\\HomeController.cs 中放置一个断点。对用户进行身份验证后，检查 `System.Security.Claims.Current.Claims` 集合。
 
 ![](./media/web-sites-dotnet-lob-application-adfs/12-test-debugging-all-claims.png)
 
@@ -314,7 +293,7 @@
 
 	![](./media/web-sites-dotnet-lob-application-adfs/13-authorize-adfs-error.png)
 
-	如果在 AD FS 服务器的事件查看器中调查此错误，您会看到以下异常消息：  
+	如果在 AD FS 服务器的事件查看器中调查此错误，您会看到以下异常消息：
 	<pre class="prettyprint">
 	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
 	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
@@ -356,12 +335,14 @@
 
 	![](./media/web-sites-dotnet-lob-application-adfs/14-unauthorized-forbidden.png)
 
-7. 再次将应用程序发布到 Azure 网站中，并测试实时应用程序的行为。
+7. 再次将应用程序发布到 Azure 网站，并测试实时应用程序的行为。
 
 <a name="bkmk_data"></a>
 ## 连接到本地数据
 
-使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/documentation/services/sql-databases/)作为 Web 应用的数据层。
+使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为 Web 应用的数据层。
+
+Azure 网站支持通过以下这两种方法访问本地数据库：[混合连接](/documentation/articles/integration-hybrid-connection-overview)和[虚拟网络](/documentation/articles/web-sites-integrate-with-vnet)。有关详细信息，请参阅[对 Azure 网站使用 VNET 集成和混合连接](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)。
 
 <a name="bkmk_resources"></a>
 ## 其他资源
@@ -379,4 +360,4 @@
  
  
 
-<!---HONumber=67-->
+<!---HONumber=79-->
