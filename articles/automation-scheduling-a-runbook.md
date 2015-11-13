@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="在 Azure 自动化中计划 Runbook"
-   description="介绍如何在 Azure 自动化中创建一个计划，以便在特定的时间或按重复计划自动启动 Runbook。"
+   pageTitle="在 Azure Automation 中计划 Runbook"
+   description="介绍如何在 Azure Automation 中创建一个计划，以便在特定的时间或按重复计划自动启动 Runbook。"
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.date="06/30/2015"
-   wacn.date="09/15/2015" />
+<tags
+	ms.service="automation"
+	ms.date="10/01/2015"
+	wacn.date="11/12/2015"/>
 
 # 在 Azure 自动化中计划 Runbook
 
@@ -31,13 +31,13 @@
 
 ### 使用 Windows PowerShell 创建新计划
 
-你可以使用 [New-AzureAutomationSchedule](https://msdn.microsoft.com/zh-CN/library/azure/dn690271.aspx) cmdlet 在 Azure 自动化中创建新计划。必须指定计划的开始时间，以及它是要运行一次、每小时还是每天运行。
+你可以使用 [New-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/azure/dn690271.aspx) cmdlet 在 Azure 自动化中创建新计划。必须指定计划的开始时间，以及它是要运行一次、每小时还是每天运行。
 
 以下示例命令演示了如何创建一个从 2015 年 1 月 20 日开始在每天下午 3:30 运行的新计划。
 
 	$automationAccountName = "MyAutomationAccount"
 	$scheduleName = "Sample-DailySchedule"
-	New-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -StartTime "1/20/2015 15:30:00" -DayInterval 1
+	New-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –StartTime "1/20/2015 15:30:00" –DayInterval 1
 
 ## 将计划链接到 Runbook
 
@@ -54,7 +54,7 @@
 
 ### 使用 Windows PowerShell 将计划链接到 Runbook
 
-你可以使用 [Register-AzureAutomationScheduledRunbook](https://msdn.microsoft.com/zh-CN/library/azure/dn690265.aspx) 将计划链接到 Runbook。可以使用 Parameters 参数指定 Runbook 参数的值。有关指定参数值的详细信息，请参阅 [在 Azure 自动化中启动 Runbook](/do cumentation/articles/automation-starting-a-runbook)。
+你可以使用 [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) 将计划链接到 Runbook。可以使用 Parameters 参数指定 Runbook 参数的值。有关指定参数值的详细信息，请参阅[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)。
 
 以下示例命令演示了如何将计划链接到包含参数的 Runbook。
 
@@ -62,7 +62,7 @@
 	$runbookName = "Test-Runbook"
 	$scheduleName = "Sample-DailySchedule"
 	$params = @{"FirstName"="Joe";"LastName"="Smith";"RepeatCount"=2;"Show"=$true}
-	Register-AzureAutomationScheduledRunbook -AutomationAccountName $automationAccountName -Name $runbookName -ScheduleName $scheduleName -Parameters $params
+	Register-AzureAutomationScheduledRunbook –AutomationAccountName $automationAccountName –Name $runbookName –ScheduleName $scheduleName –Parameters $params
 
 ## 禁用计划
 
@@ -79,17 +79,17 @@
 
 ### 使用 Windows PowerShell 禁用计划
 
-你可以使用 [Set-AzureAutomationSchedule](https://msdn.microsoft.com/zh-CN/library/azure/dn690270.aspx) cmdlet 更改现有计划的属性。若要禁用计划，请为 **IsEnabled** 参数指定 **false**。
+你可以使用 [Set-AzureAutomationSchedule](http://msdn.microsoft.com/zh-cn/library/azure/dn690270.aspx) cmdlet 更改现有计划的属性。若要禁用计划，请为 **IsEnabled** 参数指定 **false**。
 
 以下示例命令演示了如何禁用计划。
 
 	$automationAccountName = "MyAutomationAccount"
 	$scheduleName = "Sample-DailySchedule"
-	Set-AzureAutomationSchedule -AutomationAccountName $automationAccountName -Name $scheduleName -IsEnabled $false
+	Set-AzureAutomationSchedule –AutomationAccountName $automationAccountName –Name $scheduleName –IsEnabled $false
 
 ## 相关文章
 
-- [在 Azure 自动化中计划资产](https://msdn.microsoft.com/zh-CN/library/azure/dn940016.aspx)
-- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook)
+- [在 Azure 自动化中计划资产](http://msdn.microsoft.com/zh-cn/library/azure/dn940016.aspx)
+- [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook) 
 
-<!---HONumber=69-->
+<!---HONumber=79-->
