@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="网络资源提供程序概述 | Azure"
+   pageTitle="网络资源提供程序概述 | Microsoft Azure"
    description="了解 Azure 资源管理器中的新网络资源提供程序"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
    manager="adinah"
-   editor="tysonn"/>
+   editor="tysonn" />
 <tags
-   ms.service="virtual-network"
-   ms.date="09/14/2015"
-   wacn.date="10/17/2015"/>
+	ms.service="virtual-network"
+	ms.date="10/07/2015"
+	wacn.date="11/12/2015"/>
 
 # 网络资源提供程序
 在当今社会要想获得业务成功，需要满足的一个基本需求就是，能够以灵活、弹性、安全且可重复的方式构建和管理可识别大型网络的应用程序。使用 Azure 资源管理器 (ARM) 可以在资源组中部署单个资源集合，从而可以创建此类应用程序。此类资源将通过 ARM 下的各种资源提供程序进行管理。
@@ -24,15 +24,13 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 - **快速自定义** - 你可以使用声明式模板为部署启用可重复的快速自定义。 
 - **可重复自定义** - 你可以使用声明式模板为部署启用可重复的快速自定义。
 - **管理界面** - 可以任意使用以下一个界面来管理你的资源：
-
-- 基于 REST 的 API
-- PowerShell
-- .NET SDK
-- Node.JS SDK
-- Java SDK
-- Azure CLI
-- Azure 门户
-- ARM 模板语言
+	- 基于 REST 的 API
+	- PowerShell
+	- .NET SDK
+	- Node.JS SDK
+	- Java SDK
+	- Azure CLI
+	- ARM 模板语言
 
 ## 网络资源 
 现在，你可以单独管理网络资源，而不用通过单个计算资源（虚拟机）对其进行统一管理。这可确保在资源组中编写复杂的大规模基础结构时获得更高的弹性和灵活性。
@@ -53,19 +51,21 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 
 [AZURE.INCLUDE [virtual-networks-nrp-pip-include](../includes/virtual-networks-nrp-pip-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../includes/virtual-networks-nrp-vnet-include.md)]
-
 [AZURE.INCLUDE [virtual-networks-nrp-nic-include](../includes/virtual-networks-nrp-nic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../includes/virtual-networks-nrp-nsg-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../includes/virtual-networks-nrp-lb-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../includes/virtual-networks-nrp-udr-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../includes/virtual-networks-nrp-lb-include.md)]
-
-[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../includes/virtual-networks-nrp-vpn-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../includes/virtual-networks-nrp-vnet-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-nrp-dns-include](../includes/virtual-networks-nrp-dns-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../includes/virtual-networks-nrp-lb-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../includes/virtual-networks-nrp-appgw-include.md)]
+
+[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../includes/virtual-networks-nrp-vpn-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-nrp-tm-include](../includes/virtual-networks-nrp-tm-include.md)]
 
@@ -73,7 +73,7 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 可以使用不同界面来管理你的 Azure 网络资源。在本文档中，我们将针对这些界面重点介绍其中两种：REST API 和模板。
 
 ### REST API 
-如前所述，你可以通过各种界面（包括 REST API、.NET SDK、Node.JS SDK、Java SDK、PowerShell、CLI、Azure 门户和模板）管理网络资源。
+如前所述，你可以通过各种界面（包括 REST API、.NET SDK、Node.JS SDK、Java SDK、PowerShell、CLI、Azure 管理门户和模板）管理网络资源。
 
 Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结构：
 
@@ -87,7 +87,7 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 调用 REST API 时支持以下的 HTTP 方法：
 
-- **PUT** - 用于创建给定类型的资源、修改资源属性或更改资源之间的关联。
+- **PUT** - 用于创建给定类型的资源、修改资源属性或更改资源之间的关联。 
 - **GET** - 用于检索设置的资源的信息。
 - **DELETE** - 用于删除现有资源。
 
@@ -104,7 +104,7 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 	  "parameters": { <parameter-definitions-of-template> },
 	  "variables": { <variable-definitions-of-template> },
 	  "resources": [ { <definition-of-resource-to-deploy> } ],
-	  "outputs": { <output-of-template> }
+	  "outputs": { <output-of-template> }    
 	}
 
 该模板主要是资源和通过参数注入的实例值的 JSON 说明。可以使用以下示例创建包含 2 个子网的虚拟网络。
@@ -133,7 +133,7 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 	        "metadata" : {
 	          "Description" : "Address prefix"
 	        }
-
+	
 	      },
 	      "subnet1Name": {
 	        "type" : "string",
@@ -224,9 +224,9 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 使用模板的主要优势在于：
 
-- 可以声明性方式在资源组中构建复杂的基础结构。创建资源的协调（包括依赖关系管理）由 ARM 处理。
-- 可以在多个不同区域和一个区域中重复创建基础结构，只需更改参数即可。
-- 声明性方式可以缩短构建模板和推出基础结构的周期时间。
+- 可以声明性方式在资源组中构建复杂的基础结构。创建资源的协调（包括依赖关系管理）由 ARM 处理。 
+- 可以在多个不同区域和一个区域中重复创建基础结构，只需更改参数即可。 
+- 声明性方式可以缩短构建模板和推出基础结构的周期时间。 
 
 有关示例模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates)。
 
@@ -239,12 +239,15 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 你可以使用 PowerShell、AzureCLI 或通过在 GitHub 中执行单击部署，从模板向 Azure 部署服务。若要在 GitHub 中从模板部署服务，请执行以下步骤：
 
 1. 从 GitHub 打开 template3 文件。例如，打开[“包含两个子网的虚拟网络”](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network)。
-2. 单击“部署到 Azure”，然后使用你的凭据登录到 Azure 门户。
+2. 单击“部署到 Azure”，然后使用你的凭据登录到 Azure 管理门户。
 3. 验证模板，然后单击“保存”。
 4. 单击“编辑参数”并为 vnet 和子网选择一个位置，例如“中国北部”。
 5. 根据需要更改 **ADDRESSPREFIX** 和 **SUBNETPREFIX** 参数，然后单击“确定”。
 6. 单击“选择资源组”，然后单击要将 vnet 和子网添加到的资源组。或者，可以通过单击“或新建”创建新的资源组。
 3. 单击“创建”。请注意磁贴显示了“正在设置模板部署”。完成部署后，你将看到一个类似于下面的屏幕。
+
+![示例模板部署](./media/resource-groups-networking/Figure6.png)
+
 
 ## 另请参阅
 
@@ -266,4 +269,4 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 [模板部署](https://msdn.microsoft.com/zh-cn/library/azure/dn790549.aspx)
 
-<!---HONumber=74-->
+<!---HONumber=79-->
