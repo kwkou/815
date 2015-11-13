@@ -40,7 +40,7 @@
 ##<a id="prerequisites"></a>先决条件
 在开始阅读本教程前，你必须具有：
 
-- **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[会员优惠][azure-member-offers] 或 [免费试用][azure-free-trial]。
+- **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[会员优惠][azure-member-offers] 或 [免费试用][azure-trial]。
 
 - **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅 [安装和配置 Azure PowerShell][powershell-install]。若要执行 PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅 [使用 Set-ExecutionPolicy cmdlet][2]。
 
@@ -295,7 +295,7 @@ Azure 门户不支持使用自定义配置选项设置 HDInsight 群集。例如
 
 
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-get-started
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
 [hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在资源管理器中使用 Azure CLI 控制路由和使用虚拟设备 | Microsoft Azure"
+   pageTitle="在资源管理器中使用 Azure CLI 控制路由和使用虚拟设备 | Windows Azure"
    description="了解如何使用 Azure CLI 控制路由和使用虚拟设备"
    services="virtual-network"
    documentationCenter="na"
@@ -44,11 +44,11 @@
 		routeTables/UDR-FrontEnd
 		data:    Name                            : UDR-FrontEnd
 		data:    Type                            : Microsoft.Network/routeTables
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		info:    network route-table create command OK
 
-	参数：- **-g（或 --resource-group）**。要创建 NSG 所在的资源组的名称。对于我们的方案，为 *TestRG*。- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *westus*。- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
+	参数：- **-g（或 --resource-group）**。要创建 NSG 所在的资源组的名称。对于我们的方案，为 *TestRG*。- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **`azure network route-table route create`** 命令，在上面创建的路由表中创建路由，以将目标至后端子网 (192.168.2.0/24) 的所有流量发送到 **FW1** VM (192.168.0.4)。
 
@@ -107,7 +107,7 @@
 
 1. 运行 **`azure network route-table create`** 命令为后端子网创建路由表。
 
-		azure network route-table create -g TestRG -n UDR-BackEnd -l westus
+		azure network route-table create -g TestRG -n UDR-BackEnd -l chinanorth
 
 4. 运行 **`azure network route-table route create`** 命令，在上面创建的路由表中创建路由，以将目标至前端子网 (192.168.1.0/24) 的所有流量发送到 **FW1** VM (192.168.0.4)。
 
@@ -132,7 +132,7 @@
 		networkInterfaces/NICFW1
 		data:    Name                            : NICFW1
 		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    MAC address                     : 00-0D-3A-30-95-B3
 		data:    Enable IP forwarding            : false
@@ -165,7 +165,7 @@
 		networkInterfaces/NICFW1
 		data:    Name                            : NICFW1
 		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    MAC address                     : 00-0D-3A-30-95-B3
 		data:    Enable IP forwarding            : true

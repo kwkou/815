@@ -122,7 +122,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
         "VmMap":{"7a1069c6-c1d6-49c5-8c5d-33bfce8dd183":
 
-                {"CloudServiceName":"pod02hrweb-Chicago-test",
+                {"CloudServiceName":"pod02hrweb-Shanghai-test",
 
                 "RoleName":"Fabrikam-Hrweb-frontend-test"}
 

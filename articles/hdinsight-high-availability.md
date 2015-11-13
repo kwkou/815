@@ -91,7 +91,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 **参考**
 
 - [ZooKeeper](http://zookeeper.apache.org/)
-- [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal#rdp)
+- [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
 - [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters#sdk) 
 
 <!---HONumber=71-->

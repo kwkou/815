@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何使用 PowerShell 在 ARM 模式下创建 NSG | Microsoft Azure"
+   pageTitle="如何使用 PowerShell 在 ARM 模式下创建 NSG | Windows Azure"
    description="了解如何使用 PowerShell 在 ARM 下创建和部署 NSG"
    services="virtual-network"
    documentationCenter="na"
@@ -46,7 +46,7 @@
 
 5. 将上面创建的规则添加到名为 **NSG-FrontEnd** 的新 NSG。
 
-		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location westus -Name "NSG-FrontEnd" `
+		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth -Name "NSG-FrontEnd" `
 			-SecurityRules $rule1,$rule2
 
 6. 检查在 NSG 中创建的规则。
@@ -146,7 +146,7 @@
 
 5. 将上面创建的规则添加到名为 **NSG-BackEnd** 的新 NSG。
 
-		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location westus `-Name "NSG-BackEnd" `
+		$nsg = New-AzureRMNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth `-Name "NSG-BackEnd" `
 			-SecurityRules $rule1,$rule2
 
 6. 将上面创建的 NSG 与 *BackEnd* 子网关联起来。

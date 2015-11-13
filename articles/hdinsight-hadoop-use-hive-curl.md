@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Hive 与 Curl 配合使用 | Microsoft Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Hive 与 Curl 配合使用 | Windows Azure"
    description="了解如何使用 Curl 向 HDInsight 远程提交 Pig 作业。"
    services="hdinsight"
    documentationCenter=""
@@ -159,7 +159,7 @@
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org

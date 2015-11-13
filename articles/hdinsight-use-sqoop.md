@@ -165,25 +165,25 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 
 		# SQL query strings for creating tables and clustered indexes
 		$cmdCreateLog4jTable = "CREATE TABLE [dbo].[log4jlogs](
-		    [t1] [nvarchar](/documentation/articles/50), 
-		    [t2] [nvarchar](/documentation/articles/50), 
-		    [t3] [nvarchar](/documentation/articles/50), 
-		    [t4] [nvarchar](/documentation/articles/50), 
-		    [t5] [nvarchar](/documentation/articles/50), 
-		    [t6] [nvarchar](/documentation/articles/50), 
-		    [t7] [nvarchar](/documentation/articles/50))"
+		    [t1] [nvarchar](50), 
+		    [t2] [nvarchar](50), 
+		    [t3] [nvarchar](50), 
+		    [t4] [nvarchar](50), 
+		    [t5] [nvarchar](50), 
+		    [t6] [nvarchar](50), 
+		    [t7] [nvarchar](50))"
 		
 		$cmdCreateLog4jClusteredIndex = "CREATE CLUSTERED INDEX log4jlogs_clustered_index on log4jlogs(t1)"
 		
 		$cmdCreateMobileTable = " CREATE TABLE [dbo].[mobiledata](
-		[clientid] [nvarchar](/documentation/articles/50), 
-		[querytime] [nvarchar](/documentation/articles/50), 
-		[market] [nvarchar](/documentation/articles/50), 
-		[deviceplatform] [nvarchar](/documentation/articles/50), 
-		[devicemake] [nvarchar](/documentation/articles/50), 
-		[devicemodel] [nvarchar](/documentation/articles/50), 
-		[state] [nvarchar](/documentation/articles/50), 
-		[country] [nvarchar](/documentation/articles/50), 
+		[clientid] [nvarchar](50), 
+		[querytime] [nvarchar](50), 
+		[market] [nvarchar](50), 
+		[deviceplatform] [nvarchar](50), 
+		[devicemake] [nvarchar](50), 
+		[devicemodel] [nvarchar](50), 
+		[state] [nvarchar](50), 
+		[country] [nvarchar](50), 
 		[querydwelltime] [float],
 		[sessionid] [bigint],
 		[sessionpagevieworder][bigint])"
@@ -230,23 +230,23 @@ HDInsight 将 Azure Blob 存储用于数据存储。有关详细信息，请参�
 4. 在查询窗口中输入以下信息：
 
 		CREATE TABLE [dbo].[log4jlogs](
-		 [t1] [nvarchar](/documentation/articles/50), 
-		 [t2] [nvarchar](/documentation/articles/50), 
-		 [t3] [nvarchar](/documentation/articles/50), 
-		 [t4] [nvarchar](/documentation/articles/50), 
-		 [t5] [nvarchar](/documentation/articles/50), 
-		 [t6] [nvarchar](/documentation/articles/50), 
-		 [t7] [nvarchar](/documentation/articles/50))
+		 [t1] [nvarchar](50), 
+		 [t2] [nvarchar](50), 
+		 [t3] [nvarchar](50), 
+		 [t4] [nvarchar](50), 
+		 [t5] [nvarchar](50), 
+		 [t6] [nvarchar](50), 
+		 [t7] [nvarchar](50))
 
 		CREATE TABLE [dbo].[mobiledata](
-		 [clientid] [nvarchar](/documentation/articles/50), 
-		 [querytime] [nvarchar](/documentation/articles/50), 
-		 [market] [nvarchar](/documentation/articles/50), 
-		 [deviceplatform] [nvarchar](/documentation/articles/50), 
-		 [devicemake] [nvarchar](/documentation/articles/50), 
-		 [devicemodel] [nvarchar](/documentation/articles/50), 
-		 [state] [nvarchar](/documentation/articles/50), 
-		 [country] [nvarchar](/documentation/articles/50), 
+		 [clientid] [nvarchar](50), 
+		 [querytime] [nvarchar](50), 
+		 [market] [nvarchar](50), 
+		 [deviceplatform] [nvarchar](50), 
+		 [devicemake] [nvarchar](50), 
+		 [devicemodel] [nvarchar](50), 
+		 [state] [nvarchar](50), 
+		 [country] [nvarchar](50), 
 		 [querydwelltime] [float],
 		 [sessionid] [bigint],
 		 [sessionpagevieworder][bigint])

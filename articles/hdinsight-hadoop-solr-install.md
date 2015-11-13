@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用脚本操作在 Hadoop 群集上安装 Solr | Microsoft Azure"
+	pageTitle="使用脚本操作在 Hadoop 群集上安装 Solr | Windows Azure"
 	description="了解如何使用 Solr 通过脚本操作自定义 HDInsight 群集。"
 	services="hdinsight"
 	documentationCenter=""

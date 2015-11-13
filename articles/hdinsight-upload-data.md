@@ -148,7 +148,7 @@ AzCopy 语法为：
 
 若要使用 Hadoop 命令，必须先使用以下方法之一连接到头节点：
 
-* **基于 Windows 的 HDInsight**：[使用远程桌面连接](/documentation/articles/hdinsight-administer-use-management-portal#connect-to-hdinsight-clusters-by-using-rdp)
+* **基于 Windows 的 HDInsight**：[使用远程桌面连接](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)
 
 连接之后，可以使用以下语法将文件上载到存储。
 

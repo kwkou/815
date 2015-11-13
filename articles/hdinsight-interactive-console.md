@@ -215,6 +215,6 @@ Pig 和 Hive 提供编译成 MapReduce 程序的更高级别的语言，这些�
   [hdi-jsconsole-upload]: ./media/hdinsight-interactive-console/HDI.JsConsole.UploadJs.PNG
   [hdi-jsconsole-jscode]: ./media/hdinsight-interactive-console/HDI.JsConsole.JsCode.PNG
   [hdi-jsconsole-bargraph-top10words]: ./media/hdinsight-interactive-console/HDI.JsConsole.BarGraphTop10Words.PNG
-  [将 Pig 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-pig/
-  [将 Hive 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-hive/
-  [将 MapReduce 与 HDInsight 配合使用]: /zh-cn/documentation/articles/hdinsight-use-mapreduce/
+  [将 Pig 与 HDInsight 配合使用]: /documentation/articles/hdinsight-use-pig/
+  [将 Hive 与 HDInsight 配合使用]: /documentation/articles/hdinsight-use-hive/
+  [将 MapReduce 与 HDInsight 配合使用]: /documentation/articles/hdinsight-use-mapreduce/

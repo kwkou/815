@@ -47,7 +47,7 @@ Microsoft Avro Library 以 NuGet 包发行，你可以使用以下过程在 Visu
 
 1. 选择“项目”选项卡->“管理 NuGet 包...”
 2. 在“联机搜索”框中，搜索“Microsoft.Hadoop.Avro”。
-3. 单击“Microsoft Azure HDInsight Avro Library”旁边的“安装”按钮。 
+3. 单击“Windows Azure HDInsight Avro Library”旁边的“安装”按钮。 
 
 请注意，Newtonsoft.Json.dll (>= 6.0.4) 依赖项也将随 Microsoft Avro Library 一起自动下载。
 

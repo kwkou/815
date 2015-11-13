@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中的查询控制台上使用 Hadoop Hive | Microsoft Azure"
+   pageTitle="在 HDInsight 中的查询控制台上使用 Hadoop Hive | Windows Azure"
    description="了解如何在浏览器中使用基于 Web 的查询控制台在 HDInsight Hadoop 群集上运行 Hive 查询。"
    services="hdinsight"
    documentationCenter=""
@@ -87,7 +87,7 @@
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org

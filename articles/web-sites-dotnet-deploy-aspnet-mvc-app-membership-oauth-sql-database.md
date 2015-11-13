@@ -31,12 +31,12 @@
 * 如何使用 Azure SQL 数据库在云中存储关系数据。
 * 如何部署 Web 项目，以便将数据库用于 Azure 网站中的 [Web 应用](/documentation/services/web-sites/)。
 
->[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure App Service 和 Visual Studio Web 项目，请参阅[在 Azure 网站中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
+>[AZURE.NOTE]这是一篇很长的教程。如果你想要快速了解 Azure 网站和 Visual Studio Web 项目，请参阅[在 Azure 网站中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。有关疑难解答信息，请参阅[疑难解答](#troubleshooting)部分。
 >
 
 ## 先决条件
 
-若要完成本教程，您需要一个 Microsoft Azure 帐户。如果你没有帐户，可以<!-- deleted by customization [activate your MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or -->[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+若要完成本教程，您需要一个 Windows Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 若要设置开发环境，你必须安装 [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkId=390521) 或更高版本，以及最新版本的 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)。本文专为 Visual Studio Update 4 和 SDK 2.7.1 编写。相同的说明同样适用于已安装最新 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) 的 Visual Studio 2015，但有些屏幕看起来与插图不同。
 

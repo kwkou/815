@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Apache Storm 教程：Storm 入门 | Microsoft Azure"
+	pageTitle="Apache Storm 教程：Storm 入门 | Windows Azure"
 	description="开始在 HDInsight 上使用 Apache Storm 和 Storm 初学者示例进行大数据分析。了解如何使用 Storm 实时处理数据。"
 	keywords="apache storm,apache storm 教程,大数据分析,storm 初学者"
 	services="hdinsight"
@@ -20,7 +20,7 @@
 Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算系统，用于处理数据流。使用 Azure HDInsight 上的 Storm，你可以创建一个基于云的、用于实时执行大数据分析的 Storm 群集。
 
 
-* [Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1)
+* [Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
 ## 先决条件
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 HDInsight 中的 Hadoop 分析航班延误数据 | Microsoft Azure"
+	pageTitle="使用 HDInsight 中的 Hadoop 分析航班延误数据 | Windows Azure"
 	description="了解如何使用一个 Windows PowerShell 脚本来设置 HDInsight 群集、运行 Hive 作业、运行 Sqoop 作业和删除群集。"
 	services="hdinsight"
 	documentationCenter=""
@@ -736,7 +736,7 @@ HiveQL 脚本将执行以下操作：
 		#SQL query string for creating AvgDelays table
 		[String]$sqlDatabaseTableName = "AvgDelays"
 		[String]$sqlCreateAvgDelaysTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-		            [origin_city_name] [nvarchar](/documentation/articles/50) NOT NULL,
+		            [origin_city_name] [nvarchar](50) NOT NULL,
 		            [weather_delay] float,
 		        CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED
 		        (
@@ -847,7 +847,7 @@ HiveQL 脚本将执行以下操作：
 
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 

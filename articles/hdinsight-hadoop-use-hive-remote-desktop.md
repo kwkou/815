@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Hive 与远程桌面配合使用 | Microsoft Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Hive 与远程桌面配合使用 | Windows Azure"
    description="学习如何通过使用远程桌面连接到 HDInsight 中的 Hadoop 群集，然后通过使用 Hive 命令行界面运行 Hive 查询。"
    services="hdinsight"
    documentationCenter=""
@@ -114,7 +114,7 @@
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org

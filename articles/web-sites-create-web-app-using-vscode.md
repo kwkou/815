@@ -16,7 +16,7 @@
 
 ## 概述
 
-本教程演示如何使用 [Visual Studio Code](http://code.visualstudio.com//Docs/whyvscode) (VS Code) 创建 ASP.NET 5 Web 应用，并将其部署到 [Azure 网站](/documentation/articles/app-service-value-prop-what-is)。ASP.NET 5 是大幅重新设计的 ASP.NET。ASP.NET 5 是新的开源跨平台框架，用于通过 .NET 构建基于云的现代 Web 应用。有关详细信息，请参阅 [ASP.NET 5 简介](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html)。有关 Azure 网站 Web Apps 的信息，请参阅 [Web Apps 概述](/documentation/articles/app-service-web-overview)。
+本教程演示如何使用 [Visual Studio Code](http://code.visualstudio.com//Docs/whyvscode) (VS Code) 创建 ASP.NET 5 Web 应用，并将其部署到 [Azure 网站](/documentation/services/web-sites)。ASP.NET 5 是大幅重新设计的 ASP.NET。ASP.NET 5 是新的开源跨平台框架，用于通过 .NET 构建基于云的现代 Web 应用。有关详细信息，请参阅 [ASP.NET 5 简介](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html)。有关 Azure 网站 Web Apps 的信息，请参阅 [Web Apps 概述](/home/features/web-site/)。
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
 
@@ -220,7 +220,7 @@ ASP.NET 5/DNX 是精简的 .NET 堆栈，用于构建 OS X、Linux 和 Windows �
 ![Azure Web 应用](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## 摘要
-在本教程中，你已学习如何在 VS Code 创建 Web 应用并将其部署到 Azure。有关 VS Code 的详细信息，请参阅[为何使用 Visual Studio Code？](https://code.visualstudio.com/Docs/)一文 有关 Azure 网站 Web Apps 的信息，请参阅 [Web Apps 概述](/documentation/articles/app-service-web-overview)。
+在本教程中，你已学习如何在 VS Code 创建 Web 应用并将其部署到 Azure。有关 VS Code 的详细信息，请参阅[为何使用 Visual Studio Code？](https://code.visualstudio.com/Docs/)一文 有关 Azure 网站 Web Apps 的信息，请参阅 [Web Apps 概述](/home/features/web-site/)。
 
   [0]: ./media/web-sites-python-create-deploy-django-app/django-ws-003.png
   [1]: ./media/web-sites-python-create-deploy-django-app/django-ws-004.png

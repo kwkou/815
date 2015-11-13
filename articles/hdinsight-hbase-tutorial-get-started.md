@@ -144,7 +144,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 若要打开该 Web UI，你必须通过 RDP 连接到群集，然后在桌面上单击“HMaster Info Web UI”快捷方式，或者在 Web 浏览器中使用以下 URL：
 
-	http://zookeeper[0-2]: /documentation/articles/master-status
+	http://zookeeper[0-2]: master-status
 在高可用性群集中，你将会找到要托管 WebUI 的当前活动 HBase 主节点的链接。
 
 
@@ -291,7 +291,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 - [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication)：了解如何跨两个 Azure 数据中心配置 HBase 复制。
 
 
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf

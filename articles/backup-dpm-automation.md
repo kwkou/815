@@ -46,7 +46,7 @@ PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” �
 
 
 ### 在 DPM 服务器上安装 Azure 备份代理
-在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。可以从 [Microsoft 下载中心](http://aka.ms/azurebackup_agent)或者备份保管库的“仪表板”页获取最新版本的安装程序。将安装程序保存到方便访问的位置，例如 *C:\Downloads*。
+在安装 Azure 备份代理之前，必须先将安装程序下载到 Windows Server 上。可以从 [Microsoft 下载中心](http://download.microsoft.com/download/4/3/7/4376BBCE-9123-46FD-AAE1-599EAB6D2BD2/MARSAgentInstaller.exe)或者备份保管库的“仪表板”页获取最新版本的安装程序。将安装程序保存到方便访问的位置，例如 *C:\Downloads*。
 
 若要安装代理，请“在 DPM 服务器上”已提升权限的 Azure PowerShell 控制台中运行以下命令：
 
@@ -76,7 +76,7 @@ PS C:\> MARSAgentInstaller.exe /?
 | /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Windows Azure Recovery Services Agent\\Scratch |
 | /m | 选择启用 Microsoft Update | - |
 | /nu | 安装完成后不要检查更新 | - |
-| /d | 卸载 Microsoft Azure 恢复服务代理 | - |
+| /d | 卸载 Windows Azure 恢复服务代理 | - |
 | /ph | 代理主机地址 | - |
 | /po | 代理主机端口号 | - |
 | /pu | 代理主机用户名 | - |
@@ -97,7 +97,7 @@ PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```
 
-使用 [Start-DPMCloudRegistration](https://technet.microsoft.com/library/jj612787) cmdlet 即可向保管库注册计算机：
+使用 [Start-DPMCloudRegistration](https://technet.microsoft.com/zh-cn/library/jj612787) cmdlet 即可向保管库注册计算机：
 
 ```
 PS C:\> $cred = $credspath + $credsfilename

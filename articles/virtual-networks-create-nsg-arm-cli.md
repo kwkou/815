@@ -39,7 +39,7 @@
 
 3. 运行 **azure network nsg create** 命令以创建 NSG。
 
-		azure network nsg create -g TestRG -l westus -n NSG-FrontEnd
+		azure network nsg create -g TestRG -l chinanorth -n NSG-FrontEnd
 
 	预期输出：
 
@@ -50,7 +50,7 @@
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd
 		data:    Name                            : NSG-FrontEnd
 		data:    Type                            : Microsoft.Network/networkSecurityGroups
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    Security group rules:
 		data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority
@@ -65,7 +65,7 @@
 
 	参数：
 	- **-g（或 --resource-group）**。要创建 NSG 所在的资源组的名称。对于我们的方案，为 *TestRG*。
-	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *westus*。
+	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。
 	- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **azure network nsg rule create** 命令以创建允许从 Internet 访问端口 3389 (RDP) 的规则。
@@ -163,7 +163,7 @@
 
 3. 运行 **azure network nsg create** 命令以创建 NSG。
 
-		azure network nsg create -g TestRG -l westus -n NSG-BackEnd
+		azure network nsg create -g TestRG -l chinanorth -n NSG-BackEnd
 
 	预期输出：
 
@@ -175,7 +175,7 @@
 		networkSecurityGroups/NSG-BackEnd
 		data:    Name                            : NSG-BackEnd
 		data:    Type                            : Microsoft.Network/networkSecurityGroups
-		data:    Location                        : westus
+		data:    Location                        : chinanorth
 		data:    Provisioning state              : Succeeded
 		data:    Security group rules:
 		data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority

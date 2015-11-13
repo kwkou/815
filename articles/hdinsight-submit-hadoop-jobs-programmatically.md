@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中提交 Hadoop 作业 | Microsoft Azure"
+	pageTitle="在 HDInsight 中提交 Hadoop 作业 | Windows Azure"
 	description="了解如何将 Hadoop 作业提交到 Azure HDInsight Hadoop。"
 	editor="cgronlun"
 	manager="paulettm"
@@ -367,10 +367,6 @@ HDInsight 群集附带了一个用 C# 开发的单词计数 Hadoop 流程序。�
 有关创建 .NET 应用程序来提交 MapReduce 作业的详细信息，请参阅[使用 HDInsight .NET SDK 提交 MapReduce 作业](#mapreduce-sdk)。
 
 有关开发和部署 Hadoop 流式处理作业的详细信息，请参阅[为 HDInsight 开发 C# Hadoop 流式处理程序][hdinsight-develop-streaming-jobs]。
-<!-- deleted by customization
-
-The following procedure only works on HDInsight clusters on Windows. C# streaming is not supported on Linux clusters yet. However you can use .NET program to submit stream job written in other programming languages that are supported by Linux clusters. For example Python.  For an Python streaming example, see [Develop Python streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-streaming-python).
--->
 
 **提交 WordCount MapReduce 作业**
 

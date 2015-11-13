@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Power Query 将 Excel 连接到 Hadoop | Microsoft Azure"
+	pageTitle="使用 Power Query 将 Excel 连接到 Hadoop | Windows Azure"
 	description="了解如何利用商业智能组件和使用 Power Query for Excel 访问 HDInsight 上的 Hadoop 中存储的数据。"
 	services="hdinsight"
 	documentationCenter=""
@@ -44,7 +44,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 2. 创建一个新的空白工作簿。
 
-3. 依次单击“Power Query”菜单、“来自 Azure”和“来自 Microsoft Azure HDInsight”。
+3. 依次单击“Power Query”菜单、“来自 Azure”和“来自 Windows Azure HDInsight”。
 
 	![HDI.PowerQuery.SelectHdiSource][image-hdi-powerquery-hdi-source]
 

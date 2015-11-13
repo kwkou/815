@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用脚本操作自定义 HDInsight 群集 | Microsoft Azure"
+	pageTitle="使用脚本操作自定义 HDInsight 群集 | Windows Azure"
 	description="了解如何使用脚本操作自定义 HDInsight 群集。"
 	services="hdinsight"
 	documentationCenter=""
@@ -118,7 +118,7 @@ HDInsight .NET SDK 提供了 <a href="http://msdn.microsoft.com/zh-cn/library/mi
 		};
 
 ## 支持 HDInsight 群集上使用的开放源代码软件
-Microsoft Azure HDInsight 服务是一个弹性平台，可让你使用围绕着 Hadoop 形成的开放源代码技术生态系统，在云中生成大数据应用程序。Microsoft Azure 为开放源代码技术提供一般级别的支持，如 <a href="/support/faq/" target="_blank">Azure 支持常见问题网站</a>上的“支持范围”部分中所述。HDInsight 服务为如下所述的某些组件提供附加的支持级别。
+Windows Azure HDInsight 服务是一个弹性平台，可让你使用围绕着 Hadoop 形成的开放源代码技术生态系统，在云中生成大数据应用程序。Windows Azure 为开放源代码技术提供一般级别的支持，如 <a href="/support/faq/" target="_blank">Azure 支持常见问题网站</a>上的“支持范围”部分中所述。HDInsight 服务为如下所述的某些组件提供附加的支持级别。
 
 HDInsight 服务中有两种类型的开放源代码组件：
 

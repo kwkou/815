@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在经典部署模型中使用 PowerShell 控制路由和使用虚拟设备 | Microsoft Azure"
+   pageTitle="在经典部署模型中使用 PowerShell 控制路由和使用虚拟设备 | Windows Azure"
    description="了解如何在典型部署模型中使用 PowerShell 控制 Vnet 中的路由"
    services="virtual-network"
    documentationCenter="na"

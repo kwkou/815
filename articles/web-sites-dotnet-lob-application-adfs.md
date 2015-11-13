@@ -42,7 +42,7 @@
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](http://go.microsoft.com/fwlink/?LinkId=523751)，在此处，可立即在 Azure 网站中创建临时初学者 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+>[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](https://tryappservice.azure.com/)，在此处，可立即在 Azure 网站中创建临时初学者 Web 应用。你不需要使用信用卡，也不需要做出承诺。
 
 若要完成本教程，你需要以下项目：
 
@@ -125,7 +125,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. 选择“Microsoft Azure Web Apps”。
+2. 选择“Windows Azure Web Apps”。
 3. 如果您尚未登录 Azure，请单击“登录”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
 4. 登录后，单击“新建”，新建一个 Web 应用。
 5. 填写所有必填字段。稍后，您将要连接到本地数据，因此不需要为此 Web 应用创建数据库。

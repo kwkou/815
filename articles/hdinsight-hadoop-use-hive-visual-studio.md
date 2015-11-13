@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Hadoop Tools for Visual Studio 执行 Hive 查询 | Microsoft Azure"
+   pageTitle="使用 Hadoop Tools for Visual Studio 执行 Hive 查询 | Windows Azure"
    description="了解如何通过 Visual Studio Hadoop 工具将 Hive 与 HDInsight 中的 Hadoop 配合使用。"
    services="hdinsight"
    documentationCenter=""
@@ -27,7 +27,7 @@
 
 * Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
 
-* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)、Visual Studio 2013 [Update 3](http://go.microsoft.com/fwlink/?LinkId=390465) 或 [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
+* Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)、Visual Studio 2013 [Update 3](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs) 或 [Visual Studio Express 2013](http://www.microsoft.com/download/details.aspx?id=40769)
 
 ##<a id="run"></a> 使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
@@ -103,7 +103,7 @@
 [hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
+[azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 [apache-tez]: http://tez.apache.org

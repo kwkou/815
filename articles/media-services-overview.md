@@ -207,7 +207,7 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 - 对于内容保护，我们保证将在至少 99.9% 的时间成功满足密钥请求。
 - 对于索引器，我们将使用编码保留单位在 99.9% 的时间成功处理索引器任务请求。
 
-	有关详细信息，请参阅 [Windows Azure SLA](http://azure.microsoft.com/support/legal/sla/)。
+	有关详细信息，请参阅 [Windows Azure SLA](/support/legal/sla/)。
 
 <!-- Images -->
 [overview]: ./media/media-services-overview/media-services-overview.png

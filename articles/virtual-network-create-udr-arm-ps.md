@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在资源管理器中使用 PowerShell 控制路由和使用虚拟设备 | Microsoft Azure"
+   pageTitle="在资源管理器中使用 PowerShell 控制路由和使用虚拟设备 | Windows Azure"
    description="了解如何在 Azure PowerShell 中控制路由和使用虚拟设备"
    services="virtual-network"
    documentationCenter="na"
@@ -36,9 +36,9 @@
 		    -AddressPrefix 192.168.2.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
-4. 在 **westus** 区域中创建一个名为 **UDR-FrontEnd** 的路由表，其中包含上面创建的路由。
+4. 在 **chinanorth** 区域中创建一个名为 **UDR-FrontEnd** 的路由表，其中包含上面创建的路由。
 
-		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location westus `
+		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-FrontEnd -Route $route
 
 5. 创建一个变量，包含该子网所在的 VNet。在我们方案中，VNet 名为 **TestVNet**。
@@ -54,7 +54,7 @@
 
 		Name              : TestVNet
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		Etag              : W/"7df26c0e-652f-4754-bc4e-733fef7d5b2b"
 		ProvisioningState : Succeeded
@@ -109,7 +109,7 @@
 
 4. 在 **uswest** 区域中创建一个名为 **UDR-BackEnd** 的路由表，其中包含上面创建的路由。
 
-		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location westus `
+		$routeTable = New-AzureRMRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-BackEnd -Route $route
 
 5. 将上面创建的路由表与 **BackEnd** 子网关联起来。
@@ -121,7 +121,7 @@
 
 		Name              : TestVNet
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState : Succeeded
@@ -180,7 +180,7 @@
 
 		Name                 : NICFW1
 		ResourceGroupName    : TestRG
-		Location             : westus
+		Location             : chinanorth
 		Id                   : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/NICFW1
 		Etag                 : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState    : Succeeded

@@ -280,7 +280,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ### 运行作业
 
-1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal#rdp)中的说明连接到该群集。
+1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)中的说明连接到该群集。
 
 3. 建立连接后，使用“Hadoop 命令行”图标打开 Hadoop 命令行：
 

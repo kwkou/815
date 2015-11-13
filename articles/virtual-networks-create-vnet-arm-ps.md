@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 ARM 中使用 PowerShell 创建虚拟网络 | Microsoft Azure"
+   pageTitle="在 ARM 中使用 PowerShell 创建虚拟网络 | Windows Azure"
    description="了解如何在 ARM |资源管理器中使用 PowerShell 创建虚拟网络。"
    services="virtual-network"
    documentationCenter=""

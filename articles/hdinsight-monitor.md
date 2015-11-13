@@ -48,7 +48,7 @@
   [HDI.MonitorPage]: ./media/hdinsight-monitor/HDI.MonitorPage.PNG
   [HDI.TileJobHistory]: ./media/hdinsight-monitor/HDI.TileJobHistory.PNG
   [HDI.JobHistoryPage]: ./media/hdinsight-monitor/HDI.JobHistoryPage.PNG
-  [如何：管理 HDInsight]: /zh-cn/documentation/articles/hdinsight-administer-use-management-portal/
-  [如何：以编程方式部署 HDInsight 群集]: /zh-cn/documentation/articles/hdinsight-deploy-cluster/
+  [如何：管理 HDInsight]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+  [如何：以编程方式部署 HDInsight 群集]: /documentation/articles/hdinsight-deploy-cluster/
   [如何：定期在你的 HDInsight 群集上执行远程作业]: /manage/services/hdinsight/howto-execute-jobs-programmatically/
-  [教程：Azure HDInsight 入门]: /zh-cn/documentation/articles/hdinsight-get-started/
+  [教程：Azure HDInsight 入门]: /documentation/articles/hdinsight-get-started/

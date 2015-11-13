@@ -152,7 +152,7 @@
 
 <!-- LINKS -->
 
-  [虚拟网络]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156007.aspx
+  [虚拟网络]: http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx
   [在 Azure 中安装新 Active Directory 林]: /documentation/articles/active-directory-forest
   [如何创建存储帐户]: #CreateStorageAcct
   [如何创建虚拟机并将其部署到虚拟网络]: #CreateVM
@@ -172,4 +172,4 @@
   [VMInstances]: ./media/virtual-networks-add-virtual-machine/VNTut3_11_VMInstances.png
   [AllTab]: ./media/virtual-networks-add-virtual-machine/VNTut3_12_AllTab.png
   [在 Azure 虚拟网络中安装副本 Active Directory 域控制器]: /manage/services/networking/replica-domain-controller/
-  [使用网络配置文件配置虚拟网络（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj156097.aspx
+  [使用网络配置文件配置虚拟网络（可能为英文页面）]: http://msdn.microsoft.com/zh-cn/library/azure/jj156097.aspx

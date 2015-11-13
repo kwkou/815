@@ -86,7 +86,7 @@
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. 选择“Microsoft Azure Web Apps”。
+2. 选择“Windows Azure Web Apps”。
 
 3. 如果你尚未登录 Azure，请单击“添加帐户”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
 
@@ -366,7 +366,7 @@
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
 - [在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
-- [Microsoft Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
+- [Windows Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
 - [Azure 的新混合连接不是你父亲的 #hybridCloud](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)

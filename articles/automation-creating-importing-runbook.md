@@ -47,7 +47,7 @@
 
 ## 将 Runbook 从文件导入 Azure 自动化
 
-你可以在 Azure 自动化中创建新的 Runbook，方法是导入 PowerShell 脚本或 PowerShell 工作流（扩展名为 .ps1）<!-- deleted by customization or an exported graphical runbook (.graphrunbook)-->。你必须指定需要通过导入来创建的 [Runbook 类型](/documentation/articles/automation-runbook-types)，在指定时请考虑以下因素。
+你可以在 Azure 自动化中创建新的 Runbook，方法是导入 PowerShell 脚本或 PowerShell 工作流（扩展名为 .ps1）。你必须指定需要通过导入来创建的 [Runbook 类型](/documentation/articles/automation-runbook-types)，在指定时请考虑以下因素。
 
 - 包含 PowerShell 工作流的 .ps1 文件只能导入到 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) 中。如果该文件包含多个 PowerShell 工作流，导入将失败。必须将每个工作流保存到相应的文件中，然后分别导入。
 - 不包含工作流的 .ps1 文件可以导入到 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 中，也可以导入到 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) 中。如果将工作流导入到 PowerShell 工作流 Runbook 中，则会将其转换为工作流，并会在 Runbook 中添加注释，详述所做的更改。

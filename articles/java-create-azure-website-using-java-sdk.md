@@ -604,8 +604,8 @@ JSPHello.war 自身首先会显示在目录区域中：
 [什么是 Azure AD 目录]: http://technet.microsoft.com/zh-cn/library/jj573650.aspx
 [创建并上载 Azure 的管理证书]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
 [密钥和证书管理工具 (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
-[WebSiteManagementClient]: http://dl.windowsazure.cn/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
-[WebSpaceNames]: http://dl.windowsazure.cn/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
 [Azure 管理门户]: https://manage.windowsazure.cn
 
 <!---HONumber=79-->

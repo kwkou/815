@@ -168,14 +168,5 @@
 ## 故障排除
  
 请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
-<!-- deleted by customization
-
-##Media Services learning paths
-
-You can view AMS learning paths here:
-
-- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS on Demand Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
--->
 
 <!---HONumber=79-->

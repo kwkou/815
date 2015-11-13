@@ -32,7 +32,7 @@
 
 ```
 PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “China North”
-PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+PS C:\> $backupvault = New-AzureBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “China North” –Storage GRS
 ```
 
 可以使用 **Get-AzureBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
@@ -70,7 +70,7 @@ PS C:\> MARSAgentInstaller.exe /?
 | /s:"location" | Azure 备份代理的快取文件夹路径。| C:\Program Files\\Windows Azure Recovery Services Agent\\Scratch |
 | /m | 选择启用 Microsoft Update | - |
 | /nu | 安装完成后不要检查更新 | - |
-| /d | 卸载 Microsoft Azure 恢复服务代理 | - |
+| /d | 卸载 Windows Azure 恢复服务代理 | - |
 | /ph | 代理主机地址 | - |
 | /po | 代理主机端口号 | - |
 | /pu | 代理主机用户名 | - |
@@ -92,7 +92,7 @@ PS C:\> $credsfilename
 f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.VaultCredentials
 ```
 
-使用 [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx) cmdlet 即可向保管库注册计算机：
+使用 [Start-OBRegistration](https://technet.microsoft.com/zh-cn/library/hh770398%28v=wps.630%29.aspx) cmdlet 即可向保管库注册计算机：
 
 ```
 PS C:\> $cred = $credspath + $credsfilename

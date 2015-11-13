@@ -68,10 +68,6 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 ## 监视和分析
 
 使用 Azure 或第三方工具让 Web 应用的性能保持最新状态。接收关于关键 Web 应用事件的警报。使用 Application Insight 或 HDInsight 中的 Web 日志分析，让用户可以轻松地深入了解。
-<!-- deleted by customization
-
-Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure preview portal](https://manage.windowsazure.cn/). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
--->
 
 在“标准”层，当应用无法响应时，监视器应用程序响应能力会收到电子邮件通知。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则]。
 
@@ -81,11 +77,6 @@ Get a [quick glance] of the web app's current performance metrics and resource q
 - [Azure 网站学习路线图](/documentation/articles/websites-learning-map)
 - [Azure Web 博客](/blog/topics/web/)
 
-<!-- deleted by customization
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
-
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
--->
 
 [Azure Websites]: /home/features/web-site/
 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="如何使用模板在 ARM 模式下创建 NSG | Microsoft Azure"
+   pageTitle="如何使用模板在 ARM 模式下创建 NSG | Windows Azure"
    description="了解如何使用模板在 ARM 下创建和部署 NSG"
    services="virtual-network"
    documentationCenter="na"
@@ -103,7 +103,7 @@
 	预期输出：
 
 		ResourceGroupName : TestRG
-		Location          : westus
+		Location          : chinanorth
 		ProvisioningState : Succeeded
 		Tags              : 
 		Permissions       : 
@@ -114,25 +114,25 @@
 		Resources         : 
 		                    Name                Type                                     Location
 		                    ==================  =======================================  ========
-		                    sqlAvSet            Microsoft.Compute/availabilitySets       westus  
-		                    webAvSet            Microsoft.Compute/availabilitySets       westus  
-		                    SQL1                Microsoft.Compute/virtualMachines        westus  
-		                    SQL2                Microsoft.Compute/virtualMachines        westus  
-		                    Web1                Microsoft.Compute/virtualMachines        westus  
-		                    Web2                Microsoft.Compute/virtualMachines        westus  
-		                    TestNICSQL1         Microsoft.Network/networkInterfaces      westus  
-		                    TestNICSQL2         Microsoft.Network/networkInterfaces      westus  
-		                    TestNICWeb1         Microsoft.Network/networkInterfaces      westus  
-		                    TestNICWeb2         Microsoft.Network/networkInterfaces      westus  
-		                    NSG-BackEnd         Microsoft.Network/networkSecurityGroups  westus  
-		                    NSG-FrontEnd        Microsoft.Network/networkSecurityGroups  westus  
-		                    TestPIPSQL1         Microsoft.Network/publicIPAddresses      westus  
-		                    TestPIPSQL2         Microsoft.Network/publicIPAddresses      westus  
-		                    TestPIPWeb1         Microsoft.Network/publicIPAddresses      westus  
-		                    TestPIPWeb2         Microsoft.Network/publicIPAddresses      westus  
-		                    TestVNet            Microsoft.Network/virtualNetworks        westus  
-		                    testvnetstorageprm  Microsoft.Storage/storageAccounts        westus  
-		                    testvnetstoragestd  Microsoft.Storage/storageAccounts        westus  
+		                    sqlAvSet            Microsoft.Compute/availabilitySets       chinanorth  
+		                    webAvSet            Microsoft.Compute/availabilitySets       chinanorth  
+		                    SQL1                Microsoft.Compute/virtualMachines        chinanorth  
+		                    SQL2                Microsoft.Compute/virtualMachines        chinanorth  
+		                    Web1                Microsoft.Compute/virtualMachines        chinanorth  
+		                    Web2                Microsoft.Compute/virtualMachines        chinanorth  
+		                    TestNICSQL1         Microsoft.Network/networkInterfaces      chinanorth  
+		                    TestNICSQL2         Microsoft.Network/networkInterfaces      chinanorth  
+		                    TestNICWeb1         Microsoft.Network/networkInterfaces      chinanorth  
+		                    TestNICWeb2         Microsoft.Network/networkInterfaces      chinanorth  
+		                    NSG-BackEnd         Microsoft.Network/networkSecurityGroups  chinanorth  
+		                    NSG-FrontEnd        Microsoft.Network/networkSecurityGroups  chinanorth  
+		                    TestPIPSQL1         Microsoft.Network/publicIPAddresses      chinanorth  
+		                    TestPIPSQL2         Microsoft.Network/publicIPAddresses      chinanorth  
+		                    TestPIPWeb1         Microsoft.Network/publicIPAddresses      chinanorth  
+		                    TestPIPWeb2         Microsoft.Network/publicIPAddresses      chinanorth  
+		                    TestVNet            Microsoft.Network/virtualNetworks        chinanorth  
+		                    testvnetstorageprm  Microsoft.Storage/storageAccounts        chinanorth  
+		                    testvnetstoragestd  Microsoft.Storage/storageAccounts        chinanorth  
 		                    
 		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
@@ -151,7 +151,7 @@
 
 4. 运行 **azure group deployment create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新 VNet。在输出后显示的列表说明了所用的参数。
 
-		azure group create -n TestRG -l westus -f 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.json' -e 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'
+		azure group create -n TestRG -l chinanorth -f 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.json' -e 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'
 
 	预期输出：
 
@@ -164,7 +164,7 @@
 		info:    Created template deployment "azuredeploy"
 		data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 		data:    Name:                TestRG
-		data:    Location:            westus
+		data:    Location:            chinanorth
 		data:    Provisioning State:  Succeeded
 		data:    Tags: null
 		data:    

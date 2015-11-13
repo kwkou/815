@@ -103,7 +103,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ## 使用 Windows PowerShell 编辑 Azure 自动化 Runbook
 
-若要使用 Windows PowerShell 来编辑 Runbook，可使用所选编辑器来编辑工作流，然后将其保存到 .ps1 文件。你可以先使用 [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) cmdlet 来检索 Runbook 的内容，然后使用 [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) cmdlet 将现有的草稿工作流替换为修改的工作流。
+若要使用 Windows PowerShell 来编辑 Runbook，可使用所选编辑器来编辑工作流，然后将其保存到 .ps1 文件。你可以先使用 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 来检索 Runbook 的内容，然后使用 [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet 将现有的草稿工作流替换为修改的工作流。
 
 ### 使用 Windows PowerShell 检索 Runbook 的内容
 
@@ -120,7 +120,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ### 使用 Windows PowerShell 更改 Runbook 的内容
 
-以下示例命令演示了如何使用包含工作流的脚本文件的内容替换 Runbook 的现有内容。请注意，此示例过程与[使用 Windows PowerShell 从脚本文件中导入 Runbook](/documentation/articles/automation-creating-or-importing-a-runbook#ImportRunbookScriptPS) 中的相同。
+以下示例命令演示了如何使用包含工作流的脚本文件的内容替换 Runbook 的现有内容。请注意，此示例过程与[使用 Windows PowerShell 从脚本文件中导入 Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbookScriptPS) 中的相同。
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"

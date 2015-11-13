@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在经典部署模型中使用 Azure CLI 控制路由和使用虚拟设备 | Microsoft Azure"
+   pageTitle="在经典部署模型中使用 Azure CLI 控制路由和使用虚拟设备 | Windows Azure"
    description="了解如何在典型部署模型中使用 Azure CLI 控制 Vnet 中的路由"
    services="virtual-network"
    documentationCenter="na"
@@ -51,7 +51,7 @@
 		data:    Location                        : China North
 		info:    network route-table create command OK
 
-	参数：- **-l （或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *westus*。- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
+	参数：- **-l （或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **`azure network route-table route set`** 命令，在上面创建的路由表中创建路由，以将目标至后端子网 (192.168.2.0/24) 的所有流量发送到 **FW1** VM (192.168.0.4)。
 

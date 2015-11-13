@@ -137,6 +137,6 @@
 [在网站上启用域名]: #enable-the-domain-name-on-your-website
 
 <!-- Images -->
-[subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
+[subdomain]: ./media/web-sites-custom-domain-name/azurewebsites-subdomain.png
 
 <!---HONumber=74-->
