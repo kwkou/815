@@ -3,14 +3,14 @@
 	description="本主题介绍如何使用 .NET 通过媒体编码器标准版对资产进行编码。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/20/2015"    
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/12/2015"/>
 
 
 #如何使用媒体编码器标准版对资产进行编码
@@ -29,14 +29,14 @@
 
 - 创建编码作业。
 - 获取对媒体编码器标准版编码器的引用。
-- 从[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)所示的预设之一加载预设 XML。
+- 指定使用“H264 多比特率 720p”预设。你可以在[此处](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)看到所有预设。你也可以在[此处](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)查看相关主题，了解这些预设必须遵循的架构。
 - 将一个编码任务添加到该作业。 
 - 指定要编码的输入资产。
 - 创建将包含所编码资产的输出资产。
 - 添加事件处理程序以检查作业进度。
 - 提交作业。
 		
-		static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset, string pathToLocalPresetFile)
+		static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset)
 		{
 		    // Declare a new job.
 		    IJob job = _context.Jobs.Create("Media Encoder Standard Job");
@@ -110,15 +110,9 @@
 		}
 
 
-##媒体服务学习路径
-
-你可以在此处查看 AMS 学习路径：
-
-- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
-- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
-
 ##另请参阅 
 
+[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
-<!---HONumber=74-->
+<!---HONumber=79-->

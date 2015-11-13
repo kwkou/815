@@ -3,14 +3,14 @@
 	description="本主题演示如何使用 .NET 通过本地编码器进行实时编码。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="Juliako,cenkdin" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"  
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/12/2015"/>
 
 #如何使用本地编码器进行实时编码
 
@@ -379,4 +379,4 @@
 - [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
 - [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
 
-<!---HONumber=74-->
+<!---HONumber=79-->

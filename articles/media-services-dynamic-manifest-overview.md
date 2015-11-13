@@ -1,16 +1,16 @@
 <properties 
 	pageTitle="筛选器和动态清单" 
-	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档这些选择性的流。" 
+	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性的流。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="cenkdin,Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services"  
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/18/2015"
+	wacn.date="11/12/2015"/>
 
 #筛选器和动态清单
 
@@ -107,7 +107,7 @@
 - 仅播放视频的某个部分（而不是整个视频）。
 - 调整 DVR 演播窗口。
 
-###再现内容筛选 
+##再现内容筛选 
 
 你可以选择将资产编码成多个编码配置文件（H.264 Baseline、H.264 High、AACL、AACH、Dolby Digital Plus），以及多个优质比特率。不过，并非所有的客户端设备都支持资产的所有配置文件和比特率。例如，早期的 Android 设备只支持 H.264 Baseline+AACL。将较高的比特率发送到不能利用这些优势的设备会浪费带宽及设备计算资源。此类设备必须解码所有给定信息，而目的仅仅是为了缩小信号以便能够显示。
 
@@ -120,20 +120,20 @@
 
 ![再现内容筛选][renditions1]
 
-###删除语言轨迹
+##删除语言轨迹
 
 你的资产可能包含多种音频语言，例如英语、西班牙语、法语等。通常，播放器 SDK 管理器会按默认选择音频轨迹，并根据用户的选择来选择可用音频轨迹。开发此类播放器 SDK 相当有挑战性，因为各个设备特定的播放器框架之间需要不同的实现。此外，播放器 API 在某些平台上受到限制，且不包含音频选择功能，因此用户无法选择或更改默认的音频轨迹。使用资产筛选器，可以通过创建只包含所需音频语言的筛选器来控制行为。
 
 ![语言轨迹筛选][language_filter]
 
 
-###修剪资产开头 
+##修剪资产开头 
 
 在大多数实时流事件中，操作员必须在发生实际事件之前进行某些测试。例如，他们可以在事件开始之前包含如下静态内容：“节目即将开始”。如果节目正在存档，则测试和静态数据也会一并存档并包含在演播中。但是，此信息不应向客户端显示。通过动态清单，你可以创建开始时间筛选器，并从清单中删除不需要的数据。
 
 ![剪裁开始][trim_filter]
 
-###基于实时存档创建子剪辑（视图）
+##基于实时存档创建子剪辑（视图）
 
 许多实时事件的运行时间较长，并且实时存档可能包含多个事件。实时事件结束后，广播者可能想要将实时存档分解成有序的节目启动和停止序列。然后分别发布这些虚拟节目，但不后续处理实时存档，也不创建独立的资产（这将无法利用 CDN 中现有缓存片段的优势）。此类虚拟节目（子剪辑）的示例包括足球或篮球比赛中的上下半场（第几节）、棒球比赛中的局，或者奥运会下午赛程的单项赛事。
 
@@ -145,24 +145,22 @@
 
 ![滑雪][skiing]
 
-###调整演播窗口（DVR）
+##调整演播窗口（DVR）
 
 目前，Azure 媒体服务提供持续时间可设为 5 分钟到 25 小时的循环存档。清单筛选可以基于存档创建循环 DVR 窗口存档，而不会删除媒体。在许多情况下，广播者想要提供受限制的 DVR 窗口，此窗口可随着实时边缘移动，并同时保留更大的存档窗口。广播者可能想要使用超出 DVR 窗口的数据来突出显示剪辑，或者想要为不同的设备提供不同的 DVR 窗口。例如，大多数移动设备不处理大的 DVR 窗口（你可以让移动设备有 2 分钟的 DVR 窗口，桌面客户端有 1 小时的 DVR 窗口）。
 
 ![DVR 窗口][dvr_filter]
 
-###调整实时补偿（实时位置）
+##调整实时补偿（实时位置）
 
 清单筛选可用于删除实时节目的实时边缘几秒钟的时间。这样，广播者便可以在观众收到流之前（通常倒退 30 秒）先观赏预览发布点的演播，并创建广告插入点。广播者接着可将这些广告及时推送到其客户端框架，以便能够接收与处理信息，然后借机播放广告。
 
 除了广告支持外，实时补偿可用于调整客户端实时下载位置，以便在客户端偏移并命中实时边缘时，仍然可以从服务器获取片段，而不会收到 404 或 412 HTTP 错误。
 
-
-
 ![livebackoff\_filter][livebackoff_filter]
 
 
-###将多个规则合并成单个筛选器
+##将多个规则合并成单个筛选器
 
 你可以将多个筛选规则合并成单个筛选器。例如，你可以定义一个范围规则，以便将静态内容从实时存档中删除，并筛选可用的比特率。对于多个筛选规则而言，最终结果将是这些规则的构成部分（只有交集）。
 
@@ -174,6 +172,25 @@
 
 [使用 REST API 创建筛选器](/documentation/articles/media-services-rest-dynamic-manifest)。
 
+## 组合多个筛选器（筛选器组合）
+
+你也可以在一个 URL 中组合多个筛选器。
+
+以下方案演示了为什么你可能需要组合多个筛选器：
+
+1. 你需要筛选视频质量（目的是限制视频质量）以供 Android 或 iPAD 之类的移动设备使用。若要删除其质量不符合需要的视频，可创建一个适合设备配置文件的全局筛选器。如上所述，全局筛选器可以用于你在同一媒体服务帐户下的所有资产，这些资产并没有更多的其他联系。 
+2. 你还可以修改资产的开始时间和结束时间。为此，你可以创建一个本地筛选器并设置开始/结束时间。 
+3. 你希望能够将这些筛选器组合起来（如果不组合的话，则需要将质量筛选添加到进行修改的筛选器上，这会导致筛选器的使用很困难）。
+
+为了组合筛选器，你需要在清单/播放列表 URL 中设置筛选器名称，用分号对名称进行分隔。假设你有一个名为 *MyMobileDevice* 的筛选器，用于筛选质量，另外还有一个名为 *MyStartTime* 的筛选器，用于设置具体的开始时间。你可以将它们组合成下面这样：
+
+	http://teststreaming.streaming.mediaservices.chinacloudapi.cn/3d56a4d-b71d-489b-854f-1d67c0596966/64ff1f89-b430-43f8-87dd-56c87b7bd9e2.ism/Manifest(filter=MyMobileDevice;MyStartTime)
+
+最多可以组合 3 个筛选器。
+
+有关详细信息，请参阅[此](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support)博客。
+
+
 ##已知问题和限制
 
 - 动态清单在 GOP 边界（主键帧）内运行，因此修剪后具有精确的 GOP。 
@@ -183,7 +200,7 @@
 
 ##另请参阅
 
-
+[将内容传送到客户概述](/documentation/articles/media-services-deliver-content-overview)
 
 [renditions1]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter.png
 [renditions2]: ./media/media-services-dynamic-manifest-overview/media-services-rendition-filter2.png
@@ -205,4 +222,4 @@
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=74-->
+<!---HONumber=79-->

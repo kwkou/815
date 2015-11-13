@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/27/2015"
+	wacn.date="11/12/2015"/>
 
 
 #将内容传送到客户概述
@@ -24,25 +24,22 @@
 - 将你的流编码成多比特率（自适应比特率）视频流（这将会负责处理质量和网络条件），并 
 - 使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)将你的流动态地重新打包成不同的协议（这将会负责不同设备上的流式处理）。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-本主题将概述[内容传送概念](/documentation/articles/media-services-deliver-content-overview#concepts)，并提供说明如何执行内容传送[任务](/documentation/articles/media-services-deliver-content-overview#tasks)的主题的链接。
+本主题概述了重要的内容传送概念。
 
-##<a id="concepts"></a>概念
 
-以下列表介绍了传送媒体时有用的术语和概念。
-
-###动态打包
+##动态打包
 
 建议使用动态打包来传送内容。有关详细信息，请参阅[动态打包](/documentation/articles/media-services-dynamic-packaging-overview)。
 
 若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
-###筛选器和动态清单
+##筛选器和动态清单
 
 媒体服务可让你为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择运行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户请求创建的**动态清单**可以实现对资产进行这种筛选，并基于指定的筛选器流式传输视频。
 
 有关详细信息，请参阅[筛选器和动态清单](/documentation/articles/media-services-dynamic-manifest-overview)。
 
-###定位符
+##定位符
 
 若要为用户提供一个可用来流式传输内容或下载内容的 URL，你首先需要通过创建定位符来“发布”资产。定位符提供访问资产中包含的文件的入口点。媒体服务支持两种类型的定位符：
 
@@ -53,16 +50,16 @@
 
 定位符附带过期日期。当你使用门户发布资产时，将会创建过期日期在 100 年后的定位符。
 
->[AZURE.NOTE] 如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
+>[AZURE.NOTE]如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
 
-若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](http://go.microsoft.com/fwlink/?LinkID=533259) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
  
-定位符不用于管理按用户的访问控制。要为不同用户提供不同的访问权限，请使用数字权限管理 (DRM) 解决方案。有关详细信息，请参阅[保护媒体](https://msdn.microsoft.com/zh-CN/library/azure/dn282272.aspx)。
+定位符不用于管理按用户的访问控制。要为不同用户提供不同的访问权限，请使用数字权限管理 (DRM) 解决方案。有关详细信息，请参阅[保护媒体](http://msdn.microsoft.com/zh-cn/library/azure/dn282272.aspx)。
 
 请注意，当你创建定位符时，可能会由于 Azure 存储空间中所需存储和传播过程的影响，出现 30 秒的延迟。
 
 
-###自适应流 
+##自适应流 
 
 自适应比特率技术允许视频播放器应用程序确定网络条件并从多个比特率中进行选择。当网络通信质量下降时，客户端可以选择较低的比特率，从而让播放器能够继续以较低的视频质量播放视频。当网络条件改善时，客户端可以切换到较高的比特率，以改进视频质量。Azure 媒体服务支持以下自适应比特率技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS。
 
@@ -73,7 +70,7 @@
 请注意，仅当你要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日以后创建的时，才可以通过 SSL 流式传输内容。如果流 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请创建新的流式处理终结点。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输你的内容。
 
 
-####流 URL 格式：
+##流 URL 格式
 
 **MPEG DASH 格式**
 
@@ -82,6 +79,8 @@
 示例
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
+
+
 
 **Apple HTTP 实时流 (HLS) V4 格式**
 
@@ -94,6 +93,15 @@
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=m3u8-aapl-v3)
 	
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
+
+**Apple HTTP 实时流 (HLS) 格式，带“仅音频”筛选器**
+
+默认情况下，仅音频轨道已包括在 HLS 清单中。这是针对手机网络进行 Apple 应用商店认证所必需的。在这种情况下，如果客户端没有足够的带宽，或者是通过 2G 连接进行的连接，则会切换成“仅音频”播放。这样可以在不进行缓冲的情况下保持流式播放的连续性，但缺点是没有视频。但在某些情况下，相当于仅播放音频来说，用户更愿意选择缓冲播放视频。如果你希望删除“仅音频”轨道，可在 URL 中添加 (audio-only=false) 将其删除。
+
+	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
+
+有关详细信息，请参阅[此](http://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support)博客。
+
 
 **平滑流格式**
 
@@ -118,20 +126,20 @@
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f)
 
 
-###动态打包
+##动态打包
 
 媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints/)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。 
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，点播流在共享实例模型中配置，该模型的服务器资源（例如计算机、出口容量等）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
-###渐进式下载 
+##渐进式下载 
 
 渐进式下载可让你在下载完整个文件之前开始播放媒体。你无法渐进式下载 .ism*（ismv、isma、ismt、ismc）文件。
 
@@ -144,7 +152,7 @@
 - 你必须解密你希望从源服务进行流式处理的任何存储加密的资产，然后才能进行渐进式下载。
 
 
-###下载
+##下载
 
 若要下载内容，必须创建 SAS 定位符。使用 SAS 定位符可以访问文件所在的 Azure 存储空间容器。若要构建下载 URL，必须将文件名嵌入到主机和 SAS 签名之间。
 
@@ -159,44 +167,15 @@
 
 
 
-###流式处理终结点
+##流式处理终结点
 
 **流式处理终结点**表示一个流服务，该服务可以直接将内容传递给客户端播放器应用程序，也可以传递给内容传送网络 (CDN) 以进一步分发。流式传输终结点服务的出站流可以是实时流，也可以是你的媒体服务帐户中的视频点播资产。此外，还可以通过调整流式传输保留单元来控制流式处理终结点服务处理不断增长的带宽需求的能力。你至少应该为生产环境中的应用程序分配一个保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins#scale_streaming_endpoints)。
 
-##<a id="tasks"></a>与资产传送相关的任务
-
-
-###配置流式处理终结点
-
-有关流式处理终结点的概述以及如何管理它们的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins)。
-
-###上载媒体 
-
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 上载文件。
-
-[AZURE.INCLUDE [media-services-selector-upload-files](../includes/media-services-selector-upload-files)]
-
-###为资产编码
-
-使用 **Azure 管理门户**、**.NET** 或 **REST API** 通过 **Azure 媒体编码器**进行编码。
- 
-[AZURE.INCLUDE [media-services-selector-encode](../includes/media-services-selector-encode)]
-
-###配置资产传送策略
-
-使用 **.NET** 或 **REST API** 配置资源传送策略。
-
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy)]
-
-###发布资产
-
-使用 **Azure 管理门户**或 **.NET** 发布资源（通过创建定位符）。
-
-[AZURE.INCLUDE [media-services-selector-publish](../includes/media-services-selector-publish)]
 
 
 ##相关主题
 
 [轮转存储密钥后更新媒体服务定位符](/documentation/articles/media-services-roll-storage-access-keys)
+ 
 
-<!---HONumber=74-->
+<!---HONumber=79-->
