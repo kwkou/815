@@ -115,15 +115,15 @@
 
 4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 管理门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
-	<configuration>
-	...
-	  <appSettings>
-	    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-	    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-	  </appSettings>
+		<configuration>
+		...
+	  	<appSettings>
+	   		<add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+	    	<add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+	  	</appSettings>
 	  
-	</configuration>ion&gt;
-	</code></pre>
+		</configuration>
+
 
 5. 使用以下代码覆盖位于 Program.cs 文件开头的现有 **using** 语句。
 

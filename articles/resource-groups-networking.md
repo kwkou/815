@@ -246,9 +246,6 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 6. 单击“选择资源组”，然后单击要将 vnet 和子网添加到的资源组。或者，可以通过单击“或新建”创建新的资源组。
 3. 单击“创建”。请注意磁贴显示了“正在设置模板部署”。完成部署后，你将看到一个类似于下面的屏幕。
 
-![示例模板部署](./media/resource-groups-networking/Figure6.png)
-
-
 ## 另请参阅
 
 [Azure 网络 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)

@@ -26,7 +26,7 @@
 
 以下是在 Azure 网站上运行的业务线应用程序的示例。该示例演示了只需少量的技术投资，就能结合 Web Apps 和其他服务来完成任务。**单击拓扑中的元素可阅读更多相关详细信息。**
 
-<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/web-app-notitle.svg" width="100%" height="100%">
+<object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/web-app-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
 > 本指南演示了与业务线应用程序相关的一些最常见领域和任务。但是，还有可在特定实施中使用的其他一些 Azure 网站功能。若要查看这些功能，另请参阅[全球网络影响力](/documentation/articles/web-sites-global-web-presence-solution-overview)和[数字市场营销活动](/documentation/articles/web-sites-digital-marketing-application-solution-overview)中的其他指导。
