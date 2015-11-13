@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="05/14/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/02/2015"/>
 
 # 性能和扩展测试：本地到本地
 
@@ -100,7 +100,7 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 ### 结束语
 
-我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 Hyper-V 副本容量规划器。
+我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 [Hyper-V 副本容量规划器](https://www.microsoft.com/zh-CN/download/details.aspx?id=39057)。
 
 ## 测试部署环境
 
@@ -148,8 +148,8 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 |工作负载|I/O 大小 (KB)|访问百分比|读取百分比|未完成的 I/O|I/O 模式|
 |---|---|---|---|---|---|
-|文件服务器| 48163264|60%20%5%5%10%|80%80%80%80%80%|8888|全部 100% 随机|
-|SQL Server（卷 1） SQL Server（卷 2）|864|100%100%|70%0%|88|100% 随机 100% 连续|
+|文件服务器|48163264|60%20%5%5%10%|80%80%80%80%80%|88888|全部 100% 随机|
+|SQL Server（卷 1）SQL Server（卷 2）|864|100%100%|70%0%|88|100% 随机100% 连续|
 |Exchange|32|100%|67%|8|100% 随机|
 |工作站/VDI|464|66%34%|70%95%|11|两者都 100% 随机|
 |Web 文件服务器|4864|33%34%33%|95%95%95%|888|全部 75% 随机|
@@ -190,13 +190,13 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 
 |度量值|计数器|
 |---|---|
-|CPU|\\Processor(_Total)\% Processor Time|
-|可用内存|\\Memory\\Available MBytes|
-|IOPS|\\PhysicalDisk(_Total)\\Disk Transfers/sec|
-|VM 读取 (IOPS) 操作数/秒|\\Hyper-V Virtual Storage Device(<VHD>)\\Read Operations/Sec|
-|VM 写入 (IOPS) 操作数/秒|\\Hyper-V Virtual Storage Device(<VHD>)\\Write Operations/S|
-|VM 读取吞吐量|\\Hyper-V Virtual Storage Device(<VHD>)\\Read Bytes/sec|
-|VM 写入吞吐量|\\Hyper-V Virtual Storage Device(<VHD>)\\Write Bytes/sec|
+|CPU|\Processor(_Total)\% Processor Time|
+|可用内存|\Memory\Available MBytes|
+|IOPS|\PhysicalDisk(_Total)\Disk Transfers/sec|
+|VM 读取 (IOPS) 操作数/秒|\Hyper-V Virtual Storage Device(<VHD>)\Read Operations/Sec|
+|VM 写入 (IOPS) 操作数/秒|\Hyper-V Virtual Storage Device(<VHD>)\Write Operations/S|
+|VM 读取吞吐量|\Hyper-V Virtual Storage Device(<VHD>)\Read Bytes/sec|
+|VM 写入吞吐量|\Hyper-V Virtual Storage Device(<VHD>)\Write Bytes/sec|
 
 
 ## 后续步骤
@@ -209,4 +209,4 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 - [使用 SAN 在两个本地 VMM 站点之间设置保护](/documentation/articles/site-recovery-vmm-san)
 - [使用单个 VMM 服务器设置保护](/documentation/articles/site-recovery-single-vmm)
 
-<!---HONumber=71-->
+<!---HONumber=79-->
