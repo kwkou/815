@@ -1,15 +1,16 @@
 <properties
-   pageTitle="使用 Azure 虚拟网络扩展 HDInsight | VNet" metaKeywords="virtual network, vnet, azure, hdinsight" description="了解如何使用 Azure 虚拟网络将 HDInsight 连接到其他云资源或者你数据中心内的资源"
-   services="hdinsight"
-   documentationCenter=""
-   authors="blackmist"
-   manager="paulettm"
-   editor="cgronlun"/>
+	pageTitle="使用虚拟网络扩展 HDInsight | Microsoft Azure"  
+	description="了解如何使用 Azure 虚拟网络将 HDInsight 连接到其他云资源或者你数据中心内的资源"
+	services="hdinsight"
+	documentationCenter=""
+	authors="Blackmist"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/06/2015"
-   wacn.date="08/29/2015"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/12/2015"/>
 
 
 #使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -30,7 +31,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	* 从 Azure 虚拟机中运行的 Azure 网站或服务**调用 HDInsight 服务或作业**。
 
-	* 在 HDInsight 与 SQL Database 或 SQL Server 或其他运行于虚拟机的数据存储解决方案之间**直接传输数据**。
+	* 在 HDInsight 与 SQL 数据库或 SQL Server 或其他运行于虚拟机的数据存储解决方案之间**直接传输数据**。
 
 	* **组合多个 HDInsight 服务器**以构成单个解决方案。例如，使用 HDInsight Storm 服务器来使用传入数据，然后将经过处理的数据存储到 HDInsight HBase 服务器。原始数据也可以存储到 HDInsight Hadoop 服务器供将来使用 MapReduce 进行分析。
 
@@ -50,15 +51,15 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	* 从 LOB 应用程序**调用 HDInsight 服务或作业**。例如，使用 HBase Java API 来存储和检索 HDInsight HBase 群集的数据。
 
-有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
+有关虚拟网络特性、优势和功能的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-> [AZURE.NOTE]你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。<!--有关详细信息，请参阅[虚拟网络配置任务](http://msdn.microsoft.com/zh-cn/library/azure/jj156206.aspx)。-->
+> [AZURE.NOTE]你必须创建 Azure 虚拟网络才能设置一个 HDInsight 群集。有关详细信息，请参阅[虚拟网络配置任务](/documentation/services/networking/)。
 >
 > Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于地缘的虚拟网络。
 >
 > 强烈建议为每个群集指定一个子网。
 
-有关如何在虚拟网络中设置 HDInsight 群集的详细信息，请参阅[在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)。
+有关如何在虚拟网络中设置 HDInsight 群集的详细信息，请参阅[在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
 
 ##<a id="tasks"></a>任务和信息
 
@@ -70,7 +71,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 	https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/<servicename>/components/<componentname>
 
-> [AZURE.NOTE]有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-monitor-use-ambari-api/)。
+> [AZURE.NOTE]有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-monitor-use-ambari-api)。
 
 必须指定群集名称和群集上运行的服务和组件，例如 YARN 资源管理器。
 
@@ -78,17 +79,17 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 例如，若要从 HDInsight Hadoop 群集返回 FQDN，可以使用以下其中一种方法检索 YARN 资源管理器的数据：
 
-* [Azure PowerShell](/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 		$ClusterDnsName = <clustername>
 		$Username = <cluster admin username>
 		$Password = <cluster admin password>
 		$DnsSuffix = ".azurehdinsight.cn"
 		$ClusterFQDN = $ClusterDnsName + $DnsSuffix
-		
+
 		$webclient = new-object System.Net.WebClient
 		$webclient.Credentials = new-object System.Net.NetworkCredential($Username, $Password)
-		
+
 		$Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/services/yarn/		components/resourcemanager"
 		$Response = $webclient.DownloadString($Url)
 		$JsonObject = $Response | ConvertFrom-Json
@@ -105,7 +106,7 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 若要获取 Zookeeper 仲裁地址，请使用以下其中一种方法来查询 Ambari 管理服务：
 
-* [Azure PowerShell](/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 		$ClusterDnsName = <clustername>
 		$Username = <cluster admin username>
@@ -124,8 +125,6 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 * [cURL](http://curl.haxx.se/) 和 [jq](http://stedolan.github.io/jq/)
 
 		curl -G -u <username>:<password> "https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum" | jq .items[0].properties[]
-
-> [AZURE.NOTE]有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-monitor-use-ambari-api/)。
 
 获取仲裁信息后，请将其用于客户端应用程序中。
 
@@ -158,14 +157,12 @@ Azure 虚拟网络可让你扩展 Hadoop 解决方案以合并本地资源（例
 
 以下示例演示了如何对 Azure 虚拟网络使用 HDInsight：
 
-* [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/) - 演示如何在虚拟网络中配置 Storm 和 HBase 群集，以及如何从 Storm 将数据远程写入到 HBase。
+* [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis) - 演示如何在虚拟网络中配置 Storm 和 HBase 群集，以及如何从 Storm 将数据远程写入到 HBase。
 
-* [在 Azure 虚拟网络上设置 HBase 群集](/documentation/articles/hdinsight-hbase-provision-vnet/) - 提供有关在 Azure 虚拟网络上设置 HBase 群集的信息
+* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters) - 提供有关设置 Hadoop 群集的信息，包括有关使用 Azure 虚拟网络的信息。
 
-* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/) - 提供有关设置 Hadoop 群集的信息，包括有关使用 Azure 虚拟网络的信息。
+* [将 Sqoop 与 HDinsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop) - 提供有关使用 Sqoop 通过虚拟网络传输 SQL Server 数据的信息。
 
-* [将 Sqoop 与 HDinsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop/) - 提供有关使用 Sqoop 通过虚拟网络传输 SQL Server 数据的信息。
+若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zh-cn/library/azure/jj156007.aspx)。
-
-<!---HONumber=67-->
+<!---HONumber=79-->

@@ -1,60 +1,68 @@
-<properties 
-	pageTitle="在 HDInsight 中使用 R 来自定义群集| Azure" 
-	description="了解如何安装并使用 R 来自定义 Hadoop 群集。" 
-	services="hdinsight" 
-	documentationCenter="" 
+<properties
+	pageTitle="在 HDInsight 中使用 R 来自定义群集 | Microsoft Azure"
+	description="了解如何通过脚本操作安装 R，以及如何在 HDInsight 群集上使用 R。"
+	services="hdinsight"
+	documentationCenter=""
 	tags="azure-portal"
-	authors="mumian" 
-	manager="paulettm" 
+	authors="mumian"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="10/02/2015"
+	wacn.date="11/12/2015"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
 
-你可以使用**脚本操作**群集自定义在 HDInsight 上 Hadoop 中的任何类型的群集上安装 R。这样，数据科学家和分析人员便可使用 R 部署功能强大的 MapReduce/YARN 编程框架，以便在 HDInsight 中部署的 Hadoop 群集上处理大量数据。
 
-仅当创建群集时，你才能通过脚本操作运行脚本来自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]。
+了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。
+ 
+你可以使用*脚本操作*，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase）上安装 R。用于在 HDInsight 群集上安装 R 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1) 上的只读 Azure 存储 Blob 获得。
 
+**相关文章** 
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息 
+- [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息 
+- [针对 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)
 
 ## 什么是 R？
 
 <a href="http://www.r-project.org/" target="_blank">统计计算的 R 项目</a>是一种用于统计计算的开放源代码语言和环境。R 提供了数百个内置统计函数及其自己的编程语言，该语言结合了各方面的函数编程和面向对象的编程。它还提供了各种图形功能。R 是面向各个领域最专业的统计学家和科学家的首选编程环境。
 
-R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作自定义的 Hadoop 群集上运行。R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 HDInsight 上使用 R 进行处理。
+R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 HDInsight 上使用 R 进行处理。
 
 ## 安装 R
 
-用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 门户设置群集时使用示例脚本的说明。
+用于在 HDInsight 群集上安装 R 的[示例脚本](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)可从 Azure 存储中的只读 Blob 获得。本部分提供有关如何在使用 Azure 管理门户预配群集时使用示例脚本的说明。
 
 > [AZURE.NOTE]示例脚本是随同 HDInsight 群集版本 3.1 一起引入的。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
 
-1. 根据[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters/#portal)中的说明，使用“自定义创建”选项开始预配群集。 
+1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始设置群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所述：
 
-	![使用脚本操作自定义群集](./media/hdinsight-hadoop-r-scripts/hdi-r-script-action.png "使用脚本操作自定义群集")
-	
+
+	![Use Script Action to customize a cluster](./media/hdinsight-hadoop-r-scripts/hdi-r-script-action.png "Use Script Action to customize a cluster")
+
 	<table border='1'>
-	<tr><th>属性</th><th>值</th></tr>
-	<tr><td>Name</td>
-		<td>指定脚本操作的名称，例如 <b>Install R</b>。</td></tr>
-	<tr><td>脚本 URI</td>
-		<td>指定调用用于自定义群集的脚本的 URI，例如 <i>https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1</i></td></tr>
-	<tr><td>节点类型</td>
-		<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
-	<tr><td>Parameters</td>
-		<td>根据脚本的需要，指定参数。但是，用于安装 R 的脚本不需要任何参数，因此，你可以将此项保留为空。</td></tr>
-</table>你可以添加多个脚本操作，以在群集上安装多个组件。在添加了脚本后，单击复选标记以开始设置群集。
+		<tr><th>属性</th><th>值</th></tr>
+		<tr><td>Name</td>
+			<td>指定脚本操作的名称，例如 Install <b>R</b>。</td></tr>
+		<tr><td>脚本 URI</td>
+			<td>指定调用用于自定义群集的脚本的 URI，例如 <i>https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1</i></td></tr>
+		<tr><td>节点类型</td>
+			<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”。
+		<tr><td>Parameters</td>
+			<td>根据脚本的需要，指定参数。但是，用于安装 R 的脚本不需要任何参数，因此，你可以将此项保留为空。</td></tr>
+	</table>
+
+	你可以添加多个脚本操作，以在群集上安装多个组件。添加脚本后，请单击复选标记以开始创建群集。
 
 你还可以通过 Azure PowerShell 或 HDInsight .NET SDK 使用脚本在 HDInsight 上安装 R。有关这些过程的说明在本文后面提供。
 
 ## 运行 R 脚本
 本部分介绍如何在安装有 HDInsight 的 Hadoop 群集上运行 R 脚本。
 
-1. **与群集建立远程桌面连接**：在 Azure 门户中，对创建的安装有 R 的群集启用远程桌面，然后连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
+1. **与群集建立远程桌面连接**：在管理门户中，对创建的安装有 R 的群集启用远程桌面，然后连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
 
 2. **打开 R 控制台**：R 安装将 R 控制台的链接放置在头节点的桌面上。单击它以打开 R 控制台。
 
@@ -94,7 +102,7 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 		$location = "<MicrosoftDataCenter>"				# Location of the HDInsight cluster. It must be in the same data center as the storage account.
 		$clusterNodes = <ClusterSizeInNumbers>			# The number of nodes in the HDInsight cluster.
 		$version = "<HDInsightClusterVersion>"          # HDInsight version, for example "3.1"
-	
+
 2. 指定配置值（如群集中的节点）和要使用的默认存储。
 
 		# SPECIFY THE CONFIGURATION OPTIONS
@@ -103,7 +111,7 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 		$config.DefaultStorageAccount.StorageAccountName="$storageAccountName.blob.core.chinacloudapi.cn"
 		$config.DefaultStorageAccount.StorageAccountKey=$storageAccountKey
 		$config.DefaultStorageAccount.StorageContainerName=$containerName
-	
+
 3. 使用 **Add-AzureHDInsightScriptAction** cmdlet 来调用用于安装 R 的示例脚本，例如：
 
 		# INVOKE THE SCRIPT USING THE SCRIPT ACTION
@@ -127,17 +135,17 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">指定在其上运行自定义脚本的节点。有效值是 **HeadNode**（在头节点上安装）或 **DataNode**（在所有数据节点上安装）。你可以使用任一值或两个值。</td></tr>
 <tr>
 <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Parameters</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本需要的参数 
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本需要的参数
 </td></tr>
 <tr>
 <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Uri</td>
 <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">指定执行的脚本的 URI</td></tr>
 </table>
-	
+
 4. 最后，设置你通过自定义安装 R 的群集。
-	
+
 		# PROVISION A CLUSTER WITH R INSTALLED
-		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version 
+		New-AzureHDInsightCluster -Config $config -Name $clusterName -Location $location -Version $version
 
 出现提示时，请输入群集的凭据。创建群集可能需要几分钟时间。
 
@@ -161,7 +169,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 
 **创建自签名证书**
 
-创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal#cert)。
+创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1#cert)。
 
 
 **在 Visual Studio 中创建 .NET 应用程序**
@@ -171,7 +179,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 2. 在“文件”菜单中，单击“新建”，然后单击“项目”。
 
 3. 在“新建项目”中，键入或选择以下值：
-	
+
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
 <tr>
 <th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">属性</th>
@@ -205,9 +213,9 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 		using Microsoft.WindowsAzure.Management.HDInsight;
 		using Microsoft.WindowsAzure.Management.HDInsight.ClusterProvisioning;
 		using Microsoft.WindowsAzure.Management.HDInsight.Framework.Logging;
-	
+
 9. 在 **Main()** 函数中，粘贴以下代码，并为变量提供值：
-		
+
         var clusterName = args[0];
 
         // PROVIDE VALUES FOR THE VARIABLES
@@ -220,7 +228,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
         string password = "<HDInsightUserPassword>";
         int clustersize = <NumberOfNodesInTheCluster>;
 
-        // PROVIDE THE CERTIFICATE THUMBPRINT TO RETRIEVE THE CERTIFICATE FROM THE CERTIFICATE STORE 
+        // PROVIDE THE CERTIFICATE THUMBPRINT TO RETRIEVE THE CERTIFICATE FROM THE CERTIFICATE STORE
         X509Store store = new X509Store();
         store.Open(OpenFlags.ReadOnly);
         X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>().First(item => item.Thumbprint == thumbprint);
@@ -242,7 +250,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
             Password = password,
             ClusterSizeInNodes = clustersize,
             Version = "3.1"
-        };        
+        };
 
 10. 将以下代码追加到 **Main()** 函数，以使用 [ScriptAction](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.management.hdinsight.clusterprovisioning.data.scriptaction.aspx) 类通过调用自定义脚本来安装 R。
 
@@ -266,15 +274,20 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 
 	.\CreateRCluster <cluster-name>
 
-提供群集名称，然后按 ENTER 以设置安装有 R 的群集。
+提供群集名称，然后按 ENTER 以预配安装有 R 的群集。
 
 ## 另请参阅
 
 - [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。使用群集自定义在 HDInsight Hadoop 群集上安装 Giraph。Giraph 可让你使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。
-- [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。使用群集自定义在 HDInsight Hadoop 群集上安装 Solr。Solr 允许你对存储的数据执行功能强大的搜索操作。
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息
+- [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
+- [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)
+- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)：有关如何安装 Giraph 的脚本操作示例
 
 
+[powershell-install-configure]: /documentation/articles/install-configure-powershell
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
 
-<!---HONumber=71-->
+<!---HONumber=79-->

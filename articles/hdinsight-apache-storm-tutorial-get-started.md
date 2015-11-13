@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Apache Storm 教程：Storm 入门 | Azure"
+	pageTitle="Apache Storm 教程：Storm 入门 | Microsoft Azure"
 	description="开始在 HDInsight 上使用 Apache Storm 和 Storm 初学者示例进行大数据分析。了解如何使用 Storm 实时处理数据。"
-	keywords="apache storm,apache storm tutorial,big data analytics,storm starter"
+	keywords="apache storm,apache storm 教程,大数据分析,storm 初学者"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -11,14 +11,16 @@
 
 <tags
 	ms.service="hdinsight"
-	wacn.date="10/22/2015"
-	ms.date="08/05/2015"/>
+	ms.date="10/09/2015"
+	wacn.date="11/12/2015"/>
 
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门
 
 Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算系统，用于处理数据流。使用 Azure HDInsight 上的 Storm，你可以创建一个基于云的、用于实时执行大数据分析的 Storm 群集。
 
+
+* [Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1)
 
 ## 先决条件
 
@@ -30,11 +32,11 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
 Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文件和拓扑。使用以下步骤来创建用于群集的 Azure 存储帐户：
 
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn/)。
+1.登录到 [Azure 管理门户](http://manage.windowsazure.cn/)。
 
 2. 单击左下角的“新建”，依次指向“数据服务”和“存储”，然后单击“快速创建”。
 
-	![在 Azure 门户中，可以使用“快速创建”来设置新的存储帐户。](./media/hdinsight-apache-storm-tutorial-get-started/HDI.StorageAccount.QuickCreate.png)
+	![在 Azure 管理门户中，可以使用“快速创建”来设置新的存储帐户。](./media/hdinsight-apache-storm-tutorial-get-started/HDI.StorageAccount.QuickCreate.png)
 
 3. 输入“URL”、“位置”和“复制”的信息，然后单击“创建存储帐户”。为 HDInsight 创建存储时，请不要选择地缘组。你将在存储列表中看到新的存储帐户。
 
@@ -44,13 +46,13 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 有关创建存储帐户的详细信息，请参阅<a href="/documentation/articles/storage-create-storage-account/" target="_blank">如何创建存储帐户</a>。
 
-##在 Azure 门户中设置 Storm 群集
+##在 Azure 管理门户中预配 Storm 群集
 
-当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning)页。
+当你设置 HDInsight 群集时，便设置了包含 Apache Storm 和相关应用程序的 Azure 计算资源。你还可以使用 Azure 管理门户、适用于 HDInsight 的 Azure PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关不同 HDInsight 版本及其服务级别协议 (SLA) 的信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning)页。
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-1. 登录到 [Azure 门户][azureportal]。
+1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
 
 2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
 
@@ -68,17 +70,17 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 	> [AZURE.NOTE]创建群集需要一些时间，通常约 15 分钟左右。使用启动板上的磁贴或页面左侧的“通知”项检查预配过程。
 
-##在 HDInsight 上运行 Storm 初学者示例
+## 在 HDInsight 上运行 Storm 初学者示例
 
 本 Apache Storm 教程将介绍如何在 GitHub 上使用 Storm 初学者示例执行大型数据分析。
 
 每个 Storm on HDInsight 群集都附带了一个 Storm 仪表板，可用于上载并在群集上运行 Storm 拓扑。每个群集还附带了可直接从 Storm 仪表板运行的示例拓扑。
 
-###<a id="connect"></a>连接到仪表板
+### <a id="connect"></a>连接到仪表板
 
-仪表板位于 **https://&lt;clustername>.azurehdinsight.cn//**，其中 **clustername** 是群集的名称。Azure 门户页底部也提供了仪表板的链接。
+仪表板位于 **https://&lt;clustername>.azurehdinsight.cn//**，其中 **clustername** 是群集的名称。群集的 Azure 管理门户页底部也提供了仪表板的链接。
 
-![包含 Storm“仪表板”链接的 Azure 门户](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png)
+![包含 Storm“仪表板”链接的 Azure 管理门户](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png) 
 
 > [AZURE.NOTE]在连接到仪表板时，系统将提示你输入用户名和密码。这是创建群集时所用的管理员名称 (**admin**) 和密码。
 
@@ -88,7 +90,7 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 “提交拓扑”窗体可用于上载和运行包含 Storm 拓扑的 .jar 文件。它还包括群集随附的几个基本示例。
 
-###<a id="run"></a>从 GitHub 中的 Storm 初学者项目运行单词计数示例
+### <a id="run"></a>从 GitHub 中的 Storm 初学者项目运行单词计数示例
 
 群集随附的示例包括单词计数拓扑的多种变体。这些示例包括随机生成句子的 **spout**，和将每个句子分解成不同的单词，然后统计每个单词出现次数的 **bolt**。这些示例来自 Apache Storm 中包含的 [Storm 初学者示例](https://github.com/apache/storm/tree/master/examples/storm-starter)。
 
@@ -107,7 +109,7 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
 
 	> [AZURE.NOTE]结果不会指示已完成拓扑 - **Storm 拓扑在启动后将一直运行，直到你停止它**。 单词计数拓扑将会生成随机的句子，并会一直计算所遇到的每个单词的出现次数，直到你将其停止。
 
-###<a id="monitor"></a>监视拓扑
+### <a id="monitor"></a>监视拓扑
 
 Storm UI 可以用于监视拓扑。
 
@@ -176,15 +178,15 @@ Storm UI 可以用于监视拓扑。
 
 	从这些数据中，你可以看到，单词 **seven** 出现了 1,493,957 次。就是自从启动此拓扑以来该单词出现的次数。
 
-###停止拓扑
+### 停止拓扑
 
 返回到单词计数拓扑的“拓扑摘要”页，然后从“拓扑操作”部分中选择“终止”。出现提示时，输入停止拓扑之前要等待的秒数，即 10。超时期限过后，当你访问仪表板的“Storm UI”部分时，将不再显示该拓扑。
 
-##摘要
+## 摘要
 
 在本 Apache Storm 教程中，你已使用 Storm 初学者示例学习如何创建 Storm on HDInsight 群集，以及如何使用 Storm 仪表板来部署、监视和管理 Storm 拓扑。
 
-##<a id="next"></a>后续步骤
+## <a id="next"></a>后续步骤
 
 * **HDInsight Tools for Visual Studio** - HDInsight Tools 允许你使用 Visual Studio 提交、监视和管理 Storm 拓扑，就像在前面提到的 Storm 仪表板中一样。HDInsight Tools 可让你创建 C# Storm 拓扑，并包含可在群集上部署和运行的示例拓扑。
 
@@ -214,4 +216,5 @@ Storm UI 可以用于监视拓扑。
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-<!---HONumber=74-->
+
+<!---HONumber=79-->

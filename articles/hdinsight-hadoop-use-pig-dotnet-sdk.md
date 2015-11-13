@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Pig 与 .NET 配合使用 | Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Pig 与 .NET 配合使用 | Microsoft Azure"
    description="了解如何使用 .NET SDK for Hadoop 将 Pig 作业提交到 HDInsight 上的 Hadoop。"
    services="hdinsight"
    documentationCenter=".net"
@@ -9,9 +9,9 @@
    tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight" 
-   ms.date="07/24/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="10/02/2015"
+	wacn.date="11/12/2015"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
 
@@ -21,19 +21,22 @@
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。Pig 可让你通过为一系列数据转换建模，来创建 MapReduce 操作。你将学习如何使用基本 C# 应用程序将 Pig 作业提交到 HDInsight 群集。
 
+
+* [使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
+
 ##<a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要：
 
 * Azure HDInsight（HDInsight 上的 Hadoop）群集
 
-* Visual Studio 2012 或 2013
+* Visual Studio 2012、2013 或 2015
 
 ##<a id="certificate"></a>创建管理证书
 
 若要在 Azure HDInsight 上对应用程序进行身份验证，你必须创建自签名证书，将它安装在开发工作站上，同时将它上载到你的 Azure 订阅。
 
-有关如何执行此操作的说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal/#cert" target="_blank">创建自签名证书</a>。
+有关如何执行此操作的说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert)。
 
 > [AZURE.NOTE]创建证书时，请务必记下使用的友好名称供以后使用。
 
@@ -52,9 +55,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 ##<a id="create"></a>创建应用程序
 
 1. 打开 Visual Studio 2012 或 2013
-
 2. 在“文件”菜单中，选择“新建”，然后选择“项目”。
-
 3. 对于新项目，请键入或选择以下值。
 
 	<table>
@@ -75,47 +76,29 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 <th>SubmitPigJob</th>
 </tr>
 </table>
-
 4. 单击“确定”以创建该项目。
-
 5. 从“工具”菜单中选择“库包管理器”或“Nuget 包管理器”，然后选择“包管理器控制台”。
-
 6. 在控制台中运行以下命令，以安装 .NET SDK 包。
 
-		Install-Package Microsoft.Windowsazure.Management.HDInsight
+		Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
 
 7. 在“解决方案资源管理器”中，双击 **Program.cs** 将其打开。将现有代码替换为以下内容。
 
 		using System;
-		using System.Collections.Generic;
-		using System.Linq;
-		using System.Text;
-		using System.Threading.Tasks;
+		using Microsoft.Azure.Management.HDInsight.Job;
+		using Microsoft.Azure.Management.HDInsight.Job.Models;
+		using Hyak.Common;
 		
-		using System.IO;
-		using System.Threading;
-		using System.Security.Cryptography.X509Certificates;
-		
-		using Microsoft.WindowsAzure.Management.HDInsight;
-		using Microsoft.Hadoop.Client;
-		
-		namespace SubmitPigJob
+		namespace HDInsightSubmitPigJobsDotNet
 		{
 		    class Program
 		    {
 		        static void Main(string[] args)
 		        {
-		            // Get the subscription ID
-		            string subscriptionID = PromptForInput("Enter your Azure Subscription ID:");
-
-		            // Get the certificate name
-		            string certFriendlyName = PromptForInput("Enter the management certificate name:");
-		
-		            // Get the cluster name
-		            string clusterName = PromptForInput("Enter the HDInsight cluster name:");
-		
-		            // Set the folder that job status is written to
-		            string statusFolderName = @"/tutorials/usepig/status";
+					var ExistingClusterName = "<HDInsightClusterName>";
+					var ExistingClusterUri = ExistingClusterName + ".azurehdinsight.cn";
+					var ExistingClusterUsername = "<HDInsightClusterHttpUsername>";
+					var ExistingClusterPassword = "<HDInsightClusterHttpUserPassword>";
 		
 		            // The Pig Latin statements to run
 		            string queryString = "LOGS = LOAD 'wasb:///example/data/sample.log';" +
@@ -126,89 +109,32 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		                "RESULT = order FREQUENCIES by COUNT desc;" +
 		                "DUMP RESULT;";
 		
+		
+		            HDInsightJobManagementClient _hdiJobManagementClient;
+		            var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = ExistingClusterUsername, Password = ExistingClusterPassword };
+		            _hdiJobManagementClient = new HDInsightJobManagementClient(ExistingClusterUri, clusterCredentials);
+		
 		            // Define the Pig job
-		            PigJobCreateParameters myJobDefinition = new PigJobCreateParameters()
+		            var parameters = new PigJobSubmissionParameters()
 		            {
+		                UserName = ExistingClusterUsername,
 		                Query = queryString,
-		                StatusFolder = statusFolderName
 		            };
 		
-		            // Get the certificate object from certificate store using the friendly name to identify it
-		            X509Store store = new X509Store();
-		            store.Open(OpenFlags.ReadOnly);
-		            X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>().First(item => item.FriendlyName == certFriendlyName);
-		
-		            JobSubmissionCertificateCredential creds = new JobSubmissionCertificateCredential(new Guid(subscriptionID), cert, clusterName);
-		
-		            // Create a hadoop client to connect to HDInsight
-		            var jobClient = JobSubmissionClientFactory.Connect(creds);
-		
-		            // Run the MapReduce job
-		            Console.WriteLine("----- Submit the Pig job ...");
-		            JobCreationResults mrJobResults = jobClient.CreatePigJob		(myJobDefinition);
-		
-		            // Wait for the job to complete
-		            Console.WriteLine("----- Wait for the Pig job to complete ...");
-		            WaitForJobCompletion(mrJobResults, jobClient);
-		
-		            // Display the error log
-		            Console.WriteLine("----- The Pig job error log.");
-		            using (Stream stream = jobClient.GetJobErrorLogs(mrJobResults.JobId))
-		            {
-		                var reader = new StreamReader(stream);
-		                Console.WriteLine(reader.ReadToEnd());
-		            }
-		
-		            // Display the output log
-		            Console.WriteLine("----- The Pig job output log.");
-		            using (Stream stream = jobClient.GetJobOutput(mrJobResults.JobId))
-		            {
-		                var reader = new StreamReader(stream);
-		                Console.WriteLine(reader.ReadToEnd());
-		            }
-		
-		            Console.WriteLine("----- Press ENTER to continue.");
+		            System.Console.WriteLine("Submitting the Sqoop job to the cluster...");
+		            var response = _hdiJobManagementClient.JobManagement.SubmitPigJob(parameters);
+		            System.Console.WriteLine("Validating that the response is as expected...");
+		            System.Console.WriteLine("Response status code is " + response.StatusCode);
+		            System.Console.WriteLine("Validating the response object...");
+		            System.Console.WriteLine("JobId is " + response.JobSubmissionJsonResponse.Id);
+		            Console.WriteLine("Press ENTER to continue ...");
 		            Console.ReadLine();
-		        }
-		
-		        private static void WaitForJobCompletion(JobCreationResults jobResults, IJobSubmissionClient client)
-		        {
-		            JobDetails jobInProgress = client.GetJob(jobResults.JobId);
-		            while (jobInProgress.StatusCode != JobStatusCode.Completed && jobInProgress.StatusCode != JobStatusCode.Failed)
-		            {
-		                jobInProgress = client.GetJob(jobInProgress.JobId);
-		                Thread.Sleep(TimeSpan.FromSeconds(10));
-		            }
-		        }
-		
-		        private static string PromptForInput(string message)
-		        {
-		            Console.WriteLine(message);
-		            return Console.ReadLine();
 		        }
 		    }
 		}
 
-
-7. 保存文件。
-
-##<a id="run"></a>运行应用程序
-
-按 **F5** 启动应用程序。出现提示时，请输入“订阅 ID”、“证书友好名称”和“HDInsight 群集名称”。应用程序将在运行时生成几行信息，末尾是与下面类似的内容。
-
-```
------ The Pig job output log.
-(TRACE,816)
-(DEBUG,434)
-(INFO,96)
-(WARN,11)
-(ERROR,6)
-(FATAL,2)
-
------ Press ENTER to continue.
-```
-
-按 **ENTER** 退出应用程序。
+7. 按 **F5** 启动应用程序。
+8. 按 **ENTER** 退出应用程序。
 
 ##<a id="summary"></a>摘要
 
@@ -218,12 +144,13 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 有关 HDInsight 中的 Pig 的一般信息。
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息。
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+[preview-portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=79-->
