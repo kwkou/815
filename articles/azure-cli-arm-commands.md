@@ -1,47 +1,53 @@
 <properties
-	pageTitle="将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用 | Microsoft Azure"
-	description="了解如何使用适用于 Mac、Linux 和 Windows 的 Azure CLI，在 Azure CLI arm 模式下管理 Azure 资源。"
-	services="virtual-machines"
+	pageTitle="配合使用 Azure CLI 和资源管理器 | Windows Azure"
+	description="了解如何使用适用于 Mac、Linux 和 Windows 的 Azure CLI，在 Azure 资源管理器模式下管理 Azure 资源。"
+	services="virtual-machines,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor="tysonn"/>
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="multiple"
-	wacn.date="09/15/2015"
-	ms.date="06/09/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/12/2015" />
 
-# 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用
+# 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用
 
-本主题介绍如何在 **arm** 模式下使用 Azure 命令行界面 (Azure CLI)，在 Mac、Linux 和 Windows 计算机的命令行中上创建、管理和删除服务。你可以使用 Azure SDK 的各种库、PowerShell 和 Azure 门户执行相同的任务。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-command-line-tools)
 
-Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库等 - 作为单个可部署单元。然后，可以通过一个协调的操作为应用程序部署、更新或删除所有资源。在部署的 JSON 模板中描述组资源，然后，可以针对不同的环境（如测试、过渡和生产）使用该模板。
+本文介绍如何在 Azure 资源管理器模式下使用 Azure 命令行接口 (Azure CLI)，在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以配合使用 Azure SDK 的各种库及 Azure PowerShell 来执行与使用 Azure 预览门户相同的任务。
+
+Azure 资源管理器可让你创建一组资源 - 虚拟机、网站、数据库等 - 作为单个可部署单元。然后，可以通过一个协调的操作为应用程序部署、更新或删除所有资源。在部署的 JSON 模板中描述组资源，然后，可以针对不同的环境（如测试、过渡和生产）使用该模板。
+
+## 本文的讨论范围
+
+本文提供了用于资源管理器部署模型的常用 Azure CLI 命令的语法和选项。它并不是完整的参考，并且你的 CLI 版本可能会显示某些不同的命令或参数。要在资源管理器模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
+
+可选参数显示在方括号中（例如，[参数]）。其他所有参数都是必需的。
+
+除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。-v 参数提供详细输出，而 -vv 参数提供更详细的输出。--json 选项将以原始的 json 格式输出结果。使用 --json 开关的情况很常见，在获取和了解返回资源信息、状态和日志的 Azure CLI 操作的结果以及使用模板时，该开关非常重要。你可能想要安装 JSON 分析器工具（如 **jq** 或 **jsawk**）或使用你偏爱的语言库。
 
 ## 命令性和声明性方法
 
-与[服务管理模式 (**asm**)](/documentation/articles/virtual-machines-command-line-tools) 一样，Azure CLI 的 **arm** 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
+与 [Azure 服务管理模式](/documentation/articles/virtual-machines-command-line-tools)一样，Azure CLI 的 **arm** 模式可提供命令让你在命令行上强制创建资源。例如，如果键入 `azure group create <groupname> <location>`，则会要求 Azure 创建资源组；如果键入 `azure group deployment create <resourcegroup> <deploymentname>`，则会指示 Azure 创建包含任意项数的部署，并将其放在组中。由于每种类型的资源都有强制命令，你可以将这些命令链接在一起，以创建相当复杂的部署。
 
-但是，使用用于描述资源组的资源组_模板_是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅<!-- [-->Azure 资源组概述<!--](/documentation/articles/resource-groups-overview)-->。
-
-> [AZURE.NOTE]除了下面记录的特定于命令的选项外，还有三个可用于查看详细输出（例如请求选项和状态代码）的选项。-v 参数提供详细输出，而 -vv 参数提供更详细的输出。--json 选项以原始 json 格式输出结果，对于脚本编程方案非常有用。
->
-> 使用 --json 开关的情况很常见，在获取和了解返回资源信息、状态和日志的 Azure CLI 操作的结果以及使用模板时，该开关非常重要。你可能想要安装 JSON 分析器工具（如 **jq** 或 **jsawk**）或使用你偏爱的语言库。
+但是，使用用于描述资源组的资源组_模板_是一种强大得多的声明性方法，它允许你针对（几乎）任何目的自动完成包含（几乎）任意数量的资源的复杂部署。使用模板时，唯一的强制性命令是单一部署。有关模板、资源和资源组的一般概述，请参阅 [Azure 资源组概述](resource-groups-overview)。
 
 ##用法要求
 
-对 Azure CLI 使用 **arm** 模式的设置要求如下：
+对配合使用资源管理器模式和 Azure CLI 的设置要求如下：
 
-- 一个 Azure 帐户（[在此处获取试用版](/pricing/1rmb-trial/)）
+- 一个 Azure 帐户（[在此处获取免费试用版](/pricing/1rmb-trial/)）
 - [安装 Azure CLI](/documentation/articles/xplat-cli-install)
 - [配置 Azure CLI](/documentation/articles/xplat-cli-connect) 以使用 Azure Active Directory 标识或服务主体
 
 获取帐户并安装 Azure CLI 后，你必须
 
-- 通过键入 `azure config mode arm` 切换到 **arm** 模式。
+- 通过键入 `azure config mode arm` 切换到资源管理器模式。
 - 出现提示时，通过键入 `azure login` 并使用你的工作或学校标识登录到 Azure 帐户
 
-现在，键入 `azure` 以查看以下部分中介绍的顶级命令的列表。
 
 ## azure account：管理帐户信息和发布设置
 该工具使用你的 Azure 订阅信息连接到你的帐户。可以从 Azure 门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，该工具会将此设置用于后续操作。你只需导入你的发布设置一次。
@@ -936,7 +942,8 @@ Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库�
  	-l, --lb-name <lb-name>                the name of the load balancer
  	-s, --subscription <subscription>      the subscription identifier
 
-<BR> network lb address-pool delete [选项] <resource-group> <lb-name> <name>
+<BR> 
+        network lb address-pool delete [选项] <resource-group> <lb-name> <name>
 
 从负载平衡器中删除后端 IP 池范围资源。
 
@@ -1241,7 +1248,22 @@ Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库�
 	info:    network public-ip create command OK
 
 
-参数选项：-h、--help：输出用法信息；-v、--verbose：使用详细输出；--json：使用 json 输出；-g、--resource-group <resource-group> 资源组的名称；-n、--name <name> 公共 IP 的名称；-l、--location <location> 位置；-d、--domain-name-label <domain-name-label> 域名标签。这会将 DNS 设置为 <domain-name-label>.<location>.chinacloudapp.cn -a, --allocation-method <allocation-method> 分配方法 [Static][Dynamic] -i, --idletimeout <idletimeout> 空闲超时（以分钟为单位）；-f、--reverse-fqdn <reverse-fqdn> 反向 FQDN；-t、--tags <tags> 标记列表。可以是多个。采用“名称=值”格式。名称是必需的，值是可选的。例如，-t tag1=value1;tag2 -s, --subscription <subscription> 订阅标识符 <br>
+参数选项：
+	-h、--help：输出用法信息；
+	-v、--verbose：使用详细输出；
+	--json：使用 json 输出；
+	-g、--resource-group <resource-group> 资源组的名称；
+	-n、--name <name> 公共 IP 的名称；
+	-l、--location <location> 位置；
+	-d、--domain-name-label <domain-name-label> 
+	域名标签。这会将 DNS 设置为 <domain-name-label>.<location>.chinacloudapp.cn 
+	-a, --allocation-method <allocation-method> 分配方法 [Static][Dynamic] 
+	-i, --idletimeout <idletimeout> 空闲超时（以分钟为单位）；
+	-f、--reverse-fqdn <reverse-fqdn> 反向 FQDN；
+	-t、--tags <tags>
+	 标记列表。可以是多个。采用“名称=值”格式。名称是必需的，值是可选的。例如，-t tag1=value1;tag2 
+	 -s, --subscription <subscription> 订阅标识符 
+ <br>
 
 	network public-ip set [options] <resource-group> <name>
 更新现有的公共 IP 资源的属性。在以下示例中，我们已将公共 IP 地址从动态更改为静态。
@@ -1282,7 +1304,9 @@ Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库�
 	--no-tags                                    remove all existing tags
 	-s, --subscription <subscription>            the subscription identifier
 
-<br> network public-ip list [选项] <resource-group> 列出资源组中的所有公共 IP 资源。
+<br>
+        network public-ip list [选项] <resource-group>
+ 列出资源组中的所有公共 IP 资源。
 
 	azure network public-ip list -g myresourcegroup
 
@@ -1302,7 +1326,9 @@ Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库�
 	--json                                 use json output
 	-g, --resource-group <resource-group>  the name of the resource group
 	-s, --subscription <subscription>      the subscription identifier
-<BR> network public-ip show [选项] <resource-group> <name> 显示资源组中公共 IP 资源的公共 IP 属性。
+<BR> 
+         network public-ip show [选项] <resource-group> <name>
+	 显示资源组中公共 IP 资源的公共 IP 属性。
 
 	azure network public-ip show -g myresourcegroup -n mytestpublicip
 
@@ -1732,4 +1758,4 @@ Azure 资源管理可让你创建一组资源 - 虚拟机、网站、数据库�
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=69-->
+<!---HONumber=79-->

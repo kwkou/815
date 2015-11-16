@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用资源管理器模板创建 Windows 虚拟机"
+	pageTitle="使用模板创建 VM | Windows Azure"
 	description="将资源管理器模板与 Azure PowerShell 或 Azure CLI 配合使用，以轻松创建新的 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -8,22 +8,20 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
-	ms.service="virtual-machines"	
-	ms.date="07/28/2015"
-	wacn.date="09/15/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="10/08/2015"
+	wacn.date="11/12/2015"/>
 
 # 使用资源管理器模板创建 Windows 虚拟机
 
-你可以通过将资源管理器模板与 Azure PowerShell 或 Azure CLI 配合使用，轻松创建新的基于 Windows 的 Azure 虚拟机。此模板将在新资源组中包含单个子网的新虚拟网络上创建运行 Windows 的单个虚拟机。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。你无法使用经典部署模型创建此资源。
+
+你可以将资源管理器模板与 Azure PowerShell 配合使用，轻松创建新的基于 Windows 的 Azure 虚拟机。此模板将在新资源组中包含单个子网的新虚拟网络上创建运行 Windows 的单个虚拟机。
 
 ![](./media/virtual-machines-create-windows-powershell-resource-manager-template/windowsvm.png)
- 
-在深入到下一步之前，请确保你已安装 Azure、PowerShell 和 Azure CLI 并已准备就绪。
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
-
-[AZURE.INCLUDE [xplat-getting-set-up-arm](../includes/xplat-getting-set-up-arm.md)]
+[AZURE.INCLUDE [powershell 预览](../includes/powershell-preview-inline-include.md)]
 
 ## 通过 Azure PowerShell 使用资源管理器模板创建 Windows 虚拟机
 
@@ -65,9 +63,9 @@
             "type": "string",
             "defaultValue": "2012-R2-Datacenter",
             "allowedValues": [
-                "2008-R2-SP1", 
-                "2012-Datacenter", 
-                "2012-R2-Datacenter", 
+                "2008-R2-SP1",
+                "2012-Datacenter",
+                "2012-R2-Datacenter",
                 "Windows-Server-Technical-Preview"
             ],
             "metadata": {
@@ -77,11 +75,11 @@
     },
     "variables": {
         "location": "China North",
-        "imagePublisher": "MicrosoftWindowsServer", 
-        "imageOffer": "WindowsServer", 
+        "imagePublisher": "MicrosoftWindowsServer",
+        "imageOffer": "WindowsServer",
         "OSDiskName": "osdiskforwindowssimple",
         "nicName": "myVMNic",
-        "addressPrefix": "10.0.0.0/16", 
+        "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "storageAccountType": "Standard_LRS",
@@ -90,10 +88,10 @@
         "vmStorageAccountContainerName": "vhds",
         "vmName": "MyWindowsVM",
         "vmSize": "Standard_D1",
-        "virtualNetworkName": "MyVNET",        
+        "virtualNetworkName": "MyVNET",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]"
-    },    
+    },
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
@@ -207,7 +205,7 @@
             }
         }
     ]
-	} 
+	}
 
 
 ### 步骤 2：使用模板创建虚拟机
@@ -218,10 +216,10 @@
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as China North>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
-当你运行 **New-AzureResourceGroupDeployment** 命令时，系统会提示你提供 JSON 文件的 "parameters" 节中的参数值。指定所有参数值后，命令会创建资源组和虚拟机。
+当你运行 **New-AzureRmResourceGroupDeployment** 命令时，系统会提示你提供 JSON 文件的“parameters”节中的参数值。指定所有参数值后，命令会创建资源组和虚拟机。
 
 下面是一个示例。
 
@@ -229,12 +227,12 @@
 	$RGName="TestRG"
 	$locname="China North"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json"
-	New-AzureResourceGroup –Name $RGName –Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup –Name $RGName –Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 你将看到类似于下面的内容：
 
-	cmdlet New-AzureResourceGroupDeployment at command pipeline position 1
+	cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
 	Supply values for the following parameters:
 	(Type !? for Help.)
 	newStorageAccountName: newsaacct
@@ -251,8 +249,8 @@
 	VERBOSE: 10:57:45 AM - Resource Microsoft.Compute/virtualMachines 'MyWindowsVM' provisioning status is running
 	VERBOSE: 10:57:45 AM - Resource Microsoft.Network/networkInterfaces 'myVMNic' provisioning status is succeeded
 	VERBOSE: 11:01:59 AM - Resource Microsoft.Compute/virtualMachines 'MyWindowsVM' provisioning status is succeeded
-	
-	
+
+
 	DeploymentName    : TestDeployment
 	ResourceGroupName : TestRG
 	ProvisioningState : Succeeded
@@ -267,53 +265,10 @@
 	                    adminPassword    SecureString
 	                    dnsNameForPublicIP  String                     contoso9875
 	                    windowsOSVersion  String                     2012-R2-Datacenter
-	
+
 	Outputs           :
 
 现在，你已在新的资源组中创建了名为 MyWindowsVM 的新 Windows 虚拟机。
-
-## 通过 Azure CLI 使用资源管理器模板创建 Windows 虚拟机
-
-按照以下步骤，通过 Azure CLI 命令使用 Github 模板存储库中的资源管理器模板创建 Windows 虚拟机。
-
-填写资源组名称中和 Azure 位置（例如，westus 表示中国北部，请删除中括号），然后运行以下命令。
-
-	azure group create [resource group] [location]
-	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json [resource group] firstdeployment
-
-下面是模板的 Azure CLI 命令集示例。
-
-	azure group create testrg westus
-	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json testrg firstdeployment
-
-你将看到类似于下面的内容：
-
-	azure group create testrg westus
-	info:    Executing command group create
-	+ Getting resource group testrg                                             
-	+ Creating resource group testrg                                            
-	info:    Created resource group testrg
-	data:    Id:                  /subscriptions/2c73c582-4b11-4800-96f9-a9bd790a861c/resourceGroups/testrg
-	data:    Name:                testrg
-	data:    Location:            westus
-	data:    Provisioning State:  Succeeded
-	data:    Tags: 
-	data:    
-	info:    group create command OK
-
-	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-simple-windows-vm/azuredeploy.json testrg firstdeployment
-	info:    Executing command group deployment create
-	info:    Supply values for the following parameters
-	newStorageAccountName: newstorage
-	adminUsername: ops
-	adminPassword: Pa$$W0rd1
-	dnsNameForPublicIP: contoso
-	windowsOSVersion: 2012-R2-Datacenter
-	+ Initializing template configurations and parameters                          
-	+ Creating a deployment                                                        
-	info:    Created template deployment "firstdeployment"
-	+ Registering providers                                                        
-
 
 ## 其他资源
 
@@ -329,4 +284,4 @@
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-<!---HONumber=69-->
+<!---HONumber=79-->

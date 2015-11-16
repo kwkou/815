@@ -1,10 +1,25 @@
-<properties pageTitle="如何在 Azure 上使用 docker-machine" description="演示如何在 Azure 上启动和运行 Ubuntu 上的 Docker 计算机。" services="virtual-machines" documentationCenter="virtual-machines" authors="squillace" manager="timlt" editor="tysonn"/>
+<properties
+   pageTitle="将 docker-machine 与 Azure 起使用 | Windows Azure"
+   description="演示如何使用经典部署模型在 Azure 上启动和运行 Ubuntu 上的 Docker 计算机。"
+   services="virtual-machines"
+   documentationCenter="virtual-machines"
+   authors="squillace"
+   manager="timlt"
+   editor="tysonn"
+   tags="azure-service-management"/>
 
-<tags ms.service="virtual-machines" ms.date="05/25/2015" wacn.date="08/29/2015"/>
+<tags
+   ms.service="virtual-machines"
+   ms.date="09/22/2015"
+   wacn.date="11/12/2015"/>
 
 # 如何将 docker-machine 与 Azure 一起使用
 
 本主题介绍如何将 [Docker](https://www.docker.com/) 与[计算机](https://github.com/docker/machine)和 [Azure CLI](https://github.com/Azure/azure-xplat-cli) 结合使用来创建 Azure 虚拟机，以便快速轻松地从运行 Ubuntu 的计算机管理 Linux 容器。为了演示，本教程将说明如何同时部署 [busybox Docker Hub 映像](https://registry.hub.docker.com/_/busybox/)和 [nginx Docker Hub 映像](https://registry.hub.docker.com/_/nginx/)，并配置容器将 Web 请求路由到 nginx 容器。（Docker **计算机**文档介绍如何针对其他平台修改这些说明。）
+
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 完成本教程有一些先决条件。你将需要安装以下项：
 
@@ -194,4 +209,6 @@
 [Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
-<!---HONumber=67-->
+ 
+
+<!---HONumber=79-->

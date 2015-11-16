@@ -1,19 +1,30 @@
-<properties pageTitle="如何在 Azure VM 上安装和配置 Symantec Endpoint Protection" description="介绍在 Azure 中的 VM 上安装和配置 Symantec Endpoint Protection"  services="virtual machines"  documentationCenter="" authors="kathydav" manager="timlt" />
-<tags  
-	ms.service="virtual-machines"
-	ms.date="07/14/2015"
-	wacn.date="08/29/2015"/>
+<properties
+	pageTitle="在 VM 上安装 Symantec Endpoint Protection | Windows Azure"
+	description="了解如何在使用经典部署模型创建的新的或现有的 Azure VM 上安装和配置 Symantec Endpoint Protection 安全扩展插件。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="dsk-2015"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
-#如何在 Azure VM 上安装和配置 Symantec Endpoint Protection
+<tags
+	ms.service="virtual-machines"
+	ms.date="10/14/2015"
+	wacn.date="11/12/2015"/>
+
+# 如何在 Windows VM 上安装和配置 Symantec Endpoint Protection
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 本文演示了如何在运行 Windows Server 的新的或现有虚拟机 (VM) 上安装和配置 Symantec Endpoint Protection。这是完整的客户端，其中包括病毒和间谍软件防护、防火墙和入侵防御等服务。
 
 该客户端通过 VM 代理作为安全扩展插件进行安装。在新虚拟机上，将随终结点客户端一起安装代理。在未安装代理的现有虚拟机上，将需要先下载并安装代理。本文介绍这两种情况。
 
-<!--
-If you have an existing subscription from Symantec for an on-premises solution, you can use it to protect your Azure virtual machines. If you're not a customer yet, you can sign up for a trial subscription. For more information about this solution, see [Symantec Endpoint Protection on Microsoft's Azure platform](http://go.microsoft.com/fwlink/p/?LinkId=403942). This page also provides links to licensing information and alternative instructions for installing the client if you're already a Symantec customer.
--->
-##在新虚拟机上安装 Symantec Endpoint Protection
+如果你拥有针对本地解决方案的 Symantec 现有订阅，那么可以用它来保护你的 Azure 虚拟机。如果你还不是 Trend Micro 的客户，那么可以注册试用订阅。有关此解决方案的详细信息，请参阅[Microsoft 的 Azure 平台上的 Symantec Endpoint Protection][Symantec]。如果你已经是一名 Symantec 客户，则此页还包含指向安装客户端的许可信息和说明的链接。
+
+## 在新虚拟机上安装 Symantec Endpoint Protection
 
 使用**“从库中”**选项创建虚拟机时，[Azure 管理门户][Portal]允许安装 VM 代理和 Symantec 安全扩展插件。如果要创建的是单个虚拟机，那么可以使用这种方法轻松地添加来自 Symantec 的保护。
 
@@ -49,7 +60,9 @@ If you have an existing subscription from Symantec for an on-premises solution, 
 
 如果 **write-host** 命令显示 **True**，则已安装 VM 代理。如果该命令显示 **False**，则请参阅 Azure 博客文章 [VM 代理和扩展 - 第 2 部分][Agent]中的说明和下载链接。
 
-如果已安装 VM 代理，则运行以下命令安装 Symantec Endpoint Protection 代理。$Agent = Get-AzureVMAvailableExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection
+如果已安装 VM 代理，则运行以下命令安装 Symantec Endpoint Protection 代理。
+
+	$Agent = Get-AzureVMAvailableExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection
 
 	Set-AzureVMExtension -Publisher Symantec –Version $Agent.Version -ExtensionName SymantecEndpointProtection -VM $vm | Update-AzureVM
 
@@ -60,6 +73,7 @@ If you have an existing subscription from Symantec for an on-premises solution, 
 3.	在**“状态 - Symantec Endpoint Protection”**窗口的**“状态”**选项卡中，根据需要应用更新或重启。
 
 ## 其他资源
+
 [如何登录到运行 Windows Server 的虚拟机][Logon]
 
 [Azure VM 扩展和功能][Ext]
@@ -71,10 +85,13 @@ If you have an existing subscription from Symantec for an on-premises solution, 
 [Portal]: http://manage.windowsazure.cn
 
 [Create]: /documentation/articles/virtual-machines-windows-tutorial
+
 [PS]: /documentation/articles/powershell-install-configure
+
 [Agent]: http://go.microsoft.com/fwlink/p/?LinkId=403947
 
 [Logon]: /documentation/articles/virtual-machines-log-on-windows-server
+
 [Ext]: https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 
-<!---HONumber=67-->
+<!---HONumber=79-->
