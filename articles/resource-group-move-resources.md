@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="08/20/2015" 
-	wacn.date="10/3/2015"/>
+	ms.date="09/08/2015" 
+	wacn.date="11/12/2015"/>
 
 # 将资源移动到新的资源组或订阅中
 
@@ -34,13 +34,15 @@
 就目前而言，支持移动到新资源组和订阅的服务是：
 
 - API 管理
+- Azure DocumentDB
 - Azure 搜索
+- Azure Web Apps（存在一些[限制](/documentation/articles/app-service-move-resources)）
 - Data Factory
 - 密钥保管库
 - Mobile Engagement
 - 操作见解
 - Redis Cache
-- Azure Web Apps（一些应用[限制](/documentation/articles/app-service-move-resources)）
+- SQL 数据库
 
 支持移到新的资源组而非新的订阅的服务包括：
 
@@ -78,7 +80,7 @@
 
     POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
-将 **{source-subscription-id}** 和 **{source-resource-group-name}** 替换为当前包含您想要移动的资源的订阅和资源组。将 **2015-01-01** 用于 {api-version}。
+将 **{source-subscription-id}** 和 **{source-resource-group-name}** 替换为当前包含你想要移动的资源的订阅和资源组。将 **2015-01-01** 用于 {api-version}。
 
 在请求中，包括一个能够定义您想要移动的目标资源组和资源的 JSON 对象。
 
@@ -94,7 +96,7 @@
 ## 后续步骤
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
 - [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
-<!-- - [使用 Azure 门户管理资源](/documentation/articles/resource-group-portal)-->
+- [使用 Azure 门户管理资源](/documentation/articles/resource-group-portal)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
-<!---HONumber=71-->
+<!---HONumber=79-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="将 Microsoft Azure Management API 证书上载到门户" 
-	description="了解如何将 Management API 证书上载到 Microsoft Azure 中" 
+	pageTitle="将 Windows Azure Management API 证书上载到门户" 
+	description="了解如何将 Management API 证书上载到 Windows Azure 中" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="na" 
-	ms.date="07/20/2015"
-	wa.date="10/3/2015"/>
+	ms.date="10/01/2015"
+	wa.date="11/12/2015"/>
 
 
 # 上载 Azure Management API 管理证书
@@ -19,9 +19,9 @@
 
 >[AZURE.WARNING]请小心！ 这些类型的证书允许任何使用它们进行身份验证的人管理与它们相关联的订阅。
 
-有关 Azure 证书（包括创建自签名证书）的详细信息，如果您需要便可[使用](/documentation/articles/cloud-services-certs-create#what-are-management-certificates)。
+有关 Azure 证书（包括创建自签名证书）的详细信息，如果您需要便可[使用](cloud-services/cloud-services-certs-create.md#what-are-management-certificates)。
 
-您还可以使用 [Azure Active Directory](/home/features/identity/) 对客户端代码进行身份验证，以用于自动化目的。
+您还可以使用 [Azure Active Directory](/home/features/active-directory/) 对客户端代码进行身份验证，以用于自动化目的。
 
 ## 上载管理证书
 
@@ -46,6 +46,6 @@
 
 ## 后续步骤
 
-现在，您已经拥有与订阅关联的管理证书，您可以（在本地安装匹配的证书之后）以编程的方式连接到 [Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)，并使也和该订阅相关联的各种 Azure 资源自动化。
+现在，您已经拥有与订阅关联的管理证书，您可以（在本地安装匹配的证书之后）以编程的方式连接到 [Service Management REST API](https://msdn.microsoft.com/library/azure/ee460799.aspx)，并使也和该订阅相关联的各种 Azure 资源自动化。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

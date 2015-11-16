@@ -1,26 +1,29 @@
 <properties
-	pageTitle="安装适用于 Mac、Linux 和 Windows 的 Azure CLI"
+	pageTitle="安装 Azure 命令行界面 | Windows Azure"
 	description="安装适用于 Mac、Linux 和 Windows 的 Azure CLI 即可使用 Azure 服务"
-	editor="tysonn"
+	editor=""
 	manager="timlt"
 	documentationCenter=""
 	authors="dlepow"
-	services=""/>
+	services=""
+	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 	ms.service="multiple"
-	ms.date="06/02/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="09/18/2015"
+	wacn.date="11/12/2015"/>
 
 # 安装 Azure CLI
 
-本文档介绍如何安装 Azure 命令行界面 (Azure CLI)。Azure CLI 提供一组基于 shell 的开源命令，用于在 Microsoft Azure 上管理资源。
+本文介绍如何安装 Azure 命令行界面 (Azure CLI)。Azure CLI 提供一组基于 shell 的开源命令，用于在 Windows Azure 中创建和管理资源。
 
-> [AZURE.NOTE]如果你已安装 Azure CLI，可将其与你的 Azure 资源连接。有关详细信息，请参阅[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect#configure)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型来创建和管理资源。
 
 Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。它是使用 [Azure SDK for Node](https://github.com/azure/azure-sdk-for-node) 实现的，并根据 Apache 2.0 许可证发布。项目存储库位于 [https://github.com/azure/azure-xplat-cli](https://github.com/azure/azure-xplat-cli)。
 
-<a id="install"></a>
+> [AZURE.NOTE]如果你已安装 Azure CLI，可将其与你的 Azure 资源连接。有关详细信息，请参阅[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/#configure)。
+
+<a id="install">
 ## 如何安装 Azure CLI
 
 可通过多种方式来安装 Azure CLI。
@@ -29,7 +32,7 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 2. 安装 Node.js 和 npm，然后使用 **npm install** 命令。
 3. 以 Docker 容器方式运行 Azure CLI
 
-安装了 Azure CLI 之后，你将可以从命令行界面（Bash、终端、命令提示符）使用 **azure** 命令访问 Azure CLI 命令。
+安装了 Azure CLI 之后，你将可以从命令行界面（Bash、终端、命令提示符等）使用 **azure** 命令访问 Azure CLI 命令。
 
 ## 使用安装程序
 
@@ -42,7 +45,7 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 * [Linux 安装程序][linux-installer]
 
 
-## 安装并使用 Node.js 和 npm
+## 安装和使用 Node.js 与 npm
 
 如果 Node.js 已安装在你的系统上，则使用以下命令安装 Azure CLI：
 
@@ -82,7 +85,7 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 
 ### 在 Windows 和 Mac OS X 上安装 node.js 和 npm
 
-你可以使用 [Nodejs.org](https://nodejs.org/download/) 中的安装程序在 Windows 和 OS X 上安装 node.js 和 npm。你可能需要重新启动计算机来完成安装。打开命令提示符并键入相应内容，查看 node 和 npm 是否已正常安装
+你可以使用 [Nodejs.org](https://nodejs.org/download/) 中的安装程序在 Windows 和 OS X 上安装 node.js 和 npm。你可能需要重新启动计算机来完成安装。打开命令窗口并键入相应命令，查看 node 和 npm 是否已正确安装
 
 	npm -v
 
@@ -90,7 +93,7 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 
 	npm install -g azure-cli
 
-安装了 Azure CLI 之后，你将可以从命令行用户接口使用 **azure** 命令访问 Azure CLI 命令。在安装结束时，你应该会看到如下内容：
+在安装结束时，你应该会看到如下内容：
 
 	azure-cli@0.8.0 ..\node_modules\azure-cli
 	|-- easy-table@0.0.1
@@ -114,31 +117,32 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 
 ## 使用 Docker 容器
 
-在 Docker 主机中，运行：```
+在 Docker 主机中，运行：
+```
 	docker run -it microsoft/azure-cli
 ```
 
 ## 执行 Azure CLI 命令
 
-安装 Azure CLI 以后，你就可以从命令行用户接口（Bash、终端、cmd.exe 等）使用 **azure** 命令访问 Azure CLI 命令。例如，若要在 Windows 中执行 help 命令，请使用以下管理员权限启动命令提示符 (cmd.exe)：```
-	c:\> azure help
+安装了 Azure CLI 之后，你将可以从命令行用户界面（Bash、终端、命令提示符等）使用 **azure** 命令访问 Azure CLI 命令。例如，若要在 Windows 中执行 help 命令，请启动命令窗口并键入以下命令：
+
+```
+	c:> azure help
 ```
 
 你现在已准备就绪！ 接下来你可以[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)并开始使用 **azure** 命令。
 
+
 <a id="additional-resources">
 ## 其他资源
 
-* [使用带服务管理（或 ASM 模式）命令的 Azure CLI][cliasm]
+* [将 Azure CLI 与资源管理命令配合使用][cliarm]
 
-* [使用带资源管理（或 ARM 模式）命令的 Azure CLI][cliarm]
+* [将 Azure CLI 与服务管理（经典）命令配合使用][cliasm]
 
-* 有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
+* 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
 
 * 如果你在使用 Azure CLI 或 Azure 时遇到问题，请访问 [Azure 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home)。
-
-* 有关 Azure 的详细信息，请参阅 [http://www.windowsazure.cn/](http://www.windowsazure.cn)。
-
 
 
 
@@ -147,4 +151,5 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 [linux-installer]: http://go.microsoft.com/fwlink/?linkid=253472
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
 [cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
-<!---HONumber=67-->
+
+<!---HONumber=79-->

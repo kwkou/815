@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="08/20/2015"
-   wacn.date="10/3/2015"/>
+   ms.date="09/15/2015"
+   wacn.date="11/12/2015"/>
 
 # 了解资源管理器部署和经典部署
 
@@ -18,7 +18,7 @@
 
 您也可能知道经典部署模型就是服务管理模型。
 
-本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md)。
 
 许多资源可同时在经典模型和资源管理器中正常运行，不会出现问题。即使是在经典模型中创建的，这些资源也能完全支持资源管理器。您可以在无需任何顾虑或额外努力的情况下转换到资源管理器。
 
@@ -30,27 +30,27 @@
 
 对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。
 
-若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](/documentation/articles/virtual-machines-azure-resource-manager-architecture)。
+若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](virtual-machines/virtual-machines-azure-resource-manager-architecture.md)。
 
 ## 资源管理器的特性
 
 通过资源管理器创建的资源具备以下共同特性：
 
 - 通过以下方法之一创建：
-<!--
-  - [预览门户](https://portal.azure.com/)。
+
+  - [预览门户](https://manage.windowsazure.cn)。
 
         ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
 
         For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
--->
+
   - PowerShell 命令在 **AzureResourceManager** 模式下运行。
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
 
-  - 适用于 REST 操作的 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
+  - 适用于 REST 操作的 [Azure 资源管理器 REST API](https://msdn.microsoft.com/library/azure/dn790568.aspx)。
   - Azure CLI 命令在 **arm** 模式下运行。
 
             azure config mode arm
@@ -65,7 +65,7 @@
 
 - 通过以下方法之一创建：
 
-  - [Azure 门户](https://manage.windowsazure.com)
+  - [Azure 门户](https://manage.windowsazure.cn)
 
         ![Azure portal](./media/resource-manager-deployment-model/azure-portal.png)
 
@@ -77,7 +77,7 @@
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
 
-  - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。
+  - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/library/azure/ee460799.aspx)。
   - Azure CLI 命令在 **asm** 或默认模式下运行。
 - 资源类型的名称中包括 **(经典)**。下图显示了**存储帐户 (经典)** 类型。
 
@@ -97,7 +97,7 @@
 - 您可以将标记应用到资源，以按照逻辑组织订阅中的所有资源。
 
 
-在资源管理器之前，通过经典部署创建的每个资源不存在于资源组中。当添加资源管理器时，所有资源都追溯性地添加到默认资源组。如果您现在通过经典部署创建资源，资源会自动在空资源组中创建，即使在部署时未指定该资源组也是如此。但是，仅存在于资源组内并不意味着资源已转换为资源管理器模型。如果资源是通过经典部署创建的，您必须继续通过经典操作对其进行操作。
+在资源管理器之前，通过经典部署创建的每个资源不存在于资源组中。当添加资源管理器时，所有资源都追溯性地添加到默认资源组。如果你现在通过经典部署创建资源，资源将自动在该服务的默认资源组中创建，即使在部署时未指定该资源组也是如此。但是，仅存在于资源组内并不意味着资源已转换为资源管理器模型。对于虚拟机、存储空间和虚拟网络，如果资源是通过经典部署创建的，则你必须继续通过经典操作对其进行操作。
 
 您可以将资源移到不同的资源组，并将新资源添加到现有的资源组。因此，您的资源组可以包含通过资源管理器和经典部署创建的混合资源。此资源组合会产生意外的结果，因为资源不支持相同的操作。
 
@@ -143,15 +143,15 @@
 - 使用资源管理器部署模型部署的虚拟机必须包含在虚拟网络中。
 - 使用经典部署模型部署的虚拟机不一定要包括在虚拟网络中。
 
-有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅<!-- [-->VM 操作的等效资源管理器和服务管理命令<!--](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)-->。
+有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](./virtual-machines/xplat-cli-azure-manage-vm-asm-arm.md)。
 
-有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md)。
 
-若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/virtual-networks-arm-asm-s2s)。
+若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](./virtual-network/virtual-networks-arm-asm-s2s.md)。
 
 ## 后续步骤
 
 - 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要查看用于部署模板的命令，请参阅<!--[-->使用 Azure 资源管理器模板部署应用程序<!--](/documentation/articles/resource-group-template-deploy)-->。
+- 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

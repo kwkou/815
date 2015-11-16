@@ -1,5 +1,5 @@
 <properties
-   pageTitle="重试服务指南 | Microsoft Azure"
+   pageTitle="重试服务指南 | Windows Azure"
    description="设置重试机制的服务指南。"
    services=""
    documentationCenter="na"
@@ -11,9 +11,11 @@
 <tags
    ms.service="best-practice"
    ms.date="04/28/2015"
-   wacn.date="10/3/2015"/>
+   wacn.date="11/12/2015"/>
 
 # 重试服务指南
+
+![](./media/best-practices-retry-service-specific/pnp-logo.png)
 
 ## 概述
 
@@ -25,7 +27,7 @@
 
 | **服务** | **重试功能** | **策略配置** | **范围** | **遥测功能** |
 |---------------------------------------|-----------------------------------------|------------------------------|--------------------------------------------------|------------------------
-| **[AzureStorage](#azure-storage-retry-guidelines)** | 客户端原生 | 编程 | 客户端和各项操作 | TraceSource |
+| **[AzureStorage](#azure-storage-retry-guidelines)** | 客户端原生 | 编程 | 客户端؜ ؜ ؜ 和各项操作 | TraceSource |
 | **[使用 Entity Framework 的 SQL 数据库](#sql-database-using-entity-framework-6-retry-guidelines)** | 客户端原生 | 编程 | 每个应用域均为全局 | 无 |
 | **[使用 ADO.NET 的 SQL 数据库](#sql-database-using-ado-net-retry-guidelines)** | Topaz* | 声明性和编程 | 各个语句或代码块 | “自定义” |
 | **[服务总线](#service-bus-retry-guidelines)** | 客户端原生 | 编程 | 命名空间管理器、消息工厂和客户端 | ETW |
@@ -33,7 +35,7 @@
 | **[DocumentDB](#documentdb-pre-release-retry-guidelines)** | 服务原生 | 不可配置 | 全局 | TraceSource |
 | **[搜索](#search-retry-guidelines)** | Topaz*（使用自定义检测策略） | 声明性和编程 | 代码块 | “自定义” |
 | **[Active Directory](#azure-active-directory-retry-guidelines)** | Topaz*（使用自定义检测策略） | 声明性和编程 | 代码块 | “自定义” |
-*Topaz 是<a href="http://msdn.microsoft.com/library/dn440719.aspx">企业库 6.0</a> 中包含的临时故障处理应用程序块的易记名称。对于大多数类型的服务，您可以结合使用自定义检测策略和 Topaz，如本指南所述。本指南末尾的[临时故障处理应用程序块 (Topaz) 策略](#transient-fault-handling-application-block-topaz-strategies)部分中介绍了 Topaz 默认策略。请注意，临时故障处理应用程序块现在是一个开放源代码框架，不受 Microsoft 直接支持。
+**Topaz 是<a href="http://msdn.microsoft.com/library/dn440719.aspx">企业库 6.0</a> 中包含的临时故障处理应用程序块的易记名称。对于大多数类型的服务，您可以结合使用自定义检测策略和 Topaz，如本指南所述。本指南末尾的[临时故障处理应用程序块 (Topaz) 策略](#transient-fault-handling-application-block-topaz-strategies)部分中介绍了 Topaz 默认策略。请注意，临时故障处理应用程序块现在是一个开放源代码框架，不受 Microsoft 直接支持。
 
 > [AZURE.NOTE]对于大多数 Azure 内置重试机制，目前尚无方法针对不同类型的错误或异常（不局限于重试策略功能）应用不同的重试策略。因此，根据指南，最好在编写时配置可提供最佳平均性能和可用性的策略。微调策略的一种方法是分析日志文件，以确定发生的临时故障的类型。例如，如果大部分错误都与网络连接问题相关，那么您可以立即尝试重试，而不是等待很长一段时间才进行首次重试。
 
@@ -43,7 +45,7 @@ Azure 存储空间服务包括表和 blob 存储、文件以及存储队列。
 
 ### 重试机制
 
-重试在单独的 REST 操作一级发生，是客户端 API 实现的主要组成部分。客户端存储 SDK 使用可实现 [IExtendedRetryPolicy 接口](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.aspx)的类。
+重试在单独的 REST 操作一级发生，是客户端 API 实现的主要组成部分。客户端存储 SDK 使用可实现 [IExtendedRetryPolicy 接口](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.aspx)的类。
 
 接口的实现各不相同。存储客户端可以从专门用于访问表、blob 和队列的策略中进行选择。每个实现使用不同的重试策略，此策略基本上定义了重试间隔和其他详细信息。
 
@@ -95,7 +97,7 @@ var stats = await client.GetServiceStatsAsync(interactiveRequestOption, operatio
 	};
 	var stats = await client.GetServiceStatsAsync(null, context);
 
-除了指明故障是否适合重试，重试扩展策略还会返回 **RetryContext** 对象，用于指明重试次数、上次请求结果、下次重试是在主要位置还是在辅助位置上发生（有关详细信息，请参阅下表）。**RetryContext** 对象的属性可用于确定是否以及何时尝试进行重试。如需了解更多详情，请参阅 [IExtendedRetryPolicy.Evaluate 方法](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.evaluate.aspx)。
+除了指明故障是否适合重试，重试扩展策略还会返回 **RetryContext** 对象，用于指明重试次数、上次请求结果、下次重试是在主要位置还是在辅助位置上发生（有关详细信息，请参阅下表）。**RetryContext** 对象的属性可用于确定是否以及何时尝试进行重试。如需了解更多详情，请参阅 [IExtendedRetryPolicy.Evaluate 方法](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.evaluate.aspx)。
 
 下表展示了内置重试策略的默认设置。
 
@@ -125,7 +127,7 @@ var stats = await client.GetServiceStatsAsync(interactiveRequestOption, operatio
 
 重试尝试是记录到 **TraceSource** 中。您必须配置 **TraceListener**，才能捕获事件并将这些事件写入合适的目标日志。您可以使用 **TextWriterTraceListener** 或 **XmlWriterTraceListener** 将数据写入日志文件、使用 **EventLogTraceListener** 将数据写入 Windows 事件日志，或使用 **EventProviderTraceListener** 将跟踪数据写入 ETW 子系统。此外，您还可以配置缓冲区的自动刷新和即将记录的事件详细信息（例如，错误、警告、信息和详细内容）。有关详细信息，请参阅[使用.NET 存储客户端库的客户端日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782839.aspx)。
 
-操作可以接收 **OperationContext** 实例，这会公开可用于附加自定义遥测逻辑的 **Retrying** 事件。有关详细信息，请参阅 [OperationContext.Retrying 事件](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.operationcontext.retrying.aspx)。
+操作可以接收 **OperationContext** 实例，这会公开可用于附加自定义遥测逻辑的 **Retrying** 事件。有关详细信息，请参阅 [OperationContext.Retrying 事件](http://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.retrying.aspx)。
 
 ## 示例（Azure 存储空间）
 
@@ -240,7 +242,7 @@ public class BloggingContextConfiguration : DbConfiguration
 {
   public BlogConfiguration()
   {
-    // Set up the execution strategy for SQL ??? (exponential) with 5 retries and 4 sec delay
+    // Set up the execution strategy for SQL Database (exponential) with 5 retries and 4 sec delay
     this.SetExecutionStrategy(
          "System.Data.SqlClient", () => new SqlAzureExecutionStrategy(5, TimeSpan.FromSeconds(4)));
   }
@@ -279,7 +281,7 @@ public class BloggingContextConfiguration : DbConfiguration
 
 下表显示了使用 EF6 时的内置重试策略的默认设置。
 
-![](media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable4.png)
+![](./media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable4.png)
 ## 重试使用指南
 
 访问使用 EF6 的 SQL 数据库时，请注意以下指南：
@@ -315,7 +317,7 @@ namespace RetryCodeSamples
 	{
 	    public BlogConfiguration()
 	    {
-	        // Set up the execution strategy for SQL ??? (exponential) with 5 retries and 12 sec delay.
+	        // Set up the execution strategy for SQL Database (exponential) with 5 retries and 12 sec delay.
 	        // These values could be loaded from configuration rather than being hard-coded.
 	        this.SetExecutionStrategy(
 	                "System.Data.SqlClient", () => new SqlAzureExecutionStrategy(5, TimeSpan.FromSeconds(12)));
@@ -357,7 +359,7 @@ SQL 数据库是一种托管的 SQL 数据库，具有各种大小，可作为�
 
 ### 重试机制
 
-访问使用 ADO.NET 的 SQL 数据库时，其中没有内置重试支持。不过，请求的返回代码可用于确定请求失败原因。[Azure SQL 数据库限制](http://msdn.microsoft.com/zh-cn/library/dn338079.aspx)页面解释了限制如何阻止连接、特定情况的返回代码以及如何处理这些情况和重试操作。
+访问使用 ADO.NET 的 SQL 数据库时，其中没有内置重试支持。不过，请求的返回代码可用于确定请求失败原因。[Azure SQL 数据库限制](http://msdn.microsoft.com/library/dn338079.aspx)页面解释了限制如何阻止连接、特定情况的返回代码以及如何处理这些情况和重试操作。
 
 您可以结合使用临时故障处理应用程序块 (Topaz) 和 Nuget 包 EnterpriseLibrary.TransientFaultHandling.Data（类 **SqlAzureTransientErrorDetectionStrategy**），从而实现 SQL 数据库的重试机制。
 
@@ -427,7 +429,7 @@ RetryManager.SetDefault(new RetryManager(
 
 ### 示例（使用 ADO.NET 的 SQL 数据库）
 
-本部分介绍了如何使用临时故障处理应用程序块通过 **RetryManager** 中已配置的一组重试策略来访问 Azure SQL 数据库（如上一部分中的[策略配置](#policy-configuration-sql-database-using-ado-net-)所述）。 使用临时故障处理应用程序块的最简单方法是通过 **ReliableSqlConnection** 类，或通过在连接上调用扩展方法（如 **OpenWithRetry**）。有关详细信息，请参阅[临时故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/hh680934.aspx)。
+本部分介绍了如何使用临时故障处理应用程序块通过 **RetryManager** 中已配置的一组重试策略来访问 Azure SQL 数据库（如上一部分中的[策略配置](#policy-configuration-sql-database-using-ado-net-)所述）。 使用临时故障处理应用程序块的最简单方法是通过 **ReliableSqlConnection** 类，或通过在连接上调用扩展方法（如 **OpenWithRetry**）。有关详细信息，请参阅[临时故障处理应用程序块](http://msdn.microsoft.com/library/hh680934.aspx)。
 
 不过，在临时故障处理应用程序块的当前版本中，这些方法本身并不支持针对 SQL 数据库的异步操作。最好仅使用异步技术访问 Azure 服务（如 SQL 数据库）。因此，您应考虑采用以下技术，结合使用临时故障处理应用程序块和 SQL 数据库。
 
@@ -481,8 +483,8 @@ using (var reader = await sqlCommand.ExecuteReaderWithRetryAsync(retryPolicy))
 
 若要详细了解如何使用临时故障处理应用程序块，请参阅：
 
-* [结合使用临时故障处理应用程序块和 SQL Azure](http://msdn.microsoft.com/zh-cn/library/hh680899.aspx)
-* [坚持不懈是一切成功的秘密：使用临时故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440719.aspx)
+* [结合使用临时故障处理应用程序块和 SQL Azure](http://msdn.microsoft.com/library/hh680899.aspx)
+* [坚持不懈是一切成功的秘密：使用临时故障处理应用程序块](http://msdn.microsoft.com/library/dn440719.aspx)
 * [云服务基础数据访问层 - 临时故障处理](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)
 
 有关充分利用 SQL 数据库的一般指南，请参阅：
@@ -496,12 +498,12 @@ using (var reader = await sqlCommand.ExecuteReaderWithRetryAsync(retryPolicy))
 
 ### 重试机制
 
-服务总线通过 [RetryPolicy](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.retrypolicy.aspx) 基类的实现来实现重试。所有服务总线客户端均公开 **RetryPolicy** 属性，此属性可以设置为 **RetryPolicy** 基类的一个实现。内置实现为：
+服务总线通过 [RetryPolicy](http://msdn.microsoft.com/library/microsoft.servicebus.retrypolicy.aspx) 基类的实现来实现重试。所有服务总线客户端均公开 **RetryPolicy** 属性，此属性可以设置为 **RetryPolicy** 基类的一个实现。内置实现为：
 
-* [RetryExponential 类](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.retryexponential.aspx)：这会公开用于控制回退间隔和重试计数的属性，以及用于限制操作完成总时间的 **TerminationTimeBuffer** 属性。
-* [NoRetry 类](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.noretry.aspx)：这适用于不需要在服务总线 API 一级进行重试的情况，如其他进程将重试作为批处理或多步操作的一部分进行管理的情况。
+* [RetryExponential 类](http://msdn.microsoft.com/library/microsoft.servicebus.retryexponential.aspx)：这会公开用于控制回退间隔和重试计数的属性，以及用于限制操作完成总时间的 **TerminationTimeBuffer** 属性。
+* [NoRetry 类](http://msdn.microsoft.com/library/microsoft.servicebus.noretry.aspx)：这适用于不需要在服务总线 API 一级进行重试的情况，如其他进程将重试作为批处理或多步操作的一部分进行管理的情况。
 
-服务总线操作可以返回一系列异常，如[附录：消息传送异常](http://msdn.microsoft.com/zh-cn/library/hh418082.aspx)中所列。此列表提供了一些信息来指明重试操作是否合适。例如，[ServerBusyException](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.serverbusyexception.aspx) 指明客户端应等待一段时间，然后重试操作。**ServerBusyException** 的出现还会导致服务总线切换到不同模式，这会令计算的重试延迟额外延迟 10 秒。在一段很短的时间后，此模式会重置。
+服务总线操作可以返回一系列异常，如[附录：消息传送异常](http://msdn.microsoft.com/library/hh418082.aspx)中所列。此列表提供了一些信息来指明重试操作是否合适。例如，[ServerBusyException](http://msdn.microsoft.com/library/microsoft.servicebus.messaging.serverbusyexception.aspx) 指明客户端应等待一段时间，然后重试操作。**ServerBusyException** 的出现还会导致服务总线切换到不同模式，这会令计算的重试延迟额外延迟 10 秒。在一段很短的时间后，此模式会重置。
 
 从服务总线返回的异常会公开 **IsTransient** 属性，此属性指明客户端是否应重试操作。内置的 **RetryExponential** 策略依赖于 **MessagingException** 类（所有服务总线异常的基类）中的 **IsTransient** 属性。如果您创建 **RetryPolicy** 基类的自定义实现，则可以结合使用异常类型和 **IsTransient** 属性来更精细地控制重试操作。例如，您可以检测 **QuotaExceededException**，并采取措施以在重试向其发送消息之前清空队列。
 
@@ -540,7 +542,7 @@ client.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 
 不能在各个操作级别设置重试策略。它适用于消息客户端的所有操作。下表显示了内置重试策略的默认设置。
 
-![](media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable7.png)
+![](./media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable7.png)
 
 ### 重试使用指南
 
@@ -552,23 +554,23 @@ client.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 请考虑从下列重试操作设置入手。这些都是通用设置，您应监视操作，并对值进行微调以适应您自己的方案。
 
 
-![](media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable8.png)
+![](./media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable8.png)
 
 ### 遥测
 
-服务总线使用 **EventSource** 将重试记录为 ETW 事件。必须将 **EventListener** 附加到事件源，才能捕获事件并在性能查看器中查看这些事件，或将这些事件写入合适的目标日志。为此，您可以使用[语义式日志记录应用程序块](http://msdn.microsoft.com/zh-cn/library/dn775006.aspx)。重试事件具有以下形式：
+服务总线使用 **EventSource** 将重试记录为 ETW 事件。必须将 **EventListener** 附加到事件源，才能捕获事件并在性能查看器中查看这些事件，或将这些事件写入合适的目标日志。为此，您可以使用[语义式日志记录应用程序块](http://msdn.microsoft.com/library/dn775006.aspx)。重试事件具有以下形式：
 
 ```text
 Microsoft-ServiceBus-Client/RetryPolicyIteration
 ThreadID="14,500"
-FormattedMessage="[TrackingId:] RetryExponential: Operation Get:https://retry-guidance-tests.servicebus.windows.net/TestQueue/?api-version=2014-05 at iteration 0 is retrying after 00:00:00.1000000 sleep because of Microsoft.ServiceBus.Messaging.MessagingCommunicationException: The remote name could not be resolved: 'retry-guidance-tests.servicebus.windows.net'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3, TimeStamp:9/5/2014 10:00:13 PM."
+FormattedMessage="[TrackingId:] RetryExponential: Operation Get:https://retry-guidance-tests.servicebus.chinacloudapi.cn/TestQueue/?api-version=2014-05 at iteration 0 is retrying after 00:00:00.1000000 sleep because of Microsoft.ServiceBus.Messaging.MessagingCommunicationException: The remote name could not be resolved: 'retry-guidance-tests.servicebus.chinacloudapi.cn'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3, TimeStamp:9/5/2014 10:00:13 PM."
 trackingId=""
 policyType="RetryExponential"
-operation="Get:https://retry-guidance-tests.servicebus.windows.net/TestQueue/?api-version=2014-05"
+operation="Get:https://retry-guidance-tests.servicebus.chinacloudapi.cn/TestQueue/?api-version=2014-05"
 iteration="0"
 iterationSleep="00:00:00.1000000"
 lastExceptionType="Microsoft.ServiceBus.Messaging.MessagingCommunicationException"
-exceptionMessage="The remote name could not be resolved: 'retry-guidance-tests.servicebus.windows.net'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3,TimeStamp:9/5/2014 10:00:13 PM"
+exceptionMessage="The remote name could not be resolved: 'retry-guidance-tests.servicebus.chinacloudapi.cn'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3,TimeStamp:9/5/2014 10:00:13 PM"
 ```
 
 ### 示例（服务总线）
@@ -590,7 +592,7 @@ namespace RetryCodeSamples
 	class ServiceBusCodeSamples
 	{
 		private const string connectionString =
-		    @"Endpoint=sb://[my-namespace].servicebus.windows.net/;
+		    @"Endpoint=sb://[my-namespace].servicebus.chinacloudapi.cn/;
 		        SharedAccessKeyName=RootManageSharedAccessKey;
 		        SharedAccessKey=C99..........Mk=";
 
@@ -857,7 +859,7 @@ DocumentDB 是一项完全托管的文档数据库即服务，可以对无架构
 
 ## 重试机制
 
-DocumentDB 客户端的预发行版本包括内部重试机制和不可配置的重试机制（这可能会在后续版本中有所变化）。默认设置因所使用的上下文而异。一些操作使用指数回退策略（包含硬编码的参数）。另一些操作仅指定应尝试的重试次数，并在从服务返回的 [DocumentClientException](http://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.documentclientexception.retryafter.aspx) 实例中使用重试延迟。如果未指定延迟，则使用 5 秒延迟。
+DocumentDB 客户端的预发行版本包括内部重试机制和不可配置的重试机制（这可能会在后续版本中有所变化）。默认设置因所使用的上下文而异。一些操作使用指数回退策略（包含硬编码的参数）。另一些操作仅指定应尝试的重试次数，并在从服务返回的 [DocumentClientException](http://msdn.microsoft.com/library/microsoft.azure.documents.documentclientexception.retryafter.aspx) 实例中使用重试延迟。如果未指定延迟，则使用 5 秒延迟。
 
 ## 策略配置 (DocumentDB)
 
@@ -892,16 +894,16 @@ Azure 搜索可用于向网站或应用程序添加功能强大且复杂的搜�
 
 使用 Azure 搜索时，请注意以下指南：
 
-* 使用服务返回的状态代码来确定故障类型。[HTTP 状态代码（Azure 搜索）](http://msdn.microsoft.com/zh-cn/library/dn798925.aspx)中定义了状态代码。状态代码 503（服务不可用）表明服务过载，无法立即处理请求。相应的措施是，仅在允许的服务恢复时间过后才重试操作。如果在太短的延迟间隔后重试，则可能会延长不可用时间。
+* 使用服务返回的状态代码来确定故障类型。[HTTP 状态代码（Azure 搜索）](http://msdn.microsoft.com/library/dn798925.aspx)中定义了状态代码。状态代码 503（服务不可用）表明服务过载，无法立即处理请求。相应的措施是，仅在允许的服务恢复时间过后才重试操作。如果在太短的延迟间隔后重试，则可能会延长不可用时间。
 * 有关重试 REST 操作的一般信息，请参阅本指南后面的[常规 REST 和重试指南](#general-rest-and-retry-guidelines)部分。
 
 ## 详细信息
 
-* [Azure 搜索 REST API](http://msdn.microsoft.com/zh-cn/library/dn798935.aspx)
+* [Azure 搜索 REST API](http://msdn.microsoft.com/library/dn798935.aspx)
 
 ## Azure Active Directory 重试指南
 
-Azure Active Directory (AD) 是一项全面的标识和访问管理云解决方案，集成了核心目录服务、高级标识监管、安全性和应用程序访问管理等各种功能。Microsoft Azure AD 还为开发人员提供了身份管理平台，以便他们可以根据集中的策略和规则，控制应用程序访问情况。
+Azure Active Directory (AD) 是一项全面的标识和访问管理云解决方案，集成了核心目录服务、高级标识监管、安全性和应用程序访问管理等各种功能。Windows Azure AD 还为开发人员提供了身份管理平台，以便他们可以根据集中的策略和规则，控制应用程序访问情况。
 
 ### 重试机制
 
@@ -1050,8 +1052,8 @@ var result = await policy.ExecuteAsync(() => authContext.AcquireTokenAsync(resou
 
 ## 详细信息
 
-* [实现自定义检测策略](http://msdn.microsoft.com/zh-cn/library/hh680940.aspx) (Topaz)
-* [实现自定义重试策略](http://msdn.microsoft.com/zh-cn/library/hh680943.aspx) (Topaz)
+* [实现自定义检测策略](http://msdn.microsoft.com/library/hh680940.aspx) (Topaz)
+* [实现自定义重试策略](http://msdn.microsoft.com/library/hh680943.aspx) (Topaz)
 * [令牌颁发和重试指南](http://msdn.microsoft.com/zh-cn/library/azure/dn168916.aspx)
 
 ## 常规 REST 和重试指南
@@ -1102,7 +1104,7 @@ var result = await policy.ExecuteAsync(() => authContext.AcquireTokenAsync(resou
 
 ## 详细信息
 
-* [断路器策略](http://msdn.microsoft.com/zh-cn/library/dn589784.aspx)
+* [断路器策略](http://msdn.microsoft.com/library/dn589784.aspx)
 
 ## 临时故障处理应用程序块 (Topaz) 策略
 
@@ -1115,4 +1117,4 @@ var result = await policy.ExecuteAsync(() => authContext.AcquireTokenAsync(resou
 | **线性（固定间隔）** | retryCount<br />retryInterval<br />fastFirstRetry<br /> | 10<br />1 秒<br />true | 重试尝试次数。<br />重试之间延迟。<br />是否立即进行首次重试尝试。 |
 有关使用临时故障处理应用程序块的示例，请参阅本指南中前面与使用 ADO.NET 的 Azure SQL 数据库和 Azure Active Directory 有关的示例部分。
 
-<!---HONumber=71-->
+<!---HONumber=79-->
