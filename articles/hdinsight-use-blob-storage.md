@@ -259,7 +259,7 @@ URI 方案提供了使用 *wasb:*前缀的未加密访问和使用 *wasbs* 的 S
   [使用 PowerShell 访问 Blob]: #powershell
   [后续步骤]: #nextsteps
   [HDI.ASVArch]: ./media/hdinsight-use-blob-storage/HDI.ASVArch.png "HDInsight 存储体系结构"
-  [限制对容器和 Blob 的访问]: http://msdn.microsoft.com/zh-cn/library/azure/dd179354.aspx
+  [限制对容器和 Blob 的访问]: /documentation/articles/storage-manage-access-to-resources
   [将 HDInsight 群集与备用存储帐户和元存储配合使用]: http://social.technet.microsoft.com/wiki/contents/articles/23256.using-an-hdinsight-cluster-with-alternate-storage-accounts-and-metastores.aspx
   [Blob 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
   [Azure 存储帐户]: /documentation/articles/storage-create-storage-account

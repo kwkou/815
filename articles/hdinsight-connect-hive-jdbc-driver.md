@@ -5,12 +5,13 @@
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
- editor="cgronlun"/>
+ editor="cgronlun"
+ tags="azure-portal"/>
 
 <tags
- ms.service="hdinsight"
- ms.date="07/17/2015"
- wacn.date="08/29/2015"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/12/2015"/>
 
 #使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
 
@@ -22,7 +23,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-* HDInsight 群集上的 Hadoop。可以使用基于 Windows 的群集。
+* HDInsight 群集上的 Hadoop。基于 Windows 的群集即可。
 
 * [Java 开发人员工具包 (JDK) 版本 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或更高版本。
 
@@ -67,4 +68,4 @@
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=67-->
+<!---HONumber=79-->

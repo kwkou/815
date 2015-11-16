@@ -28,9 +28,9 @@
 
 ### Runbook 类型
 
-你不能在 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 中通过内联执行的方式将 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks)<!-- deleted by customization 或[图形 Runbook](/documentation/articles/automation-runbook-types#graphical-runbooks) 用作子项-->。同样，你不能在 PowerShell 工作流 Runbook <!-- deleted by customization 或图形 icalrunbook -->中通过内联执行的方式将 PowerShell Runbook 用作子项。PowerShell Runbook 只能将另一个 PowerShell 用作子项。<!-- deleted by customization 图形 Runbook 和 PowerShell 工作流 Runbook 可以互相将对方用作子 Runbook。-->
+你不能在 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 中通过内联执行的方式将 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks)。同样，你不能在 PowerShell 工作流 Runbook 中通过内联执行的方式将 PowerShell Runbook 用作子项。PowerShell Runbook 只能将另一个 PowerShell 用作子项。
 
-在通过内联执行调用<!-- deleted by customization 图形或 --> PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。调用 PowerShell 子 Runbook 时，你必须将 *.\* 用作其名称的前缀，表示脚本位于本地目录中。
+在通过内联执行调用 PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。调用 PowerShell 子 Runbook 时，你必须将 *.\* 用作其名称的前缀，表示脚本位于本地目录中。
 
 ### 示例
 

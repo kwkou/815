@@ -23,7 +23,7 @@
 
 我们将了解如何使用在 Azure 上托管的 MongoDB 服务之一、如何配置应用程序使用 MongoDB 和如何将 Web 应用发布到 [Azure 网站](/documentation/services/web-sites/)。
 
-请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure App Service Web Apps，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure App Service Web Apps。虽然本文将着重介绍 App Service，但是步骤相似于开发 [Azure 云服务]。
+请参阅 [Python 开发人员中心]以获取更多文章，这些文章涵盖了通过 PTVS 使用 Bottle、Flask 和 Django web 框架开发 Azure 网站，使用 MongoDB、Azure 表存储、MySQL 和 SQL 数据库服务来开发 Azure 网站。虽然本文将着重介绍 Azure 网站，但是步骤相似于开发 [Azure 云服务]。
 
 + [先决条件](#prerequisites)
 + [创建项目](#create-the-project)

@@ -1,23 +1,23 @@
 <properties 
-	pageTitle="使用 .NET SDK 可创建频道，以执行从单比特率到多比特率流的实时编码" 
-	description="本教程将指导你完成创建频道的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。" 
+	pageTitle="使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码" 
+	description="本教程将指导你使用 .NET SDK 完成创建频道的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/18/2015"
+	wacn.date="11/12/2015"/>
 
 
-#使用 .NET SDK 可创建频道，以执行从单比特率到多比特率流的实时编码（预览版）
+#使用 .NET SDK 创建频道，以执行从单比特率流到多比特率流的实时编码
 
 > [AZURE.SELECTOR]
-- [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
+- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
+- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 ##概述
@@ -26,14 +26,15 @@
 
 >[AZURE.NOTE]如需与能够进行实时编码的频道相关的更多概念信息，请参阅 [使用执行从单比特率到多比特率流的实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels)。
 
->[AZURE.NOTE]必须使用 Media Services .NET SDK 版本 3.2.0.0 或更高版本。
 
 ##常见的实时流方案
 
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
-	
+>[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+
 	此步骤也可以在创建频道后执行。
 
 1. 创建并启动频道。
@@ -41,24 +42,25 @@
 1. 检索频道引入 URL。
 
 	实时编码器使用引入 URL 将流发送到频道。
-1. 检索频道预览 URL。 
+
+1. 检索频道预览 URL。
 
 	使用此 URL 来验证频道是否正常接收实时流。
 
 2. 创建资源。
-3. 如果你想让资源在播放期间进行动态加密，请执行以下操作： 	
-	
-	1. 	创建内容密钥。 
-	1. 	配置内容密钥授权策略。
-1. 配置资产传送策略（由动态打包和动态加密使用）。
+3. 如果你想让资源在播放期间进行动态加密，请执行以下操作：
+	1. 创建内容密钥。
+	1. 配置内容密钥授权策略。
+	1. 配置资产传送策略（由动态打包和动态加密使用）。
 3. 创建节目并指定使用你创建的资产。
-1. 通过创建按需定位器发布与节目关联的资产。  
+1. 通过创建按需定位器发布与节目关联的资产。
 
 	确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
+
 1. 在准备好开始流式传输和存档时，启动节目。
 2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
 1. 在要停止对事件进行流式传输和存档时，停止节目。
-1. 删除节目（并选择性地删除资产）。   
+1. 删除节目（并选择性地删除资产）。
 
 ##本主题内容
 
@@ -68,33 +70,38 @@
 
 1. 创建并启动通道。将使用长时间运行的 API。
 1. 获取频道引入（输入）终结点。应将此终结点提供给可以发送单比特率实时流的编码器。
-1. 获取预览终结点。此终结点用于预览流。 
+1. 获取预览终结点。此终结点用于预览流。
 1. 创建将用于存储你的内容的资源。还应配置资源传送策略，如此示例中所示。
 1. 创建节目并指定使用你先前创建的资源。启动该节目。将使用长时间运行的 API。
 1. 为资源创建定位器，以便发布内容，并可以将内容流式传输到客户端。
 1. 显示和隐藏清单。启动和停止广告。将使用长时间运行的 API。
 1. 清理频道及所有关联的资源。
 
->[AZURE.NOTE]虽然此功能处于预览状态，但是实时事件的最大建议持续时间为 8 小时。
->
+
+##注意事项
+
+- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+- 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
+
 ##先决条件
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
+- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - Visual Studio 2010 SP1 或更高版本。
+- 必须使用 Media Services .NET SDK 版本 3.2.0.0 或更高版本。
 - 可以发送单比特率实时流的摄像头和编码器。
 
 ##使用 Media Services SDK for .NET 进行开发设置
- 
+
 1. 使用 Visual Studio 创建控制台应用程序。
 1. 使用 Media Services NuGet 包将 Media Services SDK for .NET 添加到控制台应用程序。
 
-##连接到媒体服务
+##连接到 媒体服务
 最佳做法是，应使用 app.config 文件来存储媒体服务名称和帐户密钥。
 
->[AZURE.NOTE]若要查找名称和密钥值，请转到 Azure 门户，选择你的 Media Service 帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
- 
+>[AZURE.NOTE]若要查找名称和密钥值，请转到 Azure 管理门户，选择你的媒体服务帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
+
 在 app.config 文件中添加 appSettings 部分，并设置媒体服务帐户名称和帐户密钥的值。
 
 
@@ -107,7 +114,6 @@
 	</configuration>
 	 
 	
-
 ##代码示例
 
 	using System;
@@ -493,4 +499,11 @@
 	}
 	
 
-<!---HONumber=74-->
+
+##后续步骤
+
+### 想要寻找其他内容吗？
+
+如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
+
+<!---HONumber=79-->

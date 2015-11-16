@@ -3,14 +3,14 @@
 	description="本主题概述 Azure 媒体编码器格式和编解码器。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/05/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/12/2015"/>
 
 #Azure Media Encoder 格式和编解码器
 
@@ -23,7 +23,7 @@
 ---|---
 3GPP、3GPP2（.3gp、.3g2、.3gp2） |是
 高级系统格式 (ASF) (.asf) |是
-高级视频编码高清晰 (AVCHD) [ MPEG-2 传输流 ] (.mts, .m2ts)	 |是
+高级视频编码高清晰 (AVCHD) [ MPEG-2 传输流 ] (.mts, .m2ts)	|是
 音频视频交错 (AVI) (.avi) |是
 数码摄录机 MPEG-2 (MOD) (.mod) |是
 DVD 传输流 (TS) 文件 (.ts) |是
@@ -104,15 +104,11 @@ WPF Canvas XAML (.xaml)| 是
 
 下表列出了导出操作支持的编解码器和文件格式。
 
-
-<table border="1">
-<tr><th>文件格式</th><th>视频编解码器</th><th>音频编解码器</th></tr>
-<tr><td>Windows Media（*.wmv；*.wma）</td><td>VC-1（Advanced、Main 和 Simple Profile）</td><td>Windows Media Audio Standard、Windows Media Audio Professional、Windows Media Audio Voice、Windows Media Audio Lossless</td></tr>
-<tr><td>MP4 (*.mp4)</td><td>H.264（High、Main 和 Baseline Profile）</td><td>AAC-LC、HE-AAC v1、HE-AAC v2、Dolby Digital Plus</td></tr>
-<tr><td>平滑流文件格式 (PIFF 1.1)（*.ismv；*.isma）</td><td>VC-1 (Advanced Profile)<br/><br/>
-H.264（High、Main 和 Baseline Profile）</td><td>Windows Media Audio Standard、Windows Media Audio Professional<br/><br/>
-AAC-LC、HE-AAC v1、HE-AAC v2</td></tr>
-</table>
+文件格式|视频编解码器|音频编解码器
+---|---|---
+Windows Media（* .wmv；* .wma）|VC-1（Advanced、Main 和 Simple Profile）|Windows Media Audio Standard、Windows Media Audio Professional、Windows Media Audio Voice、Windows Media Audio Lossless
+MP4 (* .mp4)|H.264（High、Main 和 Baseline Profile）|AAC-LC、HE-AAC v1、HE-AAC v2、Dolby Digital Plus
+平滑流文件格式 (PIFF 1.1)（* .ismv；* .isma）|VC-1 (Advanced Profile)<p>H.264（High、Main 和 Baseline Profile） |Windows Media Audio Standard、Windows Media Audio Professional<p><p>AAC-LC、HE-AAC v1、HE-AAC v2
 
 有关媒体服务中支持的其他编解码器和筛选器，请参阅 [Windows DirectShow 筛选器](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dd375464.aspx)。
 
@@ -122,17 +118,18 @@ Azure Media Services 为导入未压缩的视频数据提供支持。
 
 下面是支持的未压缩格式的部分列表。
 
-<table border="1">
-<tr><th>未压缩的视频格式</th><th>说明</th></tr>
-<tr><td>标准 YVU9 格式的未压缩数据</td><td>平面 YUV 格式。每隔一个像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；每隔一个垂直行取一个 Y 样本，每隔三个垂直行取一个 U 和 V 样本。每个像素 9 位。</td></tr>
-<tr><td>YUV 411 格式数据</td><td>每隔一像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。字节排序（从低到高）为 U0、Y0、V0、Y1、U4、Y2、V4、Y3、Y4、Y5、Y6、Y7，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 12 字节块为 8 个图像像素。</td></tr>
-<tr><td>Y41P 格式数据</td><td>每隔一像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。字节排序（最低到高）为 U0、Y0、V0、Y1、U4、Y2、V4、Y3、Y4、Y5、Y6、Y7，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 12 字节块为 8 个图像像素。</td></tr>
-<tr><td>YUY2 格式数据</td><td>除了像素排序不同外，其他与 UYVY 相同。字节排序（从低到高）为 Y0、U0、Y1、V0、Y2、U2、Y3、V2、Y4、U4、Y5、V4，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 2 个图像像素。</td></tr>
-<tr><td>YVYU 格式数据</td><td>打包的 YUV 格式。除了像素排序不同外，其他与 UYVY 相同。字节排序（从低到高）为 Y0、V0、Y1、U0、Y2、V2、Y3、U2、Y4、V4、Y5、U4，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 2 个图像像素。</td></tr>
-<tr><td>UYVY 格式数据</td><td>打包的 YUV 格式。每隔一像素取一个 Y 样本，每一行上每隔一个水平像素取一个 U 和 V 样本；对每个垂直行采样。最常用的 YUV 4:2:2 格式。字节排序（从低到高）为 U0、Y0、V0、Y1、U2、Y2、V2、Y3、U4、Y4、V4、Y5，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 2 个图像像素。</td></tr>
-<tr><td>YUV 211 格式数据</td><td>打包的 YUV 格式。每隔一个像素取一个 Y 样本，在每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。字节排序（最低到高）为 Y0、U0、Y2、V0、Y4、U4、Y6、V4、Y8、U8、Y10、V8，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 4 个图像像素。</td></tr>
-<tr><td>Cirrus Logic Jr YUV 411 格式</td><td>每个 Y、U 和 V 样本小于 8 位的 Cirrus Logic Jr YUV 411 格式。每隔一像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。</td></tr>
-<tr><td>Indeo 生成的 YVU9 格式</td><td>Indeo 生成的 YVU9 格式包含有关与上一帧的差别的附加信息。每个像素 9.5 位，但报告 9 位。</td></tr>
-</table>
+未压缩的视频格式|说明
+---|---
+标准 YVU9 格式的未压缩数据|平面 YUV 格式。每隔一个像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；每隔一个垂直行取一个 Y 样本，每隔三个垂直行取一个 U 和 V 样本。每个像素 9 位。
+YUV 411 格式数据|每隔一像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。字节排序（从低到高）为 U0、Y0、V0、Y1、U4、Y2、V4、Y3、Y4、Y5、Y6、Y7，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 12 字节块为 8 个图像像素。
+Y41P 格式数据|每隔一像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。字节排序（最低到高）为 U0、Y0、V0、Y1、U4、Y2、V4、Y3、Y4、Y5、Y6、Y7，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 12 字节块为 8 个图像像素。
+YUY2 格式数据|除了像素排序不同外，其他与 UYVY 相同。字节排序（从低到高）为 Y0、U0、Y1、V0、Y2、U2、Y3、V2、Y4、U4、Y5、V4，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 2 个图像像素。
+YVYU 格式数据|打包的 YUV 格式。除了像素排序不同外，其他与 UYVY 相同。字节排序（从低到高）为 Y0、V0、Y1、U0、Y2、V2、Y3、U2、Y4、V4、Y5、U4，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 2 个图像像素。
+UYVY 格式数据|打包的 YUV 格式。每隔一像素取一个 Y 样本，每一行上每隔一个水平像素取一个 U 和 V 样本；对每个垂直行采样。最常用的 YUV 4:2:2 格式。字节排序（从低到高）为 U0、Y0、V0、Y1、U2、Y2、V2、Y3、U4、Y4、V4、Y5，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 2 个图像像素。
+YUV 211 格式数据|打包的 YUV 格式。每隔一个像素取一个 Y 样本，在每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。字节排序（最低到高）为 Y0、U0、Y2、V0、Y4、U4、Y6、V4、Y8、U8、Y10、V8，其中，后缀 0 为最左侧像素，递增的数字是从左到右递增的像素。每个 4 字节块为 4 个图像像素。
+Cirrus Logic Jr YUV 411 格式|每个 Y、U 和 V 样本小于 8 位的 Cirrus Logic Jr YUV 411 格式。每隔一像素取一个 Y 样本，每一行上每隔三个水平像素取一个 U 和 V 样本；对每个垂直行采样。
+Indeo 生成的 YVU9 格式|Indeo 生成的 YVU9 格式包含有关与上一帧的差别的附加信息。每个像素 9.5 位，但报告 9 位。
 
-<!---HONumber=74-->
+
+
+<!---HONumber=79-->

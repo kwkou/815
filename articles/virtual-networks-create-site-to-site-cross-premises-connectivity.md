@@ -60,7 +60,7 @@
 
 -  使用公共 IPv4 地址的 VPN 设备。你需要 IP 地址才能完成向导。VPN 设备不能位于网络地址转换器 (NAT) 的后面，并且必须满足最低的设备标准。有关更多信息，请参阅[关于用于虚拟网络的 VPN 设备](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)。
 
-	注意：可以使用 Windows Server 中的路由和远程访问服务 (RRAS) 作为 VPN 解决方案的一部分。但是，本教程不演练 RRAS 配置步骤。有关 RRAS 配置信息，请参阅[路由和远程访问服务模板](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn133801.aspx)。
+	注意：可以使用 Windows Server 中的路由和远程访问服务 (RRAS) 作为 VPN 解决方案的一部分。但是，本教程不演练 RRAS 配置步骤。有关 RRAS 配置信息，请参阅[路由和远程访问服务模板](http://msdn.microsoft.com/zh-cn/library/azure/dn133801.aspx)。
 
 -  有配置用于 IPsec 隧道模式连接的路由器方面的经验，或者其他某人可帮助你完成此步骤。
 

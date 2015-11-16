@@ -53,7 +53,7 @@ Web 应用的内部链接应指向 ApplicationHost.xdt 文件中指定的应用�
 
 ###<a id="SiteSample"></a> Web 应用扩展示例：PHP Manager
 
-PHP Manager 是一个 Web 应用扩展，通过该 Web 应用扩展，Web 应用管理员可以轻松地使用 Web 界面来查看和配置 PHP 设置，而无需直接修改 PHP.ini 文件。PHP 常用配置文件包括位于 Program Files 下的 php.ini 文件和位于 Web 应用根文件夹中的 .user.ini 文件。由于 php.ini 文件不可在 App Service 平台上直接编辑，因此 PHP Manager 扩展使用 .user.ini 文件来应用设置更改。
+PHP Manager 是一个 Web 应用扩展，通过该 Web 应用扩展，Web 应用管理员可以轻松地使用 Web 界面来查看和配置 PHP 设置，而无需直接修改 PHP.ini 文件。PHP 常用配置文件包括位于 Program Files 下的 php.ini 文件和位于 Web 应用根文件夹中的 .user.ini 文件。由于 php.ini 文件不可在 Azure 网站平台上直接编辑，因此 PHP Manager 扩展使用 .user.ini 文件来应用设置更改。
 
 ####<a id="PHPwebapp"></a> PHP Manager Web 应用程序
 

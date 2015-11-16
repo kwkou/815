@@ -1,31 +1,30 @@
-<properties 
-	pageTitle="在 HDInsight 中调试 Hadoop：错误消息 | Azure" 
-	description="了解你在使用 PowerShell 管理 HDInsight 时可能会收到的错误消息，以及恢复正常的步骤。" 
-	services="hdinsight" 
-	editor="cgronlun" 
-	manager="paulettm" 
-	authors="mumian" 
+<properties
+	pageTitle="在 HDInsight 中调试 Hadoop：查看日志和解释错误消息 | Windows Azure"
+	description="了解你在使用 PowerShell 管理 HDInsight 时可能会收到的错误消息，以及恢复正常的步骤。"
+	services="hdinsight"
+	tags="azure-portal"
+	editor="cgronlun"
+	manager="paulettm"
+	authors="mumian"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/28/2015"
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
-# 在 HDInsight 中调试 Hadoop：解释错误消息
+# 在 HDInsight 中调试 Hadoop：查看日志和解释错误消息
 
 本主题中列举的错误消息旨在帮助 Azure HDInsight 中的 Hadoop 用户了解在使用 Azure PowerShell 管理服务时可能会遇到的错误情况，并向他们建议从错误中恢复时可以执行哪些步骤。
 
-其中某些错误消息也可以在使用 Azure 门户管理 HDInsight 群集时在该门户中看到。但是，由于在此上下文中针对可能的补救措施的约束，你可能会遇到的其他一些错误消息可能不是很精细。将在问题得到明显缓解的上下文中提供其他错误消息。例如，如果违反了针对参数的约束，将在输入了值的框的右侧弹出消息。这里是请求了过多的数据节点的情形。补救措施是将该数值减少到 33 或更小的允许值。
+## <a id="hdi-error-codes"></a>HDInsight 错误代码
 
-![HDI.Debugging.ErrorMessages.Portal][image-hdi-debugging-error-messages-portal]
+用户在 Azure PowerShell 或管理门户中可能会遇到的错误在下面按名称的字母顺序列出。这些错误反过来又会链接到[错误描述和缓解](#discription-mitigation-errors)一节中提供该错误的以下信息的相应条目：
 
-用户在 Azure PowerShell 或 Azure 门户中可能会遇到的错误将在 [HDInsight 错误](#hdinsight-error-messages)部分中按名称的字母顺序列出，在该部分中，这些错误将链接到[错误说明和缓解](#discription-mitigation-errors)部分中提供该错误的以下信息的相应条目：
- 	
-- **说明**：用户看到的错误消息	
-- **缓解**：从错误中恢复时可以执行的步骤。 
+- **说明**：用户看到的错误消息
+- **缓解**：从错误中恢复时可以执行的步骤。
 
-###HDInsight 错误代码
+
 
 - [AtleastOneSqlMetastoreMustBeProvided](#AtleastOneSqlMetastoreMustBeProvided)
 - [AzureRegionNotSupported](#AzureRegionNotSupported)
@@ -83,12 +82,12 @@
 - **缓解**：用户需要提供有效的 SQL Azure 元存储，然后重试该请求。  
 
 ### <a id="AzureRegionNotSupported"></a>AzureRegionNotSupported
-- **说明**：无法在区域 *nameOfYourRegion* 中创建群集。使用有效的 HDInsight 区域并且重试请求。   
-- **缓解**：用户应该创建当前支持它们的群集区域：中国东部、中国北部。  
+- **说明**：无法在区域 *nameOfYourRegion* 中创建群集。使用有效的 HDInsight 区域并且重试请求。
+- **缓解**：用户应该创建当前支持它们的群集区域：中国北部、中国东部。  
 
 ### <a id="ClusterContainerRecordNotFound"></a>ClusterContainerRecordNotFound
 - **说明**：服务器无法找到请求的群集记录。  
-- **缓解**：重试操作。 
+- **缓解**：重试操作。
 
 ### <a id="ClusterDnsNameInvalidReservedWord"></a>ClusterDnsNameInvalidReservedWord
 - **说明**：群集 DNS 名称 *yourDnsName* 无效。请确保名称以字母数字开头和结尾，并且只能包含“-”特殊符号  
@@ -96,8 +95,8 @@
 
 ### <a id="ClusterNameUnavailable"></a>ClusterNameUnavailable
 - **说明**：群集名称 *yourClusterName* 不可用。请选取另一个名称。  
-- **缓解**：用户应该指定唯一且不存在的群集名称，然后重试。如果用户正在使用门户，则 UI 将通知他们该群集名称是否已在创建步骤期间使用。 
- 
+- **缓解**：用户应该指定唯一且不存在的群集名称，然后重试。如果用户正在使用门户，则 UI 将通知他们该群集名称是否已在创建步骤期间使用。
+
 
 ### <a id="ClusterPasswordInvalid"></a>ClusterPasswordInvalid
 - **说明**：群集密码无效。密码的长度必须至少为 10 个字符，并且必须包含至少一个数字、大写字母、小写字母和特殊字符且没有空格，不应包含用户名作为密码的一部分。  
@@ -221,11 +220,13 @@
 
 ### <a id="RegionCapabilityNotAvailable"></a>RegionCapabilityNotAvailable
 - **说明**：区域容量不可用于 *yourRegionName* 和订阅 ID *yourSubscriptionId*。  
-- **缓解**：指定支持 HDInsight 群集的区域。公开支持的区域是：东南亚、欧洲西部、欧洲北部、美国东部或美国西部。
+- **缓解**：指定支持 HDInsight 群集的区域。公开支持的区域：中国北部、中国东部。
+
 
 ### <a id="StorageAccountNotColocated"></a>StorageAccountNotColocated
 - **说明**：存储帐户 *yourStorageAccountName* 位于区域 *currentRegionName* 中。它应该与群集区域 *yourClusterRegionName* 相同。  
-- **缓解**：在与你的群集所在区域相同的区域中指定存储帐户；或者如果你的数据已处于该存储帐户中，则在与现有存储帐户相同的区域中创建新群集。如果你使用的是预览门户，则 UI 将会事先通知存在此问题。
+- **缓解**：在与你的群集所在区域相同的区域中指定存储帐户；或者如果你的数据已处于该存储帐户中，则在与现有存储帐户相同的区域中创建新群集。
+
 
 ### <a id="SubscriptionIdNotActive"></a>SubscriptionIdNotActive
 - **说明**：给定的订阅 ID *yourSubscriptionId* 不是活动的。  
@@ -237,11 +238,11 @@
 
 ### <a id="UnableToResolveDNS"></a>UnableToResolveDNS
 - **说明**：无法解析 DNS *yourDnsUrl*。请确保提供针对 Blob 终结点的完全限定 URL。  
-- **缓解**：提供有效的 Blob URL。该 URL 必须完全有效，包括以 **http://* 开头和以 *.com* 结尾。
+- **缓解**：提供有效的 Blob URL。该 URL 必须完全有效，包括以 *http://* 开头和以 *.com* 结尾。
 
 ### <a id="UnableToVerifyLocationOfResource"></a>UnableToVerifyLocationOfResource
 - **说明**：无法验证资源 *yourDnsUrl* 的位置。请确保提供针对 Blob 终结点的完全限定 URL。  
-- **缓解**：提供有效的 Blob URL。该 URL 必须完全有效，包括以 **http://* 开头和以 *.com* 结尾。
+- **缓解**：提供有效的 Blob URL。该 URL 必须完全有效，包括以 *http://* 开头和以 *.com* 结尾。
 
 ### <a id="VersionCapabilityNotAvailable"></a>VersionCapabilityNotAvailable
 - **说明**：版本功能不可用于版本 *specifiedVersion* 和订阅 ID *yourSubscriptionId*。  
@@ -263,8 +264,8 @@
 
 * [Azure HDInsight SDK 文档][hdinsight-sdk-documentation]
 
-[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
 
 [image-hdi-debugging-error-messages-portal]: ./media/hdinsight-debug-jobs/hdi-debug-errormessages-portal.png
 
-<!---HONumber=74-->
+<!---HONumber=79-->

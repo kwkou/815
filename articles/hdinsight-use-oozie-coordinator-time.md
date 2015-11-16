@@ -329,7 +329,7 @@ HDInsight 将 Azure Blob 存储用于数据存储。wasb:// 是 Microsoft 在 Az
 		{
 			# SQL query string for creating log4jLogsCount table
 			$cmdCreateLog4jCountTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-				    [Level] [nvarchar](/documentation/articles/10) NOT NULL,
+				    [Level] [nvarchar](10) NOT NULL,
 				    [Total] float,
 				CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED   
 				(

@@ -159,7 +159,7 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 [Powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176949.aspx
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
 [hdinsight-documentation]: /documentation/services/hdinsight/
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started

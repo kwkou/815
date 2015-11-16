@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="使用媒体服务 .NET SDK 创建筛选器" 
+	pageTitle="使用 Azure 媒体服务 .NET SDK 创建筛选器" 
 	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="dwrede,cenkdin" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"  
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/18/2015"
+	wacn.date="11/12/2015"/>
 
 
-#使用媒体服务 .NET SDK 创建筛选器
+#使用 Azure 媒体服务 .NET SDK 创建筛选器
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-dotnet-dynamic-manifest)
@@ -143,4 +143,4 @@
 [动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview)
  
 
-<!---HONumber=74-->
+<!---HONumber=79-->

@@ -145,7 +145,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 	<tr><td>HTTP 密码/确认密码</td>
 		<td>指定 HDInsight 群集用户密码。</td></tr>
 	<tr><td>为群集启用远程桌面</td>
-		<td>在设置后，选中此复选框，以为可远程连接到群集节点的远程桌面用户指定用户名、密码和到期日期。稍后，你还可以在设置了群集后启用远程桌面。有关说明，请参阅<a href="hdinsight-administer-use-management-portal/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。</td></tr>
+		<td>在设置后，选中此复选框，以为可远程连接到群集节点的远程桌面用户指定用户名、密码和到期日期。稍后，你还可以在设置了群集后启用远程桌面。有关说明，请参阅<a href="hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。</td></tr>
 </table>
 
 6. 在“存储帐户”页上提供以下值：
@@ -392,11 +392,11 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: /pricing/1rmb-trial/
+[azure-member-offers]: /pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal#rdp
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#rdp
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 

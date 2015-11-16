@@ -1,24 +1,24 @@
 <properties 
 	pageTitle="Azure 网站上的操作系统功能" 
-	description="了解可用于Azure 网站上的 Web 应用程序的 OS 功能" 
+	description="了解可用于 Azure 网站上的 Web 应用程序的操作系统功能" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="07/02/2015" 
-	wacn.date="10/03/2015"/>
-	
-# Azure Web Apps 上的操作系统功能 #
+<tags
+	ms.service="app-service-web"
+	ms.date="09/29/2015"
+	wacn.date="11/12/2015"/>
 
-本文介绍可用于在 Azure 网站上运行的所有应用程序的常见基准操作系统功能。这些功能包括文件、网络和注册表访问以及诊断日志和事件。
+# Azure 网站上的操作系统功能 #
+
+本文介绍可用于在 [Azure 网站](/documentation/services/web-sites/) Web Apps 上运行的所有应用程序的常见基准操作系统功能。这些功能包括文件、网络和注册表访问以及诊断日志和事件。
 
 ##目录
 
-* [网站模式](#websitemodes)
+* [App Service 计划层](#tiers)
 * [开发框架](#developmentframeworks)
 * [文件访问](#FileAccess)
 	* [本地驱动器](#LocalDrives)
@@ -29,20 +29,21 @@
 * [代码执行、进程和内存](#Code)
 * [诊断日志和事件](#Diagnostics)
 * [注册表访问](#RegistryAccess)
+<a id="tiers"></a>
+## App Service 计划层
 
-<a id="websitemodes"></a> <h2>网站模式</h2> Azure 网站在多租户托管环境中运行客户网站。部署在“免费”和“共享”网站缩放模式下的网站在共享虚拟机上的辅助进程中运行，而在标准网站缩放模式下部署的网站在专用于与单个客户相关联的网站的虚拟机上运行。
+Web Apps 在多租户托管环境中运行客户应用。部署在“免费”和“共享”层中的 Web 应用在共享虚拟机上的辅助进程中运行，而部署在“标准”和“高级”层中的 Web 应用在专用于与单个客户相关联的 Web 应用的虚拟机上运行。
 
-因为 Azure 网站支持不同模式之间的无缝缩放体验，所以，为网站实施的安全配置保持不变。这确保某一网站在网站模式之间切换时，Web 应用程序不会突然发生行为上的变化，并且不会以意外的方式失败。
+由于 Web Apps 支持不同层之间的无缝缩放体验，因此，为 Web 应用实施的安全配置将保持不变。这可以确保某个 Web 应用在切换不同的层时，Web 应用程序不会突然发生行为上的变化，并且不会以意外的方式失败。
 
 <a id="developmentframeworks"></a>
 ## 开发框架
 
-网站模式控制可用于网站的计算资源量（CPU、磁盘存储、内存和网络传出）。但是，可用于应用程序的框架功能幅度保持不变，而与网站模式无关。
+Web Apps 层控制可用于 Web 应用的计算资源量（CPU、磁盘存储、内存和网络出口）。但是，可用于应用程序的框架功能范围保持不变，而与缩放层无关。
 
 Web Apps 支持多种开发框架，包括 ASP.NET、经典 ASP、node.js、PHP 和 python – 它们全都作为 IIS 中的扩展运行。为了简化和标准化安全配置，Web Apps 通常使用其默认设置运行不同的开发框架。用于配置 Web Apps 的一个方法可能是为每个单独的开发框架自定义 API 外围应用和功能。而 Web Apps 则是通过实现操作系统功能的公共基准，采用更通用的方法，与 Web 应用的开发框架无关。
 
 以下部分概述了可用于 Azure 上的 Web Apps 的一般类型的操作系统功能。
-
 
 <a id="FileAccess"></a>
 ##文件访问
@@ -72,7 +73,7 @@ Web Apps 中有一个独具特色的方面能够简化 Web 应用程序的部署
 
 说明 Web Apps 如何使用临时本地存储的两个示例是针对临时 ASP.NET 文件的目录和针对 IIS 压缩文件的目录。ASP.NET 编译系统使用“临时 ASP.NET 文件”目录作为临时编译缓存位置。IIS 使用“IIS 临时压缩文件”目录存储压缩的响应输出。在 Web Apps 中，这两种类型的文件使用（以及其他使用）都重新映射到按应用临时本地存储。此重新映射确保该功能按预期延续。
 
-Web Apps 中的每个应用作为随机的唯一低权限辅助进程标识运行，该标识名为“application pool identity”，此处进一步介绍：[http://www.iis.net/learn/manage/configuring-security/application-pool-identities](http://www.iis.net/learn/manage/configuring-security/application-pool-identities)。应用程序代码将此标识由于对操作系统驱动器（D:\\ 驱动器）的基本的只读访问。这意味着应用程序代码可以列出公共目录结构并且读取操作系统驱动器上的公共文件。尽管这可能看上去就好像是一种较为广泛的访问级别，但当你在 Azure 托管服务中设置某一辅助角色并且读取驱动器内容时，相同的目录和文件是可访问的。
+Web Apps 中的每个应用作为随机的唯一低权限辅助进程标识运行，该标识名为“应用程序池标识”，以下网页做了进一步的介绍：[http://www.iis.net/learn/manage/configuring-security/application-pool-identities](http://www.iis.net/learn/manage/configuring-security/application-pool-identities)。应用程序代码将此标识由于对操作系统驱动器（D:\\ 驱动器）的基本的只读访问。这意味着应用程序代码可以列出公共目录结构并且读取操作系统驱动器上的公共文件。尽管这可能看上去就好像是一种较为广泛的访问级别，但当你在 Azure 托管服务中设置某一辅助角色并且读取驱动器内容时，相同的目录和文件是可访问的。
 
 <a name="multipleinstances"></a>
 ### 跨多个实例的文件访问
@@ -113,4 +114,4 @@ Web 应用程序可以生成和运行任意代码。允许 Web 应用程序执�
 
 对注册表的写访问被阻止，包括对任何按用户注册表项的访问。从应用程序角度来说，对注册表的写访问永远不应依赖于云环境，因为应用程序可以（并且也是这样做的）跨不同虚拟机进行迁移。Web 应用程序可依赖的唯一持久可写入存储是在 Web Apps UNC 共享上存储的按应用内容目录结构。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

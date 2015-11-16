@@ -1,16 +1,17 @@
-<properties 
-	pageTitle="以编程方式访问 Hadoop YARN 应用程序日志 | Windows Azure" 
-	description="以编程方式访问 HDInsight 中 Hadoop 群集上的应用程序日志。" 
-	services="hdinsight" 
-	documentationCenter="" 
+<properties
+	pageTitle="以编程方式访问 Hadoop YARN 应用程序日志 | Windows Azure"
+	description="以编程方式访问 HDInsight 中 Hadoop 群集上的应用程序日志。"
+	services="hdinsight"
+	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian" 
-	manager="paulettm" 
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/09/2015" 
-	wacn.date="08/29/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="10/02/2015"
+	wacn.date="11/12/2015"/>
 
 # 以编程方式访问 HDInsight 中 Hadoop 上的 YARN 应用程序日志
 
@@ -35,16 +36,16 @@
 
 <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a> 通过两个不同的接口提供已完成之应用程序的相关泛型信息，以及架构特定应用程序信息。具体而言：
 
-* 存储及检索 HDInsight 群集上泛型应用程序信息的功能已在版本 3.1.1.374 或更新版本上启用。 
+* 存储及检索 HDInsight 群集上泛型应用程序信息的功能已在版本 3.1.1.374 或更新版本上启用。
 * Timeline Server 的架构特定应用程序信息组件当前在 HDInsight 群集上并未提供。
 
 
 应用程序的相关泛型信息包含以下类型的数据：
 
-* 应用程序 ID（应用程序的唯一标识符） 
-* 启动应用程序的用户 
-* 为完成应用程序而进行的尝试的相关信息 
-* 任何给定应用程序尝试所用的容器 
+* 应用程序 ID（应用程序的唯一标识符）
+* 启动应用程序的用户
+* 为完成应用程序而进行的尝试的相关信息
+* 任何给定应用程序尝试所用的容器
 
 在 HDInsight 群集上，由 Azure 资源管理员将这项信息存储到默认存储帐户的默认容器中的历史记录存储中。可以通过 REST API 检索有关已完成的应用程序的此类泛型数据：
 
@@ -67,7 +68,7 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 你无法直接阅读聚合的日志，因为它们是以 [TFile][T-file]（由容器编制索引的[二进制格式][binary-format]）编写的。YARN 提供 CLI 工具，可针对你感兴趣的应用程序或容器，将这些日志转储成纯文本。你可以直接在群集节点上（通过 RDP 连接到节点之后）运行以下 YARN 命令之一，以纯文本格式查看这些日志：
 
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application>
-	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address> 
+	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address>
 
 下一部分说明如何以编程方式访问应用程序或容器特定的日志，而无需通过 RDP 连接到你的 HDInsight 群集。
 
@@ -87,24 +88,24 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 	string subscriptionId = "<your-subscription-id>";
 	string clusterName = "<your-cluster-name>";
 	string certName = "<your-subscription-management-cert-name>";
-	
+
 	// Create an HDInsight client
 	X509Store store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
 	store.Open(OpenFlags.ReadOnly);
 	X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>()
 	                            .Single(x => x.FriendlyName == certName);
-	
-	HDInsightCertificateCredential creds = 
+
+	HDInsightCertificateCredential creds =
 				new HDInsightCertificateCredential(new Guid(subscriptionId), cert);
-	
+
 	IHDInsightClient client = HDInsightClient.Connect(creds);
-	
+
 	// Get the cluster on which your applications were run
 	// The cluster needs to be in the "Running" state
 	ClusterDetails cluster = client.GetCluster(clusterName);
-	
+
 	// Create an Application History client against your cluster
-	IHDInsightApplicationHistoryClient appHistoryClient = 
+	IHDInsightApplicationHistoryClient appHistoryClient =
 				cluster.CreateHDInsightApplicationHistoryClient(TimeSpan.FromMinutes(5));
 
 
@@ -112,7 +113,7 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 
 	// Local download folder location where the logs will be placed
 	string downloadLocation = "E:\\YarnApplicationLogs";
-	
+
 	// List completed applications on your cluster that were submitted in the last 24 hours but failed
 	// Search for applications based on application name
 	string appNamePrefix = "your-app-name-prefix";
@@ -120,10 +121,10 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 	DateTime startTime = endTime.AddHours(-24);
 	IEnumerable<ApplicationDetails> applications = appHistoryClient
 	                .ListCompletedApplications(startTime, endTime)
-	                .Where(app => 
-	                    app.GetApplicationFinalStatusAsEnum() == ApplicationFinalStatus.Failed 
+	                .Where(app =>
+	                    app.GetApplicationFinalStatusAsEnum() == ApplicationFinalStatus.Failed
 	                    && app.Name.StartsWith(appNamePrefix));
-	
+
 	// Download logs for failed or killed applications
 	// This will generate one log file for each application
 	foreach (ApplicationDetails application in applications)
@@ -133,7 +134,7 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 
 上述代码使用应用程序历史记录客户端来列出/查找所需的应用程序，然后将这些应用程序的日志下载到本地文件夹。
 
-或者，也可以使用以下代码段针对已知其应用程序 ID 的应用程序来下载日志。应用程序 ID 是 RM 分配给应用程序的全局唯一标识符。其构建方式是使用 RM 的开始时间，加上提交给它的应用程序的单调递增计数器。应用程序 ID 格式为“application_&lt;RM-start-time&gt;_&lt;Counter&gt;”。请注意，应用程序 ID 与作业 ID 完全不同。作业 ID 是特定于 MapReduce 框架的概念，而应用程序 ID 是不区分框架的 YARN 概念。在 YARN 中，作业 ID 标识特定的 MapReduce 作业，此作业由提交给 RM 的 MapReduce 应用程序的 AM 处理。
+或者，也可以使用以下代码段针对已知其应用程序 ID 的应用程序来下载日志。应用程序 ID 是 RM 分配给应用程序的全局唯一标识符。其构建方式是使用 RM 的开始时间，加上提交给它的应用程序的单调递增计数器。应用程序 ID 格式为“application\_&lt;RM-start-time&gt;\_&lt;Counter&gt;”。请注意，应用程序 ID 与作业 ID 完全不同。作业 ID 是特定于 MapReduce 框架的概念，而应用程序 ID 是不区分框架的 YARN 概念。在 YARN 中，作业 ID 标识特定的 MapReduce 作业，此作业由提交给 RM 的 MapReduce 应用程序的 AM 处理。
 
 	// Download application logs for an application whose application ID is known
 	string applicationId = "application_1416017767088_0028";
@@ -143,18 +144,18 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 如果需要，你也可以下载应用程序使用的每个容器（或任何特定容器）的日志，如下所示。
 
 	ApplicationDetails someApplication = appHistoryClient.GetApplicationDetails(applicationId);
-	
+
 	// Download logs separately for each container of application(s) of interest
 	// This will generate one log file per container
 	IEnumerable<ApplicationAttemptDetails> applicationAttempts =
 				appHistoryClient.ListApplicationAttempts(someApplication);
-	
+
 	ApplicationAttemptDetails finalAttempt = applicationAttempts
 	    		.Single(x => x.ApplicationAttemptId == someApplication.LatestApplicationAttemptId);
-	
+
 	IEnumerable<ApplicationContainerDetails> containers =
 				appHistoryClient.ListApplicationContainers(finalAttempt);
-	
+
 	foreach (ApplicationContainerDetails container in containers)
 	{
 	    appHistoryClient.DownloadApplicationLogs(container, downloadLocation);
@@ -168,4 +169,4 @@ YARN 通过将资源管理与应用程序计划/监视相分离，来支持多�
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
 
-<!---HONumber=67-->
+<!---HONumber=79-->

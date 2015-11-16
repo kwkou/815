@@ -41,7 +41,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关来通过 Ipsec/IKE 提�
 ##先决条件
 在开始阅读本教程前，你必须具有：
 
-- **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[成员优惠][azure-member-offers] 或[免费试用][azure-free-trial]。
+- **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅 [购买选项][azure-purchase-options]、[成员优惠][azure-member-offers] 或[免费试用][azure-trial]。
 
 - **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell][powershell-install]。
 
@@ -244,7 +244,7 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 
-[azure-free-trial]: /pricing/1rmb-trial/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: http://manage.windowsazure.cn
 
 

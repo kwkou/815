@@ -198,7 +198,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 	>[AZURE.NOTE]此操作可能需要几分钟。
 
-7. 从浏览器中导航到 https://ms.portal.azure.com/ ，必要时输入你的凭据。
+7. 从浏览器中导航到 https://manage.windowsazure.cn/ ，必要时输入你的凭据。
 8. 单击 Azure 门户中的 **RG1** 资源组磁铁，如下所示。
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure06.png)
@@ -313,7 +313,7 @@ Azure 当前有两种管理模式：Azure 服务管理（称之为经典）和 A
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure11.png)
 
-5. 尽管你可以管理经典 VNet 及其来自经典门户的连接，但还是建议使用新的 Azure 门户。要打开新门户，请导航到 https://ms.portal.azure.com。
+5. 尽管你可以管理经典 VNet 及其来自经典门户的连接，但还是建议使用新的 Azure 门户。要打开新门户，请导航到 https://manage.windowsazure.cn。
 6. 在新门户中，单击“浏览全部”，然后单击“虚拟网络(经典)”，再单击 **vnet01**。请注意以下所示的“VPN 连接”窗格。
 
 	![VNet 仪表板](./media/virtual-networks-arm-asm-s2s/figure12.png)

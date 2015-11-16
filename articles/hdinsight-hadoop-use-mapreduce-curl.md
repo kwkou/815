@@ -1,17 +1,17 @@
 <properties
-   pageTitle="将 MapReduce 和 Curl 与 HDInsight 中的 Hadoop 配合使用 | Azure"
+   pageTitle="将 MapReduce 和 Curl 与 HDInsight 中的 Hadoop 配合使用 | Windows Azure"
    description="了解如何使用 Curl 在 HDInsight 上的 Hadoop 上远程运行 MapReduce 作业。"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"
-	tags="azure-portal"/>
+   tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/12/2015"/>
 
 #使用 Curl 在 HDInsight 上的 Hadoop 上远程运行 MapReduce 作业
 
@@ -25,7 +25,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-* HDInsight 群集上的 Hadoop
+* HDInsight 群集上的 Hadoop（基于 Windows）
 
 * [Curl](http://curl.haxx.se/)
 
@@ -34,8 +34,8 @@
 ##<a id="curl"></a>使用 Curl 运行 MapReduce 作业
 
 > [AZURE.NOTE]使用 Curl 或者与 WebHCat 进行任何其他形式的 REST 通信时，必须通过提供 HDInsight 群集管理员用户名和密码对请求进行身份验证。此外，还必须使用群集名称作为用来向服务器发送请求的 URI 的一部分。
-> 
-> 对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证群集的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
+>
+> 对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
 >
 > REST API 使用[基本访问身份验证](http://en.wikipedia.org/wiki/Basic_access_authentication)进行保护。你应该始终通过使用 HTTPS 来发出请求，以确保安全地将凭据发送到服务器。
 
@@ -50,9 +50,9 @@
     此命令中使用的参数如下：
 
     * **-u**：指示用来对请求进行身份验证的用户名和密码
-    * **-G** - 指出这是 GET 请求
+    * **-G**：指出这是 GET 请求
 
-    所有请求的 URI 开头 ****https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。
+    所有请求的 URI 开头 **https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。
 
 2. 若要提交 MapReduce 作业，请使用以下命令：
 
@@ -79,9 +79,9 @@
 
     > [AZURE.NOTE]此 Curl 请求返回具有作业相关信息的 JSON 文档；使用 jq 可以仅检索状态值。
 
-4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在这种情况下为 ****wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
+4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在这种情况下为 **wasb:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
 
-可以使用 [Windows 的 Azure CLI](/documentation/articles/xplat-cli) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
+可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
 
 	azure storage blob list <container-name> example/curl
 
@@ -89,7 +89,7 @@
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS_KEY** 环境变量。有关详细信息，请参阅[如何将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data)。
+> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。有关详细信息，请参阅[如何将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data)。
 
 ##<a id="summary"></a>摘要
 
@@ -101,12 +101,12 @@
 
 有关 HDInsight 中的 MapReduce 作业的一般信息：
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
 
-<!---HONumber=71-->
+<!---HONumber=79-->

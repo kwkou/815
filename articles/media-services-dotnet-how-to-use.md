@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/05/2015"
+	wacn.date="11/12/2015"/>
 
 #使用 .NET 进行媒体服务开发 
 
@@ -24,9 +24,9 @@
 ##先决条件
 
 -   在新的或现有的 Azure 订阅中拥有一个媒体服务帐户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account)。
--   操作系统：Windows 7、Windows 2008 R2 或 Windows 8。
+-   操作系统：Windows 10、Windows 7、Windows 2008 R2 或 Windows 8。
 -   .NET Framework 4.5。
--   Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级版、旗舰版或速成版）。 
+-    Visual Studio 2015、Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级版、旗舰版或速成版）。 
   
 
 ##创建和配置 Visual Studio 项目 
@@ -71,15 +71,14 @@
 	若要获取**帐户名**和**帐户密钥**信息，请打开“Azure 管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 
-	<pre><code>
-&lt;configuration>
-    &lt;appSettings>
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-    &lt;/appSettings>
-&lt;/configuration>
-</code></pre>
-
+	<configuration>
+	...
+	  <appSettings>
+	    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+	    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+	  </appSettings>
+	  
+	</configuration>
 
 5. 使用以下代码覆盖位于 Program.cs 文件开头的现有 using 语句。
 
@@ -94,6 +93,7 @@
 		using Microsoft.WindowsAzure.MediaServices.Client;
 
 现在，你可以开始开发媒体服务应用程序了。
- 
 
-<!---HONumber=74-->
+
+
+<!---HONumber=79-->

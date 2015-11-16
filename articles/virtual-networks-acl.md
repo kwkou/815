@@ -5,17 +5,17 @@
    documentationCenter="na"
    authors="telmosampaio"
    manager="carolz"
-   editor="tysonn"/>
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/04/2015"
-   wacn.date="10/17/2015"/>
+   editor="tysonn" />
+<tags
+	ms.service="virtual-network"
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
-# 什么是网络访问控制列表 (ACL)？
+# 什么是终结点访问控制列表 (ACL)？
 
-网络访问控制列表 (ACL) 是可用于 Azure 部署的安全增强。利用 ACL，你可以选择允许还是拒绝虚拟机终结点的流量。此数据包筛选功能额外提供了一层安全性。你只能为终结点指定网络 ACL，而无法为虚拟网络或虚拟网络中包含的特定子网指定 ACL。
+终结点访问控制列表 (ACL) 是可用于 Azure 部署的安全增强。利用 ACL，你可以选择允许还是拒绝虚拟机终结点的流量。此数据包筛选功能额外提供了一层安全性。你只能为终结点指定网络 ACL，而无法为虚拟网络或虚拟网络中包含的特定子网指定 ACL。
 
-> [AZURE.IMPORTANT]建议你尽可能地使用网络安全组 (NSG) 而不是 ACL。若要了解有关 NSG 的详细信息，请参阅[什么是网络安全组](/documentation/articles/virtual-network-nsg)。
+> [AZURE.IMPORTANT]建议你尽可能地使用网络安全组 (NSG) 而不是 ACL。若要了解有关 NSG 的详细信息，请参阅[什么是网络安全组](/documentation/articles/virtual-networks-nsg)。
 
 可以使用 PowerShell 或在管理门户中配置 ACL。若要使用 PowerShell 配置网络 ACL，请参阅[使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)。若要使用管理门户配置网络 ACL，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
@@ -43,7 +43,7 @@ ACL 是包含规则列表的对象。当你创建 ACL 并将其应用于虚拟�
 
 | **规则编号** | **远程子网** | **终结点** | **允许/拒绝** |
 |--------|---------------|----------|-------------|
-| 100 | 0.0.0.0/0 | 3389 | 允许 |
+| 100 | 0\.0.0.0/0 | 3389 | 允许 |
 
 ## 允许和拒绝
 
@@ -71,8 +71,8 @@ ACL 是包含规则列表的对象。当你创建 ACL 并将其应用于虚拟�
 
 | **规则编号** | **远程子网** | **终结点** | **允许/拒绝** |
 |--------|---------------|----------|-------------|
-| 100 | 65.0.0.0/8 | 3389 | 允许 |
-| 200 | 159.0.0.0/8 | 3389 | 允许 |
+| 100 | 65\.0.0.0/8 | 3389 | 允许 |
+| 200 | 159\.0.0.0/8 | 3389 | 允许 |
 
 ### 规则顺序
 
@@ -82,8 +82,8 @@ ACL 是包含规则列表的对象。当你创建 ACL 并将其应用于虚拟�
 
 | **规则编号** | **远程子网** | **终结点** | **允许/拒绝** |
 |--------|---------------|----------|-------------|
-| 100 | 175.1.0.1/24 | 80 | 拒绝 |
-| 200 | 175.0.0.0/8 | 80 | 允许 |
+| 100 | 175\.1.0.1/24 | 80 | 拒绝 |
+| 200 | 175\.0.0.0/8 | 80 | 允许 |
 
 ## 网络 ACL 和负载平衡的集
 
@@ -95,4 +95,4 @@ ACL 是包含规则列表的对象。当你创建 ACL 并将其应用于虚拟�
 
 [如何使用 PowerShell 管理终结点的访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl-powershell)
 
-<!---HONumber=74-->
+<!---HONumber=79-->

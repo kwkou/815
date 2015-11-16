@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/17/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -37,7 +37,7 @@
 
 如果指定使用 **StorageEncrypted** 选项加密资产，Media Services SDK for .NET 将为资产创建 **StorateEncrypted** **ContentKey**。
 
->[AZURE.NOTE]构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+>[AZURE.NOTE]构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#[]"。此外，文件扩展名中只能含有一个“.”。
 
 本主题说明如何使用 Media Services .NET SDK 以及 Media Services .NET SDK Extensions 将文件上载到媒体服务资产中。
 
@@ -107,53 +107,53 @@
 >[AZURE.NOTE]使用 UploadAsync 方法可确保调用不会阻塞并且文件并行上载。
  	
  	
-	static public IAsset CreateAssetAndUploadMultipleFiles(AssetCreationOptions assetCreationOptions, string folderPath)
-	{
-	    var assetName = "UploadMultipleFiles_" + DateTime.UtcNow.ToString();
-	
-            IAsset asset = _context.Assets.Create(assetName, assetCreationOptions);
-	
-	    var accessPolicy = _context.AccessPolicies.Create(assetName, TimeSpan.FromDays(30),
-	                                                        AccessPermissions.Write | AccessPermissions.List);
+        static public IAsset CreateAssetAndUploadMultipleFiles(AssetCreationOptions assetCreationOptions, string folderPath)
+        {
+            var assetName = "UploadMultipleFiles_" + DateTime.UtcNow.ToString();
 
-	    var locator = _context.Locators.CreateLocator(LocatorType.Sas, asset, accessPolicy);
-	
-	    var blobTransferClient = new BlobTransferClient();
-		blobTransferClient.NumberOfConcurrentTransfers = 20;
-	    blobTransferClient.ParallelTransferThreadCount = 20;
-	
-	    blobTransferClient.TransferProgressChanged += blobTransferClient_TransferProgressChanged;
-	
-	    var filePaths = Directory.EnumerateFiles(folderPath);
-	
-	    Console.WriteLine("There are {0} files in {1}", filePaths.Count(), folderPath);
-	
-	    if (!filePaths.Any())
-	    {
-	        throw new FileNotFoundException(String.Format("No files in directory, check folderPath: {0}", folderPath));
-	    }
-	
-	    var uploadTasks = new List&lt;Task&gt;();
-	    foreach (var filePath in filePaths)
-	    {
-	        var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
-	        Console.WriteLine("Created assetFile {0}", assetFile.Name);
-	                
-	        // It is recommended to validate AccestFiles before upload. 
-	        Console.WriteLine("Start uploading of {0}", assetFile.Name);
-	        uploadTasks.Add(assetFile.UploadAsync(filePath, blobTransferClient, locator, CancellationToken.None));
-	    }
-	
-	    Task.WaitAll(uploadTasks.ToArray());
-	    Console.WriteLine("Done uploading the files");
-	
-	    blobTransferClient.TransferProgressChanged -= blobTransferClient_TransferProgressChanged;
-	
-	    locator.Delete();
-	    accessPolicy.Delete();
-	
-	    return asset;
-	}
+            IAsset asset = _context.Assets.Create(assetName, assetCreationOptions);
+
+            var accessPolicy = _context.AccessPolicies.Create(assetName, TimeSpan.FromDays(30),
+                                                                AccessPermissions.Write | AccessPermissions.List);
+
+            var locator = _context.Locators.CreateLocator(LocatorType.Sas, asset, accessPolicy);
+
+            var blobTransferClient = new BlobTransferClient();
+            blobTransferClient.NumberOfConcurrentTransfers = 20;
+            blobTransferClient.ParallelTransferThreadCount = 20;
+
+            blobTransferClient.TransferProgressChanged += blobTransferClient_TransferProgressChanged;
+
+            var filePaths = Directory.EnumerateFiles(folderPath);
+
+            Console.WriteLine("There are {0} files in {1}", filePaths.Count(), folderPath);
+
+            if (!filePaths.Any())
+            {
+                throw new FileNotFoundException(String.Format("No files in directory, check folderPath: {0}", folderPath));
+            }
+
+            var uploadTasks = new List<Task>();
+            foreach (var filePath in filePaths)
+            {
+                var assetFile = asset.AssetFiles.Create(Path.GetFileName(filePath));
+                Console.WriteLine("Created assetFile {0}", assetFile.Name);
+
+                // It is recommended to validate AccestFiles before upload. 
+                Console.WriteLine("Start uploading of {0}", assetFile.Name);
+                uploadTasks.Add(assetFile.UploadAsync(filePath, blobTransferClient, locator, CancellationToken.None));
+            }
+
+            Task.WaitAll(uploadTasks.ToArray());
+            Console.WriteLine("Done uploading the files");
+
+            blobTransferClient.TransferProgressChanged -= blobTransferClient_TransferProgressChanged;
+
+            locator.Delete();
+            accessPolicy.Delete();
+
+            return asset;
+        }
 	
 	static void  blobTransferClient_TransferProgressChanged(object sender, BlobTransferProgressChangedEventArgs e)
 	{
@@ -188,8 +188,7 @@
 	IAsset destAsset1 = _context.Assets.Create(name + "_asset_1", AssetCreationOptions.None);
 	IAsset destAsset2 = _context.Assets.Create(name + "_asset_2", AssetCreationOptions.None);
 
-一个 IngestManifestAsset 将一个资产与一个用于批量引入的批量 IngestManifest 相关联。它还关联构成每个资产的 AssetFiles。
-若要创建 IngestManifestAsset，请使用服务器上下文中的 Create 方法。
+一个 IngestManifestAsset 将一个资产与一个用于批量引入的批量 IngestManifest 相关联。它还关联构成每个资产的 AssetFiles。若要创建 IngestManifestAsset，请使用服务器上下文中的 Create 方法。
 
 以下示例演示如何添加两个新的 IngestManifestAssets，这两项将以前创建的两个资产关联到批量引入清单。每个 IngestManifestAsset 还关联一组将在批量引入期间为每个资产上载的文件。
 
@@ -301,4 +300,4 @@
 
 [如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor
 
-<!---HONumber=74-->
+<!---HONumber=79-->

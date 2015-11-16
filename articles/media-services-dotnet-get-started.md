@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 .NET SDK 开始传送点播视频 (VoD) 内容"
-	description="本教程将引导你完成使用 Azure 媒体服务和 .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。"
+	pageTitle="使用 .NET SDK 开始传送点播内容"
+	description="本教程将引导你完成使用 Azure 媒体服务和 .NET 实施点播内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -9,17 +9,17 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/18/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="11/12/2015"/>
 
 
-# 使用 .NET SDK 开始传送点播视频 (VoD) 内容
+# 使用 .NET SDK 开始传送点播内容
 
-[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started)]
+[AZURE.INCLUDE [media-services-selector-get-started](../includes/media-services-selector-get-started.md)]
 
 
 >[AZURE.NOTE]
-> 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
+>若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
 
 本教程将引导你完成使用 Azure Media Services (AMS) SDK for .NET 实施视频点播 (VoD) 内容传送应用程序的步骤。
 
@@ -31,24 +31,24 @@
 
 - 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
 - .NET Framework 4.5 或 .NET Framework 4.0
-- Visual Studio 2013、Visual Studio 2012 或 Visual Studio 2010 SP1（专业版、高级版、旗舰版或速成版）。
+- Visual Studio 2010 SP1（专业版、高级专业版、旗舰版或学习版）或更高版本。
 
 
-本快速入门教程中说明了以下任务。
+本快速入门教程说明了以下任务。
 
-1.  创建媒体服务帐户（使用门户）
-2.  配置流式处理终结点（使用门户）
-3.  创建和配置 Visual Studio 项目
-5.  连接到媒体服务帐户
-1.  创建新资产并上载视频文件
-1.  将源文件编码为一组自适应比特率 MP4 文件
+1.  创建媒体服务帐户（使用 Azure 管理门户）。
+2.  配置流式处理终结点（使用门户）。
+3.  创建和配置 Visual Studio 项目。
+5.  连接到媒体服务帐户。
+6.  创建新资产并上载视频文件。
+7.  将源文件编码为一组自适应比特率 MP4 文件。
 8.  发布资产并获取用于流式处理和渐进式下载的 URL。  
-1.  播放内容
+9.  播放内容。
 
 
 ##使用门户创建媒体服务帐户
 
-1. 在[管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
+1. 在 Azure 管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。
 
 	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
@@ -80,14 +80,14 @@
 
 若要使用动态打包，必须执行下列操作：
 
-- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤），  
+- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。  
 - 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
 
 通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
-1. 在[管理门户](https://manage.windowsazure.cn/)中单击 **媒体服务**。然后，单击媒体服务的名称。
+1. 在[门户](https://manage.windowsazure.cn/)中单击“媒体服务”。然后，单击媒体服务的名称。
 
 2. 选择“流式处理终结点”页。然后，单击要修改的流式处理终结点。
 
@@ -99,10 +99,9 @@
 
 	分配所有新的单元大约需要 20 分钟才能完成。
 
-
-	>[AZURE.NOTE] 当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
+	>[AZURE.NOTE]当前，将流式处理单位的任何正值设置回“无”可将流式处理功能禁用最多 1 小时。
 	>
-	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/home/features/media-services/#price)。
+	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅[媒体服务定价详细信息](/home/features/media-services/#price)。
 
 
 
@@ -114,16 +113,17 @@
 
 3. 添加对 System.Configuration 程序集的引用。此程序集包含用于访问配置文件（例如，App.config）的 **System.Configuration.ConfigurationManager** 类。
 
-4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
+4. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。若要获取帐户名和密钥信息，请打开 Azure 管理门户，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
-	<pre><code>
-&lt;configuration>
-    &lt;appSettings>
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-    &lt;/appSettings>
-&lt;/configuration>
-</code></pre>
+		<configuration>
+		...
+	  	<appSettings>
+	   		<add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+	    	<add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+	  	</appSettings>
+	  
+		</configuration>
+
 
 5. 使用以下代码覆盖位于 Program.cs 文件开头的现有 **using** 语句。
 
@@ -142,9 +142,9 @@
 
 ##连接到媒体服务帐户
 
-使用采用 .NET 的媒体服务时，你必须将 **CloudMediaContext** 类用于大多数媒体服务编程任务：连接到媒体服务帐户；创建、更新、访问和删除以下对象：资产、资产文件、作业、访问策略、定位符等等。
+使用采用 .NET 的媒体服务时，你必须将 **CloudMediaContext** 类用于大多数媒体服务编程任务：连接到媒体服务帐户；创建、更新、访问和删除以下对象：资产、资产文件、作业、访问策略、定位符等。
 
-使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 CloudMediaContext 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 连接到媒体服务](/documentation/articles/media-services-dotnet-connect_programmatically)。
+使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 **CloudMediaContext** 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用用于 .NET 的媒体服务 SDK 连接到媒体服务](http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx)。
 
 **Main** 函数调用将在本部分中进一步定义的方法。
 
@@ -197,7 +197,7 @@
 
 ##创建新资产并上载视频文件
 
-在媒体服务中，可以将数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、文本轨道和隐藏字幕文件（以及有关这些文件的元数据）。 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。资产中的文件称为**资产文件**。
+在媒体服务中，可以将数字文件上载（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏字幕文件（以及有关这些文件的元数据）。 上载文件完成后，相关内容即安全地存储在云中供后续处理和流式处理。资产中的文件称为**资产文件**。
 
 下面定义的 **UploadFile** 方法调用 **CreateFromFile**（在 .NET SDK Extensions 中定义）。**CreateFromFile** 创建指定的源文件所要上载到的新资产。
 
@@ -205,7 +205,7 @@
 
 - **无** - 不使用加密。这是默认值。请注意，使用此选项时，你的内容在传送过程中或静态存储过程中都不会受到保护。如果计划使用渐进式下载交付 MP4，则使用此选项。
 - **StorageEncrypted** - 使用此选项可以通过高级加密标准 (AES) 256 位加密在本地加密明文内容，然后将其上载到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上载为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
-- **CommonEncryptionProtected** - 上载经过常用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
+- **CommonEncryptionProtected** - 上载经过通用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
 - **EnvelopeEncryptionProtected** - 如果要上载使用 AES 加密的 HLS，请使用此选项。请注意，Transform Manager 必须已对文件进行编码和加密。
 
 **CreateFromFile** 方法还允许你指定回调，以报告文件的上载进度。
@@ -243,8 +243,8 @@
 
 以下代码演示如何提交编码作业。该作业所包含的一项任务会指定要使用 **Azure 媒体编码器**将夹层文件转码成一组自适应比特率 MP4。代码会提交作业，并等待作业完成。
 
-作业完成后，你即可流式处理资产，或渐进式下载转码后所创建的 MP4 文件。请注意，你不需要拥有超过 0 个流式处理单位才能渐进式下载 MP4 文件。
-
+作业完成后，你即可流式处理资产，或渐进式下载转码后所创建的 MP4 文件。
+请注意，你不需要拥有超过 0 个流式处理单位才能渐进式下载 MP4 文件。
 
 将以下方法添加到 Program 类。
 
@@ -290,11 +290,11 @@
 
 平滑流式处理的流 URL 采用以下格式：
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
+	 {streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
 HLS 的流 URL 采用以下格式：
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
+	 {streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
 MPEG DASH 的流 URL 采用以下格式：
 
@@ -394,21 +394,21 @@ MPEG DASH
 	http://amstestaccount001.streaming.mediaservices.chinacloudapi.cn/ebf733c4-3e2e-4a68-b67b-cc5159d1d7f2/BigBuckBunny.ism/manifest(format=mpd-time-csf)
 
 渐进式下载 URL（音频和视频）。
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_400kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_3400kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_2250kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_1500kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_H264_1000kbps_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_96kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
-	
+
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
@@ -416,13 +416,12 @@ MPEG DASH
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 Internet Explorer、Chrome 或 Safari）中。
 
+
 ##后续步骤
 
-若要了解有关生成点播视频应用程序的详细信息，请参阅[生成 VoD 应用程序](/documentation/articles/media-services-video-on-demand-workflow)
+### 想要寻找其他内容吗？
 
-###其他资源
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure 媒体服务 101 - 立即在线获取你的视频！</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure 媒体服务 102 - 动态打包和移动设备</a>
+如果本主题不包含你所期待的内容、缺少某些内容，或在其他方面不符合你的需求，请使用下面的 Disqus 会话向我们提供反馈。
 
 
 <!-- Anchors. -->
@@ -430,6 +429,6 @@ MPEG DASH
 
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
-  [管理门户]: http://manage.windowsazure.cn/
+  [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=79-->

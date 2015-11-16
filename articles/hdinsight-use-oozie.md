@@ -297,7 +297,7 @@ HDInsight 使用 Azure 存储空间中的 Blob 来存储数据。有关详细信
 		{
 			# SQL query string for creating log4jLogsCount table
 			$cmdCreateLog4jCountTable = " CREATE TABLE [dbo].[$sqlDatabaseTableName](
-				    [Level] [nvarchar](/documentation/articles/10) NOT NULL,
+				    [Level] [nvarchar](10) NOT NULL,
 				    [Total] float,
 				CONSTRAINT [PK_$sqlDatabaseTableName] PRIMARY KEY CLUSTERED   
 				(

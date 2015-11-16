@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 HDInsight 中的 Hadoop 群集上安装和使用 Giraph | Azure" 
+	pageTitle="在 HDInsight 中的 Hadoop 群集上安装和使用 Giraph | Windows Azure" 
 	description="了解如何使用 Giraph 自定义 HDInsight 群集。你将使用“脚本操作”配置选项，通过一个脚本来安装 Giraph。" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -7,37 +7,43 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="08/07/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="10/02/2015"
+	wacn.date="11/12/2015"/>
 
 # 在 HDInsight Hadoop 群集上安装 Giraph 并使用 Giraph 处理大型图形
 
-你可以使用**脚本操作**群集自定义，在 Azure HDInsight 上 Hadoop 中的任何一种群集上安装 Giraph。仅当创建群集时，你才能通过脚本操作运行脚本来自定义群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]。
+了解如何使用 Giraph 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何使用 Giraph 来处理大型关系图。
+ 
+你可以使用*脚本操作*，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase）上安装 Giraph。用于在 HDInsight 群集上安装 Giraph 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
 
-在本主题中，你将学习如何使用脚本操作来安装 Giraph。一旦你已安装 Giraph，你还将了解如何将 Giraph 用于大多数典型应用程序，也就是处理大型图形。
+**相关文章** 
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息。
+- [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息。
+- [针对 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)。
 
-* [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
 
-## <a name="whatis"></a>什么是 Giraph？
+<a name="whatis"></a>
+
+## 什么是 Giraph？
 
 <a href="http://giraph.apache.org/" target="_blank">Apache Giraph</a> 可让你使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。图形可为对象之间的关系建模，例如，为大型网络（例如 Internet）上的路由器之间的连接建模，或者为社交网络上的人物之间的关系建模（有时称为社交图形）。通过图形处理，你可以推理图形中对象之间的关系，例如：
 
 - 根据当前的关系识别潜在的朋友。
 - 识别网络中两台计算机之间的最短路由。
 - 计算网页的排名。
-
    
-## <a name="install"></a>如何安装 Giraph？
+<a name="install"></a>
 
-用于在 HDInsight 群集上安装 Giraph 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户设置群集时使用示例脚本的说明。
+## 使用门户安装 Giraph
 
-> [AZURE.NOTE]示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
+[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-1. 根据[使用自定义选项设置群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始设置群集。 
+* [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
+
+1. 根据[使用自定义选项在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters#portal)中的说明，使用“自定义创建”选项开始创建群集。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
 	![使用脚本操作自定义群集](./media/hdinsight-hadoop-giraph-install-v1/hdi-script-action-giraph.png "使用脚本操作自定义群集")
@@ -47,16 +53,18 @@
 	<tr><td>Name</td>
 		<td>指定脚本操作的名称。例如 <b>Install Giraph</b>。</td></tr>
 	<tr><td>脚本 URI</td>
-		<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如，<i>https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1</i></td></tr>
+		<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如 <i>https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1</i></td></tr>
 	<tr><td>节点类型</td>
 		<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
 	<tr><td>Parameters</td>
 		<td>根据脚本的需要，指定参数。用于安装 Giraph 的脚本不需要任何参数，因此你可以将此字段留空。</td></tr>
-</table>你可以添加多个脚本操作，以在群集上安装多个组件。在添加了脚本后，单击复选标记以开始设置群集。
+	</table>
+
+	你可以添加多个脚本操作，以在群集上安装多个组件。在添加了脚本后，单击复选标记以开始创建群集。
 
 你也可以使用 Azure PowerShell 或 HDInsight .NET SDK 在 HDInsight 上使用脚本安装 Giraph。本主题后面将提供有关这些过程的说明。
 
-## <a name="usegiraph"></a>如何在 HDInsight 中使用 Giraph？
+## 使用 Giraph
 
 我们将使用 SimpleShortestPathsComputation 示例来演示有关查找图形中对象之间最短路径的基本 <a href = "http://people.apache.org/~edwardyoon/documents/pregel.pdf">Pregel</a> 实现。请执行以下步骤，以上载示例数据和示例 jar，使用 SimpleShortestPathsComputation 示例运行作业，然后查看结果。
 
@@ -108,7 +116,7 @@
 
 	在上面的示例中，请将 **clustername** 替换为已装有 Giraph 的 HDInsight 群集的名称。
 
-5. 查看结果。完成该作业后，结果将存储在 \_\___wasb:///example/out/shotestpaths__ 文件夹中的两个输出文件中。这些文件名为 __part-m-00001__ 和 __part-m-00002__。执行以下步骤以下载和查看输出：
+5. 查看结果。完成该作业后，结果将存储在 __wasb:///example/out/shotestpaths__ 文件夹中的两个输出文件中。这些文件名为 __part-m-00001__ 和 __part-m-00002__。执行以下步骤以下载和查看输出：
 
 		$subscriptionName = "<SubscriptionName>"       # Azure subscription name
 		$storageAccountName = "<StorageAccountName>"   # Azure Storage account name
@@ -147,7 +155,12 @@
 	![将对象绘制为圆圈，并绘制对象之间的最短路径](./media/hdinsight-hadoop-giraph-install-v1/giraph-graph-out.png)
 
 
-## <a name="usingPS"></a>使用 Azure PowerShell 在 HDInsight Hadoop 群集上安装 Giraph
+
+
+
+
+<a name="usingPS"></a>
+## 使用 Azure PowerShell 安装 Giraph
 
 在本部分中，我们使用 **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 通过脚本操作来调用脚本，以自定义群集。在继续前，确保你已安装并配置 Azure PowerShell。有关配置工作站以运行适用于 HDInsight 的 Azure Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install]。
 
@@ -210,8 +223,8 @@
 
 出现提示时，请输入群集的凭据。创建群集可能需要几分钟时间。
 
-
-## <a name="usingSDK"></a>使用 .NET SDK 在 HDInsight Hadoop 群集上安装 Giraph
+<a name="usingSDK"></a>
+## 使用 .NET SDK 安装 Giraph
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使用 HDInsight 的操作。本部分说明如何使用 SDK 中的脚本操作来设置已安装 Giraph 的群集。必须执行以下过程：
 
@@ -227,7 +240,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 **创建自签名证书**
 
-创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert)。
+创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1#cert)。
 
 
 **创建 Visual Studio 应用程序**
@@ -239,19 +252,19 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 3. 在“新建项目”中，键入或选择以下值：
 	
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-<tr>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">属性</th>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">值</th></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">类别</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">模板/Visual C#/Windows</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">模板</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">控制台应用程序</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateGiraphCluster</td></tr>
-</table>
+	<tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">属性</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">值</th></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">类别</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">模板/Visual C#/Windows</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">模板</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">控制台应用程序</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateGiraphCluster</td></tr>
+	</table>
 
 4. 单击“确定”以创建该项目。
 
@@ -332,12 +345,16 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 	.\CreateGiraphCluster <cluster-name>
 
-提供群集名称，然后按 ENTER 设置已安装 Giraph 的群集。
+提供群集名称，然后按 ENTER 预配已安装 Giraph 的群集。
 
 
-## 另请参阅##
-- [在 HDinsight 群集上安装 R][hdinsight-install-r]：提供有关如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 R 的说明。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
-- [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。使用群集自定义在 HDInsight Hadoop 群集上安装 Solr。Solr 允许你对存储的数据执行功能强大的搜索操作。
+## 另请参阅
+
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关如何创建 HDInsight 群集的一般信息。
+- [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息。
+- [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)。
+- [在 HDInsight 群集上安装 R][hdinsight-install-r]：有关如何安装 R 的脚本操作示例。
+- [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install)：有关如何安装 Solr 的脚本操作示例。
 
 
 
@@ -348,4 +365,5 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-<!---HONumber=76-->
+
+<!---HONumber=79-->

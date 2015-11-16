@@ -69,7 +69,7 @@
 
 	参数：
 
-	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *westus*。
+	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。
 	- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **azure network nsg rule create** 命令以创建允许从 Internet 访问端口 3389 (RDP) 的规则。
@@ -175,7 +175,7 @@
 
 	参数：
 
-	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *westus*。
+	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。
 	- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **azure network nsg rule create** 命令以创建允许从前端子网访问端口 1433 (SQL) 的规则。

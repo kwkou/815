@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="使用 .NET 配置资产传送策略" 
-	description="本主题说明如何配置不同的资产传送策略。" 
+	pageTitle="使用 .NET SDK 配置资产传送策略" 
+	description="本主题说明如何通过 Azure 媒体服务 .NET SDK 配置不同的资产传送策略。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,Mingfeiy" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/20/2015"  
-	wacn.date="10/22/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/18/2015"
+	wacn.date="11/12/2015"/>
 
-#如何：配置资产传送策略
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy)]
+#使用 .NET SDK 配置资产传送策略
+[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../includes/media-services-selector-asset-delivery-policy.md)]
 
 如果你打算传送加密资产，媒体服务内容传送工作流中的步骤之一是为资产配置传送策略。资产传送策略告知媒体服务你希望如何传送资产：应该将资产动态打包成哪种流式处理协议（例如 MPEG DASH、HLS、平滑流或全部），是否要动态加密资产以及如何加密（信封或常用加密）。
 
@@ -123,7 +123,7 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
 	
 	}
 
->[AZURE.NOTE]使用 Widevine 加密时，只能使用 DASH 传送。请确保在资产传送协议中指定 DASH (2)。
+>[AZURE.NOTE]使用 Widevine 加密时，只能使用 DASH 传送。请确保在资产传送协议中指定 DASH。
 
 
 ##DynamicEnvelopeEncryption 资产传送策略 
@@ -317,4 +317,5 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=74-->
+
+<!---HONumber=79-->

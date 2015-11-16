@@ -152,7 +152,7 @@
 
 	此文件将用于加载 HDInsight 群集的 HBase 配置。
 
-	> [AZURE.NOTE]这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[通过使用 Azure 门户在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-&lt;version number>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
+	> [AZURE.NOTE]这是极小的 hbase-site.xml 文件，其中包含 HDInsight 群集的基本最低设置。有关 HDInsight 使用的 hbase-site.xml 配置文件的完整版本，请参阅[通过使用 Azure 门户在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)。hbase-site.xml 文件位于 C:\\apps\\dist\\hbase-&lt;version number>-hadoop2\\conf 目录中。在群集上更新 HBase 后，文件路径的版本号部分将发生变化。
 
 3. 保存 __hbase-site.xml__ 文件。
 

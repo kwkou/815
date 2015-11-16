@@ -1,18 +1,18 @@
 <properties
-   pageTitle="在 HDInsight 中将 Hadoop Pig 与 Curl 配合使用 | Azure"
+   pageTitle="在 HDInsight 中将 Hadoop Pig 与 Curl 配合使用 | Windows Azure"
    description="学习如何使用 Curl 在 Azure HDInsight 中的 Hadoop 群集上运行 Pig Latin 作业。"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
    editor="cgronlun"
-	tags="azure-portal"/>
+   tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="10/03/2015"/>
- 
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/12/2015"/>
+
 #使用 Curl 配合 HDInsight 上的 Hadoop 运行 Pig 作业
 
 [AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
@@ -25,21 +25,21 @@
 
 若要完成本文中的步骤，你将需要：
 
-* Azure HDInsight（HDInsight 上的 Hadoop）群集
+* Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
 
-* <a href="http://curl.haxx.se/" target="_blank">Curl</a>
+* [Curl](http://curl.haxx.se/)
 
-* <a href="http://stedolan.github.io/jq/" target="_blank">jq</a>
+* [jq](http://stedolan.github.io/jq/)
 
 ##<a id="curl"></a>通过使用 Curl 运行 Pig 作业
 
 > [AZURE.NOTE]使用 Curl 或者与 WebHCat 进行任何其他形式的 REST 通信时，必须提供 HDInsight 群集管理员用户名和密码对请求进行身份验证。此外，还必须使用群集名称作为用来向服务器发送请求的统一资源标识符 (URI) 的一部分。
-> 
-> 对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证群集的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
+>
+> 对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
 >
 > REST API 通过[基本访问身份验证](http://en.wikipedia.org/wiki/Basic_access_authentication)进行保护。你始终应该使用安全 HTTP (HTTPS) 来发出请求，以确保安全地将凭据发送到服务器。
 
-1. 在命令行中，使用以下命令验证你是否可以连接到 HDInsight 群集。 
+1. 在命令行中，使用以下命令验证你是否可以连接到 HDInsight 群集。
 
         curl -u USERNAME:PASSWORD -G https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/status
 
@@ -52,7 +52,7 @@
     * **-u**：用来对请求进行身份验证的用户名和密码。
     * **-G**：指出这是 GET 请求
 
-    所有请求的 URL 开头 ****https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。**/status** 路径表示请求是要返回服务器的 WebHCat（也称为 Templeton）状态。
+    所有请求的 URL 开头 **https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。**/status** 路径表示请求是要返回服务器的 WebHCat（也称为 Templeton）状态。
 
 2. 使用以下代码将 Pig Latin 作业提交到群集：
 
@@ -82,9 +82,9 @@
 
 ##<a id="results"></a>查看结果
 
-在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 ****wasb:///example/pigcurl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/pigcurl** 目录中。
+在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasb:///example/pigcurl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/pigcurl** 目录中。
 
-可以使用 [Windows 的 Azure CLI](/documentation/articles/xplat-cli) 列出并下载这些文件。例如，若要列出 **example/pigcurl** 中的文件，请使用以下命令：
+可以使用 [Azure CLI](/documentation/articles/xplat-cli-install) 列出并下载这些文件。例如，若要列出 **example/pigcurl** 中的文件，请使用以下命令：
 
 	azure storage blob list <container-name> example/pigcurl
 
@@ -92,8 +92,7 @@
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS_KEY** 环境变量。
-
+> [AZURE.NOTE]你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。
 
 ##<a id="summary"></a>摘要
 
@@ -105,12 +104,12 @@
 
 有关 HDInsight 上的 Pig 的一般信息：
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
 
-<!---HONumber=71-->
+<!---HONumber=79-->
