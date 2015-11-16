@@ -36,7 +36,7 @@ Azure 流分析作业可以连接到一个或多个输出，其定义了一个�
 
 4. 根据输出类型，你可能需要指定序列化或格式化数据的方式。此处记录了每个输出类型的特定序列化设置。
 
-    填充所需连接属性的其余部分以连接到你的数据源。这些字段根据输入类型和源类型而变化，在[此处](stream-analytics-create-a-job.md)进行了详细定义。
+    填充所需连接属性的其余部分以连接到你的数据源。这些字段根据输入类型和源类型而变化，在[此处](/documentation/articles/stream-analytics-create-a-job)进行了详细定义。
 
     ![添加事件中心](./media/stream-analytics-add-outputs/4-stream-analytics-add-outputs.png)
 
@@ -48,7 +48,7 @@ Azure 流分析作业可以连接到一个或多个输出，其定义了一个�
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!---HONumber=79-->

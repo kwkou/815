@@ -283,7 +283,7 @@
 [stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
 [stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+[stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
  
 
 <!---HONumber=79-->

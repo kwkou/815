@@ -22,7 +22,7 @@ Azure 流分析提供了七种不同的方法来存储和查看作业输出。SQ
 
 ## 使用 SQL 数据库作为输出 ##
 ---
-可以将 SQL 数据库用作本质上为关系型数据的数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。有关 Azure SQL 数据库的详细信息，请参阅 [Azure SQL 数据库](/documentation/services/sql-database/)。
+可以将 SQL 数据库用作本质上为关系型数据的数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。有关 Azure SQL 数据库的详细信息，请参阅 [Azure SQL 数据库](/services/sql-databases/)。
 
 ### Parameters ###
 
@@ -163,7 +163,7 @@ Azure 流分析提供了七种不同的方法来存储和查看作业输出。SQ
 ### Service Bus 队列概念简介 ###
 Service Bus 队列为一个或多个竞争使用方提供先入先出 (FIFO) 消息传递方式。通常情况下，接收方会按照消息添加到队列中的临时顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
 
-有关 Service Bus 队列的详细信息，请参阅 [Service Bus 队列、主题和订阅](https://msdn.microsoft.com/zh-cn/library/azure/hh367516.aspx "Service Bus 队列、主题和订阅")和 [Service Bus 队列简介](http://blogs.msdn.com/b/appfabric/archive/2011/05/17/an-introduction-to-service-bus-queues.aspx "Service Bus 队列简介")。
+有关 Service Bus 队列的详细信息，请参阅 [Service Bus 队列、主题和订阅](/documentation/articles/service-bus-queues-topics-subscriptions/)和 [Service Bus 队列简介](http://blogs.msdn.com/b/appfabric/archive/2011/05/17/an-introduction-to-service-bus-queues.aspx "Service Bus 队列简介")。
 
 ### Parameters ###
 

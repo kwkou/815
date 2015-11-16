@@ -22,7 +22,7 @@
 
 ## SQL 数据库 ##
 
-可以将 [Azure SQL 数据库](http://azure.microsoft.com/services/sql-database/)用作本质上为关系型数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。流分析作业将写入到 Azure SQL 数据库的现有表中。请注意表架构必须与字段及其正从作业输出的类型完全匹配。下表列出了属性名称和用于创建 SQL 数据库输出的属性说明。
+可以将 [Azure SQL 数据库](/services/sql-database/)用作本质上为关系型数据的输出，也可以将其用于所依赖的内容在关系数据库中托管的应用程序。流分析作业将写入到 Azure SQL 数据库的现有表中。请注意表架构必须与字段及其正从作业输出的类型完全匹配。下表列出了属性名称和用于创建 SQL 数据库输出的属性说明。
 
 | 属性名称 | 说明 |
 |---------------|-------------|
@@ -35,7 +35,7 @@
 
 ## Blob 存储 ##
 
-Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在云中存储大量非结构化数据。如需 Azure Blob 存储及其用法的简介，请参阅文档：[如何使用 Blob](./articles/storage-dotnet-how-to-use-blobs.md)。
+Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在云中存储大量非结构化数据。如需 Azure Blob 存储及其用法的简介，请参阅文档：[如何使用 Blob](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
 下表列出了属性名称和用于创建 blob 输出的属性说明。
 
@@ -94,7 +94,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 ## 事件中心
 
-[事件中心](https://azure.microsoft.com/services/event-hubs/)是具有高扩展性的发布-订阅事件引入器。事件中心每秒可收集数百万个事件。当流分析作业的输出将要成为另一个流式处理作业的输入时，可以将事件中心用作输出。
+[事件中心](/services/event-hubs/)是具有高扩展性的发布-订阅事件引入器。事件中心每秒可收集数百万个事件。当流分析作业的输出将要成为另一个流式处理作业的输入时，可以将事件中心用作输出。
 
 将事件中心数据流配置成输出时，需要使用几个参数。
 
@@ -114,7 +114,7 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 ## 表存储
 
-[Azure 表存储](./articles/storage-introduction.md)提供了具有高可用性且可大规模伸缩的存储，因此应用程序可以自动伸缩以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
+[Azure 表存储](/documentation/articles/storage-introduction)提供了具有高可用性且可大规模伸缩的存储，因此应用程序可以自动伸缩以满足用户需求。表存储是 Microsoft 推出的 NoSQL 键/属性存储，适用于对架构的约束性较少的结构化数据。Azure 表存储可用于持久地存储数据，方便进行高效的检索。
 
 下表列出了属性名称和用于创建表输出的属性说明。
 
@@ -126,11 +126,11 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 | 表名称 | 表的名称如果表不存在，则会创建表。 |
 | 分区键 | 包含分区键的输出列的名称。分区键是给某个定表中分区的唯一标识，分区键构成了实体主键的第一部分。分区键是一个最大为 1 KB 的字符串值。 |
 | 行键 | 包含行键的输出列的名称。行键是某个给定分区中实体的唯一标识符。行键构成了实体主键的第二部分。行键是一个最大为 1 KB 的字符串值。 |
-| 批大小 | 批处理操作的记录数。通常情况下，默认值对于大多数作业来说已经足够。若要修改此设置，请参阅[表批处理操作规范](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx)以获取详细信息。 |
+| 批大小 | 批处理操作的记录数。通常情况下，默认值对于大多数作业来说已经足够。若要修改此设置，请参阅[表批处理操作规范](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx)以获取详细信息。 |
 
 ## 服务总线队列
 
-[服务总线队列](https://msdn.microsoft.com/library/azure/hh367516.aspx)为一个或多个竞争使用方提供先入先出 (FIFO) 消息传递方式。通常情况下，接收方会按照消息添加到队列中的临时顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
+[服务总线队列](/documentation/articles/service-bus-queues-topics-subscriptions/)为一个或多个竞争使用方提供先入先出 (FIFO) 消息传递方式。通常情况下，接收方会按照消息添加到队列中的临时顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
 
 下表列出了属性名称和用于创建队列输出的属性说明。
 
@@ -171,8 +171,8 @@ Blob 存储提供了一个种经济高效且可扩展的解决方案，用于在
 
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!--Link references-->
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md
