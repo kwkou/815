@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="08/04/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/16/2015"
+	wacn.date="11/02/2015"/>
 
 
 # 如何通过 .NET 使用 Blob 存储
@@ -142,7 +142,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 		}
 	}
 
-如上所示，您可以命名 Blob，在其名称中包含路径信息。这将创建一个虚拟目录结构，你可以像传统文件系统一样组织和遍历。注意，该目录结构仅是虚拟的 - 在 Blob 存储中可用的唯一资源是容器和 Blob。但是，存储空间客户端库提供 **CloudBlobDirectory** 对象来引用虚拟目录，并简化了以这种方式组织的 Blob 的使用过程。
+如上所示，您可以命名 Blob，在其名称中包含路径信息。这将创建一个虚拟目录结构，你可以像传统文件系统一样组织和遍历。注意，该目录结构仅仅是虚拟的 -  Blob 存储中唯一可用的资源是容器和 Blob。但是，存储空间客户端库提供 **CloudBlobDirectory** 对象来引用虚拟目录，并简化了以这种方式组织的 Blob 的使用过程。
 
 例如，考虑名为 `photos` 的容器中包含的下面一组块 Blob：
 
@@ -162,7 +162,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 	Block blob of length 505623: https://<accountname>.blob.core.chinacloudapi.cn/photos/photo1.jpg
 
 
-另外，也可以将 **ListBlobs** 方法的 **UseFlatBlobListing** 参数设置为 **true**。在这种情况下，作为 **CloudBlockBlob** 对象返回容器中的每一个 Blob。对 **ListBlobs** 的调用返回一个平面列表，如下所示：
+另外，也可以将 **ListBlobs** 方法的 **UseFlatBlobListing** 参数设置为 **true**。在此案例中，容器中的每一个 Blob 都作为 **CloudBlockBlob** 对象返回。对 **ListBlobs** 的调用返回一个平面列表，如下所示：
 
     // Loop over items within the container and output the length and URI.
 	foreach (IListBlobItem item in container.ListBlobs(null, true))
@@ -252,7 +252,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 如果要列出大量 Blob，或需要控制一个列操作中返回的结果数，则可以结果页的方式列出 Blob。此示例显示如何以页面形式异步返回结果，这样就不会在等待返回大型结果集时阻止操作的执行。
 
-此示例演示如何用平铺的方式列出blob，但您也可以使用层次的方式，只需将 **ListBlobsSegmentedAsync** 方法的 `useFlatBlobListing` 参数设置为 `false` 即可。
+此示例演示平面 Blob 列表，但您也可以执行分层列表，只需将 **ListBlobsSegmentedAsync** 方法的 `useFlatBlobListing` 参数设置为 `false` 即可。
 
 由于示例方法调用异步方法，因此必须以 `async` 关键字开头，且必须返回 **Task** 对象。为 **ListBlobsSegmentedAsync** 方法指定的 await 关键字将挂起示例方法的执行，直至列操作任务完成。
 
@@ -323,7 +323,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
     //Simulate a logging operation by writing text data and byte data to the end of the append blob.
     for (int i = 0; i < numBlocks; i++)
     {
-        appendBlob.AppendText(String.Format("Timestamp: {0} \tLog Entry: {1}{2}",
+        appendBlob.AppendText(String.Format("Timestamp: {0:u} \tLog Entry: {1}{2}",
             DateTime.Now.ToUniversalTime().ToString(), bytes[i], Environment.NewLine));
     }
 
@@ -334,7 +334,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 
 ## 后续步骤
 
-现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。<ul> <li>查看 Blob 服务参考文档，了解有关可用 API 的完整详情：<ul> <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">用于 .NET 的存储空间客户端库参考</a> </li> <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API 参考</a></li> </ul> </li> <li>在以下位置了解使用 Azure 存储空间能够执行的更高级任务：<a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">在 Azure 中存储和访问数据</a>。</li> <li>了解如何使用 <a href="/documentation/articles/">Azure WebJobs SDK 简化您编写的用于 Azure 存储空间的代码。</li> <li>查看更多功能指南，以了解在 Azure 中存储数据的其他方式。<ul> <li>使用<a href="/documentation/articles/storage-dotnet-how-to-use-tables/">表存储</a>存储结构化数据。</li> <li>使用<a href="/documentation/articles/storage-dotnet-how-to-use-queues/">队列存储</a>存储非结构化数据。</li> <li>使用 <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL 数据库</a>存储关系数据。</li> </ul> </li> </ul>
+现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。<ul> <li>查看 Blob 服务参考文档，了解有关可用 API 的完整详情：<ul> <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">用于 .NET 的存储空间客户端库参考</a> </li> <li><a href="http://msdn.microsoft.com/zh-cn/library/azure/dd179355">REST API 参考</a></li> </ul> </li> <li>在以下位置了解使用 Azure 存储空间能够执行的更高级任务：<a href="http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx">在 Azure 中存储和访问数据</a>。</li> <li>了解如何使用 <a href="/documentation/articles/websites-dotnet-webjobs-sdk">Azure WebJobs SDK 简化您编写的用于 Azure 存储空间的代码。</li> <li>查看更多功能指南，以了解在 Azure 中存储数据的其他方式。<ul> <li>使用<a href="/documentation/articles/storage-dotnet-how-to-use-tables/">表存储</a>存储结构化数据。</li> <li>使用<a href="/documentation/articles/storage-dotnet-how-to-use-queues/">队列存储</a>存储非结构化数据。</li> <li>使用 <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL 数据库</a>存储关系数据。</li> </ul> </li> </ul>
 
   [Blob5]: ./media/storage-dotnet-how-to-use-blobs/blob5.png
   [Blob6]: ./media/storage-dotnet-how-to-use-blobs/blob6.png
@@ -347,7 +347,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
   [配置连接字符串]: http://msdn.microsoft.com/zh-cn/library/azure/ee758697.aspx
   [.NET 客户端库引用]: http://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
-  [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
-  [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
-  [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=70-->
+ 
+
+<!---HONumber=79-->

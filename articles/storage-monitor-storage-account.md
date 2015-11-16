@@ -9,25 +9,25 @@
 
 <tags
 	ms.service="storage"
-	ms.date="06/22/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="09/27/2015"
+	wacn.date="11/02/2015"/>
 
 # 监视 Azure 门户中的存储帐户
 
 ## 概述
 
-您可以在 Azure 门户中监视您的存储帐户。在配置您的存储帐户用于通过门户进行监视时，Azure 存储空间使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
+您可以从 Azure 管理门户监视您的存储帐户。在配置您的存储帐户用于通过门户进行监视时，Azure 存储空间使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
 
-> [WACOM.NOTE] 在管理门户中查看监视数据会产生相关的额外费用。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh360997.aspx">存储分析和计费</a>。 
+> [AZURE.NOTE] 在管理门户中查看监视数据会产生相关的额外费用。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/hh360997.aspx">存储分析和计费</a>。 
 
-> [WACOM.NOTE] Azure 文件服务当前不支持存储分析。
+> Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。可以通过 [Azure 管理门户](https://manage.windowsazure.cn)为 Azure 文件存储启用指标。
 
-> [WACOM.NOTE] 有关使用存储分析和其他工具来识别、诊断和故障排除 Azure 存储相关问题的深入指南，请参阅[监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
+> 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Windows Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
 
 
 ## 如何：为存储帐户配置监视
 
-1. 在 [Azure 门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn/)中，单击“存储”，然后单击存储帐户名称以打开仪表板。
 
 2. 单击“配置”，然后向下滚动到 Blob、表和队列服务的“监视”设置。
 
@@ -68,7 +68,7 @@
 
 	- 要隐藏显示在图表上的某个度量值，请清除该度量值标题旁的彩色复选框。
 
-	![Monitoring_nmore](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
+	![监视更多](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
   
 3. 默认情况下，该图表显示趋势，以便仅显示每个度量值的当前值（选择图表顶部的"相对"选项）。若要显示 Y 轴以便能够看到绝对值，请选择"绝对"。
 
@@ -153,4 +153,4 @@
 
 诊断日志保存在你的存储帐户下名为 $logs 的 Blob 容器中。有关访问 $logs 容器的信息，请参阅[关于存储分析日志记录](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)。
 
-<!---HONumber=70-->
+<!---HONumber=79-->

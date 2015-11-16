@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="06/03/2015"
+	ms.date="08/31/2015" 
 	wacn.date="11/12/2015"/>
 
 
@@ -33,7 +33,7 @@
 
 在本文中，你将使用存储功能，这些功能可在本地 Java 应用程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码来运行。
 
-为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果你的系统满足这些要求，你可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
+为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统是否满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果你的系统满足这些要求，你可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
 
 ## 配置你的应用程序以访问 Blob 存储
 
@@ -66,7 +66,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 利用 **CloudBlobClient** 对象，可以获得容器和 Blob 的引用对象。以下代码将创建 **CloudBlobClient** 对象。
 
-> [AZURE.NOTE] 还有其他方式来创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考]中的 **CloudStorageAccount**。
+> [AZURE.NOTE]还有其他方式可创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考] 中的 **CloudStorageAccount**。
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
@@ -161,7 +161,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
         e.printStackTrace();
     }
 
-还可将 Blob 服务视为容器中的目录。这是为了让您能够以更类似于文件夹的结构来组织 Blob。
+请注意，你可以命名 Blob，并在其名称中包含路径信息。这将创建一个虚拟目录结构，你可以像传统文件系统一样组织和遍历。注意，该目录结构仅仅是虚拟的 - Blob 存储中唯一可用的资源是容器和 Blob。但是，客户端库提供 **CloudBlobDirectory** 对象来引用虚拟目录，并简化了以这种方式组织的 Blob 的使用过程。
 
 例如，你可以创建一个名为“photos”的容器，你可以在其中上传名为“rootphoto1”、“2010/photo1”、“2010/photo2”和“2011/photo1”的 Blob。这将在“photos”容器中创建虚拟目录“2010”和“2011”。当你对“photos”容器调用 **listBlobs** 时，返回的集合将包含表示最高层中所含目录和 Blob 的 **CloudBlobDirectory** 和 **CloudBlob** 对象。在本例中，将返回目录“2010”和“2011”以及照片“rootphoto1”。可使用 **instanceof** 运算符来区分这些对象。
 
@@ -261,9 +261,8 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
 [Azure 存储空间客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
 [Azure 存储 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=70-->
+<!---HONumber=79-->
