@@ -89,7 +89,7 @@
 
 ## 相关文章
 
-- [在 Azure 自动化中计划资产](http://msdn.microsoft.com/zh-cn/library/azure/dn940016.aspx)
+- [在 Azure 自动化中计划资产](/documentation/articles/automation-schedules)
 - [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook) 
 
 <!---HONumber=79-->
