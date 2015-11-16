@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用计算、网络和存储 .NET 库部署 Azure 资源"
-	description="了解如何使用计算、存储和网络 .NET 库中的某些可用客户端来创建和删除 Microsoft Azure 中的资源。"
+	description="了解如何使用计算、存储和网络 .NET 库中的某些可用客户端来创建和删除 Windows Azure 中的资源。"
 	services="virtual-machines,virtual-network,storage"
 	documentationCenter=""
 	authors="davidmu1"
@@ -8,22 +8,22 @@
 	editor="tysonn"
 	tags="azure-resource-manager"/>
 
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="07/28/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 使用计算、网络和存储 .NET 库部署 Azure 资源
 
 本教程演示了如何使用计算、存储和网络 .NET 库中的某些可用客户端来创建和删除 Windows Azure 中的资源。它还演示了如何使用 Azure Active Directory 对发往 Azure 资源管理器的请求进行身份验证。
 
-<!--AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)-->
+[AZURE.INCLUDE [trial-note](../includes/free-trial-note.md)]
 
 若要完成本教程，你还需要：
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
-- [Windows Management Framework 3.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0](/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](/download/details.aspx?id=40855)
 - [Azure PowerShell](/documentation/articles/install-configure-powershell)
 
 完成这些步骤大约需要 30 分钟。
@@ -38,7 +38,7 @@
 
 2. 设置你要用于本教程的 Azure 帐户。运行以下命令，并在出现提示时输入订阅的凭据：
 
-	    Add-AzureAccount -Environment AzureChinaCloud
+	    Add-AzureAccount
 
 3. 在以下命令中的 {password} 替换为要使用的密码，然后运行以下命令创建应用程序：
 
@@ -342,7 +342,7 @@
           }
         }
 
-	>[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理映像 (Windows)](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如，“a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201411.01-en.us-127GB.vhd”。
+	>[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理映像 (Windows)](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如，“a699494373c04fc0bc8f2bb1389d6106\__Windows-Server-2012-R2-201411.01-en.us-127GB.vhd”。
 
 	将 {subscription-id} 替换为订阅的标识符。
 
@@ -384,4 +384,4 @@
 
 	![创建 AD 应用程序](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=69-->
+<!---HONumber=79-->

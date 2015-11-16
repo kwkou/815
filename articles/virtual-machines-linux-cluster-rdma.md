@@ -1,15 +1,15 @@
 <properties
-      pageTitle="设置 Linux RDMA 群集以运行 MPI 应用程序 | Windows Azure"
-      description="了解如何创建 A8 或 A9 大小 VM 的 Linux 群集以使用 RDMA 运行 MPI 应用。"
-      services="virtual-machines"
-      documentationCenter=""
-      authors="dlepow"
-      manager="timlt"
-      editor=""/>
+ pageTitle="设置 Linux RDMA 群集以运行 MPI 应用程序 | Windows Azure"
+ description="了解如何创建 A8 或 A9 大小 VM 的 Linux 群集以使用 RDMA 运行 MPI 应用。"
+ services="virtual-machines"
+ documentationCenter=""
+ authors="dlepow"
+ manager="timlt"
+ editor=""/>
 <tags
-      ms.service="virtual-machines"
-      ms.date="07/17/2015"
-      wacn.date="08/29/2015"/>
+	ms.service="virtual-machines"
+	 ms.date="07/17/2015"
+	 wacn.date="11/12/2015"/>
 
 # 设置 Linux RDMA 群集以运行 MPI 应用程序
 
@@ -24,7 +24,7 @@
 
 以下是可用于创建 Linux RDMA 群集的方法（使用或不使用作业计划程序）。
 
-* **HPC Pack** - 你可以在 Azure 中创建 Microsoft HPC Pack 群集，然后添加运行支持的 Linux 分发（从 HPC Pack 2012 R2 Update 2 开始支持）的计算节点。可以将某些 Linux 节点配置为访问 RDMA 网络。若要开始使用，请参阅 <!--[-->HPC Pack 文档<!--](/documentation/articles/virtual-machines-linux-cluster-hpcpack)-->。
+* **HPC Pack** - 你可以在 Azure 中创建 Microsoft HPC Pack 群集，然后添加运行支持的 Linux 分发（从 HPC Pack 2012 R2 Update 2 开始支持）的计算节点。可以将某些 Linux 节点配置为访问 RDMA 网络。若要开始使用，请参阅 [HPC Pack 文档](/documentation/articles/virtual-machines-linux-cluster-hpcpack)。
 
 * **Azure CLI 脚本** - 你可以使用适用于 Mac、Linux 和 Windows 的 [Azure 命令行界面](/documentation/articles/xplat-cli) (CLI) 生成自己的脚本，以部署创建 Linux 群集所需的虚拟网络和其他必需的组件。CLI 在 Azure 服务管理 (asm) 模式下将依次部署群集节点，因此，如果你要部署许多计算节点，可能需要几分钟才能完成部署。有关示例，请参阅本文其余部分中的步骤。
 
@@ -179,35 +179,35 @@ azure vm capture -t <vm-name> <image-name>
 使用你环境的相应值修改以下脚本，并从客户端计算机运行它。由于 ASM 部署方法将依次部署 VM，因此将需要几分钟时间才能部署此脚本中建议的 8 个 A9 VM。
 
 ```
-      ### Script to create a compute cluster without a scheduler in a VNet in Azure
-      ### Create a custom private network in Azure
-      ### Replace 10.32.0.0 with your virtual network address space
-      ### Replace <network-name> with your network identifier
-      ### Select a region where A8 and A9 VMs are available, such as West US
-      ### See Azure Pricing pages for prices and availability of A8 and A9 VMs
-      
-      azure network vnet create -l "West US" –e 10.32.0.0 <network-name>
-      
-      ### Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
-      ### Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
-      
-      azure service create <cloud-service-name> --location "West US" –s <subscription-ID>
-      
-      ### Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
-      
-      vmname=cluster
-      
-      ### Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don’t use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
-      
-      portnumber=101
-      
-      ### In this cluster there will be 8 size A9 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>.
-      
-      for (( i=11; i<19; i++ )); do
-            azure vm create -g <username> -p <password> -c <cloud-service-name> -z A9 -n $vmname$i -e $portnumber$i <image-name>
-      done
-      
-      ### Save this script and run it at the CLI prompt to provision your cluster
+### Script to create a compute cluster without a scheduler in a VNet in Azure
+### Create a custom private network in Azure
+### Replace 10.32.0.0 with your virtual network address space
+### Replace <network-name> with your network identifier
+### Select a region where A8 and A9 VMs are available, such as West US
+### See Azure Pricing pages for prices and availability of A8 and A9 VMs
+
+azure network vnet create -l "China East" –e 10.32.0.0 -i 16 <network-name>
+
+### Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
+### Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
+
+azure service create <cloud-service-name> --location "West US" –s <subscription-ID>
+
+### Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
+
+vmname=cluster
+
+### Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don’t use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
+
+portnumber=101
+
+### In this cluster there will be 8 size A9 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>.
+
+for (( i=11; i<19; i++ )); do
+        azure vm create -g <username> -p <password> -c <cloud-service-name> -z A9 -n $vmname$i -e $portnumber$i -w <network-name> -b Subnet-1 <image-name>
+done
+
+### Save this script and run it at the CLI prompt to provision your cluster
 ```
 
 ## 配置和运行 Intel MPI
@@ -215,28 +215,28 @@ azure vm capture -t <vm-name> <image-name>
 若要在 Azure Linux RDMA 上运行 MPI 应用程序，你需要配置特定于 Intel MPI 的某些环境变量。下面是用于配置变量和运行应用程序的示例脚本。
 
 ```
-      #!/bin/bash -x
-      source /opt/intel/impi_latest/bin64/mpivars.sh
-      
-      export I_MPI_FABRICS=shm:dapl
-      
-      # THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
-      # Setting the variable to shm:dapl gives best performance for some applications
-      # If your application doesn’t take advantage of shared memory and MPI together, then set only dapl
-      
-      export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
-      
-      # THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
-      
-      export I_MPI_DYNAMIC_CONNECTION=0
-      
-      # THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
-      
-      # Command line to run the job
-      
-      mpirun -n <number-of-cores> -ppn <core-per-node> -hostfile <hostfilename>  /path <path to the application exe> <arguments specific to the application>
-      
-      #end
+#!/bin/bash -x
+source /opt/intel/impi_latest/bin64/mpivars.sh
+
+export I_MPI_FABRICS=shm:dapl
+
+# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
+# Setting the variable to shm:dapl gives best performance for some applications
+# If your application doesn’t take advantage of shared memory and MPI together, then set only dapl
+
+export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
+
+# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
+
+export I_MPI_DYNAMIC_CONNECTION=0
+
+# THIS IS A MANDATORY ENVIRONMENT VARIABLE AND MUST BE SET BEFORE RUNNING ANY JOB
+
+# Command line to run the job
+
+mpirun -n <number-of-cores> -ppn <core-per-node> -hostfile <hostfilename>  /path <path to the application exe> <arguments specific to the application>
+
+#end
 ```
 
 主机文件的格式如下所示。针对群集中的每个节点添加一行。指定前面定义的虚拟网络中的专用 IP 地址，而不是 DNS 名称。
@@ -252,7 +252,7 @@ private ip address2:16
 你可以运行以下 Intel MPI 命令，以通过使用 pingpong 基准来验证群集配置。
 
 ```
-/opt/intel/impi_latest/bin64/mpirun -hosts <host1>, <host2> -ppn 1 -n 2 -env I_MPI_FABRICS dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0
+/opt/intel/impi_latest/bin64/mpirun -hosts <host1>,<host2> -ppn 1 -n 2 -env I_MPI_FABRICS dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
 
 /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
 ```
@@ -260,66 +260,66 @@ private ip address2:16
 你应在具有两个节点的工作群集上看到类似如下内容的输出：
 
 ```
-      #------------------------------------------------------------
-      #    Intel (R) MPI Benchmarks 4.0 Update 1, MPI-1 part
-      #------------------------------------------------------------
-      # Date                  : Fri Jul 17 23:16:46 2015
-      # Machine               : x86_64
-      # System                : Linux
-      # Release               : 3.12.39-44-default
-      # Version               : #5 SMP Thu Jun 25 22:45:24 UTC 2015
-      # MPI Version           : 3.0
-      # MPI Thread Environment:
-      # New default behavior from Version 3.2 on:
-      # the number of iterations per message size is cut down
-      # dynamically when a certain run time (per message size sample)
-      # is expected to be exceeded. Time limit is defined by variable
-      # "SECS_PER_SAMPLE" (=> IMB_settings.h)
-      # or through the flag => -time
-      
-      # Calling sequence was:
-      # /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
-      # Minimum message length in bytes:   0
-      # Maximum message length in bytes:   4194304
-      #
-      # MPI_Datatype                   :   MPI_BYTE
-      # MPI_Datatype for reductions    :   MPI_FLOAT
-      # MPI_Op                         :   MPI_SUM
-      #
-      #
-      # List of Benchmarks to run:
-      # PingPong
-      #---------------------------------------------------
-      # Benchmarking PingPong
-      # #processes = 2
-      #---------------------------------------------------
-            #bytes #repetitions      t[usec]   Mbytes/sec
-                  0         1000         2.23         0.00
-                  1         1000         2.26         0.42
-                  2         1000         2.26         0.85
-                  4         1000         2.26         1.69
-                  8         1000         2.26         3.38
-                 16         1000         2.36         6.45
-                 32         1000         2.57        11.89
-                 64         1000         2.36        25.81
-                128         1000         2.64        46.19
-                256         1000         2.73        89.30
-                512         1000         3.09       157.99
-               1024         1000         3.60       271.53
-               2048         1000         4.46       437.57
-               4096         1000         6.11       639.23
-               8192         1000         7.49      1043.47
-              16384         1000         9.76      1600.76
-              32768         1000        14.98      2085.77
-              65536          640        25.99      2405.08
-             131072          320        50.68      2466.64
-             262144          160        80.62      3101.01
-             524288           80       145.86      3427.91
-            1048576           40       279.06      3583.42
-            2097152           20       543.37      3680.71
-            4194304           10      1082.94      3693.63
+#------------------------------------------------------------
+#    Intel (R) MPI Benchmarks 4.0 Update 1, MPI-1 part
+#------------------------------------------------------------
+# Date                  : Fri Jul 17 23:16:46 2015
+# Machine               : x86_64
+# System                : Linux
+# Release               : 3.12.39-44-default
+# Version               : #5 SMP Thu Jun 25 22:45:24 UTC 2015
+# MPI Version           : 3.0
+# MPI Thread Environment:
+# New default behavior from Version 3.2 on:
+# the number of iterations per message size is cut down
+# dynamically when a certain run time (per message size sample)
+# is expected to be exceeded. Time limit is defined by variable
+# "SECS_PER_SAMPLE" (=> IMB_settings.h)
+# or through the flag => -time
 
-      # All processes entering MPI_Finalize
+# Calling sequence was:
+# /opt/intel/impi_latest/bin64/IMB-MPI1 pingpong
+# Minimum message length in bytes:   0
+# Maximum message length in bytes:   4194304
+#
+# MPI_Datatype                   :   MPI_BYTE
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM
+#
+#
+# List of Benchmarks to run:
+# PingPong
+#---------------------------------------------------
+# Benchmarking PingPong
+# #processes = 2
+#---------------------------------------------------
+       #bytes #repetitions      t[usec]   Mbytes/sec
+            0         1000         2.23         0.00
+            1         1000         2.26         0.42
+            2         1000         2.26         0.85
+            4         1000         2.26         1.69
+            8         1000         2.26         3.38
+           16         1000         2.36         6.45
+           32         1000         2.57        11.89
+           64         1000         2.36        25.81
+          128         1000         2.64        46.19
+          256         1000         2.73        89.30
+          512         1000         3.09       157.99
+         1024         1000         3.60       271.53
+         2048         1000         4.46       437.57
+         4096         1000         6.11       639.23
+         8192         1000         7.49      1043.47
+        16384         1000         9.76      1600.76
+        32768         1000        14.98      2085.77
+        65536          640        25.99      2405.08
+       131072          320        50.68      2466.64
+       262144          160        80.62      3101.01
+       524288           80       145.86      3427.91
+      1048576           40       279.06      3583.42
+      2097152           20       543.37      3680.71
+      4194304           10      1082.94      3693.63
+
+# All processes entering MPI_Finalize
 
 ```
 
@@ -337,4 +337,4 @@ private ip address2:16
 
 * 有关 Intel MPI 的指南，请参阅 [Intel MPI 库文档](https://software.intel.com/zh-cn/articles/intel-mpi-library-documentation/)。
 
-<!---HONumber=67-->
+<!---HONumber=79-->

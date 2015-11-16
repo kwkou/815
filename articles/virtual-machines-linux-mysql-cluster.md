@@ -1,6 +1,16 @@
-<properties title="Using load-balanced sets to clusterize MySQL on Linux" pageTitle="使用负载平衡集群集化 Linux 上的 MySQL" description="该文章作为示例说明了在 Azure 中使用 MySQL 设置负载平衡的高可用性 Linux 群集的模式" metaKeywords="mysql, linux, cluster, azure, ha, high availability, corosync, pacemaker, drbd, heartbeat" services="virtual-machines" solutions="" documentationCenter="" authors="jparrel" videoId="" scriptId="" manager="timlt"/>
+<properties
+	pageTitle="使用负载平衡集群集化 Linux 上的 MySQL"
+	description="该文章作为示例说明了在 Azure 中使用 MySQL 设置负载平衡的高可用性 Linux 群集的模式"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="bureado"
+	manager="timlt"
+	editor=""/>
 
-<tags ms.service="virtual-machines"ms.date="04/14/2015" wacn.date="06/19/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="04/14/2015"
+	wacn.date="11/12/2015"/>
 
 # 使用负载平衡集群集化 Linux 上的 MySQL
 
@@ -236,7 +246,7 @@ Azure 上 Corosync 的主要约束是 Corosync 首选多播，其次广播，再
 
 应符合类似于下图所示的输出：
 
-![corosync-quorumtool -l sample output](media/virtual-machines-linux-mysql-cluster/image001.png)
+![corosync-quorumtool -l sample output](./media/virtual-machines-linux-mysql-cluster/image001.png)
 
 ## 设置 Pacemaker
 
@@ -257,7 +267,7 @@ Pacemaker 使用群集监视资源、定义主节点何时停机，并将这些�
           params drbd_resource="r0" \
           op monitor interval="29s" role="Master" \
           op monitor interval="31s" role="Slave"
-    
+
     ms ms_drbd_mysql drbd_mysql \
           meta master-max="1" master-node-max="1" \
             clone-max="2" clone-node-max="1" \
@@ -296,11 +306,11 @@ Pacemaker 使用群集监视资源、定义主节点何时停机，并将这些�
 
 下面的屏幕截图显示一个节点已停止的 `crm_mon`（使用 Control-C 退出）
 
-![crm_mon 节点已停止](media/virtual-machines-linux-mysql-cluster/image002.png)
+![crm\_mon 节点已停止](./media/virtual-machines-linux-mysql-cluster/image002.png)
 
 并且此屏幕截图显示这两个节点（一个主节点和一个从节点）：
 
-![crm_mon 操作主/从](media/virtual-machines-linux-mysql-cluster/image003.png)
+![crm\_mon 操作主/从](./media/virtual-machines-linux-mysql-cluster/image003.png)
 
 ## 测试
 
@@ -310,7 +320,7 @@ Pacemaker 使用群集监视资源、定义主节点何时停机，并将这些�
 
 ## STONITH
 
-它应该能够通过 Linux 的 Azure 命令行工具代替用于控制物理设备的 STONITH 脚本向 VM 发出关闭命令。可以使用 `/usr/lib/stonith/plugins/external/ssh` 作为基础并在群集的配置中启用 STONITH。应全局安装 Azure CLI 并应为群集的用户加载发布设置/配置文件。
+它应该能够通过 Azure CLI 代替用于控制物理设备的 STONITH 脚本向 VM 发出关闭命令。可以使用 `/usr/lib/stonith/plugins/external/ssh` 作为基础并在群集的配置中启用 STONITH。应全局安装 Azure CLI 并应为群集的用户加载发布设置/配置文件。
 
 资源的示例代码可在 [GitHub](https://github.com/bureado/aztonith) 上找到。你需要更改群集的配置，方法是将以下代码添加到 `sudo crm configure`：
 
@@ -333,4 +343,4 @@ Pacemaker 使用群集监视资源、定义主节点何时停机，并将这些�
 - 有必要进行 MySQL 优化以确保以合理的速度完成写入，并且尽可能频繁地将缓存刷新到磁盘
 - 写入性能将依赖于虚拟交换机中的 VM 互连，因为这是 DRBD 用于复制设备的机制
 
-<!---HONumber=60-->
+<!---HONumber=79-->

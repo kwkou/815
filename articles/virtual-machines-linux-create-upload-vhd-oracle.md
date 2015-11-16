@@ -1,15 +1,28 @@
-<properties urlDisplayName="Upload an Oracle Linux VHD" pageTitle="在 Azure 中创建和上载 Oracle Linux VHD" metaKeywords="Azure VHD, uploading Linux VHD, Oracle Linux" description="了解如何创建和上载包含 Oracle Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains an Oracle Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+<properties 
+	pageTitle="创建和上载 Oracle Linux VHD | Windows Azure" 
+	description="了解如何创建和上载包含 Oracle Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="szarkos" 
+	manager="timlt" 
+	editor="tysonn"
+	tags="azure-service-management,azure-resource-manager" />
 
-<tags ms.service="virtual-machines" ms.date="05/15/2015" wacn.date="06/19/2015"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.date="05/15/2015" 
+	wacn.date="11/12/2015"/>
 
 # 为 Azure 准备 Oracle Linux 虚拟机
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 - [为 Azure 准备 Oracle Linux 6.4+ 虚拟机](#oracle6)
 - [为 Azure 准备 Oracle Linux 7.0+ 虚拟机](#oracle7)
 
 ##先决条件##
 
-本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
+本文假定你已在虚拟硬盘中安装了 Oracle Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
 
 
 **Oracle Linux 安装说明**
@@ -29,7 +42,7 @@
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
 
-## <a id="oracle6"></a> Oracle Linux 6.4+ ##
+## <a id="oracle6"> </a> Oracle Linux 6.4+ ##
 
 您必须在操作系统中完成特定的配置步骤才能使虚拟机在 Azure 中运行。
 
@@ -58,7 +71,7 @@
 		PEERDNS=yes
 		IPV6INIT=no
 
-6.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Windows Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
+6.	移动（或删除）udev 规则，以避免产生以太网接口的静态规则。在 Azure 或 Hyper-V 中克隆虚拟机时，这些规则会引发问题：
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null
@@ -117,7 +130,7 @@
 ----------
 
 
-## <a id="oracle7"></a> Oracle Linux 7.0+ ##
+## <a id="oracle7"> </a> Oracle Linux 7.0+ ##
 
 **Oracle Linux 7 中的更改**
 
@@ -210,4 +223,4 @@
 
 15. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
-<!---HONumber=60-->
+<!---HONumber=79-->

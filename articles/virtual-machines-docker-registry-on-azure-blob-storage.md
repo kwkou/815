@@ -1,26 +1,29 @@
-<properties title="Deploying Your Own Private Docker Registry on Azure"
-  pageTitle="在 Azure 上部署自己的私有 Docker 注册表"
+<properties 
+  pageTitle="在 Azure 上部署自己的私有 Docker 注册表 | Windows Azure"
   description="介绍如何使用 Docker 注册表在 Azure Blob 存储服务上托管你的容器映像。"
   services="virtual-machines"
   documentationCenter="virtual-machines"
   authors="ahmetalpbalkan"
   editor="squillace"
   manager="" 
-  tags="" />
+  tags="azure-service-management,azure-resource-manager" />
 
 <tags
   ms.service="virtual-machines"
-  ms.date="06/17/2015"
-  wacn.date="08/29/2015" />
+  ms.date="06/17/2015" 
+  wacn.date="11/12/2015" />
 
 # 在 Azure 上部署自己的私有 Docker 注册表
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文适用于使用资源管理器部署模型或典型部署模型创建的 VM。
+
 
 本文档描述什么是 Docker 私有注册表，并说明如何使用 Azure Blob 存储将 Docker 注册表 2.0 容器映像部署到 Windows Azure 上的 Docker 私有注册表。
 
 本文档假设：
 
 1. 你知道如何使用 Docker 并具有要存储的 Docker 映像。（你不知道？ [了解 Docker](https://www.docker.com)）
-2. 你有一个已装有 Docker 引擎的服务器。（还没有？ [在 Azure 上快速配置服务器。](http://azure.microsoft.com/zh-cn/documentation/templates/docker-simple-on-ubuntu/)）
+2. 你有一个已装有 Docker 引擎的服务器。（还没有？ [在 Azure 上快速配置服务器。](http://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/)）
 
 
 ## 什么是私有 Docker 注册表？
@@ -52,7 +55,10 @@
 
 为简单起见，本主题遵循选项 2，即使用环境变量。
 
-若要运行 Docker 注册表实例：* 使用 Azure 存储帐户存储映像 * 侦听虚拟机的通信端口 5000 * 未配置验证（不建议，请参阅以下注释）
+若要运行 Docker 注册表实例：
+* 使用 Azure 存储帐户存储映像 
+* 侦听虚拟机的通信端口 5000 
+* 未配置验证（不建议，请参阅以下注释）
 
 需要在 bash 终端中运行以下 Docker 命令（将 `<storage-account>` 和 `<storage-key>` 和替换为你的凭据）：
 
@@ -88,4 +94,4 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 [registry-config]: http://docs.docker.com/registry/configuration/
  
 
-<!---HONumber=67-->
+<!---HONumber=79-->

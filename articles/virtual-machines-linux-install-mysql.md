@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/10/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 #如何在 Azure 上安装 MySQL
@@ -19,7 +19,7 @@
 在本文中，你将了解如何在运行 Linux 的 Azure 虚拟机上安装和配置 MySQL。
 
 
-> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Microsoft Azure 虚拟机，才能完成本教程。在继续操作前，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-tutorial)创建并设置一个 Linux VM，其中 `mysqlnode` 为 VM 名称，`azureuser` 为用户。
+> [AZURE.NOTE]你必须已经有一个运行 Linux 的 Windows Azure 虚拟机，才能完成本教程。在继续操作前，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-tutorial)创建并设置一个 Linux VM，其中 `mysqlnode` 为 VM 名称，`azureuser` 为用户。
 
 [在此情况下，请使用 3306 端口作为 MySQL 端口。]
 
@@ -177,4 +177,4 @@
 ###后续步骤
 在[此处](https://www.mysql.com/)查找更多有关 MySQL 的使用方法和信息。
 
-<!---HONumber=70-->
+<!---HONumber=79-->

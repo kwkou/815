@@ -1,15 +1,28 @@
-<properties urlDisplayName="Upload a SUSE Linux VHD" pageTitle="在 Azure 中创建和上载 SUSE Linux VHD" metaKeywords="Azure VHD, uploading Linux VHD, SUSE, SLES, openSUSE" description="了解如何创建和上载包含 SUSE Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains a SUSE Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+<properties
+	pageTitle="在 Azure 中创建和上载 SUSE Linux VHD"
+	description="了解如何创建和上载包含 SUSE Linux 操作系统的 Azure 虚拟硬盘 (VHD)。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
-<tags ms.service="virtual-machines" ms.date="05/15/2015" wacn.date="06/19/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="05/15/2015"
+	wacn.date="11/12/2015"/>
 
 # 为 Azure 准备 SLES 或 openSUSE 虚拟机
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 - [为 Azure 准备 SLES 11 SP3 虚拟机](#sles11)
 - [为 Azure 准备 openSUSE 13.1+ 虚拟机](#osuse)
 
-## 先决条件
+##先决条件##
 
-本文假定你已在虚拟硬盘中安装了 SUSE 或 openSUSE Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
+本文假定你已在虚拟硬盘中安装了 SUSE 或 openSUSE Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
 
 
 **SLES/openSUSE 安装说明**
@@ -28,7 +41,7 @@
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
 
-## <a id="sles11"></a>准备 SUSE Linux Enterprise Server 11 SP3 ##
+## <a id="sles11"> </a>准备 SUSE Linux Enterprise Server 11 SP3 ##
 
 1. 在 Hyper-V 管理器的中间窗格中，选择虚拟机。
 
@@ -61,7 +74,7 @@
 
 9.	请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
 
-10. 不要在操作系统磁盘上创建交换空间
+10.	不要在操作系统磁盘上创建交换空间
 
 	Azure Linux 代理可使用在 Azure 上设置后附加到虚拟机的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消设置虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
 
@@ -82,7 +95,7 @@
 
 ----------
 
-## <a id="osuse"></a>准备 openSUSE 13.1+ ##
+## <a id="osuse"> </a>准备 openSUSE 13.1+ ##
 
 1. 在 Hyper-V 管理器的中间窗格中，选择虚拟机
 
@@ -100,7 +113,7 @@
 
 	如果该命令返回“未定义存储库...”，则使用以下命令来添加这些存储库：
 
-		# sudo zypper ar -f http://download.opensuse.org/repositories/Cloud:Tools/openSUSE_13.1 Cloud:Tools_13.1 
+		# sudo zypper ar -f http://download.opensuse.org/repositories/Cloud:Tools/openSUSE_13.1 Cloud:Tools_13.1
 		# sudo zypper ar -f http://download.opensuse.org/distribution/13.1/repo/oss openSUSE_13.1_OSS
 		# sudo zypper ar -f http://download.opensuse.org/update/13.1 openSUSE_13.1_Updates
 
@@ -162,4 +175,4 @@
 
 13. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
-<!---HONumber=60-->
+<!---HONumber=79-->

@@ -1,17 +1,17 @@
 <properties
-	pageTitle="在 Azure 中创建自定义虚拟机"
+	pageTitle="从 Azure 门户中创建自定义虚拟机"
 	description="了解如何在 Azure 中创建自定义虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
 
-<tags 
+<tags
 	ms.service="virtual-machines"
 	ms.date="08/11/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="11/12/2015"/>
 
 #如何创建自定义虚拟机
 
@@ -25,6 +25,6 @@
 
 > [AZURE.IMPORTANT]如果你希望你的虚拟机使用虚拟网络，以便可以按主机名直接连接到它或者设置跨界连接，请确保在创建虚拟机时指定虚拟网络。仅当创建虚拟机后，才能将该虚拟机配置为加入虚拟网络。有关虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](documentation/articles/includes/virtual-machines-create-windowsvm)]
+[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-windowsvm.md)]
 
-<!---HONumber=69-->
+<!---HONumber=79-->

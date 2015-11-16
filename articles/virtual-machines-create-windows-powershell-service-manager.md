@@ -1,25 +1,25 @@
 <properties
-	pageTitle="使用 Azure PowerShell 在服务管理中创建和管理 Windows 虚拟机。"
-	description="使用 Azure PowerShell 在服务管理中快速创建新的基于 Windows 的虚拟机并执行管理功能。"
+	pageTitle="使用 Azure PowerShell 创建和管理 Windows VM | Windows Azure"
+	description="使用经典部署模型和 Azure PowerShell 创建和管理 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines"	
+<tags
+	ms.service="virtual-machines"
 	ms.date="07/09/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="11/12/2015"/>
 
-# 通过使用 Azure PowerShell 在服务管理中创建和管理基于 Windows 的虚拟机
+# 使用 Azure PowerShell 创建和管理 Windows 虚拟机
 
-本文介绍如何使用 Azure PowerShell 在服务管理中创建和管理基于 Windows 的虚拟机。
+本文介绍如何使用 Azure PowerShell 创建和管理 Windows 虚拟机。
 
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager.md)]
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建 Windows VM。你还可以使用[资源管理器部署模型](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)创建 Windows VM。
 
-- [使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+
 
 ## 安装 Azure PowerShell
 
@@ -31,7 +31,7 @@
 
 首先，必须使用此命令登录到 Azure：
 
-	Add-AzureAccount -Environment AzureChinaCloud
+	Add-AzureAccount
 
 在 Windows Azure 登录对话框中指定 Azure 帐户的电子邮件地址及其密码。
 
@@ -66,7 +66,7 @@
 	$locName="<Azure location>"
 	New-AzureStorageAccount -StorageAccountName $stAccount -Location $locName
 	Set-AzureStorageAccount -StorageAccountName $stAccount
-	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscrName -CurrentStorageAccountName $stAccount
+	Set-AzureSubscription -SubscriptionName $subscrName -CurrentStorageAccountName $stAccount
 
 接下来，需要一个云服务。如果目前没有云服务，则必须创建一个。必须选择只包含字母、数字和连字符的唯一名称。该字段中的第一个和最后一个字符必须是字母或数字。
 
@@ -76,13 +76,13 @@
 
 	Test-AzureName -Service <Proposed cloud service name>
 
-如果此命令返回“False”，则你建议的名称是唯一的。使用以下命令创建云服务。
+如果此命令返回“False”，则你建议的名称是唯一的。使用以下命令创建云服务：
 
 	$csName="<cloud service name>"
 	$locName="<Azure location>"
 	New-AzureService -Service $csName -Location $locName
 
-接下来，请将此 PowerShell 命令集复制到文本编辑器（例如记事本）：
+接下来，请将此 Azure PowerShell 命令集复制到文本编辑器（例如记事本）：
 
 	$vmName="<machine name>"
 	$csName="<cloud service name>"
@@ -110,7 +110,7 @@
 	PS C:\> $vm | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.
 	GetNetworkCredential().Password
 
-	
+
 	AvailabilitySetName               :
 	ConfigurationSets                 : PSTest,Microsoft.WindowsAzure.Commands.ServiceManagement.Model.NetworkConfigurationSet}
 	DataVirtualHardDisks              : {}
@@ -129,11 +129,11 @@
 	ResourceExtensionReferences       : {BGInfo}
 	DataVirtualHardDisksToBeDeleted   :
 	VMImageInput                      :
-	
+
 	PS C:\> New-AzureVM -ServiceName $csName -Location $locName -VMs $vm
 	VERBOSE: 3:01:46 PM - Begin Operation: New-AzureVM - Create Deployment with VM PSTest
 	VERBOSE: 3:02:49 PM - Completed Operation: New-AzureVM - Create Deployment with VM PSTest
-	
+
 	OperationDescription                    OperationId                            OperationStatus
 	--------------------                    -----------                            --------------
 	New-AzureVM                             8072cbd1-4abe-9278-9de2-8826b56e9221   Succeeded
@@ -205,4 +205,4 @@
 
 [使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
-<!---HONumber=69-->
+<!---HONumber=79-->
