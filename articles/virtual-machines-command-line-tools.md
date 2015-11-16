@@ -1,6 +1,6 @@
 <properties
-	pageTitle="将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用 | Microsoft Azure"
-	description="了解如何使用适用于 Mac、Linux 和 Windows 的命令行工具，在 Azure CLI asm 模式下管理 Azure。"
+	pageTitle="配合使用 Azure CLI 和服务管理 | Windows Azure"
+	description="了解如何使用适用于 Mac、Linux 和 Windows 的命令行工具，在经典（Azure 服务管理）模式下使用 Azure CLI 管理 Azure。"
 	services="virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
 	authors="dlepow"
@@ -10,22 +10,27 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="06/30/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/12/2015"/>
 
 # 将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用
 
-本主题介绍如何在 **asm** 模式下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中上创建、管理和删除服务。此功能类似于随面向 .NET、Node.JS 和 PHP 的 Azure SDK 一起安装的 Windows PowerShell 服务管理 cmdlet 所提供的功能。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。你还可以使用[资源管理器部署模型](virtual-machines-deploy-rmtemplates-azure-cli)创建资源。
 
-> [AZURE.NOTE]在 **asm** 模式下使用 Azure 服务从概念上讲类似于考虑各个 Azure 概念和服务（如网站、虚拟机、虚拟网络、存储等）。使用资源的逻辑分组分层模型的更丰富功能可在 **arm** 模式下使用命令行获得。若要切换到该模式，请参阅[将 Azure 命令行界面用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)。
+本文介绍如何在服务管理模式（asm 模式）下使用 Azure CLI 在 Mac、Linux 和 Windows 计算机的命令行中创建、管理和删除服务。你可以使用 Azure SDK 的各种库、Azure PowerShell 和 Azure 门户执行许多相同的任务。在服务管理模式下使用 Azure 服务从概念上讲类似于创建和管理各个 Azure 概念和服务（如网站、虚拟机、虚拟网络、存储器等）。
 
-有关安装说明，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli-install)。
+> [AZURE.NOTE]
+若要开始使用，首先[安装 Azure CLI](/documentation/articles/xplat-cli-install.md)，并[登录以使用与你的帐户关联的 Azure 资源](/documentation/articles/xplat-cli-connect)。
+
+## 本文的讨论范围
+
+本文提供了用于经典（服务管理）部署模型的常用 Azure CLI 命令的语法和选项。它并不是完整的参考，并且你的 CLI 版本可能会显示某些不同的命令或参数。要在服务管理模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
 
 可选参数显示在方括号中（例如，[参数]）。其他所有参数都是必需的。
 
 除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。-v 参数提供详细输出，而 -vv 参数提供更详细的输出。--json 选项将以原始的 json 格式输出结果。
 
-## 设置 **asm** 模式
+## 设置服务管理模式
 
 当前，首次安装 CLI 时，在默认情况下启用服务管理模式。如果需要，请使用以下命令启用 Azure CLI 服务管理命令。
 
@@ -101,7 +106,7 @@
 	+ Fetching affinity groups
 	data:   Name                                  Label   Location
 	data:   ------------------------------------  ------  --------
-	data:   535EBAED-BF8B-4B18-A2E9-8755FB9D733F  opentec  China North
+	data:   535EBAED-BF8B-4B18-A2E9-8755FB9D733F  opentec  West US
 	info:   account affinity-group list command OK
 
 **account affinity-group create [options] &lt;name&gt;**
@@ -182,7 +187,7 @@
 ## 用于管理 Azure 虚拟机的命令
 下图显示了如何在 Azure 云服务的生产部署环境中托管 Azure 虚拟机。
 
-![AZURE 技术图表](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
+![Azure 技术图表](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
 
 **create-new** 在 Blob 存储中创建驱动器（即，图中的 e:\\）；**attach** 会将已创建但未附加的磁盘附加到虚拟机。
 
@@ -202,9 +207,23 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 此命令支持以下可选参数：
 
-**-c, --connect** 在托管服务中已创建的部署中创建虚拟机。如果 -vmname 未与此选项一起使用，将自动生成新虚拟机的名称。<br /> **-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一个现有虚拟机的托管服务 MyService 中添加新虚拟机，则会将新虚拟机命名为 MyService2。<br /> **-u, --blob-url** 指定从中创建虚拟机系统磁盘的目标 Blob 存储 URL。<br /> **-z, --vm-size** 指定虚拟机的大小。有效值为：“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard\_G55”。默认值为“Small”。<br /> **-r** 添加到 Windows 虚拟机的 RDP 连接。<br /> **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br /> **-t, --ssh-cert** 指定 SSH 证书。<br /> **-s** 订阅。<br /> **-o, --community** 指定的映像是社区映像。<br /> **-w** 虚拟网络名称。<br/> **-l, --location** 指定位置（例如，“North Central China”）。<br /> **-a, --affinity-group** 指定地缘组。<br /> **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br /> **-b, --subnet-names** 指定要分配虚拟机的子网名称。
+**-c, --connect** 在托管服务中已创建的部署中创建虚拟机。如果 -vmname 未与此选项一起使用，将自动生成新虚拟机的名称。<br /> 
+**-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一个现有虚拟机的托管服务 MyService 中添加新虚拟机，则会将新虚拟机命名为 MyService2。<br /> 
+**-u, --blob-url** 指定从中创建虚拟机系统磁盘的目标 Blob 存储 URL。<br /> 
+**-z, --vm-size** 指定虚拟机的大小。有效值为：
+“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard_G55”。默认值为“Small”。<br /> 
+**-r** 添加到 Windows 虚拟机的 RDP 连接。<br />
+**-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br /> 
+**-t, --ssh-cert** 指定 SSH 证书。<br /> 
+**-s** 订阅。<br /> 
+**-o, --community** 指定的映像是社区映像。<br /> 
+**-w** 虚拟网络名称。<br/> 
+**-l, --location** 指定位置（例如，“North Central China”）。<br /> 
+**-a, --affinity-group** 指定地缘组。<br /> 
+**-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br /> 
+**-b, --subnet-names** 指定要分配虚拟机的子网名称。
 
-在此示例中，MSFT\_\_Win2K8R2SP1-120514-1520-141205-01-zh-CN-30GB 是该平台提供的映像。有关操作系统映像的详细信息，请参阅 VM 映像列表。
+在此示例中，MSFT\__Win2K8R2SP1-120514-1520-141205-01-zh-CN-30GB 是该平台提供的映像。有关操作系统映像的详细信息，请参阅 VM 映像列表。
 
 	~$ azure vm create my-vm-name MSFT__Windows-Server-2008-R2-SP1.11-29-2011 username --location "West US" -r
 	info:   Executing command vm create
@@ -226,7 +245,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   Executing command vm list
 	data:   DNS Name                          VM Name      Status
 	data:   --------------------------------  -----------  ---------
-	data:   my-vm-name.chinacloudapp.cn        my-vm        ReadyRole
+	data:   my-vm-name.cloudapp-preview.net        my-vm        ReadyRole
 	info:   vm list command OK
 
 **vm location list [options]**
@@ -237,7 +256,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   Executing command vm location list
 	data:   Name                   Display Name
 	data:   ---------------------  ------------
-	data:   Azure Preview  China North
+	data:   Azure Preview  North US
 	info:   account location list command OK
 
 **vm show [options] &lt;name>**
@@ -468,7 +487,7 @@ info:   vm shutdown command OK
 	info:   VHD size : 13 MB
 	info:   Uploading 13312.5 KB
 	Requested:100.0% Completed:100.0% Running: 105 Time:    8s Speed:  1721 KB/s
-	info:   http://myaccount.blob.core.chinacloudapi.cn/vm-images/Sample.vhd is uploaded successfully
+	info:   http://myaccount.blob.core.azure.com/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
 ## 用于管理 Azure 虚拟机数据磁盘的命令
@@ -491,11 +510,11 @@ info:   vm shutdown command OK
 	data:   AttachedTo HostedServiceName "myanucentos"
 	data:   AttachedTo RoleName "myanucentos"
 	data:   OS "Linux"
-	data:   Location "China North"
+	data:   Location "Azure Preview"
 	data:   LogicalDiskSizeInGB "30"
-	data:   MediaLink "http://mystorageaccount.blob.core.chinacloudapi.cn/vhd-store/mycentos-cb39b8223b01f95c.vhd"
+	data:   MediaLink "http://mystorageaccount.blob.core.azure-preview.com/vhd-store/mycentos-cb39b8223b01f95c.vhd"
 	data:   Name "mycentos-mycentos-0-20120524070008"
-	data:   SourceImageName "OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd"
+	data:   SourceImageName "OpenLogic__OpenLogic-CentOS-62-20120509-zh-CN-30GB.vhd"
 	info:   vm disk show command OK
 
 **vm disk list [options] [vm-name]**
@@ -540,7 +559,7 @@ info:   vm shutdown command OK
 	info:   VHD size : 10 MB
 	info:   Uploading 10240.5 KB
 	Requested:100.0% Completed:100.0% Running:  81 Time:   11s Speed:   952 KB/s
-	info:   http://account.blob.core.chinacloudapi.cn/disks/test.vhd is uploaded successfully
+	info:   http://account.blob.core.azure.com/disks/test.vhd is uploaded successfully
 	info:   vm disk create command OK
 
 **vm disk upload [options] &lt;source-path> &lt;blob-url> &lt;storage-account-key>**
@@ -564,7 +583,7 @@ info:   vm shutdown command OK
 
 此命令将数据磁盘附加到 Azure 虚拟机。在此示例中，20 是要附加的新磁盘的大小（以 GB 为单位）。你可以选择使用 Blob URL 作为显式指定要创建的目标 Blob 的最后一个参数。如果你不指定 Blob URL，将自动生成一个 Blob 对象。
 
-	~$ azure vm disk attach-new nick-test36 20 http://nghinazz.blob.core.chinacloudapi.cn/vhds/vmdisk1.vhd
+	~$ azure vm disk attach-new nick-test36 20 http://nghinazz.blob.core.azure-preview.com/vhds/vmdisk1.vhd
 	info:   Executing command vm disk attach-new
 	info:   vm disk attach-new command OK  
 
@@ -588,9 +607,13 @@ Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务
 	info:    Executing command service create
 	+ Getting locations
 	help:    Location:
-	  1) China East
-	  2) China North
-	  : 2
+	  1) East Asia
+	  2) Southeast Asia
+	  3) North Europe
+	  4) West Europe
+	  5) East US
+	  6) West US
+	  : 6
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
 	info:    service create command OK
@@ -604,7 +627,7 @@ Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务
 	+ Getting cloud service
 	data:    Name newservicemsopentech
 	data:    Url https://management.core.chinacloudapi.cn/9e672699-1055-41ae-9c36-e85152f2e352/services/hostedservices/newservicemsopentech
-	data:    Properties location China North
+	data:    Properties location West US
 	data:    Properties label newservicemsopentech
 	data:    Properties status Created
 	data:    Properties dateCreated
@@ -779,7 +802,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 此命令支持以下附加选项：
 
-**-q 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
+****-q 或 **--quiet**：不提示确认。在自动化脚本中使用此选项。
 
 
 **site start [options] [name]**
@@ -802,7 +825,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 	info:   Site mysite has been stopped
 	info:   site stop command OK
 
-**site restart [options] [name]
+****site restart [options] [name]
 
 此命令停止然后启动指定的 Web 应用。
 
@@ -820,8 +843,12 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 	+ Getting locations
 	data:    Name
 	data:    ----------------
+	data:    West Europe
 	data:    China North
-	data:    China East
+	data:    North Central China
+	data:    North Europe
+	data:    East Asia
+	data:    ChinaEast
 	info:    site location list command OK
 
 ###用于管理 Web 应用应用程序设置的命令
@@ -1131,7 +1158,9 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	~$ azure mobile locations
 	info:    Executing command mobile locations
-	info:    China North (default)
+	info:    East US (default)
+	info:    West US
+	info:    North Europe
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
 
@@ -1142,7 +1171,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Creating mobile service
 	info:    Overall application state: Healthy
 	info:    Mobile service (todolist) state: ProvisionConfigured
-	info:    SQL 数据库 (todolist_db) state: Provisioned
+	info:    SQL database (todolist_db) state: Provisioned
 	info:    SQL server (e96ean1c6v) state: ProvisionConfigured
 	info:    mobile create command OK
 
@@ -1160,7 +1189,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	~$ azure mobile delete todolist -a -q
 	info:    Executing command mobile delete
 	data:    Mobile service todolist
-	data:    SQL 数据库 todolistAwrhcL60azo1C401
+	data:    SQL database todolistAwrhcL60azo1C401
 	data:    SQL server fh1kvbc7la
 	+ Deleting mobile service
 	info:    Deleted mobile service
@@ -1184,8 +1213,8 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	info:    Executing command mobile list
 	data:    Name          State  URL
 	data:    ------------  -----  --------------------------------------
-	data:    todolist      Ready  https://todolist.azure-mobile.cn/
-	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.cn/
+	data:    todolist      Ready  https://todolist.azure-mobile.net/
+	data:    mymobileapp   Ready  https://mymobileapp.azure-mobile.net/
 	info:    mobile list command OK
 
 **mobile show [options] [servicename]**
@@ -1199,18 +1228,18 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	data:    status Healthy
 	data:    Mobile service name todolist
 	data:    Mobile service status ProvisionConfigured
-	data:    SQL 数据库 name todolistAwrhcL60azo1C401
-	data:    SQL 数据库 status Linked
+	data:    SQL database name todolistAwrhcL60azo1C401
+	data:    SQL database status Linked
 	data:    SQL server name fh1kvbc7la
 	data:    SQL server status Linked
 	info:    Mobile service
 	data:    name todolist
 	data:    state Ready
-	data:    applicationUrl https://todolist.azure-mobile.cn/
+	data:    applicationUrl https://todolist.azure-mobile.net/
 	data:    applicationKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	data:    masterKey XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	data:    webspace WESTUSWEBSPACE
-	data:    region China North
+	data:    region West US
 	data:    tables TodoItem
 	info:    mobile show command OK
 
@@ -1430,7 +1459,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ### <a name="Mobile_Scripts"></a>用于管理脚本的命令
 
-本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](/documentation/articles/mobile-services-how-to-use-server-scripts)。
+本部分中的命令用于管理属于移动服务的服务器脚本。有关详细信息，请参阅[使用移动服务中的服务器脚本](../mobile-services/mobile-services-how-to-use-server-scripts.md)。
 
 **mobile script list [options] [servicename]**
 
@@ -1489,7 +1518,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ### <a name="Mobile_Jobs"></a>用于管理已计划作业的命令
 
-本部分中的命令用于管理属于移动服务的已计划作业。有关详细信息，请参阅[计划作业](https://msdn.microsoft.com/zh-cn/library/azure/jj860528.aspx)。
+本部分中的命令用于管理属于移动服务的已计划作业。有关详细信息，请参阅[计划作业](http://msdn.microsoft.com/library/windowsazure/jj860528.aspx)。
 
 **mobile job list [options] [servicename]**
 
@@ -1559,7 +1588,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ### <a name="Mobile_Scale"></a>用于缩放移动服务的命令
 
-本部分中的命令用于缩放移动服务。有关详细信息，请参阅[缩放移动服务](https://msdn.microsoft.com/zh-cn/library/azure/jj193178.aspx)。
+本部分中的命令用于缩放移动服务。有关详细信息，请参阅[缩放移动服务](http://msdn.microsoft.com/library/windowsazure/jj193178.aspx)。
 
 **mobile scale show [options] [servicename]**
 
@@ -1738,17 +1767,23 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 创建新的 Service Bus 命名空间。
 
-	~$ azure sb namespace create mysbnamespacea-test "China North"
+	~$ azure sb namespace create mysbnamespacea-test "West US"
 	info:    Executing command sb namespace create
-	+ Creating namespace mysbnamespacea-test in region China North
-	data:    name: mysbnamespacea-test
-	data:    region: China North
-	data:    status: Activating
-	data:    createdAt: Fri Mar 20 2015 11:07:22 GMT+0800 (中国标准时间)
-	data:    acsManagementEndpoint: https://mysbnamespacea-test-sb.accesscontrol.chinacloudapi.cn/
-	data:    serviceBusEndpoint: https://mysbnamespacea-test.servicebus.chinacloudapi.cn/
-	data:    subscriptionId: c333413ef84b4cc2944efe29b05c237f
-	data:    enabled: true
+	+ Creating namespace mysbnamespacea-test in region West US
+	data:    Name: mysbnamespacea-test
+	data:    Region: West US
+	data:    DefaultKey: fBu8nQ9svPIesFfMFVhCFD+/sY0rRbifWMoRpYy0Ynk=
+	data:    Status: Activating
+	data:    CreatedAt: 2013-11-14T16:23:29.32Z
+	data:    AcsManagementEndpoint: https://mysbnamespacea-test-sb.accesscontrol.chinacloudapi.cn/
+	data:    ServiceBusEndpoint: https://mysbnamespacea-test.servicebus.chinacloudapi.cn/
+
+	data:    ConnectionString: Endpoint=sb://mysbnamespacea-test.servicebus.windows.
+	net/;SharedSecretIssuer=owner;SharedSecretValue=fBu8nQ9svPIesFfMFVhCFD+/sY0rRbif
+	WMoRpYy0Ynk=
+	data:    SubscriptionId: 8679c8be3b0549d9b8fb4bd232a48931
+	data:    Enabled: true
+	data:    _: [object Object]
 	info:    sb namespace create command OK
 
 
@@ -1769,9 +1804,9 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	~$ azure sb namespace list
 	info:    Executing command sb namespace list
 	+ Getting namespaces
-	data:    Name                 Region       Status
-	data:    -------------------  -----------  ------
-	data:    mysbnamespacea-test  China North  Active
+	data:    Name                 Region   Status
+	data:    -------------------  -------  ------
+	data:    mysbnamespacea-test  West US  Active
 	info:    sb namespace list command OK
 
 
@@ -1784,8 +1819,14 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Getting locations
 	data:    Name              Code
 	data:    ----------------  ----------------
-	data:    China East   China East
-	data:    China North  China North
+	data:    East Asia         East Asia
+	data:    West Europe       West Europe
+	data:    North Europe      North Europe
+	data:    East US           East US
+	data:    Southeast Asia    Southeast Asia
+	data:    North Central US  North Central US
+	data:    West US           West US
+	data:    South Central US  South Central US
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**
@@ -1796,13 +1837,19 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	info:    Executing command sb namespace show
 	+ Getting namespace
 	data:    Name: mysbnamespacea-test
-	data:    region: China North
-	data:    status: Activating
-	data:    createdAt: Fri Mar 20 2015 11:10:07 GMT+0800 (中国标准时间)
-	data:    acsManagementEndpoint: https://mysbnamespacea-test-sb.accesscontrol.chinacloudapi.cn/
-	data:    serviceBusEndpoint: https://mysbnamespacea-test.servicebus.chinacloudapi.cn/
-	data:    subscriptionId: c333413ef84b4cc2944efe29b05c237f
-	data:    enabled: true
+	data:    Region: West US
+	data:    DefaultKey: fBu8nQ9svPIesFfMFVhCFD+/sY0rRbifWMoRpYy0Ynk=
+	data:    Status: Active
+	data:    CreatedAt: 2013-11-14T16:23:29.32Z
+	data:    AcsManagementEndpoint: https://mysbnamespacea-test-sb.accesscontrol.chinacloudapi.cn/
+	data:    ServiceBusEndpoint: https://mysbnamespacea-test.servicebus.chinacloudapi.cn/
+
+	data:    ConnectionString: Endpoint=sb://mysbnamespacea-test.servicebus.windows.
+	net/;SharedSecretIssuer=owner;SharedSecretValue=fBu8nQ9svPIesFfMFVhCFD+/sY0rRbif
+	WMoRpYy0Ynk=
+	data:    SubscriptionId: 8679c8be3b0549d9b8fb4bd232a48931
+	data:    Enabled: true
+	data:    UpdatedAt: 2013-11-14T16:25:37.85Z
 	info:    sb namespace show command OK
 
 **sb namespace verify &lt;name>**
@@ -1822,7 +1869,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Getting storage accounts
 	data:    Name             Label  Location
 	data:    ---------------  -----  --------
-	data:    mybasestorage           China North
+	data:    mybasestorage           West US
 	info:    storage account list command OK
 
 **storage account show [options] <name>**
@@ -1833,7 +1880,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 此命令根据提供的选项创建存储帐户。
 
-	~$ azure storage account create mybasestorage --label PrimaryStorage --location "China North"
+	~$ azure storage account create mybasestorage --label PrimaryStorage --location "West US"
 	info:    Executing command storage account create
 	+ Creating storage account
 	info:    storage account create command OK
@@ -2018,7 +2065,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 创建新的数据库服务器
 
-	~$ azure sql server create test T3stte$t "China North"
+	~$ azure sql server create test T3stte$t "West US"
 	info:    Executing command sql server create
 	+ Creating SQL Server
 	data:    Server Name i1qwc540ts
@@ -2033,7 +2080,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Getting SQL server
 	data:    SQL Server Name xclfgcndfg
 	data:    SQL Server AdministratorLogin msopentechforums
-	data:    SQL Server Location China North
+	data:    SQL Server Location West US
 	data:    SQL Server FullyQualifiedDomainName xclfgcndfg.database.chinacloudapi.cn
 	info:    sql server show command OK
 
@@ -2046,7 +2093,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Getting SQL server
 	data:    Name        Location
 	data:    ----------  --------
-	data:    xclfgcndfg  China North
+	data:    xclfgcndfg  West US
 	info:    sql server list command OK
 
 **sql server delete &lt;name>**
@@ -2132,7 +2179,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	~$ azure sql db list fr8aelne00 test
 	info:    Executing command sql db list
-	Administrator password: 
+	Administrator password: ********
 	+ Getting SQL server databases
 	data:    Name    Edition  Collation                     MaxSizeInGB
 	data:    ------  -------  ----------------------------  -----------
@@ -2145,7 +2192,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 	~$ azure sql db delete fr8aelne00 newdb test
 	info:    Executing command sql db delete
-	Administrator password: 
+	Administrator password: ********
 	Delete database newdb? [y/n] y
 	+ Getting SQL server databases
 	+ Removing database
@@ -2212,7 +2259,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 创建新的虚拟网络。
 
-	~$ azure network vnet create vnet1 --location "China North" -v
+	~$ azure network vnet create vnet1 --location "West US" -v
 	info:    Executing command network vnet create
 	info:    Using default address space start IP: 10.0.0.0
 	info:    Using default address space cidr: 8
@@ -2314,4 +2361,4 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!---HONumber=69-->
+<!---HONumber=79-->

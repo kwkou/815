@@ -1,22 +1,27 @@
-<properties title="How to use the Docker VM Extension with the Azure Portal" pageTitle="使用适用于 Azure 上的 Linux 的 Docker VM 扩展" description="介绍 Docker 以及 Azure 虚拟机扩展，并说明如何在 Azure 上，使用 azure-cli 命令界面通过命令行以编程方式创建用作 Docker 主机的虚拟机。" metaKeywords="linux, virtual machines, vm, azure, docker, linux containers,  lxc, virtualization" services="virtual-machines" solutions="dev-test" documentationCenter="virtual-machines" authors="rasquill" videoId="" scriptId="" manager="timlt" />
+<properties
+	pageTitle="使用适用于 Linux 的 Docker VM 扩展 | Windows Azure"
+	description="介绍 Docker 和 Azure 虚拟机扩展，以及如何在经典部署模式下使用 Azure CLI 创建用作 Docker 主机的 Azure 虚拟机。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="squillace"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-service-management"/>
+
 <tags
 	ms.service="virtual-machines"
-	ms.date="05/25/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015" />
+
 
 # 在 Azure 门户中使用 Docker VM 扩展
 
-[Docker](https://www.docker.com/) 是最常用的虚拟化技术之一，它使用 [Linux 容器](http://zh.wikipedia.org/wiki/LXC)而不是虚拟机作为在共享资源上隔离数据和执行计算的方法。可以在 [Azure Linux 代理]中使用 Docker VM 扩展，以创建可在 Azure 上为应用程序托管任意数量的容器的 Docker VM。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 
-本节内容
 
-+ [从映像库创建新的 VM]
-+ [创建 Docker 证书]
-+ [添加 Docker VM 扩展]
-+ [测试 Docker 客户端和 Azure Docker 主机]
-+ [后续步骤]
+[Docker](https://www.docker.com/) 是最常用的虚拟化技术之一，它使用 [Linux 容器](http://zh.wikipedia.org/wiki/LXC)而不是虚拟机作为在共享资源上隔离数据和执行计算的方法。可以使用由 [Azure Linux 代理]管理的 Docker VM 扩展，以创建可在 Azure 上为应用程序托管任意数量容器的 Docker VM。
 
-> [AZURE.NOTE]本主题介绍如何从 Azure 门户创建 Docker VM。若要了解如何通过命令行创建 Docker VM，请参阅 [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]。
+> [AZURE.NOTE]本主题介绍如何从 Azure 门户创建 Docker VM。若要了解如何通过命令行创建 Docker VM，请参阅[如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]。若要查看容器及其优点的综合讨论，请参阅 [Docker 高级白板](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard)。
 
 ## 从映像库创建新的 VM
 第一个步骤需要可支持 Docker VM 扩展的 Linux 映像中的 Azure VM，使用映像库的 Ubuntu 14.04 LTS 映像作为示例服务器映像，并将 Ubuntu 14.04 Desktop 用作客户端。在门户中，单击左下角的“+ 新建”以创建新的 VM 实例，并从可用选项或从完整映像库中选择 Ubuntu 14.04 LTS 映像，如下所示。
@@ -108,14 +113,14 @@ WARNING: No swap limit support
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 
-现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。如果你想要通过命令行界面在 Azure VM 上自动创建 Docker主机，请参阅 [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]
+现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。如果你想要通过命令行界面在 Azure VM 上自动创建 Docker主机，请参阅[如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]
 
 <!--Anchors-->
-[从映像库创建新的 VM]: #createvm
-[创建 Docker 证书]: #dockercerts
-[添加 Docker VM 扩展]: #adddockerextension
-[测试 Docker 客户端和 Azure Docker 主机]: #testclientandserver
-[后续步骤]: #next-steps
+[Create a new VM from the Image Gallery]: #createvm
+[Create Docker Certificates]: #dockercerts
+[Add the Docker VM Extension]: #adddockerextension
+[Test Docker Client and Azure Docker Host]: #testclientandserver
+[Next steps]: #next-steps
 
 <!--Image references-->
 [StartingPoint]: ./media/StartingPoint.png
@@ -131,11 +136,11 @@ WARNING: No swap limit support
 
 
 <!--Link references-->
-[How to use the Docker VM Extension from Azure Cross-Platform Interface (xplat-cli)]: /zh-cn/documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Azure Linux 代理]: /zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide/
-[Link 3 to another azure.microsoft.com documentation topic]: /zh-cn/documentation/articles/storage-whatis-account/
+[如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]: /documentation/articles/virtual-machines-docker-with-xplat-cli
+[Azure Linux 代理]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
 
 [使用 https 运行 Docker]: http://docs.docker.com/articles/https/
 [Docker 用户指南]: https://docs.docker.com/userguide/
 
-<!---HONumber=67-->
+<!---HONumber=79-->

@@ -1,26 +1,39 @@
-<properties pageTitle="如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务" description="介绍在 Azure 中的 VM 上安装和配置 Trend Micro Security" services="virtual machines"  documentationCenter="" authors="kathydav" manager="timlt"  />
-<tags  
+<properties
+	pageTitle="在 VM 上安装 Trend Micro Deep Security | Windows Azure"
+	description="本文介绍如何在 Azure 中使用经典部署模型创建的 VM 上安装和配置 Trend Micro Deep Security。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="dsk-2015"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
+
+<tags
 	ms.service="virtual-machines"
-	ms.date="07/15/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="10/14/2015"
+	wacn.date="11/12/2015"/>
 
-#如何在 Azure VM 上安装和配置 Trend Micro Deep Security 即服务
 
-本文演示了如何在运行 Windows Server 的新的或现有虚拟机 (VM) 上安装和配置 Trend Micro Deep Security 即服务。Deep Security 即服务提供的保护包括反恶意软件保护、防火墙、入侵防御系统和完整性监视。
+# 如何在 Windows VM 上安装和配置 Trend Micro Deep Security 即服务
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
+
+本文演示了如何在运行 Windows Server 的新的或现有虚拟机 (VM) 上安装和配置 Trend Micro Deep Security 即服务。Deep Security 即服务包括反恶意软件保护、防火墙、入侵防御系统和完整性监视。
 
 该客户端通过 VM 代理作为安全扩展插件进行安装。在新虚拟机上，将随 Deep Security Agent 一起安装 VM 代理。在未安装 VM 代理的现有虚拟机上，将需要先下载并安装 VM 代理。本文介绍这两种情况。
 
-如果你拥有针对本地解决方案的 Trend Micro 现有订阅，那么可以用它来保护你的 Azure 虚拟机。如果你还不是 Trend Micro 的客户，那么可以注册试用订阅。有关此解决方案的详细信息，请参阅 Trend Micro 博客文章[用于 Deep Security 的 Windows Azure VM 代理扩展](http://go.microsoft.com/fwlink/p/?LinkId=403945)。
+如果你拥有针对本地解决方案的 Trend Micro 现有订阅，那么可以用它来帮助保护你的 Azure 虚拟机。如果你还不是 Trend Micro 的客户，那么可以注册试用订阅。有关此解决方案的详细信息，请参阅 Trend Micro 博客文章[用于 Deep Security 的 Windows Azure VM 代理扩展](http://go.microsoft.com/fwlink/p/?LinkId=403945)。
 
 ## 在新虚拟机上安装 Deep Security Agent
 
-使用**“从库中”**选项创建虚拟机时，[Azure 管理门户](http://manage.windowsazure.cn)允许安装 VM 代理和 Trend Micro 安全扩展插件。如果要创建的是单个虚拟机，那么可以使用这种方法轻松地添加来自 Trend Micro 的保护。
+使用“从库中”选项创建虚拟机时，[Azure 门户](http://manage.windowsazure.cn)允许安装 VM 代理和 Trend Micro 安全扩展插件。如果要创建的是单个虚拟机，那么可以使用这种方法轻松地添加来自 Trend Micro 的保护。
 
-此**“从库中”**选项会打开帮助你设置虚拟机的向导。该向导的最后一页用于安装 VM 代理和 Trend 安全扩展插件。有关常规说明，请参阅[创建运行 Windows Server 的虚拟机](/zh-cn/documentation/articles/virtual-machines-windows-tutorial)。进入向导的最后一页时，请执行以下操作：
+此**“从库中”**选项会打开帮助你设置虚拟机的向导。该向导的最后一页用于安装 VM 代理和 Trend Micro 安全扩展插件。有关常规说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-tutorial)。进入向导的最后一页时，请执行以下操作：
 
-1.	在“VM 代理”下，选中**“安装 VM 代理”**。
+1.	在“VM 代理”下，选中“安装 VM 代理”。
 
-2.	在“安全扩展插件”下，选中**“Trend Micro Deep Security Agent”**。
+2.	在“安全扩展插件”下，选中“Trend Micro Deep Security Agent”。
 
 	![安装 VM 代理和 Deep Security Agent](./media/virtual-machines-install-trend/InstallVMAgentandTrend.png)
 
@@ -56,13 +69,11 @@
 安装后，代理需要几分钟时间才会开始运行。之后，你必须在虚拟机上激活 Deep Security，然后才能通过 Deep Security Manager 进行管理。有关其他说明，请参阅以下内容：
 
 - 有关此解决方案的 Trend 文章：[用于 Windows Azure 的 Instant-On Cloud Security](http://go.microsoft.com/fwlink/?LinkId=404101)。
-- 用于配置虚拟机的 [Windows PowerShell 脚本示例](http://go.microsoft.com/fwlink/?LinkId=404100)。
-- 示例的[说明](http://go.microsoft.com/fwlink/?LinkId=404099)。
+- 用于配置虚拟机的 [Windows PowerShell 脚本示例](http://go.microsoft.com/fwlink/?LinkId=404100)
+- 示例的[说明](http://go.microsoft.com/fwlink/?LinkId=404099)
 
+## 其他资源
 
-
-
-##其他资源
 [如何登录到运行 Windows Server 的虚拟机]
 
 [Azure VM 扩展和功能]
@@ -72,4 +83,4 @@
 [如何登录到运行 Windows Server 的虚拟机]: /zh-cn/documentation/articles/virtual-machines-log-on-windows-server/
 [Manage Extensions]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 
-<!---HONumber=67-->
+<!---HONumber=79-->

@@ -1,32 +1,21 @@
-<properties linkid="manage-windows-howto-logon" urlDisplayName="Log on to a VM" pageTitle="登录到运行 Windows Server 的虚拟机" metaKeywords="Azure logging on vm, vm portal" description="了解如何在登录到运行 Windows Server 2008 R2，通过使用 Azure 管理门户的虚拟机。" metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Log on to a Virtual Machine Running Windows Server" authors="kathydav" solutions="" manager="dongill" editor="tysonn" />
-<tags ms.service="virtual-machines"
-    ms.date="12/23/2014"
-    wacn.date="04/11/2015"
-    />
+<properties services="virtual-machines" title="How to Log on to a Virtual Machine Running Windows Server" authors="cynthn" solutions="" manager="timlt" editor="tysonn" />
 
+4. 单击“连接”创建和下载远程桌面协议文件（.rdp 文件）。单击“打开”以使用此文件。
 
->[WACOM.NOTE] 有关要求和故障排除提示，请参阅[连接到 Azure 虚拟机使用 RDP 或 SSH](https://msdn.microsoft.com/zh-CN/library/azure/dn535788.aspx)。
+5. 在“远程桌面”窗口中，单击“连接”以继续。
 
-1. 如果尚未这样做，登录到 [Azure 管理门户](http://manage.windowsazure.cn)。
+	![继续连接](./media/virtual-machines-log-on-win-server/connectpublisher.png)
 
-2. 单击**虚拟机**，然后选择相应的虚拟机。
+6. 在“Windows 安全性”窗口中，键入虚拟机上帐户的凭据，然后单击“确定”。
 
-3. 在命令栏中，单击**连接**。
-
-	![Log on to the virtual machine](./media/virtual-machines-log-on-win-server/connectwindows.png)
-
-4. 单击**打开**要用于虚拟机自动创建的远程桌面协议文件。
+ 	在大多数情况下，是创建虚拟机时指定的本地帐户用户名和密码。在本示例中，域是虚拟机的名称，输入格式为 *vmname*&#92;*username*。
 	
-5. 单击**连接**继续连接过程。
-
-	![Continue with connecting](./media/virtual-machines-log-on-win-server/connectpublisher.png)
-
-6. 在虚拟机中，键入用户名称和管理帐户的密码，然后单击**确定**。
+	如果虚拟机属于你的组织的一个域，请确保用户名包含该域的名称，格式为*Domain*&#92;*Username*。该帐户还需要属于管理员组或已被授予虚拟机的远程访问权限。
 	
-	
-7. 单击**是**若要验证虚拟机的标识。
+	如果虚拟机是域控制器，则键入该域的域管理员帐户的用户名和密码。
 
-	![Verify the identity of the machine](./media/virtual-machines-log-on-win-server/connectverify.png)
+7.	单击“是”以验证虚拟机的 ID 并完成登录。
 
-	你现在可以像使用任何其他服务器一样使用该虚拟机。
+	![验证计算机的标识](./media/virtual-machines-log-on-win-server/connectverify.png)
 
+<!---HONumber=79-->
