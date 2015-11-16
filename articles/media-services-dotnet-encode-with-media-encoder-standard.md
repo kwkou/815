@@ -112,7 +112,6 @@
 
 ##另请参阅 
 
-[如何使用媒体编码器标准通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset)
 
 <!---HONumber=79-->

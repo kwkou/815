@@ -67,10 +67,6 @@ Media Services 所提供的动态打包可让你以 Media Services 支持的流�
 
 编码器输出元数据在[此处](http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx)说明。
 
-###缩略图
-
-有关如何生成缩略图的信息，请参阅[如何使用媒体编码器标准版来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes)。
-
 ###音频和/或视频叠加
 
 目前不支持。

@@ -19,7 +19,6 @@ Azure 自动化中的文本编辑器可以用来编辑 [PowerShell Runbook](/doc
 
 Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布版。你先对工作流的草稿版进行编辑，然后将其发布，这样便可以执行了。无法编辑已发布版本。有关详细信息，请参阅[发布 Runbook](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook)。
 
-若要使用[图形 Runbook](/documentation/articles/automation-runbook-types#graphical-runbooks)，请参阅 [Azure 自动化中的图形创作](/documentation/articles/automation-graphical-authoring-intro)。
 
 ## 使用 Azure 管理门户编辑 Runbook
 
@@ -54,7 +53,7 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 2. 在文本编辑器的“画布”中，将光标置于要放置子 Runbook 代码的地方。
 3. 展开“库”控件中的“资产”节点。 
 4. 展开所需资产类型的节点。
-3. 右键单击要插入的资产，然后选择“添加到画布”。对于[变量资产](/documentation/articles/variable-assets)，可选择“将‘获取变量’添加到画布”或“将‘设置变量’添加到画布”，具体取决于你是要获取变量还是要设置变量。
+3. 右键单击要插入的资产，然后选择“添加到画布”。对于变量资产，可选择“将‘获取变量’添加到画布”或“将‘设置变量’添加到画布”，具体取决于你是要获取变量还是要设置变量。
 4. 此时会将资产的代码插入到 Runbook 中。
 
 
@@ -131,7 +130,6 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 
 ## 相关文章
 
-- [在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creatnig-importing-runbook)
 - [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
 - [证书](/documentation/articles/automation-certificates)
 - [连接](/documentation/articles/automation-connections)

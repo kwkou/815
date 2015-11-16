@@ -163,7 +163,7 @@
 
 <sup>2</sup>基本和标准站点在专用计算机上运行。你可以在这些计算机上托管的站点的实际数目取决于站点的活动、计算机实例的大小和相应的资源利用率。
 
-<sup>3</sup>除免费层以外，Web 托管计划的限制针对的是每个资源组。有关创建和管理资源组的详细信息，请参阅[使用资源组管理 Azure 资源][useresourcegroups]。请注意在标准层上，应请求提供其他 Web 托管计划。
+<sup>3</sup>除免费层以外，Web 托管计划的限制针对的是每个资源组。请注意在标准层上，应请求提供其他 Web 托管计划。
 
 <sup>4</sup>专用的实例可以是小型、中型或大型实例。有关详细信息，请参阅 [Azure 网站定价][websitespricing]页面。可通过提出支持请求获得其他实例。
 
@@ -179,7 +179,6 @@
 
 <sup>10</sup>按需、按计划或作为网站实例内的后台任务连续运行自定义可执行文件和/或脚本。连续执行 WebJob 需要使用“始终打开”。计划的 WebJob 需要使用 Azure 计划程序免费或标准版。
 
-  [useresourcegroups]: http://azure.microsoft.com/documentation/articles/azure-preview-portal-using-resource-groups/
   [websitespricing]: http://azure.microsoft.com/pricing/details/web-sites/
   [sslpricing]: http://azure.microsoft.com/pricing/details/web-sites/#ssl-connections
 

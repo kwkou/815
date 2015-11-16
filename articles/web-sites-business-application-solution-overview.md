@@ -35,7 +35,7 @@
 
 将使用各种语言和框架的现有 Web 资产引入 Azure 网站。
 
-无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Azure 网站中运行。你可以使用熟悉的 [FTP] 工具或源代理管理系统将它们移到 Web Apps。Web Apps 支持使用流行的源代码管理选项直接发布，如 [Visual Studio]、[Visual Studio Online] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
+无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Azure 网站中运行。你可以使用熟悉的 [FTP] 工具或源代理管理系统将它们移到 Web Apps。Web Apps 支持使用流行的源代码管理选项直接发布，如 [Visual Studio] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
 
 ## 保护资产
 
@@ -53,7 +53,6 @@
 
 你可以在 Azure 中的各种数据库后端（包括 [Azure SQL 数据库]和 [MySQL]）中选择，以满足 Web 应用的需求。通过将数据安全保存在 Azure 中，可以使数据在地理位置上靠近 Web 应用，进而优化其性能。
 
-但是，你的企业可能需要将数据保存在本地。Azure 网站可让你轻松地设置与本地资源（例如数据库后端）的[混合连接]。如果你希望统一管理本地连接，可以将许多 Web 应用与一个具有站点到站点 VPN 的 [Azure 虚拟网络]相集成。然后，就能访问本地资源，如同 Web 应用位于本地一样。
 
 ## 优化
 
@@ -82,7 +81,6 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-[Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 [Git]: /documentation/articles/web-sites-publish-source-control
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
 [Azure 网站定价详细信息]: /home/features/web-site#price
@@ -92,8 +90,6 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 [Azure 信任中心]: /support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[混合连接]: /documentation/articles/web-sites-hybrid-connection-get-started
-[Azure 虚拟网络]: /documentation/articles/web-sites-integrate-with-vnet
 [向上和向外缩放]: /documentation/articles/web-sites-scale
 [Azure 管理门户]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
@@ -106,7 +102,6 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 
 [quick glance]: /documentation/articles/web-sites-monitor
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
-[New Relic]: /documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management
 [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
  

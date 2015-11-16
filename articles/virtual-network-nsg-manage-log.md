@@ -17,7 +17,7 @@
 
 可以在 Azure 中使用不同类型的日志对 NSG 进行管理和故障排除。这些日志中有些可以通过门户访问，并且所有日志都可以从 Azure blob 存储中提取并在不同工具（如 Excel 和 PowerBI）中查看。你可以了解有关下面的列表中不同类型日志的详细信息。
 
-- **审核日志：**可以使用 [Azure 审核日志](/documentation/articles/insights-debugging-with-events)（以前称为操作日志）查看提交到你的 Azure 订阅的所有操作及其状态。审核日志默认启用，并且可以在 Azure 管理门户中查看。
+- **审核日志：**可以使用 Azure 审核日志)（以前称为操作日志）查看提交到你的 Azure 订阅的所有操作及其状态。审核日志默认启用，并且可以在 Azure 管理门户中查看。
 - **事件日志：**可以使用此日志查看有哪些 NSG 规则已基于 MAC 地址应用于虚拟机和实例角色。每隔 60 秒收集一次这些规则的状态。 
 - **计数器日志：**可以使用此日志查看应用每个 NSG 规则拒绝或允许流量的次数。
 
@@ -25,7 +25,7 @@
 
 
 ## 审核日志
-默认情况下由 Azure 生成此日志（以前称为“操作日志”）。日志在 Azure 的事件日志存储区中保留 90 天。通过阅读[查看事件和审核日志](/documentation/articles/insights-debugging-with-events)一文可了解有关这些日志的详细信息。
+默认情况下由 Azure 生成此日志（以前称为“操作日志”）。日志在 Azure 的事件日志存储区中保留 90 天。
 
 ## 计数器日志
 只有你按照上述步骤基于每个 NSG 启用了该日志，才会生成该日志。数据存储在你启用日志记录时指定的存储帐户中。应用于资源的每个规则以 JSON 格式记录，如下所示。
@@ -76,7 +76,7 @@
 ##查看和分析审核日志
 你可以使用任何以下方法查看和分析审核日志数据：
 
-- **Azure tools：**通过 Azure PowerShell、Azure 命令行界面 (CLI)、Azure REST API 或 Azure 管理门户检索审计日志中的信息。[使用资源管理器审核操作](/documentation/articles/resource-group-audit)一文中详细介绍了每种方法的分步说明。
+- **Azure tools：**通过 Azure PowerShell、Azure 命令行界面 (CLI)、Azure REST API 或 Azure 管理门户检索审计日志中的信息。
 - **Power BI：**如果还没有 [Power BI](https://powerbi.microsoft.com/pricing) 帐户，你可以免费试用。使用[适用于 Power BI 的 Azure 审核日志内容包](https://support.powerbi.com/knowledgebase/articles/742695)，你可以借助预配置的仪表板（可直接使用或进行自定义）分析你的数据。
 
 ##查看和分析计数器和事件日志 

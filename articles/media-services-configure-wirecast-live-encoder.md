@@ -145,7 +145,7 @@
 
 如果流出现在播放器中，则编码器已正确配置，可以连接到 AMS。
 
-如果收到错误，则需重置频道并调整编码器设置。请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
+如果收到错误，则需重置频道并调整编码器设置。
 
 ##创建节目
 
@@ -164,9 +164,5 @@
 
 现在可以将流嵌入到播放器中，也可将其分发给受众进行实时观看。
 
-
-## 故障排除
- 
-请参阅[故障排除](/documentation/articles/media-services-troubleshooting-live-streaming)主题以获取相关指导。
 
 <!---HONumber=79-->

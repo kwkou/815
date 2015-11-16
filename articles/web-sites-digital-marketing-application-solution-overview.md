@@ -32,7 +32,7 @@
 
 你可以使用你最喜欢的 CMS 风格创建 Web 应用。你可以从各种数据库后端选择以满足你的需要，包括 [Azure SQL 数据库]和 [MySQL]。
 
-无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Web Apps 中运行。你可以使用熟悉的 [FTP] 工具将它们移动到 Web Apps。如果频繁创建数字市场营销活动，则源代码控制系统中可能存在现有 Web 资产。你可以直接从流行的源代码管理选项部署到 Web Apps，如 [Visual Studio]、[Visual Studio Online] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
+无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Web Apps 中运行。你可以使用熟悉的 [FTP] 工具将它们移动到 Web Apps。如果频繁创建数字市场营销活动，则源代码控制系统中可能存在现有 Web 资产。你可以直接从流行的源代码管理选项部署到 Web Apps，如 [Visual Studio] 和 本地 [Git]、GitHub、BitBucket、DropBox、Mercurial 等。
 
 ## 保持敏捷
 
@@ -70,7 +70,7 @@ Azure 网站中的数字市场营销活动可以通过使用 Facebook 和 Twitte
 
 Web 应用可通过使用 Autoscale 进行自动缩放，使用 Azure Redis 缓存进行缓存，使用 WebJobs 运行后台任务以及使用 Azure 流量管理器维护高可用性达到优化目的。
 
-Azure 网站的[增加和扩大]功能非常适用于不可预测的工作负载，数字市场营销活动就属于这种情况。通过 [Azure 管理门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。此功能根据用户活动仅在需要时横向扩展 Web 应用，从而有助于最大限度提高灵活性并降低成本。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
+Azure 网站的增加和扩大功能非常适用于不可预测的工作负载，数字市场营销活动就属于这种情况。通过 [Azure 管理门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。此功能根据用户活动仅在需要时横向扩展 Web 应用，从而有助于最大限度提高灵活性并降低成本。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
 
 使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作（如 [ASP.NET 会话状态]和[输出缓存]）缓存数据。
 
@@ -92,14 +92,10 @@ Azure 网站的[增加和扩大]功能非常适用于不可预测的工作负载
 
 [Azure Websites]: /home/features/web-site/
 
-[Orchard]: /documentation/articles/web-sites-dotnet-orchard-cms-gallery
-[Umbraco]: /documentation/articles/web-sites-gallery-umbraco
-[WordPress]: /documentation/articles/web-sites-php-web-site-gallery
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL 数据库]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-[Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 [Git]: /documentation/articles/web-sites-publish-source-control
 [将其部署到过渡槽]: /documentation/articles/web-sites-staged-publishing
 [连续发布]: http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
@@ -114,7 +110,6 @@ Azure 网站的[增加和扩大]功能非常适用于不可预测的工作负载
 [将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
 [CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
-[增加和扩大]: /documentation/articles/how-to-scale-websites
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell 脚本]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -124,7 +119,6 @@ Azure 网站的[增加和扩大]功能非常适用于不可预测的工作负载
 [ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[快速浏览]: /documentation/articles/how-to-monitor-websites
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]: /develop/net/how-to-guides/new-relic/
 [如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx

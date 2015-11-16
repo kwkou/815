@@ -288,6 +288,5 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
 
 <!---HONumber=79-->

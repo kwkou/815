@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="网络资源提供程序概述 | Microsoft Azure"
+   pageTitle="网络资源提供程序概述 | Windows Azure"
    description="了解 Azure 资源管理器中的新网络资源提供程序"
    services="virtual-network"
    documentationCenter="na"
@@ -44,7 +44,7 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 |属性|说明|示例值|
 |---|---|---|
 |**name**|唯一的资源名称。每个资源类型都有自己的命名限制。|PIP01、VM01、NIC01|
-|**位置**|资源所在的 Azure 区域|westus、eastus|
+|**位置**|资源所在的 Azure 区域|chinanorth、chinaeast|
 |**id**|唯一的基于 URI 的标识|/subscriptions/<subGUID>/resourceGroups/TestRG/providers/Microsoft.Network/publicIPAddresses/TestPIP|
 
 你可以在以下部分中检查资源的各个属性。
@@ -77,7 +77,7 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 
 Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结构：
 
-	https://management.azure.com/subscriptions/{subscription-id}/providers/{resource-provider-namespace}/locations/{region-location}/register?api-version={api-version}
+	https://manage.windowsazure.cn/subscriptions/{subscription-id}/providers/{resource-provider-namespace}/locations/{region-location}/register?api-version={api-version}
 
 大括号中的参数代表以下元素：
 
