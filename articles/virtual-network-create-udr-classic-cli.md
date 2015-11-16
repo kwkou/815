@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]本文介绍经典部署模型。你还可以[在资源管理器部署模型中控制路由和使用虚拟设备](/documentation/articles/virtual-network-create-udr-arm-cli)。
+本文介绍经典部署模型。你还可以[在资源管理器部署模型中控制路由和使用虚拟设备](/documentation/articles/virtual-network-create-udr-arm-cli)。
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 

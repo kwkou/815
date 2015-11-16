@@ -60,7 +60,7 @@
 
 Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足业务线应用程序的需求。通过 [Azure 管理门户]手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
 
-使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作（如 [ASP.NET 会话状态]和[输出缓存]）缓存数据。
+使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作。
 
 使用 [Azure 流量管理器] 维护 Web 应用的高可用性。使用“故障转移”方法，当主站点出现问题时，流量管理器可以自动将流量路由到辅助站点。
 
@@ -68,13 +68,13 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 
 使用 Azure 或第三方工具让 Web 应用的性能保持最新状态。接收关于关键 Web 应用事件的警报。使用 Application Insight 或 HDInsight 中的 Web 日志分析，让用户可以轻松地深入了解。
 
-在“标准”层，当应用无法响应时，监视器应用程序响应能力会收到电子邮件通知。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则]。
+在“标准”层，当应用无法响应时，监视器应用程序响应能力会收到电子邮件通知。
 
 ## 更多资源
 
-- [Azure 网站文档](/home/features/app-service/web/)
+- [Azure 网站文档](/home/features/web-site/)
 - [Azure 网站学习路线图](/documentation/articles/websites-learning-map)
-- [Azure Web 博客](/blog/topics/web/)
+- [Azure Web 博客](/blog/tags/网站/)
 
 
 [Azure Websites]: /home/features/web-site/
@@ -85,7 +85,7 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
 [Azure 网站定价详细信息]: /home/features/web-site#price
 [对用户进行身份验证]: /documentation/articles/web-sites-authentication-authorization
-[简易身份验证]: /blog/2014/11/13/azure-websites-authentication-authorization/
+[简易身份验证]: https://azure.microsoft.com/zh-cn/blog/2014/11/13/azure-websites-authentication-authorization/
 [为用户授权]: /documentation/articles/web-sites-authentication-authorization
 [Azure 信任中心]: /support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
@@ -96,13 +96,10 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 [PowerShell 脚本]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt
 [我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
-[Azure Redis 缓存]: /blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
-[ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
-[输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
+[Azure Redis 缓存]: https://azure.microsoft.com/zh-cn/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
 
 [quick glance]: /documentation/articles/web-sites-monitor
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
-[如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
  
 

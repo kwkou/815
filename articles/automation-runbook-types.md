@@ -23,7 +23,7 @@ Azure 自动化支持两种类型的 Runbook，这些 Runbook 在下表中进行
 
 ## PowerShell 工作流 Runbook
 
-PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)的文本 Runbook。你可以在 Azure 管理门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) 到 Azure 自动化中。
+PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)的文本 Runbook。你可以在 Azure 管理门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](/documentation/articles/automation-creating-importing-runbook) 到 Azure 自动化中。
 
 ### 优点
 
@@ -43,7 +43,7 @@ PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documenta
 
 ## PowerShell Runbook
 
-基于 Windows PowerShell 的 PowerShell Runbook。你可以在 Azure 管理门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx) 到 Azure 自动化中。
+基于 Windows PowerShell 的 PowerShell Runbook。你可以在 Azure 管理门户中使用文本编辑器直接编辑 Runbook 的代码。你还可以使用任何脱机文本编辑器，以便[导入 Runbook](/documentation/articles/automation-creating-importing-runbook) 到 Azure 自动化中。
 
 ### 优点
 
@@ -78,6 +78,6 @@ PowerShell 工作流 Runbook 是基于 [Windows PowerShell 工作流](/documenta
 ## 相关文章
 
 - [学习 Windows PowerShell 工作流](/documentation/articles/automation-powershell-workflow)
-- [创建或导入 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx)
+- [创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook)
 
 <!---HONumber=79-->
