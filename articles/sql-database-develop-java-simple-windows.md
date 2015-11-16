@@ -1,17 +1,17 @@
-<properties
-	pageTitle="在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库"
-	description="演示了一个可以用来连接到 Azure SQL 数据库 的 Java 代码示例。该示例使用 JDBC，并在 Windows 客户端计算机上运行。"
-	services="sql-database"
-	documentationCenter=""
-	authors="LuisBosquez"
-	manager="jeffreyg"
+<properties 
+	pageTitle="在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库" 
+	description="演示了一个可以用来连接到 Azure SQL 数据库的 Java 代码示例。该示例使用 JDBC，并在 Windows 客户端计算机上运行。"
+	services="sql-database" 
+	documentationCenter="" 
+	authors="LuisBosquez" 
+	manager="jeffreyg" 
 	editor="genemi"/>
 
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="06/25/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="09/28/2015" 
+	wacn.date="11/12/2015"/>
 
 
 # 在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库
@@ -20,7 +20,7 @@
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-本主题演示了一个可以用来连接到 Azure SQL 数据库 的 Java 代码示例。该 Java 示例依赖于 Java 开发工具包 (JDK) 版本 1.8。该示例将使用 JDBC 驱动程序连接到 Azure SQL 数据库。
+本主题演示了一个可以用来连接到 Azure SQL 数据库的 Java 代码示例。该 Java 示例依赖于 Java 开发工具包 (JDK) 版本 1.8。该示例将使用 JDBC 驱动程序连接到 Azure SQL 数据库。
 
 
 ## 要求
@@ -34,9 +34,12 @@
 ## 测试环境
 
 
-本主题中的 Java 代码示例假设 Azure SQL 数据库 数据库中已存在以下测试表。
+本主题中的 Java 代码示例假设 Azure SQL 数据库数据库中已存在以下测试表。
 
 
+<!--
+Could this instead be a #tempPerson table, so that the Java code sample could be fully self-sufficient and be runnable (with automatic cleanup)?
+-->
 
 
 	CREATE TABLE Person
@@ -48,10 +51,14 @@
 	);
 
 
-## SQL 数据库 的连接字符串
+## SQL 数据库的连接字符串
 
 
-该代码示例将使用连接字符串创建 `Connection` 对象。你可以使用 [Azure 门户](http://manage.windowsazure.cn/)查找连接字符串。有关查找连接字符串的详细信息，请参阅[创建你的第一个 Azure SQL Database](/documentation/articles/sql-database-get-started)。
+该代码示例将使用连接字符串创建 `Connection` 对象。你可以使用 [Azure 门户](http://manage.windowsazure.cn/)查找连接字符串。有关查找连接字符串的详细信息，请参阅[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started)。
+
+
+> [AZURE.NOTE]JTDS JDBC 
+> 驱动程序，如果你使用的是 JTDS JDBC 驱动程序，则需要将“ssl=require”添加到连接字符串的 URL，并需要设置以下 JVM 选项：“-Djsse.enableCBCProtection=false”。此 JVM 选项会禁用针对某个安全漏洞的修复程序，因此在设置此选项之前，请确保你了解涉及哪些风险。
 
 
 ## Java 代码示例
@@ -216,6 +223,8 @@
 			+ resultSet.getString(3));
 	}
 
- 
+## 后续步骤
 
-<!---HONumber=69-->
+有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
+
+<!---HONumber=79-->
