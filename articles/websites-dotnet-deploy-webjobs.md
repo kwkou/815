@@ -96,7 +96,7 @@
 
 	创建一个项目，该项目配置为在针对位于相同解决方案中的 Web 项目进行部署时，自动以 Web 作业的方式部署。当你要在与运行相关 Web 应用程序相同的 Web 应用中运行 Web 作业时，请使用此选项。
 
-在 SDK 2.4 版本中，Web 作业新建项目模板并不比创建控制台应用程序项目并启用 Web 作业部署容易。将来，Web 作业新建项目模板将更有助于[ WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs) 开发，因为它会自动安装相应的 WebJobs SDK NuGet 包。在此之前，你可以手动安装此包，以将项目配置为使用 Webjobs SDK，如 [Webjobs SDK 教程](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)中所示。
+在 SDK 2.4 版本中，Web 作业新建项目模板并不比创建控制台应用程序项目并启用 Web 作业部署容易。将来，Web 作业新建项目模板将更有助于[ WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started) 开发，因为它会自动安装相应的 WebJobs SDK NuGet 包。在此之前，你可以手动安装此包，以将项目配置为使用 Webjobs SDK，如 [Webjobs SDK 教程](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)中所示。
 
 
 ### <a id="createnolink"></a>为独立的 Web 作业使用 Web 作业新建项目模板

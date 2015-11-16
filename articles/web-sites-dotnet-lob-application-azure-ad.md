@@ -369,10 +369,9 @@
 - [Windows Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
-- [Azure 的新混合连接不是你父亲的 #hybridCloud](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)
 - [Active Directory 与 Azure Active Directory 之间的相似之处](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [使用单一登录方案进行目录同步](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
-- [Azure Active Directory 支持的令牌和声明类型](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)
+- [Azure Active Directory 支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)
  
 
 <!---HONumber=79-->

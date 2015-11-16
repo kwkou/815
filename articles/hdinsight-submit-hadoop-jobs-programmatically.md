@@ -550,7 +550,7 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 
 
-[azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
+[azure-certificate]: /documentation/articles/cloud-services-certs-create/
 [azure-management-portal]: https://manage.windowsazure.cn/
 
 [hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started

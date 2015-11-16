@@ -190,7 +190,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
 	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
 
-	> [AZURE.NOTE]需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅[支持的令牌和声明类型](http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx)。
+	> [AZURE.NOTE]需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。
 
 8.	在“编辑声明规则”对话框中，单击“添加规则”。
 9.	配置名称、UPN 和角色声明（如下所示），然后单击“完成”。
@@ -342,7 +342,6 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为 Web 应用的数据层。
 
-Azure 网站支持通过以下这两种方法访问本地数据库：[混合连接](/documentation/articles/integration-hybrid-connection-overview)和[虚拟网络](/documentation/articles/web-sites-integrate-with-vnet)。有关详细信息，请参阅[对 Azure 网站使用 VNET 集成和混合连接](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)。
 
 <a name="bkmk_resources"></a>
 ## 其他资源

@@ -1,5 +1,5 @@
 
-你可以借助使用安全套接字层 (SSL) 加密的 HTTPS 来保护 Web 应用程序与浏览器之间的通信。这是保护通过 Internet 发送的数据安全的最常用方法，并且可确保对访问者而言，他们与你的应用之间处理的事务是安全的。本文介绍如何在 Azure App Service 中配置 Web 应用的 HTTPS。本文不涉及客户端证书身份验证；有关该方面的信息，请参阅[如何为 Web 应用配置 TLS 相互身份验证](/documentation/articles/app-service-web-configure-tls-mutual-auth)。
+你可以借助使用安全套接字层 (SSL) 加密的 HTTPS 来保护 Web 应用程序与浏览器之间的通信。这是保护通过 Internet 发送的数据安全的最常用方法，并且可确保对访问者而言，他们与你的应用之间处理的事务是安全的。本文介绍如何在 Azure App Service 中配置 Web 应用的 HTTPS。
 
 > [AZURE.NOTE]快速入门 - 使用全新的 Azure [操作实例指南](http://support.microsoft.com/kb/2990804)！ 它可使自定义域名快速地与 Azure 云服务或 [App Service](/documentation/services/web-sites/) 相关联，并确保通信安全 (SSL)。
 
@@ -12,7 +12,7 @@
 
 ##<a name="bkmk_domainname"></a>为自定义域启用 SSL
 
-若要为自定义域启用 HTTPS（例如 **contoso.com**），你必须先在域名注册机构那里注册自定义域名。有关如何配置 Web 应用的域名的详细信息，请参阅[为 Azure 网站配置自定义域名](/zh-CN/develop/net/common-tasks/custom-dns-web-site/)。注册自定义域名并配置你的 Web 应用以响应自定义名称后，你必须为该域请求 SSL 证书。
+若要为自定义域启用 HTTPS（例如 **contoso.com**），你必须先在域名注册机构那里注册自定义域名。有关如何配置 Web 应用的域名的详细信息，请参阅[为 Azure 网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name/)。注册自定义域名并配置你的 Web 应用以响应自定义名称后，你必须为该域请求 SSL 证书。
 
 > [AZURE.NOTE]若要为自定义域名启用 HTTPS，你必须将 Web 应用配置为**标准**模式。如果您当前使用的是免费模式或共享模式，则这可能会产生额外成本。有关共享和**标准**定价的详细信息，请参阅 [定价详细信息][pricing]
 
@@ -414,23 +414,15 @@ OpenSSL 可用于创建使用 SubjectAltName 扩展以使单个证书支持多�
 
 2. 在“网站”选项卡中，单击站点名称，然后选择“配置”选项卡。
 
-	![配置选项卡][configure]
-
 3. 在“证书”部分中，单击“上载证书”
-
-	![上载证书][uploadcert]
 
 4. 通过使用“上载证书”对话框，选择以前使用 IIS 管理器或 OpenSSL 创建的 .pfx 证书文件。如果有，指定用于保护 .pfx 文件的密码。最后，单击**复选标记**以上载证书。
 
-	![上载证书对话框][uploadcertdlg]
-
-5. 在“配置”选项卡的“ssl 绑定”部分中，使用下拉菜单选择要使用 SSL 保护的域名，然后选择要使用的证书。你还可以选择是使用 [服务器名称指示][sni](/documentation/articles/SNI) 还是基于 IP 的 SSL。
-
-	![ssl 绑定][sslbindings]
+5. 在“配置”选项卡的“ssl 绑定”部分中，使用下拉菜单选择要使用 SSL 保护的域名，然后选择要使用的证书。你还可以选择是使用 [服务器名称指示][sni](SNI) 还是基于 IP 的 SSL。
 	
 	* 基于 IP 的 SSL 通过将服务器的专用公共 IP 地址映射到域名，将证书与域名相关联。这要求与您的服务相关联的每个域名（contoso.com、fabricam.com 等）都具有专用的 IP 地址。这是将 SSL 证书与某一 Web 服务器相关联的传统方法。
 
-	* 基于 SNI 的 SSL 是对 SSL 和 [传输层安全性][tls](/documentation/articles/TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 [服务器名称指示][sni]。
+	* 基于 SNI 的 SSL 是对 SSL 和 [传输层安全性][tls](TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 [服务器名称指示][sni]。
 
 6. 单击“保存”以保存更改和启用 SSL。
 

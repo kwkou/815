@@ -64,7 +64,7 @@ Azure 网站中的数字市场营销活动可以通过使用 Facebook 和 Twitte
 
 若要为在各自区域的全局客户提供服务，使用 [Azure 流量管理器]将站点访问者路由到可以提供最佳性能的地区站点。或者，你可以在多个区域托管的 Web 应用的多个副本中均衡分布负载。
 
-通过[将 Web 应用与 Azure CDN 集成]向全局用户快速传递静态内容。Azure CDN 可以缓存离用户最近的 [CDN 节点]中的静态内容，从而最大程度减少了滞后时间和连接到 Web 应用时间。
+通过[将 Web 应用与 Azure CDN 集成]向全局用户快速传递静态内容。Azure CDN 可以缓存离用户最近的 CDN 节点中的静态内容，从而最大程度减少了滞后时间和连接到 Web 应用时间。
 
 ## 优化
 
@@ -72,7 +72,7 @@ Web 应用可通过使用 Autoscale 进行自动缩放，使用 Azure Redis 缓�
 
 Azure 网站的增加和扩大功能非常适用于不可预测的工作负载，数字市场营销活动就属于这种情况。通过 [Azure 管理门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大 Web 应用，或者通过自动缩放功能自动扩大。在“标准”层，自动缩放功能使你可以基于 CPU 使用率自动扩大 Web 应用。此功能根据用户活动仅在需要时横向扩展 Web 应用，从而有助于最大限度提高灵活性并降低成本。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
 
-使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作（如 [ASP.NET 会话状态]和[输出缓存]）缓存数据。
+使用 [Azure Redis 缓存]让你的 Web 应用响应更快。可以利用它从后端数据库和其他操作。
 
 使用 [Azure 流量管理器]维护 Web 应用的高可用性。使用“故障转移”方法，当主站点出现问题时，流量管理器可以自动将流量路由到辅助站点。
 
@@ -80,13 +80,13 @@ Azure 网站的增加和扩大功能非常适用于不可预测的工作负载�
 
 使用 Azure 或第三方工具让 Web 应用的性能保持最新状态。接收关于关键 Web 应用事件的警报。使用 Application Insight 或 HDInsight 中的 Web 日志分析，让用户可以轻松地深入了解。
 
-在“标准”层，当 Web 应用无法响应时，监视器应用程序响应能力会收到电子邮件通知。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则]。
+在“标准”层，当 Web 应用无法响应时，监视器应用程序响应能力会收到电子邮件通知。
 
 ## 更多资源
 
-- [Azure 网站文档](/home/features/app-service/web/)
+- [Azure 网站文档](/home/features/web-site/)
 - [Azure 网站学习路线图](/documentation/articles/websites-learning-map)
-- [Azure Web 博客](/blog/topics/web/)
+- [Azure Web 博客](/blog/tags/网站)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
@@ -108,7 +108,6 @@ Azure 网站的增加和扩大功能非常适用于不可预测的工作负载�
 [通知中心]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
 [将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
-[CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [Azure Management Portal]: http://manage.windowsazure.cn/
 [服务管理 API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
@@ -116,12 +115,9 @@ Azure 网站的增加和扩大功能非常适用于不可预测的工作负载�
 [Troy Hunt]: https://twitter.com/troyhunt
 [我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis 缓存]: http://azure.microsoft.com/zh-cn/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
-[ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
-[输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
 [Azure Application Insights]: http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 [New Relic]: /develop/net/how-to-guides/new-relic/
-[如何：在 Azure 中接收警报通知和管理警报规则]: http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
   
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites

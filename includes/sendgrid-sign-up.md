@@ -73,7 +73,7 @@ Azure 客户每月可解锁 25,000 封免费电子邮件。通过每月的这 25
 [ SendGrid 功能]: http://sendgrid.com/features
 [Azure 管理门户]: https://manage.windowsazure.cn
 [ SendGrid 入门]: http://sendgrid.com/docs
-[SendGrid 设置过程]: https://support.sendgrid.com/hc/zh-CN/articles/200181628-Why-is-my-account-being-provisioned-
+[SendGrid 设置过程]: https://support.sendgrid.com/hc/en-us/articles/200181628-Why-is-my-account-being-provisioned-
 [所有 API]: https://sendgrid.com/docs/API_Reference/index.html
 
 <!---HONumber=74-->
