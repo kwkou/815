@@ -1,6 +1,6 @@
 <properties
-   pageTitle="创建多个资源实例"
-   description="介绍如何在部署资源时使用 Azure 资源管理器模板中的复制操作执行多次迭代。"
+   pageTitle="部署多个资源实例 | Windows Azure"
+   description="在部署资源时使用 Azure 资源管理器模板中的复制操作和数组执行多次迭代。"
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -9,14 +9,14 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/14/2015"
-   wa.date="10/3/2015"/>
+   ms.date="08/27/2015"
+   wa.date="11/12/2015"/>
 
 # 在 Azure 资源管理器中创建多个资源实例
 
 本主题演示如何在您的 Azure 资源管理器模板中进行迭代操作，以创建多个资源实例。
 
-## copy 和 copyIndex()
+## copy、copyIndex 和 length
 
 在要多次创建的资源中，您可以定义指定迭代次数的 **copy** 对象。copy 将采用以下格式：
 
@@ -28,6 +28,13 @@
 您可以使用 **copyIndex()** 函数访问当前的迭代值，如以下 concat 函数中所示。
 
     [concat('examplecopy-', copyIndex())]
+
+基于值数组创建多个资源时，可以使用 **length** 函数指定计数。请提供该数组作为 length 函数的参数。
+
+    "copy": {
+        "name": "websitescopy",
+        "count": "[length(parameters('siteNames'))]"
+    }
 
 ## 使用名称中的索引值
 
@@ -85,11 +92,7 @@
              "Fabrikam", 
              "Coho" 
           ] 
-      },
-      "count": { 
-         "type": "int", 
-         "defaultValue": 3 
-      } 
+      }
     }, 
     "resources": [ 
       { 
@@ -99,15 +102,17 @@
           "apiVersion": "2014-06-01",
           "copy": { 
              "name": "websitescopy", 
-             "count": "[parameters('count')]" 
+             "count": "[length(parameters('org'))]" 
           }, 
           "properties": {} 
       } 
     ]
 
-## 后续步骤
-- [创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
-- [使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
+当然，你不能将复制计数设置为数组的长度。例如，你可能要创建一个包含多个值的数组，然后传入一个参数值用于指定要部署多少个数组元素。在这种情况下，请按第一个示例中所示设置复制计数。
 
-<!---HONumber=71-->
+## 后续步骤
+- 若要了解有关模板区段的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/./resource-group-authoring-templates)。
+- 有关可在模板中使用的函数列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/./resource-group-template-functions)
+- 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/azure-portal/resource-group-template-deploy)。
+
+<!---HONumber=79-->

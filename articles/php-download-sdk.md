@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="03/20/2015"
-	wacn.date="10/3/2015"/>
+	ms.date="08/31/2015"
+	wacn.date="11/12/2015"/>
 
 #下载 Azure SDK for PHP
 
@@ -27,7 +27,8 @@ Azure SDK for PHP 包括允许你针对 Azure 开发、部署和管理 PHP 应�
 
 本主题中的说明假定您已安装 [PHP][install-php]。
 
-> [AZURE.NOTE]若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
+> [AZURE.NOTE]
+若要使用 Azure 的 PHP 客户端库，您必须安装 PHP 5.3 或更高版本。
 
 ##Azure 的 PHP 客户端库
 
@@ -40,7 +41,8 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 1. [安装 Git][install-git]。
 
 
-	> [AZURE.NOTE]在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
+	> [AZURE.NOTE]
+	在 Windows 上，您还需要向您的 PATH 环境变量添加 Git 可执行文件。
 
 2. 在您的项目的根目录中创建一个名为 **composer.json** 的文件并向其添加以下代码：
 
@@ -72,10 +74,10 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 1. [安装 PEAR][install-pear]。
 2. 设置 Azure PEAR 通道：
 
-		pear channel-discover pear.windowsazure.com
+		pear channel-discover pear.windowsazure.cn
 3. 安装 PEAR 包：
 
-		pear install pear.windowsazure.com/WindowsAzure-0.4.0
+		pear install pear.windowsazure.cn/WindowsAzure-0.4.0
 
 安装完成后，你可以从应用程序中引用类库。
 
@@ -85,7 +87,8 @@ Azure 的 PHP 客户端库提供了一个用于从任何操作系统访问 Azure
 
 1. 下载包含 [GitHub][php-sdk-github] 中的库的 .zip 存档。或者，复制现有存储库并将其克隆到您的本地计算机。（后一种选择需要一个 GitHub 帐户并要求已在本地安装 Git。）
 
-	> [AZURE.NOTE]用于 Azure 的 PHP 客户端库依赖于 [HTTP\_Request2](http://pear.php.net/package/HTTP_Request2)、[Mail\_mime](http://pear.php.net/package/Mail_mime) 和 [Mail\_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR 包。若要处理这些依赖关系，建议使用 [PEAR 包管理器](http://pear.php.net/manual/en/installation.php)安装这些包
+	> [AZURE.NOTE]
+	用于 Azure 的 PHP 客户端库依赖于 [HTTP\_Request2](http://pear.php.net/package/HTTP_Request2)、[Mail\_mime](http://pear.php.net/package/Mail_mime) 和 [Mail\_mimeDecode](http://pear.php.net/package/Mail_mimeDecode) PEAR 包。若要处理这些依赖关系，建议使用 [PEAR 包管理器](http://pear.php.net/manual/en/installation.php)安装这些包
 
 2. 将已下载的存档的 `WindowsAzure` 目录复制到应用程序目录结构中并从应用程序引用类。
 
@@ -99,18 +102,10 @@ Azure PowerShell 是一组用于部署和管理 Azure 服务（例如，云服�
 
 ##Azure CLI
 
-Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。以下列表说明如何根据您的操作系统安装 Azure CLI：
-
-* **Mac**：在此处下载 Azure SDK 安装程序：[http://go.microsoft.com/fwlink/?LinkId=252249][mac-installer]。打开已下载的 .pkg 文件并按照系统提示完成安装步骤。
-
-* **Linux**：安装最新版本的 [Node.js][nodejs-org]（请参阅[通过程序包管理器安装 Node.js][install-node-linux]），然后运行以下命令：
-
-		npm install azure-cli -g
-
-	> [AZURE.NOTE]您可能需要使用提升的权限才能运行此命令：`sudo npm install azure-cli -g`
+Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 Azure 虚拟机）的命令。有关安装 Azure CLI 的信息，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 
-有关如何使用 Azure CLI 的信息，请参阅[如何使用适用于 Mac、Linux 和 Windows 的 Azure 命令行界面][azure cli]。
+
 
 [install-php]: http://www.php.net/manual/en/install.php
 [composer-github]: https://github.com/composer/composer
@@ -132,4 +127,4 @@ Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 A
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=71-->
+<!---HONumber=79-->

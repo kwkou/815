@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="08/20/2015"
-   wacn.date="10/3/2015"/>
+   ms.date="09/18/2015"
+   wacn.date="11/12/2015"/>
 
 # 创作 Azure 资源管理器模板
 
@@ -118,6 +118,7 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 - 对象或 secureObject - 任何有效的 JSON 对象
 - 数组 - 任何有效的 JSON 数组
 
+若要将某个参数指定为可选，请将其 defaultValue 指定为空字符串。
 
 >[AZURE.NOTE]所有密码、密钥和其他机密信息应使用 **secureString** 类型。部署资源后，无法读取使用 secureString 类型的模板参数。
 
@@ -222,10 +223,12 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 | location | 否 | 提供的资源支持的地理位置。
 | 标记 | 否 | 与资源关联的标记。
 | dependsOn | 否 | 正在定义的资源所依赖的资源。将会评估资源之间的依赖关系，并按资源的依赖顺序来部署资源。如果资源不相互依赖，则会尝试并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。
-| 属性 | 否 | 特定于资源的配置设置。
+| properties | 否 | 特定于资源的配置设置。
 | 资源 | 否 | 依赖于所定义的资源的子资源。
 
-如果资源名称不是唯一的，您可以使用 **resourceId** 帮助器函数（下面将会介绍）获取任何资源的唯一标识符。
+如果资源名称不是唯一的，你可以使用 **resourceId** 帮助器函数（下面将会介绍）获取任何资源的唯一标识符。
+
+**properties** 元素的值与你在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值完全相同。请参阅 [Azure 参考](https://msdn.microsoft.com/zh-cn/library/azure/mt420159.aspx)，了解可对你要部署的资源执行的 REST API 操作。
 
 以下示例演示了 **Microsoft.Web/serverfarms** 资源，以及一个包含嵌套 **Extensions** 资源的 **Microsoft.Web/sites** 资源：
 
@@ -264,7 +267,7 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
                   "type": "Extensions",
                   "name": "MSDeploy",
                   "properties": {
-                    "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
+                    "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
                     "dbType": "None",
                     "connectionString": "",
                     "setParameters": {
@@ -309,11 +312,11 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 ## 更高级方案。
 本主题提供了有关模板的简介。但是，你的方案可能需要更高级的任务。
 
-你可能需要将两个模板合并在一起，或者在父模板中使用子模板。<!--有关详细信息，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-advanced-template#nested-template)。-->
+你可能需要将两个模板合并在一起，或者在父模板中使用子模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-advanced-template/#nested-template)。
 
 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
 
-你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions#resourceid)。
+你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
 
 ## 完整的模板
 以下模板将部署一个 Web 应用程序，并使用 .zip 文件中的代码设置该应用程序。
@@ -378,7 +381,7 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
                  "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
                ],
                "properties": {
-                 "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
+                 "packageUri": "https://auxmktplceprod.blob.core.chinacloudapi.cn/packages/StarterSite-modified.zip",
                  "dbType": "None",
                  "connectionString": "",
                  "setParameters": {
@@ -398,9 +401,9 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
     }
 
 ## 后续步骤
-- 有关您可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
-- 若要查看如何部署已创建的模板，请参阅<!--[-->使用 Azure 资源管理器模板部署应用程序<!--](/documentation/articles/resource-group-template-deploy)-->
-- 有关进一步了解部署应用程序的示例，请参阅<!--[-->按可预见的方式在 Azure 中设置和部署微服务<!--](/documentation/articles/app-service-deploy-complex-application-predictably)-->
-- 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)。
+- 有关你可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
+- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/azure-portal/resource-group-template-deploy)
+- 有关进一步了解部署应用程序的示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)
+- 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 
-<!---HONumber=71-->
+<!---HONumber=79-->
