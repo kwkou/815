@@ -9,7 +9,7 @@
 <tags 
 	ms.service="multiple"  
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 是否应选择云服务？
 
@@ -32,7 +32,7 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 [在 Python 中创建云服务应用](/documentation/articles/cloud-services-python-ptvs)<br/>
 
 [App Service]: /documentation/articles/app-service-choose-me
-[虚拟机]: /documentation/articles/virtual-machines-choose-me
+[虚拟机]: /documentation/articles/virtual-machines-about
 [云服务]: #tellmecs
 
-<!---HONumber=74-->
+<!---HONumber=79-->

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/24/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="09/29/2015"
+	wacn.date="11/12/2015"/>
 
 
 # 使用 Microsoft HPC Pack 设置混合计算群集
@@ -20,9 +20,9 @@
 
 本教程展示了一种方法（有时称作群集“迸发至云”）来使用 Azure 中可伸缩的按需计算资源运行计算密集型应用程序。
 
-本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](https://technet.microsoft.com/zh-CN/library/gg481749.aspx)。如果希望完全在 Azure 中设置 HPC Pack 群集，请参阅 [Azure VM 中的 Microsoft HPC Pack](https://msdn.microsoft.com/zh-CN/library/azure/dn518135.aspx)。
+本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。如果希望完全在 Azure 中设置 HPC Pack 群集，请参阅 [Azure 中 Microsoft HPC Pack 的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)。
 
->[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。例如，A8 和 A9 实例结合了某些 HPC 应用程序所需要的高性能和对低延迟、高吞吐量应用程序网络的访问。有关信息，请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](https://msdn.microsoft.com/zh-CN/library/azure/dn689095.aspx)。
+>[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](/documentation/articles/virtual-machines-size-specs)。例如，A8 和 A9 实例结合了某些 HPC 应用程序所需要的高性能和对低延迟、高吞吐量应用程序网络的访问。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
 
 ## 先决条件
 
@@ -40,7 +40,7 @@
 
 	* 确认安装了重要更新和关键更新。
 
-* HPC Pack 2012 R2 的安装文件，它是免费提供的。[下载](http://www.microsoft.com/zh-cn/download/details.aspx?id=47755)最新版本并将文件复制到头节点计算机或某个网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
+* HPC Pack 2012 R2 的安装文件，它是免费提供的。[下载](http://go.microsoft.com/fwlink/p/?linkid=328024)最新版本并将文件复制到头节点计算机或某个网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
 
 * 在头节点上具有本地管理员权限的域帐户。
 
@@ -102,7 +102,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![证书设置][upload_cert1]
 
-4. 在头节点上浏览找到文件 C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer。然后，单击“检查”按钮。
+4. 在头节点上浏览找到文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer。然后，单击“检查”按钮。
 
 	![上载证书][install_hpc10]
 
@@ -300,9 +300,9 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 ## 相关资源
 
-* [HPC Pack 2012 R2 和 HPC Pack 2012](https://technet.microsoft.com/zh-CN/library/jj899572.aspx)
-* [使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-CN/library/gg481749.aspx)
-* [Azure VM 中的 Microsoft HPC Pack](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn518135.aspx)
+* [HPC Pack 2012 R2 和 HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697)
+* [使用 Microsoft HPC Pack 迸发到 Azure](http://go.microsoft.com/fwlink/p/?LinkID=200493)
+* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 * [Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源](/documentation/articles/big-compute-resources)
 
 
@@ -343,4 +343,4 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=76-->
+<!---HONumber=79-->

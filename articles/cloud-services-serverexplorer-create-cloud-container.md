@@ -4,13 +4,13 @@
    services="cloud-services" 
    documentationCenter=".net" 
    authors="cawaMS" 
-   manager="dwrede" 
+   manager="paulyuk" 
    editor=""/>
 
 <tags
    ms.service="cloud-services"
-   ms.date="05/29/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="10/14/2015"
+   wacn.date=""/>
 
 # 如何使用 Visual Studio 创建云服务容器
 
@@ -29,4 +29,4 @@
 在创建云服务容器后，你可以[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy)云服务。
  
 
-<!---HONumber=71-->
+<!---HONumber=79-->

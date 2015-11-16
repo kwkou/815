@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 # 在 Azure 中启用远程桌面
@@ -94,7 +94,7 @@
 
 - [远程访问 Azure 中的角色实例]
 - [将远程桌面与 Azure 角色一起使用]
-
+- [Node.js 开发人员中心](/develop/nodejs/)
 
   [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
 
@@ -111,4 +111,4 @@
   [远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
   [将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
 
-<!---HONumber=74-->
+<!---HONumber=79-->

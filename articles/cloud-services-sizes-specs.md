@@ -9,7 +9,7 @@
 <tags 
  ms.service="cloud-services" 
  ms.date="09/14/2015"
- wacn.date="10/17/2015"/>
+ wacn.date="11/12/2015"/>
  
 # 云服务的大小
 
@@ -23,7 +23,11 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 以下注意事项可能会帮助你决定大小：
 
-* 现在，可将实例配置为使用 D 系列 VM。这些 VM 旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。有关详细信息，请参阅 Azure 博客[新的 D 系列虚拟机大小](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/)上的公告。  
+* D 系列的 VM 实例旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。有关详细信息，请参阅 Azure 博客[新的 D 系列虚拟机大小](http://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/)上的公告。  
+
+*   Dv2 系列是原 D 系列的后续系列，其特点是 CPU 功能更强大。Dv2 系列 CPU 比 D 系列 CPU 快大约 35%。该系列基于最新一代的 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) 处理器，通过 Intel Turbo Boost Technology 2.0 可以达到 3.2 GHz。Dv2 系列的内存和磁盘配置与 D 系列相同。
+
+    Dv2 系列将按以下计划在相应的区域发布：10 月 15日：美国东部 2、美国中部、美国北部、美国西部；11 月 15日：美国东部、欧洲北部、欧洲西部；1 月 16日：美国中南部、APAC 东部、APAC 东南部、日本东部、日本西部、澳大利亚东部、澳大利亚东南部、巴西南部
 
 * 由于系统要求，Web 角色和辅助角色需要比 Azure 虚拟机更多的临时磁盘空间。系统文件为 Windows 页面文件保留 4 GB 的空间，并为 Windows 转储文件保留 2 GB 的空间。
 
@@ -57,7 +61,15 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 |Standard\_D12|4|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
 |Standard\_D13|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 404504 MB<br/>应用 = 约 1.5 GB|
 |Standard\_D14|16|112 GB|OS = 来宾 OS 大小<br/>本地资源 = 814104 MB<br/>应用 = 约 1.5 GB|
-
+|Standard\_D1\_v2|1|3\.5 GB|OS = 来宾 OS 大小<br/>本地资源 = 46104 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D2\_v2|2|7 GB|OS = 来宾 OS 大小<br/>本地资源 = 97304 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D3\_v2|4|14 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D4\_v2|8|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 404504 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D5\_v2|16|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 814104 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D11\_v2|2|14 GB|OS = 来宾 OS 大小<br/>本地资源 = 97304 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D12\_v2|4|28 GB|OS = 来宾 OS 大小<br/>本地资源 = 199704 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D13\_v2|8|56 GB|OS = 来宾 OS 大小<br/>本地资源 = 404504 MB<br/>应用 = 约 1.5 GB|
+|Standard\_D14\_v2|16|112 GB|OS = 来宾 OS 大小<br/>本地资源 = 814104 MB<br/>应用 = 约 1.5 GB|
 ## 配置云服务的大小
 
 你可以指定角色实例的虚拟机大小作为服务定义文件描述的服务模型的一部分。角色大小确定了 CPU 核心数目、内存容量，以及分配给正在运行的实例的本地文件系统大小。根据应用程序的资源要求选择角色大小。
@@ -66,7 +78,7 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 
     <WebRole name="WebRole1" vmsize="Small">
-    ¡­
+    …
     </WebRole>
 
 请确保指定的本地资源大小小于或等于上表中的最大本地资源大小。
@@ -74,4 +86,4 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 
 [为 Azure 设置云服务](https://msdn.microsoft.com/zh-cn/library/hh124108)
 
-<!---HONumber=74-->
+<!---HONumber=79-->

@@ -1,6 +1,6 @@
 <properties 
-pageTitle="为云服务中的角色实例启用通信 | Windows Azure" 
-description="" 
+pageTitle="云服务中的角色通信 | Windows Azure" 
+description="云服务中的角色实例可以定义其终结点（http、https、tcp、udp），以便与外界通信或在其他角色实例之间进行通信。" 
 services="cloud-services" 
 documentationCenter="" 
 authors="Thraka" 
@@ -9,7 +9,7 @@ editor=""/>
 <tags 
 ms.service="cloud-services" 
 ms.date="08/18/2015" 
-wacn.date="10/03/2015"/>
+wacn.date="11/12/2015"/>
 
 # 为 Azure 中的角色实例启用通信
 
@@ -118,87 +118,87 @@ foreach (RoleInstance roleInst in RoleEnvironment.CurrentRoleInstance.Role.Insta
 > [AZURE.WARNING]此代码仅适用于已部署的服务。在 Azure 计算模拟器中运行时，将忽略创建直接端口终结点的服务配置元素（**InstanceInputEndpoint** 元素）。
 
 ```csharp
-using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Threading;
-using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.Diagnostics;
-using Microsoft.WindowsAzure.ServiceRuntime;
-using Microsoft.WindowsAzure.StorageClient;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.Diagnostics;
+using Microsoft.WindowsAzure.ServiceRuntime;
+using Microsoft.WindowsAzure.StorageClient;
 
-namespace WorkerRole1
+namespace WorkerRole1
 {
-  public class WorkerRole : RoleEntryPoint
-  {
-    public override void Run()
-    {
-      try
-      {
-        // Initialize method-wide variables
-        var epName = "Endpoint1";
-        var roleInstance = RoleEnvironment.CurrentRoleInstance;
-        
-        // Identify direct communication port
-        var myPublicEp = roleInstance.InstanceEndpoints[epName].PublicIPEndpoint;
-        Trace.TraceInformation("IP:{0}, Port:{1}", myPublicEp.Address, myPublicEp.Port);
+  public class WorkerRole : RoleEntryPoint
+  {
+    public override void Run()
+    {
+      try
+      {
+        // Initialize method-wide variables
+        var epName = "Endpoint1";
+        var roleInstance = RoleEnvironment.CurrentRoleInstance;
+        
+        // Identify direct communication port
+        var myPublicEp = roleInstance.InstanceEndpoints[epName].PublicIPEndpoint;
+        Trace.TraceInformation("IP:{0}, Port:{1}", myPublicEp.Address, myPublicEp.Port);
 
-        // Identify public endpoint
-        var myInternalEp = roleInstance.InstanceEndpoints[epName].IPEndpoint;
-                
-        // Create socket listener
-        var listener = new Socket(
-          myInternalEp.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                
-        // Bind socket listener to internal endpoint and listen
-        listener.Bind(myInternalEp);
-        listener.Listen(10);
-        Trace.TraceInformation("Listening on IP:{0},Port: {1}",
-          myInternalEp.Address, myInternalEp.Port);
+        // Identify public endpoint
+        var myInternalEp = roleInstance.InstanceEndpoints[epName].IPEndpoint;
+                
+        // Create socket listener
+        var listener = new Socket(
+          myInternalEp.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                
+        // Bind socket listener to internal endpoint and listen
+        listener.Bind(myInternalEp);
+        listener.Listen(10);
+        Trace.TraceInformation("Listening on IP:{0},Port: {1}",
+          myInternalEp.Address, myInternalEp.Port);
 
-        while (true)
-        {
-          // Block the thread and wait for a client request
-          Socket handler = listener.Accept();
-          Trace.TraceInformation("Client request received.");
+        while (true)
+        {
+          // Block the thread and wait for a client request
+          Socket handler = listener.Accept();
+          Trace.TraceInformation("Client request received.");
 
-          // Define body of socket handler
-          var handlerThread = new Thread(
-            new ParameterizedThreadStart(h =>
-            {
-              var socket = h as Socket;
-              Trace.TraceInformation("Local:{0} Remote{1}",
-                socket.LocalEndPoint, socket.RemoteEndPoint);
+          // Define body of socket handler
+          var handlerThread = new Thread(
+            new ParameterizedThreadStart(h =>
+            {
+              var socket = h as Socket;
+              Trace.TraceInformation("Local:{0} Remote{1}",
+                socket.LocalEndPoint, socket.RemoteEndPoint);
 
-              // Shut down and close socket
-              socket.Shutdown(SocketShutdown.Both);
-              socket.Close();
-            }
-          ));
+              // Shut down and close socket
+              socket.Shutdown(SocketShutdown.Both);
+              socket.Close();
+            }
+          ));
 
-          // Start socket handler on new thread
-          handlerThread.Start(handler);
-        }
-      }
-      catch (Exception e)
-      {
-        Trace.TraceError("Caught exception in run. Details: {0}", e);
-      }
-    }
+          // Start socket handler on new thread
+          handlerThread.Start(handler);
+        }
+      }
+      catch (Exception e)
+      {
+        Trace.TraceError("Caught exception in run. Details: {0}", e);
+      }
+    }
 
-    public override bool OnStart()
-    {
-      // Set the maximum number of concurrent connections 
-      ServicePointManager.DefaultConnectionLimit = 12;
+    public override bool OnStart()
+    {
+      // Set the maximum number of concurrent connections 
+      ServicePointManager.DefaultConnectionLimit = 12;
 
-      // For information on handling configuration changes
-      // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
-      return base.OnStart();
-    }
-	}
-	}
+      // For information on handling configuration changes
+      // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
+      return base.OnStart();
+    }
+  }
+}
 ```
 
 ## 用于控制角色通信的网络流量规则
@@ -354,4 +354,4 @@ namespace WorkerRole1
 ## 后续步骤
 阅读有关云服务[模型](/documentation/articles/cloud-services-model-and-package)的详细信息。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

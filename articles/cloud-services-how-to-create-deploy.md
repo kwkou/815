@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/30/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -25,16 +25,19 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
 
 本主题介绍如何使用“快速创建”方法创建新的云服务，然后使用“上载”在 Azure 中上载和部署云服务包。使用此方法时，Azure 门户在你进行操作时将提供方便的链接供你完成所有要求。如果你在创建云服务后已准备好对其进行部署，则可以使用“自定义创建”同时执行这两项操作。
 
-> [AZURE.NOTE]如果你计划从 Visual Studio Online (VSO) 发布云服务，请使用“快速创建”，然后从“**快速启动**”或仪表板设置 VSO 发布。
+> [AZURE.NOTE]如果你计划从 Visual Studio Online (VSO) 发布云服务，请使用“快速创建”，然后从“**快速启动**”或仪表板设置 VSO 发布。有关详细信息，请参阅[使用 Visual Studio Online 向 Azure 持续交付][TFSTutorialForCloudService]，或查看“快速启动”页的帮助。
 
 ## 概念
 要将应用程序部署为 Azure 中的云服务，需要以下三个组件：
 
-- **服务定义**：云服务定义文件 (.csdef) 定义服务模型，包括角色数量。
+- **服务定义**：
+  云服务定义文件 (.csdef) 定义服务模型，包括角色数量。
 
-- **服务配置**：云服务配置文件 (.cscfg) 为云服务和各个角色提供配置设置，包括角色实例的数量。
+- **服务配置**：
+  云服务配置文件 (.cscfg) 为云服务和各个角色提供配置设置，包括角色实例的数量。
 
-- **服务包**：服务包 (.cspkg) 包含应用程序代码和配置以及服务定义文件。
+- **服务包**：
+  服务包 (.cspkg) 包含应用程序代码和配置以及服务定义文件。
   
 你可以通过[此处](/documentation/articles/cloud-services-model-and-package)了解有关这些内容以及如何创建包的详细信息。
 
@@ -140,7 +143,13 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
     ![云服务\_速览](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
 
 
-
+[TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
  
+## 后续步骤
 
-<!---HONumber=74-->
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage)。
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
+
+<!---HONumber=79-->

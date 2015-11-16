@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Socket.io 生成 Node.js 应用程序 | Windows Azure" 
+	pageTitle="使用 Socket.io 构建 Node.js 应用程序 | Windows Azure" 
 	description="了解如何在 Azure 上托管的 node.js 应用程序中使用 socket.io。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 
@@ -28,7 +28,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 确保以下产品和版本已安装才能成功完成本文中的示例：
 
-* 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs.aspx)
+* 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-CN/downloads/download-visual-studio-vs.aspx)
 * 安装 [Node.js](https://nodejs.org/download/)
 * 安装 [Python 2.7.10 版](https://www.python.org/)
 
@@ -137,7 +137,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 	![显示托管在 Azure 上的服务的浏览器窗口][completed-app]
 
 
-	> [AZURE.NOTE]如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。
+	> [AZURE.NOTE]如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/develop/nodejs/)中的**将应用程序部署到 Azure**部分
 
 
 	你的应用程序现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
@@ -148,7 +148,9 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 在本教程中，你已了解如何创建在 Azure 云服务中托管的基本聊天应用程序。若要了解如何在 Azure 网站中托管此应用程序，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序][chat Website]。
 
-  [chat Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+有关详细信息，另请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
+  [聊天网站]：/documentation/articles/web-sites-nodejs-chat-app-socketio/
+
   [Azure SLA]: /support/legal/sla
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
@@ -169,4 +171,4 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
   [The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-9.png
   
 
-<!---HONumber=74-->
+<!---HONumber=79-->
