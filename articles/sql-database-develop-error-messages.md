@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="08/21/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/15/2015" 
+	wacn.date="11/12/2015"/>
 
 
 # SQL 数据库客户端程序的错误消息
@@ -43,7 +43,7 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 暂时性错误也称为暂时性故障。当程序捕获 `SqlException` 时，可以检查 `sqlException.Number` 值是否为本部分中列出的暂时性故障值。如果 `Number` 值指示暂时性故障，程序可以重试建立连接，然后重试通过连接进行查询。有关重试逻辑的代码示例，请参阅：
 
 
-- [SQL Database 的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
+- [SQL 数据库的客户端开发和快速入门代码示例](/documentation/articles/sql-database-develop-quick-start-client-code-samples)
 
 - [如何：可靠地连接到 Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/dn864744.aspx)
 
@@ -51,14 +51,12 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 | 错误号 | 严重性 | 说明 |
 | ---: | ---: | :--- |
 | 4060 | 16 | 无法打开该登录请求的数据库“%.&#x2a;ls”。登录失败。 |
-|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://www.windowsazure.cn/documentation/articles/sql-database-resource-limits](/documentation/articles/sql-database-resource-limits)。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。 |
-|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://www.windowsazure.cn/documentation/articles/sql-database-resource-limits](/documentation/articles/sql-database-resource-limits)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。|
 |40197|17|该服务在处理你的请求时遇到错误。请稍后重试。错误代码 %d。<br/><br/>当服务由于软件或硬件升级、硬件故障或任何其他故障转移问题而关闭时，你将收到此错误。错误 40197 的消息中嵌入的错误代码 (%d) 提供有关所发生的故障或故障转移类型的其他信息。错误 40197 的消息中嵌入的错误代码的一些示例为 40020、40143、40166 和 40540。<br/><br/>重新连接到 SQL 数据库服务器会自动将你连接到数据库的正常运行的副本。应用程序必须捕获错误 40197，记录该消息中嵌入的错误代码 (%d) 以供进行故障排除，然后尝试重新连接到 SQL 数据库，直到资源可用且再次建立连接为止。|
 |40501|20|服务当前正忙。请在 10 秒钟后重试请求。事件 ID: %ls。代码: %d。<br/><br/>注意：有关此错误和如何对返回的代码进行解码的详细信息，请参阅：<br/>[Azure SQL 数据库限制](http://msdn.microsoft.com/zh-cn/library/azure/dn338079.aspx)。
 |40613|17|数据库“%.&#x2a;ls”（在服务器“%.&#x2a;ls”上）当前不可用。请稍后重试连接。如果问题仍然存在，请与客户支持人员联系，并向其提供“%.&#x2a;ls”的会话追踪 ID。|
 |49918|16|无法处理请求。没有足够的资源，无法处理该请求。<br/><br/>服务当前正忙。请稍后重试请求。 |
 |49919|16|无法处理创建或更新请求。为订阅“%ld”处理的创建或更新请求过多。<br/><br/>服务正忙于处理订阅或服务器的多个创建或更新请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_stats](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解挂起的操作。请等到挂起的创建或更新请求完成，或删除其中一个挂起的请求，然后重试请求。 |
-|49920|16|无法处理请求。为订阅“%ld”执行的操作过多。<br/><br/>服务正忙于处理此订阅的多个请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation\_stats](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解操作统计信息。请等到挂起的请求完成，或删除其中一个挂起的请求，然后重试请求。 |
+|49920|16|无法处理请求。为订阅“%ld”执行的操作过多。<br/><br/>服务正忙于处理此订阅的多个请求。为了优化资源，当前阻止了请求。请查询 [sys.dm\_operation_status](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 以了解操作统计信息。请等到挂起的请求完成，或删除其中一个挂起的请求，然后重试请求。 |
 
 **注意：**建议在你的重试逻辑中包含联合身份验证错误 10053 和 10054。
 
@@ -106,6 +104,8 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 
 |错误号|严重性|说明|
 |---:|---:|:---|
+|10928|20|资源 ID: %d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。 |
+|10929|20|资源 ID: %d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指明已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>注意：有关此错误以及如何解决它的详细信息，请参阅：<br/>[Azure SQL 数据库资源调控](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。|
 |40544|20|数据库已达到大小配额。请将数据分区或删除、删除索引或查阅文档以找到可能的解决方案。|
 |40549|16|由于你有长时间运行的事务，已终止会话。请尝试缩短事务运行时间。|
 |40550|16|由于会话获取的锁过多，已终止该会话。请尝试在单个事务中读取或修改更少的行。|
@@ -238,4 +238,4 @@ Dx 4cff491e-9359-4454-bd7c-fb72c4c452ca
 - [Azure SQL 数据库一般性的指导原则和限制](http://msdn.microsoft.com/zh-cn/library/azure/ee336245.aspx)
 - [资源管理](http://msdn.microsoft.com/zh-cn/library/azure/dn338083.aspx)
 
-<!---HONumber=69-->
+<!---HONumber=79-->
