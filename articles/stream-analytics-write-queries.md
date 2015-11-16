@@ -14,7 +14,7 @@
 
 # 编写查询
 
-Azure 流分析中的流处理逻辑作为一种“现有查询”来实施，在作业启动前定义并在数据抵达作业时在数据上执行。用一种类似于 SQL 的查询语言来表示数据转换，这种语言大部分是 T-SQL 的一个子集，但增加了某些用于表示临时语义的语言扩展，例如 [Windowing](https://msdn.microsoft.com/library/azure/dn835019.aspx)。
+Azure 流分析中的流处理逻辑作为一种“现有查询”来实施，在作业启动前定义并在数据抵达作业时在数据上执行。用一种类似于 SQL 的查询语言来表示数据转换，这种语言大部分是 T-SQL 的一个子集，但增加了某些用于表示临时语义的语言扩展，例如 [Windowing](https://msdn.microsoft.com/zh-cn/library/azure/dn835019.aspx)。
 
 ## 编写流分析查询： ##
 
@@ -25,7 +25,7 @@ Azure 流分析中的流处理逻辑作为一种“现有查询”来实施，�
 2.	新的作业有一个查询模板来帮助你开始。查询模板执行一种“传递”查询，将来自输入的所有字段投射到输出。
 
     - 如果你已经为你的作业定义了至少一个输入和一个输出，则可以用你希望首先使用的输入和输出的别名代替占位符 "[YourOutputAlias]" 和 "[YourInputAlias]"。此外，你仍然可以在 Azure 门户中编写和测试你的查询而无需在作业上定义输入和输出。
-    - 如果你希望执行除简单传递以外的更多处理，则可以编辑查询定义。要开始编写查询，请阅读[此处](stream-analytics-query-patterns)提供的某些常见查询模式。  
+    - 如果你希望执行除简单传递以外的更多处理，则可以编辑查询定义。要开始编写查询，请阅读[此处](/documentation/articles/stream-analytics-stream-analytics-query-patterns)提供的某些常见查询模式。  
   
     ![查询窗口](./media/stream-analytics-write-queries/2-stream-analytics-write-queries.png)
 
@@ -57,7 +57,7 @@ Azure 流分析中的流处理逻辑作为一种“现有查询”来实施，�
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!---HONumber=79-->

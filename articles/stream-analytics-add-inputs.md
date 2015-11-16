@@ -14,7 +14,7 @@
 
 # 添加输入
 
-Azure 流分析作业可以连接到一个或多个输入，其定义了一个到现有数据源的连接。将数据发送到数据源时，流分析作业会使用该数据并对其进行实时处理。流分析在作业订阅内外都与 [Azure 事件中心](http://azure.microsoft.com/services/event-hubs/)和 [Azure Blob 存储](./storage/storage-dotnet-how-to-use-blobs.md)进行高级集成。流分析中有两种类型的输入：数据流和引用数据。
+Azure 流分析作业可以连接到一个或多个输入，其定义了一个到现有数据源的连接。将数据发送到数据源时，流分析作业会使用该数据并对其进行实时处理。流分析在作业订阅内外都与 [Azure 事件中心](/services/event-hubs/)和 [Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)进行高级集成。流分析中有两种类型的输入：数据流和引用数据。
 
 - **数据流**：流分析作业须至少包含一种可供作业使用和转换的数据流输入。Azure Blob 存储和 Azure 事件中心均可作为数据流输入源。Azure 事件中心用于从连接的设备、服务和应用程序收集事件流。Azure Blob 存储可用作按流的形式引入大量数据的输入源。  
 - **引用数据**：流分析支持辅助输入的另一种类型，称为引用数据。与运动的数据相反，该数据是静态的或变化缓慢。它通常用于执行查找以及与数据流关联创建更丰富的数据集。目前只支持使用 Azure Blob 存储作为引用数据的输入源。  
@@ -35,7 +35,7 @@ Azure 流分析作业可以连接到一个或多个输入，其定义了一个�
 
 4. 在输入别名框中为该输入提供一个友好的名称。此名称以后会用于你的作业查询以引用该输入。
 
-    填充所需连接属性的其余部分以连接到你的数据源。这些字段根据输入类型和源类型而变化，在[此处](stream-analytics-create-a-job.md)进行了详细定义。
+    填充所需连接属性的其余部分以连接到你的数据源。这些字段根据输入类型和源类型而变化，在[此处](/documentation/articles/stream-analytics-create-a-job)进行了详细定义。
 
     ![添加事件中心](./media/stream-analytics-add-inputs/4-stream-analytics-add-inputs.png)
 
@@ -57,7 +57,7 @@ Azure 流分析作业可以连接到一个或多个输入，其定义了一个�
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
 <!---HONumber=79-->

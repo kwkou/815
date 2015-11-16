@@ -26,7 +26,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 - 处理进行近实时监视和诊断所需的遥测数据。 
 - 捕获和存档留待将来处理的实时事件
 
-有关详细信息，请参阅 [Azure 流分析简介](stream-analytics-introduction.md)。
+有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)。
 
 流分析作业包括所有下述项目：
 - 一个或多个输入源
@@ -38,7 +38,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 
 ### 数据流
 
-每个流分析作业定义必须包含至少一种可供作业使用和转换的数据流输入源。[Azure Blob 存储](http://azure.microsoft.com/documentation/services/storage/)和 [Azure 事件中心](http://azure.microsoft.com/services/event-hubs/)均可作为数据流输入源。事件中心输入源可用于从多个不同的设备和服务收集事件流，而 Blob 存储则可用作输入源来引入大量的数据。由于 blob 不对数据进行流式处理，因此基于 blob 的流分析作业在本质上不会是临时性的，除非 blob 中的记录包含时间戳。
+每个流分析作业定义必须包含至少一种可供作业使用和转换的数据流输入源。[Azure Blob 存储](/services/storage/)和 [Azure 事件中心](/services/event-hubs/)均可作为数据流输入源。事件中心输入源可用于从多个不同的设备和服务收集事件流，而 Blob 存储则可用作输入源来引入大量的数据。由于 blob 不对数据进行流式处理，因此基于 blob 的流分析作业在本质上不会是临时性的，除非 blob 中的记录包含时间戳。
 
 ### 引用数据
 流分析还支持第二类输入源：引用数据。此类数据为辅助数据，用于执行关联性操作和查找操作，而且通常为静态数据或不会频繁更改的数据。只支持使用 [Azure Blob 存储](http://azure.microsoft.com/documentation/services/storage/)作为引用数据的输入源。引用数据源 blob 存在 50 MB 的大小限制。
@@ -101,7 +101,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 当流式处理作业查询使用 TIMESTAMP BY 关键字时，将无法保证要输入的事件的到达顺序。同一输入分区中，某些事件可能会延迟，而参数“输入中允许的最大无序程度”会导致流式处理作业根据“晚到事件的操作”设置对超出顺序容许度的事件进行处理，删除这些事件或调整这些事件的时间戳。
 
 ### 其他资源
-有关创建输入源的详细信息，请参阅 [Azure 事件中心开发人员指南](http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx)和[使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
+有关创建输入源的详细信息，请参阅 [Azure 事件中心开发人员指南](/documentation/articles/event-hubs-programming-guide/)和[使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
 
 
@@ -128,7 +128,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 	FROM step1 
 	GROUP BY TumblingWindow (day, 1) 
 
-若要了解有关查询语言的详细信息，请参阅 [Azure 流分析查询语言参考](http://go.microsoft.com/fwlink/?LinkID=513299)。
+若要了解有关查询语言的详细信息，请参阅 [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/dn834998.aspx)。
 
 ## 输出
 输出目标是要向其写入流分析作业结果的地方。当作业处理输入事件时，结果将持续写入输出目标。支持以下输出目标：
