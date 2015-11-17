@@ -84,6 +84,6 @@ Azure 提供了多种类型的计算资源，其中的两种类型是 Azure 虚�
 请确保指定的本地资源大小小于或等于上表中的最大本地资源大小。
 ## 后续步骤
 
-[为 Azure 设置云服务](https://msdn.microsoft.com/zh-cn/library/hh124108)
+* [为 Azure 设置云服务](https://msdn.microsoft.com/zh-cn/library/hh124108)
 
 <!---HONumber=79-->

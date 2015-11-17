@@ -98,7 +98,7 @@
 
 Microsoft 支持至少两个最新版本的受支持来宾 OS 系列。现有来宾 OS 版本的停用日期可能会改为更后的日期，以确保至少启用两个已发布版本进行部署。
 
-> [AZURE.WARNING]来宾 OS 系列 1 的停用期从 2013 年 6 月 1 日开始，并计划在短时间内结束。请勿使用此来宾 OS 系列创建新的安装及升级旧的安装。有关详细信息，请参阅 [Azure 来宾 OS 系列 1 停用信息][fam1retire]
+> [AZURE.WARNING]来宾 OS 系列 1 的停用期从 2013 年 6 月 1 日开始，并计划在短时间内结束。请勿使用此来宾 OS 系列创建新的安装及升级旧的安装。有关详细信息，请参阅 [Azure 来宾 OS 系列 1 停用信息][fam1retire]。
 
 
 ### 来宾 OS 系列、版本和发行说明
@@ -336,7 +336,7 @@ Microsoft Azure 不断地发布更新。来宾 OS 只不过是此类更新的其
 [MS14-046]: https://technet.microsoft.com/zh-cn/library/security/ms14-046.aspx
 [retire policy sdk]: https://msdn.microsoft.com/zh-cn/library/dn479282.aspx
 [server and gos]: https://msdn.microsoft.com/zh-cn/library/dn775043.aspx
-[azuresupport]: http://azure.microsoft.com/support/options/
+[azuresupport]: /support/
 [net install pkg]: http://www.microsoft.com/download/details.aspx?id=42643
 [msrc]: http://www.microsoft.com/security/msrc/default.aspx
 [update guest os portal]: https://msdn.microsoft.com/zh-cn/library/gg433101.aspx

@@ -147,9 +147,9 @@ Azure 门户为你提供两种创建和部署云服务的方法：“快速创�
  
 ## 后续步骤
 
-* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)。
-* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
-* [管理云服务](/documentation/articles/cloud-services-how-to-manage)。
-* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage)
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)
 
 <!---HONumber=79-->

@@ -18,9 +18,9 @@
 
 ## 与 Azure 客户支持联系
 
-如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和堆栈溢出论坛](/support/forums/)上的 Azure 专家。
+如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和CSDN论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/options/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
+或者，你也可以提出 Azure 支持事件。转至 [Azure 支持站点](/support/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Windows Azure 支持常见问题](/support/faq/)。
 
 
 ## 缺少 DLL 或依赖项
@@ -103,11 +103,11 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 
 为了在使用此诊断方法时获得最佳结果，你应使用包含 Windows 的干净安装的计算机或虚拟机。若要以最佳效果模拟 Azure 环境，应使用 Windows Server 2008 R2 x64。
 
-1. 安装独立版本的 [Azure SDK](/downloads)
+1. 安装独立版本的 [Azure SDK](/downloads)。
 
 2. 在开发计算机上生成云服务项目。
 
-3. 在 Windows 资源管理器中，导航到云服务项目的 bin\\debug 文件夹。
+3. 在 Windows 资源管理器中，导航到云服务项目的 bin\debug 文件夹。
 
 4. 将 .csx 文件夹和 .cscfg 文件复制到你用来调试问题的计算机。
 
@@ -129,7 +129,7 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 
 3. 实例启动后，打开“服务器资源管理器”。
 
-4. 展开 **Azure\\Cloud Services** 节点并查找部署。
+4. 展开 **Azure\Cloud Services** 节点并查找部署。
 
 5. 展开部署，直至看到角色实例。右键单击其中一个实例。
 
@@ -139,7 +139,7 @@ DLL 或程序集丢失可能导致出现不响应的角色以及在“正在初�
 
 8. 展开“异常数据”并查找类似如下内容的 **System.IO.FileNotFoundException** 错误：
 
-![异常数据，缺少文件或程序集](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503390.png)
+	![异常数据，缺少文件或程序集](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503390.png)
 
 ## 解决丢失 DLL 和程序集的问题
 

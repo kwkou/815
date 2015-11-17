@@ -17,9 +17,6 @@
 
 ## 为云服务启用远程调试
 
-
-## <a name="cloudservice"></a>为云服务启用远程调试
-
 1. 在生成代理上，根据 [Azure 的命令行生成](http://msdn.microsoft.com/zh-cn/library/hh535755.aspx)中所述设置 Azure 的初始环境。
 2. 由于包需要远程调试运行时 (msvsmon.exe)，请安装 [Remote Tools for Visual Studio 2015](http://www.microsoft.com/zh-CN/download/details.aspx?id=48155)（如果你使用的是 Visual Studio 2013，请安装 [Remote Tools for Microsoft Visual Studio 2013 Update 5](https://www.microsoft.com/zh-CN/download/details.aspx?id=48156)）。或者，也可以从装有 Visual Studio 的系统复制远程调试二进制文件。
 3. 根据 [Azure 云服务的证书概述](/documentation/articles/cloud-services-certs-create)中所述创建证书。保留 .pfx 和 RDP 证书指纹，并将证书上载到目标云服务。
@@ -42,7 +39,8 @@
 
 	>[AZURE.NOTE]此脚本是针对 Visual Studio 2015 配置的。如果你使用的是 Visual Studio 2013，则 ReferenceName 和 ExtensionName 都使用“RemoteDebugVS2013”。
 
-	<pre>
+```
+
     Add-AzureAccount -Environment AzureChinaCloud
 
     Select-AzureSubscription "My Microsoft Subscription"
@@ -85,7 +83,7 @@
     }
 
     $vm | Update-AzureVM
-	</pre>
+```
 
 6. 将证书导入到装有 Visual Studio 和 Azure SDK for .NET 的计算机。
  

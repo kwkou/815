@@ -104,9 +104,9 @@ Azure 预览门户不会像当前 Azure 门户一样将资源链接在一起。�
 [Azure 门户]: https://manage.windowsazure.cn
 ## 后续步骤
 
-* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
-* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
-* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
-* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 <!---HONumber=79-->

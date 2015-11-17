@@ -137,7 +137,7 @@
 
 1. 在[管理门户](http://manage.windowsazure.cn/)中单击“云服务”。
 
-2. 选择云服务，然后单击“删除”。（若要选择云服务而不打开仪表板，请单击除云服务条目中名称之外的任何位置。）
+2. 选择云服务，然后单击“删除”（若要选择云服务而不打开仪表板，请单击除云服务条目中名称之外的任何位置。）。
 
 	如果你的部署位于过渡或生产环境中，你会在窗口底部看到如下选择菜单。必须先删除所有现有部署，然后才能删除云服务。
 
@@ -156,9 +156,9 @@
 
 ## 后续步骤
 
- * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)。
-* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)。
-* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
-* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
+ * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)
 
 <!---HONumber=79-->

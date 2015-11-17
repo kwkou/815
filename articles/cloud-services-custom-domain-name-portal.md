@@ -25,7 +25,7 @@
 你是否已经了解什么是 CNAME 和 A 记录？ [跳过解释](#add-a-cname-record-for-your-custom-domain)。
 
 > [AZURE.NOTE]
-> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/app-service-web/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
+> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
 
 <p/>
 
@@ -116,7 +116,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 
 3.  现在找到您可以在其中选择或输入 A 记录的位置。您可能需要从下拉列表中选择记录类型，或者需要转到高级设置页面。
 
-4. 选择或输入将使用此 A 记录的域或子域。例如，如果希望为 **www.customdomain.com** 创建别名，请选择“www”。如果希望为所有子域创建通配符条目，请输入 '\_\_*\_\_'。这将涵盖所有子域，例如 **mail.customdomain.com**、**login.customdomain.com** 和 **www.customdomain.com**。
+4. 选择或输入将使用此 A 记录的域或子域。例如，如果希望为 **www.customdomain.com** 创建别名，请选择“www”。如果希望为所有子域创建通配符条目，请输入 '__*__'。这将涵盖所有子域，例如 **mail.customdomain.com**、**login.customdomain.com** 和 **www.customdomain.com**。
 
     如果希望为根域创建 A 记录，它可能在注册机构的 DNS 工具中以符号“**@**”的形式列出。
 
@@ -137,7 +137,6 @@ Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保�
 ## 后续步骤
 
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
-* [如何将 CDN 内容映射到自定义域](/documentation/articles/cdn-map-content-to-custom-domain)
 * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
 * 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
 * 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
