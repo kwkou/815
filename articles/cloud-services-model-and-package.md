@@ -222,8 +222,8 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 ###### CSPack 工具（在 Windows 中）的位置
 | SDK 版本 | 路径 |
 | ----------- | ---- |
-| 1\.7+ | C:\\Program Files\\Microsoft SDKs\\Azure\\.NET SDK\\[sdk-version]\\bin\\ |
-| &lt;1.6 | C:\\Program Files\\Azure SDK\\[sdk-version]\\bin\\ |
+| 1\.7+ | C:\Program Files\Microsoft SDKs\Azure\.NET SDK\[sdk-version]\bin\ |
+| &lt;1.6 | C:\Program Files\Azure SDK\[sdk-version]\bin\ |
 
 >[AZURE.NOTE]
 CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsoft Azure 命令提示符”快捷方式使用。

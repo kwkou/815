@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="对云服务启用远程桌面 (Node.js)" 
 	description="了解如何对托管 Azure Node.js 应用程序的虚拟机进行远程桌面访问。" 
 	services="cloud-services" 
@@ -62,7 +62,7 @@
 
     ![实例页][3]
 
-3.  单击“连接”后，Web 浏览器会提示你保存.rdp 文件。打开此文件。（例如，如果你使用的是 Internet Explorer，请单击“打开”。）
+3.  单击“连接”后，Web 浏览器会提示你保存.rdp 文件，打开此文件。（例如，如果你使用的是 Internet Explorer，请单击“打开”。）
 
     ![提示打开或保存 .rdp 文件][4]
 

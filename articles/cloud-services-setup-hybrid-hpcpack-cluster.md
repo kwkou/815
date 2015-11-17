@@ -20,7 +20,7 @@
 
 本教程展示了一种方法（有时称作群集“迸发至云”）来使用 Azure 中可伸缩的按需计算资源运行计算密集型应用程序。
 
-本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。如果希望完全在 Azure 中设置 HPC Pack 群集，请参阅 [Azure 中 Microsoft HPC Pack 的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)。
+本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
 
 >[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](/documentation/articles/virtual-machines-size-specs)。例如，A8 和 A9 实例结合了某些 HPC 应用程序所需要的高性能和对低延迟、高吞吐量应用程序网络的访问。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
 
@@ -89,9 +89,9 @@
 
 - 创建 Azure 存储帐户
 	
-	>[AZURE.NOTE]另外请记下你的 Azure 订阅 ID，后面将需要用到它。可以在你的 Azure <a href="[https://account.windowsazure.cn/Subscriptions">帐户信息</a>中找到它。
+	>[AZURE.NOTE]另外请记下你的 Azure 订阅 ID，后面将需要用到它。可以在你的 Azure[帐户信息](https://account.windowsazure.cn/Subscriptions)中找到它。
 
-### <a>上载默认管理证书</a>
+###上载默认管理证书
 HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书的自签名证书，你可以将此证书作为 Azure 管理证书上载。此证书是为进行测试和概念证明部署提供的。
 
 1. 从头节点计算机登录到 [Azure 门户](https://manage.windowsazure.cn)。
@@ -102,13 +102,13 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![证书设置][upload_cert1]
 
-4. 在头节点上浏览找到文件 C:\\Program Files\\Microsoft HPC Pack 2012\\Bin\\hpccert.cer。然后，单击“检查”按钮。
+4. 在头节点上浏览找到文件 C:\Program Files\Microsoft HPC Pack 2012\Bin\hpccert.cer。然后，单击“检查”按钮。
 
 	![上载证书][install_hpc10]
 
 你将在管理证书列表中看到“默认 HPC Azure 管理”。
 
-### <a>创建 Azure 云服务</a>
+###创建 Azure 云服务
 
 >[AZURE.NOTE]为了获得最佳性能，请在同一地理区域中创建存储帐户和云服务。
 
@@ -120,7 +120,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![创建服务][createservice1]
 
-### <a>创建 Azure 存储帐户</a>
+###创建 Azure 存储帐户
 
 1. 在门户中的命令栏上，单击“新建”。
 
@@ -174,7 +174,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	b.单击“下一步”以接受默认模板名称。
 
-	c.在“提供订阅信息”页面上，输入 Azure 订阅 ID（在你的 Azure <a href="[https://account.windowsazure.cn/Subscriptions">帐户信息</a>中）。然后，在“管理证书”中，单击“浏览”并选择“默认 HPC Azure 管理”。 然后，单击“下一步”。
+	c.在“提供订阅信息”页面上，输入 Azure 订阅 ID（在你的  Azure[帐户信息](https://account.windowsazure.cn/Subscriptions)中）。然后，在“管理证书”中，单击“浏览”并选择“默认 HPC Azure 管理”。 然后，单击“下一步”。
 
 	![节点模板][config_hpc12]
 
@@ -302,8 +302,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 * [HPC Pack 2012 R2 和 HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697)
 * [使用 Microsoft HPC Pack 迸发到 Azure](http://go.microsoft.com/fwlink/p/?LinkID=200493)
-* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)
-* [Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源](/documentation/articles/big-compute-resources)
+
 
 
 [Overview]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/hybrid_cluster_overview.png

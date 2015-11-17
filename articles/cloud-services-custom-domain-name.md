@@ -120,7 +120,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 
 3.  现在找到您可以在其中选择或输入 A 记录的位置。您可能需要从下拉列表中选择记录类型，或者需要转到高级设置页面。
 
-4. 选择或输入将使用此 A 记录的域或子域。例如，如果希望为 **www.customdomain.com** 创建别名，请选择“www”。如果希望为所有子域创建通配符条目，请输入 '\_\_*\_\_'。这将涵盖所有子域，例如 **mail.customdomain.com**、**login.customdomain.com** 和 **www.customdomain.com**。
+4. 选择或输入将使用此 A 记录的域或子域。例如，如果希望为 **www.customdomain.com** 创建别名，请选择“www”。如果希望为所有子域创建通配符条目，请输入 '__*__'。这将涵盖所有子域，例如 **mail.customdomain.com**、**login.customdomain.com** 和 **www.customdomain.com**。
 
     如果希望为根域创建 A 记录，它可能在注册机构的 DNS 工具中以符号“**@**”的形式列出。
 
@@ -141,7 +141,6 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 ## 后续步骤
 
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
-* [如何将 CDN 内容映射到自定义域](/documentation/articles/cdn-map-content-to-custom-domain)
 * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)。
 * 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)。
 * 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
