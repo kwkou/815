@@ -182,8 +182,8 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 [IPython - Python 的高级 REPL/Notebook]: http://ipython.org
 [IPython]: http://ipython.org
 [Azure 上的 IPython Notebook]: /documentation/articles/virtual-machines-python-ipython-notebook
-[云服务]: /documentation/articles/cloud-services-python-ptvs.md
-[网站]: /documentation/articles/web-sites-python-ptvs-django-mysql.md
+[云服务]: /documentation/articles/cloud-services-python-ptvs
+[网站]: /documentation/articles/web-sites-python-ptvs-django-mysql
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools for Visual Studio on CodePlex]: http://pytools.codeplex.com
 [Python 包索引]: http://pypi.python.org/pypi

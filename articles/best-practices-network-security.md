@@ -30,7 +30,7 @@ Microsoft 云服务提供超大规模的服务和基础结构、企业级的功�
 ## Microsoft 合规性与基础结构保护
 Microsoft 为企业客户所需的合规性方案提供首屈一指的支持。下面是 Azure 取得的部分认证：![Azure 合规性徽章][1]
 
-有关更多详细信息，请访问：[http://azure.microsoft.com/support/trust-center/compliance/](http://azure.microsoft.com/support/trust-center/compliance/)
+<!--有关更多详细信息，请访问：[http://azure.microsoft.com/support/trust-center/compliance/](http://azure.microsoft.com/support/trust-center/compliance/)-->
 
 Microsoft 采取综合性的方案来保护运行超大规模全球服务所需的云基础结构。Microsoft 云基础结构包括硬件、软件、网络、管理和运营人员以及物理数据中心。
 
@@ -464,12 +464,11 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 ### 有用的网站和文档
 - 使用 ARM 访问 Azure： 
 - 使用 PowerShell 访问 Azure：[/documentation/articles/powershell-install-configure/](/documentation/articles/powershell-install-configure)
-- 虚拟网络文档：[https://azure.microsoft.com/documentation/services/virtual-network/](https://azure.microsoft.com/documentation/services/virtual-network/)
-- 虚拟网络组文档：[/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-network/virtual-networks-nsg)
-- 用户定义的路由文档：[/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-network/virtual-networks-udr-overview)
-- Azure 虚拟网关：[https://azure.microsoft.com/documentation/services/vpn-gateway/](https://azure.microsoft.com/documentation/services/vpn-gateway/)
+- 虚拟网络文档：[https://azure.microsoft.com/documentation/services/virtual-network/](/services/virtual-network/)
+- 虚拟网络组文档：[/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg)
+- 用户定义的路由文档：[/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview)
 - 站点到站点 VPN：[/documentation/articles/vpn-gateway-site-to-site-create/](/documentation/articles/vpn-gateway-site-to-site-create)
-- ExpressRoute 文档（请务必阅读“入门”和“操作指南”部分）：[https://azure.microsoft.com/documentation/services/expressroute/](https://azure.microsoft.com/documentation/services/expressroute/)
+- ExpressRoute 文档（请务必阅读“入门”和“操作指南”部分）：[https://azure.microsoft.com/documentation/services/expressroute/](/services/expressroute/)
 
 <!--Image References-->
 [0]: ./media/best-practices-network-security/flowchart.png "安全选项流程图"
@@ -492,13 +491,13 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 [17]: ./media/best-practices-network-security/example6designexpressroute.png "包含使用 ExpressRoute 连接的 Azure 网关的外围网络"
 
 <!--Link References-->
-[Example1]: ./virtual-network/virtual-networks-dmz-nsg-asm.md
-[Example2]: ./virtual-network/virtual-networks-dmz-nsg-fw-asm.md
-[Example3]: ./virtual-network/virtual-networks-dmz-nsg-fw-udr-asm.md
-[Example4]: ./virtual-network/virtual-networks-hybrid-s2s-nva-asm.md
-[Example5]: ./virtual-network/virtual-networks-hybrid-s2s-agw-asm.md
-[Example6]: ./virtual-network/virtual-networks-hybrid-expressroute-asm.md
-[Example7]: ./virtual-network/virtual-networks-vnet2vnet-direct-asm.md
-[Example8]: ./virtual-network/virtual-networks-vnet2vnet-transit-asm.md
+[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm
+[Example2]: /documentation/articles/virtual-networks-dmz-nsg-fw-asm
+[Example3]: /documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm
+[Example4]: /documentation/articles/virtual-networks-hybrid-s2s-nva-asm
+[Example5]: /documentation/articles/virtual-networks-hybrid-s2s-agw-asm
+[Example6]: /documentation/articles/virtual-networks-hybrid-expressroute-asm
+[Example7]: /documentation/articles/virtual-networks-vnet2vnet-direct-asm
+[Example8]: /documentation/articles/virtual-networks-vnet2vnet-transit-asm
 
 <!---HONumber=79-->

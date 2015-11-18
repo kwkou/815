@@ -133,7 +133,6 @@
 
 ## 后续步骤
 
-- 若要了解如何设置安全策略，请参阅[管理对资源的访问权限](./azure-portal/resource-group-rbac.md)。
 - 若要了解如何向服务主体授予访问权限，请参阅[使用 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal)。
 - 若要了解如何操作所有用户的资源，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 

@@ -103,7 +103,6 @@
 如果你需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。有关示例，请参阅[在 Azure 资源管理器模板中共享状态](/documentation/articles/best-practices-resource-manager-state)。
 
 ## 后续步骤
-- [创作模板](./resource-group-authoring-templates.md)
-- [部署模板](azure-portal/resource-group-template-deploy.md)
+- [创作模板](/documentation/articles/resource-group-authoring-templates)
 
 <!---HONumber=79-->
