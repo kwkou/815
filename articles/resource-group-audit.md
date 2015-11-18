@@ -129,7 +129,7 @@
 
 ## REST API
 
-可用于处理审核日志的 REST 操作属于 [Insights REST API](https://msdn.microsoft.com/library/azure/dn931943.aspx)。若要检索审核日志事件，请参阅[列出订阅中的管理事件](https://msdn.microsoft.com/library/azure/dn931934.aspx)。
+可用于处理审核日志的 REST 操作属于 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931943.aspx)。若要检索审核日志事件，请参阅[列出订阅中的管理事件](https://msdn.microsoft.com/zh-cn/library/azure/dn931934.aspx)。
 
 ## 后续步骤
 
