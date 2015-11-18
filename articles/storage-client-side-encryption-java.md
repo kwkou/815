@@ -234,9 +234,9 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 注意，加密您的存储数据会导致额外的性能开销。必须生成内容密钥和 IV，内容本身必须进行加密，并且其他元数据必须进行格式化并上载。此开销将因所加密的数据量而有所变化。我们建议客户在开发过程中始终测试其应用程序的性能。
 
 ## 后续步骤  
-下载 [用于 Java 的 Azure 存储空间客户端库 Maven 程序包](<fix URL>) 
-从 GitHub 下载 [用于 Java 的 Azure 存储空间客户端库源代码](https://github.com/Azure/azure-storage-java) 
-下载 Azure 密钥保管库 Maven [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包 
+<!--下载 [用于 Java 的 Azure 存储空间客户端库 Maven 程序包](<fix URL>)  -->
+从 GitHub 下载 [用于 Java 的 Azure 存储空间客户端库源代码](https://github.com/Azure/azure-storage-java)  
+下载 Azure 密钥保管库 Maven [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/)、[Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) 和 [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) 程序包   
 查看 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis)
 
 <!---HONumber=79-->
