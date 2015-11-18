@@ -109,7 +109,7 @@
 如果可以创建与同一云服务或虚拟网络中的虚拟机的远程桌面连接，请检查以下项：
 
 - 目标虚拟机上的远程桌面通信的终结点配置。终结点的专用 TCP 端口必须与虚拟机上“远程桌面服务”服务侦听的 TCP 端口（默认为 3389）匹配。
-- 目标虚拟机上的远程桌面通信终结点的 ACL。ACL 允许你指定基于源 IP 地址允许或拒绝从 Internet 传入的流量。错误配置 ACL 可能会阻止传入远程桌面流量到达终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[什么是网络访问控制列表 (ACL)？](../virtual-network/virtual-networks-acl.md)。
+- 目标虚拟机上的远程桌面通信终结点的 ACL。ACL 允许你指定基于源 IP 地址允许或拒绝从 Internet 传入的流量。错误配置 ACL 可能会阻止传入远程桌面流量到达终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[什么是网络访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl)。
 
 要使终结点不会成为问题的源，请删除当前终结点，然后创建一个新终结点，并选择范围 49152–65535 中的随机端口作为外部端口号。有关详细信息，请参阅[如何对虚拟机设置终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
@@ -117,7 +117,7 @@
 
 使用网络安全组可以对允许的入站和出站流量进行更精细的控制。你可以创建跨 Azure 虚拟网络中的子网和云服务的规则。检查你的网络安全组规则，以确保允许来自 Internet 的远程桌面流量。
 
-有关详细信息，请参阅[什么是网络安全组 (NSG)？](../virtual-network/virtual-networks-nsg.md)。
+有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg)。
 
 ### 来源 5：基于 Windows 的 Azure 虚拟机
 

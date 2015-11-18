@@ -1168,7 +1168,7 @@
     data:    vmSize                 String        Standard_A1
     info:    group deployment create command OK
 
-请注意，此模板部署的是 Windows Server 映像；但是，它可以轻松地替换为任何 Linux 映像。想要使用多个 Swarm 管理器创建一个 Docker 群集吗？ [你可以做到](http://azure.microsoft.com/documentation/templates/docker-swarm-cluster/)。
+请注意，此模板部署的是 Windows Server 映像；但是，它可以轻松地替换为任何 Linux 映像。<!--想要使用多个 Swarm 管理器创建一个 Docker 群集吗？ [你可以做到](http://azure.microsoft.com/documentation/templates/docker-swarm-cluster/)。-->
 
 ## <a id="remove-a-resource-group"></a>任务：删除资源组
 
@@ -1300,6 +1300,6 @@
 
 有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 用于 Azure 资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)。若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
-有关可用的其他模板，请参阅 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和[使用模板的应用程序框架](/documentation/articles/virtual-machines-app-frameworks)。
+有关可用的其他模板，请参阅 <!--[Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和-->[使用模板的应用程序框架](/documentation/articles/virtual-machines-app-frameworks)。
 
 <!---HONumber=79-->
