@@ -36,7 +36,7 @@
 - API 管理
 - Azure DocumentDB
 - Azure 搜索
-- Azure Web Apps（存在一些[限制](/documentation/articles/app-service-move-resources)）
+- Azure Web Apps（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
 - Data Factory
 - 密钥保管库
 - Mobile Engagement
@@ -96,7 +96,6 @@
 ## 后续步骤
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
 - [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
-- [使用 Azure 门户管理资源](/documentation/articles/resource-group-portal)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
 <!---HONumber=79-->

@@ -119,11 +119,11 @@ Azure CLI 是一组用于部署和管理 Azure 服务（例如 Azure 网站和 A
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 [download-wpi]: http://go.microsoft.com/fwlink/?LinkId=253447
 [mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
-[blob-service]: http://go.microsoft.com/fwlink/?LinkId=252714
-[table-service]: http://go.microsoft.com/fwlink/?LinkId=252715
-[queue-service]: http://go.microsoft.com/fwlink/?LinkId=252716
+[blob-service]: /documentation/articles/storage-php-how-to-use-blobs/
+[table-service]: /documentation/articles/storage-php-how-to-use-table-storage/
+[queue-service]: /documentation/articles/storage-php-how-to-use-queues/
 [azure cli]: http://go.microsoft.com/fwlink/?LinkId=252717
-[powershell-tools]: http://go.microsoft.com/fwlink/?LinkId=252718
+[powershell-tools]: /documentation/articles/powershell-install-configure/
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 

@@ -18,7 +18,7 @@
 
 它演示如何使用用户名和密码或证书进行身份验证。
 
-您可以使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](./powershell-install-configure.md)。如果您未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
+您可以使用适用于 Mac、Linux 和 Windows 的 Azure PowerShell 或 Azure CLI。如果你未安装 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](documentation/articles/powershell-install-configure)。如果您未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 ## 概念
 1. Azure Active Directory (AAD) - 云的标识与访问管理服务。有关详细信息，请参阅[什么是 Azure Active Directory](/documentation/articles/active-directory-whatis)
@@ -74,7 +74,7 @@
 
      现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-3. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)
+3. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)-->
 
         PS C:\> New-AzureRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -198,7 +198,7 @@
 
     现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](azure-portal/resource-group-rbac.md)
+5. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](azure-portal/resource-group-rbac.md)-->
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -271,7 +271,7 @@
 
     现在你已在目录中创建服务主体，但未将任何权限或范围分配给服务。需要显式向服务主体授予权限，才能在某个范围执行操作。
 
-4. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)
+4. 向服务主体授予对你的订阅的权限。在此示例中，你将要向服务主体授予读取订阅中所有资源的权限。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId** 或 **IdentifierUris**。<!--有关基于角色的访问控制的详细信息，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)-->
 
         azure role assignment create --objectId 47193a0a-63e4-46bd-9bee-6a9f6f9c03cb -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -286,8 +286,7 @@
     现在，你应该已经作为所创建 AAD 应用程序的服务主体进行身份验证。
 
 ## 后续步骤
-  
-- 有关基于角色的访问控制的概述，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)  
+
 - 若要了解有关使用服务主体的门户的信息，请参阅[使用 Azure 门户创建新的 Azure 服务主体](/documentation/articles/resource-group-create-service-principal-portal)  
 - 有关在 Azure 资源管理器中实现安全性的指南，请参阅 [Azure 资源管理器的安全注意事项](/documentation/articles/best-practices-resource-manager-security)
 

@@ -75,7 +75,7 @@
 
 有关模板的架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)。
 
-有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
+<!--有关使用模板进行部署的信息，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。-->
 
 有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
 
@@ -93,9 +93,9 @@
 
 资源管理器会自动记录用户操作以供审核。
 
-有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览版门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。此主题包含内置角色和允许的操作的列表。内置角色包括“所有者”、“读取者”和“参与者”等普通角色，以及“虚拟机参与者”、“虚拟网络参与者”和“SQL 安全管理员”等服务特定角色（这里只是列举了几个可用的角色）。
+<!--有关基于角色的访问控制的详细信息，请参阅 [Windows Azure 预览版门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->此主题包含内置角色和允许的操作的列表。内置角色包括“所有者”、“读取者”和“参与者”等普通角色，以及“虚拟机参与者”、“虚拟网络参与者”和“SQL 安全管理员”等服务特定角色（这里只是列举了几个可用的角色）。
 
-有关设置访问策略的示例，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。
+<!--有关设置访问策略的示例，请参阅[管理和审核对资源的访问权限](/documentation/articles/resource-group-rbac)。-->
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources)。
 
@@ -111,7 +111,7 @@
 
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
 
-有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal.md)。
+<!--有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal.md)。-->
 
 
 ## 后续步骤

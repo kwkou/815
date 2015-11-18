@@ -402,7 +402,6 @@ Azure 应用程序通常需要多种资源的组合（例如数据库服务器�
 
 ## 后续步骤
 - 有关你可以使用的来自模板中的函数的详细信息，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
-- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/azure-portal/resource-group-template-deploy)
 - 有关进一步了解部署应用程序的示例，请参阅[按可预见的方式在 Azure 中预配和部署微服务](/documentation/articles/app-service-deploy-complex-application-predictably)
 - 若要查看可用架构，请参阅 [Azure 资源管理器架构](https://github.com/Azure/azure-resource-manager-schemas)
 

@@ -85,6 +85,6 @@
 
 ##策略 cmdlet
 
-我们已添加对 Azure 资源管理器的策略支持。此版本中已添加可用于管理策略的 PowerShell cmdlet。有关策略的详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。
+我们已添加对 Azure 资源管理器的策略支持。此版本中已添加可用于管理策略的 PowerShell cmdlet。<!--有关策略的详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。-->
 
 <!---HONumber=79-->

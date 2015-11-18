@@ -412,8 +412,5 @@ ProviderNamespace 表示相关资源类型的集合。这些命名空间通常�
 ## 后续步骤
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要了解部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
-- 有关部署项目的详细示例，请参阅[按可预见的方式在 Azure 中部署微服务](/documentation/articles/app-service-web/app-service-deploy-complex-application-predictably)。
-- 若要了解如何对失败的部署进行故障排除，请参阅 [Azure 中的资源组部署疑难解答](/documentation/articles/virtual-machines/resource-group-deploy-debug)。
 
 <!---HONumber=79-->

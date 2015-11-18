@@ -198,7 +198,7 @@ Azure 模拟器提供了一个本地环境，可在将 Azure 应用程序部署�
 
 有关详细信息，请参阅 [PHP 开发中心](/develop/php/)。
 
-[Azure SDK for PHP]: /develop/php/common-tasks/download-php-sdk/
+[Azure SDK for PHP]: /develop/php/
 [install ps and emulators]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
 [服务定义 (.csdef)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758711.aspx
 [服务配置 (.cscfg)]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee758710.aspx

@@ -18,7 +18,7 @@
 
 您也可能知道经典部署模型就是服务管理模型。
 
-本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md)。
+本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm)。
 
 许多资源可同时在经典模型和资源管理器中正常运行，不会出现问题。即使是在经典模型中创建的，这些资源也能完全支持资源管理器。您可以在无需任何顾虑或额外努力的情况下转换到资源管理器。
 
@@ -30,22 +30,13 @@
 
 对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。
 
-若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](virtual-machines/virtual-machines-azure-resource-manager-architecture.md)。
+若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](virtual-machines/virtual-machines-azure-resource-manager-architecture)。
 
 ## 资源管理器的特性
 
 通过资源管理器创建的资源具备以下共同特性：
 
 - 通过以下方法之一创建：
-
-  - [预览门户](https://manage.windowsazure.cn)。
-
-        ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
-
-        For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
-
-        ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
-
   - PowerShell 命令在 **AzureResourceManager** 模式下运行。
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
@@ -68,10 +59,6 @@
   - [Azure 门户](https://manage.windowsazure.cn)
 
         ![Azure portal](./media/resource-manager-deployment-model/azure-portal.png)
-
-        Or, the preview portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
-
-        ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 
   - PowerShell 命令在 **AzureServiceManagement** 模式下运行（这是默认模式，因此，如果不特意切换到 AzureResourceManager，您会在 AzureServiceManagement 模式下运行）。
 
@@ -143,11 +130,11 @@
 - 使用资源管理器部署模型部署的虚拟机必须包含在虚拟网络中。
 - 使用经典部署模型部署的虚拟机不一定要包括在虚拟网络中。
 
-有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](./virtual-machines/xplat-cli-azure-manage-vm-asm-arm.md)。
+有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)。
 
-有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md)。
+有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
 
-若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](./virtual-network/virtual-networks-arm-asm-s2s.md)。
+若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/virtual-networks-arm-asm-s2s)。
 
 ## 后续步骤
 
