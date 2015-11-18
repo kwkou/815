@@ -16,7 +16,7 @@
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像
 
-> [AZURE.NOTE]当你在本主题中搜索虚拟机映像时，你在 [Azure 资源管理器模式](/documentation/articles/resource-group-overview.md)下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行接口，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理器配合使用](/documentation/articles/xplat-cli-azure-resource-manager)和[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
+> [AZURE.NOTE]当你在本主题中搜索虚拟机映像时，你在 [Azure 资源管理器模式](/documentation/articles/resource-group-overview)下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行接口，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理器配合使用](/documentation/articles/xplat-cli-azure-resource-manager)和[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 
 ## 常用映像表
 

@@ -28,13 +28,13 @@
 	
 	- 若要验证你的订阅的核心限制，在 Azure 管理门户中，单击右侧窗格中的“设置”，然后单击顶部菜单中的“使用情况”。
 	
-	- 若要增加核心配额，请联系 [Azure 支持](http://azure.microsoft.com/support/options/)。有关 VM 大小信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+	- 若要增加核心配额，请联系 [Azure 支持](/support/contact/)。有关 VM 大小信息，请参阅 [Azure 的虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
 - **Windows PowerShell 脚本编制**：本主题假定你有 Windows PowerShell 的基础工作知识。有关使用 Windows PowerShell 的详细信息，请参阅以下部分：
 
-	- [在 Windows Server 上启动 Windows PowerShell](https://technet.microsoft.com/library/hh847814.aspx)
+	- [在 Windows Server 上启动 Windows PowerShell](https://technet.microsoft.com/zh-cn/library/hh847814.aspx)
 	
-	- [Windows PowerShell 入门](https://technet.microsoft.com/library/hh857337.aspx)
+	- [Windows PowerShell 入门](https://technet.microsoft.com/zh-cn/library/hh857337.aspx)
 
 ## 步骤 1：设置 Azure 虚拟机
 
@@ -66,7 +66,7 @@
 	
 	- “层”：标准
 	
-	- “大小：A3”是 SQL Server 工作负荷的建议虚拟机大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关虚拟机定价信息，请参阅[虚拟机定价](http://azure.microsoft.com/pricing/details/virtual-machines/)。
+	- “大小：A3”是 SQL Server 工作负荷的建议虚拟机大小。如果 VM 仅用作报表服务器，A2 的 VM 大小就足够了，除非报表服务器遇到大量工作负荷。有关虚拟机定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/)。
 	
 	- “新用户名”：将你提供的名称创建为 VM 上的管理员。
 	
@@ -678,7 +678,7 @@
 
 ## 如果使用的不是 VM，将成本降到最低
 
->[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 管理门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免存储费用。有关详细信息，请参阅[虚拟机定价详细信息](http://azure.microsoft.com/pricing/details/virtual-machines)中的常见问题部分。
+>[AZURE.NOTE]为了在不使用 Azure 虚拟机时尽可能减少费用，可从 Azure 管理门户关闭 VM。如果使用 VM 内的 Windows 电源选项来关闭 VM，仍将为 VM 支付相同的金额。若要减少费用，你需要在 Azure 管理门户中关闭 VM。如果你不再需要该 VM，请记住删除 VM 和关联的 .vhd 文件以避免存储费用。有关详细信息，请参阅[虚拟机定价详细信息](/pricing/details/virtual-machines)中的常见问题部分。
 
 ## 更多信息
 
@@ -690,7 +690,7 @@
 
 - 有关在 Azure 虚拟机上部署 SQL Server Business Intelligence 的常规信息，请参阅[在 Azure 虚拟机中部署 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence)。
 
-- 有关 Azure 计算费用成本的详细信息，请参阅 [Azure 定价计算器](http://azure.microsoft.com/pricing/calculator/?scenario=virtual-machines)的“虚拟机”选项卡。
+- 有关 Azure 计算费用成本的详细信息，请参阅 [Azure 定价计算器](/pricing/calculator/?scenario=virtual-machines)的“虚拟机”选项卡。
 
 ### 社区内容
 

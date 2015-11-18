@@ -23,7 +23,7 @@
 本文档假设：
 
 1. 你知道如何使用 Docker 并具有要存储的 Docker 映像。（你不知道？ [了解 Docker](https://www.docker.com)）
-2. 你有一个已装有 Docker 引擎的服务器。（还没有？ [在 Azure 上快速配置服务器。](http://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/)）
+2. 你有一个已装有 Docker 引擎的服务器。还没有<!--[-->在 Azure 上快速配置服务器。<!--](http://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/)）-->
 
 
 ## 什么是私有 Docker 注册表？

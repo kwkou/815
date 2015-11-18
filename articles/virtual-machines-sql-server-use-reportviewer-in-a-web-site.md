@@ -80,7 +80,7 @@
 
 1. 在项目中创建 <language> 文件夹并将关联的资源程序集文件复制到该位置。要复制的资源程序集文件为：**Microsoft.ReportViewer.Webforms.Resources.dll** 和 **Microsoft.ReportViewer.Common.Resources.dll**。选择资源程序集文件，并在属性窗格中将“复制到输出目录”设置为“**始终复制**”。
 
-1. 为 Web 项目设置“区域性和 UI区域性”。有关如何为 ASP.NET 网页设置“区域性和 UI 区域性”的详细信息，请参阅[如何：为 ASP.NET 网页全球化设置区域性和 UI 区域性](http://go.microsoft.com/fwlink/?LinkId=237461)。
+1. 为 Web 项目设置“区域性和 UI区域性”。有关如何为 ASP.NET 网页设置“区域性和 UI 区域性”的详细信息，请参阅[如何：为 ASP.NET 网页全球化设置区域性和 UI 区域性](https://msdn.microsoft.com/zh-cn/library/bz9tc508.aspx)。
 
 ## 配置身份验证和授权
 
@@ -88,7 +88,7 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 
 ## 发布 ASP.NET Web 应用程序到 Azure
 
-有关发布 ASP.NET Web 应用程序到 Azure 的说明，请参阅[如何：从 Visual Studio 迁移和发布 Web 应用程序到 Azure](https://msdn.microsoft.com/library/azure/hh420322.aspx) 和 [Web 应用程序和 ASP.NET 入门](../app-service-web/web-sites-dotnet-get-started.md)。
+有关发布 ASP.NET Web 应用程序到 Azure 的说明，请参阅[如何：从 Visual Studio 迁移和发布 Web 应用程序到 Azure](https://msdn.microsoft.com/library/azure/hh420322.aspx) 和 [Web 应用程序和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
 
 >[AZURE.IMPORTANT]如果在解决方案资源管理器中的快捷菜单中未显示添加Azure 部署项目或添加 Azure 云服务项目命令，你可能需要将该项目的目标框架更改为 .NET Framework 4。
 >
@@ -96,7 +96,7 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 
 ## 资源
 
-[Microsoft 报表](http://go.microsoft.com/fwlink/?LinkId=205399)
+[Microsoft 报表](https://msdn.microsoft.com/zh-cn/library/bb885185.aspx)
 
 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-sql-server-business-intelligence)
 

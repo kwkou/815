@@ -63,7 +63,7 @@
 
 ## <a id="windowsvm"></a>任务：创建虚拟机
 
-此任务使用模板库的模板。若要了解有关该模板的详细信息，请参阅[在美国西部部署简单的 Windows VM](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/)。
+此任务使用模板库的模板。<!--若要了解有关该模板的详细信息，请参阅[在美国西部部署简单的 Windows VM](https://azure.microsoft.com/documentation/templates/101-simple-windows-vm/)。-->
 
 ![](./media/virtual-machines-deploy-rmtemplates-powershell/windowsvm.png)
 

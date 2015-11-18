@@ -28,7 +28,7 @@
 
 * **Azure CLI 脚本** - 你可以使用适用于 Mac、Linux 和 Windows 的 [Azure 命令行界面](/documentation/articles/xplat-cli) (CLI) 生成自己的脚本，以部署创建 Linux 群集所需的虚拟网络和其他必需的组件。CLI 在 Azure 服务管理 (asm) 模式下将依次部署群集节点，因此，如果你要部署许多计算节点，可能需要几分钟才能完成部署。有关示例，请参阅本文其余部分中的步骤。
 
-* **Azure 资源管理器模板** - 通过创建简单的 Azure 资源管理器 JSON 模板文件和运行 Azure CLI arm 模式命令或使用 Azure 预览版门户，你可以部署多个 A8 和 A9 Linux VM，并定义虚拟网络、静态 IP 地址、DNS 设置和其他资源来创建可利用 RDMA 网络和运行 MPI 工作负荷的计算群集。你可以[创建自己的模板](/documentation/articles/resource-group-authoring-templates)或查看[“Azure 快速入门模板”页](https://azure.microsoft.com/documentation/templates/)获取由 Microsoft 或社区提供的模板以部署所需的解决方案。资源管理器模板通常提供最快且最可靠的方式来部署 Linux 群集。
+* **Azure 资源管理器模板** - 通过创建简单的 Azure 资源管理器 JSON 模板文件和运行 Azure CLI arm 模式命令或使用 Azure 预览版门户，你可以部署多个 A8 和 A9 Linux VM，并定义虚拟网络、静态 IP 地址、DNS 设置和其他资源来创建可利用 RDMA 网络和运行 MPI 工作负荷的计算群集。你可以[创建自己的模板](/documentation/articles/resource-group-authoring-templates)<!--或查看[“Azure 快速入门模板”页](https://azure.microsoft.com/documentation/templates/)-->获取由 Microsoft 或社区提供的模板以部署所需的解决方案。资源管理器模板通常提供最快且最可靠的方式来部署 Linux 群集。
 
 ## 在 Azure 服务管理中使用 Azure CLI 脚本进行部署
 

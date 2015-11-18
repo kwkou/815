@@ -22,11 +22,11 @@ Windows Azure 虚拟机库包括含有 SQL Server 安装的映像。库映像中
 
 授权 Windows Azure 虚拟机中的 SQL Server 有两种方式：
 
-1. 属于软件保障的许可证移动性权益。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可证移动性](http://azure.microsoft.com/pricing/license-mobility/)。
+1. 属于软件保障的许可证移动性权益。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可证移动性](/pricing/license-mobility/)。
 
-1. 已安装 SQL Server 的 Azure 虚拟机按小时付费。请参阅[虚拟机定价](http://azure.microsoft.com/pricing/details/virtual-machines/#Sql)中的“SQL Server”部分。
+1. 已安装 SQL Server 的 Azure 虚拟机按小时付费。请参阅[虚拟机定价](/pricing/details/virtual-machines/#Sql)中的“SQL Server”部分。
 
-有关授权和当前费率的详细信息，请参阅[虚拟机授权常见问题](http://azure.microsoft.com/pricing/licensing-faq/%20)。
+有关授权和当前费率的详细信息，请参阅[虚拟机授权常见问题](/pricing/overview/)。
 
 ## 在 Azure 虚拟机库中提供的 SQL Server 映像
 
@@ -405,7 +405,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 - [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
-- [虚拟机](http://azure.microsoft.com/documentation/services/virtual-machines/)
+- [虚拟机](/services/virtual-machines/)
 
 - [在 Azure 上设置 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)
 
@@ -417,7 +417,7 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 
 - [多维建模（Adventure Works 教程）](https://technet.microsoft.com/library/ms170208.aspx)
 
-- [Azure 文档中心](http://azure.microsoft.com/documentation/)
+- [Azure 文档中心](/documentation/)
 
 - [在混合环境中使用 Power BI](https://msdn.microsoft.com/library/dn798994.aspx)
 

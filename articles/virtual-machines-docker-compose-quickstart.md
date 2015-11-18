@@ -16,11 +16,11 @@
 
 本文介绍如何开始使用 Docker 和 [Compose](http://github.com/docker/compose) 在 Azure 中的 Linux 虚拟机上定义和运行复杂的应用程序。借助 Compose（*Fig* 的后继版本），你可以使用简单的文本文件定义由多个 Docker 容器组成的应用程序。然后使用单个命令启动应用程序，该命令会执行使该应用程序在 VM 上运行的所有操作。作为示例，本文说明如何使用后端 MariaDB SQL 数据库快速设置 WordPress 博客，但你也可以使用 Compose 设置更复杂的应用程序。
 
-如果你不熟悉 Docker 和容器，请参阅 [Docker 高级白板](/documentation/videos/docker-high-level-whiteboard/)。
+<!-- 如果你不熟悉 Docker 和容器，请参阅 [Docker 高级白板](/documentation/videos/docker-high-level-whiteboard/)。-->
 
 ## 步骤 1：将 Linux VM 设置为 Docker 主机
 
-可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Linux VM 并将其设置为 Docker 主机。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli)，了解使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，你的 VM 将自动设置为 Docker 主机。该文中的示例演示如何在服务管理模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行界面](/documentation/articles/xplat-cli.md) (Azure CLI) 创建 VM。
+可以使用各种 Azure 过程和 Azure 应用商店中提供的映像创建 Linux VM 并将其设置为 Docker 主机。有关示例，请参阅[从 Azure 命令行界面使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli)，了解使用 Docker VM 扩展创建 Ubuntu VM 的快速过程。使用 Docker VM 扩展时，你的 VM 将自动设置为 Docker 主机。该文中的示例演示如何在服务管理模式下使用[适用于 Mac、Linux 和 Windows 的 Azure 命令行界面](/documentation/articles/xplat-cli) (Azure CLI) 创建 VM。
 
 ## 步骤 2：安装 Compose
 
@@ -113,7 +113,7 @@ $ azure vm endpoint create <machine-name> 80 8080
 ## 后续步骤
 
 * 有关构建和部署多容器应用的更多示例，请查阅 [Compose CLI 参考](http://docs.docker.com/compose/cli/)和[用户指南](http://docs.docker.com/compose/)。
-* 使用 Azure 资源管理器模板（你自己的或[社区](/documentation/templates/)提供的），通过 Docker 部署 Azure VM 和使用 Compose 设置的应用程序。例如，[使用 Docker 部署 WordPress 博客](/documentation/templates/docker-wordpress-mysql/)模板使用 Docker 和 Compose 通过 Ubuntu VM 上的 MySQL 后端快速部署 WordPress。
+* 使用 Azure 资源管理器模板（你自己的<!--或[社区](/documentation/templates/)提供的），-->通过 Docker 部署 Azure VM 和使用 Compose 设置的应用程序。<!--例如，[使用 Docker 部署 WordPress 博客](/documentation/templates/docker-wordpress-mysql/)模板使用 Docker 和 Compose 通过 Ubuntu VM 上的 MySQL 后端快速部署 WordPress。-->
 * 请尝试将 Docker Compose 与 [Docker Swarm](/documentation/articles/virtual-machines-docker-swarm) 群集集成。有关方案，请参阅 [Docker Compose/Swarm 集成](https://github.com/docker/compose/blob/master/SWARM.md)。
 
 <!--Image references-->

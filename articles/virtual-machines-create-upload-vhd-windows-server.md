@@ -22,13 +22,13 @@
 
 本文假定你具备以下条件：
 
-1. **Azure 订阅** - 如果你还没有，可以[建立一个 1 RMB 的 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用 1 RMB 的 Azure 服务（如网站）。你的信用卡不会付费，除非你显式更改设置并要求付费。你还可以[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)：MSDN 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。
+1. **Azure 订阅** - 如果你还没有，可以[建立一个 1 RMB 的 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)：获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，你仍可以保留帐户和使用 1 RMB 的 Azure 服务（如网站）。你的信用卡不会付费，除非你显式更改设置并要求付费。<!--你还可以[激活 MSDN 订户权益](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)：MSDN 订阅每月为你提供可用来试用付费版 Azure 服务的信用额度。-->
 
-2. **Windows Azure PowerShell** - 已安装 Windows Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Windows Azure 下载](/downloads/)。可在[此处](/documentation/articles/powershell-install-configure)获取安装和配置该模块的教程。可使用 [Add-AzureVHD](http://msdn.microsoft.com/zn-ch/library/azure/dn495173.aspx) cmdlet 上载 VHD。
+2. **Windows Azure PowerShell** - 已安装 Windows Azure PowerShell 模块并将其配置为使用你的订阅。若要下载该模块，请参阅 [Windows Azure 下载](/downloads/)。可在[此处](/documentation/articles/powershell-install-configure)获取安装和配置该模块的教程。可使用 [Add-AzureVHD](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet 上载 VHD。
 
 3. **存储在 .vhd 文件中并连接到一台虚拟机的受支持的 Windows 操作系统** - 存在可创建 .vhd 文件的多种工具。例如，你可以使用 Hyper-V 创建虚拟机并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。有关操作系统的详细信息，请参阅[对 Windows Azure 虚拟机中的 Microsoft 服务器软件的支持](http://go.microsoft.com/fwlink/p/?LinkId=393550)。
 
-> [AZURE.IMPORTANT]Windows Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet](http://technet.microsoft.com/zn-ch/library/hh848454.aspx) 将磁盘转换为 VHD 格式。有关详细信息，请参阅此 [blogpost](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx)。
+> [AZURE.IMPORTANT]Windows Azure 不支持 VHDX 格式。可使用 Hyper-V 管理器或 [Convert-VHD cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx) 将磁盘转换为 VHD 格式。有关详细信息，请参阅此 [blogpost](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx)。
 
 ## 步骤 1：准备 VHD ##
 
@@ -70,7 +70,7 @@
 
  - 在 **URL** 下，键入要在存储帐户的 URL 中使用的子域名称。该条目可能包含 3 到 24 个小写字母和数字。此名称将成为用于访问订阅的 Blob、队列或表资源的 URL 的主机名。
  - 为存储帐户选择**位置或地缘组**。地缘组让你能够将你的云服务和存储放在同一数据中心。
- - 决定是否对存储帐户使用**地域复制**。默认情况下启用地域复制。此选项会将你的数据免费复制到辅助位置，以便在主位置发生严重故障时将你的存储故障转移到该位置。将自动分配辅助位置，并且无法对其进行更改。如果你因法律要求或组织策略需要更好地控制基于云的存储的位置，可以关闭地域复制。但是，如果稍后打开异地复制，则将现有数据复制到辅助位置时将向你收取一次性数据传输费用。不具有地域复制的存储服务将以优惠价提供。有关详细信息，请参阅[创建、管理或删除存储帐户](../storage-create-storage-account/#replication-options)。
+ - 决定是否对存储帐户使用**地域复制**。默认情况下启用地域复制。此选项会将你的数据免费复制到辅助位置，以便在主位置发生严重故障时将你的存储故障转移到该位置。将自动分配辅助位置，并且无法对其进行更改。如果你因法律要求或组织策略需要更好地控制基于云的存储的位置，可以关闭地域复制。但是，如果稍后打开异地复制，则将现有数据复制到辅助位置时将向你收取一次性数据传输费用。不具有地域复制的存储服务将以优惠价提供。有关详细信息，请参阅[创建、管理或删除存储帐户](/documentation/articles/storage-create-storage-account/#replication-options)。
 
       ![输入存储帐户详细信息](./media/virtual-machines-create-upload-vhd-windows-server/Storage-create-account.png)
 
@@ -106,7 +106,7 @@
 
 你首先需要在计算机和 Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Windows Azure Active Directory 方法或证书方法来执行此操作。
 
-> [AZURE.TIP]若要开始使用 Azure PowerShell，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/install-configure-powershell)。有关常规信息，请参阅 [Windows Azure Cmdlet 入门](https://msdn.microsoft.com/zn-ch/library/azure/jj554332.aspx)。
+> [AZURE.TIP]若要开始使用 Azure PowerShell，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/install-configure-powershell)。有关常规信息，请参阅 [Windows Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
 
 ### 方法 1：使用 Windows Azure AD
 
@@ -192,7 +192,7 @@
 
 ## 后续步骤 ##
 
-创建虚拟机后，尝试创建 SQL Server 虚拟机。有关说明，请参阅[在 Windows Azure 上预配 SQL Server 虚拟机](/documentation/article/virtual-machines-provision-sql-server)。
+创建虚拟机后，尝试创建 SQL Server 虚拟机。有关说明，请参阅[在 Windows Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)。
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Create a storage account in Azure]: #createstorage

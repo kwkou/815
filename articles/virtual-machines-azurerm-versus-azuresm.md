@@ -36,7 +36,7 @@ Azure 资源管理器包含计算、网络和存储功能，从根本上简化�
 -	使虚拟机的大规模并行部署成为可能
 -	在可用性集中支持 3 个容错域
 -	改进了自定义脚本扩展，支持来自任何可公开访问的自定义 URL 的脚本规范
-- 集成虚拟机和 Azure 密钥保管库，从 [FIPS-验证](https://zh.wikipedia.org/wiki/FIPS_140-2)[硬件安全模块](https://zh.wikipedia.org/wiki/Hardware_security_module)实现高度安全的存储和专有部署
+- 集成虚拟机和 Azure 密钥保管库，从 [FIPS-验证](https://wikipedia.org/wiki/FIPS_140-2)[硬件安全模块](https://wikipedia.org/wiki/Hardware_security_module)实现高度安全的存储和专有部署
 -	通过 API 提供基本的网络构建块，使客户能够构建包含网络接口、负载平衡器和虚拟网络的复杂应用程序
 -	网络接口作为新对象出现，允许持续保持和重复使用虚拟机的复杂网络配置
 -	作为第一类资源的负载平衡器使 IP 地址分配成为可能

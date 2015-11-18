@@ -27,7 +27,7 @@
 
 ## 安装和配置 PowerShell
 
-1. 如果你没有 Azure 帐户，请访问 [Azure 免费试用版](https://azure.microsoft.com/zh-CN/pricing/free-trial/)。 
+1. 如果你没有 Azure 帐户，请访问 [Azure 免费试用版](/pricing/free-trial/)。 
  
 2. [安装最新的 Azure PowerShell cmdlet](../powershell-install-configure.md/#how-to-install-azure-powershell)。
 

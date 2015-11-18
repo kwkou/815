@@ -34,7 +34,7 @@
 
 * **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](https://www.microsoft.com/zh-cn/download/details.aspx?id=44949)下载并解压缩最新版本的脚本。可以通过运行 `New-HPCIaaSCluster.ps1 –Version` 检查脚本的版本。本文基于版本 4.4.0 或更高版本的脚本。
 
-* **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://azure.microsoft.com/pricing/free-trial/)。
+* **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 
 * **内核配额** - 你可能需要增加内核配额，尤其是在你选择部署具有多核 VM 大小的多个群集节点时需要。对于本文中的示例，你将至少需要 24 个内核。若要增加配额，可免费[建立联机客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
@@ -173,7 +173,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 ### Azure 文件
 
-[Azure 文件](https://azure.microsoft.com/services/storage/files/)服务使用标准 SMB 2.1 协议公开文件共享。Azure VM 和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。有关详细信息，请参阅[如何通过 PowerShell 和 .NET 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)。
+[Azure 文件](/services/storage/)服务使用标准 SMB 2.1 协议公开文件共享。Azure VM 和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。有关详细信息，请参阅[如何通过 PowerShell 和 .NET 使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)。
 
 若要创建 Azure 文件共享，请参阅 [Windows Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)中的详细步骤 。若要设置持久性连接，请参阅[将连接保存到 Windows Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)。
 
@@ -267,20 +267,21 @@ HPC Pack **clusrun** 工具可用于通过命令窗口或 HPC 群集管理器在
 
 * 显示群集中所有节点的当前用户名
 
-    ```
-> clusrun whoami
+```
+	> clusrun whoami
 ```
 
 * 在 linuxnodes 组中的所有节点上安装 **gdb** 调试器工具第 i 个 **yum**，然后在 10 分钟后重启这些节点
 
-    ```
-> clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
+```
+	> clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
 ```
 
 * 创建一个在群集节点上每秒显示 1 到 10 的 shell 脚本，运行该脚本并立即显示每个节点的输出。
 
-    ```
-> clusrun /interleaved echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh```
+```
+	> clusrun /interleaved echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh
+```
 
 >[AZURE.NOTE]在 clusrun 命令中可能需要使用某些转义符。在命令窗口中使用 ^，在 PowerShell 中使用 ` 来转换特殊字符。例如，在 PowerShell 中，逗号和分号字符必须分别通过 `, 和 `; 进行转换。在命令窗口中这些字符不需要转换。
 

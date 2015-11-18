@@ -1,9 +1,10 @@
-<properties pageTitle="Deploy Azure Resources by Using a Template" description="学习如何使用 Azure 资源管理库中的某些可用客户端来部署虚拟机、虚拟网络和存储帐户" services="virtual-machines,virtual-networks,storage" documentationCenter="" authors="davidmu1" manager="timlt" editor="tysonn" tags="azure-resource-manager/>
+<properties pageTitle="Deploy Azure Resources by Using a Template" description="学习如何使用 Azure 资源管理库中的某些可用客户端来部署虚拟机、虚拟网络和存储帐户" services="virtual-machines,virtual-networks,storage" documentationCenter="" authors="davidmu1" manager="timlt" editor="tysonn" tags="azure-resource-manager"/>
 
 <tags
 	ms.service="azure-resource-manager"
 	wacn.date="11/12/2015"
-	ms.date="08/25/2015" />
+	ms.date="08/25/2015"
+/>
 
 # 使用 .NET 库和模板部署 Azure 资源
 
@@ -17,7 +18,7 @@
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
-- [Windows Management Framework 3.0](http://www.microsoft.com/zn-ch/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=40855)
 - [Azure PowerShell](/documentation/aryicles/powershell-install-configure)
 
 完成这些步骤大约需要 30 分钟。
