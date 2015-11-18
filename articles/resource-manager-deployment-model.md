@@ -18,7 +18,7 @@
 
 您也可能知道经典部署模型就是服务管理模型。
 
-本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](./virtual-machines/virtual-machines-azurerm-versus-azuresm)。
+本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
 
 许多资源可同时在经典模型和资源管理器中正常运行，不会出现问题。即使是在经典模型中创建的，这些资源也能完全支持资源管理器。您可以在无需任何顾虑或额外努力的情况下转换到资源管理器。
 
@@ -30,7 +30,7 @@
 
 对于这些资源类型，您必须知道使用的是哪个版本，因为支持的操作会有所不同。
 
-若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](virtual-machines/virtual-machines-azure-resource-manager-architecture)。
+若要了解两个模型之间的体系结构差异，请参阅 [Azure 资源管理器体系结构](/documentation/articles/virtual-machines-azure-resource-manager-architecture)。
 
 ## 资源管理器的特性
 
@@ -41,7 +41,7 @@
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
 
-  - 适用于 REST 操作的 [Azure 资源管理器 REST API](https://msdn.microsoft.com/library/azure/dn790568.aspx)。
+  - 适用于 REST 操作的 [Azure 资源管理器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
   - Azure CLI 命令在 **arm** 模式下运行。
 
             azure config mode arm
@@ -64,7 +64,7 @@
 
             PS C:\> Switch-AzureMode -Name AzureServiceManagement
 
-  - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/library/azure/ee460799.aspx)。
+  - 适用于 REST 操作的[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。
   - Azure CLI 命令在 **asm** 或默认模式下运行。
 - 资源类型的名称中包括 **(经典)**。下图显示了**存储帐户 (经典)** 类型。
 
@@ -139,6 +139,5 @@
 ## 后续步骤
 
 - 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
 <!---HONumber=79-->
