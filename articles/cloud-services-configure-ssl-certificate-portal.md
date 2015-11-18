@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="为云服务配置 SSL | Windows Azure" 
-	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。" 
+	pageTitle="为云服务配置 SSL（预览门户）| Windows Azure" 
+	description="了解如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护您的应用程序。这些示例使用 Azure 预览门户。" 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="Thraka" 
@@ -9,16 +9,16 @@
 
 <tags 
 	ms.service="cloud-services"  
-	ms.date="06/28/2015"
-	wacn.date=10/17/2015""/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
 # 在 Azure 中为应用程序配置 SSL
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)
-- [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
+- [Azure Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
+- [Azure Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 
@@ -149,5 +149,11 @@
     >创建一个证书，该证书具有与基于 GUID 的 URL 相同的公用名 (CN)（例如，**328187776e774ceda8fc57609d404462.chinacloudapp.cn**），再使用门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后更新过渡部署以使用新的包和 CSCFG 文件。
 
 [Azure Portal]: https://manage.windowsazure.cn
+## 后续步骤
 
-<!---HONumber=74-->
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal)。
+
+<!---HONumber=79-->

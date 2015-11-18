@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何管理云服务 | Windows Azure" 
-	description="了解如何在 Azure 预览门户中管理云服务。" 
+	pageTitle="如何管理云服务（预览门户）| Windows Azure" 
+	description="了解如何在 Azure 预览门户中管理云服务。这些示例使用 Azure 预览门户。" 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="Thraka" 
@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="07/01/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 # 如何管理云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-how-to-manage)
-- [Azure 门户](/documentation/articles/cloud-services-how-to-manage-portal)
+- [Azure Portal](/documentation/articles/cloud-services-how-to-manage)
+- [Azure Portal](/documentation/articles/cloud-services-how-to-manage-portal)
 
 在 Azure 预览门户的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便可以查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
 
@@ -98,8 +98,15 @@ Azure 预览门户不会像当前 Azure 门户一样将资源链接在一起。�
 
 5. 要删除云服务，则单击“删除云服务”。然后在出现确认提示时单击“是”。
 
-> [AZURE.NOTE]如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅[此](/documentation/articles/cloud-services-how-to-monitor)文章。
+> [AZURE.NOTE]
+> 如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅[此](/documentation/articles/cloud-services-how-to-monitor)文章。
 
 [Azure 门户]: https://manage.windowsazure.cn
+## 后续步骤
 
-<!---HONumber=74-->
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
+
+<!---HONumber=79-->

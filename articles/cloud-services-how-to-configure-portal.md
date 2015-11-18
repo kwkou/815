@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何配置云服务 | Windows Azure" 
-	description="了解如何在 Azure 中配置云服务。了解如何更新云服务配置以及配置对角色实例的远程访问。" 
+	pageTitle="如何配置云服务（预览门户）| Windows Azure" 
+	description="了解如何在 Azure 中配置云服务。了解如何更新云服务配置以及配置对角色实例的远程访问。这些示例使用 Azure 预览门户。" 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="Thraka" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="06/29/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -18,8 +18,8 @@
 # 如何配置云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-how-to-configure)
-- [Azure 门户](/documentation/articles/cloud-services-how-to-configure-portal)
+- [Azure Portal](/documentation/articles/cloud-services-how-to-configure)
+- [Azure Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 你可以在 Azure 管理门户中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
@@ -49,7 +49,8 @@
     
     ![云服务实例按钮](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)
 
->[AZURE.NOTE]不能使用 **Azure 门户**更改用于云服务的操作系统，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure#update-a-cloud-service-configuration-file)。
+>[AZURE.NOTE]
+>不能使用 **Azure 门户**更改用于云服务的操作系统，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure/#update-a-cloud-service-configuration-file)。
 
 ## 更新云服务配置文件
 
@@ -81,8 +82,13 @@
 
 ## 配置对角色实例的远程访问
 
-不能使用 **Azure 门户**配置远程访问，仅可通过 [Azure 门户](https://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure#configure-remote-access-to-role-instances)。
+不能使用 **Azure 预览门户**配置远程访问，仅可通过[非预览门户](http://manage.windowsazure.cn/)更改此设置。[此处](/documentation/articles/cloud-services-role-enable-remote-desktop)对此进行了说明。
 			
- 
+## 后续步骤
 
-<!---HONumber=74-->
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal)。
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal)。
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
+
+<!---HONumber=79-->

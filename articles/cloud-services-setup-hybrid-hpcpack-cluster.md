@@ -5,12 +5,12 @@
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor=""f/>
+	editor=""/>
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/24/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/29/2015"
+	wacn.date="11/12/2015"/>
 
 
 # 使用 Microsoft HPC Pack 设置混合计算群集
@@ -20,13 +20,13 @@
 
 本教程展示了一种方法（有时称作群集“迸发至云”）来使用 Azure 中可伸缩的按需计算资源运行计算密集型应用程序。
 
-本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](https://technet.microsoft.com/zh-CN/library/gg481749.aspx)。如果希望完全在 Azure 中设置 HPC Pack 群集，请参阅 [Azure VM 中的 Microsoft HPC Pack](https://msdn.microsoft.com/zh-CN/library/azure/dn518135.aspx)。
+本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。如果希望完全在 Azure 中设置 HPC Pack 群集，请参阅 [Azure 中 Microsoft HPC Pack 的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)。
 
->[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](https://msdn.microsoft.com/zh-CN/library/azure/dn197896.aspx)。例如，A8 和 A9 实例结合了某些 HPC 应用程序所需要的高性能和对低延迟、高吞吐量应用程序网络的访问。有关信息，请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](https://msdn.microsoft.com/zh-CN/library/azure/dn689095.aspx)。
+>[AZURE.NOTE]Azure 为你的计算资源提供了适合不同工作负荷的[大小范围](/documentation/articles/virtual-machines-size-specs)。例如，A8 和 A9 实例结合了某些 HPC 应用程序所需要的高性能和对低延迟、高吞吐量应用程序网络的访问。请参阅[关于 A8、A9、A10 和 A11 计算密集型实例](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)。
 
 ## 先决条件
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/tutorials/create-a-windows-azure-account)。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅[创建 Azure 帐户](/develop/php/)。
 
 此外，对于本教程，你还需要以下项。
 
@@ -40,7 +40,7 @@
 
 	* 确认安装了重要更新和关键更新。
 
-* HPC Pack 2012 R2 的安装文件，它是免费提供的。[下载](http://www.microsoft.com/zh-cn/download/details.aspx?id=47755)最新版本并将文件复制到头节点计算机或某个网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
+* HPC Pack 2012 R2 的安装文件，它是免费提供的。[下载](http://go.microsoft.com/fwlink/p/?linkid=328024)最新版本并将文件复制到头节点计算机或某个网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
 
 * 在头节点上具有本地管理员权限的域帐户。
 
@@ -84,7 +84,7 @@
 使用 [Azure 管理门户](https://manage.windowsazure.cn)来执行以下 Azure 订阅步骤。之所以需要些步骤，是为了之后你可以从本地头节点部署 Azure 节点。
 
 - 上载管理证书（头节点和 Azure 之间的安全连接所需的）
- 
+
 - 创建 Azure 节点（辅助角色实例）将在其中运行的 Azure 云服务
 
 - 创建 Azure 存储帐户
@@ -204,7 +204,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 	![指定节点][add_node2]
 
-	有关可用虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn197896.aspx)。
+	有关可用虚拟机大小的详细信息，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-cn/library/windowsazure/dn197896.aspx)。
 
 4. 在“完成添加节点向导”页上，单击“完成”。
 
@@ -278,7 +278,7 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 ## 停止 Azure 节点
 
-在你试用群集后，可以使用 HPC 群集管理器停止 Azure 节点，以免向你的帐户收取不必要的费用。这将停止云服务并且删除 Azure 角色实例。 
+在你试用群集后，可以使用 HPC 群集管理器停止 Azure 节点，以免向你的帐户收取不必要的费用。这将停止云服务并且删除 Azure 角色实例。
 
 1. 在 HPC 群集管理器的“节点管理”中，将两个 Azure 节点都选中。然后，在“操作”窗格中，单击“停止”。
 
@@ -300,9 +300,9 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 
 ## 相关资源
 
-* [HPC Pack 2012 R2 和 HPC Pack 2012](https://technet.microsoft.com/zh-CN/library/jj899572.aspx)
-* [使用 Microsoft HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-CN/library/gg481749.aspx)
-* [Azure VM 中的 Microsoft HPC Pack](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn518135.aspx)
+* [HPC Pack 2012 R2 和 HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697)
+* [使用 Microsoft HPC Pack 迸发到 Azure](http://go.microsoft.com/fwlink/p/?LinkID=200493)
+* [在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-hpcpack-cluster-options)
 * [Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源](/documentation/articles/big-compute-resources)
 
 
@@ -343,4 +343,4 @@ HPC Pack 将在头节点上安装称作默认 Microsoft HPC Azure 管理证书�
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=71-->
+<!---HONumber=79-->

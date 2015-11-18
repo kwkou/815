@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在云服务中配置自定义域名"
-	description="了解如何通过配置 DNS 设置在自定义域上公开你的 Azure 应用程序或数据。"
+	pageTitle="在云服务中配置自定义域名（预览门户）| Windows Azure"
+	description="了解如何通过配置 DNS 设置在自定义域上向 Internet 公开你的 Azure 应用程序或数据。这些示例使用 Azure 预览门户。"
 	services="cloud-services"
 	documentationCenter=".net"
 	authors="Thraka"
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="06/29/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 # 为 Azure 云服务配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-custom-domain-name)
-- [Azure 预览门户](/documentation/articles/cloud-services-custom-domain-name-portal)
+- [Azure Portal](/documentation/articles/cloud-services-custom-domain-name)
+- [Azure Preview Portal](/documentation/articles/cloud-services-custom-domain-name-portal)
 
 创建云服务时，Azure 会将其分配给 **chinacloudapp.cn** 的子域。例如，如果你的云服务名为"contoso"，你的用户将能够访问类似 http://*contoso*.chinacloudapp.cn 的 URL 上的应用程序。Azure 还会将分配一个虚拟 IP 地址。
 
@@ -25,7 +25,7 @@
 你是否已经了解什么是 CNAME 和 A 记录？ [跳过解释](#add-a-cname-record-for-your-custom-domain)。
 
 > [AZURE.NOTE]
-> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅 [Configuring a Custom Domain Name for an Azure Storage Account](/documentation/articles/storage-custom-domain-name)。
+> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/app-service-web/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
 
 <p/>
 
@@ -45,7 +45,7 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 
 ### A 记录
 
-*A* 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符域*（例如 \***.contoso.com**）映射到 IP 地址。在 Azure 云服务案例中是映射到该服务的虚拟 IP。与 CNAME 记录相比，A 记录的主要优势是您可以有一个使用通配符的条目，例如 \***.contoso.com**，它将处理多个子域（例如 **mail.contoso.com**、**login.contoso.com** 或 **www.contso.com**）的请求。
+*A* 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符域*（例如 ***.contoso.com**）映射到 IP 地址。在 Azure 云服务案例中是映射到该服务的虚拟 IP。与 CNAME 记录相比，A 记录的主要优势是您可以有一个使用通配符的条目，例如 ***.contoso.com**，它将处理多个子域（例如 **mail.contoso.com**、**login.contoso.com** 或 **www.contso.com**）的请求。
 
 > [AZURE.NOTE]
 > 由于 A 记录映射到静态 IP 地址，它无法动态解析您的云服务的 IP 地址的更改。将在您第一次部署到空槽（无论是生产还是临时）时分配由您的云服务所使用的 IP 地址。 如果您删除针对该槽的部署，则 Azure 将释放该 IP 地址，并且可能为将来任何针对该槽的部署提供新的 IP 地址。
@@ -126,17 +126,21 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 
 | 主机名/子域 | IP 地址 |
 | ------------------- | -------------- |
-| @ | 137\.135.70.239 |
+| @                   | 137.135.70.239 |
 
 
-此示例展示了如何为根域创建 A 记录。如果希望创建一个通配符条目来涵盖所有子域，则输入 '\_\_*\_\_' 作为子域。
+此示例展示了如何为根域创建 A 记录。如果希望创建一个通配符条目来涵盖所有子域，则输入 '__*__' 作为子域。
 
->[AZURE.WARNING]Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保留 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip)以确保你的 IP 地址不会更改。
+>[AZURE.WARNING]
+Azure 中的 IP 地址默认为动态 IP 地址。你将很可能想使用[保留 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip)以确保你的 IP 地址不会更改。
 
 ## 后续步骤
 
--   [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
--   [如何将 CDN 内容映射到自定义域](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg680307.aspx)
+* [如何管理云服务](/documentation/articles/cloud-services-how-to-manage)
+* [如何将 CDN 内容映射到自定义域](/documentation/articles/cdn-map-content-to-custom-domain)
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure-portal)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal)。
 
 [Expose Your Application on a Custom Domain]: #access-app
 [Add a CNAME Record for Your Custom Domain]: #add-cname
@@ -148,4 +152,4 @@ CNAME 记录将*特定*域（例如 **contoso.com** 或 **www.contoso.com**）�
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  
 
-<!---HONumber=74-->
+<!---HONumber=79-->

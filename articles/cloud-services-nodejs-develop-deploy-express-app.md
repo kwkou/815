@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 
@@ -124,9 +124,12 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 ![Web 浏览器中显示 Express 页。URL 指示它现在托管在 Azure 上。](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
+## 后续步骤
 
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
+
+  [Node.js Web Application]: /develop/nodejs/
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 
-<!---HONumber=74-->
+<!---HONumber=79-->

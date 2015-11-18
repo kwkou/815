@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="07/01/2015"
-	wacn.date="10/03/2015"/>
-
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -151,6 +150,15 @@
 
 5. 要删除云服务，则单击“删除云服务”。然后在出现确认提示时单击“是”。
 
-> [AZURE.NOTE]如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅<a href="/documentation/articles/cloud-services-how-to-monitor">如何：监视云服务</a>中的“如何：在管理门户外部访问详细监视数据”。
+> [AZURE.NOTE]
+> 如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅<a href="/documentation/articles/cloud-services-how-to-monitor">如何：监视云服务</a>中的“如何：在管理门户外部访问详细监视数据”。
 
-<!---HONumber=71-->
+
+## 后续步骤
+
+ * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
+
+<!---HONumber=79-->
