@@ -166,7 +166,7 @@
 [使用带服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: virtual-machines-linux-agent-user-guide.md
-[Logon]: virtual-machines-linux-how-to-log-on.md
+[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on
 
 <!---HONumber=79-->

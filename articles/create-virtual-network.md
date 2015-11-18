@@ -82,13 +82,13 @@
 
 - [如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom) 使用本主题在虚拟网络中安装虚拟机。有关虚拟机和安装选项的详细信息，请参阅 [Azure 虚拟机](/documentation/services/virtual-machines/)。
 
-- [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine) - 使用本主题在不连接任何其他网络的情况下安装新的 Windows Server Active Directory (AD) 林。本教程将介绍创建虚拟机 (VM) 以安装新林所需的特定步骤。如果你计划使用本教程，请不要通过管理门户创建任何虚拟机。有关详细信息，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](http://msdn.microsoft.com/zn-ch/library/windowsazure/jj156090.aspx)。
+- [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine) - 使用本主题在不连接任何其他网络的情况下安装新的 Windows Server Active Directory (AD) 林。本教程将介绍创建虚拟机 (VM) 以安装新林所需的特定步骤。如果你计划使用本教程，请不要通过管理门户创建任何虚拟机。有关详细信息，请参阅[在 Azure 虚拟机中部署 Windows Server Active Directory 的准则](https://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx)。
 
 若要删除此虚拟网络，请将它选中，单击“删除”，然后单击“是”。
 
 如果你已准备好针对特定的配置创建只使用云的虚拟网络，请参阅[在管理门户中配置只使用云的虚拟机](/documentation/articles/virtual-networks-create-vnet)。
 
-如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zn-chlibrary/windowsazure/jj156007.aspx)。
+如果你要查找有关虚拟网络的设计方案和高级信息，请参阅 [Azure 虚拟网络概述](http://msdn.microsoft.com/zn-ch/library/windowsazure/jj156007.aspx)。
 
 有关其他虚拟网络配置过程和设置，请参阅 [Azure 虚拟网络配置任务](/documentation/services/networking/)。
 

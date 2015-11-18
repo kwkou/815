@@ -59,7 +59,7 @@ A10 和 A11 实例具有连接到 Azure 服务和 Internet 的单个 10-Gbps 以
 
 ## 有关 Azure 订阅的注意事项
 
-* **Azure 帐户** – 如果要部署非少量的计算密集型实例，请考虑使用即付即用订阅或其他购买选项。还可以使用你的 MSDN 订阅。请参阅 [MSDN 订户的 Azure 权益](/pricing/member-offers/msdn-benefits-details/)。如果你使用的是 [Azure 免费试用版](http://www.windowsazure.cn/pricing/1rmb-trial/)，则仅可以使用有限数量的 Azure 计算核心。
+* **Azure 帐户** – 如果要部署非少量的计算密集型实例，请考虑使用即付即用订阅或其他购买选项。还可以使用你的 MSDN 订阅。<!--请参阅 [MSDN 订户的 Azure 权益](/pricing/member-offers/msdn-benefits-details/)。-->如果你使用的是 [Azure 免费试用版](http://www.windowsazure.cn/pricing/1rmb-trial/)，则仅可以使用有限数量的 Azure 计算核心。
 
 * **内核配额** – 你可能需要在 20 个的默认内核配额的基础上增加 Azure 订阅中的内核配额，对于许多 8 核心或 16 核心实例的方案，20 个的默认内核是不够的。对于初始测试，可考虑请求将配额增加到 100 个内核。若要执行此操作，请打开免费支持票证，如[了解 Azure 限制与增加](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)中所示。
 

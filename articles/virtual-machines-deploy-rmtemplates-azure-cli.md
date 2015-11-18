@@ -15,7 +15,7 @@
 
 # 使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机
 
-本文说明如何使用 Azure 资源管理器模板和 Azure CLI 来执行以下常见任务，以便可以部署和管理 Azure 虚拟机。有关可用的其他模板，请参阅 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和[使用模板的应用程序框架](/documentation/articles/virtual-machines-app-frameworks)。
+本文说明如何使用 Azure 资源管理器模板和 Azure CLI 来执行以下常见任务，以便可以部署和管理 Azure 虚拟机。有关可用的其他模板，请参阅 <!--[Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)和-->[使用模板的应用程序框架](/documentation/articles/virtual-machines-app-frameworks)。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文档介绍在资源管理器部署模型中如何使用模板部署和管理虚拟机。你不能在经典部署模型中使用模板。
 
@@ -97,7 +97,7 @@
 - 审核操作。
 - 使用其他元数据标记资源以方便跟踪。
 
-可在 [Azure 资源管理器概述](/documentation/articles/resource-groups-overview)中了解有关 Azure 资源组及其功能的详细信息。如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
+<!--可在 [Azure 资源管理器概述](/documentation/articles/resource-groups-overview)中了解有关 Azure 资源组及其功能的详细信息。-->如果你想要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 
 ## <a id="quick-create-a-vm-in-azure"></a>任务：在 Azure 中快速创建 VM
 
@@ -1182,7 +1182,7 @@
 
 ## <a id="show-the-log-for-a-resource-group-deployment"></a>任务：显示资源组部署日志
 
-创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。（如需部署故障排除的详细信息以及有关问题的其他详细信息，请参阅[在 Azure 中排查资源组部署问题](/documentation/articles/resource-group-deploy-debug)。）
+创建或使用模板时，这种情况很常见。可以使用 `azure group log show <groupname>` 调用来显示组的部署日志，它会显示相当多的有用信息，帮助你了解为何发生某些状况，或者为何未发生某些状况。<!-- （如需部署故障排除的详细信息以及有关问题的其他详细信息，请参阅[在 Azure 中排查资源组部署问题](/documentation/articles/resource-group-deploy-debug)。） -->
 
 为了查明特定的失败，你可以使用 **jq** 等工具来更清楚地查明前因后果，例如，你需要更正的单个失败。以下示例使用 **jq** 分析 **lbgroup** 的部署日志，以找出失败的原因。
 

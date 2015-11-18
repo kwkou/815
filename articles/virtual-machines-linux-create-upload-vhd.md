@@ -25,13 +25,13 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 
 当你创建虚拟机时，你可以自定义部分操作系统设置，使之适合于要运行的应用程序。有关说明，请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-create-custom)。
 
-**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](virtual-machines-../linux-endorsed-distributions.md)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
+**重要说明**：只有在使用某个认可的分发的时候也使用 [Azure上的 Linux 认可的分发](/documentation/articles/linux-endorsed-distributions)中“支持的版本”下指定的配置详细信息时，Azure 平台 SLA 才适用于运行 Linux 操作系统的虚拟机。Azure 映像库中的所有 Linux 分发都是具有所需配置的认可的分发。
 
 
 ##先决条件##
 本文假定你拥有以下项目：
 
-- **管理证书** - 你已为要为其上载 VHD 的订阅创建一个管理证书，并且已将该证书导出到 .cer 文件。有关创建证书的详细信息，请参阅[为 Azure 创建和上载管理证书](https://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx)（可能为英文页面）。
+- **管理证书** - 你已为要为其上载 VHD 的订阅创建一个管理证书，并且已将该证书导出到 .cer 文件。有关创建证书的详细信息，请参阅[为 Azure 创建和上载管理证书](/documentation/articles/cloud-services-certs-create/)（可能为英文页面）。
 
 - **安装在 .vhd 文件中的 Linux 操作系统** - 你已将受支持的 Linux 操作系统安装到虚拟硬盘。存在多种工具可创建 .vhd 文件，例如，可以使用虚拟化解决方案（例如 Hyper-V）创建 .vhd 文件并安装操作系统。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
 
@@ -39,7 +39,7 @@ Azure 中的虚拟机所运行的操作系统基于你在创建虚拟机时选�
 
 	有关认可分发的列表，请参阅 [Azure 认可的分发中的 Linux](/documentation/articles/linux-endorsed-distributions)。或者，请参阅本文最后一节中的[非认可分发的信息](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic)。
 
-- **Azure 命令行界面** - 如果你使用 Linux 操作系统来创建映像，则使用 [Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools.md)来上载 VHD。
+- **Azure 命令行界面** - 如果你使用 Linux 操作系统来创建映像，则使用 [Azure 命令行界面](/documentation/articles/virtual-machines-command-line-tools)来上载 VHD。
 
 - **Azure Powershell 工具** - 还可以使用 `Add-AzureVhd` cmdlet 来上载 VHD。若要下载 Azure Powershell cmdlet，请参阅 [Azure 下载](/downloads/)。有关引用信息，请参阅 [Add-AzureVhd](https://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx)（可能为英文页面）。
 

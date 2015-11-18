@@ -47,6 +47,6 @@
 您现在可以像使用任何其他服务器一样使用该虚拟机。
 
 <!-- LINKS -->
-[如何为 Linux 虚拟机重置密码或 SSH]: http://go.microsoft.com/fwlink/p/?LinkId=512138
+[如何为 Linux 虚拟机重置密码或 SSH]: /documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/
 
 <!---HONumber=79-->
