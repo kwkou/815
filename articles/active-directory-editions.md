@@ -3,89 +3,91 @@
 	description="本主题介绍 Azure Active Directory 的免费版和付费版选项。" 
 	services="active-directory" 
 	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+	authors="MarkusVi"
+	manager="stevenpo"
 	editor="LisaToft"/>
 
 <tags 
 	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/04/2015"
-	wacn.date="05/26/2015" 
-	ms.author="Justinha"/>
+	ms.date="10/17/2015"
+	wacn.date="11/12/2015" />
 
 # Azure Active Directory 版本
 
-Azure Active Directory 是在云中提供全面标识和访问管理功能的服务。它整合了目录服务、高级标识管理和应用程序访问管理，并为开发人员提供一个丰富的基于标准的平台。有关详细信息，请观看此视频。
+所有 Microsoft Online 业务服务都依赖于 Azure Active Directory 进行登录和满足其他身份识别需求。如果你订阅了任何 Microsoft Online 业务服务（例如 Office 365、Microsoft Azure 等），则表示已获得了 Azure Active Directory (Azure AD)，你可以用它来访问下述所有免费功能。
 
-Active Directory 高级版和基本版是在 Azure Active Directory 中的大量免费功能的基础上构建的，它提供一组更高级的功能来帮助企业满足更加严苛的标识和访问管理需求。当你订阅 Azure 时，可以选择 Azure Active Directory 的以下免费和付费版本：
+Azure Active Directory 是在云中为员工、合作伙伴和客户提供全面标识和访问管理功能的服务。它为开发人员整合了目录服务、高级标识管理和一个基于标准的多功能平台，并可让你针对自己的应用程序或数千个预先集成应用程序中的任何一个进行访问管理。使用 Azure Active Directory 免费版，你可以管理用户和组、与本地目录同步，以及在 Azure、Office 365 和数千种主流 SaaS 应用程序（如 Salesforce、Workday、Concur、DocuSign、Google Apps、Box、ServiceNow、Dropbox 等）上单一登录。若要了解有关 Azure Active Directory 的详细信息，请阅读[什么是 Azure AD](active-directory-whatis.md)。
 
-- **免费版** - 使用 Azure Active Directory 免费版，你可以管理用户帐户、与本地目录同步，以及在 Azure、Office 365 和数千种主流 SaaS 应用程序（如 Salesforce、Workday、Concur、DocuSign、Box、ServiceNow 等）上单一登录。
-- **基本版** - Azure Active Directory 基本版向具有应用程序访问和自助标识管理需求的任务工作者提供了云优先需求。使用 Azure AD 基本版，你可以获得 Azure Active Directory 免费版必然会提供的所有功能，加上基于组的访问管理、用于云应用程序的自助密码重置、Azure Active Directory 应用程序代理（用于通过 Azure Active Directory 发布本地 Web 应用程序）、用于启动企业和消费者云应用程序的可自定义环境，以及 99.9％ 正常运行时间的企业级 SLA。
-    Azure Active Directory 基本版管理员还可以激活 Azure Active Directory 高级试用版。
 
-<!-- **Premium** - With the Premium edition of Azure Active Directory, you get all of the capabilities that he Azure Active Directory Free and Basic editions have to offer, plus additional feature-rich enterprise-level identity management capabilities explained below.-->
+若要增强你的 Azure Active Directory，可以使用 Azure Active Directory 基本和高级版添加付费功能。Azure Active Directory 付费版建立在现有免费目录基础之上，提供企业级功能，包括自助服务、增强型监视、安全报告、Multi-Factor Authentication (MFA) 和移动工作者安全访问。
 
-<!--To sign up and start using Active Directory Premium today, see [Getting started with Azure Active Directory Premium](/documentation/articles/active-directory-get-started-premium).-->
+Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 功能。
+
+
+> [AZURE.NOTE]有关这些版本的定价选项，请参阅 [Azure Active Directory 定价](https://azure.microsoft.com/zh-CN/pricing/details/active-directory/)。<br>中国地区目前不支持 Azure Active Directory Premium 和 Azure Active Directory 基本版。有关详细信息，请通过 Azure Active Directory 论坛与我们联系。
+
+
+- **Azure Active Directory 基本版** - 面向具有云优先需求的任务工作者，此版本提供以云为中心的应用程序访问和自助标识管理解决方案。使用 Azure Active Directory 基本版，你可以增强工作效率并获得成本缩减功能，例如基于组的访问管理、用于云应用程序的自助密码重置、Azure Active Directory 应用程序代理（使用 Azure Active Directory 发布本地 Web 应用程序），以及 99.9％ 正常运行时间的企业级 SLA。
+ 
+- **Azure Active Directory Premium** - Azure Active Directory Premium Edition 增加了丰富的企业级标识管理功能，并允许各类用户无缝访问本地与云功能，旨在满足组织更加严苛的标识和访问管理需求。此版本为混合环境中的信息工作者和标识管理员提供一切必要的功能，让他们执行应用程序访问、自助标识和访问管理 (IAM)、标识保护及实现云中的安全性。它支持动态组和自助服务组管理等高级管理与委派资源。它包含 Microsoft 标识管理器（一个本地标识与访问管理套件），并提供云写回功能，使本地用户能够使用自助密码重置等解决方案。
+
+若要立即注册并开始使用 Active Directory Premium，请参阅 [Azure Active Directory Premium 入门](active-directory-get-started-premium.md)。
+
 
 > [AZURE.NOTE]
-在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国 21Vianet 运营的 Windows Azure 服务目前不支持 Azure Active Directory 高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](http://feedback.azure.com/forums/169401-azure-active-directory)与我们联系。
+> 许多 Azure Active Directory 功能以“即付即用”版本的形式提供：
+>
+>- Active Directory B2C 是适用于面向消费者应用程序的标识和访问管理解决方案。有关详细信息，请参阅 [Azure Active Directory B2C](/documentation/services/active-directory-b2c/)
+ 
+>-	可以通过基于用户或基于身份验证的提供程序使用 Azure Multi-Factor Authentication。有关详细信息，请参阅[什么是 Azure Multi-Factor Authentication？](/documentation/articles/multi-factor-authentication)
 
-## Azure Active Directory 基本版的功能
 
-Active Directory 基本版是一种收费的 Azure Active Directory 产品，包括以下功能：
+<br>
 
-- **公司品牌打造** - 若要让最终用户获得更好的体验，你可以向组织的"登录"和"访问面板"页添加公司的徽标和颜色方案。添加徽标后，你还可以选择为不同的语言和区域设置添加徽标的本地化版本。 
-    有关详细信息，请参阅[向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-add-company-branding)。
-- **基于组的应用程序访问** - 使用组来设置用户并向数千个 SaaS 应用程序成批分配用户访问权限。可以仅在云中创建这些组，也可以利用已在本地 Active Directory 中同步的现有组。 
-    有关详细信息，请参阅[在 Azure AD 中为组分配对 SaaS 应用程序的访问权限](https://msdn.microsoft.com/zh-cn/library/azure/dn621141.aspx)。
-- **自助密码重置** - Azure 始终允许目录管理员重置密码。有了 Azure Active Directory 基本版，你现在就可以使用与 Office 365 相同的登录体验为目录中的所有用户提供密码重置功能，从而减少用户在忘记密码时呼叫支持人员的次数。
-    有关详细信息，请参阅 [Azure AD 中的密码管理](https://msdn.microsoft.com/zh-cn/library/azure/dn510386.aspx)。
-- **99.9% 的企业 SLA** - 我们保证 Azure Active Directory 基本服务至少有 99.9% 的可用性。
-- [**Azure Active Directory 应用程序代理**](https://msdn.microsoft.com/zh-cn/library/azure/dn768214.aspx) - 让你的员工使用 Azure Active Directory 从云中安全访问本地应用程序，如 SharePoint 和 Exchange/OWA。
 
-## 当前以公共预览版提供的功能
 
-以下功能目前以公共预览版的形式提供，即将添加到正式版中：
 
-- 通过 [Azure Active Directory Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx) 进行双向同步
-- 管理单元：一个新的 Azure Active Directory 资源容器，可用于向一部分用户委派管理权限，以及向一部分用户应用策略。
-- 云应用程序发现：轻松确定你的组织正在使用哪些云应用程序。
-- 将你自己的 SaaS 应用程序添加到 Azure Active Directory
-- 为自助密码重置添加安全提问
-- Azure Active Directory Connect 运行状态：监视本地 Active Directory 基础结构的运行状况并获取使用情况分析报告。
-- 适用于 LinkedIn 的密码滚动更新。有关详细信息，请阅读[此文章](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)。
-- 动态组。有关详细信息，请阅读[此文章](https://msdn.microsoft.com/zh-cn/library/azure/dn913807.aspx)。
-- 条件性访问：基于应用程序的多重身份验证。 
-- HR 应用程序集成：Workday
+| 功能类型| 功能| 免费版| 基本版| Premium Edition |
+| --- | --- | --- | --- | --- |
+| **常用功能**| 目录即服务| ![勾选标记][12] 最多 500K 个用户 [1]| ![勾选标记][12] 无对象限制| ![勾选标记][12] 无对象限制|
+| | [使用 UI 或 Windows PowerShell cmdlet 进行用户和组管理](/documentation/articles/active-directory-administer)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | [设备注册](/documentation/articles/active-directory-conditional-access-device-registration-overview)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | [访问面板门户，适合对 SaaS 和自定义应用程序进行基于 SSO 的用户访问](/documentation/articles/active-directory-saas-access-panel-introduction)| ![勾选标记][12] 每个用户最多 10 个应用 [2]| ![勾选标记][12] 每个用户最多 1- 个应用 [2]| ![勾选标记][12] 无应用限制|
+| | [基于用户的应用程序访问管理和设置](/documentation/articles/active-directory-saas-app-provisioning)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | 云用户的自助密码更改| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | [Azure AD Connect – 用于在本地目录与 Azure Active Directory 之间同步](/documentation/articles/active-directory-aadconnect)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | [标准安全报告](/documentation/articles/active-directory-view-access-usage-reports)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| | [B2B 协作（跨组织协作）（预览版）](/documentation/articles/active-directory-b2b-collaboration-overview)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
+| **高级和基本版功能**| [对“登录”和“访问面板”页自定义公司徽标和颜色](/documentation/articles/active-directory-add-company-branding)| Office 365 订阅已随附 [4]| ![勾选标记][12]| ![勾选标记][12]|
+| | [云用户的自助密码重置](/documentation/articles/active-directory-passwords)| Office 365 订阅已随附 [4]| ![勾选标记][12]| ![勾选标记][12]|
+| | [应用程序代理：对本地 Web 应用程序进行安全远程访问和 SSO](/documentation/articles/active-directory-application-proxy-get-started)| | ![勾选标记][12]| ![勾选标记][12]|
+| | [基于组的应用程序访问管理和设置](/documentation/articles/active-directory-accessmanagement-group-saasapps)| | ![勾选标记][12]| ![勾选标记][12]|
+| | [高可用性 SLA 运行时间 (99.9%)](https://azure.microsoft.com/zh-CN/support/legal/sla/)| Microsoft Online Services SLA [5]| ![勾选标记][12]| ![勾选标记][12]|
+| **仅限高级版的功能**| [高级应用程序使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)| | | ![勾选标记][12]|
+| | [面向云用户的自助组管理](面向 Azure AD 中用户的自助组管理)| | | ![勾选标记][12]|
+| | [自助服务密码重置与本地回写](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords)| | | ![勾选标记][12]|
+| | [Microsoft 标识管理器 (MIM) 用户许可证 – 用于本地标识和访问管理](http://www.microsoft.com/zh-CN/server-cloud/products/microsoft-identity-manager/default.aspx)| | | ![勾选标记][12] [3]|
+| | [高级异常安全报告（基于机器学习）](/documentation/articles/active-directory-view-access-usage-reports)| | | ![勾选标记][12]|
+| | [云应用发现](/documentation/articles/active-directory-cloudappdiscovery-whatis)| | | ![勾选标记][12]|
+| | [面向云用户的 Multi-Factor Authentication 服务](/documentation/articles/multi-factor-authentication)| Office 365 订阅已随附 [4]| | ![勾选标记][12]|
+| | [面向本地用户的 Multi-Factor Authentication 服务](/documentation/articles/multi-factor-authentication)| | | ![勾选标记][12]|
+| | [Azure Active Directory Connect Health – 用于监视本地 Active Directory 基础结构的运行状况并获取使用情况分析](/documentation/articles/active-directory-aadconnect-health)| | | ![勾选标记][12]|
 
-## 免费版和高级版的比较
 
-Azure Active Directory 基本版具有高级功能，可帮助简化企业级管理任务，使管理员工作更轻松。下表介绍常见管理优势以及注册 Azure Active Directory 基本版或 Azure Active Directory 高级版如何有助于简化任务。
 
-### 常用功能
 
-- 目录即服务
-    免费版限制为 50 万个对象。但是，50 万个对象这一限制不适用于 Office 365、Windows Intune 或者依赖于 Azure Active Directory 提供目录服务的任何其他 Microsoft 联机服务。基本和高级版没有对象数限制。
-- 使用 UI 或 Windows PowerShell cmdlet 进行用户和组管理
-- 访问面板门户，适合对 SaaS 和自定义应用程序进行基于 SSO 的用户访问
-    使用 Azure Active Directory 免费版和 Azure Active Directory 基本版，已向其分配对每个 SaaS 应用程序的访问权限的最终用户将可以在其访问面板中最多看到 10 个应用程序，并获取分配给他们的 SSO 访问权限（假设管理员已先为他们配置了 SSO）。管理员可以使用免费版配置 SSO，并为用户分配所需的对任意多的应用的访问权限，但是最终用户在其访问面板中一次只能看到 10 个应用。 
+[1] 50 万个对象限制不适用于 Office 365、Microsoft Intune 或任何其他依赖 Azure Active Directory 提供目录服务的 Microsoft 联机服务。
 
-- 基于用户的应用程序访问管理和设置
-- 云用户的自助密码更改
-- 目录同步工具 - 用于本地 Active Directory 与 Azure Active Directory 之间的同步
-- 标准安全报告
+[2] 使用 Azure Active Directory 免费版和 Azure Active Directory 基本版，已向其分配对每个 SaaS 应用程序的访问权限的最终用户将可以在其访问面板中最多看到 10 个应用程序，并获取分配给他们的 SSO 访问权限（假设管理员已先为他们配置了 SSO）。管理员可以使用免费版配置 SSO，并为用户分配所需的对任意多的应用的访问权限，但是最终用户在其访问面板中一次只能看到 10 个应用。
 
-### 基本功能
+[3] Microsoft 标识管理器服务器软件版权随 Windows Server 许可证（任意版本）一起授予。由于 Microsoft 标识管理器在 Windows Server 操作系统上运行，只要服务器正在运行有效的、经过许可的 Windows Server 副本，就能在该服务器上安装和使用 Microsoft 标识管理器。Microsoft 标识管理器服务器不需要其他单独的许可证。
 
-- 高可用性 SLA 运行时间 (99.9%)
-- 基于组的应用程序访问管理和设置
-- 对"登录"和"访问面板"页自定义公司徽标和颜色
-- 云用户的自助密码重置
-- 应用程序代理：对本地 Web 应用程序进行安全远程访问和 SSO
+[4] Office 365 随附的 Azure AD 付费功能仅限在访问 Office 365 应用程序时使用。
+
+[5] Microsoft 的每个联机业务服务、Office 365、Microsoft Intune 或依赖于 Azure Active Directory 提供目录服务的其他任何 Microsoft 联机服务都附带自身的服务 SLA 并拓展了 Azure Active Directory 的用途。若要了解详细信息，请参阅 [Microsoft Online Services SLA](https://gallery.technet.microsoft.com/online-SLA-ea09109e)。
+
+
+
 
 ## 后续步骤
 
@@ -93,4 +95,8 @@ Azure Active Directory 基本版具有高级功能，可帮助简化企业级管
 - [向"登录"和"访问面板"页添加公司品牌](/documentation/articles/active-directory-add-company-branding)
 - [查看访问和使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)
 
-<!--HONumber=57-->
+
+<!--Image references-->
+[12]: ./media/active-directory-editions/ic195031.png
+
+<!---HONumber=79-->

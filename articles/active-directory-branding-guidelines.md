@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="08/25/2015"
-   wacn.date="11/02/2015"/>
+   ms.date="09/17/2015"
+   wacn.date="11/12/2015"/>
 
 
 # 适用于应用程序的品牌准则
