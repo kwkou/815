@@ -1,6 +1,6 @@
 <properties
    pageTitle="Azure Active Directory 开发人员指南"
-   description="本文提供面向开发人员的 Azure Active Directory 资源的综合性指南。"
+   description="介绍面向开发人员的 Azure Active Directory 资源的综合性指南"
    services="active-directory"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
@@ -35,27 +35,27 @@
 
 ### 移动和电脑应用程序快速入门指南
 
-|[![iOS](./media/active-directory-developers-guide/ios.png)](active-directory-devquickstarts-ios)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsphone)|[![Windows 应用商店](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova)
+|[![iOS](./media/active-directory-developers-guide/ios.png)](/documentation/articles/active-directory-devquickstarts-ios)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsphone)|[![Windows 应用商店](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova)
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:
-|[iOS](active-directory-devquickstarts-ios.md)|[Android](active-directory-devquickstarts-android)|[.NET](active-directory-devquickstarts-dotnet.md)|[Windows Phone](active-directory-devquickstarts-windowsphone)|[Windows 应用商店](active-directory-devquickstarts-windowsstore)|[Xamarin](active-directory-devquickstarts-xamarin)|[Cordova](active-directory-devquickstarts-cordova)
+|[iOS](active-directory-devquickstarts-ios.md)|[Android](/documentation/articles/active-directory-devquickstarts-android)|[.NET](active-directory-devquickstarts-dotnet.md)|[Windows Phone](active-directory-devquickstarts-windowsphone)|[Windows 应用商店](active-directory-devquickstarts-windowsstore)|[Xamarin](active-directory-devquickstarts-xamarin)|[Cordova](active-directory-devquickstarts-cordova)
 
 ### Web 应用程序快速入门指南
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs)
+|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[![Javascript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-openidconnect-nodejs)
 |:--:|:--:|:--:|
-|[.NET](active-directory-devquickstarts-webapp-dotnet.md)|[Javascript](active-directory-devquickstarts-angular)|[Node.js](active-directory-devquickstarts-openidconnect-nodejs)
+|[.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet)|[Javascript](/documentation/articles/active-directory-devquickstarts-angular)|[Node.js](active-directory-devquickstarts-openidconnect-nodejs)
 
 ### Web API 快速入门指南
 
-|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapi-dotnet)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-webapi-nodejs)
+|[![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-webapi-nodejs)
 |:--:|:--:|
-|[.NET](active-directory-devquickstarts-webapi-dotnet.md)|[Node.js](active-directory-devquickstarts-webapi-nodejs)
+|[.NET](/documentation/articles/active-directory-devquickstarts-webapi-dotnet)|[Node.js](/documentation/articles/active-directory-devquickstarts-webapi-nodejs)
 
 ### 查询目录快速入门指南
 
-| [![.NET](./media/active-directory-developers-guide/graph.png)](active-directory-graph-api-quickstart)|
+| [![.NET](./media/active-directory-developers-guide/graph.png)](/documentation/articles/active-directory-graph-api-quickstart)|
 |:--:|
-|[Graph API](active-directory-graph-api-quickstart)|
+|[Graph API](/documentation/articles/active-directory-graph-api-quickstart)|
 
 
 ## 操作说明
@@ -75,7 +75,7 @@
 以下文章提供了有关 REST 和身份验证库 API、协议、错误、代码示例和终结点的基础参考信息。
 
 ### 支持
-- [已标记问题](http://stackoverflow.com/questions/tagged/azure-active-directory)：通过搜索标记 [/documentation/articles/azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) 和 [adal](http://stackoverflow.com/questions/tagged/adal) 查找有关堆栈溢出的 Azure Active Directory 解决方案。
+- [已标记问题](http://stackoverflow.com/questions/tagged/azure-active-directory)：通过搜索标记 [azure-active-directory](http://stackoverflow.com/questions/tagged/azure-active-directory) 和 [adal](http://stackoverflow.com/questions/tagged/adal) 查找有关堆栈溢出的 Azure Active Directory 解决方案。
 
 ### 代码
 
@@ -108,7 +108,7 @@
 
 ## 社交
 
-- [Active Directory 团队博客](http://blogs.technet.com/b/ad/)：Azure Active Directory 领域的最新开发情况。
+- **[Active Directory 团队博客](http://blogs.technet.com/b/ad/)**：实时了解 Azure AD 领域的最新开发情况。
 
 - [Azure Active Directory Graph 团队博客](http://blogs.msdn.com/b/aadgraphteam)：特定于图形 API 的 Azure Active Directory 信息。
 

@@ -81,7 +81,7 @@ Azure AD 在大多数 Microsoft 云服务的后面提供核心目录和身份管
 - 管理你组织订阅的相关云服务
 - 设置与目录服务的本地集成
 
-Azure 管理门户、Office 365 管理中心、Microsoft Intune 帐户门户和 Azure AD cmdlet 均从与组织的目录关联的 Azure AD 的单个共享实例读取数据并将数据写入到该实例中，如下图所示。门户（或 cmdlet）通过这种方式充当用于输入和/或修改目录数据的前端接口。 
+Azure 管理门户、Office 365 管理中心、Microsoft Intune 帐户门户和 Azure AD cmdlet 均从与组织的目录关联的 Azure AD 的单个共享实例读取数据并将数据写入到该实例中，如下图所示。门户（或 cmdlet）通过这种方式充当用于输入和/或修改目录数据的前端接口。
 
 ![][2]
 

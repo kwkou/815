@@ -11,7 +11,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="08/14/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 在 AD FS 中使用 Azure AD Connect Health 
 以下文档专门介绍如何使用 Azure AD Connect Health 来监视 AD FS 基础结构。
