@@ -26,7 +26,7 @@ Azure 流分析作业可以连接到一个或多个输出，其定义了一个�
 
 2. 指定输出的类型：
 
-    ![选择数据类型](./media/stream-analytics-add-outputs/2-stream-analytics-add-outputs.png)
+    ![选择输出源](./media/stream-analytics-add-outputs/2-stream-analytics-add-outputs.png)
 
 3. 在“输出别名”框中为该输出提供一个友好名称。此名称以后会用于你的作业查询以引用该输出。
     
@@ -38,7 +38,7 @@ Azure 流分析作业可以连接到一个或多个输出，其定义了一个�
 
     填充所需连接属性的其余部分以连接到你的数据源。这些字段根据输入类型和源类型而变化，在[此处](/documentation/articles/stream-analytics-create-a-job)进行了详细定义。
 
-    ![添加事件中心](./media/stream-analytics-add-outputs/4-stream-analytics-add-outputs.png)
+    ![数据序列化设置](./media/stream-analytics-add-outputs/4-stream-analytics-add-outputs.png)
 
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-CN/home?forum=AzureStreamAnalytics)
