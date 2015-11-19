@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="08/14/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="10/15/2015"
+	wacn.date="11/12/2015"/>
 
 
 # Azure AD Connect Health 常见问题 (FAQ)
@@ -21,10 +21,9 @@
 
 
 
-**问：我在 Azure Active Directory 中有多个租户。如何切换到使用 Azure Active Directory Premium 的租户？**
+**问：我要管理多个 Azure AD 目录。如何切换到使用 Azure Active Directory Premium 的租户？**
 
-切换 Azure AD 租户时，你可以先在左侧导航栏中选择“主页”，然后在右上角选择当前已登录用户的“用户名”，最后再选择合适的租户帐户。如果租户帐户未列在此处，可选择“注销”，然后使用 Azure Active Directory Premium 租户的全局租户管理凭据登录。
-
+若要切换 Azure AD 目录，你可以在右上角选择当前登录的用户名，然后选择相应的帐户。如果此处未列出该帐户，你可选择“注销”，然后使用已启用 Azure Active Directory Premium 的目录的全局管理员凭据来登录。
 
 ## 安装问题
 
@@ -39,7 +38,7 @@
 - CPU 占用率：增加约 1%
 - 内存消耗：最多为系统总内存的 10%
 - 网络带宽使用量：约 1 MB/1000 ADFS 请求
->[AZURE.NOTE]如果无法与 Azure 通信，代理会将数据存储在本地，最大限制为系统总内存的 10%。达到物理总内存的 10% 时，如果代理仍无法将数据上载到服务，新的 ADFS 事务将会根据“最近向其提供的服务最少”这一标准覆盖任何“缓存”的事务。
+>[AZURE.NOTE]如果代理无法与 Azure 通信，则代理会按照定义的上限将数据存储在本地。当代理达到该限制时，如果仍无法将数据上载到服务，新的 ADFS 事务将会根据“最近向其提供的服务最少”这一标准覆盖任何“缓存”的事务。
 
 - AD Health 代理的本地缓存存储：约 20 MB
 - 审核通道所需的数据存储
@@ -56,41 +55,12 @@
 
 **问：Azure AD Connect Health Services 是否通过直通型 http 代理进行工作？**
 
-是的，注册过程和正常操作都可通过已设置为转发出站 http 请求的显式代理来完成。这种情况下不能使用“Netsh WinHttp set Proxy”，因为该代理使用 System.Net 而非 Microsoft Windows HTTP Services 来发出 Web 请求。
+是的。对于正在进行的操作，你可以将 Health 代理配置为使用 HTTP 代理转发出站 http 请求。有关详细信息，请参阅[将 Azure AD Connect Health 代理配置为使用 HTTP 代理](active-directory-aadconnect-health-agent-install-adfs.md#configure-azure-ad-connect-health-agent-to-use-http-proxy)。
 
-可以在运行 Register-AdHealthAgent（安装的最后步骤）之前随时执行
-
-
-- 步骤 1 – 将条目添加到 machine.config 文件
-
-
-找到 machine.config 文件。该文件位于 %windir%\\Microsoft.NET\\Framework64[version]\\config\\machine.config</li>
-
-将以下条目添加到 machine.config 文件中的 <configuration></configuration> 元素下。
- 
-		
-	<system.net>  
-			<defaultProxy useDefaultCredentials="true">
-       		<proxy 
-        usesystemdefault="true" 
-        proxyaddress="http://YOUR.PROXY.HERE.com"  
-        bypassonlocal="true"/>
-		</defaultProxy>
-	</system.net> 
-
- 
-
-如需更多 <defaultProxy> 信息，请访问[此处](https://msdn.microsoft.com/zh-cn/library/kd3cf2ex(v=vs.110).aspx)。
-
-此设置在系统范围内将 .NET 应用程序配置为在进行 http .NET 请求时使用显式定义代理。不建议修改每个单独的 app.config，因为在自动更新时会撤消该操作。只需更改一个文件，该文件在更新后会继续保留（如果你只修改 machine.config）。
-
-- 步骤 2 - 在“Internet 选项”中配置代理
-
-打开“Internet Explorer -> 设置 -> Internet 选项 -> 连接 -> LAN 设置”。
-
-选择“为 LAN 使用代理服务器”
-
-如果你有不同的针对 HTTP 和 HTTPS/Secure 的代理端口，则请选择“高级”
+如果要在代理注册过程中配置代理，需要修改 Internet Explorer 代理设置。<br>
+打开“Internet Explorer -> 设置 -> Internet 选项 -> 连接 -> LAN 设置”。<br> 
+选择“为 LAN 使用代理服务器”。<br> 
+如果你有不同的针对 HTTP 和 HTTPS/Secure 的代理端口，则请选择“高级”。<br>
 
 
 
@@ -122,7 +92,7 @@
 
 **问：若要确保 Azure AD Connect Health 代理正常使用，需要打开哪些防火墙端口？**
 
-需要打开 TCP/UDP 端口 80 和 443，才能让 Azure AD Connect Health 代理与 Azure AD Health 服务终结点进行通信。
+需要打开 TCP/UDP 端口 80、443 和 5671，才能让 Azure AD Connect Health 代理与 Azure AD Health 服务终结点进行通信。
 
 ## 相关链接
 

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="08/24/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/12/2015"/>
 
 # 设置 Azure AD Connect 时需要 Azure AD 全局管理员帐户的原因
 

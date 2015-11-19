@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.date="08/24/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/12/2015"/>
 
 
 # 续订 Office 365 和 Azure AD 的联合身份验证证书
