@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="08/24/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -20,8 +20,7 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。你
 
 
 ### 密码同步
-使用密码同步可将用户密码的哈希从本地 Active Directory 同步到 Azure AD。当密码在本地更改或重置时，新密码将立即同步到 Azure AD，使用户用来访问云资源的密码始终与本地相同。密码绝不将发送到 Azure AD，也不会以明文存储在 Azure AD 中。
-可将密码同步与密码写回一起使用，以便在 Azure AD 中启用自助密码重置。
+使用密码同步可将用户密码的哈希从本地 Active Directory 同步到 Azure AD。当密码在本地更改或重置时，新密码将立即同步到 Azure AD，使用户用来访问云资源的密码始终与本地相同。密码绝不将发送到 Azure AD，也不会以明文存储在 Azure AD 中。可将密码同步与密码写回一起使用，以便在 Azure AD 中启用自助密码重置。
 
 <center>![云](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
