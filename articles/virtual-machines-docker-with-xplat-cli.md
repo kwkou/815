@@ -150,7 +150,7 @@ azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d
 
 ## 后续步骤
 
-现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。若要在新门户中创建启用 Docker 的 VM，请参阅[如何在门户中使用 Docker VM 扩展]。
+现在，你可以转到 [Docker 用户指南]并开始使用你的 Docker VM。<!-- 若要在新门户中创建启用 Docker 的 VM，请参阅[如何在门户中使用 Docker VM 扩展]。 -->
 
 <!--Anchors-->
 [Subheading 1]: #subheading-1
