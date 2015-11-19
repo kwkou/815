@@ -218,8 +218,6 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 1. Docker
 	- [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension)
 	- [从 Azure 跨平台命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli)
-	- [从 Azure 预览版门户使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-portal)
-	- [在 Azure 应用商店中使用 Docker 快速入门](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)
 	- [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)
 	- [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-docker-swarm)
 	- [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-docker-compose-quickstart)
