@@ -23,25 +23,6 @@
 
 > [AZURE.NOTE]您只能将标记应用到支持资源管理器操作的资源。如果您是通过经典部署模型（如通过 Azure 门户或[服务管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948465.aspx)）创建的虚拟机、虚拟网络或存储，则无法将标记应用到该资源。您必须通过资源管理器重新部署这些资源才能支持标记。所有其他资源均支持标记。
 
-
-## 预览门户中的标记
-
-在预览门户中标记资源和资源组非常简单。使用“浏览”中心导航到要标记的资源或资源组，然后在边栏选项卡顶部的“概览”部分中单击“标记”部件。
-
-![资源和资源组边栏选项卡上的“标记”部件](./media/resource-group-using-tags/tag-icon.png)
-
-此时将打开一个边栏选项卡，其中包含已应用的标记列表。如果这是你的第一个标记，该列表将为空。若要添加标记，只需指定名称和值，然后按 Enter。添加若干个标记后，系统会根据预先存在的标记名称和值提供自动填充选项，以更好地确保各项资源的分类保持一致，并避免常见错误，如拼写错误。
-
-![使用名称/值对标记资源](./media/resource-group-using-tags/tag-resources.png)
-
-若要在门户中查看标记的分类，请使用“浏览”中心查看“所有内容”，然后选择“标记”。
-
-![通过“浏览”中心查找标记](./media/resource-group-using-tags/browse-tags.png)
-
-将最重要的标记固定启动板以便快速访问，准备工作到此完成。尽情使用吧！
-
-![将标记固定到启动板](./media/resource-group-using-tags/pin-tags.png)
-
 ## 使用 PowerShell 进行标记
 
 如果你以前没有对资源管理器使用过 Azure PowerShell，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。在本文中，我们假设您已添加一个帐户，并选择了包含您要标记的资源的订阅。
