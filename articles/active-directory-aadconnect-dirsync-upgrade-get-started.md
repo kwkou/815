@@ -18,7 +18,7 @@
 
 ## 下载 Azure AD Connect
 
-若要开始使用 Azure AD Connect，可以使用以下链接下载最新版本：[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+若要开始使用 Azure AD Connect，可以使用以下链接下载最新版本：[下载 Azure AD Connect 公共预览版](http://connect.microsoft.com/site1164/program8612)
 
 ## 安装 Azure AD Connect 之前
 在安装 Azure AD Connect 以及从 DirSync 升级之前，你需要做好以下几项准备。
@@ -41,9 +41,9 @@
 对于就地升级，将发生以下高级步骤：
 
 1. 欢迎使用 Azure AD Connect
-2. 当前 DirSync 配置的分析
+2. 分析当前 DirSync 配置
 3. 收集 Azure AD 全局管理员密码
-4. 收集企业管理员帐户的凭据（仅在 Azure AD Connect 安装期间使用）
+4. 收集企业管理员帐户的凭据（仅在 Azure AD Connect 的安装过程中使用）
 5. 安装 AAD Connect
     * 卸载 DirSync
 	* 安装 AAD Connect
@@ -60,7 +60,7 @@
 
 1. 查看并同意许可条款和隐私声明。
 
-![欢迎使用 Azure](./media/active-directory-aadconnect-dirsync-upgrade-get-started/Welcome.png)
+![欢迎使用 Azure AD](./media/active-directory-aadconnect-dirsync-upgrade-get-started/Welcome.png)
 
 2. 单击“下一步”分析现有的 DirSync 安装
 
@@ -121,7 +121,7 @@
 1. 运行 Azure AD Connect 安装程序 (MSI)
 2. 当你看到“欢迎使用 Azure AD Connect”屏幕时，请单击窗口右上角的“X”，以退出向导。
 3. 打开命令提示符
-4. 从 Azure AD Connect 的安装位置（默认值：C:\\Program Files\\Microsoft Azure Active Directory Connect）执行以下命令：  
+4. 从 Azure AD Connect 的安装位置（默认值：C:\\Program Files\\Windows Azure Active Directory Connect）执行以下命令：  
     * AzureADConnect.exe /migrate  
 
 Azure AD Connect 会连接并向你呈现以下 UI：
@@ -141,7 +141,8 @@ UI 中会显示以下选项：
 7. 单击“下一步”。   
 8. 在“已准备好配置”页上，保留选中“配置完成后立即开始同步过程”。  
 
-> [AZURE.NOTE]将会开始 Windows Server Active Directory 和 Azure Active Directory 之间的同步，但不会将任何更改导出到 Azure AD。每次只能有一个同步工具在主动导出更改。9.单击“安装”。
+> [AZURE.NOTE]将会开始 Windows Server Active Directory 和 Azure Active Directory 之间的同步，但不会将任何更改导出到 Azure AD。每次只能有一个同步工具在主动导出更改。
+9. 单击“安装”。
 
 > [AZURE.NOTE]取消选中“开始同步”复选框，确保 DirSync（仍已安装并正在运行）和 Azure AD Connect 未尝试同时写入到 AAD。
 
@@ -160,8 +161,8 @@ UI 中会显示以下选项：
 
 ### 卸载 DirSync（旧服务器）
 
-- 在“添加或删除程序”中找到“Microsoft Azure Active Directory 同步工具”
-- 卸载“Microsoft Azure Active Directory 同步工具”
+- 在“添加或删除程序”中找到“Windows Azure Active Directory 同步工具”
+- 卸载“Windows Azure Active Directory 同步工具”
 
 ### 打开 Azure AD Connect（新服务器）
 安装之后，重新打开 Azure AD Connect 时会提供配置体验。打开 Azure AD Connect。
@@ -199,7 +200,7 @@ UI 中会显示以下选项：
 * [Azure AD Connect 工作原理](/documentation/articles/active-directory-aadconnect-how-it-works)
 * [Azure AD Connect 后续步骤](/documentation/articles/active-directory-aadconnect-whats-next)
 * [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more)
-* [MSDN 上的 Azure AD Connect](/documentation/articles/active-directory-aadconnect)
+* [MSDN 上的 Azure AD Connect](https://msdn.microsoft.com/zh-cn/library/azure/dn832695.aspx)
  
 
 <!---HONumber=67-->

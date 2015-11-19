@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="10/13/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="08/24/2015"
+   wacn.date="11/02/2015"/>
 
 # Azure AD Connect：版本发布历史记录
 
@@ -133,7 +133,9 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **Azure AD Sync 的初始版本。**
 
-## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+## 其他资源
+<!-- [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis) -->
+
+[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)
 
 <!---HONumber=76-->

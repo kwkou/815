@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="10/13/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="09/03/2015"
+   wacn.date="11/02/2015"/>
 
 # Azure AD Connect 的设计概念
 本主题旨在说明 Azure AD Connect 实现设计期间必须考虑到的各个方面。这是特定领域的深入探讨，其他主题中也简要描述了这些概念。
@@ -32,7 +32,7 @@ sourceAnchor 属性定义为*在对象生存期内不会变化的属性*。它�
 属性值必须遵循以下规则：
 
 - 长度小于 60 个字符
-- 不包含特殊字符：&#92; ! # $ % & * + / = ? ^ &#96; { } | ~ < > ( ) ' ; : , [ ] " @ \_
+- 不包含特殊字符：&#92; ! # $ % & * + / = ? ^ &#96; { } | ~ < > ( ) ' ; : , [ ] " @ _
 - 必须全局唯一
 - 必须是字符串、整数或二进制数
 - 不应基于用户的名称
@@ -61,7 +61,5 @@ sourceAnchor 属性区分大小写。“JohnDoe”与“johndoe”是不同的�
 - 只能在初始安装期间设置 sourceAnchor 属性。如果你重新运行安装向导，此选项将是只读的。如果你需要更改此设置，必须卸载然后重新安装。
 - 如果你要安装其他 Azure AD Connect 服务器，则必须选择以前所用的同一 sourceAnchor 属性。如果以前使用 DirSync，现在想要迁移到 Azure AD Connect，则必须使用 **objectGUID**，因为这是 DirSync 所用的属性。
 - 如果 sourceAnchor 值在对象导出到 Azure AD 之后发生更改，则 Azure AD Connect Sync 将引发错误，并且不允许在更正问题且在源目录中改回 sourceAnchor 之前，对此对象进行任何其他更改。
-## 后续步骤
-了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
 
 <!---HONumber=76-->
