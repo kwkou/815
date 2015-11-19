@@ -131,24 +131,6 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 
 > [AZURE.NOTE]如果用户使用的不是基于 Azure AD 的帐户（包括 Azure SQL Server 管理员帐户），则无法创建基于 Azure AD 的用户，这是因为他们没有权限来使用 Azure AD 验证建议的数据库用户。
 
-### 通过使用 Azure 门户为 Azure SQL Server 设置 Azure Active Directory 管理员 
-
-1. 在 [Azure 门户](https://manage.windowsazure.cn)的右上角中，单击你的连接以下拉一个列表，列出可能存在的 Active Directory。选择正确的 Active Directory 作为默认的 Azure AD。此步骤将与 Active Directory 关联的订阅链接到 Azure SQL 数据库，确保为 Azure AD 和 SQL Server 使用相同的订阅。
-
-	![选择-ad][8]
-2. 在左侧标题中，选择“SQL 服务器”，选择你的“SQL 服务器”，然后在“SQL Server”边栏选项卡的顶部，单击“设置”。
-
-	![ad 设置][9]
-3. 在“设置”边栏选项卡中，单击“Active Directory 管理员（预览）”，并接受预览子句。
-4. 在“Active Directory 管理员（预览）”边栏选项卡中，单击以查看，然后单击“确定”接受预览条款。
-5. 在“Active Directory 管理员（预览）”边栏选项卡中，单击“Active Directory 管理员”，然后在顶部，单击“设置管理员”。
-6. 在“添加管理员”边栏选项卡中，搜索某个用户，选择该用户或组为管理员，然后单击“选择”。（“Active Directory 管理员”边栏选项卡将显示你的 Active Directory 的所有成员和组。若用户或组为灰显，则无法选择，因为不支持它们作为 Azure AD 管理员。（请参阅上述 **Azure AD 功能和限制**中受支持的管理员列表。）
-7. 在“Active Directory 管理员”边栏选项卡的顶部，单击“保存”。![选择管理员][10]
-
-	更改管理员的过程可能需要几分钟时间。然后，新管理员将出现在“Active Directory 管理员”框中。
-
-之后若要删除管理员，请在“Active Directory 管理员”边栏选项卡的顶部，单击“删除管理员”。
-
 ### 使用 PowerShell 为 Azure SQL Server 设置 Azure AD 管理员 
 
 若要继续，必须安装和配置最低为 0.9.8 版本的 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/#Install)。
