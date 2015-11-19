@@ -20,7 +20,6 @@
 
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/cloud-services-how-to-manage)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-manage-portal)
 
 在 Azure 门户的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便可以查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
 

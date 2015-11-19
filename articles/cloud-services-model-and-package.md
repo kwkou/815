@@ -139,7 +139,7 @@
 可以参考[服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)以更好了解此处使用的 XML 架构，而以下是元素的快速说明：
 
 >**实例**  
->为角色配置运行角色实例数。要防止云服务在升级期间可能变得不可用，建议你部署面向 Web 角色的多个实例。如此以来，则可遵守 [Azure 计算服务级别协议 (SLA)](http://azure.microsoft.com/support/legal/sla/) 中的准则，此协议可以保证在为一个服务部署了两个或多个角色实例时，面向 Internet 的角色有 99.95%的外部连接。
+>为角色配置运行角色实例数。要防止云服务在升级期间可能变得不可用，建议你部署面向 Web 角色的多个实例。如此以来，则可遵守 [Azure 计算服务级别协议 (SLA)](/support/legal/sla/) 中的准则，此协议可以保证在为一个服务部署了两个或多个角色实例时，面向 Internet 的角色有 99.95%的外部连接。
 
 >**ConfigurationSettings**  
 >为角色配置运行实例的设置。`<Setting>` 元素的名称必须与服务定义文件中的设置定义匹配。
@@ -271,7 +271,7 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsof
 
 * [配置本地存储资源](/documentation/articles/cloud-services-configure-local-storage-resources)
 * [为云服务实例设置远程桌面][remotedesktop]
-* [部署云服务项目][deploy]
+
 
 我正在使用 Visual Studio，我想要...
 
@@ -281,7 +281,6 @@ CSPack.exe（在 Windows 中）可通过运行随 SDK 一起安装的“Microsof
 * [为云服务实例设置远程桌面][vs_remote]
 
 
-[deploy]: /documentation/articles/cloud-services-how-to-create-deploy-portal
 [remotedesktop]: /documentation/articles/cloud-services-role-enable-remote-desktop
 [vs_remote]: https://msdn.microsoft.com/zh-cn/library/gg443832.aspx
 [vs_deploy]: https://msdn.microsoft.com/zh-cn/library/ee460772.aspx

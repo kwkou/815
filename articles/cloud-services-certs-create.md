@@ -70,7 +70,7 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 
 ## 后续步骤
 
-[上载服务证书到 Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)（或[预览门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)）并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
+[上载服务证书到 Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
 
 将[管理 API 证书](/documentation/articles/azure-api-management-certs)上载到 Azure 门户。
 
