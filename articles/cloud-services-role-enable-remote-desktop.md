@@ -8,8 +8,8 @@ manager="timlt"
 editor=""/>
 <tags 
 ms.service="cloud-services"  
-ms.date="07/06/2015" 
-wacn.date="10/17/2015"/>
+ms.date="10/14/2015" 
+wacn.date="11/12/2015"/>
 
 # 为 Azure 云服务中的角色设置远程桌面连接
 
@@ -34,7 +34,7 @@ wacn.date="10/17/2015"/>
     
     ![云服务远程](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)
     
-    > [AZURE.WARNING]当首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须对于此角色安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service)，然后返回到此对话框。
+    > [AZURE.WARNING]当首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须对于此角色安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)，然后返回到此对话框。
     
 
 3. 在“角色”中，选择要更新的角色，或选择“全部”以选择所有角色。
@@ -69,7 +69,7 @@ wacn.date="10/17/2015"/>
 
 在 Visual Studio 的“服务器资源管理器”中：
 
-1. 展开“Azure\\云服务\\[云服务名称]”节点。
+1. 展开“Azure\云服务\[云服务名称]”节点。
 2. 展开“暂存”或“生产”。
 3. 展开各个角色。
 4. 右键单击某一角色实例，单击“使用远程桌面连接...”，然后输入用户名和密码。 
@@ -89,11 +89,10 @@ wacn.date="10/17/2015"/>
 
 此方法允许你在开发过程中为应用程序启用远程桌面。此方法需要将加密的密码存储在服务配置文件中，并且如果对远程桌面配置进行了任何更新，将需要重新部署应用程序。如果你想要避免这些弊端，应使用上面所述的基于远程桌面扩展的方法。
 
-可以通过服务定义文件方法使用 Visual Studio [启用远程桌面连接](https://msdn.microsoft.com/zh-cn/library/gg443832.aspx)。
-下面的步骤介绍了要启用远程桌面需要对服务模型文件进行的更改。在发布时，Visual Studio 将自动进行这些更改。
+可以通过服务定义文件方法使用 Visual Studio 启用远程桌面连接。下面的步骤介绍了要启用远程桌面需要对服务模型文件进行的更改。在发布时，Visual Studio 将自动进行这些更改。
 
 ### 在服务模型中设置连接 
-使用 **Imports** 元素将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入到 [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package#csdef) 文件中。
+使用 **Imports** 元素将 **RemoteAccess** 模块和 **RemoteForwarder** 模块导入到 [ServiceDefinition.csdef](/documentation/articles/cloud-services-model-and-package/#csdef) 文件中。
 
 服务定义文件应类似于下面的示例，并添加 `<Imports>` 元素。
 
@@ -118,7 +117,7 @@ wacn.date="10/17/2015"/>
     </WebRole>
 </ServiceDefinition>
 ```
-[ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package#cscfg) 文件应类似于下面的示例，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素。指定的证书必须 [已上载到云服务](/documentation/articles/cloud-services-how-to-create-deploy#how-to-upload-a-certificate-for-a-cloud-service)。
+[ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件应类似于下面的示例，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素。指定的证书必须 [已上载到云服务](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,4 +143,4 @@ wacn.date="10/17/2015"/>
 
 [如何配置云服务](/documentation/articles/cloud-services-how-to-configure)
 
-<!---HONumber=74-->
+<!---HONumber=79-->

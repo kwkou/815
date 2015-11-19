@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="06/28/2015"
-	wacn.date="10/03/2015"/>
-
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -20,7 +19,6 @@
 
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/cloud-services-configure-ssl-certificate)
-- [Azure Preview Portal](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 
 安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。
 
@@ -44,7 +42,7 @@
 -   证书的使用者名称必须与用于访问云服务的域匹配。你无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。你必须获取在访问服务时要使用的自定义域名。在从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则将要从 CA 处请求用于 ****.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
-出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 cloudapp.net 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.cloudapp.net** 的自签名证书。
+出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证并可使用 chinacloudapp.cn 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
 
 接下来，你必须在服务定义和服务配置文件中包含有关此证书的信息。
 
@@ -140,13 +138,21 @@
 
     ![SSL 示例网站][3]
 
-若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在管理门户的"网站 URL"字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
+若要对过渡部署而非生产部署使用 SSL，你首先需要确定用于过渡部署的 URL。将云服务部署到过渡环境，而不包括证书或任何证书信息。部署后，你可以确定基于 GUID 的 URL，此 URL 将在管理门户的“网站 URL”字段中列出。使用等效于基于 GUID 的 URL（例如，**32818777-6e77-4ced-a8fc-57609d404462.chinacloudapp.cn**）的公用名 (CN) 创建一个证书，再使用管理门户将该证书添加到过渡云服务，将该证书的信息添加到你的 CSDEF 和 CSCFG 文件，重新打包你的应用程序，然后将过渡部署更新为使用新的包和 CSCFG 文件。
+
+## 后续步骤
+
+* [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)。
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage)。
+
 
   [Azure 管理门户]: http://manage.windowsazure.cn
-  [0]: ./media/cloud-services-dotnet-configure-ssl-certificate/CreateCloudService.png
-  [1]: ./media/cloud-services-dotnet-configure-ssl-certificate/AddCertificate.png
-  [2]: ./media/cloud-services-dotnet-configure-ssl-certificate/CopyURL.png
-  [3]: ./media/cloud-services-dotnet-configure-ssl-certificate/SSLCloudService.png
-  [4]: ./media/cloud-services-dotnet-configure-ssl-certificate/AddCertificateComplete.png  
+  [0]: ./media/cloud-services-configure-ssl-certificate/CreateCloudService.png
+  [1]: ./media/cloud-services-configure-ssl-certificate/AddCertificate.png
+  [2]: ./media/cloud-services-configure-ssl-certificate/CopyURL.png
+  [3]: ./media/cloud-services-configure-ssl-certificate/SSLCloudService.png
+  [4]: ./media/cloud-services-configure-ssl-certificate/AddCertificateComplete.png
 
-<!---HONumber=71-->
+<!---HONumber=79-->

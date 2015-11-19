@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="了解如何使用流分析管理 .NET SDK |Windows Azure" 
+	pageTitle="了解如何使用流分析管理 .NET SDK | Windows Azure" 
 	description="流分析管理 .NET SDK 入门。了解如何设置和运行分析作业：创建项目、输入、输出和转换。" 
-	keywords=".net skd,analytics jobs,event hub"
+	keywords=".net skd,分析作业,事件中心"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="08/19/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/06/2015" 
+	wacn.date="11/12/2015"/>
 
 
 # 使用 Azure 流分析管理 .NET SDK 设置和运行分析作业
@@ -31,20 +31,20 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 - 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)；  
 
 
-		# Configure the Azure PowerShell session to access Azure Resource Manager
-		Switch-AzureMode AzureResourceManager
-
 		# Log in to your Azure account
-		Add-AzureAccount -Environment AzureChinaCloud
+		Add-AzureAccount
 
 		# Select the Azure subscription you want to use to create the resource group
 		Select-AzureSubscription -SubscriptionName <subscription name>
 
-		# Create an Azure resource group	
-		New-AzureResourceGroup -Name <YOUR RESORUCE GROUP NAME> -Location <LOCATION>
+			# If Stream Analytics has not been registered to the subscription, remove the remark symbol (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
+			#Register-AzureRMProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
 
+		# Create an Azure resource group
+		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
+		
 
--	设置要使用的输入源和输出目标。请参阅 [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)，了解如何设置本文所要使用的示例输入和/或输出。
+-	设置要使用的输入源和输出目标。有关进一步的说明，请参阅[添加输入](/documentation/articles/stream-analytics-add-inputs)以设置示例输入，参阅[添加输出](/documentation/articles/stream-analytics-add-outputs)以设置示例输出。
 
 
 ## 设置项目
@@ -361,4 +361,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=69-->
+<!---HONumber=79-->

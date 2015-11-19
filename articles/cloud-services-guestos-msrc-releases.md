@@ -9,12 +9,23 @@
 
 <tags
    ms.service="cloud-services"
-   ms.date="09/14/2015"
-   wacn.dater="10/17/2015"/>
+   ms.date="10/18/2015"
+   wacn.date="11/12/2015"/>
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。若要确定特定的更新是否适用于你使用的来宾 OS，请搜索本文。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 10 月来宾 OS
+
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-106 | [3096441] | Internet Explorer 的累积安全更新 | 4\.25、3.32、2.44 | 2015 年 10 月 13 日 |
+| MS15-108 | [3089659] | JScript 和 VBScript 的安全更新，解决远程代码执行过程中可能存在的问题 | 2\.44 | 2015 年 10 月 13 日 |
+| MS15-109 | [3096443] | Windows Shell 安全更新，解决远程代码执行过程中的问题 | 4\.25、3.32、2.44 | 2015 年 10 月 13 日 |
+| MS15-111 | [3096447] | Windows 内核安全更新，解决权限提升过程中的问题 | 4\.25、3.32、2.44 | 2015 年 10 月 13 日 |
+| Microsoft 安全公告 | [3092627] | 2015 年 9 月更新，修复安装安全更新 3076895 后 Windows 或应用程序存在的冻结问题 | 4\.25、3.32、2.44 | 2015 年 10 月 13 日 |
+
 
 ## 9 月来宾 OS
 
@@ -167,6 +178,11 @@
 | 不适用 | [2999802][2999802] | 在 Windows 中打印时，虚线变成实线 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 | 不适用 | [2896881][2896881] | 在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 | 4\.15、3.22、2.34 | 2015 年 1 月 13 日 |
 
+[3096441]: http://support.microsoft.com/zh-cn/kb/3096441
+[3089659]: http://support.microsoft.com/zh-cn/kb/3089659
+[3096443]: http://support.microsoft.com/zh-cn/kb/3096443
+[3096447]: http://support.microsoft.com/zh-cn/kb/3096447
+[3092627]: http://support.microsoft.com/zh-cn/kb/3092627
 [3088903]: http://support.microsoft.com/zh-cn/kb/3088903
 [3089548]: http://support.microsoft.com/zh-cn/kb/3089548
 [3072595]: http://support.microsoft.com/zh-cn/kb/3072595
@@ -202,7 +218,7 @@
 
 [MS15-034]: https://technet.microsoft.com/zh-cn/library/security/MS15-034
 
-[3042553]: https://support.microsoft.com/zh-cn/kb/3042553/
+[3042553]: https://support.microsoft.com/zh-CN/zh-cn/kb/3042553/
 
 [3034682]: http://support.microsoft.com/zh-cn/kb/3034682
 [3036220]: http://support.microsoft.com/zh-cn/kb/3036220
@@ -282,4 +298,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=74-->
+<!---HONumber=79-->

@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="了解流分析关键概念 |Windows Azure" 
+	pageTitle="了解流分析关键概念 | Windows Azure" 
 	description="了解 Azure 流分析的关键概念：流分析作业的组件，包括支持的输入和输出、作业配置和度量值。" 
-	keywords="event processing,data stream,key concepts,serialization"	
+	keywords="事件处理,数据流,关键概念,序列化"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="08/19/2015" 
-	wacn.date="09/15/2015" />
+	ms.date="10/05/2015" 
+	wacn.date="11/12/2015" />
 
 
 # 流分析关键概念：流分析作业基础指南 
@@ -28,17 +28,20 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 
 有关详细信息，请参阅 [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)。
 
-流分析作业包括所有下述项目：- 一个或多个输入源 - 对传入数据流的查询 - 输出目标。
+流分析作业包括所有下述项目：
+- 一个或多个输入源
+- 对传入数据流的查询
+- 输出目标。    
 
 
 ## 输入
 
 ### 数据流
 
-每个流分析作业定义必须包含至少一种可供作业使用和转换的数据流输入源。[Azure Blob 存储](http://azure.microsoft.com/documentation/services/storage/)和 [Azure 事件中心](http://azure.microsoft.com/services/event-hubs/)均可作为数据流输入源。事件中心输入源可用于从多个不同的设备和服务收集事件流，而 Blob 存储则可用作输入源来引入大量的数据。由于 blob 不对数据进行流式处理，因此基于 blob 的流分析作业在本质上不会是临时性的，除非 blob 中的记录包含时间戳。
+每个流分析作业定义必须包含至少一种可供作业使用和转换的数据流输入源。[Azure Blob 存储](/services/storage/)和 [Azure 事件中心](/services/event-hubs/)均可作为数据流输入源。事件中心输入源可用于从多个不同的设备和服务收集事件流，而 Blob 存储则可用作输入源来引入大量的数据。由于 blob 不对数据进行流式处理，因此基于 blob 的流分析作业在本质上不会是临时性的，除非 blob 中的记录包含时间戳。
 
 ### 引用数据
-流分析还支持第二类输入源：引用数据。此类数据为辅助数据，用于执行关联性操作和查找操作，而且通常为静态数据或不会频繁更改的数据。只支持使用 [Azure Blob 存储](http://azure.microsoft.com/documentation/services/storage/)作为引用数据的输入源。引用数据源 blob 存在 50 MB 的大小限制。
+流分析还支持第二类输入源：引用数据。此类数据为辅助数据，用于执行关联性操作和查找操作，而且通常为静态数据或不会频繁更改的数据。只支持使用 [Azure Blob 存储](/services/storage/)作为引用数据的输入源。引用数据源 blob 存在 50 MB 的大小限制。
 
 若要支持刷新引用数据，用户需使用路径模式中的 {date} 和 {time} 令牌在输入配置中指定 blob 的列表。该作业将根据 blob 名称中使用 UTC 时区编码的日期和时间加载相应的 blob。
 
@@ -89,16 +92,16 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 	</tr>
 </table>
 
-###输入数据速度很慢甚至没有输入数据的分区
+### 输入数据速度很慢甚至没有输入数据的分区
 从包含多个分区的输入源读取数据且一个或多个分区在时间上延后或根本没有数据时，流处理作业需要确定如何处理这种情况，以便让事件能够源源不断地流经整个系统。输入设置“允许最长时间的到达延迟”控制着该行为，默认情况下设置为无限期地等待数据，这意味着事件的时间戳不会改变，而且事件的流速取决于最慢的输入分区，在一个或多个输入分区没有数据的情况下事件会停止流动。如果各个输入分区的数据分布很均衡且事件之间的时间一致性很重要，则可以使用这种设置。
 
 你还可以自行决定是否只等待有限的时间：“允许最长时间的到达延迟”会确定一个延迟时间，在该时间之后，作业可以决定是否跳过该事件继续执行相关操作，将延迟的输入分区放在后面，然后根据“晚到事件的操作”设置来处理事件，即如果事件晚到，则可以删除该事件或调整事件的时间戳。在延迟很严重且允许改变时间戳，但输入的分布不均衡的情况下，此设置很有用。
 
-###顺序混乱事件的分区
+### 顺序混乱事件的分区
 当流式处理作业查询使用 TIMESTAMP BY 关键字时，将无法保证要输入的事件的到达顺序。同一输入分区中，某些事件可能会延迟，而参数“输入中允许的最大无序程度”会导致流式处理作业根据“晚到事件的操作”设置对超出顺序容许度的事件进行处理，删除这些事件或调整这些事件的时间戳。
 
 ### 其他资源
-有关创建输入源的详细信息，请参阅 [Azure 事件中心开发人员指南](http://msdn.microsoft.com/zh-cn/library/azure/dn789972.aspx)和[使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
+有关创建输入源的详细信息，请参阅 [Azure 事件中心开发人员指南](/documentation/articles/event-hubs-programming-guide/)和[使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)。
 
 
 
@@ -125,7 +128,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 	FROM step1 
 	GROUP BY TumblingWindow (day, 1) 
 
-若要了解有关查询语言的详细信息，请参阅 [Azure 流分析查询语言参考](http://go.microsoft.com/fwlink/?LinkID=513299)。
+若要了解有关查询语言的详细信息，请参阅 [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/dn834998.aspx)。
 
 ## 输出
 输出目标是要向其写入流分析作业结果的地方。当作业处理输入事件时，结果将持续写入输出目标。支持以下输出目标：
@@ -135,8 +138,9 @@ Azure 流分析是一种完全托管的服务，可以在云中通过数据流�
 - Azure 表存储 - Azure 表存储是一种结构化的数据存储，对架构的约束较少。不同架构和类型的实体可以存储在相同的 Azure 表中。Azure 表存储可用于持久地存储数据，方便进行高效的检索。有关详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction)和[为 Azure 表存储设计可扩展分区策略](https://msdn.microsoft.com/zh-cn/library/azure/hh508997.aspx)。
 - Azure SQL 数据库 - 此输出目标适用于本质上为关系型数据的数据，或者适用于所依赖的内容在数据库中托管的应用程序。
 
-## 流式处理单位 ##
-Azure 流分析使用流式处理单位 (SU) 来代表执行作业的资源和能力，以便为客户提供可预测性更强的性能体验。在已经对 CPU、内存以及读取和写入速率进行测量的情况下，可以使用 SU 来描述相对的事件处理能力。每个流式处理单位大致相当于 1MB/秒的吞吐量。每个 Azure 流分析作业至少需要一个流式处理单位，这是所有作业的默认设置。若要详细了解如何为作业选择适当数量的 SU，请参阅[缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
+## 流式处理单位
+Azure 流分析使用流式处理单位 (SU) 来代表执行作业的资源和能力，以便为客户提供可预测性更强的性能体验。在已经对 CPU、内存以及读取和写入速率进行测量的情况下，可以使用 SU 来描述相对的事件处理能力。每个流式处理单位大致相当于 1MB/秒的吞吐量。  
+每个 Azure 流分析作业至少需要一个流式处理单位，这是所有作业的默认设置。若要详细了解如何为作业选择适当数量的 SU，请参阅[缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
 
 ## 缩放作业
 
@@ -164,7 +168,7 @@ Azure 流分析使用流式处理单位 (SU) 来代表执行作业的资源和�
 - 数据转换错误数 - 流分析作业导致的数据转换错误的数目。
 
 ### 操作日志
-对流分析作业进行调试或故障排除的最佳方式是通过 Azure 操作日志。操作日志可以在门户的**“管理服务”**部分进行访问。若要查看作业的日志，可将**“服务类型”**设置为**“流分析”**，将**“服务名称”**设置为作业的名称。
+对流分析作业进行调试或故障排除的最佳方式是通过 Azure 操作日志。操作日志可以在门户的“管理服务”部分中进行访问。若要查看作业的日志，可将**“服务类型”**设置为**“流分析”**，将**“服务名称”**设置为作业的名称。
 
 
 ## 管理作业 
@@ -203,4 +207,4 @@ Azure 流分析使用流式处理单位 (SU) 来代表执行作业的资源和�
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  
 
-<!---HONumber=69-->
+<!---HONumber=79-->

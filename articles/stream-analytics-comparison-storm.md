@@ -1,7 +1,7 @@
 <properties
 	pageTitle="比较：Apache Storm 和Azure 流分析 | Windows Azure"
 	description="了解如何使用流分析进行实时 Twitter 观点分析。在实时仪表板上提供从事件生成到数据的分步指南。"
-	keywords="real-time twitter,sentiment analysis,social media analysis,social media analytics tools"
+	keywords="实时 twitter,观点分析,社交媒体分析,社交媒体分析工具"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="08/19/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/12/2015"/>
 
 # Apache Storm 和 Azure 流分析的比较 #
 
@@ -574,7 +574,7 @@
             </td>
             <td width="204" valign="top">
                 <p>
-                    是，可以在 ASA 作业创建过程中通过将已发布的 Azure 机器学习模型配置为各种功能来完成。
+                    可以在 ASA 作业创建过程<a href="http://blogs.msdn.com/b/streamanalytics/archive/2015/05/24/real-time-scoring-of-streaming-data-using-machine-learning-models.aspx">（专用预览）</a>中通过将已发布的 Azure 机器学习模型配置为各种功能来完成。
                 </p>
             </td>
             <td width="246" valign="top">
@@ -586,4 +586,4 @@
     </tbody>
 </table>
 
-<!---HONumber=69-->
+<!---HONumber=79-->

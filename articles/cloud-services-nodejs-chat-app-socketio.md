@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Socket.io 生成 Node.js 应用程序 | Windows Azure" 
+	pageTitle="使用 Socket.io 构建 Node.js 应用程序 | Windows Azure" 
 	description="了解如何在 Azure 上托管的 node.js 应用程序中使用 socket.io。" 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 
@@ -28,7 +28,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 确保以下产品和版本已安装才能成功完成本文中的示例：
 
-* 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs.aspx)
+* 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-CN/downloads/download-visual-studio-vs.aspx)
 * 安装 [Node.js](https://nodejs.org/download/)
 * 安装 [Python 2.7.10 版](https://www.python.org/)
 
@@ -40,11 +40,11 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 	![Azure PowerShell 图标][powershell-menu]
 
-2. 创建一个名为 **c:\\node** 的目录。
+2. 创建一个名为 **c:\node** 的目录。
  
 		PS C:\> md node
 
-3. 将目录更改为 **c:\\node** 目录
+3. 将目录更改为 **c:\node** 目录
  
 		PS C:\> cd node
 
@@ -65,13 +65,13 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
     ![显示 https://github.com/LearnBoost/socket.io/tree/master/examples/chat 的浏览器窗口，其中 ZIP 下载图标突出显示][chat-example-view]
 
-2.  浏览本地存储库的目录结构，找到 **examples\\chat** 目录。将该目录的内容复制到早先创建的 **C:\\node\\chatapp\\WorkerRole1** 目录。
+2.  浏览本地存储库的目录结构，找到 **examples\chat** 目录。将该目录的内容复制到早先创建的 **C:\node\chatapp\WorkerRole1** 目录。
 
-    ![资源管理器，显示从存档中解压缩的 examples\\chat 目录的内容][chat-contents]
+    ![资源管理器，显示从存档中解压缩的 examples\chat 目录的内容][chat-contents]
 
-    上面的屏幕截图中突出显示的项目是从 **examples\\chat** 目录复制的文件
+    上面的屏幕截图中突出显示的项目是从 **examples\chat** 目录复制的文件
 
-3.  在 **C:\\node\\chatapp\\WorkerRole1** 目录中，删除 **server.js** 文件，然后将 **app.js** 文件重命名为 **server.js**。这将删除前面由 **Add-AzureNodeWorkerRole** cmdlet 创建的默认 **server.js** 文件并用聊天示例中的应用程序文件取代。
+3.  在 **C:\node\chatapp\WorkerRole1** 目录中，删除 **server.js** 文件，然后将 **app.js** 文件重命名为 **server.js**。这将删除前面由 **Add-AzureNodeWorkerRole** cmdlet 创建的默认 **server.js** 文件并用聊天示例中的应用程序文件取代。
 
 ### 修改 Server.js 并安装模块
 
@@ -79,12 +79,12 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 1.  在 Visual Studio 或任何文本编辑器中打开 **server.js** 文件。
 
-2.  在 server.js 的开头处查找 **Module dependencies** 节，将包含 **sio = require('..//..//lib//socket.io')** 的行改为 **sio = require('socket.io')**，如下所示：
+2.  在 server.js 的开头处查找 **Module dependencies** 节，将包含 **sio = require('../../lib/socket.io')** 的行改为 **sio = require('socket.io')**，如下所示：
 
 		var express = require('express')
   		, stylus = require('stylus')
   		, nib = require('nib')
-		//, sio = require('..//..//lib//socket.io'); //Original
+		//, sio = require('../../lib//socket.io'); //Original
   		, sio = require('socket.io');                //Updated
 
 3.  为了确保应用程序侦听正确端口，请在记事本或你喜爱的编辑器中打开 server.js，然后通过将 **3000** 替换为 **process.env.port** 来更改以下行，如下所示：
@@ -97,7 +97,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 保存对 **server.js** 所做更改后，使用以下步骤安装所需的模块，然后在 Azure 模拟器中测试应用程序：
 
-1.  使用 **Azure PowerShell**，将目录切换到 **C:\\node\\chatapp\\WorkerRole1** 目录，然后使用以下命令安装此应用程序所需的模块：
+1.  使用 **Azure PowerShell**，将目录切换到 **C:\node\chatapp\WorkerRole1** 目录，然后使用以下命令安装此应用程序所需的模块：
 
         PS C:\node\chatapp\WorkerRole1> npm install
 
@@ -123,11 +123,11 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 3.  测试应用程序之后，发出以下命令停止仿真程序：
 
-        PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
+	PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
 
 4.  若要将应用程序部署到 Azure，请使用 **Publish-AzureServiceProject** cmdlet。例如：
 
-        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
+	PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
 
 	> [AZURE.IMPORTANT]确保使用唯一名称，否则发布过程会失败。部署完成后，浏览器将打开并导航到已部署的服务。
 	> 
@@ -137,7 +137,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 	![显示托管在 Azure 上的服务的浏览器窗口][completed-app]
 
 
-	> [AZURE.NOTE]如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。
+	> [AZURE.NOTE]如果你收到一条错误，指出导入的发布配置文件中不存在提供的订阅名称，则你必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/develop/nodejs/)中的**将应用程序部署到 Azure**部分
 
 
 	你的应用程序现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
@@ -148,7 +148,9 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 在本教程中，你已了解如何创建在 Azure 云服务中托管的基本聊天应用程序。若要了解如何在 Azure 网站中托管此应用程序，请参阅[在 Azure 网站中使用 Socket.IO 生成 Node.js 聊天应用程序][chat Website]。
 
-  [chat Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio
+有关详细信息，另请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
+
+  [chat Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
   [Azure SLA]: /support/legal/sla
   [Azure SDK for Node.js GitHub repository]: https://github.com/WindowsAzure/azure-sdk-for-node
   [completed-app]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-10.png
@@ -169,4 +171,4 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
   [The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-9.png
   
 
-<!---HONumber=74-->
+<!---HONumber=79-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="06/29/2015"
-	wacn.date="10/17/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -19,7 +19,6 @@
 
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/cloud-services-how-to-configure)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-configure-portal)
 
 你可以在 Azure 管理门户中配置最常使用的云服务设置。或者，如果你希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
@@ -74,8 +73,12 @@ Azure 管理门户还允许你[为 Azure 云服务中的角色启用远程桌面
     4. 单击“确定”（复选标记）。
 
 
-## 其他资源
+## 后续步骤
 
-[为 Azure 云服务中的角色启用远程桌面连接](/documentation/articles/cloud-services-role-enable-remote-desktop)
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)。
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)。
+* [管理云服务](/documentation/articles/cloud-services-how-to-manage)。
+* [为 Azure 云服务中的角色启用远程桌面连接](/documentation/articles/cloud-services-role-enable-remote-desktop)
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)。
 
-<!---HONumber=74-->
+<!---HONumber=79-->

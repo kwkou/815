@@ -9,7 +9,7 @@
 <tags 
 	ms.service="multiple"  
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 是否应选择云服务？
 
@@ -26,13 +26,13 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 
 
 ## 后续步骤
-[在 .NET 中创建云服务应用](/documentation/articles/cloud-services-dotnet-get-started)<br/>
-[在 Node.js 中创建云服务应用](/documentation/articles/cloud-services-nodejs-develop-deploy-app)<br/>
-[在 PHP 中创建云服务应用](/documentation/articles/cloud-services-php-create-web-role)<br/>
-[在 Python 中创建云服务应用](/documentation/articles/cloud-services-python-ptvs)<br/>
+* [在 .NET 中创建云服务应用](/documentation/articles/cloud-services-dotnet-get-started)
+* [在 Node.js 中创建云服务应用](/documentation/articles/cloud-services-nodejs-develop-deploy-app)
+* [在 PHP 中创建云服务应用](/documentation/articles/cloud-services-php-create-web-role)
+* [在 Python 中创建云服务应用](/documentation/articles/cloud-services-python-ptvs)
 
 [App Service]: /documentation/articles/app-service-choose-me
-[虚拟机]: /documentation/articles/virtual-machines-choose-me
+[虚拟机]: /documentation/articles/virtual-machines-about
 [云服务]: #tellmecs
 
-<!---HONumber=74-->
+<!---HONumber=79-->

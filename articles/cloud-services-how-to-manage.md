@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="07/01/2015"
-	wacn.date="10/03/2015"/>
-
+	ms.date="09/22/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -21,7 +20,6 @@
 
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/cloud-services-how-to-manage)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-manage-portal)
 
 在 Azure 门户的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便可以查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
 
@@ -138,7 +136,7 @@
 
 1. 在[管理门户](http://manage.windowsazure.cn/)中单击“云服务”。
 
-2. 选择云服务，然后单击“删除”。（若要选择云服务而不打开仪表板，请单击除云服务条目中名称之外的任何位置。）
+2. 选择云服务，然后单击“删除”（若要选择云服务而不打开仪表板，请单击除云服务条目中名称之外的任何位置。）。
 
 	如果你的部署位于过渡或生产环境中，你会在窗口底部看到如下选择菜单。必须先删除所有现有部署，然后才能删除云服务。
 
@@ -151,6 +149,15 @@
 
 5. 要删除云服务，则单击“删除云服务”。然后在出现确认提示时单击“是”。
 
-> [AZURE.NOTE]如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅<a href="/documentation/articles/cloud-services-how-to-monitor">如何：监视云服务</a>中的“如何：在管理门户外部访问详细监视数据”。
+> [AZURE.NOTE]
+> 如果为云服务配置了详细监视，那么在删除云服务时，Azure 不会从你的存储帐户中删除监视数据。你将需要手动删除这些数据。有关在何处查找度量值表的信息，请参阅<a href="/documentation/articles/cloud-services-how-to-monitor">如何：监视云服务</a>中的“如何：在管理门户外部访问详细监视数据”。
 
-<!---HONumber=71-->
+
+## 后续步骤
+
+ * [云服务的常规配置](/documentation/articles/cloud-services-how-to-configure)
+* 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy)
+* 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name)
+* 配置 [ssl 证书](/documentation/articles/cloud-services-configure-ssl-certificate)
+
+<!---HONumber=79-->

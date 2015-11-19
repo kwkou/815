@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 云服务 - 所有你想要了解的关于证书的内容" 
+	pageTitle="云服务和管理证书 | Windows Azure" 
 	description="了解如何使用 Windows Azure 创建和使用证书" 
 	services="cloud-services" 
 	documentationCenter=".net" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.date="07/16/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/09/2015"
+	wacn.date="11/12/2015"/>
 
 # Azure 云服务的证书概述
 证书在 Azure 中用于云服务（[服务证书](#what-are-service-certificates)）以及用于使用管理 API 进行身份验证（[管理证书](#what-are-management-certificates)）。本主题同时提供了有关这两种证书类型的一般概述、如何[创建](#create)它们以及如何将其[部署](#deploy)到 Azure。
@@ -45,7 +45,7 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 * 包含私钥。
 * 为密钥交换（.pfx 文件）而创建。
 * 使用者名称必须与用于访问云服务的域匹配。
-    > 你无法获取 cloudapp.net 域（或与 Azure 相关的任何域）的 SSL 证书；该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，**contoso.net**，而不是 **contoso.cloudapp.net**。
+    > 你无法获取 chinacloudapp.cn 域（或与 Azure 相关的任何域）的 SSL 证书；该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，**contoso.net**，而不是 **contoso.chinacloudapp.cn**。
 * 至少为 2048 位加密。
 * **仅服务证书**：客户端证书必须驻留在*个人*证书存储区。
 
@@ -63,14 +63,17 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 在 internet 上有许多页面，包含了有关如何使用 IIS 实现此操作的信息。[此处](https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-in-iis-7.html)就是一个很棒的页面，我认为其说明很不错。
 
 ### Java
-你可以使用 Java [创建证书](/documentation/articles/java-create-azure-website-using-java-sdk#create-a-certificate)。
+你可以使用 Java [创建证书](/documentation/articles/java-create-azure-website-using-java-sdk/#create-a-certificate)。
+
+### Linux
+[本文](/documentation/articles/virtual-machines-linux-use-ssh-key)介绍如何通过 SSH 创建证书。
 
 ## 后续步骤
 
-[上载服务证书到 Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)（或[预览门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)）并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
+[上载服务证书到 Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate)并为云服务[对其进行配置](/documentation/articles/cloud-services-xml-certs)。
 
 将[管理 API 证书](/documentation/articles/azure-api-management-certs)上载到 Azure 门户。
 
 >[AZURE.NOTE]Azure 预览门户不使用管理证书来访问 API，而是使用用户帐户。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

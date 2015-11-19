@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="使用 Express (Node.js) 构建 Web 应用 | Windows Azure" 
 	description="本教程以云服务教程为基础，演示如何使用 Express 模块。" 
 	services="cloud-services" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="cloud-services" 
 	ms.date="09/01/2015" 
-	wacn.date="10/17/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 
@@ -35,7 +35,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 	[AZURE.INCLUDE [install-dev-tools](../includes/install-dev-tools.md)]
 
-2. 将目录切换到 **c:\\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
+2. 将目录切换到 **c:\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
 
 		PS C:\node> New-AzureServiceProject expressapp
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
@@ -124,9 +124,12 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 ![Web 浏览器中显示 Express 页。URL 指示它现在托管在 Azure 上。](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
+## 后续步骤
 
-  [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
+有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
+
+  [Node.js Web Application]: /develop/nodejs/
   [Express]: http://expressjs.com/
   [http://jade-lang.com]: http://jade-lang.com
 
-<!---HONumber=74-->
+<!---HONumber=79-->

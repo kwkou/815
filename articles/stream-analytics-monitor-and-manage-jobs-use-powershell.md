@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="使用 PowerShell 监视和管理流分析作业 | Windows Azure" 
 	description="了解如何使用 Azure PowerShell 和 cmdlet 监视和管理流分析作业。" 
-	keywords="azure powershell,azure powershell cmdlets,powershell command"	
+	keywords="azure powershell,azure powershell cmdlet,powershell 命令"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="08/19/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/06/2015" 
+	wacn.date="11/12/2015"/>
 
 
 # 使用 Azure PowerShell cmdlet 监视和管理流分析作业
@@ -21,24 +21,23 @@
 
 ## 针对流分析运行 Azure PowerShell cmdlet 的先决条件
 
-1.	安装和配置 Azure PowerShell。
-
-	请按[如何安装和配置 Azure PowerShell][powershell-install] 中的说明安装 Azure PowerShell。
-
-	若要使用 Azure Active Directory 方法来连接到 Azure 订阅，请执行以下操作：
-
-		Add-AzureAccount -Environment AzureChinaCloud
-
-	若要选择启用了 Azure 流分析服务的 Azure 订阅，请使用以下方法：
-
-		Select-AzureSubscription
+ - 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)；  
 
 
-2.	配置 Azure 模式。
+ 		# Log in to your Azure account
+		Add-AzureAccount
 
-	安装 Azure PowerShell 以后，请运行 [Switch-AzureMode][msdn-switch-azuremode] cmdlet 以设置访问流分析 cmdlet 所需的合适 Azure 模式：
+		# Select the Azure subscription you want to use to create the resource group
+		Select-AzureSubscription -SubscriptionName <subscription name>
+ 
+		# Create an Azure resource group	
+			# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
+			#Register-AzureRMProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
 
-		Switch-AzureMode AzureResourceManager
+		# Create an Azure resource group
+		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
+		
+
 
 > [AZURE.NOTE]以编程方式创建的流分析作业默认情况下并不启用监视功能。你可以在 Azure 门户中手动启用监视功能，只需导航到作业的“监视”页，然后单击“启用”按钮即可；你也可以通过编程方式来执行此操作，只需遵循 [Azure 流分析 - 以编程方式监视流分析作业](/documentation/articles/stream-analytics-monitor-jobs)中的步骤即可
 
@@ -134,7 +133,7 @@
 此 PowerShell 命令会使用文件中的定义来替换名为 EntryStream 的现有输入源的定义。
 
 ### New-AzureStreamAnalyticsJob
-在 Windows Azure 中创建新的流分析作业，或者更新现有的指定作业的定义。
+在 Microsoft Azure 中创建新的流分析作业，或者更新现有的指定作业的定义。
 
 作业的名称可以在 .json 文件中指定，也可以在命令行中指定。如果在两处同时指定，则命令行的名称必须与文件中的名称相同。
 
@@ -197,7 +196,8 @@
  此 PowerShell 命令替换作业 StreamingJob 中 StreamingJobTransform 的定义。
 
 ### Remove-AzureStreamAnalyticsInput
-以异步方式从 Windows Azure 的流分析作业中删除特定的输入。如果指定 -Force 参数，则会在不确认的情况下删除输入。
+以异步方式从 Microsoft Azure 的流分析作业中删除特定的输入。  
+如果指定 -Force 参数，则会在不确认的情况下删除输入。
 
 **示例 1**
 	
@@ -205,7 +205,8 @@
 此 PowerShell 命令删除作业 StreamingJob 中的输入 EventStream。
 
 ### Remove-AzureStreamAnalyticsJob
-以异步方式删除 Windows Azure 中的特定流分析作业。如果指定 -Force 参数，则会在不确认的情况下删除作业。
+以异步方式删除 Microsoft Azure 中的特定流分析作业。  
+如果指定 -Force 参数，则会在不确认的情况下删除作业。
 
 **示例 1**
 
@@ -213,7 +214,8 @@
 此 PowerShell 命令删除作业 StreamingJob。
 
 ### Remove-AzureStreamAnalyticsOutput
-以异步方式从 Windows Azure 的流分析作业中删除特定的输出。如果指定 -Force 参数，则会在不确认的情况下删除输出。
+以异步方式从 Microsoft Azure 的流分析作业中删除特定的输出。  
+如果指定 -Force 参数，则会在不确认的情况下删除输出。
 
 **示例 1**
 
@@ -221,7 +223,7 @@
 此 PowerShell 命令删除作业 StreamingJob 中的输出 Output。
 
 ### Start-AzureStreamAnalyticsJob
-以异步方式部署和启动 Windows Azure 中的流分析作业。
+以异步方式部署和启动 Microsoft Azure 中的流分析作业。
 
 **示例 1**
 
@@ -231,7 +233,7 @@
 
 
 ### Stop-AzureStreamAnalyticsJob
-以异步方式停止流分析作业在 Windows Azure 中的运行，并取消分配所使用的资源。在订阅中，你将始终可以通过 Azure 门户和管理 API 来使用作业定义和元数据，方便你编辑和重新启动该作业。处于停止状态的作业不收费。
+以异步方式停止流分析作业在 Microsoft Azure 中的运行，并取消分配所使用的资源。在订阅中，你将始终可以通过 Azure 门户和管理 API 来使用作业定义和元数据，方便你编辑和重新启动该作业。处于停止状态的作业不收费。
 
 **示例 1**
 
@@ -281,7 +283,7 @@
 [stream.analytics.developer.guide]: /documentation/articles/stream-analytics-developer-guide
 [stream.analytics.scale.jobs]: /documentation/articles/stream-analytics-scale-jobs
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
-[stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
+[stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
  
 
-<!---HONumber=69-->
+<!---HONumber=79-->
