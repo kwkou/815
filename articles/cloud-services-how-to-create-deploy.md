@@ -19,7 +19,6 @@
 
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/cloud-services-how-to-create-deploy)
-- [Azure Preview Portal](/documentation/articles/cloud-services-how-to-create-deploy-portal)
 
 Azure 门户为你提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。
 
