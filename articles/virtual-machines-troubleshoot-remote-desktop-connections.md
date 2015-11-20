@@ -32,8 +32,6 @@
 
 - 从 [Azure 门户](https://manage.windowsazure.cn)重置远程桌面服务。单击“浏览全部”>“虚拟机(经典)”> 你的 Windows 虚拟机 >“重置远程访问”。
 
-![重置远程访问](./media/virtual-machines-troubleshoot-remote-desktop-connections/Portal-RDP-Reset-Windows.png)
-
 - [重新启动虚拟机](https://msdn.microsoft.com/zh-cn/library/azure/dn763934.aspx)。
 
 - [调整虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。

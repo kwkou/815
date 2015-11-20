@@ -45,23 +45,6 @@
 单击“创建”使用标记值部署此模板。
 
 
-## 通过门户进行标记
-
-使用标记创建资源后，可以在门户中查看、添加和删除该标记。
-
-选择标记图标，以查看标记：
-
-![Azure 门户中的标记图标](./media/virtual-machines-tagging-arm/azure-portal-tags-icon.png)
-
-通过定义你自己的键/值对，使用门户添加新标记并将其保存。
-
-![通过 Azure 门户添加新标记](./media/virtual-machines-tagging-arm/azure-portal-add-new-tag.png)
-
-新标记现在应在资源的标记列表中显示。
-
-![Azure 门户中保存的新标记](./media/virtual-machines-tagging-arm/azure-portal-saved-new-tag.png)
-
-
 ## 使用 PowerShell 进行标记
 
 若要通过 PowerShell 创建、添加和删除标记，首先需要设置[将 PowerShell 环境用于 Azure 资源管理器][]。一旦完成安装后，可以在创建时或创建资源之后通过 PowerShell 将标记放置在计算、网络和存储资源中。本文章将重点说明查看/编辑虚拟机上放置的标记。

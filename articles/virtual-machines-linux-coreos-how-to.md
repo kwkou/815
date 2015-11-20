@@ -119,10 +119,6 @@ azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem
 
 6. 通过重复步骤 4 中的命令来创建第三个节点，使用 **node-3** 替换 **--vm-name** 值，并使用 3022 替换 **--ssh** 端口值。
 
-从下方的截图中，你可以看到 CoreOS 群集在门户中显示时的样子。
-
-![][EmptyCoreOSCluster]
-
 ### 在 Azure VM 中测试你的 CoreOS 群集
 
 若要测试你的群集，请确保你位于工作目录中，然后使用 **ssh** 连接到 **node-1**，并通过键入以下命令传递私钥：

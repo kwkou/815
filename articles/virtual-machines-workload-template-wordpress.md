@@ -19,23 +19,7 @@
 
 ![](./media/virtual-machines-workload-template-wordpress/one-server-wordpress.png)
 
-可以使用 Azure 预览门户、Azure PowerShell 或 Azure CLI 运行模板。
-
-## Azure 预览门户
-
-要使用资源管理器模板和 Azure 预览门户部署此工作负荷，请单击[此处](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json)。
-
-![](./media/virtual-machines-workload-template-wordpress/azure-portal-template.png)
-
-1.	在“模板”窗格中，单击“保存”。
-2.	单击“参数”。在“参数”窗格上，输入新值、从允许的值中选择，或者接受默认值，然后单击“确定”。
-3.	如有需要，可单击“订阅”并选择正确的 Azure 订阅。
-4.	单击“资源组”并选择现有的资源组。或者，单击“或新建”为此工作负荷创建新的资源组。
-5.	如有需要，可单击“资源组位置”并选择正确的 Azure 位置。
-6.	如有需要，可单击“法律条款”以查看使用模板的条款条件和协议。
-7.	单击“创建”。
-
-根据具体模板，Azure 可能需花费一些时间生成工作负荷。完成时，你的现有或新资源组中将出现一个新的在 Ubuntu 上运行的 WordPress 服务器。
+可以使用 Azure PowerShell 或 Azure CLI 运行模板。
 
 ## Azure PowerShell
 

@@ -19,7 +19,7 @@
 
 ## Oracle 虚拟机映像
 
-有关最新的一组基于 Windows 和基于 Linux 的虚拟机映像，请参阅 [Oracle 虚拟机映像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)。
+<!-- 有关最新的一组基于 Windows 和基于 Linux 的虚拟机映像，请参阅 [Oracle 虚拟机映像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)。 -->
 
 ## 基于 Windows 的虚拟机的相关注意事项
 

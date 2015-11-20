@@ -71,8 +71,6 @@ Docker VM 扩展是在你创建的 VM 实例中安装的组件，它会自行安
 
 <!--Anchors-->
 [如何从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展]: /zh-cn/documentation/articles/virtual-machines-docker-with-xplat-cli/
-[如何在 Azure 门户中使用 Docker VM 扩展]: /zh-cn/documentation/articles/virtual-machines-docker-with-portal/
-[如何在 Azure 应用商店中快速开始使用 Docker]: /documentation/articles/virtual-machines-docker-ubuntu-quickstart
 [Docker 和 Linux 容器]: #Docker-and-Linux-Containers
 [如何对 Azure 使用 Docker VM 扩展]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [适用于 Linux 和 Windows 的虚拟机扩展]: #Virtual-Machine-Extensions-For-Linux-and-Windows

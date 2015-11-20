@@ -17,18 +17,6 @@
 
 >[AZURE.NOTE]自动修补依赖 SQL Server IaaS 代理。要安装和配置该代理，必须在目标虚拟机上运行 Azure VM 代理。较新的虚拟机库映像已默认启用此选项，但现有 VM 可能缺少 Azure VM 代理。如果使用你自己的 VM 映像，也需要安装 SQL Server IaaS 代理。有关详细信息，请参阅 [VM 代理和扩展](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/)。
 
-## 在门户中配置自动修补
-
-在创建新的 SQL Server 虚拟机时，可以使用 [Azure 预览门户](http://go.microsoft.com/fwlink/?LinkID=525040&clcid=0x409)配置自动修补。以下屏幕截图显示了“可选配置”|“SQL 自动修补”下的这些选项。
-
-![Azure 门户中的 SQL 自动修补](./media/virtual-machines-sql-server-automated-patching/IC778484.jpg)
-
-对于现有的 SQL Server 2012 或 2014 虚拟机，请在虚拟机属性的“配置”部分选择“自动修补”设置。在“自动修补”窗口中，可以启用功能、设置维护计划和起始小时，以及选择维护时段持续时间。如以下屏幕快照中所示。
-
-![Azure 门户中的自动修补配置](./media/virtual-machines-sql-server-automated-patching/IC792132.jpg)
-
->[AZURE.NOTE]当你首次启用自动修补时，Azure 将在后台配置 SQL Server IaaS 代理。在此期间，门户将不会显示自动修补已配置。请等待几分钟，以便安装和配置代理。之后，该门户将反映新的设置。
-
 ## 使用 PowerShell 配置自动修补
 
 你也可以使用 PowerShell 来配置自动修补。

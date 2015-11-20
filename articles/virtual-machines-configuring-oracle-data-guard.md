@@ -604,7 +604,4 @@ Oracle Data Guard 支持对 Oracle Database 的数据保护和灾难恢复。它
 
 我们建议你在主数据库和备用数据库上启用闪回数据库。发生故障转移时，主数据库可以闪回到故障转移前的时间，并将其快速转换为备用数据库。
 
-##其他资源
-[Azure 的 Oracle 虚拟机映像](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
-
 <!---HONumber=67-->

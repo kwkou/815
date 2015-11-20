@@ -84,7 +84,4 @@ Azure 向每个虚拟机分配一个内部 IP 地址。除非 VM 是虚拟网络
 
 -  **64 位 JDK。** Azure 提供的 Oracle WebLogic Server 虚拟机映像和 Oracle JDK 虚拟机映像同时包含 64 位版本的 Windows Server 和 JDK。
 
-##其他资源
-[Azure 的 Oracle 虚拟机映像](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
-
 <!---HONumber=67-->
