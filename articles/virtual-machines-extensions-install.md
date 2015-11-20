@@ -1,21 +1,21 @@
 <properties 
-	 pageTitle="管理虚拟机扩展 | Windows Azure" 
-	 description="介绍如何添加、查找、更新和删除扩展。" 
-	 services="virtual-machines" 
-	 documentationCenter="" 
-	 authors="squillace" 
-	 manager="timlt" 
-	 editor=""/>
+ pageTitle="管理虚拟机扩展 | Windows Azure" 
+ description="介绍如何添加、查找、更新和删除扩展。" 
+ services="virtual-machines" 
+ documentationCenter="" 
+ authors="squillace" 
+ manager="timlt" 
+ editor=""/>
 <tags 
-	 ms.service="virtual-machines" 
-	 ms.date="03/10/2015" 
-	 wacn.date="09/15/2015"/>
+ ms.service="virtual-machines" 
+ ms.date="08/25/2015" 
+ wacn.date="11/12/2015"/>
 #管理虚拟机扩展
 介绍如何在 Azure 上查找、添加、修改或删除 Windows 或 Linux 虚拟机的 VM 扩展。
 
 ##使用 VM 扩展
 
-Azure VM 扩展实现了可帮助其他程序在 Azure 虚拟机上正常工作的行为或功能（例如，**WebDeployForVSDevTest** 扩展允许 Visual Studio 在 Azure VM 上对解决方案进行 Web 部署），或为你提供与 VM 交互的功能以支持某种其他行为（例如，你可以使用 VM 访问扩展从 Powershell、xplat-cli 和 REST 客户端重置或修改 Azure VM 上的远程访问值）。
+Azure VM 扩展实现了可帮助其他程序在 Azure VM 上正常工作的行为或功能（例如，**WebDeployForVSDevTest** 扩展允许 Visual Studio 在 Azure VM 上对解决方案进行 Web 部署），或为你提供与 VM 交互的功能以支持某种其他行为（例如，你可以使用 VM 访问扩展从 Powershell、Azure CLI 和 REST 客户端重置或修改 Azure VM 上的远程访问值）。
 
 >[AZURE.IMPORTANT]有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。由于每个 VM 扩展都支持特定功能，因此使用扩展确切地可以和不可以执行哪些操作取决于该扩展。因此，在修改 VM 之前，请确保你已阅读要使用的 VM 扩展的文档。不支持删除某些 VM 扩展；其他 VM 扩展具有可设置以从根本上更改 VM 行为的属性。
 
@@ -34,7 +34,7 @@ Azure VM 扩展实现了可帮助其他程序在 Azure 虚拟机上正常工作�
 Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整列表，请参阅 [Azure VM 扩展和功能](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx)）。 可以使用以下项查找扩展和扩展信息：
 
 -   PowerShell
--   Azure 跨平台界面 (xplat-cli)
+-   Azure 跨平台界面 (Azure CLI)
 -   服务管理 REST API
 
 [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/dn495240.aspx) cmdlet 或[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) 用于查找有关可用扩展的信息。
@@ -74,13 +74,13 @@ Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整�
         CompanyName                 :
 
 
-###Azure 命令行界面 (xplat-cli)
+###Azure 命令行界面 (Azure CLI)
 
-某些扩展使用特定于它们的 xplat-cli 命令（Docker VM 扩展就是一个例子），这可能会使其配置更容易；但以下命令适用于所有 VM 扩展。
+某些扩展使用特定于它们的 Azure CLI 命令（Docker VM 扩展就是一个例子），这可能会使其配置更容易；但以下命令适用于所有 VM 扩展。
 
 可以使用 **azure vm extension list** 命令获取有关可用扩展的信息，并使用 **–-json** 选项显示有关一个或多个扩展的所有可用信息。如果不使用扩展名称，该命令将返回所有可用扩展的 json 描述。
 
-例如，以下代码示例显示如何使用 xplat-cli **azure vm extension list** 命令列出 **IaaSDiagnostics** 扩展的信息，并使用 **–-json** 选项返回完整信息。
+例如，以下代码示例显示如何使用 Azure CLI **azure vm extension list** 命令列出 **IaaSDiagnostics** 扩展的信息，并使用 **–-json** 选项返回完整信息。
 
 
     $ azure vm extension list -n IaaSDiagnostics --json
@@ -133,4 +133,4 @@ Azure VM 扩展是（有关这些扩展按它们支持的功能列出的完整�
 
 >[AZURE.NOTE]扩展也可以使用使用 JSON 定义的配置。使用这些类型的扩展时，仅使用 **SampleConfig** 元素。
 
-<!---HONumber=69-->
+<!---HONumber=79-->

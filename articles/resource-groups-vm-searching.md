@@ -5,16 +5,18 @@
    documentationCenter=""
    authors="squillace"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager"
+   />
 
 <tags
    ms.service="virtual-machines"
-   ms.date="05/29/2015"
-   wacn.date="09/15/2015"/>
+   ms.date="08/25/2015"
+   wacn.date="11/12/2015"/>
 
-# 使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像
+# 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像
 
-> [AZURE.NOTE]当你在本主题中搜索 VM 映像时，将要在 [Azure 资源管理模式](/documentation/articles/resource-group-overview)下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行界面，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)和[将 PowerShell 与 Azure 资源管理配合使用](/documentation/articles/powershell-azure-resource-manager)。
+> [AZURE.NOTE]当你在本主题中搜索虚拟机映像时，你在 [Azure 资源管理器模式](/documentation/articles/resource-group-overview.md)下，使用最近安装的适用于 Mac、Linux 和 Windows 的 Azure 命令行接口，或者使用 Windows PowerShell。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。使用 PowerShell 时，请键入 `Switch-AzureMode AzureResourceManager`。有关完整的更新和配置详细信息，请参阅[将 Azure CLI 与资源管理器配合使用](/documentation/articles/xplat-cli-azure-resource-manager)和[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 
 ## 常用映像表
 
@@ -27,8 +29,8 @@
 | CoreOS | CoreOS | Stable |
 | MicrosoftDynamicsNAV | DynamicsNAV | 2015 |
 | MicrosoftSharePoint | MicrosoftSharePointServer | 2013 |
-| msopentech | Oracle-Database-12c-Weblogic-Server-12c | 标准 |
-| msopentech | Oracle-Database-12c-Weblogic-Server-12c | Enterprise |
+| Microsoft | Oracle-Database-12c-Weblogic-Server-12c | 标准 |
+| Microsoft | Oracle-Database-12c-Weblogic-Server-12c | Enterprise |
 | MicrosoftSQLServer | SQL2014-WS2012R2 | Enterprise-Optimized-for-DW |
 | MicrosoftSQLServer | SQL2014-WS2012R2 | Enterprise-Optimized-for-OLTP |
 | Canonical | UbuntuServer | 12\.04.5-LTS |
@@ -117,7 +119,7 @@
     data:    canonical  ubuntuserver  15.04-DAILY  chinanorth  
     info:    vm image list-skus command OK
 
-现在，使用此信息在顶部调用原始调用，即可找到所需的映像。
+利用这些信息，现在可以通过在顶部调用原始调用，准确地找到你需要的映像。
 
     azure vm image list chinanorth canonical ubuntuserver 14.04.2-LTS
     info:    Executing command vm image list
@@ -131,15 +133,9 @@
 
 现在，你可以确切地选择想要使用的映像。若要使用你刚刚找到的 URN 信息快速创建 VM，或要使用包含该 URN 信息的模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
 
-### 视频演练
-
-此视频演示如何使用 CLI 完成上述步骤。
-
-[AZURE.VIDEO resource-groups-vm-searching-cli]
 
 
 ## PowerShell
-
 
 使用 Azure 资源管理器创建新的虚拟机时，在某些情况下，你需要使用以下映像属性组合来指定映像：
 
@@ -149,7 +145,7 @@
 
 例如，**Set-AzureVMSourceImage PowerShell** cmdlet 或资源组模板文件需要这些值，而在此文件中，你必须指定要创建的虚拟机类型。
 
-如果你需要确定这些值，可以浏览映像以确定这些值，方法是：
+如果你需要确定这些值，可以浏览映像以确定这些值：
 
 1. 列出映像发布者。
 2. 对于给定的发布者，列出其产品。
@@ -218,13 +214,6 @@
 
 从此列表中复制选择的 SKU 名称，然后你将获得 **Set-AzureVMSourceImage** PowerShell cmdlet 或资源组模板文件的所有信息，而资源组模板文件需要你指定映像的发布者、产品和 SKU。
 
-### 视频演练
-
-此视频演示如何使用 PowerShell 完成上述步骤。
-
-[AZURE.VIDEO resource-groups-vm-searching-posh]
-
-
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png
 [6]: ./media/markdown-template-for-new-articles/pretty49.png
@@ -236,4 +225,4 @@
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=69-->
+<!---HONumber=79-->

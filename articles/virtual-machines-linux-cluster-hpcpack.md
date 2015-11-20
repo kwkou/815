@@ -1,15 +1,16 @@
 <properties
- pageTitle="HPC Pack 群集中的 Linux 计算节点入门 | Windows Azure"
+ pageTitle="在 HPC Pack 群集中使用 Linux 计算 VM | Windows Azure"
  description="了解如何编写脚本以部署 Azure 中包含运行 Windows Server 的头节点和 Linux 计算节点的 HPC Pack 群集。"
  services="virtual-machines"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
- editor=""/>
+ editor=""
+ tags="azure-service-management"/>
 <tags
-ms.service="virtual-machines"
- ms.date="07/27/2015"
- wacn.date="09/15/2015"/>
+	ms.service="virtual-machines"
+ 	ms.date="09/01/2015"
+	wacn.date="11/12/2015"/>
 
 # Azure 的 HPC Pack 群集中的 Linux 计算节点入门
 
@@ -62,9 +63,9 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
   <HeadNode>
     <VMName>CentOS7RDMA-HN</VMName>
     <ServiceName>centos7rdma-je</ServiceName>
-<VMSize>A4</VMSize>
-<EnableRESTAPI />
-    <EnableWebPortal />
+  <VMSize>A4</VMSize>
+  <EnableRESTAPI />
+  <EnableWebPortal />
   </HeadNode>
   <LinuxComputeNodes>
     <VMNamePattern>CentOS7RDMA-LN%1%</VMNamePattern>
@@ -94,7 +95,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
 * **VNet** - 将在其中创建 HPC 群集的虚拟网络和子网的设置。在运行此脚本之前你可以自己创建虚拟网络和子网，否则此脚本将使用地址空间 192.168.0.0/20 创建虚拟网络，使用地址空间 192.168.0.0/23 创建子网。在本示例中，此脚本将创建虚拟网络 centos7rdmavnetje 和子网 CentOS7RDMACluster。
 
-* **Domain** - HPC Pack 群集的 Active Directory 域设置。此脚本创建的所有 Windows VM 都将加入该域。目前，此脚本支持三个域选项：ExistingDC、NewDC 和 HeadNodeAsDC。在本示例中，我们将头节点配置为域控制器。完全限定域名是 hpc.local。
+* **Domain** - HPC Pack 群集的 Active Directory 域设置。此脚本创建的所有 Windows VM 都将加入该域。目前，此脚本支持三个域选项：ExistingDC、NewDC 和 HeadNodeAsDC。在本示例中，我们使用完全限定域名 hpc.local 将头节点配置为域控制器。
 
 * **Database** - HPC Pack 群集的数据库设置。目前，此脚本支持三个数据库选项：ExistingDB、NewRemoteDB 和 LocalDB。在本示例中，我们将在头节点上创建本地数据库。
 
@@ -112,7 +113,7 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 
     找到所需的映像，然后替换配置文件中的 **ImageName** 值。
 
-* 对 A8 和 A9 大小 VM 支持 RDMA 连接的 Linux 映像可用。如果你指定的映像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，你可以为当前 SUSE Linux Enterprise Server 12（已针对应用商店中的高性能计算映像进行优化）指定映像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
+* 对 A8 和 A9 大小 VM 支持 RDMA 连接的 Linux 映像可用。如果你指定的映像安装并启用了 Linux RDMA 驱动程序，则 HPC Pack IaaS 部署脚本将部署这些驱动程序。例如，为当前 SUSE Linux Enterprise Server 12（已针对应用商店中的高性能计算映像进行优化）指定映像名称 `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708`。
 
 
 * 若要在从支持的映像创建的 Linux VM 上启用 Linux RDMA 以运行 MPI 作业，请在群集部署后根据应用程序需求在 Linux 节点上安装并配置特定的 MPI 库。有关如何在 Azure 上的 Linux 节点中使用 RDMA 的详细信息，请参阅[设置 Linux RDMA 群集以运行 MPI 应用程序](/documentation/articles/virtual-machines-linux-cluster-rdma)。
@@ -127,14 +128,14 @@ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文�
 2. 将目录更改到脚本文件夹（在此示例中为 E:\\IaaSClusterScript）。
 
     ```
-cd E:\IaaSClusterScript
-```
+    cd E:\IaaSClusterScript
+    ```
 
 3. 运行以下命令以部署 HPC Pack 群集。本示例假定配置文件位于 E:\\HPCDemoConfig.xml。
 
     ```
     .\New-HpcIaaSCluster.ps1 –ConfigFile E:\HPCDemoConfig.xml –AdminUserName MyAdminName
-```
+    ```
 
     由于未指定 **-LogFile** 参数，此脚本将自动生成日志文件。日志不是实时写入，而是在验证和部署结束时收集，因此如果在运行此脚本时停止了 PowerShell 进程，则某些日志将丢失。
 
@@ -148,7 +149,7 @@ cd E:\IaaSClusterScript
 
     ![资源][resources]
 
-    d.然后，此脚本将开始部署 HPC Pack 群集并将完成配置，而无需进一步手动步骤。这可能需要几分钟。
+    d.此脚本开始部署 HPC Pack 群集并完成配置，而无需进一步手动步骤。这可能需要几分钟。
 
     ![部署][deploy]
 
@@ -179,8 +180,8 @@ cd E:\IaaSClusterScript
 在此示例中，我们将在存储帐户 allvhdsje 上创建一个名为 rdma 的 Azure 文件共享。为了在头节点上装载该共享，我们打开命令窗口并输入以下命令：
 
 ```
-> cmdkey /add:allvhdsje.file.core.windows.net /user:allvhdsje /pass:<storageaccountkey>
-> net use Z: \\allvhdje.file.core.windows.net\rdma /persistent:yes
+> cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
+> net use Z: \\allvhdje.file.core.chinacloudapi.cn\rdma /persistent:yes
 ```
 
 在此示例中，allvhdsje 是存储帐户名称，storageaccountkey 是存储帐户密钥，rdma 是 Azure 文件共享名称。该 Azure 文件共享将装载到头节点的 Z: 上。
@@ -192,12 +193,12 @@ cd E:\IaaSClusterScript
 ```
 PS > clusrun /nodegroup:LinuxNodes mkdir -p /rdma
 
-PS > clusrun /nodegroup:LinuxNodes mount -t cifs //allvhdsje.file.core.windows.net/rdma /rdma -o vers=2.1`,username=allvhdsje`,password=<storageaccountkey>'`,dir_mode=0777`,file_mode=0777
+PS > clusrun /nodegroup:LinuxNodes mount -t cifs //allvhdsje.file.core.chinacloudapi.cn/rdma /rdma -o vers=2.1`,username=allvhdsje`,password=<storageaccountkey>'`,dir_mode=0777`,file_mode=0777
 ```
 
-第一个命令在 LinuxNodes 组中的所有节点上创建名为 /rdma 的文件夹。第二个命令将 Azure 文件共享 allvhdsjw.file.core.windows.net/rdma 装载到 /rdma 文件夹上，并将目录和文件模式位设置为 777。在第二个命令中，allvhdsje 是存储帐户名称，storageaccountkey 是存储帐户密钥。
+第一个命令在 LinuxNodes 组中的所有节点上创建名为 /rdma 的文件夹。第二个命令将 Azure 文件共享 allvhdsjw.file.core.chinacloudapi.cn/rdma 装载到 /rdma 文件夹上，并将目录和文件模式位设置为 777。在第二个命令中，allvhdsje 是存储帐户名称，storageaccountkey 是存储帐户密钥。
 
->[AZURE.NOTE]第二个命令中的 “`” 符号是 PowerShell 的转义符号。“`,” 表示 “,”（逗号）是命令的一部分。
+>[AZURE.NOTE]第二个命令中的 “`” 符号是 PowerShell 的转义符号。“`,” 表示 “,”（逗号字符）是命令的一部分。
 
 ### 头节点共享
 
@@ -307,4 +308,4 @@ HPC Pack **clusrun** 工具可用于通过命令窗口或 HPC 群集管理器在
 [nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
 [nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
 
-<!---HONumber=69-->
+<!---HONumber=79-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 中将磁盘附加到运行 Linux 的虚拟机"
-	description="了解如何将数据磁盘附加到 Azure 虚拟机并将其初始化，以便它可供使用。"
+	pageTitle="将磁盘附加到 Linux 虚拟机 | Windows Azure"
+	description="了解如何将数据磁盘附加到 Azure 上运行的 Linux 虚拟机并将其初始化，以便它可供使用。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -11,9 +11,11 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/11/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用 Azure 服务管理器附加磁盘。
 
 你可以附加空磁盘和包含数据的磁盘。在这两种情况下，这些磁盘实际上是驻留在 Azure 存储帐户中的 .vhd 文件。此外，也是在这两种情况下，在附加磁盘之后，你将需要对其进行初始化，然后才能使用。本文所指的虚拟机是使用经典部署模型创建的虚拟机。
 
@@ -39,7 +41,7 @@
 
 	![获取磁盘消息](./media/virtual-machines-linux-how-to-attach-disk/DiskMessages.png)
 
-	或者
+	或
 
 	b) 使用 `lsscsi` 命令找出设备 ID。`lsscsi` 的安装可以通过 `yum install lsscsi`（在基于 Red Hat 的分发上）或 `apt-get install lsscsi`（在基于 Debian 的分发上）来进行。你可以通过 _lun_（即**逻辑单元号**）找到所要的磁盘。例如，所附加磁盘的 _lun_ 可以轻松地通过 `azure vm disk list <virtual-machine>` 来查看，如下所示：
 
@@ -93,7 +95,7 @@
 
 
 
-7. 键入 **w** 以写入磁盘的设置。
+7. 键入“w”以写入磁盘的设置。
 
 
 	![写入磁盘更改](./media/virtual-machines-linux-how-to-attach-disk/DiskWrite.png)
@@ -121,8 +123,8 @@
 
 11. 将新驱动器添加到 /etc/fstab：
 
-	若要确保在重新引导后自动重新装载驱动器，必须将其添加到 /etc/fstab 文件。此外，强烈建议在 /etc/fstab 中使用 UUID（全局唯一标识符）来引用驱动器而不是只使用设备名称（即 /dev/sdc1）。若要查找新驱动器的 UUID，可以使用 **blkid** 实用程序：
-	
+	若要确保在重新引导后自动重新装载驱动器，必须将其添加到 /etc/fstab 文件。此外，强烈建议在 /etc/fstab 中使用 UUID（全局唯一标识符）来引用驱动器而不是只使用设备名称（即 /dev/sdc1）。若要查找新驱动器的 UUID，可以使用 blkid 实用程序：
+
 		# sudo -i blkid
 
 	输出与以下内容类似：
@@ -164,6 +166,7 @@
 [使用带服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on
-<!---HONumber=70-->
+[Agent]: virtual-machines-linux-agent-user-guide.md
+[Logon]: virtual-machines-linux-how-to-log-on.md
+
+<!---HONumber=79-->

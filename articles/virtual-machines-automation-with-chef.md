@@ -1,16 +1,17 @@
-<properties 
-   pageTitle="使用 Chef 自动执行 Azure 虚拟机部署" 
-   description="学习使用 Chef 自动部署 Azure 虚拟机的技术" 
-   services="virtual-machines" 
-   documentationCenter="" 
-   authors="diegoviso" 
-   manager="timlt" 
+<properties
+   pageTitle="使用 Chef 部署 Azure 虚拟机 | Windows Azure"
+   description="了解如何使用 Chef 在 Windows Azure 中自动执行虚拟机的部署和配置"
+   services="virtual-machines"
+   documentationCenter=""
+   authors="diegoviso"
+   manager="timlt"
+   tags="azure-service-management,azure-resource-manager"
    editor=""/>
 
 <tags 
-	ms.service="virtual-machines"
+	ms.service="virtual-machines" 
 	ms.date="05/19/2015" 
-	wacn.date="09/15/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 使用 Chef 自动执行 Azure 虚拟机部署
 
@@ -84,7 +85,7 @@ Chef 有三个主要的体系结构组件。**Chef 服务器、Chef 客户端（
 
 PEM 文件包含你的组织和用于通信的管理私钥，而 **knife.rb** 文件包含你的 knife 配置。你将需要编辑 **knife.rb** 文件。
 
-在你选择的编辑器中打开该文件并修改“cookbook\_path”：从路径中删除 /../，使其如下所示：
+在你选择的编辑器中打开该文件并修改“cookbook_path”：从路径中删除 /../，使其如下所示：
 
 	cookbook_path  ["#{current_dir}/cookbooks"]
 
@@ -237,4 +238,4 @@ PEM 文件包含你的组织和用于通信的管理私钥，而 **knife.rb** �
 
 <!--Link references-->
 
-<!---HONumber=69-->
+<!---HONumber=79-->

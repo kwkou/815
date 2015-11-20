@@ -1,20 +1,22 @@
 <properties 
-	pageTitle="Azure 中的 Linux 的认可分发" 
-	description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic 和 SUSE 的指南。" 
+	pageTitle="Linux 的认可分发 | Windows Azure" 
+	description="了解 Azure 认可的分发中的 Linux，包括 Ubuntu、OpenLogic、Oracle 和 SUSE 的指南。" 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management,azure-resource-manager" 
+	/>
 
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="06/03/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 
-# Azure 认可的分发中的 Linux
+#Azure 认可的分发中的 Linux
 
 Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与各个 Linux 社区合作，以便向“认可的分发”列表添加更多风格。在此期间，对于该库未提供的分发，你始终可以按照[本页](/documentation/articles/virtual-machines-linux-create-upload-vhd)中的指南自备 Linux。
 
@@ -23,14 +25,14 @@ Azure 库中的 Linux 映像由很多合作伙伴提供，并且我们正在与�
 
 下表列出了 Azure 支持的 Linux 分发和版本。
 
-Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序是 Microsoft 直接为上游 Linux 内核提供的内核模块。LIS 驱动程序在默认情况下内置于分发的内核中，或者作为较旧的基于 RHEL/CentOS 的分发在[此处](https://www.microsoft.com/download/details.aspx?id=46842)作为单独的下载提供。有关 LIS 驱动程序的详细信息，请参阅[此文](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic#linux-kernel-requirements)。
+Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序是 Microsoft 直接为上游 Linux 内核提供的内核模块。LIS 驱动程序在默认情况下内置于分发的内核中，或者作为较旧的基于 RHEL/CentOS 的分发在[此处](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)作为单独的下载提供。有关 LIS 驱动程序的详细信息，请参阅[此文](/documentation/articles/virtual-machines-linux-create-upload-vhd-generic#linux-kernel-requirements)。
 
 Azure Linux 代理已预安装在 Azure 库映像中，并通常可从分发的包存储库中获得。源代码可在 [GitHub](https://github.com/azure/walinuxagent) 上找到。
 
 分发|版本|驱动程序|代理
 ---|---|---|---
 Canonical Ubuntu|Ubuntu 12.04、14.04、14.10 和 15.04|在内核中|包：在“walinuxagent”下的存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-CentOS by OpenLogic |CentOS 6.3+、7.0+| CentOS 6.3：[LIS 下载](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+：在内核中|包：在“WALinuxAgent”下的 <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic 存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+CentOS by OpenLogic |CentOS 6.3+、7.0+| CentOS 6.3：[LIS 下载](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+：在内核中|包：在“WALinuxAgent”下的 <a href="http://olcentgbl.trafficmanager.cn/openlogic/6/openlogic/x86_64/RPMS/">OpenLogic 存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494\.4.0+ |在内核中|源：[GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
 Oracle Linux| 6\.4+、7.0+|在内核中|包：在“WALinuxAgent”下的存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 SUSE Linux Enterprise |SLES 11 SP3+、SLES 12+ 和 <p><p> SLES for SAP 11.3+ |在内核中|包：在“WALinuxAgent”下的 [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) 存储库中<p><p>源：[GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
@@ -73,4 +75,4 @@ Azure 上的 SUSE Linux Enterprise Server 是一个已验证的平台，该平�
 
  
 
-<!---HONumber=70-->
+<!---HONumber=79-->

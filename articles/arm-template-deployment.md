@@ -1,19 +1,13 @@
-<properties 
-	pageTitle="使用模板部署 Azure 资源" 
-	description="学习如何使用 Azure 资源管理库中的某些可用客户端来部署虚拟机、虚拟网络和存储帐户" 
-	services="virtual-machines,virtual-networks,storage" 
-	documentationCenter="" 
-	authors="davidmu1" 
-	manager="timlt" 
-	editor="tysonn" 
-	tags="azure-resource-manager"/>
+<properties pageTitle="Deploy Azure Resources by Using a Template" description="学习如何使用 Azure 资源管理库中的某些可用客户端来部署虚拟机、虚拟网络和存储帐户" services="virtual-machines,virtual-networks,storage" documentationCenter="" authors="davidmu1" manager="timlt" editor="tysonn" tags="azure-resource-manager/>
 
 <tags
-	ms.service="multiple"
-	wacn.date="09/15/2015"
-	ms.date="06/15/2015"/>
+	ms.service="azure-resource-manager"
+	wacn.date="11/12/2015"
+	ms.date="08/25/2015" />
 
 # 使用 .NET 库和模板部署 Azure 资源
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型创建资源。
 
 使用资源组和模板，可以统一管理为你的应用程序提供支持的所有资源。本教程说明如何使用 Azure 资源管理库中的某些可用客户端，以及如何生成模板用于部署虚拟机、虚拟网络和存储帐户。
 
@@ -24,7 +18,7 @@
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
 - [Windows Management Framework 3.0](http://www.microsoft.com/zn-ch/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](http://www.microsoft.com/zh-cn/download/details.aspx?id=40855)
-- [Azure PowerShell](/documentation/articles/powershell-install-configure)
+- [Azure PowerShell](/documentation/aryicles/powershell-install-configure)
 
 完成这些步骤大约需要 30 分钟。
 
@@ -38,7 +32,7 @@
 
 2. 设置你要用于本教程的 Azure 帐户。运行以下命令，并在出现提示时输入订阅的凭据：
 
-	    Add-AzureAccount -Environment AzureChinaCloud
+	    Add-AzureAccount
 
 3. 在以下命令中的 {password} 替换为要使用的密码，然后运行以下命令创建应用程序：
 
@@ -298,7 +292,7 @@
           }
         }
 
-    >[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[使用 Windows PowerShell 管理映像 (Windows)](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后将 {source-image-name} 替换为要使用的 vhd 文件名。例如“a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd”。将 {subscription-id} 替换为订阅的标识符。
+    >[AZURE.NOTE]映像库中的映像 vhd 名称经常发生变化，因此你需要获取当前映像名称以部署虚拟机。为此，请参阅[关于虚拟机的映像](https://msdn.microsoft.com/zh-cn/library/azure/dn790330.aspx)，然后用你要使用的 vhd 文件的名称代替 {source-image-name}。例如“a699494373c04fc0bc8f2bb1389d6106\__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd”。将 {subscription-id} 替换为订阅的标识符。
 
 
 4.	保存创建的参数文件。
@@ -319,7 +313,7 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 2.	在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-3.	在页面顶部，选择“包括预发行版”。在搜索框中键入 *Azure Resource Management*，单击“Microsoft Azure 资源管理库”包旁边的“安装”，然后根据说明安装该包。
+3.	在页面顶部，选择“包括预发行版”。在搜索框中键入 *Azure Resource Management*，单击“Windows Azure 资源管理库”包旁边的“安装”，然后根据说明安装该包。
 
 现在，你可以开始使用这些库来创建应用程序了。
 
@@ -441,10 +435,10 @@ Azure 资源管理器将从 Azure 存储帐户访问模板文件和参数文件�
 
 2.	在返回每个状态代码后，按 **Enter** 创建每个资源。创建虚拟机后，执行下一步骤，然后按 Enter 删除所有资源。
 
-	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 预览版门户中花费几分钟时间来验证资源的创建。
+	控制台应用程序从头到尾完成运行大约需要 5 分钟时间。在按 Enter 开始删除资源之前，你可能需要在 Azure 预览门户中花费几分钟时间来验证资源的创建。
 
-3. 在 Azure 预览版门户浏览到“审核日志”，以查看资源的状态：
+3. 在 Azure 预览门户浏览到“审核日志”，以查看资源的状态：
 
 	![创建 AD 应用程序](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=69-->
+<!---HONumber=79-->

@@ -1,18 +1,21 @@
 <properties
    pageTitle="使用 Azure CLI 创建多 VM 部署 | Windows Azure"
-   description="了解如何使用 Azure CLI 创建多 VM 部署"
+   description="了解如何使用经典部署模型和 Azure CLI 创建多 VM 部署。"
    services="virtual-machines"
    documentationCenter="nodejs"
    authors="AlanSt"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-service-management"/>
 
-<tags
+   <tags
    ms.service="virtual-machines"
    ms.date="02/20/2015"
-   wacn.date="09/15/2015"/>
+   wacn.date="11/12/2015"/>
 
 # 使用 Azure CLI 创建多 VM 部署
+
+> [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 下面的脚本将向你展示如何使用 Azure 命令行界面 (Azure CLI) 在 VNET 中配置多 VM 多云服务部署。
 
@@ -63,4 +66,4 @@
 * [如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)
  
 
-<!---HONumber=69-->
+<!---HONumber=79-->
