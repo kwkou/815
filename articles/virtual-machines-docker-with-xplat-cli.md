@@ -172,7 +172,6 @@ azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d
 [Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial
 [Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
 [Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
-[如何在门户中使用 Docker VM 扩展]: /documentation/articles/virtual-machines-docker-with-portal
 
 [Docker 用户指南]: https://docs.docker.com/userguide/
 

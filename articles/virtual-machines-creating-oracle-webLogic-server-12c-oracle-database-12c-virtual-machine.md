@@ -46,8 +46,6 @@
 ##其他资源
 <!--[-->有关 Oracle 虚拟机映像的其他注意事项<!--](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)-->
 
-[Oracle 虚拟机映像列表](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
-
 [从 Java 应用程序连接到 Oracle 数据库](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 
 [在 Windows Azure 上使用 Linux 的 Oracle WebLogic Server 12c](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)

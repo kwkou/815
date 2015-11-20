@@ -30,56 +30,6 @@
 
 ## 步骤 1.在 Azure 中设置 HPC Pack 群集
 
-我们将向你介绍两种设置群集的方法：第一种，使用 Azure 快速入门模板和 Azure 预览门户；第二种，使用 Azure PowerShell 部署脚本。
-
-
-### 使用快速入门模板
-使用 Azure 快速入门模板可在 Azure 预览门户中快速轻松地部署 HPC Pack 群集。当你在门户中打开该模板时，将显示简单的 UI，你可以在其中输入群集的设置。下面是相关步骤。
-
-1. 访问 [GitHub 上的“创建 HPC 群集”模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster)。如果需要，查看有关该模板和源代码的信息。
-
-2. 单击**“部署到 Azure”**以启动使用 Azure 预览门户中的模板的部署。
-
-    ![将模板部署到 Azure][github]
-
-3. 在门户中，按照以下步骤输入 HPC 群集模板的参数。
-
-    a.在**“编辑模板”**页上，单击**“保存”**。
-
-    ![保存模板][template]
-
-    b.在**“参数”**页上，输入模板参数的值。（单击每个设置旁边的图标可获得帮助信息。） 下面的屏幕中将显示示例值。本示例将在 *hpc.local* 域中创建名为 *hpc01* 的新 HPC Pack 群集，该群集由 1 个头节点和 2 个计算节点组成。将从包括 Microsoft Excel 的 HPC Pack VM 映像创建计算节点。
-
-    ![输入参数][parameters]
-
-    >[AZURE.NOTE]将在 Windows Server 2012 R2 上从 HPC Pack 2012 R2 的[最新应用商店映像](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)自动创建头节点 VM。当前，该映像基于 HPC Pack 2012 R2 Update 2。
-    >
-    >将从所选计算节点系列的最新映像创建计算节点 VM。通常，为最新 HPC Pack 2012 R2 Update 2 计算映像选择 **ComputeNode** 选项。为包含 Microsoft Excel Professional Plus 2013 的评估版本的最新 HPC Pack 计算节点映像选择 **ComputeNodeWithExcel** 选项。如果要为常规 SOA 会话或 Excel UDF 卸载部署群集，请选择 **ComputeNode** 选项（不会安装 Excel）。
-    >
-    >当对生产工作负荷使用 **ComputeNodeWithExcel** 时，需要提供有效的 Excel 许可证才能在计算节点上激活 Excel。否则，Excel 评估版将在 30 天后过期，那时所有 Excel 工作负荷将无法运行。
-
-    c.选择订阅。
-
-    d.为群集创建新资源组，如 *hpc01RG*。
-
-    e.选择资源组的位置，例如美国东部。
-
-    f.在**“法律条款”**页上，查看条款。如果你同意，请单击**“购买”**。
-
-    g.在完成为模板设置值后，单击**“创建”** 。
-
-    ![创建群集][create]
-
-3.	在部署完成时（通常需要花费大约 30 分钟），从群集头节点导出群集证书文件。在稍后的步骤中，将在客户端计算机上导入此公用证书以为安全 HTTP 绑定提供服务器端身份验证。
-
-    a.从 Azure 预览门户通过远程桌面连接到头节点。
-
-     ![连接到头节点][connect]
-
-    b.使用标准过程通过证书管理器导出不带私钥的头节点证书（位于 Cert:\\LocalMachine\\My 下）。在此示例中，导出 *CN = hpc01.eastus.cloudapp.azure.com*。
-
-    ![导出证书][cert]
-
 ### 使用 HPC Pack IaaS 部署脚本
 
 HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack 群集。它在 Azure 服务管理 (ASM) 模式下运行，而模板则在 Azure 资源管理器 (ARM) 模式下运行。此外，该脚本与 Azure 全球或 Azure 中国服务中的订阅兼容。
