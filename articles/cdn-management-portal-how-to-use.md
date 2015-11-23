@@ -4,7 +4,7 @@
     wacn.date="11/24/2015"
     />
 
-# Windows Azure CDN 简介
+# Windows Azure CDN 管理门户使用指南
 
 Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点上缓存Azure平台上的Storage Blob，Cloud Service和WebSites的静态内容，为开发人员提供一个传送高带宽内容的解决方案。目前本CDN服务也同时支持没有部署在Azure平台上的源站。
 
@@ -275,17 +275,17 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 >access_log /var/log/nginx/access.log logCDN;
 
-[1]: media/cdn-unified-portal/001.png
-[2]: media/cdn-unified-portal/002.png
-[3]: media/cdn-unified-portal/003.png
-[4]: media/cdn-unified-portal/cache-policy-2.png
-[5]: media/cdn-unified-portal/access-control.png
-[6]: media/cdn-unified-portal/004.png
-[7]: media/cdn-unified-portal/005.png
-[8]: media/cdn-unified-portal/006.png
-[9]: media/cdn-unified-portal/007.png
-[10]: media/cdn-unified-portal/008.png
-[11]: media/cdn-unified-portal/prefetch-1.png
-[12]: media/cdn-unified-portal/prefetch-2.png
-[13]: media/cdn-unified-portal/log-download-1.png
-[14]: media/cdn-unified-portal/log-download-2.png
+[1]: ./media/cdn-unified-portal/001.png
+[2]: ./media/cdn-unified-portal/002.png
+[3]: ./media/cdn-unified-portal/003.png
+[4]: ./media/cdn-unified-portal/cache-policy-2.png
+[5]: ./media/cdn-unified-portal/access-control.png
+[6]: ./media/cdn-unified-portal/004.png
+[7]: ./media/cdn-unified-portal/005.png
+[8]: ./media/cdn-unified-portal/006.png
+[9]: ./media/cdn-unified-portal/007.png
+[10]: ./media/cdn-unified-portal/008.png
+[11]: ./media/cdn-unified-portal/prefetch-1.png
+[12]: ./media/cdn-unified-portal/prefetch-2.png
+[13]: ./media/cdn-unified-portal/log-download-1.png
+[14]: ./media/cdn-unified-portal/log-download-2.png

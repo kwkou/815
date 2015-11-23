@@ -118,7 +118,7 @@
    
     如果您有多个订阅，如图所示，可以点击管理门户网站右上角订阅ID处的下拉三角，选择恰当的订阅ID。
     
-    ![FAQ](media/cdn-doc/FAQ.png)
+    ![FAQ](./media/cdn-doc/FAQ.png)
     
 ##价格咨询
 
