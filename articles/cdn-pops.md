@@ -17,4 +17,4 @@
 <!--Image references-->
 
 
-[1]: media/cdn-doc/cdn_pops.png
+[1]: ./media/cdn-doc/cdn_pops.png
