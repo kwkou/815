@@ -21,7 +21,7 @@
 
 本文档将指导你在服务器上安装和配置适用于 AD FS 的 Azure AD Connect Health 代理。
 
->[AZURE.NOTE]请记住在查看 Azure AD Connect Health 实例中的任何数据之前，你将需要在目标服务器上安装 Azure AD Connect Health 代理。请务必在安装代理之前，满足[此处](/documentaion/articles/active-directory-aadconnect-health#requirements)所述的要求。可以从[此处](http://go.microsoft.com/fwlink/?LinkID=518973)下载该代理。
+>[AZURE.NOTE]请记住在查看 Azure AD Connect Health 实例中的任何数据之前，你将需要在目标服务器上安装 Azure AD Connect Health 代理。请务必在安装代理之前，满足[此处](/documentation/articles/active-directory-aadconnect-health#requirements)所述的要求。可以从[此处](http://go.microsoft.com/fwlink/?LinkID=518973)下载该代理。
 
 
 ## 代理安装
@@ -40,7 +40,7 @@
 
 登录后，将继续 PowerShell。完成后你可以关闭 PowerShell，配置已完成。
 
-此时，应自动启动服务且代理将在此时监视和收集数据。请注意如果未满足已在前面几节中所述的所有先决条件，你将在 PowerShell 窗口看到警告。请务必在安装代理之前，满足[此处](/documentaion/articles/active-directory-aadconnect-health#requirements)所述的要求。以下屏幕截图是这些错误的一个示例。
+此时，应自动启动服务且代理将在此时监视和收集数据。请注意如果未满足已在前面几节中所述的所有先决条件，你将在 PowerShell 窗口看到警告。请务必在安装代理之前，满足[此处](/documentation/articles/active-directory-aadconnect-health#requirements)所述的要求。以下屏幕截图是这些错误的一个示例。
 
 ![验证 Azure AD Connect Health](./media/active-directory-aadconnect-health-requirements/install4.png)
 

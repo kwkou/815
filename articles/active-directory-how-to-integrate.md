@@ -77,7 +77,7 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **行业标准协议。** Microsoft 承诺支持行业标准。Azure AD 支持 SAML 2.0、OpenID Connect 1.0、OAuth 2.0 和 WS-Federation 1.2 身份验证协议。Graph API 符合 OData 4.0 规范。如果你的应用程序已支持使用 SAML 2.0 或 OpenID Connect 1.0 进行联合登录，则可以直接添加对 Azure AD 的支持。了解有关 [Azure AD 支持的身份验证协议](/documentation/articles/active-directory-authentication-protocols)的详细信息。
 
-**开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 开放源代码库](https://msdn.microsoft.com/zh-cn/library/azure/dn151135.aspx)的详细信息。
+**开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 开放源代码库](/documentation/articles/active-directory-authentication-libraries/)的详细信息。
 
 ### 全球存在和高可用性
 

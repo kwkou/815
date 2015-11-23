@@ -55,7 +55,7 @@
 
 **问：Azure AD Connect Health Services 是否通过直通型 http 代理进行工作？**
 
-是的。对于正在进行的操作，你可以将 Health 代理配置为使用 HTTP 代理转发出站 http 请求。有关详细信息，请参阅[将 Azure AD Connect Health 代理配置为使用 HTTP 代理](active-directory-aadconnect-health-agent-install-adfs.md#configure-azure-ad-connect-health-agent-to-use-http-proxy)。
+是的。对于正在进行的操作，你可以将 Health 代理配置为使用 HTTP 代理转发出站 http 请求。有关详细信息，请参阅[将 Azure AD Connect Health 代理配置为使用 HTTP 代理](active-directory-aadconnect-health-agent-install-adfs#configure-azure-ad-connect-health-agent-to-use-http-proxy)。
 
 如果要在代理注册过程中配置代理，需要修改 Internet Explorer 代理设置。<br>
 打开“Internet Explorer -> 设置 -> Internet 选项 -> 连接 -> LAN 设置”。<br> 

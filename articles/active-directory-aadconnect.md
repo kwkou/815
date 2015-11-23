@@ -66,39 +66,39 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 
 ### 了解有关安装 Azure AD Connect 的详细信息
 
-你还要预先了解[操作](/documentation/articles/active-directory-aadconnectsync-operations)注意事项。你可能要部署一台待机服务器，以便在发生[灾难](active-directory-aadconnectsync-operations#disaster-recovery)时轻松故障转移。如果你要频繁进行配置更改，则应该计划部署一台[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)服务器。
+<!--你还要预先了解[操作](/documentation/articles/active-directory-aadconnectsync-operations)注意事项。你可能要部署一台待机服务器，以便在发生[灾难](active-directory-aadconnectsync-operations#disaster-recovery)时轻松故障转移。如果你要频繁进行配置更改，则应该计划部署一台[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations#staging-mode)服务器。-->
 
 | 主题 | |
 | --------- | --------- |
-| 支持的拓扑 | [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies) |
+<!-- | 支持的拓扑 | [Azure AD Connect 的拓扑](/documentation/articles/active-directory-aadconnect-topologies) |-->
 | 设计概念 | [Azure AD Connect 设计概念](/documentation/articles/active-directory-aadconnect-design-concepts) |
 | 用于安装的帐户 | [有关 Azure AD Connect 凭据和权限的更多信息](/documentation/articles/active-directory-aadconnect-accounts-permissions) |
-| 操作规划 | [Azure AD Connect 同步：操作任务和注意事项](/documentation/articles/active-directory-aadconnectsync-operations) |
+<!-- | 操作规划 | [Azure AD Connect 同步：操作任务和注意事项](/documentation/articles/active-directory-aadconnectsync-operations) | -->
 
 ## 配置功能
 Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能。在某些情况下，有些功能可能需要在特定方案和拓扑中进行其他配置。
 
-如果你要限制可将哪些对象同步到 Azure AD，可以使用[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering)。默认情况下，会同步所有用户、联系人、组和 Windows 10 计算机，但你可以根据域、OU 或属性限制这些对象。
+<!-- 如果你要限制可将哪些对象同步到 Azure AD，可以使用[筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering)。默认情况下，会同步所有用户、联系人、组和 Windows 10 计算机，但你可以根据域、OU 或属性限制这些对象。
 
-[密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization)可将 Active Directory 中的密码哈希同步到 Azure AD。这样，用户便可以在本地与云中使用相同的密码，且只需在一个位置管理此密码。由于它使用本地 Active Directory，因此你还可以使用自己的密码策略。
+[密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization)可将 Active Directory 中的密码哈希同步到 Azure AD。这样，用户便可以在本地与云中使用相同的密码，且只需在一个位置管理此密码。由于它使用本地 Active Directory，因此你还可以使用自己的密码策略。-->
 
 [密码写回](/documentation/articles/active-directory-passwords-getting-started)可让用户在云中更改和重置其密码，及应用本地密码策略。
 
 [设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback)可将 Azure AD 中注册的设备写回到本地 Active Directory，以便可以使用该设备进行条件性访问。
 
-[防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes)功能默认为打开，它可以保护云目录，避免同时进行多次删除。默认情况下，它允许每次执行 500 次删除，你可以根据组织的大小更改此值。
+<!-- [防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes)功能默认为打开，它可以保护云目录，避免同时进行多次删除。默认情况下，它允许每次执行 500 次删除，你可以根据组织的大小更改此值。-->
 
 ### 功能配置后续步骤
 
 | 主题 | |
 | --------- | --------- |
-| 配置筛选 | [Azure AD Connect 同步：配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering) |
-| 密码同步 | [Azure AD Connect 同步：实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization) |
+<!-- | 配置筛选 | [Azure AD Connect 同步：配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering) |
+| 密码同步 | [Azure AD Connect 同步：实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization) |-->
 | 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started) |
 | 设备写回 | [在 Azure AD Connect 中启用设备写回](/documentation/articles/active-directory-aadconnect-get-started-custom-device-writeback) |
-| 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes) |
+<!-- | 防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes) | -->
 
-## 自定义 Azure AD Connect 同步
+<!-- ## 自定义 Azure AD Connect 同步
 Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配置。但总会有一些情况使得默认配置不适用，因此你必须进行调整。你可以根据本部分和链接主题中所述进行更改。
 
 如果你以前没有用过同步拓扑，请先了解[技术概念](/documentation/articles/active-directory-aadconnect-technical-concepts)中所述的基本概念和术语。Azure AD Connect 是在 MIIS2003、ILM2007 和 FIM2010 基础上演进而来的。即使有些功能相同，但改变的部分也有很多。
@@ -116,14 +116,14 @@ Azure AD Connect 同步随附一个适用于大部分客户和拓扑的默认配
 | 声明性预配 | [Azure AD Connect Sync：了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions) |
 | 声明性预配函数参考 | [Azure AD Connect 同步：函数参考](/documentation/articles/active-directory-aadconnectsync-functions-reference) |
 | 最佳实践 | [更改默认配置的最佳做法](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration) |
-
+-->
 ## 详细信息和参考
 
 | 主题 | |
 | --------- | --------- |
 | 版本历史记录 | [版本历史记录](/documentation/articles/active-directory-aadconnect-version-history) |
 | 比较 DirSync、Azure ADSync 和 Azure AD Connect | [目录集成工具比较](/documentation/articles/active-directory-aadconnect-get-started-tools-comparison) |
-| 同步的属性 | [同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized) |
+<!-- | 同步的属性 | [同步的属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized) |-->
 | 使用 Azure AD Connect Health 进行监视 | [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health) |
 | 常见问题 | [Azure AD Connect 常见问题](/documentation/articles/active-directory-aadconnect-faq) |
 
