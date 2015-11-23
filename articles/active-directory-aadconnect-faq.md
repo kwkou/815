@@ -26,7 +26,7 @@
 
 **问：如果我收到一封电子邮件，要求我续订 Office 365 证书，我该怎么办？**
 
-按照[此处](active-directory-aadconnect-o365-certs.md)所提供文章中概述的指南进行操作，即可续订证书。
+按照[此处](/documentation/articles/active-directory-aadconnect-o365-certs)所提供文章中概述的指南进行操作，即可续订证书。
 
 ## 故障排除
 

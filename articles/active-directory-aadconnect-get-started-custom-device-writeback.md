@@ -70,7 +70,7 @@
 2.	如果不是第一次使用该向导，请从“其他任务”页中选择自定义同步选项，然后单击“下一步”。![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback2.png)
 3.	在“可选功能”页中，设备写回不再灰显。请注意，如果 Azure AD Connect 准备步骤未完成，“可选功能”页中的设备写回将会灰显。选中设备写回对应的框并单击“下一步”。![设备写回](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
 4.	在写回页中，你会看到提供的域是默认的设备写回林。![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback4.png)
-5.	在向导中完成安装，不需要更改其他配置。如果需要，请参阅 [Azure AD Connect 的自定义安装](active-directory-aadconnect-get-started-custom.md)。
+5.	在向导中完成安装，不需要更改其他配置。如果需要，请参阅 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。
 
 
 

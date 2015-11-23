@@ -284,7 +284,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 [Deploy to Azure]: #deploy_azure
 [Next steps]: #next_steps
 [项目网站]: http://wastarterkit4java.codeplex.com/releases/view/61026
-[如何查看 Azure 访问控制服务返回的 SAML]: documentation/articles/active-directory-java-view-saml-returned-by-access-control/
+[如何查看 Azure 访问控制服务返回的 SAML]: /documentation/articles/active-directory-java-view-saml-returned-by-access-control/
 [访问控制服务 2.0]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
 [Windows Identity Foundation]: http://www.microsoft.com/zh-cn/download/details.aspx?id=17331
 [Windows Identity Foundation SDK]: http://www.microsoft.com/zh-cn/download/details.aspx?id=4451

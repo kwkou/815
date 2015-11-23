@@ -16,7 +16,7 @@
 
 
 
-Azure Active Directory Connect 由三个主要部分组成，分别是同步服务、可选的 Active Directory 联合身份验证服务功能，以及使用 [Azure AD Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx) 实现的监视功能。
+Azure Active Directory Connect 由三个主要部分组成，分别是同步服务、可选的 Active Directory 联合身份验证服务功能，以及使用 [Azure AD Connect Health](/documentation/articles/active-directory-aadconnect-health/) 实现的监视功能。
 
 
 <center>![Azure AD Connect 堆栈](./media/active-directory-aadconnect-how-it-works/AADConnectStack2.png)
@@ -24,7 +24,7 @@ Azure Active Directory Connect 由三个主要部分组成，分别是同步服�
 
 - 同步 - 此部分由以前包含以前作为 DirSync 和 AAD Sync 发布的组件和功能组成。此部分负责创建用户和组。它还负责确保本地环境中有关用户和组的信息与云匹配。
 - AD FS - 这是 Azure AD Connect 的可选部分，可用于使用本地 AD FS 基础结构设置混合环境。组织可以使用此部分来解决复杂的部署，包括域加入 SSO、实施 AD 登录策略和智能卡或第三方 MFA 等方案。有关配置 SSO 的更多信息，请参阅[使用单一登录的 DirSync](https://msdn.microsoft.com/library/azure/dn441213.aspx)。
-- 运行状况监视 - 对于使用 AD FS 的复杂部署，Azure AD Connect Health 能够可靠监视联合服务器，并在 Azure 门户中提供一个中心位置用于查看此活动。有关更多信息，请参阅 [Azure Active Directory Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx)。
+- 运行状况监视 - 对于使用 AD FS 的复杂部署，Azure AD Connect Health 能够可靠监视联合服务器，并在 Azure 门户中提供一个中心位置用于查看此活动。有关更多信息，请参阅 [Azure Active Directory Connect Health](/documentation/articles/active-directory-aadconnect-health/)。
 
 
 ## Azure AD Connect 支持组件
