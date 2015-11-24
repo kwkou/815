@@ -125,14 +125,6 @@ CDN另外一个典型的应用场景就是针对大文件下载进行多节点�
 
 ![][13]
 
-
-
-
-
-
-
-
-
 <!--Image references-->
 [1]: ./media/cdn-overview/overview01.png
 [2]: ./media/cdn-overview/image005.png
