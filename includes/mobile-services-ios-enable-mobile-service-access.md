@@ -88,6 +88,8 @@ self.items = [results mutableCopy];
 
 * 找到 **addItem** 方法，并将其正文替换为以下代码。此代码会将一个插入请求发送到移动服务。
 
+```
+
         // Insert the item into the TodoItem table and add to the items array on completion
         [self.table insert:item completion:^(NSDictionary *result, NSError *error) {
             NSUInteger index = [items count];
