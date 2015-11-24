@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用访问控制 (Java) | Microsoft Azure" 
+	pageTitle="如何使用访问控制 (Java) | Windows Azure" 
 	description="了解如何在 Azure 中以 Java 开发和使用访问控制。" 
 	services="active-directory" 
 	documentationCenter="java" 
@@ -9,7 +9,7 @@
 
 <tags 
 	ms.service="active-directory" 
-        ms.date="10/12/2015" 
+    ms.date="10/12/2015" 
 	wacn.date="11/12/2015"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证

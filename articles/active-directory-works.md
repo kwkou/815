@@ -8,24 +8,18 @@
 	editor=""/>
 
 <tags 
-	wacn.date="05/15/2015"
 	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
 	ms.date="04/20/2015" 
-	ms.author="curtand"/>
+	wacn.date="05/15/2015"/>
 
 
 
 # Azure Active Directory 的工作原理
-
-
-[什么是 Azure AD？](/documentation/articles/active-directory-whatis)<br>
-[入门](/documentation/articles/active-directory-get-started)<br>
-[后续步骤](/documentation/articles/active-directory-next-steps)<br>
-[了解详细信息](/documentation/articles/active-directory-learn-map)
+> [AZURE.SELECTOR]
+- [什么是 Azure AD](/documentation/articles/active-directory-whatis)
+- [入门](/documentation/articles/active-directory-get-started)
+- [后续步骤](/documentation/articles/active-directory-next-steps)
+- [了解详细信息](/documentation/articles/active-directory-learn-map)
 
 Azure AD 可在云中创建属于你的标识布局。它可以连接到你的本地标识系统，你也可以单独使用它。 
 
@@ -38,7 +32,7 @@ Azure AD 可在云中创建属于你的标识布局。它可以连接到你的�
 Azure 门户、Office 365 管理中心、Microsoft Intune 帐户门户和 Windows PowerShell 的 Azure AD 模块中的 cmdlet 都在与你目录关联的 Azure AD 的单个共享实例中读取和写入数据。门户（或 cmdlet）充当前端接口，它可以输入或更改目录信息。 
 
 ## Azure AD 如何为第三方应用程序提供支持？
-Azure AD 提供标识即服务，并提供针对不同平台的开放源代码库来帮助你快速编程，从而简化了开发人员的身份验证。[了解有关 Azure AD 的身份验证方案的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn499820.aspx)。
+Azure AD 提供标识即服务，并提供针对不同平台的开放源代码库来帮助你快速编程，从而简化了开发人员的身份验证。[了解有关 Azure AD 的身份验证方案的详细信息](/documentation/articles/active-directory-authentication-scenarios/)。
 
 
 ## Azure AD 如何扩展我的本地目录？

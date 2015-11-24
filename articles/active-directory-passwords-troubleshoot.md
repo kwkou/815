@@ -98,7 +98,7 @@
             </td>
             <td>
               <p>UI 的许多元素都是隐藏的，直到需要它们时才会显示。如果你希望看到它们，请尝试启用页面上的所有选项。</p>
-              <p>有关可供你使用的所有控件的更多信息，请参阅<a href="active-directory-passwords-customize#password-management-behavior">自定义用户密码策重置略</a>。</p>
+              <p>有关可供你使用的所有控件的更多信息，请参阅<a href="/documentation/articles/active-directory-passwords-customize#password-management-behavior">自定义用户密码策重置略</a>。</p>
             </td>
           </tr>
           <tr>
@@ -110,7 +110,7 @@
             </td>
             <td>
               <p>仅当你已下载 Azure AD Connect 并配置了密码写回时，此选项才可见。完成此操作后，此选项才会出现，并允许你启用或禁用从云写回功能。</p>
-              <p>有关如何执行此操作的详细信息，请参阅<a href="active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords">如何启用/禁用密码写回</a>。</p>
+              <p>有关如何执行此操作的详细信息，请参阅<a href="/documentation/articles/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords">如何启用/禁用密码写回</a>。</p>
             </td>
           </tr>
         </tbody></table>
@@ -239,7 +239,7 @@
               <p>如果你愿意，我们可以联系你所在组织的管理员为你重置密码。</p>
             </td>
             <td>
-              <p>确保用户在目录下的文件中有格式正确的联系人数据，然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用的数据</a>。</p>
+              <p>确保用户在目录下的文件中有格式正确的联系人数据，然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用的数据</a>。</p>
             </td>
           </tr>
           <tr>
@@ -255,7 +255,7 @@
               <p>如果你愿意，我们可以联系你所在组织的管理员为你重置密码。</p>
             </td>
             <td>
-              <p>确保用户至少有两个正确配置的联系方式（例如，移动电话和办公室电话），然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用的数据</a>。</p>
+              <p>确保用户至少有两个正确配置的联系方式（例如，移动电话和办公室电话），然后继续。有关如何在目录中配置身份验证信息以避免用户遇到此错误的信息，请参阅<a href="/documentation/articles/active-directory-passwords-learn-more#what-data-is-used-by-password-reset">密码重置使用的数据</a>。</p>
             </td>
           </tr>
           <tr>
@@ -702,7 +702,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a href="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -785,7 +785,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解会导致此错误的其他情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解会导致此错误的其他情况的详细信息，请参阅<a href="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
@@ -840,7 +840,7 @@
                 <li class="unordered">
 										该用户的帐户位于不允许密码设置操作的受保护组中（例如，域管理员或企业管理员）。&lt;br>&lt;br></li>
               </ul>
-              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a name="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
+              <p>若要了解其他可能会导致此错误的情况的详细信息，请参阅<a href="#troubleshoot-password-writeback">排查密码写回问题</a>。</p>
             </td>
           </tr>
           <tr>
