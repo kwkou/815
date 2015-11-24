@@ -12,7 +12,11 @@ Windows Azure CDN （内容传送网络） 通过遍布在中国大陆的众多�
 
 如果您已经是Windows Azure CDN的现有用户，请访问[Windows Azure CDN管理门户](https://manage.windowsazure.cn)来管理CDN加速域名。具体使用指南请参见[使用 Windows Azure CDN](http://www.windowsazure.cn/documentation/articles/cdn-how-to-use/)
 
-## 什么是CDN
++ [什么是CDN](#step1)
++ [Windows Azure CDN优势](#step2)
++ [Windows Azure CDN功能](#step3)
+
+## 什么是CDN<a id="step1"></a>
 
 CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎所有大型网站都在使用这一技术，但该技术并非大型网站的专利。其基本思路是尽可能避开互联网上有可能 影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器，以互联网为基础构建一层更智能的虚拟网络，CDN 系统能够实时地根据网 络流量和各节点的连接、负载状况，以及到用户的距离和响应时间等综合信息，将用户的请 求重新导向距离用户最近的服务节点。
  
@@ -24,7 +28,7 @@ CDN 的全称是 Content Delivery Network，即内容传送网络。目前几乎
 ![][4]
 
 
-## 优势
+## 优势<a id="step2"></a>
 
 ### 对多种Windows Azure服务内置支持
 
@@ -73,7 +77,7 @@ CDN另外一个典型的应用场景就是针对大文件下载进行多节点�
 安全永远是用户最关心的话题，具体到CDN服务，Windows Azure CDN除了提供全面完善的HTTP访问类型的加速以外，还为对HTTPS访问协议有需要的用户提供专门的HTTPS类型加速服务。该加速服务从使用场景来说属于小文件加速服务，并能同时提供一定的动态路由访问优化服务。
 
 
-## 功能
+## 功能<a id="step3"></a>
 
 ### 全自助化创建管理CDN加速节点
 
