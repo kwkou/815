@@ -5,11 +5,11 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-        editor="jimbe" />
+    editor="jimbe" />
 
 <tags 
 	ms.service="active-directory" 
-        ms.date="10/12/2015" 
+    ms.date="10/12/2015" 
 	wacn.date="11/12/2015"/>
 
 # 如何查看 Azure Access Control 服务返回的 SAML
