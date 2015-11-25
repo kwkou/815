@@ -98,7 +98,7 @@ self.items = [results mutableCopy];
             // Let the caller know that we finished
             completion(index);
         }];
-
+```
 
 
 * 找到 **completeItem** 方法，并找到以下注释的代码行：
