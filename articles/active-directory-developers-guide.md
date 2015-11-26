@@ -62,12 +62,8 @@
 以下文章介绍如何使用 Azure Active Directory (AD) 执行具体的任务。
 
 - [获取 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant)
-- [列出 Azure Active Directory 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing)
-- [了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest)
 - [使用 Office 365 API 创建应用](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
 - [将适用于 Office 365 的 Web 应用提交到卖家仪表板](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
-- [预览：如何构建可以使用个人帐户和工作或学校帐户来登录用户的应用](/documentation/articles/active-directory-appmodel-v2-overview)
-- [预览：如何构建可以注册和登录使用者的应用](/documentation/articles/active-directory-b2c-overview)
 
 ## 引用
 
@@ -85,29 +81,29 @@
 
 #### Graph API
 
-- **[Graph API 参考](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)**：Azure Active Directory Graph API 的 REST 参考。[查看新的交互式 Graph API 参考体验](https://msdn.microsoft.com/zh-cn/library/Azure/Ad/Graph/api/api-catalog)。
+- [Graph API 参考](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx)：Azure Active Directory Graph API 的 REST 参考。[查看新的交互式 Graph API 参考体验](https://msdn.microsoft.com/zh-cn/library/Azure/Ad/Graph/api/api-catalog)。
 
-- **[Graph API 权限作用域](https://msdn.microsoft.com/zh-cn/library/Azure/Ad/Graph/api/graph-api-permission-scopes)**：用于控制应用程序必须对租户中目录数据具有的访问权限的 OAuth 2.0 权限作用域。
+- [Graph API 权限作用域](https://msdn.microsoft.com/zh-cn/library/Azure/Ad/Graph/api/graph-api-permission-scopes)：用于控制应用程序必须对租户中目录数据具有的访问权限的 OAuth 2.0 权限作用域。
 
 
 #### 身份验证协议
 
-- **[SAML 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn195591.aspx)**：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
+- [SAML 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn195591.aspx)：SAML 2.0 协议使应用程序能够为其用户提供单一登录体验。
 
 
-- **[OAuth 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)**：OAuth 2.0 协议使你能够授权访问 Azure AD 租户中的 Web 应用程序和 Web API。
+- [OAuth 2.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645545.aspx)：OAuth 2.0 协议使你能够授权访问 Azure AD 租户中的 Web 应用程序和 Web API。
 
 
-- **[OpenID Connect 1.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645541.aspx)**：OpenID Connect 1.0 协议扩展了 OAuth 2.0，使其能够用作身份验证协议。
+- [OpenID Connect 1.0 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn645541.aspx)：OpenID Connect 1.0 协议扩展了 OAuth 2.0，使其能够用作身份验证协议。
 
 
-- **[WS-Federation 1.2 协议参考](https://msdn.microsoft.com/zh-cn/library/azure/dn903702.aspx)**：Web 服务联合身份验证版本 1.2 规范中指定的 WS-Federation 1.2 协议。
+- [WS-Federation 1.2 协议参考](http://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html)：Web 服务联合身份验证版本 1.2 规范中指定的 WS-Federation 1.2 协议。
 
-- **[支持的安全令牌和声明](active-directory-token-and-claims)**：该指南可帮助你了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
+- [支持的安全令牌和声明](/documentation/articles/active-directory-token-and-claims)：该指南可帮助你了解和评估 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。
 
 ## 社交
 
-- **[Active Directory 团队博客](http://blogs.technet.com/b/ad/)**：实时了解 Azure AD 领域的最新开发情况。
+- [Active Directory 团队博客](http://blogs.technet.com/b/ad/)：实时了解 Azure AD 领域的最新开发情况。
 
 - [Azure Active Directory Graph 团队博客](http://blogs.msdn.com/b/aadgraphteam)：特定于图形 API 的 Azure Active Directory 信息。
 

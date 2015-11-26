@@ -51,24 +51,18 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 | --- | --- | --- | --- | --- |
 | **常用功能**| 目录即服务| ![勾选标记][12] 最多 500K 个用户 [1]| ![勾选标记][12] 无对象限制| ![勾选标记][12] 无对象限制|
 | | [使用 UI 或 Windows PowerShell cmdlet 进行用户和组管理](/documentation/articles/active-directory-administer)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
-| | [设备注册](/documentation/articles/active-directory-conditional-access-device-registration-overview)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
-| | [访问面板门户，适合对 SaaS 和自定义应用程序进行基于 SSO 的用户访问](/documentation/articles/active-directory-saas-access-panel-introduction)| ![勾选标记][12] 每个用户最多 10 个应用 [2]| ![勾选标记][12] 每个用户最多 1- 个应用 [2]| ![勾选标记][12] 无应用限制|
 | | [基于用户的应用程序访问管理和设置](/documentation/articles/active-directory-saas-app-provisioning)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | | 云用户的自助密码更改| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | | [Azure AD Connect – 用于在本地目录与 Azure Active Directory 之间同步](/documentation/articles/active-directory-aadconnect)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | | [标准安全报告](/documentation/articles/active-directory-view-access-usage-reports)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
-| | [B2B 协作（跨组织协作）（预览版）](/documentation/articles/active-directory-b2b-collaboration-overview)| ![勾选标记][12]| ![勾选标记][12]| ![勾选标记][12]|
 | **高级和基本版功能**| [对“登录”和“访问面板”页自定义公司徽标和颜色](/documentation/articles/active-directory-add-company-branding)| Office 365 订阅已随附 [4]| ![勾选标记][12]| ![勾选标记][12]|
 | | [云用户的自助密码重置](/documentation/articles/active-directory-passwords)| Office 365 订阅已随附 [4]| ![勾选标记][12]| ![勾选标记][12]|
-| | [应用程序代理：对本地 Web 应用程序进行安全远程访问和 SSO](/documentation/articles/active-directory-application-proxy-get-started)| | ![勾选标记][12]| ![勾选标记][12]|
-| | [基于组的应用程序访问管理和设置](/documentation/articles/active-directory-accessmanagement-group-saasapps)| | ![勾选标记][12]| ![勾选标记][12]|
 | | [高可用性 SLA 运行时间 (99.9%)](https://azure.microsoft.com/zh-CN/support/legal/sla/)| Microsoft Online Services SLA [5]| ![勾选标记][12]| ![勾选标记][12]|
 | **仅限高级版的功能**| [高级应用程序使用情况报告](/documentation/articles/active-directory-view-access-usage-reports)| | | ![勾选标记][12]|
 | | [面向云用户的自助组管理](面向 Azure AD 中用户的自助组管理)| | | ![勾选标记][12]|
 | | [自助服务密码重置与本地回写](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords)| | | ![勾选标记][12]|
 | | [Microsoft 标识管理器 (MIM) 用户许可证 – 用于本地标识和访问管理](http://www.microsoft.com/zh-CN/server-cloud/products/microsoft-identity-manager/default.aspx)| | | ![勾选标记][12] [3]|
 | | [高级异常安全报告（基于机器学习）](/documentation/articles/active-directory-view-access-usage-reports)| | | ![勾选标记][12]|
-| | [云应用发现](/documentation/articles/active-directory-cloudappdiscovery-whatis)| | | ![勾选标记][12]|
 | | [面向云用户的 Multi-Factor Authentication 服务](/documentation/articles/multi-factor-authentication)| Office 365 订阅已随附 [4]| | ![勾选标记][12]|
 | | [面向本地用户的 Multi-Factor Authentication 服务](/documentation/articles/multi-factor-authentication)| | | ![勾选标记][12]|
 | | [Azure Active Directory Connect Health – 用于监视本地 Active Directory 基础结构的运行状况并获取使用情况分析](/documentation/articles/active-directory-aadconnect-health)| | | ![勾选标记][12]|
