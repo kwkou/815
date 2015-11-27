@@ -10,7 +10,6 @@
 
 ##**服务咨询**<a id="step1"></a>
 
-
 ### **CDN的概念和作用**
 
 CDN 的全称是 Content Delivery Network，即内容分发网络。CDN通过在现有的 Internet 中添加一层新的网络架构，将网站的内容缓存到离用户最近的网络“边缘”，使用户可以就近取得所需的内容，从而提供高带宽、低延迟的用户体验。 
@@ -138,4 +137,4 @@ CDN（内容分发网络）说白了就是一组网络内容缓存节点，和�
 
 ### **CDN是如何计费的？**
 
-目前Windows Azure CDN 都是按照流量计费，暂时不支持峰值带宽计费。具体定价信息，请参考[定价详细信息](http://www.windowsazure.cn/home/features/cdn/#price)[定价详细信息](http://www.windowsazure.cn/home/features/cdn/#price)。
+目前Windows Azure CDN 都是按照流量计费，暂时不支持峰值带宽计费。具体定价信息，请参考[定价详细信息](http://www.windowsazure.cn/home/features/cdn/#price)。
