@@ -29,7 +29,7 @@
 
 若要连接到数据库，你需要服务器的完整名称 (****servername**.database.windows.net*)，该名称中包含要连接到的数据库。
 
-1. 转到 [Azure 预览门户](https://www.windowsazure.cn)。
+1. 转到 [Azure 门户](https://www.windowsazure.cn)。
 2. 浏览到要连接到的数据库。
 3. 找到完整的服务器名称：
 

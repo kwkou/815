@@ -15,7 +15,7 @@ articles/sql-database/sql-database-connect-query.md
 -->
 
 
-1. 通过 [Azure 预览门户](https://manage.windowsazure.cn/)（网址为 https://manage.windowsazure.cn/） 登录。
+1. 通过 [Azure 管理门户](https://manage.windowsazure.cn/)（网址为 https://manage.windowsazure.cn/） 登录。
 
 2. 在左侧的横幅中，单击“浏览全部”。此时会显示“浏览”边栏选项卡。
 

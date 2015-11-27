@@ -61,22 +61,7 @@ Azure 中的 SQL 数据库位于数据库服务器上。一个服务器可以托
 
 此时数据库和服务器尚未创建完成。需要完成下一步才可以完成创建，在下一步中，你选择通过 AdventureWorks 示例创建数据库并确认设置。
 
-## 步骤 4：设置和创建数据库
-1. 在“SQL 数据库”边栏选项卡中，单击“选择源”，然后单击“示例”。 
-
-	![从示例创建数据库](./media/sql-database-get-started/new-sample-db.png)
-
-2. 将返回到“SQL 数据库”边栏选项卡，在该边栏选项卡中，“选择示例”现在显示“AdventureWorks LT [V12]”。单击“创建”开始创建服务器和数据库。
-
-	![创建示例数据库](./media/sql-database-get-started/adworks_create.png)
-
-	>[AZURE.NOTE]对于本快速操作指南，我们并没有更改“定价层”、“排序规则”和“资源组”的设置。。你随时可以更改数据库的定价层以及进行扩展和缩减，且没有停机时间。有关详细信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)<!--和 [SQL 数据库定价层](/documentation/articles/sql-database-service-tiers)-->。数据库的排序规则一经设置不能更改。有关排序规则的详细信息，请参阅[排序规则和 Unicode 支持](https://msdn.microsoft.com/zh-cn/library/ms143726.aspx)。有关 Azure 资源组的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
-
-将跳转回 Azure 启动板，其中一个磁贴显示进度，直到数据库创建完成并处于联机状态。也可以单击“浏览全部”，然后单击“SQL 数据库”，以确认数据库处于联机状态。
-	
-祝贺你！ 你现在拥有一个在云中运行的数据库。操作即将完成。只剩最后一个关键步骤。你需要在数据库服务器上创建规则，以便可以连接到数据库。
-
-## 步骤 5：配置防火墙
+## 步骤 3：配置防火墙
 
 你需要在服务器上设置允许从客户端计算机 IP 地址连接到数据库的防火墙规则，以便可以使用数据库。这不仅有助于确保可以连接，还是一种极佳的方法，让你可以看到能够从中获取有关 Azure 中 SQL 服务器更多详细信息的区域。
 

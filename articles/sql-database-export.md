@@ -20,7 +20,7 @@
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
-本文介绍如何通过 [Azure 预览门户](https://manage.widnowsazure.cn)手动导出 SQL 数据库的 BACPAC。
+本文介绍如何通过 [Azure 门户](https://manage.widnowsazure.cn)手动导出 SQL 数据库的 BACPAC。
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
@@ -40,7 +40,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 
 打开要导出为 .bacpac 文件的数据库的 SQL 数据库边栏选项卡：
 
-1.	转到 [Azure 预览门户](https://manage.widnowsazure.cn)。
+1.	转到 [Azure 门户](https://manage.widnowsazure.cn)。
 2.	单击“浏览全部”。
 3.	单击“SQL 数据库”。
 2.	单击要导出为 BACPAC 的数据库。
@@ -64,17 +64,12 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 2.	单击包含你刚导出的原始（源）数据库的服务器。
 3.	在 SQL 服务器边栏选项卡中，单击“导入/导出历史记录”：
 
-    ![导入导出历史记录][3] 
-    ![导入导出历史记录][4]
-
 ## 确认 BACPAC 位于你的存储容器中
 
 2.	单击“浏览全部”。
 3.	单击“存储帐户（经典）”。
 2.	单击你在其中存储 BACPAC 的存储帐户。
 3.	单击“容器”，然后选择数据库所导出到的容器以了解备份详细信息（从这里可以下载和保存 BACPAC）。
-
-    ![.bacpac 文件详细信息][5]
 
 
 ## 后续步骤
