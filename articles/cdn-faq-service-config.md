@@ -1,12 +1,11 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons" description="Find answers to service configuration related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, CDN加速, CDN服务, 配置CNAME, CNAME, CNAME记录, 缓存刷新, 缓存规则, CDN边缘节点, CDN技术文档, CDN帮助文档" description="Find answers to service configuration related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="11/24/2015"
+    wacn.date="11/27/2015"
     />
 
-#常见问题
+#常见问题 - 服务配置
 
-##服务配置
 ### **如何配置CNAME**
 到域名托管商找到该域名解析管理—删除该域名的A记录—添加一条cname记录，cname的域名我们已经给出。
 
@@ -19,8 +18,8 @@
       
 2. 若设置的缓存刷新周期未到，但是有新内容发布或者删除部分内容，可以使用Windows Azure CDN管理平台提供的缓存刷新功能，进行手动强行刷新。
 
-### **更换原站服务器如何操作**    
-    
+### **更换原站服务器如何操作**
+
 首先要确保新的源站服务器能正常服务，然后在Windows Azure CDN高级管理平台—域名管理中将原站地址变更为新的地址，保存即可。
 
 ### **如何设置缓存刷新**

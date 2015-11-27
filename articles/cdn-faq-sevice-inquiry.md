@@ -1,14 +1,15 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="11/24/2015"
+    wacn.date="11/27/2015"
     />
-#常见问题
+#常见问题 - 咨询
 
 + [Windows Azure CDN服务咨询](#step1)
 + [Windows Azure CDN价格咨询](#step2)
 
-##服务咨询<a id="step1"></a>
+##**服务咨询**<a id="step1"></a>
+
 
 ### **CDN的概念和作用**
 
@@ -54,7 +55,7 @@ Windows Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加
 
 不同的CDN加速类型对应于不同的使用场景：
 
-1. WEB加速对应于网页等（html，CSS,图片，JS）比较小的静态文件加速
+1. WEB加速对应于网页等（html, CSS, 图片, JS）比较小的静态文件加速
 
 2. 下载加速一般对应于20MB以上的大文件文件分发
 
@@ -87,13 +88,14 @@ Windows Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加
   1. 对ts文件缓存2分钟
   2. 对m3u8 文件缓存2秒钟 
 	
-缓存规则逻辑：
+**缓存规则逻辑：**
 
    1. 如果用户配置了不缓存的规则，优先匹配；然后匹配需要缓存的规则；缓存规则自上而下匹配。
 
    2. 如果某个URL在不缓存、缓存规则里都没有匹配上，那么就遵循CDN默认规则。
 	 
 ### **“源站地址（回源地址）”和“回源域名（回源host header）”的区别是什么？**	 
+
 回源地址表示源站实际可以被访问到的地址，可以是IP也可以是域名。如果是域名，CDN在回源是会对该域 名进行地址解析，然后用解析出来的IP再进行访问。
 
 回源域名表示CDN回源时，HTTP请求头（request header）中的Host字段值。这个字段值一般是域名形式的字符串，被源站用来识别是否与源站服务器上配置的域名相同。
@@ -103,10 +105,6 @@ Windows Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加
 ### **CDN标准版和CDN高级版有什么区别？**
      
 首先，价格不同，具体请参考[定价详细信息](http://www.windowsazure.cn/home/features/cdn/#price)。其次，目前CDN高级版仅包含https的加速服务，后续会逐步增加其他的高级加速服务。目前如果您想使用 CDN HTTPS 加速服务，请通过支持页面联系 Windows Azure 的支持团队开通 CDN HTTPS 加速服务。
-
-### **Azure CDN合作的CDN服务厂商有哪些？**
-
-目前Windows Azure CDN在国内的CDN合作伙伴有蓝汛和网宿，共同为用户提供优质的CDN加速服务。后续会有其他国内外主流CDN合作伙伴加入。
 
 ### **Blob使用CDN加速，是否直接使用blob地址，而不使用自定义域名，是否还需要备案，为什么？**
 CDN（内容分发网络）说白了就是一组网络内容缓存节点，和客户的源站不是等价的。缓存节点上，只包含用户设置需要缓存的内容，且有可能会过期。
@@ -127,13 +125,17 @@ CDN（内容分发网络）说白了就是一组网络内容缓存节点，和�
 ![FAQ](./media/cdn-doc/FAQ.png)
     
 
-##价格咨询<a id="step2"></a>
+##**价格咨询**<a id="step2"></a>
+
 
 ### **在每月传输的数据超过 10TB 后，是否按更高等级的费率对所有数据传输计费？**
 
-不。属于每个等级的使用量将按照针对该等级的费5费。例如，如果您在区域 1 产生了 50TB 的标准版 CDN 数据传输，前 10TB 将按照每 GB ¥ 0.41 的费率计费，剩下的 40TB 将按照每 GB ¥ 0.41 的费率计费。
+不。属于每个等级的使用量将按照针对该等级的费率计费。例如，如果您在区域 1 产生了 50TB 的标准版 CDN 数据传输，前 10TB 将按照每 GB ¥ 0.45 的费率计费，剩下的 40TB 将按照每 GB ¥ 0.41 的费率计费。
 
 ### **CDN 收费中是否包含对存储进行请求，以便检索数据并将数据从存储传输到 CDN 位置的费用？**
 
 不包含。当 CDN 收到针对非位于边缘位置的对象请求时，将向 Azure 存储发出请求以获取数据。从存储读取数据以及将数据从存储传输到 CDN 的操作将按照标准的数据传输费率收费。
 
+### **CDN是如何计费的？**
+
+目前Windows Azure CDN 都是按照流量计费，暂时不支持峰值带宽计费。具体定价信息，请参考[定价详细信息](http://www.windowsazure.cn/home/features/cdn/#price)[定价详细信息](http://www.windowsazure.cn/home/features/cdn/#price)。
