@@ -1,7 +1,7 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to create Web acceleration type CDN - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, Web加速, Web, 网页加速, 静态加速, 缓存规则, 图片加速, 技术文档, 帮助文档" description="Learn How to create Web acceleration type CDN on Windows Azure Management Portal and default caching rules for Web CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to create Web acceleration type CDN - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN加速, CDN服务, 主流CDN, Web加速, Web, 网页加速, 静态加速, 缓存规则, 图片加速, CDN技术文档, CDN帮助文档, 门户网站加速" description="Learn How to create Web acceleration type CDN on Windows Azure Management Portal and default caching rules for Web CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
     ms.date=""
-    wacn.date="11/24/2015"
+    wacn.date="11/27/2015"
     />
 
 #Web加速CDN节点创建
