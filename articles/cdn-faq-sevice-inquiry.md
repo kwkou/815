@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="11/27/2015"
+    wacn.date="12/01/2015"
     />
 #常见问题 - 咨询
 
@@ -92,6 +92,14 @@ Windows Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加
    1. 如果用户配置了不缓存的规则，优先匹配；然后匹配需要缓存的规则；缓存规则自上而下匹配。
 
    2. 如果某个URL在不缓存、缓存规则里都没有匹配上，那么就遵循CDN默认规则。
+
+### **可以给泛域名配置缓存规则吗？**
+
+可以给泛域名配置缓存规则。如果自定义域名为泛域名，提交缓存刷新的时候，刷新URL必须是“子域名”，不能是泛域名。比如：自定义域名：*.domain.com，假如要刷新img.domain.com下的内容，则应该重新创建img.domain.com的CDN节点，然后在该节点下配置img.domain.com的缓存规则。
+
+### **预加载可以使用泛域名吗？**
+
+预加载必须是子域名，并且是能够正常访问的URL（状态码是200的）。
 	 
 ### **“源站地址（回源地址）”和“回源域名（回源host header）”的区别是什么？**	 
 
