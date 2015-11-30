@@ -14,9 +14,6 @@
 
 # SQL 数据库 动态数据屏蔽（Azure 门户）入门
 
-> [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure Preview portal](/documentation/articles/sql-database-dynamic-data-masking-get-started)
-
 ## 概述
 
 SQL 数据库 动态数据屏蔽通过向无特权用户屏蔽敏感数据来控制此类数据的透漏。在 Azure SQL 数据库 V12 版本的基本、标准和高级服务层中，动态数据屏蔽以预览版提供。
@@ -28,9 +25,6 @@ SQL 数据库 动态数据屏蔽通过向无特权用户屏蔽敏感数据来控
 ## SQL 数据库 动态数据屏蔽基础知识
 
 可以在 Azure 门户中数据库的“审核和安全性”选项卡下设置动态数据屏蔽策略。在设置动态数据屏蔽之前，请检查是否正在使用[下层客户端](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients)。
-
-
-> [AZURE.NOTE]若要在 Azure 预览门户中设置动态数据屏蔽，请参阅 [SQL 数据库动态数据屏蔽入门（Azure 预览门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started)。
 
 
 ### 动态数据屏蔽权限

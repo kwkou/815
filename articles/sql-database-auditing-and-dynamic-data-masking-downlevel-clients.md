@@ -15,7 +15,7 @@
 # SQL 数据库 - 审核和动态数据掩码的下层客户端支持 
 
 
-[审核](/documentation/articles/sql-database-auditing-get-started)和[动态数据掩码](/documentation/articles/sql-database-dynamic-data-masking-get-started)适用于支持 TDS 重定向的 SQL 客户端。
+[审核](/documentation/articles/sql-database-auditing-get-started)和<!--[-->动态数据掩码<!--](/documentation/articles/sql-database-dynamic-data-masking-get-started)-->适用于支持 TDS 重定向的 SQL 客户端。
 
 任何实现了 TDS 7.4 的客户端同样应当支持重定向。例外情况包括不完全支持重定向功能的 JDBC 4.0 以及未实现重定向的 Tedious（适用于 Node.JS）。
 

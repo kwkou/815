@@ -54,7 +54,7 @@ ALTER ROLE db_datawriter ADD MEMBER ApplicationUser; -- allows ApplicationUser t
 
 用于连接的服务器管理员帐户是 db\_owner 所有者的成员，该帐户有权在数据库中执行任何操作。请保存此帐户，以便部署架构升级并执行其他管理操作。权限受到更多限制的“ApplicationUser”帐户可让用户使用应用程序所需的最低权限从应用程序连接到数据库。
 
-可通过多种方法来进一步限制用户可在 Azure SQL 数据库中执行的操作：* 可以使用除 db\_datareader 和 db\_datawriter 以外的[数据库角色](https://msdn.microsoft.com/zh-CN/library/ms189121)来创建权限更高的应用程序用户帐户，或权限更低的管理帐户。* 粒度[权限](https://msdn.microsoft.com/zh-CN/library/ms191291)可以控制你能够对单个列、表、视图、过程和数据库中的其他对象执行的操作。* [模拟](https://msdn.microsoft.com/zh-CN/library/vstudio/bb669087)和[模块签名](https://msdn.microsoft.com/zh-CN/library/bb669102)可用于安全地暂时性提升权限。* [行级安全性](https://msdn.microsoft.com/zh-CN/library/dn765131)可让你筛选用户可以查看的行。* [数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)可用于限制敏感数据的透露。* [存储过程](https://msdn.microsoft.com/zh-CN/library/ms190782)可用于限制对数据库执行的操作。
+可通过多种方法来进一步限制用户可在 Azure SQL 数据库中执行的操作：* 可以使用除 db\_datareader 和 db\_datawriter 以外的[数据库角色](https://msdn.microsoft.com/zh-CN/library/ms189121)来创建权限更高的应用程序用户帐户，或权限更低的管理帐户。* 粒度[权限](https://msdn.microsoft.com/zh-CN/library/ms191291)可以控制你能够对单个列、表、视图、过程和数据库中的其他对象执行的操作。* [模拟](https://msdn.microsoft.com/zh-CN/library/vstudio/bb669087)和[模块签名](https://msdn.microsoft.com/zh-CN/library/bb669102)可用于安全地暂时性提升权限。* [行级安全性](https://msdn.microsoft.com/zh-CN/library/dn765131)可让你筛选用户可以查看的行。* <!--[-->数据屏蔽<!--](/documentation/articles/sql-database-dynamic-data-masking-get-started)-->可用于限制敏感数据的透露。* [存储过程](https://msdn.microsoft.com/zh-CN/library/ms190782)可用于限制对数据库执行的操作。
 
 从 Azure 管理门户或使用 Azure 资源管理器 API 管理数据库和逻辑服务器的操作将会根据你的门户用户帐户的角色分配进行控制。<!--有关此主题的详细信息，请参阅 [Azure 预览门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure)。-->
 

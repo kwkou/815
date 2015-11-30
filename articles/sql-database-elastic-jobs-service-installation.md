@@ -146,7 +146,7 @@
 
 ## 后续步骤
 
-确保已在组中的每个数据库上创建对脚本具有适当权限的凭据。有关详细信息，请[参阅如何将用户添加到数据库组中的所有数据库](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。请参阅[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage)入门主题。
+确保已在组中的每个数据库上创建对脚本具有适当权限的凭据。有关详细信息，请[参阅如何将用户添加到数据库组中的所有数据库](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png

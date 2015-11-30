@@ -15,7 +15,6 @@
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库池
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-elastic-pool-portal)
 - [C#](/documentation/articles/sql-database-client-library)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-powershell)
 
