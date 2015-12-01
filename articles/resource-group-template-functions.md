@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="09/14/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="10/13/2015"
+   wacn.date="11/27/2015"/>
 
 # Azure 资源管理器模板函数
 
@@ -490,6 +490,41 @@
     }
 
 
+## uniqueString
+
+**uniqueString (stringForCreatingUniqueString, ...)**
+
+执行所提供字符串的 64 位哈希来创建唯一的字符串。当你需要创建资源的唯一名称时，此函数很有帮助。提供表示结果唯一性级别的参数值。可以指定该名称对于你的订阅、资源组或部署是否唯一。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| stringForCreatingUniqueString | 是 | 哈希函数中用于创建唯一字符串的基本字符串。
+| 根据需要使用其他参数 | 否 | 你可以添加任意数目的字符串，以创建指定唯一性级别的值。
+
+返回的值不是完全随机字符串，而是哈希函数的结果。返回的值长度为 13 个字符。不保证是全局唯一。你可以根据命名约定使用前缀来组合值，以创建更友好的名称。
+
+以下示例演示显示如何使用 uniqueString 来创建不同的通用级唯一值。
+
+根据订阅保持唯一
+
+    "[uniqueString(subscription().subscriptionId)]"
+
+根据资源组保持唯一
+
+    "[uniqueString(resourceGroup().id)]"
+
+根据资源组的部署保持唯一
+
+    "[uniqueString(resourceGroup().id, deployment().name)]"
+    
+以下示例演示显示如何根据资源组创建存储帐户的唯一名称。
+
+    "resources": [{ 
+        "name": "[concat('ContosoStorage', uniqueString(resourceGroup().id))]", 
+        "type": "Microsoft.Storage/storageAccounts", 
+        ...
+
+
 ## variables
 
 **variables (variableName)**
@@ -503,7 +538,8 @@
 
 ## 后续步骤
 - 有关 Azure 资源管理器模板中对各部分的说明，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- 若要合并多个模板，请参阅[将已链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
+- 若要合并多个模版，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
+- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=79-->
+<!---HONumber=82-->

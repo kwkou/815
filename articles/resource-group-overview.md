@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="09/09/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="10/02/2015"
+   wacn.date="11/27/2015"/>
 
 # Azure 资源管理器概述
 
@@ -79,6 +79,8 @@
 
 有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
 
+有关将解决方案部署到不同环境的指南，请参阅 [Microsoft Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments-preview-portal)。
+
 ## 标记
 
 资源管理器提供了标记功能，让你根据管理或计费要求为资源分类。如果你有一系列复杂的资源组和资源，并想要以最有利的方式可视化这些资产，则你可能需要使用标记。例如，你可以标记组织中充当类似角色或者属于同一部门的资源。
@@ -103,7 +105,7 @@
 
 ## 一致的管理层
 
-资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows 的 Azure CLI、Azure 预览门户或 REST API 提供完全兼容的操作。你可以使用最适合自己的界面，并快速切换不同的界面，而不会造成任何混淆。门户甚至还会针对门户外部执行的操作显示通知。
+资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows 的 Azure CLI或 REST API 提供完全兼容的操作。你可以使用最适合自己的界面，并快速切换不同的界面，而不会造成任何混淆。门户甚至还会针对门户外部执行的操作显示通知。
 
 有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
@@ -117,8 +119,8 @@
 ## 后续步骤
 
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
-- 若要部署你创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
+- 若要部署您创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
-- 有关如何设计你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
+- 有关如何设计您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 
-<!---HONumber=79-->
+<!---HONumber=82-->
