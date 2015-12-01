@@ -9,12 +9,11 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="09/05/2015"
-	ms.topic="article"
-	wacn.date="10/17/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/27/2015"/>
 
 
-# 使用 PowerShell 创建和导出 SQL 数据库的 BACPAC
+# 使用 PowerShell 创建和导出 Azure SQL 数据库的 BACPAC
 
 **单一数据库**
 
@@ -22,7 +21,7 @@
 - [PowerShell](/documentation/articles/sql-database-export-powershell)
 
 
-本文介绍如何通过 PowerShell 手动导出 SQL 数据库的 BACPAC。
+本文说明如何使用 PowerShell 导出 Azure SQL 数据库的 BACPAC。
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
@@ -68,7 +67,7 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
     $DatabaseName = "nameofdatabasetobackup"
     $BlobName = "filename.bacpac"
 
-在 [Azure 预览门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+在 [Azure 门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
 
     $StorageName = "storageaccountname"
     $ContainerName = "blobcontainername"
@@ -140,4 +139,4 @@ BACPAC 导出到 Azure 存储 blob 容器中，你可以在操作成功完成后
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
 - [SQL 数据库文档](/documentation/services/sql-databases/)
 
-<!---HONumber=74-->
+<!---HONumber=82-->
