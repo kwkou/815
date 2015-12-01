@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Azure 移动服务 .NET 后端创建排行榜应用程序" 
-	description="了解如何使用具有 .NET 后端的 Azure 移动服务生成 Windows 应用商店应用程序。" 
+	pageTitle="创建具有 .NET 后端的 Windows 应用商店排行榜应用 | Azure 移动服务" 
+	description="了解如何使用 Azure 移动服务构建具有 .NET 后端的 Windows 应用商店排行榜应用。" 
 	documentationCenter="windows" 
 	authors="MikeWasson" 
 	manager="dwrede" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/24/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/24/2015" 
+	wacn.date="11/27/2015"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
 
@@ -755,4 +755,5 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 [处理数据库写入冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handle-database-conflicts
 [添加推送通知]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started
 [身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
-<!---HONumber=71-->
+
+<!---HONumber=82-->

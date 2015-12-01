@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="05/28/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="09/28/2015"
+	wacn.date="11/27/2015"/>
 
 
 # 向 iOS 应用和 .NET 后端添加推送通知
@@ -29,16 +29,16 @@
 
 * 打开 Visual Studio 项目，然后选择“控制器”文件夹 >“TodoItemController.cs”> 方法 `PostTodoItem`。将该方法替换为以下内容。插入待办事项时，此代码将发送包含项文本的推送通知。如果发生了错误，该代码将添加一个错误日志条目，该条目可通过门户中的“日志”部分查看。
 
+
 ```
-		
-		public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
+        public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
         {
             TodoItem current = await InsertAsync(item);
 
             ApplePushMessage message = new ApplePushMessage(item.Text, System.TimeSpan.FromHours(1));
 
             try
-            {  
+            {
                 var result = await Services.Push.SendAsync(message);
                 Services.Log.Info(result.State.ToString());
             }
@@ -59,7 +59,6 @@
 [AZURE.INCLUDE [在应用程序中测试推送通知](../includes/test-push-notifications-in-app.md)]
 
 <!-- Anchors.  -->
-
 [Generate the certificate signing request]: #certificates
 [Register your app and enable push notifications]: #register
 [Create a provisioning profile for the app]: #profile
@@ -74,7 +73,6 @@
 [Publish the mobile service to Azure]: #publish-mobile-service
 
 <!-- Images. -->
-
 [5]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step5.png
 [6]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step6.png
 [7]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-step7.png
@@ -112,7 +110,6 @@
 [117]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
 <!-- URLs. -->
-
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
@@ -121,11 +118,10 @@
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-[Send push notifications to authenticated users]: /documentation/articles/mobile-services-dotnet-backend-ios-push-notifications-app-users
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [What are Notification Hubs?]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
-<!---HONumber=71-->
+
+<!---HONumber=82-->

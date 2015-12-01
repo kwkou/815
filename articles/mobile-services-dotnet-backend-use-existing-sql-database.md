@@ -9,15 +9,15 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/20/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="08/01/2015"
+	wacn.date="11/27/2015"/>
 
 
 # 使用现有的 SQL 数据库和移动服务 .NET 后端生成服务
 
 移动服务 .NET 后端可方便你利用现有的资产来生成移动服务。（在本地或云中）使用可能已被其他应用程序使用的现有 SQL 数据库让现有数据可供移动客户端使用是特别有趣的方案之一。在此情况下，数据库模型（或*架构*）必须保持不变才能使现有方案继续工作。
 
-<a name="ExistingModel"></a>
+<a name="ExistingModel">
 ## 探索现有的数据库模型
 
 在本教程中，我们将使用以你的移动服务创建的数据库，但不使用创建的默认模型。我们将手动创建任意模型，以代表你可能具有的现有应用程序。有关如何改为连接到本地数据库的完整详细信息，请查看[使用混合连接从 Azure 移动服务连接到本地 SQL Server](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)。
@@ -91,7 +91,7 @@
 
 上述结构很接近你可能已用于现有应用程序的现有 Entity Framework 模型。请注意，在此阶段，模型无法以任何方式识别移动服务。
 
-<a name="DTOs"></a>
+<a name="DTOs">
 ## 为移动服务创建数据传输对象 (DTO)
 
 你想要在移动服务中使用的数据模型可能很复杂；其中可能包含数百个具有各种关系的实体。在生成移动应用程序时，我们通常会简化数据模型并消除关系（或手动处理关系），以尽可能减少在应用程序与服务之间来回发送的负载。在本部分中，我们将创建一组简化的对象（称为“数据传输对象”，缩写为“DTO”），并将其映射到你在数据库中拥有的数据，但仅包含移动应用程序所需的最少属性集。
@@ -241,7 +241,7 @@
             }
         }
 
-<a name="Mapping"></a>
+<a name="Mapping">
 ## 在 DTO 与模型之间创建映射
 
 现在我们已有模型类型 **Customer** 和 **Order** 以及 DTO **MobileCustomer** 和 **MobileOrder**，但我们需要指示后端自动在两者之间转换。此时，移动服务依赖于 [**AutoMapper**](http://automapper.org/)，这是已在项目中引用的对象关系映射器。
@@ -469,7 +469,7 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 现在我们已可创建控制器，以向客户端公开 DTO。
 
-<a name="Controller"></a>
+<a name="Controller">
 ## 使用 DTO 实现 TableController
 
 1. 在 **Controllers** 文件夹中添加文件 **MobileCustomerController.cs**：
@@ -581,14 +581,13 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 3. 现在，你可以运行服务。按 **F5**，然后使用内置于帮助页中的测试客户端来修改数据。
 
-    请注意，这两个控制器实现独占使用 **MobileCustomer** 和 **MobileOrder**，且不区分基础模型。这些 DTO 已序列化为 JSON，并可用来与所有平台上的移动服务客户端 SDK 交换数据。例如，如果生成 Windows 应用商店应用程序，则相应的客户端类型将如下所示。该类型将与其他客户端平台上的类型相似。
+请注意，这两个控制器实现独占使用 **MobileCustomer** 和 **MobileOrder**，且不区分基础模型。这些 DTO 已序列化为 JSON，并可用来与所有平台上的移动服务客户端 SDK 交换数据。例如，如果生成 Windows 应用商店应用程序，则相应的客户端类型将如下所示。该类型将与其他客户端平台上的类型相似。
 
+    using Microsoft.WindowsAzure.MobileServices;
+    using System;
 
-		using Microsoft.WindowsAzure.MobileServices;
-		using System;
-
-		namespace ShoppingClient
-		{
+    namespace ShoppingClient
+    {
         public class MobileCustomer
         {
             public string Id { get; set; }
@@ -610,6 +609,6 @@ AutoMapper 此时会将对象互相映射。将匹配所有具有相应名称的
 
 	    }
 
-接下来，你可以生成客户端应用程序以访问服务。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data#update-the-app-to-use-the-mobile-service)。
+接下来，你可以生成客户端应用程序以访问服务。
 
-<!---HONumber=71-->
+<!---HONumber=82-->

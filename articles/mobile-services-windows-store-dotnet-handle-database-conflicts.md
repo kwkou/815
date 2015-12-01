@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="10/05/2015" 
+	wacn.date="11/27/2015"/>
 
 # 处理数据库写入冲突
 
@@ -118,7 +118,7 @@
 
 	> [AZURE.NOTE]使用非类型表时，请通过将 Version 标志添加到表的 SystemProperties 来启用乐观并发。
 	>
-````` 
+	>````` 
 	//Enable optimistic concurrency by retrieving __version
 todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 `````
@@ -382,4 +382,4 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=271146
 [系统属性]: http://go.microsoft.com/fwlink/?LinkId=331143
 
-<!---HONumber=74-->
+<!---HONumber=82-->

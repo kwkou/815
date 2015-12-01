@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="用于 Xamarin.Android 的移动服务入门" 
+	pageTitle="适用于 Xamarin.Android 的移动服务入门 | Windows Azure" 
 	writer="craigd" 
 	description="了解如何对 Xamarin.Android 应用程序使用 Azure 移动服务。" 
 	documentationCenter="xamarin" 
@@ -10,14 +10,17 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/09/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="10/05/2015" 
+	wacn.date="11/27/2015"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
 
-本教程说明如何使用 Azure 移动服务向 Xamarin.Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单<em>待办事项列表</em>应用程序。
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+
+本教程说明如何使用 Azure 移动服务向 Xamarin.Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。
 
 以下是完成的应用程序的屏幕快照：
 
@@ -63,10 +66,6 @@
 
 2. 在 Xamarin Studio 或 Visual Studio 中，依次单击“文件”、“打开”，导航到解压缩的示例文件，然后选择“XamarinTodoQuickStart.Android.sln”以将其打开。
 
-	![][8]
-
-	![][9]
-
 3. 按“运行”按钮生成项目并启动应用程序。系统将要求你选择模拟器或已连接的 USB 设备。
 
 	> [AZURE.NOTE]若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。
@@ -77,9 +76,10 @@
 
 	这样可向在 Azure 中托管的新移动服务发送 POST 请求。来自请求的数据被插入到 TodoItem 表。移动服务返回存储在表中的项，数据显示在列表中。
 
-	> [AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
+	> [AZURE.NOTE]
+	你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 ToDoActivity.cs C# 文件中。
 
-6. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
+5. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
 
 	![][11]
 
@@ -90,11 +90,19 @@
 ##  <a name="next-steps"></a>后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [脱机数据同步入门]<br/>了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+* [脱机数据同步入门]
+了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [身份验证入门]<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [身份验证入门]
+ 了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门 ]<br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门 ]
+ 了解如何向应用程序发送一条很基本的推送通知。
+
+* [如何使用 Azure 移动服务的 Xamarin 组件客户端](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)
+了解如何查询移动服务、处理数据和访问自定义 API。
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -103,7 +111,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-
 [0]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-quickstart-completed-android.png
 [2]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-create.png
 [3]: ./media/partner-xamarin-mobile-services-android-get-started/mobile-create-page1.png
@@ -129,4 +136,4 @@
 [WindowsAzure.com]: http://www.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=82-->

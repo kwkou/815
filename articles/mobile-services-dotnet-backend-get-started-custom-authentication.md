@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/09/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/28/2015" 
+	wacn.date="11/27/2015"/>
 
 # 自定义身份验证入门
 
@@ -211,9 +211,16 @@
             return;
         }
 
-	这是一个无操作方法，因为 **CustomLoginProvider** 不会与身份验证管道集成。
+	此方法尚未实现，因为 **CustomLoginProvider** 不会与身份验证管道集成。
 
-5. 将抽象方法 `ParseCredentials` 的以下实现添加到 **CustomLoginProvider**。public override ProviderCredentials ParseCredentials(JObject serialized) { if (serialized == null) { throw new ArgumentNullException("serialized"); }
+4. 将抽象方法 `ParseCredentials` 的以下实现添加到 **CustomLoginProvider**。
+
+        public override ProviderCredentials ParseCredentials(JObject serialized)
+        {
+            if (serialized == null)
+            {
+                throw new ArgumentNullException("serialized");
+            }
 
             return serialized.ToObject<CustomLoginProviderCredentials>();
         }
@@ -376,7 +383,7 @@
 
 	如果你在“帐户”表中保留了用户登录信息，则你只需调用 **CustomRegistration** 终结点一次，即可为给定的用户创建帐户。有关如何在支持的各种客户端平台上调用自定义 API 的示例，请参阅文章 [Azure 移动服务中的自定义 API – 客户端 SDK](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx)。
 	 
-	> [AZURE.IMPORTANT]由于此用户设置步骤只会发生一次，因此你可以考虑以某种带外方式创建用户帐户。对于公共注册终结点，还应该考虑实施基于短信或电子邮件的验证过程或者其他防护机制，以避免生成欺骗性的帐户。你可以使用 Twilio 从移动服务发送短信。有关详细信息，请参阅[如何：发送短信](/documentation/articles/partner-twilio-mobile-services-how-to-use-voice-sms#howto_send_sms)。也可以使用 SendGrid 从移动服务发送电子邮件。有关详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts)。
+	> [AZURE.IMPORTANT]由于此用户设置步骤只会发生一次，因此你可以考虑以某种带外方式创建用户帐户。对于公共注册终结点，还应该考虑实施基于短信或电子邮件的验证过程或者其他防护机制，以避免生成欺骗性的帐户。你可以使用 Twilio 从移动服务发送短信。也可以使用 SendGrid 从移动服务发送电子邮件。有关使用 SendGrid 的详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件](/documentation/articles/store-sendgrid-mobile-services-send-email-scripts)。
 	
 3. 再次使用适当的 **invokeApi** 方法，但这次改为调用 **CustomLogin** 终结点，以在消息正文中传递运行时提供的用户名和密码。
 
@@ -406,4 +413,4 @@
 [ProviderCredentials]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  
 
-<!---HONumber=71-->
+<!---HONumber=82-->

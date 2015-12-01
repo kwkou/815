@@ -1,17 +1,16 @@
-<properties 
-	pageTitle="如何使用 HTML 客户端 - Azure 移动服务" 
-	description="了解如何使用适用于 Azure 移动服务的 HTML 客户端。" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="如何使用 HTML 客户端 | Windows Azure"
+	description="了解如何使用适用于 Azure 移动服务的 HTML 客户端。"
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/16/2015" 
-	wacn.date="10/03/2015"/>
-
+	ms.date="09/24/2015"
+	wacn.date="11/27/2015"/>
 
 #  如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端
 
@@ -29,7 +28,7 @@
 
 - 对于 Web 的应用程序，请打开 HTML 文件，然后将以下代码添加到页的脚本引用中：
 
-        <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.7.min.js"></script>
 
 - 对于使用 JavaScript/HTML 编写的 Windows 应用商店应用程序，请将 **WindowsAzure.MobileServices.WinJS NuGet** 包添加到你的项目。
 
@@ -40,9 +39,9 @@
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为应用程序密钥。若要了解如何获取移动服务的应用程序 URL 和应用程序密钥，请查阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-html-get-started-data)。
+必须将占位符 `AppUrl` 替换为移动服务的应用程序 URL，将 `AppKey` 替换为你从 [Azure 门户](http://manage.windowsazure.cn/)获取的应用程序密钥。
 
->[AZURE.IMPORTANT]应用程序密钥用于针对移动服务筛选出随机请求，将随应用程序一起分发。由于此密钥未加密，因此不能被认为是安全的。为确保安全访问你的移动服务数据，你必须改为在允许用户访问前对用户进行身份验证。有关详细信息，请参阅[如何：对用户进行身份验证](#caching)。
+>[AZURE.IMPORTANT]应用程序密钥用于针对移动服务筛选出随机请求，将随应用程序一起分发。由于此密钥未加密，因此不能被认为是安全的。为确保安全访问你的移动服务数据，你必须改为在允许用户访问前对用户进行身份验证。有关详细信息，请参阅[如何：对用户进行身份验证](#authentication)。
 
 ## <a name="querying"></a>如何从移动服务查询数据
 
@@ -291,9 +290,9 @@
 + 更方便地合并不同表或数据库中的记录。
 + ID 值能够更好地与应用程序的逻辑相集成。
 
-如果插入的记录中尚未设置字符串 ID 值，移动服务将为 ID 生成唯一值。有关如何在客户端上或 .NET 后端中生成自己的 ID 值的详细信息，请参阅[如何：生成唯一 ID 值](/documentation/articles/mobile-services-how-to-use-server-scripts#generate-guids)。
+如果插入的记录中尚未设置字符串 ID 值，移动服务将为 ID 生成唯一值。有关如何在客户端上或 .NET 后端中生成自己的 ID 值的详细信息，请参阅[如何：生成唯一 ID 值](/documentation/articles/mobile-services-how-to-use-server-scripts/#generate-guids)。
 
-也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools#Mobile_Tables)。
+也可以为表使用整数 ID。若要使用整数 ID，必须结合 `--integerId` 选项使用 `mobile table create` 命令创建表。应在适用于 Azure 的命令行界面 (CLI) 中使用此命令。有关使用 CLI 的详细信息，请参阅[用于管理移动服务表的 CLI](/documentation/articles/virtual-machines-command-line-tools/#Mobile_Tables)。
 
 ## <a name="modifying"></a>如何：在移动服务中修改数据
 
@@ -361,9 +360,9 @@
 
 在 Windows 应用商店应用程序中，可以使用查询的结果来创建 [WinJS.Binding.List] 对象，该对象可绑定为 [ListView] 对象的数据源。有关详细信息，请参阅[数据绑定（使用 JavaScript 和 HTML 的 Windows 应用商店应用程序）]。
 
-## <a name="#custom-api"></a>如何：调用自定义 API
+##<a name="custom-api"></a>如何：调用自定义 API
 
-自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关完整示例，包括如何在移动服务中创建自定义 API，请参阅[从客户端调用自定义 API]。
+自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。有关如何在移动服务中创建自定义 API 的示例，请参阅[如何：定义自定义 API 终结点](/documentation/articles/mobile-services-dotnet-backend-define-custom-api)。
 
 通过对 **MobileServiceClient** 调用 [invokeApi](https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L337) 方法，从客户端调用自定义 API。例如，以下代码行向移动服务上的 **completeAll** API 发送 POST 请求：
 
@@ -381,7 +380,7 @@
  
 有关更现实可行的示例和对 **invokeApi** 更完整的介绍，请参阅[Azure 移动服务客户端 SDK 中的自定义 API](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx)。
 
-## <a name="caching"></a>如何对用户进行身份验证
+##<a name="authentication"></a>如何对用户进行身份验证
 
 移动服务支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Facebook、Google、Microsoft 帐户和 Twitter。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅 [身份验证入门] 教程。
 
@@ -408,11 +407,25 @@
 
 在此情况下，移动服务将通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成移动服务身份验证令牌。[login] 函数在完成时将返回一个 JSON 对象 (**user**)，该对象分别在 **userId** 和 **authenticationToken** 字段中公开用户 ID 和移动服务身份验证令牌。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅“缓存身份验证令牌”。
 
-> [AZURE.NOTE]**Windows 应用商店应用程序**当你使用 Microsoft 帐户登录提供程序对 Windows 应用商店应用程序的用户进行身份验证时，还应该将应用程序包注册到移动服务。将 Windows 应用商店应用程序包信息注册到移动服务后，客户端可以重复使用 Microsoft 帐户登录凭据来提供单一登录体验。如果你不执行此操作，则每次调用 login 方法时，系统都会向 Microsoft 帐户登录用户显示登录提示。若要了解如何注册 Windows 应用商店应用程序包，请参阅[注册 Windows 应用商店应用程序包以进行 Microsoft 身份验证](/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/%20target="_blank")。将程序包信息注册到移动服务后，请为 <em>useSingleSignOn</em> 参数提供 **true** 值以重复使用凭据，方便调用 [login](http://go.microsoft.com/fwlink/p/?LinkId=322050%20target="_blank") 方法。
-
-### 客户端流
+###客户端流
 你的应用程序还能够独立联系标识提供者，然后将返回的令牌提供给移动服务以进行身份验证。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。
 
+####Facebook/Google SDK 基本示例
+
+此示例使用 Facebook 客户端 SDK 进行身份验证：
+
+	client.login(
+	     "facebook",
+	     {"access_token": token})
+	.done(function (results) {
+	     alert("You are now logged in as: " + results.userId);
+	}, function (err) {
+	     alert("Error: " + err);
+	});
+
+此示例假定由相应的提供程序 SDK 提供的令牌存储在 `token` 变量中。目前，不能使用 Twitter 进行客户端身份验证。
+
+####Microsoft 帐户基本示例
 以下示例使用 Live SDK，该 SDK 使用 Microsoft 帐户来支持 Windows 应用商店应用程序的单一登录：
 
 		WL.login({ scope: "wl.basic"}).then(function (result) {
@@ -427,20 +440,67 @@
 		      });
 		});
 
-这个简化的示例将从 Live Connect 获取一个令牌，并通过调用 [login] 函数将该令牌提供给移动服务。有关如何使用 Microsoft 帐户提供单一登录体验的更完整示例，请参阅[使用单一登录对应用程序进行身份验证]。
+这个简化的示例将从 Live Connect 获取一个令牌，并通过调用 [login] 函数将该令牌提供给移动服务。
 
-如果使用 Facebook 或 Google API 进行客户端身份验证，则需要对该示例略做更改。
 
-		client.login(
-		     "facebook",
-		     {"access_token": token})
-		.done(function (results) {
-		     alert("You are now logged in as: " + results.userId);
-		}, function (err) {
-		     alert("Error: " + err);
+####Microsoft 帐户完整示例
+
+以下示例演示如何使用 Live SDK 和 WinJS API 来提供增强的单一登录体验：
+
+	// Set the mobileClient variable to client variable generated by the tooling.
+	var mobileClient = <yourClient>;
+
+	var session = null;
+	var login = function () {
+		return new WinJS.Promise(function (complete) {
+			WL.login({ scope: "wl.basic" }).then(function (result) {
+				session = result.session;
+
+				WinJS.Promise.join([
+					WL.api({ path: "me", method: "GET" }),
+					mobileClient.login(result.session.authentication_token)
+				]).done(function (results) {
+					// Build the welcome message from the Microsoft account info.
+					var profile = results[0];
+					var title = "Welcome " + profile.first_name + "!";
+					var message = "You are now logged in as: "
+						+ mobileClient.currentUser.userId;
+					var dialog = new Windows.UI.Popups.MessageDialog(message, title);
+					dialog.showAsync().then(function () {
+						// Reload items from the mobile service.
+						refreshTodoItems();
+					}).done(complete);
+
+				}, function (error) {
+
+				});
+			}, function (error) {
+				session = null;
+				var dialog = new Windows.UI.Popups.MessageDialog("You must log in.", "Login Required");
+				dialog.showAsync().done(complete);
+			});
 		});
+	}
 
-此示例假定由相应的提供程序 SDK 提供的令牌存储在 `token` 变量中。目前，不能使用 Twitter 进行客户端身份验证。目前无法在 JavaScript 后端使用 Microsoft Azure Active Directory 进行客户端身份验证。
+	var authenticate = function () {
+		// Block until sign-in is successful.
+		login().then(function () {
+			if (session === null) {
+				// Authentication failed, try again.
+				authenticate();
+			}
+		});
+	}
+
+	// Initialize the Live client.
+	WL.init({
+		redirect_uri: mobileClient.applicationUrl
+	});
+
+	// Start the sign-in process.
+	authenticate();
+
+此代码初始化 Live Connect 客户端，向 Microsoft 帐户发送一个新的登录请求，将返回的身份验证令牌发送到移动服务，然后显示有关已登录用户的信息。在身份验证成功之前，该应用不会启动。
 
 ### 缓存身份验证令牌
 在某些情况下，完成首次用户身份验证后，可以避免调用 login 方法。我们可以使用 [sessionStorage] 或 [localStorage] 来缓存当前用户首次登录时使用的标识，以后每次该用户登录时，系统都会检查缓存中是否存在该用户标识。如果缓存为空或者调用失败（意味着当前登录会话已过期），则用户仍然需要完成整个登录过程。
@@ -546,7 +606,7 @@
  			   alert(JSON.stringify(insertedAndUpdated));
  			})
 
-<h2><a name="customizing"></a>如何：自定义客户端请求标头</h2>
+##<a name="customizing"></a>如何：自定义客户端请求标头
 
 你可以使用 `withFilter` 函数发送自定义请求标头，以便读取和写入筛选器中即将发送的请求的任意属性。如果服务器端脚本需要自定义的 HTTP 标头或者可以使用这种标头增强自身，则你可能需要添加这样的标头。
 
@@ -577,7 +637,7 @@
 [How to: Insert data into a mobile service]: #inserting
 [How to: Modify data in a mobile service]: #modifying
 [How to: Delete data in a mobile service]: #deleting
-[How to: Authenticate users]: #caching
+[How to: Authenticate users]: #authentication
 [How to: Handle errors]: #errors
 [How to: Use promises]: #promises
 [How to: Customize request headers]: #customizing
@@ -600,8 +660,7 @@
 [ListView]: http://msdn.microsoft.com/zh-cn/library/windows/apps/br211837.aspx
 [数据绑定（使用 JavaScript 和 HTML 的 Windows 应用商店应用程序）]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh758311.aspx
 [login]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L301
-[使用单一登录对应用程序进行身份验证]: /documentation/articles/mobile-services-windows-store-javascript-single-sign-on
 [ASCII control codes C0 and C1]: http://zh.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [OData 系统查询选项参考]: http://go.microsoft.com/fwlink/p/?LinkId=444502
-[从客户端调用自定义 API]: /documentation/articles/mobile-services-html-call-custom-api
-<!---HONumber=71-->
+
+<!---HONumber=82-->

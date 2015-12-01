@@ -9,12 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/27/2015"/>
 
 # <a name="getting-started"></a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+>[AZURE.TIP]如果你不熟悉如何使用 Windows Azure 进行移动开发，请[开始使用 Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-ios-get-started-preview) 而不是 Azure 移动服务，因为前者提供[更多的优势](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview)。
 
 本教程说明如何使用 Azure 移动服务向 iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。移动服务为服务器端业务逻辑使用 .NET 和 Visual Studio。若要以 JavaScript 创建包含服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 
@@ -54,25 +57,27 @@
 
 了解如何在移动服务中执行其他重要任务：
 
-* [将移动服务添加到现有应用程序]<br/>了解有关使用移动服务存储和查询数据的详细信息。
+* [脱机数据同步入门]
+<br/>了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [脱机数据同步入门]<br/>了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+* [向现有应用程序添加身份验证]
+<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [向现有应用程序添加身份验证]<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [向现有应用程序添加推送通知]
+<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [向现有应用程序添加推送通知]<br/>了解如何向应用程序发送一条很基本的推送通知。
+* [移动服务 .NET 后端故障排除]
+<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
 
-* [移动服务 .NET 后端故障排除]<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
-
 [Getting started with Mobile Services]: #getting-started
 [Create a new mobile service]: #create-new-service
 [Define the mobile service instance]: #define-mobile-service-instance
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-
 [0]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-quickstart-completed-ios.png
 [1]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-quickstart-steps-vs.png
 
@@ -86,14 +91,15 @@
 
 
 <!-- URLs. -->
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
 [脱机数据同步入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [向现有应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [向现有应用程序添加推送通知]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [Management Portal]: https://manage.windowsazure.cn/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [JavaScript 后端版本]: /documentation/articles/mobile-services-ios-get-started
-<!---HONumber=71-->
+
+<!---HONumber=82-->

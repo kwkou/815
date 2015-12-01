@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="09/28/2015" 
+	wacn.date="11/27/2015"/>
 
 #  使用移动服务中的软删除
 
@@ -20,7 +20,7 @@
 
 启用软删除后再查询表的记录时，默认情况下，已删除的行不会返回在查询中。若要请求这些行，必须在 [REST 查询操作](http://msdn.microsoft.com/zh-cn/library/azure/jj677199.aspx)中传递查询参数 *\_\_includeDeleted=true*。在.NET 客户端 SDK 中，你还可以使用帮助器方法 `IMobileServiceTable.IncludeDeleted()`。
 
-软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。可以从 [Microsoft Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)获取最新的 NuGet 包。
+软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。可以从 [Windows Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)获取最新的 NuGet 包。
 
 
 使用软删除的一些潜在优势：
@@ -158,4 +158,4 @@
 [移动服务的脱机数据同步]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=82-->

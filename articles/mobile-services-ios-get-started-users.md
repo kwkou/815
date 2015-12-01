@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>
 
 #  向现有应用程序添加身份验证
 
@@ -41,7 +41,6 @@
 接下来，请学习[如何使用用户 ID 值来筛选返回的数据](/documentation/articles/mobile-services-javascript-backend-service-side-authorization)。
 
 <!-- Anchors. -->
-
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
 [Add authentication to the app]: #add-authentication
@@ -79,4 +78,6 @@
 [Get started with push notifications]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
 [Authorize users with scripts]: /documentation/articles/mobile-services-ios-authorize-users-in-scripts
 
-<!---HONumber=74-->
+[Azure Management Portal]: https://manage.windowsazure.cn/
+
+<!---HONumber=82-->

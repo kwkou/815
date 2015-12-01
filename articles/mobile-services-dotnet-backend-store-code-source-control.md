@@ -1,26 +1,26 @@
-<properties 
-	pageTitle="在源代码管理中存储项目代码 - Azure 移动服务" 
-	description="了解如何将 .NET 后端项目存储在计算机上的本地 Git 存储库中并从中发布。" 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="在源代码管理中存储 .NET 后端项目代码 | Azure 移动服务"
+	description="了解如何将 .NET 后端项目存储在计算机上的本地 Git 存储库中并从中发布。"
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/20/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/15/2015"
+	wacn.date="11/27/2015"/>
 
 # 在源代码管理中存储项目代码
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
-- [(Any | Javascript)](/zh-cn/documentation/articles/mobile-services-store-scripts-source-control)
+> [AZURE.SELECTOR]
+- [.NET backend](/zh-cn/documentation/articles/mobile-services-dotnet-backend-store-code-source-control)
+- [Javascript backend](/zh-cn/documentation/articles/mobile-services-store-scripts-source-control)
 
 本主题说明如何使用 Azure 移动服务提供的源代码管理存储 .NET 后端服务项目。只需将项目从本地 Git 存储库上载到生产移动服务，便可以发布该项目。
 
-若要完成本教程，你必须事先参考[移动服务入门]或[将移动服务添加到现有应用程序]教程创建一个移动服务。
+若要完成本教程，你必须事先参考[移动服务入门]教程创建一个移动服务。
 
 ##<a name="enable-source-control"></a>在移动服务中启用源代码管理
 
@@ -32,7 +32,8 @@
 
 	安装 Git 所需的步骤因操作系统的不同而异。有关操作系统特定的分发和安装指南，请参阅[安装 Git]。
 
-	> [AZURE.NOTE]在某些操作系统上，命令行和 GUI 版本的 Git 都可用。本文中提供的说明使用命令行版本。
+	> [AZURE.NOTE]
+	在某些操作系统上，命令行和 GUI 版本的 Git 都可用。本文中提供的说明使用命令行版本。
 
 2. 打开一个命令行，例如 **GitBash** (Windows) 或 **Bash** (Unix Shell)。在 OS X 系统上，可以通过 **Terminal** 应用程序访问命令行。
 
@@ -92,8 +93,7 @@
 [Source control]: http://msdn.microsoft.com/zh-cn/library/azure/c25aaede-c1f0-4004-8b78-113708761643
 [安装 Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[Call a custom API from the client]: /documentation/articles/mobile-services-dotnet-backend-ios-call-custom-api
 [如何对 .NET 后端移动服务进行数据模型更改]: /documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations
-<!---HONumber=71-->
+
+<!---HONumber=82-->
