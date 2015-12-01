@@ -1,7 +1,7 @@
 <properties
 	pageTitle="扩展流分析作业以增加吞吐量 | Windows Azure"
 	description="了解如何通过配置输入分区、细化查询定义和设置作业流式处理单位来扩展流分析作业。"
-	keywords="analytics jobs,data stream,data streaming"
+	keywords="分析作业, 数据流, 数据流式处理"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="stream-analytics"
-	ms.date="08/19/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="09/29/2015"
+	wacn.date="11/27/2015"/>
 
 # 扩展 Azure 流分析作业以增加吞吐量 #
 
@@ -51,7 +51,7 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 
 前面的查询有两步。
 
-> [AZURE.NOTE]此示例查询将在本文后面部分介绍。
+> [AZURE.NOTE] 此示例查询将在本文后面部分介绍。
 
 ### 对步骤进行分区 ###
 
@@ -136,7 +136,7 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 
 此查询可以扩展到 24 个流式处理单位。
 
->[AZURE.NOTE]如果要联接两个流，请确保流是按进行联接的列的分区键分区的，并且两个流中的分区数目是相同的。
+>[AZURE.NOTE] 如果要联接两个流，请确保流是按进行联接的列的分区键分区的，并且两个流中的分区数目是相同的。
 
 
 ## 配置流分析作业分区 ##
@@ -257,4 +257,4 @@ Azure 流分析作业定义包括输入、查询和输出。输入是作业读�
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=69-->
+<!---HONumber=82-->

@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/09/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="09/29/2015" 
+	wacn.date="11/27/2015"/>
 
 # 编写查询
 
@@ -18,7 +18,7 @@ Azure 流分析中的流处理逻辑作为一种“现有查询”来实施，�
 
 ## 编写流分析查询： ##
 
-1. 在流分析作业中，单击“查询”。
+1. 在 Azure 管理门户上的流分析作业中，单击“查询”。
 
     ![选择查询](./media/stream-analytics-write-queries/1-stream-analytics-write-queries.png)
 
@@ -60,4 +60,4 @@ Azure 流分析中的流处理逻辑作为一种“现有查询”来实施，�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=79-->
+<!---HONumber=82-->

@@ -10,8 +10,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="09/09/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="10/05/2015" 
+	wacn.date="11/27/2015"/>
 
 # 将引用数据用作输入
 
@@ -93,4 +93,4 @@
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=79-->
+<!---HONumber=82-->
