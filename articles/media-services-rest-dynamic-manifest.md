@@ -1,17 +1,16 @@
-
 <properties 
 	pageTitle="使用媒体服务 REST API 创建筛选器" 
-	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档这些选择性的流。" 
+	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。"
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="Juliako,cenkdin" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services"  
-	ms.date="09/07/2015"  
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/18/2015"
+	wacn.date="11/27/2015"/>
 
 #使用媒体服务 REST API 创建筛选器
 
@@ -30,10 +29,10 @@
 
 创建筛选器时将使用以下类型：
 
-- [筛选器](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
-- [AssetFilter](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
-- [PresentationTimeRange](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
-- [FilterTrackSelect 和 FilterTrackPropertyCondition](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
+- [筛选器](http://msdn.microsoft.com/zh-cn/library/azure/mt149056.aspx)
+- [AssetFilter](http://msdn.microsoft.com/zh-cn/library/azure/mt149053.aspx)
+- [PresentationTimeRange](http://msdn.microsoft.com/zh-cn/library/azure/mt149052.aspx)
+- [FilterTrackSelect 和 FilterTrackPropertyCondition](http://msdn.microsoft.com/zh-cn/library/azure/mt149055.aspx)
 
 
 
@@ -42,7 +41,6 @@
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use)。
 
 >在成功连接到 https://media.chinacloudapi.cn 之后，你将接收到指定另一个媒体服务 URI 的 301 重定向。必须根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect_programmatically)中所述对新的 URI 执行后续调用。
-
 
 
 ##创建筛选器
@@ -251,7 +249,7 @@
 	   ] 
 	} 
 
-###上载本地 AssetFilter
+###更新本地 AssetFilter
 
 若要更新本地筛选器，请使用以下 HTTP 请求：
 
@@ -356,7 +354,6 @@
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f, filter=MyFilter)
 
 
-
 ##另请参阅 
 
 [动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview)
@@ -364,4 +361,4 @@
 
  
 
-<!---HONumber=76-->
+<!---HONumber=82-->

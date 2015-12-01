@@ -1,26 +1,27 @@
 <properties 
 	pageTitle="配置 Azure 网站的 Python" 
 	description="本教程介绍用于在 Azure 网站上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的各种方法。" 
-	services="app-service\web" 
+	services="app-service" 
 	documentationCenter="python" 
 	tags="python"
 	authors="huguesv" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="04/15/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="app-service"
+	ms.date="09/29/2015"
+	wacn.date="11/27/2015"/>
 
 
 
 
 # 配置 Azure 网站的 Python
 
-本教程介绍用于在 Azure 网站上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的各种方法。
+本教程介绍用于在 [Azure 网站](/documentation/services/web-sites/)上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的各种方法。
 
 其中描述了 Git 部署的其他功能，如使用 requirements.txt 安装虚拟环境和包。
+
 
 + [Bottle、Django 还是 Flask？](#bottle-django-flask)
 + [在门户中创建网站](#website-creation-on-portal)
@@ -36,29 +37,27 @@
 + [故障排除 - 软件包安装](#troubleshooting-package-installation)
 + [故障排除 - 虚拟环境](#troubleshooting-virtual-environment)
 
+## Bottle、Django 还是 Flask？
 
-<h2><a name="bottle-django-flask"></a>Bottle、Django 还是 Flask？</h2>
+Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如果你正在 Azure 网站中开发第一个 Web 应用，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
 
-如果你正在开发你的第一个 Azure 网站，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署构建工作应用程序的分步说明：
-
-- [使用 Bottle 创建网站][]
-- [使用 Django 创建网站][]
-- [使用 Flask 创建网站][]
-
-本教程使用现有 Azure 订阅以及对 Azure 门户的访问权限。
-
-如果你没有现成的 Web 应用，则可从 Azure 管理门户创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“网站”和“快速创建”。
-
-![](./media/web-sites-python-configure/configure-python-create-Website.png)
+- [使用 Bottle 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-bottle-app)
+- [使用 Django 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-django-app)
+- [使用 Flask 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-flask-app)
 
 
-<h2><a name="git-publishing"></a>Git 发布</h2>
+## 在 Azure 管理门户中创建 Web 应用
 
-使用新创建的网站的“快速启动”或“仪表板”选项卡来配置 Git 发布。本教程使用 Git 来创建、管理 Python 网站以及将其发布到 Azure 网站。
+本教程使用现有 Azure 订阅以及对 Azure 管理门户的访问权限。
 
-![](./media/web-sites-python-configure/configure-python-git.png)
+如果你没有现成的 Web 应用，则可[从 Azure 管理门户](https://manage.windowsazure.cn)创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“网站”和“快速创建”。
 
-在设置 Git 发布之后，将创建 Git 存储库并使其与你的网站相关联。将显示该存储库的 URL，并且之后可将其用于将数据从本地开发环境推送到云。若要通过 Git 发布应用程序，请确保还安装了 Git 客户端，并使用提供的说明将你的网站内容推送到 Azure 网站。
+![](./media/web-sites-python-configure/configure-python-create-Website.png) <a name="git-publishing"></a>
+## Git 发布
+
+按照[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的 Web 应用配置 Git 发布。本教程使用 Git 来创建、管理 Python Web 应用以及将其发布到 Azure 网站。
+
+在设置 Git 发布之后，将创建 Git 存储库并使其与你的 Web 应用相关联。将显示该存储库的 URL，并且之后可将其用于将数据从本地开发环境推送到云。若要通过 Git 发布应用程序，请确保还安装了 Git 客户端，并使用提供的说明将你的 Web 应用内容推送到 Azure 网站。
 
 
 ## 应用程序概述
@@ -116,7 +115,7 @@ Requirements.txt 中列出的包将使用 pip 自动安装在虚拟环境中。�
 
 ## Python 版本
 
-[WACOM.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
 
 示例 `runtime.txt`：
 
@@ -149,8 +148,8 @@ Python 2.7 的示例 `web.config`：
       <system.webServer>
         <modules runAllManagedModulesForAllRequests="true" />
         <handlers>
-          <remove name="Python273_via_FastCGI" />
-          <remove name="Python340_via_FastCGI" />
+          <remove name="Python27_via_FastCGI" />
+          <remove name="Python34_via_FastCGI" />
           <add name="Python FastCGI"
                path="handler.fcgi"
                verb="*"
@@ -169,6 +168,7 @@ Python 2.7 的示例 `web.config`：
             <rule name="Configure Python" stopProcessing="true">
               <match url="(.*)" ignoreCase="false" />
               <conditions>
+                <add input="{REQUEST_URI}" pattern="^/static/.*" ignoreCase="true" negate="true" />
               </conditions>
               <action type="Rewrite"
                       url="handler.fcgi/{R:1}"
@@ -198,8 +198,8 @@ Python 3.4 的示例 `web.config`：
       <system.webServer>
         <modules runAllManagedModulesForAllRequests="true" />
         <handlers>
-          <remove name="Python273_via_FastCGI" />
-          <remove name="Python340_via_FastCGI" />
+          <remove name="Python27_via_FastCGI" />
+          <remove name="Python34_via_FastCGI" />
           <add name="Python FastCGI"
                path="handler.fcgi"
                verb="*"
@@ -218,6 +218,7 @@ Python 3.4 的示例 `web.config`：
             <rule name="Configure Python" stopProcessing="true">
               <match url="(.*)" ignoreCase="false" />
               <conditions>
+                <add input="{REQUEST_URI}" pattern="^/static/.*" ignoreCase="true" negate="true" />
               </conditions>
               <action type="Rewrite" url="handler.fcgi/{R:1}" appendQueryString="true" />
             </rule>
@@ -230,13 +231,6 @@ Python 3.4 的示例 `web.config`：
 静态文件将由 Web 服务器直接处理，无需通过 Python 代码，从而可提高性能。
 
 在上面的示例中，磁盘上的静态文件的位置应与 URL 中的位置匹配。也就是说，对 `http://pythonapp.chinacloudsites.cn/static/site.css` 的请求将为磁盘上 `\static\site.css` 处的文件服务。
-
-可以配置规则 `Static Files`，以便为不同于 URL 中位置的磁盘上位置中的文件服务。在以下规则定义中，对 `http://pythonapp.chinacloudsites.cn/static/site.css` 的请求将为磁盘上 `\FlaskWebProject\static\site.css` 处的文件服务，而不为 `\static\site.css` 处的文件服务。
-
-    <rule name="Static Files" stopProcessing="true">
-      <match url="^/static/.*" ignoreCase="true" />
-      <action type="Rewrite" url="^/FlaskWebProject/static/.*" appendQueryString="true" />
-    </rule>
 
 `WSGI_ALT_VIRTUALENV_HANDLER` 是指定 WSGI 处理程序的位置。在上面的示例中，该位置为 `app.wsgi_app`，因为处理程序是根文件夹中的 `app.py` 中一个名为 `wsgi_app` 的函数。
 
@@ -266,6 +260,7 @@ Python 3.4 的示例 `web.config`：
     import datetime
     import os
     import sys
+    import traceback
 
     if sys.version_info[0] == 3:
         def to_str(value):
@@ -306,20 +301,22 @@ Python 3.4 的示例 `web.config`：
 
     def get_wsgi_handler(handler_name):
         if not handler_name:
-            raise Exception('WSGI_HANDLER env var must be set')
-        
+            raise Exception('WSGI_ALT_VIRTUALENV_HANDLER env var must be set')
+    
         if not isinstance(handler_name, str):
             handler_name = to_str(handler_name)
-
+    
         module_name, _, callable_name = handler_name.rpartition('.')
         should_call = callable_name.endswith('()')
         callable_name = callable_name[:-2] if should_call else callable_name
         name_list = [(callable_name, should_call)]
         handler = None
+        last_tb = ''
 
         while module_name:
             try:
                 handler = __import__(module_name, fromlist=[name_list[0][0]])
+                last_tb = ''
                 for name, should_call in name_list:
                     handler = getattr(handler, name)
                     if should_call:
@@ -331,10 +328,11 @@ Python 3.4 的示例 `web.config`：
                 callable_name = callable_name[:-2] if should_call else callable_name
                 name_list.insert(0, (callable_name, should_call))
                 handler = None
-
+                last_tb = ': ' + traceback.format_exc()
+    
         if handler is None:
-            raise ValueError('"%s" could not be imported' % handler_name)
-
+            raise ValueError('"%s" could not be imported%s' % (handler_name, last_tb))
+    
         return handler
 
     activate_this = os.getenv('WSGI_ALT_VIRTUALENV_ACTIVATE_THIS')
@@ -355,9 +353,9 @@ Python 3.4 的示例 `web.config`：
         import site
         sys.executable = activate_this
         old_sys_path, sys.path = sys.path, []
-        
+    
         site.main()
-        
+    
         sys.path.insert(0, '')
         for item in old_sys_path:
             if item not in sys.path:
@@ -371,7 +369,7 @@ Python 3.4 的示例 `web.config`：
 
 ## 自定义 Git 部署
 
-[WACOM.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-deployment.md)]
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-deployment.md)]
 
 
 ## 故障排除 - 软件包安装
@@ -385,7 +383,8 @@ Python 3.4 的示例 `web.config`：
 
 
 
-[使用 Bottle 创建网站]: /documentation/articles/web-sites-python-create-deploy-bottle-app
-[使用 Django 创建网站]: /documentation/articles/web-sites-python-create-deploy-django-app
-[使用 Flask 创建网站]: /documentation/articles/web-sites-python-create-deploy-flask-app
-<!---HONumber=76-->
+
+
+ 
+
+<!---HONumber=82-->

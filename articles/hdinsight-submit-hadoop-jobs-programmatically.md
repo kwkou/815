@@ -11,7 +11,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="10/02/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="11/27/2015"/>
 
 # 在 HDInsight 中提交 Hadoop 作业
 
@@ -91,7 +91,7 @@ Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用
 		# Create the storage account context object
 		Select-AzureSubscription $subscriptionName
 		$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
-		$storageContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
+		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 
 	**Select-AzureSubscription** 用于在你具有多个订阅但默认订阅不是要使用的订阅时设置当前订阅。
 
@@ -102,7 +102,7 @@ Hadoop MapReduce 是一个软件框架，用于编写处理海量数据的应用
 
 	*example/data/WordCountOutput* 文件夹是你在运行 MapReduce 作业时指定的输出文件夹。*part-r-00000* 是 MapReduce 作业输出的默认文件名。此文件将下载到本地文件夹中的相同文件夹结构。例如，在以下屏幕快照中，当前文件是 C 根文件夹。文件将下载到：
 
-	*C:\\example\\data\\WordCountOutput*
+**C:\\example\\data\\WordCountOutput*
 
 5. 运行以下命令来打印 MapReduce 作业输出文件：
 
@@ -366,7 +366,7 @@ HDInsight 群集附带了一个用 C# 开发的单词计数 Hadoop 流程序。�
 
 有关创建 .NET 应用程序来提交 MapReduce 作业的详细信息，请参阅[使用 HDInsight .NET SDK 提交 MapReduce 作业](#mapreduce-sdk)。
 
-有关开发和部署 Hadoop 流式处理作业的详细信息，请参阅[为 HDInsight 开发 C# Hadoop 流式处理程序][hdinsight-develop-streaming-jobs]。
+有关开发和部署 Hadoop 流作业的详细信息，请参阅[为 HDInsight 开发 C# Hadoop 流程序][hdinsight-develop-streaming-jobs]。
 
 **提交 WordCount MapReduce 作业**
 
@@ -563,12 +563,14 @@ HDInsight 群集提供了一个名为 *hivesampletable* 的示例 Hive 表。在
 [hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png
 
 [apache-hive]: http://hive.apache.org/
 
-<!---HONumber=79-->
+<!---HONumber=82-->
