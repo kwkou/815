@@ -1,21 +1,23 @@
 <properties
-	pageTitle="如何使用服务总线队列 (Ruby) | Windows Azure"
+	pageTitle="如何通过 Ruby 使用服务总线队列 | Windows Azure"
 	description="了解如何在 Azure 中使用 Service Bus 队列。用 Ruby 编写的代码示例。"
 	services="service-bus"
 	documentationCenter="ruby"
-	authors="tfitzmac"
-	manager="wpickett"
+	authors="sethmanheim"
+	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="service-bus"
 	ms.date="08/31/2015"
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 
 
 # 如何使用 Service Bus 队列
+
+[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
 本指南演示如何使用 Service Bus 队列。相关示例通过 Ruby 编写并使用 Azure gem。涉及的任务包括**创建队列、发送和接收消息**以及**删除队列**。有关队列的详细信息，请参阅[后续步骤](#next-steps)部分。
 
@@ -146,4 +148,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 -   访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
 有关本文中讨论的 Azure 服务总线队列与[如何使用 Azure 队列服务](/zh-cn/documentation/articles/storage-ruby-how-to-use-queue-storage)一文中讨论的 Azure 队列的比较，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh767287.aspx)
-<!---HONumber=74-->
+<!---HONumber=82-->

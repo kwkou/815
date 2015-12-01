@@ -3,21 +3,22 @@
 	description="了解如何在 Azure 中使用 Service Bus 主题和订阅。相关代码示例是针对 Ruby 应用程序编写的。"
 	services="service-bus"
 	documentationCenter="ruby"
-	authors="tfitzmac"
-	manager="wpickett"
+	authors="sethmanheim"
+	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="service-bus"
 	ms.date="08/31/2015"
-	wacn.date="10/22/2015"/>
-
+	wacn.date="11/27/2015"/>
 
 
 
 
 
 # 如何使用 Service Bus 主题/订阅
+
+[AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
 本指南将演示如何从 Ruby 应用程序使用 Service Bus 主题和订阅。涉及的任务包括**创建主题和订阅、创建订阅筛选器、将消息发送到**主题、**从订阅接收消息**以及**删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤](#next-steps)部分。
 
@@ -214,4 +215,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 -   [SqlFilter](http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx) 的 API 参考。
 -	访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-<!---HONumber=74-->
+<!---HONumber=82-->
