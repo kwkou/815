@@ -1,12 +1,24 @@
-<properties pageTitle="SharePoint Server 场" description="介绍 Azure 预览门户中可用的全新 SharePoint Server 场功能。" services="virtual-machines" documentationCenter="" authors="josephd" manager="timlt"/>
-<tags  
+<properties
+	pageTitle="SharePoint Server 场 | Windows Azure"
+	description="在 Azure 预览门户中使用 SharePoint Server 场快速创建新的基本或高可用性 SharePoint Server 2013 场。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="JoeDavies-MSFT"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
+
+<tags
 	ms.service="virtual-machines"
-	ms.date="07/07/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="11/27/2015"/>
 
-#SharePoint Server 场#
+# SharePoint Server 场
 
-利用 SharePoint Server 场，Windows Azure 门户可自动为你创建预先配置的 SharePoint Server 2013 场。当你需要基本或高可用性 SharePoint farm 以用于开发和测试环境，或者当你将 SharePoint Server 2013 评估作为组织的协作解决方案时，这可为你节约很多时间。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+ 
+
+利用 SharePoint Server 场，Microsoft Azure 门户可自动为你创建预先配置的 SharePoint Server 2013 场。当你需要基本或高可用性 SharePoint farm 以用于开发和测试环境，或者当你将 SharePoint Server 2013 评估作为组织的协作解决方案时，这可为你节约很多时间。
 
 基本 SharePoint 场在此配置中包括 3 个虚拟机。
 
@@ -19,8 +31,10 @@
 ![sharepointfarm](./media/virtual-machines-sharepoint-farm-azure-preview/SPFarm_HighAvail.png)
 
 使用该场配置可测试更高的客户端负载、外部 SharePoint 站点的高可用性以及 SharePoint 场的 SQL Server AlwaysOn。还可以将此配置用于高可用性环境中的 SharePoint 应用程序开发。
- 
+
 有关这两种场的配置详细详细，请参阅 [SharePoint Server 场配置详细信息](/documentation/articles/virtual-machines-sharepoint-farm-config-azure-preview)。
+
+> [AZURE.NOTE]Microsoft 已发布 SharePoint Server 2016 IT Preview。要使此预览版易于安装和测试，可以使用预安装了 SharePoint Server 2016 IT Preview 及其必备组件的 Azure 虚拟机库映像。有关详细信息，请参阅[在 Azure 中测试 SharePoint Server 2016 IT Preview](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)。
 
 ## 逐步完成配置
 
@@ -35,7 +49,8 @@
 7. 若要配置你的 SharePoint Server，请单击箭头。你可以指定主机名称前缀（默认是资源组名称）、SharePoint Server 的大小（默认是 A2）、SharePoint 用户帐户（默认是 sp\_setup）和密码、SharePoint 场帐户名称（默认是 sp\_farm）和密码，以及 SharePoint 场的通行短语。默认是对 SharePoint 用户帐户、场帐户和通行短语都使用管理员密码。
 8. 若要为虚拟网络、存储帐户或诊断配置可选的配置设置，请单击相应的箭头。
 9. 若要指定订阅，请单击箭头。
-10. 完成后，单击“创建”。
+10. 若要指定 Azure 位置，请单击箭头。
+11. 完成后，单击“创建”。
 
 > [AZURE.NOTE]默认情况下，域控制器中未安装 Active Directory 管理工具。若要安装这些工具，请从域控制器虚拟机上的管理员级别 Windows PowerShell 命令提示符中运行 **Install-WindowsFeature AD-Domain-Services -IncludeManagementTools** 命令。
 
@@ -62,24 +77,21 @@ SharePoint 场具有预先配置的终结点，可允许未经身份验证的 We
 7.	出现提示时，输入你在创建场时制定的用户帐户凭据。
 
 
-注意:
+说明：
 
-- Azure 预览门户可在指定订阅中创建这些虚拟机。
 - Azure 预览门户可以在具有面向 Internet 的网络影响力、仅限云的虚拟网络中创建这两种场。没有站点到站点 VPN 或 ExpressRoute 连接重新连回到你的组织网络。
-- 你可以通过远程桌面连接来管理这些服务器。有关详细信息，请参阅[如何登录到运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-log-on-windows-server)。
+- 你可以通过远程桌面连接来管理这些服务器。有关详细信息，请参阅[登录到虚拟机](/documentation/articles/virtual-machines-windows-tutorial/#log-on-to-the-virtual-machine)。
 
 ## Azure 资源管理器
 
-Azure 预览门户的 SharePoint Server 场功能可在服务管理中创建虚拟机。若要在资源管理器中创建 SharePoint Server 2013 场，请参阅[使用 Azure 资源管理器模板部署 SharePoint 场](/documentation/articles/virtual-machines-workload-template-sharepoint)。
+Azure 门户的 SharePoint Server 场功能可以使用经典部署模型创建虚拟机。若要使用资源管理器部署模型创建 SharePoint Server 2013 场，请参阅[使用 Azure 资源管理器模板部署 SharePoint 场](/documentation/articles/virtual-machines-workload-template-sharepoint)。
 
 ## 其他资源
 
 [SharePoint Server 场的配置详细信息](/documentation/articles/virtual-machines-sharepoint-farm-config-azure-preview)
 
-[Azure 基础结构服务上的 SharePoint](http://msdn.microsoft.com/zh-cn/library/azure/dn275955.aspx)
+[Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
 
 [在混合云中设置 SharePoint Intranet 场用于测试](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
 
-[Azure 基础结构服务中托管的 SharePoint 场](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
-
-<!---HONumber=67-->
+<!---HONumber=82-->

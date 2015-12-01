@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 资源管理器模板部署 SQL Server AlwaysOn"
+	pageTitle="使用 Azure 资源管理器模板部署 SQL Server AlwaysOn | Windows Azure"
 	description="使用资源管理器模板和 Azure 预览门户、Azure PowerShell 或 Azure CLI，轻松部署 5 个支持 SQL Server AlwaysOn 的服务器。"
 	services="virtual-machines"
 	documentationCenter=""
@@ -8,14 +8,16 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags 
+<tags
 	ms.service="virtual-machines"
-	ms.date="06/29/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="10/08/2015"
+	wacn.date="11/27/2015"/>
 
 # 使用 Azure 资源管理器模板部署 SQL Server AlwaysOn
 
-根据本节中的说明，使用资源管理器模板部署 SQL Server AlwaysOn。此模板将在 2 个不同子网上的新虚拟网络中创建 5 个虚拟机。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。你无法使用经典部署模型创建此资源。
+
+根据本文中的说明，使用 Azure 资源管理器模板部署 SQL Server AlwaysOn。此模板将在 2 个不同子网上的新虚拟网络中创建 5 个虚拟机。
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/five-server-sqlao.png)
 
@@ -31,8 +33,8 @@
 	$RGName="<resource group name>"
 	$locName="<Azure location, such as West US>"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 下面是一个示例。
 
@@ -40,18 +42,18 @@
 	$RGName="TestRG"
 	$locname="West US"
 	$templateURI="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sql-server-2014-alwayson-dsc/azuredeploy.json"
-	New-AzureResourceGroup -Name $RGName -Location $locName
-	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
+	New-AzureRmResourceGroup -Name $RGName -Location $locName
+	New-AzureRmResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
 接下来，在 Azure PowerShell 提示符中运行命令块。
 
-当你运行 **New-AzureResourceGroupDeployment** 命令时，系统会提示你提供一系列参数的值。指定了所有参数值后，**New-AzureResourceGroupDeployment** 将创建和配置虚拟机。
+当你运行 **New-AzureRmResourceGroupDeployment** 命令时，系统会提示你提供一系列参数的值。指定了所有参数值后，**New-AzureRmResourceGroupDeployment** 将创建和配置虚拟机。
 
 当模板执行完成时，你的新资源组中将出现一个新的包含 5 个服务器的 SQL Server AlwaysOn 配置。
 
 ## Azure CLI
 
-在开始之前，请确保安装了正确版本的 Azure CLI 且已登录，并切换到新的“资源管理器”模式。有关详细信息，请单击[此处](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready)。
+在开始之前，请确保安装了正确版本的 Azure CLI 且已登录，并切换到新的“资源管理器”模式。有关详细信息，请单击[此处](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/#getting-ready)。
 
 首先，创建新的资源组。使用以下命令并指定组名称，以及要向其中部署的 Azure 数据中心位置。
 
@@ -81,8 +83,8 @@
 
 [使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
 
-[虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/)
+[虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-<!---HONumber=67-->
+<!---HONumber=82-->
