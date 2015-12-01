@@ -6,7 +6,7 @@
 	authors="raynew" 
 	manager="jwhit" 
 	editor="tysonn"/>
-<tags ms.service="site-recovery" ms.date="03/19/2015" wacn.date="10/03/2015"/>
+<tags ms.service="site-recovery" ms.date="10/12/2015" wacn.date="11/27/2015"/>
 
 # 设置本地 VMM 站点之间的保护
 
@@ -14,7 +14,7 @@
 ## 概述
 
 
-Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure 站点恢复 概述](/documentation/articles/hyper-v-recovery-manager-overview)。
+Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请参阅 [Azure 站点恢复 概述](/documentation/articles/site-recovery-overview)。
 
 本方案指南介绍了如何部署站点恢复针对在位于 VMM 私有云中的 Hyper-V 主机服务器上的虚拟机上运行的工作负荷安排和自动实施保护。在本方案中，使用 Hyper-V 副本将虚拟机从主 VMM 站点复制到辅助 VMM 站点。
 
@@ -42,15 +42,20 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 	- 每个主机组中有一台或多台 Hyper-V 主机服务器。
 	- 每个主机服务器上有一个或多个虚拟机。 
 - 了解有关设置 VMM 云的更多信息：
-	- 阅读 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)中有关私有 VMM 云的更多信息。 
+	- 在 [System Center 2012 R2 VMM 中私有云的新增功能](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357)及 [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)中阅读有关私有 VMM 云的详细信息。 
 	- 了解有关[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)的更多信息
 	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](http://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)了解有关创建私有云的更多信息。
 
 ### Hyper-V 先决条件
 
 - 主机和目标 Hyper-V 服务器必须至少运行具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012。
-- 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。有关说明，请参阅[配置 Hyper-V 副本代理](hhttp://technet.microsoft.com/zh-cn/library/jj134153.aspx#BKMK_1_4)。
+- 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。有关说明，请参阅[配置 Hyper-V 副本代理](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。
 - 你要为其管理保护的任何 Hyper-V 主机服务器或群集必须包括在 VMM 云中。
+
+以下图片显示了Azure Site Recovery 用来完成业务流程和复制的不同通信通道和端口
+
+![E2E 拓扑](./media/site-recovery-vmm-to-vmm/E2ETopology.png)
+
  
 ### 网络映射先决条件
 网络映射可以确保在故障转移后以最佳方式将副本虚拟机放置在 Hyper-V 主机服务器上，并确保它们可以连接到合适的 VM 网络。如果未配置网络映射，则副本虚拟机在故障转移后将不会连接到 VM 网络。如果希望部署网络映射，需要满足下列条件：
@@ -64,8 +69,8 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 - [在 VMM 中配置 VM 网络和网关](http://technet.microsoft.com/zh-cn/library/jj721575.aspx)
 
 ### 存储映射先决条件
-默认情况下，将源 Hyper-V 主机服务器上的虚拟机复制到目标 Hyper-V 主机服务器时，复制的数据存储到在 Hyper-V 管理器中为目标 Hyper-V 主机指定的默认位置。若要进一步控制将复制的数据存储在何处，可以配置存储映射。若要执行此操作，你需要在开始部署前在源和目标 VMM 服务器上设置存储分类。
-有关说明，请参阅[如何在 VMM 中创建存储分类](http://technet.microsoft.com/zh-cn/library/gg610685.aspx)。
+默认情况下，将源 Hyper-V 主机服务器上的虚拟机复制到目标 Hyper-V 主机服务器时，复制的数据存储到在 Hyper-V 管理器中为目标 Hyper-V 主机指定的默认位置。若要进一步控制将复制的数据存储在何处，可以配置存储映射。若要执行此操作，你需要在开始部署前在源和目标 VMM 服务器上设置存储分类。有关说明，请参阅[如何在 VMM 中创建存储分类](http://technet.microsoft.com/zh-cn/library/gg610685.aspx)。
+
 
 ## 步骤 1：创建站点恢复保管库
 
@@ -78,7 +83,7 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 	
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
-5. 在"区域"中，为保管库选择地理区域。若要查看支持的区域，请参阅 [Azure 站点恢复 定价详细信息](/home/features/site-recovery/#price)中的"上市地区"。</a>
+5. 在"区域"中，为保管库选择地理区域。若要查看支持的区域，请参阅 [Azure 站点恢复定价详细信息](/home/features/site-recovery/#price)中的"上市地区"。</a>
 
 6. 单击“创建保管库”。
 
@@ -103,49 +108,78 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 
 1. 在"快速启动"页面上<b></b>，在"准备 VMM 服务器"中，单击"下载用于在 VMM 服务器上安装的 Windows Azure 站点恢复 提供程序"<b></b>来获取最新版本的提供程序安装文件。
 
-2. 在源和目标 VMM 服务器上运行此文件。如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果你是在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
+2. 在源 VMM 服务器上运行此文件。如果 VMM 部署到群集中并且你是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后在其他节点上安装该提供程序。请注意，如果你是在升级提供程序，则需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。
 
-3. 在“先决条件检查”中，选择停止 VMM 服务以开始安装提供程序。该服务会停止，并将在安装程序完成时自动重新启动。如果你是在 VMM 群集上进行安装，则会提示你停止群集角色。
 
-	![先决条件](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_ProviderPrereq.png)
+3. 安装程序将执行简单的“先决条件检查”，并请求授权停止 VMM 服务以开始安装提供程序。VMM 服务将在安装程序完成时自动重新启动。如果你是在 VMM 群集上进行安装，则会提示你停止群集角色。
 
 4. 在“Microsoft 更新”中，你可以选择获取更新。当启用了此设置时，将根据你的 Microsoft 更新策略自动安装提供程序更新。
 
-	![Microsoft 更新](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_ProviderUpdate.png)
+	![Microsoft 更新](./media/site-recovery-vmm-to-vmm/VMMASRInstallMUScreen.png)
 
-安装提供程序后，继续设置以在保管库中注册服务器。
 
-5. 在“Internet 连接”页面上，指定 VMM 服务器上运行的提供程序连接 Internet 的方式。选择“使用默认系统代理设置”以使用服务器上配置的默认 Internet 连接设置。<b></b>
+1.  安装位置设置为 **<SystemDrive>\\Program Files\\Microsoft System Center 2012 R2\\Virtual Machine Manager\\bin**。单击“安装”按钮，开始安装提供程序。
+![InstallLocation](./media/site-recovery-vmm-to-vmm/VMMASRInstallLocationScreen.png)
 
-	![Internet 设置](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_ProviderProxy.png)
 
+
+1. 安装提供程序之后，请单击“注册”按钮，以在保管库中注册服务器。
+![InstallComplete](./media/site-recovery-vmm-to-vmm/VMMASRInstallComplete.png)
+
+5. 在“Internet 连接”中，指定 VMM 服务器上运行的提供程序连接 Internet 的方式。选择“使用默认系统代理设置”以使用服务器上配置的默认 Internet 连接设置。<b></b>
+
+	![Internet 设置](./media/site-recovery-vmm-to-vmm/VMMASRRegisterProxyDetailsScreen.png) 
 	- 如果希望使用自定义代理，则应当在安装该提供程序之前设置它。当配置自定义代理设置时，会运行测试来检查代理连接。
 	- 如果你确实使用自定义代理，或者你的默认代理要求进行身份验证，则需要输入代理详细信息，包括代理地址和端口。
-	- 你应当豁免以下地址通过代理进行路由：
-		- 用于连接到 Azure 站点恢复 的 URL：*.hypervrecoverymanager.windowsazure.cn
+	- 应该能够从 VMM 服务器和 Hyper-V 主机访问以下 URL：- 用于连接到 Azure 站点恢复的 URL：
+	*.hypervrecoverymanager.windowsazure.cn 
 		- *.accesscontrol.chinacloudapi.cn
 		- *.backup.windowsazure.cn
 		- *.blob.core.chinacloudapi.cn 
 		- *.store.core.chinacloudapi.cn 
-	- 如果你需要允许到 Azure 域控制器的出站连接，请允许 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-CN/library/azure/dn175718.aspx)中描述的 IP 地址，并允许 HTTP (80) 和 HTTPS (443) 协议。 
-	- 如果你使用自定义代理，则将使用指定的代理凭据自动创建一个 VMM 运行身份帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以成功通过身份验证。可以在 VMM 控制台中修改 VMM 运行身份帐户设置。若要执行此操作，请打开“设置”工作区，展开“安全性”，单击“运行身份帐户”，然后修改 DRAProxyAccount 的密码。你将需要重新启动 VMM 服务以使此设置生效。
+	- 允许 [Azure 数据中心 IP 范围](https://msdn.microsoft.com/zh-CN/library/azure/dn175718.aspx)中所述的 IP 地址和 HTTPS (443) 协议。必须将你打算使用的 Azure 区域以及美国西部的 IP 范围加入允许列表。- 如果你使用自定义代理，则将使用指定的代理凭据自动创建一个 VMM 运行身份帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以成功通过身份验证。可以在 VMM 控制台中修改 VMM 运行身份帐户设置。若要执行此操作，请打开“设置”工作区，展开“安全性”，单击“运行身份帐户”，然后修改 DRAProxyAccount 的密码。你将需要重新启动 VMM 服务以使此设置生效。
 6. 在"注册密钥"中，选择你从 Azure 站点恢复 下载并复制到 VMM 服务器的密钥。
-7. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。
-8. 在“服务器名称”中，指定一个友好名称以在保管库中标识该 VMM 服务器。在群集配置中，请指定 VMM 群集角色名称。 
-
-	![服务器注册](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_ProviderRegKeyServerName.png)
+7. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。单击*“下一步”*。
 
 
-9. 在“初始云元数据同步”中，选择是否要将 VMM 服务器上所有云的元数据与保管库进行同步。此操作在每个服务器上只需执行一次。如果你不希望同步所有云，可以将此设置保留为未选中状态并在 VMM 控制台中的云属性中分别同步各个云。
+	![服务器注册](./media/site-recovery-vmm-to-vmm/VMMASRRegisterVaultCreds.png)
+
+9. 此设置仅适用于 VMM 到 Azure 方案，如果你是仅从 VMM 到 VMM 的用户，则可以忽略此屏幕。
+
+	![服务器注册](./media/site-recovery-vmm-to-vmm/VMMASRRegisterEncryptionScreen.png)
+
+8. 在“服务器名称”中，指定一个友好名称以在保管库中标识该 VMM 服务器。在群集配置中，请指定 VMM 群集角色名称。
+
+8. 在“初始云元数据同步”中，选择是否要将 VMM 服务器上所有云的元数据与保管库进行同步。此操作在每个服务器上只需执行一次。如果你不希望同步所有云，可以将此设置保留为未选中状态并在 VMM 控制台中的云属性中分别同步各个云。
+![服务器注册](./media/site-recovery-vmm-to-vmm/VMMASRRegisterFriendlyName.png)
 
 
-7. 对于本地到本地保护，“数据加密”选项不适用。
+8. 单击“下一步”以完成此过程。注册后，Azure Site Recovery 将检索 VMM 服务器中的元数据。服务器显示在保管库中“服务器”页上的“VMM 服务器”选项卡中。
 
-	![服务器注册](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_ProviderSyncEncrypt.png)
-
-8. 单击"注册"<b></b>完成此过程。Azure 站点恢复 将检索 VMM 服务器中的元数据。服务器显示在保管库中"服务器"页面上的"资源"选项卡上。
-
-在注册后，你可以在 VMM 控制台中或者从命令行更改提供程序设置。
+>[AZURE.NOTE]也可使用以下命令行来安装 Azure Site Recovery 提供程序。此命令可用来将提供程序安装在 Server CORE for Windows Server 2012 R2 上
+>
+>1. 将提供程序安装文件和注册密钥下载到某个文件夹（例如 C:\\ASR）中
+>2. 停止 System Center Virtual Machine Manager 服务
+>3. 使用 **Administrator** 权限从命令提示符处执行以下命令，以便提取提供程序安装程序
+>
+    	C:\Windows\System32> CD C:\ASR
+    	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
+>4. 执行以下命令以安装提供程序
+>
+		C:\ASR> setupdr.exe /i
+>5. 运行以下命令以注册提供程序
+>
+    	CD C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin
+    	C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>         
+ ####命令行安装参数列表####
+>
+ - **/Credentials**：用于指定注册密钥文件所在位置的必需参数  
+ - **/FriendlyName**：在 Azure Site Recovery 门户中显示的 Hyper-V 主机服务器名称的必需参数。
+ - **/EncryptionEnabled**：仅当你需要在 Azure 中以静止方式为虚拟机加密时，才需要在 VMM 到 Azure 方案中使用这个可选参数。请确保提供的文件名具有 **.pfx** 扩展名。
+ - **/proxyAddress**：可选参数，用于指定代理服务器的地址。
+ - **/proxyport**：可选参数，用于指定代理服务器的端口。
+ - **/proxyUsername**：可选参数，用于指定代理服务器用户名（如果代理服务器要求身份验证）。
+ - **/proxyPassword**：可选参数，用于指定密码，以便通过代理服务器进行身份验证（如果代理服务器要求身份验证）。  
 
 ## 步骤 4：配置云保护设置
 
@@ -155,14 +189,14 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 
 1. 在“快速启动”页上，单击“为 VMM 云设置保护”。
 2. 在“VMM 云”选项卡上，选择你要配置的云并转到“配置”选项卡。 
-3. 在“目标”中，选择“VMM”。<b></b><b></b>
-4. 在“目标位置”中，选择管理着你要用于恢复的云的现场 VMM 服务器。<b></b>
-4. 在“目标云”中，选择要用于源云中虚拟机故障转移的目标云。<b></b>请注意：
+3. 在“目标”中，选择“VMM”。
+4. 在“目标位置”中，选择管理着你要用于恢复的云的现场 VMM 服务器。
+4. 在“目标云”中，选择要用于源云中虚拟机故障转移的目标云。请注意：
 	- 我们建议你选择可满足你要保护的虚拟机的恢复要求的目标云。
 	- 一个云只能属于一个云对 — 作为主云或目标云。
 6. 在“复制频率”中，指定应在源位置与目标位置之间同步数据的频率。<b></b>请注意，只有当 Hyper-V 主机运行 Windows Server 2012 R2 时，此设置才适用。对于其他服务器，将使用默认设置五分钟。
 7. 在"其他恢复点"中<b></b>，指定是否要创建其他恢复点。默认值零指定只将主虚拟机的最新恢复点存储在副本主机服务器上。请注意，启用多个恢复点需要为在每个恢复点上存储的快照提供额外的存储。默认情况下，每隔一小时会创建恢复点，因此每个恢复点包含一小时的有用数据。你在 VMM 控制台中为虚拟机分配的恢复点值不应小于你在 Azure 站点恢复 控制台中分配的值。
-8. 在“与应用程序一致的快照的频率”中，指定以何频率创建与应用程序一致的快照。<b></b>Hyper-V 使用两种类型的备份 — 标准备份，它提供整个虚拟机的增量备份；与应用程序一致的快照，它拍摄虚拟机内的应用程序数据的时间点快照。与应用程序一致的快照使用卷影复制服务 (VSS) 来确保应用程序在拍摄快照时处于一致状态。请注意，如果你启用了与应用程序一致的快照，它将影响在源虚拟机上运行的应用程序的性能。请确保你设置的值小于你配置的额外恢复点的数目。
+8. 在“与应用程序一致的快照的频率”中，指定以何频率创建与应用程序一致的快照。Hyper-V 使用两种类型的快照 — 标准快照，它提供整个虚拟机的增量快照；与应用程序一致的快照，它生成虚拟机内的应用程序数据的时间点快照。与应用程序一致的快照使用卷影复制服务 (VSS) 来确保应用程序在拍摄快照时处于一致状态。请注意，如果你启用了与应用程序一致的快照，它将影响在源虚拟机上运行的应用程序的性能。请确保你设置的值小于你配置的额外恢复点的数目。
 
 	![配置保护设置](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_CloudSettings.png)
 
@@ -170,7 +204,7 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 10. 在"身份验证"中<b></b>，指定如何对主 Hyper-V 主机服务器和恢复 Hyper-V 主机服务器之间的流量进行身份验证。除非你配置了有效的 Kerberos 环境，否则，请选择 HTTPS。Azure 站点恢复 将为 HTTPS 身份验证自动配置证书。不需要手动配置。如果你选择了 Kerberos，则将使用 Kerberos 票证执行主机服务器的相互身份验证。默认情况下，端口 8083 和 8084（用于证书）在 Hyper-V 主机服务器上的 Windows 防火墙中将处于打开状态。请注意，此设置仅适用于在 Windows Server 2012 R2 上运行的 Hyper-V 主机服务器。
 11. 在"端口"中<b></b>，修改源和目标主机计算机用于侦听复制通信的端口号。例如，如果你希望对复制通信应用服务质量 (QoS) 网络带宽限制，可以修改此设置。确认该端口未被任何其他应用程序使用并且在防火墙设置中已打开。
 12. 在"复制方法"中<b></b>，指定在开始定期复制之前将如何处理从源到目标位置的初始数据复制。 
-	- <b>通过网络</b>-通过网络复制数据会相当耗时且需消耗大量资源。如果云包含的虚拟机所具有的虚拟硬盘相对较小，并且主要 VMM 服务器通过较宽的带宽连接到辅助 VMM 服务器，则我们建议你使用此选项。你可以指定复制应当立即启动，或者选择一个时间。如果你使用网络复制，建议你将其安排在非高峰时间进行。
+	- <b>通过网络</b>-通过网络复制数据会相当耗时且需消耗大量资源。如果云包含的虚拟机所具有的虚拟硬盘相对较小，并且主站点通过较宽的带宽连接到辅助站点，则我们建议你使用此选项。你可以指定复制应当立即启动，或者选择一个时间。如果你使用网络复制，建议你将其安排在非高峰时间进行。
 	- <b>脱机</b> - 此方法指定将使用外部介质执行初始复制。如果你要避免网络性能下降或在地理上处于远程位置，则这种方法很有用。要使用这种方法，请在源云中指定导出位置，并在目标云中指定导入位置。当你为虚拟机启用保护时，虚拟硬盘将复制到指定的导出位置。你将其发送到目标站点，并将其复制到导入位置。系统将导入的信息复制到副本虚拟机。有关脱机复制先决条件的完整列表，请参阅部署指南中的<a href="/documentation/articles/site-recovery-vmm-to-vmm">步骤 3：为 VMM 云配置保护设置</a>。
 13. 选择“删除副本虚拟机”可指定当通过在云属性的“虚拟机”选项卡上选择“删除对虚拟机的保护”选项停止保护虚拟机时应当删除副本虚拟机。启用此设置后，当你禁用保护时，会从 Azure 站点恢复中删除该虚拟机，从 VMM 控制台中删除该虚拟机的站点恢复设置，并且会删除副本。![配置保护设置](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_CloudSettingsRep.png)
 
@@ -178,7 +212,7 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 
 ### 为脱机初始复制做准备
 
-你需要执行许多操作来为脱机初始复制做准备：
+你需要执行以下操作来为脱机初始复制做好准备：
 
 - 在源服务器上，你需要指定从中进行数据导出的路径位置。在导出路径上分配对 NTFS 的“完全控制”权限和对 VMM 服务的“共享”权限。在目标服务器上，你需要指定从中进行数据导入的路径位置。在此路径上分配同样的权限。 
 - 如果导入或导出路径是共享的，请为共享路径所在的远程计算机上的 VMM 服务帐户分配 Administrator、Power User、Print Operator 或 Server Operator 组成员资格。
@@ -195,8 +229,8 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 	
 ## 步骤 5：配置网络映射
 1. 在“快速启动”页上，单击“映射网络”。
-2. 选择你要映射其中的网络的源 VMM 服务器，然后选择要将网络映射到的目标 VMM 服务器。此时将显示源网络及其关联的目标网络的列表。对于当前未映射的网络将显示空值。单击源和目标网络名称旁的信息图标以查看每个网络的子网。
-3. 在“源上的网络”中选择一个网络，然后选择“映射”。服务将检测目标服务器上的 VM 网络并显示它们。 
+2. 选择你要映射其中的网络的源 VMM 服务器，然后选择要将网络映射到的目标 VMM 服务器。此时将显示源网络及其关联的目标网络的列表。对于当前未映射的网络将显示空值。 
+3. 在“源上的网络”中选择一个网络，然后选择“映射”。服务将检测目标服务器上的 VM 网络并显示它们。单击源和目标网络名称旁的信息图标以查看每个网络的子网。
 
 	![配置网络映射](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_NetworkMapping1.png)
 
@@ -204,7 +238,7 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 
 	![选择目标网络](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_NetworkMapping2.png)
 
-5. 当选择某个目标网络时，会显示使用源网络的受保护云。此时也会显示与用于保护的云关联的可用目标网络。建议你选择可供你用于保护的所有云使用的一个目标网络。
+5. 当选择某个目标网络时，会显示使用源网络的受保护云。此时也会显示与用于保护的云关联的可用目标网络。建议你选择可供你用于保护的所有云使用的一个目标网络。或者，你也可以转到 VMM 服务器并修改云属性，以添加对应于你要选择的 VM 网络的逻辑网络。
 6. 单击复选标记以完成映射过程。作业开始跟踪映射进度。你可以在“作业”选项卡上查看该作业。
 
 
@@ -261,35 +295,33 @@ Azure 站点恢复可在许多部署方案中安排虚拟机的复制、故障�
 
 ### 运行测试故障转移
 
-1. 在"恢复计划"选项卡上，选择该计划并单击"测试故障转移"。
-2. 在"确认测试故障转移"页面上，选择"无"。请注意，当启用了此选项时，故障转移后的副本虚拟机不会连接到任何网络。这将测试虚拟机是否按预期进行故障转移，但是不会测试你的复制网络环境。如果你希望运行更全面的测试故障转移，请参阅 MSDN 上的<a href="/documentation/articles/site-recovery-failover">测试本地到本地部署</a>。
+1. 在“恢复计划”选项卡上，选择该计划并单击“测试故障转移”。
+2. 在“确认测试故障转移”页面上，选择“无”。请注意，当启用了此选项时，故障转移后的副本虚拟机不会连接到任何网络。这将测试虚拟机是否按预期进行故障转移，但是不会测试你的复制网络环境。有关如何使用不同网络选项的详细信息，请查看[如何运行测试性故障转移](/documentation/articles/site-recovery-failover#run-a-test-failover)。
 
-	![选择测试网络](./media/site-recovery-vmm-to-vmm/ASRE2EHVR_TestFailover1.png)
-
-
-7. 将在副本虚拟机所在的同一主机上创建测试虚拟机。它不会被添加到副本虚拟机所在的云中。
+7. 将在副本虚拟机所在的同一主机上创建测试虚拟机。它将被添加到副本虚拟机所在的同一个云中。
 
 ### 运行恢复计划
-在复制之后，副本虚拟机将具有与主虚拟机的 IP 地址不同的 IP 地址。如果你是通过 DHCP 颁发地址，则 DNS 将自动更新。如果你未使用 DHCP 并且希望确保地址相同，则需要运行两个脚本。
+在复制之后，副本虚拟机的 IP 地址可能不同于主虚拟机的 IP 地址。虚拟机在启动后将更新它们使用的 DNS 服务器。你也可以添加一个脚本来更新 DNS 服务器，以确保及时更新。
 
 #### 用于检索 IP 地址的脚本
 运行此示例脚本来检索 IP 地址。
-    **$vm = Get-SCVirtualMachine -Name <VM_NAME>
-	$na = $vm[0].VirtualNetworkAdapters>
-	$ip = Get-SCIPAddress -GrantToObjectID $na[0].id
-	$ip.address**  
+
+    	$vm = Get-SCVirtualMachine -Name <VM_NAME>
+		$na = $vm[0].VirtualNetworkAdapters>
+		$ip = Get-SCIPAddress -GrantToObjectID $na[0].id
+		$ip.address  
 
 #### 用于更新 DNS 的脚本
 运行此示例脚本来更新 DNS 并指定你通过前一个示例脚本检索到的 IP 地址。
 
-	**[string]$Zone,
-	[string]$name,
-	[string]$IP
-	)
-	$Record = Get-DnsServerResourceRecord -ZoneName $zone -Name $name
-	$newrecord = $record.clone()
-	$newrecord.RecordData[0].IPv4Address  =  $IP
-	Set-DnsServerResourceRecord -zonename com -OldInputObject $record -NewInputObject $Newrecord**
+		string]$Zone,
+		[string]$name,
+		[string]$IP
+		)
+		$Record = Get-DnsServerResourceRecord -ZoneName $zone -Name $name
+		$newrecord = $record.clone()
+		$newrecord.RecordData[0].IPv4Address  =  $IP
+		Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
 
 
 
@@ -355,4 +387,4 @@ VMM 服务器上的提供程序将从“服务”那里收到事件通知，并�
 
 - **选择**：这是服务必不可少的组成部分，无法关闭。如果不希望向“服务”发送该信息，请不要使用本“服务”。
 
-<!---HONumber=71-->
+<!---HONumber=82-->
