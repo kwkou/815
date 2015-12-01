@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="06/16/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="09/28/2015"
+	wacn.date="11/27/2015"/>
 
 #  向 iOS 应用程序和 JavaScript 后端添加推送通知
 
@@ -96,13 +96,11 @@
 [117]: ./media/mobile-services-ios-get-started-push/mobile-services-ios-push-17.png
 
 <!-- URLs.   -->
-
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [移动服务入门]: /documentation/articles/mobile-services-ios-get-started
-[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-ios-get-started-users
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [apns 对象]: http://go.microsoft.com/fwlink/p/?LinkId=272333
@@ -115,4 +113,4 @@
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-ios-send-localized-breaking-news
 [Mobile Services Objective-C how-to conceptual reference]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 
-<!---HONumber=74-->
+<!---HONumber=82-->

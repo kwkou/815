@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/23/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 #  向移动服务应用程序添加身份验证
 
@@ -20,15 +20,10 @@
 
 本主题说明如何通过应用程序对 Azure 移动服务中的用户进行身份验证。在本教程中，你将要使用移动服务支持的标识提供程序向快速入门项目添加身份验证。在移动服务成功完成身份验证和授权后，将显示用户 ID 值。
 
-本教程将指导你完成在应用程序中启用身份验证的以下基本步骤：
 
-1. [注册应用程序以进行身份验证并配置移动服务]
-2. [将表权限限制给已经过身份验证的用户]
-3. [向应用程序添加身份验证]
+本教程基于移动服务快速入门。你还必须先完成教程[将移动服务添加到现有应用程序]。
 
-本教程基于移动服务快速入门。你还必须先完成教程 [将移动服务添加到现有应用程序]。
-
->[AZURE.NOTE]本教程演示如何管理移动服务使用各种标识提供程序的身份验证流。此方法易于配置，并支持多个提供者。若要改用 Live Connect（提供客户端托管的身份验证），在 Windows Phone 应用程序中提供单一登录体验，请参阅主题[使用 Live Connect 实现对 Windows Phone 应用程序的单一登录]。通过使用客户端管理身份验证，你的应用程序有权访问所维护的标识提供程序的其他用户数据。你可以通过移动服务中获取相同的用户数据，通过调用 **user.getIdentities()** 服务器脚本中的函数。有关详细信息，请参阅[此文章](http://go.microsoft.com/fwlink/p/?LinkId=506605)。
+>[AZURE.NOTE]本教程演示如何管理移动服务使用各种标识提供程序的身份验证流。此方法易于配置，并支持多个提供者。通过使用客户端管理身份验证，你的应用程序有权访问所维护的标识提供程序的其他用户数据。你可以通过移动服务中获取相同的用户数据，通过调用 **user.getIdentities()** 服务器脚本中的函数。有关详细信息，请参阅[此文章](http://go.microsoft.com/fwlink/p/?LinkId=506605)。
 
 ## <a name="register"></a>注册应用程序以进行身份验证并配置移动服务
 
@@ -77,9 +72,9 @@
 
 <!-- URLs. -->
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-phone-get-started
+[将移动服务添加到现有应用程序]: /documentation/articles/mobile-services-windows-phone-get-started-data
 [Authorize users with scripts]: /documentation/articles/mobile-services-windows-phone-authorize-users-in-scripts
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[使用 Live Connect 实现对 Windows Phone 应用程序的单一登录]: /documentation/articles/mobile-services-windows-phone-single-sign-on
+ 
 
-<!---HONumber=74-->
+<!---HONumber=82-->

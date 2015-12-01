@@ -11,8 +11,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/16/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="10/06/2015"
+	wacn.date="11/27/2015"/>
 
 
 #  向移动服务 Android 应用程序添加推送通知
@@ -30,15 +30,18 @@
 
 [AZURE.INCLUDE [mobile-services-android-prerequisites](../includes/mobile-services-android-prerequisites.md)]
 
-## <a id="register"></a>启用 Google Cloud Messaging
+## 代码示例
+若要查看完成的源代码，请转到[此处](https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPush)。
+
+## 启用 Google Cloud Messaging
 
 [AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../includes/mobile-services-enable-Google-cloud-messaging.md)]
 
-## <a id="configure"></a>配置移动服务以发送推送请求
+## 配置移动服务以发送推送请求
 
 [AZURE.INCLUDE [mobile-services-android-configure-push](../includes/mobile-services-android-configure-push.md)]
 
-## <a id="add-push"></a>向应用程序添加推送通知
+## 向应用程序添加推送通知
 
 
 
@@ -55,13 +58,13 @@
 [AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../includes/mobile-services-android-getting-started-with-push.md)]
 
 
-## <a id="update-scripts"></a>在管理门户中更新已注册的插入脚本
+## 在管理门户中更新已注册的插入脚本
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
 
-## <a id="test"></a>在应用程序中测试推送通知
-   
+## 在应用程序中测试推送通知
+
 你可以通过以下方式测试应用程序：使用 USB 电缆直接连接 Android 手机，或者在模拟器中使用虚拟设备。
 
 ### 设置用于测试的 Android 模拟器
@@ -97,20 +100,9 @@
 
 [AZURE.INCLUDE [验证 SDK](../includes/mobile-services-verify-android-sdk-version.md)]
 
-
-##  旧代码版本
-
-如果你要查看本教程的 Eclipse 版本，请转到[推送通知入门 (Eclipse)]。
-
-
-
-
-##  <a name="next-steps"></a>后续步骤
+## 后续步骤
 
 <!---This tutorial demonstrated the basics of enabling an Android app to use Mobile Services and Notification Hubs to send push notifications. Next, consider completing the next tutorial, [Send push notifications to authenticated users], which shows how to use tags to send push notifications from a Mobile Service to only an authenticated user.
-
-+ [Send push notifications to authenticated users]
-	<br/>Learn how to use tags to send push notifications from a Mobile Service to only an authenticated user.
 
 + [Send broadcast notifications to subscribers]
 	<br/>Learn how users can register and receive push notifications for categories they're interested in.
@@ -121,17 +113,14 @@
 
 通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [数据处理入门]
-  <br/>了解有关使用移动服务存储和查询数据的详细信息。
-
 * [身份验证入门 ]
   <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
 * [什么是通知中心？]
   <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
 
-* [调试通知中心应用程序]
-  </br>获取有关对通知中心解决方案进行故障排除和调试的指导。
+* [调试通知中心应用程序](http://go.microsoft.com/fwlink/p/?linkid=386630)
+</br>获取有关对通知中心解决方案进行故障排除和调试的指导。
 
 * [如何使用适用于移动服务的 Android 客户端库 ]
   <br/>了解有关如何将移动服务与 Android 一起使用的详细信息。
@@ -153,11 +142,9 @@
 
 
 <!-- URLs. -->
-[推送通知入门 (Eclipse)]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push-EC
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Get started with Mobile Services]: /documentation/articles/mobile-services-android-get-started
-[数据处理入门]: /documentation/articles/mobile-services-android-get-started-data
 [身份验证入门 ]: /documentation/articles/mobile-services-android-get-started-users
 [Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-js
 [Push notifications to app users]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-javascript-get-started-push
@@ -169,11 +156,10 @@
 [gcm object]: http://go.microsoft.com/fwlink/p/?LinkId=282645
 
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
-[调试通知中心应用程序]: http://go.microsoft.com/fwlink/p/?linkid=386630
-[Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-android-push-notifications-app-users
+
 
 [什么是通知中心？]: /documentation/articles/notification-hubs-overview
 [Send broadcast notifications to subscribers]: /documentation/articles/notification-hubs-android-send-breaking-news
 [Send template-based notifications to subscribers]: /documentation/articles/notification-hubs-android-send-localized-breaking-news
 
-<!---HONumber=74-->
+<!---HONumber=82-->

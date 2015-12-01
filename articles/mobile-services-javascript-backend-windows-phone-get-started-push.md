@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="09/14/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -136,9 +136,6 @@
 
 本教程演示了启用 Windows 应用商店应用程序以便使用移动服务和通知中心发送推送通知的基础知识。接下来，请考虑完成以下教程之一：
 
-+ [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users)
-	<br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
-
 + [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-phone-send-breaking-news)
 	<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
@@ -185,4 +182,4 @@
 
  
 
-<!---HONumber=74-->
+<!---HONumber=82-->

@@ -10,4 +10,4 @@
 - [(Android | Javascript)](/zh-cn/documentation/articles/mobile-services-android-call-custom-api/)
 - [(HTML | Javascript)](/zh-cn/documentation/articles/mobile-services-html-call-custom-api/)
 
-<!---HONumber=74-->
+<!---HONumber=82-->

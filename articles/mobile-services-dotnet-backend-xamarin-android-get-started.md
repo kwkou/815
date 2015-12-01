@@ -1,20 +1,22 @@
-<properties 
-	pageTitle="用于 Xamarin Android 应用程序的移动服务入门 - Azure 移动服务" 
-	description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin Android 开发" 
-	services="mobile-services" 
-	documentationCenter="xamarin" 
-	authors="lindydonna" 
-	manager="dwrede" 
+<properties
+	pageTitle="适用于 Xamarin Android 应用的移动服务入门 | Windows Azure"
+	description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin Android 开发"
+	services="mobile-services"
+	documentationCenter="xamarin"
+	authors="lindydonna"
+	manager="dwrede"
 	editor="mollybos"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="08/18/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/12/2015"
+	wacn.date="11/27/2015"/>
 
 # <a name="getting-started"></a>移动服务入门
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]&nbsp;
+
+>[AZURE.TIP]如果你不熟悉如何使用 Windows Azure 进行移动开发，请[开始使用 Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-xamarin-android-get-started-preview) 而不是 Azure 移动服务，因为前者提供[更多的优势](/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services-preview)。
 
 本教程说明如何使用 Azure 移动服务向 Xamarin Android 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。要创建的移动服务将使用支持的 .NET 语言，你可以使用 Visual Studio 来提供服务器端业务逻辑和管理移动服务。若要创建允许以 JavaScript 编写服务器端业务逻辑的移动服务，请参阅本主题的 [JavaScript 后端版本]。
 
@@ -48,7 +50,7 @@
 
   	![][7]
 
-3. 在本地计算机或虚拟机上下载并安装 <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>（如果尚未这么做）。
+3. 在本地计算机或虚拟机上下载并安装 [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546)（如果尚未这么做）。
 
 4. 下载并安装 [Xamarin Studio] 或 Xamarin for Visual Studio（如果尚未这样做）。
 
@@ -72,10 +74,6 @@
 
 1. 在 Visual Studio 或 Xamarin Studio 中，导航到移动服务解决方案中的客户端项目。
 
-	![][8]
-
-	![][9]
-
 2. 按“运行”按钮生成项目并启动应用程序。系统将要求你选择模拟器或已连接的 USB 设备。
 
 	> [AZURE.NOTE]若要在 Android 模拟器中运行项目，必须至少定义一个 Android 虚拟设备 (AVD)。使用 AVD 管理器创建和管理这些设备。
@@ -91,16 +89,21 @@
 ## 后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [脱机数据同步入门]<br/>了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+* [脱机数据同步入门]
+<br/>了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [身份验证入门]<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [身份验证入门]
+<br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门]<br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门]
+<br/>了解如何向应用程序发送一条很基本的推送通知。
 
-* [移动服务 .NET 后端故障排除]<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
+* [移动服务 .NET 后端故障排除]
+<br/>了解如何诊断和修复移动服务 .NET 后端可能会出现的问题。
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
-
 [Getting started with Mobile Services]: #getting-started
 [Create a new mobile service]: #create-new-service
 [Next Steps]: #next-steps
@@ -108,7 +111,6 @@
 
 
 <!-- Images. -->
-
 [0]: ./media/mobile-services-dotnet-backend-xamarin-android-get-started/mobile-quickstart-completed-android.png
 [6]: ./media/mobile-services-dotnet-backend-xamarin-android-get-started/mobile-portal-quickstart-xamarin.png
 [7]: ./media/mobile-services-dotnet-backend-xamarin-android-get-started/mobile-quickstart-steps-xamarin-android.png
@@ -125,10 +127,11 @@
 [JavaScript and HTML]: /documentation/articles/mobile-services-win8-javascript
 [Management Portal]: https://manage.windowsazure.cn/
 [JavaScript 后端版本]: /documentation/articles/mobile-services-android-get-started
-[Get started with data in Mobile Services using Visual Studio 2012]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012
 [移动服务 .NET 后端故障排除]: /documentation/articles/mobile-services-dotnet-backend-how-to-troubleshoot
+
+
 [Xamarin Studio]: http://xamarin.com/download
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 
-<!---HONumber=71-->
+<!---HONumber=82-->

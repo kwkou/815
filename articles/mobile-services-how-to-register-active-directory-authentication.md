@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/15/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/24/2015" 
+	wacn.date="11/27/2015"/>
 
 # 注册应用程序以使用 Azure Active Directory 帐户登录
 
@@ -18,8 +18,7 @@
 
 ##概述
 
-
-本主题说明如何注册你的应用程序，以便能够使用 Azure Active Directory 作为 Azure 移动服务的身份验证提供程序。
+本主题说明如何注册你的应用程序，以便能够使用 Azure Active Directory 作为移动服务的身份验证提供程序。
 
 ##注册你的应用程序
 
@@ -65,4 +64,4 @@
 <!-- URLs. -->
 [Azure 管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=71-->
+<!---HONumber=82-->

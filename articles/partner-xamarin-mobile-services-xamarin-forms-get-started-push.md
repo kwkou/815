@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="06/10/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="11/27/2015"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
@@ -393,7 +393,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 	![][22]
 
-    This displays the function that is invoked when an insert occurs in the **TodoItem** table.
+    将显示当 **TodoItem** 表中发生插入时所调用的函数。
 
 3. 将 insert 函数替换为以下代码，然后单击“保存”：
 
@@ -842,4 +842,4 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [已完成的 Xamarin.Forms Azure 推送通知示例]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!---HONumber=74-->
+<!---HONumber=82-->

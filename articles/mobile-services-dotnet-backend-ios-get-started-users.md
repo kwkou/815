@@ -1,5 +1,5 @@
 <properties
-	pageTitle="向现有 Azure 移动服务应用添加身份验证 (iOS) | Windows Azure"
+	pageTitle="向现有 Azure 移动服务应用添加身份验证 (iOS) | .NET 后端 | Windows Azure"
 	description="了解如何使用移动服务通过各种标识提供程序（包括 Google、Facebook、Twitter 和 Microsoft）对 iOS 应用程序的用户进行身份验证。"
 	services="mobile-services"
 	documentationCenter="ios"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>
 
 # 向现有 Azure 移动服务应用程序添加身份验证
 
@@ -43,7 +43,6 @@
 在下一教程[移动服务用户的服务端授权]中，你将使用用户 ID 值来筛选返回的数据。
 
 <!-- Anchors. -->
-
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
 [Add authentication to the app]: #add-authentication
@@ -53,11 +52,12 @@
 <!-- URLs. -->
 [移动服务用户的服务端授权]: /documentation/articles/mobile-services-dotnet-backend-service-side-authorization
 [移动服务快速入门教程]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
-[Get started with data]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-data
 [Get started with authentication]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
 [Get started with push notifications]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-push
 [Authorize users with scripts]: /documentation/articles/mobile-services-dotnet-backend-ios-authorize-users-in-scripts
+
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /zh-cn/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [Register your Windows Store app package for Microsoft authentication]: /documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication
-<!---HONumber=71-->
+
+<!---HONumber=82-->

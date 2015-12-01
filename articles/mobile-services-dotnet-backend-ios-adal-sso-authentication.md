@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="使用 Active Directory 身份验证库单一登录对应用程序进行身份验证 (iOS) | 移动开发人员中心" 
-	description="了解如何使用 iOS 应用程序中的 ADAL 对单一登录用户进行身份验证。" 
-	documentationCenter="ios" 
-	authors="mattchenderson" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="使用 Active Directory 身份验证库单一登录对应用进行身份验证 (iOS) | Windows Azure"
+	description="了解如何使用 iOS 应用程序中的 ADAL 对单一登录用户进行身份验证。"
+	documentationCenter="ios"
+	authors="mattchenderson"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
 	ms.date="08/18/2015" 
-	wacn.date="10/03/2015"/>
+	wacn.date="11/27/2015"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
@@ -32,7 +32,7 @@
 本教程需要的内容如下：
 
 * XCode 4.5 和 iOS 6.0（或更高版本）
-* 完成[移动服务入门]或[数据处理入门]教程。
+* 完成[移动服务入门]教程。
 * Microsoft Azure 移动服务 SDK
 * [适用于 iOS 的 Active Directory 身份验证库]
 
@@ -50,7 +50,7 @@
 
         #import "ADALiOS/ADAuthenticationContext.h"
 
-3. 然后，添加以下方法：
+2. 然后，添加以下方法：
 
         - (void) loginAndGetData
         {
@@ -110,10 +110,9 @@
 
 
 <!-- URLs. -->
-[数据处理入门]: /documentation/articles/mobile-services-ios-get-started-data
 [移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started
 [如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [适用于 iOS 的 Active Directory 身份验证库]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
 
-<!---HONumber=71-->
+<!---HONumber=82-->

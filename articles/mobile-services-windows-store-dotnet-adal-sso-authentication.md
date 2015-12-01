@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="08/18/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 
@@ -31,7 +31,7 @@
 本教程需要的内容如下：
 
 * 在 Windows 8.1 上运行的 Visual Studio 2013。
-* 完成[移动服务入门]或[数据处理入门]教程。
+* 完成[移动服务入门]教程。
 * Microsoft Azure 移动服务 SDK NuGet 包
 * Active Directory 身份验证库 NuGet 包 
 
@@ -208,8 +208,7 @@
 <!-- URLs. -->
 [如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 [Azure 管理门户]: https://manage.windowsazure.cn/
-[数据处理入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-data/
-[移动服务入门]: /documentation/articles/mobile-services-windows-store-get-started/
+[移动服务入门]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Windows 开发人员中心仪表板]: http://go.microsoft.com/fwlink/p/?LinkID=266734
 
-<!---HONumber=74-->
+<!---HONumber=82-->

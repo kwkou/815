@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="09/16/2015"
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 #  使用移动服务中的脱机数据处理冲突
@@ -137,7 +137,6 @@
 [Getting Started Offline iOS Sample]: https://github.com/Azure/mobile-services-samples/tree/master/TodoOffline/iOS/blog20140611
 [脱机数据入门]: /documentation/articles/mobile-services-ios-get-started-offline-data
 [Get started with Mobile Services]: /documentation/articles/mobile-services-ios-get-started
-[Get started with data]: /documentation/articles/mobile-services-ios-get-started-data
  
 
-<!---HONumber=74-->
+<!---HONumber=82-->

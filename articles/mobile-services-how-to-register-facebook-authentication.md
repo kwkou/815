@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="注册以进行 Facebook 身份验证 - 移动服务" 
+	pageTitle="注册以进行 Facebook 身份验证 | Azure 移动服务" 
 	description="了解如何在 Azure 移动服务应用程序中使用 Facebook 身份验证。" 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/27/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/25/2015" 
+	wacn.date="11/27/2015"/>
 
 # 注册应用程序以使用 Facebook 在移动服务中进行身份验证
 
@@ -18,9 +18,9 @@
 
 本主题说明如何注册你的应用程序，以便能够使用 Facebook 在 Azure 移动服务中进行身份验证。
 
->[AZURE.NOTE]本教程与 [Azure 移动服务]有关，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持<a href="/documentation/articles/mobile-services-ios-get-started-users/">身份验证入门</a>教程，该教程演示如何将用户登录到你的应用程序。如果这是你第一次体验移动服务，请先完成<a href="/documentation/articles/mobile-services-ios-get-started/">移动服务入门</a>教程。
+>[AZURE.NOTE]本教程与 [Azure 移动服务]有关，该解决方案可帮助你构建任意平台的可缩放移动应用程序。使用移动服务可以轻松地同步数据、对用户进行身份验证和发送推送通知。此页支持[身份验证入门](/documentation/articles/mobile-services-ios-get-started-users)教程，该教程演示如何将用户登录到你的应用程序。如果这是你第一次体验移动服务，请先完成[移动服务入门](/documentation/articles/mobile-services-ios-get-started)教程。
 	
-若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Facebook 帐户和一个手机号码。若要创建新的 Facebook 帐户，请转到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268285" target="_blank">facebook.com</a>。
+若要完成本主题中的过程，你必须拥有一个包含已验证电子邮件地址的 Facebook 帐户和一个手机号码。若要创建新的 Facebook 帐户，请转到 [facebook.com](http://go.microsoft.com/fwlink/p/?LinkId=268285)。
 
 1. 导航到 <a href="http://go.microsoft.com/fwlink/p/?LinkId=268286" target="_blank">Facebook 开发人员</a>网站，然后使用 Facebook 帐户凭据登录。
 
@@ -41,7 +41,8 @@
 
 7. 单击“显示”，出现请求时请提供你的密码，然后记下“应用程序 ID”和“应用程序密钥”的值。
 
-   	![][5] &nbsp;
+   	![][5] 
+	&nbsp;
 	
     >[AZURE.IMPORTANT]应用程序密钥是一个非常重要的安全凭据。请勿与任何人分享此密钥或将密钥随应用分发。
 
@@ -68,4 +69,4 @@
 [身份验证入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [Azure 管理门户]: https://manage.windowsazure.cn/
 [Azure 移动服务]: /zh-cn/services/mobile-services/
-<!---HONumber=71-->
+<!---HONumber=82-->

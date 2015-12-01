@@ -1,6 +1,6 @@
 <properties
-	pageTitle="适用于 Windows 应用商店应用的移动服务入门 | Windows Azure"
-	description="请按照本教程开始使用 Azure 移动服务在 C# 或 JavaScript 中进行 Windows 应用商店开发。"
+	pageTitle="适用于 Windows 应用商店应用的移动服务入门 (C#) | Windows Azure"
+	description="按照本教程开始使用 Azure 移动服务通过 C# 进行 Windows 应用商店开发。"
 	services="mobile-services"
 	documentationCenter="windows"
 	authors="ggailey777"
@@ -9,20 +9,19 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="08/08/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/06/2015"
+	wacn.date="11/27/2015"/>
 
 # <a name="getting-started"> </a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
 
-本教程说明如何使用 Azure 移动服务向通用 Windows 应用程序添加基于云的后端服务。通用 Windows 应用程序解决方案包括 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目，以及常见的共享项目。有关详细信息，请参阅[生成面向 Windows 和 Windows Phone 的通用 Windows 应用程序](http://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/dn609832.aspx)。
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+
+本教程说明如何使用 Azure 移动服务向通用 Windows 应用程序添加基于云的后端服务。通用 Windows 应用程序解决方案包括 Windows 应用商店 8.1 和 Windows Phone 应用商店 8.1 应用程序的项目，以及常见的共享项目。有关详细信息，请参阅[生成面向 Windows 和 Windows Phone 的通用 Windows 应用程序](http://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx)。
 
 在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。要创建的移动服务将为服务器端业务逻辑使用 JavaScript。若要创建允许你使用 Visual Studio 以受支持 .NET 语言编写服务器端业务逻辑的移动服务，请参阅本主题中的 .NET 后端版本。
-
->[AZURE.NOTE]本主题说明如何使用 Azure 管理门户创建新的移动服务项目和通用 Windows 应用程序。通过使用 Visual Studio 2013，还可以向现有的 Visual Studio 解决方案添加新的移动服务项目。有关详细信息，请参阅[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data)。
-
->若要将移动服务添加到 Windows Phone 8.0 或 Windows Phone Store 8.1 应用项目，请参阅[将移动服务添加到现有的 Windows Phone 应用](/documentation/articles/mobile-services-windows-phone-get-started-data)。
 
 [AZURE.INCLUDE [mobile-services-windows-universal-get-started](../includes/mobile-services-windows-universal-get-started.md)]
 
@@ -46,9 +45,7 @@
    
 2. 在快速入门选项卡中，单击“选择平台”下的“Windows”，然后展开“创建新的 Windows 应用商店应用程序”。
 
-   ![](./media/mobile-services-javascript-backend-windows-store-dotnet-get-started/mobile-portal-quickstart.png)
-
-   此时将显示三个简单步骤，描述如何创建与移动服务连接的 Windows 应用商店应用程序。
+   	此时将显示三个简单步骤，描述如何创建与移动服务连接的 Windows 应用商店应用程序。
 
   	![移动服务快速入门步骤](./media/mobile-services-javascript-backend-windows-store-dotnet-get-started/mobile-quickstart-steps.png)
 
@@ -64,24 +61,24 @@
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-run-app](../includes/mobile-services-javascript-backend-run-app.md)]
 
->[AZURE.NOTE]您可以查看访问您的移动服务以查询和插入数据的代码，这些代码在 MainPage.xaml.cs 文件中。
+>[AZURE.NOTE]你可以查看访问你的移动服务以查询和插入数据的代码，这些代码在 MainPage.xaml.cs 文件中。
 
 ## 后续步骤
-完成快速入门后，请了解如何在移动服务中执行其他重要任务： 
+完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [将移动服务添加到现有应用程序][Get started with data]<br/>
-  了解有关使用移动服务存储和查询数据的详细信息。
+* [脱机数据同步入门] 
+了解如何使用脱机数据同步来使应用保持较高的响应能力和稳健性。
 
-* [脱机数据同步入门]<br/>
-  了解如何使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+* [向移动服务应用添加身份验证][Get started with authentication]
+了解如何使用标识提供者对应用的用户进行身份验证。
 
-* [向移动服务应用程序添加身份验证][Get started with authentication]<br/>
-  了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [向应用添加推送通知][Get started with push notifications]
+了解如何向应用发送一条很基本的推送通知。
 
-* [向应用程序添加推送通知][Get started with push notifications]<br/>
-  了解如何向应用程序发送一条很基本的推送通知。
+* [如何使用 .NET 客户端库](/documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library)
+了解如何查询移动服务、处理数据和访问自定义 API。
 
-有关通用 Windows 应用程序的详细信息，请参阅[通过单个移动服务支持多个设备平台](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#shared-vs)。
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -96,12 +93,11 @@
 <!-- URLs. -->
 
 [Get started with data]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data
-[脱机数据同步入门]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [Get started with authentication]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-users
 [Get started with push notifications]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-push
 [Visual Studio 2013 Express for Windows]: http://go.microsoft.com/fwlink/?LinkId=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Management Portal]: https://manage.windowsazure.cn/
-[Get started with data in Mobile Services using Visual Studio 2012]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data-vs2012
+ 
 
-<!---HONumber=74-->
+<!---HONumber=82-->

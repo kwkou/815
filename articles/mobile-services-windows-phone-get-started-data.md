@@ -10,12 +10,12 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/25/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 #  将移动服务添加到现有应用程序
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data-legacy](../includes/mobile-services-selector-get-started-data-legacy.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../includes/mobile-services-selector-get-started-data.md)]
 
 ##概述
 
@@ -25,7 +25,7 @@
 
 + Visual Studio 2012 Express for Windows Phone 8，以及 Windows 8 上运行的 [Windows Phone 8 SDK]。若要在完成本教程后创建一个 Windows Phone 8.1 应用程序，您必须使用 Visual Studio 2013 Update 2 或更高版本。 
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="\_blank">Azure 试用</a>。
++ 一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/ target="\_blank">Azure 试用</a>。
 
 ## <a name="download-app"></a>下载 GetStartedWithData 项目
 
@@ -174,7 +174,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-
 [0]: ./media/mobile-services-windows-phone-get-started-data/mobile-quickstart-startup-wp8.png
 [7]: ./media/mobile-services-windows-phone-get-started-data/mobile-add-nuget-package-wp.png
 [8]: ./media/mobile-services-windows-phone-get-started-data/mobile-dashboard-tab.png
@@ -190,4 +189,4 @@
 [开发人员代码示例站点]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!---HONumber=74-->
+<!---HONumber=82-->
