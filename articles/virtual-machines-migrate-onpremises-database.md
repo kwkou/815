@@ -1,21 +1,24 @@
 <properties
-	pageTitle="将本地数据库迁移到 Azure 虚拟机中的 SQL Server"
+	pageTitle="将数据库迁移到 VM 上的 SQL Server | Windows Azure"
 	description="了解如何将本地用户数据库迁移到 Azure 虚拟机中的 SQL Server。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="carlrabeler"
 	manager="jeffreyg"
-	editor=""/>
-
-<tags 
+	editor=""
+	tags="azure-service-management" />
+<tags
 	ms.service="virtual-machines"
-	ms.date="07/16/2015"
-	wacn.date="08/29/2015"/>
+	ms.date="10/02/2015"
+	wacn.date="11/27/2015"/>
 
 
 # 将数据库迁移到 Azure VM 上的 SQL Server
 
-将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个教程，指导你使用“将 SQL Server 数据库部署到 Windows Azure VM”向导。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
+
+将本地 SQL Server 用户数据库迁移到 Azure VM 中的 SQL Server 的方法有很多。本文将简要讨论各种方法，针对各种情况推荐最佳方法，并提供一个[教程](#azure-vm-deployment-wizard-tutorial)，指导你使用“将 SQL Server 数据库部署到 Microsoft Azure VM”向导。
 
 ## 主要迁移方法有哪些？
 
@@ -28,7 +31,7 @@
 - 将本地物理计算机转换为 Hyper-V VHD，上载到 Azure Blob 存储，然后使用上载的 VHD 部署为新 VM
 - 使用 Windows 导入/导出服务运送硬盘驱动器
 
-> [AZURE.NOTE]如果在本地有 AlwaysOn 部署，还可以考虑这种迁移方法：使用[添加 Azure 副本向导](https://msdn.microsoft.com/zh-cn/library/dn463980.aspx)在 Azure 中创建副本，然后进行故障转移。
+> [AZURE.NOTE]如果在本地有 AlwaysOn 部署，还可以考虑这种迁移方法：使用[添加 Azure 副本向导](/documentation/articles/virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups)在 Azure 中创建副本，然后进行故障转移。
 
 ## 选择迁移方法
 
@@ -157,4 +160,8 @@
 
 在通过网络上载成本过高或不可行时，可以使用 [Windows 导入/导出服务方法](/documentation/articles/storage-import-export-service)将大量文件数据传输到 Azure Blob 存储中。借助此服务，可以将包含这些数据的一个或多个硬盘驱动器运送到 Azure 数据中心，在那里，你的数据将上载到你的存储帐户中。
 
-<!---HONumber=67-->
+## 后续步骤
+
+有关在 Azure 虚拟机中运行 SQL Server 的详细信息，请参阅 [Azure 虚拟机中的 SQL Server 概述](virtual-machines-sql-server-infrastructure-services.md)。
+
+<!---HONumber=82-->

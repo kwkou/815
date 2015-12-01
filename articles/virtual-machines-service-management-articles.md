@@ -10,11 +10,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/28/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/27/2015"/>
 
 # 有关服务管理中虚拟机的文章
-这里列出了与在 Azure 服务管理中使用虚拟机相关的文章。对于新部署，我们建议使用基于 Azure 资源管理器的虚拟机和其他资源。有关资源管理器优点的说明，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 ## 入门
 
@@ -34,7 +36,7 @@
 
 [使用 Azure PowerShell 创建和管理基于 Windows 的虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
-[使用 Azure 命令行界面 (Azure CLI) 创建 VM](/documentation/articles/virtual-machines-xplat-getting-started)
+[使用 Azure 命令行界面 (Azure CLI) 创建运行 Linux 的自定义 VM](/documentation/articles/virtual-machines-xplat-getting-started)
 
 [使用 Azure CLI 创建多 VM 部署](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
 
@@ -142,8 +144,6 @@
 
 [Azure 服务管理 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
-[服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools) [服务管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
-[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)
-
-<!---HONumber=70-->
+<!---HONumber=82-->
