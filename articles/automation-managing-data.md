@@ -39,7 +39,7 @@ Azure Automation 会自动删除并永久移除 90 天之前的作业。
 
 ### Runbook
 
-可以使用 Azure 管理门户或 Windows PowerShell 中的 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 将 Runbook 导出到脚本文件。可以根据[创建或导入 Runbook](https://msdn.microsoft.com/zh-cn/library/dn643637.aspx) 中所述，将这些脚本文件导入另一个自动化帐户。
+可以使用 Azure 管理门户或 Windows PowerShell 中的 [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet 将 Runbook 导出到脚本文件。可以根据[创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook) 中所述，将这些脚本文件导入另一个自动化帐户。
 
 
 ### 集成模块
@@ -52,7 +52,7 @@ Azure Automation 会自动删除并永久移除 90 天之前的作业。
 
 你可以使用 [Azure cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) 来检索未加密资产的详细信息，然后保存这些资产供将来参考，或者在另一个自动化帐户中创建等效的资产。
 
-无法使用 cmdlet 检索已加密变量或凭据密码字段的值。如果你不知道这些值，可以使用 [Get-AutomationVariable](https://msdn.microsoft.com/zh-cn/library/dn940012.aspx) 和 [Get-AutomationPSCredential](https://msdn.microsoft.com/zh-cn/library/dn940015.aspx) 活动从 Runbook 中检索这些值。
+无法使用 cmdlet 检索已加密变量或凭据密码字段的值。如果你不知道这些值，可以使用 [Get-AutomationVariable](/documentation/articles/automation-variables) 和 [Get-AutomationPSCredential](/documentation/articles/automation-credentials) 活动从 Runbook 中检索这些值。
 
 你无法从 Azure Automation 导出证书。必须确保所有证书在 Azure 外部可用。
 

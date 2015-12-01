@@ -51,7 +51,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 注册 Power BI 应用程序
 
-1. 遵循 [Power BI 快速入门](https://msdn.microsoft.com/zh-cn/library/dn931989.aspx)中的步骤注册 Power BI。
+1. 遵循 [Power BI 快速入门](https://msdn.microsoft.com/zh-cn/library/mt186546.aspx)中的步骤注册 Power BI。
 
 2. 遵循[注册应用](https://msdn.microsoft.com/zh-cn/library/dn877542.aspx)中的步骤创建应用程序注册。在访问 Power BI REST API 时将要用到此注册信息。
 

@@ -158,6 +158,5 @@ Azure 中的一个常见方案是基于这些对象是否需要访问 Internet �
 ## 后续步骤
 
 - [在经典部署模型中部署 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps)。
-- [在资源管理器中部署 NSG](/documentation/articles/virtual-networks-create-nsg-arm-pportal)。
 
 <!---HONumber=82-->

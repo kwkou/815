@@ -36,7 +36,7 @@
 
 ### 1\.安装 Runbook
 
-下载 Runbook 之后，你可以使用[导入 Runbook](http://msdn.microsoft.com/zh-cn/library/dn643637.aspx#ImportRunbook) 中的流程来导入它们。
+下载 Runbook 之后，你可以使用[导入 Runbook](/documentation/articles/automation-creating-importing-runbook#ImportRunbook) 中的流程来导入它们。
 
 ### 2\.查看说明和要求
 Runbook 包括带注释的帮助文本，其中包括说明和所需的资产。你也可以从本文中获取相同的信息。

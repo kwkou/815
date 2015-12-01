@@ -21,8 +21,6 @@
 
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
 
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1)
-
 **先决条件：**
 
 在开始按照本文中的说明操作之前，你必须具有以下内容：

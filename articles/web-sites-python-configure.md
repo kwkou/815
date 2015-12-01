@@ -52,8 +52,10 @@ Azure 应用商店包含用于 Bottle、Django 和 Flask 框架的模板。如�
 
 如果你没有现成的 Web 应用，则可[从 Azure 管理门户](https://manage.windowsazure.cn)创建一个。单击左下角的“新建”按钮。将出现一个窗口。依次单击“计算”、“网站”和“快速创建”。
 
-![](./media/web-sites-python-configure/configure-python-create-Website.png) <a name="git-publishing"></a>
+![](./media/web-sites-python-configure/configure-python-create-Website.png)
+
 ## Git 发布
+<a name="git-publishing"></a>
 
 按照[在 Azure 网站中使用 GIT 进行连续部署](/documentation/articles/web-sites-publish-source-control)的说明为新创建的 Web 应用配置 Git 发布。本教程使用 Git 来创建、管理 Python Web 应用以及将其发布到 Azure 网站。
 

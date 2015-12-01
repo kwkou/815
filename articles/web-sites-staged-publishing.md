@@ -14,7 +14,7 @@
 	wacn.date="11/27/2015"/>
 
 # 为 Azure 网站中的 Web 应用设置过渡环境
-<a name="Overview">
+<a name="Overview"></a>
 
 将 Web 应用部署到 [Azure 网站](/documentation/services/web-sites/)时，如果在“标准”App Service 计划模式下运行，则你可以部署到单独的部署槽而不是默认的生产槽。部署槽实际上是具有自身主机名的实时 Web 应用。两个部署槽（包括生产槽）之间的 Web 应用内容与配置元素可以交换。将应用程序部署到部署槽具有以下优点：
 
@@ -24,7 +24,7 @@
 
 - 交换后，具有以前分阶段 Web 应用的槽现在具有以前的生产 Web 应用。如果交换到生产槽的更改与您的预期不同，您可以立即执行同一交换来收回“上一已知的良好站点”。
 
-每种 App Service 计划模式支持不同数量的部署槽。若要查明你的 Web 应用模式支持的槽数，请参阅 [Azure 网站定价](/home/features/app-service/#price)。
+每种 App Service 计划模式支持不同数量的部署槽。若要查明你的 Web 应用模式支持的槽数，请参阅 [Azure 网站定价](/home/features/web-site/#price)。
 
 - 如果你的 Web 应用具有多个槽，则你无法更改模式。
 

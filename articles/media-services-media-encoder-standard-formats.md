@@ -82,7 +82,7 @@ MP3 (MPEG-1 Audio Layer 3)|是
 Windows Media 音频|是 
 WAV/PCM|是 
 [FLAC](https://en.wikipedia.org/wiki/FLAC)</a>|是 
-[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format) |是 
+[Opus](https://en.wikipedia.org/wiki/Opus_(audio_format)) |是 
 [Vorbis](https://en.wikipedia.org/wiki/Vorbis)</a>|是 
 AMR（自适应多速率）|是
 AES（SMPTE 331M 和 302M、AES3-2003） |否 

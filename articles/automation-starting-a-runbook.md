@@ -67,7 +67,7 @@
   </td>
  </tr>
  <tr>
-  <td><a href="http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx">从另一个 Runbook</a></td>
+  <td><a href="/documentation/articles/automation-child-runbooks">从另一个 Runbook</a></td>
   <td>
    <ul>
     <li>使用一个 Runbook 作为另一个 Runbook 中的活动</li>
@@ -82,6 +82,7 @@
 
 
 ## 使用 Azure 管理门户启动 Runbook
+<a name="starting-a-runbook-with-the-azure-portal"></a>
 
 1. 在 Azure 管理门户中，选择“自动化”，然后单击自动化帐户的名称。
 1. 选择“Runbook”选项卡。
@@ -115,8 +116,9 @@ Start-AzureAutomationRunbook 将返回一个作业对象，启动 Runbook 后，
 	Start-AzureAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook" –Parameters $params
 
 ## Runbook 参数
+<a name="Runbook-parameters"></a>
 
-当你使用 Azure 管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据[从一个 Runbook 启动另一个 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx) 中所述，以内联方式从另一个 Runbook 调用该参数值。
+当你使用 Azure 管理门户或 Windows PowerShell 启动 Runbook 时，系统将通过 Azure 自动化 Web 服务发送指令。此服务不支持复杂数据类型的参数。如果需要提供复杂参数的值，则必须根据[从一个 Runbook 启动另一个 Runbook](/documentation/articles/automation-child-runbooks) 中所述，以内联方式从另一个 Runbook 调用该参数值。
 
 Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功能，如以下部分中所述。
 
@@ -182,7 +184,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 凭据
 
-如果参数的数据类型为 **PSCredential**，则你可以提供 Azure 自动化[凭据资产](http://msdn.microsoft.com/zh-cn/library/azure/dn940015.aspx)的名称。Runbook 将检索具有指定名称的凭据。
+如果参数的数据类型为 **PSCredential**，则你可以提供 Azure 自动化[凭据资产](/documentation/articles/automation-credentials)的名称。Runbook 将检索具有指定名称的凭据。
 
 请考虑以下接受名为 credential 的参数的测试 Runbook。
 
@@ -204,6 +206,6 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ## 相关文章
 
-- [从一个 Runbook 启动另一个 Runbook](http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx) 
+- [从一个 Runbook 启动另一个 Runbook](/documentation/articles/automation-child-runbooks) 
 
 <!---HONumber=82-->

@@ -20,7 +20,7 @@
 
 ### 如何知道是否需要虚拟网络？
 
-请访问[虚拟网络概述](http://go.microsoft.com/fwlink/?LinkId=296649)，以便查看可帮助你决定最佳网络设计选项的决策表。
+请访问[虚拟网络概述](/documentation/articles/virtual-networks-overview)，以便查看可帮助你决定最佳网络设计选项的决策表。
 
 ### 如何开始？
 
