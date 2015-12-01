@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="11/27/2015"
+    wacn.date="12/01/2015"
     />
 #常见问题 - 咨询
 
@@ -92,6 +92,18 @@ Windows Azure CDN支持的加速类型包括：Web加速，下载加速，VOD加
    1. 如果用户配置了不缓存的规则，优先匹配；然后匹配需要缓存的规则；缓存规则自上而下匹配。
 
    2. 如果某个URL在不缓存、缓存规则里都没有匹配上，那么就遵循CDN默认规则。
+
+### **可以给泛域名配置缓存规则吗？**
+
+可以给泛域名配置缓存规则。建了泛域名的话，缓存规则的设定就是该泛域名之下。泛域名主要是针对多个域名配置相同来使用的，简化了创建的步骤。它可以与真正的域名同时创建，真正的域名的配置会优先匹配。例如，如果有个a1.example.com的规则是不一样的，客户可以新建一个 a1.example.com 的endpoint，并在这里面创建缓存规则，这里面的配置会优先于 *.example.com的配置。
+
+### **自定义域名为泛域名时支持缓存刷新操作吗？**
+
+如果自定义域名为泛域名，提交缓存刷新的时候，刷新URL必须指定子域名。比如：自定义域名为*.domain.com，如果要刷新img.domain.com下的内容，则应指定子域名img.domain.com进行缓存刷新操作。
+
+### **预加载可以使用泛域名吗？**
+
+预加载必须是子域名，并且是能够正常访问的URL（状态码是200的）。
 	 
 ### **“源站地址（回源地址）”和“回源域名（回源host header）”的区别是什么？**	 
 

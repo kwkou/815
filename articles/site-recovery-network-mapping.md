@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Site Recovery 网络映射"
+	pageTitle="Azure Site Recovery 网络映射 | Windows Azure"
 	description="Azure Site Recovery 可以协调位于本地的虚拟机和物理服务器到 Azure 或辅助本地站点的复制、故障转移和恢复。"
 	services="site-recovery"
 	documentationCenter=""
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="05/08/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/02/2015"/>
 
 
-# Site Recovery 网络映射
+# Azure Site Recovery 网络映射
 
 
-Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)中了解可能的部署方案。
+Azure Site Recovery 有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以安排复制、故障转移和恢复虚拟机和物理服务器。在 [Site Recovery 概述](/documentation/articles/site-recovery-overview)中了解可能的部署方案。
 
 
 ## 关于本文
@@ -131,4 +131,4 @@ VMNetwork1-Shanghai 的网络映射已更改 | VM-1 将连接到现映射到 VMN
 
 对网络映射有了更好的理解后，请开始阅读[最佳实践](/documentation/articles/site-recovery-best-practices)以做好部署准备。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

@@ -89,7 +89,7 @@
 
 若要使用拆分/合并工具，你必须[配置安全性](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)。
 
-若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)，或者参考[教程](/documentation/articles/sql-database-elastic-pool-portal)创建新池。
+若要查看弹性数据库池的具体信息，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
 
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 

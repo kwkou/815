@@ -42,7 +42,7 @@
 2.	使用 PowerShell API 可以访问更多功能，例如创建自定义数据库集合、添加计划和/或收集结果集。使用门户可以方便安装和创建/监视限制为针对**弹性数据库池**执行的作业。 
 3.	针对作业执行创建加密的凭据，并[将用户（或角色）添加到组中的每个数据库](/documentation/articles/sql-database-elastic-jobs-add-logins-to-dbs)。
 4.	创建可针对组中每个数据库运行的幂等 T-SQL 脚本。
-5.	遵循以下步骤来运行该脚本：[创建和管理弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-create-and-manage) 
+5.	遵循以下步骤来运行该脚本：<!--[-->创建和管理弹性数据库作业<!--](/documentation/articles/sql-database-elastic-jobs-create-and-manage) -->
 
 ## 组件和定价 
 以下组件配合工作可以创建支持即席执行管理作业的 Azure 云服务。在安装期间，这些组件将自动在你的订阅中安装和配置。你可以识别这些服务，因为它们具有相同的自动生成名称。名称是唯一的，包括前缀“edj”后接 21 个随机生成的字符。

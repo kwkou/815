@@ -55,7 +55,7 @@
 	-	**文件系统存储** - 当达到配额时，文件系统存储仍然可以访问以执行读取操作，但所有其他写入操作（包括正常 Web 应用活动所需的写入操作）将会被阻止。文件使用量降低或将该网站移入配额更高的 Web 托管计划时，写入操作将恢复。
 	-	**链接的资源** - 在此处还显示所有链接的 Web 应用资源的配额，例如数据库或存储。
 
-	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。关于各 Web 托管计划的使用率配额详情，请参阅[网站限制](/documentation/articles/azure-subscription-service-limits/#websiteslimits)。
+	一些配额可以按照 web 托管计划应用，另外一些则按照站点应用。关于各 Web 托管计划的使用率配额详情，请参阅<!--[-->网站限制<!--](/documentation/articles/azure-subscription-service-limits/#websiteslimits)-->。
 
 
 ## <a name="resourceusage"></a>如何：避免超过配额

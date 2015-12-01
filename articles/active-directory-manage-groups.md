@@ -57,18 +57,18 @@ Azure Active Directory 访问管理解决方案的核心是安全组。使用安
 ## 访问管理入门
 已准备就绪？ 你可以尝试一些可以使用 Azure AD 组完成的基本任务。使用这些功能可向不同的人员组提供对组织中不同资源的特定访问权限。下面是基本的首要步骤列表。
 
-
+<!--
 * [创建简单规则以配置组的动态成员身份](/documentation/articles/active-directory-accessmanagement-simplerulegroup)
 
 * [使用组来管理对 SaaS 应用程序的访问](/documentation/articles/active-directory-accessmanagement-group-saasapps)
 
 * [为最终用户启用自助组管理功能](/documentation/articles/active-directory-accessmanagement-self-service-group-management)
-
+-->
 * [使用 Azure AD Connect 将本地组同步到 Azure](/documentation/articles/active-directory-aadconnect)
-
+<!--
 * [管理组的所有者](/documentation/articles/active-directory-accessmanagement-managing-group-owners)
-
-
+-->
+<!--
 ## 访问管理的后续步骤
 了解访问管理的基本概念后，请继续学习 Azure Active Directory 中用于管理应用程序和资源访问权限的其他高级功能。
 
@@ -79,7 +79,7 @@ Azure Active Directory 访问管理解决方案的核心是安全组。使用安
 * [在 Azure Active Directory 中管理安全组](/documentation/articles/active-directory-accessmanagement-manage-groups)
 
 * [在 Azure Active Directory 中设置专用组](/documentation/articles/active-directory-accessmanagement-dedicated-groups)
-
+-->
 
 ## 了解详细信息
 下面这些主题提供了有关 Azure Active Directory 的其他一些信息

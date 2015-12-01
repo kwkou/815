@@ -9,8 +9,8 @@
 
 <tags 
     ms.service="storage" 
-	ms.date="07/19/2015" 
-    wacn.date="09/18/2015"/>
+	ms.date="09/23/2015" 
+    wacn.date="11/02/2015"/>
 
 # 如何通过 C++ 使用 Blob 存储  
 
@@ -234,4 +234,4 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 -	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
 -	[Azure 存档文档](/documentation/services/storage/)
 
-<!---HONumber=70-->
+<!---HONumber=79-->

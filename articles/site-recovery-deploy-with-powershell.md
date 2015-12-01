@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="06/08/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/02/2015"/>
 
 #  使用 PowerShell 部署 Azure Site Recovery
 Windows PowerShell® 是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。支持在 VMM 管理的 Hyper-V 站点与 Azure 之间为 Azure Site Recovery 使用 PowerShell cmdlet。
@@ -41,9 +41,9 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 - 在 VMM 服务器上需要至少有一个你要保护的云。云应当包含：
 	- 一个或多个 VMM 主机组。
 	- 每个主机组中有一个或多个 Hyper-V 主机服务器或群集。
-	- 源 Hyper-V 服务器上有一个或多个虚拟机。虚拟机应当是层代 1。
+	- 源 Hyper-V 服务器上有一个或多个虚拟机。
 - 了解有关设置 VMM 云的更多信息：
-	- 阅读 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)中有关私有 VMM 云的更多信息。
+	- 在 [System Center 2012 R2 VMM 中私有云的新增功能](http://go.microsoft.com/fwlink/?LinkId=324952)及 [VMM 2012 和云](http://go.microsoft.com/fwlink/?LinkId=324956)中阅读有关私有 VMM 云的详细信息。
 	- 了解有关[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)的更多信息
 	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://go.microsoft.com/fwlink/?LinkId=324954)了解有关创建私有云的更多信息。
 
@@ -447,4 +447,4 @@ if($isJobLeftForProcessing)
 - 若要在完全的生产环境中规划和部署 Azure Site Recovery，请参阅 [Azure Site Recovery 规划指南](/documentation/articles/site-recovery-best-practices) 和 [Azure Site Recovery 部署指南](/documentation/articles/site-recovery-vmm-to-vmm) 。
 - 如有问题，请访问 <a href="https://social.msdn.microsoft.com/Forums/azure/zh-CN/home?forum=windowsazurezhchs">Azure 恢复服务论坛</a>。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

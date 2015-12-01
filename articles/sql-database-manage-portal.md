@@ -17,6 +17,7 @@
 
 
 > [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/sql-database-manage-manage-portal)
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools)
 
@@ -48,8 +49,6 @@ Azure 管理门户提供了一系列的通用数据库操作，你可以在数�
 - [SQL 数据库审核](/documentation/articles/sql-database-auditing-get-started)
 
 还可以将 Azure SQL 数据库配置为向非特权用户屏蔽敏感数据。
-
-- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started)
 
 
 ## 4\.地域复制

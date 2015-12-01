@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/18/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/03/2015" 
+	wacn.date="11/02/2015"/>
 
 
 
@@ -281,4 +281,4 @@ customer.ETag = "*"；
 - [Blob](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)、[表](/zh-cn/documentation/articles/storage-dotnet-how-to-use-tables)和[队列](/zh-cn/documentation/articles/storage-dotnet-how-to-use-queues)的存储使用入门
 - 存储体系结构 - [Windows Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!--HONumber=70-->
+<!---HONumber=79-->

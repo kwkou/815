@@ -1,4 +1,4 @@
-Azure存储账号中的数据都会有多份复制以确保数据的持久性与高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储空间 SLA](/support/legal/sla/) 要求。创建存储帐户时，必须选择以下复制选项之一：
+始终复制 Windows Azure存储帐户中的数据以确保持久性和高可用性，并且即使在遇到临时硬件故障时也符合 [Azure 存储空间 SLA](/support/legal/sla/) 要求。创建存储帐户时，必须选择以下复制选项之一：
 
 - **本地冗余存储 (LRS)。** 本地冗余存储保留数据的三个副本。LRS 将在单个区域中的单个设施内复制三次。LRS 可以保护你的数据免受普通的硬件故障损害，但无法保护你的数据免受单个设施故障的损害。  
   
@@ -9,7 +9,7 @@ Azure存储账号中的数据都会有多份复制以确保数据的持久性与
 
 	ZRS 提供比 LRS 更高级别的持久性；不过，为获得最大持久性，我们建议你使用下文所述的地域冗余存储。
 
-	> [AZURE.NOTE]ZRS 当前仅可用于块 Blob。
+	> [AZURE.NOTE]ZRS 当前仅适用于块 blob，并且仅支持版本 2014-02-14 和更高版本。
 	> 
 	> 在创建存储帐户并选择 ZRS 后，你无法将其转换为使用任何其他类型的复制，反之亦然。
 
@@ -26,4 +26,4 @@ Azure存储账号中的数据都会有多份复制以确保数据的持久性与
 
 有关 Azure 存储持久性的体系结构详细信息，请参阅 [Azure 存储空间 SOSP 白皮书](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)。
 
-<!---HONumber=70-->
+<!---HONumber=79-->

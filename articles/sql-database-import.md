@@ -20,7 +20,7 @@
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
-本文介绍如何使用 [Azure 预览门户](https://manage.windowsazure.cn)通过导入 BACPAC 来创建 SQL 数据库。
+本文介绍如何使用 [Azure 门户](https://manage.windowsazure.cn)通过导入 BACPAC 来创建 SQL 数据库。
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
@@ -41,7 +41,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 打开要导入的数据库的 SQL Server 边栏选项卡：
 
-1.	转到 [Azure 预览门户](https://manage.windowsazure.cn)。
+1.	转到 [Azure 门户](https://manage.windowsazure.cn)。
 2.	单击“浏览全部”。
 3.	单击“SQL Server”。
 2.	单击要将数据库还原到的服务器。
@@ -53,15 +53,9 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
     ![配置存储选项][2]
 
-1.  为新数据库选择定价层，然后单击“选择”。
-
-    ![选择定价层][3]
-
 1.  输入“数据库名称”。
 2.  为要导入数据库的 Azure SQL 服务器输入“服务器管理员登录名”和“密码”。
 1.  单击“创建”以从 BACPAC 创建数据库。
-
-    ![创建数据库][4]
 
 单击“创建”会将导入数据库请求提交到服务。根据数据库的大小，导入操作可能需要一些时间才能完成。
 
@@ -71,11 +65,6 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 3.	单击“SQL Server”。
 2.	单击要还原到的服务器。
 3.	在 SQL 服务器边栏选项卡中，单击“导入/导出历史记录”：
-
-    ![导入导出历史记录][5] ![导入导出历史记录][6]
-
-
-
 
 
 ## 验证数据库位于服务器上

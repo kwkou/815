@@ -3,13 +3,13 @@
 	description="使用 Azure 快速入门、Visual Studio 和 Azure 存储模拟器快速掌握 Windows Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。" 
 	services="storage" 
 	documentationCenter=".net" 
-	authors="Selcin" 
+	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/28/2015" 
+	ms.date="09/28/2015" 
 	wacn.date="11/12/2015"/>
 
 # 五分钟内开始使用 Azure 存储空间 
@@ -103,4 +103,4 @@
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
 
 
-<!---HONumber=70-->
+<!---HONumber=79-->

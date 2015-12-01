@@ -1,16 +1,16 @@
-<properties 
-	pageTitle="配置 IIS Express 以便对移动服务进行本地测试" 
-	description="了解如何配置 IIS Express，以便连接到本地移动服务项目进行测试。" 
-	authors="ggailey777" 
-	manager="dwrede" 
-	services="mobile-services" 
-	documentationCenter="" 
+<properties
+	pageTitle="配置 IIS Express 以便测试本地移动服务 | Azure 移动服务"
+	description="了解如何配置 IIS Express，以便连接到本地移动服务项目进行测试。"
+	authors="ggailey777"
+	manager="dwrede"
+	services="mobile-services"
+	documentationCenter=""
 	editor=""/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="05/20/2015" 
-	wacn.date="06/26/2015"/>
+	ms.date="09/16/2015"
+	wacn.date="11/02/2015"/>
 
 # 配置本地 Web 服务器以允许连接到本地移动服务 
 
@@ -20,4 +20,4 @@
 
 [AZURE.INCLUDE [mobile-services-how-to-configure-iis-express](../includes/mobile-services-how-to-configure-iis-express.md)]
 
-<!---HONumber=61-->
+<!---HONumber=76-->

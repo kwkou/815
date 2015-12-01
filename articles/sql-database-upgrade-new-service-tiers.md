@@ -19,8 +19,6 @@ Azure SQL Web 和企业数据库将[在 2015 年 9 月淘汰](http://msdn.micros
 
 下载 [Web 和企业数据库迁移指导手册](http://download.microsoft.com/download/3/C/9/3C9FF3D8-E702-4F5D-A38C-5EFA1DBA73E6/Azure_SQL_Database_Migration_Cookbook.pdf)。
 
-> [AZURE.NOTE] [Pricing tier recommendations](/documentation/articles/sql-database-service-tier-advisor) Web 和企业数据库的 现在发布。
-
 ## 概述
 
 <p> Azure Web 和企业 SQL 数据库在共享的多租户环境中运行，这种环境没有为数据库提供任何保留的资源容量。此共享资源环境中其他数据库的活动可能会影响你的性能。资源在任意给定时间点的可用性很大程度上取决于系统中运行的其他并发工作负荷。这可能会导致数据库应用程序性能出现很大的变化和不可预测性。客户反映，这种不可预测的性能很难管理，他们更希望性能可预测。

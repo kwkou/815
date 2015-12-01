@@ -55,11 +55,7 @@ Azure SQL数据库 Elastic Scale（预览版）使数据级别的应用程序可
 
 ####[借助弹性数据库应对爆炸性增长](/documentation/articles/sql-database-elastic-pool)  
 
-如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。  
-
-####[创建弹性池以开始使用](/documentation/articles/sql-database-elastic-pool-portal)  
-
-弹性池可以简化大量数据库的创建、维护以及性能和成本的管理流程。  
+如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。 
 
 ####[借助弹性作业简化管理](/documentation/articles/sql-database-elastic-jobs-overview)  
 

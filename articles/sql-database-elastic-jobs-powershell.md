@@ -13,7 +13,6 @@
 # 使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）
 
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/sql-database-elastic-jobs-create-and-manage)
 - [PowerShell](/documentation/articles/sql-database-elastic-jobs-powershell)
 
 ## 概述
@@ -244,7 +243,7 @@
 
 2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
   
-3.  [Azure 预览门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
+3.  [Azure 门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
 
 	![Visual Studio 确认][2]
 

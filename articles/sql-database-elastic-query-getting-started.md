@@ -39,7 +39,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 ## 创建弹性查询数据库
 
-1. 打开 [Azure 预览门户](https://manage.windowsazure.cn)并登录。
+1. 打开 [Azure 门户](https://manage.windowsazure.cn)并登录。
 2. 在与分片设置相同的服务器中创建新的 Azure SQL 数据库。将数据库命名为“ElasticDBQuery”。 对于定价层，必须选择一个高级产品。弹性数据库查询目前只能在高级层上使用。
 
 	![Azure 门户和定价层][3]

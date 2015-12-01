@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="07/08/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/23/2015" 
+	wacn.date="11/02/2015"/>
 
 # 配置 Azure 存储空间连接字符串
 
@@ -115,4 +115,4 @@
 
  
 
-<!---HONumber=70-->
+<!---HONumber=79-->
