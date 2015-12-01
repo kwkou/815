@@ -81,7 +81,6 @@ Azure AD Connect Health 可帮助你监视和深入了解本地标识基础结�
 
 | 要求 | 说明|
 | ----------- | ---------- |
-
 |你必须是 Azure AD 的全局管理员才能启用（创建）Azure AD Connect Health|默认情况下，只有全局管理员才能启用（创建）、访问所有信息，以及在 Azure AD Connect Health 中执行所有操作。有关更多信息，请参阅[管理 Azure AD 目录](/documentation/articles/active-directory-administer)。<br>使用基于角色的访问控制可以允许组织中的其他用户访问 Azure AD Connect Health。有关详细信息，请参阅 [Azure AD Connect Health 的基于角色的访问控制](/documentation/articles/active-directory-aadconnect-health-operations#manage-access-with-role-based-access-control)。</br></br>重要说明：在安装代理时使用的帐户必须是工作或组织帐户，而不能是 Microsoft 帐户。有关详细信息，请参阅[以组织身份注册 Azure](/documentation/articles/sign-up-organization)|
 |对于 AD FS，必须启用 AD FS 审核才能使用使用情况分析| 如果你计划使用 AD FS 的使用情况分析，则必须启用 AD FS 审核。</br></br>请参阅[为 AD FS 启用审核](/documentation/articles/active-directory-aadconnect-health-agent-install-adfs#enable-auditing-for-ad-fs)。
 |满足 Azure AD Connect Health 代理要求|参阅下表了解具体的代理要求。
