@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="05/10/2015"
-	wacn.date="05/26/2015" 
-	ms.author="Justinha"/>
+	wacn.date="05/26/2015"/>
 
 # 查看访问和使用情况报告
 
@@ -58,7 +53,7 @@
 密码重置活动 | 高级版
  
 
-### 来自未知源的登录
+### <a name="sign-ins-from-unknown-sources"></a>来自未知源的登录
 
 <table style=width:100%">
 <tr>
@@ -71,7 +66,7 @@
 </tr>
 </table>
 
-### 多次失败后的登录
+### <a name="sign-ins-after-multiple-failures"></a>多次失败后的登录
 
 <table style=width:100%">
 <tr>
@@ -100,7 +95,7 @@
 
 ## 集成应用程序报告
 
-### 应用程序仪表板
+### <a name="application-dashboard"></a>应用程序仪表板
 
 <table style=width:100%">
 <tr>
@@ -115,7 +110,7 @@
 
 ## 错误报告
 
-### 帐户设置错误
+### <a name="account-provisioning-errors"></a>帐户设置错误
 
 <table style=width:100%">
 <tr>
@@ -130,7 +125,7 @@
 
 ## 用户特定的报告
 
-### 活动
+### <a name="activity"></a>活动
 
 <table style=width:100%">
 <tr>
@@ -163,7 +158,7 @@
 
 ## 活动日志
 
-### 审核报告
+### <a name="audit-report"></a>审核报告
 
 <table style=width:100%">
 <tr>
@@ -171,7 +166,7 @@
 <td>报告位置</td>
 </tr>
 <tr>
-<td><p>显示在过去 24 小时、过去 7 天或过去 30 天内发生的所有已审核事件的记录。 </p><p>有关详细信息，请参阅 [Azure Active Directory 审核报告事件](/documentation/articles/active-directory-reporting-audit-events)</p>
+<td><p>显示在过去 24 小时、过去 7 天或过去 30 天内发生的所有已审核事件的记录。 </p><p>有关详细信息，请参阅 <a href="/documentation/articles/active-directory-reporting-audit-events">Azure Active Directory 审核报告事件</a></p>
 </td>
 <td>"目录">"报告"选项卡</td>
 </tr>

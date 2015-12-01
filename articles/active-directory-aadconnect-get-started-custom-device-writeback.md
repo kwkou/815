@@ -66,14 +66,10 @@
 ## 第 2 部分：启用设备写回
 使用以下过程在 Azure AD Connect 中启用设备写回。
 
-1.	运行 AAD Connect 向导。如果这是你第一次使用该向导，请从“快速设置”屏幕中选择“自定义”来执行自定义安装 
-![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback1.png)
-2.	如果不是第一次使用该向导，请从“其他任务”页中选择自定义同步选项，然后单击“下一步”。
-![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback2.png)
-3.	在“可选功能”页中，设备写回不再灰显。请注意，如果 Azure AD Connect 准备步骤未完成，“可选功能”页中的设备写回将会灰显。选中设备写回对应的框并单击“下一步”。
-![设备写回](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
-4.	在写回页中，你会看到提供的域是默认的设备写回林。
-![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback4.png)
+1.	运行 AAD Connect 向导。如果这是你第一次使用该向导，请从“快速设置”屏幕中选择“自定义”来执行自定义安装 ![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback1.png)
+2.	如果不是第一次使用该向导，请从“其他任务”页中选择自定义同步选项，然后单击“下一步”。![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback2.png)
+3.	在“可选功能”页中，设备写回不再灰显。请注意，如果 Azure AD Connect 准备步骤未完成，“可选功能”页中的设备写回将会灰显。选中设备写回对应的框并单击“下一步”。![设备写回](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
+4.	在写回页中，你会看到提供的域是默认的设备写回林。![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback4.png)
 5.	在向导中完成安装，不需要更改其他配置。如果需要，请参阅 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。
 
 
@@ -85,8 +81,7 @@
 设备写回现在应在正常运行。请注意，将设备对象写回到 Active Directory 最长可能需要 3 个小时。若要验证设备是否已正确同步，请在同步规则完成之后执行以下操作：
  
 1.	启动 Active Directory 管理中心。 
-2.	在要联合的域中展开 RegisteredDevices。
-![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback5.png)
+2.	在要联合的域中展开 RegisteredDevices。![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback5.png)
 3.	其中将会列出当前已注册的设备。 
 
 ![自定义安装](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback6.png)
@@ -95,7 +90,9 @@
 
 
 - [使用条件性访问管理风险](/documentation/articles/active-directory-conditional-access)
-<!-- 
-- [使用 Azure Active Directory Device Registration 设置本地条件性访问](/documentation/articles/active-directory-conditional-access-on-premises-setup)
--->
-<!---HONumber=76-->
+- [使用 Azure Active Directory Device Registration 设置本地条件性访问](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+
+## 后续步骤
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+
+<!---HONumber=79-->

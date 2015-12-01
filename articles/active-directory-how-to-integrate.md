@@ -9,8 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.date="04/29/2015" 
-   wacn.date="06/16/2015"/>
+   ms.date="09/24/2015"
+   wacn.date="11/12/2015"/>
 
 # 与 Azure Active Directory 集成
 
@@ -30,9 +30,9 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 浏览用户，管理用户设置，以及控制对应用程序的访问
 
-**浏览目录中的用户。** 在邀请其他人或授予访问权限时，可以使用 Graph API 来帮助用户搜索和浏览其组织中的其他人员，而无需键入电子邮件地址。用户可以使用熟悉的通讯簿样式界面进行浏览，包括查看组织层次结构的详细信息。了解有关 [Graph API](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx) 的详细信息。
+**浏览目录中的用户。** 在邀请其他人或授予访问权限时，可以使用 Graph API 来帮助用户搜索和浏览其组织中的其他人员，而无需键入电子邮件地址。用户可以使用熟悉的通讯簿样式界面进行浏览，包括查看组织层次结构的详细信息。了解有关 [Graph API](/documentation/articles/active-directory-graph-api) 的详细信息。
 
-**重复使用你的客户正在管理的 Active Directory 组和通讯组列表。** Azure AD 包含你的客户已用于电子邮件分发和管理访问权限的组。使用 Graph API 时，可以重复使用这些组，而无需要求客户在应用程序中创建并管理一系列不同的组。还可以在登录令牌中向应用程序发送组信息。了解有关 [Graph API](https://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx) 的详细信息。
+**重复使用你的客户正在管理的 Active Directory 组和通讯组列表。** Azure AD 包含你的客户已用于电子邮件分发和管理访问权限的组。使用 Graph API 时，可以重复使用这些组，而无需要求客户在应用程序中创建并管理一系列不同的组。还可以在登录令牌中向应用程序发送组信息。了解有关 [Graph API](/documentation/articles/active-directory-graph-api) 的详细信息。
 
 **使用 Azure AD 控制谁有权访问你的应用程序。** Azure AD 中的管理员和应用程序所有者可以将应用程序访问权限分配给特定的用户和组。使用 Graph API，可以读取此列表并使用它来控制资源的设置和取消设置，以及应用程序中的访问权限。
 
@@ -47,7 +47,7 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 **Promote your application to the millions of organizations who are already using Azure AD.**  Users who search and browse these marketplaces are already using one or more cloud services, making them qualified cloud service customers.  Learn more about promoting your application in [the Azure Marketplace](http://azure.microsoft.com/marketplace/partner-program/).
 
-**When users sign up for your application, it will appear in their Azure AD access panel and Office 365 app launcher.**  Users will be able to quickly and easily return to your application later, improving user engagement.  Learn more about the [Azure AD access panel](https://msdn.microsoft.com/zh-cn/library/azure/dn308586.aspx).
+**When users sign up for your application, it will appear in their Azure AD access panel and Office 365 app launcher.**  Users will be able to quickly and easily return to your application later, improving user engagement.  Learn more about the [Azure AD access panel](/documentation/articles/active-directory-saas-access-panel-introduction).
 -->
 
 ### 保护设备与服务之间以及服务与服务之间的通信
@@ -66,17 +66,18 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 ### 高级安全功能
 
-**多因素身份验证。** Azure AD 提供本机多因素身份验证。IT 管理员可以要求访问应用程序之前经过多因素身份验证，因此你无需编写此项支持的代码。<!--Learn more about [Multi-Factor Authentication](http://azure.microsoft.com/documentation/services/multi-factor-authentication/).-->
+**多因素身份验证。** Azure AD 提供本机多因素身份验证。IT 管理员可以要求访问应用程序之前经过多因素身份验证，因此你无需编写此项支持的代码。
+<!--Learn more about [Multi-Factor Authentication](/documentation/services/multi-factor-authentication/).-->
 
 **异常登录检测。** Azure AD 每天要处理十亿次以上的登录，同时，使用机器学习算法来检测可疑活动，并通知 IT 管理员可能存在的问题。通过支持 Azure AD 登录，你的应用程序将从这种保护中受益。了解有关[查看 Azure Active Directory 访问报告](/documentation/articles/active-directory-view-access-usage-reports)的详细信息。
 
-**条件性访问。** 除了多因素身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。了解有关 [Azure Active Directory 条件性访问](https://msdn.microsoft.com/zh-cn/library/azure/dn906873.aspx)的详细信息。
+**条件性访问。** 除了多因素身份验证以外，管理员可以要求用户在登录应用程序之前满足特定的条件。可设置的条件包括客户端设备的 IP 地址范围、指定的组中的成员资格，以及用于访问的设备的状态。了解有关 [Azure Active Directory 条件性访问](/documentation/articles/active-directory-conditional-access)的详细信息。
 
 ### 易于开发
 
 **行业标准协议。** Microsoft 承诺支持行业标准。Azure AD 支持 SAML 2.0、OpenID Connect 1.0、OAuth 2.0 和 WS-Federation 1.2 身份验证协议。Graph API 符合 OData 4.0 规范。如果你的应用程序已支持使用 SAML 2.0 或 OpenID Connect 1.0 进行联合登录，则可以直接添加对 Azure AD 的支持。了解有关 [Azure AD 支持的身份验证协议](/documentation/articles/active-directory-authentication-protocols)的详细信息。
 
-**开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 开放源代码库](https://msdn.microsoft.com/zh-cn/library/azure/dn151135.aspx)的详细信息。
+**开放源代码库。** Microsoft 为主流语言和平台提供完全受支持的开放源代码库以加速开发。这些源代码已获 Apache 2.0 的授权，你可以在项目中任意衍生和改写。了解有关 [Azure AD 开放源代码库](/documentation/articles/active-directory-authentication-libraries/)的详细信息。
 
 ### 全球存在和高可用性
 

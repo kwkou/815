@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="08/20/2015"
-   wacn.date="10/3/2015"/>
+   ms.date="09/15/2015"
+   wacn.date="11/12/2015"/>
 
 # 了解资源管理器部署和经典部署
 
@@ -37,15 +37,6 @@
 通过资源管理器创建的资源具备以下共同特性：
 
 - 通过以下方法之一创建：
-<!--
-  - [预览门户](https://portal.azure.com/)。
-
-        ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
-
-        For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
-
-        ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
--->
   - PowerShell 命令在 **AzureResourceManager** 模式下运行。
 
             PS C:\> Switch-AzureMode -Name AzureResourceManager
@@ -65,13 +56,9 @@
 
 - 通过以下方法之一创建：
 
-  - [Azure 门户](https://manage.windowsazure.com)
+  - [Azure 门户](https://manage.windowsazure.cn)
 
         ![Azure portal](./media/resource-manager-deployment-model/azure-portal.png)
-
-        Or, the preview portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
-
-        ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 
   - PowerShell 命令在 **AzureServiceManagement** 模式下运行（这是默认模式，因此，如果不特意切换到 AzureResourceManager，您会在 AzureServiceManagement 模式下运行）。
 
@@ -97,7 +84,7 @@
 - 您可以将标记应用到资源，以按照逻辑组织订阅中的所有资源。
 
 
-在资源管理器之前，通过经典部署创建的每个资源不存在于资源组中。当添加资源管理器时，所有资源都追溯性地添加到默认资源组。如果您现在通过经典部署创建资源，资源会自动在空资源组中创建，即使在部署时未指定该资源组也是如此。但是，仅存在于资源组内并不意味着资源已转换为资源管理器模型。如果资源是通过经典部署创建的，您必须继续通过经典操作对其进行操作。
+在资源管理器之前，通过经典部署创建的每个资源不存在于资源组中。当添加资源管理器时，所有资源都追溯性地添加到默认资源组。如果你现在通过经典部署创建资源，资源将自动在该服务的默认资源组中创建，即使在部署时未指定该资源组也是如此。但是，仅存在于资源组内并不意味着资源已转换为资源管理器模型。对于虚拟机、存储空间和虚拟网络，如果资源是通过经典部署创建的，则你必须继续通过经典操作对其进行操作。
 
 您可以将资源移到不同的资源组，并将新资源添加到现有的资源组。因此，您的资源组可以包含通过资源管理器和经典部署创建的混合资源。此资源组合会产生意外的结果，因为资源不支持相同的操作。
 
@@ -143,7 +130,7 @@
 - 使用资源管理器部署模型部署的虚拟机必须包含在虚拟网络中。
 - 使用经典部署模型部署的虚拟机不一定要包括在虚拟网络中。
 
-有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅<!-- [-->VM 操作的等效资源管理器和服务管理命令<!--](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)-->。
+有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)。
 
 有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
 
@@ -152,6 +139,5 @@
 ## 后续步骤
 
 - 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要查看用于部署模板的命令，请参阅<!--[-->使用 Azure 资源管理器模板部署应用程序<!--](/documentation/articles/resource-group-template-deploy)-->。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

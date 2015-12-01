@@ -3,7 +3,7 @@
 	description="了解映像如何用于 Azure 中的虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/13/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 关于虚拟机的映像
 
@@ -53,4 +53,4 @@
 
 [创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-choices-create-vm)
 
-<!---HONumber=69-->
+<!---HONumber=79-->

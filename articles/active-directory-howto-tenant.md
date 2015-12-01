@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.date="04/28/2015"
-	wacn.date="06/16/2015"/>
+	ms.date="09/28/2015"
+	wacn.date="11/12/2015"/>
 
 # 如何获取 Azure Active Directory 租户
 

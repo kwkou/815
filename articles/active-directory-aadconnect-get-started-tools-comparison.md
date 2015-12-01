@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="active-directory"  
-	ms.date="08/24/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/12/2015"/>
 
 # 目录集成工具比较
 
@@ -34,7 +34,7 @@ PP = 公共预览版本</br>
 | 连接到单个本地 AD 林 | ● | ● | ● | ● |
 | 连接到多个本地 AD 林 |● | ● | | ● |
 | 连接到多个本地 Exchange 组织 | ● | | | |
-| 连接到单个本地 LDAP 目录 | FR | | | ● |
+| 连接到单个在本地 LDAP 目录 | FR | | | ● |
 | 连接到多个本地 LDAP 目录 |FR | | | ● |
 | 连接到本地 AD 和本地 LDAP 目录 |FR | | | ● |
 | 连接到自定义系统（例如 SQL、Oracle、MySQL 等） | FR | | | ● |
@@ -85,4 +85,7 @@ PP = 公共预览版本</br>
 允许删除从 AD 流向 Azure AD 的属性 | ● | ● | |  
 允许对属性流进行高级自定义 | ● | ● | | ●  
 
-<!---HONumber=67-->
+## 后续步骤
+了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect)的详细信息。
+
+<!---HONumber=79-->

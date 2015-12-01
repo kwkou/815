@@ -1,12 +1,25 @@
-<properties urlDisplayName="Upload an Ubuntu Linux VHD" pageTitle="在 Azure 中创建和上载 Ubuntu Linux VHD" metaKeywords="Azure VHD, uploading Linux VHD, Ubuntu" description="了解如何创建和上载包含 Ubuntu Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" metaCanonical="" services="virtual-machines" documentationCenter="" title="Creating and Uploading a Virtual Hard Disk that Contains an Ubuntu Linux Operating System" authors="szarkos" solutions="" manager="timlt" editor="tysonn" />
+<properties
+	pageTitle="在 Azure 中创建和上载 Ubuntu Linux VHD"
+	description="了解如何创建和上载包含 Ubuntu Linux 操作系统的 Azure 虚拟硬盘 (VHD)。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
-<tags ms.service="virtual-machines" ms.date="05/15/2015" wacn.date="06/19/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="05/15/2015"
+	wacn.date="11/12/2015"/>
 
 # 为 Azure 准备 Ubuntu 虚拟机
 
-## 先决条件##
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
-本文假定你已在虚拟硬盘中安装了 Ubuntu Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
+##先决条件##
+
+本文假定你已在虚拟硬盘中安装了 Ubuntu Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/library/hh846766.aspx)。
 
 **Ubuntu 安装说明**
 
@@ -19,7 +32,7 @@
 - 所有 VHD 的大小必须是 1 MB 的倍数。
 
 
-## <a id="ubuntu"></a>Ubuntu 12.04+ ##
+## <a id="ubuntu"> </a>Ubuntu 12.04+ ##
 
 1. 在 Hyper-V 管理器的中间窗格中，选择虚拟机。
 
@@ -65,7 +78,7 @@
 		(recommended) sudo apt-get dist-upgrade
 
 		# sudo reboot
-	
+
 	Ubuntu 14.04+：
 
 		# sudo apt-get update
@@ -78,7 +91,7 @@
 
 	a) 打开 /etc/grub.d/00_header 文件。
 
-	b) 在 **make_timeout()** 函数中，搜索 **if ["\${recordfail}" = 1 ]; then**
+	b) 在 **make\_timeout()** 函数中，搜索 **if ["\\${recordfail}" = 1 ]; then**
 
 	c) 将该行下的语句更改为 **set timeout=5**。
 
@@ -107,4 +120,4 @@
 
 11. 在 Hyper-V 管理器中单击**“操作”->“关闭”**。Linux VHD 现已准备好上载到 Azure。
 
-<!---HONumber=60-->
+<!---HONumber=79-->

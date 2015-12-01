@@ -16,7 +16,6 @@
 # 创建运行 Linux 的虚拟机
 
 > [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 - [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
 通过命令行或门户创建运行 Linux 的 Azure 虚拟机 \(VM\) 是一项很简单的操作。本教程演示如何使用 Mac、Linux 和 Windows 的 Azure 命令行界面 \(Azure CLI\) 来快速创建运行在 Azure 中的 Ubuntu Server VM，如何使用 **ssh** 连接到它，以及如何创建和装入新磁盘。（本主题使用 Ubuntu Server VM，不过你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。）

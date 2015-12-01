@@ -10,7 +10,7 @@
 <tags 
 	ms.service="site-recovery" 
 	ms.date="09/21/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/30/2015"/>
 
 # Site Recovery 工作负荷指南
 
@@ -30,7 +30,7 @@ Azure Site Recovery 功能在设计时牢记应用程序级别的保护/恢复�
 - 丰富自动化库 (Rich Automation Library)，提供为生产做好准备的应用程序特定脚本。下载它们并集成到基于 ASR 的解决方案。
 
 
-##工作负荷指南摘要
+##<a id="workload-guidance-summary"></a>工作负荷指南摘要
 
 ASR 复制技术与虚拟机中运行的任何应用程序兼容。我们与应用程序产品团队合作展开了更多测试，以进一步支持每个应用程序。
 
@@ -68,7 +68,7 @@ Microsoft SQL Server 是很多企业级第一方、第三方和自定义业务�
 
 请参阅链接的文档以获取有关[部署面向 SQL 的 Azure Site Recovery](/documentation/articles/site-recovery-sql) 的详细指南
 
-##SharePoint
+##<a id="sharepoint"></a>SharePoint
 SharePoint 是一款流行的应用程序，让众多组织能够通过提供 Intranet 门户、文档和文件管理、社交网络、网站和企业搜索能力来进行合作。它也是一个应用程序平台，用于轻松地部署自定义应用程序和工作流程。通过使用面向 SharePoint 的 Azure Site Recovery，你可以：
 
 - 消除对用于灾难恢复的备用场的需要以及相关的基础结构成本。使用 ASR，你可以启用整个场（Web、应用程序和数据库层）到 Azure 或到辅助站点的保护。
@@ -79,7 +79,7 @@ SharePoint 是一款流行的应用程序，让众多组织能够通过提供 In
 请参阅链接的文档了获取有关[部署面向 Sharepoint 的 Azure Site Recovery](http://aka.ms/asr-sharepoint) 的详细指南
 
 
-##Dynamics AX
+##<a id="dynamics-ax"></a>Dynamics AX
 Microsoft Dynamics AX 是一款领先的企业资源规划 (ERP) 解决方案，易学易用，让你能够更快的交付价值，利用商机，在整个组织内推动用户参与和创新。
 
 - 使用 ASR，你能够启用整个 Dynamics Ax（Web 和 AOS 层、数据库层、SharePoint）到 Azure 或到辅助站点的保护。
@@ -88,7 +88,7 @@ Microsoft Dynamics AX 是一款领先的企业资源规划 (ERP) 解决方案，
 
 请参阅链接的文档以获取有关[部署面向 Dynamics AX 的 Azure Site Recovery](http://aka.ms/asr-dynamics) 的详细指南
 
-## RDS 
+##<a id="rds"></a> RDS 
 Windows Server 远程桌面服务 (RDS) 加快并扩展桌面和应用程序到任何设备的部署，提高远程工作者的效率，同时有助于保持关键知识产权的安全，简化监管合规。远程桌面服务允许虚拟桌面基础结构 (VDI)、基于会话的桌面和应用程序，让用户能够在任何地方工作。
 
 使用 ASR，你可以启用托管或非托管池虚拟桌面到辅助站点以及远程应用程序和会话到辅助站点或 Azure 的保护。
@@ -96,7 +96,7 @@ Windows Server 远程桌面服务 (RDS) 加快并扩展桌面和应用程序到�
 请参阅链接的文档以获取有关[部署面向 RDS/VDI 的 Azure Site Recovery](http://aka.ms/asr-rds) 的详细指南
 
 
-## Exchange
+##<a id="exchange"></a> Exchange
 Microsoft Exchange 是企业用来承载其消息和电子邮件服务的首选软件。Exchange 确保跨 PC、手机或浏览器的通信，同时提供无与伦比的可靠性、可管理性和数据保护。
 
 Microsoft Exchange 本身支持企业级高可用性和灾难恢复解决方案。Exchange Database Availability Groups 和 Azure Site Recovery 技术是补充。
@@ -106,7 +106,7 @@ Microsoft Exchange 本身支持企业级高可用性和灾难恢复解决方案�
 
 请参阅链接的文档以获取有关[部署面向 Exchange 的 Azure Site Recovery](http://aka.ms/asr-exchange) 的详细指南
 
-## SAP
+##<a id="sap"></a> SAP
 
 SAP 是一款领先的企业资源规划 (ERP) 软件，世界各地的很多组织都在使用。SAP 通常被视为企业中最关键的应用程序之一。这些应用程序的体验结构和操作极为复杂，并且确保你满足 BCDR 的要求非常重要。
 

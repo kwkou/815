@@ -1,20 +1,23 @@
 <properties
-	pageTitle="如何使用 Microsoft Azure 创建 LAMP 堆栈"
-	description="了解如何在 Microsoft Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 创建 LAMP 堆栈。"
+	pageTitle="使用 Azure 创建 LAMP 堆栈 | Windows Azure"
+	description="了解如何在 Windows Azure 中使用运行 Linux 的 Azure 虚拟机 (VM) 创建 LAMP 堆栈。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="NingKuang"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/10/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
-# 如何使用 Windows Azure 创建 LAMP 堆栈 
+#如何使用 Windows Azure 创建 LAMP 堆栈
 
 “LAMP”堆栈是一组开源软件，通常一起安装，使服务器可以托管动态网站和 Web 应用程序。此术语实际上首字母缩写词，表示带 Apache Web 服务器的 Linux 操作系统。站点数据将存储在 MySQL 数据库中，而动态内容将由 PHP 进行处理。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型创建资源。
 
 在本指南中，我们将获取 Linux 映像上安装的 LAMP 堆栈，并将其部署在 Windows Azure 上。
 
@@ -28,7 +31,7 @@
 
 如果你已有虚拟机，并且只想查找在不同 linux 分发上安装 LAMP 堆栈的基础知识，则除了本主题外，还可以参阅[在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)。
 
-你还可以部署 Azure 应用商店中预先配置的 LAMP 映像。下面的 10 分钟视频介绍了如何部署 Azure 应用商店中预建的 LAMP 映像：[Azure VM 上的 LAMP 堆栈](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman)。
+你还可以部署 Azure 应用商店中预先配置的 LAMP 映像。下面的 10 分钟视频介绍了如何部署 Azure 应用商店中预建的 LAMP 映像：（Azure VM 上的 LAMP 堆栈](https://channel9.msdn.com/Shows/Azure-Friday/LAMP-stack-on-Azure-VMs-with-Guy-Bowerman)。
 
 ##阶段 1：创建映像
 在此阶段中，你将在 Azure 中使用 Linux 映像创建虚拟机。
@@ -38,11 +41,11 @@ SSH 是面向系统管理员的重要工具。但是，依赖于人工确定的�
 
 按照下列步骤进行操作可生成 SSH 身份验证密钥。
 
--	从以下位置下载并安装 puttygen：[http://www.chiark.greenend.org.uk/~sgtatham/](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+-	从以下位置下载并安装 puttygen：[http://www.chiark.greenend.org.uk/~sgtatham/](http://www.chiark.greenend.org.uk/~sgtatham/)putty/download.html
 -	运行 puttygen.exe。
--	单击**“生成”**以生成密钥。在此过程中，可以通过将鼠标放在窗口中的空白区域上来增加随机性。  
+-	单击**“生成”**按钮以生成密钥。在此过程中，可以通过将鼠标放在窗口中的空白区域上来增加随机性。
 ![][1]
--	在生成过程结束后，Puttygen.exe 将显示生成的密钥。例如：  
+-	在生成过程结束后，Puttygen.exe 将显示生成的密钥。例如：
 ![][2]
 -	在**“密钥”**中选择并复制公钥，并将它保存在一个名为 **publicKey.pem** 的文件中。不要单击**“保存公钥”**，因为保存的公钥的文件格式不同于我们所需的公钥。
 -	单击**“保存私钥”**，并将其保存到名为 **privateKey.ppk** 的文件中。
@@ -56,7 +59,7 @@ SSH 是面向系统管理员的重要工具。但是，依赖于人工确定的�
 
 对于**“用户名”**，选取稍后将用于登录到虚拟机的名称。
 
-对于**“SSH 身份验证密钥”**，从 **publicKey.pem** 文件中复制密钥值，其中包含由 puttygen 生成的公钥。
+对于**“SSH 身份验证密钥”**，选择并上传 **publicKey.pem** 文件。
 
 ![][4]
 
@@ -84,7 +87,9 @@ TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开
 
 1.	在**“终结点”**中键入终结点的名称。
 2.	在**“公用端口”**中键入 80。如果你更改了 Apache 的默认侦听端口，则应将专用端口更新为与 Apache 侦听端口相同。
-3.	在**“公用端口”**中键入 80。默认情况下，HTTP 通信使用端口 80。如果将其设置为 80，则无需在 URL 中包括端口号即可允许你访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn。 如果将 Apache 侦听端口设为另一个值（例如 81），则需要将端口号添加到 URL 中才能访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn:81/。
+3.	在**“私用端口”**中键入 80。默认情况下，HTTP 通信使用端口 80
+如果将其设置为 80，则无需在 URL 中包括端口号即可允许你访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn。
+如果将 Apache 侦听端口设为另一个值（例如 81），则需要将端口号添加到 URL 中才能访问 Apache Web 服务。例如，http://lampdemo.chinacloudapp.cn:81/。
 
 ![][7]
 
@@ -139,6 +144,7 @@ TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开
 安装后，使用此命令启动 Apache：
 
 	sudo service httpd start
+
 ####测试 Apache
 若要检查 Apache 是否已成功安装，请浏览到 Apache 服务器的 DNS 名称（对于本文中的示例 URL，为 http://lampdemo.chinacloudapp.cn/)。该页应显示单词“It works!”![][14]
 
@@ -160,8 +166,7 @@ TCP 端口 80 是 Apache 侦听的默认端口号。使用 Azure 终结点打开
 			……
 			……  
 
--	防火墙 iptables 配置
-	如果你可以在本地主机上看到 Apache 默认页，则问题可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览 Apache 网页。以下命令安装 w3m 并浏览到 Apache 默认页：
+-	防火墙 iptables 配置，如果你可以在本地主机上看到 Apache 默认页，则问题可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览 Apache 网页。以下命令安装 w3m 并浏览到 Apache 默认页：
 
 		sudo yum  install w3m w3m-img  
 		w3m http://localhost
@@ -255,7 +260,8 @@ PHP 是广泛用于生成动态网页的开源 Web 脚本语言。
 	warning: rpmts_HdrFromFdno: Header V3 DSA signature: NOKEY, key ID e8562897
 	updates/gpgkey                                                                                                                                                                       | 1.5 kB     00:00
 	Importing GPG key 0xE8562897 "CentOS-5 Key (CentOS 5 Official Signing Key) <centos-5-key@centos.org>" from /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-	Is this ok [y/N]: /documentation/articles/y
+	Is this ok [y/N]: y  
+
 ###Debian、Ubuntu base
 这已在 Ubuntu 14.04 上进行了测试。
 
@@ -301,7 +307,7 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 	sudo service apache2 restart  
 
-通过浏览到 php 信息页（对于本主题中的示例 Web 服务器，URL 将为 http://lampdemo.chinacloudapp.cn/info.php) 来完成此过程。
+通过浏览到 php 信息页（对于本主题中的示例 Web 服务器，URL 将为 http://lampdemo.chinacloudapp.cn/info.php)）来完成此过程。
 
 你的浏览器应如下所示：
 
@@ -344,7 +350,7 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
 	>[AZURE.NOTE]你可能需要重新登录才能修改 /var/www/html/ 中的文件。
--	使用任何 SFTP 客户端（例如 FileZilla）连接到你的虚拟机（例如，lampdemo.chinacloudapp.cn）的 DNS 名称，并导航到 /**var/www/html** 以发布站点。  
+-	使用任何 SFTP 客户端（例如 FileZilla）连接到你的虚拟机（例如，lampdemo.chinacloudapp.cn）的 DNS 名称，并导航到 /**var/www/html** 以发布站点。
 ![][18]
 
 
@@ -353,13 +359,15 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ###无法通过 Internet 使用 Apache 和 Moodle 访问虚拟机
 
--	**症状** Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
+-	**症状**
+Apache 正在运行，但你使用浏览器看不到 Apache 默认页。
 -	**可能的根本原因**
 	1.	Apache 侦听端口与用于 Web 通信的虚拟机终结点的专用端口不同。</br>
 	检查你的公用端口和专用端口终结点设置，并确保专用端口与 Apache 侦听端口相同。有关如何为你的虚拟机配置终结点的说明，请参阅“第 1 阶段：创建映像”。</br>
 	若要确定 Apache 侦听端口，请打开 /etc/httpd/conf/httpd.conf （Red Hat 发行版）或 /etc/apache2/ports.conf（Debian 发行版），搜索字符串“Listen”。默认端口为 80。
 
-	2.	防火墙已禁用 Apache 侦听端口。</br> 如果你可以在本地主机上看到 Apache 默认页，则问题很可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览网页。以下命令安装 w3m 并浏览到 Apache 默认页：
+	2.	防火墙已禁用 Apache 侦听端口。</br>
+	如果你可以在本地主机上看到 Apache 默认页，则问题很可能出在 Apache 所侦听的端口被防火墙阻止。可以使用 w3m 工具来浏览网页。以下命令安装 w3m 并浏览到 Apache 默认页：
 
 			sudo yum  install w3m w3m-img
 			w3m http://localhost
@@ -412,7 +420,8 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 
 ###无法可靠地确定服务器的完全限定域名
 
--	**症状** 使用以下命令之一重启 Apache 服务器时：  
+-	**症状** 
+使用以下命令之一重启 Apache 服务器时：  
 
 		sudo /etc/init.d/apache2 restart  # Debian release  
 
@@ -427,9 +436,11 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 		... waiting apache2:
 		Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName  
 
--	**可能的根本原因** 你尚未设置 Apache 的服务器名称。
+-	**可能的根本原因**
+你尚未设置 Apache 的服务器名称。
 
--	**解决方案** 在 httpd.conf（Red Hat 发行版）或 apache2.conf（Debian 发行版）的 /etc/apache2 中插入“ServerName localhost”行，并重启 Apache。注意将消失。
+-	**解决方案**
+在 httpd.conf（Red Hat 发行版）或 apache2.conf（Debian 发行版）的 /etc/apache2 中插入“ServerName localhost”行，并重启 Apache。注意将消失。
 
 
 
@@ -453,4 +464,4 @@ Tasksel 是一个 Debian/Ubuntu 工具，它将多个相关包作为协调任务
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
  
 
-<!---HONumber=70-->
+<!---HONumber=79-->

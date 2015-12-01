@@ -32,4 +32,4 @@
 
 	![配置虚拟机的 VM 代理和终结点](./media/virtual-machines-create-WindowsVM/vmcreated.png)
 
-<!---HONumber=70-->
+<!---HONumber=79-->

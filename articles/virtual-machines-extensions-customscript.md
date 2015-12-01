@@ -11,14 +11,13 @@
 <tags
    ms.service="virtual-machines"
    ms.date="08/06/2015"
-   wacn.date="11/02/2015"/>
+   wacn.date="11/12/2015"/>
 
 # 适用于 Windows 虚拟机的自定义脚本扩展
 
 本文概述了如何在 Windows VM 上通过 Azure Powershell cmdlet 来使用自定义脚本扩展。
 
-虚拟机 (VM) 扩展由 Microsoft 和受信任的第三方发布者构建，用于扩展 VM 的功能。有关 VM 扩展的概述，请参阅
-[Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。
+虚拟机 (VM) 扩展由 Microsoft 和受信任的第三方发布者构建，用于扩展 VM 的功能。有关 VM 扩展的概述，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。你还可以使用[资源管理器部署模型](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template)创建资源。
 
@@ -67,14 +66,6 @@
 
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
-
-### 从门户中添加自定义脚本扩展
-
-在 <a href="https://manage.windowsazure.cn/ " target="_blank">Azure 预览门户</a>中浏览到 VM，并通过指定要运行的脚本文件添加扩展。
-
-  ![][5]
-
-
 ### 卸载自定义脚本扩展
 
 可以使用以下命令从 VM 中卸载自定义脚本扩展。
@@ -83,9 +74,9 @@
 
 ### 将自定义脚本扩展与模板配合使用
 
-若要了解如何将自定义脚本扩展与模板配合使用，请参阅 [此处](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template) 的文档。
+若要了解如何将自定义脚本扩展与模板配合使用，请参阅 [此处](/documentation/articles/virtual-machines-extensions-customscript -with template) 的文档。
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
-<!---HONumber=76-->
+<!---HONumber=79-->

@@ -10,7 +10,7 @@
 <tags
 	ms.service="azure-resource-manager"
 	ms.date="07/15/2015"
-	wacn.date="08/29/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 在 Azure 资源管理器模板中共享状态
 
@@ -142,7 +142,7 @@ Name | 值 | 说明
 ---- | ----- | -----------
 location | Azure 区域的约束列表中的字符串 | 将在其中部署资源的位置。
 storageAccountNamePrefix | String | 将在其中放置 VM 磁盘的存储帐户的唯一 DNS 名称
-domainName | String | 可公开访问的 jumpbox VM 的域名采用的格式：**{domainName}.{location}.chinacloudapp.cn** 例如：**mydomainname.westus.chinacloudapp.azure.cn**
+domainName | 字符串 | 可公开访问的 jumpbox VM 的域名采用的格式：**{域名}.{位置}.chinacloudapp.cn**，例如：**mydomainname.westus.chinacloudapp.azure.cn**
 adminUsername | String | VM 的用户名
 adminPassword | String | VM 的密码
 tshirtSize | 所提供 T 恤尺寸的约束列表中的字符串 | 要预配的指定的缩放单位大小。例如，“小”、“中”、“大”
@@ -373,8 +373,8 @@ enableJumpbox | 约束列表中的字符串 (enabled/disabled) | 一个参数，
         "value": "[reference('master-node').outputs.masterip.value]"
     }
 
-<!--## 后续步骤
+## 后续步骤
 - [创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)-->
+- [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions)
 
-<!---HONumber=67-->
+<!---HONumber=79-->

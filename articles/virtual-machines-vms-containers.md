@@ -21,7 +21,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 
 **但是，这个新闻已经过时了。** *最新*的新闻是 Azure 可带来更多的 Docker 好处：
 
-- 提供[许多](/documentation/articles/virtual-machines-docker-with-xplat-cli)[不同的](/documentation/articles/virtual-machines-docker-with-portal)[方式](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)，可根据具体需求为容器[创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
+- 提供[许多](/documentation/articles/virtual-machines-docker-with-xplat-cli)<!--[-->不同的<!--](/documentation/articles/virtual-machines-docker-with-portal)--><!--[-->方式<!--](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)-->，可根据具体需求为容器[创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
 - [Azure 资源管理器](/documentation/articles/resource-group-overview)和[资源组模板](/documentation/articles/resource-group-authoring-templates)可简化复杂的分布式应用程序的部署和更新
 - 可与许多专有和开放源配置管理工具集成
 
@@ -179,8 +179,6 @@ Windows Azure 上的 Docker：
 - [适用于 Azure 上 的 Linux 的 Docker VM 扩展](/documentation/articles/virtual-machines-docker-vm-extension)
 - [Azure Docker VM 扩展用户指南](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
 - [从 Azure 命令行界面 (Azure CLI) 使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-xplat-cli)
-- [从 Azure 预览版门户使用 Docker VM 扩展](/documentation/articles/virtual-machines-docker-with-portal)
-- [在 Azure 应用商店中使用 Docker 快速入门](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)
 - [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)
 - [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-docker-swarm)
 - [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-docker-compose-quickstart)

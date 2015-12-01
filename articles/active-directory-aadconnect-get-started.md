@@ -23,7 +23,7 @@
 - [了解详细信息](/documentation/articles/active-directory-aadconnect-learn-more/)
 
 
-以下文档将会帮助你开始使用 Azure Active Directory Connect。本文档说明如何使用 Azure AD Connect 的快速安装。有关自定义安装的详细信息，请参阅 [Azure AD Connect 的自定义安装](active-directory-aadconnect-get-started-custom)。有关从 DirSync 升级到 Azure AD Connect 的信息，请参阅[将 DirSync 升级到 Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started)。
+以下文档将会帮助你开始使用 Azure Active Directory Connect。本文档说明如何使用 Azure AD Connect 的快速安装。有关自定义安装的详细信息，请参阅 [Azure AD Connect 的自定义安装](/documentation/articles/active-directory-aadconnect-get-started-custom)。有关从 DirSync 升级到 Azure AD Connect 的信息，请参阅[将 DirSync 升级到 Azure Active Directory Connect](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started)。
 
 
 ## 下载 Azure AD Connect
@@ -59,7 +59,7 @@
 
 
 
-对于多个林或联合登录等“自定义选项”，请在[此处](/docuemtntaion/articles/active-directory-aadconnect-get-started-custom)了解其他要求。
+对于多个林或联合登录等“自定义选项”，请在[此处](/documentation/articles/active-directory-aadconnect-get-started-custom)了解其他要求。
 
 
 ## Azure AD Connect 的快速安装

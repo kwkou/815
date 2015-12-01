@@ -9,15 +9,16 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="08/14/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/08/2015" 
+	wacn.date="11/12/2015"/>
 
 
 # 使用弹性数据库缓解爆炸性增长
 
-如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性数据库池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。
+如果你是 SaaS 开发人员，使用数十、数百甚至数千个数据库，则可以通过弹性数据库池来简化这些数据库的创建、维护以及性能管理流程，将预算置于自己的控制之下。使用 Windows Azure 门户、PowerShell 或 C#，在几分钟内就可以[创建一个弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。
 
 常见的 SaaS 应用模式是，每一个数据库的客户各不相同，每一个的资源消耗（以 eDTU 汇总的 CPU/IO/内存）也各不相同且不可预知。对每个数据库的需求都存在这种高峰和低谷，因此很难预测和设置资源。你将面临两种选择，一种是基于高峰使用情况过度设置数据库资源，因此需要支付额外的费用；另一种是为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。
+
 
 
 
@@ -29,7 +30,7 @@
 
 最适合添加到弹性数据库池的数据库通常是有时活动，有时不活动。在上述示例中，你可以看到单一数据库的活动、4 个数据库的活动，最后是包含 20 个数据库的弹性数据库池的活动。活动随时间而不同的这些数据库很适合添加到弹性数据库，因为它们不是永远都在使用中，而且可以共享 eDTU。并非所有数据库都符合此模式。有的数据库对资源的需求较为稳定，这些数据库更适合“基本”、“标准”和“高级”服务层级，这些层级的资源是单独分配的。有关确定数据库是否因弹性数据库池而受益的帮助，请参阅[弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance)。
 
-使用 Azure 门户、PowerShell 或 C#，在几分钟内就可以创建一个弹性数据库池。有关详细信息，请参阅[创建和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。有关弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
+有关弹性数据库池的详细信息，包括 API 和错误详细信息，请参阅[弹性数据库池参考](/documentation/articles/sql-database-elastic-pool-reference)。
 
 
 > [AZURE.NOTE]弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。
@@ -65,4 +66,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=69-->
+<!---HONumber=79-->

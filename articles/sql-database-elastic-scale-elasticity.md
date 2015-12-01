@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="分片灵活性" 
-	description="介绍了分片灵活性（可轻松向外扩展 Azure SQL Database 的能力）的概念并提供了相关示例。" 
+	description="介绍了分片灵活性（可轻松向外扩展 Azure SQL 数据库的能力）的概念并提供了相关示例。" 
 	services="sql-database" 
 	documentationCenter="" 
 	manager="jeffreyg" 
@@ -9,12 +9,12 @@
 
 <tags 
 	ms.service="sql-database" 
-	ms.date="04/17/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="09/22/2015" 
+	wacn.date="11/12/2015"/>
 
 # 分片弹性 
 
-**分片弹性**允许应用程序开发人员根据需求动态增加和缩减数据库资源，使开发人员能够优化其应用程序的性能并最大程度地降低成本。Azure SQL 数据库的**弹性数据库工具**与[基本、标准和高级服务层](http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx)的组合提供了非常有说服力的弹性方案。弹性数据库工具支持横向缩放 - 一种设计模式，在该模式下，通过从分片集添加或删除数据库（也[称为“分片”](/documentation/articles/sql-database-elastic-scale-glossary)）来增加或缩减容量。类似地，SQL 数据库服务层提供了**纵向缩放**功能，其中单一数据库的资源可以向上或向下缩放以相应地满足需求。单个分片的垂直缩放和多个分片的水平缩放共同向应用程序开发人员提供了非常灵活的环境，可对该环境进行缩放以满足性能、容量和成本优化需求。
+**分片弹性**允许应用程序开发人员根据需求动态增加和缩减数据库资源，使开发人员能够优化其应用程序的性能并最大程度地降低成本。Azure SQL 数据库的**弹性数据库工具**与[基本、标准和高级服务层](/documentation/articles/sql-database-service-tiers)的组合提供了非常有说服力的弹性方案。弹性数据库工具支持横向缩放 - 一种设计模式，在该模式下，通过从分片集添加或删除数据库（也[称为“分片”](/documentation/articles/sql-database-elastic-scale-glossary)）来增加或缩减容量。类似地，SQL 数据库服务层提供了**纵向缩放**功能，其中单一数据库的资源可以向上或向下缩放以相应地满足需求。单个分片的垂直缩放和多个分片的水平缩放共同向应用程序开发人员提供了非常灵活的环境，可对该环境进行缩放以满足性能、容量和成本优化需求。
 
 使用新推出的**弹性数据库池**功能，可以更方便地实现纵向缩放。池允许各个数据库的资源消耗*自动*扩大或缩小，且不超出整个池共有的预算。对于选择不利用弹性数据库池的应用程序，本文将介绍其他一些用于实施基于策略的机制以管理纵向缩放的技巧，以及用于自动化横向缩放操作的常见方案。
 
@@ -51,8 +51,8 @@
 #### 遥测数据源
 在 Azure SQL DB 的上下文中，有少数关键源可用作分片灵活性的数据源。
 
-1. **性能遥测数据**每隔五分钟在 **sys.resource\_stats** 视图中显示一次 
-2. 每小时**数据库容量遥测数据**通过 **sys.resource\_usage** 视图显示。  
+1. **性能遥测数据**每隔五分钟在 **sys.resource_stats** 视图中显示一次 
+2. 每小时**数据库容量遥测数据**通过 **sys.resource_usage** 视图显示。  
 
 开发人员可以分析性能资源使用情况，方法是使用以下查询来查询主数据库，其中“Shard\_20140623”是目标数据库的名称。
 
@@ -77,7 +77,7 @@
     FROM sys.resource_stats  
     WHERE database_name = ' Shard_20140623' AND start_time > DATEADD(day, -7, GETDATE()); 
 
-可使用针对 **sys.resource\_usage** 视图的类似查询测量**数据库容量**。**storage\_in\_megabytes** 列的最大值将生成数据库的当前大小。对于在特定的分片达到其容量时水平缩放应用程序，这样的遥测非常有用。
+可使用针对 **sys.resource_usage** 视图的类似查询测量**数据库容量**。**storage\_in_megabytes** 列的最大值将生成数据库的当前大小。对于在特定的分片达到其容量时水平缩放应用程序，这样的遥测非常有用。
 
     SELECT TOP 10 * 
     FROM [sys].[resource_usage] 
@@ -143,12 +143,12 @@
 [AZURE.INCLUDE [elastic-scale-include](../includes/elastic-scale-include.md)]
 
 <!--Image references-->
-[1]: ./media/sql-database-elastic-scale-elasticity/data-ingestion.png
+
 
 <!--anchors-->
-[遥测]:#telemetry
-[规则]:#rule
-[操作]:#action
+[Telemetry]: #telemetry
+[Rule]: #rule
+[Action]: #action
  
 
-<!---HONumber=69-->
+<!---HONumber=79-->

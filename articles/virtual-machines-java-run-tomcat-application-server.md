@@ -1,18 +1,21 @@
 <properties
-	pageTitle="虚拟机上的 Tomcat | Microsoft Azure"
-	description="了解如何创建 Windows 虚拟机并将其配置为运行 Apache Tomcat 应用程序服务器。"
+	pageTitle="虚拟机上的 Tomcat | Windows Azure"
+	description="本教程利用使用经典部署模型创建的资源，显示如何创建 Windows 虚拟机并将其配置为运行 Apache Tomcat 应用程序服务器。"
 	services="virtual-machines"
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor="jimbe"
+    	tags="azure-service-management" />
 
 <tags
 	ms.service="virtual-machines"
 	ms.date="06/03/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
-# 如何在虚拟机上运行 Java 应用程序服务器
+# 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
 通过 Azure，你可使用虚拟机提供服务器功能。例如，在 Azure 上运行的虚拟机可配置为托管 Java 应用程序服务器，如 Apache Tomcat。完成本指南之后，你将会了解如何创建在 Azure 上运行的虚拟机并将其配置为运行 Java 应用程序服务器。
 
@@ -35,27 +38,27 @@
 1. 登录到 [Azure 门户](https://manage.windowsazure.cn)。
 2. 依次单击“新建”、“计算”、“虚拟机”和“从库中”。
 3. 在“虚拟机映像选择”对话框中，选择“JDK 7 Windows Server 2012”。请注意，万一你安装的是还不能在 JDK 7 中运行的旧应用程序，可选择 **JDK 6 Windows Server 2012**。
-4. 单击“下一步”。
+4. 单击**“下一步”**。
 5. 在“虚拟机配置”对话框中：
     1. 指定虚拟机的名称。
     2. 指定要用于虚拟机的大小。
     3. 在“用户名”字段中输入管理员的名称。记住你下次要输入的此名称和密码，远程登录虚拟机时你将使用它们。
     4. 在“新密码”字段中输入密码，然后在“确认”字段中重新输入一次。这是 Administrator 帐户密码。
-    5. 单击“下一步”。
+    5. 单击**“下一步”**。
 6. 在下一个“虚拟机配置”对话框中：
     1. 对于“云服务”，使用默认的“创建新云服务”。
-    2. “云服务 DNS 名称”的值在 cloudapp.net 中必须唯一。如有必要，请修改此值，这样 Azure 就会将其指示为唯一值。
+    2. “云服务 DNS 名称”的值在 chinacloudapp.cn 中必须唯一。如有必要，请修改此值，这样 Azure 就会将其指示为唯一值。
     2. 指定区域、地缘组或虚拟网络。在本教程中，请指定区域，如“美国西部”。
     2. 对于“存储帐户”框，请选择“使用自动生成的存储帐户”。
     3. 对于“可用性集”，请选择“(无)”。
-    4. 单击“下一步”。
+    4. 单击**“下一步”**。
 7. 在最后一个“虚拟机配置”对话框中：
     1. 接受默认的终结点项。
     2. 单击“完成”。
 
 ## 远程登录到虚拟机的步骤
 
-1. 登录到[管理门户](https://manage.windowsazure.cn)。
+1. 登录到“管理门户”。[](https://manage.windowsazure.cn)
 2. 单击“虚拟机”。
 3. 单击你要登录到的虚拟机的名称。
 4. 启动虚拟机后，可以使用页面底部的弹出菜单来进行连接。
@@ -78,7 +81,7 @@
 
 如果你运行虚拟机的浏览器并打开 <http://localhost:8080>，则会立即看到 Tomcat 在运行。
 
-若要从外部计算机看到 Tomcat 运行，您将需要创建一个终结点并开放一个端口。
+若要从外部计算机查看 Tomcat 的运行，则需要创建一个终结点并开放一个端口。
 
 ## 为虚拟机创建终结点
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
@@ -106,7 +109,7 @@
 9. 在“配置文件”屏幕中，确保选中“域”、“私有”和“公开”，然后单击“下一步”。![新建入站规则配置文件][NewRuleProfile]
 10. 在“名称”屏幕中，指定规则的名称，如 HttpIn（但是，规则名称无需与终结点名称匹配），然后单击“完成”。![新建入站规则名称][NewRuleName]
 
-此时，应可从外部浏览器使用 **http://*your\_DNS\_name*.cloudapp.net** 格式的 URL 立即查看你的 Tomcat 网站，其中 ***your\_DNS\_name*** 是你创建虚拟机时指定的 DNS 名称。
+此时，应可从外部浏览器使用 ****http://*your\_DNS_name*.chinacloudapp.cn** 格式的 URL 查看你的 Tomcat 网站，其中 ***your\_DNS_name*** 是你创建虚拟机时指定的 DNS 名称。
 
 ## 应用程序生命周期注意事项
 * 你可以创建自己的 Web 应用程序存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本的 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件，将此 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。
@@ -117,7 +120,7 @@
     让 Tomcat 自动启动的好处是，当虚拟机重新启动时（例如，在安装需要重新启动的软件更新后），Tomcat 将启动。
 
 ## 后续步骤
-* 通过查看 </develop/java/> 上提供的信息，了解要与 Java 应用程序一起包含的其他服务（例如 Azure 存储空间、服务总线 和 SQL 数据库）。
+通过查看 [Java 开发人员中心](http://azure.microsoft.com/develop/java/)上提供的信息，了解要与 Java 应用程序一起包含的其他服务（例如 Azure 存储空间、Service Bus 和 SQL 数据库）。
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 
@@ -138,4 +141,4 @@
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=70-->
+<!---HONumber=79-->

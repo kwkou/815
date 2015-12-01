@@ -19,10 +19,11 @@
 
 # Azure AD 的后续用途有哪些？
 
-[什么是 Azure AD？](/documentation/articles/active-directory-whatis)<br>
-[工作原理](/documentation/articles/active-directory-works)<br>
-[入门](/documentation/articles/active-directory-get-started)<br>
-[了解详细信息](/documentation/articles/active-directory-learn-map)
+> [AZURE.SELECTOR]
+- [什么是 Azure AD？](/documentation/articles/active-directory-whatis)
+- [工作原理](/documentation/articles/active-directory-works)
+- [入门](/documentation/articles/active-directory-get-started)
+- [了解详细信息](/documentation/articles/active-directory-learn-map)
 
 ## 在 Azure AD 中管理用户
 
@@ -38,7 +39,7 @@
 
 ## 对已注册的移动设备实施条件性访问策略
 
-Azure AD 设备注册将为设备设置一个标识，当用户登录时，将使用该标识对设备进行身份验证。然后，可以使用已经过身份验证的设备和设备的属性，对云中和本地托管的应用程序实施条件性访问策略。[了解有关 Azure AD 设备注册的详细信息](https://msdn.microsoft.com/zh-CN/library/azure/dn903763.aspx)。 
+Azure AD 设备注册将为设备设置一个标识，当用户登录时，将使用该标识对设备进行身份验证。然后，可以使用已经过身份验证的设备和设备的属性，对云中和本地托管的应用程序实施条件性访问策略。[了解有关 Azure AD 设备注册的详细信息](/documentation/articles/active-directory-conditional-access-device-registration-overview/)。 
 
 
 ## 其他资源

@@ -1,17 +1,17 @@
 <properties
-	pageTitle="将磁盘附加到虚拟机 | Microsoft Azure"
-	description="了解如何将数据磁盘附加到 Azure 虚拟机并将其初始化，以便它可供使用。"
+	pageTitle="将磁盘附加到虚拟机 | Windows Azure"
+	description="将数据磁盘附加到使用经典部署模型创建的虚拟机并进行初始化。"
 	services="virtual-machines, storage"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines"
+<tags
+ ms.service="virtual-machines"
 	ms.date="07/16/2015"
-	wacn.date="09/15/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 如何将数据磁盘附加到 Windows 虚拟机
 
@@ -51,4 +51,5 @@
 [关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)
 
 [logon]: /documentation/articles/virtual-machines-log-on-windows-server
-<!---HONumber=69-->
+
+<!---HONumber=79-->

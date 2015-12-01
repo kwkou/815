@@ -78,12 +78,12 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 
 	powershell
 	$sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
-# 创建用于创建事件中心的 NamespaceManager 对象
+	# 创建用于创建事件中心的 NamespaceManager 对象
 	Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
 	$NamespaceManager=[Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
 	Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
 
-```
+
 
 
 ## 设置新通知中心 
@@ -103,7 +103,6 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 
 + 如果不存在，脚本将使用 WNS 凭据创建 `NotificationHubDescription`，并将其传递给 `NamespaceManager` 类 `CreateNotificationHub` 方法。
 
-``` powershell
 
 		$Namespace = "<Enter your namespace>
 		$Path  = "<Enter a name for your notification hub>"
@@ -112,43 +111,40 @@ Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心�
 
 		$WnsCredential = New-Object -TypeName Microsoft.ServiceBus.Notifications.WnsCredential -ArgumentList $WnsPackageSid,$WnsSecretkey
 
-# 查询命名空间
-	$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
+		# 查询命名空间
+		$CurrentNamespace = Get-AzureSBNamespace -Name $Namespace
 
-# 检查命名空间是否已存在  
+		# 检查命名空间是否已存在  
 
-	if ($CurrentNamespace)
-	{
-    Write-Output "The namespace [$Namespace] in the [$($CurrentNamespace.Region)] region was found."
+		if ($CurrentNamespace)
+		{
+    	 Write-Output "The namespace [$Namespace] in the [$($CurrentNamespace.Region)] region was found."
 
-    # Create the NamespaceManager object used to create a new notification hub
-    $sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
-    Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
-    $NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
-    Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
+   		 # Create the NamespaceManager object used to create a new notification hub
+   		 $sbr = Get-AzureSBAuthorizationRule -Namespace $Namespace
+   		 Write-Output "Creating a NamespaceManager object for the [$Namespace] namespace..."
+   		 $NamespaceManager = [Microsoft.ServiceBus.NamespaceManager]::CreateFromConnectionString($sbr.ConnectionString);
+   		 Write-Output "NamespaceManager object for the [$Namespace] namespace has been successfully created."
 
-    # Check to see if the Notification Hub already exists
-    if ($NamespaceManager.NotificationHubExists($Path))
-    {
-        Write-Output "The [$Path] notification hub already exists in the [$Namespace] namespace."  
-    }
-    else
-    {
-        Write-Output "Creating the [$Path] notification hub in the [$Namespace] namespace."
-        $NHDescription = New-Object -TypeName Microsoft.ServiceBus.Notifications.NotificationHubDescription -ArgumentList $Path;
-        $NHDescription.WnsCredential = $WnsCredential;
-        $NamespaceManager.CreateNotificationHub($NHDescription);
-        Write-Output "The [$Path] notification hub was created in the [$Namespace] namespace."
-    }
-	}
-	else
-	{
-	Write-Host "The [$Namespace] namespace does not exist."
-	}
-
-```	
-
-
+   		 # Check to see if the Notification Hub already exists
+    		if ($NamespaceManager.NotificationHubExists($Path))
+   		 {
+   		     Write-Output "The [$Path] notification hub already exists in the [$Namespace] namespace."  
+  		  }
+   		 else
+   		 {
+		     Write-Output "Creating the [$Path] notification hub in the [$Namespace] namespace."
+   		     $NHDescription = New-Object -TypeName Microsoft.ServiceBus.Notifications.NotificationHubDescription -ArgumentList $Path;
+   		     $NHDescription.WnsCredential = $WnsCredential;
+  		     $NamespaceManager.CreateNotificationHub($NHDescription);
+  		     Write-Output "The [$Path] notification hub was created in the [$Namespace] namespace."
+ 		   }
+			
+		}
+		else
+		{
+			Write-Host "The [$Namespace] namespace does not exist."
+		}
 
 
 ## 其他资源

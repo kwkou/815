@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="“支持的令牌和声明类型”"
+   pageTitle="支持的令牌和声明类型"
    description="本指南帮助你了解和评估 Azure Active Directory (AAD) 颁发的 SAML 2.0 令牌和 JSON Web 令牌 (JWT) 令牌中的声明。"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"

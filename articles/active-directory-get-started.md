@@ -19,14 +19,11 @@
 
 # 如何开始使用 Azure AD
 
-[什么是 Azure AD？](/documentation/articles/active-directory-whatis)
-
-[工作原理](/documentation/articles/active-directory-works)
-
-[后续步骤](/documentation/articles/active-directory-next-steps)
-
-[了解详细信息](/documentation/articles/active-directory-learn-map)
-
+> [AZURE.SELECTOR]
+- [什么是 Azure AD？](/documentation/articles/active-directory-whatis)
+- [工作原理](/documentation/articles/active-directory-works)
+- [后续步骤](/documentation/articles/active-directory-next-steps)
+- [了解详细信息](/documentation/articles/active-directory-learn-map)
 
 已准备就绪？Azure AD 免费提供给任何人使用。你现在就可以注册 Azure 试用订阅，然后我们会准备好你的目录。不管你是否购买了任何服务，该目录始终归你所有。[立即试用 Azure AD](/home/features/identity) 
 

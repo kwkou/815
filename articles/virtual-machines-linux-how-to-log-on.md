@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="03/16/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="08/25/2015"
+	wacn.date="11/12/2015"/>
 
 
 
@@ -47,5 +47,6 @@
 您现在可以像使用任何其他服务器一样使用该虚拟机。
 
 <!-- LINKS -->
-[如何为 Linux 虚拟机重置密码或 SSH]: /documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh
-<!---HONumber=70-->
+[如何为 Linux 虚拟机重置密码或 SSH]: /documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/
+
+<!---HONumber=79-->

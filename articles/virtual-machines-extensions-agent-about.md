@@ -1,26 +1,34 @@
-<properties 
-	 pageTitle="关于虚拟机代理和扩展 | Windows Azure" 
-	 description="提供了代理和扩展的概述以及如何安装代理。" 
-	 services="virtual-machines" 
-	 documentationCenter="" 
-	 authors="squillace" 
-	 manager="timlt" 
-	 editor=""/>
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="03/10/2015" 
-	wacn.date="09/15/2015"/>
+<properties
+ pageTitle="Azure VM 代理和扩展 | Windows Azure"
+ description="提供了代理和扩展的概述以及如何使用经典部署模型安装代理。"
+ services="virtual-machines"
+ documentationCenter=""
+ authors="squillace"
+ manager="timlt"
+ editor=""
+ tags="azure-service-management"/>
+
+<tags
+ 	ms.service="virtual-machines"
+ 	ms.date="09/22/2015"
+ 	wacn.date="11/12/2015"/>
+
 #关于虚拟机代理和扩展
-Azure 虚拟机代理（VM 代理）用于安装、配置、管理和运行 Azure 虚拟机扩展（VM 扩展）。VM 扩展提供 Microsoft 和其他第三方提供的动态功能。代理和扩展主要通过管理门户添加，但也可以使用 [Powershell](/documentation/articles/install-configure-powershell) cmdlet 或 [xplat cli](/documentation/articles/virtual-machines-command-line-tools) 在创建 VM 时添加和配置或为现有 VM 添加和配置。VM 扩展包括对以下项的支持：[在 Visual Studio 中进行远程调试](https://msdn.microsoft.com/library/y7f5zaaa.aspx)、[System Center 2012](http://social.technet.microsoft.com/wiki/contents/articles/18274.system-center-2012-r2-virtual-machine-role-authoring-guide-resource-extension-package.aspx)、[Microsoft Azure 诊断](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)和 [Docker](/documentation/articles/virtual-machines-docker-vm-extension) - 以上只是举了几个例子。
+
+Azure 虚拟机代理（VM 代理）用于安装、配置、管理和运行 Azure 虚拟机扩展（VM 扩展）。VM 扩展提供 Microsoft 和其他第三方提供的动态功能。代理和扩展主要通过管理门户添加，但也可以使用 [Powershell](/documentation/articles/install-configure-powershell) cmdlet 或 [Azure CLI](/documentation/articles/xplat-install) 在创建 VM 时添加和配置或为现有 VM 添加和配置。
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
+
 
 VM 扩展可帮助你：
 
--   修改安全性和识别功能，例如重置帐户值和使用反恶意软件 
--   启动、停止或配置监视和诊断 
+-   修改安全性和识别功能，例如重置帐户值和使用反恶意软件
+-   启动、停止或配置监视和诊断
 -   重置或安装连接功能，如 RDP 和 SSH
 -   诊断、监视和管理 VM
 
-还有许多其他功能；将定期发布新的 VM 扩展功能。本文介绍适用于 Windows 和 Linux 的 Azure VM 代理，以及这些代理如何支持 VM 扩展功能。有关按功能类别列出的 VM 扩展的列表，请参阅 [Azure VM 扩展和功能](https://msdn.microsoft.com/zh-cn/library/dn606311.aspx)。
+还有许多其他功能；将定期发布新的 VM 扩展功能。本文介绍适用于 Windows 和 Linux 的 Azure VM 代理，以及这些代理如何支持 VM 扩展功能。有关按功能类别列出的 VM 扩展的列表，请参阅 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-extensions-features)。
 
 ##适用于 Windows 和 Linux 的 Azure VM 代理
 
@@ -44,14 +52,15 @@ Azure 虚拟机代理（VM 代理）是一个安全的轻型进程，用于在�
         $vm.VM.ProvisionGuestAgent = $TRUE
         Update-AzureVM –Name $name –VM $vm.VM –ServiceName $svc
 
--   创建安装了 VM 代理的 VM 映像，然后将它上载到 Azure。对于 Windows VM，下载 [Windows VM 代理 .msi 文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)并安装 VM 代理。对于 Linux VM，将从位置 <https://github.com/Azure/WALinuxAgent> 安装它。有关如何在 Linux 上安装 VM 代理的详细信息，请参阅 [Azure Linux VM 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide)。
+-   创建安装了 VM 代理的 VM 映像，然后将它上载到 Azure。对于 Windows VM，下载 [Windows VM 代理 .msi 文件](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409)并安装 VM 代理。对于 Linux VM，将从位于 <https://github.com/Azure/WALinuxAgent> 的 Github 存储库安装它。有关如何在 Linux 上安装 VM 代理的详细信息，请参阅 [Azure Linux VM 代理用户指南](/documentation/articles/virtual-machines-linux-agent-user-guide)。
 
 >[AZURE.NOTE]在 PaaS 中，VM 代理名为 **GuestAgent**，并且始终可在 Web 角色和辅助角色 VM 上找到。（有关详细信息，请参阅 [Azure 角色体系结构](http://blogs.msdn.com/b/kwill/archive/2011/05/05/windows-azure-role-architecture.aspx)。） 角色 VM 的 VM 代理现在可以按向永久性虚拟机添加扩展的相同方式向云服务 VM 添加扩展。在角色 VM 上的 VM 扩展与永久性 VM 上的 VM 扩展的最大区别是，对于角色 VM，扩展将先添加到云服务，然后再添加到该云服务中的部署。
 
->使用 [Get-AzureServiceAvailableExtension](https://msdn.microsoft.com/zh-cn/library/azure/dn722498.aspx) cmdlet 可列出所有可用的角色 VM 扩展。
+>使用
+[Get-AzureServiceAvailableExtension](https://msdn.microsoft.com/zh-cn/library/azure/dn722498.aspx) cmdlet 可列出所有可用的角色 VM 扩展。
 
 ##查找、添加、更新和删除 VM 扩展  
 
-有关这些任务的详细信息，请参阅[添加、查找、更新和删除 Azure VM 扩展](https://msdn.microsoft.com/zh-cn/library/dn850373.aspx)。
+有关这些任务的详细信息，请参阅[添加、查找、更新和删除 Azure VM 扩展](/documentation/articles/virtual-machines-extensions-install)。
 
-<!---HONumber=69-->
+<!---HONumber=79-->

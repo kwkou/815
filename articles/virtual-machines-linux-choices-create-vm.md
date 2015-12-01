@@ -1,6 +1,6 @@
 <properties
-	pageTitle="创建 Linux 虚拟机的不同方式"
-	description="列出创建 Linux 虚拟机的不同方式，并提供说明链接。"
+	pageTitle="创建 Linux VM 的不同方式 | Windows Azure"
+	description="列出在 Azure 上创建 Linux 虚拟机的不同方式，并提供进一步说明链接。"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="08/12/2015"
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 # 创建 Linux 虚拟机的不同方式
 
@@ -23,7 +23,7 @@ Azure 提供不同方式来创建 VM，因为 VM 适合于不同用户和目的�
 
 ### GUI：Azure 门户或预览门户
 
-Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 门户](http://manage.windowsazure.cn)或 [Azure 预览门户](http://manage.windowsazure.cn)创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。请注意，[Azure 门户](http://manage.windowsazure.cn)只使用经典部署模型创建虚拟机。
+Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 门户](http://manage.windowsazure.cn)<!--或 [Azure 预览门户](http://portal.azure.com)-->创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。请注意，[Azure 门户](http://manage.windowsazure.cn)只使用经典部署模型创建虚拟机。
 
 ### 命令 Shell：Azure CLI 或 Azure PowerShell
 
@@ -61,7 +61,6 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 [附加数据磁盘][]
 
 ## 其他资源
-[关于 Azure VM 配置设置][]
 
 [基本配置测试环境][]
 
@@ -71,22 +70,32 @@ Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤�
 
 <!-- LINKS -->
 [概述]: /documentation/articles/resource-group-overview
+
 [Create a Virtual Machine Running Windows]: /documentation/articles/virtual-machines-windows-tutorial
-[创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
-<!--[-->适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行 VM 操作的等效资源管理器和服务管理命令<!--]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm-->
+[Create a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-tutorial
+
+[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行 VM 操作的等效资源管理器和服务管理命令]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
 [使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
 [使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
 [使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机]: /documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms
+
 [如何在 Azure 中创建运行 Linux 的自定义虚拟机]: /documentation/articles/virtual-machines-linux-create-custom
 [如何使用 CLI 捕获 Linux 虚拟机以用作模板]: /documentation/articles/virtual-machines-linux-capture-image
+
 [创建并上载包含 Linux 操作系统的虚拟硬盘]: /documentation/articles/virtual-machines-linux-create-upload-vhd
+
 [使用 Visual Studio 创建用于网站的虚拟机]: /documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell
 [使用计算、网络和存储 .NET 库部署 Azure 资源]: /documentation/articles/virtual-machines-arm-deployment
+
 [登录到虚拟机]: /documentation/articles/virtual-machines-linux-how-to-log-on
+
 [附加数据磁盘]: /documentation/articles/virtual-machines-linux-how-to-attach-disk
-[关于 Azure VM 配置设置]: https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx
+
+[About Azure VM configuration settings]: https://msdn.microsoft.com/zh-CN/library/azure/dn763935.aspx
 [基本配置测试环境]: /documentation/articles/virtual-machines-base-configuration-test-environment
 [Azure 混合云测试环境]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments
+
 [创建运行 Linux 的虚拟机]: /documentation/articles/virtual-machines-linux-tutorial
 [创建自定义虚拟机]: /documentation/articles/virtual-machines-create-custom
-<!---HONumber=70-->
+
+<!---HONumber=79-->

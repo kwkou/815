@@ -9,12 +9,24 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/27/2015"
-   wacn.date="10/3/2015"/>
+   ms.date="09/14/2015"
+   wacn.date="11/12/2015"/>
 
 # Azure 资源管理器模板函数
 
 本主题介绍你可以在 Azure 资源管理器模板中使用的所有函数。
+
+## 添加
+
+**add(operand1, operand2)**
+
+返回提供的两个整数的总和。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| operand1 | 是 | 要使用的第一个操作数。
+| operand2 | 是 | 要使用的第二个操作数。
+
 
 ## base64
 
@@ -81,9 +93,45 @@
       }
     }
 
+## div
+
+**div(operand1, operand2)**
+
+返回提供的两个整数在整除后的商。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| operand1 | 是 | 被除数。
+| operand2 | 是 | 除数，不得为 0。
+
+## int
+
+**int(valueToConvert)**
+
+将指定的值转换为整数。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| valueToConvert | 是 | 要转换为整数的值。值的类型只能是字符串或整数。
+
+以下示例将用户提供的参数值转换为整数。
+
+    "parameters": {
+        "appId": { "type": "string" }
+    },
+    "variables": { 
+        "intValue": "[int(parameters('appId'))]"
+    }
+
+## length
+
+**length(array)**
+
+返回数组中的元素数。通常用于在创建资源时指定迭代数。有关使用此函数的示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)。
+
 ## listKeys
 
-**listKeys (resourceName or resourceIdentifier, [apiVersion])**
+**listKeys (resourceName or resourceIdentifier, apiVersion)**
 
 返回存储帐户的密钥。可以使用 [resourceId 函数](#resourceid)或使用格式 **providerNamespace/resourceType/resourceName** 指定 resourceId。可以使用该函数来获取 primaryKey 和 secondaryKey。
   
@@ -96,10 +144,34 @@
 
     "outputs": { 
       "exampleOutput": { 
-        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0])]", 
+        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2015-05-01-preview')]", 
         "type" : "object" 
       } 
     } 
+
+## mod
+
+**mod(operand1, operand2)**
+
+返回使用提供的两个整数整除后的余数。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| operand1 | 是 | 被除数。
+| operand2 | 是 | 除数，不得为 0。
+
+
+## mul
+
+**mul(operand1, operand2)**
+
+返回提供的两个整数的积。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| operand1 | 是 | 要使用的第一个操作数。
+| operand2 | 是 | 要使用的第二个操作数。
+
 
 ## padLeft
 
@@ -149,9 +221,9 @@
        }
     ]
 
-## provider
+## providers
 
-**provider (providerNamespace, [resourceType])**
+**providers (providerNamespace, [resourceType])**
 
 返回有关资源提供程序及其支持的资源类型的信息。如果未提供类型，则会返回所有支持的类型。
 
@@ -307,6 +379,57 @@
       }]
     }
 
+## split
+
+**split(inputString, delimiter)**
+**split(inputString, [delimiters])**
+
+返回包含输入字符串的子字符串的字符串数组，其中的子字符串使用发送的分隔符进行分隔。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| inputString | 是 | 要拆分的字符串。
+| delimiter | 是 | 要使用的分隔符，可以是单个字符串，也可以是字符串数组。
+
+以下示例使用逗号拆分输入字符串。
+
+    "parameters": {
+        "inputString": { "type": "string" }
+    },
+    "variables": { 
+        "stringPieces": "[split(parameters('inputString'), ',')]"
+    }
+
+## 字符串
+
+**string(valueToConvert)**
+
+将指定的值转换为字符串。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| valueToConvert | 是 | 要转换为字符串的值。该值的类型只能是布尔值、整数或字符串。
+
+以下示例将用户提供的参数值转换为字符串。
+
+    "parameters": {
+        "appId": { "type": "int" }
+    },
+    "variables": { 
+        "stringValue": "[string(parameters('appId'))]"
+    }
+
+## sub
+
+**sub(operand1, operand2)**
+
+返回提供的两个整数在相减后的结果。
+
+| 参数 | 必选 | 说明
+| :--------------------------------: | :------: | :----------
+| operand1 | 是 | 减数。
+| operand2 | 是 | 被减数。
+
 
 ## 订阅
 
@@ -380,8 +503,7 @@
 
 ## 后续步骤
 - 有关 Azure 资源管理器模板中对各部分的说明，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
-- 若要合并多个模版，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
+- 若要合并多个模板，请参阅[将已链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
-<!-- - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)-->
 
-<!---HONumber=71-->
+<!---HONumber=79-->

@@ -1,23 +1,26 @@
-<properties 
-	pageTitle="在 Azure 中创建和上载基于 CentOS 的 Linux VHD" 
-	description="了解如何创建和上载包含基于 CentOS 的 Linux 操作系统的 Azure 虚拟硬盘 (VHD)。" 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="szarkos" 
-	manager="timlt" 
-	editor="tysonn"/>
+<properties
+	pageTitle="在 Azure 中创建和上载基于 CentOS 的 Linux VHD"
+	description="了解如何创建和上载包含基于 CentOS 的 Linux 操作系统的 Azure 虚拟硬盘 (VHD)。"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="szarkos"
+	manager="timlt"
+	editor="tysonn"
+	tags="azure-resource-manager,azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.date="05/15/2015" 
-	wacn.date="08/29/2015"/>
+<tags
+	ms.service="virtual-machines"
+	ms.date="05/15/2015"
+	wacn.date="11/12/2015"/>
 
 # 为 Azure 准备基于 CentOS 的虚拟机
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 - [为 Azure 准备 CentOS 6.x 虚拟机](#centos6)
 - [为 Azure 准备 CentOS 7.0+ 虚拟机](#centos7)
 
-## 先决条件 ##
+##先决条件##
 
 本文假设你已在虚拟硬盘中安装了 CentOS（或类似的衍生产品）Linux 操作系统。存在多个用于创建 .vhd 文件的工具，例如 Hyper-V 等虚拟化解决方案。有关说明，请参阅[安装 Hyper-V 角色和配置虚拟机](http://technet.microsoft.com/zh-cn/library/hh846766.aspx)。
 
@@ -360,4 +363,4 @@
 
  
 
-<!---HONumber=67-->
+<!---HONumber=79-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="重试服务指南 | Microsoft Azure"
+   pageTitle="重试服务指南 | Windows Azure"
    description="设置重试机制的服务指南。"
    services=""
    documentationCenter="na"
@@ -11,7 +11,7 @@
 <tags
    ms.service="best-practice"
    ms.date="04/28/2015"
-   wacn.date="10/3/2015"/>
+   wacn.date="11/12/2015"/>
 
 # 重试服务指南
 
@@ -25,7 +25,7 @@
 
 | **服务** | **重试功能** | **策略配置** | **范围** | **遥测功能** |
 |---------------------------------------|-----------------------------------------|------------------------------|--------------------------------------------------|------------------------
-| **[AzureStorage](#azure-storage-retry-guidelines)** | 客户端原生 | 编程 | 客户端和各项操作 | TraceSource |
+| **[AzureStorage](#azure-storage-retry-guidelines)** | 客户端原生 | 编程 | 客户端؜ ؜ ؜ 和各项操作 | TraceSource |
 | **[使用 Entity Framework 的 SQL 数据库](#sql-database-using-entity-framework-6-retry-guidelines)** | 客户端原生 | 编程 | 每个应用域均为全局 | 无 |
 | **[使用 ADO.NET 的 SQL 数据库](#sql-database-using-ado-net-retry-guidelines)** | Topaz* | 声明性和编程 | 各个语句或代码块 | “自定义” |
 | **[服务总线](#service-bus-retry-guidelines)** | 客户端原生 | 编程 | 命名空间管理器、消息工厂和客户端 | ETW |
@@ -33,7 +33,7 @@
 | **[DocumentDB](#documentdb-pre-release-retry-guidelines)** | 服务原生 | 不可配置 | 全局 | TraceSource |
 | **[搜索](#search-retry-guidelines)** | Topaz*（使用自定义检测策略） | 声明性和编程 | 代码块 | “自定义” |
 | **[Active Directory](#azure-active-directory-retry-guidelines)** | Topaz*（使用自定义检测策略） | 声明性和编程 | 代码块 | “自定义” |
-*Topaz 是<a href="http://msdn.microsoft.com/library/dn440719.aspx">企业库 6.0</a> 中包含的临时故障处理应用程序块的易记名称。对于大多数类型的服务，您可以结合使用自定义检测策略和 Topaz，如本指南所述。本指南末尾的[临时故障处理应用程序块 (Topaz) 策略](#transient-fault-handling-application-block-topaz-strategies)部分中介绍了 Topaz 默认策略。请注意，临时故障处理应用程序块现在是一个开放源代码框架，不受 Microsoft 直接支持。
+**Topaz 是<a href="http://msdn.microsoft.com/zh-cn/library/dn440719.aspx">企业库 6.0</a> 中包含的临时故障处理应用程序块的易记名称。对于大多数类型的服务，您可以结合使用自定义检测策略和 Topaz，如本指南所述。本指南末尾的[临时故障处理应用程序块 (Topaz) 策略](#transient-fault-handling-application-block-topaz-strategies)部分中介绍了 Topaz 默认策略。请注意，临时故障处理应用程序块现在是一个开放源代码框架，不受 Microsoft 直接支持。
 
 > [AZURE.NOTE]对于大多数 Azure 内置重试机制，目前尚无方法针对不同类型的错误或异常（不局限于重试策略功能）应用不同的重试策略。因此，根据指南，最好在编写时配置可提供最佳平均性能和可用性的策略。微调策略的一种方法是分析日志文件，以确定发生的临时故障的类型。例如，如果大部分错误都与网络连接问题相关，那么您可以立即尝试重试，而不是等待很长一段时间才进行首次重试。
 
@@ -49,7 +49,7 @@ Azure 存储空间服务包括表和 blob 存储、文件以及存储队列。
 
 内置类支持线性（固定延迟）和指数随机化重试间隔。当其他进程在较高级别处理重试时，还有不重试策略可供使用。不过，如果您具有内置类未规定的特定要求，则可以实现您自己的重试类。
 
-如果您使用的是读取访问异地冗余存储 (RA-GRS)，且请求的结果是可重试错误，则备用重试会在主要和辅助存储服务位置之间切换。有关详细信息，请参阅 [Azure 存储空间冗余选项](http://msdn.microsoft.com/zh-cn/library/azure/dn727290.aspx)。
+如果您使用的是读取访问异地冗余存储 (RA-GRS)，且请求的结果是可重试错误，则备用重试会在主要和辅助存储服务位置之间切换。有关详细信息，请参阅 [Azure 存储空间冗余选项](/documentation/articles/storage-redundancy/)。
 
 ### 策略配置（Azure 存储空间）
 
@@ -240,7 +240,7 @@ public class BloggingContextConfiguration : DbConfiguration
 {
   public BlogConfiguration()
   {
-    // Set up the execution strategy for SQL ??? (exponential) with 5 retries and 4 sec delay
+    // Set up the execution strategy for SQL Database (exponential) with 5 retries and 4 sec delay
     this.SetExecutionStrategy(
          "System.Data.SqlClient", () => new SqlAzureExecutionStrategy(5, TimeSpan.FromSeconds(4)));
   }
@@ -279,7 +279,7 @@ public class BloggingContextConfiguration : DbConfiguration
 
 下表显示了使用 EF6 时的内置重试策略的默认设置。
 
-![](media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable4.png)
+![](./media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable4.png)
 ## 重试使用指南
 
 访问使用 EF6 的 SQL 数据库时，请注意以下指南：
@@ -315,7 +315,7 @@ namespace RetryCodeSamples
 	{
 	    public BlogConfiguration()
 	    {
-	        // Set up the execution strategy for SQL ??? (exponential) with 5 retries and 12 sec delay.
+	        // Set up the execution strategy for SQL Database (exponential) with 5 retries and 12 sec delay.
 	        // These values could be loaded from configuration rather than being hard-coded.
 	        this.SetExecutionStrategy(
 	                "System.Data.SqlClient", () => new SqlAzureExecutionStrategy(5, TimeSpan.FromSeconds(12)));
@@ -357,7 +357,7 @@ SQL 数据库是一种托管的 SQL 数据库，具有各种大小，可作为�
 
 ### 重试机制
 
-访问使用 ADO.NET 的 SQL 数据库时，其中没有内置重试支持。不过，请求的返回代码可用于确定请求失败原因。[Azure SQL 数据库限制](http://msdn.microsoft.com/zh-cn/library/dn338079.aspx)页面解释了限制如何阻止连接、特定情况的返回代码以及如何处理这些情况和重试操作。
+访问使用 ADO.NET 的 SQL 数据库时，其中没有内置重试支持。不过，请求的返回代码可用于确定请求失败原因。[Azure SQL 数据库限制](/documentation/articles/sql-database-resource-limits/)页面解释了限制如何阻止连接、特定情况的返回代码以及如何处理这些情况和重试操作。
 
 您可以结合使用临时故障处理应用程序块 (Topaz) 和 Nuget 包 EnterpriseLibrary.TransientFaultHandling.Data（类 **SqlAzureTransientErrorDetectionStrategy**），从而实现 SQL 数据库的重试机制。
 
@@ -540,7 +540,7 @@ client.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 
 不能在各个操作级别设置重试策略。它适用于消息客户端的所有操作。下表显示了内置重试策略的默认设置。
 
-![](media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable7.png)
+![](./media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable7.png)
 
 ### 重试使用指南
 
@@ -552,7 +552,7 @@ client.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 请考虑从下列重试操作设置入手。这些都是通用设置，您应监视操作，并对值进行微调以适应您自己的方案。
 
 
-![](media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable8.png)
+![](./media/best-practices-retry-service-specific/RetryServiceSpecificGuidanceTable8.png)
 
 ### 遥测
 
@@ -561,14 +561,14 @@ client.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 ```text
 Microsoft-ServiceBus-Client/RetryPolicyIteration
 ThreadID="14,500"
-FormattedMessage="[TrackingId:] RetryExponential: Operation Get:https://retry-guidance-tests.servicebus.windows.net/TestQueue/?api-version=2014-05 at iteration 0 is retrying after 00:00:00.1000000 sleep because of Microsoft.ServiceBus.Messaging.MessagingCommunicationException: The remote name could not be resolved: 'retry-guidance-tests.servicebus.windows.net'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3, TimeStamp:9/5/2014 10:00:13 PM."
+FormattedMessage="[TrackingId:] RetryExponential: Operation Get:https://retry-guidance-tests.servicebus.chinacloudapi.cn/TestQueue/?api-version=2014-05 at iteration 0 is retrying after 00:00:00.1000000 sleep because of Microsoft.ServiceBus.Messaging.MessagingCommunicationException: The remote name could not be resolved: 'retry-guidance-tests.servicebus.chinacloudapi.cn'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3, TimeStamp:9/5/2014 10:00:13 PM."
 trackingId=""
 policyType="RetryExponential"
-operation="Get:https://retry-guidance-tests.servicebus.windows.net/TestQueue/?api-version=2014-05"
+operation="Get:https://retry-guidance-tests.servicebus.chinacloudapi.cn/TestQueue/?api-version=2014-05"
 iteration="0"
 iterationSleep="00:00:00.1000000"
 lastExceptionType="Microsoft.ServiceBus.Messaging.MessagingCommunicationException"
-exceptionMessage="The remote name could not be resolved: 'retry-guidance-tests.servicebus.windows.net'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3,TimeStamp:9/5/2014 10:00:13 PM"
+exceptionMessage="The remote name could not be resolved: 'retry-guidance-tests.servicebus.chinacloudapi.cn'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3,TimeStamp:9/5/2014 10:00:13 PM"
 ```
 
 ### 示例（服务总线）
@@ -590,7 +590,7 @@ namespace RetryCodeSamples
 	class ServiceBusCodeSamples
 	{
 		private const string connectionString =
-		    @"Endpoint=sb://[my-namespace].servicebus.windows.net/;
+		    @"Endpoint=sb://[my-namespace].servicebus.chinacloudapi.cn/;
 		        SharedAccessKeyName=RootManageSharedAccessKey;
 		        SharedAccessKey=C99..........Mk=";
 
@@ -901,7 +901,7 @@ Azure 搜索可用于向网站或应用程序添加功能强大且复杂的搜�
 
 ## Azure Active Directory 重试指南
 
-Azure Active Directory (AD) 是一项全面的标识和访问管理云解决方案，集成了核心目录服务、高级标识监管、安全性和应用程序访问管理等各种功能。Microsoft Azure AD 还为开发人员提供了身份管理平台，以便他们可以根据集中的策略和规则，控制应用程序访问情况。
+Azure Active Directory (AD) 是一项全面的标识和访问管理云解决方案，集成了核心目录服务、高级标识监管、安全性和应用程序访问管理等各种功能。Windows Azure AD 还为开发人员提供了身份管理平台，以便他们可以根据集中的策略和规则，控制应用程序访问情况。
 
 ### 重试机制
 
@@ -1115,4 +1115,4 @@ var result = await policy.ExecuteAsync(() => authContext.AcquireTokenAsync(resou
 | **线性（固定间隔）** | retryCount<br />retryInterval<br />fastFirstRetry<br /> | 10<br />1 秒<br />true | 重试尝试次数。<br />重试之间延迟。<br />是否立即进行首次重试尝试。 |
 有关使用临时故障处理应用程序块的示例，请参阅本指南中前面与使用 ADO.NET 的 Azure SQL 数据库和 Azure Active Directory 有关的示例部分。
 
-<!---HONumber=71-->
+<!---HONumber=79-->

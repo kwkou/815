@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="07/15/2015"
-   wacn.date="10/3/2015"/>
+   ms.date="09/04/2015"
+   wacn.date="11/12/2015"/>
 
 # 将已链接的模版与 Azure 资源管理器配合使用
 
@@ -40,6 +40,14 @@
       } 
     ] 
 
+资源管理器服务必须能够访问链接模板，这意味着，你不能为链接模板指定本地文件或只能在本地网络上使用的文件。只能提供包含 **http** 或 **https** 的 URI 值。一种做法是将链接模板放在存储帐户中并对该项使用 URI，如下所示。
+
+    "templateLink": {
+        "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/template.json",
+        "contentVersion": "1.0.0.0",
+    }
+
+
 ## 链接到参数文件
 
 以下示例使用 **parametersLink** 属性链接到参数文件。
@@ -62,6 +70,8 @@
          } 
       } 
     ] 
+
+链接参数文件的 URI 值不能是本地文件，并且必须包含 **http** 或 **https**。
 
 ## 使用变量来链接模板
 
@@ -90,10 +100,9 @@
 
 ## 将值传递回链接模板
 
-如果您需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。有关示例，请参阅[在 Azure 资源管理器模板中共享状态](/documentation/articles/best-practices-resource-manager-state)。
+如果你需要将值从链接模板传递到主模板，则可以在链接模板的**输出**部分创建一个值。有关示例，请参阅[在 Azure 资源管理器模板中共享状态](/documentation/articles/best-practices-resource-manager-state)。
 
 ## 后续步骤
 - [创作模板](/documentation/articles/resource-group-authoring-templates)
-- [部署模板](/documentation/articles/resource-group-template-deploy)
 
-<!---HONumber=71-->
+<!---HONumber=79-->

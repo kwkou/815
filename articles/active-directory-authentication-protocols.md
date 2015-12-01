@@ -3,20 +3,20 @@
    description="概述 Azure Active Directory (AD) 支持的身份验证协议"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
-   services="active-directory" 
+   services="active-directory"
    manager="mbaldwin"
    editor=""/>
 
 <tags
    ms.service="active-directory"
-   ms.date="04/29/2015"
-   wacn.date="06/16/2015"/>
+   ms.date="09/17/2015"
+   wacn.date="11/12/2015"/>
 
 # Azure Active Directory 身份验证协议
 
 Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和授权协议。本部分中的主题介绍 Azure AD 中支持的协议及其实现。这些主题包括支持的声明类型的回顾、联合元数据的使用简介、详细的 OAuth 2.0 和 SAML 2.0 协议参考文档，以及故障排除部分。
 
-本部分包括以下主题。
+## 身份验证协议文章和参考
 
 - [有关 Azure AD 中签名密钥滚动更新的重要信息](https://msdn.microsoft.com/zh-cn/library/azure/dn641920.aspx) - 了解 Azure AD 的签名密钥滚动更新频率、你可以进行的自动更新密钥的更改，以及针对如何更新最常见的应用程序方案的讨论。
 
@@ -45,10 +45,10 @@ Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和�
 
 ## 另请参阅 
 
+[Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide)
 
-### 概念  
+[使用 Azure AD 进行身份验证](/documentation/articles/web-sites-authentication-authorization)
 
-- [使用 Azure AD 进行身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dn385718.aspx)
-- [Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
+[Active Directory 代码示例](/documentation/articles/active-directory-code-samples)
 
-<!---HONumber=60-->
+<!---HONumber=79-->

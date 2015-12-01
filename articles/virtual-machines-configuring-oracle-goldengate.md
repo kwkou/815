@@ -589,7 +589,5 @@ Oracle GoldenGate Manager 执行许多功能，例如，启动其他 GoldenGate 
 	100 TV 100 22-MAR-13
 	101 DVD 10 22-MAR-13
 
-##其他资源
-[Azure 的 Oracle 虚拟机映像](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
 
 <!---HONumber=67-->

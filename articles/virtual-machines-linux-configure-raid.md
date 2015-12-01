@@ -1,26 +1,28 @@
 <properties 
-	pageTitle="在某个可以在 Azure 中运行 Linux 的虚拟机上配置软件 RAID" 
+	pageTitle="在运行 Linux 的虚拟机上配置软件 RAID | Windows Azure" 
 	description="了解如何使用 mdadm 在 Azure 中的 Linux 上配置 RAID。" 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
 	writer="szark" 
 	manager="timlt" 
-	editor=""/>
+	editor=""
+	tag="azure-service-management,azure-resource-manager" />
 
 <tags 
 	ms.service="virtual-machines" 
 	ms.date="07/29/2015" 
-	wacn.date="09/18/2015"/>
+	wacn.date="11/12/2015"/>
 
 
 
 # 在 Linux 上配置软件 RAID
 在 Azure 中的 Linux 虚拟机上使用软件 RAID 将多个附加的数据磁盘呈现为一个单一的 RAID 设备，是一种常见的情形。通常，使用这种方法可以改进性能，而且与只使用单独一块磁盘相比，吞吐量也会有所改进。
 
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 ## 附加数据磁盘
-配置 RAID 设备通常需要两个或更多的空数据磁盘。本文将不详细介绍如何为 Linux 虚拟机附加数据磁盘。请参阅 Windows Azure 文章[附加磁盘](/documentation/articles/storage-windows-attach-disk#attachempty)，以详细了解如何在 Azure 上为 Linux 虚拟机附加空数据磁盘。
+配置 RAID 设备通常需要两个或更多的空数据磁盘。本文将不详细介绍如何为 Linux 虚拟机附加数据磁盘。请参阅 Windows Azure 文章[附加磁盘](/documentation/articles/storage-windows-attach-disk/#attachempty)，以详细了解如何在 Azure 上为 Linux 虚拟机附加空数据磁盘。
 
 >[AZURE.NOTE]“特小型”VM 大小不支持将一个以上数据磁盘附加到虚拟机。请参阅 [Windows Azure 的虚拟机和云服务大小](http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)，以了解有关 VM 大小和支持的数据磁盘数量的详细信息。
 
@@ -175,4 +177,4 @@
 
  
 
-<!---HONumber=70-->
+<!---HONumber=79-->
