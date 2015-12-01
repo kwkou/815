@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="08/19/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/05/2015" 
+	wacn.date="11/27/2015"/>
 
 # 参考体系结构：使用 Windows Azure 流分析进行实时事件处理
 
@@ -58,4 +58,4 @@ Windows Azure 提供了各种类别的分析技术，支持一系列不同的解
 
  
 
-<!---HONumber=69-->
+<!---HONumber=82-->
