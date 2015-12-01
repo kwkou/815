@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用服务总线队列 (PHP) | Windows Azure" 
+	pageTitle="如何通过 PHP 使用服务总线队列 | Windows Azure" 
 	description="了解如何在 Azure 中使用 Service Bus 队列。采用 PHP 编写的代码示例。" 
 	services="service-bus" 
 	documentationCenter="php" 
@@ -7,12 +7,14 @@
 	manager="timlt" 
 	editor=""/>
 
-<tags
-	ms.service="service-bus"
-	ms.date="07/06/2015" 
-	wacn.date="10/22/2015"/>
+<tags 
+	ms.service="service-bus" 
+	ms.date="10/14/2015" 
+	wacn.date="11/27/2015"/>
 
 # 如何使用 Service Bus 队列
+
+[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
 
 本指南说明如何使用服务总线队列。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk)。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
@@ -112,7 +114,7 @@
 
 	use WindowsAzure\Common\ServicesBuilder;
 	use WindowsAzure\Common\ServiceException;
-	use WindowsAzure\ServiceBus\models\BrokeredMessage;
+	use WindowsAzure\ServiceBus\Models\BrokeredMessage;
 
 	// Create Service Bus REST proxy.
 	$serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
@@ -194,17 +196,11 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 后续步骤
 
-现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]主题以获取更多信息。
+现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
 
-[Service Bus Queue Diagram]: ../../../DevCenter/Java/Media/SvcBusQueues_01_FlowDiagram.jpg
-[Azure Management Portal]: http://manage.windowsazure.cn/
-[Service Bus Node screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_02_SvcBusNode.jpg
-[Create a New Namespace screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_03_CreateNewSvcNamespace.jpg
-[Available Namespaces screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_04_SvcBusNode_AvailNamespaces.jpg
-[Namespace List screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_05_NamespaceList.jpg
-[Properties Pane screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_06_PropertiesPane.jpg
-[Default Key screenshot]: ../../../DevCenter/Java/Media/SvcBusQueues_07_DefaultKey.jpg
+有关详细信息，请参阅 [PHP 开发人员中心](/develop/php/)。
+
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 [require_once]: http://php.net/require_once
 
-<!---HONumber=74-->
+<!---HONumber=82-->

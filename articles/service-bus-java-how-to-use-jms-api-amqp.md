@@ -11,7 +11,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="07/21/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 
@@ -108,7 +108,7 @@ topic.[jndi_name] = [physical_name]
 
 ### 编写 JMS 应用程序
 
-将 JMS 用于服务总线时不需要特殊的 API 或选项。但是，有一些限制，我们将在后面说明。与任何 JMS 应用程序一样，若要解析 **ConnectionFactory** 和目标，首先要做的事情是配置 JNDI 环境。
+将 JMS 用于服务总线时不需要特殊的 API 或选项。但是，有一些限制，我们将在后面说明。与使用任何 JMS 应用程序一样，若要解析 **ConnectionFactory** 和目标，首先要做的事情是配置 JNDI 环境。
 
 #### 配置 JNDI InitialContext
 
@@ -331,5 +331,6 @@ exit
 * [如何将 AMQP 1.0 与服务总线 .NET API 一起使用](/documentation/articles/service-bus-dotnet-advanced-message-queuing)
 * [服务总线 AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj841071.aspx)
 * [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
+* [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=74-->
+<!---HONumber=82-->

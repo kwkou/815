@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="09/15/2015"
-   wacn.date="10/22/2015" />
+   wacn.date="11/27/2015" />
 
 # 服务总线中转消息传送 REST 教程
 
@@ -221,7 +221,7 @@ private static string GetSASToken(string SASKeyName, string SASKeyValue)
 
 	```
 	// Add brokered message properties "TimeToLive" and "Label"
-	webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
+	webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
 	```
 
 	请注意，已添加并将继续添加中转消息属性。因此，发送请求必须指定支持属于请求一部分的所有中转消息属性的 API 版本。如果指定的 API 版本不支持中转消息属性，则忽略该属性。
@@ -515,7 +515,7 @@ namespace Microsoft.ServiceBus.Samples
             WebClient webClient = new WebClient();
             webClient.Headers[HttpRequestHeader.Authorization] = token;
             // Add brokered message properties “TimeToLive” and “Label”.
-            webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
+            webClient.Headers.Add("BrokerProperties", "{ \"TimeToLive\":30, \"Label\":\"M1\"}");
             // Add custom properties “Priority” and “Customer”.
             webClient.Headers.Add("Priority", "High");
             webClient.Headers.Add("Customer", "12345");
@@ -625,4 +625,4 @@ namespace Microsoft.ServiceBus.Samples
 - [Azure 服务总线基础知识](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial)
 
-<!---HONumber=74-->
+<!---HONumber=82-->

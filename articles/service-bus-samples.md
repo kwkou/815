@@ -1,5 +1,5 @@
 ﻿<properties 
-   pageTitle="服务总线示例"
+   pageTitle="服务总线示例概述 | Windows Azure"
    description="分类并介绍相互链接的服务总线示例。"
    services="service-bus"
    documentationCenter="na"
@@ -8,12 +8,12 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="09/09/2015"
-   wacn.date="10/22/2015" />
+   ms.date="10/08/2015"
+   wacn.date="11/27/2015" />
 
 # 服务总线示例
 
-服务总线示例演示了服务总线（云服务）和 Windows Server 服务总线中的主要功能。本主题分类并介绍了可用的示例，每个主题均具有链接。
+服务总线示例演示了服务总线（云服务）和 Windows Server 服务总线中的主要功能。本文分类并介绍了可用的示例，每个示例均具有链接。
 
 >[AZURE.NOTE]服务总线示例未安装 SDK。若要获取这些示例，请访问 [Azure SDK 示例页](https://code.msdn.microsoft.com/windowsazure)。
 
@@ -128,4 +128,4 @@
 - [服务总线体系结构](/documentation/articles/service-bus-architecture)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 
-<!---HONumber=74-->
+<!---HONumber=82-->
