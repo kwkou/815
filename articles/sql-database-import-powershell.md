@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="使用 PowerShell 将 BACPAC 导入 Azure SQL 数据库" 
-    description="使用 PowerShell 将 BACPAC 导入 Azure SQL 数据库" 
+    pageTitle="使用 PowerShell 导入 BACPAC 文件以创建新的 Azure SQL 数据库" 
+    description="使用 PowerShell 导入 BACPAC 文件以创建新的 Azure SQL 数据库" 
     services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
@@ -9,18 +9,19 @@
 
 <tags
     ms.service="sql-database"
-    ms.date="09/05/2015"
-    wacn.date="10/17/2015"/>
+    ms.date="10/13/2015"
+    wacn.date="11/27/2015"/>
 
-# 使用 PowerShell 将 BACPAC 导入 SQL 数据库
+# 使用 PowerShell 导入 BACPAC 文件以创建新的 Azure SQL 数据库
 
 **单一数据库**
 
 > [AZURE.SELECTOR]
+- [Azure Portal](/documentation/articles/sql-database-import)
 - [PowerShell](/documentation/articles/sql-database-import-powershell)
 
 
-本文介绍如何使用 PowerShell 通过导入 BACPAC 来创建 SQL 数据库。
+本文说明如何使用 PowerShell 通过导入 BACPAC 来创建 Azure SQL 数据库。
 
 BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息，请参阅[数据层应用程序](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx)中的备份包 (.bacpac)。
 
@@ -33,7 +34,9 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
 - 要还原的数据库的 .bacpac 文件 (BACPAC)。BACPAC 需位于 [Azure 存储帐户（经典）](/documentation/articles/storage-create-storage-account)blob 容器中。
-- Azure PowerShell。你可以通过运行 [Microsoft Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装 Azure PowerShell 模块。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
+
+
+> [AZURE.IMPORTANT]本文包含最高为 Azure PowerShell 版本 1.0 *但不包括* 1.0 及更高版本的命令。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
 
 
 
@@ -67,7 +70,7 @@ BACPAC 是包含数据库架构和数据的 .bacpac 文件。有关详细信息�
     $DatabaseName = "databasename"
 
 
-以下变量来自 BACPAC 所处的存储帐户。在 [Azure 预览门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
+以下变量来自 BACPAC 所处的存储帐户。在 [Azure 门户](https://manage.windowsazure.cn)中，浏览到你的存储帐户以获取这些值。你可以单击存储帐户边栏选项卡中的“所有设置”，然后单击“密钥”，找到主访问密钥。
 
 Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称。需要包括 .bacpac 扩展名。
 
@@ -91,7 +94,7 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 
 此命令会将导入数据库请求提交到服务。根据数据库的大小，导入操作可能需要一些时间才能完成。
 
-    $exportRequest = Start-AzureSqlDatabaseExport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
+    $importRequest = Start-AzureSqlDatabaseImport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
     
 
 ## 监视导入操作的进度
@@ -127,7 +130,7 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
     $StorageCtx = New-AzureStorageContext -StorageAccountName $StorageName -StorageAccountKey $StorageKey
     $Container = Get-AzureStorageContainer -Name $ContainerName -Context $StorageCtx
     
-    $ImportRequest = Start-AzureSqlDatabaseExport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
+    $ImportRequest = Start-AzureSqlDatabaseImport -SqlConnectionContext $SqlCtx -StorageContainer $Container -DatabaseName $DatabaseName -BlobName $BlobName
     
     Get-AzureSqlDatabaseImportExportStatus -RequestId $ImportRequest.RequestGuid -ServerName $ServerName -Username $credential.UserName
     
@@ -145,4 +148,4 @@ Blob 名称是你想要从中创建的数据库的现有 .bacpac 文件的名称
 - [灾难恢复练习](/documentation/articles/sql-database-disaster-recovery-drills)
 - [SQL 数据库文档](/documentation/services/sql-databases/)
 
-<!---HONumber=74-->
+<!---HONumber=82-->

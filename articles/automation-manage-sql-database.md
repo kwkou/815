@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.date="08/11/2015"
-	wacn.date="09/15/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>
 
 
 
@@ -37,9 +37,9 @@ Azure 自动化 还可以通过使用 PowerShell 发出 SQL 命令，来与 SQL 
 [Azure 自动化 Runbook 库](http://azure.microsoft.com/blog/2014/10/07/introducing-the-azure-automation-runbook-gallery/)包含产品团队和社区提供的各种 Runbook，以帮助你开始自动管理 Azure SQL 数据库、其他 Azure 服务和第三方系统。库中 Runbook 的功能包括：
 
  * [对 SQL Server 数据库运行 SQL 查询](https://gallery.technet.microsoft.com/scriptcenter/How-to-use-a-SQL-Command-be77f9d2)
- * [按计划纵向缩放（向上或向下）Azure SQL Database](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-e957354f)
+ * [按计划纵向缩放（向上或向下）Azure SQL 数据库](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-e957354f)
  * [当数据库接近其最大大小时截断 SQL 表](https://gallery.technet.microsoft.com/scriptcenter/Azure-Automation-Your-SQL-30f8736b)
- * [当 Azure SQL Database 中的表高度碎片化时为这些表编制索引](https://gallery.technet.microsoft.com/scriptcenter/Indexes-tables-in-an-Azure-73a2a8ea)
+ * [当 Azure SQL 数据库 中的表高度碎片化时为这些表编制索引](https://gallery.technet.microsoft.com/scriptcenter/Indexes-tables-in-an-Azure-73a2a8ea)
 
 ## 后续步骤
 
@@ -47,5 +47,6 @@ Azure 自动化 还可以通过使用 PowerShell 发出 SQL 命令，来与 SQL 
 
  * 请参阅 Azure 自动化[入门教程](/documentation/articles/automation-create-runbook-from-samples)
  * 请阅读 [Azure 自动化：云中的 SQL 代理](http://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/)博客文章
+ 
 
-<!---HONumber=69-->
+<!---HONumber=82-->
