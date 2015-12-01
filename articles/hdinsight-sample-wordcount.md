@@ -189,8 +189,8 @@ WordCount 脚本的输出应出现在命令窗口中：
   	}
   	}
 
-<a id="next-steps">
 ## 后续步骤
+<a id="next-steps"></a>
 
 * [Azure HDInsight 入门][hdinsight-get-started]
 * [为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)

@@ -41,8 +41,6 @@
 
 请遵循以下步骤在 Azure 网站中创建 Web 应用，然后启用 Git 发布。
 
-> 如果你想要在注册帐户之前开始使用 Azure 网站，请转到 <a href="https://trywebsites.chinacloudsites.cn/?language=nodejs">https://trywebsites.chinacloudsites.cn</a>，你可以通过该网站在 Azure 网站中立即免费创建一个生存期较短的 ASP.NET 入门站点。你不需要使用信用卡，也不需要做出承诺。
-
 1. 登录到 [Azure 管理门户]。
 
 2. 单击该门户左下的“+ 新建”图标。

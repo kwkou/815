@@ -16,9 +16,10 @@
 
 你无需在 Azure 自动化中创建自己的 Runbook 和模块，即可访问 Microsoft 和社区构建的各种解决方案。你可以在不加以修改的情况下直接使用这些解决方案，或者使用它们作为起点并根据具体的要求进行编辑。
 
-可以从 [Runbook 库](#runbooks-in-runbook-gallery)获取 Runbook，并从 [PowerShell 库](#modules-in-powerShell-gallery)获取模块。你还可以通过共享开发的解决方案来为社区做出贡献。
+可以从 [Runbook 库](#runbooks-in-runbook-gallery)获取 Runbook。你还可以通过共享开发的解决方案来为社区做出贡献。
 
 ## Runbook 库中的 Runbook
+<a name="runbooks-in-runbook-gallery"></a>
 
 [Runbook 库](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation)提供各种来自 Microsoft 的 Runbook，以及可导入 Azure 自动化的社区。你可以从 [TechNet 脚本中心](http://gallery.technet.microsoft.com/)托管的库下载 Runbook，或者在 Azure 管理门户中直接从该库导入 Runbook。
 

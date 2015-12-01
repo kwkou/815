@@ -259,7 +259,7 @@
 2.	单击“配置”选项卡。
 3.     转到“监视”部分以便输入你的终结点设置。
 4.	输入终结点的名称。
-5.	输入你想要监视的 Web 应用一部分的 URL。例如，[http://contoso.azurewebsites.net/archive](http://contoso.azurewebsites.net/archive)。
+5.	输入你想要监视的 Web 应用一部分的 URL。例如，http://contoso.chinacloudsites.cn/archive。
 6.	从列表中选择一个或多个地理位置。
 7.	（可选）重复之前的步骤以创建第二个终结点。
 8.	单击“保存”。Web 终结点监视数据可能需要一段时间后才在“仪表板”和“监视器”选项卡上显示。

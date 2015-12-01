@@ -261,7 +261,7 @@ HDS
 	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":1,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":2,"Value":"https:\\/\\/amsaccount1.keydelivery.mediaservices.chinacloudapi.cn\/PlayReady\/"}]"}
 
 
-若要使用 Widevine DRM 保护你的内容，请更新 AssetDeliveryConfiguration 值以使用 WidevineLicenseAcquisitionUrl（其值为 7），并指定许可证交付服务的 URL。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/)、[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
+若要使用 Widevine DRM 保护你的内容，请更新 AssetDeliveryConfiguration 值以使用 WidevineLicenseAcquisitionUrl（其值为 7），并指定许可证交付服务的 URL。你可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。
 
 例如：
  

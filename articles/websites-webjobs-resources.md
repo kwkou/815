@@ -28,10 +28,10 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 
 * [Azure Web 作业简介](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx)
 * [Azure Web 作业功能很强大，快来试试吧！](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) （Troy Hunt 的博客文章。）
-* [Azure Web 作业功能](/blog/2014/10/22/webjobs-goes-into-full-production/)
+* [Azure Web 作业功能](https://azure.microsoft.com/zh-cn/blog/webjobs-goes-into-full-production/)
 * [什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
 * [模式与实践中的后台作业指南](https://github.com/mspnp/azure-guidance/blob/master/Background-Jobs.md)
-* [宣布推出 Windows Azure WebJobs SDK 1.0.0 RTM](/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk/)
+* [宣布推出 Windows Azure WebJobs SDK 1.0.0 RTM](https://azure.microsoft.com/zh-cn/blog/2014/10/25/announcing-the-1-0-0-rtm-of-microsoft-azure-webjobs-sdk/)
 * [Azure WebJobs SDK 入门](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)

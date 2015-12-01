@@ -147,7 +147,7 @@
 
 	+ **使用 PlayReady 内容保护进行编码**。此预设格式会生成以 PlayReady 内容保护编码的资产。  
 
-		默认情况下，将使用媒体服务 PlayReady 许可证服务。若要指定其他可让客户端从中获取许可证以播放 PlayReady 加密内容的服务，请使用 REST 或媒体服务.NET SDK API。有关详细信息，请参阅[使用静态加密保护内容]()，并设置“媒体加密器”预设中的 **licenseAcquisitionUrl** 属性。或者，你可以使用动态加密，并根据[使用 PlayReady 动态加密和许可证传送服务](https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx)来设置 **PlayReadyLicenseAcquisitionUrl** 属性。
+		默认情况下，将使用媒体服务 PlayReady 许可证服务。若要指定其他可让客户端从中获取许可证以播放 PlayReady 加密内容的服务，请使用 REST 或媒体服务.NET SDK API。有关详细信息，请参阅[使用静态加密保护内容]()，并设置“媒体加密器”预设中的 **licenseAcquisitionUrl** 属性。或者，你可以使用动态加密，并根据[使用 PlayReady 动态加密和许可证传送服务](/documentation/articles/media-services-protect-with-drm)来设置 **PlayReadyLicenseAcquisitionUrl** 属性。
 	+ **在 PC/Mac 上（通过 Flash/Silverlight）播放**。此预设将生成带有以下特征的平滑流式处理资产：使用 AAC 按照 96 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 6 种比特率（3400 kbps 到 400 kbps）进行 CBR 编码的 720p 视频，以及两个辅助 GOP。
 	+ **通过 HTML5 (IE/Chrome/Safari) 播放**。此预设将生成具有以下特征的单个 MP4 文件：使用 AAC 按照 128 kbps 速率进行 CBR 编码的 44.1 kHz（16 位/采样）立体声音频，使用 H.264 Main Profile 按照 4500 kbps 速率进行 CBR 编码的 720p 视频。
 	+ **在 iOS 设备和 PC/Mac 上播放**。此预置生成与平滑流式资产（如前所述）具有相同特性的资产，但是采用可以将 Apple HLS 流传递到 iOS 设备的格式。
