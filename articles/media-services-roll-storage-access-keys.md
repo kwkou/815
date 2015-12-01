@@ -3,14 +3,14 @@
 	description="此文将提供有关在轮转存储访问密钥后如何更新媒体服务的指导。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="Juliako,milangada,cenkdin" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
 #如何：轮转存储访问密钥后更新媒体服务
 
@@ -35,11 +35,11 @@
 
 将媒体服务更新为使用辅助存储访问密钥。可以使用以下两种方法之一，将重新生成的存储密钥同步到媒体服务。
 
-- 使用 Azure 门户：选择你的 Media Service 帐户，然后单击门户窗口底部的“管理密钥”图标。根据要与媒体服务同步的存储密钥，选择同步主密钥按钮或同步辅助密钥按钮。在本例中，我们将使用辅助密钥。
+- 使用 Azure 管理门户：选择你的 Media Service 帐户，然后单击门户窗口底部的“管理密钥”图标。根据要与媒体服务同步的存储密钥，选择同步主密钥按钮或同步辅助密钥按钮。在本例中，我们将使用辅助密钥。
 
 - 使用媒体服务管理 REST API。
 
-	以下代码示例演示了如何构造 https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key 请求，以便将指定的存储密钥与媒体服务同步。在本例中，我们将使用辅助存储密钥值。有关详细信息，请参阅[如何：使用媒体服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx)。
+	以下代码示例演示了如何构造 https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key 请求，以便将指定的存储密钥与媒体服务同步。在本例中，我们将使用辅助存储密钥值。有关详细信息，请参阅[如何：使用媒体服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx)。
  
 		public void UpdateMediaServicesWithStorageAccountKey(string mediaServicesAccount, string storageAccountName, string storageAccountKey)
 		{
@@ -81,9 +81,48 @@
 
 ##步骤 3：更新定位符 
 
-在 30 分钟后，你可以更新现有的定位符，使其依赖于新的辅助存储密钥。
+在 30 分钟后，你可以重新创建 OnDemand 定位符，使其依赖于新的辅助存储密钥并保留现有的 URL。
 
-若要更新定位符的过期日期，请使用 [REST](https://msdn.microsoft.com/zh-CN/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+请注意，当你更新（或重新创建）SAS 定位符时，URL 始终会变化。
+
+>[AZURE.NOTE]若要确保保留 OnDemand 定位器的现有 URL，你需要删除现有定位符并新建一个具相同 ID 的定位符。
+ 
+以下 .NET 示例演示如何重新创建具相同 ID 的定位符。
+	
+	private static ILocator RecreateLocator(CloudMediaContext context, ILocator locator)
+	{
+	    // Save properties of existing locator.
+	    var asset = locator.Asset;
+	    var accessPolicy = locator.AccessPolicy;
+	    var locatorId = locator.Id;
+	    var startDate = locator.StartTime;
+	    var locatorType = locator.Type;
+	    var locatorName = locator.Name;
+	
+	    // Delete old locator.
+	    locator.Delete();
+	
+	    if (locator.ExpirationDateTime <= DateTime.UtcNow)
+	    {
+	        throw new Exception(String.Format(
+	            "Cannot recreate locator Id={0} because its locator expiration time is in the past",
+	            locator.Id));
+	    }
+	
+	    // Create new locator using saved properties.
+	    var newLocator = context.Locators.CreateLocator(
+	        locatorId,
+	        locatorType,
+	        asset,
+	        accessPolicy,
+	        startDate,
+	        locatorName);
+	
+	
+	
+	    return newLocator;
+	}
+
 
 ##步骤 5：重新生成主存储访问密钥
 
@@ -91,16 +130,20 @@
 
 ##步骤 6：将媒体服务更新为使用新的主存储密钥
 	
-按照[步骤 2](#step2) 中所述的相同过程操作，不过此次将新的主存储访问密钥与媒体服务帐户同步。
+按照[步骤 2](/documentation/articles/media-services-roll-storage-access-keys#step2) 中所述的相同过程操作，不过此次将新的主存储访问密钥与媒体服务帐户同步。
 
 >[AZURE.NOTE]在对媒体服务执行任何操作（例如，创建新定位符）之前等待 30 分钟，以防止对挂起的作业产生任何影响。
 
 ##步骤 7：更新定位符  
 
-在 30 分钟后，你可以更新现有的定位符，使其依赖于新的主存储密钥。
+在 30 分钟后，你可以重新创建 OnDemand 定位符，使其依赖于新的主存储密钥并保留现有的 URL。
 
-若要更新定位符的过期日期，请使用 [REST](https://msdn.microsoft.com/zh-CN/library/azure/hh974308.aspx#update_a_locator) 或 <a href="https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx">.NET</a> API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+使用[步骤 3](/documentation/articles/media-services-roll-storage-access-keys#step-3-update-locators) 中所述的相同过程。
 
- 
 
-<!---HONumber=76-->
+
+###致谢 
+
+我们诚挚地向以下人员表达谢意，是他们协助完成了本文档的写作工作：Cenk Dingiloglu、Milan Gada 和 Seva Titov。
+
+<!---HONumber=82-->

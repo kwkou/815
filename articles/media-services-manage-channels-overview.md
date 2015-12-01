@@ -3,14 +3,14 @@
 	description="本主题介绍如何设置接收来自本地编码器的多比特的实时流的频道。然后，该流可以使用以下自适应流式处理协议之一通过一个或多个流式处理终结点传递给客户端播放应用程序：HLS、平滑流、MPEG DASH、HDS。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="cenkdin,Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
 #使用从本地编码器接收多比特率实时流的频道
 
@@ -22,7 +22,6 @@
 
 
 下图表示的是一个使用本地实时编码器输出多比特率 RTMP 或分片 MP4 流（平滑流式处理）的实时流式处理工作流。
-
 
 ![实时工作流][live-overview]
 
@@ -36,7 +35,7 @@
 ##<a id="scenario"></a>常见实时流式处理方案
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。
 
-1. 将视频摄像机连接到计算机。启动并配置输出多比特率 RTMP 或分段 MP4（平滑流式处理）流的本地实时编码器接收实时输入流。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+1. 将视频摄像机连接到计算机。启动并配置输出多比特率 RTMP 或分段 MP4（平滑流式处理）流的本地实时编码器接收实时输入流。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -59,7 +58,7 @@
 1. 在准备好开始流式传输和存档时，启动节目。
 2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
 1. 在要停止对事件进行流式传输和存档时，停止节目。
-1. 删除节目（并选择性地删除资产）。 
+1. 删除节目（并选择性地删除资产）。     
 
 [实时流式处理任务](/documentation/articles/media-services-manage-channels-overview#tasks)部分将链接到演示如何完成上述任务的主题。
 
@@ -96,7 +95,7 @@
 	
 		在此方案中这两个编码器将数据推送到主和辅助的 Url。这提供了最佳的可靠性、容错能力以及数据冗余。它可以容忍两个编码器均失败，并且即使一个编码器停止工作时亦会断开连接。此方案假定编码器为时间同步，并提供完全相同的数据。
 
-有关 RTMP 实时编码器详细信息，请参阅 [Azure 媒体服务的 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+有关 RTMP 实时编码器详细信息，请参阅 [Azure 媒体服务的 RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 
 请注意以下事项：
 
@@ -122,12 +121,12 @@
 
 下表显示了段持续时间是如何计算的：
 
-<table border="1">
-<tr><th>关键帧间隔</th><th>HLS 段打包比率 (FragmentsPerSegment)</th><th>示例</th></tr>
-<tr><td>小于或等于 3 秒</td><td>3:1</td><td>如果 KeyFrameInterval（或 GOP）为 2 秒长，则默认的 HLS 段打包比率将是 3:1，这将创建一个 6 秒的 HLS 段。</td></tr>
-<tr><td>3 到 5 秒</td><td>2:1</td><td>如果 KeyFrameInterval（或 GOP）为 4 秒长，则默认的 HLS 段打包比率将是 2:1，这将创建一个 8 秒的 HLS 段。</td></tr>
-<tr><td>大于 5 秒</td><td>1:1</td><td>如果 KeyFrameInterval（或 GOP）为 6 秒长，则默认的 HLS 段打包比率将是 1:1，这将创建一个 6 秒长的 HLS 段。</td></tr>
-</table>
+关键帧间隔|HLS 段打包比率 (FragmentsPerSegment)|示例
+---|---|---
+小于或等于 3 秒|3:1|如果 KeyFrameInterval（或 GOP）为 2 秒长，则默认的 HLS 段打包比率将是 3:1，这将创建一个 6 秒的 HLS 段。
+3 到 5 秒|2:1|如果 KeyFrameInterval（或 GOP）为 4 秒长，则默认的 HLS 段打包比率将是 2:1，这将创建一个 8 秒的 HLS 段。
+大于 5 秒|1:1|如果 KeyFrameInterval（或 GOP）为 6 秒长，则默认的 HLS 段打包比率将是 1:1，这将创建一个 6 秒长的 HLS 段。
+
 
 你可以通过配置频道的输出并设置 ChannelOutputHls 上的 FragmentsPerSegment 来更改每段的片数这一比率。
 
@@ -198,24 +197,23 @@
 
 下表显示频道状态如何映射到计费模式。
  
-<table border="1">
-<tr><th>频道状态</th><th>门户 UI 指示器</th><th>是否计费？</th></tr>
-<tr><td>正在启动</td><td>正在启动</td><td>否（暂时状态）</td></tr>
-<tr><td>正在运行</td><td>准备就绪（没有正在运行的节目）<br/>或<br/>流式处理（至少有一个正在运行的节目）</td><td>是</td></tr>
-<tr><td>正在停止</td><td>正在停止</td><td>否（暂时状态）</td></tr>
-<tr><td>已停止</td><td>已停止</td><td>否</td></tr>
-</table>
+频道状态|门户 UI 指示器|是否计费？
+---|---|---|---
+正在启动|正在启动|否（暂时状态）
+正在运行|准备就绪（没有正在运行的节目）<p>或<p>流式处理（至少有一个正在运行的节目）|是
+正在停止|正在停止|否（暂时状态）
+已停止|已停止|否
 
 ###隐藏字幕和广告插入 
 
 下表展示了支持的隐藏字幕和广告插入标准。
 
-<table border="1">
-<tr><th>标准</th><th>说明</th></tr>
-<tr><td>CEA-708 和 EIA-608 (708/608)</td><td>CEA-708 和 EIA-608 是适用于美国和加拿大的隐藏字幕标准。<br/>当前，只有当编码的输入流中携带了该字幕时才支持该字幕。你需要使用能够向发送到媒体服务的编码流插入 608 或 708 字幕的实时媒体编码器。媒体服务会将带有插入的字幕的内容传送到你的显示器。</td></tr>
-<tr><td>ismt 内的 TTML（Smooth Streaming 文本轨道）</td><td>媒体服务动态打包功能允许你的客户端对下列任何格式的内容进行流式传输：MPEG DASH、HLS 或平滑流式处理。不过，如果你摄取了 .ismt 内带有字幕（Smooth Streaming 文本轨道）的分片 MP4 (Smooth Streaming)，则只能将该流传送到 Smooth Streaming 客户端。</td></tr>
-<tr><td>SCTE-35</td><td>用来提示广告插入的数字信号系统。下游接收器使用该信号来将广告接合到流中并使其占用规定的时间。SCTE-35 在输入流中必须作为稀疏轨道进行发送。<br/>请注意，当前唯一受支持的可以携带广告信号的输入流格式是分片 MP4 (Smooth Streaming)。唯一受支持的输出格式也是 Smooth Streaming.</td></tr>
-</table>
+标准|说明
+---|---
+CEA-708 和 EIA-608 (708/608)|CEA-708 和 EIA-608 是美国和加拿大实施的隐藏字幕标准。<p><p>当前，只有当编码的输入流中携带了该字幕时才支持该字幕。你需要使用能够向发送到媒体服务的编码流插入 608 或 708 字幕的实时媒体编码器。媒体服务会将带有插入的字幕的内容传送到你的显示器。
+ismt 内的 TTML（Smooth Streaming 文本轨道）|媒体服务动态打包功能允许你的客户端对下列任何格式的内容进行流式传输：MPEG DASH、HLS 或平滑流式处理。不过，如果你摄取了 .ismt 内带有字幕（Smooth Streaming 文本轨道）的分片 MP4 (Smooth Streaming)，则只能将该流传送到 Smooth Streaming 客户端。
+SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该信号来将广告接合到流中并使其占用规定的时间。SCTE-35 必须在输入流中作为稀疏轨道发送。<p><p>请注意，当前唯一受支持的可以携带广告信号的输入流格式是分片 MP4 (Smooth Streaming)。唯一受支持的输出格式也是 Smooth Streaming.
+
 
 ##<a id="Considerations"></a>注意事项
 
@@ -245,6 +243,7 @@
 [AZURE.INCLUDE [media-services-selector-manage-channels](../includes/media-services-selector-manage-channels.md)]
 
 
+
 ##相关主题
 
 [Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview)
@@ -256,4 +255,4 @@
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=76-->
+<!---HONumber=82-->

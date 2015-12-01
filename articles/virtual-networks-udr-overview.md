@@ -6,10 +6,10 @@
    authors="telmosampaio"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.date="09/04/2015"
-   wacn.date="11/02/2015" />
+<tags
+	ms.service="virtual-network"
+	ms.date="10/12/2015"
+	wacn.date="11/27/2015"/>
 
 # 用户定义的路由和 IP 转发
 将虚拟机 (VM) 添加到 Azure 中的虚拟网络 (VNet) 时，你会注意到，VM 可以与其他 VM 通过网络自动通信。你不需要指定网关，即使这些 VM 位于不同子网中。存在从 Azure 到你自己的数据中心的混合连接时，这同样适用于从 VM 到公共 Internet 甚至到本地网络的通信。
@@ -28,9 +28,11 @@
 
 尽管使用系统路由可以自动加快通信以方便部署，但在某些情况下，你需要通过虚拟设备来控制数据包的路由。为此，你可以创建用户定义的路由来指定下一跃点，方便数据包流向特定的子网并转到你的虚拟设备，并可为作为虚拟设备运行的 VM 启用 IP 转发。
 
-下图显示了一个用户定义的路由和 IP 转发的示例，该示例说明了如何强制将数据包从前端子网发送到 Internet，然后经过一个虚拟设备，所有数据包都会从前端子网发送到后端子网，通过不同的设备。请注意，从后端子网到前端子网的流量仍经过系统路由，绕过设备。
+下图显示用户定义的路由，以及用于强制将数据包发送到一个子网从另一个用于遍历虚拟设备上的第三个的子网 IP 转发的示例。
 
 ![Azure 中的系统路由](./media/virtual-networks-udr-overview/Figure2.png)
+
+>[AZURE.IMPORTANT]用户定义的路由将仅应用于保留一个子网的流量。例如，无法创建路由以指定如何流量来自子网到 Internet。此外，你都将通信转发到该设备不能为流量出自的同一子网。始终为你的设备单独创建子网。
 
 ## 路由
 数据包将根据在物理网络的每个节点上定义的路由表经 TCP/IP 网络进行路由。路由表是各个路由的集合，用于确定如何根据目标 IP 地址来转发数据包。路由由以下项组成：
@@ -79,11 +81,9 @@
 
 此虚拟设备 VM 必须能够接收不发送给自身的传入流量。若要允许 VM 接收发送到其他目标的流量，必须为该 VM 启用 IP 转发。这是 Azure 设置，不是来宾操作系统中的设置。
 
-若要了解如何在 Azure 中为 VM 启用 IP 转发，请参阅[如何在 Azure 中创建路由和启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding)。
-
 ## 后续步骤
 
-- 了解如何[创建路由](/documentation/articles/virtual-networks-udr-how-to#How-to-manage-routes)并将路由关联到子网。
-- 了解如何为运行虚拟设备的 VM [启用 IP 转发](/documentation/articles/virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding)。 
+- 了解如何[在资源管理器部署模型中创建路由](/documentation/articles/virtual-network-create-udr-arm-template)并将路由关联到子网。 
+- 了解如何[在经典部署模型中创建路由](/documentation/articles/virtual-network-create-udr-classic-ps)并将路由关联到子网。
 
-<!---HONumber=76-->
+<!---HONumber=82-->

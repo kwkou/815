@@ -1,5 +1,5 @@
 <properties
- pageTitle="将数据从 Apache Storm 写入 Power BI | Azure"
+ pageTitle="将数据从 Apache Storm 写入 Power BI | Windows Azure"
  description="将数据从 HDInsight 中 Apache Storm 群集上运行的 C# 拓扑写入 Power BI。此外，使用 Power BI 创建报表和实时仪表板。"
  services="hdinsight"
  documentationCenter=""
@@ -9,9 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
- ms.service="hdinsight"
- ms.date="07/17/2015"
- wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/27/2015"/>
 
 # 使用 Power BI（预览版）从 Apache Storm 拓扑可视化数据
 
@@ -21,15 +21,15 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 先决条件
 
-- Azure 订阅。
+- Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
 * 具有 [Power BI](https://powerbi.com) 访问权限的 Azure Active Directory 用户
 
 * Visual Studio（以下版本之一）
 
-    * Visual Studio 2012 [Update 4](https://www.microsoft.com/zh-CN/download/details.aspx?id=39305)
+    * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
 
-    * Visual Studio 2013 [Update 4](https://www.microsoft.com/zh-CN/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
+    * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
 
     * Visual Studio 2015 [CTP6](http://visualstudio.com/downloads/visual-studio-2015-ctp-vs)
 
@@ -51,9 +51,9 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 ## 注册 Power BI 应用程序
 
-1. 遵循 [Power BI 快速入门](https://msdn.microsoft.com/zh-CN/library/dn931989.aspx)中的步骤注册 Power BI。
+1. 遵循 [Power BI 快速入门](https://msdn.microsoft.com/zh-cn/library/dn931989.aspx)中的步骤注册 Power BI。
 
-2. 遵循[注册应用](https://msdn.microsoft.com/zh-CN/library/dn877542.aspx)中的步骤创建应用程序注册。在访问 Power BI REST API 时将要用到此注册信息。
+2. 遵循[注册应用](https://msdn.microsoft.com/zh-cn/library/dn877542.aspx)中的步骤创建应用程序注册。在访问 Power BI REST API 时将要用到此注册信息。
 
     > [AZURE.IMPORTANT]保存应用程序注册的“客户端 ID”。
 
@@ -85,7 +85,7 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 2. 成功提交拓扑之后，应该会出现群集的“Storm 拓扑”。从列表中选择“WordCount”拓扑，以查看有关正在运行的拓扑的信息。
 
-    ![拓扑，已选择 WordCount 拓扑](./media/hdinsight-storm-powerbi-topology/topologysummary.png)
+    ![拓扑，已选择 WordCount 拓扑](./media/hdinsight-storm-power-bi-topology/topologysummary.png)
 
     > [AZURE.NOTE]你也可以展开“Azure”>“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，来从“服务器资源管理器”查看“Storm 拓扑”。
 
@@ -97,11 +97,11 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 2. 在页面左侧展开“数据集”。选择 **Words** 条目。这是示例拓扑创建的数据集。
 
-    ![Words 数据集条目](./media/hdinsight-storm-powerbi-topology/words.png)
+    ![Words 数据集条目](./media/hdinsight-storm-power-bi-topology/words.png)
 
 3. 在 **Fields** 区域中，展开 **WordCount**。将 **Count** 和 **Word** 条目拖放到页面的中间部分。这将会创建一个新的图表，其中为每个单词显示一栏，指示该单词的出现次数。
 
-    ![WordCount 图表](./media/hdinsight-storm-powerbi-topology/wordcountchart.png)
+    ![WordCount 图表](./media/hdinsight-storm-power-bi-topology/wordcountchart.png)
 
 4. 在页面的左上角，选择“保存”以创建新的报告。输入 **Word Count** 作为报告名称。
 
@@ -113,11 +113,11 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 2. 选择前面创建的 **Word Count** 报告。在显示图表时，请选择该图表，然后选择图表右上角的图钉图标。此时，你应该会收到一条通知，指出该图表已固定到仪表板。
 
-    ![显示图钉的图表](./media/hdinsight-storm-powerbi-topology/pushpin.png)
+    ![显示图钉的图表](./media/hdinsight-storm-power-bi-topology/pushpin.png)
 
 2. 选择 Power BI 徽标返回到仪表板。选择 **Live Word Count** 仪表板。现在，它应该已包含 Word Count 图表，并且在将新条目从 HDInsight 上运行的 WordCount 拓扑发送到 Power BI 时，仪表板会更新。
 
-    ![实时仪表板](./media/hdinsight-storm-powerbi-topology/dashboard.png)
+    ![实时仪表板](./media/hdinsight-storm-power-bi-topology/dashboard.png)
 
 ## 停止 WordCount 拓扑
 
@@ -127,12 +127,12 @@ Power BI 预览版允许你以可视方式将数据显示为报告或仪表板�
 
 2. 选择“终止”按钮以停止 **WordCount** 拓扑。
 
-    ![拓扑摘要中的终止按钮](./media/hdinsight-storm-powerbi-topology/killtopology.png)
+    ![拓扑摘要中的终止按钮](./media/hdinsight-storm-power-bi-topology/killtopology.png)
 
 ## 后续步骤
 
 在本文档中，你已学习如何使用 REST 将数据从 Storm 拓扑发送到 Power BI。有关如何使用其他 Azure 技术的信息，请参阅以下文章：
 
-* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
+* [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology)
 
-<!---HONumber=71-->
+<!---HONumber=82-->

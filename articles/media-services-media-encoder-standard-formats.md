@@ -3,14 +3,14 @@
 	description="本主题概述 Azure 媒体编码器标准格式和编解码器。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
 #媒体编码器标准格式和编解码器
 
@@ -96,11 +96,11 @@ Dolby® Digital Plus (E-AC3) |否
 下表列出了导出操作支持的编解码器和文件格式。
 
 
-<table border="1">
-<tr><th>文件格式</th><th>视频编解码器</th><th>音频编解码器</th></tr>
-<tr><td>MP4 (*.mp4)<br/><br/>（包括多码率 MP4 容器） </td><td>H.264（High、Main 和 Baseline Profile）</td><td>AAC-LC、HE-AAC v1、HE-AAC v2 </td></tr>
-<tr><td>MPEG2-TS </td><td>H.264（High、Main 和 Baseline Profile）</td><td>AAC-LC、HE-AAC v1、HE-AAC v2 </td></tr>
-</table>
+文件格式|视频编解码器|音频编解码器
+---|---|---
+MP4<br/><br/>（包括多码率 MP4 容器） |H.264（High、Main 和 Baseline Profile）|AAC-LC、HE-AAC v1、HE-AAC v2 
+MPEG2-TS |H.264（High、Main 和 Baseline Profile）|AAC-LC、HE-AAC v1、HE-AAC v2 
+
 
 ##另请参阅
 
@@ -108,4 +108,4 @@ Dolby® Digital Plus (E-AC3) |否
 
 [如何使用媒体编码器标准版进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)
 
-<!---HONumber=76-->
+<!---HONumber=82-->

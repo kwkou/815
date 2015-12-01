@@ -5,14 +5,15 @@
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/24/2015" 
-	wacn.date="08/29/2015"/>
+	ms.date="09/23/2015"
+	wacn.date="11/27/2015"/>
 
-# 使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
+#使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
 
 了解如何通过将 Hive 查询控制台与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后通过使用 Power View 在 Microsoft Excel 中可视化数据。
 
@@ -27,17 +28,17 @@
 
 ![解决方案体系结构关系图](./media/hdinsight-hive-analyze-sensor-data/hvac-architecture.png)
 
-## 先决条件
+##先决条件
 
 * HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)。
 
 * Microsoft Excel 2013
 
-	> [AZURE.NOTE]Microsoft Excel 用于通过 [Power View](https://support.office.com/zh-cn/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=en-US&rs=en-US&ad=US) 实现数据可视化。
+	> [AZURE.NOTE]Microsoft Excel 用于通过 [Power View](https://support.office.com/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=zh-CN&rs=zh-CN&ad=US) 实现数据可视化。
 
-* [Microsoft Hive ODBC 驱动程序](https://www.microsoft.com/download/details.aspx?id=40886)
+* [Microsoft Hive ODBC 驱动程序](http://www.microsoft.com/download/details.aspx?id=40886)
 
-## 运行示例
+##运行示例
 
 1. 通过 Web 浏览器导航到以下 URL。将 `<clustername>` 替换为 HDInsight 群集的名称。
 
@@ -49,4 +50,4 @@
 
 3. 按照网页上提供的说明完成该示例。
 
-<!---HONumber=67-->
+<!---HONumber=82-->

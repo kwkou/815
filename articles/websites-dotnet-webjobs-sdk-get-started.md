@@ -1,30 +1,24 @@
-<properties 
-	pageTitle="在 Azure 网站中创建 .NET Web 作业" 
-	description="了解如何使用 ASP.NET MVC 和 Azure 创建多层应用程序。前端在 Azure 网站的 Web 应用中运行，后端以 Web 作业的形式运行。应用程序使用实体框架、SQL 数据库和 Azure 存储队列和 Blob。" 
-	services="app-service\web" 
-	documentationCenter=".net" 
-	authors="tdykstra" 
-	manager="wpickett" 
+<properties
+	pageTitle="在 Azure 网站中创建 .NET Web 作业 | Windows Azure"
+	description="使用 ASP.NET MVC 和 Azure 创建多层应用。前端在 Azure 网站上的 Web 应用中运行，后端以 Web 作业的形式运行。应用程序使用实体框架、SQL 数据库和 Azure 存储队列和 Blob。"
+	services="app-service"
+	documentationCenter=".net"
+	authors="tdykstra"
+	manager="wpickett"
 	editor="mollybos"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="06/29/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="app-service"
+	ms.date="10/09/2015"
+	wacn.date="11/27/2015"/>
 
 # 在 Azure 网站中创建 .NET Web 作业
 
+本教程说明如何为简单的多层次 ASP.NET MVC 5 应用程序编写代码，以使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk) 来处理 [Azure 队列](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)和 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage)。本教程还会说明如何将应用程序部署到 [Azure 网站](/documentation/services/web-sites/)和 [Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/ee336279)。
 
-
-本教程说明如何创建一个在 [Azure 网站](/documentation/services/web-sites/)中使用 WebJobs SDK 处理 [Azure 队列](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern)和 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) 的多层 ASP.NET MVC 应用程序。该应用程序还使用 [Azure SQL 数据库](http://msdn.microsoft.com/zh-cn/library/azure/ee336279)。
-
-示例应用程序是一个广告公告板。用户通过输入文本和上载图像创建一个广告。它们可以通过缩略图查看一个广告列表，当用户选择广告以查看详细信息时，它们可以查看完整尺寸的图像。下面是屏幕快照：
+示例应用程序是一个广告公告板。用户可以上载广告的图像，后端进程会将图像转换成缩略图。广告列表页将显示缩略图，而广告详细信息页则显示完整大小的图像。下面是屏幕快照：
 
 ![广告列表](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
-
-你可以从 MSDN 代码库[下载 Visual Studio 项目][下载]。 
-
-[下载]: http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb
 
 ## 目录
 
@@ -39,17 +33,13 @@
 
 ## <a id="prerequisites"></a>先决条件
 
-本教程假设你知道如何处理 Visual Studio 中的 [ASP.NET MVC](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) 或 [Web 窗体](http://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview)项目。示例应用程序使用 MVC，但在本教程的大部分也适用于 Web 窗体。
+本教程假设你知道如何处理 Visual Studio 中的 [ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) 项目。
 
-教程说明使用以下产品：
+本教程是针对 Visual Studio 2013 编写的。如果你尚未安装 Visual Studio，当你安装 Azure SDK for .NET 时会自动安装 Visual Studio。
 
-* Visual Studio 2013
-* Visual Studio 2013 Community
-* Visual Studio 2013 Express for Web
+本教程可以配合 Visual Studio 2015 使用，但在本地运行应用程序之前，必须将 Web.config 和 App.config 文件中 SQL Server LocalDB 连接字符串的 `Data Source` 部分从 `Data Source=(localdb)\v11.0` 更改为 `Data Source=(LocalDb)\MSSQLLocalDB`。
 
-上述产品中，只要缺少其中任意一个，安装 Azure SDK 时就将自动安装 Visual Studio 2013 Express for Web。
-
-[WACOM.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## <a id="learn"></a>学习内容
 
@@ -58,7 +48,7 @@
 * 通过安装 Azure SDK 来使计算机进行 Azure 开发。
 * 创建一个控制台应用程序项目，当你部署关联的 Web 项目时，该应用程序项目将自动部署为 Azure Web 作业。
 * 在开发计算机上本地测试 WebJobs SDK 后端。
-* 将包含 Web 作业后端的应用程序发布到 Azure 网站。
+* 将包含 Web 作业后端的应用程序发布到 Azure 网站中的 Web 应用。
 * 上载文件并将其存储在 Azure Blob 服务中。
 * 使用 Azure WebJobs SDK 来处理 Azure 存储队列和 Blob。
 
@@ -70,24 +60,13 @@
 
 ![广告表](./media/websites-dotnet-webjobs-sdk-get-started/adtable.png)
 
-当用户上载一个图像时，Web 应用前端将在 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) 中存储图像，并将广告信息存储在带有指向 Blob 的 URL 的数据库中。同时，它将一条消息写入 Azure 队列。作为 Azure Web 作业运行的后端进程使用 WebJobs SDK 来轮询新消息的队列。显示新消息时，Web 作业将创建该图像的缩略图，并为该广告更新缩略图 URL 数据库字段。下图介绍应用程序各部分之间如何交互：
+当用户上载一个图像时，Web 应用将在 [Azure Blob](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) 中存储图像，并将广告信息存储在带有指向 Blob 的 URL 的数据库中。同时，它将一条消息写入 Azure 队列。在作为 Azure Web 作业运行的后端进程中，WebJobs SDK 将轮询新消息的队列。显示新消息时，Web 作业将创建该图像的缩略图，并为该广告更新缩略图 URL 数据库字段。下图介绍应用程序各部分之间如何交互：
 
 ![Contoso 广告体系结构](./media/websites-dotnet-webjobs-sdk-get-started/apparchitecture.png)
 
-### 替代体系结构
+[AZURE.INCLUDE [install-sdk](../includes/install-sdk-2015-2013.md)]
 
-Web 作业在 Web 应用的上下文中运行，并且不可单独缩放。例如，如果你有一个标准 Web 应用实例，只运行了后台进程的一个实例，并且该实例正在使用某些服务器资源（CPU、内存等），而这些资源也可用于提供 Web 内容。
-
-如果流量根据一天的时间或者星期变化，并且你需要执行的后端处理可以等待，则你可以将 Web 作业安排为在低流量期间运行。如果负载对于该解决方案仍然太高，则你可以考虑为后端程序使用替代环境，例如：
-
-* 在专用于此目的的独立 Web 应用中以 Web 作业的形式运行该程序。然后，可以独立于前端 Web 应用缩放你的后端 Web 应用。
-* 在 Azure 云服务辅助角色中运行该程序。如果选择此选项，则可以在云服务 Web 角色或 Web 应用中运行前端。
-
-本教程说明如何在一个网站中运行前端，并在同一个网站中以 Web 作业形式运行后端。有关如何选择最适合你方案的环境的信息，请参阅 [Azure 网站、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)。
-
-[WACOM.INCLUDE [install-sdk-2013-only](../includes/install-sdk-2013-only.md)]
-
-本教程中的说明不适用于 Azure SDK for .NET 2.5.1 或更高版本。在创建 Web 作业项目的“从头开始创建”部分，WebJobs SDK 包已自动包含在项目中；对于早期版本的 SDK，你必须手动安装这些包。
+本教程中的说明不适用于 Azure SDK for .NET 2.7.1 或更高版本。
 
 ## <a id="storage"></a>创建 Azure 存储帐户
 
@@ -98,16 +77,14 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 1. 在 Visual Studio 中打开“服务器资源管理器”窗口。
 
 2. 右键单击“Azure”节点，然后单击“连接到 Windows Azure”。
-
 ![连接到 Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. 使用你的 Azure 凭据登录。
 
 5. 在 Azure 节点下右键单击“存储”，然后单击“创建存储帐户”。
-
 ![创建存储帐户](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
 
-3. 在“创建存储帐户”对话框中，输入存储帐户的名称。 
+3. 在“创建存储帐户”对话框中，输入存储帐户的名称。
 
 	该名称必须是唯一的（其他 Azure 存储帐户都不可以使用该名称）。如果输入的名称已被使用，你可以进行更改。
 
@@ -126,27 +103,27 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 	![新的存储帐户](./media/websites-dotnet-webjobs-sdk-get-started/newstorage.png)
 
 ## <a id="download"></a>下载应用程序
- 
-1. 下载并解压缩[已完成的解决方案][下载]。
+
+1. 下载并解压缩[已完成的解决方案](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb)。
 
 2. 启动 Visual Studio。
 
 3. 从“文件”菜单中，选择“打开”>“项目/解决方案”，导航到下载解决方案的位置，然后打开解决方案文件。
 
-3. 按 CTRL+SHIFT+B 生成解决方案。
+4. 按 CTRL+SHIFT+B 生成解决方案。
 
 	默认情况下，Visual Studio 会自动还原 NuGet 包的内容，它未包括在 *.zip* 文件中。如果包未还原，请通过转到“管理解决方案的 NuGet 包”对话框并单击右上角的“还原”按钮手动安装。
 
-3. 在“解决方案资源管理器”中，请确保选择“ContosoAdsWeb”作为启动项目。
+5. 在“解决方案资源管理器”中，请确保选择“ContosoAdsWeb”作为启动项目。
 
 ## <a id="configurestorage"></a>将应用程序配置为使用你的存储帐户
 
-2. 打开 ContosoAdsWeb 项目中的应用程序 *Web.config* 文件。
- 
+1. 打开 ContosoAdsWeb 项目中的应用程序 *Web.config* 文件。
+
 	该文件包含一个用于处理 Blob 和队列的 SQL 连接字符串和 Azure 存储连接字符串。
 
 	SQL 连接字符串指向 [SQL Server Express LocalDB](http://msdn.microsoft.com/zh-cn/library/hh510202.aspx) 数据库。
- 
+
 	存储连接字符串是一个示例，其中包含存储帐户名称和访问密钥的占位符。你需要将此字符串替换为包含你的存储帐户的名称和密钥的连接字符串。
 
 	<pre class="prettyprint">&lt;connectionStrings&gt;
@@ -155,22 +132,22 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 	&lt;/connectionStrings&gt;</pre>
 
 	存储连接字符串命名为 AzureWebJobsStorage，因为这是 WebJobs SDK 默认情况下使用的名称。此处之所以使用相同的名称，是因为你只需在 Azure 环境中设置一个连接字符串值。
- 
+
 2. 在“服务器资源管理器”中，右键单击存储帐户下的“存储”节点，然后单击“属性”。
 
 	![单击存储帐户属性](./media/websites-dotnet-webjobs-sdk-get-started/storppty.png)
 
-4. 在“属性”窗口中，单击“存储帐户密钥”，然后单击省略号。
+3. 在“属性”窗口中，单击“存储帐户密钥”，然后单击省略号。
 
 	![新的存储帐户](./media/websites-dotnet-webjobs-sdk-get-started/newstorage.png)
 
-7. 复制“连接字符串”。
+4. 复制“连接字符串”。
 
 	![“存储帐户密钥”对话框](./media/websites-dotnet-webjobs-sdk-get-started/cpak.png)
 
-8. 将 *Web.config* 文件中的存储连接字符串替换为你刚刚复制的连接字符串。在粘贴之前，请确保选择引号括住的所有内容，但不包括引号本身。
+5. 将 *Web.config* 文件中的存储连接字符串替换为你刚刚复制的连接字符串。在粘贴之前，请确保选择引号括住的所有内容，但不包括引号本身。
 
-4. 打开 ContosoAdsWebJob 项目中的 *App.config* 文件。
+6. 打开 ContosoAdsWebJob 项目中的 *App.config* 文件。
 
 	此文件包含两个存储连接字符串，一个用于应用程序数据，另一个用于日志记录。对于本教程，你将为两者使用相同的帐户。连接字符串包含存储帐户密钥的占位符。
   	<pre class="prettyprint">&lt;configuration&gt;
@@ -179,20 +156,20 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
         &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
         &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt;
     &lt;/connectionStrings&gt;
-        &lt;startup&gt; 
+        &lt;startup&gt;
             &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt;
     &lt;/startup&gt;
 &lt;/configuration&gt;</pre>
 
-	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#config)。
+	默认情况下，WebJobs SDK 将查找名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的连接字符串。作为替代方法，你可以根据需要[存储该连接字符串，并显式将它传递给 `JobHost` 对象](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#config)。
 
-1. 将两个存储连接字符串替换为先前复制的连接字符串。
+7. 将两个存储连接字符串替换为先前复制的连接字符串。
 
-5. 保存所做更改。
+8. 保存所做更改。
 
 ## <a id="run"></a>在本地运行应用程序
 
-1. 若要启动应用程序的 Web 前端，请按 CTRL+F5。 
+1. 若要启动应用程序的 Web 前端，请按 CTRL+F5。
 
 	默认浏览器将打开主页。（Web 项目将会运行，因为你已将它设为启动项目。）
 
@@ -204,9 +181,9 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	![显示后端正在运行的控制台应用程序窗口](./media/websites-dotnet-webjobs-sdk-get-started/backendrunning.png)
 
-2. 在浏览器中，单击“创建一个广告”。
+3. 在浏览器中，单击“创建一个广告”。
 
-2. 输入一些测试数据并选择一个要上载的图像，然后单击“创建”。
+4. 输入一些测试数据并选择一个要上载的图像，然后单击“创建”。
 
 	![创建页面](./media/websites-dotnet-webjobs-sdk-get-started/create.png)
 
@@ -216,11 +193,11 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	![显示队列消息已处理的控制台应用程序窗口](./media/websites-dotnet-webjobs-sdk-get-started/backendlogs.png)
 
-3. 在查看控制台应用程序窗口中的日志记录消息后，请刷新“索引”页以查看缩略图。
+5. 在查看控制台应用程序窗口中的日志记录消息后，请刷新“索引”页以查看缩略图。
 
 	![索引页面](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
-4. 单击广告的“详细信息”查看实际尺寸的图像。
+6. 单击广告的“详细信息”查看实际尺寸的图像。
 
 	![详细信息页](./media/websites-dotnet-webjobs-sdk-get-started/details.png)
 
@@ -230,7 +207,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 你将执行以下步骤，以便在云中运行应用程序：
 
-* 部署到 Web Apps。Visual Studio 将自动创建新的 Azure 网站和 SQL 数据库实例。
+* 部署到 Web Apps。Visual Studio 将自动在 Azure 网站中创建一个新的 Web 应用，并创建一个 SQL 数据库实例。
 * 将 Web 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
 在云中运行时创建一些广告后，请查看 WebJobs SDK 仪表板，以了解该仪表板提供的丰富功能。
@@ -239,50 +216,60 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 1. 关闭浏览器和控制台应用程序窗口。
 
-3. 在“解决方案资源管理器”中，右键单击 ContosoAdsWeb 项目，然后单击“发布”。
+2. 在“解决方案资源管理器”中，右键单击 ContosoAdsWeb 项目，然后单击“发布”。
 
-3. 在“发布 Web”向导的“配置文件”步骤中，单击“Windows Azure 网站”。
+3. 在“发布 Web”向导的“配置文件”步骤中，单击“Windows Azure Web Apps”。
 
 	![选择 Azure Web 应用发布目标](./media/websites-dotnet-webjobs-sdk-get-started/pubweb.png)
 
-2. 在“选择现有 Web 应用”框中单击“登录”，然后输入你的凭据（如果你尚未登录）。
- 
-	![单击“登录”](./media/websites-dotnet-webjobs-sdk-get-started/signin.png)
+4. 登录 Azure（如果尚未登录）。
 
-5. 登录后，单击“新建”。
+5. 单击“新建”。
+
+	根据你安装的 Azure SDK for.NET 版本，对话框可能与屏幕截图略有不同。
 
 	![单击“新建”](./media/websites-dotnet-webjobs-sdk-get-started/clicknew.png)
 
-9. 在“在 Windows Azure 上创建 Web 应用”对话框框中，在“Web 应用名称”框中输入唯一名称。
+6. 在“在 Windows Azure 上创建 Web 应用”对话框框中，在“Web 应用名称”框中输入唯一名称。
 
 	完整的 URL 将包含你在此处输入的内容和 .chinacloudsites.cn（如“Web 应用名称”文本框的旁边所示）。例如，如果 Web 应用名称为 ContosoAds，则 URL 将为 ContosoAds.chinacloudsites.cn。
 
-9. 在“区域”下拉列表中，选择你为存储帐户所选的同一区域。
+7. 在“App Service 计划”下拉列表中，选择“创建新的 App Service 计划”。[](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)输入 App Service 计划的名称，例如 ContosoAdsPlan。
+
+8. 在“资源组”下拉列表中，选择“创建新的资源组”。[](/documentation/articles/resource-group-overview)
+
+9. 输入资源组的名称，例如 ContosoAdsGroup。
+
+10. 在“区域”下拉列表中，选择你为存储帐户所选的同一区域。
 
 	此设置指定你的 Web 应用将在哪个 Azure 数据中心运行。在同一数据中心保留 Web 应用和存储帐户可以最大程度地减少延迟和数据传出费用。
 
-9. 在“数据库服务器”下拉列表中选择“创建新的服务器”。
+11. 在“数据库服务器”下拉列表中选择“创建新的服务器”。
+
+12. 输入数据库服务器的名称，例如 contosoadsserver + 数字或你的姓名，使服务器名称保持唯一。
+
+	服务器名称必须唯一。该名称可以包含小写字母、数字和短划线，但尾部不能包含短划线。
 
 	或者，如果你的订阅已有一台服务器，可从下拉列表中选择该服务器。
 
-1. 输入管理员的“数据库用户名”和“数据库密码”。
+12. 输入管理员的“数据库用户名”和“数据库密码”。
 
 	如果你选择了“新建 SQL 数据库服务器”，则在此处不要输入现有名称和密码。你应输入新的名称和密码，你现在定义的名称和密码将在你以后访问数据库时使用。如果你选择之前创建的服务器，系统将提示你已创建的管理用户帐户的密码。
 
-1. 单击“创建”。
+13. 单击“创建”。
 
 	![在 Windows Azure 对话框中创建 Web 应用](./media/websites-dotnet-webjobs-sdk-get-started/newdb.png)
 
 	Visual Studio 将创建解决方案、Web 项目、Azure 中的 Web 应用和 Azure SQL 数据库实例。
 
-2. 在“发布 Web”向导的“连接”步骤中，单击“下一步”。
+14. 在“发布 Web”向导的“连接”步骤中，单击“下一步”。
 
 	![连接步骤](./media/websites-dotnet-webjobs-sdk-get-started/connstep.png)
 
-3. 在“设置”步骤中，清除“在运行时使用此连接字符串”复选框，然后单击“下一步”。
+15. 在“设置”步骤中，清除“在运行时使用此连接字符串”复选框，然后单击“下一步”。
 
 	![设置步骤](./media/websites-dotnet-webjobs-sdk-get-started/settingsstep.png)
-	
+
 	你不需要使用发布对话框来设置 SQL 连接字符串，因为你稍后将在 Azure 环境中设置该值。
 
 	你可以忽略此页上的警告。
@@ -293,17 +280,17 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	对于本教程，“文件发布选项”下的选项默认值是合适的。
 
-4. 在“预览”步骤中，单击“开始预览”。
+16. 在“预览”步骤中，单击“开始预览”。
 
 	![单击“开始预览”](./media/websites-dotnet-webjobs-sdk-get-started/previewstep.png)
 
 	你可以忽略有关未发布数据库的警告。Entity Framework Code First 将创建数据库；不需要发布该数据库。
 
-	预览窗口显示 Web 作业项目中的二进制文件和配置文件将复制到 Web 应用的 *app_data\\jobs\\continuous* 文件夹。
+	预览窗口显示 Web 作业项目中的二进制文件和配置文件将复制到 Web 应用的 *app\_data\\jobs\\continuous* 文件夹。
 
 	![预览窗口中的 Web 作业文件](./media/websites-dotnet-webjobs-sdk-get-started/previewwjfiles.png)
 
-5. 单击“发布”。
+17. 单击“发布”。
 
 	Visual Studio 将部署该应用程序，并在浏览器中打开主页 URL。
 
@@ -311,9 +298,11 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 ### 将 Web 应用配置为使用你的 Azure SQL 数据库和存储帐户。
 
-最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。在本部分中，你将要在 Azure 中设置连接字符串值。
+最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供了一种方法来做到这一点：你可以在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 将自动提取这些值。你也可以使用**服务器资源管理器**、门户、Windows PowerShell 或跨平台命令行界面在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
-7. 在“服务器资源管理器”中，右键单击“Web Apps”节点下的 Web 应用，然后单击“查看设置”。
+在本部分中，你将使用**服务器资源管理器**在 Azure 中设置连接字符串值。
+
+7. 在“服务器资源管理器”中，右键单击“Azure”>“{你的资源组}”下的 Web 应用，然后单击“查看设置”。
 
 	“Azure Web 应用”窗口将在“配置”选项卡上打开。
 
@@ -324,16 +313,16 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 9. 添加名为 AzureWebJobsStorage 和 AzureWebJobsDashboard 的两个新连接字符串。将类型设置为“自定义”，并将连接字符串值设置为你前面为 *Web.config* 和 *App.config* 文件使用的相同值。（确保包括整个连接字符串而不仅仅是访问密钥，并且不要包括引号。）
 
 	WebJobs SDK 将使用这些连接字符串，一个用于应用程序数据，另一个用于日志记录。如前面所看到的，用于应用程序数据的连接字符串也由 Web 前端代码使用。
-	
+
 9. 单击“保存”。
 
-	![管理门户中的连接字符串](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
+	![Azure 管理门户中的连接字符串](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
 
-10. 在“服务器资源管理器”中右键单击该 Web 应用，然后单击“停止 Web 应用”。
+10. 在“服务器资源管理器”中右键单击该 Web 应用，然后单击“停止”。
 
-12. Web 应用停止后，请再次右键单击该 Web 应用，然后单击“启动 Web 应用”。
+12. Web 应用停止后，请再次右键单击该 Web 应用，然后单击“启动”。
 
-	Web 作业在你发布时会自动启动，但在你进行配置更改时会停止。若要重新启动它，可以重新启动站点或者在 Azure 管理门户中重新启动 Web 作业。一般而言，建议你在进行配置更改后重新启动站点。
+	Web 作业在你发布时会自动启动，但在你进行配置更改时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 管理门户](https://manage.windowsazure.cn/)中重新启动 Web 作业。一般而言，建议你在进行配置更改后重新启动 Web 应用。
 
 9. 刷新地址栏中包含 Web 应用 URL 的浏览器窗口。
 
@@ -345,12 +334,11 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 11.	几秒钟后请刷新页面，随后将会显示缩略图。
 
-	如果未显示缩略图，则表示 Web 作业可能未自动启动。在这种情况下，请转到“查看 WebJobs SDK”仪表板中的
- 
+	如果未显示缩略图，你可能需要等待一分钟左右，让 Web 作业重新启动。如果经过一段时间后刷新页面时仍未显示缩略图，原因可能是 Web 作业未自动启动。在此情况下，转到 [Azure 管理门户](https://manage.windowsazure.cn)页中 Web 应用的“Web 作业”选项卡，然后单击“启动”。
 
 ### “Web 作业”选项卡
 
-1. 在 [Azure 管理门户](http://manage.windowsazure.cn/)中选择你的网站。
+1. 在 [Azure 管理门户](https://manage.windowsazure.cn)中选择你的 Web 应用。
 
 2. 单击“Web 作业”选项卡。
 
@@ -360,22 +348,17 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 	WebJobs SDK 仪表板中将打开一个新的浏览器选项卡。仪表板显示 Web 作业正在运行，并显示 WebJobs SDK 触发的代码中的函数列表。
 
-4. 单击某个函数可以查看有关其执行的详细信息
- 
+4. 单击某个函数可以查看有关其执行的详细信息。
+
 	![WebJobs SDK 仪表板](./media/websites-dotnet-webjobs-sdk-get-started/wjdashboardhome.png)
 
 	![WebJobs SDK 仪表板](./media/websites-dotnet-webjobs-sdk-get-started/wjfunctiondetails.png)
 
 	单击此页上的“重放函数”会导致 WebJobs SDK 框架再次调用该函数，使你可以首先更改传递给该函数的数据。
 
->[AZURE.NOTE] 完成测试后，请删除网站和 SQL 数据库实例。网站是免费的，但 SQL 数据库实例和存储帐户是计费的（由于较小，因此费用很低）。此外，如果保持站点运行，则找到你的 URL 的任何人都可以创建和查看广告。在 Azure 管理门户中，转到网站的“仪表板”选项卡，然后单击页面底部的“删除”按钮。然后，你可以选中用于同时删除 SQL 数据库实例的复选框。如果你只是想要暂时防止其他人访问站点，请单击“停止”。在这种情况下，SQL 数据库和存储帐户会继续计费。当你不再需要 SQL 数据库和存储帐户时，可以遵循类似的过程将其删除。
+>[AZURE.NOTE]完成测试后，请删除 Web 应用和 SQL 数据库实例。Web 应用是免费的，但 SQL 数据库实例和存储帐户是计费的（由于较小，因此费用很低）。此外，如果保持 Web 应用运行，则找到你的 URL 的任何人都可以创建和查看广告。在 Azure 管理门户中，转到 Web 应用的“仪表板”选项卡，然后单击页面底部的“删除”按钮。然后，你可以选中用于同时删除 SQL 数据库实例的复选框。如果你只是想要暂时防止其他人访问 Web 应用，请单击“停止”。在这种情况下，SQL 数据库和存储帐户会继续计费。当你不再需要 SQL 数据库和存储帐户时，可以遵循类似的过程将其删除。
 
-### 对长时间运行的进程启用 AlwaysOn
-
-
-若要确保 Web 作业始终在你的 Web 应用的所有实例上运行，你必须启用 [AlwaysOn](http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx) 功能。
-
-## <a id="create"></a>从头开始创建应用程序 
+## <a id="create"></a>从头开始创建应用程序
 
 在本节中，你将执行以下任务：
 
@@ -386,7 +369,7 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 * 设置项目引用。
 * 从你在学习本教程前面部分时使用的已下载应用程序中复制应用程序代码和配置文件。
 * 查看用于处理 Azure Blob 和队列及 WebJobs SDK 的代码部分。
- 
+
 ### 创建一个包含 Web 项目的 Visual Studio 解决方案和类库项目
 
 1. 在 Visual Studio 的“文件”菜单中选择“新建”>“项目”。
@@ -423,21 +406,21 @@ Azure 存储帐户提供在云中存储队列和 Blob 数据的资源。它还�
 
 ### 在启用 Web 作业部署的情况下添加控制台应用程序项目
 
-11. 右键单击 Web 项目（不是解决方案或类库项目），然后单击“添加”>“新建 Azure Web 作业项目”。
+1. 右键单击 Web 项目（不是解决方案或类库项目），然后单击“添加”>“新建 Azure Web 作业项目”。
 
 	![“新建 Azure Web 作业项目”菜单选项](./media/websites-dotnet-webjobs-sdk-get-started/newawjp.png)
 
-1. 在“添加 Azure Web 作业”对话框中，输入 ContosoAdsWebJob 作为“项目名称”和“Web 作业名称”。将“Web 作业运行模式”保留设置为“连续运行”。
+2. 在“添加 Azure Web 作业”对话框中，输入 ContosoAdsWebJob 作为“项目名称”和“Web 作业名称”。将“Web 作业运行模式”保留设置为“连续运行”。
 
-2.  单击**“确定”**。
-  
+3.  单击**“确定”**。
+
 	Visual Studio 将创建一个控制台应用程序，每当你部署 Web 项目时，该应用程序就会部署为 Web 作业。为此，它将在创建项目后执行以下任务：
 
 	* 在 Web 作业项目的 Properties 文件夹中添加一个 *webjob-publish-settings.json* 文件。
 	* 在 Web 项目的 Properties 文件夹中添加一个 *webjobs-list.json* 文件。
 	* 在 Web 作业项目中安装 Microsoft.Web.WebJobs.Publish NuGet 包。
-	 
-	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。
+
+	有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs)。
 
 ### 添加 NuGet 包
 
@@ -445,32 +428,32 @@ Web 作业的 new-project 模板会自动安装 WebJobs SDK NuGet 包 [Microsoft
 
 在 Web 作业项目中自动安装的 WebJobs SDK 依赖项之一是 Azure 存储客户端库 (SCL)。但是，若要处理 Blob 和队列，你需要将此依赖项添加到 Web 项目。
 
-11. 打开解决方案的“管理 NuGet 包”对话框。
+1. 打开解决方案的“管理 NuGet 包”对话框。
 
-12. 在左窗格中，选择“已安装的包”。
-   
-13. 找到 *Azure 存储空间* 包，然后单击“管理”。
+2. 在左窗格中，选择“已安装的包”。
 
-13. 在“选择项目”框中，选中“ContosoAdsWeb”复选框，然后单击“确定”。
+3. 找到 *Azure 存储空间* 包，然后单击“管理”。
 
-所有三个项目都使用实体框架来处理 SQL 数据库中的数据。
+4. 在“选择项目”框中，选中“ContosoAdsWeb”复选框，然后单击“确定”。
 
-12. 在左窗格中，选择“联机”。
-   
-16. 找到 *EntityFramework* NuGet 包，并将其安装在所有三个项目中。
+	所有三个项目都使用实体框架来处理 SQL 数据库中的数据。
+
+5. 在左窗格中，选择“联机”。
+
+6. 找到 *EntityFramework* NuGet 包，并将其安装在所有三个项目中。
 
 
 ### 设置项目引用
 
 Web 项目和 Web 作业项目都会处理 SQL 数据库，因此两者都需要引用 ContosoAdsCommon 项目。
 
-10. 在 ContosoAdsWeb 项目中，设置对 ContosoAdsCommon 项目的引用。（右键单击 ContosoAdsWeb 项目，然后单击“添加”>“引用”。在“引用管理器”对话框中，选择“解决方案”>“项目”>“ContosoAdsCommon”，然后单击“确定”。）
+1. 在 ContosoAdsWeb 项目中，设置对 ContosoAdsCommon 项目的引用。（右键单击 ContosoAdsWeb 项目，然后单击“添加”>“引用”。在“引用管理器”对话框中，选择“解决方案”>“项目”>“ContosoAdsCommon”，然后单击“确定”。）
 
-11. 在 ContosoAdsWebJob 项目中，设置对 ContosAdsCommon 项目的引用。
+1. 在 ContosoAdsWebJob 项目中，设置对 ContosAdsCommon 项目的引用。
 
-WebJob 项目需要通过引用来处理图像和访问连接字符串。
+	WebJob 项目需要通过引用来处理图像和访问连接字符串。
 
-11. 在 ContosoAdsWebJob 项目中，设置对 `System.Drawing` 和 `System.Configuration` 的引用。
+3. 在 ContosoAdsWebJob 项目中，设置对 `System.Drawing` 和 `System.Configuration` 的引用。
 
 ### 添加代码和配置文件
 
@@ -478,20 +461,20 @@ WebJob 项目需要通过引用来处理图像和访问连接字符串。
 
 若要将文件添加到某个项目或文件夹，请右键单击该项目或文件夹，然后单击“添加”>“现有项”。选择需的文件，然后单击“添加”。如果询问你是否想要替换现有文件，请单击“是”。
 
-3. 在 ContosoAdsCommon 项目中，删除 *Class1.cs* 文件，并在其原位置添加已下载项目中的以下文件。
+1. 在 ContosoAdsCommon 项目中，删除 *Class1.cs* 文件，并在其原位置添加已下载项目中的以下文件。
 
 	- *Ad.cs*
 	- *ContosoAdscontext.cs*
 	- *BlobInformation.cs*<br/><br/>
 
-3. 在 ContosoAdsWeb 项目中，从下载的项目添加以下文件。
+2. 在 ContosoAdsWeb 项目中，从下载的项目添加以下文件。
 
 	- *Web.config*
 	- *Global.asax.cs*  
-	- 在 *Controllers* 文件夹中：*AdController.cs* 
-	- 在 *Views/Shared* 文件夹中：<em>_Layout.cshtml</em> 文件。 
-	- 在 *Views/Home* 文件夹中：*Index.cshtml*。 
-	- 在 *Views/Ad* 文件夹（首先创建该文件夹）中：五个 *.cshtml* 文件。<br/><br/>
+	- 在 *Controllers* 文件夹中：*AdController.cs*
+	- 在 *Views/Shared* 文件夹中：*\_Layout.cshtml* 文件
+	- 在 *Views/Home* 文件夹中：*Index.cshtml*
+	- 在 *Views/Ad* 文件夹（首先创建该文件夹）中：五个 *.cshtml* 文件<br/><br/>
 
 3. 在 ContosoAdsWebJob 项目中，添加已下载项目中的以下文件。
 
@@ -505,7 +488,7 @@ WebJob 项目需要通过引用来处理图像和访问连接字符串。
 
 以下部分解释了与处理 WebJobs SDK 和 Azure 存储 Blob 与队列相关的代码。
 
-> [AZURE.NOTE] 对于特定于 WebJobs SDK 的代码，请参阅 [Program.cs 和 Functions.cs](#programcs)。
+> [AZURE.NOTE]对于特定于 WebJobs SDK 的代码，请转到 [Program.cs 和 Functions.cs](#programcs) 部分。
 
 ### ContosoAdsCommon - Ad.cs
 
@@ -565,7 +548,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		    }
 		    public System.Data.Entity.DbSet<Ad> Ads { get; set; }
 		}
- 
+
 类具有两个构造函数。第一个由 Web 项目使用，并指定存储在 Web.config 文件或 Azure 运行时环境中的连接字符串的名称。第二个构造函数允许你在实际的连接字符串中传递。程序需要 Web 作业项目，因为它没有 Web.config 文件。你以前看到存储此连接字符串的位置，并且稍后你将看到连接字符串在实例化 DbContext 类时代码如何检索它。
 
 ### ContosoAdsCommon - BlobInformation.cs
@@ -575,7 +558,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		public class BlobInformation
 		{
 		    public Uri BlobUri { get; set; }
-		    
+
 		    public string BlobName
 		    {
 		        get
@@ -622,14 +605,14 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 		var imagesQueue = queueClient.GetQueueReference("blobnamerequest");
 		imagesQueue.CreateIfNotExists();
 
-### ContosoAdsWeb - _Layout.cshtml
+### ContosoAdsWeb - \_Layout.cshtml
 
 *\_Layout.cshtml* 文件设置页眉和页脚中的应用程序，并创建“广告”菜单项。
 
 ### ContosoAdsWeb - Views\\Home\\Index.cshtml
 
 *Views\\Home\\Index.cshtml* 文件在主页上显示类别链接。链接将查询字符串变量中的 `Category` 枚举的整数值传递到“广告索引”页面。
-	
+
 		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
 		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
@@ -687,7 +670,7 @@ HttpPost `Create` 方法上载 Blob 并更新数据库之后，将会创建队�
 		await thumbnailRequestQueue.AddMessageAsync(queueMessage);
 
 HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选择新图像文件，则必须删除此广告已存在的任何 Blob。
- 
+
 		if (imageFile != null && imageFile.ContentLength != 0)
 		{
 		    await DeleteAdBlobsAsync(ad);
@@ -716,7 +699,7 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 		    CloudBlockBlob blobToDelete = imagesBlobContainer.GetBlockBlobReference(blobName);
 		    await blobToDelete.DeleteAsync();
 		}
- 
+
 ### ContosoAdsWeb - Views\\Ad\\Index.cshtml 和 Details.cshtml
 
 *Index.cshtml* 文件显示带有其他广告数据的缩略图：
@@ -761,7 +744,7 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 		        ConvertImageToThumbnailJPG(input, output);
 		        outputBlob.Properties.ContentType = "image/jpeg";
 		    }
-		
+
 		    // Entity Framework context class is not thread-safe, so it must
 		    // be instantiated and disposed within the function.
 		    using (ContosoAdsContext db = new ContosoAdsContext())
@@ -795,7 +778,7 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 * [如何通过 WebJobs SDK 使用 Azure 队列存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
 * [如何通过 WebJobs SDK 使用 Azure 表存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to)
-* [如何通过 WebJobs SDK 使用 Azure Service Bus](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus)
+* [如何通过 WebJobs SDK 使用 Azure 服务总线](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus)
 
 > [AZURE.NOTE]
 >
@@ -805,24 +788,36 @@ HttpPost `Edit` 方法的代码和它类似，不同之处在于如果用户选�
 >
 > * 为方便起见，`ConvertImageToThumbnailJPG` 方法中的代码（未显示）使用 `System.Drawing` 命名空间中的类。但是，此命名空间中的类已设计用于 Windows 窗体。不支持在 Windows 或 ASP.NET 服务中使用。有关图像处理选项的详细信息，请参阅[动态图像生成](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx)和[深入学习图像大小调整](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na)。
 
-### WebJobs SDK 与不使用 WebJobs SDK 的云服务辅助角色
+## 后续步骤
 
-如果你将此示例应用程序中 `GenerateThumbnails` 方法的代码量与[应用程序的云服务版本](/documentation/articles/cloud-services-dotnet-get-started/)中的辅助角色代码进行比较，你就可以看到 WebJobs SDK 为你做了多少工作。优点是大于它出现，因为云服务的示例应用程序代码不会执行所有操作（例如病毒消息处理）你需要像在生产应用程序，和它为你做 WebJobs SDK 中。
+在本教程中，你已了解了一个使用 WebJobs SDK 进行后端处理的简单多层应用程序。本部分提供有关进一步了解 ASP.NET 多层应用程序和 Web 作业的一些建议。
 
-在应用程序的云服务版本中，记录 ID 是队列消息中的唯一信息和后台进程从数据库中获取图像 URL。在应用程序的 WebJobs SDK 版本中，队列消息包含图像 URL，因此可以将其提供给 `Blob` 属性。如果队列消息没有 Blob URL，则你可以[在方法正文而不是方法签名中使用 Blob 属性](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#blobbody)。
+### 缺少的功能
+
+该应用程序有意保持入门教程的简单性。在现实的应用程序中，你会实施[依赖关系注入](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection)或[存储库和单元的工作模式](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo)，使用[日志记录接口](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log)，使用 [EF Code First 迁移](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application)来管理数据模型更改，并使用 [EF 连接复原](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)管理暂时性的网络错误。
+
+### 缩放 Web 作业
+
+Web 作业在 Web 应用的上下文中运行，并且不可单独缩放。例如，如果你有一个标准 Web 应用实例，只运行了后台进程的一个实例，并且该实例正在使用某些服务器资源（CPU、内存等），而这些资源也可用于提供 Web 内容。
+
+如果流量根据一天的时间或者星期变化，并且你需要执行的后端处理可以等待，则你可以将 Web 作业安排为在低流量期间运行。如果该解决方案的负载仍然太高，可以在针对该用途专用的 Web 应用中以 Web 作业形式运行后端。然后，可以独立于前端 Web 应用缩放你的后端 Web 应用。
+
+有关详细信息，请参阅[缩放 Web 作业](/documentation/articles/websites-webjobs-resources#scale)。
+
+### 避免关机时 Web 应用超时
+
+若要确保 Web 作业始终在你的 Web 应用的所有实例上运行，你必须启用 [AlwaysOn](http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx) 功能。
 
 ### 在 Web 作业的外部使用 WebJobs SDK
 
-使用 WebJobs SDK 的程序无需在 Azure 中的 Web 作业内运行。它可以在本地运行，也可以在其他环境（例如云服务辅助角色或 Windows 服务）中运行。但是，你只能通过 Azure Web 应用访问 WebJobs SDK 仪表板。若要使用仪表板，必须通过在管理门户的“配置”选项卡上设置 AzureWebJobsDashboard 连接字符串，将网站连接到你所用的存储帐户。然后，可以使用以下 URL 访问仪表板：
+使用 WebJobs SDK 的程序无需在 Azure 中的 Web 作业内运行。它可以在本地运行，也可以在其他环境（例如云服务辅助角色或 Windows 服务）中运行。但是，你只能通过 Azure Web 应用访问 WebJobs SDK 仪表板。若要使用仪表板，必须通过在 Azure 管理门户的“配置”选项卡上设置 AzureWebJobsDashboard 连接字符串，将 Web 应用连接到你所用的存储帐户。然后，可以使用以下 URL 访问仪表板：
 
 https://{webappname}.scm.chinacloudsites.cn/azurejobs/#/functions
 
 有关详细信息，请参阅[获取仪表板以使用 WebJobs SDK 进行本地开发](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx)，但请注意，其中显示了旧式连接字符串名称。
 
-## 后续步骤
+### 更多 Web 作业文档
 
-在本教程中，你已了解了一个使用 WebJobs SDK 进行后端处理的简单多层应用程序。该应用程序有意保持入门教程的简单性。例如，它没有实施[依赖关系注入](http://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection)或[存储库和单元的工作模式](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo)，它不[使用日志记录接口](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log)，它不使用 [EF Code First 迁移](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application)来管理数据模型更改，或使用 [EF 连接复原](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)管理暂时性的网络错误等。
+有关详细信息，请参阅[Azure Web 作业文档资源](/documentation/articles/websites-webjobs-resources/)。
 
-有关详细信息，请参阅 [Azure Web 作业推荐资源](/documentation/articles/websites-webjobs-resources/)。
-
-<!---HONumber=76-->
+<!---HONumber=82-->

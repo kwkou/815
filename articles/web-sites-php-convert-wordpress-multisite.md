@@ -7,20 +7,22 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="06/24/2015" 
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>
 
 
 
-# 将 WordPress 网站转换为 Multisite
+# 在 Azure 网站中将 WordPress 转换为 Multisite
 
 ## 概述
 
 *作者：[Ben Lobaugh][ben-lobaugh]，[Microsoft Open Technologies Inc.][ms-open-tech]*
 
-在本教程中，你将了解如何采用通过 Azure 中的库创建的现有 WordPress 网站并将其转换为 WordPress Multisite 安装。此外，你还将了解如何将自定义域分配给安装中的每个子网站。
+在本教程中，你将了解如何采用通过 Azure 中的库创建的现有 WordPress Web 应用并将其转换为 WordPress Multisite 安装。此外，你还将了解如何将自定义域分配给安装中的每个子网站。
+
+假定你现在具有 WordPress 安装。如果你没有，请按照 [在 Azure 中从库中创建 WordPress 网站][website-from-gallery] 中提供的指导操作。
 
 通常，将现有 WordPress 单站点安装转换为 Multisite 非常简单，此处的许多初始步骤直接来自在 [WordPress Codex](http://codex.wordpress.org) 上[创建网络][wordpress-codex-create-a-network]页面。
 
@@ -28,11 +30,11 @@
 
 ## 允许 Multisite
 
-你首先需要通过带有 **WP\_ALLOW_MULTISITE** 常量的 `wp-config.php` 文件启用 Multisite。编辑网站文件有两种方法：第一种是通过 FTP，第二种是通过 Git。如果你不熟悉如何设置这两种方法，请参考以下教程：
+你首先需要通过带有 **WP\_ALLOW\_MULTISITE** 常量的 `wp-config.php` 文件启用 Multisite。编辑 Web 应用文件有两种方法：第一种是通过 FTP，第二种是通过 Git。如果你不熟悉如何设置这两种方法，请参考以下教程：
 
-* [带 MySQL 和 FTP 的 PHP 网站][ Website-w-mysql-and-ftp-ftp-setup]
+* [带 MySQL 和 FTP 的 PHP 网站][website-w-mysql-and-ftp-ftp-setup]
 
-* [带 MySQL 和 Git 的 PHP 网站][ Website-w-mysql-and-git-git-setup]
+* [带 MySQL 和 Git 的 PHP 网站][website-w-mysql-and-git-git-setup]
 
 使用所选编辑器打开 `wp-config.php` 文件并在 `/* That's all, stop editing! Happy blogging. */` 行的上方添加以下内容。
 
@@ -44,11 +46,11 @@
 
 ## 网络设置
 
-登录到你网站的 *wp-admin* 区域，你应在“工具”菜单的下方看到一个名为“网络设置”的新项目。单击“网络设置”并填写你网络的详细信息。
+登录到你 Web 应用的 *wp-admin* 区域，你应在“工具”菜单的下方看到一个名为“网络设置”的新项目。单击“网络设置”并填写你网络的详细信息。
 
 ![“网络设置”屏幕][wordpress-network-setup]
 
-本教程使用*子目录*站点架构，因为它应始终运行，我们在本教程的后面将为每个子站点设置自定义域。但是，如果你通过[门户](http://manage.windowsazure.cn)映射域并正确设置通配符 DNS，则应能够设置子域安装。
+本教程使用*子目录*站点架构，因为它应始终运行，我们在本教程的后面将为每个子站点设置自定义域。但是，如果你通过 [Azure 管理门户](https://manage.windowsazure.cn/)映射域并正确设置通配符 DNS，则应能够设置子域安装。
 
 有关子域和子目录设置的详细信息，请参阅 WordPress Codex 上的[多站点网络的类型][wordpress-codex-types-of-networks]一文。
 
@@ -70,9 +72,9 @@
 
 ## 启用到 Web 应用的域映射
 
-默认的免费网站模式不支持向 Azure 网站添加自定义域。你需要切换到“共享”或“标准”模式。为此，请按以下步骤操作：
+**免费**的 [Azure 网站](/documentation/services/web-sites/)计划模式不支持向 Web Apps 添加自定义域。你需要切换到“共享”或“标准”模式。为此，请按以下步骤操作：
 
-* 登录到 Azure 门户并找到你的 Web 应用。 
+* 登录到 Azure 管理门户并找到你的 Web 应用。 
 * 单击主要内容区域中的“缩放”选项卡
 * 在“常规”下，选择“共享”或“标准”
 * 单击“保存”
@@ -87,27 +89,27 @@
 
 * 登录到域的 DNS 管理器
 * 创建新的 CNAME *awverify*
-* 让 *awverify* 指向 *awverify.YOUR_DOMAIN.chinacloudsites.cn*
+* 让 *awverify* 指向 *awverify.YOUR\_DOMAIN.chinacloudsites.cn*
 
 由于 DNS 更改可能需要过段时间才能生效，因此，如果后续步骤无法立即运行，你可以先去冲杯咖啡，然后回来重试。
 
 ## 将域添加到 Web 应用
 
-通过 Azure 门户返回你的网站，此时请单击“配置”选项卡。“管理域”按钮应可用。请单击此按钮。
+通过 Azure 管理门户返回你的网站，此时请单击“配置”选项卡。“管理域”按钮应可用。请单击此按钮。
 
 这将显示“管理自定义域”对话框。可在其中输入要分配给网站的所有域。如果某个域未在此处列出，则无法在 WordPress 中将该域用于映射，无论设置域 DNS 的方式如何。
 
 ![“管理自定义域”对话框][wordpress-manage-domains]
 
-将域键入文本框后，Azure 将验证你之前创建的 *awverify* CNAME 记录。如果 DNS 尚未完全传播，则会显示一个红色指示器。如果已成功传播，你将看到一个绿色复选标记。
+将域键入文本框后，Azure 将验证你之前创建的 CNAME 记录。如果 DNS 尚未完全传播，则会显示一个红色指示器。如果已成功传播，你将看到一个绿色复选标记。
 
 记下该对话框底部列出的 IP 地址。你需要此地址来设置域的 A 记录。
 
 ## 设置域 A 记录
 
-如果已成功执行其他步骤，则你现在可以通过 DNS A 记录将域分配给 Azure 网站。
+如果已成功执行其他步骤，则你现在可以通过 DNS A 记录将域分配给 Azure Web 应用。
 
-此处请务必记住，Azure 网站同时接受 CNAME 和 A 记录，但你*必须*使用 A 记录才能启用正确的域映射。CNAME 无法转发到 Azure 使用 YOUR_DOMAIN.chinacloudsites.cn 为你创建的其他 CNAME。
+此处请务必记住，Azure Web 应用同时接受 CNAME 和 A 记录，但你*必须*使用 A 记录才能启用正确的域映射。CNAME 无法转发到 Azure 使用 YOUR\_DOMAIN.chinacloudsites.cn 为你创建的其他 CNAME。
 
 使用上一个步骤中的 IP 地址可返回你的 DNS 管理器并将 A 记录设置为指向该 IP。
 
@@ -126,17 +128,19 @@ WordPress Multisite 当前没有用于映射自定义域的内置方法。但是
 
 ## 再执行一次此操作
 
-利用 Azure 网站，你可以向一个网站添加无数个域。若要添加另一个域，你需要为每个域执行**验证域**和**设置域 A 记录**部分中所述的操作。
+利用 Azure Web Apps，你可以向一个 Web 应用添加无数个域。若要添加另一个域，你需要为每个域执行**验证域**和**设置域 A 记录**部分中所述的操作。
 
 [ben-lobaugh]: http://ben.lobaugh.net
 [ms-open-tech]: http://msopentech.com
 [wordpress-codex-create-a-network]: http://codex.wordpress.org/Create_A_Network
-[ Website-w-mysql-and-ftp-ftp-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
-[ Website-w-mysql-and-git-git-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
+[website-w-mysql-and-ftp-ftp-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-ftp/#header-0
+[website-w-mysql-and-git-git-setup]: /documentation/articles/web-sites-php-mysql-deploy-use-git/#header-1
 [wordpress-network-setup]: ./media/web-sites-php-convert-wordpress-multisite/wordpress-network-setup.png
 [wordpress-codex-types-of-networks]: http://codex.wordpress.org/Before_You_Create_A_Network#Types_of_multisite_network
 [wordpress-plugin-wordpress-mu-domain-mapping]: http://wordpress.org/extend/plugins/wordpress-mu-domain-mapping/
 
 [wordpress-manage-domains]: ./media/web-sites-php-convert-wordpress-multisite/wordpress-manage-domains.png
 
-<!---HONumber=71-->
+ 
+
+<!---HONumber=82-->

@@ -1,22 +1,21 @@
 <properties 
-	pageTitle="使用 REST 配置内容密钥授权策略" 
-	description="了解如何配置内容密钥的授权策略。" 
+	pageTitle="使用媒体服务 REST API 配置内容密钥授权策略" 
+	description="了解如何使用媒体服务 REST API 配置内容密钥的授权策略。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="11/02/2015"/>
-
+<tags
+	ms.service="media-services"
+	ms.date="10/18/2015"
+	wacn.date="11/27/2015"/>
 
 
 #动态加密：配置内容密钥授权策略 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../includes/media-services-selector-content-key-auth-policy.md)]
-
+ 
 
 ##概述
 
@@ -464,7 +463,11 @@
     }
 
 
+
+
 ##后续步骤
 在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy)主题。
 
-<!---HONumber=76-->
+ 
+
+<!---HONumber=82-->
