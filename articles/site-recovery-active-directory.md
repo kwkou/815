@@ -9,7 +9,6 @@
 
 <tags 
 	ms.service="site-recovery"
-
 	ms.date="10/12/2015" 
 	wacn.date="11/13/2015"/>
 
