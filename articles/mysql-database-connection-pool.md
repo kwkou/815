@@ -1,27 +1,25 @@
-<properties linkid="" urlDisplayName="" pageTitle="如何高效连接到MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="
-合理的利用连接池访问MySQL Database on Azure会优化性能。本文介绍如何使用连接池有效地访问MySQL Database on Azure，并给出以JAVA和PHP为例的示例代码供参考。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="How to Connect Efficiently to MySQL Database on Azure – Microsoft Azure Cloud" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling to more effectively access MySQL Database on Azure, and provides sample code using JAVA and PHP as examples for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="07/27/2015"/>
-# 如何高效连接到MySQL Database on Azure<sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
+
+# How to Connect Efficiently to MySQL Database on Azure <sup style="color: #a5ce00; font-weight: bold; text-transform: uppercase; font-family: '微软雅黑'; font-size: 20px;" class="wa-previewTag"></sup>
 
 
 
-数据库连接是一种有限的资源，合理的利用连接池访问MySQL Database on Azure会优化性能。本文介绍如何使用连接池或长连接高效效地访问MySQL Database on Azure。
+Database connections are a limited resource, so making sensible use of connection pooling to access MySQL Database on Azure will optimize performance. This article explains how to use connection pooling or persistent connections to more effectively access MySQL Database on Azure.
 
-## 通过连接池访问数据库 （推荐）##
-由于在发起连接时，MySQL Database on Azure会做更多的验证工作，导致发起连接的开销相对于本地数据库更大。对于数据库连接的管理能够显著影响到整个应用程序的性能。为了使您的程序能够达到性能最优，目标是降低发起连接的次数，把发起连接的时间不放在关键的代码路径上。我们强烈建议您使用数据库连接池(connection pool)或长连接(persistent connection)连接MySQL Database on Azure。 
-数据库连接池负责建立，管理和分配数据库连接。 当应用程序申请一个数据库连接时，它优先分配一个现有的空闲的数据库连接，而不是重新建立一个。当数据库连接使用完毕后，它会回收该连接以备再次使用，而不是直接关闭该连接。
+## Accessing databases using connection pooling (recommended)##
+As MySQL Database on Azure performs more authentication tasks when establishing connections, this can result in establishing connections requiring even greater overheads than the local database. Managing database connections can have a significant impact on the performance of the application as a whole. In order to optimize the performance of your program, the goals should be to reduce the number of times connections are established, and to avoid putting the time for establishing connections in key code paths. We strongly recommend that you use database connection pooling or persistent connections to connect to MySQL Database on Azure. Database connection pooling handles the creation, management and allocation of database connections. When a program requests a database connection, it prioritizes the allocation of existing idle database connections, rather than the creation of a new connection. Once the program has finished using the database connection, the connection is recovered in preparation for further use, rather than simply being closed down.
 
-为了更好地说明，本文提供[以JAVA为例的一段示例代码](http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/MySQLConnectionPool.java )，供参考，您也可以参考[Apache common DBCP](http://commons.apache.org/proper/commons-dbcp/)来了解更多。
+This article explains this further by providing a [piece of sample code that uses JAVA as an example](http://wacnstorage.blob.core.chinacloudapi.cn/marketing-resource/documents/MySQLConnectionPool.java) for your reference. You can also refer to [Apache common DBCP](http://commons.apache.org/proper/commons-dbcp/) to find out more.
 
-## 通过长连接访问数据库 （推荐）##
-PHP中建议您使用长连接，长连接的概念与连接池的概念类似。需要注意的是PHP目前有三种驱动，除Mysqli外，其他两种驱动均支持Persistent Connection. 
+## Accessing databases using persistent connections (recommended)##
+We recommend that you use persistent connections in PHP. The concept of persistent connections is similar to that of connection pooling. It is important to note that PHP currently has three types of drivers; while Mysqli does not support persistent connection, the other two types of driver both do.
 
-查看[利用PDO建立长连接](http://php.net/manual/en/pdo.connections.php)； 
-查看[利用MySQL引擎建立长连接](http://php.net/manual/en/function.mysql-pconnect.php)。
+Read [Using PDO to Establish Persistent Connections](http://php.net/manual/en/pdo.connections.php); read [Using MySQL Engines to Establish Persistent Connections](http://php.net/manual/en/function.mysql-pconnect.php).
 
-将短连接修改至长连接对于代码的改动不大，但是对于性能的提高在很多典型应用场景有很大的作用。
+Replacing short connections with persistent connections requires only minor changes to the code, but has a major effect in terms of improving performance in many typical application scenarios.
 
-## 通过等待重试机制短连接访问数据库##
-基于资源的有效性，我们强烈推荐您使用连接池或是长连接访问数据库。但如果您使用短连接，在并发连接数接近上限，连接出现失败的情况下，我们建议您尝试多次连接，可以适当设定等待时间，初次等待时间可以较短，后可以进行多次的随机事件的等待。
+## Accessing databases using wait and retry mechanisms with short connections##
+Given resource limitations, we strongly recommend that you use database pooling or persistent connections to access databases. However, if you do use short connections and experience connection failures when approaching the upper limit on the number of concurrent connections, we recommend that you try connecting multiple times. You can set an appropriate wait time, with a shorter wait time after the first attempt, after which waiting for random events can be performed multiple times.
 

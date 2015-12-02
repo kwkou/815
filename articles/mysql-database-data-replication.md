@@ -1,101 +1,82 @@
-<properties linkid="" urlDisplayName="" pageTitle="如何配置数据同步复制到MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,服务限制,数据复制，Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="帮助您了解如何通过数据同步功能将本地MySQL实例复制到云端。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="How to Configure Data Sync to Replicate to MySQL Database on Azure – Microsoft Azure Cloud" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,服务限制,数据复制，Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Helps you to understand how to use the data sync function to replicate local MySQL instances to the cloud." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="09/16/2015"/>
 
-#如何配置数据同步复制到MySQL Database on Azure
-MySQL Database on Azure支持从服务器模式和标准的MySQL数据复制。你可以用这个功能把数据库数据从运行在自己本地或者其他地方的MySQL服务器自动同步到运行在MySQL Database on Azure上的从服务器。
+#How to Configure Data Sync to Replicate to MySQL Database on Azure
+MySQL Database on Azure supports slave server mode and standard MySQL data replication. You can use this feature to automatically sync database data from a MySQL server running locally or in other locations, to a server running on MySQL Database on Azure.
 
-##配置步骤
-1.	确认主MySQL服务器上的系统变量lower_case_table_names 为1。 如果不是必须设置为1。这是因为MySQL数据复制要求主从服务器端该参数的值必须一致,而在MySQL On Azure上，该参数为1。 
-mysql> SET GLOBAL lower_case_table_names = 1;
-2.	将主服务器设为只读模式
-mysql> FLUSH TABLES WITH READ LOCK;
-mysql> SET GLOBAL read_only = ON;
-3.	在主服务器端运行sql 命令 “show master status” 从而获取当前的二进制日志文件名和偏移。 返回结果应该类似于
-![返回结果](./media/mysql-database-data-replication/packet.png)
+##Configuration steps
+1.	Confirm that the system variable lower_case_table_names on the master MySQL server is set to 1. If this is not the case, then you must set it to 1. This is because MySQL database replication requires the value of this parameter to be consistent between the master and slave servers, and this parameter is set to 1 on MySQL On Azure. mysql> SET GLOBAL lower_case_table_names = 1;
+2.	Set the master server to read-only mode: mysql> FLUSH TABLES WITH READ LOCK; mysql> SET GLOBAL read_only = ON;
+3.	Run the SQL command “show master status” on the master server, in order to ascertain the current binary log file name and offset. The results returned should be similar to this: ![Return to results](./media/mysql-database-data-replication/packet.png)
 
-4.	把主服务器上的所有用户的数据库导出,比如你可以用mysqldump工具。
-mysqldump --databases <数据库名>  --single-transaction --order-by-primary -r <备份文件名> --routines -h<服务器地址>  -P<端口号> –u<用户名>  -p<密码>
-注意：mysql服务器内置的库包括mysql库和test库不需要导出。
-5.	数据库导出完成后将主MySQL服务器重新设为可读写模式
-mysql> SET GLOBAL read_only = OFF;
-mysql> UNLOCK TABLES;  
-6.	在主MySQL服务器上建一个用于数据复制的账号并设置权限。
-CREATE USER '<your user>'@'%' IDENTIFIED BY '<your password>';
-GRANT REPLICATION SLAVE ON *.* TO '<your user>'@'%';
-7.	登录Azure管理门户，在MySQL　Database on Azure上创建一个新的MySQL服务器。
-8.	在新创建的MySQL服务器上逐个创建主服务器上的所有用户的数据库。
-9.	在新创建的MySQL服务器上创建需要的用户账号。这是因为用户账号信息不会被复制。
-10.	把从主服务器上的导出的用户数据库的数据导入到新创建的MySql服务器中。如果数据文件很大建议先把数据文件上传到Azure上的虚拟机然后从虚拟机导入到MySql服务器中。虚拟机应该和新创建的MySQL服务器在同一个数据中心。具体步骤如下。
+4.	Export the databases for all users on the master server, for example by using the mysqldump tool. mysqldump --databases <database name> --single-transaction --order-by-primary -r <backup file name> --routines -h<server address> -P<port number> –u<username> -p<password> Note: Databases built into MySQL servers, including the mysql library and test library, do not need to be exported.
+5.	Once the database has been exported, change the master MySQL server setting back to read/write mode: mysql> SET GLOBAL read_only = OFF; mysql> UNLOCK TABLES;  
+6.	Create an account on the master MySQL server for data replication use, and set up the permissions. CREATE USER '<your user>'@'%' IDENTIFIED BY '<your password>'; GRANT REPLICATION SLAVE ON *.* TO '<your user>'@'%';
+7.	Log into the Azure management portal and create a new MySQL server on MySQL Database on Azure.
+8.	Create individual databases for all users on the master server on the newly created MySQL server.
+9.	Create the required user accounts on the newly created MySQL server. This is necessary because user account information cannot be replicated.
+10.	Import the user database data exported from the master server into the newly created MySQL server. If the database file is very large, we recommend that you upload the file to a virtual machine on Azure, and then import it into the MySQL server from the virtual machine. The virtual machine should be in the same data center as the newly created MySQL server. The specific steps are listed below.
 
-	1)	上传mysql.exe工具到虚拟机。
+	1) Upload the mysql.exe tool to the virtual machine.
 
-	2)	将数据库导出的文件上传到虚拟机上。如果备份文件很大，可以压缩后上传。
+	2) Upload the file exported form the database on to the virtual machine. If the backup file is very large, you can compress it before uploading.
 
-	3)	登录到虚拟机，通过mysql.exe连接新创建的MySQL服务器.
-mysql -h<服务器地址>  -P<端口号> –u<用户名>  -p<密码>
+	3) Log into the virtual machine, and connect to the newly created MySQL server using mysql.exe: mysql -h<server address> -P<port number> –u<username> -p<password>.
 
-	4)	运行下列sql命令，导入备份文件中的数据。
-source <备份文件名>;
+	4) Run the following SQL command to import data within the backup file. source <backup file name>.
 
-	5)	重复执行 c) -> f)，直到将所有用户数据库中的数据导入到MySQL服务器中。
+	5) Repeat c) -> f), until all the data in the user databases have been imported into the MySQL server.
 
-11.	将新创建的MySQL服务器设置为从服务器
+11.	Making the newly created MySQL server the slave server
 
-	1)	选定新创建的MySQL服务器,点击“复制”页。
+	1) Select the newly created MySQL server, and click on the “Replicate” page.
 
-	2)	将角色更改为“从服务器”,然后填入主服务器参数。
+	2) Change the role to “Slave server,” and then enter the master server parameters.
 
-	i.	对于主服务器二进制日志文件名和偏移,请填入我们在步骤2.获取的结果。
+	i. For the master server binary log file name and offset, please enter the results obtained in step 2.
 
-	ii.	如果使用SSL连接,请在使用SSL连接处选择启用。然后打开主服务器CA证书,将它的所有内容拷贝到主服务器CA证书输入框中。
-	3)	配置好所有信心后点击保存。
+	ii. If you are using SSL links, please select the enable option in the locations using the SSL links. Next, open the master server CA certificate and copy the entire contents into the input box of the master server CA certificate. 3) Click on save once all the details are correctly configured.
 
->[AZURE.NOTE] **注意:为保证数据的安全性，我们强烈建议使用SSL。**
+>[AZURE.NOTE]**Note: We strongly recommend using SSL to ensure that your data is secure.**
 
-![配置过程](./media/mysql-database-data-replication/replicationsetting.png)
+![Configuration process](./media/mysql-database-data-replication/replicationsetting.png)
 
 
-12.	配置成功后,底部的复制状态应该为复制中。
-![配置过程](./media/mysql-database-data-replication/replicationstatus.png)
+12.	Once the configuration is successful, the replication status at the bottom should say “replicating”. ![Configuration process](./media/mysql-database-data-replication/replicationstatus.png)
 
->[AZURE.NOTE] ** 注意:
-- 当MySQL服务器的复制角色配置为从服务器以后,该服务器处于只读模式。
-- 当MySQL服务器的复制角色配置为从服务器以后, 除角色外，复制页面所有主服务器参数不可更改。如果有输入错误,只有先将复制角色配置为禁止，然后重新配置从服务器参数。
-- 我们推荐将主服务器的binlog_format参数设置为 Mixed或者Row, 从而避免因为使用unsafe statement,例如 sysdate()而引发的数据复制错误.**
+>[AZURE.NOTE] **Note: Once the replication role of the MySQL server is set to slave server, the server will be in read-only mode. - Once the replication role of the MySQL server is set to slave server, none of the master server parameters on the replication page will be editable, except for the role. If there is an input error, you must set the replication role to disabled and then reconfigure the slave server parameters. - We recommend setting the binlog_format for the master server to Mixed or Row, in order to avoid causing data replication errors due to the use of unsafe statements such as sysdate ().**
 
 
-##数据复制的限制
-1. 不会复制主服务器端针对账户和权限的变动。如果你在主服务器端新建了一个账户而且这个账户需要访问从服务器，那么你需要在MySQL Database on Azure上自己新建一个同样的账户。
+##Data replication restrictions
+1. Changes on the master server to accounts and permissions are not replicated. If you created an account on the master server and this account needs to access the slave server, then you will need to create the same account yourself on MySQL Database on Azure.
 
-2. 主从服务器的版本必须一致。例如都是MySQL5.5 或者都是MySQL5.6。
+2. The master and slave server versions must be the same. For example, both must be MySQL 5.5, or both must be MySQL 5.6.
 
-##数据复制错误的解决
-如果复制因为遭遇任何问题而停止，复制状态会更新为复制错误。您可以通过查看复制错误字段,获取与该错误相关的详细信息。
-导致复制出错的常见情况包括:
-- 从服务器端max_allowed_packet参数的值小于主服务器的该参数的值。该参数指定了MySQL服务器上所允许的DML的最大大小。如果从服务器端该参数的值小于主服务器端， 那么就有可能存在一些DML可以在主服务器端成功执行,而无法在从服务器上执行，从而导致错误。 请确保主从服务器的max_allowed_packet 值一致。
+##Solving data replication errors
+If replication stops because it encounters a problem of any kind, the replication status will change to “replication error.” You can find details of the error by looking at the replication error field. Common causes of replication errors include: The value of the max_allowed_packet parameter on the slave server being less than the value of the same parameter on the master server. This parameter determines the maximum permitted DML size for MySQL servers. If the value of the parameter is smaller on the slave server than on the master server, some DMLs may run successfully on the master side, but fail to run on the slave server, causing an error. Please ensure that the max_allowed_packet values are consistent between the master and slave servers.
 
-- 将复制角色更改为从服务器时，主服务器参数输入错误。这会导致从服务器无法连接主服务器。
+- When the replication role is changed to slave server, there is a master server parameter input error. This makes it impossible for the slave server to connect to the master server.
 
-- 主从服务器中数据不一致。例如复制尝试往从服务器中插入一条已经存在的记录。引发该错误的原因可能有多种:
+- Data is consistent between the master and slave servers. For example, replication attempts to insert a record into the slave server that already exists. There are several possible causes of this error:
 
-	1) 主服务器上的某些DML没有被记录到二进制日志文件。例如，在主服务器上执行该DML之前，执行了SET sql_log_bin=0
+	1) Some DMLs on the master server were not recorded into the binary log file. For example, SET sql_log_bin=0 is executed before the DML is executed on the master server.
 
-	2)在复制角色更改为从服务器之前，对其进行了错误的写入操作。
+	2) Before the replication role is changed to the slave server, faulty write operations are performed on it.
 
-	3)在更改复制角色为从服务器时，二进制日志文件名或者偏移量输入错误。
+	3) There are input errors for the binary log file name or offset when changing the replication role to the slave server.
 
-一旦出现数据复制错误,请按照下列步骤解决:
+If data replication errors do occur, please solve them using the following process:
 
-1.	通过Azure管理门户,将该MySQL的复制角色更改为禁止。从而使该MySQL进入可读写模式。
+1.	Use the Azure management portal to change the replication role of the MySQL to disabled. This will put the MySQL in read-only mode.
 
-2.	根据复制错误字段,分析错误原因，解决错误。 例如设置max_allowed_packet,使它和主服务器一致,在从服务器上更改导致复制失败的记录。
+2.	You can then determine the cause of the error by looking at the replication error field, and resolve the issue. For example, you can set a max_allowed_packet value consistent with that on the master server, and change the record on the slave server that is causing the replication failure.
 
-3.	通过Azure管理门户，重新将该MySQL的复制角色更改为从服务器。
+3.	Use the Azure management portal to change the replication role of the MySQL back to the slave server.
 
 
-	1)	主服务器二进制日志文件名和偏移是之前复制执行到的主服务器二进制日志文件名和偏移。如果之前不存在二进制日志文件名或者偏移量输入错误,不建议更改。
+	1) The master server binary log file name and offset are the master server binary file name and offset that were previously replicated and executed. If there were previously no input errors with the binary log file name or offset, we do not recommend making any changes.
 
-	2)	因为安全原因,当前不会显示之前输入的主服务器密码和主服务器CA证书。如果不作任何更改,MySQL仍然使用之前输入的密码和CA证书。
+	2) For security reasons, the master server password and master server CA certificate that were previously entered will not be displayed at this time. If you do not make any changes, MySQL will continue to use the previous password and CA certificate.
 
-	3)	其他主服务器参数字段显示之前输入的相应的参数值。如果没有错误,无需更改。
+	3) The other master server parameter fields will show the corresponding parameter values that were previously entered. If there are no errors, you do not need to make any changes.

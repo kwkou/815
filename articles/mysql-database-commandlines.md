@@ -1,168 +1,167 @@
-<properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文介绍如何通过PowerShell实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
+<properties linkid="" urlDisplayName="" pageTitle="Using PowerShell to Manage MySQL Database on Azure – Microsoft Azure Cloud" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article explains how to use PowerShell to do more with MySQL Database on Azure, including create, view, delete and modify operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="10/14/2015"/>
 
-#使用PowerShell管理MySQL Database on Azure
-本文主要介绍如何通过PowerShell实现更多MySQL Database on Azure的创建、查看、删除、更改等操作。建议您先阅读[利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell),该文介绍了如何下载使用Azure PowerShell, 如何利用PowerShell来快速创建MySQL Database on Azure数据服务。
+#Using PowerShell to Manage MySQL Database on Azure
+This white paper explains how to use PowerShell to do more with MySQL Database on Azure, including create, view, delete and modify operations. We recommend that you first read [Using Azure Resource Manager and PowerShell to Deploy and Use MySQL Database on Azure](/documentation/articles/mysql-database-etoe-powershell). This article explains how to download and use Azure PowerShell, and how to use PowerShell to quickly create a MySQL Database on Azure data services.
 
-在开始之前，请确保已将 Azure PowerShell 准备就绪。
+Before beginning, please ensure that you have properly prepared Azure PowerShell.
 
-###目录
-- [了解 Azure 资源模板和资源组](#gettoknow)
-- [创建操作](#creat)
-- [查看操作](#view)
-- [修改操作](#set)
-- [删除操作](#delete)
+###Contents
+- [Understanding Azure Resource Templates and Resource Groups](#gettoknow)
+- [Operations: Create](#creat)
+- [Operations: View](#view)
+- [Operations: Modify](#set)
+- [Operations: Delete](#delete)
 
-## <a id="gettoknow"></a>1. 了解 Azure 资源模板和资源组
+## <a id="gettoknow"></a>1. Understanding Azure Resource Templates and Resource Groups
 
-大多数部署和运行在 Windows Azure 中的应用程序是通过不同云资源类型的组合构建的。Azure资源管理器模板使你能够集中部署和管理这些不同的资源，只需对资源和关联的配置及部署参数进行 JSON 描述即可。
-###1.1 了解MySQL Database on Azure的资源类型参数信息
-目前，MySQL Database on Azure的Json File中定义了六种资源类型： Servers, Databases, Users, Privileges, FirewallRules, Backups。用户可以通过"Get","New","Set","Remove"指令分别对上述六种资源类型进行查看、创建、修改、删除的操作。
-您可以通过下载[Json模板文件](http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/2015-09-01.json)来了解更多MySQL Database on Azure 服务的API参数定义。
+Most apps that are deployed and run on Microsoft Azure are built from combinations of different types of cloud resources. Azure Resource Manager templates allow you to centralize the deployment and management of these different resources, so that all you need to do is complete JSON description of the resources and the associated configuration and deployment parameters.
+###1.1 Understanding resource type parameter information in MySQL Database on Azure
+Six resource types are currently defined in MySQL Database on Azure JSON files: Servers, Databases, Users, Privileges, Firewall Rules, and Backups. Users can perform view, create, modify, and delete operations on these six resource types using the "Get," "New," "Set," and "Remove" commands. You can download the [JSON template file](http://wacnppe.blob.core.chinacloudapi.cn/marketing-resource/2015-09-01.json) to find out more about API parameter definitions for MySQL Database on Azure services.
 
-## <a id="creat"></a>2. 创建操作
-通过New指令可以创建MySQL服务器、数据库、用户、用户权限、备份、防火墙规则等。
-###2.1 创建服务器
-编辑运行以下命令，定义您的服务器名称、位置、版本等信息来完成服务器创建。
+## <a id="creat"></a>2. Operations: Create
+The New command allows you to create MySQL servers, databases, users, user permissions, backups, and firewall rules.
+###2.1 Creating servers
+Edit and run the following commands to set information including your server name, location, version and other details, in order to complete creating the server.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 		
 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
 ```
 
-###2.2 创建服务器防火墙原则
-编辑运行以下命令，定义您的防火墙原则名称、IP白名单范围（起始IP地址，终止IP地址）等信息来完成防火墙原则的创建。
+###2.2 Creating server firewall rules
+Edit and run the following commands to set information including your firewall rule names and IP whitelist range (start IP address, end IP address), in order to finish creating the firewall rules.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -ResourceName testPSH/rule1 -ApiVersion 2015-09-01 -PropertyObject @{startIpAddress="0.0.0.0"; endIpAddress="255.255.255.255"} -ResourceGroupName resourcegroupChinaEast
 ```
 
-###2.3 创建数据库
-编辑运行以下命令，定义您的数据库名称、字符集等信息完成数据库创建。
+###2.3 Creating databases
+Edit and run the following commands to set information including your database name and character sets, in order to finish creating the database.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/databases" -ResourceName testPSH/demodb -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{collation='utf8_general_ci'; charset='utf8'}
 ```
 
-###2.4 创建用户
-编辑运行以下命令，定义您的用户名、密码等信息完成数据库创建。
+###2.4 Creating users
+Edit and run the following commands to set information including your username and password, in order to finish creating the database.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName testPSH/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{password='abc123'}
 ```
 
-###2.5 添加用户权限
-编辑运行以下命令，设置数据库读写权限给用户。权限分为"Read"以及"ReadWrite"。
+###2.5 Adding user permissions
+Edit and run the following commands to assign database read-write permissions to users. Permissions can be either “Read” or “ReadWrite”.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 	
 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
 ```
-###2.6 创建按需备份文件
-编辑运行以下命令，制定备份文件名称，创建按需备份文件。
+###2.6 Creating on-demand backup files
+Edit and run the following commands to set backup file names and create on-demand backup files.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{}
 ```
 
-## <a id="view"></a>3. 查看操作
-通过Get指令可以查看当前MySQL服务器、数据库、用户、用户权限、备份、防火墙规则等列表,也可以查看详细参数配置。
-###3.1 查看服务器列表
-编辑运行以下命令，查看当前所有服务器列表
+## <a id="view"></a>3. Operations: View
+Use the Get command to view lists such as current MySQL servers, databases, users, user permission, backups and firewall rules. You can also view detailed parameters and configurations.
+###3.1 Viewing server lists
+Edit and run the following commands to view all the current server lists.
 
 ```
 Get-AzureResource -ResourceType "Microsoft.MySql/servers"  -ApiVersion 2015-01-01 
 ```
->[AZURE.NOTE] ** 注意:与其他指令不同，查看服务器中的“-ApiVersion 2015-01-01”，指向ARM的API，其他指令中，均为“-ApiVersion 2015-09-01”，指向MySQL的API。**
+>[AZURE.NOTE] **Note: Unlike other commands, this checks that the “-ApiVersion 2015-01-01” in the server is directed at the ARM API, whereas this is “-ApiVersion 2015-09-01” in all other commands and is directed at the MySQL API.**
 
-###3.2 查看数据库列表及参数
-编辑运行以下命令，查看当前资源组内某个服务器的所有数据库列表：
+###3.2 Viewing database lists and parameters
+Edit and run the following commands to view all database lists for a specific server in the current resource group:
 
 ```
  Get-AzureResource -ResourceType "Microsoft.MySql/servers/databases" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-###3.3 查看用户列表及参数
-编辑运行以下命令，查看当前资源组内某个服务器的所有用户列表：
+###3.3 Viewing user lists and parameters
+Edit and run the following commands to view all user lists for a specific server in the current resource group:
 
 ```
  Get-AzureResource -ResourceType "Microsoft.MySql/servers/users" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-###3.4 查看用户权限列表及参数
-编辑运行以下命令，查看当前资源组内某个数据库的用户权限：
+###3.4 Viewing user permission lists and parameters
+Edit and run the following commands to view all user permissions for a specific database in the current resource group:
 
 ```
  Get-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -Name testPSH/demodb -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-###3.5 查看备份列表及参数
-编辑运行以下命令，查看当前资源组内某个服务器的所有备份文件：
+###3.5 View backup lists and parameters
+Edit and run the following commands to view all backup files for a specific server in the current resource group:
 
 ```
  Get-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-###3.6 查看防火墙规则列表及参数
-编辑运行以下命令，查看当前资源组内某个服务器的所有防火墙规则：
+###3.6 Viewing firewall rule lists and parameters
+Edit and run the following commands to view all firewall rules for a specific server in the current resource group:
 
 ```
  Get-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-## <a id="set"></a>4. 修改操作
-通过Set指令可以完成账户密码修改，权限修改，某些服务器参数修改等配置工作。
-###4.1 修改账户密码
-编辑运行以下命令，修改某个账户密码。
+## <a id="set"></a>4. Operations: Modify
+You can use the Set command to carry out configuration tasks, such as changing account passwords, modifying permissions, and altering certain server parameters.
+###4.1 Modifying account passwords
+Edit and run the following commands to change the password for a specific account.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName testPSH/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{password='abc1234'} -UsePatchSemantics
 ```
 
-###4.2 修改某个用户的读写权限
-编辑运行以下命令，修改某个用户的读写权限。
+###4.2 Modifying access permission for a particular user
+Edit and run the following commands to modify the access permissions for a specific user.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" 		
 -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='Read'} -UsePatchSemantics
 ```
 
-###4.3 允许所有Azure服务访问
-编辑运行以下命令，允许所有Azure服务访问指定服务器。
+###4.3 Allowing access for all Azure services
+Edit and run the following commands to allow all Azure services to access specific servers.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{allowAzureServices='true'} -UsePatchSemantics
 ```
 
-###4.4 修改默认每日备份时间
-编辑运行以下命令，修改指定服务器的默认日备起始时间(此处为北京时间UTC+8)，0-24可选。
+###4.4 Modifying the default time for daily backups
+Edit and run the following commands to change the default daily backup start time for a specific server. The time can be set from 0-24, and means Beijing time UTC+8 in this location.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{dailyBackupTimeInHour='5'} -UsePatchSemantics
 ```
 
-###4.5 开启慢查询日志
-编辑运行以下命令，开启慢查询日志。
+###4.5 Turning on slow query logs
+Edit and run the following commands to turn on slow query logs.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{slow_query_log='ON'}} -UsePatchSemantics
 ```
 
-###4.6 修改防火墙原则
-编辑运行以下命令，更改已有的防火墙原则。
+###4.6 Modifying firewall rules
+Edit and run the following commands to alter the existing firewall rules.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -ResourceName testPSH/rule1 -ApiVersion 2015-09-01 -PropertyObject @{startIpAddress="1.1.1.1"} -ResourceGroupName resourcegroupChinaEast -UsePatchSemantics
 ```
 
-###4.7 修改部分MySQL服务器设置
-以wait_timeout参数为例，其他参数详见Json文件，编辑运行以下命令，更改wait_timeout默认值。
+###4.7 Modifying parts of the MySQL server settings
+Taking the wait_timeout parameter as an example, edit and run the following commands to change the default value for wait_timeout; see the JSON files for details of other parameters.
 
 ```
 Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{options=@{wait_timeout=70}} -UsePatchSemantics
 ```
-对其他参数的修改，可以参考下面Json文件的定义，参数的有效值范围可参考[定制MySQL Database on Azure服务器参数](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings)：
+You can refer to the JSON file definitions below for details of how to modify other parameters. See [Setting MySQL Database on Azure Server Parameters](http://www.windowsazure.cn/documentation/articles/mysql-database-advanced-settings) for details of valid parameter ranges:
 
 ```
 	"options": {
@@ -214,41 +213,41 @@ Set-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH 
         }
 ```
 	
-## <a id="delete"></a>5. 删除操作
-通过Remove指令可以删除MySQL服务器、数据库、用户、备份、防火墙规则等。
-###5.1 删除服务器
-编辑运行以下命令，删除指定服务器。
+## <a id="delete"></a>5. Operations: Delete
+You can use the Remove command to delete MySQL servers, databases, users, backups and firewall rules.
+###5.1 Deleting servers
+Edit and run the following commands to delete a specific server.
 
 ```
 Remove-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast 
 ```
 
-###5.2 删除服务器防火墙原则
-编辑运行以下命令，删除指定防火墙。
+###5.2 Deleting server firewall rules
+Edit and run the following commands to delete a specific firewall.
 
 ```
 Remove-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -ResourceName testPSH/rule1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-###5.3 删除数据库
-编辑运行以下命令，删除指定数据库。
+###5.3 Deleting databases
+Edit and run the following commands to delete a specific database.
 
 ```
 Remove-AzureResource -ResourceType "Microsoft.MySql/servers/databases" -ResourceName testPSH/demodb -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast 
 ```
 
-###5.4 删除用户
-编辑运行以下命令，删除指定用户。
+###5.4 Deleting users
+Edit and run the following commands to delete a specific user.
 
 ```
 Remove-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName testPSH/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
-###5.5 删除备份文件
-编辑运行以下命令，删除指定备份文件。
+###5.5 Deleting backup files
+Edit and run the following commands to delete a specific backup file.
 
 ```
 Remove-AzureResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast 
 ```
 
-随着MySQL Database on Azure提供的功能增多，我们也会陆续更新相应的PowerShell指南。
+We will continue to update the corresponding PowerShell guides as the range of features and functions in MySQL Database on Azure grows.

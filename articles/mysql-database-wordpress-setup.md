@@ -1,74 +1,74 @@
-<properties linkid="" urlDisplayName="" pageTitle="如何使用MySQL 数据库 on Azure来配置WordPress网站- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, 网站配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和 Azure Web应用来安装配置WordPress。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
+<properties linkid="" urlDisplayName="" pageTitle="How to Use MySQL Database on Azure to Configure WordPress Websites – Microsoft Azure Cloud" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, 网站配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress is a very widely used CMS system. This article explains how to use MySQL Database on Azure and Azure Web apps to install and configure WordPress." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
 <tags ms.service="mysql" ms.date="" wacn.date="05/21/2015"/>
 
-# 如何使用MySQL 数据库 on Azure来配置WordPress网站
+# How to Use MySQL Database on Azure to Configure WordPress Websites
 
-WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和Azure Web应用来安装配置WordPress。
+WordPress is a very widely used CMS system. This article explains how to use MySQL Database on Azure and Azure Web apps to install and configure WordPress.
 
-## 步骤 1:下载最新版WordPress安装包  
+## Step 1: Download the latest version of the WordPress installation package  
 
-您可以通过[WordPress官方网站]( https://wordpress.org/download)下载最新版的安装包到您的本地存储目录。并进行解压到该目录中。
+You can download the latest version of the installation package to your local storage directory from [the official WordPress website](https://wordpress.org/download). You can then extract it to this directory.
 
-## 步骤 2：新建MySQL 数据库 on Azure的服务器  
+## Step 2: Create a MySQL Database on Azure server  
 
-您可以通过[Windows Azure管理门户](https://manage.windowsazure.cn)创建您的MySQL服务器。  
+You can use the [Microsoft Azure management portal](https://manage.windowsazure.cn) to create your MySQL server.
 
-![创建MySQL服务器][1]
+![Creating MySQL Servers][1]
 
-> **注意** 请确认您的“配置”中，允许的服务已经被设置为“是”，否则可能造成部署失败。 如下图所示。（缺省设置为“是”）
+> **Ensure** that the allowed services are already set to “yes” in your “configuration,” otherwise this may cause the deployment to fail. This is shown in the image below. (Set to “yes” by default)
 
-![允许的服务][2]
-
-
-### 新建供WordPress使用的MySQL数据库（必备步骤）  
-
-将工作区切至“数据库”，点击屏幕下方“新建”按钮进行数据库的创建。
-
-![新建数据库][3]
-
-> [AZURE.NOTE] **注意**：用户需在管理门户中手动创建MySQL数据库。如果忽略此步骤，将会造成WordPress部署失败。
-
-## 步骤 3:新建Web应用  
-
-详细步骤请参阅 [如何创建和部署Web应用](/documentation/articles/web-sites-php-web-site-gallery)  
-
-![新建Web应用][4]
-
-### 部署WordPress安装文件  
-
-接下来，将第一步中解压出来的所有WordPress安装文件部署到刚创建的Web应用中。这里建议使用Git来做部署操作。具体方式请参见[从源控件发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control)
-
-> [AZURE.NOTE] **注意**：步骤3 主要针对WordPress的新用户，若您已经使用Azure Web应用并已成功部署WordPress安装文件并开始使用，出于内容一致性的目的，建议您将数据进行导出，重新安装部署WordPress并与新建的MySql数据库成功连接之后，再进行数据导入。具体的Wordpress数据导入导出，请通过WordPress控制台来完成（如下图所示）。  
-
-![WordPress导入导出][9]
-
-## 步骤 4:安装配置WordPress
-
-### 1. 访问部署Web应用  
-
-访问之前创建的Web应用，进入WordPress配置页面，选择所要使用的语言，屏幕将会出现下图中显示的内容。  
-
-![配置WordPress][5] 
-
-### 2. 连接配置MySQL数据库  
-
-将第二步所创建数据库的详细配置信息填入下图界面中。
-
-![连接WordPress][6] 
-
-当您看到下图所示，表示您的WordPress与MySQL的连接已经成功了。
-
-![成功连接WordPress][7] 
-
-点击进行安装，完成您的WordPress部署工作。
+![Allowed Services][2]
 
 
-## 步骤 5:使用WordPress  
+### Creating a new MySQL database for WordPress to use (essential)  
 
-在完成上述步骤后，访问您之前创建的Web应用，您将看到已经生效的WordPress主界面。现在请开始您的WordPress使用之旅！  
+Switch the workspace to “database,” and click on the “create” button at the bottom of the screen to create the new database.
 
-![安装WordPress][8] 
+![Creating New Databases][3]
+
+>[AZURE.NOTE] **Note:** Users must manually create the MySQL database in the management portal. The WordPress deployment will fail if you miss this step.
+
+## Step 3: Create a new Web app  
+
+See [How to Create and Deploy Web Apps](/documentation/articles/web-sites-php-web-site-gallery) for details of this process.
+
+![Creating New Web Apps][4]
+
+### Deploying the WordPress installation files  
+
+Next, deploy all the WordPress installation files you uncompressed in Step 1 to the new Web app. At this point, we recommend using Git to complete the deployment process. Please refer to [Publishing to Azure Websites From Source Control](/documentation/articles/web-sites-publish-source-control) for the specific method.
+
+>[AZURE.NOTE] **Note:** Step 3 is chiefly intended for new WordPress users. If you already use Azure Web apps and have successfully deployed the WordPress installation files and begun using them, in order to keep the content consistent, we recommend that you export the data and then reimport it after you have reinstalled and deployed WordPress and successfully connected to a new MySQL database. Please complete the specific WordPress data import and export procedures using the WordPress control panel (as shown in the image below).
+
+![Importing and Exporting With WordPress][9]
+
+## Step 4: Install and configure WordPress
+
+### 1. Access and deploy the Web app  
+
+In order to access the Web app you created earlier, go to the WordPress configuration page, and select the required language; the content shown in the image below will then appear on the screen.
+
+![Configuring WordPress][5]
+
+### 2. Connect and configure the MySQL database  
+
+Enter the configuration details for the database created in Step 2 into the interface shown in the image below.
+
+![Connecting to WordPress][6]
+
+If you see what is shown in the image below, this indicates that your WordPress is now connected to MySQL.
+
+![Successfully Connected to WordPress][7]
+
+Click to proceed with the installation, and finish deploying your WordPress.
+
+
+## Step 5: Using WordPress  
+
+Once you have completed the process above, if you access the Web app you created earlier, you will find that the main WordPress interface is now working. Now you are ready to start your journey with WordPress!
+
+![Installing WordPress][8]
 
 
 

@@ -1,53 +1,52 @@
-<properties linkid="" urlDisplayName="" pageTitle="如何使用SSL访问MySQL Database on Azure- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="
-通过SSL加密访问数据库，可以保障您访问的安全性，本文介绍如何下载并配置SSL证书。目前MySQL Database on Azure支持利用公钥在服务器端进行加密验证。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="How to Use SSL to Securely Access MySQL Database on Azure – Microsoft Azure Cloud" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，连接池，connection pool, Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Using SSL encryption to access databases ensures that your access is secure. This article explains how to download and configure SSL certificates. MySQL Database on Azure currently supports the use of public keys to perform encryption and verification on the server side." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="07/27/2015"/>
 
-# SSL安全访问MySQL Database on Azure
+# How to Use SSL to Securely Access MySQL Database on Azure
 
 
-通过SSL加密访问数据库，可以保障您访问的安全性，本文介绍如何下载并配置SSL证书。目前MySQL Database on Azure支持利用公钥在服务器端进行加密验证。
+Using SSL encryption to access databases ensures that your access is secure. This article explains how to download and configure SSL certificates. MySQL Database on Azure currently supports the use of public keys to perform encryption and verification on the server side.
 
-在您创建MySQL Database on Azure实例时，我们强烈建议您将数据库实例与其他Azure服务放在同一区域，即使不用SSL加密，也可保障安全性。
+When you create a MySQL Database on Azure instance, we strongly recommend that you put the database instance in the same region as other Azure services, as this ensures their security even if you do not use SSL encryption.
 
 
-## 步骤 1:下载SSL连接的公钥证书
-[点击下载](https://www.wosign.com/root/WS_CA1_NEW.crt)SSL证书至本地。
+## Step 1: Download SSL connection public key certificates
+[Click to download the ](https://www.wosign.com/root/WS_CA1_NEW.crt)SSL certificate locally.
 
-## 步骤 2：使用SSL来连接MySQL Database on Azure上的服务器
+## Step 2: Use SSL to connect to a server on MySQL Database on Azure
 
-### 利用MySQL客户端进行配置
-以MySQL.exe为例，创建连接时需使用--ssl-ca参数来指定公钥证书。关于SSL连接的更多信息，请参考 Using SSL for Secure Connections。
+### Configure using the MySQL client
+Taking MySQL.exe as an example, you need to use the --ssl-ca parameter to specify a public key certificate when creating the connection. For more information on SSL connections, please refer to Using SSL for Secure Connections.
 
-参考样例：
+Reference examples:
 
 mysql.exe --ssl-ca=WS_CA1_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%test -p
 
-![mysql.exe访问数据库][1]
+![mysql.exe database access][1]
 
-连接成功后，使用status命令。若SSL的参数值为Cipher in use，则成功创建SSL连接；若SSL的参数值为Not in use, 则仍是非SSL连接。
+Once you have successfully connected, use the status command. If the SSL parameter value is “Cipher in use,” then you have successfully created the SSL connection; if the SSL parameter is “Not in use,” then the connection is still a non-SSL connection.
 
-![验证][6]
+![Verification][6]
 
-> **提示** 当前证书支持MySQL.exe 5.5.44和5.6.25及其后续版本。
+> **Indicates** that the current certificate supports MySQL.exe 5.5.44 and 5.6.25, as well as subsequent versions.
 
-以MySQL Workbench为例，通过Parameters标签设置访问数据库的Connection String，如下图所示。
+Taking MySQL Workbench as an example, use the Parameters label to set up the connection string for accessing the database, as shown in the image below.
 
-![配置connection string][2]
+![Configuring the connection string][2]
 
-通过SSL标签配置SSL证书.
+Configuring the SSL certificate using SSL labels
 
-![配置SSL证书][3]
+![Configuring SSL certificates][3]
 
-> **注意** 在Use SSL中选择‘If Available’，否则可能会造成配置失败。 在Test Connection过程中可能会提示SSL not enabled，这是一个假预警，点击确认后连接数据库，通信过程已加密。
+> **Make sure that you** select “If Available” under Use SSL, otherwise this may cause configuration failures. “SSL not enabled” may be shown during the test connection process, but this is a false alarm, as the communication process is encrypted once you have clicked “OK” and connected to the database.
 >
 > ![errormessage][4]
 >
 
-### 利用函数进行配置
-以Python为例，下图是一段示例代码，供参考：
+### Configuring using functions
+Taking Python as an example, the image below shows a piece of sample code for your reference:
 
-![python SSL访问][5]
+![python SSL access][5]
 
 
 

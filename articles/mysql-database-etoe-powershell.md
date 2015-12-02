@@ -1,93 +1,92 @@
-<properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理使用MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
+<properties linkid="" urlDisplayName="" pageTitle="Using PowerShell to Manage and Use MySQL Database on Azure – Microsoft Azure Cloud" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article explains how to use PowerShell scripts to quickly set up and use MySQL services." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="10/14/2015"/>
 
-#利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure
-Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现在可以使用基于 Azure 资源管理器的 API 和工具来管理 MySQL Database on Azure。若要了解有关 Azure 资源管理器的详细信息，请参阅[使用资源组管理 Azure 资源](/documentation/articles/azure-preview-portal-using-resource-groups)。MySQL Database on Azure支持您通过PowerShell脚本查询创建管理删除MySQL服务器、数据库、防火墙原则、用户等，同时支持您通过脚本更改参数设置。本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。对于更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines)。
+#Using Azure Resource Manager and PowerShell to deploy and use MySQL Database on Azure
+Azure Resource Manager (ARM) is a completely new management framework for Azure services. Now you can use APIs and tools based on Azure resource manager to manage MySQL Database on Azure. If you would like to find out more about Azure Resource Manager, please read [Using Resource Manager to Manage Azure Resources](/documentation/articles/azure-preview-portal-using-resource-groups). MySQL Database on Azure supports the use of PowerShell scripts to query, create, manage and delete MySQL servers, databases, firewall rules and users, and also supports the use of scripts to change parameters and settings. This article explains how to use PowerShell scripts to quickly set up and use MySQL services. You can also read [Using PowerShell to Manage MySQL Database on Azure](/documentation/articles/mysql-database-commandlines) for more information on the create, view, delete and modify operations.
 
-###目录
-- [步骤1：安装Azure PowerShell](#step1)
-- [步骤2：配置账户信息](#step2)
-- [步骤3：订阅MySQL Database on Azure服务](#step3)
-- [步骤4：创建资源组](#step4)
-- [步骤5：创建服务器](#step5)
-- [步骤6：创建服务器防火墙原则](#step6)
-- [步骤7：创建数据库](#step7)
-- [步骤8：创建用户](#step8)
-- [步骤9：添加用户权限](#step9)
+###Contents
+- [Step 1: Install Azure PowerShell](#step1)
+- [Step 2: Configure account details](#step2)
+- [Step 3: Subscribe to MySQL Database on Azure services](#step3)
+- [Step 4: Create resource groups](#step4)
+- [Step 5: Create servers](#step5)
+- [Step 6: Create server firewall rules](#step6)
+- [Step 7: Create databases](#step7)
+- [Step 8: Create users](#step8)
+- [Step 9: Add user permissions](#step9)
 
-##<a id="step1"></a>步骤1： 安装Azure PowerShell
-运行脚本前，您需要安装并运行Azure PowerShell。您可以通过[运行Microsft Web平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)下载并安装最新版本Azure PowerShell 。可参阅[如何安装和配置Azure PowerShell](http://www.windowsazure.cn/documentation/articles/powershell-install-configure)来了解更多详细步骤。
-用于创建和管理MySQL Database on Azure 数据库的cmdlet位于Azure资源管理器模块中。启动Azure PowerShell时，默认情况下将导入Azure模块中的cmdlet。若要切换到Azure资源管理器模块，请使用以下命令转换：
+##<a id="step1"></a>Step 1: Install Azure PowerShell
+You must install and run Azure PowerShell before you run scripts. You can download and install the latest version of Azure PowerShell by [running the Microsoft Web platform installation program](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409). Please see [How to Install and Configure Azure PowerShell](http://www.windowsazure.cn/documentation/articles/powershell-install-configure) for more details of this process. The cmdlet used to create and manage MySQL Database on Azure databases is located in the Azure Resource Manager module. Starting Azure PowerShell imports the cmdlet from the Azure module by default. If you want to switch to the Azure Resource Manager module, you can do so by using the following commands:
 
 ```
 Switch-AzureMode -Name AzureResourceManager
 ```
 
-如果收到警告"Switch-AzureMode cmdlet已过时，将在以后的版本中删除"，可以忽略该消息并转到下一部分。此命令将在新版本淘汰，因此建议您更新Azure PowerShell到最新版。有关详细信息，请参阅[将Windows PowerShell与资源管理器配合使用](http://www.windowsazure.cn/documentation/articles/powershell-azure-resource-manager)
+If you receive a warning that “Switch-AzureMode cmdlet is out of date and will be deleted in subsequent versions,” you can ignore this message and go to the section below. This command will be superseded in the new version, so we recommend that you update Azure PowerShell to the latest version. For more information, see [Using Windows PowerShell With Resource Manager](http://www.windowsazure.cn/documentation/articles/powershell-azure-resource-manager).
 
-##<a id="step2"></a>步骤2： 配置账户信息
-在针对Azure订阅运行PowerShell之前，必须先将Azure账户绑定。运行以下命令，在登陆页面输入与Azure管理门户相同的电子邮件和密码，进行身份验证。
+##<a id="step2"></a>Step 2: Configure account details
+You must bind the Azure account before running PowerShell for Azure subscriptions. Run the following commands, entering the same email address and password as for the Azure management portal on the login page, in order to verify your identity.
 
 ```
 Add-AzureAccount -Environment AzureChinaCloud 
 ```
 
-若您有多个SubID需要选择，可通过运行 Select-AzureSubscription命令进行选择。
+If you have multiple SubIDs to choose from, you can make your selection by running the Select-AzureSubscription command.
 
-##<a id="step3"></a>步骤3： 订阅MySQL Database on Azure服务
-运行以下命令订阅MySQL服务。
+##<a id="step3"></a>Step 3: Subscribe to MySQL Database on Azure services
+Run the following command to subscribe to MySQL services.
 
 ```
 Register-AzureProvider -ProviderNamespace "Microsoft.MySql"
 ```
 
-##<a id="step4"></a>步骤4： 创建资源组
-如果您已有资源组，可以直接创建服务器，或者编辑运行以下命令，创建新的资源组：
+##<a id="step4"></a>Step 4: Create resource groups
+If you already have resource groups, you can create a server directly, or edit and run the following commands to create a new resource group:
 
 ```
 New-AzureResourceGroup -Name "resourcegroupChinaEast" -Location "chinaeast"
 ```
 
->[AZURE.NOTE] ** 注意:Location的默认选项为chinanorth, 处于性能以及安全性考虑，强烈建议您将资源组中的服务选择在同一个地域中。**
+>[AZURE.NOTE] **Note: The default option for location is “chinanorth”. For reasons of both performance and security, we strongly recommend that you choose services that are in the same region as your resource group.**
 
-##<a id="step5"></a>步骤5： 创建服务器
-编辑运行以下命令，定义您的服务器名称、位置、版本等信息来完成服务器创建。
+##<a id="step5"></a>Step 5: Create servers
+Edit and run the following commands to set information including your server name, location, version and other details, in order to complete creating the server.
 
 ```
-New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} -Sku MS3
+New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -Location chinaeast -PropertyObject @{version = '5.5'} 
 ```
 
->[AZURE.NOTE] ** 注意:“-ApiVersion 2015-09-01”指定了API的版本，是必要的。另外，运行上述命令可以完成MySQL服务器的创建，但没有用户，须在后续步骤中创建用户设置权限，这一点和使用Azure管理门户创建稍有不同**
+>[AZURE.NOTE] **Note: “-ApiVersion 2015-09-01” specifies the API version and is essential. It is also important to note that running the commands above will finish creating the MySQL server, but not the user; you must create user settings and permissions in the subsequent steps, which is a slightly different process than the way that the Azure management portal works.**
 
-##<a id="step6"></a>步骤6： 创建服务器防火墙原则
-编辑运行以下命令，定义您的防火墙原则名称、IP白名单范围（起始IP地址，终止IP地址）等信息来完成防火墙原则的创建。
+##<a id="step6"></a>Step 6: Create server firewall rules
+Edit and run the following commands to set information including your firewall rule names and IP whitelist range (start IP address, end IP address), in order to finish creating the firewall rules.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/firewallRules" -ResourceName testPSH/rule1 -ApiVersion 2015-09-01 -PropertyObject @{startIpAddress="0.0.0.0"; endIpAddress="255.255.255.255"} -ResourceGroupName resourcegroupChinaEast
 ```
 
-##<a id="step7"></a>步骤7： 创建数据库
-编辑运行以下命令，定义您的数据库名称、字符集等信息完成数据库创建。
+##<a id="step7"></a>Step 7: Create databases
+Edit and run the following commands to set information including your database name and character sets, in order to finish creating the database.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/databases" -ResourceName testPSH/demodb -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{collation='utf8_general_ci'; charset='utf8'}
 ```
 
-##<a id="step8"></a>步骤8： 创建用户
-编辑运行以下命令，定义您的用户名、密码等信息完成数据库创建。
+##<a id="step8"></a>Step 8: Create users
+Edit and run the following commands to set information including your username and password, in order to finish creating the database.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/users" -ResourceName testPSH/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{password='abc123'}
 ```
 
-##<a id="step9"></a>步骤9： 添加用户权限
-编辑运行以下命令，设置数据库读写权限给用户。权限分为"Read"以及"ReadWrite"。
+##<a id="step9"></a>Step 9: Add user permissions
+Edit and run the following commands to assign database read-write permissions to users. Permissions can be either “Read” or “ReadWrite”.
 
 ```
 New-AzureResource -ResourceType "Microsoft.MySql/servers/databases/privileges" -ResourceName testPSH/demodb/admin -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{level='ReadWrite'}
 ```
 
-通过上述操作，您已经完成了服务器、数据库、用户、防火墙原则等的创建工作，可以开始使用MySQL Database on Azure的数据库服务。在使用过程中，如需更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines)。
+Using the operations described above, you have now finished creating the services, databases, users, and firewall rules, and are ready to begin using MySQL Database on Azure database services. If you need to perform further create, view, delete or modify operations during the usage process, you can refer to [Using PowerShell to Manage MySQL Database on Azure](/documentation/articles/mysql-database-commandlines).
 
 

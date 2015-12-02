@@ -1,18 +1,18 @@
-<properties linkid="" urlDisplayName="" pageTitle="了解MySQL 数据库 on Azure服务限制- Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,服务限制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="帮助您了解目前MySQL 数据库 on Azure 公共预览版期间的服务限制。如果您对某些操作存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Understanding the Service Limitations of MySQL Database on Azure – Microsoft Azure Cloud" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,服务限制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Helps you to understand the service limitations of MySQL Database on Azure during the period of this public preview version. Please contact technical support if you have any questions about specific operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="04/29/2015"/>
 
-#了解MySQL 数据库 on Azure服务限制
+#Understanding the Service Limitations of MySQL Database on Azure
 
-MySQL 数据库 on Azure目前有如下几点限制，如果您有任何疑问，欢迎联系技术支持。
+MySQL Database on Azure currently has the following limitations. If you have any questions, please contact technical support.
 
 
-1.	由于MySQL 数据库 on Azure应用了定制的用户账号认证plugin，用户账号的创建只能在管理门户上完成，用户不能直接通过SQL命令行创建新的数据库用户账号。
-2.	只能通过管理门户创建数据库，不支持SQL命令行直接创建数据库。 
-3.	用户没有shutdown权限，用户无法shutdown MySQL数据库服务器。
-4.	用户没有Super权限，列如用户不能更改任意一个全局变量。[了解更多MySQL 5.5 用户权限](https://dev.mysql.com/doc/refman/5.5/en/privileges-provided.html)
-5.	用户没有File 权限，[了解更多MySQL 5.5 用户权限](https://dev.mysql.com/doc/refman/5.5/en/privileges-provided.html)。
-6.	MySQL built-in system table 不支持写权限，目前以下table不支持读写权限。
+1.	As MySQL Database on Azure uses customized user account authentication plugins, user accounts can only be created in the management portal. Users cannot directly create database user accounts using the SQL command line.
+2.	You can only create databases using the management portal; directly creating databases with the SQL command line is not supported. 
+3.	Users do not have shutdown **permissions**, so users cannot shut down MySQL database servers.
+4.	Users do not have super permissions, and so cannot change any global variables, for example. [Find Out More About MySQL 5.5 User Permissions](https://dev.mysql.com/doc/refman/5.5/en/privileges-provided.html).
+5.	Users do not have file permissions. [Find Out More About MySQL 5.5 User Permissions](https://dev.mysql.com/doc/refman/5.5/en/privileges-provided.html).
+6.	The MySQL built-in system table does not support write permissions, and read-write permissions are currently not supported for the following tables:
 
 	* columns_priv
 	* db
@@ -27,7 +27,7 @@ MySQL 数据库 on Azure目前有如下几点限制，如果您有任何疑问�
 	* user
 	* proxies_priv
 
-7.	目前Data Replication仅支持本地、云服务器间的数据同步，方便用户构建混合云场景
-8.	目前不支持MyISAM存储引擎
+7.	Data replication currently only supports data syncing between local and cloud servers, a feature that makes it easier for users to build hybrid cloud scenarios.
+8.	The MyISAM storage engine is currently not supported.
 
 

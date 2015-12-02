@@ -1,35 +1,35 @@
-<properties linkid="" urlDisplayName="" pageTitle="了解服务层和版本 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,性能,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,ASDB基准" description="针对服务层和不同版本的性能介绍,为您选择MySQL 数据库 on Azure提供了详细的参考。我们按照ASDB基准,提供了不同版本的测试数据供您参考。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="" urlDisplayName="" pageTitle="Understanding Service Layers and Versions – Microsoft Azure Cloud" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,性能,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,ASDB基准" description="Explains service tiers and the performance of different versions, and provides you with a detailed reference for choosing MySQL Database on Azure. Based on the ASDB benchmark, we have provided test data for different versions for your reference." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
 <tags ms.service="mysql" ms.date="" wacn.date="04/29/2015"/>
 
-#了解服务层和版本
+#Understanding Service Tiers and Versions
 
-##ASDB (Azure SQL 数据库 Benchmark)测试结果参考 
-ASDB（Azure SQL 数据库 Benchmark）是Microsoft为了量化提高云计算资源配置如何转换为更高数据库性能而设计的一种数据库测试基准。该基准包括了几乎所有在线事务处理（OLTP）工作负载中发生的基本操作。尽管该基准是基于云计算设计的，但数据库架构、数据填充和事务在设计上广泛代表了 OLTP 工作负载中最常用的基本元素。
+##ASDB (Azure SQL Database Benchmark) Test Result References 
+ASDB (Azure SQL Database Benchmark) is a database benchmark designed by Microsoft to facilitate quantitative improvements in terms of translating cloud computing resource allocation into higher database performance. This benchmark includes virtually all basic operations that occur within the online transaction processing (OLTP) workload. While the design of the benchmark is based on cloud computing, the database schema and data population and transactions are representative of a wide range of basic elements commonly used in OLTP workloads.
 
-##ASDB基准的特性 
-ASDB基准的基本特性包括：
+##Features of ASDB 
+The basic features of ASDB include:
 
-- ASDB基准使用的数据库包括了六个表。其中两个表是固定大小，即行数是不变的，三个是缩放性表，表的行数与数据库达到的性能成比例，还有一个是增长性表，其大小在运行基准的过程中会进行数据插入和删除。
+- The database used for ASDB uses six tables. Two of these tables are fixed-size tables, namely meaning that the number of rows does not change. Three of these tables are scaling tables, such that the performance achieved by the database is proportional to the number of lines in the tables. The final table is a growing table, the size of which is subject to data insertions and deletions performed while the benchmark is running.
 
-- 表的结构包含混合形式的数据类型，包括整数、数字、字符和日期/时间，同时包含主键和辅助键，但不包含任何外键。例如，表之间没有任何引用的完整性约束。
+- The schema of the tables is composed of a mixture of data types, including integer, numeral, character, and date/time. It also includes primary and secondary keys, but does not include any foreign keys. For example, there are no referential integrity constraints between the tables.
 
-- 数据库的大小与并发链接和最大性能成比例。例如，有100 个并发链接的数据库可以实现的最大事务率为 100 TPS，这是因为基准应用程序有步调控制以保证每个链接平均每秒最多完成不超过1个事务。促成更高的 TPS 率需要有更多的并发链接和更大的数据库。
+- The maximum performance is proportional to the size of the database and the concurrent connections. For example, a database with 100 concurrent connections can achieve a maximum transaction rate of 100 TPS, because the benchmark application has pacing control to ensure that every connection on average completes a maximum of no more than one transaction per second. More concurrent connections and a larger database are required to facilitate a higher transaction (TPS) rate.
 
-- ASDB基准包括了九个不同的事务类型。每个事务类型侧重于数据库引擎和系统硬件中的某一特定的一组系统特性，不同事务类型的侧重点都不一样。事务利用四个基本的 SQL DML 操作（SELECT、UPDATE、INSERT 和 DELETE）来测试数据库引擎以及基础的 CPU、内存、IO 和网络等硬件资源。
+- ASDB includes nine different types of transaction. Each transaction type is focused on a specific set of system characteristics in the database engine and system hardware, and the different transaction types are focused on different areas. The transactions use four basic SQL DML operations (select, update, insert, and delete) to test the database engine and basic hardware resources such as CPU, memory, IO and networks.
 
-有关ASDB基准更详细的说明，请参阅 [ASDB 基准概述](https://msdn.microsoft.com/zh-cn/library/azure/dn741327.aspx#Benchmark_summary)。
+For a more detailed explanation of ASDB, please refer to [Overview of the ASDB Benchmark](https://msdn.microsoft.com/zh-cn/library/azure/dn741327.aspx#Benchmark_summary).
 
-##ASDB基准下的测试结果
+##Benchmark test results from ASDB
 
-以下表格显示了每个版本在ASDB基准下可以稳定持续的达到的性能和测试时相应的并发链接数。每次测试在稳定状态下至少运行一个小时以上。
+The table below shows the level of stable performance that can be maintained by each version using the ASDB benchmark, as well as the corresponding number of concurrent connections. Each test was run for an hour or more under stable conditions.
 
 <table border="1" cellspacing="0" cellpadding="0" width="477">
   <tr>
-    <td width="47" valign="top"><p><strong>版本</strong><strong> </strong></p></td>
-    <td width="195" valign="top"><p align="center"><strong>事</strong><strong>务</strong><strong>率</strong><strong> (TPS)</strong></p></td>
-    <td width="122" valign="top"><p align="center"><strong>测试数据库大小</strong><strong> </strong></p></td>
-    <td width="113" valign="top"><p align="center"><strong>并发链接数</strong><strong> </strong></p></td>
+    <td width="47" valign="top"><p><strong>Version</strong><strong> </strong></p></td>
+    <td width="195" valign="top"><p align="center"><strong>Transaction</strong><strong> </strong><strong>rate</strong><strong> (TPS)</strong></p></td>
+    <td width="122" valign="top"><p align="center"><strong>Test database size</strong><strong> </strong></p></td>
+    <td width="113" valign="top"><p align="center"><strong>Concurrent connections</strong><strong> </strong></p></td>
   </tr>
   <tr>
     <td width="47" valign="top"><p align="center"><strong>MS 1</strong></p></td>
@@ -57,4 +57,4 @@ ASDB基准的基本特性包括：
   </tr>
 </table>
 
->[AZURE.NOTE]必须知道，与所有基准一样，ASDB 只提供代表性和指导性的结果。使用基准应用程序实现的事务率与使用其他应用程序实现的事务率将会不同。该基准包括不同事务类型的集合，这些事务类型是针对包含一系列表和数据类型的架构运行的。尽管该基准会执行所有 OLTP 工作负载共有的相同基本操作，但它不代表任何特定类别的数据库或应用程序。该基准的目标是针对上调或下调性能级别时预期的数据库相对性能提供合理的指导。事实上，数据库具有不同的大小和复杂性，会遇到不同的工作负载混合形式，并且会以不同的方式做出响应。例如，IO 密集型应用程序可能很快就会达到 IO 阈值，而内存密集型应用程序可能很快就会达到内存限制。在负载增加的情况下，不保证任何特定的数据库会像ASDB基准结果中所示的那样表现。
+>[AZURE.NOTE] It is important to be aware that, like all benchmarks, ASDB can only provide representative and indicative results. The transaction rates achieved using the benchmark application will differ from those achieved using other applications. The benchmark includes a collection of different transaction types; these transaction types are run to target a schema that includes a range of table and data types. While the benchmark performs common basic operations that are shared by all OLTP workloads, it does not represent any specific type of database or application. The goal of this benchmark is to provide a reasonable reference for a database’s expected relative performance when increasing or decreasing performance levels. In reality, databases vary in terms of size and complexity, encounter different workload mixes, and respond in different ways. For example, an IO-intensive application might reach the IO threshold very quickly, while a memory-intensive application might rapidly reach the memory limit. There is no guarantee that any specific database will perform as indicated by the ASDB benchmark under increased load conditions.
