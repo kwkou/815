@@ -171,8 +171,8 @@
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  
 
 <!---HONumber=82-->
