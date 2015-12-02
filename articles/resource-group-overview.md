@@ -79,8 +79,6 @@
 
 有关如何构建你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)。
 
-有关将解决方案部署到不同环境的指南，请参阅 [Microsoft Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments-preview-portal)。
-
 ## 标记
 
 资源管理器提供了标记功能，让你根据管理或计费要求为资源分类。如果你有一系列复杂的资源组和资源，并想要以最有利的方式可视化这些资产，则你可能需要使用标记。例如，你可以标记组织中充当类似角色或者属于同一部门的资源。

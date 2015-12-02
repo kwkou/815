@@ -99,7 +99,6 @@
 ## 后续步骤
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
 - [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
-- [使用 Azure 门户管理资源](/documentation/articles/resource-group-portal)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
 <!---HONumber=82-->

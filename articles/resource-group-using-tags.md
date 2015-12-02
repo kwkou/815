@@ -124,7 +124,7 @@
 
 对于受支持的服务，您可以使用标记对计费数据进行分组。例如，[与 Azure 资源管理器集成的虚拟机](/documentation/articles/virtual-machines-azurerm-versus-azuresm)可让您定义并应用标签来组织虚拟机的计费使用情况。如果您针对不同组织运行多个虚拟机，可以使用标记根据成本中心对使用情况进行分组。您还可以使用标记根据运行时环境对成本进行分类；例如，在生产环境中运行的虚拟机的计费使用情况。
 
-你可以通过 [Azure 资源使用情况与费率卡 API](billing-usage-rate-card-overview.md) 或者可从 [Azure 帐户门户](https://account.windowsazure.cn/)或 [EA 门户](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Microsoft Azure 资源消耗](billing-usage-rate-card-overview.md)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
+你可以通过 [Azure 资源使用情况与费率卡 API](/documentation/articles/billing-usage-rate-card-overview) 或者可从 [Azure 帐户门户](https://account.windowsazure.cn/)或 [EA 门户](https://ea.azure.com)下载的使用情况逗号分隔值 (CSV) 文件来检索有关标记的信息。有关以编程方式访问计费信息的详细信息，请参阅[深入了解你的 Microsoft Azure 资源消耗](billing-usage-rate-card-overview.md)。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
 
 在您为支持包含计费的标记的服务下载使用情况 CSV 时，标记将显示在**标记**列中。有关更多详细信息，请参阅[了解 Microsoft Azure 的计费](/documentation/articles/billing-understand-your-bill)。
 
