@@ -17,7 +17,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-both-include.md)]
 
 
-利用 Microsoft HPC Pack 和 Azure 的计算与基础结构服务可以创建和管理基于云的高性能计算 (HPC) 群集。[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) 是在 Microsoft Azure 和 Windows Server 技术基础之上构建的 Microsoft 免费 HPC 解决方案，支持 Windows 和 Linux HPC 工作负荷。基于云的 HPC Pack 群集为群集管理员或独立软件供应商 (ISV) 提供弹性的可缩放平台，能够在运行计算密集型应用程序的同时，降低本地计算群集基础结构的投资。
+利用 Microsoft HPC Pack 和 Azure 的计算与基础结构服务可以创建和管理基于云的高性能计算 (HPC) 群集。[HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899572.aspx) 是在 Microsoft Azure 和 Windows Server 技术基础之上构建的 Microsoft 免费 HPC 解决方案，支持 Windows 和 Linux HPC 工作负荷。基于云的 HPC Pack 群集为群集管理员或独立软件供应商 (ISV) 提供弹性的可缩放平台，能够在运行计算密集型应用程序的同时，降低本地计算群集基础结构的投资。
 
 <!-- Take advantage of automated tools for HPC Pack cluster deployment in Azure VMs, including an HPC Pack image that can be used with either Azure quickstart templates or Azure PowerShell scripts, or deploy your cluster manually in the Azure portal.-->
 
@@ -76,7 +76,8 @@
 ## 将辅助角色节点添加到 HPC Pack 群集
 
 
-* [使用 HPC Pack 迸发到 Azure](https://technet.microsoft.com/library/gg481749.aspx)
+* [使用 HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-cn/library/gg481749
+* .aspx)
 
 * [教程：使用 Azure 中的 HPC Pack 设置混合群集](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md)
 

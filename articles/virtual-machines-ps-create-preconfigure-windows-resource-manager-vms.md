@@ -15,7 +15,7 @@
 
 # 使用资源管理器和 Azure PowerShell 创建并预配置 Windows 虚拟机
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-ps-create-preconfigure-windows-vms.md).
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
 
 以下步骤演示如何构建一组 Azure PowerShell 命令，以创建和配置 Azure 虚拟机。你可以使用此构建基块过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署。你还可以使用该过程创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
 
@@ -128,7 +128,7 @@
 
 ### NAT 规则	
 	
-使用入站 NAT 规则可以设置基于资源管理器的虚拟机，允许来自 Internet 的传入流量并将其放入负载平衡集。在这两种情况下，都必须指定负载平衡器实例和其他设置。有关详细信息，请参阅[使用 Azure 资源管理器创建负载平衡器](../load-balancer/load-balancer-arm-powershell.md)。
+使用入站 NAT 规则可以设置基于资源管理器的虚拟机，允许来自 Internet 的传入流量并将其放入负载平衡集。在这两种情况下，都必须指定负载平衡器实例和其他设置。
 
 使用资源管理器部署模型创建的 VM 需要资源管理器虚拟网络。如果需要，请使用新虚拟机的至少一个子网创建基于资源管理器的新虚拟网络。以下示例显示了名为 **TestNet** 的新虚拟网络，其中包含名为 **frontendSubnet** 和 **backendSubnet** 的两个子网。
 

@@ -24,18 +24,18 @@
 
 * **在 Azure VM 中部署的 HPC Pack 头节点** - 你可以使用 [Azure 快速入门模板](https://azure.microsoft.com/zh-CN/documentation/templates/)或 [Azure PowerShell 脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)等自动化工具来部署头节点和群集，或者以本地群集使用的相同方式在 Azure 中手动部署群集。需要获得头节点的 DNS 名称和群集管理员的凭据才能完成本文中的步骤。
 
-    如果头节点是手动部署的，请确保已在 VM 中配置 HTTPS 终结点。如果没有，请设置一个。请参阅[如何设置虚拟机的终结点](virtual-machines-set-up-endpoints.md)。
+    如果头节点是手动部署的，请确保已在 VM 中配置 HTTPS 终结点。如果没有，请设置一个。请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
 
 * **HPC Pack 安装媒体** - HPC Pack (HPC Pack 2012 R2) 最新版本的免费安装包可在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkId=328024)找到。确保选择与头节点 VM 上安装的版本相同的 HPC Pack 版本。
 
-* **客户端计算机** - 需要有可运行 HPC Pack 客户端实用工具的 Windows 或 Windows Server 客户端计算机（请参阅[系统要求](https://technet.microsoft.com/library/dn535781.aspx)）。如果你只想要使用 HPC Pack Web 门户或 REST API 来提交作业，则可以使用自选的客户端计算机。
+* **客户端计算机** - 需要有可运行 HPC Pack 客户端实用工具的 Windows 或 Windows Server 客户端计算机（请参阅[系统要求](https://technet.microsoft.com/zh-cn/library/dn535781.aspx)）。如果你只想要使用 HPC Pack Web 门户或 REST API 来提交作业，则可以使用自选的客户端计算机。
 
 
 ## 步骤 1：在头节点上安装并配置 Web 组件
 
 若要启用通过 HTTPS 以 REST 接口将作业提交到群集的功能，请在 HPC Pack 头节点上安装并配置 HPC Pack Web 组件（如果尚未配置）。必须先运行 HpcWebComponents.msi 安装文件，以安装 Web 组件。然后，通过运行 HPC PowerShell 脚本 **Set-HPCWebComponents.ps1** 来配置组件。
 
-有关详细过程，请参阅[安装 Microsoft HPC Pack Web 组件](http://technet.microsoft.com/library/hh314627.aspx)。
+有关详细过程，请参阅[安装 Microsoft HPC Pack Web 组件](http://technet.microsoft.com/zh-cn/library/hh314627.aspx)。
 
 >[AZURE.TIP]如果使用 [HPC Pack IaaS 部署脚本](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)创建群集，
 你可以在自动部署期间选择安装并配置 Web 组件。
@@ -87,7 +87,7 @@ net start hpcscheduler
 
 **从头节点中导出证书**
 
-1. 在头节点上，向 Microsoft 管理控制台中添加用于“本地计算机”帐户的证书管理单元。有关添加此管理单元的步骤，请参阅[向 MMC 中添加证书管理单元](https://technet.microsoft.com/library/cc754431.aspx)。
+1. 在头节点上，向 Microsoft 管理控制台中添加用于“本地计算机”帐户的证书管理单元。有关添加此管理单元的步骤，请参阅[向 MMC 中添加证书管理单元](https://technet.microsoft.com/zh-cn/library/cc754431.aspx)。
 
 2. 在控制台树中，依次展开“证书 – 本地计算机”和“个人”，然后单击“证书”。
 
@@ -159,7 +159,7 @@ net start hpcscheduler
     ```
     https://HeadNodeDnsName.chinacloudapp.cn/HpcPortal
     ```
-2. 在出现的安全性对话框中，键入 HPC 群集管理员的域凭据。（你还可以添加具有不同角色的其他群集用户。有关详细信息，请参阅[管理群集用户](https://technet.microsoft.com/library/ff919335.aspx)。）
+2. 在出现的安全性对话框中，键入 HPC 群集管理员的域凭据。（你还可以添加具有不同角色的其他群集用户。有关详细信息，请参阅[管理群集用户](https://technet.microsoft.com/zh-cn/library/ff919335.aspx)。）
 
     门户将会打开并显示作业列表视图。
 
