@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="在 Azure PowerShell 中还原已删除的 Azure SQL 数据库" 
    description="Windows Azure SQL 数据库, 还原已删除的数据库, 恢复已删除的数据库, Azure PowerShell" 
    services="sql-database" 
@@ -71,6 +71,6 @@
 
 [Azure SQL 数据库业务连续性](/documentation/articles/sql-database-business-continuity)
 
-[Azure PowerShell](http://msdn.microsoft.com/library/azure/jj156055.aspx)
+[Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 
 <!---HONumber=82-->
