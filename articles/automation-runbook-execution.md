@@ -16,14 +16,9 @@
 
 在 Azure 自动化中启动 Runbook 时，将会创建一个作业。作业是 Runbook 的单一执行实例。将分配一个 Azure 自动化工作线程来运行每个作业。尽管工作线程由多个 Azure 帐户共享，但不同自动化帐户中的作业是相互独立的。你无法控制要由哪个工作线程为作业的请求提供服务。一个 Runbook 可以同时运行多个作业。当你在 Azure 门户中查看 Runbook 列表时，列表中会列出上次为每个 Runbook 启动的作业的状态。可以查看每个 Runbook 的作业列表以跟踪每个作业的状态。有关不同作业状态的说明，请参阅[作业状态](#job-statuses)。
 
-下图显示 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks) 的 Runbook 作业生命周期。
+下图显示 PowerShell 工作流 Runbook 的 Runbook 作业生命周期。
 
 ![作业状态 - PowerShell 工作流](./media/automation-runbook-execution/job-statuses.png)
-
-下图显示 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 的 Runbook 作业生命周期。
-
-![作业状态 - PowerShell 脚本](./media/automation-runbook-execution/job-statuses-script.png)
-
 
 作业可以通过与 Azure 订阅建立连接来访问 Azure 资源。仅当数据中心内的资源可从公有云访问时，作业才能访问这些资源。
 
@@ -34,7 +29,7 @@
 | 状态| 说明|
 |:---|:---|
 |已完成|作业已成功完成。|
-|已失败| 就 [PowerShell 脚本 Runbook](/documentation/articles/automation-runbook-types) 来说，是指 Runbook 无法启动或作业遇到异常。 |
+|已失败| |
 |失败，正在等待资源|作业失败，因为它已达到[公平份额](#fairshare)限制三次，并且每次都已从同一个检查点或 Runbook 开始处启动。|
 |已排队|作业正在等待提供自动化工作线程的资源，以便能够启动。|
 |正在启动|作业已分配给工作线程，并且系统正在将它启动。|
@@ -43,8 +38,8 @@
 |正在运行，正在等待资源|作业已卸载，因为它已达到[公平份额](#fairshare)限制。片刻之后，它将从其上一个检查点恢复。|
 |已停止|作业在完成之前已被用户停止。|
 |正在停止|系统正在停止作业。|
-|已挂起|作业已被用户、系统或 Runbook 中的命令暂停。挂起的作业可以重新启动，并且将从其上一个检查点恢复，如果没有检查点，则从 Runbook 的开始处恢复。只有在出现异常时，系统才会挂起 Runbook。默认情况下，ErrorActionPreference 设置为 **Continue**，表示出错时作业将保持运行。如果此首选项变量设置为 **Stop**，则出错时作业将会挂起。仅适用于 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types)。|
-|正在暂停|系统正在尝试按用户请求暂停作业。Runbook 只有在达到其下一个检查点后才能挂起。如果 Runbook 越过了最后一个检查点，则只有在完成后才能挂起。仅适用于 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types)。|
+|已挂起|作业已被用户、系统或 Runbook 中的命令暂停。挂起的作业可以重新启动，并且将从其上一个检查点恢复，如果没有检查点，则从 Runbook 的开始处恢复。只有在出现异常时，系统才会挂起 Runbook。默认情况下，ErrorActionPreference 设置为 **Continue**，表示出错时作业将保持运行。如果此首选项变量设置为 **Stop**，则出错时作业将会挂起。仅适用于 PowerShell 工作流 Runbook。|
+|正在暂停|系统正在尝试按用户请求暂停作业。Runbook 只有在达到其下一个检查点后才能挂起。如果 Runbook 越过了最后一个检查点，则只有在完成后才能挂起。仅适用于 PowerShell 工作流 Runbook。|
 
 ## 使用 Azure 管理门户查看作业状态
 

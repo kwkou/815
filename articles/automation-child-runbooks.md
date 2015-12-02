@@ -26,24 +26,12 @@
 
 调用内联的子 Runbook 的参数可以是任意数据类型（包括复杂对象），并且不会进行 [JSON 序列化](/documentation/articles/automation-starting-a-runbook#runbook-parameters)，因为当你使用 Azure 管理门户或 Start-AzureAutomationRunbook cmdlet 启动 Runbook 时会进行这种序列化。
 
-### Runbook 类型
-
-你不能在 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 中通过内联执行的方式将 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks)。同样，你不能在 PowerShell 工作流 Runbook 中通过内联执行的方式将 PowerShell Runbook 用作子项。PowerShell Runbook 只能将另一个 PowerShell 用作子项。
-
-在通过内联执行调用 PowerShell 工作流子 Runbook 时，你只需使用 Runbook 的名称。调用 PowerShell 子 Runbook 时，你必须将 *.\* 用作其名称的前缀，表示脚本位于本地目录中。
-
 ### 示例
 
 下面的示例将调用一个测试子 Runbook，该 Runbook 接受三个参数：一个复杂对象、一个整数和一个布尔值。该子 Runbook 的输出将分配到某个变量。在本示例中，子 Runbook 属于 PowerShell 工作流 Runbook
 
 	$vm = Get-AzureVM –ServiceName "MyVM" –Name "MyVM"
 	$output = Test-ChildRunbook –VM $vm –RepeatCount 2 –Restart $true
-
-下面是使用 PowerShell Runbook 作为子项的同一示例。
-
-	$vm = Get-AzureVM –ServiceName "MyVM" –Name "MyVM"
-	$output = .\Test-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
-
 
 ##  使用 cmdlet 启动子 Runbook
 

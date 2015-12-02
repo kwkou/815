@@ -16,14 +16,9 @@
 
 即使草稿版正在运行，该 Runbook 也仍会正常执行工作流，并针对环境中的资源执行任何操作。为此，你只能在非生产资源中测试 Runbook。
 
-每种 [Runbook 类型](/documentation/articles/automation-runbook-types)的测试过程相同。
-
-
-
-
 ## 在 Azure 管理门户中测试 Runbook
 
-你只能使用 Azure 管理门户中的 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks)。
+你只能使用 Azure 管理门户中的 PowerShell 工作流 Runbook。
 
 
 1. [打开 Runbook 的草稿版](/documentation/articles/automation-edit-textual-runbook#to-edit-a-runbook-with-the-azure-portal)。
