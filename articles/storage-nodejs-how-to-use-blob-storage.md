@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="如何通过 Node.js 使用 Blob 存储 | Windows Azure" 
-	description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。相关示例是使用 Node.js 编写的。" 
+	description="了解如何使用 Azure Blob 服务上载、下载、列出和删除 Blob 内容。示例用 Node.js 编写。"
 	services="storage" 
 	documentationCenter="nodejs" 
 	authors="MikeWasson" 
@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="05/11/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/01/2015"
+	wacn.date="11/27/2015"/>
 
 
 
@@ -20,7 +20,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Azure Blob 服务执行常见方案。相关示例是使用 Node.js API 编写的。涉及的任务包括“上传”、“列出”、“下载”和“删除”Blob。
+本文将演示如何使用 Azure Blob 服务执行常见方案。相关示例是通过 Node.js API 编写的。涉及的方案包括“上传”、“列出”、“下载”和“删除”Blob。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../includes/storage-blob-concepts-include.md)]
 
@@ -28,7 +28,7 @@
 
 ## 创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅 [创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或 [使用 WebMatrix 构建网站]。
+有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js 云服务]（使用 Windows PowerShell）或 [使用 WebMatrix 构建 Web 应用]。
 
 ## 配置应用程序以访问存储
 
@@ -38,17 +38,18 @@
 
 1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了示例应用程序的文件夹。
 
-2.  在命令窗口中键入 **npm install azure-storage**，这应该产生以下输出：
+2.  在命令窗口中键入 **npm install azure-storage**。该命令的输出类似于以下代码示例。
 
-        azure-storage@0.1.0 node_modules\azure-storage
-		├── extend@1.2.1
-		├── xmlbuilder@0.4.3
-		├── mime@1.2.11
-		├── underscore@1.4.4	
-		├── validator@3.1.0
-		├── node-uuid@1.4.1
-		├── xml2js@0.2.7 (sax@0.5.2)
-		└── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		azure-storage@0.5.0 node_modules\azure-storage
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- node-uuid@1.4.3
+		+-- validator@3.22.2
+		+-- underscore@1.4.4
+		+-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
 3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，您将找到 **azure-storage** 包，其中包含您访问存储所需的库。
 
@@ -60,21 +61,21 @@
 
 ## 设置 Azure 存储连接
 
-Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_ACCESS\_KEY 或 AZURE\_STORAGE\_CONNECTION\_STRING，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 createBlobService 时必须指定帐户信息。
+Azure 模块将读取环境变量 `AZURE_STORAGE_ACCOUNT`、`AZURE_STORAGE_ACCESS_KEY` 或 `AZURE_STORAGE_CONNECTION_STRING`，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在调用 **createBlobService** 时必须指定帐户信息。
 
-有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序]
+有关在管理门户中为 Azure Web 应用设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序]。
 
-## 如何：创建容器
+## 创建容器
 
 使用 **BlobService** 对象可以对容器和 Blob 进行操作。以下代码创建 **BlobService** 对象。将以下内容添加到 **server.js** 顶部附近。
 
     var blobSvc = azure.createBlobService();
 
-> [AZURE.NOTE] 您可以匿名访问 Blob，只需使用 **createBlobServiceAnonymous** 并提供主机地址即可。例如，`var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.chinacloudapi.cn/');`。
+> [AZURE.NOTE] 您可以匿名访问 Blob，只需使用 **createBlobServiceAnonymous** 并提供主机地址即可。例如，使用 `var blobSvc = azure.createBlobServiceAnonymous('https://myblob.blob.core.chinacloudapi.cn/');`。
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../includes/storage-container-naming-rules-include.md)]
 
-若要创建一个新的容器，请使用 **createContainerIfNotExists**。以下语句创建名为“mycontainer”的新容器
+若要创建一个新的容器，请使用 **createContainerIfNotExists**。以下代码示例将创建名为“mycontainer”的新容器
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
       if(!error){
@@ -84,17 +85,17 @@ Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_AC
       }
 	});
 
-如果创建了容器，`result` 将为 true。如果容器已存在，`result` 将为 false。`response` 将包含有关操作的信息，包括容器的 [ETag](http://en.wikipedia.org/wiki/HTTP_ETag) 信息。
+如果该容器是新建的，则 `result` 为 true。如果容器已存在，`result` 将为 false。`response` 将包含有关操作的信息，包括容器的 [ETag](http://zh.wikipedia.org/wiki/HTTP_ETag) 信息。
 
 ###容器安全性
 
 默认情况下，新容器是私有的，不能匿名访问。若要使容器公开，以便能够对其进行匿名访问，可将容器的访问级别设置为“Blob”或“容器”。
 
-* **Blob** - 可匿名读取此容器中的 Blob 内容和元数据，但无法匿名读取容器元数据（如列出容器中的所有 Blob）。
+* **Blob** - 可匿名读取此容器中的 Blob 内容和元数据，但无法匿名读取容器元数据（如列出容器中的所有 Blob）
 
-* **容器** - 可匿名读取 Blob 内容和元数据，以及容器元数据。
+* **容器** - 可匿名读取 Blob 内容和元数据，以及容器元数据
 
-下面的示例演示了如何将访问级别设置为 **Blob**：
+以下代码示例演示了如何将访问级别设置为“Blob”：
 
     blobSvc.createContainerIfNotExists('mycontainer', {publicAccessLevel : 'blob'}, function(error, result, response){
       if(!error){
@@ -102,7 +103,7 @@ Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_AC
       }
 	});
 
-另外，您可以通过使用 **setContainerAcl** 指定访问级别来修改容器的访问级别。下面的示例将访问级别更改为“容器”：
+另外，您可以通过使用 **setContainerAcl** 指定访问级别来修改容器的访问级别。以下代码示例将访问级别更改为“容器”：
 
     blobSvc.setContainerAcl('mycontainer', null /* signedIdentifiers */, 'container' /* publicAccessLevel*/, function(error, result, response){
 	  if(!error){
@@ -114,7 +115,7 @@ Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_AC
 
 ###筛选器
 
-可以向使用 **BlobService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
+你可以向使用 **BlobService** 执行的操作应用可选的筛选操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
 		function handle (requestOptions, next)
 
@@ -129,9 +130,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	var retryOperations = new azure.ExponentialRetryPolicyFilter();
 	var blobSvc = azure.createBlobService().withFilter(retryOperations);
 
-## 如何：将 Blob 上传到容器
+## 将 Blob 上载到容器中
 
-Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上传大型数据，而页 Blob 则针对读/写操作进行了优化。有关详细信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
+Blob 可以基于块，也可以基于页。块 Blob 可以让你更高效地上传大型数据，而页 Blob 则针对读/写操作进行了优化。有关详细信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
 
 ###块 Blob
 
@@ -145,7 +146,7 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 
 * **createWriteStreamToBlockBlob** - 向块 Blob 提供写入流。
 
-下面的示例将 **test.txt** 文件的内容上传到 **myblob** 中。
+以下代码示例将 **test.txt** 文件的内容上传到 **myblob** 中。
 
 	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', function(error, result, response){
 	  if(!error){
@@ -169,7 +170,7 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 
 * **createWriteStreamToNewPageBlob** - 创建新的 blob，然后向其提供写入流。
 
-下面的示例将 **test.txt** 文件的内容上传到 **mypageblob** 中。
+以下代码示例将 **test.txt** 文件的内容上传到 **mypageblob** 中。
 
 	blobSvc.createPageBlobFromLocalFile('mycontainer', 'mypageblob', 'test.txt', function(error, result, response){
 	  if(!error){
@@ -185,25 +186,26 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 
     blobSvc.listBlobsSegmented('mycontainer', null, function(error, result, response){
       if(!error){
-        // result contains the entries
+        // result.entries contains the entries
+        // If not all blobs were returned, result.continuationToken has the continuation token.
 	  }
 	});
 
- `result` 将包含一个  `entries` 集合，该集合是一组用于描述每个 Blob 的对象。如果不能返回所有 Blob， `result` 还将提供  `continuationToken`，这可用作第二个参数来检索其他条目。
+`result` 包含一个 `entries` 集合，该集合是一组用于描述每个 Blob 的对象。如果不能返回所有 Blob，`result` 还将提供 `continuationToken`，这可用作第二个参数来检索其他条目。
 
-## 如何：下载 Blob
+## 下载 Blob
 
 若要从 Blob 下载数据，可使用以下方法：
 
 * **getBlobToFile** - 将 Blob 内容写入文件
 
-* **getBlobToStream** - 将 Blob 内容写入流。
+* **getBlobToStream** - 将 Blob 内容写入流
 
-* **getBlobToText** - 将 Blob 内容写入字符串。
+* **getBlobToText** - 将 Blob 内容写入字符串
 
 * **createReadStream** - 提供可从 Blob 读取内容的流
 
-以下示例演示了如何使用 **getBlobToStream** 下载 **myblob** Blob 的内容，并使用一个流将其存储到 **output.txt** 文件：
+以下代码示例演示了如何使用 **getBlobToStream** 下载 **myblob** Blob 的内容，并使用一个流将其存储到 **output.txt** 文件：
 
     var fs=require('fs');
 	blobSvc.getBlobToStream('mycontainer', 'myblob', fs.createWriteStream('output.txt'), function(error, result, response){
@@ -212,11 +214,11 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 	  }
 	});
 
- `result` 将包含有关 Blob 的信息，包括 **ETag** 信息。
+`result` 包含有关 Blob 的信息，包括 **ETag** 信息。
 
-## 如何：删除 Blob
+## 删除 Blob
 
-最后，若要删除 Blob，请调用 **deleteBlob**。下面的示例将删除名为 **myblob** 的 Blob。
+最后，若要删除 Blob，请调用 **deleteBlob**。以下代码示例将删除名为 **myblob** 的 Blob。
 
     blobSvc.deleteBlob(containerName, 'myblob', function(error, response){
 	  if(!error){
@@ -224,19 +226,19 @@ Blob 可能基于块，也可能基于页。块 Blob 可以让你更高效地上
 	  }
 	});
 
-## 如何：并发访问
+## 并发访问
 
 若要允许从多个客户端或多个进程实例并发访问某个 Blob，您可以使用 **ETag** 或**租约**。
 
-* **Etag** - 用于检测 Blob 或容器是否已被其他进程修改。
+* **Etag** - 用于检测 Blob 或容器是否已被其他进程修改
 
-* **租约** - 用于在某个时段内获取对 Blob 的独占式可续订写入或删除访问。
+* **租约** - 用于在某个时段内获取对 Blob 的独占式可续订写入或删除访问
 
 ###ETag
 
-如果你需要允许多个客户端或实例同时写入该 Blob，则应使用 ETag。ETag 用于确定自从你第一次读取或创建某个容器或 Blob 以来，该容器或 Blob 是否被修改，这样就可以避免覆盖其他客户端或进程提交的更改。
+如果你需要允许多个客户端或实例同时写入该 Blob，请使用 ETag。ETag 用于确定自从你第一次读取或创建某个容器或 Blob 以来，该容器或 Blob 是否被修改，这样就可以避免覆盖其他客户端或进程提交的更改。
 
-ETag 条件能够使用可选的  `options.accessConditions` 参数进行设置。如果 Blob 已存在且具有  `etagToMatch` 所包含的 ETag 值，则以下示例将仅上传 **test.txt** 文件。
+可以使用可选的 `options.accessConditions` 参数设置ETag 条件。如果 Blob 已存在且具有 `etagToMatch` 所包含的 ETag 值，则以下代码示例将仅上传 **test.txt** 文件。
 
 	blobSvc.createBlockBlobFromLocalFile('mycontainer', 'myblob', 'test.txt', { accessConditions: { 'if-match': etagToMatch} }, function(error, result, response){
       if(!error){
@@ -244,7 +246,7 @@ ETag 条件能够使用可选的  `options.accessConditions` 参数进行设置�
 	  }
 	});
 
-ETag 的常规使用模式是：
+当你使用 ETag 时，常规模式为：
 
 1. 通过创建、列出或获取操作来获取 ETag。
 
@@ -254,7 +256,7 @@ ETag 的常规使用模式是：
 
 ###租约
 
-新的租约可使用 **acquireLease** 方法获取，只需指定您希望获取其租约的 Blob 或容器即可。例如，以下语句将获取 **myblob** 的租约。
+新的租约可使用 **acquireLease** 方法获取，只需指定您希望获取其租约的 Blob 或容器即可。例如，以下代码将获取 **myblob** 的租约。
 
 	blobSvc.acquireLease('mycontainer', 'myblob', function(error, result, response){
 	  if(!error) {
@@ -268,15 +270,15 @@ ETag 的常规使用模式是：
 
 若要删除租约，请使用 **releaseLease**。若要中断租约，但又要防止其他人在您的原始租约到期之前获得新租约，则可使用 **breakLease**。
 
-## 如何：使用共享访问签名
+## 使用共享访问签名
 
-共享访问签名 (SAS) 是一种安全的方法，用于对 Blob 和容器进行细致访问而无需提供你的存储帐户名或密钥。通常使用 SAS 来提供对你的数据的有限访问权限，例如允许移动应用程序访问 Blob。
+共享访问签名 (SAS) 是一种安全的方法，用于对 Blob 和容器进行细致访问而无需提供你的存储帐户名或密钥。通常使用共享访问签名来提供对你的数据的有限访问权限，例如允许移动应用程序访问 Blob。
 
-> [AZURE.NOTE] 虽然你也可以允许匿名访问 Blob，但 SAS 可以让你提供更受控制的访问，因为你必须生成 SAS。
+> [AZURE.NOTE] 虽然你也可以允许匿名访问 Blob，但共享访问签名可以让你提供更受控制的访问，因为你必须生成 SAS。
 
-受信任的应用程序（例如基于云的服务）可使用 **BlobService** 的 **generateSharedAccessSignature** 生成 SAS，然后将其提供给不受信任的或不完全受信任的应用程序。例如，移动应用程序。SAS 可使用策略生成，该策略描述了 SAS 的生效日期和失效日期，以及授予 SAS 持有者的访问级别。
+受信任的应用程序（例如基于云的服务）可使用 **BlobService** 的 **generateSharedAccessSignature** 生成共享访问签名，然后将其提供给不受信任的或不完全受信任的应用程序，例如移动应用。共享访问签名可使用策略生成，该策略描述了共享访问签名的生效日期和失效日期，以及授予共享访问签名持有者的访问级别。
 
-下面的示例生成了一个新的共享访问策略，该策略将允许 SAS 持有者对 **myblob** Blob 执行读取操作，在创建后 100 分钟过期。
+以下代码示例生成了一个新的共享访问策略，该策略将允许共享访问签名持有者对 **myblob** Blob 执行读取操作，在创建后 100 分钟过期。
 
 	var startDate = new Date();
 	var expiryDate = new Date(startDate);
@@ -294,9 +296,9 @@ ETag 的常规使用模式是：
 	var blobSAS = blobSvc.generateSharedAccessSignature('mycontainer', 'myblob', sharedAccessPolicy);
 	var host = blobSvc.host;
 
-请注意，还必须提供主机信息，因为 SAS 持有者尝试访问容器时，必须提供该信息。
+请注意，还必须提供主机信息，因为共享访问签名持有者尝试访问容器时，必须提供该信息。
 
-然后，客户端应用程序将 SAS 用于 **BlobServiceWithSAS**，以便针对 Blob 执行操作。以下语句获取有关 **myblob** 的信息。
+然后，客户端应用程序将共享访问签名用于 **BlobServiceWithSAS**，以便针对 Blob 执行操作。以下语句获取有关 **myblob** 的信息。
 
 	var sharedBlobSvc = azure.createBlobServiceWithSas(host, blobSAS);
 	sharedBlobSvc.getBlobProperties('mycontainer', 'myblob', function (error, result, response) {
@@ -305,13 +307,13 @@ ETag 的常规使用模式是：
 	  }
 	});
 
-由于 SAS 在生成时只具有读取访问权限，因此如果尝试修改 Blob，则会返回错误。
+由于共享访问签名在生成时具有只读访问权限，因此如果尝试修改 Blob，则会返回错误。
 
 ###访问控制列表
 
 你还可以使用访问控制列表 (ACL) 为 SAS 设置访问策略。如果你希望允许多个客户端访问某个容器，但为每个客户端提供了不同的访问策略，则访问控制列表会很有用。
 
-ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。下面的示例定义了两个策略，一个用于“user1”，一个用于“user2”：
+ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。以下代码示例定义了两个策略，一个用于“user1”，一个用于“user2”：
 
 	var sharedAccessPolicy = [
 	  {
@@ -332,7 +334,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 	  }
 	];
 
-下面的示例获取 **mycontainer** 的当前 ACL，然后使用 **setBlobAcl** 添加新策略。此方法具有以下用途：
+以下代码示例将获取 **mycontainer** 的当前 ACL，然后使用 **setBlobAcl** 添加新策略。此方法具有以下用途：
 
 	blobSvc.getBlobAcl('mycontainer', function(error, result, response) {
       if(!error){
@@ -346,18 +348,19 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 	  }
 	});
 
-设置 ACL 后，你可以根据某个策略的 ID 创建 SAS。以下示例为“user2”创建新的 SAS：
+设置 ACL 后，你可以根据某个策略的 ID 创建共享访问签名。以下代码示例将为“user2”创建新的共享访问签名：
 
 	blobSAS = blobSvc.generateSharedAccessSignature('mycontainer', { Id: 'user2' });
 
 ## 后续步骤
 
-现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解如何执行更复杂的存储任务。
+有关详细信息，请参阅以下资源。
 
--   请参阅 [Azure Storage SDK for Node API 参考][]
--   请参阅 MSDN 参考：[在 Azure 中存储和访问数据][]。
--   访问 [Azure 存储空间团队博客][]。
--   访问 GitHub 上的 [Azure Storage SDK for Node][] 存储库。
+-   [Azure Storage SDK for Node API 参考][]
+-   MSDN 参考：[在 Azure 中存储和访问数据][]
+-   [Azure 存储团队博客][]
+-   GitHub 上的 [Azure Storage SDK for Node][] 存储库
+-   [Node.js 开发人员中心](/develop/nodejs/)
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
@@ -370,4 +373,6 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Node API 参考]: http://dl.windowsazure.com/nodestoragedocs/index.html
-<!---HONumber=70-->
+ 
+
+<!---HONumber=82-->

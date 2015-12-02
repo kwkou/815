@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="06/18/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/03/2015" 
+	wacn.date="11/27/2015"/>
 
 # Windows Azure 存储性能和可伸缩性清单
 
@@ -32,7 +32,8 @@ The Azure Files service is currently in Preview, and we will add proven practice
 |完成|	区域|	类别|	问题
 |----|------|-----------|-----------
 ||所有服务|可伸缩性目标|[你的应用程序是否设计为避免接近可伸缩性目标？](#subheading1)
-||所有服务|网络| [客户端设备是否具有足够高的带宽和足够低的延迟，可以实现所需的性能？](#subheading2) | |所有服务|网络| [客户端设备是否具有足够高的高质量链接？](#subheading3)
+||所有服务|网络| [客户端设备是否具有足够高的带宽和足够低的延迟，可以实现所需的性能？](#subheading2)
+||所有服务|网络| [客户端设备是否具有足够高的高质量链接？](#subheading3) 
 ||所有服务|网络| [客户端应用程序的位置是否“靠近”存储帐户？](#subheading4)
 ||所有服务|内容分发| [是否要使用 CDN 进行内容分发？](#subheading5)
 ||所有服务|客户端直接访问| [是否要使用 SAS 和 CORS 来允许直接访问存储而非代理？](#subheading6)
@@ -104,9 +105,9 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 
 ####有用的资源
 下面的链接提供有关可伸缩性目标的其他详细信息：
--	您可以在 [MSDN 上的 Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页上的当前可伸缩性目标。
--	您可以在博客文章 [Windows Azure 存储冗余选项和读取访问地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)中了解更多有关存储冗余选项的信息 – 请参阅下面的部分以了解更多详细信息。
--	有关 Azure 服务定价的当前信息请参阅[Azure 定价一览](/pricing/overview/)。
+-	有关可伸缩性目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
+-	有关存储冗余选项的信息，请参阅 [Azure 存储空间复制](/documentation/articles/storage-redundancy)和博客文章 [Windows Azure 存储冗余选项和读取访问地域冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx)。
+-	有关 Azure 服务价格的最新信息，请参阅 [Azure 定价](/pricing/overview/)。
 
 ###联网
 虽然 API 调用有一定的影响，但通常情况下物理网络对应用程序的约束具有更大的性能影响。下面说明用户可能会遇到的某些限制。  
@@ -119,7 +120,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 请注意，因错误和数据包丢失而导致的网络状况会降低有效吞吐量，任何网络的使用都是这样。WireShark 或 NetMon 可用于诊断此问题。  
 
 #####有用的资源
-有关虚拟机大小和已分配带宽的详细信息，请参阅 MSDN 上的[在 Azure 云服务上设计大规模服务的最佳做法](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx)。
+有关虚拟机大小和分配带宽的详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
 
 ####<a name="subheading4"></a>位置
 在任何分布式环境中，将客户端放置在服务器附近可提供最佳性能。若要以最低的延迟访问 Azure 存储空间，则最好是将客户端放置在同一 Azure 区域内。例如，如果您的 Azure 网站使用 Azure 存储空间，则应将二者都放置在同一个区域（例如美国西部或亚洲东南部）。这会降低延迟和成本 — 在本文撰写之际，同一个区域的带宽使用是免费的。
@@ -129,7 +130,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ###<a name="subheading5"></a>内容分发
 有时候，应用程序需要向位于同一区域或多个区域的许多用户提供相同的内容（例如网站主页中使用的产品演示视频）。在这种情况下，你应该使用内容交付网络 (CDN)，例如 Azure CDN，该 CDN 会使用 Azure 存储空间作为数据的源。与存在于一个区域且无法以低延迟向其他区域交付内容的 Azure 存储帐户不同，Azure CDN 使用位于全世界多个数据中心的服务器。此外，与单个存储帐户相比，CDN 通常可以支持更高的出口限制。  
 
-关于 Azure CDN 的详细信息，请参阅 [Azure CDN](/home/features/caching)。  
+关于 Azure CDN 的详细信息，请参阅 [Azure CDN](/home/features/cdn/)。
 
 ###<a name="subheading6"></a>使用 SAS 和 CORS
 当你需要在用户的 Web 浏览器或移动电话应用程序中对 JavaScript 之类的代码授权以访问 Azure 存储空间中的数据时，一种方法是使用代理形式的 Web 角色应用程序：用户的设备通过 Web 角色进行身份验证，而 Web 角色则通过存储服务进行身份验证。这样，你就可以避免在不安全的设备上公开存储帐户密钥。但是，这会大大增加 Web 角色的开销，因为在用户设备和存储服务之间传输的所有数据都必须通过 Web 角色。你可以避免使用 Web 角色作为存储服务的代理，只需使用共享访问签名 (SAS) 即可，有时候还需结合使用跨域资源共享标头 (CORS)。使用 SAS，你可以让用户的设备通过受限访问令牌直接向存储服务提出请求。例如，如果某个用户想要将照片上载到你的应用程序，你的 Web 角色就会生成一个 SAS 令牌并将其发送到用户的设备，这样用户就可以获得在随后的 30 分钟内（此时间过后 SAS 令牌会失效）向特定 Blob 或容器执行写入操作的权限。   
@@ -141,7 +142,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ####有用的资源
 有关 SAS 的详细信息，请参阅[共享访问签名第 1 部分：了解 SAS 模型](/zh-cn/documentation/articles/storage-dotnet-shared-access-signature-part-1)。  
 
-有关 CORS 的详细信息，请参阅 [MSDN 上的 Azure 存储服务的跨域资源共享 (CORS) 支持](http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx).  
+有关 CORS 的详细信息，请参阅 [Azure 存储服务的跨域资源共享 (CORS) 支持](http://msdn.microsoft.com/zh-cn/library/azure/dn535601.aspx)。
 
 ###缓存
 ####<a name="subheading7"></a>获取数据
@@ -151,7 +152,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 
 配置、查看以及始终被应用程序使用的其他数据都适合进行缓存。  
 
-有关如何通过使用 .NET 获取 Blob 的属性来发现上次修改日期的示例，请参阅 MSDN 上的[设置或检索属性和元数据](http://msdn.microsoft.com/zh-cn/library/hh225342.aspx)。有关条件性下载的详细信息，请参阅 MSDN 上的 [有条件地刷新 Blob 的本地副本](http://msdn.microsoft.com/zh-cn/library/azure/dd179371.aspx)。  
+有关如何通过使用 .NET 获取 Blob 的属性来发现上次修改日期的示例，请参阅[设置或检索属性和元数据](/documentation/articles/storage-properties-metadata)。有关条件性下载的详细信息，请参阅[有条件地刷新 Blob 的本地副本](http://msdn.microsoft.com/zh-cn/library/azure/dd179371.aspx)。  
 
 ####<a name="subheading8"></a>批量上载数据
 在某些应用程序方案中，你可以将数据聚合在本地，然后将其定期批量上载，而不必立即上载每个数据片段。例如，Web 应用程序可以保留一个有关活动的日志文件：应用程序可以在活动发生时以表实体的形式上载每项活动的详细信息（这需要许多存储操作），也可以将活动详细信息保存到本地日志文件中，然后定期将所有活动详细信息以带分隔符的文件的方式上载到某个 Blob。如果每个日志条目的大小为 1KB，你可以在单个“放置 Blob”事务处理中上载数千个这样的条目（你可以在单个事务处理中上载一个最大大小为 64MB 的 Blob）。当然，如果本地计算机在上载之前崩溃，你可能会丢失某些日志数据：应用程序开发人员必须针对可能发生的客户端设备故障或上载失败情况进行相应的设计。如果活动数据需要在不同的时间范围进行下载（不仅仅是单个活动），则建议使用 Blob 而非表。
@@ -168,25 +169,25 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 
 对于其他编程语言，请参阅该语言的文档以确定如何设置连接限制。  
 
-有关其他信息，请参阅以下文章：[Web 服务：并发连接](http://blogs.msdn.com/b/darrenj/archive/2005/03/07/386655.aspx)。
+有关其他信息，请参阅博客文章 [Web 服务：并发连接](http://blogs.msdn.com/b/darrenj/archive/2005/03/07/386655.aspx)。
 
 ####<a name="subheading10"></a>如果对异步任务使用同步代码，则请增加线程池最小线程数
 此代码会增加线程池最小线程数：  
 
 	ThreadPool.SetMinThreads(100,100); //(Determine the right number for your application)  
 
-有关更多信息，请参阅 MSDN上的 [ThreadPool.SetMinThreads 方法] (http://msdn.microsoft.com/zh-cn/library/system.threading.threadpool.setminthreads(v=vs.110).aspx)。
+有关详细信息，请参阅 [ThreadPool.SetMinThreads 方法](http://msdn.microsoft.com/zh-cn/library/system.threading.threadpool.setminthreads(v=vs.110).aspx).
 
 ####<a name="subheading11"></a>充分利用 .NET 4.5 的垃圾收集功能
 将 .NET 4.5 或更高版本用于客户端应用程序，以便充分利用在服务器垃圾收集方面的性能改进。   
 
-有关更多信息，请参阅以下文章：MSDN 上的 [.NET 4.5 中的性能改进概述](http://msdn.microsoft.com/zh-cn/magazine/hh882452.aspx)。
+有关详细信息，请参阅 [.NET 4.5 中的性能改进概述](http://msdn.microsoft.com/zh-cn/magazine/hh882452.aspx)一文。
 
 ###<a name="subheading12"></a>不受限制的并行度
 虽然提高并行度可以大幅提高性能，但在使用不受限制的并行度（对线程数和/或并行请求没有限制）来上载或下载数据，以及使用多个辅助角色来访问同一存储帐户中的多个分区（容器、队列或表分区）或访问同一分区中的多个项目时，应小心谨慎。如果并行度不受限制，你的应用程序可能会超出客户端设备的承受程度或超出存储帐户的可伸缩性目标，导致延迟和限制时间增长。  
 
 ###<a name="subheading13"></a>存储客户端库和工具
-始终使用 Microsoft 提供的最新客户端库和工具。在本文撰写之际，已发布针对 .NET、Windows Phone、Windows 运行时和 Java 的 RTM 库，以及以 node.js 和 C++ 等其他语言编写的预览库。此外，Microsoft 还发布了适用于 Azure 存储空间的 PowerShell cmdlet 和 Azure CLI 命令。Microsoft 积极开发这些以性能为主要考量的工具，并使用最新服务版本对其进行更新，确保这些工具可以在内部协调好许多经过验证的做法。
+始终使用 Microsoft 提供的最新客户端库和工具。在本文撰写之际，已发布针对 .NET、Windows Phone、Windows 运行时、Java 和 C++ 的客户端库，以及针对其他语言的预览库。此外，Microsoft 还发布了适用于 Azure 存储空间的 PowerShell cmdlet 和 Azure CLI 命令。Microsoft 积极开发这些以性能为主要考量的工具，并使用最新服务版本对其进行更新，确保这些工具可以在内部协调好许多经过验证的做法。
 
 ###重试
 ####<a name="subheading14"></a>限制/服务器忙
@@ -207,7 +208,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
 ####<a name="subheading16"></a>每个 Blob 的带宽和操作
 你可以读取或写入单个 Blob，最大读/写速度为 60 MB/秒。这大约相当于 480 Mbps，超过许多客户端网络（包括客户端设备上的物理 NIC）的承受能力。此外，单个 Blob 每秒最多可支持 500 个请求。如果你的多个客户端需要读取同一 Blob，而且你可能会超过这些限制，则应考虑使用 CDN 来分发该 Blob。  
 
-有关 Blob 的目标吞吐量的详细信息，请参阅 MSDN 上的 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)。
+有关 Blob 的目标吞吐量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)。
 
 ###复制和移动 Blob
 ####<a name="subheading17"></a>复制 Blob
@@ -217,7 +218,7 @@ At the time of writing, the bandwidth targets in the China for a geo-redundant s
  
 请注意，在同一存储帐户内的复制通常会快速完成。  
 
-有关更多信息，请参阅 [MSDN 上的复制 Blob](http://msdn.microsoft.com/zh-cn/library/dd894037.aspx)。
+有关详细信息，请参阅[复制 Blob](http://msdn.microsoft.com/zh-cn/library/dd894037.aspx)。
 
 ####<a name="subheading18"></a>使用 AzCopy
 Azure 存储团队发布了命令行工具"AzCopy"，该工具用于通过存储帐户来回批量传输多个 Blob，以及跨多个存储帐户进行批量传输。该工具已针对这种情况进行了优化，可以实现较高的传输速率。建议将其用于需要批量上载、批量下载和批量复制的情况。你可以在[此处](/zh-cn/documentation/articles/storage-use-azcopy)了解它的详情并下载它。  
@@ -228,7 +229,7 @@ Azure 存储团队发布了命令行工具"AzCopy"，该工具用于通过存储
 ###<a name="subheading20"></a>使用元数据
 该 Blob 服务支持 head 请求，这其中可能包含有关 Blob 的元数据。例如，如果你的应用程序需要某张照片中的 EXIF 数据，则可以检索该照片，然后从中提取数据。为了节省带宽并改进性能，你的应用程序可能会在上载照片时将 EXIF 数据存储在 Blob 的元数据中：你可以随后检索元数据中的 EXIF 数据，只需使用 HEAD 请求即可，这样就可以在每次读取 Blob 时，显著节省带宽和提取 EXIF 数据所需的处理时间。在只需元数据而不需要 Blob 的完整内容时，这种方法很有用。请注意，每个 Blob 只能存储 8KB 的元数据（该服务不会接受数据大小超过此要求的存储请求），因此如果数据大小不符合该要求，则可能无法使用这种方法。  
 
-有关如何使用 .NET 获取 Blob 的元数据的示例，请参阅 MSDN 上的[设置和检索属性和元数据](http://msdn.microsoft.com/zh-cn/library/hh225342.aspx)。
+有关如何使用 .NET 获取 Blob 的元数据的示例，请参阅[设置和检索属性与元数据](/documentation/articles/storage-properties-metadata)。
 
 ###快速上载
 若要快速上载 Blob，需要回答的第一个问题是：你是要上载一个还是多个 Blob？请使用以下指南来确定要使用的正确方法，具体取决于你的情况。  
@@ -245,9 +246,9 @@ Azure 存储团队发布了命令行工具"AzCopy"，该工具用于通过存储
 若要快速上载多个 Blob，请以并行方式上载。这要快于通过并行块上载方式一次上载一个 Blob，因为这种情况下上载会分布到存储服务的多个分区中。单个 Blob 仅支持 60 MB/秒（大约 480 Mbps）的吞吐量。在本文撰写之际，一个 GRS 帐户最多可支持 20 Gbps 的入口吞吐量，远远大于单个 Blob 支持的吞吐量。默认情况下 [AzCopy](#subheading18) 以并行方式执行上载操作，建议用于这种情形。
 
 ###<a name="subheading23"></a>选择正确的 Blob 类型
-Azure 存储空间支持两种类型的 Blob： *page* Blob 和 *block* Blob。在使用情形已确定的情况下，选择何种 Blob 类型会影响到解决方案的执行情况和可伸缩性。需要以高效方式上载大量数据时，适合选择块 Blob：例如，客户端应用程序可能需要将照片或视频上载到 Blob 存储中。如果应用程序需要对数据执行随机写入，则应选择页 Blob：例如，Azure VHD 以页 Blob 方式存储。  
+Azure 存储空间支持两种类型的 Blob：*页* Blob 和*块* Blob。在使用情形已确定的情况下，选择何种 Blob 类型会影响到解决方案的执行情况和可伸缩性。需要以高效方式上载大量数据时，适合选择块 Blob：例如，客户端应用程序可能需要将照片或视频上载到 Blob 存储中。如果应用程序需要对数据执行随机写入，则应选择页 Blob：例如，Azure VHD 以页 Blob 方式存储。
 
-有关详细信息，请参阅 MSDN 上的[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
+有关详细信息，请参阅[了解块 Blob 和页 Blob](http://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx)。
 
 ##表
 除了前面所述的适用于[所有服务](#allservices)的经过验证的做法，此外还有以下经过验证的做法，这些做法尤其适用于表服务。
@@ -267,7 +268,7 @@ Azure 存储空间支持两种类型的 Blob： *page* Blob 和 *block* Blob。�
 ####<a name="subheading25"></a>使用 JSON
 从存储服务 2013-08-15 版开始，表服务就支持使用 JSON 而非基于 XML 的 AtomPub 格式来传输表数据。这最多可以减少 75% 的负载大小，显著改进应用程序的性能。   
 
-有关详细信息，请参见 MSDN 上的文章 [Windows Azure 表：JSON 简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx)和[表服务操作的负载格式](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx)。
+有关详细信息，请参阅文章 [Windows Azure 表：JSON 简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/05/windows-azure-tables-introducing-json.aspx)和[表服务操作的负载格式](http://msdn.microsoft.com/zh-cn/library/azure/dn535600.aspx)。
 
 ####<a name="subheading26"></a>关闭 Nagle
 Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网络性能的方法。不过，该方法并非适用于所有情况（例如交互性很强的环境）。就 Azure 存储空间来说，Nagle 的算法会对表请求和队列服务请求的执行造成负面影响，应尽可能禁用。  
@@ -340,7 +341,7 @@ Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网
 #####<a name="subheading36"></a>Upsert
 尽可能使用表的“Upsert”操作。有两种类型的“Upsert”，两种都可能比传统的“插入”和“更新”操作更高效：
 
--	**InsertOrMerge**：当你需要上载一部分实体属性，但不确定该实体是否已存在时，可使用此操作。如果实体存在，则该调用会更新包含在"更新插入"操作中的属性，保留所有现有的属性不变，而如果实体不存在，则会插入新的实体。这类似于在查询中使用投影，因为你只需上载在变化的属性。 
+-	**InsertOrMerge**：当你需要上载一部分实体属性，但不确定该实体是否已存在时，可使用此操作。如果实体存在，则该调用会更新包含在"Upsert"操作中的属性，保留所有现有的属性不变，而如果实体不存在，则会插入新的实体。这类似于在查询中使用投影，因为你只需上载在变化的属性。 
 -	**InsertOrReplace**：当你需要上载某个全新的实体，却又不确定该实体是否已存在时，可使用此操作。仅当你知道这个刚上载的实体完全正确时，才应使用此操作，因为该实体会完全覆盖旧实体。例如，你需要更新用于存储用户当前位置的实体，而不管应用程序以前是否存储过该用户的位置数据；新位置实体是完整的，你不需要任何旧实体提供的任何信息。 
 
 #####<a name="subheading37"></a>将数据系列存储在单个实体中
@@ -355,7 +356,7 @@ Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网
 ###<a name=subheading39"></a>可伸缩性限制
 单个队列可以处理大约 2,000 条消息（每条 1KB）/秒（在这里，每个 AddMessage、GetMessage 和 DeleteMessage 均计为一条消息）。如果这对你的应用程序来说还不够用，则应使用多个队列并将这些消息分散到队列中去。  
 
-您可以在 MSDN 上的 [Azure 存储可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)页上查看最新的可伸缩性目标。
+在 [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets)中查看最新的可伸缩性目标。
 
 ###<a name=subheading40"></a>关闭 Nagle
 请参阅有关表配置的部分，其中讨论了 Nagle 算法 — Nagle 算法通常不适合执行队列请求，应禁用。
@@ -386,4 +387,4 @@ Nagle 的算法已跨 TCP/IP 网络进行了广泛的实施，是一种改进网
 本文讨论了部分最常用的、经过验证的做法，目的是优化使用 Azure 存储空间时的性能。我们建议每一位应用程序开发人员对照以上每条做法，对自己的应用程序进行评估，并考虑按照建议要求进行操作，以便优化使用 Azure 存储空间的应用程序的性能。
  
 
-<!---HONumber=70-->
+<!---HONumber=82-->

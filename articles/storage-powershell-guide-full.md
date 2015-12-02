@@ -8,8 +8,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="05/27/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="09/27/2015"
+	wacn.date="11/27/2015"/>
 
 
 # 对 Azure 存储空间使用 Azure PowerShell 
@@ -106,7 +106,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 		b.Azure 当前在中国支持的一个门户：[Azure 管理门户](https://manage.windowsazure.cn/)。如果登录到了当前的 [Azure 管理门户](https://manage.windowsazure.cn/)，请向下滚动，然后单击门户左侧的“设置”。单击“订阅”。复制你在运行本指南中指定的脚本时要使用的订阅名称。有关示例，请参阅下面的屏幕截图。
 
-		![Azure Management Portal][Image1]
+		![Azure 管理门户][Image1]
 
 
 	- **$StorageAccountName：**使用脚本中给定的名称，或输入存储帐户的新名称。**重要提示：**在 Azure 中，存储帐户的名称必须是唯一的。它还必须为小写！
@@ -203,11 +203,11 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     Get-AzureStorageAccount | Format-Table -Property StorageAccountName, Location, AccountType, StorageAccountStatus
 
 ### 如何创建 Azure 存储上下文
-Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
+Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
 
 使用以下三种方法之一创建存储上下文：
 
-- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
+- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
 
     	$StorageAccountName = "yourstorageaccount"
     	$StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
@@ -588,16 +588,18 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
     $Queue.CloudQueue.DeleteMessage($QueueMessage) 
 
 ## 如何管理 Azure 文件共享和文件
-Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可以通过装入的共享在应用程序组件之间共享文件数据，本地应用程序可以通过文件存储 API 或 Azure PowerShell 访问共享中的文件数据。
+Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Windows Azure 虚拟机和云服务可以通过装入的共享在应用程序组件之间共享文件数据，本地应用程序可以通过文件存储 API 或 Azure PowerShell 访问共享中的文件数据。
 
-有关 Azure 文件存储的详细信息，请参阅[如何使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)和[文件服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)。
+有关 Azure 文件存储的详细信息，请参阅[如何在 Windows 中使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files)和[文件服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)。
 
 ## 如何设置和查询存储分析
-可使用 [Azure 存储分析](/documentation/articles/storage-analytics)从 Azure 存储帐户收集度量值，并记录与发送到存储帐户的请求有关的数据。你可以使用存储度量值监视存储帐户的运行状况，并使用存储日志记录诊断和解决与存储帐户有关的问题。对于存储服务，默认情况下不启用存储度量值。你可以使用 Azure 管理门户、Windows PowerShell 或以编程方式通过存储 API 启用监视。存储日志记录在服务器端执行，可用于在存储帐户中记录成功和失败请求的相关详细信息。使用这些日志，可以查看针对表、队列和 Blob 的读取、写入和删除操作的详细信息，以及请求失败的原因。
+可使用 [Azure 存储分析](/documentation/articles/storage-analytics)从 Azure 存储帐户收集度量值，并记录与发送到存储帐户的请求有关的数据。你可以使用存储度量值监视存储帐户的运行状况，并使用存储日志记录诊断和解决与存储帐户有关的问题。
+对于存储服务，默认情况下不启用存储度量值。你可以使用 Azure 管理门户、Windows PowerShell 或以编程方式通过存储 API 启用监视。存储日志记录在服务器端执行，可用于在存储帐户中记录成功和失败请求的相关详细信息。使用这些日志，可以查看针对表、队列和 Blob 的读取、写入和删除操作的详细信息，以及请求失败的原因。
 
 若要了解如何使用 PowerShell 启用和查看存储度量值数据，请参阅[如何使用 PowerShell 启用存储度量值](http://msdn.microsoft.com/zh-cn/library/azure/dn782843.aspx#HowtoenableStorageMetricsusingPowerShell)。
 
-若要了解如何使用 PowerShell 启用和检索存储日志记录数据，请参阅[如何使用 PowerShell 启用存储日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#HowtoenableStorageLoggingusingPowerShell)和[查找存储日志记录的日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#FindingyourStorageLogginglogdata)。有关使用“存储度量值”和“存储日志记录”排查存储问题的详细信息，请参阅[对 Windows Azure 存储空间进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
+若要了解如何使用 PowerShell 启用和检索存储日志记录数据，请参阅[如何使用 PowerShell 启用存储日志记录](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#HowtoenableStorageLoggingusingPowerShell)和[查找存储日志记录的日志数据](http://msdn.microsoft.com/zh-cn/library/azure/dn782840.aspx#FindingyourStorageLogginglogdata)。
+有关使用“存储度量值”和“存储日志记录”排查存储问题的详细信息，请参阅[对 Microsoft Azure 存储空间进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)。
 
 ## 如何管理共享访问签名 (SAS) 和存储访问策略
 共享访问签名是对使用 Azure 存储空间的任何应用程序创建安全模型的重要环节。它们用于将存储帐户的受限权限提供给不应具有帐户密钥的客户端。默认情况下，只有存储帐户的所有者可访问该帐户中的 Blob、表和队列。如果服务或应用程序需要向其他客户端提供这些资源但不共享访问密钥，你可以使用三个选项：
@@ -608,7 +610,7 @@ Azure 文件存储使用标准 SMB 2.1 协议为应用程序提供共享存储�
 
 共享访问签名可以采取以下两种形式的一种：
 
-- **临时 SAS**：在你创建一个临时 SAS 时，针对该 SAS 的开始时间、到期时间和权限全都在 SAS URI 上指定。可以在容器、Blob、表或队列上创建这种不可吊销的 SAS。
+- **Ad hoc SAS**：在你创建一个临时 SAS 时，针对该 SAS 的开始时间、到期时间和权限全都在 SAS URI 上指定。可以在容器、Blob、表或队列上创建这种不可吊销的 SAS。
 - **具有存储访问策略的 SAS**：存储访问策略是对资源容器（Blob 容器、表或队列）定义的，可用于管理针对一个或多个共享访问签名的约束。在你将某一 SAS 与一个存储访问策略相关联时，该 SAS 将继承对该存储访问策略定义的约束：开始时间、到期时间和权限。这种类型的 SAS 可吊销。
 
 有关详细信息，请参阅[共享访问签名教程](/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[管理对 Azure 存储资源的访问权限](/documentation/articles/storage-manage-access-to-resources)。
@@ -672,15 +674,15 @@ Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政�
 	    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment $EnvironmentName
 
 有关详细信息，请参阅：
-
-- [Windows Azure Government 开发人员指南](/documentation/articles/azure-government-developer-guide)。 
+<!--
+- [Windows Azure Government 开发人员指南](/documentation/articles/azure-government-developer-guide)。--> 
 - [面向全球 Azure 的 AzureCloud 与中国 21Vianet 运营的 AzureChinaCloud 之间的差异](https://msdn.microsoft.com/zh-cn/library/azure/dn578439.aspx)
 
 ## 后续步骤
 在本指南中，你已了解如何使用 Azure PowerShell 管理 Azure 存储空间。下面是一些相关的文章和了解有关这些更多的资源。
 
-- [Azure 存储空间文档](/documentation/services/storage)
-- [Azure 存储空间 MSDN 参考](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
+- [Azure 存储文档](/documentation/services/storage)
+- [Azure 存储 MSDN 参考](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)
 - [Azure 存储空间 PowerShell Cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/dn806401.aspx)
 - [Windows PowerShell 参考](https://msdn.microsoft.com/zh-cn/library/ms714469.aspx)
 
@@ -728,4 +730,4 @@ Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政�
 [如何在美国政府部门和 Azure 中国区使用 Azure 存储空间]: #gov
 [后续步骤]: #next
 
-<!---HONumber=70-->
+<!---HONumber=82-->
