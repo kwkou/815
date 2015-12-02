@@ -21,19 +21,19 @@
 - 排名靠前的 DTU 消耗查询，经过优化后可能会改善性能。 
 - 可以向下钻取查询的详细信息。
 
-> [AZURE.NOTE]Query Performance Insight 目前以预览版提供，仅在 [Azure 预览门户](https://manage.windowsazure.cn)中提供。
+> [AZURE.NOTE]Query Performance Insight 目前以预览版提供，仅在 [Azure 门户](https://manage.windowsazure.cn)中提供。
 
 
 
 ## 先决条件
 
 - Query Performance Insight 仅适用于 Azure SQL 数据库V12。
-- Query Performance Insight 要求[查询存储](https://msdn.microsoft.com/library/dn817826.aspx)正在运行，因此当你注册 Query Performance Insight 时已自动启用。
+- Query Performance Insight 要求[查询存储](https://msdn.microsoft.com/zh-cn/library/dn817826.aspx)正在运行，因此当你注册 Query Performance Insight 时已自动启用。
  
  
 ## 权限
 
-需有以下[基于角色的访问控制](/documentation/articles/role-based-access-control-configure)权限才能使用 Query Performance Insight：
+需有以下<!--[-->基于角色的访问控制<!--](/documentation/articles/role-based-access-control-configure)-->权限才能使用 Query Performance Insight：
 
 - 查看排名靠前的资源消耗查询和图表时，需有“读取者”、“所有者”、“参与者”、“SQL DB 参与者”或“SQL Server 参与者”权限。 
 - 查看查询文本时，需有“所有者”、“参与者”、“SQL DB 参与者”或“SQL Server 参与者”权限。
@@ -58,7 +58,7 @@ Query Performance Insight 很容易使用：
 
 ## 查看排名靠前的 DTU 消耗查询
 
-在[预览门户](https://portal.azure.com)中执行以下操作：
+在[预览门户](https://manage.windowsazure.cn)中执行以下操作：
 
 1. 浏览到 SQL 数据库并单击“Query Performance Insight”。 
 

@@ -18,7 +18,6 @@
 **单一数据库**
 
 > [AZURE.SELECTOR]
-- [Azure Portal](/documentation/articles/sql-database-scale-up)
 - [PowerShell](/documentation/articles/sql-database-scale-up-powershell)
 
 

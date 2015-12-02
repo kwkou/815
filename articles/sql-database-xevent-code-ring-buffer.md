@@ -55,7 +55,7 @@
 
 
 - SQL Server Management Studio (ssms.exe) 2015 年 8 月预览版或更高版本。可从以下位置下载最新的 ssms.exe：
- - [主题中的链接。](http://msdn.microsoft.com/library/mt238290.aspx)
+ - [主题中的链接。](http://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
  - [直接指向下载位置的链接。](http://go.microsoft.com/fwlink/?linkid=616025)
  - Microsoft 建议定期更新 ssms.exe。
 

@@ -582,7 +582,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 
 有关 Azure 存储空间服务中帐户和容器的详细信息，请参阅：
 
-- [如何通过 .NET 使用 Blob 存储](storage-dotnet-how-to-use-blobs.md/)
+- [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs)
 - [命名和引用容器、Blob 与元数据](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)
 - [使用根容器](http://msdn.microsoft.com/zh-cn/library/azure/ee395424.aspx)
 

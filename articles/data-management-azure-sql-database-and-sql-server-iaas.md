@@ -14,7 +14,7 @@
 
 # 了解 Azure SQL 数据库和 Azure VM 中的 SQL Server
 
-Microsoft Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数据库](/services/sql-databases) 和 [Azure VM 中的 SQL Server](/services/virtual-machines/)。本文首先介绍每个选项如何适应 Microsoft 数据平台的大体形势，然后根据业务要求进行更深入的探讨，以帮助你选择正确的选项。无论你是以节省成本为优先考虑，还是将精简管理视为第一要素，本文都会根据每种方法所提供的与你最重视的业务要求进行比较，以帮助你确定最适合的方法。
+Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数据库](/services/sql-databases) 和 [Azure VM 中的 SQL Server](/services/virtual-machines/)。本文首先介绍每个选项如何适应 Microsoft 数据平台的大体形势，然后根据业务要求进行更深入的探讨，以帮助你选择正确的选项。无论你是以节省成本为优先考虑，还是将精简管理视为第一要素，本文都会根据每种方法所提供的与你最重视的业务要求进行比较，以帮助你确定最适合的方法。
 
 - [Microsoft 的数据平台](#platform)
 - [Azure SQL 数据库和 Azure VM 中的 SQL Server 详述](#close)	
@@ -117,7 +117,7 @@ Microsoft Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL �
    <td valign="middle"><p><b>混合云</b></p></td>
    <td valign="middle"><ul><li type=round>本地应用程序可以访问 Azure SQL 数据库中的数据。</ul></td>
    <td valign="middle"><ul>
-      <li type=round>使用 Azure VN 中的 SQL Server，应用程序可以一部分在云中运行，一部分在本地运行。例如，可以通过 <a href="/documentation/articles/virtual-networks-overview/">Azure 网络服务</a>，将本地网络和 Active Directory 网络扩展到云中。此外，可以使用 <a href="http://msdn.microsoft.com/library/dn385720.aspx">Azure 中的 SQL Server 数据文件功能</a>，将本地数据文件存储在 Azure 存储空间中。有关详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/dn606154.aspx">SQL Server 2014 混合云简介</a>。
+      <li type=round>使用 Azure VN 中的 SQL Server，应用程序可以一部分在云中运行，一部分在本地运行。例如，可以通过 <a href="/documentation/articles/virtual-networks-overview/">Azure 网络服务</a>，将本地网络和 Active Directory 网络扩展到云中。此外，可以使用 <a href="http://msdn.microsoft.com/zh-cn/library/dn385720.aspx">Azure 中的 SQL Server 数据文件功能</a>，将本地数据文件存储在 Azure 存储空间中。有关详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/dn606154.aspx">SQL Server 2014 混合云简介</a>。
       <li type=round>使用 <a href="http://msdn.microsoft.com/zh-cn/library/jj919148.aspx">Azure 存储空间上的备份</a>或 <a href="/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions">Azure VM 中的 AlwaysOn 副本</a>的本地 SQL Server 应用程序支持灾难恢复。
       </ul></td>
    
