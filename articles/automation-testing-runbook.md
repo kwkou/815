@@ -18,9 +18,6 @@
 
 ## 在 Azure 管理门户中测试 Runbook
 
-你只能使用 Azure 管理门户中的 PowerShell 工作流 Runbook。
-
-
 1. [打开 Runbook 的草稿版](/documentation/articles/automation-edit-textual-runbook#to-edit-a-runbook-with-the-azure-portal)。
 2. 单击“测试”按钮开始测试。如果 Runbook 包含参数，则会显示一个对话框让你提供用于测试的值。
 6. 可以使用输出窗格下方的按钮停止或暂停正在测试中的 Runbook。当你暂停 Runbook 时，该 Runbook 会完成它在被暂停之前正在进行的活动。暂停 Runbook 后，你可以将它停止或重启。
