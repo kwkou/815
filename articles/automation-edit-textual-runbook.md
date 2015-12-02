@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Azure 自动化中编辑文本 Runbook"
-	description="本文提供的不同过程适用于在 Azure 自动化中通过文本编辑器来处理 PowerShell Runbook 和 PowerShell 工作流 Runbook。"
+	description="本文提供的不同过程适用于在 Azure 自动化中通过文本编辑器来处理 PowerShell 工作流 Runbook。"
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -13,7 +13,7 @@
 
 # 在 Azure 自动化中编辑文本 Runbook
 
-Azure 自动化中的文本编辑器可以用来编辑 [PowerShell Runbook](/documentation/articles/automation-runbook-types#powershell-runbooks) 和 [PowerShell 工作流 Runbook](/documentation/articles/automation-runbook-types#powershell-workflow-runbooks)。该编辑器具有其他代码编辑器的典型功能（例如智能感知和颜色编码），并提供其他特殊功能来帮助你访问 Runbook 的常用资源。本文提供了使用该编辑器执行不同功能的详细步骤。
+Azure 自动化中的文本编辑器可以用来编辑 PowerShell 工作流 Runbook。该编辑器具有其他代码编辑器的典型功能（例如智能感知和颜色编码），并提供其他特殊功能来帮助你访问 Runbook 的常用资源。本文提供了使用该编辑器执行不同功能的详细步骤。
 
 该文本编辑器包含的一项功能是将活动、资产和子 Runbook 的代码插入 Runbook 中。你不需要亲自键入代码，只需从可用资源列表中进行选择，然后即可将相应代码插入 Runbook 中。
 
