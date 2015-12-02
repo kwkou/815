@@ -156,7 +156,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
     azure location list
 
-你也可以使用 **jq** 之类的工具来筛选位置结果。若要了解有关 jq 等工具的信息，请参阅[与 Azure 交互的有用工具](/documentation/articles/virtual-machines/resource-group-deploy-debug/#useful-tools-to-interact-with-azure)。
+你也可以使用 **jq** 之类的工具来筛选位置结果。
 
     azure location list --json | jq '.[] | select(.name == "Microsoft.Web/sites")'
 
@@ -173,7 +173,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 
 ### REST API
 
-若要发现哪些 API 版本可供资源类型使用，请使用[列出所有资源提供程序](https://msdn.microsoft.com/library/azure/dn790524.aspx)操作。
+若要发现哪些 API 版本可供资源类型使用，请使用[列出所有资源提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790524.aspx)操作。
 
 ### PowerShell
 
@@ -205,6 +205,5 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 ## 后续步骤
 
 - 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
-- 若要了解如何部署资源，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)。
 
 <!---HONumber=82-->
