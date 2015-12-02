@@ -40,7 +40,7 @@
 
 3. [**调整**虚拟机的大小](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx)。
 
-4. 按照[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh) 中的说明，在虚拟机上执行以下操作：
+4. 按照<!--[-->如何为基于 Linux 的虚拟机重置密码或 SSH<!--](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh) -->中的说明，在虚拟机上执行以下操作：
 
 	- 重置密码或 SSH 密钥。
 	- 创建新的 sudo 用户帐户。
@@ -51,7 +51,7 @@
 
 若要解决使用资源管理器部署模型创建的虚拟机的常见 SSH 问题，请尝试以下步骤。
 
-1. 使用 Azure CLI 或 Azure PowerShell，在命令行上为 Linux VM **重置 SSH 连接**。确保已安装 [Microsoft Azure Linux 代理](virtual-machines-linux-agent-user-guide.md) 2.0.5 或更高版本。
+1. 使用 Azure CLI 或 Azure PowerShell，在命令行上为 Linux VM **重置 SSH 连接**。确保已安装 <!--[-->Microsoft Azure Linux 代理<!--](virtual-machines-linux-agent-user-guide.md)--> 2.0.5 或更高版本。
 
 	**使用 Azure CLI**
 

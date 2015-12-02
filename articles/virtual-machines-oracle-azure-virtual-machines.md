@@ -32,14 +32,6 @@
 
 [在 Azure 中创建 Oracle 数据库虚拟机](/documentation/articles/virtual-machines-creating-oracle-database-virtual-machine)将逐步引导你完成虚拟机创建、数据库创建和配置常用选项的过程。
 
-## Oracle WebLogic Server 12c
-
-[在 Azure 中创建 Oracle WebLogic Server 12c 虚拟机](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-virtual-machine)将逐步引导你根据 Windows Server 2012 上运行的 Oracle WebLogic Server 12c 映像创建 Azure 虚拟机。
-
-## Oracle WebLogic Server 12c 和 Oracle 数据库 12c
-
-[在 Azure 中创建 Oracle WebLogic Server 12c 和 Oracle Database 12c](/documentation/articles/virtual-machines-creating-oracle-weblogic-server-12c-oracle-database-12c-virtual-machine) 将逐步引导你完成创建和配置虚拟机与数据库的过程。
-
 ## 准备 Oracle Linux 虚拟机
 
 [为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-prepare-oracle-linux-virtual-machine)将逐步引导你满足先决条件，并为 Oracle Linux 6.4 + 和 Oracle Linux 7.0 + 创建虚拟机。

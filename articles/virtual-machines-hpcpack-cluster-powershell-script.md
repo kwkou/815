@@ -23,7 +23,7 @@
 根据你的环境和选择，该脚本可以创建所有群集基础结构，包括 Azure 虚拟网络、地缘组、存储帐户、云服务、域控制器、远程或本地 SQL 数据库、头节点、代理节点、计算节点和 Azure 云服务（“迸发”或 PaaS）节点。此外，该脚本还可以使用预先存在的 Azure 基础结构，然后创建 HPC 群集头节点、代理节点、计算节点和 Azure 迸发节点。
 
 
-有关规划 HPC Pack 群集的背景信息，请参阅 HPC Pack TechNet 库中的[产品评估和规划](https://technet.microsoft.com/library/jj899596.aspx)及[入门](https://technet.microsoft.com/library/jj899590.aspx)内容。
+有关规划 HPC Pack 群集的背景信息，请参阅 HPC Pack TechNet 库中的[产品评估和规划](https://technet.microsoft.com/zh-cn/library/jj899596.aspx)及[入门](https://technet.microsoft.com/zh-cn/library/jj899590.aspx)内容。
 
 >[AZURE.NOTE]你还可以使用 Azure 资源管理器模板来部署 HPC Pack 群集。有关示例，请参阅[创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)、[使用自定义计算节点映像创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/)或[使用 Linux 计算节点创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)。
 
@@ -381,9 +381,9 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName
 
 ## 后续步骤
 
-* 尝试在群集上运行测试工作负荷。有关示例，请参阅 HPC Pack [入门指南](https://technet.microsoft.com/library/jj884144)。
+* 尝试在群集上运行测试工作负荷。有关示例，请参阅 HPC Pack [入门指南](https://technet.microsoft.com/zh-cn/library/jj884144)。
 
-* 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-excel-cluster-hpcpac)或[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](virtual-machines-linux-cluster-hpcpack-namd)。
+* 有关使用脚本创建群集和运行 HPC 工作负荷的教程，请参阅[在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](virtual-machines-linux-cluster-hpcpack-namd)。
 
 * 尝试使用 HPC Pack 的工具来启动、停止、添加和删除所创建群集中的计算节点。请参阅[在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)
 
