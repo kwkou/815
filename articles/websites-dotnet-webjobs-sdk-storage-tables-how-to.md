@@ -7,10 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date="11/27/2015"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 表存储
 
@@ -34,7 +34,7 @@
 
 ## <a id="ingress"></a>如何向表中添加实体
 
-若要将实体添加到表中，请使用包含 `ICollector<T>` 或 `IAsyncCollector<T>` 参数的 `Table` 属性，其中 `T` 指定您想要添加的实体的架构。此属性构造函数采用指定表名称的字符串参数。
+若要将实体添加到表中，请使用包含 `ICollector<T>` 或 `IAsyncCollector<T>` 参数的 `Table` 属性，其中 `T` 指定您想要添加的实体的架构。属性构造函数使用指定表名称的字符串参数。
 
 下面的代码示例将 `Person` 实体添加到名为 *Ingress* 的表。
 
@@ -53,7 +53,7 @@
 		    }
 		}
 
-通常您用于 `ICollector` 的类型派生自 `TableEntity` 或实现 `ITableEntity`，但它并不一定要执行这些操作。以下任一 `Person` 类均可与前面的 `Ingress` 方法所示的代码一起使用。
+通常您用于 `ICollector` 的类型派生自 `TableEntity` 或实现 `ITableEntity`，但它并不一定要执行这些操作。以下 `Person` 类之一适用于前面 `Ingress` 方法中所示的代码。
 
 		public class Person : TableEntity
 		{
@@ -71,11 +71,11 @@
 
 ## <a id="monitor"></a>实时监视
 
-因为数据入口函数通常处理大量数据，WebJobs SDK 仪表板提供了实时监视的数据。**调用日志**部分告诉您该函数是否仍在运行。
+因为数据入口函数通常处理大量数据，WebJobs SDK 仪表板提供了实时监视的数据。“调用日志”部分告诉你函数是否仍在运行。
 
 ![Ingress 函数正在运行](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingressrunning.png)
 
-**调用详细信息**页会在函数运行时报告函数的进度（写入的实体数），您还可以中止该函数。
+“调用详细信息”页在运行时报告函数的进度（写入的实体数），并且为你提供中止的机会。
 
 ![Ingress 函数正在运行](./media/websites-dotnet-webjobs-sdk-storage-tables-how-to/ingressprogress.png)
 
@@ -131,7 +131,7 @@
 
 您还可以将 `Table` 属性和 `CloudTable` 对象一起使用，以便能够更灵活地处理表。
 
-下面的代码示例使用 `CloudTable` 对象将单个实体添加到 *Ingress* 表。
+下面的代码示例使用 `CloudTable` 对象将单个实体添加到 *Ingress* 表中。
  
 		public static void UseStorageAPI(
 		    [Table("Ingress")] CloudTable tableBinding,
@@ -169,4 +169,4 @@
 本指南提供的代码示例演示了如何处理常见方案以操作 Azure 表。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=67-->
+<!---HONumber=82-->

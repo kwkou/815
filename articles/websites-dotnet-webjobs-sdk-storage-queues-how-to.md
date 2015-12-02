@@ -7,10 +7,10 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags 
-	ms.service="app-service-web"  
-	ms.date="06/29/2015" 
-	wacn.date="08/29/2015"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="09/22/2015"
+	wacn.date="11/27/2015"/>
 
 # 如何通过 WebJobs SDK 使用 Azure 队列存储
 
@@ -63,11 +63,11 @@
 
 ## <a id="trigger"></a>如何在收到队列消息时触发函数
 
-若要编写在收到队列消息时 WebJobs SDK 调用的函数，请使用 `QueueTrigger` 属性。该属性构造函数使用一个字符串参数来指定要轮询的队列名称。您也可以[动态设置队列名称](#config)。
+若要编写在收到队列消息时 WebJobs SDK 调用的函数，请使用 `QueueTrigger` 属性。该属性构造函数使用一个字符串参数来指定要轮询的队列名称。你也可以[动态设置队列名称](#config)。
 
 ### 字符串队列消息
 
-在下面的示例中，队列中包含一个字符串消息，因此，`QueueTrigger` 已应用到包含队列消息内容的 `logMessage` 字符串参数。此函数[将日志消息写入仪表板](#logs)。
+在下面的示例中，队列中包含一个字符串消息，因此，`QueueTrigger` 已应用到包含队列消息内容的 `logMessage` 字符串参数。该函数[向仪表板写入一条日志消息](#logs)。
  
 
 		public static void ProcessQueueMessage([QueueTrigger("logqueue")] string logMessage, TextWriter logger)
@@ -79,14 +79,14 @@
 
 ### POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
-在下面的示例中，队列消息包含 `BlobInformation` 对象的 JSON，此对象包含 `BlobName` 属性。SDK 会自动反序列化该对象。
+在下面的示例中，队列消息包含 `BlobInformation` 对象的 JSON，该对象包含一个 `BlobName` 属性。SDK 会自动反序列化该对象。
 
 		public static void WriteLogPOCO([QueueTrigger("logqueue")] BlobInformation blobInfo, TextWriter logger)
 		{
 		    logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
 		}
 
-SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.Json)对消息进行序列化和反序列化。如果你在不使用 WebJobs SDK 的程序中创建队列消息，则可以如以下示例所示编写代码，以创建 SDK 可以分析的 POCO 队列消息。
+SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.Json)序列化和反序列化消息。如果你在不使用 WebJobs SDK 的程序中创建队列消息，则可以如以下示例所示编写代码，以创建 SDK 可以分析的 POCO 队列消息。
 
 		BlobInformation blobInfo = new BlobInformation() { BlobName = "log.txt" };
 		var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
@@ -101,7 +101,7 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 		    await logger.WriteLineAsync(logMessage);
 		}
 
-异步函数可以采用[取消标记](http://www.asp.net/mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4#CancelToken)，如以下用于复制 blob 的示例所示（有关 `queueTrigger` 占位符的说明，请参阅 [Blob](#blobs) 部分）。
+异步函数可以采用[取消标记](http://www.asp.net/mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4#CancelToken)，如以下用于复制 blob 的示例中所示。（有关 `queueTrigger` 占位符的说明，请参阅 [Blob](#blobs) 部分）。
 
 		public async static Task ProcessQueueMessageAsyncCancellationToken(
 		    [QueueTrigger("blobcopyqueue")] string blobName, 
@@ -217,11 +217,11 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 ## <a id="createqueue"></a>如何在处理队列消息时创建队列消息
 
-若要编写用于新建队列消息的函数，请使用 `Queue` 属性。与 `QueueTrigger` 一样，您可以将队列名称作为字符串进行传递，也可以[动态设置队列名称](#config)。
+若要编写用于新建队列消息的函数，请使用 `Queue` 属性。与 `QueueTrigger` 一样，你可以传入字符串形式的队列名称，或者[动态设置队列名称](#config)。
 
 ### 字符串队列消息
 
-下面的非异步代码示例在名为“outputqueue”的队列中创建新的队列消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。（对于异步函数，请使用此部分稍后要介绍的 `IAsyncCollector<T>`）。
+下面的非异步代码示例在名为“outputqueue”的队列中创建新的队列消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。（对于异步函数，请按照本部分稍后将介绍的方法使用 `IAsyncCollector<T>`。）
 
 
 		public static void CreateQueueMessage(
@@ -258,13 +258,13 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 		    outputQueueMessage.Add(queueMessage + "2");
 		}
 
-调用 `Add` 方法后，便可立即创建每个队列消息。
+调用 `Add` 方法时，将立即创建每个队列消息。
 
 ### Queue 属性适用的类型
 
-可以对以下参数类型使用 `Queue` 属性：
+可对以下参数类型使用 `Queue` 属性：
 
-* `out string`（如果在函数结束时参数值为非 null，则创建队列消息）
+* `out string`（函数结束时，如果参数值为非 null，则创建队列消息）
 * `out byte[]`（工作方式类似于 `string`） 
 * `out CloudQueueMessage`（工作方式类似于 `string`） 
 * `out POCO`（一种可序列化类型，如果在函数结束时参数为 null，则创建包含 null 对象的消息）
@@ -296,7 +296,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 
 ### 触发 Blob 操作的字符串队列消息
 
-对于包含字符串的队列消息，`queueTrigger` 是可以在 `Blob` 属性的 `blobPath` 参数中使用的占位符，此参数中包含消息内容。
+对于包含字符串的队列消息，`queueTrigger` 是占位符，可以用于包含消息内容的 `Blob` 属性的 `blobPath` 参数。
 
 下面的示例使用 `Stream` 对象读取和写入 blob。队列消息是位于 textBlobs 容器中的 Blob 名称。将在同一个容器中创建 Blob 的副本，并在其名称后面附加“-new”。
 
@@ -308,7 +308,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-`Blob` 属性构造函数捕获指定了容器和 blob 名称的 `blobPath` 参数。有关此占位符的详细信息，请参阅[如何结合使用 Azure blob 存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)。
+`Blob` 属性构造函数采用指定容器和 blob 名称的 `blobPath` 参数。有关此占位符的详细信息，请参阅[如何结合使用 Azure blob 存储和 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)。
 
 当属性修饰 `Stream` 对象时，另一个构造函数参数会将 `FileAccess` 模式指定为读取、写入或读取/写入。
 
@@ -323,7 +323,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 
 ### <a id="pocoblobs"></a>POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）队列消息
 
-对于在队列消息中存储为 JSON 的 POCO，您可以使用占位符来命名 `Queue` 属性的 `blobPath` 参数中的对象属性。您也可以将[队列元数据属性名称](#queuemetadata)用作占位符。
+对于在队列消息中存储为 JSON 的 POCO，您可以使用占位符来命名 `Queue` 属性的 `blobPath` 参数中的对象属性。还可以将[队列元数据属性名称](#queuemetadata)用作占位符。
 
 下面的示例将 Blob 复制到具有不同扩展名的新 Blob。队列消息是包含 `BlobName` 和 `BlobNameWithoutExtension` 属性的 `BlobInformation` 对象。属性名称用作 `Blob` 属性的 blob 路径中的占位符。
  
@@ -335,7 +335,7 @@ SDK 会自动将对象序列化为 JSON。即使对象为 null，也始终会创
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.Json)对消息进行序列化和反序列化。如果你在不使用 WebJobs SDK 的程序中创建队列消息，则可以如以下示例所示编写代码，以创建 SDK 可以分析的 POCO 队列消息。
+SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.Json)序列化和反序列化消息。如果你在不使用 WebJobs SDK 的程序中创建队列消息，则可以如以下示例所示编写代码，以创建 SDK 可以分析的 POCO 队列消息。
 
 		BlobInformation blobInfo = new BlobInformation() { BlobName = "boot.log", BlobNameWithoutExtension = "boot" };
 		var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
@@ -365,11 +365,11 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 
 ### 自动处理有害消息
 
-SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第五次尝试失败，消息将移到有害队列。[重试次数上限是可配置的](#config)。
+SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第五次尝试失败，消息将移到有害队列。[最大重试次数可配置](#config)。
 
 病毒队列的名称为 *{originalqueuename}*-poison。你可以编写一个函数来处理有害队列中的消息，并记录这些消息，或者发送需要注意的通知。
 
-在下面的示例中，如果队列消息包含不存在的 blob 名称，则 `CopyBlob` 函数会失败。在这种情况，消息将从 copyBlobqueue 队列移到 copyBlobqueue-poison 队列。然后，`ProcessPoisonMessage` 会记录病毒消息。
+在下面的示例中，如果队列消息包含不存在的 blob 名称，则 `CopyBlob` 函数会失败。在这种情况，消息将从 copyBlobqueue 队列移到 copyBlobqueue-poison 队列。然后，`ProcessPoisonMessage` 将记录有害消息。
 
 		public static void CopyBlob(
 		    [QueueTrigger("copyblobqueue")] string blobName,
@@ -414,7 +414,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 您可以使用 `JobHostConfiguration` 类型设置以下配置选项：
 
 * 在代码中设置 SDK 连接字符串。
-* 配置 `QueueTrigger` 设置，如最大取消排队计数。
+* 配置 `QueueTrigger` 设置，例如最大取消排队计数。
 * 从配置中获取队列名称。
 
 ### <a id="setconnstr"></a>在代码中设置 SDK 连接字符串
@@ -464,7 +464,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 有时，你想要在代码中指定队列名称、Blob 名称、容器或表名称，而不是进行硬编码。例如，您可能想在配置文件或环境变量中指定 `QueueTrigger` 的队列名称。
 
-为此，您可以向 `JobHostConfiguration` 类型传递 `NameResolver` 对象。您可以在 WebJobs SDK 属性构造函数参数中添加用百分号 (%) 括住的特殊占位符，您的 `NameResolver` 代码指定了用于取代这些占位符的实际值。
+为此，您可以向 `JobHostConfiguration` 类型传递 `NameResolver` 对象。此时，你可以在 WebJobs SDK 属性构造函数参数中包含以百分号 (%) 括住的特殊占位符，你的 `NameResolver` 代码将指定要用于取代这些占位符的实际值。
 
 例如，假设你要在测试环境中使用名为 logqueuetest 的队列，并在生产环境中使用名为 logqueueprod 的队列。您希望在具有实际队列名称的 `appSettings` 集合中指定条目名称，而不是硬编码的队列名称。如果 `appSettings` 键为 logqueue，则函数如以下示例所示。
 
@@ -483,7 +483,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 		    }
 		}
 
-将 `NameResolver` 类传递给 `JobHost` 对象，如以下示例所示。
+将 `NameResolver` 类传入 `JobHost` 对象，如以下示例中所示。
 
 		static void Main(string[] args)
 		{
@@ -520,21 +520,26 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 ## <a id="logs"></a>如何写入日志
 
-仪表板在两个位置显示日志：针对 Web 作业的页，以及针对特定 Web 作业调用的页。
+仪表板在两个位置显示日志：针对 Web 作业的页，以及针对特定 Web 作业调用的页。 
 
-![Web 作业页面中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
+![WebJob 页中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-![函数调用页面中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
+![函数调用页中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
 
 在函数或 `Main()` 方法中调用的控制台方法的输出在 Web 作业的仪表板页面上显示，而不是在特定方法调用页面上显示。从方法签名的参数中获取的 TextWriter 对象的输出在方法调用的仪表板页中显示。
 
 无法将控制台输出链接到特定的方法调用，因为控制台是单线程的，而许多作业函数可能同时运行。正因如此，SDK 为每个函数调用提供了自身唯一的日志写入器对象。
 
-若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview)，请使用 `Console.Out`（创建标记为“信息”的日志）和 `Console.Error`（创建标记为“错误”的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志显示在 Web 应用日志文件、Azure 表或 Azure blob 中，具体视您如何配置 Azure Web 应用而定。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
+若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview)，请使用 `Console.Out`（创建标记为 INFO 的日志）和 `Console.Error`（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
 
 仅当程序在 Azure Web 作业中运行（而不是在本地运行或者在其他某个环境中运行）时，控制台输出才显示在仪表板中。
 
-可以[将仪表板连接字符串设置为 null](#config)，以此来禁用日志记录。
+为高吞吐量方案禁用仪表板日志记录。默认情况下，SDK 将日志写入存储，此活动会在处理的消息较多时降低性能。若要禁用日志记录，请按以下示例中所示，将仪表板连接字符串设置为 null。
+
+		JobHostConfiguration config = new JobHostConfiguration();       
+		config.DashboardConnectionString = “”;        
+		JobHost host = new JobHost(config);
+		host.RunAndBlock();
 
 下面的示例演示了写入日志的多种方法：
 
@@ -552,13 +557,13 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 ![单击函数调用链接](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardinvocations.png)
 
-![函数调用页面中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
+![函数调用页中的日志](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardlogs.png)
 
 在 WebJobs SDK 仪表板中，当您转到 Web 作业（而不是函数调用）页面并单击“切换输出”时，您会看到最近的 100 行控制台输出。
  
 ![单击“切换输出”](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-在连续 Web 作业中，应用程序日志显示在 Web 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job_log.txt 中。
+在连续的 WebJob 中，应用程序日志在 Web 应用文件系统的 /data/jobs/continuous/*{webjobname}*/job\_log.txt 中显示。
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
@@ -577,4 +582,4 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 本指南提供的代码示例演示了如何处理常见方案以操作 Azure 队列。若要详细了解如何使用 Azure WebJobs 和 WebJobs SDK，请参阅[有关 Azure WebJobs 的推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=67-->
+<!---HONumber=82-->

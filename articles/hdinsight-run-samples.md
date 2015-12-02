@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 HDInsight 中运行 Hadoop 示例 | Azure"
+	pageTitle="在 HDInsight 中运行 Hadoop 示例 | Windows Azure"
 	description="使用所提供的示例开始使用 Azure HDInsight 服务。在数据群集中使用运行 MapReduce 程序的 PowerShell 脚本。"
 	services="hdinsight"
 	documentationCenter=""
@@ -10,11 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/09/2015"
-	wacn.date="10/03/2015"/>
-
-
-
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
 #在 HDInsight 中运行 Hadoop 示例
 
@@ -22,7 +19,7 @@
 
 为帮助你开始使用 Azure HDInsight 在 Hadoop 群集上运行 MapReduce 作业，我们提供了一组示例。在你创建的每一个 HDInsight 托管群集上都可以使用这些示例。运行这些示例会让你熟悉使用 Azure PowerShell cmdlet 在 Hadoop 群集上运行作业。
 
-也可以使用 Microsoft .NET API for HDInsight 从应用程序中以编程方式运行 MapReduce 程序。有关使用 HDInsight API 提交作业的详细信息，请参阅 [在 HDInsight 中提交 Hadoop 作业][hdinsight-submit-hadoop-jobs-programmatically]。
+也可以使用 Microsoft .NET API for HDInsight 从应用程序中以编程方式运行 MapReduce 程序。有关使用 HDInsight API 提交作业的详细信息，请参阅[在 HDInsight 中提交 Hadoop 作业][hdinsight-submit-jobs]。
 
 Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编程和流式处理）的其他文档，以及有关 Windows PowerShell 脚本中使用的 cmdlet 的文档。有关这些资源的详细信息，请参阅 [Azure HDInsight 简介][hdinsight-introduction]中最后的 **HDInsight 资源**部分。
 
@@ -33,11 +30,11 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
 **先决条件**：
 
-- **一个 Azure 订阅**。请参阅 [azure-trial](/pricing/1rmb-trial/) 页。
+- **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
+- **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
 
-- **一个 HDInsight 群集**。有关可用于创建此类群集的不同方法的说明，请参阅[使用自定义选项在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)
 
-- **配备 Azure PowerShell 的工作站**。请参阅[如何安装和配置 Azure PowerShell][powershell-install-configure]。
 
 ## 示例 ##
 
@@ -65,21 +62,25 @@ HDInsight 随附了以下示例：
 * [在 HDInsight 中调试 Hadoop：错误消息][hdinsight-errors]
 
 
-[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs/
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
 
-[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
 
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell
+
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-<!---HONumber=71-->
+
+<!---HONumber=82-->

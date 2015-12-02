@@ -1,29 +1,26 @@
 <properties 
-	pageTitle="Azure 媒体服务概述" 
+	pageTitle="Azure 媒体服务概述和常见方案" 
 	description="本部分提供 Azure 媒体服务的概述" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="Juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015"
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
-#Azure 媒体服务概述
+#Azure 媒体服务概述和常见方案
 
 Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发人员可以构建可缩放的媒体管理和交付应用程序。媒体服务基于 REST API，你可以使用这些 API 安全地上载、存储、编码和打包视频或音频内容，以供点播以及以实时流形式传送到各种客户端（例如，电视、电脑和移动设备）。
 
 可以完全使用媒体服务构建端到端工作流。也可以选择使用第三方组件来构建工作流的某些组成部分。例如，使用第三方编码器进行编码。然后，使用媒体服务进行上载、保护、打包和传送。
 
-
-以下海报描绘了 Azure 媒体服务的从媒体创建到媒体使用的整个工作流。可从此处下载该海报：[Azure 媒体服务海报](http://www.microsoft.com/download/details.aspx?id=38195)。
-
-![概述][overview]
-
 你可以选择实时流式播放你的内容，或者根据点播情况交付内容。本主题演示了在哪些常见情况下，你会[实时](/documentation/articles/media-services-overview#live_scenarios)交付内容或按[点播](/documentation/articles/media-services-overview#vod_scenarios)交付内容。本主题还提供了其他相关主题的链接。
+
+## SDK 和工具 
 
 若要构建媒体服务解决方案，你可以使用：
 
@@ -32,11 +29,18 @@ Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发
 - 现有工具：[Azure 管理门户](http://manage.windowsazure.cn/)或 [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer)。
 
 
+##媒体服务学习路径
+
+你可以在此处查看 AMS 学习路径：
+
+- [AMS 实时流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/)
+- [AMS 按需流式处理工作流](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/)
+
 ##先决条件
 
 若要开始使用 Azure 媒体服务，你应该具备以下条件：
  
-3. 一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
+3. 一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 2. Azure 媒体服务帐户。使用 Azure 管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use)。 
 
@@ -100,7 +104,7 @@ Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发
 ###提供渐进式下载 
 
 1. 将优质夹层文件上载到资产中。
-1. 编码为单个 MP4。
+1. 编码为单个 MP4 文件。
 1. 通过创建 OnDemand 或 SAS 定位符来发布资产。
 
 	如果使用 OnDemand 定位符，请确保你要从中以渐进方式下载内容的流式处理终结点上至少有一个串流保留单位。
@@ -145,10 +149,10 @@ Windows Azure 媒体服务是一个可扩展的基于云的平台，它使开发
 **频道**表示用于处理实时流内容的管道。当前，频道可以通过以下方式接收实时输入流：
 
 
-- 本地实时编码器（采用以下格式之一：RTP (MPEG-TS)、RTMP 或平滑流式处理 （分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的频道。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，Media Services 会将该流传递给客户。
+- 本地实时编码器（采用以下格式之一：RTP (MPEG-TS)、RTMP 或平滑流式处理 （分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的频道。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传递给客户。
 
 	使用媒体服务对实时流进行编码的功能处于**预览**状态。
-- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入流将通过**频道**，而不会进行任何进一步处理。你的实时编码器也可将单比特率流发送到并未启用实时编码的频道，并不建议这样做。收到请求时，Media Services 会将该流传递给客户。
+- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入流将通过**频道**，而不会进行任何进一步处理。你的实时编码器也可将单比特率流发送到并未启用实时编码的频道，并不建议这样做。收到请求时，媒体服务会将该流传递给客户。
 
 
 ###使用能够通过 Azure 媒体服务执行实时编码的频道
@@ -178,7 +182,7 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 
 ##启用 Azure CDN
 
-媒体服务支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在 Media Services 帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins#enable_cdn)。
+媒体服务支持与 Azure CDN 集成。有关如何启用 Azure CDN 的信息，请参阅[如何在媒体服务帐户中管理流式处理终结点](/documentation/articles/media-services-manage-origins#enable_cdn)。
 
 ##缩放媒体服务帐户
 
@@ -190,7 +194,7 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 
 ##支持
 
-[Azure 支持](/support/)为 Azure（包括媒体服务）提供支持选项。
+[Azure 支持](/support/contact/)为 Azure（包括媒体服务）提供支持选项。
 
 ##模式与实践指南
 
@@ -216,4 +220,4 @@ Azure 媒体服务提供你所需的工具，以便你创建适用于大多数�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=76-->
+<!---HONumber=82-->

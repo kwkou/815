@@ -3,16 +3,16 @@
 	description="本主题介绍如何设置频道，以从本地编码器接收单比特率实时流，然后使用媒体服务执行实时编码以将其转换为自适应比特率流。然后，该流可以使用以下自适应流式处理协议之一通过一个或多个流式处理终结点传递给客户端播放应用程序：HLS、平滑流、MPEG DASH、HDS。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
-#使用能够使用 Azure 媒体服务（预览版）执行实时编码的频道
+#使用能够使用 Azure 媒体服务执行实时编码的频道
 
 ##概述
 
@@ -21,15 +21,11 @@
 - 本地实时编码器将多比特率 **RTMP** 或 **平滑流**（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入流将通过**频道**，而不会进行任何进一步处理。收到请求时，媒体服务会将该流传递给客户。
 - 将单比特率流（采用以下格式之一：**RTP** (MPEG-TS)、**RTMP** 或**平滑流**（分片 MP4）发送到能够使用媒体服务执行实时编码的**频道**。然后，**频道**将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传递给客户。 
 
-	使用媒体服务对实时流进行编码的功能当前处于**预览**状态。
-
 从媒体服务 2.10 发行版开始，在创建频道时，可以指定你想要频道接收输入流的方式，以及是否想要频道对流执行实时编码。可以使用两个选项：
 
 - **无** - 如果你打算使用输出多比特率流的本地实时编码器，请指定此值。在这种情况下，传入流将传递到输出，而不会进行任何编码。这是 2.10 发行版以前的频道行为。有关使用此类型的频道的更详细信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)。
 
-- **标准**（预览版）- 如果你打算使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。
-
-	使用媒体服务对实时流进行编码的功能当前处于预览状态。
+- **标准** - 如果你打算使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。
 
 >[AZURE.NOTE]本主题讨论为执行实时编码（“标准”编码类型）启用的频道的属性。有关使用未为执行实时编码启用的频道的信息，请参阅[使用从本地编码器接收多比特率实时流的频道](/documentation/articles/media-services-manage-channels-overview)。
 
@@ -38,19 +34,20 @@
 ![实时工作流][live-overview]
 
 
-
 ##本主题内容
 
 - 概述[常见的实时流方案](/documentation/articles/media-services-manage-live-encoder-enabled-channels#scenario)
 - [频道及其相关组件的说明](/documentation/articles/media-services-manage-live-encoder-enabled-channels#channel)
-- [注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels#considerations)
+- [注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels#Considerations)
 
 
 ##<a id="scenario"></a>常见的实时流方案
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+>[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -89,7 +86,7 @@
 - 单比特率 **RTMP**
 - 单比特率**分片 MP4**（平滑流）
 
-有关详细信息，请参阅 [Azure 媒体服务 RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 
 ####RTP (MPEG-TS) - RTP 上的 MPEG-2 传输流。  
 
@@ -261,21 +258,23 @@
 
 指定此频道内的实时编码器要使用的预设。目前，唯一允许的值是 **Default720p**（默认值）。
 
+请注意，如果你需要自定义预设，应在 WindowsAzure.cn 上联系 amslived。
+
 **Default720p** 会将视频编码为以下 7 层。
 
 
 ####输出视频流
 
-<table border="1">
-<tr><th>比特率</th><th>宽度</th><th>高度</th><th>MaxFPS</th><th>配置文件</th><th>输出流名称</th></tr>
-<tr><td>3500</td><td>1280</td><td>720</td><td>30</td><td>高</td><td>Video_1280x720_30fps_3500kbps</td></tr>
-<tr><td>2200</td><td>960</td><td>540</td><td>30</td><td>主要</td><td>Video_960x540_30fps_2200kbps</td></tr>
-<tr><td>1350</td><td>704</td><td>396</td><td>30</td><td>主要</td><td>Video_704x396_30fps_1350kbps</td></tr>
-<tr><td>850</td><td>512</td><td>288</td><td>30</td><td>主要</td><td>Video_512x288_30fps_850kbps</td></tr>
-<tr><td>550</td><td>384</td><td>216</td><td>30</td><td>主要</td><td>Video_384x216_30fps_550kbps</td></tr>
-<tr><td>350</td><td>340</td><td>192</td><td>30</td><td>基线</td><td>Video_340x192_30fps_350kbps</td></tr>
-<tr><td>200</td><td>340</td><td>192</td><td>30</td><td>基线</td><td>Video_340x192_30fps_200kbps</td></tr>
-</table>
+比特率|宽度|高度|MaxFPS|配置文件|输出流名称
+---|---|---|---|---|---
+3500|1280|720|30|高|Video\_1280x720\_3500kbps
+2200|960|540|30|主要|Video\_960x540\_2200kbps
+1350|704|396|30|主要|Video\_704x396\_1350kbps
+850|512|288|30|主要|Video\_512x288\_850kbps
+550|384|216|30|主要|Video\_384x216\_550kbps
+350|340|192|30|基线|Video\_340x192\_350kbps
+200|340|192|30|基线|Video\_340x192\_200kbps
+
 
 ####输出音频流
 
@@ -335,7 +334,6 @@
 如果未指定**默认清单资源 ID**，并且**“在 ad 标记上插入清单”**设为 **true**，则将使用默认 Azure 媒体服务图像隐藏输入视频流。在清单期间音频也会静音。
 
 
-
 ##频道的节目
 
 频道与节目相关联，使用节目，你可以控制实时流中的段的发布和存储。通道管理节目。通道和节目的关系非常类似于传统媒体，通道具有恒定的内容流，而节目的范围限定为该通道上的一些定时事件。
@@ -373,17 +371,15 @@
 
 下表显示频道状态如何映射到计费模式。
  
-<table border="1">
-<tr><th>频道状态</th><th>门户 UI 指示器</th><th>是否计费？</th></tr>
-<tr><td>正在启动</td><td>正在启动</td><td>否（暂时状态）</td></tr>
-<tr><td>正在运行</td><td>准备就绪（没有正在运行的节目）<br/>或<br/>流式处理（至少有一个正在运行的节目）</td><td>是</td></tr>
-<tr><td>正在停止</td><td>正在停止</td><td>否（暂时状态）</td></tr>
-<tr><td>已停止</td><td>已停止</td><td>否</td></tr>
-</table>
+频道状态|门户 UI 指示器|是否计费？
+---|---|---
+正在启动|正在启动|否（暂时状态）
+正在运行|准备就绪（没有正在运行的节目）<br/>或<br/>流式处理（至少有一个正在运行的节目）|是
+正在停止|正在停止|否（暂时状态）
+已停止|已停止|否
 
 
->[AZURE.NOTE]当前处于预览状态，频道启动可能最多需要 20 多分钟。频道重置可能最多需要 5 分钟。
-
+>[AZURE.NOTE]目前，通道启动可能最多需要 20 多分钟。频道重置可能最多需要 5 分钟。
 
 
 ##<a id="Considerations"></a>注意事项
@@ -395,6 +391,8 @@
 - 默认情况下，你只能向你的媒体服务帐户添加 5 个频道。这是所有新帐户的软配额。有关详细信息，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations)。
 - 当频道或其关联的节目正在运行时，无法更改输入协议。如果你需要不同的协议，应当针对每个输入协议创建单独的频道。
 - 仅当你的频道处于**“正在运行”**状态时才会向你收费。有关详细信息，请参阅[此](/documentation/articles/media-services-manage-live-encoder-enabled-channels#states)部分。
+- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+- 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
 
 ##已知问题
 
@@ -423,4 +421,4 @@
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=76-->
+<!---HONumber=82-->

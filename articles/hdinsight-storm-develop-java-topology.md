@@ -1,5 +1,5 @@
 <properties
-   pageTitle="为 Apache Storm 开发基于 Java 的拓扑 | Azure"
+   pageTitle="为 Apache Storm 开发基于 Java 的拓扑 | Windows Azure"
    description="了解如何通过创建一个简单的单词计数拓扑，来以 Java 语言创建一个 Storm 拓扑。"
    services="hdinsight"
    documentationCenter=""
@@ -9,9 +9,9 @@
 	tags="azure-portal"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.date="07/08/2015"
-   wacn.date="10/03/2015"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/27/2015"/>
 
 #使用 Apache Storm 和 HDInsight 上的 Maven 为基本的单词计数应用程序开发基于 Java 的拓扑
 
@@ -33,13 +33,13 @@
 
 可以在安装 Java 和 JDK 时设置以下环境变量。不过，你应该检查它们是否存在并且包含系统的正确值。
 
-* **JAVA_HOME** - 应该指向已安装 Java 运行时环境 (JRE) 的目录。例如，在 Windows 中，它的值类似于 `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA\_HOME** - 应该指向已安装 Java 运行时环境 (JRE) 的目录。例如，在 Windows 中，它的值类似于 `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - 应该包含以下路径：
 
-	* **JAVA_HOME**（或等效的路径）
+	* **JAVA\_HOME**（或等效的路径）
 
-	* **JAVA_HOME\\bin**（或等效的路径）
+	* **JAVA\_HOME\\bin**（或等效的路径）
 
 	* 安装 Maven 的目录
 
@@ -451,16 +451,14 @@ Trident 是 Storm 提供的高级抽象。它支持有状态处理。Trident 的
 
 有关 Trident 的详细信息，请参阅 <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API 概述</a>。
 
-<!--For an example of a Trident application, see [Twitter trending topics with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-twitter-trending/)-->
-
 ##后续步骤
 
 你已学习如何使用 Java 创建 Storm 拓扑。接下来，请学习如何：
 
-* [在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
+* [在 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 
-* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
+* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
 
-如需更多 Storm 拓扑示例，请访问 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
+如需更多 Storm 拓扑示例，请访问 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
 
-<!---HONumber=71-->
+<!---HONumber=82-->

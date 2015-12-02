@@ -7,10 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="09/28/2015"
+	wacn.date="11/27/2015"/>
 
 
 
@@ -61,7 +61,7 @@ SS for OSMF 包括两个版本的插件：
 ###SS for OSMF 静态加载
 以下代码段演示如何静态加载 SS for OSMF 插件以及如何使用 OSMF MediaFactory 类播放基本视频。在包含 SS for OSMF 代码之前，请确保项目引用包含“MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swc”静态插件。
 
-<pre><code>
+```
 package 
 {
 	
@@ -155,7 +155,7 @@ package
 					break;
 				
 				case  MediaPlayerState.READY :   
-					// Add code to deal with Player Ready when it is hit the first load after a source is loaded.
+					// Add code to deal with Player Ready when it is hit the first load after a source is loaded. 
 					
 					break;
 				
@@ -165,13 +165,13 @@ package
 				
 				case  MediaPlayerState.PAUSED :
 					break;      
-				// other states ...         
+				// other states ...          
 			}
 		}
 		
 		private function onPlayerFailed(event:MediaErrorEvent) : void
 		{
-			// Media Player is failed .          
+			// Media Player is failed .           
 		}
 		
 		private function loadMediaSource(sourceURL : String):void 
@@ -191,14 +191,14 @@ package
 		
 	}
 }
-</code></pre>
+```
 
 
 ###SS for OSMF 动态加载
 
 以下代码段演示如何动态加载 SS for OSMF 插件以及如何使用 OSMF MediaFactory 类播放基本视频。在包含 SS for OSMF 代码之前，如果要使用 FILE 协议进行加载，请将“MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf”动态插件复制到项目文件夹；如果要进行 HTTP 加载，请将该插件复制到 Web 服务器下。不需要在项目引用中包含“MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swc”。
 
-<pre><code>
+```
 package 
 {
 	
@@ -295,7 +295,7 @@ package
 					break;
 				
 				case  MediaPlayerState.READY :   
-					// Add code to deal with Player Ready when it is hit the first load after a source is loaded.
+					// Add code to deal with Player Ready when it is hit the first load after a source is loaded. 
 					
 					break;
 				
@@ -305,13 +305,13 @@ package
 				
 				case  MediaPlayerState.PAUSED :
 					break;      
-				// other states ...         
+				// other states ...          
 			}
 		}
 		
 		private function onPlayerFailed(event:MediaErrorEvent) : void
 		{
-			// Media Player is failed .          
+			// Media Player is failed .           
 		}
 		
 		private function loadMediaSource(sourceURL : String):void 
@@ -330,7 +330,7 @@ package
 		
 	}
 }
-</code></pre>
+```
 
 ##Strobe Media Playback 与 SS OSMF 动态插件
 适用于 OSMF 的平滑流式处理动态插件与 [Strobe Media Playback (SMP)](http://osmf.org/strobe_mediaplayback.html) 兼容。你可以使用 SS for OSMF 插件向 SMP 添加平滑流式处理内容播放功能。为此，请在进行 HTTP 加载时，使用以下步骤将“MSAdaptiveStreamingPlugin-v1.0.3-osmf2.0.swf”复制到 Web 服务器下：
@@ -395,8 +395,9 @@ package
 有关一般性 OSMF 开发的详细信息，请参阅官方的 [OSMF 开发页](http://osmf.org/resources.html)。
 
 
+
 ##另请参阅
 
 [适用于 OSMF 的 Microsoft 自适应流式处理插件更新](http://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
 
-<!---HONumber=76-->
+<!---HONumber=82-->

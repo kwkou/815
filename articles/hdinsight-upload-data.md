@@ -1,17 +1,17 @@
-<properties 
-	pageTitle="在 HDInsight 中上载 Hadoop 作业的数据 | Azure" 
+<properties
+	pageTitle="在 HDInsight 中上载 Hadoop 作业的数据 | Windows Azure"
 	description="了解如何使用 Azure CLI、Azure 存储资源管理器、Azure PowerShell、Hadoop 命令行或 Sqoop 在 HDInsight 中上载和访问 Hadoop 作业的数据。"
 	services="hdinsight,storage"
-	documentationCenter="" 
+	documentationCenter=""
 	tags="azure-portal"
-	authors="mumian" 
-	manager="paulettm" 
+	authors="mumian"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.date="07/28/2015"
-	wacn.date="10/03/2015"/>
+<tags
+	ms.service="hdinsight"
+	ms.date="09/28/2015"
+	wacn.date="11/27/2015"/>
 
 
 
@@ -50,7 +50,7 @@ Microsoft 提供了以下实用程序让你使用 Azure Blob 存储：
 | [Azure 命令行界面][azurecli] | ✔ | ✔ | ✔ |
 | [Azure PowerShell][azure-powershell] | | | ✔ |
 | [AzCopy][azure-azcopy] | | | ✔ |
-| [Hadoop 命令](#commandline) | | | ✔ |
+| [Hadoop 命令](#commandline) | ✔ | ✔ | ✔ |
 
 > [AZURE.NOTE]尽管 Azure CLI、Azure PowerShell 和 AzCopy 都可从 Azure 外部使用，但是 Hadoop 命令只能在 HDInsight 群集上使用，而且只能将数据从本地文件系统加载到 Azure Blob 存储。
 
@@ -58,7 +58,7 @@ Microsoft 提供了以下实用程序让你使用 Azure Blob 存储：
 
 Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下步骤将数据上载到 Azure Blob 存储：
 
-1. [安装和配置 Azure CLI](/documentation/articles/xplat-cli)。
+1. [安装并配置 Azure CLI](/documentation/articles/xplat-cli-install)。
 
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 
@@ -91,10 +91,10 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 			azure storage blob download -a <storage-account-name> -k <primary-key> <container-name> <blob-name> <destination-file>
 
 > [AZURE.NOTE]如果你始终使用同一个存储帐户，可以设置以下环境变量，而无需为每条命令指定帐户和密钥：
-> 
-> * **AZURE\_STORAGE_ACCOUNT**：存储帐户名称
-> 
-> * **AZURE\_STORAGE\_ACCESS_KEY**：存储帐户密钥
+>
+> * **AZURE\_STORAGE\_ACCOUNT**：存储帐户名称
+>
+> * **AZURE\_STORAGE\_ACCESS\_KEY**：存储帐户密钥
 
 ###<a id="powershell"></a>Azure PowerShell
 
@@ -172,7 +172,7 @@ AzCopy 语法为：
 
 | 客户端 | Linux | OS X | Windows |
 | ------ |:-----:|:----:|:-------:|
-| [Azure 存储空间资源管理器](http://azurestorageexplorer.codeplex.com/) | | | ✔ |
+| [Azure 存储空间资源管理器](http://storageexplorer.com/) | ✔ | ✔ | ✔ |
 | [Cloud Storage Studio 2](http://www.cerebrata.com/Products/CloudStorageStudio/) | | | ✔ |
 | [CloudXplorer](http://clumsyleaf.com/products/cloudxplorer) | | | ✔ |
 | [Azure 资源管理器](http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx) | | | ✔ |
@@ -181,39 +181,33 @@ AzCopy 语法为：
 
 ###<a id="storageexplorer"></a>Azure 存储空间资源管理器
 
-*Azure 存储资源管理器*是用于在 Azure 存储空间中检查和更改数据的有用工具。它是免费工具，可从 CodePlex 下载：[Azure 存储资源管理器](http://azurestorageexplorer.codeplex.com/ "Azure 存储空间资源管理器")。
+*Azure 存储资源管理器*是用于在 Blob 中检查和更改数据的有用工具。它是一个免费的开源工具，可从 [http://storageexplorer.com/](http://storageexplorer.com/) 下载。也可以从此链接获取源代码。
 
-使用该工具之前，你必须知道你的 Azure 存储帐户名和帐户密钥。有关如何获取此信息的说明，请参阅 [创建、管理或删除存储帐户][azure-create-storageaccount] 中的“如何：查看、复制和重新生成存储访问密钥”部分。
+使用该工具之前，你必须知道你的 Azure 存储帐户名和帐户密钥。有关如何获取此信息的说明，请参阅[创建、管理或删除存储帐户][azure-create-storage-account]中的“如何：查看、复制和重新生成存储访问密钥”部分。
 
-1. 运行 Azure 存储空间资源管理器。
+1. 运行 Azure 存储空间资源管理器。如果这是你第一次运行存储资源管理器，系统将提示你输入“存储帐户名”和“存储帐户密钥”。如果你以前运行过存储资源管理器，请使用“添加”按钮添加一个新的存储帐户名和密钥。
+
+    输入 HDinsight 群集使用的存储帐户的名称和密钥，然后选择“保存并打开”。
 
 	![HDI.AzureStorageExplorer][image-azure-storage-explorer]
 
-2. 单击“添加帐户”。在将帐户添加到 Azure 存储资源管理器后，你无需再执行该步骤。
+5. 在界面左侧的容器列表中，单击与你的 HDInsight 群集关联的容器名称。默认情况下，这是 HDInsight 群集的名称，但如果你在创建群集时输入了特定的名称，则该名称可能不同。
 
-	![HDI.ASEAddAccount][image-ase-addaccount]
+6. 在工具栏中选择上载图标。
 
-3. 输入“存储帐户名称”和“存储帐户密钥”，然后单击“添加存储帐户”。可以添加多个存储帐户，每个帐户均将显示在一个选项卡上。
-4. 在“存储类型”下，单击“Blob”。
+    ![突出显示了上载图标的工具栏](./media/hdinsight-upload-data/toolbar.png)
 
-	![HDI.ASEBlob][image-ase-blob]
+7. 指定要上载的文件，然后单击“打开”。出现提示时，请选择“上载”将文件上载到存储容器的根目录。如果要将文件上载到特定的路径，请在“目标”字段中输入该路径，然后选择“上载”。
 
-5. 在“容器”下，单击与你的 HDInsight 群集关联的容器名称。创建 HDInsight 群集时，你必须指定一个容器。否则，群集创建过程将为你创建一个容器。
-6. 在“Blob”下，单击“上载”。
-7. 指定要上载的文件，然后单击“打开”。
+    ![文件上载对话框](./media/hdinsight-upload-data/fileupload.png)
+    
+    上载完文件后，可以通过 HDInsight 群集中的作业来使用该文件。
 
 ##将 Azure Blob 存储装载为本地驱动器
 
 请参阅[将 Azure Blob 存储装载为本地驱动器](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx)。
 
 ##服务
-
-###Azure 数据工厂
-
-Azure 数据工厂服务是完全托管的服务，可将数据存储、数据处理及数据移动服务组合成有效、可缩放且可靠的数据生产管道。
-
-Azure 数据工厂可用于将数据移到 Azure Blob 存储，或创建数据管道来直接使用 HDInsight 功能，例如 Hive 和 Pig。
-
 
 ###<a id="sqoop"></a>Apache Sqoop
 
@@ -249,31 +243,32 @@ Sqoop 是一种为在 Hadoop 和关系数据库之间传输数据而设计的工
 [azure-management-portal]: https://manage.windowsazure.cn
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
-[azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs
-[azure-create-storage-account]: /documentation/articles/storage-create-storage-account/
+[azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs/
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-azcopy-download]: /documentation/articles/storage-use-azcopy
 [azure-azcopy]: /documentation/articles/storage-use-azcopy
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 
-[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage/
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-storage]: /documentation/articles/hdinsight-use-blob-storage
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-create-configure/
+[sqldatabase-create-configure]: /documentation/articles/sql-database-create-configure
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[xplatcli]: /documentation/articles/xplat-cli/
-[azurecli]: /documentation/articles/xplat-cli
+[azurecli]: /documentation/articles/xplat-cli-install
+
 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
-<!---HONumber=71-->
+<!---HONumber=82-->

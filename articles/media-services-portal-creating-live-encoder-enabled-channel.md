@@ -1,23 +1,23 @@
 <properties 
-	pageTitle="使用管理门户可创建频道，以执行从单比特率到多比特率流的实时编码" 
-	description="本教程将指导你完成创建频道的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。" 
+	pageTitle="使用 Azure 管理门户可创建通道，以执行从单比特率到多比特率流的实时编码" 
+	description="本教程将指导你使用 Azure 管理门户完成创建通道的步骤，该通道接收单比特率实时流，并将其编码为多比特率流。" 
 	services="media-services" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="juliako,anilmur" 
 	manager="dwrede" 
 	editor=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.date="09/07/2015" 
-	wacn.date="11/02/2015"/>
+<tags
+	ms.service="media-services"
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
 
-#使用管理门户可创建频道，以执行从单比特率到多比特率流的实时编码（预览版）
+#使用 Azure 管理门户可创建通道，以执行从单比特率到多比特率流的实时编码
 
 > [AZURE.SELECTOR]
 - [Portal](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel)
-- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
+- [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel)
 - [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
 
 本教程将指导你完成创建**频道**的步骤，该频道接收单比特率实时流，并将其编码为多比特率流。
@@ -28,7 +28,9 @@
 
 以下是在创建常见的实时流应用程序时涉及的常规步骤。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
+>[AZURE.NOTE]目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出单比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。有关详细信息，请参阅 [Azure Media Services RTMP 支持和实时编码器](https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/)。
 	
 	此步骤也可以在创建频道后执行。
 
@@ -62,11 +64,10 @@
 1.  播放内容 
 2.  清理
 
-##先决条件  
-
+##先决条件
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
+- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account)。
 - 可以发送单比特率实时流的摄像头和编码器。
 
@@ -137,7 +138,7 @@
 
 ![standard4][standard4]
 
->[AZURE.NOTE]当前处于预览状态，频道启动可能最多需要 30 分钟。频道重置可能最多需要 5 分钟。
+>[AZURE.NOTE]目前，通道启动可能最多需要 30 分钟。频道重置可能最多需要 5 分钟。
 
 创建频道后，可以选择**“编码器”**选项卡，从中可以查看频道配置。此外，还可以管理广告和清单。
 
@@ -248,6 +249,11 @@
 - 除非你想要继续以点播流形式提供实时事件的存档，否则你可以停止流式处理终结点。如果通道处于停止状态，将不会产生任何费用。
   
 
+##注意事项
+
+- 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 WindowsAzure.cn 联系 amslived。
+- 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
+
 
 [standard0]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard0.png
 [standard1]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard1.png
@@ -256,4 +262,4 @@
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=76-->
+<!---HONumber=82-->

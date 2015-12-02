@@ -8,23 +8,23 @@
  editor="cgronlun"/>
 
 <tags
-ms.service="hdinsight"
-ms.date="07/06/2015"
-wacn.date="08/29/2015"/>
+	ms.service="hdinsight"
+	ms.date="09/23/2015"
+	wacn.date="11/27/2015"/>
 
-# 使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
+#使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据
 
 了解如何使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据。此示例读取 Azure 事件中心的传感器数据，通过引用存储在 Azure DocumentDB 中的数据来丰富数据，最后使用 Hadoop 文件系统 (HDFS) 将数据存储在 Azure 存储空间。
 
 ![HDInsight 和物联网 (IoT) 体系结构关系图](./media/hdinsight-storm-iot-eventhub-documentdb/iot.png)
 
-## 概述
+##概述
 
 向车辆添加传感器可以根据历史数据趋势预测设备问题，并可根据使用模式分析改进未来版本。虽然传统的 MapReduce 批处理可以用于这种分析，但你必须能够快速有效地将所有车辆的数据加载到 Hadoop 中，然后才能进行 MapReduce 处理。此外，你可能还希望能够实时地针对关键故障路径（引擎温度、刹车等）进行分析。
 
 Azure 事件中心可用于处理传感器生成的大量数据，而 Apache Storm on HDInsight 则可用于加载和处理这些数据，然后将这些数据存储到 HDFS（由 Azure 存储空间提供支持）中，以便进行额外的 MapReduce 处理。
 
-## 解决方案
+##解决方案
 
 关于引擎温度、环境温度和车速的遥测数据将由传感器记录，然后与车辆的车辆识别号 (VIN) 及时间戳一起发送到事件中心。在事件中心，运行在 Apache Storm on HDInsight 群集上的 Storm 拓扑将读取并处理数据，然后将其存储到 HDFS 中。
 
@@ -46,7 +46,7 @@ Azure 事件中心可用于处理传感器生成的大量数据，而 Apache Sto
 
 > [AZURE.NOTE]这是一个简化的关系图，解决方案中的每个组件可能有多个实例。例如，拓扑中每个组件的多个实例分布在 Storm on HDInsight 群集的多个节点中。
 
-## 实现
+##实现
 
 GitHub 上的 <a href="https://github.com/hdinsight/hdinsight-storm-examples" target="_blank">HDInsight-Storm-Examples</a> 存储库中提供了这种情况的完整自动化解决方案。若要使用此示例，请遵循 [IoTExample README.MD](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md) 中的步骤。
 
@@ -54,4 +54,4 @@ GitHub 上的 <a href="https://github.com/hdinsight/hdinsight-storm-examples" ta
 
 如需更多 Storm 拓扑示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology)。
 
-<!---HONumber=67-->
+<!---HONumber=82-->

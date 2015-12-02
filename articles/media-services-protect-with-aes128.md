@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.date="09/16/2015"
-	wacn.date="11/02/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/27/2015"/>
 
 #使用 AES-128 动态加密和密钥传送服务
 
@@ -62,81 +62,13 @@
 
 为了对视频进行管理、编码和流式处理，必须首先将内容上载到 Windows Azure 媒体服务中。上载完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 
-以下代码段演示如何创建资产并将指定文件上载到资产中。
-	
-	static public IAsset UploadFileAndCreateAsset(string singleFilePath)
-	{
-	    if(!File.Exists(singleFilePath))
-	    {
-	        Console.WriteLine("File does not exist.");
-	        return null;
-	    }
-	
-	    var assetName = Path.GetFileNameWithoutExtension(singleFilePath);
-	    IAsset inputAsset = _context.Assets.Create(assetName, AssetCreationOptions.StorageEncrypted);
-	
-	    var assetFile = inputAsset.AssetFiles.Create(Path.GetFileName(singleFilePath));
-	
-	    Console.WriteLine("Created assetFile {0}", assetFile.Name);
-	
-	    var policy = _context.AccessPolicies.Create(
-	                            assetName,
-	                            TimeSpan.FromDays(30),
-	                            AccessPermissions.Write | AccessPermissions.List);
-	
-	    var locator = _context.Locators.CreateLocator(LocatorType.Sas, inputAsset, policy);
-	
-	    Console.WriteLine("Upload {0}", assetFile.Name);
-	
-	    assetFile.Upload(singleFilePath);
-	    Console.WriteLine("Done uploading {0}", assetFile.Name);
-	
-	    locator.Delete();
-	    policy.Delete();
-	
-	    return inputAsset;
-	}
+有关详细信息，请参阅[将文件上载到媒体服务帐户](/documentation/articles/media-services-dotnet-upload-files)。
 
 ##<a id="encode_asset"></a>将包含文件的资产编码为自适应比特率 MP4 集
 
 使用动态加密时，你只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。然后，点播流服务器会确保你以选定的协议按清单或分段请求中的指定格式接收流。因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。有关详细信息，请参阅[动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview)主题。
 
-以下代码段向你演示如何将资产编码为自适应比特率 MP4 集：
-	
-	static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
-	{
-	    var encodingPreset = "H264 Adaptive Bitrate MP4 Set 720p";
-	
-	    IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
-	                            inputAsset.Name,
-	                            encodingPreset));
-	
-	    var mediaProcessors = 
-	        _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder")).ToList();
-	
-	    var latestMediaProcessor = 
-	        mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
-	
-	
-	
-	    ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
-	    encodeTask.InputAssets.Add(inputAsset);
-	    encodeTask.OutputAssets.AddNew(String.Format("{0} as {1}", inputAsset.Name, encodingPreset), AssetCreationOptions.StorageEncrypted);
-	
-	    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
-	    job.Submit();
-	    job.GetExecutionProgressTask(CancellationToken.None).Wait();
-	
-	    return job.OutputMediaAssets[0];
-	}
-	
-	static private void JobStateChanged(object sender, JobStateChangedEventArgs e)
-	{
-	    Console.WriteLine(string.Format("{0}\n  State: {1}\n  Time: {2}\n\n",
-	        ((IJob)sender).Name,
-	        e.CurrentState,
-	        DateTime.UtcNow.ToString(@"yyyy_M_d__hh_mm_ss")));
-	}
+有关如何编码的说明，请参阅[如何使用媒体编码器标准版对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard)。
 
 ##<a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
 
@@ -280,7 +212,7 @@
 ##<a id="example"></a>示例
 
 1. 创建新的控制台项目。
-1. 使用 NuGet 安装和添加 Azure Media Services .NET SDK Extensions。安装此包也会安装 Media Services .NET SDK 并添加所有其他必需的依赖项。
+1. 使用 NuGet 安装和添加 Azure 媒体服务 .NET SDK Extensions。安装此包也会安装媒体服务 .NET SDK 并添加所有其他必需的依赖项。
 2. 添加包含帐户名称和密钥信息的配置文件：
 
 	
@@ -659,4 +591,4 @@
 		    }
 		}
 
-<!---HONumber=76-->
+<!---HONumber=82-->
