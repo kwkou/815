@@ -117,7 +117,6 @@
 ## 后续步骤
 
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
-- 若要部署您创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
 - 有关如何设计您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 

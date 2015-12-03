@@ -540,6 +540,5 @@
 - 有关 Azure 资源管理器模板中对各部分的说明，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)
 - 若要合并多个模版，请参阅[将已链接的模版与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates)
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple)
-- 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)
 
 <!---HONumber=82-->
