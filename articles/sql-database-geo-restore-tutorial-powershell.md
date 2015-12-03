@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
    pageTitle="在 Azure PowerShell 中使用地域还原恢复 Azure SQL 数据库" 
    description="地域还原, Windows Azure SQL 数据库, 还原数据库, 恢复数据库, Azure PowerShell" 
    services="sql-database" 
@@ -71,9 +71,7 @@
 
 [在 Azure 门户中还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-tutorial-management-portal)
 
-[Azure SQL 数据库 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)
-
-[Azure SQL 数据库 备份和还原](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)
+[Azure SQL 数据库 业务连续性](/documentation/articles/sql-database-business-continuity/)
 
 [Azure SQL 数据库异地还原（博客）](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
 

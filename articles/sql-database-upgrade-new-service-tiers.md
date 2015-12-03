@@ -15,7 +15,7 @@
 
 # 将 SQL 数据库 Web 或企业数据库升级到新服务层
 
-Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-database-web-business-sunset-faq)，因此现在是开始规划将现有的 Web 或企业数据库升级到[基本、标准、高级或弹性服务层](/documentation/articles/sql-database-service-tiers)的时候了。
+Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-database-web-business-sunset-faq)，因此现在是开始规划将现有的 Web 或企业数据库升级到<!--[-->基本、标准、高级或弹性服务层<!--](/documentation/articles/sql-database-service-tiers)-->的时候了。
 
 
 > [AZURE.IMPORTANT]将 Web 或企业数据库升级到新的服务层不会使数据库脱机。数据库将保持联机，并且可在整个升级操作过程中使用。
@@ -29,7 +29,6 @@ Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-datab
 
 若要查看为已停用的数据库建议的服务层，可以使用 [Azure 门户](https://manage.windowsazure.cn)或 PowerShell。有关分步指导，请参阅：
 
-- [升级到 SQL 数据库 V12（Azure 预览门户）](/documentation/articles/sql-database-v12-upgrade)
 - [升级到 SQL 数据库 V12 (PowerShell)](/documentation/articles/sql-database-upgrade-server)
 
 
@@ -251,10 +250,8 @@ Web 和企业数据库没有针对任一单个数据库保留特定数量的资�
 | :---| :---|
 | [Azure 管理门户](https://manage.windowsazure.cn) | 单击数据库仪表板页面上的“缩放”选项卡。 |
 | [Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx) | 使用 [Set-AzureRMSqlDatabase](http://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) cmdlet。 |
-| [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) | 使用“创建或更新数据库”命令。[](http://msdn.microsoft.com/zh-cn/azure/library/mt163685.aspx)|
-| [Transact-SQL](http://msdn.microsoft.com/zh-cn/azure/library/bb510741.aspx) | 使用 [ALTER DATABASE (Transact-SQL)](http://msdn.microsoft.com/zh-cn/azure/library/ms174269.aspx) 语句。 |
-
-有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up)
+| [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) | 使用“创建或更新数据库”命令。[](/documentation/)|
+| [Transact-SQL](/documentation/) | 使用 [ALTER DATABASE (Transact-SQL)](/documentation/) 语句。 |
 
 
 ## 6\.监视升级到新服务层/性能级别
