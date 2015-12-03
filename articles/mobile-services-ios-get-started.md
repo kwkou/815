@@ -23,7 +23,7 @@
 
 在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_ 应用程序。要创建的移动服务将为服务器端业务逻辑使用 JavaScript。若要以 .NET 创建包含服务器端业务逻辑的移动服务，请参阅本主题的 [.NET 后端版本]。
 
-> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取[免费的移动服务，即使在试用期结束之后仍可继续使用这些服务](/home/features/mobile-services/#price)。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial target="\_blank")。
+> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取[免费的移动服务，即使在试用期结束之后仍可继续使用这些服务](/home/features/mobile-services/#price)。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)。
 
 ##  <a name="create-new-service"></a>创建新的移动服务
 

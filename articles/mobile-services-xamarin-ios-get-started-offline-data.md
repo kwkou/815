@@ -25,7 +25,7 @@
 * 允许最终用户创建和修改数据，甚至在没有网络访问权限，并支持方案具有很少或没有连接时
 * 跨多个设备同步数据和同一个记录修改由两个设备时检测冲突
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial target="\_blank">Azure 试用</a>。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 [Azure 试用](pricing/1rmb-trial)</a>。
 >
 > 如果这是你第一次体验移动服务，你应首先完成[移动服务入门]。
 
@@ -66,7 +66,7 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 
     `DefineTable` 方法与所提供的类型中的字段相匹配的本地存储中创建一个表 `ToDoItem` 这种情况下。该类型无需包括所有的列，同时在远程数据库中就可以存储列的子集。
 
-    此重载 `InitializeAsync` 使用默认冲突处理程序，只要有冲突，则将失败。若要提供自定义冲突处理程序，请参阅教程[处理脱机支持的移动服务与冲突]。
+    此重载 `InitializeAsync` 使用默认冲突处理程序，只要有冲突，则将失败。
 
 4. 方法 `SyncAsync` 触发实际同步操作：
 
@@ -92,7 +92,7 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 
     >[AZURE.NOTE]若要从设备本地存储区中删除已在移动设备数据库中删除的记录，应启用“[软删除]”。否则，你的应用程序应定期调用 `IMobileServiceSyncTable.PurgeAsync()` 以清除本地存储。
 
-    请注意，推送和请求操作可能会发生 `MobileServicePushFailedException`。下一篇教程[使用移动服务脱机支持处理冲突]说明了如何处理这些同步相关的异常。
+    请注意，推送和请求操作可能会发生 `MobileServicePushFailedException`。
 
 5. 在 `QSTodoService` 类中，`SyncAsync()` 方法之后修改数据的操作，将调用 `InsertTodoItemAsync()` 和 `CompleteItemAsync`。也可以从 `RefreshDataAsync()` 调用该方法，使用户在执行刷新手势时获取最新数据。该应用程序还执行同步启动，因为 `QSTodoListViewController.ViewDidLoad()` 调用 `RefreshDataAsync()`。
 
@@ -156,8 +156,6 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 [AZURE.INCLUDE [mobile-services-offline-summary-csharp](../includes/mobile-services-offline-summary-csharp.md)]
 
 ##  后续步骤
-
-* [使用移动服务脱机支持处理冲突]
 
 * [如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]
 

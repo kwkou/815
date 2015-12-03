@@ -1,4 +1,4 @@
-﻿在本节中，将两个新用户添加到您的目录以及新销售组。其中一个用户将被授予销售组成员身份。另一个用户将不会被授予该组成员身份。 
+在本节中，将两个新用户添加到您的目录以及新销售组。其中一个用户将被授予销售组成员身份。另一个用户将不会被授予该组成员身份。 
 
 ### 创建用户
 
@@ -33,7 +33,7 @@
    
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id.png)
 
-4. 导航回到移动服务配置页，并添加该对象 ID 作为名为 **AAD\_SALES\_GROUP\_ID** 的应用设置。本教程使用组的对象 ID 作为应用设置，而不是基于组名称查找 ID。这是因为组名称可能会更改，而 ID 会保持相同。
+4. 导航回到移动服务配置页，并添加该对象 ID 作为名为 **AAD_SALES_GROUP_ID** 的应用设置。本教程使用组的对象 ID 作为应用设置，而不是基于组名称查找 ID。这是因为组名称可能会更改，而 ID 会保持相同。
 
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id-app-setting.png)
 

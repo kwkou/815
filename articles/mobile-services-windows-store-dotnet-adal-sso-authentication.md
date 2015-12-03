@@ -30,8 +30,8 @@
 
 本教程需要的内容如下：
 
-* 在 Windows 8.1 上运行的 Visual Studio 2013。
-* 完成[移动服务入门]教程。
+* 在 Windows 8.1 上运行的 Visual Studio 2013
+* 完成[移动服务入门]教程
 * Microsoft Azure 移动服务 SDK NuGet 包
 * Active Directory 身份验证库 NuGet 包 
 

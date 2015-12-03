@@ -35,10 +35,10 @@
 
 + PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以外，还必须为你所要针对的每个平台安装工具：
 
-- Windows Phone：安装 [Visual Studio 2012 Express for Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
-- iOS：安装 [Xcode]（需要 v4.4+）
-- Android：[安装 Android 开发人员工具][Android SDK]
-<br/>（适用于 Android 的移动服务 SDK 支持用于 Android 2.2 或更高版本的应用程序。运行快速入门应用程序需要安装 Android 4.2 或更高版本。)
+	- Windows Phone：安装 [Visual Studio 2012 Express for Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
+	- iOS：安装 [Xcode]（需要 v4.4+）
+	- Android：[安装 Android 开发人员工具][Android SDK]
+	<br/>（适用于 Android 的移动服务 SDK 支持用于 Android 2.2 或更高版本的应用程序。运行快速入门应用程序需要安装 Android 4.2 或更高版本。)
 
 ##  创建新的移动服务
 
@@ -76,7 +76,7 @@
 
 	+ **Windows Phone 8**
 
-	1. Windows Phone 8：在 Visual Studio 2012 Express for Windows Phone 中，打开 **platforms\\wp8** 文件夹中的 .sln 文件。
+	1. Windows Phone 8：在 Visual Studio 2012 Express for Windows Phone 中，打开 **platforms\wp8** 文件夹中的 .sln 文件。
 	
 	2. 按 **F5** 键以重新构建项目并启动此应用。
 	
