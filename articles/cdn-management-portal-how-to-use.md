@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to useWindows Azure CDN Management Portal advanced features - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Windows Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="11/27/2015"
+    wacn.date="12/04/2015"
     />
 
 # Windows Azure CDN 管理门户使用指南
@@ -17,6 +17,7 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 + [缓存刷新](#step5)
 + [内容预取](#step6)
 + [日志下载](#step7)
++ [服务检查](#step8)
 
 ## **Windows Azure CDN管理页面概览**<a id="step1"></a>
 
@@ -282,6 +283,23 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 
 >access_log /var/log/nginx/access.log logCDN;
 
+## **服务检查**<a id="step8"></a>
+
+用户在创建CDN服务终节点后，可以在“服务检查”视图做一些基本的检查。我们强烈建议用户在CNAME操作之前，做一下服务检查。
+
+![][15]
+
+如上视图，用户选择需要检查的域名后，提供一个源站可以访问的资源，然后点击“检查”。
+
+1. 源站正常 - 表明提供的资源可以访问；
+2. CDN部署完成 - 表明该域名对应的CDN服务已经部署；
+3. CDN缓存正常 - 表明通过源站访问的内容和通过CDN访问的内容一致（通过比较HTTP头：HTTP Status Code，Last Modified Time，Content Length）。
+
+>**注意**
+>服务检查功能不能保证该域名所处的所有CDN边缘服务器都没有异常。
+
+ 
+
 [1]: ./media/cdn-unified-portal/001.png
 [2]: ./media/cdn-unified-portal/002.png
 [3]: ./media/cdn-unified-portal/003.png
@@ -296,3 +314,4 @@ Windows Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物�
 [12]: ./media/cdn-unified-portal/prefetch-2.png
 [13]: ./media/cdn-unified-portal/log-download-1.png
 [14]: ./media/cdn-unified-portal/log-download-2.png
+[15]: ./media/cdn-unified-portal/service-check.png
