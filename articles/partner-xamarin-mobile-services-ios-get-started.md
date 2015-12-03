@@ -96,7 +96,7 @@
 * [身份验证入门] 
 了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门 ] 
+* [推送通知入门] 
 了解如何向应用程序发送一条很基本的推送通知。
 
 * [如何使用 Azure 移动服务的 Xamarin 组件客户端](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)

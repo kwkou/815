@@ -211,7 +211,7 @@ todoTable.SystemProperties |= MobileServiceSystemProperties.Version;
 
    	![][11]
 
-5. 将包文件夹“todolist\_1.0.0.0\_AnyCPU\_Debug\_Test”复制到第二台计算机。在该计算机上，打开包文件夹并右键单击 **Add-AppDevPackage.ps1** PowerShell 脚本，然后单击“使用 PowerShell 运行”，如下所示。按照提示操作以安装应用程序。
+5. 将包文件夹“todolist_1.0.0.0_AnyCPU_Debug_Test”复制到第二台计算机。在该计算机上，打开包文件夹并右键单击 **Add-AppDevPackage.ps1** PowerShell 脚本，然后单击“使用 PowerShell 运行”，如下所示。按照提示操作以安装应用程序。
 
 	![][12]
   

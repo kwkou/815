@@ -28,7 +28,7 @@
 
 ![][0]
 
-只有在完成本教程后，才可以学习有关 HTML 应用程序的所有其他移动服务教程。对于 PhoneGap/Cordova 应用，请参阅本教程的 [PhoneGap/Cordova 版本](mobile-services-javascript-backend-phonegap-get-started.md)。
+只有在完成本教程后，才可以学习有关 HTML 应用程序的所有其他移动服务教程。对于 PhoneGap/Cordova 应用，请参阅本教程的 [PhoneGap/Cordova 版本](/documentation/articles/mobile-services-javascript-backend-phonegap-get-started)。
 
 ##先决条件
 

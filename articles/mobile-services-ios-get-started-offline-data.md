@@ -26,7 +26,7 @@
 * 跨多个设备同步数据
 * 在两个设备修改同一条记录时检测冲突
 
-> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取[免费的移动服务，即使在试用期结束之后仍可继续使用这些服务](/home/features/mobile-services/#price)。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/ target="\_blank")。
+> [AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并获取[免费的移动服务，即使在试用期结束之后仍可继续使用这些服务](/home/features/mobile-services/#price)。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 本教程是在你必须先完成的[移动服务快速入门教程]的基础之上制作的。首先，让我们回顾“快速入门”中与脱机同步相关的代码。
 
@@ -223,7 +223,6 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 
 * [云覆盖：Azure 移动服务中的脱机同步]
 
-* [Azure Friday：Azure 移动服务中支持脱机的应用]（注意：演示针对 Windows，但功能讨论适用于所有平台）
 
 <!-- URLs. -->
 

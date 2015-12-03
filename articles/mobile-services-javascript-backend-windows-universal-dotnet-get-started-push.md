@@ -75,8 +75,10 @@
 * [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)
 <br/>了解如何排查推送通知问题。
 
-* [身份验证入门]
+
+* [身份验证入门](/documentation/articles/mobile-services-windows-phone-get-started-users)
 <br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
+
 
 * [什么是通知中心？] 
 <br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。

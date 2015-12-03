@@ -1,4 +1,4 @@
-﻿<properties
+<properties
 	pageTitle="适用于 Android 应用的 Azure 移动服务入门（JavaScript 后端）"
 	description="遵照本教程开始使用 Azure 移动服务进行 Android 开发（JavaScript 后端）。"
 	services="mobile-services"
@@ -25,6 +25,7 @@
 
 
 以下是完成的应用程序的屏幕快照
+	
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## 先决条件

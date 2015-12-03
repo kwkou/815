@@ -1,4 +1,4 @@
-﻿<properties 
+<properties 
 	pageTitle="使用移动服务 Android 客户端库" 
 	description="了解如何使用适用于 Azure 移动服务的 Android 客户端。" 
 	services="mobile-services" 
@@ -57,7 +57,7 @@
 
 在移动服务中查询或修改数据的最简单方法就是使用*类型化编程模型*，因为 Java 是强类型化语言（稍后我们将会介绍*非类型化*模型）。在客户端和移动服务之间发送数据时，此模型使用 [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801) 库提供对 JSON 的无缝序列化和反序列化：开发人员无需执行任何操作，该框架将处理一切。
 
-查询或修改数据所要执行的第一项操作就是通过对 [**MobileServiceClient**](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html) 调用 **getTable** 方法来创建一个 [MobileServiceTable](http://go.microsoft.com/fwlink/p/?LinkId=296835) 对象。下面是此方法的两个重载：
+查询或修改数据所要执行的第一项操作就是通过对 **MobileServiceClient** 调用 **getTable** 方法来创建一个 **MobileServiceTable** 对象。下面是此方法的两个重载：
 
 	public class MobileServiceClient {
 	    public <E> MobileServiceTable<E> getTable(Class<E> clazz);
@@ -66,12 +66,12 @@
 
 在以下代码中，*mClient* 是对移动服务客户端的引用。
 
-如果类名称与表名称相同，则使用[第一个重载](http://go.microsoft.com/fwlink/p/?LinkId=296839)：
+如果类名称与表名称相同，则使用**第一个重载**：
 
 		MobileServiceTable<ToDoItem> mToDoTable = mClient.getTable(ToDoItem.class);
 
 
-如果表名称与类型名称不同，则使用[第二个重载](http://go.microsoft.com/fwlink/p/?LinkId=296840)。
+如果表名称与类型名称不同，则使用**第二个重载**。
 
 		MobileServiceTable<ToDoItem> mToDoTable = mClient.getTable("ToDoItemBackup", ToDoItem.class);
 
@@ -140,24 +140,24 @@
 
 
 
-通过对表引用执行 [**where**](http://go.microsoft.com/fwlink/p/?LinkId=296867) 方法调用来启动筛选器。然后，依次执行 [**field**](http://go.microsoft.com/fwlink/p/?LinkId=296869) 方法调用和用于指定逻辑谓词的方法调用。可能的谓词方法包括 [**eq**](http://go.microsoft.com/fwlink/p/?LinkId=298461)、[**ne**](http://go.microsoft.com/fwlink/p/?LinkId=298462)、[**gt**](http://go.microsoft.com/fwlink/p/?LinkId=298463)、[**ge**](http://go.microsoft.com/fwlink/p/?LinkId=298464)、[**lt**](http://go.microsoft.com/fwlink/p/?LinkId=298465)、[**le**](http://go.microsoft.com/fwlink/p/?LinkId=298466) 等。
+通过对表引用执行 **where** 方法调用来启动筛选器。然后，依次执行 **field** 方法调用和用于指定逻辑谓词的方法调用。可能的谓词方法包括 **eq**、**ne**、**gt**、**ge**、**lt**、**le** 等。
 
 执行这些操作便足以将数字和字符串字段与特定值进行比较。不过，你还可以执行其他许多操作。
 
-例如，你可以按日期筛选。你可以比较整个日期字段，或者使用 [**year**](http://go.microsoft.com/fwlink/p/?LinkId=298467)、[**month**](http://go.microsoft.com/fwlink/p/?LinkId=298468)、[**day**](http://go.microsoft.com/fwlink/p/?LinkId=298469)、[**hour**](http://go.microsoft.com/fwlink/p/?LinkId=298470)、[**minute**](http://go.microsoft.com/fwlink/p/?LinkId=298471) 和 [**second**](http://go.microsoft.com/fwlink/p/?LinkId=298472) 等方法比较日期的一部分。以下代码片段将会针对“截止日期”等于 2013 的项添加一个筛选器。
+例如，你可以按日期筛选。你可以比较整个日期字段，或者使用 **year**、**month**、**day**、**hour**、**minute**和**second**等方法比较日期的一部分。以下代码片段将会针对“截止日期”等于 2013 的项添加一个筛选器。
 
 		mToDoTable.where().year("due").eq(2013).execute().get();
 
-你可以使用 [**startsWith**](http://go.microsoft.com/fwlink/p/?LinkId=298473)、[**endsWith**](http://go.microsoft.com/fwlink/p/?LinkId=298474)、[**concat**](http://go.microsoft.com/fwlink/p/?LinkId=298475)、[**subString**](http://go.microsoft.com/fwlink/p/?LinkId=298477)、[**indexOf**](http://go.microsoft.com/fwlink/p/?LinkId=298488)、[**replace**](http://go.microsoft.com/fwlink/p/?LinkId=298491)、[**toLower**](http://go.microsoft.com/fwlink/p/?LinkId=298492)、[**toUpper**](http://go.microsoft.com/fwlink/p/?LinkId=298493)、[**trim**](http://go.microsoft.com/fwlink/p/?LinkId=298495) 和 [**length**](http://go.microsoft.com/fwlink/p/?LinkId=298496) 等方法对字符串字段运行各种复杂筛选器。以下代码片段将会筛选 *text* 列以“PRI0”开头的表行。
+你可以使用 **startsWith**、**endsWith**、**concat**、**subString**、**indexOf**、**replace**、**toLower**、**toUpper**、**trim**和**length**等方法对字符串字段运行各种复杂筛选器。以下代码片段将会筛选 *text* 列以“PRI0”开头的表行。
 
 		mToDoTable.where().startsWith("text", "PRI0").execute().get();
 
-还允许使用 [**add**](http://go.microsoft.com/fwlink/p/?LinkId=298497)、[**sub**](http://go.microsoft.com/fwlink/p/?LinkId=298499)、[**mul**](http://go.microsoft.com/fwlink/p/?LinkId=298500)、[**div**](http://go.microsoft.com/fwlink/p/?LinkId=298502)、[**mod**](http://go.microsoft.com/fwlink/p/?LinkId=298503)、[**floor**](http://go.microsoft.com/fwlink/p/?LinkId=298505)、[**ceiling**](http://go.microsoft.com/fwlink/p/?LinkId=298506) 和 [**round**](http://go.microsoft.com/fwlink/p/?LinkId=298507) 等方法对数字字段运行各种更复杂的筛选器。以下代码片段将会筛选其中的 *duration* 为偶数的表行。
+还允许使用  **add**、**sub**、**mul**、**div**、**mod**、**floor**、**ceiling**和**round** 等方法对数字字段运行各种更复杂的筛选器。以下代码片段将会筛选其中的 *duration* 为偶数的表行。
 
 		mToDoTable.where().field("duration").mod(2).eq(0).execute().get();
 
 
-你可以使用 [**and**](http://go.microsoft.com/fwlink/p/?LinkId=298512)、[**or**](http://go.microsoft.com/fwlink/p/?LinkId=298514) 和 [**not**](http://go.microsoft.com/fwlink/p/?LinkId=298515) 等方法来组合谓词。以下代码片段将组合上面的两个示例。
+你可以使用 **and**、**or**和**not** 等方法来组合谓词。以下代码片段将组合上面的两个示例。
 
 		mToDoTable.where().year("due").eq(2013).and().startsWith("text", "PRI0")
 					.execute().get();
@@ -178,9 +178,9 @@
 
 		mToDoTable.orderBy("text", QueryOrder.Ascending).execute().get();
 
-[**orderBy**](http://go.microsoft.com/fwlink/p/?LinkId=298519) 方法的第一个参数是与要排序的字段名称相同的字符串。
+**orderBy** 方法的第一个参数是与要排序的字段名称相同的字符串。
 
-第二个参数使用 [**QueryOrder**](http://go.microsoft.com/fwlink/p/?LinkId=298521) 枚举来指定是按升序还是按降序排序。
+第二个参数使用 **QueryOrder** 枚举来指定是按升序还是按降序排序。
 
 请注意，如果你使用 ***where*** 方法筛选，则必须在调用 ***orderBy*** 方法之前调用 ***where*** 方法。
 
@@ -205,13 +205,13 @@
 	
 在这里，select 函数的参数是要返回的表列的字符串名称。
 
-[**select**](http://go.microsoft.com/fwlink/p/?LinkId=290689) 方法需接在 [**where**](http://go.microsoft.com/fwlink/p/?LinkId=296296) 和 [**orderBy**](http://go.microsoft.com/fwlink/p/?LinkId=296313) 等方法（如果存在）的后面。它可以后接 [**top**](http://go.microsoft.com/fwlink/p/?LinkId=298731) 等方法。
+**select** 方法需接在 **where** 和 **orderBy** 等方法（如果存在）的后面。它可以后接 **top** 等方法。
 
 ### <a name="chaining"></a>如何连接查询方法 
 
 可以连接用于查询移动服务表的方法。这样，你便可以执行多种操作，例如，选择已排序并分页的筛选行的特定列。你可以创建相当复杂的逻辑筛选器。
 
-这种操作的工作原理是通过使用的查询方法返回 [**MobileServiceQuery&lt;T&gt;**](http://go.microsoft.com/fwlink/p/?LinkId=298551) 对象，随之又对这些对象调用更多的方法。若要结束方法序列并真正运行查询，你可以调用 [**execute**](http://go.microsoft.com/fwlink/p/?LinkId=298554) 方法。
+这种操作的工作原理是通过使用的查询方法返回 **MobileServiceQuery&lt;T&gt;** 对象，随之又对这些对象调用更多的方法。若要结束方法序列并真正运行查询，你可以调用 **execute** 方法。
 
 在以下代码示例中，*mToDoTable* 是对移动服务 *ToDoItem* 表的引用。
 
@@ -429,7 +429,7 @@
 
 ### <a name="json_instance"></a>如何创建非类型化表的实例
 
-与使用类型化模型相似，首先需要获取表引用，不过，此时该引用的是一个 [MobileServicesJsonTable](http://go.microsoft.com/fwlink/p/?LinkId=298733) 对象。对移动服务客户端的实例调用 [getTable()](http://go.microsoft.com/fwlink/p/?LinkId=298734) 方法可获取该引用。
+与使用类型化模型相似，首先需要获取表引用，不过，此时该引用的是一个 **MobileServicesJsonTable** 对象。对移动服务客户端的实例调用 **getTable()** 方法可获取该引用。
 
 首先定义变量：
 
@@ -456,7 +456,7 @@
 		item.addProperty("text", "Wake up");
 		item.addProperty("complete", false);
 
-下一步是插入对象。传递给 [**insert**](http://go.microsoft.com/fwlink/p/?LinkId=298535) 方法的回调函数是 [**TableJsonOperationCallback**](http://go.microsoft.com/fwlink/p/?LinkId=298532) 类的实例。注意，*insert* 方法的参数如何成为 JsonObject。
+下一步是插入对象。传递给 **insert** 方法的回调函数是 **TableJsonOperationCallback** 类的实例。注意，*insert* 方法的参数如何成为 JsonObject。
 		 
         // Insert the new item
         new AsyncTask<Void, Void, Void>() {
@@ -852,7 +852,7 @@
 ### <a name="table"></a>如何在客户端与移动服务之间映射不同的表名称
 
 如以下代码所示，只需使用 
-<a href="http://go.microsoft.com/fwlink/p/?LinkId=296840" target="_blank">getTable()</a> 函数的重写之一，就能轻松地将客户端表名称映射为不同的移动服务表名称。
+**getTable()** 函数的重写之一，就能轻松地将客户端表名称映射为不同的移动服务表名称。
 
 		mToDoTable = mClient.getTable("ToDoItemBackup", ToDoItem.class);
 

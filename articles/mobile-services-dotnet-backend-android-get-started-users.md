@@ -57,10 +57,11 @@
 
 [AZURE.INCLUDE [mobile-services-android-authenticate-app-refresh-token](../includes/mobile-services-android-authenticate-app-refresh-token.md)]
 
+<!--
 ##<a name="next-steps"></a>后续步骤
 
 在下一教程[移动服务用户的服务端授权][Authorize users with scripts]中，你将使用移动服务基于已进行身份验证的用户提供的用户 ID 值来筛选移动服务返回的数据。
-
+-->
 
 <!-- Anchors. -->
 

@@ -37,9 +37,9 @@
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 
-&nbsp;&nbsp;3.在 Visual Studio 2012 Express for Windows Phone 中，打开在完成教程[将移动服务添加到现有应用](/documentation/articles/mobile-services-windows-phone-get-started-data)时创建的项目。
+&nbsp;&nbsp;&nbsp;&nbsp;3.在 Visual Studio 2012 Express for Windows Phone 中，打开在完成教程[将移动服务添加到现有应用](/documentation/articles/mobile-services-windows-phone-get-started-data)时创建的项目。
 
-&nbsp;&nbsp;4.按 F5 键运行这个基于快速入门的应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 *TodoItem* 表现在要求身份验证。
+&nbsp;&nbsp;&nbsp;&nbsp;4.按 F5 键运行这个基于快速入门的应用程序；验证启动该应用程序后，是否会引发状态代码为 401（“未授权”）的未处理异常。发生此异常的原因是应用程序尝试以未经身份验证的用户身份访问移动服务，但 *TodoItem* 表现在要求身份验证。
 
 接下来，你需要更新应用程序，以便在从移动服务请求资源之前对用户进行身份验证。
 

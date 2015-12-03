@@ -68,7 +68,7 @@
 [身份验证入门]: /documentation/articles/mobile-services-ios-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[[Azure 门户]]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
 
 <!---HONumber=82-->

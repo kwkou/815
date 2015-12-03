@@ -510,7 +510,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 ####单一登录将 Microsoft 帐户与 Live SDK 配合使用
 
-若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](mobile-services-how-to-register-microsoft-authentication.md)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 版本的应用，请先注册 Windows 应用商店版本。
+若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](/documentation/articles/mobile-services-how-to-register-microsoft-authentication)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 版本的应用，请先注册 Windows 应用商店版本。
 
 下面的代码使用 Live SDK 进行身份验证，并使用返回的令牌来登录到你的移动服务。
 
@@ -637,7 +637,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 	// Lookup untyped data using OData
 	JToken untypedItems = await untypedTodoTable.ReadAsync("$filter=complete eq 0&$orderby=text");
 
-此时，你将获取一些可以像属性包一样使用的 JSON 值。有关 JToken 和 Json.NET 的详细信息，请参阅 [Json.NET](http://json.codeplex.com/)
+此时，你将获取一些可以像属性包一样使用的 JSON 值。有关 JToken 和 Json.NET 的详细信息，请参阅 [Json.NET](http://json.codeplex.com/)。
 
 ## <a name="unit-testing"></a>如何：设计单元测试
 

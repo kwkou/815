@@ -70,7 +70,7 @@
 
    	此时会将一个新项作为 insert 发送到移动服务。
 
-3. 在[管理门户]中单击“移动服务”，然后单击你的移动服务。
+3. 在[Azure 管理门户]中单击“移动服务”，然后单击你的移动服务。
 
 4. 单击“数据”选项卡，然后单击“浏览”。
 
@@ -133,7 +133,7 @@
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-android-get-started-push
 
 [Azure Management Portal]: https://manage.windowsazure.cn/
-[管理门户]: https://manage.windowsazure.cn/
+[Azure 管理门户]: https://manage.windowsazure.cn/
 [Azure 移动服务 Android SDK]: http://aka.ms/Iajk6q
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
