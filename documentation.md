@@ -8,7 +8,7 @@
 
 ##文档概览
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
     <td><a href="/starter-guide/">入门指南</a></td>
     <td><a href="/video-center/">视频中心</a></td>
@@ -25,8 +25,8 @@
 
 ##计算
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr col>
     <td><a href="/documentation/services/virtual-machines/">虚拟机</a></td>
     <td><a href="/documentation/services/web-sites/">网站</a></td>
     <td><a href="/documentation/services/cloud-services/">云服务</a></td>
@@ -42,7 +42,7 @@
 
 ##数据服务
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
     <td><a href="/documentation/services/storage/">存储</a></td>
     <td><a href="/documentation/services/sql-databases/">SQL 数据库</a></td>
@@ -59,7 +59,7 @@
 
 ##应用服务
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
     <td><a href="/documentation/services/service-bus/">服务总线</a></td>
     <td><a href="/documentation/services/identity/">Active Directory</a></td>
@@ -76,7 +76,7 @@
 
 ##网络服务
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
     <td><a href="/documentation/services/networking/">虚拟网络</a></td>
     <td><a href="/documentation/services/traffic-manager/">流量管理器</a></td>
@@ -87,7 +87,7 @@
 
 ##开发文档
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"style="table-layout:fixed;">
   <tr>
     <td><a href="/documentation/articles/architecture-overview/">架构指南</a></td>
     <td><a href="/documentation/articles/developerdifferences/">开发说明</a></td>
