@@ -80,7 +80,7 @@ SharePoint 场具有预先配置的终结点，可允许未经身份验证的 We
 说明：
 
 - Azure 预览门户可以在具有面向 Internet 的网络影响力、仅限云的虚拟网络中创建这两种场。没有站点到站点 VPN 或 ExpressRoute 连接重新连回到你的组织网络。
-- 你可以通过远程桌面连接来管理这些服务器。有关详细信息，请参阅[登录到虚拟机](/documentation/articles/virtual-machines-windows-tutorial/#log-on-to-the-virtual-machine)。
+- 你可以通过远程桌面连接来管理这些服务器。有关详细信息，请参阅[登录到虚拟机](/documentation/articles/virtual-machines-windows-tutorial-classic-portal/#log-on-to-the-virtual-machine)。
 
 ## Azure 资源管理器
 

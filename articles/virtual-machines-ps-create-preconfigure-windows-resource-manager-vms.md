@@ -212,8 +212,6 @@ frontendSubnet 的子网索引为 0，backendSubnet 的子网索引为 1。
 - 要分配给 NIC 的负载平衡器实例的后端地址池的索引编号。
 - 要分配给 NIC 的入站 NAT 规则的索引编号。
 
-有关如何使用入站 NAT 规则创建负载平衡器实例的信息，请参阅[使用 Azure 资源管理器创建负载平衡器](/documentation/articles/load-balancer-arm-powershell)。
-
 将以下几行复制到命令集，并指定所需的名称和索引编号。
 
 	$nicName="<name of the NIC of the VM>"
@@ -389,7 +387,7 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 
 [使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 

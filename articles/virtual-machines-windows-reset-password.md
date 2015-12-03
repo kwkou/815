@@ -25,7 +25,7 @@
 
 在开始之前，你需要具备以下项：
 
-- Azure PowerShell 模块 0.8.5 或更高版本。可以使用 **Get-Module azure | format-table version** 命令查看已安装的 Azure PowerShell 的版本。有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320552&clcid=0x409)。
+- Azure PowerShell 模块 0.8.5 或更高版本。可以使用 **Get-Module azure | format-table version** 命令查看已安装的 Azure PowerShell 的版本。有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 - 新的本地管理员帐户密码。如果要重置远程桌面服务配置，则不需要此项。
 - VM 代理。
 

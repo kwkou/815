@@ -24,23 +24,6 @@
 
 ## 在 Azure VM 中运行 HPC Pack 群集
 
-
-### Azure VM 映像
-
-* [Windows Server 2012 R2 上的 HPC Pack](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)
-
-* [Windows Server 2012 R2 上的 HPC Pack 计算节点](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodeonwindowsserver2012r2/)
-
-* [Windows Server 2012 R2 上包含 Excel 的 HPC Pack 计算节点](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodewithexcelonwindowsserver2012r2/)
-
-### Azure 快速入门模板
-
-* [创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)
-
-* [使用 Linux 计算节点创建 HPC Pack 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
-
-* [使用自定义计算节点映像创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/)
-
 ### PowerShell 部署节点
 
 * [使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)

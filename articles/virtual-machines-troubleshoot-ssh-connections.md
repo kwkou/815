@@ -27,7 +27,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN 论坛](/support/forums/)上的 Azure 专家。
 
-或者，你也可以发起 Azure 支持事件。请转到 [Azure 支持站点](/support/options/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](http://azure.microsoft.com/support/faq/)。
+或者，你也可以发起 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并单击“获取支持”。有关使用 Azure 支持的信息，请阅读 [Microsoft Azure 支持常见问题](http://azure.microsoft.com/support/faq/)。
 
 
 ## 基本步骤 - 经典部署模型
@@ -89,7 +89,7 @@
 
 	**使用 Azure PowerShell**
 
-	a.如果尚未安装 Azure PowerShell，请使用 Azure AD 方法[安装 Azure PowerShell 并连接到 Azure 订阅](../powershell-install-configure.md)。
+	a.如果尚未安装 Azure PowerShell，请使用 Azure AD 方法[安装 Azure PowerShell 并连接到 Azure 订阅](/documentation/articles/powershell-install-configure)。
 
 	b.切换到资源管理器模式。
 
@@ -132,7 +132,7 @@
 	$azure vm extension set "testRG" "testVM" VMAccessForLinux Microsoft.OSTCExtensions "1.2" --private-config-path PrivateConf.json
 	```
 
-	请注意，你可以遵循[如何为基于 Linux 的虚拟机重置密码或 SSH](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md) 中的类似步骤来尝试其他不同的做法。请记得修改资源管理器模式的 Azure CLI 指令。
+	请注意，你可以遵循[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh) 中的类似步骤来尝试其他不同的做法。请记得修改资源管理器模式的 Azure CLI 指令。
 
 	**使用 Azure PowerShell**
 
