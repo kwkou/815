@@ -39,7 +39,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 * **查看有关计算密集型实例的[背景信息和注意事项](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)**
 
 
-* **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](http://azure.microsoft.com/pricing/free-trial/)。
+* **Azure 订阅** - 如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/)。
 
 
 * **内核配额** - 你可能需要增加内核配额才能部署 A8 或 A9 VM 的群集。例如，若要使用 HPC Pack 部署 8 个 A9 实例，你至少需要 128 个核心。若要增加配额，可免费建立[在线客户支持请求](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
@@ -51,7 +51,7 @@ Microsoft HPC Pack 是在 Azure 中创建基于 Windows Server 的 HPC 群集时
 
 以下是从现有（通常在本地）群集迸发到 A8 或 A9 Azure 实例的步骤。可以使用类似的过程，将辅助角色实例添加到部署在 Azure VM 中的 HPC Pack 头节点。
 
->[AZURE.NOTE]有关使用 HPC Pack 迸发到 Azure 的教程，请参阅[使用 HPC Pack 设置混合群集](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md)。请注意，以下步骤中的注意事项仅适用于 A8 和 A9 Azure 节点。
+>[AZURE.NOTE]有关使用 HPC Pack 迸发到 Azure 的教程，请参阅[使用 HPC Pack 设置混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)。请注意，以下步骤中的注意事项仅适用于 A8 和 A9 Azure 节点。
 
 ![迸发到 Azure][burst]
 

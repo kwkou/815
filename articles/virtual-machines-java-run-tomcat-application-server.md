@@ -103,7 +103,7 @@
 2. 单击 Windows 的“开始”。
 3. 单击“控制面板”。
 4. 依次单击“系统和安全性”、“Windows 防火墙”和“高级设置”。
-5. 单击“入站规则”，然后单击“新建规则”。
+5. 单击“入站规则”，然后单击“新建规则”。  
 ![新建入站规则][NewIBRule]
 6. 对于“规则类型”，请选择“端口”，然后单击“下一步”。
 ![新建入站规则端口][NewRulePort]
@@ -127,7 +127,7 @@
     让 Tomcat 自动启动的好处是，当虚拟机重新启动时（例如，在安装需要重新启动的软件更新后），Tomcat 将启动。
 
 ## 后续步骤
-通过查看 [Java 开发人员中心](http://azure.microsoft.com/develop/java/)上提供的信息，了解要与 Java 应用程序一起包含的其他服务（例如 Azure 存储空间、Service Bus 和 SQL 数据库）。
+通过查看 [Java 开发人员中心](/develop/java/)上提供的信息，了解要与 Java 应用程序一起包含的其他服务（例如 Azure 存储空间、Service Bus 和 SQL 数据库）。
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 

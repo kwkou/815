@@ -25,8 +25,6 @@
 
 有关规划 HPC Pack 群集的背景信息，请参阅 HPC Pack TechNet 库中的[产品评估和规划](https://technet.microsoft.com/zh-cn/library/jj899596.aspx)及[入门](https://technet.microsoft.com/zh-cn/library/jj899590.aspx)内容。
 
->[AZURE.NOTE]你还可以使用 Azure 资源管理器模板来部署 HPC Pack 群集。有关示例，请参阅[创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)、[使用自定义计算节点映像创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/)或[使用 Linux 计算节点创建 HPC 群集](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)。
-
 ## 先决条件
 
 * **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。你的订阅限制只会影响你可以部署的群集节点数量和类型。有关信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits)。
