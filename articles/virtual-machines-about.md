@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.date="07/14/2015"
-	wacn.date="11/12/2015"/>
+	wacn.date="12/03/2015"/>
 
 #关于 Azure 虚拟机
 
