@@ -18,7 +18,7 @@
 # SQL 数据库中扩展事件的环形缓冲区目标代码
 
 
-你需要完整的代码示例以最简单快速的方式在测试期间捕获和报告扩展事件的信息。扩展事件数据最简单的目标是[环形缓冲区目标](http://msdn.microsoft.com/library/ff878182.aspx)。
+你需要完整的代码示例以最简单快速的方式在测试期间捕获和报告扩展事件的信息。扩展事件数据最简单的目标是[环形缓冲区目标](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx)。
 
 
 本主题演示了一个 Transact-SQL 代码示例：
@@ -47,7 +47,7 @@
 ## 先决条件
 
 
-- Azure 帐户和订阅。你可以注册[免费试用版](http://azure.microsoft.com/pricing/free-trial/)。
+- Azure 帐户和订阅。你可以注册[免费试用版](/pricing/1rmb-trial/)。
 
 
 - 可以在其中创建表的任何数据库。

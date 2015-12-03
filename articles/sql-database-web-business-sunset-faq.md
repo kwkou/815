@@ -20,8 +20,6 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 **获取定价层建议：**
 
 - [使用 PowerShell 升级到 SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server)
-- [更改 Web 或企业数据库的定价层](/documentation/articles/sql-database-service-tier-advisor)
- 
 
 
 ## 为何 Azure 管理门户显示我的 Web 和 Business Edition 数据库已停用？
@@ -40,7 +38,7 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## 我可以在哪里了解有关新服务层的详细信息？
 
-有关新服务层的详细定价信息，请参阅 [SQL 数据库定价](http://azure.microsoft.com/pricing/details/sql-database/)。
+有关新服务层的详细定价信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)。
 
 ## 基本、标准和高级版中将不会提供哪些特性或功能？
 
@@ -55,9 +53,7 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 
 ## 另请参阅
 
-[Azure SQL 数据库](https://azure.microsoft.com/documentation/services/sql-database/)
-
-[服务层](/documentation/articles/sql-database-service-tiers)
+[Azure SQL 数据库](/services/sql-database/)
 
 [将 SQL 数据库 Web/企业数据库升级到新服务层](/documentation/articles/sql-database-upgrade-new-service-tiers)
 

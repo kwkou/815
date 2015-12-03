@@ -31,7 +31,7 @@
 
 > [AZURE.NOTE]从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式版 (GA) 的推出日期尚未确定。
 > 
-> 当有 GA 版的公告时，Azure [服务更新](http://azure.microsoft.com/updates/?service=sql-database)页将会发布相关信息。
+> 当有 GA 版的公告时，Azure [服务更新](/what-is-new/)页将会发布相关信息。
 
 
 ## 先决条件
@@ -40,7 +40,7 @@
 本主题假设你有以下方面的经验：
 
 
-- [Azure SQL 数据库服务](http://azure.microsoft.com/services/sql-database/)。
+- [Azure SQL 数据库服务](/services/sql-databases/)。
 
 
 - Microsoft SQL Server 中的[扩展事件](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx)。
@@ -50,7 +50,7 @@
 当你选择事件文件作为[目标](#AzureXEventsTargets)时，事先熟悉以下产品会很有帮助：
 
 
-- [Azure 存储空间服务](http://azure.microsoft.com/services/storage/)
+- [Azure 存储空间服务](/services/storage/)
 
 
 - PowerShell

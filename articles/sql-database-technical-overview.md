@@ -19,7 +19,7 @@ SQL 数据库是云中的关系数据库服务，它基于行业领先的 Micros
 本文将介绍 SQL 数据库在性能、缩放性和易管理性的核心概念与功能，并提供链接让你进一步了解详细信息。如果你已准备就绪，可以立即[创建第一个 SQL 数据库](/documentation/articles/sql-database-get-started)，或者[创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-portal)。如果你想要深入了解，请观看这段 30 分钟的视频。
 
 ## 无需停机即可调整性能和规模
-SQL 数据库采用基本、标准和高级*服务层*。每个服务层提供[不同级别的性能和功能](/documentation/articles/sql-database-service-tiers)，以支持从轻型到重型的数据库工作负荷。你可以在小型数据库中构建第一个应用，每个月只需花费少量的资金。然后在你的应用受到广泛欢迎之后，随时手动或以编程方式[更改服务层](/documentation/articles/sql-database-scale-up)，这不会给你的应用或客户造成停机。
+SQL 数据库采用基本、标准和高级*服务层*。每个服务层提供<!--[-->不同级别的性能和功能<!--](/documentation/articles/sql-database-service-tiers)-->，以支持从轻型到重型的数据库工作负荷。你可以在小型数据库中构建第一个应用，每个月只需花费少量的资金。然后在你的应用受到广泛欢迎之后，随时手动或以编程方式<!--[-->更改服务层<!--](/documentation/articles/sql-database-scale-up)-->，这不会给你的应用或客户造成停机。
 
 许多业务和应用只要能够创建数据库并按需调高或调低单一数据库的性能即可，尤其是当使用模式相对容易预测时。但如果有无法预测的使用模式，则管理成本和业务模式就会变得相当困难。
 
@@ -31,7 +31,7 @@ SQL 数据库中的[弹性数据库池](/documentation/articles/sql-database-ela
 
 ## 了解 DTU
 
-数据库事务单位 (DTU) 是 SQL 数据库中的度量单位，表示数据库基于实际度量（数据库事务）的相对性能。我们执行了针对联机事务处理 (OLTP) 请求通常需要执行的一组操作，然后度量了在全部加载的条件下每秒可以完成多少个事务（这是简短版本，你可以在[基准概述](https://msdn.microsoft.com/zh-cn/library/azure/dn741327.aspx)中阅读底层详细信息）。
+数据库事务单位 (DTU) 是 SQL 数据库中的度量单位，表示数据库基于实际度量（数据库事务）的相对性能。我们执行了针对联机事务处理 (OLTP) 请求通常需要执行的一组操作，然后度量了在全部加载的条件下每秒可以完成多少个事务（这是简短版本，你可以在[基准概述](/documentation/articles/sql-database-benchmark-overview)中阅读底层详细信息）。
 
 基本数据库具有 5 个 DTU，这意味着它每秒可以完成 5 个事务，而高级 P11 数据库具有 1750 个 DTU。
 
@@ -41,7 +41,7 @@ SQL 数据库中的[弹性数据库池](/documentation/articles/sql-database-ela
 
 ## 使应用和业务持续运转
 
-Azure 行业领先的 99.99% 可用性服务级别协议 [(SLA)](http://azure.microsoft.com/support/legal/sla/)（由 Microsoft 管理的数据中心的全球网络提供支持），可帮助你保持应用全天候运行。使用每个 SQL 数据库时，你可以使用内置的数据保护、容错功能，以及可能需要另外设计、购买、构建和管理的数据保护功能。即便如此，根据业务要求，你还可以请求额外级别的保护，以确保在发生灾难、错误或其他事件时，应用和业务可以快速恢复。使用 SQL 数据库时，每个服务层提供不同的功能菜单，使你能够立即启动并运行。你可以使用时间点还原将数据库还原到以前的状态，最长可还原到 35 天前。此外，如果托管数据库的数据中心发生服务中断，你可以故障转移到其他区域中的数据库副本。或者，你可以使用副本进行升级，或将其重新放置在不同的区域。
+Azure 行业领先的 99.99% 可用性服务级别协议 [(SLA)](/support/legal/sla/)（由 Microsoft 管理的数据中心的全球网络提供支持），可帮助你保持应用全天候运行。使用每个 SQL 数据库时，你可以使用内置的数据保护、容错功能，以及可能需要另外设计、购买、构建和管理的数据保护功能。即便如此，根据业务要求，你还可以请求额外级别的保护，以确保在发生灾难、错误或其他事件时，应用和业务可以快速恢复。使用 SQL 数据库时，每个服务层提供不同的功能菜单，使你能够立即启动并运行。你可以使用时间点还原将数据库还原到以前的状态，最长可还原到 35 天前。此外，如果托管数据库的数据中心发生服务中断，你可以故障转移到其他区域中的数据库副本。或者，你可以使用副本进行升级，或将其重新放置在不同的区域。
 
 ![SQL 数据库异地复制](./media/sql-database-technical-overview/azure_sqldb_map.png)
 
@@ -49,7 +49,7 @@ Azure 行业领先的 99.99% 可用性服务级别协议 [(SLA)](http://azure.mi
 有关可用于不同服务层的其他业务连续性功能的详细信息，请参阅[业务连续性](/documentation/articles/sql-database-business-continuity)。
 
 ## 保护数据
-SQL Server 的数据安全性一贯可靠，SQL 数据库也包含类似的功能，可以限制访问、保护数据，并帮助你监视活动。有关 SQL 数据库提供的安全选项的快速概览，请参阅[保护你的 SQL 数据库](/documentation/articles/sql-database-security)。有关更全面的安全功能视图，请参阅 [SQL Server 数据库引擎和 SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)。有关 Azure 平台安全性的信息，请访问 [Azure 信任中心](http://azure.microsoft.com/support/trust-center/security/)。
+SQL Server 的数据安全性一贯可靠，SQL 数据库也包含类似的功能，可以限制访问、保护数据，并帮助你监视活动。有关 SQL 数据库提供的安全选项的快速概览，请参阅[保护你的 SQL 数据库](/documentation/articles/sql-database-security)。有关更全面的安全功能视图，请参阅 [SQL Server 数据库引擎和 SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)。有关 Azure 平台安全性的信息，请访问 [Azure 信任中心](/support/trust-center/security/)。
 
 ## 后续步骤
 

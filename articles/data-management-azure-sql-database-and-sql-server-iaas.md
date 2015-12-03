@@ -109,7 +109,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 </tr>
 <tr>
    <td valign="middle"><p><b>业务连续性</b></p></td>
-   <td valign="middle"><ul><li type=round>除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如时间点还原、地域还原和异地复制。有关详细信息，请参阅 <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx">Azure SQL 数据库业务连续性</a>。</ul></td>
+   <td valign="middle"><ul><li type=round>除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如时间点还原、地域还原和异地复制。有关详细信息，请参阅 <a href="/documentation/articles/sql-database-business-continuity/">Azure SQL 数据库业务连续性</a>。</ul></td>
    <td valign="middle"><ul><li type=round>Azure VM 中的 SQL Server 可让你设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。你可以视需要自我测试并运行故障转移。有关详细信息，请参阅 <a href="/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions">Azure 虚拟机中 SQL Server 的高可用性和灾难恢复</a>。</ul></td>
    
 </tr>
@@ -134,9 +134,9 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 **Azure SQL 数据库** 以服务（不含许可证）的形式销售给客户，而 Azure VM 中的 SQL Server 则需要传统的 SQL Server 许可。
 
-目前，你可以在多个服务层中使用 **Azure SQL 数据库**。对于基本、标准和高级服务层，我们将根据你选择的服务层和性能级别，以固定费率向你收取每小时费用。基本、标准和高级服务层旨在以多个性能级别提供可预测的性能，以满足应用程序的高峰要求。你可以在服务层和性能级别之间进行更改，以满足应用程序的不同吞吐量需求。有关目前支持的服务层的最新信息，请参阅 [Azure SQL 数据库服务层（版本）](/documentation/articles/sql-database-service-tiers)。
+目前，你可以在多个服务层中使用 **Azure SQL 数据库**。对于基本、标准和高级服务层，我们将根据你选择的服务层和性能级别，以固定费率向你收取每小时费用。基本、标准和高级服务层旨在以多个性能级别提供可预测的性能，以满足应用程序的高峰要求。你可以在服务层和性能级别之间进行更改，以满足应用程序的不同吞吐量需求。
 
-使用 **Azure SQL 数据库**，世界各地数据中心内的 Microsoft Azure 将自动配置、修补和升级数据库软件。因此，你就能降低管理成本。此外，它的[内置备份](http://msdn.microsoft.com/zh-cn/library/azure/jj650016.aspx)功能可帮助你大幅降低成本，尤其是当你拥有大量的数据库时。使用 Azure SQL 数据库时，你不必支付针对 Azure SQL 数据库运行的单个查询或传入 Internet 流量的费用。将根据[传出 Internet 流量](http://www.windowsazure.cn/pricing/details/data-transfer/)向你收费。如果你的数据库具有高事务量且必须支持许多并发用户，我们建议你使用高级（而不是基本或标准）服务层。
+使用 **Azure SQL 数据库**，世界各地数据中心内的 Microsoft Azure 将自动配置、修补和升级数据库软件。因此，你就能降低管理成本。此外，它的[内置备份](/documentation/articles/sql-database-business-continuity/)功能可帮助你大幅降低成本，尤其是当你拥有大量的数据库时。使用 Azure SQL 数据库时，你不必支付针对 Azure SQL 数据库运行的单个查询或传入 Internet 流量的费用。将根据[传出 Internet 流量](http://www.windowsazure.cn/pricing/details/data-transfer/)向你收费。如果你的数据库具有高事务量且必须支持许多并发用户，我们建议你使用高级（而不是基本或标准）服务层。
 
 有了 **Azure VM 中的 SQL Server**，你可以利用传统的 SQL Server 许可。你可以使用平台提供的 SQL Server 映像，或在 Azure 中使用你的 SQL Server 许可证。使用 SQL Server 平台提供的映像时，成本取决于选择的 VM 大小以及 SQL Server 版本。简单而言，你需要支付 SQL Server 的每分钟许可成本、Windows Server 每分钟许可和 Azure 存储空间成本。每分钟计费选项可让你随时使用 SQL Server，而无需购买完整的 SQL Server 许可证。如果在 Azure 中使用自己的 SQL Server 许可证，则只需支付 Azure 计算和存储成本。有关详细信息，请参阅 [Azure 上通过软件保障实现的许可移动性](http://www.windowsazure.cn/pricing/license-mobility/)。
 
@@ -154,7 +154,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 *应用程序总成本 = 降到最低的软件开发/修改成本 + 管理成本 + SQL Server 与 Windows Server 许可成本 + Azure 存储空间成本*
 
-> [AZURE.IMPORTANT]目前，Azure SQL 数据库并非支持 SQL Server 的所有功能。有关详细的比较信息，请参阅 [Azure SQL 数据库指导原则和限制](http://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx)。当你需要将现有数据库移到 Azure SQL 数据库时请留意这条说明，因为在数据库重新设计上你可能需要一些额外的预算。Azure SQL 数据库是 Microsoft 平台即服务产品。当你将现有的本地 SQL Server 应用程序迁移到 Azure SQL 数据库时，建议你更新应用程序以充分利用平台即服务产品的所有好处。例如，开始在应用程序层上使用 [Azure 网站](http://azure.microsoft.com/documentation/services/websites/)或 [Azure 云服务](/services/cloud-services/)，以提高成本效益。此外，请针对不同的 Azure SQL 数据库服务层验证你的应用程序，并检查哪个层最符合应用程序的需求。此过程可帮助你达到更好的性能效果并将成本降到最低。有关详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
+> [AZURE.IMPORTANT]目前，Azure SQL 数据库并非支持 SQL Server 的所有功能。有关详细的比较信息，请参阅 [Azure SQL 数据库指导原则和限制](/documentation/articles/sql-database-general-limitations/)。当你需要将现有数据库移到 Azure SQL 数据库时请留意这条说明，因为在数据库重新设计上你可能需要一些额外的预算。Azure SQL 数据库是 Microsoft 平台即服务产品。当你将现有的本地 SQL Server 应用程序迁移到 Azure SQL 数据库时，建议你更新应用程序以充分利用平台即服务产品的所有好处。例如，开始在应用程序层上使用 [Azure 云服务](/services/cloud-services/)，以提高成本效益。此外，请针对不同的 Azure SQL 数据库服务层验证你的应用程序，并检查哪个层最符合应用程序的需求。此过程可帮助你达到更好的性能效果并将成本降到最低。有关详细信息，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)。
 
 要进行详细的成本估算，请使用 [Azure 价格计算器](http://www.windowsazure.cn/pricing/calculator)。
 
@@ -167,7 +167,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 ###<a name="admin"></a>管理
 
-如果你手头已有许多任务，或许你并不期望采用服务器和数据库管理。对许多企业来说，决定使用云服务的关键在于降低管理复杂性的能力。使用 **Azure SQL 数据库**，Microsoft 可以管理物理硬件（例如硬盘、服务器和存储）；自动复制所有数据以提供高可用性；配置及升级数据库软件；管理负载平衡；在发生服务器故障时执行透明的故障转移。你可以继续管理 Azure SQL 数据库实例，但无需控制基础 SQL Server 实例和 Azure 平台的物理资源。例如，你可以管理数据库和登录、执行索引调整以及优化查询，但无法管理系统表和文件组管理。有关详细信息，请参阅 [Azure SQL 数据库指导原则和限制](http://msdn.microsoft.com/zh-cn/library/ff394102.aspx)。
+如果你手头已有许多任务，或许你并不期望采用服务器和数据库管理。对许多企业来说，决定使用云服务的关键在于降低管理复杂性的能力。使用 **Azure SQL 数据库**，Microsoft 可以管理物理硬件（例如硬盘、服务器和存储）；自动复制所有数据以提供高可用性；配置及升级数据库软件；管理负载平衡；在发生服务器故障时执行透明的故障转移。你可以继续管理 Azure SQL 数据库实例，但无需控制基础 SQL Server 实例和 Azure 平台的物理资源。例如，你可以管理数据库和登录、执行索引调整以及优化查询，但无法管理系统表和文件组管理。有关详细信息，请参阅 [Azure SQL 数据库指导原则和限制](/documentation/articles/sql-database-general-limitations/)。
 
 在另一方面，你可能有内部专业人员，并想要保持只由计算机本身控制数据库位置。使用 **Azure VM 中运行的 SQL Server**，你可以完全掌控操作系统和 SQL Server 实例配置。使用 VM，你可以决定何时更新/升级操作系统与数据库软件，以及何时安装任何其他软件（例如防病毒和备份工具）。此外，你还可以控制 VM 的大小、磁盘数目及其存储配置。例如，Azure 允许你视需要更改正在运行的 VM 的大小。有关信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-size-specs)。
 
@@ -175,7 +175,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 对于某些人而言，达到服务级别协议 (SLA) 规定的正常运行时间义务是首要任务。在本部分中，我们将了解 SLA 对每个数据库托管选项代表的含义。
 
-对于 **Azure SQL 数据库**，假设使用基本、标准和高级服务层，则 Microsoft 将提供 99.99% 的可用性 SLA。请注意，可用性 SLA 提供连接到数据库的能力。换句话说，它是个数据库级别 SLA。有关 SLA 的最新信息，请参阅[服务级别协议](http://www.windowsazure.cn/support/legal/sla)。有关 Azure SQL 数据库服务层（版本）和支持的业务连续性计划的最新信息，请参阅 [Azure SQL 数据库服务层](/documentation/articles/sql-database-service-tiers)。
+对于 **Azure SQL 数据库**，假设使用基本、标准和高级服务层，则 Microsoft 将提供 99.99% 的可用性 SLA。请注意，可用性 SLA 提供连接到数据库的能力。换句话说，它是个数据库级别 SLA。有关 SLA 的最新信息，请参阅[服务级别协议](/support/legal/sla)。有关 Azure SQL 数据库服务层（版本）和支持的业务连续性计划的最新信息，请参阅 [Azure SQL 数据库服务层](/documentation/articles/sql-database-service-tiers)。
 
 对于 **Azure 中托管的虚拟机**，Microsoft 提供 99.95% 的可用性 SLA，这个可用性适用于 VM，而不适用于 VM 内部运行的进程（例如 SQL Server）。[VM SLA](http://www.microsoft.com/download/details.aspx?id=38427) 要求你在可用性集中至少托管两个 VM。使用此类配置，Azure 保证至少一个 VM 将有 99.95% 的时间可用。为了在 VM 中实现数据库高可用性 (HA)，你应在 SQL Server 中配置一个受支持的高可用性选项，例如 AlwaysOn 可用性组。请注意，在 Azure 中设置 AlwaysOn 需要一些手动配置和管理，并且你需要额外支付所操作的每个辅助数据库。
 
@@ -194,7 +194,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
 对于以下情况，请选择 **Azure SQL 数据库**：
 
-- 你打算构建全新的基于云的应用程序，或者想要将现有 SQL Server 数据库迁移到 Azure，而且你的数据库未使用 Azure SQL 数据库中不支持的功能。有关详细信息，请参阅 [Azure SQL 数据库 Transact-SQL 参考](http://msdn.microsoft.com/zh-cn/library/azure/ee336281.aspx)。此方法提供全面管理云服务的优点，并可确保产品快速面市。
+- 你打算构建全新的基于云的应用程序，或者想要将现有 SQL Server 数据库迁移到 Azure，而且你的数据库未使用 Azure SQL 数据库中不支持的功能。有关详细信息，请参阅 [Azure SQL 数据库 Transact-SQL 参考](/documentation/articles/sql-database-transact-sql-information/)。此方法提供全面管理云服务的优点，并可确保产品快速面市。
 
 - 你想要让 Microsoft 在数据库上运行常见管理操作，因而数据库需要更高的可用性 SLA。这种方法可以减少管理成本，同时为数据库提供有保证的可用性。
 
@@ -209,8 +209,6 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
 
     [在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-provision-sql-server)
 
-> [AZURE.NOTE]是否想要试用 SQL Server 2016 CTP2？ 请注册 Microsoft Azure，然后转到[此处](http://aka.ms/sql2016vm "此处")创建已经装有 SQL Server 2016 CTP2 的虚拟机。
-
 ##<a name="resources"></a>其他资源 
 
 <table cellspacing="0" border="1">
@@ -219,7 +217,7 @@ Windows Azure 提供了用于托管 SQL Server 的两个选项：[Azure SQL 数�
    <th align="left" valign="middle">说明</th>
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx">MSDN：Azure SQL 数据库</a></p>
+   <td valign="middle"><p><a href="/documentation/articles/sql-database-technical-overview/">MSDN：Azure SQL 数据库</a></p>
 <p><a href="/documentation/articles/virtual-machines-sql-server-infrastructure-services">Azure 虚拟机中的 SQL Server 概述</a></p>
 
 <p><a href="http://www.windowsazure.cn/home/features/sql-database/">Azure.com：Azure SQL 数据库</a></p></td>
