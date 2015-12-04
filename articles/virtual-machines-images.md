@@ -29,10 +29,6 @@
 
 ## 使用映像
 
-可以使用适用于 Mac、Linux 和 Windows 的 Azure 命令行界面 (CLI) 或 Azure PowerShell 模块管理可供你的 Azure 订阅使用的映像。也可以使用 Azure 门户完成某些映像任务，但命令行为你提供更多选项。
-
-有关使用这些工具进行资源管理器部署的信息，请参阅[使用 PowerShell 和 Azure CLI 来浏览和选择 Azure 虚拟机映像](/documentation/articles/resource-groups-vm-searching)。
-
 在经典部署中使用这些工具的示例：
 
 - 有关 CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools)中的“用于管理 Azure 虚拟机映像的命令”

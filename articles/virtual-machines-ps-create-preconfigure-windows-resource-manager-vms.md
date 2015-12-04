@@ -292,8 +292,6 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 |MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials |
 |MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 |
 
-如果未列出你需要的虚拟机映像，请根据[此处](/documentation/articles/resource-groups-vm-searching/#powershell)的说明来确定发布者、产品和 SKU 名称。
-
 将这些命令复制到命令集，并填入发布者、产品和 SKU 名称。
 
 	$pubName="<Image publisher name>"
@@ -381,11 +379,7 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 
 ## 其他资源
 
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
-
-[使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
 [使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 

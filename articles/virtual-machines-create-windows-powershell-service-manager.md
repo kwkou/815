@@ -17,7 +17,7 @@
 
 本文介绍如何使用 Azure PowerShell 创建和管理 Windows 虚拟机。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建 Windows VM。你还可以使用[资源管理器部署模型](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)创建 Windows VM。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建 Windows VM。
 
 
 

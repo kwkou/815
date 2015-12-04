@@ -27,8 +27,6 @@ Azure 虚拟机是 Azure 提供的按需分配可缩放的计算资源之一。�
 
 通过快速地创建一个简单的虚拟机来尝试虚拟机。有关说明，请参阅以下教程之一：
 
-[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)
-
 因为这些教程帮助你快速创建虚拟机，它们仅向你介绍一种方式，而不是说明可用于创建虚拟机的各种工具。有关这些工具和说明链接的摘要，请参阅：
 
 [创建 Linux 虚拟机的不同方式](/documentation/articles/virtual-machines-linux-choices-create-vm)

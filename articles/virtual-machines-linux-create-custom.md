@@ -27,9 +27,6 @@
 <p/>
 [AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager.md)]
 
-- [创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)
-
-
 ## 如何使用经典部署模型创建 Linux 虚拟机
 
 [AZURE.INCLUDE [virtual-machines-create-LinuxVM](../includes/virtual-machines-create-linuxvm.md)]

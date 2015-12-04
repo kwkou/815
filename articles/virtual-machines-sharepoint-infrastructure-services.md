@@ -27,15 +27,13 @@
 
 自动创建的环境由仅限云的 Azure 虚拟网络中的三个服务器组成：分别用于域控制器、SQL Server 和 SharePoint 服务器。
 
-若要创建与资源管理器部署模型类似的配置，请使用模板。请参阅[部署包含 3 个服务器的 SharePoint 场](/documentation/articles/virtual-machines-workload-template-sharepoint/#deploy-a-three-server-sharepoint-farm)。
+若要创建与资源管理器部署模型类似的配置，请使用模板。
 
 ## 高可用性 SharePoint 开发/测试场
 
 对于经典虚拟机，可使用 Azure 预览门户的 [SharePoint 服务器场](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)功能来为面向 Internet 的 SharePoint 网站创建高可用性 SharePoint 开发/测试场。
 
 在仅限云的 Azure 虚拟网络中自动创建的环境由九个服务器组成：两个用于域控制器、三个用于 SQL Server 群集、两个应用程序层 SharePoint 服务器和两个 Web 层 SharePoint 服务器。
-
-若要创建与资源管理器虚拟机类似的配置，请使用模板。请参阅[部署包含 9 个服务器的 SharePoint 场](/documentation/articles/virtual-machines-workload-template-sharepoint/#deploy-a-nine-server-sharepoint-farm)。
 
 ## 混合云开发/测试场
 

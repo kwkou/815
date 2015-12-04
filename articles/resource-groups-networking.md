@@ -256,8 +256,6 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 [Azure 网络 – 常用的模板](https://github.com/Azure/azure-quickstart-templates)
 
-[计算资源提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
 [Azure 资源管理器中基于角色的访问控制](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx)

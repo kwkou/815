@@ -27,7 +27,7 @@
 
 Azure 资源管理器模板可让你通过定义资源之间的依赖关系，使用 JSON 语言以声明方式指定 Azure IaaS 基础结构。有关 Azure 资源管理器模板的详细概述，请参阅以下文章：
 
-<a href="https://www.windowsazure.cn/documentation/articles/resource-group-overview/" target="_blank">资源组概述</a>。<br/><a href="https://www.windowsazure.cn/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">使用 Azure CLI 部署模板</a>。<br/><a href="https://www.windowsazure.cn/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">使用 Azure Powershell 部署模板。</a>
+<a href="https://www.windowsazure.cn/documentation/articles/resource-group-overview/" target="_blank">资源组概述</a>
 
 ### 运行自定义脚本扩展的先决条件
 

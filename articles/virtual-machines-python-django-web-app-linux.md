@@ -127,5 +127,5 @@ Ubuntu Linux VM 已预安装了 Python 2.7，但它没有安装 Apache 或 Djang
 在你完成本教程后，关闭并/或删除你新创建的 Azure 虚拟机以为其他教程释放资源并避免产生 Azure 使用费。
 
 
-[portal-vm]: /documentation/articles/virtual-machines-linux-tutorial
+[portal-vm]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 <!---HONumber=70-->

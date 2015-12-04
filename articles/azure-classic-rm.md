@@ -56,7 +56,7 @@ Azure 有两个门户：
 - **将 PowerShell cmdlet 与 Azure 资源管理器模板配合使用：**你可以将 PowerShell 与 Azure 资源管理器模板配合使用来创建 Azure 资源。可以保存模板并设置其版本。<!--有关详细信息，请阅读[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy)一文。你还可以下载和修改常见解决方案的多个 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)。-->
 
 ## CLI
-你可以使用 CLI 从 Windows、OS X 或 Linux 计算机创建和配置 Azure 资源。请阅读[安装 Azure CLI](/documentation/articles/xplat-cli-install) 一文，以便在所选的操作系统上安装 CLI。与 PowerShell 一样，根据你是使用[资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)还是[经典（服务管理）](/documentation/articles/virtual-machines-command-line-tools)部署模型来创建资源，必须使用不同的命令。
+你可以使用 CLI 从 Windows、OS X 或 Linux 计算机创建和配置 Azure 资源。请阅读[安装 Azure CLI](/documentation/articles/xplat-cli-install) 一文，以便在所选的操作系统上安装 CLI。
 
 ## 后续步骤
 

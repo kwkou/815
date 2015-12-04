@@ -146,7 +146,7 @@
 
 [tables]: /develop/ruby/how-to-guides/table-service/
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
+[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 <!-- External Links -->
 [rails-guides]: http://guides.rubyonrails.org/
 

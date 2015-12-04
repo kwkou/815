@@ -84,7 +84,7 @@ SharePoint 场具有预先配置的终结点，可允许未经身份验证的 We
 
 ## Azure 资源管理器
 
-Azure 门户的 SharePoint Server 场功能可以使用经典部署模型创建虚拟机。若要使用资源管理器部署模型创建 SharePoint Server 2013 场，请参阅[使用 Azure 资源管理器模板部署 SharePoint 场](/documentation/articles/virtual-machines-workload-template-sharepoint)。
+Azure 门户的 SharePoint Server 场功能可以使用经典部署模型创建虚拟机。
 
 ## 其他资源
 

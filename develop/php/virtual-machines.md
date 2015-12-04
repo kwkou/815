@@ -15,7 +15,7 @@
 
 <h1 id="menu-php-vmachines">虚拟机</h1>
 <h2 id="header-0">创建</h2>
-<h3>教程：<a href="/documentation/articles/virtual-machines-linux-tutorial/">创建运行 Linux 的虚拟机</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-linux-tutorial-portal-rm/">创建运行 Linux 的虚拟机</a></h3>
 <p>在本教程中，您将了解如何使用 Azure 管理门户创建运行 Linux 的自定义虚拟机。在创建虚拟机后，您将向新虚拟机中附加数据磁盘，然后与该虚拟机建立通信。</p>
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-create-upload-vhd/">如何为 Azure 准备的 Linux 分发</a></h3>
 <p>了解如何为合作伙伴已测试的各种分发自定义并创建映像。</p>

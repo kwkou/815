@@ -65,15 +65,8 @@
 
 在使用 Azure PowerShell 或 Azure CLI 创建基于资源管理器的虚拟机时，你还可以查看组件化和资源之间的依存关系。在你能够运行创建虚拟机的命令之前，必须创建一个资源组、一个存储帐户、一个含有子网的虚拟网络和一个含有 IP 地址的 NIC。有关更多信息，请参阅[使用资源管理器和 Azure PowerShell 创建并配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)。
 
-## 后续步骤
-
-[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-[使用资源管理器模板与 PowerShell 来部署和管理 Azure 虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
 ## 其他资源
-
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
 
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 

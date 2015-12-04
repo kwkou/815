@@ -261,7 +261,7 @@ IPython Notebook 为交互访问 Azure 上的 Python 生态系统的功能提供
 [Matplotlib]: http://matplotlib.sourceforge.net/ "Matplotlib"
 
 [portal-vm-windows]: /documentation/articles/virtual-machines-windows-tutorial
-[portal-vm-linux]: /documentation/articles/virtual-machines-linux-tutorial
+[portal-vm-linux]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 [存储库]: https://github.com/ipython/ipython
 [python Tools for visual studio]: http://aka.ms/ptvs
 [Python 2.7]: http://www.python.org/download
