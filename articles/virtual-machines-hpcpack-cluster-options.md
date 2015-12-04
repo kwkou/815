@@ -30,11 +30,11 @@
 
 ### 教程
 
-* [教程：Azure 的 HPC Pack 群集中的 Linux 计算节点入门](../virtual-machines/virtual-machines-linux-cluster-hpcpack.md)
+* [教程：Azure 的 HPC Pack 群集中的 Linux 计算节点入门](/documentation/articles/virtual-machines-linux-cluster-hpcpack)
 
-* [教程：在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](../virtual-machines/virtual-machines-linux-cluster-hpcpack-namd.md)
+* [教程：在 Azure 中的 Linux 计算节点上使用 Microsoft HPC Pack 运行 NAMD](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd)
 
-* [教程：开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](../virtual-machines/virtual-machines-excel-cluster-hpcpack.md)
+* [教程：开始使用 Azure 中的 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-excel-cluster-hpcpack)
 
 
 
@@ -62,7 +62,7 @@
 * [使用 HPC Pack 迸发到 Azure](https://technet.microsoft.com/zh-cn/library/gg481749
 * .aspx)
 
-* [教程：使用 Azure 中的 HPC Pack 设置混合群集](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md)
+* [教程：使用 Azure 中的 HPC Pack 设置混合群集](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster)
 
 * [将 Azure“迸发”节点添加到 Azure 中的 HPC Pack 头节点](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst)
 
