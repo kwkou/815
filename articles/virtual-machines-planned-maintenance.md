@@ -76,26 +76,6 @@ Azure 会提前发送电子邮件通信，提醒你即将执行计划内维护�
 <!--Image reference-->
 ![][image1]
 
-## 区域对
-Azure 整理了一组区域对。在采用单实例配置的虚拟机的计划内维护期间，Azure 不会对配对区域同时执行更新。
-
-有关当前区域对的信息，请参阅下表：
-
-区域 1 | 区域 2
-:----- | ------:
-美国中北部 | 美国中南部
-美国东部 | 美国西部
-美国东部 2 | 美国中部
-欧洲北部 | 欧洲西部
-东南亚 | 东亚
-中国东部 | 中国北部
-日本东部 | 日本西部
-巴西南部 | 美国中南部
-澳大利亚东南部 | 澳大利亚东部
-美国政府爱荷华州 | 美国政府弗吉尼亚州
-
-例如，在计划内维护期间，如果美国东部正在进行维护，Azure 就不会同时对美国西部执行更新。但是，北欧等其他区域可以与美国东部同时进行维护。
-
 <!--Anchors-->
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
 [image2]: ./media/virtual-machines-planned-maintenance/EventViewerPostReboot.png

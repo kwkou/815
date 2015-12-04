@@ -24,14 +24,6 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
-[Azure 快速入门模板](http://go.microsoft.com/fwlink/p/?linkid=536445&clcid=0x409)
-
-[使用模板的应用程序框架](/documentation/articles/virtual-machines-app-frameworks)
-
-[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-[使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-
 ## 常规资源
 
 [Azure 快速入门模板](http://azure.microsoft.com/documentation/templates/)
@@ -42,17 +34,6 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 ## 联网
 
 [网络资源提供程序](/documentation/articles/resource-groups-networking)
-
-
-## 使用 Azure CLI 自动执行
-
-[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理器配合使用](/documentation/articles/xplat-cli-azure-resource-manager)
-
-[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-## 使用 Azure PowerShell 自动执行
-
-[使用 Azure 资源管理器模板与 PowerShell 来部署和管理虚拟机](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
 
 ## 使用 .NET 自动执行
@@ -68,6 +49,6 @@ Azure 资源管理器可简化在 Azure 基础结构服务上运行的复杂应�
 
 ## 其他资源
 
-[虚拟机文档](/documentation/services/virtual-machines)
+[虚拟机文档](/services/virtual-machines)
 
 <!---HONumber=79-->
