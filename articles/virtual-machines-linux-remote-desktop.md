@@ -27,7 +27,7 @@ RDP（远程桌面协议）是用于 Windows 的专用协议。我们如何使�
 Xrdp 是一个开源 RDP 服务器，支持你从 Windows 计算机通过远程桌面连接连接到 Linux 服务器。它比 VNC（虚拟网络计算）表现得更好。VNC 具有“JPEG”质量和行为慢的特征，而 RDP 则快速清晰。
 
 
-> [AZURE.NOTE]你必须已有运行 Linux 的 Windows Azure VM。若要创建和设置 Linux VM，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-tutorial)。
+> [AZURE.NOTE]你必须已有运行 Linux 的 Windows Azure VM。
 
 
 ##为远程桌面创建终结点

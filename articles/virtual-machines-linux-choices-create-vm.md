@@ -23,7 +23,7 @@ Azure 提供不同方式来创建 VM，因为 VM 适合于不同用户和目的�
 
 ### GUI：Azure 门户
 
-Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 门户](http://manage.windowsazure.cn)创建 VM。如需一般性说明，请参阅[创建自定义虚拟机][]，然后从“库”中选择任意 Linux 映像。请注意，[Azure 门户](http://manage.windowsazure.cn)只使用经典部署模型创建虚拟机。
+Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 [Azure 门户](http://manage.windowsazure.cn)创建 VM。请注意，[Azure 门户](http://manage.windowsazure.cn)只使用经典部署模型创建虚拟机。
 
 ### Azure PowerShell
 

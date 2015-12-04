@@ -20,7 +20,7 @@ PostgreSQL 是一种类似于 Oracle 和 DB2 的高级开放源代码数据库�
 
 在本文中，你将了解如何在运行 Linux 的 Azure 虚拟机上安装和配置 PostgreSQL。
 
-> [Azure.NOTE]你必须已经有一个运行 Linux 的 Windows Azure 虚拟机，才能完成本教程。在继续操作前，请参阅 [Azure Linux VM 教程](/documentation/articles/virtual-machines-linux-tutorial)创建并设置一个 Linux VM。
+> [Azure.NOTE]你必须已经有一个运行 Linux 的 Windows Azure 虚拟机，才能完成本教程。在继续操作前，请创建并设置一个 Linux VM。
 
 [在此情况下，请使用 1999 端口作为 PostgreSQL 端口。]
 

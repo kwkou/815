@@ -26,8 +26,6 @@
 
 你还可能需要 Azure 存储帐户和密钥（可以从服务门户来获取此信息）来访问它。
 
-如果你在 Azure 上创建 Linux VM 时需要帮助，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)。
-
 虽然特定的安装命令将采用 Ubuntu，但你可以针对任何受支持的发行版改编一般步骤。
 
 *script-vm* VM 需要使用与 Azure 之间的有效链接安装 Azure CLI。有关这方面的帮助，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli)。

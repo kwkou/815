@@ -31,7 +31,7 @@ Azure CLI 提供的大多数命令需要连接到 Azure 帐户。可以使用两
 
 如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用][free-trial]。
 
-> [AZURE.NOTE]最灵活且最高级的 Azure 服务使用 Azure 资源管理器或 [ARM 模式](/documentation/articles/xplat-cli-azure-resource-manager)。ARM 模式需要使用工作或学校帐户连接到 Azure，所用登录方法介绍如下。
+> [AZURE.NOTE]最灵活且最高级的 Azure 服务使用 Azure 资源管理器。ARM 模式需要使用工作或学校帐户连接到 Azure，所用登录方法介绍如下。
 
 ### 使用 login 方法
 
@@ -139,5 +139,4 @@ Azure CLI 提供的大多数命令需要连接到 Azure 帐户。可以使用两
 [portal]: https://manage.windowsazure.cn
 [signuporg]: /documentation/articles/sign-up-organization
 [cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
 <!---HONumber=67-->

@@ -106,38 +106,4 @@
 
 ![](./media/resource-group-create-work-id-from-personal/successtourdialog.png)
 
-
-## 后续步骤
-
-现在，可以借助新的 Azure Active Directory 标识来使用 [Azure 资源组模板](/documentation/articles/xplat-cli-azure-resource-manager)。
-
-     azure login
-    info:    Executing command login
-    warn:    Please note that currently you can login only via Microsoft organizational account or service principal. For instructions on how to set them up, please read http://aka.ms/Dhf67j.
-    Username: ahmet@aztrainpassxxxxxoutlook.partner.onmschina.cn
-    Password: *********
-    /info:    Added subscription Azure Pass
-    info:    Setting subscription Azure Pass as default
-    +
-    info:    login command OK
-    ralph@local:~$ azure config mode arm
-    info:    New mode is arm
-    ralph@local:~$ azure group list
-    info:    Executing command group list
-    + Listing resource groups
-    info:    No matched resource groups were found
-    info:    group list command OK
-    ralph@local:~$ azure group create newgroup westus
-    info:    Executing command group create
-    + Getting resource group newgroup
-    + Creating resource group newgroup
-    info:    Created resource group newgroup
-    data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/newgroup
-    data:    Name:                newgroup
-    data:    Location:            chinanorth
-    data:    Provisioning State:  Succeeded
-    data:    Tags:
-    data:
-    info:    group create command OK
-
 <!---HONumber=79-->

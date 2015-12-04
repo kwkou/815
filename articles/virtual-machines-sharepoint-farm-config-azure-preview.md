@@ -125,9 +125,6 @@ SharePoint Server 场是 Azure 门户的一个功能，可自动为你创建预�
 
 > [AZURE.NOTE]SharePoint Server 是从 SharePoint Server 2013 试用版映像中创建而来。若要在试用版到期后继续使用虚拟机，你需要将安装转换为使用 SharePoint Server 2013 Standard 版或 SharePoint Server 2013 Enterprise 版的“零售”或“批量许可证”密钥。
 
-## Azure 资源管理器
-
-Azure 预览门户的 SharePoint Server 场功能可在服务管理中创建虚拟机。若要在 Azure 资源管理器中创建 SharePoint Server 2013 场，请参阅[使用 Azure 资源管理器模板部署 SharePoint 场](/documentation/articles/virtual-machines-workload-template-sharepoint)。
 
 ## 其他资源
 
