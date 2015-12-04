@@ -23,17 +23,15 @@ Azure 提供不同方式来创建虚拟机，因为虚拟机适合于不同的�
 
 ### GUI：Azure 门户
 
-Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户或 Azure 预览门户创建 VM：
+Azure 门户的图形用户界面是一种试用虚拟机的简便方式，尤其是在你刚开始摸索 Azure 时。使用 Azure 门户创建 VM：
 
 [创建运行 Windows 的虚拟机][]
 
-### 命令 Shell：Azure CLI 或 Azure PowerShell
+### Azure PowerShell
 
-如果你喜欢使用命令行界面，请选择适用于 Mac 和 Linux 用户的 Azure 命令行界面 (CLI) 或 Azure PowerShell，后者提供 Windows PowerShell cmdlets for Azure 和自定义控制台。
+如果你喜欢使用命令行界面，请选择Azure PowerShell，它提供 Windows PowerShell cmdlets for Azure 和自定义控制台。
 
-有关 Azure CLI，请参阅[适合使用针对 Mac、Linux 和 Windows 的 Azure CLI 进行虚拟机操作的等效资源管理器和服务管理命令][]。若要使用模板，请参阅[使用 Azure 资源管理器模板与 Azure CLI 来部署和管理虚拟机][]。
-
-有关 Azure PowerShell，请参阅[使用 Azure PowerShell 创建和预配置 Windows 虚拟机][]。若要使用模板，请参阅[使用 Azure 资源管理器模板和 PowerShell 部署和管理虚拟机][]。若要在服务管理堆栈中创建虚拟机，请参阅[使用 Azure PowerShell 创建和预配置 Windows 虚拟机][]。
+有关 Azure PowerShell，请参阅[使用 Azure PowerShell 创建和预配置 Windows 虚拟机][]。若要在服务管理堆栈中创建虚拟机，请参阅[使用 Azure PowerShell 创建和预配置 Windows 虚拟机][]。
 
 ### 开发环境：Visual Studio
 

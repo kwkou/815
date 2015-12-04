@@ -333,7 +333,6 @@ Azure CLI 将使用默认的 VM 大小创建虚拟机。它还将创建存储帐
 ## 后续步骤
 
 * 有关使用 Azure 命令行界面 (Azure CLI) 的信息，请参阅[安装和配置 Azure CLI][clisetup]。
-* 有关将 Azure 资源管理器与 Azure PowerShell 配合使用的信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager)。
 * 有关从 Azure 门户使用 Azure 资源管理器的信息，请参阅[使用资源组管理 Azure 资源][psrm]。
 
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
