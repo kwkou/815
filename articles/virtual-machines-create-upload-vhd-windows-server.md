@@ -112,7 +112,7 @@
 
 1. 打开 Azure PowerShell 控制台。
 
-2. 键入：`Add-AzureAccount`
+2. 键入：`Add-AzureAccount -Environment AzureChinaCloud`
 
 3.	在登录窗口中，键入你的工作或学校帐户的用户名和密码。
 
@@ -122,7 +122,7 @@
 
 1. 打开 Azure PowerShell 控制台。
 
-2.	键入：`Get-AzurePublishSettingsFile`。
+2.	键入：`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`。
 
 3. 此时将打开一个浏览器窗口，并提示你下载 .publishsettings 文件。它包含 Windows Azure 订阅的信息和证书。
 
@@ -130,7 +130,7 @@
 
 3. 保存 .publishsettings 文件。
 
-4. 键入：`Import-AzurePublishSettingsFile <PathToFile>`
+4. 键入：`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
 
 	其中 `<PathToFile>` 是 .publishsettings 文件的完整路径。
 
