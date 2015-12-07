@@ -10,14 +10,14 @@
 
 <tags ms.service="virtual-machines"
 	ms.date="07/13/2015"
-	wacn.date=""/>
+	wacn.date="08/29/2015"/>
 
 # 使用 Azure 门户创建运行 Linux 的虚拟机
 
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 
-创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 预览门户快速创建一个虚拟机，并使用 `~/.ssh/id_rsa.pub` 公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
+创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 门户快速创建一个虚拟机，并使用 `~/.ssh/id_rsa.pub` 公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
 
 > [AZURE.NOTE]本教程创建的 Azure 虚拟机将由 Azure 资源组 API 管理。有关详细信息，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
 
@@ -25,13 +25,13 @@
 
 ## 选择映像
 
-前往预览门户中的 Azure 应用商店，找到所需的 Windows Server VM 映像。
+前往门户中的 Azure 应用商店，找到所需的 Windows Server VM 映像。
 
 1. 登录[Azure 管理门户](https://manage.windowsazure.cn)。
 
 2. 在“中心”菜单上，单击“新建”>“计算”>“Ubuntu Server 14.04 LTS”。
 
-	![选择 VM 映像](media/virtual-machines-linux-tutorial-portal-rm/chooseubuntuvm.png)
+	![选择 VM 映像](./media/virtual-machines-linux-tutorial-portal-rm/chooseubuntuvm.png)
 
 ## 创建虚拟机
 
@@ -39,7 +39,7 @@
 
 1. 在“创建虚拟机”边栏选项卡上，单击“基本信息”。输入虚拟机的“名称”并上传公钥文件并采用 **ssh-rsa** 格式）。
 
-	![](media/virtual-machines-linux-tutorial-portal-rm/step-1-thebasics.png)
+	![](./media/virtual-machines-linux-tutorial-portal-rm/step-1-thebasics.png)
 
 	> [AZURE.NOTE]如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。
 
@@ -49,7 +49,7 @@
 
 3. 单击下一步按钮以查看新 VM 的存储和网络设置。对于第一个 VM，一般可以接受默认设置。
 
-	![](media/virtual-machines-linux-tutorial-portal-rm/step-3-settings.png)
+	![](./media/virtual-machines-linux-tutorial-portal-rm/step-3-settings.png)
 
 8. 当 Azure 创建 VM 时，你可以在“中心”菜单中的“通知”中跟踪进度。当 Azure 创建 VM 后，你将在启动板上看到它，除非你清除了“创建虚拟机”边栏选项卡中的“固定到启动板”。
 
@@ -57,7 +57,7 @@
 
 现在可以使用 **ssh** 以标准方式连接到 Ubuntu VM。但是，你将需要通过打开 Azure VM 及其资源的相应磁贴来发现分配给该 VM 的 IP 地址。你可以通过以下方式打开磁贴：单击“浏览”，然后选择“最近”并查找你创建的 VM，或者在启动板上单击为你创建的磁贴。在任一情况下，都要找到并复制下图所示的“公共 IP 地址”的值。
 
-![成功创建的摘要](media/virtual-machines-linux-tutorial-portal-rm/successresultwithip.png)
+![成功创建的摘要](./media/virtual-machines-linux-tutorial-portal-rm/successresultwithip.png)
 
 现在一切准备就绪，你可以使用 **ssh** 连接到你的 Azure VM 了。
 
