@@ -40,7 +40,7 @@ bus_service = ServiceBusService(
 	shared_access_key_value='sharedaccesskey')
 ```
 
-SAS 密钥名称和值可以在 [Azure 门户][] 连接信息中找到，也可以在服务器资源管理器中选择服务总线命名空间后，在 Visual Studio “属性”窗格中找到（如前一节中所示）。
+SAS 密钥名称和值可以在 [Azure 管理门户][] 连接信息中找到，也可以在服务器资源管理器中选择服务总线命名空间后，在 Visual Studio “属性”窗格中找到（如前一节中所示）。
 
 ```
 bus_service.create_queue('taskqueue')
@@ -58,9 +58,9 @@ bus_service.create_queue('taskqueue', queue_options)
 
 ## 向队列发送消息
 
-若要向服务总线队列发送消息，你的应用程序需对 **ServiceBusService** 对象调用 **send\_queue\_message** 方法。
+若要向服务总线队列发送消息，你的应用程序需对 **ServiceBusService** 对象调用 **send_queue_message** 方法。
 
-以下示例演示如何使用 **send\_queue\_message** 向名为 *taskqueue* 的队列发送测试消息：
+以下示例演示如何使用 **send_queue_message** 向名为 *taskqueue* 的队列发送测试消息：
 
 ```
 msg = Message(b'Test Message')
@@ -71,18 +71,18 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 ## 从队列接收消息
 
-对 **ServiceBusService** 对象使用 **receive\_queue\_message** 方法可从队列接收消息：
+对 **ServiceBusService** 对象使用 **receive_queue_message** 方法可从队列接收消息：
 
 ```
 msg = bus_service.receive_queue_message('taskqueue', peek_lock=False)
 print(msg.body)
 ```
 
-当 **peek‑lock** 参数设置为 **False** 时，将在读取消息后将其从队列中删除。通过将参数 **peek\_lock** 设置为 **True**，你可以读取（扫视）并锁定消息而不会从队列中删除它。
+当 **peek‑lock** 参数设置为 **False** 时，将在读取消息后将其从队列中删除。通过将参数 **peek_lock** 设置为 **True**，你可以读取（扫视）并锁定消息而不会从队列中删除它。
 
 在接收过程中读取并删除消息的行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
-如果将 **peek\_lock** 参数设置为 **True**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或安全存储该消息以供将来处理）后，它会通过对 **Message** 对象调用 **delete** 方法来完成接收过程的第二个阶段。**delete** 方法会将消息标记为已使用，并从队列中删除它。
+如果将 **peek_lock** 参数设置为 **True**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或安全存储该消息以供将来处理）后，它会通过对 **Message** 对象调用 **delete** 方法来完成接收过程的第二个阶段。**delete** 方法会将消息标记为已使用，并从队列中删除它。
 
 ```
 msg = bus_service.receive_queue_message('taskqueue', peek_lock=True)
@@ -105,7 +105,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 -   请参阅[队列、主题和订阅][]。
 
-[Azure Management Portal]: http://manage.windowsazure.cn
+[Azure 管理门户]: http://manage.windowsazure.cn
 [Python Azure 包]: https://pypi.python.org/pypi/azure
 [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
 [Azure 队列和服务总线队列]: /documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas

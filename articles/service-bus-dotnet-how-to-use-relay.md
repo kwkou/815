@@ -266,7 +266,7 @@ using (var ch = cf.CreateChannel())
 
 现在，你已了解服务总线中继服务的基础知识，请访问以下链接以了解更多信息。
 
-- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [如何使用 Service Bus 中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
 - 从 [Azure 示例][]下载服务总线示例，或参阅[服务总线示例概述][]。
 

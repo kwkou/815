@@ -169,33 +169,33 @@ if message.properties != None:
 | durable | 不适用 | 服务总线仅支持持久消息。 |
 | priority | 不适用 | 服务总线仅支持单一消息优先级。 |
 | Ttl | Message.TimeToLive | 转换，Proton-Python TTL 以毫秒为单位定义。 |
-| first\_acquirer | 不适用 | - | 
-| delivery\_count | 不适用 | - | 
+| first_acquirer | 不适用 | - | 
+| delivery_count | 不适用 | - | 
 | Id | Message.MessageID | - | 
-| user\_id | 不适用 | - | 
+| user_id | 不适用 | - | 
 | address | Message.To | - | 
 | subject | Message.Label | - |
-| reply\_to | Message.ReplyTo | - | 
-| correlation\_id | Message.CorrelationID | - | 
-| content\_type | Message.ContentType | - 
-| content\_encoding | 不适用 | - | | expiry\_time | 不适用 | - | 
-| creation\_time | 不适用 | - | 
-| group\_id | Message.SessionId | - | 
-| group\_sequence | 不适用 | - | 
-| reply\_to\_group\_id | Message.ReplyToSessionId | - | 
+| reply_to | Message.ReplyTo | - | 
+| correlation_id | Message.CorrelationID | - | 
+| content_type | Message.ContentType | - 
+| content_encoding | 不适用 | - | | expiry\_time | 不适用 | - | 
+| creation_time | 不适用 | - | 
+| group_id | Message.SessionId | - | 
+| group_sequence | 不适用 | - | 
+| reply_to_group_id | Message.ReplyToSessionId | - | 
 | format | 不适用 | - |
 
 | 服务总线 .NET | Proton | 说明 |
 |-------------------------|------------------------------|-----------------------------------------------------------|
-| ContentType | Message.content\_type | - | 
-| CorrelationId | Message.correlation\_id | - | 
+| ContentType | Message.content_type | - | 
+| CorrelationId | Message.correlation_id | - | 
 | EnqueuedTimeUtc | 不适用 | - | 
 | Label | Message.subject | - | 
 | MessageId | Message.id | - | 
-| ReplyTo | Message.reply\_to | - | 
-| ReplyToSessionId | Message.reply\_to\_group\_id | - | 
+| ReplyTo | Message.reply_to | - | 
+| ReplyToSessionId | Message.reply_to_group_id | - | 
 | ScheduledEnqueueTimeUtc | 不适用 | - | 
-| SessionId | Message.group\_id | - | 
+| SessionId | Message.group_id | - | 
 | TimeToLive | Message.ttl | 转换，Proton-Python TTL 以毫秒为单位定义。| 
 | To | Message.address | - |
 

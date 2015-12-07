@@ -49,7 +49,7 @@
 	└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 程序包，其中包含访问服务总线主题所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，找到 **azure** 程序包，其中包含访问服务总线主题所需的库。
 
 ### 导入模块
 
@@ -61,7 +61,7 @@ var azure = require('azure');
 
 ### 设置服务总线连接
 
-Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVICEBUS\_ACCESS\_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
+Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBUS_ACCESS_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 

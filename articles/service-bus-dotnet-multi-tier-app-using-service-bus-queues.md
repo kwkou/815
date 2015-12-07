@@ -172,7 +172,7 @@
             }
         }
 
-2.  在“解决方案资源管理器”中，双击“Controllers\\HomeController.cs”。在文件顶部添加以下 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
+2.  在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。在文件顶部添加以下 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
 
         using FrontendWebRole.Models;
         using Microsoft.ServiceBus.Messaging;
@@ -241,7 +241,7 @@
 
 7.  单击**“添加”**。
 
-8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\\Shared\\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
+8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\Shared\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
 
 9.  将每一处 **My ASP.NET Application** 替换为 **LITWARE'S Products**。
 
@@ -249,7 +249,7 @@
 
 	![][28]
 
-11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\\Home\\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;h2>Submit&lt;/h2>** 后面添加以下行。**ViewBag.MessageCount** 目前为空。稍后你将填充它。
+11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\Home\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;h2>Submit&lt;/h2>** 后面添加以下行。**ViewBag.MessageCount** 目前为空。稍后你将填充它。
 
         <p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
 
@@ -327,13 +327,13 @@
 
     稍后在本教程中，你将学习如何将**命名空间**名称和 SAS 密钥值存储在配置文件中。
 
-4.  现在，请确保你的 **Initialize** 方法会被调用。在“解决方案资源管理器”中，双击“Global.asax\\Global.asax.cs”。
+4.  现在，请确保你的 **Initialize** 方法会被调用。在“解决方案资源管理器”中，双击“Global.asax\Global.asax.cs”。
 
-5.  将以下行添加到 **Application\_Start** 方法的底部。
+5.  将以下行添加到 **Application_Start** 方法的底部。
 
         FrontendWebRole.QueueConnector.Initialize();
 
-6.  最后，更新之前创建的 Web 代码以便将项提交到队列。在“解决方案资源管理器”中，双击“Controllers\\HomeController.cs”。
+6.  最后，更新之前创建的 Web 代码以便将项提交到队列。在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。
 
 7.  更新 **Submit()** 方法（如下所示）获取队列的消息计数。
 
@@ -438,7 +438,7 @@
 
 9.  当你从队列中处理订单时，创建一个 **OnlineOrder** 类来表示这些订单。你可以重用已创建的类。在“解决方案资源管理器”中，右键单击“OrderProcessingRole”项目（右键单击项目而不是角色）。单击“添加”，然后单击“现有项”。
 
-10. 浏览到 **FrontendWebRole\\Models** 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
+10. 浏览到 **FrontendWebRole\Models** 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
 
 11. 在 **WorkerRole.cs** 中，将 **WorkerRole.cs** 中 **QueueName** 变量的值 `"ProcessingQueue"` 替换为 `"OrdersQueue"`，如以下代码所示。
 

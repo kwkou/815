@@ -15,7 +15,7 @@
 
 [AZURE.INCLUDE [service-bus-selector-topics](../includes/service-bus-selector-topics.md)]
 
-本文说明如何使用服务总线主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](../php-download-sdk.md)。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
+本文说明如何使用服务总线主题和订阅。示例是用 PHP 编写的并使用了 [Azure SDK for PHP](/documentation/articles/php-download-sdk)。涉及的任务包括**创建主题和订阅**、**创建订阅筛选器**、**将消息发送到主题**、**从订阅接收消息**以及**删除主题和订阅**。
 
 [AZURE.INCLUDE [howto-service-bus-topics](../includes/howto-service-bus-topics.md)]
 
@@ -35,7 +35,7 @@
 
 使用服务总线 API：
 
-1. 使用 [require\_once][require-once] 语句引用 autoloader 文件。
+1. 使用 [require_once][require-once] 语句引用 autoloader 文件。
 2. 引用可使用的所有类。
 
 以下示例演示如何包含 autoloader 文件并引用 **ServiceBusService** 类。
