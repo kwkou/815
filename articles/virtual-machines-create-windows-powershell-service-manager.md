@@ -31,7 +31,7 @@
 
 首先，必须使用此命令登录到 Azure：
 
-	Add-AzureAccount
+	Add-AzureAccount -Environment AzureChinaCloud
 
 在 Windows Azure 登录对话框中指定 Azure 帐户的电子邮件地址及其密码。
 
@@ -66,7 +66,7 @@
 	$locName="<Azure location>"
 	New-AzureStorageAccount -StorageAccountName $stAccount -Location $locName
 	Set-AzureStorageAccount -StorageAccountName $stAccount
-	Set-AzureSubscription -SubscriptionName $subscrName -CurrentStorageAccountName $stAccount
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscrName -CurrentStorageAccountName $stAccount
 
 接下来，需要一个云服务。如果目前没有云服务，则必须创建一个。必须选择只包含字母、数字和连字符的唯一名称。该字段中的第一个和最后一个字符必须是字母或数字。
 

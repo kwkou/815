@@ -203,11 +203,11 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     Get-AzureStorageAccount | Format-Table -Property StorageAccountName, Location, AccountType, StorageAccountStatus
 
 ### 如何创建 Azure 存储上下文
-Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
+Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
 
 使用以下三种方法之一创建存储上下文：
 
-- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
+- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
 
     	$StorageAccountName = "yourstorageaccount"
     	$StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
