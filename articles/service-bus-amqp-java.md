@@ -23,7 +23,7 @@ Java 消息服务 (JMS) 是一种标准 API，用于处理 Java 平台上面向�
 
 使用 Service Bus 构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
 
--   geronimo-jms\_1.1\_spec-[version].jar
+-   geronimo-jms_1.1_spec-[version].jar
 
 -   qpid-amqp-1-0-client-[version].jar
 
@@ -61,11 +61,11 @@ queue.QUEUE = queue1
 connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 
-其中 `[jndi\_name]` 和 `[ConnectionURL]` 具有以下含义：
+其中 `[jndi_name]` 和 `[ConnectionURL]` 具有以下含义：
 
 | Name | 含义 | | | | |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|
-| `[jndi\_name]` | 连接工厂的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 | | | | |
+| `[jndi_name]` | 连接工厂的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 | | | | |
 | `[ConnectionURL]` | 用于向 AMQP 代理提供包含所需信息的 JMS 库的 URL。 | | | | |
 
 连接 URL 的格式如下：
@@ -106,11 +106,11 @@ queue.[jndi_name] = [physical_name]
 topic.[jndi_name] = [physical_name]
 ```
 
-其中 `[jndi\_name]` 和 `[physical\_name]` 具有以下含义：
+其中 `[jndi_name]` 和 `[physical_name]` 具有以下含义：
 
 | Name | 含义 |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `[jndi\_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
+| `[jndi_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
 | `[physical\name]` | 应用程序在其中发送或接收消息的 Service Bus 实体的名称。 |
 
 注意以下事项：
@@ -118,7 +118,7 @@ topic.[jndi_name] = [physical_name]
 - `[physical\name]` 值可以是服务总线队列或主题。
 - 在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。
 - 还可以将服务总线主题订阅视为一个 JMS 队列。此方法具有以下几个优点：可以针对队列和主题订阅使用同一接收者代码，并且所有地址信息（主题和订阅名称）都在属性文件中外部化。
-- 若要将服务总线主题订阅视为一个 JMS 队列，属性文件中的条目应采用以下形式：`queue.[jndi\_name] = [topic\_name]/Subscriptions/[subscription\_name]`。|
+- 若要将服务总线主题订阅视为一个 JMS 队列，属性文件中的条目应采用以下形式：`queue.[jndi_name] = [topic_name]/Subscriptions/[subscription_name]`。|
 
 若要定义映射到名为“topic1”的服务总线主题的名为“TOPIC”的逻辑 JMS 目标，属性文件中的条目应如下所示：
 
@@ -174,7 +174,7 @@ JMS 规范定义了应如何编写 API 方法和应用程序代码的异常约�
 
 -   使用 **connection.setExceptionListener** 向 JMS 连接注册 **ExceptionListener**。这允许以异步方式向客户端通知问题。此通知对于仅使用消息的连接特别重要，因为客户端没有其他方法可以获知其连接已失败。如果底层 AMQP 连接、会话或链接有问题，将调用 **ExceptionListener**。在此情况下，应用程序应从零开始重新创建 **JMS Connection**、**Session**、**MessageProducer** 和 **MessageConsumer** 对象。
 
--   若要验证是否已从 **MessageProducer** 将一条消息成功发送到 Service Bus 实体，请确保已为应用程序配置 **qpid.sync\_publish** 系统属性集。可以通过在启动应用程序时在命令行上设置 **-Dqpid.sync\_publish=true** Java VM 选项启动程序来完成此操作。设置此选项可将库配置为不从发送调用返回，直到收到该消息已被服务总线接受的确认为止。如果在发送操作期间出现问题，则将引发 **JMSException**。有两个可能的原因：
+-   若要验证是否已从 **MessageProducer** 将一条消息成功发送到 Service Bus 实体，请确保已为应用程序配置 **qpid.sync_publish** 系统属性集。可以通过在启动应用程序时在命令行上设置 **-Dqpid.sync_publish=true** Java VM 选项启动程序来完成此操作。设置此选项可将库配置为不从发送调用返回，直到收到该消息已被服务总线接受的确认为止。如果在发送操作期间出现问题，则将引发 **JMSException**。有两个可能的原因：
 	1. 如果问题是由于服务总线拒绝所发送的特定消息所致，则将引发 **MessageRejectedException** 异常。此错误是暂时的，或者由于消息出现某些问题所致。建议的操作过程是进行多次尝试，以便使用一些后退逻辑重试该操作。如果问题仍然存在，则应使用本地记录的错误放弃该消息。在这种情况下，无需重新创建 **JMS Connection**、**Session** 或 **MessageProducer** 对象。 
 	2. 如果问题是由于服务总线关闭 AMQP 链接所致，则将引发 **InvalidDestinationException** 异常。这可能是由于暂时性问题或由于消息实体被删除所致。在这两种情况中的任一情况下，均应重新创建 **JMS Connection**、**Session** 和 **MessageProducer** 对象。如果错误条件是暂时的，则此操作最终将会成功。如果实体已被删除，则失败将是永久的。
 

@@ -37,7 +37,6 @@
 - [注册 Azure 试用帐户](/pricing/1rmb-trial/)
  
 ## 相关服务
-- [BizTalk 服务](/hoeme/features/biztalk-services/)
 - [移动服务](/home/features/mobile-services/)
 - [云服务](/home/features/cloud-services/) 
 

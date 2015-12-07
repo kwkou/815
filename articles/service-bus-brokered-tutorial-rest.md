@@ -622,7 +622,7 @@ namespace Microsoft.ServiceBus.Samples
 请参阅以下文章以了解更多信息：
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [Azure 服务总线基础知识](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
+- [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial)
 
 <!---HONumber=82-->

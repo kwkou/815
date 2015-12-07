@@ -181,36 +181,36 @@ if ($message->properties != null)
 | Durable | 不适用 | 服务总线仅支持持久消息。 |
 | Priority | 不适用 | 服务总线仅支持单一消息优先级。 |
 | Ttl | Message.TimeToLive | 转换，Proton-PHP TTL 以毫秒为单位定义。 |
-| first\_acquirer | - | - | 
-| delivery\_count | - | - | 
+| first_acquirer | - | - | 
+| delivery_count | - | - | 
 | Id | Message.Id | - | 
-| user\_id | - | - | 
+| user_id | - | - | 
 | Address | Message.To | - | 
 | Subject | Message.Label | - | 
-| reply\_to | Message.ReplyTo | - | 
-| correlation\_id | Message.CorrelationId | - | 
-| content\_type | Message.ContentType | - |
-| content\_encoding | 不适用 | - |
-| expiry\_time | Message.ExpiresAtUTC | - | 
-| creation\_time | 不适用 | - |
-| group\_id | Message.SessionId | - | 
-| group\_sequence | - | 
-| reply\_to\_group\_id | Message.ReplyToSessionId | - |
+| reply_to | Message.ReplyTo | - | 
+| correlation_id | Message.CorrelationId | - | 
+| content_type | Message.ContentType | - |
+| content_encoding | 不适用 | - |
+| expiry_time | Message.ExpiresAtUTC | - | 
+| creation_time | 不适用 | - |
+| group_id | Message.SessionId | - | 
+| group_sequence | - | 
+| reply_to_group_id | Message.ReplyToSessionId | - |
 | Format | 不适用 | - |
 
 #### 服务总线 .NET API 到 Proton-PHP
 
 | 服务总线 .NET | Proton-PHP | 说明 |
 |-------------------------|--------------------------------------------------------|--------------------------------------------------------|
-| ContentType | Message->content\_type | - | 
-| CorrelationId | Message->correlation\_id | - | 
+| ContentType | Message->content_type | - | 
+| CorrelationId | Message->correlation_id | - | 
 | EnqueuedTimeUtc | Message->annotations[x-opt-enqueued-time] | - | 
 | Label | Message->subject | - | 
 | MessageId | Message->id | - | 
-| ReplyTo | Message->reply\_to | - | 
-| ReplyToSessionId | Message->reply\_to\_group\_id | - | 
+| ReplyTo | Message->reply_to | - | 
+| ReplyToSessionId | Message->reply_to_group_id | - | 
 | ScheduledEnqueueTimeUtc | Message->annotations [“x-opt-scheduled-enqueue-time”] | - | 
-| SessionId | Message->group\_id | - | 
+| SessionId | Message->group_id | - | 
 | TimeToLive | Message->ttl | 转换，Proton-PHP TTL 以毫秒为单位定义。| 
 | To | Message->address | - |
 

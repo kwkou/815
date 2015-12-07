@@ -35,7 +35,7 @@
 
 对于 Python 和 PHP 应用，此示例使用 Apache 的 Proton 客户端库。这些库可从 [http://qpid.apache.org/download.html](http://qpid.apache.org/download.html) 下载。分发程序包中的自述文件说明了安装依赖项和构建 Proton 所需的步骤。下面是这些步骤的摘要：
 
-1.  编辑 yum 配置文件 (/ etc/yum.conf) 并注释掉对内核标头更新的排除 (# exclude=kernel*)。这是安装 gcc 编译器所必需的。
+1.  编辑 yum 配置文件 (/etc/yum.conf) 并注释掉对内核标头更新的排除 (#exclude=kernel*)。这是安装 gcc 编译器所必需的。
 
 2.  安装必备组件包：
 

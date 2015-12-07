@@ -33,7 +33,7 @@
 
 使用 Service Bus 构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
 
-*    geronimo-jms\_1.1\_spec-1.0.jar
+*    geronimo-jms_1.1_spec-1.0.jar
 *    qpid-amqp-1-0-client-[version].jar
 *    qpid-amqp-1-0-client-jms-[version].jar
 *    qpid-amqp-1-0-common-[version].jar
@@ -65,9 +65,9 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 
-其中，**[jndi\_name]** 和 **[ConnectionURL]** 具有以下含义：
+其中，**[jndi_name]** 和 **[ConnectionURL]** 具有以下含义：
 
-- **[jndi\_name]**：ConnectionFactory 的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
+- **[jndi_name]**：ConnectionFactory 的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
 - **[ConnectionURL]**：向 AMQP 中转站提供包含所需信息的 JMS 库的 URL。
 
 
@@ -99,10 +99,10 @@ queue.[jndi_name] = [physical_name]
 topic.[jndi_name] = [physical_name]
 ```
 
-其中，**[jndi\_name]** 和 **[physical\_name]** 的含义如下：
+其中，**[jndi_name]** 和 **[physical_name]** 的含义如下：
 
-- **[jndi\_name]**：目标的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
-- **[physical\_name]**：应用程序向其发送或从该处接收消息的服务总线实体的名称。
+- **[jndi_name]**：目标的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
+- **[physical_name]**：应用程序向其发送或从该处接收消息的服务总线实体的名称。
 
 > [AZURE.NOTE]在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。[服务总线 AMQP 1.0 开发人员指南](http://msdn.microsoft.com/zh-cn/library/azure/jj841071.aspx)提供了有关从 JMS 使用服务总线主题订阅的更详细信息。
 

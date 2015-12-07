@@ -16,7 +16,7 @@
 
 ## 概述
 
-Microsoft Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本文介绍如何通过本地 Azure PowerShell 控制台使用 PowerShell 来设置和管理 Service Bus 实体（如命名空间、队列和事件中心）。
+Windows Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本文介绍如何通过本地 Azure PowerShell 控制台使用 PowerShell 来设置和管理 Service Bus 实体（如命名空间、队列和事件中心）。
 
 ## 先决条件
 
@@ -163,13 +163,14 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 - [如何使用 PowerShell 脚本创建 Service Bus 命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
 一些现成的脚本也可供下载：
+
 - [服务总线 PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
 
 <!--Link references-->
 [购买选项]: http://azure.microsoft.com/zh-cn/pricing/purchase-options/
 [成员优惠]: http://azure.microsoft.com/zh-cn/pricing/member-offers/
 [试用]: /pricing/1rmb-trial/
-[安装和配置 Azure PowerShell]: /documentation/articles/install-configure-powershell
+[安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure
 [服务总线 NuGet 包]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx

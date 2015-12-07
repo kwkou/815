@@ -31,7 +31,7 @@
 
 ### 使用 Node 包管理器 (NPM) 可获取该程序包
 
-1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\\node\\sbqueues\\WebRole1** 文件夹。
+1.  使用 **Windows PowerShell for Node.js** 命令窗口导航到你在其中创建了示例应用程序的 **c:\node\sbqueues\WebRole1** 文件夹。
 
 2.  在命令窗口中键入 **npm install azure**，这应该产生类似如下的输出：
 
@@ -49,7 +49,7 @@
 		└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 包，其中包含访问服务总线队列所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，找到 **azure** 包，其中包含访问服务总线队列所需的库。
 
 ### 导入模块
 
@@ -61,11 +61,11 @@ var azure = require('azure');
 
 ### 设置 Azure Service Bus 连接
 
-Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVICEBUS\_ACCESS\_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
+Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBUS_ACCESS_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
-有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅 [使用存储构建 Node.js Web 应用程序]
+有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅 [使用存储构建 Node.js Web 应用程序][]。
 
 ## 创建队列
 

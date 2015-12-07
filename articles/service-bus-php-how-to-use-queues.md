@@ -36,7 +36,7 @@
 
 若要使用 Azure 服务总线队列 API，请执行以下操作：
 
-1. 使用 [require\_once][require_once] 语句引用 autoloader 文件。
+1. 使用 [require_once][require_once] 语句引用 autoloader 文件。
 2. 引用可使用的所有类。
 
 下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。

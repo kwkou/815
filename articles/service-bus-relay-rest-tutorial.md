@@ -566,7 +566,7 @@ namespace Microsoft.ServiceBus.Samples
 
 生成解决方案之后，请执行以下代码来运行应用程序：
 
-1. 从命令提示符运行服务 (ImageListener\\bin\\Debug\\ImageListener.exe)。
+1. 从命令提示符运行服务 (ImageListener\bin\Debug\ImageListener.exe)。
 
 2. 将命令提示符中的地址复制并粘贴到浏览器中以查看图像。
 
@@ -574,7 +574,7 @@ namespace Microsoft.ServiceBus.Samples
 
 在生成使用服务总线中继服务的应用程序后，请参阅以下文章了解有关中继消息传送的详细信息。
 
-- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions/#relays)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 
 - [如何使用 Service Bus 中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
 

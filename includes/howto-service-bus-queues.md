@@ -47,12 +47,16 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 ###从门户中获取管理凭据
 
 1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
-![](./media/howto-service-bus-queues/sb-queues-13.png)
+
+	![](./media/howto-service-bus-queues/sb-queues-13.png)
 
 2.  从显示的列表中选择刚刚创建的命名空间：
-![](./media/howto-service-bus-queues/sb-queues-09.png)
 
-3.  单击“连接信息”。![](./media/howto-service-bus-queues/sb-queues-06.png)
+	![](./media/howto-service-bus-queues/sb-queues-09.png)
+
+3.  单击“连接信息”。
+
+	![](./media/howto-service-bus-queues/sb-queues-06.png)
 
 4.  在“访问连接信息”窗格中，找到包含 SAS 密钥和密钥名称的连接字符串。
 
@@ -60,6 +64,6 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
     
 5.  记下该密钥或将其复制到剪贴板。
 
-  [Azure Management Portal]: http://manage.windowsazure.cn
+  [Azure 管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=82-->
