@@ -38,7 +38,7 @@
 
 2. 设置你要用于本教程的 Azure 帐户。运行以下命令，并在出现提示时输入订阅的凭据：
 
-	    Add-AzureAccount
+	    Add-AzureAccount -Environment AzureChinaCloud
 
 3. 在以下命令中的 {password} 替换为要使用的密码，然后运行以下命令创建应用程序：
 

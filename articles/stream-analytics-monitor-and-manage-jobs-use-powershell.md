@@ -25,7 +25,7 @@
 
 
  		# Log in to your Azure account
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 
 		# Select the Azure subscription you want to use to create the resource group
 		Select-AzureSubscription -SubscriptionName <subscription name>

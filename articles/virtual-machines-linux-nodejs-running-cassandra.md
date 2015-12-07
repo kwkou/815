@@ -371,7 +371,7 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 		
 		#select an Azure subscription already imported into Powershell session
 		Select-AzureSubscription -SubscriptionName $subscriptionName -Current
-		Set-AzureSubscription -SubscriptionName $subscriptionName -CurrentStorageAccountName $storageAccount
+		Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscriptionName -CurrentStorageAccountName $storageAccount
 		
 		#create an empty cloud service
 		New-AzureService -ServiceName $serviceName -Label "hkcass$region" -Location $azureRegion
