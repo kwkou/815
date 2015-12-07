@@ -298,7 +298,7 @@
 		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
 		}
 
-请注意，在此示例中，注册包含两个标记。有关详细信息，请参阅[向应用程序添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)
+请注意，在此示例中，注册包含两个标记。有关详细信息，请参阅[向应用程序添加推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push)。
 
 >[AZURE.NOTE]当你需要发送通知给特定的已注册用户时，必须在注册之前要求身份验证，然后验证是否已授权该用户注册特定标记。例如，必须检查以确保用户注册的标记不是其他人的用户 ID。有关详细信息，请参阅[向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users)。
 
