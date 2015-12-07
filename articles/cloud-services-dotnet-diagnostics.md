@@ -165,7 +165,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 3.	将 WadConfig.xsd 与配置文件相关联。确保 WadExample.xml 编辑器窗口是活动的窗口。按 **F4** 打开“属性”窗口。在“属性”窗口中单击“架构”属性。在“架构”属性中单击“...”。单击“添加...”按钮并导航到 XSD 文件的保存位置，然后选择文件 WadConfig.xsd。单击“确定”。
 4.	将 WadExample.xml 配置文件的内容替换为以下 XML 并保存该文件。此配置文件定义两个要收集的性能计数器：一个对应于 CPU 使用率，另一个对应于内存使用率。配置将定义对应于 SampleEventSourceWriter 类中方法的四个事件。
 
-	```
+	<pre>
 		<?xml version="1.0" encoding="utf-8"?>
 		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   			<WadCfg>
@@ -186,7 +186,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
     			</DiagnosticMonitorConfiguration>
   			</WadCfg>
 		</PublicConfig>
-	```
+	</pre>
 
 ### 步骤 5：在辅助角色上安装 Diagnostics
 用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureServiceDiagnosticsExtension、Get-AzureServiceDiagnosticsExtension 和 Remove-AzureServiceDiagnosticsExtension。
@@ -314,7 +314,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
 3.	将 WadConfig.xsd 与配置文件相关联。确保 WadExample.xml 编辑器窗口是活动的窗口。按 **F4** 打开“属性”窗口。在“属性”窗口中单击“架构”属性。在“架构”属性中单击“...”。单击“添加...”按钮并导航到 XSD 文件的保存位置，然后选择文件 WadConfig.xsd。单击“确定”。
 4.	将 WadExample.xml 配置文件的内容替换为以下 XML 并保存该文件。此配置文件定义两个要收集的性能计数器：一个对应于 CPU 使用率，另一个对应于内存使用率。配置将定义对应于 SampleEventSourceWriter 类中方法的四个事件。
 
-	```
+	<pre>
 		<?xml version="1.0" encoding="utf-8"?>
 		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   			<WadCfg>
@@ -335,7 +335,7 @@ NET EventSource |使用 .NET 的代码生成的事件 <a href="http://msdn.micro
     			</DiagnosticMonitorConfiguration>
   			</WadCfg>
 		</PublicConfig>
-	```
+	</pre>
 
 ### 步骤 5：将 Diagnostics 远程安装到 Azure 虚拟机上
 用于在 VM 上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureVMDiagnosticsExtension、Get-AzureVMDiagnosticsExtension 和 Remove-AzureVMDiagnosticsExtension。
