@@ -3,4 +3,4 @@
 - [(Windows Store JavaScript | Javascript)](/documentation/articles/mobile-services-windows-store-javascript-single-sign-on)
 - [(Windows Phone 8 | Javascript)](/documentation/articles/mobile-services-windows-phone-single-sign-on)
 
-<!---HONumber=74-->
+<!---HONumber=82-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 移动服务开发 PhoneGap/cordova 应用入门"
+	pageTitle="适用于 PhoneGap/cordova 应用的 Azure 移动服务入门 | Windows Azure"
 	description="请按照本教程中的说明操作，开始使用用于 PhoneGap 开发的 Azure 移动服务（面向 iOS、, Android 和 Windows Phone）。"
 	services="mobile-services"
 	documentationCenter=""
@@ -9,12 +9,15 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/21/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="11/27/2015"/>
 
 #  移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
+
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
 
 本教程说明如何使用 Azure 移动服务向应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单_待办事项列表_应用程序。
 
@@ -32,9 +35,10 @@
 
 + PhoneGap 支持针对多个平台进行开发。除了 PhoneGap 工具本身以外，还必须为你所要针对的每个平台安装工具：
 
-- Windows Phone：安装 [Visual Studio 2012 Express for Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
-- iOS：安装 [Xcode]（需要 v4.4+）
-- Android：[安装 Android 开发人员工具][Android SDK]<br/>（适用于 Android 的移动服务 SDK 支持用于 Android 2.2 或更高版本的应用程序。运行快速入门应用程序需要安装 Android 4.2 或更高版本。)
+	- Windows Phone：安装 [Visual Studio 2012 Express for Windows Phone](https://go.microsoft.com/fwLink/p/?LinkID=268374)
+	- iOS：安装 [Xcode]（需要 v4.4+）
+	- Android：[安装 Android 开发人员工具][Android SDK]
+	<br/>（适用于 Android 的移动服务 SDK 支持用于 Android 2.2 或更高版本的应用程序。运行快速入门应用程序需要安装 Android 4.2 或更高版本。)
 
 ##  创建新的移动服务
 
@@ -72,7 +76,7 @@
 
 	+ **Windows Phone 8**
 
-	1. Windows Phone 8：在 Visual Studio 2012 Express for Windows Phone 中，打开 **platforms\\wp8** 文件夹中的 .sln 文件。
+	1. Windows Phone 8：在 Visual Studio 2012 Express for Windows Phone 中，打开 **platforms\wp8** 文件夹中的 .sln 文件。
 	
 	2. 按 **F5** 键以重新构建项目并启动此应用。
 	
@@ -147,14 +151,18 @@
 ##  后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [向应用程序添加身份验证]
-  <br/>了解如何使用标识者对应用程序的用户进行身份验证。
-  
-* [向应用程序添加推送通知](https://msdn.microsoft.com/magazine/dn879353.aspx)
-  <br/>了解如何向应用程序注册和发送推送通知。
+* **[向应用程序添加身份验证]**
+了解如何使用标识提供者对应用程序的用户进行身份验证。  
+
+* **[向应用程序添加推送通知](https://msdn.microsoft.com/magazine/dn879353.aspx)**
+了解如何向应用程序注册和发送推送通知。
+
+* **[移动服务 HTML/JavaScript 操作方法概念性参考](/documentation/articles/mobile-services-html-how-to-use-client-library)**
+了解如何使用 JavaScript 客户端库来访问数据、调用自定义 API 和执行身份验证。
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Images. -->
-
 [0]: ./media/mobile-services-javascript-backend-phonegap-get-started/portal-screenshot1.png
 [1]: ./media/mobile-services-javascript-backend-phonegap-get-started/portal-screenshot2.png
 [2]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-wp8.png
@@ -162,11 +170,10 @@
 [4]: ./media/mobile-services-javascript-backend-phonegap-get-started/mobile-portal-quickstart-android.png
 
 <!-- URLs. -->
-[Add Mobile Services to an existing app]: /documentation/articles/mobile-services-html-get-started-data
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 [Management Portal]: https://manage.windowsazure.cn/
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio 2012 Express for Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
 
-<!---HONumber=74-->
+<!---HONumber=82-->

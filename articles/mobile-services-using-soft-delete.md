@@ -9,18 +9,18 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/18/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="09/28/2015" 
+	wacn.date="11/27/2015"/>
 
 #  使用移动服务中的软删除
 
 ## 概述
 
-使用 JavaScript 或.NET 后端创建的表可根据需要启用软删除。使用软删除时，将在数据库中添加一个名为 *\_\_deleted* 的 [SQL 位类型]的新列。启用软删除后，删除操作不会以物理方式删除来自数据库的行，而是将已删除的列的值设置为 TRUE。
+使用 JavaScript 或.NET 后端创建的表可根据需要启用软删除。使用软删除时，将在数据库中添加一个名为 *__deleted* 的 [SQL 位类型]的新列。启用软删除后，删除操作不会以物理方式删除来自数据库的行，而是将已删除的列的值设置为 TRUE。
 
-启用软删除后再查询表的记录时，默认情况下，已删除的行不会返回在查询中。若要请求这些行，必须在 [REST 查询操作](http://msdn.microsoft.com/zh-cn/library/azure/jj677199.aspx)中传递查询参数 *\_\_includeDeleted=true*。在.NET 客户端 SDK 中，你还可以使用帮助器方法 `IMobileServiceTable.IncludeDeleted()`。
+启用软删除后再查询表的记录时，默认情况下，已删除的行不会返回在查询中。若要请求这些行，必须在 [REST 查询操作](http://msdn.microsoft.com/zh-cn/library/azure/jj677199.aspx)中传递查询参数 *__includeDeleted=true*。在.NET 客户端 SDK 中，你还可以使用帮助器方法 `IMobileServiceTable.IncludeDeleted()`。
 
-软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。可以从 [Microsoft Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)获取最新的 NuGet 包。
+软删除支持首次与 1.0.402 版 Microsoft Azure 移动服务.NET 后端发布的.NET 后端。可以从 [Windows Azure 移动服务.NET 后端](http://go.microsoft.com/fwlink/?LinkId=513165)获取最新的 NuGet 包。
 
 
 使用软删除的一些潜在优势：
@@ -62,11 +62,11 @@
 若要在 JavaScript 后端中的现有表上启用软删除：
 
 1. 在[管理门户]中，单击你的移动服务。然后单击数据选项卡。
-2. 在数据页面上，单击以选择所需的表。然后在命令栏中单击“启用软删除”按钮。如果表已启用软删除，则此按钮将不会出现，但当你单击表的“浏览”或“列”选项卡时，可以看到 *\_\_deleted* 列。
+2. 在数据页面上，单击以选择所需的表。然后在命令栏中单击“启用软删除”按钮。如果表已启用软删除，则此按钮将不会出现，但当你单击表的“浏览”或“列”选项卡时，可以看到 *__deleted* 列。
 
     ![][0]
 
-    若要对表禁用软删除，请单击“列”选项卡，然后单击 *\_\_deleted* 列和“删除”按钮。
+    若要对表禁用软删除，请单击“列”选项卡，然后单击 *__deleted* 列和“删除”按钮。
 
     ![][1]
 
@@ -99,7 +99,7 @@
         }
     }
 
-若要了解有关使用 .NET 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)
+若要了解有关使用 .NET 后端移动服务计划作业的详细信息，请参阅：[使用 JavaScript 后端移动服务计划定期作业](/documentation/articles/mobile-services-dotnet-backend-schedule-recurring-tasks)。
 
 
 
@@ -122,7 +122,7 @@
         }
     });
 
-若要通过 HTTP 请求检索已删除的记录，请添加查询参数"\_\_includedeleted=true"：
+若要通过 HTTP 请求检索已删除的记录，请添加查询参数"__includedeleted=true"：
 
     http://youservice.azure-mobile.net/tables/todoitem?__includedeleted=true
 
@@ -158,4 +158,4 @@
 [移动服务的脱机数据同步]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data
 [管理门户]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=82-->

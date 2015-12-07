@@ -1,5 +1,5 @@
 <properties
-	pageTitle="如何使用服务总线队列 (Java) | windows Azure"
+	pageTitle="如何通过 Java 使用服务总线队列 | Windows Azure"
 	description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。"
 	services="service-bus"
 	documentationCenter="java"
@@ -9,36 +9,40 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="06/19/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/27/2015"/>
 
 # 如何使用 Service Bus 队列
 
-本指南介绍如何使用服务总线队列。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][]。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
+[AZURE.INCLUDE [service-bus-selector-queues](../includes/service-bus-selector-queues.md)]
+
+本文介绍了如何使用服务总线队列。这些示例用 Java 编写并使用 [Azure SDK for Java][]。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
 [AZURE.INCLUDE [service-bus-java-how-to-create-queue](../includes/service-bus-java-how-to-create-queue.md)]
 
 ## 配置应用程序以使用 Service Bus
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
+
+在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果你使用 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Windows Azure Libraries for Java** 添加到你的项目：
 
 ![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
 
+将以下 `import` 语句添加到 Java 文件顶部：
 
-将以下导入语句添加到 Java 文件顶部：
+```
+// Include the following imports to use Service Bus APIs
+import com.microsoft.windowsazure.services.servicebus.*;
+import com.microsoft.windowsazure.services.servicebus.models.*;
+import com.microsoft.windowsazure.core.*;
+import javax.xml.datatype.*;
+```
 
-	// Include the following imports to use service bus APIs
-	import com.microsoft.windowsazure.services.serviceBus.*;
-	import com.microsoft.windowsazure.services.serviceBus.models.*; 
-	import com.microsoft.windowsazure.core.*; 
-	import javax.xml.datatype.*;
-	
-## 如何创建队列
+## 创建队列
 
 服务总线队列的管理操作可通过 **ServiceBusContract** 类执行。**ServiceBusContract** 对象是使用封装了 SAS 令牌及用于管理它的权限的适当配置构造的，而 **ServiceBusContract** 类是与 Azure 进行通信的单一点。
 
 **ServiceBusService** 类提供了创建、枚举和删除队列的方法。以下示例演示了如何通过名为“HowToSample”的命名空间，使用 **ServiceBusService** 对象创建名为“TestQueue”的队列：
 
-    Configuration config = 
+		Configuration config =
 			ServiceBusConfiguration.configureWithSASAuthentication(
 					"HowToSample",
 					"RootManageSharedAccessKey",
@@ -49,7 +53,7 @@
     ServiceBusContract service = ServiceBusService.create(config);
     QueueInfo queueInfo = new QueueInfo("TestQueue");
     try
-    {     
+    {
 		CreateQueueResult result = service.createQueue(queueInfo);
     }
 	catch (ServiceException e)
@@ -59,7 +63,7 @@
         System.exit(-1);
     }
 
-可对 QueueInfo 执行某些方法，以调整队列的属性（例如，将默认的“生存时间”值设置为应用于发送到队列的消息）。以下示例演示了如何创建最大大小为 5GB 且名为“TestQueue”的队列：
+可对 **QueueInfo** 执行某些方法，以调整队列的属性（例如，将默认的生存时间 (TTL) 值设置为应用于发送到队列的消息）。以下示例演示了如何创建最大大小为 5GB 且名为 `TestQueue` 的队列：
 
     long maxSizeInMegabytes = 5120;
     QueueInfo queueInfo = new QueueInfo("TestQueue");
@@ -68,9 +72,9 @@
 
 注意：你可以对 **ServiceBusContract** 对象使用 **listQueues** 方法来检查具有指定名称的队列在某个服务命名空间中是否已存在。
 
-## 如何向队列发送消息
+## 向队列发送消息
 
-若要将消息发送到服务总线队列，你的应用程序将获得 **ServiceBusContract** 对象。下面的代码演示了如何为我们之前在“HowToSample”服务命名空间中创建的“TestQueue”队列发送消息：
+若要将消息发送到服务总线队列，你的应用程序将获得 **ServiceBusContract** 对象。以下代码演示了如何将消息发送到先前在 `HowToSample` 命名空间中创建的 `TestQueue` 队列。
 
     try
     {
@@ -84,9 +88,9 @@
         System.exit(-1);
     }
 
-发送至服务总线队列（和接收自服务总线队列）的消息是 **BrokeredMessage** 类实例。**BrokeredMessage** 对象包含一组标准方法（如 **getLabel**、**getTimeToLive**、**setLabel** 和 **setTimeToLive**）、一个用来保存自定义应用程序特定属性的词典以及一组任意的应用程序数据。应用程序可通过将任何可序列化对象传入到 **BrokeredMessage** 的构造函数中来设置消息的正文，然后将使用适当的序列化程序来序列化对象。或者，也可以提供 **java.IO.InputStream**。
+发往服务总线队列的消息以及从服务总线队列接收的消息是 [BrokeredMessage][] 类的实例，[BrokeredMessage][] 对象具有一组标准属性（如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的字典和大量任意应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage][] 的构造函数中来设置消息的正文，然后将使用适当的序列化程序来序列化对象。或者，你可以提供 **java.IO.InputStream** 对象。
 
-以下示例演示了如何将五条测试消息发送到我们在前面的代码段中获得的“TestQueue”**MessageSender**：
+以下示例演示了如何将五条测试消息发送到在前面的代码段中获取的 `TestQueue` **MessageSender**：
 
     for (int i=0; i<5; i++)
     {
@@ -100,7 +104,7 @@
 
 Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
 
-## 如何从队列接收消息
+## 从队列接收消息
 
 从队列接收消息的主要方法是使用 **ServiceBusContract** 对象。收到的消息可在两种不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。
 
@@ -108,7 +112,7 @@ Service Bus 队列支持最大为 256 KB 的消息（标头最大为 64 KB，其
 
 在 **PeekLock** 模式下，接收变成了一个两阶段操作，从而有可能支持无法允许遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Delete** 完成接收过程的第二个阶段。当服务总线发现 **Delete** 调用时，它会将消息标记为“已使用”并将其从队列中删除。
 
-以下示例演示了如何使用 **PeekLock** 模式（非默认模式）接收和处理消息。下面的示例将执行无限循环并在消息达到我们的“TestQueue”后进行处理：
+以下示例演示如何使用 **PeekLock** 模式（非默认模式）接收和处理消息。下面的示例将执行无限循环并在消息达到我们的“TestQueue”后进行处理：
 
     	try
 	{
@@ -171,20 +175,15 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 ## 后续步骤
 
-现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
+现在，你已了解服务总线队列的基础知识，请参阅 [队列、主题和订阅][] 了解详细信息。
 
-  [Azure SDK for Java]: /develop/java/
-  [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
-  [What are Service Bus Queues?]: #what-are-service-bus-queues
-  [Create a Service Namespace]: #create-a-service-namespace
-  [Obtain the Default Management Credentials for the Namespace]: #obtain-default-credentials
-  [Configure Your Application to Use Service Bus]: #bkmk_ConfigApp
-  [How to: Create a Security Token Provider]: #bkmk_HowToCreateQueue
-  [How to: Send Messages to a Queue]: #bkmk_HowToSendMsgs
-  [How to: Receive Messages from a Queue]: #bkmk_HowToReceiveMsgs
-  [How to: Handle Application Crashes and Unreadable Messages]: #bkmk_HowToHandleAppCrashes
-  [Next Steps]: #bkmk_NextSteps
-  [Azure Management Portal]: http://manage.windowsazure.cn/
-  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=74-->
+
+[Azure SDK for Java]: /develop/java/
+[Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
+[Azure 管理门户]: http://manage.windowsazure.cn/
+[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions
+[BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
+
+<!---HONumber=82-->

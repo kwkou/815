@@ -1,5 +1,5 @@
 <properties
-	pageTitle="用于 Xamarin iOS 应用程序的移动服务入门"
+	pageTitle="用于 Xamarin iOS 应用的移动服务入门 | Windows Azure"
 	description="按照本教程进行操作，开始使用 Azure 移动服务进行 Xamarin iOS 开发。"
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -9,14 +9,17 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/09/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/06/2015"
+	wacn.date="11/27/2015"/>
 
 #  <a name="getting-started"></a>移动服务入门
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../includes/mobile-services-selector-get-started.md)]
+&nbsp;
 
-本教程说明如何使用 Azure 移动服务向 Xamarin.iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单<em>待办事项列表</em>应用程序。
+[AZURE.INCLUDE [mobile-services-hero-slug](../includes/mobile-services-hero-slug.md)]
+
+本教程说明如何使用 Azure 移动服务向 Xamarin.iOS 应用程序添加基于云的后端服务。在本教程中，你将要创建一个新的移动服务，以及一个在新移动服务中存储应用程序数据的简单*待办事项列表*应用程序。
 
 
 以下是完成的应用程序的屏幕快照：
@@ -87,17 +90,20 @@
 ##  后续步骤
 完成快速入门后，请了解如何在移动服务中执行其他重要任务：
 
-* [数据处理入门]
-  <br/>了解如何将一个新表添加到移动服务中，然后对该表进行读取和写入操作。
-
 * [脱机数据同步入门]
-  <br/>了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
+了解如何快速开始使用脱机数据同步来使应用程序保持较高的响应能力和稳健性。
 
-* [身份验证入门]
-  <br/>了解如何使用标识提供程序对应用程序的用户进行身份验证。
+* [身份验证入门] 
+了解如何使用标识提供程序对应用程序的用户进行身份验证。
 
-* [推送通知入门]
-  <br/>了解如何向应用程序发送一条很基本的推送通知。
+* [推送通知入门] 
+了解如何向应用程序发送一条很基本的推送通知。
+
+* [如何使用 Azure 移动服务的 Xamarin 组件客户端](/documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library)
+了解如何查询移动服务、处理数据和访问自定义 API。
+  
+
+[AZURE.INCLUDE [app-service-disqus-feedback-slug](../includes/app-service-disqus-feedback-slug.md)]
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -106,7 +112,6 @@
 [Next Steps]: #next-steps
 
 <!-- Images. -->
-
 [0]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-quickstart-completed-ios.png
 [6]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-portal-quickstart-xamarin-ios.png
 [7]: ./media/partner-xamarin-mobile-services-ios-get-started/mobile-quickstart-steps-xamarin-ios.png
@@ -118,7 +123,6 @@
 
 
 <!-- URLs. -->
-[数据处理入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-data
 [脱机数据同步入门]: /documentation/articles/mobile-services-xamarin-ios-get-started-offline-data
 [身份验证入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-users
 [推送通知入门]: /documentation/articles/partner-xamarin-mobile-services-ios-get-started-push
@@ -128,4 +132,4 @@
 
 [Management Portal]: https://manage.windowsazure.cn/
 
-<!---HONumber=74-->
+<!---HONumber=82-->

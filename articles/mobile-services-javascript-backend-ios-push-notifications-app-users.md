@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/01/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>
 
 #  向经过身份验证的用户发送推送通知
 
@@ -29,20 +29,21 @@
 将 `insert` 函数替换为以下代码，然后单击“保存”。此插入脚本将使用用户 ID 标记从已登录用户向所有 iOS 应用程序注册发送推送通知：
 
 ```
-// Get the ID of the logged-in user.
-var userId = user.userId; 
 
-        function insert(item, user, request) {
-            request.execute();
-            setTimeout(function() {
-        push.apns.send(userId, {
-                    alert: "Alert: " + item.text,
-                    payload: {
-                        "Hey, a new item arrived: '" + item.text + "'"
-                    }
-                });
-            }, 2500);
-        }
+	// Get the ID of the logged-in user.
+	var userId = user.userId; 
+	
+	        function insert(item, user, request) {
+	            request.execute();
+	            setTimeout(function() {
+	        push.apns.send(userId, {
+	                    alert: "Alert: " + item.text,
+	                    payload: {
+	                        "Hey, a new item arrived: '" + item.text + "'"
+	                    }
+	                });
+	            }, 2500);
+	        }
 ```
 
 ## <a name="update-app"></a>更新应用程序以要求在注册之前登录
@@ -67,7 +68,7 @@ var userId = user.userId;
 [身份验证入门]: /documentation/articles/mobile-services-ios-get-started-users
 [推送通知入门]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push
 
-[Azure Management Portal]: https://manage.windowsazure.cn/
+[[Azure 门户]]: https://manage.windowsazure.cn/
 [Mobile Services .NET How-to Conceptual Reference]: /documentation/articles/mobile-services-ios-how-to-use-client-library
 
-<!---HONumber=74-->
+<!---HONumber=82-->

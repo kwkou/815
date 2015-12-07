@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="06/15/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="09/25/2015"
+	wacn.date="11/27/2015"/>
 
 #  在移动服务中使用脱机数据同步
 
@@ -25,7 +25,7 @@
 * 允许最终用户创建和修改数据，甚至在没有网络访问权限，并支持方案具有很少或没有连接时
 * 跨多个设备同步数据和同一个记录修改由两个设备时检测冲突
 
->[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/pricing/1rmb-trial target="\_blank">Azure 试用</a>。
+>[AZURE.NOTE]若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以注册 Azure 试用版并取得多达 10 个免费的移动服务，即使在试用期结束之后仍可继续使用这些服务。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial)</a>。
 >
 > 如果这是你第一次体验移动服务，你应首先完成[移动服务入门]。
 
@@ -155,9 +155,8 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 
 
 <!-- URLs. -->
-[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-xamarin-android-handling-conflicts-offline-data
-[处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-xamarin-android-handling-conflicts-offline-data
-[Get started with data]: /documentation/articles/partner-xamarin-mobile-services-android-get-started-data
+[使用移动服务脱机支持处理冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
+[处理脱机支持的移动服务与冲突]: /documentation/articles/mobile-services-windows-store-dotnet-handling-conflicts-offline-data
 [移动服务入门]: /documentation/articles/partner-xamarin-mobile-services-android-get-started
 [如何使用适用于 Azure 移动服务的 Xamarin 组件客户端]: /documentation/articles/partner-xamarin-mobile-services-how-to-use-client-library
 [软删除]: /documentation/articles/mobile-services-using-soft-delete
@@ -167,4 +166,4 @@ Azure 移动服务脱机同步允许最终用户，当无法访问网络时，�
 [Xamarin 扩展]: http://xamarin.com/visual-studio
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
 
-<!---HONumber=74-->
+<!---HONumber=82-->

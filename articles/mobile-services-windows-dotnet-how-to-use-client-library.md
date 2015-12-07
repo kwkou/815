@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="08/18/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 #  如何使用适用于 Azure 移动服务的 .NET 客户端
 
@@ -18,7 +18,7 @@
 
 ## 概述
 
-本指南说明如何在 Windows 应用商店应用程序和 Windows Phone 应用程序中使用适用于 Azure 移动服务的 .NET 客户端执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started)教程或[将移动服务添加到现有应用程序](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data)教程。
+本指南说明如何在 Windows 应用商店应用程序和 Windows Phone 应用程序中使用适用于 Azure 移动服务的 .NET 客户端执行常见任务。所述的任务包括查询数据、插入、更新和删除数据、对用户进行身份验证和处理错误。如果你是第一次使用移动服务，最好先完成[移动服务快速入门](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started)教程。
 
 [AZURE.INCLUDE [mobile-services-concepts](../includes/mobile-services-concepts.md)]
 
@@ -510,7 +510,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 
 ####单一登录将 Microsoft 帐户与 Live SDK 配合使用
 
-若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](mobile-services-how-to-register-microsoft-authentication.md)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 版本的应用，请先注册 Windows 应用商店版本。
+若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到你的移动服务。完成[注册应用以使用 Microsoft 帐户登录](/documentation/articles/mobile-services-how-to-register-microsoft-authentication)中的步骤，以创建 Microsoft 帐户注册并将注册连接到你的移动服务。如果你同时拥有 Windows 应用商店和 Windows Phone 版本的应用，请先注册 Windows 应用商店版本。
 
 下面的代码使用 Live SDK 进行身份验证，并使用返回的令牌来登录到你的移动服务。
 
@@ -637,7 +637,7 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 	// Lookup untyped data using OData
 	JToken untypedItems = await untypedTodoTable.ReadAsync("$filter=complete eq 0&$orderby=text");
 
-此时，你将获取一些可以像属性包一样使用的 JSON 值。有关 JToken 和 Json.NET 的详细信息，请参阅 [Json.NET](http://json.codeplex.com/)
+此时，你将获取一些可以像属性包一样使用的 JSON 值。有关 JToken 和 Json.NET 的详细信息，请参阅 [Json.NET](http://json.codeplex.com/)。
 
 ## <a name="unit-testing"></a>如何：设计单元测试
 
@@ -738,7 +738,6 @@ Windows 运行时中的某些控件支持名为 [ISupportIncrementalLoading](htt
 [Take]: http://msdn.microsoft.com/zh-cn/library/azure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Azure 移动服务客户端 SDK 中的自定义 API]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
-[Call a custom API from the client]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api
 [InvokeApiAsync]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=74-->
+<!---HONumber=82-->

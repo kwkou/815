@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="09/02/2015" 
-	wacn.date="11/02/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="11/27/2015"/>
 
 # 从 Android 设备将图像上载到 Azure 存储空间
 
@@ -41,9 +41,10 @@
 
 那么，SAS 是什么？
 
-在客户端应用内部存储将数据上载到 Azure 存储服务程序所需的凭据是不安全的。你应将这些凭据存储在移动服务中，并使用它们来生成用于授权上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用安全返回 SAS（一个具有 5 分钟到期期限的凭据）。然后，应用程序将使用此临时凭据来上载图像。有关详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
+在客户端应用内部存储将数据上载到 Azure 存储服务程序所需的凭据是不安全的。你应将这些凭据存储在移动服务中，并使用它们来生成用于授权上载新图像的共享访问签名 (SAS)。移动服务会向客户端应用安全返回 SAS（一个具有 5 分钟到期期限的凭据）。然后，应用程序将使用此临时凭据来上载图像。有关详细信息，请参阅[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)
 
->[AZURE.NOTE] [Here](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) 是此应用的已完成客户端源代码部分。
+## 代码示例
+[此处](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages)提供了此应用的已完成客户端源代码部分。若要运行此代码，你必须先完成本教程的移动服务后端部分。
 
 ## 在管理门户中更新已注册的插入脚本
 
@@ -410,11 +411,11 @@
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts
 [移动服务入门]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure Management Portal]: https://manage.windowsazure.cn/
 [How To Create a Storage Account]: /documentation/articles/storage-create-storage-account
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
 [移动服务 .NET 操作方法概念性参考]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=76-->
+<!---HONumber=82-->

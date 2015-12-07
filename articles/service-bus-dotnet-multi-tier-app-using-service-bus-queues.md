@@ -1,6 +1,6 @@
 <properties
 	pageTitle=".NET 多层应用程序 | Windows Azure"
-	description="本教程可帮助你在 Azure 中开发使用 Service Bus 队列在各层之间进行通信的多层应用程序。相关示例使用 .NET。"
+	description="本 .NET 教程可帮助你在 Azure 中开发使用服务总线队列在各层之间进行通信的多层应用。"
 	services="service-bus"
 	documentationCenter=".net"
 	authors="sethmanheim"
@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="07/02/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/27/2015"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
 ## 介绍
 
-使用 Visual Studio 2013 和免费的 Azure SDK for .NET，可以轻松针对 Windows Azure 进行开发。如果你还没有 Visual Studio 2013，则此 SDK 将自动安装 Visual Studio Express，以便你能完全免费地开始针对 Azure 进行开发。本文假设你之前未使用过 Azure。完成本教程之后，你将拥有使用多项 Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。
+使用 Visual Studio 和免费的 Azure SDK for .NET，可以轻松针对 Windows Azure 进行开发。如果你还没有 Visual Studio，则此 SDK 将自动安装 Visual Studio Express，以便你能完全免费地开始针对 Azure 进行开发。本文假设你之前未使用过 Azure。完成本教程之后，你将拥有使用多项 Azure 资源的应用程序，该应用程序在本地环境中运行并演示多层应用程序的工作方式。
 
 你将学习以下内容：
 
@@ -37,9 +37,9 @@
 
 ## 方案概述：角色间通信
 
-若要提交处理命令，以 Web 角色运行的前端 UI 组件需要与以辅助角色运行的中间层逻辑进行交互。此示例使用服务总线中转消息传送在各层之间进行通信。
+若要提交处理命令，以 Web 角色运行的前端 UI 组件必须与以辅助角色运行的中间层逻辑进行交互。此示例使用服务总线中转消息传送在各层之间进行通信。
 
-在 Web 层和中间层之间使用中转消息传送将分离这两个组件。与直接消息传送（即 TCP 或 HTTP）相反，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到服务总线，服务总线将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。
+在 Web 层和中间层之间使用中转消息传送将分离这两个组件。与直接消息传送（即 TCP 或 HTTP）不同，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到服务总线，服务总线将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。
 
 服务总线提供了两个实体以支持中转消息传送、队列和主题。通过队列，发送到队列的每个消息均由一个接收方使用。主题支持发布/订阅模式，在该模式中，会为注册到主题中的订阅提供每个已发布消息。每个订阅都会以逻辑方式保留其自己的消息队列。此外，还可以使用筛选规则配置订阅，这些规则可将传递给订阅队列的消息集限制为符合筛选条件的消息集。以下示例使用服务总线队列。
 
@@ -51,7 +51,7 @@
 
 -   **负载量。** 在许多应用程序中，系统负载随时间而变化，而每个工作单元所需的处理时间通常为常量。使用队列在消息创建者与使用者之间中继意味着，只需将使用方应用程序（辅助）预配为适应平均负载而非最大负载。队列深度将随传入负载的变化而加大和减小。这将直接根据为应用程序加载提供服务所需的基础结构的数目来节省成本。
 
--   **负载平衡。** 随着负载增加，可添加更多的工作进程以从队列中读取。每条消息仅由一个辅助进程处理。另外，可通过此基于拉取的负载平衡来以最合理的方式使用辅助计算机，即使这些辅助计算机具有不同的处理能力（因为它们将以其最大速率拉取消息）也是如此。此模式通常称为“使用者竞争模式”。
+-   **负载平衡。** 随着负载增加，可添加更多的工作进程以从队列中读取。每条消息仅由一个辅助进程处理。另外，可通过此基于拉取的负载平衡来以最合理的方式使用辅助计算机，即使这些辅助计算机具有不同的处理能力（因为它们将以其最大速率拉取消息）也是如此。此模式通常称为*使用者竞争*模式。
 
     ![][2]
 
@@ -81,10 +81,7 @@
 
 ## 设置服务总线命名空间
 
-下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将会生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
-
-> [AZURE.NOTE]你还可以使用 Visual Studio 服务器资源管理器管理命名空间和服务总线消息传送实体，但你只能在 Azure 门户中创建新的命名空间。
-
+下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将会生成 SAS 密钥。命名空间与 SAS 密钥的组合为服务总线提供了用于验证应用程序访问权限的凭据。
 
 ### 使用 Azure 门户设置命名空间
 
@@ -104,7 +101,7 @@
 
     > [AZURE.IMPORTANT]选取要部署应用程序的**相同区域**。这将为您提供最佳性能。
 
-6.  单击复选标记。系统现已创建您的服务命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
+6.  单击“确定”复选标记。系统现已创建您的服务命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
 	![][27]
 
@@ -124,7 +121,7 @@
 
 ## 创建 Web 角色
 
-在本节中，你将生成应用程序的前端。你首先将创建应用程序显示的各种页面。之后，你将添加代码，这些代码用于将项提交到服务总线队列并显示有关队列的状态信息。
+在本节中，你将生成应用程序的前端。首先，你将创建应用程序显示的各种页面。之后，你将添加代码，以便将项提交到服务总线队列并显示有关队列的状态信息。
 
 ### 创建项目
 
@@ -162,7 +159,7 @@
 
 ### 为你的 Web 角色编写代码
 
-在本部分中，你将创建应用程序显示的各种页面。
+在本节中，你将创建应用程序显示的各种页面。
 
 1.  在 Visual Studio 的 OnlineOrder.cs 文件中将现有命名空间定义替换为以下代码：
 
@@ -175,7 +172,7 @@
             }
         }
 
-2.  在“解决方案资源管理器”中，双击“Controllers\\HomeController.cs”。在文件顶部添加以下 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
+2.  在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。在文件顶部添加以下 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
 
         using FrontendWebRole.Models;
         using Microsoft.ServiceBus.Messaging;
@@ -244,7 +241,7 @@
 
 7.  单击**“添加”**。
 
-8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\\Shared\\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
+8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\Shared\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
 
 9.  将每一处 **My ASP.NET Application** 替换为 **LITWARE'S Products**。
 
@@ -252,7 +249,7 @@
 
 	![][28]
 
-11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\\Home\\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;h2>Submit&lt;/h2>** 后面添加以下行。**ViewBag.MessageCount** 目前为空。稍后你将填充它。
+11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\Home\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;h2>Submit&lt;/h2>** 后面添加以下行。**ViewBag.MessageCount** 目前为空。稍后你将填充它。
 
         <p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
 
@@ -262,13 +259,13 @@
 
 ### 编写用于将项提交到 Service Bus 队列的代码
 
-现在，你将添加用于将项提交到队列的代码。你首先将创建一个包含服务总线队列连接信息的类。然后，你将从 Global.aspx.cs 初始化你的连接。最后，你将更新你之前在 HomeController.cs 中创建的提交代码以便实际将项提交到服务总线队列。
+现在，你将添加用于将项提交到队列的代码。首先，你将创建一个包含服务总线队列连接信息的类。然后，你将从 Global.aspx.cs 初始化你的连接。最后，你将更新你之前在 HomeController.cs 中创建的提交代码以便实际将项提交到服务总线队列。
 
 1.  在“解决方案资源管理器”中，右键单击“FrontendWebRole”（右键单击项目而不是角色）。单击“添加”，然后单击“类”。
 
 2.  将类命名为 QueueConnector.cs。单击“添加”以创建类。
 
-3.  现在要添加可封装连接信息并初始化服务总线队列连接的代码。在 QueueConnector.cs 中添加以下代码，并输入 **Namespace**（你的服务命名空间）和 **yourKey**（前面通过 [Azure 门户][Azure portal]获取的 SAS 密钥）的值。
+3.  现在，将添加可封装连接信息并初始化服务总线队列连接的代码。在 QueueConnector.cs 中添加以下代码，并输入 **Namespace**（你的服务命名空间）和 **yourKey**（前面通过 [Azure 门户][Azure portal]获取的 SAS 密钥）的值。
 
         using System;
         using System.Collections.Generic;
@@ -328,15 +325,15 @@
             }
         }
 
-    请注意，稍后在本教程中，你将学习如何将“命名空间”名称和 SAS 密钥值存储在配置文件中。
+    稍后在本教程中，你将学习如何将**命名空间**名称和 SAS 密钥值存储在配置文件中。
 
-4.  现在，请确保你的 **Initialize** 方法会被调用。在“解决方案资源管理器”中，双击“Global.asax\\Global.asax.cs”。
+4.  现在，请确保你的 **Initialize** 方法会被调用。在“解决方案资源管理器”中，双击“Global.asax\Global.asax.cs”。
 
-5.  将以下行添加到 **Application\_Start** 方法的底部。
+5.  将以下行添加到 **Application_Start** 方法的底部。
 
         FrontendWebRole.QueueConnector.Initialize();
 
-6.  最后，更新之前创建的 Web 代码以便将项提交到队列。在“解决方案资源管理器”中，双击“Controllers\\HomeController.cs”。
+6.  最后，更新之前创建的 Web 代码以便将项提交到队列。在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。
 
 7.  更新 **Submit()** 方法（如下所示）获取队列的消息计数。
 
@@ -378,13 +375,13 @@
 
 ## 云配置管理器
 
-**Microsoft.WindowsAzure.Configuration.CloudConfigurationManager** 类中的 **GetSettings** 方法可让你从平台的配置存储中读取配置设置。例如，如果代码在 Web 或辅助角色中运行，则 **GetSettings** 方法将读取 ServiceConfiguration.cscfg 文件；如果代码在标准的控制台应用中运行，则 **GetSettings** 方法将读取 app.config 文件。
+[Microsoft.WindowsAzure.Configuration.CloudConfigurationManager][] 类中的 [GetSetting][] 方法可让你从平台的配置存储中读取配置设置。例如，如果代码在 Web 或辅助角色中运行，则 [GetSetting][] 方法将读取 ServiceConfiguration.cscfg 文件；如果代码在标准的控制台应用中运行，则 [GetSetting][] 方法将读取 app.config 文件。
 
-如果你将服务总线命名空间的连接字符串存储在配置文件中，则你可以使用 **GetSettings** 方法来读取可用于实例化 **NamespaceMananger** 对象的连接字符串。你可以使用 **NamespaceMananger** 实例以编程方式来配置服务总线命名空间。可以使用同一连接字符串来实例化可用于执行运行时操作（例如发送和接收消息）的客户端对象（例如 **QueueClient**、**TopicClient** 和 **EventHubClient** 对象）。
+如果你将服务总线命名空间的连接字符串存储在配置文件中，则可以使用 [GetSetting][] 方法来读取可用于实例化 [NamespaceMananger][] 对象的连接字符串。你可以使用 [NamespaceMananger][] 实例以编程方式来配置服务总线命名空间。可以使用同一连接字符串来实例化可用于执行运行时操作（例如发送和接收消息）的客户端对象（例如 [QueueClient][]、[TopicClient][] 和 [EventHubClient][] 对象）。
 
 ### 连接字符串
 
-若要实例化客户端（例如服务总线 **QueueClient**），可以将配置信息表示为连接字符串。在客户端，有一个通过使用该连接字符串实例化客户端类型的 `CreateFromConnectionString()` 方法。例如，考虑下面的配置部分
+若要实例化客户端（例如服务总线 [QueueClient][]），可以将配置信息表示为连接字符串。在客户端，有一个通过使用该连接字符串实例化客户端类型的 `CreateFromConnectionString()` 方法。例如，考虑下面的配置部分
 
 	<ConfigurationSettings>
     ...
@@ -409,7 +406,7 @@
 	// Initialize the connection to Service Bus queue.
 	Client = QueueClient.CreateFromConnectionString(connectionString, QueueName);
 
-以下部分中的代码使用 **CloudConfigurationManager** 类。
+以下部分中的代码使用 [CloudConfigurationManager][Microsoft.WindowsAzure.Configuration.CloudConfigurationManager] 类。
 
 ## 创建辅助角色
 
@@ -441,9 +438,9 @@
 
 9.  当你从队列中处理订单时，创建一个 **OnlineOrder** 类来表示这些订单。你可以重用已创建的类。在“解决方案资源管理器”中，右键单击“OrderProcessingRole”项目（右键单击项目而不是角色）。单击“添加”，然后单击“现有项”。
 
-10. 浏览到 **FrontendWebRole\\Models** 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
+10. 浏览到 **FrontendWebRole\Models** 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
 
-11. 在 WorkerRole.cs 中，将 **WorkerRole.cs** 中 **QueueName** 变量的值 `"ProcessingQueue"` 替换为 `"OrdersQueue"`，如以下代码所示：
+11. 在 **WorkerRole.cs** 中，将 **WorkerRole.cs** 中 **QueueName** 变量的值 `"ProcessingQueue"` 替换为 `"OrdersQueue"`，如以下代码所示。
 
 		// The name of your queue.
 		const string QueueName = "OrdersQueue";
@@ -488,7 +485,7 @@
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
 
-若要了解如何将前端部署到 Azure 网站，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](/develop/net/)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+若要了解如何将前端部署到 Azure 网站，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
@@ -499,6 +496,15 @@
   [3]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-3.png
 
 
+  [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
+  [Microsoft.WindowsAzure.Configuration.CloudConfigurationManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.aspx
+  [NamespaceMananger]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
+
+  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
+
+  [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
+
+  [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
   [Azure portal]: http://manage.windowsazure.cn
   [Azure 门户]: http://manage.windowsazure.cn
@@ -535,4 +541,4 @@
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [executionmodels]: /documentation/articles/fundamentals-application-models
 
-<!---HONumber=74-->
+<!---HONumber=82-->

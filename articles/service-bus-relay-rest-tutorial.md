@@ -1,6 +1,6 @@
-<properties 
-   pageTitle="服务总线 REST 教程 | Windows Azure"
-   description="生成一个简单的服务总线主机应用程序来公开基于 REST 的接口。"
+<properties
+   pageTitle="使用中继消息传送的服务总线 REST 教程 | Windows Azure"
+   description="生成一个简单的服务总线中继主机应用程序来公开基于 REST 的接口。"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="07/07/2015" 
-   wacn.date="10/22/2015" />
+   ms.date="10/14/2015"
+   wacn.date="11/27/2015" />
 
 # 服务总线 REST 教程
 
@@ -19,7 +19,7 @@
 
 ## 步骤 1：注册 Azure 帐户
 
-第一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
+第一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
 
 ### 创建服务命名空间并获取 SAS 密钥
 
@@ -66,7 +66,7 @@
 
 7. 将程序的命名空间从 Visual Studio 默认值重命名为 **Microsoft.ServiceBus.Samples**。
 
- 	```c
+ 	```
 	namespace Microsoft.ServiceBus.Samples
 	{
 		...
@@ -74,7 +74,7 @@
 
 8. 在完成命名空间声明后，紧接着定义一个名为 **IImageContract** 的新接口，然后将 **ServiceContractAttribute** 属性应用于该接口，其值为 `http://samples.microsoft.com/ServiceModel/Relay/`。该命名空间值不同于你在整个代码范围内使用的命名空间。该命名空间值将用作此约定的唯一标识符，并应有版本控制信息。有关详细信息，请参阅[服务版本控制](http://go.microsoft.com/fwlink/?LinkID=180498)。显式指定命名空间可防止将默认的命名空间值添加到约定名称中。
 
-	```c
+	```
 	[ServiceContract(Name = "ImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/RESTTutorial1")]
 	public interface IImageContract
 	{
@@ -83,7 +83,7 @@
 
 9. 在 `IImageContract` 接口中，为 `IImageContract` 协定在接口中公开的单个操作声明一个方法，然后将 `OperationContractAttribute` 属性应用到你希望将其作为公共服务总线协定的一部分进行公开的方法中。
 
-	```c
+	```
 	public interface IImageContract
 	{
 		[OperationContract]
@@ -93,7 +93,7 @@
 
 10. 在 **OperationContract** 属性旁，应用 **WebGet** 属性。
 
-	```c
+	```
 	public interface IImageContract
 	{
 		[OperationContract, WebGet]
@@ -105,7 +105,7 @@
 
 11. 直接在 `IImageContract` 定义的后面，声明从 `IImageContract` 和 `IClientChannel` 接口继承的通道。
 
-	```c
+	```
 	[ServiceContract(Name = "IImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
 	public interface IImageContract
 	{
@@ -122,9 +122,9 @@
 
 ### 示例
 
-以下代码示例显示了一个用于定义服务总线约定的基本接口。
+以下代码显示了一个用于定义服务总线协定的基本接口。
 
-```c
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -165,7 +165,7 @@ namespace Microsoft.ServiceBus.Samples
 
 1. 直接在 **IImageContract** 接口的定义之后创建名为 **ImageService** 的新类。**ImageService** 类可实现 **IImageContract** 接口。 
 
-	```c
+	```
 	class ImageService : IImageContract
 	{
 	}
@@ -174,7 +174,7 @@ namespace Microsoft.ServiceBus.Samples
 
 2. 将 [ServiceBehaviorAttribute](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.servicebehaviorattribute.aspx) 属性应用到 **IImageService** 类，以指示该类是 WCF 协定的实现。
 
-	```c
+	```
 	[ServiceBehavior(Name = "ImageService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
 	class ImageService : IImageContract
 	{
@@ -193,7 +193,7 @@ namespace Microsoft.ServiceBus.Samples
 
 5. 在项目中添加对 **System.Drawing.dll**、**System.Runtime.Serialization.dll** 和 **Microsoft.ServiceBus.dll** 程序集的引用，并添加以下关联的 `using` 语句。
 
-	```c
+	```
 	using System.Drawing;
 	using System.Drawing.Imaging;
 	using Microsoft.ServiceBus;
@@ -202,7 +202,7 @@ namespace Microsoft.ServiceBus.Samples
 
 6. 在 **ImageService** 类中定义以下构造函数，以便加载位图并准备将该位图发送到客户端浏览器。
 
-	```c
+	```
 	class ImageService : IImageContract
 	{
 		const string imageFileName = "image.jpg";
@@ -218,7 +218,7 @@ namespace Microsoft.ServiceBus.Samples
 
 7. 直接在上一代码后面，在 **ImageService** 类中添加以下 **GetImage** 方法，以返回包含该映像的 HTTP 消息。
 
-	```c
+	```
 	public Stream GetImage()
 	{
 		MemoryStream stream = new MemoryStream();
@@ -241,7 +241,7 @@ namespace Microsoft.ServiceBus.Samples
 
 2. 在“解决方案资源管理器”中双击“App.config”，该文件当前包含以下 XML 元素。
 
-	```xml
+	```
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
 	</configuration>
@@ -251,8 +251,8 @@ namespace Microsoft.ServiceBus.Samples
   
 
 3. 在 App.config 文件中添加一个 `<system.serviceModel>` XML 元素。该元素是一个 WCF 元素，用于定义一个或多个服务。在这里，它用于定义服务名称和终结点。
-  
-	```xml
+
+	```
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
 		<system.serviceModel>
@@ -263,8 +263,8 @@ namespace Microsoft.ServiceBus.Samples
 	```
 
 4. 在 `system.serviceModel` 元素中，添加包含以下内容的 `<bindings>` 元素。这样就定义了应用程序中使用的绑定。你可以定义多个绑定，但在本教程中，你只要定义一个绑定。
-  
-	```xml
+
+	```
 	<bindings>
 		<!-- Application Binding -->
 		<webHttpRelayBinding>
@@ -278,8 +278,8 @@ namespace Microsoft.ServiceBus.Samples
 	此步骤定义了一个服务总线 [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) 绑定，其中的 **relayClientAuthenticationType** 为 **None**。此设置表明使用此绑定的终结点将不需要客户端凭据。
 
 5. 在 `<bindings>` 元素后面添加 `<services>` 元素。与绑定类似，可以在单个配置文件中定义多个服务。但是，在本教程中，你只要定义一个服务。
-  
-	```xml
+
+	```
 	<services>
 		<!-- Application Service -->
 		<service name="Microsoft.ServiceBus.Samples.ImageService"
@@ -298,7 +298,7 @@ namespace Microsoft.ServiceBus.Samples
 
 6. 在 `<services>` 元素的后面，使用以下内容创建 `<behaviors>` 元素，并将 “SAS\_KEY” 替换为你在通过 Azure 管理门户执行步骤 1 时获取的*共享访问签名* (SAS) 密钥。
   
-	```xml
+	```
 	<behaviors>
 		<endpointBehaviors>
 			<behavior name="sbTokenProvider">
@@ -323,7 +323,7 @@ namespace Microsoft.ServiceBus.Samples
 
 以下代码演示了一个在服务总线上运行并使用 **WebHttpRelayBinding** 绑定的、基于 REST 的服务的约定和服务实现。
 
-```c
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -385,7 +385,7 @@ namespace Microsoft.ServiceBus.Samples
 
 以下示例显示了与该服务关联的 App.config 文件。
 
-```xml
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <system.serviceModel>
@@ -441,14 +441,14 @@ namespace Microsoft.ServiceBus.Samples
 
 1. 在 `Main()` 函数声明中，创建一个变量以存储服务总线项目的服务命名空间。
 
-	```c
+	```
 	string serviceNamespace = "InsertServiceNamespaceHere";
 	```
 	服务总线使用服务命名空间的名称来创建唯一 URI。
 
 2. 为基于服务命名空间的服务的基本地址创建 `Uri` 实例。
 
-	```c
+	```
 	Uri address = ServiceBusEnvironment.CreateServiceUri("https", serviceNamespace, "Image");
 	```
 
@@ -456,7 +456,7 @@ namespace Microsoft.ServiceBus.Samples
 
 - 使用之前在本部分中创建的 URI 地址创建 Web 服务主机。
 
-	```c
+	```
 	WebServiceHost host = new WebServiceHost(typeof(ImageService), address);
 	```
 	该服务主机是可实例化主机应用程序的 WCF 对象。本示例会将要创建的主机类型 (**ImageService**)，以及要公开主机应用程序的地址传递给它。
@@ -465,14 +465,14 @@ namespace Microsoft.ServiceBus.Samples
 
 1. 打开服务。
 
-	```c
+	```
 	host.Open();
 	```
 	服务现在正在运行。
 
 2. 显示表明服务正在运行以及如何停止服务的消息。
 
-	```c
+	```
 	Console.WriteLine("Copy the following address into a browser to see the image: ");
 	Console.WriteLine(address + "GetImage");
 	Console.WriteLine();
@@ -490,7 +490,7 @@ namespace Microsoft.ServiceBus.Samples
 
 以下示例包括本教程中前面步骤中使用的服务约定和实现，并将服务托管在控制台应用程序中。将以下代码编译到名为 ImageListener.exe 的可执行文件中。
 
-```c
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -566,7 +566,7 @@ namespace Microsoft.ServiceBus.Samples
 
 生成解决方案之后，请执行以下代码来运行应用程序：
 
-1. 从命令提示符运行服务 (ImageListener\\bin\\Debug\\ImageListener.exe)。
+1. 从命令提示符运行服务 (ImageListener\bin\Debug\ImageListener.exe)。
 
 2. 将命令提示符中的地址复制并粘贴到浏览器中以查看图像。
 
@@ -574,8 +574,8 @@ namespace Microsoft.ServiceBus.Samples
 
 在生成使用服务总线中继服务的应用程序后，请参阅以下文章了解有关中继消息传送的详细信息。
 
-- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions/#relays)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 
 - [如何使用 Service Bus 中继服务](/documentation/articles/service-bus-dotnet-how-to-use-relay)
 
-<!---HONumber=74-->
+<!---HONumber=82-->

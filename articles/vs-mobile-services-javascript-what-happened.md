@@ -9,14 +9,14 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="07/02/2015" 
-	wacn.date="10/22/2015"/>
+	ms.date="09/23/2015" 
+	wacn.date="11/27/2015"/>
 
-# 当我使用“连接服务”添加移动服务时，我的 Visual Studio Azure Javascript 项目会发生什么情况？
+# 当我使用连接的 Visual Studio 服务添加 Azure 移动服务时，我的 Javascript 项目会发生什么情况？
 
 > [AZURE.SELECTOR]
-> - [入门](/documentation/articles/vs-mobile-services-javascript-getting-started)
-> - [发生了什么情况](/documentation/articles/vs-mobile-services-javascript-what-happened)
+> - [Getting Started](/documentation/articles/vs-mobile-services-javascript-getting-started)
+> - [What Happened](/documentation/articles/vs-mobile-services-javascript-what-happened)
 
 ###我的项目发生了什么情况？
 
@@ -24,7 +24,7 @@
 
 已安装 **WindowsAzure.MobileServices.WinJS** NuGet 包，包括 `js\MobileServices.js` 文件中的 Azure 移动服务库。
   
-##### 移动服务的连接字符串值 
+#####移动服务的连接字符串值 
 
 在 `services\mobileServices\settings` 文件夹中，已生成包含 **MobileServiceClient** 的新 JavaScript (.js) 文件，其中包含选定的移动服务的应用程序 URL 和应用程序密钥。
 
@@ -42,4 +42,4 @@
 
  
 
-<!---HONumber=74-->
+<!---HONumber=82-->
