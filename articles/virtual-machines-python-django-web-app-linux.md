@@ -45,8 +45,13 @@
 
 1. 指示 Azure 将来自 Web 的端口 **80** 通信定向到虚拟机上的端口 **80**：
 	* 在 Azure 门户中导航到你新创建的虚拟机，然后单击“终结点”选项卡。
-	* 单击屏幕底部的“添加”按钮。![添加终结点](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* 打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。![端口 80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
+	* 单击屏幕底部的“添加”按钮。
+	
+	![添加终结点](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
+	
+	* 打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。
+	
+	![端口 80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
 
 ## <a id="setup"> </a>设置开发环境
 
