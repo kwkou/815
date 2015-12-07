@@ -104,7 +104,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 2. 键入：
 
-	`Add-AzureAccount`
+	`Add-AzureAccount -Environment AzureChinaCloud`
 
 	出现提示时，输入你组织提供的用户 ID 和密码。
 
@@ -114,7 +114,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 2. 键入：
 
-	`Get-AzurePublishSettingsFile`
+	`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`
 
 	此命令将打开浏览器窗口，并自动下载包含信息的 .publishsettings 文件和 Azure 订阅的证书。
 
@@ -122,7 +122,7 @@ Windows Azure 支持多种 Linux 分发（请参阅[认可的分发](/documentat
 
 4. 键入：
 
-	`Import-AzurePublishSettingsFile <PathToFile>`
+	`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
 
 	其中 `<PathToFile>` 是 .publishsettings 文件的完整路径。
 
