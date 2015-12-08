@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="07/09/2015"
-	wacn.date=""/>
+	wacn.date="10/22/2015"/>
 
 
 #HDInsight 提供的 Hadoop 群集版本有哪些新功能？
