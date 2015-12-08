@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="08/08/2015" 
-	wacn.date="Azure 管理门户"/>
+	wacn.date="10/03/2015"/>
 
 #注册应用以便在移动服务中进行 Twitter 登录
 
