@@ -16,9 +16,9 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
 
-你可以使用 Visual Studio ReportViewer 控件构建 Windows Azure 网站，该控件用于显示存储在 Windows Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET Web 应用程序模板生成的 Web 应用程序中。
+你可以使用 Visual Studio ReportViewer 控件构建 Windows Azure 网站，该控件用于显示存储在 Windows Azure 虚拟机上的报表。ReportViewer 控件位于使用 ASP.NET网站模板生成的网站中。
 
->[AZURE.IMPORTANT]ASP.NET MVC Web 应用程序模板不支持 ReportViewer 控件。
+>[AZURE.IMPORTANT]ASP.NET MVC网站模板不支持 ReportViewer 控件。
 
 若要将 ReportViewer 整合到你的 Windows Azure 网站，需要完成以下任务。
 
@@ -26,7 +26,7 @@
 
 - **配置**身份验证和授权
 
-- **发布** ASP.NET Web 应用程序到 Azure
+- **发布** ASP.NET网站到 Azure
 
 ## 先决条件
 
@@ -86,9 +86,9 @@
 
 ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，并且凭据必须经报表服务器授权才能访问所需的报表。有关身份验证的信息，请查看白皮书 [Reporting Services 报表查看器控件和基于 Windows Azure 虚拟机的报表服务器](https://msdn.microsoft.com/library/azure/dn753698.aspx)。
 
-## 发布 ASP.NET Web 应用程序到 Azure
+## 发布 ASP.NET网站到 Azure
 
-有关发布 ASP.NET Web 应用程序到 Azure 的说明，请参阅[如何：从 Visual Studio 迁移和发布 Web 应用程序到 Azure](https://msdn.microsoft.com/library/azure/hh420322.aspx) 和 [Web 应用程序和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
+有关发布 ASP.NET网站到 Azure 的说明，请参阅[如何：从 Visual Studio 迁移和发布网站到 Azure](https://msdn.microsoft.com/library/azure/hh420322.aspx) 和 [网站和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。
 
 >[AZURE.IMPORTANT]如果在解决方案资源管理器中的快捷菜单中未显示添加Azure 部署项目或添加 Azure 云服务项目命令，你可能需要将该项目的目标框架更改为 .NET Framework 4。
 >

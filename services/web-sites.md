@@ -1,4 +1,4 @@
-<properties linkid="dev-net-website" urlDisplayName="Windows Azure 网站" pageTitle="网站 - Azure 微软云" metaKeywords="Azure Website,Azure 网站,ASP.NET,应用部署,Web 作业,监视,缩放,备份,故障排除,最大化性能,身份验证,WebMatrix,MongoDB,移动 Web 应用程序,部署 Azure 网站,过渡发布,New Relic,调试 Azure 网站" description="此处提供的文档可帮助你开始使用 Azure 网站和 Web 作业在云中运行 Web 应用程序和其他程序。按照教程从头或从市场创建网站，然后从 Visual Studio 或源代码管理存储库（例如 TFS 和 GitHub）部署它们。了解如何监视、缩放、备份、故障排除、最大化性能、对用户进行身份验证等。" metaCanonical="" services="Website" documentationCenter="Services" title="开发和部署企业级网站" authors="" solutions="" manager="" editor="Eric Chen" />
+<properties linkid="dev-net-website" urlDisplayName="Windows Azure 网站" pageTitle="网站 - Azure 微软云" metaKeywords="Azure Website,Azure 网站,ASP.NET,应用部署,Web 作业,监视,缩放,备份,故障排除,最大化性能,身份验证,WebMatrix,MongoDB,移动网站,部署 Azure 网站,过渡发布,New Relic,调试 Azure 网站" description="此处提供的文档可帮助你开始使用 Azure 网站和 Web 作业在云中运行网站和其他程序。按照教程从头或从市场创建网站，然后从 Visual Studio 或源代码管理存储库（例如 TFS 和 GitHub）部署它们。了解如何监视、缩放、备份、故障排除、最大化性能、对用户进行身份验证等。" metaCanonical="" services="Website" documentationCenter="Services" title="开发和部署企业级网站" authors="" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="Website"
     ms.date=""
     wacn.date="07/23/2015"
@@ -6,9 +6,9 @@
 
 #网站和Web作业
 
-####了解如何使用 Azure 网站和 Web 作业在云中运行 Web 应用程序和其他程序
+####了解如何使用 Azure 网站和 Web 作业在云中运行网站和其他程序
 
-此处提供的文档可帮助你开始使用 Azure 网站和 Web 作业在云中运行 Web 应用程序和其他程序。按照教程从头或从市场创建网站，然后从 Visual Studio 或源代码管理存储库（例如 TFS 和 GitHub）部署它们。了解如何监视、缩放、备份、故障排除、最大化性能、对用户进行身份验证等。
+此处提供的文档可帮助你开始使用 Azure 网站和 Web 作业在云中运行网站和其他程序。按照教程从头或从市场创建网站，然后从 Visual Studio 或源代码管理存储库（例如 TFS 和 GitHub）部署它们。了解如何监视、缩放、备份、故障排除、最大化性能、对用户进行身份验证等。
 
 ####快速链接
 
@@ -42,7 +42,7 @@
 
 ####[Azure 网站、云服务和 VM：何时使用何种计算模型？](/documentation/articles/choose-web-site-cloud-service-vm)
 
-Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
+Azure 提供三种可用于托管网站的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
 
 ####<!--[-->Azure 订阅和服务限制、配额和约束条件<!--](/documentation/articles/azure-subscription-service-limits)-->
 
@@ -78,9 +78,9 @@ MongoDB 是面向常用文档的 NoSQL 解决方案。在本教程中，你将�
 
 ASP.NET Web API 是一个用于在 .NET Framework 之上构建 Web API 的框架。在本教程中，你将使用 Web API 创建提供存储在 SQL 数据库实例中的数据的 REST 服务。
 
-####[在 Azure 网站上开发 ASP.NET MVC 移动 Web 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app)
+####[在 Azure 网站上开发 ASP.NET MVC 移动网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app)
 
-了解如何使用 ASP.NET MVC 4 Web 应用程序中的移动功能的相关基础知识，然后将你的应用程序部署到 Azure 网站。
+了解如何使用 ASP.NET MVC 4网站中的移动功能的相关基础知识，然后将你的应用程序部署到 Azure 网站。
 
 ####[使用缓存服务存储 ASP.NET 会话状态](/documentation/articles/web-sites-dotnet-session-state-caching)
 

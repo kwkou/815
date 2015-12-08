@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 网站中创建 Java Web 应用"
-	description="本教程演示了如何将 Java Web 应用部署到 Azure 网站。"
+	pageTitle="在 Azure 网站中创建 Java网站"
+	description="本教程演示了如何将 Java网站部署到 Azure 网站。"
 	services="app-service\web"
 	documentationCenter="java"
 	authors="rmcmurray"
@@ -27,9 +27,9 @@
 
 > [AZURE.NOTE]若要完成本教程，您需要一个 Windows Azure 帐户。如果你没有帐户，则可以<a href="/zh-cn/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">注册获取免费试用版</a>。
 
-## 使用 Azure 配置 UI 创建 Java Web 应用
+## 使用 Azure 配置 UI 创建 Java网站
 
-此信息讲解如何使用 Azure 配置 UI 为你的 Web 应用选择 Java 应用程序容器（Apache Tomcat 或 Jetty）。
+此信息讲解如何使用 Azure 配置 UI 为你的网站选择 Java 应用程序容器（Apache Tomcat 或 Jetty）。
 
 1. 登录到 Windows Azure 管理门户。
 2. 依次单击“新建”、“计算”、“网站”和“快速创建”。
@@ -42,9 +42,9 @@
 9. Web 容器的选项会显示出来，例如，Tomcat 和 Jetty。选择要使用的 Web 容器。 
 10. 单击“保存”。 
 
-你的 Web 应用将在几分钟之内变成基于 Java 的。若要确认该应用是否是基于 Java 的应用，请单击其 URL。请注意，页面上提供的文本会指出这个新 Web 应用是基于 Java 的 Web 应用。
+你的网站将在几分钟之内变成基于 Java 的。若要确认该应用是否是基于 Java 的应用，请单击其 URL。请注意，页面上提供的文本会指出这个新网站是基于 Java 的网站。
 
-现在你已经使用应用程序容器创建了 Web 应用，请参阅“后续步骤”部分，了解有关将应用程序上载到该 Web 应用的信息。
+现在你已经使用应用程序容器创建了网站，请参阅“后续步骤”部分，了解有关将应用程序上载到该网站的信息。
 
 ## 后续步骤
 

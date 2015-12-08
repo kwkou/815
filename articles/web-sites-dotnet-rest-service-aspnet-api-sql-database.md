@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="在 Azure 网站中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务" 
-	description="本教程将向你介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用部署到 Azure Web 应用。" 
+	description="本教程将向你介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用部署到 Azure 网站。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Rick-Anderson" 
@@ -15,11 +15,11 @@
 
 # 在 Azure 网站中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
 
-本教程将向你介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 中的“发布 Web”向导将 ASP.NET Web 应用部署到 Azure 网站。
+本教程将向你介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 中的“发布 Web”向导将 ASP.NET网站部署到 Azure 网站。
 
 你可以免费注册一个 Azure 帐户，而且，如果你还没有 Visual Studio 2013，则此 SDK 会自动安装 Visual Studio 2013 for Web Express。这样你就能够完全免费地开始针对 Azure 进行开发了。
 
-本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动并运行简单的 Web 应用。
+本教程假定你之前未使用过 Azure。完成本教程之后，你将能够在云中启动并运行简单的网站。
  
 学习内容：
 
@@ -29,7 +29,7 @@
 * 如何使用 SQL 数据库在 Azure 中存储数据。
 * 如何将应用程序更新发布到 Azure。
 
-你将生成一个简单的联系人列表 Web 应用程序，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
+你将生成一个简单的联系人列表网站，该应用程序基于 ASP.NET MVC 5 构建并使用 ADO.NET Entity Framework 进行数据库访问。下图演示了完整的应用程序：
 
 ![网站屏幕截图][intro001]本教程的内容：
 
@@ -51,7 +51,7 @@
 
 1. 启动 Visual Studio 2013。
 1. 在“文件”菜单中，单击“新建项目”。
-3. 在“新建项目”对话框中，展开“Visual C#”并选择“Web”，然后选择“ASP.NET MVC 5 Web 应用程序”。将该应用程序命名为 **ContactManager**，然后单击“确定”。
+3. 在“新建项目”对话框中，展开“Visual C#”并选择“Web”，然后选择“ASP.NET MVC 5网站”。将该应用程序命名为 **ContactManager**，然后单击“确定”。
 
 	![“新建项目”对话框](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)]
 
@@ -555,7 +555,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进行交互。在网络钓鱼攻击中，恶意网站将仿冒目标网站，受到欺骗的受害者会向攻击者提供敏感信息。在 XSRF 攻击中，通常不必与受害者进行交互。相反，浏览器自动向目标网站发送所有相关 Cookie 为攻击者提供了可乘之机。
 
-有关详细信息，请参阅[打开 Web 应用程序安全性项目](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
+有关详细信息，请参阅[打开网站安全性项目](https://www.owasp.org/index.php/Main_Page) (OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
 
 1. 在“解决方案资源管理器”中，右键单击“ContactManager”项目并单击“添加”，然后单击“类”。
 
@@ -732,7 +732,7 @@ XSRF 攻击不同于网络钓鱼攻击。网络钓鱼攻击需要与受害者进
 <h2><a name="nextsteps"></a>后续步骤</h2>
 ## 后续步骤
 
-实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的 Web 应用程序。
+实际的应用程序需要身份验证和授权，你可以使用成员资格数据库实现此目的。教程[使用 OAuth、成员资格以及 SQL 数据库部署安全的 ASP.NET MVC 应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)基于本教程，其中介绍了如何部署包含成员资格数据库的网站。
 
 另一种在 Azure 应用程序中存储数据的方法是使用 Azure 存储，该方法以 Blob 和表的形式提供非关系数据存储。以下链接提供了更多有关 Web API、ASP.NET MVC 以及 Window Azure 的信息。
  

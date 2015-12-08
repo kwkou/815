@@ -17,7 +17,7 @@ editor="Eric Chen" />
 - 使用 .NET 和 Visual Studio 在数秒内部署新的或现有的应用程序。
 - 从 TFS 或源代码存储库（如 GitHub）自动部署。
 - 利用存储和 SQL 数据库 等托管服务扩展功能。
-- 了解如何通过使用 Azure 网站、Web 作业、云服务和 VM 在云中运行 ASP.NET Web 应用程序和 .NET 项目。
+- 了解如何通过使用 Azure 网站、Web 作业、云服务和 VM 在云中运行 ASP.NET网站和 .NET 项目。
 - [安装用于 VS 2015 RC 的 SDK](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x804)
 - [安装用于 VS 2013 的 SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x804)
 

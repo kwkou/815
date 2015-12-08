@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用" 
+	pageTitle="在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC网站" 
 	description="学习如何在使用 Azure Active Directory 进行身份验证的 Azure 网站中创建 ASP.NET MVC 业务线应用程序" 
 	services="app-service\web, active-directory" 
 	documentationCenter=".net" 
@@ -12,7 +12,7 @@
 	ms.date="10/14/2015"
 	wacn.date="11/12/2015"/>
 
-# 在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用 #
+# 在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC网站#
 
 在本文中，你将了解如何在使用本地 [Azure Active Directory](/home/features/identity/) 作为标识提供者的 [Azure 网站](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。你还将了解如何使用 [Azure Active Directory Graph 客户端库](http://blogs.msdn.com/b/aadgraphteam/archive/2014/06/02/azure-active-directory-graph-client-library-1-0-publish.aspx)查询应用程序中的目录数据。
 
@@ -80,23 +80,23 @@
 <a name="bkmk_deploy"></a>
 ## 将示例应用程序部署到 Azure 网站
 
-现在，你需要将应用程序发布到 Azure 网站中的 Web 应用。[README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) 中已经提供了有关部署到 Azure 网站的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
+现在，你需要将应用程序发布到 Azure 网站中的网站。[README.md](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims/blob/master/README.md) 中已经提供了有关部署到 Azure 网站的说明，但这些步骤还取消了本地调试环境的配置。下面将介绍如何在保留调试配置的同时进行部署。
 
 1. 右键单击您的项目，然后选择“发布”。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. 选择“Windows Azure Web Apps”。
+2. 选择“Windows Azure 网站”。
 
 3. 如果你尚未登录 Azure，请单击“添加帐户”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
 
-4. 登录后，单击“新建”，以在 Azure 中新建一个 Web 应用。
+4. 登录后，单击“新建”，以在 Azure 中新建一个网站。
 
 5. 填写所有必填字段。你需要使用此应用程序的数据库连接来存储角色映射、缓存的令牌以及任何应用程序数据。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-website.png)
 
-6. 单击“创建”。在你创建 Web 应用后，系统会打开“发布 Web”对话框。
+6. 单击“创建”。在你创建网站后，系统会打开“发布 Web”对话框。
 
 7. 在“目标 URL”中，将 **http** 更改为 **https**。将整个 URL 复制到文本编辑器。稍后将要用到它。然后，单击“下一步”。
 
@@ -116,11 +116,11 @@
 
 2. 单击“添加我的组织正在开发的应用程序”。
 
-3. 选择“Web 应用程序和/或 Web API”。
+3. 选择“网站和/或 Web API”。
 
 4. 为应用程序提供一个名称，然后单击“下一步”。
 
-5. 在“应用程序属性”中，将“登录 URL”设置为你前面保存的Web 应用 URL（例如 `https://<site-name>.chinacloudsites.cn/`），并将“应用 ID URI”设置为 `https://<aad-tenanet-name>/<app-name>`。然后，单击“完成”。
+5. 在“应用程序属性”中，将“登录 URL”设置为你前面保存的网站URL（例如 `https://<site-name>.chinacloudsites.cn/`），并将“应用 ID URI”设置为 `https://<aad-tenanet-name>/<app-name>`。然后，单击“完成”。
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -157,9 +157,9 @@
 
 2. 单击“发布”以发布到 Azure 网站。
 
-完成此操作后，将在 Azure 管理门户中配置两个 Azure Active Directory 应用程序，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的 Web 应用。在调试期间，将使用 Web.config 中的应用程序设置来使**调试**配置适用于 Azure Active Directory，发布配置（默认情况下，会发布**版本**配置）后，将上载转换的 Web.config，其中包含 Web.Release.config 中的应用程序设置更改。
+完成此操作后，将在 Azure 管理门户中配置两个 Azure Active Directory 应用程序，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的网站。在调试期间，将使用 Web.config 中的应用程序设置来使**调试**配置适用于 Azure Active Directory，发布配置（默认情况下，会发布**版本**配置）后，将上载转换的 Web.config，其中包含 Web.Release.config 中的应用程序设置更改。
 
-如果你想要附加到已发布的 Web 应用调试器（必须上载的已发布的 Web 应用中的代码的调试符号），你可以创建的调试配置对于 Azure 调试，但使用的 Azure Active Directory 设置从 Web.Release.config 自己自定义 Web.config 转换（例如 Web.AzureDebug.config）克隆。这样，你可以跨不同的环境中维护静态配置。
+如果你想要附加到已发布的网站调试器（必须上载的已发布的网站中的代码的调试符号），你可以创建的调试配置对于 Azure 调试，但使用的 Azure Active Directory 设置从 Web.Release.config 自己自定义 Web.config 转换（例如 Web.AzureDebug.config）克隆。这样，你可以跨不同的环境中维护静态配置。
 
 <a name="bkmk_crud"></a>
 ## 将业务线功能添加到示例应用程序
@@ -365,7 +365,7 @@
 
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
-- [在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-adfs)
+- [在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC网站](/documentation/articles/web-sites-dotnet-lob-application-adfs)
 - [Windows Azure Active Directory 示例和文档](https://github.com/AzureADSamples)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

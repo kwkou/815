@@ -145,11 +145,11 @@ PTVS 适用于你现有的 Visual Studio 2013 或 2015 版本的安装。有关�
 
 3. 使用 Git 开发和发布到 Azure 网站
 
-第一个方案使你能够通过 Azure REST API 的 Pythonic 包装来创作利用 Azure PaaS 功能（例如 [Blob 存储][]、[队列存储][]、[表存储][]等）的丰富 Web 应用。这些应用程序的工作方式与在 Windows、Mac 和 Linux 上相同。此外可以从本地开发计算机或在 Azure 上运行的 Linux VM 中使用这些客户端库。
+第一个方案使你能够通过 Azure REST API 的 Pythonic 包装来创作利用 Azure PaaS 功能（例如 [Blob 存储][]、[队列存储][]、[表存储][]等）的丰富网站。这些应用程序的工作方式与在 Windows、Mac 和 Linux 上相同。此外可以从本地开发计算机或在 Azure 上运行的 Linux VM 中使用这些客户端库。
 
 对于 VM 方案，你只需启动所选的 Linux VM（Ubuntu、CentOS、Suse）并运行/管理所需内容。例如，你可以在 Windows/Mac/Linux 计算机上运行 [IPython][] REPL/notebook，并使你的浏览器指向在 Azure 上运行 IPython 引擎的 Linux 或 Windows 多处理器 VM。请参阅 [Azure 上的 IPython Notebook][] 教程，以了解详细信息。
 
-使用 Git 部署，可以从任何操作系统开发 Python web 应用程序并将其发布到 Azure 网站。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
+使用 Git 部署，可以从任何操作系统开发 Python网站并将其发布到 Azure 网站。当将您的存储库推送到 Azure 时，它将自动创建虚拟环境和 pip 安装所需的包。
 
 有关开发和发布 Azure 网站的详细信息，请参阅有关教程：[使用 Django 创建网站][]、[使用 Bottle 创建网站][]和[使用 Flask 创建网站][]。有关使用任何 WSGI 合规框架的更多常规信息，请参阅[使用 Azure 网站配置 Python][]。
 

@@ -40,7 +40,7 @@ VM 扩展实现了你要用于 VM 的大多数关键功能，包括重置密码�
 |VM 扩展名称|功能说明|更多信息|
 |---|---|---|
 |**MSEnterpriseApplication**|实现了由 Windows System Center 提供支持的功能。|[System Center 2012 R2 虚拟机角色](http://social.technet.microsoft.com/wiki/contents/articles/18274.system-center-2012-r2-virtual-machine-role-authoring-guide-resource-extension-package.aspx)|
-|**Octopus Deploy**（基于 DSC 扩展）|支持自动将 ASP.NET Web 应用程序和 Windows 服务部署到开发、测试和生产环境。|[Octopus Deploy 入门](http://docs.octopusdeploy.com/display/OD/Getting%20started)|
+|**Octopus Deploy**（基于 DSC 扩展）|支持自动将 ASP.NET网站和 Windows 服务部署到开发、测试和生产环境。|[Octopus Deploy 入门](http://docs.octopusdeploy.com/display/OD/Getting%20started)|
 |**Visual Studio 发布管理器**（基于 DSC 扩展）|使用 Visual Studio 支持连续部署。|[使用 Release Management 自动进行部署](https://msdn.microsoft.com/zh-cn/library/dn217874.aspx)|
 |**CentosChefClient**|||
 |**ChefClient**|在 Windows 上创建 Chef 客户端。（也可以使用下面的 DSC 扩展。）|[Chef 与 Windows Azure](https://www.getchef.com/solutions/azure/)|

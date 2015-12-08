@@ -138,7 +138,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 5. [Azure 服务管理 SDK：Ruby](https://github.com/MSOpenTech/azure-sdk-for-ruby)
     - [如何：在 Rails 上安装 Ruby](/documentation/articles/virtual-machines-ruby-rails-web-app-linux)
 6. [Azure 服务管理 SDK：Python](https://github.com/Azure/azure-sdk-for-python)
-    - [如何：Django Hello World Web 应用程序 (Mac-Linux)](/documentation/articles/virtual-machines-python-django-web-app-linux)
+    - [如何：Django Hello World网站(Mac-Linux)](/documentation/articles/virtual-machines-python-django-web-app-linux)
 7. [Azure 服务管理 SDK：Node.js](https://github.com/MSOpenTech/azure-sdk-for-node)
 8. [Azure 服务管理 SDK：PHP](https://github.com/MSOpenTech/azure-sdk-for-php)
     - [如何：在 Azure VM 上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-install-lamp-stack)

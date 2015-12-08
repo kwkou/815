@@ -20,7 +20,7 @@
 
 ## 什么是 PHP Web 角色和辅助角色？
 
-Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azure 虚拟机和 Azure 云服务。这三种模型都支持 PHP。云服务（包括 Web 角色和辅助角色）提供了*平台即服务 (PaaS)*。在云服务中，Web 角色提供专门用于托管前端 Web 应用程序的 Internet Information Services (IIS) Web 服务器。辅助角色可运行独立于用户交互或输入的异步任务、运行时间较长的任务或永久性任务。
+Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azure 虚拟机和 Azure 云服务。这三种模型都支持 PHP。云服务（包括 Web 角色和辅助角色）提供了*平台即服务 (PaaS)*。在云服务中，Web 角色提供专门用于托管前端网站的 Internet Information Services (IIS) Web 服务器。辅助角色可运行独立于用户交互或输入的异步任务、运行时间较长的任务或永久性任务。
 
 有关这些选项的说明，请参阅 [Azure 提供的计算托管选项](/documentation/articles/fundamentals-application-models)。
 

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 网站中创建 ASP.NET Web 应用"
-	description="本教程说明如何在 Visual Studio 2013 中创建一个 ASP.NET Web 项目，并将其部署到 Azure 网站中的 Web 应用。在不到 15 分钟内，你即可在云中启动并运行一个应用程序。"
+	pageTitle="在 Azure 网站中创建 ASP.NET网站"
+	description="本教程说明如何在 Visual Studio 2013 中创建一个 ASP.NET Web 项目，并将其部署到 Azure 网站中的网站。在不到 15 分钟内，你即可在云中启动并运行一个应用程序。"
 	services="app-service\web"
 	documentationCenter=".net"
 	authors="tdykstra"
@@ -12,20 +12,20 @@
 	ms.date="08/10/2015"
 	wacn.date="10/03/2015"/>
 
-# 在 Azure 网站中创建 ASP.NET Web 应用
+# 在 Azure 网站中创建 ASP.NET网站
 
-本教程说明如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 创建一个 ASP.NET Web 应用程序并将其部署到 Azure 网站。本教程假设你以前未使用过 Azure 或 ASP.NET。完成本教程之后，你将能够在云中启动并运行简单的 Web 应用程序。
+本教程说明如何使用 Visual Studio 2013 或 Visual Studio 2013 for Web Express 创建一个 ASP.NET网站并将其部署到 Azure 网站。本教程假设你以前未使用过 Azure 或 ASP.NET。完成本教程之后，你将能够在云中启动并运行简单的网站。
 
 下图演示了完整的应用程序：
 
-![Web 应用主页](./media/web-sites-dotnet-get-started/deployedandazure.png)
+![网站主页](./media/web-sites-dotnet-get-started/deployedandazure.png)
 
 学习内容：
 
 * 如何通过安装 Azure SDK 来让你的计算机可以进行 Azure 开发。
-* 如何创建 Visual Studio ASP.NET Web 项目，并将其部署到 Azure Web 应用。
+* 如何创建 Visual Studio ASP.NET Web 项目，并将其部署到 Azure 网站。
 * 如何对 Web 项目进行更改并重新部署应用程序。
-* 如何使用 Azure 管理门户监视和管理 Web 应用。
+* 如何使用 Azure 管理门户监视和管理网站。
 
 ##<a name="video"></a>注册 Mirosoft Azure
 
@@ -41,7 +41,7 @@
 
 * [注册 Windows Azure（视频）](#video)
 * [设置开发环境](#set-up-the-development-environment)
-* [在 Visual Studio 中创建 ASP.NET Web 应用程序](#create-an-aspnet-web-application)
+* [在 Visual Studio 中创建 ASP.NET网站](#create-an-aspnet-web-application)
 * [将应用程序部署到 Azure](#deploy-the-application-to-azure)
 * [更改和重新部署](#make-a-change-and-redeploy)
 * [在管理门户中监视和管理站点](#monitor-and-manage-the-site-in-the-management-portal)
@@ -50,9 +50,9 @@
 
 [AZURE.INCLUDE [install-sdk-2015-2013](../includes/install-sdk-2015-2013.md)]
 
-## 创建 ASP.NET Web 应用程序
+## 创建 ASP.NET网站
 
-第一步是在 Visual Studio 中创建一个 Web 项目，并在 Azure 网站中创建一个 Web 应用。完成时，将项目部署到 Web 应用，以使其在 Internet 上可用。
+第一步是在 Visual Studio 中创建一个 Web 项目，并在 Azure 网站中创建一个网站。完成时，将项目部署到网站，以使其在 Internet 上可用。
 
 下图演示了在创建和部署步骤中要执行的操作。
 
@@ -64,7 +64,7 @@
 
 2. 在“文件”菜单中，单击“新建\>项目”。
 
-3. 在“新建项目”对话框中，单击“C\#”\>“Web”\>“ASP.NET Web 应用程序”。如果需要，可以选择“Visual Basic”。
+3. 在“新建项目”对话框中，单击“C\#”\>“Web”\>“ASP.NET网站”。如果需要，可以选择“Visual Basic”。
 
 3. 确保选择 **.NET Framework 4.5.2** 作为目标框架。
 
@@ -76,7 +76,7 @@
 
 5. 在“新建 ASP.NET 项目”对话框中，选择“MVC”模板。
 
-	[MVC](http://www.asp.net/mvc) 是用于开发 Web 应用的 ASP.NET 框架。
+	[MVC](http://www.asp.net/mvc) 是用于开发网站的 ASP.NET 框架。
 
 7. 单击“更改身份验证”。
 
@@ -92,11 +92,11 @@
 
 	![“新建 ASP.NET 项目”对话框](./media/web-sites-dotnet-get-started/GS13newaspnetprojdb.png)
 
-	默认设置指定 Visual Studio 将为你的 Web 项目创建 Azure Web 应用。在本教程的下一部分中，你要将 Web 项目部署到新创建的 Web 应用。
+	默认设置指定 Visual Studio 将为你的 Web 项目创建 Azure 网站。在本教程的下一部分中，你要将 Web 项目部署到新创建的网站。
 
 5. 如果你尚未登录到 Azure，Visual Studio 将提示你登录。使用你用来管理 Azure 订阅的帐户的 ID 和密码登录。
 
-	如果你已登录，“配置 Windows Azure Web 应用设置”对话框将询问你要创建哪些资源。
+	如果你已登录，“配置 Windows Azure 网站设置”对话框将询问你要创建哪些资源。
 
 	![已登录到 Azure](./media/web-sites-dotnet-get-started/configuresitesettings.png)
 
@@ -112,7 +112,7 @@
 
 5. 在“区域”下拉列表中，选择离你最近的位置。
 
-	此设置指定你的 Web 应用将在哪个 Azure 数据中心运行。对于本教程，你做的选择不会带来明显的差异；但是，对于生产 Web 应用，你希望 Web 服务器和存储帐户处于同一区域，以最大程度地减少[延迟](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090)。
+	此设置指定你的网站将在哪个 Azure 数据中心运行。对于本教程，你做的选择不会带来明显的差异；但是，对于生产网站，你希望 Web 服务器和存储帐户处于同一区域，以最大程度地减少[延迟](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090)。
 
 5. 将数据库字段保持原样。
 
@@ -122,25 +122,25 @@
 
 	![](./media/web-sites-dotnet-get-started/configuresitesettings2.png)
 
-	几秒钟后，Visual Studio 将在指定的文件夹中创建 Web 项目，并在指定的 Azure 区域中创建 Web 应用。
+	几秒钟后，Visual Studio 将在指定的文件夹中创建 Web 项目，并在指定的 Azure 区域中创建网站。
 
 	“解决方案资源管理器”窗口将显示新项目中的文件和文件夹。
 
 	![解决方案资源管理器](./media/web-sites-dotnet-get-started/solutionexplorer.png)
 
-	“Azure 网站活动”窗口将显示已创建的 Web 应用。
+	“Azure 网站活动”窗口将显示已创建的网站。
 
-	![已创建 Web 应用](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
+	![已创建网站](./media/web-sites-dotnet-get-started/GS13sitecreated1.png)
 
-	你可以在“服务器资源管理器”中查看 Web 应用。
+	你可以在“服务器资源管理器”中查看网站。
 
-	![已创建 Web 应用](./media/web-sites-dotnet-get-started/siteinse.png)
+	![已创建网站](./media/web-sites-dotnet-get-started/siteinse.png)
 
 ## 将应用程序部署到 Azure
 
 7. 在“Web 发布活动”窗口中，单击“立即将 MyExample 发布到此站点”。
 
-	![已创建 Web 应用](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
+	![已创建网站](./media/web-sites-dotnet-get-started/GS13sitecreated.png)
 
 	几秒钟后，将显示“发布 Web”向导。
 
@@ -176,9 +176,9 @@
 
 	![报告部署成功的输出窗口](./media/web-sites-dotnet-get-started/PublishOutput.png)
 
-	成功完成部署后，默认浏览器将自动打开指向已部署 Web 应用的 URL。你创建的应用程序现在运行于云中。浏览器地址栏中的 URL 显示正在从 Internet 加载该 Web 应用。
+	成功完成部署后，默认浏览器将自动打开指向已部署网站的 URL。你创建的应用程序现在运行于云中。浏览器地址栏中的 URL 显示正在从 Internet 加载该网站。
 
-	![Web 应用在 Azure 中运行](./media/web-sites-dotnet-get-started/GS13deployedsite.png)
+	![网站在 Azure 中运行](./media/web-sites-dotnet-get-started/GS13deployedsite.png)
 
 13. 关闭浏览器。
 
@@ -192,11 +192,11 @@
 
 	![MVC h1 更改](./media/web-sites-dotnet-get-started/mvcandazure.png)
 
-1. 按 CTRL+F5，通过在本地计算机上运行 Web 应用来查看更新的标题。
+1. 按 CTRL+F5，通过在本地计算机上运行网站来查看更新的标题。
 
-	![Web 应用在本地运行](./media/web-sites-dotnet-get-started/localandazure.png)
+	![网站在本地运行](./media/web-sites-dotnet-get-started/localandazure.png)
 
-	`localhost` URL 显示站点正在本地计算机上运行。默认情况下，应用程序在 IIS Express 中运行。IIS Express 是 IIS 的轻型版本，专为在 Web 应用程序部署过程中使用而设计。
+	`localhost` URL 显示站点正在本地计算机上运行。默认情况下，应用程序在 IIS Express 中运行。IIS Express 是 IIS 的轻型版本，专为在网站部署过程中使用而设计。
 
 1. 关闭浏览器。
 
@@ -210,15 +210,15 @@
 
 	![单击发布](./media/web-sites-dotnet-get-started/GS13previewoutput.png)
 
-	Visual Studio 将项目部署到 Azure，并在默认浏览器中打开该 Web 应用。
+	Visual Studio 将项目部署到 Azure，并在默认浏览器中打开该网站。
 
-	![已更改部署的 Web 应用](./media/web-sites-dotnet-get-started/deployedandazure.png)
+	![已更改部署的网站](./media/web-sites-dotnet-get-started/deployedandazure.png)
 
 **提示**：可以启用“Web 单键发布”工具栏以更快地完成部署。单击“视图”\>“工具栏”，然后选择“Web 单键发布”。在工具栏上，你可以选择一个配置文件，单击一个按钮以发布，或单击一个按钮打开“发布 Web”向导。
 
 ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
-## 在管理门户中监视和管理 Web 应用
+## 在管理门户中监视和管理网站
 
 [Azure 管理门户](http://manage.windowsazure.cn)是一个 Web 界面，可让你管理和监视 Azure 服务，例如，刚刚创建的网站。在本教程的本部分，你将了解可在该门户中执行的某些操作。
 
@@ -246,7 +246,7 @@
   
 5. 单击“缩放”选项卡。
 
-	对于网站服务的付费层，“缩放”选项卡允许你控制为 Web 应用程序提供服务的计算机的大小和数量，以处理流量的变化。[](/documentation/articles/web-sites-scale/)
+	对于网站服务的付费层，“缩放”选项卡允许你控制为网站提供服务的计算机的大小和数量，以处理流量的变化。[](/documentation/articles/web-sites-scale/)
 
 	你可以手动缩放或配置条件或计划以进行自动缩放。
 
@@ -257,21 +257,21 @@
 
 ## 后续步骤
 
-在本教程中，你已了解如何创建简单的 Web 应用程序并将其部署到 Azure Web 应用。你可以通过以下相关主题和资源来了解有关 Azure 网站中 Web Apps 的详细信息。
+在本教程中，你已了解如何创建简单的网站并将其部署到 Azure 网站。你可以通过以下相关主题和资源来了解有关 Azure 网站中网站的详细信息。
 
 * 部署 Web 项目的其他方法
 
-	在本教程中，你已了解通过一项操作创建和部署 Web 应用的最快方法。有关使用 Visual Studio 或通过[源代码管理系统](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control)[自动部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)进行的其他部署方法的概述，请参阅[如何部署 Azure Web 应用](/documentation/articles/web-sites-deploy)。
+	在本教程中，你已了解通过一项操作创建和部署网站的最快方法。有关使用 Visual Studio 或通过[源代码管理系统](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control)[自动部署](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)进行的其他部署方法的概述，请参阅[如何部署 Azure 网站](/documentation/articles/web-sites-deploy)。
 
 	Visual Studio 还可以生成 Windows PowerShell 脚本让你自动完成部署。有关详细信息，请参阅[使一切自动化（使用 Azure 生成真实的云应用程序）](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything)。
 
-* 如何在 Visual Studio 中管理 Web 应用
+* 如何在 Visual Studio 中管理网站
 
-	有关可在“服务器资源管理器”中执行的 Web 应用管理功能的信息，请参阅[在 Visual Studio 中对 Azure Web 应用进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+	有关可在“服务器资源管理器”中执行的网站管理功能的信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
 
-* 如何对 Web 应用进行故障排除
+* 如何对网站进行故障排除
 
-	Visual Studio 提供了相应的功能使你能够在 Azure 日志生成时轻松实时地对其进行查看。你还可以在 Azure 中采用调试模式远程运行。有关详细信息，请参阅[在 Visual Studio 中对 Azure Web 应用进行故障故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
+	Visual Studio 提供了相应的功能使你能够在 Azure 日志生成时轻松实时地对其进行查看。你还可以在 Azure 中采用调试模式远程运行。有关详细信息，请参阅[在 Visual Studio 中对 Azure 网站进行故障故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)。
 
 * 如何添加数据库和授权功能
 
@@ -290,8 +290,8 @@
 
 * 如何添加聊天之类的实时功能
 
-	如果要在 Web 应用中包含实时功能（如聊天服务、游戏、股票行情等），你可以使用 [ASP.NET SignalR](http://www.asp.net/signalr) 和 [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) 传输方法来获得最佳性能。有关详细信息，请参阅[将 SignalR 与 Azure Web Apps 配合使用](http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites)。
+	如果要在网站中包含实时功能（如聊天服务、游戏、股票行情等），你可以使用 [ASP.NET SignalR](http://www.asp.net/signalr) 和 [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) 传输方法来获得最佳性能。有关详细信息，请参阅[将 SignalR 与 Azure 网站配合使用](http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites)。
 
-* 如何为 Web 应用程序在 Azure 网站、云服务和 VM 之间做出选择
+* 如何为网站在 Azure 网站、云服务和 VM 之间做出选择
 
-	在 Azure 中，你可以根据本教程中所述在网站中运行 Web 应用程序，也可以在云服务或虚拟机中运行 Web 应用程序。有关详细信息，请参阅 [Azure 执行模型](/documentation/articles/fundamentals-application-models/)和 [Azure 网站、云服务和 VM：何时使用何种产品？](/documentation/articles/choose-web-site-cloud-service-vm/)。
+	在 Azure 中，你可以根据本教程中所述在网站中运行网站，也可以在云服务或虚拟机中运行网站。有关详细信息，请参阅 [Azure 执行模型](/documentation/articles/fundamentals-application-models/)和 [Azure 网站、云服务和 VM：何时使用何种产品？](/documentation/articles/choose-web-site-cloud-service-vm/)。

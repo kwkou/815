@@ -23,7 +23,7 @@
 - [使用 Powershell 部署和管理](/documentation/articles/cache-howto-manage-redis-cache-powershell)  
 - [使用 Azure 管理库部署和管理](https://github.com/rustd/RedisSamples/tree/master/ManageCacheUsingMAML)  
 <!--- [预配 Redis 缓存](/documentation/articles/cache-redis-cache-arm-provision)-->  
-<!--- [预配 Web App 和 Redis 缓存](/documentation/articles/cache-web-app-arm-with-redis-cache-provision)-->  
+<!--- [预配网站和 Redis 缓存](/documentation/articles/cache-web-app-arm-with-redis-cache-provision)-->  
 <!--- [资源管理器 QuickStart 模板](http://go.microsoft.com/fwlink/p/?linkid=536445&clcid=0x804)-->  
 
 ##常见方案  

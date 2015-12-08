@@ -22,7 +22,7 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 
 | 计算选项 | 目标受众 |
 | ------------------ | --------   |
-| [应用程序服务] | 任何设备的可缩放 Web Apps、Mobile Apps、API Apps 和 Logic Apps |
+| [应用程序服务] | 任何设备的可缩放网站、Mobile Apps、API Apps 和 Logic Apps |
 | [云服务] | 对操作系统具有更高控制度的高可用、可缩放 n 层云应用程序 |
 | [虚拟机] | 可完全控制操作系统的自定义 Windows 和 Linux VM |
 
@@ -47,7 +47,7 @@ Azure 还针对更特殊的用途提供其他计算托管模型，例如：
 
 所有三种通用型 Azure 计算托管模型都可让你在云中构建可缩放、可靠的应用程序。既然在本质上是类似的，你应该使用哪种模型呢？
 
-App Service 是大多数 Web 应用的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可提供高可用性。可以使用[联机迁移工具](https://www.migratetoazure.net/)轻松将现有站点转移到 Azure App Service，使用 Web 应用程序库中的开放源代码应用，或使用选择的框架和工具创建新站点。[Web 作业](/documentation/articles/websites-webjobs-resources)功能可让你轻松为应用添加后台作业处理，甚至还能运行根本不是 Web 应用的计算工作负荷。
+App Service 是大多数网站的最佳选择。部署和管理都已集成到平台，站点可以快速缩放以应对高流量负载，而内置的负载平衡和流量管理器可提供高可用性。可以使用[联机迁移工具](https://www.migratetoazure.net/)轻松将现有站点转移到 Azure App Service，使用网站库中的开放源代码应用，或使用选择的框架和工具创建新站点。[Web 作业](/documentation/articles/websites-webjobs-resources)功能可让你轻松为应用添加后台作业处理，甚至还能运行根本不是网站的计算工作负荷。
 
 如果你需要加强控制 Web 服务器环境，例如想要远程登录服务器或配置服务器启动任务，Azure 云服务通常是最佳选择。
 

@@ -42,15 +42,15 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | ------- | ------- | -------- | -------------- | -------- | ------ |
 | API 管理| 是 | 否 | 是 | [创建 API](https://msdn.microsoft.com/zh-cn/library/azure/dn781423.aspx#CreateAPI) | |
 | API Apps | 是 | 是 | | | [2015-03-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-03-01-preview/Microsoft.AppService.json) |
-| Web Apps | 是 | 是 | 是，但有限（参阅下文） | | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Web.json) |
+|网站| 是 | 是 | 是，但有限（参阅下文） | | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Web.json) |
 | 通知中心 | 是 | 是 | | [创建通知中心](https://msdn.microsoft.com/zh-cn/library/azure/dn223269.aspx) | [2015-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-04-01/Microsoft.NotificationHubs.json) |
 | Logic Apps | 是 | 是 | | | |
 | Mobile Engagement | 是 | 否 | 是 | | |
 
-当使用 Web 应用时，不能仅移动 App Service 计划。若要移动 Web 应用，您的选项包括：
+当使用网站时，不能仅移动 App Service 计划。若要移动网站，您的选项包括：
 
 - 如果目标资源组不具有 Microsoft.Web 资源，则将所有资源从一个资源组移到另一个资源组中。
-- 将 web 应用移到另一个资源组中，但保留原始资源组中的 App Service 计划。
+- 将网站移到另一个资源组中，但保留原始资源组中的 App Service 计划。
 
 
 ## 数据和存储

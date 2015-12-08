@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在 Azure 网站中使用 Socket.IO 创建 Node.js 聊天应用程序"
-	description="此教程演示如何在托管于 Azure 上的 node.js Web 应用中使用 socket.io。"
+	description="此教程演示如何在托管于 Azure 上的 node.js网站中使用 socket.io。"
 	services="app-service\web"
 	documentationCenter="nodejs"
 	authors="MikeWasson"
@@ -61,9 +61,9 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 
 
-## 创建 Azure Web 应用
+## 创建 Azure 网站
 
-按照以下步骤创建 Azure Web 应用、启用 Git 发布，然后为 Web 应用启用 WebSocket 支持。
+按照以下步骤创建 Azure 网站、启用 Git 发布，然后为网站启用 WebSocket 支持。
 
 > [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 <a href="http://www.windowsazure.cn/zh-cn/pricing/1rmb-trial/?WT.mc_id=A7171371E" target="_blank">Azure 免费试用</a>。1.安装 Azure 命令行界面 (Azure CLI) 并连接到 Azure 订阅。请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli)。
 
@@ -71,22 +71,22 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 		azure site deployment user set [username] [password]
 
-3. 切换到 **\\node\\chat** 目录，然后使用以下命令创建新的 Azure Web 应用和本地 Git 存储库。此命令还会创建名为 'azure' 的 Git 远程连接。
+3. 切换到 **\\node\\chat** 目录，然后使用以下命令创建新的 Azure 网站和本地 Git 存储库。此命令还会创建名为 'azure' 的 Git 远程连接。
 
 		azure site create mysitename --git
 
-	必须将“mysitename”替换为 Web 应用的唯一名称。
+	必须将“mysitename”替换为网站的唯一名称。
 
 2. 通过使用以下命令将现有文件提交到本地存储库：
 
 		git add .
 		git commit -m "Initial commit"
 
-3. 使用以下命令将这些文件推送到 Azure Web Apps 存储库：
+3. 使用以下命令将这些文件推送到 Azure 网站存储库：
 
 		git push azure master
 
-	系统出现提示时，请输入步骤 2 中的凭据。在服务器上导入模块时您将收到状态消息。此过程完成后，应用程序将在 Azure Web 应用上托管。
+	系统出现提示时，请输入步骤 2 中的凭据。在服务器上导入模块时您将收到状态消息。此过程完成后，应用程序将在 Azure 网站上托管。
 
  	> [AZURE.NOTE] 在模块安装过程中，您可能会注意到“找不到导入的项目...”错误。这些错误可放心地忽略。
 
@@ -94,7 +94,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 		azure site set -w
 
-	如果系统提示，请输入 Web 应用的名称。
+	如果系统提示，请输入网站的名称。
 
 	>[AZURE.NOTE] “azure site set -w”命令仅适用于 Azure 命令行界面 0.7.4 或更高版本。您还可以使用 Azure 管理门户启用 WebSocket 支持。
 	>
@@ -102,7 +102,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 	>	
 	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
 	
-5. 要查看 Azure 上的 Web 应用，请使用以下命令启动 Web 浏览器并导航到托管的 Web 应用：
+5. 要查看 Azure 上的网站，请使用以下命令启动 Web 浏览器并导航到托管的网站：
 
 		azure site browse
 
@@ -112,7 +112,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 
 Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应用程序实例之间发布消息和事件。尽管有几个适配器可用，[socket.io redis](https://github.com/automattic/socket.io-redis) 适配器可轻松与 Azure Redis 缓存功能一同使用。
 
-> [AZURE.NOTE] 向外扩展 Socket.IO 解决方案还要求支持粘滞会话。默认情况下，可以通过 Azure 请求路由为 Azure Web Apps 启用粘滞会话。有关详细信息，请参阅 [Azure 网站中的实例关联](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
+> [AZURE.NOTE] 向外扩展 Socket.IO 解决方案还要求支持粘滞会话。默认情况下，可以通过 Azure 请求路由为 Azure 网站启用粘滞会话。有关详细信息，请参阅 [Azure 网站中的实例关联](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
 
 
 ###添加 redis 和 socket.io redis 模块
@@ -156,13 +156,13 @@ Socket.IO 应用程序可通过__适配器__实现向外扩展，以在多个应
 
 其中 __#__ 是要创建的实例数。
 
-可以从多个浏览器或计算机连接到你的 Web 应用，以验证消息是否已正确发送给所有客户端。
+可以从多个浏览器或计算机连接到你的网站，以验证消息是否已正确发送给所有客户端。
 
 ## 故障排除
 
 ###连接限制
 
-Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的资源。包括允许的 WebSocket 连接数。有关详细信息，请参阅 [Web Apps 定价页][pricing]。
+Azure 网站提供多个 SKU，这些 SKU 用于确定你的站点可用的资源。包括允许的 WebSocket 连接数。有关详细信息，请参阅 [网站定价页][pricing]。
 
 ###未使用 WebSocket 发送消息
 
@@ -192,7 +192,7 @@ Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 
 * **验证 web.config 设置**
 
-	托管 Node.js 应用程序的 Azure Web Apps 使用 **web.config** 文件将传入请求路由到 Node.js 应用程序。为了使 Websocket 对 Node.js 应用程序正常运行，**web.config** 必须包含以下条目。
+	托管 Node.js 应用程序的 Azure 网站使用 **web.config** 文件将传入请求路由到 Node.js 应用程序。为了使 Websocket 对 Node.js 应用程序正常运行，**web.config** 必须包含以下条目。
 
 		<webSocket enabled="false"/>
 
@@ -200,7 +200,7 @@ Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 
 	Node.js 应用程序通常不包括 **web.config** 文件，因此 Azure 网站将在部署 Node.js 应用程序时自动生成一个。由于此文件是在服务器上自动生成的，因此必须使用网站的 FTP 或 FTPS URL 来查看此文件。你可以通过选择你的网站，然后选择“仪表板”链接，在 Azure 管理门户中查找网站的 FTP 和 FTPS URL。URL 将显示在“速览”部分。
 
-	> [AZURE.NOTE] 如果应用程序未提供 **web.config** 文件，则该文件将仅由 Azure 网站生成。如果在应用程序项目的根目录下提供了 **web.config** 文件，则 Azure Web Apps 将使用该文件。
+	> [AZURE.NOTE] 如果应用程序未提供 **web.config** 文件，则该文件将仅由 Azure 网站生成。如果在应用程序项目的根目录下提供了 **web.config** 文件，则 Azure 网站将使用该文件。
 
 	如果该条目不存在，或者已设置为值 `true`，则你应在 Node.js 应用程序的根目录中创建 **web.config** 并指定值 `false`。例如，使用 **app.js** 作为入口点的应用程序的默认 **web.config** 如下所示。
 
@@ -217,7 +217,7 @@ Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 		    <!-- Visit http://blogs.msdn.com/b/windowsazure/archive/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites.aspx for more information on WebSocket support -->
 		    <webSocket enabled="false" />
 		    <handlers>
-		      <!-- Indicates that the server.js file is a node.js web app to be handled by the iisnode module -->
+		      <!-- Indicates that the server.js file is a node.js网站to be handled by the iisnode module -->
 		      <add name="iisnode" path="app.js" verb="*" modules="iisnode"/>
 		    </handlers>
 		    <rewrite>
@@ -232,7 +232,7 @@ Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 		          <action type="Rewrite" url="public{REQUEST_URI}"/>
 		        </rule>
 
-		        <!-- All other URLs are mapped to the node.js web app entry point -->
+		        <!-- All other URLs are mapped to the node.js网站entry point -->
 		        <rule name="DynamicContent">
 		          <conditions>
 		            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True"/>
@@ -257,7 +257,7 @@ Azure Web Apps 提供多个 SKU，这些 SKU 用于确定你的站点可用的�
 
 ##后续步骤
 
-在本教程中，你已学习如何创建一个在 Azure Web 应用中托管的聊天应用程序。您还可以将该应用程序作为 Azure 云服务托管。有关如何实现此目的的步骤，请参阅[在 Azure 云服务中使用 Socket.IO 构建 Node.js 聊天应用程序][cloudservice]。
+在本教程中，你已学习如何创建一个在 Azure 网站中托管的聊天应用程序。您还可以将该应用程序作为 Azure 云服务托管。有关如何实现此目的的步骤，请参阅[在 Azure 云服务中使用 Socket.IO 构建 Node.js 聊天应用程序][cloudservice]。
 
 [socketio]: http://socket.io/
 [completed-app]: ./media/web-sites-nodejs-chat-app-socketio/websitesocketcomplete.png

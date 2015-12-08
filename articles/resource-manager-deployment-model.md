@@ -48,7 +48,7 @@
 
 - 资源类型的名称中不包括 **(经典)**。下图显示了**存储帐户**类型。
 
-    ![Web 应用](./media/resource-manager-deployment-model/resource-manager-type.png)
+    ![网站](./media/resource-manager-deployment-model/resource-manager-type.png)
 
 ## 经典部署的特性
 

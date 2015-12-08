@@ -43,7 +43,7 @@
 成功运行脚本后，可执行以下脚本后续步骤：
 
 1.	设置防火墙规则，下面的“防火墙规则描述”部分中做了介绍。
-2.	（可选）“参考”部分中提供了两个脚本，用于设置 Web 服务器和包含简单 Web 应用程序的应用服务器，以便能使用此外围网络配置进行测试。
+2.	（可选）“参考”部分中提供了两个脚本，用于设置 Web 服务器和包含简单网站的应用服务器，以便能使用此外围网络配置进行测试。
 
 成功运行脚本后，需要完成防火墙规则。“防火墙规则”部分中对此做了介绍。
 
@@ -301,7 +301,7 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 
 	![防火墙 AppVM01 规则][13]
 
-	此传递规则允许前端子网上的任何 IIS 服务器在任何端口上连接到 AppVM01（IP 地址 10.0.2.5），使用任何协议来访问 Web 应用程序所需的数据。
+	此传递规则允许前端子网上的任何 IIS 服务器在任何端口上连接到 AppVM01（IP 地址 10.0.2.5），使用任何协议来访问网站所需的数据。
 
 	在此屏幕截图中，“目标”字段使用“<explicit-dest>”来表示目标为 10.0.2.5。这可能是如图所示的明确地址或命名网络对象（如 DNS 服务器先决条件中所述）。至于使用哪种表示法，将由防火墙管理员来决定。若要将 10.0.2.5 添加为明确目标，请双击 <explicit-dest> 下面的第一个空白行，然后在弹出窗口中输入地址。
 
@@ -864,14 +864,14 @@ UDR 随附 IP 转发功能。这是虚拟设备上的一项设置，使虚拟设
 	
 	# Optional Post-script Manual Configuration
 	  # Configure Firewall
-	  # Install Test Web App (Run Post-Build Script on the IIS Server)
+	  # Install Test网站(Run Post-Build Script on the IIS Server)
 	  # Install Backend resource (Run Post-Build Script on the AppVM01)
 	  Write-Host
 	  Write-Host "Build Complete!" -ForegroundColor Green
 	  Write-Host
 	  Write-Host "Optional Post-script Manual Configuration Steps" -ForegroundColor Gray
 	  Write-Host " - Configure Firewall" -ForegroundColor Gray
-	  Write-Host " - Install Test Web App (Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
+	  Write-Host " - Install Test网站(Run Post-Build Script on the IIS Server)" -ForegroundColor Gray
 	  Write-Host " - Install Backend resource (Run Post-Build Script on the AppVM01)" -ForegroundColor Gray
 	  Write-Host
 	

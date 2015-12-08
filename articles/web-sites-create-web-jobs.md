@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 WebJobs 运行后台任务" 
-	description="了解如何在 Azure Web Apps 中运行后台任务。" 
+	description="了解如何在 Azure 网站中运行后台任务。" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="tdykstra" 
@@ -16,9 +16,9 @@
 
 ## 概述
 
-你可以使用三种方式在 [Azure 网站](/documentation/services/web-sites/) Web 应用的 Web 作业中运行程序或脚本，即：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
+你可以使用三种方式在 [Azure 网站](/documentation/services/web-sites/)网站的 Web 作业中运行程序或脚本，即：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
 
-本文说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs)。
+本文说明如何使用 [Azure 管理门户](https://manage.windowsazure.cn/)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到网站](/documentation/articles/websites-dotnet-deploy-webjobs)。
 
 Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)。
 
@@ -168,10 +168,10 @@ Azure 管理门户不提供创建计划 Web 作业的功能，但在这种功能
 
 ## <a name="WHPNotes"></a>说明
 	
-- 如果没有对 scm（部署）站点发出任何请求，并且未在 Azure 中打开 Web 应用的门户，则免费模式下的 Web Apps 可能会在 20 分钟之后超时。对实际网站发出的请求不会对此进行重置。
+- 如果没有对 scm（部署）站点发出任何请求，并且未在 Azure 中打开网站的门户，则免费模式下的网站可能会在 20 分钟之后超时。对实际网站发出的请求不会对此进行重置。
 - 需要对连续作业的代码进行编写，才能使其在无穷循环中运行。
-- 仅当 Web 应用启动后连续作业才能连续运行。
-- 基本和标准模式提供了“始终打开”功能，启用该功能可防止 Web Apps 进入空闲状态。
+- 仅当网站启动后连续作业才能连续运行。
+- 基本和标准模式提供了“始终打开”功能，启用该功能可防止网站进入空闲状态。
 - 仅可以调试连续运行 WebJobs。不支持按计划或按需调试 WebJobs。
 
 

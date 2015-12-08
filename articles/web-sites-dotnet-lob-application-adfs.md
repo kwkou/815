@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用" 
+	pageTitle="在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC网站" 
 	description="了解如何在 Azure 网站中创建使用本地 STS 进行身份验证的 ASP.NET MVC 业务线应用程序。本教程将 AD FS 定位为本地 STS。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -12,7 +12,7 @@
 	ms.date="09/29/2015"
 	wacn.date="11/12/2015"/>
 
-# 在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC Web 应用
+# 在 Azure 网站中创建使用 AD FS 身份验证的 .NET MVC网站
 
 在本文中，你将了解如何在使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者的 [Azure 网站](/documentation/services/web-sites/)中创建 ASP.NET MVC 业务线应用程序。当你想要在 Azure 网站中创建业务线应用程序，而你的组织要求在现场存储所有数据时，可以应用此方案。
 
@@ -42,7 +42,7 @@
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
->[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](https://tryappservice.azure.com/)，在此处，可立即在 Azure 网站中创建临时初学者 Web 应用。你不需要使用信用卡，也不需要做出承诺。
+>[AZURE.NOTE]若想要在注册 Azure 帐户前开始使用 Azure 网站，请转至[试用 Azure 网站](https://tryappservice.azure.com/)，在此处，可立即在 Azure 网站中创建临时初学者网站。你不需要使用信用卡，也不需要做出承诺。
 
 若要完成本教程，你需要以下项目：
 
@@ -119,38 +119,38 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 <a name="bkmk_deploy"></a>
 ## 将示例应用程序部署到 Azure 网站
 
-现在，你需要将应用程序发布到 Azure 网站的 Web 应用中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得 Web 应用 URL，稍后您还可以使用此 URL 来配置 RP 信任。
+现在，你需要将应用程序发布到 Azure 网站的网站中，同时保留调试环境。请注意，你将要在建立 RP 与 AD FS 之间的信任关系之前发布应用程序，因此身份验证还不起作用。不过，如果现在就执行此操作，则可以获得网站URL，稍后您还可以使用此 URL 来配置 RP 信任。
 
 1. 右键单击您的项目，然后选择“发布”。
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. 选择“Windows Azure Web Apps”。
+2. 选择“Windows Azure 网站”。
 3. 如果您尚未登录 Azure，请单击“登录”，然后使用 Azure 订阅的 Microsoft 帐户进行登录。
-4. 登录后，单击“新建”，新建一个 Web 应用。
-5. 填写所有必填字段。稍后，您将要连接到本地数据，因此不需要为此 Web 应用创建数据库。
+4. 登录后，单击“新建”，新建一个网站。
+5. 填写所有必填字段。稍后，您将要连接到本地数据，因此不需要为此网站创建数据库。
 
 	![](./media/web-sites-dotnet-lob-application-adfs/02-create-website.png)
 
-6. 单击“创建”。在您创建 Web 应用后，系统会打开“发布 Web”对话框。
+6. 单击“创建”。在您创建网站后，系统会打开“发布 Web”对话框。
 7. 在“目标 URL”中，将 **http** 更改为 **https**。将整个 URL 复制到文本编辑器。稍后将要用到它。然后，单击“发布”。
 
 	![](./media/web-sites-dotnet-lob-application-adfs/03-destination-url.png)
 
-11. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。在 `<configuration>` 标记中插入以下 XML，然后将键值替换为发布 Web 应用的 URL。
+11. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。在 `<configuration>` 标记中插入以下 XML，然后将键值替换为发布网站的 URL。
 	<pre class="prettyprint">
 &lt;appSettings>
    &lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
 &lt;/appSettings></pre>
 
-完成后，您的项目中将配置有两个 RP 标识符，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的 Web 应用。你将为 AD FS 中两个环境的每一个设置 RP 信任。在调试期间，Web.config 中的应用设置用于让**调试**配置适用于 AD FS；在发布后（默认情况下，发布的是**版本**配置），上载的是转换后的 Web.config，其中包含 Web.Release.config 中的应用设置更改。
+完成后，您的项目中将配置有两个 RP 标识符，一个用于 Visual Studio 中的调试环境，另一个用于 Azure 中发布的网站。你将为 AD FS 中两个环境的每一个设置 RP 信任。在调试期间，Web.config 中的应用设置用于让**调试**配置适用于 AD FS；在发布后（默认情况下，发布的是**版本**配置），上载的是转换后的 Web.config，其中包含 Web.Release.config 中的应用设置更改。
 
-如果您想将 Azure 中已发布的 Web 应用附加到调试器（即必须上载已发布的 Web 应用中的代码调试符号），则可以克隆一个调试配置进行 Azure 调试，但自身需要使用 Web.Release.config 中的应用设置进行自定义 Web.config 转换（例如 Web.AzureDebug.config）。这样，你可以跨不同的环境中维护静态配置。
+如果您想将 Azure 中已发布的网站附加到调试器（即必须上载已发布的网站中的代码调试符号），则可以克隆一个调试配置进行 Azure 调试，但自身需要使用 Web.Release.config 中的应用设置进行自定义 Web.config 转换（例如 Web.AzureDebug.config）。这样，你可以跨不同的环境中维护静态配置。
 
 <a name="bkmk_rptrusts"></a>
 ## 在 AD FS 管理中配置信赖方信任 ##
 
-现在，需要先在 AD FS 管理中配置 RP 信任，然后示例应用程序才能真正使用 AD FS 进行身份验证。您需要单独设置两个 RP 信任，一个用于调试环境，另一个用于已发布的 Web 应用。
+现在，需要先在 AD FS 管理中配置 RP 信任，然后示例应用程序才能真正使用 AD FS 进行身份验证。您需要单独设置两个 RP 信任，一个用于调试环境，另一个用于已发布的网站。
 
 > [AZURE.NOTE]确保对环境重复以下两个步骤。
 
@@ -177,7 +177,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 	![](./media/web-sites-dotnet-lob-application-adfs/4-configure-url.png)
 
-	> [AZURE.NOTE]URL 指定身份验证成功后要将客户端发送到的位置。对于调试环境，它应为 <code>https://localhost:&lt;port&gt;/</code>。对于发布的 Web 应用，它应该是 Web 应用 URL。
+	> [AZURE.NOTE]URL 指定身份验证成功后要将客户端发送到的位置。对于调试环境，它应为 <code>https://localhost:&lt;port&gt;/</code>。对于发布的网站，它应该是网站URL。
 
 7.	在“配置标识符”页面上，确认您的项目 SSL URL 是否已列出，然后单击“下一步”。保持默认选择不变，同时单击“下一步”，一直到向导结束。
 
@@ -188,7 +188,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 	-	名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
 	-	用户主体名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - 用于唯一标识组织中的用户。
 	-	将成员资格分组为角色 (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - 可与 `[Authorize(Roles="role1, role2,...")]` 修饰符配合使用来授权控制器/操作。实际上，这可能不是大多数的高性能方法进行角色授权，尤其是在你的 AD 用户定期属于数百个安全组转换为数以百计的 SAML 令牌中的角色声明。另一种方法是在某个特定组发送单个角色声明有条件地根据用户的成员身份。但是，本教程将简化其结构。
-	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
+	-	名称 ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - 可用于防伪验证。若要详细了解如何使其适用于防伪验证，请参阅[在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC网站](/documentation/articles/web-sites-dotnet-lob-application-azure-ad#bkmk_crud)中的**将业务线功能添加到示例应用程序**部分。
 
 	> [AZURE.NOTE]需要为应用程序配置的声明类型取决于应用程序的需求。有关 Azure Active Directory 应用程序支持的声明列表（即 RP 信任），请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。
 
@@ -232,7 +232,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 	![](./media/web-sites-dotnet-lob-application-adfs/8-all-claim-rules.png)
 
-	> [AZURE.NOTE]同样，请确保对调试环境和发布的 Web 应用重复这些步骤。
+	> [AZURE.NOTE]同样，请确保对调试环境和发布的网站重复这些步骤。
 
 <a name="bkmk_test"></a>
 ## 测试应用程序的联合身份验证
@@ -241,9 +241,9 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 ![](./media/web-sites-dotnet-lob-application-adfs/10-test-user-and-group.png)
 
-若要在调试器中测试身份验证，只需按 `F5` 即可。若要在已发布的 Web 应用中测试身份验证，请转到 URL 对应的页面。
+若要在调试器中测试身份验证，只需按 `F5` 即可。若要在已发布的网站中测试身份验证，请转到 URL 对应的页面。
 
-加载 Web 应用程序后，单击“登录”。现在，应该会显示 AD FS 提供的登录对话框或登录页（具体取决于 AD FS 选择的身份验证方法）。下面是 Internet Explorer 11 中显示的元素。
+加载网站后，单击“登录”。现在，应该会显示 AD FS 提供的登录对话框或登录页（具体取决于 AD FS 选择的身份验证方法）。下面是 Internet Explorer 11 中显示的元素。
 
 ![](./media/web-sites-dotnet-lob-application-adfs/9-test-debugging.png)
 
@@ -340,7 +340,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 <a name="bkmk_data"></a>
 ## 连接到本地数据
 
-使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的 Web 应用必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为 Web 应用的数据层。
+使用 AD FS 而不是 Azure Active Directory 实施业务线应用程序的一个原因是，既能符合法规要求，同时可将组织数据保留在外部。这可能还意味着，您在 Azure 中的网站必须访问本地数据库，因为您不得使用 [SQL 数据库](/home/features/sql-database/)作为网站的数据层。
 
 
 <a name="bkmk_resources"></a>
@@ -348,7 +348,7 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
 
 - [通过 SSL 和 Authorize 属性保护应用程序](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [使用 Active Directory 在 Azure 网站中进行身份验证](/documentation/articles/web-sites-authentication-authorization)
-- [在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC Web 应用](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
+- [在 Azure 网站中创建使用 Azure Active Directory 身份验证的 .NET MVC网站](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
 - [在 Visual Studio 2013 中将本地组织的身份验证选项 (ADFS) 与 ASP.NET 结合使用](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Vittorio Bertocci 的博客](http://blogs.msdn.com/b/vbertocci/)
 - [将 VS2013 Web 项目从 WIF 迁移到 Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

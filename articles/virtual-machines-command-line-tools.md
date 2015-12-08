@@ -694,13 +694,13 @@ Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。有关 Azure �
 	info:   nghinazz : cert deleted
 	info:   service cert delete command OK
 
-## 用于管理 Web 应用的命令
+## 用于管理网站的命令
 
-Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机中托管，但你无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
+Azure 网站是可通过 URI 访问的 Web 配置。网站在虚拟机中托管，但你无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
 
 **site list [options]**
 
-此命令列出你的 Web 应用。
+此命令列出你的网站。
 
 	~$ azure site list
 	info:   Executing command site list
@@ -713,7 +713,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site set [options] [name]**
 
-此命令将设置你的 Web 应用 [名称] 的配置选项
+此命令将设置你的网站[名称] 的配置选项
 
 	~$ azure site set
 	info:    Executing command site set
@@ -734,7 +734,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site create [options] [name]**
 
-此命令创建新的 Web 应用和本地目录。
+此命令创建新的网站和本地目录。
 
 	~$ azure site create mysite
 	info:   Executing command site create
@@ -749,7 +749,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site browse [options] [name]**
 
-此命令在浏览器中打开你的 Web 应用。
+此命令在浏览器中打开你的网站。
 
 	~$ azure site browse mysite
 	info:   Executing command site browse
@@ -758,7 +758,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site show [options] [name]**
 
-此命令显示 Web 应用的详细信息。
+此命令显示网站的详细信息。
 
 	~$ azure site show mysite
 	info:   Executing command site show
@@ -788,7 +788,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site delete [options] [name]**
 
-此命令删除 Web 应用。
+此命令删除网站。
 
 	~$ azure site delete mysite
 	info:   Executing command site delete
@@ -798,7 +798,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
  **site swap [options] [name]**
 
-此命令交换两个 Web 应用插槽。
+此命令交换两个网站插槽。
 
 此命令支持以下附加选项：
 
@@ -807,7 +807,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site start [options] [name]**
 
-此命令启动 Web 应用。
+此命令启动网站。
 
 	~$ azure site start mysite
 	info:   Executing command site start
@@ -817,7 +817,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site stop [options] [name]**
 
-此命令停止 Web 应用。
+此命令停止网站。
 
 	~$ azure site stop mysite
 	info:   Executing command site stop
@@ -827,7 +827,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 ****site restart [options] [name]
 
-此命令停止然后启动指定的 Web 应用。
+此命令停止然后启动指定的网站。
 
 此命令支持以下附加选项：
 
@@ -836,7 +836,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site location list [options]**
 
-此命令列出你的 Web 应用位置。
+此命令列出你的网站位置。
 
 	~$ azure site location list
 	info:    Executing command site location list
@@ -851,11 +851,11 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 	data:    ChinaEast
 	info:    site location list command OK
 
-###用于管理 Web 应用应用程序设置的命令
+###用于管理网站应用程序设置的命令
 
 **site appsetting list [options] [name]**
 
-此命令列出添加到 Web 应用的应用设置。
+此命令列出添加到网站的应用设置。
 
 	~$ azure site appsetting list
 	info:    Executing command site appsetting list
@@ -869,7 +869,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site appsetting add [options] &lt;keyvaluepair> [name]**
 
-此命令将应用设置作为键值对添加到你的 Web 应用。
+此命令将应用设置作为键值对添加到你的网站。
 
 	~$ azure site appsetting add test=value
 	info:    Executing command site appsetting add
@@ -881,7 +881,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site appsetting delete [options] &lt;key> [name]**
 
-此命令从 Web 应用中删除指定的应用设置。
+此命令从网站中删除指定的应用设置。
 
 	~$ azure site appsetting delete test
 	info:    Executing command site appsetting delete
@@ -904,11 +904,11 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 	data:    Value:  value
 	info:    site appsetting show command OK
 
-###用于管理 Web 应用证书的命令
+###用于管理网站证书的命令
 
 **site cert list [options] [name]**
 
-此命令显示 Web 应用证书的列表。
+此命令显示网站证书的列表。
 
 	~$ azure site cert list
 	info:    Executing command site cert list
@@ -944,7 +944,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 	data:    Certificate thumbprint CE1CD65852B38DC32001C2E0E8F7A526A29B541F
 	info:    site cert show command OK
 
-###用于管理 Web 应用连接字符串的命令
+###用于管理网站连接字符串的命令
 
 **site connectionstring list [options] [name]**
 
@@ -954,7 +954,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site connectionstring show [options] &lt;connectionname> [name]**
 
-###用于管理 Web 应用默认文档的命令
+###用于管理网站默认文档的命令
 
 **site defaultdocument list [options] [name]**
 
@@ -962,7 +962,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site defaultdocument delete [options] &lt;document> [name]**
 
-###用于管理 Web 应用部署的命令
+###用于管理网站部署的命令
 
 **site deployment list [options] [name]**
 
@@ -974,7 +974,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site deployment user set [options] [username] [pass]**
 
-###用于管理 Web 应用域的命令
+###用于管理网站域的命令
 
 **site domain list [options] [name]**
 
@@ -982,7 +982,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site domain delete [options] &lt;dn> [name]**
 
-###用于管理 Web 应用处理程序映射的命令
+###用于管理网站处理程序映射的命令
 
 **site handler list [options] [name]**
 
@@ -994,7 +994,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site job list [options] [name]**
 
-此命令列出某个Web 应用下的所有 Web 作业。
+此命令列出某个网站下的所有 Web 作业。
 
 此命令支持以下附加选项：
 
@@ -1073,11 +1073,11 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 + **--run-id** &lt;run-id>：可选。运行历史记录的 id。如果未指定，则显示最新运行。
 + **--slot** &lt;slot>：要重新启动的插槽的名称。
 
-###用于管理 Web 应用诊断的命令
+###用于管理网站诊断的命令
 
 **site log download [options] [name]**
 
-下载包含你的 Web 应用诊断的 .zip 文件。
+下载包含你的网站诊断的 .zip 文件。
 
 	~$ azure site log download
 	info:    Executing command site log download
@@ -1100,7 +1100,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site log set [options] [name]**
 
-此命令配置你的 Web 应用的诊断选项。
+此命令配置你的网站的诊断选项。
 
 	~$ azure site log set -a
 	info:    Executing command site log set
@@ -1117,7 +1117,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 	+ Updating diagnostic settings
 	info:    site log set command OK
 
-###用于管理 Web 应用存储库的命令
+###用于管理网站存储库的命令
 
 **site repository branch [options] &lt;branch> [name]**
 
@@ -1125,7 +1125,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。Web 应用在虚拟机�
 
 **site repository sync [options] [name]**
 
-###用于管理 Web 应用缩放的命令
+###用于管理网站缩放的命令
 
 **site scale mode [options] &lt;mode> [name]**
 

@@ -48,7 +48,7 @@ Active Directory 访问控制（以前称为访问控制
 漏洞是开发人员引入代码中的错误，使应用程序可被攻击者利用。例如，以明文形式发送敏感数据可能使攻击者发起流量探查攻击，从而导致信息泄露威胁。
 
 攻击是指利用这些漏洞对应用程序造成损坏。例如，跨站点脚本（或 XSS）是一种利用未净化输出的攻击。另一个示例是通过在线窃听捕获以明文形式发送的凭据。这些攻击可能会导致身份欺骗威胁的产生。为简单起见，我们将威胁、漏洞和攻击视为坏事情。
-若要大致了解与 Web 应用程序部署到 Azure 相关的坏事情，请参考以下图表（摘自 J.D.Meier 的
+若要大致了解与网站部署到 Azure 相关的坏事情，请参考以下图表（摘自 J.D.Meier 的
 [Azure 安全说明 PDF](http://blogs.msdn.com/b/jmeier/archive/2010/08/03/now-available-azure-security-notes-pdf.aspx)):
 
 ![Threats Vulnerabilities and Attacks][02]
@@ -116,7 +116,7 @@ FS 的详细信息：
 -   **使用联合身份验证、Active Directory 中标识的 WCF (SOAP) 服务。**在此方案中，可使用由企业 Windows Server Active Directory 管理的标识来控制对您的 WCF (SOAP) Web 服务的访问权限。
 -   **使用联合身份验证的 WCF (REST) 服务。**在此方案中，可使用由 Azure AD 访问控制管理的服务标识来控制对您的 WCF (REST) 服务的访问权限。
 -   **使用 Live ID/Microsoft 帐户、Facebook、Google、Yahoo! 和 Open ID 的 WCF (REST) 服务。**在此方案中，可使用 Internet 标识（例如 Live ID/Microsoft 帐户）来控制对您的 WCF (REST) 服务的访问权限。
--   **在 ASP.NET Web 应用和 REST WCF 服务之间使用共享 SWT 令牌。**在此方案中，您具有包含前端 ASP.NET Web 应用和下游 REST 服务的分布式应用程序，并且您需要通过物理层传送最终用户的上下文。
+-   **在 ASP.NET网站和 REST WCF 服务之间使用共享 SWT 令牌。**在此方案中，您具有包含前端 ASP.NET网站和下游 REST 服务的分布式应用程序，并且您需要通过物理层传送最终用户的上下文。
 -   **声明感知应用程序和服务中的基于角色的访问控制 (RBAC) 授权。**在此方案中，您需要在应用中实现基于角色的授权逻辑。
 -   **声明感知应用程序和服务中的基于声明的授权。**在此方案中，您需要在应用中实现基于复杂授权规则的授权逻辑。
 -   **Azure 存储服务身份识别和访问控制方案。**在此方案中，您需要安全地共享对 Azure 存储 Blob 和容器的访问权限。
@@ -131,7 +131,7 @@ FS 的详细信息：
 
 ###使用联合身份验证的 ASP.NET Web 表单应用程序
 
-在此应用程序体系结构方案中，可以将您的 Web 应用程序部署到 Azure 或本地。该应用程序需要企业 Active Directory 或
+在此应用程序体系结构方案中，可以将您的网站部署到 Azure 或本地。该应用程序需要企业 Active Directory 或
 Internet 标识提供程序对其用户进行身份验证。
 
 若要实施此方案，可使用 Azure AD 访问控制和 Windows
@@ -142,15 +142,15 @@ Identity Foundation。
 请参见以下资源来实施此方案：
 
 -   [如何：使用 ACS 创建我的第一个声明感知 ASP.NET 应用程序](http://msdn.microsoft.com/zh-cn/library/gg429779.aspx)
--   [如何：在 ASP.NET Web 应用程序中托管登录页面](http://msdn.microsoft.com/zh-cn/library/gg185926.aspx)
+-   [如何：在 ASP.NET网站中托管登录页面](http://msdn.microsoft.com/zh-cn/library/gg185926.aspx)
 -   [如何：使用 WIF 和 ACS 在声明感知 ASP.NET 应用程序中实现声明授权](http://msdn.microsoft.com/zh-cn/library/gg185907.aspx)    
 -   [如何：使用 WIF 和 ACS 在声明感知 ASP.NET 应用程序中实现基于角色的访问控制 (RBAC)](http://msdn.microsoft.com/zh-cn/library/gg185914.aspx)
--   [如何：使用 X.509 证书配置 ACS 和 ASP.NET Web 应用程序之间的信任](http://msdn.microsoft.com/zh-cn/library/gg185947.aspx)
+-   [如何：使用 X.509 证书配置 ACS 和 ASP.NET网站之间的信任](http://msdn.microsoft.com/zh-cn/library/gg185947.aspx)
 -   [代码示例：ASP.NET 简单表单](http://msdn.microsoft.com/zh-cn/library/gg185938.aspx)
 
 ###使用服务标识的 WCF (SOAP) 服务
 
-在此应用程序体系结构方案中，可以将您的 WCF (SOAP) 服务部署到 Azure 或本地。该服务将作为下游服务供 Web 应用程序或其他 Web 服务访问。您需要使用应用程序特定标识来控制对它的访问权限。可根据您在 IIS 中使用的应用池帐户的类型来考虑要使用的标识 - 虽然技术不同，但方法类似，因为访问此服务时使用的是应用程序作用域帐户与最终用户帐户。
+在此应用程序体系结构方案中，可以将您的 WCF (SOAP) 服务部署到 Azure 或本地。该服务将作为下游服务供网站或其他 Web 服务访问。您需要使用应用程序特定标识来控制对它的访问权限。可根据您在 IIS 中使用的应用池帐户的类型来考虑要使用的标识 - 虽然技术不同，但方法类似，因为访问此服务时使用的是应用程序作用域帐户与最终用户帐户。
 
 使用 Azure AD 访问控制中的服务标识功能。
 这类似于您在将应用部署到 Windows Server 和 IIS 时所使用的 IIS 应用池帐户。配置 Azure
@@ -189,7 +189,7 @@ Azure AD 访问控制来配置服务标识。需要访问 WCF (SOAP) 服务的�
 ###使用服务标识的 WCF (REST) 服务
 
 在此方案中，可以将您的 WCF (REST) 服务部署到 
-Azure 或本地。该服务将作为下游服务供 Web 应用程序或其他 Web 服务访问。您需要使用特定于应用程序的标识来控制对它的访问权限。可根据您在 IIS 中使用的应用池帐户的类型来考虑要使用的标识 - 虽然技术不同，但方法类似，因为访问此服务时使用的是应用程序作用域帐户与最终用户帐户。
+Azure 或本地。该服务将作为下游服务供网站或其他 Web 服务访问。您需要使用特定于应用程序的标识来控制对它的访问权限。可根据您在 IIS 中使用的应用池帐户的类型来考虑要使用的标识 - 虽然技术不同，但方法类似，因为访问此服务时使用的是应用程序作用域帐户与最终用户帐户。
 
 使用 Azure AD 访问控制中的服务标识功能。
 配置 Azure AD 访问控制以颁发简单 Web 标记 (SWT) 令牌。若要在 REST 服务端上处理 SWT 令牌，您可以实施自定义令牌处理程序并将它插入 WIF 管道中，也可以"手动"分析它，而无需使用 WIF 基础结构。
@@ -215,8 +215,8 @@ Internet 标识（例如 Live ID/Microsoft 帐户或 Facebook）来控制对此�
 可使用 Azure AD 访问控制来颁发 SWT 令牌。若要在 REST 服务端上处理
 SWT 令牌，您可以实施自定义令牌处理程序并将它插入 WIF 管道中，也可以"手动"分析它，而无需使用 WIF 基础结构。
 
-应特别注意，若要实施此方案，应用程序需要使用 Web 浏览器控件来收集最终用户凭据。因此，如果从 ASP.NET Web 应用访问 REST 服务，则不适合采用此方案。此方案只适合通过用户的客户端应用程序（例如 Windows Phone 7 应用或丰富桌面客户端）访问 REST 服务的情况。弹出 Web 浏览器控件的关键原因是
-Internet 标识本身不支持活动配置文件方案（Web 服务方案）。Internet 标识主要支持依赖浏览器重定向的被动配置文件方案（Web 应用）：在此处使用 Web 浏览器控件会很方便。
+应特别注意，若要实施此方案，应用程序需要使用 Web 浏览器控件来收集最终用户凭据。因此，如果从 ASP.NET网站访问 REST 服务，则不适合采用此方案。此方案只适合通过用户的客户端应用程序（例如 Windows Phone 7 应用或丰富桌面客户端）访问 REST 服务的情况。弹出 Web 浏览器控件的关键原因是
+Internet 标识本身不支持活动配置文件方案（Web 服务方案）。Internet 标识主要支持依赖浏览器重定向的被动配置文件方案（网站）：在此处使用 Web 浏览器控件会很方便。
 
 请参考以下图表（WIF 是可选项，因而未显示）：
 
@@ -232,29 +232,29 @@ Internet 标识本身不支持活动配置文件方案（Web 服务方案）。I
 -   [使用由 Azure 访问控制服务 (ACS) 颁发的 SWT 令牌保护 REST WCF](http://code.msdn.microsoft.com/REST-WCF-With-SWT-Token-123d93c0)
 
 
-###在 ASP.NET Web 应用和 REST WCF 服务之间使用共享 SWT 令牌
+###在 ASP.NET网站和 REST WCF 服务之间使用共享 SWT 令牌
 
 在此方案中，您具有包含前端
-ASP.NET Web 应用和下游 REST 服务的分布式应用程序，并且您需要跨物理层维护最终用户的上下文。在基于下游 REST 服务中的最终用户标识实施授权逻辑或日志记录时，需要这么做。
+ASP.NET网站和下游 REST 服务的分布式应用程序，并且您需要跨物理层维护最终用户的上下文。在基于下游 REST 服务中的最终用户标识实施授权逻辑或日志记录时，需要这么做。
 
-可配置 Azure AD 访问控制来颁发 SWT 令牌。SWT 令牌将颁发给前端 ASP.NET Web 应用，然后与下游 REST 服务共享。在此例中，只在 Azure AD 访问控制中配置了一个依赖方。但有几个问题需要注意：
+可配置 Azure AD 访问控制来颁发 SWT 令牌。SWT 令牌将颁发给前端 ASP.NET网站，然后与下游 REST 服务共享。在此例中，只在 Azure AD 访问控制中配置了一个依赖方。但有几个问题需要注意：
 
--   由于 WIF 不提供现成的 SWT 令牌处理程序，您需要实施要与 ASP.NET Web 应用结合使用的自定义令牌处理程序。您应依赖 WIF 完成的众多工作来支持依赖浏览器重定向的 WS 联合身份验证协议，而不是自己实施该协议。
+-   由于 WIF 不提供现成的 SWT 令牌处理程序，您需要实施要与 ASP.NET网站结合使用的自定义令牌处理程序。您应依赖 WIF 完成的众多工作来支持依赖浏览器重定向的 WS 联合身份验证协议，而不是自己实施该协议。
 -   在实施 SWT 自定义令牌处理程序时，请确保将对启动令牌进行寻址以保证保留它。否则，您将无法共享它并将其发送到下游 REST 服务。
 -   您不必在 REST 服务上使用 WIF；您可以"手动"分析令牌，因为在此例中无需处理重定向。
 
-![ASP.NET Web Application][08]
+![ASP.NET网站lication][08]
 
 请参见以下资源来实施此方案：
 
 -   [如何：将 Google 配置为标识提供程序](http://msdn.microsoft.com/zh-cn/library/gg185976.aspx)
 -   [如何：将 Facebook 配置为标识提供程序](http://msdn.microsoft.com/zh-cn/library/gg185919.aspx)
 -   [如何：将 Yahoo! 配置为标识提供程序](http://msdn.microsoft.com/zh-cn/library/gg185977.aspx)
--   [使用共享 SWT 令牌实现 ASP.NET Web 应用到 REST WCF 服务的委派](http://code.msdn.microsoft.com/ASPNET-Web-App-To-REST-WCF-b2b95f82)
+-   [使用共享 SWT 令牌实现 ASP.NET网站到 REST WCF 服务的委派](http://code.msdn.microsoft.com/ASPNET-Web-App-To-REST-WCF-b2b95f82)
 
 ###在声明感知应用程序和服务中实现基于角色的访问控制 (RBAC)
 
-在此方案中，您需要在 Web 应用程序或服务中基于用户角色实施授权：具有所需角色的用户将获得访问权限，而那些没有所需角色的用户会被拒绝。简单地说，您的应用程序需要回答一个简单问题 - 是否为具有角色
+在此方案中，您需要在网站或服务中基于用户角色实施授权：具有所需角色的用户将获得访问权限，而那些没有所需角色的用户会被拒绝。简单地说，您的应用程序需要回答一个简单问题 - 是否为具有角色
 X 的用户？
 
 有多种方法可实施此方案。您可以使用 Azure
@@ -288,12 +288,12 @@ RoleManger。WIF 可用于在实施自定义 RoleManager 接口方法（例如 G
 
 -   [如何：使用 WIF 和 ACS 在声明感知 ASP.NET 应用程序中实现基于角色的访问控制 (RBAC)](http://msdn.microsoft.com/zh-cn/library/gg185914.aspx)
 -   [如何：使用规则实现令牌转换逻辑](http://msdn.microsoft.com/zh-cn/library/gg185955.aspx)
--   [使用 RoleManager 对声明感知 (WIF) ASP.NET Web 应用程序进行授权](http://blogs.msdn.com/b/alikl/archive/2010/11/18/authorization-with-rolemanager-for-claims-aware-wif-asp-net-web-applications.aspx)
+-   [使用 RoleManager 对声明感知 (WIF) ASP.NET网站进行授权](http://blogs.msdn.com/b/alikl/archive/2010/11/18/authorization-with-rolemanager-for-claims-aware-wif-asp-net-web-applications.aspx)
 -   代码示例：使用 [Windows Identity Foundation SDK](http://www.microsoft.com/downloads/details.aspx?FamilyID=c148b2df-c7af-46bb-9162-2c9422208504) 的 IsInRole 中的声明
 
 ###在声明感知应用程序和服务中实现基于声明的授权
 
-在此方案中，您需要在 Web 应用程序或服务中实施复杂的授权逻辑，因为 IsInRole() 方法无法满足您的授权需要。如果您的授权方法依赖角色，请考虑实施上一节中概述的基于角色的访问控制。
+在此方案中，您需要在网站或服务中实施复杂的授权逻辑，因为 IsInRole() 方法无法满足您的授权需要。如果您的授权方法依赖角色，请考虑实施上一节中概述的基于角色的访问控制。
 
 可使用 ClaimsAuthorizationManager 作为 WIF 扩展点。ClaimsAuthorizationManager 允许进行外部访问权限检查调用，以便您的应用程序代码看起来比在应用程序的代码中实施访问权限检查时更整洁且更可维护。
 
@@ -424,7 +424,7 @@ Azure AD 访问控制的安全设置。在设计并部署您的应用程序时�
 ###Windows Identity Foundation
 
 下面是 WIF 的关键安全设置。以下信息摘自 [WIF 设计注意事项](http://msdn.microsoft.com/zh-cn/library/ee517298.aspx) and [Windows Identity Foundation
-和 ASP.NET Web 应用程序的 (WIF) 安全性 - 威胁和对策](http://blogs.msdn.com/b/alikl/archive/2010/12/02/windows-identity-foundation-wif-security-for-asp-net-web-applications-threats-amp-countermeasures.aspx)
+和 ASP.NET网站的 (WIF) 安全性 - 威胁和对策](http://blogs.msdn.com/b/alikl/archive/2010/12/02/windows-identity-foundation-wif-security-for-asp-net-web-applications-threats-amp-countermeasures.aspx)
 。
 
 -   **IssuerNameRegistry**。指定受信任的安全令牌服务 (STS)。确保仅列出了受信任的 STS。
@@ -466,7 +466,7 @@ Azure AD 访问控制的安全设置。在设计并部署您的应用程序时�
 -   [基于声明的身份识别和访问控制指南](http://go.microsoft.com/fwlink/?LinkId=214562)
 -   [访问控制服务](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg429786.aspx)
 -   [ACS 操作指南](http://msdn.microsoft.com/zh-cn/library/windowsazure/gg185939.aspx)
--   [使用访问控制服务 v2.0 保护 Azure Web 角色 ASP.NET Web 应用程序](http://social.technet.microsoft.com/wiki/contents/articles/2590.aspx)
+-   [使用访问控制服务 v2.0 保护 Azure Web 角色 ASP.NET网站](http://social.technet.microsoft.com/wiki/contents/articles/2590.aspx)
 -   [Azure AD 访问控制服务 (ACS) 学会视频](http://social.technet.microsoft.com/wiki/contents/articles/2777.aspx)
 -   [Microsoft 安全开发生命周期](http://www.microsoft.com/security/sdl/default.aspx)
 -   [SDL Threat Modeling Tool 3.1.8](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=2955)

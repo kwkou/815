@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中缩放 Web 应用" 
-	description="了解如何向上扩展和横向扩展 Azure 网站中的 Web 应用（包括自动缩放）。" 
+	pageTitle="在 Azure 网站中缩放网站" 
+	description="了解如何向上扩展和横向扩展 Azure 网站中的网站（包括自动缩放）。" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -12,9 +12,9 @@
 	ms.date="09/16/2015" 
 	wacn.date="11/02/2015"/>
 
-# 在 Azure 网站中缩放 Web 应用 #
+# 在 Azure 网站中缩放网站#
 
-为提高你的 Web 应用在 Windows Azure 上的性能和吞吐量，你可以使用 Azure 管理门户将 Web 托管计划模式从“免费”缩放为“共享”、“基本”或“标准”。
+为提高你的网站在 Windows Azure 上的性能和吞吐量，你可以使用 Azure 管理门户将 Web 托管计划模式从“免费”缩放为“共享”、“基本”或“标准”。
 
 在 Azure 网站上放大包括两个相关操作：将您的 Web 托管计划模式更改为更高服务级别，以及切换到更高服务级别后配置某些设置。本文将介绍这两个主题。更高的服务层（如“标准”模式）在确定如何使用 Azure 上的资源方面可提供更高的可靠性和灵活性。
 
@@ -156,7 +156,7 @@
 
 <a name="devfeatures"></a>
 ## 开发人员功能
-提供了以下面向开发人员的功能，具体取决于 Web 应用的模式：
+提供了以下面向开发人员的功能，具体取决于网站的模式：
 
 ### 位数 ###
 

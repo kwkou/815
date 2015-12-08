@@ -73,7 +73,7 @@ Azure 网站不支持所有本机模块，并且在编译那要求具有非常�
 [指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps
 [如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli
 [build and deploy a Node.js  Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Node.js Web Application with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb
+[Node.js网站lication with Storage on MongoDB (MongoLab)]: /documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb
 [Publishing with Git]: /documentation/articles/web-sites-publish-source-control
 [Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app
 

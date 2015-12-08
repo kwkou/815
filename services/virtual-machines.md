@@ -55,7 +55,7 @@
 
 ####[使用 Windows PowerShell 脚本发布到开发和测试环境](http://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx)
 
-了解如何使用 Visual Studio 生成发布脚本，用于自动将 Web 应用程序发布到虚拟机。
+了解如何使用 Visual Studio 生成发布脚本，用于自动将网站发布到虚拟机。
 
 ####[下载 Azure 管理库的 NuGet 包](http://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Libraries)
 
@@ -69,7 +69,7 @@
 
 ####[Azure 网站、云服务和虚拟机对比](/zh-cn/documentation/articles/choose-web-site-cloud-service-vm)
 
-Azure 提供三种可用于托管 Web 应用程序的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
+Azure 提供三种可用于托管网站的计算模型：网站、云服务和虚拟机。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。
 
 ####[使用 Azure 虚拟机进行自动测试](http://justazure.com/automated-testing-in-microsoft-azure)
 

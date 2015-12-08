@@ -72,16 +72,16 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 
 ##<a name="scale"></a>缩放 Web 作业
 
-* [缩放 Azure 网站上的 Web 应用程序](http://msdn.microsoft.com/magazine/dn786914.aspx)
-* [Azure 网站：构建随时可投入业务的大规模 Web 应用](https://channel9.msdn.com/Events/Build/2014/3-626)。介绍如何使用 Web 作业（包括 WebJobs SDK）缩放 Web 应用。
+* [缩放 Azure 网站上的网站](http://msdn.microsoft.com/magazine/dn786914.aspx)
+* [Azure 网站：构建随时可投入业务的大规模网站](https://channel9.msdn.com/Events/Build/2014/3-626)。介绍如何使用 Web 作业（包括 WebJobs SDK）缩放网站。
 
 ##<a name="additional"></a>其他 Web 作业资源
 
 * [Magnus Mårtensson 发表的 Azure Web 作业 GA 博客文章](http://magnusmartensson.com/azure-webjobs-ga)
 * [在 Azure 网站上运行 Powershell Web 作业](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
 * [在 Azure 完成触发 Web 作业时接收通知](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
-* [使用 Web 作业创建简单的 Web 应用备份保留策略](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
-* [在处理第一个请求时 Azure Web Apps 和云服务速度缓慢](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/)。演示如何使用 Web 作业来模拟仅适用于标准定价层的 AlwaysOn 功能。
+* [使用 Web 作业创建简单的网站备份保留策略](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
+* [在处理第一个请求时 Azure 网站和云服务速度缓慢](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/)。演示如何使用 Web 作业来模拟仅适用于标准定价层的 AlwaysOn 功能。
 * [Web 作业正常关闭](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.U72Il_5OWUl)。对于 WebJobs SDK 正常关闭，请参阅[正常关闭](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful)。）
 * [使用 Azure Web 作业和 AzCopy 自动备份](http://markjbrown.com/azure-webjobs-azcopy/)
 
@@ -97,7 +97,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 ##<a name="samples"></a>示例 Web 作业应用程序
 
 * [Web 作业团队在 GitHub 上提供的示例应用程序](https://github.com/azure/azure-webjobs-sdk-samples)
-* [使用 WebJobs SDK 创建包含 Web 作业后端的简单 Azure Web 应用](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb)
+* [使用 WebJobs SDK 创建包含 Web 作业后端的简单 Azure 网站](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb)
 * [SiteMonitR](http://code.msdn.microsoft.com/SiteMonitR-dd4fcf77)。演示计划 Web 作业和事件驱动型 Web 作业的用法。请参阅博客文章[使用 Azure WebJobs SDK 重新生成 SiteMonitR](http://www.bradygaster.com/post/rebuilding-the-sitemonitr-using-windows-azure-webjobs)。
 
 ##<a name="blogs"></a>博客
@@ -112,7 +112,7 @@ Azure 管理门户中的 Web 作业仪表板提供了强大的管理功能，可
 * [WebJobs SDK 堆栈溢出](http://stackoverflow.com/questions/tagged/azure-webjobssdk)
 * [Azure 和 ASP.NET 论坛](http://forums.asp.net/1247.aspx)
 * [Azure 网站论坛](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
-* [Azure Web Apps 用户之声站点](/product-feedback)
+* [Azure 网站用户之声站点](/product-feedback)
  
 
 <!---HONumber=82-->

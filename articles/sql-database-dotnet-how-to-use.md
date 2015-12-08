@@ -120,7 +120,7 @@ SQL 数据库 在 Azure 上提供关系数据存储、访问和管理服务。�
 - [到 SQL 数据库的连接：中心建议](/documentation/articles/sql-database-connect-central-recommendations)。
 
 
-如果你选择使用 Visual Studio 并且你的配置没有将 Azure Web 应用程序包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。
+如果你选择使用 Visual Studio 并且你的配置没有将 Azure 网站包含为前端，则无需在开发计算机上安装其他工具或 SDK。你现在即可开始开发应用程序。
 
 您可以使用 Visual Studio 中的所有相同设计器工具处理 SQL 数据库，就像可以使用这些工具处理 SQL Server 一样。服务器资源管理器允许您查看（但不能编辑）数据库对象。Visual Studio 实体数据模型设计器功能完备，您可以用它来创建针对 SQL 数据库 的模型以用于 Entity Framework。
 

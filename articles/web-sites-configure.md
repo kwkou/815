@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中配置 Web 应用" 
-	description="如何在 Azure 网站中配置 Web 应用" 
+	pageTitle="在 Azure 网站中配置网站" 
+	description="如何在 Azure 网站中配置网站" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="erikre" 
@@ -86,7 +86,7 @@
 
 ### 应用程序诊断
 
-从支持日志记录的 Web 应用程序写入诊断日志的选项：
+从支持日志记录的网站写入诊断日志的选项：
 
 - <strong>文件系统</strong>。将日志写入网站的文件系统。文件系统日志记录将持续 12 小时。你可以从网站的 FTP 共享访问这些日志。（参阅 [FTP 凭据](/documentation/articles/web-sites-manage#ftp-credentials)）。
 - <strong>表存储</strong>。将日志写入 Azure 表存储。该存储没有时限，除非你禁用日志记录，否则会一直启用日志记录。 
@@ -131,7 +131,7 @@
 
 ### 应用设置
 
-你的 Web 应用程序在启动时将加载的名称/值对。
+你的网站在启动时将加载的名称/值对。
 
 - 对于 .NET 网站，这些设置将在运行时注入到 .NET 配置 AppSettings 中，并且将重写现有设置。 
 
@@ -158,7 +158,7 @@
 
 网站的默认文档是未指定网站上的特定页面时显示的网页。如果网站包含列表中的多个文件，请确保将默认文件放置在列表的顶部。
 
-Web 应用程序可能会使用根据 URL 路由的模块，而不是提供静态内容，在此情况下，将没有此类默认文档。
+网站可能会使用根据 URL 路由的模块，而不是提供静态内容，在此情况下，将没有此类默认文档。
 
 ### 处理程序映射
 
