@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="06/22/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/03/2015" 
+	wacn.date="11/27/2015"/>
 
 
 # AzCopy 命令行实用程序入门
@@ -35,7 +35,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
 
 	AzCopy /Source:<source> /Dest:<destination> /Pattern:<filepattern> [Options]
 
-> [WACOM.NOTE] 从 AzCopy 3.0.0 版开始，AzCopy 命令行语法要求在指定每个参数时都包括参数名称，例如 `/ParameterName:ParameterValue`。
+> [AZURE.NOTE] 从 AzCopy 3.0.0 版开始，AzCopy 命令行语法要求在指定每个参数时都包括参数名称，*例如*`/ParameterName:ParameterValue`。
 
 ## 编写你的第一条 AzCopy 命令
 
@@ -43,7 +43,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
 	
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /DestKey:key /Pattern:abc.txt
 
-请注意，当复制单个文件，请用选项 /Pattern 指定文件名称。你可以在本文的后面部分中找到更多示例。
+请注意，当复制单个文件，请用文件名称指定选项 /模式。你可以在本文的后面部分中找到更多示例。
 
 ## 参数介绍
 
@@ -136,7 +136,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
     <td>N</td>
   </tr>
   <tr>
-    <td><b>/BlobType:&lt;block | page&gt;</b></td>
+    <td><b>/BlobType:&lt;block | page | append></b></td>
     <td>指定目标 blob 是块 blob，页 blob 还是追加 blob。此选项仅在上载 blob 时适用，其他情况下会生成错误。如果目标是一个 blob 并且未指定此选项，则默认情况下 AzCopy 将创建块存储(block blob)。</td>
     <td>Y</td>
     <td>N</td>
@@ -157,7 +157,7 @@ AzCopy 是一个高性能的命令行实用程序，用于将数据上载、复�
     <td><b>/Snapshot</b></td>
     <td>指示是否传输快照。只有当源是 blob 时，此选项才有效。 
         <br />
-        传输的 blob 快照将按以下格式重命名：[blob-name](/documentation/articles/snapshot-time)[extension]。
+        传输的 blob 快照将按以下格式重命名：[blob-name] (snapshot-time)[extension]。
         <br />
         默认情况下，不会复制快照。</td>
     <td>Y</td>
@@ -772,7 +772,7 @@ AzCopy 会像在命令行上包括了所有个体参数一样来处理此命令�
 
 	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.chinacloudapi.cn/myContainer/ /DestKey:key /Pattern:ab /SetContentType
 
-## 使用 AzCopy 复制 Azure File 存储中的文件（仅限预览版本）
+## 使用 AzCopy 复制 Azure File 存储中的文件
 
 下面的示例演示了使用 AzCopy 复制 Azure 文件的各种方案。
 
@@ -912,10 +912,10 @@ AzCopy 在已拆分数据文件名称中使用*卷索引*来区分多个文件�
 #### 在一台计算机上运行一个 AzCopy 实例。
 AzCopy 旨在最大限度地利用计算机资源来加快数据传输，如果需要更多的并发操作，我们建议在一台计算机上只运行一个 AzCopy 实例并指定选项 `/NC`。有关详细信息，请在命令行上键 入`AzCopy /?:NC`。
 
-#### 当你激活“将 FIPS 兼容算法用于加密、哈希和签名”的本地策略时，请启用适用于 AzCopy的FIPS 兼容的 MD5 算法。
-默认情况下，AzCopy 使用 .NET实现的 MD5 算法来计算 MD5，但出于安全原因有时候我们需要采用FIPS兼容的MD5算法。
+#### 当你“使用适用于加密、哈希和签名的 FIPS 兼容算法”时，请启用适用于 AzCopy、与 FIPS 兼容的 MD5 算法。
+默认情况下，当拷贝对象有安全需求时，即需要 AzCopy 来启动 FIPS 兼容的 MD5 设置，那么 AzCopy 使用 .NET MD5 实现来计算 MD5。
 
-可以创建属性为 `AzureStorageUseV1MD5` 的 app.config 文件 `AzCopy.exe.config`，将其放在 AzCopy.exe 所在的目录。
+可以创建属性为 `AzureStorageUseV1MD5` 的 app.config 文件 `AzCopy.exe.config`，将其与 AzCopy.exe 分开放。
 
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
@@ -924,31 +924,33 @@ AzCopy 旨在最大限度地利用计算机资源来加快数据传输，如果�
 	  </appSettings>
 	</configuration>
 
-至于属性 AzureStorageUseV1MD5
-True -默认值，AzCopy 将使用 .NET MD5 实现。
-False - AzCopy 将使用 FIPS 兼容的MD5 算法。
+至于属性 “AzureStorageUseV1MD5”
+• True – 默认值，AzCopy 将使用 .NET MD5 实现。
+• False – AzCopy 将使用 FIPS 兼容的 MD5 算法。
 
-请注意，默认情况下，在 Windows 计算机上禁用 FIPS 兼容的算法，可以在你运行的窗口中键入 secpol.msc 并检查此开关在安全设置->本地策略->安全选项->系统加密：将 FIPS 兼容算法用于加密、哈希和签名。
+请注意，默认情况下，在 Windows 计算机上禁用 FIPS 兼容的算法，可以在你运行的窗口中键入 secpol.msc 并检查此开关在安全设置->本地策略->安全选项->系统加密：使用 FIPS 兼容算法来加密、哈希和签名。
 
 ## AzCopy 版本
 
-| 版本 | 新增功能 |
-|---------|-----------------------------------------------------------------------------------------------------------------|
-| **V4.2.0** | **当前的预览版本。包括 V3.2.0 中的所有功能。此外支持 File 存储共享 SAS、File 存储异步复制，将表实体导出到 CSV 和在导出表实体时指定清单名称**
-| **V3.2.0** | **当前的发行版本。支持附加的 Blob 和 FIPS 兼容的 MD5 设置**
-| V4.1.0 | 包括 V3.1.0 中的所有功能。支持以同步方式复制 blob 和 File 并指定目标 blob 和 File 的内容类型
-| V3.1.0 | 支持以同步方式复制 blob 并指定目标 blob 的内容类型
-| V4.0.0 | 包括 V3.0.0 中的所有功能。还支持将文件复制到 Azure File 存储或从其中复制文件，以及将实体复制到 Azure 表存储或从其中复制实体。
-| V3.0.0 | 将 AzCopy 命令行语法修改为需要参数名称，并且重新设计了命令行帮助。此版本仅支持复制到 Azure Blob 存储和从其中进行复制。	
-| V2.5.1 | 使用选项 /xo 和 /xn 时优化性能。修复了与源文件名称中的特殊字符以及在用户输入错误的命令行语法后导致的恢复日志损坏相关的 bug。	
-| V2.5.0 | 优化了大规模复制方案的性能，并执行了几处重要的可用性改进。
-| V2.4.1 | 支持在安装向导中指定目标文件夹。                     			
-| V2.4.0 | 支持为 Azure File 存储上载和下载文件。
-| V2.3.0 | 支持读取访问异地冗余存储帐户。|
-| V2.2.2 | 升级为使用 Azure 存储客户端库 3.0.3 版。
-| V2.2.1 | 修复了在同一存储帐户内复制大量文件时的性能问题。
-| V2.2 | 支持为 blob 名称设置虚拟目录分隔符。支持指定日志文件路径。|
-| V2.1 | 提供了 20 多个选项来支持高效执行 blob 上载、下载和复制操作。|
+> [AZURE.NOTE] 我们建议安装最新版本的 AzCopy 以获得新功能和更好的性能。
+
+| 版本 | 新增功能 | 引用的 .NET 客户端库版本 | 目标存储 REST API 版本 |
+|---------|-----------------------------------------------------------------------------------------------------------------|--------|----------|
+| [**V4.2.0**](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi) | **当前的预览版本。包括 V3.2.0 中的所有功能。此外支持文件存储共享 SAS、文件存储异步复制，将表实体导出到 CSV 和在导出表实体时指定清单名称** | **V5.0.0** | **2015-02-21**
+| [**V3.2.0**](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-2-0/MicrosoftAzureStorageTools.msi) | **当前的发行版本。支持附加的 Blob 和 FIPS 兼容的 MD5 设置** | **V5.0.0** | **2015-02-21**
+| [V4.1.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi) | 包括 V3.1.0 中的所有功能。支持以同步方式复制 blob 和文件并指定目标 blob 和文件的内容类型 | V4.3.0 | 2014-02-14
+| [V3.1.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-1-0/MicrosoftAzureStorageTools.msi) | 支持以同步方式复制 blob 并指定目标 blob 的内容类型| V4.3.0 | 2014-02-14
+| [V4.0.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-4-0-0-preview/MicrosoftAzureStorageTools.msi) | 包括 V3.0.0 中的所有功能。还支持将文件复制到 Azure 文件存储或从其中复制文件，以及将实体复制到 Azure 表存储或从其中复制实体。| V4.2.1 | 2014-02-14
+| [V3.0.0](http://xdmrelease.blob.core.chinacloudapi.cn/azcopy-3-0-0/MicrosoftAzureStorageTools.msi) | 将 AzCopy 命令行语法修改为需要参数名称，并且重新设计了命令行帮助。此版本仅支持复制到 Azure Blob 存储和从其中进行复制。| V4.2.1 | 2014-02-14
+| V2.5.1 | 使用选项 /xo 和 /xn 时优化性能。修复了与源文件名称中的特殊字符以及在用户输入错误的命令行语法后导致的日志文件损坏相关的 bug。| V4.1.0 | 2014-02-14
+| V2.5.0 | 优化了大规模复制方案的性能，并执行了几处重要的可用性改进。| V4.1.0 | 2014-02-14
+| V2.4.1 | 支持在安装向导中指定目标文件夹。| V4.0.0 | 2014-02-14
+| V2.4.0 | 支持为 Azure 文件存储上载和下载文件。| V4.0.0 | 2014-02-14
+| V2.3.0 | 支持读取访问异地冗余存储帐户。| V3.0.3 | 2013-08-15
+| V2.2.2 | 升级为使用 Azure 存储客户端库 3.0.3 版。| V3.0.3 | 2013-08-15
+| V2.2.1 | 修复了在同一存储帐户内复制大量文件时的性能问题。| V2.1.0 |
+| V2.2 | 支持为 blob 名称设置虚拟目录分隔符。支持指定日志文件路径。| V2.1.0 |
+| V2.1 | 提供了 20 多个选项来支持高效执行 blob 上载、下载和复制操作。| V2.0.5 |
 
 
 ## 后续步骤
@@ -959,16 +961,18 @@ False - AzCopy 将使用 FIPS 兼容的MD5 算法。
 
 - [Azure 存储简介](/zh-cn/documentation/articles/storage-introduction)
 - [将文件存储在 Blob 存储中](/zh-cn/documentation/articles/storage-dotnet-how-to-use-blobs)
-- [在具有文件存储的 Azure 中创建 SMB File Share](/zh-cn/documentation/articles/storage-dotnet-how-to-use-files)
+- [在具有文件存储的 Azure 中创建 SMB 文件共享](/documentation/articles/storage-dotnet-how-to-use-files)
 
 ### Azure 存储博客文章：
 - [AzCopy：引入了同步复制和自定义内容类型](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
-- [AzCopy：公开发行AzCopy 3.0，以及发布支持Azure 表（Table）和文件（File）的预览版本](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
-- [AzCopy：针对大规模复制方案进行了优化](http://go.microsoft.com/fwlink/?LinkId=507682)
+- [AzCopy：支持表和文件的 AzCopy 3.0 增强预览版本 AzCopy 4.0 宣布公开发行](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
+- [AzCopy：针对大规模复制方案进行了优化](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/08/08/azcopy-2-5-release.aspx)
 - [Windows Azure 文件（File）存储服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [AzCopy：支持读取访问异地冗余存储](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/04/07/azcopy-support-for-read-access-geo-redundant-account.aspx)
 - [AzCopy：使用可重新启动的模式和 SAS 令牌传输数据](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/09/07/azcopy-transfer-data-with-re-startable-mode-and-sas-token.aspx)
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy：为 Windows Azure Blob 上载/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
-<!---HONumber=70-->
+ 
+
+<!---HONumber=82-->

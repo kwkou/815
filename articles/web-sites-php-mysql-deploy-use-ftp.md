@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 FTP 在 Azure 网站中创建和部署 PHP-MySQL Web 应用" 
-	description="本教程演示如何创建在 MySQL 中存储数据的 PHP Web 应用并使用 FTP 部署到 Azure。" 
+	pageTitle="使用 FTP 在 Azure 网站中创建和部署 PHP-MySQL网站" 
+	description="本教程演示如何创建在 MySQL 中存储数据的 PHP网站并使用 FTP 部署到 Azure。" 
 	services="app-service\web" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -13,7 +13,7 @@
 	wacn.date="11/27/2015"/>
 
 
-#使用 FTP 在 Azure 网站中创建和部署 PHP-MySQL Web 应用
+#使用 FTP 在 Azure 网站中创建和部署 PHP-MySQL网站
 
 > [AZURE.SELECTOR]
 - [.Net](/documentation/articles/web-sites-dotnet-get-started)
@@ -23,21 +23,21 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-本教程演示如何创建 PHP-MySQL Web 应用以及如何使用 FTP 部署该应用。本教程假定你已在计算机上安装 [PHP][install-php]、[MySQL][install-mysql]、Web 服务器和 FTP 客户端。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL Web 应用。
+本教程演示如何创建 PHP-MySQL网站以及如何使用 FTP 部署该应用。本教程假定你已在计算机上安装 [PHP][install-php]、[MySQL][install-mysql]、Web 服务器和 FTP 客户端。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL网站。
  
 你将学习以下内容：
 
-* 如何使用 Azure 管理门户创建 Web 应用和 MySQL 数据库。由于 Web Apps 默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 Azure 管理门户创建网站和 MySQL 数据库。由于网站默认已启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 FTP 将应用程序发布到 Azure。
  
-通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用。将在 Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
+通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册网站。将在网站中托管应用程序。以下是已完成应用程序的屏幕快照：
 
 ![Azure PHP 网站][running-app]
 
 
-##创建 Web 应用并设置 FTP 发布
+##创建网站并设置 FTP 发布
 
-按照以下步骤创建 Web 应用和 MySQL 数据库：
+按照以下步骤创建网站和 MySQL 数据库：
 
 1. 登录到 [Azure 管理门户][management-portal]。
 2. 单击该门户左下的“+ 新建”图标。
@@ -211,7 +211,7 @@
 
 ##获取 MySQL 和 FTP 连接信息
 
-若要连接到正在 Web Apps 中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
+若要连接到正在网站中运行的 MySQL 数据库，你将需要连接信息。若要获取 MySQL 连接信息，请按照以下步骤操作：
 
 1. 在资源组中单击数据库：
 
@@ -225,7 +225,7 @@
 
     ![记下属性][note-properties]
 
-3. 从 Web 应用的仪表板中，单击页面右下角的“下载发布配置文件”链接：
+3. 从网站的仪表板中，单击页面右下角的“下载发布配置文件”链接：
 
 	![下载发布配置文件][download-publish-profile]
 
@@ -241,7 +241,7 @@
 
 ##发布应用
 
-在本地测试你的应用之后，你可以使用 FTP 将其发布到 Web 应用。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 MySQL 和 FTP 连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
+在本地测试你的应用之后，你可以使用 FTP 将其发布到网站。但是，你首先需要更新应用程序中的数据库连接信息。使用之前获取的数据库连接信息（在“获取 MySQL 和 FTP 连接信息”部分中），使用适当的值在 `createdatabase.php` 和 `index.php` 文件中更新以下信息：
 
 	// DB connection info
 	$host = "value of Data Source";

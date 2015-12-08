@@ -14,11 +14,11 @@
 
 # 将 Java 应用程序添加到 Azure 网站
 
-按照[在 Azure 网站中创建 Java Web 应用](/documentation/articles/web-sites-java-get-started)中的说明初始化 Java 网站后，即可通过将 WAR 置于 **webapps** 文件夹中来上载应用程序。
+按照[在 Azure 网站中创建 Java网站](/documentation/articles/web-sites-java-get-started)中的说明初始化 Java 网站后，即可通过将 WAR 置于 **webapps** 文件夹中来上载应用程序。
 
 **webapps** 文件夹的导航路径因你设置网站的方式不同而异。
 
-- 如果是通过使用 Azure 配置 UI 来设置 Web 应用，**webapps** 文件夹的路径就会是 **d:\\home\\site\\wwwroot\\webapps** 这样的形式。 
+- 如果是通过使用 Azure 配置 UI 来设置网站，**webapps** 文件夹的路径就会是 **d:\\home\\site\\wwwroot\\webapps** 这样的形式。 
 
 请注意，您可以使用源代码管理来上载您的应用程序或网页，包括在连续集成方案中也这样做。有关源代码管理与你的网站配合使用的说明，请参阅[从源代码管理发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control)。对于上载应用程序或网页，FTP 也是一种可选择的方式。
 

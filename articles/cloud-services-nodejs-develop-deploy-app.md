@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Node.js 入门指南 | Windows Azure"
-	description="了解如何创建简单的 Node.js Web 应用程序并将其部署到 Azure 云服务。"
+	description="了解如何创建简单的 Node.js网站并将其部署到 Azure 云服务。"
 	services="cloud-services"
 	documentationCenter="nodejs"
 	authors="MikeWasson"
@@ -23,10 +23,10 @@
 
 有关云服务以及如何将它们与 Azure 网站和虚拟机进行比较的更多信息，请参阅 [Azure 网站、云服务和虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)。
 
->[AZURE.TIP]想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑<a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">使用轻型 Web 应用</a>。 随着你的 Web 应用的不断扩大和你的需求的变化，你可以轻松升级到云服务。
+>[AZURE.TIP]想要构建一个简单的网站？ 如果你的方案只涉及一个简单的网站前端，则可以考虑<a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">使用轻型网站</a>。 随着你的网站的不断扩大和你的需求的变化，你可以轻松升级到云服务。
 
 
-通过学习本教程，你将可以生成一个托管在 Web 角色中的简单 Web 应用程序。你将使用计算模拟器在本地测试你的应用程序，然后使用 PowerShell 命令行工具来部署该应用程序。
+通过学习本教程，你将可以生成一个托管在 Web 角色中的简单网站。你将使用计算模拟器在本地测试你的应用程序，然后使用 PowerShell 命令行工具来部署该应用程序。
 
 该应用程序是一个简单的“hello world”应用程序：
 

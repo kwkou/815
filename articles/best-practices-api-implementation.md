@@ -138,9 +138,9 @@
 
 - **考虑在子域中放置 API 的优点和缺点**。
 
-	默认情况下，ASP.NET Web API 将 API 组织到域中的 /api 目录，如 http://www.adventure-works.com/api/orders。 此目录与同一主机公开的任何其他服务位于同一域中。最好将 Web API 拆分到具有 URI（如 http://api.adventure-works.com/orders） 的单独主机上运行的其自己的子域中。这种分离使你可以更有效地对 Web API 进行分隔和缩放，而不会影响 www.adventure-works.com 域中运行的任何其他 Web 应用程序或服务。
+	默认情况下，ASP.NET Web API 将 API 组织到域中的 /api 目录，如 http://www.adventure-works.com/api/orders。 此目录与同一主机公开的任何其他服务位于同一域中。最好将 Web API 拆分到具有 URI（如 http://api.adventure-works.com/orders） 的单独主机上运行的其自己的子域中。这种分离使你可以更有效地对 Web API 进行分隔和缩放，而不会影响 www.adventure-works.com 域中运行的任何其他网站或服务。
 
-	但是，将 Web API 放在不同的子域中也可能会带来安全问题。在 _www.adventure-works.com_ 上托管的任何 Web 应用程序或服务调用在其他位置运行的 Web API 可能会违反很多 Web 浏览器的同源策略。在这种情况下，将需要启用主机之间的跨域资源共享 (CORS)。有关详细信息，请参阅 API 安全指南文档。
+	但是，将 Web API 放在不同的子域中也可能会带来安全问题。在 _www.adventure-works.com_ 上托管的任何网站或服务调用在其他位置运行的 Web API 可能会违反很多 Web 浏览器的同源策略。在这种情况下，将需要启用主机之间的跨域资源共享 (CORS)。有关详细信息，请参阅 API 安全指南文档。
 
 ## 有关处理请求的注意事项
 
@@ -882,7 +882,7 @@
 
 	将要发送大量数据到服务器的客户端应用程序可能会先确定服务器是否实际可以接受该请求。在发送数据之前，客户端应用程序可以提交一个 HTTP 请求，其中包含 Expect: 100-Continue 标头、Content-Length 标头（指示数据的大小），但消息正文为空。如果服务器可以处理该请求，则应以指定 HTTP 状态 100（继续）的消息进行响应。然后，客户端应用程序可以继续操作并发送在消息正文中包含数据的完整请求。
 
-	如果你使用 IIS 来托管服务，则 HTTP.sys 驱动程序会自动检测并处理 Expect: 100-Continue 标头，然后再将请求传递到你的 Web 应用程序。这意味着你很可能在应用程序代码中看不到这些标头，你可以假设 IIS 已筛选掉任何它认为不适合或太大的消息。
+	如果你使用 IIS 来托管服务，则 HTTP.sys 驱动程序会自动检测并处理 Expect: 100-Continue 标头，然后再将请求传递到你的网站。这意味着你很可能在应用程序代码中看不到这些标头，你可以假设 IIS 已筛选掉任何它认为不适合或太大的消息。
 
 	如果你使用.NET Framework 生成客户端应用程序，则默认情况下所有 POST 和 PUT 消息都将先发送包含 Expect: 100-Continue 标头的消息。与服务器端一样，由 .NET Framework 透明地处理该过程。但是，此过程的结果是，每个 POST 和 PUT 请求会导致对服务器进行 2 次往返，即使是小请求，也是如此。如果你的应用程序不发送包含大量数据的请求，则可以通过在客户端应用程序中使用 `ServicePointManager` 类创建 `ServicePoint` 对象来禁用此功能。`ServicePoint` 对象将基于标识服务器上的资源的 URI 的方案和主机片段处理客户端建立的与服务器的连接。然后，你可以将 `ServicePoint` 对象的 `Expect100Continue` 属性设置为 false。客户端通过与 `ServicePoint` 对象的方案和主机片段匹配的 URI 发出的所有后续 POST 和 PUT 请求在发送时将不包含 Expect: 100-Continue 标头。下面的代码演示如何配置 `ServicePoint` 对象，以便将所有请求都发送到方案为 `http` 且主机为 `www.contoso.com` 的 URI。
 
@@ -956,7 +956,7 @@
 
 	- 使用 Comet 模型来保持客户端与托管 Web API 的服务器之间的永久网络连接，并使用此连接将消息从服务器推送回客户端。MSDN 杂志文章[在 Microsoft .NET Framework 中构建简单的 Comet 应用程序](https://msdn.microsoft.com/magazine/jj891053.aspx)介绍了一个示例解决方案。
 
-	- 使用 SignalR 通过永久网络连接将 Web 服务器中的实时数据推送到客户端。SignalR 可作为 NuGet 程序包用于 ASP.NET Web 应用程序。可以在 [ASP.NET SignalR](http://signalr.net/) 网站上找到详细信息。
+	- 使用 SignalR 通过永久网络连接将 Web 服务器中的实时数据推送到客户端。SignalR 可作为 NuGet 程序包用于 ASP.NET网站。可以在 [ASP.NET SignalR](http://signalr.net/) 网站上找到详细信息。
 
 	> [AZURE.NOTE]Comet 和 SignalR 均利用 Web 服务器和客户端应用程序之间的永久网络连接。这会影响可伸缩性，因为大量客户端可能需要同样多的并发连接数。
 
@@ -1098,7 +1098,7 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 
 - 由不同浏览器和用户代理启动的会话数。
 
-- 最经常查看的网页（主要适用于 Web 应用程序而不是 Web API）。
+- 最经常查看的网页（主要适用于网站而不是 Web API）。
 
 - 访问 Web API 的不同用户角色。
 

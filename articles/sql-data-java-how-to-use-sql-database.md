@@ -14,7 +14,7 @@
 
 # 如何通过 Java 使用 Azure SQL 数据库
 
-以下步骤演示了如何通过 Java 使用 Azure SQL 数据库。显示命令行示例是为了简单起见，但对于在本地、Azure 或其他环境中托管的 Web 应用程序，采用的步骤非常相似。本指南介绍了如何从 [Azure 管理门户](https://manage.windowsazure.cn)创建服务器和数据库。
+以下步骤演示了如何通过 Java 使用 Azure SQL 数据库。显示命令行示例是为了简单起见，但对于在本地、Azure 或其他环境中托管的网站，采用的步骤非常相似。本指南介绍了如何从 [Azure 管理门户](https://manage.windowsazure.cn)创建服务器和数据库。
 
 ## 什么是 Azure SQL 数据库
 

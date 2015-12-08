@@ -14,7 +14,7 @@
 
 
 # 适用于 Azure 网站的学习路线图
-体验版 Azure 网站可将您的 Web 资产快速迁移到 Azure 网站，并为客户全局创建丰富且顺畅的体验。按照本页面上的指南，通过 Web Apps 内容了解有效的学习路径。
+体验版 Azure 网站可将您的 Web 资产快速迁移到 Azure 网站，并为客户全局创建丰富且顺畅的体验。按照本页面上的指南，通过网站内容了解有效的学习路径。
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/websites-learning-map.svg" width="100%" height="100%"> </object>
  

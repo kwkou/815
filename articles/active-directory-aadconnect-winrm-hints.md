@@ -15,7 +15,7 @@
 # Azure AD Connect - Windows 远程托管提示
 
 
-当你使用 Azure AD Connect 部署 Active Directory 联合身份验证服务或 Web 应用程序代理时，请检查提示下面的要求，以确保连接和配置成功：
+当你使用 Azure AD Connect 部署 Active Directory 联合身份验证服务或网站代理时，请检查提示下面的要求，以确保连接和配置成功：
 
 - 如果目标服务器已加入域，请确保已启用“Windows 远程托管” 
 	* 在权限提升的 PSH 命令窗口中，使用命令“Enable-PSRemoting –force” 

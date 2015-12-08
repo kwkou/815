@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Git 在 Azure 网站中创建和部署 PHP-MySQL Web 应用"
-	description="本教程演示如何创建在 MySQL 中存储数据的 PHP Web 应用并使用 Git 部署到 Azure。"
+	pageTitle="使用 Git 在 Azure 网站中创建和部署 PHP-MySQL网站"
+	description="本教程演示如何创建在 MySQL 中存储数据的 PHP网站并使用 Git 部署到 Azure。"
 	services="app-service\web"
 	documentationCenter="php"
 	authors="tfitzmac"
@@ -22,7 +22,7 @@
 * 如何使用 Azure 管理门户创建 Azure 网站和 MySQL 数据库。由于在 Azure 网站中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
  
-通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册 Web 应用程序。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
+通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册网站。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
 
 ![Azure PHP 网站][running-app]
 
@@ -203,11 +203,11 @@
 
 ##发布应用
 
-在本地测试你的应用之后，可以使用 Git 将其发布到 Web Apps。你将初始化本地 Git 存储库并发布该应用程序。
+在本地测试你的应用之后，可以使用 Git 将其发布到网站。你将初始化本地 Git 存储库并发布该应用程序。
 
-> [AZURE.NOTE]这些步骤与在门户中的“创建 Web 应用并设置 Git 发布”一节的结尾显示的步骤相同。
+> [AZURE.NOTE]这些步骤与在门户中的“创建网站并设置 Git 发布”一节的结尾显示的步骤相同。
 
-1. （可选）如果你忘记或误放了 Git 远程存储库 URL，请导航到门户上的 Web 应用属性。
+1. （可选）如果你忘记或误放了 Git 远程存储库 URL，请导航到门户上的网站属性。
 	
 
 1. 打开 GitBash（或终端，如果 Git 在 `PATH` 中），将目录更改为应用程序的根目录，并运行以下命令：

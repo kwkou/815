@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 上使用 Linux VM 的 Ruby on Rails Web 应用" 
+	pageTitle="Azure 上使用 Linux VM 的 Ruby on Rails网站" 
 	description="在 Azure 上使用 Linux 虚拟机托管基于 Ruby on Rails 的网站。" 
 	services="virtual-machines" 
 	documentationCenter="ruby" 
@@ -16,7 +16,7 @@
 
 
 
-# Azure 虚拟机上的 Ruby on Rails Web 应用程序
+# Azure 虚拟机上的 Ruby on Rails网站
 
 本教程介绍如何在 Azure 中使用 Linux 虚拟机托管 Ruby on Rails 网站。
 

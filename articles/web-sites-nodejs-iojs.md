@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何将 io.js 与 Azure 网站 Web Apps 配合使用" 
-	description="了解如何将 Azure 网站中的 Web 应用与 io.js 配合使用。" 
+	pageTitle="如何将 io.js 与 Azure 网站配合使用" 
+	description="了解如何将 Azure 网站中的网站与 io.js 配合使用。" 
 	services="app-service\web" 
 	documentationCenter="nodejs" 
 	authors="felixrieseberg" 
@@ -23,18 +23,18 @@
 
 在部署 Node.js 应用程序后，Azure 网站将运行大量的小命令来确保正确配置环境。如果使用部署脚本，则可以将此过程自定义为包含 io.js 的下载和配置。
 
-GitHub 上提供了 [io.js 部署脚本]。若要在 Web 应用上启用 io.js，只需将 **.deployment**、**deploy.cmd** 和 **IISNode.yml** 复制到应用程序文件夹的根目录，并将其部署到 Web Apps。
+GitHub 上提供了 [io.js 部署脚本]。若要在网站上启用 io.js，只需将 **.deployment**、**deploy.cmd** 和 **IISNode.yml** 复制到应用程序文件夹的根目录，并将其部署到网站。
 
-第一个文件 **.deployment** 指示 Web Apps 在部署后要运行 **deploy.cmd**。此脚本将针对 Node.js 应用程序运行所有常见步骤，但还会下载最新版本的 io.js。最后，**IISNode.yml** 将 Web Apps 配置为使用刚刚下载的 io.js 二进制文件，而不是预装的 Node.js 二进制文件。
+第一个文件 **.deployment** 指示网站在部署后要运行 **deploy.cmd**。此脚本将针对 Node.js 应用程序运行所有常见步骤，但还会下载最新版本的 io.js。最后，**IISNode.yml** 将网站配置为使用刚刚下载的 io.js 二进制文件，而不是预装的 Node.js 二进制文件。
 
 > [AZURE.NOTE]若要更新使用的 io.js 二进制文件，只需重新部署你的应用程序 - 每次部署应用程序后，脚本将下载 io.js 的新版本。
 
 <a id="manualinstallation"></a>
 ## 使用手动安装
 
-手动安装自定义 io.js 版本只包括两个步骤。首先，直接从 [io.js 分发包]中下载 **win-x64** 二进制文件。需要两个文件 - **iojs.exe** 和 **iojs.lib**。将两个文件保存到 Web 应用上的某个文件夹中，例如，保存在 **bin/iojs** 中。
+手动安装自定义 io.js 版本只包括两个步骤。首先，直接从 [io.js 分发包]中下载 **win-x64** 二进制文件。需要两个文件 - **iojs.exe** 和 **iojs.lib**。将两个文件保存到网站上的某个文件夹中，例如，保存在 **bin/iojs** 中。
 
-若要将 Web Apps 配置为使用 **iojs.exe** 而不是预装的 Node 版本，请在应用程序的根目录中创建一个 **IISNode.yml** 文件，并添加以下行。
+若要将网站配置为使用 **iojs.exe** 而不是预装的 Node 版本，请在应用程序的根目录中创建一个 **IISNode.yml** 文件，并添加以下行。
 
     nodeProcessCommandLine: "D:\home\site\wwwroot\bin\iojs\iojs.exe"
 

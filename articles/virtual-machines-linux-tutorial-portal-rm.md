@@ -17,19 +17,19 @@
 > [AZURE.SELECTOR]
 - [Azure Portal](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 
-创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 门户快速创建一个虚拟机，并使用 `~/.ssh/id_rsa.pub` 公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
+创建运行 Linux 的 Azure 虚拟机 (VM) 是一项很简单的操作。本教程演示如何使用 Azure 门户快速创建一个虚拟机，并使用SSH公钥文件来保护到 VM 的 **SSH** 连接。你也可以[将自己的映像作为模板](/documentation/articles/virtual-machines-linux-create-upload-vhd)来创建 Linux VM。
 
-> [AZURE.NOTE]本教程创建的 Azure 虚拟机将由 Azure 资源组 API 管理。有关详细信息，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。
+> [AZURE.NOTE]本教程创建的 Azure 虚拟机将由 Azure 资源组 API 管理，有关详细信息，请参阅 [Azure 资源组概述](/documentation/articles/resource-group-overview)。关于SSH公钥的用法请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)。
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 ## 选择映像
 
-前往门户中的 Azure 应用商店，找到所需的 Windows Server VM 映像。
-
 1. 登录[Azure 管理门户](https://manage.windowsazure.cn)。
 
-2. 在“中心”菜单上，单击“新建”>“计算”>“Ubuntu Server 14.04 LTS”。
+2. 在窗口底部的命令栏上，单击“新建”。
+
+3. 在“计算”下，单击“虚拟机”，然后单击“从库中”，在随后出现的映像列表中选择“Ubuntu Server 14.04 LTS”。
 
 	![选择 VM 映像](./media/virtual-machines-linux-tutorial-portal-rm/chooseubuntuvm.png)
 
@@ -37,25 +37,25 @@
 
 选择映像后，可以对大多数配置使用 Azure 的默认设置并快速创建 VM。
 
-1. 在“创建虚拟机”边栏选项卡上，单击“基本信息”。输入虚拟机的“名称”并上传公钥文件并采用 **ssh-rsa** 格式）。
+1. 在虚拟机配置的“基本信息”中，输入虚拟机的“名称”，上传公钥文件并采用 [pem](/documentation/articles/virtual-machines-linux-use-ssh-key)封装的格式）。
 
 	![](./media/virtual-machines-linux-tutorial-portal-rm/step-1-thebasics.png)
 
 	> [AZURE.NOTE]如果不想使用公钥和私钥交换来保护 **ssh** 会话的安全，你还可以在此处选择用户名/密码身份验证并输入该信息。
 
-2. 单击“大小”并选择适合你需要的 VM 大小。每种大小都指定了计算核心的数量、内存以及其他功能，比如对高级存储的支持，这将对价格产生影响。根据所选的映像，Azure 将自动推荐特定的大小。完成后，单击 ![选择按钮](media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png)。
+2. 单击“大小”并选择适合你需要的 VM 大小。每种大小都指定了计算核心的数量、内存以及其他功能，比如对高级存储的支持，这将对价格产生影响。根据所选的映像，Azure 将自动推荐特定的大小。完成后，单击 ![选择按钮](./media/virtual-machines-linux-tutorial-portal-rm/selectbutton-size.png)。
 
-	>[AZURE.NOTE]某些地区的 DS 系列虚拟机提供高级存储。高级存储是数据密集型工作负荷（如数据库）的最佳存储选项。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage-preview-portal)。
+	>[AZURE.NOTE]某些地区的 DS 系列虚拟机提供高级存储。高级存储是数据密集型工作负荷（如数据库）的最佳存储选项。
 
 3. 单击下一步按钮以查看新 VM 的存储和网络设置。对于第一个 VM，一般可以接受默认设置。
 
 	![](./media/virtual-machines-linux-tutorial-portal-rm/step-3-settings.png)
 
-8. 当 Azure 创建 VM 时，你可以在“中心”菜单中的“通知”中跟踪进度。当 Azure 创建 VM 后，你将在启动板上看到它，除非你清除了“创建虚拟机”边栏选项卡中的“固定到启动板”。
+4. 当 Azure 创建 VM 时，你可以在窗口底部“状态栏”中查看进度。当 Azure 创建 VM 后，你将在已创建的虚拟机列表中看到它。
 
 ## 使用 **ssh** 连接到你的 Azure Linux VM
 
-现在可以使用 **ssh** 以标准方式连接到 Ubuntu VM。但是，你将需要通过打开 Azure VM 及其资源的相应磁贴来发现分配给该 VM 的 IP 地址。你可以通过以下方式打开磁贴：单击“浏览”，然后选择“最近”并查找你创建的 VM，或者在启动板上单击为你创建的磁贴。在任一情况下，都要找到并复制下图所示的“公共 IP 地址”的值。
+现在可以使用 **ssh** 以标准方式连接到 Ubuntu VM。你可以通过单击“虚拟机”，然后选择你创建的 VM,找到并复制下图所示的“公共 IP 地址”的值。
 
 ![成功创建的摘要](./media/virtual-machines-linux-tutorial-portal-rm/successresultwithip.png)
 

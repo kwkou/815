@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用表存储构建 Web 应用程序 (Node.js) | Windows Azure 教程" 
-	description="本教程以“使用 Express 构建 Web 应用程序”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
+	pageTitle="使用表存储构建网站(Node.js) | Windows Azure 教程" 
+	description="本教程以“使用 Express 构建网站”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
 	authors="TomArcher" 
@@ -17,15 +17,15 @@
 
 
 
-# 使用存储构建 Node.js Web 应用程序
+# 使用存储构建 Node.js网站
 
 ## 概述
 
-在本教程中，你将通过将用于 Node.js 的 Windows Azure 客户端库与数据管理服务结合使用，来扩展在[使用 Express 生成 Node.js Web 应用程序]教程中创建的应用程序。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
+在本教程中，你将通过将用于 Node.js 的 Windows Azure 客户端库与数据管理服务结合使用，来扩展在[使用 Express 生成 Node.js网站]教程中创建的应用程序。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
 
 任务项存储在 Azure 存储空间中。Azure 存储空间提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储空间包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Node.js 中包含的 API 或通过 REST API 利用存储服务。有关详细信息，请参阅[在 Azure 中存储和访问数据]。
 
-本教程假定你已完成 [Node.js Web 应用程序]和[使用 Express 生成 Node.js][Node.js Web Application using Express] 教程。
+本教程假定你已完成 [Node.js网站]和[使用 Express 生成 Node.js][Node.js网站lication using Express] 教程。
 
 你将学习以下内容：
 
@@ -397,10 +397,10 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
 
 	删除服务可能需要花费几分钟时间。删除服务后，你将收到一条指示服务已被删除的消息。
 
-  [Node.js Web Application using Express]: /develop/nodejs/
-  [使用 Express 生成 Node.js Web 应用程序]: /develop/nodejs/
+  [Node.js网站lication using Express]: /develop/nodejs/
+  [使用 Express 生成 Node.js网站]: /develop/nodejs/
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433040.aspx
-  [Node.js Web 应用程序]: /develop/nodejs/
+  [Node.js网站]: /develop/nodejs/
  
 
 <!---HONumber=74-->

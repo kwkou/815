@@ -31,7 +31,7 @@
 <p/>
 
 > [AZURE.NOTE]
-> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service Web 应用配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
+> 本任务中的过程适用于 Azure 云服务。有关网站，请参阅[为 Azure App Service网站配置自定义域名](/documentation/articles/web-sites-custom-domain-name)。有关存储帐户，请参阅[为 Azure 存储帐户配置自定义域名](/documentation/articles/storage-custom-domain-name)。
 
 
 ## 了解 CNAME 和 A 记录

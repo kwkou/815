@@ -479,13 +479,13 @@
 
 若要实施在本教程中以标准 Web 项目而不是云服务 Web 角色方式创建的应用程序，请遵循本教程中的步骤，但需注意以下差异：
 
-1. 创建项目时，请选择 Web 类别中的“ASP.NET MVC Web 应用程序”项目模板，而不是“云”类别中的“云服务”模板。然后，请遵循创建 MVC 应用程序时遵循的相同指导，直到你转到“云配置管理器”部分。
+1. 创建项目时，请选择 Web 类别中的“ASP.NET MVC网站”项目模板，而不是“云”类别中的“云服务”模板。然后，请遵循创建 MVC 应用程序时遵循的相同指导，直到你转到“云配置管理器”部分。
 
 2. 创建辅助角色时，请在新的独立解决方案中创建它，采用的说明与创建 Web 角色所用的原始说明类似。不过现在，你只是在云服务项目中创建辅助角色。然后，请遵循创建辅助角色所用的相同说明。
 
 3. 你可以分别测试前端和后端，也可以在单独的 Visual Studio 实例中同时运行这二者。
 
-若要了解如何将前端部署到 Azure 网站，请参阅[在 Azure App Service 中创建 ASP.NET Web 应用](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
+若要了解如何将前端部署到 Azure 网站，请参阅[在 Azure App Service 中创建 ASP.NET网站](/documentation/articles/web-sites-dotnet-get-started)。若要了解如何将后端部署到 Azure 云服务，请参阅[使用存储表、队列和 Blob 的 .NET 多层应用程序][mutitierstorage]。
 
 
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png

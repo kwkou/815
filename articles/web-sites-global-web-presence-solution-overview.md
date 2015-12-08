@@ -15,10 +15,10 @@
 
 # 在 Azure 网站上打造全球网络影响力
 
-[Azure 网站](/documentation/services/web-sites/) Web Apps 提供建立 .COM 站点全球网络影响力所需的全部功能。无论你的组织规模如何，都需要一个稳健、安全且可缩放的平台，以促成业务、品牌认知和客户沟通。Azure 网站可以通过 Microsoft 支持的业务连续性，帮助你维护企业的品牌与认知。
+[Azure 网站](/documentation/services/web-sites/)网站提供建立 .COM 站点全球网络影响力所需的全部功能。无论你的组织规模如何，都需要一个稳健、安全且可缩放的平台，以促成业务、品牌认知和客户沟通。Azure 网站可以通过 Microsoft 支持的业务连续性，帮助你维护企业的品牌与认知。
 
 
-以下是在 Azure 网站上运行的 .COM 网站的示例。该示例演示了只需少量的技术投资，就能结合 Web Apps 和其他服务来完成任务。**单击拓扑中的元素可阅读更多相关详细信息。**
+以下是在 Azure 网站上运行的 .COM 网站的示例。该示例演示了只需少量的技术投资，就能结合网站和其他服务来完成任务。**单击拓扑中的元素可阅读更多相关详细信息。**
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/corp-website-visio.svg" width="100%" height="100%">
 
@@ -28,15 +28,15 @@
 
 快速从库中的常用 CMS 创建新的站点或者从各种语言和框架将现有 Web 资产引入到 Azure 网站。
 
-你可以使用你最喜欢的 CMS 风格创建 Web 应用。你可以从各种数据库后端选择以满足你的需要，包括 [Azure SQL 数据库]和 [MySQL].
+你可以使用你最喜欢的 CMS 风格创建网站。你可以从各种数据库后端选择以满足你的需要，包括 [Azure SQL 数据库]和 [MySQL].
 
-无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Azure 网站中运行。你可以使用熟悉的 [FTP] 工具或源代理管理系统将它们移到 Web Apps。Web Apps 支持使用流行的源代码管理选项直接发布，如 [Visual Studio] 和 [Git] - 本地、GitHub、BitBucket、DropBox、Mercurial 等。
+无论你的现有 Web 资产是 .NET、PHP、Java、Node.js 还是 Python，现在都可在 Azure 网站中运行。你可以使用熟悉的 [FTP] 工具或源代理管理系统将它们移到网站。网站支持使用流行的源代码管理选项直接发布，如 [Visual Studio] 和 [Git] - 本地、GitHub、BitBucket、DropBox、Mercurial 等。
 
 ## 可靠发布
 
 从现有的原始文件控制系统并实时测试内容，持续地直接发布，可靠地发布网站。
 
-在站点的计划、原型制作和早期部署过程中，你可以通过[将其部署到 Azure 网站上你的站点的过渡槽]，在市场活动应用正式运行前查看该网站的实际工作版本。通过将源控件与 Web Apps 相集成，你可以[连续发布]到过渡槽，并且在准备就绪时，将其切换到生产环境且无需停机。如果生产站点发生问题，你还可以立即换回旧版的站点。
+在站点的计划、原型制作和早期部署过程中，你可以通过[将其部署到 Azure 网站上你的站点的过渡槽]，在市场活动应用正式运行前查看该网站的实际工作版本。通过将源控件与网站相集成，你可以[连续发布]到过渡槽，并且在准备就绪时，将其切换到生产环境且无需停机。如果生产站点发生问题，你还可以立即换回旧版的站点。
 
 此外，在对实时网站进行更改规划时，可以轻松地使用生产测试中的功能对建议更新[运行 A/B 测试]，分析真实用户行为，以帮助你对站点设计做出明智的决策。
 
@@ -44,9 +44,9 @@
 
 免费使用 Azure 网站域或映射到注册的域名，然后使用 CA 签名的 SSL 证书保护品牌的安全。
 
-当在 Web Apps 运行网站时，可免费使用 ***.chinacloudsites.cn** 域。或者，可以将网站映射到从任何 DNS 登录获取（如 GoDaddy）的[自定义域] - 例如 contoso.com。
+当在网站运行网站时，可免费使用 ***.chinacloudsites.cn** 域。或者，可以将网站映射到从任何 DNS 登录获取（如 GoDaddy）的[自定义域] - 例如 contoso.com。
 
-如果收集任何用户信息、执行电子商务或管理任何其他机密数据，可以使用 [HTTPS] 来保护品牌信誉和客户。SSL 证书随附 ***.chinacloudsites.cn** 域名，如果你使用自定义域，可以在 Web Apps 中引入该域的 SSL 证书。存在与每个 SSL 证书相关联的每月费用（每小时按比例分摊）。有关详细信息，请参阅 [Azure 网站定价详细信息]。
+如果收集任何用户信息、执行电子商务或管理任何其他机密数据，可以使用 [HTTPS] 来保护品牌信誉和客户。SSL 证书随附 ***.chinacloudsites.cn** 域名，如果你使用自定义域，可以在网站中引入该域的 SSL 证书。存在与每个 SSL 证书相关联的每月费用（每小时按比例分摊）。有关详细信息，请参阅 [Azure 网站定价详细信息]。
 
 ## 转到全局
 
@@ -54,13 +54,13 @@
 
 若要为在各自区域的全局客户提供服务，使用 [Azure 流量管理器]将站点访问者路由到可以提供最佳性能的地区站点。或者，你可以在多个区域托管的站点的多个副本中均衡分布负载。
 
-通过[将 Web 应用与 Azure CDN 集成]向全局用户快速传递静态内容。Azure CDN 可以缓存离用户最近的 [CDN 节点]中的静态内容，从而最大程度减少了滞后时间和连接到网站的时间。
+通过[将网站与 Azure CDN 集成]向全局用户快速传递静态内容。Azure CDN 可以缓存离用户最近的 [CDN 节点]中的静态内容，从而最大程度减少了滞后时间和连接到网站的时间。
 
 ## 优化
 
 .COM 站点可通过使用 Autoscale 进行自动缩放，使用 Azure Redis 缓存进行缓存，使用 WebJobs 运行后台任务以及使用 Azure 流量管理器维护高可用性达到优化目的。
 
-Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足 .COM 站点的需求。通过 [Azure 管理门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大网站，或者通过自动缩放功能自动扩大。在“标准”托管计划中，自动缩放功能使你可以基于 CPU 使用率自动扩大网站。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]。
+Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如何，都能满足 .COM 站点的需求。通过 [Azure 管理门户](https://manage.windowsazure.cn/)手动扩大，通过[服务管理 API] 或 [PowerShell 脚本]以编程方式扩大网站，或者通过自动缩放功能自动扩大。在“标准”托管计划中，自动缩放功能使你可以基于 CPU 使用率自动扩大网站。有关最佳实践，请参阅 [Troy Hunt] 的[我所了解的有关使用 Azure 快速缩放网站的十大事项]。
 
 使用 [Azure Redis 缓存]让你的网站响应更快。可以利用它从后端数据库和其他操作（如 [ASP.NET 会话状态]和[输出缓存]）缓存数据。
 
@@ -70,7 +70,7 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 
 使用 Azure 或第三方工具让网站的性能保持最新状态。接收关于关键网站事件的警报。使用 Application Insight 或 HDInsight 中的 Web 日志分析，让用户可以轻松地深入了解。
 
-可以[快速浏览]网站的当前性能指标以及[Azure 管理门户](https://manage.windowsazure.cn/)中 Web 应用边栏选项卡中的资源配额。有关应用程序的可用性、性能和使用情况的全面概述，可使用 [Azure Application Insights] 提供的快速且功能强大的故障排除、诊断和使用情况见解进行了解。或者，使用第三方工具提供对网站的高级数据监视。
+可以[快速浏览]网站的当前性能指标以及[Azure 管理门户](https://manage.windowsazure.cn/)中网站边栏选项卡中的资源配额。有关应用程序的可用性、性能和使用情况的全面概述，可使用 [Azure Application Insights] 提供的快速且功能强大的故障排除、诊断和使用情况见解进行了解。或者，使用第三方工具提供对网站的高级数据监视。
 
 在“标准”托管计划中，当站点无法响应时，监视器站点响应能力会收到电子邮件通知。有关详细信息，请参阅[如何：在 Azure 中接收警报通知和管理警报规则]。
 
@@ -107,7 +107,7 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 [Azure 网站定价详细信息]: /home/features/web-site#price
 
 [Azure 流量管理器]: http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[将 Web 应用与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
+[将网站与 Azure CDN 集成]: /documentation/articles/cdn-websites-with-cdn
 [CDN 节点]: https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [向上和向外缩放]: /documentation/articles/web-sites-scale
@@ -115,7 +115,7 @@ Azure 网站具有[向上和向外缩放]功能，不论工作负荷的大小如
 [服务管理 API]: https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell 脚本]: https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt
-[我所了解的有关使用 Azure 快速缩放 Web 应用的十大事项]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
+[我所了解的有关使用 Azure 快速缩放网站的十大事项]: http://www.troyhunt.com/2014/09/10-things-i-learned-about-rapidly.html
 [Azure Redis 缓存]: /blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
 [ASP.NET 会话状态]: https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [输出缓存]: https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx

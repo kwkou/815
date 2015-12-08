@@ -36,7 +36,7 @@
 - API 管理
 - Azure DocumentDB
 - Azure 搜索
-- Azure Web Apps（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
+- Azure 网站（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
 - Data Factory
 - 密钥保管库
 - Mobile Engagement
@@ -54,10 +54,10 @@
 - 虚拟机
 - 虚拟网络
 
-当使用 Web 应用时，不能仅移动 App Service 计划。若要移动 Web 应用，您的选项包括：
+当使用网站时，不能仅移动 App Service 计划。若要移动网站，您的选项包括：
 
 - 如果目标资源组不具有 Microsoft.Web 资源，则将所有资源从一个资源组移到另一个资源组中。
-- 将 web 应用移到另一个资源组中，但保留原始资源组中的 App Service 计划。
+- 将网站移到另一个资源组中，但保留原始资源组中的 App Service 计划。
 
 ## 使用 PowerShell 来移动资源
 

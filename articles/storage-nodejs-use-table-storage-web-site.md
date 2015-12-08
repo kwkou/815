@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 Azure 表服务的 Node.js Web 应用"
+	pageTitle="使用 Azure 表服务的 Node.js网站"
 	description="本教程演示如何使用 Azure 表服务在 Azure 网站所托管的 Node.js 应用程序中存储数据。"
 	tags="azure-portal"
 	services="app-service\web, storage"
@@ -15,7 +15,7 @@
 
 
 
-# 使用 Azure 表服务的 Node.js Web 应用
+# 使用 Azure 表服务的 Node.js网站
 
 ## 概述
 本教程演示如何使用 Azure 数据管理提供的表服务来存储和访问在 Azure 网站上托管的 [node] 应用程序的数据。本教程假定你之前有使用 node 和[Git]的经验。
@@ -26,7 +26,7 @@
 
 * 如何使用 Azure 表服务
 
-* 如何使用 Azure CLI 创建 Web 应用。
+* 如何使用 Azure CLI 创建网站。
 
 按照本教程中的说明操作，构建基于 Web 的简单“待办事项”应用程序，该应用程序可用于创建、检索和完成任务。这些任务存储在表服务中。
 
@@ -89,7 +89,7 @@
 		├── mkdirp@0.3.5
 		└── commander@1.3.2 (keypress@0.1.0)
 
-	> [AZURE.NOTE]“-g”参数会全局安装模块。这样我们使用 **express** 生成 Web 应用基架，而无需键入其他路径信息。
+	> [AZURE.NOTE]“-g”参数会全局安装模块。这样我们使用 **express** 生成网站基架，而无需键入其他路径信息。
 
 4. 若要创建应用程序的基架，请输入 **express** 命令：
 
@@ -404,7 +404,7 @@
 
 ### 修改全局布局
 
-**views** 目录中的 **Layout.jade** 文件是其他 **.jade** 文件的全局模板。在此步骤中，你将对其进行修改，以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观 Web 应用的工具包）。
+**views** 目录中的 **Layout.jade** 文件是其他 **.jade** 文件的全局模板。在此步骤中，你将对其进行修改，以使用 [Twitter Bootstrap](https://github.com/twbs/bootstrap)（一个可以轻松设计美观网站的工具包）。
 
 下载并提取 [Twitter Bootstrap](http://getbootstrap.com/) 的文件。将 **bootstrap.min.css** 文件从 Bootstrap **css** 文件夹复制到应用程序的 **public/stylesheets** 目录中。
 
@@ -477,11 +477,11 @@
 
 ## 将你的应用程序部署到 Azure
 
-本部分中的步骤使用 Azure 命令行工具在 Azure 网站中创建新的 Web 应用，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
+本部分中的步骤使用 Azure 命令行工具在 Azure 网站中创建新的网站，然后使用 Git 部署应用程序。若要执行这些步骤，你必须具有 Azure 订阅。
 
-> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+> [AZURE.NOTE]还可以使用 [Azure 门户](https://manage.windowsazure.cn)执行这些步骤。请参阅[在 Azure 网站中生成和部署 Node.js网站]。
 >
-> 如果这是你创建的第一个 Web 应用，则你必须使用 Azure 门户部署此应用程序。
+> 如果这是你创建的第一个网站，则你必须使用 Azure 门户部署此应用程序。
 
 若要开始，请在命令行中输入以下命令以安装 [Azure CLI]：
 
@@ -508,19 +508,19 @@
 
 3. 导入设置后，请删除发布设置文件。因为不再需要该文件并且它包含有关你的 Azure 订阅的敏感信息。
 
-### 创建 Web 应用
+### 创建网站
 
 1. 在命令行中，将目录更改为 **tasklist** 目录。
 
-2. 使用以下命令创建新的 Web 应用。
+2. 使用以下命令创建新的网站。
 
 		azure site create --git
 
-	系统将提示 Web 应用名称和位置。提供唯一的名称并选择与你的 Azure 存储帐户的相同的地理位置。
+	系统将提示网站名称和位置。提供唯一的名称并选择与你的 Azure 存储帐户的相同的地理位置。
 
-	`--git` 参数在 Azure 中为此 Web 应用创建 Git 存储库。如果不存在，则还会初始化当前目录中的 Git 存储库，并添加名为“azure”的 [Git remote]，用于将应用程序发布到 Azure。最后，它会创建 **web.config** 文件，其中包含 Azure 用于托管 node 应用程序的设置。如果省略 `--git` 参数，但目录包含 Git 存储库，命令仍会创建“azure”remote。
+	`--git` 参数在 Azure 中为此网站创建 Git 存储库。如果不存在，则还会初始化当前目录中的 Git 存储库，并添加名为“azure”的 [Git remote]，用于将应用程序发布到 Azure。最后，它会创建 **web.config** 文件，其中包含 Azure 用于托管 node 应用程序的设置。如果省略 `--git` 参数，但目录包含 Git 存储库，命令仍会创建“azure”remote。
 
-	此命令完成后，你将看到与下面类似的输出。请注意，以 **Website created at** 开头的行包含 Web 应用的 URL。
+	此命令完成后，你将看到与下面类似的输出。请注意，以 **Website created at** 开头的行包含网站的 URL。
 
 		info:   Executing command site create
 		help:   Need a site name
@@ -535,7 +535,7 @@
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE]如果这是你的订阅的第一个 Web 应用，系统会指示你使用 Azure 门户创建 Web 应用。有关详细信息，请参阅[在 Azure 网站中生成和部署 Node.js Web 应用]。
+	> [AZURE.NOTE]如果这是你的订阅的第一个网站，系统会指示你使用 Azure 门户创建网站。有关详细信息，请参阅[在 Azure 网站中生成和部署 Node.js网站]。
 
 ### 切换到环境变量
 
@@ -572,7 +572,7 @@
 
 		git push azure master
 
-在将更改部署到 Azure 后，你的 Web 应用程序应当继续工作，因为它现在从“应用设置”条目读取连接字符串。若要验证此情况，请在“应用设置”中将 **STORAGE\_KEY** 条目的值更改为一个无效值。保存该值后，网站应该会因存储访问密钥设置无效而失败。
+在将更改部署到 Azure 后，你的网站应当继续工作，因为它现在从“应用设置”条目读取连接字符串。若要验证此情况，请在“应用设置”中将 **STORAGE\_KEY** 条目的值更改为一个无效值。保存该值后，网站应该会因存储访问密钥设置无效而失败。
 
 ### 发布应用程序
 
@@ -587,7 +587,7 @@
 		git add .
 		git commit -m "adding files"
 
-3. 将提交的文件推送到 Web 应用：
+3. 将提交的文件推送到网站：
 
 		git push azure master
 
@@ -596,12 +596,12 @@
 		To https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git
  		 * [new branch]      master -> master
 
-4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的 Web 应用 URL，以查看你的应用程序。
+4. 推送操作完成后，浏览到 `azure create site` 命令之前返回的网站URL，以查看你的应用程序。
 
 
 ## 后续步骤
 
-虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。有关详细信息，请参阅 [使用 MongoDB 的 Node.js Web 应用]。
+虽然本文中的步骤介绍了使用表服务来存储信息，但你也可以使用 MongoDB。有关详细信息，请参阅 [使用 MongoDB 的 Node.js网站]。
 
 ## 其他资源
 [Azure 命令行界面]
@@ -617,7 +617,7 @@
 [for free]: http://www.windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[使用 MongoDB 的 Node.js Web 应用]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
+[使用 MongoDB 的 Node.js网站]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
 [Azure CLI]: /documentation/articles/xplat-cli/
 
 [使用 Git 发布到 Azure 网站]: /documentation/articles/web-sites-publish-source-control/

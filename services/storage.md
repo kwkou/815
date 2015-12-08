@@ -47,7 +47,7 @@ Azure 高级存储为在 Azure 虚拟机上运行的 I/O 密集型工作负荷�
 ###计划
   
 ####[使用表、队列和 Blob 创建 .NET 多层应用程序](/documentation/articles/cloud-services-dotnet-multi-tier-app-storage-1-overview)
-创建使用表、队列和 Blob 的多层 ASP.NET MVC 4 Web 应用程序。将应用程序部署到 Azure 云服务。
+创建使用表、队列和 Blob 的多层 ASP.NET MVC 4网站。将应用程序部署到 Azure 云服务。
 
 ####<!--[-->Azure 订阅和服务限制、配额和约束条件<!--](/documentation/articles/azure-subscription-service-limits)-->
 了解订阅、Web Workers、虚拟机、网络、存储以及 SQL 数据库最常见的 Windows Azure 限制。

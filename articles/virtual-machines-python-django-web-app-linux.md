@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Mac 上使用 Django 的 Python Web 应用 | Windows Azure" 
+	pageTitle="在 Mac 上使用 Django 的 Python网站| Windows Azure" 
 	description="本教程演示如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的网站。" 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -16,7 +16,7 @@
 
 
 
-# Django Hello World Web 应用程序 (mac-linux)
+# Django Hello World网站(mac-linux)
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/web-app-with-django)
@@ -29,7 +29,7 @@
 * 设置 Azure 虚拟机以托管 Django。虽然本教程介绍如何在 **Linux** 下实现此目的，但也可以使用托管在 Azure 中的 Windows Server VM 实现相同目的。 
 * 从 Linux 创建新的 Django 应用程序。
 
-通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World Web 应用程序。该应用程序将托管在 Azure 虚拟机中。
+通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World网站。该应用程序将托管在 Azure 虚拟机中。
 
 以下是已完成应用程序的屏幕快照：
 

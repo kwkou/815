@@ -60,11 +60,11 @@ PlayerRank 具有 Player 的外键。每个玩家各有零个或一个 PlayerRan
 
 ## 创建项目
 
-启动 Visual Studio，并创建新的 ASP.NET Web 应用程序项目。将项目命名为 Leaderboard。
+启动 Visual Studio，并创建新的 ASP.NET网站项目。将项目命名为 Leaderboard。
 
 ![][3]
 
-在 Visual Studio 2013 中，ASP.NET Web 应用程序项目包含 Azure 移动服务的模板。请选择此模板，然后单击“确定”。
+在 Visual Studio 2013 中，ASP.NET网站项目包含 Azure 移动服务的模板。请选择此模板，然后单击“确定”。
 
 ![][4]
  

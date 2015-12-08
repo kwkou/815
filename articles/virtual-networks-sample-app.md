@@ -1,6 +1,6 @@
 <properties
    pageTitle="与安全边界环境配合使用的示例应用程序 | Windows Azure"
-   description="创建外围网络以测试流量传送方案后，请部署这个简单的 Web 应用程序"
+   description="创建外围网络以测试流量传送方案后，请部署这个简单的网站"
    services="virtual-network"
    documentationCenter="na"
    authors="tracsman"
@@ -16,7 +16,7 @@
 
 [返回安全边界最佳实践页面][HOME]
 
-这些 PowerShell 脚本可以在 IIS01 和 AppVM01 服务器本地上运行，以安装和设置一个极简单的 Web 应用程序，显示来自前端 IIS01 服务器的 html 网页和来自后端 AppVM01 服务器的内容。
+这些 PowerShell 脚本可以在 IIS01 和 AppVM01 服务器本地上运行，以安装和设置一个极简单的网站，显示来自前端 IIS01 服务器的 html 网页和来自后端 AppVM01 服务器的内容。
 
 此应用程序提供简单的测试环境，可测试许多外围网络示例，以及终结点、NSG、UDR 及防火墙规则的更改如何影响流量。
 
@@ -29,7 +29,7 @@
 
 **注意：**如果你使用以下脚本，添加的这个防火墙规则是第一个语句。
 
-## IIS01 - Web 应用程序安装脚本
+## IIS01 -网站安装脚本
 此脚本将：
 
 1.	在本地服务器 Windows 防火墙打开 IMCPv4 (Ping) 以方便测试
@@ -54,7 +54,7 @@
 		Write-Host "Installing IIS and .Net 4.5, this can take some time, like 15+ minutes..." -ForegroundColor Cyan
 		add-windowsfeature Web-Server, Web-WebServer, Web-Common-Http, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, Web-Static-Content, Web-Health, Web-Http-Logging, Web-Performance, Web-Stat-Compression, Web-Security, Web-Filtering, Web-App-Dev, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Net-Ext, Web-Net-Ext45, Web-Asp-Net45, Web-Mgmt-Tools, Web-Mgmt-Console
 		
-	# Create Web App Pages
+	# Create网站Pages
 		Write-Host "Creating Web page and Web.Config file" -ForegroundColor Cyan
 		$MainPage = '<%@ Page Language="vb" AutoEventWireup="false" %>
 		<%@ Import Namespace="System.IO" %>
@@ -131,7 +131,7 @@
 		Restart-Service -Name W3SVC
 		
 		Write-Host
-		Write-Host "Web App Creation Successfull!" -ForegroundColor Green
+		Write-Host "网站Creation Successfull!" -ForegroundColor Green
 		Write-Host
 
 

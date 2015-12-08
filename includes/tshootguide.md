@@ -245,7 +245,7 @@ successfully monitor an application.
 
 **Apica Tools**
 
-Apica provides tools that monitors your Azure web application "from outside." For more information, see <a href="http://www.apicasystem.com/integration-partners/">http://www.apicasystem.com/integration-partners/</a>.
+Apica provides tools that monitors your Azure 网站lication "from outside." For more information, see <a href="http://www.apicasystem.com/integration-partners/">http://www.apicasystem.com/integration-partners/</a>.
 
 
 **AVIcode**
