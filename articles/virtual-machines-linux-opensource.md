@@ -16,10 +16,10 @@
 
 # Azure 上的 Linux 和开源计算
 
-本文档尝试在一个位置列出由 Microsoft 及其合作伙伴编写的关于在 Windows Azure 上运行基于 Linux 的虚拟机以及其他开源计算环境和应用程序的所有主题。因为 Azure 和开源计算都是快速发展的目标，所以几乎可以肯定地说，本文档已过时了，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。如果我们有遗漏，请在评论中告诉我们，或者向我们的 [GitHub 存储库](https://github.com/Azure/azure-content/)提交一个拉取请求。
+本文档尝试在一个位置列出由 Microsoft 及其合作伙伴编写的关于在 Windows Azure 上运行基于 Linux 的虚拟机以及其他开源计算环境和应用程序的所有主题。因为 Azure 和开源计算都是快速发展的目标，所以几乎可以肯定地说，本文档已过时了，*尽管*我们将尽最大努力来持续添加更新的主题并删除过时的主题。
 
 ## 一般说明
-在本页的右侧对各个部分进行了拆分。（链接可能会出现在多个部分中，因为主题可能是关于多个概念、发行版或技术的）。 此外，有多个主题介绍了各种 Linux 选项、映像存储库、案例研究以及关于如何上载你自己的自定义映像的操作指南主题：
+在本页有多个主题介绍了各种 Linux 选项、映像存储库、案例研究以及关于如何上载你自己的自定义映像的操作指南主题：
 
 - [MSOpenTech VM Depot](https://vmdepot.msopentech.cn/List/Index)
 - [事件和演示：Microsoft 开放性 CEE](http://www.opennessatcee.com/)
@@ -75,7 +75,7 @@ CoreOS 是一个小型的经优化的发行版，适用于具有高度的自定�
 14. [GitHub：在 Azure 上部署 CoreOS 快速入门](https://github.com/timfpark/coreos-azure)
 15. [GitHub：使用 Spring Boot、MongoDB 和 CoreOS 部署 Java 应用](https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init)
 
-#### Oracle Linux
+### Oracle Linux
   2. [为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
 ### FreeBSD
