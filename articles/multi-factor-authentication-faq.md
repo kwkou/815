@@ -21,7 +21,7 @@
 
 **问：如何获得 Azure Multi-Factor Authentication 方面的帮助？**
 
-[搜索 Microsoft 知识库 (KB)](http://search.microsoft.com/supportresults.aspx?form=mssupport&q=phonefactor)
+[搜索 Microsoft 知识库 (KB)](http://search.microsoft.com/zh-cn/supportresults.aspx?form=mssupport&q=phonefactor)
 
 - 在 Microsoft 知识库 (KB) 中搜索有关 Microsoft Azure Multi-Factor Authentication 服务器 (Phone Factor) 支持的常见故障维修服务问题的技术解决方案。
 
