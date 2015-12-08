@@ -12,7 +12,7 @@
 <tags 
 	ms.service="notification-hubs" 
 	ms.date="06/16/2015"
-	wacn.date="11/02/12015"/>
+	wacn.date="11/02/2015"/>
 
 
 #Azure 通知中心
