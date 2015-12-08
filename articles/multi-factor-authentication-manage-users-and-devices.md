@@ -28,7 +28,7 @@
 如果计算机或设备丢失、被盗或你需要删除用户访问权限，则此项设置将很有用。
 
 
-## 要求选定的用户再次提供联系方法
+## <a name="require-selected-users-to-provide-contact-methods-again"></a>要求选定的用户再次提供联系方法
 
 此项设置将强制用户在登录时再次完成注册过程。请注意，如果用户拥有应用密码，则非浏览器应用将继续工作。你也可以通过选择“ 删除选定用户生成的所有现有应用密码”来删除用户的应用密码。
 
@@ -48,8 +48,8 @@
 
 <li>单击“保存”。</li>
 <li>单击“关闭”</li>
-
-## 删除用户现有的应用密码
+</ol>
+## <a name="delete-users-existing-app-passwords"></a>删除用户现有的应用密码
 
 这会删除用户创建的所有应用密码。与这些应用密码关联的非浏览器应用将会停止工作，直到创建新应用密码为止。
 
@@ -67,12 +67,8 @@
 ![删除应用密码](./media/multi-factor-authentication-manage-users-and-devices/deleteapppasswords.png)
 <li>单击“保存”。</li>
 <li>单击“关闭”。</li>
-
-
-
-
-
-## 还原用户所有已暂停设备上的 MFA
+</ol>
+## <a name="restore-mfa-on-all-suspended-devices-for-a-user"></a>还原用户所有已暂停设备上的 MFA
 
 管理员可以重置用户设备和浏览器上的 Multi-Factor Authentication。这可以通过还原用户设备和浏览器的 Multi-Factor Authentication 来实现。这样做会取消用户所有设备和浏览器的暂停状态。
 
@@ -90,5 +86,5 @@
 ![删除应用密码](./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png)
 <li>单击“保存”。</li>
 <li>单击“关闭”。</li>
-
+</ol>
 <!---HONumber=69-->
