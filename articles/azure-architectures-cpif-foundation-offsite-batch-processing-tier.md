@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="03/25/2015"
-   wa.date="10/3/2015"/>
+   wacn.date="10/03/2015"/>
 
 # 非现场批处理层（Azure 体系结构模式）
 

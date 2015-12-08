@@ -10,7 +10,7 @@
 <tags
    ms.service="cloud-services"
    ms.date="03/25/2015"
-   wa.date="10/3/2015"/>
+   wacn.date="10/03/2015"/>
 
 # 全局负载平衡的 Web 层（Azure 体系结构模式）
 
