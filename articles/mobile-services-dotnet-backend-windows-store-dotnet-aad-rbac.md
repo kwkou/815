@@ -1,18 +1,18 @@
-<properties 
-	pageTitle="移动服务和 Azure Active Directory 中基于角色的访问控制（Windows 应用商店）| Windows Azure" 
-	description="了解如何基于 Windows 应用商店应用程序中的 Azure Active Directory 角色控制访问。" 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="使用 .NET 的移动服务和 Azure Active Directory 中基于角色的访问控制（Windows 应用商店）| Windows Azure"
+	description="了解如何使用 .NET 后端通过移动服务基于 Windows 应用商店应用程序中的 Azure Active Directory 角色控制访问。"
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
 <tags 
 	ms.service="mobile-services" 
-	ms.date="06/09/2015" 
-	wacn.date="10/03/2015"/>
+	ms.date="09/03/2015"
+	wacn.date="11/27/2015"/>
 
-# 移动服务和 Azure Active Directory 中基于角色的访问控制
+# 使用 JavaScript 的移动服务和 Azure Active Directory 中基于角色的访问控制
 
 [AZURE.INCLUDE [mobile-services-selector-rbac](../includes/mobile-services-selector-rbac.md)]
 
@@ -40,8 +40,6 @@
 
 在学习[向应用程序添加身份验证]教程的过程中，你在完成[注册以使用 Azure Active Directory 登录名]步骤时为集成的应用程序创建了注册。在本部分中，你将生成在使用该集成应用程序客户端 ID 读取目录信息时所用的密钥。
 
-如果你已完成了[访问 Azure Active Directory Graph 信息]教程，则表示你已完成此步骤，因此可跳过本部分。
-
 [AZURE.INCLUDE [mobile-services-generate-aad-app-registration-access-key](../includes/mobile-services-generate-aad-app-registration-access-key.md)]
 
 
@@ -58,7 +56,7 @@
 
 1. 在 Visual Studio 中，右键单击移动服务 .NET 后端项目，然后单击“管理 NuGet 包”。
 
-2. 在“NuGet Package Manager”对话框中的搜索条件内，输入 **ADAL** 以查找并安装移动服务的 **Active Directory 身份验证库**。最近我们已使用 3.0.110281957-alpha（预发行版）ADAL 包对本教程进行测试。
+2. 在“NuGet Package Manager”对话框中的搜索条件内，输入 **ADAL** 以查找并安装移动服务的 **Active Directory 身份验证库**。最近我们已使用 3.3.205061641-alpha（预发行版）ADAL 包对本教程进行测试。
 
 3. 在 Visual Studio 中，右键单击你的移动服务项目，然后依次单击“添加”和“新建文件夹”。将新文件夹命名为 **Utilities**。
 
@@ -385,7 +383,6 @@
 [注册以使用 Azure Active Directory 登录名]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication
 [Graph REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh974478.aspx
 [IsMemberOf]: http://msdn.microsoft.com/zh-cn/library/azure/dn151601.aspx
-[访问 Azure Active Directory Graph 信息]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info
 [ADAL for .NET]: https://msdn.microsoft.com/zh-cn/library/azure/jj573266.aspx
 
-<!---HONumber=71-->
+<!---HONumber=82-->

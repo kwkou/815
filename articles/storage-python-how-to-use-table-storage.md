@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="03/11/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="08/25/2015"
+	wacn.date="11/27/2015"/>
 
 
 # 如何通过 Python 使用表存储
@@ -19,7 +19,7 @@
 
 ## 概述
 
-本指南将演示如何使用 Azure 表存储服务执行常见方案。相关示例是使用 Python 编写的，并使用 [Python Azure 包][]。涉及的方案包括创建和删除表、以及在表中插入和查询实体。
+本指南将演示如何使用 Azure 表存储服务执行常见方案。相关示例是使用 Python 编写的，并使用 [Python Azure 存储包][]。涉及的方案包括创建和删除表、以及在表中插入和查询实体。
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
 
@@ -32,7 +32,7 @@
 
 可通过 **TableService** 对象使用表服务。以下代码创建 **TableService** 对象。在你希望在其中以编程方式访问 Azure 存储空间的任何 Python 文件中，将代码添加到文件的顶部附近：
 
-	from azure.storage import TableService, Entity
+	from azure.storage.table import TableService, Entity
 
 以下代码使用存储帐户名称和帐户密钥创建 **TableService** 对象。使用实际帐户和密钥替换“myaccount”和“mykey”。
 
@@ -42,9 +42,7 @@
 
 ## 将实体添加到表
 
-若要添加实体，请首先创建定义实体属性名称和值的字典。请注意，对于每个实体，你必须指定 PartitionKey 和 RowKey。这些值是实体的唯一标识符，并且查询它们比查询其他属性快很多。系统使用 PartitionKey 自动将表的实体分发到多个存储节点上。
-具有相同的 PartitionKey 的实体存储在同一个节点上。将显示
-RowKey 是实体在其所属分区内的唯一 ID。
+若要添加实体，请首先创建定义实体属性名称和值的字典。请注意，对于每个实体，你必须指定 **PartitionKey** 和 **RowKey**。这些是您的实体的唯一标识符。您可以查询这些值，比查询其他属性快得多。系统使用 **PartitionKey** 自动将表的实体分发到多个存储节点上。具有相同的 **PartitionKey** 的实体存储在同一个节点上。**RowKey** 是实体在其所属分区内的唯一 ID。
 
 若要将实体添加到表中，请将字典对象传递给 **insert_entity** 方法。
 
@@ -67,8 +65,7 @@ RowKey 是实体在其所属分区内的唯一 ID。
 	task = {'description' : 'Take out the garbage', 'priority' : 250}
 	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-如果要更新的实体不存在，更新操作将失败。如果你要存储实体，而不管它以前是否已存在，请使用 **insert_or_replace_entity**。 
-在下面的示例中，第一次调用将替换现有实体。第二个调用将插入新实体，因为表中不存在具有指定 PartitionKey 和 RowKey 的实体。
+如果要更新的实体不存在，更新操作将失败。如果你要存储实体，而不管它以前是否已存在，请使用 **insert_or_replace_entity**。在下面的示例中，第一次调用将替换现有实体。第二次调用将插入新实体，因为表中不存在具有指定的 **PartitionKey** 和 **RowKey** 的实体。
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
 	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task)
@@ -135,7 +132,10 @@ RowKey 是实体在其所属分区内的唯一 ID。
 -   请参阅 MSDN 参考：[Azure 存储][]。
 -   访问 [Azure 存储空间团队博客][]。
 
+有关详细信息，另请参阅 [Python 开发人员中心](/develop/python/)。
 [Azure 存储]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
 [Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure 包]: https://pypi.python.org/pypi/azure
-<!---HONumber=70-->
+[Python Azure 存储空间包]: https://pypi.python.org/pypi/azure-storage
+
+<!---HONumber=82-->

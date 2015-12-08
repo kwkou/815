@@ -10,12 +10,13 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/03/2015"
-	wacn.date="11/12/2015"/>
+	ms.date="09/22/2015"
+	wacn.date="11/27/2015"/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用经典部署模型创建资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+
 
 通过 Azure，你可使用虚拟机提供服务器功能。例如，在 Azure 上运行的虚拟机可配置为托管 Java 应用程序服务器，如 Apache Tomcat。完成本指南之后，你将会了解如何创建在 Azure 上运行的虚拟机并将其配置为运行 Java 应用程序服务器。
 
@@ -102,17 +103,23 @@
 2. 单击 Windows 的“开始”。
 3. 单击“控制面板”。
 4. 依次单击“系统和安全性”、“Windows 防火墙”和“高级设置”。
-5. 单击“入站规则”，然后单击“新建规则”。![新建入站规则][NewIBRule]
-6. 对于“规则类型”，请选择“端口”，然后单击“下一步”。![新建入站规则端口][NewRulePort]
-7. 在“协议和端口”屏幕中，选择“TCP”，指定“8080”作为“特定本地端口”，然后单击“下一步”。![新建入站规则][NewRuleProtocol]
-8. 在“操作”屏幕中，选择“允许连接”，然后单击“下一步”。![新建入站规则操作][NewRuleAction]
-9. 在“配置文件”屏幕中，确保选中“域”、“私有”和“公开”，然后单击“下一步”。![新建入站规则配置文件][NewRuleProfile]
-10. 在“名称”屏幕中，指定规则的名称，如 HttpIn（但是，规则名称无需与终结点名称匹配），然后单击“完成”。![新建入站规则名称][NewRuleName]
+5. 单击“入站规则”，然后单击“新建规则”。  
+![新建入站规则][NewIBRule]
+6. 对于“规则类型”，请选择“端口”，然后单击“下一步”。
+![新建入站规则端口][NewRulePort]
+7. 在“协议和端口”屏幕中，选择“TCP”，指定“8080”作为“特定本地端口”，然后单击“下一步”。
+![新建入站规则][NewRuleProtocol]
+8. 在“操作”屏幕中，选择“允许连接”，然后单击“下一步”。
+![新建入站规则操作][NewRuleAction]
+9. 在“配置文件”屏幕中，确保选中“域”、“私有”和“公开”，然后单击“下一步”。
+![新建入站规则配置文件][NewRuleProfile]
+10. 在“名称”屏幕中，指定规则的名称，如 HttpIn（但是，规则名称无需与终结点名称匹配），然后单击“完成”。
+![新建入站规则名称][NewRuleName]
 
 此时，应可从外部浏览器使用 ****http://*your\_DNS_name*.chinacloudapp.cn** 格式的 URL 查看你的 Tomcat 网站，其中 ***your\_DNS_name*** 是你创建虚拟机时指定的 DNS 名称。
 
 ## 应用程序生命周期注意事项
-* 你可以创建自己的 Web 应用程序存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本的 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件，将此 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。
+* 你可以创建自己的网站存档 (WAR) 并将其添加到 **webapps** 文件夹。例如，创建一个基本的 Java Service Page (JSP) 动态 Web 项目并将其导出为 WAR 文件，将此 WAR 复制到虚拟机上的 Apache Tomcat **webapps** 文件夹，然后在浏览器中运行它。
 * 默认情况下，Tomcat 服务在安装后会设置为手动启动。你可以使用“服务”管理单元将其切换为自动启动。可通过依次单击 Windows 的“开始”、“管理工具”、“服务”来启动“服务”管理单元。双击“Apache Tomcat”服务，将“启动类型”设置为“自动”。
 
     ![将服务设置为自动启动][service_automatic_startup]
@@ -120,7 +127,7 @@
     让 Tomcat 自动启动的好处是，当虚拟机重新启动时（例如，在安装需要重新启动的软件更新后），Tomcat 将启动。
 
 ## 后续步骤
-通过查看 [Java 开发人员中心](http://azure.microsoft.com/develop/java/)上提供的信息，了解要与 Java 应用程序一起包含的其他服务（例如 Azure 存储空间、Service Bus 和 SQL 数据库）。
+通过查看 [Java 开发人员中心](/develop/java/)上提供的信息，了解要与 Java 应用程序一起包含的其他服务（例如 Azure 存储空间、Service Bus 和 SQL 数据库）。
 
 [virtual_machine_tomcat]: ./media/virtual-machines-java-run-tomcat-application-server/WA_VirtualMachineRunningApacheTomcat.png
 
@@ -141,4 +148,4 @@
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=79-->
+<!---HONumber=82-->

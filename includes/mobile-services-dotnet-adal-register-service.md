@@ -5,7 +5,7 @@
 
 1. 遵循[如何向 Azure Active Directory 注册]主题向 Azure Active Directory 注册您的应用程序。
 
-2. 在 [Azure 管理门户]中，返回到 Azure Active Directory 扩展，并单击您的活动目录
+2. 在 [Azure 管理门户]中，返回到 Azure Active Directory 扩展，并单击您的活动目录。
 
 3. 单击**应用程序**选项卡，然后单击您的应用程序。
 

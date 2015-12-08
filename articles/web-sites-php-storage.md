@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中使用 Azure 存储空间创建 PHP Web 应用" 
-	description="本教程演示如何在 Azure 网站中创建 PHP Web 应用并在后端使用 Azure 表存储服务。" 
+	pageTitle="在 Azure 网站中使用 Azure 存储空间创建 PHP网站" 
+	description="本教程演示如何在 Azure 网站中创建 PHP网站并在后端使用 Azure 表存储服务。" 
 	services="app-service\web, storage" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -23,7 +23,7 @@
 * 如何创建 Azure 存储帐户并设置应用程序以使用该帐户。
 * 如何创建 Azure 网站并使用 Git 部署到该网站
  
-你将在 PHP 中构建一个简单的 Tasklist Web 应用程序。以下是已完成应用程序的屏幕快照：
+你将在 PHP 中构建一个简单的 Tasklist网站。以下是已完成应用程序的屏幕快照：
 
 ![Azure PHP 网站][ws-storage-app]
 

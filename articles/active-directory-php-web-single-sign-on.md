@@ -2,8 +2,8 @@
 	linkid="develop-php-how-to-guides-web-sso" 
 	urlDisplayName="Web SSO" 
 	pageTitle="Single sign-on with Azure Active Directory (PHP)" 
-	metaKeywords="Azure PHP web app, Azure single sign-on, Azure PHP Active Directory" 
-	description="Learn how to create a PHP web application that uses single sign-on with Azure Active Directory." metaCanonical="" 
+	metaKeywords="Azure PHP网站, Azure single sign-on, Azure PHP Active Directory" 
+	description="Learn how to create a PHP网站lication that uses single sign-on with Azure Active Directory." metaCanonical="" 
 	services="active-directory" 
 	documentationCenter="PHP" 
 	title="Web Single Sign-On with PHP and Azure Active Directory" 
@@ -24,7 +24,7 @@
 
 本教程将向 PHP 开发人员介绍如何利用 Azure Active Directory 为 Office 365 客户的用户实现单一登录。你将了解如何执行以下操作：
 
--   在客户的租户中设置 Web 应用程序
+-   在客户的租户中设置网站
 -   使用 WS 联合身份验证保护应用程序
 
 ### 先决条件
@@ -76,13 +76,13 @@
 
 10. 在 Eclipse 的**“运行”**菜单中，单击**“运行”**。
 
-11. 在**“运行 PHP Web 应用程序”**菜单中，单击**“确定”**。
+11. 在**“运行 PHP网站”**菜单中，单击**“确定”**。
 
 12. **index.php** 页将在 Eclipse 的新选项卡中打开。该页面只应显示以下文本：*索引页*。
 
 ## <a name="provisionapp"></a>步骤 2：在公司的目录租户中设置应用程序
 
-此步骤介绍 Azure Active Directory 客户的管理员如何在其租户中设置 PHP 应用程序以及如何配置单一登录。完成此步骤后，公司的员工可以使用其 Office 365 帐户对 Web 应用程序进行身份验证。
+此步骤介绍 Azure Active Directory 客户的管理员如何在其租户中设置 PHP 应用程序以及如何配置单一登录。完成此步骤后，公司的员工可以使用其 Office 365 帐户对网站进行身份验证。
 
 设置过程的第一步是为应用程序创建新的服务主体。Azure Active Directory 将使用服务主体来向目录注册和验证应用程序。
 
@@ -124,7 +124,7 @@
 
         Set-MsolServicePrincipal –AppPrincipalId "7829c758-2bef-43df-a685-717089474505" –Addresses $replyUrl 
 
-现在已经在目录中设置 Web 应用程序，公司员工可以使用它来进行 Web 单一登录。
+现在已经在目录中设置网站，公司员工可以使用它来进行 Web 单一登录。
 
 ## <a name="protectapp"></a>步骤 3：通过对员工登录使用 WS 联合身份验证来保护应用程序
 

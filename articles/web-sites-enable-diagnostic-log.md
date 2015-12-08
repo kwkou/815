@@ -1,5 +1,5 @@
 <properties
-	pageTitle="在 Azure 网站中启用 Web 应用的诊断日志记录"
+	pageTitle="在 Azure 网站中启用网站的诊断日志记录"
 	description="了解如何启用诊断日志记录和将检测添加到应用程序中，以及如何访问由 Azure 记录的信息。"
 	services="app-service\web"
 	documentationCenter=".net"
@@ -29,7 +29,7 @@ Azure 提供内置的诊断以帮助调试在 Azure 网站中托管的应用程�
 
 <a name="whatisdiag"></a><h2>网站诊断是什么？</h2>
 
-Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供了诊断功能。这些诊断功能按逻辑分为**站点诊断**和**应用程序诊断**。
+Azure 网站为 Web 服务器和网站中的日志记录信息提供了诊断功能。这些诊断功能按逻辑分为**站点诊断**和**应用程序诊断**。
 
 ### 网站诊断
 
@@ -41,7 +41,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 ### 应用程序诊断
 
-应用程序诊断可以捕获由 Web 应用程序产生的信息。ASP.NET 应用程序可使用 [System.Diagnostics.Trace](http://msdn.microsoft.com/zh-cn/library/36hhw2t6.aspx) 类将信息记录到应用程序诊断日志。例如：
+应用程序诊断可以捕获由网站产生的信息。ASP.NET 应用程序可使用 [System.Diagnostics.Trace](http://msdn.microsoft.com/zh-cn/library/36hhw2t6.aspx) 类将信息记录到应用程序诊断日志。例如：
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
@@ -61,11 +61,11 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 启用“网站诊断”时，必须为“Web 服务器日志记录”选择“存储”或“文件系统”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
 
-在 [Azure 门户](https://manage.windowsazure.cn) Web 应用的“配置”选项卡中，你可以选择“存储”或“文件系统”进行“Web 服务器日志记录”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
+在 [Azure 门户](https://manage.windowsazure.cn)网站的“配置”选项卡中，你可以选择“存储”或“文件系统”进行“Web 服务器日志记录”。选择“存储”允许你选择存储帐户，然后日志会写入一个 Blob 容器。“站点诊断”的所有其他日志仅写入文件系统。
 
-[Azure 门户](https://manage.windowsazure.cn) Web 应用的“配置”选项卡还包含用于应用程序诊断的其他设置：
+[Azure 门户](https://manage.windowsazure.cn)网站的“配置”选项卡还包含用于应用程序诊断的其他设置：
 
-* **文件系统** - 将应用程序诊断信息存储到 Web 应用文件系统。可以通过 FTP 访问这些文件，或者，使用 Azure PowerShell 或 Azure 命令行界面 (Azure CLI) 将这些文件作为 Zip 存档下载。
+* **文件系统** - 将应用程序诊断信息存储到网站文件系统。可以通过 FTP 访问这些文件，或者，使用 Azure PowerShell 或 Azure 命令行界面 (Azure CLI) 将这些文件作为 Zip 存档下载。
 * **表存储** - 将应用程序诊断信息存储在指定的 Azure 存储帐户和表名中。
 * **Blob 存储** - 将应用程序诊断信息存储在指定的 Azure 存储帐户和 Blob 容器中。
 * **保留期** - 默认情况下，日志不会自动从“Blob 存储”中删除。如果你希望自动删除日志，可选择“设置保留”并输入保存日志的天数。
@@ -80,7 +80,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 ## <a name="download"></a> 如何：下载日志
 
-存储到 Web 应用文件系统的诊断信息可使用 FTP 直接访问。还可使用 Azure PowerShell 或 Azure 命令行界面将这些信息作为 Zip 存档下载。
+存储到网站文件系统的诊断信息可使用 FTP 直接访问。还可使用 Azure PowerShell 或 Azure 命令行界面将这些信息作为 Zip 存档下载。
 
 存储日志采用的目录结构如下：
 
@@ -92,11 +92,11 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 * **Web 服务器日志** - /LogFiles/http/RawLogs。此文件夹包含使用 [W3C 扩展日志文件格式](http://msdn.microsoft.com/zh-cn/library/windows/desktop/aa814385.aspx)进行格式化的一个或多个文本文件。
 
-* **部署日志** - /LogFiles/Git。此文件夹包含由 Azure Web 应用使用的内部部署过程生成的日志以及 Git 部署的日志。
+* **部署日志** - /LogFiles/Git。此文件夹包含由 Azure 网站使用的内部部署过程生成的日志以及 Git 部署的日志。
 
 ### FTP
 
-若要使用 FTP 访问诊断信息，请在 [Azure 管理门户](https://manage.windowsazure.cn)中访问你的 Web 应用的“仪表板”。在“速览”部分，使用“FTP 诊断日志”链接通过 FTP 访问日志文件。“部署/FTP 用户”项列出了应该用于访问 FTP 站点的用户名。
+若要使用 FTP 访问诊断信息，请在 [Azure 管理门户](https://manage.windowsazure.cn)中访问你的网站的“仪表板”。在“速览”部分，使用“FTP 诊断日志”链接通过 FTP 访问日志文件。“部署/FTP 用户”项列出了应该用于访问 FTP 站点的用户名。
 
 > [AZURE.NOTE]如果“部署/FTP 用户”未设置或忘记了该用户的密码，可通过使用“仪表板”中“速览”部分的“重置部署凭据”链接创建新用户和密码。
 
@@ -106,7 +106,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 	Save-AzureWebSiteLog -Name webappname
 
-这会将 **-Name** 参数指定的 Web 应用的日志保存到当前目录中名为 **logs.zip** 的文件中。
+这会将 **-Name** 参数指定的网站的日志保存到当前目录中名为 **logs.zip** 的文件中。
 
 > [WACOM.NOTE]如果尚未安装 Azure PowerShell，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure PowerShell](/documentation/articles/install-configure-powershell/)。
 
@@ -116,7 +116,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 	azure site log download webappname
 
-这会将名为“webappname”的 Web 应用的日志保存到当前目录中名为 **diagnostics.zip** 的文件中。
+这会将名为“webappname”的网站的日志保存到当前目录中名为 **diagnostics.zip** 的文件中。
 
 > [AZURE.NOTE]如果尚未安装 Azure 命令行界面 (Azure CLI)，或者尚未将其配置为使用 Azure 订阅，请参阅[如何使用 Azure CLI](/documentation/articles/xplat-cli)。
 
@@ -134,7 +134,7 @@ Azure 网站为 Web 服务器和 Web 应用程序中的日志记录信息提供�
 
 	Get-AzureWebSiteLog -Name webappname -Tail
 
-这将连接到 **-Name** 参数指定的 Web 应用，并在该 Web 应用上出现日志事件时开始将信息流式传输到 PowerShell 窗口。任何写入以 .txt、.log 或 .htm 结尾并存储在 /LogFiles 目录 (d:/home/logfiles) 中的文件的信息将流式传输至本地控制台。
+这将连接到 **-Name** 参数指定的网站，并在该网站上出现日志事件时开始将信息流式传输到 PowerShell 窗口。任何写入以 .txt、.log 或 .htm 结尾并存储在 /LogFiles 目录 (d:/home/logfiles) 中的文件的信息将流式传输至本地控制台。
 
 若要筛选特定事件（如错误），请使用 **-Message** 参数。例如：
 

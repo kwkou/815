@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 Web 应用" 
+	pageTitle="在 Azure 中创建连接到虚拟机上运行的 MongoDB 的网站" 
 	description="本教程介绍如何使用 Git 将 ASP.NET 应用部署到连接至Azure 虚拟机上 MongoDB 的 Azure 网站。"
 	tags="azure-portal" 
 	services="app-service\web, virtual-machines" 
@@ -14,9 +14,9 @@
 	wacn.date="10/03/2015"/>
 
 
-# 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 Web 应用
+# 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的网站
 
-使用 Git，你可以将 ASP.NET 应用程序部署到 Azure Web 应用。在本教程中，你将构建一个简单的前端 ASP.NET MVC 任务列表应用程序，该程序将连接至在 Azure 内的虚拟机中运行的 MongoDB 数据库。[MongoDB][MongoDB] 是一个受欢迎的开源、高性能 NoSQL 数据库。在开发计算机上运行并测试了该 ASP.NET 应用程序后，可使用 Git 将其上载至 Azure 网站。
+使用 Git，你可以将 ASP.NET 应用程序部署到 Azure 网站。在本教程中，你将构建一个简单的前端 ASP.NET MVC 任务列表应用程序，该程序将连接至在 Azure 内的虚拟机中运行的 MongoDB 数据库。[MongoDB][MongoDB] 是一个受欢迎的开源、高性能 NoSQL 数据库。在开发计算机上运行并测试了该 ASP.NET 应用程序后，可使用 Git 将其上载至 Azure 网站。
 
 [WACOM.INCLUDE [create-account-and-websites-and-vms-note](../includes/create-account-and-websites-and-vms-note.md)]
 
@@ -37,8 +37,8 @@
 以下知识对于学习本教程有用但非必需：
 
 * MongoDB 的 C# 驱动程序。有关针对 MongoDB 开发 C# 应用程序的更多信息，请参阅 [MongoDB CSharp 语言中心][MongoC#LangCenter]。 
-* ASP .NET Web 应用程序框架。可通过 [ASP.net 网站][ASP.NET]进行全面了解。
-* ASP .NET MVC Web 应用程序框架。可通过 [ASP.NET MVC 网站][MVCWebSite] 进行全面了解。
+* ASP .NET网站框架。可通过 [ASP.net 网站][ASP.NET]进行全面了解。
+* ASP .NET MVC网站框架。可通过 [ASP.NET MVC 网站][MVCWebSite] 进行全面了解。
 * Azure。你可以先阅读 [Azure][WindowsAzure] 上的文章。
 
 ## 先决条件 ##
@@ -62,13 +62,13 @@
 <a id="createapp"></a>
 ## 创建应用程序 ##
 
-在本部分中，你将使用 Visual Studio 创建一个名为“My Task List”的 ASP.NET 应用程序，并执行到 Azure Web Apps 的初始部署。你将在本地运行该应用程序，但其将连接到你在 Azure 上的虚拟机并使用你在此处创建的 MongoDB 实例。
+在本部分中，你将使用 Visual Studio 创建一个名为“My Task List”的 ASP.NET 应用程序，并执行到 Azure 网站的初始部署。你将在本地运行该应用程序，但其将连接到你在 Azure 上的虚拟机并使用你在此处创建的 MongoDB 实例。
 
 1. 在 Visual Studio 中，单击“新建项目”。
 
 	![新项目开始页面][StartPageNewProject]
 
-1. 在“新建项目”窗口中的左侧窗格中，选择“Visual C#”，然后选择“Web”。在中间窗格中，选择“ASP.NET Web 应用程序”。在底部，将项目命名为“MyTaskListApp”，然后单击“确定”。
+1. 在“新建项目”窗口中的左侧窗格中，选择“Visual C#”，然后选择“Web”。在中间窗格中，选择“ASP.NET网站”。在底部，将项目命名为“MyTaskListApp”，然后单击“确定”。
 
 	![新建项目对话框][NewProjectMyTaskListApp]
 
@@ -84,7 +84,7 @@
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSPublishWeb.png)
 
-	将默认的 ASP.NET 应用程序发布到 Azure Web Apps 后，将在浏览器中启动该应用程序。
+	将默认的 ASP.NET 应用程序发布到 Azure 网站后，将在浏览器中启动该应用程序。
 ## 安装 MongoDB C# 驱动程序
 
 MongoDB 通过驱动程序为 C# 应用程序提供客户端支持，你需要在本地开发计算机上安装此驱动程序。C# 驱动程序通过 NuGet 提供。
@@ -450,14 +450,14 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 本部分中，你将创建一个 Azure 网站。
 
 1. 打开 Web 浏览器并浏览至 [Azure 管理门户][AzurePortal]。使用您的 Azure 帐户进行登录。 
-2. 在页面底部，依次单击“+新建”、“网站”和“速览”。
+2. 在页面底部，依次单击“+新建”、“WEB APPS”和“速览”。
 3. 为应用程序的 URL 输入唯一的前缀。
 4. 选择区域。
 5. 单击“创建网站”。
 
 ![创建新网站][WAWSCreateWebSite]
 
-6. 你的网站将快速创建，并显示在“网站”列表中。
+6. 你的网站将快速创建，并显示在“WEB APPS”列表中。
 
 ![WAWSDashboardMyTaskListApp][WAWSDashboardMyTaskListApp]
 
@@ -465,7 +465,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 ###使用 Git 将 ASP.NET 应用程序部署到网站
 在本部分中，你将使用 Git 部署 My Task List 应用程序。
 
-1. 在“网站”中单击你的网站名称，然后单击“仪表板”。在右侧的“速览”下，单击“从源代码管理设置部署”。
+1. 在“WEB APPS”中单击你的网站名称，然后单击“仪表板”。在右侧的“速览”下，单击“从源代码管理设置部署”。
 2. 在“你的源代码位置”页面，选择“本地 Git 存储库”并单击“下一步”箭头。 
 3. Git 存储库将快速创建。请注意生成页面上的说明，这些内容将在后面的部分用到。
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="服务总线高级和标准消息传送层 | Windows Azure"
+	pageTitle="服务总线高级和标准消息传送定价层概述 | Windows Azure"
 	description="服务总线高级和标准消息传送"
 	services="service-bus"
 	documentationCenter=".net"
@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="09/03/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/15/2015"
+	wacn.date="11/27/2015"/>
 
 # 服务总线高级和标准消息传送层 
 
@@ -37,7 +37,7 @@
 
 ### 分区的实体
 
-分区的实体支持高级消息传送，但它们的作用方式不同于标准和基本层的服务总线消息传送方式。高级消息传送不使用 SQL 作为数据存储，并且也不再具有与共享平台相关联的可能的资源竞争。因此，不必进行分区。此外，分区计数已从标准消息传送的 16 个减少到高级中的两个分区。使用 2 个分区可确保可用性并且更适合高级运行环境所要求的分区数。有关详细信息，请参阅[分区消息实体](https://msdn.microsoft.com/zh-cn/library/dn520246.aspx)。
+分区的实体支持高级消息传送，但它们的作用方式不同于标准和基本层的服务总线消息传送方式。高级消息传送不使用 SQL 作为数据存储，并且也不再具有与共享平台相关联的可能的资源竞争。因此，不必进行分区。此外，分区计数已从标准消息传送的 16 个减少到高级中的两个分区。使用 2 个分区可确保可用性并且更适合高级运行环境所要求的分区数。有关详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning)。
 
 ### 快速实体
 
@@ -50,7 +50,7 @@
 - [Azure 服务总线高级消息传送简介（博客文章）](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
 - [Azure 服务总线高级消息传送简介（Channel9）](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview)
-- [Azure 服务总线体系结构概述](/documentation/articles/fundamentals-service-bus-hybrid-solutions)
+- [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions)
 - [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-how-to-use-queues)
 
-<!---HONumber=74-->
+<!---HONumber=82-->

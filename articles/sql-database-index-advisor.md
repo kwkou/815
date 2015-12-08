@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Azure SQL 数据库索引顾问" 
-   description="提供可轻松创建最适合运行现有 Azure SQL 数据库工作负荷的索引建议。" 
+   description="Azure SQL 数据库索引顾问建议你为现有 SQL 数据库使用新索引，这样可以提高当前查询性能。" 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -10,7 +10,7 @@
 <tags
    ms.service="sql-database"
    ms.date="06/30/2015"
-   wacn.date="10/17/2015"/>
+   wacn.date="11/27/2015"/>
 
 # SQL 数据库索引顾问
 
@@ -167,4 +167,4 @@ SQL 数据库服务通过分析 SQL 数据库的历史资源使用状况来评�
 [3]: ./media/sql-database-index-advisor/recommended-indexes.png
 [4]: ./media/sql-database-index-advisor/index-operations.png
 
-<!---HONumber=74-->
+<!---HONumber=82-->

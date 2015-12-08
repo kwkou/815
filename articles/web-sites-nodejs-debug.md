@@ -1,6 +1,6 @@
 <properties
-	pageTitle="如何在 Azure 网站中调试 Node.js Web 应用"
-	description="了解如何在 Azure 网站中调试 Node.js Web 应用。"
+	pageTitle="如何在 Azure 网站中调试 Node.js网站"
+	description="了解如何在 Azure 网站中调试 Node.js网站。"
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -38,15 +38,15 @@ Azure 提供内置的诊断以帮助调试在 Azure 网站中托管的 Node.js �
 
 > [AZURE.NOTE]尽管在开发期间诊断问题时 devErrorsEnabled 将很有用，但在生产环境中启用它可能会导致发送给最终用户的开发错误。
 
-如果该 **IISNode.yml** 文件在你的应用程序内已不存在，则在发布更新的应用程序后必须重新启动你的 Web 应用。如果你只是在以前已发布的现有 **IISNode.yml** 文件中更改设置，则无需重新启动。
+如果该 **IISNode.yml** 文件在你的应用程序内已不存在，则在发布更新的应用程序后必须重新启动你的网站。如果你只是在以前已发布的现有 **IISNode.yml** 文件中更改设置，则无需重新启动。
 
-> [AZURE.NOTE]如果你的 Web 应用是使用 Azure 命令行工具或 Azure PowerShell Cmdlet 创建的，将自动创建一个默认的 **IISNode.yml** 文件。
+> [AZURE.NOTE]如果你的网站是使用 Azure 命令行工具或 Azure PowerShell Cmdlet 创建的，将自动创建一个默认的 **IISNode.yml** 文件。
 
-若要重新启动 Web 应用，请在 [Azure 管理门户]中选择该 Web 应用，然后单击“重新启动”按钮：
+若要重新启动网站，请在 [Azure 管理门户]中选择该网站，然后单击“重新启动”按钮：
 
 ![重新启动按钮][restart-button]
 
-如果 Azure 命令行工具安装在你的开发环境中，你可以使用以下命令重新启动该 Web 应用：
+如果 Azure 命令行工具安装在你的开发环境中，你可以使用以下命令重新启动该网站：
 
 	azure site restart [sitename]
 

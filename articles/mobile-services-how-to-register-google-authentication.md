@@ -32,13 +32,13 @@
 
    	![创建新的客户端 ID](./media/mobile-services-how-to-register-google-authentication/mobile-services-google-create-client.png)
 
-4. 选择“Web 应用程序”，在“授权的 JavaScript 源”中键入移动服务 URL，将“授权的重定向 URI”中生成的 URL 替换为你的移动服务 URL 后接路径 `/login/google`，然后单击“创建客户端 ID”。
+4. 选择“网站”，在“授权的 JavaScript 源”中键入移动服务 URL，将“授权的重定向 URI”中生成的 URL 替换为你的移动服务 URL 后接路径 `/login/google`，然后单击“创建客户端 ID”。
 
 	>[AZURE.NOTE]对于使用 Visual Studio 发布到 Azure 的 .NET 后端移动服务，重定向 URL 是移动服务的 URL 后接用作 .NET 服务的移动服务的路径 _signin-google_，例如 `https://todolist.azure-mobile.net/signin-google`。
 
    	![](./media/mobile-services-how-to-register-google-authentication/mobile-services-google-create-client2.png)
 
-5. 在“Web 应用程序的客户端 ID”下面，记下“客户端 ID”和“客户端密钥”的值。
+5. 在“网站的客户端 ID”下面，记下“客户端 ID”和“客户端密钥”的值。
 
    	![客户端凭据](./media/mobile-services-how-to-register-google-authentication/mobile-services-google-create-client3.png)
 

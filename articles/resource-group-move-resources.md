@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="azure-resource-manager" 
-	ms.date="09/08/2015" 
-	wacn.date="11/12/2015"/>
+	ms.date="10/14/2015" 
+	wacn.date="11/27/2015"/>
 
 # 将资源移动到新的资源组或订阅中
 
@@ -36,7 +36,7 @@
 - API 管理
 - Azure DocumentDB
 - Azure 搜索
-- Azure Web Apps（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
+- Azure 网站（存在一些<!--[-->限制<!--](/documentation/articles/app-service-move-resources)）-->
 - Data Factory
 - 密钥保管库
 - Mobile Engagement
@@ -46,31 +46,34 @@
 
 支持移到新的资源组而非新的订阅的服务包括：
 
-- 计算（经典）
+- 虚拟机（经典）
 - 存储（经典）
 
 目前不支持移动资源的服务包括：
 
+- 虚拟机
 - 虚拟网络
 
-当使用 Web 应用时，不能仅移动 App Service 计划。若要移动 Web 应用，您的选项包括：
+当使用网站时，不能仅移动 App Service 计划。若要移动网站，您的选项包括：
 
 - 如果目标资源组不具有 Microsoft.Web 资源，则将所有资源从一个资源组移到另一个资源组中。
-- 将 web 应用移到另一个资源组中，但保留原始资源组中的 App Service 计划。
+- 将网站移到另一个资源组中，但保留原始资源组中的 App Service 计划。
 
 ## 使用 PowerShell 来移动资源
 
-若要将现有资源移到另一个资源组或订阅，请使用 **Move-AzureResource** 命令。
+[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
+
+若要将现有资源移到另一个资源组或订阅，请使用 **Move-AzureRmResource** 命令。
 
 第一个示例演示如何将一个资源移到新的资源组。
 
-    PS C:\> Move-AzureResource -DestinationResourceGroupName TestRG -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OtherExample/providers/Microsoft.ClassicStorage/storageAccounts/examplestorage
+    PS C:\> Move-AzureRmResource -DestinationResourceGroupName TestRG -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OtherExample/providers/Microsoft.ClassicStorage/storageAccounts/examplestorage
 
 第二个示例演示如何将多个资源移到新的资源组。
 
-    PS C:\> $webapp = Get-AzureResource -ResourceGroupName OldRG -ResourceName ExampleSite -ResourceType Microsoft.Web/sites
-    PS C:\> $plan = Get-AzureResource -ResourceGroupName OldRG -ResourceName ExamplePlan -ResourceType Microsoft.Web/serverFarms
-    PS C:\> Move-AzureResource -DestinationResourceGroupName NewRG -ResourceId ($webapp.ResourceId, $plan.ResourceId)
+    PS C:\> $webapp = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExampleSite -ResourceType Microsoft.Web/sites
+    PS C:\> $plan = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExamplePlan -ResourceType Microsoft.Web/serverFarms
+    PS C:\> Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId ($webapp.ResourceId, $plan.ResourceId)
 
 若要移动到新的订阅，请包含 **DestinationSubscriptionId** 参数的值。
 
@@ -80,7 +83,7 @@
 
     POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
-将 **{source-subscription-id}** 和 **{source-resource-group-name}** 替换为当前包含你想要移动的资源的订阅和资源组。将 **2015-01-01** 用于 {api-version}。
+将 **{source-subscription-id}** 和 **{source-resource-group-name}** 替换为当前包含您想要移动的资源的订阅和资源组。将 **2015-01-01** 用于 {api-version}。
 
 在请求中，包括一个能够定义您想要移动的目标资源组和资源的 JSON 对象。
 
@@ -95,7 +98,6 @@
 
 ## 后续步骤
 - [将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)
-- [将 Azure CLI 用于资源管理器](/documentation/articles/xplat-cli-azure-resource-manager)
 - [使用标记来组织资源](/documentation/articles/resource-group-using-tags)
 
-<!---HONumber=79-->
+<!---HONumber=82-->

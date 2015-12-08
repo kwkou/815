@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 SQL 数据库 Web 或企业数据库升级到新服务层"
+	pageTitle="将 SQL 数据库 Web 或企业数据库升级到新服务层" 
 	description="将 Azure SQL 数据库 Web 或企业数据库升级到新的 Azure SQL 数据库基本、标准和高级服务层与性能级别。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -9,29 +9,46 @@
 
 <tags 
 	ms.service="sql-database"
-	ms.date="06/18/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/08/2015" 
+	wacn.date="11/27/2015"/>
 
 
 # 将 SQL 数据库 Web 或企业数据库升级到新服务层
 
-Azure SQL Web 和企业数据库将[在 2015 年 9 月淘汰](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)，因此现在是开始规划将现有的 Web 或企业数据库升级到基本、标准或高阶服务层的时候了。
+Azure SQL [Web 和企业数据库即将淘汰](/documentation/articles/sql-database-web-business-sunset-faq)，因此现在是开始规划将现有的 Web 或企业数据库升级到<!--[-->基本、标准、高级或弹性服务层<!--](/documentation/articles/sql-database-service-tiers)-->的时候了。
 
-下载 [Web 和企业数据库迁移指导手册](http://download.microsoft.com/download/3/C/9/3C9FF3D8-E702-4F5D-A38C-5EFA1DBA73E6/Azure_SQL_Database_Migration_Cookbook.pdf)。
+
+> [AZURE.IMPORTANT]将 Web 或企业数据库升级到新的服务层不会使数据库脱机。数据库将保持联机，并且可在整个升级操作过程中使用。
+
+
+为了帮助你进行升级，SQL 数据库服务会为每个数据库建议适当的服务层和性能级别（定价层）。通过分析每个数据库的历史使用情况，该服务建议最适合运行你的现有数据库工作负荷的层。
+
+在更改 Web 或企业数据库服务层的过程中，或者在升级到 SQL 数据库 V12 时，将为每个数据库提供建议的定价层。
+
+根据你的具体环境，服务可能会建议将部分或所有数据库升级到[弹性数据库池](/documentation/articles/sql-database-elastic-pool)。
+
+若要查看为已停用的数据库建议的服务层，可以使用 [Azure 门户](https://manage.windowsazure.cn)或 PowerShell。有关分步指导，请参阅：
+
+- [升级到 SQL 数据库 V12 (PowerShell)](/documentation/articles/sql-database-upgrade-server)
+
+
+请特别注意，SQL 数据库不会锁定到任何特定的服务层或性能级别，因此当你的数据库要求发生变化时，你可以轻松在可用服务层和性能级别之间切换。事实上，基本、标准和高级版 SQL 数据库按小时计费，在 24 小时内，你可以扩展或收缩每个数据库 4 次。这意味着，你可以调整服务层和性能级别，以根据应用程序的要求和各种工作负荷，最大程度充分发挥数据库在性能需求、功能集和成本方面的优势。这也意味着，评估和更改数据库的服务层与性能级别（扩展和收缩）是持续不断的过程，应该是计划的维护与性能优化例行工作的一部分。
+ 
+有关 Web/企业版和与新服务层之间的差异的详细信息以及其他迁移详细信息，请下载 [Web 和企业数据库迁移指导手册](http://download.microsoft.com/download/3/C/9/3C9FF3D8-E702-4F5D-A38C-5EFA1DBA73E6/Azure_SQL_Database_Migration_Cookbook.pdf)。
+
+
 
 ## 概述
 
 <p> Azure Web 和企业 SQL 数据库在共享的多租户环境中运行，这种环境没有为数据库提供任何保留的资源容量。此共享资源环境中其他数据库的活动可能会影响你的性能。资源在任意给定时间点的可用性很大程度上取决于系统中运行的其他并发工作负荷。这可能会导致数据库应用程序性能出现很大的变化和不可预测性。客户反映，这种不可预测的性能很难管理，他们更希望性能可预测。
 
-为了迎合这种需求，Azure SQL 数据库服务引入了新的数据库服务层[（基本、标准和高级）](http://msdn.microsoft.com/zh-cn/library/dn741340.aspx)，这些版本提供可预测的性能和丰富的新功能，可实现业务连续性和安全性。这些新服务层旨在为数据库工作负荷提供指定级别的资源，而不考虑该环境中运行的其他客户工作负荷。这样，便使得性能行为高度可预测。
+为了迎合这种需求，Azure SQL 数据库服务引入了新的数据库服务层[（基本、标准和高级）](/documentation/articles/sql-database-service-tiers)，这些版本提供可预测的性能和丰富的新功能，可实现业务连续性和安全性。这些新服务层旨在为数据库工作负荷提供指定级别的资源，而不考虑该环境中运行的其他客户工作负荷。这样，便使得性能行为高度可预测。
 
 这些变化为客户带来了这样的问题：如何评估新的服务层，哪个新的服务层最适合他们目前的 Web 和企业 (W/B) 数据库，以及如何运作实际升级流程自身。
 
 最终，最好的选择就是可在功能、性能和成本间提供最佳平衡，同时又完全符合业务需求和应用程序要求的服务层与性能级别组合。
 
 本文以引导式的方法介绍了如何将 Web/企业数据库升级到新的服务层/性能级别。
-
-请特别注意，Azure SQL 数据库不会锁定到任何特定的服务层或性能级别，因此当你的数据库要求发生变化时，你可以轻松在可用服务层和性能级别之间切换。事实上，基本、标准和高级版 Azure SQL 数据库按小时计费，在 24 小时内，你可以扩展或收缩每个数据库 4 次（使用 [Azure 门户或编程方式](http://msdn.microsoft.com/zh-cn/library/azure/ff394116.aspx)）。这意味着，你可以调整服务层和性能级别，以根据应用程序的要求和各种工作负荷，最大程度充分发挥数据库在性能需求、功能集和成本方面的优势。这也意味着，评估和更改数据库的服务层与性能级别（扩展和收缩）是持续不断的过程，应该是计划的维护与性能优化例行工作的一部分。
 
 
 ## 升级 Web 和企业数据库
@@ -55,24 +72,21 @@ Azure SQL Web 和企业数据库将[在 2015 年 9 月淘汰](http://msdn.micros
 
 基本、标准和高级服务层提供不同的功能集，因此选择适当层的第一个步骤就是确定可提供应用程序和业务所需最低功能级别的服务层。
 
-例如，请考虑备份需要保留多久，或是否需要[标准或活动异地复制](http://msdn.microsoft.com/zh-cn/library/azure/dn783447.aspx)功能，或所需的整体最大数据库大小等等。这些要求确定了要选择的最低服务层。
+例如，请考虑备份需要保留多久，或是否需要[标准或活动异地复制](/documentation/articles/sql-database-business-continuity)功能，或所需的整体最大数据库大小等等。这些要求确定了要选择的最低服务层。
 
 “基本”层主要用于极小型、活动少的数据库。因此，通常应根据所需功能的最低级别，优先选择升级到“标准”或“高级”层。
 
 下表汇总及比较了新服务层的功能和性能级别：
 
-![服务层功能比较][1]
-
+[AZURE.INCLUDE [SQL 数据库服务层表](../includes/sql-database-service-tiers-table.md)]
 
 **有关比较服务层和性能级别的其他资源：**
 
 | 文章 | 说明 |
 |:--|:--|
-|[Azure SQL Database 服务层（版本）](http://msdn.microsoft.com/zh-cn/library/azure/dn741340.aspx)| 基本、标准和高级服务层的概述。|
-|[Azure SQL Database 服务层和性能级别](http://msdn.microsoft.com/zh-cn/library/dn741336.aspx)| 各服务层的度量值和功能（以及如何在管理门户中使用 DMV 监视数据库利用率）。 |
-|[服务层有哪些不同之处？](http://msdn.microsoft.com/zh-cn/library/dn369873.aspx#Different)| 有关不同服务层的详细信息，包括你为何要选择一个层而不是另一个层。 |
-|[Azure SQL Database 业务连续性](http://msdn.microsoft.com/zh-cn/library/azure/hh852669.aspx)|不同服务层提供的业务连续性和灾难恢复功能（时间点还原、异地还原、异地复制）的详细信息。|
-|[SQL 数据库定价](/home/features/sql-database/#price)|不同服务层和性能级别的详细定价信息。|
+|[Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers)| 各服务层的概述、度量值和功能（以及如何在管理门户中使用 DMV 监视数据库利用率）。 |
+|[Azure SQL 数据库业务连续性](/documentation/articles/sql-database-business-continuity)|不同服务层提供的业务连续性和灾难恢复功能（时间点还原、异地还原、异地复制）的详细信息。|
+|[SQL 数据库定价](/pricing/details/sql-database/)|不同服务层和性能级别的详细定价信息。|
 
 <br>
 
@@ -96,7 +110,7 @@ Azure SQL 数据库服务将在管理门户和“系统视图”中公开信息�
 
 **新管理门户**
 
-1. 登录到[新管理门户](https://portal.azure.com)并导航到包含 Web 或企业数据库的服务器。
+1. 登录到 [Azure 门户](https://manage.windowsazure.cn)并浏览到包含 Web 或企业数据库的服务器。
 2. 单击服务器边栏选项卡中的“最新更新”部分。
 3. 单击“升级此服务器”。
 
@@ -151,7 +165,7 @@ Web 和企业层的 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/libra
 
 以 S2 数据库级别为依据的 DTU 消耗量信息可将 Web 和企业数据库当前的消耗量以新服务层数据库的方式规范化，从而找出较合适的服务层。例如，如果平均 DTU 百分比消耗量显示值为 80%，表示数据库消耗 DTU 的比率是 S2 性能级别的数据库限制的 80%。如果你在 **sys.resource\_stats** 视图中看到大于 100% 的值，则表示需要大于 S2 的性能层。例如，假设你看到了值为 300% 的高峰 DTU 百分比值。这表明使用的资源比 S2 中可用的资源多三倍。若要确定合理的起始大小，请比较 S2 中可用的 DTU（50 DTU）与下一个较高的大小（S3/P1 = 100 DTU 或 S2 的 200 %，P2 = 200 DTU 或 S2 的 400 %）。因为比率是 S2 的 300%，可以从 P2 开始再重新测试。
 
-根据 DTU 使用量百分比和符合工作负荷所需的最大版本，可以确定哪个服务层和性能级别最适合数据库工作负荷（如同通过 DTU 百分比和各种[性能级别](http://msdn.microsoft.com/zh-cn/library/azure/dn741336.aspx)的相对 DTU 能力所示）。下表提供了 Web/业务资源消耗量百分比和对等新服务层性能级别之间的映射：
+根据 DTU 使用量百分比和符合工作负荷所需的最大版本，可以确定哪个服务层和性能级别最适合数据库工作负荷（如同通过 DTU 百分比和各种[性能级别](/documentation/articles/sql-database-service-tiers)的相对 DTU 能力所示）。下表提供了 Web/业务资源消耗量百分比和对等新服务层性能级别之间的映射：
 
 ![资源消耗量][4]
 
@@ -231,15 +245,13 @@ Web 和企业数据库没有针对任一单个数据库保留特定数量的资�
 
 ## 5\.升级到新的服务层/性能级别
 在确定 Web 或企业数据库的适当服务层和性能级别后，可通过多种方法将数据库升级到新层：
-      	 
+
 | 管理工具 | 更改数据库的服务层和性能级别|
 | :---| :---|
 | [Azure 管理门户](https://manage.windowsazure.cn) | 单击数据库仪表板页面上的“缩放”选项卡。 |
-| [Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx) | 使用 [Set-AzureSqlDatabase](http://msdn.microsoft.com/zh-cn/library/azure/dn546732.aspx) cmdlet。 |
-| [服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn505719.aspx) | 使用“更新数据库”命令[](http://msdn.microsoft.com/zh-cn/library/dn505718.aspx)。|
-| [Transact-SQL](http://msdn.microsoft.com/zh-cn/library/bb510741.aspx) | 使用 [ALTER DATABASE (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms174269.aspx) 语句。 |
-
-有关详细信息，请参阅[更改数据库服务层和性能级别](http://msdn.microsoft.com/zh-cn/library/dn369872.aspx)
+| [Azure PowerShell](http://msdn.microsoft.com/zh-cn/library/azure/dn546726.aspx) | 使用 [Set-AzureRMSqlDatabase](http://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) cmdlet。 |
+| [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx) | 使用“创建或更新数据库”命令。[](/documentation/)|
+| [Transact-SQL](/documentation/) | 使用 [ALTER DATABASE (Transact-SQL)](/documentation/) 语句。 |
 
 
 ## 6\.监视升级到新服务层/性能级别
@@ -254,10 +266,6 @@ Azure SQL 数据库在 sys.dm\_operation\_status 动态管理视图中提供有�
     ORDER BY o.last_modify_time DESC;
 
 如果你使用管理门户执行了升级，则门户中也会提供有关该操作的通知。
-
-### 升级后数据库工作负荷达到资源限制时会发生什么情况？
-性能级别将会校准并受到控制，以便在选定服务层/性能级别所允许的最大限制范围内（即资源消耗量达到 100%）提供所需的资源来运行你的数据库工作负荷。如果你的工作负荷达到了 CPU/数据 IO/日志 IO 限制之一，你将会继续接收资源直到达到最大允许级别，但是，你可能会发现你的查询延迟不断增高。达到其中一个限制不会导致任何错误，而只会减慢你的工作负荷，直到严重变慢，以致于查询开始超时。如果你达到了并发用户会话/请求（工作线程）的最大允许数目限制，你将看到[错误 10928 或 10929](http://msdn.microsoft.com/zh-cn/library/azure/dn338078.aspx)。
-
 
 ## 7\.升级后监视数据库
 将 Web/企业数据库升级到新层后，建议你主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。建议使用以下附加步骤来监视数据库。
@@ -280,25 +288,24 @@ Azure SQL 数据库在 sys.dm\_operation\_status 动态管理视图中提供有�
 
 - **警报：**在 Azure 管理门户中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能度量值，在 Azure 管理门户中设置数据库警报。 
 
-	例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[如何：在 Azure 中接收警报通知和管理警报规则](http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx)，以了解有关如何配置警报通知的详细信息。
+	例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。
 
 
-- **计划的性能级别升级/降级：**如果应用程序的某些方案只是在一天/一周的特定时间才需要更高的性能，则你可以使用 [Azure 自动化](http://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx)，以计划中操作的形式将数据库升级/降级到更高/更低的性能级别。
+- **计划的性能级别升级/降级：**如果应用程序的某些方案只是在一天/一周的特定时间才需要更高的性能，则你可以使用 [Azure 自动化](/services/automation/)，以计划中操作的形式将数据库升级/降级到更高/更低的性能级别。
 
 	例如，在执行每周批处理/维护作业期间，将数据库升级到更高的性能级别，在完成作业后降级数据库。这种类型的计划也适用于任何大规模的资源密集型操作，例如数据加载、重建索引，等等。请注意，Azure SQL 数据库计费模式基于服务层/性能级别的每小时用量。凭借这种灵活性，你可以更加经济高效地安排有计划的升级。
 
 
 
 ## 摘要
-Azure SQL 数据库 服务提供了遥测数据和工具来评估 Web/企业数据库工作负荷，并确定适合升级的最佳服务层。升级过程非常简单，无需使数据库脱机就能完成，且不会丢失数据。升级后的数据库将受益于可预测的性能，以及新服务层提供的更多功能。
+Azure SQL 数据库服务提供了遥测数据和工具来评估 Web/企业数据库工作负荷，并确定可升级到的最佳服务层。升级过程非常简单，无需使数据库脱机就能完成，且不会丢失数据。升级后的数据库将受益于可预测的性能，以及新服务层提供的更多功能。
 
 
 
 
 <!--Image references-->
-[1]: ./media/sql-database-upgrade-new-service-tiers/service-tier-features.png
 [2]: ./media/sql-database-upgrade-new-service-tiers/portal-dtus.JPG
 [3]: ./media/sql-database-upgrade-new-service-tiers/web-business-noisy-neighbor.png
 [4]: ./media/sql-database-upgrade-new-service-tiers/resource_consumption.png
 
-<!---HONumber=69-->
+<!---HONumber=82-->

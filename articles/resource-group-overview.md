@@ -9,12 +9,12 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="09/09/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="10/02/2015"
+   wacn.date="11/27/2015"/>
 
 # Azure 资源管理器概述
 
-应用程序的体系结构通常由许多组件构成 – 其中可能包括虚拟机、存储帐户、虚拟网络、Web 应用、数据库、数据库服务器和第三方服务。这些组件不会以独立的实体出现，而是以单个实体的相关部件和依赖部件出现。如果你希望以组的方式部署、管理和监视这些这些组件，那么，你可以使用 Azure 资源管理器以组的方式处理解决方案中的资源。你可以通过一个协调的操作为解决方案部署、更新或删除所有资源。你可以使用一个模板来完成部署，该模板适用于不同的环境，例如测试、过渡和生产。资源管理器提供安全、审核和标记功能，以帮助你在部署后管理资源。
+应用程序的体系结构通常由许多组件构成 – 其中可能包括虚拟机、存储帐户、虚拟网络、网站、数据库、数据库服务器和第三方服务。这些组件不会以独立的实体出现，而是以单个实体的相关部件和依赖部件出现。如果你希望以组的方式部署、管理和监视这些这些组件，那么，你可以使用 Azure 资源管理器以组的方式处理解决方案中的资源。你可以通过一个协调的操作为解决方案部署、更新或删除所有资源。你可以使用一个模板来完成部署，该模板适用于不同的环境，例如测试、过渡和生产。资源管理器提供安全、审核和标记功能，以帮助你在部署后管理资源。
 
 ## 使用资源管理器的优势
 
@@ -103,22 +103,16 @@
 
 ## 一致的管理层
 
-资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows 的 Azure CLI、Azure 预览门户或 REST API 提供完全兼容的操作。你可以使用最适合自己的界面，并快速切换不同的界面，而不会造成任何混淆。门户甚至还会针对门户外部执行的操作显示通知。
+资源管理器通过 Azure PowerShell、适用于 Mac、Linux 和 Windows 的 Azure CLI或 REST API 提供完全兼容的操作。你可以使用最适合自己的界面，并快速切换不同的界面，而不会造成任何混淆。门户甚至还会针对门户外部执行的操作显示通知。
 
 有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
-有关 Azure CLI 的信息，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
-
 有关 REST API 的信息，请参阅 [Azure 资源管理器 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)。
-
-<!--有关使用预览门户的信息，请参阅[使用 Azure 预览门户管理 Azure 资源](/documentation/articles/resource-group-portal.md)。-->
-
 
 ## 后续步骤
 
 - 若要了解如何创建模板，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates)
-- 若要部署你创建的模板，请参阅[部署模板](/documentation/articles/resource-group-template-deploy)
 - 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions)
-- 有关如何设计你的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
+- 有关如何设计您的模板的指南，请参阅[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates)
 
-<!---HONumber=79-->
+<!---HONumber=82-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Mac 上使用 Django 的 Python Web 应用 | Windows Azure" 
+	pageTitle="在 Mac 上使用 Django 的 Python网站| Windows Azure" 
 	description="本教程演示如何在 Azure 中使用 Linux 虚拟机托管基于 Django 的网站。" 
 	services="virtual-machines" 
 	documentationCenter="python" 
@@ -16,7 +16,7 @@
 
 
 
-# Django Hello World Web 应用程序 (mac-linux)
+# Django Hello World网站(mac-linux)
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/web-app-with-django)
@@ -29,7 +29,7 @@
 * 设置 Azure 虚拟机以托管 Django。虽然本教程介绍如何在 **Linux** 下实现此目的，但也可以使用托管在 Azure 中的 Windows Server VM 实现相同目的。 
 * 从 Linux 创建新的 Django 应用程序。
 
-通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World Web 应用程序。该应用程序将托管在 Azure 虚拟机中。
+通过按照本教程中的说明进行操作，您将构建一个简单的 Hello World网站。该应用程序将托管在 Azure 虚拟机中。
 
 以下是已完成应用程序的屏幕快照：
 
@@ -45,8 +45,13 @@
 
 1. 指示 Azure 将来自 Web 的端口 **80** 通信定向到虚拟机上的端口 **80**：
 	* 在 Azure 门户中导航到你新创建的虚拟机，然后单击“终结点”选项卡。
-	* 单击屏幕底部的“添加”按钮。![添加终结点](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* 打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。![端口 80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
+	* 单击屏幕底部的“添加”按钮。
+	
+	![添加终结点](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
+	
+	* 打开 *TCP* 协议的*公用端口 80* 作为*专用端口 80*。
+	
+	![端口 80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
 
 ## <a id="setup"> </a>设置开发环境
 
@@ -127,5 +132,5 @@ Ubuntu Linux VM 已预安装了 Python 2.7，但它没有安装 Apache 或 Djang
 在你完成本教程后，关闭并/或删除你新创建的 Azure 虚拟机以为其他教程释放资源并避免产生 Azure 使用费。
 
 
-[portal-vm]: /documentation/articles/virtual-machines-linux-tutorial
+[portal-vm]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm
 <!---HONumber=70-->

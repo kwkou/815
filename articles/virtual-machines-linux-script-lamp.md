@@ -26,8 +26,6 @@
 
 你还可能需要 Azure 存储帐户和密钥（可以从服务门户来获取此信息）来访问它。
 
-如果你在 Azure 上创建 Linux VM 时需要帮助，请参阅[创建运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-tutorial)。
-
 虽然特定的安装命令将采用 Ubuntu，但你可以针对任何受支持的发行版改编一般步骤。
 
 *script-vm* VM 需要使用与 Azure 之间的有效链接安装 Azure CLI。有关这方面的帮助，请参阅[安装和配置 Azure 命令行界面](/documentation/articles/xplat-cli)。
@@ -66,7 +64,7 @@
 
 还要创建一个描述如何从 Azure 存储下载脚本的 JSON 文件。将该文件另存为 *public\_config.json*（使用你的存储帐户的名称替换“mystorage”）：
 
-    {fileUris":["https://mystorage.blob.core.chinacloudapi.cn/scripts/install_lamp.sh"], "commandToExecute":"sh install_lamp.sh" }
+    {"fileUris":["https://mystorage.blob.core.chinacloudapi.cn/scripts/install_lamp.sh"], "commandToExecute":"sh install_lamp.sh" }
 
 
 ## 部署扩展

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Git 创建 PHP-SQL Web 应用并将其部署到 Azure 网站" 
-	description="本教程演示如何创建在 Azure SQL 数据库中存储数据的 PHP Web 应用并使用 Git 部署到 Azure 网站。" 
+	pageTitle="使用 Git 创建 PHP-SQL网站并将其部署到 Azure 网站" 
+	description="本教程演示如何创建在 Azure SQL 数据库中存储数据的 PHP网站并使用 Git 部署到 Azure 网站。" 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
 	authors="tfitzmac" 
@@ -23,7 +23,7 @@
 * 如何使用 Azure 管理门户创建 Azure 网站和 SQL 数据库。由于在 Azure 网站中默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
  
-通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册 Web 应用程序。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
+通过按照本教程中的说明进行操作，您将在 PHP 中构建简单的注册网站。将在 Azure 网站中托管应用程序。以下是已完成应用程序的屏幕快照：
 
 ![Azure PHP 网站][running-app]
 

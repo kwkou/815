@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在装有 .NET 后端的移动服务中进行用户服务端授权 | 移动开发人员中心"
-	description="了解如何在 Azure 移动服务的 .NET 后端中为用户授权"
+	pageTitle="在 .NET 后端移动服务中对用户进行服务端授权 | Windows Azure"
+	description="了解如何在 .NET 后端移动服务中限制已授权用户的访问权限"
 	services="mobile-services"
 	documentationCenter="windows"
 	authors="krisragh"
@@ -9,12 +9,12 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="07/02/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/01/2015"
+	wacn.date="11/27/2015"/>
 
 # 移动服务中的用户服务端授权
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
+> [AZURE.SELECTOR]
 - [(Any | .NET)](/zh-cn/documentation/articles/mobile-services-dotnet-backend-service-side-authorization)
 - [(Any | Javascript)](/zh-cn/documentation/articles/mobile-services-javascript-backend-service-side-authorization)
 
@@ -64,7 +64,6 @@
 
 
 <!-- Anchors. -->
-
 [Register server scripts]: #register-scripts
 [Next Steps]: #next-steps
 
@@ -74,4 +73,5 @@
 
 <!-- URLs. -->
 [向现有移动服务应用程序添加身份验证]: /documentation/articles/mobile-services-dotnet-backend-ios-get-started-users
-<!---HONumber=71-->
+
+<!---HONumber=82-->

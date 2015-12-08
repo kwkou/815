@@ -1,8 +1,19 @@
-<properties urlDisplayName="Use SSH" pageTitle="在 Azure 中使用 SSH 连接到 Linux 虚拟机" metaKeywords="Azure SSH keys Linux, Linux vm SSH" description="了解如何在 Azure 上通过 Linux 虚拟机生成和使用 SSH 密钥。" metaCanonical="" services="virtual-machines" documentationCenter="" title="How to Use SSH with Linux on Azure" authors="szarkos" solutions="" manager="timlt" editor=""/>
+<properties 
+	pageTitle="使用 SSH 连接到 Linux 虚拟机 | Windows Azure" 
+	description="了解如何在 Azure 上通过 Linux 虚拟机生成和使用 SSH 密钥。" 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="szarkos" 
+	manager="timlt" 
+	editor=""
+	tags="azure-service-management,azure-resource-manager" />
 
-<tags ms.service="virtual-machines" ms.date="05/15/2015" wacn.date="06/19/2015"/>
+<tags 
+	ms.service="virtual-machines" 
+	ms.date="10/05/2015" 
+	wacn.date="11/27/2015"/>
 
-# 如何在 Azure 上通过 Linux 使用 SSH
+#如何在 Azure 上通过 Linux 使用 SSH
 
 当前版本的 Azure 管理门户只接受封装在 X509 证书中的 SSH 公钥。按照下面的步骤操作可生成 SSH 密钥并将其与 Azure 配合使用。
 
@@ -65,7 +76,7 @@ OpenSSH 私钥可通过 `openssl` 实用工具直接读取。以下命令将采�
 ### 使用 Msysgit ###
 
 1.	从以下位置下载并安装 msysgit：[http://msysgit.github.com/](http://msysgit.github.com/)
-2.	从安装目录运行 `msys`（示例：c:\msysgit\msys.exe）
+2.	从安装目录运行 `msys`（示例：c:\\msysgit\\msys.exe）
 3.	通过键入 `cd bin` 更改为 `bin` 目录
 
 
@@ -93,7 +104,7 @@ OpenSSH 私钥可通过 `openssl` 实用工具直接读取。以下命令将采�
 		export OPENSSL_CONF=$GITHUB_GIT/ssl/openssl.cnf
 
 
-### 使用 Cygwin ###
+###使用 Cygwin###
 
 1.	从以下位置下载并安装 Cygwin：[http://cygwin.com/](http://cygwin.com/)
 2.	确保安装了 OpenSSL 包及其所有依赖项。
@@ -126,13 +137,13 @@ OpenSSH 私钥可通过 `openssl` 实用工具直接读取。以下命令将采�
 		# openssl rsa -in ./myPrivateKey.key -out myPrivateKey_rsa
 		# chmod 600 ./myPrivateKey_rsa
 
-	上面的命令应生成名为 myPrivateKey_rsa 的新私钥。
+	上面的命令应生成名为 myPrivateKey\_rsa 的新私钥。
 
 3. 运行 `puttygen.exe`
 
 4. 单击菜单：“文件”>“加载私钥”
 
-5. 查找上述名为 `myPrivateKey_rsa` 的私钥。你将需要更改文件筛选器以显示**“所有文件 (\*.\*)”**
+5. 查找上述名为 `myPrivateKey_rsa` 的私钥。你将需要更改文件筛选器以显示**“所有文件 (*.*)”**
 
 6. 单击**“打开”**。您将收到与如下所示的提示：
 
@@ -161,4 +172,4 @@ OpenSSH 私钥可通过 `openssl` 实用工具直接读取。以下命令将采�
 
 5.	单击**“打开”**以连接到你的虚拟机
 
-<!---HONumber=60-->
+<!---HONumber=82-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 网站中还原 Web 应用" 
-	description="了解如何从备份还原 Web 应用。" 
+	pageTitle="在 Azure 网站中还原网站" 
+	description="了解如何从备份还原网站。" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -14,11 +14,11 @@
 
 #还原 Windows Azure 网站
 
-本文介绍如何通过使用 Azure 网站备份功能来还原你先前备份的 Web 应用。有关详细信息，请参阅 [Windows Azure 网站备份](/documentation/articles/web-sites-backup/)。
+本文介绍如何通过使用 Azure 网站备份功能来还原你先前备份的网站。有关详细信息，请参阅 [Windows Azure 网站备份](/documentation/articles/web-sites-backup/)。
 
-利用 Web Apps 还原功能，可将 Web 应用还原到以前某个你自己需要的状态，或基于原有 Web 应用备份之一创建新的 Web 应用。创建与最新版本并行运行的新 Web 应用对于 A/B 测试会很有用。
+利用网站还原功能，可将网站还原到以前某个你自己需要的状态，或基于原有网站备份之一创建新的网站。创建与最新版本并行运行的新网站对于 A/B 测试会很有用。
 
-Web Apps 还原功能在 [Azure 门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 网站中缩放 Web 应用](/documentation/articles/web-sites-scale)。
+网站还原功能在 [Azure 门户](http://manage.windowsazure.cn)中的“备份”边栏选项卡上，只能用于“标准”模式。有关使用“标准”模式缩放应用的信息，请参阅[在 Azure 网站中缩放网站](/documentation/articles/web-sites-scale)。
 
 ##本文内容
 - [从以前制作的备份中还原 Azure 网站](#PreviousBackup)
@@ -28,7 +28,7 @@ Web Apps 还原功能在 [Azure 门户](http://manage.windowsazure.cn)中的“�
 
 
 <a name="PreviousBackup"></a>
-## 从以前制作的备份中还原 Web 应用
+## 从以前制作的备份中还原网站
 
 1. 在“备份”选项卡上，单击门户页底部的命令栏中的“立即还原”。此时将显示“立即还原”对话框。
 	

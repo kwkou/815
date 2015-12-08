@@ -272,8 +272,6 @@
 
 ## 其他资源
 
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
 [使用 Azure 资源管理器和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)

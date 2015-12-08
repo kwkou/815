@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.date="06/10/2015"
-	wacn.date="10/22/2015"/>
+	ms.date="10/05/2015"
+	wacn.date="11/27/2015"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../includes/mobile-services-selector-get-started-push.md)]
@@ -158,9 +158,9 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
     ![][9]
 
-    注意：默认情况下，下载的文件（开发证书）名为 <strong>aps\_development.cer</strong>。
+    注意：默认情况下，下载的文件（开发证书）名为 <strong>aps_development.cer</strong>。
 
-7. 双击下载的推送证书 **aps\_development.cer**。
+7. 双击下载的推送证书 **aps_development.cer**。
 
     将在 Keychain 中安装新证书，如下所示：
 
@@ -360,7 +360,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 1. 在支持 iOS 的设备中按“运行”按钮以生成项目并启动应用程序，然后单击“确定”接受推送通知
 
-   >[AZURE.NOTE]你必须显式接受来自应用程序的推送通知。此请求只会在首次运行应用程序时出现。
+	>[AZURE.NOTE]你必须显式接受来自应用程序的推送通知。此请求只会在首次运行应用程序时出现。
 
 2. 在应用中，单击“添加”按钮，添加任务标题，然后单击“保存”按钮。 
 
@@ -393,7 +393,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 	![][22]
 
-    This displays the function that is invoked when an insert occurs in the **TodoItem** table.
+    将显示当 **TodoItem** 表中发生插入时所调用的函数。
 
 3. 将 insert 函数替换为以下代码，然后单击“保存”：
 
@@ -632,7 +632,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 3. 在顶部工具栏中，单击“运行”，然后选择你的应用。这将启动模拟器并运行该应用程序。
 
-  应用将从 GCM 检索 *registrationId* 并注册到通知中心。
+	应用将从 GCM 检索 *registrationId* 并注册到通知中心。
 
 4. 在应用中，添加新的任务。
 
@@ -685,7 +685,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 	>[AZURE.NOTE]在本教程中，移动服务将向设备发送一条 toast 通知。而当你发送磁贴通知时，必须在通道上调用 **BindToShellTile** 方法。
 
-3. 在 App.xaml.cs 中 **Application\_Launching** 事件处理程序的顶部，添加对新的 **AcquirePushChannel** 方法的以下调用：
+3. 在 App.xaml.cs 中 **Application_Launching** 事件处理程序的顶部，添加对新的 **AcquirePushChannel** 方法的以下调用：
 
         AcquirePushChannel();
 
@@ -693,7 +693,7 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 
 4. 按 **F5** 键以运行应用。将显示包含注册密钥的弹出式对话框。
   
-5.	在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID\_\_\_CAP\_\_\_PUSH\_NOTIFICATION** 功能。
+5.	在解决方案资源管理器中，展开“属性”，打开 WMAppManifest.xml 文件，单击“功能”选项卡并确保选中 **ID___CAP___PUSH_NOTIFICATION** 功能。
 
    	![在 VS 中启用通知](./media/partner-xamarin-mobile-services-xamarin-forms-get-started-push/mobile-app-enable-push-wp8.png)
 
@@ -842,4 +842,4 @@ APNS 使用证书对你的移动服务进行身份验证。按照以下说明创
 [已完成的 Xamarin.Forms Azure 推送通知示例]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!---HONumber=74-->
+<!---HONumber=82-->

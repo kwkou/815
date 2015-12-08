@@ -14,7 +14,7 @@
 
 #Azure 网站上的企业级 WordPress
 
-Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了一个可扩展、安全且易用的环境。Microsoft 自身在运营 [Office][officeblog] 和 [Bing][bingblog] 博客等企业级网站。本文档说明如何使用 Azure 网站 Web Apps 建立和维护一个可以处理大量访客、基于云的企业级 WordPress 网站。
+Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了一个可扩展、安全且易用的环境。Microsoft 自身在运营 [Office][officeblog] 和 [Bing][bingblog] 博客等企业级网站。本文档说明如何使用 Azure 网站建立和维护一个可以处理大量访客、基于云的企业级 WordPress 网站。
 
 ## 架构与规划
 
@@ -30,18 +30,18 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 通过只使用基本要求，您可以在一个 Azure 区域中创建一款基本解决方案。
 
-![在单个 Azure 区域中托管的 Azure Web 应用和 MySQL 数据库][basic-diagram]
+![在单个 Azure 区域中托管的 Azure 网站和 MySQL 数据库][basic-diagram]
 
-尽管您可以通过创建多个 Web Apps 实例扩展您的应用程序，但所有内容都托管在特定地理区域的数据中心中。此区域之外的访客在使用网站时，响应速度可能会很慢，如果此区域的数据中心停机，您的应用也将无法使用。
+尽管您可以通过创建多个网站实例扩展您的应用程序，但所有内容都托管在特定地理区域的数据中心中。此区域之外的访客在使用网站时，响应速度可能会很慢，如果此区域的数据中心停机，您的应用也将无法使用。
 
 
 ###多区域部署
 
 通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展您的 WordPress 网站，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载平衡配置被路由到某一区域。
 
-![一个托管在多个区域的 Azure Web 应用，使用 CDBR 高可用性路由器跨区域路由到 MySQL][multi-region-diagram]
+![一个托管在多个区域的 Azure 网站，使用 CDBR 高可用性路由器跨区域路由到 MySQL][multi-region-diagram]
 
-在每个区域中，WordPress 网站仍会扩展到多个 Web Apps 实例，但这种扩展是区域特定的；高流量区域的扩展方式可以与低流量区域不同。
+在每个区域中，WordPress 网站仍会扩展到多个网站实例，但这种扩展是区域特定的；高流量区域的扩展方式可以与低流量区域不同。
 
 复制和路由到多个 MySQL 数据库的操作可以使用 ClearDB 的 [CDBR 高可用性路由器][cleardbscale]（左图所示）或 [MySQL 集群 CGE][cge] 来完成。
 
@@ -49,7 +49,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 如果该网站将接受上传或主机媒体文件，使用 Azure Blob 存储。如果您需要缓存，请考虑使用 [Redis cache][rediscache]。
 
-![一个托管在多个区域的 Azure Web 应用，使用面向 MySQL 的 CDBR 高可用性路由器，带托管缓存、Blob 存储和 CDN][performance-diagram]
+![一个托管在多个区域的 Azure 网站，使用面向 MySQL 的 CDBR 高可用性路由器，带托管缓存、Blob 存储和 CDN][performance-diagram]
 
 在默认情况下 Blob 存储分散在各个地区，因此无需担心跨所有站点复制文件的问题。您也可以为 Blob 存储启用 Azure [内容分发网络 (CDN)][cdn]，这样可以将文件分发至距离访客更近的终端节点。
 
@@ -62,27 +62,27 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 **上载或存储大型文件** | [适用于使用 Blob 存储的 WordPress 插件][storageplugin]
 **发送电子邮件** | [针对使用 SendGrid 的 WordPress 插件][sendgridplugin]
 **自定义域名** | [在 Azure 网站中配置自定义域名][customdomain]
-**HTTPS** | [在 Azure 网站中启用 Web 应用的 HTTPS][httpscustomdomain]
-**预生产验证** | [在 Azure 网站中设置 Web 应用的过渡环境][staging]<p>请注意，将 Web 应用从过渡切换到生产也会移动 WordPress 配置。在将过渡应用切换为生产应用之前，您应确保所有设置均针对您生产应用的要求进行了更新。</p>
-**监视和故障排除** | [在 Azure 网站中启用 Web 应用的诊断日志][log]和[在 Azure 网站中监视 Web Apps][monitor]
-**部署站点** | [在 Azure 网站中部署 Web 应用][deploy]
+**HTTPS** | [在 Azure 网站中启用网站的 HTTPS][httpscustomdomain]
+**预生产验证** | [在 Azure 网站中设置网站的过渡环境][staging]<p>请注意，将网站从过渡切换到生产也会移动 WordPress 配置。在将过渡应用切换为生产应用之前，您应确保所有设置均针对您生产应用的要求进行了更新。</p>
+**监视和故障排除** | [在 Azure 网站中启用网站的诊断日志][log]和[在 Azure 网站中监视网站][monitor]
+**部署站点** | [在 Azure 网站中部署网站][deploy]
 
 ####可用性和灾难恢复
 
 为此，请执行以下操作... | 使用此方法...
 ------------------------|-----------
 **负载平衡站点**或**地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]
-**备份和还原** | [在 Azure 网站中备份 Web 应用][backup]和[在 Azure 网站中存储 Web 应用][restore]
+**备份和还原** | [在 Azure 网站中备份网站][backup]和[在 Azure 网站中存储网站][restore]
 
 ####性能
 
-云中的性能主要通过缓存和横向扩展实现；但内存、带宽和 Web Apps 托管的其他属性也应该考虑在内。
+云中的性能主要通过缓存和横向扩展实现；但内存、带宽和网站托管的其他属性也应该考虑在内。
 
 为此，请执行以下操作... | 使用此方法...
 ------------------------|-----------
 **了解 Azure 网站实例功能** | [定价详细信息，其中包括 Azure 网站层的功能][websitepricing]
 **缓存资源** | [Redis cache][rediscache]
-**扩展您的应用程序** | [在 Azure 网站中扩展 Web 应用][websitescale]和 [ClearDB 高可用性路由][cleardbscale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
+**扩展您的应用程序** | [在 Azure 网站中扩展网站][websitescale]和 [ClearDB 高可用性路由][cleardbscale]。如果您选择托管和管理您自己的 MySQL 安装，应考虑使用 [MySQL 集群 CGE][cge] 进行横向扩展
 
 ####迁移
 
@@ -92,7 +92,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 	> [AZURE.NOTE] 尽管此过程允许您迁移内容，但不会迁移任何插件、主题或其他自定义内容。这些必须再次手动安装。
 
-* **手动迁移** - [备份您的网站][wordpressbackup]和[数据库][wordpressdbbackup]，然后将其手动恢复为 Azure 网站中的 Web 应用和相关的 MySQL 数据库，以便迁移高度定制化的网站，并避免手动安装插件、主题和其他自定义内容的麻烦。
+* **手动迁移** - [备份您的网站][wordpressbackup]和[数据库][wordpressdbbackup]，然后将其手动恢复为 Azure 网站中的网站和相关的 MySQL 数据库，以便迁移高度定制化的网站，并避免手动安装插件、主题和其他自定义内容的麻烦。
 
 ## 分步说明
 
@@ -100,9 +100,9 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 1. 创建 MySQL 数据库。
 
-2. 创建 Web 应用时，选择使**用现有的 MySQL 数据库**，然后选择在步骤 1 中创建的数据库。
+2. 创建网站时，选择使**用现有的 MySQL 数据库**，然后选择在步骤 1 中创建的数据库。
 
-如果要迁移现有的 WordPress 网站，请在创建新 Web 应用后，参阅[将现有 WordPress 网站迁移到 Azure](#Migrate-an-existing-WordPress-site-to-Azure)。
+如果要迁移现有的 WordPress 网站，请在创建新网站后，参阅[将现有 WordPress 网站迁移到 Azure](#Migrate-an-existing-WordPress-site-to-Azure)。
 
 ### 将现有 WordPress 网站迁移到 Azure
 
@@ -118,9 +118,9 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 1. 使用 [WordPress 导出][export]导出您的现有网站。
 
-2. 使用[创建新 WordPress 网站](#Create-a-new-WordPress-site)部分的步骤创建新 Web 应用。
+2. 使用[创建新 WordPress 网站](#Create-a-new-WordPress-site)部分的步骤创建新网站。
 
-3. 登录到您在 Web Apps 上的 WordPress 网站，然后单击**插件** -> **新增**。搜索并安装 **WordPress 导入程序**插件。
+3. 登录到您在网站上的 WordPress 网站，然后单击**插件** -> **新增**。搜索并安装 **WordPress 导入程序**插件。
 
 4. 安装导入程序插件后，单击**工具** -> **导入**，然后选择 **WordPress**，以使用 WordPress 导入程序插件。
 
@@ -128,7 +128,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 6. 单击“提交”。系统将提示你导入成功。
 
-8. 完成所有这些步骤后，从 [Azure 门户][mgmtportal]中的 Web 应用边栏选项卡重新启动您的站点。
+8. 完成所有这些步骤后，从 [Azure 门户][mgmtportal]中的网站边栏选项卡重新启动您的站点。
 
 导入网站后，您可能需要执行以下步骤，以启用导入文件中不包含的设置。
 
@@ -153,7 +153,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 	3. 更新数据库，将域条目更改为新的 Azure 网站域。例如，mywordpress.chinacloudsites.cn。使用[搜索和替换为 WordPress 数据库脚本][searchandreplace]，安全地更改所有实例。
 
-4. 在 Azure 门户中创建新的 Web 应用并发布 WordPress 备份。
+4. 在 Azure 门户中创建新的网站并发布 WordPress 备份。
 
 	1. 使用**新建** -> **Web Apps** -> **Web 应用 + SQL**（或 **Web 应用 + MySQL**)-> **创建**通过数据库在 [Azure 门户][mgmtportal]中创建新的 Web 应用。配置所有所需的设置来创建空 Web 应用。
 
@@ -167,9 +167,9 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 		更改这些条目之后，保存并关闭 **wp-config.php** 文件。
 
-	3. 使用[在 Azure 网站中部署 Web 应用][deploy]信息来启用您想要使用的部署方法，然后将 WordPress 备份部署到 Azure 网站中的 Web 应用。
+	3. 使用[在 Azure 网站中部署网站][deploy]信息来启用您想要使用的部署方法，然后将 WordPress 备份部署到 Azure 网站中的网站。
 
-5. 部署 WordPress 网站后，您应该能够使用网站的 *.azurewebsite.cn URL（作为 Azure 网站 Web 应用）访问新的站点。
+5. 部署 WordPress 网站后，您应该能够使用网站的 *.azurewebsite.cn URL（作为 Azure 网站）访问新的站点。
 
 ###配置您的网站
 
@@ -177,15 +177,15 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 为此，请执行以下操作... | 使用此方法...
 ------------- | -----------
-**设置 Azure 网站计划模式、大小和启用缩放** | [在 Azure 网站中缩放 Web 应用][websitescale]
+**设置 Azure 网站计划模式、大小和启用缩放** | [在 Azure 网站中缩放网站][websitescale]
 <p>默认情况下**启用持久的数据库连接**，WordPress 不使用持久的数据库连接，这可能导致数据库的连接在多次连接后成为限制。</p> | <ol><li><p>编辑 <strong>wp-includes/wp-db.php</strong> 文件。</p></li><li><p>查找以下行。</p><code>$this->dbh = mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；<br/>如果 ( false !== $error\_reporting ) { /br/>&nbsp;&nbsp;error\_reporting( $error\_reporting )；<br/>} </code></li><li><p>查找以下行。</p><code>$this->dbh = @mysql\_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new\_link, $client\_flags )；</code></li><li><p>使用以下内容替换上一行。</p><code>$this->dbh = @mysql\_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword, $client\_flags )；</code></li><li><p>保存文件 <strong>wp-includes/wp-db.php</strong> 文件并重新部署网站。</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><p>更新 WordPress 后，可以覆盖这些更改。</p><p>WordPress 默认自动更新，通过编辑 <strong>wp-config.php</strong> 文件并添加 <code>define ( 'WP\_AUTO\_UPDATE_CORE', false ) 可以禁用；</code></p><p>处理更新的另一个方法是使用监视 <strong>wp-db.php</strong> 文件的 WebJob 并在每次更新文件时执行上述修改。有关详细信息，请参阅 <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx">WebJobs 简介</a>。</p></div>
-**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web Apps，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale/">在 Azure 网站中扩展 Web 应用</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
+**提高性能** | <ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个网站实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于网站，Wincache 默认处于启用状态</p></li><li><p><a href="/documentation/articles/web-sites-scale/">在 Azure 网站中扩展网站</a>并用 <a href="http://www.cleardb.com/developers/cdbr/introduction">ClearDB 高可用性路由</a>或 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul>
 **使用 blob 进行存储处理** | <ol><li><p><a href="/documentation/articles/storage-create-storage-account/">创建 Azure 存储帐户</a></p></li><li><p>了解如何<a href="/documentation/articles/cdn-how-to-use/">使用内容分发网络 (CDN) </a>地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p></li></ol>
 **配置自定义域名** | [在 Azure 网站中配置自定义域名][customdomain]
-**启用自定义域名的 HTTPS** | [在 Azure 网站中启用 Web 应用的 HTTPS][httpscustomdomain]
+**启用自定义域名的 HTTPS** | [在 Azure 网站中启用网站的 HTTPS][httpscustomdomain]
 **负载平衡或地理分配站点** | [通过 Azure 流量管理器路由流量][trafficmanager]。如果您使用自定义域，请参阅[在 Azure 网站中使用自定义域名][customdomain]，了解有关使用含自定义域名的流量管理器的信息
-**启用自动化的备份** | [在 Azure 网站中备份 Web 应用][backup]
-**启用诊断日志记录** | [在 Azure 网站中启用 Web 应用的诊断日志记录][log]
+**启用自动化的备份** | [在 Azure 网站中备份网站][backup]
+**启用诊断日志记录** | [在 Azure 网站中启用网站的诊断日志记录][log]
 
 ## 后续步骤
 
@@ -195,7 +195,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 * [面向 Azure 的 ClearDB 升级向导](http://www.cleardb.com/store/azure/upgrade)
 
-* [在 Azure 网站的 Web 应用的子文件夹中托管 WordPress](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
+* [在 Azure 网站的网站的子文件夹中托管 WordPress](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
 
 * [分步说明：使用 Azure 创建 WordPress 网站](http://blogs.technet.com/b/blainbar/archive/2013/08/07/article-create-a-wordpress-site-using-windows-azure-read-on.aspx)
 
@@ -219,7 +219,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 
 * [将 WordPress 博客移至 Azure - 第 5 部分：将一个子文件夹移动到根](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-5-moving-from-a-subfolder-to-the-root)
 
-* [如何在 Azure 帐户中设置 WordPress Web 应用](http://www.itexperience.net/2014/01/20/how-to-set-up-a-wordpress-website-in-your-windows-azure-account/)
+* [如何在 Azure 帐户中设置 WordPress网站](http://www.itexperience.net/2014/01/20/how-to-set-up-a-wordpress-website-in-your-windows-azure-account/)
 
 * [在 Azure 上支持 WordPress](http://www.johnpapa.net/wordpress-on-azure/)
 

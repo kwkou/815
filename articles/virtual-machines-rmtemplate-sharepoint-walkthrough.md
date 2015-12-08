@@ -362,8 +362,6 @@
 
 ## 其他资源
 
-[Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)
 
 <!--[-->创作 Azure 资源管理器模板<!--](/documentation/articles/resource-group-authoring-templates)-->

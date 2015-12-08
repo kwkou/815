@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="07/29/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/23/2015" 
+	wacn.date="11/27/2015"/>
 
 
 # 如何通过 Ruby 使用队列存储
@@ -47,7 +47,7 @@
 
 ## 设置 Azure 存储连接
 
-Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY**，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在使用 **Azure::QueueService** 之前必须通过以下代码指定帐户信息：
+Azure 模块将读取环境变量 **AZURE_STORAGE_ACCOUNT** 和 **AZURE_STORAGE_ACCESS_KEY**，以便获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则在使用 **Azure::QueueService** 之前必须通过以下代码指定帐户信息：
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your Azure storage access key>"
@@ -81,7 +81,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 ## 如何：扫视下一条消息
 
-通过调用 **peek\_messages()** 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，**peek\_messages()** 扫视单条消息。也可以指定要扫视的消息数。
+通过调用 **peek_messages()** 方法，可以查看队列前面的消息，而不必从队列中将其删除。默认情况下，**peek_messages()** 扫视单条消息。也可以指定要扫视的消息数。
 
 	result = azure_queue_service.peek_messages("test-queue",
 	  {:number_of_messages => 10})
@@ -90,11 +90,11 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 可通过两个步骤从队列中删除消息。
 
-1. 在调用 **list\_messages()** 时，默认情况下会获取队列中的下一条消息。也可以指定要获取的消息数。从 **list\_messages()** 返回的消息变得对从此队列读取消息的任何其他代码不可见。你将传递以秒为单位的可见性超时值作为参数。
+1. 在调用 **list_messages()** 时，默认情况下会获取队列中的下一条消息。也可以指定要获取的消息数。从 **list_messages()** 返回的消息变得对从此队列读取消息的任何其他代码不可见。你将传递以秒为单位的可见性超时值作为参数。
 
-2. 若要完成从队列中删除消息，您还必须调用 delete_message()。
+2. 若要完成从队列中删除消息，您还必须调用 **delete_message()**。
 
-此删除消息的两步过程可确保当您的代码因硬件或软件故障而无法处理消息时，您的其他代码实例可以获取同一消息并重试。你的代码在处理消息后会立即调用 **delete\_message()**。
+此删除消息的两步过程可确保当您的代码因硬件或软件故障而无法处理消息时，您的其他代码实例可以获取同一消息并重试。你的代码在处理消息后会立即调用 **delete_message()**。
 
 	messages = azure_queue_service.list_messages("test-queue", 30)
 	azure_queue_service.delete_message("test-queue", 
@@ -102,7 +102,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 ## 如何：更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。以下代码使用 **update\_message()** 方法来更新消息。该方法将返回一个元组，其中包含队列消息的 pop 接收方，以及一个 UTC 日期时间值，表示消息将在队列中可见的时间。
+你可以更改队列中现有消息的内容。以下代码使用 **update_message()** 方法来更新消息。该方法将返回一个元组，其中包含队列消息的 pop 接收方，以及一个 UTC 日期时间值，表示消息将在队列中可见的时间。
 
 	message = azure_queue_service.list_messages("test-queue", 30)
 	pop_receipt, time_next_visible = azure_queue_service.update_message(
@@ -117,7 +117,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 2. 你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少的时间来完全处理每个消息。
 
-以下代码示例使用 **list\_messages()** 方法通过一次调用获取 15 条消息。然后，它打印并删除每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
+以下代码示例使用 **list_messages()** 方法通过一次调用获取 15 条消息。然后，它打印并删除每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
 
 	azure_queue_service.list_messages("test-queue", 300
 	  {:number_of_messages => 15}).each do |m|
@@ -127,14 +127,14 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 ## 如何：获取队列长度
 
-你可以获取队列中消息数的估计值。**get\_queue\_metadata()** 方法要求队列服务返回有关队列的大概消息数和元数据。
+你可以获取队列中消息数的估计值。**get_queue_metadata()** 方法要求队列服务返回有关队列的大概消息数和元数据。
 
 	message_count, metadata = azure_queue_service.get_queue_metadata(
 	  "test-queue")
 
 ## 如何：删除队列
 
-若要删除队列及其包含的所有消息，请对队列对象调用 **delete\_queue()** 方法。
+若要删除队列及其包含的所有消息，请对队列对象调用 **delete_queue()** 方法。
 
 	azure_queue_service.delete_queue("test-queue")
 
@@ -147,4 +147,4 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 - 访问 GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
 有关本文中讨论的 Azure 队列服务与 [如何使用 Service Bus 队列](/develop/ruby/how-to-guides/service-bus-queues) 一文中讨论的 Azure Service Bus 队列的比较，请参阅 [Azure 队列和 Azure Service Bus 队列 - 比较与对照](http://msdn.microsoft.com/zh-cn/library/azure/hh767287.aspx)
-<!---HONumber=70-->
+<!---HONumber=82-->

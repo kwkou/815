@@ -33,7 +33,7 @@
 <p>安全套接字层 (SSL) 加密是用于保护通过 Internet 发送的数据的最常见方法。此常见任务讨论了如何为辅助角色指定 HTTPS 终结点以及如何上载 SSL 证书来保护你的应用程序。</p>
 <h2 id="header-2">虚拟机</h2>
 <h3>针对你需要对应用程序的部署和执行过程进行完全控制的情况</h3>
-<h3>教程：<a href="/documentation/articles/virtual-machines-linux-tutorial/">创建 Linux 虚拟机</a></h3>
+<h3>教程：<a href="/documentation/articles/virtual-machines-linux-tutorial-portal-rm/">创建 Linux 虚拟机</a></h3>
 <p>实现运行 CentOS 并托管在 Azure 中的虚拟机。你可以使用 Azure 虚拟机运行任何应用程序。可使用独立虚拟机托管 Node.js 应用程序，或者将虚拟机作为云服务的一部分进行集成。</p>
 <h3>教程：<a href="/documentation/articles/virtual-machines-windows-tutorial/">创建 Windows 虚拟机</a></h3>
 <p>实现运行 Windows Server 并在 Azure 中托管的虚拟机。你可以使用 Azure 虚拟机运行任何应用程序。可使用独立虚拟机托管 Node.js 应用程序，或者将虚拟机作为云服务的一部分进行集成。</p>

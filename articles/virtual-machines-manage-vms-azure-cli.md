@@ -1,22 +1,26 @@
 <properties
-   pageTitle="使用适用于 Mac、Linux 和 Windows 的 Azure CLI 管理 Azure VM | Windows Azure"
-   description="介绍如何使用适用于 Mac、Linux 和 Windows 的 Azure CLI 创建、管理和删除 Azure VM。"
+   pageTitle="使用 CLI 管理虚拟机 | Windows Azure"
+   description="使用 Azure 命令行界面 (CLI) 自动管理 Azure 资源管理器 VM。"
    services="virtual-machines"
-   documentationCenter="virtual-machines"
+   documentationCenter=""
    authors="dlepow"
    manager="timlt"
-   editor=""/>
+   editor=""
+   tags="azure-resource-manager"/>
 
    <tags
-	   ms.service="virtual-machines"
-	   ms.date="06/09/2015"
-	   wacn.date="09/18/2015"/>
+   ms.service="virtual-machines"
+   ms.date="10/07/2015"
+   wacn.date="11/27/2015"/>
 
 # 使用适用于 Mac、Linux 和 Windows 的 Azure CLI 管理虚拟机
 
-你每天执行的管理 VM 的许多任务都可以使用 Azure CLI 自动执行。本文提供较简单任务的示例命令，并提供演示更复杂任务的命令的文章链接。
 
->[AZURE.NOTE]如果你尚未安装和配置 Azure CLI，则可以在[此处](/documentation/articles/xplat-cli-install)获取相关说明。如果你想要对 PowerShell 中的相同任务快速入门，请参阅[使用 Azure PowerShell 管理 VM](/documentation/articles/virtual-machines-manage-vms-powershell)。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-how-to-automate-azure-resource-manager).
+
+你每天执行的管理 VM 的许多任务都可以使用 Azure 命令行界面 (CLI) 自动执行。本文提供较简单任务的示例命令，并提供演示更复杂任务的命令的文章链接。
+
+>[AZURE.NOTE]如果你尚未安装和配置 Azure CLI，则可以在[此处](/documentation/articles/xplat-cli-install)获取相关说明，并在[此处](/documentation/articles/xplat-cli-connect)了解如何连接到订阅。你还需要在 Azure 资源管理器 (ARM) 模式下配置 CLI。
 
 ## 如何使用示例命令
 你需要将命令中的一些文本替换为适合你的环境的文本。< and > 符号指示需要替换的文本。替换文本时，请删除符号，但将引号保留在原处。
@@ -39,7 +43,8 @@
 
 ## 登录到基于 Linux 的虚拟机
 
-通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。Azure 资源管理器概述
+通常，Linux 计算机是通过 SSH 连接的。有关详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+Azure 资源管理器概述
 ## 停止 VM
 
 运行以下命令：
@@ -74,6 +79,6 @@
 
 ## 后续步骤
 
-有关 Azure CLI 用法和 **arm** 模式的更多示例，请参阅<!--[-->将适用于 Mac、Linux 和 Windows 的 Windows Azure CLI 用于 Azure 资源管理<!--](/documentation/articles/xplat-cli-resource-manager)-->。若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
+* 若要了解有关 Azure 资源及其概念的详细信息，请参阅 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)。
 
-<!---HONumber=70-->
+<!---HONumber=82-->

@@ -9,9 +9,8 @@
 
 <tags 
 	ms.service="site-recovery"
-
 	ms.date="10/12/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="11/13/2015"/>
 
 #使用 ASR 的自动化 DR 解决方案，适用于 Active Directory 和 DNS
 

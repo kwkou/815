@@ -179,7 +179,7 @@ oracle-jdk
 
 使用 **sudo apt-cache search tomcat7** 命令可查看所有可用的组件。以下命令是安装某些有用部件的示例。
 
-	sudo apt-get install tomcat7-admin      #admin web applications
+	sudo apt-get install tomcat7-admin      #admin网站lications
 	sudo apt-get install tomcat7-user         #tools to create user instances  
 
 ##第 4 阶段：配置 Tomcat

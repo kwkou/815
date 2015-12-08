@@ -9,8 +9,8 @@
 
 <tags
    ms.service="site-recovery"
-   ms.date="03/31/2015"
-   wacn.date="10/03/2015"/>
+   ms.date="10/07/2015"
+   wacn.date="11/27/2015"/>
 
   
    
@@ -20,13 +20,13 @@
 
 本教程介绍 Azure Site Recovery 如何与 Azure Automation 集成以便为恢复计划提供可扩展性。恢复计划可以协调使用 Azure Site Recovery 保护的虚拟机的恢复，以便复制到辅助云和 Azure 方案。它们还可帮助实现恢复的**一致准确性**、**可重复性**和**自动化**。如果你要将虚拟机故障转移到 Azure，则与 Azure Automation 集成可扩展恢复计划，并使你能够执行 Runbook，从而可以执行强大的自动化任务。
 
-如果你从未听说过 Azure 自动化，请在[此处](/home/features/automation)注册并下载其示例脚本。阅读有关 [Azure 站点恢复](/home/features/site-recovery) 的详细信息
+如果你从未听说过 Azure 自动化，请在[此处](/home/features/automation)注册。阅读有关 [Azure 站点恢复](/home/features/site-recovery) 的详细信息，并在[此处](/zh-cn/blog/?p=166264)了解如何使用恢复计划来协调到 Azure 的恢复。
 
 在本教程中，我们将了解如何将 Azure Automation Runbook 集成到恢复计划。我们将自动执行以前需要手动干预的简单任务，并了解如何将多步骤恢复转换成单击恢复操作。我们还将了解如何解决已出错的简单脚本。
 
 ## 在 Azure 中保护应用程序
 
-让我们先从一个包括两个虚拟机的简单应用程序开始。在这里，我们已有一个 HRweb 应用程序 Fabrikam。Fabrikam-HRweb-frontend 和 Fabrikam-Hrweb-backend 是使用 Azure Site Recovery 在 Azure 中保护的两个虚拟机。若要使用 Azure Site Recovery 保护虚拟机，请遵循以下步骤。 
+让我们先从一个包括两个虚拟机的简单应用程序开始。在这里，我们已有一个 HR网站Fabrikam。Fabrikam-HRweb-frontend 和 Fabrikam-Hrweb-backend 是使用 Azure Site Recovery 在 Azure 中保护的两个虚拟机。若要使用 Azure Site Recovery 保护虚拟机，请遵循以下步骤。 
 
 1.  为虚拟机启用保护。
 
@@ -37,7 +37,7 @@
 ![](./media/site-recovery-runbook-automation/01.png)
 ---------------------
 
-在本教程中，我们将为 Fabrikam HRweb 应用程序创建一个恢复计划，以将应用程序故障转移到 Azure。然后，我们会将它与某个 Runbook 集成，该 Runbook 将在故障转移的 Azure 虚拟机上创建一个终结点，以便为端口 80 上的网页提供服务。
+在本教程中，我们将为 Fabrikam HR网站创建一个恢复计划，以将应用程序故障转移到 Azure。然后，我们会将它与某个 Runbook 集成，该 Runbook 将在故障转移的 Azure 虚拟机上创建一个终结点，以便为端口 80 上的网页提供服务。
 
 首先，让我们为应用程序创建恢复计划。
 
@@ -85,7 +85,7 @@
 
 ### 添加 Azure 登录凭据作为资产
 
-Azure 自动化 使用 Azure PowerShell 连接到订阅以及对那里的项目进行操作。为此，你需要使用自己的 Microsoft 帐户、工作帐户或学校帐户进行身份验证。
+Azure 自动化 使用 Azure PowerShell 连接到订阅以及对那里的项目进行操作。为此，你需要使用自己的 Microsoft 帐户、工作帐户或学校帐户进行身份验证。可以将帐户凭据存储在资产中，以供 Runbook 安全使用。
 可以将帐户凭据存储在资产中，以供 Runbook 安全使用。
 
 1.  在 Azure 自动化“资产”中添加新设置 ![](./media/site-recovery-runbook-automation/04.png) 并选择 ![](./media/site-recovery-runbook-automation/09.png)
@@ -132,18 +132,18 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
 
 下表包含上下文中每个变量的名称和说明。
-  
-<table border="1">
-  <tr><th>变量名称</th><th>变量说明</th></tr>
-  <tr><td>RecoveryPlanName</td><td>要执行的恢复计划的名称。 <p> 此变量可帮助你根据恢复计划的名称，使用同一个脚本执行不同的操作。</td></tr>
-  <tr><td>FailoverType</td><td>指定执行是"测试"、"计划内"还是"计划外"。 <p> 此变量可帮助你根据故障转移的类型执行不同的操作。 </td></tr>
-  <tr><td>FailoverDirection</td><td>指定恢复是从主端到辅助端，还是相反。 <p>它使用的两个值为 **PrimaryToSecondary** 和 **SecondaryToPrimary** </td></tr>
-  <tr><td>GroupId</td><td> 标识执行 Runbook 的恢复计划中的组编号。 <p> 例如，如果 Runbook 是发布组 2，则 GroupId 将是 2。 </td></tr>
-  <tr><td>VmMap</td><td> 这是组中所有虚拟机的数组。 </td></tr>
-  <tr><td>VmMap 键</td><td>每个虚拟机都有一个由 GUID 标识的唯一键。此 GUID 与虚拟机的 VMM ID 相同。 <p> 你可以使用此 GUID 明确地指定想要对哪个虚拟机执行操作。 </td></tr>
-  <tr><td>RoleName</td><td>指定要恢复的 Azure 虚拟机的名称。</td></tr>
-  <tr><td>CloudServiceName</td><td> 指定要在其下创建虚拟机的 Azure 云服务名称。 </td></tr>
-  </table><br />
+
+**变量名称** | **说明**
+---|---
+RecoveryPlanName | 正在运行的计划的名称。帮助你根据名称使用相同的脚本执行操作
+FailoverType | 指定故障转移是测试、计划内还是计划外。 
+FailoverDirection | 指定恢复是主要还是辅助
+GroupID | 标识计划运行时恢复计划内的组编号
+VmMap | 组中所有虚拟机的阵列
+VMMap 键 | 每个 VM 的唯一键 (GUID)。与虚拟机的适用 VMM ID 相同。 
+RoleName | 正在恢复的 Azure VM 的名称
+CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
+
 
 若要在上下文中标识 VmMap 键，你也可以转到 ASR 中的 VM 属性页，并查看 VM GUID 属性。
 
@@ -266,8 +266,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
 脚本准备就绪后，你可以将它添加到先前创建的恢复计划。
 
-1.  在创建的恢复计划中，选择在组 2 后面添加脚本。  
-![](./media/site-recovery-runbook-automation/15.png)
+1.  在创建的恢复计划中，选择在组 2 后面添加脚本。![](./media/site-recovery-runbook-automation/15.png)
 
 2.  指定脚本名称。这只是此恢复计划的友好名称，将在恢复计划中显示。
 
@@ -276,6 +275,10 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 4.  在 Azure Runbook 中，选择你创作的 Runbook。
 
     ![](./media/site-recovery-runbook-automation/16.png)
+
+## 主端脚本
+
+执行到 Azure 的故障转移时，你还可以选择运行主端脚本。这些脚本将在故障转移期间在 VMM 服务器上运行。主端脚本仅适用于关机前及关机后的阶段。这是因为我们预期在发生灾难时通常无法使用主站点。在执行非计划的故障转移期间，仅当你选择主站点操作时，才会尝试运行主端脚本。如果这些脚本不可访问或超时，故障转移将继续恢复虚拟机。故障转移到 Azure 时，如果未在 Azure 中保护 VMM，则无法为 VMware/物理/Hyper-V 站点使用主端脚本。但是，在从 Azure 故障回复到本地时，主端脚本 (Runbook) 可用于除 VMware 以外的其他所有目标。
 
 ## 测试恢复计划
 
@@ -297,13 +300,12 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 
 ## 示例脚本
 
-尽管我们在本教程中演练的是一个常见任务，那就是向 Azure 虚拟机添加终结点，但是，你可以使用 Azure 自动化 完成其他许多功能强大的自动化任务。Microsoft 和 Azure Automation 社区提供了示例 Runbook，可帮助你开始创建自己的解决方案和实用 Runbook，可用作更大自动化任务的构建基块。你可以从库中使用这些 Runbook，通过 Azure Site Recovery 为应用程序生成强大的单击式恢复计划。
+尽管我们在本教程中演练的是一个常见任务，那就是向 Azure 虚拟机添加终结点，但是，你可以使用 Azure 自动化 完成其他许多功能强大的自动化任务。Microsoft 和 Azure Automation 社区提供了示例 Runbook，可帮助你开始创建自己的解决方案和实用 Runbook，可用作更大自动化任务的构建基块。你可以从库中使用这些 Runbook，通过 Azure 站点恢复为应用程序生成强大的单击式恢复计划。
 
 ## 其他资源
 
-[Azure 自动化 概述](https://msdn.microsoft.com/zh-CN/library/azure/dn643629.aspx "Azure 自动化 Overview")
+[Azure 自动化概述](https://msdn.microsoft.com/zh-CN/library/azure/dn643629.aspx "Azure 自动化概述")
 
-[Azure 自动化 示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure 自动化 示例脚本")
+[Azure 自动化示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure 自动化示例脚本")
 
-
-<!--HONumber=53-->
+<!---HONumber=82-->

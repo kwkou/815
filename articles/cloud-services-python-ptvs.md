@@ -30,12 +30,12 @@
 
 ## 什么是 Python Web 角色和辅助角色？
 
-Azure 提供了三种计算模型用于运行应用程序：[Azure App Service 中的 Web Apps 功能][execution model-web sites]、[Azure 虚拟机][execution model-vms]和 [Azure 云服务][execution model-cloud services]。这三种模型都支持 Python。云服务（包括 Web 角色和辅助角色）提供了*平台即服务 (PaaS)*。在云服务中，Web 角色提供专用的 Internet Information Services (IIS) Web 服务器来托管前端 Web 应用程序，而辅助角色可独立于用户交互或输入运行异步任务、运行时间较长的任务或永久性任务。
+Azure 提供了三种计算模型用于运行应用程序：[Azure App Service 中的网站功能][execution model-web sites]、[Azure 虚拟机][execution model-vms]和 [Azure 云服务][execution model-cloud services]。这三种模型都支持 Python。云服务（包括 Web 角色和辅助角色）提供了*平台即服务 (PaaS)*。在云服务中，Web 角色提供专用的 Internet Information Services (IIS) Web 服务器来托管前端网站，而辅助角色可独立于用户交互或输入运行异步任务、运行时间较长的任务或永久性任务。
 
 有关详细信息，请参阅[什么是云服务？]。
 
 > [AZURE.NOTE]*想要构建一个简单的网站？*
-如果你的方案只涉及一个简单的网站前端，请考虑使用 Azure App Service 中的轻型 Web Apps 功能。随着您网站的不断扩大和需求的变化，您可以轻松升级到云服务。请参阅 <a href="/develop/python/">Python 开发人员中心</a>上关于开发 Azure App Service 中的 Web Apps 功能的文章。
+如果你的方案只涉及一个简单的网站前端，请考虑使用 Azure App Service 中的轻型网站功能。随着您网站的不断扩大和需求的变化，您可以轻松升级到云服务。请参阅 <a href="/develop/python/">Python 开发人员中心</a>上关于开发 Azure App Service 中的网站功能的文章。
 <br />
 
 

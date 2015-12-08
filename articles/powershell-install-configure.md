@@ -18,7 +18,7 @@
 
 > [AZURE.NOTE]**Azure PowerShell 1.0 预览版**现已在 [PowerShell 库](http://www.powershellgallery.com/)中发布。此预览版对以前的版本做了很多更改，我们将使用它来收集反馈，并会将它整合到 Azure PowerShell 1.0 中。**此预览版不适用于任务关键型应用程序**。如果你运行的是此类应用程序，请继续使用 Azure PowerShell 0.9.8。如果你使用了 1.0 预览版，可以随时将其卸载并重新改用 0.9.8。有关完整安装说明，请参阅此[博客文章](https://azure.microsoft.com/zh-CN/blog/azps-1-0-pre/)。
 
-你可以使用 Windows PowerShell 在 Azure 中执行各种任务，不管是在命令提示符下以交互方式，还是通过脚本自动执行执行。Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务。例如，你可以创建和配置云服务、虚拟机、虚拟网络和 Web 应用程序。
+你可以使用 Windows PowerShell 在 Azure 中执行各种任务，不管是在命令提示符下以交互方式，还是通过脚本自动执行执行。Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。在大多数情况下，这些 cmdlet 可让你执行在 Azure 管理门户中可以执行的任务。例如，你可以创建和配置云服务、虚拟机、虚拟网络和网站。
 
 该模块作为可下载文件分发，并且通过公开的存储库管理源代码。在本文后面的安装说明中将提供指向可下载文件的链接。有关源代码的信息，请参阅 [Azure PowerShell 代码存储库](https://github.com/Azure/azure-powershell)。
 
@@ -143,29 +143,29 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 ## <a id="Ex"></a>如何使用 cmdlet：示例 ##
 
-在安装该模块并配置计算机以便连接到你的订阅后，可以创建一个 Azure Web 应用程序。此示例将帮助你开始使用 Azure cmdlet。
+在安装该模块并配置计算机以便连接到你的订阅后，可以创建一个 Azure 网站。此示例将帮助你开始使用 Azure cmdlet。
 
 1. 启动 Azure PowerShell 控制台。
 
-2. 选择 Web 应用程序的名称。请选择符合 DNS 命名约定的名称。有效名称只能包含字母“a”到“z”以及数字“0”到“9”，以及连字符（“-”）。
+2. 选择网站的名称。请选择符合 DNS 命名约定的名称。有效名称只能包含字母“a”到“z”以及数字“0”到“9”，以及连字符（“-”）。
 
-	Web 应用程序名称在 Azure 中必须唯一。我们将在此示例中使用“mySite”，但请务必选择其他名称，例如，你的帐户名称后接一个数字。
+网站名称在 Azure 中必须唯一。我们将在此示例中使用“mySite”，但请务必选择其他名称，例如，你的帐户名称后接一个数字。
 
-	在选择某一名称后，键入如下命令。将“mySite”替换你的 Web 应用程序名称。
+	在选择某一名称后，键入如下命令。将“mySite”替换你的网站名称。
 
 		New-AzureWebsite mySite
 
-	该 cmdlet 将创建 Web 应用程序，然后返回代表新 Web 应用程序的对象。对象属性包含有关 Web 应用程序的有用信息。
+	该 cmdlet 将创建网站，然后返回代表新网站的对象。对象属性包含有关网站的有用信息。
 
-3. 若要获取有关 Web 应用程序的信息，键入此命令。该命令将返回订阅中所有 Web 应用程序（包括你刚刚创建的应用程序）的某些信息。
+3. 若要获取有关网站的信息，键入此命令。该命令将返回订阅中所有网站（包括你刚刚创建的应用程序）的某些信息。
 
 		Get-AzureWebsite
 
-4. 若要获取有关 Web 应用程序的详细信息，请在命令中包含 Web 应用程序名称。请务必将“mySite”替换为你的 Web 应用程序名称。
+4. 若要获取有关网站的详细信息，请在命令中包含网站名称。请务必将“mySite”替换为你的网站名称。
 
 		Get-AzureWebsite -Name mySite
 
-5. Web 应用程序在创建后将会启动。若要停止 Web 应用程序，请键入此命令，包括你的 Web 应用程序名称。
+5.网站在创建后将会启动。若要停止网站，请键入此命令，包括你的网站名称。
 
 		Stop-AzureWebsite -Name mySite
 
@@ -173,11 +173,11 @@ Azure 模块包含可帮助你下载和导入证书的 cmdlet。
 
 		Get-AzureWebsite
 
-7. 若要完成此测试，请删除 Web 应用程序。键入：
+7. 若要完成此测试，请删除网站。键入：
 
 		Remove-AzureWebsite -Name mySite
 
-7. 若要完成该任务，请确认已删除 Web 应用程序。
+7. 若要完成该任务，请确认已删除网站。
 
 		Get-AzureWebsite -Name mySite
 

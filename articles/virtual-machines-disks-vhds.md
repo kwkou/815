@@ -15,7 +15,7 @@
 
 # 关于 Azure 虚拟机的磁盘和 VHD
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍了解使用资源管理器部署模型和典型部署模型创建的资源。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]
 
 当你创建虚拟机时，至少将为 Azure 中的所有虚拟机配置两个磁盘 – 一个是操作系统磁盘，另一个是临时本地磁盘（有时称为资源磁盘）。操作系统磁盘基于映像创建，操作系统磁盘和该映像实际上都存储在 Azure 存储帐户中的虚拟硬盘 (VHD) 内。虚拟机还可以有数据磁盘，而这些磁盘也存储为 VHD。
 

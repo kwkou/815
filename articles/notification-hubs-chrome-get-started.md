@@ -19,7 +19,7 @@
 
 使用 Chrome 应用通知的其中一个主要优势在于通知显示在 Google Chrome 浏览器的上下文中，你无需运行 Chrome 应用或在浏览器中打开（尽管必须运行 Chrome 浏览器本身）。此外，你还可以在 Chrome 通知窗口中获得所有通知的合并视图。
 
->[AZURE.NOTE]这不是泛型浏览器内推送通知，这是针对 Chrome 应用的通知。有关详细信息，请参阅 [Chrome 应用概述]。Chrome 应用以前被称为“封装应用”，与较为简单的“托管应用”不同。请参阅[可安装的 Web Apps]，了解不同之处。Chrome 应用还可以在使用 Apache Cordova 的移动设备（Android 和 iOS）上运行。请参阅[移动设备上的 Chrome 应用]，了解详细信息。
+>[AZURE.NOTE]这不是泛型浏览器内推送通知，这是针对 Chrome 应用的通知。有关详细信息，请参阅 [Chrome 应用概述]。Chrome 应用以前被称为“封装应用”，与较为简单的“托管应用”不同。请参阅[可安装的网站]，了解不同之处。Chrome 应用还可以在使用 Apache Cordova 的移动设备（Android 和 iOS）上运行。请参阅[移动设备上的 Chrome 应用]，了解详细信息。
 
 在本教程中，我们将创建一个空白 Chrome 应用，它使用 Google Cloud Messaging (GCM) 接收推送通知。完成之后，你将可以向安装此 Chrome 应用的所有 Chrome 用户广播推送通知。
 
@@ -319,10 +319,10 @@
 		function sendNHRegistrationRequest()
 		{
 		  var registrationPayload =
-		  "<?xml version="1.0" encoding="utf-8"?>" +
-		  "<entry xmlns="http://www.w3.org/2005/Atom">" +
-		      "<content type="application/xml">" +
-		          "<GcmRegistrationDescription xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/netservices/2010/10/servicebus/connect">" +
+		  "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+		  "<entry xmlns=\"http://www.w3.org/2005/Atom\">" +
+		      "<content type=\"application/xml\">" +
+		          "<GcmRegistrationDescription xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\">" +
 		              "<GcmRegistrationId>{GCMRegistrationId}</GcmRegistrationId>" +
 		          "</GcmRegistrationDescription>" +
 		      "</content>" +
@@ -482,7 +482,7 @@
 [通知中心概述]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Chrome 应用概述]: https://developer.chrome.com/apps/about_apps
 [Chrome App GCM 示例]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
-[可安装的 Web Apps]: https://developers.google.com/chrome/apps/docs/
+[可安装的网站]: https://developers.google.com/chrome/apps/docs/
 [移动设备上的 Chrome 应用]: https://developer.chrome.com/apps/chrome_apps_on_mobile
 [创建注册 NH REST API]: http://msdn.microsoft.com/zh-cn/library/azure/dn223265.aspx
 [crypto-js 库]: http://code.google.com/p/crypto-js/

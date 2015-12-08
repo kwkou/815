@@ -9,8 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.date="09/15/2015"
-   wacn.date="11/12/2015"/>
+   ms.date="10/07/2015"
+   wacn.date="11/27/2015"/>
 
 # 了解资源管理器部署和经典部署
 
@@ -18,7 +18,7 @@
 
 您也可能知道经典部署模型就是服务管理模型。
 
-本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
+本主题介绍了这两个模型之间的差异，以及从经典模型转换到资源管理器时可能遇到的一些问题。它提供了模型的概述，但并未详细介绍各项服务之间的差异。
 
 许多资源可同时在经典模型和资源管理器中正常运行，不会出现问题。即使是在经典模型中创建的，这些资源也能完全支持资源管理器。您可以在无需任何顾虑或额外努力的情况下转换到资源管理器。
 
@@ -48,7 +48,7 @@
 
 - 资源类型的名称中不包括 **(经典)**。下图显示了**存储帐户**类型。
 
-    ![Web 应用](./media/resource-manager-deployment-model/resource-manager-type.png)
+    ![网站](./media/resource-manager-deployment-model/resource-manager-type.png)
 
 ## 经典部署的特性
 
@@ -100,7 +100,7 @@
 
 在经典部署模型中创建的资源不支持资源管理器操作。在某些情况下，资源管理器命令可以检索通过经典部署创建的资源的相关信息，或者可以执行管理任务，例如将经典资源移动到另一个资源组，但这些情况下，并不意味着该类型支持资源管理器操作。例如，假定您有一个资源组包含通过资源管理器和经典模型创建的虚拟机。如果您运行以下 PowerShell 命令，您将看到所有虚拟机：
 
-    PS C:\> Get-AzureResourceGroup -Name ExampleGroup
+    PS C:\> Get-AzureRmResourceGroup -Name ExampleGroup
     ...
     Resources :
      Name                 Type                                          Location
@@ -132,12 +132,10 @@
 
 有关从经典部署转换到资源管理器时的等效 Azure CLI 命令列表，请参阅 [VM 操作的等效资源管理器和服务管理命令](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)。
 
-有关转换计算、存储和网络资源的详细信息，请参阅 [Azure 资源管理器中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-azurerm-versus-azuresm)。
-
 若要了解如何从不同部署模型连接虚拟网络，请参阅[将经典 VNet 连接到新 VNet](/documentation/articles/virtual-networks-arm-asm-s2s)。
 
 ## 后续步骤
 
 - 若要了解如何创建声明性部署模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates)。
 
-<!---HONumber=79-->
+<!---HONumber=82-->

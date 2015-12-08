@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在 Azure 网站中配置自定义域名"
-	description="了解如何在 Azure 网站中结合使用自定义域名和 Web 应用。"
+	description="了解如何在 Azure 网站中结合使用自定义域名和网站。"
 	services="app-service\web"
 	documentationCenter=""
 	authors="MikeWasson"
@@ -14,14 +14,14 @@
 # 为 Azure 网站配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
-- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
+- [网站with External Domains](/documentation/articles/web-sites-custom-domain-name/)
+- [网站with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
 
 [WACOM.INCLUDE [websites-cloud-services-css-guided-walkthrough](../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
 当你创建网站时，Azure 会将其分配给 chinacloudsites.cn 的子域。例如，如果你的网站名为 **contoso**，URL 则为 **contoso.chinacloudsites.cn**。Azure 还会将分配一个虚拟 IP 地址。
 
-对于生产 Web 应用，你可能希望用户看到的自定义域名。本文介绍如何使用 Azure 网站配置自定义域。
+对于生产网站，你可能希望用户看到的自定义域名。本文介绍如何使用 Azure 网站配置自定义域。
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 本文内容：
 
@@ -35,16 +35,16 @@
 
 ## 概述
 
-如果你已有域名，或想要保留来自其他域注册机构的域，以下是为 Web 应用引入自定义域的常规步骤：
+如果你已有域名，或想要保留来自其他域注册机构的域，以下是为网站引入自定义域的常规步骤：
 
 1. 保留你的域名。本文不涉及该过程。有很多域注册机构可供选择。当你注册时，其站点将引导你完成该过程。
-1. 创建将域映射到你的 Azure Web 应用的 DNS 记录。
+1. 创建将域映射到你的 Azure 网站的 DNS 记录。
 1. 在 Azure 管理门户中添加域名。 
 
 在此基本大纲中，有一些需要注意的特定情况：
 
 - 映射根域。根域是你通过域注册机构保留的域。例如：**contoso.com**。
-- 映射子域。例如：**blogs.contoso.com**。可以将不同的子域映射到不同的 Web Apps。
+- 映射子域。例如：**blogs.contoso.com**。可以将不同的子域映射到不同的网站。
 - 映射通配符。例如：**\*.contoso.com**。通配符条目会应用到域的所有子域。
  
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-modes.md)]
@@ -52,19 +52,19 @@
 
 ## DNS 记录类型
 
-域名系统 (DNS) 使用数据记录将域名映射到 IP 地址。有几种类型的 DNS 记录。对于 Web 应用，将创建 *A* 记录或 *CNAME* 记录。
+域名系统 (DNS) 使用数据记录将域名映射到 IP 地址。有几种类型的 DNS 记录。对于网站，将创建 *A* 记录或 *CNAME* 记录。
 
 - A**（地址）**记录会将域名映射到 IP 地址。 
 - **CNAME（Canonical 名称）**记录会将域名映射到其他域名。DNS 使用第二个名称来查找地址。用户仍然可以在浏览器中看到第一个域名。例如，你可以将 contoso.com 映射到 *&lt;yourwebapp&gt;*.chinacloudsites.cn。 
 
 如果 IP 地址更改，CNAME 条目仍然有效，但 A 记录就必须更新。不过，有些域注册机构不允许 CNAME 记录使用根域或通配符域。在这种情况下，必须使用 A 记录。
 
-> [AZURE.NOTE]如果你删除 Web 应用后再重新创建，或是将 Web 应用模式更改回免费，则 IP 地址可能会更改。
+> [AZURE.NOTE]如果你删除网站后再重新创建，或是将网站模式更改回免费，则 IP 地址可能会更改。
 
 
 ## 查找虚拟 IP 地址 
 
-如果你要创建 CNAME 记录，可跳过此步骤。若要创建 A 记录，你需要 Web 应用的虚拟 IP 地址。获取该 IP 地址：
+如果你要创建 CNAME 记录，可跳过此步骤。若要创建 A 记录，你需要网站的虚拟 IP 地址。获取该 IP 地址：
 
 1.	在你的浏览器中，打开 [Azure 管理门户](https://manage.windowsazure.cn)。
 2.	在“网站”选项卡中，单击站点的名称并选择“仪表板”。
@@ -78,7 +78,7 @@
 
 ## 创建 DNS 记录
 
-登录域注册机构，并使用他们的工具添加 A 记录或 CNAME 记录。每个注册机构的 Web 应用都会稍有不同，但以下是一些通用准则。
+登录域注册机构，并使用他们的工具添加 A 记录或 CNAME 记录。每个注册机构的网站都会稍有不同，但以下是一些通用准则。
 
 1.	查找管理 DNS 记录的页面。查找站点中标签为“域名”、“DNS”或“名称服务器管理”的链接或区域。通过查看你的帐户信息，然后找到诸如“我的域”之类的链接，通常就可以找到链接。
 2.	找到管理页后，请查找可让你添加或编辑 DNS 记录的链接。此链接可能作为“区域文件”、“DNS 记录”或“高级”配置链接列出。
@@ -116,14 +116,14 @@
 <a name="awverify" /></a>
 ## 创建 awverify 记录（仅 A 记录）
 
-如果创建 A 记录，Web 应用还需要特殊的 CNAME 记录，用于验证你是否拥有尝试要使用的域。此 CNAME 记录必须采用以下形式。
+如果创建 A 记录，网站还需要特殊的 CNAME 记录，用于验证你是否拥有尝试要使用的域。此 CNAME 记录必须采用以下形式。
 
 - *如果 A 记录映射根域或通配符域：*创建从 **awverify.&lt;yourdomain&gt;** 映射到 **awverify.&lt;yourWebsitename&gt;.chinacloudsites.cn** 的 CNAME 记录。例如，如果 A 记录适用于 **contoso.com**，则为 **awverify.contoso.com** 创建 CNAME 记录。
 - *如果 A 记录映射特定子域：*创建从 **awverify.&lt;subdomain&gt;** 映射到 **awverify.&lt;your Websitename&gt;.chinacloudsites.cn** 的 CNAME 记录。例如，如果 A 记录适用于 **blogs.contoso.com**，则为 **awverify.blogs.contoso.com** 创建 CNAME 记录。
 
-你的 Web 应用的访客不会看到 awverify 子域；这只供 Azure 验证域使用。
+你的网站的访客不会看到 awverify 子域；这只供 Azure 验证域使用。
 
-## 在 Web 应用上启用域名
+## 在网站上启用域名
 
 [WACOM.INCLUDE [模式](../includes/custom-dns-web-site-enable-on-web-site.md)]
 

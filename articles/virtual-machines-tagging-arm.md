@@ -111,24 +111,6 @@
 若要了解有关通过 PowerShell 标记的详细信息，请查看 [Azure 资源 Cmdlet][]。
 
 
-## 使用 Azure CLI 进行标记
-
-还支持通过 Azure CLI 针对已创建的资源进行标记。若要开始，请设置 [Azure CLI 环境][]。通过 Azure CLI 登录到订阅，并切换到 ARM 模式。你可以使用此命令查看给定虚拟机的所有属性，包括标记：
-
-        azure vm show -g MyResourceGroup -n MyVM
-
-与 PowerShell 不同，如果要将标记添加到已包含标记的资源中，不必在使用 `azure vm set` 命令之前指定所有标记（旧标记和新标记）。相反，使用此命令可以将标记追加到资源中。若要通过 Azure CLI 添加新的 VM 标记，可以使用 `azure vm set` 命令以及标记参数 **-t**：
-
-        azure vm set -g MyResourceGroup -n MyVM –t myNewTagName1=myNewTagValue1;myNewTagName2=myNewTagValue2
-
-若要删除所有标记，可以使用 `azure vm set` 命令中的 **–T** 参数。
-
-        azure vm set – g MyResourceGroup –n MyVM -T
-
-
-既然我们已通过 PowerShell、Azure CLI 和门户将标记应用到资源中，那就让我们看一看使用情况详细信息，以在计费门户中的查看标记。
-
-
 ## 在使用情况详细信息中查看标记
 
 通过 Azure 资源管理器放置在计算、网络和存储资源中的标记将在计费门户中的使用情况详细信息中填充。

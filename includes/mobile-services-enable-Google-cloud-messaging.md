@@ -11,7 +11,7 @@
 
 3. 记下“项目”部分中的项目编号。
 
-	在教程的稍后部分中，您要将此值设置为客户端中的 PROJECT\_ID 变量。
+	在教程的稍后部分中，您要将此值设置为客户端中的 PROJECT_ID 变量。
 
 4. 在左列中，展开“API 和身份验证”，单击“API”，然后向下滚动并单击“Cloud Messaging for Android”。然后在下一页单击“启用 API”并接受服务条款。
 
@@ -19,15 +19,15 @@
 
 5. 单击“凭据”，然后单击“创建新密钥”
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key.png)
+	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key.png)
 
 6. 在“创建新密钥”中，单击“服务器密钥”。在下一个窗口中，单击“创建”。
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key2.png)
+	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key2.png)
 
 7. 记下“API 密钥”值。
 
-   	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png)
+	![](./media/notification-hubs-android-get-started/mobile-services-google-create-server-key3.png)
 
 	接下来，你将使用此 API 密钥值，让 Azure 对 GCM 进行身份验证并代表你的应用程序发送推送通知。
 

@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="07/29/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="09/23/2015"
+	wacn.date="11/27/2015"/>
 
 # 如何通过 PHP 使用队列存储
 
@@ -38,13 +38,12 @@
 
 若要使用 Azure 队列存储 API，你需要：
 
-1. 通过使用 [require\_once][require_once] 语句引用 autoloader 文件。
+1. 通过使用 [require_once][require_once] 语句引用 autoloader 文件。
 2. 引用可使用的所有类。
 
 下面的示例演示了如何包括 autoloader 文件并引用 **ServicesBuilder** 类。
 
-> [AZURE.NOTE]
-> 本示例（以及本文中的其他示例）假定你已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 `WindowsAzure.php` autoloader 文件。
+> [AZURE.NOTE] 本示例（以及本文中的其他示例）假定你已通过 Composer 安装用于 Azure 的 PHP 客户端库。如果你已手动安装这些库或将其作为 PEAR 包安装，则需要引用 `WindowsAzure.php` autoloader 文件。
 
 	require_once 'vendor\autoload.php';
 	use WindowsAzure\Common\ServicesBuilder;
@@ -375,8 +374,10 @@
 - 请参阅 MSDN 参考：[Azure 存储](http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx)。
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-[download]: /zh-cn/documentation/articles/php-download-sdk/
+有关详细信息，另请参阅 [PHP 开发中心](/develop/php/)。
+[下载]: /documentation/articles/php-download-sdk
 [require_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure 管理门户]: http://manage.windowsazure.cn/
 [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
-<!---HONumber=70-->
+
+<!---HONumber=82-->

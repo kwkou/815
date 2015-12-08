@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="site-recovery"
-	ms.date="05/04/2015"
-	wacn.date="10/03/2015"/>
+	ms.date="10/07/2015"
+	wacn.date="11/27/2015"/>
 
 #  使用单个 VMM 服务器设置保护
 
 ## 概述
 
-Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请[参阅 Azure Site Recovery 概述](/documentation/articles/hyper-v-recovery-manager-overview)。
+Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障转移和恢复，为业务连续性和灾难恢复 (BCDR) 策略发挥作用。有关部署方案的完整列表，请[参阅 Azure Site Recovery 概述](/documentation/articles/site-recovery-overview)。
 
 如果基础结构中只有一个 VMM 服务器，你可以部署 Site Recovery 将 VMM 云中的虚拟机云复制到 Azure，或者可以在单个 VMM 服务器上的云之间复制。我们建议，仅当你无法部署两个 VMM 服务器（每个站点一个）时，才执行此操作，因为故障转移和恢复不能在这种部署中顺利进行。若要恢复，你需要从 Azure Site Recovery 控制台外部手动故障转移 VMM 服务器（在 Hyper-V 管理器控制台中使用 Hyper-V 副本）。
 
@@ -55,7 +55,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 1. 如果尚未部署 VMM，请在装有 SQL Server 数据库的虚拟机上设置 VMM。阅读[系统要求](https://technet.microsoft.com/zh-cn/library/dn771747.aspx)
 2. 在 VMM 服务器上至少设置两个云。了解详细信息：
 
-	- [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。
+	- [System Center 2012 R2 VMM 中私有云的新增功能](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=)及 [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。 
 	- [配置 VMM 云结构](/documentation/articles/site-recovery-best-practices)
 	- [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 3. 将你要在其上保护虚拟机的源 Hyper-V 主机服务器添加你要保护的云（源云）。将目标 Hyper-V 主机服务器添加到 VMM 服务器上用于提供保护的云中。
@@ -93,4 +93,4 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 2. 恢复 VMM 虚拟机后，可以从门户登录到 Hyper-V 恢复管理器控制台，并对虚拟机执行从主站点到恢复站点的非计划故障转移。
 3.  完成非计划的故障转移后，用户可以在主站点上访问所有资源。
 
-<!---HONumber=71-->
+<!---HONumber=82-->

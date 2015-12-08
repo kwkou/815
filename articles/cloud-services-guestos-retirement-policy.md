@@ -79,9 +79,9 @@ Microsoft 将继续推出合并了最新 MSRC 更新的新来宾 OS 版本，直
 2. 设置临时测试部署以测试在新系列上运行的云服务。 
 3. [将来宾 OS 版本设置](https://msdn.microsoft.com/zh-cn/library/azure/gg433101.aspx)为“自动”（在 [.CSCFG](https://msdn.microsoft.com/zh-cn/library/azure/gg456324.aspx) 文件中设置 osVersion=*），以便自动迁移到新的来宾 OS 版本。
 
-**如果我的 Web 应用程序需要更深入地与 OS 集成，我该怎么办？**
+**如果我的网站需要更深入地与 OS 集成，我该怎么办？**
 
-如果你的 Web 应用程序体系结构需要更深入地依赖于基本操作系统，请使用平台支持的功能（例如[“启动任务”](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)）或将来可能存在的其他扩展性机制。此外，你还可以使用 [Azure 虚拟机](http://azure.microsoft.com/documentation/scenarios/virtual-machines/)（IaaS – 基础结构即服务），你可以在其中负责维护基本操作系统。
+如果你的网站体系结构需要更深入地依赖于基本操作系统，请使用平台支持的功能（例如[“启动任务”](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)）或将来可能存在的其他扩展性机制。此外，你还可以使用 [Azure 虚拟机](http://azure.microsoft.com/documentation/scenarios/virtual-machines/)（IaaS – 基础结构即服务），你可以在其中负责维护基本操作系统。
  
 ## 后续步骤
 查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix)。

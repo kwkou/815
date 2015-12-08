@@ -32,7 +32,7 @@ editor="Eric Chen" />
 
 ###虚拟机
 
-- [创建 Linux VM](/zh-cn/documentation/articles/virtual-machines-linux-tutorial)
+- [创建 Linux VM](/zh-cn/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 - [登录到 Linux VM](/zh-cn/documentation/articles/virtual-machines-linux-how-to-log-on)
 - [准备 Linux 分发](/zh-cn/documentation/articles/virtual-machines-linux-create-upload-vhd)
 - [适用于 Mac 和 Linux 的工具](/zh-cn/documentation/articles/xplat-cli)

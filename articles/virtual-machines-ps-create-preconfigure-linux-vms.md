@@ -16,7 +16,6 @@
 # 使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机
 
 > [AZURE.SELECTOR]
-- [Azure CLI](/documentation/articles/virtual-machines-linux-tutorial)
 - [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
 这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以在服务管理中创建和预配置基于 Linux 的 Azure 虚拟机。可以使用此过程快速创建用于新的基于 Linux 的虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。

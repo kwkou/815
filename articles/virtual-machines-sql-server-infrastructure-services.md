@@ -62,7 +62,6 @@
 
 - [在 Azure 中配置 AlwaysOn 可用性组 (GUI)](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [在 Azure 中配置 AlwaysOn 可用性组的 ILB 侦听器](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
-- [使用 Azure 资源管理器模板部署 SQL Server AlwaysOn](/documentation/articles/virtual-machines-workload-template-sql-alwayson)
 - [将本地 AlwaysOn 可用性组扩展到 Azure](/documentation/articles/virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups)
 
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions)。

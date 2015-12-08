@@ -1,25 +1,28 @@
 <properties
-	pageTitle="使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机"
-	description="了解如何使用 Azure PowerShell 在 Azure 中创建和预配置基于 Windows 的虚拟机。"
+	pageTitle="使用 Powershell 创建 Windows VM | Windows Azure"
+	description="使用 Azure PowerShell 和经典部署模型创建 Windows 虚拟机。"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="06/10/2015"
-	wacn.date="09/18/2015"/>
+	ms.date="10/13/2015"
+	wacn.date="11/27/2015"/>
 
-# 使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机
+# 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
 
 > [AZURE.SELECTOR]
-- [Azure 预览门户](/documentation/articles/virtual-machines-windows-tutorial)
-- [Azure 门户](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell: 资源管理器部署](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-- [PowerShell: 经典部署](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- [Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+
+<br>
+
+
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
+
 
 这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以创建和预配置基于 Windows 的 Azure 虚拟机。可以使用此过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
 
@@ -27,9 +30,6 @@
 
 有关配置基于 Linux 的虚拟机的配套主题，请参阅[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)。
 
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../includes/service-management-pointer-to-resource-manager.md)]
-
-- [使用资源管理器和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
 
 ## 步骤 1：安装 Azure PowerShell
 
@@ -48,11 +48,7 @@
 
 ## 步骤 3：确定 ImageFamily
 
-接下来，你需要确定与要创建的 Azure 虚拟机对应的特定映像的 ImageFamily 或 Label 值。下面是 Azure 管理门户的库中的一些示例。
-
-![](./media/virtual-machines-ps-create-preconfigure-windows-vms/PSPreconfigWindowsVMs_1.png)
-
-你可以使用此命令获取可用 ImageFamily 值的列表。
+接下来，你需要确定与要创建的 Azure 虚拟机对应的特定映像的 ImageFamily 或 Label 值。你可以使用此命令获取可用 ImageFamily 值的列表。
 
 	Get-AzureVMImage | select ImageFamily -Unique
 
@@ -255,7 +251,7 @@
 
 ## 其他资源
 
-[虚拟机文档](/documentation/services/virtual-machines/)
+[虚拟机文档](/services/virtual-machines/)
 
 [Azure 虚拟机常见问题](https://msdn.microsoft.com/zh-CN/library/azure/dn683781.aspx)
 
@@ -263,8 +259,4 @@
 
 [如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
 
-[使用 Azure PowerShell 创建和预配置基于 Linux 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
-
-[使用资源管理器和 Azure PowerShell 创建并预配置 Windows 虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-
-<!---HONumber=70-->
+<!---HONumber=82-->

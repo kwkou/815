@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何通过 Node.js 使用表存储 | Windows Azure" 
-	description="了解如何在 Azure 中使用表存储服务。代码示例使用 Node.js API 编写。" 
+	description="了解如何使用 Azure 表存储。代码示例使用 Node.js API 编写。" 
 	services="storage" 
 	documentationCenter="nodejs" 
 	authors="MikeWasson" 
@@ -9,11 +9,11 @@
 
 <tags 
 	ms.service="storage" 
-	ms.date="03/11/2015" 
-	wacn.date="09/18/2015"/>
+	ms.date="09/01/2015"
+	wacn.date="11/27/2015"/>
 
 
-# 如何通过 Node.js 使用表存储
+# 如何通过 Node.js 使用 Azure 表存储
 
 [AZURE.INCLUDE [storage-selector-table-include](../includes/storage-selector-table-include.md)]
 
@@ -22,11 +22,11 @@
 
 本主题将演示如何使用 Node.js 应用程序中的 Azure 表服务执行常见方案。
 
-本主题中的代码示例假定您已有 Node.js 应用程序。有关在 Azure 中创建 Node.js 应用程序的说明，请参阅以下任何主题：
+本主题中的代码示例假定您已有 Node.js 应用程序。有关在 Azure 中创建 Node.js 应用程序的信息，请参阅以下任何主题：
 
 - [构建 Node.js 网站并部署到 Azure][创建 Node.js 应用程序并将其部署到 Azure 网站]。
-- [使用 WebMatrix 生成 Node.js 网站并将其部署到 Azure][使用 WebMatrix 构建网站]
-- [生成 Node.js 应用程序并将其部署到 Azure 云服务][Node.js Cloud Service]（使用 Windows PowerShell）
+- [使用 WebMatrix 构建 Node.js 网站并部署到 Azure][使用 WebMatrix 构建网站]
+- [构建 Node.js 应用程序并将其部署到 Azure 云服务][Node.js Cloud Service]（使用 Windows PowerShell）
 
 
 [AZURE.INCLUDE [storage-table-concepts-include](../includes/storage-table-concepts-include.md)]
@@ -42,22 +42,20 @@
 
 1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了应用程序的文件夹。
 
-2.  在命令窗口中键入 **npm install azure-storage**，这应该产生以下输出：
+2.  在命令窗口中键入 **npm install azure-storage**。该命令的输出类似于以下示例。
 
-        azure-storage@0.1.0 node_modules\azure-storage
-		├── extend@1.2.1
-		├── xmlbuilder@0.4.3
-		├── mime@1.2.11
-		├── underscore@1.4.4
-		├── validator@3.1.0
-		├── node-uuid@1.4.1
-		├── xml2js@0.2.7 (sax@0.5.2)
-		└── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		azure-storage@0.5.0 node_modules\azure-storage
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- node-uuid@1.4.3
+		+-- validator@3.22.2
+		+-- underscore@1.4.4
+		+-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
-3.  可以手动运行 **ls** 命令来验证是否创建了
-    **node\_modules** 文件夹。在该文件夹中，你会
-    找到 **azure-storage** 包，其中包含你访问
-    存储所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，您将找到 **azure-storage** 包，其中包含访问存储所需的库。
 
 ### 导入包
 
@@ -67,9 +65,9 @@
 
 ## 设置 Azure 存储连接
 
-Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_ACCESS\_KEY 或 AZURE\_STORAGE\_CONNECTION\_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则必须在调用 **TableService** 时指定帐户信息。
+Azure 模块将读取环境变量 AZURE_STORAGE_ACCOUNT 和 AZURE_STORAGE_ACCESS_KEY 或 AZURE_STORAGE_CONNECTION_STRING 以获取连接到您的 Azure 存储帐户所需的信息。如果未设置这些环境变量，则必须在调用 **TableService** 时指定帐户信息。
 
-有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js Web 应用程序]
+有关在管理门户中为 Azure 网站设置环境变量的示例，请参阅[使用存储构建 Node.js网站]
 
 ## 创建表
 
@@ -85,7 +83,7 @@ Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_AC
 		}
 	});
 
-如果创建了一个新表，`result` 将为 `true`，如果该表已存在，则为 `false`。`response` 将包含有关请求的信息。
+`result` 将为 `true`（如果创建了新表），或者为 `false`（如果表已存在）。`response` 将包含有关该请求的信息。
 
 ###筛选器
 
@@ -108,11 +106,11 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 若要添加实体，首先创建定义实体属性的对象。所有实体都必须都包含 **PartitionKey** 和 **RowKey**，它们是实体的唯一标识符。
 
-* **PartitionKey** -确定实体存储在其中的分区。
+* **PartitionKey** - 确定实体存储在其中的分区
 
-* **RowKey** -唯一标识分区内的实体。
+* **RowKey** - 唯一标识分区内的实体
 
-**PartitionKey** 和 **RowKey** 都必须是字符串值。有关详细信息，请参阅 [了解表服务数据模型](https://msdn.microsoft.com/zh-CN/library/azure/dd179338.aspx).
+**PartitionKey** 和 **RowKey** 都必须是字符串值。有关详细信息，请参阅[了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
 
 下面是如何定义实体的示例。请注意，**dueDate** 被定义为一种类型的 **Edm.DateTime**。可以选择性地指定类型。如果未指定类型，系统会进行推断。
 
@@ -183,7 +181,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 >    
 > 3. 执行更新操作。如果实体在您检索 ETag 值后已被修改，例如被应用程序的其他实例修改，则会返回一条 `error`，指出未满足请求中指定的更新条件。
     
-对于 **updateEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果您希望存储某个实体而不考虑它是否已存在，则应改用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
+对于 **updateEntity** 和 **mergeEntity**，如果待更新的实体不存在，则更新操作将失败。因此，如果您希望存储某个实体而不考虑它是否已存在，请使用 **insertOrReplaceEntity** 或 **insertOrMergeEntity**。
 
 如果更新操作成功，则  `result` 会包含所更新实体的 **Etag**。
 
@@ -221,17 +219,17 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 ###使用批处理操作
 
-可以通过查看  `operations` 属性来检查添加到批处理中的操作。你可以使用以下方法来处理操作。
+可以通过查看 `operations` 属性来检查添加到批处理中的操作。你可以使用以下方法来处理操作：
 
-* **clear** - 清除批处理中的所有操作。
+* **clear** - 清除批处理中的所有操作
 
-* **getOperations** - 获取批处理的操作。
+* **getOperations** - 获取批处理的操作
 
-* **hasOperations** - 如果批处理包含操作，则返回 true。
+* **hasOperations** - 如果批处理包含操作，则返回 true
 
-* **removeOperations** - 删除操作。
+* **removeOperations** - 删除操作
 
-* **size** - 返回批处理中操作的数目。
+* **size** - 返回批处理中操作的数目
 
 ## 通过键检索实体
 
@@ -249,18 +247,18 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 若要查询表，请使用 **TableQuery** 对象生成一个使用以下子句的查询：
 
-* **select** - 将要从查询返回的字段。
+* **select** - 将要从查询返回的字段
 
-* **where** - where 子句。
+* **where** - where 子句
 
-	* **and** - 一个  `and` where 条件。
+	* **and** - 一个 `and` where 条件
 
-	* **or** - 一个  `or` where 条件。
+	* **or** - 一个 `or` where 条件
 
-* **top** - 要提取的项的数目。
+* **top** - 要提取的项数
 
 
-下面的示例生成的查询将返回 PartitionKey 为“hometasks”的前 5 项。
+以下示例生成的查询将返回 PartitionKey 为“hometasks”的前五项。
 
 	var query = new azure.TableQuery()
 	  .top(5)
@@ -274,18 +272,18 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-如果成功， `result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体， `result.continuationToken` 就不会是 *null*，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，第三个参数应为  *null*。
+如果成功，`result.entries` 将包含与查询匹配的一组实体。如果查询无法返回所有实体，`result.continuationToken` 就不会是 *null*，因此可用作 **queryEntities** 的第三个参数来检索更多结果。对于初始查询，请为第三个参数使用 *null*。
 
-###如何查询实体属性子集
+### 查询一部分实体属性
 
-对表的查询可以只检索实体中的少数几个字段。这可以减少带宽并提高查询性能，尤其适用于大型实体。使用 **select** 子句并传递要返回的字段的名称。例如，下面的查询将只返回**说明**和 **dueDate** 字段。
+对表的查询可以只检索实体中的少数几个字段。这可以减少带宽并提高查询性能，尤其适用于大型实体。使用 **select** 子句并传递要返回的字段的名称。例如，下面的查询将只返回 **description** 和 **dueDate** 字段。
 
 	var query = new azure.TableQuery()
 	  .select(['description', 'dueDate'])
 	  .top(5)
 	  .where('PartitionKey eq ?', 'hometasks');
 
-## 如何删除实体
+## 删除实体
 
 可以使用实体的分区键和行键删除实体。在本例中，**task1** 对象包含要删除的实体的 **RowKey** 和 **PartitionKey** 值。然后，该对象被传递给 **deleteEntity** 方法。
 
@@ -300,9 +298,9 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 	  }
 	});
 
-> [AZURE.NOTE] 你应该考虑在删除项时使用 ETag，以确保项尚未被其他进程修改。有关使用 ETag 的信息，请参阅[如何：更新实体]。
+> [AZURE.NOTE] 考虑在删除项时使用 ETag，以确保项尚未被其他进程修改。请参阅[更新实体](#update-an-entity)了解如何使用 ETag。
 
-## 如何删除表
+## 删除表
 
 以下代码从存储帐户中删除一个表。
 
@@ -314,11 +312,11 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 如果您不确定表是否存在，则使用 **deleteTableIfExists**。
 
-## 如何：使用继续标记
+## 使用继续标记
 
-在所查询的表有大量的结果时，您应查找继续标记。如果您在生成时不能识别何时存在继续标记，可能存在大量您未意识到的数据可用于查询。
+在所查询的表有大量的结果时，请查找继续标记。如果您在生成时不能识别何时存在继续标记，可能存在大量您未意识到的数据可用于查询。
 
-查询实体在存在此类标记时设置 `continuationToken` 属性，返回结果对象。然后可以在执行查询时使用它，以继续在分区和表实体间移动。
+查询实体在存在此类标记期间设置 `continuationToken` 属性，返回结果对象。然后可以在执行查询时使用它，以继续在分区和表实体间移动。
 
 在查询时，在查询对象实例和回调函数之间可能会提供继续标记参数：
 
@@ -341,13 +339,13 @@ dc.table.queryEntities(tableName,
 
 如果您检查 `continuationToken` 对象，您会发现如 `nextPartitionKey`、`nextRowKey` 和 `targetLocation` 等属性可用于循环访问所有结果。
 
-在 GitHub 上的 Azure 存储 Node.js 存储库中还有一个继续样本，查找 `examples/samples/continuationsample.js`。
+在 GitHub 上的 Azure 存储 Node.js 存储库中还有一个继续样本。查找 `examples/samples/continuationsample.js`。
 
-## 如何：使用共享访问签名
+## 使用共享访问签名
 
 共享访问签名 (SAS) 是一种安全的方法，用于对表进行细致访问而无需提供你的存储帐户名或密钥。通常使用 SAS 来提供对你的数据的有限访问权限，例如允许移动应用程序查询记录。
 
-受信任的应用程序（例如基于云的服务）可使用 **TableService** 的 **generateSharedAccessSignature** 生成 SAS，然后将其提供给不受信任的或不完全受信任的应用程序。例如，移动应用程序。SAS 可使用策略生成，该策略描述了 SAS 的生效日期和失效日期，以及授予 SAS 持有者的访问级别。
+受信任的应用程序（例如基于云的服务）可使用 **TableService** 的 **generateSharedAccessSignature** 生成 SAS，然后将其提供给不受信任的或不完全受信任的应用程序，例如移动应用。SAS 可使用策略生成，该策略描述了 SAS 的生效日期和失效日期，以及授予 SAS 持有者的访问级别。
 
 下面的示例生成了一个新的共享访问策略，该策略将允许 SAS 持有者查询 ('r') 表，在创建后 100 分钟过期。
 
@@ -387,7 +385,7 @@ dc.table.queryEntities(tableName,
 
 你还可以使用访问控制列表 (ACL) 为 SAS 设置访问策略。如果你希望允许多个客户端访问某个表，但为每个客户端提供了不同的访问策略，则访问控制列表会很有用。
 
-ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。下面的示例定义了两个策略，一个用于“user1”，一个用于“user2”：
+ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID。以下示例定义了两个策略，一个用于“user1”，一个用于“user2”：
 
 	var sharedAccessPolicy = [
 	  {
@@ -408,7 +406,7 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 	  }
 	];
 
-下面的示例获取 **hometasks** 的当前 ACL，然后使用 **setTableAcl** 添加新策略。此方法具有以下用途：
+以下示例获取 **hometasks** 表的当前 ACL，然后使用 **setTableAcl** 添加新策略。此方法具有以下用途：
 
 	tableSvc.getTableAcl('hometasks', function(error, result, response) {
       if(!error){
@@ -428,22 +426,25 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 
 ## 后续步骤
 
-现在，你已了解有关表存储的基础知识，可单击下面的链接来了解如何执行更复杂的存储任务。
+有关详细信息，请参阅以下资源。
 
--   请参阅 MSDN 参考：[在 Azure 中存储和访问数据][]。
--   访问 [Azure 存储空间团队博客][]。
--   访问 GitHub 上的 [Azure Storage SDK for Node][] 存储库。
+-   MSDN 参考：[在 Azure 中存储和访问数据][]。
+-   [Azure 存储空间团队博客][]。
+-   GitHub 上的 [Azure Storage SDK for Node][] 存储库。
+-   [Node.js 开发人员中心](/develop/nodejs/)
 
   [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
   [OData.org]: http://www.odata.org/
   [使用 REST API]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
   [Azure 管理门户]: http://manage.windowsazure.cn
 
-  [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app
   [在 Azure 中存储和访问数据]: http://msdn.microsoft.com/zh-cn/library/azure/gg433040.aspx
   [访问 Azure 存储空间团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-  [使用 WebMatrix 构建网站]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix/
-  [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
-  [使用存储构建 Node.js Web 应用程序]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site/
-  [创建 Node.js 应用程序并将其部署到 Azure 网站]: /zh-cn/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-<!---HONumber=70-->
+  [使用 WebMatrix 构建网站]: /zh-cn/documentation/articles/web-sites-nodejs-use-webmatrix
+  [使用存储构建 Node.js 云服务]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-cloud-service-app
+  [使用存储构建 Node.js网站]: /zh-cn/documentation/articles/storage-nodejs-use-table-storage-web-site
+  [Create and deploy a Node.js application to an Azure  Website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+  [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+
+<!---HONumber=82-->

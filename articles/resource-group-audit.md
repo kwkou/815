@@ -30,7 +30,7 @@
 
     PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00
 
-根据指定的开始时间，前面的命令可能会返回对该资源组执行的一长串操作。你可以提供搜索条件，以筛选所要查找的结果。例如，如果你想要调查 Web 应用的停止方式，可以运行以下命令并查看 someone@example.com 所执行的停止操作。
+根据指定的开始时间，前面的命令可能会返回对该资源组执行的一长串操作。你可以提供搜索条件，以筛选所要查找的结果。例如，如果你想要调查网站的停止方式，可以运行以下命令并查看 someone@example.com 所执行的停止操作。
 
     PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime 2015-08-28T06:00 | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
 

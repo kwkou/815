@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="stream-analytics" 
-	ms.date="08/19/2015" 
-	wacn.date="09/15/2015"/>
+	ms.date="10/05/2015" 
+	wacn.date="11/27/2015"/>
 
 
 # 以编程方式监视流分析作业 
@@ -134,7 +134,8 @@
 
 以下代码将为**现有**流分析作业启用监视功能。代码的第一部分针对流分析服务执行 GET 请求，目的是检索特定流分析作业的信息。它使用“Id”属性（从 GET 请求检索而得）作为代码第二部分中 Put 方法的参数，目的是将 PUT 请求发送到 Insights 服务以启用流分析作业的监视功能。
 
-> [AZURE.WARNING]如果你此前为其他流分析作业启用了监视功能，不管是通过 Azure 门户进行的还是通过以下代码以编程方式完成的，**我们都建议你在提供存储帐户名称时提供你此前在启用监视功能时所使用的那个相同的存储帐户名称。**
+> [AZURE.WARNING]
+> 如果你此前为其他流分析作业启用了监视功能，不管是通过 Azure 门户进行的还是通过以下代码以编程方式完成的，**我们都建议你在提供存储帐户名称时提供你此前在启用监视功能时所使用的那个相同的存储帐户名称。**
 > 
 > 存储帐户与你创建流分析作业时所在的区域相关联，并不特定于作业本身。
 > 
@@ -170,8 +171,8 @@
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction)
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  
 
-<!---HONumber=69-->
+<!---HONumber=82-->

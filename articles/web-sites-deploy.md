@@ -1,6 +1,6 @@
 <properties
-	pageTitle="在 Azure 网站中部署 Web 应用"
-	description="了解将内容部署到 Web Apps 的可用方法。"
+	pageTitle="在 Azure 网站中部署网站"
+	description="了解将内容部署到网站的可用方法。"
 	services="app-service\web"
 	documentationCenter=""
 	authors="tdykstra"
@@ -17,7 +17,7 @@
 你具有许多可用于将自己的内容部署到 Azure 网站的选项。本主题将提供每个选项的简要概述和指向详细信息的链接。
 
 ###<a name="cloud"></a>从云托管的源代码管理系统进行部署
-部署 Web 应用的最佳方法是设置与[源代码管理系统](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control)集成的[持续交付工作流](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)。自动化不仅使开发过程更高效，还可以使你的备份和还原流程更可控、更可靠。
+部署网站的最佳方法是设置与[源代码管理系统](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control)集成的[持续交付工作流](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)。自动化不仅使开发过程更高效，还可以使你的备份和还原流程更可控、更可靠。
 
 如果你尚未设置源代码管理，最简单的方法是从使用云托管的源代码管理系统开始。
 
@@ -28,22 +28,22 @@
 
 ###<a name="ide"></a>从 IDE 部署
 
-[Visual Studio](http://www.visualstudio.com/) 和 [WebMatrix](http://www.microsoft.com/web/webmatrix/) 是可用于 Web 开发的 Microsoft IDE（集成开发环境）。两者都提供内置功能，使你可以轻松部署到 Web 应用。两者都可以使用 [Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)来自动执行其他与部署相关的任务，例如数据库部署和连接字符串的更改。两者也都可以通过使用 [FTP 或 FTPS](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 进行部署。
+[Visual Studio](http://www.visualstudio.com/) 和 [WebMatrix](http://www.microsoft.com/web/webmatrix/) 是可用于 Web 开发的 Microsoft IDE（集成开发环境）。两者都提供内置功能，使你可以轻松部署到网站。两者都可以使用 [Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)来自动执行其他与部署相关的任务，例如数据库部署和连接字符串的更改。两者也都可以通过使用 [FTP 或 FTPS](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 进行部署。
 
-WebMatrix 安装快速且易于学习，但 Visual Studio 提供了更多用于处理 Web Apps 的功能。你可以从 Visual Studio IDE 中创建、停止、启动和删除 Web 应用、在实时创建日志时查看日志、进行远程调试等。Visual Studio 还可以与源代码管理系统（如 [Visual Studio Online](#vso)、[Team Foundation Server](#tfs) 和 [Git 存储库](#git)）集成。
+WebMatrix 安装快速且易于学习，但 Visual Studio 提供了更多用于处理网站的功能。你可以从 Visual Studio IDE 中创建、停止、启动和删除网站、在实时创建日志时查看日志、进行远程调试等。Visual Studio 还可以与源代码管理系统（如 [Visual Studio Online](#vso)、[Team Foundation Server](#tfs) 和 [Git 存储库](#git)）集成。
 
 * [Visual Studio](#vs)
 * [WebMatrix](#webmatrix)
 
 ###<a name="ftp"></a>使用 FTP 实用工具部署
 
-无论你使用哪种 IDE，你都可以通过使用 [FTP](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 复制文件来将内容部署到你的应用。可以轻松地创建针对 Web 应用的 FTP 凭据，并可以将其用于任何可使用 FTP 的应用程序，包括浏览器（例如 Internet Explorer）和功能全面的免费实用程序（例如 [FileZilla](https://filezilla-project.org/)）。Web Apps 还支持更安全的 FTPS 协议。
+无论你使用哪种 IDE，你都可以通过使用 [FTP](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 复制文件来将内容部署到你的应用。可以轻松地创建针对网站的 FTP 凭据，并可以将其用于任何可使用 FTP 的应用程序，包括浏览器（例如 Internet Explorer）和功能全面的免费实用程序（例如 [FileZilla](https://filezilla-project.org/)）。网站还支持更安全的 FTPS 协议。
 
-尽管使用 FTP 实用程序将 Web 应用的文件复制到 Azure 很容易，但它们并不会自动负责或协调相关的部署任务，例如部署数据库或更改连接字符串。此外，许多 FTP 工具不会对源文件和目标文件进行比较以跳过对未更改的文件的复制。对于大型应用，始终复制所有文件可能会导致部署时间较长，即使对于少量更新也是如此，因为将始终复制所有文件。
+尽管使用 FTP 实用程序将网站的文件复制到 Azure 很容易，但它们并不会自动负责或协调相关的部署任务，例如部署数据库或更改连接字符串。此外，许多 FTP 工具不会对源文件和目标文件进行比较以跳过对未更改的文件的复制。对于大型应用，始终复制所有文件可能会导致部署时间较长，即使对于少量更新也是如此，因为将始终复制所有文件。
 
 ###<a name="onpremises"></a>从本地源代码管理系统进行部署
 
-如果要在本地（非云托管的）存储库中使用 TFS、Git 或 Mercurial，则可以直接从存储库部署到 Web 应用。
+如果要在本地（非云托管的）存储库中使用 TFS、Git 或 Mercurial，则可以直接从存储库部署到网站。
 
 * [Team Foundation Server (TFS)](#tfs)
 * [本地 Git 或 Mercurial 存储库](#onpremises)
@@ -64,7 +64,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
  
 ###<a name="octopus"></a>Octopus 部署
 
-[Octopus 部署](http://en.wikipedia.org/wiki/Octopus_Deploy)可以与 Web Apps 一同使用。有关更多信息，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites)。
+[Octopus 部署](http://en.wikipedia.org/wiki/Octopus_Deploy)可以与网站一同使用。有关更多信息，请参阅[将 ASP.NET网站部署到 Azure 网站](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites)。
 
 
 ##<a name="vso"></a>Visual Studio Online
@@ -78,7 +78,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 ##<a name="git"></a>使用 Git 的存储库网站
 
-[Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) 是一种流行的分布式源代码管理系统。Azure 具有的内置功能可轻松实现从流行的基于 Web 的存储库网站（存储 Git 存储库，包括 [GitHub](http://www.github.com)、[CodePlex](http://www.codeplex.com/) 和 [BitBucket](https://bitbucket.org/)）自动部署到 Web 应用。使用 Git 进行部署的一个优点是比较容易回滚到以前的部署（一旦有必要）。
+[Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) 是一种流行的分布式源代码管理系统。Azure 具有的内置功能可轻松实现从流行的基于 Web 的存储库网站（存储 Git 存储库，包括 [GitHub](http://www.github.com)、[CodePlex](http://www.codeplex.com/) 和 [BitBucket](https://bitbucket.org/)）自动部署到网站。使用 Git 进行部署的一个优点是比较容易回滚到以前的部署（一旦有必要）。
 
 有关详细信息，请参阅以下资源：
 
@@ -112,7 +112,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 * [Azure 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started)。如何使用 Visual Studio 和 Web 部署来创建和部署一个简单的 ASP.NET MVC Web 项目。
 * [如何将 Azure Web 作业部署到 Azure 网站](/documentation/articles/websites-dotnet-deploy-webjobs)。如何配置控制台应用程序项目，以便它们部署为 Web 作业。  
 * [将包含成员资格、OAuth 和 SQL 数据库的安全 ASP.NET MVC 5 应用部署到 Azure 网站](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)。如何使用 Visual Studio、Web 部署和 Entity Framework Code First 迁移通过 SQL 数据库来创建和部署 ASP.NET MVC Web 项目。
-* [Visual Studio 和 ASP.NET 的 Web 部署概述](http://msdn.microsoft.com/zh-cn/library/dd394698.aspx)。使用 Visual Studio 的 Web 部署的基本简介。虽然已过时，但包括仍然相关的信息，其中包括用于部署数据库和 Web 应用程序的选项的概述，以及其他部署任务的列表（这些任务可能需要你来执行，或需要你手动配置 Visual Studio 以代替你执行）。本主题提供有关常规部署的信息，不只是关于部署到 Azure 网站。
+* [Visual Studio 和 ASP.NET 的 Web 部署概述](http://msdn.microsoft.com/zh-cn/library/dd394698.aspx)。使用 Visual Studio 的 Web 部署的基本简介。虽然已过时，但包括仍然相关的信息，其中包括用于部署数据库和网站的选项的概述，以及其他部署任务的列表（这些任务可能需要你来执行，或需要你手动配置 Visual Studio 以代替你执行）。本主题提供有关常规部署的信息，不只是关于部署到 Azure 网站。
 * [使用 Visual Studio 的 ASP.NET Web 部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/introduction)。共 12 篇的系列教程涵盖了比此列表中其他部署任务更完整的部署任务。自编写本教程以来添加了一些 Azure 部署功能，但注释是后来添加的，说明缺少哪些内容。 
 * [在 Visual Studio 2012 中直接从 Git 存储库将 ASP.NET 网站部署到 Azure](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881)。说明如何在 Visual Studio 中部署 ASP.NET Web 项目（使用 Git 插件将代码提交到 Git 并将 Azure 连接到 Git 存储库）。从 Visual Studio 2013 开始，Git 支持是内置的，不需要安装插件。
 
@@ -123,7 +123,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 
 ##<a name="tfs"></a>Team Foundation Server (TFS)
 
-Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本地解决方案。你可以设置 TFS 以进行到 Web 应用的连续交付。
+Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本地解决方案。你可以设置 TFS 以进行到网站的连续交付。
 
 有关详细信息，请参阅以下资源：
 
@@ -152,7 +152,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 ##<a name="ftp2"></a>FTP 脚本
 
-可以轻松地创建针对 Web 应用的 [FTP/FTPS](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 凭据，然后可以将这些凭据用于 FTP 批处理脚本。
+可以轻松地创建针对网站的 [FTP/FTPS](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 凭据，然后可以将这些凭据用于 FTP 批处理脚本。
 
 有关详细信息，请参阅以下资源：
 
@@ -185,7 +185,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 ##<a name="webdeploy"></a>Web 部署命令行
 
-[Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)是用于部署到 IIS 的 Microsoft 软件，它不仅提供智能文件同步功能，还可以执行或协调许多其他与部署相关的、使用 FTP 时无法自动执行的任务。例如，Web 部署可以部署新的数据库或数据库更新以及你的 Web 应用。Web 部署还可以尽量减少更新现有站点所需的时间，因为它可以智能地仅复制更改过的文件。Microsoft WebMatrix、Visual Studio、Visual Studio Online 和 Team Foundation Server 都支持内置 Web 部署，但你也可以直接从命令行使用 Web 部署以使部署自动化。Web 部署命令非常强大，但在学习过程中可能会遇到困难。
+[Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)是用于部署到 IIS 的 Microsoft 软件，它不仅提供智能文件同步功能，还可以执行或协调许多其他与部署相关的、使用 FTP 时无法自动执行的任务。例如，Web 部署可以部署新的数据库或数据库更新以及你的网站。Web 部署还可以尽量减少更新现有站点所需的时间，因为它可以智能地仅复制更改过的文件。Microsoft WebMatrix、Visual Studio、Visual Studio Online 和 Team Foundation Server 都支持内置 Web 部署，但你也可以直接从命令行使用 Web 部署以使部署自动化。Web 部署命令非常强大，但在学习过程中可能会遇到困难。
 
 有关详细信息，请参阅以下资源：
 
@@ -193,15 +193,15 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 * [Web 部署工具](http://technet.microsoft.com/zh-cn/library/dd568996)。Microsoft TechNet 网站上的正式文档。虽然已过时，但仍是一个不错的起点。
 * [使用 Web 部署](http://www.iis.net/learn/publish/using-web-deploy)。Microsoft IIS.NET 网站上的正式文档。虽然也已过时，但仍是一个不错的起点。
 * [堆栈溢出](http://www.stackoverflow.com)获得有关如何从命令行中使用 Web 部署的最新信息的最佳位置。
-* [使用 Visual Studio 的 ASP.NET Web 部署：命令行部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment)。MSBuild 是由 Visual Studio 使用的生成引擎，还可以从命令行使用它以将 Web 应用程序部署到 Azure 网站。本教程是主要介绍 Visual Studio 部署的一系列教程的一部分。
+* [使用 Visual Studio 的 ASP.NET Web 部署：命令行部署](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/command-line-deployment)。MSBuild 是由 Visual Studio 使用的生成引擎，还可以从命令行使用它以将网站部署到 Azure 网站。本教程是主要介绍 Visual Studio 部署的一系列教程的一部分。
 
 ##<a name="nextsteps"></a>后续步骤
 
-在某些情况下，你可能想要能够轻松地在 Web 应用的过渡版本和生产版本之间来回切换。有关详细信息，请参阅 [Web Apps 网站上的过渡部署](/documentation/articles/web-sites-staged-publishing)。
+在某些情况下，你可能想要能够轻松地在网站的过渡版本和生产版本之间来回切换。有关详细信息，请参阅 [网站上的过渡部署](/documentation/articles/web-sites-staged-publishing)。
 
-准备好备份和还原计划是任何部署工作流的一个重要部分。有关 Web Apps 的备份和还原功能的信息，请参阅 [Web Apps 备份](/documentation/articles/web-sites-backup)。
+准备好备份和还原计划是任何部署工作流的一个重要部分。有关网站的备份和还原功能的信息，请参阅 [网站备份](/documentation/articles/web-sites-backup)。
 
-有关如何使用 Azure 的基于角色的访问控制来管理 Web Apps 部署访问权限的信息，请参阅 [RBAC 和 Web App 发布](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing)。
+有关如何使用 Azure 的基于角色的访问控制来管理网站部署访问权限的信息，请参阅 [RBAC 和网站发布](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing)。
 
 有关其他部署主题的信息，请参阅 [Azure 网站文档](/zh-cn/documentation/services/web-sites/)中的“部署”部分。
 

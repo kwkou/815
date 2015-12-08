@@ -22,7 +22,7 @@ Azure 提供出色的云解决方案，以虚拟机为基础构建（基于物�
 **但是，这个新闻已经过时了。** *最新*的新闻是 Azure 可带来更多的 Docker 好处：
 
 - 提供[许多](/documentation/articles/virtual-machines-docker-with-xplat-cli)<!--[-->不同的<!--](/documentation/articles/virtual-machines-docker-with-portal)--><!--[-->方式<!--](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)-->，可根据具体需求为容器[创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
-- [Azure 资源管理器](/documentation/articles/resource-group-overview)和[资源组模板](/documentation/articles/resource-group-authoring-templates)可简化复杂的分布式应用程序的部署和更新
+- [Azure 资源管理器](/documentation/articles/resource-group-overview)可简化复杂的分布式应用程序的部署和更新
 - 可与许多专有和开放源配置管理工具集成
 
 而且由于可通过编程方式在 Azure 上创建 VM 和 Linux 容器，所以你还可以使用 VM 和容器*协调*工具来创建多组虚拟机 (VM)，并在 Linux 容器和很快即将支持的 [Windows Server 容器](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)中部署应用程序。
@@ -117,15 +117,6 @@ IT 和运营专家还可以从容器与虚拟机的组合中获益。
 
 随后，这些功能通常迁移到 [Puppet](https://puppetlabs.com/) 和 [Chef](https://www.chef.io/) 等工具，以实现大规模的自动创建和配置 VM。（[此处](#tools-for-working-with-containers)有链接指向借助 Azure 使用这些工具的说明。）
 
-### Azure 资源组模板
-
-最近，Azure 发布了 [Azure 资源管理](/documentation/articles/virtual-machines-azurerm-versus-azuresm) REST API，并更新了 PowerShell 和 Azure CLI 工具，以便轻松使用。你可以使用包含 Azure 资源管理 API 的 [Azure 资源管理器模板](https://msdn.microsoft.com/zh-cn/library/azure/dn835138.aspx)部署、修改或重新部署整个应用程序拓扑，使用：
-
-- [使用模板的 Azure 预览门户](https://github.com/Azure/azure-quickstart-templates) - 提示，使用“DeployToAzure”按钮
-- [Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-- [Azure PowerShell 模块](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
-
-
 ### 部署和管理整个组的 Azure VM 和容器
 
 有多个常用系统可部署整个组的 VM，并在其上安装 Docker（或其他 Linux 容器主机系统）作为可自动化组。有关直接链接，请参阅下文的[容器和工具](#containers-and-vm-technologies)节。有许多系统都或多或少能实现这一点，此列表不能尽录。根据你的技能组合和具体情况，它们可能有用，也可能不发挥作用。
@@ -182,7 +173,6 @@ Windows Azure 上的 Docker：
 - [如何在 Azure 上使用 docker-machine](/documentation/articles/virtual-machines-docker-machine)
 - [如何在 Azure 上将 docker 与 swarm 一起使用](/documentation/articles/virtual-machines-docker-swarm)
 - [在 Azure 上使用 Docker 和 Compose 入门](/documentation/articles/virtual-machines-docker-compose-quickstart)
-- [使用 Azure 资源组模板在 Azure 上快速创建 Docker 主机](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
 - [对包含在容器内的应用程序的 `compose`](https://github.com/Azure/azure-docker-extension#11-public-configuration-keys) 提供内置支持
 - [在 Azure 上实施 Docker 专有注册表](/documentation/articles/virtual-machines-docker-registry-on-azure-blob-storage)
 

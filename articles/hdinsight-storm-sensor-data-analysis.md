@@ -176,13 +176,13 @@
 
 测试之前，必须启动仪表板以查看拓扑的输出，并生成要在事件中心中存储的数据。
 
-### 启动 Web 应用程序
+### 启动网站
 
-1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装 Web 应用程序所需的依赖项：
+1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装网站所需的依赖项：
 
 		npm install
 
-2. 使用以下命令启动 Web 应用程序：
+2. 使用以下命令启动网站：
 
 		node server.js
 

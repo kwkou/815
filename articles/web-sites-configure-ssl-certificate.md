@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 网站中启用 Web 应用的 HTTPS" 
+	pageTitle="在 Azure 网站中启用网站的 HTTPS" 
 	description="了解如何为 Azure 网站启用 SSL。" 
 	services="app-service" 
 	documentationCenter=".net" 

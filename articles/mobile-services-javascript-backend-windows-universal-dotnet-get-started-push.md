@@ -10,7 +10,7 @@
 <tags 
 	ms.service="mobile-services" 
 	ms.date="07/22/2015" 
-	wacn.date="10/22/2015"/>
+	wacn.date="11/27/2015"/>
 
 
 #  向移动服务应用程序添加推送通知
@@ -61,28 +61,30 @@
 
 本教程演示了启用 Windows 应用商店应用程序以便使用移动服务和通知中心发送推送通知的基础知识。接下来，请考虑完成以下教程之一：
 
-+ [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)<br/>
-	了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
++ [向经过身份验证的用户发送推送通知](/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users)
+<br/>了解如何使用标记来做到只将推送通知从移动服务发送到经过身份验证的用户。
 
-+ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)<br/>
-	了解用户如何注册和接收他们感兴趣的类别的推送通知。
++ [将广播通知发送到订户](/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news)
+<br/>了解用户如何注册和接收他们感兴趣的类别的推送通知。
 
-+ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)<br/>
-	了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
++ [将平台无关的通知发送到订户](/documentation/articles/notification-hubs-aspnet-cross-platform-notify-users)
+<br/>了解如何使用模板从移动服务发送推送通知，且不会在后端中产生平台特定的负载。
 
 	通过以下主题了解有关移动服务和通知中心的详细信息：
 
-* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)<br/>
-  了解如何排查推送通知问题。
+* [Azure 通知中心 - 诊断指南](/documentation/articles/notification-hubs-diagnosing)
+<br/>了解如何排查推送通知问题。
 
-* [身份验证入门 ]<br/>
-  了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
-* [什么是通知中心？] <br/>
-  了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+* [身份验证入门](/documentation/articles/mobile-services-windows-phone-get-started-users)
+<br/>了解如何通过移动服务对使用不同帐户类型的应用程序用户进行身份验证。
 
-* [如何使用适用于 Azure 移动服务的 .NET 客户端]<br/>
-  了解有关如何从 C# Windows 应用程序使用移动服务的详细信息。
+
+* [什么是通知中心？] 
+<br/>了解有关通知中心跨所有主要的客户端平台向你的应用程序交付通知的详细信息。
+
+* [如何使用适用于 Azure 移动服务的 .NET 客户端]
+<br/>了解有关如何从 C# Windows 应用程序使用移动服务的详细信息。
 
 <!-- Anchors. -->
 
@@ -95,7 +97,6 @@
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Get started with Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started
 [Get started with data]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-data
-[身份验证入门 ]: /documentation/articles/mobile-services-javascript-backend-windows-universal-dotnet-get-started-users
 
 [Send push notifications to authenticated users]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
 
@@ -104,4 +105,4 @@
 [如何使用适用于 Azure 移动服务的 .NET 客户端]: /documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
-<!---HONumber=74-->
+<!---HONumber=82-->
