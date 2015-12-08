@@ -27,7 +27,7 @@
 - 当用户状态设置为已禁用时，该用户将不使用 Multi-Factor Authentication。这是默认状态。
 - 当用户状态设置为已启用时，表示该用户已启用但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。此设置不会影响非浏览器应用。所有应用将继续工作，直到注册过程完成。
 - 当用户状态设置为强制时，表示该用户可能（但不一定）已完成注册。如果他们已完成注册过程，表示他们正在使用 Multi-Factor Authentication。否则，在他们下次登录时，系统将提示其完成注册过程。此设置不会影响非浏览器应用。在创建并使用应用密码之前，这些应用无法工作。
-- 使用[云中的 Azure Multi-Factor Authentication 入门](multi-factor-authentication-get-started-cloud.md)一文中所述的用户通知模板，向用户发送有关采用 MFA 的电子邮件。
+- 使用[云中的 Azure Multi-Factor Authentication 入门](/documentation/articles/multi-factor-authentication-get-started-cloud)一文中所述的用户通知模板，向用户发送有关采用 MFA 的电子邮件。
 
 ### 可支持性
 
@@ -85,22 +85,22 @@ Azure Multi-Factor Authentication 服务器可用于保护 Azure AD 帐户所访
 
 方法|说明
 :------------- | :------------- | 
-[Active Directory 联合身份验证服务](multi-factor-authentication-get-started-adfs.md)|有关设置使用 AD FS 的 Azure Multi-Factor Authentication 的信息。
-[RADIUS 身份验证](multi-factor-authentication-get-started-server-radius.md)| 有关设置和配置使用 RADIUS 的 Azure MFA 服务器的信息。
-[IIS 身份验证](multi-factor-authentication-get-started-server-iis.md)|有关设置和配置使用 IIS 的 Azure MFA 服务器的信息。
-[Windows 身份验证](multi-factor-authentication-get-started-server-windows.md)| 有关设置和配置使用 Windows 身份验证的 Azure MFA 服务器的信息。
-[LDAP 身份验证](multi-factor-authentication-get-started-server-ldap.md)|有关设置和配置使用 LDAP 身份验证的 Azure MFA 服务器的信息。
-[使用 RADIUS 的远程桌面网关和 Azure Multi-Factor Authentication 服务器](multi-factor-authentication-get-started-server-rdg.md)| 有关设置和配置使用 RADIUS 的、具有远程桌面网关的 Azure MFA 服务器的信息。
-[与 Windows Server Active Directory 同步](multi-factor-authentication-get-started-server-dirint.md)|有关在 Active Directory 与 Azure MFA 服务器之间设置和配置同步的信息。
-[部署 Azure Multi-Factor Authentication 服务器移动应用 Web 服务](multi-factor-authentication-get-started-server-webservice.md)|有关设置和配置 Azure MFA 服务器 Web 服务的信息。
-[使用 Azure Multi-Factor Authentication 的高级 VPN 配置](multi-factor-authentication-advanced-vpn-configurations.md)|有关使用 LDAP 或 RADIUS 配置 Cisco ASA、Citrix Netscaler 和 Juniper/Pulse Secure VPN 设备的信息。 
+[Active Directory 联合身份验证服务](/documentation/articles/multi-factor-authentication-get-started-adfs)|有关设置使用 AD FS 的 Azure Multi-Factor Authentication 的信息。
+[RADIUS 身份验证](/documentation/articles/multi-factor-authentication-get-started-server-radius)| 有关设置和配置使用 RADIUS 的 Azure MFA 服务器的信息。
+[IIS 身份验证](/documentation/articles/multi-factor-authentication-get-started-server-iis)|有关设置和配置使用 IIS 的 Azure MFA 服务器的信息。
+[Windows 身份验证](/documentation/articles/multi-factor-authentication-get-started-server-windows)| 有关设置和配置使用 Windows 身份验证的 Azure MFA 服务器的信息。
+[LDAP 身份验证](/documentation/articles/multi-factor-authentication-get-started-server-ldap)|有关设置和配置使用 LDAP 身份验证的 Azure MFA 服务器的信息。
+[使用 RADIUS 的远程桌面网关和 Azure Multi-Factor Authentication 服务器](/documentation/articles/multi-factor-authentication-get-started-server-rdg)| 有关设置和配置使用 RADIUS 的、具有远程桌面网关的 Azure MFA 服务器的信息。
+[与 Windows Server Active Directory 同步](/documentation/articles/multi-factor-authentication-get-started-server-dirint)|有关在 Active Directory 与 Azure MFA 服务器之间设置和配置同步的信息。
+[部署 Azure Multi-Factor Authentication 服务器移动应用 Web 服务](/documentation/articles/multi-factor-authentication-get-started-server-webservice)|有关设置和配置 Azure MFA 服务器 Web 服务的信息。
+[使用 Azure Multi-Factor Authentication 的高级 VPN 配置](/documentation/articles/multi-factor-authentication-advanced-vpn-configurations)|有关使用 LDAP 或 RADIUS 配置 Cisco ASA、Citrix Netscaler 和 Juniper/Pulse Secure VPN 设备的信息。 
 
 
 ## 其他资源
 尽管本文重点介绍了 Azure MFA 的一些最佳实践，但其他一些资源也可以帮助你规划 MFA 的部署。以下列表提供了在此过程中也许能够帮到你的一些重要文章：
 
-- [Azure Multi-Factor Authentication 中的报告](multi-factor-authentication-manage-reports.md)
-- [Azure Multi-Factor Authentication 的设置体验](multi-factor-authentication-end-user-first-time.md)
-- [Azure Multi-Factor Authentication 常见问题](multi-factor-authentication-faq.md)
+- [Azure Multi-Factor Authentication 中的报告](/documentation/articles/multi-factor-authentication-manage-reports)
+- [Azure Multi-Factor Authentication 的设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time)
+- [Azure Multi-Factor Authentication 常见问题](/documentation/articles/multi-factor-authentication-faq)
 
 <!---HONumber=82-->
