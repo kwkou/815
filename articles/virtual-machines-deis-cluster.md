@@ -10,7 +10,7 @@
 <tags
    ms.service="virtual-machines"
    ms.date="06/24/2015"
-   wacn.date=""/>
+   wacn.date="08/29/2015"/>
 
 # 部署三节点 Deis 群集
 
