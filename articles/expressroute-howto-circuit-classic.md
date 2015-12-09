@@ -10,7 +10,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/13/2015"
-   wacn.date="11/02/2015"/>
+   wacn.date="11/27/2015"/>
 
 # 创建和修改 ExpressRoute 线路
 
@@ -21,7 +21,7 @@
 ## 配置先决条件
 
 - 你将需要最新版本的 Azure PowerShell 模块。可以从 [Azure 下载页](/downloads/)的 PowerShell 部分下载最新 PowerShell 模块。按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 页上的说明操作，以便获取有关如何配置计算机以使用 Azure PowerShell 模块的分步指导。 
-- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页和<!--[-->工作流<!--](/documentation/articles/expressroute-workflows)-->页。
+- 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites)页和[工作流](/documentation/articles/expressroute-workflows)页。
 
 ## 创建和预配 ExpressRoute 线路
 
@@ -203,7 +203,7 @@
 		Sku                              : Standard
 		Status                           : Enabled
 
-现已在 Microsoft 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
+现已在 Windows Azure 一侧调整好线路的大小。你必须联系连接提供商，让他们在那一边根据此更改更新配置。请注意，我们将从现在开始按照已更新的带宽选项为你计费。
 
 >[AZURE.IMPORTANT]但是，你无法在不中断的情况下降低 ExpressRoute 线路的带宽。带宽降级需要取消对 ExpressRoute 线路的预配，然后重新预配新的 ExpressRoute 线路。
 
@@ -221,7 +221,7 @@
 
 ## 后续步骤
 
-- <!--[-->配置路由<!--](/documentation/articles/expressroute-howto-routing-classic)-->
+- [配置路由](/documentation/articles/expressroute-howto-routing-classic)
 - [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic) 
 
-<!---HONumber=76-->
+<!---HONumber=82-->

@@ -10,7 +10,7 @@
 <tags
    ms.service="expressroute"
    ms.date="09/22/2015"
-   wacn.date="11/02/2015"/>
+   wacn.date="11/27/2015"/>
 
 # 配置可共存的针对 VNet 的 ExpressRoute 连接和站点到站点 VPN 连接
 
@@ -31,7 +31,7 @@
 
 ## 将站点到站点 VPN 配置为 ExpressRoute 的故障转移路径
 
-你可以将站点到站点 VPN 连接配置为 ExpressRoute 的备份。这仅适用于链接到 Azure 专用对等路径的虚拟网络。对于可通过 Azure 公共线路和 Microsoft 对等线路访问的服务，没有基于 VPN 的故障转移解决方案。ExpressRoute 线路始终是主链接。仅当 ExpressRoute 线路失败时，数据才会流经站点到站点 VPN 路径。
+你可以将站点到站点 VPN 连接配置为 ExpressRoute 的备份。这仅适用于链接到 Azure 专用对等路径的虚拟网络。对于可通过 Azure 公共线路访问的服务，没有基于 VPN 的故障转移解决方案。ExpressRoute 线路始终是主链接。仅当 ExpressRoute 线路失败时，数据才会流经站点到站点 VPN 路径。
 
 ![共存](./media/expressroute-howto-coexist-classic/scenario1.jpg)
 
@@ -49,7 +49,7 @@
 
 - **创建新的虚拟网络和共存连接：**
 	
-	如果你还没有虚拟网络，此过程将指导你创建新的虚拟网络并创建新的 ExpressRoute 和站点到站点 VPN 连接。若要进行配置，请按文章的**使用 ExpressRoute 和站点到站点连接创建新的虚拟网络**部分的步骤进行操作。
+	如果你还没有虚拟网络，此过程将指导你完成创建新的虚拟网络并创建新的 ExpressRoute 和站点到站点 VPN 连接。若要进行配置，请按文章的**使用 ExpressRoute 和站点到站点连接创建新的虚拟网络**部分的步骤进行操作。
 
 - **配置现有虚拟网络实现共存连接：**
 
@@ -204,6 +204,6 @@
 
 ## 后续步骤
 
-有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)
+有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
 
-<!---HONumber=76-->
+<!---HONumber=82-->
