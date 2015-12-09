@@ -10,7 +10,7 @@
 <tags 
 	ms.service="event-hubs" 
 	ms.date="10/06/2015" 
-	wa.date="10/22/2015"/>
+	wacn.date="10/22/2015"/>
 
 # 大规模引入遥测数据和应用程序事件
  
