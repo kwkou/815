@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 不能缓存, 不能CNAME, 回源比例大, 缓存刷新失败, CDN FAQ, CDN常见问题, CDN使用故障, CDN服务故障, CDN配置错误, 速度慢, 网站打不开, 登录异常, CNAME, CDN技术文档, CDN帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="11/27/2015"
+    wacn.date="12/09/2015"
     />
 #常见问题 - 使用故障
 
@@ -30,20 +30,6 @@ URL不能被缓存，通常有以下几个原因： 
 ### **为什么回原大于CDN流量？**
 
 一般回原流量<=CDN流量，特殊情况也可能出现回原流量大于CDN流量，比如：如果访问者发起一个请求，请求一个比较大的文件。比如100M，如果节点没有缓存的情况，CDN节点就会去源站获取，这么大文件必然需要点时间，然而此时，访问者又不继续等了于是就断开连接。这样，CDN节点还是会去把100M文件全都拿过来。此时发现访问者已经不要它了，它就没法再返回了，于是，回源的流量就有100M，而CDN流量没有。
-
-### **用了CDN后打开速度更慢**
-
-缓存命中率不高，影响缓存命中率的几个原因：
-
-- 缓存配置的问题
-     
-- Http Header导致无法缓存
-     
-- 刚添加CDN加速节点，缓存的文件还不多
-     
-- 源站类型，可缓存的内容少
-     
-- 网站访问量低，过期时间短，命中的文件少
 
 ### **回源比例比较大** 
 
