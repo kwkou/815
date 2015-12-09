@@ -1,77 +1,106 @@
 <properties 
    pageTitle="ExpressRoute 简介 | Windows Azure"
-   description="本页提供 ExpressRoute 服务的概述，包括 ExpressRoute 连接的工作方式、使用 Exchange 提供商和网络服务提供商，以及 ExpressRoute 公共对等互连、专用对等互连和 Microsoft 对等互连。"
+   description="本页提供 ExpressRoute 服务的概述，包括 ExpressRoute 连接的工作方式、使用 Exchange 提供商和网络服务提供商，以及 ExpressRoute 公共对等互连、专用对等互连。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="adinah"
-   editor="tysonn"/>
+   manager="carolz"
+   editor=""/>
 <tags 
    ms.service="expressroute"
-   ms.date="06/15/2015"
-   wacn.date="11/02/2015"/>
+   ms.date="09/22/2015"
+   wacn.date="11/27/2015"/>
 
 # ExpressRoute 技术概述
 
-使用 Windows Azure ExpressRoute，可在 Azure 数据中心与你的本地环境或第三方托管设施环境中的基础结构之间创建专用连接。使用 ExpressRoute，你可以通过 ExpressRoute 合作伙伴的网络设施中建立与 Azure 的连接。
- 
-与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的安全性、更多的可靠性、更快的速度和更少的延迟。在某些情况下，使用 ExpressRoute 连接在本地网络和 Azure 之间传输数据还可以产生显著的成本效益。如果你已创建从本地网络到 Azure 的跨界连接，则可以在不改动虚拟网络的情况下迁移到 ExpressRoute 连接。
-
-有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
-
-## ExpressRoute 连接的工作原理
-
-若要将本地网络连接到Azure云服务，你必须通过连接提供商订购并启用两条专用线路。
-
-## 连接提供商
-
-接连提供商示意图如下：
-
-![](./media/expressroute-introduction/expressroute-connect-provider.png)
-
-| |**连接提供商**|
-|---|---|
-|**典型连接模型**| 点对点以太网链接|
-|**支持的带宽**|200 Mbps、500 Mbps、1 Gbps 和 10 Gbps|
-|**路由**|直接使用客户边缘路由器建立 BGP 会话| 
-
-### 连接提供商
-我们与中国电信合作提供点到点连接服务，以帮助在 Azure 与客户本地之间建立连接。我们提供从 200 Mbps 到 10 Gbps（200 Mbps、500 Mbps、1 Gbps 和 10 Gbps）的线路带宽。
-
-如果你想要通过连接提供商建立第 3 层直接连接，可以采用以下方法：
-
-- 你可以与连接提供商（例如 中国电信）合作，以便在数据中心与 Azure 之间设置以太网线路。 
-
-我们需要你建立冗余连接，以满足我们的 SLA 要求。我们不支持直接连接到Azure边缘路由器。专用线路始终应通过连接提供商启用。尽管这样会在 Azure 与你的网络之间建立第 2 层连接，但我们不支持网络的 2 层扩展。你必须在边缘路由器与 Azure 边缘路由器之间设置冗余路由会话，以建立第 3 层连接。
-
-若要了解有关配置的详细信息并查看实际示例，你可以遵循以下分步指南操作：[通过 Exchange 提供商配置 ExpressRoute 连接](/documentation/articles/expressroute-configuring-exps)。
-
-## ExpressRoute 对等互连
-下图提供了你的网络与 Azure 之间的连接的逻辑表示形式。你必须通过连接提供商订购两条*专用线路*，才能将你的网络连接到 Azure。专用线路表示通过连接提供商在你的网络与 Azure 之间建立的逻辑连接。你可以订购许多的专用线路，每个线路可部署在相同或不同的区域，并可以通过不同的连接提供商连接到你的网络环境。
+Windows Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Windows Azure 云。使用 ExpressRoute 可与 Windows Azure云服务建立连接。可以从任意位置之间的 (IP VPN) 网络、点到点以太网或在共置设施上通过连接服务提供商的虚拟交叉连接来建立这种连接。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
 
 ![](./media/expressroute-introduction/expressroute-basic.png)
 
-一条专用线路具有两个关联的路由域 - 公共域、专用域。在一组路由器上，每个路由域采用相同的配置（主动-主动，或负载分担）以实现高可用性。
+**主要优势包括：**
 
-### 专有对等互连
-可以通过专用对等域来连接虚拟网络内部署的 Azure 计算服务（即虚拟机 (IaaS) 和云服务 (PaaS)）。专用对等域被视为进入 Azure 的核心网络的受信任扩展。可以在核心网络和 Azure 虚拟网络 (VNet) 之间设置双向连接。这样，将便可以使用专用 IP 地址直接连接到虚拟机和云服务。
+- 通过连接服务提供商在本地网络与 Windows Azure 云之间建立第 3 层连接。可以从任意位置之间的 (IPVPN) 网络、点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
+- 跨地缘政治区域中的所有区域连接到 Windows Azure 云服务。
+- 通过 ExpressRoute 高级版附加组件从全球连接到所有区域的 Windows Azure 服务。
+- 通过行业标准协议 (BGP) 在你的网络与 Windows Azure 之间进行动态路由。
+- 在每个对等位置提供内置冗余以提高可靠性。
+- 连接运行时间 [SLA](/support/legal/sla/)。
 
-可以将多个虚拟网络连接到专用对等域。有关限制和局限性的信息请查看[常见问题页](/documentation/articles/expressroute-faqs)。
-  
+有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)。
 
-### 公共对等互连
-Azure 存储空间、SQL Database 和网站等服务是使用公共 IP 地址提供的。你可以通过公共对等路由域接到公共 IP 地址（包括云服务的 VIP）上托管的服务。可以将公共对等域连接到 Extranet，并从客户网络连接到公共 IP 地址上的所有 Azure 服务，而无需通过 Internet 连接。始终会从客户网络发起到 Windows Azure 服务的连接。Windows Azure 服务无法通过此路由域发起到你网络的连接。启用公共对等互连后，你将能够连接到所有 Azure 服务。我们不允许选择要将路由播发到的服务。可以在 [Windows Azure 数据中心 IP 范围](http://www.microsoft.com/download/details.aspx?id=41653)页上查看我们通过此对等互连播发给你的前缀列表。你可以在网络中定义自定义路由筛选器，以只使用所需的路由。
+## 如何使用 ExpressRoute 将我的网络连接到 Windows Azure？
 
-有关通过公共对等路由域支持的服务的详细信息，请查看[常见问题页](/documentation/articles/expressroute-faqs)。
+可以通过以下方法在本地网络与 Windows Azure 云之间建立连接。
 
-你可以选择启用一个或多个路由域作为专用线路的一部分。建议的配置是将专用对等域直接连接到Azure虚拟网络，并将公共对等链接连接到 Extranet。
+**点到点以太网连接。** 你可以通过点到点以太网链路，将本地数据中心/办公室连接到 Windows Azure 云。点到点以太网提供商可以在你的站点与 Windows Azure 云之间提供第 2 层连接。
+
+![](./media/expressroute-introduction/expressroute-connectivitymodels.png)
+
+
+## ExpressRoute 功能
+
+ExpressRoute 支持以下特性和功能。
+
+### 第 3 层连接
+
+Windows Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中的实例和 Windows Azure 公共地址之间交换路由。我们根据不同的流量配置文件来与网络建立多个 BGP 会话。有关详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)一文。
+
+### 冗余
+
+每个 ExpressRoute 线路有两道连接，用于从连接服务提供商/你的网络边缘连接到两个 Windows Azure 企业边缘路由器 (MSEE)。Windows Azure 要求从连接服务提供商/你的一端建立双重 BGP 连接 – 各自连接到每个 MSEE。你可以选择不要在你的一端部署冗余设备/以太网路线。但是，连接服务提供商会使用冗余设备，确保以冗余方式将你的连接移交给 Windows Azure。冗余的第 3 层连接配置是 Windows Azure [SLA](/support/legal/sla/) 生效的条件。
+
+### 与 Windows Azure 云服务建立连接
+
+通过 ExpressRoute 连接可访问以下服务。
+
+- Windows Azure 服务
+
  
-如果你选择使用所有两个对等会话，必须使用两对 BGP 会话（每一对用于一个对等类型）。BGP 会话提供了高可用的链接，你则需要负责配置和管理路由。可以通过查看设置 ExpressRoute 的工作流来了解详细信息
+你可以访问 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页，以获取通过 ExpressRoute 支持的服务的详细列表。
 
+### 与地缘政治区域中的所有区域建立连接
+
+可以在我们的某个[对等位置](/documentation/articles/expressroute-locations)连接到 Windows Azure，然后访问该地缘政治区域中的所有区域。
+
+例如，如果你在北京通过 ExpressRoute 连接到 Windows Azure，则就能够访问在上海托管的所有 Windows Azure 云服务。
+
+### 支持的带宽选项
+
+你可以购买各种带宽的 ExpressRoute 线路。支持的带宽列表如下。请务必咨询连接服务提供商，以获取他们支持的带宽列表。
+
+- 50 Mbps
+- 100 Mbps
+- 200 Mbps
+- 500 Mbps
+- 1 Gbps
+- 2 Gbps
+- 5 Gbps
+- 10 Gbps
+
+### 动态调整带宽
+
+你可以在不中断连接的情况下增大 ExpressRoute 线路带宽（尽最大努力）。
+
+### 弹性计费模式
+
+你可以选择最适合自己的计费模式。请从以下计费模式中选择。有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs)页。
+
+- **无限制数据**。ExpressRoute 线路按月计费，所有入站和出站数据传输不收取费用。 
+- **计量数据**。ExpressRoute 线路按月计费。所有入站数据传输免费。出站数据传输按每 GB 数据传输计费。数据传输费率根据区域不同而异。
+- **ExpressRoute 高级版附加组件**。ExpressRoute 高级版是 ExpressRoute 线路上的附加组件。ExpressRoute 高级版附加组件提供以下功能： 
+	- 提高 Azure 公共和 Azure 专用对等互连的路由限制，从4000 路由提升至 10,000 路由。
+	- 服务的全国连接。在任何区域创建的 ExpressRoute 线路都将能够访问位于全国其他区域的资源。例如，创建于北京的虚拟网络可以通过在上海设置的 ExpressRoute 线路进行访问。
+	- 增加了每个 ExpressRoute 线路的 VNet 链接数量，从 10 增加至更大的限制，具体取决于线路的带宽。
 
 ## 后续步骤
 
-- 查找连接提供商。请参阅 [ExpressRoute 提供商和位置](/documentation/articles/expressroute-locations)。
-- 配置 ExpressRoute 连接。有关说明，请参阅[通过 Exchange 提供商配置 ExpressRoute 连接](/documentation/articles/expressroute-configuring-exps)。 
+- 了解 ExpressRoute 连接和路由域。请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)。
+- 查找服务提供商。请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations)。
+- 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites)。
+- 请参阅[路由](/documentation/articles/expressroute-routing)、[NAT](/documentation/articles/expressroute-nat) 和 [QoS](/documentation/articles/expressroute-qos) 的要求。
+- 配置 ExpressRoute 连接。
+	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)
+	- [配置路由](/documentation/articles/expressroute-howto-routing-classic)
+	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic)
 
-<!---HONumber=69-->
+<!---HONumber=82-->
