@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Windows Azure CDN FAQ - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Windows Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="12/01/2015"
+    wacn.date="12/09/2015"
     />
 #常见问题 - 咨询
 
@@ -134,7 +134,25 @@ CDN（内容分发网络）说白了就是一组网络内容缓存节点，和�
 如果您有多个订阅，如图所示，可以点击管理门户网站右上角订阅ID处的下拉三角，选择恰当的订阅ID。
     
 ![FAQ](./media/cdn-doc/FAQ.png)
+
+### **Azure账号过期，如何将CDN迁到另一个Azure账号？**
+
+目前在订阅号之间的域名自动迁移还不支持。客户需要手工迁移。先从过期的订阅删除已有域名，然后在新的订阅中重新创建，并且会对域名重新进行审核。
     
+### **影响缓存命中率的因素有哪些？**
+
+影响缓存命中率的因素有以下几个：
+
+- 缓存配置，内容预取的设置
+
+- Http Header导致无法缓存 
+
+- 刚添加，缓存的文件还不多 
+
+- 源站类型，可缓存的内容少 
+
+- 网站访问量低，过期时间短，命中的文件少 
+
 
 ##**价格咨询**<a id="step2"></a>
 
