@@ -60,11 +60,11 @@
 
 将脚本另存为文本文件，例如 *lamp\_install.sh*，然后将其上载到 Azure 存储空间。你可以使用 Azure CLI 轻松执行此操作。以下示例将文件上载到名为“scripts”的存储容器。注意：如果该容器不存在，你需要先创建它。
 
-    azure storage blob upload -a <yourStorageAccountName> -k <yourStorageKey> --container scripts ./install_lamp.sh
+    azure storage blob upload -a <yourStorageAccountName> -k <yourStorageKey> --container scripts ./lamp_install.sh
 
 还要创建一个描述如何从 Azure 存储下载脚本的 JSON 文件。将该文件另存为 *public\_config.json*（使用你的存储帐户的名称替换“mystorage”）：
 
-    {"fileUris":["https://mystorage.blob.core.chinacloudapi.cn/scripts/install_lamp.sh"], "commandToExecute":"sh install_lamp.sh" }
+    {"fileUris":["https://mystorage.blob.core.chinacloudapi.cn/scripts/lamp_install.sh"], "commandToExecute":"sudo sh install_lamp.sh" }
 
 
 ## 部署扩展

@@ -23,7 +23,6 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 
 > [AZURE.NOTE]如果你已安装 Azure CLI，可将其与你的 Azure 资源连接。有关详细信息，请参阅[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/#configure)。
 
-<a id="install">
 ## 如何安装 Azure CLI
 
 可通过多种方式来安装 Azure CLI。
@@ -133,7 +132,6 @@ Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。�
 你现在已准备就绪！ 接下来你可以[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)并开始使用 **azure** 命令。
 
 
-<a id="additional-resources">
 ## 其他资源
 
 * [将 Azure CLI 与资源管理命令配合使用][cliarm]
