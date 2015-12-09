@@ -117,8 +117,6 @@ Azure CLI 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
 
 >[AZURE.NOTE]资源管理器模式与 Azure 服务管理模式互斥。即在一种模式下创建的资源不能从另一种模式进行管理。
 
-有关通过 Azure CLI 使用资源管理器的详细信息，请参阅 [结合使用 Azure CLI 和资源管理器][/documentation/articles/cliarm]。
-
 ### 使用 Azure 服务管理模式下的服务
 
 借助 Azure CLI，您可以轻松地管理 Azure 服务。在这个示例中，您将了解如何使用 Azure CLI 管理 Azure 网站。
@@ -127,7 +125,7 @@ Azure CLI 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
 
 		azure site create mywebsite
 
-	系统将提示您指定将在其中创建网站的区域。选择在地理上靠近您的区域。完成此命令后，将在 http://mywebsite.azurewebsites.net （将 **mywebsite** 替换为您指定的名称）上提供网站。
+	系统将提示您指定将在其中创建网站的区域。选择在地理上靠近您的区域。完成此命令后，将在 http://mywebsite.chinacloudsites.cn （将 **mywebsite** 替换为您指定的名称）上提供网站。
 
 	> [AZURE.NOTE]如果您使用 Git 进行项目源代码管理，则可以指定 `--git` 参数以便在 Azure 上为此网站创建一个 Git 存储库。这还将在该命令从其运行的目录中创建一个 Git 存储库，如果该存储库尚不存在。它还将创建一个名为 __azure__ 的 Git remote，用于通过 `git push azure master` 命令将部署推送到 Azure 网站。
 
@@ -244,7 +242,6 @@ Azure CLI 默认使用 Azure 服务管理模式。要切换到 Resource Manager 
 
 如果您在撰写依赖于退出状态的脚本，请确认您在使用的 Azure CLI 命令不会提示用户输入。
 
-<a id="additional-resources">
 
 ## 其他资源
 
