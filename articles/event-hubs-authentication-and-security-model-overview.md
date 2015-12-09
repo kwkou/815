@@ -9,7 +9,7 @@
 <tags 
    ms.service="event-hubs"
    ms.date="10/07/2015"
-   wa.date="10/22/2015" />
+   wacn.date="10/22/2015" />
 
 # 事件中心身份验证和安全模型概述
 

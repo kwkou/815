@@ -9,7 +9,7 @@
 <tags 
    ms.service="event-hubs"
    ms.date="09/30/2015"
-   wa.date="10/22/2015" />
+   wacn.date="10/22/2015" />
 
 # Azure 事件中心概述
 

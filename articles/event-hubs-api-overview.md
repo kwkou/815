@@ -9,7 +9,7 @@
 <tags 
    ms.service="event-hubs"
    ms.date="10/14/2015"
-   wa.date="11/02/2015" />
+   wacn.date="11/02/2015" />
 
 # 事件中心 API 概述
 
