@@ -2,9 +2,6 @@
 1. 单击“Azure 门户”>“移动服务”> 你的移动服务 >“仪表板”，并记下“移动服务 URL”值。
 
 2. 使用一个或多个以下身份验证提供者注册你的应用程序：
-   * [Google](/documentation/articles/mobile-services-how-to-register-google-authentication)
-   * [Facebook](/documentation/articles/mobile-services-how-to-register-facebook-authentication)
-   * [Twitter](/documentation/articles/mobile-services-how-to-register-twitter-authentication)
    * [Microsoft](/documentation/articles/mobile-services-how-to-register-microsoft-authentication)
    * [Azure Active Directory](/documentation/articles/mobile-services-how-to-register-active-directory-authentication)。 
    
