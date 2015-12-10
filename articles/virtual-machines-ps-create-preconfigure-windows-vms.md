@@ -18,9 +18,6 @@
 > [AZURE.SELECTOR]
 - [Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
-<br>
-
-
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
 
 
@@ -33,7 +30,7 @@
 
 ## 步骤 1：安装 Azure PowerShell
 
-如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
+如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
 
 ## 步骤 2：设置订阅和存储帐户
 
@@ -94,7 +91,7 @@
 
 有关 D、DS 或 G 系列虚拟机的 InstanceSize 值，请参阅 [Azure 的虚拟机和云服务大小](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx)。
 
-（可选）为独立 Windows 计算机指定本地管理员帐户和密码。
+为独立 Windows 计算机指定本地管理员帐户和密码。
 
 	$cred=Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
