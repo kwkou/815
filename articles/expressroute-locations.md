@@ -36,8 +36,6 @@
 | **北京电信** | 支持 | 不支持 | 北京 |
 | **上海电信** | 支持 | 不支持 | 上海 |
 
-有关设置连接的步骤，请参阅[配置 Expressroute 连接](/documentation/articles/expressroute-configuring-exps)。
-
 ## 通过未列出的连接提供商建立连接 
 
 如果前面部分中未列出你的连接服务提供商，你仍可以建立连接。

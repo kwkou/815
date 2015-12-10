@@ -10,7 +10,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/02/2015"
-   wacn.date=""/>
+   wacn.date="11/27/2015"/>
 
 # 创建和修改 ExpressRoute 路由配置
 
@@ -27,7 +27,7 @@
 
 >[AZURE.IMPORTANT]这些说明只适用于由提供第 2 层连接服务的服务提供商所创建的线路。如果你的服务提供商提供第 3 层托管服务（通常是 IPVPN，如 MPLS），连接服务提供商将为你设置和管理路由。在此情况下，你无法创建或管理对等互连。
 
-你可以为 ExpressRoute 线路配置一到三个对等互连（Azure 专用、Azure 公共和 Microsoft）。可以按照所选的任意顺序配置对等互连。但是，你必须确保一次只完成一个对等互连的配置。
+你可以为 ExpressRoute 线路配置一到两个对等互连（Azure 专用和Azure 公共）。可以按照所选的任意顺序配置对等互连。但是，你必须确保一次只完成一个对等互连的配置。
 
 ## Azure 专用对等互连
 

@@ -140,7 +140,7 @@
 
 7. **创建路由配置。**
 	
-	如需分步说明，请参阅 <!--[-->ExpressRoute 线路路由配置（创建和修改对等线路）<!--](/documentation/articles/expressroute-howto-routing-classic)-->页。
+	如需分步说明，请参阅 [ExpressRoute 线路路由配置（创建和修改对等线路）](/documentation/articles/expressroute-howto-routing-classic)页。
 
 8. **将 VNet 链接到 ExpressRoute 线路。**
 
