@@ -10,19 +10,44 @@
 <tags 
 	ms.service="multi-factor-authentication" 
 	ms.date="10/15/2015" 
-	wacn.date="11/12/2015"/>
+	wacn.date="12/10/2015"/>
 
 # 将 Azure Multi-Factor Authentication 与 Azure AD 帐户配合使用时的安全最佳实践
 
 在需要增强身份验证过程时，Multi-Factor Authentication 是大多数组织的首选。Azure Multi-Factor Authentication (MFA) 能使公司符合其安全和法规遵从要求，同时为用户提供简单的登录体验。本文介绍当你计划采用 Azure MFA 时应该考虑的一些最佳实践。
 
 ## 云中 Azure Multi-Factor Authentication 的最佳实践
-为了对所有用户提供 Multi-Factor Authentication 并利用 Azure Multi-factor Authentication 的扩展功能，你需要为用户启用 Azure Multi-Factor Authentication。
+为了对所有用户提供 Multi-Factor Authentication 并利用 Azure Multi-factor Authentication 的扩展功能，你需要为所有用户启用 Azure Multi-Factor Authentication。可以使用下列组件之一来实现此目的：
 
+- Azure AD Premium 或 Enterprise Mobility Suite 
+- Multi-Factor Auth 提供程序
+
+### Azure AD Premium/Enterprise Mobility Suite
+
+![EMS](./media/multi-factor-authentication-security-best-practices/ems.png)
+
+通过 Azure AD Premium 或 Enterprise Mobility Suite 在云中采用 Azure MFA 的第一个建议步骤是向用户分配许可证。Azure Multi-Factor Authentication 已随附在这些套件中，因此组织无需使用其他任何组件即可将 Multi-Factor Authentication 功能扩展到所有用户。
+ 
+设置 Multi-Factor Authentication 时，请注意以下事项：
+
+- 不需要创建 Multi-Factor Auth 提供程序。Azure AD Premium 和 Enterprise Mobility Suite 已随附在 Azure Multi-Factor Authentication 中。如果你创建 Auth 提供程序，可能需要支付双倍的费用。
+- 仅当要将本地 Active Directory 环境与 Azure AD 目录同步时，才需要 Azure AD Connect。如果你只使用不与 Active Directory 的本地实例同步的 Azure AD 目录，则不需要 Azure AD Connect。
+
+
+### Multi-Factor Auth 提供程序
+
+![Multi-Factor Auth 提供程序](./media/multi-factor-authentication-security-best-practices/authprovider.png)
+
+如果你没有 Azure AD Premium 或 Enterprise Mobility Suite，则在云中采用 Azure MFA 的第一个建议步骤是创建 MFA Auth 提供程序。尽管 MFA 默认可供拥有 Azure Active Directory 的全局管理员使用，但为组织部署 MFA 时，需要将 Multi-Factor Authentication 功能扩展到所有用户，而完成此操作需要 Multi-Factor Auth 提供程序。选择 Auth 提供程序时，需要选择一个目录并注意以下事项：
+
+- 无需 Azure AD 目录即可创建 Multi-Factor Auth 提供程序。 
+- 如果你想要将 Multi-Factor Authentication扩展到你的所有用户和/或希望全局管理员能够利用管理门户、自定义问候语和报告等功能，则需要将 Multi-Factor Authentication 提供程序与 Azure AD 目录关联。
+- 仅当要将本地 Active Directory 环境与 Azure AD 目录同步时，才需要 DirSync 或 AAD 同步。如果你只使用不与 Active Directory 的本地实例同步的 Azure AD 目录，则不需要 DirSync 或 AAD 同步。
+- 如果你拥有 Azure AD Premium 或企业移动套件，则不需要创建 Multi-Factor Auth 提供程序。你只需将许可证分配给用户，然后就可以开始为用户启用 MFA。
+- 请确保为你的企业选择适当的使用模型（基于身份验证或基于启用的用户），选择使用模型之后，无法对其更改。
 
 ### 用户帐户
-为用户启用 MFA 时，用户帐户可以处于三种核心状态之一：已禁用、已启用或强制。 
-使用以下指导原则来确保为部署使用最适当的选项：
+为用户启用 MFA 时，用户帐户可以处于三种核心状态之一：已禁用、已启用或强制。使用以下指导原则来确保为部署使用最适当的选项：
 
 - 当用户状态设置为已禁用时，该用户将不使用 Multi-Factor Authentication。这是默认状态。
 - 当用户状态设置为已启用时，表示该用户已启用但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。此设置不会影响非浏览器应用。所有应用将继续工作，直到注册过程完成。
@@ -31,8 +56,7 @@
 
 ### 可支持性
 
-由于大多数用户习惯只使用密码进行身份验证，因此你的公司必须让所有用户了解此过程。如果用户熟悉该过程，则他们就不会在出现 MFA 相关的小问题时经常呼叫技术支持。 
-但是，在某些情况下，需要暂时禁用 MFA。使用以下指导原则了解如何处理这种情况：
+由于大多数用户习惯只使用密码进行身份验证，因此你的公司必须让所有用户了解此过程。如果用户熟悉该过程，则他们就不会在出现 MFA 相关的小问题时经常呼叫技术支持。但是，在某些情况下，需要暂时禁用 MFA。使用以下指导原则了解如何处理这种情况：
 
 - 确保你的技术支持人员经过培训，可以处理移动应用或电话未收到通知或来电，以及由于上述原因使用户无法登录的情况。他们可以启用“一次性跳过”选项，让用户通过“跳过”Multi-Factor Authentication 来进行身份验证，不过只能跳过一次。跳过是暂时性的，将在指定的秒数后过期。 
 - 如果需要，可以使用 Azure MFA 中的受信任 IP 功能。此功能允许托管或联合租户的管理员跳过对从公司本地 Intranet 登录的用户进行的 Multi-Factor Authentication。这些功能适用于拥有 Azure AD Premium、Enterprise Mobility Suite 或 Azure Multi-Factor Authentication 许可证的 Azure AD 租户。
@@ -58,14 +82,6 @@ Azure Multi-Factor Authentication 服务器可用于保护 Azure AD 帐户所访
 - 需要 IIS 6 或更高版本
 - 必须安装并注册 ASP.NET v2.0.507207
 - 此服务器可以部署在外围网络中。
-- 如果此服务器与 Azure 之间的通信实施防火墙过滤，则需要打开 TCP 出站端口 443，以允许使用以下 URL 通信：
-	- https://pfd.phonefactor.net 
-	- https://pfd2.phonefactor.net 
-	- https://css.phonefactor.net
-- 如果端口 443 上限制了出站防火墙，则需要允许以下 IP 地址范围的出站流量：
-	- 134\.170.116.0/25
-	- 134\.170.165.0/25
-	- 70\.37.154.128/25
 
 
 
