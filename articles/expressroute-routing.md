@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/06/2015"
-   wacn.date=""/>
+   wacn.date="11/27/2015"/>
 
 
 # ExpressRoute 路由要求  

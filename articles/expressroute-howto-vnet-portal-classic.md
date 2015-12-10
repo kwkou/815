@@ -60,7 +60,7 @@
 
 ## 后续步骤
 
-- 如果要将虚拟机添加到虚拟网络，请参阅[虚拟机学习路径](https://azure.microsoft.com/documentation/virtual-machines/)。
+- 如果要将虚拟机添加到虚拟网络，请参阅[虚拟机学习路径](/documentation/services/virtual-machines/)。
 - 如果要了解有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction)。
 
 

@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/12/2015"
-   wacn.date=""/>
+   wacn.date="11/27/2015"/>
 
 # ExpressRoute 线路预配工作流和线路状态
 本页从较高层面引导你完成服务预配和路由配置工作流。
@@ -31,7 +31,7 @@
 
 	![](./media/expressroute-workflows/expressroute-routing-workflow.png)
 
-5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnets-classic)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
+5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnet-classic)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
 
 
 ## ExpressRoute 线路预配状态

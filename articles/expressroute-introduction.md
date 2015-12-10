@@ -97,7 +97,7 @@ Windows Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azu
 - 了解 ExpressRoute 连接和路由域。请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings)。
 - 查找服务提供商。请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations)。
 - 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites)。
-- 请参阅[路由](/documentation/articles/expressroute-routing)、[NAT](/documentation/articles/expressroute-nat) 和 [QoS](/documentation/articles/expressroute-qos) 的要求。
+- 请参阅[路由](/documentation/articles/expressroute-routing)的要求。
 - 配置 ExpressRoute 连接。
 	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic)
 	- [配置路由](/documentation/articles/expressroute-howto-routing-classic)

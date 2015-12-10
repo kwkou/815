@@ -105,11 +105,6 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 - 你必须为私有对等互连配置 BGP（如果你使用的是连接提供商）。
 - 你必须将虚拟网络连接到 ExpressRoute 线路。
 
-以下教程将帮助你：
-
-- [通过 Exchange 提供商配置 ExpressRoute 连接](/documentation/articles/expressroute-configuring-exps)
-- [为 ExpressRoute 配置虚拟网络和网关](/documentation/articles/expressroute-configuring-vnet-gateway)
-
 ### 我的 ExpressRoute 线路是否存在连接界限？
 是的。[ExpressRoute 合作伙伴和位置](/documentation/articles/expressroute-locations)页概述了 ExpressRoute 线路的连接界限。一条 ExpressRoute 线路的连接范围限制为单个地缘政治区域。可以通过启用 ExpressRoute 高级功能，将连接扩展为跨服务区域。
 
@@ -119,7 +114,7 @@ ExpressRoute 目前支持大多数 Windows Azure 服务。
 ### 我有多个包含虚拟网络的 Azure 订阅。能否将不同订阅中的虚拟网络连接到单个 ExpressRoute 线路？
 是的。最多可以授权其他 10 个 Azure 订阅使用单条 ExpressRoute 线路。可以通过启用 ExpressRoute 高级功能来提高此限制。
 
-有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-share-circuit)。
+<!--有关详细信息，请参阅[在多个订阅之间共享 ExpressRoute 线路](/documentation/articles/expressroute-share-circuit)。-->
 
 ### 连接到同一线路的虚拟网络相互隔离吗？
 不能。连接到同一 ExpressRoute 线路的所有虚拟网络都属于同一路由域，从路由角度看不是相互隔离的。如果需要路由隔离，则需要创建单独的 ExpressRoute 线路。

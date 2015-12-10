@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.date="10/07/2015"
-   wacn.date=""/>
+   wacn.date="11/27/2015"/>
 
 # 用于设置和管理路由的路由器配置示例
 
