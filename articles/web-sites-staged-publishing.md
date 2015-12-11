@@ -11,7 +11,7 @@
 <tags
 	ms.service="app-service"
 	ms.date="09/21/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/11/2015"/>
 
 # 为 Azure 网站中的网站设置过渡环境
 <a name="Overview"></a>

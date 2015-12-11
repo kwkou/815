@@ -10,7 +10,7 @@
 <tags 
 	ms.service="app-service" 
 	ms.date="09/16/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="12/11/2015"/>
 
 # 在 Azure 网站中缩放网站#
 

@@ -10,7 +10,7 @@
 <tags
 	ms.service="app-service-web"
 	ms.date="08/14/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/11/2015"/>
 
 #如何部署 Azure 网站
 
