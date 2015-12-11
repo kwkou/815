@@ -24,7 +24,7 @@
 
 
 
-以下是完成的应用程序的屏幕快照
+以下是完成的应用程序的屏幕快照：
 	
 ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 

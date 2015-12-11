@@ -94,7 +94,7 @@
 如果需要，你可以选择重新启用线路，或运行 PowerShell cmdlet 删除线路。**重要说明：**Windows Azure 将持续收取线路费用，直到你运行 PowerShell cmdlet 来取消预配线路为止。
 
 
-## 路由会话配置状态
+## <a name="routing-session-configuration-state"></a>路由会话配置状态
 
 BGP 预配状态可让你知道 Windows Azure 边缘是否已启用 BGP 会话。必须处于已启用状态才能使用对等互连。
 
