@@ -21,16 +21,14 @@
 
 如果你尚未设置源代码管理，最简单的方法是从使用云托管的源代码管理系统开始。
 
-* [Visual Studio Online](#vso)
 * [使用 Git 的存储库网站](#git)
 * [使用 Mercurial 的存储库网站](#mercurial)
-* [Dropbox](#dropbox)
 
 ###<a name="ide"></a>从 IDE 部署
 
 [Visual Studio](http://www.visualstudio.com/) 和 [WebMatrix](http://www.microsoft.com/web/webmatrix/) 是可用于 Web 开发的 Microsoft IDE（集成开发环境）。两者都提供内置功能，使你可以轻松部署到网站。两者都可以使用 [Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)来自动执行其他与部署相关的任务，例如数据库部署和连接字符串的更改。两者也都可以通过使用 [FTP 或 FTPS](http://zh.wikipedia.org/wiki/File_Transfer_Protocol) 进行部署。
 
-WebMatrix 安装快速且易于学习，但 Visual Studio 提供了更多用于处理网站的功能。你可以从 Visual Studio IDE 中创建、停止、启动和删除网站、在实时创建日志时查看日志、进行远程调试等。Visual Studio 还可以与源代码管理系统（如 [Visual Studio Online](#vso)、[Team Foundation Server](#tfs) 和 [Git 存储库](#git)）集成。
+WebMatrix 安装快速且易于学习，但 Visual Studio 提供了更多用于处理网站的功能。你可以从 Visual Studio IDE 中创建、停止、启动和删除网站、在实时创建日志时查看日志、进行远程调试等。Visual Studio 还可以与源代码管理系统（如 [Team Foundation Server](#tfs) 和 [Git 存储库](#git)）集成。
 
 * [Visual Studio](#vs)
 * [WebMatrix](#webmatrix)
@@ -67,15 +65,6 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 [Octopus 部署](http://en.wikipedia.org/wiki/Octopus_Deploy)可以与网站一同使用。有关更多信息，请参阅[将 ASP.NET网站部署到 Azure 网站](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites)。
 
 
-##<a name="vso"></a>Visual Studio Online
-
-[Visual Studio Online](http://www.visualstudio.com/)（以前称为 Team Foundation Service）是 Microsoft 针对源代码管理和团队协作的基于云的解决方案。该服务对最多 5 个开发人员的团队免费。你可以向 Azure 网站持续交付，并且你的存储库可以使用 [Git 或 TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs)。
-
-有关详细信息，请参阅以下资源：
-
-* [使用 Visual Studio Online 和 TFVC 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso)。分步教程演示如何使用 TFVC 设置从 Visual Studio Online 的持续交付。TFVC 是集中式源代码管理选项，与分布式源代码管理选项 Git 截然相反。
-* [使用 Visual Studio Online 和 Git 向 Azure 持续传送项目](/documentation/articles/cloud-services-continuous-delivery-use-vso-git)。与上一个教程类似，但使用 Git 而不是 TFVC。
-
 ##<a name="git"></a>使用 Git 的存储库网站
 
 [Git](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) 是一种流行的分布式源代码管理系统。Azure 具有的内置功能可轻松实现从流行的基于 Web 的存储库网站（存储 Git 存储库，包括 [GitHub](http://www.github.com)、[CodePlex](http://www.codeplex.com/) 和 [BitBucket](https://bitbucket.org/)）自动部署到网站。使用 Git 进行部署的一个优点是比较容易回滚到以前的部署（一旦有必要）。
@@ -83,8 +72,8 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 有关详细信息，请参阅以下资源：
 
 * [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
-* [部署到 Azure 网站的 Azure 按钮](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)。有关用于触发从 Git 存储库的部署方法的博客。
-* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
+* [部署到 Azure 网站的 Azure 按钮](http://azure.microsoft.com/zh-cn/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/)。有关用于触发从 Git 存储库的部署方法的博客。
+* [Git 和 Mercurial 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
 
 ##<a name="mercurial"></a>使用 Mercurial 的存储库网站
 
@@ -93,17 +82,7 @@ Azure 通过提供 REST 管理 API 和几个可使该 API 更易使用的框架�
 有关如何使用 Mercurial 进行部署的信息，请参阅以下资源：
 
 * [从源控件发布到 Azure 网站](/documentation/articles/web-sites-publish-source-control/)。尽管本教程演示的是如何发布 Git 存储库，但 CodePlex 或 BitBucket 中托管的 Mercurial 存储库的发布过程与此类似。
-* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
-
-<!--
-###<a name="dropbox"></a>DropBox
-
-[DropBox](https://www.dropbox.com/) is not a source control system, but if you store your source code in DropBox you can automate deployment from your DropBox account.
-
-* [Deploy To Windows Azure Using Dropbox](http://blogs.msdn.com/b/windowsazure/archive/2013/03/19/new-deploy-to-windows-azure-web-sites-from-dropbox.aspx). How to use the Azure Management Portal to set up DropBox deployment.
-* [DropBox and Azure  Websites](http://channel9.msdn.com/Series/Windows-Azure-Web-Sites-Tutorials/Dropbox-Deployment-to-Windows-Azure-Web-Sites). This video walks through the process of connecting a DropBox folder to an Azure  Website, and shows how quickly you can get a  Website up and running or maintain it using simple drag-and-drop deployment.
-* [Azure Forum for Git, Mercurial, and DropBox](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit).
--->
+* [Git 和 Mercurial 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
 
 ##<a name="vs"></a>Visual Studio
 
@@ -137,7 +116,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 * [从源代码管理发布到具有 Git 的 Azure 网站](/documentation/articles/web-sites-publish-source-control)。如何使用 Git 直接从本地计算机发布到 Azure 网站（在 Azure 中，此发布方法称为“本地 Git”）。还将演示如何启用从 GitHub、CodePlex 或 BitBucket 进行 Git 存储库的连续部署。
 * [从任何 git/hg 存储库发布到 Azure 网站](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。该博客介绍了 Azure 网站中的“外部存储库”功能。
-* [Git、Mercurial 和 DropBox 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
+* [Git 和 Mercurial 的 Azure 论坛](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchszh-cn/home?forum=azuregit)。
 * [将两个网站从一个 Git 存储库部署到 Azure](http://www.hanselman.com/blog/DeployingTWOWebsitesToWindowsAzureFromOneGitRepository.aspx)。Scott Hanselman 的博客文章。
 
 
@@ -156,7 +135,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 有关详细信息，请参阅以下资源：
 
-* [使用 FTP 批处理脚本](http://support.microsoft.com/kb/96269)。
+* [使用 FTP 批处理脚本](http://support.microsoft.com/zh-cn/kb/96269)。
 
 ##<a name="powershell"></a>Windows PowerShell
 
@@ -185,7 +164,7 @@ Team Foundation Server 是 Microsoft 针对源代码管理和团队协作的本�
 
 ##<a name="webdeploy"></a>Web 部署命令行
 
-[Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)是用于部署到 IIS 的 Microsoft 软件，它不仅提供智能文件同步功能，还可以执行或协调许多其他与部署相关的、使用 FTP 时无法自动执行的任务。例如，Web 部署可以部署新的数据库或数据库更新以及你的网站。Web 部署还可以尽量减少更新现有站点所需的时间，因为它可以智能地仅复制更改过的文件。Microsoft WebMatrix、Visual Studio、Visual Studio Online 和 Team Foundation Server 都支持内置 Web 部署，但你也可以直接从命令行使用 Web 部署以使部署自动化。Web 部署命令非常强大，但在学习过程中可能会遇到困难。
+[Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)是用于部署到 IIS 的 Microsoft 软件，它不仅提供智能文件同步功能，还可以执行或协调许多其他与部署相关的、使用 FTP 时无法自动执行的任务。例如，Web 部署可以部署新的数据库或数据库更新以及你的网站。Web 部署还可以尽量减少更新现有站点所需的时间，因为它可以智能地仅复制更改过的文件。Microsoft WebMatrix、Visual Studio 和 Team Foundation Server 都支持内置 Web 部署，但你也可以直接从命令行使用 Web 部署以使部署自动化。Web 部署命令非常强大，但在学习过程中可能会遇到困难。
 
 有关详细信息，请参阅以下资源：
 

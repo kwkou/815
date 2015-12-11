@@ -150,7 +150,7 @@
 	
 	![缩放 SQL Server 数据库][ScaleDatabase]
 	
-	对于“版本”，可选择“基本”或“标准”，具体取决于你需要的存储容量。对于“Web”和“企业”版本的未来情况，请参阅 [Web 和企业版停用常见问题](http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx)。
+	对于“版本”，可选择“基本”、“标准”或“高级”，具体取决于你需要的存储容量。对于“Web”和“企业”版本的未来情况，请参阅 [Web 和企业版停用常见问题](/documentation/articles/sql-database-web-business-sunset-faq/)。
 	
 	你为“最大大小”选择的值将指定数据库的上限。数据库费用取决于你实际存储的数据量，因此更改“最大大小”属性本身不会影响你的数据库费用。有关详细信息，请参阅 [Windows Azure SQL 数据库中的帐户和结算][SQLaccountsbilling]。
 
@@ -184,21 +184,17 @@
 
 - 有关定价、支持和 SLA 的信息，请访问以下链接。
 	
-	[数据传输定价详细信息](/pricing/overview/data_transfer)
-
-<!--
-	[Windows Azure Support Plans](/zh-cn/support/plans/)
--->
+	[数据传输定价详细信息](/pricing/details/data-transfer/)
 	
-	[Service Level Agreements](/support/legal/sla/)
+	[服务级别协议](/support/legal/sla/)
 	
-    [SQL数据库 Pricing Details](/home/features/sql-database/#price)
+    [SQL 数据库定价详细信息](/home/features/sql-database/#price)
 	
-	[Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
+	Windows Azure 的[虚拟机](/documentation/articles/virtual-machines-size-specs/)和[云服务](/documentation/articles/cloud-services-sizes-specs/)大小
 	
-	[ Websites Pricing Details](/home/features/web-site/#price)
+	[网站定价详细信息](/home/features/web-site/#price)
 	
-	[ Websites Pricing Details - SSL Connections](/zh-cn/home/features/web-site/#price/)。
+	[网站定价详细信息 - SSL 连接](/zh-cn/home/features/web-site/#website-SSL_connection)。
 
 <!-- LINKS -->
 [vmsizes]: http://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx
