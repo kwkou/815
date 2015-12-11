@@ -76,10 +76,6 @@
 
 [如何为虚拟机配置可用性集](/documentation/articles/virtual-machines-how-to-configure-availability)
 
-<!--[-->开始配置内部负载平衡器<!--](/documentation/articles/load-balancer-internal-getstarted)-->
-
-<!--[-->开始配置面向 Internet 的负载平衡器<!--](/documentation/articles/load-balancer-internet-getstarted)-->
-
 [如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)
 
 ## 创建工作负荷

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="基本配置测试环境"
-	description="了解如何在 Microsoft Azure 中创建模拟简化 Intranet 的简单开发/测试环境。"
+	description="了解如何在 Windows Azure 中创建模拟简化 Intranet 的简单开发/测试环境。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"

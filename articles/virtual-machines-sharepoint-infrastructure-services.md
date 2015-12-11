@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure 中的 SharePoint Server 2013 场 | Windows Azure"
-	description="查找描述如何在 Microsoft Azure 中设置开发/测试环境或生产 SharePoint Server 2013 场的文章。"
+	description="查找描述如何在 Windows Azure 中设置开发/测试环境或生产 SharePoint Server 2013 场的文章。"
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍使用资源管理器部署模型或经典部署模型创建资源。
 
-在 Microsoft Azure 基础结构服务中设置你的第一个或下一个开发/测试或生产 SharePoint 场，在其中你可以利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。
+在 Windows Azure 基础结构服务中设置你的第一个或下一个开发/测试或生产 SharePoint 场，在其中你可以利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。
 
 > [AZURE.NOTE]Microsoft 已发布 SharePoint Server 2016 IT Preview。要使此预览版易于安装和测试，可以使用预安装了 SharePoint Server 2016 IT Preview 及其必备组件的 Azure 虚拟机库映像。有关详细信息，请参阅[在 Azure 中测试 SharePoint Server 2016 IT Preview](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)。
 
