@@ -46,7 +46,7 @@
 还需要安装移动浏览器模拟器。以下版本均可：
 
 -   [Internet Explorer 11 F12 开发人员工具][EmulatorIE11]中的浏览器模拟器（所有移动浏览器屏幕截图都使用此工具）。它为 Windows Phone 8、Windows Phone 7 和 Apple iPad 提供用户代理字符串预设。
--	[Google Chrome DevTools][EmulatorChrome] 中的浏览器模拟器。它包含众多 Android 设备以及 Apple iPhone、Apple iPad 和 Amazon Kindle Fire 的预设。它还会模拟触控事件。
+-	Google Chrome DevTools 中的浏览器模拟器。它包含众多 Android 设备以及 Apple iPhone、Apple iPad 和 Amazon Kindle Fire 的预设。它还会模拟触控事件。
 -   [Opera Mobile Emulator][EmulatorOpera]
 
 本主题可以附带包含具有 C# 源代码的 Visual Studio：
@@ -77,27 +77,15 @@
 
 5. 	在 Visual Studio 中，打开 *Mvc5Mobile.sln* 文件。
 
+5.  登录[管理门户](https://manage.windowsazure.cn/)，并点击已有的网站或新建一个网站。
+
+6.  在“仪表板”页面的“速览”中，下载发布配置文件
+
 6.  在“解决方案资源管理器”中，右键单击该项目并单击“发布”。
 
 	![][DeployClickPublish]
 
-7.	在“发布 Web”中，单击“Windows Azure 网站”。
-
-	![][DeployClickWebSites]
-
-8.	单击“登录”。
-
-	![][DeploySignIn]
-
-9.	按照提示操作以登录到你的 Azure 帐户。
-
-11. “选择现有网站”对话框现在应显示你已登录。单击“新建”。
-
-	![][DeployNewWebsite]
-
-12. 在“站点名称”字段中，指定唯一的站点名称前缀。完全限定的站点名称为 *&lt;prefix>*.chinacloudsites.cn。此外，在“区域”字段中选择某个区域。然后单击**创建**。
-
-	![][DeploySiteSettings]
+7.	在“发布 Web”中，单击“Import”，并选择刚刚下载的发布配置文件。
 
 13.	“发布 Web”对话框中将填充新网站的设置。单击“发布”。
 
@@ -269,7 +257,7 @@ Bootstrap [链接列表组][]样式使每个链接的整个框可单击，这大
 
 ![][AllSpeakersFixedDesktop]
 
-尽管移动浏览器视图得到了改进，但很难在较长的发言人列表中导航。Bootstrap 未提供现成的搜索筛选器功能，但你只需使用几行代码就能添加此功能。首先，将一个搜索框添加到视图，然后与筛选函数的 JavaScript 代码相挂接。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 <form> 标记添加到 <h2> 标记的后面，如下所示：
+尽管移动浏览器视图得到了改进，但很难在较长的发言人列表中导航。Bootstrap 未提供现成的搜索筛选器功能，但你只需使用几行代码就能添加此功能。首先，将一个搜索框添加到视图，然后与筛选函数的 JavaScript 代码相挂接。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 <form\> 标记添加到 <h2\> 标记的后面，如下所示：
 
     @model IEnumerable<string>
 
