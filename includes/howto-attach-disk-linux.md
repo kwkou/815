@@ -1,14 +1,13 @@
 
 有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-disks-vhds)。
 
-<a id="attachempty">
+<a id="attachempty"></a>
 ## 如何：附加空磁盘
 附加空磁盘是添加数据磁盘的更简单方法，因为 Azure 将为你创建 .vhd 文件并将其存储在存储帐户中。
 
 1.  打开适用于 Mac、Linux 和 Windows 的 Azure CLI 并连接到 Azure 订阅有关详细信息，请参阅[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect)。
 
-2.  确保处于 Azure 服务管理模式下，这是键入 `azure config
- 	mode asm` 时的默认模式。
+2.  确保处于 Azure 服务管理模式下，这是键入 `azure config mode asm` 时的默认模式。
 
 3.  使用命令 `azure vm disk attach-new` 创建规则并附加一个新磁盘，如下所示。请注意，_ubuntuVMasm_ 将被替换为你在你的订阅中已创建的 Linux 虚拟机的名称。在此示例中数字 30 是以 GB 为单位的磁盘大小。
 
@@ -28,7 +27,7 @@
         data:    0    30        ubuntuVMasm-76f7ee1ef0f6dddc.vhd
         info:    vm disk list command OK
 
-<a id="attachexisting">
+<a id="attachexisting"></a>
 ## 如何：附加现有磁盘
 
 附加现有磁盘需要存储帐户中具有可用的 .vhd。
@@ -51,7 +50,7 @@
 
 4.  如果没有找到你想要使用的磁盘，您可以使用 `azure vm disk create` 或 `azure vm disk upload` 将一个本地 VHD 上载到你的订阅。如以下示例所示：
 
-        $azure vm disk create myTestVhd2 .\TempDisk\test.VHD -l "East US" -o Linux
+        $azure vm disk create myTestVhd2 .\TempDisk\test.VHD -l "China East" -o Linux
 		info:    Executing command vm disk create
 		+ Retrieving storage accounts
 		info:    VHD size : 10 GB
@@ -74,8 +73,7 @@
 
 	请确保将 _ubuntuVMasm_ 替换为您的虚拟机名称并将 _myTestVhd_ 替换为你所需的 VHD。
 
-6.	你可以按照以下所示使用命令 `azure vm disk list
- 	<virtual-machine-name>` 验证磁盘是否已附加到虚拟机：
+6.	你可以按照以下所示使用命令 `azure vm disk list <virtual-machine-name>` 验证磁盘是否已附加到虚拟机：
 
 		$azure vm disk list ubuntuVMasm
 		info:    Executing command vm disk list

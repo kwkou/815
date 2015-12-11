@@ -21,7 +21,7 @@
 
 ![屏幕快照](./media/virtual-machines-python-ipython-notebook/ipy-notebook-spectral.png)
 
-本文将演示如何使用 Linux 或 Windows 虚拟机 (VM) 在 Microsoft Azure 上部署 IPython Notebook。通过在 Azure 上使用 IPython Notebook，你可以轻松地为具有 Python 的所有功能及其许多库的可缩放计算资源提供可通过 Web 访问的接口。由于所有安装都是在云中进行的，因此用户可以访问这些资源，而无需除最新 Web 浏览器以外的任何其他本地配置。
+本文将演示如何使用 Linux 或 Windows 虚拟机 (VM) 在 Windows Azure 上部署 IPython Notebook。通过在 Azure 上使用 IPython Notebook，你可以轻松地为具有 Python 的所有功能及其许多库的可缩放计算资源提供可通过 Web 访问的接口。由于所有安装都是在云中进行的，因此用户可以访问这些资源，而无需除最新 Web 浏览器以外的任何其他本地配置。
 
 [AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 

@@ -22,7 +22,7 @@
 
 是否要连接到 Linux VM？ 请参阅[如何登录到运行 Linux 的虚拟机](/documentation/articles/virtual-machines-linux-how-to-log-on)。
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]。
 ## 连接到虚拟机
 
 1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。

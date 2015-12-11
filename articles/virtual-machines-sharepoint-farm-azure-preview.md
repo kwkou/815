@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
  
 
-利用 SharePoint Server 场，Microsoft Azure 门户可自动为你创建预先配置的 SharePoint Server 2013 场。当你需要基本或高可用性 SharePoint farm 以用于开发和测试环境，或者当你将 SharePoint Server 2013 评估作为组织的协作解决方案时，这可为你节约很多时间。
+利用 SharePoint Server 场，Windows Azure 门户可自动为你创建预先配置的 SharePoint Server 2013 场。当你需要基本或高可用性 SharePoint farm 以用于开发和测试环境，或者当你将 SharePoint Server 2013 评估作为组织的协作解决方案时，这可为你节约很多时间。
 
 基本 SharePoint 场在此配置中包括 3 个虚拟机。
 

@@ -15,7 +15,7 @@
 
 # Azure 基础结构服务工作负荷：Intranet SharePoint 场
 
-在 Microsoft Azure 中设置你的第一个或下一个 SharePoint 场，并利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。许多 SharePoint 场从标准的高度可用的三层配置扩展为可能具有十几个或更多服务器的场，该场针对性能或单独的角色进行了优化，如分布式缓存或搜索。
+在 Windows Azure 中设置你的第一个或下一个 SharePoint 场，并利用配置的简便性和相关功能快速扩展场以包括关键功能的新增能力或优化。许多 SharePoint 场从标准的高度可用的三层配置扩展为可能具有十几个或更多服务器的场，该场针对性能或单独的角色进行了优化，如分布式缓存或搜索。
 
 借助 Azure 基础结构服务的虚拟机和虚拟网络功能，你可以快速部署并运行以透明方式连接到你的本地网络的 SharePoint 场。例如，可以设置以下网络。
 
@@ -104,7 +104,7 @@
 
 	准备 SharePoint 数据库，创建 AlwaysOn 可用性组，然后将 SharePoint 数据库添加到该组中。有关详细的配置步骤，请参阅[阶段 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5)。
 
-配置后，你可以按照[适用于 SharePoint 2013 的 Microsoft Azure 体系结构](http://technet.microsoft.com/zh-cn/library/dn635309.aspx)中的指南扩展此 SharePoint 场。
+配置后，你可以按照[适用于 SharePoint 2013 的 Windows Azure 体系结构](http://technet.microsoft.com/zh-cn/library/dn635309.aspx)中的指南扩展此 SharePoint 场。
 
 ## 其他资源
 
