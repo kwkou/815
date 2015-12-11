@@ -1,5 +1,5 @@
 <properties
-   pageTitle="API 设计指南 | Microsoft Azure"
+   pageTitle="API 设计指南 | Windows Azure"
    description="有关如何创建设计良好的 API 的指南。"
    services=""
    documentationCenter="na"

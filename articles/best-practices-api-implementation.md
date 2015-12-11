@@ -930,7 +930,7 @@
 
 	可能需要很长的时间来处理的请求应在执行时确保不会阻塞提交请求的客户端。Web API 可以执行一些初始检查来验证请求，启动单独的任务来执行工作，然后返回包含 HTTP 代码 202（已接受）的响应消息。此任务可以在 Web API 处理期间异步运行，也可以卸载到 Azure Web 作业（如果 Web API 由 Azure 网站托管）或辅助角色（如果将 Web API 作为 Azure 云服务实现）。
 
-	> [AZURE.NOTE]有关在 Azure 网站上使用 Web 作业的详细信息，请访问 Microsoft 网站上的[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页。
+	> [AZURE.NOTE]有关在 Azure 网站上使用 Web 作业的详细信息，请访问 Microsoft 网站上的[使用 Web 作业在 Windows Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页。
 
 	Web API 还应提供一种向客户端应用程序返回处理结果的机制。可以通过以下两种方案实现此目的：为客户端应用程序提供轮询机制以定期查询处理是否已完成并获取结果，或者使 Web API 可以在操作完成时发送通知。
 
@@ -938,7 +938,7 @@
 
 	1. 客户端应用程序将初始请求发送到 Web API。
 
-	2. Web API 将有关该请求的信息存储在表存储或 Microsoft Azure 缓存中保存的表中，并可能以 GUID 形式为此条目生成唯一键。
+	2. Web API 将有关该请求的信息存储在表存储或 Windows Azure 缓存中保存的表中，并可能以 GUID 形式为此条目生成唯一键。
 
 	3. Web API 启动处理作为单独的任务。Web API 在表中将该任务的状态记录为_“正在运行”_。
 
@@ -1136,7 +1136,7 @@ Azure API 管理服务包括一个开发人员门户，其中描述了由 Web AP
 - W3C 网站上的[状态代码定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)页包含 HTTP 状态代码及其说明的完整列表。
 - 有关使用 ASP.NET Web API 处理 HTTP 异常的详细信息，请访问 Microsoft 网站上的 [ASP.NET Web API 中的异常处理](http://www.asp.net/web-api/overview/error-handling/exception-handling)页。
 - Microsoft 网站上的 [Web API 全局错误处理](http://www.asp.net/web-api/overview/error-handling/web-api-global-error-handling)一文介绍了如何为 Web API 实现全局错误处理和日志记录策略。
-- Microsoft 网站上的[使用 Web 作业在 Microsoft Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页提供了有关使用 Web 作业在 Azure 网站上执行后台操作的信息和示例。
+- Microsoft 网站上的[使用 Web 作业在 Windows Azure 网站中运行后台任务](/documentation/articles/web-sites-create-web-jobs)页提供了有关使用 Web 作业在 Azure 网站上执行后台操作的信息和示例。
 - Microsoft 网站上的 [API 管理](http://azure.microsoft.com/services/api-management/)页介绍了如何发布可提供对 Web API 的受控且安全访问的产品。
 - Microsoft 网站上的 [Azure API 管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn776326.aspx)页介绍了如何使用 API 管理 REST API 构建自定义管理应用程序。
 - Microsoft 网站上的[使用单元测试验证代码](https://msdn.microsoft.com/zh-cn/library/dd264975.aspx)页提供了有关使用 Visual Studio 创建和管理单元测试的详细信息。

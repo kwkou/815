@@ -20,7 +20,7 @@
 
 与远程服务和资源通信的所有应用程序必须对暂时性故障敏感。对于云中运行的应用程序尤其如此，因为其环境的性质与通过 Internet 建立连接的特点，意味着更容易遇到这种类型的故障。暂时性故障包括组件和服务瞬间断开网络连接、服务暂时不可用，或者当服务繁忙时出现超时。这些故障通常可自我纠正，如果在适当的延迟后重复操作，则操作可能会成功。
 
-本文档提供有关处理暂时性故障的一般指导。<!--有关处理使用 Microsoft Azure 服务时发生的暂时性故障的信息，请参阅[特定于 Azure 服务的重试指南](/documentation/articles/best-practices-retry-service-specific)。->
+本文档提供有关处理暂时性故障的一般指导。<!--有关处理使用 Windows Azure 服务时发生的暂时性故障的信息，请参阅[特定于 Azure 服务的重试指南](/documentation/articles/best-practices-retry-service-specific)。->
 
 ## 为什么云中会出现暂时性故障？
 
