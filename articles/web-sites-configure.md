@@ -57,6 +57,9 @@
 
 <strong>在 Visual Studio Online 中编辑</strong>。通过 Visual Studio Online 启用实时代码编辑。如果启用，“仪表板”选项卡的<strong></strong>“速览”部分下则会显示名为“在 Visual Studio Online 编辑”<strong></strong>的链接。单击此连结可直接联机编辑网站。如果你需要进行身份验证，可以使用你的基本部署凭据。
 
+>[AZURE.NOTE]
+> 此功能还在预览中。
+
 注意：如果通过源代码管理你启用部署，则部署可能会覆盖你在 Visual Studio Online 编辑器中进行的更改。
 
 

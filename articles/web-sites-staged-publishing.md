@@ -24,7 +24,7 @@
 
 - 交换后，具有以前分阶段网站的槽现在具有以前的生产网站。如果交换到生产槽的更改与您的预期不同，您可以立即执行同一交换来收回“上一已知的良好站点”。
 
-每种 App Service 计划模式支持不同数量的部署槽。若要查明你的网站模式支持的槽数，请参阅 [Azure 网站定价](/home/features/web-site/#price)。
+只有标准 App Service 计划模式才支持过渡发布。缩放网站，请参阅 [在 Azure 网站中缩放网站](/documentation/articles/web-sites-scale)。
 
 - 如果你的网站具有多个槽，则你无法更改模式。
 
@@ -88,10 +88,6 @@
 - 缩放设置
 - Web 作业计划程序
 
-若要将应用设置或连接字符串配置为停在某个槽中（不交换），请访问特定槽的“应用程序设置”边栏选项卡，然后针对应该停在该槽中的配置元素选中“槽设置”框。请注意，将配置元素标记为特定于槽会在将该元素建立为无法跨所有与该网站关联的部署槽进行交换时产生影响。
-
-![槽设置][SlotSettings]
-
 <a name="Swap"></a>
 ## 交换部署槽的步骤 ##
 
@@ -125,6 +121,8 @@
 ## 适用于部署槽的 Azure PowerShell cmdlet
 
 Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azure 的 cmdlet，包括对管理 Azure 网站中网站部署槽的支持。
+
+[AZURE.INCLUDE [AzureRm PowerShell 中国云环境](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 - 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/install-configure-powershell)。  
 
@@ -174,6 +172,8 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 ## 用于部署槽的 Azure 命令行界面 (Azure CLI) 命令
 
 Azure CLI 提供了适用于 Azure 的跨平台命令，包括对网站部署槽的管理支持。
+
+[AZURE.INCLUDE [Azure CLI 中国云环境](../includes/azure-cli-azurechinacloud-environment-parameter.md)]
 
 - 有关安装和配置 Azure CLI 的说明（包括有关如何将 Azure CLI 连接到 Azure 订阅的信息），请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install)。
 
