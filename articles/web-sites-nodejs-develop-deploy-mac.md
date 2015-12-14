@@ -166,13 +166,13 @@ Node.js 提供可由您的应用程序使用的丰富的模块生态系统。
 
 如果你将应用程序部署到 Azure 后遇到问题，有关如何诊断问题的信息，请参阅[如何在 Azure 网站中调试 Node.js 应用程序](/documentation/articles/web-sites-nodejs-debug)。
 
-本文将使用 Azure 管理门户来创建网站。你也可以使用 [Azure 命令行界面](/documentation/articles/xplat-cli-install)或 [Azure PowerShell](/documentation/articles/install-configure-powershell) 执行相同的操作。
+本文将使用 Azure 管理门户来创建网站。你也可以使用 [Azure 命令行界面](/documentation/articles/xplat-cli-install)或 [Azure PowerShell](/documentation/articles/powershell-install-configure) 执行相同的操作。
 
 有关如何在 Azure 上开发 Node.js 应用程序的详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
 [Azure 管理门户]: http://manage.windowsazure.cn
 [Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli
-[Azure PowerShell]: /documentation/articles/install-configure-powershell
+[Azure PowerShell]: /documentation/articles/powershell-install-configure
 [portal-new- Website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png
 [git-instructions]: ./media/web-sites-nodejs-develop-deploy-mac/git-instructions.png

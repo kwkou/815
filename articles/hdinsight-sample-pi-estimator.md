@@ -43,7 +43,7 @@ HDInsight 群集附带一个 jar 文件，其中包含几个 MarReduce 示例。
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 - **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。<a id="run-sample"></a>
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。<a id="run-sample"></a>
 
 
 
@@ -465,7 +465,7 @@ HDInsight 群集附带一个 jar 文件，其中包含几个 MarReduce 示例。
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 

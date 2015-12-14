@@ -37,7 +37,7 @@ HDInsight Emulator 提供非常类似于 Hadoop 沙盒的本地开发环境。�
 	- Windows 8
 	- Windows Server 2012
 
-- 安装和配置 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- 安装和配置 Azure PowerShell。有关说明，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 
 ##<a name="install"></a>安装 HDInsight Emulator
@@ -489,7 +489,7 @@ HDInsight Emulator 也支持某些 Azure PowerShell cmdlet。这些 cmdlet 包�
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 [hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 

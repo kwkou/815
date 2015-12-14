@@ -296,7 +296,7 @@ Name | 脚本
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
-[powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx
 
 <!---HONumber=76-->

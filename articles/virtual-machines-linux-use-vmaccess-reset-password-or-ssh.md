@@ -255,7 +255,7 @@ SSH 配置中的错误可能会导致你无法访问虚拟机。可以通过将 
 
 <!--Link references-->
 [Azure Linux 代理用户指南]: /zh-cn/documentation/articles/virtual-machines-linux-agent-user-guide
-[如何安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/install-configure-powershell
+[如何安装和配置 Azure PowerShell]: /zh-cn/documentation/articles/powershell-install-configure
 [Azure VM 扩展和功能]: http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx
 [使用 RDP 或 SSH 连接到 Azure 虚拟机]: http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx
 

@@ -129,6 +129,6 @@
 
 [虚拟机文档](http://www.windowsazure.cn/documentation/services/virtual-machines/)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 <!---HONumber=79-->

@@ -52,7 +52,7 @@ editor="Eric Chen" />
 - [服务管理](/documentation/articles/cloud-services-python-how-to-use-service-management) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/ee460799)
 - [表服务](/documentation/articles/storage-python-how-to-use-table-storage) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/documentation/articles/xplat-cli)
-- [PowerShell](/documentation/articles/install-configure-powershell) 
+- [PowerShell](/documentation/articles/powershell-install-configure) 
 
 ##更多资源
 

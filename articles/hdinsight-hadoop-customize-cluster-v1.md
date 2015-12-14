@@ -157,7 +157,7 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
 [hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集设置过程中的阶段"
  
 

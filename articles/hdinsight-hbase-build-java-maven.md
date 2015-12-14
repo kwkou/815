@@ -347,7 +347,7 @@
 
 ##上载 JAR 文件并启动作业
 
-> [AZURE.NOTE]你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data)中所述。以下步骤使用 [Azure PowerShell](/documentation/articles/install-configure-powershell)。
+> [AZURE.NOTE]你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data)中所述。以下步骤使用 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 1. 安装并配置 Azure PowerShell 后，请创建名为 __hbase-runner.psm1__ 的新文件。使用以下项作为此文件的内容：
 
@@ -480,7 +480,7 @@
 		    # Is the Azure module installed?
 		    if (-not(Get-Module -ListAvailable Azure))
 		    {
-		        throw "Azure PowerShell not found! For help, see http://www.windowsazure.cn/documentation/articles/install-configure-powershell/"
+		        throw "Azure PowerShell not found! For help, see http://www.windowsazure.cn/documentation/articles/powershell-install-configure/"
 		    }
 
 		    # Is there an active Azure subscription?

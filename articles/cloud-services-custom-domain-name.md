@@ -66,7 +66,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
     
         **或者**
     
-    * 安装并配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
+    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
         
         ```powershell
         Get-AzureDeployment -ServiceName yourservicename | Select Url
@@ -106,7 +106,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
     
         **或者**
     
-    * 安装并配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
+    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
     
         ```powershell
         get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
