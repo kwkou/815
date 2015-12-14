@@ -10,7 +10,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="09/27/2015" 
-	wacn.date="11/02/2015"/>
+	wacn.date="12/14/2015"/>
 
 
 
@@ -245,7 +245,7 @@
 
 	> [AZURE.IMPORTANT]请注意，你发运的物理介质可能需要穿越国界。你应当负责确保你的物理介质和数据是遵照适用的法律导入和/或导出的。在发运物理介质之前，请咨询你的顾问以验证你的介质和数据是否可以合法地发运到所确定的数据中心。这将有助于确保它可以及时到达 Microsoft。
 
-- 发运你的包裹时，必须遵循 [Microsoft Azure 服务条款](/support/legal/services-terms/)中的条款。
+- 发运你的包裹时，必须遵循 [Windows Azure 服务条款](/support/legal/services-terms/)中的条款。
 
 **我是否可为导入/导出作业从 Microsoft 购买驱动器？**
 

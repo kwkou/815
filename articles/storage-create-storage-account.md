@@ -10,7 +10,7 @@
 <tags
 	ms.service="storage"
 	ms.date="09/23/2015"
-	wacn.date="11/02/2015"/>
+	wacn.date="12/11/2015"/>
 
 
 
@@ -37,13 +37,13 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 - 事务指的是对 Azure 存储空间的所有读取和写入操作。 
 - 数据流出量指的是传出某个 Azure 区域的数据。当不在同一区域中的应用程序访问你的存储帐户中的数据时，无论该应用程序是云服务还是某个其他类型的应用程序，都将会针对数据流出量向你收费。（对于 Azure 服务，你可以采取措施将你的数据和服务通过分组分到相同的数据中心内，从而降低或避免数据流出量费用。）  
 
-[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfers)页提供了针对数据流出量的详细定价信息。
+[存储定价详细信息](/home/features/storage/#price)页提供了针对存储容量、复制和事务的详细定价信息。[数据传输定价详细信息](/pricing/details/data-transfer)页提供了针对数据流出量的详细定价信息。
 
-有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](https://msdn.microsoft.com/zh-CN/library/windowsazure/dn249410.aspx).
+有关存储帐户容量和性能目标的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets).
 
 > [WACOM.NOTE] 当你创建 Azure 虚拟机时，如果在部署位置中还没有存储帐户，则会在该位置自动创建一个存储帐户。因此，没有必要按照下面的步骤来创建虚拟机磁盘的存储帐户。存储帐户名称将基于虚拟机名称。请参阅 [Azure 虚拟机文档](/zh-cn/documentation/services/virtual-machines)以了解更多详细信息。<br />
 
-## 创建存储帐户
+##<a id="create-a-storage-account"></a> 创建存储帐户
 
 1. 登录到[管理门户](https://manage.windowsazure.cn)。
 
@@ -101,7 +101,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 > [AZURE.NOTE]  若要创建地缘组，请打开管理门户的<b>"设置"</b>区域，单击<b>"地缘组"</b>，然后单击<b>"添加地缘组"</b>或<b>"添加"</b>按钮。你也可以使用 Azure 服务管理 API 创建和管理地缘组。有关详细信息，请参阅<a href="http://msdn.microsoft.com/zh-cn/library/windowsazure/ee460798.aspx">对地缘组的操作</a>。
 
-## 查看、复制和重新生成存储访问密钥
+##<a id="view-copy-and-regenerate-storage-access-keys"></a> 查看、复制和重新生成存储访问密钥
 
 当你创建存储帐户时，Azure 将生成两个 512 位存储访问密钥，用于在用户访问该存储帐户时对其进行身份验证。通过提供两个存储访问密钥，Azure 使你能够在不中断存储服务的情况下重新生成用于访问该服务的密钥。
 
@@ -124,7 +124,7 @@ Azure 存储帐户授予你访问 Azure 存储空间中的 Azure Blob、队列�
 
 3. 若要复制存储访问密钥，请选择密钥文本。然后右键单击，并单击“复制”。
 
-### 重新生成存储访问密钥
+###<a id="regeneratestoragekeys"></a> 重新生成存储访问密钥
 你应定期更改你的存储帐户的访问密钥，以确保存储连接安全。分配了两个访问密钥，以便在你重新生成其中一个访问密钥时，始终能够使用另一个访问密钥连接到存储帐户。
 
 > [AZURE.WARNING] 重新生成访问密钥会影响虚拟机、媒体服务以及任何依赖于存储帐户的应用程序。必须更新使用访问密钥访问存储帐户的所有客户端，以使用新密钥。

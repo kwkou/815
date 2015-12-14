@@ -9,7 +9,7 @@
 <tags
 	ms.service="storage"
 	ms.date="09/27/2015"
-	wacn.date="11/27/2015"/>
+	wacn.date="12/11/2015"/>
 
 
 # 对 Azure 存储空间使用 Azure PowerShell 
@@ -128,7 +128,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 > [AZURE.NOTE] “在 5 分钟内开始使用 Azure 存储空间和 PowerShell”部分提供了有关如何对 Azure 存储空间使用 Azure PowerShell 的简介。有关详细信息和说明，建议你阅读以下部分。
 
-## 对 Azure 存储空间使用 Azure PowerShell 的先决条件
+##<a id="prerequisites-for-using-azure-powershell-with-azure-storage"></a> 对 Azure 存储空间使用 Azure PowerShell 的先决条件
 如上所述，你需要一个 Azure 订阅和帐户来运行本指南中指定的 PowerShell cmdlet。
 
 Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。有关安装和设置 Azure PowerShell 的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。建议你在使用本指南之前下载并安装或者升级到最新的 Azure PowerShell 模块。
@@ -203,11 +203,11 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
     Get-AzureStorageAccount | Format-Table -Property StorageAccountName, Location, AccountType, StorageAccountStatus
 
 ### 如何创建 Azure 存储上下文
-Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
+Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运行任何后续 cmdlet 时使用存储上下文可以对请求进行身份验证，而无需显式指定存储帐户及其访问密钥。可以通过多种方式创建存储上下文，例如，使用存储帐户名称和访问密钥、共享访问签名 (SAS) 令牌、连接字符串或匿名。有关详细信息，请参阅 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx)。
 
 使用以下三种方法之一创建存储上下文：
 
-- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext -Environment AzureChinaCloud](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
+- 运行 [Get-AzureStorageKey](http://msdn.microsoft.com/zh-cn/library/azure/dn495235.aspx) cmdlet，找出 Azure 存储帐户的主存储访问密钥。接下来，调用 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 以创建存储上下文：
 
     	$StorageAccountName = "yourstorageaccount"
     	$StorageAccountKey = Get-AzureStorageKey -StorageAccountName $StorageAccountName
@@ -646,8 +646,8 @@ Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Win
     Remove-AzureStorageTableStoredAccessPolicy -Policy $policy -Table $tableName -Context $Ctx
 
 
-## <a name="gov"></a>如何在美国政府部门和 Azure 中国区使用 Azure 存储空间
-Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政府的 Azure Government](http://azure.microsoft.com/features/gov)、[面向全球 Azure 的 AzureCloud](https://manage.windowsazure.cn)，以及[由中国 21Vianet 运营的 AzureChinaCloud](http://www.windowsazure.cn)。你可以为美国政府和 Azure 中国区部署新的 Azure 环境。 
+## <a name="gov"></a>如何在Azure 中国区使用 Azure 存储空间
+Azure 环境的部署独立于 Microsoft Azure，其示例包括[面向美国政府的 Azure Government](http://azure.microsoft.com/features/gov)、[面向全球 Azure 的 AzureCloud](https://manage.windowsazure.com)，以及[由中国 21Vianet 运营的 AzureChinaCloud](http://www.windowsazure.cn)。你可以为美国政府和 Azure 中国区部署新的 Azure 环境。 
 
 若要将 Azure 存储空间用于 AzureChinaCloud，需要创建与 AzureChinaCloud 关联的存储上下文。请按照以下步骤开始：
 
@@ -657,13 +657,13 @@ Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政�
 
 2.	将 Azure 中国区帐户添加到 Windows PowerShell：
 
-    `Add-AzureAccount -Environment AzureChinaCloud –Environment AzureChinaCloud`
+    `Add-AzureAccount -Environment AzureChinaCloud`
 
 3.	为 AzureChinaCloud 帐户创建存储上下文：
 
-    	$Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment AzureChinaCloud
+    	$Ctx = New-AzureStorageContext -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment AzureChinaCloud
 
-若要将 Azure 存储空间与[美国Azure Government](http://azure.microsoft.com/features/gov/) 一起使用，请应定义一个新环境，然后使用此环境创建新的存储上下文：
+<!--若要将 Azure 存储空间与[美国Azure Government](http://azure.microsoft.com/features/gov/) 一起使用，请应定义一个新环境，然后使用此环境创建新的存储上下文：
 
 1. 调用 [Add-AzureEnvironment](http://msdn.microsoft.com/zh-cn/library/azure/dn790364.aspx) cmdlet 为专用数据中心创建新的 Azure 环境。 
 
@@ -672,10 +672,10 @@ Azure 环境的部署独立于 Windows Azure，其示例包括[面向美国政�
 2. 运行 [New-AzureStorageContext](http://msdn.microsoft.com/zh-cn/library/azure/dn806380.aspx) cmdlet 为此新环境创建新的存储上下文，如下所示。 
    
 	    $Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $AccountName -StorageAccountKey $AccountKey> -Environment $EnvironmentName
-
+-->
 有关详细信息，请参阅：
-<!--
-- [Windows Azure Government 开发人员指南](/documentation/articles/azure-government-developer-guide)。--> 
+
+- [Windows Azure 开发人员指南](/documentation/articles/developerdifferences)。
 - [面向全球 Azure 的 AzureCloud 与中国 21Vianet 运营的 AzureChinaCloud 之间的差异](https://msdn.microsoft.com/zh-cn/library/azure/dn578439.aspx)
 
 ## 后续步骤

@@ -9,7 +9,7 @@
 <tags 
 	ms.service="storage" 
 	ms.date="09/23/2015" 
-	wacn.date="11/27/2015"/>
+	wacn.date="12/11/2015"/>
 
 # 使用 Azure 存储模拟器进行开发和测试
 
@@ -64,7 +64,7 @@ Windows Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服�
 有关共享访问签名的详细信息，请参阅[共享访问签名：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1)。
 
 
-## 启动和初始化存储模拟器
+##<a id="start-and-initialize-the-storage-emulator"></a> 启动和初始化存储模拟器
 
 若要启动 Azure 存储模拟器，请选择“开始”按钮或按 Windows 键。开始键入“Azure 存储模拟器”，然后从应用程序列表中选择该模拟器。
 
@@ -97,7 +97,7 @@ Windows Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服�
 
 有关这些命令的详细信息，请参阅[存储模拟器命令行工具参考](#storage-emulator-command-line-tool-reference)。
 
-## 对存储模拟器中的资源进行寻址
+##<a id="addressing-resources-in-the-storage-emulator"></a> 对存储模拟器中的资源进行寻址
 
 存储模拟器的服务终结点不同于 Azure 存储帐户。不同之处是因为本地计算机不执行域名解析，因此存储模拟器终结点需要本地地址而不是域名。
 
@@ -131,7 +131,7 @@ Windows Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服�
 
 > [AZURE.NOTE] 若要使用存储模拟器以编程方式访问辅助副本，请使用 Storage Client Library for .NET 3.2 版或更高版本。有关详细信息，请参阅[存储客户端库参考](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
-## 存储模拟器命令行工具参考
+##<a id="storage-emulator-command-line-tool-reference"></a> 存储模拟器命令行工具参考
 
 从 3.0 版开始，当您启动存储模拟器时，将看到命令提示符弹出窗口。可使用命令提示符窗口启动和停止模拟器以及查询状态和执行其他操作。
 
@@ -153,7 +153,7 @@ Windows Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服�
 | **清除** | 清除命令行上指定的所有服务中的数据。 | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `| *blob*：清除 Blob 数据。<br/>*queue*：清除队列数据。<br/>*table*：清除表数据。<br/>*all*：清除所有服务中的所有数据。 |
 | **Init** | 执行一次性初始化以设置模拟器。 | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName\\instanceName*：指定托管 SQL 实例的服务器。<br/>*-sqlinstance instanceName*：指定要用于默认服务器实例中的 SQL 实例的名称。<br/>*-forcecreate*：强制创建 SQL 数据库，即使该数据库已经存在。<br/>*-inprocess*：在当前进程而不是生成新的进程中执行初始化。您必须使用提升的权限启动当前进程以执行初始化。 |
                                                                                                                   
-## 存储模拟器与 Azure 存储之间的差异
+##<a id="differences-between-the-storage-emulator-and-azure-storage"></a> 存储模拟器与 Azure 存储之间的差异
 
 由于存储模拟器是在本地的 SQL 实例中运行的模拟环境，模拟器与云中的 Azure 存储帐户之间存在一些功能差异：
 
