@@ -49,7 +49,7 @@ editor="Eric Chen" />
 - [SQL 数据库](http://social.technet.microsoft.com/wiki/contents/articles/3896.connect-to-windows-azure-sql-database-from-ruby-applications.aspx) / [TSQL](http://msdn.microsoft.com/zh-cn/library/azure/ee336281) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/gg715283)
 - [表服务](/zh-cn/documentation/articles/storage-ruby-how-to-use-table-storage) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/zh-cn/documentation/articles/xplat-cli)
-- [PowerShell Cmdlet](/zh-cn/documentation/articles/install-configure-powershell)
+- [PowerShell Cmdlet](/zh-cn/documentation/articles/powershell-install-configure)
 
 ##更多资源
 

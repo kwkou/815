@@ -31,7 +31,7 @@
 **先决条件**：
 
 - **一个 HDInsight 群集**。有关可用于创建这种群集的各种不同方法的说明，请参阅 [Azure HDInsight 入门][hdinsight-get-started]或[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 <a id="run-sample"></a>
 ## 使用 Azure PowerShell 运行示例
@@ -209,7 +209,7 @@ WordCount 脚本的输出应出现在命令窗口中：
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png
 

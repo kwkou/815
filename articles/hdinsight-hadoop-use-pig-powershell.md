@@ -25,7 +25,7 @@
 
 若要完成本文中的步骤，你将需要：
 
-* <a href="/documentation/articles/install-configure-powershell/" target="_blank">Azure PowerShell</a>
+* <a href="/documentation/articles/powershell-install-configure/" target="_blank">Azure PowerShell</a>
 
 
 ##<a id="powershell"></a>使用 PowerShell 运行 Pig 作业

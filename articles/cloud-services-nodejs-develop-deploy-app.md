@@ -36,7 +36,7 @@
 
 > [AZURE.NOTE]本教程使用 Azure PowerShell，因此需要在 Windows 上运行。
 
-- 安装和配置 [Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- 安装和配置 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
 - 下载并安装 [Azure SDK for .NET 2.7](http://www.microsoft.com/zh-CN/download/details.aspx?id=48178)。在安装设置中，选择：
     - MicrosoftAzureAuthoringTools
     - MicrosoftAzureComputeEmulator

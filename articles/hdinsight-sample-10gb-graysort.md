@@ -415,7 +415,7 @@
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn469975.aspx
 
 
-[Powershell-install-configure]: /documentation/articles/install-configure-powershell/
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started/
 
