@@ -13,9 +13,9 @@
 	ms.date="06/02/2015" 
 	wacn.date="09/15/2015"/>
 
-# 在 Azure Multi-Factor Authentication 中使用办公电话或手机呼叫进行登录
+# 在 Azure 多重认证中使用办公电话或手机呼叫进行登录
 
-以下信息介绍在使用手机或办公电话执行 Multi-Factor Authentication 时的体验。
+以下信息介绍在使用手机或办公电话执行多重认证时的体验。
 
 ## 使用办公电话或手机呼叫登录
 
