@@ -24,7 +24,7 @@
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
 - [Azure 存储帐户](/documentation/articles/storage-create-storage-account)
 - [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) 或 [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855)
-- [Azure PowerShell](/documentation/articles/install-configure-powershell)
+- [Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 完成这些步骤大约需要 30 分钟。
 

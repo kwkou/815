@@ -20,7 +20,7 @@
 
 ## 概述
 
-本教程说明如何在 [Azure PowerShell](/documentation/articles/install-configure-powershell) 中使用地域还原恢复 Azure SQL 数据库地域还原是针对所有基本、标准和高级 Azure SQL 数据库服务层提供的核心灾难恢复保护。
+本教程说明如何在 [Azure PowerShell](/documentation/articles/powershell-install-configure) 中使用地域还原恢复 Azure SQL 数据库地域还原是针对所有基本、标准和高级 Azure SQL 数据库服务层提供的核心灾难恢复保护。
 
 > [AZURE.IMPORTANT]本文包含最高为 Azure PowerShell 版本 1.0 *但不包括* 1.0 及更高版本的命令。可以使用 **Get-Module azure | format-table version** 命令查看 Azure PowerShell 的版本。
 
@@ -32,7 +32,7 @@
 
 <!--<iframe src="http://channel9.msdn.com/Blogs/Windows-Azure/Restore-a-SQL-Database-Using-Geo-Restore-With-Microsoft-Azure-PowerShell/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>-->
 
-必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell/#use-the-certificate-method) 中的*使用证书方法*。
+必须使用基于证书的身份验证来运行以下 cmdlet。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/#use-the-certificate-method) 中的*使用证书方法*。
 
 1. 使用 [Get-AzureSqlRecoverableDatabase](http://msdn.microsoft.com/zh-cn/library/azure/dn720219.aspx) cmdlet 获取可恢复的数据库列表。指定以下参数：
 	* 数据库所在的 **ServerName**。	

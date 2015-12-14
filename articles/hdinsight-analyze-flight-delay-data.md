@@ -45,7 +45,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 **了解 HDInsight 存储**
 
@@ -853,7 +853,7 @@ HiveQL 脚本将执行以下操作：
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters

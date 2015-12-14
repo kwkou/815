@@ -27,7 +27,7 @@
 
 	Get-Module azure | format-table version
 
-如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
+如果你尚未这样做，现在请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。然后，打开 Azure PowerShell 命令提示符。
 
 首先，必须使用此命令登录到 Azure：
 
@@ -201,7 +201,7 @@
 
 [虚拟机文档](/documentation/services/virtual-machines/)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 [使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 

@@ -35,7 +35,7 @@
 
 - 若要使用高级存储，你必须有一个高级存储帐户。若要了解如何创建高级存储帐户，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
-- [Windows Azure 门户](https://manage.windowsazure.cn)中目前已提供高级存储且可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/install-configure-powershell) 0.8.10 或更高版本。
+- [Windows Azure 门户](https://manage.windowsazure.cn)中目前已提供高级存储且可通过以下 SDK 库来访问：[存储 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx) 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 2014-10-01 或更高版本；[Azure PowerShell](/documentation/articles/powershell-install-configure) 0.8.10 或更高版本。
 
 - 以下地区提供受限的高级存储：中国东部。
 
@@ -59,7 +59,7 @@
 
 Azure 使用存储帐户作为操作系统和数据磁盘的容器。换句话说，如果你创建 Azure DS 或 GS 系列的 VM 并选择 Azure 高级存储帐户，操作系统和数据磁盘会存储在该存储帐户中。
 
-为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用 [Windows Azure 门户](https://manage.windowsazure.cn)、[Azure PowerShell](/documentation/articles/install-configure-powershell) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
+为充分利用高级存储的优点，请先使用帐户类型 *Premium_LRS* 创建一个高级存储帐户。为此，可以使用 [Windows Azure 门户](https://manage.windowsazure.cn)、[Azure PowerShell](/documentation/articles/powershell-install-configure) 或[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)。有关分步说明，请参阅[为磁盘创建和使用高级存储帐户](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk)。
 
 ### 重要说明：
 
@@ -322,7 +322,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 ### 通过 Azure PowerShell 使用高级存储创建 Azure 虚拟机
 本 PowerShell 示例演示如何创建新的高级存储帐户并将使用该帐户的数据磁盘附加到新的 Azure 虚拟机。
 
-1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中提供的步骤设置 PowerShell 环境。
+1. 根据[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中提供的步骤设置 PowerShell 环境。
 2. 启动 PowerShell 控制台，连接到订阅，并在控制台窗口中运行以下 PowerShell cmdlet。如此 PowerShell 语句中所示，当你创建高级存储帐户时，必须将 **Type** 参数指定为 **Premium_LRS**。
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "China East" -Type "Premium_LRS"

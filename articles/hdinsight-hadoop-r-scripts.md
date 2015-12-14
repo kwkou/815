@@ -286,7 +286,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序中�
 - [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)：有关如何安装 Giraph 的脚本操作示例
 
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
 

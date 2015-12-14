@@ -58,6 +58,6 @@ editor="Eric Chen" />
 - [服务总线主题](/documentation/articles/service-bus-nodejs-how-to-use-topics-subscriptions) / [API](http://dl.windowsazure.com/nodedocs/ServiceBusService.html) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh780717)
 - [表服务](/documentation/articles/storage-nodejs-how-to-use-table-storage) / [API](http://go.microsoft.com/fwlink/?linkid=401538&clcid=0x804) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [命令行工具](/documentation/articles/xplat-cli)
-- [PowerShell Cmdlet](/documentation/articles/install-configure-powershell)
+- [PowerShell Cmdlet](/documentation/articles/powershell-install-configure)
 
 

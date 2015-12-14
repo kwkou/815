@@ -13,7 +13,7 @@
    wacn.date="11/12/2015"/>
 
 # 如何使用 Azure PowerShell 命令创建一个空的云服务容器
-1. 从[下载 Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) 安装 Windows Azure PowerShell cmdlet。有关安装 Azure PowerShell cmdlet 和连接到 Azure 订阅的更多说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+1. 从[下载 Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) 安装 Windows Azure PowerShell cmdlet。有关安装 Azure PowerShell cmdlet 和连接到 Azure 订阅的更多说明，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 2. **New-AzureService** 是用于创建空云服务容器的 cmdlet。
 

@@ -308,7 +308,7 @@ Azure 网站支持用各种编程语言创建的应用程序。对于此示例�
 [Azure 门户]: http://manage.windowsazure.cn
 [Git website]: http://git-scm.com
 [安装 Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
-[如何使用适用于 Azure 的 PowerShell]: /documentation/articles/install-configure-powershell
+[如何使用适用于 Azure 的 PowerShell]: /documentation/articles/powershell-install-configure
 [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli
 [Git 文档]: http://git-scm.com/documentation
 

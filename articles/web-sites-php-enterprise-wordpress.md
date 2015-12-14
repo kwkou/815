@@ -263,7 +263,7 @@ Azure 网站为大规模的关键任务 [WordPress][wordpress] 网站提供了�
 [workbench]: http://www.mysql.com/products/workbench/
 [searchandreplace]: http://interconnectit.com/124/search-and-replace-for-wordpress-databases/
 [deploy]: /documentation/articles/web-sites-deploy
-[posh]: /documentation/articles/install-configure-powershell
+[posh]: /documentation/articles/powershell-install-configure
 [Azure CLI]: /documentation/articles/xplat-cli
 [storesendgrid]: /gallery/store/sendgrid/sendgrid-azure/
 [cdn]: /documentation/articles/cdn-how-to-use

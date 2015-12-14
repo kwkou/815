@@ -15,7 +15,7 @@
 
 #关于虚拟机代理和扩展
 
-Azure 虚拟机代理（VM 代理）用于安装、配置、管理和运行 Azure 虚拟机扩展（VM 扩展）。VM 扩展提供 Microsoft 和其他第三方提供的动态功能。代理和扩展主要通过管理门户添加，但也可以使用 [Powershell](/documentation/articles/install-configure-powershell) cmdlet 或 [Azure CLI](/documentation/articles/xplat-install) 在创建 VM 时添加和配置或为现有 VM 添加和配置。
+Azure 虚拟机代理（VM 代理）用于安装、配置、管理和运行 Azure 虚拟机扩展（VM 扩展）。VM 扩展提供 Microsoft 和其他第三方提供的动态功能。代理和扩展主要通过管理门户添加，但也可以使用 [Powershell](/documentation/articles/powershell-install-configure) cmdlet 或 [Azure CLI](/documentation/articles/xplat-install) 在创建 VM 时添加和配置或为现有 VM 添加和配置。
 
 [AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-classic-include.md)]资源管理器模型。
 

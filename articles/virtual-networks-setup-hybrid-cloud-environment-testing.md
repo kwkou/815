@@ -123,7 +123,7 @@ RRAS1 在 Corpnet 子网和 TestVNET 虚拟网络的计算机之间提供通信�
 	- 单击**“添加网关子网”**。
 11.	单击“完成”图标。请等到虚拟网络创建完以后再继续。
 
-接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。
+接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。
 
 接下来，请为 TestVNET 虚拟网络创建新的云服务。你必须选取一个唯一的名称。例如，你可将其命名为TestVNET-*UniqueSequence*，其中 *UniqueSequence* 是你组织的缩写。例如，如果你的组织名称为 Tailspin Toys，则可以将云服务命名为 TestVNET-Tailspin。
 

@@ -22,7 +22,7 @@
 
 ## 先决条件
 
-- 安装和配置 [Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- 安装和配置 [Azure PowerShell](/documentation/articles/powershell-install-configure)。
 - 将 Node.js 应用部署到 Azure 云服务。有关详细信息，请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app)。
 
 
