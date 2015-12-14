@@ -28,7 +28,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 - 安装 Visual Studio 2012 或 2013
 - 下载和安装 [Azure .NET SDK](/downloads/)。 
-- 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)；  
+- 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)；  
 
 
 		# Log in to your Azure account

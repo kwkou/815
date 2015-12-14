@@ -106,7 +106,7 @@
 
 你首先需要在计算机和 Azure 中的订阅之间建立一个安全连接，然后才能上载 .vhd 文件。你可以使用 Windows Azure Active Directory 方法或证书方法来执行此操作。
 
-> [AZURE.TIP]若要开始使用 Azure PowerShell，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/install-configure-powershell)。有关常规信息，请参阅 [Windows Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
+> [AZURE.TIP]若要开始使用 Azure PowerShell，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/powershell-install-configure)。有关常规信息，请参阅 [Windows Azure Cmdlet 入门](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
 
 ### 方法 1：使用 Windows Azure AD
 

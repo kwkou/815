@@ -96,7 +96,7 @@ SendGrid 提供了可靠的电子邮件传递服务、实时分析和灵活的 A
 
 ###脚本
 
-####[使用 PowerShell 进行开发和部署](/documentation/articles/install-configure-powershell)
+####[使用 PowerShell 进行开发和部署](/documentation/articles/powershell-install-configure)
 
 Windows PowerShell for Azure 提供用于通过 Windows PowerShell cmdlet 开发和部署 Azure 应用程序的命令行环境。本节介绍如何使用 Windows PowerShell cmdlet 创建、部署和管理网站。
 

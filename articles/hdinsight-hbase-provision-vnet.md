@@ -28,7 +28,7 @@
 
 - **一个 Azure 订阅**。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[购买选项][azure-purchase-options], [试用版][azure-trial]。
 
-- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。若要执行 Azure PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅[使用 Set-ExecutionPolicy cmdlet][2]。
+- **已安装并已配置 Azure PowerShell 的工作站**。有关说明，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。若要执行 Azure PowerShell 脚本，必须以管理员身份运行 Azure PowerShell 并将执行策略设为 *RemoteSigned*。请参阅[使用 Set-ExecutionPolicy cmdlet][2]。
 
 	在运行 Azure PowerShell 脚本之前，请确保你已通过使用以下 cmdlet 连接到 Azure 订阅：
 
@@ -381,7 +381,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: /documentation/articles/install-configure-powershell
+[powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started

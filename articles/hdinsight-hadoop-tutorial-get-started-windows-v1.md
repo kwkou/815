@@ -236,8 +236,8 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 [apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
 [hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
-[powershell-open]: /documentation/articles/install-configure-powershell#Install
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-open]: /documentation/articles/powershell-install-configure#Install
 
 
 [img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png

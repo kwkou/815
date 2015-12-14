@@ -21,7 +21,7 @@
 
 ## 针对流分析运行 Azure PowerShell cmdlet 的先决条件
 
- - 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)；  
+ - 在订阅中创建 Azure 资源组。下面是 Azure PowerShell 脚本示例。有关 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)；  
 
 
  		# Log in to your Azure account
@@ -272,7 +272,7 @@
 
 
 [msdn-switch-azuremode]: http://msdn.microsoft.com/zh-cn/library/dn722470.aspx
-[powershell-install]: http://azure.microsoft.com/documentation/articles/install-configure-powershell/
+[powershell-install]: http://azure.microsoft.com/documentation/articles/powershell-install-configure/
 [msdn-rest-api-create-stream-analytics-job]: https://msdn.microsoft.com/zh-cn/library/dn834994.aspx
 [msdn-rest-api-create-stream-analytics-input]: https://msdn.microsoft.com/zh-cn/library/dn835010.aspx
 [msdn-rest-api-create-stream-analytics-output]: https://msdn.microsoft.com/zh-cn/library/dn835015.aspx

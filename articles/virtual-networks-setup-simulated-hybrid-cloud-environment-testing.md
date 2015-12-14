@@ -73,7 +73,7 @@
 	- 在 TestSubnet 的“CIDR (地址计数)”列中，单击“/24 (256)”。
 7.	单击“完成”图标。请等到虚拟网络创建完以后再继续。
 
-接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。
+接下来，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。
 
 接下来，请为 TestVNET 虚拟网络创建新的云服务。你必须选取一个唯一的名称。例如，你可将其命名为 **TestVNET-***UniqueSequence*，其中 *UniqueSequence* 是你组织的缩写。例如，如果你组织的名称为 Tailspin Toys，则可以将云服务命名为 **TestVNET-Tailspin**。
 

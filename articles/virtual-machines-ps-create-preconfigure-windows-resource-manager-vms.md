@@ -383,6 +383,6 @@ $nicName 字符串必须是资源组中唯一的字符串。最佳实践是将�
 
 [使用资源管理器模板和 PowerShell 创建 Windows 虚拟机](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 <!---HONumber=82-->

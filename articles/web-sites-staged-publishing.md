@@ -124,7 +124,7 @@ Azure PowerShell 是一个模块，可提供通过 Windows PowerShell 管理 Azu
 
 [AZURE.INCLUDE [AzureRm PowerShell 中国云环境](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-- 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/install-configure-powershell)。  
+- 有关安装和配置 Azure PowerShell 的信息以及使用 Azure 订阅对 Azure PowerShell 进行身份验证的信息，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/powershell-install-configure)。  
 
 - 若要对 PowerShell cmdlet 使用新的 Azure 资源管理器模式，首先请执行以下命令：`Switch-AzureMode -Name AzureResourceManager`
 

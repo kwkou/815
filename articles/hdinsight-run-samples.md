@@ -32,7 +32,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 - **一个 HDInsight 群集**。有关可用于创建这类群集的不同方法的说明，请参阅[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
-- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 
 
@@ -70,7 +70,7 @@ HDInsight 随附了以下示例：
 [hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
 
 
-[powershell-install-configure]: /documentation/articles/install-configure-powershell
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started
 

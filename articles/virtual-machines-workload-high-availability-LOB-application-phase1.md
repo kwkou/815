@@ -83,7 +83,7 @@
 
 	Get-Module azure | format-table version
 
-如果你需要安装最新版本的 Azure PowerShell，请使用**控件面板程序和功能**删除当前版本。然后，请按[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 提示符。
+如果你需要安装最新版本的 Azure PowerShell，请使用**控件面板程序和功能**删除当前版本。然后，请按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure) 中的说明在本地计算机上安装 Azure PowerShell。打开 Azure PowerShell 提示符。
 
 首先，使用以下命令选择相应的 Azure 订阅。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 

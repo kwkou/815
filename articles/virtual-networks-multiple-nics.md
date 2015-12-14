@@ -114,7 +114,7 @@ VM 上的任何 NIC（包括启用了多 NIC 的 VM 上的任何 NIC）都可以
 
 - Azure 订阅。
 - 已配置虚拟网络。有关 VNet 的详细信息，请参阅[虚拟网络概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156007.aspx)。
-- 已下载和安装最新版本的 Azure PowerShell。请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+- 已下载和安装最新版本的 Azure PowerShell。请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 若要创建具有多个 NIC 的 VM，请执行以下步骤：
 

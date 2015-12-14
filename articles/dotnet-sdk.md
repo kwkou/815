@@ -103,7 +103,7 @@ Azure 存储模拟器使用 SQL Server 实例和本地文件系统来模拟 Azur
 
 	**包括客户端库的项目模板。** 只有 [Azure 云服务](/zh-cn/documentation/articles/cloud-services-dotnet-get-started/)和 [Azure 移动服务](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)项目模板会自动包含一些客户端库。对于其他库或其他模板，安装你所需的[客户端库 NuGet 包](http://go.microsoft.com/fwlink/?LinkId=510472)。
 
-* [Azure PowerShell](/zh-cn/documentation/articles/install-configure-powershell/)
+* [Azure PowerShell](/zh-cn/documentation/articles/powershell-install-configure/)
 
 	使用 Azure PowerShell，你可以自动化 Azure 环境的创建和部署。
 

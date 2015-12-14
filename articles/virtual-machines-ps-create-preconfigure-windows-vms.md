@@ -254,6 +254,6 @@
 
 [Azure 虚拟机概述](https://msdn.microsoft.com/zh-CN/library/azure/jj156143.aspx)
 
-[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)
+[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)
 
 <!---HONumber=82-->

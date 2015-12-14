@@ -45,7 +45,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
   		  ![显示网站 URL 的速览部分][csurl]
 
-  * 安装和配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
+  * 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
 
     Get-AzureDeployment -ServiceName yourservicename | Select Url
 
@@ -90,7 +90,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）、 *or a wild
 
    		 ![显示 VIP 的速览部分][vip]
 
-  * 安装和配置 [Azure Powershell](/documentation/articles/install-configure-powershell)，然后使用以下命令：
+  * 安装和配置 [Azure Powershell](/documentation/articles/powershell-install-configure)，然后使用以下命令：
 
       get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
 

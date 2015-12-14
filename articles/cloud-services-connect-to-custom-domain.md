@@ -19,7 +19,7 @@
 我们先在 Azure 中设置一个虚拟网络 (VNET)。然后将 Active Directory 域控制器（托管在 Azure 虚拟机上）添加该 VNET。接下来，将现有云服务角色添加预先创建的 VNET，然后将它们连接到域控制器。
 
 在开始之前，请特别注意以下几点：
-1.	本教程使用 Powershell，因此请确保已安装 Azure Powershell 并已准备就绪。有关设置 Azure Powershell 的帮助，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/install-configure-powershell)。
+1.	本教程使用 Powershell，因此请确保已安装 Azure Powershell 并已准备就绪。有关设置 Azure Powershell 的帮助，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)。
 2.	AD 域控制器和 Web/辅助角色实例需要在 VNET 中。
 
 请遵循以下分步指南，如果你遇到任何问题，请在下面留言。我们将回复你（没错，我们真的会阅读留言）。

@@ -172,7 +172,7 @@
 
    有关详细信息，请参阅 [Windows Azure Cmdlet 入门](https://msdn.microsoft.com/zh-CN/library/windowsazure/jj554332.aspx)
 
-   有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/install-configure-powershell)。
+   有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Windows Azure PowerShell](/documentation/articles/powershell-install-configure)。
 
 ## 步骤 4：上载 .vhd 文件 ##
 
