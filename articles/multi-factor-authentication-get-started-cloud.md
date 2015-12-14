@@ -12,34 +12,34 @@
 	ms.date="07/02/2015" 
 	wacn.date="09/15/2015"/>
 
-# 云中的 Azure Multi-Factor Authentication 入门
+# 云中的 Azure 多重认证入门
 
 
 
 <center>![Cloud](./media/multi-factor-authentication-get-started-cloud/cloud2.png)</center>
 
-既然我们已经决定要在云中使用 Multi-Factor Authentication，那么现在就开始吧！ 请注意，如果你对 Office 365 使用 Multi-Factor Authentication 或者对 Azure 管理员使用 Multi-Factor Authentication，则可以跳到步骤 3。本文还将说明
+既然我们已经决定要在云中使用多重认证，那么现在就开始吧！ 请注意，如果你对 Office 365 使用多重认证或者对 Azure 管理员使用多重认证，则可以跳到步骤 3。本文还将说明
 
 
 1. **注册 Azure 订阅**
 	- 如果你还没有 Azure 订阅，需要注册一个订阅。如果你是新手，只是在摸索如何使用 Azure MFA，你可以使用试用版订阅
 
-2. **为用户启用 Multi-Factor Authentication** 
+2. **为用户启用多重认证** 
     - 通过 Office 365 或 Azure 门户为用户启用 Azure MFA。有关操作方法的信息，请参阅后面的部分。
 
 3. **向用户发送电子邮件户，以通知他们有关 MFA 的信息**
-	- 在用户为其帐户启用 Multi-Factor Authentication 后，建议你向他们发送一封电子邮件，以通知相关的操作。系统将在用户下次登录时提示完成相应的过程，因此这样能让他们做好心理准备。有关示例电子邮件模板，请参阅后面的部分。
+	- 在用户为其帐户启用多重认证后，建议你向他们发送一封电子邮件，以通知相关的操作。系统将在用户下次登录时提示完成相应的过程，因此这样能让他们做好心理准备。有关示例电子邮件模板，请参阅后面的部分。
 
 
-## 为用户启用 Multi-Factor Authentication
+## 为用户启用多重认证
 
-Azure Multi-Factor Authentication 中的用户帐户具有以下三种不同状态：
+Azure 多重认证中的用户帐户具有以下三种不同状态：
 
 状态 | 说明 |受影响的非浏览器应用| 说明 
 :-------------: | :-------------: |:-------------: |:-------------: |
-已禁用 | 未加入 Multi-Factor Authentication 的新用户的默认状态。|否|用户当前未使用 Multi-Factor Authentication。
-Enabled |用户已加入 Multi-Factor Authentication。|否。它们将继续工作，直到注册过程完成。|用户已启用 Multi-Factor Authentication，但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。
-强制|用户已加入，并已完成使用 Multi-Factor Authentication 前的注册过程。|是的。除非创建及使用应用密码，否则将无法工作。 | 用户不一定完成了注册。如果他们已完成注册过程，表示他们正在使用 Multi-Factor Authentication。否则，在他们下次登录时，系统将提示其完成注册过程
+已禁用 | 未加入多重认证的新用户的默认状态。|否|用户当前未使用多重认证。
+Enabled |用户已加入多重认证。|否。它们将继续工作，直到注册过程完成。|用户已启用多重认证，但尚未完成注册过程。这些用户在下次登录时，系统将提示其完成注册过程。
+强制|用户已加入，并已完成使用多重认证前的注册过程。|是的。除非创建及使用应用密码，否则将无法工作。 | 用户不一定完成了注册。如果他们已完成注册过程，表示他们正在使用多重认证。否则，在他们下次登录时，系统将提示其完成注册过程
 创建身份验证提供程序或者将许可证分配给用户后，接下来我们要为目录中的用户启用 MFA。可以使用以下过程为用户启用 MFA。
 
 ### 启用 Multi-Factor Authentication
@@ -49,7 +49,7 @@ Enabled |用户已加入 Multi-Factor Authentication。|否。它们将继续工
 3.  在“目录”下单击要为其启用此功能的用户的目录。
 4.  在顶部单击“用户”。
 5.  在页面底部，单击“管理 Multi-Factor Auth”。
-6.  找到要为其启用 Multi-Factor Authentication 的用户。你可能需要在顶部切换视图。确保用户的状态为“已禁用”，并勾选其名称旁边的框。
+6.  找到要为其启用多重认证的用户。你可能需要在顶部切换视图。确保用户的状态为“已禁用”，并勾选其名称旁边的框。
 7.  此时将在右侧显示两个选项：“启用”和“管理用户设置”。单击“启用”。此时将显示一个弹出窗口，其中指定你需要对用户执行的后续步骤。单击“启用 Multi-Factor Auth”。
 8.  启用用户后，建议你向这些用户发送一封电子邮件，告知他们如何使用非浏览器应用而不会被锁定。
 
@@ -101,6 +101,6 @@ Enabled |用户已加入 Multi-Factor Authentication。|否。它们将继续工
 		Your Administrator
 
 ## 后续步骤
-在云中设置 Multi-Factor Authentication 后，接下来可以转到[配置 Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-whats-next) 以继续执行后续步骤。
+在云中设置多重认证后，接下来可以转到[配置 Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication-whats-next) 以继续执行后续步骤。
 
 <!---HONumber=69-->

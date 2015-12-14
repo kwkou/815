@@ -12,10 +12,10 @@
 	ms.date="06/02/2015" 
 	wacn.date="09/15/2015"/>
 
-# 在 Myapps 门户中管理 Azure Multi-Factor Authentication 设置
+# 在 Myapps 门户中管理 Azure 多重认证设置
 
 
-如果你在 Office 365 上使用 Multi-Factor Authentication，则需要通过 Office 365 门户管理其他安全性验证设置。
+如果你在 Office 365 上使用多重认证，则需要通过 Office 365 门户管理其他安全性验证设置。
 
 ## 在 Myapps 门户中访问其他安全性验证设置
 <ol>
