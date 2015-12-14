@@ -15,7 +15,7 @@
 
 # 如何为 Windows 虚拟机重置密码或远程桌面服务
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]经典部署模型。
+[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-rm-include.md)]。
 
 
 如果你由于忘记了密码或远程桌面服务配置有问题而无法连接到 Windows 虚拟机，可以使用 VMAccess 扩展重置本地管理员密码或重置远程桌面服务配置。

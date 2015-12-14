@@ -32,17 +32,13 @@
 
 若要使用 Azure AD 要对发往 Azure 资源管理器的请求进行身份验证，必须在默认目录中添加一个应用程序。执行以下操作可以添加应用程序：
 
-1. 打开 Azure PowerShell 提示符，然后运行以下命令：
-
-        Switch-AzureMode –Name AzureResourceManager
-
 2. 设置你要用于本教程的 Azure 帐户。运行以下命令，并在出现提示时输入订阅的凭据：
 
-	    Add-AzureAccount -Environment AzureChinaCloud
+	    Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
 3. 在以下命令中的 {password} 替换为要使用的密码，然后运行以下命令创建应用程序：
 
-	    New-AzureADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
+	    New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
 4. 记录前一步骤的响应中提供的 ApplicationId 值。本教程后面的步骤会用到此值：
 
@@ -52,11 +48,11 @@
 
 5. 将 {application-id} 替换为刚才记下的标识符，然后创建该应用程序的服务主体：
 
-        New-AzureADServicePrincipal -ApplicationId {application-id}
+        New-AzureRmADServicePrincipal -ApplicationId {application-id}
 
 6. 设置应用程序的使用权限：
 
-	    New-AzureRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
+	    New-AzureRmRoleAssignment -RoleDefinitionName Owner -ServicePrincipalName "https://myapp1.com"
 
 ## 步骤 2：创建 Visual Studio 项目并安装这些库
 
@@ -70,13 +66,13 @@
 
 4. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Azure 计算*，单击“计算 .NET 库”的**“安装”**，然后按照说明安装该包。
+5. 在页面顶部，选择“Include Prerelease”。在搜索框中键入 *Azure Compute*，单击**“安装”**，然后按照说明安装该包。
 
-6. 在搜索框中键入*“Azure 网络”*，单击“网络 .NET 库”的**“安装”**，然后按照说明安装该包。
+6. 在搜索框中键入*“Azure Network”*，单击“网络 .NET 库”的**“安装”**，然后按照说明安装该包。
 
-7. 在搜索框中键入*“Azure 存储空间”*，单击“网络 .NET 库”的**“安装”**，然后按照说明安装该包。
+7. 在搜索框中键入*“Azure Storage”*，单击“网络 .NET 库”的**“安装”**，然后按照说明安装该包。
 
-8. 在搜索框中键入*“Azure 资源管理”*，并单击“资源管理库”的**“安装”**。
+8. 在搜索框中键入*“Azure Resource Management”*，并单击“资源管理库”的**“安装”**。
 
 现在，你可以开始使用这些库来创建应用程序了。
 
@@ -104,7 +100,7 @@
         {
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
             var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-            var result = context.AcquireToken("https://management.azure.com/", cc);
+            var result = context.AcquireToken("https://management.azure.cn/", cc);
 
           if (result == null)
           {
@@ -141,7 +137,7 @@
 
           using (var resourceManagementClient = new ResourceManagementClient(credential))
 		  {
-		    var rgResult = await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync("mytestrg1", new ResourceGroup { Location = "West US" });
+		    var rgResult = await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync("mytestrg1", new ResourceGroup { Location = "China North" });
             Console.WriteLine(rgResult.StatusCode);
             var rpResult = await resourceManagementClient.Providers.RegisterAsync("Microsoft.Storage");
             Console.WriteLine(rpResult.StatusCode);
